@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../../../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;obj&#x2F;item&#x2F;organ&#x2F;internal&#x2F;tongue&#x2F;tied - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="obj/item/organ/internal/tongue/tied.html#proc">Proc Details</a></header>
+<main>
+<h1>tied <aside>/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/organ.html">organ</a>/<a href="obj/item/organ/internal.html">internal</a>/<a href="obj/item/organ/internal/tongue.html">tongue</a>/<a href="obj/item/organ/internal/tongue/tied.html">tied</a></aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/surgery/organs/tongue.dm#L529">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;surgery&#x2F;organs&#x2F;tongue.dm 529"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="obj/item/organ/internal/tongue/tied.html#proc/check_signables_state">check_signables_state</a></th><td>Checks to see what state this person is in and if they are able to sign or not.</td></tr>
+            <tr><th><a href="obj/item/organ/internal/tongue/tied.html#proc/on_speech_check">on_speech_check</a></th><td>Signal proc for <a href="code/__DEFINES/dcs/signals/signals_mob/signals_mob_living.html#define/COMSIG_LIVING_TRY_SPEECH" title="COMSIG_LIVING_TRY_SPEECH">COMSIG_LIVING_TRY_SPEECH</a>
+Sign languagers can always speak regardless of they're mute (as long as they're not mimes)</td></tr>
+            <tr><th><a href="obj/item/organ/internal/tongue/tied.html#proc/on_treat_message">on_treat_message</a></th><td>Signal proc for <a href="code/__DEFINES/dcs/signals/signals_mob/signals_mob_living.html#define/COMSIG_LIVING_TREAT_MESSAGE" title="COMSIG_LIVING_TREAT_MESSAGE">COMSIG_LIVING_TREAT_MESSAGE</a> that stars out our message if we only have 1 hand free</td></tr>
+            <tr><th><a href="obj/item/organ/internal/tongue/tied.html#proc/on_use_radio">on_use_radio</a></th><td>Signal proc for <a href="code/__DEFINES/dcs/signals/signals_atom/signals_atom_movable.html#define/COMSIG_MOVABLE_USING_RADIO" title="COMSIG_MOVABLE_USING_RADIO">COMSIG_MOVABLE_USING_RADIO</a> that disallows us from speaking on comms if we don't have the special trait
+Being unable to sign, or having our message be starred out, is handled by the above two signal procs.</td></tr></table><h2 id="proc">Proc Details</h2><h3 id="proc/check_signables_state"><aside class="declaration">proc </aside>check_signables_state<aside>() 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/surgery/organs/tongue.dm#L613">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;surgery&#x2F;organs&#x2F;tongue.dm 613"/></a></aside>
+        </h3>
+        <p>Checks to see what state this person is in and if they are able to sign or not.</p><h3 id="proc/on_speech_check"><aside class="declaration">proc </aside>on_speech_check<aside>(/<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/source, message, ignore_spam, forced) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/surgery/organs/tongue.dm#L566">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;surgery&#x2F;organs&#x2F;tongue.dm 566"/></a></aside>
+        </h3>
+        <p>Signal proc for <a href="code/__DEFINES/dcs/signals/signals_mob/signals_mob_living.html#define/COMSIG_LIVING_TRY_SPEECH" title="COMSIG_LIVING_TRY_SPEECH">COMSIG_LIVING_TRY_SPEECH</a>
+Sign languagers can always speak regardless of they're mute (as long as they're not mimes)</p><h3 id="proc/on_treat_message"><aside class="declaration">proc </aside>on_treat_message<aside>(/<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/source, /list/message_args) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/surgery/organs/tongue.dm#L599">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;surgery&#x2F;organs&#x2F;tongue.dm 599"/></a></aside>
+        </h3>
+        <p>Signal proc for <a href="code/__DEFINES/dcs/signals/signals_mob/signals_mob_living.html#define/COMSIG_LIVING_TREAT_MESSAGE" title="COMSIG_LIVING_TREAT_MESSAGE">COMSIG_LIVING_TREAT_MESSAGE</a> that stars out our message if we only have 1 hand free</p><h3 id="proc/on_use_radio"><aside class="declaration">proc </aside>on_use_radio<aside>(/<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a>/source, /<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/radio.html">radio</a>/radio) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/surgery/organs/tongue.dm#L607">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;surgery&#x2F;organs&#x2F;tongue.dm 607"/></a></aside>
+        </h3>
+        <p>Signal proc for <a href="code/__DEFINES/dcs/signals/signals_atom/signals_atom_movable.html#define/COMSIG_MOVABLE_USING_RADIO" title="COMSIG_MOVABLE_USING_RADIO">COMSIG_MOVABLE_USING_RADIO</a> that disallows us from speaking on comms if we don't have the special trait
+Being unable to sign, or having our message be starred out, is handled by the above two signal procs.</p></main>
+<footer>
+    tgstation.dme
+    <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/tree/c9013dd6775be2d14e03fddad88c91d14bbe1047">c9013dd</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

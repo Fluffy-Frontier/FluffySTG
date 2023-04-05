@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;action - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/action.html#var">Var Details</a> - <a href="datum/action.html#proc">Proc Details</a></header>
+<main>
+<h1>Action system <aside>/<a href="datum.html">datum</a>/<a href="datum/action.html">action</a></aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L6">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 6"/></a></h1>
+
+<p>A simple base for an modular behavior attached to atom or datum.</p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/action.html#var/background_icon_state">background_icon_state</a></th><td>This is the icon state state for the BACKGROUND icon of the button</td></tr>
+            <tr><th><a href="datum/action.html#var/button_icon">button_icon</a></th><td>This is the file for the BACKGROUND icon of the button</td></tr>
+            <tr><th><a href="datum/action.html#var/button_icon_state">button_icon_state</a></th><td>This is the icon state for the icon that appears OVER the button background</td></tr>
+            <tr><th><a href="datum/action.html#var/buttontooltipstyle">buttontooltipstyle</a></th><td>The style the button's tooltips appear to be</td></tr>
+            <tr><th><a href="datum/action.html#var/check_flags">check_flags</a></th><td>Flags that will determine of the owner / user of the action can... use the action</td></tr>
+            <tr><th><a href="datum/action.html#var/default_button_position">default_button_position</a></th><td>Where any buttons we create should be by default. Accepts screen_loc and location defines</td></tr>
+            <tr><th><a href="datum/action.html#var/desc">desc</a></th><td>The description of what the action does</td></tr>
+            <tr><th><a href="datum/action.html#var/icon_icon">icon_icon</a></th><td>This is the file for the icon that appears OVER the button background</td></tr>
+            <tr><th><a href="datum/action.html#var/name">name</a></th><td>The name of the action</td></tr>
+            <tr><th><a href="datum/action.html#var/owner">owner</a></th><td>This is who currently owns the action, and most often, this is who is using the action if it is triggered
+This can be the same as &quot;target&quot; but is not ALWAYS the same - this is set and unset with Grant() and Remove()</td></tr>
+            <tr><th><a href="datum/action.html#var/owner_has_control">owner_has_control</a></th><td>If False, the owner of this action does not get a hud and cannot activate it on their own</td></tr>
+            <tr><th><a href="datum/action.html#var/target">target</a></th><td>The target the action is attached to. If the target datum is deleted, the action is as well.
+Set in New() via the proc link_to(). PLEASE set a target if you're making an action</td></tr>
+            <tr><th><a href="datum/action.html#var/transparent_when_unavailable">transparent_when_unavailable</a></th><td>Whether the button becomes transparent when it can't be used or just reddened</td></tr>
+            <tr><th><a href="datum/action.html#var/viewers">viewers</a></th><td>List of all mobs that are viewing our action button -&gt; A unique movable for them to view.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/action.html#proc/ApplyIcon">ApplyIcon</a></th><td>Applies our button icon over top the background icon of the action</td></tr>
+            <tr><th><a href="datum/action.html#proc/CreateButton">CreateButton</a></th><td>Creates an action button movable for the passed mob, and returns it.</td></tr>
+            <tr><th><a href="datum/action.html#proc/GiveAction">GiveAction</a></th><td>Gives our action to the passed viewer.
+Puts our action in their actions list and shows them the button.</td></tr>
+            <tr><th><a href="datum/action.html#proc/Grant">Grant</a></th><td>Grants the action to the passed mob, making it the owner</td></tr>
+            <tr><th><a href="datum/action.html#proc/HideFrom">HideFrom</a></th><td>Removes our action from the passed viewer.</td></tr>
+            <tr><th><a href="datum/action.html#proc/IsAvailable">IsAvailable</a></th><td>Whether our action is currently available to use or not</td></tr>
+            <tr><th><a href="datum/action.html#proc/Remove">Remove</a></th><td>Remove the passed mob from being owner of our action</td></tr>
+            <tr><th><a href="datum/action.html#proc/ShowTo">ShowTo</a></th><td>Adds our action button to the screen of the passed viewer.</td></tr>
+            <tr><th><a href="datum/action.html#proc/Trigger">Trigger</a></th><td>Actually triggers the effects of the action.
+Called when the on-screen button is clicked, for example.</td></tr>
+            <tr><th><a href="datum/action.html#proc/clear_ref">clear_ref</a></th><td>Signal proc that clears any references based on the owner or target deleting
+If the owner's deleted, we will simply remove from them, but if the target's deleted, we will self-delete</td></tr>
+            <tr><th><a href="datum/action.html#proc/link_to">link_to</a></th><td>Links the passed target to our action, registering any relevant signals</td></tr>
+            <tr><th><a href="datum/action.html#proc/on_target_mind_swapped">on_target_mind_swapped</a></th><td>Signal proc for COMSIG_MIND_TRANSFERRED - for minds, transfers our action to our new mob on mind transfer</td></tr>
+            <tr><th><a href="datum/action.html#proc/update_icon_on_signal">update_icon_on_signal</a></th><td>A general use signal proc that reacts to an event and updates our button icon in accordance</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/background_icon_state"><aside class="declaration">var </aside>background_icon_state
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L30">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 30"/></a></h3>
+        <p>This is the icon state state for the BACKGROUND icon of the button</p><h3 id="var/button_icon"><aside class="declaration">var </aside>button_icon
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L28">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 28"/></a></h3>
+        <p>This is the file for the BACKGROUND icon of the button</p><h3 id="var/button_icon_state"><aside class="declaration">var </aside>button_icon_state
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L34">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 34"/></a></h3>
+        <p>This is the icon state for the icon that appears OVER the button background</p><h3 id="var/buttontooltipstyle"><aside class="declaration">var </aside>buttontooltipstyle
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L24">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 24"/></a></h3>
+        <p>The style the button's tooltips appear to be</p><h3 id="var/check_flags"><aside class="declaration">var </aside>check_flags
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L22">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 22"/></a></h3>
+        <p>Flags that will determine of the owner / user of the action can... use the action</p><h3 id="var/default_button_position"><aside class="declaration">var </aside>default_button_position
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L15">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 15"/></a></h3>
+        <p>Where any buttons we create should be by default. Accepts screen_loc and location defines</p><h3 id="var/desc"><aside class="declaration">var </aside>desc
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L10">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 10"/></a></h3>
+        <p>The description of what the action does</p><h3 id="var/icon_icon"><aside class="declaration">var </aside>icon_icon
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L32">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 32"/></a></h3>
+        <p>This is the file for the icon that appears OVER the button background</p><h3 id="var/name"><aside class="declaration">var </aside>name
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L8">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 8"/></a></h3>
+        <p>The name of the action</p><h3 id="var/owner"><aside class="declaration">var </aside>owner
+            <aside>&ndash; /<a href="mob.html">mob</a></aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L18">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 18"/></a></h3>
+        <p>This is who currently owns the action, and most often, this is who is using the action if it is triggered
+This can be the same as &quot;target&quot; but is not ALWAYS the same - this is set and unset with Grant() and Remove()</p><h3 id="var/owner_has_control"><aside class="declaration">var </aside>owner_has_control
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L20">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 20"/></a></h3>
+        <p>If False, the owner of this action does not get a hud and cannot activate it on their own</p><h3 id="var/target"><aside class="declaration">var </aside>target
+            <aside>&ndash; /<a href="datum.html">datum</a></aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L13">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 13"/></a></h3>
+        <p>The target the action is attached to. If the target datum is deleted, the action is as well.
+Set in New() via the proc link_to(). PLEASE set a target if you're making an action</p><h3 id="var/transparent_when_unavailable"><aside class="declaration">var </aside>transparent_when_unavailable
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L26">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 26"/></a></h3>
+        <p>Whether the button becomes transparent when it can't be used or just reddened</p><h3 id="var/viewers"><aside class="declaration">var </aside>viewers
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L37">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 37"/></a></h3>
+        <p>List of all mobs that are viewing our action button -&gt; A unique movable for them to view.</p><h2 id="proc">Proc Details</h2><h3 id="proc/ApplyIcon"><aside class="declaration">proc </aside>ApplyIcon<aside>(/<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a>/<a href="atom/movable/screen.html">screen</a>/<a href="atom/movable/screen/movable.html">movable</a>/<a href="atom/movable/screen/movable/action_button.html">action_button</a>/current_button, force) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L186">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 186"/></a></aside>
+        </h3>
+        <p>Applies our button icon over top the background icon of the action</p><h3 id="proc/CreateButton"><aside class="declaration">proc </aside>CreateButton<aside>() 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L228">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 228"/></a></aside>
+        </h3>
+        <p>Creates an action button movable for the passed mob, and returns it.</p><h3 id="proc/GiveAction"><aside class="declaration">proc </aside>GiveAction<aside>(/<a href="mob.html">mob</a>/viewer) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L194">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 194"/></a></aside>
+        </h3>
+        <p>Gives our action to the passed viewer.
+Puts our action in their actions list and shows them the button.</p><h3 id="proc/Grant"><aside class="declaration">proc </aside>Grant<aside>(/<a href="mob.html">mob</a>/grant_to) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L70">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 70"/></a></aside>
+        </h3>
+        <p>Grants the action to the passed mob, making it the owner</p><h3 id="proc/HideFrom"><aside class="declaration">proc </aside>HideFrom<aside>(/<a href="mob.html">mob</a>/viewer) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L220">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 220"/></a></aside>
+        </h3>
+        <p>Removes our action from the passed viewer.</p><h3 id="proc/IsAvailable"><aside class="declaration">proc </aside>IsAvailable<aside>() 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L133">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 133"/></a></aside>
+        </h3>
+        <p>Whether our action is currently available to use or not</p><h3 id="proc/Remove"><aside class="declaration">proc </aside>Remove<aside>(/<a href="mob.html">mob</a>/remove_from) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L97">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 97"/></a></aside>
+        </h3>
+        <p>Remove the passed mob from being owner of our action</p><h3 id="proc/ShowTo"><aside class="declaration">proc </aside>ShowTo<aside>(/<a href="mob.html">mob</a>/viewer) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L203">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 203"/></a></aside>
+        </h3>
+        <p>Adds our action button to the screen of the passed viewer.</p><h3 id="proc/Trigger"><aside class="declaration">proc </aside>Trigger<aside>(trigger_flags) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L125">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 125"/></a></aside>
+        </h3>
+        <p>Actually triggers the effects of the action.
+Called when the on-screen button is clicked, for example.</p><h3 id="proc/clear_ref"><aside class="declaration">proc </aside>clear_ref<aside>(/<a href="datum.html">datum</a>/ref) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L62">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 62"/></a></aside>
+        </h3>
+        <p>Signal proc that clears any references based on the owner or target deleting
+If the owner's deleted, we will simply remove from them, but if the target's deleted, we will self-delete</p><h3 id="proc/link_to"><aside class="declaration">proc </aside>link_to<aside>(Target) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L43">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 43"/></a></aside>
+        </h3>
+        <p>Links the passed target to our action, registering any relevant signals</p><h3 id="proc/on_target_mind_swapped"><aside class="declaration">proc </aside>on_target_mind_swapped<aside>(/<a href="datum.html">datum</a>/<a href="datum/mind.html">mind</a>/source, /<a href="mob.html">mob</a>/old_current) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L261">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 261"/></a></aside>
+        </h3>
+        <p>Signal proc for COMSIG_MIND_TRANSFERRED - for minds, transfers our action to our new mob on mind transfer</p><h3 id="proc/update_icon_on_signal"><aside class="declaration">proc </aside>update_icon_on_signal<aside>(/<a href="datum.html">datum</a>/source) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/datums/actions/action.dm#L255">
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;actions&#x2F;action.dm 255"/></a></aside>
+        </h3>
+        <p>A general use signal proc that reacts to an event and updates our button icon in accordance</p></main>
+<footer>
+    tgstation.dme
+    <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/tree/c9013dd6775be2d14e03fddad88c91d14bbe1047">c9013dd</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

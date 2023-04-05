@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../../../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;obj&#x2F;machinery&#x2F;atmospherics&#x2F;components&#x2F;unary&#x2F;vent_scrubber - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html#var">Var Details</a> - <a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html#proc">Proc Details</a></header>
+<main>
+<h1>vent_scrubber <aside>/<a href="obj.html">obj</a>/<a href="obj/machinery.html">machinery</a>/<a href="obj/machinery/atmospherics.html">atmospherics</a>/<a href="obj/machinery/atmospherics/components.html">components</a>/<a href="obj/machinery/atmospherics/components/unary.html">unary</a>/<a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html">vent_scrubber</a></aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/atmospherics/machinery/components/unary_devices/vent_scrubber.dm#L4">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;unary_devices&#x2F;vent_scrubber.dm 4"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html#var/adjacent_turfs">adjacent_turfs</a></th><td>List of the turfs near the scrubber, used for widenet</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html#var/filter_types">filter_types</a></th><td>The list of gases we are filtering</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html#var/frequency">frequency</a></th><td>Frequency id for connecting to the NTNet</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html#var/radio_connection">radio_connection</a></th><td>Reference to the radio datum</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html#var/radio_filter_in">radio_filter_in</a></th><td>Radio connection from the air alarm</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html#var/radio_filter_out">radio_filter_out</a></th><td>Radio connection to the air alarm</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html#var/scrubbing">scrubbing</a></th><td>The mode of the scrubber (SCRUBBING or SIPHONING)</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html#var/volume_rate">volume_rate</a></th><td>Rate of the scrubber to remove gases from the air</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html#var/widenet">widenet</a></th><td>is this scrubber acting on the 3x3 area around it.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html#proc/add_filters">add_filters</a></th><td>adds a gas or list of gases to our filter_types. used so that the scrubber can check if its supposed to be processing after each change</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html#proc/check_turfs">check_turfs</a></th><td>contains all of the gas we're sucking out of the tile, gets put into our parent pipenet
+maximum percentage of the turfs gas we can filter
+we populate a list of turfs with nonatmos-blocked cardinal turfs AND
+diagonal turfs that can share atmos with <em>both</em> of the cardinal turfs</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html#proc/clog">clog</a></th><td>Sets &quot;clogged&quot; to TRUE.</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html#proc/power_change">power_change</a></th><td>whether we should attempt to start processing due to settings allowing us to take gas out of our environment</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html#proc/produce_mob">produce_mob</a></th><td>Produces a mob based on the input given by scrubber clog event.</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html#proc/remove_filters">remove_filters</a></th><td>remove a gas or list of gases from our filter_types.used so that the scrubber can check if its supposed to be processing after each change</td></tr>
+            <tr><th><a href="obj/machinery/atmospherics/components/unary/vent_scrubber.html#proc/unclog">unclog</a></th><td>Sets &quot;clogged&quot; to FALSE.</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/adjacent_turfs"><aside class="declaration">var </aside>adjacent_turfs
+            <aside>&ndash; /list/turf</aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/atmospherics/machinery/components/unary_devices/vent_scrubber.dm#L30">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;unary_devices&#x2F;vent_scrubber.dm 30"/></a></h3>
+        <p>List of the turfs near the scrubber, used for widenet</p><h3 id="var/filter_types"><aside class="declaration">var </aside>filter_types
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/atmospherics/machinery/components/unary_devices/vent_scrubber.dm#L24">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;unary_devices&#x2F;vent_scrubber.dm 24"/></a></h3>
+        <p>The list of gases we are filtering</p><h3 id="var/frequency"><aside class="declaration">var </aside>frequency
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/atmospherics/machinery/components/unary_devices/vent_scrubber.dm#L33">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;unary_devices&#x2F;vent_scrubber.dm 33"/></a></h3>
+        <p>Frequency id for connecting to the NTNet</p><h3 id="var/radio_connection"><aside class="declaration">var </aside>radio_connection
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/radio_frequency.html">radio_frequency</a></aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/atmospherics/machinery/components/unary_devices/vent_scrubber.dm#L35">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;unary_devices&#x2F;vent_scrubber.dm 35"/></a></h3>
+        <p>Reference to the radio datum</p><h3 id="var/radio_filter_in"><aside class="declaration">var </aside>radio_filter_in
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/atmospherics/machinery/components/unary_devices/vent_scrubber.dm#L39">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;unary_devices&#x2F;vent_scrubber.dm 39"/></a></h3>
+        <p>Radio connection from the air alarm</p><h3 id="var/radio_filter_out"><aside class="declaration">var </aside>radio_filter_out
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/atmospherics/machinery/components/unary_devices/vent_scrubber.dm#L37">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;unary_devices&#x2F;vent_scrubber.dm 37"/></a></h3>
+        <p>Radio connection to the air alarm</p><h3 id="var/scrubbing"><aside class="declaration">var </aside>scrubbing
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/atmospherics/machinery/components/unary_devices/vent_scrubber.dm#L22">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;unary_devices&#x2F;vent_scrubber.dm 22"/></a></h3>
+        <p>The mode of the scrubber (SCRUBBING or SIPHONING)</p><h3 id="var/volume_rate"><aside class="declaration">var </aside>volume_rate
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/atmospherics/machinery/components/unary_devices/vent_scrubber.dm#L26">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;unary_devices&#x2F;vent_scrubber.dm 26"/></a></h3>
+        <p>Rate of the scrubber to remove gases from the air</p><h3 id="var/widenet"><aside class="declaration">var </aside>widenet
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/atmospherics/machinery/components/unary_devices/vent_scrubber.dm#L28">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;unary_devices&#x2F;vent_scrubber.dm 28"/></a></h3>
+        <p>is this scrubber acting on the 3x3 area around it.</p><h2 id="proc">Proc Details</h2><h3 id="proc/add_filters"><aside class="declaration">proc </aside>add_filters<aside>(filter_or_filters) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/atmospherics/machinery/components/unary_devices/vent_scrubber.dm#L71">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;unary_devices&#x2F;vent_scrubber.dm 71"/></a></aside>
+        </h3>
+        <p>adds a gas or list of gases to our filter_types. used so that the scrubber can check if its supposed to be processing after each change</p><h3 id="proc/check_turfs"><aside class="declaration">proc </aside>check_turfs<aside>() 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/atmospherics/machinery/components/unary_devices/vent_scrubber.dm#L324">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;unary_devices&#x2F;vent_scrubber.dm 324"/></a></aside>
+        </h3>
+        <p>contains all of the gas we're sucking out of the tile, gets put into our parent pipenet
+maximum percentage of the turfs gas we can filter
+we populate a list of turfs with nonatmos-blocked cardinal turfs AND
+diagonal turfs that can share atmos with <em>both</em> of the cardinal turfs</p><h3 id="proc/clog"><aside class="declaration">proc </aside>clog<aside>() 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/atmospherics/machinery/components/unary_devices/vent_scrubber.dm#L494">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;unary_devices&#x2F;vent_scrubber.dm 494"/></a></aside>
+        </h3>
+        <p>Sets &quot;clogged&quot; to TRUE.</p>
+<p>Sets the clogged value to be true. Called during the scrubber clog event to begin the production of mobs, and allows for the plunger_act to run.</p><h3 id="proc/power_change"><aside class="parent"><a title="/obj/machinery" href="obj/machinery.html#proc/power_change">&uarr;</a></aside>power_change<aside>() 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/atmospherics/machinery/components/unary_devices/vent_scrubber.dm#L410">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;unary_devices&#x2F;vent_scrubber.dm 410"/></a></aside>
+        </h3>
+        <p>whether we should attempt to start processing due to settings allowing us to take gas out of our environment</p><h3 id="proc/produce_mob"><aside class="declaration">proc </aside>produce_mob<aside>(spawned_mob, /list/living_mobs) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/atmospherics/machinery/components/unary_devices/vent_scrubber.dm#L519">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;unary_devices&#x2F;vent_scrubber.dm 519"/></a></aside>
+        </h3>
+        <p>Produces a mob based on the input given by scrubber clog event.</p>
+<p>Used by the scrubber clog random event to handle the spawning of mobs. The proc recieves the mob that will be spawned,
+and the event's current list of living mobs produced by the event so far. After checking if the vent is welded, the
+new mob is created on the scrubber's turf, then added to the living_mobs list.</p>
+<p>Arguments:</p>
+<ul>
+<li>spawned_mob - Stores which mob will be spawned and added to the living_mobs list.</li>
+<li>living_mobs - Used to add the spawned mob to the list of currently living mobs produced by this vent.
+Relevant code for how the list is handled is in the scrubber_clog.dm file.</li>
+</ul><h3 id="proc/remove_filters"><aside class="declaration">proc </aside>remove_filters<aside>(filter_or_filters) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/atmospherics/machinery/components/unary_devices/vent_scrubber.dm#L95">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;unary_devices&#x2F;vent_scrubber.dm 95"/></a></aside>
+        </h3>
+        <p>remove a gas or list of gases from our filter_types.used so that the scrubber can check if its supposed to be processing after each change</p><h3 id="proc/unclog"><aside class="declaration">proc </aside>unclog<aside>() 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/atmospherics/machinery/components/unary_devices/vent_scrubber.dm#L503">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;atmospherics&#x2F;machinery&#x2F;components&#x2F;unary_devices&#x2F;vent_scrubber.dm 503"/></a></aside>
+        </h3>
+        <p>Sets &quot;clogged&quot; to FALSE.</p>
+<p>Changes the clogged value to be false. Called during the scrubber clog event to stop the production of mobs and prevent further plunger use.</p></main>
+<footer>
+    tgstation.dme
+    <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/tree/c9013dd6775be2d14e03fddad88c91d14bbe1047">c9013dd</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

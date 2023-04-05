@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;obj&#x2F;item&#x2F;organ&#x2F;internal&#x2F;lungs - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="obj/item/organ/internal/lungs.html#var">Var Details</a> - <a href="obj/item/organ/internal/lungs.html#proc">Proc Details</a></header>
+<main>
+<h1>lungs <aside>/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/organ.html">organ</a>/<a href="obj/item/organ/internal.html">internal</a>/<a href="obj/item/organ/internal/lungs.html">lungs</a></aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/surgery/organs/lungs.dm#L1">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;surgery&#x2F;organs&#x2F;lungs.dm 1"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="obj/item/organ/internal/lungs.html#var/healium_para_min">healium_para_min</a></th><td>Minimum amount of healium to make you unconscious for 4 seconds</td></tr>
+            <tr><th><a href="obj/item/organ/internal/lungs.html#var/healium_sleep_min">healium_sleep_min</a></th><td>Minimum amount of healium to knock you down for good</td></tr>
+            <tr><th><a href="obj/item/organ/internal/lungs.html#var/helium_speech_min">helium_speech_min</a></th><td>Minimum amount of helium to affect speech</td></tr>
+            <tr><th><a href="obj/item/organ/internal/lungs.html#var/safe_plasma_max">safe_plasma_max</a></th><td>How much breath partial pressure is a safe amount of plasma. 0 means that we are immune to plasma.</td></tr>
+            <tr><th><a href="obj/item/organ/internal/lungs.html#var/suffers_miasma">suffers_miasma</a></th><td>Whether these lungs react negatively to miasma</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="obj/item/organ/internal/lungs.html#proc/Insert">Insert</a></th><td>Simply exists so that you don't keep any alerts from your previous lack of lungs.</td></tr>
+            <tr><th><a href="obj/item/organ/internal/lungs.html#proc/handle_gas_override">handle_gas_override</a></th><td>override this for breath handling unique to lung subtypes, breath_gas is the list of gas in the breath while gas breathed is just what is being added or removed from that list, just as they are when this is called in check_breath()</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/healium_para_min"><aside class="declaration">var </aside>healium_para_min
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/surgery/organs/lungs.dm#L43">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;surgery&#x2F;organs&#x2F;lungs.dm 43"/></a></h3>
+        <p>Minimum amount of healium to make you unconscious for 4 seconds</p><h3 id="var/healium_sleep_min"><aside class="declaration">var </aside>healium_sleep_min
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/surgery/organs/lungs.dm#L45">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;surgery&#x2F;organs&#x2F;lungs.dm 45"/></a></h3>
+        <p>Minimum amount of healium to knock you down for good</p><h3 id="var/helium_speech_min"><aside class="declaration">var </aside>helium_speech_min
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/surgery/organs/lungs.dm#L47">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;surgery&#x2F;organs&#x2F;lungs.dm 47"/></a></h3>
+        <p>Minimum amount of helium to affect speech</p><h3 id="var/safe_plasma_max"><aside class="declaration">var </aside>safe_plasma_max
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/surgery/organs/lungs.dm#L36">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;surgery&#x2F;organs&#x2F;lungs.dm 36"/></a></h3>
+        <p>How much breath partial pressure is a safe amount of plasma. 0 means that we are immune to plasma.</p><h3 id="var/suffers_miasma"><aside class="declaration">var </aside>suffers_miasma
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/surgery/organs/lungs.dm#L51">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;surgery&#x2F;organs&#x2F;lungs.dm 51"/></a></h3>
+        <p>Whether these lungs react negatively to miasma</p><h2 id="proc">Proc Details</h2><h3 id="proc/Insert">Insert<aside>(/<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/<a href="mob/living/carbon.html">carbon</a>/receiver, special, drop_if_replaced) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/surgery/organs/lungs.dm#L92">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;surgery&#x2F;organs&#x2F;lungs.dm 92"/></a></aside>
+        </h3>
+        <p>Simply exists so that you don't keep any alerts from your previous lack of lungs.</p><h3 id="proc/handle_gas_override"><aside class="declaration">proc </aside>handle_gas_override<aside>(/<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/<a href="mob/living/carbon.html">carbon</a>/<a href="mob/living/carbon/human.html">human</a>/breather, /list/breath_gas, gas_breathed) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/modules/surgery/organs/lungs.dm#L479">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;surgery&#x2F;organs&#x2F;lungs.dm 479"/></a></aside>
+        </h3>
+        <p>override this for breath handling unique to lung subtypes, breath_gas is the list of gas in the breath while gas breathed is just what is being added or removed from that list, just as they are when this is called in check_breath()</p></main>
+<footer>
+    tgstation.dme
+    <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/tree/c9013dd6775be2d14e03fddad88c91d14bbe1047">c9013dd</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

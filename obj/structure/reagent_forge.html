@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;obj&#x2F;structure&#x2F;reagent_forge - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="obj/structure/reagent_forge.html#var">Var Details</a> - <a href="obj/structure/reagent_forge.html#proc">Proc Details</a></header>
+<main>
+<h1>reagent_forge <aside>/<a href="obj.html">obj</a>/<a href="obj/structure/reagent_forge.html">structure/reagent_forge</a></aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L19">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 19"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#var/current_core">current_core</a></th><td>counting how many cores used to turn forge into a reagent forging forge.</td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#var/current_sinew">current_sinew</a></th><td>how many sinews have been used</td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#var/disallowed_reagents">disallowed_reagents</a></th><td>Blacklist that contains reagents that weapons and armor are unable to be imbued with.</td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#var/forge_fuel_strong">forge_fuel_strong</a></th><td>the fuel amount (in seconds) that the forge has (stronger than wood)</td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#var/forge_fuel_weak">forge_fuel_weak</a></th><td>the fuel amount (in seconds) that the forge has (wood)</td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#var/forge_level">forge_level</a></th><td>the forge level, which will upgrade the forge (goliath/sinew/core upgrades)</td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#var/forge_temperature">forge_temperature</a></th><td>the temperature of the forge</td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#var/goliath_ore_improvement">goliath_ore_improvement</a></th><td>the number of extra sheets an ore will produce, up to 3</td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#var/in_use">in_use</a></th><td>the variable that stops spamming</td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#var/radial_microwave">radial_microwave</a></th><td>radial button for acting as a microwave on a food object</td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#var/radial_options">radial_options</a></th><td>list containing cooking radial buttons, for when anything of /obj/item/food is used on the forge</td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#var/radial_oven">radial_oven</a></th><td>radial button for acting as an oven on a food object</td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#var/reagent_forging">reagent_forging</a></th><td>whether the forge is capable of allowing reagent forging of the forged item.</td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#var/sinew_lower_chance">sinew_lower_chance</a></th><td>the chance that the forges temperature will not lower; max of 100 sinew_lower_chance.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#proc/check_fuel">check_fuel</a></th><td>Here we check both strong (coal) and weak (wood) fuel</td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#proc/check_in_use">check_in_use</a></th><td>Here we fix any weird in_use bugs</td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#proc/check_temp">check_temp</a></th><td>Here we adjust our temp to the target temperature</td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#proc/create_reagent_forge">create_reagent_forge</a></th><td>Here we make the reagent forge reagent imbuing</td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#proc/fail_message">fail_message</a></th><td>Here we give a fail message as well as set the in_use to false</td></tr>
+            <tr><th><a href="obj/structure/reagent_forge.html#proc/spawn_coal">spawn_coal</a></th><td>Here we spawn coal depending on a chance of using wood</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/current_core"><aside class="declaration">var </aside>current_core
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L48">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 48"/></a></h3>
+        <p>counting how many cores used to turn forge into a reagent forging forge.</p><h3 id="var/current_sinew"><aside class="declaration">var </aside>current_sinew
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L37">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 37"/></a></h3>
+        <p>how many sinews have been used</p><h3 id="var/disallowed_reagents"><aside class="declaration">var </aside>disallowed_reagents
+            <aside>&ndash; /static/list</aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L80">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 80"/></a></h3>
+        <p>Blacklist that contains reagents that weapons and armor are unable to be imbued with.</p><h3 id="var/forge_fuel_strong"><aside class="declaration">var </aside>forge_fuel_strong
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L43">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 43"/></a></h3>
+        <p>the fuel amount (in seconds) that the forge has (stronger than wood)</p><h3 id="var/forge_fuel_weak"><aside class="declaration">var </aside>forge_fuel_weak
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L41">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 41"/></a></h3>
+        <p>the fuel amount (in seconds) that the forge has (wood)</p><h3 id="var/forge_level"><aside class="declaration">var </aside>forge_level
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L54">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 54"/></a></h3>
+        <p>the forge level, which will upgrade the forge (goliath/sinew/core upgrades)</p><h3 id="var/forge_temperature"><aside class="declaration">var </aside>forge_temperature
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L30">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 30"/></a></h3>
+        <p>the temperature of the forge</p><h3 id="var/goliath_ore_improvement"><aside class="declaration">var </aside>goliath_ore_improvement
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L39">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 39"/></a></h3>
+        <p>the number of extra sheets an ore will produce, up to 3</p><h3 id="var/in_use"><aside class="declaration">var </aside>in_use
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L52">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 52"/></a></h3>
+        <p>the variable that stops spamming</p><h3 id="var/radial_microwave"><aside class="declaration">var </aside>radial_microwave
+            <aside>&ndash; /static</aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L74">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 74"/></a></h3>
+        <p>radial button for acting as a microwave on a food object</p><h3 id="var/radial_options"><aside class="declaration">var </aside>radial_options
+            <aside>&ndash; /static/list</aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L77">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 77"/></a></h3>
+        <p>list containing cooking radial buttons, for when anything of /obj/item/food is used on the forge</p><h3 id="var/radial_oven"><aside class="declaration">var </aside>radial_oven
+            <aside>&ndash; /static</aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L72">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 72"/></a></h3>
+        <p>radial button for acting as an oven on a food object</p><h3 id="var/reagent_forging"><aside class="declaration">var </aside>reagent_forging
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L46">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 46"/></a></h3>
+        <p>whether the forge is capable of allowing reagent forging of the forged item.</p><h3 id="var/sinew_lower_chance"><aside class="declaration">var </aside>sinew_lower_chance
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L35">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 35"/></a></h3>
+        <p>the chance that the forges temperature will not lower; max of 100 sinew_lower_chance.</p><h2 id="proc">Proc Details</h2><h3 id="proc/check_fuel"><aside class="declaration">proc </aside>check_fuel<aside>() 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L149">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 149"/></a></aside>
+        </h3>
+        <p>Here we check both strong (coal) and weak (wood) fuel</p><h3 id="proc/check_in_use"><aside class="declaration">proc </aside>check_in_use<aside>() 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L204">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 204"/></a></aside>
+        </h3>
+        <p>Here we fix any weird in_use bugs</p><h3 id="proc/check_temp"><aside class="declaration">proc </aside>check_temp<aside>() 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L182">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 182"/></a></aside>
+        </h3>
+        <p>Here we adjust our temp to the target temperature</p><h3 id="proc/create_reagent_forge"><aside class="declaration">proc </aside>create_reagent_forge<aside>() 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L165">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 165"/></a></aside>
+        </h3>
+        <p>Here we make the reagent forge reagent imbuing</p><h3 id="proc/fail_message"><aside class="declaration">proc </aside>fail_message<aside>(/<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/fail_user, message) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L175">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 175"/></a></aside>
+        </h3>
+        <p>Here we give a fail message as well as set the in_use to false</p><h3 id="proc/spawn_coal"><aside class="declaration">proc </aside>spawn_coal<aside>() 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/modular_skyrat/modules/reagent_forging/code/forge.dm#L215">
+        <img src="git.png" width="16" height="16" title="modular_skyrat&#x2F;modules&#x2F;reagent_forging&#x2F;code&#x2F;forge.dm 215"/></a></aside>
+        </h3>
+        <p>Here we spawn coal depending on a chance of using wood</p></main>
+<footer>
+    tgstation.dme
+    <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/tree/c9013dd6775be2d14e03fddad88c91d14bbe1047">c9013dd</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

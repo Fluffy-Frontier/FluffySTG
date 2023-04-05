@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;obj&#x2F;item&#x2F;construction&#x2F;plumbing - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="obj/item/construction/plumbing.html#var">Var Details</a> - <a href="obj/item/construction/plumbing.html#proc">Proc Details</a></header>
+<main>
+<h1>plumbing <aside>/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/construction.html">construction</a>/<a href="obj/item/construction/plumbing.html">plumbing</a></aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/game/objects/items/RCD.dm#L1149">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 1149"/></a></h1>
+
+<p>The plumbing RCD. All the blueprints are located in _globalvars &gt; lists &gt; construction.dm</p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="obj/item/construction/plumbing.html#var/blueprint">blueprint</a></th><td>type of the plumbing machine</td></tr>
+            <tr><th><a href="obj/item/construction/plumbing.html#var/choices">choices</a></th><td>index, used in the attack self to get the type. stored here since it doesnt change</td></tr>
+            <tr><th><a href="obj/item/construction/plumbing.html#var/current_color">current_color</a></th><td>Current selected color, for ducts</td></tr>
+            <tr><th><a href="obj/item/construction/plumbing.html#var/current_layer">current_layer</a></th><td>Current selected layer</td></tr>
+            <tr><th><a href="obj/item/construction/plumbing.html#var/machinery_data">machinery_data</a></th><td>All info for construction</td></tr>
+            <tr><th><a href="obj/item/construction/plumbing.html#var/name_to_type">name_to_type</a></th><td>index, used in the attack self to get the type. stored here since it doesnt change</td></tr>
+            <tr><th><a href="obj/item/construction/plumbing.html#var/plumbing_design_types">plumbing_design_types</a></th><td>This list that holds all the plumbing design types the plumberer can construct. Its purpose is to make it easy to make new plumberer subtypes with a different selection of machines.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="obj/item/construction/plumbing.html#proc/choose_color_menu">choose_color_menu</a></th><td>Choose the current color via radial menu.</td></tr>
+            <tr><th><a href="obj/item/construction/plumbing.html#proc/choose_layer_menu">choose_layer_menu</a></th><td>Choose the current layer via radial menu.</td></tr>
+            <tr><th><a href="obj/item/construction/plumbing.html#proc/create_machine">create_machine</a></th><td>pretty much rcd_create, but named differently to make myself feel less bad for copypasting from a sibling-type</td></tr>
+            <tr><th><a href="obj/item/construction/plumbing.html#proc/mouse_wheeled">mouse_wheeled</a></th><td>Choose layer via mouse wheel, like an RPD</td></tr>
+            <tr><th><a href="obj/item/construction/plumbing.html#proc/set_plumbing_designs">set_plumbing_designs</a></th><td>Set the list of designs this plumbing rcd can make</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/blueprint"><aside class="declaration">var </aside>blueprint
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/game/objects/items/RCD.dm#L1164">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 1164"/></a></h3>
+        <p>type of the plumbing machine</p><h3 id="var/choices"><aside class="declaration">var </aside>choices
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/game/objects/items/RCD.dm#L1166">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 1166"/></a></h3>
+        <p>index, used in the attack self to get the type. stored here since it doesnt change</p><h3 id="var/current_color"><aside class="declaration">var </aside>current_color
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/game/objects/items/RCD.dm#L1176">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 1176"/></a></h3>
+        <p>Current selected color, for ducts</p><h3 id="var/current_layer"><aside class="declaration">var </aside>current_layer
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/game/objects/items/RCD.dm#L1174">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 1174"/></a></h3>
+        <p>Current selected layer</p><h3 id="var/machinery_data"><aside class="declaration">var </aside>machinery_data
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/game/objects/items/RCD.dm#L1170">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 1170"/></a></h3>
+        <p>All info for construction</p><h3 id="var/name_to_type"><aside class="declaration">var </aside>name_to_type
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/game/objects/items/RCD.dm#L1168">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 1168"/></a></h3>
+        <p>index, used in the attack self to get the type. stored here since it doesnt change</p><h3 id="var/plumbing_design_types"><aside class="declaration">var </aside>plumbing_design_types
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/game/objects/items/RCD.dm#L1172">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 1172"/></a></h3>
+        <p>This list that holds all the plumbing design types the plumberer can construct. Its purpose is to make it easy to make new plumberer subtypes with a different selection of machines.</p><h2 id="proc">Proc Details</h2><h3 id="proc/choose_color_menu"><aside class="declaration">proc </aside>choose_color_menu<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/game/objects/items/RCD.dm#L1357">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 1357"/></a></aside>
+        </h3>
+        <p>Choose the current color via radial menu.</p>
+<p>Arguments:</p>
+<ul>
+<li>user - current user.</li>
+</ul><h3 id="proc/choose_layer_menu"><aside class="declaration">proc </aside>choose_layer_menu<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/game/objects/items/RCD.dm#L1338">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 1338"/></a></aside>
+        </h3>
+        <p>Choose the current layer via radial menu.</p>
+<p>Arguments:</p>
+<ul>
+<li>user - current user.</li>
+</ul><h3 id="proc/create_machine"><aside class="declaration">proc </aside>create_machine<aside>(/<a href="atom.html">atom</a>/destination, /<a href="mob.html">mob</a>/user) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/game/objects/items/RCD.dm#L1251">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 1251"/></a></aside>
+        </h3>
+        <p>pretty much rcd_create, but named differently to make myself feel less bad for copypasting from a sibling-type</p><h3 id="proc/mouse_wheeled"><aside class="declaration">proc </aside>mouse_wheeled<aside>(/<a href="mob.html">mob</a>/source, /<a href="atom.html">atom</a>/A, delta_x, delta_y, params) 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/game/objects/items/RCD.dm#L1379">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 1379"/></a></aside>
+        </h3>
+        <p>Choose layer via mouse wheel, like an RPD</p>
+<p>Arguments:</p>
+<ul>
+<li>source - the user</li>
+<li>A - the atom being selected, unused.</li>
+<li>delta_x - X scroll delta</li>
+<li>delta_y - Y scroll delta</li>
+</ul><h3 id="proc/set_plumbing_designs"><aside class="declaration">proc </aside>set_plumbing_designs<aside>() 
+        
+    
+            <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/blob/c9013dd6775be2d14e03fddad88c91d14bbe1047/code/game/objects/items/RCD.dm#L1224">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 1224"/></a></aside>
+        </h3>
+        <p>Set the list of designs this plumbing rcd can make</p></main>
+<footer>
+    tgstation.dme
+    <a href="https://github.com/Fluffy-Frontier/Fluffy-STG/tree/c9013dd6775be2d14e03fddad88c91d14bbe1047">c9013dd</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>
