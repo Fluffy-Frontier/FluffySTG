@@ -66,7 +66,7 @@
 		decal_color = rgba_regex.group[1]
 		decal_alpha = text2num(rgba_regex.group[2], 16)
 
-	target.AddElement(/datum/element/decal, '~ff/floor_decals/icons/decals.dmi', source_decal, source_dir, null, null, decal_alpha, decal_color, null, FALSE, null)
+	target.AddElement(/datum/element/decal, '~ff/floor_decals/icons/turf/decals.dmi', source_decal, source_dir, null, null, decal_alpha, decal_color, null, FALSE, null)
 
 /datum/asset/spritesheet/decals/inscript
 	name = "floor_tile_decals"
@@ -86,7 +86,7 @@
 		render_color = tile_type.rgba_regex.group[1]
 		render_alpha = text2num(tile_type.rgba_regex.group[2], 16)
 
-	var/icon/colored_icon = icon('~ff/floor_decals/icons/decals.dmi', source_decal, dir=source_dir)
+	var/icon/colored_icon = icon('~ff/floor_decals/icons/turf/decals.dmi', source_decal, dir=source_dir)
 	colored_icon.ChangeOpacity(render_alpha * 0.008)
 	if(color == "custom")
 		colored_icon.Blend(icon('icons/effects/random_spawners.dmi', "rainbow"), ICON_MULTIPLY)
