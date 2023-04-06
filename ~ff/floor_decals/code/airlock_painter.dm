@@ -9,9 +9,9 @@
 	spritesheet_type = /datum/asset/spritesheet/decals/inscript
 	supports_custom_color = TRUE
 	color_list = list(
-		list("Neutral", "#D4D4D4132"),
+		list("Neutral", "#D4D4D4"),
 		list("Dark", "#0e0f0f"),
-		list("Bar Burgundy", "#791500182"),
+		list("Bar Burgundy", "#791500"),
 		list("Sec Blue", "#486091"),
 		list("Cargo Brown", "#A46106"),
 		list("Engi Yellow", "#EFB341"),
@@ -35,16 +35,16 @@
 		list("Sci", "sci"),
 		list("Sec", "sec"),
 		list("Mine", "mine"),
-		list("0", "0"),
-		list("1", "1"),
-		list("2", "2"),
-		list("3", "3"),
-		list("4", "4"),
-		list("5", "5"),
-		list("6", "6"),
-		list("7", "7"),
-		list("8", "8"),
-		list("9", "9")
+		list("Zero", "zero"),
+		list("One", "one"),
+		list("Two", "two"),
+		list("Three", "three"),
+		list("Four", "four"),
+		list("Five", "five"),
+		list("Six", "six"),
+		list("Seven", "seven"),
+		list("Eight", "eight"),
+		list("Nine", "nine")
 	)
 	nondirectional_decals = list(
 	)
