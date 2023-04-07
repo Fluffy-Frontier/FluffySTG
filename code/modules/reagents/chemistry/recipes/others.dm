@@ -796,7 +796,6 @@
 	var/location = get_turf(holder.my_atom)
 	for(var/i in 1 to created_volume)
 		new /obj/item/stack/medical/bone_gel(location)
-
 ////Ice and water
 
 /datum/chemical_reaction/ice
