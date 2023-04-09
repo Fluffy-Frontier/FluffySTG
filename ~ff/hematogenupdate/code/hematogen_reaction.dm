@@ -5,33 +5,23 @@
 	reagent_state = LIQUID
 	color = "#611317"
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
-	overdose_threshold = 40
+	overdose_threshold = 20
 	taste_description = "iron and loads of sugar"
-	var/last_added = 0
-	var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10 //So that normal blood regeneration can continue with salglu active
-	var/extra_regen = 0.20 // in addition to acting as temporary blood, also add about half this much to their actual blood per second
 	ph = 5.5
 	chemical_flags = REAGENTS_METABOLISM
 
 // what it does
-/datum/reagent/medicine/hematogen_product/on_mob_life(mob/living/carbon/affected_mob, delta_time, times_fired)
-	if(last_added)
-		affected_mob.blood_volume -= last_added
-		last_added = 0
-	if(affected_mob.blood_volume < maximum_reachable) //Can only up to double your effective blood level.
-		var/amount_to_add = min(affected_mob.blood_volume, 5*volume)
-		var/new_blood_level = min(affected_mob.blood_volume + amount_to_add, maximum_reachable)
-		last_added = new_blood_level - affected_mob.blood_volume
-		affected_mob.blood_volume = new_blood_level + (extra_regen * REM * delta_time)
+/datum/reagent/hematogen_product/on_mob_life(mob/living/carbon/affected_mob, delta_time, times_fired)
+	if(affected_mob.blood_volume < BLOOD_VOLUME_NORMAL)
+		affected_mob.blood_volume += 0.30 * delta_time
 	..()
 // Overdose
-/datum/reagent/medicine/salglu_solution/overdose_process(mob/living/affected_mob, delta_time, times_fired)
-	if(DT_PROB(1.5, delta_time))
+/datum/reagent/medicine/hematogen_product/overdose_process(mob/living/affected_mob, delta_time, times_fired)
 	if(DT_PROB(1.5, delta_time))
 		to_chat(affected_mob, span_warning("You feel VERY sweet."))
 		holder.add_reagent(/datum/reagent/consumable/sugar, 3)
-		holder.remove_reagent(/datum/reagent/medicine/salglu_solution, 0.5)
-	if(DT_PROB(18, delta_time))
+		holder.remove_reagent(/datum/reagent/medicine/hematogen_product, 0.5)
+	if(DT_PROB(10, delta_time))
 		affected_mob.vomit()
 		. = TRUE
 	..()
