@@ -7,10 +7,14 @@
 	worn_icon_state = "holster"
 	alternate_worn_layer = UNDER_SUIT_LAYER
 	w_class = WEIGHT_CLASS_BULKY
+	var/badass = TRUE
 
 /obj/item/storage/belt/holster/equipped(mob/user, slot)
 	. = ..()
-	if(slot & (ITEM_SLOT_BELT|ITEM_SLOT_SUITSTORE))
+	// FLUFFY FRONTIER EDIT BEGIN
+	// ORIGINAL LINE: if(slot & (ITEM_SLOT_BELT|ITEM_SLOT_SUITSTORE))
+	if(badass && slot & (ITEM_SLOT_BELT|ITEM_SLOT_SUITSTORE))
+		// FLUFFY FRONTIER EDIT END
 		ADD_TRAIT(user, TRAIT_GUNFLIP, CLOTHING_TRAIT)
 
 /obj/item/storage/belt/holster/dropped(mob/user)
