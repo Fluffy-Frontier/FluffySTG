@@ -78,6 +78,9 @@
 	SIGNAL_HANDLER
 	if(speech_args[SPEECH_LANGUAGE] in languages_native)
 		return FALSE //no changes
+	// FF add, for auto-accent
+	if(HAS_TRAIT(source, TRAIT_NO_ACCENT))
+		return FALSE //accent disabled by user.
 	modify_speech(source, speech_args)
 
 /obj/item/organ/internal/tongue/proc/modify_speech(datum/source, list/speech_args)

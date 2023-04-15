@@ -1054,3 +1054,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define SPEAKING_FROM_TONGUE "tongue"
 ///trait source that sign language should use
 #define SPEAKING_FROM_HANDS "hands"
+
+//FF add, for auto-accent
+#define TRAIT_NO_ACCENT "has_auto_accent"
