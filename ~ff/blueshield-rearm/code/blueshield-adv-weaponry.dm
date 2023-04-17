@@ -33,7 +33,7 @@
 
 /obj/item/gun/ballistic/revolver/blueshield
 	name = "\improper SR-8 energy revolver"
-	desc = "In development."
+	desc = "SR-8 is a experemental energy revolver that utilises special energy capsules."
 	icon = '~ff/blueshield-rearm/icons/sr-8.dmi'
 	righthand_file = '~ff/blueshield-rearm/icons/righthand.dmi'
 	lefthand_file = '~ff/blueshield-rearm/icons/lefthand.dmi'
@@ -47,16 +47,12 @@
 	set name = "Spin Chamber"
 	set category = "Object"
 	set desc = "Click to spin your revolver's chamber."
-
 	var/mob/M = usr
-
 	if(M.stat || !in_range(M,src))
 		return
-
 	if (recent_spin > world.time)
 		return
 	recent_spin = world.time + spin_delay
-
 	usr.visible_message(self_message = span_notice("You try to spin [src]'s chamber, but it is not spinnable and constructionaly more alike internal magazine."))
 
 
@@ -74,29 +70,29 @@
 
 /obj/item/ammo_box/revolver/blueshield
 	name = "\improper blueshield's gun speedloader"
-	desc = "Speedloader designed to help reloading special energy capsule revolver. This speedloader meant to hold basic lethal capsules."
+	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier that regular ones due heavy over-engineering."
 	icon_state = "speedloader"
 	icon = '~ff/blueshield-rearm/icons/mags.dmi'
 	ammo_type = null
 	// can_be_printed var is not really working, so i will have to use this tricky way for now.
 	var/actual_ammo_type = /obj/item/ammo_casing/energy_capsule
 	max_ammo = 8
-	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	multiple_sprites = AMMO_BOX_ONE_SPRITE
 	caliber = "energy_capsule"
 	start_empty = TRUE
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/revolver/blueshield/Initialize(mapload)
 	. = ..()
-	if(!start_empty)
-		// that refil proc should be removed when ammo workbenches will actualy check can_be_printed var
+	if(!start_empty) // this whole IF statement will be removed when can_be_printed var will be fixed.
 		top_off(load_type = actual_ammo_type, starting = TRUE)
+
 	update_ammo_count()
 
 
 /obj/item/ammo_box/revolver/blueshield/laser
 	name = "\improper SR-8 laser speedloader"
-	desc = "Speedloader designed to help reloading special energy revolver. This speedloader meant to hold basic lethal capsules."
+	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier that regular ones due heavy over-engineering. This speedloader meant to hold basic lethal capsules."
 	actual_ammo_type = /obj/item/ammo_casing/energy_capsule
 	icon_state = "speedloader_laser"
 	start_empty = FALSE
@@ -104,14 +100,14 @@
 
 /obj/item/ammo_box/revolver/blueshield/stun
 	name = "\improper SR-8 s-shots speedloader"
-	desc = "Speedloader designed to help reloading special energy revolver. This speedloader meant to hold non-lethal disabler capsules."
+	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier that regular ones due heavy over-engineering. This speedloader meant to hold non-lethal disabler capsules."
 	actual_ammo_type = /obj/item/ammo_casing/energy_capsule/stun
 	icon_state = "speedloader_stun"
 	start_empty = FALSE
 
 /obj/item/ammo_box/revolver/blueshield/concentrated
 	name = "\improper SR-8 gun e-bullets speedloader"
-	desc = "Speedloader designed to help reloading special energy revolver. This speedloader meant to hold energy bullet lethal capsules."
+	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier that regular ones due heavy over-engineering. This speedloader meant to hold energy bullet lethal capsules."
 	actual_ammo_type = /obj/item/ammo_casing/energy_capsule/concentrated
 	start_empty = FALSE
 	icon_state = "speedloader_bullet"
@@ -129,7 +125,7 @@
 	icon = '~ff/blueshield-rearm/icons/ammo.dmi'
 	icon_state = "l-capsule"
 	projectile_type = /obj/projectile/beam/laser/hellfire
-	fire_sound = 'sound/weapons/laser3.ogg'
+	fire_sound = '~ff/blueshield-rearm/sounds/laser.ogg'
 	can_be_printed = FALSE
 
 /obj/item/ammo_casing/energy_capsule/stun
@@ -143,7 +139,7 @@
 	name = "e-bullet energy capsule"
 	desc = "Energy bulletcapsule for special weaponry. Energy capsules are special disposable micro-cells designed for special type of weaponry. That capsule is Energy Bullet subtype, that makes gun generate highly concentrated energy beam that acts like a bullet."
 	projectile_type = /obj/projectile/bullet/concentrated_energy
-	fire_sound = 'sound/weapons/laser2.ogg'
+	fire_sound = '~ff/blueshield-rearm/sounds/bullet.ogg'
 	icon_state = "b-capsule"
 
 /*
