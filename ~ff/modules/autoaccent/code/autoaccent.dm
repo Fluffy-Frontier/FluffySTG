@@ -1,16 +1,16 @@
-/client/verb/toggle_autoaccent()
+/mob/living/proc/toggle_autoaccent()
 	set name = "Toggle Auto-Accent"
 	set desc = "Toggle automatic accents for your species"
 	set category = "IC"
 
-	if (!mob)
+	if (!src)
 		to_chat("You cant toggle auto-accent in this state")
-	if (HAS_TRAIT(mob, TRAIT_NO_ACCENT))
-		REMOVE_TRAIT(mob, TRAIT_NO_ACCENT, "ooc_verb")
-		to_chat(src, "Auto-accent is now on")
+	if (HAS_TRAIT(src, TRAIT_NO_ACCENT))
+		REMOVE_TRAIT(src, TRAIT_NO_ACCENT, "ooc_verb")
+		to_chat(src.client, "Auto-accent is now on")
 	else
-		ADD_TRAIT(mob, TRAIT_NO_ACCENT, "ooc_verb")
-		to_chat(src, "Auto-accent is now off")
+		ADD_TRAIT(src, TRAIT_NO_ACCENT, "ooc_verb")
+		to_chat(src.client, "Auto-accent is now off")
 
 //If there is build-in func?
 /proc/text_mult(text, count)
