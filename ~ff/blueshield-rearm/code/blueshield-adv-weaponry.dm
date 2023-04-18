@@ -19,15 +19,15 @@
 	atom_storage.max_specific_storage = WEIGHT_CLASS_NORMAL
 	atom_storage.set_holdable(list(
 		/obj/item/gun/ballistic/revolver/blueshield,
-		/obj/item/ammo_box/revolver/blueshield,
+		/obj/item/ammo_box/revolver_blueshield,
 		))
 
 /obj/item/storage/belt/holster/energy/blueshield/PopulateContents()
 	. = ..()
 	new	/obj/item/gun/ballistic/revolver/blueshield(src)
-	new	/obj/item/ammo_box/revolver/blueshield/stun(src)
-	new	/obj/item/ammo_box/revolver/blueshield/laser(src)
-	new	/obj/item/ammo_box/revolver/blueshield/concentrated(src)
+	new	/obj/item/ammo_box/revolver_blueshield/stun(src)
+	new	/obj/item/ammo_box/revolver_blueshield/laser(src)
+	new	/obj/item/ammo_box/revolver_blueshield/concentrated(src)
 
 /obj/item/storage/belt/holster/energy/blueshield/equipped(mob/user, slot) // because when things are in suit storage slot - they are not using teshari's icons.
 	. = ..()
@@ -77,7 +77,7 @@
 	caliber = "energy_capsule"
 	max_ammo = 8
 
-/obj/item/ammo_box/revolver/blueshield
+/obj/item/ammo_box/revolver_blueshield
 	name = "\improper blueshield's gun speedloader"
 	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier that regular ones due heavy over-engineering."
 	icon_state = "speedloader"
@@ -91,7 +91,7 @@
 	start_empty = TRUE
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/ammo_box/revolver/blueshield/Initialize(mapload)
+/obj/item/ammo_box/revolver_blueshield/Initialize(mapload)
 	. = ..()
 	if(!start_empty) // this will be removed when can_be_printed var will be fixed.
 		top_off(load_type = actual_ammo_type, starting = TRUE)
@@ -99,7 +99,7 @@
 	update_ammo_count()
 
 
-/obj/item/ammo_box/revolver/blueshield/laser
+/obj/item/ammo_box/revolver_blueshield/laser
 	name = "\improper SR-8 laser speedloader"
 	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier that regular ones due heavy over-engineering. This speedloader meant to hold basic lethal capsules."
 	actual_ammo_type = /obj/item/ammo_casing/energy_capsule
@@ -107,14 +107,14 @@
 	start_empty = FALSE
 
 
-/obj/item/ammo_box/revolver/blueshield/stun
+/obj/item/ammo_box/revolver_blueshield/stun
 	name = "\improper SR-8 s-shots speedloader"
 	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier that regular ones due heavy over-engineering. This speedloader meant to hold non-lethal disabler capsules."
 	actual_ammo_type = /obj/item/ammo_casing/energy_capsule/stun
 	icon_state = "speedloader_stun"
 	start_empty = FALSE
 
-/obj/item/ammo_box/revolver/blueshield/concentrated
+/obj/item/ammo_box/revolver_blueshield/concentrated
 	name = "\improper SR-8 gun e-bullets speedloader"
 	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier that regular ones due heavy over-engineering. This speedloader meant to hold energy bullet lethal capsules."
 	actual_ammo_type = /obj/item/ammo_casing/energy_capsule/concentrated
@@ -172,16 +172,16 @@
 	name = "SR-8 s-shots speedloader"
 	desc = "Single speedloader for our blueshield's special SR-8 revolver. This one is non-lethal s-shots type."
 	cost = PAYCHECK_CREW * 4
-	contains = list(/obj/item/ammo_box/revolver/blueshield/stun)
+	contains = list(/obj/item/ammo_box/revolver_blueshield/stun)
 
 /datum/supply_pack/goody/sr8_ammo_laser
 	name = "SR-8 laser speedloader"
 	desc = "Single speedloader for our blueshield's special SR-8 revolver. This one is basic lethal laser type."
 	cost = PAYCHECK_CREW * 5
-	contains = list(/obj/item/ammo_box/revolver/blueshield/laser)
+	contains = list(/obj/item/ammo_box/revolver_blueshield/laser)
 
 /datum/supply_pack/goody/sr8_ammo_bullet
 	name = "SR-8 e-bullets speedloader"
 	desc = "Single speedloader for our blueshield's special SR-8 revolver. This one is e-bullet type."
 	cost = PAYCHECK_CREW * 6
-	contains = list(/obj/item/ammo_box/revolver/blueshield/concentrated)
+	contains = list(/obj/item/ammo_box/revolver_blueshield/concentrated)
