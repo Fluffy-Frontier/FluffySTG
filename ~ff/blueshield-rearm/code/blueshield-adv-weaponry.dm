@@ -82,7 +82,7 @@
 	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier that regular ones due heavy over-engineering."
 	icon_state = "speedloader"
 	icon = '~ff/blueshield-rearm/icons/mags.dmi'
-	ammo_type = null
+	ammo_type = /obj/item/ammo_casing
 	// can_be_printed var is not really working, so i have to use this tricky way for now.
 	var/actual_ammo_type = /obj/item/ammo_casing/energy_capsule
 	max_ammo = 8
