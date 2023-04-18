@@ -9,7 +9,9 @@
 	icon = '~ff/blueshield-rearm/icons/holster.dmi'
 	icon_state = "blueshield_holster"
 	worn_icon = '~ff/blueshield-rearm/icons/holster.dmi'
+	worn_icon_teshari = '~ff/blueshield-rearm/icons/holster_teshari.dmi'
 	worn_icon_state = "blueshield_holster_worn"
+	
 
 /obj/item/storage/belt/holster/energy/blueshield/Initialize(mapload)
 	. = ..()
@@ -26,6 +28,13 @@
 	new	/obj/item/ammo_box/revolver/blueshield/stun(src)
 	new	/obj/item/ammo_box/revolver/blueshield/laser(src)
 	new	/obj/item/ammo_box/revolver/blueshield/concentrated(src)
+
+/obj/item/storage/belt/holster/energy/blueshield/equipped(mob/user, slot) // because when things are in suit storage slot - they are not using teshari's icons.
+	. = ..()
+	if(is_species(user, /datum/species/teshari))
+		worn_icon = '~ff/blueshield-rearm/icons/holster_teshari.dmi'
+	else
+		worn_icon = '~ff/blueshield-rearm/icons/holster.dmi'
 
 /*
 *	 New gun.
@@ -74,7 +83,7 @@
 	icon_state = "speedloader"
 	icon = '~ff/blueshield-rearm/icons/mags.dmi'
 	ammo_type = null
-	// can_be_printed var is not really working, so i will have to use this tricky way for now.
+	// can_be_printed var is not really working, so i have to use this tricky way for now.
 	var/actual_ammo_type = /obj/item/ammo_casing/energy_capsule
 	max_ammo = 8
 	multiple_sprites = AMMO_BOX_ONE_SPRITE
@@ -84,7 +93,7 @@
 
 /obj/item/ammo_box/revolver/blueshield/Initialize(mapload)
 	. = ..()
-	if(!start_empty) // this whole IF statement will be removed when can_be_printed var will be fixed.
+	if(!start_empty) // this will be removed when can_be_printed var will be fixed.
 		top_off(load_type = actual_ammo_type, starting = TRUE)
 
 	update_ammo_count()
@@ -161,7 +170,7 @@
 
 /datum/supply_pack/goody/sr8_ammo_stun
 	name = "SR-8 s-shots speedloader"
-	desc = "Single speedloader for our blueshield's special SR-8 revolver. This one is s-shots type."
+	desc = "Single speedloader for our blueshield's special SR-8 revolver. This one is non-lethal s-shots type."
 	cost = PAYCHECK_CREW * 4
 	contains = list(/obj/item/ammo_box/revolver/blueshield/stun)
 
@@ -173,6 +182,6 @@
 
 /datum/supply_pack/goody/sr8_ammo_bullet
 	name = "SR-8 e-bullets speedloader"
-	desc = "Single speedloader for our blueshield's special SR-8 revolver. This one is s-shots type."
+	desc = "Single speedloader for our blueshield's special SR-8 revolver. This one is e-bullet type."
 	cost = PAYCHECK_CREW * 6
 	contains = list(/obj/item/ammo_box/revolver/blueshield/concentrated)
