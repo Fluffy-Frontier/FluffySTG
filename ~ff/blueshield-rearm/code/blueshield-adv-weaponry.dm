@@ -82,27 +82,18 @@
 	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier that regular ones due heavy over-engineering."
 	icon_state = "speedloader"
 	icon = '~ff/blueshield-rearm/icons/mags.dmi'
-	ammo_type = /obj/item/ammo_casing
-	// can_be_printed var is not really working, so i have to use this tricky way for now.
-	var/actual_ammo_type = /obj/item/ammo_casing/energy_capsule
+	ammo_type = /obj/item/ammo_casing/energy_capsule
 	max_ammo = 8
 	multiple_sprites = AMMO_BOX_ONE_SPRITE
 	caliber = "energy_capsule"
 	start_empty = TRUE
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/ammo_box/revolver_blueshield/Initialize(mapload)
-	. = ..()
-	if(!start_empty) // this will be removed when can_be_printed var will be fixed.
-		top_off(load_type = actual_ammo_type, starting = TRUE)
-
-	update_ammo_count()
-
 
 /obj/item/ammo_box/revolver_blueshield/laser
 	name = "\improper SR-8 laser speedloader"
 	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier that regular ones due heavy over-engineering. This speedloader meant to hold basic lethal capsules."
-	actual_ammo_type = /obj/item/ammo_casing/energy_capsule
+	ammo_type = /obj/item/ammo_casing/energy_capsule
 	icon_state = "speedloader_laser"
 	start_empty = FALSE
 
@@ -110,14 +101,14 @@
 /obj/item/ammo_box/revolver_blueshield/stun
 	name = "\improper SR-8 s-shots speedloader"
 	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier that regular ones due heavy over-engineering. This speedloader meant to hold non-lethal disabler capsules."
-	actual_ammo_type = /obj/item/ammo_casing/energy_capsule/stun
+	ammo_type = /obj/item/ammo_casing/energy_capsule/stun
 	icon_state = "speedloader_stun"
 	start_empty = FALSE
 
 /obj/item/ammo_box/revolver_blueshield/concentrated
 	name = "\improper SR-8 gun e-bullets speedloader"
 	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier that regular ones due heavy over-engineering. This speedloader meant to hold energy bullet lethal capsules."
-	actual_ammo_type = /obj/item/ammo_casing/energy_capsule/concentrated
+	ammo_type = /obj/item/ammo_casing/energy_capsule/concentrated
 	start_empty = FALSE
 	icon_state = "speedloader_bullet"
 
