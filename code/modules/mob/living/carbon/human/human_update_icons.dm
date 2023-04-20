@@ -429,7 +429,19 @@ There are several things that need to be remembered:
 		var/mutable_appearance/head_overlay = head.build_worn_icon(default_layer = HEAD_LAYER, default_icon_file = icon_file, override_file = mutant_override ? icon_file : null) // SKYRAT EDIT CHANGE
 
 		if(!mutant_override && (OFFSET_HEAD in dna.species.offset_features)) // SKYRAT EDIT CHANGE
-			head_overlay.pixel_x += dna.species.offset_features[OFFSET_HEAD][1]
+			// FLUFFY FRONTIER EDIT: REMOVAL
+			// Original line: head_overlay.pixel_x += dna.species.offset_features[OFFSET_HEAD][1]
+			// FLUFFY FRONTIER EDIT: REMOVAL END
+			// FLUFFY FRONTIER EDIT: ADDITION BEGIN
+			if(isteshari(src)) // Its help us to deal with offset hats on different dirrections!
+				switch(src.dir)
+					if(EAST|SOUTH|NORTH)
+						head_overlay.pixel_x += (dna.species.offset_features[OFFSET_HEAD][1])
+					if(WEST|SOUTHEAST|NORTHWEST)
+						head_overlay.pixel_x += (dna.species.offset_features[OFFSET_HEAD][1] - 2)
+			else
+				head_overlay.pixel_x += dna.species.offset_features[OFFSET_HEAD][1]
+			// FLUFFY FRONTIER EDIT: ADDITION END
 			head_overlay.pixel_y += dna.species.offset_features[OFFSET_HEAD][2]
 		overlays_standing[HEAD_LAYER] = head_overlay
 

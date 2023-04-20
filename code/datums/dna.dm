@@ -550,6 +550,10 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 
 /mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE)
 	..()
+	// FLUFFY FRONTIER EDIT: ADDITION BEGIN
+	if(mrace == SPECIES_TESHARI) // Not for all species. Only for Teshari. I dont care about other species with that trouble!
+		RegisterSignal(src, COMSIG_ATOM_DIR_CHANGE, PROC_REF(teshari_rotate))
+	// FLUFFY FRONTIER EDIT: ADDITION END
 	if(icon_update)
 		update_body(is_creating = TRUE)
 		update_mutations_overlay()// no lizard with human hulk overlay please.

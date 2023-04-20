@@ -81,3 +81,11 @@
 	tesh.dna.mutant_bodyparts["tail"] = list(MUTANT_INDEX_NAME = "Teshari (Default)", MUTANT_INDEX_COLOR_LIST = list(base_color, base_color, ear_color))
 	regenerate_organs(tesh, src, visual_only = TRUE)
 	tesh.update_body(TRUE)
+// FLUFFY FRONTIER EDIT: ADDITION BEGIN
+/mob/living/carbon/human/proc/teshari_rotate(atom/source, dir, newdir) // This proc helps to handle the signal.
+	SIGNAL_HANDLER // dna.dm set_species()
+	if(dir==newdir) // Occur the spam of other procs.
+		return
+	remove_overlay(HEAD_LAYER)
+	update_worn_head()
+// FLUFFY FRONTIER EDIT: ADDITION END
