@@ -3,8 +3,8 @@
 */
 
 /obj/item/storage/belt/holster/energy/blueshield
-	name = "5GUARD-S model shoulder holster"
-	desc = "A rather plain pair of shoulder holsters with a bit of insulated padding inside. Designed to hold blueshield's energy weaponry and ammo for it."
+	name = "5GUARD-S model holster"
+	desc = "Pretty robust webbing with magnetic holsters. Designed to hold blueshield's energy weaponry and ammo for it."
 	badass = FALSE
 	icon = '~ff/blueshield-rearm/icons/holster.dmi'
 	icon_state = "blueshield_holster"
@@ -42,7 +42,7 @@
 
 /obj/item/gun/ballistic/revolver/blueshield
 	name = "\improper SR-8 energy revolver"
-	desc = "SR-8 is a experemental energy revolver that utilises special energy capsules."
+	desc = "SR-8 is an experemental energy revolver that utilises special energy capsules."
 	icon = '~ff/blueshield-rearm/icons/sr-8.dmi'
 	righthand_file = '~ff/blueshield-rearm/icons/righthand.dmi'
 	lefthand_file = '~ff/blueshield-rearm/icons/lefthand.dmi'
@@ -79,7 +79,7 @@
 
 /obj/item/ammo_box/revolver_blueshield
 	name = "\improper blueshield's gun speedloader"
-	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier that regular ones due heavy over-engineering."
+	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier than regular ones due heavy over-engineering."
 	icon_state = "speedloader"
 	icon = '~ff/blueshield-rearm/icons/mags.dmi'
 	ammo_type = /obj/item/ammo_casing/energy_capsule
@@ -92,7 +92,7 @@
 
 /obj/item/ammo_box/revolver_blueshield/laser
 	name = "\improper SR-8 laser speedloader"
-	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier that regular ones due heavy over-engineering. This speedloader meant to hold basic lethal capsules."
+	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier than regular ones due heavy over-engineering. This speedloader meant to hold basic lethal capsules."
 	ammo_type = /obj/item/ammo_casing/energy_capsule
 	icon_state = "speedloader_laser"
 	start_empty = FALSE
@@ -100,14 +100,14 @@
 
 /obj/item/ammo_box/revolver_blueshield/stun
 	name = "\improper SR-8 s-shots speedloader"
-	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier that regular ones due heavy over-engineering. This speedloader meant to hold non-lethal disabler capsules."
+	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier than regular ones due heavy over-engineering. This speedloader meant to hold non-lethal disabler capsules."
 	ammo_type = /obj/item/ammo_casing/energy_capsule/stun
 	icon_state = "speedloader_stun"
 	start_empty = FALSE
 
 /obj/item/ammo_box/revolver_blueshield/concentrated
 	name = "\improper SR-8 gun e-bullets speedloader"
-	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier that regular ones due heavy over-engineering. This speedloader meant to hold energy bullet lethal capsules."
+	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier than regular ones due heavy over-engineering. This speedloader meant to hold energy bullet lethal capsules."
 	ammo_type = /obj/item/ammo_casing/energy_capsule/concentrated
 	start_empty = FALSE
 	icon_state = "speedloader_bullet"
