@@ -93,3 +93,13 @@
 /datum/augment_item/organ/tongue/forked
 	name = "Forked tongue"
 	path = /obj/item/organ/internal/tongue/lizard
+
+//FF add, for auto-accent for anthropomorphs
+/datum/augment_item/organ/tongue/cat
+	name = "Cat tongue"
+	path = /obj/item/organ/internal/tongue/cat
+
+/datum/augment_item/organ/tongue/dog
+	name = "Dog tongue"
+	path = /obj/item/organ/internal/tongue/dog
+//FF add ends.
