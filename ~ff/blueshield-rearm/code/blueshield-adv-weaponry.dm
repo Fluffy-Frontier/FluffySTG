@@ -65,7 +65,7 @@
 	usr.visible_message(self_message = span_notice("You try to spin [src]'s chamber, but it is not spinnable and constructionaly more alike internal magazine."))
 
 
-/obj/item/gun/ballistic/revolver/revolution/give_manufacturer_examine()
+/obj/item/gun/ballistic/revolver/blueshield/give_manufacturer_examine()
 	AddComponent(/datum/component/manufacturer_examine, COMPANY_NANOTRASEN)
 
 /obj/item/gun/ballistic/revolver/blueshield/fire_sounds()
