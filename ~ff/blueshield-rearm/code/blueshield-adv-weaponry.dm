@@ -127,6 +127,7 @@
 	projectile_type = /obj/projectile/beam/laser/hellfire
 	fire_sound = '~ff/blueshield-rearm/sounds/laser.ogg'
 	can_be_printed = FALSE
+	harmful = TRUE
 
 /obj/item/ammo_casing/energy_capsule/stun
 	name = "stun-shot energy capsule"
@@ -134,6 +135,7 @@
 	projectile_type = /obj/projectile/beam/disabler/charged
 	fire_sound = 'sound/weapons/taser2.ogg'
 	icon_state = "d-capsule"
+	harmful = FALSE
 
 /obj/item/ammo_casing/energy_capsule/concentrated
 	name = "e-bullet energy capsule"
