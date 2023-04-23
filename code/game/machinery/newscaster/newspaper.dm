@@ -36,6 +36,12 @@
 	if(!istype(user) || !user.can_read(src))
 		return
 	var/dat
+	//FF ADD BEGIN
+	//513 has utf-8 support.
+	//This could still break when text (ciryllic) is written to newscaster
+	//with the windows-1251 encoding, but this should not happen
+	dat+="<meta charset=\"utf-8\">"
+	//FF ADD END
 	pages = 0
 	switch(screen)
 		if(0) //Cover
