@@ -906,9 +906,6 @@
   - bugfix: the character preview in Select-equipment and the Outfit-O-Tron 9000 are
       once again functional
 2023-04-22:
-  ReezeBL:
-  - rscadd: added auto-accent for vulpkanins, tajarans and felinids and anthromorphs.
-  - qol: any auto-accent can be disabled with IC -> Toggle auto-accent.
   GoldenAlpharex:
   - bugfix: Fixed the visual z-fighting (item flickering) with a temporary solution,
       that will get reverted once the Wallening happens.
@@ -929,6 +926,9 @@
       expected.
   RatFromTheJungle:
   - code_imp: removed non-modular edit
+  ReezeBL:
+  - rscadd: added auto-accent for vulpkanins, tajarans and felinids and anthromorphs.
+  - qol: any auto-accent can be disabled with IC -> Toggle auto-accent.
   SkyratBot:
   - rscadd: Adds the Hug Relaxation Shuttle as an emergency shuttle
   - bugfix: Body purist headrevs having a bad time with their implant
@@ -992,3 +992,7 @@
       called 'a cafe visitor'
   - bugfix: buttplugs if inserted too hastily will no longer cause the victim to redirect
       their pain to the server by spamming it with runtime errors.
+2023-04-24:
+  LT3:
+  - code_imp: Added TGUI mobility check bypass
+  - qol: You can now use your PDA while laying down
