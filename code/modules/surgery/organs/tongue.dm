@@ -78,6 +78,9 @@
 	SIGNAL_HANDLER
 	if(speech_args[SPEECH_LANGUAGE] in languages_native)
 		return FALSE //no changes
+	// FF add, for auto-accent
+	if(HAS_TRAIT(source, TRAIT_NO_ACCENT))
+		return FALSE //accent disabled by user.
 	modify_speech(source, speech_args)
 
 /obj/item/organ/internal/tongue/proc/modify_speech(datum/source, list/speech_args)
@@ -90,6 +93,8 @@
 	ADD_TRAIT(tongue_owner, TRAIT_SPEAKS_CLEARLY, SPEAKING_FROM_TONGUE)
 	if (modifies_speech)
 		RegisterSignal(tongue_owner, COMSIG_MOB_SAY, PROC_REF(handle_speech))
+		//FF add: verb to modify auto-accent
+		tongue_owner.verbs += /mob/living/proc/toggle_autoaccent
 
 	/* This could be slightly simpler, by making the removal of the
 	* NO_TONGUE_TRAIT conditional on the tongue's `sense_of_taste`, but
@@ -105,6 +110,10 @@
 	REMOVE_TRAIT(tongue_owner, TRAIT_SPEAKS_CLEARLY, SPEAKING_FROM_TONGUE)
 	temp_say_mod = ""
 	UnregisterSignal(tongue_owner, COMSIG_MOB_SAY)
+
+	//FF add: verb to modify auto-accent
+	tongue_owner.verbs -= /mob/living/proc/toggle_autoaccent
+
 	REMOVE_TRAIT(tongue_owner, TRAIT_AGEUSIA, ORGAN_TRAIT)
 	// Carbons by default start with NO_TONGUE_TRAIT caused TRAIT_AGEUSIA
 	ADD_TRAIT(tongue_owner, TRAIT_AGEUSIA, NO_TONGUE_TRAIT)
@@ -473,11 +482,10 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 	name = "bananium tongue"
 	desc = "A bananium geode mostly used for honking."
 	say_mod = "honks"
-
-	icon = 'icons/obj/weapons/items_and_weapons.dmi'
+	icon = 'icons/obj/weapons/horn.dmi'
+	icon_state = "gold_horn"
 	lefthand_file = 'icons/mob/inhands/equipment/horns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/horns_righthand.dmi'
-	icon_state = "gold_horn"
 
 /obj/item/organ/internal/tongue/jelly
 	name = "jelly tongue"
