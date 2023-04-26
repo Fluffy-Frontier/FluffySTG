@@ -155,10 +155,14 @@ Essentially, power cells that malfunction if not used in an MCR, and should only
 	chargerate = 300
 
 /obj/item/stock_parts/cell/microfusion/proc/cell_removal_discharge()
+	// FLUFFY FRONTIER EDIT: REMOVAL BEGIN - MCR FIX
+	/*
 	chargerate = 0
 	charge = 0
 	do_sparks(4, FALSE, src)
 	update_appearance()
+	*/
+	// FLUFFY FRONTIER EDIT: REMOVAL END
 
 /datum/crafting_recipe/makeshift/microfusion_cell
 	name = "Makeshift Microfusion Cell"
