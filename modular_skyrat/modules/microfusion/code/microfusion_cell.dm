@@ -16,7 +16,7 @@ Essentially, power cells that malfunction if not used in an MCR, and should only
 	maxcharge = 1200 //12 shots
 	chargerate = 0 //MF cells should be unable to recharge if they are not currently inside of an MCR
 	microfusion_readout = TRUE
-	empty = FLASE // FLUFFY FRONTIER EDIT. ORIGINAL VALUE: TRUE //MF cells should start empty
+	empty = FALSE // FLUFFY FRONTIER EDIT. ORIGINAL VALUE: TRUE //MF cells should start empty
 
 	/// A hard referenced list of upgrades currently attached to the weapon.
 	var/list/attachments = list()
