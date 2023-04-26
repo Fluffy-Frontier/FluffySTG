@@ -565,9 +565,15 @@
 	if(cell)
 		hotswap = TRUE
 	var/obj/item/stock_parts/cell/old_cell = cell
+	
+	// FLUFFY FRONTIER EDIT: REMOVAL BEGIN - MCR FIX
+	/*
 	if(inserting_cell.charge)
 		balloon_alert(user, "can't insert a charged cell!")
 		return FALSE
+	*/
+	// FLUFFY FRONTIER EDIT: REMOVAL END
+	
 	if(display_message)
 		balloon_alert(user, "cell inserted")
 	if(hotswap)
