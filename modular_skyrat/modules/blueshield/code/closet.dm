@@ -6,6 +6,11 @@
 
 /obj/structure/closet/secure_closet/blueshield/New()
 	..()
+	// FLUFFY FRONTIER EDIT: ADDITION
+	// Sometimes blueshields don't want to have tackler gloves,
+	// So i gave him same gloves, but without tackler ability.
+	new /obj/item/clothing/gloves/combat(src)
+	// FLUFFY FRONTIER EDIT END.
 	new /obj/item/storage/secure/briefcase(src)
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/grenade/flashbang(src)

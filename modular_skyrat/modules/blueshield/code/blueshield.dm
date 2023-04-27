@@ -54,8 +54,13 @@
 	ears = /obj/item/radio/headset/headset_bs/alt
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	backpack_contents = list(
-		/obj/item/storage/box/gunset/blueshield = 1,
+		// FLUFFY FRONTIER EDIT: REMOVAL
+		// /obj/item/storage/box/gunset/blueshield = 1,
+		// FLUFFY FRONTIER EDIT END.
 	)
+	// FLUFFY FRONTIER EDIT: ADDITION
+	suit_store = /obj/item/storage/belt/holster/energy/blueshield
+	// FLUFFY FRONTIER EDIT END.
 	implants = list(/obj/item/implant/mindshield)
 	backpack = /obj/item/storage/backpack/blueshield
 	satchel = /obj/item/storage/backpack/satchel/blueshield
