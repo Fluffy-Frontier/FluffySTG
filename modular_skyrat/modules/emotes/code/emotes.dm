@@ -1,8 +1,5 @@
 
-//FF EDIT BEGIN
-//ORIGINAL LINE: #define EMOTE_DELAY (5 SECONDS) //To prevent spam emotes.
-#define EMOTE_DELAY (2 SECONDS)
-//FF EDIT END
+#define EMOTE_DELAY (2 SECONDS) //FF EDIT. ORIGINAL VALUE: (5 SECONDS)
 
 /mob
 	var/nextsoundemote = 1 //Time at which the next emote can be played
