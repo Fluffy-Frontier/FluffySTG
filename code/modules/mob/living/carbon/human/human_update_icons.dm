@@ -433,11 +433,11 @@ There are several things that need to be remembered:
 			// Original line: head_overlay.pixel_x += dna.species.offset_features[OFFSET_HEAD][1]
 			// FLUFFY FRONTIER EDIT: REMOVAL END
 			// FLUFFY FRONTIER EDIT: ADDITION BEGIN
-			if(isteshari(src)) // Its help us to deal with offset hats on different dirrections!
+			if(isteshari(src))// Its help us to deal with offset hats on different dirrections!
 				switch(src.dir)
-					if(EAST|SOUTH|NORTH)
+					if(EAST, SOUTHEAST, NORTHEAST)
 						head_overlay.pixel_x += (dna.species.offset_features[OFFSET_HEAD][1])
-					if(WEST|SOUTHEAST|NORTHWEST)
+					if(WEST, SOUTHWEST, NORTHWEST)
 						head_overlay.pixel_x += (dna.species.offset_features[OFFSET_HEAD][1] - 2)
 			else
 				head_overlay.pixel_x += dna.species.offset_features[OFFSET_HEAD][1]

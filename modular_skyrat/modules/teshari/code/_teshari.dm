@@ -84,8 +84,8 @@
 // FLUFFY FRONTIER EDIT: ADDITION BEGIN
 /mob/living/carbon/human/proc/teshari_rotate(atom/source, dir, newdir) // This proc helps to handle the signal.
 	SIGNAL_HANDLER // dna.dm set_species()
-	if(dir==newdir) // Occur the spam of other procs.
+	if(newdir == 0 || dir == newdir) // Occur the spam of our proc.
 		return
-	remove_overlay(HEAD_LAYER)
+	src.dir = newdir // Actually it brokes nothing. But dont make shitcode like that again.
 	update_worn_head()
 // FLUFFY FRONTIER EDIT: ADDITION END
