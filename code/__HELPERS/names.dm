@@ -179,6 +179,7 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 	var/drinks = strings(ION_FILE, "iondrinks")
 	var/locations = strings(LOCATIONS_FILE, "locations")
 	*/
+
 	var/nouns = strings(RUS_CODEWORDS, "abstract")
 	var/objects = strings(RUS_CODEWORDS, "objects")
 	var/adjectives = strings(RUS_CODEWORDS, "adjectives")
