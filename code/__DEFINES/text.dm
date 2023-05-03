@@ -64,3 +64,5 @@
 #define HALLUCINATION_FILE "hallucination.json"
 /// File location for ninja lines
 #define NINJA_FILE "ninja.json"
+/// FLUFFY FRONTIER ADDITION
+#define RUS_CODEWORDS "ff/ruscodewords.json"
