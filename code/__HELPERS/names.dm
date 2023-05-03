@@ -170,6 +170,15 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 
 	var/list/safety = list(1,2,3)//Tells the proc which options to remove later on.
 	// FLUFFY FRONTIER: EDIT BEGIN
+	/*  ORIGINAL CODE:
+	var/nouns = strings(ION_FILE, "ionabstract")
+	var/objects = strings(ION_FILE, "ionobjects")
+	var/adjectives = strings(ION_FILE, "ionadjectives")
+	var/threats = strings(ION_FILE, "ionthreats")
+	var/foods = strings(ION_FILE, "ionfood")
+	var/drinks = strings(ION_FILE, "iondrinks")
+	var/locations = strings(LOCATIONS_FILE, "locations")
+	*/
 	var/nouns = strings(RUS_CODEWORDS, "abstract")
 	var/objects = strings(RUS_CODEWORDS, "objects")
 	var/adjectives = strings(RUS_CODEWORDS, "adjectives")
