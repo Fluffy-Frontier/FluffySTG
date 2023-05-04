@@ -170,23 +170,13 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 
 	var/list/safety = list(1,2,3)//Tells the proc which options to remove later on.
 	// FLUFFY FRONTIER: EDIT BEGIN
-	/*  ORIGINAL CODE:
-	var/nouns = strings(ION_FILE, "ionabstract")
-	var/objects = strings(ION_FILE, "ionobjects")
-	var/adjectives = strings(ION_FILE, "ionadjectives")
-	var/threats = strings(ION_FILE, "ionthreats")
-	var/foods = strings(ION_FILE, "ionfood")
-	var/drinks = strings(ION_FILE, "iondrinks")
-	var/locations = strings(LOCATIONS_FILE, "locations")
-	*/
-
-	var/nouns = strings(RUS_CODEWORDS, "abstract")
-	var/objects = strings(RUS_CODEWORDS, "objects")
-	var/adjectives = strings(RUS_CODEWORDS, "adjectives")
-	var/threats = strings(RUS_CODEWORDS, "threats")
-	var/foods = strings(RUS_CODEWORDS, "food")
-	var/drinks = strings(RUS_CODEWORDS, "drinks")
-	var/locations = strings(RUS_CODEWORDS, "locations")
+	var/nouns = strings(RUS_CODEWORDS, "nouns", RUS_CODEWORDS_DIR)
+	var/objects = strings(RUS_CODEWORDS, "objects", RUS_CODEWORDS_DIR)
+	var/adjectives = strings(RUS_CODEWORDS, "adjectives", RUS_CODEWORDS_DIR)
+	var/threats = strings(RUS_CODEWORDS, "threats", RUS_CODEWORDS_DIR)
+	var/foods = strings(RUS_CODEWORDS, "food", RUS_CODEWORDS_DIR)
+	var/drinks = strings(RUS_CODEWORDS, "drinks", RUS_CODEWORDS_DIR)
+	var/locations = strings(RUS_CODEWORDS, "locations", RUS_CODEWORDS_DIR)
 	// FLUFFY FRONTIER: EDIT END
 	var/list/names = list()
 	for(var/datum/record/crew/target in GLOB.manifest.general)//Picks from crew manifest.
