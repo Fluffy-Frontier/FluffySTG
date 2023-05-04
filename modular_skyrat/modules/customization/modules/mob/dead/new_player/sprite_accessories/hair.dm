@@ -475,6 +475,142 @@
 	name = "Tri Bun Long"
 	icon_state = "hair_tri_bun_long"
 
+/datum/sprite_accessory/hair/skyrat/bobcut_over_eye_1
+	name = "Bobcut over eye 1"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_bobcut_over_eye_1"
+
+/datum/sprite_accessory/hair/skyrat/bobcut_over_eye_2
+	name = "Bobcut over eye 2"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_bobcut_over_eye_2"
+
+/datum/sprite_accessory/hair/skyrat/bobcut_over_eye_3
+	name = "Bobcut over eye 3"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_bobcut_over_eye_3"
+
+/datum/sprite_accessory/hair/skyrat/fluffy
+	name = "Fluffy"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_fluffy"
+
+/datum/sprite_accessory/hair/skyrat/fluffy_long
+	name = "Fluffy long"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_fluffy_long"
+
+/datum/sprite_accessory/hair/skyrat/khmuro
+	name = "Khmuro"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_khmuro"
+
+/datum/sprite_accessory/hair/skyrat/kobeni_1
+	name = "Kobeni 1"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_kobeni_1"
+
+/datum/sprite_accessory/hair/skyrat/kobeni_2
+	name = "Kobeni 2"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_kobeni_2"
+
+/datum/sprite_accessory/hair/skyrat/over_ear_1
+	name = "Over ear 1"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_over_ear_1"
+
+/datum/sprite_accessory/hair/skyrat/over_ear_2
+	name = "Over ear 2"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_over_ear_2"
+
+/datum/sprite_accessory/hair/skyrat/over_eye
+	name = "Over eye"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_over_eye"
+
+/datum/sprite_accessory/hair/skyrat/ponytail
+	name = "Ponytail"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_ponytail"
+
+/datum/sprite_accessory/hair/skyrat/ponytail_long
+	name = "Ponytail long"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_ponytail_long"
+
+/datum/sprite_accessory/hair/skyrat/ponytail_short
+	name = "Ponytail short"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_ponytail_short"
+
+/datum/sprite_accessory/hair/skyrat/simple
+	name = "Simple"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_simple"
+
+/datum/sprite_accessory/hair/skyrat/simple_long
+	name = "Simple long"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_simple_long"
+
+/datum/sprite_accessory/hair/skyrat/simple_short
+	name = "Simple short"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_simple_short"
+
+/datum/sprite_accessory/hair/skyrat/strict
+	name = "Strict"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_strict"
+
+/datum/sprite_accessory/hair/skyrat/strict_long
+	name = "Strict long"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_strict_long"
+
+/datum/sprite_accessory/hair/skyrat/strict_short
+	name = "Strict short"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_strict_short"
+
+/datum/sprite_accessory/hair/skyrat/thin_ponytail
+	name = "Thin ponytail"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_thin_ponytail"
+
+/datum/sprite_accessory/hair/skyrat/thin_ponytail_long
+	name = "Thin ponytail long"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_thin_ponytail_long"
+
+/datum/sprite_accessory/hair/skyrat/thin_ponytail_short
+	name = "Thin ponytail short"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_thin_ponytail_short"
+
+/datum/sprite_accessory/hair/skyrat/twintails
+	name = "Twintails"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_twintails"
+
+/datum/sprite_accessory/hair/skyrat/twintails_long
+	name = "Twintails long"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_twintails_long"
+
+/datum/sprite_accessory/hair/skyrat/twintails_short
+	name = "Twintails short"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_twintails_short"
+
+/datum/sprite_accessory/hair/skyrat/upwards
+	name = "Upwards"
+	icon = '~ff/master_files/icons/mob/sprite_accessory/even_more_hair.dmi'
+	icon_state = "hair_upwards"
+
+
 // Facial hair
 
 /datum/sprite_accessory/facial_hair/skyrat
