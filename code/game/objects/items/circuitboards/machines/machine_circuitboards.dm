@@ -603,7 +603,7 @@
 		/obj/machinery/vending/imported/mothic = "Nomad Fleet Ration Chit Exchange", //SKYRAT EDIT ADDITION
 		/obj/machinery/vending/imported/tizirian = "Tizirian Imported Delicacies", //SKYRAT EDIT ADDITION
 		/obj/machinery/vending/wardrobe/sec_wardrobe/red = "Red SecDrobe", //FLUFFY FRONTIER EDIT
-		/obj/machinery/vending/wardrobe/sec_wardrobe/uni = "Universal SecDrobe",) //FLUFFY FRONTIER EDIT
+		/obj/machinery/vending/wardrobe/uni_sec_wardrobe = "Universal SecDrobe",) //FLUFFY FRONTIER EDIT
 
 /obj/item/circuitboard/machine/vendor/screwdriver_act(mob/living/user, obj/item/tool)
 	var/static/list/display_vending_names_paths

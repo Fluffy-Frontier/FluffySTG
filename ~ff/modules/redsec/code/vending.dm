@@ -1,4 +1,4 @@
-/obj/machinery/vending/wardrobe/sec_wardrobe/uni
+/obj/machinery/vending/wardrobe/uni_sec_wardrobe
 	name = "\improper Universal SecDrobe"
 	desc = "A vending machine for security and security-related clothing!"
 	product_ads = "Beat perps in style!;It's red and blue so you can't distinguish blood and water!;You have the right to be fashionable!;Now you can be the fashion police you always wanted to be!"
