@@ -55556,8 +55556,8 @@
 /turf/open/space/openspace,
 /area/station/solars/port)
 "sOq" = (
-/obj/machinery/vending/wardrobe/sec_wardrobe,
 /obj/machinery/status_display/ai/directional/west,
+/obj/machinery/vending/wardrobe/uni_sec_wardrobe,
 /turf/open/floor/iron/showroomfloor,
 /area/station/security/lockers)
 "sOr" = (
@@ -63640,6 +63640,11 @@
 	},
 /turf/open/floor/iron,
 /area/station/security/courtroom)
+"vBf" = (
+/obj/effect/turf_decal/bot,
+/obj/structure/closet/secure_closet/security/redsec/sec,
+/turf/open/floor/iron/showroomfloor,
+/area/station/security/lockers)
 "vBk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/external{
@@ -158604,9 +158609,9 @@ aaa
 aaa
 tag
 buQ
+vBf
 aJk
-aJk
-aJk
+vBf
 aJk
 tag
 abM

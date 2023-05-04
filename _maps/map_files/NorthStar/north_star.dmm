@@ -8403,6 +8403,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/station/medical/abandoned)
+"caW" = (
+/obj/effect/turf_decal/tile/red/fourcorners,
+/obj/structure/closet/secure_closet/security/redsec/sec,
+/turf/open/floor/iron/dark,
+/area/station/security/lockers)
 "cbm" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
@@ -47690,9 +47695,9 @@
 /turf/open/floor/iron/white,
 /area/station/science/circuits)
 "mHV" = (
-/obj/structure/closet/secure_closet/security/sec,
 /obj/structure/sign/poster/official/random/directional/north,
 /obj/effect/turf_decal/tile/red/fourcorners,
+/obj/structure/closet/secure_closet/security/redsec/sec,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "mIh" = (
@@ -80518,8 +80523,8 @@
 /turf/open/floor/plating/foam,
 /area/station/maintenance/floor3/starboard/fore)
 "vDz" = (
-/obj/machinery/vending/wardrobe/sec_wardrobe,
 /obj/effect/turf_decal/tile/red/fourcorners,
+/obj/machinery/vending/wardrobe/uni_sec_wardrobe,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "vDC" = (
@@ -314138,7 +314143,7 @@ bDL
 oFs
 cNQ
 mau
-apg
+caW
 dtM
 iqR
 orl
@@ -314395,7 +314400,7 @@ kHR
 jIZ
 ggS
 cwX
-apg
+caW
 dtM
 dGf
 nJC
@@ -314652,7 +314657,7 @@ mMj
 okJ
 rRU
 cwX
-apg
+caW
 dtM
 hFA
 aDE
@@ -314909,7 +314914,7 @@ bDL
 hvN
 wsi
 lXx
-apg
+caW
 dtM
 ptW
 mdL

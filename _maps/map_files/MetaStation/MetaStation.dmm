@@ -11028,10 +11028,10 @@
 /area/station/commons/lounge)
 "eft" = (
 /obj/structure/extinguisher_cabinet/directional/north,
-/obj/structure/closet/secure_closet/security/sec,
 /obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 4
 	},
+/obj/structure/closet/secure_closet/security/redsec/sec,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "efC" = (
@@ -37698,10 +37698,10 @@
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
 "nJu" = (
-/obj/structure/closet/secure_closet/security/sec,
 /obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 4
 	},
+/obj/structure/closet/secure_closet/security/redsec/sec,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "nJA" = (
@@ -42239,8 +42239,8 @@
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance/storage)
 "pti" = (
-/obj/structure/closet/secure_closet/security/sec,
 /obj/effect/turf_decal/tile/red/anticorner/contrasted,
+/obj/structure/closet/secure_closet/security/redsec/sec,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "ptH" = (
@@ -60556,10 +60556,10 @@
 /obj/machinery/camera/directional/east{
 	c_tag = "Security - Gear Room"
 	},
-/obj/machinery/vending/wardrobe/sec_wardrobe,
 /obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 8
 	},
+/obj/machinery/vending/wardrobe/uni_sec_wardrobe,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "vQY" = (

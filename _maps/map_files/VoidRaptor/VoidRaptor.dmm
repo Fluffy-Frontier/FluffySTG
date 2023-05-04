@@ -6059,12 +6059,12 @@
 /turf/closed/wall/r_wall,
 /area/station/maintenance/department/engine/atmos)
 "bSl" = (
-/obj/structure/closet/secure_closet/security/sec,
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 1
 	},
 /obj/machinery/newscaster/directional/north,
 /obj/effect/turf_decal/bot,
+/obj/structure/closet/secure_closet/security/redsec/sec,
 /turf/open/floor/iron/dark/smooth_edge,
 /area/station/security/lockers)
 "bSp" = (
@@ -20823,13 +20823,13 @@
 /turf/open/floor/iron/large,
 /area/station/commons/vacant_room/commissary)
 "gfk" = (
-/obj/structure/closet/secure_closet/security/sec,
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 5
 	},
 /obj/structure/reagent_dispensers/wall/peppertank/directional/east,
 /obj/machinery/firealarm/directional/north,
 /obj/effect/turf_decal/bot,
+/obj/structure/closet/secure_closet/security/redsec/sec,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "gfw" = (
@@ -29897,12 +29897,12 @@
 /turf/open/floor/grass,
 /area/station/service/hydroponics/garden)
 "iJB" = (
-/obj/structure/closet/secure_closet/security/sec,
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 1
 	},
 /obj/item/radio/intercom/directional/north,
 /obj/effect/turf_decal/bot,
+/obj/structure/closet/secure_closet/security/redsec/sec,
 /turf/open/floor/iron/dark/smooth_edge,
 /area/station/security/lockers)
 "iJC" = (
@@ -84527,11 +84527,11 @@
 	},
 /area/station/security/lockers)
 "xPT" = (
-/obj/machinery/vending/wardrobe/sec_wardrobe,
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 10
 	},
 /obj/effect/turf_decal/bot,
+/obj/machinery/vending/wardrobe/uni_sec_wardrobe,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "xPW" = (
