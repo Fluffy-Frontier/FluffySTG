@@ -64,10 +64,11 @@
 					/obj/item/clothing/suit/jacket/officer/tan = 5,
 					/obj/item/clothing/suit/jacket/officer/blue = 3,
 					/obj/item/clothing/head/beret/sec/navyofficer = 5,
-					/obj/item/clothing/glasses/hud/security/sunglasses/redsec = 3,
 					/obj/item/clothing/glasses/hud/security/sunglasses = 3,
+					/obj/item/clothing/glasses/hud/security/sunglasses/redsec = 3,
 	)
 
+	refill_canister = /obj/item/vending_refill/wardrobe/peacekeeper_wardrobe
 	light_color = "#abadcc"
 	vend_reply = "Kick these scumbags!"
 	extra_price = PAYCHECK_COMMAND * 6
