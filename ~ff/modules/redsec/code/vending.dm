@@ -25,13 +25,13 @@
 					/obj/item/clothing/under/rank/security/officer/skirt = 6,
 					/obj/item/clothing/under/rank/security/skyrat/utility/redsec = 6,
 					/obj/item/clothing/suit/toggle/jacket/sec/old = 6,
-					/obj/item/clothing/suit/armor/vest/alt/sec/redsec = 6,
+					/obj/item/clothing/suit/armor/vest/alt/sec/redsec = 6
 			),
 		),
 
 		list(
 			"name" = "BlueSec",
-			"icon" = "hat-cowboy",
+			"icon" = "user-tie",
 			"products" = list(
 					/obj/item/clothing/suit/hooded/wintercoat/security = 5,
 					/obj/item/clothing/suit/toggle/jacket/sec = 5,
@@ -55,7 +55,7 @@
 					/obj/item/clothing/head/costume/ushanka/sec = 10,
 					/obj/item/clothing/head/hats/sec/peacekeeper/sol = 5,
 					/obj/item/clothing/head/hats/sec/peacekeeper/sol/traffic = 5,
-					/obj/item/clothing/gloves/color/black/security = 10,
+					/obj/item/clothing/gloves/color/black/security = 10
 			),
 		),
 	)
@@ -65,10 +65,19 @@
 					/obj/item/clothing/suit/jacket/officer/blue = 3,
 					/obj/item/clothing/head/beret/sec/navyofficer = 5,
 					/obj/item/clothing/glasses/hud/security/sunglasses = 3,
-					/obj/item/clothing/glasses/hud/security/sunglasses/redsec = 3,
+					/obj/item/clothing/glasses/hud/security/sunglasses/redsec = 3
 	)
 
-	refill_canister = /obj/item/vending_refill/wardrobe/peacekeeper_wardrobe
+	refill_canister = /obj/item/vending_refill/wardrobe/unisec_wardrobe
 	light_color = "#abadcc"
 	vend_reply = "Kick these scumbags!"
 	extra_price = PAYCHECK_COMMAND * 6
+
+/obj/item/vending_refill/wardrobe/redsec_wardrobe
+	machine_name = "RedSec outfitting station"
+
+/obj/item/vending_refill/wardrobe/unisec_wardrobe
+	machine_name = "Universal Security outfitting station"
+
+/obj/machinery/vending/wardrobe/sec_wardrobe/red
+	refill_canister = /obj/item/vending_refill/wardrobe/redsec_wardrobe
