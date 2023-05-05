@@ -354,8 +354,6 @@
 		/obj/item/modular_computer/pda/expeditionary_corps,
 		/obj/item/knife/combat/marksman,
 	)
-	/// How many of the contains to put in the crate
-	var/num_contained = 3
 
 /datum/supply_pack/misc/vanguard_surplus/fill(obj/structure/closet/crate/filled_crate)
 	var/list/contain_copy = contains.Copy()
