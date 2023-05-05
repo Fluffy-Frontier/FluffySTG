@@ -1,7 +1,7 @@
 /obj/structure/closet/secure_closet/redsecurity
 	name = "security officer's locker"
 	req_access = list(ACCESS_BRIG)
-	icon = '~ff/modules/redsec/icons/obj/storage/closet.dmi'
+	icon = 'tff_modular/modules/redsec/icons/obj/storage/closet.dmi'
 	icon_state = "sec"
 
 /obj/structure/closet/secure_closet/redsecurity/PopulateContents()

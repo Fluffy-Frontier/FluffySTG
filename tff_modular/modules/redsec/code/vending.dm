@@ -3,7 +3,7 @@
 	desc = "A vending machine for security and security-related clothing!"
 	product_ads = "Beat perps in style!;It's red and blue so you can't distinguish blood and water!;You have the right to be fashionable!;Now you can be the fashion police you always wanted to be!"
 	vend_reply = "Thank you for using the SecDrobe!"
-	icon = '~ff/modules/redsec/icons/obj/vending.dmi'
+	icon = 'tff_modular/modules/redsec/icons/obj/vending.dmi'
 	icon_state = "secdrobe"
 	product_categories = list(
 		list(
