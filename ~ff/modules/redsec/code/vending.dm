@@ -36,6 +36,7 @@
 					/obj/item/clothing/suit/hooded/wintercoat/security = 5,
 					/obj/item/clothing/suit/toggle/jacket/sec = 5,
 					/obj/item/clothing/suit/armor/vest/peacekeeper/brit = 5,
+					/obj/item/clothing/suit/armor/vest/peacekeeper = 5,
 					/obj/item/storage/belt/security = 6,
 					/obj/item/clothing/neck/security_cape = 5,
 					/obj/item/clothing/neck/security_cape/armplate = 5,
