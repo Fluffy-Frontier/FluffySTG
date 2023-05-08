@@ -76,7 +76,7 @@ export const DmTarget = new Juke.Target({
     'icons/**',
     'interface/**',
     'modular_skyrat/**', ///SKYRAT EDIT ADDITION - Making the CBT work
-    '~ff/**',
+    'tff_modular/**',
     `${DME_NAME}.dme`,
     NamedVersionFile,
   ],
