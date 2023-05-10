@@ -6844,13 +6844,6 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plating,
 /area/station/cargo/warehouse)
-"cnC" = (
-/obj/effect/turf_decal/bot,
-/obj/item/clothing/mask/russian_balaclava,
-/obj/effect/turf_decal/tile/neutral/half/contrasted,
-/obj/structure/closet/secure_closet/redsecurity/sec,
-/turf/open/floor/iron/dark,
-/area/station/security/lockers)
 "cnM" = (
 /obj/structure/flora/bush/lavendergrass/style_random,
 /obj/effect/turf_decal/sand/plating,
@@ -33981,13 +33974,13 @@
 /turf/closed/wall,
 /area/station/science/robotics/mechbay)
 "lbD" = (
+/obj/structure/closet/secure_closet/security/sec,
 /obj/effect/turf_decal/bot,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/mask/russian_balaclava,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/redsecurity/sec,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "lbJ" = (
@@ -43261,11 +43254,11 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/aft)
 "ojW" = (
+/obj/structure/closet/secure_closet/security/sec,
 /obj/effect/turf_decal/bot,
 /obj/machinery/light/directional/west,
 /obj/item/clothing/mask/russian_balaclava,
 /obj/effect/turf_decal/tile/neutral/anticorner/contrasted,
-/obj/structure/closet/secure_closet/redsecurity/sec,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "ojZ" = (
@@ -68450,12 +68443,12 @@
 /turf/open/floor/iron,
 /area/station/security/brig)
 "wmj" = (
+/obj/machinery/vending/wardrobe/sec_wardrobe,
 /obj/effect/turf_decal/bot,
 /obj/structure/reagent_dispensers/wall/peppertank/directional/west,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 4
 	},
-/obj/machinery/vending/wardrobe/uni_sec_wardrobe,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "wmn" = (
@@ -97764,7 +97757,7 @@ mdE
 aUw
 vyl
 moz
-cnC
+rFK
 aJF
 nZM
 qbf

@@ -12363,10 +12363,10 @@
 /turf/open/floor/iron,
 /area/station/maintenance/port/aft)
 "cYD" = (
+/obj/structure/closet/secure_closet/security/sec,
 /obj/machinery/airalarm/directional/south,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/red/fourcorners,
-/obj/structure/closet/secure_closet/redsecurity/sec,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "cYF" = (
@@ -38065,10 +38065,10 @@
 /area/station/engineering/atmos)
 "jxM" = (
 /obj/machinery/status_display/ai/directional/south,
+/obj/structure/closet/secure_closet/security/sec,
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/red/fourcorners,
-/obj/structure/closet/secure_closet/redsecurity/sec,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "jxQ" = (
@@ -54775,9 +54775,9 @@
 /turf/open/floor/iron,
 /area/station/maintenance/department/crew_quarters/bar)
 "nIn" = (
+/obj/structure/closet/secure_closet/security/sec,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/red/fourcorners,
-/obj/structure/closet/secure_closet/redsecurity/sec,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "nIr" = (
@@ -86428,10 +86428,10 @@
 /area/station/hallway/secondary/exit/departure_lounge)
 "vCQ" = (
 /obj/machinery/newscaster/directional/south,
+/obj/machinery/vending/wardrobe/sec_wardrobe,
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 6
 	},
-/obj/machinery/vending/wardrobe/uni_sec_wardrobe,
 /turf/open/floor/iron,
 /area/station/security/lockers)
 "vCU" = (
