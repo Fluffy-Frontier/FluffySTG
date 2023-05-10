@@ -1103,8 +1103,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	var/datum/preferences/D = prefs || direct_prefs
 	if(!D?.key_bindings)
 		return
-	movement_keys = list() // FLUFFY FRONTIER ADDION - Hotkey Fix
-	var/list/communication_hotkeys = list() 
+	movement_keys = list()
+	var/list/communication_hotkeys = list() // FLUFFY FRONTIER ADDION - Hotkey Fix
 	for(var/kb_name in D.key_bindings)
 		for(var/key in D.key_bindings[kb_name])
 			switch(kb_name)
