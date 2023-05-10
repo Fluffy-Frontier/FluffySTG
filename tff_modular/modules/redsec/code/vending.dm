@@ -1,7 +1,5 @@
-/obj/machinery/vending/wardrobe/uni_sec_wardrobe
-	name = "\improper MultiSec Drobe"
-	desc = "A vending machine for security and security-related clothing!"
-	product_ads = "Beat perps in style!;It's red and blue so you can't distinguish blood and water!;You have the right to be fashionable!;Now you can be the fashion police you always wanted to be!"
+/obj/machinery/vending/wardrobe/sec_wardrobe
+	name = "\improper MultiSec Peacekeeper Outfitting Station"
 	icon = 'tff_modular/modules/redsec/icons/obj/vending.dmi'
 	icon_state = "secdrobe"
 	product_categories = list(
@@ -27,7 +25,6 @@
 					/obj/item/clothing/suit/armor/vest/alt/sec/redsec = 2
 			),
 		),
-
 		list(
 			"name" = "BlueSec",
 			"icon" = "user-tie",
@@ -59,7 +56,6 @@
 			),
 		),
 	)
-
 	premium = list( /obj/item/clothing/under/rank/security/officer/formal = 5,
 					/obj/item/clothing/suit/jacket/officer/tan = 5,
 					/obj/item/clothing/suit/jacket/officer/blue = 3,
@@ -67,17 +63,6 @@
 					/obj/item/clothing/glasses/hud/security/sunglasses = 3,
 					/obj/item/clothing/glasses/hud/security/sunglasses/redsec = 3
 	)
-
-	refill_canister = /obj/item/vending_refill/wardrobe/unisec_wardrobe
 	light_color = "#abadcc"
-	vend_reply = "Kick these scumbags!"
+	vend_reply = "Beat these scumbags!"
 	extra_price = PAYCHECK_COMMAND * 6
-
-/obj/item/vending_refill/wardrobe/redsec_wardrobe
-	machine_name = "RedSec outfitting station"
-
-/obj/item/vending_refill/wardrobe/unisec_wardrobe
-	machine_name = "MultiSec outfitting station"
-
-/obj/machinery/vending/wardrobe/sec_wardrobe/red
-	refill_canister = /obj/item/vending_refill/wardrobe/redsec_wardrobe
