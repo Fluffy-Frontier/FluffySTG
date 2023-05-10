@@ -311,7 +311,10 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 			priority = clamp(text2num(href_list["priority"]), REQ_NORMAL_MESSAGE_PRIORITY, REQ_EXTREME_MESSAGE_PRIORITY)
 
 	if(href_list["writeAnnouncement"])
-		var/new_message = reject_bad_text(tgui_input_text(usr, "Write your message", "Awaiting Input"))
+		// FLUFFY FRONTIER EDIT BEGIN - Russian text in announcement fix.
+		// ORIGINAL LINE: var/new_message = reject_bad_text(tgui_input_text(usr, "Write your message", "Awaiting Input"))
+		var/new_message = reject_bad_text(tgui_input_text(usr, "Write your message", "Awaiting Input"), ascii_only = FALSE)
+		// FLUFFY FRONTIER EDIT END
 		if(new_message)
 			message = new_message
 			priority = clamp(text2num(href_list["priority"]) || REQ_NORMAL_MESSAGE_PRIORITY, REQ_NORMAL_MESSAGE_PRIORITY, REQ_EXTREME_MESSAGE_PRIORITY)
