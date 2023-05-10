@@ -154,8 +154,8 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 	/N
 	*/
 
+/* FLUFFIE FRONTIER EDIT REMOVAL - (moved to tff_modular/modules/russiancodewords/code/codewords_override.dm)
 /proc/generate_code_phrase(return_list=FALSE)//Proc is used for phrase and response in master_controller.dm
-
 	if(!return_list)
 		. = ""
 	else
@@ -169,15 +169,14 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 	)
 
 	var/list/safety = list(1,2,3)//Tells the proc which options to remove later on.
-	// FLUFFY FRONTIER: EDIT BEGIN
-	var/nouns = strings(RUS_CODEWORDS, "nouns", RUS_CODEWORDS_DIR)
-	var/objects = strings(RUS_CODEWORDS, "objects", RUS_CODEWORDS_DIR)
-	var/adjectives = strings(RUS_CODEWORDS, "adjectives", RUS_CODEWORDS_DIR)
-	var/threats = strings(RUS_CODEWORDS, "threats", RUS_CODEWORDS_DIR)
-	var/foods = strings(RUS_CODEWORDS, "food", RUS_CODEWORDS_DIR)
-	var/drinks = strings(RUS_CODEWORDS, "drinks", RUS_CODEWORDS_DIR)
-	var/locations = strings(RUS_CODEWORDS, "locations", RUS_CODEWORDS_DIR)
-	// FLUFFY FRONTIER: EDIT END
+	var/nouns = strings(ION_FILE, "ionabstract")
+	var/objects = strings(ION_FILE, "ionobjects")
+	var/adjectives = strings(ION_FILE, "ionadjectives")
+	var/threats = strings(ION_FILE, "ionthreats")
+	var/foods = strings(ION_FILE, "ionfood")
+	var/drinks = strings(ION_FILE, "iondrinks")
+	var/locations = strings(LOCATIONS_FILE, "locations")
+
 	var/list/names = list()
 	for(var/datum/record/crew/target in GLOB.manifest.general)//Picks from crew manifest.
 		names += target.name
@@ -237,6 +236,8 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 				. += "."
 			else
 				. += ", "
+*/
+// FLUFFIE FRONTIER EDIT END
 
 /proc/odd_organ_name()
 	return "[pick(GLOB.gross_adjectives)], [pick(GLOB.gross_adjectives)] organ"
