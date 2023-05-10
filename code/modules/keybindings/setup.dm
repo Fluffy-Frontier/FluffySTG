@@ -40,6 +40,23 @@
 
 	update_special_keybinds()
 
+// FLUFFY FRONTIER ADDION BEGIN - Hotkey Fix
+// Данный фикс благополучно портирован с ТауКеков. - Sensum
+/client/verb/reset_macros_wrapper()
+	set category = "OOC"
+	set name = "Fix Hotkeys"
+	reset_macros()
+
+/client/proc/reset_macros(skip_alert = FALSE)
+	var/ans
+	if(!skip_alert)
+		ans = tgui_alert(src, "Включите английскую (ENG) расскладку и нажмите \"Ok\".", "Fixing Hotkeys")
+
+	if(skip_alert || ans == "Ok")
+		to_chat(src, "<span class='notice'>Если после данного сообщения не последует очередная ошибка - ваши хоткеи восстановлены. В ином случае - повторите попытку.</span>")
+		set_macros()
+// FLUFFY FRONTIER EDIT END
+
 /// Manually clears any held keys, in case due to lag or other undefined behavior a key gets stuck.
 /client/proc/reset_held_keys()
 	for(var/key in keys_held)
