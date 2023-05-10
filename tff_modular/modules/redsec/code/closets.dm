@@ -1,25 +1,3 @@
-/obj/structure/closet/secure_closet/redsecurity
-	name = "security officer's locker"
-	req_access = list(ACCESS_BRIG)
-	icon = 'tff_modular/modules/redsec/icons/obj/storage/closet.dmi'
-	icon_state = "sec"
-
-/obj/structure/closet/secure_closet/redsecurity/PopulateContents()
-	..()
-	new /obj/item/clothing/suit/armor/vest/alt/sec/redsec(src)
-	new /obj/item/clothing/head/soft/sec(src)
-	new /obj/item/clothing/head/helmet/sec(src)
-	new /obj/item/radio/headset/headset_sec(src)
-	new /obj/item/radio/headset/headset_sec/alt(src)
-	new /obj/item/clothing/glasses/hud/security/sunglasses/redsec(src)
-	new /obj/item/flashlight/seclite(src)
-
-/obj/structure/closet/secure_closet/redsecurity/sec
-
-/obj/structure/closet/secure_closet/redsecurity/sec/PopulateContents()
-	..()
-	new /obj/item/storage/belt/security/redsec/full(src)
-
 /obj/item/storage/belt/security/redsec/full/PopulateContents()
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/restraints/handcuffs(src)
@@ -27,3 +5,62 @@
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/melee/baton/security/loaded(src)
 	update_appearance()
+
+/obj/structure/closet/secure_closet/security
+	name = "security officer's locker"
+	req_access = list(ACCESS_BRIG)
+	var/sec_type = "blue"
+	icon_state = "sec"
+
+/obj/structure/closet/secure_closet/security/Initialize(mapload)
+	..()
+	sec_type = pick(prob(50);"blue",prob(50);"red")
+	if(sec_type=="blue")
+		name = "blue security officer's locker"
+		icon_state = "sec"
+	else
+		name = "red security officer's locker"
+		icon = 'tff_modular/modules/redsec/icons/obj/storage/closet.dmi'
+		icon_state = "sec"
+	update_icon_state()
+	update_icon()
+
+/obj/structure/closet/secure_closet/security/PopulateContents()
+	if(sec_type=="blue")
+		..()
+		new /obj/item/clothing/suit/armor/vest/alt/sec(src)
+		new /obj/item/clothing/head/security_cap(src)
+		new /obj/item/clothing/head/helmet/sec(src)
+		new /obj/item/radio/headset/headset_sec(src)
+		new /obj/item/radio/headset/headset_sec/alt(src)
+		new /obj/item/clothing/glasses/hud/security/sunglasses(src)
+		new /obj/item/flashlight/seclite(src)
+	else
+		..()
+		new /obj/item/clothing/suit/armor/vest/alt/sec/redsec(src)
+		new /obj/item/clothing/head/soft/sec(src)
+		new /obj/item/clothing/head/helmet/sec(src)
+		new /obj/item/radio/headset/headset_sec(src)
+		new /obj/item/radio/headset/headset_sec/alt(src)
+		new /obj/item/clothing/glasses/hud/security/sunglasses/redsec(src)
+		new /obj/item/flashlight/seclite(src)
+
+/obj/structure/closet/secure_closet/security/sec/PopulateContents()
+	if(sec_type=="blue")
+		new /obj/item/clothing/suit/armor/vest/alt/sec(src)
+		new /obj/item/clothing/head/security_cap(src)
+		new /obj/item/clothing/head/helmet/sec(src)
+		new /obj/item/radio/headset/headset_sec(src)
+		new /obj/item/radio/headset/headset_sec/alt(src)
+		new /obj/item/clothing/glasses/hud/security/sunglasses(src)
+		new /obj/item/flashlight/seclite(src)
+		new /obj/item/storage/belt/security/full(src)
+	else
+		new /obj/item/clothing/suit/armor/vest/alt/sec/redsec(src)
+		new /obj/item/clothing/head/soft/sec(src)
+		new /obj/item/clothing/head/helmet/sec(src)
+		new /obj/item/radio/headset/headset_sec(src)
+		new /obj/item/radio/headset/headset_sec/alt(src)
+		new /obj/item/clothing/glasses/hud/security/sunglasses/redsec(src)
+		new /obj/item/flashlight/seclite(src)
+		new /obj/item/storage/belt/security/redsec/full(src)
