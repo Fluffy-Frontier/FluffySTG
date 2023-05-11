@@ -156,6 +156,7 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 
 /* FLUFFIE FRONTIER EDIT REMOVAL - (moved to tff_modular/modules/russiancodewords/code/codewords_override.dm)
 /proc/generate_code_phrase(return_list=FALSE)//Proc is used for phrase and response in master_controller.dm
+
 	if(!return_list)
 		. = ""
 	else
