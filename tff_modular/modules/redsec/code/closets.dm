@@ -25,6 +25,38 @@
 	update_icon_state()
 	update_icon()
 
+/obj/structure/closet/secure_closet/security/cargo/Initialize(mapload)
+	..()
+	name = "\proper customs agent's locker"
+	icon_state = "qm"
+	icon = 'icons/obj/storage/closet.dmi'
+	update_icon_state()
+	update_icon()
+
+/obj/structure/closet/secure_closet/security/engine/Initialize(mapload)
+	..()
+	name = "\proper engineering guard's locker"
+	icon_state = "eng_secure"
+	icon = 'icons/obj/storage/closet.dmi'
+	update_icon_state()
+	update_icon()
+
+/obj/structure/closet/secure_closet/security/science/Initialize(mapload)
+	..()
+	name = "\proper science guard's locker"
+	icon_state = "science"
+	icon = 'icons/obj/storage/closet.dmi'
+	update_icon_state()
+	update_icon()
+
+/obj/structure/closet/secure_closet/security/med/Initialize(mapload)
+	..()
+	name = "\proper orderly's locker"
+	icon_state = "med_secure"
+	icon = 'icons/obj/storage/closet.dmi'
+	update_icon_state()
+	update_icon()
+
 /obj/structure/closet/secure_closet/security/PopulateContents()
 	if(sec_type=="blue")
 		..()
