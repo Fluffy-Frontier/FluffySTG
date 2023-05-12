@@ -354,7 +354,7 @@
 		/obj/item/modular_computer/pda/expeditionary_corps,
 		/obj/item/knife/combat/marksman,
 	)
-	crate_name = "Expeditionary Corps Surplus"
+	crate_name = "Expedition Corps Supply"
 
 /*
 *	FOOD
