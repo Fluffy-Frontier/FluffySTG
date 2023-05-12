@@ -13,7 +13,7 @@
 	icon_state = "sec"
 
 /obj/structure/closet/secure_closet/security/Initialize(mapload)
-	..()
+	. = ..()
 	sec_type = pick(prob(50);"blue",prob(50);"red")
 	if(sec_type=="blue")
 		name = "blue security officer's locker"
@@ -26,7 +26,7 @@
 	update_icon()
 
 /obj/structure/closet/secure_closet/security/cargo/Initialize(mapload)
-	..()
+	. = ..()
 	name = "\proper customs agent's locker"
 	icon_state = "qm"
 	icon = 'icons/obj/storage/closet.dmi'
@@ -34,7 +34,7 @@
 	update_icon()
 
 /obj/structure/closet/secure_closet/security/engine/Initialize(mapload)
-	..()
+	. = ..()
 	name = "\proper engineering guard's locker"
 	icon_state = "eng_secure"
 	icon = 'icons/obj/storage/closet.dmi'
@@ -42,7 +42,7 @@
 	update_icon()
 
 /obj/structure/closet/secure_closet/security/science/Initialize(mapload)
-	..()
+	. = ..()
 	name = "\proper science guard's locker"
 	icon_state = "science"
 	icon = 'icons/obj/storage/closet.dmi'
@@ -50,7 +50,7 @@
 	update_icon()
 
 /obj/structure/closet/secure_closet/security/med/Initialize(mapload)
-	..()
+	. = ..()
 	name = "\proper orderly's locker"
 	icon_state = "med_secure"
 	icon = 'icons/obj/storage/closet.dmi'
