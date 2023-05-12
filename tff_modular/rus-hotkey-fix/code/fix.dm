@@ -4,11 +4,9 @@
 	set name = "Fix Hotkeys"
 	reset_macros()
 
-/client/proc/reset_macros(skip_alert = FALSE)
+/client/proc/reset_macros()
 	var/ans
 	if(!skip_alert)
 		ans = tgui_alert(src, "Включите английскую (ENG) расскладку и нажмите \"Ok\".", "Fixing Hotkeys")
-
-	if(skip_alert || ans == "Ok")
-		to_chat(src, "<span class='notice'>Если после данного сообщения не последует очередная ошибка - ваши хоткеи восстановлены. В ином случае - повторите попытку.</span>")
-		set_macros()
+	to_chat(src, "<span class='notice'>Ваши хоткеи были перезагружены, если это не помогло - попробуйте ещё раз.</span>")
+	set_macros()

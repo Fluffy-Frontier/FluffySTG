@@ -117,11 +117,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(href_list["tguiless_adminhelp"])
 		no_tgui_adminhelp(input(src, "Enter your ahelp", "Ahelp") as null|message)
 		return
-	// FLUFFY FRONTIER ADDION BEGIN - Hotkey Fix
-	if(href_list["reset_macros"])
-		reset_macros(skip_alert = TRUE)
-		return
-	// FLUFFY FRONTIER EDIT END
 
 	switch(href_list["_src_"])
 		if("holder")
@@ -1104,7 +1099,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(!D?.key_bindings)
 		return
 	movement_keys = list()
-	var/list/communication_hotkeys = list() // FLUFFY FRONTIER ADDION - Hotkey Fix
 	for(var/kb_name in D.key_bindings)
 		for(var/key in D.key_bindings[kb_name])
 			switch(kb_name)
@@ -1125,34 +1119,21 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 				if(SAY_CHANNEL)
 					var/say = tgui_say_create_open_command(SAY_CHANNEL)
 					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=[say]")
-					communication_hotkeys += key // FLUFFY FRONTIER ADDION - Hotkey Fix
 				if(RADIO_CHANNEL)
 					var/radio = tgui_say_create_open_command(RADIO_CHANNEL)
 					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=[radio]")
-					communication_hotkeys += key // FLUFFY FRONTIER ADDION - Hotkey Fix
 				if(ME_CHANNEL)
 					var/me = tgui_say_create_open_command(ME_CHANNEL)
 					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=[me]")
-					communication_hotkeys += key // FLUFFY FRONTIER ADDION - Hotkey Fix
 				if(OOC_CHANNEL)
 					var/ooc = tgui_say_create_open_command(OOC_CHANNEL)
 					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=[ooc]")
-					communication_hotkeys += key // FLUFFY FRONTIER ADDION - Hotkey Fix
 				if(ADMIN_CHANNEL)
 					if(holder)
 						var/asay = tgui_say_create_open_command(ADMIN_CHANNEL)
 						winset(src, "default-[REF(key)]", "parent=default;name=[key];command=[asay]")
 					else
 						winset(src, "default-[REF(key)]", "parent=default;name=[key];command=")
-
-	// FLUFFY FRONTIER ADDION BEGIN - Hotkey Fix
-	// Данный фикс благополучно портирован с ТауКеков. - Sensum
-	// winget() does not work for F1 and F2
-	for(var/key in communication_hotkeys)
-		if(!(key in list("F1","F2")) && !winget(src, "default-[REF(key)]", "command"))
-			to_chat(src, "<span class='notice'>Ошибка хоткеев! Вероятно Вы вошли в игру с русской (или иной) раскладкой клавиатуры.</span>\n<a href='?src=[REF(src)];reset_macros=1'>Пожалуйста, переключитесь на английскую (ENG) раскладку и нажмите сюда, либо же используйте верб под названием \"Fix Hotkeys\" во вкладке \"OOC\"!</a>")
-			break
-	// FLUFFY FRONTIER EDIT END
 
 /client/proc/change_view(new_size)
 	if (isnull(new_size))
