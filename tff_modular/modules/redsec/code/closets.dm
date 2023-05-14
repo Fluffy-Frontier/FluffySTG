@@ -14,7 +14,7 @@
 
 /obj/structure/closet/secure_closet/security/Initialize(mapload)
 	. = ..()
-	sec_type = pick(prob(50);"blue",prob(50);"red")
+	sec_type = pick("blue","red")
 	if(sec_type=="blue")
 		name = "blue security officer's locker"
 		icon_state = "sec"
