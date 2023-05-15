@@ -5,25 +5,23 @@
 	antag_hud_name = "rev"
 	var/datum/team/custom_rev_team/rev_team
 
-/datum/antagonist/rev/admin_add(datum/mind/new_owner, mob/admin)
-	var/confirm = tgui_alert(admin, "Хотите создать новое объединение/команду или присоединить его к уже существующей?", "АХТУНГ!", list("Yes", "No"))
-	if(confirm == "Yes")
-		var/given_name = tgui_input_text(admin, "Введите название роли участников:", "Role name")
-		var/given_team_name = tgui_input_text(admin, "Введите название объединения/команды в котором будут состоять участники:", "Team name")
-		var/given_objective = tgui_input_text(admin, "Введите цель объединения/команды:", "Objective", multiline = TRUE)
-		if(QDELETED(src) || QDELETED(new_owner.current) || !given_name || !given_team_name || !given_objective)
+/datum/antagonist/custom_rev/admin_add(datum/mind/new_owner, mob/admin)
+	to_chat(admin, span_notice("Данная роль не рассчитана на standalone спавн. Если хотите продолжить и присоединить участника к одной из существующих команд - нажмите \"Продолжить\"."))
+	var/confirm = tgui_alert(admin, "Прочтите предупреждение об standalone спавне в чате.", "АХТУНГ!", list("Продолжить", "Отмена"))
+	if(confirm == "Продолжить")
+		var/teams_input_list = list()
+		var/teams = list()
+		for(var/datum/team/custom_rev_team/someteam in world)
+			teams_input_list += someteam.name
+			teams[someteam.name] = someteam
+		var/team_option = tgui_input_list(admin, "Доступные команды:", "Team", teams_input_list)
+		if(QDELETED(src) || QDELETED(new_owner.current))
 			return
-
-		name = given_name
-		rev_team.rev_role_name = given_name
-		rev_team.name = given_team_name
+		if(!team_option)
+			return FALSE
 		
-
-		var/datum/objective/obj = new()
-		obj.team = src
-		obj.explanation_text = given_objective 
-		obj.update_explanation_text()
-		objectives += obj
+		rev_team = teams[team_option]
+		
 		
 	new_owner.add_antag_datum(src)
 	message_admins("[key_name_admin(admin)] has rev'ed [key_name_admin(new_owner)].")
@@ -48,21 +46,22 @@
 
 /datum/antagonist/custom_rev/apply_innate_effects(mob/living/mob_override)
 	var/mob/living/M = mob_override || owner.current
-	add_team_hud(M, /datum/antagonist/rev)
+	add_team_hud(M, rev_team)
 
 /datum/antagonist/custom_rev/on_mindshield(mob/implanter)
-	if(rev_team.can_be_converted_if_mindshield)
+	if(rev_team.ignore_mindshield == FALSE)
 		return FALSE
 	remove_role(implanter)
 	return COMPONENT_MINDSHIELD_DECONVERTED
 
-/datum/antagonist/custom_rev/remove_role(mob/deconverter)
+/datum/antagonist/custom_rev/proc/remove_role(mob/deconverter)
 	owner.current.log_message("has been deconverted from the [name] by [ismob(deconverter) ? key_name(deconverter) : deconverter]!", LOG_ATTACK, color="#960000")
+	owner.remove_antag_datum(type)
 
 /datum/team/custom_rev_team
 	name = "\improper Activists"
 	var/rev_role_name = "Activist"
-	var/can_be_converted_if_mindshield = FALSE
-	var/against_nt = TRUE
+	var/ignore_mindshield = FALSE
+	var/agressive = TRUE
 
 
