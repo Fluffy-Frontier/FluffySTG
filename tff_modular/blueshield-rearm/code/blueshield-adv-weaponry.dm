@@ -156,7 +156,7 @@ GLOBAL_VAR_INIT(hellfire_damage, get_hellfire_damage_for_glob_var())
 
 /obj/projectile/bullet/concentrated_energy
 	name = "concentrated energy"
-	damage = null
+	damage = 0
 	icon_state = "gaussphase"
 
 /obj/projectile/bullet/concentrated_energy/New(loc, ...)
