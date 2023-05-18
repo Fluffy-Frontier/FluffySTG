@@ -13,7 +13,6 @@ GLOBAL_VAR_INIT(hellfire_damage, get_hellfire_damage_for_glob_var())
 	worn_icon = 'tff_modular/blueshield-rearm/icons/holster.dmi'
 	worn_icon_teshari = 'tff_modular/blueshield-rearm/icons/holster_teshari.dmi'
 	worn_icon_state = "blueshield_holster_worn"
-	
 
 /obj/item/storage/belt/holster/energy/blueshield/Initialize(mapload)
 	. = ..()
