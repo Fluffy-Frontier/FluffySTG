@@ -1,5 +1,7 @@
+GLOBAL_VAR_INIT(hellfire_damage, get_hellfire_damage_for_glob_var())
+
 /*
-*	Holster for new gun and its ammo.
+*	Holster for the SR-8 and its ammo.
 */
 
 /obj/item/storage/belt/holster/energy/blueshield
@@ -37,12 +39,12 @@
 		worn_icon = 'tff_modular/blueshield-rearm/icons/holster.dmi'
 
 /*
-*	 New gun.
+*	 The SR-8
 */
 
 /obj/item/gun/ballistic/revolver/blueshield
 	name = "\improper SR-8 energy revolver"
-	desc = "SR-8 is an experemental energy revolver that utilises special energy capsules."
+	desc = "SR-8 is an experemental energy revolver that utilises special energy capsules. It's chamber might look like a normal one, but it is not spinnable and constructionaly more alike internal magazine. Due lack of spinning mechanism chamber have a bit more capacity, but in fact that can become a problem because gun's automatic decises what capsule slot will be fired."
 	icon = 'tff_modular/blueshield-rearm/icons/sr-8.dmi'
 	righthand_file = 'tff_modular/blueshield-rearm/icons/righthand.dmi'
 	lefthand_file = 'tff_modular/blueshield-rearm/icons/lefthand.dmi'
@@ -154,8 +156,12 @@
 
 /obj/projectile/bullet/concentrated_energy
 	name = "concentrated energy"
-	damage = 25
+	damage = null
 	icon_state = "gaussphase"
+
+/obj/projectile/bullet/concentrated_energy/New(loc, ...)
+	damage = GLOB.hellfire_damage
+	. = ..()
 
 /*
 *	Cargo.
@@ -178,3 +184,13 @@
 	desc = "Single speedloader for our blueshield's special SR-8 revolver. This one is e-bullet type."
 	cost = PAYCHECK_CREW * 6
 	contains = list(/obj/item/ammo_box/revolver_blueshield/concentrated)
+
+/*
+*	Procs.
+*/
+
+/proc/get_hellfire_damage_for_glob_var()
+	var/obj/projectile/beam/laser/hellfire/hellfire = new /obj/projectile/beam/laser/hellfire
+	var/damage = hellfire.damage
+	del(hellfire)
+	return damage
