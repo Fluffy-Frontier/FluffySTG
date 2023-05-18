@@ -1,9 +1,9 @@
 /obj/item/clothing/suit/toggle/labcoat/para_red
-	icon = 'tff_modular/modules/parared/suit.dmi'
-	worn_icon = 'tff_modular/modules/parared/suit.dmi'
 	name = "red paramedic labcoat"
 	desc = "A red vest with reflective strips for First Responsers."
+	icon = 'tff_modular/custom_outfitting/icons/suit/suit.dmi'
 	icon_state = "labcoat_pmedred"
+	worn_icon = 'tff_modular/custom_outfitting/icons/suit/suit.dmi'
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/suit/toggle/labcoat/para_red/Initialize(mapload)
