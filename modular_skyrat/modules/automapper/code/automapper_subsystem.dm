@@ -47,21 +47,23 @@ SUBSYSTEM_DEF(automapper)
 	// Если нужно будет - я чуть-чуть распишу что тут да как тут.
 	var/list/config_as_list = splittext(spliced_config, "\n")
 	var/list/templates_to_remove = list()
-	for(var/str in config_as_list)
+	for(var/untrimmed_str in config_as_list)
+		var/str = trim(untrimmed_str)
 		if(findtext(str, "#UNREG") != 1)
 			continue
 		var/list/s_str = splittext(str, "=")
 		templates_to_remove += "\[templates.[trim(s_str[2])]\]"
 	var/is_removing = FALSE
 	var/parsed_config
-	for(var/str in config_as_list)
+	for(var/untrimmed_str in config_as_list)
+		var/str = trim(untrimmed_str)
 		if(is_removing)
-			if(findtext(str, "\[templates."))
+			if(findtext(str, "\[templates.") == 1)
 				is_removing = FALSE
 			else
 				continue
 		for(var/rtmp in templates_to_remove)
-			if(findtext(str, rtmp))
+			if(findtext(str, rtmp) == 1)
 				is_removing = TRUE
 		if(is_removing)
 			continue
