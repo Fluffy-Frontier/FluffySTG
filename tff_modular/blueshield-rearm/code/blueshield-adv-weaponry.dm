@@ -38,7 +38,7 @@ GLOBAL_VAR_INIT(hellfire_damage, get_hellfire_damage_for_glob_var())
 		worn_icon = 'tff_modular/blueshield-rearm/icons/holster.dmi'
 
 /*
-*	 The SR-8
+*	 The SR-8.
 */
 
 /obj/item/gun/ballistic/revolver/blueshield
