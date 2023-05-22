@@ -27,6 +27,10 @@
 	new	/obj/item/ammo_box/revolver_blueshield/stun(src)
 	new	/obj/item/ammo_box/revolver_blueshield/laser(src)
 	new	/obj/item/ammo_box/revolver_blueshield/concentrated(src)
+	if(prob(50))
+		new	/obj/item/ammo_box/revolver_blueshield/laser(src)
+	else
+		new	/obj/item/ammo_box/revolver_blueshield/concentrated(src)
 
 /obj/item/storage/belt/holster/energy/blueshield/equipped(mob/user, slot) // because when things are in suit storage slot - they are not using teshari's icons.
 	. = ..()
