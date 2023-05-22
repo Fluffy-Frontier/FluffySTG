@@ -1,5 +1,3 @@
-GLOBAL_VAR_INIT(hellfire_damage, get_hellfire_damage_for_glob_var())
-
 /*
 *	Holster for the SR-8 and its ammo.
 */
@@ -16,7 +14,7 @@ GLOBAL_VAR_INIT(hellfire_damage, get_hellfire_damage_for_glob_var())
 
 /obj/item/storage/belt/holster/energy/blueshield/Initialize(mapload)
 	. = ..()
-	atom_storage.max_slots = 4
+	atom_storage.max_slots = 5
 	atom_storage.max_specific_storage = WEIGHT_CLASS_NORMAL
 	atom_storage.set_holdable(list(
 		/obj/item/gun/ballistic/revolver/blueshield,
@@ -126,14 +124,14 @@ GLOBAL_VAR_INIT(hellfire_damage, get_hellfire_damage_for_glob_var())
 	caliber = "energy_capsule"
 	icon = 'tff_modular/blueshield-rearm/icons/ammo.dmi'
 	icon_state = "l-capsule"
-	projectile_type = /obj/projectile/beam/laser/hellfire
+	projectile_type = /obj/projectile/beam/laser/hellfire/capsule
 	fire_sound = 'tff_modular/blueshield-rearm/sounds/laser.ogg'
 	harmful = TRUE
 
 /obj/item/ammo_casing/energy_capsule/stun
 	name = "stun-shot energy capsule"
 	desc = "Energy bulletcapsule for special weaponry. Energy capsules are special disposable micro-cells designed for special type of weaponry. That capsule is non-lethal subtype."
-	projectile_type = /obj/projectile/beam/disabler/charged
+	projectile_type = /obj/projectile/beam/disabler/capsule
 	fire_sound = 'sound/weapons/taser2.ogg'
 	icon_state = "d-capsule"
 	harmful = FALSE
@@ -149,18 +147,18 @@ GLOBAL_VAR_INIT(hellfire_damage, get_hellfire_damage_for_glob_var())
     Projectiles.
 */
 
-/obj/projectile/beam/disabler/charged
+/obj/projectile/beam/disabler/capsule
 	name = "charged disabler beam"
 	damage = 35
 
+/obj/projectile/beam/laser/hellfire/capsule
+	name = "hellfire laser"
+	damage = 25
+
 /obj/projectile/bullet/concentrated_energy
 	name = "concentrated energy"
-	damage = 0
+	damage = 25
 	icon_state = "gaussphase"
-
-/obj/projectile/bullet/concentrated_energy/New(loc, ...)
-	damage = GLOB.hellfire_damage
-	. = ..()
 
 /*
 *	Cargo.
@@ -183,13 +181,3 @@ GLOBAL_VAR_INIT(hellfire_damage, get_hellfire_damage_for_glob_var())
 	desc = "Single speedloader for our blueshield's special SR-8 revolver. This one is e-bullet type."
 	cost = PAYCHECK_CREW * 6
 	contains = list(/obj/item/ammo_box/revolver_blueshield/concentrated)
-
-/*
-*	Procs.
-*/
-
-/proc/get_hellfire_damage_for_glob_var()
-	var/obj/projectile/beam/laser/hellfire/hellfire = new /obj/projectile/beam/laser/hellfire
-	var/damage = hellfire.damage
-	del(hellfire)
-	return damage
