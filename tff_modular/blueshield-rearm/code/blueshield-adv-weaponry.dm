@@ -116,11 +116,9 @@
 	start_empty = FALSE
 	icon_state = "speedloader_bullet"
 
-
 /*
 *	New ammo.
 */
-
 
 /obj/item/ammo_casing/energy_capsule
 	name = "energy capsule"
