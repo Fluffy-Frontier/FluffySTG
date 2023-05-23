@@ -690,11 +690,13 @@
 	worn_icon_state = "security"
 	current_skin = "security"	//prevents reskinning
 	
-	
-/obj/item/storage/belt/holster
+
+// FLUFFY FRONTIER EDIT. LINE BELOW IS EDITED. ORIGINAL LINE: /obj/item/storage/belt/holster
+/obj/item/storage/belt/holster/skyrat
 	desc = "A rather plain but still cool looking holster that can hold a handgun, and some ammo."
-	
-/obj/item/storage/belt/holster/Initialize(mapload)
+
+// FLUFFY FRONTIER EDIT. LINE BELOW IS EDITED. ORIGINAL LINE: /obj/item/storage/belt/holster/Initialize(mapload)
+/obj/item/storage/belt/holster/skyrat/Initialize(mapload)
 	. = ..()
 	atom_storage.max_slots = 3
 	atom_storage.max_total_storage = 16
@@ -709,12 +711,14 @@
 		/obj/item/gun/energy/laser/thermal,
 		/obj/item/gun/ballistic/rifle/boltaction, //fits if you make it an obrez
 		))
-	
-/obj/item/storage/belt/holster/detective
+
+// FLUFFY FRONTIER EDIT. LINE BELOW IS EDITED. ORIGINAL LINE: /obj/item/storage/belt/holster/detective
+/obj/item/storage/belt/holster/skyrat/detective
 	name = "detective's holster"
 	desc = "A holster able to carry handguns and extra ammo, thanks to an additional hand-sewn pouch. WARNING: Badasses only."
 
-/obj/item/storage/belt/holster/detective/Initialize(mapload)
+// FLUFFY FRONTIER EDIT. LINE BELOW IS EDITED. ORIGINAL LINE: /obj/item/storage/belt/holster/detective/Initialize(mapload)
+/obj/item/storage/belt/holster/skyrat/detective/Initialize(mapload)
 	. = ..()
 	atom_storage.max_slots = 4
 	atom_storage.set_holdable(list(
