@@ -274,8 +274,6 @@
   larentoun:
   - bugfix: icon names for 6.8 mag
 2023-05-09:
-  Smol42:
-  - rscadd: Add some new hairstyles
   JohnFulpWillard, sprites by McRamon, tattax, and Lamb:
   - rscadd: The Coroner, a new Medical role revolving around dead corpses and autopsies.
   - rscadd: The Coroner's Autopsy Scanner, used for discovering the cause for someone's
@@ -320,6 +318,8 @@
   - bugfix: The All-American Diner no longer requires a bunker ID card for most rooms
       nor requires accesses to use the jukebox.
   - bugfix: The All-American Diner's external airlocks now all work together.
+  Smol42:
+  - rscadd: Add some new hairstyles
   colbb:
   - spellcheck: getting screwy with a barricade makes more sense grammatically
   larentoun:
@@ -880,3 +880,7 @@
   - bugfix: the coroner's icon now appears on the sechud
   - image: The Airlock Shock Indicator seen when using a Diagnostics Hud has a new
       sprite.
+2023-05-23:
+  RaShCat:
+  - rscadd: Russian codewords for antagonists
+  - code_imp: Some changes in TG code for it.
