@@ -1,12 +1,12 @@
 /// Custom add_team_hud proc
-/datum/antagonist/custom_rev/add_team_hud(mob/target, hudteam)
+/datum/antagonist/custom_rev/add_team_hud(mob/target, hudteam_input)
 	QDEL_NULL(team_hud_ref)
 
 	team_hud_ref = WEAKREF(target.add_alt_appearance(
 		/datum/atom_hud/alternate_appearance/basic/has_antagonist/custom_rev,
 		"antag_team_hud_[REF(src)]",
 		hud_image_on(target),
-		hudteam,
+		hudteam_input,
 	))
 
 	// Add HUDs that they couldn't see before
@@ -30,6 +30,8 @@
 /datum/atom_hud/alternate_appearance/basic/has_antagonist/custom_rev/mobShouldSee(mob/M)
 	var/list/antags = !!M.mind?.antag_datums
 	for (var/datum/antagonist/antag in antags)
-		if(antag.get_team == hudteam.resolve())
-		return TRUE
+		if(!istype(antag, /datum/antagonist/custom_rev))
+			continue
+		if(antag.get_team() == hudteam.resolve())
+			return TRUE
 	return FALSE
