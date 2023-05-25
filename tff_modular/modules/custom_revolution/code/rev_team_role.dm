@@ -1,3 +1,5 @@
+GLOBAL_LIST_INIT(custom_rev_teams, list())
+
 /datum/antagonist/custom_rev
 	name = "\improper Activist"
 	antagpanel_category = "Activists (custom revolution)"
@@ -8,24 +10,28 @@
 /datum/antagonist/custom_rev/admin_add(datum/mind/new_owner, mob/admin)
 	to_chat(admin, span_notice("Данная роль не рассчитана на standalone спавн. Если хотите продолжить и присоединить участника к одной из существующих команд - нажмите \"Продолжить\"."))
 	var/confirm = tgui_alert(admin, "Прочтите предупреждение об standalone спавне в чате.", "АХТУНГ!", list("Продолжить", "Отмена"))
-	if(confirm == "Продолжить")
-		var/teams_input_list = list()
-		var/teams = list()
-		for(var/datum/team/custom_rev_team/someteam in world)
-			teams_input_list += someteam.name
-			teams[someteam.name] = someteam
-		var/team_option = tgui_input_list(admin, "Доступные команды:", "Team", teams_input_list)
-		if(QDELETED(src) || QDELETED(new_owner.current))
-			return
-		if(!team_option)
-			return FALSE
-		
-		rev_team = teams[team_option]
-		
+	if(confirm != "Продолжить")
+		return FALSE
+
+	var/teams_input_list = list()
+	var/teams = list()
+	for(var/datum/team/custom_rev_team/someteam in GLOB.custom_rev_teams)
+		teams_input_list += someteam.name
+		teams[someteam.name] = someteam
+	to_chat(admin, span_notice("Если у вас не вывело список доступных команд/объединений - скорее всего их нет."))
+	var/team_option = tgui_input_list(admin, "Доступные команды:", "Team", teams_input_list)
+	if(QDELETED(src) || QDELETED(new_owner.current))
+		return
+	if(!team_option)
+		return FALSE
+	
+	rev_team = teams[team_option]
+	name = rev_team.rev_role_name
 		
 	new_owner.add_antag_datum(src)
-	message_admins("[key_name_admin(admin)] has rev'ed [key_name_admin(new_owner)].")
-	log_admin("[key_name(admin)] has rev'ed [key_name(new_owner)].")
+	message_admins("[key_name_admin(admin)] made [key_name(new_owner)] the member of [rev_team.name].")
+	log_admin("[key_name(admin)] made [key_name(new_owner)] the member of [rev_team.name].")
+
 
 /datum/antagonist/custom_rev/greet()
 	. = ..()
@@ -60,6 +66,7 @@
 
 /datum/team/custom_rev_team
 	name = "\improper Activists"
+	member_name = "\improper activists"
 	var/rev_role_name = "Activist"
 	var/ignore_mindshield = FALSE
 	var/agressive = TRUE
