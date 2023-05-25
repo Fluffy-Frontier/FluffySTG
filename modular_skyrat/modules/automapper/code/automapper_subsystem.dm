@@ -1,3 +1,5 @@
+// FLUFFY FRONTIER EDIT NOTICE - Некороторая часть кода в этом файле была перезаписана. Подробнее тут: tff_modular\modules\automapper_override\automapper.dm
+
 /**
  * The AUTOMAPPER
  *
