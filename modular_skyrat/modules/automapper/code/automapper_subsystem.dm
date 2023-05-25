@@ -1,5 +1,3 @@
-// FLUFFY FRONTIER EDIT NOTICE - Некороторая часть кода в этом файле была перезаписана. Подробнее тут: tff_modular\modules\automapper_override\automapper.dm
-
 /**
  * The AUTOMAPPER
  *
@@ -26,7 +24,11 @@ SUBSYSTEM_DEF(automapper)
 	var/list/preloaded_map_templates = list()
 
 /datum/controller/subsystem/automapper/Initialize()
-	loaded_config = rustg_read_toml_file(config_file)
+	// FLUFFY FRONTIER EDIT NOTICE: В случае траблов с автомаппером или серьёзных мержконфликтах - ознакомьтесь с tff_modular\modules\modular_automapper\automapper.dm
+	// FLUFFY FRONTIER REMOVAL. REMOVED LINE: loaded_config = rustg_read_toml_file(config_file)
+	// FLUFFY FRONTIER ADDITION BEGIN - MODULAR AUTOMAPPER
+	load_custom_config()
+	// FLUFFY FRONTIER EDIT END.
 	return SS_INIT_SUCCESS
 
 /**
