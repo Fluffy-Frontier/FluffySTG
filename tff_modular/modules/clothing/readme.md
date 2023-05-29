@@ -29,3 +29,6 @@
 				  | |_|shoes
 				  |	| \_|your_code.dm
 				  | | \_|your_icon.dmi
+				  | |_|uniform
+				  |	| \_|your_code.dm
+				  | | \_|your_icon.dmi
