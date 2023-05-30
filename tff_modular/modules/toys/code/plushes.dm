@@ -1,6 +1,7 @@
 // Просто наше плюшевые игрушки. Nothing personal. aka плюшки
 /obj/item/toy/plush/tff
 	icon = 'tff_modular/modules/toys/icons/plushes.dmi'
+	icon_state = "debug"
 	inhand_icon_state = null
 
 /obj/item/toy/plush/tff/braiden
