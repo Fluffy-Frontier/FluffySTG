@@ -1,11 +1,11 @@
 {
-	"name": "Поманить",
-	"description": "Помани кого-то к себе.",
+	"name": "Пощечина",
+	"description": "Дать обидчику по щеке.",
 	"usage": "other",
 	"category": "Miscellaneous",
-	"distance_allowed": 1,
+	"distance_allowed": 0,
 	"message": [
-		"%USER% зовет %TARGET% рукой к себе."
+		"%USER% дает пощечину %TARGET%."
 	],
 	"sound_use": 0,
 	"sound_possible": [

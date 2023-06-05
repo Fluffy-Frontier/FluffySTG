@@ -270,6 +270,19 @@
 	smoothing_groups = SMOOTH_GROUP_PLASMA_WALLS + SMOOTH_GROUP_WALLS
 	canSmoothWith = SMOOTH_GROUP_PLASMA_WALLS
 
+/obj/structure/falsewall/copper
+	name = "медная стена"
+	desc = "Стена с медным покрытием."
+	icon = 'icons/turf/walls/copper_wall.dmi'
+	icon_state = "copper_wall-0"
+	base_icon_state = "copper_wall"
+	mineral = /obj/item/stack/sheet/mineral/copper
+	walltype = /turf/closed/wall/mineral/copper
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = SMOOTH_GROUP_COPPER_WALLS + SMOOTH_GROUP_WALLS
+	canSmoothWith = SMOOTH_GROUP_COPPER_WALLS
+
+
 /obj/structure/falsewall/bananium
 	name = "bananium wall"
 	desc = "A wall with bananium plating. Honk!"

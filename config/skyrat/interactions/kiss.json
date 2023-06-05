@@ -1,18 +1,16 @@
 {
-	"name": "Рукопожатие",
-	"description": "Пожать руку собеседнику.",
+	"name": "Поцеловать в щёку",
+	"description": "Поцеловать в щёку собеседника.",
 	"usage": "other",
 	"category": "Miscellaneous",
 	"distance_allowed": 0,
 	"message": [
-		"%USER% жмет руку %TARGET%."
+		"%USER% целует щёку %TARGET%."
 	],
 	"sound_use": 0,
 	"sound_possible": [
 	],
 	"sound_range": 7,
 	"interaction_requires": [
-		"self_hand",
-		"target_hand"
 	]
 }

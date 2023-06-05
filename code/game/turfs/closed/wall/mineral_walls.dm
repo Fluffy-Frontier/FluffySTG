@@ -20,6 +20,20 @@
 	canSmoothWith = SMOOTH_GROUP_GOLD_WALLS
 	custom_materials = list(/datum/material/gold = SHEET_MATERIAL_AMOUNT*2)
 
+/turf/closed/wall/mineral/copper
+	name = "медная стена"
+	desc = "Стена с медным покрытием."
+	icon = 'icons/turf/walls/copper_wall.dmi'
+	icon_state = "copper_wall-0"
+	base_icon_state = "copper_wall"
+	sheet_type = /obj/item/stack/sheet/mineral/copper
+	hardness = 60
+	explosive_resistance = 0
+	smoothing_groups = SMOOTH_GROUP_COPPER_WALLS + SMOOTH_GROUP_WALLS + SMOOTH_GROUP_CLOSED_TURFS
+	canSmoothWith = SMOOTH_GROUP_COPPER_WALLS
+	custom_materials = list(/datum/material/copper = SHEET_MATERIAL_AMOUNT*2)
+
+
 /turf/closed/wall/mineral/silver
 	name = "silver wall"
 	desc = "A wall with silver plating. Shiny!"
