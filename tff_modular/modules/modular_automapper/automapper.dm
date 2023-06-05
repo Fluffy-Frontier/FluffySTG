@@ -27,7 +27,7 @@
 		if(findtext(str, "#UNREG") != 1)
 			continue
 		var/list/s_str = splittext(str, "=")
-		templates_to_remove += "\[templates.[trim(s_str[2])]\]"
+		templates_to_remove += "\[templates.[trim(s_str[2])]]"
 	var/is_removing = FALSE
 	var/parsed_config
 	for(var/untrimmed_str in config_as_list)
