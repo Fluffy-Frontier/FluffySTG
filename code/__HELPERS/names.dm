@@ -154,6 +154,7 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 	/N
 	*/
 
+/* FLUFFIE FRONTIER EDIT REMOVAL - (moved to tff_modular/master_files/code/__HELPERS/names.dm)
 /proc/generate_code_phrase(return_list=FALSE)//Proc is used for phrase and response in master_controller.dm
 
 	if(!return_list)
@@ -236,6 +237,8 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 				. += "."
 			else
 				. += ", "
+*/
+// FLUFFIE FRONTIER EDIT END
 
 /proc/odd_organ_name()
 	return "[pick(GLOB.gross_adjectives)], [pick(GLOB.gross_adjectives)] organ"

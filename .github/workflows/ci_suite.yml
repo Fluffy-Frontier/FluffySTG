@@ -8,6 +8,10 @@ on:
     branches:
     - master
     - 'project/**'
+  merge_group:
+    branches:
+    - master
+    - 'project/commit_queue_testing'
 jobs:
   run_linters:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
@@ -32,6 +36,15 @@ jobs:
             ${{ runner.os }}-build-${{ secrets.CACHE_PURGE_KEY }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+      - name: Restore Rust cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cargo
+          key: ${{ runner.os }}-rust-${{ secrets.CACHE_PURGE_KEY }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ secrets.CACHE_PURGE_KEY }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Install Tools
         run: |
           pip3 install setuptools
@@ -45,6 +58,7 @@ jobs:
           bash tools/ci/check_changelogs.sh
           bash tools/ci/check_grep.sh
           bash skyrat/tools/skyrat_check_grep.sh # SKYRAT EDIT ADDITION - checking modular_skyrat code
+          bash fluffy/tools/fluffy_check_grep.sh # FLUFFY EDIT ADDITION - checking tff_modular code
           bash tools/ci/check_misc.sh
           tools/bootstrap/python tools/validate_dme.py <tgstation.dme
           tools/bootstrap/python -m tools.maplint.source --github
