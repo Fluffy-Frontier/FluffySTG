@@ -1,27 +1,27 @@
-<!-- Write **BELOW** The Headers and **ABOVE** The comments else it may not be viewable. -->
-<!-- You can view Contributing.MD for a detailed description of the pull request process. -->
+<!-- Пиши **НИЖЕ** заголовков и **ВЫШЕ** комментариев, иначе это может быть невидимым. -->
+<!-- Вы можете просмотреть Contributing.MD для подробного описания процесса PR. -->
 
-## About The Pull Request
+## О Pull Request
 
-<!-- Describe The Pull Request. Please be sure every change is documented or this can delay review and even discourage maintainers from merging your PR! -->
+<!-- Опишите PR. Пожалуйста, убедитесь, что каждое изменение задокументировано, иначе это может задержать проверку и даже помешать мейнтейнеру замерджить ваш PR! -->
 
-## How This Contributes To The Skyrat Roleplay Experience
+## Как это может улучшит/повлиять на игровой процесс/ролевую игру
 
-<!-- Please add a short description of why you think these changes would benefit the game and the roleplay atmosphere of the server. If you can't justify it in words, it might not be worth adding. -->
+<!-- Пожалуйста, добавьте краткое описание того, почему, по вашему мнению, эти изменения принесут пользу игре и ролевой атмосфере сервера. Если вы не можете обосновать это словами, возможно тогда это не стоит добавлять. -->
 
-## Proof of Testing
+## Доказательства тестирования
 
-<!-- Include any screenshots/videos/debugging steps of the code functioning successfully, between the </summary> and </details> code blocks. -->
-<!-- To our mappers and spriters: Posting screenshots of content INSIDE EDITORS (aseprite, PDN, SDMM, ect) is NOT valid proof of testing. Please make sure that you COMPILE the game and provide PROOF you tested your edits. -->
+<!-- Вложите все скриншоты/видео/шаги отладки успешно работающего кода между блоками кода </summary> и </details>. -->
+<!-- Нашим мапперам и спрайтерам: Публикация скриншотов контента ВНУТРИ РЕДАКТОРОВ (aseprite, PDN, SDMM и т. д.) НЕ является действительным доказательством тестирования. Пожалуйста, убедитесь, что вы скомпилировали игру и предоставили ДОКАЗАТЕЛЬСТВО того, что вы тестировали свои изменения. -->
 
 <details>
-<summary>Screenshots/Videos</summary>
+<summary>Скриншоты/Видео</summary>
   
 </details>
 
 ## Changelog
 
-<!-- If your PR modifies aspects of the game that can be concretely observed by players or admins you should add a changelog. If your change does NOT meet this description, remove this section. Be sure to properly mark your PRs to prevent unnecessary GBP loss. You can read up on GBP and it's effects on PRs in the tgstation guides for contributors. Please note that maintainers freely reserve the right to remove and add tags should they deem it appropriate. You can attempt to finagle the system all you want, but it's best to shoot for clear communication right off the bat. -->
+<!-- Если ваш PR изменяет аспекты игры, которые могут быть конкретно замечены игроками или администраторами, вы должны добавить changelog. Если ваше изменение НЕ соответствует этому описанию, удалите этот раздел. Сами строки ченджлога должны быть строго на английском. -->
 
 :cl:
 add: Added new mechanics or gameplay changes
@@ -40,5 +40,5 @@ admin: messed with admin stuff
 server: something server ops should know
 /:cl:
 
-<!-- Both :cl:'s are required for the changelog to work! You can put your name to the right of the first :cl: if you want to overwrite your GitHub username as author ingame. -->
-<!-- You can use multiple of the same prefix (they're only used for the icon ingame) and delete the unneeded ones. Despite some of the tags, changelogs should generally represent how a player might be affected by the changes rather than a summary of the PR's contents. -->
+<!-- Оба :cl: необходимы для работы списка изменений! Вы можете поставить свое имя справа от первого :cl:, если хотите перезаписать свое имя пользователя GitHub в качестве автора в ченджлоге игры. -->
+<!-- Вы можете использовать несколько одинаковых префиксов (они используются только для иконки в игре) и удалить ненужные. Несмотря на некоторые теги, ченджлоги в целом должны представлять, как изменения могут повлиять на игрока, а не краткое изложение содержания PR. -->
