@@ -232,6 +232,33 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 	. += GLOB.silver_recipes
 
 /*
+  * медька
+ */
+/obj/item/stack/sheet/mineral/copper
+	name = "copper"
+	icon_state = "sheet-copper"
+	inhand_icon_state = null
+	singular_name = "copper sheet"
+	sheettype = "copper"
+	mats_per_unit = list(/datum/material/copper=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/consumable/banana = 20)
+	point_value = 50
+	merge_type = /obj/item/stack/sheet/mineral/copper
+	material_type = /datum/material/copper
+	walltype = /turf/closed/wall/mineral/copper
+
+GLOBAL_LIST_INIT(copper_recipes, list ( \
+	new/datum/stack_recipe("copper tile", /obj/item/stack/tile/mineral/copper, 1, 4, 20, category = CAT_TILES), \
+	))
+
+/obj/item/stack/sheet/mineral/copper/get_main_recipes()
+	. = ..()
+	. += GLOB.copper_recipes
+
+/obj/item/stack/sheet/mineral/copper/five
+	amount = 5
+
+/*
  * Clown
  */
 /obj/item/stack/sheet/mineral/bananium

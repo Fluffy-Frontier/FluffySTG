@@ -7,6 +7,7 @@
  * Diamond floor
  * Uranium floor
  * Shuttle floor (Titanium)
+ * * Copper floor (wip wip)
  */
 
 /turf/open/floor/mineral
@@ -52,6 +53,16 @@
 	floor_tile = /obj/item/stack/tile/mineral/gold
 	icons = list("gold","gold_dam")
 	custom_materials = list(/datum/material/gold = SMALL_MATERIAL_AMOUNT*5)
+
+
+//COPPER
+
+/turf/open/floor/mineral/copper
+	name = "copper floor"
+	icon_state = "copper"
+	floor_tile = /obj/item/stack/tile/mineral/copper
+	icons = list("copper","copper_dam")
+	custom_materials = list(/datum/material/copper = SMALL_MATERIAL_AMOUNT*5)
 
 //SILVER
 

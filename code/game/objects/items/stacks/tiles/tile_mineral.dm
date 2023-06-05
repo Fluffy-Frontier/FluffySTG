@@ -79,6 +79,18 @@
 	mats_per_unit = list(/datum/material/diamond=SHEET_MATERIAL_AMOUNT*0.25)
 	merge_type = /obj/item/stack/tile/mineral/diamond
 
+/obj/item/stack/tile/mineral/copper
+	name = "copper tile"
+	singular_name = "copper floor tile"
+	desc = "A tile made out of copper."
+	icon_state = "tile_copper"
+	inhand_icon_state = "tile-copper"
+	turf_type = /turf/open/floor/mineral/copper
+	mineralType = "copper"
+	mats_per_unit = list(/datum/material/copper=MINERAL_MATERIAL_AMOUNT*0.25)
+	merge_type = /obj/item/stack/tile/mineral/copper
+
+
 /obj/item/stack/tile/mineral/bananium
 	name = "bananium tile"
 	singular_name = "bananium floor tile"

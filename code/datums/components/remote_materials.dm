@@ -64,6 +64,7 @@ handles linking back and forth.
 		/datum/material/glass,
 		/datum/material/silver,
 		/datum/material/gold,
+		/datum/material/copper,
 		/datum/material/diamond,
 		/datum/material/plasma,
 		/datum/material/uranium,

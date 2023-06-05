@@ -90,6 +90,11 @@
 	message = "cm3 of runite"
 	material_id = /datum/material/runite
 
+/datum/export/material/copper
+	cost = CARGO_CRATE_VALUE * 0.03
+	message = "cm3 of copper"
+	material_id = /datum/material/copper
+
 /datum/export/material/iron
 	cost = CARGO_CRATE_VALUE * 0.01
 	message = "cm3 of iron"

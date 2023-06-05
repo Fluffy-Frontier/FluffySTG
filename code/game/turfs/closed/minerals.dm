@@ -214,6 +214,7 @@
 		/obj/item/stack/ore/iron = 40,
 		/obj/item/stack/ore/plasma = 20,
 		/obj/item/stack/ore/silver = 12,
+		/obj/item/stack/ore/copper = 16,
 		/obj/item/stack/ore/titanium = 11,
 		/obj/item/stack/ore/uranium = 5,
 		/turf/closed/mineral/gibtonite = 4,
@@ -311,6 +312,7 @@
 		/obj/item/stack/ore/diamond = 1,
 		/obj/item/stack/ore/gold = 3,
 		/obj/item/stack/ore/iron = 50,
+		/obj/item/stack/ore/copper = 20,
 		/obj/item/stack/ore/plasma = 3,
 		/obj/item/stack/ore/silver = 4,
 		/obj/item/stack/ore/titanium = 5,
@@ -372,6 +374,7 @@
 		/obj/item/stack/ore/gold = 10,
 		/obj/item/stack/ore/iron = 40,
 		/obj/item/stack/ore/plasma = 20,
+		/obj/item/stack/ore/copper = 20,
 		/obj/item/stack/ore/silver = 12,
 		/obj/item/stack/ore/titanium = 11,
 		/obj/item/stack/ore/uranium = 5,
@@ -396,6 +399,7 @@
 		/obj/item/stack/ore/diamond = 4,
 		/obj/item/stack/ore/gold = 20,
 		/obj/item/stack/ore/iron = 20,
+		/obj/item/stack/ore/copper = 20,
 		/obj/item/stack/ore/plasma = 20,
 		/obj/item/stack/ore/silver = 24,
 		/obj/item/stack/ore/titanium = 22,
@@ -410,6 +414,7 @@
 		/obj/item/stack/ore/bluespace_crystal = 20,
 		/obj/item/stack/ore/diamond = 30,
 		/obj/item/stack/ore/gold = 45,
+		/obj/item/stack/ore/copper = 20,
 		/obj/item/stack/ore/plasma = 50,
 		/obj/item/stack/ore/silver = 50,
 		/obj/item/stack/ore/titanium = 45,
@@ -425,6 +430,7 @@
 		/obj/item/stack/ore/gold = 8,
 		/obj/item/stack/ore/iron = 95,
 		/obj/item/stack/ore/plasma = 30,
+		/obj/item/stack/ore/copper = 20,
 		/obj/item/stack/ore/silver = 20,
 		/obj/item/stack/ore/titanium = 8,
 		/obj/item/stack/ore/uranium = 3,
@@ -443,6 +449,7 @@
 		/obj/item/stack/ore/diamond = 1,
 		/obj/item/stack/ore/gold = 8,
 		/obj/item/stack/ore/iron = 95,
+		/obj/item/stack/ore/copper = 65,
 		/obj/item/stack/ore/plasma = 30,
 		/obj/item/stack/ore/silver = 20,
 		/obj/item/stack/ore/titanium = 8,
@@ -471,6 +478,7 @@
 		/obj/item/stack/ore/gold = 8,
 		/obj/item/stack/ore/iron = 95,
 		/obj/item/stack/ore/plasma = 30,
+		/obj/item/stack/ore/copper = 20,
 		/obj/item/stack/ore/silver = 20,
 		/obj/item/stack/ore/titanium = 8,
 		/obj/item/stack/ore/uranium = 3,
@@ -558,6 +566,11 @@
 	mineralType = /obj/item/stack/ore/bananium
 	mineralAmt = 3
 	scan_state = "rock_Bananium"
+
+/turf/closed/mineral/copper
+	mineralType = /obj/item/stack/ore/copper
+	mineralAmt = 3
+	scan_state = "rock_Copper"
 
 /turf/closed/mineral/bscrystal
 	mineralType = /obj/item/stack/ore/bluespace_crystal

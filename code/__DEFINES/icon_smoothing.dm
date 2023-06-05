@@ -133,6 +133,7 @@ DEFINE_BITFIELD(smoothing_flags, list(
 #define SMOOTH_GROUP_HIERO_WALL S_OBJ(16) ///obj/effect/temp_visual/elite_tumor_wall, /obj/effect/temp_visual/hierophant/wall
 #define SMOOTH_GROUP_BAMBOO_WALLS S_TURF(17) //![/turf/closed/wall/mineral/bamboo, /obj/structure/falsewall/bamboo]
 #define SMOOTH_GROUP_PLASTINUM_WALLS S_TURF(18) //![turf/closed/indestructible/riveted/plastinum]
+#define SMOOTH_GROUP_COPPER_WALLS S_OBJ(75)
 
 //SKYRAT EDIT ADDITION
 #define SMOOTH_GROUP_SHIPWALLS S_OBJ(19)	///turf/closed/wall/mineral/titanium/spaceship
