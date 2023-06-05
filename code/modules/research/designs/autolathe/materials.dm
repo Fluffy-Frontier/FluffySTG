@@ -119,6 +119,19 @@
 	)
 	maxstack = 50
 
+/datum/design/copper
+	name = "Copper"
+	id = "copper"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/copper = MINERAL_MATERIAL_AMOUNT)
+	build_path = /obj/item/stack/sheet/mineral/copper
+	category = list(
+		RND_CATEGORY_INITIAL,
+		RND_CATEGORY_CONSTRUCTION + RND_SUBCATEGORY_CONSTRUCTION_MATERIALS,
+	)
+	maxstack = 50
+
+
 /datum/design/titanium
 	name = "Titanium"
 	id = "titanium"

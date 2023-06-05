@@ -98,6 +98,7 @@
 	return list(
 		/obj/item/stack/ore/iron = 40,
 		/obj/item/stack/ore/plasma = 20,
+		/obj/item/stack/ore/copper = 25,
 		/obj/item/stack/ore/silver = 12,
 		/obj/item/stack/ore/titanium = 11,
 		/obj/item/stack/ore/gold = 10,
@@ -115,6 +116,7 @@
 	return list(
 		/obj/item/stack/ore/iron = 95,
 		/obj/item/stack/ore/plasma = 30,
+		/obj/item/stack/ore/copper = 50,
 		/obj/item/stack/ore/silver = 20,
 		/obj/item/stack/ore/gold = 8,
 		/obj/item/stack/ore/titanium = 8,

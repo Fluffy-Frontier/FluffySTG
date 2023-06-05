@@ -183,6 +183,19 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	spreadChance = 5
 	merge_type = /obj/item/stack/ore/gold
 
+/obj/item/stack/ore/copper
+	name = "copper ore"
+	icon_state = "Copper ore"
+	singular_name = "copper ore chunk"
+	points = 7
+	mine_experience = 2
+	mats_per_unit = list(/datum/material/copper=SHEET_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/sheet/mineral/copper
+	scan_state = "rock_Copper"
+	spreadChance = 5
+	merge_type = /obj/item/stack/ore/copper
+
+
 /obj/item/stack/ore/diamond
 	name = "diamond ore"
 	icon_state = "Diamond ore"

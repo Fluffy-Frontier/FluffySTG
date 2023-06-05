@@ -22,6 +22,7 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 		/datum/material/iron,
 		/datum/material/glass,
 		/datum/material/silver,
+		/datum/material/copper,
 		/datum/material/gold,
 		/datum/material/diamond,
 		/datum/material/plasma,

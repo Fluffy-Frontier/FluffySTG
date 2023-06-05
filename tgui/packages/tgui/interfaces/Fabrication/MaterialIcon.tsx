@@ -17,6 +17,11 @@ const MATERIAL_ICONS: Record<string, [number, string][]> = {
     [17, 'sheet-silver_2'],
     [34, 'sheet-silver_3'],
   ],
+  'copper': [
+    [0, 'sheet-copper'],
+    [17, 'sheet-copper'],
+    [34, 'sheet-copper'],
+  ],
   'gold': [
     [0, 'sheet-gold'],
     [17, 'sheet-gold_2'],

@@ -20,6 +20,7 @@
 		/obj/item/stack/sheet/mineral/silver = 8,
 		/obj/item/stack/sheet/mineral/titanium = 8,
 		/obj/item/stack/sheet/mineral/uranium = 3,
+		/obj/item/stack/sheet/mineral/copper = 16,
 		/obj/item/xenoarch/strange_rock = 3,
 		/obj/item/stack/sheet/mineral/gold = 3,
 		/obj/item/stack/sheet/mineral/diamond = 1,

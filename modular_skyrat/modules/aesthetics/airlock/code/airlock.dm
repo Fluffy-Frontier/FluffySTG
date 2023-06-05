@@ -319,6 +319,10 @@
 	icon = 'modular_skyrat/modules/aesthetics/airlock/icons/airlocks/bathroom.dmi'
 
 //STATION MINERAL AIRLOCKS
+
+/obj/machinery/door/airlock/copper
+	icon = 'modular_skyrat/modules/aesthetics/airlock/icons/airlocks/station/copper.dmi'
+
 /obj/machinery/door/airlock/gold
 	icon = 'modular_skyrat/modules/aesthetics/airlock/icons/airlocks/station/gold.dmi'
 

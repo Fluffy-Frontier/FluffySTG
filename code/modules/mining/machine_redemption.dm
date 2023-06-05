@@ -30,6 +30,7 @@
 		/datum/material/plasma = 15,
 		/datum/material/silver = 16,
 		/datum/material/gold = 18,
+		/datum/material/copper = 12,
 		/datum/material/titanium = 30,
 		/datum/material/uranium = 30,
 		/datum/material/diamond = 50,
