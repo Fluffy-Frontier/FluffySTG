@@ -87,7 +87,7 @@
 	inhand_icon_state = "tile-copper"
 	turf_type = /turf/open/floor/mineral/copper
 	mineralType = "copper"
-	mats_per_unit = list(/datum/material/copper=MINERAL_MATERIAL_AMOUNT*0.25)
+	mats_per_unit = list(/datum/material/copper=SHEET_MATERIAL_AMOUNT*0.25)
 	merge_type = /obj/item/stack/tile/mineral/copper
 
 

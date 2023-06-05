@@ -123,7 +123,7 @@
 	name = "Copper"
 	id = "copper"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/copper = MINERAL_MATERIAL_AMOUNT)
+	materials = list(/datum/material/copper = SHEET_MATERIAL_AMOUNT)
 	build_path = /obj/item/stack/sheet/mineral/copper
 	category = list(
 		RND_CATEGORY_INITIAL,

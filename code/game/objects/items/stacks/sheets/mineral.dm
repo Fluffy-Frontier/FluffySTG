@@ -240,7 +240,7 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 	inhand_icon_state = null
 	singular_name = "copper sheet"
 	sheettype = "copper"
-	mats_per_unit = list(/datum/material/copper=MINERAL_MATERIAL_AMOUNT)
+	mats_per_unit = list(/datum/material/copper=SHEET_MATERIAL_AMOUNT)
 	grind_results = list(/datum/reagent/consumable/banana = 20)
 	point_value = 50
 	merge_type = /obj/item/stack/sheet/mineral/copper
