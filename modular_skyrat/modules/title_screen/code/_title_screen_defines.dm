@@ -99,29 +99,6 @@
 					animation: fade_out 2s both;
 				}
 
-				.container_nav {
-					position: absolute;
-					box-sizing: border-box;
-					width: 90vmin;
-					min-height: 10vmin;
-					top: calc(50% + 22.5vmin);
-					left:50%;
-					transform: translate(-50%, -50%);
-					z-index: 1;
-					border: 2px solid white;
-					border-radius: 4px;
-					box-shadow: 2px 2px #333, inset 1px 1px #333;
-					background: linear-gradient(to bottom, rgba(68, 68, 204, 0.9), rgba(0, 0, 102, 0.9));
-					opacity: 75%;
-					padding: 1em;
-				}
-
-				.container_nav hr {
-					height: 2px;
-					background-color: #cde;
-					border: none;
-					box-shadow: 2px 2px black;
-				}
 
 				.menu_button {
 					display: block;
