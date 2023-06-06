@@ -111,7 +111,7 @@
 					border: 2px solid white;
 					border-radius: 4px;
 					box-shadow: 2px 2px #333, inset 1px 1px #333;
-					background: linear-gradient(to bottom, rgba(0, 102, 9, 0.9), rgba(0, 0, 102, 0.9));
+					background: linear-gradient(to bottom, rgba(68, 68, 204, 0.9), rgba(0, 0, 102, 0.9));
 					opacity: 75%;
 					padding: 1em;
 				}
