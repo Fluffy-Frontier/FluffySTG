@@ -13,8 +13,8 @@
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 			<style type='text/css'>
 				@font-face {
-					font-family: "Fixedsys";
-					src: url("FixedsysExcelsior3.01Regular.ttf");
+					font-family: "DeterminationMono";
+					src: url("DeterminationMono.ttf");
 				}
 				body,
 				html {
@@ -126,7 +126,7 @@
 				.menu_button {
 					display: block;
 					box-sizing: border-box;
-					font-family: "Fixedsys";
+					font-family: "DeterminationMono";
 					font-weight: lighter;
 					text-decoration: none;
 					font-size: 4vmin;
@@ -209,7 +209,7 @@
 
 				.menu_notice {
 					display: inline-block;
-					font-family: "Fixedsys";
+					font-family: "DeterminationMono";
 					font-weight: lighter;
 					text-decoration: none;
 					width: 100%;
