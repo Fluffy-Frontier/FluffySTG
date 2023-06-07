@@ -100,6 +100,7 @@
 /datum/asset/simple/lobby
 	assets = list(
 		"FixedsysExcelsior3.01Regular.ttf" = 'html/browser/FixedsysExcelsior3.01Regular.ttf',
+		"DeterminationMono.ttf" = 'html/browser/DeterminationMono.ttf',
 	)
 
 /**
