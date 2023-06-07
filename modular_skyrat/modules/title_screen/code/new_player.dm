@@ -99,7 +99,7 @@
 
 /datum/asset/simple/lobby
 	assets = list(
-		"DeterminationMono.ttf" = 'html/browser/DeterminationMono.ttf',
+		"FixedsysExcelsior3.01Regular.ttf" = 'html/browser/FixedsysExcelsior3.01Regular.ttf',
 	)
 
 /**
