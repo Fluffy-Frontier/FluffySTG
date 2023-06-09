@@ -3,6 +3,8 @@
 
 /datum/smite/femboy/effect(client/user, mob/living/carbon/human/target)
 	. = ..()
+	if(!ishuman(target))
+		return
 	var/main_color
 	var/second_color
 	var/random = rand(1,5)
