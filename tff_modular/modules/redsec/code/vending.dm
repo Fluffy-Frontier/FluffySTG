@@ -3,6 +3,7 @@
 	name = "\improper MultiSec Peacekeeper Outfitting Station"
 	icon = 'tff_modular/modules/redsec/icons/vending.dmi'
 	icon_state = "secdrobe"
+	light_mask = "sec-light-mask"
 	product_ads = "Crack capitalist skulls!;Beat some heads in!;Don't forget - harm is good!;Your weapons are right here.;Handcuffs!;Freeze, scumbag!;Don't tase me bro!;Tase them, bro.;Why not have a donut?"
 	product_categories = list(
 		list(
@@ -67,4 +68,6 @@
 	)
 	light_color = "#abadcc"
 	vend_reply = "Beat these scumbags!"
-	extra_price = PAYCHECK_COMMAND * 3
+	default_price = PAYCHECK_CREW
+	extra_price = PAYCHECK_COMMAND * 1.5
+	payment_department = ACCOUNT_SEC
