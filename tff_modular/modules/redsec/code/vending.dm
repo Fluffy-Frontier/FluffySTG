@@ -3,7 +3,6 @@
 	name = "\improper MultiSec Peacekeeper Outfitting Station"
 	icon = 'tff_modular/modules/redsec/icons/vending.dmi'
 	icon_state = "secdrobe"
-	light_mask = "sec-light-mask"
 	product_ads = "Crack capitalist skulls!;Beat some heads in!;Don't forget - harm is good!;Your weapons are right here.;Handcuffs!;Freeze, scumbag!;Don't tase me bro!;Tase them, bro.;Why not have a donut?"
 	product_categories = list(
 		list(
