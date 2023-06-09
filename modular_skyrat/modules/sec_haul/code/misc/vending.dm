@@ -5,6 +5,7 @@
 	icon = 'modular_skyrat/modules/sec_haul/icons/vending/vending.dmi'
 	icon_state = "sec"
 	icon_deny = "sec-deny"
+	light_mask = "sec-light-mask"
 	req_access = list(ACCESS_SECURITY)
 	products = list(
 		/obj/item/restraints/handcuffs = 8,
