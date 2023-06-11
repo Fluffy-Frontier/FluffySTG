@@ -34,7 +34,8 @@
 	target_areas = list(/area/station/security/lockers, /area/station/security/office)
 	desired_atom = /obj/machinery/ammo_workbench
 	mode = AREA_SPAWN_MODE_HUG_WALL
-
+// THE FLUFFY FRONTIER REMOVAL BEGIN
+/*
 /datum/area_spawn/lustwish_public
 	target_areas = list(/area/station/commons/locker, /area/station/commons/dorms/laundry, /area/station/commons/dorms)
 	desired_atom = /obj/machinery/vending/dorms
@@ -44,7 +45,8 @@
 	target_areas = list(/area/station/security/prison, /area/station/security/prison/shower)
 	desired_atom = /obj/machinery/vending/dorms
 	mode = AREA_SPAWN_MODE_HUG_WALL
-
+*/
+// THE FLUFFY FRONTIER REMOVAL END
 // Wall mounts. Use sparingly as walls are prime real estate
 /datum/area_spawn/posialert_robotics
 	target_areas = list(/area/station/science/robotics, /area/station/science/robotics/lab)
