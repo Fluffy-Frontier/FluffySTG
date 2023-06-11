@@ -131,6 +131,10 @@
 
 	/// custom ringtone for this job
 	var/job_tone
+	
+	///FLUFFY FRONTIER ADDITION
+	/// Minimal character age for heads
+	var/required_player_age
 
 
 /datum/job/New()
