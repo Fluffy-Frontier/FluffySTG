@@ -641,6 +641,7 @@ SUBSYSTEM_DEF(job)
 #define SPAWN_POSITIONS "Spawn Positions"
 #define PLAYTIME_REQUIREMENTS "Playtime Requirements"
 #define REQUIRED_ACCOUNT_AGE "Required Account Age"
+#define REQUIRED_PLAYER_AGE "Required Player Age"
 
 /// Called in jobs subsystem initialize if LOAD_JOBS_FROM_TXT config flag is set: reads jobconfig.toml (or if in legacy mode, jobs.txt) to set all of the datum's values to what the server operator wants.
 /datum/controller/subsystem/job/proc/load_jobs_from_config()
@@ -661,6 +662,7 @@ SUBSYSTEM_DEF(job)
 			var/starting_positions = job_config[job_key][SPAWN_POSITIONS]
 			var/playtime_requirements = job_config[job_key][PLAYTIME_REQUIREMENTS]
 			var/required_account_age = job_config[job_key][REQUIRED_ACCOUNT_AGE]
+			var/required_player_age = job_config[job_key][REQUIRED_PLAYER_AGE]
 
 			if(default_positions || default_positions == 0) // We need to account for jobs that were intentionally turned off via config too.
 				occupation.total_positions = default_positions
@@ -670,6 +672,8 @@ SUBSYSTEM_DEF(job)
 				occupation.exp_requirements = playtime_requirements
 			if(required_account_age || required_account_age == 0)
 				occupation.minimal_player_age = required_account_age
+			if(required_player_age || required_player_age == 0)
+				occupation.required_player_age = required_player_age
 
 		return
 
