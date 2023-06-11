@@ -130,6 +130,9 @@
 		//SKYRAT EDIT END
 		if(JOB_UNAVAILABLE_ANTAG_INCOMPAT)
 			return "[jobtitle] is not compatible with some antagonist role assigned to you."
+		//FLUFFY FRONTIER ADDITION
+		if(JOB_UNAVAILABLE_AGE)
+			return "You are too young for this job."
 
 	return GENERIC_JOB_UNAVAILABLE_ERROR
 
