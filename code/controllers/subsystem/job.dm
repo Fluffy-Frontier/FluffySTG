@@ -838,6 +838,7 @@ SUBSYSTEM_DEF(job)
 #undef SPAWN_POSITIONS
 #undef PLAYTIME_REQUIREMENTS
 #undef REQUIRED_ACCOUNT_AGE
+#undef REQUIRED_PLAYER_AGE
 
 /datum/controller/subsystem/job/proc/HandleFeedbackGathering()
 	for(var/datum/job/job as anything in joinable_occupations)
