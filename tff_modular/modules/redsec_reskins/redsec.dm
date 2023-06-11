@@ -327,7 +327,9 @@
 	. = ..()
 	unique_reskin += list(
 		"Red Variant" = list(
+			RESKIN_ICON = 'icons/obj/clothing/suits/armor.dmi',
 			RESKIN_ICON_STATE = "warden_jacket",
+			RESKIN_WORN_ICON = 'icons/mob/clothing/suits/armor.dmi',
 			RESKIN_WORN_ICON_STATE = "warden_jacket"
 		),
 	)
