@@ -160,6 +160,28 @@
 		),
 	)
 
+/obj/item/clothing/suit/toggle/jacket/sec
+	uses_advanced_reskins = TRUE
+	unique_reskin = list(
+		"Blue Variant" = list(
+			RESKIN_ICON_STATE = "sec_dep_jacket",
+			RESKIN_WORN_ICON_STATE = "sec_dep_jacket"
+		),
+		"Red Variant" = list(
+			RESKIN_ICON_STATE = "sec_dep_jacket_old",
+			RESKIN_WORN_ICON_STATE = "sec_dep_jacket_old"
+		),
+	)
+
+/obj/item/clothing/suit/reskin_obj(mob/M)
+	. = ..()
+	if(current_skin)
+		var/datum/component/toggle_icon/toggler = GetComponent(/datum/component/toggle_icon)
+		if(!toggler)
+			return
+		toggler.base_icon_state = unique_reskin[current_skin][RESKIN_ICON_STATE]
+
+
 /obj/item/clothing/gloves/color/black/security/Initialize(mapload)
 	. = ..()
 	unique_reskin += list(
@@ -231,13 +253,6 @@
 			RESKIN_WORN_ICON_STATE = "backpack-security"
 		),
 	)
-/*
-/obj/item/clothing/suit/hooded/wintercoat/security/Initialize(mapload)
-	. = ..()
-	unique_reskin +=  list(
-
-	)
-*/
 
 /obj/item/clothing/head/helmet/sec //У шлема так же нет рескинов.
 	uses_advanced_reskins = TRUE
@@ -327,9 +342,9 @@
 			RESKIN_WORN_ICON_STATE = "fightgloves_blue"
 		),
 		"Red Krav Maga" = list(
-			RESKIN_ICON = 'icons/obj/clothing/head/helmet.dmi',
+			RESKIN_ICON = 'icons/obj/clothing/gloves.dmi',
 			RESKIN_ICON_STATE = "fightgloves",
-			RESKIN_WORN_ICON = 'icons/mob/clothing/head/helmet.dmi',
+			RESKIN_WORN_ICON = 'icons/mob/clothing/hands.dmi',
 			RESKIN_WORN_ICON_STATE = "fightgloves"
 		),
 	)

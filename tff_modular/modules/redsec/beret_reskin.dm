@@ -1,10 +1,10 @@
 //Все береты являются грейскейлами, поэтому нужен свой кастомный рескин.
-//Да-да, всё ради одного беретика.......
-/obj/item/clothing/head/beret/
+//Записано для вообще всех головных уборов, потому что кто-то умный и решил наследовать берет хоса от головных уборов, а не от берета
+/obj/item/clothing/head
 	var/list/color_variants
 	var/recolored = FALSE
 
-/obj/item/clothing/head/beret/AltClick(mob/user)
+/obj/item/clothing/head/AltClick(mob/user)
 	. = ..()
 	if(recolored) //буквально повторение функционала рескинов. Без повторных перекрашиваний.
 		return
