@@ -119,13 +119,6 @@
 	)
 
 //Вещи Security Officer
-/*
-/obj/item/clothing/head/beret/sec/peacekeeper/Initialize(mapload)
-	. = ..()
-	unique_reskin +=  list(
-
-	)
-*/
 /obj/item/clothing/head/security_cap/Initialize(mapload)
 	. = ..()
 	unique_reskin += list(
@@ -180,6 +173,8 @@
 
 /obj/item/storage/belt/security/Initialize(mapload)
 	. = ..()
+	if(!unique_reskin)
+		return
 	unique_reskin += list(
 		"Red Variant" = list(
 			RESKIN_ICON = 'icons/obj/clothing/belts.dmi',
@@ -286,8 +281,6 @@
 		),
 	)
 
-//obj/item/clothing/head/beret/sec/navywarden
-
 /obj/item/clothing/under/rank/security/warden
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
@@ -323,25 +316,6 @@
 			RESKIN_WORN_ICON_STATE = "warden_jacket"
 		),
 	)
-
-/*
-/obj/item/clothing/suit/jacket/warden/blue
-	uses_advanced_reskins = TRUE
-	unique_reskin = list(
-		"Red Variant" = list(
-			RESKIN_ICON = 'icons/obj/clothing/head/helmet.dmi',
-			RESKIN_ICON_STATE = "helmet",
-			RESKIN_WORN_ICON = 'icons/mob/clothing/head/helmet.dmi',
-			RESKIN_WORN_ICON_STATE = "helmet"
-		),
-		"Black Variant" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/head/helmet.dmi',
-			RESKIN_ICON_STATE = "security_helmet",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/head/helmet.dmi',
-			RESKIN_WORN_ICON_STATE = "security_helmet"
-		),
-	)
-*/
 
 /obj/item/clothing/gloves/krav_maga/sec
 	uses_advanced_reskins = TRUE
