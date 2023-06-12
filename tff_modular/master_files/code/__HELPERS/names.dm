@@ -13,13 +13,13 @@
 
 	var/list/safety = list(1,2,3)//Tells the proc which options to remove later on.
 
-	var/nouns = strings(RUS_CODEWORDS, "nouns", RUS_CODEWORDS_DIR)
-	var/objects = strings(RUS_CODEWORDS, "objects", RUS_CODEWORDS_DIR)
-	var/adjectives = strings(RUS_CODEWORDS, "adjectives", RUS_CODEWORDS_DIR)
-	var/threats = strings(RUS_CODEWORDS, "threats", RUS_CODEWORDS_DIR)
-	var/foods = strings(RUS_CODEWORDS, "food", RUS_CODEWORDS_DIR)
-	var/drinks = strings(RUS_CODEWORDS, "drinks", RUS_CODEWORDS_DIR)
-	var/locations = strings(RUS_CODEWORDS, "locations", RUS_CODEWORDS_DIR)
+	var/nouns = strings(RUS_CODEWORDS, "nouns")
+	var/objects = strings(RUS_CODEWORDS, "objects")
+	var/adjectives = strings(RUS_CODEWORDS, "adjectives")
+	var/threats = strings(RUS_CODEWORDS, "threats")
+	var/foods = strings(RUS_CODEWORDS, "food")
+	var/drinks = strings(RUS_CODEWORDS, "drinks")
+	var/locations = strings(RUS_CODEWORDS, "locations")
 
 	var/list/names = list()
 	for(var/datum/record/crew/target in GLOB.manifest.general)//Picks from crew manifest.

@@ -4,6 +4,8 @@ on:
     branches:
     - master
     - 'project/**'
+    - 'gh-readonly-queue/master/**'
+    - 'gh-readonly-queue/project/**'
   pull_request:
     branches:
     - master
@@ -11,7 +13,6 @@ on:
   merge_group:
     branches:
     - master
-    - 'project/commit_queue_testing'
 jobs:
   run_linters:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
@@ -58,6 +59,7 @@ jobs:
           bash tools/ci/check_changelogs.sh
           bash tools/ci/check_grep.sh
           bash skyrat/tools/skyrat_check_grep.sh # SKYRAT EDIT ADDITION - checking modular_skyrat code
+          bash fluffy/tools/fluffy_check_grep.sh # FLUFFY EDIT ADDITION - checking tff_modular code
           bash tools/ci/check_misc.sh
           tools/bootstrap/python tools/validate_dme.py <tgstation.dme
           tools/bootstrap/python -m tools.maplint.source --github
