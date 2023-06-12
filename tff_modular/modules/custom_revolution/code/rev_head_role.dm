@@ -2,6 +2,9 @@
 	name = "\improper Leader Activist"
 	antag_hud_name = "rev_head"
 	antagpanel_category = "Activists Leader (custom revolution)"
+	// Some stuff
+	var/max_convert_items = 3
+	var/list/convert_items_list = list()
 
 /datum/antagonist/custom_rev/head/admin_add(datum/mind/new_owner, mob/admin)
 	var/confirm = tgui_alert(admin, "Создать новую команду?", "АТТЕНШЕН!!", list("Да", "Нет"))
