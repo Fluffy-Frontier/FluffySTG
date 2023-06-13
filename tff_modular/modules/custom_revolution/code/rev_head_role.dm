@@ -9,19 +9,20 @@
 /datum/antagonist/custom_rev/head/admin_add(datum/mind/new_owner, mob/admin)
 	var/confirm = tgui_alert(admin, "Создать новую команду?", "АТТЕНШЕН!!", list("Да", "Нет"))
 	if(confirm == "Да")
-		var/given_name = tgui_input_text(admin, "Имя для члена данного объединения::", "Нейминг")
+		var/given_name = tgui_input_text(admin, "Имя для члена данного объединения:", "Нейминг")
 		if(!given_name)
 			return FALSE
 		var/given_team_name = tgui_input_text(admin, "Название для объединения:", "Тим Нейминг")
 		if(!given_team_name)
 			return FALSE
-		var/given_objective = tgui_input_text(admin, "Цель движения:", "Обжектив", multiline = TRUE)
+		to_chat(admin, span_doyourjobidiot("Цель, ввиду своей не механической натуры, считается выполненой по умолчанию. При желании вы можете сами менять её статус через ТП любого члена объединения."))
+		var/given_objective = tgui_input_text(admin, "Прочитайте сообщение в чате и введите цель объединения:", "Обжектив", multiline = TRUE)
 		if(!given_objective)
 			return FALSE
 		var/mindshield_protection = tgui_alert(admin, "Майндшилд будет мешать вступлению?", "Мозго-Промыв", list("Да", "Нет"))
 		if(!mindshield_protection)
 			return FALSE
-		var/agression_factor = tgui_alert(admin, "Ваше объединение враждебно по потношению к власти, компании и прочему?", "Бад-Гайс?", list("Да", "Нет"))
+		var/agression_factor = tgui_alert(admin, "Ваше объединение будет враждебно по потношению к власти, компании, итп?", "Бад-Гайс?", list("Да", "Нет"))
 		if(!agression_factor)
 			return FALSE
 		if(QDELETED(src) || QDELETED(new_owner.current))
@@ -29,7 +30,6 @@
 
 		rev_team = new /datum/team/custom_rev_team
 
-		name = given_name
 		rev_team.rev_role_name = given_name
 		rev_team.name = given_team_name
 		rev_team.ignore_mindshield = (mindshield_protection == "Нет")
@@ -37,11 +37,12 @@
 		
 
 		var/datum/objective/obj = new()
-		obj.team = src
+		obj.team = rev_team
 		obj.explanation_text = given_objective 
 		obj.update_explanation_text()
-		objectives += obj
+		obj.completed = TRUE
 
+		rev_team.objectives |= obj
 		GLOB.custom_rev_teams += rev_team
 
 	else
@@ -63,3 +64,7 @@
 	new_owner.add_antag_datum(src)
 	message_admins("[key_name_admin(admin)] made [key_name(new_owner)] the leader of [rev_team.name].")
 	log_admin("[key_name(admin)] made [key_name(new_owner)] the leader of [rev_team.name].")
+
+/datum/antagonist/custom_rev/head/greet()
+	. = ..()
+	to_chat(owner, span_doyourjobidiot("Вы как лидер должны найти единомышленников для выполнения задачи."))

@@ -26,7 +26,6 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 		return FALSE
 	
 	rev_team = teams[team_option]
-	name = rev_team.rev_role_name
 		
 	new_owner.add_antag_datum(src)
 	message_admins("[key_name_admin(admin)] made [key_name(new_owner)] the member of [rev_team.name].")
@@ -35,13 +34,14 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 
 /datum/antagonist/custom_rev/greet()
 	. = ..()
-	to_chat(owner, span_userdanger("Помогите своим единомышленникам исполнить вашу совместную цель!"))
+	to_chat(owner, span_userdanger("Исполните со своими единомышленниками вашу общую задачу!"))
 	owner.announce_objectives()
 
 /datum/antagonist/custom_rev/on_gain()
-	. = ..()
+	name = rev_team.rev_role_name
 	objectives |= rev_team.objectives
-	owner.current.log_message("has been converted to the [rev_team.name]!", LOG_ATTACK, color="red")
+	. = ..()
+	owner.current.log_message("has been converted to the [rev_team.name]!", LOG_GAME, color="red")
 
 /datum/antagonist/custom_rev/on_removal()
 	objectives -= rev_team.objectives
