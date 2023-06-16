@@ -178,8 +178,9 @@ export const QuirksPage = (props, context) => {
 
           // SKYRAT EDIT START - Veteran quirks
           if (quirk.veteran_only && !data.is_veteran) {
-            if (quirk.allow_for_donator && !data.is_donator) { // THE FLUFFY FRONTIER EDIT - Donator quirk? Well...
-              return "You need to be a veteran to select this quirk, apply today!";
+            if (quirk.allow_for_donator && !data.is_donator) {
+              // THE FLUFFY FRONTIER EDIT - Donator quirk? Well...
+              return 'You need to be a veteran to select this quirk, apply today!';
             }
           }
           // SKYRAT EDIT END
