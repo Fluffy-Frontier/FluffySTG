@@ -12,6 +12,8 @@
 	armour_penetration = 30
 	item_flags = NEEDS_PERMIT
 	hitsound = 'modular_skyrat/master_files/sound/weapons/bloodyslice.ogg'
+	block_chance = 50
+	block_sound = 'sound/weapons/block_blade.ogg'
 
 /obj/item/organ/internal/cyberimp/arm/syndiearmblade
 	name = "blood-red mantis blade implant"
@@ -52,7 +54,7 @@
 	ATTENTION: THERE'S NO AUTOSURGEON INSIDE BOX! FIND GOOD REAPER BEFORE PURCHASE!" // В стандартном общедоступном варианте идут парой, но их установка это уже головная боль антагониста.
 	progression_minimum = 30 MINUTES
 	item = /obj/item/storage/box/syndie_kit/imp_mantis
-	cost = 14 // Возможно, надо будет поднять до 16, как альтернатива д-есворду, но колеблюсь из-за отсутствия у них автохирургов
+	cost = 14 // Возможно, надо будет поднять до 16, как альтернатива д-есворду
 	surplus = 10
 	limited_stock = 1
 	purchasable_from = ~UPLINK_CLOWN_OPS // Не доступно клоунской нюке
