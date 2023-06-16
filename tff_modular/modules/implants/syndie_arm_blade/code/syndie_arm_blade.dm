@@ -22,6 +22,7 @@
 
 /obj/item/autosurgeon/syndicate/syndiearmblade
 	starting_organ = /obj/item/organ/internal/cyberimp/arm/syndiearmblade // Используется(или будет в будущем) только в синди- и опфор-бандлах
+	uses = 2
 
 /obj/item/autosurgeon/syndicate/psycho_kit
 	name = "suspicious autosurgeon"
@@ -34,8 +35,8 @@
 	name = "syndie armblade implants box"
 
 /obj/item/storage/box/syndie_kit/imp_mantis/PopulateContents()
-	for(var/i in 1 to 2)
-		new /obj/item/organ/internal/cyberimp/arm/syndiearmblade(src)
+	new /obj/item/autosurgeon/syndicate/syndiearmblade(src)
+	new /obj/item/organ/internal/cyberimp/arm/syndiearmblade(src)
 
 /obj/item/storage/box/syndie_kit/psycho_kit
 	name = "Cyberpsycho kit"
@@ -63,7 +64,7 @@
 	progression_minimum = 30 MINUTES
 	item = /obj/item/storage/box/syndie_kit/psycho_kit
 	restricted_roles = list(JOB_ROBOTICIST, JOB_RESEARCH_DIRECTOR)
-	cost = 20
+	cost = 25
 	surplus = 1
 	limited_stock = 1
 	purchasable_from = ~UPLINK_CLOWN_OPS
