@@ -1,3 +1,5 @@
+// FLUFFY FRONTIER EDIT NOTE: ДАННЫЙ ФАЙЛ БЫЛ ЧАСТИЧНО ПОДВЕРГНУТ ПЕРЕЗАПИСИ ПО ПУТИ tff_modular\modules\mcr_nerf_revert\code\mcr_override.dm! В СЛУЧАЕ ВОЗМОЖНЫХ ОШИБОК ВЫЗВАННЫХ ИЗМЕНЕНИЯМИ ТУТ - СМОТРИТЕ ФАЙЛ С ПЕРЕЗАПИСЯМИ.
+
 #define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.4
 
 // Master file for cell loadable energy guns. PROCS ONLY YOU MONKEYS!
