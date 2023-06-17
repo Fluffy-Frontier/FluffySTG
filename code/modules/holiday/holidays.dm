@@ -364,7 +364,7 @@
 	// Stonewall was June 28th, this captures its week.
 	begin_day = 23
 	end_day = 29
-	holiday_colors = list(s
+	holiday_colors = list(
 	COLOR_PRIDE_PURPLE,
 	COLOR_PRIDE_BLUE,
 	COLOR_PRIDE_GREEN,
