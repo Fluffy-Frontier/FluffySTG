@@ -17,7 +17,7 @@
 	name = "Alien engineering toolset implant"
 	desc = "A bluespace storage of alien engineering tools hidden behind a concealed panel on the user's arm."
 	items_to_create = list(
-		/obj/item/crowbar/abductor
+		/obj/item/crowbar/abductor,
 		/obj/item/screwdriver/abductor,
 		/obj/item/weldingtool/abductor,
 		/obj/item/wirecutters/abductor,
