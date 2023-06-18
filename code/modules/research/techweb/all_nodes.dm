@@ -2201,6 +2201,10 @@
 		"oxy3medicell",
 		"toxin3medicell",
 		//SKYRAT EDIT END - RESEARCH DESIGNS
+		//FLUFFY FRONTIER START - RESEARCH DESIGNS
+		"alien_surgt",
+		"borg_alien_surg",
+		//FLUFFY FRONTIER END - RESEARCH DESIGNS
 	)
 
 	boost_item_paths = list(
@@ -2221,6 +2225,10 @@
 		/obj/item/weldingtool/abductor,
 		/obj/item/wirecutters/abductor,
 		/obj/item/wrench/abductor,
+		//FLUFFY FRONTIER START - BOOST ITEMS
+		/obj/item/organ/internal/cyberimp/arm/toolset/alien_med,
+		/obj/item/organ/internal/cyberimp/arm/toolset/alien_eng,
+		//FLUFFY FRONTIER END - BOOST ITEMS
 	)
 
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 12500)
@@ -2240,6 +2248,10 @@
 		"alien_welder",
 		"alien_wirecutters",
 		"alien_wrench",
+		// FLUFFY FRONTIER EDIT START - RESEARCH DESIGNS
+		"borg_alien_eng",
+		"alien_engt",
+		// FLUFFY FRONTIER EDIT END - RESEARCH DESIGNS
 	)
 
 	boost_item_paths = list(
@@ -2253,6 +2265,9 @@
 		/obj/item/weldingtool/abductor,
 		/obj/item/wirecutters/abductor,
 		/obj/item/wrench/abductor,
+		// FLUFFY FRONTIER EDIT START - BOOST ITEMS
+		/obj/item/organ/internal/cyberimp/arm/toolset/alien_eng
+		// FLUFFY FRONTIER EDIT START - BOOST ITEMS
 	)
 
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
