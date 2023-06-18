@@ -2173,6 +2173,10 @@
 		/obj/item/weldingtool/abductor,
 		/obj/item/wirecutters/abductor,
 		/obj/item/wrench/abductor,
+		//FLUFFY FRONTIER START - BOOST ITEMS
+		/obj/item/organ/internal/cyberimp/arm/toolset/alien_med,
+		/obj/item/organ/internal/cyberimp/arm/toolset/alien_eng,
+		//FLUFFY FRONTIER END - BOOST ITEMS
 	)
 	design_ids = list(
 		"alienalloy",
