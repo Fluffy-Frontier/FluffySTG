@@ -9,7 +9,7 @@
 			return
 	//SKYRAT Legacy ends
 	var/msg = "<font color='red' size='4'><b>- AdminHelp marked as skill issue! -</b></font><br>"
-	msg += "<font color='red'>Your issue has been determined by an administrator to be a character skill issue and does NOT require administrator intervention at this time. For further resolution you should pursue options that help you git gud.</font>"
+	msg += "<font color='red'>Your issue has been determined by an administrator to be your skill issue and does NOT require administrator intervention at this time. For further resolution you should pursue options that help you git gud.</font>"
 
 	if(initiator)
 		to_chat(initiator, msg, confidential = TRUE)
