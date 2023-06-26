@@ -13,7 +13,10 @@
 	hud.team = get_team()
 
 	// Add HUDs that they couldn't see before
-	for (var/datum/atom_hud/alternate_appearance/basic/has_antagonist/antag_hud as anything in GLOB.has_antagonist_huds)
+	for (var/datum/antagonist/antag as anything in GLOB.antagonists)
+		var/datum/atom_hud/alternate_appearance/basic/has_antagonist/antag_hud = antag.team_hud_ref.resolve()
+		if (!antag_hud)
+			continue
 		if (antag_hud.mobShouldSee(owner.current))
 			antag_hud.show_to(owner.current)
 
