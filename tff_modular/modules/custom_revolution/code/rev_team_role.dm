@@ -69,6 +69,5 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 	member_name = "\improper activists"
 	var/rev_role_name = "Activist"
 	var/ignore_mindshield = FALSE
-	var/agressive = TRUE
 
 

@@ -1,10 +1,10 @@
 /datum/antagonist/custom_rev/head
 	name = "\improper Leader Activist"
 	antag_hud_name = "rev_head"
-	antagpanel_category = "Activists Leader (custom revolution)"
-	// Some stuff
-	var/max_convert_items = 3
-	var/list/convert_items_list = list()
+	antagpanel_category = "Activists (custom revolution)"
+	var/datum/action/cooldown/create_brochure/create_brochure_action
+	var/max_convert_brochures = 3
+	var/list/convert_brochures_list = list()
 
 /datum/antagonist/custom_rev/head/admin_add(datum/mind/new_owner, mob/admin)
 	var/confirm = tgui_alert(admin, "Создать новую команду?", "АТТЕНШЕН!!", list("Да", "Нет"))
@@ -22,9 +22,6 @@
 		var/mindshield_protection = tgui_alert(admin, "Майндшилд будет мешать вступлению?", "Мозго-Промыв", list("Да", "Нет"))
 		if(!mindshield_protection)
 			return FALSE
-		var/agression_factor = tgui_alert(admin, "Ваше объединение будет враждебно по потношению к власти, компании, итп?", "Бад-Гайс?", list("Да", "Нет"))
-		if(!agression_factor)
-			return FALSE
 		if(QDELETED(src) || QDELETED(new_owner.current))
 			return FALSE
 
@@ -33,8 +30,6 @@
 		rev_team.rev_role_name = given_name
 		rev_team.name = given_team_name
 		rev_team.ignore_mindshield = (mindshield_protection == "Нет")
-		rev_team.agressive = (agression_factor == "Да")
-		
 
 		var/datum/objective/obj = new()
 		obj.team = rev_team
@@ -60,7 +55,13 @@
 		
 		rev_team = teams[team_option]
 		name = rev_team.rev_role_name
-		
+	
+	var/datum/objective/headrev_obj = new()
+	headrev_obj.explanation_text = "Соберите единомышленников во имя вашей цели!"
+	headrev_obj.update_explanation_text()
+	headrev_obj.completed = TRUE
+	objectives += headrev_obj
+
 	new_owner.add_antag_datum(src)
 	message_admins("[key_name_admin(admin)] made [key_name(new_owner)] the leader of [rev_team.name].")
 	log_admin("[key_name(admin)] made [key_name(new_owner)] the leader of [rev_team.name].")
@@ -68,3 +69,43 @@
 /datum/antagonist/custom_rev/head/greet()
 	. = ..()
 	to_chat(owner, span_doyourjobidiot("Вы как лидер должны найти единомышленников для выполнения задачи."))
+
+/datum/antagonist/custom_rev/head/on_gain()
+	. = ..()
+	create_brochure_action = new /datum/action/cooldown/create_brochure/
+	create_brochure_action.link_to(owner.current)
+	create_brochure_action.owner_antag_datum_ref = WEAKREF(src)
+	create_brochure_action.Grant(owner.current)
+
+/datum/antagonist/custom_rev/head/on_removal()
+	. = ..()
+	create_brochure_action.Remove(owner.current)
+	qdel(create_brochure_action)
+
+// Special action for headrev
+
+/datum/action/cooldown/create_brochure
+	name = "Create brochure"
+	cooldown_time = 30 // 30 ticks = 3 sec
+	var/datum/weakref/owner_antag_datum_ref
+	button_icon = 'tff_modular/modules/custom_revolution/icons/items.dmi'
+	button_icon_state = "brochure"
+
+/datum/action/cooldown/create_brochure/Activate(atom/target)
+	. = ..()
+	var/datum/antagonist/custom_rev/head/owner_antag_datum = owner_antag_datum_ref.resolve()
+	if(owner_antag_datum.convert_brochures_list.len >= owner_antag_datum.max_convert_brochures)
+		var/obj/item/custom_rev_brochure/old_brochure = owner_antag_datum.convert_brochures_list[1]
+		owner_antag_datum.convert_brochures_list -= old_brochure
+		old_brochure.fancy_destroy()
+	var/obj/item/custom_rev_brochure/brochure = new /obj/item/custom_rev_brochure
+	brochure.link_to_headrev(owner_antag_datum)
+	owner.put_in_hands(brochure)
+	to_chat(owner, span_notice("[brochure] suddenly appears, distorting space a bit in the process."), confidential = TRUE)
+
+	
+		
+
+
+
+
