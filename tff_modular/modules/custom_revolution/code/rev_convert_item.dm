@@ -3,8 +3,8 @@
 	desc = "Strange brochure made of durable material. There is something written on it, but for some reason you can't really understand anything."
 	icon = 'tff_modular/modules/custom_revolution/icons/items.dmi'
 	icon_state = "brochure"
-	var/datum/weakref/creator_antag_ref
-	var/datum/weakref/team_ref
+	var/datum/weakref/creator_antag_ref = new()
+	var/datum/weakref/team_ref = new()
 
 /obj/item/custom_rev_brochure/proc/link_to_headrev(datum/antagonist/custom_rev/head/antag)
 	creator_antag_ref = WEAKREF(antag)

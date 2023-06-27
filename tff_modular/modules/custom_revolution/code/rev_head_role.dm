@@ -88,7 +88,7 @@
 /datum/action/cooldown/create_brochure
 	name = "Create brochure"
 	cooldown_time = 30 // 30 ticks = 3 sec
-	var/datum/weakref/owner_antag_datum_ref
+	var/datum/weakref/owner_antag_datum_ref = new()
 	button_icon = 'tff_modular/modules/custom_revolution/icons/items.dmi'
 	button_icon_state = "brochure"
 
