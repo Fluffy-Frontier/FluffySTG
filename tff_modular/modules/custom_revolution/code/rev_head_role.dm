@@ -79,6 +79,7 @@
 
 /datum/antagonist/custom_rev/head/on_removal()
 	. = ..()
+	create_brochure_action.HideFrom(owner.current)
 	create_brochure_action.Remove(owner.current)
 	qdel(create_brochure_action)
 

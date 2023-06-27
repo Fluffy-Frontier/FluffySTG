@@ -44,6 +44,7 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 	owner.current.log_message("has been converted to the [rev_team.name]!", LOG_GAME, color="red")
 
 /datum/antagonist/custom_rev/on_removal()
+	to_chat(owner.current, span_doyourjobidiot("Вы больше не участник [rev_team.name]! Воспоминания об объединении и о вашем участии таят, словно снег в воде..."), confidential = TRUE)
 	objectives -= rev_team.objectives
 	. = ..()
 
@@ -54,10 +55,13 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 	var/mob/living/M = mob_override || owner.current
 	add_team_hud(M, rev_team)
 
+/// Удаляем роль при введении майндшилда.
 /datum/antagonist/custom_rev/on_mindshield(mob/implanter)
-	if(rev_team.ignore_mindshield == FALSE)
+	if(rev_team.ignore_mindshield)
 		return FALSE
 	remove_role(implanter)
+	for(var/mob/M in view(4, src))
+		to_chat(M, span_doyourjobidiot("[owner.current] выглядит так, словно в нём что-то изминилось!"), confidential = TRUE)
 	return COMPONENT_MINDSHIELD_DECONVERTED
 
 /datum/antagonist/custom_rev/proc/remove_role(mob/deconverter)

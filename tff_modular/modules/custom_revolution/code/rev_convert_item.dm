@@ -32,11 +32,16 @@
 		return FALSE
 	if(user.mind.has_antag_datum(/datum/antagonist/custom_rev, TRUE))
 		return FALSE
+
 	if(!rev_team_rs.ignore_mindshield && HAS_TRAIT(user, TRAIT_MINDSHIELD))
 		to_chat(user, span_alert("Вы никак не можете разобрать то, что написано в брошюре. Весь текст похож на бессвязный бред и вам от него малость не по себе."))
 		return FALSE
+		
 	var/confirm = tgui_alert(user, "Брошюра призывает вас вступить куда-то...", "Вы в деле?", list("Принять", "Отказаться"))
 	if(confirm == "Принять")
+		if(is_banned_from(user.ckey, list(BAN_ANTAGONIST, ROLE_REV)))
+			to_chat(user, span_alert("Что-то свыше мешает вашему вступлению..."))
+			return FALSE
 		var/datum/antagonist/custom_rev/rev = new /datum/antagonist/custom_rev
 		rev.rev_team = rev_team_rs
 		user.mind.add_antag_datum(rev)

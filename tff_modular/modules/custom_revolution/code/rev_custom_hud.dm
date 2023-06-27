@@ -6,21 +6,15 @@
 		/datum/atom_hud/alternate_appearance/basic/has_antagonist/custom_rev,
 		"antag_team_hud_[REF(src)]",
 		hud_image_on(target),
-		antag_to_check || type,
+		get_team(),
 	))
 
-	var/datum/atom_hud/alternate_appearance/basic/has_antagonist/custom_rev/hud = team_hud_ref.resolve()
-	hud.team = get_team()
-
 	// Add HUDs that they couldn't see before
-	for (var/datum/antagonist/antag as anything in GLOB.antagonists)
-		var/datum/atom_hud/alternate_appearance/basic/has_antagonist/antag_hud = antag.team_hud_ref.resolve()
-		if (!antag_hud)
-			continue
+	for (var/datum/atom_hud/alternate_appearance/basic/has_antagonist/antag_hud as anything in GLOB.has_antagonist_huds)
 		if (antag_hud.mobShouldSee(owner.current))
 			antag_hud.show_to(owner.current)
 
-/// An alternate appearance that will only show if you have the same rev team
+/// Особый худ который будет смотреть на причастность к тиме, а не к антажке.
 /datum/atom_hud/alternate_appearance/basic/has_antagonist/custom_rev
 	var/datum/team/custom_rev_team/team
 
@@ -32,3 +26,8 @@
 	if(M.mind in team.members)
 		return TRUE
 	return FALSE
+
+/datum/atom_hud/alternate_appearance/basic/has_antagonist/custom_rev/New(key, image/I, datum/team)
+	src.team = team
+	GLOB.has_antagonist_huds += src
+	return ..(key, I, NONE)
