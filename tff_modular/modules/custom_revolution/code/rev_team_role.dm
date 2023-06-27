@@ -31,7 +31,6 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 	message_admins("[key_name_admin(admin)] made [key_name(new_owner)] the member of [rev_team.name].")
 	log_admin("[key_name(admin)] made [key_name(new_owner)] the member of [rev_team.name].")
 
-
 /datum/antagonist/custom_rev/greet()
 	. = ..()
 	to_chat(owner, span_userdanger("Исполните со своими единомышленниками вашу общую задачу!"))
@@ -74,5 +73,3 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 	member_name = "\improper activists"
 	var/rev_role_name = "Activist"
 	var/ignore_mindshield = FALSE
-
-

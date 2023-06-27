@@ -49,11 +49,3 @@
 		return TRUE
 	to_chat(user, span_alert("Вы перебороли желание вступить куда-то..."))
 	. = FALSE
-	
-		
-
-
-
-
-
-		

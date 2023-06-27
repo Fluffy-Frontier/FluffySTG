@@ -103,10 +103,3 @@
 	brochure.link_to_headrev(owner_antag_datum)
 	owner.put_in_hands(brochure)
 	to_chat(owner, span_notice("[brochure] suddenly appears, distorting space a bit in the process."), confidential = TRUE)
-
-	
-		
-
-
-
-
