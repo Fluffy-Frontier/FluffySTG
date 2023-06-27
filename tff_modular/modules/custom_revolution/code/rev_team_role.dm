@@ -57,11 +57,12 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 
 /// Удаляем роль при введении майндшилда.
 /datum/antagonist/custom_rev/on_mindshield(mob/implanter)
+	var/mob/antag_mob = owner.current
 	if(rev_team.ignore_mindshield)
 		return FALSE
 	remove_role(implanter)
-	for(var/mob/M in view(4, src))
-		to_chat(M, span_doyourjobidiot("[owner.current] выглядит так, словно в нём что-то изминилось!"), confidential = TRUE)
+	for(var/mob/M in view(3, antag_mob))
+		to_chat(M, span_doyourjobidiot("[antag_mob] смотрит по сторонам, словно что-то в миг изменилось."), confidential = TRUE)
 	return COMPONENT_MINDSHIELD_DECONVERTED
 
 /datum/antagonist/custom_rev/proc/remove_role(mob/deconverter)

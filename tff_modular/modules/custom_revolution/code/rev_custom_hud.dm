@@ -11,6 +11,8 @@
 
 	// Add HUDs that they couldn't see before
 	for (var/datum/atom_hud/alternate_appearance/basic/has_antagonist/antag_hud as anything in GLOB.has_antagonist_huds)
+		if (!antag_hud)
+			continue
 		if (antag_hud.mobShouldSee(owner.current))
 			antag_hud.show_to(owner.current)
 
@@ -29,5 +31,4 @@
 
 /datum/atom_hud/alternate_appearance/basic/has_antagonist/custom_rev/New(key, image/I, datum/team)
 	src.team = team
-	GLOB.has_antagonist_huds += src
 	return ..(key, I, NONE)
