@@ -358,7 +358,9 @@
 
 /datum/holiday/pride_week
 	name = PRIDE_WEEK
-	begin_month = JUNE
+//FF edit begin
+	begin_month = 0
+//FF edit end
 	// Stonewall was June 28th, this captures its week.
 	begin_day = 23
 	end_day = 29
