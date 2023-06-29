@@ -12,7 +12,7 @@
 	armour_penetration = 30
 	item_flags = NEEDS_PERMIT
 	hitsound = 'modular_skyrat/master_files/sound/weapons/bloodyslice.ogg'
-	block_chance = 50
+	block_chance = 30
 	block_sound = 'sound/weapons/block_blade.ogg'
 
 /obj/item/organ/internal/cyberimp/arm/syndiearmblade
