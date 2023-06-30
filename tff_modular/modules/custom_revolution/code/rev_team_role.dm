@@ -33,7 +33,7 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 
 /datum/antagonist/custom_rev/greet()
 	. = ..()
-	to_chat(owner, span_userdanger("Исполните со своими единомышленниками вашу общую задачу!"))
+	to_chat(owner, span_userdanger("Cooperate with your union in order to accomplish your goals!"))
 	owner.announce_objectives()
 
 /datum/antagonist/custom_rev/on_gain()
@@ -43,7 +43,7 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 	owner.current.log_message("has been converted to the [rev_team.name]!", LOG_GAME, color="red")
 
 /datum/antagonist/custom_rev/on_removal()
-	to_chat(owner.current, span_doyourjobidiot("Вы больше не участник [rev_team.name]! Воспоминания об объединении и о вашем участии таят, словно снег в воде..."), confidential = TRUE)
+	to_chat(owner.current, span_doyourjobidiot("You are no longer [rev_team.name]! Memories about events during you being part of that union fades like snowflakes on water."), confidential = TRUE)
 	objectives -= rev_team.objectives
 	. = ..()
 
@@ -61,7 +61,7 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 		return FALSE
 	remove_role(implanter)
 	for(var/mob/M in view(3, antag_mob))
-		to_chat(M, span_doyourjobidiot("[antag_mob] смотрит по сторонам, словно что-то в миг изменилось."), confidential = TRUE)
+		to_chat(M, span_doyourjobidiot("[antag_mob] starts looking around in confusion."), confidential = TRUE)
 	return COMPONENT_MINDSHIELD_DECONVERTED
 
 /datum/antagonist/custom_rev/proc/remove_role(mob/deconverter)

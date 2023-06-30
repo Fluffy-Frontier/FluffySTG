@@ -1,4 +1,4 @@
-/// Custom add_team_hud proc
+/// Кастомные проц добавления худа.
 /datum/antagonist/custom_rev/add_team_hud(mob/target, antag_to_check)
 	QDEL_NULL(team_hud_ref)
 

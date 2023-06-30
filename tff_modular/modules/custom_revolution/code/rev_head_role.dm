@@ -7,19 +7,19 @@
 	var/list/convert_brochures_list = list()
 
 /datum/antagonist/custom_rev/head/admin_add(datum/mind/new_owner, mob/admin)
-	var/confirm = tgui_alert(admin, "Создать новую команду?", "АТТЕНШЕН!!", list("Да", "Нет"))
+	var/confirm = tgui_alert(admin, "Создать новую команду?", "Команда", list("Да", "Нет"))
 	if(confirm == "Да")
-		var/given_name = tgui_input_text(admin, "Имя для члена данного объединения:", "Нейминг")
+		var/given_name = tgui_input_text(admin, "Имя для члена данного объединения:", "Название роли")
 		if(!given_name)
 			return FALSE
-		var/given_team_name = tgui_input_text(admin, "Название для объединения:", "Тим Нейминг")
+		var/given_team_name = tgui_input_text(admin, "Название для объединения:", "Название команды")
 		if(!given_team_name)
 			return FALSE
 		to_chat(admin, span_doyourjobidiot("Цель, ввиду своей не механической натуры, считается выполненой по умолчанию. При желании вы можете сами менять её статус через ТП любого члена объединения."))
-		var/given_objective = tgui_input_text(admin, "Прочитайте сообщение в чате и введите цель объединения:", "Обжектив", multiline = TRUE)
+		var/given_objective = tgui_input_text(admin, "Прочитайте сообщение в чате и введите цель объединения:", "Цель", multiline = TRUE)
 		if(!given_objective)
 			return FALSE
-		var/mindshield_protection = tgui_alert(admin, "Майндшилд будет мешать вступлению?", "Мозго-Промыв", list("Да", "Нет"))
+		var/mindshield_protection = tgui_alert(admin, "Майндшилд будет мешать вступлению?", "Майндшилд", list("Да", "Нет"))
 		if(!mindshield_protection)
 			return FALSE
 		if(QDELETED(src) || QDELETED(new_owner.current))
@@ -47,7 +47,7 @@
 			teams_input_list += someteam.name
 			teams[someteam.name] = someteam
 		to_chat(admin, span_notice("Если у вас не вывело список доступных команд/объединений - скорее всего их нет."))
-		var/team_option = tgui_input_list(admin, "Доступные команды/объединения:", "Тимейты - Дауны", teams_input_list)
+		var/team_option = tgui_input_list(admin, "Доступные команды/объединения:", "Команды", teams_input_list)
 		if(QDELETED(src) || QDELETED(new_owner.current))
 			return
 		if(!team_option)
@@ -57,7 +57,7 @@
 		name = rev_team.rev_role_name
 	
 	var/datum/objective/headrev_obj = new()
-	headrev_obj.explanation_text = "Соберите единомышленников во имя вашей цели!"
+	headrev_obj.explanation_text = "Recruit people in order to accomplish your goals."
 	headrev_obj.update_explanation_text()
 	headrev_obj.completed = TRUE
 	objectives += headrev_obj
@@ -68,11 +68,11 @@
 
 /datum/antagonist/custom_rev/head/greet()
 	. = ..()
-	to_chat(owner, span_doyourjobidiot("Вы как лидер должны найти единомышленников для выполнения задачи."))
+	to_chat(owner, span_doyourjobidiot("As leader your primary task is recruiting new members."))
 
 /datum/antagonist/custom_rev/head/on_gain()
 	. = ..()
-	create_brochure_action = new /datum/action/cooldown/create_brochure/
+	create_brochure_action = new()
 	create_brochure_action.link_to(owner.current)
 	create_brochure_action.owner_antag_datum_ref = WEAKREF(src)
 	create_brochure_action.Grant(owner.current)
