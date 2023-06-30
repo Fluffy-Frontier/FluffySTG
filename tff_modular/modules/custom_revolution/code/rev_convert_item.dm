@@ -1,6 +1,6 @@
 /obj/item/custom_rev_brochure
 	name = "some strange brochure"
-	desc = "Strange brochure made of durable material. There is something written on it, but for some reason you can't really understand anything."
+	desc = "Strange brochure made of durable material. There is something written in and on it, but for some reason you can't really understand those writtings."
 	icon = 'tff_modular/modules/custom_revolution/icons/items.dmi'
 	icon_state = "brochure"
 	var/datum/weakref/creator_antag_ref = new()
@@ -40,7 +40,7 @@
 	var/confirm = tgui_alert(user, "Brochure somehow offers you to join something...", "Are you in?", list("Accept", "Decline"))
 	if(confirm == "Accept")
 		if(is_banned_from(user.ckey, list(BAN_ANTAGONIST, ROLE_REV)))
-			to_chat(user, span_alert("Some power from above prevents you to join..."))
+			to_chat(user, span_alert("Some power from above is preventing you from joining..."))
 			return FALSE
 		var/datum/antagonist/custom_rev/rev = new /datum/antagonist/custom_rev
 		rev.rev_team = rev_team_rs

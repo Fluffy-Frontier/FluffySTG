@@ -43,7 +43,7 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 	owner.current.log_message("has been converted to the [rev_team.name]!", LOG_GAME, color="red")
 
 /datum/antagonist/custom_rev/on_removal()
-	to_chat(owner.current, span_doyourjobidiot("You are no longer [rev_team.name]! Memories about events during you being part of that union fades like snowflakes on water."), confidential = TRUE)
+	to_chat(owner.current, span_doyourjobidiot("You are no longer [rev_team.rev_role_name]! Memories about events during you being part of that union vanish like snowflakes on the water."), confidential = TRUE)
 	objectives -= rev_team.objectives
 	. = ..()
 
