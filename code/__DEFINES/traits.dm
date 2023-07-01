@@ -1102,5 +1102,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 ///trait source that sign language should use
 #define SPEAKING_FROM_HANDS "hands"
 
+///Trait given by /datum/component/germ_sensitive
+#define TRAIT_GERM_SENSITIVE "germ_sensitive"
+
 //FF add, for auto-accent
 #define TRAIT_NO_ACCENT "has_auto_accent"
