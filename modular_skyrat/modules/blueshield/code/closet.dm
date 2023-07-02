@@ -9,7 +9,10 @@
 	// FLUFFY FRONTIER EDIT: ADDITION
 	// Sometimes blueshields don't want to have tackler gloves,
 	// So i gave him same gloves, but without tackler ability.
+	//
+	// Added blueshield modsuit
 	new /obj/item/clothing/gloves/combat(src)
+	new /obj/item/mod/control/pre_equipped/bodyguard(src)
 	// FLUFFY FRONTIER EDIT END.
 	new /obj/item/storage/secure/briefcase(src)
 	new /obj/item/storage/belt/security/full(src)
