@@ -91,7 +91,6 @@
 	caliber = "energy_capsule"
 	start_empty = TRUE
 	w_class = WEIGHT_CLASS_NORMAL
-	var/multitype = TRUE
 
 
 /obj/item/ammo_box/revolver_blueshield/laser

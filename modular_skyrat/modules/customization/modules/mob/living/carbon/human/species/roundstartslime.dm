@@ -32,7 +32,6 @@
 	examine_limb_id = SPECIES_SLIMEPERSON
 	coldmod = 3
 	heatmod = 1
-	burnmod = 1
 	specific_alpha = 155
 	markings_alpha = 130 //This is set lower than the other so that the alpha values don't stack on top of each other so much
 	mutanteyes = /obj/item/organ/internal/eyes
@@ -46,6 +45,18 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/slime/roundstart,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/slime/roundstart,
 	)
+
+/datum/species/jelly/roundstartslime/create_pref_unique_perks()
+	var/list/perk_descriptions = list()
+
+	perk_descriptions += list(list(
+		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
+		SPECIES_PERK_ICON = "biohazard",
+		SPECIES_PERK_NAME = "Squishy Form",
+		SPECIES_PERK_DESC = "Being made of slime, you have the ability to alter your physical form to be whatever you choose! You may grow ears, change your hair, and even become a taur-like if you so choose, at the press of a button and the snap of a finger!"
+	))
+
+	return perk_descriptions
 
 /**
  * Alter Form is the ability of slimes to edit many of their character attributes at will
