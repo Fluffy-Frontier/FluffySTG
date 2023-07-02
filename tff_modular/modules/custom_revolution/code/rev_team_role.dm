@@ -43,7 +43,7 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 	owner.current.log_message("has been converted to the [rev_team.name]!", LOG_GAME, color="red")
 
 /datum/antagonist/custom_rev/on_removal()
-	to_chat(owner.current, span_doyourjobidiot("You are no longer [rev_team.rev_role_name]! Memories about events during you being part of that union vanish like snowflakes on the water."), confidential = TRUE)
+	to_chat(owner.current, span_doyourjobidiot("You are no longer part of [rev_team.name]! Memories about events during you being part of that union vanish like snowflakes on the water."), confidential = TRUE)
 	objectives -= rev_team.objectives
 	. = ..()
 
@@ -60,8 +60,7 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 	if(rev_team.ignore_mindshield)
 		return FALSE
 	remove_role(implanter)
-	for(var/mob/M in view(3, antag_mob))
-		to_chat(M, span_doyourjobidiot("[antag_mob] starts looking around in confusion."), confidential = TRUE)
+	antag_mob.visible_message(span_doyourjobidiot("[antag_mob] starts looking around in confusion."), span_doyourjobidiot("You feel really strange and confused..."))
 	return COMPONENT_MINDSHIELD_DECONVERTED
 
 /datum/antagonist/custom_rev/proc/remove_role(mob/deconverter)

@@ -9,10 +9,10 @@
 /datum/antagonist/custom_rev/head/admin_add(datum/mind/new_owner, mob/admin)
 	var/confirm = tgui_alert(admin, "Создать новую команду?", "Команда", list("Да", "Нет"))
 	if(confirm == "Да")
-		var/given_name = tgui_input_text(admin, "Имя для члена данного объединения:", "Название роли")
+		var/given_name = tgui_input_text(admin, "Название участника данного объединения:", "Название роли")
 		if(!given_name)
 			return FALSE
-		var/given_team_name = tgui_input_text(admin, "Название для объединения:", "Название команды")
+		var/given_team_name = tgui_input_text(admin, "Название объединения:", "Название команды")
 		if(!given_team_name)
 			return FALSE
 		to_chat(admin, span_doyourjobidiot("Цель, ввиду своей не механической натуры, считается выполненой по умолчанию. При желании вы можете сами менять её статус через ТП любого члена объединения."))
