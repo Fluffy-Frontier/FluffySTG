@@ -9,9 +9,8 @@
 	// FLUFFY FRONTIER EDIT: ADDITION
 	// Sometimes blueshields don't want to have tackler gloves,
 	// So i gave him same gloves, but without tackler ability.
-	//
-	// Added blueshield modsuit. If Blueshield prefer quick carry, but not patient transport, also added this module
 	new /obj/item/clothing/gloves/combat(src)
+	// Added blueshield modsuit. If Blueshield prefer quick carry, but not patient transport, also added this module
 	new /obj/item/mod/control/pre_equipped/bodyguard(src)
 	new /obj/item/mod/module/quick_carry(src)
 	// FLUFFY FRONTIER EDIT END.
