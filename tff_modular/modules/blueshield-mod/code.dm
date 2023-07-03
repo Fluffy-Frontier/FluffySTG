@@ -13,7 +13,6 @@
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	complexity_max = DEFAULT_MAX_COMPLEXITY
 	charge_drain = DEFAULT_CHARGE_DRAIN * 0.5
-	inbuilt_modules = list(/obj/item/mod/module/quick_carry/advanced)
 	siemens_coefficient = 0
 	slowdown_inactive = 0.5
 	slowdown_active = 0
@@ -70,7 +69,7 @@
 	applied_cell = /obj/item/stock_parts/cell/super
 	applied_modules = list(
 		/obj/item/mod/module/storage/large_capacity,
-		/obj/item/mod/module/emp_shield,
+		/obj/item/mod/module/criminalcapture/patienttransport,
 		/obj/item/mod/module/magnetic_harness,
 		/obj/item/mod/module/jetpack,
 		/obj/item/mod/module/dna_lock,
