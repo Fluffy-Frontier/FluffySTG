@@ -1,3 +1,4 @@
+/* THE FLUFFY FRONTIER REMOVAL
 /datum/traitor_objective_category/infect
 	name = "Infect with Disease"
 	objectives = list(
@@ -170,3 +171,5 @@
 	used = TRUE
 	inject(affected_mob, user)
 	SEND_SIGNAL(src, COMSIG_EHMS_INJECTOR_INJECTED, user, affected_mob)
+
+*/
