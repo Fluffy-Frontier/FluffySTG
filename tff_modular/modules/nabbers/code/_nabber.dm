@@ -140,24 +140,24 @@
 	))
 
 	perk_descriptions += list(list(
-    	SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
-    	SPECIES_PERK_ICON = "star-of-life",
-    	SPECIES_PERK_NAME = "Welder eyelids",
-    	SPECIES_PERK_DESC = "GAS can close their second pair of eyelids to protect their eyes from welder flash."
+		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
+		SPECIES_PERK_ICON = "star-of-life",
+		SPECIES_PERK_NAME = "Welder eyelids",
+		SPECIES_PERK_DESC = "GAS can close their second pair of eyelids to protect their eyes from welder flash."
 	))
 
 	perk_descriptions += list(list(
-    	SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
-    	SPECIES_PERK_ICON = "star-of-life",
-    	SPECIES_PERK_NAME = "Mantis arms",
-   		SPECIES_PERK_DESC = "GAS possesses a second pair of arms with massive sharp mantis blades. They can have only one pair active at a time and need to pump blood between them."
+		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
+		SPECIES_PERK_ICON = "star-of-life",
+		SPECIES_PERK_NAME = "Mantis arms",
+		SPECIES_PERK_DESC = "GAS possesses a second pair of arms with massive sharp mantis blades. They can have only one pair active at a time and need to pump blood between them."
 	))
 
 	perk_descriptions += list(list(
-    	SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
-    	SPECIES_PERK_ICON = "star-of-life",
-    	SPECIES_PERK_NAME = "Camoufage",
-   		SPECIES_PERK_DESC = "GAS can blend in with their surroundings and become transparent to hide from danger."
+		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
+		SPECIES_PERK_ICON = "star-of-life",
+		SPECIES_PERK_NAME = "Camoufage",
+		SPECIES_PERK_DESC = "GAS can blend in with their surroundings and become transparent to hide from danger."
 	))
 
 	return perk_descriptions
