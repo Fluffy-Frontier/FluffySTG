@@ -1,3 +1,6 @@
+#define BASE_CLOTH_X_1 1
+#define BASE_CLOTH_Y_1 1
+
 /obj/item
 	var/datum/greyscale_config/greyscale_config_worn_nabber_fallback
 
@@ -39,10 +42,6 @@
 	species_clothing_color_coords = list(list(BASE_CLOTH_X_1, BASE_CLOTH_Y_1))
 	greyscale_config_worn_nabber_fallback = /datum/greyscale_config/nabber/gloves
 
-/obj/item/clothing/glasses
-	species_clothing_color_coords = list(list(BASE_CLOTH_X_1, BASE_CLOTH_Y_1))
-	greyscale_config_worn_nabber_fallback = /datum/greyscale_config/nabber/eyes
-
 /obj/item/clothing/belt
 	species_clothing_color_coords = list(list(BASE_CLOTH_X_1, BASE_CLOTH_Y_1))
 	greyscale_config_worn_nabber_fallback = /datum/greyscale_config/nabber/belt
@@ -73,10 +72,6 @@
 /datum/greyscale_config/nabber/gloves
 	name = "Nabber Gloves"
 	json_config = 'modular_skyrat/modules/GAGS/json_configs/nabber_fallbacks/gloves.json'
-
-/datum/greyscale_config/nabber/eyes
-	name = "Nabber Eyes"
-	json_config = 'modular_skyrat/modules/GAGS/json_configs/nabber_fallbacks/eyes.json'
 
 /datum/greyscale_config/nabber/belt
 	name = "Nabber Belt"

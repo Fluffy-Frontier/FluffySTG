@@ -22,6 +22,44 @@
 	icon_state = "eyes"
 	flash_protect = FLASH_PROTECTION_SENSITIVE
 
+/obj/item/organ/internal/eyes/robotic/nabber
+	name = "nabber eyes"
+	desc = "Small orange orbs. With pair welding shield linses."
+	icon = ORGGAN_ICON_NABBER
+	icon_state = "eyes"
+	flash_protect = FLASH_PROTECTION_SENSITIVE
+	var/datum/action/toggle_welding/shield
+	var/active = FALSE
+
+/obj/item/organ/internal/eyes/robotic/nabber/Insert(mob/living/carbon/eye_recipient, special, drop_if_replaced)
+	. = ..()
+	shield = new()
+	shield.button_icon = ORGGAN_ICON_NABBER
+	shield.button_icon_state = "eyes"
+	shield.Grant(eye_recipient)
+	shield.eyes = src
+
+/obj/item/organ/internal/eyes/robotic/nabber/proc/toggle_shielding()
+	active = !active
+	playsound(src, 'sound/machines/click.ogg', 50, TRUE)
+
+	if(active)
+		flash_protect = FLASH_PROTECTION_WELDER
+		tint = 2
+		owner.update_tint()
+		owner.balloon_alert(owner, "Welder eyelids shut!")
+		return
+
+	flash_protect = FLASH_PROTECTION_SENSITIVE
+	tint = 0
+	owner.update_tint()
+	owner.balloon_alert(owner, "Welder eyelids open!")
+
+
+/obj/item/organ/internal/eyes/robotic/nabber/Remove(mob/living/carbon/eye_owner, special)
+	. = ..()
+	shield.Destroy()
+
 /obj/item/organ/internal/lungs/nabber
 	name = "nabber lungs"
 	icon = ORGGAN_ICON_NABBER
@@ -47,7 +85,7 @@
 	heat_damage_type = BURN
 
 /obj/item/organ/internal/liver/nabber
-	name = "skrell liver"
+	name = "nabber liver"
 	icon_state = "liver"
 	icon = ORGGAN_ICON_NABBER
 	liver_resistance = 0.8 * LIVER_DEFAULT_TOX_RESISTANCE // -40%

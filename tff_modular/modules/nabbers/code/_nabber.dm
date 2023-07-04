@@ -1,6 +1,3 @@
-#define BASE_CLOTH_X_1 1
-#define BASE_CLOTH_Y_1 1
-
 #define NABBER_COLD_THRESHOLD_1 180
 #define NABBER_COLD_THRESHOLD_2 140
 #define NABBER_COLD_THRESHOLD_3 100
@@ -8,6 +5,8 @@
 #define NABBER_HEAT_THRESHOLD_1 300
 #define NABBER_HEAT_THRESHOLD_2 440
 #define NABBER_HEAT_THRESHOLD_3 600
+
+#define NABBER_DAMAGE_ONBURNING 3
 
 /datum/species/nabber
 	name = "Giant Armored Serpentid"
@@ -29,11 +28,8 @@
 		TRAIT_RESISTHIGHPRESSURE,
 		TRAIT_RESISTLOWPRESSURE
 	)
-	no_equip_flags = ITEM_SLOT_FEET | ITEM_SLOT_OCLOTHING | ITEM_SLOT_SUITSTORE
+	no_equip_flags = ITEM_SLOT_FEET | ITEM_SLOT_OCLOTHING | ITEM_SLOT_SUITSTORE | ITEM_SLOT_EYES
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	default_mutant_bodyparts = list(
-		"legs" = "Normal Legs"
-	)
 	mutanttongue = /obj/item/organ/internal/tongue/insect
 	liked_food = RAW
 	disliked_food = CLOTH | GRAIN | FRIED | TOXIC | GORE | GROSS
@@ -46,11 +42,12 @@
 	// Need balancing
 	speedmod = 1
 	mutantbrain = /obj/item/organ/internal/brain/nabber
-	mutanteyes = /obj/item/organ/internal/eyes/nabber
+	mutanteyes = /obj/item/organ/internal/eyes/robotic/nabber
 	mutantlungs = /obj/item/organ/internal/lungs/nabber
 	mutantheart = /obj/item/organ/internal/heart/nabber
 	mutantliver = /obj/item/organ/internal/liver/nabber
 	mutantears = /obj/item/organ/internal/ears/nabber
+	mutantappendix = null
 	bodypart_overrides = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/mutant/nabber,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/mutant/nabber,
@@ -64,11 +61,31 @@
 		LOADOUT_ITEM_MASK = NABBER_MASK_ICON,
 		LOADOUT_ITEM_UNIFORM = NABBER_UNIFORM_ICON,
 		LOADOUT_ITEM_HANDS =  NABBER_HANDS_ICON,
-		LOADOUT_ITEM_GLASSES = NABBER_EYES_ICON,
 		LOADOUT_ITEM_BELT = NABBER_BELT_ICON,
 		LOADOUT_ITEM_MISC = NABBER_BACK_ICON,
 		LOADOUT_ITEM_EARS = NABBER_EARS_ICON
 	)
+	var/datum/action/cooldown/nabber_combat/combat_mode
+	var/datum/action/cooldown/optical_camouflage/camouflage
+
+/datum/species/nabber/on_species_gain(mob/living/carbon/human/C, datum/species/old_species, pref_load)
+	. = ..()
+	combat_mode = new()
+	combat_mode.Grant(C)
+	camouflage = new()
+	camouflage.Grant(C)
+
+/datum/species/nabber/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
+	. = ..()
+	combat_mode.Destroy()
+	camouflage.Destroy()
+
+/datum/species/nabber/spec_life(mob/living/carbon/human/H, seconds_per_tick, times_fired)
+	. = ..()
+	if(isdead(H))
+		return
+	if(H.on_fire)
+		H.apply_damage(NABBER_DAMAGE_ONBURNING, OXY)
 
 /datum/species/nabber/randomize_features(mob/living/carbon/human/human_mob)
 	var/main_color
@@ -102,24 +119,45 @@
 	var/list/perk_descriptions = list()
 
 	perk_descriptions += list(list(
-		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
+		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 		SPECIES_PERK_ICON = "star-of-life",
-		SPECIES_PERK_NAME = "Durable leather",
-		SPECIES_PERK_DESC = "The Giant Armored Serpentid chitin is very robust and protects them from pressure and low temperature hazards, while also providing decent brute resistance."
-	))
-
-	perk_descriptions += list(list(
-		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
-		SPECIES_PERK_ICON = "star-of-life",
-		SPECIES_PERK_NAME = "Heavy Skeleton",
-		SPECIES_PERK_DESC = "Giant Armored Serpentid are large and heavy. They can't be properly grabbed by other creatures."
+		SPECIES_PERK_NAME = "Serpent body",
+		SPECIES_PERK_DESC = "GAS possess serpent-like bodies and cannot wear most human clothes."
 	))
 
 	perk_descriptions += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 		SPECIES_PERK_ICON = "star-of-life",
-		SPECIES_PERK_NAME = "Custom body",
-		SPECIES_PERK_DESC = "Giant Armored Serpentid has a nonhumanoid body and can't wear most clothes."
+		SPECIES_PERK_NAME = "Robust chitin",
+		SPECIES_PERK_DESC = "GAS possess durable chitinous exoskeletons and can withstand a lot of brute damage."
+	))
+
+	perk_descriptions += list(list(
+		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
+		SPECIES_PERK_ICON = "star-of-life",
+		SPECIES_PERK_NAME = "Extreme heat weakness",
+		SPECIES_PERK_DESC = "GAS is afraid of fire. High temperatures and open flames suffocate them and deal massive damage.."
+	))
+
+	perk_descriptions += list(list(
+    	SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
+    	SPECIES_PERK_ICON = "star-of-life",
+    	SPECIES_PERK_NAME = "Welder eyelids",
+    	SPECIES_PERK_DESC = "GAS can close their second pair of eyelids to protect their eyes from welder flash."
+	))
+
+	perk_descriptions += list(list(
+    	SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
+    	SPECIES_PERK_ICON = "star-of-life",
+    	SPECIES_PERK_NAME = "Mantis arms",
+   		SPECIES_PERK_DESC = "GAS possesses a second pair of arms with massive sharp mantis blades. They can have only one pair active at a time and need to pump blood between them."
+	))
+
+	perk_descriptions += list(list(
+    	SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
+    	SPECIES_PERK_ICON = "star-of-life",
+    	SPECIES_PERK_NAME = "Camoufage",
+   		SPECIES_PERK_DESC = "GAS can blend in with their surroundings and become transparent to hide from danger."
 	))
 
 	return perk_descriptions
