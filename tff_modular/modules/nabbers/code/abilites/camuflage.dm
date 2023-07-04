@@ -20,7 +20,7 @@
 		return
 
 	if(owner.has_status_effect(/datum/status_effect/nabber_combat))
-		owner.balloon_alert("Can't now!")
+		owner.balloon_alert(owner, "Can't now!")
 		return
 
 	RegisterSignals(owner, list(COMSIG_MOB_ITEM_ATTACK, COMSIG_ATOM_ATTACKBY, COMSIG_ATOM_ATTACK_HAND, COMSIG_ATOM_HITBY, COMSIG_ATOM_HULK_ATTACK, COMSIG_ATOM_ATTACK_PAW, COMSIG_CARBON_CUFF_ATTEMPTED, COMSIG_ATOM_BULLET_ACT, COMSIG_HUMAN_MELEE_UNARMED_ATTACK, COMSIG_LIVING_MOB_BUMP, COMSIG_HUMAN_BURNING), PROC_REF(remove_camouflage))
@@ -44,6 +44,8 @@
 	button_icon_state = ICON_STATE_CAMOUFLAGE_ON
 	owner.update_action_buttons()
 
+	active = TRUE
+
 /datum/action/cooldown/optical_camouflage/proc/remove_camouflage()
 	owner.visible_message(span_notice("[owner] stops blending in with surroundings."), span_notice("You become visible again."), span_hear("You hear a low hiss."))
 	animate(owner, alpha = 255, time = 1.5 SECONDS)
@@ -52,6 +54,8 @@
 
 	button_icon_state = ICON_STATE_CAMOUFLAGE_OFF
 	owner.update_action_buttons()
+
+	active = FALSE
 
 #undef ICON_STATE_CAMOUFLAGE_ON
 #undef ICON_STATE_CAMOUFLAGE_OFF

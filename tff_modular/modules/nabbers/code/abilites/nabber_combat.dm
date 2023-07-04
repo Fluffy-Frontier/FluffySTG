@@ -81,6 +81,10 @@
 		nabber.balloon_alert(nabber, "Need both hands!")
 		return
 
+	if(nabber.alpha < 255)
+		nabber.balloon_alert(owner, "Can't now!")
+		return
+
 	var/obj/item/held = nabber.get_active_held_item()
 	var/obj/item/inactive = nabber.get_inactive_held_item()
 
@@ -111,7 +115,7 @@
 	nabber.remove_status_effect(/datum/status_effect/nabber_combat)
 
 	update_icon_state(ICON_STATE_COMBAT_OFF)
-	playsound(src, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
+	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
 
 	// Удаление клинков из инвенторя.
 	for(var/obj/item/held in nabber.held_items)
@@ -126,7 +130,7 @@
 	nabber.visible_message(span_warning("[nabber] starts to pump blood into their mantis arms!"), span_userdanger("You start pumping blood into your mantis arms and emmitting defensive screech! Stay still!"), span_hear("You hear ramping up screech!"))
 	nabber.Stun(cooldown_time)
 
-	playsound(src, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
+	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
 	addtimer(CALLBACK(src, PROC_REF(active_combat)), cooldown_time)
 
 /datum/action/cooldown/nabber_combat/proc/active_combat()
@@ -138,7 +142,7 @@
 		return
 
 	update_icon_state(ICON_STATE_COMBAT_ON)
-	playsound(src, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
+	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
 
 	nabber.visible_message(span_warning("[nabber] raised their mantis arms ready for combat!"), span_userdanger("You raise your mantis arms, ready for combat."), span_hear("You hear terrible a screech!"))
 
