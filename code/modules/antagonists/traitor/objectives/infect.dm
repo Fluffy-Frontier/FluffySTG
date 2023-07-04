@@ -1,4 +1,3 @@
-/* THE FLUFFY FRONTIER REMOVAL
 /datum/traitor_objective_category/infect
 	name = "Infect with Disease"
 	objectives = list(
@@ -7,7 +6,9 @@
 
 /datum/traitor_objective/target_player/infect
 	name = "Infect %TARGET% the %JOB TITLE%"
-	description = "Infect your target with the experimental Hereditary Manifold Sickness."
+	// THE FLUFFY FRONTIER BEGIN EDIT
+	description = "Infect your target with the experimental infection."
+	// THE FLUFFY FRONTIER BEGIN END
 
 	progression_minimum = 30 MINUTES
 
@@ -33,7 +34,9 @@
 /datum/traitor_objective/target_player/infect/generate_ui_buttons(mob/user)
 	var/list/buttons = list()
 	if(!ehms)
-		buttons += add_ui_button("", "Pressing this will materialize a EHMS autoinjector into your hand, which you must inject into the target to succeed.", "syringe", "summon_pen")
+		// THE FLUFFY FRONTIER BEGIN EDIT
+		buttons += add_ui_button("", "Pressing this will materialize a infection autoinjector into your hand, which you must inject into the target to succeed.", "syringe", "summon_pen")
+		// THE FLUFFY FRONTIER BEGIN END
 	return buttons
 
 /datum/traitor_objective/target_player/infect/ui_perform_action(mob/living/user, action)
@@ -146,8 +149,10 @@
 		fail_objective()
 
 /obj/item/reagent_containers/hypospray/medipen/manifoldinjector
-	name = "EHMS autoinjector"
-	desc = "Experimental Hereditary Manifold Sickness autoinjector."
+	// THE FLUFFY FRONTIER BEGIN EDIT
+	name = "Infection autoinjector"
+	desc = "Experimental infection autoinjector."
+	// THE FLUFFY FRONTIER BEGIN END
 	icon_state = "tbpen"
 	inhand_icon_state = "tbpen"
 	base_icon_state = "tbpen"
@@ -166,10 +171,12 @@
 	if(!do_after(user, 1.5 SECONDS))
 		balloon_alert(user, "interrupted!")
 		return
-	var/datum/disease/chronic_illness/hms = new /datum/disease/chronic_illness()
-	affected_mob.ForceContractDisease(hms)
+	// THE FLUFFY FRONTIER BEGIN EDIT
+	var/datum/disease/advance/random/rand_disease = new(6, 7)
+	rand_disease.name = "Unknown"
+	affected_mob.ForceContractDisease(rand_disease)
+	// THE FLUFFY FRONTIER EDIT END
 	used = TRUE
 	inject(affected_mob, user)
 	SEND_SIGNAL(src, COMSIG_EHMS_INJECTOR_INJECTED, user, affected_mob)
 
-*/
