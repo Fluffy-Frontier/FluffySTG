@@ -22,6 +22,9 @@
 		var/mindshield_protection = tgui_alert(admin, "Майндшилд будет мешать вступлению?", "Майндшилд", list("Да", "Нет"))
 		if(!mindshield_protection)
 			return FALSE
+		var/brochure_message = tgui_input_text(admin, "Зазывающий текст в брошюре:", "Брошюра")
+		if(!brochure_message)
+			return FALSE
 		if(QDELETED(src) || QDELETED(new_owner.current))
 			return FALSE
 
@@ -30,6 +33,7 @@
 		rev_team.rev_role_name = given_name
 		rev_team.name = given_team_name
 		rev_team.ignore_mindshield = (mindshield_protection == "Нет")
+		rev_team.brochure_message = brochure_message
 
 		var/datum/objective/obj = new()
 		obj.team = rev_team

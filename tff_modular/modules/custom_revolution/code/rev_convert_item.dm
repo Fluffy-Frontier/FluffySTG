@@ -1,6 +1,6 @@
 /obj/item/custom_rev_brochure
 	name = "some strange brochure"
-	desc = "Strange brochure made of durable material. There is something written in and on it, but for some reason you can't really understand those writtings."
+	desc = "Strange brochure made of durable material. There is something written in and on it."
 	icon = 'tff_modular/modules/custom_revolution/icons/items.dmi'
 	icon_state = "brochure"
 	var/datum/weakref/creator_antag_ref = new()
@@ -37,7 +37,7 @@
 		to_chat(user, span_alert("You can't really figure out what written in this brochure and you feel odd for some reason."))
 		return FALSE
 		
-	var/confirm = tgui_alert(user, "Brochure somehow offers you to join something...", "Are you in?", list("Accept", "Decline"))
+	var/confirm = tgui_alert(user, rev_team_rs.brochure_message, "Are you in?", list("Accept", "Decline"))
 	if(loc != user)
 		return FALSE
 	if(confirm == "Accept")
