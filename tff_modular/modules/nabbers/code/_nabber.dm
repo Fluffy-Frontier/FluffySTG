@@ -6,7 +6,7 @@
 #define NABBER_HEAT_THRESHOLD_2 440
 #define NABBER_HEAT_THRESHOLD_3 600
 
-#define NABBER_DAMAGE_ONBURNING 3
+#define NABBER_DAMAGE_ONBURNING 5
 
 /datum/species/nabber
 	name = "Giant Armored Serpentid"
@@ -14,7 +14,7 @@
 	bodytype = BODYTYPE_CUSTOM
 	eyes_icon = 'tff_modular/modules/nabbers/icons/organs/nabber_eyes.dmi'
 	can_augment = FALSE
-	veteran_only = FALSE //Change in the future.
+	veteran_only = TRUE
 	species_traits = list(
 		MUTCOLORS,
 		EYECOLOR,
@@ -84,6 +84,7 @@
 	. = ..()
 	if(isdead(H))
 		return
+	//Огонь вызывает у ГБС асфиксию. Им лучше не гореть.
 	if(H.on_fire)
 		H.apply_damage(NABBER_DAMAGE_ONBURNING, OXY)
 
