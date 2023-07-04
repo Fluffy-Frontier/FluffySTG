@@ -58,6 +58,10 @@
 	if(SStts.tts_enabled)
 		voice = pick(SStts.available_speakers)
 	GLOB.silicon_mobs += src
+	// THE FLUFFY FRONTIER EDIT BEGIN
+	if(iscyborg(src))
+		initial_language_holder = /datum/language_holder/synthetic/cyborg
+	// THE FLUFFY FRONTIER EDIT END
 	faction += FACTION_SILICON
 	if(ispath(radio))
 		radio = new radio(src)
