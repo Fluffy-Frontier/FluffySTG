@@ -179,4 +179,3 @@
 	used = TRUE
 	inject(affected_mob, user)
 	SEND_SIGNAL(src, COMSIG_EHMS_INJECTOR_INJECTED, user, affected_mob)
-
