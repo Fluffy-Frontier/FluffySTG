@@ -172,7 +172,7 @@
 		balloon_alert(user, "interrupted!")
 		return
 	// THE FLUFFY FRONTIER BEGIN EDIT
-	var/datum/disease/advance/random/rand_disease = new(4, 6)
+	var/datum/disease/advance/random/rand_disease = new(3, 6)
 	rand_disease.name = "Unknown"
 	affected_mob.ForceContractDisease(rand_disease)
 	// THE FLUFFY FRONTIER EDIT END
