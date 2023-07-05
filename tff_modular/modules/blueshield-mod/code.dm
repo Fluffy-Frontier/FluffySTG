@@ -22,6 +22,7 @@
 		/obj/item/restraints/handcuffs,
 		/obj/item/assembly/flash,
 		/obj/item/melee/baton,
+		/obj/item/storage/belt/holster/energy/blueshield, // Будет глупо, если БЩ не сможет носить свой разгруз/кобуру на своём МОДе.
 	)
 	skins = list(
 		"bodyguard" = list(
