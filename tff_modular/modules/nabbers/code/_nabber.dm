@@ -70,9 +70,9 @@
 
 /datum/species/nabber/on_species_gain(mob/living/carbon/human/C, datum/species/old_species, pref_load)
 	. = ..()
-	combat_mode = new()
+	combat_mode = new(C)
 	combat_mode.Grant(C)
-	camouflage = new()
+	camouflage = new(C)
 	camouflage.Grant(C)
 
 /datum/species/nabber/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
@@ -176,3 +176,6 @@
 
 /datum/species/nabber/get_species_lore()
 	return list(placeholder_lore)
+
+/mob/living/carbon/human/species/nabber
+	race = /datum/species/nabber

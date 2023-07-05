@@ -117,7 +117,7 @@
 	update_icon_state(ICON_STATE_COMBAT_OFF)
 	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
 
-	// Удаление клинков из инвенторя.
+	// Удаляем клинки.
 	for(var/obj/item/held in nabber.held_items)
 		if(istype(held, /obj/item/melee/nabber_blade))
 			qdel(held)
