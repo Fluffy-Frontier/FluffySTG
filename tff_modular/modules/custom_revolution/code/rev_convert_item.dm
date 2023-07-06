@@ -13,8 +13,7 @@
 
 /obj/item/custom_rev_brochure/proc/fancy_destroy()
 	do_sparks(6, FALSE, src)
-	for(var/mob/M in view(1, src))
-		to_chat(M, span_danger("[src] suddenly disappears in sparks!"), confidential = TRUE)
+	visible_message(span_danger("[src] suddenly disappears in sparks!"))
 	qdel(src)
 
 /obj/item/custom_rev_brochure/Destroy(force)
