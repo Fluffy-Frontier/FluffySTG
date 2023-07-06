@@ -82,3 +82,26 @@
 /obj/machinery/suit_storage_unit/bodyguard
 	storage_type = /obj/item/tank/internals/oxygen
 	mod_type = /obj/item/mod/control/pre_equipped/bodyguard
+
+
+/obj/item/clothing/head/mod
+	supports_variations_flags = CLOTHING_SNOUTED_VARIATION
+	worn_icon_muzzled = 'tff_modular/modules/blueshield-mod/mod.dmi'
+	worn_icon_better_vox = 'tff_modular/modules/blueshield-mod/mod.dmi'
+
+/obj/item/clothing/suit/mod
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION
+	worn_icon_digi = 'tff_modular/modules/blueshield-mod/mod.dmi'
+	worn_icon_better_vox = 'tff_modular/modules/blueshield-mod/mod.dmi'
+
+/obj/item/clothing/gloves/mod
+	supports_variations_flags = NONE
+	worn_icon_better_vox = 'tff_modular/modules/blueshield-mod/mod.dmi'
+
+/obj/item/clothing/shoes/mod
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION
+	worn_icon_digi = 'tff_modular/modules/blueshield-mod/mod.dmi'
+	worn_icon_better_vox = 'tff_modular/modules/blueshield-mod/mod.dmi'
+
+/obj/item/mod/control
+	worn_icon_better_vox = 'tff_modular/modules/blueshield-mod/mod.dmi'
