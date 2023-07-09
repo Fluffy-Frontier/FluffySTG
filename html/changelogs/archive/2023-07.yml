@@ -198,6 +198,9 @@
       used to be
   Melbert:
   - qol: Prettied up the morgue of Deltastation
+  RaShCat:
+  - rscadd: returns languages for all silicones except cyborgs
+  - balance: task "infection" now using random disease. No HMS.
   Seven:
   - rscadd: Surgical caps now actually hide your hair
   SkyratBot:
@@ -227,6 +230,8 @@
   - image: Added new Cutlass sprites
   - image: Added new Energy Cutlass sprites
   - image: Added new `hgpirate` suit and hat sprites
+  delingar:
+  - rscadd: Added blueshield MODsuit
   sergeirocks100:
   - bugfix: Lizardpeople can now eat emperor rolls from the Tiziran Imported Delicacies
       vendors without getting sick.
@@ -240,11 +245,6 @@
       to drop crusher loot trophies. Ashwalker damage is equally likely to drop loot
       as crusher damage is. An Ashwalker who is using a kinetic crusher will have
       a bonus chance at getting a trophy.
-  RaShCat:
-  - rscadd: returns languages for all silicones except cyborgs
-  - balance: task "infection" now using random disease. No HMS.
-  delingar:
-  - rscadd: Added blueshield MODsuit
 2023-07-06:
   Jolly:
   - bugfix: '[MetaStation] There is no longer a random nondescript "item" outside
@@ -263,3 +263,6 @@
   vinylspiders:
   - bugfix: digitigrade variant of the Assistant's Formal Winter Coat will no longer
       show up as broken checkerboard sprites when worn.
+2023-07-09:
+  RaShCat:
+  - rscadd: CQC to uplink for 18 telecristal
