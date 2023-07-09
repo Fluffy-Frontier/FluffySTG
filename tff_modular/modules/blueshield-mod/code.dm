@@ -89,6 +89,9 @@
 		if(istype(thingy, /obj/item/clothing/head/mod))
 			thingy.worn_icon_muzzled = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
 			continue
+		if(istype(thingy, /obj/item/clothing/gloves/mod))
+			// На будущее...
+			continue
 		if(istype(thingy, /obj/item/clothing/suit/mod))
 			thingy.worn_icon_digi = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
 			continue
