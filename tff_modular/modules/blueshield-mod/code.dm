@@ -26,6 +26,8 @@
 	)
 	skins = list(
 		"bodyguard" = list(
+			MOD_ICON_OVERRIDE = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard.dmi',
+			MOD_WORN_ICON_OVERRIDE = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_worn.dmi',
 			HELMET_FLAGS = list(
 				UNSEALED_LAYER = NECK_LAYER,
 				UNSEALED_CLOTHING = SNUG_FIT,
