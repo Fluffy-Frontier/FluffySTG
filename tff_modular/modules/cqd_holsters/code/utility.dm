@@ -19,7 +19,7 @@
 	H.cqd_holster_action()
 	return TRUE
 
-/mob/verb/cqd_holster_action()
+/mob/living/carbon/human/verb/cqd_holster_action()
 	set name = "cqd-holster-action"
 	set hidden = TRUE
 
@@ -29,7 +29,7 @@
 	Proc
 */
 
-/mob/proc/execute_cqd_holster_action()
+/mob/living/carbon/human/proc/execute_cqd_holster_action()
 	if(!can_perform_action(src, NEED_DEXTERITY|NEED_HANDS))
 		return
 	var/obj/item/clothing/under/u = get_item_by_slot(ITEM_SLOT_ICLOTHING)
@@ -45,8 +45,8 @@
 	if(!item_in_hand)
 		if(length(holster.contents))
 			var/obj/item/I = holster.contents[1]
-			visible_message(span_notice("[src] takes [I] out of [src]."), span_notice("You take [I] out of [holster]."))
-			put_in_hands(I, ignore_animation = FALSE)
+			if(I.attack_hand(src))
+				visible_message(span_notice("[src] takes [I] out of [src]."), span_notice("You take [I] out of [holster]."))
 		else
 			to_chat(src, span_warning("You are not holding anything and the holster is empty!"))
 			return	
