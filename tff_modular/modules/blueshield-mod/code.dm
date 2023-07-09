@@ -82,6 +82,21 @@
 		/obj/item/mod/module/dna_lock,
 	)
 
+
+/obj/item/mod/control/pre_equipped/bodyguard/Initialize(mapload, new_theme, new_skin, new_core)
+	. = ..()
+	for(var/obj/item/clothing/thingy  as anything in contents)
+		if(istype(thingy, /obj/item/clothing/head/mod))
+			thingy.worn_icon_muzzled = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
+			continue
+		if(istype(thingy, /obj/item/clothing/suit/mod))
+			thingy.worn_icon_digi = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
+			continue
+		if(istype(thingy, /obj/item/clothing/shoes/mod))
+			thingy.worn_icon_digi = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
+			continue
+		
+
 /obj/machinery/suit_storage_unit/bodyguard
 	storage_type = /obj/item/tank/internals/oxygen
 	mod_type = /obj/item/mod/control/pre_equipped/bodyguard
