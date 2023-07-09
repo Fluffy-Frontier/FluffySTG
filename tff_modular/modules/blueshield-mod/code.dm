@@ -85,19 +85,9 @@
 
 /obj/item/mod/control/pre_equipped/bodyguard/Initialize(mapload, new_theme, new_skin, new_core)
 	. = ..()
-	for(var/obj/item/clothing/thingy  as anything in contents)
-		if(istype(thingy, /obj/item/clothing/head/mod))
-			thingy.worn_icon_muzzled = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
-			continue
-		if(istype(thingy, /obj/item/clothing/gloves/mod))
-			// На будущее...
-			continue
-		if(istype(thingy, /obj/item/clothing/suit/mod))
-			thingy.worn_icon_digi = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
-			continue
-		if(istype(thingy, /obj/item/clothing/shoes/mod))
-			thingy.worn_icon_digi = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
-			continue
+	helmet.worn_icon_muzzled = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
+	chestplate.worn_icon_digi = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
+	boots.worn_icon_digi = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
 		
 
 /obj/machinery/suit_storage_unit/bodyguard
