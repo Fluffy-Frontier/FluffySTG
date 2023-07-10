@@ -22,9 +22,12 @@
 		/obj/item/restraints/handcuffs,
 		/obj/item/assembly/flash,
 		/obj/item/melee/baton,
+		/obj/item/storage/belt/holster/energy/blueshield,
 	)
 	skins = list(
 		"bodyguard" = list(
+			MOD_ICON_OVERRIDE = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard.dmi',
+			MOD_WORN_ICON_OVERRIDE = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_worn.dmi',
 			HELMET_FLAGS = list(
 				UNSEALED_LAYER = NECK_LAYER,
 				UNSEALED_CLOTHING = SNUG_FIT,
@@ -78,6 +81,14 @@
 		/obj/item/mod/module/jetpack,
 		/obj/item/mod/module/dna_lock,
 	)
+
+
+/obj/item/mod/control/pre_equipped/bodyguard/Initialize(mapload, new_theme, new_skin, new_core)
+	. = ..()
+	helmet.worn_icon_muzzled = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
+	chestplate.worn_icon_digi = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
+	boots.worn_icon_digi = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
+		
 
 /obj/machinery/suit_storage_unit/bodyguard
 	storage_type = /obj/item/tank/internals/oxygen
