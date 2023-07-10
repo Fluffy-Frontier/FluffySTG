@@ -52,18 +52,17 @@
 	var/active = FALSE
 	var/mob/living/carbon/human/nabber
 
+
 /datum/action/cooldown/nabber_combat/Grant(mob/granted_to)
 	. = ..()
 	if(owner)
 		nabber = owner
-	RegisterSignal(granted_to, COMSIG_HUMAN_BURNING, PROC_REF(stop_combat))
-	RegisterSignal(granted_to, COMSIG_LIVING_DEATH, PROC_REF(stop_combat))
+	RegisterSignal(granted_to, list(COMSIG_HUMAN_BURNING, COMSIG_LIVING_DEATH), PROC_REF(stop_combat))
 	button_icon_state = ICON_STATE_COMBAT_OFF
 
 /datum/action/cooldown/nabber_combat/Destroy()
 	. = ..()
-	UnregisterSignal(owner, COMSIG_HUMAN_BURNING)
-	UnregisterSignal(owner, COMSIG_LIVING_DEATH)
+	UnregisterSignal(owner, list(COMSIG_HUMAN_BURNING, COMSIG_LIVING_DEATH))
 
 /datum/action/cooldown/nabber_combat/Trigger(trigger_flags, atom/target)
 	if(!nabber)
