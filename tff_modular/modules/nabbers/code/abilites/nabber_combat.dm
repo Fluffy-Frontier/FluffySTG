@@ -57,12 +57,13 @@
 	. = ..()
 	if(owner)
 		nabber = owner
-	RegisterSignal(owner, list(COMSIG_HUMAN_BURNING, COMSIG_LIVING_DEATH), PROC_REF(stop_combat))
 	button_icon_state = ICON_STATE_COMBAT_OFF
 
 /datum/action/cooldown/nabber_combat/Destroy()
 	. = ..()
-	UnregisterSignal(owner, list(COMSIG_HUMAN_BURNING, COMSIG_LIVING_DEATH))
+	if(active)
+		stop_combat()
+	nabber = null
 
 /datum/action/cooldown/nabber_combat/Trigger(trigger_flags, atom/target)
 	if(!nabber)
@@ -115,6 +116,7 @@
 
 	update_icon_state(ICON_STATE_COMBAT_OFF)
 	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
+	UnregisterSignal(owner, list(COMSIG_HUMAN_BURNING, COMSIG_LIVING_DEATH))
 
 	// Удаляем клинки.
 	for(var/obj/item/held in nabber.held_items)
@@ -142,6 +144,7 @@
 
 	update_icon_state(ICON_STATE_COMBAT_ON)
 	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
+	RegisterSignals(owner, list(COMSIG_HUMAN_BURNING, COMSIG_LIVING_DEATH), PROC_REF(stop_combat))
 
 	nabber.visible_message(span_warning("[nabber] raised their mantis arms ready for combat!"), span_userdanger("You raise your mantis arms, ready for combat."), span_hear("You hear terrible a screech!"))
 
