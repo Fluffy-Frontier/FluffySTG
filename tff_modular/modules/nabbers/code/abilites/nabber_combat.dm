@@ -57,7 +57,7 @@
 	. = ..()
 	if(owner)
 		nabber = owner
-	RegisterSignal(granted_to, list(COMSIG_HUMAN_BURNING, COMSIG_LIVING_DEATH), PROC_REF(stop_combat))
+	RegisterSignal(owner, list(COMSIG_HUMAN_BURNING, COMSIG_LIVING_DEATH), PROC_REF(stop_combat))
 	button_icon_state = ICON_STATE_COMBAT_OFF
 
 /datum/action/cooldown/nabber_combat/Destroy()
