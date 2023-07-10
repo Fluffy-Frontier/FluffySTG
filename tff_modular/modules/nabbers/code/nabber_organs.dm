@@ -33,11 +33,17 @@
 
 /obj/item/organ/internal/eyes/robotic/nabber/Insert(mob/living/carbon/eye_recipient, special, drop_if_replaced)
 	. = ..()
-	shield = new()
+	shield = new(eye_recipient)
 	shield.button_icon = ORGGAN_ICON_NABBER
 	shield.button_icon_state = "eyes"
 	shield.Grant(eye_recipient)
 	shield.eyes = src
+
+/obj/item/organ/internal/eyes/robotic/nabber/Destroy()
+	. = ..()
+	shield.Destroy()
+	active = FALSE
+	toggle_shielding()
 
 /obj/item/organ/internal/eyes/robotic/nabber/proc/toggle_shielding()
 	active = !active
@@ -59,6 +65,10 @@
 /obj/item/organ/internal/eyes/robotic/nabber/Remove(mob/living/carbon/eye_owner, special)
 	. = ..()
 	shield.Destroy()
+	active = FALSE
+	toggle_shielding()
+
+/obj/item/organ/internal/eyes/robotic/nabber/
 
 /obj/item/organ/internal/lungs/nabber
 	name = "nabber lungs"
