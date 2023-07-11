@@ -17,9 +17,8 @@
 	veteran_only = TRUE
 	species_traits = list(
 		MUTCOLORS,
-		EYECOLOR,
-		LIPS,
-		NO_UNDERWEAR
+		NO_UNDERWEAR,
+		HAS_MARKINGS
 	)
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
@@ -28,6 +27,7 @@
 		TRAIT_RESISTHIGHPRESSURE,
 		TRAIT_RESISTLOWPRESSURE
 	)
+	body_size_restricted = TRUE
 	no_equip_flags = ITEM_SLOT_FEET | ITEM_SLOT_OCLOTHING | ITEM_SLOT_SUITSTORE | ITEM_SLOT_EYES
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	mutanttongue = /obj/item/organ/internal/tongue/insect
