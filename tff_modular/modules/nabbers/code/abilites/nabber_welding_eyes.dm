@@ -7,3 +7,7 @@
 /datum/action/toggle_welding/Trigger(trigger_flags)
 	. = ..()
 	eyes.toggle_shielding()
+
+/datum/action/toggle_welding/Destroy()
+	. = ..()
+	eyes = null

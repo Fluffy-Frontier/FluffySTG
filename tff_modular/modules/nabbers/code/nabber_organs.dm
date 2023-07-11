@@ -39,13 +39,10 @@
 	shield.Grant(eye_recipient)
 	shield.eyes = src
 
-/obj/item/organ/internal/eyes/robotic/nabber/Destroy()
-	. = ..()
-	shield.Destroy()
-	active = FALSE
-	toggle_shielding()
-
 /obj/item/organ/internal/eyes/robotic/nabber/proc/toggle_shielding()
+	if(!owner)
+		return
+
 	active = !active
 	playsound(owner, 'sound/machines/click.ogg', 50, TRUE)
 
@@ -61,14 +58,11 @@
 	owner.update_tint()
 	owner.balloon_alert(owner, "Welder eyelids open!")
 
-
 /obj/item/organ/internal/eyes/robotic/nabber/Remove(mob/living/carbon/eye_owner, special)
 	. = ..()
 	shield.Destroy()
 	active = FALSE
 	toggle_shielding()
-
-/obj/item/organ/internal/eyes/robotic/nabber/
 
 /obj/item/organ/internal/lungs/nabber
 	name = "nabber lungs"
