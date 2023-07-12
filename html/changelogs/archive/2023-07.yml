@@ -298,6 +298,8 @@
       with the appropriate versions (for things like snouted masks, digitigrade legs,
       taur shoes) without having to remove and re-equip their gear
 2023-07-09:
+  RaShCat:
+  - rscadd: CQC to uplink for 18 telecristal
   SkyratBot:
   - balance: Reduced the complexity cost of a lot of MODules.
   - balance: Pathfinder 2 -> 1
@@ -315,8 +317,6 @@
   - balance: The Prototype MODsuit's active slowdown has been decreased from 1.5 (!)
       to 1.
   - spellcheck: Fixed a type on the energy net module.
-  RaShCat:
-  - rscadd: CQC to uplink for 18 telecristal
 2023-07-10:
   Fikou:
   - bugfix: service borg apparatus now works on stoves and griddles and ovens
@@ -387,4 +387,6 @@
   HWSensum:
   - qol: Blueshield holster now can be eqiuped in his MOD suit storage.
   - bugfix: Bodyguard MOD now supports digilegs and snouts.
-
+2023-07-12:
+  Iajret:
+  - bugfix: fonts for contextual tips at the top was changed and once again readable
