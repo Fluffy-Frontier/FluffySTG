@@ -31,8 +31,8 @@
 	no_equip_flags = ITEM_SLOT_FEET | ITEM_SLOT_OCLOTHING | ITEM_SLOT_SUITSTORE | ITEM_SLOT_EYES
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	mutanttongue = /obj/item/organ/internal/tongue/insect
-	liked_food = RAW
-	disliked_food = CLOTH | GRAIN | FRIED | TOXIC | GORE | GROSS
+	liked_food = RAW | GORE
+	disliked_food = CLOTH | GRAIN | FRIED | TOXIC | GROSS
 	toxic_food = DAIRY
 	always_customizable = FALSE
 	payday_modifier = 0.75
