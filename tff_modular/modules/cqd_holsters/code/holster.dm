@@ -20,5 +20,10 @@
 		worn_icon_state = "hidden"
 	
 /obj/item/clothing/accessory/cqd_holster/detach(obj/item/clothing/under/U, user)
-	. = ..()
-	atom_storage.close_all()
+	// А это костыльный обход багули, который я подглядел у кармашка для ручек.
+	var/drop_loc = drop_location()
+	for(var/atom/movable/held as anything in src)
+		held.forceMove(drop_loc)
+		to_chat(user, span_alert("You had dropped [held] while detaching [src]."))
+	return ..()
+	
