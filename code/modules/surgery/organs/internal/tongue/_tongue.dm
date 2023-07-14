@@ -112,10 +112,7 @@
 	REMOVE_TRAIT(tongue_owner, TRAIT_SPEAKS_CLEARLY, SPEAKING_FROM_TONGUE)
 	temp_say_mod = ""
 	UnregisterSignal(tongue_owner, COMSIG_MOB_SAY)
-
-	//FF add: verb to modify auto-accent
-	tongue_owner.verbs -= /mob/living/proc/toggle_autoaccent
-
+	tongue_owner.verbs -= /mob/living/proc/toggle_autoaccent //FF add: verb to modify auto-accent
 	REMOVE_TRAIT(tongue_owner, TRAIT_AGEUSIA, ORGAN_TRAIT)
 	// Carbons by default start with NO_TONGUE_TRAIT caused TRAIT_AGEUSIA
 	ADD_TRAIT(tongue_owner, TRAIT_AGEUSIA, NO_TONGUE_TRAIT)
