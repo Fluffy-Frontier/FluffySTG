@@ -10,21 +10,26 @@
 	var/active = FALSE
 	var/camouflage_alpha = 35
 
-/datum/action/cooldown/optical_camouflage/Trigger(trigger_flags, atom/target)
+/datum/action/cooldown/optical_camouflage/Activate(atom/target)
 	. = ..()
 	if(!owner)
-		return
+		return FALSE
+
+	if(isdead(owner) || owner.incapacitated())
+		owner.balloon_alert(owner, "Incapacitated!")
+		return FALSE
 
 	if(active)
 		remove_camouflage()
-		return
+		return TRUE
 
 	if(owner.has_status_effect(/datum/status_effect/nabber_combat))
 		owner.balloon_alert(owner, "Can't now!")
-		return
+		return FALSE
 
 	RegisterSignals(owner, list(COMSIG_MOB_ITEM_ATTACK, COMSIG_ATOM_ATTACKBY, COMSIG_ATOM_ATTACK_HAND, COMSIG_ATOM_HITBY, COMSIG_ATOM_HULK_ATTACK, COMSIG_ATOM_ATTACK_PAW, COMSIG_CARBON_CUFF_ATTEMPTED, COMSIG_ATOM_BULLET_ACT, COMSIG_HUMAN_MELEE_UNARMED_ATTACK, COMSIG_LIVING_MOB_BUMP, COMSIG_HUMAN_BURNING), PROC_REF(remove_camouflage))
 	enter_camouflage()
+	return TRUE
 
 /datum/action/cooldown/optical_camouflage/Grant(mob/granted_to)
 	. = ..()

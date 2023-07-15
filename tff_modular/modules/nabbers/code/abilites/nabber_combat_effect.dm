@@ -15,6 +15,9 @@
 	animate(nabber_image, alpha = 255, 0.2 SECONDS)
 	owner.add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/everyone, id, nabber_image)
 
+	if(owner.body_position == LYING_DOWN)
+		nabber_image.transform = turn(nabber_image.transform, 90)
+
 	RegisterSignal(owner, COMSIG_ATOM_DIR_CHANGE, PROC_REF(on_dir_change))
 	RegisterSignal(owner, COMSIG_LIVING_SET_BODY_POSITION, PROC_REF(on_body_position_change))
 	return TRUE

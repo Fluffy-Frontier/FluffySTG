@@ -25,7 +25,8 @@
 		TRAIT_CHUNKYFINGERS_IGNORE_BATON,
 		TRAIT_PUSHIMMUNE,
 		TRAIT_RESISTHIGHPRESSURE,
-		TRAIT_RESISTLOWPRESSURE
+		TRAIT_RESISTLOWPRESSURE,
+		TRAIT_RESISTCOLD
 	)
 	body_size_restricted = TRUE
 	no_equip_flags = ITEM_SLOT_FEET | ITEM_SLOT_OCLOTHING | ITEM_SLOT_SUITSTORE | ITEM_SLOT_EYES
@@ -35,12 +36,11 @@
 	disliked_food = CLOTH | GRAIN | FRIED | TOXIC | GROSS
 	toxic_food = DAIRY
 	always_customizable = FALSE
+	hair_alpha = 0
+	facial_hair_alpha = 0
 	payday_modifier = 0.75
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT - 10)
-	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT - 25)
-	// Need balancing
-	speedmod = 1
 	mutantbrain = /obj/item/organ/internal/brain/nabber
 	mutanteyes = /obj/item/organ/internal/eyes/robotic/nabber
 	mutantlungs = /obj/item/organ/internal/lungs/nabber
@@ -65,20 +65,24 @@
 		LOADOUT_ITEM_MISC = NABBER_BACK_ICON,
 		LOADOUT_ITEM_EARS = NABBER_EARS_ICON
 	)
-	var/datum/action/cooldown/nabber_combat/combat_mode
+	var/datum/action/cooldown/toggle_arms/arms
 	var/datum/action/cooldown/optical_camouflage/camouflage
+	var/datum/action/cooldown/nabber_threat/threat_mod
 
 /datum/species/nabber/on_species_gain(mob/living/carbon/human/C, datum/species/old_species, pref_load)
 	. = ..()
-	combat_mode = new(C)
-	combat_mode.Grant(C)
+	arms = new(C)
+	arms.Grant(C)
 	camouflage = new(C)
 	camouflage.Grant(C)
+	threat_mod = new(C)
+	threat_mod.Grant(C)
 
 /datum/species/nabber/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()
-	combat_mode.Destroy()
+	arms.Destroy()
 	camouflage.Destroy()
+	threat_mod.Destroy()
 
 /datum/species/nabber/spec_life(mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	. = ..()
@@ -121,14 +125,14 @@
 
 	perk_descriptions += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
-		SPECIES_PERK_ICON = "star-of-life",
+		SPECIES_PERK_ICON = "dna",
 		SPECIES_PERK_NAME = "Serpent body",
 		SPECIES_PERK_DESC = "GAS possess serpent-like bodies and cannot wear most human clothes."
 	))
 
 	perk_descriptions += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
-		SPECIES_PERK_ICON = "star-of-life",
+		SPECIES_PERK_ICON = "dna",
 		SPECIES_PERK_NAME = "Robust chitin",
 		SPECIES_PERK_DESC = "GAS possess durable chitinous exoskeletons and can withstand a lot of brute damage."
 	))
@@ -142,21 +146,21 @@
 
 	perk_descriptions += list(list(
 		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
-		SPECIES_PERK_ICON = "star-of-life",
+		SPECIES_PERK_ICON = "user-plus",
 		SPECIES_PERK_NAME = "Welder eyelids",
 		SPECIES_PERK_DESC = "GAS can close their second pair of eyelids to protect their eyes from welder flash."
 	))
 
 	perk_descriptions += list(list(
 		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
-		SPECIES_PERK_ICON = "star-of-life",
+		SPECIES_PERK_ICON = "user-plus",
 		SPECIES_PERK_NAME = "Mantis arms",
 		SPECIES_PERK_DESC = "GAS possesses a second pair of arms with massive sharp mantis blades. They can have only one pair active at a time and need to pump blood between them."
 	))
 
 	perk_descriptions += list(list(
 		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
-		SPECIES_PERK_ICON = "star-of-life",
+		SPECIES_PERK_ICON = "user-plus",
 		SPECIES_PERK_NAME = "Camoufage",
 		SPECIES_PERK_DESC = "GAS can blend in with their surroundings and become transparent to hide from danger."
 	))
