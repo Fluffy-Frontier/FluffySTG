@@ -24,16 +24,18 @@
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CHUNKYFINGERS_IGNORE_BATON,
 		TRAIT_PUSHIMMUNE,
+		TRAIT_LIGHT_STEP,	//В связи с балансными причинами и соображениями логики.
 		TRAIT_RESISTHIGHPRESSURE,
 		TRAIT_RESISTLOWPRESSURE,
 		TRAIT_RESISTCOLD
 	)
 	body_size_restricted = TRUE
+	digitigrade_customization = DIGITIGRADE_NEVER
 	no_equip_flags = ITEM_SLOT_FEET | ITEM_SLOT_OCLOTHING | ITEM_SLOT_SUITSTORE | ITEM_SLOT_EYES
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	mutanttongue = /obj/item/organ/internal/tongue/insect
-	liked_food = RAW | GORE
-	disliked_food = CLOTH | GRAIN | FRIED | TOXIC | GROSS
+	liked_food = RAW | GORE | GRAIN
+	disliked_food = CLOTH | FRIED | TOXIC | GROSS
 	toxic_food = DAIRY
 	always_customizable = FALSE
 	hair_alpha = 0
@@ -77,6 +79,10 @@
 	camouflage.Grant(C)
 	threat_mod = new(C)
 	threat_mod.Grant(C)
+
+	// Предохраняемся от получения проклятого квирка. Ломающего ГБС
+	if(C.has_quirk(/datum/quirk/oversized))
+		C.remove_quirk(/datum/quirk/oversized)
 
 /datum/species/nabber/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()

@@ -13,6 +13,7 @@
 	nabber_image.override = TRUE
 	nabber_image.alpha = 0
 	animate(nabber_image, alpha = 255, 0.2 SECONDS)
+	owner.add_movespeed_modifier(/datum/movespeed_modifier/nabber_combat)
 	owner.add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/everyone, id, nabber_image)
 
 	if(owner.body_position == LYING_DOWN)
@@ -24,6 +25,7 @@
 
 /datum/status_effect/nabber_combat/on_remove()
 	owner.remove_alt_appearance(id)
+	owner.remove_movespeed_modifier(/datum/movespeed_modifier/nabber_combat)
 	QDEL_NULL(nabber_image)
 
 	UnregisterSignal(owner, list(
@@ -43,6 +45,10 @@
 		nabber_image.transform = turn(nabber_image.transform, 90)
 	else
 		nabber_image.transform = turn(nabber_image.transform, -90)
+
+/datum/movespeed_modifier/nabber_combat
+	blacklisted_movetypes = FLYING
+	multiplicative_slowdown = -0.25
 
 #undef NABBER_THREAT_ICON
 #undef NABBER_THREAT_ICON_STATE
