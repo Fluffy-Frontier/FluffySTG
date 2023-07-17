@@ -69,7 +69,7 @@
 
 
 /obj/item/gun/ballistic/revolver/blueshield/give_manufacturer_examine()
-	AddComponent(/datum/component/manufacturer_examine, COMPANY_NANOTRASEN)
+	AddElement(/datum/element/manufacturer_examine, COMPANY_BOLT)
 
 /obj/item/gun/ballistic/revolver/blueshield/fire_sounds()
 	playsound(src, chambered.fire_sound, fire_sound_volume, vary_fire_sound)

@@ -33,7 +33,7 @@
 		var/mob/living/carbon/human/wearer = loc
 		wearer.update_worn_oversuit()
 
-/obj/item/clothing/suit/hooded/wintercoat/security/RemoveHood()
+/obj/item/clothing/suit/hooded/wintercoat/security/on_hood_down(obj/item/clothing/head/hooded/hood)
 	. = ..()
 	if(!current_skin)
 		return
@@ -43,7 +43,7 @@
 		var/mob/living/carbon/human/wearer = loc
 		wearer.update_worn_oversuit()
 
-/obj/item/clothing/suit/hooded/wintercoat/security/ToggleHood()
+/obj/item/clothing/suit/hooded/wintercoat/security/on_hood_up(obj/item/clothing/head/hooded/hood)
 	. = ..()
 	if(!current_skin)
 		return
