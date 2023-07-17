@@ -47,9 +47,9 @@
 	. = ..()
 	if(!current_skin)
 		return
-	if(hood_up)
-		icon_state = "[unique_reskin[current_skin][RESKIN_ICON_STATE]][hood_up_affix]"
-		worn_icon_state = icon_state
+	// if(hood_up)
+	// 	icon_state = "[unique_reskin[current_skin][RESKIN_ICON_STATE]][hood_up_affix]"
+	// 	worn_icon_state = icon_state
 	if(ishuman(loc))
 		var/mob/living/carbon/human/wearer = loc
 		wearer.update_worn_oversuit()
