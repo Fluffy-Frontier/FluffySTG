@@ -1,5 +1,13 @@
 #define ORGGAN_ICON_NABBER 'tff_modular/modules/nabbers/icons/organs/nabber_organs.dmi'
+#define NABBER_COLD_THRESHOLD_1 180
+#define NABBER_COLD_THRESHOLD_2 140
+#define NABBER_COLD_THRESHOLD_3 100
 
+#define NABBER_HEAT_THRESHOLD_1 300
+#define NABBER_HEAT_THRESHOLD_2 440
+#define NABBER_HEAT_THRESHOLD_3 600
+
+#define NABBER_DAMAGE_ONBURNING 5
 
 /obj/item/organ/internal/tongue/nabber
 	name = "nabber tongue"
