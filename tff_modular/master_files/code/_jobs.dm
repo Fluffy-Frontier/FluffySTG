@@ -48,3 +48,9 @@
 
 /datum/job/lawyer
 	species_blacklist = list(SPECIES_NABBER = TRUE)
+
+/datum/job/bouncer
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
+/datum/job/orderly
+	species_blacklist = list(SPECIES_NABBER = TRUE)

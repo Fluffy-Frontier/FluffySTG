@@ -11,15 +11,9 @@
 /datum/species/nabber
 	name = "Giant Armored Serpentid"
 	id = SPECIES_NABBER
-	bodytype = BODYTYPE_CUSTOM
 	eyes_icon = 'tff_modular/modules/nabbers/icons/organs/nabber_eyes.dmi'
 	can_augment = FALSE
 	veteran_only = TRUE
-	species_traits = list(
-		MUTCOLORS,
-		NO_UNDERWEAR,
-		HAS_MARKINGS
-	)
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CHUNKYFINGERS_IGNORE_BATON,
@@ -27,16 +21,18 @@
 		TRAIT_LIGHT_STEP,	//В связи с балансными причинами и соображениями логики.
 		TRAIT_RESISTHIGHPRESSURE,
 		TRAIT_RESISTLOWPRESSURE,
-		TRAIT_RESISTCOLD
+		TRAIT_RESISTCOLD,
+		TRAIT_MUTANT_COLORS,
+		TRAIT_NO_UNDERWEAR,
+		TRAIT_HAS_MARKINGS,
+		TRAIT_HARD_SOLES,
+		TRAIT_NO_BLOOD_OVERLAY
 	)
 	body_size_restricted = TRUE
 	digitigrade_customization = DIGITIGRADE_NEVER
 	no_equip_flags = ITEM_SLOT_FEET | ITEM_SLOT_OCLOTHING | ITEM_SLOT_SUITSTORE | ITEM_SLOT_EYES
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	mutanttongue = /obj/item/organ/internal/tongue/insect
-	liked_food = RAW | GORE | GRAIN
-	disliked_food = CLOTH | FRIED | TOXIC | GROSS
-	toxic_food = DAIRY
+	mutanttongue = /obj/item/organ/internal/tongue/nabber
 	always_customizable = FALSE
 	hair_alpha = 0
 	facial_hair_alpha = 0

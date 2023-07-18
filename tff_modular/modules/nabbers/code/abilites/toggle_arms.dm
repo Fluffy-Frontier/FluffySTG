@@ -90,6 +90,7 @@
 	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
 
 	if(!do_after(nabber, 5 SECONDS, nabber))
+		StartCooldown()
 		nabber.balloon_alert(nabber, "Stand still!")
 		return FALSE
 
@@ -138,7 +139,7 @@
 
 	UnregisterSignal(owner, COMSIG_CARBON_REMOVE_LIMB)
 	nabber.balloon_alert(nabber, "Arms down!")
-	button_icon_state = "arms_on"
+	button_icon_state = "arms_off"
 	nabber.update_action_buttons()
 
 /datum/action/cooldown/toggle_arms/proc/on_lose_hand()

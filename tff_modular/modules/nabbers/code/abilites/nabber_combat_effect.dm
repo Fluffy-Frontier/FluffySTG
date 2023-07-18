@@ -9,9 +9,12 @@
 	var/image/nabber_image
 
 /datum/status_effect/nabber_combat/on_apply()
+	var/mob/living/carbon/human/color_source = owner
+
 	nabber_image = image(NABBER_THREAT_ICON, owner, NABBER_THREAT_ICON_STATE, dir = owner.dir)
 	nabber_image.override = TRUE
 	nabber_image.alpha = 0
+	nabber_image.color = color_source.dna.features["mcolor"]
 	animate(nabber_image, alpha = 255, 0.2 SECONDS)
 	owner.add_movespeed_modifier(/datum/movespeed_modifier/nabber_combat)
 	owner.add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/everyone, id, nabber_image)

@@ -1,5 +1,12 @@
 #define ORGGAN_ICON_NABBER 'tff_modular/modules/nabbers/icons/organs/nabber_organs.dmi'
 
+
+/obj/item/organ/internal/tongue/nabber
+	name = "nabber tongue"
+	liked_foodtypes = RAW | GORE | GRAIN
+	disliked_foodtypes = CLOTH | FRIED | TOXIC
+	toxic_foodtypes = DAIRY
+
 /obj/item/organ/internal/ears/nabber
 	name = "nabber ears"
 	icon = ORGGAN_ICON_NABBER
