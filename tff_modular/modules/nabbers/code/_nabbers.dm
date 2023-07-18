@@ -1,3 +1,5 @@
+#define NABBER_DAMAGE_ONBURNING 5
+
 /datum/species/nabber
 	name = "Giant Armored Serpentid"
 	id = SPECIES_NABBER
