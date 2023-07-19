@@ -3,6 +3,7 @@
 	desc = "Strange brochure made of durable material. There is something written in and on it."
 	icon = 'tff_modular/modules/custom_revolution/icons/items.dmi'
 	icon_state = "brochure"
+	w_class = WEIGHT_CLASS_TINY
 	var/datum/weakref/creator_antag_ref = new()
 	var/datum/weakref/team_ref = new()
 
@@ -10,6 +11,9 @@
 	creator_antag_ref = WEAKREF(antag)
 	team_ref = WEAKREF(antag.rev_team)
 	antag.convert_brochures_list += src
+	// Кастомизация
+	icon_state = antag.rev_team.brochure_icon_state
+	icon = antag.rev_team.brochure_icon
 
 /obj/item/custom_rev_brochure/proc/fancy_destroy()
 	do_sparks(6, FALSE, src)

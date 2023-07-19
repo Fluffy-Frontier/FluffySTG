@@ -37,7 +37,7 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 	owner.announce_objectives()
 
 /datum/antagonist/custom_rev/on_gain()
-	name = rev_team.rev_role_name
+	name = rev_team.member_name
 	objectives |= rev_team.objectives
 	. = ..()
 	owner.current.log_message("has been converted to the [rev_team.name]!", LOG_GAME, color="red")
@@ -69,7 +69,13 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 
 /datum/team/custom_rev_team
 	name = "\improper Activists"
-	member_name = "\improper activists"
-	var/rev_role_name = "Activist"
-	var/ignore_mindshield = FALSE
+	member_name = "\improper activist"
+	// Кастомизация брошюры.
+	var/brochure_name = "some strange brochure"
+	var/brochure_icon_state = "brochure"
+	var/icon/brochure_icon = 'tff_modular/modules/custom_revolution/icons/items.dmi'
 	var/brochure_message = "Do you want to be a part of our union?"
+	// Кастомизация фичей...
+	var/ignore_mindshield = FALSE
+	var/ignore_deconvert_machine = FALSE
+	

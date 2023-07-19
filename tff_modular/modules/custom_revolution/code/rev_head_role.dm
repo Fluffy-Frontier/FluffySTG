@@ -22,6 +22,9 @@
 		var/mindshield_protection = tgui_alert(admin, "Майндшилд будет мешать вступлению?", "Майндшилд", list("Да", "Нет"))
 		if(!mindshield_protection)
 			return FALSE
+		var/machine_deconvert = tgui_alert(admin, "Особое устройство сможет деконвертировать участников?", "Деконверт-Девайс", list("Да", "Нет"))
+		if(!mindshield_protection)
+			return FALSE
 		var/brochure_message = tgui_input_text(admin, "Зазывающий текст в брошюре:", "Брошюра")
 		if(!brochure_message)
 			return FALSE
@@ -30,10 +33,16 @@
 
 		rev_team = new /datum/team/custom_rev_team
 
-		rev_team.rev_role_name = given_name
+		rev_team.member_name = given_name
 		rev_team.name = given_team_name
-		rev_team.ignore_mindshield = (mindshield_protection == "Нет")
+
 		rev_team.brochure_message = brochure_message
+
+		rev_team.ignore_mindshield = (mindshield_protection == "Нет")
+		rev_team.ignore_deconvert_machine = (machine_deconvert == "Нет")
+
+		
+		
 
 		var/datum/objective/obj = new()
 		obj.team = rev_team
@@ -58,7 +67,7 @@
 			return FALSE
 		
 		rev_team = teams[team_option]
-		name = rev_team.rev_role_name
+		name = rev_team.member_name
 	
 	var/datum/objective/headrev_obj = new()
 	headrev_obj.explanation_text = "Recruit people in order to accomplish your goals."
