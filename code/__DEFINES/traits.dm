@@ -1079,6 +1079,3 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 //FF add, for auto-accent
 #define TRAIT_NO_ACCENT "has_auto_accent"
-
-//flight
-#define TRAIT_FLUTTER  "flutter"
