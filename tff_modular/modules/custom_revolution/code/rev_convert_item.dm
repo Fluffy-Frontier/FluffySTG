@@ -1,6 +1,7 @@
 /obj/item/custom_rev_brochure
-	name = "some strange brochure"
-	desc = "Strange brochure made of durable material. There is something written in and on it."
+	// Важное уточнение! Название, спрайтик и прочее указаны в /datum/team/custom_rev_team
+	// Во время привязки брошюрки к антагу - происходит изменение переменных.
+	name = "brochure"
 	icon = 'tff_modular/modules/custom_revolution/icons/items.dmi'
 	icon_state = "brochure"
 	w_class = WEIGHT_CLASS_TINY
@@ -12,6 +13,8 @@
 	team_ref = WEAKREF(antag.rev_team)
 	antag.convert_brochures_list += src
 	// Кастомизация
+	name = antag.rev_team.brochure_name
+	desc = antag.rev_team.brochure_desc
 	icon_state = antag.rev_team.brochure_icon_state
 	icon = antag.rev_team.brochure_icon
 

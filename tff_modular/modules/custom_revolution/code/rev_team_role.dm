@@ -72,6 +72,7 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 	member_name = "\improper activist"
 	// Кастомизация брошюры.
 	var/brochure_name = "some strange brochure"
+	var/brochure_desc = "Strange brochure made of durable material. There is something written in and on it."
 	var/brochure_icon_state = "brochure"
 	var/icon/brochure_icon = 'tff_modular/modules/custom_revolution/icons/items.dmi'
 	var/brochure_message = "Do you want to be a part of our union?"
