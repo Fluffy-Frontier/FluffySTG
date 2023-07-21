@@ -13,13 +13,13 @@
 	name = "Machine Design (ActiviZero2000 Device)"
 	desc = "The circuit board for a ActiviZero2000 Device by Mind-CTRL."
 	id = "custom_rev_deconvert_device"
-	build_path = /obj/item/circuitboard/machine/self_actualization_device
+	build_path = /obj/item/circuitboard/machine/custom_rev_deconvert_device
 	category = list(RND_CATEGORY_INITIAL + RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_SECURITY)
 	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
 
 /obj/item/circuitboard/machine/custom_rev_deconvert_device
 	name = "ActiviZero2000 Device (Machine Board)"
-	greyscale_colors = CIRCUIT_COLOR_MEDICAL
+	greyscale_colors = CIRCUIT_COLOR_SECURITY
 	build_path = /obj/machinery/custom_rev_deconvert_device
 	req_components = list(/datum/stock_part/micro_laser = 1)
 
@@ -165,9 +165,9 @@
 	else
 		say("OPERATION HAS FAILED!")
 		to_chat(occupant_mob, span_danger("YOU FEEL TERRIBLE!"))
-		occupant_mob.adjust_confusion_up_to(1 MINUTES, 5 MINUTES)
-		occupant_mob.adjust_jitter_up_to(1 MINUTES, 5 MINUTES)
-		occupant_mob.adjust_hallucinations_up_to(1 MINUTES, 7.5 MINUTES)
+		occupant_mob.adjust_confusion_up_to(3 MINUTES, 6 MINUTES)
+		occupant_mob.adjust_jitter_up_to(3 MINUTES, 6 MINUTES)
+		occupant_mob.adjust_hallucinations_up_to(4 MINUTES, 8 MINUTES)
 		occupant_mob.add_mood_event("deconvert_fail", /datum/mood_event/custom_rev_deconvert_fail)
 
 	// КОНЕЦ КОДА ДЕКОНВЕРТАЦИИ.
