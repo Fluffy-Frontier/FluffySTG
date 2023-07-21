@@ -35,6 +35,8 @@
 		return FALSE
 	if(user.mind.has_antag_datum(/datum/antagonist/custom_rev, TRUE))
 		return FALSE
+	if(!ishuman(user))
+		return FALSE
 
 	if(!rev_team_rs.ignore_mindshield && HAS_TRAIT(user, TRAIT_MINDSHIELD))
 		to_chat(user, span_alert("You can't really figure out what written in this brochure and you feel odd for some reason."))

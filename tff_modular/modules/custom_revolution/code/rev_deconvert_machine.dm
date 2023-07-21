@@ -4,13 +4,18 @@
  * В СЛУЧАЕ ПРОБЛЕМ - ПЕРЕНОСИТЕ ИЗМЕНЕНИЯ С ОРИГИНАЛА СЮДА!
  */
 
+/datum/mood_event/custom_rev_deconvert_fail
+	description = "SOME STUPID DEVICE MESSED WITH MY BRAIN FOR NO REASON!"
+	mood_change = -10
+	timeout = 10 MINUTES
+
 /datum/design/board/activist_deconvert_device
 	name = "Machine Design (ActiviZero2000 Device)"
 	desc = "The circuit board for a ActiviZero2000 Device by Mind-CTRL."
 	id = "activist_deconvert_device"
 	build_path = /obj/item/circuitboard/machine/self_actualization_device
-	category = list(RND_CATEGORY_INITIAL + RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_MEDICAL)
-	departmental_flags = DEPARTMENT_BITFLAG_MEDICAL
+	category = list(RND_CATEGORY_INITIAL + RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_SECURITY)
+	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
 
 /obj/item/circuitboard/machine/activist_deconvert_device
 	name = "ActiviZero2000 Device (Machine Board)"
@@ -20,7 +25,7 @@
 
 /obj/machinery/activist_deconvert_device
 	name = "ActiviZero2000 Device"
-	desc = "Based on decommissioned Self-Actualization Device, this device built to fight with diffirent types of activism among the crew on the station. \n\
+	desc = "Based on decommissioned Self-Actualization Device, this thing built to fight with diffirent types of activism among the crew on the station. \n\
 	\n\
 	ON FAIL WILL CAUSE SEVERE MENTAL SUFFERING!"
 	icon = 'modular_skyrat/modules/self_actualization_device/icons/self_actualization_device.dmi'
@@ -40,7 +45,7 @@
 	var/static/list/advertisements = list(\
 	"Having troubles with unplesant activists' activity?", \
 	"ActiviZero2000 Device will save you from troubles!" , \
-	"Be careful, in " \
+	"Be careful! Will cause severe mental damage to wrong person! Use device wisely!" \
 	)
 
 /obj/machinery/activist_deconvert_device/update_appearance(updates)
@@ -134,9 +139,36 @@
 	if(!ishuman(occupant))
 		return FALSE
 
-	// TODO
 	// КОД ДЕКОНВЕРТАЦИИ.
 
+	var/mob/living/carbon/human/occupant_mob = occupant
+	var/datum/mind/occupant_mind = occupant_mob.mind
+	if(occupant_mind)
+		return FALSE
+
+	var/success = FALSE
+	for(var/datum/antagonist/custom_rev/antag as anything in occupant_mind.antag_datums())
+		if(!istype(antag, /datum/antagonist/custom_rev))
+			continue
+		if(!antag.rev_team)
+			continue
+		if(antag.rev_team.ignore_deconvert_machine)
+			continue
+		occupant_mind.remove_antag_datum(antag)
+		
+		success = TRUE
+	
+	if(success)
+		say("OPERATION WAS SUCCESSFUL, OCCUPANT WAS RE-EDUCATED!")
+	else
+		say("OPERATION HAS FAILED!")
+		to_chat(occupant_mob, span_danger("YOU FEEL TERRIBLE!"))
+		occupant_mob.adjust_confusion_up_to(30 SECONDS, 90 SECONDS)
+		occupant_mob.adjust_hallucinations_up_to(1 MINUTES, 5 MINUTES)
+		occupant_mob.add_mood_event("deconvert_fail", /datum/mood_event/custom_rev_deconvert_fail)
+
+	// КОНЕЦ КОДА ДЕКОНВЕРТАЦИИ.
+	
 	open_machine()
 	playsound(src, 'sound/machines/microwave/microwave-end.ogg', 100, FALSE)
 
