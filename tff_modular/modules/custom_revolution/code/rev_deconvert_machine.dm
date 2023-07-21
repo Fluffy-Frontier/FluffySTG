@@ -155,7 +155,7 @@
 		if(antag.rev_team.ignore_deconvert_machine)
 			continue
 		occupant_mind.remove_antag_datum(antag)
-		
+		occupant_mind.current.log_message("has been deconverted from the [rev_team.name] by deconvert machinery!", LOG_GAME, color="red")
 		success = TRUE
 	
 	if(success)
