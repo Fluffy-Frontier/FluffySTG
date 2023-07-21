@@ -70,7 +70,7 @@
 		name = rev_team.member_name
 	
 	var/datum/objective/headrev_obj = new()
-	headrev_obj.explanation_text = "Recruit people in order to accomplish your goals."
+	headrev_obj.explanation_text = "Recruit people in order to accomplish your goals!"
 	headrev_obj.update_explanation_text()
 	headrev_obj.completed = TRUE
 	objectives += headrev_obj
@@ -81,7 +81,7 @@
 
 /datum/antagonist/custom_rev/head/greet()
 	. = ..()
-	to_chat(owner, span_doyourjobidiot("As leader your primary task is recruiting new members."))
+	to_chat(owner, span_doyourjobidiot("As leader your primary task is recruiting new members!"))
 
 /datum/antagonist/custom_rev/head/on_gain()
 	. = ..()

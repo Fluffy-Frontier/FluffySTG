@@ -38,6 +38,7 @@
 		"conveyor_belt",
 		"conveyor_switch",
 		"custom_vendor_refill",
+		"custom_rev_deconvert_device", // FLUFFY FRONTIER ADDITION: Activists (custom rev).
 		"destructive_analyzer",
 		"destructive_scanner",
 		"desttagger",

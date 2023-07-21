@@ -6,24 +6,24 @@
 
 /datum/mood_event/custom_rev_deconvert_fail
 	description = "SOME STUPID DEVICE MESSED WITH MY BRAIN FOR NO REASON!"
-	mood_change = -10
+	mood_change = -15
 	timeout = 10 MINUTES
 
-/datum/design/board/activist_deconvert_device
+/datum/design/board/custom_rev_deconvert_device
 	name = "Machine Design (ActiviZero2000 Device)"
 	desc = "The circuit board for a ActiviZero2000 Device by Mind-CTRL."
-	id = "activist_deconvert_device"
+	id = "custom_rev_deconvert_device"
 	build_path = /obj/item/circuitboard/machine/self_actualization_device
 	category = list(RND_CATEGORY_INITIAL + RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_SECURITY)
 	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
 
-/obj/item/circuitboard/machine/activist_deconvert_device
+/obj/item/circuitboard/machine/custom_rev_deconvert_device
 	name = "ActiviZero2000 Device (Machine Board)"
 	greyscale_colors = CIRCUIT_COLOR_MEDICAL
-	build_path = /obj/machinery/activist_deconvert_device
+	build_path = /obj/machinery/custom_rev_deconvert_device
 	req_components = list(/datum/stock_part/micro_laser = 1)
 
-/obj/machinery/activist_deconvert_device
+/obj/machinery/custom_rev_deconvert_device
 	name = "ActiviZero2000 Device"
 	desc = "Based on decommissioned Self-Actualization Device, this thing built to fight with diffirent types of activism among the crew on the station. \n\
 	\n\
@@ -40,7 +40,7 @@
 	/// How long does the machine take to work?
 	var/processing_time = 20 SECONDS
 	/// The interval that advertisements are said by the machine's speaker.
-	var/next_fact = 10
+	var/next_fact = 8
 	/// A list containing advertisements that the machine says while working.
 	var/static/list/advertisements = list(\
 	"Having troubles with unplesant activists' activity?", \
@@ -48,7 +48,7 @@
 	"Be careful! Will cause severe mental damage to wrong person! Use device wisely!" \
 	)
 
-/obj/machinery/activist_deconvert_device/update_appearance(updates)
+/obj/machinery/custom_rev_deconvert_device/update_appearance(updates)
 	. = ..()
 	if(occupant)
 		icon_state = processing ? "sad_on" : "sad_off"
@@ -57,11 +57,11 @@
 
 
 
-/obj/machinery/activist_deconvert_device/Initialize(mapload)
+/obj/machinery/custom_rev_deconvert_device/Initialize(mapload)
 	. = ..()
 	update_appearance()
 
-/obj/machinery/activist_deconvert_device/close_machine(atom/movable/target, density_to_set = TRUE)
+/obj/machinery/custom_rev_deconvert_device/close_machine(atom/movable/target, density_to_set = TRUE)
 	..()
 	playsound(src, 'sound/machines/click.ogg', 50)
 	if(!occupant)
@@ -73,11 +73,11 @@
 	to_chat(occupant, span_notice("You enter [src]."))
 	update_appearance()
 
-/obj/machinery/activist_deconvert_device/examine(mob/user)
+/obj/machinery/custom_rev_deconvert_device/examine(mob/user)
 	. = ..()
 	. += span_notice("ALT-Click to turn ON when closed.")
 
-/obj/machinery/activist_deconvert_device/AltClick(mob/user)
+/obj/machinery/custom_rev_deconvert_device/AltClick(mob/user)
 	. = ..()
 	if(!powered() || !occupant || state_open)
 		return FALSE
@@ -87,7 +87,7 @@
 	processing = TRUE
 	update_appearance()
 
-/obj/machinery/activist_deconvert_device/container_resist_act(mob/living/user)
+/obj/machinery/custom_rev_deconvert_device/container_resist_act(mob/living/user)
 	if(state_open)
 		open_machine()
 		return FALSE
@@ -106,7 +106,7 @@
 			span_notice("You successfully break out of [src]!"))
 		open_machine()
 
-/obj/machinery/activist_deconvert_device/interact(mob/user)
+/obj/machinery/custom_rev_deconvert_device/interact(mob/user)
 	if(state_open)
 		close_machine()
 		return
@@ -115,7 +115,7 @@
 		open_machine()
 		return
 
-/obj/machinery/activist_deconvert_device/process(seconds_per_tick)
+/obj/machinery/custom_rev_deconvert_device/process(seconds_per_tick)
 	if(!processing)
 		return
 	if(!powered() || !occupant || !iscarbon(occupant))
@@ -131,23 +131,25 @@
 	use_power(500)
 
 /// Дековерт тут.
-/obj/machinery/activist_deconvert_device/proc/eject_new_you()
+/obj/machinery/custom_rev_deconvert_device/proc/eject_new_you()
 	if(state_open || !occupant || !powered())
 		return
 	processing = FALSE
 
 	if(!ishuman(occupant))
+		open_machine()
 		return FALSE
 
 	// КОД ДЕКОНВЕРТАЦИИ.
 
 	var/mob/living/carbon/human/occupant_mob = occupant
 	var/datum/mind/occupant_mind = occupant_mob.mind
-	if(occupant_mind)
+	if(!occupant_mind)
+		open_machine()
 		return FALSE
 
 	var/success = FALSE
-	for(var/datum/antagonist/custom_rev/antag as anything in occupant_mind.antag_datums())
+	for(var/datum/antagonist/custom_rev/antag as anything in occupant_mind.antag_datums)
 		if(!istype(antag, /datum/antagonist/custom_rev))
 			continue
 		if(!antag.rev_team)
@@ -155,7 +157,7 @@
 		if(antag.rev_team.ignore_deconvert_machine)
 			continue
 		occupant_mind.remove_antag_datum(antag)
-		occupant_mind.current.log_message("has been deconverted from the [rev_team.name] by deconvert machinery!", LOG_GAME, color="red")
+		occupant_mind.current.log_message("has been deconverted from the [antag.rev_team.name] by deconvert machinery!", LOG_GAME, color="red")
 		success = TRUE
 	
 	if(success)
@@ -163,8 +165,9 @@
 	else
 		say("OPERATION HAS FAILED!")
 		to_chat(occupant_mob, span_danger("YOU FEEL TERRIBLE!"))
-		occupant_mob.adjust_confusion_up_to(30 SECONDS, 90 SECONDS)
-		occupant_mob.adjust_hallucinations_up_to(1 MINUTES, 5 MINUTES)
+		occupant_mob.adjust_confusion_up_to(1 MINUTES, 5 MINUTES)
+		occupant_mob.adjust_jitter_up_to(1 MINUTES, 5 MINUTES)
+		occupant_mob.adjust_hallucinations_up_to(1 MINUTES, 7.5 MINUTES)
 		occupant_mob.add_mood_event("deconvert_fail", /datum/mood_event/custom_rev_deconvert_fail)
 
 	// КОНЕЦ КОДА ДЕКОНВЕРТАЦИИ.
@@ -172,7 +175,7 @@
 	open_machine()
 	playsound(src, 'sound/machines/microwave/microwave-end.ogg', 100, FALSE)
 
-/obj/machinery/activist_deconvert_device/screwdriver_act(mob/living/user, obj/item/used_item)
+/obj/machinery/custom_rev_deconvert_device/screwdriver_act(mob/living/user, obj/item/used_item)
 	. = TRUE
 	if(..())
 		return
