@@ -6,8 +6,19 @@
 
 /datum/mood_event/custom_rev_deconvert_fail
 	description = "SOME STUPID DEVICE MESSED WITH MY BRAIN FOR NO REASON!"
-	mood_change = -15
-	timeout = 10 MINUTES
+	mood_change = -10
+	timeout = 3 MINUTES
+
+/datum/techweb_node/custom_rev_deconvert_device
+	id = "custom_rev_deconvert_device_node"
+	display_name = "Activism Countermeasures"
+	description = "Surplus activism countermeasure technologies for moments when things got outta control."
+	prereq_ids = list("sec_basic")
+	design_ids = list(
+		"custom_rev_deconvert_device",
+	)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
+
 
 /datum/design/board/custom_rev_deconvert_device
 	name = "Machine Design (ActiviZero2000 Device)"
@@ -159,16 +170,24 @@
 		occupant_mind.remove_antag_datum(antag)
 		occupant_mind.current.log_message("has been deconverted from the [antag.rev_team.name] by deconvert machinery!", LOG_GAME, color="red")
 		success = TRUE
-	
+
+	var/obj/item/radio/sec_radio = new (src)
+	sec_radio.set_listening(FALSE)
+	sec_radio.set_frequency(FREQ_SECURITY)
+
 	if(success)
+		sec_radio.talk_into(src, "SECURITY LOG: [occupant.name] has been successfuly re-educated in [get_area(src)].", FREQ_SECURITY)
 		say("OPERATION WAS SUCCESSFUL, OCCUPANT WAS RE-EDUCATED!")
 	else
+		sec_radio.talk_into(src, "SECURITY LOG: Re-education of [occupant.name] in [get_area(src)] had failed!", FREQ_SECURITY)
 		say("OPERATION HAS FAILED!")
 		to_chat(occupant_mob, span_danger("YOU FEEL TERRIBLE!"))
 		occupant_mob.adjust_confusion_up_to(3 MINUTES, 6 MINUTES)
 		occupant_mob.adjust_jitter_up_to(3 MINUTES, 6 MINUTES)
 		occupant_mob.adjust_hallucinations_up_to(4 MINUTES, 8 MINUTES)
 		occupant_mob.add_mood_event("deconvert_fail", /datum/mood_event/custom_rev_deconvert_fail)
+	
+	qdel(sec_radio)
 
 	// КОНЕЦ КОДА ДЕКОНВЕРТАЦИИ.
 	

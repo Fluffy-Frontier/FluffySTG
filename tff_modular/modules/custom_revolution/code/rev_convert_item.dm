@@ -1,6 +1,6 @@
 /obj/item/custom_rev_brochure
 	// Важное уточнение! Название, спрайтик и прочее указаны в /datum/team/custom_rev_team
-	// Во время привязки брошюрки к антагу - происходит изменение переменных.
+	// Во время привязки брошюрки к антагу (link_to_headrev) - происходит изменение переменных.
 	name = "brochure"
 	icon = 'tff_modular/modules/custom_revolution/icons/items.dmi'
 	icon_state = "brochure"
