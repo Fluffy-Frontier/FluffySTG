@@ -12,7 +12,7 @@
 /datum/techweb_node/custom_rev_deconvert_device
 	id = "custom_rev_deconvert_device_node"
 	display_name = "Activism Countermeasures"
-	description = "Surplus activism countermeasure technologies for moments when things got outta control."
+	description = "Surplus activism countermeasure technologies for the moments when things got outta control."
 	prereq_ids = list("sec_basic")
 	design_ids = list(
 		"custom_rev_deconvert_device",
