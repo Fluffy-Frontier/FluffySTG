@@ -39,6 +39,7 @@
 			"name" = quirk_name,
 			"value" = initial(quirk.value),
 			"veteran_only" = initial(quirk.veteran_only), // SKYRAT EDIT - Veteran quirks
+			"allow_for_donator" = initial(quirk.allow_for_donator), // THE FLUFFY FRONTIER EDIT
 		)
 
 	return list(
@@ -57,7 +58,8 @@
 	var/list/quirks = SSquirks.get_quirks()
 	var/datum/quirk/quirk = quirks[quirk_name]
 	if(initial(quirk.veteran_only) && !is_veteran_player(preferences?.parent))
-		return FALSE
+		if(initial(quirk.allow_for_donator) && !GLOB.donator_list[preferences?.parent.ckey]) // THE FLUFFY FRONTIER EDIT - donator?
+			return FALSE
 	//SKYRAT EDIT END
 
 	var/list/new_quirks = preferences.all_quirks | quirk_name
@@ -97,8 +99,9 @@
 		var/list/quirks = SSquirks.get_quirks()
 		var/datum/quirk/quirk_datum = quirks[quirk]
 		if(initial(quirk_datum.veteran_only) && !is_veteran_player(preferences?.parent))
-			preferences.all_quirks -= quirk
-			continue
+			if(initial(quirk_datum.allow_for_donator) && !GLOB.donator_list[preferences?.parent.ckey]) // THE FLUFFY FRONTIER EDIT
+				preferences.all_quirks -= quirk
+				continue
 		//SKYRAT EDIT END
 		selected_quirks += sanitize_css_class_name(quirk)
 

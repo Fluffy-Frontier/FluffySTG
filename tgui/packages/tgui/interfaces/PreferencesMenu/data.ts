@@ -51,6 +51,7 @@ export type Species = {
   enabled_features: string[];
 
   veteran_only: boolean; // SKYRAT EDIT - Veteran quirks
+  allow_for_donator: boolean; // THE FLUFFY FRONTIER - For donators
 
   perks: {
     positive: Perk[];
@@ -90,6 +91,7 @@ export type Quirk = {
   name: string;
   value: number;
   veteran_only: boolean; // SKYRAT EDIT - Veteran quirks
+  allow_for_donator: boolean; // THE FLUFFY FRONTIER - For donators
 };
 
 // SKYRAT EDIT START
@@ -175,6 +177,7 @@ export type PreferencesMenuData = {
   preview_selection: string; // SKYRAT EDIT ADDITION
 
   is_veteran: BooleanLike; // SKYRAT EDIT - Veteran status
+  is_donator: BooleanLike; // THE FLUFFY FRONTIER - For donators
 
   character_preferences: {
     clothing: Record<string, string>;
