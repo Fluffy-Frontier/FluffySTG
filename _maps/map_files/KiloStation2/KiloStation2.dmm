@@ -1703,6 +1703,7 @@
 /area/station/science/genetics)
 "aAP" = (
 /obj/effect/turf_decal/tile/yellow/anticorner/contrasted,
+/obj/structure/sign/poster/official/safety_eye_protection/directional/east,
 /turf/open/floor/iron/showroomfloor,
 /area/station/medical/chemistry)
 "aAQ" = (
@@ -2756,7 +2757,7 @@
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/effect/landmark/navigate_destination,
-/turf/open/space/basic,
+/turf/open/floor/iron/dark,
 /area/station/hallway/secondary/entry)
 "aQB" = (
 /obj/machinery/computer/message_monitor,
@@ -21966,12 +21967,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/vending/assist,
 /obj/effect/turf_decal/bot_white,
-/obj/structure/sign/poster/contraband/punch_shit{
-	pixel_x = 30
-	},
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 8
 	},
+/obj/structure/sign/poster/contraband/punch_shit/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/port/fore)
 "hhc" = (
@@ -22324,15 +22323,11 @@
 /turf/open/floor/plating,
 /area/station/hallway/secondary/exit/departure_lounge)
 "hlb" = (
-/obj/structure/sign/poster/official/safety_eye_protection/directional/south{
-	pixel_x = 32
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/tile/yellow/half/contrasted{
-	dir = 4
-	},
-/turf/open/floor/iron/showroomfloor,
-/area/station/medical/chemistry)
+/obj/structure/holosign/barrier/atmos,
+/obj/structure/sign/poster/contraband/rebels_unite/directional/north,
+/turf/open/floor/plating/airless,
+/area/station/maintenance/space_hut/plasmaman)
 "hlC" = (
 /obj/machinery/turretid{
 	icon_state = "control_stun";
@@ -31825,9 +31820,6 @@
 /area/station/security/prison)
 "kiZ" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/sign/poster/official/space_cops/directional/south{
-	pixel_x = 32
-	},
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/tile/red{
 	dir = 8
@@ -33188,7 +33180,8 @@
 /area/station/medical/storage)
 "kHG" = (
 /obj/machinery/smartfridge/chemistry/preloaded,
-/turf/closed/wall,
+/obj/effect/turf_decal/tile/yellow/fourcorners,
+/turf/open/floor/iron/showroomfloor,
 /area/station/medical/pharmacy)
 "kHI" = (
 /obj/effect/turf_decal/stripes/corner{
@@ -38910,7 +38903,7 @@
 /area/station/engineering/atmos)
 "mwe" = (
 /obj/machinery/smartfridge,
-/turf/closed/wall,
+/turf/open/floor/iron,
 /area/station/service/kitchen)
 "mwj" = (
 /obj/effect/turf_decal/stripes/line,
@@ -40903,7 +40896,8 @@
 /area/station/command/bridge)
 "ndz" = (
 /obj/machinery/smartfridge/extract/preloaded,
-/turf/closed/wall,
+/obj/effect/turf_decal/tile/purple/full,
+/turf/open/floor/iron/showroomfloor,
 /area/station/science/xenobiology)
 "ndP" = (
 /obj/machinery/atmospherics/pipe/bridge_pipe/green/visible,
@@ -45093,6 +45087,7 @@
 "oDp" = (
 /obj/machinery/light/small/directional/east,
 /obj/machinery/status_display/shuttle/directional/east,
+/obj/effect/turf_decal/stripes/line,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
 "oDt" = (
@@ -45910,8 +45905,10 @@
 "oTy" = (
 /obj/item/kirbyplants/organic/plant21,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/tile/brown/anticorner/contrasted,
 /obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 4
+	},
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
 "oTD" = (
@@ -46050,9 +46047,6 @@
 /area/station/hallway/secondary/exit/departure_lounge)
 "oVY" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/contraband/rebels_unite/directional/north{
-	pixel_x = 32
-	},
 /obj/effect/turf_decal/trimline/purple/filled/corner{
 	dir = 8
 	},
@@ -50213,9 +50207,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/tank/internals/plasmaman/belt/full,
 /obj/structure/table,
-/obj/structure/sign/poster/contraband/rebels_unite/directional/south{
-	pixel_x = 32
-	},
 /obj/effect/turf_decal/trimline/purple/filled/corner{
 	dir = 1
 	},
@@ -51504,9 +51495,6 @@
 /area/station/maintenance/fore/lesser)
 "qKH" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/contraband/rebels_unite/directional/south{
-	pixel_x = -32
-	},
 /obj/effect/turf_decal/trimline/purple/filled/corner{
 	dir = 4
 	},
@@ -52089,7 +52077,7 @@
 /area/station/hallway/secondary/entry)
 "qUj" = (
 /obj/machinery/smartfridge/food,
-/turf/closed/wall,
+/turf/open/floor/iron/cafeteria,
 /area/station/service/kitchen)
 "qUp" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -58765,7 +58753,8 @@
 /area/station/engineering/gravity_generator)
 "sVz" = (
 /obj/machinery/smartfridge,
-/turf/closed/wall,
+/obj/effect/turf_decal/tile/green/fourcorners,
+/turf/open/floor/iron,
 /area/station/service/hydroponics)
 "sVB" = (
 /obj/machinery/door/airlock/maintenance{
@@ -59905,9 +59894,6 @@
 /area/station/maintenance/fore)
 "tmv" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/contraband/rebels_unite/directional/north{
-	pixel_x = -32
-	},
 /obj/effect/turf_decal/trimline/purple/filled/corner,
 /obj/effect/turf_decal/trimline/purple/filled/corner{
 	dir = 1
@@ -66503,9 +66489,11 @@
 /turf/open/floor/bronze,
 /area/station/maintenance/department/chapel)
 "vtF" = (
-/obj/effect/turf_decal/tile/yellow,
-/turf/open/floor/iron,
-/area/station/hallway/secondary/entry)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/holosign/barrier/atmos,
+/obj/structure/sign/poster/contraband/rebels_unite/directional/south,
+/turf/open/floor/plating/airless,
+/area/station/maintenance/space_hut/plasmaman)
 "vuj" = (
 /obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
@@ -67055,6 +67043,7 @@
 /obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 8
 	},
+/obj/structure/sign/poster/official/space_cops/directional/east,
 /turf/open/floor/iron,
 /area/station/security/office)
 "vBR" = (
@@ -67195,7 +67184,7 @@
 /area/station/engineering/supermatter/room)
 "vDD" = (
 /obj/machinery/smartfridge/drinks,
-/turf/closed/wall,
+/turf/open/floor/wood,
 /area/station/hallway/secondary/service)
 "vDO" = (
 /obj/machinery/door/firedoor,
@@ -67305,7 +67294,7 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
-/turf/open/space/basic,
+/turf/open/floor/iron/dark,
 /area/station/hallway/secondary/entry)
 "vFk" = (
 /obj/machinery/ai_slipper{
@@ -91170,7 +91159,7 @@ wYR
 xFE
 tWn
 juL
-hlb
+wYR
 aAP
 mtV
 rPU
@@ -117167,7 +117156,7 @@ sIr
 fSC
 slC
 slC
-vtF
+slC
 eMu
 lAB
 lAB
@@ -125355,8 +125344,8 @@ aaa
 aeo
 acm
 dwz
-iBc
-iBc
+hlb
+vtF
 dwz
 aeo
 aaa
@@ -126383,8 +126372,8 @@ aaa
 acm
 acm
 dwz
-iBc
-iBc
+hlb
+vtF
 dwz
 aeo
 aaa
