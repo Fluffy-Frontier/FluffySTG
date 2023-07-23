@@ -13957,9 +13957,6 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/cmo)
-"beZ" = (
-/turf/closed/wall/r_wall,
-/area/station/maintenance/starboard)
 "bfa" = (
 /turf/open/floor/iron/freezer,
 /area/station/commons/toilet/locker)
@@ -29953,8 +29950,14 @@
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/main)
 "cpu" = (
-/turf/closed/wall/r_wall,
-/area/station/science/ordnance/bomb)
+/obj/machinery/door/firedoor,
+/obj/structure/cable,
+/obj/machinery/door/airlock/engineering/glass{
+	name = "Supermatter Engine Room"
+	},
+/obj/effect/mapping_helpers/airlock/access/any/engineering/general,
+/turf/open/floor/engine,
+/area/station/engineering/main)
 "cpv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/maintenance,
@@ -36341,15 +36344,6 @@
 "eSa" = (
 /turf/open/floor/grass,
 /area/station/service/hydroponics)
-"eSQ" = (
-/obj/machinery/door/firedoor,
-/obj/structure/cable,
-/obj/machinery/door/airlock/engineering/glass{
-	name = "Supermatter Engine Room"
-	},
-/obj/effect/mapping_helpers/airlock/access/any/engineering/general,
-/turf/open/floor/engine,
-/area/station/engineering/main)
 "eTo" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -38263,6 +38257,9 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/execution/transfer)
+"gEp" = (
+/turf/closed/wall/r_wall,
+/area/station/maintenance/starboard)
 "gES" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -40428,7 +40425,7 @@
 /obj/item/book/manual/wiki/ordnance,
 /obj/item/storage/medkit/toxin,
 /obj/machinery/requests_console/directional/north{
-	name = Ordnance Mixing Lab Requests Console
+	name = "Ordnance Mixing Lab Requests Console"
 	},
 /obj/effect/mapping_helpers/requests_console/ore_update,
 /obj/effect/mapping_helpers/requests_console/supplies,
@@ -54993,6 +54990,9 @@
 /obj/structure/chair/stool/directional/west,
 /turf/open/floor/wood,
 /area/station/security/prison)
+"vCF" = (
+/turf/closed/wall/r_wall,
+/area/station/science/ordnance/bomb)
 "vDl" = (
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/delivery,
@@ -87082,7 +87082,7 @@ ckK
 rdP
 cfg
 ckH
-eSQ
+cpu
 tqy
 cDp
 cqh
@@ -89397,7 +89397,7 @@ aiN
 bkM
 cqP
 cMm
-eSQ
+cpu
 cqa
 cig
 ccw
@@ -109405,14 +109405,14 @@ bDh
 bEF
 mzp
 cNR
-beZ
-cpu
-cpu
+gEp
+vCF
+vCF
 bIS
-cpu
-cpu
-cpu
-cpu
+vCF
+vCF
+vCF
+vCF
 cNW
 dlH
 cNW
@@ -109663,13 +109663,13 @@ bky
 bky
 cNV
 bky
-cpu
+vCF
 izU
 jIm
 bIW
 bXe
 tCN
-cpu
+vCF
 bNC
 cOe
 wZQ
@@ -109920,13 +109920,13 @@ bxt
 cNT
 bCm
 cHC
-cpu
+vCF
 bMx
 jIm
 xsR
 atB
 teX
-cpu
+vCF
 bNB
 cac
 bPP
@@ -110177,13 +110177,13 @@ wWu
 brG
 brG
 bDg
-cpu
+vCF
 bGh
 kDo
 hCG
 kwa
 jXH
-cpu
+vCF
 rmX
 xIa
 vxh
@@ -110434,13 +110434,13 @@ xqJ
 byx
 qfs
 mPv
-cpu
+vCF
 fXd
 lQR
 tOg
 bGe
 bGe
-cpu
+vCF
 cOT
 cOT
 cOT
@@ -110691,13 +110691,13 @@ bky
 bky
 bky
 bky
-cpu
+vCF
 qCr
 vgd
 pcY
 ajl
 cUl
-cpu
+vCF
 xzh
 xzh
 xzh
@@ -110948,13 +110948,13 @@ xzh
 xzh
 xzh
 xzh
-cpu
+vCF
 qQF
 peb
 xpd
 bKe
 bLj
-cpu
+vCF
 xzh
 xzh
 xzh
@@ -111205,13 +111205,13 @@ xzh
 xzh
 xzh
 xzh
-cpu
+vCF
 bGd
 wdS
 hNp
 bKe
 bLm
-cpu
+vCF
 xzh
 xzh
 xzh
@@ -111462,13 +111462,13 @@ xzh
 xzh
 xzh
 xzh
-cpu
+vCF
 ioB
 ioB
 ioB
-cpu
+vCF
 bLl
-cpu
+vCF
 xzh
 xzh
 xzh
