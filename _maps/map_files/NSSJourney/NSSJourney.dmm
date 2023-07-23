@@ -13957,6 +13957,9 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/cmo)
+"beZ" = (
+/turf/closed/wall/r_wall,
+/area/station/science/ordnance/bomb)
 "bfa" = (
 /turf/open/floor/iron/freezer,
 /area/station/commons/toilet/locker)
@@ -36345,6 +36348,9 @@
 "eSa" = (
 /turf/open/floor/grass,
 /area/station/service/hydroponics)
+"eSQ" = (
+/turf/closed/wall/r_wall,
+/area/station/security/execution/education)
 "eTo" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -38258,9 +38264,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/execution/transfer)
-"gEp" = (
-/turf/closed/wall/r_wall,
-/area/station/science/ordnance/bomb)
 "gES" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -50977,7 +50980,7 @@
 /area/station/security/prison)
 "rWQ" = (
 /obj/machinery/camera/directional/north{
-	c_tag = Morgue
+	c_tag = "Morgue"
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/computer/records/medical/laptop{
@@ -54994,9 +54997,6 @@
 /obj/structure/chair/stool/directional/west,
 /turf/open/floor/wood,
 /area/station/security/prison)
-"vCF" = (
-/turf/closed/wall/r_wall,
-/area/station/security/execution/education)
 "vDl" = (
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/delivery,
@@ -78756,16 +78756,16 @@ xzh
 sUX
 xzh
 xzh
-vCF
+eSQ
 aqg
 aqg
 aqg
-vCF
-vCF
+eSQ
+eSQ
 afu
 afu
 afu
-vCF
+eSQ
 sUX
 sUX
 sUX
@@ -79013,7 +79013,7 @@ xzh
 sUX
 xzh
 xzh
-vCF
+eSQ
 aWA
 aWA
 aWA
@@ -79022,7 +79022,7 @@ aqu
 aWE
 aYp
 bcg
-vCF
+eSQ
 xzh
 xzh
 xzh
@@ -79270,7 +79270,7 @@ aai
 aai
 aai
 aai
-vCF
+eSQ
 aWA
 aqi
 aWA
@@ -79279,7 +79279,7 @@ aWk
 bce
 bce
 bcR
-vCF
+eSQ
 xzh
 xzh
 xzh
@@ -79527,7 +79527,7 @@ dVr
 his
 miU
 nlW
-vCF
+eSQ
 aWA
 aPj
 acA
@@ -79536,7 +79536,7 @@ arm
 aWF
 aZL
 pSp
-vCF
+eSQ
 xzh
 xzh
 xzh
@@ -79784,16 +79784,16 @@ pqf
 uTo
 aai
 aai
-vCF
-vCF
-vCF
-vCF
-vCF
-vCF
+eSQ
+eSQ
+eSQ
+eSQ
+eSQ
+eSQ
 aWG
 bce
 bbH
-vCF
+eSQ
 sUX
 sUX
 sUX
@@ -80046,11 +80046,11 @@ hIM
 qEv
 kNP
 lHY
-vCF
+eSQ
 aXC
 aZJ
 bbH
-vCF
+eSQ
 xzh
 xzh
 xzh
@@ -80307,7 +80307,7 @@ aWD
 aXH
 bce
 bbH
-vCF
+eSQ
 xzh
 xzh
 xzh
@@ -80560,11 +80560,11 @@ wVq
 usq
 vhQ
 qff
-vCF
+eSQ
 sox
 aZN
 bbJ
-vCF
+eSQ
 xzh
 xzh
 xzh
@@ -80817,11 +80817,11 @@ fio
 jFV
 skT
 afA
-vCF
-vCF
-vCF
-vCF
-vCF
+eSQ
+eSQ
+eSQ
+eSQ
+eSQ
 xzh
 xzh
 xzh
@@ -109410,13 +109410,13 @@ bEF
 mzp
 cNR
 nMP
-gEp
-gEp
+beZ
+beZ
 bIS
-gEp
-gEp
-gEp
-gEp
+beZ
+beZ
+beZ
+beZ
 cNW
 dlH
 cNW
@@ -109667,13 +109667,13 @@ bky
 bky
 cNV
 bky
-gEp
+beZ
 izU
 jIm
 bIW
 bXe
 tCN
-gEp
+beZ
 bNC
 cOe
 wZQ
@@ -109924,13 +109924,13 @@ bxt
 cNT
 bCm
 cHC
-gEp
+beZ
 bMx
 jIm
 xsR
 atB
 teX
-gEp
+beZ
 bNB
 cac
 bPP
@@ -110181,13 +110181,13 @@ wWu
 brG
 brG
 bDg
-gEp
+beZ
 bGh
 kDo
 hCG
 kwa
 jXH
-gEp
+beZ
 rmX
 xIa
 vxh
@@ -110438,13 +110438,13 @@ xqJ
 byx
 qfs
 mPv
-gEp
+beZ
 fXd
 lQR
 tOg
 bGe
 bGe
-gEp
+beZ
 cOT
 cOT
 cOT
@@ -110695,13 +110695,13 @@ bky
 bky
 bky
 bky
-gEp
+beZ
 qCr
 vgd
 pcY
 ajl
 cUl
-gEp
+beZ
 xzh
 xzh
 xzh
@@ -110952,13 +110952,13 @@ xzh
 xzh
 xzh
 xzh
-gEp
+beZ
 qQF
 peb
 xpd
 bKe
 bLj
-gEp
+beZ
 xzh
 xzh
 xzh
@@ -111209,13 +111209,13 @@ xzh
 xzh
 xzh
 xzh
-gEp
+beZ
 bGd
 wdS
 hNp
 bKe
 bLm
-gEp
+beZ
 xzh
 xzh
 xzh
@@ -111466,13 +111466,13 @@ xzh
 xzh
 xzh
 xzh
-gEp
+beZ
 ioB
 ioB
 ioB
-gEp
+beZ
 bLl
-gEp
+beZ
 xzh
 xzh
 xzh
