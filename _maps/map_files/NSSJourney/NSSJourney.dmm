@@ -1013,12 +1013,11 @@
 /area/station/engineering/main)
 "ahM" = (
 /obj/machinery/door/window/left/directional/east{
-	name = "armoury desk";
-	req_access_txt = "1"
+	name = "armoury desk"
 	},
 /obj/machinery/door/window/left/directional/west{
 	name = "armoury desk";
-	req_access_txt = "3"
+	req_access = list("armory")
 	},
 /obj/structure/table/reinforced,
 /turf/open/floor/iron,
@@ -14216,7 +14215,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/open/floor/iron,
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/turf/open/floor/iron/white/corner,
 /area/station/hallway/secondary/exit)
 "bge" = (
 /obj/effect/turf_decal/tile/red{
@@ -16218,6 +16220,8 @@
 	name = "Service Door";
 	req_one_access_txt = "35;28"
 	},
+/obj/effect/mapping_helpers/airlock/access/any/service/hydroponics,
+/obj/effect/mapping_helpers/airlock/access/any/service/kitchen,
 /turf/open/floor/iron/cafeteria{
 	dir = 5
 	},
@@ -19530,6 +19534,7 @@
 	},
 /obj/structure/cable,
 /obj/effect/mapping_helpers/airlock/access/any/medical/general,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/dark,
 /area/station/medical/storage)
 "bvt" = (
@@ -22103,6 +22108,7 @@
 	dir = 8
 	},
 /obj/effect/mapping_helpers/mail_sorting/engineering/atmospherics,
+/obj/effect/turf_decal/stripes/corner,
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
 "bFn" = (
@@ -22120,7 +22126,7 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/stripes/corner{
-	dir = 4
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
@@ -26715,7 +26721,7 @@
 /area/station/engineering/break_room)
 "bXr" = (
 /obj/machinery/camera/autoname/directional/south{
-	c_tag = Ordnance Gas Storage
+	c_tag = OrdnanceGasStorage
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/tank/oxygen,
@@ -26797,6 +26803,9 @@
 /turf/open/floor/iron,
 /area/station/tcommsat/computer)
 "bXG" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
 /turf/open/floor/iron,
 /area/station/tcommsat/computer)
 "bXI" = (
@@ -32500,7 +32509,7 @@
 	},
 /obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/stripes/corner{
-	dir = 1
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
@@ -34963,7 +34972,7 @@
 	name = "Equipment Room"
 	},
 /obj/effect/mapping_helpers/airlock/access/any/security/brig,
-/turf/open/space/basic,
+/turf/open/floor/iron/dark,
 /area/station/security/office)
 "dBu" = (
 /obj/effect/turf_decal/tile/blue{
@@ -36088,13 +36097,11 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
 "eHw" = (
-/obj/structure/bookcase/random/adult,
-/obj/structure/sign/painting/large/library{
-	dir = 8;
-	pixel_x = -29
+/obj/machinery/camera/directional/west{
+	c_tag = "Conference to HoP Office"
 	},
 /turf/open/floor/wood,
-/area/station/service/library)
+/area/station/command/meeting_room)
 "eIf" = (
 /obj/structure/disposalpipe/segment{
 	dir = 10
@@ -36485,7 +36492,7 @@
 /obj/structure/table/glass,
 /obj/machinery/door/window/left/directional/south{
 	name = "Relics";
-	req_access_txt = "22"
+	req_access = list("chapel_office")
 	},
 /obj/item/book/granter/action/spell/smoke/lesser{
 	pixel_y = 5
@@ -36703,6 +36710,9 @@
 "fiY" = (
 /obj/machinery/light/small/directional/west,
 /obj/structure/bookcase/random/adult,
+/obj/structure/sign/painting/library{
+	pixel_x = -32
+	},
 /turf/open/floor/wood,
 /area/station/service/library)
 "fjm" = (
@@ -37002,7 +37012,7 @@
 /obj/structure/closet/crate/coffin,
 /obj/machinery/door/window/left/directional/east{
 	name = "Coffin Storage";
-	req_access_txt = "22"
+	req_access = list("chapel_office")
 	},
 /turf/open/floor/iron/smooth_large,
 /area/station/service/chapel/office)
@@ -37440,7 +37450,7 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/machinery/door/window/left/directional/south{
 	name = "Court Cell";
-	req_access_txt = "2"
+	req_access_txt = list("brig")
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/courtroom)
@@ -37832,9 +37842,6 @@
 /area/station/solars/port/aft)
 "ghy" = (
 /obj/structure/table/wood/fancy,
-/obj/structure/sign/painting/library_secure{
-	pixel_y = 32
-	},
 /obj/machinery/door/window/brigdoor/left/directional/south{
 	req_access = list("library")
 	},
@@ -38301,7 +38308,7 @@
 "gGi" = (
 /obj/machinery/door/window/left/directional/south{
 	name = "Armory";
-	req_access_txt = "3"
+	req_access = list("armory")
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/stripes/line{
@@ -40064,9 +40071,6 @@
 "iiZ" = (
 /obj/structure/table/wood/fancy,
 /obj/structure/window/reinforced/spawner/directional/east,
-/obj/structure/sign/painting/library_secure{
-	pixel_y = 32
-	},
 /obj/machinery/door/window/brigdoor/right/directional/south{
 	req_access = list("library")
 	},
@@ -40964,7 +40968,10 @@
 	},
 /obj/structure/closet/firecloset,
 /obj/effect/landmark/start/hangover/closet,
-/turf/open/floor/iron/white/corner,
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/turf/open/floor/iron/cafeteria,
 /area/station/hallway/secondary/exit)
 "jgi" = (
 /obj/effect/decal/cleanable/dirt,
@@ -41230,7 +41237,7 @@
 	base_state = "right";
 	icon_state = "right";
 	name = "Armory";
-	req_access_txt = "3"
+	req_access = list("armory")
 	},
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/cable,
@@ -42172,7 +42179,7 @@
 	name = "Armory Shutters";
 	pixel_x = 26;
 	pixel_y = -26;
-	req_access_txt = list("armory")
+	req_access = list("armory")
 	},
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
@@ -43442,6 +43449,19 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/iron,
 /area/station/hallway/primary/port)
+"ldB" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/machinery/camera/directional/north{
+	c_tag = "Dormitories East"
+	},
+/turf/open/floor/iron/dark/side{
+	dir = 1
+	},
+/area/station/commons/dorms)
 "ldN" = (
 /obj/structure/grille,
 /obj/effect/mapping_helpers/burnt_floor,
@@ -46180,7 +46200,13 @@
 "nIe" = (
 /obj/machinery/firealarm/directional/east,
 /obj/effect/spawner/random/vending/colavend,
-/turf/open/floor/iron,
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/turf/open/floor/iron/white/corner,
 /area/station/hallway/secondary/exit)
 "nJe" = (
 /obj/structure/chair/wood,
@@ -46966,7 +46992,7 @@
 "ouy" = (
 /obj/machinery/door/morgue{
 	name = "Confession Booth (Chaplain)";
-	req_access_txt = "22"
+	req_access = list("chapel_office")
 	},
 /turf/open/floor/iron/dark,
 /area/station/service/chapel)
@@ -49466,7 +49492,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window/left/directional/north{
 	name = "Hydroponics Desk";
-	req_access_txt = "35"
+	req_access = list("hydroponics")
 	},
 /obj/item/paper/guides/jobs/holopad_hydro,
 /turf/open/floor/iron,
@@ -49770,7 +49796,10 @@
 /area/station/engineering/main)
 "qWN" = (
 /obj/effect/spawner/random/entertainment/arcade,
-/turf/open/floor/iron,
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/turf/open/floor/iron/white/corner,
 /area/station/hallway/secondary/exit)
 "qWV" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
@@ -50726,6 +50755,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/white,
 /area/station/medical/storage)
 "rNG" = (
@@ -51012,7 +51042,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/stripes/corner{
-	dir = 8
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
@@ -51283,7 +51313,7 @@
 "soI" = (
 /obj/structure/table,
 /obj/machinery/camera/directional/north{
-	c_tag = Prison - Work Room
+	c_tag = Prison-WorkRoom
 	},
 /obj/item/stack/license_plates/empty/fifty,
 /obj/item/stack/license_plates/empty/fifty,
@@ -51570,6 +51600,15 @@
 /obj/machinery/computer/security/telescreen/entertainment/directional/west,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/turret_protected/aisat_interior)
+"sEX" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/station/hallway/secondary/exit)
 "sFb" = (
 /obj/machinery/atmospherics/pipe/smart/simple/yellow/visible{
 	dir = 9
@@ -52833,6 +52872,11 @@
 /obj/structure/fence{
 	pixel_x = -15
 	},
+/obj/machinery/camera{
+	c_tag = "Prison - Sport Room";
+	dir = 9;
+	network = list("ss13","prison")
+	},
 /turf/open/floor/iron/dark,
 /area/station/security/prison)
 "tJO" = (
@@ -53813,7 +53857,10 @@
 "uEB" = (
 /obj/structure/closet/emcloset,
 /obj/effect/landmark/start/hangover/closet,
-/turf/open/floor/iron,
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/turf/open/floor/iron/white/corner,
 /area/station/hallway/secondary/exit)
 "uES" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
@@ -55781,18 +55828,9 @@
 /turf/open/floor/plating,
 /area/station/security/prison/safe)
 "wns" = (
-/obj/effect/turf_decal/stripes/white/line{
-	color = "#52B4E9";
-	dir = 4;
-	name = "blue line"
-	},
-/obj/machinery/camera{
-	c_tag = "Prison - Sport Room";
-	dir = 6;
-	network = list("ss13","prison")
-	},
-/turf/open/floor/iron/dark,
-/area/station/security/prison)
+/obj/structure/sign/painting/large/library,
+/turf/closed/wall,
+/area/station/service/library)
 "wnD" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/decal/cleanable/dirt,
@@ -56467,8 +56505,8 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment,
-/obj/effect/mapping_helpers/airlock/access/any/service/library,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
 "wRn" = (
@@ -57971,7 +58009,7 @@
 /obj/machinery/door/window/right/directional/west{
 	dir = 1;
 	name = "Hydroponics Desk";
-	req_access_txt = "35"
+	req_access = list("hydroponics")
 	},
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
@@ -81731,7 +81769,7 @@ uNi
 uMS
 xzh
 dHU
-wVq
+osx
 sDW
 vUt
 aEr
@@ -85126,7 +85164,7 @@ bbC
 bbC
 bdI
 bbX
-bbX
+eHw
 bjE
 eoi
 bmo
@@ -85313,7 +85351,7 @@ aai
 wzn
 pOi
 kjN
-wns
+pOi
 uVC
 uWe
 uWe
@@ -85579,7 +85617,7 @@ aai
 aai
 aai
 aai
-acd
+aai
 nJL
 pbq
 aai
@@ -85836,7 +85874,7 @@ xzh
 mBe
 mBe
 mBe
-acd
+aai
 acd
 aai
 aai
@@ -86093,7 +86131,7 @@ xWd
 xzh
 xzh
 sUX
-acd
+aai
 xZn
 oFG
 gjc
@@ -89173,7 +89211,7 @@ xzh
 xzh
 xzh
 xzh
-abq
+adR
 fSV
 pLL
 qil
@@ -90206,7 +90244,7 @@ qti
 sni
 sni
 dSj
-abq
+adR
 bpJ
 bpJ
 mMA
@@ -90463,7 +90501,7 @@ hwY
 gwO
 gwO
 lts
-abq
+adR
 abT
 acs
 acR
@@ -91491,7 +91529,7 @@ fpx
 xEJ
 xEJ
 qIc
-abq
+adR
 abW
 abk
 gII
@@ -92550,7 +92588,7 @@ arf
 arf
 arf
 arf
-ofZ
+ldB
 axV
 sed
 awr
@@ -100790,7 +100828,7 @@ aFu
 aFu
 aWb
 fiY
-eHw
+aWb
 ePw
 mIp
 aIt
@@ -101809,7 +101847,7 @@ alP
 alP
 alP
 aED
-aFu
+wns
 ghy
 aIw
 aIt
@@ -107483,7 +107521,7 @@ aPq
 bcC
 pdi
 aWh
-bgg
+sEX
 jfQ
 sRR
 odl
