@@ -10843,7 +10843,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/preopen{
 	id = "bridge blast";
-	name = "bridge blast door"
+	name = "Bridge Blast Door"
 	},
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
@@ -14625,7 +14625,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters{
 	id = "Skynet_launch";
-	name = "mech bay"
+	name = "Mech Bay"
 	},
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
@@ -19061,7 +19061,7 @@
 "buj" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "robotics2";
-	name = "robotics lab shutters"
+	name = "Robotics Lab Shutters"
 	},
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
@@ -23462,7 +23462,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "xenobiomain";
-	name = "containment blast door"
+	name = "Containment Blast Door"
 	},
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
@@ -42165,7 +42165,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/preopen{
 	id = "Prison Gate";
-	name = "prison blast door"
+	name = "Prison Blast Door"
 	},
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
@@ -47305,11 +47305,10 @@
 /turf/open/floor/iron/dark/textured,
 /area/station/hallway/primary/central)
 "oFG" = (
-/obj/structure/grille,
 /obj/structure/window/reinforced/tinted/spawner/directional/south,
 /obj/structure/window/reinforced/tinted/spawner/directional/north,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable,
+/obj/effect/spawner/structure/electrified_grille,
 /turf/open/floor/plating,
 /area/station/security/execution/transfer)
 "oFI" = (
@@ -52663,7 +52662,7 @@
 /obj/structure/fence,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "briggate";
-	name = "security shutters"
+	name = "Security Shutters"
 	},
 /obj/structure/cable,
 /obj/structure/curtain/cloth,
@@ -55861,7 +55860,7 @@
 /obj/effect/spawner/structure/window,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "rnd2";
-	name = "research lab shutters"
+	name = "Research Lab Shutters"
 	},
 /turf/open/floor/plating,
 /area/station/science/research)
@@ -57293,7 +57292,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
 /obj/machinery/door/airlock/service{
-	name = "Kitchen cold room"
+	name = "Kitchen Cold Room"
 	},
 /obj/effect/mapping_helpers/airlock/access/any/service/kitchen,
 /turf/open/floor/iron/showroomfloor,
