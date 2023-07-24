@@ -1332,7 +1332,7 @@
 "ajW" = (
 /obj/structure/sign/warning/secure_area/directional/south,
 /turf/open/floor/plating/airless,
-/area/space)
+/area/space/nearstation)
 "ajX" = (
 /obj/machinery/computer/teleporter{
 	dir = 8
@@ -5881,9 +5881,6 @@
 /obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
-"aCS" = (
-/turf/open/floor/plating/airless,
-/area/space)
 "aCT" = (
 /obj/docking_port/stationary/random{
 	dir = 8;
@@ -8029,7 +8026,7 @@
 /area/station/service/bar)
 "aKT" = (
 /obj/structure/closet/secure_closet/freezer/meat,
-/turf/open/floor/iron/showroomfloor,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen)
 "aKU" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
@@ -8421,13 +8418,13 @@
 /obj/machinery/chem_master/condimaster{
 	name = "CondiMaster Neo"
 	},
-/turf/open/floor/iron/showroomfloor,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen)
 "aMl" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
-/turf/open/floor/iron/showroomfloor,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen)
 "aMm" = (
 /obj/machinery/firealarm/directional/north,
@@ -8523,7 +8520,7 @@
 /area/station/service/bar)
 "aMD" = (
 /obj/machinery/icecream_vat,
-/turf/open/floor/iron/showroomfloor,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen)
 "aME" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
@@ -8532,7 +8529,7 @@
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
 "aMF" = (
-/turf/open/floor/iron/showroomfloor,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen)
 "aMG" = (
 /obj/structure/closet/crate/hydroponics,
@@ -8818,7 +8815,7 @@
 /mob/living/simple_animal/hostile/retaliate/goat{
 	name = "Pete"
 	},
-/turf/open/floor/iron/showroomfloor,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen)
 "aNL" = (
 /obj/machinery/door/firedoor,
@@ -8833,13 +8830,14 @@
 "aNM" = (
 /obj/structure/kitchenspike,
 /obj/machinery/light/small/directional/west,
-/turf/open/floor/iron/showroomfloor,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen)
 "aNO" = (
 /obj/machinery/vending/wardrobe/chef_wardrobe,
 /obj/machinery/airalarm/directional/east,
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/iron/showroomfloor,
+/obj/effect/mapping_helpers/airalarm/tlv_cold_room,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen)
 "aNP" = (
 /obj/machinery/modular_computer/preset/cargochat/service,
@@ -9090,7 +9088,7 @@
 /area/station/hallway/primary/central)
 "aOI" = (
 /obj/structure/kitchenspike,
-/turf/open/floor/iron/showroomfloor,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen)
 "aOJ" = (
 /obj/structure/chair/comfy/brown{
@@ -9107,7 +9105,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
-/turf/open/floor/iron/showroomfloor,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen)
 "aOO" = (
 /obj/structure/disposalpipe/segment,
@@ -9139,7 +9137,7 @@
 /area/station/service/library)
 "aOT" = (
 /obj/machinery/gibber,
-/turf/open/floor/iron/showroomfloor,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen)
 "aOU" = (
 /obj/effect/turf_decal/tile/blue{
@@ -11876,11 +11874,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/command/bridge)
-"aYt" = (
-/obj/structure/lattice,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/space/nearstation)
 "aYu" = (
 /obj/structure/table,
 /obj/item/paper_bin{
@@ -30466,7 +30459,7 @@
 /area/station/engineering/main)
 "crW" = (
 /obj/machinery/light/small/directional/west,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/station/engineering/main)
 "crX" = (
 /obj/structure/sign/warning/vacuum/external/directional/east,
@@ -31759,10 +31752,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/security/processing)
-"cxM" = (
-/obj/structure/marker_beacon/burgundy,
-/turf/open/floor/plating/airless,
-/area/space)
 "cxN" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
@@ -40612,7 +40601,7 @@
 	c_tag = "Kitchen Cold Room"
 	},
 /obj/structure/reagent_dispensers/cooking_oil,
-/turf/open/floor/iron/showroomfloor,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen)
 "iNo" = (
 /obj/machinery/computer/security/labor,
@@ -44170,7 +44159,7 @@
 	dir = 5
 	},
 /obj/structure/cable,
-/turf/open/floor/iron/showroomfloor,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen)
 "lKj" = (
 /obj/machinery/navbeacon{
@@ -44980,11 +44969,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
-"mBe" = (
-/obj/structure/grille,
-/obj/structure/lattice,
-/turf/open/floor/plating,
-/area/space/nearstation)
 "mBv" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/cable,
@@ -45686,7 +45670,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
-/turf/open/floor/iron/showroomfloor,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen)
 "njf" = (
 /obj/structure/cable,
@@ -47893,7 +47877,7 @@
 /obj/item/food/meat/slab/chicken,
 /obj/item/food/meat/slab/chicken,
 /obj/item/food/meat/slab/chicken,
-/turf/open/floor/iron/freezer,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/security/prison)
 "pjA" = (
 /obj/machinery/modular_computer/preset/civilian{
@@ -50715,7 +50699,7 @@
 /turf/open/floor/iron,
 /area/station/maintenance/starboard/fore)
 "rIo" = (
-/turf/open/floor/iron/freezer,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/security/prison)
 "rID" = (
 /obj/machinery/power/apc/auto_name/directional/south,
@@ -53055,7 +53039,7 @@
 /area/station/security/office)
 "tMl" = (
 /obj/effect/turf_decal/loading_area,
-/turf/open/floor/iron/showroomfloor,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen)
 "tNq" = (
 /obj/structure/table/wood,
@@ -54133,7 +54117,7 @@
 	dir = 5
 	},
 /obj/structure/cable,
-/turf/open/floor/iron/showroomfloor,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen)
 "uRk" = (
 /obj/machinery/vending/coffee,
@@ -72427,7 +72411,7 @@ xzh
 xzh
 bJc
 xzh
-xWd
+sUX
 xzh
 bJc
 xzh
@@ -72683,9 +72667,9 @@ xzh
 xzh
 xzh
 bJc
-xWd
+sUX
 heL
-xWd
+sUX
 bJc
 xzh
 xzh
@@ -74380,7 +74364,7 @@ xzh
 xzh
 bJc
 xzh
-xWd
+sUX
 xzh
 xzh
 xzh
@@ -74636,7 +74620,7 @@ xzh
 xzh
 xzh
 bJc
-xWd
+sUX
 glY
 xrV
 xrV
@@ -74894,7 +74878,7 @@ xzh
 xzh
 bJc
 xzh
-xWd
+sUX
 xzh
 xzh
 xzh
@@ -75129,23 +75113,23 @@ xzh
 xzh
 xzh
 xzh
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
 xzh
 xzh
 xzh
@@ -75899,26 +75883,26 @@ xzh
 xzh
 xzh
 xzh
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
-aYt
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
 xzh
 sUX
 xzh
@@ -76411,7 +76395,7 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
 xzh
 sUX
@@ -76666,9 +76650,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
-mBe
+bJc
 sUX
 aaJ
 fFP
@@ -76923,9 +76907,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 sUX
-mBe
+bJc
 xzh
 aaJ
 jYu
@@ -77180,9 +77164,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
-mBe
+bJc
 xzh
 aaJ
 pCZ
@@ -77437,9 +77421,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
-mBe
+bJc
 sUX
 aaJ
 fRE
@@ -77694,9 +77678,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 sUX
-mBe
+bJc
 xzh
 aaJ
 kLu
@@ -77951,9 +77935,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 sUX
-mBe
+bJc
 xzh
 aaJ
 kLu
@@ -78208,9 +78192,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
-mBe
+bJc
 sUX
 aaJ
 dbg
@@ -78465,9 +78449,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
-mBe
+bJc
 xzh
 aaJ
 hou
@@ -78722,9 +78706,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 sUX
-mBe
+bJc
 xzh
 aaJ
 kgU
@@ -78979,9 +78963,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
-mBe
+bJc
 sUX
 aaJ
 aaJ
@@ -79238,7 +79222,7 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
 xzh
 xzh
@@ -79489,7 +79473,7 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
 aai
 aai
@@ -79744,9 +79728,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
-mBe
+bJc
 sUX
 aai
 nvX
@@ -80001,9 +79985,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 sUX
-mBe
+bJc
 xzh
 aai
 acd
@@ -80258,9 +80242,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
-mBe
+bJc
 xzh
 aai
 ddf
@@ -80515,9 +80499,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
-mBe
+bJc
 sUX
 aai
 xFA
@@ -80772,9 +80756,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
-mBe
+bJc
 xzh
 aai
 vhr
@@ -81029,9 +81013,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 sUX
-mBe
+bJc
 xzh
 aai
 bqc
@@ -81286,9 +81270,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
-mBe
+bJc
 sUX
 aai
 acd
@@ -81545,7 +81529,7 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
 aai
 aai
@@ -81803,7 +81787,7 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
 dHU
 vEx
@@ -82058,9 +82042,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
-mBe
+bJc
 xzh
 dHU
 ieZ
@@ -82315,9 +82299,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
-mBe
+bJc
 sUX
 aai
 oBk
@@ -82572,9 +82556,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 sUX
-mBe
+bJc
 xzh
 aai
 smF
@@ -82829,9 +82813,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
-mBe
+bJc
 xzh
 aai
 acd
@@ -83086,9 +83070,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 sUX
-mBe
+bJc
 xzh
 aai
 hEL
@@ -83343,9 +83327,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
-mBe
+bJc
 sUX
 aai
 pjx
@@ -83602,7 +83586,7 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
 aai
 aai
@@ -83861,7 +83845,7 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 sUX
 aai
 hhR
@@ -84116,9 +84100,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
-mBe
+bJc
 xzh
 aai
 aai
@@ -84373,9 +84357,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 sUX
-mBe
+bJc
 xzh
 aai
 hhR
@@ -84630,9 +84614,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
-mBe
+bJc
 sUX
 aai
 aai
@@ -84889,7 +84873,7 @@ xzh
 xzh
 xzh
 xzh
-mBe
+bJc
 xzh
 xzh
 sUX
@@ -85147,15 +85131,15 @@ xzh
 xzh
 xzh
 xzh
-mBe
-mBe
-mBe
-mBe
-mBe
-mBe
-mBe
-mBe
-mBe
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
 xzh
 aai
 qUj
@@ -85412,7 +85396,7 @@ xzh
 xzh
 sUX
 xzh
-mBe
+bJc
 xzh
 aai
 aai
@@ -85662,14 +85646,14 @@ xzh
 xzh
 xzh
 xzh
-mBe
-mBe
-mBe
-mBe
-mBe
-mBe
-mBe
-mBe
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
+bJc
 xzh
 xzh
 sUX
@@ -85928,9 +85912,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
-mBe
-mBe
+bJc
+bJc
+bJc
 xzh
 xzh
 xzh
@@ -85940,9 +85924,9 @@ xzh
 xzh
 xzh
 xzh
-mBe
-mBe
-mBe
+bJc
+bJc
+bJc
 aai
 acd
 aai
@@ -86196,7 +86180,7 @@ xzh
 xzh
 xzh
 xzh
-xWd
+sUX
 xzh
 xzh
 sUX
@@ -86452,11 +86436,11 @@ xzh
 xzh
 xzh
 xzh
-mBe
-mBe
-mBe
-mBe
-mBe
+bJc
+bJc
+bJc
+bJc
+bJc
 aai
 aaZ
 aaZ
@@ -87228,7 +87212,7 @@ xzh
 xzh
 xzh
 xzh
-bBM
+bJc
 aaZ
 abn
 abn
@@ -87485,7 +87469,7 @@ xzh
 xzh
 xzh
 xzh
-bBM
+bJc
 aaZ
 fFF
 jgL
@@ -87742,7 +87726,7 @@ xzh
 xzh
 xzh
 xzh
-bBM
+bJc
 aaZ
 fdm
 jgL
@@ -92885,7 +92869,7 @@ adR
 adR
 adR
 xzh
-aCS
+uRx
 acU
 adr
 sXy
@@ -93142,7 +93126,7 @@ xzh
 xzh
 xzh
 xzh
-cxM
+uVE
 abq
 abq
 abq
@@ -99309,7 +99293,7 @@ xzh
 xzh
 bJc
 xzh
-xWd
+sUX
 xzh
 xzh
 xzh
@@ -99565,7 +99549,7 @@ xzh
 xzh
 xzh
 bJc
-xWd
+sUX
 abc
 aee
 aee
@@ -99823,7 +99807,7 @@ xzh
 xzh
 bJc
 xzh
-xWd
+sUX
 xzh
 xzh
 xzh
