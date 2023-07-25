@@ -261,7 +261,6 @@
 			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/head/helmet.dmi',
 			RESKIN_ICON_STATE = "security_helmet",
 			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/head/helmet.dmi',
-			RESKIN_WORN_ICON_STATE = "security_helmet"
 		),
 		"Red Variant" = list(
 			RESKIN_ICON = 'icons/obj/clothing/head/helmet.dmi',
