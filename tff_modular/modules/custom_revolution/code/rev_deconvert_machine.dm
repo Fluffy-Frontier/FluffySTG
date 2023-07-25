@@ -41,7 +41,7 @@
 	ON FAIL WILL CAUSE SEVERE MENTAL SUFFERING!"
 	icon = 'modular_skyrat/modules/self_actualization_device/icons/self_actualization_device.dmi'
 	icon_state = "sad_open"
-	circuit = /obj/item/circuitboard/machine/self_actualization_device
+	circuit = /obj/item/circuitboard/machine/custom_rev_deconvert_device
 	state_open = FALSE
 	density = TRUE
 	/// Is someone being processed inside of the machine?
@@ -209,7 +209,7 @@
 
 	return FALSE
 
-/obj/machinery/self_actualization_device/crowbar_act(mob/living/user, obj/item/used_item)
+/obj/machinery/custom_rev_deconvert_device/crowbar_act(mob/living/user, obj/item/used_item)
 	if(occupant)
 		to_chat(user, span_warning("[src] is currently occupied!"))
 		return
