@@ -111,3 +111,38 @@
 		/obj/item/lighter/mime,
 		/obj/item/lighter/bright,
 	)
+
+/datum/export/gear/forging_plate_armor
+	cost = CARGO_CRATE_VALUE * 1.4
+	unit_name = "reagent plate vest"
+	export_types = list(/obj/item/suit/armor/forging_plate_armor)
+
+/datum/export/gear/forging_plate_gloves
+	cost = CARGO_CRATE_VALUE * 1.2
+	unit_name = "reagent plate gloves"
+	export_types = list(/obj/item/clothing/gloves/forging_plate_gloves)
+
+/datum/export/gear/forging_plate_helmet
+	cost = CARGO_CRATE_VALUE * 1.2
+	unit_name = "reagent plate helmet"
+	export_types = list(/obj/item/clothing/head/helmet/forging_plate_helmet)
+
+/datum/export/gear/forging_plate_boots
+	cost = CARGO_CRATE_VALUE * 1.2
+	unit_name = "reagent plate boots"
+	export_types = list(/obj/item/clothing/shoes/forging_plate_boots)
+
+/datum/export/gear/horseshoe
+	cost = CARGO_CRATE_VALUE * 1.2
+	unit_name = "reagent horseshoe"
+	export_types = list(/obj/item/clothing/shoes/horseshoe)
+
+/datum/export/gear/collar
+	cost = CARGO_CRATE_VALUE * 1.5
+	unit_name = "reagent collar"
+	export_types = list(/obj/item/clothing/neck/collar/reagent_clothing)
+
+/datum/export/gear/ring
+	cost = CARGO_CRATE_VALUE * 1.5
+	unit_name = "reagent ring"
+	export_types = list(/obj/item/clothing/gloves/ring/reagent_clothing)

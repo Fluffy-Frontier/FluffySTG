@@ -79,4 +79,63 @@
 	cost = CARGO_CRATE_VALUE * 1.5
 	unit_name = "WT-550 automatic rifle"
 	export_types = list(/obj/item/gun/ballistic/automatic/wt550)
-	
+
+/datum/export/weapon/reagent_sword
+	cost = CARGO_CRATE_VALUE * 1.5
+	unit_name = "reagent sword"
+	export_types = list(/obj/item/forging/reagent_weapon/sword)
+
+/datum/export/weapon/reagent_katana
+	cost = CARGO_CRATE_VALUE * 1.5
+	unit_name = "reagent katana"
+	export_types = list(/obj/item/forging/reagent_weapon/katana)
+
+/datum/export/weapon/reagent_dagger
+	cost = CARGO_CRATE_VALUE * 1.5
+	unit_name = "reagent dagger"
+	export_types = list(/obj/item/forging/reagent_weapon/dagger)
+
+/datum/export/weapon/reagent_staff
+	cost = CARGO_CRATE_VALUE * 1.5
+	unit_name = "reagent staff"
+	export_types = list(/obj/item/forging/reagent_weapon/staff)
+
+/datum/export/weapon/reagent_spear
+	cost = CARGO_CRATE_VALUE * 1.5
+	unit_name = "reagent spear"
+	export_types = list(/obj/item/forging/reagent_weapon/spear)
+
+/datum/export/weapon/reagent_axe
+	cost = CARGO_CRATE_VALUE * 1.5
+	unit_name = "reagent axe"
+	export_types = list(/obj/item/forging/reagent_weapon/axe)
+
+/datum/export/weapon/reagent_hammer
+	cost = CARGO_CRATE_VALUE * 1.5
+	unit_name = "reagent hammer"
+	export_types = list(/obj/item/forging/reagent_weapon/hammer)
+
+/datum/export/weapon/reagent_buckler
+	cost = CARGO_CRATE_VALUE * 1.4
+	unit_name = "reagent plated buckler shield"
+	export_types = list(/obj/item/shield/buckler/reagent_weapon)
+
+/datum/export/weapon/reagent_pavise_shield
+	cost = CARGO_CRATE_VALUE * 1.6
+	unit_name = "reagent plated pavise shield"
+	export_types = list(/obj/item/shield/buckler/reagent_weapon/pavise)
+
+/datum/export/weapon/reagent_pickaxe
+	cost = CARGO_CRATE_VALUE * 1.3
+	unit_name = "reagent pickaxe"
+	export_types = list(/obj/item/pickaxe/reagent_weapon)
+
+/datum/export/weapon/reagent_shovel
+	cost = CARGO_CRATE_VALUE * 1.3
+	unit_name = "reagent shovel"
+	export_types = list(/obj/item/shovel/reagent_weapon)
+
+/datum/export/weapon/reagent_bokken
+	cost = CARGO_CRATE_VALUE * 1.3
+	unit_name = "reagent bokken"
+	export_types = list(/obj/item/forging/reagent_weapon/bokken)
