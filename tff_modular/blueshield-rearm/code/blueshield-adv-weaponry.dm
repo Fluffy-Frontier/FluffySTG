@@ -1,5 +1,5 @@
 /*
-*	Holster for new gun and its ammo.
+*	Holster for the SR-8 and its ammo.
 */
 
 /obj/item/storage/belt/holster/energy/blueshield
@@ -11,11 +11,10 @@
 	worn_icon = 'tff_modular/blueshield-rearm/icons/holster.dmi'
 	worn_icon_teshari = 'tff_modular/blueshield-rearm/icons/holster_teshari.dmi'
 	worn_icon_state = "blueshield_holster_worn"
-	
 
 /obj/item/storage/belt/holster/energy/blueshield/Initialize(mapload)
 	. = ..()
-	atom_storage.max_slots = 4
+	atom_storage.max_slots = 5
 	atom_storage.max_specific_storage = WEIGHT_CLASS_NORMAL
 	atom_storage.set_holdable(list(
 		/obj/item/gun/ballistic/revolver/blueshield,
@@ -28,6 +27,10 @@
 	new	/obj/item/ammo_box/revolver_blueshield/stun(src)
 	new	/obj/item/ammo_box/revolver_blueshield/laser(src)
 	new	/obj/item/ammo_box/revolver_blueshield/concentrated(src)
+	if(prob(50))
+		new	/obj/item/ammo_box/revolver_blueshield/laser(src)
+	else
+		new	/obj/item/ammo_box/revolver_blueshield/concentrated(src)
 
 /obj/item/storage/belt/holster/energy/blueshield/equipped(mob/user, slot) // because when things are in suit storage slot - they are not using teshari's icons.
 	. = ..()
@@ -37,12 +40,12 @@
 		worn_icon = 'tff_modular/blueshield-rearm/icons/holster.dmi'
 
 /*
-*	 New gun.
+*	 The SR-8.
 */
 
 /obj/item/gun/ballistic/revolver/blueshield
 	name = "\improper SR-8 energy revolver"
-	desc = "SR-8 is an experemental energy revolver that utilises special energy capsules."
+	desc = "SR-8 is an experemental energy revolver that utilises special energy capsules. It's chamber might look like a normal one, but it is not spinnable and constructionaly more alike internal magazine. Due lack of spinning mechanism chamber have a bit more capacity, but in fact that can become a problem because gun's automatic decises what capsule slot will be fired."
 	icon = 'tff_modular/blueshield-rearm/icons/sr-8.dmi'
 	righthand_file = 'tff_modular/blueshield-rearm/icons/righthand.dmi'
 	lefthand_file = 'tff_modular/blueshield-rearm/icons/lefthand.dmi'
@@ -66,7 +69,7 @@
 
 
 /obj/item/gun/ballistic/revolver/blueshield/give_manufacturer_examine()
-	AddComponent(/datum/component/manufacturer_examine, COMPANY_NANOTRASEN)
+	AddElement(/datum/element/manufacturer_examine, COMPANY_BOLT)
 
 /obj/item/gun/ballistic/revolver/blueshield/fire_sounds()
 	playsound(src, chambered.fire_sound, fire_sound_volume, vary_fire_sound)
@@ -88,7 +91,6 @@
 	caliber = "energy_capsule"
 	start_empty = TRUE
 	w_class = WEIGHT_CLASS_NORMAL
-	var/multitype = TRUE
 
 
 /obj/item/ammo_box/revolver_blueshield/laser
@@ -113,11 +115,9 @@
 	start_empty = FALSE
 	icon_state = "speedloader_bullet"
 
-
 /*
 *	New ammo.
 */
-
 
 /obj/item/ammo_casing/energy_capsule
 	name = "energy capsule"
@@ -125,14 +125,14 @@
 	caliber = "energy_capsule"
 	icon = 'tff_modular/blueshield-rearm/icons/ammo.dmi'
 	icon_state = "l-capsule"
-	projectile_type = /obj/projectile/beam/laser/hellfire
+	projectile_type = /obj/projectile/beam/laser/hellfire/capsule
 	fire_sound = 'tff_modular/blueshield-rearm/sounds/laser.ogg'
 	harmful = TRUE
 
 /obj/item/ammo_casing/energy_capsule/stun
 	name = "stun-shot energy capsule"
 	desc = "Energy bulletcapsule for special weaponry. Energy capsules are special disposable micro-cells designed for special type of weaponry. That capsule is non-lethal subtype."
-	projectile_type = /obj/projectile/beam/disabler/charged
+	projectile_type = /obj/projectile/beam/disabler/capsule
 	fire_sound = 'sound/weapons/taser2.ogg'
 	icon_state = "d-capsule"
 	harmful = FALSE
@@ -148,9 +148,13 @@
     Projectiles.
 */
 
-/obj/projectile/beam/disabler/charged
+/obj/projectile/beam/disabler/capsule
 	name = "charged disabler beam"
 	damage = 35
+
+/obj/projectile/beam/laser/hellfire/capsule
+	name = "hellfire laser"
+	damage = 25
 
 /obj/projectile/bullet/concentrated_energy
 	name = "concentrated energy"

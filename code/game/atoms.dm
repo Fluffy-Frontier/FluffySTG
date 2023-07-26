@@ -60,7 +60,7 @@
 	///overlays managed by [update_overlays][/atom/proc/update_overlays] to prevent removing overlays that weren't added by the same proc. Single items are stored on their own, not in a list.
 	var/list/managed_overlays
 
-	/// Lazylist of all images (hopefully attached to us) to update when we change z levels
+	/// Lazylist of all images (or atoms, I'm sorry) (hopefully attached to us) to update when we change z levels
 	/// You will need to manage adding/removing from this yourself, but I'll do the updating for you
 	var/list/image/update_on_z
 
@@ -103,6 +103,11 @@
 	var/light_power = 1
 	///Hexadecimal RGB string representing the colour of the light. White by default.
 	var/light_color = COLOR_WHITE
+	/// Angle of light to show in light_dir
+	/// 360 is a circle, 90 is a cone, etc.
+	var/light_angle = 360
+	/// What angle to project light in
+	var/light_dir = NORTH
 	///Boolean variable for toggleable lights. Has no effect without the proper light_system, light_range and light_power values.
 	var/light_on = TRUE
 	///Bitflags to determine lighting-related atom properties.
@@ -243,9 +248,6 @@
 	if(flags_1 & INITIALIZED_1)
 		stack_trace("Warning: [src]([type]) initialized multiple times!")
 	flags_1 |= INITIALIZED_1
-
-	if(loc)
-		SEND_SIGNAL(loc, COMSIG_ATOM_INITIALIZED_ON, src) /// Sends a signal that the new atom `src`, has been created at `loc`
 
 	SET_PLANE_IMPLICIT(src, plane)
 
@@ -623,6 +625,10 @@
 /atom/proc/HasProximity(atom/movable/proximity_check_mob as mob|obj)
 	return
 
+/// Sets the wire datum of an atom
+/atom/proc/set_wires(datum/wires/new_wires)
+	wires = new_wires
+
 /**
  * React to an EMP of the given severity
  *
@@ -704,7 +710,7 @@
  * Default behaviour is to get the name and icon of the object and it's reagents where
  * the [TRANSPARENT] flag is set on the reagents holder
  *
- * Produces a signal [COMSIG_PARENT_EXAMINE]
+ * Produces a signal [COMSIG_ATOM_EXAMINE]
  */
 /atom/proc/examine(mob/user)
 	var/examine_string = get_examine_string(user, thats = TRUE)
@@ -735,7 +741,7 @@
 		//SKYRAT EDIT ADDITION END
 	if(reagents)
 		var/user_sees_reagents = user.can_see_reagents()
-		var/reagent_sigreturn = SEND_SIGNAL(src, COMSIG_PARENT_REAGENT_EXAMINE, user, ., user_sees_reagents)
+		var/reagent_sigreturn = SEND_SIGNAL(src, COMSIG_ATOM_REAGENT_EXAMINE, user, ., user_sees_reagents)
 		if(!(reagent_sigreturn & STOP_GENERIC_REAGENT_EXAMINE))
 			if(reagents.flags & TRANSPARENT)
 				if(reagents.total_volume > 0)
@@ -755,7 +761,7 @@
 				else
 					. += span_danger("It's empty.")
 
-	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
+	SEND_SIGNAL(src, COMSIG_ATOM_EXAMINE, user, .)
 
 /**
  * Called when a mob examines (shift click or verb) this atom twice (or more) within EXAMINE_MORE_WINDOW (default 1 second)
@@ -763,14 +769,14 @@
  * This is where you can put extra information on something that may be superfluous or not important in critical gameplay
  * moments, while allowing people to manually double-examine to take a closer look
  *
- * Produces a signal [COMSIG_PARENT_EXAMINE_MORE]
+ * Produces a signal [COMSIG_ATOM_EXAMINE_MORE]
  */
 /atom/proc/examine_more(mob/user)
 	SHOULD_CALL_PARENT(TRUE)
 	RETURN_TYPE(/list)
 
 	. = list()
-	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE_MORE, user, .)
+	SEND_SIGNAL(src, COMSIG_ATOM_EXAMINE_MORE, user, .)
 
 /// Wrapper for _update_appearance that is only called when APPEARANCE_SUCCESS_TRACKING is defined
 #ifdef APPEARANCE_SUCCESS_TRACKING
@@ -1088,10 +1094,15 @@
 /**
  * Respond to an emag being used on our atom
  *
- * Default behaviour is to send [COMSIG_ATOM_EMAG_ACT] and return
+ * Args:
+ * * mob/user: The mob that used the emag. Nullable.
+ * * obj/item/card/emag/emag_card: The emag that was used. Nullable.
+ *
+ * Returns:
+ * TRUE if the emag had any effect, falsey otherwise.
  */
 /atom/proc/emag_act(mob/user, obj/item/card/emag/emag_card)
-	SEND_SIGNAL(src, COMSIG_ATOM_EMAG_ACT, user, emag_card)
+	return (SEND_SIGNAL(src, COMSIG_ATOM_EMAG_ACT, user, emag_card))
 
 /**
  * Respond to narsie eating our atom
@@ -1170,6 +1181,8 @@
 	SEND_SIGNAL(src, COMSIG_ATOM_DIR_CHANGE, dir, newdir)
 	dir = newdir
 	SEND_SIGNAL(src, COMSIG_ATOM_POST_DIR_CHANGE, dir, newdir)
+	if(smoothing_flags & SMOOTH_BORDER_OBJECT)
+		QUEUE_SMOOTH_NEIGHBORS(src)
 
 /**
  * Called when the atom log's in or out
@@ -1213,6 +1226,23 @@
 	atom_colours[colour_priority] = null
 	update_atom_colour()
 
+/**
+ * Checks if this atom has the passed color
+ * Can optionally be supplied with a range of priorities, IE only checking "washable" or above
+ */
+/atom/proc/is_atom_colour(looking_for_color, min_priority_index = 1, max_priority_index = COLOUR_PRIORITY_AMOUNT)
+	// make sure uppertext hex strings don't mess with lowertext hex strings
+	looking_for_color = lowertext(looking_for_color)
+
+	if(!LAZYLEN(atom_colours))
+		// no atom colors list has been set up, just check the color var
+		return lowertext(color) == looking_for_color
+
+	for(var/i in min_priority_index to max_priority_index)
+		if(lowertext(atom_colours[i]) == looking_for_color)
+			return TRUE
+
+	return FALSE
 
 ///Resets the atom's color to null, and then sets it to the highest priority colour available
 /atom/proc/update_atom_colour()
@@ -1261,6 +1291,9 @@
  * the object has been admin edited
  */
 /atom/vv_edit_var(var_name, var_value)
+	var/old_light_flags = light_flags
+	// Disable frozen lights for now, so we can actually modify it
+	light_flags &= ~LIGHT_FROZEN
 	switch(var_name)
 		if(NAMEOF(src, light_range))
 			if(light_system == STATIC_LIGHT)
@@ -1280,11 +1313,21 @@
 			else
 				set_light_color(var_value)
 			. = TRUE
+		if(NAMEOF(src, light_angle))
+			if(light_system == STATIC_LIGHT)
+				set_light(l_angle = var_value)
+				. = TRUE
+		if(NAMEOF(src, light_dir))
+			if(light_system == STATIC_LIGHT)
+				set_light(l_dir = var_value)
+				. = TRUE
 		if(NAMEOF(src, light_on))
 			set_light_on(var_value)
 			. = TRUE
 		if(NAMEOF(src, light_flags))
 			set_light_flags(var_value)
+			// I'm sorry
+			old_light_flags = var_value
 			. = TRUE
 		if(NAMEOF(src, smoothing_junction))
 			set_smoothed_icon_state(var_value)
@@ -1299,6 +1342,7 @@
 			set_base_pixel_y(var_value)
 			. = TRUE
 
+	light_flags = old_light_flags
 	if(!isnull(.))
 		datum_flags |= DF_VAR_EDITED
 		return
@@ -2045,7 +2089,7 @@
 		active_hud.screentip_text.maptext = ""
 		return
 
-	active_hud.screentip_text.maptext_y = 0
+	active_hud.screentip_text.maptext_y = 10 // 10px lines us up with the action buttons top left corner
 	var/lmb_rmb_line = ""
 	var/ctrl_lmb_ctrl_rmb_line = ""
 	var/alt_lmb_alt_rmb_line = ""
@@ -2112,15 +2156,15 @@
 					extra_lines++
 
 				if(extra_lines)
-					extra_context = "<br><span style='font-size: 7px'>[lmb_rmb_line][ctrl_lmb_ctrl_rmb_line][alt_lmb_alt_rmb_line][shift_lmb_ctrl_shift_lmb_line]</span>"
-					//first extra line pushes atom name line up 10px, subsequent lines push it up 9px, this offsets that and keeps the first line in the same place
-					active_hud.screentip_text.maptext_y = -10 + (extra_lines - 1) * -9
+					extra_context = "<br><span class='subcontext'>[lmb_rmb_line][ctrl_lmb_ctrl_rmb_line][alt_lmb_alt_rmb_line][shift_lmb_ctrl_shift_lmb_line]</span>"
+					//first extra line pushes atom name line up 11px, subsequent lines push it up 9px, this offsets that and keeps the first line in the same place
+					active_hud.screentip_text.maptext_y = -1 + (extra_lines - 1) * -9
 
 	if (screentips_enabled == SCREENTIP_PREFERENCE_CONTEXT_ONLY && extra_context == "")
 		active_hud.screentip_text.maptext = ""
 	else
 		//We inline a MAPTEXT() here, because there's no good way to statically add to a string like this
-		active_hud.screentip_text.maptext = "<span class='maptext' style='text-align: center; font-size: 32px; color: [active_hud.screentip_color]'>[name][extra_context]</span>"
+		active_hud.screentip_text.maptext = "<span class='context' style='text-align: center; color: [active_hud.screentip_color]'>[name][extra_context]</span>"
 
 /// Gets a merger datum representing the connected blob of objects in the allowed_types argument
 /atom/proc/GetMergeGroup(id, list/allowed_types)

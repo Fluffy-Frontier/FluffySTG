@@ -13,8 +13,6 @@
 
 	///Tightness of the ropes can be low, medium and hard. This var works as multiplier for arousal and pleasure recieved while wearing this item
 	var/tightness = SHIBARI_TIGHTNESS_LOW
-	///Rope amount yielded from this apparel
-	var/rope_amount = 1
 
 	///should this clothing item use the emissive system
 	var/glow = FALSE
@@ -118,12 +116,12 @@
 	desc = "Nice looking rope bondage."
 	icon_state = "shibari_body"
 
-	greyscale_config = /datum/greyscale_config/shibari_clothes/body
-	greyscale_config_worn = /datum/greyscale_config/shibari_worn/body
-	greyscale_config_worn_digi = /datum/greyscale_config/shibari_worn_digi/body
-	greyscale_config_worn_taur_snake = /datum/greyscale_config/shibari_worn_taur_snake/body
-	greyscale_config_worn_taur_paw = /datum/greyscale_config/shibari_worn_taur_paw/body
-	greyscale_config_worn_taur_hoof = /datum/greyscale_config/shibari_worn_taur_hoof/body
+	greyscale_config = /datum/greyscale_config/shibari/body
+	greyscale_config_worn = /datum/greyscale_config/shibari/body/worn
+	greyscale_config_worn_digi = /datum/greyscale_config/shibari/body/worn/digi
+	greyscale_config_worn_taur_snake = /datum/greyscale_config/shibari/body/worn/taur_snake
+	greyscale_config_worn_taur_paw = /datum/greyscale_config/shibari/body/worn/taur_paw
+	greyscale_config_worn_taur_hoof = /datum/greyscale_config/shibari/body/worn/taur_hoof
 	greyscale_colors = "#bd8fcf"
 
 //processing stuff
@@ -140,18 +138,18 @@
 	desc = "A rope that teases the wearer's genitals."
 	icon_state = "shibari_groin"
 
-	greyscale_config = /datum/greyscale_config/shibari_clothes/groin
-	greyscale_config_worn = /datum/greyscale_config/shibari_worn/groin
-	greyscale_config_worn_digi = /datum/greyscale_config/shibari_worn_digi/groin
-	greyscale_config_worn_taur_snake = /datum/greyscale_config/shibari_worn_taur_snake/groin
-	greyscale_config_worn_taur_paw = /datum/greyscale_config/shibari_worn_taur_paw/groin
-	greyscale_config_worn_taur_hoof = /datum/greyscale_config/shibari_worn_taur_hoof/groin
+	greyscale_config = /datum/greyscale_config/shibari/groin
+	greyscale_config_worn = /datum/greyscale_config/shibari/groin/worn
+	greyscale_config_worn_digi = /datum/greyscale_config/shibari/groin/worn/digi
+	greyscale_config_worn_taur_snake = /datum/greyscale_config/shibari/groin/worn/taur_snake
+	greyscale_config_worn_taur_paw = /datum/greyscale_config/shibari/groin/worn/taur_paw
+	greyscale_config_worn_taur_hoof = /datum/greyscale_config/shibari/groin/worn/taur_hoof
 	greyscale_colors = "#bd8fcf"
 
 //stuff to apply processing on equip and add mood event for perverts
 /obj/item/clothing/under/shibari/groin/equipped(mob/living/user, slot)
 	var/mob/living/carbon/human/hooman = user
-	slowdown = hooman?.dna?.species?.bodytype & BODYTYPE_TAUR ? 4 : 0
+	slowdown = hooman?.bodytype & BODYTYPE_TAUR ? 4 : 0
 	return..()
 
 //processing stuff
@@ -169,16 +167,15 @@
 
 /obj/item/clothing/under/shibari/full
 	name = "shibari fullbody ropes"
-	desc = "Bondage ropes that covers whole body"
+	desc = "Bondage ropes that cover the whole body."
 	icon_state = "shibari_fullbody"
-	rope_amount = 2
 
-	greyscale_config = /datum/greyscale_config/shibari_clothes/fullbody
-	greyscale_config_worn = /datum/greyscale_config/shibari_worn/fullbody
-	greyscale_config_worn_digi = /datum/greyscale_config/shibari_worn_digi/fullbody
-	greyscale_config_worn_taur_snake = /datum/greyscale_config/shibari_worn_taur_snake/fullbody
-	greyscale_config_worn_taur_paw = /datum/greyscale_config/shibari_worn_taur_paw/fullbody
-	greyscale_config_worn_taur_hoof = /datum/greyscale_config/shibari_worn_taur_hoof/fullbody
+	greyscale_config = /datum/greyscale_config/shibari/fullbody
+	greyscale_config_worn = /datum/greyscale_config/shibari/fullbody/worn
+	greyscale_config_worn_digi = /datum/greyscale_config/shibari/fullbody/worn/digi
+	greyscale_config_worn_taur_snake = /datum/greyscale_config/shibari/fullbody/worn/taur_snake
+	greyscale_config_worn_taur_paw = /datum/greyscale_config/shibari/fullbody/worn/taur_paw
+	greyscale_config_worn_taur_hoof = /datum/greyscale_config/shibari/fullbody/worn/taur_hoof
 	greyscale_colors = "#bd8fcf#bd8fcf"
 
 //processing stuff

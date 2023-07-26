@@ -15,4 +15,4 @@
 /datum/loadout_item/suit/labcoat_parared
 	name = "Red Paramedic Labcoat"
 	item_path = /obj/item/clothing/suit/toggle/labcoat/para_red
-	restricted_roles = list(JOB_CHIEF_MEDICAL_OFFICER, JOB_PARAMEDIC, JOB_SECURITY_MEDIC)
+	restricted_roles = list(JOB_CHIEF_MEDICAL_OFFICER, JOB_PARAMEDIC)

@@ -21,13 +21,13 @@
 	contraband = TRUE
 	cost = CARGO_CRATE_VALUE * 5
 	access_view = ACCESS_THEATRE
-	contains = list(/mob/living/simple_animal/butterfly)
+	contains = list(/mob/living/basic/butterfly)
 	crate_name = "entomology samples crate"
 
 /datum/supply_pack/critter/butterfly/generate()
 	. = ..()
 	for(var/i in 1 to 49)
-		new /mob/living/simple_animal/butterfly(.)
+		new /mob/living/basic/butterfly(.)
 
 /datum/supply_pack/critter/cat
 	name = "Cat Crate"
@@ -52,7 +52,7 @@
 	desc = "The chicken goes bwaak!"
 	cost = CARGO_CRATE_VALUE * 4
 	access_view = ACCESS_KITCHEN
-	contains = list( /mob/living/simple_animal/chick)
+	contains = list(/mob/living/basic/chick)
 	crate_name = "chicken crate"
 
 /datum/supply_pack/critter/corgi
@@ -98,6 +98,14 @@
 	contains = list(/mob/living/basic/pig)
 	crate_name = "pig crate"
 
+/datum/supply_pack/critter/pony
+	name = "Pony Crate"
+	desc = "Ponies, yay! (Just the one.)"
+	cost = CARGO_CRATE_VALUE * 6
+	access_view = ACCESS_SERVICE
+	contains = list(/mob/living/basic/pony)
+	crate_name = "pony crate"
+
 /datum/supply_pack/critter/crab
 	name = "Crab Rocket"
 	desc = "CRAAAAAAB ROCKET. CRAB ROCKET. CRAB ROCKET. CRAB CRAB CRAB CRAB CRAB CRAB CRAB \
@@ -133,9 +141,10 @@
 	desc = "The fox goes...? Contains one fox. Comes with a collar!"//what does the fox say
 	cost = CARGO_CRATE_VALUE * 10
 	access_view = ACCESS_CAPTAIN
-	contains = list(/mob/living/simple_animal/pet/fox,
-					/obj/item/clothing/neck/petcollar,
-				)
+	contains = list(
+		/mob/living/basic/pet/fox,
+		/obj/item/clothing/neck/petcollar,
+	)
 	crate_name = "fox crate"
 
 /datum/supply_pack/critter/goat
@@ -213,7 +222,7 @@
 	desc = "Hisss! Containssss a friendly lizard. Not to be confusssed with a lizardperssson."
 	cost = CARGO_CRATE_VALUE * 4
 	access_view = ACCESS_JANITOR
-	contains = list(/mob/living/simple_animal/hostile/lizard)
+	contains = list(/mob/living/basic/lizard)
 	crate_name = "lizard crate"
 
 /datum/supply_pack/critter/garden_gnome

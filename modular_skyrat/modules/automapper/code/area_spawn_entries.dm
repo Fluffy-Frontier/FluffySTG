@@ -16,10 +16,6 @@
 	desired_atom = /mob/living/simple_animal/pet/poppy
 
 // Structures
-/datum/area_spawn/secmed_locker
-	target_areas = list(/area/station/security/medical, /area/station/security/lockers)
-	desired_atom = /obj/structure/closet/secure_closet/security_medic
-
 /datum/area_spawn/blueshield_locker
 	target_areas = list(/area/station/command/heads_quarters/captain, /area/station/command/bridge, /area/station/command/corporate_dock, /area/station/command/meeting_room, /area/station/command/gateway)
 	desired_atom = /obj/structure/closet/secure_closet/blueshield
@@ -34,7 +30,8 @@
 	target_areas = list(/area/station/security/lockers, /area/station/security/office)
 	desired_atom = /obj/machinery/ammo_workbench
 	mode = AREA_SPAWN_MODE_HUG_WALL
-
+// THE FLUFFY FRONTIER REMOVAL BEGIN
+/*
 /datum/area_spawn/lustwish_public
 	target_areas = list(/area/station/commons/locker, /area/station/commons/dorms/laundry, /area/station/commons/dorms)
 	desired_atom = /obj/machinery/vending/dorms
@@ -44,7 +41,8 @@
 	target_areas = list(/area/station/security/prison, /area/station/security/prison/shower)
 	desired_atom = /obj/machinery/vending/dorms
 	mode = AREA_SPAWN_MODE_HUG_WALL
-
+*/
+// THE FLUFFY FRONTIER REMOVAL END
 // Wall mounts. Use sparingly as walls are prime real estate
 /datum/area_spawn/posialert_robotics
 	target_areas = list(/area/station/science/robotics, /area/station/science/robotics/lab)
@@ -68,10 +66,6 @@
 	mode = AREA_SPAWN_MODE_MOUNT_WALL
 
 // Job spawners
-/datum/area_spawn/secmed_landmark
-	target_areas = list(/area/station/security/medical, /area/station/security/brig)
-	desired_atom = /obj/effect/landmark/start/security_medic
-
 /datum/area_spawn/barber_landmark
 	target_areas = list(/area/station/service/salon, /area/station/hallway/secondary/service)
 	desired_atom = /obj/effect/landmark/start/barber

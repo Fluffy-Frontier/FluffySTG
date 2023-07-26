@@ -172,7 +172,7 @@
 //turfs
 /turf/closed/mineral/strange_rock
 	mineralAmt = 1
-	icon = MAP_SWITCH('modular_skyrat/modules/liquids/icons/turf/smoothrocks.dmi', 'icons/turf/mining.dmi')
+	icon = MAP_SWITCH('modular_skyrat/modules/xenoarch/icons/mining.dmi', 'icons/turf/mining.dmi')
 	scan_state = "rock_Strange"
 	mineralType = /obj/item/xenoarch/strange_rock
 
@@ -205,7 +205,7 @@
 		)
 
 /turf/closed/mineral/strange_rock/ice
-	icon = MAP_SWITCH('icons/turf/walls/icerock_wall.dmi', 'icons/turf/mining.dmi')
+	icon = MAP_SWITCH('modular_skyrat/modules/xenoarch/icons/mining.dmi', 'icons/turf/mining.dmi')
 	icon_state = "icerock_strange"
 	base_icon_state = "icerock_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
@@ -257,8 +257,8 @@
 
 //small gibonite fix
 /turf/closed/mineral/gibtonite/asteroid
-	icon = MAP_SWITCH('icons/turf/walls/red_wall.dmi', 'icons/turf/mining.dmi')
-	icon_state = "redrock_Gibonite"
+	icon = MAP_SWITCH('modular_skyrat/modules/xenoarch/icons/mining.dmi', 'icons/turf/mining.dmi')
+	icon_state = "redrock_Gibonite_inactive"
 	base_icon_state = "red_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	turf_type = /turf/open/misc/asteroid
@@ -267,7 +267,7 @@
 	defer_change = TRUE
 
 /turf/closed/mineral/strange_rock/asteroid
-	icon = MAP_SWITCH('icons/turf/walls/red_wall.dmi', 'icons/turf/mining.dmi')
+	icon = MAP_SWITCH('modular_skyrat/modules/xenoarch/icons/mining.dmi', 'icons/turf/mining.dmi')
 	icon_state = "redrock_strange"
 	base_icon_state = "red_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
