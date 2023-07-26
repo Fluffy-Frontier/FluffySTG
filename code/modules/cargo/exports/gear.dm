@@ -115,7 +115,7 @@
 /datum/export/gear/forging_plate_armor
 	cost = CARGO_CRATE_VALUE * 1.4
 	unit_name = "reagent plate vest"
-	export_types = list(/obj/item/suit/armor/forging_plate_armor)
+	export_types = list(/obj/item/clothing/suit/armor/forging_plate_armor)
 
 /datum/export/gear/forging_plate_gloves
 	cost = CARGO_CRATE_VALUE * 1.2
