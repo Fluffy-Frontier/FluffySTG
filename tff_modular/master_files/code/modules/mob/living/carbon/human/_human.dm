@@ -17,8 +17,8 @@
 		if(pulling && isliving(pulling) && grab_state >= GRAB_AGGRESSIVE)
 			var/mob/living/mob = pulling
 			if(!mob.buckled)
-				stop_pulling()
 				if(HAS_TRAIT(src, TRAIT_WEAK_BODY) && !HAS_TRAIT(mob, TRAIT_WEAK_BODY))
+					stop_pulling()
 					to_chat(src, span_notice("You try throw [mob], but [mob.p_their()] to heavy!"))
 					return FALSE
 	..(target)

@@ -12,3 +12,4 @@
 	if(istype(inactive, /obj/item/offhand) && !istype(src, /obj/item/melee/energy))
 		l.visible_message(span_danger("[l.name] fall aftet attack [target], [src.name] to heavy for [l.p_their()]"), span_danger("You attack [target], but [src.name] to heavy for you."))
 		l.Knockdown(3 SECONDS)
+		l.Paralyze(1 SECONDS)

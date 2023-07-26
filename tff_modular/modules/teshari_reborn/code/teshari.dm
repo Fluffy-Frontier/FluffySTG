@@ -21,6 +21,8 @@
 		TRAIT_MUTANT_COLORS,
 		TRAIT_NO_UNDERWEAR,
 		TRAIT_HAS_MARKINGS,
+		TRAIT_NO_BLOOD_OVERLAY,
+		TRAIT_PERFECT_HEARING,
 		TRAIT_WEAK_BODY,
 		TRAIT_CAN_BUCKLED_TO_HAND
 	)
@@ -75,6 +77,75 @@
 	. = ..()
 	teshari_agility.Destroy()
 	teshari_echolocation.Destroy()
+
+/datum/species/teshari/alt/randomize_features(mob/living/carbon/human/human_mob)
+	. = ..()
+	var/main_color = pick(COLOR_GRAY, COLOR_DARK_BROWN, COLOR_ALMOST_BLACK, COLOR_DARK_RED, COLOR_DARK_CYAN)
+	var/second_color = pick(COLOR_WHITE, COLOR_BLACK, COLOR_BLUE, COLOR_VIOLET)
+	human_mob.dna.features["mcolor"] = main_color
+	human_mob.dna.features["mcolor2"] = second_color
+	human_mob.dna.features["mcolor3"] = second_color
+
+/datum/species/teshari/alt/create_pref_unique_perks()
+	var/list/perk_descriptions = list()
+
+	perk_descriptions += list(list(
+		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
+		SPECIES_PERK_ICON = "dna",
+		SPECIES_PERK_NAME = "Extrem weak body",
+		SPECIES_PERK_DESC = "Tesharies body is exteme weak. They took A LOOT OF DAMAGE from everything."
+	))
+
+	perk_descriptions += list(list(
+		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
+		SPECIES_PERK_ICON = "dna",
+		SPECIES_PERK_NAME = "Frailty",
+		SPECIES_PERK_DESC = "The Teshari are weak. They cannot use heavy weapons, or carry larger loads without special equipment. Neither can they pull other bodies on top of them."
+	))
+
+	perk_descriptions += list(list(
+		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
+		SPECIES_PERK_ICON = "dna",
+		SPECIES_PERK_NAME = "Extreme heat weakness",
+		SPECIES_PERK_DESC = "Teshari are extremely unstable to heat..."
+	))
+
+	perk_descriptions += list(list(
+		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
+		SPECIES_PERK_ICON = "dna",
+		SPECIES_PERK_NAME = "Pure robust",
+		SPECIES_PERK_DESC = "Teshari can't push creatures bigger than them. Nor can they fight properly."
+	))
+
+	perk_descriptions += list(list(
+		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
+		SPECIES_PERK_ICON = "dna",
+		SPECIES_PERK_NAME = "Smol",
+		SPECIES_PERK_DESC = "Teshari is smol. Other creatures can pick them up, or put them in a bag."
+	))
+
+	perk_descriptions += list(list(
+		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
+		SPECIES_PERK_ICON = "user-plus",
+		SPECIES_PERK_NAME = "Robust cold protect",
+		SPECIES_PERK_DESC = "Teshari is incredibly resistant to low temperatures."
+	))
+
+	perk_descriptions += list(list(
+		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
+		SPECIES_PERK_ICON = "user-plus",
+		SPECIES_PERK_NAME = "Agility",
+		SPECIES_PERK_DESC = "Teshari are incredibly maneuverable, easily able to climb on, or under, tables. They are also faster than most other creatures."
+	))
+
+	perk_descriptions += list(list(
+		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
+		SPECIES_PERK_ICON = "user-plus",
+		SPECIES_PERK_NAME = "Clear hearing",
+		SPECIES_PERK_DESC = "Teshari - have clear hearing, allowing them to hear creatures around them, pinpointing locations."
+	))
+
+	return perk_descriptions
 
 /mob/living/carbon/human/species/teshari/alt
 	race = /datum/species/teshari/alt

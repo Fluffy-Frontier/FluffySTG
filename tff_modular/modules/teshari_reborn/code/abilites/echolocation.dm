@@ -1,9 +1,10 @@
-#define LOCATION_CYCLE_COOLDOWN 3 SECONDS
+#define ECHOLOCATION_MAX_CREATURE 5
 #define ECHOLOCATION_BASE_COOLDWN_TIME 10 SECONDS
 #define ECHOLOCATION_RANGE 9
 
 /datum/action/cooldown/teshari/echolocation
 	name = "Toggle echolocation"
+	desc = "Use your ears to hear the creatures around you."
 
 	cooldown_time = ECHOLOCATION_BASE_COOLDWN_TIME
 	var/active = FALSE
@@ -11,32 +12,99 @@
 
 /datum/action/cooldown/teshari/echolocation/New(Target, original)
 	. = ..()
-	button_icon_state = "agility_mode_above"
+	button_icon_state = "echolocation_off"
+
+/datum/action/cooldown/teshari/echolocation/Destroy()
+	. = ..()
+	if(active)
+		deisable_echolocation()
 
 /datum/action/cooldown/teshari/echolocation/Activate(atom/target)
 	if(!owner)
 		return FALSE
-	var/mob/living/carbon/human/tesh
-	if(!(tesh.can_hear()))
-		tesh.balloon_alert(tesh, "Can't hear!")
-		return FALSE
-	if(active)
-		tesh.visible_message(span_notice(""), span_notice(""))
-		tesh.balloon_alert(tesh, "Stop echolocation!")
-		STOP_PROCESSING(SSprocessing, src)
-		StartCooldown()
+	var/mob/living/carbon/human/tesh = owner
+	cooldown_time = ECHOLOCATION_BASE_COOLDWN_TIME
+	if(!tesh.can_hear())
+		tesh.balloon_alert("Can't hear!")
 		return TRUE
 
-	tesh.visible_message(span_notice(""), span_notice(""))
-	tesh.balloon_alert(tesh, "Start echolocation!")
-	START_PROCESSING(SSprocessing, src)
-	active = TRUE
+	if(active)
+		deisable_echolocation()
+		return TRUE
 
+	enable_echolocation()
 	return FALSE
 
-/datum/action/cooldown/teshari/echolocation/process()
+/datum/action/cooldown/teshari/echolocation/proc/enable_echolocation()
+	active = TRUE
+	name = "Toggle echolocation : enabled"
+	var/mob/living/carbon/human/tesh = owner
+
+	tesh.visible_message(span_notice("[tesh.name], pricked up [tesh.p_their()] ears. Listening to the surroundings."), span_notice("You got your ears perked up listening to your surroundings."))
+	tesh.balloon_alert(tesh, "Start echolocation!")
+
+	update_button_state("echolocation_on")
+	START_PROCESSING(SSobj, src)
+	RegisterSignal(owner, COMSIG_CARBON_SOUNDBANG, PROC_REF(soundbang_act))
+	RegisterSignal(owner, COMSIG_LIVING_DEATH, PROC_REF(deisable_echolocation))
+
+/datum/action/cooldown/teshari/echolocation/proc/deisable_echolocation()
+	SIGNAL_HANDLER
+
+	active = FALSE
+	name = "Toggle echolocation"
+	var/mob/living/carbon/human/tesh = owner
+
+	tesh.visible_message(span_notice("[tesh.name], returned [tesh.p_their()] ears to normal. "), span_notice("You got your ears back to normal."))
+	tesh.balloon_alert(tesh, "Stop echolocation!")
+
+	update_button_state("echolocation_off")
+	STOP_PROCESSING(SSobj, src)
+	UnregisterSignal(owner, list(COMSIG_CARBON_SOUNDBANG, COMSIG_LIVING_DEATH))
+	StartCooldown()
+
+/datum/action/cooldown/teshari/echolocation/process(seconds_per_tick)
 	. = ..()
+	if(!active)
+		return
+
+	var/mob/living/carbon/human/tesh = owner
+	if(!tesh.can_hear())
+		tesh.balloon_alert("Can't hear!")
+		deisable_echolocation()
+		return
+
+	var/founding_creature = 0
 	for(var/mob/living/creature in range(ECHOLOCATION_RANGE, owner))
 		if(creature == owner || creature.stat == DEAD)
 			continue
-		new /obj/effect/temp_visual/sonar_ping(owner.loc, owner, creature)
+		if(founding_creature >= ECHOLOCATION_MAX_CREATURE)
+			break
+		new /obj/effect/temp_visual/sonar_ping/tesh(owner.loc, owner, creature)
+		founding_creature++
+
+/datum/action/cooldown/teshari/echolocation/proc/soundbang_act(intensity)
+	SIGNAL_HANDLER
+	if(!owner || isdead(owner))
+		return FALSE
+	if(!active)
+		return FALSE
+
+	var/mob/living/carbon/human/tesh = owner
+	var/stun_time = rand(4, 8) SECONDS
+
+	cooldown_time *= (stun_time/20)
+	tesh.Paralyze(stun_time/2)
+	tesh.Knockdown(stun_time)
+
+	to_chat(tesh, span_userdanger("Your ears fill with pain as the horrible noise hits them!"))
+	deisable_echolocation()
+	return TRUE
+
+/obj/effect/temp_visual/sonar_ping/tesh
+	real_icon_state = "blip"
+	duration = 1 SECONDS
+
+#undef ECHOLOCATION_MAX_CREATURE
+#undef ECHOLOCATION_BASE_COOLDWN_TIME
+#undef ECHOLOCATION_RANGE

@@ -4,3 +4,5 @@
 #define TRAIT_WEAK_BODY "weak_body"
 //Защита от опрокидываний.
 #define TRAIT_KNOCKDOWN_IMMUNE "knock_immune"
+// Идеальный слух. Позволяет слышать шепот в приделах экрана и речь на любом расстоянии.
+#define TRAIT_PERFECT_HEARING "perfect_hearing"
