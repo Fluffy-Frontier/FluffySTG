@@ -116,7 +116,7 @@
 	export_types = list(/obj/item/forging/reagent_weapon/hammer)
 
 /datum/export/weapon/reagent_buckler
-	cost = CARGO_CRATE_VALUE * 1.4
+	cost = CARGO_CRATE_VALUE * 1.6
 	unit_name = "reagent plated buckler shield"
 	export_types = list(/obj/item/shield/buckler/reagent_weapon)
 
@@ -126,12 +126,12 @@
 	export_types = list(/obj/item/shield/buckler/reagent_weapon/pavise)
 
 /datum/export/weapon/reagent_pickaxe
-	cost = CARGO_CRATE_VALUE * 1.3
+	cost = CARGO_CRATE_VALUE * 1.5
 	unit_name = "reagent pickaxe"
 	export_types = list(/obj/item/pickaxe/reagent_weapon)
 
 /datum/export/weapon/reagent_shovel
-	cost = CARGO_CRATE_VALUE * 1.3
+	cost = CARGO_CRATE_VALUE * 1.5
 	unit_name = "reagent shovel"
 	export_types = list(/obj/item/shovel/reagent_weapon)
 

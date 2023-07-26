@@ -113,22 +113,22 @@
 	)
 
 /datum/export/gear/forging_plate_armor
-	cost = CARGO_CRATE_VALUE * 1.4
+	cost = CARGO_CRATE_VALUE * 2.4
 	unit_name = "reagent plate vest"
 	export_types = list(/obj/item/clothing/suit/armor/forging_plate_armor)
 
 /datum/export/gear/forging_plate_gloves
-	cost = CARGO_CRATE_VALUE * 1.2
+	cost = CARGO_CRATE_VALUE * 2
 	unit_name = "reagent plate gloves"
 	export_types = list(/obj/item/clothing/gloves/forging_plate_gloves)
 
 /datum/export/gear/forging_plate_helmet
-	cost = CARGO_CRATE_VALUE * 1.2
+	cost = CARGO_CRATE_VALUE * 2
 	unit_name = "reagent plate helmet"
 	export_types = list(/obj/item/clothing/head/helmet/forging_plate_helmet)
 
 /datum/export/gear/forging_plate_boots
-	cost = CARGO_CRATE_VALUE * 1.2
+	cost = CARGO_CRATE_VALUE * 2
 	unit_name = "reagent plate boots"
 	export_types = list(/obj/item/clothing/shoes/forging_plate_boots)
 
