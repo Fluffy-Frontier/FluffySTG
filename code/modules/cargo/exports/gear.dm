@@ -138,11 +138,11 @@
 	export_types = list(/obj/item/clothing/shoes/horseshoe)
 
 /datum/export/gear/collar
-	cost = CARGO_CRATE_VALUE * 1.5
+	cost = CARGO_CRATE_VALUE * 2
 	unit_name = "reagent collar"
 	export_types = list(/obj/item/clothing/neck/collar/reagent_clothing)
 
 /datum/export/gear/ring
-	cost = CARGO_CRATE_VALUE * 1.5
+	cost = CARGO_CRATE_VALUE * 2
 	unit_name = "reagent ring"
 	export_types = list(/obj/item/clothing/gloves/ring/reagent_clothing)
