@@ -19,6 +19,12 @@
 			if(!mob.buckled)
 				if(HAS_TRAIT(src, TRAIT_WEAK_BODY) && !HAS_TRAIT(mob, TRAIT_WEAK_BODY))
 					stop_pulling()
-					to_chat(src, span_notice("You try throw [mob], but [mob.p_their()] to heavy!"))
+					to_chat(src, span_notice("You try throw [mob], but [mob.p_they()] to heavy!"))
 					return FALSE
 	..(target)
+
+
+/mob/living/carbon/human/set_mob_height(new_height)
+	if(dna.species.body_size_restricted)
+		return FALSE
+	..(new_height)

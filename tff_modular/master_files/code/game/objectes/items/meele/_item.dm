@@ -1,3 +1,4 @@
+// Небольшой оверрайд прока, необходиимый для эффекта потери оружия из-за слабого тела.Проверяем, что удар был произведен по мобу, существом со слабым телом.
 /obj/item/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
 	if(!ismob(target))

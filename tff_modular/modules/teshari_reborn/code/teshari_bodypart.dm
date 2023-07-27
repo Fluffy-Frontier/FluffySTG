@@ -3,7 +3,7 @@
 // Значительно увеличенный урон!
 #define TESHARI_ALT_BURN_MODIFIER 1.5
 #define TESHARI_ALT_BRUTE_MODIFIER 1.5
-#define TESHARI_ALT_SPEED_MODIFIER -0.15
+#define TESHARI_ALT_SPEED_MODIFIER -0.4
 // Пути к файлам
 #define TESHARI_ALT_HUSK_ICON 'tff_modular/modules/teshari_reborn/icons/mob/bodyparts/husk_bodyparts.dmi'
 
