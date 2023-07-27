@@ -54,6 +54,7 @@
 		/datum/computer_file/program/robocontrol,
 		/datum/computer_file/program/budgetorders,
 		/datum/computer_file/program/records/security,
+		/datum/computer_file/program/security_assistant_app, // Fluffy Frontier add
 	)
 
 /obj/item/modular_computer/pda/heads/ce
@@ -125,6 +126,7 @@
 		/datum/computer_file/program/records/security,
 		/datum/computer_file/program/crew_manifest,
 		/datum/computer_file/program/robocontrol,
+		/datum/computer_file/program/security_assistant_app, // Fluffy Frontier add
 	)
 
 /obj/item/modular_computer/pda/detective
@@ -134,6 +136,7 @@
 		/datum/computer_file/program/records/security,
 		/datum/computer_file/program/crew_manifest,
 		/datum/computer_file/program/robocontrol,
+		/datum/computer_file/program/security_assistant_app, // Fluffy Frontier add
 	)
 
 /obj/item/modular_computer/pda/warden
@@ -144,6 +147,7 @@
 		/datum/computer_file/program/records/security,
 		/datum/computer_file/program/crew_manifest,
 		/datum/computer_file/program/robocontrol,
+		/datum/computer_file/program/security_assistant_app, // Fluffy Frontier add
 	)
 
 /**
@@ -282,6 +286,7 @@
 	inserted_item = /obj/item/pen/fountain
 	starting_programs = list(
 		/datum/computer_file/program/records/security,
+		/datum/computer_file/program/security_assistant_app, // Fluffy Frontier add
 	)
 
 /obj/item/modular_computer/pda/lawyer/Initialize(mapload)
