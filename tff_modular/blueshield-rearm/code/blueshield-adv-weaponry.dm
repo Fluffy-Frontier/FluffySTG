@@ -51,7 +51,7 @@
 	lefthand_file = 'tff_modular/blueshield-rearm/icons/lefthand.dmi'
 	icon_state = "sr-8"
 	inhand_icon_state = "sr-8"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/blueshield
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/cylinder/blueshield
 	fire_sound = 'sound/weapons/pulse.ogg'
 	fire_delay = 1.90
 
