@@ -4,17 +4,17 @@
 
 /obj/item/storage/belt/holster/energy/blueshield
 	name = "5GUARD-S model holster"
-	desc = "Pretty robust webbing with magnetic holsters. Designed to hold blueshield's energy weaponry and ammo for it."
+	desc = "Pretty robust webbing with magnetic holsters. Designed to hold blueshield's energy weaponry and a few cells for it."
 	badass = FALSE
-	icon = 'tff_modular/blueshield-rearm/icons/holster.dmi'
+	icon = 'tff_modular/modules/blueshield-rearm/icons/holster.dmi'
 	icon_state = "blueshield_holster"
-	worn_icon = 'tff_modular/blueshield-rearm/icons/holster.dmi'
-	worn_icon_teshari = 'tff_modular/blueshield-rearm/icons/holster_teshari.dmi'
+	worn_icon = 'tff_modular/modules/blueshield-rearm/icons/holster.dmi'
+	worn_icon_teshari = 'tff_modular/modules/blueshield-rearm/icons/holster_teshari.dmi'
 	worn_icon_state = "blueshield_holster_worn"
 
 /obj/item/storage/belt/holster/energy/blueshield/Initialize(mapload)
 	. = ..()
-	atom_storage.max_slots = 5
+	atom_storage.max_slots = 2
 	atom_storage.max_specific_storage = WEIGHT_CLASS_NORMAL
 	atom_storage.set_holdable(list(
 		/obj/item/gun/ballistic/revolver/blueshield,
@@ -35,9 +35,9 @@
 /obj/item/storage/belt/holster/energy/blueshield/equipped(mob/user, slot) // because when things are in suit storage slot - they are not using teshari's icons.
 	. = ..()
 	if(is_species(user, /datum/species/teshari))
-		worn_icon = 'tff_modular/blueshield-rearm/icons/holster_teshari.dmi'
+		worn_icon = 'tff_modular/modules/blueshield-rearm/icons/holster_teshari.dmi'
 	else
-		worn_icon = 'tff_modular/blueshield-rearm/icons/holster.dmi'
+		worn_icon = 'tff_modular/modules/blueshield-rearm/icons/holster.dmi'
 
 /*
 *	 The SR-8.
@@ -47,8 +47,8 @@
 	name = "\improper SR-8 energy revolver"
 	desc = "SR-8 is an experemental energy revolver that utilises special energy capsules. It's chamber might look like a normal one, but it is not spinnable and constructionaly more alike internal magazine. Due lack of spinning mechanism chamber have a bit more capacity, but in fact that can become a problem because gun's automatic decises what capsule slot will be fired."
 	icon = 'tff_modular/blueshield-rearm/icons/sr-8.dmi'
-	righthand_file = 'tff_modular/blueshield-rearm/icons/righthand.dmi'
-	lefthand_file = 'tff_modular/blueshield-rearm/icons/lefthand.dmi'
+	righthand_file = 'tff_modular/modules/blueshield-rearm/icons/righthand.dmi'
+	lefthand_file = 'tff_modular/modules/blueshield-rearm/icons/lefthand.dmi'
 	icon_state = "sr-8"
 	inhand_icon_state = "sr-8"
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/cylinder/blueshield
@@ -84,7 +84,7 @@
 	name = "\improper blueshield's gun speedloader"
 	desc = "Speedloader designed to help reloading special energy capsule revolver. Speedloaders of this model are much more complex and bulkier than regular ones due heavy over-engineering."
 	icon_state = "speedloader"
-	icon = 'tff_modular/blueshield-rearm/icons/mags.dmi'
+	icon = 'tff_modular/modules/blueshield-rearm/icons/mags.dmi'
 	ammo_type = /obj/item/ammo_casing/energy_capsule
 	max_ammo = 8
 	multiple_sprites = AMMO_BOX_ONE_SPRITE
@@ -141,7 +141,7 @@
 	name = "e-bullet energy capsule"
 	desc = "Energy bulletcapsule for special weaponry. Energy capsules are special disposable micro-cells designed for special type of weaponry. That capsule is Energy Bullet subtype, that makes gun generate highly concentrated energy beam that acts like a bullet."
 	projectile_type = /obj/projectile/bullet/concentrated_energy
-	fire_sound = 'tff_modular/blueshield-rearm/sounds/bullet.ogg'
+	fire_sound = 'tff_modular/modules/blueshield-rearm/sounds/bullet.ogg'
 	icon_state = "b-capsule"
 
 /*
