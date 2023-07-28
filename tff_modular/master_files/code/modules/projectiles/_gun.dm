@@ -26,8 +26,8 @@
 	var/target = get_ranged_target_turf(user, target_dir, knockdown_range)
 
 	if(force)
-		user.Knockdown(weapon_weigh * 2)
-		user.Paralyze(weapon_weigh)
+		user.Knockdown((weapon_weigh * 2) SECONDS)
+		user.Paralyze(weapon_weigh SECONDS)
 
 	user.visible_message(span_warning("[user.name] shoot from [src.name], but the recoil was so strong it knocked [user.p_they()] backwards!"), span_danger("The violent recoil sent you flying backwards!"))
 	user.throw_at(target, knockdown_range, weapon_weigh)

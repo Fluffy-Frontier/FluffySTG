@@ -1,4 +1,4 @@
-// Перезапись проверки по перетягиванию моба на себя. Или себя на него. Проверка на возможность взятия в руки. Порядок проверки следующий : может ли взять в руки >> может ли взять на спину >> может ли взять на плечо.
+// Перезапись оригинального прока human/mouse_buckle_handling, выполняет предпроверку на возможность взять цель в руку. Выполняется перед оригиналом.
 /mob/living/carbon/human/mouse_buckle_handling(mob/living/M, mob/living/user)
 	if(pulling != M || grab_state != GRAB_AGGRESSIVE || stat != CONSCIOUS)
 		return FALSE
@@ -7,7 +7,7 @@
 		buckle_to_hand_mob(M)
 		return TRUE
 	..(M, user)
-// Перезапись взятия на плечо. Пердпроверка на трейт слабого тела. Если проверка пройдена, вызывает оригинальный проек.
+// Перезапись оригинального прока /human/proc/fireman_carry(), проверка на трейт слабого тела. Выполняется перед оригининалом.
 /mob/living/carbon/human/fireman_carry(mob/living/carbon/target)
 	if(!can_be_firemanned(target) || incapacitated(IGNORE_GRAB))
 		to_chat(src, span_warning("You can't fireman carry [target] while [target.p_they()] [target.p_are()] standing!"))
@@ -17,7 +17,7 @@
 		visible_message(span_warning("[src] tries to carry [target], but they are too heavy!"))
 		return
 	..(target)
-// Перезапись взятия на спину. Предпроверка на наличие у человека трейта слабого тела и проверка на то, если ли этот трейт у того, кто берется на спину. Вызывает оригинальный прок.
+// Перезапись оригинального прока /human/proc/piggybacky(), проверка на трейт слабого тела. Выполняется перед оригининалом.
 /mob/living/carbon/human/piggyback(mob/living/carbon/target)
 	if(!can_piggyback(target))
 		to_chat(target, span_warning("You can't piggyback ride [src] right now!"))
@@ -27,6 +27,7 @@
 		target.visible_message(span_warning("[target] is too heavy for [src] to carry!"))
 		return
 	..(target)
+
 
 /mob/living/carbon/human/proc/buckle_to_hand_mob(mob/living/carbon/target)
 	if(!can_buckle_to_hand(target) || incapacitated(IGNORE_GRAB))
@@ -51,8 +52,8 @@
 
 	return buckle_mob(target, TRUE, TRUE, CARRIER_NEEDS_ARM)
 
+// Проверка на возможность взять цель в активную руку. Требуется трейта [TRAIT_CAN_BUCKLED_TO_HAND], у цели для успеха или [OVERSIZED] трейта у src.
 /mob/living/carbon/human/proc/can_buckle_to_hand(mob/living/carbon/target)
-	// Если мы имеем квирк овесайзед и цель - не имеет его. Возращаем истину.
 	if(has_quirk(/datum/quirk/oversized) && !target.has_quirk(/datum/quirk/oversized))
 		return TRUE
 	// Если цель- человек и мы не имеем квирка слабого тела, и цель имеет квирк легкого тела, или трейт возможности взятия на руки, возращаем истину.
