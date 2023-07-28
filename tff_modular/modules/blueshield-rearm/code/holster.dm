@@ -14,7 +14,7 @@
 
 /obj/item/storage/belt/holster/energy/blueshield/Initialize(mapload)
 	. = ..()
-	atom_storage.max_slots = 2
+	atom_storage.max_slots = 3
 	atom_storage.max_specific_storage = WEIGHT_CLASS_NORMAL
 	atom_storage.set_holdable(list(
 		/obj/item/gun/energy/blueshield,
