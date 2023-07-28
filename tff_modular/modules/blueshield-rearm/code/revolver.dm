@@ -10,10 +10,14 @@
 	lefthand_file = 'tff_modular/modules/blueshield-rearm/icons/lefthand.dmi'
 	icon_state = "sr-8"
 	inhand_icon_state = "sr-8"
-	fire_sound = 'tff_modular/modules/blueshield-rearm/sounds/sr8_lethal_shot.ogg'
+	fire_sound = 'tff_modular/modules/blueshield-rearm/sounds/sr8_bullet_shot.ogg'
 	can_charge = FALSE
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/blueshield, /obj/item/ammo_casing/energy/disabler/blueshield)
-	cell_type = /obj/item/stock_parts/cell/super // Батарея с которой спавниться револьвер.
+	ammo_type = list(
+		/obj/item/ammo_casing/energy/disabler/blueshield,
+		/obj/item/ammo_casing/energy/laser/blueshield, 
+		/obj/item/ammo_casing/energy/concentrated_blueshield,
+	)
+	cell_type = /obj/item/stock_parts/cell/super // Батарея с которой спавнится револьвер.
 	
 	var/obj/item/stock_parts/cell/zerocell/no_cell
 	var/acceptable_cell_type = /obj/item/stock_parts/cell
@@ -24,13 +28,15 @@
 
 /obj/item/gun/energy/blueshield/examine(mob/user)
 	. = ..()
+	. += span_notice("You can eject cell by <b>\"using\"</b> [src] in hands.")
+	. += span_notice("<b>Alt-Click</b> to cycle firing mode.")
 	. += "\n"
 	if(has_empty_cell())
 		. += "[src] has <b>no cell</b> inside its chamber."
 	else
 		. += "[src] has \a <b>[cell]</b> inside its chamber."
 	. += "\n"
-	. += "[src] is currently in <b>[ammo_type[select].select_name]</b> mode."
+	. += "[src] is currently in <b>[ammo_type[select]:select_name]</b> mode."
 
 /obj/item/gun/energy/blueshield/proc/eject_cell(var/mob/user)
 	if(has_empty_cell())
