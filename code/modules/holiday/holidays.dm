@@ -358,7 +358,9 @@
 
 /datum/holiday/pride_week
 	name = PRIDE_WEEK
-	begin_month = JUNE
+//FF edit begin
+	begin_month = 0
+//FF edit end
 	// Stonewall was June 28th, this captures its week.
 	begin_day = 23
 	end_day = 29
@@ -659,6 +661,26 @@
 	drone_hat = /obj/item/clothing/head/costume/santa
 	mail_holiday = TRUE
 
+/datum/holiday/xmas/getStationPrefix()
+	return pick(
+		"Bible",
+		"Birthday",
+		"Chimney",
+		"Claus",
+		"Crucifixion",
+		"Elf",
+		"Fir",
+		"Ho Ho Ho",
+		"Jesus",
+		"Jolly",
+		"Merry",
+		"Present",
+		"Sack",
+		"Santa",
+		"Sleigh",
+		"Yule",
+	)
+
 /datum/holiday/xmas/greet()
 	return "Have a merry Christmas!"
 
@@ -777,7 +799,7 @@
 	)
 
 /datum/holiday/xmas/proc/roundstart_celebrate()
-	for(var/obj/machinery/computer/security/telescreen/entertainment/Monitor in GLOB.machines)
+	for(var/obj/machinery/computer/security/telescreen/entertainment/Monitor as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/computer/security/telescreen/entertainment))
 		Monitor.icon_state_on = "entertainment_xmas"
 
 	for(var/mob/living/basic/pet/dog/corgi/ian/Ian in GLOB.mob_living_list)
