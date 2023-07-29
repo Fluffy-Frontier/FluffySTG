@@ -24,7 +24,8 @@
 		TRAIT_NO_BLOOD_OVERLAY,
 		TRAIT_PERFECT_HEARING,
 		TRAIT_WEAK_BODY,
-		TRAIT_CAN_BUCKLED_TO_HAND
+		TRAIT_CAN_BUCKLED_TO_HAND,
+		TRAIT_CAN_ENTER_BAG
 	)
 	default_mutant_bodyparts = list(
 		"tail" = ACC_RANDOM,
@@ -71,6 +72,8 @@
 	teshari_agility.Grant(C)
 	teshari_echolocation = new(C)
 	teshari_echolocation.Grant(C)
+
+	C.AddComponent(/datum/component/weak_body)
 
 /datum/species/teshari/alt/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()

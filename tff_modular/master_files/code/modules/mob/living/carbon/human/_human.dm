@@ -30,3 +30,90 @@
 					return FALSE
 	..(target)
 
+/**
+ * put_to_bag() - прок, обеспечивающий возможность засунуть человека в любой контейнер подходящего размера.
+ */
+/mob/living/carbon/human/proc/try_put_to_bag(obj/item/storage/backpack/bag, forced = FALSE, mob/shoving)
+	if(forced && shoving)
+		return try_put_to_bag_other()
+
+	if(!can_enter_bag(bag, src))
+		return FALSE
+
+	visible_message(span_notice("[name], started getting into [bag.name]."), span_notice("You start getting into [bag.name]"))
+	if(!do_after(src, 3 SECONDS, bag))
+		src.balloon_alert(src, "Stand still!")
+		return FALSE
+
+	visible_message(span_notice("[name], got into [bag.name]. "), span_notice("You got intro [bag.name]"))
+	put_to_bag(bag)
+	return TRUE
+
+/mob/living/carbon/human/proc/try_put_to_bag_other(obj/item/storage/backpack/bag, mob/shoving)
+	if(!can_enter_bag(bag, shoving))
+		return FALSE
+
+	shoving.visible_message(span_notice("[shoving.name], started shoving [name], into [bag.name]."), span_notice("You start shoving [name] intro the [bag.name]"))
+	if(!do_after(shoving, 3 SECONDS, bag))
+		shoving.balloon_alert(shoving, "Stand still!")
+		return FALSE
+
+	shoving.visible_message(span_notice("[shoving.name], shov [name], into [bag.name]."), span_notice("You shov [name] intro the [bag.name]"))
+	put_to_bag(bag)
+	return TRUE
+
+// Актуально перемещаемся в сумку.
+/mob/living/carbon/human/proc/put_to_bag(obj/item/storage/backpack/bag)
+	var/obj/item/clothing/head/mob_holder/human/holder = new(get_turf(src), src, held_state, head_icon, held_lh, held_rh, worn_slot_flags)
+	holder.holding_bag = bag
+	holder.forceMove(bag)
+
+/mob/living/carbon/human/proc/can_enter_bag(obj/item/storage/backpack/bag, mob/viewer)
+	if(!HAS_TRAIT(src, TRAIT_CAN_ENTER_BAG))
+		viewer.balloon_alert(viewer, "To big!")
+		return FALSE
+
+	//Если у нас каким-то образом есть этот трейт.. вместь с возможность влазить в сумку -,-
+	if(HAS_TRAIT(src, TRAIT_OVERSIZED))
+		viewer.balloon_alert(viewer, "To big!")
+		return FALSE
+
+	if(bag.loc == src)
+		return FALSE
+
+	if(bag.atom_storage)
+
+		if(bag.atom_storage.max_total_storage < 20)
+			viewer.balloon_alert(viewer, "To small!")
+			return FALSE
+
+		if(bag.atom_storage.max_specific_storage < WEIGHT_CLASS_HUGE && !istype(bag, /obj/item/storage/backpack/duffelbag))
+			viewer.balloon_alert(viewer, "To small!")
+			return FALSE
+
+		var/obj/item/blank = new()
+		blank.w_class = WEIGHT_CLASS_HUGE
+		// Пустышка для теста будет меньше, если мы хотим переместиться в дуфельбаг, если там уже кто-то не лежит.
+		if(istype(bag, /obj/item/storage/backpack/duffelbag))
+			var/obj/item/storage/backpack/duffelbag/d = bag
+			blank.w_class = WEIGHT_CLASS_NORMAL
+			if(d.zipped_up)
+				blank.Destroy()
+				viewer.balloon_alert(viewer, "Closed")
+				return FALSE
+
+			for(var/thing in d.contents)
+				if(!istype(thing, /obj/item/clothing/head/mob_holder/human))
+					continue
+				blank.w_class++
+
+		if(!bag.atom_storage.can_insert(blank, src, FALSE))
+			blank.Destroy()
+			viewer.balloon_alert(viewer, "No space!")
+			return FALSE
+
+		blank.Destroy()
+		return TRUE
+
+	viewer.balloon_alert(src, "Can't hold any!")
+	return FALSE

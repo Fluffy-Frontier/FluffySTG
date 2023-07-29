@@ -56,7 +56,7 @@
 /mob/living/carbon/human/proc/can_buckle_to_hand(mob/living/carbon/target)
 	if(has_quirk(/datum/quirk/oversized) && !target.has_quirk(/datum/quirk/oversized))
 		return TRUE
-	// Если цель- человек и мы не имеем квирка слабого тела, и цель имеет квирк легкого тела, или трейт возможности взятия на руки, возращаем истину.
+
 	else if((ishuman(target) && !HAS_TRAIT(src, TRAIT_WEAK_BODY)) &&  HAS_TRAIT(target, TRAIT_CAN_BUCKLED_TO_HAND))
 		return TRUE
 	return FALSE
