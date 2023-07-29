@@ -31,7 +31,13 @@
 	..(target)
 
 /**
- * put_to_bag() - прок, обеспечивающий возможность засунуть человека в любой контейнер подходящего размера.
+ * try_put_to_bag() - Попытка зайти в сумку.
+ *
+ * forced - если истина, то src, входи с сумку не по своей воле.
+ * bag - сумка в которую мы пытаемся залезть.
+ * shoving - тот, кто засовывает нас в сумку.
+ *
+ * Если forced && shoving присудствуют. Выполняем proc/try_put_to_bag_other(), что переадресует сообщения.
  */
 /mob/living/carbon/human/proc/try_put_to_bag(obj/item/storage/backpack/bag, forced = FALSE, mob/shoving)
 	if(forced && shoving)
@@ -78,11 +84,13 @@
 		viewer.balloon_alert(viewer, "To big!")
 		return FALSE
 
+	//Если сумка и так у нас в руках.
 	if(bag.loc == src)
 		return FALSE
 
 	if(bag.atom_storage)
 
+		//Рюкзаки, сатчелы и все, что меньше.
 		if(bag.atom_storage.max_total_storage < 20)
 			viewer.balloon_alert(viewer, "To small!")
 			return FALSE

@@ -28,13 +28,16 @@
 
 /datum/component/human_holder/Destroy(force, silent)
 	. = ..()
-	UnregisterSignal(list(COMSIG_HUMAN_ENTER_STORAGE, COMSIG_HUMAN_EXIT_STORAGE, COMSIG_CARBON_PRE_BREATHE))
+	if(parent)
+		UnregisterSignal(list(COMSIG_HUMAN_ENTER_STORAGE, COMSIG_HUMAN_EXIT_STORAGE, COMSIG_CARBON_PRE_BREATHE))
 	qdel(internal_air)
 
 /datum/component/human_holder/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_HUMAN_ENTER_STORAGE, PROC_REF(enter_storage))
-	RegisterSignal(parent, COMSIG_HUMAN_EXIT_STORAGE, PROC_REF(exit_storage))
-	RegisterSignal(parent, COMSIG_CARBON_BLOCK_BREATH, PROC_REF(handle_breathe))
+	if(!parent)
+		return
+	RegisterSignal(parent, COMSIG_HUMAN_ENTER_STORAGE, PROC_REF(enter_storage), override = TRUE)
+	RegisterSignal(parent, COMSIG_HUMAN_EXIT_STORAGE, PROC_REF(exit_storage), override = TRUE)
+	RegisterSignal(parent, COMSIG_CARBON_ATTEMPT_BREATHE, PROC_REF(handle_breathe), override = TRUE)
 
 /datum/component/human_holder/proc/handle_breathe()
 	SIGNAL_HANDLER
@@ -42,9 +45,8 @@
 		return
 
 	var/turf/air_turf = get_turf(holder.holding_bag)
-	internal_air = air_turf.return_air()
 	//Передаем пользователяю воздух из локации сумки.
-	held_human.handle_environment(internal_air)
+	held_human.handle_environment(air_turf.return_air())
 
 /datum/component/human_holder/proc/enter_storage(mob/living/carbon/human/user, obj/item/storage/backpack/bag)
 	SIGNAL_HANDLER
@@ -52,6 +54,7 @@
 	user.cure_blind(EYES_COVERED)
 	user.overlay_fullscreen("tint", /atom/movable/screen/fullscreen/impaired, 2)
 	internal_air = new()
+
 	//Увеличиваем размер холдера, дабы гарантировать, что в него не попадет много других существ.
 	holder.w_class = WEIGHT_CLASS_HUGE
 
@@ -60,4 +63,5 @@
 
 	user.cure_blind(EYES_COVERED)
 	user.clear_fullscreen("tint", 0 SECONDS)
+	user.update_tint()
 	Destroy()

@@ -28,18 +28,24 @@
 
 /datum/component/weak_body/Destroy(force, silent)
 	. = ..()
+	if(!parent)
+		return
+
 	UnregisterSignal(parent, list(COMSIG_MOB_ITEM_AFTERATTACK, COMSIG_MOB_ITEM_AFTERATTACK_SECONDARY, COMSIG_MOB_FIRED_GUN, COMSIG_HUMAN_DISARM_HIT, COMSIG_LIVING_PICKED_UP_ITEM))
 	if(block_grab)
 		UnregisterSignal(parent, list(COMSIG_MOVABLE_SET_GRAB_STATE, COMSIG_LIVING_START_PULL))
 
 /datum/component/weak_body/RegisterWithParent()
-	RegisterSignals(parent, list(COMSIG_MOB_ITEM_AFTERATTACK, COMSIG_MOB_ITEM_AFTERATTACK_SECONDARY), PROC_REF(aftet_attack_act))
-	RegisterSignal(parent, COMSIG_MOB_FIRED_GUN, PROC_REF(fired_gun_act))
-	RegisterSignal(parent, COMSIG_HUMAN_DISARM_HIT, PROC_REF(after_disarm))
-	RegisterSignal(parent, COMSIG_LIVING_PICKED_UP_ITEM ,PROC_REF(pickup_item_act))
+	if(!parent)
+		return
+
+	RegisterSignals(parent, list(COMSIG_MOB_ITEM_AFTERATTACK, COMSIG_MOB_ITEM_AFTERATTACK_SECONDARY), PROC_REF(aftet_attack_act), override = TRUE)
+	RegisterSignal(parent, COMSIG_MOB_FIRED_GUN, PROC_REF(fired_gun_act), override = TRUE)
+	RegisterSignal(parent, COMSIG_HUMAN_DISARM_HIT, PROC_REF(after_disarm), override = TRUE)
+	RegisterSignal(parent, COMSIG_LIVING_PICKED_UP_ITEM ,PROC_REF(pickup_item_act), override = TRUE)
 	if(block_grab)
-		RegisterSignal(parent, COMSIG_MOVABLE_SET_GRAB_STATE, PROC_REF(upgrade_grab))
-		RegisterSignal(parent, COMSIG_LIVING_START_PULL, PROC_REF(pull_act))
+		RegisterSignal(parent, COMSIG_MOVABLE_SET_GRAB_STATE, PROC_REF(upgrade_grab), override = TRUE)
+		RegisterSignal(parent, COMSIG_LIVING_START_PULL, PROC_REF(pull_act), override = TRUE)
 
 
 // Проверяем надет ли и включен на пользователе МОД костюм.
@@ -61,10 +67,13 @@
 	return FALSE
 
 /datum/component/weak_body/proc/pickup_item_act(mob/user, obj/item/picked_up_item)
-	var/mob/living/carbon/human/victim = parent
 	if((picked_up_item.w_class > max_allow_w_class) && !check_mod())
-		victim.visible_message(span_notice("[victim.name] try pickup [picked_up_item], but it to heavy for [victim.p_they()]"), span_danger("You try pickup [picked_up_item.name], but it to heavy for you!"))
-		victim.drop_all_held_items()
+		addtimer(CALLBACK(src, PROC_REF(drop_item), picked_up_item), 5)
+
+/datum/component/weak_body/proc/drop_item(obj/item/I)
+	var/mob/living/carbon/human/victim = parent
+	victim.visible_message(span_notice("[victim.name] try pickup [I], but it to heavy for [victim.p_they()]"), span_danger("You try pickup [I.name], but it to heavy for you!"))
+	victim.dropItemToGround(I)
 
 /datum/component/weak_body/proc/after_disarm(mob/user, mob/living/carbon/human/attacker, zone_targeted)
 	SIGNAL_HANDLER
@@ -83,7 +92,7 @@
 		if(50 to 100)
 			should_fall = pick(TRUE, FALSE)
 		if(30 to 50)
-			should_fall = pick(TRUE, FALSE, FALSE, FALSE)
+			should_fall = pick(TRUE, FALSE, FALSE)
 	if(should_fall && !check_mod())
 		victim.Knockdown(3 SECONDS)
 
@@ -108,26 +117,18 @@
 
 	if(ishuman(pulled) && (state >= GRAB_AGGRESSIVE))
 		// Если мы антагонист, то мы можем превозмочь рассовые сложности.
-		if(check_antagonists())
-			return
-		if(check_mod())
+		if(check_antagonists() || check_mod())
 			return
 		var/mob/living/carbon/human/h = pulled
-		stop_pulling()
 		victim.visible_message(span_notice("[victim.name] grabed [h.name], but [h.p_they()] to heavy for [victim.p_their()]"), span_danger("You start pulling [h.name], but [h.p_they()] to heavy for you!"))
-
-/datum/component/weak_body/proc/stop_pulling()
-	var/mob/living/carbon/human/victim = parent
-	victim.stop_pulling()
-	victim.update_pull_movespeed()
-	victim.update_pull_hud_icon()
-	victim.grab_state = 0
+		victim.stop_pulling()
+		victim.grab_state = 0
 
 /datum/component/weak_body/proc/upgrade_grab(mob/user, new_state)
 	SIGNAL_HANDLER
-	if(user.pulling == null)
+	if(!user.pulling)
 		return
-	pull_act(user, user.pulling, new_state)
+	addtimer(CALLBACK(src, PROC_REF(pull_act), user, user.pulling, new_state), 5)
 
 // ДЕБАФ НА ОРУЖИЕ ДАЛЬНЕГО БОЯ
 /datum/component/weak_body/proc/fired_gun_act(mob/user, obj/item/gun/weapon, atom/target, params, zone_override, bonus_spread_values)
@@ -141,7 +142,7 @@
 			knockback_user(weapon)
 
 	weapon.spread = addictional_spread
-	addtimer(CALLBACK(src, PROC_REF(after_gun_fired), weapon))
+	addtimer(CALLBACK(src, PROC_REF(after_gun_fired), weapon), 1 SECONDS)
 
 /datum/component/weak_body/proc/knockback_user(obj/item/gun/weapon)
 	var/mob/living/carbon/human/victim = parent
@@ -151,13 +152,9 @@
 	var/knockdown_range = weapon.weapon_weight
 	if(istype(weapon, /obj/item/gun/ballistic/rocketlauncher))
 		knockdown_range *= 2
-	var/target_dir = NORTH
-	if(victim.dir == NORTH)
-		target_dir = SOUTH
-	else if(victim.dir == WEST)
-		target_dir = EAST
-	else if(victim.dir == EAST)
-		target_dir = WEST
+
+	var/target_dir = victim.dir
+	turn(target_dir, 180)
 	var/knockdown_target = get_ranged_target_turf(victim, target_dir, knockdown_range)
 
 	victim.Knockdown((weapon.weapon_weight * 2) SECONDS)
