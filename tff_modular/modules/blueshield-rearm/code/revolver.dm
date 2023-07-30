@@ -10,12 +10,11 @@
 	lefthand_file = 'tff_modular/modules/blueshield-rearm/icons/lefthand.dmi'
 	icon_state = "sr-8"
 	inhand_icon_state = "sr-8"
-	fire_sound = 'tff_modular/modules/blueshield-rearm/sounds/sr8_bullet_shot.ogg'
+	fire_sound = 'tff_modular/modules/blueshield-rearm/sounds/sr8_lethal_shot.ogg'
 	can_charge = FALSE
 	ammo_type = list(
 		/obj/item/ammo_casing/energy/disabler/blueshield,
 		/obj/item/ammo_casing/energy/laser/blueshield, 
-		/obj/item/ammo_casing/energy/concentrated_blueshield,
 	)
 	cell_type = /obj/item/stock_parts/cell/super // Батарея с которой спавнится револьвер.
 	
