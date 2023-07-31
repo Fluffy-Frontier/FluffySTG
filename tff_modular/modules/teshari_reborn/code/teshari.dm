@@ -50,7 +50,7 @@
 	)
 	coldmod = TESHARI_ALT_COLDMOD
 	heatmod = TESHARI_ALT_HEATMOD
-	bodytemp_normal = BODYTEMP_NORMAL + TEHSARI_ALT_TEMP_OFFSET
+	bodytemp_normal = BODYTEMP_NORMAL + (TEHSARI_ALT_TEMP_OFFSET/2)
 	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT + (TEHSARI_ALT_TEMP_OFFSET/2))
 	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT + TEHSARI_ALT_TEMP_OFFSET)
 	mutanttongue = /obj/item/organ/internal/tongue/teshari/alt
@@ -79,6 +79,7 @@
 	. = ..()
 	teshari_agility.Destroy()
 	teshari_echolocation.Destroy()
+	C.RemoveComponentSource(C, /datum/component/weak_body)
 
 /datum/species/teshari/alt/randomize_features(mob/living/carbon/human/human_mob)
 	. = ..()

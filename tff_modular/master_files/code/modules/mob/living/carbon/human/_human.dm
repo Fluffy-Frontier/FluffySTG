@@ -41,7 +41,7 @@
  */
 /mob/living/carbon/human/proc/try_put_to_bag(obj/item/storage/backpack/bag, forced = FALSE, mob/shoving)
 	if(forced && shoving)
-		return try_put_to_bag_other()
+		return try_put_to_bag_other(bag, shoving)
 
 	if(!can_enter_bag(bag, src))
 		return FALSE
@@ -70,7 +70,18 @@
 
 // Актуально перемещаемся в сумку.
 /mob/living/carbon/human/proc/put_to_bag(obj/item/storage/backpack/bag)
+	if(!can_enter_bag(bag, src))
+		return
+
+	if(istype(bag.atom_storage, /datum/storage/bag_of_holding))
+		for(var/obj/item/i in src.contents)
+			if((istype(i, /obj/item/storage/backpack/holding) && !drop_all_held_items()) || istype(back, /obj/item/storage/backpack/holding))
+				visible_message(span_danger("Reality, tearing [name] from the inside out. "), span_userdanger("Reality is ripping you from the inside out!"))
+				gib(FALSE, TRUE, TRUE)
+				return
+
 	var/obj/item/clothing/head/mob_holder/human/holder = new(get_turf(src), src, held_state, head_icon, held_lh, held_rh, worn_slot_flags)
+	drop_all_held_items()
 	holder.holding_bag = bag
 	holder.forceMove(bag)
 

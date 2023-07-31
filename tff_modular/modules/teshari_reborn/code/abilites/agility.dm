@@ -25,6 +25,7 @@
 		owner.balloon_alert(owner, "Disabled!")
 		owner.pass_flags = initial(owner.pass_flags)
 		owner.layer = initial(owner.layer)
+		update_button_state(AGILITY_MODE_IGNORE)
 		current_mode = AGILITY_MODE_IGNORE
 		return TRUE
 

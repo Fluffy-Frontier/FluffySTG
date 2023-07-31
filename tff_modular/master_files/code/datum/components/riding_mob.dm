@@ -1,68 +1,63 @@
-/datum/component/riding/creature/human
-	var/is_hand_buckle = FALSE
+#define DEFAULT_IN_HAND_OFFSET_X 3
+#define DEFAULT_IN_HAND_OFFSET_Y 0
 
+/datum/component/riding/creature/human
+	//Рука в которой будет находится взятый моб
+	var/obj/item/bodypart/used_hand
+
+// Расширяем инициализацию.
 /datum/component/riding/creature/human/Initialize(mob/living/riding_mob, force, ride_check_flags, potion_boost)
 	. = ..()
 	var/mob/living/carbon/human/human_parent = parent
-	if(ride_check_flags & CARRIER_NEEDS_ARM && (HAS_TRAIT(riding_mob, TRAIT_CAN_BUCKLED_TO_HAND) || HAS_TRAIT(human_parent, TRAIT_OVERSIZED)))
+	if(ride_check_flags & CARRIER_NEEDS_ARM && HAS_TRAIT(riding_mob, TRAIT_CAN_BUCKLED_TO_HAND))
 		human_parent.buckle_lying = 0
-		riding_mob.set_density(FALSE)
-		is_hand_buckle = TRUE
-	else
-		is_hand_buckle = FALSE
+		used_hand = human_parent.get_active_hand()
+		ADD_TRAIT(riding_mob, TRAIT_UNDENSE, VEHICLE_TRAIT)
 
 
+/datum/component/riding/creature/human/vehicle_mob_unbuckle(datum/source, mob/living/former_rider, force = FALSE)
+	. = ..()
+	if((ride_check_flags & CARRIER_NEEDS_ARM) && HAS_TRAIT(former_rider, TRAIT_CAN_BUCKLED_TO_HAND))
+		former_rider.set_density(TRUE)
+		REMOVE_TRAIT(former_rider, TRAIT_UNDENSE, VEHICLE_TRAIT)
+
+//Хэндлинг положения в руке
 /datum/component/riding/creature/human/handle_vehicle_offsets(dir)
 	. = ..()
-	if(!is_hand_buckle)
-		return
-
 	var/mob/living/carbon/human/human_parent = parent
-	var/mob/living/buckled_mob
-	for(var/mob/living/r in human_parent.buckled_mobs)
-		buckled_mob = r
 
-	var/target_pixel_y = 3
-	var/target_pixel_x = 0
+	for(var/mob/living/rider in human_parent.buckled_mobs)
+		if(!HAS_TRAIT(rider, TRAIT_CAN_BUCKLED_TO_HAND))
+			continue
 
-	var/i_hand_index = human_parent.get_inactive_hand_index()
-	var/offset_hand
+		var/target_pixel_y = DEFAULT_IN_HAND_OFFSET_X
+		var/target_pixel_x = DEFAULT_IN_HAND_OFFSET_Y
+		var/offset_hand = used_hand.body_zone
 
-	if(i_hand_index == 1)
-		offset_hand = HAND_RIGHT
-	else
-		offset_hand = HAND_LEFT
+		if(dir == NORTH && offset_hand == BODY_ZONE_L_ARM)
+			target_pixel_x += -6
+		else if(dir == NORTH && offset_hand == BODY_ZONE_R_ARM)
+			target_pixel_x += 6
+		else if(dir == SOUTH && offset_hand == BODY_ZONE_L_ARM)
+			target_pixel_x += 6
+		else if(dir == SOUTH && offset_hand == BODY_ZONE_R_ARM)
+			target_pixel_x += -6
+		else if(dir == EAST)
+			target_pixel_x += 3
+		else
+			target_pixel_x += -3
 
-	if(dir == NORTH && offset_hand == HAND_LEFT)
-		target_pixel_x += -6
-	else if(dir == NORTH && offset_hand == HAND_RIGHT )
-		target_pixel_x += 6
-	else if(dir == SOUTH && offset_hand == HAND_LEFT)
-		target_pixel_x += 6
-	else if(dir == SOUTH && offset_hand == HAND_RIGHT)
-		target_pixel_x += -6
-	else if(dir == EAST)
-		target_pixel_x += 3
-	else
-		target_pixel_x += -3
-
-	buckled_mob.pixel_y = target_pixel_y
-	buckled_mob.pixel_x = target_pixel_x
+		rider.pixel_y = target_pixel_y
+		rider.pixel_x = target_pixel_x
 
 /datum/component/riding/creature/human/handle_vehicle_layer(dir)
 	. = ..()
-	if(!is_hand_buckle)
-		return
-
 	var/mob/living/carbon/human/human_parent = parent
-	var/mob/living/buckled_mob
-	for(var/mob/living/r in human_parent.buckled_mobs)
-		buckled_mob = r
 
-	var/target_layer = MOB_ABOVE_PIGGYBACK_LAYER + 0.10
-	if(dir == NORTH)
-		target_layer -= 0.30
-
-	buckled_mob.layer = target_layer
-
-
+	for(var/mob/living/rider in human_parent.buckled_mobs)
+		if(!HAS_TRAIT(rider, TRAIT_CAN_BUCKLED_TO_HAND))
+			continue
+		var/target_layer = MOB_ABOVE_PIGGYBACK_LAYER + 0.10
+		if(dir == NORTH)
+			target_layer -= 0.30
+		rider.layer = target_layer

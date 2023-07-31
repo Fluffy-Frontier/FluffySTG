@@ -69,6 +69,15 @@
 /datum/component/weak_body/proc/pickup_item_act(mob/user, obj/item/picked_up_item)
 	if((picked_up_item.w_class > max_allow_w_class) && !check_mod())
 		addtimer(CALLBACK(src, PROC_REF(drop_item), picked_up_item), 5)
+	//Дополнительно проверяем, что не пытаемся взять сумку, в которой кто-нибудь лежит.
+	if(istype(picked_up_item, /obj/item/storage/backpack))
+		var/obj/item/storage/backpack/bag = picked_up_item
+		for(var/thing in bag.contents)
+			if(!istype(thing, /obj/item/clothing/head/mob_holder/human))
+				continue
+			if(check_mod())
+				return
+			addtimer(CALLBACK(src, PROC_REF(drop_item), picked_up_item), 5)
 
 /datum/component/weak_body/proc/drop_item(obj/item/I)
 	var/mob/living/carbon/human/victim = parent
@@ -120,6 +129,8 @@
 		if(check_antagonists() || check_mod())
 			return
 		var/mob/living/carbon/human/h = pulled
+		if(HAS_TRAIT(h, TRAIT_WEAK_BODY))
+			return
 		victim.visible_message(span_notice("[victim.name] grabed [h.name], but [h.p_they()] to heavy for [victim.p_their()]"), span_danger("You start pulling [h.name], but [h.p_they()] to heavy for you!"))
 		victim.stop_pulling()
 		victim.grab_state = 0
@@ -153,8 +164,7 @@
 	if(istype(weapon, /obj/item/gun/ballistic/rocketlauncher))
 		knockdown_range *= 2
 
-	var/target_dir = victim.dir
-	turn(target_dir, 180)
+	var/target_dir = turn(victim.dir, 180)
 	var/knockdown_target = get_ranged_target_turf(victim, target_dir, knockdown_range)
 
 	victim.Knockdown((weapon.weapon_weight * 2) SECONDS)
@@ -172,13 +182,16 @@
 	SIGNAL_HANDLER
 	if(!ismob(target))
 		return
-	if(HAS_TRAIT(parent, TRAIT_NEGATES_GRAVITY))
-		return
 
 	var/mob/living/carbon/human/victim = parent
 	var/obj/item/inactive = victim.get_inactive_held_item()
 
-	if(istype(inactive, /obj/item/offhand))
-		victim.visible_message(span_danger("[victim.name] fall aftet attack [target], [weapon.name] to heavy for [victim.p_their()]"), span_danger("You attack [target], but [weapon.name] to heavy for you."))
-		victim.Knockdown(3 SECONDS)
-		victim.Paralyze(1 SECONDS)
+	if(!istype(inactive, /obj/item/offhand))
+		return
+
+	if(check_antagonists() || check_mod() || HAS_TRAIT(parent, TRAIT_NEGATES_GRAVITY))
+		return
+
+	victim.visible_message(span_danger("[victim.name] fall aftet attack [target], [weapon.name] to heavy for [victim.p_their()]"), span_danger("You attack [target], but [weapon.name] to heavy for you."))
+	victim.Knockdown(3 SECONDS)
+	victim.Stun(2 SECONDS)

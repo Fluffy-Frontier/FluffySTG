@@ -50,6 +50,7 @@
 		visible_message(span_warning("[src] fails to lift to hand [target]!"))
 		return
 
+	target.drop_all_held_items()
 	return buckle_mob(target, TRUE, TRUE, CARRIER_NEEDS_ARM)
 
 // Проверка на возможность взять цель в активную руку. Требуется трейта [TRAIT_CAN_BUCKLED_TO_HAND], у цели для успеха или [OVERSIZED] трейта у src.
