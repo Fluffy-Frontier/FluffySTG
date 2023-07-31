@@ -33,7 +33,8 @@
 	return
 
 /obj/item/clothing/head/mob_holder/human/release(del_on_release, display_messages)
-	SEND_SIGNAL(held_mob, COMSIG_HUMAN_EXIT_STORAGE, holding_bag)
+	if(held_mob)
+		SEND_SIGNAL(held_mob, COMSIG_HUMAN_EXIT_STORAGE, holding_bag)
 	..(TRUE, FALSE)
 
 /obj/item/clothing/head/mob_holder/human/on_found(mob/finder)
