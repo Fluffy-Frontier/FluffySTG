@@ -79,7 +79,6 @@
 	. = ..()
 	teshari_agility.Destroy()
 	teshari_echolocation.Destroy()
-	C.RemoveComponentSource(C, /datum/component/weak_body)
 
 /datum/species/teshari/alt/randomize_features(mob/living/carbon/human/human_mob)
 	. = ..()
