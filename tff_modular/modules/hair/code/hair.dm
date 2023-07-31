@@ -15,6 +15,34 @@
 	name = "Bobcut over eye 3"
 	icon_state = "hair_bobcut_over_eye_3"
 
+/datum/sprite_accessory/hair/ttf/bonnie
+	name = "Bonnie"
+	icon_state = "hair_bonnie"
+
+/datum/sprite_accessory/hair/ttf/bonnie_short
+	name = "Bonnie short"
+	icon_state = "hair_bonnie_short"
+
+/datum/sprite_accessory/hair/ttf/bonnie_long
+	name = "Bonnie long"
+	icon_state = "hair_bonnie_long"
+
+/datum/sprite_accessory/hair/ttf/bonnie_2
+	name = "Bonnie 2"
+	icon_state = "hair_bonnie_2"
+
+/datum/sprite_accessory/hair/ttf/bonnie_2_long
+	name = "Bonnie long 2"
+	icon_state = "hair_bonnie_2_long"
+
+/datum/sprite_accessory/hair/ttf/bonie_2_short
+	name = "Bonnie short 2"
+	icon_state = "hair_bonnie_2_short"
+
+/datum/sprite_accessory/hair/ttf/dawn
+	name = "Dawn"
+	icon_state = "hair_dawn"
+
 /datum/sprite_accessory/hair/ttf/fluffy
 	name = "Fluffy"
 	icon_state = "hair_fluffy"
@@ -35,6 +63,18 @@
 	name = "Kobeni 2"
 	icon_state = "hair_kobeni_2"
 
+/datum/sprite_accessory/hair/ttf/low_bun
+	name = "Low bun"
+	icon_state = "hair_low_bun"
+
+/datum/sprite_accessory/hair/ttf/low_ponytail
+	name = "Low ponytail"
+	icon_state = "hair_low_ponytail"
+
+/datum/sprite_accessory/hair/ttf/morning
+	name = "Morning"
+	icon_state = "hair_morning"
+
 /datum/sprite_accessory/hair/ttf/over_ear_1
 	name = "Over ear 1"
 	icon_state = "hair_over_ear_1"
@@ -48,15 +88,11 @@
 	icon_state = "hair_over_eye"
 
 /datum/sprite_accessory/hair/ttf/ponytail
-	name = "Ponytail"
+	name = "Fluffy ponytail"
 	icon_state = "hair_ponytail"
 
-/datum/sprite_accessory/hair/ttf/ponytail_long
-	name = "Ponytail long"
-	icon_state = "hair_ponytail_long"
-
 /datum/sprite_accessory/hair/ttf/ponytail_short
-	name = "Ponytail short"
+	name = "Short fluffy ponytail"
 	icon_state = "hair_ponytail_short"
 
 /datum/sprite_accessory/hair/ttf/simple
@@ -88,23 +124,19 @@
 	icon_state = "hair_thin_ponytail"
 
 /datum/sprite_accessory/hair/ttf/thin_ponytail_long
-	name = "Thin ponytail long"
+	name = "Long thin ponytail"
 	icon_state = "hair_thin_ponytail_long"
-
-/datum/sprite_accessory/hair/ttf/thin_ponytail_short
-	name = "Thin ponytail short"
-	icon_state = "hair_thin_ponytail_short"
 
 /datum/sprite_accessory/hair/ttf/twintails
 	name = "Twintails"
 	icon_state = "hair_twintails"
 
 /datum/sprite_accessory/hair/ttf/twintails_long
-	name = "Twintails long"
+	name = "Long twintails"
 	icon_state = "hair_twintails_long"
 
 /datum/sprite_accessory/hair/ttf/twintails_short
-	name = "Twintails short"
+	name = "Short twintails"
 	icon_state = "hair_twintails_short"
 
 /datum/sprite_accessory/hair/ttf/upwards
