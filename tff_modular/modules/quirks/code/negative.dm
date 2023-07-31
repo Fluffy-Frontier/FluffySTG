@@ -4,7 +4,7 @@
 	value = -16
 	gain_text = span_danger("You body realy weak.. what are you doing here?!")
 	medical_record_text = ("Patient body is extremly weak.")
-	icon = FA_ICON_FACE_ANGRY
+	icon = FA_ICON_DNA
 	mob_trait = TRAIT_WEAK_BODY
 
 /datum/quirk/weak_body/add(client/client_source)

@@ -81,7 +81,7 @@
 
 /datum/component/weak_body/proc/drop_item(obj/item/I)
 	var/mob/living/carbon/human/victim = parent
-	victim.visible_message(span_notice("[victim.name] try pickup [I], but it to heavy for [victim.p_they()]"), span_danger("You try pickup [I.name], but it to heavy for you!"))
+	victim.visible_message(span_notice("[victim.name] try pickup [I], but it too heavy for [victim.p_they()]"), span_danger("You try pickup [I.name], but it too heavy for you!"))
 	victim.dropItemToGround(I)
 
 /datum/component/weak_body/proc/after_disarm(mob/user, mob/living/carbon/human/attacker, zone_targeted)
@@ -113,7 +113,7 @@
 		var/obj/item/i = pulled
 		if((i.w_class > max_allow_w_class) && !check_mod())
 			victim.stop_pulling()
-			victim.visible_message(span_notice("[victim.name] start pulling [i], [i.name], but to heavy for [victim.p_their()]"), span_danger("You start pulling [i.name], but it to heavy for you!"))
+			victim.visible_message(span_notice("[victim.name] start pulling [i], [i.name], but too heavy for [victim.p_their()]"), span_danger("You start pulling [i.name], but it too heavy for you!"))
 			return
 
 	if(isobj(pulled))
@@ -121,7 +121,7 @@
 		// Т.к каких-то фиксированных значений для обьектов у нас нет, стоит отталкиваться от того, какое замедление они оказывают.
 		if((o.drag_slowdown >= 1.5) && !check_mod())
 			victim.stop_pulling()
-			victim.visible_message(span_notice("[victim.name] start pulling [o], but [o.name] to heavy for [victim.p_their()]"), span_danger("You start pulling [o.name], but it to heavy for you!"))
+			victim.visible_message(span_notice("[victim.name] start pulling [o], but [o.name] too heavy for [victim.p_their()]"), span_danger("You start pulling [o.name], but it too heavy for you!"))
 			return
 
 	if(ishuman(pulled) && (state >= GRAB_AGGRESSIVE))
@@ -131,7 +131,7 @@
 		var/mob/living/carbon/human/h = pulled
 		if(HAS_TRAIT(h, TRAIT_WEAK_BODY))
 			return
-		victim.visible_message(span_notice("[victim.name] grabed [h.name], but [h.p_they()] to heavy for [victim.p_their()]"), span_danger("You start pulling [h.name], but [h.p_they()] to heavy for you!"))
+		victim.visible_message(span_notice("[victim.name] grabed [h.name], but [h.p_they()] too heavy for [victim.p_their()]"), span_danger("You start pulling [h.name], but [h.p_they()] too heavy for you!"))
 		victim.stop_pulling()
 		victim.grab_state = 0
 
@@ -192,6 +192,6 @@
 	if(check_antagonists() || check_mod() || HAS_TRAIT(parent, TRAIT_NEGATES_GRAVITY))
 		return
 
-	victim.visible_message(span_danger("[victim.name] fall aftet attack [target], [weapon.name] to heavy for [victim.p_their()]"), span_danger("You attack [target], but [weapon.name] to heavy for you."))
+	victim.visible_message(span_danger("[victim.name] fall aftet attack [target], [weapon.name] too heavy for [victim.p_their()]"), span_danger("You attack [target], but [weapon.name] too heavy for you."))
 	victim.Knockdown(3 SECONDS)
 	victim.Stun(2 SECONDS)
