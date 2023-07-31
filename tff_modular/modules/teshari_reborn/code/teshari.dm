@@ -22,17 +22,10 @@
 		TRAIT_NO_UNDERWEAR,
 		TRAIT_HAS_MARKINGS,
 		TRAIT_NO_BLOOD_OVERLAY,
-		TRAIT_PERFECT_HEARING,
 		TRAIT_WEAK_BODY,
 		TRAIT_CAN_BUCKLED_TO_HAND,
 		TRAIT_CAN_ENTER_BAG
 	)
-	default_mutant_bodyparts = list(
-		"tail" = ACC_RANDOM,
-		"ears" = ACC_RANDOM,
-		"legs" = "Normal Legs"
-	)
-	payday_modifier = 0.75
 	digitigrade_customization = DIGITIGRADE_NEVER
 	custom_worn_icons = list(
 		LOADOUT_ITEM_HEAD = TESHARI_HEAD_ICON,
@@ -47,6 +40,9 @@
 		LOADOUT_ITEM_MISC = TESHARI_BACK_ICON,
 		LOADOUT_ITEM_ACCESSORY = TESHARI_ACCESSORIES_ICON,
 		LOADOUT_ITEM_EARS = TESHARI_EARS_ICON
+	)
+	default_mutant_bodyparts = list(
+		"legs" = "Normal Legs"
 	)
 	coldmod = TESHARI_ALT_COLDMOD
 	heatmod = TESHARI_ALT_HEATMOD
