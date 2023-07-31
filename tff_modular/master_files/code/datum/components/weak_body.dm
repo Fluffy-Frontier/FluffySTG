@@ -96,12 +96,12 @@
 
 	var/should_fall = FALSE
 	switch(fall_chance)
-		if(100 to INFINITE)
-			should_fall = TRUE
-		if(50 to 100)
-			should_fall = pick(TRUE, FALSE)
 		if(30 to 50)
 			should_fall = pick(TRUE, FALSE, FALSE)
+		if(50 to 100)
+			should_fall = pick(TRUE, FALSE)
+		if(100 to INFINITE)
+			should_fall = TRUE
 	if(should_fall && !check_mod())
 		victim.Knockdown(3 SECONDS)
 
