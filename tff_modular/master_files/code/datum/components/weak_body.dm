@@ -96,9 +96,11 @@
 
 	var/should_fall = FALSE
 	switch(fall_chance)
-		if(30 to 50)
+		if(0 to 29)
+			should_fall = pick(TRUE, FALSE, FALSE, FALSE)
+		if(30 to 49)
 			should_fall = pick(TRUE, FALSE, FALSE)
-		if(50 to 100)
+		if(50 to 99)
 			should_fall = pick(TRUE, FALSE)
 		if(100 to INFINITE)
 			should_fall = TRUE
