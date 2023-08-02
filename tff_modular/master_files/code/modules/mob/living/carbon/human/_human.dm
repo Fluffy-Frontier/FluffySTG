@@ -99,6 +99,11 @@
 	if(bag.loc == src)
 		return FALSE
 
+	//Есть ли дуфел баг на нас. Мы ведь не хотим матрешки?
+	if(istype(back, /obj/item/storage/backpack/duffelbag))
+		viewer.balloon_alert(viewer, "To big!")
+		return FALSE
+
 	if(bag.atom_storage)
 
 		//Рюкзаки, сатчелы и все, что меньше.
