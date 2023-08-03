@@ -87,7 +87,7 @@
 
 	nabber.balloon_alert(nabber, "Begin pumping blood in!")
 	nabber.visible_message(span_warning("[nabber] starts to pump blood into their mantis arms!"), span_warning("You start pumping blood into your mantis arms and emmitting defensive screech! Stay still!"), span_hear("You hear ramping up screech!"))
-	playsound(nabber, 'tff_modular/modules/emotes/sounds/nabberscream.ogg', 70)
+	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
 
 	if(!do_after(nabber, 5 SECONDS, nabber))
 		StartCooldown()
@@ -96,7 +96,7 @@
 
 	nabber.balloon_alert(nabber, "Arms rised!")
 	nabber.visible_message(span_warning("[nabber] raised their mantis arms ready for combat!"), span_warning("You raise your mantis arms, ready for combat."), span_hear("You hear terrible a screech!"))
-	playsound(nabber, 'tff_modular/modules/emotes/sounds/nabberscream.ogg', 70)
+	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
 
 	var/c = nabber.dna.features["mcolor"]
 	var/obj/item/melee/nabber_blade/active_hand = new
@@ -132,7 +132,7 @@
 		nabber.balloon_alert(nabber, "Stand still!")
 		return	FALSE
 
-	playsound(nabber, 'tff_modular/modules/emotes/sounds/nabberscream.ogg', 70)
+	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
 	for(var/obj/item/held in nabber.held_items)
 		if(istype(held, /obj/item/melee/nabber_blade))
 			qdel(held)
@@ -150,7 +150,7 @@
 		return	FALSE
 
 	nabber.visible_message(span_notice("[nabber] starts to pump blood out their mantis arms!"), span_notice("You start pumping blood out your mantis arms. Stay still!"), span_hear("You hear ramping up screech!"))
-	playsound(nabber, 'tff_modular/modules/emotes/sounds/nabberscream.ogg', 70)
+	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
 	nabber.balloon_alert(nabber, "Lose hand!")
 	nabber.Stun(5 SECONDS)
 	for(var/obj/item/held in nabber.held_items)
