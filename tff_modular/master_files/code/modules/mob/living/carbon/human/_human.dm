@@ -99,10 +99,12 @@
 	if(bag.loc == src)
 		return FALSE
 
-	//Есть ли дуфел баг на нас. Мы ведь не хотим матрешки?
-	if(istype(back, /obj/item/storage/backpack/duffelbag))
-		viewer.balloon_alert(viewer, "To big!")
-		return FALSE
+	//Если нас пытаются положить не в БС сумку, выполняем дополнительную проверку..
+	if(!istype(bag, /obj/item/storage/backpack/holding))
+		//Есть ли что-нибудь на нашей спине.(рюкзаки/оружие/прочее)
+		if(back)
+			viewer.balloon_alert(viewer, "[back.name] on the way!")
+			return FALSE
 
 	if(bag.atom_storage)
 
