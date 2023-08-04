@@ -96,6 +96,8 @@
 	cooldown_time *= (stun_time/20)
 	tesh.Paralyze(stun_time/2)
 	tesh.Knockdown(stun_time)
+	var/obj/item/organ/internal/ears/E = tesh.get_organ_slot(ORGAN_SLOT_EARS)
+	E.apply_organ_damage(40)
 
 	to_chat(tesh, span_userdanger("Your ears fill with pain as the horrible noise hits them!"))
 	deisable_echolocation()

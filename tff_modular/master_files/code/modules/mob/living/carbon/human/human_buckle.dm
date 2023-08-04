@@ -3,6 +3,10 @@
 	if(pulling != M || grab_state != GRAB_AGGRESSIVE || stat != CONSCIOUS)
 		return FALSE
 
+	//Если мы на ком-либо закреплены, не даем взять никакого в свои руки..
+	if(buckled)
+		return FALSE
+
 	if(can_buckle_to_hand(M))
 		buckle_to_hand_mob(M)
 		return TRUE

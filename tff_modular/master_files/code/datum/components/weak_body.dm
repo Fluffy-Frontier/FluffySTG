@@ -46,7 +46,7 @@
 	if(block_grab)
 		RegisterSignal(parent, COMSIG_MOVABLE_SET_GRAB_STATE, PROC_REF(upgrade_grab), override = TRUE)
 		RegisterSignal(parent, COMSIG_LIVING_START_PULL, PROC_REF(pull_act), override = TRUE)
-
+		RegisterSignal(parent, COMSIG_ATOM_NO_LONGER_PULLING, PROC_REF(stop_pull_act), override = TRUE)
 
 // Проверяем надет ли и включен на пользователе МОД костюм.
 /datum/component/weak_body/proc/check_mod()
@@ -126,21 +126,36 @@
 			victim.visible_message(span_notice("[victim.name] start pulling [o], but [o.name] too heavy for [victim.p_their()]"), span_danger("You start pulling [o.name], but it too heavy for you!"))
 			return
 
-	if(ishuman(pulled) && (state >= GRAB_AGGRESSIVE))
-		// Если мы антагонист, то мы можем превозмочь рассовые сложности.
-		if(check_antagonists() || check_mod())
-			return
-		var/mob/living/carbon/human/h = pulled
-		if(HAS_TRAIT(h, TRAIT_WEAK_BODY))
-			return
-		victim.visible_message(span_notice("[victim.name] grabed [h.name], but [h.p_they()] too heavy for [victim.p_their()]"), span_danger("You start pulling [h.name], but [h.p_they()] too heavy for you!"))
-		victim.stop_pulling()
-		victim.grab_state = 0
+	if(ishuman(pulled))
+		//Если мы только взяли кого-то в пулл, накладывает модификатор скорости.
+		if(state < GRAB_AGGRESSIVE)
+			victim.add_movespeed_modifier(/datum/movespeed_modifier/teshari_pull)
+
+		if(state >= GRAB_AGGRESSIVE)
+			if(check_antagonists() || check_mod())
+				return
+			// Если мы антагонист, то мы можем превозмочь рассовые сложности.
+			var/mob/living/carbon/human/h = pulled
+			if(HAS_TRAIT(h, TRAIT_WEAK_BODY))
+				return
+			victim.visible_message(span_notice("[victim.name] grabed [h.name], but [h.p_they()] too heavy for [victim.p_their()]"), span_danger("You start pulling [h.name], but [h.p_they()] too heavy for you!"))
+			victim.stop_pulling()
+			victim.grab_state = 0
+
+/datum/component/weak_body/proc/stop_pull_act(mob/user, atom/movable/pulled)
+	SIGNAL_HANDLER
+
+	var/mob/living/carbon/human/victim = parent
+	if(ishuman(pulled))
+		victim.remove_movespeed_modifier(/datum/movespeed_modifier/teshari_pull)
+
 
 /datum/component/weak_body/proc/upgrade_grab(mob/user, new_state)
 	SIGNAL_HANDLER
 	if(!user.pulling)
 		return
+	if(user.has_movespeed_modifier(/datum/movespeed_modifier/teshari_pull))
+		user.remove_movespeed_modifier(/datum/movespeed_modifier/teshari_pull)
 	addtimer(CALLBACK(src, PROC_REF(pull_act), user, user.pulling, new_state), 5)
 
 // ДЕБАФ НА ОРУЖИЕ ДАЛЬНЕГО БОЯ
@@ -184,9 +199,12 @@
 	SIGNAL_HANDLER
 	if(!ismob(target))
 		return
-
 	var/mob/living/carbon/human/victim = parent
 	var/obj/item/inactive = victim.get_inactive_held_item()
+	//Проверяем что мы были рядом с целью.
+	var/distance = get_dist_euclidian(victim, target)
+	if(distance > 1)
+		return
 
 	if(!istype(inactive, /obj/item/offhand))
 		return
@@ -197,3 +215,7 @@
 	victim.visible_message(span_danger("[victim.name] fall aftet attack [target], [weapon.name] too heavy for [victim.p_their()]"), span_danger("You attack [target], but [weapon.name] too heavy for you."))
 	victim.Knockdown(3 SECONDS)
 	victim.Stun(2 SECONDS)
+
+/datum/movespeed_modifier/teshari_pull
+	blacklisted_movetypes = FLYING
+	multiplicative_slowdown = 0.9

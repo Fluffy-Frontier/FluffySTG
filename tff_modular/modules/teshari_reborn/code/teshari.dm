@@ -70,11 +70,13 @@
 	teshari_echolocation.Grant(C)
 
 	C.AddComponent(/datum/component/weak_body)
+	C.mob_size = MOB_SIZE_SMALL
 
 /datum/species/teshari/alt/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()
 	teshari_agility.Destroy()
 	teshari_echolocation.Destroy()
+	C.mob_size = initial(C.mob_size)
 
 /datum/species/teshari/alt/randomize_features(mob/living/carbon/human/human_mob)
 	. = ..()
