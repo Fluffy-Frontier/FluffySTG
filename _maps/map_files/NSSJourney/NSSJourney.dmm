@@ -19252,6 +19252,9 @@
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/access/any/science/general,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/iron/white,
 /area/station/science/research)
 "buI" = (
@@ -35284,18 +35287,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
-"dRP" = (
-/obj/machinery/door/poddoor/preopen{
-	id = "xenobiomain";
-	name = "Containment Blast Door"
-	},
-/obj/machinery/door/window{
-	dir = 4;
-	name = "Containment Cell";
-	req_access = list("xenobiology")
-	},
-/turf/open/floor/engine,
-/area/station/science/xenobiology)
 "dRT" = (
 /obj/structure/table,
 /obj/item/flashlight/lamp{
@@ -43699,6 +43690,18 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/office)
+"lpf" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "xenobiomain";
+	name = "Containment Blast Door"
+	},
+/obj/machinery/door/window{
+	dir = 4;
+	name = "Containment Cell";
+	req_access = list("xenobiology")
+	},
+/turf/open/floor/engine,
+/area/station/science/xenobiology)
 "lrg" = (
 /obj/effect/landmark/start/chemist,
 /turf/open/floor/iron/white,
@@ -103061,19 +103064,19 @@ bJN
 bJN
 bJN
 ylY
-dRP
+lpf
 dqk
 bJN
 ylY
-dRP
+lpf
 dqk
 bJN
 ylY
-dRP
+lpf
 dqk
 bJN
 ylY
-dRP
+lpf
 dqk
 bDb
 xzh
