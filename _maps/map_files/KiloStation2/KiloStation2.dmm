@@ -14164,6 +14164,11 @@
 	name = "upload camera";
 	network = list("aiupload")
 	},
+/obj/item/radio/intercom/directional/east{
+	broadcasting = 1;
+	frequency = 1447;
+	name = "Private Channel"
+	},
 /turf/open/floor/circuit/green{
 	luminosity = 2
 	},
@@ -67933,12 +67938,6 @@
 "vNE" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/item/radio/intercom/directional/north{
-	broadcasting = 1;
-	frequency = 1447;
-	name = "Private Channel";
-	pixel_x = -26
-	},
 /obj/structure/sign/departments/aiupload/directional/west,
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 8
