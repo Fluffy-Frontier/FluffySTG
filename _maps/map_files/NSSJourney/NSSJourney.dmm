@@ -11500,13 +11500,20 @@
 /area/station/service/bar)
 "aXj" = (
 /obj/structure/table/reinforced,
-/obj/item/lighter,
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
+	},
+/obj/item/reagent_containers/cup/glass/bottle/vodka/badminka{
+	pixel_x = 6;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/cup/glass/drinkingglass/shotglass{
+	pixel_y = 7;
+	pixel_x = -7
 	},
 /turf/open/floor/iron,
 /area/station/service/bar)
@@ -34340,7 +34347,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
 	dir = 10
 	},
-/obj/effect/landmark/start/depsec/medical,
+/obj/effect/landmark/start/orderly,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/medical)
 "cVV" = (
@@ -36183,6 +36190,15 @@
 /obj/structure/chair/stool/directional/south,
 /turf/open/floor/iron,
 /area/station/security/prison/visit)
+"eJI" = (
+/obj/effect/turf_decal/delivery,
+/obj/machinery/door/window{
+	dir = 8;
+	name = "Containment Cell";
+	req_access = list("xenobiology")
+	},
+/turf/open/floor/iron,
+/area/station/science/xenobiology)
 "eJR" = (
 /obj/structure/chair/pew/right{
 	dir = 1
@@ -40108,6 +40124,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
+/obj/effect/landmark/start/engineering_guard,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/engineering)
 "iiz" = (
@@ -44362,6 +44379,7 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/tile/neutral,
+/obj/effect/landmark/start/science_guard,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/science)
 "lOZ" = (
@@ -47062,15 +47080,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/security/checkpoint/customs)
-"oud" = (
-/obj/effect/turf_decal/delivery,
-/obj/machinery/door/window{
-	dir = 8;
-	name = "Containment Cell";
-	req_access = list("xenobiology")
-	},
-/turf/open/floor/iron,
-/area/station/science/xenobiology)
 "ouv" = (
 /obj/machinery/airalarm/directional/north,
 /obj/effect/turf_decal/tile/purple{
@@ -50212,6 +50221,11 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
+"rgF" = (
+/obj/structure/chair/stool/bar/directional/west,
+/obj/effect/landmark/start/bouncer,
+/turf/open/floor/wood,
+/area/station/service/bar)
 "rgU" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/supply/hidden,
 /turf/closed/wall/r_wall,
@@ -56882,10 +56896,10 @@
 /obj/structure/chair/office{
 	dir = 1
 	},
-/obj/effect/landmark/start/depsec/supply,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
 	dir = 10
 	},
+/obj/effect/landmark/start/customs_agent,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/supply)
 "xec" = (
@@ -94539,7 +94553,7 @@ aMC
 aNI
 aKR
 aKR
-lcd
+rgF
 acN
 lcd
 kmD
@@ -102807,19 +102821,19 @@ jRs
 txJ
 bJN
 wOk
-oud
+eJI
 kvB
 bJN
 wOk
-oud
+eJI
 kvB
 bJN
 wOk
-oud
+eJI
 kvB
 bJN
 wOk
-oud
+eJI
 kvB
 bDb
 xzh
