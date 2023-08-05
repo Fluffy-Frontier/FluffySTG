@@ -78,6 +78,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
 	},
+/obj/effect/mapping_helpers/requests_console/announcement,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/qm)
 "aaw" = (
@@ -5880,6 +5881,9 @@
 "aCQ" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
+/obj/effect/mapping_helpers/airlock/unres{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
 "aCT" = (
@@ -6933,6 +6937,7 @@
 	},
 /obj/effect/mapping_helpers/requests_console/supplies,
 /obj/machinery/light/small/directional/north,
+/obj/effect/mapping_helpers/requests_console/assistance,
 /turf/open/floor/iron/grimy,
 /area/station/service/chapel/office)
 "aGW" = (
@@ -14679,6 +14684,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/mapping_helpers/airlock/access/any/science/general,
 /obj/effect/landmark/navigate_destination,
+/obj/effect/mapping_helpers/airlock/unres,
 /turf/open/floor/iron/white,
 /area/station/science/research)
 "bhC" = (
@@ -15586,7 +15592,8 @@
 	pixel_x = -30
 	},
 /obj/effect/mapping_helpers/requests_console/ore_update,
-/obj/effect/mapping_helpers/requests_console/supplies,
+/obj/effect/mapping_helpers/requests_console/assistance,
+/obj/effect/mapping_helpers/requests_console/information,
 /turf/open/floor/iron,
 /area/station/science/lab)
 "bkt" = (
@@ -16123,6 +16130,7 @@
 	name = "Research Division Access"
 	},
 /obj/effect/mapping_helpers/airlock/access/any/science/general,
+/obj/effect/mapping_helpers/airlock/unres,
 /turf/open/floor/iron/white,
 /area/station/science/research)
 "blY" = (
@@ -18520,6 +18528,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/suit_storage_unit/medical,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/aft)
 "bsM" = (
@@ -26373,6 +26382,7 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/west,
+/obj/effect/mapping_helpers/requests_console/ore_update,
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
 "bWg" = (
@@ -26756,6 +26766,7 @@
 	},
 /obj/effect/mapping_helpers/airlock/access/any/engineering/general,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/airlock/access/any/engineering/construction,
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/break_room)
 "bXr" = (
@@ -34248,6 +34259,7 @@
 	dir = 1
 	},
 /obj/effect/mapping_helpers/requests_console/assistance,
+/obj/effect/mapping_helpers/requests_console/supplies,
 /turf/open/floor/iron/smooth_half,
 /area/station/engineering/main)
 "cTE" = (
@@ -40478,12 +40490,6 @@
 /obj/effect/landmark/start/hangover,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
-"iCA" = (
-/obj/effect/turf_decal/stripes/line,
-/obj/structure/cable,
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/iron,
-/area/station/security/office)
 "iCO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -40501,7 +40507,6 @@
 	},
 /obj/effect/mapping_helpers/requests_console/ore_update,
 /obj/effect/mapping_helpers/requests_console/supplies,
-/obj/effect/mapping_helpers/requests_console/assistance,
 /turf/open/floor/iron,
 /area/station/science/ordnance)
 "iEH" = (
@@ -44362,6 +44367,9 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/airlock/unres{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
 "lOw" = (
@@ -44514,6 +44522,7 @@
 /obj/machinery/door/airlock/maintenance{
 	name = "Medbay Maintenance"
 	},
+/obj/effect/mapping_helpers/airlock/access/any/medical/general,
 /turf/open/floor/plating,
 /area/station/medical/break_room)
 "lUZ" = (
@@ -48722,6 +48731,9 @@
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
+/obj/effect/mapping_helpers/airlock/unres{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
 "pUe" = (
@@ -49849,6 +49861,11 @@
 /area/station/science/xenobiology)
 "qTo" = (
 /obj/machinery/vending/hydroseeds,
+/obj/machinery/requests_console{
+	department = "Kitchen";
+	pixel_x = 30
+	},
+/obj/effect/mapping_helpers/requests_console/supplies,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/service/hydroponics)
 "qTC" = (
@@ -50099,9 +50116,11 @@
 /turf/open/floor/plating,
 /area/station/maintenance/port)
 "rcG" = (
-/obj/machinery/vending/boozeomat,
-/turf/open/floor/wood,
-/area/station/command/heads_quarters/captain)
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/cable,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/iron,
+/area/station/security/office)
 "rcU" = (
 /obj/structure/cable,
 /obj/machinery/button/flasher{
@@ -50751,6 +50770,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/station/commons/storage/emergency/port)
+"rHq" = (
+/obj/machinery/vending/boozeomat,
+/turf/open/floor/wood,
+/area/station/command/heads_quarters/captain)
 "rHB" = (
 /obj/effect/turf_decal/tile/brown{
 	dir = 4
@@ -53612,7 +53635,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/door/airlock{
 	id_tag = "Dorm5";
-	name = "Cabin 1"
+	name = "Dorm 5"
 	},
 /turf/open/floor/carpet,
 /area/station/commons/dorms)
@@ -56010,6 +56033,16 @@
 /obj/machinery/power/energy_accumulator/tesla_coil/anchored,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter)
+"woX" = (
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 4
+	},
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/recharge_station,
+/turf/open/floor/iron/white,
+/area/station/medical/medbay/aft)
 "wpa" = (
 /obj/effect/landmark/start/hangover,
 /turf/open/floor/iron,
@@ -90709,7 +90742,7 @@ aVv
 ayD
 jkG
 aZV
-rcG
+rHq
 bcn
 hec
 ben
@@ -91939,7 +91972,7 @@ aUl
 bUe
 xEJ
 xEJ
-iCA
+rcG
 adR
 vjN
 vjN
@@ -97666,7 +97699,7 @@ bsu
 fUn
 brT
 bvo
-bsK
+woX
 gZK
 aUK
 bsK
