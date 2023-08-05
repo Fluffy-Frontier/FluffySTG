@@ -1,5 +1,6 @@
 #define ECHOLOCATION_MAX_CREATURE 5
 #define ECHOLOCATION_BASE_COOLDWN_TIME 10 SECONDS
+#define ECHOLOCATION_PING_COOLDOWN 3 SECONDS
 #define ECHOLOCATION_RANGE 9
 
 /datum/action/cooldown/teshari/echolocation
@@ -9,6 +10,7 @@
 	cooldown_time = ECHOLOCATION_BASE_COOLDWN_TIME
 	var/active = FALSE
 	var/cycle_cooldown = ECHOLOCATION_BASE_COOLDWN_TIME
+	COOLDOWN_DECLARE(echolocation_ping_cooldown)
 
 /datum/action/cooldown/teshari/echolocation/New(Target, original)
 	. = ..()
@@ -74,6 +76,10 @@
 		deisable_echolocation()
 		return
 
+	if(!COOLDOWN_FINISHED(src, echolocation_ping_cooldown))
+		return
+	COOLDOWN_START(src, echolocation_ping_cooldown, ECHOLOCATION_PING_COOLDOWN)
+
 	var/founding_creature = 0
 	for(var/mob/living/creature in range(ECHOLOCATION_RANGE, owner))
 		if(creature == owner || creature.stat == DEAD)
@@ -110,3 +116,4 @@
 #undef ECHOLOCATION_MAX_CREATURE
 #undef ECHOLOCATION_BASE_COOLDWN_TIME
 #undef ECHOLOCATION_RANGE
+#undef ECHOLOCATION_PING_COOLDOWN

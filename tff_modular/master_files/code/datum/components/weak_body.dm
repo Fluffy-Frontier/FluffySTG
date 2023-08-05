@@ -134,6 +134,9 @@
 		if(state >= GRAB_AGGRESSIVE)
 			if(check_antagonists() || check_mod())
 				return
+			// Убираем замедление от пула.
+			if(user.has_movespeed_modifier(/datum/movespeed_modifier/teshari_pull))
+				user.remove_movespeed_modifier(/datum/movespeed_modifier/teshari_pull)
 			// Если мы антагонист, то мы можем превозмочь рассовые сложности.
 			var/mob/living/carbon/human/h = pulled
 			if(HAS_TRAIT(h, TRAIT_WEAK_BODY))
@@ -144,18 +147,14 @@
 
 /datum/component/weak_body/proc/stop_pull_act(mob/user, atom/movable/pulled)
 	SIGNAL_HANDLER
-
-	var/mob/living/carbon/human/victim = parent
-	if(ishuman(pulled))
-		victim.remove_movespeed_modifier(/datum/movespeed_modifier/teshari_pull)
+	if(user.has_movespeed_modifier(/datum/movespeed_modifier/teshari_pull))
+		user.remove_movespeed_modifier(/datum/movespeed_modifier/teshari_pull)
 
 
 /datum/component/weak_body/proc/upgrade_grab(mob/user, new_state)
 	SIGNAL_HANDLER
 	if(!user.pulling)
 		return
-	if(user.has_movespeed_modifier(/datum/movespeed_modifier/teshari_pull))
-		user.remove_movespeed_modifier(/datum/movespeed_modifier/teshari_pull)
 	addtimer(CALLBACK(src, PROC_REF(pull_act), user, user.pulling, new_state), 5)
 
 // ДЕБАФ НА ОРУЖИЕ ДАЛЬНЕГО БОЯ
