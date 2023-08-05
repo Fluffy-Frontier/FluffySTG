@@ -147,6 +147,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
 	},
+/obj/machinery/modular_computer/preset/id,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/qm)
 "abu" = (
@@ -629,9 +630,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/brown,
-/obj/machinery/modular_computer/preset/civilian{
-	dir = 8
-	},
 /obj/effect/turf_decal/tile/yellow,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/qm)
@@ -2818,6 +2816,7 @@
 /obj/machinery/status_display/supply{
 	pixel_y = -32
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating,
 /area/station/cargo/storage)
 "ask" = (
@@ -4661,7 +4660,7 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/airlock/access/any/engineering/construction,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/aux_base,
 /turf/open/floor/iron,
 /area/station/construction/mining/aux_base)
 "ays" = (
@@ -16275,6 +16274,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/mapping_helpers/airlock/access/any/command/hop,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/hop)
 "bmt" = (
@@ -20113,6 +20113,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/mapping_helpers/airlock/access/any/command/hop,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/hop)
 "bxL" = (
@@ -30413,8 +30414,8 @@
 	name = "Construction Zone";
 	space_dir = 8
 	},
-/obj/effect/mapping_helpers/airlock/access/any/engineering/construction,
 /obj/effect/landmark/navigate_destination,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/aux_base,
 /turf/open/floor/plating,
 /area/station/construction/mining/aux_base)
 "crz" = (
@@ -37674,7 +37675,7 @@
 "fXn" = (
 /obj/machinery/door/airlock{
 	id_tag = "Dorm6";
-	name = "Cabin 2"
+	name = "Dorm 6"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/wood,
@@ -40477,6 +40478,12 @@
 /obj/effect/landmark/start/hangover,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
+"iCA" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/cable,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/iron,
+/area/station/security/office)
 "iCO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -50092,12 +50099,9 @@
 /turf/open/floor/plating,
 /area/station/maintenance/port)
 "rcG" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/iron,
-/area/station/security/office)
+/obj/machinery/vending/boozeomat,
+/turf/open/floor/wood,
+/area/station/command/heads_quarters/captain)
 "rcU" = (
 /obj/structure/cable,
 /obj/machinery/button/flasher{
@@ -90705,7 +90709,7 @@ aVv
 ayD
 jkG
 aZV
-bbw
+rcG
 bcn
 hec
 ben
@@ -91161,7 +91165,7 @@ xzh
 xzh
 xzh
 adR
-tRz
+fpx
 xEJ
 xEJ
 lNV
@@ -91675,7 +91679,7 @@ xzh
 xzh
 xzh
 aUl
-fpx
+tRz
 xEJ
 xEJ
 qIc
@@ -91935,7 +91939,7 @@ aUl
 bUe
 xEJ
 xEJ
-qIc
+iCA
 adR
 vjN
 vjN
@@ -92446,7 +92450,7 @@ xzh
 xzh
 xzh
 adR
-tRz
+fpx
 ryQ
 xEJ
 qIc
@@ -92705,7 +92709,7 @@ xzh
 adR
 tRa
 fak
-rcG
+fak
 voA
 aUl
 xzh
