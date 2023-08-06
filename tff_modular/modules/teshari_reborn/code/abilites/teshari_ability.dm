@@ -8,7 +8,7 @@
 		return FALSE
 
 	var/mob/living/carbon/human/tesh = owner
-	if(!istesharialt(tesh) || isdead(tesh) || tesh.incapacitated(IGNORE_GRAB))
+	if(!istesharialt(tesh) || isdead(tesh))
 		return FALSE
 
 /datum/action/cooldown/teshari/proc/update_button_state(new_state)
