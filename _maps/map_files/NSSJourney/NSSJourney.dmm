@@ -9627,6 +9627,10 @@
 /obj/structure/closet/secure_closet/personal,
 /turf/open/floor/iron,
 /area/station/commons/locker)
+"aQX" = (
+/obj/machinery/photocopier,
+/turf/open/floor/iron/showroomfloor,
+/area/station/hallway/secondary/service)
 "aQY" = (
 /obj/structure/table,
 /obj/item/rcl/pre_loaded,
@@ -12029,10 +12033,6 @@
 	},
 /turf/open/floor/iron/cafeteria,
 /area/station/commons/locker)
-"aYI" = (
-/obj/machinery/photocopier,
-/turf/open/floor/iron/showroomfloor,
-/area/station/hallway/secondary/service)
 "aYJ" = (
 /obj/machinery/light_switch{
 	pixel_y = -25
@@ -18867,6 +18867,9 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
+/obj/machinery/computer/records/security{
+	dir = 4
+	},
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/hop)
 "btC" = (
@@ -19352,6 +19355,9 @@
 	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
+	},
+/obj/machinery/computer/accounting{
+	dir = 4
 	},
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/hop)
@@ -56503,6 +56509,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/structure/closet/wardrobe/pjs,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/hop)
 "wIi" = (
@@ -96987,7 +96994,7 @@ aro
 aro
 aro
 rQR
-aYI
+aQX
 qzO
 aGB
 pUe
