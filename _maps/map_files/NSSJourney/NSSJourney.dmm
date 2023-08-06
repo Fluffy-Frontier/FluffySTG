@@ -8598,6 +8598,10 @@
 	},
 /obj/machinery/light/directional/north,
 /obj/structure/table,
+/obj/machinery/fax{
+	fax_name = "Service Hallway";
+	name = "Service Fax Machine"
+	},
 /turf/open/floor/iron/smooth_large,
 /area/station/hallway/secondary/service)
 "aMO" = (
@@ -9617,10 +9621,9 @@
 /turf/open/floor/iron,
 /area/station/commons/locker)
 "aQX" = (
-/obj/effect/landmark/start/hangover,
-/obj/structure/chair/stool/bar/directional/east,
-/turf/open/floor/wood,
-/area/station/service/bar)
+/obj/machinery/photocopier,
+/turf/open/floor/iron/showroomfloor,
+/area/station/hallway/secondary/service)
 "aQY" = (
 /obj/structure/table,
 /obj/item/rcl/pre_loaded,
@@ -16499,15 +16502,11 @@
 /turf/open/floor/iron,
 /area/station/cargo/office)
 "bmQ" = (
-/obj/item/stamp{
-	pixel_x = -3;
-	pixel_y = 3
-	},
-/obj/item/stamp/denied{
-	pixel_x = 4;
-	pixel_y = -2
-	},
 /obj/structure/table,
+/obj/machinery/fax{
+	fax_name = "Cargo Office";
+	name = "Cargo Office Fax Machine"
+	},
 /turf/open/floor/iron,
 /area/station/cargo/office)
 "bmR" = (
@@ -16840,6 +16839,14 @@
 /obj/item/clipboard,
 /obj/item/pen/red,
 /obj/structure/table,
+/obj/item/stamp/denied{
+	pixel_x = 4;
+	pixel_y = -2
+	},
+/obj/item/stamp{
+	pixel_x = -3;
+	pixel_y = 3
+	},
 /turf/open/floor/iron,
 /area/station/cargo/office)
 "bnI" = (
@@ -24201,7 +24208,6 @@
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple/layer2{
 	dir = 8
 	},
-/obj/machinery/light/directional/south,
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance/freezerchamber)
 "bMu" = (
@@ -30074,6 +30080,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/purple/filled/corner,
+/obj/machinery/light/directional/south,
 /turf/open/floor/iron/white,
 /area/station/science/ordnance/freezerchamber)
 "cpR" = (
@@ -37990,6 +37997,11 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
+/obj/machinery/fax{
+	fax_name = "Psychology Office";
+	name = "Psychology Office Fax Machine"
+	},
+/obj/structure/table/wood,
 /turf/open/floor/iron/white,
 /area/station/medical/psychology)
 "gjc" = (
@@ -40457,6 +40469,11 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron/dark,
 /area/station/security/courtroom)
+"izg" = (
+/obj/effect/landmark/start/hangover,
+/obj/structure/chair/stool/bar/directional/east,
+/turf/open/floor/wood,
+/area/station/service/bar)
 "izp" = (
 /obj/machinery/navbeacon{
 	codes_txt = "patrol;next_patrol=QM";
@@ -46898,11 +46915,9 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/aft)
 "ohb" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
+/obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 4;
-	external_pressure_bound = 140;
-	name = "server vent";
-	pressure_checks = 0
+	name = "killroom vent"
 	},
 /turf/open/floor/circuit/telecomms,
 /area/station/science/xenobiology)
@@ -58248,9 +58263,8 @@
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/aft)
 "yck" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
-	external_pressure_bound = 120;
-	name = "server vent"
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	name = "killroom vent"
 	},
 /turf/open/floor/circuit/telecomms,
 /area/station/science/xenobiology)
@@ -94675,7 +94689,7 @@ aNI
 aKR
 aKR
 rgF
-aQX
+izg
 lcd
 kmD
 acN
@@ -96977,7 +96991,7 @@ aro
 aro
 aro
 rQR
-qzO
+aQX
 qzO
 aGB
 pUe
