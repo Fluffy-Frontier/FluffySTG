@@ -387,7 +387,6 @@
 "acN" = (
 /obj/effect/landmark/start/hangover,
 /obj/structure/chair/stool/bar/directional/east,
-/obj/structure/chair/stool/bar/directional/east,
 /turf/open/floor/wood,
 /area/station/service/bar)
 "acQ" = (
@@ -6735,6 +6734,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 4
 	},
+/obj/item/paper_bin{
+	pixel_y = 2
+	},
+/obj/item/pen,
 /turf/open/floor/mineral/titanium/blue,
 /area/station/commons/toilet)
 "aGn" = (
@@ -7253,6 +7256,10 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
 	dir = 4
+	},
+/obj/machinery/fax{
+	fax_name = "Crew Complaints";
+	name = "Crew Complaints Fax"
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/station/commons/toilet)
@@ -40469,11 +40476,6 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron/dark,
 /area/station/security/courtroom)
-"izg" = (
-/obj/effect/landmark/start/hangover,
-/obj/structure/chair/stool/bar/directional/east,
-/turf/open/floor/wood,
-/area/station/service/bar)
 "izp" = (
 /obj/machinery/navbeacon{
 	codes_txt = "patrol;next_patrol=QM";
@@ -45751,6 +45753,12 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/iron/white,
 /area/station/medical/break_room)
+"nde" = (
+/obj/effect/landmark/start/hangover,
+/obj/structure/chair/stool/bar/directional/east,
+/obj/structure/chair/stool/bar/directional/east,
+/turf/open/floor/wood,
+/area/station/service/bar)
 "ndr" = (
 /obj/structure/table,
 /obj/item/assembly/igniter{
@@ -94689,10 +94697,10 @@ aNI
 aKR
 aKR
 rgF
-izg
+acN
 lcd
 kmD
-acN
+nde
 aKR
 bae
 aJC
