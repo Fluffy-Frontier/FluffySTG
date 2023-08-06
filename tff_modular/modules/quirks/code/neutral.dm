@@ -1,6 +1,6 @@
 /datum/quirk/light_body
 	name = "Light body"
-	desc = "Your body light and small othet creature can scoop up your to their hands."
+	desc = "Your body is light and small. Other creatures can scoop you up to their hands."
 	icon = FA_ICON_HAND_HOLDING
 	value = 0
 	veteran_only = TRUE
