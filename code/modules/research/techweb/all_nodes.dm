@@ -307,6 +307,13 @@
 
 		//SKYRAT EDIT START - RESEARCH DESIGNS
 		"hospital_gown",
+		"synth_eyes",
+		"synth_tongue",
+		"synth_liver",
+		"synth_lungs",
+		"synth_stomach",
+		"synth_ears",
+		"synth_heart",
 		//SKYRAT EDIT END - RESEARCH DESIGNS
 	)
 
@@ -1342,6 +1349,7 @@
 	prereq_ids = list("biotech")
 	design_ids = list(
 		"dna_disk",
+		"dnainfuser",
 		"dnascanner",
 		"scan_console",
 		"self_actualization_device", // SKYRAT EDIT ADDITION: Added the Self-Actualization Device
