@@ -33,8 +33,8 @@
 /datum/component/human_holder/RegisterWithParent()
 	if(!parent)
 		return
-	RegisterSignal(parent, COMSIG_HUMAN_ENTER_STORAGE, PROC_REF(enter_storage), override = TRUE)
-	RegisterSignal(parent, COMSIG_HUMAN_EXIT_STORAGE, PROC_REF(exit_storage), override = TRUE)
+	RegisterSignal(parent, COMSIG_ATOM_ENTERED, PROC_REF(enter_storage), override = TRUE)
+	RegisterSignal(parent, COMSIG_ATOM_EXIT, PROC_REF(exit_storage), override = TRUE)
 	RegisterSignal(parent, COMSIG_CARBON_ATTEMPT_BREATHE, PROC_REF(handle_breathe), override = TRUE)
 
 /**
