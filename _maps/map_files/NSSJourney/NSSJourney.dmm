@@ -22037,6 +22037,9 @@
 /obj/structure/cable,
 /obj/effect/mapping_helpers/airlock/access/any/supply/maintenance,
 /obj/effect/landmark/navigate_destination,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/station/maintenance/disposal)
 "bEO" = (
@@ -37579,6 +37582,10 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/courtroom)
+"fQs" = (
+/obj/machinery/photocopier,
+/turf/open/floor/iron/smooth_large,
+/area/station/engineering/break_room)
 "fQA" = (
 /obj/structure/sink/directional/east,
 /obj/effect/turf_decal/trimline/green/filled/line{
@@ -43057,10 +43064,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/department/electrical)
-"kCo" = (
-/obj/machinery/photocopier,
-/turf/open/floor/iron/smooth_large,
-/area/station/engineering/break_room)
 "kCw" = (
 /obj/machinery/hydroponics/soil{
 	pixel_y = 8
@@ -89105,7 +89108,7 @@ kYH
 tRj
 bVp
 dZJ
-kCo
+fQs
 cfc
 cbp
 beV
