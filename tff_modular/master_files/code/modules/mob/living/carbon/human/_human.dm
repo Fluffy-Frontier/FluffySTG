@@ -11,7 +11,7 @@
 // Предпроверка оригинальнго прока /carbon/disarm(), если src, слаб телом, прирвыаем атаку. За исключением тех случаев, если это акт эмоции. Вызывается перед оригиналом.
 /mob/living/carbon/human/disarm(mob/living/carbon/target)
 	if((HAS_TRAIT(src, TRAIT_WEAK_BODY) && !HAS_TRAIT(target, TRAIT_WEAK_BODY)) && zone_selected != (BODY_ZONE_PRECISE_MOUTH || BODY_ZONE_PRECISE_GROIN))
-		target.visible_message(span_danger("[src.name] try shoves [target.name], but [target.p_they()] too heavy!"))
+		target.visible_message(span_danger("[src.name] tries shoving [target.name], but [target.p_they()] is too heavy!"))
 		do_attack_animation(target, ATTACK_EFFECT_DISARM)
 		playsound(target, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 		return
@@ -32,11 +32,11 @@
 					if(!HAS_TRAIT(mob, TRAIT_WEAK_BODY))
 						stop_pulling()
 						Knockdown(3 SECONDS)
-						to_chat(src, span_notice("You try throw [mob], but [mob.p_they()] too heavy!"))
+						to_chat(src, span_notice("You try throwing [mob], but [mob.p_they()] is too heavy!"))
 						return FALSE
 		//Проверяем, что мы бросаем двуручный предмет.
 		else if(held_item.w_class >= WEIGHT_CLASS_BULKY && istype(inactive, /obj/item/offhand) && !HAS_TRAIT(src, TRAIT_NEGATES_GRAVITY))
-			to_chat(src, span_notice("You try throw [held_item], but it too heavy!"))
+			to_chat(src, span_notice("You try throwing [held_item], but it is too heavy!"))
 			Knockdown(3 SECONDS)
 			dropItemToGround(held_item)
 			return FALSE
@@ -59,12 +59,12 @@
 	if(!can_enter_bag(bag, src))
 		return FALSE
 
-	visible_message(span_notice("[name], started getting into [bag.name]."), span_notice("You start getting into [bag.name]"))
+	visible_message(span_notice("[name], starts getting into [bag.name]."), span_notice("You start getting into [bag.name]"))
 	if(!do_after(src, 3 SECONDS, bag))
 		src.balloon_alert(src, "Stand still!")
 		return FALSE
 
-	visible_message(span_notice("[name], got into [bag.name]. "), span_notice("You got intro [bag.name]"))
+	visible_message(span_notice("[name], got into [bag.name]. "), span_notice("You got into [bag.name]"))
 	put_to_bag(bag)
 	return TRUE
 
@@ -72,12 +72,12 @@
 	if(!can_enter_bag(bag, shoving))
 		return FALSE
 
-	shoving.visible_message(span_notice("[shoving.name], started shoving [name], into [bag.name]."), span_notice("You start shoving [name] intro the [bag.name]"))
+	shoving.visible_message(span_notice("[shoving.name] starts shoving [name] into [bag.name]."), span_notice("You start shoving [name] into the [bag.name]"))
 	if(!do_after(shoving, 3 SECONDS, bag))
 		shoving.balloon_alert(shoving, "Stand still!")
 		return FALSE
 
-	shoving.visible_message(span_notice("[shoving.name], shov [name], into [bag.name]."), span_notice("You shov [name] intro the [bag.name]"))
+	shoving.visible_message(span_notice("[shoving.name] shoved [name] into [bag.name]."), span_notice("You shoved [name] into the [bag.name]"))
 	put_to_bag(bag)
 	return TRUE
 
@@ -89,7 +89,7 @@
 	if(istype(bag.atom_storage, /datum/storage/bag_of_holding))
 		for(var/obj/item/i in src.contents)
 			if((istype(i, /obj/item/storage/backpack/holding) && !drop_all_held_items()) || istype(back, /obj/item/storage/backpack/holding))
-				visible_message(span_danger("Reality, tearing [name] from the inside out. "), span_userdanger("Reality is ripping you from the inside out!"))
+				visible_message(span_danger("Reality tears [name] from the inside out. "), span_userdanger("Reality is ripping you apart from the inside out!"))
 				gib(FALSE, TRUE, TRUE)
 				return
 
@@ -100,12 +100,12 @@
 
 /mob/living/carbon/human/proc/can_enter_bag(obj/item/storage/backpack/bag, mob/viewer)
 	if(!HAS_TRAIT(src, TRAIT_CAN_ENTER_BAG))
-		viewer.balloon_alert(viewer, "To big!")
+		viewer.balloon_alert(viewer, "Too big!")
 		return FALSE
 
 	//Если у нас каким-то образом есть этот трейт.. вместь с возможность влазить в сумку -,-
 	if(HAS_TRAIT(src, TRAIT_OVERSIZED))
-		viewer.balloon_alert(viewer, "To big!")
+		viewer.balloon_alert(viewer, "Too big!")
 		return FALSE
 
 	//Если сумка и так у нас в руках.
@@ -116,18 +116,18 @@
 	if(!istype(bag, /obj/item/storage/backpack/holding))
 		//Есть ли что-нибудь на нашей спине.(рюкзаки/оружие/прочее)
 		if(back)
-			viewer.balloon_alert(viewer, "[back.name] on the way!")
+			viewer.balloon_alert(viewer, "[back.name] is on the way!")
 			return FALSE
 
 	if(bag.atom_storage)
 
 		//Рюкзаки, сатчелы и все, что меньше.
 		if(bag.atom_storage.max_total_storage < 20)
-			viewer.balloon_alert(viewer, "To small!")
+			viewer.balloon_alert(viewer, "Too small!")
 			return FALSE
 
 		if(bag.atom_storage.max_specific_storage < WEIGHT_CLASS_HUGE && !istype(bag, /obj/item/storage/backpack/duffelbag))
-			viewer.balloon_alert(viewer, "To small!")
+			viewer.balloon_alert(viewer, "Too small!")
 			return FALSE
 
 		var/obj/item/blank = new()

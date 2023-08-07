@@ -92,8 +92,8 @@
 	perk_descriptions += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 		SPECIES_PERK_ICON = "dna",
-		SPECIES_PERK_NAME = "Extrem weak body",
-		SPECIES_PERK_DESC = "Tesharies body is exteme weak. They took A LOOT OF DAMAGE from everything."
+		SPECIES_PERK_NAME = "Extremely weak body",
+		SPECIES_PERK_DESC = "Tesharies body is extemely weak. They take A LOT OF DAMAGE from everything."
 	))
 
 	perk_descriptions += list(list(
@@ -128,7 +128,7 @@
 		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 		SPECIES_PERK_ICON = "user-plus",
 		SPECIES_PERK_NAME = "Robust cold protect",
-		SPECIES_PERK_DESC = "Teshari is incredibly resistant to low temperatures."
+		SPECIES_PERK_DESC = "Teshari are incredibly resistant to low temperatures."
 	))
 
 	perk_descriptions += list(list(

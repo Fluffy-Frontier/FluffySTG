@@ -184,7 +184,7 @@
 
 	victim.Knockdown((weapon.weapon_weight * 2) SECONDS)
 	victim.Paralyze(weapon.weapon_weight SECONDS)
-	victim.visible_message(span_warning("[victim.name] shoot from [weapon.name], but the recoil was so strong it knocked [victim.p_they()] backwards!"), span_danger("The violent recoil sent you flying backwards!"))
+	victim.visible_message(span_warning("[victim.name] shoots from [weapon.name], but the recoil is so strong it knocks [victim.p_they()] backwards!"), span_danger("The violent recoil sends you flying backwards!"))
 	victim.throw_at(knockdown_target, knockdown_range, weapon.weapon_weight)
 
 /datum/component/weak_body/proc/after_gun_fired(obj/item/gun/weapon)
@@ -210,7 +210,7 @@
 	if(check_antagonists() || check_mod() || HAS_TRAIT(parent, TRAIT_NEGATES_GRAVITY))
 		return
 
-	victim.visible_message(span_danger("[victim.name] fall aftet attack [target], [weapon.name] too heavy for [victim.p_their()]"), span_danger("You attack [target], but [weapon.name] too heavy for you."))
+	victim.visible_message(span_danger("[victim.name] falls after attacking [target], [weapon.name] is too heavy for [victim.p_their()]"), span_danger("You attack [target], but [weapon.name] is too heavy for you."))
 	victim.Knockdown(3 SECONDS)
 	victim.Stun(2 SECONDS)
 
