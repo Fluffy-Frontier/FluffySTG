@@ -27247,6 +27247,12 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/obj/item/pen,
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/break_room)
 "bYP" = (
@@ -27331,6 +27337,11 @@
 "bZg" = (
 /obj/structure/disposalpipe/segment{
 	dir = 10
+	},
+/obj/structure/table,
+/obj/machinery/fax{
+	fax_name = "Engineering Lobby";
+	name = "Engineering Lobby Fax Machine"
 	},
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/break_room)
@@ -43046,6 +43057,10 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/department/electrical)
+"kCo" = (
+/obj/machinery/photocopier,
+/turf/open/floor/iron/smooth_large,
+/area/station/engineering/break_room)
 "kCw" = (
 /obj/machinery/hydroponics/soil{
 	pixel_y = 8
@@ -89090,7 +89105,7 @@ kYH
 tRj
 bVp
 dZJ
-bZy
+kCo
 cfc
 cbp
 beV
