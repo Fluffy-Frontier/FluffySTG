@@ -5569,6 +5569,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/mail_sorting/service/dormitories,
 /turf/open/floor/iron/dark/side,
 /area/station/commons/dorms)
 "aBD" = (
@@ -11458,6 +11459,9 @@
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/access/any/command/general,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/iron,
 /area/station/command/bridge)
 "aXd" = (
@@ -11495,6 +11499,9 @@
 	},
 /obj/effect/mapping_helpers/airlock/access/any/command/general,
 /obj/structure/cable,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/iron,
 /area/station/command/bridge)
 "aXf" = (
@@ -19738,6 +19745,9 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 6
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
 "bvQ" = (
@@ -19856,6 +19866,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
 "bwh" = (
@@ -27686,8 +27697,8 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 8
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 5
+/obj/structure/disposalpipe/junction{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
@@ -28316,6 +28327,9 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/obj/structure/disposalpipe/segment{
 	dir = 9
 	},
 /turf/open/floor/plating,
@@ -30031,7 +30045,6 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/service{
 	name = "Service Hall"
 	},
@@ -37582,10 +37595,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/courtroom)
-"fQs" = (
-/obj/machinery/photocopier,
-/turf/open/floor/iron/smooth_large,
-/area/station/engineering/break_room)
 "fQA" = (
 /obj/structure/sink/directional/east,
 /obj/effect/turf_decal/trimline/green/filled/line{
@@ -44537,9 +44546,9 @@
 /turf/open/floor/carpet,
 /area/station/security/detectives_office)
 "lRs" = (
-/obj/structure/disposalpipe/junction,
-/turf/open/floor/plating,
-/area/station/maintenance/aft)
+/obj/machinery/photocopier,
+/turf/open/floor/iron/smooth_large,
+/area/station/engineering/break_room)
 "lRV" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -56337,6 +56346,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
 "wzK" = (
@@ -89108,7 +89118,7 @@ kYH
 tRj
 bVp
 dZJ
-fQs
+lRs
 cfc
 cbp
 beV
@@ -97849,7 +97859,7 @@ cdJ
 bFr
 ccM
 ccM
-lRs
+ccM
 sAw
 ccM
 ccM
