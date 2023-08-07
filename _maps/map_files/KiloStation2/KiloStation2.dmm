@@ -5262,10 +5262,6 @@
 /turf/open/floor/wood,
 /area/command/heads_quarters/captain/private/nt_rep)
 "bPK" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/status_display/shuttle/directional/east{
-	shuttle_id = "arrivals_shuttle"
-	},
 /obj/machinery/status_display/shuttle/directional/east{
 	shuttle_id = "arrivals_shuttle"
 	},
@@ -5298,6 +5294,7 @@
 "bPZ" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning/docking,
 /turf/closed/wall,
 /area/station/hallway/secondary/entry)
 "bQb" = (
@@ -14163,6 +14160,11 @@
 	c_tag = "ai_upload Foyer";
 	name = "upload camera";
 	network = list("aiupload")
+	},
+/obj/item/radio/intercom/directional/east{
+	broadcasting = 1;
+	frequency = 1447;
+	name = "Private Channel"
 	},
 /turf/open/floor/circuit/green{
 	luminosity = 2
@@ -40002,13 +40004,7 @@
 /turf/open/floor/plating,
 /area/station/commons/vacant_room/commissary)
 "mPE" = (
-/obj/structure/sink/directional/west,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/camera/directional/east{
-	c_tag = "Xenobiology Computers";
-	name = "xenobiology camera";
-	network = list("ss13","rd","xeno")
-	},
 /obj/effect/turf_decal/tile/purple,
 /obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 4
@@ -66818,6 +66814,12 @@
 /obj/effect/turf_decal/siding/purple/corner{
 	dir = 4
 	},
+/obj/structure/sink/directional/west,
+/obj/machinery/camera/directional/east{
+	c_tag = "Xenobiology Computers";
+	name = "xenobiology camera";
+	network = list("ss13","rd","xeno")
+	},
 /turf/open/floor/iron/dark,
 /area/station/science/xenobiology)
 "vyD" = (
@@ -67285,17 +67287,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
-"vFc" = (
-/obj/structure/sign/warning/docking,
-/obj/machinery/door/airlock/external{
-	name = "Arrival Shuttle Airlock";
-	space_dir = 2
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
-/turf/open/floor/iron/dark,
-/area/station/hallway/secondary/entry)
 "vFk" = (
 /obj/machinery/ai_slipper{
 	uses = 10
@@ -67933,12 +67924,6 @@
 "vNE" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/item/radio/intercom/directional/north{
-	broadcasting = 1;
-	frequency = 1447;
-	name = "Private Channel";
-	pixel_x = -26
-	},
 /obj/structure/sign/departments/aiupload/directional/west,
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 8
@@ -117417,7 +117402,7 @@ oTy
 uct
 aQz
 oDp
-vFc
+gJj
 bUN
 bUN
 bUN
