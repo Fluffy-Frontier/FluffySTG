@@ -30,7 +30,7 @@
 	var/message = speech_args[SPEECH_MESSAGE]
 	var/static/regex/cat_rawrs = new(@"[рРrR]+", "g")
 	if(message[1] != "*")
-		message = cat_rawrs.Replace(message,  PROC_REF(pick_cat_rawr))
+		message = cat_rawrs.Replace(message,  GLOBAL_PROC_REF(pick_cat_rawr))
 	speech_args[SPEECH_MESSAGE] = message
 
 /datum/species/vulpkanin
@@ -48,6 +48,6 @@
 	var/message = speech_args[SPEECH_MESSAGE]
 	var/static/regex/dog_rawrs = new(@"[рРrR]+", "g")
 	if(message[1] != "*")
-		message = dog_rawrs.Replace(message,  PROC_REF(pick_dog_rawr))
+		message = dog_rawrs.Replace(message,  GLOBAL_PROC_REF(pick_dog_rawr))
 	speech_args[SPEECH_MESSAGE] = message
 
