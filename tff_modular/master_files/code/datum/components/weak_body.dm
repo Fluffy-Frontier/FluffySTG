@@ -136,7 +136,6 @@
 			// Убираем замедление от пула.
 			if(user.has_movespeed_modifier(/datum/movespeed_modifier/teshari_pull))
 				user.remove_movespeed_modifier(/datum/movespeed_modifier/teshari_pull)
-				addtimer(CALLBACK(src, PROC_REF(stop_pull_act)), 5)
 			// Если мы антагонист, то мы можем превозмочь рассовые сложности.
 			var/mob/living/carbon/human/h = pulled
 			if(HAS_TRAIT(h, TRAIT_WEAK_BODY))
@@ -152,7 +151,7 @@
 
 /datum/component/weak_body/proc/upgrade_grab(mob/user, new_state)
 	SIGNAL_HANDLER
-	if(!user.pulling)
+	if(!user.pulling || new_state == 0)
 		return
 	addtimer(CALLBACK(src, PROC_REF(pull_act), user, user.pulling, new_state), 5)
 
