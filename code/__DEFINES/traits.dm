@@ -1251,3 +1251,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 //FF add, for auto-accent
 #define TRAIT_NO_ACCENT "has_auto_accent"
+
+/// This atom can have spells cast from it if a mob is within it
+/// This means the "caster" of the spell is changed to the mob's loc
+/// Note this doesn't mean all spells are guaranteed to work or the mob is guaranteed to cast
+#define TRAIT_CASTABLE_LOC "castable_loc"
