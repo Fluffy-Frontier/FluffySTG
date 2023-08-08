@@ -10,8 +10,14 @@
 	. = ..()
 	create_storage(storage_type = /datum/storage/cqd_holster_storage)
 
+// Тут на всякий случай будет проверка на наличие хранилища у формы, чтобы не сломать ничего.
+/obj/item/clothing/accessory/cqd_holster/attach(obj/item/clothing/under/attach_to, mob/living/attacher)
+	if(attach_to.atom_storage)
+		return FALSE
+	. = ..()
+	
 // Тут желательно перехватывать ситуации разные.
-/obj/item/clothing/accessory/cqd_holster/on_uniform_equip(obj/item/clothing/under/U, user)
+/obj/item/clothing/accessory/cqd_holster/on_uniform_equipped(obj/item/clothing/under/U, user)
 	. = ..()
 	// Если всё нормально - то он будет использовать дефолтный спрайт.
 	worn_icon_state = null
@@ -26,4 +32,3 @@
 		held.forceMove(drop_loc)
 		to_chat(user, span_alert("You had dropped [held] while detaching [src]."))
 	return ..()
-	

@@ -30,19 +30,22 @@
 */
 
 /mob/living/carbon/human/proc/execute_cqd_holster_action()
-	if(!can_perform_action(src, NEED_DEXTERITY|NEED_HANDS))
+	if(!can_perform_action(src, NEED_DEXTERITY|NEED_HANDS|ALLOW_RESTING))
 		return
 	var/obj/item/clothing/under/u = get_item_by_slot(ITEM_SLOT_ICLOTHING)
 	if(!u)
 		return
-	var/obj/item/clothing/accessory/cqd_holster/holster = u.attached_accessory
+	var/obj/item/clothing/accessory/cqd_holster/holster
+	for(var/accessory in u.attached_accessories) 
+		if(istype(accessory, /obj/item/clothing/accessory/cqd_holster))
+			holster = accessory
+			break
 	if(!holster)
 		return
-	if(!istype(holster, /obj/item/clothing/accessory/cqd_holster))
-		return
-
 	var/obj/item/item_in_hand = get_active_held_item()
-	if(!item_in_hand)
+	if(item_in_hand)
+		holster.atom_storage.attempt_insert(item_in_hand, src)
+	else
 		if(length(holster.contents))
 			var/obj/item/I = holster.contents[1]
 			if(I.attack_hand(src))
@@ -50,7 +53,5 @@
 		else
 			to_chat(src, span_warning("You are not holding anything and the holster is empty!"))
 			return	
-	else
-		holster.atom_storage.attempt_insert(item_in_hand, src)
 		
 		
