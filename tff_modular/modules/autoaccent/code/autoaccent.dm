@@ -23,7 +23,7 @@
 	modifies_speech = TRUE
 	languages_native = list(/datum/language/nekomimetic, /datum/language/yangyu, /datum/language/primitive_catgirl) //IDK, Yangyu is native to Felinids? WHY?
 
-proc/pick_cat_rawr(match)
+/proc/pick_cat_rawr(match)
 	return match[1] + text_mult(lowertext(match[1]), rand(1, 3))
 
 /obj/item/organ/internal/tongue/cat/modify_speech(datum/source, list/speech_args)
@@ -40,7 +40,7 @@ proc/pick_cat_rawr(match)
 	modifies_speech = TRUE
 	languages_native = list(/datum/language/canilunzt)
 
-proc/pick_dog_rawr(match)
+/proc/pick_dog_rawr(match)
 	return match[1] + text_mult(lowertext(match[1]), rand(0, 2))
 
 // Almost same as /obj/item/organ/internal/tongue/cat/modify_speech. Maybe there is way to uniform replaces for any tongue with maps.
