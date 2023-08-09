@@ -1,3 +1,7 @@
+/*
+*  Сама кобура.
+*/
+
 /obj/item/clothing/accessory/cqd_holster
 	name = "CQD holster"
 	icon = 'tff_modular/modules/cqd_holsters/icons/cqd_holster.dmi'
@@ -16,13 +20,16 @@
 		return FALSE
 	. = ..()
 	
-// Тут желательно перехватывать ситуации разные.
+// Этот прок вызываеться при успешном надевании аксессуара, а также при надевании формы. Его я использую для перехвата разных ситуаций специфичных.
+// Например чтобы скрыть внешний спрайтик для набберов и тешари.
 /obj/item/clothing/accessory/cqd_holster/on_uniform_equipped(obj/item/clothing/under/U, user)
 	. = ..()
 	// Если всё нормально - то он будет использовать дефолтный спрайт.
 	worn_icon_state = null
 
 	if(isteshari(user))
+		worn_icon_state = "hidden"
+	if(isnabber(user))
 		worn_icon_state = "hidden"
 	
 /obj/item/clothing/accessory/cqd_holster/detach(obj/item/clothing/under/U, user)
@@ -32,3 +39,8 @@
 		held.forceMove(drop_loc)
 		to_chat(user, span_alert("You had dropped [held] while detaching [src]."))
 	return ..()
+
+/*
+*  Эстетичная кобура
+*/
+
