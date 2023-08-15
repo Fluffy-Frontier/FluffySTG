@@ -1742,8 +1742,8 @@
 /turf/open/floor/plating,
 /area/station/maintenance/port/greater)
 "aAU" = (
-/obj/structure/grille,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/structure/crate,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
 "aBi" = (
@@ -12644,7 +12644,6 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/obj/effect/turf_decal/stripes/red/box,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
 "eiW" = (
@@ -14223,7 +14222,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/machinery/airalarm/directional/east,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
@@ -22114,6 +22112,9 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/mapping_helpers/airlock/access/all/engineering/general,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
 /turf/open/floor/iron/dark,
 /area/station/maintenance/starboard/aft)
 "hjk" = (
@@ -31726,10 +31727,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
-/obj/item/folder/biscuit/confidential/delam{
-	pixel_x = 8
-	},
-/obj/effect/turf_decal/stripes/red/box,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/iron/dark,
 /area/station/engineering/storage_shared)
 "kgD" = (
@@ -34194,6 +34192,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/carpet/royalblue,
 /area/station/service/chapel/office)
+"kXG" = (
+/obj/machinery/button/delam_scram,
+/turf/closed/wall/r_wall/rust,
+/area/station/maintenance/starboard/aft)
 "kXJ" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "xeno1";
@@ -43861,8 +43863,9 @@
 /turf/open/floor/iron/dark,
 /area/station/hallway/primary/fore)
 "oid" = (
-/obj/machinery/button/delam_scram,
-/turf/closed/wall/r_wall/rust,
+/obj/effect/spawner/structure/window/reinforced/plasma,
+/obj/item/folder/biscuit/confidential/delam,
+/turf/open/floor/plating,
 /area/station/engineering/supermatter/room)
 "oig" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -52496,6 +52499,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
+"rap" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/closed/wall/r_wall,
+/area/station/maintenance/starboard/aft)
 "raM" = (
 /obj/machinery/light/directional/west,
 /obj/machinery/status_display/ai/directional/west,
@@ -54757,6 +54765,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
 "rKI" = (
@@ -72580,6 +72589,11 @@
 	},
 /turf/open/floor/plating,
 /area/station/security/prison)
+"xkC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/closed/wall/r_wall,
+/area/station/maintenance/starboard/aft)
 "xkP" = (
 /obj/structure/table/wood,
 /obj/item/storage/photo_album{
@@ -73557,7 +73571,13 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/spawner/random/structure/crate,
+/obj/machinery/door/airlock/maintenance{
+	name = "Supermatter Maintenance"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/engineering/general,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
 "xBI" = (
@@ -111258,7 +111278,7 @@ whP
 jWL
 bFv
 kgB
-oid
+twN
 eiJ
 fKD
 cYc
@@ -112543,7 +112563,7 @@ doU
 kaM
 mPS
 bjb
-rea
+oid
 mSC
 naQ
 ksp
@@ -113056,7 +113076,7 @@ qZX
 qZX
 qZX
 hjj
-jjs
+kXG
 qZX
 rKn
 lyu
@@ -113311,7 +113331,7 @@ rbp
 nan
 cuV
 vLG
-cuV
+qZX
 sOJ
 aov
 qZX
@@ -113568,9 +113588,9 @@ cuV
 cuV
 cuV
 aAU
-oQk
+rap
 xBz
-gDM
+xkC
 qZX
 pKR
 fyj
