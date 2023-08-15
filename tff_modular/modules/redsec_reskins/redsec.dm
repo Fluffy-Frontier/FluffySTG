@@ -67,21 +67,34 @@
 		),
 	)
 
-/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
-	uses_advanced_reskins = TRUE
-	unique_reskin = list(
-		"Blue Eyepatch" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/glasses.dmi',
-			RESKIN_ICON_STATE = "security_eyepatch",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/eyes.dmi',
-			RESKIN_WORN_ICON_STATE = "security_eyepatch"
-		),
+/obj/item/clothing/glasses/hud/eyepatch/sec/Initialize(mapload)
+	. = ..()
+	unique_reskin += list(
 		"Red Eyepatch" = list(
 			RESKIN_ICON = 'icons/obj/clothing/glasses.dmi',
 			RESKIN_ICON_STATE = "hudpatch",
 			RESKIN_WORN_ICON = 'icons/mob/clothing/eyes.dmi',
 			RESKIN_WORN_ICON_STATE = "hudpatch"
 		),
+	)
+
+/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
+	uses_advanced_reskins = TRUE
+	unique_reskin = list(
+		"Eyepatch" = list(
+			RESKIN_ICON_STATE = "hudpatch",
+			RESKIN_WORN_ICON_STATE = "hudpatch"
+		),
+		"Blue Eyepatch" = list(
+			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/glasses.dmi',
+			RESKIN_ICON_STATE = "security_eyepatch",
+			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/eyes.dmi',
+			RESKIN_WORN_ICON_STATE = "security_eyepatch"
+		),
+		"Fake Blindfold" = list(
+			RESKIN_ICON_STATE = "secfold",
+			RESKIN_WORN_ICON_STATE = "secfold"
+		)
 	)
 
 /obj/item/clothing/glasses/hud/security/sunglasses/gars
@@ -151,6 +164,18 @@
 			RESKIN_ICON_STATE = "rsecurity",
 			RESKIN_WORN_ICON = 'icons/mob/clothing/under/security.dmi',
 			RESKIN_WORN_ICON_STATE = "rsecurity"
+		),
+	)
+
+/obj/item/clothing/under/rank/security/officer/skirt/Initialize(mapload)
+	. = ..()
+	uses_advanced_reskins = TRUE//только ради этого, оно в инишилайз уходит
+	unique_reskin = list(
+		"Blue Skirt" = list(
+			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/under/security.dmi',
+			RESKIN_ICON_STATE = "security_skirt",
+			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/under/security.dmi',
+			RESKIN_WORN_ICON_STATE = "security_skirt"
 		),
 		"Red Skirt" = list(
 			RESKIN_ICON = 'icons/obj/clothing/under/security.dmi',
@@ -237,9 +262,9 @@
 		),
 		"Blue Variant" = list(
 			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/backpacks.dmi',
-			RESKIN_ICON_STATE = "satchel_security",
+			RESKIN_ICON_STATE = "satchel_security_black",
 			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/back.dmi',
-			RESKIN_WORN_ICON_STATE = "satchel_security"
+			RESKIN_WORN_ICON_STATE = "satchel_security_black"
 		),
 	)
 
