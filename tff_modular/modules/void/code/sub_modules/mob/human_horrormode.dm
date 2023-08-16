@@ -18,7 +18,6 @@
 /mob/living/carbon/human/proc/handle_horror()
 	if(!horror_effect_on || horror_state <= HUMAN_HORROR_STATE_NORMAL)
 		return
-	if(prob(20))
 	var/obj/item/organ/internal/heart/our_heart = get_organ_slot(ORGAN_SLOT_HEART)
 
 	switch(horror_state)

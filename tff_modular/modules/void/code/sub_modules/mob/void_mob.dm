@@ -1,5 +1,4 @@
 #define VOID_LIGHT_BLINK_COOLDOWN 3 SECONDS
-#define VOID_ANOMALY_NEUTRALIZER_STUN_COOLDOWN 60 SECONDS
 
 /mob/living/simple_animal/hostile/void_creture
 	name = "\improper Unknown"
@@ -74,12 +73,32 @@
 				if(f.on)
 					f.make_flick()
 
+			else if(istype(AO, /obj/item/modular_computer))
+				var/obj/item/modular_computer/c = AO
+				c.make_flick()
+
+			//Самая сложная часть.. Вызывает эффекты у карбонов и их контента.
 			else if(istype(AO,	/mob/living/carbon))
-				var/mob/living/carbon/c = AO
-				for(var/atom/thing in c.contents)
+				var/mob/living/carbon/C = AO
+				//Вызываем эффект моргания у фонарика МОДа.
+				if(istype(C.back, /obj/item/mod/control))
+					var/obj/item/mod/control/mc = C.back
+					if(mc.active)
+						for(var/m in mc.modules)
+							if(istype(m, /obj/item/mod/module/flashlight))
+								var/obj/item/mod/module/flashlight/mf = m
+								mf.make_flick()
+
+				for(var/atom/thing in C.contents)
+					//Вызываем эффект моргания у ручного фонарика, если он есть.
 					if(istype(thing, /obj/item/flashlight))
 						var/obj/item/flashlight/f = thing
 						f.make_flick()
+						continue
+					//Вызываем эффект моргания у любых модульных устройств.
+					if(istype(thing, /obj/item/modular_computer))
+						var/obj/item/modular_computer/mc = thing
+						mc.make_flick()
 						continue
 					thing.set_light_on(FALSE)
 
