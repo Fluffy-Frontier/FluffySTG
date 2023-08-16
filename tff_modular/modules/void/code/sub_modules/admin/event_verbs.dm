@@ -8,7 +8,7 @@
 		return
 
 	var/check = tgalert(usr, "Are you sure want release this?", "Void creature escape", "Yes", "Channel")
-	if(check == Cannel || !check)
+	if(check == "Channel" || !check)
 		return
 	message_admins("[usr] spanws void creaute at[ADMIN_JMP(usr.loc)]!")
 	var/mob/living/simple_animal/hostile/void_creture/v = new(usr.loc)
@@ -23,7 +23,7 @@
 		return
 
 	var/check = tgalert(usr, "Are you sure want spawn this?", "Void infection spawn", "Yes", "Channel")
-	if(check == Cannel || !check)
+	if(check == "Channel" || !check)
 		return
 
 	for(var/atom/AO in range(7, usr.loc))
