@@ -6,9 +6,9 @@
 	button_icon_state = "lightning"
 
 /datum/action/cooldown/void_ability/toggle_light/Activate(atom/target)
-	if(!istype(owner, /mob/living/simple_animal/hostile/void_creture))
+	if(!istype(owner, /mob/living/basic/void_creture))
 		return
-	var/mob/living/simple_animal/hostile/void_creture/toggle_target = owner
+	var/mob/living/basic/void_creture/toggle_target = owner
 	toggle_target.force_lighthing_blink = !toggle_target.force_lighthing_blink
 	toggle_target.balloon_alert(toggle_target, "Ligght blink toggled!")
 
@@ -21,9 +21,9 @@
 	button_icon_state = "gaseous"
 
 /datum/action/cooldown/void_ability/toggle_nightvision/Activate(atom/target)
-	if(!istype(owner, /mob/living/simple_animal/hostile/void_creture))
+	if(!istype(owner, /mob/living/basic/void_creture))
 		return
-	var/mob/living/simple_animal/hostile/void_creture/toggle_target = owner
+	var/mob/living/basic/void_creture/toggle_target = owner
 
 	if(toggle_target.lighting_cutoff == LIGHTING_CUTOFF_HIGH)
 		toggle_target.lighting_cutoff = LIGHTING_CUTOFF_FULLBRIGHT

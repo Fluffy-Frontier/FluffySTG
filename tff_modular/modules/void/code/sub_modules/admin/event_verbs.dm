@@ -71,8 +71,7 @@
 	if(check == "No" || !check)
 		return
 	message_admins("[key_name(usr)] spanws void creaute at[ADMIN_JMP(usr.loc)]!")
-	var/mob/living/simple_animal/hostile/void_creture/v = new(usr.loc, TRUE)
-	v.toggle_ai(AI_OFF)
+	var/mob/living/basic/void_creture/v = new(usr.loc, TRUE)
 	GLOB.void_creature = v
 
 /client/proc/jump_to_void()

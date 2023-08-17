@@ -1,7 +1,7 @@
 #define VOID_LIGHT_BLINK_COOLDOWN 3 SECONDS
 #define VOID_ATTACK_COOLDOWN 2 SECONDS
 
-/mob/living/simple_animal/hostile/void_creture
+/mob/living/basic/void_creture
 	name = "\improper Unknown"
 	desc = "JUST RUN!"
 	gender = NEUTER
@@ -15,7 +15,7 @@
 	attack_verb_continuous = "blusts"
 	attack_verb_simple = "corrupt"
 	attack_sound = 'tff_modular/modules/void/sounds/stab.ogg'
-	attack_vis_effect = ATTACK_EFFECT_SMASH
+	attack_vis_effect = ATTACK_EFFECT_SLASH
 	icon = 'tff_modular/modules/void/icons/void_mob.dmi'
 	icon_state = "void_creature"
 	icon_living = "void_creature"
@@ -32,9 +32,13 @@
 	maptext_width = 48
 	mouse_opacity = MOUSE_OPACITY_ICON
 	death_message = "Oh.. siriosly? You kill that.. soo you need just know.. teshari the best.. ye-a... how did you do it?"
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_plas" = 0, "max_plas" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = -INFINITY
-	maxbodytemp = INFINITY
+	unsuitable_atmos_damage = 0
+	basic_mob_flags = IMMUNE_TO_FISTS
+	minimum_survivable_temperature = -INFINITY
+	maximum_survivable_temperature = INFINITY
+	move_force = MOVE_FORCE_VERY_STRONG
+	move_resist = MOVE_FORCE_VERY_STRONG
+	pull_force = MOVE_FORCE_VERY_STRONG
 	pressure_resistance = INFINITY
 	lighting_cutoff = LIGHTING_CUTOFF_HIGH
 	zone_selected = BODY_ZONE_CHEST
@@ -56,13 +60,12 @@
 	COOLDOWN_DECLARE(void_attack_cooldown)
 	COOLDOWN_DECLARE(light_blink)
 
-/mob/living/simple_animal/hostile/void_creture/Initialize(mapload, true_spawn = FALSE)
+/mob/living/basic/void_creture/Initialize(mapload, true_spawn = FALSE)
 	. = ..()
 	if(!true_spawn)
 		force_lighthing_blink = FALSE
 		force_horror = FALSE
 		void_steps = FALSE
-		QDEL_IN(src, 50)
 
 	void_scream = new()
 	light_blinking = new()
@@ -77,7 +80,7 @@
 	COOLDOWN_START(src, void_attack_cooldown, VOID_ATTACK_COOLDOWN)
 	COOLDOWN_START(src, light_blink, VOID_LIGHT_BLINK_COOLDOWN)
 
-/mob/living/simple_animal/hostile/void_creture/Destroy()
+/mob/living/basic/void_creture/void_creture/Destroy()
 	. = ..()
 	void_scream.Destroy()
 	light_blinking.Destroy()
@@ -87,7 +90,7 @@
 	if(GLOB.void_creature == src)
 		GLOB.void_creature = null
 
-/mob/living/simple_animal/hostile/void_creture/Life(seconds_per_tick, times_fired)
+/mob/living/basic/void_creture/Life(seconds_per_tick, times_fired)
 	. = ..()
 	if(isdead(src))
 		return
@@ -156,10 +159,10 @@
 			h.add_screeen_temporary_effect(/atom/movable/screen/fullscreen/void_brightless)
 			h.light_out()
 
-/mob/living/simple_animal/hostile/void_creture/AttackingTarget(atom/attacked_target)
+/mob/living/basic/void_creture/melee_attack(atom/target, list/modifiers)
 	if(!combat_mode)
-		if(istype(attacked_target, /obj/machinery/door/airlock))
-			var/obj/machinery/door/airlock/a = attacked_target
+		if(istype(target, /obj/machinery/door/airlock))
+			var/obj/machinery/door/airlock/a = target
 			playsound(a, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
 
 			if(a.locked)
@@ -184,8 +187,8 @@
 			balloon_alert(src, "Succesfull!")
 			return FALSE
 
-	if(istype(attacked_target, /turf/closed/wall))
-		var/turf/closed/wall/w = attacked_target
+	if(istype(target, /turf/closed/wall))
+		var/turf/closed/wall/w = target
 		w.visible_message(span_black("[src.name], Beggin corrupt [w.name] with void!"))
 		playsound(w, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
 
@@ -199,13 +202,13 @@
 		w.atom_destruction()
 		return FALSE
 
-	if(ismob(attacked_target))
+	if(ismob(target))
 		if(!COOLDOWN_FINISHED(src, void_attack_cooldown))
 			balloon_alert(src, "Cooldown!")
 			return FALSE
-		var/mob/t =	attacked_target
-		if(ishuman(attacked_target))
-			var/mob/living/carbon/human/H = attacked_target
+		var/mob/t =	target
+		if(ishuman(target))
+			var/mob/living/carbon/human/H = target
 			var/obj/item/bodypart/chest/C = H.get_bodypart(BODY_ZONE_CHEST)
 			var/datum/wound/inner_void/infected/void_infection
 			if(!(H.all_wounds & void_infection))
@@ -213,27 +216,27 @@
 				void_infection.apply_wound(C)
 				to_chat(t, span_black("VOID CORRUPT YOU..."))
 		COOLDOWN_START(src, void_attack_cooldown, VOID_ATTACK_COOLDOWN)
-		return ..(attacked_target)
-	return ..(attacked_target)
+		return ..(target, modifiers)
+	return ..(target, modifiers)
 
 //Наносим урон тем, кто нас ударит... Пустота делает больно!
-/mob/living/simple_animal/hostile/void_creture/attack_hand(mob/living/carbon/human/user, list/modifiers)
+/mob/living/basic/void_creture/attack_hand(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
 	to_chat(user, span_black("Void.. corrupt you..."))
 	user.apply_damage(25, BRUTE)
 
-/mob/living/simple_animal/hostile/void_creture/say(message, bubble_type, list/spans, sanitize, datum/language/language, ignore_spam, forced, filterproof, message_range, datum/saymode/saymode)
+/mob/living/basic/void_creture/say(message, bubble_type, list/spans, sanitize, datum/language/language, ignore_spam, forced, filterproof, message_range, datum/saymode/saymode)
 	return FALSE
 
-/mob/living/simple_animal/hostile/void_creture/gib()
+/mob/living/basic/void_creture/gib()
 	return FALSE
 
-/mob/living/simple_animal/hostile/void_creture/Move(atom/newloc, dir, step_x, step_y)
+/mob/living/basic/void_creture/Move(atom/newloc, dir, step_x, step_y)
 	. = ..()
 	if(void_steps && steps_with_no_void >= 2)
 		steps_with_no_void = 0
 		addtimer(CALLBACK(src, PROC_REF(make_void_step)), 5)
 	steps_with_no_void++
 
-/mob/living/simple_animal/hostile/void_creture/proc/make_void_step()
+/mob/living/basic/void_creture/proc/make_void_step()
 	new /obj/effect/temp_visual/void_step(loc, src)

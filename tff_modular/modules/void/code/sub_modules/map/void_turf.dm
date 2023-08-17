@@ -41,7 +41,7 @@
 
 
 /turf/open/void_turf/proc/convert_to_void(atom/target)
-	if(istype(target, /mob/living/simple_animal/hostile/void_creture) || istype(target, /obj/structure/void_puddle))
+	if(istype(target, /mob/living/basic/void_creture) || istype(target, /obj/structure/void_puddle))
 		return
 	target.visible_message(span_black("[target.name] WAS CONSUMED BY VOID!"))
 
