@@ -3,6 +3,7 @@
 	icon_state = "void"
 	blend_mode = BLEND_OVERLAY
 	show_when_dead = TRUE
+	alpha = 220
 	var/target_alpha = 120
 	var/alpha_speed = 1 SECONDS
 

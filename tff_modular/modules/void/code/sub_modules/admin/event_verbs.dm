@@ -5,8 +5,8 @@
 	if(!check_rights(R_FUN))
 		return
 
-	var/check = tgui_alert(usr, "Are you sure want do it?", "Horror crew", list("Yes", "Cancel"))
-	if(check == "Cancel" || !check)
+	var/check = tgui_alert(usr, "Are you sure want do it?", "Horror crew", list("Yes", "No"))
+	if(check == "No" || !check)
 		return
 	var/horror_radius = tgui_input_list(usr, "Chose a raius:", "Horror crew", list("Everyone", "In Z level", "In view", "In range"))
 	var/new_value = tgui_input_number(usr, "Input value:", "Horror value", 0, 5, 0)
@@ -42,7 +42,7 @@
 
 	if(!check_rights(R_FUN))
 		return
-	
+
 	GLOB.world_horror_mode = TRUE
 	SEND_GLOBAL_SIGNAL(COMSIG_WORLD_HORROR_MODE_ENABLED)
 	message_admins("[key_name(usr)] enabled horror mode!")
@@ -53,7 +53,7 @@
 
 	if(!check_rights(R_FUN))
 		return
-	
+
 	GLOB.world_horror_mode = FALSE
 	SEND_GLOBAL_SIGNAL(COMSIG_WORLD_HORROR_MODE_DISABLED)
 	message_admins("[key_name(usr)] disabled horror mode!")
@@ -67,8 +67,8 @@
 	if(GLOB.void_creature)
 		to_chat(usr, span_warning("There a one void creature already exist. Can not be twice."))
 		return
-	var/check = tgui_alert(usr, "Are you sure want do it?", "Summon void creature", list("Yes", "Cancel"))
-	if(check == "Cancel" || !check)
+	var/check = tgui_alert(usr, "Are you sure want do it?", "Summon void creature", list("Yes", "No"))
+	if(check == "No" || !check)
 		return
 	message_admins("[key_name(usr)] spanws void creaute at[ADMIN_JMP(usr.loc)]!")
 	var/mob/living/simple_animal/hostile/void_creture/v = new(usr.loc, TRUE)
@@ -96,8 +96,8 @@
 	if(!GLOB.void_creature)
 		to_chat(usr, span_warning("There a not active void creatures. Create one."))
 		return
-	var/check = tgui_alert(usr, "Are you sure want do it?", "Get void creature", list("Yes", "Cancel"))
-	if(check == "Cancel" || !check)
+	var/check = tgui_alert(usr, "Are you sure want do it?", "Get void creature", list("Yes", "No"))
+	if(check == "No" || !check)
 		return
 
 	do_teleport(GLOB.void_creature, usr, no_effects=TRUE, channel= TELEPORT_CHANNEL_FREE)
@@ -109,8 +109,8 @@
 	if(!check_rights(R_FUN))
 		return
 
-	var/check = tgui_alert(usr, "Are you sure want do it?", "Spread void infection", list("Yes", "Cancel"))
-	if(check == "Cancel" || !check)
+	var/check = tgui_alert(usr, "Are you sure want do it?", "Spread void infection", list("Yes", "No"))
+	if(check == "No" || !check)
 		return
 
 	var/ask_light = tgui_alert(usr, "Break the light in close area?", "Break light", list("Yes", "No"))

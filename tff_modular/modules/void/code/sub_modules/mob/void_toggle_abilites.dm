@@ -34,5 +34,5 @@
 	else if(toggle_target.lighting_cutoff == LIGHTING_CUTOFF_MEDIUM)
 		toggle_target.lighting_cutoff = LIGHTING_CUTOFF_HIGH
 
-	toggle_target.balloon_alert(toggle_target, "Nightvusion set to [toggle_target.lighting_cutoff]%!")
+	toggle_target.balloon_alert(toggle_target, "Nightvision set to [toggle_target.lighting_cutoff]%!")
 	toggle_target.update_sight()

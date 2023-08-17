@@ -51,9 +51,10 @@
 		new /obj/structure/void_puddle(L.loc, TRUE)
 
 		L.death(TRUE)
-		L.client.admin_follow(get_turf(L))
-		L.client = null
-
+		if(L.client)
+			L.client.admin_follow(get_turf(L))
+			L.client = null
+			L.ckey = null
 		QDEL_IN(L, 5)
 		return
 

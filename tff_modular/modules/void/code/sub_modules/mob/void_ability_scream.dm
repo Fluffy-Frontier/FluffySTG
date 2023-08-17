@@ -24,8 +24,7 @@
 		scream_target.add_screeen_temporary_effect(/atom/movable/screen/fullscreen/void_brightless/highter, 30 SECONDS, TRUE)
 		scream_target.playsound_local(get_turf(scream_target), screamsound, 90, 0, channel = CHANNEL_BOSS_MUSIC, use_reverb = FALSE)
 		shake_camera(scream_target, 3 SECONDS, 5)
-		to_chat(scream_target, span_narsie("RUN!")) //Лучше бы тебе бежать сынок!
-		scream_target.Stun(1 SECONDS)
+		to_chat(scream_target, span_danger("You hear eerie scream! Run for your life!")) //Лучше бы тебе бежать сынок!
 		scream_target.apply_status_effect(/datum/status_effect/regenerative_core)
 
 	void_mob.apply_status_effect(/datum/status_effect/void_run)

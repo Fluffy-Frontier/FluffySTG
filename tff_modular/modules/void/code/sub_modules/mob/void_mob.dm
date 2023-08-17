@@ -37,6 +37,7 @@
 	maxbodytemp = INFINITY
 	pressure_resistance = INFINITY
 	lighting_cutoff = LIGHTING_CUTOFF_HIGH
+	zone_selected = BODY_ZONE_CHEST
 
 	//Должны ли мы тушить источники света вокруг нас!
 	var/force_lighthing_blink = TRUE
@@ -70,6 +71,9 @@
 	void_scream.Grant(src)
 	light_blinking.Grant(src)
 
+	COOLDOWN_START(src, void_attack_cooldown, VOID_ATTACK_COOLDOWN)
+	COOLDOWN_START(src, light_blink, VOID_LIGHT_BLINK_COOLDOWN)
+
 /mob/living/simple_animal/hostile/void_creture/Destroy()
 	. = ..()
 	void_scream.Destroy()
@@ -85,10 +89,7 @@
 	if(isdead(src))
 		return
 
-	if(force_lighthing_blink)
-		if(!COOLDOWN_FINISHED(src, light_blink))
-			return
-
+	if(force_lighthing_blink && COOLDOWN_FINISHED(src, light_blink))
 		//В начале ищем окрудающие источники света и зставляем их тухнут/моргать.
 		for(var/atom/AO in range(9, src))
 			if(isturf(AO) || istype(AO, /obj/effect))
@@ -150,6 +151,7 @@
 				continue
 			h.set_horror_state(HUMAN_HORROR_STATE_PANIC, time = 5 SECONDS)
 			h.add_screeen_temporary_effect(/atom/movable/screen/fullscreen/void_brightless)
+			h.light_out()
 
 /mob/living/simple_animal/hostile/void_creture/AttackingTarget(atom/attacked_target)
 	if(!combat_mode)
@@ -206,9 +208,10 @@
 			if(!(H.all_wounds & void_infection))
 				void_infection = new()
 				void_infection.apply_wound(C)
-				to_chat(t, span_black("Void.. corrupt you..."))
-	. = ..()
-	COOLDOWN_START(src, void_attack_cooldown, VOID_ATTACK_COOLDOWN)
+				to_chat(t, span_black("VOID CORRUPT YOU..."))
+		COOLDOWN_START(src, void_attack_cooldown, VOID_ATTACK_COOLDOWN)
+		return ..(attacked_target)
+	return ..(attacked_target)
 
 //Наносим урон тем, кто нас ударит... Пустота делает больно!
 /mob/living/simple_animal/hostile/void_creture/attack_hand(mob/living/carbon/human/user, list/modifiers)
@@ -221,7 +224,7 @@
 
 /mob/living/simple_animal/hostile/void_creture/gib()
 	return FALSE
-	
+
 /mob/living/simple_animal/hostile/void_creture/Move(atom/newloc, dir, step_x, step_y)
 	. = ..()
 	if(void_steps && steps_with_no_void >= 2)
