@@ -58,7 +58,7 @@
 	if(isliving(target) || issilicon(target))
 		var/mob/living/L = target
 		to_chat(L, span_black("THE VOID CONSUMES YOU, MAKING YOU A PART OF IT."))
-		new /obj/structure/void_puddle(L.loc)
+		new /obj/structure/void_puddle(L.loc, TRUE)
 		L.unequip_everything()
 		L.death(TRUE)
 
@@ -72,18 +72,20 @@
 	icon = 'tff_modular/modules/void/icons/void_effects.dmi'
 	icon_state = "void_puddles1"
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	max_integrity = INFINITY
 	opacity = FALSE
 	density = FALSE
 	anchored = TRUE
 
-/obj/structure/void_puddle/Initialize(mapload)
+/obj/structure/void_puddle/Initialize(mapload, instant = TRUE)
 	. = ..()
 	var/true_icon_state = "void_puddles[rand(1, 4)]"
 	icon_state = true_icon_state
 	playsound(src, pick('tff_modular/modules/void/sounds/drip1.ogg','tff_modular/modules/void/sounds/drip2.ogg','tff_modular/modules/void/sounds/drip3.ogg'), 90)
 	update_appearance(UPDATE_ICON_STATE)
-	addtimer(CALLBACK(src, PROC_REF(release_void)), 180 SECONDS)
+	if(!instant)
+		addtimer(CALLBACK(src, PROC_REF(release_void)), 180 SECONDS)
 
 /obj/structure/void_puddle/proc/release_void()
 	if(!src)

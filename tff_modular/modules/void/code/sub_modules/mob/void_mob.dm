@@ -1,4 +1,5 @@
 #define VOID_LIGHT_BLINK_COOLDOWN 3 SECONDS
+#define VOID_ATTACK_COOLDOWN 2 SECONDS
 
 /mob/living/simple_animal/hostile/void_creture
 	name = "\improper Unknown"
@@ -13,13 +14,13 @@
 	movement_type = GROUND
 	attack_verb_continuous = "blusts"
 	attack_verb_simple = "corrupt"
-	attack_sound = 'sound/magic/demon_attack1.ogg'
+	attack_sound = 'tff_modular/modules/void/sounds/stab.ogg'
 	attack_vis_effect = ATTACK_EFFECT_SMASH
 	icon = 'tff_modular/modules/void/icons/void_mob.dmi'
 	icon_state = "void_creature"
 	icon_living = "void_creature"
 	icon_dead = "void_creature"
-	obj_damage = 60
+	obj_damage = 15
 	can_buckle_to = FALSE
 	melee_damage_upper = 70
 	melee_damage_lower = 80
@@ -35,6 +36,7 @@
 	minbodytemp = -INFINITY
 	maxbodytemp = INFINITY
 	pressure_resistance = INFINITY
+	lighting_cutoff = LIGHTING_CUTOFF_HIGH
 
 	//Должны ли мы тушить источники света вокруг нас!
 	var/force_lighthing_blink = TRUE
@@ -44,7 +46,30 @@
 	var/void_steps = TRUE
 	var/steps_with_no_void = 0 //Шаги, что были сделаны без эффекта пустоты.
 
+	//Наши абилки
+	var/datum/action/cooldown/void_ability/scream/void_scream
+	var/datum/action/cooldown/void_ability/toggle_light/light_blinking
+
+	COOLDOWN_DECLARE(void_attack_cooldown)
 	COOLDOWN_DECLARE(light_blink)
+
+/mob/living/simple_animal/hostile/void_creture/Initialize(mapload, true_spawn = FALSE)
+	. = ..()
+	if(!true_spawn)
+		Destroy()
+
+	void_scream = new()
+	light_blinking = new()
+
+	void_scream.Grant(src)
+	light_blinking.Grant(src)
+
+/mob/living/simple_animal/hostile/void_creture/Destroy()
+	. = ..()
+	void_scream.Destroy()
+	light_blinking.Destroy()
+	if(GLOB.void_creature == src)
+		GLOB.void_creature = null
 
 /mob/living/simple_animal/hostile/void_creture/Life(seconds_per_tick, times_fired)
 	. = ..()
@@ -127,10 +152,12 @@
 			balloon_alert(src, "Beging crushing!")
 			if(!do_after(src, 10 SECONDS, w))
 				balloon_alert(src, "Stand still!")
-				return
+				return FALSE
 
 			balloon_alert(src, "Succesfull!")
+			playsound(w, 'tff_modular/modules/void/sounds/stab.ogg', 100, TRUE)
 			w.atom_destruction()
+			return FALSE
 		else if(istype(attacked_target, /obj/machinery/door/airlock))
 			var/obj/machinery/door/airlock/a = attacked_target
 			playsound(a, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
@@ -141,7 +168,7 @@
 				balloon_alert(src, "Beging crawling bolt!")
 				if(!do_after(src, 5 SECONDS, a))
 					balloon_alert(src, "Stand still!")
-					return
+					return FALSE
 				do_sparks(3, TRUE, a)
 				a.unlock()
 
@@ -150,15 +177,27 @@
 			do_sparks(3, TRUE, a)
 			if(!do_after(src, 5 SECONDS, a))
 				balloon_alert(src, "Stand still!")
-				return
+				return FALSE
 
 			a.open()
 			do_sparks(3, TRUE, a)
 			balloon_alert(src, "Succesfull!")
-			return
+			return FALSE
+
 	if(ismob(attacked_target))
+		if(!COOLDOWN_FINISHED(src, void_attack_cooldown))
+			balloon_alert(src, "Cooldown!")
+			return FALSE
 		var/mob/t =	attacked_target
-		to_chat(t, span_black("Void.. corrupt you..."))
+		if(ishuman(attacked_target))
+			var/mob/living/carbon/human/H = attacked_target
+			var/obj/item/bodypart/chest/C = H.get_bodypart(BODY_ZONE_CHEST)
+			var/datum/wound/inner_void/infected/void_infection
+			if(!(H.all_wounds & void_infection))
+				void_infection = new()
+				void_infection.apply_wound(C)
+				to_chat(t, span_black("Void.. corrupt you..."))
+		COOLDOWN_START(src, void_attack_cooldown, VOID_ATTACK_COOLDOWN)
 	. = ..()
 
 //Наносим урон тем, кто нас ударит... Пустота делает больно!

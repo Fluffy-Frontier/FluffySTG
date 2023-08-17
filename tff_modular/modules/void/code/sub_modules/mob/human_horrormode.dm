@@ -1,13 +1,40 @@
 /mob/living/carbon/human
-	//Включено ли действие хоорор эффектов.
-	var/horror_effect_on = TRUE
+	//Включено ли действие хоорор эффектов. Использовать enable_horror_features()/disable_horror_features()
+	VAR_PRIVATE/horror_effect_on = FALSE
 	//Текщие состояние нашего испуга - по умолчание мы в норме.
 	var/horror_state = HUMAN_HORROR_STATE_NORMAL
 	VAR_PRIVATE/screen_effect_locked = FALSE
 
+/mob/living/carbon/human/Initialize(mapload)
+	. = ..()
+	if(GLOB.world_horror_mode)
+		enable_horror_features()
+	RegisterSignal(src, COMSIG_WORLD_HORROR_MODE_ENABLED, PROC_REF(enable_horror_features))
+	RegisterSignal(src, COMSIG_WORLD_HORROR_MODE_ENABLED, PROC_REF(disable_horror_features))
+
+/mob/living/carbon/human/Destroy()
+	. = ..()
+	UnregisterSignal(src, list(COMSIG_WORLD_HORROR_MODE_ENABLED, COMSIG_WORLD_HORROR_MODE_DISABLED))
+
 /mob/living/carbon/human/Life(seconds_per_tick, times_fired)
 	. = ..()
 	handle_horror()
+
+/mob/living/carbon/human/proc/enable_horror_features()
+	SIGNAL_HANDLER
+	if(horror_effect_on)
+		return
+
+	overlay_fullscreen("triller_effect", /atom/movable/screen/fullscreen/triller_cold)
+	horror_effect_on = TRUE
+
+/mob/living/carbon/human/proc/disable_horror_features()
+	SIGNAL_HANDLER
+	if(!horror_effect_on)
+		return
+
+	clear_fullscreen("triller_effect")
+	horror_effect_on = FALSE
 
 /mob/living/carbon/human/proc/set_horror_state(new_state, time)
 	horror_state = new_state
@@ -32,8 +59,8 @@
 			if(prob(50) && !HAS_TRAIT(src, TRAIT_STABLEHEART))
 				our_heart.Stop()
 
-/mob/living/carbon/human/proc/add_screeen_temporary_effect(atom/movable/screen/fullscreen/effect, time = 10 SECONDS, override = TRUE)
-	if(screen_effect_locked)
+/mob/living/carbon/human/proc/add_screeen_temporary_effect(atom/movable/screen/fullscreen/effect, time = 10 SECONDS, override = FALSE)
+	if(screen_effect_locked && !override)
 		return
 	if(override)
 		clear_fullscreen("horror_effect")

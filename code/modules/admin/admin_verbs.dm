@@ -107,7 +107,11 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/view_opfors,						/*OPFOR - SKYRAT EDIT ADDITION*/
 	/client/proc/lorecaster_story_manager,          /* SKYRAT EDIT ADDITION */
 	/client/proc/mass_horror,						/* TFF MODULAR EVENTS */
+	/client/proc/enable_horror_mode,				/* TFF MODULAR EVENTS */
+	/client/proc/disable_horror_mode,				/* TFF MODULAR EVENTS */
 	/client/proc/summon_void_creature,				/* TFF MODULAR EVENTS */
+	/client/proc/jump_to_void,						/* TFF MODULAR EVENTS */
+	/client/proc/get_void,							/* TFF MODULAR EVENTS */
 	/client/proc/make_void_infection,				/* TFF MODULAR EVENTS */
 	)
 GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/ban_panel, /client/proc/stickybanpanel, /client/proc/library_control))
