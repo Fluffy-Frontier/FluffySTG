@@ -59,7 +59,10 @@
 /mob/living/simple_animal/hostile/void_creture/Initialize(mapload, true_spawn = FALSE)
 	. = ..()
 	if(!true_spawn)
-		Destroy()
+		force_lighthing_blink = FALSE
+		force_horror = FALSE
+		void_steps = FALSE
+		QDEL_IN(src, 50)
 
 	void_scream = new()
 	light_blinking = new()

@@ -51,7 +51,7 @@
 		for(var/obj/item/organ/internal/eyes/black_listed_eyes in HORROR_MODE_BLECKLISTED_EYES)
 			if(our_eyes == black_listed_eyes)
 				our_eyes.apply_organ_damage(100)
-			to_chat(src, span_warning("You [our_eyes.name] is overloadet!"))
+				to_chat(src, span_warning("You [our_eyes.name] is overloadet!"))
 
 /mob/living/carbon/human/proc/set_horror_state(new_state, time)
 	horror_state = new_state
