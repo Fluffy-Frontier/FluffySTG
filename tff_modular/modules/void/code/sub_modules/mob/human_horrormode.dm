@@ -12,10 +12,6 @@
 	RegisterSignal(SSdcs, COMSIG_WORLD_HORROR_MODE_ENABLED, PROC_REF(enable_horror_features), override = TRUE)
 	RegisterSignal(SSdcs, COMSIG_WORLD_HORROR_MODE_DISABLED, PROC_REF(disable_horror_features), override = TRUE)
 
-/mob/living/carbon/human/Destroy()
-	. = ..()
-	UnregisterSignal(list(COMSIG_WORLD_HORROR_MODE_ENABLED, COMSIG_WORLD_HORROR_MODE_DISABLED))
-
 /mob/living/carbon/human/Life(seconds_per_tick, times_fired)
 	. = ..()
 	handle_horror()

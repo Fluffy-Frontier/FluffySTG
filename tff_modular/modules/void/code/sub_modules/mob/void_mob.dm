@@ -1,5 +1,4 @@
 #define VOID_LIGHT_BLINK_COOLDOWN 3 SECONDS
-#define VOID_ATTACK_COOLDOWN 2 SECONDS
 
 /mob/living/basic/void_creture
 	name = "\improper Unknown"
@@ -57,7 +56,6 @@
 	var/datum/action/cooldown/void_ability/toggle_nightvision/darknes_vision
 	var/datum/action/cooldown/void_ability/void_teleport/teleport
 
-	COOLDOWN_DECLARE(void_attack_cooldown)
 	COOLDOWN_DECLARE(light_blink)
 
 /mob/living/basic/void_creture/Initialize(mapload, true_spawn = FALSE)
@@ -202,21 +200,15 @@
 		w.atom_destruction()
 		return FALSE
 
-	if(ismob(target))
-		if(!COOLDOWN_FINISHED(src, void_attack_cooldown))
-			balloon_alert(src, "Cooldown!")
-			return FALSE
-		var/mob/t =	target
-		if(ishuman(target))
-			var/mob/living/carbon/human/H = target
-			var/obj/item/bodypart/chest/C = H.get_bodypart(BODY_ZONE_CHEST)
-			var/datum/wound/inner_void/infected/void_infection
-			if(!(H.all_wounds & void_infection))
-				void_infection = new()
-				void_infection.apply_wound(C)
-				to_chat(t, span_black("VOID CORRUPT YOU..."))
-		COOLDOWN_START(src, void_attack_cooldown, VOID_ATTACK_COOLDOWN)
-		return ..(target, modifiers)
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		var/obj/item/bodypart/chest/C = H.get_bodypart(BODY_ZONE_CHEST)
+		var/datum/wound/inner_void/infected/void_infection
+		if(!(H.all_wounds & void_infection))
+			void_infection = new()
+			void_infection.apply_wound(C)
+			to_chat(t, span_black("VOID CORRUPT YOU..."))
+
 	return ..(target, modifiers)
 
 //Наносим урон тем, кто нас ударит... Пустота делает больно!
