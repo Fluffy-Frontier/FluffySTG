@@ -28,16 +28,6 @@
 	. = ..()
 	convert_to_void(user)
 
-/turf/open/void_turf/GetHeatCapacity()
-	. = INFINITY
-
-/turf/open/void_turf/GetTemperature()
-	. = -INFINITY
-
-/turf/open/void_turf/attacked_by(obj/item/attacking_item, mob/living/user)
-	. = ..()
-
-
 /turf/open/void_turf/rcd_act(mob/user, obj/item/construction/rcd/the_rcd)
 	if(issilicon(user))
 		convert_to_void(user)
@@ -62,7 +52,7 @@
 
 		L.death(TRUE)
 		L.client.admin_follow(get_turf(L))
-		victim.client = null
+		L.client = null
 
 		QDEL_IN(L, 5)
 		return

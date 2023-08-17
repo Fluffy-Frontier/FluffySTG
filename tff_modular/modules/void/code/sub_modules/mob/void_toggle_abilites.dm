@@ -29,7 +29,7 @@
 		toggle_target.lighting_cutoff = LIGHTING_CUTOFF_FULLBRIGHT
 	else if(toggle_target.lighting_cutoff == LIGHTING_CUTOFF_FULLBRIGHT)
 		toggle_target.lighting_cutoff = LIGHTING_CUTOFF_VISIBLE
-	else if(toggle_target.lighting_cutoff == LIGHTING_CUTOFF_FULLBRIGHT)
+	else if(toggle_target.lighting_cutoff == LIGHTING_CUTOFF_VISIBLE)
 		toggle_target.lighting_cutoff = LIGHTING_CUTOFF_MEDIUM
 	else if(toggle_target.lighting_cutoff == LIGHTING_CUTOFF_MEDIUM)
 		toggle_target.lighting_cutoff = LIGHTING_CUTOFF_HIGH

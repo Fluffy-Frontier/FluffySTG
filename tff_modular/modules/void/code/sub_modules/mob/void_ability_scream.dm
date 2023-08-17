@@ -23,7 +23,7 @@
 		scream_target.set_horror_state(HUMAN_HORROR_STATE_FEAR, 30 SECONDS)
 		scream_target.add_screeen_temporary_effect(/atom/movable/screen/fullscreen/void_brightless/highter, 30 SECONDS, TRUE)
 		scream_target.playsound_local(get_turf(scream_target), screamsound, 90, 0, channel = CHANNEL_BOSS_MUSIC, use_reverb = FALSE)
-		shake_camera(scream_target, 1 SECONDS, 5)
+		shake_camera(scream_target, 3 SECONDS, 5)
 		to_chat(scream_target, span_narsie("RUN!")) //Лучше бы тебе бежать сынок!
 		scream_target.Stun(1 SECONDS)
 		scream_target.apply_status_effect(/datum/status_effect/regenerative_core)

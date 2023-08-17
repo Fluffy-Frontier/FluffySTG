@@ -50,6 +50,7 @@
 	var/datum/action/cooldown/void_ability/scream/void_scream
 	var/datum/action/cooldown/void_ability/toggle_light/light_blinking
 	var/datum/action/cooldown/void_ability/toggle_nightvision/darknes_vision
+	var/datum/action/cooldown/void_ability/void_teleport/teleport
 
 	COOLDOWN_DECLARE(void_attack_cooldown)
 	COOLDOWN_DECLARE(light_blink)
@@ -62,7 +63,9 @@
 	void_scream = new()
 	light_blinking = new()
 	darknes_vision = new()
+	teleport = new()
 
+	teleport.Grant(src)
 	darknes_vision.Grant(src)
 	void_scream.Grant(src)
 	light_blinking.Grant(src)
@@ -72,6 +75,7 @@
 	void_scream.Destroy()
 	light_blinking.Destroy()
 	darknes_vision.Destroy()
+	teleport.Destroy()
 
 	if(GLOB.void_creature == src)
 		GLOB.void_creature = null

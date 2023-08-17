@@ -8,6 +8,8 @@
 /datum/action/cooldown/void_ability/IsAvailable(feedback)
 	if(adminabuse)
 		return TRUE
+
 	if(owner.stat & DEAD)
 		return FALSE
-	..()
+
+	return ..()

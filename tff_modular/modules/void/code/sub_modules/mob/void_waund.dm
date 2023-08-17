@@ -42,16 +42,6 @@
 	COOLDOWN_DECLARE(item_drop_cooldown)
 	COOLDOWN_DECLARE(void_cough_cooldown)
 
-/datum/wound/inner_void/Destroy()
-	new /obj/structure/void_puddle(victim.loc, TRUE)
-	victim.client.admin_follow(get_turf(victim))
-	victim.client = null
-	victim.visible_message(span_black("[victim.name] WAS CONSUMED BY VOID!"))
-	QDEL_IN(victim, 5)
-
-	return ..()
-	
-
 /datum/wound/inner_void/apply_wound(obj/item/bodypart/L, silent = FALSE, datum/wound/old_wound = null, smited = FALSE, attack_direction = null, wound_source = "Unknown")
 	. = ..()
 	victim.add_mood_event("Void infection", mood_effect)
@@ -59,7 +49,7 @@
 	if(current_stage >= WOUND_VOID_STAGE_PENETRATION)
 		return
 	addtimer(CALLBACK(src, PROC_REF(pass_stage)), stage_pass_time)
-	RegisterSignal(victim, COMSIG_LIVING_DEATH, PROC_REF(source_died))
+	RegisterSignal(victim, COMSIG_LIVING_DEATH, PROC_REF(victim_dead))
 
 /datum/wound/inner_void/proc/pass_stage()
 	for(var/category in victim.mob_mood.mood_events)
@@ -68,6 +58,15 @@
 			event.Destroy()
 	UnregisterSignal(victim, COMSIG_LIVING_DEATH)
 	replace_wound(next_stage)
+
+/datum/wound/inner_void/proc/victim_dead()
+	SIGNAL_HANDEL
+
+	new /obj/structure/void_puddle(victim.loc, TRUE)
+	victim.client.admin_follow(get_turf(victim))
+	victim.client = null
+	victim.visible_message(span_black("[victim.name] WAS CONSUMED BY VOID!"))
+	QDEL_IN(victim, 5)
 
 // Актуально обрабатывает эффекты повреждений.
 /datum/wound/inner_void/handle_process(seconds_per_tick, times_fired)
