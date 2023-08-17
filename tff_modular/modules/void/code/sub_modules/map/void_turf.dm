@@ -59,10 +59,12 @@
 		var/mob/living/L = target
 		to_chat(L, span_black("THE VOID CONSUMES YOU, MAKING YOU A PART OF IT."))
 		new /obj/structure/void_puddle(L.loc, TRUE)
-		L.unequip_everything()
-		L.death(TRUE)
 
-		QDEL_IN(L, 10)
+		L.death(TRUE)
+		L.client.admin_follow(get_turf(L))
+		victim.client = null
+
+		QDEL_IN(L, 5)
 		return
 
 	qdel(target)

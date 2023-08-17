@@ -49,4 +49,4 @@
 /datum/movespeed_modifier/void_run
 	id = "Void run"
 	blacklisted_movetypes = FLYING
-	multiplicative_slowdown = -3
+	multiplicative_slowdown = -4

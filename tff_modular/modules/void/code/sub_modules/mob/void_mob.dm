@@ -49,6 +49,7 @@
 	//Наши абилки
 	var/datum/action/cooldown/void_ability/scream/void_scream
 	var/datum/action/cooldown/void_ability/toggle_light/light_blinking
+	var/datum/action/cooldown/void_ability/toggle_nightvision/darknes_vision
 
 	COOLDOWN_DECLARE(void_attack_cooldown)
 	COOLDOWN_DECLARE(light_blink)
@@ -60,7 +61,9 @@
 
 	void_scream = new()
 	light_blinking = new()
+	darknes_vision = new()
 
+	darknes_vision.Grant(src)
 	void_scream.Grant(src)
 	light_blinking.Grant(src)
 
@@ -68,6 +71,8 @@
 	. = ..()
 	void_scream.Destroy()
 	light_blinking.Destroy()
+	darknes_vision.Destroy()
+
 	if(GLOB.void_creature == src)
 		GLOB.void_creature = null
 
@@ -135,7 +140,7 @@
 
 	if(force_horror)
 		for(var/mob/living/carbon/human/h in view(src))
-			if(isdead(h) || !h.client || !h.horror_effect_on || h.IsUnconscious())
+			if(isdead(h) || !h.client || h.IsUnconscious())
 				continue
 			if(h.horror_state > HUMAN_HORROR_STATE_NORMAL)
 				continue
@@ -144,21 +149,7 @@
 
 /mob/living/simple_animal/hostile/void_creture/AttackingTarget(atom/attacked_target)
 	if(!combat_mode)
-		if(istype(attacked_target, /turf/closed/wall))
-			var/turf/closed/wall/w = attacked_target
-			w.visible_message(span_black("[src.name], Beggin corrupt [w.name] with void!"))
-			playsound(w, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
-
-			balloon_alert(src, "Beging crushing!")
-			if(!do_after(src, 10 SECONDS, w))
-				balloon_alert(src, "Stand still!")
-				return FALSE
-
-			balloon_alert(src, "Succesfull!")
-			playsound(w, 'tff_modular/modules/void/sounds/stab.ogg', 100, TRUE)
-			w.atom_destruction()
-			return FALSE
-		else if(istype(attacked_target, /obj/machinery/door/airlock))
+		if(istype(attacked_target, /obj/machinery/door/airlock))
 			var/obj/machinery/door/airlock/a = attacked_target
 			playsound(a, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
 
@@ -184,6 +175,21 @@
 			balloon_alert(src, "Succesfull!")
 			return FALSE
 
+	if(istype(attacked_target, /turf/closed/wall))
+		var/turf/closed/wall/w = attacked_target
+		w.visible_message(span_black("[src.name], Beggin corrupt [w.name] with void!"))
+		playsound(w, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
+
+		balloon_alert(src, "Beging crushing!")
+		if(!do_after(src, 10 SECONDS, w))
+			balloon_alert(src, "Stand still!")
+			return FALSE
+
+		balloon_alert(src, "Succesfull!")
+		playsound(w, 'tff_modular/modules/void/sounds/stab.ogg', 100, TRUE)
+		w.atom_destruction()
+		return FALSE
+
 	if(ismob(attacked_target))
 		if(!COOLDOWN_FINISHED(src, void_attack_cooldown))
 			balloon_alert(src, "Cooldown!")
@@ -197,8 +203,8 @@
 				void_infection = new()
 				void_infection.apply_wound(C)
 				to_chat(t, span_black("Void.. corrupt you..."))
-		COOLDOWN_START(src, void_attack_cooldown, VOID_ATTACK_COOLDOWN)
 	. = ..()
+	COOLDOWN_START(src, void_attack_cooldown, VOID_ATTACK_COOLDOWN)
 
 //Наносим урон тем, кто нас ударит... Пустота делает больно!
 /mob/living/simple_animal/hostile/void_creture/attack_hand(mob/living/carbon/human/user, list/modifiers)
@@ -206,6 +212,12 @@
 	to_chat(user, span_black("Void.. corrupt you..."))
 	user.apply_damage(25, BRUTE)
 
+/mob/living/simple_animal/hostile/void_creture/say(message, bubble_type, list/spans, sanitize, datum/language/language, ignore_spam, forced, filterproof, message_range, datum/saymode/saymode)
+	return FALSE
+
+/mob/living/simple_animal/hostile/void_creture/gib()
+	return FALSE
+	
 /mob/living/simple_animal/hostile/void_creture/Move(atom/newloc, dir, step_x, step_y)
 	. = ..()
 	if(void_steps && steps_with_no_void >= 2)
