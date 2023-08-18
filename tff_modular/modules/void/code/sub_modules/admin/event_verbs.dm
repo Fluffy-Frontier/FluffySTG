@@ -44,7 +44,8 @@
 		return
 
 	GLOB.world_horror_mode = TRUE
-	SEND_GLOBAL_SIGNAL(COMSIG_WORLD_HORROR_MODE_ENABLED)
+	for(var/mob/living/carbon/human/H in GLOB.human_list)
+		SEND_SIGNAL(H, COMSIG_WORLD_HORROR_MODE_ENABLED)
 	message_admins("[key_name(usr)] enabled horror mode!")
 
 /client/proc/disable_horror_mode()
@@ -55,7 +56,8 @@
 		return
 
 	GLOB.world_horror_mode = FALSE
-	SEND_GLOBAL_SIGNAL(COMSIG_WORLD_HORROR_MODE_DISABLED)
+	for(var/mob/living/carbon/human/H in GLOB.human_list)
+		SEND_SIGNAL(H, COMSIG_WORLD_HORROR_MODE_DISABLED)
 	message_admins("[key_name(usr)] disabled horror mode!")
 
 /client/proc/summon_void_creature()
