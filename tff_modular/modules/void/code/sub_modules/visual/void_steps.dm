@@ -20,4 +20,4 @@
 	update_appearance(UPDATE_ICON_STATE)
 	//Эффект постепенного исчезновения!
 	animate(src, alpha = 0, time = duration)
-	return ..()
+	. = ..()
