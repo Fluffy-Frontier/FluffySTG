@@ -8,11 +8,11 @@
 	var/check = tgui_alert(usr, "Are you sure want do it?", "Horror crew", list("Yes", "No"))
 	if(check == "No" || !check)
 		return
-	var/horror_radius = tgui_input_list(usr, "Chose a raius:", "Horror crew", list("Everyone", "In Z level", "In view", "In range"))
+	var/radius = tgui_input_list(usr, "Chose a radius:", "Horror crew", list("Everyone", "In Z level", "In view", "In range"))
 	var/new_value = tgui_input_number(usr, "Input value:", "Horror value", 0, 5, 0)
-	var/time = tgui_input_number(usr, "Input time in secons:", "Horror time", 1, 240, 0)
+	var/time = tgui_input_number(usr, "Input time in seconds:", "Horror time", 1, 240, 0)
 	time *= 10
-	switch(horror_radius)
+	switch(radius)
 		if("Everyone")
 			for(var/mob/living/carbon/human/H in GLOB.human_list)
 				if(isdead(H))
@@ -67,7 +67,7 @@
 	if(!check_rights(R_FUN))
 		return
 	if(GLOB.void_creature)
-		to_chat(usr, span_warning("There a one void creature already exist. Can not be twice."))
+		to_chat(usr, span_warning("Void Creature already exists."))
 		return
 	var/check = tgui_alert(usr, "Are you sure want do it?", "Summon void creature", list("Yes", "No"))
 	if(check == "No" || !check)
@@ -83,7 +83,7 @@
 	if(!check_rights(R_FUN))
 		return
 	if(!GLOB.void_creature)
-		to_chat(usr, span_warning("There a not active void creatures. Create one."))
+		to_chat(usr, span_warning("There's no active Void Creatures, create one."))
 		return
 
 	do_teleport(usr, GLOB.void_creature, no_effects=TRUE, channel= TELEPORT_CHANNEL_FREE)
@@ -95,7 +95,7 @@
 	if(!check_rights(R_FUN))
 		return
 	if(!GLOB.void_creature)
-		to_chat(usr, span_warning("There a not active void creatures. Create one."))
+		to_chat(usr, span_warning("There's no active Void Creatures, create one."))
 		return
 	var/check = tgui_alert(usr, "Are you sure want do it?", "Get void creature", list("Yes", "No"))
 	if(check == "No" || !check)
@@ -114,7 +114,7 @@
 	if(check == "No" || !check)
 		return
 
-	var/ask_light = tgui_alert(usr, "Break the light in close area?", "Break light", list("Yes", "No"))
+	var/ask_light = tgui_alert(usr, "Break close-by lights?", "Break light", list("Yes", "No"))
 	var/r = tgui_input_number(usr, "Void infection spread redius", "Void spread", 1, 15, 1)
 	for(var/turf/old_turf in RANGE_TURFS(r, usr))
 		old_turf.TerraformTurf(/turf/open/void_turf, /turf/open/void_turf, flags = CHANGETURF_INHERIT_AIR)

@@ -10,7 +10,7 @@
 		return
 	var/mob/living/basic/void_creture/toggle_target = owner
 	toggle_target.force_lighthing_blink = !toggle_target.force_lighthing_blink
-	toggle_target.balloon_alert(toggle_target, "Ligght blink toggled!")
+	toggle_target.balloon_alert(toggle_target, "Light blinking is toggled!")
 
 
 /datum/action/cooldown/void_ability/toggle_nightvision

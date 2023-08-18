@@ -164,16 +164,16 @@
 
 			if(a.locked)
 				do_sparks(3, TRUE, a)
-				a.visible_message(span_black("[src.name], beggin corrupt [a.name] bolts with void!"))
-				balloon_alert(src, "Beging crawling bolt!")
+				a.visible_message(span_userdanger("[src.name], starts melting through [a.name], slowly dissolving it in void!"))
+				balloon_alert(src, "Opening an airlock!")
 				if(!do_after(src, 5 SECONDS, a))
 					balloon_alert(src, "Stand still!")
 					return FALSE
 				do_sparks(3, TRUE, a)
 				a.unlock()
 
-			a.visible_message(span_black("[src.name], beggin force open [a.name]"))
-			balloon_alert(src, "Beging opening!")
+			a.visible_message(span_userdanger("[src.name], starts forcibly opening [a.name]!"))
+			balloon_alert(src, "Opening an airlock!")
 			do_sparks(3, TRUE, a)
 			if(!do_after(src, 5 SECONDS, a))
 				balloon_alert(src, "Stand still!")
@@ -186,10 +186,10 @@
 
 	if(istype(target, /turf/closed/wall))
 		var/turf/closed/wall/w = target
-		w.visible_message(span_black("[src.name], Beggin corrupt [w.name] with void!"))
+		w.visible_message(span_userdanger("[src.name] starts melting through the [w.name] dissolving it in void!"))
 		playsound(w, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
 
-		balloon_alert(src, "Beging crushing!")
+		balloon_alert(src, "Destroying wall!")
 		if(!do_after(src, 10 SECONDS, w))
 			balloon_alert(src, "Stand still!")
 			return FALSE
@@ -206,14 +206,14 @@
 		if(!(H.all_wounds & void_infection))
 			void_infection = new()
 			void_infection.apply_wound(C)
-			to_chat(H, span_black("VOID CORRUPT YOU..."))
+			to_chat(H, span_black("Void corrupts you."))
 
 	return ..(target, modifiers)
 
 //Наносим урон тем, кто нас ударит... Пустота делает больно!
 /mob/living/basic/void_creture/attack_hand(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
-	to_chat(user, span_black("Void.. corrupt you..."))
+	to_chat(user, span_black("Void corrupts you."))
 	user.apply_damage(25, BRUTE)
 
 /mob/living/basic/void_creture/say(message, bubble_type, list/spans, sanitize, datum/language/language, ignore_spam, forced, filterproof, message_range, datum/saymode/saymode)

@@ -16,7 +16,7 @@
 /datum/wound/inner_void
 	name = "Void Decay"
 	desc = "Inener void consume you."
-	treat_text = "Threatment impossible. Powerfull painkiller recommendet. \n clinical dead cause body determination."
+	treat_text = "Threatment impossible. Using of painkillers highly recommended. \n Patient death is irreversible."
 	severity = WOUND_SEVERITY_TRIVIAL
 	viable_zones = list(BODY_ZONE_CHEST)
 	no_bleeding = TRUE
@@ -113,7 +113,7 @@
 			infected.visible_message(span_warning("[infected.name] coughs up dark liquid on the floor!"))
 			infected.emote("cough", intentional = TRUE)
 
-			new /obj/effect/temp_visual/void_step(get_turf(infected), infected, 10 SECONDS)
+			new /obj/effect/temp_visual/void_step/simple(get_turf(infected), infected)
 
 	//Ты - выплелвываешь свои легкие сынок.
 	if(current_stage >= WOUND_VOID_STAGE_PENETRATION)
