@@ -30,7 +30,7 @@
 	maptext_height = 48
 	maptext_width = 48
 	mouse_opacity = MOUSE_OPACITY_ICON
-	death_message = "Oh.. siriosly? You kill that.. soo you need just know.. teshari the best.. ye-a... how did you do it?"
+	death_message = "Oh... seriously? You just killed it... so you need to know... TEHSHARI ARE THE BEST... yeah... so, how the hell did you do that!?"
 	unsuitable_atmos_damage = 0
 	basic_mob_flags = IMMUNE_TO_FISTS
 	minimum_survivable_temperature = -INFINITY

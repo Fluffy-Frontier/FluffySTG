@@ -8,6 +8,9 @@
 GLOBAL_VAR_INIT(world_horror_mode, TRUE)
 //Текущий активный гость войда. Может быть всего один в мире.
 GLOBAL_VAR(void_creature)
+//Кол-во текущих инфецированный VOID инфекцией.
+GLOBAL_LIST_EMPTY(void_infected_peoples)
+
 //Перечень глаз, что будут уничтожены при использовании в хоррор моде!
 #define HORROR_MODE_BLECKLISTED_EYES list(/obj/item/organ/internal/eyes/night_vision, /obj/item/organ/internal/eyes/robotic/flashlight)
 

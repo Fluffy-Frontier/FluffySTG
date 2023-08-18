@@ -37,7 +37,7 @@
 	//Эффект на настроение.
 	var/datum/mood_event/mood_effect
 	//Эффект на скорость передвижения.
-	var/datum/movespeed_modifier/stage_clowdown
+	var/datum/movespeed_modifier/stage_slowdown
 
 
 	COOLDOWN_DECLARE(message_coodown)
@@ -47,11 +47,13 @@
 /datum/wound/inner_void/apply_wound(obj/item/bodypart/L, silent = FALSE, datum/wound/old_wound = null, smited = FALSE, attack_direction = null, wound_source = "Unknown")
 	. = ..()
 	victim.add_mood_event("Void infection", mood_effect)
-	if(stage_clowdown)
-		victim.add_movespeed_modifier(stage_clowdown)
+	if(stage_slowdown)
+		victim.add_movespeed_modifier(stage_slowdown)
 
 	if(current_stage >= WOUND_VOID_STAGE_PENETRATION)
 		return
+
+	GLOB.void_infected_peoples += victim
 	addtimer(CALLBACK(src, PROC_REF(pass_stage)), stage_pass_time)
 
 /datum/wound/inner_void/proc/pass_stage()
@@ -59,12 +61,20 @@
 		if(category == "Void infection")
 			var/datum/mood_event/event = victim.mob_mood.mood_events[category]
 			event.Destroy()
-	if(stage_clowdown)
-		victim.remove_movespeed_modifier(stage_clowdown)
+	if(stage_slowdown)
+		victim.remove_movespeed_modifier(stage_slowdown)
+
+	GLOB.void_infected_peoples -= victim
 	replace_wound(next_stage)
+
+/datum/wound/inner_void/remove_wound(ignore_limb, replaced)
+	. = ..()
+	if(!replaced)
+		victim_dead()
 
 /datum/wound/inner_void/proc/victim_dead()
 	new /obj/structure/void_puddle(victim.loc, TRUE)
+	GLOB.void_infected_peoples -= victim
 
 	if(victim.client)
 		victim.client.admin_follow(get_turf(victim))
@@ -155,7 +165,7 @@
 	occur_text = "is covered in void"
 	next_stage = /datum/wound/inner_void/deeping
 	mood_effect = /datum/mood_event/void_infection/expansion
-	stage_clowdown = /datum/movespeed_modifier/void_infection/expansion
+	stage_slowdown = /datum/movespeed_modifier/void_infection/expansion
 
 /datum/wound/inner_void/deeping
 	current_stage = WOUND_VOID_STAGE_DEEPENING
@@ -165,7 +175,7 @@
 	occur_text = "is covered in void"
 	next_stage = /datum/wound/inner_void/penetration
 	mood_effect = /datum/mood_event/void_infection/deeping
-	stage_clowdown = /datum/movespeed_modifier/void_infection/deeping
+	stage_slowdown = /datum/movespeed_modifier/void_infection/deeping
 
 /datum/wound/inner_void/penetration
 	current_stage = WOUND_VOID_STAGE_PENETRATION
@@ -174,7 +184,7 @@
 	examine_desc = "is corrupted with void.. All upper body was replaced with pitch black warm pulsating mass. Clearly agonizing"
 	occur_text = "is covered in void"
 	mood_effect = /datum/mood_event/void_infection/penetration
-	stage_clowdown = /datum/movespeed_modifier/void_infection/penetration
+	stage_slowdown = /datum/movespeed_modifier/void_infection/penetration
 
 // НАСТРОЕНИЕ
 
@@ -200,7 +210,7 @@
 /datum/mood_event/void_infection/penetration
 	description = "Why can't I die already?"
 	mood_change = -32
-	timeout = INFINITY
+	timeout = INFINITE
 
 // ЗАМЕДЛЕНИЕ
 
