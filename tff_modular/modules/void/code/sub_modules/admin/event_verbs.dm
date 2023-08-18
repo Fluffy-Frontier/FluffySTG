@@ -117,10 +117,35 @@
 	var/ask_light = tgui_alert(usr, "Break close-by lights?", "Break light", list("Yes", "No"))
 	var/r = tgui_input_number(usr, "Void infection spread redius", "Void spread", 1, 15, 1)
 	for(var/turf/old_turf in RANGE_TURFS(r, usr))
-		old_turf.TerraformTurf(/turf/open/void_turf, /turf/open/void_turf, flags = CHANGETURF_INHERIT_AIR)
+		old_turf.TerraformTurf(/turf/open/floor/void_turf, /turf/open/floor/void_turf, flags = CHANGETURF_INHERIT_AIR)
 
 	if(ask_light == "Yes")
 		for(var/obj/machinery/light/L in RANGE_TURFS(r*2, usr))
 			if(L.status == LIGHT_BROKEN)
 				continue
 			L.break_light_tube()
+
+/client/proc/void_infected_list()
+	set category = "Events.Void"
+	set name = "Void infected list"
+
+	if(!check_rights(R_FUN))
+		return
+	var/ask = tgui_alert(usr, "Select opinion:", "Void infection", list("Infected list", "Status"))
+	var/list/infected_list = GLOB.void_infected_peoples
+	if(ask == "Status")
+		var/human_on_same_z = 0
+		var/infected_human_on_same_z = 0
+		for(var/mob/human in GLOB.human_list)
+			if(human.z == usr.z)
+				human_on_same_z++
+		for(var/mob/infected_human in infected_list)
+			if(infected_human.z == usr.z)
+				infected_human_on_same_z++
+		to_chat(usr, span_notice("Current infcted peoples on same Z:[infected_human_on_same_z]. From [human_on_same_z] of total!"))
+		return
+
+	var/mob/living/carbon/human/target = tgui_input_list(usr, "Chose a people:", "Void infected peoples", infected_list)
+	if(!target)
+		return
+	usr.admin_teleport(target)

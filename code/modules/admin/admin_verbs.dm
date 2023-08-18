@@ -113,6 +113,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/jump_to_void,						/* TFF MODULAR EVENTS */
 	/client/proc/get_void,							/* TFF MODULAR EVENTS */
 	/client/proc/make_void_infection,				/* TFF MODULAR EVENTS */
+	/client/proc/void_infected_list,				/* TFF MODULAR EVENTS */
 	)
 GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/ban_panel, /client/proc/stickybanpanel, /client/proc/library_control))
 GLOBAL_PROTECT(admin_verbs_ban)

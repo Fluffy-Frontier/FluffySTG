@@ -1,34 +1,34 @@
-/turf/open/void_turf
+/turf/open/floor/void_turf
 	name = "Void"
 	icon = 'tff_modular/modules/void/icons/turf.dmi'
 	icon_state = "void_turf"
 	gender = PLURAL
 	var/destroy_on_enter = TRUE
 
-/turf/open/void_turf/ex_act()
+/turf/open/floor/void_turf/ex_act()
 	return FALSE
 
-/turf/open/void_turf/acid_act()
+/turf/open/floor/void_turf/acid_act()
 	return FALSE
 
-/turf/open/void_turf/airless
+/turf/open/floor/void_turf/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
-/turf/open/void_turf/Entered(atom/movable/arrived)
+/turf/open/floor/void_turf/Entered(atom/movable/arrived)
 	. = ..()
 	if(arrived.movement_type == FLYING)
 		return
 	convert_to_void(arrived)
 
-/turf/open/void_turf/attack_hand_secondary(mob/user)
+/turf/open/floor/void_turf/attack_hand_secondary(mob/user)
 	. = ..()
 	convert_to_void(user)
 
-/turf/open/void_turf/attack_hand(mob/user)
+/turf/open/floor/void_turf/attack_hand(mob/user)
 	. = ..()
 	convert_to_void(user)
 
-/turf/open/void_turf/rcd_act(mob/user, obj/item/construction/rcd/the_rcd)
+/turf/open/floor/void_turf/rcd_act(mob/user, obj/item/construction/rcd/the_rcd)
 	if(issilicon(user))
 		convert_to_void(user)
 		return
@@ -40,7 +40,8 @@
 	convert_to_void(the_rcd)
 
 
-/turf/open/void_turf/proc/convert_to_void(atom/target)
+/turf/open/floor/void_turf/proc/convert_to_void(atom/target)
+	/*
 	if(istype(target, /mob/living/basic/void_creture) || istype(target, /obj/structure/void_puddle))
 		return
 	target.visible_message(span_userdanger("[target.name] was consumed by void!"))
@@ -59,6 +60,7 @@
 		return
 
 	qdel(target)
+	*/
 
 /obj/structure/void_puddle
 	name = "Void puddle"
