@@ -68,8 +68,8 @@
 /proc/convert_to_void(atom/target, do_animation = FALSE, message = FALSE, puddle = FALSE)
 
 	#if defined(UNIT_TESTS)
-		// Не выполняем аннигиляции, если запущены юнит тесты. Во избеждание ошибок.
-		return
+	// Не выполняем аннигиляции, если запущены юнит тесты. Во избеждание ошибок.
+	return
 	#endif
 	if(isobserver(target))
 		return FALSE
