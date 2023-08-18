@@ -39,6 +39,7 @@
 	//Эффект на скорость передвижения.
 	var/datum/movespeed_modifier/stage_slowdown
 
+	var/lose_stage = FALSE
 
 	COOLDOWN_DECLARE(message_coodown)
 	COOLDOWN_DECLARE(item_drop_cooldown)
@@ -65,30 +66,32 @@
 		victim.remove_movespeed_modifier(stage_slowdown)
 
 	GLOB.void_infected_peoples -= victim
-	replace_wound(next_stage)
+	//Заменяем ваунд не следующий!
+	var/datum/wound/new_stage = new next_stage
+	remove_wound(replaced=TRUE)
+	new_stage.apply_wound(limb)
+	lose_stage = TRUE
+	qdel(src)
 
-/datum/wound/inner_void/remove_wound(ignore_limb, replaced)
-	. = ..()
-	if(!replaced)
+/datum/wound/inner_void/remove_wound(replaced)
+	if(!replaced && !lose_stage)
 		victim_dead()
+	return ..()
 
 /datum/wound/inner_void/proc/victim_dead()
-	new /obj/structure/void_puddle(victim.loc, TRUE)
-	GLOB.void_infected_peoples -= victim
-
-	if(victim.client)
-		victim.client.admin_follow(get_turf(victim))
-		victim.client = null
-		victim.ckey = null
-
-	victim.visible_message(span_black("[victim.name] WAS CONSUMED BY VOID!"))
-	QDEL_IN(victim, 5)
+	var/mob/living/carbon/human/to_convet = victim
+	GLOB.void_infected_peoples -= to_convet
+	convert_to_void(to_convet, do_animation = TRUE, message = TRUE, puddle = TRUE)
+	qdel(src)
 
 // Актуально обрабатывает эффекты повреждений.
 /datum/wound/inner_void/handle_process(seconds_per_tick, times_fired)
 	. = ..()
+	if(!victim)
+		return
 	if(victim.stat & DEAD)
 		victim_dead()
+		STOP_PROCESSING(SSprocessing, src)
 		return
 	//Не обрабатывает никакие эффекты, если мы на стадии ложного выздоровления.
 	if(current_stage == WOUND_VOID_STAGE_FALSE_RECOVERY)

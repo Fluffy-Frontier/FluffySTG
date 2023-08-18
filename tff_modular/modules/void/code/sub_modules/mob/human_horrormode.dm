@@ -42,9 +42,9 @@
 		return
 	//Лопаем источники света!
 	if(glasses && glasses.color_cutoffs && clothing)
-		to_chat(src, span_warning("You [glasses.name], break!"))
+		to_chat(src, span_warning("Your [glasses.name], break!"))
 		do_sparks(4, TRUE, src)
-		glasses.Destroy()
+		qdel(glasses)
 
 	if(cybernetic)
 		var/obj/item/organ/internal/eyes/our_eyes = get_organ_slot(ORGAN_SLOT_EYES)

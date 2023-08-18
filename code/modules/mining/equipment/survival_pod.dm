@@ -37,7 +37,10 @@
 	. += "This capsule has the [template.name] stored."
 	. += template.description
 
-/obj/item/survivalcapsule/attack_self()
+/obj/item/survivalcapsule/attack_self(mob/user)
+	if(GLOB.world_horror_mode)	//TFF MODULAR - блокировка спавна капсул при активном хоррор моде.
+		to_chat(user, span_warning("You don't feel like it belongs to here"))
+		return
 	//Can't grab when capsule is New() because templates aren't loaded then
 	get_template()
 	if(!used)

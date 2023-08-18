@@ -39,29 +39,6 @@
 	user.balloon_alert(user, "RCD's gone!")
 	convert_to_void(the_rcd)
 
-
-/turf/open/floor/void_turf/proc/convert_to_void(atom/target)
-	/*
-	if(istype(target, /mob/living/basic/void_creture) || istype(target, /obj/structure/void_puddle))
-		return
-	target.visible_message(span_userdanger("[target.name] was consumed by void!"))
-
-	if(isliving(target) || issilicon(target))
-		var/mob/living/L = target
-		to_chat(L, span_userdanger("Void consumes you. You're now one."))
-		new /obj/structure/void_puddle(L.loc, TRUE)
-
-		L.death(TRUE)
-		if(L.client)
-			L.client.admin_follow(get_turf(L))
-			L.client = null
-			L.ckey = null
-		QDEL_IN(L, 5)
-		return
-
-	qdel(target)
-	*/
-
 /obj/structure/void_puddle
 	name = "Void puddle"
 	icon = 'tff_modular/modules/void/icons/void_effects.dmi'
@@ -87,3 +64,55 @@
 		return
 	visible_message(span_black("[name] is gone."))
 	Destroy()
+
+/proc/convert_to_void(atom/target, do_animation = FALSE, message = FALSE, puddle = FALSE)
+
+	#if defined(UNIT_TESTS)
+		// Не выполняем аннигиляции, если запущены юнит тесты. Во избеждание ошибок.
+		return
+	#endif
+	if(isobserver(target))
+		return FALSE
+	if(istype(target, /mob/camera))
+		return FALSE
+	if(istype(target, /mob/living/basic/void_creture))
+		return FALSE
+
+	//Если это моб - окуратно убираем его..
+	if(ismob(target))
+		var/mob/del_mob = target
+
+		if(del_mob.client)
+			del_mob.ghostize(FALSE)
+			message_admins("[del_mob.name]/[key_name(del_mob)], Was consumed by void at [ADMIN_JMP(del_mob.loc)]")
+
+		if(isliving(del_mob))
+			message = TRUE
+			del_mob.notransform = TRUE
+			if(issilicon(del_mob))
+				var/mob/living/silicon/silicon_mob = del_mob
+				silicon_mob.death(TRUE)
+
+			else if(iscarbon(del_mob))
+				var/mob/living/carbon/carbon_mob = del_mob
+				carbon_mob.death(TRUE)
+
+			else
+				var/mob/living/living_mob = del_mob
+				living_mob.death(TRUE)
+	if(iseffect(target))
+		return FALSE
+	if(isturf(target))
+		return FALSE
+
+	if(message)
+		target.visible_message(span_black("[target.name] WAS CONSUMED BY VOID!"))
+	if(do_animation)
+		var/matrix/pre_matrix = matrix()
+		pre_matrix.Scale(1, 0.25)
+		animate(target, 6 SECONDS, color = COLOR_ALMOST_BLACK, transform = pre_matrix.Multiply(target), easing = SINE_EASING|EASE_OUT)
+		sleep(6 SECONDS)
+	if(puddle)
+		new /obj/structure/void_puddle(target.loc, TRUE)
+	qdel(target)
+	return TRUE

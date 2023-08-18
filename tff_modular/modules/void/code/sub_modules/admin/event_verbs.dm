@@ -117,6 +117,8 @@
 	var/ask_light = tgui_alert(usr, "Break close-by lights?", "Break light", list("Yes", "No"))
 	var/r = tgui_input_number(usr, "Void infection spread redius", "Void spread", 1, 15, 1)
 	for(var/turf/old_turf in RANGE_TURFS(r, usr))
+		for(var/thing in old_turf.contents)
+			convert_to_void(thing)
 		old_turf.TerraformTurf(/turf/open/floor/void_turf, /turf/open/floor/void_turf, flags = CHANGETURF_INHERIT_AIR)
 
 	if(ask_light == "Yes")

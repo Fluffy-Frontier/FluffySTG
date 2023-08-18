@@ -578,6 +578,9 @@
 	if(cooldown > 0)
 		cooldown--
 		return ..()
+	if(GLOB.world_horror_mode)
+		to_chat(owner, span_notice("[linked_extract] try discharges some energy into a device you have, but fails... something blocked their energy!"))
+		return ..()
 	cooldown = max_cooldown
 	var/list/batteries = list()
 	for(var/obj/item/stock_parts/cell/C in owner.get_all_contents())

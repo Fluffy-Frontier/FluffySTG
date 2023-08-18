@@ -4,6 +4,9 @@
 #define HUMAN_HORROR_STATE_PANIC 1
 #define HUMAN_HORROR_STATE_FEAR 2
 
+//Может ли атом быть поглащен пустотой.
+#define FLAG_IMMUNE_TO_VOID "void_immune"
+
 //Включен ли глобальный режим страха!
 GLOBAL_VAR_INIT(world_horror_mode, TRUE)
 //Текущий активный гость войда. Может быть всего один в мире.
