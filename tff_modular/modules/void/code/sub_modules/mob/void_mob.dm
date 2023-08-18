@@ -75,7 +75,6 @@
 	void_scream.Grant(src)
 	light_blinking.Grant(src)
 
-	COOLDOWN_START(src, void_attack_cooldown, VOID_ATTACK_COOLDOWN)
 	COOLDOWN_START(src, light_blink, VOID_LIGHT_BLINK_COOLDOWN)
 
 /mob/living/basic/void_creture/void_creture/Destroy()
@@ -207,7 +206,7 @@
 		if(!(H.all_wounds & void_infection))
 			void_infection = new()
 			void_infection.apply_wound(C)
-			to_chat(t, span_black("VOID CORRUPT YOU..."))
+			to_chat(H, span_black("VOID CORRUPT YOU..."))
 
 	return ..(target, modifiers)
 
