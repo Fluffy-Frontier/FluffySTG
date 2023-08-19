@@ -114,5 +114,5 @@
 		sleep(6 SECONDS)
 	if(puddle)
 		new /obj/structure/void_puddle(target.loc, TRUE)
-	qdel(target)
+	QDEL_IN(target,5)
 	return TRUE
