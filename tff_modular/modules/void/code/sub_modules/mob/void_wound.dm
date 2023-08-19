@@ -212,7 +212,7 @@
 /datum/mood_event/void_infection/penetration
 	description = "Why can't I die already?"
 	mood_change = -32
-	timeout = INFINITE
+	timeout = 8 HOURS
 
 // ЗАМЕДЛЕНИЕ
 

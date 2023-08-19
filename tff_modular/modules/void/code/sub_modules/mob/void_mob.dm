@@ -194,7 +194,7 @@
 		balloon_alert(src, "Successful!")
 		playsound(w, 'tff_modular/modules/void/sounds/stab.ogg', 100, TRUE)
 		w.atom_destruction()
-		new /obj/effect/temp_visual/voidin(get_turf(w))
+		new /obj/effect/temp_visual/voidout(get_turf(w))
 		return FALSE
 
 	if(ishuman(target))
