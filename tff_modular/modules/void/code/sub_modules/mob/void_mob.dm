@@ -35,9 +35,6 @@
 	basic_mob_flags = IMMUNE_TO_FISTS
 	minimum_survivable_temperature = -INFINITY
 	maximum_survivable_temperature = INFINITY
-	move_force = MOVE_FORCE_VERY_STRONG
-	move_resist = MOVE_FORCE_VERY_STRONG
-	pull_force = MOVE_FORCE_VERY_STRONG
 	pressure_resistance = INFINITY
 	lighting_cutoff = LIGHTING_CUTOFF_HIGH
 	zone_selected = BODY_ZONE_CHEST
@@ -179,9 +176,9 @@
 				balloon_alert(src, "Stand still!")
 				return FALSE
 
-			a.open()
+			a.open(BYPASS_DOOR_CHECKS)
 			do_sparks(3, TRUE, a)
-			balloon_alert(src, "Succesfull!")
+			balloon_alert(src, "Successful!")
 			return FALSE
 
 	if(istype(target, /turf/closed/wall))
@@ -194,9 +191,10 @@
 			balloon_alert(src, "Stand still!")
 			return FALSE
 
-		balloon_alert(src, "Succesfull!")
+		balloon_alert(src, "Successful!")
 		playsound(w, 'tff_modular/modules/void/sounds/stab.ogg', 100, TRUE)
 		w.atom_destruction()
+		new /obj/effect/temp_visual/voidin(get_turf(w))
 		return FALSE
 
 	if(ishuman(target))

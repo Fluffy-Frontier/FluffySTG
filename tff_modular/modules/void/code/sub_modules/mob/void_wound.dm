@@ -82,7 +82,6 @@
 	var/mob/living/carbon/human/to_convet = victim
 	GLOB.void_infected_peoples -= to_convet
 	convert_to_void(to_convet, do_animation = TRUE, message = TRUE, puddle = TRUE)
-	qdel(src)
 
 // Актуально обрабатывает эффекты повреждений.
 /datum/wound/inner_void/handle_process(seconds_per_tick, times_fired)

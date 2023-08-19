@@ -7,7 +7,7 @@
 	button_icon_state = "charger"
 	cooldown_time = 10 SECONDS
 
-/datum/action/cooldown/void_ability/Activate(atom/target)
+/datum/action/cooldown/void_ability/void_teleport/Activate(atom/target)
 	. = ..()
 	var/turf/source_turf = get_turf(owner)
 	var/turf/targeted_turf = get_turf(target)
@@ -29,6 +29,8 @@
 		no_effects = TRUE,
 		channel = TELEPORT_CHANNEL_FREE,
 	)
+	unset_click_ability(owner)
+	next_melee_use_time = world.time
 
 /datum/action/cooldown/void_ability/proc/do_effect(turf/target, type = /obj/effect/temp_visual/voidin)
 	playsound(owner, 'tff_modular/modules/void/sounds/stab.ogg', 100, TRUE)
