@@ -1078,6 +1078,7 @@
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
 	},
+/obj/effect/turf_decal/stripes/red/box,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
 "aoz" = (
@@ -14223,6 +14224,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible,
+/obj/effect/turf_decal/stripes/red/box,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
 "eJy" = (
@@ -14696,7 +14698,6 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/mapping_helpers/broken_floor,
 /obj/effect/landmark/start/coroner,
 /turf/open/floor/iron/dark,
 /area/station/medical/morgue)
@@ -37206,7 +37207,6 @@
 /area/station/command/heads_quarters/cmo)
 "lVe" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/broken_floor,
 /obj/structure/table/reinforced,
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /turf/open/floor/iron/dark,
@@ -43630,7 +43630,6 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/iron/dark,
 /area/station/medical/morgue)
 "ocZ" = (
@@ -63533,7 +63532,6 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/iron/dark,
 /area/station/medical/morgue)
 "utk" = (
