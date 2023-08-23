@@ -2685,7 +2685,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
 "arw" = (
-/obj/structure/grille,
+/obj/effect/spawner/random/structure/grille,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
 "arx" = (
@@ -43978,8 +43978,8 @@
 	},
 /area/station/commons/dorms)
 "ldN" = (
-/obj/structure/grille,
 /obj/effect/mapping_helpers/burnt_floor,
+/obj/effect/spawner/random/structure/grille,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
 "leX" = (
@@ -51304,8 +51304,6 @@
 /turf/open/floor/iron,
 /area/station/science/ordnance/storage)
 "rCl" = (
-/obj/structure/girder,
-/obj/structure/grille,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 4
 	},
@@ -51313,6 +51311,8 @@
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/effect/spawner/random/structure/girder,
+/obj/effect/spawner/random/structure/grille,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
 "rCA" = (
@@ -53179,7 +53179,7 @@
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "tkC" = (
-/obj/structure/grille,
+/obj/effect/spawner/random/structure/grille,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
 "tll" = (
@@ -54371,13 +54371,13 @@
 /turf/open/floor/plastic,
 /area/station/hallway/secondary/service)
 "upa" = (
-/obj/structure/girder,
-/obj/structure/grille,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
+/obj/effect/spawner/random/structure/girder,
+/obj/effect/spawner/random/structure/grille,
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
 "upf" = (
@@ -56361,6 +56361,10 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
+"vYB" = (
+/obj/effect/spawner/random/structure/grille,
+/turf/open/floor/plating,
+/area/station/maintenance/aft)
 "vYW" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -99239,7 +99243,7 @@ caQ
 bzs
 wzK
 cdL
-hzQ
+vYB
 bzs
 mXn
 tAm
