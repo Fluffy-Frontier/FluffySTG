@@ -58,7 +58,8 @@
 			),
 		),
 	)
-	premium = list( /obj/item/clothing/under/rank/security/officer/formal = 5,
+	premium = list( /obj/item/clothing/accessory/cqd_holster = 5,
+					/obj/item/clothing/under/rank/security/officer/formal = 5,
 					/obj/item/clothing/suit/jacket/officer/tan = 5,
 					/obj/item/clothing/suit/jacket/officer/blue = 3,
 					/obj/item/clothing/head/beret/sec/navyofficer = 5,

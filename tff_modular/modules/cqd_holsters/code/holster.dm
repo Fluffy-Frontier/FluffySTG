@@ -4,12 +4,13 @@
 
 /obj/item/clothing/accessory/cqd_holster
 	name = "CQD holster"
-	desc = "CQD model holster made of durable materials and has tactical weapon attachment points. CQD stands for Concealed Quick Draw, this holster model of holsters developed for more comfortable weapon carry among authorized personnel."
+	desc = "CQD model holster made of durable materials and has tactical weapon attachment points. CQD stands for Concealed Quick Draw, this holster model developed for more comfortable weapon carry among authorized personnel."
 	icon = 'tff_modular/modules/cqd_holsters/icons/cqd_holster.dmi'
 	worn_icon = 'tff_modular/modules/cqd_holsters/icons/cqd_holster_worn.dmi'
 	icon_state = "cqd-holster"
 	worn_icon_state = null
 	above_suit = FALSE
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/clothing/accessory/cqd_holster/Initialize(mapload)
 	. = ..()
@@ -25,7 +26,7 @@
 // Например чтобы скрыть внешний спрайтик для набберов и тешари.
 /obj/item/clothing/accessory/cqd_holster/on_uniform_equipped(obj/item/clothing/under/U, user)
 	. = ..()
-	// Если всё нормально - то он будет использовать дефолтный спрайт состояние иконы.
+	// Если всё нормально - то он будет использовать значение icon_state
 	worn_icon_state = null
 
 	if(isteshari(user))
@@ -44,7 +45,7 @@
 *  Эстетичная кобура
 */
 
-/obj/item/clothing/accessory/cqd_holster/aeshthetic
+/obj/item/clothing/accessory/cqd_holster/aesthetic
 	name = "aesthetic CQD holster"
 	desc = "CQD model holster made of durable materials and has tactical weapon attachment points. CQD stands for Concealed Quick Draw, this holster model developed for more comfortable weapon carry among authorized personnel. This one partly made of leather for aesthetics."
 	icon = 'tff_modular/modules/cqd_holsters/icons/cqd_holster_aesthetic.dmi'
