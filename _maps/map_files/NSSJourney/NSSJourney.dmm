@@ -14480,6 +14480,7 @@
 /area/station/maintenance/starboard/aft)
 "bgL" = (
 /obj/machinery/computer/security/telescreen/entertainment/directional/south,
+/obj/machinery/recharge_station,
 /turf/open/floor/wood,
 /area/station/command/meeting_room)
 "bgM" = (
@@ -19220,8 +19221,7 @@
 /area/station/science/ordnance/bomb)
 "bus" = (
 /obj/machinery/door/airlock/external{
-	name = "External Airlock";
-	space_dir = 8
+	name = "External Airlock"
 	},
 /obj/effect/mapping_helpers/airlock/access/any/engineering/atmos,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -19943,7 +19943,10 @@
 	pixel_y = 4;
 	pixel_x = 7
 	},
-/obj/item/stamp/head/hop,
+/obj/item/stamp/head/hop{
+	pixel_y = 6;
+	pixel_x = 6
+	},
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/hop)
 "bwl" = (
@@ -27323,11 +27326,11 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
-/obj/structure/closet/firecloset,
 /obj/effect/turf_decal/tile/dark,
 /obj/effect/turf_decal/tile/dark{
 	dir = 1
 	},
+/obj/machinery/recharge_station,
 /turf/open/floor/iron/smooth,
 /area/station/engineering/break_room)
 "bYL" = (
@@ -32077,8 +32080,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/external{
-	name = "Port Docking Bay 4";
-	space_dir = 2
+	name = "Port Docking Bay 4"
 	},
 /turf/open/floor/plating,
 /area/station/hallway/secondary/entry)
@@ -32087,8 +32089,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/external{
-	name = "Port Docking Bay 3";
-	space_dir = 2
+	name = "Port Docking Bay 3"
 	},
 /turf/open/floor/plating,
 /area/station/hallway/secondary/entry)
@@ -36289,11 +36290,9 @@
 /turf/open/floor/iron/showroomfloor,
 /area/station/hallway/secondary/service)
 "eAU" = (
-/obj/machinery/atmospherics/pipe/layer_manifold/scrubbers/visible{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/station/engineering/atmos)
+/obj/effect/spawner/random/structure/grille,
+/turf/open/floor/plating,
+/area/station/maintenance/aft)
 "eAX" = (
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -44908,6 +44907,7 @@
 /area/station/maintenance/starboard/aft)
 "lSJ" = (
 /obj/machinery/light/directional/west,
+/obj/machinery/recharge_station,
 /turf/open/floor/iron/dark,
 /area/station/security/office)
 "lST" = (
@@ -45862,6 +45862,7 @@
 /obj/structure/cable,
 /obj/effect/mapping_helpers/airlock/access/any/engineering/maintenance,
 /obj/effect/mapping_helpers/airlock/unres,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/maintenance/port)
 "mQS" = (
@@ -48235,9 +48236,6 @@
 "oYb" = (
 /obj/machinery/processor,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 1
-	},
 /turf/open/floor/iron/cafeteria,
 /area/station/maintenance/abandon_cafeteria)
 "oYm" = (
@@ -49335,9 +49333,11 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
 "pTw" = (
-/obj/effect/spawner/random/structure/grille,
-/turf/open/floor/plating,
-/area/station/maintenance/aft)
+/obj/effect/landmark/start/hangover,
+/turf/open/floor/iron/white/corner{
+	dir = 1
+	},
+/area/station/hallway/primary/starboard)
 "pUe" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/trimline/white/line,
@@ -51195,11 +51195,15 @@
 /turf/open/floor/iron/dark,
 /area/station/medical/medbay/central)
 "rwl" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/machinery/door/airlock/security/glass{
+	name = "Brig"
 	},
-/turf/open/floor/iron,
-/area/station/engineering/atmos)
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
+	cycle_id = "brigentrance"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/security/entrance,
+/turf/open/floor/iron/dark,
+/area/station/security/brig)
 "rwv" = (
 /obj/structure/easel,
 /obj/machinery/light/directional/north,
@@ -53847,7 +53851,16 @@
 	pixel_x = 7
 	},
 /obj/item/folder/blue{
+	pixel_x = -5;
+	pixel_y = -1
+	},
+/obj/item/folder/documents{
+	pixel_y = 2;
 	pixel_x = -5
+	},
+/obj/item/folder/yellow{
+	pixel_x = -5;
+	pixel_y = 5
 	},
 /obj/item/folder/red{
 	pixel_y = 7;
@@ -54698,7 +54711,6 @@
 "uDy" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/security/glass{
-	id_tag = "outerbrig";
 	name = "Brig"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
@@ -57553,8 +57565,8 @@
 /area/station/maintenance/starboard)
 "wWE" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/components/trinary/filter/atmos/co2,
 /obj/effect/turf_decal/bot,
+/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible,
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "wXs" = (
@@ -58684,6 +58696,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
 /turf/open/floor/iron/cafeteria,
 /area/station/maintenance/abandon_cafeteria)
 "xRH" = (
@@ -89930,7 +89945,7 @@ adR
 ibI
 aEh
 oKN
-pnU
+rwl
 chF
 mzk
 uDy
@@ -91030,7 +91045,7 @@ rid
 bQo
 bRz
 bSH
-rwl
+bOd
 cdz
 bbp
 bWQ
@@ -91287,7 +91302,7 @@ pEY
 bOd
 bRy
 bSG
-eAU
+bOd
 bUK
 bVT
 bWR
@@ -98252,7 +98267,7 @@ cmd
 cmd
 cmd
 cmd
-bxo
+cmd
 cmd
 sUX
 sUX
@@ -98448,7 +98463,7 @@ aVF
 aVF
 aYM
 bnh
-cVV
+pTw
 aDA
 ugI
 aYV
@@ -99265,7 +99280,7 @@ caQ
 bzs
 wzK
 cdL
-pTw
+eAU
 bzs
 mXn
 tAm
