@@ -26926,6 +26926,7 @@
 /obj/machinery/atmospherics/components/tank/oxygen{
 	dir = 4
 	},
+/obj/effect/turf_decal/bot,
 /turf/open/floor/iron,
 /area/station/science/ordnance/storage)
 "bXt" = (
@@ -51720,6 +51721,7 @@
 	},
 /obj/item/folder/white,
 /obj/structure/window/reinforced/spawner/directional/east,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/medical/morgue)
 "rXY" = (
@@ -53854,13 +53856,9 @@
 	pixel_x = -5;
 	pixel_y = -1
 	},
-/obj/item/folder/documents{
-	pixel_y = 2;
-	pixel_x = -5
-	},
 /obj/item/folder/yellow{
 	pixel_x = -5;
-	pixel_y = 5
+	pixel_y = 3
 	},
 /obj/item/folder/red{
 	pixel_y = 7;
