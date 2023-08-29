@@ -103,7 +103,7 @@
 		data["is_donator"] = TRUE
 	// THE FLUFFY FRONTIER EDIT END
 	// SKYRAT EDIT
-	if(is_veteran_player(user.client))
+	if(SSplayer_ranks.is_veteran(user.client))
 		data["is_veteran"] = TRUE
 	// SKYRAT EDIT END
 	var/list/required_job_playtime = get_required_job_playtime(user)

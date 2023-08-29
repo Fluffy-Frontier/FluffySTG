@@ -57,7 +57,7 @@
 	//SKYRAT EDIT ADDITION
 	var/list/quirks = SSquirks.get_quirks()
 	var/datum/quirk/quirk = quirks[quirk_name]
-	if(initial(quirk.veteran_only) && !is_veteran_player(preferences?.parent))
+	if(initial(quirk.veteran_only) && !SSplayer_ranks.is_veteran(preferences?.parent))
 		if(initial(quirk.allow_for_donator) && !GLOB.donator_list[preferences?.parent.ckey]) // THE FLUFFY FRONTIER EDIT - donator?
 			return FALSE
 	//SKYRAT EDIT END
@@ -98,7 +98,7 @@
 		//SKYRAT EDIT ADDITION
 		var/list/quirks = SSquirks.get_quirks()
 		var/datum/quirk/quirk_datum = quirks[quirk]
-		if(initial(quirk_datum.veteran_only) && !is_veteran_player(preferences?.parent))
+		if(initial(quirk.veteran_only) && !SSplayer_ranks.is_veteran(preferences?.parent))
 			if(initial(quirk_datum.allow_for_donator) && !GLOB.donator_list[preferences?.parent.ckey]) // THE FLUFFY FRONTIER EDIT
 				preferences.all_quirks -= quirk
 				continue
