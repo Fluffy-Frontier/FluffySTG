@@ -1,30 +1,37 @@
-#define CQD_HOLSTER_BLACKLIST_FILE "tff_modular/modules/cqd_holsters/holster_holdable_blacklist.txt"
-#define CQD_HOLSTER_WHITELIST_FILE "tff_modular/modules/cqd_holsters/holster_holdable_whitelist.txt"
-#define CQD_HOLSTER_DEFAULT_LIST_FILE "tff_modular/modules/cqd_holsters/holster_holdable_default_list.txt"
-
-GLOBAL_LIST_INIT(cqd_holster_storage_whitelist, load_types_from_txtfile(CQD_HOLSTER_WHITELIST_FILE))
-GLOBAL_LIST_INIT(cqd_holster_storage_blacklist, load_types_from_txtfile(CQD_HOLSTER_BLACKLIST_FILE))
-GLOBAL_LIST_INIT(cqd_holster_storage_deafault_list, load_types_from_txtfile(CQD_HOLSTER_DEFAULT_LIST_FILE))
-
-/proc/load_types_from_txtfile(filepath as text)
-	var/list/pathlist = list()
-	for(var/str as anything in splittext(file2text(filepath), "\n"))
-		var/path = text2path(trim(str))
-		if(path)
-			pathlist += path
-	return pathlist
-
 /datum/storage/cqd_holster_storage
 	max_slots = 1
 	max_specific_storage = WEIGHT_CLASS_NORMAL
 
+// прок перезаписан "белого списка".
 /datum/storage/cqd_holster_storage/can_insert(obj/item/to_insert, mob/user, messages = TRUE, force = FALSE)
 	. = ..()
 	if(is_type_in_typecache(to_insert, exception_hold))
 		return TRUE
 
+
+/// Хранилище для кобуры в котором прописано то, что можно будет в неё убрать
 /datum/storage/cqd_holster_storage/New()
 	. = ..()
-	can_hold = typecacheof(GLOB.cqd_holster_storage_deafault_list)
-	cant_hold = typecacheof(GLOB.cqd_holster_storage_blacklist)
-	exception_hold = typecacheof(GLOB.cqd_holster_storage_whitelist)
+
+	// Объекты и их наследники которые по умолчанию можно будет убрать в кобуру.
+	// Важное уточнение! Объекты из этого списка не 
+	// будут игнорировать размер и иные ограничения.
+	can_hold = typecacheof(list(
+		// Большая часть пистолетов и револьверов
+		/obj/item/gun/ballistic/revolver,
+		/obj/item/gun/ballistic/automatic/pistol,
+
+		// Энергетические стволы, которые normal sized.
+		/obj/item/gun/energy,
+	))
+
+	// Объекты и их наследники которые по умолчанию НЕЛЬЗЯ будет убрать в кобуру.
+	cant_hold = typecacheof(list()) // Тут пока пусто...
+
+	// Объекты и их наследники которые в любом случае можно будет убрать в кобуру.
+	// Важное уточнение! Объекты из этого списка БУДУТ игнорировать размер, "чёрный список" и иные ограничения.
+	exception_hold = typecacheof(list(
+		/obj/item/food/grown/banana, // Бананчег :D
+		))
+
+
