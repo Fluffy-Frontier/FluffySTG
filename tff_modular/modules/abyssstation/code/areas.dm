@@ -34,3 +34,49 @@
 /area/abyss_station/exterior/park/dorm
 	name = "Dormitory Park"
 	icon_state = "dorm_park"
+
+/area/abyss_station/exterior/park/skate
+	name = "Skateboard Park"
+	icon_state = "skate_park"
+
+/area/abyss_station/exterior/bridge/north
+	name = "North Bridge"
+	icon_state = "north_bridge"
+
+/area/abyss_station/exterior/bridge/south
+	name = "South Bridge"
+	icon_state = "south_bridge"
+
+/area/abyss_station/exterior/bridge/east
+	name = "East Bridge"
+	icon_state = "east_bridge"
+
+/area/abyss_station/exterior/bridge/west
+	name = "West Bridge"
+	icon_state = "west_bridge"
+
+/area/abyss_station/station/
+	name = "Barracks"
+	icon = 'icons/area/areas_station.dmi'
+	icon_state = "securitylockerroom"
+
+/area/abyss_station/station/security
+	name = "Security"
+	icon_state = "security"
+	ambience_index = AMBIENCE_DANGER
+	airlock_wires = /datum/wires/airlock/security
+	sound_environment = SOUND_AREA_STANDARD_STATION
+
+/area/abyss_station/station/command
+	name = "Command"
+	icon_state = "command"
+	ambientsounds = list(
+		'sound/ambience/signal.ogg',
+		)
+	airlock_wires = /datum/wires/airlock/command
+	sound_environment = SOUND_AREA_STANDARD_STATION
+
+/area/abyss_station/station/command/heads_quarters/captain
+	name = "\improper Captain's Office"
+	icon_state = "captain"
+	sound_environment = SOUND_AREA_WOODFLOOR
