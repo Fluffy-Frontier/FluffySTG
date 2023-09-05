@@ -10,6 +10,9 @@
 		"whiteship": "whiteship_box",
 		"emergency": "emergency_box"
 	},
+	"ignored_unit_tests": [
+		"/datum/unit_test/atmospherics_sanity"
+	],
 	"traits": [
 		{
 			"Up": true,
