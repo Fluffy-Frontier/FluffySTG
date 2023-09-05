@@ -12,23 +12,20 @@
 	},
 	"traits": [
 		{
-			"Up": 1,
-			"Linkage": null,
+			"Up": true,
 			"Gravity": true,
 			"Baseturf": "/turf/open/chasm",
 			"No Parallax": true
 		},
 		{
-			"Down": -1,
-			"Up": 1,
-			"Linkage": null,
+			"Up": true,
+			"Down": true,
 			"Gravity": true,
 			"Baseturf": "/turf/open/openspace",
 			"No Parallax": true
 		},
 		{
-			"Down": -1,
-			"Linkage": null,
+			"Down": true,
 			"Gravity": true,
 			"Baseturf": "/turf/open/openspace",
 			"No Parallax": true
