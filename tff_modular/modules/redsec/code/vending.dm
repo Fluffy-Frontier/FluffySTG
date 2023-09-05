@@ -21,7 +21,7 @@
 					/obj/item/clothing/mask/bandana/red = 5,
 					/obj/item/clothing/glasses/hud/security/redsec = 5,
 					/obj/item/clothing/gloves/color/black = 5,
-					/obj/item/clothing/under/rank/security/officer/skirt = 5,
+					/obj/item/clothing/under/rank/security/officer/skirt/redsec = 5,
 					/obj/item/clothing/under/rank/security/skyrat/utility/redsec = 5,
 					/obj/item/clothing/suit/toggle/jacket/sec/old = 5,
 					/obj/item/clothing/suit/armor/vest/alt/sec/redsec = 2
@@ -42,6 +42,7 @@
 					/obj/item/storage/backpack/satchel/sec = 5,
 					/obj/item/storage/backpack/duffelbag/sec = 5,
 					/obj/item/clothing/under/rank/security/officer = 5,
+					/obj/item/clothing/under/rank/security/officer/skirt = 5,
 					/obj/item/clothing/under/rank/security/peacekeeper/tactical = 5,
 					/obj/item/clothing/under/rank/security/peacekeeper/sol/cadet = 5,
 					/obj/item/clothing/under/rank/security/peacekeeper/sol = 5,
@@ -58,7 +59,8 @@
 			),
 		),
 	)
-	premium = list( /obj/item/clothing/under/rank/security/officer/formal = 5,
+	premium = list( /obj/item/clothing/accessory/cqd_holster = 5,
+					/obj/item/clothing/under/rank/security/officer/formal = 5,
 					/obj/item/clothing/suit/jacket/officer/tan = 5,
 					/obj/item/clothing/suit/jacket/officer/blue = 3,
 					/obj/item/clothing/head/beret/sec/navyofficer = 5,
@@ -70,3 +72,14 @@
 	default_price = PAYCHECK_CREW
 	extra_price = PAYCHECK_COMMAND * 1.5
 	payment_department = ACCOUNT_SEC
+
+/obj/item/clothing/under/rank/security/officer/skirt/redsec // крысы переобозначением целиком убили редсек юбочку. Возвращаем.
+	name = "security skirt"
+	desc = "A \"tactical\" security uniform with the legs replaced by a skirt."
+	icon_state = "secskirt"
+	inhand_icon_state = "r_suit"
+	body_parts_covered = CHEST|GROIN|ARMS
+	dying_key = DYE_REGISTRY_JUMPSKIRT
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	uses_advanced_reskins = FALSE
