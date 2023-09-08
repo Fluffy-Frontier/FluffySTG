@@ -7518,6 +7518,11 @@
 	},
 /turf/open/misc/dirt/planet,
 /area/awaymission/beach)
+"crX" = (
+/obj/effect/turf_decal/tile/dark_red/half/contrasted,
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/station/security/prison)
 "crZ" = (
 /obj/structure/filingcabinet,
 /obj/machinery/light/directional/east,
@@ -11787,6 +11792,7 @@
 /obj/structure/chair/plastic{
 	dir = 8
 	},
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/security/prison/upper)
 "dHH" = (
@@ -18493,6 +18499,17 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos/office)
+"fKL" = (
+/obj/effect/turf_decal/tile/dark_red/half/contrasted{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet/evidence{
+	name = "Brig Officer's Locker";
+	icon_state = "sec"
+	},
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/station/security/prison/upper)
 "fKM" = (
 /obj/item/stack/rods,
 /turf/open/misc/grass/planet,
@@ -40817,6 +40834,10 @@
 /obj/item/storage/fancy/candle_box,
 /turf/open/floor/engine/cult,
 /area/station/service/library/private)
+"mzo" = (
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/station/security/prison/upper)
 "mzp" = (
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 4
@@ -63688,6 +63709,7 @@
 	dir = 4;
 	layer = 2.7
 	},
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/security/prison/upper)
 "tBe" = (
@@ -67175,6 +67197,13 @@
 	base_lighting_alpha = 255;
 	base_lighting_color = "#FFFFCC"
 	})
+"uHy" = (
+/obj/effect/turf_decal/tile/dark_red/half/contrasted{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/station/security/prison/upper)
 "uHE" = (
 /obj/structure/chair/office/light,
 /turf/open/floor/iron,
@@ -77537,6 +77566,7 @@
 	dir = 4;
 	layer = 2.7
 	},
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/security/prison/upper)
 "xJm" = (
@@ -111909,7 +111939,7 @@ qjs
 miq
 xkh
 jIz
-rZr
+crX
 qKk
 ndA
 yel
@@ -176924,7 +176954,7 @@ ebu
 ebu
 ebu
 lCS
-wbd
+uHy
 vsQ
 nLx
 aEk
@@ -177956,7 +177986,7 @@ ebu
 ebu
 ebu
 lCS
-wbd
+uHy
 mso
 nEg
 aEk
@@ -179246,10 +179276,10 @@ riL
 riL
 riL
 lCS
-arj
+fKL
 vQr
-xHh
-xHh
+mzo
+mzo
 tAU
 xJd
 oeo
