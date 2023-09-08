@@ -56,16 +56,27 @@
 	icon_state = "west_bridge"
 
 /area/abyss_station/station/
-	name = "Barracks"
-	icon = 'icons/area/areas_station.dmi'
-	icon_state = "securitylockerroom"
+	name = "station"
+	icon = 'tff_modular/modules/abyssstation/icons/areas.dmi'
+	icon_state = "station"
 
 /area/abyss_station/station/security
-	name = "Security"
-	icon_state = "security"
+	name = "Barracks"
+	icon_state = "securitylockerroom"
 	ambience_index = AMBIENCE_DANGER
 	airlock_wires = /datum/wires/airlock/security
 	sound_environment = SOUND_AREA_STANDARD_STATION
+
+/area/abyss_station/station/security/camera
+	name = "Camera Room"
+	icon_state = "camera_room"
+
+/area/abyss_station/station/service
+	airlock_wires = /datum/wires/airlock/service
+
+/area/abyss_station/station/service/bar
+	name = "Gay Bar"
+	icon_state = "bar"
 
 /area/abyss_station/station/command
 	name = "Command"
