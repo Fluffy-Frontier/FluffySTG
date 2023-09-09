@@ -6567,6 +6567,11 @@
 /obj/machinery/meter/layer4,
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
+"bZP" = (
+/obj/structure/closet/secure_closet/barber,
+/obj/machinery/light/directional/north,
+/turf/open/floor/wood,
+/area/station/service/barber)
 "bZU" = (
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 8
@@ -9279,6 +9284,13 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/science/genetics)
+"cTh" = (
+/obj/structure/chair/comfy/barber_chair{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/wood,
+/area/station/service/barber)
 "cTi" = (
 /turf/open/floor/iron/stairs/medium{
 	dir = 1
@@ -18094,6 +18106,9 @@
 /obj/machinery/computer/records/medical,
 /turf/open/floor/wood,
 /area/station/security/detectives_office)
+"fEn" = (
+/turf/closed/wall/mineral/wood/nonmetal,
+/area/station/service/barber)
 "fEv" = (
 /obj/structure/chair/sofa/bench/right{
 	dir = 1
@@ -19276,6 +19291,10 @@
 	},
 /turf/open/floor/iron,
 /area/station/security/office)
+"fYm" = (
+/obj/item/wrench,
+/turf/open/floor/wood,
+/area/station/service/barber)
 "fYQ" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
@@ -19595,6 +19614,11 @@
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
+"gfd" = (
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/station/service/barber)
 "gfl" = (
 /turf/open/floor/engine,
 /area/station/science/explab)
@@ -20485,6 +20509,12 @@
 	},
 /turf/open/floor/iron/small,
 /area/abyss_station/exterior/park)
+"gvs" = (
+/obj/machinery/door/airlock/wood/glass{
+	name = "Barbershop"
+	},
+/turf/open/floor/wood,
+/area/station/service/barber)
 "gvy" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 9
@@ -27792,6 +27822,22 @@
 	},
 /turf/open/floor/iron,
 /area/awaymission/beach)
+"iFH" = (
+/obj/structure/table/wood,
+/obj/item/hairbrush/comb{
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/spray/quantum_hair_dye{
+	pixel_x = 6
+	},
+/obj/item/lipstick/random,
+/obj/item/reagent_containers/spray/barbers_aid{
+	pixel_y = 5;
+	pixel_x = -9
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/wood,
+/area/station/service/barber)
 "iFJ" = (
 /obj/structure/railing/corner,
 /turf/open/floor/iron/small,
@@ -28701,6 +28747,11 @@
 /obj/structure/cable,
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/department/engineering/lesser)
+"iVi" = (
+/obj/structure/water_source/puddle,
+/obj/item/reagent_containers/cup/bucket/wooden,
+/turf/open/misc/grass/planet,
+/area/abyss_station/exterior/ocean/shore)
 "iVp" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/stripes/corner{
@@ -29913,6 +29964,10 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/range)
+"jod" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/station/service/barber)
 "jog" = (
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
@@ -34223,6 +34278,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/science/robotics)
+"kAl" = (
+/turf/open/floor/wood,
+/area/station/service/barber)
 "kAy" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -34583,6 +34641,11 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/medical)
+"kGL" = (
+/obj/structure/cable,
+/obj/machinery/power/port_gen/pacman/pre_loaded,
+/turf/open/floor/plating,
+/area/station/service/barber)
 "kGR" = (
 /obj/structure/cable,
 /obj/effect/landmark/start/corrections_officer,
@@ -35257,6 +35320,13 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
+"kTW" = (
+/obj/structure/chair/comfy/barber_chair{
+	dir = 8
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/wood,
+/area/station/service/barber)
 "kTY" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -38524,6 +38594,10 @@
 /obj/effect/turf_decal/vg_decals/numbers/one,
 /turf/open/floor/iron,
 /area/station/cargo/storage)
+"lVA" = (
+/obj/structure/bed/maint,
+/turf/open/floor/wood,
+/area/station/service/barber)
 "lVB" = (
 /obj/structure/barricade/wooden,
 /turf/open/misc/grass/planet,
@@ -42482,6 +42556,12 @@
 	},
 /turf/open/floor/iron,
 /area/station/maintenance/disposal)
+"nif" = (
+/obj/structure/sign/barber{
+	pixel_x = -13
+	},
+/turf/open/misc/grass/planet,
+/area/abyss_station/exterior/ocean/shore)
 "nip" = (
 /obj/structure/disposalpipe/segment{
 	dir = 10
@@ -47880,6 +47960,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/iron/white,
 /area/station/medical/aslyum)
+"oRl" = (
+/obj/effect/spawner/random/animalhide,
+/turf/open/floor/wood,
+/area/station/service/barber)
 "oRr" = (
 /obj/structure/flora/bush/sparsegrass{
 	pixel_y = 5
@@ -50700,6 +50784,10 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/science/ordnance)
+"pLC" = (
+/obj/machinery/vending/barbervend,
+/turf/open/floor/wood,
+/area/station/service/barber)
 "pLD" = (
 /obj/structure/stairs/north,
 /turf/open/floor/iron,
@@ -54628,6 +54716,13 @@
 /obj/structure/disposalpipe/segment,
 /turf/closed/wall,
 /area/station/maintenance/disposal)
+"qXr" = (
+/obj/structure/table/wood,
+/obj/item/razor{
+	pixel_x = -6
+	},
+/turf/open/floor/wood,
+/area/station/service/barber)
 "qXt" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -58722,6 +58817,10 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/iron,
 /area/station/security/prison)
+"slN" = (
+/obj/effect/landmark/start/barber,
+/turf/open/floor/wood,
+/area/station/service/barber)
 "slQ" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -75552,6 +75651,11 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/disposal/incinerator)
+"xhi" = (
+/obj/structure/table/wood,
+/obj/item/knife/combat,
+/turf/open/floor/wood,
+/area/station/service/barber)
 "xhm" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -78642,6 +78746,11 @@
 	},
 /turf/closed/wall/r_wall,
 /area/station/command/heads_quarters/hos)
+"yhv" = (
+/obj/structure/table/wood,
+/obj/item/razor,
+/turf/open/floor/wood,
+/area/station/service/barber)
 "yhB" = (
 /obj/structure/chair/greyscale{
 	dir = 8
@@ -97225,14 +97334,14 @@ dXE
 dXE
 sRb
 dXE
-jgM
-jgM
-jgM
-jgM
-jgM
-jgM
-jgM
-jgM
+fEn
+fEn
+fEn
+fEn
+fEn
+fEn
+fEn
+fEn
 dXE
 ovf
 qJb
@@ -97483,14 +97592,14 @@ dXE
 dXE
 dXE
 dXE
-jgM
-rLp
-rLp
-sYb
-rLp
-rLp
-sYb
-jgM
+fEn
+pLC
+oRl
+kAl
+qXr
+xhi
+yhv
+fEn
 dXE
 clb
 dXE
@@ -97741,14 +97850,14 @@ dCp
 dXE
 dXE
 dXE
-jgM
-sYb
-sYb
-sYb
-sYb
-sYb
-dOr
-jgM
+fEn
+bZP
+kAl
+kAl
+cTh
+kAl
+kTW
+fEn
 dXE
 dOr
 dXE
@@ -97999,14 +98108,14 @@ dCp
 dCp
 dXE
 dOr
-jgM
-dOr
-sYb
-sYb
-dOr
-sYb
-sYb
-jgM
+fEn
+kGL
+kAl
+kAl
+kAl
+slN
+kAl
+fEn
 dXE
 dXE
 meK
@@ -98257,14 +98366,14 @@ dXE
 dCp
 dXE
 dXE
-jgM
-sYb
-sYb
-dOr
-sYb
-sYb
-dOr
-jgM
+fEn
+gfd
+fYm
+iFH
+kAl
+lVA
+kAl
+fEn
 dXE
 dXE
 meK
@@ -98515,14 +98624,14 @@ dXE
 dCp
 dXE
 dXE
-jgM
-jgM
-sYb
-jgM
-jgM
-jgM
-jgM
-jgM
+fEn
+fEn
+gvs
+fEn
+jod
+jod
+jod
+fEn
 dXE
 dXE
 meK
@@ -98774,7 +98883,7 @@ dCp
 dCp
 dXE
 dXE
-dXE
+nif
 dCp
 dXE
 dXE
@@ -99032,7 +99141,7 @@ dXE
 dCp
 dCp
 dCp
-dXE
+iVi
 dCp
 dXE
 dOr
@@ -163274,14 +163383,14 @@ vLC
 vLC
 vLC
 vLC
-vLC
-vLC
-vLC
-vLC
-vLC
-vLC
-vLC
-vLC
+xCV
+xCV
+xCV
+xCV
+xCV
+xCV
+xCV
+xCV
 vLC
 vLC
 vLC
@@ -163532,14 +163641,14 @@ vLC
 vLC
 vLC
 vLC
-vLC
-vLC
-vLC
-vLC
-vLC
-vLC
-vLC
-vLC
+xCV
+xCV
+xCV
+xCV
+xCV
+xCV
+xCV
+xCV
 vLC
 vLC
 vLC
@@ -163790,14 +163899,14 @@ vLC
 vLC
 vLC
 vLC
-vLC
-vLC
-vLC
-vLC
-vLC
-vLC
-vLC
-vLC
+xCV
+xCV
+xCV
+xCV
+xCV
+xCV
+xCV
+xCV
 vLC
 vLC
 vLC
@@ -164048,14 +164157,14 @@ vLC
 vLC
 vLC
 vLC
-vLC
-vLC
-vLC
-vLC
-vLC
-vLC
-vLC
-vLC
+xCV
+xCV
+xCV
+xCV
+xCV
+xCV
+xCV
+xCV
 vLC
 vLC
 vLC
@@ -164306,14 +164415,14 @@ vLC
 vLC
 vLC
 vLC
-vLC
-vLC
-vLC
-vLC
-vLC
-vLC
-vLC
-vLC
+xCV
+xCV
+xCV
+xCV
+xCV
+xCV
+xCV
+xCV
 vLC
 vLC
 vLC
@@ -164564,14 +164673,14 @@ vLC
 vLC
 vLC
 vLC
-vLC
-vLC
-vLC
-vLC
-vLC
-vLC
-vLC
-vLC
+xCV
+xCV
+xCV
+xCV
+xCV
+xCV
+xCV
+xCV
 vLC
 vLC
 vLC
