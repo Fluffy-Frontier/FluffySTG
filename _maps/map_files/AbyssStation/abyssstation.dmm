@@ -20773,11 +20773,6 @@
 /obj/effect/landmark/start/security_officer,
 /turf/open/floor/iron,
 /area/abyss_station/station/security)
-"gAc" = (
-/obj/effect/turf_decal/stripes/corner,
-/obj/structure/railing/corner,
-/turf/open/floor/iron/telecomms,
-/area/station/tcommsat/server)
 "gAv" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -26353,15 +26348,6 @@
 /obj/effect/turf_decal/tile/green/half/contrasted,
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
-"ilL" = (
-/obj/effect/turf_decal/stripes{
-	dir = 1
-	},
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/floor/iron/telecomms,
-/area/station/tcommsat/server)
 "ilT" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -28476,11 +28462,6 @@
 /mob/living/simple_animal/hostile/cult,
 /turf/open/floor/stone,
 /area/station/maintenance/cult_chapel)
-"iSo" = (
-/turf/open/openspace{
-	planetary_atmos = 1
-	},
-/area/station/tcommsat/server)
 "iSy" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -39129,12 +39110,6 @@
 "mdC" = (
 /obj/structure/ladder,
 /obj/effect/turf_decal/stripes/full,
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/structure/railing{
-	dir = 4
-	},
 /turf/open/floor/iron/telecomms,
 /area/station/tcommsat/server)
 "mdH" = (
@@ -41010,11 +40985,6 @@
 "mHB" = (
 /turf/closed/wall/r_wall,
 /area/station/security/checkpoint/customs/auxiliary)
-"mHC" = (
-/obj/effect/turf_decal/stripes,
-/obj/structure/railing,
-/turf/open/floor/iron/telecomms,
-/area/station/tcommsat/server)
 "mIb" = (
 /obj/machinery/atmospherics/pipe/smart/manifold/scrubbers/hidden{
 	dir = 8
@@ -46731,12 +46701,6 @@
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/corner{
-	dir = 4
-	},
-/obj/structure/railing/corner{
-	dir = 4
-	},
 /obj/structure/railing/corner{
 	dir = 4
 	},
@@ -48512,18 +48476,6 @@
 "oRL" = (
 /turf/closed/wall/r_wall,
 /area/station/command/heads_quarters/qm)
-"oRR" = (
-/obj/effect/turf_decal/stripes{
-	dir = 1
-	},
-/obj/structure/railing/corner{
-	dir = 4
-	},
-/obj/structure/railing/corner{
-	dir = 1
-	},
-/turf/open/floor/iron/dark/telecomms,
-/area/station/tcommsat/server)
 "oRT" = (
 /obj/machinery/computer/teleporter{
 	dir = 8
@@ -51462,12 +51414,6 @@
 "pQo" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 10
-	},
-/obj/effect/turf_decal/stripes{
-	dir = 1
-	},
-/obj/structure/railing{
-	dir = 1
 	},
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/station/tcommsat/server)
@@ -59435,12 +59381,6 @@
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
 "suK" = (
-/obj/effect/turf_decal/stripes{
-	dir = 1
-	},
-/obj/structure/railing{
-	dir = 1
-	},
 /obj/machinery/camera{
 	c_tag = "Engineering - Telecommunications Servers 4";
 	network = list("engineer","ss13");
@@ -71882,9 +71822,6 @@
 "wgm" = (
 /obj/structure/ladder,
 /obj/effect/turf_decal/stripes/full,
-/obj/structure/railing{
-	dir = 4
-	},
 /turf/open/floor/iron/dark/telecomms,
 /area/station/tcommsat/server)
 "wgu" = (
@@ -174895,7 +174832,7 @@ riL
 dVi
 wZV
 sQW
-iSo
+ecP
 suK
 ecP
 tam
@@ -175154,7 +175091,7 @@ dVi
 wZV
 sQW
 mdC
-oRR
+wtg
 vFs
 tam
 iur
@@ -175411,8 +175348,8 @@ riL
 dVi
 wZV
 sQW
-iSo
-ilL
+ecP
+ecP
 ecP
 tam
 nah
@@ -241201,7 +241138,7 @@ riL
 riL
 riL
 sQW
-gAc
+ecP
 wgm
 opd
 hJz
@@ -241459,8 +241396,8 @@ riL
 riL
 riL
 sQW
-mHC
-iSo
+ecP
+wtg
 pQo
 joO
 emt
