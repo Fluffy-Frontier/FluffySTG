@@ -78,6 +78,24 @@
 	name = "Gay Bar"
 	icon_state = "bar"
 
+/area/abyss_station.station/service/garden
+	name = "Garden"
+	icon_state = "garden"
+	base_lighting_alpha = 255
+	base_lighting_color = "#FFFFCC"
+
+/area/abyss_station.station/service/public_garden
+	name = "Garden"
+	icon_state = "garden"
+	base_lighting_alpha = 255
+	base_lighting_color = "#FFFFCC"
+
+/area/abyss_station.station/service/diner
+	name = "Diner"
+	icon_state = "diner"
+	base_lighting_alpha = 255
+	base_lighting_color = "#FFFFCC"
+
 /area/abyss_station/station/command
 	name = "Command"
 	icon_state = "command"
