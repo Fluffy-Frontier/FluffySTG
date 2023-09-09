@@ -1077,7 +1077,7 @@
 "arF" = (
 /obj/structure/cable,
 /obj/effect/landmark/navigate_destination{
-	name = "Библиотека"
+	name = "Library"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2{
 	dir = 4
@@ -1738,7 +1738,7 @@
 "aCK" = (
 /obj/structure/industrial_lift,
 /obj/effect/landmark/navigate_destination{
-	name = "Лифт в "Бездну""
+	name = "Elevator to the Abyss"
 	},
 /turf/open/openspace{
 	planetary_atmos = 1
@@ -6791,7 +6791,7 @@
 	dir = 9
 	},
 /obj/effect/landmark/navigate_destination{
-	name = "Мостик Станции"
+	name = "Bridge of the Station"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4{
 	dir = 4
@@ -11823,7 +11823,7 @@
 "dKT" = (
 /obj/structure/cable,
 /obj/effect/landmark/navigate_destination{
-	name = "Хранилище Плат"
+	name = "Board Storage"
 	},
 /obj/effect/turf_decal/tile/yellow/half/contrasted,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2{
@@ -14375,7 +14375,7 @@
 "exx" = (
 /obj/structure/cable,
 /obj/effect/landmark/navigate_destination{
-	name = "Отбытие"
+	name = "Departure"
 	},
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
@@ -15684,7 +15684,7 @@
 /obj/effect/turf_decal/tile/blue/half/contrasted,
 /obj/structure/disposalpipe/segment,
 /obj/effect/landmark/navigate_destination{
-	name = "Снаряжение для чрезвычайных ситуаций"
+	name = "Emergency equipment"
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
@@ -16979,7 +16979,7 @@
 	dir = 4
 	},
 /obj/effect/landmark/navigate_destination{
-	name = "Химический Завод"
+	name = "Chemical Plant"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
@@ -18109,7 +18109,7 @@
 /area/station/ai_monitored/command/storage/eva)
 "fHF" = (
 /obj/effect/landmark/navigate_destination{
-	name = "Окно Робототехники"
+	name = "Robotics Window"
 	},
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 10
@@ -20772,6 +20772,12 @@
 /obj/effect/landmark/start/security_officer,
 /turf/open/floor/iron,
 /area/abyss_station/station/security)
+"gAc" = (
+/obj/effect/landmark/navigate_destination{
+	name = "Gay Bar"
+	},
+/turf/open/floor/carpet/neon/simple/purple/nodots,
+/area/abyss_station/station/service/bar)
 "gAv" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -21551,7 +21557,7 @@
 /area/awaymission/beach)
 "gNC" = (
 /obj/effect/landmark/navigate_destination{
-	name = "Каморка Уборщика"
+	name = "Janitor's Room"
 	},
 /turf/open/floor/iron,
 /area/station/maintenance/disposal)
@@ -21900,7 +21906,7 @@
 "gSP" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/landmark/navigate_destination{
-	name = "Ресторан"
+	name = "Restaurant"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -26347,6 +26353,20 @@
 /obj/effect/turf_decal/tile/green/half/contrasted,
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
+"ilL" = (
+/obj/effect/landmark/navigate_destination{
+	name = "AI Server Department"
+	},
+/obj/effect/landmark/navigate_destination{
+	name = "AI Server Department"
+	},
+/obj/effect/landmark/navigate_destination{
+	name = "AI Server Department"
+	},
+/turf/open/openspace{
+	planetary_atmos = 1
+	},
+/area/awaymission/beach)
 "ilT" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -26437,7 +26457,7 @@
 	dir = 4
 	},
 /obj/effect/landmark/navigate_destination{
-	name = "Серверное отделение ИИ"
+	name = "AI Server Department"
 	},
 /turf/open/floor/catwalk_floor/iron,
 /area/station/engineering/transit_tube)
@@ -28461,6 +28481,14 @@
 /mob/living/simple_animal/hostile/cult,
 /turf/open/floor/stone,
 /area/station/maintenance/cult_chapel)
+"iSo" = (
+/obj/effect/turf_decal/trimline/purple/filled/line,
+/obj/machinery/light/directional/south,
+/obj/effect/landmark/navigate_destination{
+	name = "Genetics Window"
+	},
+/turf/open/floor/iron,
+/area/station/hallway/primary/central)
 "iSy" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -28615,7 +28643,7 @@
 "iUk" = (
 /obj/structure/cable,
 /obj/effect/landmark/navigate_destination{
-	name = "Капсулы Рекриации"
+	name = "Recreation Capsules"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -32334,7 +32362,6 @@
 /obj/effect/turf_decal/trimline/blue/filled/warning{
 	dir = 4
 	},
-/obj/machinery/light/warm/directional/north,
 /obj/structure/cable,
 /turf/open/floor/iron/white,
 /area/station/command/gateway)
@@ -33981,7 +34008,7 @@
 /area/station/maintenance/starboard/greater)
 "kCA" = (
 /obj/effect/landmark/navigate_destination{
-	name = "Кабинет Адвоката"
+	name = "Lawyer's Office"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold/scrubbers/hidden/layer2{
@@ -36840,7 +36867,7 @@
 /obj/machinery/elevator_control_panel/directional/east{
 	name = "Security Elevator";
 	linked_elevator_id = "securityElevator";
-	preset_destination_names = list("2"="Первый этаж","3"="Второй этаж","4"="Третий этаж")
+	preset_destination_names = list("2"="First Floor", "3"="Second Floor", "4"="Third Floor")
 	},
 /turf/open/openspace{
 	planetary_atmos = 1
@@ -36862,7 +36889,7 @@
 /area/station/maintenance/department/security/brig)
 "ltE" = (
 /obj/effect/landmark/navigate_destination{
-	name = "Больница"
+	name = "Hospital"
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
@@ -38799,7 +38826,7 @@
 	dir = 4
 	},
 /obj/effect/landmark/navigate_destination{
-	name = "Окно Генетики"
+	name = "Genetics Window"
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
@@ -40730,7 +40757,7 @@
 /area/abyss_station/exterior/bridge/north)
 "mDV" = (
 /obj/effect/landmark/navigate_destination{
-	name = "Окно Гидропоники"
+	name = "Window of Hydroponics"
 	},
 /obj/machinery/camera{
 	c_tag = "Arrival Area - Lift 3-1";
@@ -40984,6 +41011,15 @@
 "mHB" = (
 /turf/closed/wall/r_wall,
 /area/station/security/checkpoint/customs/auxiliary)
+"mHC" = (
+/obj/structure/fence/corner{
+	dir = 10
+	},
+/obj/effect/landmark/navigate_destination{
+	name = "Reception of the Head of Staff"
+	},
+/turf/open/misc/dirt/planet,
+/area/awaymission/beach)
 "mIb" = (
 /obj/machinery/atmospherics/pipe/smart/manifold/scrubbers/hidden{
 	dir = 8
@@ -45030,6 +45066,12 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos/project)
+"nRX" = (
+/obj/effect/landmark/navigate_destination{
+	name = "Hospital"
+	},
+/turf/open/floor/wood,
+/area/station/service/library)
 "nSu" = (
 /obj/structure/tank_dispenser,
 /turf/open/floor/iron/dark,
@@ -46029,7 +46071,7 @@
 /obj/machinery/holopad/secure,
 /obj/structure/cable,
 /obj/effect/landmark/navigate_destination{
-	name = "Терминал Управления ИИ"
+	name = "AI Control Terminal"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
@@ -46840,7 +46882,7 @@
 /obj/machinery/elevator_control_panel/directional/east{
 	name = "Engineering elevator control";
 	linked_elevator_id = "engineeringElevator";
-	preset_destination_names = list("2"="Первый этаж","3"="Второй этаж","4"="Третий этаж")
+	preset_destination_names = list("2"="First Floor", "3"="Second Floor", "4"="Third Floor")
 	},
 /turf/open/openspace{
 	planetary_atmos = 1
@@ -48470,6 +48512,15 @@
 "oRL" = (
 /turf/closed/wall/r_wall,
 /area/station/command/heads_quarters/qm)
+"oRR" = (
+/obj/effect/turf_decal/tile/green/half/contrasted{
+	dir = 8
+	},
+/obj/effect/landmark/navigate_destination{
+	name = "Window of Hydroponics"
+	},
+/turf/open/floor/iron,
+/area/abyss_station/station/service/garden)
 "oRT" = (
 /obj/machinery/computer/teleporter{
 	dir = 8
@@ -48949,7 +49000,7 @@
 "paw" = (
 /obj/effect/turf_decal/tile/blue/half/contrasted,
 /obj/effect/landmark/navigate_destination{
-	name = "Морг"
+	name = "Morgue"
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
@@ -52864,6 +52915,9 @@
 /obj/machinery/camera/motion{
 	network = list("command","ss13");
 	c_tag = "Command - Doomsday Room 2"
+	},
+/obj/effect/landmark/navigate_destination{
+	name = "Bridge of the Station"
 	},
 /turf/open/floor/engine,
 /area/station/ai_monitored/command/nuke_storage)
@@ -58107,7 +58161,7 @@
 	dir = 8
 	},
 /obj/effect/landmark/navigate_destination{
-	name = "Отдел Атмосферных Разработок"
+	name = "Atmospheric Development Department"
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/aft)
@@ -59080,7 +59134,7 @@
 /area/station/science/research)
 "spN" = (
 /obj/effect/landmark/navigate_destination{
-	name = "Бар "ГолубаяЗона""
+	name = "Gay Bar"
 	},
 /obj/effect/spawner/random/engineering/tracking_beacon,
 /turf/open/floor/carpet/neon/simple/purple/nodots,
@@ -60075,7 +60129,7 @@
 /area/station/medical/medbay/central)
 "sHx" = (
 /obj/effect/landmark/navigate_destination{
-	name = "Отдел Поставок"
+	name = "Supply Department"
 	},
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 8
@@ -62178,7 +62232,7 @@
 	name = "HoP Queue Shutters"
 	},
 /obj/effect/landmark/navigate_destination{
-	name = "Приёмная Главы Персонала"
+	name = "Reception of the Head of Staff"
 	},
 /obj/effect/turf_decal/tile/green/fourcorners,
 /obj/effect/turf_decal/bot_red,
@@ -64760,7 +64814,7 @@
 	dir = 1
 	},
 /obj/effect/landmark/navigate_destination{
-	name = "Армейская Часть"
+	name = "Army Division"
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/fore)
@@ -65034,7 +65088,7 @@
 "uhe" = (
 /obj/structure/cable,
 /obj/effect/landmark/navigate_destination{
-	name = "Переработка Отходов"
+	name = "Waste Recycling"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
@@ -65845,7 +65899,7 @@
 "utK" = (
 /obj/structure/cable,
 /obj/effect/landmark/navigate_destination{
-	name = "Трибунал"
+	name = "Tribunal"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4{
 	dir = 6
@@ -66171,7 +66225,7 @@
 "uzO" = (
 /obj/effect/turf_decal/trimline/purple/filled/line,
 /obj/effect/landmark/navigate_destination{
-	name = "Отдел Исследований и Разработок"
+	name = "Research and Development Department"
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
@@ -67444,7 +67498,7 @@
 /obj/machinery/elevator_control_panel/directional/east{
 	name = "Entry elevator control";
 	linked_elevator_id = "entryElevator";
-	preset_destination_names = list("2"="Первый этаж","3"="Второй этаж","4"="Третий этаж")
+	preset_destination_names = list("2"="First Floor", "3"="Second Floor", "4"="Third Floor")
 	},
 /obj/structure/industrial_lift/public{
 	name = "Starboard Elevator"
@@ -69980,7 +70034,7 @@
 	dir = 1
 	},
 /obj/effect/landmark/navigate_destination{
-	name = "Окно Отдела Исследований"
+	name = "Research Department Window"
 	},
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /turf/open/floor/iron,
@@ -74530,7 +74584,7 @@
 	dir = 4
 	},
 /obj/effect/landmark/navigate_destination{
-	name = "Телекоммуникации"
+	name = "Telecommunications"
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/aft)
@@ -75644,7 +75698,7 @@
 	dir = 4
 	},
 /obj/effect/landmark/navigate_destination{
-	name = "Инженерный Отдел"
+	name = "Engineering Department"
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/aft)
@@ -78112,7 +78166,7 @@
 /obj/machinery/elevator_control_panel/directional/north{
 	linked_elevator_id = "starboardElevator";
 	name = "Starboard elevator control";
-	preset_destination_names = list("2"="Первый этаж","3"="Второй этаж","4"="Третий этаж")
+	preset_destination_names = list("2"="First Floor", "3"="Second Floor", "4"="Third Floor")
 	},
 /turf/open/openspace{
 	planetary_atmos = 1
@@ -96846,7 +96900,7 @@ aWZ
 gIO
 gIO
 gIO
-gCD
+mHC
 oCf
 oCf
 oCf
@@ -161071,7 +161125,7 @@ cXG
 bfs
 sUF
 mhI
-cXG
+gAc
 cXG
 cXG
 cXG
@@ -178356,7 +178410,7 @@ riL
 sUf
 wXw
 wXw
-fol
+iSo
 mDo
 kaV
 fQO
@@ -182066,7 +182120,7 @@ oCf
 oCf
 riL
 riL
-riL
+ilL
 riL
 riL
 riL
@@ -200054,7 +200108,7 @@ lus
 vIL
 jNQ
 jNQ
-jNQ
+nRX
 jNQ
 jNQ
 jNQ
@@ -229196,7 +229250,7 @@ riL
 mGA
 eKA
 rtv
-rtv
+oRR
 rtv
 rtv
 rtv
