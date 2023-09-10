@@ -98,10 +98,6 @@
 
 /datum/preference_middleware/jobs/get_ui_static_data(mob/user)
 	var/list/data = list()
-	// THE FLUFFY FRONTIER EDIT BEGIN - DONATOR
-	if(GLOB.donator_list[user.client?.ckey])
-		data["is_donator"] = TRUE
-	// THE FLUFFY FRONTIER EDIT END
 	// SKYRAT EDIT
 	if(SSplayer_ranks.is_veteran(user.client))
 		data["is_veteran"] = TRUE
