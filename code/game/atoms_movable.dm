@@ -477,6 +477,10 @@
 		if(NAMEOF(src, glide_size))
 			set_glide_size(var_value)
 			. = TRUE
+		if(NAMEOF(src, vocal_bark)) // Sorry, Vishenka.
+			if(isfile(var_value))
+				vocal_bark = sound(var_value) //bark() expects vocal_bark to already be a sound datum, for performance reasons. adminbus QoL!
+			. = TRUE
 
 	if(!isnull(.))
 		datum_flags |= DF_VAR_EDITED
