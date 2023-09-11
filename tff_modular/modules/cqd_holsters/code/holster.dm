@@ -8,9 +8,9 @@
 	icon = 'tff_modular/modules/cqd_holsters/icons/cqd_holster.dmi'
 	worn_icon = 'tff_modular/modules/cqd_holsters/icons/cqd_holster_worn.dmi'
 	icon_state = "cqd-holster"
-	worn_icon_state = null
 	above_suit = FALSE
 	w_class = WEIGHT_CLASS_NORMAL
+	attachment_slot = null
 
 /obj/item/clothing/accessory/cqd_holster/Initialize(mapload)
 	. = ..()
