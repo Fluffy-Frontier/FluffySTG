@@ -1780,7 +1780,7 @@
 "aCK" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "Service technical rooms"
+	name = "service technical rooms"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
@@ -3776,7 +3776,7 @@
 /area/station/commons/vacant_room/office)
 "biy" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Medical technical rooms"
+	name = "medical technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/medical/general,
 /obj/effect/decal/cleanable/dirt,
@@ -3956,7 +3956,7 @@
 /area/station/medical/medbay/central)
 "bmc" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Cargo technical rooms"
+	name = "cargo technical rooms"
 	},
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
@@ -4411,7 +4411,7 @@
 "bsx" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "Brig technical rooms"
+	name = "brig technical rooms"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
@@ -5230,7 +5230,7 @@
 /area/blueshield)
 "bGf" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Recreation zone technical rooms"
+	name = "recreation zone technical rooms"
 	},
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
@@ -6663,6 +6663,9 @@
 	dir = 9;
 	network = list("service","ss13")
 	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/open/openspace{
 	planetary_atmos = 1
 	},
@@ -7111,7 +7114,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/engineering{
-	name = "Engineering technical rooms"
+	name = "engineering technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/any/engineering/engine_equipment,
 /obj/effect/decal/cleanable/dirt,
@@ -7450,7 +7453,7 @@
 "cpc" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "Engineering technical rooms"
+	name = "engineering technical rooms"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4{
 	dir = 4
@@ -8791,7 +8794,7 @@
 /area/station/command/heads_quarters/rd)
 "cMZ" = (
 /obj/machinery/door/airlock/engineering{
-	name = "RnD technical rooms"
+	name = "rnd technical rooms"
 	},
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -9478,7 +9481,8 @@
 	id = "chemisttop";
 	name = "Pharmacy Shutters"
 	},
-/turf/closed/wall,
+/obj/effect/turf_decal/tile/yellow/fourcorners,
+/turf/open/floor/iron/white,
 /area/station/medical/pharmacy)
 "cXo" = (
 /obj/structure/cable,
@@ -9771,7 +9775,7 @@
 /area/station/command/heads_quarters/qm)
 "dcy" = (
 /obj/machinery/smartfridge,
-/turf/closed/wall,
+/turf/open/floor/iron/kitchen/small,
 /area/station/service/kitchen)
 "dcB" = (
 /obj/structure/cable,
@@ -10055,7 +10059,7 @@
 	},
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "Recreation zone technical rooms"
+	name = "recreation zone technical rooms"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4{
@@ -11216,7 +11220,7 @@
 "dxL" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "RnD technical rooms"
+	name = "rnd technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/science/general,
 /obj/structure/disposalpipe/segment{
@@ -11999,7 +12003,7 @@
 /area/station/command/heads_quarters/captain/private)
 "dIV" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Engineering technical rooms"
+	name = "engineering technical rooms"
 	},
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
@@ -12009,7 +12013,7 @@
 /area/station/maintenance/department/engineering/lesser)
 "dJt" = (
 /obj/machinery/smartfridge,
-/turf/closed/wall,
+/turf/open/floor/iron,
 /area/station/maintenance/department/cargo)
 "dJv" = (
 /obj/effect/decal/cleanable/dirt,
@@ -12526,7 +12530,7 @@
 "dQu" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "RnD technical rooms"
+	name = "rnd technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/command/teleporter,
 /obj/structure/disposalpipe/segment,
@@ -12626,7 +12630,7 @@
 /area/station/cargo/storage)
 "dRU" = (
 /obj/machinery/door/airlock/engineering{
-	name = "RnD technical rooms"
+	name = "rnd technical rooms"
 	},
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/department/science)
@@ -13149,7 +13153,7 @@
 "ebS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/engineering{
-	name = "Medical technical rooms"
+	name = "medical technical rooms"
 	},
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/department/medical/morgue)
@@ -13993,7 +13997,7 @@
 /area/station/cargo/sorting)
 "eqt" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Recreation zone technical rooms"
+	name = "recreation zone technical rooms"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/smooth,
@@ -14427,7 +14431,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/engineering{
-	name = "Recreation zone technical rooms"
+	name = "recreation zone technical rooms"
 	},
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
@@ -14599,7 +14603,7 @@
 "ezu" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/engineering{
-	name = "Technical Airlock"
+	name = "technical airlock"
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
@@ -15434,7 +15438,7 @@
 /area/station/engineering/storage_shared)
 "eOT" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Brig technical rooms"
+	name = "brig technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/security/armory,
 /obj/effect/decal/cleanable/dirt,
@@ -17917,7 +17921,7 @@
 /area/station/medical/virology)
 "fBO" = (
 /obj/machinery/door/airlock/engineering{
-	name = "RnD technical rooms"
+	name = "rnd technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/science/general,
 /obj/structure/cable,
@@ -18283,7 +18287,6 @@
 	name = "Permabrig"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/security/brig,
-/obj/structure/cable,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/security/prison)
@@ -18714,10 +18717,6 @@
 "fQA" = (
 /turf/closed/wall,
 /area/abyss_station/station/service/library/lounge)
-"fQF" = (
-/obj/machinery/smartfridge,
-/turf/closed/wall,
-/area/station/service/hydroponics)
 "fQN" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/railing{
@@ -19064,7 +19063,7 @@
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
 /obj/machinery/door/airlock/engineering{
-	name = "Construction Area"
+	name = "construction area"
 	},
 /obj/structure/cable,
 /obj/effect/mapping_helpers/airlock/access/all/engineering/construction,
@@ -19241,7 +19240,7 @@
 /area/station/tcommsat/computer)
 "fYa" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Brig technical rooms"
+	name = "brig technical rooms"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/smooth,
@@ -19859,11 +19858,11 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 5
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 10
+	},
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 1
 	},
 /turf/open/floor/iron/white,
 /area/station/science/xenobiology)
@@ -22386,7 +22385,7 @@
 /area/abyss_station/exterior/abyss)
 "hah" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Service technical rooms"
+	name = "service technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
 /obj/structure/disposalpipe/segment,
@@ -23435,6 +23434,12 @@
 	},
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/starboard/greater)
+"hpw" = (
+/obj/machinery/door/airlock/engineering{
+	name = "rnd technical rooms"
+	},
+/turf/open/floor/iron/white,
+/area/station/science/research)
 "hpy" = (
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 6
@@ -23819,7 +23824,7 @@
 /area/station/maintenance/department/cargo)
 "hwa" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Telecommunications"
+	name = "telecommunications"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/engineering/tcoms,
 /obj/structure/cable,
@@ -26407,12 +26412,6 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/medical/storage)
-"ilX" = (
-/obj/effect/turf_decal/tile/yellow/fourcorners,
-/obj/structure/table,
-/obj/structure/table,
-/turf/open/indestructible/dark,
-/area/abyss_station/exterior/park/skate)
 "ilZ" = (
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 8
@@ -26752,7 +26751,7 @@
 /area/station/hallway/primary/central)
 "iqw" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Auxiliary Base Construction"
+	name = "auxiliary Base Construction"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/engineering/aux_base,
 /obj/effect/turf_decal/tile/yellow/fourcorners,
@@ -26874,7 +26873,7 @@
 /area/station/command/heads_quarters/qm)
 "irH" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Medical technical rooms"
+	name = "medical technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/medical/general,
 /obj/effect/decal/cleanable/dirt,
@@ -28418,7 +28417,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/engineering{
-	name = "Recreation zone technical rooms"
+	name = "recreation zone technical rooms"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/smooth,
@@ -28966,7 +28965,8 @@
 /area/abyss_station/exterior/abyss)
 "iYD" = (
 /obj/machinery/smartfridge/chemistry/preloaded,
-/turf/closed/wall,
+/obj/effect/turf_decal/tile/yellow/fourcorners,
+/turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
 "iYI" = (
 /obj/machinery/atmospherics/pipe/smart/simple/green/visible/layer1,
@@ -29996,7 +29996,7 @@
 /area/abyss_station/exterior/two_level)
 "jpz" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Cargo technical rooms"
+	name = "cargo technical rooms"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -30744,7 +30744,7 @@
 /area/station/service/chapel)
 "jzP" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Brig technical rooms"
+	name = "brig technical rooms"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -30901,7 +30901,7 @@
 "jBk" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "Solar Panel Contral Room"
+	name = "solar panel contral room"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/plating,
@@ -31368,7 +31368,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/engineering{
-	name = "Engine SMES Room"
+	name = "engine smes room"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/catwalk_floor/iron,
@@ -33295,7 +33295,7 @@
 "kod" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/engineering{
-	name = "Service technical rooms"
+	name = "service technical rooms"
 	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2{
@@ -33987,7 +33987,7 @@
 /area/station/command/heads_quarters/qm)
 "kwL" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Brig technical rooms"
+	name = "brig technical rooms"
 	},
 /obj/structure/cable,
 /obj/effect/mapping_helpers/airlock/access/any/security/general,
@@ -34413,7 +34413,7 @@
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
 /obj/machinery/door/airlock/engineering{
-	name = "Construction Room 3"
+	name = "construction room 3"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/engineering/construction,
 /turf/open/floor/engine,
@@ -34908,15 +34908,14 @@
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/dark_red/filled/corner,
 /obj/effect/landmark/start/roboticist,
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/science/robotics)
 "kMc" = (
@@ -34950,7 +34949,6 @@
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/abyss_station/exterior/abyss)
 "kNa" = (
-/obj/structure/cable,
 /obj/machinery/power/smes,
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -35095,6 +35093,17 @@
 "kQA" = (
 /turf/closed/indestructible/opshuttle,
 /area/station/science/ordnance/bomb)
+"kQB" = (
+/obj/effect/turf_decal/trimline/dark_red/filled/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/dark_red/filled/line,
+/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron,
+/area/station/science/robotics)
 "kQD" = (
 /obj/effect/turf_decal/tile/dark_red/half/contrasted{
 	dir = 8
@@ -36300,7 +36309,7 @@
 /area/station/hallway/primary/fore)
 "lke" = (
 /obj/machinery/door/airlock/engineering{
-	name = "RnD technical rooms"
+	name = "rnd technical rooms"
 	},
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
@@ -37690,7 +37699,7 @@
 "lGz" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "Medical technical rooms"
+	name = "medical technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/medical/morgue,
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4{
@@ -38029,7 +38038,13 @@
 /area/station/commons/vacant_room/office)
 "lNV" = (
 /obj/machinery/smartfridge/petri/preloaded,
-/turf/closed/wall/r_wall,
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 5
+	},
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/iron/white,
 /area/station/science/xenobiology)
 "lOy" = (
 /obj/structure/cable,
@@ -38037,7 +38052,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/engineering{
-	name = "Medical technical rooms"
+	name = "medical technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
@@ -38273,7 +38288,7 @@
 /area/station/medical/chemistry)
 "lRr" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Engineering technical rooms"
+	name = "engineering technical rooms"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/smooth,
@@ -38346,7 +38361,7 @@
 /area/station/maintenance/department/science/central)
 "lSA" = (
 /obj/machinery/smartfridge,
-/turf/closed/wall,
+/turf/open/floor/iron,
 /area/station/service/bar/backroom)
 "lST" = (
 /obj/structure/flora/rock/pile/jungle/style_random,
@@ -38597,7 +38612,8 @@
 /area/station/command/meeting_room/council)
 "lWv" = (
 /obj/machinery/smartfridge/organ,
-/turf/closed/wall,
+/obj/effect/turf_decal/tile/blue/fourcorners,
+/turf/open/floor/iron/white,
 /area/station/medical/surgery)
 "lWx" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -39114,7 +39130,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/engineering{
-	name = "Construction Room 1"
+	name = "construction room 1"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/engineering/construction,
 /turf/open/floor/engine,
@@ -39258,7 +39274,7 @@
 "mfd" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "Prison technical room"
+	name = "prison technical room"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/security/brig,
 /obj/effect/turf_decal/tile/dark_red/fourcorners,
@@ -40193,7 +40209,7 @@
 /area/station/tcommsat/computer)
 "mtx" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Engineering technical rooms"
+	name = "engineering technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/any/engineering/general,
 /obj/structure/disposalpipe/segment{
@@ -40538,7 +40554,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/engineering{
-	name = "Construction Room 2"
+	name = "construction room 2"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/engineering/construction,
 /turf/open/floor/engine,
@@ -43859,7 +43875,7 @@
 "nCQ" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "Service technical rooms"
+	name = "service technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
 /obj/structure/disposalpipe/segment,
@@ -45130,7 +45146,7 @@
 /area/station/construction/mining/aux_base)
 "nVN" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Medical technical rooms"
+	name = "medical technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/medical/general,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
@@ -45367,7 +45383,7 @@
 /area/abyss_station/exterior/abyss)
 "nZV" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Service technical rooms"
+	name = "service technical rooms"
 	},
 /obj/structure/cable,
 /obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
@@ -46787,7 +46803,7 @@
 /area/station/security/prison/visit)
 "ozc" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Cargo technical rooms"
+	name = "cargo technical rooms"
 	},
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
@@ -47022,7 +47038,7 @@
 /area/station/cargo/miningoffice)
 "oDk" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Cargo technical rooms"
+	name = "cargo technical rooms"
 	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
@@ -49295,7 +49311,7 @@
 /area/station/engineering/atmos)
 "pnf" = (
 /obj/machinery/door/airlock/engineering{
-	name = "RnD technical rooms"
+	name = "rnd technical rooms"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -49777,7 +49793,7 @@
 "pvb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/engineering{
-	name = "Cargo technical rooms"
+	name = "cargo technical rooms"
 	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2{
@@ -52983,7 +52999,7 @@
 /area/abyss_station/exterior/one_level)
 "qyI" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Medical technical rooms"
+	name = "medical technical rooms"
 	},
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
@@ -53012,7 +53028,7 @@
 /area/station/maintenance/department/science/central)
 "qza" = (
 /obj/machinery/door/airlock/engineering{
-	name = "RnD technical rooms"
+	name = "rnd technical rooms"
 	},
 /obj/structure/cable,
 /obj/effect/mapping_helpers/airlock/access/all/command/general,
@@ -54456,7 +54472,14 @@
 /area/station/command/bridge)
 "qUc" = (
 /obj/machinery/smartfridge/organ,
-/turf/closed/wall/r_wall,
+/obj/effect/turf_decal/trimline/dark_red/filled/line{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/dark_red/filled/line{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron,
 /area/station/science/robotics)
 "qUe" = (
 /obj/structure/disposalpipe/segment{
@@ -55525,7 +55548,7 @@
 	},
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "Recreation zone technical rooms"
+	name = "recreation zone technical rooms"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2{
@@ -56351,7 +56374,7 @@
 /area/station/maintenance/starboard/greater)
 "rAz" = (
 /obj/machinery/door/airlock/engineering{
-	name = "RnD technical rooms"
+	name = "rnd technical rooms"
 	},
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/department/science/central)
@@ -56485,10 +56508,6 @@
 /turf/open/floor/iron,
 /area/station/security/office)
 "rCC" = (
-/obj/effect/turf_decal/trimline/dark_red/filled/end{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -56498,6 +56517,11 @@
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/turf_decal/trimline/dark_red/filled/corner,
+/obj/effect/turf_decal/trimline/dark_red/filled/line{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/science/robotics)
 "rCD" = (
@@ -57410,7 +57434,7 @@
 /area/station/commons/fitness/recreation)
 "rQo" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Cargo technical rooms"
+	name = "cargo technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/supply/general,
 /obj/effect/decal/cleanable/dirt,
@@ -57855,7 +57879,7 @@
 /area/station/science/xenobiology)
 "rVK" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Service technical rooms"
+	name = "service technical rooms"
 	},
 /obj/structure/cable,
 /obj/effect/mapping_helpers/airlock/access/all/service/hydroponics,
@@ -58816,7 +58840,7 @@
 /area/station/security/courtroom)
 "sob" = (
 /obj/machinery/door/airlock/engineering{
-	name = "RnD technical rooms"
+	name = "rnd technical rooms"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -59541,7 +59565,7 @@
 /area/station/service/library)
 "sAc" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Cargo technical rooms"
+	name = "cargo technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/supply/general,
 /obj/structure/cable,
@@ -60612,7 +60636,7 @@
 /area/station/command/heads_quarters/captain/private)
 "sQs" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Medical technical rooms"
+	name = "medical technical rooms"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
@@ -61781,7 +61805,7 @@
 "thd" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "Solar Panel Contral Room"
+	name = "solar Panel Contral Room"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/plating,
@@ -62149,7 +62173,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/engineering{
-	name = "Construction Room 4"
+	name = "construction room 4"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/engineering/construction,
 /turf/open/floor/engine,
@@ -62810,7 +62834,7 @@
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/engineering{
-	name = "Medical technical rooms"
+	name = "medical technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/medical/general,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -63154,10 +63178,6 @@
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/iron,
 /area/station/engineering/lobby)
-"tBn" = (
-/obj/machinery/smartfridge/organ,
-/turf/closed/wall,
-/area/station/medical/coldroom)
 "tBw" = (
 /obj/structure/table,
 /obj/item/storage/medkit/regular{
@@ -64714,7 +64734,7 @@
 "uao" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "Tech Storage"
+	name = "tech Storage"
 	},
 /obj/effect/turf_decal/tile/yellow/fourcorners,
 /obj/effect/mapping_helpers/airlock/access/all/engineering/tech_storage,
@@ -65727,7 +65747,7 @@
 "upL" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "Solar Panel Contral Room"
+	name = "solar panel contral room"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/plating,
@@ -65787,7 +65807,7 @@
 /area/abyss_station/station/service/bar)
 "upY" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Medical technical rooms"
+	name = "medical technical rooms"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
@@ -66550,7 +66570,7 @@
 "uAM" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "Brig technical rooms"
+	name = "brig technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/security/brig,
 /obj/structure/disposalpipe/segment,
@@ -67213,7 +67233,7 @@
 /area/station/medical/virology)
 "uLw" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Brig technical rooms"
+	name = "brig technical rooms"
 	},
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
@@ -68235,7 +68255,7 @@
 /area/station/engineering/lobby)
 "vcq" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Brig technical rooms"
+	name = "brig technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/service/lawyer,
 /obj/structure/cable,
@@ -68591,7 +68611,7 @@
 /area/abyss_station/station/service/bar)
 "vjs" = (
 /obj/machinery/smartfridge/organ,
-/turf/closed/wall/r_wall,
+/turf/open/floor/iron/dark,
 /area/station/security/medical)
 "vjv" = (
 /obj/structure/railing{
@@ -69114,7 +69134,7 @@
 /area/abyss_station/station/service/diner)
 "vqP" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Medical technical rooms"
+	name = "medical technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/medical/general,
 /obj/structure/disposalpipe/segment,
@@ -70541,7 +70561,7 @@
 /area/station/science/ordnance/burnchamber)
 "vMc" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Solar Panel Contral Room"
+	name = "solar Panel Contral Room"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /obj/structure/cable,
@@ -70682,7 +70702,7 @@
 /area/station/commons/fitness/recreation)
 "vOJ" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Medical technical rooms"
+	name = "medical technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/medical/general,
 /obj/structure/disposalpipe/segment,
@@ -71187,7 +71207,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/engineering{
-	name = "Engineering technical rooms"
+	name = "engineering technical rooms"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
@@ -71265,7 +71285,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/engineering{
-	name = "Engineering technical rooms"
+	name = "engineering technical rooms"
 	},
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
@@ -71465,7 +71485,7 @@
 "vZw" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "Medical technical rooms"
+	name = "medical technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
@@ -71640,7 +71660,7 @@
 "wcn" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "Brig technical rooms"
+	name = "brig technical rooms"
 	},
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
@@ -71798,10 +71818,8 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
 "weR" = (
-/obj/effect/turf_decal/trimline/dark_red/filled/line{
-	dir = 6
-	},
 /obj/machinery/light/directional/south,
+/obj/effect/turf_decal/trimline/dark_red/filled/line,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/science/robotics)
@@ -71901,7 +71919,6 @@
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
 "wgB" = (
-/obj/structure/table/reinforced,
 /obj/structure/table/reinforced,
 /obj/machinery/button/door/directional/north{
 	id = "ordnance";
@@ -73363,7 +73380,7 @@
 "wBE" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "Solar Panel Contral Room"
+	name = "solar panel contral room"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/plating,
@@ -73846,7 +73863,7 @@
 /area/station/engineering/supermatter/room)
 "wIk" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Brig technical rooms"
+	name = "brig technical rooms"
 	},
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -73885,7 +73902,7 @@
 /area/station/security/brig)
 "wIR" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Engineering technical rooms"
+	name = "engineering technical rooms"
 	},
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
@@ -75379,7 +75396,7 @@
 "xgn" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "Medical technical rooms"
+	name = "medical technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/medical/general,
 /obj/structure/disposalpipe/segment{
@@ -75932,7 +75949,7 @@
 	name = "Chemistry Shutters";
 	dir = 4
 	},
-/turf/closed/wall,
+/turf/open/floor/iron/dark,
 /area/station/medical/chemistry)
 "xos" = (
 /obj/structure/railing{
@@ -76563,7 +76580,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/engineering{
-	name = "Engineering technical rooms"
+	name = "engineering technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/any/engineering/general,
 /obj/effect/decal/cleanable/dirt,
@@ -76827,7 +76844,7 @@
 "xEL" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering{
-	name = "Prison technical room"
+	name = "prison technical room"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/security/brig,
 /obj/effect/turf_decal/tile/dark_red/fourcorners,
@@ -77490,7 +77507,7 @@
 /area/station/hallway/primary/central)
 "xPJ" = (
 /obj/machinery/door/airlock/engineering{
-	name = "Cargo technical rooms"
+	name = "cargo technical rooms"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/supply/general,
 /obj/structure/cable,
@@ -77731,7 +77748,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/engineering{
-	name = "Technical Airlock"
+	name = "technical airlock"
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
@@ -173260,7 +173277,7 @@ kzN
 kzN
 kzN
 oNf
-ilX
+kzN
 lSu
 pmP
 lYt
@@ -176309,7 +176326,7 @@ erh
 nGt
 cBn
 rjI
-bQi
+hpw
 dpU
 pIF
 oCD
@@ -178622,7 +178639,7 @@ kHA
 rrl
 gVm
 eAa
-igj
+kQB
 tUd
 rOt
 qEv
@@ -225327,7 +225344,7 @@ spB
 spB
 bhT
 ibf
-fQF
+tfW
 aql
 tDH
 thM
@@ -264825,7 +264842,7 @@ gdN
 mLB
 uEC
 aYS
-tBn
+uEC
 oxg
 oxg
 oxg
