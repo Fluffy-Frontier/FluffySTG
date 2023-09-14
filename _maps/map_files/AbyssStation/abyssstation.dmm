@@ -131,7 +131,7 @@
 "acI" = (
 /obj/effect/turf_decal/caution/stand_clear,
 /obj/machinery/door/poddoor{
-	name = "Planetary ventilation blast door";
+	name = "Planetary Ventilation Blast Door";
 	id = "planetary_ventilation"
 	},
 /turf/open/floor/iron,
@@ -15795,7 +15795,7 @@
 "eYB" = (
 /obj/effect/mapping_helpers/airlock/access/all/medical/psychology,
 /obj/machinery/door/airlock/medical/glass{
-	name = "Psychiatric hospital post"
+	name = "Psychiatric Hospital Post"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
@@ -20604,7 +20604,7 @@
 "gCu" = (
 /obj/effect/turf_decal/tile/green/fourcorners,
 /obj/machinery/door/airlock/public/glass{
-	name = "Chicken coop"
+	name = "Chicken Coop"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4{
 	dir = 4
@@ -26416,7 +26416,7 @@
 	},
 /obj/machinery/door/window/left/directional/north{
 	req_access = list("qm");
-	name = "QM's paper storage"
+	name = "QMs Paper Storage"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
@@ -38831,7 +38831,7 @@
 "mfR" = (
 /obj/effect/mapping_helpers/airlock/access/all/medical/psychology,
 /obj/machinery/door/airlock/medical/glass{
-	name = "Psychiatric hospital"
+	name = "Psychiatric Hospital"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
@@ -41388,7 +41388,7 @@
 /area/station/service/library)
 "mYS" = (
 /obj/machinery/door/airlock/medical{
-	name = "Intensive care room 1"
+	name = "Intensive Care Room 1"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
@@ -41690,7 +41690,7 @@
 /area/station/command/secure_bunker)
 "ndk" = (
 /obj/machinery/door/airlock/medical/glass{
-	name = "Psychiatric hospital"
+	name = "Psychiatric Hospital"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/medical/psychology,
 /obj/machinery/door/firedoor,
@@ -47493,7 +47493,7 @@
 "oUr" = (
 /obj/machinery/door/window/left/directional/north{
 	req_access = list("cmo");
-	name = "CMO's control room";
+	name = "CMOs Control Room";
 	dir = 2
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
@@ -47601,7 +47601,7 @@
 "oWK" = (
 /obj/machinery/door/window/brigdoor/right{
 	dir = 4;
-	name = "The Blue Shield's equipment";
+	name = "The Blue Shields Equipment";
 	req_access = list("command")
 	},
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -50460,7 +50460,7 @@
 /area/station/maintenance/department/cargo)
 "pTS" = (
 /obj/machinery/door/airlock/security/old{
-	name = "punishment cell"
+	name = "Punishment Cell"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/security/brig,
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
@@ -52202,7 +52202,7 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	name = "storage shutters";
+	name = "Storage Shutters";
 	id = "rnd_storage"
 	},
 /turf/open/floor/iron,
@@ -56533,7 +56533,7 @@
 /area/station/security/brig)
 "rMg" = (
 /obj/machinery/door/airlock/medical{
-	name = "Intensive care room 2"
+	name = "Intensive Care Room"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
@@ -71035,7 +71035,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/button/door/directional/north{
 	id = "ordnance";
-	name = "ordnance shutters";
+	name = "Ordnance Shutters";
 	req_access = list("research")
 	},
 /turf/open/floor/iron/dark,
@@ -76120,7 +76120,7 @@
 /area/abyss_station/exterior/two_level)
 "xIK" = (
 /obj/machinery/door/window/left/directional/north{
-	name = "canister storage";
+	name = "Canister Storage";
 	req_access = list("atmospherics","science")
 	},
 /turf/open/floor/iron,
@@ -76649,7 +76649,7 @@
 "xQW" = (
 /obj/machinery/door/window/left/directional/north{
 	req_access = list("qm");
-	name = "QM's control room"
+	name = "QMs Control Room"
 	},
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 1
