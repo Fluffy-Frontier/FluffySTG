@@ -3714,7 +3714,7 @@
 "bhM" = (
 /obj/machinery/door/airlock{
 	id_tag = "capsule3";
-	name = "Сapsule 3"
+	name = "Capsule 3"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
@@ -19933,7 +19933,7 @@
 "gkW" = (
 /obj/machinery/door/airlock{
 	id_tag = "capsule9";
-	name = "Сapsule 9"
+	name = "apsule 9"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
@@ -30471,7 +30471,7 @@
 "jwh" = (
 /obj/machinery/door/airlock{
 	id_tag = "capsule8";
-	name = "Сapsule 8"
+	name = "Capsule 8"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
@@ -33269,7 +33269,7 @@
 	},
 /obj/machinery/firealarm/directional/west,
 /obj/machinery/camera{
-	c_tag = "Atmospheric - Temperature Сontrol";
+	c_tag = "Atmospheric - Temperature Control";
 	dir = 8;
 	network = list("engineer","ss13")
 	},
@@ -52416,7 +52416,7 @@
 "qne" = (
 /obj/machinery/door/airlock{
 	id_tag = "capsule2";
-	name = "Сapsule 2"
+	name = "Capsule 2"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
@@ -56948,7 +56948,7 @@
 "rHU" = (
 /obj/machinery/door/airlock{
 	id_tag = "capsule4";
-	name = "Сapsule 4"
+	name = "Capsule 4"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
@@ -58908,7 +58908,7 @@
 "snu" = (
 /obj/machinery/door/airlock{
 	id_tag = "capsule7";
-	name = "Сapsule 7"
+	name = "Capsule 7"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
@@ -61338,7 +61338,7 @@
 "sYz" = (
 /obj/machinery/door/airlock{
 	id_tag = "capsule1";
-	name = "Сapsule 1"
+	name = "Capsule 1"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
@@ -62945,7 +62945,7 @@
 "tvA" = (
 /obj/machinery/door/airlock{
 	id_tag = "capsule5";
-	name = "Сapsule 5"
+	name = "Capsule 5"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
@@ -69801,7 +69801,7 @@
 	dir = 8
 	},
 /obj/machinery/computer/atmos_control/noreconnect{
-	atmos_chambers = list("ordnancegas1"=ы"Burn Chamber","ordnancegas2"="Freezer Chamber");
+	atmos_chambers = list("ordnancegas1"="Burn Chamber","ordnancegas2"="Freezer Chamber");
 	dir = 4
 	},
 /turf/open/floor/iron/white,
@@ -71283,7 +71283,7 @@
 "vVQ" = (
 /obj/machinery/door/airlock{
 	id_tag = "capsule6";
-	name = "Сapsule 6"
+	name = "Capsule 6"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
@@ -73061,7 +73061,7 @@
 	},
 /obj/structure/cable,
 /obj/machinery/camera{
-	c_tag = "Dorms - Сryo";
+	c_tag = "Dorms - Cryo";
 	network = list("dorms","ss13");
 	dir = 5
 	},
@@ -74742,7 +74742,7 @@
 "wUq" = (
 /obj/machinery/door/airlock{
 	id_tag = "capsule10";
-	name = "Сapsule 10"
+	name = "Capsule 10"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
@@ -78512,7 +78512,7 @@
 "ydP" = (
 /obj/effect/turf_decal/tile/green/half/contrasted,
 /obj/machinery/camera{
-	c_tag = "Dorms - Сapsules";
+	c_tag = "Dorms - Capsules";
 	network = list("dorms","ss13");
 	dir = 5
 	},
