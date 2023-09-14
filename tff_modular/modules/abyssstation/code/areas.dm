@@ -90,21 +90,27 @@
 	name = "Gay Bar"
 	icon_state = "bar"
 
-/area/abyss_station.station/service/garden
+/area/abyss_station/station/service/garden
 	name = "Garden"
 	icon_state = "garden"
 	base_lighting_alpha = 255
 	base_lighting_color = "#FFFFCC"
 
-/area/abyss_station.station/service/public_garden
+/area/abyss_station/station/service/public_garden
 	name = "Garden"
 	icon_state = "garden"
 	base_lighting_alpha = 255
 	base_lighting_color = "#FFFFCC"
 
-/area/abyss_station.station/service/diner
+/area/abyss_station/station/service/diner
 	name = "Diner"
 	icon_state = "diner"
+	base_lighting_alpha = 255
+	base_lighting_color = "#FFFFCC"
+
+/area/abyss_station/station/service/library/lounge
+	name = "\improper Library Lounge"
+	icon_state = "library_lounge"
 	base_lighting_alpha = 255
 	base_lighting_color = "#FFFFCC"
 
