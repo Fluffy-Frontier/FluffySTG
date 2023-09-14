@@ -10,6 +10,18 @@
 	requires_power = FALSE
 	has_gravity = STANDARD_GRAVITY
 
+/area/abyss_station/exterior/abyss
+	name = "Abyss"
+	icon_state = "abyss"
+
+/area/abyss_station/exterior/one_level
+	name = "The first level of the Abyss"
+	icon_state = "one_level"
+
+/area/abyss_station/exterior/two_level
+	name = "The second level of the Abyss"
+	icon_state = "two_level"
+
 /area/abyss_station/exterior/ocean
 	name = "Ocean"
 	icon_state = "ocean"
