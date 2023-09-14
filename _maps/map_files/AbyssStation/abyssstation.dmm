@@ -1769,9 +1769,7 @@
 	dir = 10;
 	network = list("engineer","ss13")
 	},
-/obj/structure/sign/poster/contraband/hacking_guide{
-	pixel_x = -32
-	},
+/obj/structure/sign/poster/contraband/hacking_guide/directional/west,
 /turf/open/floor/iron,
 /area/station/commons/storage/primary)
 "aCH" = (
@@ -3435,9 +3433,7 @@
 /obj/structure/chair/plastic{
 	dir = 4
 	},
-/obj/structure/sign/poster/official/twenty_four_seven{
-	pixel_y = 32
-	},
+/obj/structure/sign/poster/official/twenty_four_seven/directional/north,
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
 "bdm" = (
@@ -5885,9 +5881,7 @@
 /obj/structure/railing/corner{
 	dir = 4
 	},
-/obj/structure/sign/poster/official/walk{
-	pixel_y = 33
-	},
+/obj/structure/sign/poster/official/walk/directional/north,
 /turf/open/floor/iron/dark,
 /area/abyss_station/exterior/bridge/east)
 "bPa" = (
@@ -6344,9 +6338,7 @@
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/obj/structure/sign/poster/official/walk{
-	pixel_y = 33
-	},
+/obj/structure/sign/poster/official/walk/directional/north,
 /turf/open/floor/iron/dark,
 /area/abyss_station/exterior/bridge/west)
 "bWG" = (
@@ -6644,9 +6636,7 @@
 /obj/structure/railing/corner{
 	dir = 4
 	},
-/obj/structure/sign/poster/official/walk{
-	pixel_x = 32
-	},
+/obj/structure/sign/poster/official/walk/directional/east,
 /turf/open/floor/iron/dark,
 /area/abyss_station/exterior/bridge/north)
 "cbG" = (
@@ -7786,9 +7776,7 @@
 	network = list("security","ss13");
 	dir = 1
 	},
-/obj/structure/sign/poster/official/jim_nortons{
-	pixel_y = 32
-	},
+/obj/structure/sign/poster/official/jim_nortons/directional/north,
 /turf/open/floor/iron/dark,
 /area/abyss_station/station/security)
 "cuY" = (
@@ -8893,6 +8881,7 @@
 "cOn" = (
 /obj/machinery/light/directional/north,
 /obj/structure/table,
+/obj/structure/sign/poster/contraband/moffuchis_pizza/directional/north,
 /turf/open/floor/iron/kitchen/small,
 /area/station/service/kitchen)
 "cOC" = (
@@ -11164,9 +11153,7 @@
 	name = "Cargo Cell Locker"
 	},
 /obj/machinery/light/warm/directional/west,
-/obj/structure/sign/poster/official/report_crimes{
-	pixel_x = -32
-	},
+/obj/structure/sign/poster/official/report_crimes/directional/west,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/engineering)
 "dwZ" = (
@@ -11726,10 +11713,8 @@
 	},
 /obj/structure/table/wood/fancy/cyan,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/contraband/clown{
-	pixel_y = 32
-	},
 /obj/item/radio/intercom/directional/west,
+/obj/structure/sign/poster/contraband/clown/directional/north,
 /turf/open/floor/iron,
 /area/station/service/theater)
 "dEP" = (
@@ -20118,9 +20103,7 @@
 /obj/structure/window/reinforced,
 /obj/machinery/chem_master,
 /obj/effect/turf_decal/tile/yellow/fourcorners,
-/obj/structure/sign/poster/official/periodic_table{
-	pixel_x = 32
-	},
+/obj/structure/sign/poster/official/periodic_table/directional/east,
 /turf/open/floor/iron/white,
 /area/station/medical/pharmacy)
 "gnD" = (
@@ -27025,10 +27008,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/security/prison/upper)
-"isH" = (
-/obj/structure/sign/poster/official/pda_ad,
-/turf/closed/wall/r_wall,
-/area/station/command/heads_quarters/hop)
 "isI" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
@@ -29863,9 +29842,7 @@
 /obj/effect/turf_decal/tile/green/half/contrasted{
 	dir = 8
 	},
-/obj/structure/sign/poster/official/periodic_table{
-	pixel_x = -32
-	},
+/obj/structure/sign/poster/official/periodic_table/directional/west,
 /turf/open/floor/iron,
 /area/abyss_station/station/service/garden)
 "jmZ" = (
@@ -35321,9 +35298,7 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
-/obj/structure/sign/poster/official/walk{
-	pixel_y = -32
-	},
+/obj/structure/sign/poster/official/walk/directional/south,
 /turf/open/floor/iron/dark,
 /area/abyss_station/exterior/bridge/east)
 "kTS" = (
@@ -36543,9 +36518,7 @@
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 1
 	},
-/obj/structure/sign/poster/official/moth_piping{
-	pixel_y = 32
-	},
+/obj/structure/sign/poster/official/moth_piping/directional/north,
 /turf/open/floor/iron,
 /area/station/engineering/atmos/office)
 "lnz" = (
@@ -40856,10 +40829,8 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/east,
-/obj/structure/sign/poster/official/state_laws{
-	pixel_x = 32
-	},
 /obj/machinery/photocopier,
+/obj/structure/sign/poster/official/state_laws/directional/east,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/service)
 "mEs" = (
@@ -41010,12 +40981,6 @@
 "mGP" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
-	},
-/obj/structure/chair/comfy/beige{
-	dir = 8
-	},
-/obj/structure/chair/sofa/right{
-	dir = 8
 	},
 /obj/structure/chair/sofa/right{
 	dir = 8
@@ -43665,9 +43630,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
 	},
-/obj/structure/sign/poster/official/moth_epi{
-	pixel_y = 32
-	},
+/obj/structure/sign/poster/official/moth_epi/directional/north,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
 "nwV" = (
@@ -43692,10 +43655,6 @@
 /obj/effect/turf_decal/stripes,
 /turf/open/floor/iron,
 /area/station/hallway/primary/aft)
-"nxH" = (
-/obj/structure/lattice/catwalk,
-/turf/closed/wall/r_wall,
-/area/station/command/heads_quarters/rd)
 "nxJ" = (
 /turf/open/floor/iron/stairs/left{
 	dir = 4
@@ -47922,12 +47881,6 @@
 "oQx" = (
 /turf/open/floor/iron/dark,
 /area/station/science/lab)
-"oQB" = (
-/obj/structure/sign/poster/contraband/moffuchis_pizza{
-	pixel_x = 32
-	},
-/turf/open/floor/iron/kitchen/small,
-/area/station/service/kitchen)
 "oQC" = (
 /obj/structure/table,
 /obj/effect/spawner/random/engineering/tracking_beacon,
@@ -50352,9 +50305,7 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
-/obj/structure/sign/poster/official/walk{
-	pixel_x = -32
-	},
+/obj/structure/sign/poster/official/walk/directional/west,
 /turf/open/floor/iron/dark,
 /area/abyss_station/exterior/bridge/north)
 "pCR" = (
@@ -52013,6 +51964,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/structure/sign/poster/official/pda_ad/directional/north,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/hop)
 "qfP" = (
@@ -53831,9 +53783,7 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
-/obj/structure/sign/poster/official/walk{
-	pixel_y = -32
-	},
+/obj/structure/sign/poster/official/walk/directional/south,
 /turf/open/floor/iron/dark,
 /area/abyss_station/exterior/bridge/west)
 "qJL" = (
@@ -53946,6 +53896,13 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/science/lab)
+"qLu" = (
+/obj/structure/flora/bush/large/style_random,
+/obj/structure/sign/poster/official/no_erp/directional/south,
+/turf/open/floor/grass{
+	planetary_atmos = 1
+	},
+/area/abyss_station/exterior/park/dorm)
 "qLH" = (
 /obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 8
@@ -54539,9 +54496,7 @@
 /obj/structure/railing/corner{
 	dir = 4
 	},
-/obj/structure/sign/poster/official/walk{
-	pixel_x = 32
-	},
+/obj/structure/sign/poster/official/walk/directional/east,
 /turf/open/floor/iron/dark,
 /area/abyss_station/exterior/bridge/south)
 "qTT" = (
@@ -54816,12 +54771,10 @@
 /obj/structure/table,
 /obj/item/crowbar,
 /obj/item/radio,
-/obj/structure/sign/poster/official/report_crimes{
-	pixel_x = -32
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
+/obj/structure/sign/poster/official/report_crimes/directional/west,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/medical)
 "qYH" = (
@@ -57213,9 +57166,6 @@
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance)
 "rKU" = (
-/obj/structure/sign/poster/official/safety_report{
-	pixel_y = 32
-	},
 /obj/effect/turf_decal/tile/green/half/contrasted{
 	dir = 1
 	},
@@ -57225,6 +57175,7 @@
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/sign/poster/official/safety_report/directional/north,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
 "rLh" = (
@@ -59908,9 +59859,7 @@
 /obj/effect/turf_decal/tile/dark_red/half/contrasted{
 	dir = 8
 	},
-/obj/structure/sign/poster/official/ion_rifle{
-	pixel_x = -32
-	},
+/obj/structure/sign/poster/official/ion_rifle/directional/west,
 /turf/open/floor/iron,
 /area/station/security/brig)
 "sCv" = (
@@ -60724,6 +60673,12 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
+"sQo" = (
+/obj/structure/sign/poster/official/moth_epi/directional/north,
+/turf/open/openspace{
+	planetary_atmos = 1
+	},
+/area/abyss_station/exterior/two_level)
 "sQp" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -64966,9 +64921,7 @@
 /area/abyss_station/station/security)
 "ucL" = (
 /obj/machinery/light/directional/east,
-/obj/structure/sign/poster/official/science{
-	pixel_x = 32
-	},
+/obj/structure/sign/poster/official/science/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/rd)
 "ucS" = (
@@ -68568,10 +68521,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/cargo/storage)
-"vfD" = (
-/obj/structure/lattice,
-/turf/closed/mineral/black_mesa,
-/area/abyss_station/exterior/abyss)
 "vfN" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/trimline/green/corner,
@@ -68927,9 +68876,7 @@
 	c_tag = "Service - Kitchen 1";
 	network = list("service","ss13")
 	},
-/obj/structure/sign/poster/contraband/mothic_rations{
-	pixel_y = -32
-	},
+/obj/structure/sign/poster/contraband/mothic_rations/directional/south,
 /turf/open/floor/iron/kitchen/small,
 /area/station/service/kitchen)
 "vlz" = (
@@ -69694,10 +69641,8 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/box,
-/obj/structure/sign/poster/official/high_class_martini{
-	pixel_y = 32
-	},
 /obj/machinery/light/directional/north,
+/obj/structure/sign/poster/official/high_class_martini/directional/north,
 /turf/open/floor/iron,
 /area/abyss_station/station/service/bar)
 "vwP" = (
@@ -70182,9 +70127,7 @@
 "vDl" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/red,
-/obj/structure/sign/poster/official/the_owl{
-	pixel_y = -32
-	},
+/obj/structure/sign/poster/official/the_owl/directional/south,
 /turf/open/floor/iron/dark,
 /area/abyss_station/station/security)
 "vDn" = (
@@ -73216,9 +73159,7 @@
 "wxB" = (
 /obj/effect/turf_decal/tile/green/half/contrasted,
 /obj/machinery/light/directional/south,
-/obj/structure/sign/poster/official/no_erp{
-	pixel_y = -32
-	},
+/obj/structure/sign/poster/official/no_erp/directional/south,
 /turf/open/floor/iron,
 /area/station/commons/dorms)
 "wxF" = (
@@ -74861,10 +74802,8 @@
 "wWD" = (
 /obj/structure/table/wood/fancy/black,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/contraband/communist_state{
-	pixel_y = 32
-	},
 /obj/item/radio/intercom/directional/east,
+/obj/structure/sign/poster/contraband/communist_state/directional/north,
 /turf/open/floor/iron/kitchen,
 /area/station/service/theater)
 "wWJ" = (
@@ -75478,9 +75417,7 @@
 	dir = 4
 	},
 /obj/structure/table,
-/obj/structure/sign/poster/official/midtown_slice{
-	pixel_y = 32
-	},
+/obj/structure/sign/poster/official/midtown_slice/directional/north,
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
 "xfQ" = (
@@ -77292,12 +77229,10 @@
 	dir = 9
 	},
 /obj/effect/landmark/start/cyborg,
-/obj/structure/sign/poster/official/state_laws{
-	pixel_y = 32
-	},
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/structure/sign/poster/official/state_laws/directional/north,
 /turf/open/floor/iron/white,
 /area/station/ai_monitored/turret_protected/ai_upload)
 "xLe" = (
@@ -77632,9 +77567,7 @@
 	dir = 4
 	},
 /obj/structure/table,
-/obj/structure/sign/poster/official/fruit_bowl{
-	pixel_y = 32
-	},
+/obj/structure/sign/poster/official/fruit_bowl/directional/north,
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
 "xPH" = (
@@ -78533,9 +78466,7 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
-/obj/structure/sign/poster/official/no_erp{
-	pixel_y = 32
-	},
+/obj/structure/sign/poster/official/no_erp/directional/north,
 /turf/open/floor/iron,
 /area/station/commons/dorms)
 "yev" = (
@@ -93910,7 +93841,7 @@ aHe
 aHe
 aHe
 tou
-isH
+tou
 qfM
 sTO
 lBS
@@ -125393,7 +125324,7 @@ nBP
 nBP
 dFA
 nBP
-nBP
+dLd
 dLd
 dLd
 dLd
@@ -131614,7 +131545,7 @@ kTS
 nFd
 kTS
 kTS
-vfD
+lWy
 kTS
 kTS
 kTS
@@ -162287,7 +162218,7 @@ sGy
 sVw
 pOE
 bPt
-kiT
+tou
 lwo
 xSB
 oeK
@@ -173906,7 +173837,7 @@ bvq
 bvq
 bvq
 bvq
-oln
+bvq
 sUK
 mCk
 tFQ
@@ -181118,7 +181049,7 @@ idg
 idg
 idg
 fmK
-nxH
+idg
 idg
 idg
 idg
@@ -228061,7 +227992,7 @@ uMJ
 fmw
 uYw
 apD
-oQB
+cWr
 cWr
 cWr
 oSc
@@ -234506,7 +234437,7 @@ ndq
 ndq
 ndq
 ndq
-ndq
+sQo
 ndq
 ndq
 ndq
@@ -262884,7 +262815,7 @@ rku
 rku
 owm
 sah
-guG
+qLu
 iej
 iej
 iej
