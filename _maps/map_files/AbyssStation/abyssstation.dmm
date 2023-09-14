@@ -20552,10 +20552,11 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 9
 	},
-/obj/machinery/airalarm/directional/north,
 /obj/machinery/computer/records/medical{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
 "gvR" = (
@@ -48932,6 +48933,7 @@
 /obj/machinery/computer/crew{
 	dir = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
 "peS" = (
@@ -62017,8 +62019,7 @@
 	pixel_y = 13
 	},
 /obj/structure/sign/warning/electric_shock/directional/east,
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
 "thg" = (
@@ -70624,6 +70625,7 @@
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
+/obj/structure/cable,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
 "vKu" = (
