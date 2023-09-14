@@ -2927,7 +2927,6 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Garage Shutters";
 	id = "garage"
 	},
 /turf/open/floor/iron,
@@ -3646,7 +3645,6 @@
 "bhp" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "aux_base_shutters";
-	name = "Auxillary Base Shutters";
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/yellow/fourcorners,
@@ -5951,8 +5949,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/window{
-	id = "stationawaygate";
-	name = "Gateway Access Shutters"
+	id = "stationawaygate"
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -8456,8 +8453,7 @@
 "cIT" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters{
-	id = "ChapelGardain";
-	name = "Chapel Gardain Shutters"
+	id = "ChapelGardain"
 	},
 /turf/open/floor/plating,
 /area/station/service/chapel)
@@ -10175,7 +10171,6 @@
 "djK" = (
 /obj/machinery/door/poddoor/shutters/window{
 	id = "armory";
-	name = "Armory Shutters";
 	dir = 8
 	},
 /obj/effect/turf_decal/caution/stand_clear{
@@ -11709,8 +11704,7 @@
 	},
 /obj/machinery/door/poddoor/shutters/window{
 	dir = 4;
-	id = "mechbay2";
-	name = "mech bay shutters"
+	id = "mechbay2"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2{
 	dir = 4
@@ -13838,8 +13832,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/window{
-	id = "stationawaygate";
-	name = "Gateway Access Shutters"
+	id = "stationawaygate"
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -16001,7 +15994,6 @@
 "fbc" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "custodialshutters";
-	name = "Custodial Closet Shutters";
 	dir = 4
 	},
 /obj/effect/turf_decal/caution/stand_clear{
@@ -17798,7 +17790,6 @@
 "fCJ" = (
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /obj/machinery/door/poddoor/shutters/window{
-	name = "teleport shutters";
 	id = "teleport"
 	},
 /turf/open/floor/iron,
@@ -18394,7 +18385,6 @@
 /obj/effect/turf_decal/tile/purple/fourcorners,
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	name = "storage shutters";
 	id = "rnd_storage"
 	},
 /obj/effect/turf_decal/caution/stand_clear{
@@ -19236,7 +19226,6 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Technical Storage Shutters";
 	id = "technicalstorage2";
 	dir = 1
 	},
@@ -19806,8 +19795,7 @@
 	},
 /obj/machinery/door/poddoor/shutters/window{
 	dir = 4;
-	id = "mechbay2";
-	name = "mech bay shutters"
+	id = "mechbay2"
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4{
 	dir = 4
@@ -22803,6 +22791,16 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/aft)
+"hkD" = (
+/obj/effect/turf_decal/tile/purple/fourcorners,
+/obj/machinery/door/poddoor/shutters{
+	dir = 8
+	},
+/obj/effect/turf_decal/caution/stand_clear{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/station/science/research)
 "hkS" = (
 /obj/structure/chair/wood{
 	dir = 1
@@ -25519,8 +25517,7 @@
 /area/station/engineering/supermatter/room)
 "icz" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "evashutter";
-	name = "E.V.A. Storage Shutter"
+	id = "evashutter"
 	},
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /obj/effect/decal/cleanable/dirt,
@@ -34731,8 +34728,7 @@
 /area/abyss_station/exterior/abyss)
 "kSn" = (
 /obj/machinery/door/poddoor/shutters/window{
-	id = "brigshutter";
-	name = "Brig Shutters"
+	id = "brigshutter"
 	},
 /obj/effect/turf_decal/caution/stand_clear,
 /turf/open/floor/iron,
@@ -37272,7 +37268,6 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "SnacksKitchen";
-	name = "Snack Bar Shutters";
 	dir = 8
 	},
 /turf/open/floor/iron/dark,
@@ -37429,8 +37424,7 @@
 "lJV" = (
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/machinery/door/poddoor/shutters{
-	id = "loading lock lower";
-	name = "loading lock"
+	id = "loading lock lower"
 	},
 /turf/open/floor/iron,
 /area/station/cargo/storage)
@@ -41413,8 +41407,7 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters/window{
-	id = "stationawaygate";
-	name = "Gateway Access Shutters"
+	id = "stationawaygate"
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -41797,7 +41790,6 @@
 "nfk" = (
 /obj/machinery/door/poddoor/shutters/window{
 	id = "armory";
-	name = "Armory Shutters";
 	dir = 8
 	},
 /obj/effect/turf_decal/caution/stand_clear{
@@ -42190,7 +42182,6 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Technical Storage Shutters";
 	id = "technicalstorage2";
 	dir = 1
 	},
@@ -42627,7 +42618,6 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "SnacksKitchen";
-	name = "Snack Bar Shutters";
 	dir = 8
 	},
 /turf/open/floor/iron/dark,
@@ -42976,8 +42966,7 @@
 /area/station/hallway/primary/starboard)
 "nvo" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "evashutter";
-	name = "E.V.A. Storage Shutter"
+	id = "evashutter"
 	},
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /obj/structure/cable,
@@ -46070,7 +46059,6 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Medical Storage Shutters";
 	id = "medicalstorage";
 	dir = 1
 	},
@@ -51121,6 +51109,16 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/turret_protected/aisat_interior)
+"qdi" = (
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/poddoor/shutters{
+	dir = 8
+	},
+/turf/open/floor/iron/white,
+/area/station/science/research)
 "qdr" = (
 /obj/effect/turf_decal/tile/dark_red/fourcorners,
 /obj/structure/chair,
@@ -51987,8 +51985,7 @@
 	},
 /obj/machinery/door/poddoor/shutters/window{
 	dir = 4;
-	id = "mechbay2";
-	name = "mech bay shutters"
+	id = "mechbay2"
 	},
 /obj/structure/cable,
 /turf/open/floor/iron,
@@ -54748,6 +54745,15 @@
 "rku" = (
 /turf/closed/wall,
 /area/station/common/cryopods)
+"rky" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "medicalstorage";
+	dir = 1
+	},
+/turf/open/openspace{
+	planetary_atmos = 1
+	},
+/area/abyss_station/exterior/two_level)
 "rkN" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 8
@@ -55023,7 +55029,6 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Medical Storage Shutters";
 	id = "medicalstorage";
 	dir = 1
 	},
@@ -61522,8 +61527,7 @@
 "tmW" = (
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
-	id = "teledoor";
-	name = "MiniSat Teleport Access"
+	id = "teledoor"
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/turret_protected/aisat_interior)
@@ -62673,7 +62677,6 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/shutters{
-	name = "Medical Storage Shutters";
 	id = "medicalstorage";
 	dir = 1
 	},
@@ -63291,7 +63294,6 @@
 	},
 /obj/machinery/door/poddoor/shutters/window{
 	id = "stationawaygate";
-	name = "Gateway Access Shutters";
 	dir = 1
 	},
 /obj/effect/turf_decal/stripes/line,
@@ -64968,7 +64970,6 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "SnacksKitchen";
-	name = "Snack Bar Shutters";
 	dir = 8
 	},
 /turf/open/floor/iron/dark,
@@ -65365,7 +65366,6 @@
 	},
 /obj/machinery/door/poddoor/shutters/window{
 	id = "stationawaygate";
-	name = "Gateway Access Shutters";
 	dir = 1
 	},
 /obj/effect/turf_decal/stripes/line,
@@ -66250,7 +66250,6 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "loading lock upper";
-	name = "loading lock";
 	dir = 4
 	},
 /turf/open/floor/iron,
@@ -67701,6 +67700,9 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/north,
+/obj/machinery/door/poddoor/shutters{
+	id = "ChapelGardain"
+	},
 /turf/open/floor/carpet,
 /area/station/service/chapel)
 "vhJ" = (
@@ -68588,8 +68590,7 @@
 	},
 /obj/machinery/door/poddoor/shutters/window{
 	dir = 8;
-	id = "mechbay1";
-	name = "mech bay shutters"
+	id = "mechbay1"
 	},
 /turf/open/floor/iron,
 /area/station/science/robotics/mechbay)
@@ -72787,7 +72788,6 @@
 "wFV" = (
 /obj/effect/turf_decal/caution/stand_clear,
 /obj/machinery/door/poddoor/shutters{
-	name = "Technical Storage Shutters";
 	id = "technicalstorage1"
 	},
 /turf/open/floor/iron,
@@ -72932,7 +72932,6 @@
 "wId" = (
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /obj/machinery/door/poddoor/shutters/window{
-	name = "teleport shutters";
 	id = "teleport"
 	},
 /obj/structure/cable,
@@ -176929,7 +176928,7 @@ rgV
 aAP
 aAP
 qvH
-fPq
+hkD
 fPq
 aAP
 aAP
@@ -178984,7 +178983,7 @@ hBw
 sKM
 scF
 mQN
-tcP
+qdi
 tcP
 tcP
 tcP
@@ -248691,7 +248690,7 @@ ndq
 ndq
 ndq
 ndq
-ndq
+rky
 ndq
 ndq
 ndq
