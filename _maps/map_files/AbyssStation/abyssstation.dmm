@@ -6060,6 +6060,9 @@
 /area/station/maintenance/department/science/central)
 "bTI" = (
 /obj/machinery/keycard_auth/directional/west,
+/obj/machinery/modular_computer/preset/command{
+	dir = 4
+	},
 /turf/open/floor/carpet/red,
 /area/station/command/heads_quarters/hos)
 "bTL" = (
@@ -20695,6 +20698,11 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/science/genetics)
+"gEd" = (
+/obj/effect/turf_decal/tile/dark_red,
+/obj/structure/railing/corner,
+/turf/open/floor/iron,
+/area/abyss_station/exterior/one_level)
 "gEf" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/railing{
@@ -22793,11 +22801,12 @@
 /area/station/hallway/primary/aft)
 "hkD" = (
 /obj/effect/turf_decal/tile/purple/fourcorners,
-/obj/machinery/door/poddoor/shutters{
-	dir = 8
-	},
 /obj/effect/turf_decal/caution/stand_clear{
 	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "rnd_storage"
 	},
 /turf/open/floor/iron,
 /area/station/science/research)
@@ -24178,7 +24187,7 @@
 /obj/effect/turf_decal/tile/dark_red/anticorner/contrasted{
 	dir = 4
 	},
-/obj/machinery/computer/security/mining,
+/obj/machinery/modular_computer/preset/civilian,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/engineering)
 "hHD" = (
@@ -27219,6 +27228,9 @@
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
 "iBg" = (
+/obj/machinery/modular_computer/preset/civilian{
+	dir = 4
+	},
 /turf/open/floor/iron/dark,
 /area/station/medical/storage)
 "iBw" = (
@@ -27256,9 +27268,6 @@
 /obj/effect/landmark/start/detective,
 /turf/open/floor/wood,
 /area/station/security/detectives_office)
-"iCf" = (
-/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
-/area/station/medical/coldroom)
 "iCA" = (
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt,
@@ -28085,6 +28094,9 @@
 /area/station/maintenance/starboard/greater)
 "iRQ" = (
 /obj/structure/window/reinforced/spawner/directional/west,
+/obj/machinery/modular_computer/preset/command{
+	dir = 4
+	},
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/cmo)
 "iSd" = (
@@ -34403,8 +34415,6 @@
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/rack/shelf,
-/obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/iron,
 /area/station/engineering/storage)
 "kKU" = (
@@ -39176,6 +39186,10 @@
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/carpet/purple,
 /area/station/science/breakroom)
+"mla" = (
+/obj/machinery/light/floor,
+/turf/open/floor/iron,
+/area/station/engineering/atmos)
 "mlf" = (
 /obj/structure/railing{
 	dir = 1
@@ -39800,7 +39814,7 @@
 /area/station/command/heads_quarters/rd)
 "muU" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/med_data/laptop{
+/obj/machinery/computer/records/medical/laptop{
 	dir = 8;
 	pixel_y = 1
 	},
@@ -48306,6 +48320,7 @@
 "pho" = (
 /obj/structure/reagent_dispensers/fueltank/large,
 /obj/effect/turf_decal/stripes/full,
+/obj/machinery/light/directional/west,
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos)
 "php" = (
@@ -51064,6 +51079,9 @@
 /turf/open/floor/glass/reinforced,
 /area/abyss_station/exterior/park/skate)
 "qcP" = (
+/obj/machinery/modular_computer/preset/curator{
+	dir = 8
+	},
 /turf/open/floor/engine/cult,
 /area/station/service/library/private)
 "qcR" = (
@@ -51109,16 +51127,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/turret_protected/aisat_interior)
-"qdi" = (
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment,
-/obj/machinery/door/poddoor/shutters{
-	dir = 8
-	},
-/turf/open/floor/iron/white,
-/area/station/science/research)
 "qdr" = (
 /obj/effect/turf_decal/tile/dark_red/fourcorners,
 /obj/structure/chair,
@@ -51902,11 +51910,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
-"qqv" = (
-/obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
-/turf/open/floor/catwalk_floor/iron,
-/area/station/engineering/atmos/office)
 "qqC" = (
 /obj/structure/cable,
 /obj/structure/cable/layer3,
@@ -52730,6 +52733,7 @@
 /area/blueshield)
 "qEW" = (
 /obj/machinery/light/directional/south,
+/obj/structure/table,
 /turf/open/floor/iron/dark/side,
 /area/station/tcommsat/computer)
 "qEX" = (
@@ -54317,6 +54321,7 @@
 /obj/effect/turf_decal/bot,
 /obj/structure/reagent_dispensers/foamtank,
 /obj/machinery/firealarm/directional/west,
+/obj/machinery/light/directional/west,
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos)
 "rcu" = (
@@ -54745,15 +54750,6 @@
 "rku" = (
 /turf/closed/wall,
 /area/station/common/cryopods)
-"rky" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "medicalstorage";
-	dir = 1
-	},
-/turf/open/openspace{
-	planetary_atmos = 1
-	},
-/area/abyss_station/exterior/two_level)
 "rkN" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 8
@@ -55897,6 +55893,7 @@
 /turf/open/floor/plating,
 /area/station/engineering/atmos)
 "rDt" = (
+/obj/machinery/modular_computer/preset/civilian,
 /turf/open/floor/iron/dark,
 /area/station/security/office)
 "rDv" = (
@@ -59900,12 +59897,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
-"sQo" = (
-/obj/structure/sign/poster/official/moth_epi/directional/north,
-/turf/open/openspace{
-	planetary_atmos = 1
-	},
-/area/abyss_station/exterior/two_level)
 "sQp" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -61174,6 +61165,7 @@
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
 "thR" = (
+/obj/machinery/modular_computer/preset/civilian,
 /turf/open/floor/iron/white,
 /area/station/medical/aslyum)
 "thS" = (
@@ -61741,6 +61733,7 @@
 /obj/effect/turf_decal/trimline/dark_red/corner{
 	dir = 4
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "tqk" = (
@@ -62672,16 +62665,6 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/tile,
 /area/station/command/heads_quarters/captain/private)
-"tES" = (
-/obj/effect/turf_decal/caution/stand_clear{
-	dir = 1
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "medicalstorage";
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/station/engineering/storage)
 "tEW" = (
 /obj/machinery/space_heater,
 /obj/effect/decal/cleanable/dirt,
@@ -62959,6 +62942,10 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/science/circuits)
+"tJK" = (
+/obj/structure/table,
+/turf/open/floor/iron/dark/side,
+/area/station/tcommsat/computer)
 "tKd" = (
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2{
 	dir = 10
@@ -63403,9 +63390,6 @@
 	dir = 4
 	},
 /obj/effect/landmark/start/psychologist,
-/obj/structure/sign/painting/large/library_private{
-	pixel_y = 28
-	},
 /turf/open/floor/wood,
 /area/station/medical/psychology)
 "tRH" = (
@@ -66285,6 +66269,7 @@
 /area/station/security/courtroom)
 "uJi" = (
 /obj/machinery/atmospherics/pipe/smart/manifold/supply/visible,
+/obj/machinery/light/directional/south,
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "uJs" = (
@@ -68390,11 +68375,11 @@
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "vso" = (
-/obj/machinery/computer/security/mining{
-	dir = 4
-	},
 /obj/effect/turf_decal/tile/dark_red/anticorner/contrasted{
 	dir = 1
+	},
+/obj/machinery/modular_computer/preset/civilian{
+	dir = 4
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/science/research)
@@ -76726,6 +76711,7 @@
 /obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/west,
+/obj/machinery/modular_computer/preset/civilian,
 /turf/open/floor/iron/dark,
 /area/abyss_station/station/security)
 "xSo" = (
@@ -168660,7 +168646,7 @@ vYC
 rRN
 rRN
 vYC
-sbe
+vYC
 bgd
 bgd
 bgd
@@ -171569,7 +171555,7 @@ jxw
 rDl
 iYj
 hdv
-kvo
+mla
 afG
 kFB
 vLJ
@@ -172343,7 +172329,7 @@ jxw
 nWO
 aZP
 hdv
-kvo
+mla
 ePA
 wbE
 ntE
@@ -174654,7 +174640,7 @@ ctl
 akb
 ctl
 xDM
-qqv
+ctl
 nPO
 uVT
 pxP
@@ -178657,7 +178643,7 @@ bFA
 uzU
 vWq
 xNG
-xmO
+gEd
 cIl
 vLC
 vLC
@@ -178983,7 +178969,7 @@ hBw
 sKM
 scF
 mQN
-qdi
+tcP
 tcP
 tcP
 tcP
@@ -233388,7 +233374,7 @@ ndq
 ndq
 ndq
 ndq
-sQo
+ndq
 ndq
 ndq
 ndq
@@ -240188,7 +240174,7 @@ nqc
 fXY
 nfK
 jyp
-bjL
+tJK
 rSV
 rNm
 wLc
@@ -242769,7 +242755,7 @@ tWo
 lBU
 elA
 bKe
-tES
+nkA
 qZs
 lwN
 mjh
@@ -248690,7 +248676,7 @@ ndq
 ndq
 ndq
 ndq
-rky
+ndq
 ndq
 ndq
 ndq
@@ -263613,7 +263599,7 @@ awT
 mLB
 dxq
 tdW
-iCf
+lsF
 oxg
 fpZ
 aPR
