@@ -3298,7 +3298,7 @@
 	anchored = 1
 	},
 /obj/item/clothing/under/pants/track,
-/obj/item/clothing/suit/costume/ianshirt,
+/obj/item/clothing/suit/costume/wellworn_shirt/graphic/ian,
 /turf/open/floor/iron,
 /area/station/maintenance/starboard/fore)
 "atN" = (
@@ -14608,7 +14608,6 @@
 /obj/item/stack/medical/mesh,
 /obj/item/stack/medical/gauze,
 /obj/item/stack/medical/suture,
-/obj/item/stack/medical/splint,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
 "bhh" = (
@@ -14653,7 +14652,7 @@
 "bhp" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/structure/table/reinforced,
-/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/surgery_tray,
 /turf/open/floor/iron/dark,
 /area/station/medical/morgue)
 "bhq" = (
@@ -15067,7 +15066,7 @@
 /area/station/cargo/office)
 "biz" = (
 /obj/machinery/iv_drip,
-/obj/structure/bed/roller,
+/obj/structure/bed/medical/emergency,
 /turf/open/floor/iron/dark,
 /area/station/medical/morgue)
 "biA" = (
@@ -17149,7 +17148,7 @@
 	dir = 4
 	},
 /obj/structure/sign/warning/no_smoking/circle/directional/east,
-/obj/structure/bed/roller,
+/obj/structure/bed/medical/emergency,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay)
 "boq" = (
@@ -17511,7 +17510,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 8
 	},
-/obj/structure/bed/roller,
+/obj/structure/bed/medical/emergency,
 /obj/machinery/iv_drip,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -27;
@@ -17844,7 +17843,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 27
 	},
-/obj/structure/bed/roller,
+/obj/structure/bed/medical/emergency,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 9
 	},
@@ -23111,11 +23110,6 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/aft)
 "bIf" = (
-/obj/machinery/door_buttons/access_button{
-	dir = 4;
-	pixel_x = -12;
-	pixel_y = 2
-	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
@@ -25836,10 +25830,6 @@
 /turf/open/floor/iron/dark,
 /area/station/medical/virology)
 "bST" = (
-/obj/machinery/door_buttons/airlock_controller{
-	pixel_x = -5;
-	pixel_y = 30
-	},
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 1
 	},
@@ -28341,7 +28331,6 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
 	},
-/obj/item/computer_disk/atmos,
 /obj/item/computer_disk/engineering,
 /obj/item/computer_disk/engineering,
 /obj/item/computer_disk/engineering,
@@ -28834,7 +28823,6 @@
 	dir = 10
 	},
 /obj/machinery/newscaster/directional/north,
-/obj/item/clothing/suit/apron/purple_bartender,
 /obj/item/clothing/suit/toggle/lawyer/purple,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/rd)
@@ -30551,6 +30539,7 @@
 	dir = 1
 	},
 /obj/effect/mapping_helpers/airlock/access/any/engineering/general,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/station/engineering/main)
 "crh" = (
@@ -34420,9 +34409,8 @@
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/engine_smes)
 "cTd" = (
-/obj/effect/spawner/structure/window/reinforced/plasma,
-/obj/item/folder/biscuit/confidential/delam,
-/turf/open/floor/plating,
+/obj/structure/sign/delam_procedure,
+/turf/closed/wall/r_wall,
 /area/station/engineering/main)
 "cTe" = (
 /obj/item/vending_refill/donksoft,
@@ -38070,7 +38058,7 @@
 	},
 /obj/effect/turf_decal/tile/blue,
 /obj/structure/table/glass,
-/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/surgery_tray,
 /obj/machinery/vending/wallmed{
 	pixel_x = 32
 	},
@@ -43063,6 +43051,7 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/freezer,
 /area/station/commons/toilet/locker)
 "ksk" = (
@@ -43103,7 +43092,7 @@
 	dir = 8
 	},
 /obj/structure/table/glass,
-/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/surgery_tray,
 /obj/machinery/vending/wallmed{
 	pixel_x = -32
 	},
@@ -44430,7 +44419,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
 	},
-/obj/structure/bed/roller,
+/obj/structure/bed/medical/emergency,
 /obj/machinery/iv_drip,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay)
@@ -46536,7 +46525,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 8
 	},
-/obj/structure/bed/roller,
+/obj/structure/bed/medical/emergency,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/aft)
 "nxP" = (
@@ -49625,7 +49614,7 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
 "qff" = (
-/obj/structure/bed/roller,
+/obj/structure/bed/medical/emergency,
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 6
 	},
@@ -50098,7 +50087,7 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor,
-/obj/structure/bed/roller,
+/obj/structure/bed/medical/emergency,
 /turf/open/floor/iron/dark,
 /area/station/medical/medbay/aft)
 "qEg" = (
@@ -54255,7 +54244,7 @@
 /area/station/security/prison)
 "ufp" = (
 /obj/structure/displaycase/noalert{
-	start_showpiece_type = /obj/item/clothing/suit/costume/nerdshirt
+	start_showpiece_type = /obj/item/clothing/suit/costume/wellworn_shirt/messy/graphic/gamer
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
@@ -88754,7 +88743,7 @@ cfb
 clM
 jjr
 cgR
-ccw
+cTd
 cii
 cDp
 cqi
@@ -89268,7 +89257,7 @@ ckL
 cmF
 aiN
 cgR
-cTd
+cMm
 cFK
 cDp
 cDw

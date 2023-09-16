@@ -6505,10 +6505,6 @@
 	pixel_y = -6;
 	req_access = list("engineering")
 	},
-/obj/item/computer_disk/atmos{
-	pixel_x = 10;
-	pixel_y = -4
-	},
 /obj/item/toy/figure/ce{
 	pixel_x = 8;
 	pixel_y = 6
@@ -9056,7 +9052,7 @@
 /area/station/hallway/primary/fore)
 "cZT" = (
 /obj/effect/turf_decal/bot,
-/obj/structure/bed/roller,
+/obj/structure/bed/medical/emergency,
 /obj/machinery/light/small/directional/south,
 /obj/machinery/iv_drip,
 /obj/effect/decal/cleanable/dirt,
@@ -11651,7 +11647,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/port/lesser)
 "dQx" = (
-/obj/structure/bed/roller,
+/obj/structure/bed/medical/emergency,
 /obj/machinery/iv_drip,
 /obj/effect/turf_decal/bot_white/left,
 /obj/machinery/light/small/directional/west,
@@ -14520,6 +14516,7 @@
 /obj/effect/turf_decal/delivery,
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/iron/dark,
 /area/station/engineering/supermatter/room)
 "ePb" = (
@@ -31090,7 +31087,7 @@
 	pixel_x = -32
 	},
 /obj/machinery/light/directional/north,
-/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/surgery_tray,
 /obj/machinery/status_display/evac/directional/north,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 4
@@ -31190,7 +31187,6 @@
 "jWL" = (
 /obj/machinery/vending/tool,
 /obj/effect/turf_decal/bot,
-/obj/machinery/airalarm/directional/east,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 8
 	},
@@ -32713,6 +32709,7 @@
 	network = list("ss13","engine")
 	},
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/engineering/storage_shared)
 "kyU" = (
@@ -37208,7 +37205,7 @@
 "lVe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
-/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/surgery_tray,
 /turf/open/floor/iron/dark,
 /area/station/medical/morgue)
 "lVf" = (
@@ -42178,7 +42175,7 @@
 "nBZ" = (
 /obj/machinery/newscaster/directional/west,
 /obj/structure/table,
-/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/surgery_tray,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
 /turf/open/floor/iron/dark,
@@ -43862,10 +43859,9 @@
 /turf/open/floor/iron/dark,
 /area/station/hallway/primary/fore)
 "oid" = (
-/obj/effect/spawner/structure/window/reinforced/plasma,
-/obj/item/folder/biscuit/confidential/delam,
-/turf/open/floor/plating,
-/area/station/engineering/supermatter/room)
+/obj/structure/sign/delam_procedure,
+/turf/closed/wall/r_wall,
+/area/station/maintenance/starboard/aft)
 "oig" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -57766,7 +57762,7 @@
 /turf/closed/wall,
 /area/station/service/bar/atrium)
 "sHn" = (
-/obj/structure/bed/roller,
+/obj/structure/bed/medical/emergency,
 /obj/machinery/iv_drip,
 /obj/effect/turf_decal/bot_white/left,
 /obj/structure/extinguisher_cabinet/directional/west,
@@ -68437,11 +68433,11 @@
 	pixel_y = 11
 	},
 /obj/machinery/light/directional/east,
-/obj/item/roller{
+/obj/item/emergency_bed{
 	pixel_x = 7;
 	pixel_y = 10
 	},
-/obj/item/roller,
+/obj/item/emergency_bed,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 8
 	},
@@ -71639,7 +71635,6 @@
 	network = list("ss13","engine")
 	},
 /obj/effect/decal/cleanable/blood/old,
-/obj/machinery/firealarm/directional/east,
 /obj/structure/cable,
 /obj/machinery/modular_computer/preset/engineering,
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
@@ -75057,7 +75052,7 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/bot,
-/obj/structure/bed/roller,
+/obj/structure/bed/medical/emergency,
 /obj/machinery/iv_drip,
 /obj/structure/sign/poster/contraband/random/directional/north,
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
@@ -112561,7 +112556,7 @@ doU
 kaM
 mPS
 bjb
-oid
+rea
 mSC
 naQ
 ksp
@@ -113072,7 +113067,7 @@ dmf
 xOB
 qZX
 qZX
-qZX
+oid
 hjj
 kXG
 qZX
