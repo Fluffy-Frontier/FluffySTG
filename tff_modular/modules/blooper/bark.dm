@@ -1,3 +1,14 @@
+/datum/preference/choiced/bark
+	category = PREFERENCE_CATEGORY_NON_CONTEXTUAL
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "character_voice" // Sorry, but...
+
+/datum/preference/choiced/bark/init_possible_values()
+	return assoc_to_keys(GLOB.bark_list)
+
+/datum/preference/choiced/bark/apply_to_human(mob/living/carbon/human/target, value)
+	target.set_bark(value)
+
 /// Controls hearing bark sound
 /datum/preference/toggle/sound_bark
 	category = PREFERENCE_CATEGORY_GAME_PREFERENCES
