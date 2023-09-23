@@ -10615,7 +10615,6 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/structure/cable,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
 "dqB" = (
@@ -14369,16 +14368,6 @@
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/iron/white,
 /area/station/science/lab)
-"eyo" = (
-/obj/structure/cable,
-/obj/structure/cable,
-/obj/structure/cable,
-/obj/machinery/power/solar{
-	id = "forestarboard";
-	name = "Fore-Starboard Solar Array"
-	},
-/turf/open/floor/iron/solarpanel,
-/area/abyss_station/exterior/two_level)
 "eyA" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -16277,7 +16266,6 @@
 /area/station/ai_monitored/turret_protected/ai)
 "ffL" = (
 /obj/effect/turf_decal/delivery,
-/obj/structure/cable,
 /obj/structure/cable,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
@@ -19441,17 +19429,6 @@
 /obj/effect/turf_decal/tile/purple/opposingcorners,
 /turf/open/floor/iron/dark,
 /area/abyss_station/station/service/bar)
-"gfV" = (
-/obj/structure/closet/secure_closet/personal{
-	icon_door = null;
-	icon_state = "secure"
-	},
-/obj/structure/closet/secure_closet/personal{
-	icon_door = null;
-	icon_state = "secure"
-	},
-/turf/open/floor/iron/dark,
-/area/station/engineering/atmos/storage/gas)
 "gge" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment,
@@ -24537,12 +24514,6 @@
 	},
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/abyss_station/exterior/abyss)
-"hMa" = (
-/obj/effect/turf_decal/stripes/end,
-/obj/structure/cable,
-/obj/structure/cable,
-/turf/open/floor/engine,
-/area/station/engineering/supermatter/room)
 "hMv" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
@@ -29055,7 +29026,7 @@
 "jeq" = (
 /obj/item/radio/intercom/directional/west,
 /obj/structure/closet/secure_closet/personal{
-	icon_door = null;
+	icon_door = "secure";
 	icon_state = "secure"
 	},
 /turf/open/floor/iron/dark,
@@ -69817,7 +69788,7 @@
 /area/station/engineering/atmos)
 "vLM" = (
 /obj/structure/closet/secure_closet/personal{
-	icon_door = null;
+	icon_door = "secure";
 	icon_state = "secure"
 	},
 /turf/open/floor/iron/dark,
@@ -72200,7 +72171,7 @@
 /area/station/maintenance/department/cargo)
 "wuT" = (
 /obj/structure/closet/secure_closet/personal{
-	icon_door = null;
+	icon_door = "secure";
 	icon_state = "secure"
 	},
 /turf/open/floor/iron/dark,
@@ -110811,7 +110782,7 @@ pQi
 pQi
 nJG
 vks
-hMa
+kcF
 nex
 bOd
 bOd
@@ -172447,7 +172418,7 @@ oke
 ntM
 bGN
 vLM
-gfV
+vLM
 jeq
 vLM
 bUS
@@ -240854,7 +240825,7 @@ rHe
 rHe
 rHe
 rHe
-eyo
+rHe
 rHe
 ftS
 ndq
