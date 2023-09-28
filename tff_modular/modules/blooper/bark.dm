@@ -128,18 +128,6 @@
 	soundpath = 'sound/effects/adminhelp.ogg'
 	ignore = TRUE // Emergent heart attack generation
 
-/datum/bark/moff
-	name = "Moff"
-	id = "moff"
-	soundpath = 'tff_modular/modules/blooper/voice/mothsqueak.ogg'
-	ignore = TRUE
-
-/datum/bark/weh
-	name = "Weh"
-	id = "weh"
-	soundpath = 'tff_modular/modules/blooper/voice/weh.ogg'
-	ignore = TRUE
-
 /datum/bark/honk
 	name = "Annoying Honk"
 	id = "honk"
@@ -168,7 +156,7 @@
 	name = "Meow"
 	id = "meow"
 	allow_random = TRUE
-	soundpath = 'tff_modular/modules/blooper/voice/meow1.ogg'
+	soundpath = 'tff_modular/modules/blooper/voice/barks/meow1.ogg'
 	minspeed = 5
 	maxspeed = 11
 
@@ -176,13 +164,13 @@
 	name = "Chirp"
 	id = "chirp"
 	allow_random = TRUE
-	soundpath = 'tff_modular/modules/blooper/voice/chirp.ogg'
+	soundpath = 'tff_modular/modules/blooper/voice/barks/chirp.ogg'
 
 /datum/bark/caw
 	name = "Caw"
 	id = "caw"
 	allow_random = TRUE
-	soundpath = 'tff_modular/modules/blooper/voice/caw.ogg'
+	soundpath = 'tff_modular/modules/blooper/voice/barks/caw.ogg'
 
 /datum/bark/bleat
 	name = "Bleat"
@@ -417,7 +405,7 @@
 /datum/bark/chitter/alt
 	name = "Chittery Alt"
 	id = "chitter2"
-	soundpath = 'tff_modular/modules/blooper/voice/moth/mothchitter2.ogg'
+	soundpath = 'tff_modular/modules/blooper/voice/barks/moth/mothchitter2.ogg'
 
 // The Mayhem Special
 /datum/bark/whistle
