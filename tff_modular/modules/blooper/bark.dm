@@ -6,8 +6,51 @@
 /datum/preference/choiced/bark/init_possible_values()
 	return assoc_to_keys(GLOB.bark_list)
 
-/datum/preference/choiced/bark/apply_to_human(mob/living/carbon/human/target, value)
+/datum/preference/choiced/bark/apply_to_human(mob/living/carbon/human/target, value, /datum/preference/numeric/bark_speech_speed)
 	target.set_bark(value)
+
+/datum/preference/numeric/bark_speech_speed
+	category = PREFERENCE_CATEGORY_NON_CONTEXTUAL
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "bark_speech_speed"
+	minimum = BARK_DEFAULT_MINSPEED
+	maximum = BARK_DEFAULT_MAXSPEED
+	step = 0.01
+
+/datum/preference/numeric/bark_speech_speed/apply_to_human(mob/living/carbon/human/target, value)
+	target.vocal_speed = value
+
+/datum/preference/numeric/bark_speech_speed/create_default_value()
+	return round((BARK_DEFAULT_MINSPEED + BARK_DEFAULT_MAXSPEED) / 2)
+
+/datum/preference/numeric/bark_speech_pitch
+	category = PREFERENCE_CATEGORY_NON_CONTEXTUAL
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "bark_speech_pitch"
+	minimum = BARK_DEFAULT_MINPITCH
+	maximum = BARK_DEFAULT_MAXPITCH
+	step = 0.01
+
+/datum/preference/numeric/bark_speech_pitch/apply_to_human(mob/living/carbon/human/target, value)
+	target.vocal_pitch = value
+
+/datum/preference/numeric/bark_speech_pitch/create_default_value()
+	return round((BARK_DEFAULT_MINPITCH + BARK_DEFAULT_MAXPITCH) / 2)
+
+/datum/preference/numeric/bark_pitch_range
+	category = PREFERENCE_CATEGORY_NON_CONTEXTUAL
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "bark_pitch_range"
+	minimum = BARK_DEFAULT_MINVARY
+	maximum = BARK_DEFAULT_MAXVARY
+	step = 0.01
+
+/datum/preference/numeric/bark_pitch_range/apply_to_human(mob/living/carbon/human/target, value)
+	target.vocal_pitch_range = value
+
+/datum/preference/numeric/bark_pitch_range/create_default_value()
+	return round((BARK_DEFAULT_MINVARY + BARK_DEFAULT_MAXVARY) / 2)
+
 
 /// Controls hearing bark sound
 /datum/preference/toggle/sound_bark

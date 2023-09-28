@@ -1,4 +1,4 @@
-import { CheckboxInput, FeatureChoiced, FeatureDropdownInput, FeatureNumberInput, FeatureNumeric, FeatureToggle } from '../../base';
+import { FeatureChoiced, FeatureDropdownInput, FeatureNumberInput, FeatureNumeric } from '../../base';
 
 export const character_voice: FeatureChoiced = {
   name: 'Character Voice',
@@ -15,12 +15,13 @@ export const bark_speech_pitch: FeatureNumeric = {
   component: FeatureNumberInput,
 };
 
-export const vocal_pitch_range: FeatureNumeric = {
+export const bark_pitch_range: FeatureNumeric = {
   name: 'Character Voice Range',
   component: FeatureNumberInput,
 };
-
+/*
 export const bark_preview: FeatureToggle = {
   name: 'Character Voice Check',
   component: CheckboxInput,
 };
+*/
