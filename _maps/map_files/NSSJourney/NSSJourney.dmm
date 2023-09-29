@@ -1472,6 +1472,7 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/mapping_helpers/airlock/access/any/security/general,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "akV" = (
@@ -20993,7 +20994,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
-/obj/machinery/atmospherics/components/unary/cryo_cell,
+/obj/machinery/cryo_cell,
 /turf/open/floor/iron/dark,
 /area/station/medical/cryo)
 "bBn" = (
@@ -21842,7 +21843,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
-/obj/machinery/atmospherics/components/unary/cryo_cell,
+/obj/machinery/cryo_cell,
 /turf/open/floor/iron/dark,
 /area/station/medical/cryo)
 "bEc" = (
@@ -23065,6 +23066,13 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/mapping_helpers/airlock/access/any/medical/virology,
+/obj/machinery/door_buttons/access_button{
+	idDoor = "virology_airlock_exterior";
+	idSelf = "virology_airlock_control";
+	name = "Virology Access Button";
+	req_access = list("virology");
+	pixel_x = -24
+	},
 /turf/open/floor/iron,
 /area/station/medical/virology)
 "bHZ" = (
@@ -25275,6 +25283,14 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/mapping_helpers/airlock/access/any/medical/virology,
+/obj/machinery/door_buttons/access_button{
+	idDoor = "virology_airlock_interior";
+	idSelf = "virology_airlock_control";
+	name = "Virology Access Button";
+	pixel_x = -24;
+	req_access = list("virology");
+	pixel_y = 6
+	},
 /turf/open/floor/iron,
 /area/station/medical/virology)
 "bQJ" = (
@@ -25549,13 +25565,14 @@
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 9
 	},
-/obj/machinery/door_buttons/access_button{
-	idDoor = "virology_airlock_interior";
+/obj/machinery/door_buttons/airlock_controller{
+	idExterior = "virology_airlock_exterior";
+	idInterior = "virology_airlock_interior";
 	idSelf = "virology_airlock_control";
-	name = "Virology Access Button";
-	pixel_x = 8;
-	req_access = list("virology");
-	pixel_y = 24
+	name = "Virology Access Console";
+	pixel_x = 7;
+	pixel_y = 26;
+	req_access = list("virology")
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
@@ -31870,7 +31887,7 @@
 "cwy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table_frame,
-/obj/item/wirerod,
+/obj/item/melee/baton/security/cattleprod,
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
@@ -37829,15 +37846,6 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door_buttons/airlock_controller{
-	idExterior = "virology_airlock_exterior";
-	idInterior = "virology_airlock_interior";
-	idSelf = "virology_airlock_control";
-	name = "Virology Access Console";
-	pixel_x = 7;
-	pixel_y = -26;
-	req_access = list("virology")
-	},
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
 "fSb" = (
@@ -58921,14 +58929,6 @@
 	dir = 10
 	},
 /obj/item/kirbyplants/random,
-/obj/machinery/door_buttons/access_button{
-	idDoor = "virology_airlock_exterior";
-	idSelf = "virology_airlock_control";
-	name = "Virology Access Button";
-	req_access = list("virology");
-	pixel_y = -24;
-	pixel_x = 8
-	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/aft)
 "yck" = (
