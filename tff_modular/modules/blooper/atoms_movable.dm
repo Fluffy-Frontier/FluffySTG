@@ -33,6 +33,7 @@
 
 /atom/movable
 	// Text-to-bark sounds
+	// Да. У нас все атом могут иметь звучение для say.
 	var/sound/vocal_bark
 	var/vocal_bark_id
 	var/vocal_pitch = 1
@@ -91,7 +92,6 @@
 	human.vocal_pitch_range = BARK_VARIANCE_RAND
 
 /mob/living/send_speech(message_raw, message_range = 6, obj/source = src, bubble_type = bubble_icon, list/spans, datum/language/message_language = null, list/message_mods = list(), forced = null, tts_message, list/tts_filter)
-
 	. = ..()
 	var/whisper_range = 0
 	if(message_mods[WHISPER_MODE])

@@ -1,8 +1,31 @@
-import { FeatureChoiced, FeatureDropdownInput, FeatureNumberInput, FeatureNumeric } from '../../base';
+import { Button, Stack } from '../../../../../../components';
+import { FeatureChoiced, FeatureChoicedServerData, FeatureDropdownInput, FeatureNumberInput, FeatureNumeric, FeatureValueProps } from '../../base';
+
+const FeatureBarkDropdownInput = (
+  props: FeatureValueProps<string, string, FeatureChoicedServerData>
+) => {
+  return (
+    <Stack>
+      <Stack.Item grow>
+        <FeatureDropdownInput {...props} />
+      </Stack.Item>
+      <Stack.Item>
+        <Button
+          onClick={() => {
+            props.act('play_bark');
+          }}
+          icon="play"
+          width="100%"
+          height="100%"
+        />
+      </Stack.Item>
+    </Stack>
+  );
+};
 
 export const character_voice: FeatureChoiced = {
   name: 'Character Voice',
-  component: FeatureDropdownInput,
+  component: FeatureBarkDropdownInput,
 };
 
 export const bark_speech_speed: FeatureNumeric = {
@@ -19,9 +42,3 @@ export const bark_pitch_range: FeatureNumeric = {
   name: 'Character Voice Range',
   component: FeatureNumberInput,
 };
-/*
-export const bark_preview: FeatureToggle = {
-  name: 'Character Voice Check',
-  component: CheckboxInput,
-};
-*/

@@ -51,13 +51,13 @@
 	sort_list(GLOB.laugh_types, GLOBAL_PROC_REF(cmp_typepaths_asc))
 	//SKYRAT EDIT END
 
-	// TFF
+	//THE FLUFFY FRONTIER EDIT ADDITION BEGIN - Без этого никуда.
 	for(var/spath in subtypesof(/datum/bark))
 		var/datum/bark/B = new spath()
 		GLOB.bark_list[B.id] = spath
 		if(B.allow_random)
 			GLOB.bark_random_list[B.id] = spath
-	// TFF
+	//THE FLUFFY FRONTIER EDIT END
 
 /// Inits GLOB.species_list. Not using GLOBAL_LIST_INIT b/c it depends on GLOB.string_lists
 /proc/init_species_list()

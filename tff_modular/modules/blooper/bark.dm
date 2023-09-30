@@ -9,6 +9,31 @@
 /datum/preference/choiced/bark/apply_to_human(mob/living/carbon/human/target, value, /datum/preference/numeric/bark_speech_speed)
 	target.set_bark(value)
 
+/// Middleware to handle quirks
+/datum/preference_middleware/bark
+	/// Cooldown on requesting a TTS preview.
+	COOLDOWN_DECLARE(bark_cooldown)
+
+	action_delegations = list(
+		"play_bark" = PROC_REF(play_bark),
+	)
+
+/datum/preference_middleware/bark/proc/play_bark(list/params, mob/user)
+	if(!COOLDOWN_FINISHED(src, bark_cooldown))
+		return TRUE
+	var/atom/movable/barkbox = new(get_turf(user))
+	barkbox.set_bark(preferences.read_preference(/datum/preference/choiced/bark))
+	barkbox.vocal_pitch = preferences.read_preference(/datum/preference/numeric/bark_speech_pitch)
+	barkbox.vocal_speed = preferences.read_preference(/datum/preference/numeric/bark_speech_speed)
+	barkbox.vocal_pitch_range = preferences.read_preference(/datum/preference/numeric/bark_pitch_range)
+	var/total_delay
+	for(var/i in 1 to (round((32 / barkbox.vocal_speed)) + 1))
+		addtimer(CALLBACK(barkbox, /atom/movable/proc/bark, list(user), 7, 70, BARK_DO_VARY(barkbox.vocal_pitch, barkbox.vocal_pitch_range)), total_delay)
+		total_delay += rand(DS2TICKS(barkbox.vocal_speed/4), DS2TICKS(barkbox.vocal_speed/4) + DS2TICKS(barkbox.vocal_speed/4)) TICKS
+	QDEL_IN(barkbox, total_delay)
+	COOLDOWN_START(src, bark_cooldown, 2 SECONDS)
+	return TRUE
+
 /datum/preference/numeric/bark_speech_speed
 	category = PREFERENCE_CATEGORY_NON_CONTEXTUAL
 	savefile_identifier = PREFERENCE_CHARACTER
