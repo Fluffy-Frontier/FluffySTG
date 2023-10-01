@@ -398,6 +398,7 @@
 "kF" = (
 /obj/effect/landmark/start/new_player,
 /obj/effect/light_emitter/interlink,
+/obj/effect/landmark/observer_start,
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
@@ -816,6 +817,17 @@
 	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "rockyash"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"uZ" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/mob_spawn/ghost_role,
+/turf/open/floor/iron/small{
+	baseturfs = /turf/open/floor/iron/small
 	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
@@ -6207,7 +6219,7 @@ LM
 cF
 hj
 kB
-BJ
+uZ
 BJ
 BJ
 BJ
