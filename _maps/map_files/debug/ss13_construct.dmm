@@ -1,4 +1,17 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ab" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/neutral/half,
+/turf/open/indestructible{
+	base_icon_state = "ash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "ash"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "aw" = (
 /obj/effect/landmark/start/chief_medical_officer,
 /obj/effect/light_emitter/interlink,
@@ -11,14 +24,10 @@
 	name = "construct"
 	})
 "ax" = (
-/obj/effect/light_emitter/interlink{
-	color = "#e5e3e3"
-	},
-/turf/open/water/beach{
-	color = "#e5e3e3";
-	desc = "It is water.";
-	name = "water";
-	planetary_atmos = 0
+/obj/effect/light_emitter/interlink,
+/obj/effect/mob_spawn/ghost_role,
+/turf/open/floor/iron/small{
+	baseturfs = /turf/open/floor/iron/small
 	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
@@ -174,6 +183,22 @@
 /obj/effect/light_emitter/interlink,
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"eZ" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/neutral/half{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/turf/open/indestructible{
+	base_icon_state = "ash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "ash"
 	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
@@ -444,12 +469,42 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"lA" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/neutral/half{
+	dir = 1
+	},
+/turf/open/indestructible{
+	base_icon_state = "ash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "ash"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "lB" = (
 /obj/effect/gibspawner/human,
 /turf/open/indestructible{
 	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "rockyash"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"lL" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/turf/open/indestructible{
+	base_icon_state = "ash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "ash"
 	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
@@ -555,6 +610,21 @@
 /obj/machinery/telecomms/server/presets/command,
 /obj/effect/light_emitter/interlink,
 /turf/open/floor/circuit/telecomms/mainframe,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"oR" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/neutral/half{
+	dir = 4
+	},
+/turf/open/indestructible{
+	base_icon_state = "ash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "ash"
+	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
 	ambient_buzz = nul;
@@ -699,6 +769,22 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"ta" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/neutral/half,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/turf/open/indestructible{
+	base_icon_state = "ash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "ash"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "tc" = (
 /obj/machinery/telecomms/receiver/preset_left,
 /obj/effect/light_emitter/interlink,
@@ -761,23 +847,6 @@
 	base_icon_state = "ash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "ash"
-	},
-/area/awaymission/secret/powered{
-	ambience_index = null;
-	ambient_buzz = nul;
-	name = "construct"
-	})
-"ul" = (
-/obj/effect/light_emitter/interlink,
-/obj/effect/immortality_talisman/void{
-	desc = "It's shaped an awful lot like a person. There is no way someone makes a theory of out it, right?";
-	name = "shadow"
-	},
-/turf/open/water{
-	baseturfs = /turf/open/water;
-	color = "#878887";
-	planetary_atmos = 0;
-	turf_height = -30
 	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
@@ -1258,6 +1327,19 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"Jp" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/neutral,
+/turf/open/indestructible{
+	base_icon_state = "ash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "ash"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "JD" = (
 /obj/effect/landmark/start/wizard,
 /obj/effect/light_emitter/interlink,
@@ -1293,17 +1375,6 @@
 /obj/machinery/telecomms/processor/preset_four,
 /obj/effect/light_emitter/interlink,
 /turf/open/floor/circuit/telecomms/mainframe,
-/area/awaymission/secret/powered{
-	ambience_index = null;
-	ambient_buzz = nul;
-	name = "construct"
-	})
-"Ku" = (
-/obj/effect/light_emitter/interlink,
-/obj/effect/mob_spawn/ghost_role,
-/turf/open/floor/iron/small{
-	baseturfs = /turf/open/floor/iron/small
-	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
 	ambient_buzz = nul;
@@ -1362,6 +1433,23 @@
 /turf/open/misc/beach/coast/corner{
 	color = null;
 	dir = 1
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"Nf" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/immortality_talisman/void{
+	desc = "It's shaped an awful lot like a person. There is no way someone makes a theory of out it, right?";
+	name = "shadow"
+	},
+/turf/open/water{
+	baseturfs = /turf/open/water;
+	color = "#878887";
+	planetary_atmos = 0;
+	turf_height = -30
 	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
@@ -6236,7 +6324,7 @@ LM
 cF
 hj
 kB
-Ku
+ax
 BJ
 BJ
 BJ
@@ -6266,117 +6354,117 @@ BJ
 BJ
 BJ
 BJ
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+lL
+QV
+QV
+QV
+Jp
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
+oR
 GI
 "}
 (19,1,1) = {"
@@ -6531,7 +6619,7 @@ cp
 RP
 mm
 jq
-ax
+jq
 jq
 jq
 Zk
@@ -6578,11 +6666,11 @@ hz
 hz
 hz
 hz
+lA
 QV
 QV
 QV
-QV
-QV
+ab
 hz
 hz
 hz
@@ -6830,11 +6918,11 @@ hz
 hz
 hz
 hz
+lA
 QV
 QV
 QV
-QV
-QV
+ab
 hz
 hz
 hz
@@ -7082,11 +7170,11 @@ hz
 hz
 hz
 hz
+lA
 QV
 QV
 QV
-QV
-QV
+ab
 hz
 hz
 hz
@@ -7334,11 +7422,11 @@ hz
 hz
 hz
 hz
+eZ
+lL
 QV
-QV
-QV
-QV
-QV
+Jp
+ta
 hz
 hz
 hz
@@ -7587,9 +7675,9 @@ hz
 hz
 hz
 hz
+lA
 QV
-QV
-QV
+ab
 hz
 hz
 hz
@@ -7839,9 +7927,9 @@ hz
 hz
 hz
 hz
-QV
-QV
-QV
+eZ
+oR
+ta
 hz
 hz
 hz
@@ -11896,7 +11984,7 @@ hz
 hz
 hz
 hz
-ul
+Nf
 hz
 hz
 hz
@@ -12873,7 +12961,7 @@ hz
 hz
 hz
 hz
-ul
+Nf
 hz
 hz
 hz
@@ -15917,7 +16005,7 @@ hz
 hz
 hz
 hz
-ul
+Nf
 hz
 hz
 hz
@@ -19717,7 +19805,7 @@ hz
 hz
 hz
 hz
-ul
+Nf
 hz
 hz
 hz
@@ -21956,7 +22044,7 @@ hz
 hz
 hz
 hz
-ul
+Nf
 hz
 hz
 hz
@@ -24497,7 +24585,7 @@ hz
 hz
 hz
 hz
-ul
+Nf
 hz
 hz
 hz
