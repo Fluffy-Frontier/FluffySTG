@@ -106,6 +106,15 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"dn" = (
+/obj/machinery/telecomms/broadcaster/preset_right,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "dS" = (
 /obj/effect/landmark/start/blueshield,
 /obj/effect/light_emitter/interlink,
@@ -171,6 +180,24 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"fo" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/landmark/start/ai,
+/turf/open/misc/grass,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"fI" = (
+/obj/machinery/telecomms/processor/preset_two,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "go" = (
 /obj/effect/landmark/start/quartermaster,
 /obj/effect/light_emitter/interlink,
@@ -184,14 +211,32 @@
 	})
 "gB" = (
 /obj/machinery/light/floor{
-	alpha = 100;
+	active_power_usage = 0;
+	brightness = 20;
 	bulb_power = 2;
+	idle_power_usage = 0;
 	light_power = 2;
-	light_range = 80;
-	nightshift_light_power = 80
+	nightshift_allowed = 0;
+	on = 1;
+	power_consumption_rate = 0
 	},
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"gI" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green/half{
+	dir = 1
+	},
+/turf/open/indestructible{
+	base_icon_state = "rockyash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "rockyash"
 	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
@@ -204,6 +249,15 @@
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"hh" = (
+/obj/machinery/blackbox_recorder,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/telecomms/mainframe,
 /area/awaymission/secret/powered{
 	ambience_index = null;
 	ambient_buzz = nul;
@@ -270,6 +324,15 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"iV" = (
+/obj/machinery/telecomms/processor/preset_one,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/green/telecomms/mainframe,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "jq" = (
 /obj/effect/light_emitter/interlink,
 /turf/open/water/beach{
@@ -283,12 +346,39 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"jL" = (
+/obj/machinery/telecomms/broadcaster/preset_left,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "jV" = (
 /obj/effect/landmark/start/virologist,
 /obj/effect/light_emitter/interlink,
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"kc" = (
+/obj/machinery/telecomms/server/presets/supply,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"kk" = (
+/obj/effect/light_emitter/interlink,
+/obj/machinery/computer/shuttle/arrivals/recall,
+/turf/open/misc/grass,
 /area/awaymission/secret/powered{
 	ambience_index = null;
 	ambient_buzz = nul;
@@ -366,12 +456,15 @@
 	name = "construct"
 	})
 "lX" = (
-/obj/effect/landmark/start/ai/secondary,
 /obj/effect/light_emitter/interlink,
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green/full,
 /turf/open/indestructible{
-	base_icon_state = "ash";
+	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
-	icon_state = "ash"
+	icon_state = "rockyash"
 	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
@@ -391,12 +484,45 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"ms" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green{
+	dir = 8
+	},
+/turf/open/indestructible{
+	base_icon_state = "rockyash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "rockyash"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "mC" = (
 /obj/effect/light_emitter/interlink,
 /turf/open/misc/beach/coast{
 	color = null;
 	dir = 8
 	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"mL" = (
+/obj/machinery/telecomms/bus/preset_two,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"mS" = (
+/obj/machinery/telecomms/server/presets/engineering,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/telecomms/mainframe,
 /area/awaymission/secret/powered{
 	ambience_index = null;
 	ambient_buzz = nul;
@@ -424,6 +550,15 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"ok" = (
+/obj/machinery/telecomms/server/presets/command,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "oV" = (
 /obj/structure/chair/sofa/right{
 	dir = 4
@@ -431,6 +566,15 @@
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"pm" = (
+/obj/machinery/telecomms/server/presets/science,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/telecomms/mainframe,
 /area/awaymission/secret/powered{
 	ambience_index = null;
 	ambient_buzz = nul;
@@ -467,13 +611,25 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"qO" = (
+/obj/machinery/telecomms/message_server/preset,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "ro" = (
 /obj/machinery/light/floor{
-	alpha = 100;
+	active_power_usage = 0;
+	brightness = 20;
 	bulb_power = 2;
+	idle_power_usage = 0;
 	light_power = 2;
-	light_range = 80;
-	nightshift_light_power = 80
+	nightshift_allowed = 0;
+	on = 1;
+	power_consumption_rate = 0
 	},
 /turf/open/indestructible{
 	base_icon_state = "ash";
@@ -542,12 +698,30 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"tc" = (
+/obj/machinery/telecomms/receiver/preset_left,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/green/telecomms/mainframe,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "tj" = (
 /obj/effect/landmark/start/assistant/override,
 /obj/effect/light_emitter/interlink,
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"tB" = (
+/obj/machinery/telecomms/server/presets/security,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/telecomms/mainframe,
 /area/awaymission/secret/powered{
 	ambience_index = null;
 	ambient_buzz = nul;
@@ -626,12 +800,37 @@
 	name = "construct"
 	})
 "uV" = (
-/obj/effect/landmark/start/ai,
 /obj/effect/light_emitter/interlink,
+/obj/machinery/light/floor{
+	active_power_usage = 0;
+	brightness = 20;
+	bulb_power = 2;
+	idle_power_usage = 0;
+	light_power = 2;
+	nightshift_allowed = 0;
+	on = 1;
+	power_consumption_rate = 0
+	},
+/obj/effect/turf_decal/tile/green/full,
 /turf/open/indestructible{
-	base_icon_state = "ash";
+	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
-	icon_state = "ash"
+	icon_state = "rockyash"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"wh" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/turf/open/indestructible{
+	base_icon_state = "rockyash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "rockyash"
 	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
@@ -697,6 +896,24 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"zn" = (
+/obj/machinery/telecomms/server/presets/medical,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"zq" = (
+/obj/machinery/telecomms/server/presets/service,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "zr" = (
 /obj/effect/landmark/start/cook,
 /obj/effect/light_emitter/interlink,
@@ -714,6 +931,28 @@
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"zL" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/turf/open/floor/iron/small{
+	baseturfs = /turf/open/floor/iron/small
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"zM" = (
+/obj/machinery/telecomms/bus/preset_four,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/telecomms/mainframe,
 /area/awaymission/secret/powered{
 	ambience_index = null;
 	ambient_buzz = nul;
@@ -777,6 +1016,15 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"BB" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/landmark/start/ai/secondary,
+/turf/open/misc/grass,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "BJ" = (
 /obj/effect/light_emitter/interlink,
 /turf/open/floor/iron/small{
@@ -800,13 +1048,29 @@
 	})
 "Dn" = (
 /obj/machinery/light/floor{
-	alpha = 100;
+	active_power_usage = 0;
+	brightness = 20;
 	bulb_power = 2;
+	idle_power_usage = 0;
 	light_power = 2;
-	light_range = 80;
-	nightshift_light_power = 80
+	nightshift_allowed = 0;
+	on = 1;
+	power_consumption_rate = 0
 	},
 /turf/closed/wall,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"DE" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green/half,
+/turf/open/indestructible{
+	base_icon_state = "rockyash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "rockyash"
+	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
 	ambient_buzz = nul;
@@ -842,6 +1106,21 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"Fn" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/immortality_talisman/void{
+	desc = "It's shaped an awful lot like a person. There is no way someone makes a theory of out it, right?";
+	name = "shadow"
+	},
+/turf/closed/indestructible/sandstone{
+	desc = "A wall.";
+	name = "wall"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "FA" = (
 /turf/open/floor/iron/stairs{
 	baseturfs = /turf/open/floor/iron/stairs
@@ -867,6 +1146,15 @@
 	baseturfs = /turf/open/floor/iron/stairs;
 	dir = 4
 	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"Gs" = (
+/obj/machinery/telecomms/bus/preset_three,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/green/telecomms/mainframe,
 /area/awaymission/secret/powered{
 	ambience_index = null;
 	ambient_buzz = nul;
@@ -963,12 +1251,30 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"JU" = (
+/obj/machinery/telecomms/bus/preset_one,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/green/telecomms/mainframe,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "Kk" = (
 /obj/effect/landmark/start/nanotrasen_consultant,
 /obj/effect/light_emitter/interlink,
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"Ko" = (
+/obj/machinery/telecomms/processor/preset_four,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/telecomms/mainframe,
 /area/awaymission/secret/powered{
 	ambience_index = null;
 	ambient_buzz = nul;
@@ -1056,6 +1362,15 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"Os" = (
+/obj/machinery/telecomms/server/presets/common,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "OB" = (
 /obj/structure/table,
 /obj/item/food/meatloaf{
@@ -1093,11 +1408,14 @@
 	})
 "OQ" = (
 /obj/machinery/light/floor{
-	alpha = 100;
+	active_power_usage = 0;
+	brightness = 20;
 	bulb_power = 2;
+	idle_power_usage = 0;
 	light_power = 2;
-	light_range = 80;
-	nightshift_light_power = 80
+	nightshift_allowed = 0;
+	on = 1;
+	power_consumption_rate = 0
 	},
 /turf/open/indestructible{
 	base_icon_state = "rockyash";
@@ -1354,12 +1672,37 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"WH" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/green,
+/turf/open/indestructible{
+	base_icon_state = "rockyash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "rockyash"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "Xf" = (
 /turf/open/indestructible{
 	base_icon_state = "ash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "ash"
 	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"XE" = (
+/obj/machinery/telecomms/processor/preset_three,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/green/telecomms/mainframe,
 /area/awaymission/secret/powered{
 	ambience_index = null;
 	ambient_buzz = nul;
@@ -1402,6 +1745,24 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"YZ" = (
+/obj/machinery/ntnet_relay,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/green/telecomms/mainframe,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"Za" = (
+/obj/machinery/telecomms/hub/preset,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/green/telecomms/mainframe,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "Zd" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
@@ -1425,6 +1786,28 @@
 	name = "water";
 	planetary_atmos = 0
 	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"ZA" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green/full,
+/turf/open/indestructible{
+	base_icon_state = "rockyash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "rockyash"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"ZF" = (
+/obj/machinery/telecomms/receiver/preset_right,
+/obj/effect/light_emitter/interlink,
+/turf/open/floor/circuit/green/telecomms/mainframe,
 /area/awaymission/secret/powered{
 	ambience_index = null;
 	ambient_buzz = nul;
@@ -1688,6 +2071,7 @@ GI
 GI
 GI
 GI
+Fn
 GI
 GI
 GI
@@ -1699,14 +2083,13 @@ GI
 GI
 GI
 GI
-GI
-GI
-GI
-GI
-GI
-GI
-GI
-GI
+tc
+qO
+jL
+ok
+zq
+XE
+Gs
 GI
 GI
 GI
@@ -1953,11 +2336,11 @@ GI
 GI
 GI
 GI
-GI
-GI
-GI
-GI
-GI
+iV
+JU
+tB
+kc
+ZF
 GI
 GI
 GI
@@ -2192,7 +2575,6 @@ GI
 GI
 GI
 GI
-Yz
 GI
 GI
 GI
@@ -2207,8 +2589,9 @@ GI
 GI
 GI
 GI
-GI
-GI
+YZ
+Za
+dn
 GI
 GI
 GI
@@ -2458,9 +2841,9 @@ GI
 GI
 GI
 GI
-GI
-GI
-GI
+pm
+mL
+Os
 GI
 GI
 GI
@@ -2710,9 +3093,9 @@ GI
 GI
 GI
 GI
-GI
-GI
-GI
+zn
+fI
+mS
 GI
 GI
 GI
@@ -2962,9 +3345,9 @@ GI
 GI
 GI
 GI
-GI
-GI
-GI
+Ko
+zM
+hh
 GI
 GI
 GI
@@ -3026,11 +3409,11 @@ DO
 Xf
 Xf
 DO
-GI
-GI
-GI
-GI
-GI
+lX
+lX
+lX
+lX
+lX
 DO
 Xf
 Xf
@@ -3278,11 +3661,11 @@ DO
 Xf
 Xf
 DO
-GI
-GI
-GI
-GI
-GI
+ZA
+uV
+ZA
+ZA
+uV
 DO
 Xf
 Xf
@@ -3532,8 +3915,8 @@ Xf
 DO
 DO
 DO
-Qc
-Qc
+gI
+DE
 DO
 DO
 Xf
@@ -3784,8 +4167,8 @@ Xf
 Xf
 Xf
 DO
-Qc
-Qc
+gI
+DE
 DO
 Xf
 Xf
@@ -4036,8 +4419,8 @@ Xf
 Xf
 Xf
 DO
-Qc
-Qc
+gI
+DE
 DO
 Xf
 Xf
@@ -4288,8 +4671,8 @@ ro
 Xf
 Xf
 DO
-Qc
-Qc
+gI
+DE
 DO
 Xf
 Xf
@@ -4540,8 +4923,8 @@ Xf
 Xf
 Xf
 DO
-Qc
-Qc
+gI
+DE
 DO
 Xf
 Xf
@@ -4792,8 +5175,8 @@ DO
 Xf
 Xf
 DO
-Qc
-Qc
+wh
+ms
 DO
 Xf
 Xf
@@ -5044,8 +5427,8 @@ DO
 Xf
 Xf
 DO
-Qc
-Qc
+wh
+ms
 DO
 Xf
 Xf
@@ -5296,8 +5679,8 @@ DO
 Xf
 Xf
 DO
-Qc
-Qc
+wh
+WH
 DO
 DO
 DO
@@ -5548,17 +5931,17 @@ DO
 Xf
 Xf
 DO
-Qc
-Qc
-BJ
-BJ
-BJ
-BJ
-BJ
-BJ
-BJ
-BJ
-BJ
+wh
+ms
+zL
+zL
+zL
+zL
+zL
+zL
+zL
+zL
+zL
 BJ
 BJ
 BJ
@@ -9855,13 +10238,13 @@ et
 et
 et
 et
+BB
 et
 et
 et
 et
 et
-et
-et
+BB
 et
 et
 et
@@ -11370,7 +11753,7 @@ et
 et
 GQ
 QV
-lX
+QV
 QV
 cI
 et
@@ -11619,13 +12002,13 @@ et
 et
 et
 et
-et
+fo
 GQ
-lX
-uV
-lX
+QV
+QV
+QV
 cI
-et
+kk
 et
 et
 et
@@ -11874,7 +12257,7 @@ et
 et
 GQ
 QV
-lX
+QV
 QV
 cI
 et
@@ -13383,13 +13766,13 @@ et
 et
 et
 et
+BB
 et
 et
 et
 et
 et
-et
-et
+BB
 et
 et
 et
@@ -14598,10 +14981,10 @@ DO
 DO
 DO
 DO
-xA
-xA
-xA
-xA
+Qc
+Qc
+Qc
+Qc
 DO
 DO
 DO
@@ -30216,6 +30599,8 @@ xA
 xA
 xA
 xA
+xA
+xA
 Qc
 Qc
 Qc
@@ -30230,10 +30615,8 @@ Qc
 Qc
 Qc
 Qc
-Qc
-Qc
-Qc
-Qc
+xA
+xA
 xA
 xA
 xA
@@ -30468,6 +30851,7 @@ xA
 xA
 xA
 xA
+xA
 Qc
 Qc
 Qc
@@ -30484,8 +30868,7 @@ Qc
 Qc
 Qc
 Qc
-Qc
-Qc
+xA
 xA
 xA
 xA
@@ -30720,6 +31103,7 @@ xA
 xA
 xA
 xA
+xA
 Qc
 Qc
 Qc
@@ -30736,8 +31120,7 @@ Qc
 Qc
 Qc
 Qc
-Qc
-Qc
+xA
 xA
 xA
 xA
@@ -34514,10 +34897,10 @@ xA
 xA
 xA
 xA
-Qc
-Qc
-Qc
-Qc
+xA
+xA
+xA
+xA
 xA
 xA
 xA
@@ -34762,14 +35145,14 @@ xA
 xA
 xA
 xA
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
 xA
 xA
 xA
@@ -35010,18 +35393,18 @@ xA
 xA
 xA
 xA
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
 xA
 xA
 xA
 xA
+xA
+xA
+xA
+xA
+Qc
+Qc
+Qc
+Qc
 xA
 xA
 xA
@@ -35258,14 +35641,6 @@ xA
 xA
 xA
 xA
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
 xA
 xA
 xA
@@ -35274,6 +35649,14 @@ xA
 xA
 xA
 xA
+Qc
+Qc
+Qc
+Qc
+Qc
+Qc
+Qc
+Qc
 xA
 xA
 xA
@@ -35507,6 +35890,13 @@ xA
 xA
 xA
 xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
 Qc
 Qc
 Qc
@@ -35514,14 +35904,7 @@ Qc
 Qc
 Qc
 Qc
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
+Qc
 xA
 xA
 xA
@@ -35759,17 +36142,17 @@ xA
 xA
 xA
 xA
+xA
+xA
+xA
 Qc
 Qc
 Qc
 Qc
-xA
-xA
-xA
-xA
-xA
-xA
-xA
+Qc
+Qc
+Qc
+Qc
 xA
 xA
 xA
@@ -36011,25 +36394,25 @@ xA
 xA
 xA
 xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
 Qc
 Qc
 Qc
 Qc
+Qc
+Qc
+Qc
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
 xA
 xA
 xA
@@ -36263,25 +36646,25 @@ xA
 xA
 xA
 xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
 Qc
 Qc
 Qc
 Qc
-Qc
-Qc
-Qc
-Qc
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
 xA
 xA
 xA
@@ -36522,14 +36905,14 @@ xA
 xA
 xA
 xA
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
 xA
 xA
 xA
@@ -36770,14 +37153,14 @@ xA
 xA
 xA
 xA
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
 xA
 xA
 xA
@@ -37019,25 +37402,25 @@ xA
 xA
 xA
 xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
 Qc
 Qc
 Qc
 Qc
-Qc
-Qc
-Qc
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
 xA
 xA
 xA
@@ -37271,25 +37654,25 @@ xA
 xA
 xA
 xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
 Qc
 Qc
 Qc
 Qc
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
+Qc
+Qc
+Qc
+Qc
 xA
 xA
 xA
@@ -37530,18 +37913,18 @@ xA
 xA
 xA
 xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
 Qc
 Qc
 Qc
 Qc
+Qc
+Qc
+Qc
+Qc
+xA
+xA
+xA
+xA
 xA
 xA
 xA
@@ -37778,14 +38161,6 @@ xA
 xA
 xA
 xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
 Qc
 Qc
 Qc
@@ -37794,6 +38169,14 @@ Qc
 Qc
 Qc
 Qc
+xA
+xA
+xA
+xA
+xA
+xA
+xA
+xA
 xA
 xA
 xA
@@ -38027,6 +38410,13 @@ xA
 xA
 xA
 xA
+Qc
+Qc
+Qc
+Qc
+Qc
+Qc
+Qc
 xA
 xA
 xA
@@ -38034,14 +38424,7 @@ xA
 xA
 xA
 xA
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
+xA
 xA
 xA
 xA
@@ -38279,17 +38662,17 @@ xA
 xA
 xA
 xA
+Qc
+Qc
+Qc
+Qc
 xA
 xA
 xA
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
+xA
+xA
+xA
+xA
 xA
 xA
 xA
@@ -38531,13 +38914,13 @@ xA
 xA
 xA
 xA
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
-Qc
+xA
+xA
+xA
+xA
+xA
+xA
+xA
 xA
 xA
 xA
@@ -38783,10 +39166,10 @@ xA
 xA
 xA
 xA
-Qc
-Qc
-Qc
-Qc
+xA
+xA
+xA
+xA
 xA
 xA
 xA
@@ -39044,16 +39427,16 @@ xA
 xA
 xA
 xA
-OQ
 xA
 xA
 xA
 xA
 xA
 xA
-xA
-xA
-xA
+Qc
+Qc
+Qc
+Qc
 xA
 xA
 xA
@@ -39298,14 +39681,14 @@ xA
 xA
 xA
 xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
+Qc
+Qc
+Qc
+Qc
+Qc
+Qc
+Qc
+Qc
 xA
 xA
 xA
@@ -39546,14 +39929,14 @@ xA
 xA
 xA
 xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
+Qc
+Qc
+Qc
+Qc
+Qc
+Qc
+Qc
+Qc
 xA
 xA
 xA
@@ -39794,14 +40177,14 @@ xA
 xA
 xA
 xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
+Qc
+Qc
+Qc
+Qc
+Qc
+Qc
+Qc
+Qc
 xA
 xA
 xA
@@ -40043,13 +40426,13 @@ xA
 xA
 xA
 xA
-xA
-xA
-xA
-xA
-xA
-xA
-xA
+Qc
+Qc
+Qc
+Qc
+Qc
+Qc
+Qc
 xA
 xA
 xA
@@ -40295,10 +40678,10 @@ xA
 xA
 xA
 xA
-xA
-xA
-xA
-xA
+Qc
+Qc
+Qc
+Qc
 xA
 xA
 xA
@@ -40574,7 +40957,7 @@ xA
 xA
 xA
 xA
-OQ
+xA
 Fe
 Qc
 Qc
@@ -41330,7 +41713,7 @@ xA
 xA
 xA
 xA
-OQ
+xA
 Fe
 Qc
 Qc
@@ -45481,8 +45864,6 @@ DO
 DO
 DO
 DO
-DO
-DO
 BJ
 BJ
 BJ
@@ -45490,8 +45871,10 @@ BJ
 BJ
 BJ
 BJ
-DO
-DO
+BJ
+BJ
+BJ
+BJ
 DO
 DO
 DO
@@ -45990,7 +46373,7 @@ OY
 OY
 OY
 OY
-OY
+gB
 OY
 OY
 OY
@@ -46622,7 +47005,7 @@ xA
 xA
 xA
 xA
-OQ
+xA
 Fe
 Qc
 Qc
@@ -47378,7 +47761,7 @@ xA
 xA
 xA
 xA
-OQ
+xA
 Fe
 Qc
 Qc
@@ -48604,6 +48987,7 @@ et
 GI
 Fe
 Fe
+OQ
 xA
 xA
 xA
@@ -48637,8 +49021,7 @@ xA
 xA
 xA
 xA
-xA
-xA
+OQ
 Fe
 Qc
 Qc
