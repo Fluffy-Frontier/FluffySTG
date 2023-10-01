@@ -767,6 +767,23 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"ul" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/immortality_talisman/void{
+	desc = "It's shaped an awful lot like a person. There is no way someone makes a theory of out it, right?";
+	name = "shadow"
+	},
+/turf/open/water{
+	baseturfs = /turf/open/water;
+	color = "#878887";
+	planetary_atmos = 0;
+	turf_height = -30
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "uz" = (
 /obj/structure/table,
 /mob/living/basic/chicken/teshari,
@@ -817,17 +834,6 @@
 	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "rockyash"
-	},
-/area/awaymission/secret/powered{
-	ambience_index = null;
-	ambient_buzz = nul;
-	name = "construct"
-	})
-"uZ" = (
-/obj/effect/light_emitter/interlink,
-/obj/effect/mob_spawn/ghost_role,
-/turf/open/floor/iron/small{
-	baseturfs = /turf/open/floor/iron/small
 	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
@@ -1287,6 +1293,17 @@
 /obj/machinery/telecomms/processor/preset_four,
 /obj/effect/light_emitter/interlink,
 /turf/open/floor/circuit/telecomms/mainframe,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"Ku" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/mob_spawn/ghost_role,
+/turf/open/floor/iron/small{
+	baseturfs = /turf/open/floor/iron/small
+	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
 	ambient_buzz = nul;
@@ -6219,7 +6236,7 @@ LM
 cF
 hj
 kB
-uZ
+Ku
 BJ
 BJ
 BJ
@@ -11879,7 +11896,7 @@ hz
 hz
 hz
 hz
-hz
+ul
 hz
 hz
 hz
@@ -12856,7 +12873,7 @@ hz
 hz
 hz
 hz
-hz
+ul
 hz
 hz
 hz
@@ -15900,7 +15917,7 @@ hz
 hz
 hz
 hz
-hz
+ul
 hz
 hz
 hz
@@ -19700,7 +19717,7 @@ hz
 hz
 hz
 hz
-hz
+ul
 hz
 hz
 hz
@@ -21939,7 +21956,7 @@ hz
 hz
 hz
 hz
-hz
+ul
 hz
 hz
 hz
@@ -24480,7 +24497,7 @@ hz
 hz
 hz
 hz
-hz
+ul
 hz
 hz
 hz
