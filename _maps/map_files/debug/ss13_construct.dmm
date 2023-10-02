@@ -11,14 +11,13 @@
 	name = "construct"
 	})
 "ax" = (
-/obj/effect/light_emitter/interlink{
-	color = "#e5e3e3"
+/obj/effect/light_emitter/interlink,
+/obj/effect/baseturf_helper/asteroid{
+	baseturf_to_replace = null
 	},
-/turf/open/water/beach{
-	color = "#e5e3e3";
-	desc = "It is water.";
-	name = "water";
-	planetary_atmos = 0
+/turf/closed/indestructible/sandstone{
+	desc = "A wall.";
+	name = "wall"
 	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
@@ -83,7 +82,7 @@
 "cI" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/light_emitter/interlink,
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "ash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "ash"
@@ -233,7 +232,7 @@
 /obj/effect/turf_decal/tile/green/half{
 	dir = 1
 	},
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "rockyash"
@@ -309,12 +308,28 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"iL" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/neutral/half{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/turf/open/floor/iron{
+	base_icon_state = "ash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "ash"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "iQ" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
 /obj/effect/light_emitter/interlink,
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "ash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "ash"
@@ -423,7 +438,7 @@
 	dir = 9
 	},
 /obj/effect/light_emitter/interlink,
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "ash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "ash"
@@ -446,7 +461,7 @@
 	})
 "lB" = (
 /obj/effect/gibspawner/human,
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "rockyash"
@@ -462,7 +477,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/green/full,
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "rockyash"
@@ -490,7 +505,7 @@
 /obj/effect/turf_decal/tile/green{
 	dir = 8
 	},
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "rockyash"
@@ -632,7 +647,7 @@
 	on = 1;
 	power_consumption_rate = 0
 	},
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "ash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "ash"
@@ -680,9 +695,10 @@
 	name = "construct"
 	})
 "sq" = (
-/turf/open/floor/white{
-	baseturfs = /turf/open/floor/white
+/obj/effect/baseturf_helper{
+	baseturf = /turf/open/floor/white
 	},
+/turf/open/floor/white,
 /area/awaymission/secret/powered/fullbright{
 	ambience_index = null;
 	ambient_buzz = null;
@@ -732,7 +748,7 @@
 /obj/structure/falsewall/iron{
 	color = "#CD5C5C"
 	},
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "rockyash"
@@ -757,27 +773,10 @@
 /obj/structure/mirror/magic/badmin{
 	pixel_y = -33
 	},
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "ash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "ash"
-	},
-/area/awaymission/secret/powered{
-	ambience_index = null;
-	ambient_buzz = nul;
-	name = "construct"
-	})
-"ul" = (
-/obj/effect/light_emitter/interlink,
-/obj/effect/immortality_talisman/void{
-	desc = "It's shaped an awful lot like a person. There is no way someone makes a theory of out it, right?";
-	name = "shadow"
-	},
-/turf/open/water{
-	baseturfs = /turf/open/water;
-	color = "#878887";
-	planetary_atmos = 0;
-	turf_height = -30
 	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
@@ -801,10 +800,9 @@
 /turf/open/floor/holofloor/white{
 	name = "padded floor"
 	},
-/area/awaymission/secret/powered{
+/area/centcom/central_command_areas/briefing{
 	ambience_index = null;
-	ambient_buzz = nul;
-	name = "construct"
+	ambient_buzz = null
 	})
 "uT" = (
 /obj/effect/landmark/start/nukeop_leader,
@@ -830,10 +828,26 @@
 	power_consumption_rate = 0
 	},
 /obj/effect/turf_decal/tile/green/full,
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "rockyash"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"vr" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/neutral/half,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/turf/open/floor/iron{
+	base_icon_state = "ash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "ash"
 	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
@@ -845,7 +859,7 @@
 /obj/effect/turf_decal/tile/green{
 	dir = 1
 	},
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "rockyash"
@@ -877,8 +891,25 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"xv" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/immortality_talisman/void{
+	desc = "It's shaped an awful lot like a person. There is no way someone makes a theory of out it, right?";
+	name = "shadow"
+	},
+/turf/open/water{
+	baseturfs = /turf/open/water;
+	color = "#878887";
+	planetary_atmos = 0;
+	turf_height = -30
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "xA" = (
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "rockyash"
@@ -890,21 +921,23 @@
 	})
 "yA" = (
 /obj/effect/light_emitter/interlink,
+/obj/effect/baseturf_helper/asteroid{
+	baseturf_to_replace = null
+	},
 /turf/closed/indestructible/oldshuttle{
 	desc = "If you see those surrounding you - remember to take your meds.";
 	name = "padded wall"
 	},
-/area/awaymission/secret/powered{
+/area/centcom/central_command_areas/briefing{
 	ambience_index = null;
-	ambient_buzz = nul;
-	name = "construct"
+	ambient_buzz = null
 	})
 "yP" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
 /obj/effect/light_emitter/interlink,
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "ash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "ash"
@@ -1014,7 +1047,7 @@
 	dir = 6
 	},
 /obj/effect/light_emitter/interlink,
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "ash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "ash"
@@ -1084,7 +1117,7 @@
 "DE" = (
 /obj/effect/light_emitter/interlink,
 /obj/effect/turf_decal/tile/green/half,
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "rockyash"
@@ -1114,10 +1147,24 @@
 	})
 "Fe" = (
 /turf/closed/wall/mineral/iron{
-	baseturfs = /turf/open/misc/ashplanet/rocky;
 	color = "#CD5C5C";
 	desc = "A wall with bircks.";
 	name = "brick wall"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"Fk" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/neutral/half{
+	dir = 1
+	},
+/turf/open/floor/iron{
+	base_icon_state = "ash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "ash"
 	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
@@ -1204,7 +1251,7 @@
 	dir = 1
 	},
 /obj/effect/light_emitter/interlink,
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "ash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "ash"
@@ -1298,17 +1345,6 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
-"Ku" = (
-/obj/effect/light_emitter/interlink,
-/obj/effect/mob_spawn/ghost_role,
-/turf/open/floor/iron/small{
-	baseturfs = /turf/open/floor/iron/small
-	},
-/area/awaymission/secret/powered{
-	ambience_index = null;
-	ambient_buzz = nul;
-	name = "construct"
-	})
 "Kx" = (
 /obj/effect/landmark/start/roboticist,
 /obj/effect/light_emitter/interlink,
@@ -1319,6 +1355,13 @@
 	ambience_index = null;
 	ambient_buzz = nul;
 	name = "construct"
+	})
+"KR" = (
+/turf/open/floor/white,
+/area/awaymission/secret/powered/fullbright{
+	ambience_index = null;
+	ambient_buzz = null;
+	name = "construct fullbright"
 	})
 "Ls" = (
 /obj/effect/light_emitter/interlink,
@@ -1414,7 +1457,7 @@
 	pixel_y = 9
 	},
 /obj/item/food/meat/slab/human,
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "rockyash"
@@ -1446,7 +1489,7 @@
 	on = 1;
 	power_consumption_rate = 0
 	},
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "rockyash"
@@ -1478,7 +1521,7 @@
 	})
 "Qc" = (
 /obj/effect/light_emitter/interlink,
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "rockyash"
@@ -1501,7 +1544,7 @@
 	})
 "QV" = (
 /obj/effect/light_emitter/interlink,
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "ash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "ash"
@@ -1533,6 +1576,21 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"Ro" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/turf/open/floor/iron{
+	base_icon_state = "ash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "ash"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "RF" = (
 /obj/structure/table,
 /obj/item/toy/plush/skyrat/commanding_teshari,
@@ -1557,7 +1615,7 @@
 	dir = 4
 	},
 /obj/effect/light_emitter/interlink,
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "ash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "ash"
@@ -1588,6 +1646,21 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"Sz" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/neutral/half{
+	dir = 4
+	},
+/turf/open/floor/iron{
+	base_icon_state = "ash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "ash"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "SK" = (
 /obj/effect/landmark/start/barber,
 /obj/effect/light_emitter/interlink,
@@ -1600,7 +1673,7 @@
 	name = "construct"
 	})
 "SO" = (
-/obj/structure/table/reinforced/ctf,
+/obj/structure/table/reinforced,
 /obj/effect/light_emitter/interlink,
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
@@ -1609,6 +1682,16 @@
 	ambience_index = null;
 	ambient_buzz = nul;
 	name = "construct"
+	})
+"SZ" = (
+/obj/effect/light_emitter/interlink,
+/turf/closed/indestructible/oldshuttle{
+	desc = "If you see those surrounding you - remember to take your meds.";
+	name = "padded wall"
+	},
+/area/centcom/central_command_areas/briefing{
+	ambience_index = null;
+	ambient_buzz = null
 	})
 "Tb" = (
 /obj/effect/landmark/start/depsec,
@@ -1648,7 +1731,7 @@
 	dir = 5
 	},
 /obj/effect/light_emitter/interlink,
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "ash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "ash"
@@ -1663,6 +1746,19 @@
 /obj/effect/light_emitter/interlink,
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"Vf" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/neutral/half,
+/turf/open/floor/iron{
+	base_icon_state = "ash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "ash"
 	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
@@ -1707,7 +1803,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/green,
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "rockyash"
@@ -1718,7 +1814,7 @@
 	name = "construct"
 	})
 "Xf" = (
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "ash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "ash"
@@ -1797,7 +1893,7 @@
 	dir = 10
 	},
 /obj/effect/light_emitter/interlink,
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "ash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "ash"
@@ -1820,10 +1916,23 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"Zw" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/neutral,
+/turf/open/floor/iron{
+	base_icon_state = "ash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "ash"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "ZA" = (
 /obj/effect/light_emitter/interlink,
 /obj/effect/turf_decal/tile/green/full,
-/turf/open/indestructible{
+/turf/open/floor/iron{
 	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "rockyash"
@@ -2063,15 +2172,15 @@ GI
 GI
 GI
 yA
-yA
-yA
-yA
-yA
-yA
-yA
-yA
-yA
-yA
+SZ
+SZ
+SZ
+SZ
+SZ
+SZ
+SZ
+SZ
+SZ
 GI
 GI
 GI
@@ -2097,7 +2206,7 @@ GI
 "}
 (2,1,1) = {"
 GI
-GI
+ax
 GI
 GI
 Fn
@@ -2314,7 +2423,7 @@ GI
 GI
 GI
 GI
-yA
+SZ
 uJ
 uJ
 uJ
@@ -2323,7 +2432,7 @@ uJ
 uJ
 uJ
 uJ
-yA
+SZ
 GI
 GI
 GI
@@ -2566,7 +2675,7 @@ GI
 GI
 GI
 GI
-yA
+SZ
 uJ
 uJ
 uJ
@@ -2575,7 +2684,7 @@ uJ
 uJ
 uJ
 uJ
-yA
+SZ
 GI
 GI
 GI
@@ -2818,7 +2927,7 @@ GI
 GI
 GI
 GI
-yA
+SZ
 uJ
 uJ
 uJ
@@ -2827,7 +2936,7 @@ uJ
 uJ
 uJ
 uJ
-yA
+SZ
 GI
 GI
 GI
@@ -3070,7 +3179,7 @@ GI
 GI
 GI
 GI
-yA
+SZ
 uJ
 uJ
 uJ
@@ -3079,7 +3188,7 @@ uJ
 uJ
 uJ
 uJ
-yA
+SZ
 GI
 GI
 GI
@@ -3322,7 +3431,7 @@ GI
 GI
 GI
 GI
-yA
+SZ
 uJ
 uJ
 uJ
@@ -3331,7 +3440,7 @@ uJ
 uJ
 uJ
 uJ
-yA
+SZ
 GI
 GI
 GI
@@ -3574,16 +3683,16 @@ GI
 GI
 GI
 GI
-yA
-yA
-yA
-yA
-yA
-yA
-yA
-yA
-yA
-yA
+SZ
+SZ
+SZ
+SZ
+SZ
+SZ
+SZ
+SZ
+SZ
+SZ
 GI
 GI
 GI
@@ -6236,7 +6345,6 @@ LM
 cF
 hj
 kB
-Ku
 BJ
 BJ
 BJ
@@ -6266,117 +6374,118 @@ BJ
 BJ
 BJ
 BJ
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
-QV
+BJ
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Ro
+QV
+QV
+QV
+Zw
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
+Sz
 GI
 "}
 (19,1,1) = {"
@@ -6531,7 +6640,7 @@ cp
 RP
 mm
 jq
-ax
+jq
 jq
 jq
 Zk
@@ -6578,11 +6687,11 @@ hz
 hz
 hz
 hz
+Fk
 QV
 QV
 QV
-QV
-QV
+Vf
 hz
 hz
 hz
@@ -6830,11 +6939,11 @@ hz
 hz
 hz
 hz
+Fk
 QV
 QV
 QV
-QV
-QV
+Vf
 hz
 hz
 hz
@@ -7082,11 +7191,11 @@ hz
 hz
 hz
 hz
+Fk
 QV
 QV
 QV
-QV
-QV
+Vf
 hz
 hz
 hz
@@ -7334,11 +7443,11 @@ hz
 hz
 hz
 hz
+iL
+Ro
 QV
-QV
-QV
-QV
-QV
+Zw
+vr
 hz
 hz
 hz
@@ -7587,9 +7696,9 @@ hz
 hz
 hz
 hz
+Fk
 QV
-QV
-QV
+Vf
 hz
 hz
 hz
@@ -7839,9 +7948,9 @@ hz
 hz
 hz
 hz
-QV
-QV
-QV
+iL
+Sz
+vr
 hz
 hz
 hz
@@ -11896,7 +12005,7 @@ hz
 hz
 hz
 hz
-ul
+xv
 hz
 hz
 hz
@@ -12873,7 +12982,7 @@ hz
 hz
 hz
 hz
-ul
+xv
 hz
 hz
 hz
@@ -15917,7 +16026,7 @@ hz
 hz
 hz
 hz
-ul
+xv
 hz
 hz
 hz
@@ -19717,7 +19826,7 @@ hz
 hz
 hz
 hz
-ul
+xv
 hz
 hz
 hz
@@ -21956,7 +22065,7 @@ hz
 hz
 hz
 hz
-ul
+xv
 hz
 hz
 hz
@@ -24497,7 +24606,7 @@ hz
 hz
 hz
 hz
-ul
+xv
 hz
 hz
 hz
@@ -33108,30 +33217,30 @@ et
 GI
 qh
 sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 Gn
@@ -33359,31 +33468,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 Gn
@@ -33611,31 +33720,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 Gn
@@ -33863,31 +33972,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 Gn
@@ -34115,31 +34224,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 FA
@@ -34367,31 +34476,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 Fe
@@ -34619,31 +34728,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 OQ
@@ -34871,32 +34980,32 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 xA
 xA
 FA
@@ -35123,32 +35232,32 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 xA
 xA
 Fe
@@ -35375,31 +35484,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -35627,31 +35736,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -35879,31 +35988,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -36131,31 +36240,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -36383,31 +36492,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -36635,31 +36744,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -36887,31 +36996,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -37139,31 +37248,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -37391,31 +37500,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -37643,31 +37752,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -37895,31 +38004,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -38147,31 +38256,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -38399,31 +38508,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -38651,31 +38760,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -38903,31 +39012,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -39155,31 +39264,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -39407,31 +39516,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -39659,31 +39768,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -39911,31 +40020,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -40163,31 +40272,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -40415,31 +40524,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -40667,31 +40776,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -40919,31 +41028,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -41171,31 +41280,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -41423,31 +41532,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -41675,31 +41784,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -41927,31 +42036,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -42179,31 +42288,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 xA
@@ -42431,32 +42540,32 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 xA
 xA
 Fe
@@ -42683,32 +42792,32 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 xA
 xA
 Fe
@@ -42935,31 +43044,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 OQ
@@ -43187,31 +43296,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 Fe
@@ -43439,31 +43548,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 GI
@@ -43691,31 +43800,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 GI
@@ -43943,31 +44052,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 GI
@@ -44195,31 +44304,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 GI
@@ -44447,31 +44556,31 @@ et
 et
 GI
 qh
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
-sq
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
+KR
 qh
 Fe
 GI
