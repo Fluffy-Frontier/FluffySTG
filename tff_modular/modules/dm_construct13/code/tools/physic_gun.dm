@@ -178,6 +178,7 @@
 		return
 	else if(LAZYACCESS(modifiers, ALT_CLICK))
 		rotate_object(handlet_atom)
+		return
 	repulse(handlet_atom, physgun_user)
 
 /obj/item/physic_manipulation_tool/proc/on_living_resist(mob/living)
