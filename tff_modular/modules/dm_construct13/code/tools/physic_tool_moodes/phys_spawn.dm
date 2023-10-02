@@ -1,8 +1,8 @@
 /datum/phystool_mode/spawn_mode
 	name = "Spawn mode"
-	desc = "RMB for spawn, LMB for select spwan type."
+	desc = "RMB for spawn, LMB for select spawn type."
 
-	//Обьект, который мы будем создавать.
+	//An object that we're about to create
 	var/atom/selected_object
 
 /datum/phystool_mode/spawn_mode/secondnary_act(atom/target, mob/user)
