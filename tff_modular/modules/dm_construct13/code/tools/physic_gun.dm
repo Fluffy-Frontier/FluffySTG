@@ -1,22 +1,22 @@
 #define TRAIT_PHYSGUN_PAUSE "physgun_pause"
-
+#define PHYSGUN_EFFECTS "physgun_effects"
 /obj/item/physic_manipulation_tool
 	name = "physic gun"
 	desc = "A tool for manipulating physics of objects."
-	icon = 'icons/obj/tools.dmi'
-	icon_state = "screwdriver_map"
-	inhand_icon_state = "screwdriver"
-	worn_icon_state = "screwdriver"
-	belt_icon_state = "screwdriver"
-	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
+	icon = 'tff_modular/master_files/icons/obj/architector_items.dmi'
+	icon_state = "physgun_grayscale"
+	inhand_icon_state = "physgun_grayscale"
+	worn_icon_state = "physgun_grayscale"
+	belt_icon_state = "physgun_grayscale"
+	worn_icon = 'tff_modular/master_files/icons/mob/inhands/items/architector items_belt.dmi'
+	lefthand_file = 'tff_modular/master_files/icons/mob/inhands/items/architector_items_lefthand.dmi'
+	righthand_file = 'tff_modular/master_files/icons/mob/inhands/items/architector_items_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
-	force = 5
 	demolition_mod = 0.5
 	w_class = WEIGHT_CLASS_NORMAL
-	throwforce = 5
-	throw_speed = 3
-	throw_range = 5
+	throwforce = 0
+	throw_speed = 1
+	throw_range = 1
 	drop_sound = 'sound/items/handling/screwdriver_drop.ogg'
 	pickup_sound = 'tff_modular/modules/dm_construct13/sound/physgun_pickup.ogg'
 
@@ -52,31 +52,43 @@
 /**
  * Управление захватом.
  */
-/obj/item/physic_manipulation_tool/pre_attack(atom/A, mob/living/user, params)
-	if(handlet_atom)
-		if(A == handlet_atom)
-			release_atom(A, user)
-			return TRUE
-		user.balloon_alert(user, "Busy!")
-		return TRUE
-	if(istype(A))
-		if(!can_catch(A, user))
+/obj/item/physic_manipulation_tool/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	if(istype(target))
+		if(!can_catch(target, user))
 			playsound(user, 'tff_modular/modules/dm_construct13/sound/physgun_cant_grab.ogg', 100, TRUE)
-			return TRUE
-		catch_atom(A, user)
-		return TRUE
+			return
+		if(!COOLDOWN_FINISHED(src, grab_cooldown))
+			user.balloon_alert(user, "On cooldown!")
+			return
+		catch_atom(target, user)
+		COOLDOWN_START(src, grab_cooldown, use_cooldown)
+		return
 
-/obj/item/physic_manipulation_tool/pre_attack_secondary(atom/target, mob/living/user, params)
+/obj/item/physic_manipulation_tool/afterattack_secondary(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+
+/obj/item/physic_manipulation_tool/dropped(mob/user, silent)
+	. = ..()
 	if(handlet_atom)
-		if(advanced)
-			pause_atom(target)
-			return TRUE
 		release_atom()
 
 /obj/item/physic_manipulation_tool/AltClick(mob/user)
 	. = ..()
 	var/choised_color = input(usr, "Pick new effects color", "Physgun color") as color|null
 	effects_color = choised_color
+	color = choised_color
+	update_appearance()
+
+/obj/item/physic_manipulation_tool/examine(mob/user)
+	. = ..()
+	. += span_notice("Early use manual:")
+	. += span_notice("ALT + LMB on device to pick core color.")
+	. += span_notice("LMB on object to handle.")
+	. += span_green("RMB when handle to freeze object.")
+	. += span_red("LMB when handle to throw object.")
+	. += span_notice("CTRL + LBM when handle to release.")
+	. += span_notice("ALT + LMB when handle to rotate object.")
 
 /**
  * Процессинг движения захваченого атома.
@@ -141,44 +153,95 @@
 /obj/item/physic_manipulation_tool/proc/range_check(atom/target)
 	if(!isturf(physgun_user.loc))
 		return FALSE
-	if(!can_see(physgun_user, target, 9))
+	if(!can_see(physgun_user, target, 4))
 		return FALSE
 	return TRUE
 
 /**
+ * Контролер сигналов.
+ */
+
+/obj/item/physic_manipulation_tool/proc/on_clicked(atom/source, location, control, params, user)
+	SIGNAL_HANDLER
+	if(!handlet_atom || !physgun_user)
+		return
+
+	var/list/modifiers = params2list(params)
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		if(!advanced)
+			physgun_user.balloon_alert(physgun_user, "Not enjoy power!")
+			return
+		pause_atom(handlet_atom)
+		return
+	else if(LAZYACCESS(modifiers, CTRL_CLICK))
+		release_atom()
+		return
+	else if(LAZYACCESS(modifiers, ALT_CLICK))
+		rotate_object(handlet_atom)
+	repulse(handlet_atom, physgun_user)
+
+/obj/item/physic_manipulation_tool/proc/on_living_resist(mob/living)
+	SIGNAL_HANDLER
+
+	if(handlet_atom)
+		release_atom()
+
+/**
  * Захват атома.
  */
+
 /obj/item/physic_manipulation_tool/proc/catch_atom(atom/movable/target, mob/user)
 	if(isliving(target))
+		var/mob/living/L = target
+		if(L.has_status_effect(/datum/status_effect/physgun_pause))
+			L.remove_status_effect(/datum/status_effect/physgun_pause)
 		target.add_traits(list(TRAIT_HANDS_BLOCKED), REF(src))
+		RegisterSignal(target, COMSIG_LIVING_RESIST, PROC_REF(on_living_resist))
 	target.movement_type = FLYING
-	target.add_filter("physgun", 2, list("type" = "outline", effects_color, "size" = 2))
-	physgun_beam = user.Beam(target, "kinesis")
+	target.add_filter("physgun", 3, list("type" = "outline", "color" = effects_color, "size" = 2))
+	physgun_beam = user.Beam(target, "light_beam")
 	physgun_beam.beam_color = effects_color
-	physgun_catcher = user.overlay_fullscreen("physgun_effect", /atom/movable/screen/fullscreen/cursor_catcher)
+	physgun_catcher = user.overlay_fullscreen("physgun_effect", /atom/movable/screen/fullscreen/cursor_catcher, 0)
 	physgun_catcher.assign_to_mob(user)
 	handlet_atom = target
+	handlet_atom.set_density(FALSE)
 	physgun_user = user
 	loop_sound.start()
+
+	RegisterSignal(physgun_catcher, COMSIG_CLICK, PROC_REF(on_clicked), TRUE)
 	START_PROCESSING(SSfastprocess, src)
 
 /**
  * Освобождение атома.
  */
+
 /obj/item/physic_manipulation_tool/proc/release_atom()
 	if(isliving(handlet_atom))
 		handlet_atom.remove_traits(list(TRAIT_HANDS_BLOCKED), REF(src))
+		UnregisterSignal(handlet_atom, COMSIG_LIVING_RESIST)
+	if(HAS_TRAIT(handlet_atom, TRAIT_PHYSGUN_PAUSE))
+		REMOVE_TRAIT(handlet_atom, TRAIT_PHYSGUN_PAUSE, PHYSGUN_EFFECTS)
 	handlet_atom.movement_type = initial(movement_type)
 	STOP_PROCESSING(SSfastprocess, src)
 	handlet_atom.remove_filter("physgun")
+	UnregisterSignal(physgun_catcher, COMSIG_CLICK)
 	physgun_catcher = null
 	physgun_user.clear_fullscreen("physgun_effect")
-	handlet_atom.pixel_x = initial(pixel_x)
-	handlet_atom.pixel_y = initial(pixel_y)
+	handlet_atom.pixel_x = initial(handlet_atom.pixel_x)
+	handlet_atom.pixel_y = initial(handlet_atom.pixel_y)
+	handlet_atom.anchored = initial(handlet_atom.anchored)
+	handlet_atom.density = initial(handlet_atom.density)
 	qdel(physgun_beam)
 	physgun_user = null
 	handlet_atom = null
 	loop_sound.stop()
+
+/**
+ * Вращение атома.
+ */
+
+/obj/item/physic_manipulation_tool/proc/rotate_object(atom/movable/target)
+	target.setDir(turn(target.dir,-90))
 
 /**
  * Пауза атома.
@@ -187,10 +250,12 @@
 
 /obj/item/physic_manipulation_tool/proc/pause_atom(atom/movable/target)
 	if(isliving(handlet_atom))
-		handlet_atom.add_traits(list(TRAIT_IMMOBILIZED), REF(src))
-	ADD_TRAIT(handlet_atom, TRAIT_PHYSGUN_PAUSE, REF(src))
+		var/mob/living/L = target
+		L.apply_status_effect(/datum/status_effect/physgun_pause)
+	ADD_TRAIT(handlet_atom, TRAIT_PHYSGUN_PAUSE, PHYSGUN_EFFECTS)
 	handlet_atom.set_anchored(TRUE)
 	STOP_PROCESSING(SSfastprocess, src)
+	UnregisterSignal(physgun_catcher, list(COMSIG_CLICK, COMSIG_CLICK_ALT, COMSIG_CLICK_CTRL))
 	physgun_catcher = null
 	physgun_user.clear_fullscreen("physgun_effect")
 	qdel(physgun_beam)
@@ -206,3 +271,30 @@
 
 /datum/looping_sound/gravgen/kinesis/phys_gun
 	mid_sounds = list('tff_modular/modules/dm_construct13/sound/physgun_hold_loop.ogg' = 1)
+
+/datum/status_effect/physgun_pause
+	id = "physgun_pause"
+
+/datum/status_effect/physgun_pause/on_apply()
+	. = ..()
+	RegisterSignal(owner, COMSIG_LIVING_RESIST, PROC_REF(on_resist))
+	ADD_TRAIT(owner, TRAIT_IMMOBILIZED, REF(src))
+
+/datum/status_effect/physgun_pause/on_remove()
+	. = ..()
+	UnregisterSignal(owner, COMSIG_LIVING_RESIST)
+	REMOVE_TRAIT(owner, TRAIT_IMMOBILIZED, REF(src))
+
+/datum/status_effect/physgun_pause/proc/on_resist()
+	SIGNAL_HANDLER
+
+	if(!HAS_TRAIT(owner, TRAIT_PHYSGUN_PAUSE))
+		return
+	REMOVE_TRAIT(owner, TRAIT_PHYSGUN_PAUSE, PHYSGUN_EFFECTS)
+	owner.pixel_x = initial(owner.pixel_x)
+	owner.pixel_y = initial(owner.pixel_y)
+	owner.anchored = initial(owner.anchored)
+	owner.density = initial(owner.density)
+	owner.movement_type = initial(owner.movement_type)
+	owner.remove_status_effect(src)
+	owner.remove_filter("physgun")
