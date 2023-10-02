@@ -33,6 +33,7 @@
 	. = ..()
 	for(var/datum/phystool_mode/mode_to_add in avaible_modes)
 		mode_to_add = new()
+		mode_to_add.our_tool = src
 
 /obj/item/phystool/AltClick(mob/user)
 	. = ..()
@@ -75,7 +76,7 @@
 	. = ..()
 	if(!selected_mode)
 		return
-	selected_mode.use_act()
+	selected_mode.use_act(src.loc)
 
 /obj/item/phystool/proc/do_work_effect(atom/target, mob/user)
 	if(!target)
