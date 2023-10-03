@@ -61,6 +61,9 @@
 		if(!COOLDOWN_FINISHED(src, grab_cooldown))
 			user.balloon_alert(user, "On cooldown!")
 			return
+		if(!range_check(target, user))
+			user.balloon_alert(user, "Too far!")
+			return
 		catch_atom(target, user)
 		COOLDOWN_START(src, grab_cooldown, use_cooldown)
 		return
@@ -97,7 +100,7 @@
 	if(!physgun_user)
 		release_atom()
 		return
-	if(!range_check(handlet_atom))
+	if(!range_check(handlet_atom, physgun_user))
 		release_atom()
 		return
 	if(physgun_catcher.mouse_params)
@@ -150,10 +153,10 @@
 			return FALSE
 	return TRUE
 
-/obj/item/physic_manipulation_tool/proc/range_check(atom/target)
-	if(!isturf(physgun_user.loc))
+/obj/item/physic_manipulation_tool/proc/range_check(atom/target, mob/user)
+	if(!isturf(user.loc))
 		return FALSE
-	if(!can_see(physgun_user, target, 4))
+	if(!can_see(user, target, 4))
 		return FALSE
 	return TRUE
 
@@ -197,7 +200,7 @@
 		if(L.has_status_effect(/datum/status_effect/physgun_pause))
 			L.remove_status_effect(/datum/status_effect/physgun_pause)
 		target.add_traits(list(TRAIT_HANDS_BLOCKED), REF(src))
-		RegisterSignal(target, COMSIG_LIVING_RESIST, PROC_REF(on_living_resist))
+		RegisterSignal(target, COMSIG_LIVING_RESIST, PROC_REF(on_living_resist), TRUE)
 	target.movement_type = FLYING
 	target.add_filter("physgun", 3, list("type" = "outline", "color" = effects_color, "size" = 2))
 	physgun_beam = user.Beam(target, "light_beam")
@@ -278,7 +281,7 @@
 
 /datum/status_effect/physgun_pause/on_apply()
 	. = ..()
-	RegisterSignal(owner, COMSIG_LIVING_RESIST, PROC_REF(on_resist))
+	RegisterSignal(owner, COMSIG_LIVING_RESIST, PROC_REF(on_resist), TRUE)
 	ADD_TRAIT(owner, TRAIT_IMMOBILIZED, REF(src))
 
 /datum/status_effect/physgun_pause/on_remove()
