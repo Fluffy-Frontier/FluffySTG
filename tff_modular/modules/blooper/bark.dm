@@ -1,7 +1,43 @@
+GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
+
+/datum/smite/normalblooper
+	name = "Normal blooper"
+
+/datum/smite/normalblooper/effect(client/user, mob/living/carbon/human/target)
+	. = ..()
+	target.vocal_bark = null
+	target.vocal_speed = round((BARK_DEFAULT_MINSPEED + BARK_DEFAULT_MAXSPEED) / 2)
+	target.vocal_pitch = round((BARK_DEFAULT_MINPITCH + BARK_DEFAULT_MAXPITCH) / 2)
+	target.vocal_pitch_range = 0.2
+
+
+/datum/admins/proc/toggleblooper()
+	set category = "Server"
+	set desc = "Toggle ANNOYING NOIZES"
+	set name = "Toggle Blooper"
+	toggle_blooper()
+	log_admin("[key_name(usr)] toggled Blooper.")
+	message_admins("[key_name_admin(usr)] toggled Blooper.")
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Blooper", "[GLOB.blooper_allowed ? "Enabled" : "Disabled"]")) // If you are copy-pasting this, ensure the 4th parameter is unique to the new proc!
+
+/world/AVerbsAdmin()
+	. = ..()
+	return . + /datum/admins/proc/toggleblooper
+
+/proc/toggle_blooper(toggle = null)
+	if(toggle != null)
+		if(toggle != GLOB.blooper_allowed)
+			GLOB.blooper_allowed = toggle
+		else
+			return
+	else
+		GLOB.blooper_allowed = !GLOB.blooper_allowed
+	to_chat(world, "<span class='oocplain'><B>The Blooper has been globally [GLOB.blooper_allowed ? "enabled" : "disabled"].</B></span>")
+
 /datum/preference/choiced/bark
 	category = PREFERENCE_CATEGORY_NON_CONTEXTUAL
 	savefile_identifier = PREFERENCE_CHARACTER
-	savefile_key = "character_voice" // Sorry, but...
+	savefile_key = "bark_speech"
 
 /datum/preference/choiced/bark/init_possible_values()
 	return assoc_to_keys(GLOB.bark_list)
@@ -9,9 +45,8 @@
 /datum/preference/choiced/bark/apply_to_human(mob/living/carbon/human/target, value, /datum/preference/numeric/bark_speech_speed)
 	target.set_bark(value)
 
-/// Middleware to handle quirks
 /datum/preference_middleware/bark
-	/// Cooldown on requesting a TTS preview.
+	/// Cooldown on requesting a Blooper preview.
 	COOLDOWN_DECLARE(bark_cooldown)
 
 	action_delegations = list(
@@ -74,22 +109,22 @@
 	target.vocal_pitch_range = value
 
 /datum/preference/numeric/bark_pitch_range/create_default_value()
-	return round((BARK_DEFAULT_MINVARY + BARK_DEFAULT_MAXVARY) / 2)
+	return 0.2
 
 
-/// Controls hearing bark sound
+/// Controls hearing barks on local level
 /datum/preference/toggle/sound_bark
 	category = PREFERENCE_CATEGORY_GAME_PREFERENCES
 	savefile_key = "sound_bark"
 	savefile_identifier = PREFERENCE_PLAYER
+	default_value = FALSE
 
+/// It's was stoolen from Splurt build >:3
 /datum/bark
 	var/name = "Default"
 	var/id = "Default"
-	var/soundpath //Path for the actual sound file used for the bark
+	var/soundpath
 
-	// Pitch vars. The actual range for a bark is [(pitch - (maxvariance*0.5)) to (pitch + (maxvariance*0.5))]
-	// Make absolutely sure to take variance into account when curating a sound for bark purposes.
 	var/minpitch = BARK_DEFAULT_MINPITCH
 	var/maxpitch = BARK_DEFAULT_MAXPITCH
 	var/minvariance = BARK_DEFAULT_MINVARY
@@ -101,13 +136,10 @@
 
 	// Visibility vars. Regardless of what's set below, these can still be obtained via adminbus and genetics. Rule of fun.
 	var/list/ckeys_allowed
-	var/ignore = FALSE //Controls whether or not this can be chosen in chargen
-	var/allow_random = FALSE //Allows chargen randomization to use this. This is mainly to restrict the pool to sounds that fit well for most characters
+	var/ignore = FALSE // If TRUE - only for admins
+	var/allow_random = FALSE
 
 
-// So the basic jist of the sound design here: We make use primarily of shorter instrument samples for barks. We would've went with animalese instead, but doing so would've involved quite a bit of overhead to saycode.
-// Short instrument samples tend to sound surprisingly nice for barks, being able to be played in rapid succession without being outright obnoxious.
-// It isn't just instruments that work well here, however. Anything that works well as a stab? Short attack, no sustain, a decent amount of release? Also works extremely well for barks.
 
 /datum/bark/mutedc2
 	name = "Muted String (Low)"

@@ -23,7 +23,7 @@ const FeatureBarkDropdownInput = (
   );
 };
 
-export const character_voice: FeatureChoiced = {
+export const bark_speech: FeatureChoiced = {
   name: 'Character Voice',
   component: FeatureBarkDropdownInput,
 };

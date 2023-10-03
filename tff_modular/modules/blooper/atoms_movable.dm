@@ -6,12 +6,10 @@
 	UnregisterSignal(src, COMSIG_MOVABLE_BARK)
 	. = ..()
 
-/datum/config_entry/flag/enable_global_barks // lol
-
 /atom/movable/proc/handle_special_bark(atom/movable/source, list/listeners, distance, volume, pitch)
 	SIGNAL_HANDLER
 
-	if(!CONFIG_GET(flag/enable_global_barks))
+	if(!GLOB.blooper_allowed)
 		return //No need to run if there are no barks to begin with
 
 	var/list/soundpaths
@@ -53,7 +51,7 @@
 	return vocal_bark
 
 /atom/movable/proc/bark(list/listeners, distance, volume, pitch, queue_time)
-	if(!CONFIG_GET(flag/enable_global_barks))
+	if(!GLOB.blooper_allowed)
 		return
 	if(queue_time && vocal_current_bark != queue_time)
 		return
@@ -113,8 +111,3 @@
 				break
 			addtimer(CALLBACK(src, /atom/movable/proc/bark, listening, (message_range * (is_yell ? 4 : 1)), (vocal_volume * (is_yell ? 1.5 : 1)), BARK_DO_VARY(vocal_pitch, vocal_pitch_range), vocal_current_bark), total_delay)
 			total_delay += rand(DS2TICKS(vocal_speed / BARK_SPEED_BASELINE), DS2TICKS(vocal_speed / BARK_SPEED_BASELINE) + DS2TICKS((vocal_speed / BARK_SPEED_BASELINE) * (is_yell ? 0.5 : 1))) TICKS
-
-/atom/movable/bark(list/hearers, distance, volume, pitch)
-	if(!CONFIG_GET(flag/enable_global_barks))
-		return
-	. = ..()
