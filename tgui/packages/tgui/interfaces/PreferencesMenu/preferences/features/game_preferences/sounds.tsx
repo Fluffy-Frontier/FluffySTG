@@ -83,11 +83,3 @@ export const sound_elevator: FeatureToggle = {
   category: 'SOUND',
   component: CheckboxInput,
 };
-
-// THE FLUFFY FRONTIER - BARKS
-export const sound_bark: FeatureToggle = {
-  name: 'Enable player barks sound',
-  category: 'SOUND',
-  component: CheckboxInput,
-};
-// THE FLUFFY FRONTIER

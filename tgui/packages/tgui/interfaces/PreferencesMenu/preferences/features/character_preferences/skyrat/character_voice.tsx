@@ -1,5 +1,5 @@
 import { Button, Stack } from '../../../../../../components';
-import { FeatureChoiced, FeatureChoicedServerData, FeatureDropdownInput, FeatureNumberInput, FeatureNumeric, FeatureValueProps } from '../../base';
+import { CheckboxInput, FeatureChoiced, FeatureChoicedServerData, FeatureDropdownInput, FeatureNumberInput, FeatureNumeric, FeatureToggle, FeatureValueProps } from '../../base';
 
 const FeatureBarkDropdownInput = (
   props: FeatureValueProps<string, string, FeatureChoicedServerData>
@@ -41,4 +41,10 @@ export const bark_speech_pitch: FeatureNumeric = {
 export const bark_pitch_range: FeatureNumeric = {
   name: 'Character Voice Range',
   component: FeatureNumberInput,
+};
+
+export const sound_bark: FeatureToggle = {
+  name: 'Enable player barks sound',
+  category: 'SOUND',
+  component: CheckboxInput,
 };
