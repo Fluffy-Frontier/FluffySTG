@@ -31,8 +31,8 @@
 	//Эффект отслеживающий наш курсор.
 	var/atom/movable/screen/fullscreen/cursor_catcher/physgun_catcher
 
-	//Заблокирован ли наш физ ган.
-	var/blocked = FALSE
+	//Усилен ли наш физ ган.
+	var/force_grab = FALSE
 	//Может ли наш физ ган использовать расширенные финкции.
 	var/advanced = FALSE
 
@@ -58,10 +58,10 @@
 		if(!can_catch(target, user))
 			playsound(user, 'tff_modular/modules/dm_construct13/sound/physgun_cant_grab.ogg', 100, TRUE)
 			return
-		if(!COOLDOWN_FINISHED(src, grab_cooldown))
+		if(!COOLDOWN_FINISHED(src, grab_cooldown) && !handlet_atom)
 			user.balloon_alert(user, "On cooldown!")
 			return
-		if(!range_check(target, user))
+		if(!range_check(target, user) && !handlet_atom)
 			user.balloon_alert(user, "Too far!")
 			return
 		catch_atom(target, user)
@@ -186,7 +186,9 @@
 
 /obj/item/physic_manipulation_tool/proc/on_living_resist(mob/living)
 	SIGNAL_HANDLER
-
+	if(force_grab)
+		handlet_atom.balloon_alert(handlet_atom, "Never escape!")
+		return
 	if(handlet_atom)
 		release_atom()
 
@@ -208,6 +210,7 @@
 	physgun_catcher = user.overlay_fullscreen("physgun_effect", /atom/movable/screen/fullscreen/cursor_catcher, 0)
 	physgun_catcher.assign_to_mob(user)
 	handlet_atom = target
+	handlet_atom.plane = handlet_atom.plane + 1
 	handlet_atom.set_density(FALSE)
 	physgun_user = user
 	loop_sound.start()
@@ -235,6 +238,7 @@
 	handlet_atom.pixel_y = initial(handlet_atom.pixel_y)
 	handlet_atom.anchored = initial(handlet_atom.anchored)
 	handlet_atom.density = initial(handlet_atom.density)
+	handlet_atom.plane = initial(handlet_atom.plane)
 	qdel(physgun_beam)
 	physgun_user = null
 	handlet_atom = null
@@ -255,7 +259,11 @@
 /obj/item/physic_manipulation_tool/proc/pause_atom(atom/movable/target)
 	if(isliving(handlet_atom))
 		var/mob/living/L = target
-		L.apply_status_effect(/datum/status_effect/physgun_pause)
+		if(force_grab)
+			L.apply_status_effect(/datum/status_effect/physgun_pause/admin)
+		else
+			L.apply_status_effect(/datum/status_effect/physgun_pause)
+		REMOVE_TRAIT(L, TRAIT_HANDS_BLOCKED, REF(src))
 	ADD_TRAIT(handlet_atom, TRAIT_PHYSGUN_PAUSE, PHYSGUN_EFFECTS)
 	handlet_atom.set_anchored(TRUE)
 	STOP_PROCESSING(SSfastprocess, src)
@@ -273,24 +281,38 @@
 	target.throw_at(target_turf, range = 9, speed = target.density ? 3 : 4, thrower = user, spin = isitem(target))
 	playsound(user, 'tff_modular/modules/dm_construct13/sound/physgun_repulse.ogg', 100, TRUE)
 
+/obj/item/physic_manipulation_tool/advanced
+	advanced = TRUE
+	use_cooldown = 1 SECONDS
+
+/obj/item/physic_manipulation_tool/advanced/admin
+	force = TRUE
+
 /datum/looping_sound/gravgen/kinesis/phys_gun
 	mid_sounds = list('tff_modular/modules/dm_construct13/sound/physgun_hold_loop.ogg' = 1)
 
 /datum/status_effect/physgun_pause
 	id = "physgun_pause"
+	var/force = FALSE
 
 /datum/status_effect/physgun_pause/on_apply()
 	. = ..()
 	RegisterSignal(owner, COMSIG_LIVING_RESIST, PROC_REF(on_resist), TRUE)
 	ADD_TRAIT(owner, TRAIT_IMMOBILIZED, REF(src))
+	ADD_TRAIT(owner, TRAIT_HANDS_BLOCKED, REF(src))
 
 /datum/status_effect/physgun_pause/on_remove()
 	. = ..()
 	UnregisterSignal(owner, COMSIG_LIVING_RESIST)
 	REMOVE_TRAIT(owner, TRAIT_IMMOBILIZED, REF(src))
+	REMOVE_TRAIT(owner, TRAIT_HANDS_BLOCKED, REF(src))
 
 /datum/status_effect/physgun_pause/proc/on_resist()
 	SIGNAL_HANDLER
+
+	if(force)
+		owner.balloon_alert("Can't escape!")
+		return
 
 	if(!HAS_TRAIT(owner, TRAIT_PHYSGUN_PAUSE))
 		return
@@ -302,3 +324,8 @@
 	owner.movement_type = initial(owner.movement_type)
 	owner.remove_status_effect(src)
 	owner.remove_filter("physgun")
+	owner.plane = initial(owner.plane)
+
+/datum/status_effect/physgun_pause/admin
+	id = "physgun_pause_admin"
+	force = TRUE

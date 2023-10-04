@@ -15,6 +15,8 @@
 	throw_range = 1
 	drop_sound = 'sound/items/handling/screwdriver_drop.ogg'
 	pickup_sound = 'tff_modular/modules/dm_construct13/sound/toolgun_select.ogg'
+	resistance_flags = INDESTRUCTIBLE
+
 
 	//Режим взаимодействия выбранный в данный момент.
 	var/datum/phystool_mode/selected_mode
@@ -23,6 +25,7 @@
 		/datum/phystool_mode/build_mode,
 		/datum/phystool_mode/spawn_mode,
 		/datum/phystool_mode/color_mode,
+		/datum/phystool_mode/size_mode,
 	)
 	//Датум луча, во время использования.
 	var/datum/beam/work_beam
