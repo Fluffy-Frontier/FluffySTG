@@ -72,7 +72,7 @@
 		for(var/mob/M in listeners)
 			if(!M.client)
 				continue
-			if(!(M.client?.prefs.read_preference(/datum/preference/toggle/sound_bark)))
+			if(!(M.client?.prefs.read_preference(/datum/preference/toggle/hear_sound_bark)))
 				listeners -= M
 		var/barks = min(round((LAZYLEN(message) / vocal_speed)) + 1, BARK_MAX_BARKS)
 		var/total_delay
@@ -91,17 +91,20 @@
 
 /mob/living/send_speech(message_raw, message_range = 6, obj/source = src, bubble_type = bubble_icon, list/spans, datum/language/message_language = null, list/message_mods = list(), forced = null, tts_message, list/tts_filter)
 	. = ..()
+	if(client)
+		if(!(client?.prefs.read_preference(/datum/preference/toggle/send_sound_bark)))
+			return
 	var/whisper_range = 0
 	if(message_mods[WHISPER_MODE])
 		whisper_range = MESSAGE_RANGE - WHISPER_RANGE
-	var/list/listening = get_hearers_in_range(message_range + whisper_range, source)
+	var/list/listening = get_hearers_in_view(message_range + whisper_range, source)
 	var/is_yell = (say_test(message_raw) == "2")
 	//Listening gets trimmed here if a vocal bark's present. If anyone ever makes this proc return listening, make sure to instead initialize a copy of listening in here to avoid wonkiness
 	if(SEND_SIGNAL(src, COMSIG_MOVABLE_QUEUE_BARK, listening, args) || vocal_bark || vocal_bark_id)
 		for(var/mob/M in listening)
 			if(!M.client)
 				continue
-			if(!(M.client?.prefs.read_preference(/datum/preference/toggle/sound_bark)))
+			if(!(M.client?.prefs.read_preference(/datum/preference/toggle/hear_sound_bark)))
 				listening -= M
 		var/barks = min(round((LAZYLEN(message_raw) / vocal_speed)) + 1, BARK_MAX_BARKS)
 		var/total_delay

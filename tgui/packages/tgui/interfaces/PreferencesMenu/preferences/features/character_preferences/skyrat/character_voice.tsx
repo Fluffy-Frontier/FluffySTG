@@ -43,8 +43,14 @@ export const bark_pitch_range: FeatureNumeric = {
   component: FeatureNumberInput,
 };
 
-export const sound_bark: FeatureToggle = {
-  name: 'Enable player barks sound',
+export const hear_sound_bark: FeatureToggle = {
+  name: 'Enable send to players barks',
+  category: 'SOUND',
+  component: CheckboxInput,
+};
+
+export const send_sound_bark: FeatureToggle = {
+  name: "Enable hearing player's barks",
   category: 'SOUND',
   component: CheckboxInput,
 };

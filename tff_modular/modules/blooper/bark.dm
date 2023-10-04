@@ -5,7 +5,7 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 
 /datum/smite/normalblooper/effect(client/user, mob/living/carbon/human/target)
 	. = ..()
-	target.vocal_bark = null
+	target.vocal_bark = pick(GLOB.bark_random_list)
 	target.vocal_speed = round((BARK_DEFAULT_MINSPEED + BARK_DEFAULT_MAXSPEED) / 2)
 	target.vocal_pitch = round((BARK_DEFAULT_MINPITCH + BARK_DEFAULT_MAXPITCH) / 2)
 	target.vocal_pitch_range = 0.2
@@ -112,10 +112,17 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 	return 0.2
 
 
-/// Controls hearing barks on local level
-/datum/preference/toggle/sound_bark
+/// Могу ли я использовать свой блупер?
+/datum/preference/toggle/send_sound_bark
 	category = PREFERENCE_CATEGORY_GAME_PREFERENCES
-	savefile_key = "sound_bark"
+	savefile_key = "send_sound_bark"
+	savefile_identifier = PREFERENCE_PLAYER
+	default_value = FALSE
+
+/// Могу ли я слышать блупки остальных?
+/datum/preference/toggle/hear_sound_bark
+	category = PREFERENCE_CATEGORY_GAME_PREFERENCES
+	savefile_key = "hear_sound_bark"
 	savefile_identifier = PREFERENCE_PLAYER
 	default_value = FALSE
 
@@ -234,16 +241,6 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 	soundpath = 'sound/creatures/goose1.ogg'
 	ignore = TRUE
 
-// Main code edits
-/datum/bark/merp
-	ignore = FALSE
-
-/datum/bark/bark
-	ignore = FALSE
-
-/datum/bark/weh
-	ignore = FALSE
-
 // Own stuff
 /datum/bark/moff/short
 	name = "Moff squeak"
@@ -271,14 +268,6 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 	id = "caw"
 	allow_random = TRUE
 	soundpath = 'tff_modular/modules/blooper/voice/barks/caw.ogg'
-
-/datum/bark/bleat
-	name = "Bleat"
-	id = "bleat"
-	allow_random = TRUE
-	soundpath = 'tff_modular/modules/blooper/voice/barks/bleat_bark.ogg'
-	minspeed = 5
-	maxspeed = 11
 
 //Undertale
 /datum/bark/alphys
@@ -568,13 +557,6 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 	id = "ehh5"
 	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/ehh5.ogg'
 
-/datum/bark/eugh
-	name = "Eugh"
-	id = "eugh"
-	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/eugh.ogg'
-	minspeed = 6
-	maxspeed = 11
-
 /datum/bark/faucet
 	name = "Faucet 1"
 	id = "faucet1"
@@ -584,13 +566,6 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 	name = "Faucet 2"
 	id = "faucet2"
 	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/faucet2.ogg'
-
-/datum/bark/haha
-	name = "Haha"
-	id = "haha"
-	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/haha.ogg'
-	minspeed = 7
-	maxspeed = 12
 
 /datum/bark/ribbit
 	name = "Ribbit"
@@ -609,18 +584,6 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 	id = "tweet"
 	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/tweet.ogg'
 
-/datum/bark/ahuh
-	name = "Ahuh"
-	id = "ahuh"
-	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/ahuh.ogg'
-
-/datum/bark/cry
-	name = "Cry"
-	id = "cry"
-	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/cry.ogg'
-	minspeed = 3
-	maxspeed = 9
-
 /datum/bark/dwoop
 	name = "Dwoop"
 	id = "dwoop"
@@ -628,73 +591,7 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 	minspeed = 3
 	maxspeed = 9
 
-/datum/bark/growl
-	name = "Growl 1"
-	id = "growl1"
-	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/growl.ogg'
-	minspeed = 3
-	maxspeed = 9
-
-/datum/bark/growl/alt1
-	name = "Growl 2"
-	id = "growl2"
-	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/growl2.ogg'
-
-/datum/bark/moan
-	name = "Moan 1"
-	id = "moan1"
-	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/moan1.ogg'
-	minspeed = 5
-	maxspeed = 9
-
-/datum/bark/moan/alt1
-	name = "Moan 2"
-	id = "moan2"
-	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/moan2.ogg'
-	minspeed = 4
-	maxspeed = 9
-
-/datum/bark/moan/alt2
-	name = "Moan 3"
-	id = "moan3"
-	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/moan3.ogg'
-	minspeed = 5
-	maxspeed = 9
-
-/datum/bark/raah
-	name = "Raah 1"
-	id = "raah1"
-	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/raah1.ogg'
-	minspeed = 6
-	maxspeed = 10
-
-/datum/bark/raah/alt1
-	name = "Raah 2"
-	id = "raah2"
-	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/raah2.ogg'
-	minspeed = 5
-	maxspeed = 9
-
-/datum/bark/slurp
-	name = "Slurp"
-	id = "slurp"
-	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/slurp.ogg'
-
 /datum/bark/uhm
 	name = "Uhm"
 	id = "uhm"
 	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/uhm.ogg'
-
-/datum/bark/zap
-	name = "Zap"
-	id = "zap"
-	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/zap.ogg'
-	minspeed = 8
-	maxspeed = 12
-
-/datum/bark/poyo
-	name = "Belial"
-	id = "poyo"
-	soundpath = 'tff_modular/modules/blooper/voice/barks/poyo.ogg'
-	minspeed = 3
-	maxspeed = 10
