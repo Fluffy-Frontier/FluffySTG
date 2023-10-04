@@ -477,10 +477,12 @@
 		if(NAMEOF(src, glide_size))
 			set_glide_size(var_value)
 			. = TRUE
+		// THE FLUFFY FRONTIER - EDIT BEGIN - BLOOPER
 		if(NAMEOF(src, vocal_bark)) // Sorry, Vishenka.
 			if(isfile(var_value))
 				vocal_bark = sound(var_value) //bark() expects vocal_bark to already be a sound datum, for performance reasons. adminbus QoL!
 			. = TRUE
+		// THE FLUFFY FRONTIE - EDIT END - BLOOPER
 
 	if(!isnull(.))
 		datum_flags |= DF_VAR_EDITED
