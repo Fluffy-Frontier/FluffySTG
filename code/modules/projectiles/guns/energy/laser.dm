@@ -1,4 +1,4 @@
-/obj/item/gun/energy/laser //ICON OVERRIDEN IN SKYRAT AESTHETICS - SEE MODULE
+/obj/item/gun/energy/laser
 	name = "laser gun"
 	desc = "A basic energy-based laser gun that fires concentrated beams of light which pass through glass and thin metal."
 	icon_state = "laser"
@@ -8,6 +8,18 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
 	ammo_x_offset = 1
 	shaded_charge = 1
+
+/obj/item/gun/energy/laser/Initialize(mapload)
+	. = ..()
+	// Only actual lasguns can be converted
+	if(type != /obj/item/gun/energy/laser)
+		return
+	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/xraylaser, /datum/crafting_recipe/hellgun, /datum/crafting_recipe/ioncarbine, /datum/crafting_recipe/decloner)
+
+	AddComponent(
+		/datum/component/slapcrafting,\
+		slapcraft_recipes = slapcraft_recipe_list,\
+	)
 
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"
@@ -89,7 +101,7 @@
 
 ///Laser Cannon
 
-/obj/item/gun/energy/lasercannon//ICON OVERRIDEN IN SKYRAT AESTHETICS - SEE MODULE
+/obj/item/gun/energy/lasercannon
 	name = "accelerator laser cannon"
 	desc = "An advanced laser cannon that does more damage the farther away the target is."
 	icon_state = "lasercannon"

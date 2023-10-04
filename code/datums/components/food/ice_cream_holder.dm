@@ -33,14 +33,16 @@
 	var/datum/reagent/sweetener
 
 
-/datum/component/ice_cream_holder/Initialize(max_scoops = DEFAULT_MAX_ICE_CREAM_SCOOPS,
-											change_name = TRUE,
-											filled_name,
-											change_desc = FALSE,
-											x_offset = 0,
-											y_offset = 0,
-											datum/reagent/sweetener = /datum/reagent/consumable/sugar,
-											list/prefill_flavours)
+/datum/component/ice_cream_holder/Initialize(
+	max_scoops = DEFAULT_MAX_ICE_CREAM_SCOOPS,
+	change_name = TRUE,
+	filled_name,
+	change_desc = FALSE,
+	x_offset = 0,
+	y_offset = 0,
+	datum/reagent/sweetener = /datum/reagent/consumable/sugar,
+	list/prefill_flavours,
+)
 	if(!IS_EDIBLE(parent)) /// There is no easy way to add servings to those non-item edibles, but I won't stop you.
 		return COMPONENT_INCOMPATIBLE
 
@@ -169,7 +171,7 @@
 	if(compare_list(our_scoops, icecream_order.wanted_flavors))
 		return COMPONENT_CORRECT_ORDER
 
-/datum/component/ice_cream_holder/proc/sell_ice_cream(obj/item/source, mob/living/simple_animal/robot_customer/sold_to)
+/datum/component/ice_cream_holder/proc/sell_ice_cream(obj/item/source, mob/living/basic/robot_customer/sold_to)
 	SIGNAL_HANDLER
 
 	//the price of ice cream scales with the number of scoops. Yummy.
@@ -342,6 +344,7 @@ GLOBAL_LIST_INIT_TYPED(ice_cream_flavours, /datum/ice_cream_flavour, init_ice_cr
 	ingredients_text = "optional flavorings"
 
 /datum/ice_cream_flavour/custom/korta
+	name = ICE_CREAM_KORTA_CUSTOM
 	desc = "filled with artisanal lizard-friendly icecream. Made with real $CUSTOM_NAME. Ain't that something."
 	ingredients = list(/datum/reagent/consumable/korta_milk, /datum/reagent/consumable/ice)
 	ingredients_text = "optional flavorings"

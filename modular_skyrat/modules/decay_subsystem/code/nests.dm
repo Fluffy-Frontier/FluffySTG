@@ -140,7 +140,7 @@
 	desc = "A mush of sticky cobwebs and nasty looking eggs..."
 	icon_state = "nest_spider"
 	light_color = LIGHT_COLOR_BLOOD_MAGIC
-	monster_types = list(/mob/living/basic/giant_spider/hunter, /mob/living/basic/giant_spider)
+	monster_types = list(/mob/living/basic/spider/giant/hunter, /mob/living/basic/spider/giant/)
 	loot = list(/obj/item/spider_egg = 4)
 
 /obj/item/spider_egg
@@ -155,7 +155,7 @@
 	if(do_after(user, 3 SECONDS, src))
 		to_chat(user, span_userdanger("You crack [src] open, something monsterous crawls out!"))
 		playsound(src, 'sound/effects/blobattack.ogg', 100)
-		new /mob/living/basic/giant_spider (user.loc)
+		new /mob/living/basic/spider/giant/ (user.loc)
 		qdel(src)
 
 /obj/structure/mob_spawner/bush
@@ -200,7 +200,7 @@
 	desc = "These pulsating eggs are oozing out a puss like substance..."
 	icon_state = "nest_eggs"
 	light_color = LIGHT_COLOR_BRIGHT_YELLOW
-	monster_types = list(/mob/living/simple_animal/hostile/retaliate/snake)
+	monster_types = list(/mob/living/basic/snake)
 	max_mobs = 8
 	spawn_cooldown = 5 SECONDS
 

@@ -4,6 +4,7 @@
 	id = SPECIES_FELINE
 	examine_limb_id = SPECIES_HUMAN
 	mutant_bodyparts = list("ears" = "Cat", "wings" = "None")
+	mutantbrain = /obj/item/organ/internal/brain/felinid
 	mutanttongue = /obj/item/organ/internal/tongue/cat
 	/* SKYRAT EDIT REMOVAL - CUSTOMIZATION
 	mutantears = /obj/item/organ/internal/ears/cat

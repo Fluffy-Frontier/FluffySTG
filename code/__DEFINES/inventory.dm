@@ -170,6 +170,7 @@
 #define MASKCOVERSMOUTH (1<<3) // on other items, these are just for mask/head
 #define HEADCOVERSMOUTH (1<<4)
 #define PEPPERPROOF (1<<5) //protects against pepperspray
+#define EARS_COVERED (1<<6)
 
 #define TINT_DARKENED 2 //Threshold of tint level to apply weld mask overlay
 #define TINT_BLIND 3 //Threshold of tint level to obscure vision fully
@@ -206,6 +207,7 @@ GLOBAL_LIST_INIT(detective_vest_allowed, list(
 	/obj/item/storage/belt/holster/detective,
 	/obj/item/storage/belt/holster/nukie,
 	/obj/item/storage/belt/holster/energy,
+	/obj/item/gun/ballistic/shotgun/automatic/combat/compact,
 	/obj/item/gun/microfusion, //SKYRAT EDIT ADDITION
 ))
 
@@ -224,6 +226,7 @@ GLOBAL_LIST_INIT(security_vest_allowed, list(
 	/obj/item/storage/belt/holster/detective,
 	/obj/item/storage/belt/holster/nukie,
 	/obj/item/storage/belt/holster/energy,
+	/obj/item/gun/ballistic/shotgun/automatic/combat/compact,
 	/obj/item/gun/microfusion, //SKYRAT EDIT ADDITION
 ))
 
@@ -238,6 +241,7 @@ GLOBAL_LIST_INIT(security_wintercoat_allowed, list(
 	/obj/item/storage/belt/holster/detective,
 	/obj/item/storage/belt/holster/nukie,
 	/obj/item/storage/belt/holster/energy,
+	/obj/item/gun/ballistic/shotgun/automatic/combat/compact,
 	/obj/item/gun/microfusion, //SKYRAT EDIT ADDITION
 ))
 

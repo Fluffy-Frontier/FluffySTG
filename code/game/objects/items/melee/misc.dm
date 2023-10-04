@@ -60,8 +60,8 @@
 	//very imprecise
 
 /obj/item/melee/sabre
-	name = "officer's sabre"
-	desc = "An elegant weapon, its monomolecular edge is capable of cutting through flesh and bone with ease."
+	name = "officer's sabre" //SKYRAT EDIT - Buffed in modular_skyrat/modules/modular_weapons/code/melee.dm
+	desc = "An elegant weapon, its monomolecular edge is capable of cutting through flesh and bone with ease." 
 	icon = 'icons/obj/weapons/sword.dmi'
 	icon_state = "sabre"
 	inhand_icon_state = "sabre"
@@ -416,16 +416,15 @@
 	..()
 	if (held_sausage)
 		user.put_in_hands(held_sausage)
-		held_sausage = null
-	update_appearance()
 
 /obj/item/melee/roastingstick/update_overlays()
 	. = ..()
 	if(held_sausage)
 		. += mutable_appearance(icon, "roastingstick_sausage")
 
-/obj/item/melee/roastingstick/handle_atom_del(atom/target)
-	if (target == held_sausage)
+/obj/item/melee/roastingstick/Exited(atom/movable/gone, direction)
+	. = ..()
+	if (gone == held_sausage)
 		held_sausage = null
 		update_appearance()
 
