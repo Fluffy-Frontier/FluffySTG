@@ -1,10 +1,10 @@
 //Bark defines
-#define BARK_DEFAULT_MINPITCH 0.6
-#define BARK_DEFAULT_MAXPITCH 1.4
+#define BARK_DEFAULT_MINPITCH 0.4
+#define BARK_DEFAULT_MAXPITCH 2
 #define BARK_DEFAULT_MINVARY 0.1
-#define BARK_DEFAULT_MAXVARY 0.4
+#define BARK_DEFAULT_MAXVARY 0.8
 #define BARK_DEFAULT_MINSPEED 2
-#define BARK_DEFAULT_MAXSPEED 8
+#define BARK_DEFAULT_MAXSPEED 16
 
 #define BARK_SPEED_BASELINE 4 //Used to calculate delay between barks, any bark speeds below this feature higher bark density, any speeds above feature lower bark density. Keeps barking length consistent
 

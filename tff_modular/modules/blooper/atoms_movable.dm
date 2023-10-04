@@ -1,6 +1,6 @@
 /atom/movable/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_MOVABLE_BARK, .proc/handle_special_bark) //There must be a better way to do this
+	RegisterSignal(src, COMSIG_MOVABLE_BARK, .proc/handle_special_bark)
 
 /atom/movable/Destroy()
 	UnregisterSignal(src, COMSIG_MOVABLE_BARK)
@@ -25,7 +25,7 @@
 				'tff_modular/modules/blooper/voice/barks/undertale/voice_gaster_7.ogg'
 			)
 		else
-			return //No change needed
+			return
 
 	source.vocal_bark = sound(pick(soundpaths))
 
@@ -36,7 +36,7 @@
 	var/vocal_bark_id
 	var/vocal_pitch = 1
 	var/vocal_pitch_range = 0.2 //Actual pitch is (pitch - (vocal_pitch_range*0.5)) to (pitch + (vocal_pitch_range*0.5))
-	var/vocal_volume = 70 //Baseline. This gets modified by yelling and other factors
+	var/vocal_volume = 70
 	var/vocal_speed = 4 //Lower values are faster, higher values are slower
 	var/vocal_current_bark //When barks are queued, this gets passed to the bark proc. If vocal_current_bark doesn't match the args passed to the bark proc (if passed at all), then the bark simply doesn't play. Basic curtailing of spam~
 
@@ -95,7 +95,9 @@
 		if(!(client?.prefs.read_preference(/datum/preference/toggle/send_sound_bark)))
 			return
 	var/whisper_range = 0
+	vocal_volume = 55
 	if(message_mods[WHISPER_MODE])
+		vocal_volume = 25
 		whisper_range = MESSAGE_RANGE - WHISPER_RANGE
 	var/list/listening = get_hearers_in_view(message_range + whisper_range, source)
 	var/is_yell = (say_test(message_raw) == "2")
@@ -112,5 +114,5 @@
 		for(var/i in 1 to barks)
 			if(total_delay > BARK_MAX_TIME)
 				break
-			addtimer(CALLBACK(src, /atom/movable/proc/bark, listening, (message_range * (is_yell ? 4 : 1)), (vocal_volume * (is_yell ? 1.5 : 1)), BARK_DO_VARY(vocal_pitch, vocal_pitch_range), vocal_current_bark), total_delay)
+			addtimer(CALLBACK(src, /atom/movable/proc/bark, listening, (message_range * (is_yell ? 4 : 1)), (vocal_volume * (is_yell ? 2 : 1)), BARK_DO_VARY(vocal_pitch, vocal_pitch_range), vocal_current_bark), total_delay)
 			total_delay += rand(DS2TICKS(vocal_speed / BARK_SPEED_BASELINE), DS2TICKS(vocal_speed / BARK_SPEED_BASELINE) + DS2TICKS((vocal_speed / BARK_SPEED_BASELINE) * (is_yell ? 0.5 : 1))) TICKS

@@ -5,7 +5,8 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 
 /datum/smite/normalblooper/effect(client/user, mob/living/carbon/human/target)
 	. = ..()
-	target.vocal_bark = pick(GLOB.bark_random_list)
+	target.vocal_bark = null
+	target.vocal_bark_id = pick(GLOB.bark_random_list)
 	target.vocal_speed = round((BARK_DEFAULT_MINSPEED + BARK_DEFAULT_MAXSPEED) / 2)
 	target.vocal_pitch = round((BARK_DEFAULT_MINPITCH + BARK_DEFAULT_MAXPITCH) / 2)
 	target.vocal_pitch_range = 0.2
@@ -210,38 +211,14 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 /datum/bark/bullet
 	name = "Windy"
 	id = "bullet"
-	maxpitch = 1.6 //This works well with higher pitches!
-	soundpath = 'sound/weapons/bulletflyby.ogg' //This works... Surprisingly well as a bark? It's neat!
+	maxpitch = 1.6
+	soundpath = 'sound/weapons/bulletflyby.ogg'
 
 /datum/bark/coggers
 	name = "Brassy"
 	id = "coggers"
-	soundpath = 'sound/machines/clockcult/integration_cog_install.ogg' //Yet another unexpectedly good bark sound
+	soundpath = 'sound/machines/clockcult/integration_cog_install.ogg'
 
-
-// Genetics-only/admin-only sounds. These either clash hard with the audio design of the above sounds, or have some other form of audio design issue, but aren't *too* awful as a sometimes thing.
-// Rule of fun very much applies to this section. Audio design is extremely important for the above section, but down here? No gods, no masters, pure anarchy.
-// The min/max variables simply don't apply to these, as only chargen cares about them. As such, there's no need to define those.
-
-/datum/bark/bikehorn
-	name = "Bikehorn"
-	id = "horn"
-	soundpath = 'sound/runtime/instruments/bikehorn/Cn4.ogg'
-	ignore = TRUE // This is an unusually quiet sound.
-
-/datum/bark/bwoink
-	name = "Bwoink"
-	id = "bwoink"
-	soundpath = 'sound/effects/adminhelp.ogg'
-	ignore = TRUE // Emergent heart attack generation
-
-/datum/bark/honk
-	name = "Annoying Honk"
-	id = "honk"
-	soundpath = 'sound/creatures/goose1.ogg'
-	ignore = TRUE
-
-// Own stuff
 /datum/bark/moff/short
 	name = "Moff squeak"
 	id = "moffsqueak"
@@ -317,7 +294,7 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 	id = "toriel"
 	soundpath = 'tff_modular/modules/blooper/voice/barks/undertale/voice_toriel.ogg'
 	minvariance = 0
-	maxpitch = BARK_DEFAULT_MAXPITCH*2 //Just because if it's high enough you get Asriel's voice
+	maxpitch = BARK_DEFAULT_MAXPITCH*2
 
 /datum/bark/undyne
 	name = "Undyne"
@@ -361,7 +338,6 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 	soundpath = 'tff_modular/modules/blooper/voice/barks/undertale/voice_monster2.ogg'
 	minvariance = 0
 
-//Don't starve
 /datum/bark/wilson
 	name = "Wilson"
 	id = "wilson"
@@ -393,7 +369,6 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 	minspeed = 3
 	maxspeed = 9
 
-//Goon
 /datum/bark/blub
 	name = "Blub"
 	id = "blub"
