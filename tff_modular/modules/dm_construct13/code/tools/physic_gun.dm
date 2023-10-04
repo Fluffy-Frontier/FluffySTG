@@ -8,7 +8,7 @@
 	inhand_icon_state = "physgun_grayscale"
 	worn_icon_state = "physgun_grayscale"
 	belt_icon_state = "physgun_grayscale"
-	worn_icon = 'tff_modular/master_files/icons/mob/inhands/items/architector items_belt.dmi'
+	worn_icon = 'tff_modular/master_files/icons/mob/inhands/items/architector_items_belt.dmi'
 	lefthand_file = 'tff_modular/master_files/icons/mob/inhands/items/architector_items_lefthand.dmi'
 	righthand_file = 'tff_modular/master_files/icons/mob/inhands/items/architector_items_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
@@ -46,7 +46,8 @@
 
 /obj/item/physic_manipulation_tool/Destroy(force)
 	. = ..()
-	release_atom()
+	if(handlet_atom)
+		release_atom()
 	qdel(loop_sound)
 
 /**
@@ -199,6 +200,8 @@
 /obj/item/physic_manipulation_tool/proc/catch_atom(atom/movable/target, mob/user)
 	if(isliving(target))
 		var/mob/living/L = target
+		if(force_grab)
+			L.SetParalyzed(INFINITY, TRUE)
 		if(L.has_status_effect(/datum/status_effect/physgun_pause))
 			L.remove_status_effect(/datum/status_effect/physgun_pause)
 		target.add_traits(list(TRAIT_HANDS_BLOCKED), REF(src))
@@ -224,6 +227,11 @@
 
 /obj/item/physic_manipulation_tool/proc/release_atom()
 	if(isliving(handlet_atom))
+		var/mob/living/L = handlet_atom
+		if(force_grab)
+			L.SetParalyzed(0)
+		if(L.has_status_effect(/datum/status_effect/physgun_pause))
+			L.remove_status_effect(/datum/status_effect/physgun_pause)
 		handlet_atom.remove_traits(list(TRAIT_HANDS_BLOCKED), REF(src))
 		UnregisterSignal(handlet_atom, COMSIG_LIVING_RESIST)
 	if(HAS_TRAIT(handlet_atom, TRAIT_PHYSGUN_PAUSE))
@@ -286,7 +294,7 @@
 	use_cooldown = 1 SECONDS
 
 /obj/item/physic_manipulation_tool/advanced/admin
-	force = TRUE
+	force_grab = TRUE
 
 /datum/looping_sound/gravgen/kinesis/phys_gun
 	mid_sounds = list('tff_modular/modules/dm_construct13/sound/physgun_hold_loop.ogg' = 1)
@@ -328,4 +336,4 @@
 
 /datum/status_effect/physgun_pause/admin
 	id = "physgun_pause_admin"
-	force_grab = TRUE
+	force = TRUE
