@@ -1,5 +1,5 @@
 /obj/item/phystool
-	name = "Phystool"
+	name = "Toolgun"
 	desc = "Some kind of an revolver.. bluespace power cell and anomaly core connected together..."
 	icon = 'tff_modular/master_files/icons/obj/architector_items.dmi'
 	icon_state = "toolgun"
