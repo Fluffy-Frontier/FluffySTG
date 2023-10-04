@@ -27,6 +27,10 @@
 "aV" = (
 /obj/effect/landmark/start/warden,
 /obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green,
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
@@ -139,6 +143,10 @@
 "ec" = (
 /obj/effect/landmark/start/science_guard,
 /obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green,
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
@@ -200,6 +208,7 @@
 "go" = (
 /obj/effect/landmark/start/quartermaster,
 /obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green,
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
@@ -297,6 +306,20 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"hV" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/machinery/recharge_station,
+/turf/open/floor/iron/small{
+	baseturfs = /turf/open/floor/iron/small
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "ir" = (
 /obj/effect/landmark/start/depsec/medical,
 /obj/effect/light_emitter/interlink,
@@ -370,9 +393,26 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"jS" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green,
+/turf/open/floor/iron{
+	base_icon_state = "rockyash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "rockyash"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "jV" = (
 /obj/effect/landmark/start/virologist,
 /obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green,
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
@@ -394,6 +434,21 @@
 /obj/effect/light_emitter/interlink,
 /obj/machinery/computer/shuttle/arrivals/recall,
 /turf/open/misc/grass,
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"kq" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green/anticorner/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron{
+	base_icon_state = "rockyash";
+	icon = 'icons/turf/mining.dmi';
+	icon_state = "rockyash"
+	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
 	ambient_buzz = nul;
@@ -425,6 +480,10 @@
 "kL" = (
 /obj/effect/landmark/start/shaft_miner,
 /obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green,
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
@@ -761,6 +820,10 @@
 "tU" = (
 /obj/effect/landmark/start/security_officer,
 /obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green,
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
@@ -777,6 +840,20 @@
 	base_icon_state = "ash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "ash"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"up" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/green/half,
+/turf/open/floor/iron/small{
+	baseturfs = /turf/open/floor/iron/small
 	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
@@ -855,14 +932,11 @@
 	name = "construct"
 	})
 "wh" = (
-/obj/effect/light_emitter/interlink,
-/obj/effect/turf_decal/tile/green{
-	dir = 1
-	},
+/obj/vehicle/sealed/car/speedwagon,
 /turf/open/floor/iron{
-	base_icon_state = "rockyash";
+	base_icon_state = "ash";
 	icon = 'icons/turf/mining.dmi';
-	icon_state = "rockyash"
+	icon_state = "ash"
 	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
@@ -883,6 +957,10 @@
 "xe" = (
 /obj/effect/landmark/start/station_engineer,
 /obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green,
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
@@ -913,6 +991,25 @@
 	base_icon_state = "rockyash";
 	icon = 'icons/turf/mining.dmi';
 	icon_state = "rockyash"
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"yc" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/structure/table,
+/obj/item/paper{
+	name = "Для архитекторов";
+	text = " Не разбирайте автоматы и не пытайтесь перенести их, или уничтожить. Оставьте это для будущих визитеров. П.С Пополения не будет."
+	},
+/obj/item/disk/nuclear,
+/turf/open/floor/iron/small{
+	baseturfs = /turf/open/floor/iron/small
 	},
 /area/awaymission/secret/powered{
 	ambience_index = null;
@@ -1020,6 +1117,131 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"Ao" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/iron/small{
+	baseturfs = /turf/open/floor/iron/small
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"Aq" = (
+/obj/structure/table/reinforced,
+/obj/effect/light_emitter/interlink,
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/card/id/advanced/gold/captains_spare{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/turf/open/floor/iron/small{
+	baseturfs = /turf/open/floor/iron/small
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "Ar" = (
 /obj/effect/landmark/start/coroner,
 /obj/effect/light_emitter/interlink,
@@ -1067,6 +1289,56 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"Bb" = (
+/obj/structure/table/reinforced,
+/obj/effect/light_emitter/interlink,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/obj/item/storage/backpack/holding,
+/turf/open/floor/iron/small{
+	baseturfs = /turf/open/floor/iron/small
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"Bw" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green/half,
+/turf/open/floor/iron/small{
+	baseturfs = /turf/open/floor/iron/small
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "BB" = (
 /obj/effect/light_emitter/interlink,
 /obj/effect/landmark/start/ai/secondary,
@@ -1089,6 +1361,38 @@
 "BT" = (
 /obj/effect/landmark/start/assaultop,
 /obj/effect/light_emitter/interlink,
+/turf/open/floor/iron/small{
+	baseturfs = /turf/open/floor/iron/small
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
+"Df" = (
+/obj/structure/table/reinforced,
+/obj/effect/light_emitter/interlink,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
+/obj/item/gun/magic/wand/resurrection/debug,
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
@@ -1137,6 +1441,10 @@
 "Ee" = (
 /obj/effect/landmark/start/scientist,
 /obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green,
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
@@ -1195,9 +1503,24 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"FT" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green/anticorner,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/iron/small{
+	baseturfs = /turf/open/floor/iron/small
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "Gd" = (
 /obj/effect/landmark/start/librarian,
 /obj/effect/light_emitter/interlink,
+/obj/structure/plaque/static_plaque/golden/commission,
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
@@ -1304,6 +1627,17 @@
 	ambient_buzz = nul;
 	name = "construct"
 	})
+"Ix" = (
+/obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green,
+/turf/open/floor/iron/small{
+	baseturfs = /turf/open/floor/iron/small
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
+	})
 "IB" = (
 /obj/effect/landmark/latejoin,
 /obj/effect/light_emitter/interlink,
@@ -1329,6 +1663,11 @@
 "JD" = (
 /obj/effect/landmark/start/wizard,
 /obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green,
+/obj/effect/turf_decal/tile/green,
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
@@ -1369,6 +1708,10 @@
 "Kx" = (
 /obj/effect/landmark/start/roboticist,
 /obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green,
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
@@ -1383,6 +1726,29 @@
 	ambience_index = null;
 	ambient_buzz = null;
 	name = "construct fullbright"
+	})
+"KZ" = (
+/obj/structure/table/reinforced,
+/obj/effect/light_emitter/interlink,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/storage/toolbox/syndicate,
+/turf/open/floor/iron/small{
+	baseturfs = /turf/open/floor/iron/small
+	},
+/area/awaymission/secret/powered{
+	ambience_index = null;
+	ambient_buzz = nul;
+	name = "construct"
 	})
 "Ls" = (
 /obj/effect/light_emitter/interlink,
@@ -1798,6 +2164,7 @@
 "VQ" = (
 /obj/effect/landmark/start/psychologist,
 /obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green,
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
@@ -1882,6 +2249,7 @@
 "YN" = (
 /obj/effect/landmark/start/research_director,
 /obj/effect/light_emitter/interlink,
+/obj/effect/turf_decal/tile/green,
 /turf/open/floor/iron/small{
 	baseturfs = /turf/open/floor/iron/small
 	},
@@ -4613,12 +4981,12 @@ Xf
 Xf
 Xf
 Xf
+wh
 Xf
 Xf
 Xf
 Xf
-Xf
-Xf
+wh
 Xf
 Xf
 Xf
@@ -5357,7 +5725,7 @@ DO
 Xf
 Xf
 DO
-wh
+gI
 ms
 DO
 Xf
@@ -5369,12 +5737,12 @@ Xf
 Xf
 Xf
 Xf
+wh
 Xf
 Xf
 Xf
 Xf
-Xf
-Xf
+wh
 Xf
 Xf
 Xf
@@ -5609,7 +5977,7 @@ DO
 Xf
 Xf
 DO
-wh
+gI
 ms
 DO
 Xf
@@ -5861,7 +6229,7 @@ DO
 Xf
 Xf
 DO
-wh
+gI
 WH
 DO
 DO
@@ -5872,14 +6240,14 @@ DO
 DO
 DO
 DO
-SO
-SO
+KZ
+Df
 SO
 DO
 DO
 SO
-SO
-SO
+Bb
+Aq
 DO
 DO
 DO
@@ -6113,31 +6481,31 @@ DO
 Xf
 Xf
 DO
-wh
+gI
 ms
 zL
 zL
 zL
-zL
-zL
-zL
+hV
+hV
 YW
+yc
 YW
 zL
-BJ
-BJ
-BJ
-BJ
-BJ
-BJ
-BJ
-BJ
-BJ
-BJ
-BJ
-BJ
-BJ
-BJ
+zL
+zL
+zL
+zL
+zL
+zL
+zL
+zL
+zL
+zL
+zL
+zL
+zL
+up
 BJ
 BJ
 BJ
@@ -6365,7 +6733,7 @@ Xf
 Xf
 Xf
 DO
-Qc
+gI
 Qc
 BJ
 BJ
@@ -6389,7 +6757,7 @@ LM
 cF
 hj
 kB
-BJ
+Bw
 BJ
 BJ
 BJ
@@ -6617,7 +6985,7 @@ Xf
 Xf
 Xf
 DO
-Qc
+gI
 Qc
 BJ
 BJ
@@ -6641,7 +7009,7 @@ wU
 dS
 IE
 UJ
-BJ
+Bw
 BJ
 BJ
 BJ
@@ -6869,7 +7237,7 @@ Xf
 Xf
 Xf
 DO
-Qc
+gI
 Qc
 BJ
 BJ
@@ -6893,7 +7261,7 @@ tj
 eT
 SK
 Rj
-BJ
+Bw
 BJ
 BJ
 BJ
@@ -7121,7 +7489,7 @@ Xf
 Xf
 Xf
 DO
-Qc
+gI
 Qc
 BJ
 BJ
@@ -7145,7 +7513,7 @@ Wx
 sP
 AE
 dX
-BJ
+Bw
 BJ
 BJ
 BJ
@@ -7373,18 +7741,18 @@ Xf
 Xf
 Xf
 DO
-Qc
-Qc
-BJ
-BJ
-BJ
-BJ
-BJ
-BJ
-BJ
-BJ
-BJ
-BJ
+kq
+jS
+Ao
+Ao
+Ao
+Ao
+Ao
+Ao
+Ao
+Ao
+Ao
+Ix
 VQ
 go
 YN
@@ -7397,7 +7765,7 @@ xe
 jV
 aV
 JD
-BJ
+FT
 BJ
 BJ
 BJ

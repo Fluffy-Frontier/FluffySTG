@@ -328,4 +328,4 @@
 
 /datum/status_effect/physgun_pause/admin
 	id = "physgun_pause_admin"
-	force = TRUE
+	force_grab = TRUE
