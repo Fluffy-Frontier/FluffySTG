@@ -5,7 +5,7 @@
 	icon_state = "toolgun"
 	inhand_icon_state = "toolgun"
 	worn_icon_state = "toolgun"
-	worn_icon = 'tff_modular/master_files/icons/mob/inhands/items/architector items_belt.dmi'
+	worn_icon = 'tff_modular/master_files/icons/mob/inhands/items/architector_items_belt.dmi'
 	lefthand_file = 'tff_modular/master_files/icons/mob/inhands/items/architector_items_lefthand.dmi'
 	righthand_file = 'tff_modular/master_files/icons/mob/inhands/items/architector_items_righthand.dmi'
 	demolition_mod = 0.5

@@ -8,7 +8,7 @@
 	inhand_icon_state = "physgun_grayscale"
 	worn_icon_state = "physgun_grayscale"
 	belt_icon_state = "physgun_grayscale"
-	worn_icon = 'tff_modular/master_files/icons/mob/inhands/items/architector items_belt.dmi'
+	worn_icon = 'tff_modular/master_files/icons/mob/inhands/items/architector_items_belt.dmi'
 	lefthand_file = 'tff_modular/master_files/icons/mob/inhands/items/architector_items_lefthand.dmi'
 	righthand_file = 'tff_modular/master_files/icons/mob/inhands/items/architector_items_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
@@ -46,7 +46,8 @@
 
 /obj/item/physic_manipulation_tool/Destroy(force)
 	. = ..()
-	release_atom()
+	if(handlet_atom)
+		release_atom()
 	qdel(loop_sound)
 
 /**
