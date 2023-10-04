@@ -1,3 +1,6 @@
+#define SPAWN_MODE_MOB_COOLDOWN 5 SECONDS
+#define SPAWN_MODE_MEGAFAUNA_COOLDOWN 30 SECONDS
+
 /datum/phystool_mode/spawn_mode
 	name = "Spawn mode"
 	desc = "LMB for spawn, use button for choise spawn type."
@@ -8,9 +11,11 @@
 		/obj/cascade_portal,
 		/obj/singularity,
 		/obj/effect,
+		/mob/living/basic/supermatter_spider,
 		/area,
 		/turf
 	)
+	COOLDOWN_DECLARE(spawn_cooldown)
 
 /datum/phystool_mode/spawn_mode/use_act(mob/user)
 	. = ..()
@@ -31,9 +36,21 @@
 
 /datum/phystool_mode/spawn_mode/main_act(atom/target, mob/user)
 	. = ..()
+
 	if(!selected_object)
 		user.balloon_alert(user, "Select type first!")
 		return FALSE
+
+	if(!COOLDOWN_FINISHED(src, spawn_cooldown))
+		user.balloon_alert(user, "Wait!")
+		return FALSE
+	var/target_cooldown
+	if(ispath(selected_object, /mob/living/simple_animal/hostile/megafauna))
+		target_cooldown = SPAWN_MODE_MEGAFAUNA_COOLDOWN
+	if(ispath(selected_object, /mob/living))
+		target_cooldown = SPAWN_MODE_MOB_COOLDOWN
+	if(target_cooldown)
+		COOLDOWN_START(src, spawn_cooldown, target_cooldown)
 
 	new selected_object(get_turf(target))
 	return TRUE

@@ -178,12 +178,12 @@
 		pause_atom(handlet_atom)
 		return
 	else if(LAZYACCESS(modifiers, CTRL_CLICK))
-		release_atom()
+		repulse(handlet_atom, physgun_user)
 		return
 	else if(LAZYACCESS(modifiers, ALT_CLICK))
 		rotate_object(handlet_atom)
 		return
-	repulse(handlet_atom, physgun_user)
+	release_atom()
 
 /obj/item/physic_manipulation_tool/proc/on_living_resist(mob/living)
 	SIGNAL_HANDLER

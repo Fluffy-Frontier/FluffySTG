@@ -21,10 +21,13 @@
 		var/mob/living/living_target = target
 		if(living_target.client)
 			return
+	var/translate_x = value * ( target.transform.b / value )
+	var/translate_y = value * ( target.transform.e / value )
+	if(((translate_x || translate_y) >= 8) || ((translate_x || translate_y) <= 0.125))
+		translate_x = target.transform.b
+		translate_y = target.transform.e
+	target.transform = target.transform.Translate(translate_x, translate_y)
 	target.pixel_x *= value
 	target.pixel_y *= value
 	target.transform = target.transform.Scale(value)
-	var/translate_x = value * ( target.transform.b / value )
-	var/translate_y = value * ( target.transform.e / value )
-	target.transform = target.transform.Translate(translate_x, translate_y)
 	target.maptext_height = 32 * value
