@@ -44,13 +44,13 @@ export const bark_pitch_range: FeatureNumeric = {
 };
 
 export const hear_sound_bark: FeatureToggle = {
-  name: 'Enable send to players barks',
+  name: "Enable hearing player's barks",
   category: 'SOUND',
   component: CheckboxInput,
 };
 
 export const send_sound_bark: FeatureToggle = {
-  name: "Enable hearing player's barks",
+  name: 'Enable send to players barks',
   category: 'SOUND',
   component: CheckboxInput,
 };
