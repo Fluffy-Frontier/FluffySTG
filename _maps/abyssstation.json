@@ -18,20 +18,31 @@
 			"Up": true,
 			"Gravity": true,
 			"Baseturf": "/turf/open/chasm",
-			"No Parallax": true
+			"No Parallax": true,
+			"Linkage": "Cross"
 		},
 		{
 			"Up": true,
 			"Down": true,
 			"Gravity": true,
 			"Baseturf": "/turf/open/openspace",
-			"No Parallax": true
+			"No Parallax": true,
+			"Linkage": "Cross"
+		},
+		{
+			"Up": true,
+			"Down": true,
+			"Gravity": true,
+			"Baseturf": "/turf/open/openspace",
+			"No Parallax": true,
+			"Linkage": "Cross"
 		},
 		{
 			"Down": true,
 			"Gravity": true,
 			"Baseturf": "/turf/open/openspace",
-			"No Parallax": true
+			"No Parallax": true,
+			"Linkage": "Cross"
 		}
 	],
 	"job_changes": {
