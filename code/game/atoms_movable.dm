@@ -481,7 +481,7 @@
 			if(isfile(var_value))
 				vocal_bark = sound(var_value) //bark() expects vocal_bark to already be a sound datum, for performance reasons. adminbus QoL!
 			. = TRUE
-		// THE FLUFFY FRONTIE - EDIT END - BLOOPER
+		// THE FLUFFY FRONTIER EDIT ADDITION END
 
 	if(!isnull(.))
 		datum_flags |= DF_VAR_EDITED
