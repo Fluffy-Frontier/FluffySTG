@@ -54,7 +54,7 @@
 	sort_list(GLOB.laugh_types, GLOBAL_PROC_REF(cmp_typepaths_asc))
 	//SKYRAT EDIT END
 
-	//THE FLUFFY FRONTIER EDIT ADDITION BEGIN - Без этого никуда.
+	//THE FLUFFY FRONTIER EDIT ADDITION BEGIN - Blooper
 	for(var/sound_bark_path in subtypesof(/datum/bark))
 		var/datum/bark/B = new spath()
 		GLOB.bark_list[B.id] = spath
