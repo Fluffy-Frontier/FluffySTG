@@ -44,7 +44,7 @@ export const bark_pitch_range: FeatureNumeric = {
 };
 
 export const hear_sound_bark: FeatureToggle = {
-  name: "Enable bark hearing",
+  name: 'Enable bark hearing',
   category: 'SOUND',
   component: CheckboxInput,
 };
