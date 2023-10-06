@@ -30,7 +30,7 @@
 	volume = min(volume, 100)
 	var/turf/T = get_turf(src)
 	for(var/mob/M in listeners)
-		M.playsound_local(T, vol = volume, vary = TRUE, frequency = pitch, max_distance = distance, falloff_distance = 0, falloff_exponent = BARK_SOUND_FALLOFF_EXPONENT(distance), sound_to_use = vocal_bark, distance_multiplier = 1)
+		M.playsound_local(T, vol = volume, vary = TRUE, frequency = pitch, max_distance = distance, falloff_distance = 0, falloff_exponent = BARK_SOUND_FALLOFF_EXPONENT, sound_to_use = vocal_bark, distance_multiplier = 1)
 
 /atom/movable/send_speech(message, range = 7, obj/source = src, bubble_type, list/spans, datum/language/message_language, list/message_mods = list(), forced = FALSE, tts_message, list/tts_filter)
 	. = ..()
@@ -47,7 +47,7 @@
 		for(var/i in 1 to barks)
 			if(total_delay > BARK_MAX_TIME)
 				break
-			addtimer(CALLBACK(src, .proc/bark, listeners, range, vocal_volume, BARK_DO_VARY(vocal_pitch, vocal_pitch_range), vocal_current_bark), total_delay)
+			addtimer(CALLBACK(src, PROC_REF(bark), listeners, range, vocal_volume, BARK_DO_VARY(vocal_pitch, vocal_pitch_range), vocal_current_bark), total_delay)
 			total_delay += rand(DS2TICKS(vocal_speed / BARK_SPEED_BASELINE), DS2TICKS(vocal_speed / BARK_SPEED_BASELINE) + DS2TICKS(vocal_speed / BARK_SPEED_BASELINE)) TICKS
 
 /randomize_human(mob/living/carbon/human/human)
@@ -61,12 +61,11 @@
 	if(client)
 		if(!(client?.prefs.read_preference(/datum/preference/toggle/send_sound_bark)))
 			return
-	var/whisper_range = 0
 	vocal_volume = 55
 	if(message_mods[WHISPER_MODE])
 		vocal_volume = 25
-		whisper_range = MESSAGE_RANGE - WHISPER_RANGE
-	var/list/listening = get_hearers_in_view(message_range + whisper_range, source)
+		message_range++
+	var/list/listening = get_hearers_in_view(message_range, source)
 	var/is_yell = (say_test(message_raw) == "2")
 	//Listening gets trimmed here if a vocal bark's present. If anyone ever makes this proc return listening, make sure to instead initialize a copy of listening in here to avoid wonkiness
 	if(SEND_SIGNAL(src, COMSIG_MOVABLE_QUEUE_BARK, listening, args) || vocal_bark || vocal_bark_id)
@@ -81,5 +80,5 @@
 		for(var/i in 1 to barks)
 			if(total_delay > BARK_MAX_TIME)
 				break
-			addtimer(CALLBACK(src, /atom/movable/proc/bark, listening, (message_range * (is_yell ? 4 : 1)), (vocal_volume * (is_yell ? 2 : 1)), BARK_DO_VARY(vocal_pitch, vocal_pitch_range), vocal_current_bark), total_delay)
+			addtimer(CALLBACK(src, TYPE_PROC_REF(/atom/movable, bark), listening, MESSAGE_RANGE + 1, (vocal_volume * (is_yell ? 2 : 1)), BARK_DO_VARY(vocal_pitch, vocal_pitch_range), vocal_current_bark), total_delay) //На седьмом тайле функция равна нулю, поэтому мы обязаны ставить максимум на 1 тайл дальше.
 			total_delay += rand(DS2TICKS(vocal_speed / BARK_SPEED_BASELINE), DS2TICKS(vocal_speed / BARK_SPEED_BASELINE) + DS2TICKS((vocal_speed / BARK_SPEED_BASELINE) * (is_yell ? 0.5 : 1))) TICKS

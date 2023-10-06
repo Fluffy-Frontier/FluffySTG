@@ -64,7 +64,7 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 	barkbox.vocal_pitch_range = preferences.read_preference(/datum/preference/numeric/bark_pitch_range)
 	var/total_delay
 	for(var/i in 1 to (round((32 / barkbox.vocal_speed)) + 1))
-		addtimer(CALLBACK(barkbox, /atom/movable/proc/bark, list(user), 7, 70, BARK_DO_VARY(barkbox.vocal_pitch, barkbox.vocal_pitch_range)), total_delay)
+		addtimer(CALLBACK(barkbox, TYPE_PROC_REF(/atom/movable, bark), list(user), 7, 70, BARK_DO_VARY(barkbox.vocal_pitch, barkbox.vocal_pitch_range)), total_delay)
 		total_delay += rand(DS2TICKS(barkbox.vocal_speed/4), DS2TICKS(barkbox.vocal_speed/4) + DS2TICKS(barkbox.vocal_speed/4)) TICKS
 	QDEL_IN(barkbox, total_delay)
 	COOLDOWN_START(src, bark_cooldown, 2 SECONDS)
