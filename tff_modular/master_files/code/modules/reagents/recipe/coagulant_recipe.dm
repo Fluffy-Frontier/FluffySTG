@@ -1,5 +1,5 @@
 /datum/chemical_reaction/medicine/coagulant
-	results = list(/datum/reagent/medicine/coagulant = 1) // чтобы жизнь мёдом не казалась
+	results = list(/datum/reagent/medicine/coagulant = 1)
 	required_reagents = list(/datum/reagent/medicine/salglu_solution = 1, /datum/reagent/phenol = 1, /datum/reagent/carbon = 1, /datum/reagent/water = 1)
 	required_temp = 300
 	optimal_temp = 500
