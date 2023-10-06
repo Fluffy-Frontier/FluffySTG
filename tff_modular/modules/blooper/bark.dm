@@ -571,8 +571,13 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 	id = "uhm"
 	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/uhm.ogg'
 
+/datum/bark/wurtesh
+	name = "Wurtesh"
+	id = "wurtesh"
+	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/wurble1.ogg'
 
-
-
-
+/datum/bark/wurtesh
+	name = "Chitter"
+	id = "chitter"
+	soundpath = 'tff_modular/modules/blooper/voice/barks/kazooie/chitter1.ogg'
 
