@@ -54,12 +54,12 @@
 	sort_list(GLOB.laugh_types, GLOBAL_PROC_REF(cmp_typepaths_asc))
 	//SKYRAT EDIT END
 
-	//THE FLUFFY FRONTIER EDIT ADDITION BEGIN - Без этого никуда.
+	//THE FLUFFY FRONTIER EDIT ADDITION BEGIN - Blooper
 	for(var/sound_bark_path in subtypesof(/datum/bark))
-		var/datum/bark/B = new spath()
-		GLOB.bark_list[B.id] = spath
+		var/datum/bark/B = new sound_bark_path()
+		GLOB.bark_list[B.id] = sound_bark_path
 		if(B.allow_random)
-			GLOB.bark_random_list[B.id] = spath
+			GLOB.bark_random_list[B.id] = sound_bark_path
 	//THE FLUFFY FRONTIER EDIT END
 
 /// Inits GLOB.species_list. Not using GLOBAL_LIST_INIT b/c it depends on GLOB.string_lists
