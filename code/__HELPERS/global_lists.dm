@@ -55,7 +55,7 @@
 	//SKYRAT EDIT END
 
 	//THE FLUFFY FRONTIER EDIT ADDITION BEGIN - Без этого никуда.
-	for(var/spath in subtypesof(/datum/bark))
+	for(var/sound_bark_path in subtypesof(/datum/bark))
 		var/datum/bark/B = new spath()
 		GLOB.bark_list[B.id] = spath
 		if(B.allow_random)
