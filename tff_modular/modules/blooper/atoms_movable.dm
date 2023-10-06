@@ -24,8 +24,6 @@
 		return
 	if(queue_time && vocal_current_bark != queue_time)
 		return
-	if(SEND_SIGNAL(src, COMSIG_MOVABLE_BARK, listeners, distance, volume, pitch))
-		return //bark interception. this probably counts as some flavor of BDSM
 	if(!vocal_bark)
 		if(!vocal_bark_id || !set_bark(vocal_bark_id)) //just-in-time bark generation
 			return
