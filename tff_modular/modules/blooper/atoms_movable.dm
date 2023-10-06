@@ -1,34 +1,3 @@
-/atom/movable/Initialize(mapload)
-	. = ..()
-	RegisterSignal(src, COMSIG_MOVABLE_BARK, .proc/handle_special_bark)
-
-/atom/movable/Destroy()
-	UnregisterSignal(src, COMSIG_MOVABLE_BARK)
-	. = ..()
-
-/atom/movable/proc/handle_special_bark(atom/movable/source, list/listeners, distance, volume, pitch)
-	SIGNAL_HANDLER
-
-	if(!GLOB.blooper_allowed)
-		return //No need to run if there are no barks to begin with
-
-	var/list/soundpaths
-	switch(GLOB.bark_list[source.vocal_bark_id])
-		if(/datum/bark/gaster)
-			soundpaths = list(
-				'tff_modular/modules/blooper/voice/barks/undertale/voice_gaster_1.ogg',
-				'tff_modular/modules/blooper/voice/barks/undertale/voice_gaster_2.ogg',
-				'tff_modular/modules/blooper/voice/barks/undertale/voice_gaster_3.ogg',
-				'tff_modular/modules/blooper/voice/barks/undertale/voice_gaster_4.ogg',
-				'tff_modular/modules/blooper/voice/barks/undertale/voice_gaster_5.ogg',
-				'tff_modular/modules/blooper/voice/barks/undertale/voice_gaster_6.ogg',
-				'tff_modular/modules/blooper/voice/barks/undertale/voice_gaster_7.ogg'
-			)
-		else
-			return
-
-	source.vocal_bark = sound(pick(soundpaths))
-
 /atom/movable
 	// Text-to-bark sounds
 	// Да. У нас все атом могут иметь звучение для say.
