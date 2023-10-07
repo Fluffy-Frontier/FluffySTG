@@ -80,5 +80,5 @@
 		for(var/i in 1 to barks)
 			if(total_delay > BARK_MAX_TIME)
 				break
-			addtimer(CALLBACK(src, TYPE_PROC_REF(/atom/movable, bark), listening, MESSAGE_RANGE + 1, (vocal_volume * (is_yell ? 2 : 1)), BARK_DO_VARY(vocal_pitch, vocal_pitch_range), vocal_current_bark), total_delay) //На седьмом тайле функция равна нулю, поэтому мы обязаны ставить максимум на 1 тайл дальше.
+			addtimer(CALLBACK(src, TYPE_PROC_REF(/atom/movable, bark), listening, message_range + 1, (vocal_volume * (is_yell ? 2 : 1)), BARK_DO_VARY(vocal_pitch, vocal_pitch_range), vocal_current_bark), total_delay) //На седьмом тайле функция равна нулю, поэтому мы обязаны ставить максимум на 1 тайл дальше.
 			total_delay += rand(DS2TICKS(vocal_speed / BARK_SPEED_BASELINE), DS2TICKS(vocal_speed / BARK_SPEED_BASELINE) + DS2TICKS((vocal_speed / BARK_SPEED_BASELINE) * (is_yell ? 0.5 : 1))) TICKS
