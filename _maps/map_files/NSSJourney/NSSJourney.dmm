@@ -25135,16 +25135,11 @@
 /area/station/engineering/gravity_generator)
 "bPZ" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/landmark/bitrunning/station_reward_spawn,
 /obj/structure/sign/poster/random/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/south,
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
+/obj/machinery/byteforge,
+/obj/effect/turf_decal/box,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/bitrunning/den)
 "bQa" = (
@@ -37533,8 +37528,8 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
 "fFF" = (
-/obj/structure/closet/secure_closet/smartgun,
 /obj/effect/turf_decal/delivery/blue,
+/obj/structure/closet/secure_closet/armory_kiboko,
 /turf/open/floor/iron/smooth,
 /area/station/ai_monitored/security/armory)
 "fFP" = (
@@ -45919,7 +45914,7 @@
 "mQS" = (
 /obj/structure/rack/gunrack,
 /obj/effect/turf_decal/delivery/red,
-/obj/effect/spawner/armory_spawn/cmg,
+/obj/effect/spawner/armory_spawn/smg,
 /turf/open/floor/iron/smooth,
 /area/station/ai_monitored/security/armory)
 "mRk" = (
@@ -47396,11 +47391,11 @@
 "ofd" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/bitrunning/station_reward_spawn,
-/obj/effect/turf_decal/box/corners,
-/obj/effect/turf_decal/box/corners{
-	dir = 4
-	},
+/obj/structure/rack,
+/obj/item/food/cornchips/random,
+/obj/item/food/cornchips/random,
+/obj/item/reagent_containers/cup/soda_cans/random,
+/obj/item/reagent_containers/cup/soda_cans/random,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/bitrunning/den)
 "ofM" = (
