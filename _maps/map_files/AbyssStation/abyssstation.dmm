@@ -1329,7 +1329,6 @@
 /area/abyss_station/station/service/bar)
 "atZ" = (
 /obj/structure/rack/shelf,
-/obj/item/storage/box/gunset,
 /obj/item/clothing/suit/armor/riot,
 /obj/item/clothing/head/helmet/toggleable/riot{
 	pixel_y = 6
@@ -10587,7 +10586,6 @@
 /obj/effect/turf_decal/tile/green/half/contrasted{
 	dir = 1
 	},
-/obj/structure/chair/sofa/bench/left,
 /obj/structure/chair/sofa/bench/left,
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
@@ -19852,9 +19850,6 @@
 /area/station/security/courtroom)
 "gcs" = (
 /obj/structure/fluff/tram_rail,
-/obj/structure/chair/sofa/bench/tram/left{
-	dir = 8
-	},
 /obj/structure/chair/sofa/bench/tram/left{
 	dir = 8
 	},
@@ -29533,7 +29528,6 @@
 	},
 /obj/effect/mapping_helpers/airlock/access/all/science/general,
 /obj/effect/turf_decal/tile/purple/fourcorners,
-/obj/structure/cable,
 /turf/open/floor/iron/white,
 /area/station/science/research)
 "iRV" = (
