@@ -39,7 +39,7 @@
 	category = CAT_ENTERTAINMENT
 
 /datum/crafting_recipe/papier_spider
-	name = "Cauldron Papier Mache"
+	name = "Spider Papier Mache"
 	result = /obj/item/decoration/halloween/spider
 	time = 6 SECONDS
 	tool_behaviors = list(TOOL_WIRECUTTER)
