@@ -2,7 +2,7 @@
 /obj/item/decoration/
 	name = "papier mache"
 	desc = "OOPS! Something went wrong. Report to delingar in Discord."
-	icon = 'tff_modular\modules\halloween-decor\halloween-decor.dmi'
+	icon = 'tff_modular/modules/halloween-decor/halloween-decor.dmi'
 	icon_state = "debug"
 	inhand_icon_state = null
 	throwforce = 0
