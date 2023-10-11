@@ -1,7 +1,7 @@
 import { Button, Stack } from '../../../../../../components';
 import { CheckboxInput, FeatureChoiced, FeatureChoicedServerData, FeatureDropdownInput, FeatureNumberInput, FeatureNumeric, FeatureToggle, FeatureValueProps } from '../../base';
 
-const FeatureBarkDropdownInput = (
+const FeatureBlooperDropdownInput = (
   props: FeatureValueProps<string, string, FeatureChoicedServerData>
 ) => {
   return (
@@ -12,7 +12,7 @@ const FeatureBarkDropdownInput = (
       <Stack.Item>
         <Button
           onClick={() => {
-            props.act('play_bark');
+            props.act('play_blooper');
           }}
           icon="play"
           width="100%"
@@ -23,34 +23,34 @@ const FeatureBarkDropdownInput = (
   );
 };
 
-export const bark_speech: FeatureChoiced = {
+export const blooper_speech: FeatureChoiced = {
   name: 'Character Voice',
-  component: FeatureBarkDropdownInput,
+  component: FeatureBlooperDropdownInput,
 };
 
-export const bark_speech_speed: FeatureNumeric = {
+export const blooper_speech_speed: FeatureNumeric = {
   name: 'Character Voice Speed',
   component: FeatureNumberInput,
 };
 
-export const bark_speech_pitch: FeatureNumeric = {
+export const blooper_speech_pitch: FeatureNumeric = {
   name: 'Character Voice Pitch',
   component: FeatureNumberInput,
 };
 
-export const bark_pitch_range: FeatureNumeric = {
+export const blooper_pitch_range: FeatureNumeric = {
   name: 'Character Voice Range',
   component: FeatureNumberInput,
 };
 
-export const hear_sound_bark: FeatureToggle = {
-  name: 'Enable bark hearing',
+export const hear_sound_blooper: FeatureToggle = {
+  name: 'Enable blooper hearing',
   category: 'SOUND',
   component: CheckboxInput,
 };
 
-export const send_sound_bark: FeatureToggle = {
-  name: 'Enable bark sending',
+export const send_sound_blooper: FeatureToggle = {
+  name: 'Enable blooper sending',
   category: 'SOUND',
   component: CheckboxInput,
 };

@@ -1,2 +1,2 @@
-GLOBAL_LIST_EMPTY(bark_list)
-GLOBAL_LIST_EMPTY(bark_random_list)
+GLOBAL_LIST_EMPTY(blooper_list)
+GLOBAL_LIST_EMPTY(blooper_random_list)

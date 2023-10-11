@@ -55,11 +55,11 @@
 	//SKYRAT EDIT END
 
 	//THE FLUFFY FRONTIER EDIT ADDITION BEGIN - Blooper
-	for(var/sound_bark_path in subtypesof(/datum/bark))
-		var/datum/bark/B = new sound_bark_path()
-		GLOB.bark_list[B.id] = sound_bark_path
+	for(var/sound_blooper_path in subtypesof(/datum/blooper))
+		var/datum/blooper/B = new sound_blooper_path()
+		GLOB.blooper_list[B.id] = sound_blooper_path
 		if(B.allow_random)
-			GLOB.bark_random_list[B.id] = sound_bark_path
+			GLOB.blooper_random_list[B.id] = sound_blooper_path
 	//THE FLUFFY FRONTIER EDIT END
 
 /// Inits GLOB.species_list. Not using GLOBAL_LIST_INIT b/c it depends on GLOB.string_lists
