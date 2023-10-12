@@ -8,3 +8,14 @@
 	category = list(
 		RND_CATEGORY_MECHFAB_CYBORG_MODULES + RND_SUBCATEGORY_MECHFAB_CYBORG_MODULES_ENGINEERING
 	)
+
+/datum/design/borg_upgrade_pinpointer
+	name = "Crew Pinpointer"
+	id = "borg_upgrade_pinpointer"
+	build_type = MECHFAB
+	build_path = /obj/item/borg/upgrade/pinpointer
+	materials = list(/datum/material/iron =HALF_SHEET_MATERIAL_AMOUNT, /datum/material/glass =SMALL_MATERIAL_AMOUNT*5)
+	construction_time = 12 SECONDS
+	category = list(
+		RND_CATEGORY_MECHFAB_CYBORG_MODULES + RND_SUBCATEGORY_MECHFAB_CYBORG_MODULES_MEDICAL
+	)

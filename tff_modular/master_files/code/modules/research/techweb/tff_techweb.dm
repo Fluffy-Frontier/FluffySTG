@@ -23,3 +23,20 @@
 		"mod_rpd_module",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+
+/datum/techweb_node/cyborg_electrical_welding_tool
+	id = "cyborg_welding_tool_electrical"
+	display_name = "Cyborg electrical welding tool"
+	prereq_ids = list("exp_tools", "cyborg_upg_engiminer")
+	design_ids = list(
+		"borg_electrical_welding_tool"
+	)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
+
+/datum/techweb_node/cyborg_electrical_welding_tool
+	id = "item_painter"
+	display_name = "Grimdye machine"
+	design_ids = list(
+		"itempainter"
+	)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 500)

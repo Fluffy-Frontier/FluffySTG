@@ -1,3 +1,7 @@
+/**
+ * Электрическая сварка
+ */
+
 /obj/item/weldingtool/borg_electrical
 	name = "electrical welding tool"
 	desc = "An experimental welding tool capable of welding functionality through the use of electricity. The flame seems almost cold."
@@ -14,7 +18,7 @@
 	var/powered = FALSE
 	max_fuel = 20
 
-/obj/item/weldingtool/borg_electrical/Initialize(mapload, var/mob/living/silicon/robot/connected_robot)
+/obj/item/weldingtool/borg_electrical/Initialize(mapload, mob/living/silicon/robot/connected_robot)
 	. = ..()
 	if(!connected_robot)
 		return INITIALIZE_HINT_QDEL
