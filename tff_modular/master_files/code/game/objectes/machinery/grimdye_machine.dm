@@ -65,12 +65,13 @@
 			user = user.client,\
 			allowed_configs = configs,\
 			starting_icon_state = initial(holding_item.icon_state),\
-			starting_config = initial(holding_item.greyscale_config)
+			starting_config = initial(holding_item.greyscale_config),\
+			starting_colors = initial(holding_item.greyscale_colors)\
 		)
 		active_ui = WEAKREF(color_menu)
 		return
 	to_chat(user, span_warning("No grayscale config found! running matrix mode."))
-	var/datum/color_matrix_editor/editor = new /datum/color_matrix_editor(user.client, in_atom)
+	var/datum/color_matrix_editor/editor = new /datum/color_matrix_editor(user.client, holding_item)
 	editor.wait()
 	editor.ui_interact(user.client)
 	active_ui = WEAKREF(editor)
@@ -83,8 +84,8 @@
 
 /obj/machinery/grimdye/proc/draw(obj/item/object_to_draw, mob/user)
 	if(active_ui)
-		var/handlet_ui = active_ui.resolve()
-		qdel(handlet_ui)
+		var/ui = active_ui.resolve()
+		qdel(ui)
 		active_ui = null
 	holding_item.forceMove(get_turf(src))
 	holding_item = null

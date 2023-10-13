@@ -15,9 +15,9 @@
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	atom_flags = PREVENT_CONTENTS_EXPLOSION_1
 	siemens_coefficient = 0
-	slowdown_inactive = 1
-	slowdown_active = 0.5
-	complexity_max = 17
+	slowdown_inactive = 1.5
+	slowdown_active = 1
+	complexity_max = 13
 	ui_theme = "nanotransen"
 	allowed_suit_storage = list(
 		/obj/item/construction/rcd,
@@ -55,14 +55,14 @@
 	)
 
 /datum/armor/mod_theme_rnd
-	melee = 10
-	bullet = 10
-	laser = 10
-	energy = 10
-	bomb = 90
+	melee = 5
+	bullet = 5
+	laser = 5
+	energy = 5
+	bomb = 100
 	bio = 100
 	fire = 100
-	acid = 90
+	acid = 100
 	wound = 10
 
 /obj/item/mod/control/rnd

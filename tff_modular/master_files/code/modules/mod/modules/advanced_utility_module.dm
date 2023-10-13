@@ -31,7 +31,7 @@
 /obj/item/mod/module/itemgive/on_use()
 	. = ..()
 	if(selected_item)
-		if(!detach(selected_item))
+		if(detach(selected_item))
 			return
 	var/list/opinions = list()
 	var/obj/item/pick
