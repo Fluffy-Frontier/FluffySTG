@@ -32590,8 +32590,7 @@
 /obj/effect/decal/cleanable/blood/gibs/old,
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/jungle/mook{
-	environment_smash = 0;
+/mob/living/basic/mining/mook{
 	name = "deformed creature"
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
@@ -36404,7 +36403,7 @@
 "lGa" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/canister_frame/machine/unfinished_canister_frame,
+/obj/structure/fluff/broken_canister_frame,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/plating,
@@ -42724,8 +42723,7 @@
 /obj/effect/decal/remains/human,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/mob/living/simple_animal/hostile/jungle/mook{
-	environment_smash = 0;
+/mob/living/basic/mining/mook{
 	name = "deformed creature"
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
