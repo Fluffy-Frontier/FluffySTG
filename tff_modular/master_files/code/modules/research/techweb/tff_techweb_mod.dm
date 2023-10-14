@@ -1,6 +1,6 @@
 /datum/techweb_node/mod_rnd
 	id = "mod_rnd"
-	display_name = "RND Modular Suits"
+	display_name = "MOD research and develop modular suits"
 	description = "RND modules and suits, provadet by Laplas anomalistic corporation."
 	prereq_ids = list("bluespace_travel", "mod_advanced", "adv_engi")
 	design_ids = list(
@@ -17,7 +17,7 @@
 	id = "advanced_mod_utility_modules"
 	display_name = "MOD advanced utility modules"
 	description = "Advanced utility modules for MOD suits. Designed by Laplas anomalistic and nanotransen."
-	prereq_ids = list("mod_advanced")
+	prereq_ids = list("mod_advanced", "adv_engi")
 	design_ids = list(
 		"mod_toolarms_module",
 		"mod_rpd_module",

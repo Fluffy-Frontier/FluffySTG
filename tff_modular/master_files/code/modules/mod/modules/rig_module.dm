@@ -61,4 +61,11 @@
 
 	return target_state
 
+/datum/mod_theme
+	inbuilt_modules = list(/obj/item/mod/module/rig_module)
+/datum/mod_theme/advanced
+	inbuilt_modules = list(/obj/item/mod/module/rig_module, /obj/item/mod/module/magboot/advanced)
+/datum/mod_theme/rescue
+	inbuilt_modules = list(/obj/item/mod/module/rig_module, /obj/item/mod/module/quick_carry/advanced)
+
 #undef MODULE_RIG_DEFAULT_NAME

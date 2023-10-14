@@ -104,6 +104,7 @@
 
 	overlay_state_inactive = "toolarm_module"
 	icon_state = "module_toolarm"
+	incompatible_modules = list(/obj/item/mod/module/itemgive/tool_arms)
 	items_to_give = list(
 		/obj/item/screwdriver/cyborg,
 		/obj/item/wrench/cyborg,
@@ -119,6 +120,7 @@
 	complexity = 2
 	icon_state = "module_pipe_dispanser"
 	items_to_give = list(/obj/item/pipe_dispenser/mod)
+	incompatible_modules = list(/obj/item/mod/module/itemgive/rpd)
 
 /obj/item/mod/module/itemgive/part_replacer
 	name = "MOD part replacer module"
@@ -126,6 +128,7 @@
 	complexity = 1
 	icon_state = "module_part_replacer"
 	items_to_give = list(/obj/item/storage/part_replacer/bluespace/mod)
+	incompatible_modules = list(/obj/item/mod/module/itemgive/part_replacer)
 
 /obj/item/mod/module/itemgive/experiscanner
 	name = "MOD research scaner module"
@@ -133,6 +136,7 @@
 	complexity = 1
 	icon_state = "module_research_scaner"
 	items_to_give = list(/obj/item/experi_scanner/mod)
+	incompatible_modules = list(/obj/item/mod/module/itemgive/experiscanner)
 
 /**
  * Предметы
