@@ -53,12 +53,13 @@
 	added_modifaer = max(0.5, mod.slowdown_active * 0.5)
 	mod.slowdown -= added_modifaer
 	mod.wearer.update_equipment_speed_mods()
+	mod.charge_drain = (mod.charge_drain * 2)
 
 /obj/item/mod/module/movemenet_effective/on_suit_deactivation(deleting)
 	. = ..()
 	mod.slowdown += added_modifaer
 	mod.wearer.update_equipment_speed_mods()
-
+	mod.charge_drain = initial(mod.charge_drain)
 /**
  * Модуль эффективности вмещения: увеличивает максимальное кол-во модулей, что можно установить, ценой отсуствия любого модуля хранения.
  */

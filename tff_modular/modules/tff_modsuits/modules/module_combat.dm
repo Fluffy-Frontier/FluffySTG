@@ -85,13 +85,13 @@
 /obj/item/mod/module/itemgive/mod_blade/on_install()
 	. = ..()
 	for(var/obj/item/melee/mod_blade/blade in items_to_give)
-		balde.mod = mod
+		blade.mod = mod
 
 
 /obj/item/mod/module/itemgive/mod_blade/on_uninstall(deleting)
 	. = ..()
 	for(var/obj/item/melee/mod_blade/blade in items_to_give)
-		balde.mod = null
+		blade.mod = null
 
 /obj/item/mod/module/itemgive/mod_blade/syndicate
 	name = "MOD armblade module"
