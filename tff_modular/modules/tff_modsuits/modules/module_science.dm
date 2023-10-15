@@ -22,3 +22,27 @@
 /obj/item/mod/module/core_rnd/on_suit_deactivation(deleting)
 	. = ..()
 	REMOVE_TRAIT(mod.wearer, TRAIT_REAGENT_SCANNER, REF(src))
+
+/**
+ * Модуль БРПЕД
+ */
+
+/obj/item/mod/module/itemgive/part_replacer
+	name = "MOD part replacer module"
+	desc = "A MOD module installed in users arm, gift a portable version of bluespace part replacer device."
+	complexity = 1
+	icon_state = "module_part_replacer"
+	items_to_give = list(/obj/item/storage/part_replacer/bluespace/mod)
+	incompatible_modules = list(/obj/item/mod/module/itemgive/part_replacer)
+
+/**
+ * Модуль исследовательского сканера
+ */
+
+/obj/item/mod/module/itemgive/experiscanner
+	name = "MOD research scaner module"
+	desc = "A MOD module installed in users arm, gift a portable version of research scaner."
+	complexity = 1
+	icon_state = "module_research_scaner"
+	items_to_give = list(/obj/item/experi_scanner/mod)
+	incompatible_modules = list(/obj/item/mod/module/itemgive/experiscanner)

@@ -46,9 +46,18 @@
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_ENGINEERING
 
+/datum/design/module/mod_module_shock_protect
+	name = "MOD shock protection module"
+	id = "mod_shock_protection_module"
+	materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 2, /datum/material/glass = SHEET_MATERIAL_AMOUNT * 1, /datum/material/uranium = SMALL_MATERIAL_AMOUNT * 5, /datum/material/silver = SMALL_MATERIAL_AMOUNT * 5)
+	build_path = /obj/item/mod/module/energy_effective
+	category = list(
+		RND_CATEGORY_MODSUIT_MODULES + RND_SUBCATEGORY_MODSUIT_MODULES_GENERAL
+	)
+
 /datum/design/module/mod_energy_effective
 	name = "MOD energy effective module"
-	id = "mod_rpd_module"
+	id = "mod_energy_eff_module"
 	materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 2, /datum/material/glass = SHEET_MATERIAL_AMOUNT * 1, /datum/material/uranium = SMALL_MATERIAL_AMOUNT * 5)
 	build_path = /obj/item/mod/module/energy_effective
 	category = list(
@@ -57,7 +66,7 @@
 
 /datum/design/module/mod_speed_effective
 	name = "MOD speed effective module"
-	id = "mod_rpd_module"
+	id = "mod_speed_eff_module"
 	materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 2, /datum/material/glass = SHEET_MATERIAL_AMOUNT * 1, /datum/material/diamond = SMALL_MATERIAL_AMOUNT * 5)
 	build_path = /obj/item/mod/module/movemenet_effective
 	category = list(
@@ -66,7 +75,7 @@
 
 /datum/design/module/mod_cc_effective
 	name = "MOD complexity effective module"
-	id = "mod_rpd_module"
+	id = "mod_cc_eff_module"
 	materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 2, /datum/material/glass = SHEET_MATERIAL_AMOUNT * 1, /datum/material/diamond = SMALL_MATERIAL_AMOUNT * 3)
 	build_path = /obj/item/mod/module/complexity_effective
 	category = list(
@@ -75,8 +84,8 @@
 
 /datum/design/module/sprinter
 	name = "MOD sprinter module"
-	id = "mod_rpd_module"
-	materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 3, /datum/material/glass = SHEET_MATERIAL_AMOUNT * 2, /datum/material/uranium = SMALL_MATERIAL_AMOUNT * 4, /datum/material/silver = SMALL_MATERIAL_AMOUNT * 4)
+	id = "mod_sprinter_module"
+	materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 1, /datum/material/glass = SHEET_MATERIAL_AMOUNT * 1, /datum/material/uranium = SMALL_MATERIAL_AMOUNT * 4, /datum/material/silver = SMALL_MATERIAL_AMOUNT * 4)
 	build_path = /obj/item/mod/module/sprinter
 	category = list(
 		RND_CATEGORY_MODSUIT_MODULES + RND_SUBCATEGORY_MODSUIT_MODULES_GENERAL

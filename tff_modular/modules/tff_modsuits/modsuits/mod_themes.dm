@@ -1,11 +1,3 @@
-/**
- * РнД МОД
- */
-
-/obj/item/mod/construction/plating/rnd
-	icon = 'tff_modular/master_files/icons/obj/mod.dmi'
-	theme = /datum/mod_theme/rnd
-
 /datum/mod_theme/rnd
 	name = "scientist"
 	desc = "An scientist-fit suit with heat, shock, fire and explosive resistance. Laplas anomalistic desing."
@@ -19,7 +11,7 @@
 	slowdown_inactive = 1
 	slowdown_active = 0.7
 	complexity_max = 15
-	ui_theme = "ntos"
+	ui_theme = "hackerman"
 	allowed_suit_storage = list(
 		/obj/item/construction/rcd,
 		/obj/item/pipe_dispenser,
@@ -92,24 +84,3 @@
 	fire = 100
 	acid = 100
 	wound = 10
-
-/obj/item/mod/control/rnd
-	worn_icon = 'tff_modular/master_files/icons/mob/clothing/modsuits/tff_mod.dmi'
-	icon = 'tff_modular/master_files/icons/obj/clothing/modsuits/mod_clothing.dmi'
-	icon_state = "rnd-control"
-	theme = /datum/mod_theme/rnd
-
-/obj/item/mod/control/pre_equipped/rnd
-	worn_icon = 'tff_modular/master_files/icons/mob/clothing/modsuits/tff_mod.dmi'
-	icon = 'tff_modular/master_files/icons/obj/clothing/modsuits/mod_clothing.dmi'
-	icon_state = "rnd-control"
-	theme = /datum/mod_theme/rnd
-	starting_frequency = MODLINK_FREQ_NANOTRASEN
-	applied_cell = /obj/item/stock_parts/cell/hyper
-	applied_modules = list(
-		/obj/item/mod/module/dna_lock,
-		/obj/item/mod/module/emp_shield,
-		/obj/item/mod/module/flashlight,
-		/obj/item/mod/module/storage/bluespace,
-		/obj/item/mod/module/tether,
-	)
