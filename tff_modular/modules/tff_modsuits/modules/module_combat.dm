@@ -20,7 +20,8 @@
 	var/datum/weakref/spear_ref
 
 /obj/item/mod/module/energy_spear/on_use()
-	..()
+	if(!..())
+		return
 	//Если прошлое копье еще существует(каким-то образом), останавливаем создание нового.
 	if(deployed)
 		mod.wearer.balloon_alert(mod.wearer, "Old spear exist!")
@@ -80,6 +81,17 @@
 		/obj/item/mod/module/itemgive/mod_blade,
 		/obj/item/mod/module/itemgive/mod_blade/syndicate,
 	)
+
+/obj/item/mod/module/itemgive/mod_blade/on_install()
+	. = ..()
+	for(var/obj/item/melee/mod_blade/blade in items_to_give)
+		balde.mod = mod
+
+
+/obj/item/mod/module/itemgive/mod_blade/on_uninstall(deleting)
+	. = ..()
+	for(var/obj/item/melee/mod_blade/blade in items_to_give)
+		balde.mod = null
 
 /obj/item/mod/module/itemgive/mod_blade/syndicate
 	name = "MOD armblade module"

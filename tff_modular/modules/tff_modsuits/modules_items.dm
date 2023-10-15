@@ -74,7 +74,7 @@
 	// Урон от альтернативной атаки.
 	var/alt_attack_force = 10
 	// Время перезарядки альтерантивной атаки.
-	var/alt_attack_cooldown = 3 SECONDS
+	var/alt_attack_cooldown = 5 SECONDS
 	COOLDOWN_DECLARE(cooldown_aoe)
 	// Цена по энергии для второстепенной атаки.
 	var/alt_attack_power_cost = 50
@@ -109,7 +109,11 @@
 		var/turf/turf = get_step(user_turf, turn(dir_to_target, i))
 		for(var/mob/living/living_target in turf)
 			if(user.Adjacent(living_target) && living_target.body_position != LYING_DOWN)
+				if(living_target == user)
+					user.balloon_alert(user, "Hurting self!")
+					break
 				living_target.apply_damage(alt_attack_force, BRUTE, attacking_item = src)
+	user.do_attack_animation(target, "slash", src, TRUE)
 	playsound(get_turf(user), 'tff_modular/master_files/sounds/anomaly_attack_slice.ogg', 40)
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
@@ -123,5 +127,4 @@
 	wound_bonus = 30
 	bare_wound_bonus = 30
 	alt_attack_force = 20
-	alt_attack_cooldown = 1 SECONDS
 	alt_attack_power_cost = 100
