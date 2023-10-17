@@ -252,6 +252,9 @@
   - bugfix: fixes gender shaping and height offsets on underwear
   - bugfix: female gender shaping now works with digi jumpsuits
   - bugfix: fixed rainbow jumpsuit digi sprite
+  HWSensum:
+  - rscadd: Added sanguirite recipe. It's made from salglu, phenol, carbon and water
+      (check in-game wiki!)
 2023-10-07:
   GoldenAlpharex:
   - bugfix: The round end report will no longer expose people's ckeys for the achievements
@@ -613,6 +616,8 @@
   - qol: Table flipping feedback is now in the form of balloon alerts
   - rscadd: Robo can now print standard and alien surgical tools
   - bugfix: Defibs now dont screw over organics if the user was robotic
+  delingar:
+  - rscadd: Added new Halloween-themed craftable decorations
 2023-10-13:
   Hatterhat:
   - bugfix: The CIN replicator medipen pouch and pocket first-aid kit no longer have
@@ -669,27 +674,167 @@
       as see a blurb in examine about it
   - rscadd: You can now buckle yourself to washing machines! This serves no practical
       purpose except for FUN TIMES.
+2023-10-14:
+  LT3:
+  - image: Nitrogen canisters are now yellow, antinob are grey/yellow, empty are grey,
+      hydrogen are red/white
+  Melbert:
+  - bugfix: Fixes Mauna Loa, Monover, Silibinin, Granibitaluri not exiting your system
+      on metabolism
+  - bugfix: Fixes holy water exiting your system at double the rate on metabolism
+  - bugfix: Holy Water no longer spams cultists with big text every time, it's much
+      more tame now
+  Rhials:
+  - rscadd: Two new psyker-oriented virtual domains -- Crate Chaos and Infected Domain.
+  - rscadd: Map helper for cyber-police corpse spawn.
+  - rscadd: Map helper for swapping the encrypted crate in an area with a random crate
+      from that same area.
+  - qol: You can now return to your old body after being summoned by a manifest rune.
+  - qol: You can now return to your old body after dying in CTF.
+  - qol: You can now return to your old body after dying in the Medisim Shuttle battle
+      area.
+  - qol: You can no longer suicide in CTF areas, for integrity purposes.
+  SkyratBot:
+  - bugfix: Space Dragons can now, once again, tear down walls and eat corpses. They
+      also have regained their special damage modifier when attacking mechs.
+  - bugfix: Pete's anger management training has worn off, and he will once again
+      sometimes pick a fight with you for absolutely no reason.
+  - qol: Attacking a goat will not spam messages so frequently.
+  - admin: VV can now display the contents of special byond lists like filters, or
+      client.images
+  - admin: VV on images now displays the image in the header
+  - admin: VV can now display filters and includes their type
+  - qol: apples can now be sliced
+  - bugfix: sqdl2 query readout displays location of turfs properly
+  - sound: laser2.ogg sound has been changed. Now laser carbine uses it.
+  - image: Laser carbine and orange laser sprite have been improved.
+  - bugfix: '"Mirror Walk" is once more the domain of the Maid in the Mirror rather
+      than "every heretic summon"'
+  - bugfix: Heretic mobs can once again survive space
+  - rscadd: targetting someone's arm with *slap now has a unique message
+  - bugfix: The crew is instructed to place fax machines properly in the center of
+      a table without hanging.
+  - bugfix: Modsuits can no longer be deepfried
+  - bugfix: Space Dragon can break walls, eat corpses and destroy mechs more efficiently
+      again
+  - bugfix: Player-controlled lavaland elites can once again return to their tumor
+      after winning their fight
+  TheSS13Melon:
+  - rscadd: Adds the Security Patrol Cap and Sol Police Helmet to the security vendor
+  - rscadd: Adds the Sol Police Helmet to /datum/supply_pack/security/helmets_skyrat
+  - rscdel: Removes redsec helmets from /datum/supply_pack/security/helmets_skyrat
+  nikothedude:
+  - bugfix: Experimental robotic tend wounds now actually shows up
+2023-10-15:
+  LT3:
+  - bugfix: Fixed moldies event default weight overriding the configured event weight
+  Melbert:
+  - qol: Leaning now has a small animation associated.
+  - qol: Cyborgs can now lean against walls.
+  - bugfix: Fixed some runtimes associated with leaning.
+  - bugfix: Fixed being able to lean while dead or in otherwise invalid states.
+  SkyratBot:
+  - bugfix: Fixes Monkey's Delight recipe
+  - refactor: Space Dragons are now basic mobs, please report any unexpected behaviour.
+  - balance: You can now see that a space dragon is destroying a wall with a visual
+      indicator of the wall being damaged.
+  - balance: Space Dragons can pry open airlocks.
+  - bugfix: makes the riot helmet hide hair like other sec helmets
+  - rscadd: Vent Pumps can now be overclocked, do some light reading in the air alarm
+      to figure out what this means.
+  - balance: Vent Pumps now have fan integrity, the damaging of which reduces their
+      ability to move air.
+  - sound: Overclocking sounds, including spool, stop, and loop
+  - balance: Allows spacemen to use age-appropriate drugs by making it so you can
+      now huff N2O to get high.
+  honkpocket:
+  - bugfix: fixed ghost bedsheet wearable being an error sprite on digitigrade legged
+      characters
+  vinylspiders:
+  - bugfix: fixed an issue that could cause the hair the layering option to reset
+      itself upon unequipping a paper mask
+  - qol: paper masks have an action button for adjusting the mask drawing + hair layering,
+      as well as the ability to hide the strap with ctrl click. changing the drawings
+      on the mask now require a pen.
+2023-10-16:
+  SkyratBot:
+  - bugfix: plumbing setups should(hopefully) no longer grind to a halt nor will overflow
+      with excess volume of reagents.
+  - code_imp: created defines for min & max ph. Improved some reaction_reagent code.
+      Made synthesizer dispensable reagent list values static to save memory.
+  - refactor: ph balancing mechanism for reaction chamber is significantly improved.
+      Optimized it's code overall
+  - refactor: examining each individual reagent will display their results back to
+      2 decimal places again and not 4 for easy readability.
+  - qol: Bladists can now use silver *or* titanium while creating their blades
+  - spellcheck: Broken canisters now have a description
+  - rscadd: Added Afro (Huge) hairstyle
+  Wallem:
+  - bugfix: The active sonar module won't attempt to create 6000000 new pings per
+      process cycle anymore
+  nikothedude:
+  - rscadd: The nobility dresscoat, donator reward for NikoTheGuyDude
 2023-10-17:
-  AnywayFarus:
-  - bugfix: Fixed auto-accent on 515
-  HWSensum:
-  - bugfix: fixed CQD holster sprite hiding.
-  - bugfix: holster now can be attached to any uniform.
-  - rscadd: Added new CQD holster.
-  - rscadd: Added sanguirite recipe. It's made from salglu, phenol, carbon and water
-      (check in-game wiki!)
-  Iajret:
-  - bugfix: several minor journey and kilo fixes
-  - bugfix: Some more fixes to journey and kilo
-  - bugfix: fixed several redsec reskins. Namely satchel, wintercoat, new bluesec
-      skirt and eyepatch reskins
-  Lazar:
-  - rscadd: New weak body quirk
-  - qol: New bluck to hand quirk
-  - balance: rebalanced teshari pounch damage and incoming damage
-  - sound: added/ teshari sounds and more GAS sounds
-  - image: added teshari MOD suits and modules iconds
-  - code_imp: changed human ride and human base code
-  - config: Added teshari new teshari to raundstart races, remove old
-  delingar:
-  - rscadd: Added new Halloween-themed craftable decorations
+  Fazzie:
+  - bugfix: Fixed the doors on the Beach away mission
+  - bugfix: Fixed the railings on the Beach away mission
+  - rscadd: The free golem ship has been swapped for a much better one, with fishing
+      equipment.
+  GoldenAlpharex:
+  - code_imp: Documented a huge part of telecommunications machinery and signal code,
+      and did some minor code improvements to said code.
+  - code_imp: Got rid of a few more single-letter variables. Only over six thousand
+      left to go, woo!
+  - bugfix: Hands of cards will now properly display the last card added to the hand
+      all the time, even when there's more than five cards in that hand.
+  LT3:
+  - bugfix: Fixed font scaling for announcements
+  - bugfix: The remaining survival pod bed on Icebox is now a medical bed
+  - bugfix: Announcement text now uses the intended CSS
+  - bugfix: Microwave will no longer get stuck turned on if a PDA has no cell
+  - bugfix: Silicons can no longer silently change the microwave between cook and
+      charge
+  Melbert:
+  - refactor: Refactored unarmed attacking mechanisms, this means dis-coordinated
+      humans will now bite people like monkeys (like how coordinated monkeys punch
+      people like humans?)
+  - refactor: Dis-coordinated humans smashing up machines now use their hands, rather
+      than their paws
+  Motho:
+  - sound: Plasmamen all across the sector have begun to announce their fright or
+      pain in a new way.
+  Paxilmaniac:
+  - image: A large number of security's clothing has been unified in color palette
+      and updated in style.
+  - rscdel: Some really old or unfitting security outfits, like the correction's officer's
+      weird hat and the unusued tactical peacekeeper jumpsuit have been removed.
+  RatFromTheJungle:
+  - qol: moves the self authentication device's bulky desc to an examine more, and
+      puts a shorter on in it's place.
+  SkyratBot:
+  - bugfix: Fixes a bug with the plasma flower core MODsuit that would cause a butterfly
+      murder scene wherever there were turrets
+  - sound: added sounds for scanning valued items with an export scanner
+  - bugfix: Delta's cargo bay has been connected to the atmos pipe networks
+  - bugfix: TGC Mana and Health bars are correctly offset on the holodeck.
+  - qol: Icebox Visitation now has a door connected to brig
+  - bugfix: Having all augmented limbs will make you properly spaceproof once again.
+  - bugfix: Androids are immune to crit damage again.
+  - bugfix: Surgery on robotic limbs can be canceled.
+  - code_imp: removed unnecessary calls to `update_total()`
+  - bugfix: Megafauna, lavaland elites, and abstract mobs now correctly cannot be
+      spawned by a toolbox of ash drake summoning
+  - bugfix: Fuel tanks are explosive again
+  - bugfix: TGUI Say should no longer flash during initialization
+  - bugfix: Fixes respiration-transmission advanced viruses to no longer have an always-guaranteed
+      infection chance per tick.
+  honkpocket:
+  - balance: The Bolt Pepperball AHG is now small sized instead of normal sized
+  jjpark-kb:
+  - rscadd: added the worm/ant farm
+  - balance: ash farming can be worm fertilized (same as regen core), but now only
+      does one harvest
+  - image: added the worm/ant farm, worm fertilizer
+  vinylspiders:
+  - bugfix: air alarm and mass driver controller in Voidraptor disposals room will
+      no longer overlap
