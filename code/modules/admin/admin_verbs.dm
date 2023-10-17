@@ -262,6 +262,10 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/reload_interactions,	/*SKYRAT EDIT ADDITION*/
 	/client/proc/test_area_spawner,		/*AUTOMAPPER - SKYRAT EDIT ADDITION*/
 	/client/proc/toggle_liquid_debug,	/*SKYRAT EDIT ADDITION*/
+
+	/datum/admins/proc/delay,			/*FLUFFY FRONTIER ADDITION - EVENTMAKER QOL*/
+	/datum/admins/proc/end_round,		/*FLUFFY FRONTIER ADDITION - EVENTMAKER QOL*/
+	/client/proc/adminchangemap, 		/*FLUFFY FRONTIER ADDITION - EVENTMAKER QOL*/
 	)
 GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, GLOBAL_PROC_REF(release)))
 GLOBAL_PROTECT(admin_verbs_possess)
