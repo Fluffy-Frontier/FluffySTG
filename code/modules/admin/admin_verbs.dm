@@ -265,8 +265,8 @@ GLOBAL_PROTECT(admin_verbs_debug)
 
 	/*FLUFFY FRONTIER ADDITION BEGIN - EVENTMAKER QOL*/
 	/datum/admins/proc/delay,
-	/datum/admins/proc/delay_round_end,
 	/datum/admins/proc/end_round,
+	/client/proc/adminchangemap,
 	/*FLUFFY FRONTIER EDIT END*/
 	)
 GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, GLOBAL_PROC_REF(release)))
