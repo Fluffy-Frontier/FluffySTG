@@ -135,7 +135,10 @@
 
 
 	else if(href_list["edit_shuttle_time"])
-		if(!check_rights(R_SERVER))
+		//FLUFFY FRONTIER CHANGE BEGIN - EVENTMAKER QOL
+		//if(!check_rights(R_SERVER)) - FLUFFY FRONTIER - ORIGINAL
+		if(!check_rights(R_ADMIN))
+		//FLUFFY FRONTIER CHANGE END
 			return
 
 		var/timer = input("Enter new shuttle duration (seconds):","Edit Shuttle Timeleft", SSshuttle.emergency.timeLeft() ) as num|null
