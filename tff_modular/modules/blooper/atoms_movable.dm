@@ -35,7 +35,7 @@
 /atom/movable/send_speech(message, range = 7, obj/source = src, bubble_type, list/spans, datum/language/message_language, list/message_mods = list(), forced = FALSE, tts_message, list/tts_filter)
 	. = ..()
 	var/list/listeners = get_hearers_in_view(range, source)
-	if(SEND_SIGNAL(src, COMSIG_MOVABLE_QUEUE_BLOOPER, listeners, args) || blooper || blooper_id)
+	if(blooper || blooper_id)
 		for(var/mob/M in listeners)
 			if(!M.client)
 				continue
@@ -68,7 +68,7 @@
 	var/list/listening = get_hearers_in_view(message_range, source)
 	var/is_yell = (say_test(message_raw) == "2")
 	//Listening gets trimmed here if a blooper blooper's present. If anyone ever makes this proc return listening, make sure to instead initialize a copy of listening in here to avoid wonkiness
-	if(SEND_SIGNAL(src, COMSIG_MOVABLE_QUEUE_BLOOPER, listening, args) || blooper || blooper_id)
+	if(blooper || blooper_id)
 		for(var/mob/M in listening)
 			if(!M.client)
 				continue

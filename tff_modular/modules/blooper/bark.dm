@@ -129,7 +129,7 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 
 /// It's was stoolen from Splurt build >:3
 /datum/blooper
-	var/name = "Default"
+	var/name = "None"
 	var/id = "Default"
 	var/soundpath
 
