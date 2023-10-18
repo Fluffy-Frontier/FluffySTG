@@ -221,6 +221,9 @@
   - bugfix: Fixed some weirdness with mould mob attacks.
   - qol: Mold mobs delete themselves on death.
 2023-10-06:
+  HWSensum:
+  - rscadd: Added sanguirite recipe. It's made from salglu, phenol, carbon and water
+      (check in-game wiki!)
   LT3:
   - image: Job icon for departmental guards, DS2 and other SR specific jobs are properly
       aligned
@@ -252,9 +255,6 @@
   - bugfix: fixes gender shaping and height offsets on underwear
   - bugfix: female gender shaping now works with digi jumpsuits
   - bugfix: fixed rainbow jumpsuit digi sprite
-  HWSensum:
-  - rscadd: Added sanguirite recipe. It's made from salglu, phenol, carbon and water
-      (check in-game wiki!)
 2023-10-07:
   GoldenAlpharex:
   - bugfix: The round end report will no longer expose people's ckeys for the achievements
@@ -612,12 +612,12 @@
       is over
   - bugfix: Getting to the Master level of the fishing skill now correctly gives you
       that slight helping hand to identify yet-to-be-caught fishes.
+  delingar:
+  - rscadd: Added new Halloween-themed craftable decorations
   nikothedude:
   - qol: Table flipping feedback is now in the form of balloon alerts
   - rscadd: Robo can now print standard and alien surgical tools
   - bugfix: Defibs now dont screw over organics if the user was robotic
-  delingar:
-  - rscadd: Added new Halloween-themed craftable decorations
 2023-10-13:
   Hatterhat:
   - bugfix: The CIN replicator medipen pouch and pocket first-aid kit no longer have
@@ -838,3 +838,81 @@
   vinylspiders:
   - bugfix: air alarm and mass driver controller in Voidraptor disposals room will
       no longer overlap
+2023-10-18:
+  Ghommie:
+  - bugfix: Fish analyzers can now be actually used for experiments.
+  HWSensum:
+  - qol: Eventmakers now able to change map, delay round start, manualy end rounds
+      and change shuttle arrival time!
+  LT3:
+  - image: Akula wetsuit now has a tail-less version
+  - refactor: Tram process/industrial lift refactored into transport subsystem
+  - refactor: Nanotrasen has traded in last year's tram for a new 2563 model!
+  - rscadd: Tram spoilers can be emagged to cause extra damage on collision
+  - rscadd: Tram can now be manually driven from the controller cabinet using TGUI
+  - rscadd: Tram floor tiles can be created using plastic sheets
+  - rscadd: Tram walls/floor tiles can be removed, repaired, and replaced
+  - rscadd: Tram frames (girder) can be created/placed using titanium sheets
+  - rscadd: Broken tram machinery causes crossing signals to malfunction
+  - rscadd: Ninja drain on tram controls will cause minor malfunction on other tram
+      components
+  - rscadd: Engineers can stop/start and disable the tram
+  - qol: Tram machinery now has context hints and examine text to indicate status
+  - qol: Tram remote no longer requires physically touching the tram before using
+  - code_imp: You can now construct furniture and other decorations on the tram
+  - code_imp: Tram electrocution is now a component, not a turf
+  - code_imp: Tram stats are now persistent between rounds and logged to feedback
+  - code_imp: Engineers can now end Tram Malfunction event early by repairing the
+      tram controller
+  - code_imp: Replacement tram machinery is researchable and buildable
+  - code_imp: Most tram machinery now performs auto configuration instead of hardcoded
+      map values
+  - code_imp: Tram remote can now set specific destinations
+  - code_imp: Tram actions/errors now create log entries
+  - balance: Tram base floor is no longer indestructible
+  - balance: Damaged energized tram plates have a chance to electrocute
+  - bugfix: Tram destination signs should no longer display incorrect emissive overlays
+  - bugfix: Tram crossing signals no longer turn amber before the tram starts moving
+  - image: Improved sprites for most tram components
+  - image: Removed all unused/duplicate tram icons from .dmis
+  - image: Colors are now consistent between status, tram, incident displays
+  - admin: Reset tram commands available to admins in the debug panel
+  - spellcheck: More announcement CSS fixes, now including light mode
+  MTandi:
+  - bugfix: Distilled drink quality is fixed - can't give a mood debuff anymore
+  Melbert:
+  - rscadd: Revenants can now use Ouija Boards
+  - rscadd: Ouija Boards now have more options to select from by default (and admins
+      can VV it to even more options)
+  - bugfix: Blind people are now worse at using Ouija Boards
+  - bugfix: You can punch yourself again
+  RaShCat:
+  - rscadd: our players got ability to make voices for their characters
+  - sound: added big pack of stolen sounds for the blooper
+  - admin: admins now can globally turn off the blooper
+  carlarctg:
+  - qol: 'Added slapcraft recipes for: Pillow suits, pillow helmets, bone and sinew
+      tailoring/weaponry, pipeguns, ghetto jetpacks, and pneumatic cannons.'
+  - code_imp: The base type of cowboy hats no longer looks and is named like a bounty
+      hunter hat, clarifying the recipe for the heroic laser musket. They need cowboy
+      hats not bounty hats.
+  - bugfix: Fixed an issue where if a slapcraft recipe required more than one instance
+      of its 'primary' slapcrafting item, it wouldn't show the additional instance
+      when examining its recipes.
+  dawsonkeyes:
+  - balance: random roll contractors now start with zero telecrystals instead of thirteen
+  ninjanomnom:
+  - admin: Invisimin can now be used on mobs that are already invisible, whether through
+      temporary or permanent effects.
+  - bugfix: Monkeyize/Humanize mob transformations no longer permanently reveal invisible
+      mobs if they had effects making them invisible otherwise.
+  - bugfix: Objects with the undertile element that have been made invisible through
+      other means are no longer revealed by being uncovered.
+  vinylspiders:
+  - bugfix: being killed or ghosting while being scoped will no longer cause the cursor
+      offset to persist in a bugged state
+  - bugfix: '"line snapped" and "rod dropped" balloon alerts will now display when
+      they are supposed to while fishing'
+  - bugfix: fixed runtime caused by simple mobs AttackingTarget() missing an arg
+  - bugfix: fixes a tgui bluescreen bug with the bank account console that can occur
+      when there is bad bank account data
