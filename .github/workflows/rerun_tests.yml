@@ -1,4 +1,4 @@
-name: Rerun/Report Flaky Tests
+name: Rerun Tests
 on:
   workflow_run:
     workflows: [CI Suite]
