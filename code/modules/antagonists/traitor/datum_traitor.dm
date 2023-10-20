@@ -52,7 +52,7 @@
 	// Progression elements are best left to the roundstart antagonists
 	// There will still be a timelock on uplink items
 	name = "\improper Infiltrator"
-	give_secondary_objectives = FALSE
+	//give_secondary_objectives = FALSE //FLUFFY FRONTIER REMOVAL - Трейторы всё же должны иметь побочки.
 
 /datum/antagonist/traitor/infiltrator/sleeper_agent
 	name = "\improper Syndicate Sleeper Agent"
