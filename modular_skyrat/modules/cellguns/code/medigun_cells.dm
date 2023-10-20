@@ -411,7 +411,7 @@
 	name = "hardlight surgical gown field"
 
 /obj/projectile/energy/medical/utility/gown/on_hit(mob/living/target, blocked = 0, pierce_hit)
-  	. = ..()
+	. = ..()
 	if(!istype(target, /mob/living/carbon/human)) //Dead check isn't fully needed, since it'd be reasonable for this to work on corpses.
 		return
 
