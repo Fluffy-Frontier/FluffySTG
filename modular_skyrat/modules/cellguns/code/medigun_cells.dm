@@ -367,7 +367,12 @@
 /obj/projectile/energy/medical/utility/clotting
 	name = "clotting agent shot"
 
+<<<<<<< HEAD
 /obj/projectile/energy/medical/utility/clotting/on_hit(mob/living/target)
+=======
+/obj/projectile/energy/medical/utility/clotting/on_hit(mob/living/target, blocked = 0, pierce_hit)
+	. = ..()
+>>>>>>> 27d894493 ([MIRROR] Makes supermatter charged singularity damage the eyes of viewers [MDB IGNORE] (#24451))
 	if(!IsLivingHuman(target))
 		return FALSE
 
@@ -386,7 +391,12 @@
 /obj/projectile/energy/medical/utility/temperature
 	name = "temperature adjustment shot"
 
+<<<<<<< HEAD
 /obj/projectile/energy/medical/utility/temperature/on_hit(mob/living/target)
+=======
+/obj/projectile/energy/medical/utility/temperature/on_hit(mob/living/target, blocked = 0, pierce_hit)
+	. = ..()
+>>>>>>> 27d894493 ([MIRROR] Makes supermatter charged singularity damage the eyes of viewers [MDB IGNORE] (#24451))
 	if(!IsLivingHuman(target))
 		return FALSE
 
@@ -408,7 +418,12 @@
 /obj/projectile/energy/medical/utility/gown
 	name = "hardlight surgical gown field"
 
+<<<<<<< HEAD
 /obj/projectile/energy/medical/utility/gown/on_hit(mob/living/target)
+=======
+/obj/projectile/energy/medical/utility/gown/on_hit(mob/living/target, blocked = 0, pierce_hit)
+	. = ..()
+>>>>>>> 27d894493 ([MIRROR] Makes supermatter charged singularity damage the eyes of viewers [MDB IGNORE] (#24451))
 	if(!istype(target, /mob/living/carbon/human)) //Dead check isn't fully needed, since it'd be reasonable for this to work on corpses.
 		return
 
@@ -438,7 +453,7 @@
 /obj/projectile/energy/medical/utility/salve/on_hit(mob/living/target)
 	if(!IsLivingHuman(target)) //No using this on the dead or synths.
 		return FALSE
-	. = ..()
+	return ..()
 
 //Hardlight Rollerbed Medicell
 /obj/item/ammo_casing/energy/medical/utility/bed
