@@ -20,7 +20,7 @@
 	name = "oxygen heal shot"
 	var/amount_healed = 10
 
-/obj/projectile/energy/medical/oxygen/on_hit(mob/living/target)
+/obj/projectile/energy/medical/oxygen/on_hit(mob/living/target, blocked = 0, pierce_hit)
 	. = ..()
 	if(!IsLivingHuman(target))
 		return FALSE
@@ -145,7 +145,7 @@
 	var/max_clone = 2/3
 	var/base_disgust = 3
 
-/obj/projectile/energy/medical/brute/on_hit(mob/living/target)
+/obj/projectile/energy/medical/brute/on_hit(mob/living/target, blocked = 0, pierce_hit)
 	. = ..()
 	healBrute(target, amount_healed, max_clone, base_disgust)
 
@@ -162,7 +162,7 @@
 	var/max_clone = 2/3
 	var/base_disgust = 3
 
-/obj/projectile/energy/medical/burn/on_hit(mob/living/target)
+/obj/projectile/energy/medical/burn/on_hit(mob/living/target, blocked = 0, pierce_hit)
 	. = ..()
 	healBurn(target, amount_healed, max_clone, base_disgust)
 
@@ -177,7 +177,7 @@
 	icon_state = "green_laser"
 	var/amount_healed = 5
 
-/obj/projectile/energy/medical/toxin/on_hit(mob/living/target)
+/obj/projectile/energy/medical/toxin/on_hit(mob/living/target, blocked = 0, pierce_hit)
 	. = ..()
 	healTox(target, amount_healed)
 
@@ -191,7 +191,7 @@
 	var/amount_healed = 7.5
 	var/base_disgust = 3
 
-/obj/projectile/energy/medical/safe/brute/on_hit(mob/living/target)
+/obj/projectile/energy/medical/safe/brute/on_hit(mob/living/target, blocked = 0, pierce_hit)
 	. = ..()
 	safeBrute(target, amount_healed, base_disgust)
 
@@ -204,7 +204,7 @@
 	var/amount_healed = 7.5
 	var/base_disgust = 3
 
-/obj/projectile/energy/medical/safe/burn/on_hit(mob/living/target)
+/obj/projectile/energy/medical/safe/burn/on_hit(mob/living/target, blocked = 0, pierce_hit)
 	. = ..()
 	safeBurn(target, amount_healed, base_disgust)
 
@@ -328,7 +328,7 @@
 	name = "powerful toxin heal shot"
 	amount_healed = 10
 
-/obj/projectile/energy/medical/upgraded/toxin3/on_hit(mob/living/target)
+/obj/projectile/energy/medical/upgraded/toxin3/on_hit(mob/living/target, blocked = 0, pierce_hit)
 	. = ..()
 	healTox(target, 10)
 
@@ -367,12 +367,8 @@
 /obj/projectile/energy/medical/utility/clotting
 	name = "clotting agent shot"
 
-<<<<<<< HEAD
-/obj/projectile/energy/medical/utility/clotting/on_hit(mob/living/target)
-=======
 /obj/projectile/energy/medical/utility/clotting/on_hit(mob/living/target, blocked = 0, pierce_hit)
-	. = ..()
->>>>>>> 27d894493 ([MIRROR] Makes supermatter charged singularity damage the eyes of viewers [MDB IGNORE] (#24451))
+  . = ..()
 	if(!IsLivingHuman(target))
 		return FALSE
 
@@ -391,12 +387,8 @@
 /obj/projectile/energy/medical/utility/temperature
 	name = "temperature adjustment shot"
 
-<<<<<<< HEAD
-/obj/projectile/energy/medical/utility/temperature/on_hit(mob/living/target)
-=======
 /obj/projectile/energy/medical/utility/temperature/on_hit(mob/living/target, blocked = 0, pierce_hit)
-	. = ..()
->>>>>>> 27d894493 ([MIRROR] Makes supermatter charged singularity damage the eyes of viewers [MDB IGNORE] (#24451))
+. = ..()
 	if(!IsLivingHuman(target))
 		return FALSE
 
@@ -418,12 +410,8 @@
 /obj/projectile/energy/medical/utility/gown
 	name = "hardlight surgical gown field"
 
-<<<<<<< HEAD
-/obj/projectile/energy/medical/utility/gown/on_hit(mob/living/target)
-=======
 /obj/projectile/energy/medical/utility/gown/on_hit(mob/living/target, blocked = 0, pierce_hit)
-	. = ..()
->>>>>>> 27d894493 ([MIRROR] Makes supermatter charged singularity damage the eyes of viewers [MDB IGNORE] (#24451))
+  . = ..()
 	if(!istype(target, /mob/living/carbon/human)) //Dead check isn't fully needed, since it'd be reasonable for this to work on corpses.
 		return
 
@@ -450,7 +438,7 @@
 	embedding = list("embed_chance" = 100, ignore_throwspeed_threshold = TRUE, "pain_mult" = 0, "jostle_pain_mult" = 0, "fall_chance" = 0)
 	damage = 0
 
-/obj/projectile/energy/medical/utility/salve/on_hit(mob/living/target)
+/obj/projectile/energy/medical/utility/salve/on_hit(mob/living/target, blocked = 0, pierce_hit)
 	if(!IsLivingHuman(target)) //No using this on the dead or synths.
 		return FALSE
 	return ..()
@@ -464,7 +452,7 @@
 /obj/projectile/energy/medical/utility/bed
 	name = "hardlight bed field"
 
-/obj/projectile/energy/medical/utility/bed/on_hit(mob/living/target)
+/obj/projectile/energy/medical/utility/bed/on_hit(mob/living/target, blocked = 0, pierce_hit)
 	. = ..()
 
 	if(!istype(target, /mob/living/carbon/human)) //Only checks if they are human, it would make sense for this to work on the dead.
@@ -491,7 +479,7 @@
 /obj/projectile/energy/medical/utility/body_teleporter
 	name = "bluespace transportation field"
 
-/obj/projectile/energy/medical/utility/body_teleporter/on_hit(mob/living/target)
+/obj/projectile/energy/medical/utility/body_teleporter/on_hit(mob/living/target, blocked = 0, pierce_hit)
 	. = ..()
 
 	if(!ishuman(target) || (target.stat != DEAD && !HAS_TRAIT(target, TRAIT_DEATHCOMA)))
@@ -626,7 +614,7 @@
 	grace_period = TRUE
 	access_teleporting = TRUE
 
-/obj/projectile/energy/medical/utility/relocation/on_hit(mob/living/target)
+/obj/projectile/energy/medical/utility/relocation/on_hit(mob/living/target, blocked = 0, pierce_hit)
 	. = ..()
 
 	if(!ishuman(target))

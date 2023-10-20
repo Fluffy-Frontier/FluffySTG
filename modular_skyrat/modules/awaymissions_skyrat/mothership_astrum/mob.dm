@@ -121,10 +121,6 @@
 	attack_verb_continuous = "attacks"
 	attack_verb_simple = "attack"
 
-<<<<<<< HEAD
-/mob/living/simple_animal/hostile/megafauna/hierophant/astrum/bullet_act(obj/projectile/bullet)
-	apply_damage(bullet.damage, bullet.damage_type) // no damage reduction
-=======
 /mob/living/simple_animal/hostile/megafauna/hierophant/astrum/bullet_act(obj/projectile/hitting_projectile, def_zone, piercing_hit = FALSE)
 	. = ..()
 	if(. != BULLET_ACT_HIT)
@@ -134,7 +130,6 @@
 		return
 
 	apply_damage(hitting_projectile.damage, hitting_projectile.damage_type) // no damage reduction
->>>>>>> 27d894493 ([MIRROR] Makes supermatter charged singularity damage the eyes of viewers [MDB IGNORE] (#24451))
 
 /mob/living/simple_animal/hostile/megafauna/hierophant/astrum/death(gibbed)
 	spawn_gibs()
