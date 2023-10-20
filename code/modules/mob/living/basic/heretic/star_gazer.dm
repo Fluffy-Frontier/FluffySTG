@@ -78,14 +78,9 @@
 
 /datum/ai_controller/basic_controller/star_gazer
 	blackboard = list(
-<<<<<<< HEAD
-		BB_TARGETTING_DATUM = new /datum/targetting_datum/basic/star_gazer(),
-		BB_PET_TARGETTING_DATUM = new /datum/targetting_datum/not_friends/attack_closed_turfs(),
-=======
 		BB_TARGETTING_DATUM = new /datum/targetting_datum/basic,
 		BB_TARGET_MINIMUM_STAT = HARD_CRIT,
 		BB_PET_TARGETTING_DATUM = new /datum/targetting_datum/basic/not_friends/attack_closed_turfs,
->>>>>>> 6e2fcee00 ([MIRROR] Basic Constructs: Artificer [MDB IGNORE] (#24456))
 	)
 
 	ai_movement = /datum/ai_movement/basic_avoidance
