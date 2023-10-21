@@ -377,6 +377,10 @@
   vinylspiders:
   - bugfix: greyscale color selection menu is now working again in the loadout prefs
       menu
+  AnywayFarus:
+  - bugfix: Fixed auto-accent on 515
+  Iajret:
+  - bugfix: several minor journey and kilo fixes
 2023-08-09:
   Fazzie:
   - qol: 'Many changes in Birdshot''s Library.
@@ -1229,3 +1233,261 @@
       and they actually work now
   - qol: Janitors and Shaft Miners start with the ExperTrak Skill Tracker preinstalled
       on their PDAs.
+2023-08-26:
+  Guillaume Prata:
+  - qol: Medical Kiosk now have their wand removed with a right click, got new screentips
+      and have a few of its chat messages turned into balloon alerts.
+  Nerev4r & Zydras:
+  - image: Adds messenger bags to character setup and drobes/lockers!
+  Skyrat:
+  - rscdel: Removed the meteors and space dust emergency shuttle events
+  SkyratBot:
+  - admin: The "HREF Dock Exploit" message should now contain a bit more usable information
+      (such as a jump link) so you can investigate if something is really going wacky
+      with shuttles.
+  - bugfix: You should be able to click on lattices on icebox with the RCD and construct
+      a floor now
+  - refactor: fixed a bunch of instances of callbacks being qdeleted and cleaned up
+      related code
+  - bugfix: regal rats now run away from whoever attacked them
+  - rscadd: new pet behavior which makes pets defend their owners if they got attacked
+  - bugfix: You should no longer attack RCD effects when they're done constructing.
+  - qol: Messenger bags can be crafted with 4 cloth.
+  - bugfix: fixed apocalypse rune applying invisibility to mobs.
+  - bugfix: Unholy water preview icon is now similar with the icon it has.
+  - rscdel: Removes miscellaneous sources of clone damage from the game.
+  - balance: removes the access restrictions from all animals found under the livestocks
+      tab of the cargo order console, now assistants can private order animals for
+      their farms without access hunting
+  distributivgesetz:
+  - rscadd: Replaces decloning clone damage with a strike system that you can replenish
+      with Mutadone.
+  - bugfix: The decloning virus is curable with rezadone again.
+  tf-4:
+  - spellcheck: Fixed examine text for gemital.
+  Iajret:
+  - bugfix: Some more fixes to journey and kilo
+  - bugfix: fixed several redsec reskins. Namely satchel, wintercoat, new bluesec
+      skirt and eyepatch reskins
+  Lazar:
+  - rscadd: New weak body quirk
+  - qol: New bluck to hand quirk
+  - balance: rebalanced teshari pounch damage and incoming damage
+  - sound: added/ teshari sounds and more GAS sounds
+  - image: added teshari MOD suits and modules iconds
+  - code_imp: changed human ride and human base code
+  - config: Added teshari new teshari to raundstart races, remove old
+2023-08-27:
+  GoldenAlpharex:
+  - bugfix: Fixes the recycler being able to grind the server to a halt by trying
+      to recycle the same sheet worth of material over and over and over again.
+  SkyratBot:
+  - bugfix: Watchers won't retain an ethereal outline of their wings hovering over
+      their dead body.
+  - balance: Railings now only cost 2 rods and are much easier to construct. But they
+      can now be destroyed much easier and cut with wirecutters without unwrenching.
+  - bugfix: Borgs no longer get permastunned by emotes
+  - bugfix: Borg hud should not fuck up in few situations
+  - rscadd: Adds a syndicate AI card for nuke ops. Costs 12 TC, can be refunded. Activating
+      it in-hand opens up a ghost poll like normal reinforcements. Base interaction
+      range for syndicate AIs is one, which means they can handle electronics only
+      in proximity.
+  - rscadd: Adds a syndicate AI interaction range upgrade for nuke ops, costs 4 TC
+      and can be applied onto a syndicate AI (inside any container) to increase its
+      interaction range by two per. (Three purchases are recommended for seven tiles
+      of range!)
+  - bugfix: greyscale colors will now update on the mob when modifying them via the
+      VV menu
+  - bugfix: the coroner medkit can now hold every item it spawns with
+  - bugfix: multitool can be used on APC/Teslacoil/SMES/emitter if it has exposed
+      wires.
+  - bugfix: Light eaters can no longer be eaten by their higher-grade brothers, the
+      trash eaters. (recyclers)
+  - spellcheck: Fixed a spelling error with the daps emote.
+  - bugfix: Ops wanting to get the CQC kit will actually get given the kit, and not
+      just the CQC book.
+  - bugfix: Fixed the double-barreled shotgun not working properly
+  - qol: Icebox monsters no longer spawn close enough to aggro Lia at round start
+  - rscadd: 'Gave snow legions a separate corpse-drop pool: ash walkers excluded,
+      but eskimos included.'
+  - qol: inserting new high luminosity eyes will now properly remember the previous
+      eyes' color and default to that initially
+  - bugfix: quartermasters get their voice of god power boost correctly
+  - qol: The Achievements UI now shows how many people have unlocked a given achievement.
+  - bugfix: The "Skills" Category for achievements should no longer be hidden.
+  - bugfix: zipping a duffle bag closes the UI of all storage items opened inside
+      it
+  TheSS13Melon:
+  - qol: Adds the Emergency Tether to Engineering Modsuits
+  vinylspiders:
+  - bugfix: fixed a bug that could cause the altar's religion selection ui to bug
+      out if a previous chaplain left via cryo without selecting a religion themselves.
+2023-08-28:
+  Guillaume Prata:
+  - bugfix: Unary vents have a pressure cap on both their pressuring and siphoning
+      mode now, preventing the bypass trick of putting "infinite" pressure on tiles/pipelines.
+  - balance: Overclocked Volume Pumps do not have a pressure cap anymore.
+  LT3:
+  - bugfix: Using an airlock painter on a GAGS airlock works properly
+  - bugfix: Tram will no longer fly off into space when admins try to reset the contents
+  Paxilmaniac:
+  - balance: heads of security are no longer given a gk-18 in their backpack on spawn,
+      instead being given a hybrid energy gun to hold them over until they reach the
+      already quite strong weapons in their locker.
+  SkyratBot:
+  - rscadd: New rotator disposal pipe.
+  - bugfix: Flipped transit tube stations are now accessible in the RPD again.
+  - image: New rotator disposal pipe sprite.
+  - bugfix: Fixed an issue with the "recolor from string" option in the greyscale
+      modify menu that resulted in invisible icons.
+  - qol: Stabilized yellow slime extracts no longer spam a message every charge pulse
+      (but examining characters will still show that it's active).
+  - bugfix: Fixed Phazon construction message typo
+  - qol: Crafting menu "Can Make" category shows complex recipes first.
+  - bugfix: Woundscans no longer runtime
+  - bugfix: Normal health analyzers can no longer give the first aid bonus when woundscanning
+  - bugfix: after a long 6 years, alien alloy once again unlocks the Alien Technology
+      node (the one that lets you print alien alloy)
+  - qol: rats no longer spawn on multiz cable hubs
+  - bugfix: fixes a runtime with arrow projectiles
+  - bugfix: You can't use the bioscrambler belt to turn yourself into a changeling.
+  - qol: Display case chassis now uses balloon alerts, screentips, examine hints,
+      etc. Basically, the construction steps are more visible to players.
+  - rscadd: Added associative list variables and associative list variable manipulation
+      for finer data manipulation and storage.
+  - rscadd: List Find components will now return the index of the element it has found.
+  - code_imp: fixed some typos
+  - bugfix: fixed corn cobs not making seeds and lying to you in the text box.
+  - bugfix: Big fuel tanks' capacity is back to 5000.
+  Stalkeros for code, nzzy and Zydras for the sprites, Juniper for descriptions:
+  - rscadd: Proto-NRI/CIN food (and not only food) replicator
+  - rscdel: Green IRP-B (or whatever it was idk idc) NRI MRE, replaced with a new
+      unique one.
+  distributivgesetz:
+  - rscadd: Add an achievement for saving a cascading engine from the final countdown.
+  - balance: Damaging synchronous mesh blobs now incorporates damage resistance of
+      other blob structures when dealing shared damage to those nearby.
+2023-08-29:
+  Iajret:
+  - bugfix: changed contractor's modlink frequency to syndicate
+  LT3:
+  - balance: Pre-equipped engineering modsuit now includes emergency tether
+  - balance: Pre-equipped atmospherics modsuit now includes magboots
+  SkyratBot:
+  - bugfix: mobs do not get stuck when running away from danger
+  - bugfix: Quartermaster's Overcoat and Cargo's gorka can now hold stamps in their
+      suit slots, just like their winter coat counterpart
+  - bugfix: Made it easier to place tiles on multi z level holes
+  - rscadd: The Lavaland Cursed Slot Machine of Greed suddenly seems a lot more sinister...
+  - refactor: Instead of taking clone damage from the cursed slot machine, you now
+      get a status effect with a number of curses associated with it. There's some
+      interesting florid language associated with the status effect as a nicety until
+      your eventual gibbing from chasing that prize.
+  - bugfix: Non-surgically debraining someone no longer makes their brain unusuable
+  - bugfix: Items worn on a void cloak's suit storage are no longer visible on the
+      stripping menu.
+  - qol: Misclicking the turf below a heretic influence no longer leaves a fingerprint.
+  - bugfix: Railings no longer give more metal than they take
+  - bugfix: roundstart modlink scryers now come with the nt frequency
+  softcerv:
+  - bugfix: Skyrat species now use the new TG non-human pay modifier
+2023-08-30:
+  GoldenAlpharex:
+  - refactor: Refactored the player ranks system to separate the legacy file-based
+      system from a new SQL-based system, allowing the various systems to be interacted
+      with far easier outside of the game.
+  - refactor: Player ranks are now working off of a subsystem, rather than being completely
+      disjointed, making it easier to interface with. If you're having issues with
+      your Donator status, simply reconnect and that should fix it!
+  - config: Added three separate configs for forcing the usage of the legacy Donator,
+      Mentor and Veteran systems, defaulting to on (so this should hopefully not change
+      anything on servers that have not done any migration yet).
+  Seven:
+  - bugfix: Syndicate ranged mobs (and probably other basic mobs) properly update
+      their shell's description to show they are spent.
+  SkyratBot:
+  - qol: The coroner can now store scythes in their labcoat and winter coat suit storage.
+      Ask not for whom the bell tolls...
+  - image: progress bars and cleaning particles are now centered on the tile occupied
+      by the target, if it is a big sprite
+  - qol: Various jobs have gotten additional programs uploaded at roundstart, engineers
+      now have the canary and atmospheric scanner programs, atmospheric technicians
+      now have the supermatter monitor, and Robotisists/RDs now have the silliconnect
+      program.
+  - bugfix: Ash drakes, colossi, and Bubblegum spawn on Lavaland more often; a sharp
+      increase from the previous bugged amount of "basically never".
+  zydras:
+  - rscadd: Added a set of new donator items
+  - rscdel: Removed older, unused (and broken) donator items
+2023-08-31:
+  Guillaume Prata:
+  - qol: The "You can't move while buckled to X" is now a balloon alert instead of
+      a to_chat message. Hopefully we all get buckle stuck processing why our inputs
+      are not working less often for now on.
+  Ldip999:
+  - qol: Space hotel and Tarkon now comes with range ovens
+  Motho:
+  - rscadd: MODLink Scryer necklaces are now available in the loadout.
+  Paxilmaniac:
+  - qol: When ordering multiple items with a personal account or with a department
+      budget, all of those items will arrive in the same container, case or crate
+      depending on the number of items.
+  - balance: Company imports companies no longer need to be purchased
+  - balance: Company interest no longer exists at all
+  - balance: Company import items cannot run out of stock anymore
+  - balance: Company import items are overall significantly cheaper than they used
+      to be
+  - balance: Some items in company imports have either been added, removed, or tweaked
+      in nearly all companies due to not quite fitting anymore, or missing where I
+      felt they should have been. Most of the removed items are comically easy to
+      attain or otherwise useless and were only there to raise interest before, but
+      now that interest is gone they are not necessary.
+  - bugfix: Cyborgs can use company imports to order things off of the cargo budget
+      now
+  - image: Added a new wooden box sprite for import items that come from the cargo
+      budget, to prevent infinite money generation at the same time
+  ReezeBL:
+  - image: added 2 ear's sprites and 1 snout's sprite
+  Shadow-Quill:
+  - spellcheck: Fixed the ] appearing in cryopod action text.
+  SkyratBot:
+  - bugfix: autolathe prints the correct amount of stacks and merges it with existing
+      stacks on the turf
+  - bugfix: autolathe takes constant time when printing stacks
+  - code_imp: autolathe will attempt to award you the "getting an upgrade" award only
+      once when printing multiple items & updates UI immediately
+  - sound: Unlocking an achievement now plays a sound by default. You can change it
+      in the Sound category of the game preferences.
+  - bugfix: Compact fishing toolboxes no longer break space and time to contain any
+      normal-sized object. Instead, they only break space and time to contain fishing
+      rods. Settlers migrating to Nanotrasen space have no reasonable explanation
+      for this phenomenon.
+  - refactor: sheets are merged in a better way when ejected from machines & material
+      related stuff
+  - bugfix: Probital overdose no longer causes plasmamen and other inorganics to receive
+      the longest nap in their lives.
+  - bugfix: Changed icebox permabrig door type to be correct
+  - bugfix: Fixes Star Gazer getting buckled
+  - image: Removes Star Gazer alpha pixels
+  - bugfix: fixed skeleton wings not being visible from behind while closed
+  - bugfix: Space heaters no longer give extra cells when deconstructed
+  - bugfix: rcd can build wallmounts on reinforced walls
+  - qol: rcd can build directional windows without requiring/building a grill
+  Stalkeros:
+  - rscadd: NRI cops antag datum.
+  - rscdel: Removes green NRI armor vest and helmet, heavy variants included.
+  Stalkeros, Motho for the sound:
+  - sound: New unique sound for the operational status readout module.
+  SyncIt21:
+  - bugfix: autolathe prints the correct amount of stacks and merges it with existing
+      stacks on the turf
+  - bugfix: 'autolathe takes constant time when printing stacks code: autolathe will
+      attempt to award you the "getting an upgrade" award only once when printing
+      multiple items & updates UI immediately'
+  YakumoChen:
+  - bugfix: Made it less trivial for snailpeople to crawl around at meth speeds.
+  larentoun:
+  - refactor: Moves cargo supply edits to master_files, company imports ui_act to
+      master_files
+  olirant:
+  - rscadd: 1 donator plush

@@ -1,22 +1,21 @@
-## Skyrat 13 (/tg/station Downstream)
+## Fluffy STG (Skyrat & /tg/station Downstream)
 
-[![CI Suite](https://github.com/Skyrat-SS13/Skyrat-tg/workflows/CI%20Suite/badge.svg)](https://github.com/Skyrat-SS13/Skyrat-tg/actions?query=workflow%3A%22CI+Suite%22)
-[![Percentage of issues still open](https://isitmaintained.com/badge/open/Skyrat-SS13/Skyrat-tg.svg)](https://isitmaintained.com/project/Skyrat-SS13/Skyrat-tg "Percentage of issues still open")
-[![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/Skyrat-SS13/Skyrat-tg.svg)](https://isitmaintained.com/project/Skyrat-SS13/Skyrat-tg "Average time to resolve an issue")
-![Coverage](https://img.shields.io/codecov/c/github/Skyrat-SS13/Skyrat-tg)
+[![CI Suite](https://github.com/Fluffy-Frontier/FluffySTG/workflows/CI%20Suite/badge.svg)](https://github.com/Fluffy-Frontier/FluffySTG/actions?query=workflow%3A%22CI+Suite%22)
+[![Percentage of issues still open](https://isitmaintained.com/badge/open/Fluffy-Frontier/FluffySTG.svg)](https://isitmaintained.com/project/Fluffy-Frontier/FluffySTG "Percentage of issues still open")
+[![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/Fluffy-Frontier/FluffySTG.svg)](https://isitmaintained.com/project/Fluffy-Frontier/FluffySTG "Average time to resolve an issue")
+![Coverage](https://img.shields.io/codecov/c/github/Fluffy-Frontier/FluffySTG)
 
 [![resentment](.github/images/badges/built-with-resentment.svg)](.github/images/comics/131-bug-free.png) [![technical debt](.github/images/badges/contains-technical-debt.svg)](.github/images/comics/106-tech-debt-modified.png) [![forinfinityandbyond](.github/images/badges/made-in-byond.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
 * **Git / GitHub cheatsheet:** https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833
 * **Guide to Modularisation:** [./modular_skyrat/readme.md](./modular_skyrat/readme.md)
-* **Website:** https://www.tgstation13.org
 * **Code:** https://github.com/tgstation/tgstation
 * **Wiki:** https://tgstation13.org/wiki/Main_Page
 * **Codedocs:** https://skyrat-ss13.github.io/Skyrat-tg/
-* **Skyrat 13 Discord:** https://discord.com/invite/hGpZ4Z3
+* **Fluffy Frontier Discord:** https://discord.com/invite/5GvhwtY
 * **Coderbus Discord:** https://discord.gg/Vh8TJp9
 
-This is Skyrat's downstream fork of /tg/station created in byond.
+This is Fluffy Frontier's downstream fork of /tg/station & Skyrat created in byond.
 
 **Please note that this repository contains sexually explicit content and is not suitable for those under the age of 18.**
 
@@ -27,7 +26,7 @@ Space Station 13 is a paranoia-laden round-based roleplaying game set against th
 You are responsible for the testing of your content and providing proof of such in your pull request. You should not mark a pull request ready for review until you have actually tested it. If you require a separate client for testing, you can use a guest account by logging out of BYOND and connecting to your test server. Test merges are not for bug finding, they are for stress tests where local testing simply doesn't allow for this.
 
 ## DEVELOPMENT FLOWCHART
-![image](https://i.imgur.com/aJnE4WT.png)
+![image](https://i.imgur.com/VLcZh4A.png)
 
 [Modularisation Guide](./modular_skyrat/readme.md)
 
@@ -54,8 +53,6 @@ Find `BUILD.bat` here in the root folder of tgstation, and double click it to in
 [Guides for Contributors](.github/CONTRIBUTING.md)
 
 [/tg/station HACKMD account](https://hackmd.io/@tgstation) - Design documentation here
-
-[Interested in some starting lore?](https://github.com/tgstation/common_core)
 
 ## LICENSE
 
