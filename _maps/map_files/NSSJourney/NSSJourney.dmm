@@ -16724,11 +16724,7 @@
 /obj/item/stack/sheet/iron/fifty,
 /obj/item/stack/sheet/iron/fifty,
 /obj/item/stack/sheet/iron/fifty,
-/obj/item/stack/sheet/glass{
-	amount = 20;
-	pixel_x = -3;
-	pixel_y = 6
-	},
+/obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/iron,
 /area/station/science/robotics/lab)
 "bpX" = (
@@ -32286,11 +32282,7 @@
 /obj/item/stack/sheet/iron/fifty,
 /obj/item/stack/sheet/iron/fifty,
 /obj/item/stack/sheet/iron/fifty,
-/obj/item/stack/sheet/glass{
-	amount = 20;
-	pixel_x = -3;
-	pixel_y = 6
-	},
+/obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/iron,
 /area/station/science/robotics/lab)
 "cHR" = (
@@ -35529,9 +35521,7 @@
 /turf/open/floor/wood,
 /area/station/security/prison)
 "fcw" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "Genetics Lab Maintenance"
-	},
+/obj/machinery/door/airlock/maintenance,
 /obj/effect/mapping_helpers/airlock/unres{
 	dir = 8
 	},
@@ -40525,9 +40515,7 @@
 /turf/open/floor/iron/dark,
 /area/station/medical/morgue)
 "iTn" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "Genetics Lab Maintenance"
-	},
+/obj/machinery/door/airlock/maintenance,
 /obj/effect/mapping_helpers/airlock/access/all/science/general,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -44068,6 +44056,9 @@
 	},
 /obj/item/radio/headset/headset_sci{
 	pixel_x = -3
+	},
+/obj/item/borg/upgrade/rename{
+	pixel_y = 16
 	},
 /turf/open/floor/iron,
 /area/station/science/robotics/lab)
@@ -48589,6 +48580,10 @@
 	},
 /turf/open/floor/iron/dark/textured,
 /area/station/science/breakroom)
+"plF" = (
+/obj/effect/spawner/random/maintenance,
+/turf/open/floor/plating,
+/area/station/maintenance/fore)
 "plW" = (
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/item/radio/intercom/directional/south,
@@ -49370,8 +49365,14 @@
 "pOK" = (
 /obj/structure/table/glass,
 /obj/machinery/light/directional/south,
-/obj/item/stack/sheet/iron/fifty,
-/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/iron/fifty{
+	pixel_x = -7;
+	pixel_y = 7
+	},
+/obj/item/stack/sheet/glass/fifty{
+	pixel_x = 7;
+	pixel_y = 7
+	},
 /obj/item/storage/toolbox/mechanical,
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/iron,
@@ -85521,7 +85522,7 @@ arP
 dJG
 aqR
 btX
-aqR
+bwI
 aph
 wuW
 sUy
@@ -86032,7 +86033,7 @@ arP
 arP
 akN
 arP
-aqR
+plF
 aqR
 axt
 arP
