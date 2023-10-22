@@ -55,6 +55,3 @@
 		return round((prices_by_material[material_id]/k_elasticity) * (1 - NUM_E**(-1 * k_elasticity * amount)))
 	else
 		return round(cost * amount)
-
-/datum/export/material/market/bscrystal/New()
-	export_types =+ list(/obj/item/stack/ore/bluespace_crystal, /obj/item/stack/ore/bluespace_crystal/refined)
