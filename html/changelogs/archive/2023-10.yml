@@ -1125,3 +1125,112 @@
   - bugfix: Fix holodeck items from being eaten, crafted, recycled, juiced, or grinded.
   vinylspiders:
   - bugfix: admin triggering the Revenant event now works again
+2023-10-24:
+  Ben10Omintrix:
+  - bugfix: fixes not being able to walk over or pull mook corpses
+  CandleJaxx:
+  - rscadd: roboticists can now wear more clothing? yeah
+  DrDiasyl:
+  - qol: The Command intercom now has a High-Volume setting like command headsets
+  - qol: A memo telling frequencies of station radio channels are now present near
+      the Command intercom and T-Comms room
+  - image: Station, Command, and Prison intercoms have received new sprites
+  - spellcheck: Station and Command intercom descriptions have been changed to tell
+      about their functionality
+  GPeckman:
+  - rscdel: Protolathe/circuit imprinter/techfab designs costing reagents is now totally
+      deprecated.
+  Ghommie:
+  - bugfix: The polymorphic belt shouldn't work on animated objects. Logically wouldn't
+      have DNA.
+  GoldenAlpharex:
+  - rscdel: Yawns no longer spread to other people. We gave it a honest try, it just
+      wasn't working well for us.
+  Hatterhat:
+  - balance: Medicells no longer require reagents to print because reagent costs for
+      lathe designs got depreciated. Rejoice.
+  - balance: Oppressive force relocation cell is made like the body teleporter cell
+      (with a bluespace slime extract or something).
+  Iajret:
+  - rscadd: Remapped Journey RnD to look more like IceBox's RnD. Also moved gateway
+      room in a process.
+  Jacquerel:
+  - bugfix: Food created by mixing chemicals once again has a reagent purity based
+      on the component chemicals.
+  LT3:
+  - bugfix: Fixed tram cabinet LMB/RMB actions being reversed
+  - bugfix: Tram cabinet can now read IDs inside PDAs and wallets
+  - bugfix: Crossing signals now correctly indicate broken/no power
+  - bugfix: Trying to repair tram (weld) without welding fuel fails
+  - bugfix: You can actually unbolt the tram controller from the wall
+  - qol: Tram spoilers now have visual and examine hints about being malfunctioning/emagged
+  - qol: Improved some tram error messages
+  LemonInTheDark:
+  - rscadd: Starlight should be a bit more intense, and flow better onto non space
+      tiles
+  MTandi:
+  - qol: changed wording of a popup in the admin dressing menu
+  Paxilmaniac:
+  - rscadd: The icewalker camp has been completely remade to be less of a single house
+      in the middle of hell, to a location befitting our viking felines. As a side
+      effect, the spawn of the camp is now static and in the corner of the map, because
+      the ruin loader really did not enjoy the size of the templates.
+  - image: Sprites for all of the forging related structures have been redone because
+      I REALLY hated what I did with them before
+  - image: Several new sprites for things like wooden shelves, barrels, and so on,
+      all made by yours truly
+  - rscadd: Nakamura engineering tools in company imports has been reworked into a
+      new company offering new specialized engineering equipment that the station
+      can't normally make, rather than just tools everyone could make if they felt
+      like it.
+  RatFromTheJungle:
+  - qol: most neck items are now small-sized
+  SyncIt21:
+  - bugfix: items that require reagent containers & the reagents inside it for crafting(e.g.
+      molotov) now crafts properly.
+  - bugfix: most crafting recipes should work now
+  Vishenka0704:
+  - qol: In OOC Notes/Flavor Text/Species lore url now are clickable
+  ZephyrTFA:
+  - qol: signalers now tell you their cooldown and also use balloon alerts
+  cnleth:
+  - bugfix: Replaced error spaghetti in thunderdome kitchen with regular cooked spaghetti
+  jjpark-kb:
+  - rscadd: worm barrels will queue food now and create fertilizer on a cycle
+  - rscadd: fertilizer will now upgrade crops instead of producing crops
+  - qol: 'increased clarity on examine text for ash crops: it will no longer display
+      the message to upgrade if it is fully upgraded'
+  - rscdel: removed regen cores from being usable on ash farms
+  - balance: it is faster to insert food into the worm barrel
+  - code_imp: removed a meaningless var from ash farming components
+  - code_imp: moved some code to become procs for easier use for ash farming
+  jlsnow301:
+  - bugfix: Entering a virtual domain should no longer give you a message that it
+      doesn't forbid items
+  - rscadd: Just in time for Halloween- ghost notifications have been upgraded to
+      their own announcements. Boo!
+  - rscadd: Adds a subtle ghost poll. This pings in dead chat and gives a screen alert,
+      but no TGUI popup. Orbit the point of interest to be selected for the role.
+  - refactor: A number of ghost spawns now feature this alert. Write an issue report
+      if anything breaks.
+  lizardqueenlexi:
+  - refactor: Maintenance Drones now use the basic mob framework. This shouldn't come
+      with any noticeable gameplay changes, but please report any bugs.
+  - bugfix: Drones can now interact normally with electrified doors.
+  - bugfix: Drones' built-in tools can no longer be placed in storage objects and/or
+      thrown on the floor.
+  - bugfix: Drones can now perform right-click interactions correctly, such as deconstructing
+      reinforced windows.
+  - bugfix: Drones can now reboot or cannibalize other drones without being in combat
+      mode.
+  nikothedude:
+  - bugfix: Synth puncture wounds now properly appear when manually generated (IV
+      drips)
+  ninjanomnom:
+  - rscadd: New dream that plays sound at you
+  san7890:
+  - qol: Adminwho messages are now in an examine block for heightened clarity.
+  xXPawnStarrXx:
+  - rscadd: Most pies can now be sliced rather than being consumed whole.
+  - rscadd: Rootdough can be crafted using soy milk in place of eggs.
+  - rscadd: Two new lizard-safe rootbread sandwiches can be crafted.
