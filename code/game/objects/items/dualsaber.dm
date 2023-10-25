@@ -23,7 +23,11 @@
 	light_on = FALSE
 	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
 	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
+<<<<<<< HEAD
 	block_chance = 45 //FLUFFY FRONTIER EDIT - ORIGINAL:75
+=======
+	block_chance = 45 //SKYRAT EDIT - Lowered ORIGINAL:75
+>>>>>>> 25172072e (Revert "[Non-modular] Reverts desword block_chance nerf" (#24577))
 	block_sound = 'sound/weapons/block_blade.ogg'
 	max_integrity = 200
 	armor_type = /datum/armor/item_dualsaber
