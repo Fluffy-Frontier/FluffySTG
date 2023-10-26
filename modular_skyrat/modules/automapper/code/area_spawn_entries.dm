@@ -41,17 +41,14 @@
 	target_areas = list(/area/station/security/prison, /area/station/security/prison/shower)
 	desired_atom = /obj/machinery/vending/dorms
 	mode = AREA_SPAWN_MODE_HUG_WALL
-<<<<<<< HEAD
 */
 // THE FLUFFY FRONTIER REMOVAL END
-=======
 
 /datum/area_spawn/gbp_machine
 	target_areas = list(/area/station/cargo/lobby, /area/station/cargo/boutique, /area/station/construction/storage_wing) // lmao imagine map standardization
 	desired_atom = /obj/machinery/gbp_redemption
 	mode = AREA_SPAWN_MODE_HUG_WALL
 
->>>>>>> 3a9474ef7 ([MODULAR] Good Assistant Points: Help the station, get credits and chicken nuggets! (#24576))
 // Wall mounts. Use sparingly as walls are prime real estate
 /datum/area_spawn/posialert_robotics
 	target_areas = list(/area/station/science/robotics, /area/station/science/robotics/lab)
