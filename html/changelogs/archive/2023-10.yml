@@ -1311,3 +1311,38 @@
       want to burn/puncture people.
   wiverns:
   - rscadd: drake to service borgs
+2023-10-26:
+  Cruix:
+  - bugfix: fixed hair gradients not applying properly on dismembered heads.
+  - bugfix: fixed hair gradients not applying correctly to huge afros
+  OrionTheFox:
+  - balance: the flatpacked Fabricator and RTG are now restricted-access imports
+  Stalkeros:
+  - rscadd: Saner employment contracts that no longer mention slavery and deity corporations.
+  - rscadd: Added some helpful utility items to the loadout.
+  - rscadd: Loadout crucifix ungatelocked from being chaplain-only and now available
+      to be taken by anyone.
+  - code_imp: New job blacklisting proc for the loadout menu.
+  Thlumyn:
+  - spellcheck: fixed millstone description typo
+  Xackii:
+  - bugfix: Fixed gorilla attack cooldown. Now attacking speed to mobs is the same
+      as attacking speed to objects.
+  Zergspower:
+  - rscadd: Cargo borgs now gets a boxcutter! You can now manage packages properly
+  - qol: Mining borg survival tweaks, Service borg overload tweaks
+  - qol: Borgs can now have their own front panel sprite!
+  - qol: Cargo borgs can now hold unwrapped crates with the upgraded clamp
+  - qol: Reduces the cost and building time for cyborgs
+  - balance: Mining borgs now have an upgraded welder option for research, the PKA
+      nerf has been removed to match a normal one.
+  - refactor: Most borg code has been refactored into one master module folder
+  carlarctg:
+  - refactor: Adds charges to omens and omen smiting rather than only being permanent
+      or one-use. Mirrors now grant seven bad luckers.
+  - qol: Reduces omen bad luck if nobody's nearby to witness the funny. (Ghosts are
+      included in the check!)
+  - bugfix: Fixed an issue where a monkey check in doorcrushing was never actually
+      able to pass. Also they screech now.
+  timothymtorres:
+  - qol: Add smoke particles to burning fireplace
