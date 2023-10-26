@@ -1315,6 +1315,8 @@
   Cruix:
   - bugfix: fixed hair gradients not applying properly on dismembered heads.
   - bugfix: fixed hair gradients not applying correctly to huge afros
+  GoldenAlpharex:
+  - spellcheck: Fixes a CRITICAL typo in one of the towel feedback messages.
   OrionTheFox:
   - balance: the flatpacked Fabricator and RTG are now restricted-access imports
   Stalkeros:
@@ -1325,6 +1327,12 @@
   - code_imp: New job blacklisting proc for the loadout menu.
   Thlumyn:
   - spellcheck: fixed millstone description typo
+  Watermelon914:
+  - rscadd: Reworked the colour schemes for the minor and major announcements as well
+      as their layout
+  - rscdel: Rolled back changes to deadchat notifications
+  - admin: Admins can now select the colour of their announcements as well as the
+      subheader when creating a command report.
   Xackii:
   - bugfix: Fixed gorilla attack cooldown. Now attacking speed to mobs is the same
       as attacking speed to objects.
