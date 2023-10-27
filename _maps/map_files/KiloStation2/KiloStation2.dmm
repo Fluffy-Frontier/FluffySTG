@@ -1071,6 +1071,7 @@
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/station/hallway/primary/starboard)
 "aov" = (
@@ -21398,12 +21399,12 @@
 /area/station/solars/port/aft)
 "gUK" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/east,
-/obj/item/kirbyplants/random,
 /obj/effect/turf_decal/tile/brown/anticorner/contrasted,
 /obj/effect/turf_decal/tile/yellow,
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable,
 /turf/open/floor/iron,
-/area/station/hallway/primary/starboard)
+/area/station/cargo/boutique)
 "gUS" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/landmark/event_spawn,
@@ -27291,7 +27292,7 @@
 /obj/effect/landmark/start/hangover,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron,
-/area/station/hallway/primary/starboard)
+/area/station/cargo/boutique)
 "iHG" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -32562,7 +32563,7 @@
 /obj/structure/window/reinforced/spawner/directional/south,
 /obj/effect/turf_decal/tile/neutral/opposingcorners,
 /turf/open/floor/iron/dark/textured,
-/area/station/cargo/sorting)
+/area/station/cargo/boutique)
 "kvM" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/cyan/visible,
@@ -34018,8 +34019,9 @@
 /obj/effect/turf_decal/bot,
 /obj/structure/window/reinforced/spawner/directional/north,
 /obj/effect/turf_decal/tile/neutral/opposingcorners,
+/obj/machinery/light/directional/east,
 /turf/open/floor/iron/dark/textured,
-/area/station/cargo/sorting)
+/area/station/cargo/boutique)
 "kUR" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
@@ -42893,7 +42895,7 @@
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/turf_decal/tile/yellow,
 /turf/open/floor/iron,
-/area/station/hallway/primary/starboard)
+/area/station/cargo/boutique)
 "nNb" = (
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
@@ -56524,7 +56526,7 @@
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron,
-/area/station/hallway/primary/starboard)
+/area/station/cargo/boutique)
 "smn" = (
 /obj/effect/landmark/event_spawn,
 /obj/structure/cable,
@@ -63768,6 +63770,14 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/security/courtroom)
+"uxC" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow,
+/turf/open/floor/iron,
+/area/station/cargo/boutique)
 "uxF" = (
 /obj/structure/plasticflaps/opaque,
 /obj/effect/turf_decal/delivery,
@@ -64045,7 +64055,7 @@
 /obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron,
-/area/station/hallway/primary/starboard)
+/area/station/cargo/boutique)
 "uDn" = (
 /obj/item/soulstone/anybody/chaplain,
 /obj/structure/table/wood,
@@ -72182,7 +72192,7 @@
 	},
 /obj/effect/turf_decal/tile/yellow,
 /turf/open/floor/iron,
-/area/station/hallway/primary/starboard)
+/area/station/cargo/boutique)
 "xdc" = (
 /obj/machinery/camera/autoname/directional/west,
 /obj/machinery/airalarm/directional/north,
@@ -72834,8 +72844,11 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
 /turf/open/floor/iron,
-/area/station/hallway/primary/starboard)
+/area/station/cargo/boutique)
 "xnU" = (
 /obj/structure/chair,
 /obj/machinery/status_display/evac/directional/north,
@@ -74731,7 +74744,7 @@
 /obj/machinery/holopad,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron,
-/area/station/hallway/primary/starboard)
+/area/station/cargo/boutique)
 "xUy" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/stripes/line{
@@ -112288,8 +112301,8 @@ wwJ
 aot
 xnK
 nMQ
-ogk
-ogk
+uxC
+uxC
 ogk
 sUq
 fQf
