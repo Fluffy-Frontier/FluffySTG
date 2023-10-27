@@ -859,7 +859,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/door/firedoor/heavy,
-/turf/open/floor/plating,
+/turf/open/floor/iron/dark,
 /area/station/science/breakroom)
 "agm" = (
 /obj/structure/tank_dispenser/oxygen,
@@ -35231,9 +35231,8 @@
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "eNr" = (
-/obj/structure/closet/crate,
-/obj/effect/spawner/random/maintenance,
 /obj/effect/turf_decal/tile/brown,
+/obj/machinery/gbp_redemption,
 /turf/open/floor/iron,
 /area/station/cargo/office)
 "eNw" = (
@@ -42523,6 +42522,7 @@
 /area/station/service/hydroponics/garden)
 "koo" = (
 /obj/effect/decal/cleanable/oil/streak,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/white,
 /area/station/science/lab)
 "koN" = (
@@ -43568,9 +43568,6 @@
 /turf/open/floor/engine,
 /area/station/science/explab)
 "lda" = (
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
 /obj/structure/frame/machine,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/cable_coil/five,
@@ -44716,7 +44713,7 @@
 /obj/item/experi_scanner{
 	pixel_y = 6
 	},
-/turf/open/floor/iron/white,
+/turf/open/floor/iron,
 /area/station/science/lab)
 "lXs" = (
 /obj/machinery/firealarm/directional/west,
@@ -45824,6 +45821,13 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
+"mYo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/open/floor/iron/white,
+/area/station/science/lab)
 "mYO" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
@@ -50138,10 +50142,10 @@
 /turf/open/floor/iron/dark,
 /area/station/security/office)
 "qtJ" = (
-/obj/structure/disposalpipe/sorting/mail{
-	dir = 1
+/obj/structure/disposalpipe/sorting/mail/flip{
+	dir = 4
 	},
-/obj/effect/mapping_helpers/mail_sorting/science/genetics,
+/obj/effect/mapping_helpers/mail_sorting/science/research,
 /turf/open/floor/iron/white,
 /area/station/science/lab)
 "qtN" = (
@@ -56337,12 +56341,12 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
 "vxi" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 9
 	},
 /turf/open/floor/iron/white,
 /area/station/science/lab)
@@ -56678,7 +56682,6 @@
 /turf/open/floor/plating,
 /area/station/maintenance/port/aft)
 "vGl" = (
-/obj/structure/disposalpipe/segment,
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
 /turf/open/floor/iron/white,
@@ -107911,7 +107914,7 @@ oeC
 gZx
 vzg
 biW
-vzg
+mYo
 koo
 vxi
 uHg
