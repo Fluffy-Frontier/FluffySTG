@@ -1,30 +1,8 @@
-/datum/mod_theme/bodyguard
-	name = "bodyguard"
-	desc = "A high-speed rescue suit by Nanotrasen, intended for its' 'Blushield' programm operatives."
-	extended_desc = "A streamlined suit of Nanotrasen design, these sleek black suits are only worn by \
-		elite command bodyguards to help save command. While the slim and nimble design of the suit \
-		cuts the ceramics and ablatives in it down, dropping the protection, \
-		it keeps the wearer safe from the harsh void of space while sacrificing no speed whatsoever. \
-		While wearing it you feel an extreme deference to darkness. "
-	default_skin = "bodyguard"
-	armor_type = /datum/armor/mod_theme_bodyguard
-	resistance_flags = FIRE_PROOF|ACID_PROOF
-	atom_flags = PREVENT_CONTENTS_EXPLOSION_1
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	complexity_max = DEFAULT_MAX_COMPLEXITY
-	charge_drain = DEFAULT_CHARGE_DRAIN * 0.5
-	siemens_coefficient = 0
-	slowdown_inactive = 0.5
-	slowdown_active = 0
-	allowed_suit_storage = list(
-		/obj/item/ammo_box,
-		/obj/item/ammo_casing,
-		/obj/item/restraints/handcuffs,
-		/obj/item/assembly/flash,
-		/obj/item/melee/baton,
-		/obj/item/storage/belt/holster/energy/blueshield,
+/datum/mod_theme/blueshield/New()
+	allowed_suit_storage += list(
+		/obj/item/storage/belt/holster/energy/blueshield
 	)
-	skins = list(
+	skins += list(
 		"bodyguard" = list(
 			MOD_ICON_OVERRIDE = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard.dmi',
 			MOD_WORN_ICON_OVERRIDE = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_worn.dmi',
@@ -54,42 +32,9 @@
 		),
 	)
 
-/datum/armor/mod_theme_bodyguard
-	melee = 35
-	bullet = 25
-	laser = 25
-	energy = 35
-	bomb = 50
-	bio = 100
-	fire = 80
-	acid = 80
-	wound = 20
-
-
-
-/obj/item/mod/control/pre_equipped/bodyguard
-	theme = /datum/mod_theme/bodyguard
-	applied_cell = /obj/item/stock_parts/cell/super
-	applied_modules = list(
-		/obj/item/mod/module/storage/large_capacity,
-		/obj/item/mod/module/criminalcapture/patienttransport,
-		/obj/item/mod/module/magnetic_harness,
-		/obj/item/mod/module/jetpack,
-		/obj/item/mod/module/dna_lock,
-	)
-	default_pins = list(
-		/obj/item/mod/module/jetpack,
-		/obj/item/mod/module/dna_lock,
-	)
-
-
-/obj/item/mod/control/pre_equipped/bodyguard/Initialize(mapload, new_theme, new_skin, new_core)
+/obj/item/mod/control/pre_equipped/blueshield/set_mod_skin(new_skin)
 	. = ..()
-	helmet.worn_icon_muzzled = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
-	chestplate.worn_icon_digi = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
-	boots.worn_icon_digi = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
-		
-
-/obj/machinery/suit_storage_unit/bodyguard
-	storage_type = /obj/item/tank/internals/oxygen
-	mod_type = /obj/item/mod/control/pre_equipped/bodyguard
+	if(new_skin == "bodyguard")
+		helmet.worn_icon_muzzled = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
+		chestplate.worn_icon_digi = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
+		boots.worn_icon_digi = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
