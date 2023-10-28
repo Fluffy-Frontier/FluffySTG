@@ -64,13 +64,8 @@
 		),
 	)
 
-/obj/item/mod/control/pre_equipped/bodyguard/Initialize(mapload, new_theme, new_skin, new_core)
+/obj/item/mod/control/pre_equipped/blueshield/Initialize(mapload, new_theme, new_skin, new_core)
 	. = ..()
 	helmet.worn_icon_muzzled = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
 	chestplate.worn_icon_digi = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
 	boots.worn_icon_digi = 'tff_modular/modules/blueshield-mod/icons/mod_bodyguard_anthro_worn.dmi'
-
-
-/obj/machinery/suit_storage_unit/bodyguard
-	storage_type = /obj/item/tank/internals/oxygen
-	mod_type = /obj/item/mod/control/pre_equipped/bodyguard
