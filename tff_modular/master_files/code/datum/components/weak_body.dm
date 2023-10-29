@@ -53,7 +53,7 @@
 
 /datum/component/weak_body/proc/check_antagonists()
 	var/mob/living/carbon/human/victim = parent
-	if((IS_TRAITOR(victim) || IS_NUKE_OP(victim) || IS_HERETIC(victim) || IS_CULTIST(victim)))
+	if(IS_TRAITOR(victim) || IS_NUKE_OP(victim) || IS_HERETIC(victim) || IS_CULTIST(victim) || victim?.mind?.has_antag_datum(/datum/antagonist/changeling))
 		return TRUE
 	return FALSE
 
