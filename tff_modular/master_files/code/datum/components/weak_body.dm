@@ -2,28 +2,21 @@
  * 	СЛАБОЕ ТЕЛО
  *
  * 	Этот компонент нанесет на установленного пользователя массу дебафов, что так, или иначе скажутся
- * 	На его работоспособности.
+ * 	На его работоспособности. 
+ * 	
+ * 	ВАЖНО! Этот компонент работает в тандеме с трейтом, что позволяет избежать некоторых ситуаций, 
+ *  где этот компонент остался после смены расы.
  *
  * 	Переменные:
  *
- *	block_grab - Если положительно, будет разрывать граб пользоветля.
- *	max_allow_w_class - Максимально допустимый вес предмета, что может тянуть пользователь.
- * 	block_range_weapon - Если положительно, будет оказывать дебаф на использование дальнобоейного оружия.
- * 	block_melee_weapon - дебафф при использовании оружия ближнего боя.
- *
+ *	max_allowed_w_class - Максимально допустимый вес предмета, что может тянуть пользователь.
  */
 /datum/component/weak_body
 	dupe_mode = COMPONENT_DUPE_HIGHLANDER
-	var/block_grab
-	var/max_allow_w_class
-	var/block_range_weapon
-	var/block_melee_weapon
+	var/max_allowed_w_class
 
-/datum/component/weak_body/Initialize(block_range = TRUE, block_melee = TRUE, weak_grab = TRUE, max_w_class = WEIGHT_CLASS_BULKY)
-	block_melee_weapon = block_melee
-	block_range_weapon = block_range
-	block_grab = weak_grab
-	max_allow_w_class =	max_w_class
+/datum/component/weak_body/Initialize(max_w_class = WEIGHT_CLASS_BULKY)
+	max_allowed_w_class = max_w_class
 	RegisterWithParent()
 
 /datum/component/weak_body/Destroy(force, silent)
@@ -32,21 +25,19 @@
 		return
 
 	UnregisterSignal(parent, list(COMSIG_MOB_ITEM_AFTERATTACK, COMSIG_MOB_ITEM_AFTERATTACK_SECONDARY, COMSIG_MOB_FIRED_GUN, COMSIG_HUMAN_DISARM_HIT, COMSIG_LIVING_PICKED_UP_ITEM))
-	if(block_grab)
-		UnregisterSignal(parent, list(COMSIG_MOVABLE_SET_GRAB_STATE, COMSIG_LIVING_START_PULL))
+	UnregisterSignal(parent, list(COMSIG_MOVABLE_SET_GRAB_STATE, COMSIG_LIVING_START_PULL))
 
 /datum/component/weak_body/RegisterWithParent()
 	if(!parent)
 		return
 
-	RegisterSignals(parent, list(COMSIG_MOB_ITEM_AFTERATTACK, COMSIG_MOB_ITEM_AFTERATTACK_SECONDARY), PROC_REF(aftet_attack_act), override = TRUE)
+	RegisterSignals(parent, list(COMSIG_MOB_ITEM_AFTERATTACK, COMSIG_MOB_ITEM_AFTERATTACK_SECONDARY), PROC_REF(after_attack_act), override = TRUE)
 	RegisterSignal(parent, COMSIG_MOB_FIRED_GUN, PROC_REF(fired_gun_act), override = TRUE)
 	RegisterSignal(parent, COMSIG_HUMAN_DISARM_HIT, PROC_REF(after_disarm), override = TRUE)
 	RegisterSignal(parent, COMSIG_LIVING_PICKED_UP_ITEM ,PROC_REF(pickup_item_act), override = TRUE)
-	if(block_grab)
-		RegisterSignal(parent, COMSIG_MOVABLE_SET_GRAB_STATE, PROC_REF(upgrade_grab), override = TRUE)
-		RegisterSignal(parent, COMSIG_LIVING_START_PULL, PROC_REF(pull_act), override = TRUE)
-		RegisterSignal(parent, COMSIG_ATOM_NO_LONGER_PULLING, PROC_REF(stop_pull_act), override = TRUE)
+	RegisterSignal(parent, COMSIG_MOVABLE_SET_GRAB_STATE, PROC_REF(upgrade_grab), override = TRUE)
+	RegisterSignal(parent, COMSIG_LIVING_START_PULL, PROC_REF(pull_act), override = TRUE)
+	RegisterSignal(parent, COMSIG_ATOM_NO_LONGER_PULLING, PROC_REF(stop_pull_act), override = TRUE)
 
 // Проверяем надет ли и включен на пользователе МОД костюм.
 /datum/component/weak_body/proc/check_mod()
@@ -67,17 +58,12 @@
 	return FALSE
 
 /datum/component/weak_body/proc/pickup_item_act(mob/user, obj/item/picked_up_item)
-	if((picked_up_item.w_class > max_allow_w_class) && !check_mod())
+	SIGNAL_HANDLER
+	if(!HAS_TRAIT(parent, TRAIT_WEAK_BODY))
+		return
+
+	if((picked_up_item.w_class > max_allowed_w_class) && !check_mod())
 		addtimer(CALLBACK(src, PROC_REF(drop_item), picked_up_item), 5)
-	//Дополнительно проверяем, что не пытаемся взять сумку, в которой кто-нибудь лежит.
-	if(istype(picked_up_item, /obj/item/storage/backpack))
-		var/obj/item/storage/backpack/bag = picked_up_item
-		for(var/thing in bag.contents)
-			if(!istype(thing, /obj/item/clothing/head/mob_holder/human))
-				continue
-			if(check_mod())
-				return
-			addtimer(CALLBACK(src, PROC_REF(drop_item), picked_up_item), 5)
 
 /datum/component/weak_body/proc/drop_item(obj/item/I)
 	var/mob/living/carbon/human/victim = parent
@@ -86,6 +72,9 @@
 
 /datum/component/weak_body/proc/after_disarm(mob/user, mob/living/carbon/human/attacker, zone_targeted)
 	SIGNAL_HANDLER
+	if(!HAS_TRAIT(parent, TRAIT_WEAK_BODY))
+		return
+	
 	var/mob/living/carbon/human/victim = parent
 	if(check_antagonists())
 		return
@@ -109,11 +98,14 @@
 
 /datum/component/weak_body/proc/pull_act(mob/user, atom/movable/pulled, state, force)
 	SIGNAL_HANDLER
+	if(!HAS_TRAIT(parent, TRAIT_WEAK_BODY))
+		return
+
 	var/mob/living/carbon/human/victim = parent
 
 	if(isitem(pulled))
 		var/obj/item/i = pulled
-		if((i.w_class > max_allow_w_class) && !check_mod())
+		if((i.w_class > max_allowed_w_class) && !check_mod())
 			victim.stop_pulling()
 			victim.visible_message(span_notice("[victim.name] start pulling [i], [i.name], but too heavy for [victim.p_their()]"), span_danger("You start pulling [i.name], but it too heavy for you!"))
 			return
@@ -146,6 +138,9 @@
 
 /datum/component/weak_body/proc/stop_pull_act(mob/user, atom/movable/pulled)
 	SIGNAL_HANDLER
+	if(!HAS_TRAIT(parent, TRAIT_WEAK_BODY))
+		return
+		
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/teshari_pull)
 	user.update_movespeed()
 
@@ -158,6 +153,9 @@
 // ДЕБАФ НА ОРУЖИЕ ДАЛЬНЕГО БОЯ
 /datum/component/weak_body/proc/fired_gun_act(mob/user, obj/item/gun/weapon, atom/target, params, zone_override, bonus_spread_values)
 	SIGNAL_HANDLER
+	if(!HAS_TRAIT(parent, TRAIT_WEAK_BODY))
+		return
+		
 	var/addictional_spread = bonus_spread_values
 
 	if(weapon.weapon_weight >= WEAPON_MEDIUM)
@@ -192,8 +190,11 @@
 
 // ДЕБАФ НА ДВУРУЧНОЕ ОРУЖИЕ
 // Сбивает нас с ног, если мы используем двуручное оружие. Можем защититься с помощью магнитных ботинок!
-/datum/component/weak_body/proc/aftet_attack_act(mob/user, atom/target, obj/item/weapon, proximity_flag, click_parameters)
+/datum/component/weak_body/proc/after_attack_act(mob/user, atom/target, obj/item/weapon, proximity_flag, click_parameters)
 	SIGNAL_HANDLER
+	if(!HAS_TRAIT(parent, TRAIT_WEAK_BODY))
+		return
+		
 	if(!ismob(target))
 		return
 	var/mob/living/carbon/human/victim = parent
