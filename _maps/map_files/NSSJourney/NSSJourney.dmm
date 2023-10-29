@@ -408,9 +408,9 @@
 	pixel_y = 7
 	},
 /obj/item/flashlight/lamp/green{
-	on = 0;
 	pixel_x = -4;
-	pixel_y = 10
+	pixel_y = 10;
+	start_on = 0
 	},
 /turf/open/floor/carpet,
 /area/station/command/heads_quarters/hos)
@@ -34091,7 +34091,7 @@
 "dRT" = (
 /obj/structure/table,
 /obj/item/flashlight/lamp{
-	on = 0
+	start_on = 0
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
