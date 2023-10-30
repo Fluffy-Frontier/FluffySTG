@@ -1483,5 +1483,8 @@
       then back on.
   - code_imp: Flashlights now use light_on instead of defining their own variable.
       Please report buggy behavior.
+  - bugfix: Removed rare hard delete involving telecomms machines.
   LT3:
   - bugfix: Blueshift now has PDA charging microwaves available similar to other maps
+  jlsnow301:
+  - bugfix: Fixed an invisibility exploit on large mobs. Probably better this way
