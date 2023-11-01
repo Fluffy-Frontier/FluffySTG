@@ -1,0 +1,73 @@
+2023-11-01:
+  GPeckman:
+  - bugfix: The fire visual on mobs should no longer persist after the fire has been
+      extinguished.
+  LT3:
+  - code_imp: Changing security levels will only trigger the nightshift subsystem
+      if lighting changes are required
+  Melbert:
+  - qol: Clicking on an adjacent dense object (or mob) with Spray Cleaner will now
+      spritz it rather than doing nothing. This means you can use Spray Cleaner to
+      clean bloodied windows, as the janitor gods intended. It also means you can
+      fill a spray bottle with Napalm, I guess.
+  - refactor: Any cleaning object can now clean a microwave.
+  NotDhu:
+  - bugfix: Blueshift's white ship docking port should now work correctly.
+  Pickle-Coding:
+  - bugfix: Fixes tesla zaps being weird.
+  - admin: Logs explosions from explosive zaps.
+  Profakos:
+  - refactor: Traders are basic mobs now. Please alert us of any strange behaviours!
+  - code_imp: If there is only one option, radial lists will autopick it. This behaviour
+      can be turned off via a new argument.
+  SethLafuente:
+  - rscadd: Added Abnormal Eggs
+  - rscadd: Added Two new spiders
+  - rscdel: Some Tarantula abilities
+  - balance: Spiders speed are now connected to health
+  - balance: Spiders now take more brute damage
+  - balance: All egg laying now has a cooldown
+  SyncIt21:
+  - bugfix: Cargo will remove/cancel orders from its cart if that order exceeds the
+      available budget (both private or cargo) and the player cannot cancel this order
+      manually. All order costs are rounded up to integer values
+  - bugfix: Galactic material market will deny appending stacks to your existing order
+      if it exceeds the available (private or cargo depending on the mode of ordering)
+      budget & if it exceeds the available materials on the market. Galactic material
+      market UI is overall improved.
+  - bugfix: Plumbing IV Drip has full control over its injection/draining rate. No
+      longer displays the message controlled by plumbing system
+  - bugfix: Plumbing IV Drip can be plunged by plunger again
+  honkpocket:
+  - code_imp: The xeno hybrid tongue now actually looks and sounds like the alien
+      tongue
+  jlsnow301:
+  - bugfix: Paraplegics can now enter netpods.
+  - bugfix: Fixes an exploit caused by teleporting out of a netpod.
+  - bugfix: Outfit selection at netpods shouldn't give armor bonuses any longer.
+  lizardqueenlexi:
+  - refactor: Pirate NPCs now use the basic mob framework. They'll be a little smarter
+      in combat, and if you're wearing your ID they'll siphon your bank account with
+      every melee attack! Beware! Please report any bugs.
+  - refactor: Wraith constructs have been converted to the basic mob framework. NPC
+      wraiths are now extra cruel and will attack the lowest-health mob they can see
+      at any given time. Make sure this isn't you! Please report any bugs.
+  - bugfix: Artificers and juggernauts no longer attack significantly more slowly
+      than intended.
+  mc-oofert:
+  - rscadd: living floor, living flesh, and other stuff for the bioresearch outpost
+      ruin
+  - rscadd: bioresearch outpost ruin
+  - bugfix: you may not defeat indestructible grilles and windows with mere tools
+  necromanceranne:
+  - balance: Operatives can once again read about the basics of CQC at a reasonable
+      price of 14 TC.
+  - qol: All Syndicate MODsuits come with the potent ability to wear hats on their
+      helmets FOR FREE. No longer does any operative need be shamed by their bald
+      helmet's unhatted state when they spot the captain, in their MODsuit, wearing
+      a hat on their helmet. The embarrassment has resulted in more than a few operatives
+      prematurely detonating their implants! BUT NO LONGER! FASHION IS YOURS!
+  - qol: There is now a Core Gear Box, containing a few essential pieces of gear for
+      success as an operative. This is right at the top of the uplink, you can't miss
+      it! Great for those operatives just starting out, or operatives who need all
+      their baseline equipment NOW.
