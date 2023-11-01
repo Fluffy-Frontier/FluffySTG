@@ -1,7 +1,24 @@
 2023-11-01:
+  ArcaneMusic:
+  - qol: Steam vents in maintenance now have tooltips.
   GPeckman:
   - bugfix: The fire visual on mobs should no longer persist after the fire has been
       extinguished.
+  - bugfix: Practice laser carbines can no longer be used to rapidly fire regular
+      laser guns.
+  - refactor: The wings you get from a flight potion (if any) are now determined by
+      your chest bodypart, not your species.
+  - qol: Functional wings can now be ground up to get the flight potion back, if you
+      want to get a different wing variant.
+  HWSensum:
+  - bugfix: Leader activist no longer able to spawn brochures while being unconscious
+      or dead.
+  Iajret:
+  - code_imp: mod reskins now properly shows their icon when skins loaded from different
+      .dmi
+  Jacquerel:
+  - bugfix: Non-human mobs can hallucinate their mothers without causing a runtime
+      error
   LT3:
   - code_imp: Changing security levels will only trigger the nightshift subsystem
       if lighting changes are required
@@ -13,6 +30,9 @@
   - refactor: Any cleaning object can now clean a microwave.
   NotDhu:
   - bugfix: Blueshift's white ship docking port should now work correctly.
+  OrionTheFox:
+  - bugfix: fixed the Medium/Long Skirts incorrectly being Toggleable, and falsely
+      covering the Chest
   Pickle-Coding:
   - bugfix: Fixes tesla zaps being weird.
   - admin: Logs explosions from explosive zaps.
@@ -38,6 +58,13 @@
   - bugfix: Plumbing IV Drip has full control over its injection/draining rate. No
       longer displays the message controlled by plumbing system
   - bugfix: Plumbing IV Drip can be plunged by plunger again
+  Xackii:
+  - bugfix: chameleon projector now can copy icon for storage items(backpacks, box,
+      holsters etc) using right-click on it.
+  ZephyrTFA:
+  - bugfix: signals in circuits now actually function
+  deathrobotpunch1:
+  - rscdel: Removed the biometric scanning toggle from the PENLITE holobarrier
   honkpocket:
   - code_imp: The xeno hybrid tongue now actually looks and sounds like the alien
       tongue
@@ -45,6 +72,7 @@
   - bugfix: Paraplegics can now enter netpods.
   - bugfix: Fixes an exploit caused by teleporting out of a netpod.
   - bugfix: Outfit selection at netpods shouldn't give armor bonuses any longer.
+  - bugfix: Bluespace launchpads no longer work on shuttles
   lizardqueenlexi:
   - refactor: Pirate NPCs now use the basic mob framework. They'll be a little smarter
       in combat, and if you're wearing your ID they'll siphon your bank account with
@@ -59,6 +87,14 @@
       ruin
   - rscadd: bioresearch outpost ruin
   - bugfix: you may not defeat indestructible grilles and windows with mere tools
+  - rscadd: ctrlclicking the knock path eldritch id card will toggle whether it creates
+      inverted portals or not
+  moocowswag:
+  - bugfix: Modular shield generator modules no longer lose linkage when riding a
+      shuttle
+  - bugfix: Modular shield generators now gracefully turn off when being moved by
+      a shuttle rather than leaving their projections behind, the generator's description
+      was updated to advertise this behavior.
   necromanceranne:
   - balance: Operatives can once again read about the basics of CQC at a reasonable
       price of 14 TC.
@@ -71,3 +107,26 @@
       success as an operative. This is right at the top of the uplink, you can't miss
       it! Great for those operatives just starting out, or operatives who need all
       their baseline equipment NOW.
+  - qol: To avoid poor magazine discipline, most combat-ready personnel have instructed
+      _not_ to put magazines into the gun loops on their armor vests.
+  - bugfix: Lethal ballistic pellet-based shotgun shells no longer instantly delete.
+  rageguy505:
+  - rscdel: Removed extra consoles from birdshot's bitrunners
+  sqnztb:
+  - bugfix: ships can now properly dock at Meta's whiteship dock again.
+  starrm4nn:
+  - bugfix: The Syndicate Revolver now has a Syndicate Firing Pin on the Nuke Ops
+      uplink.
+  timothymtorres:
+  - rscdel: Remove duplicate HoP shutter from birdshot
+  - rscdel: Remove duplicate light in battlecruiser starfury
+  - rscdel: Remove duplicate power computer on oldstation ruin
+  - rscdel: Remove duplicate space heater from snowcabin ruin
+  - rscdel: Remove duplicate machinery from russian derelict
+  - rscdel: Remove duplicate atmos fire alarm, cargo air alarm, and chemistry shutter
+      from icebox.
+  - rscdel: Remove duplicate pipe on pirate ship
+  - rscdel: Removed duplicate northstar message monitor computer
+  - rscdel: Remove duplicate syndi turret on waystation ruin
+  zxaber:
+  - balance: Malf Ability "Robotics Factory" can now be purchased multiple times.
