@@ -23,8 +23,12 @@
 /obj/structure/closet/secure_closet/blueshield/New()
 	..()
 	// FLUFFY FRONTIER EDIT: ADDITION
-	// Sometimes blueshields don't want to have tackler gloves,
-	// So i gave him same gloves, but without tackler ability.
+	// ВАЖНО!! ДАБЫ НЕ ПЕРЕНАСЫЩАТЬ БЩ ОРУЖИЕМ, ЛЮБЫЕ НОВЫЕ ПУШКИ СТОИТ ПЕРЕНОСИТЬ СЮДА:
+	// ПУТЬ ОБЪЕКТА: /obj/item/choice_beacon/blueshield
+	// ПУТЬ ДО ФАЙЛА: tff_modular/modules/blueshield-rearm/code/weapon_beacon.dm
+
+
+	// Выдал БЩ дополнительные перчатки, аналогичные их стандартным, просто без эффекта рывка.
 	new /obj/item/clothing/gloves/combat(src)
 	// FLUFFY FRONTIER EDIT END.
 	new /obj/item/storage/secure/briefcase(src)
@@ -34,6 +38,6 @@
 	new /obj/item/restraints/handcuffs(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
 	new /obj/item/storage/medkit/tactical/blueshield(src)
-	new /obj/item/storage/toolbox/guncase/skyrat/carwo_large_case/sindano(src)
+	// FF EDIT: DELETION. DELETED LINE: new /obj/item/storage/toolbox/guncase/skyrat/carwo_large_case/sindano(src)
 	new /obj/item/storage/bag/garment/blueshield(src)
 	new /obj/item/mod/control/pre_equipped/blueshield(src)
