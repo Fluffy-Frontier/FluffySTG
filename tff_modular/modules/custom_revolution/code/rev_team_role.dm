@@ -54,7 +54,7 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 	var/mob/living/M = mob_override || owner.current
 	add_team_hud(M, rev_team)
 
-/// Удаляем роль при введении майндшилда.
+/// Удаляем роль при введении майндшилда, если ignore_mindshield == FALSE.
 /datum/antagonist/custom_rev/on_mindshield(mob/implanter)
 	var/mob/antag_mob = owner.current
 	if(rev_team.ignore_mindshield)
@@ -70,13 +70,13 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 /datum/team/custom_rev_team
 	name = "\improper Activists"
 	member_name = "\improper activist"
-	// Кастомизация брошюры.
+	// Кастомизация брошюры
 	var/brochure_name = "some strange brochure"
 	var/brochure_desc = "Strange brochure made of durable material. There is something written in and on it."
 	var/brochure_icon_state = "brochure"
 	var/icon/brochure_icon = 'tff_modular/modules/custom_revolution/icons/items.dmi'
 	var/brochure_message = "Do you want to be a part of our union?"
-	// Кастомизация фичей...
+	// Кастомизация фичей
 	var/ignore_mindshield = FALSE
 	var/ignore_deconvert_machine = FALSE
 	
