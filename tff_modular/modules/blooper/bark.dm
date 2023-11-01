@@ -1,5 +1,17 @@
 GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 
+// Про роботов забыли... :О
+
+/mob/living/silicon/Login()
+	// Ну а хули мне делать? Никакой другой функции при обновлении клиента в борге я не нашел. Идти и делать такую на ТГ не буду.
+	set_blooper(client.prefs.read_preference(/datum/preference/choiced/blooper))
+	blooper_pitch = client.prefs.read_preference(/datum/preference/numeric/blooper_speech_pitch)
+	blooper_speed = client.prefs.read_preference(/datum/preference/numeric/blooper_speech_speed)
+	blooper_pitch_range = client.prefs.read_preference(/datum/preference/numeric/blooper_pitch_range)
+	. = ..()
+
+
+
 /datum/smite/normalblooper
 	name = "Normal blooper"
 
@@ -43,7 +55,7 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 /datum/preference/choiced/blooper/init_possible_values()
 	return assoc_to_keys(GLOB.blooper_list)
 
-/datum/preference/choiced/blooper/apply_to_human(mob/living/carbon/human/target, value, /datum/preference/numeric/blooper_speech_speed)
+/datum/preference/choiced/blooper/apply_to_human(mob/living/carbon/human/target, value)
 	target.set_blooper(value)
 
 /datum/preference_middleware/blooper

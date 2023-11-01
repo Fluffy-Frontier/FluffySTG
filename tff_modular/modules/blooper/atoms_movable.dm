@@ -52,7 +52,7 @@
 
 /randomize_human(mob/living/carbon/human/human)
 	. = ..()
-	human.set_blooper(pick(GLOB.blooper_random_list))
+	human.set_blooper(pick(GLOB.blooper_list))
 	human.blooper_pitch = BLOOPER_PITCH_RAND(human.gender)
 	human.blooper_pitch_range = BLOOPER_VARIANCE_RAND
 
