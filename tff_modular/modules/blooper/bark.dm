@@ -1,6 +1,6 @@
 GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 
-// Про роботов забыли... :О
+// Про роботов/киборгов забыли... :О
 
 /mob/living/silicon/Login()
 	// Ну а хули мне делать? Никакой другой функции при обновлении клиента в борге я не нашел. Идти и делать такую на ТГ не буду.
@@ -11,6 +11,13 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 	. = ..()
 
 
+// Mehanics for Changelings
+/datum/changeling_profile
+	//COPYPASTE COPYPASTE COPYPASTE
+	var/blooper_id
+	var/blooper_pitch
+	var/blooper_pitch_range
+	var/blooper_speed
 
 /datum/smite/normalblooper
 	name = "Normal blooper"
