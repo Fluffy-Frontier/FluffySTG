@@ -1,9 +1,0 @@
-author: "HWSensum"
-delete-after: True
-changes:
-  - bugfix: "Teshari's weakbody component now check mob for weakbody trait to prevent issues, such as changeling being unable to agro-grab if they transformed into teshari at some point."
-  - rscdel: "Removed Teshari's abbility to get into duffelbugs and BS bags."
-  - qol: "SkyRat's original Teshari bodyparts now will have another name (it will be changed on initialization) to prevent troubles."
-  - rscdel: "Removed SkyRat's original Teshari from roundstart species."
-  - balance: "Teshari changelings now ignore some debuffs."
-  - code_imp: "changed some badcode."
