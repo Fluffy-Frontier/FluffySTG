@@ -62,6 +62,7 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 /datum/preference/choiced/blooper/init_possible_values()
 	return assoc_to_keys(GLOB.blooper_list)
 
+
 /datum/preference/choiced/blooper/apply_to_human(mob/living/carbon/human/target, value)
 	target.set_blooper(value)
 

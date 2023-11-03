@@ -79,6 +79,53 @@
 	burn_modifier = TESHARI_ALT_BURN_MODIFIER
 	speed_modifier = TESHARI_ALT_SPEED_MODIFIER
 
+// Перезаписанная инициализации конечностей, в которой будет изменение названия, чтобы было сразу понятно, что эта конечность подойдёт или не подойдёт НАШИМ тешарям.
+
+/obj/item/organ/internal/tongue/teshari/Initialize(mapload)
+	. = ..()
+	if(!istype(src, /obj/item/organ/internal/tongue/teshari/alt))
+		name = "augmented raptor tongue"
+
+/obj/item/bodypart/head/mutant/teshari/Initialize(mapload)
+	. = ..()
+	if(!istype(src, /obj/item/bodypart/head/mutant/teshari/alt))
+		name = "augmented raptor [parse_zone(body_zone)]"
+
+/obj/item/bodypart/chest/mutant/teshari/Initialize(mapload)
+	. = ..()
+	if(!istype(src, /obj/item/bodypart/chest/mutant/teshari/alt))
+		name = "augmented raptor [parse_zone(body_zone)]"
+
+/obj/item/bodypart/arm/left/mutant/teshari/Initialize(mapload)
+	. = ..()
+	if(!istype(src, /obj/item/bodypart/arm/left/mutant/teshari/alt))
+		name = "augmented raptor [parse_zone(body_zone)]"
+
+/obj/item/bodypart/arm/right/mutant/teshari/Initialize(mapload)
+	. = ..()
+	if(!istype(src, /obj/item/bodypart/arm/right/mutant/teshari/alt))
+		name = "augmented raptor [parse_zone(body_zone)]"
+
+/obj/item/bodypart/leg/left/mutant/teshari/Initialize(mapload)
+	. = ..()
+	if(!istype(src, /obj/item/bodypart/leg/left/mutant/teshari/alt))
+		name = "augmented raptor [parse_zone(body_zone)]"
+
+/obj/item/bodypart/leg/right/mutant/teshari/Initialize(mapload)
+	. = ..()
+	if(!istype(src, /obj/item/bodypart/leg/right/mutant/teshari/alt))
+		name = "augmented raptor [parse_zone(body_zone)]"
+
+/obj/item/bodypart/leg/left/digitigrade/teshari/Initialize(mapload)
+	. = ..()
+	if(!istype(src, /obj/item/bodypart/leg/left/digitigrade/teshari/alt))
+		name = "augmented raptor [parse_zone(body_zone)]"
+
+/obj/item/bodypart/leg/right/digitigrade/teshari/Initialize(mapload)
+	. = ..()
+	if(!istype(src, /obj/item/bodypart/leg/right/digitigrade/teshari/alt))
+		name = "augmented raptor [parse_zone(body_zone)]"
+
 #undef TESHARI_ALT_PUNCH_LOW
 #undef TESHARI_ALT_PUNCH_HIGH
 #undef TESHARI_ALT_BURN_MODIFIER
