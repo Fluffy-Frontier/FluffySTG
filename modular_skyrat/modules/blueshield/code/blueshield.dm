@@ -43,6 +43,7 @@
 	job_flags = STATION_JOB_FLAGS | JOB_CANNOT_OPEN_SLOTS
 
 /datum/outfit/job/blueshield
+	// FLUFFY FRONTIER COMMENT - BLUESHIELD-REARM: Любое добавленное крысами тут оружие переносим в наш модуль, в /obj/item/choice_beacon/blueshield!
 	name = "Blueshield"
 	jobtype = /datum/job/blueshield
 	uniform = /obj/item/clothing/under/rank/blueshield
@@ -52,9 +53,6 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	ears = /obj/item/radio/headset/headset_bs/alt
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	// FLUFFY FRONTIER EDIT: ADDITION
-	suit_store = /obj/item/storage/belt/holster/energy/blueshield
-	// FLUFFY FRONTIER EDIT END.
 	implants = list(/obj/item/implant/mindshield)
 	backpack = /obj/item/storage/backpack/blueshield
 	satchel = /obj/item/storage/backpack/satchel/blueshield
