@@ -223,3 +223,35 @@
   - rscdel: 'Remove duplicate machinery from Metastation: morgue disposal bin, medical
       break room air alarm, and IV drip in permabrig medroom'
   - bugfix: Fix fireplace smoke particles to work properly with all directions
+2023-11-04:
+  HWSensum:
+  - qol: Blueshield's weaponry now can be picked by the player via delivery beacon.
+  Melbert:
+  - code_imp: Removed species death and species hitby, replaced any uses with signals.
+  - admin: Admins without `R_POLL` no longer have access to "Server Poll Management",
+      not that they could have used it anyways.
+  Syrox25:
+  - bugfix: Cargo loaders are once again disposal and dishwasher safe
+  Tattle:
+  - bugfix: you should now be able to scrub through the library without lagging the
+      server
+  - bugfix: paintings can once again be filtered
+  Zergspower:
+  - bugfix: Bounties - Virus bounties work once more
+  jlsnow301:
+  - bugfix: Added feedback for both extractor and extractee while using fulton extraction
+      packs.
+  - qol: Extraction packs now have better exam text.
+  lessthnthree:
+  - admin: Holobarrier creation now adds player fingerprint data
+  lizardqueenlexi:
+  - refactor: Shades now use the basic mob framework. Please report any bugs.
+  nikothedude:
+  - qol: Character preferences now have descriptions as tooltips - hover over their
+      names to see them
+  timothymtorres, Rahlzel:
+  - sound: Port salute emote sound from Colonial Marines SS13 attributed to Rahlzel
+  vinylspiders:
+  - bugfix: Empowered borer eggs and cybernetic eyes can no longer be given as a result
+      of bioscrambling a mob.
+  - bugfix: Softspoken quirk will no longer be applied to sign language
