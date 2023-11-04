@@ -22,15 +22,11 @@
 
 /obj/structure/closet/secure_closet/blueshield/New()
 	..()
-	// FLUFFY FRONTIER EDIT: ADDITION
-	// ВАЖНО!! ДАБЫ НЕ ПЕРЕНАСЫЩАТЬ БЩ ОРУЖИЕМ, ЛЮБЫЕ НОВЫЕ ПУШКИ СТОИТ ПЕРЕНОСИТЬ СЮДА:
-	// ПУТЬ ОБЪЕКТА: /obj/item/choice_beacon/blueshield
-	// ПУТЬ ДО ФАЙЛА: tff_modular/modules/blueshield-rearm/code/weapon_beacon.dm
-
-
+	// FLUFFY FRONTIER EDIT: ADDITION BEGIN - BLUESHIELD-REARM
+	// ВАЖНО!! ДАБЫ НЕ ПЕРЕНАСЫЩАТЬ БЩ ОРУЖИЕМ, ЛЮБЫЕ НОВЫЕ ПУШКИ ПЕРЕНОСИМ В МОДУЛЬ В /obj/item/choice_beacon/blueshield/
 	// Выдал БЩ дополнительные перчатки, аналогичные их стандартным, просто без эффекта рывка.
 	new /obj/item/clothing/gloves/combat(src)
-	// FLUFFY FRONTIER EDIT END.
+	// FLUFFY FRONTIER EDIT END - BLUESHIELD-REARM.
 	new /obj/item/storage/secure/briefcase(src)
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/grenade/flashbang(src)
@@ -38,6 +34,6 @@
 	new /obj/item/restraints/handcuffs(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
 	new /obj/item/storage/medkit/tactical/blueshield(src)
-	// FF EDIT: DELETION. DELETED LINE: new /obj/item/storage/toolbox/guncase/skyrat/carwo_large_case/sindano(src)
+	// new /obj/item/storage/toolbox/guncase/skyrat/carwo_large_case/sindano(src) FF EDIT: DELETION - BLUESHIELD-REARM
 	new /obj/item/storage/bag/garment/blueshield(src)
 	new /obj/item/mod/control/pre_equipped/blueshield(src)

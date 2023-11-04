@@ -22,11 +22,9 @@
 	return blueshield_weapons
 
 // ОЧЕНЬ костыльный, но всё же модульный способ впихнуть это в сумку
-
 /datum/outfit/job/blueshield/pre_equip(mob/living/carbon/human/H, visualsOnly)
-	if(!backpack_contents) 
+	if(!backpack_contents)
 		backpack_contents = list()
 	if(!(/obj/item/choice_beacon/blueshield in backpack_contents))
 		backpack_contents += /obj/item/choice_beacon/blueshield
 	. = ..()
-	

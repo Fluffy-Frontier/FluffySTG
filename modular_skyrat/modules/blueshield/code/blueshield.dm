@@ -43,7 +43,7 @@
 	job_flags = STATION_JOB_FLAGS | JOB_CANNOT_OPEN_SLOTS
 
 /datum/outfit/job/blueshield
-	// FLUFFY FRONTIER COMMENT: Любое добавленное крысами тут оружие - вырезайте и переносите в /obj/item/choice_beacon/blueshield!
+	// FLUFFY FRONTIER COMMENT - BLUESHIELD-REARM: Любое добавленное крысами тут оружие переносим в наш модуль, в /obj/item/choice_beacon/blueshield!
 	name = "Blueshield"
 	jobtype = /datum/job/blueshield
 	uniform = /obj/item/clothing/under/rank/blueshield
