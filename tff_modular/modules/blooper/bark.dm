@@ -1,5 +1,22 @@
 GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 
+// Про роботов/киборгов забыли... :О
+/mob/living/silicon/Login()
+	// Ну а хули мне делать? Никакой другой функции при обновлении клиента в борге я не нашел. Идти и делать такую на ТГ не буду.
+	set_blooper(client.prefs.read_preference(/datum/preference/choiced/blooper))
+	blooper_pitch = client.prefs.read_preference(/datum/preference/numeric/blooper_speech_pitch)
+	blooper_speed = client.prefs.read_preference(/datum/preference/numeric/blooper_speech_speed)
+	blooper_pitch_range = client.prefs.read_preference(/datum/preference/numeric/blooper_pitch_range)
+	. = ..()
+
+// Mehanics for Changelings
+/datum/changeling_profile
+	//COPYPASTE COPYPASTE COPYPASTE
+	var/blooper_id
+	var/blooper_pitch
+	var/blooper_pitch_range
+	var/blooper_speed
+
 /datum/smite/normalblooper
 	name = "Normal blooper"
 
@@ -10,7 +27,6 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 	target.blooper_speed = round((BLOOPER_DEFAULT_MINSPEED + BLOOPER_DEFAULT_MAXSPEED) / 2)
 	target.blooper_pitch = round((BLOOPER_DEFAULT_MINPITCH + BLOOPER_DEFAULT_MAXPITCH) / 2)
 	target.blooper_pitch_range = 0.2
-
 
 /datum/admins/proc/toggleblooper()
 	set category = "Server"
@@ -43,7 +59,7 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 /datum/preference/choiced/blooper/init_possible_values()
 	return assoc_to_keys(GLOB.blooper_list)
 
-/datum/preference/choiced/blooper/apply_to_human(mob/living/carbon/human/target, value, /datum/preference/numeric/blooper_speech_speed)
+/datum/preference/choiced/blooper/apply_to_human(mob/living/carbon/human/target, value)
 	target.set_blooper(value)
 
 /datum/preference_middleware/blooper
