@@ -134,7 +134,6 @@
 /datum/export/material/market/sell_object(obj/sold_item, datum/export_report/report, dry_run, apply_elastic)
 	. = ..()
 	var/amount = get_amount(sold_item)
-	var/price = get_cost(sold_item)
 	if(!amount)
 		return
 	if(!dry_run)
@@ -158,7 +157,6 @@
 	if(dry_run)
 		return
 	var/obj/item/stock_block/sold_block = sold_item
-	var/sale_value = sold_block.export_value
 	SSstock_market.materials_quantity[sold_block.export_mat] += sold_block.quantity
 	SSstock_market.materials_prices[sold_block.export_mat] -= round((SSstock_market.materials_prices[sold_block.export_mat]) * (sold_block.quantity / SSstock_market.materials_quantity[sold_block.export_mat]))
 	SSstock_market.materials_prices[sold_block.export_mat] = round(clamp(SSstock_market.materials_prices[sold_block.export_mat], initial(sold_block.export_mat.value_per_unit) * SHEET_MATERIAL_AMOUNT * 0.5 , initial(sold_block.export_mat.value_per_unit) * SHEET_MATERIAL_AMOUNT * 3))
