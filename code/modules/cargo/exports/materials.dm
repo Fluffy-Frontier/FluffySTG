@@ -139,7 +139,7 @@
 		return
 	if(!dry_run)
 		SSstock_market.materials_quantity[material_id] += amount
-		SSstock_market.materials_prices[material_id] -= round((price) * (amount / (amount + SSstock_market.materials_quantity[material_id])))
+		SSstock_market.materials_prices[material_id] -= round((SSstock_market.materials_prices[material_id]) * (amount / (SSstock_market.materials_quantity[material_id])))
 		//This formula should impact lower quantity materials greater, and higher quantity materials less. Still, it's  a bit rough. Tweaking may be needed.
 
 
