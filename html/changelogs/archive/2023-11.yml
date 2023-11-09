@@ -370,5 +370,47 @@
   jlsnow301:
   - bugfix: The screen alert should no longer break ghost UI when it's huge
 2023-11-09:
+  CacheAtWork:
+  - rscdel: Removed a modular fermentation recipe from soybean; preventing override.
+  GPeckman:
+  - balance: Flightpotion wings will no longer make health analyzers list you as nonhuman.
+  Jacquerel:
+  - qol: Adds the capability for some player-controlled mobs with ranged attacks to
+      repeatedly fire their natural weapons by holding down the mouse button.
+  KingkumaArt:
+  - rscadd: Enginenering rebar crossbows + tot kit
+  - rscadd: Added a bunch of ammos and crafting junk to make the ammo exist
+  - image: added icond for all the above
   Majkl-J:
   - bugfix: Flavor text should no longer bluescreen
+  Nerev4r:
+  - rscadd: The holocigar is now public.
+  - bugfix: Snails now properly don't have any bones.
+  - qol: Snail limbs and tongue are now available in the limb grower.
+  SyncIt21:
+  - qol: machines/devices that ask you to pick a reagent name from an input list have
+      their names sorted alphabetically & preserves white space between words making
+      them more readable.
+  - qol: improves performance of plumbing reaction chamber furthur
+  - code_imp: cleaned up code for portable chem mixer & chem dispenser. converted
+      their ui to typescript
+  Toastgoats:
+  - balance: Venus human traps now take 12.5 damage per second instead of 20 while
+      off kudzu.
+  honkpocket:
+  - rscadd: The reagent weapons made with the forging stations can be renamed and
+      redescribed.
+  san7890:
+  - bugfix: Nanotrasen has clarified an issue with their manual publishers, and these
+      guides should now contain actual user-pertinent content.
+  sqnztb:
+  - bugfix: soulcatchers' edit name button correctly displays the host name
+  timothymtorres:
+  - bugfix: Fix holodeck items from being juiced or grinded with a biogenerator or
+      pestle and mortar
+  xXPawnStarrXx:
+  - rscadd: Three new plants; Peppercorn, Saltcane and Butterbeans.
+  - rscadd: Soysauce fermentation to soybeans.
+  - rscadd: Saltcane can be dried into a replacement seaweedsheet for sushi.
+  zergspower:
+  - balance: NPC Syndicate Shotgunners range requirement returned
