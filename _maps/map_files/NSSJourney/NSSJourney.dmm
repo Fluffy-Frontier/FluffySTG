@@ -55484,10 +55484,6 @@
 	},
 /turf/open/floor/iron/textured,
 /area/station/security/prison)
-"uLO" = (
-/obj/structure/cable,
-/turf/closed/wall/r_wall,
-/area/station/security/mechbay)
 "uMB" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -57272,7 +57268,6 @@
 /area/station/service/barber)
 "wcp" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
 /obj/effect/turf_decal/stripes/corner{
@@ -94854,7 +94849,7 @@ mwk
 ahk
 wcp
 aib
-uLO
+mwk
 api
 anc
 anc
