@@ -414,3 +414,62 @@
   - rscadd: Saltcane can be dried into a replacement seaweedsheet for sushi.
   zergspower:
   - balance: NPC Syndicate Shotgunners range requirement returned
+2023-11-10:
+  Paxilmaniac:
+  - rscadd: A new quirk has been added, called "Ration Ticket Receiver" for zero points.
+      What does it do? In exchange for half of your paycheck, you'll get a ticket
+      every few paychecks that'll let you exchange it for your 1855 Passenger Act
+      mandated rations!
+  Profakos:
+  - spellcheck: Renamed Knock to Locks, and changed most of the flavor text of knowledge
+      gain, and renamed some items and knowledges from the path.
+  SomeRandomOwl:
+  - qol: Department Heads REJOICE! You now start with departmental budget cards in
+      your locker! And just so the captain doesn't feel lonely they get one too for
+      all the assistants that run around.
+  SyncIt21:
+  - code_imp: removed order history, import & export value from cargo & economy subsystems.
+      Allow supply packs to be properly deleted. In general memory savings
+  - bugfix: Examining circuit boards now displays their detailed names(tier included)
+      correctly if required.
+  - bugfix: Material market buy buttons greys out correctly and thus prevent you from
+      placing orders that exceeds the available budget.
+  - bugfix: plumbing factories should not rarely/randomly brick at volumes like 0.9999(when
+      in fact it should have been 1)
+  TiberianEuan:
+  - image: added blank white ipc screen
+  TwistedSilicon:
+  - bugfix: Cryo cells now use their direction to orient their initial connection
+      instead of defaulting to South.
+  Zxaber, DrDiasyl, Maurukas:
+  - rscadd: A new security-focused combat mech, the Paddy, has been added, intended
+      to be particularly helpful for lone sec officers. You will find one in the Security
+      main office, and a replacement can be built with late-game mech research.
+  - bugfix: Ripley MK-I and MK-II mechs no longer qdel their stored items when destroyed.
+  honkpocket:
+  - bugfix: Fixes more unintended taur clothing cropping.
+  projectkepler-ru:
+  - rscadd: a gun beacon option for the NTC to pick between two of his magnum pistol
+      choices, fully modular and can be messed with by anyone in the future if more
+      guns are added.
+  starrm4nn:
+  - qol: Bandolier can quick gather items now.
+  - balance: Bandolier capacity increased to 24 and can carry .357 ammo now.
+  timothymtorres:
+  - rscdel: Removed duplicate shutter from HoP office in birdboat, air alarm in northstar
+      maint, and portable air pump in northstar maint.
+  vinylspiders:
+  - bugfix: big mortar can no longer grind/juice holograms
+  - bugfix: zippo sound effect now only plays for zippo lighters
+  - bugfix: the TG barsigns will now use emissives (aka, they will glow in the dark)
+  - bugfix: skyrat signs will give off small amounts of neon colored neon light like
+      TG signs do
+  - image: cyberslyph barsign (the only 96x96 sign) is now useable in the game, and
+      uses emissives.
+  - image: added some emissive light masks for a few of the skyrat barsigns
+  - refactor: converted the modular barsigns file to 64x32, and added a separate file
+      for 96x96 signs along with modular support for large signs
+  - bugfix: Hearthkin/primitive demihumans will now spawn with their quirks when using
+      a character loadout
+  - bugfix: in the loadout manager, trying to name a loadout item that has not been
+      checked will now inform user that they need to select the item first
