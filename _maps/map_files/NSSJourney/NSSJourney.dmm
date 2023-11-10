@@ -23414,8 +23414,12 @@
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/airalarm/directional/south,
 /obj/effect/mapping_helpers/airalarm/mixingchamber_access,
+/obj/effect/mapping_helpers/airalarm/link{
+	chamber_id = "ordnanceburn"
+	},
+/obj/effect/mapping_helpers/airalarm/tlv_no_checks,
 /turf/open/floor/iron/white,
-/area/station/science/ordnance/burnchamber)
+/area/station/science/ordnance)
 "bNy" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
@@ -28695,8 +28699,12 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/purple/filled/corner,
+/obj/effect/mapping_helpers/airalarm/link{
+	chamber_id = "ordnancefreezer"
+	},
+/obj/effect/mapping_helpers/airalarm/tlv_no_checks,
 /turf/open/floor/iron/white,
-/area/station/science/ordnance/freezerchamber)
+/area/station/science/ordnance)
 "cpR" = (
 /obj/structure/chair/office/light{
 	dir = 4
@@ -28990,6 +28998,10 @@
 	name = "Gas to Filter"
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/effect/mapping_helpers/airalarm/link{
+	chamber_id = "engine"
+	},
+/obj/effect/mapping_helpers/airalarm/tlv_no_checks,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter)
 "crb" = (
@@ -46079,6 +46091,10 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/fore)
+"nfO" = (
+/obj/machinery/air_sensor/engine_chamber,
+/turf/open/floor/engine,
+/area/station/engineering/supermatter)
 "nfU" = (
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/iron/dark,
@@ -89300,7 +89316,7 @@ cqg
 cqE
 cqZ
 crt
-cMH
+nfO
 cAm
 cMH
 cMN
