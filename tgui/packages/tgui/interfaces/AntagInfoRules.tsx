@@ -17,7 +17,7 @@ export const Rules = (props, context) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Abductors!_Station_Threat">
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#абдуктор-серые-похитители">
                 Special Rules and Metaprotections!
               </a>
             }
@@ -31,7 +31,7 @@ export const Rules = (props, context) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Contractor!">
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#контрактник">
                 Special Rules and Metaprotections!
               </a>
             }
@@ -45,7 +45,7 @@ export const Rules = (props, context) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Cortical_Borer!_PERMANENT_MECHANICAL_STATE">
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#кортикал-борер">
                 Special Rules and Metaprotections!
               </a>
             }
@@ -59,7 +59,7 @@ export const Rules = (props, context) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Man_Eaters!_PERMANENT_MECHANICAL_STATE">
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#пожиратели-растения-из-лозы">
                 Special Rules and Metaprotections!
               </a>
             }
@@ -73,7 +73,7 @@ export const Rules = (props, context) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Obsessed!">
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#obsessed-одержимый-помешанный">
                 Special Rules and Metaprotections!
               </a>
             }
@@ -87,7 +87,7 @@ export const Rules = (props, context) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Revenant!_PERMANENT_MECHANICAL_STATE">
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#ревенант-фиолетовый-призрак">
                 Special Rules and Metaprotections!
               </a>
             }
@@ -101,7 +101,7 @@ export const Rules = (props, context) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Space_Dragon!_PERMANENT_MECHANICAL_STATE">
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#космический-дракон">
                 Special Rules and Metaprotections!
               </a>
             }
@@ -115,7 +115,7 @@ export const Rules = (props, context) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Space_Pirates!_Station_Threat">
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#пираты">
                 Special Rules and Metaprotections!
               </a>
             }
@@ -129,7 +129,7 @@ export const Rules = (props, context) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Blob!_PERMANENT_MECHANICAL_STATE">
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#блоб">
                 Special Rules and Metaprotections!
               </a>
             }
@@ -143,7 +143,7 @@ export const Rules = (props, context) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Changeling!_Station_Threat">
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#генокрад">
                 Special Rules and Metaprotections!
               </a>
             }
@@ -154,13 +154,7 @@ export const Rules = (props, context) => {
       return (
         <Stack vertical>
           <Stack.Item bold>Special Rules:</Stack.Item>
-          <Stack.Item>
-            {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Clockcult_(OPFOR)">
-                Special Rules and Metaprotections!
-              </a>
-            }
-          </Stack.Item>
+          <Stack.Item>{<a>Dont be an asshole.</a>}</Stack.Item>
         </Stack>
       );
     case 'AssaultOps':
@@ -169,7 +163,7 @@ export const Rules = (props, context) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Assault_Ops!">
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#штурмовые-оперативники">
                 Special Rules and Metaprotections!
               </a>
             }
@@ -182,7 +176,7 @@ export const Rules = (props, context) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Heretic!">
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#еретик">
                 Special Rules and Metaprotections!
               </a>
             }
@@ -195,7 +189,7 @@ export const Rules = (props, context) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Malf_AI!">
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#малф-сбойный-ии">
                 Special Rules and Metaprotections!
               </a>
             }
@@ -208,7 +202,7 @@ export const Rules = (props, context) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Morphling!_Station_Threat">
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#морфлинг-морф">
                 Special Rules and Metaprotections!
               </a>
             }
@@ -221,7 +215,7 @@ export const Rules = (props, context) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Nightmare!_Station_Threat">
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#nightmare-кошмар-тень">
                 Special Rules and Metaprotections!
               </a>
             }
@@ -234,7 +228,7 @@ export const Rules = (props, context) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Space_Ninja">
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#ниндзя">
                 Special Rules and Metaprotections!
               </a>
             }
@@ -247,7 +241,7 @@ export const Rules = (props, context) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Wizard!">
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#маг">
                 Special Rules and Metaprotections!
               </a>
             }
@@ -260,7 +254,7 @@ export const Rules = (props, context) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
-              <a href="https://wiki.skyrat13.space/index.php/Antagonist_Policy#Traitor!">
+              <a href="https://fluffy-frontier.ru/politika-antagonistov#предатель-агент">
                 Special Rules and Metaprotections!
               </a>
             }
