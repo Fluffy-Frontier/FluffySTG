@@ -479,3 +479,21 @@
       a character loadout
   - bugfix: in the loadout manager, trying to name a loadout item that has not been
       checked will now inform user that they need to select the item first
+2023-11-11:
+  Iajret:
+  - qol: SM airalarms on VoidRaptor and Blueshift now actually reads atmos from SM
+      chamber.
+  Jacquerel:
+  - image: Adds yet another bar sign, this one mining themed
+  KingkumaArt:
+  - bugfix: fixed engi crossbow being able to be used onehanded + ability to craft
+      with sci inducers
+  MTandi:
+  - qol: Ordnance burn, freezing and supermatter chamber air alarms now show the air
+      contents on the tile of the connected sensor inside the chamber.
+  lizardqueenlexi:
+  - config: The bitrunner job now has a default config for server owners.
+  timothymtorres:
+  - bugfix: Fix mapping linter not identifying duplicate blacklisted objects on a
+      turf
+  - code_imp: Add a mapping linter to check for stacked machinery
