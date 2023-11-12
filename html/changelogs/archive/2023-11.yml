@@ -525,6 +525,7 @@
       lungs. Now, it will simply say the target is lacking a pulse or not breathing.
   - bugfix: Split persons can talk to their host once again
   - bugfix: People with copied memories can modify their bank account ID as normal.
+  - bugfix: AI controlled mobs which are immobilized are now properly immobilized
   Motho:
   - bugfix: NanoTrasen remembered to equip the NSV Blueshift with an APLU Paddy.
   Zergspower:
@@ -535,3 +536,5 @@
   - balance: you must now dig the basalt to farm plants and ants
   timothymtorres:
   - rscdel: Remove duplicate windows from birdshot, delta, and anomaly research ruin.
+  vinylspiders:
+  - code_imp: gets rid of the rest of the instances of 'targetted' typo from code
