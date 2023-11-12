@@ -169,6 +169,12 @@ DEFINE_BITFIELD(status_flags, list(
 GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 	/obj/item/gun)))
 
+<<<<<<< HEAD
+=======
+//The define for base unarmed miss chance
+#define UNARMED_MISS_CHANCE_BASE 20
+#define UNARMED_MISS_CHANCE_MAX 80
+>>>>>>> 3be8ca9cb ([MIRROR] [NO GBP} Makes it so that punch miss chance can actually go above 20% [MDB IGNORE] (#24940))
 
 //Combat object defines
 
