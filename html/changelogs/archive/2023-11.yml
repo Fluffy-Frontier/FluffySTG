@@ -605,8 +605,13 @@
   - refactor: gutlunches have been refactored into basic mobs. please report any bugs
   - rscadd: ashwalkers have a small ranch they can manage
   - bugfix: wall tearer compnent wont runtime when interacting with mineral walls
+  - bugfix: bileworms will now attack
   BlueMemesauce:
   - bugfix: Fixed tcomms relays being weird, they should be sabotagable again
+  Danny Boy:
+  - bugfix: Fixed Signer eyebrow raising/lowering indicators and emotes
+  - bugfix: Fixed Signer RuneChat punctuation
+  - bugfix: Signers no longer sign with their species' tongue
   GPeckman:
   - qol: Fixed/improved feedback when failing to apply a direct law change to a cyborg.
   - bugfix: Borgs who are unsynced from a malf AI now lose the zeroth law as intended.
@@ -624,17 +629,30 @@
       and Clarke.
   - balance: Mech overclock heating now scales with movespeed, higher speed - faster
       overheat.
+  Majkl-J:
+  - bugfix: You can now eject blank IDs from modular computers
   Melbert:
   - bugfix: Fixes some potential exploits and issues involving shielded equipment.
   - balance: Body temperature from being lit on fire will soft cap at 1,200 K. It
       will still increase beyond this, but with diminishing returns. For example,
       at 5,000 K, fire will heat 67x weaker.
+  Nerev4r:
+  - bugfix: Kicks are no longer supercharged by the dark energies of the Satsui no
+      Hado, making them no longer do a billion damage.
+  OrionTheFox:
+  - image: Resprites the Reactive Anomaly Armor
+  Rhials:
+  - bugfix: The full mining lockers in the Lavaland Mafia map have been replaced with
+      (empty) mining carts.
   SethLafuente:
   - bugfix: fixes half-covering glassware protecting eyes from chemicals
   SyncIt21:
   - bugfix: suite storage units can be locked again. Remember to install a card reader
       or set the access levels in the airlock electronics inside its stock parts &
       finally swipe your ID to properly enforce access control.
+  TwistedSilicon:
+  - bugfix: invisimin verb now makes you invisible to all HUDs too! No more floating
+      healthbars or job identifiers giving you away while you sneak around.
   Vishenka0704:
   - bugfix: Now you can refuse the pirates request.
   distributivgesetz:
@@ -657,9 +675,19 @@
   mc-oofert:
   - bugfix: tramstation cargo disposals outlet has been repositioned to not softlock
       whoever cannot lay down
+  - bugfix: The plaguebearer can no longer depower virology on Tramstation
+  necromanceranne:
+  - bugfix: The Dread Disciples of Maint Khan, notorious Tunnel Arts practitioner
+      and maintenance warlord, have been driven from Nanotrasen stations within the
+      Spinward Sector. The average punch accuracy has been increased as a direct result,
+      with the most exhausted puncher now having a  max potential inaccuracy of 80%,
+      rather than the absurd 20% of the Disciples.
   nikothedude:
   - code_imp: Quirks are now customizable on the quirks page instead of on the character
       prefs page
+  san7890:
+  - bugfix: Gorillas and Regal Rats will no longer show up in the ghost-control menu
+      if they died without anyone ever taking control of them.
   timothymtorres:
   - rscadd: Add bamboo seeds to ash walker den. This lets them craft blowguns, crude
       syringes, bamboo spears, punji stick traps, and more!
