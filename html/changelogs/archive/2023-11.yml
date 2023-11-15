@@ -691,3 +691,89 @@
   timothymtorres:
   - rscadd: Add bamboo seeds to ash walker den. This lets them craft blowguns, crude
       syringes, bamboo spears, punji stick traps, and more!
+2023-11-15:
+  D4C-420:
+  - spellcheck: hopefully changed all instances of the word 'mjolnir' to 'mjollnir'
+  Ghommie:
+  - bugfix: Fixed a small issue with disposal outlets leaving contents about to be
+      ejected stuck inside the pipe beneath it if deleted.
+  Jacquerel:
+  - balance: Sapient brimdemons can't hurt themselves with their own beams
+  JohnFulpWillard:
+  - bugfix: PDAs now log that they've been emagged, but will no longer log any further
+      programs they open beyond that. This means Nukies don't sell themselves out
+      by opening their disk tracking app.
+  - refactor: Destructive Analyzers now have a TGUI menu.
+  LT3:
+  - bugfix: Bad luck omen again raises your chance of getting shocked by the tram
+      plate
+  - bugfix: Tram plate checks and energizes when the tram is moving
+  - code_imp: Omen component now applies the cursed trait
+  MTandi:
+  - image: Crates got new sprites
+  - image: Added more crate styles
+  Melbert:
+  - code_imp: General heart code cleanup.
+  - bugfix: Heartbeat sound effects are no longer sourced to the exact tile you fell
+      into crit at
+  - bugfix: Abductors glands are less likely to become invisible or look wrong
+  - bugfix: Ethereal hearts are less likely to become invisible or look wrong, and
+      now properly spawn with their shine overlay
+  - image: Adds heartbeat animation to beating Ethereal Hearts
+  - bugfix: Fixes hallucination and encrypted announcements printing to the Newscaster.
+  Motho:
+  - image: The FTU has replaced their aging fleet of advanced shipping containers.
+      Sector 13 is among the first few localities to enjoy them.
+  Shroopy:
+  - bugfix: Molotovs now light their splashed contents on fire.
+  StrangeWeirdKitten:
+  - rscdel: Removes the omni-lathe from blueshift secure tech storage. Replaces it
+      with some law modules.
+  SyncIt21:
+  - bugfix: drying rack now shows correct examines & screen tips.
+  - code_imp: tone of code organization for smart fridges overall. changed ui to typescript.
+  - qol: added more detailed examines & screen tips for smart fridges. drying racks
+      can be dismantled with a crowbar and not simply pried open with it.
+  jjpark-kb:
+  - qol: looms will now attempt to loop through stackable items (cotton as an example)
+  - bugfix: updated the drones backpack to include items that the /tg/ nodrop drone
+      toolbox has
+  - bugfix: drones can craft again
+  larentoun:
+  - rscadd: Emote Panel TGUI added in IC category.
+  necromanceranne:
+  - balance: Harnessing Shoreline Quay (bluespace energy, probably), a mystical energy
+      (total bullshit) that permeates the Astral Waterways (bluespace quantum dimensions,
+      probably), ~~Sleeping Carp users can now once against deflect projectiles with
+      their bare hands when focused in on battle (in combat mode)~~ (They need throw
+      mode still).
+  - balance: The Keelhaul technique is now nonlethal (a philosophical acknowledgement
+      of the familial bond of sleep and death), but causes the target to become temporarily
+      blind and dizzy along with its previous effects.
+  - balance: Sleeping carp users, while in combat mode, deal Stamina damage with their
+      grabs and shoves. If the target of their grab has enough Stamina damage (80),
+      they are knocked unconscious from a well placed nerve pinch.
+  - balance: Sleeping carp users find it very hard to wake up once they fall asleep....
+  san7890:
+  - bugfix: Safeties in the code have been added to prevent things in disposals going
+      into nullspace whenever they get ejected from a pipe - you will just magically
+      spawn at the turf that you were meant to be flung towards.
+  - qol: You will no longer be added to the list for ghost-orbit role polls if you
+      have opted out of getting antag ghost roles in your preferences.
+  - qol: You will get a tgui_alert to accept the ghost role if you were selected via
+      the orbit poll, instead of it just throwing you intot he role.
+  san7890, Ghommie:
+  - bugfix: The Blessing of Insanity now grants no damage slowdown and free hyperspace
+      movement correctly.
+  vinylspiders:
+  - bugfix: fixed a bug where loadout plushes would sometimes have their custom descriptions
+      reset under certain conditions
+  - refactor: fixed hard dels associated with anesthetic machine, & the mask item
+      will now cause ci to fail when placed via mapping
+  - bugfix: you no longer have to violently beat the anesthetic machine to death with
+      the anesthetic tank to load it
+  - bugfix: fixed a bug that would cause the anesthetic machine to become unusable
+      when a mask gets destroyed (e.g., in a fire or explosion)
+  - bugfix: fixes some of the runtimes in the loadout system caused by job/species
+      restricted items
+  - bugfix: Adds a bitrunning version of the double esword that has a 75% block rate
