@@ -777,3 +777,51 @@
   - bugfix: fixes some of the runtimes in the loadout system caused by job/species
       restricted items
   - bugfix: Adds a bitrunning version of the double esword that has a 75% block rate
+2023-11-16:
+  CRITAWAKETS:
+  - qol: The supermatter filters have been flipped on BirdshotStation to work like
+      the supermatters on every round, meaning the filtered gas goes in, and the non-filtered
+      gas comes out.
+  Dalm:
+  - image: A tea room sign for the bar
+  Fikou:
+  - qol: Dead human examines count as "soul departed" when the client is disconnected
+      or the human doesn't have a brain anymore.
+  - bugfix: grabs no longer trigger krav maga
+  GPeckman:
+  - rscadd: Androids now have robotic brains instead of organic brains.
+  Ghommie:
+  - bugfix: Fixed catwalks over open space not making a sound when walked over.
+  Majkl-J:
+  - qol: Bluespace miner now has visual indication to its status and problem
+  - sound: The sound on the bluespace miner is no longer earpiercingly loud
+  - image: Added lights to the bluespace miner
+  - refactor: Refactored bluespace miner code
+  Melbert:
+  - balance: Stop, drop, and roll no longer instantly clears 5 fire stacks off of
+      you - Instead, it will clear 1 fire stack off of you every time you roll, with
+      a roll every 0.8 seconds.
+  - balance: Stop, drop, and roll no longer stuns you for 6 seconds. Instead, it will
+      knock you to the floor while you are rolling. Moving around or getting up will
+      cancel the roll, and you cannot use items while rolling around.
+  - balance: Stop, drop, and roll will now repeat until the fire is put out or you
+      get up.
+  Shroopy:
+  - bugfix: Molotovs now splash before burning, not after
+  Zergspower:
+  - bugfix: fixes the mass-decal and VV's in Blueshift - additionally repipes the
+      entire map to reduce its size
+  deathrobotpunch:
+  - qol: the donksoft vendor refill cartridge is now available at the service lathe
+  falconignite:
+  - bugfix: Lizard tail wagging graphics
+  mogeoko:
+  - bugfix: Turbine parts will now use an amount of materials no greater than needed
+      for the upgrade
+  san7890:
+  - bugfix: Bar Bots (and several other mobs) will no longer aggro on you if you click
+      on them with a "forceful" item from halfway across the room.
+  - balance: Male Goats should no longer spawn with an udder, instead of it just being
+      Pete.
+  vinylspiders:
+  - rscdel: pipe gas visuals have been disabled for the time being
