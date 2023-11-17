@@ -22,12 +22,16 @@
 
 /obj/structure/closet/secure_closet/blueshield/New()
 	..()
+<<<<<<< HEAD
 	// FLUFFY FRONTIER EDIT: ADDITION BEGIN - BLUESHIELD-REARM
 	// ВАЖНО!! ДАБЫ НЕ ПЕРЕНАСЫЩАТЬ БЩ ОРУЖИЕМ, ЛЮБЫЕ НОВЫЕ ПУШКИ ПЕРЕНОСИМ В МОДУЛЬ В /obj/item/choice_beacon/blueshield/
 	// Выдал БЩ дополнительные перчатки, аналогичные их стандартным, просто без эффекта рывка.
 	new /obj/item/clothing/gloves/combat(src)
 	// FLUFFY FRONTIER EDIT END - BLUESHIELD-REARM.
 	new /obj/item/storage/secure/briefcase(src)
+=======
+	new /obj/item/storage/briefcase/secure(src)
+>>>>>>> 94c339ce8 ([MIRROR] TGUI for Safes and Secure briefcases (Safes are now a structure, too) [MDB IGNORE] (#25059))
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/grenade/flashbang(src)
 	new /obj/item/assembly/flash/handheld(src)

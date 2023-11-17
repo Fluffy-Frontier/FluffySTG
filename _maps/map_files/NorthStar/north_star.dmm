@@ -346,6 +346,11 @@
 /obj/item/flashlight/flare/candle,
 /turf/open/floor/carpet/orange,
 /area/station/service/chapel/office)
+"adE" = (
+/obj/structure/secure_safe/directional/east,
+/obj/structure/cable,
+/turf/open/floor/iron/grimy,
+/area/station/security/detectives_office)
 "adL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/random/engineering/tank,
@@ -7561,14 +7566,6 @@
 	},
 /turf/open/floor/catwalk_floor,
 /area/station/maintenance/floor1/port)
-"bSJ" = (
-/obj/structure/rack,
-/obj/item/storage/secure/safe/directional/east,
-/obj/effect/turf_decal/tile/red/fourcorners,
-/obj/effect/spawner/random/armory/bulletproof_armor,
-/obj/effect/spawner/random/armory/bulletproof_helmet,
-/turf/open/floor/iron/dark,
-/area/station/ai_monitored/security/armory)
 "bSR" = (
 /obj/structure/closet/crate/freezer,
 /obj/effect/spawner/random/medical/memeorgans,
@@ -19320,6 +19317,14 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/catwalk_floor/iron,
 /area/station/cargo/lobby)
+"fbT" = (
+/obj/structure/rack,
+/obj/structure/secure_safe/directional/east,
+/obj/effect/turf_decal/tile/red/fourcorners,
+/obj/effect/spawner/random/armory/bulletproof_armor,
+/obj/effect/spawner/random/armory/bulletproof_helmet,
+/turf/open/floor/iron/dark,
+/area/station/ai_monitored/security/armory)
 "fbV" = (
 /obj/machinery/door/firedoor,
 /obj/structure/cable,
@@ -23380,12 +23385,6 @@
 /obj/structure/sign/poster/official/random/directional/south,
 /turf/open/floor/iron,
 /area/station/hallway/floor3/aft)
-"ghQ" = (
-/obj/structure/table/wood,
-/obj/item/storage/secure/briefcase,
-/obj/machinery/newscaster/directional/north,
-/turf/open/floor/carpet,
-/area/station/commons/vacant_room/office)
 "ghZ" = (
 /obj/structure/table,
 /obj/item/inspector{
@@ -28219,7 +28218,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
+<<<<<<< HEAD
 /obj/effect/mapping_helpers/airlock/access/any/science/robotics,
+=======
+>>>>>>> 94c339ce8 ([MIRROR] TGUI for Safes and Secure briefcases (Safes are now a structure, too) [MDB IGNORE] (#25059))
 /obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/airlock/access/any/command/minisat,
 /obj/effect/mapping_helpers/airlock/access/any/command/general,
@@ -29760,10 +29762,18 @@
 /obj/machinery/door/airlock/hatch{
 	name = "MiniSat Access"
 	},
+<<<<<<< HEAD
 /obj/effect/mapping_helpers/airlock/access/any/science/robotics,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
+=======
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/cable,
+/obj/effect/mapping_helpers/airlock/access/any/command/minisat,
+/obj/effect/mapping_helpers/airlock/access/any/command/general,
+>>>>>>> 94c339ce8 ([MIRROR] TGUI for Safes and Secure briefcases (Safes are now a structure, too) [MDB IGNORE] (#25059))
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/turret_protected/aisat/hallway)
 "hQl" = (
@@ -42108,16 +42118,6 @@
 /obj/machinery/status_display/evac/directional/west,
 /turf/open/floor/iron,
 /area/station/engineering/atmos/hfr_room)
-"kZi" = (
-/obj/structure/rack,
-/obj/item/storage/secure/briefcase,
-/obj/item/restraints/handcuffs,
-/obj/machinery/light/small/directional/south,
-/obj/machinery/camera/directional/east{
-	c_tag = "Detective's Backroom"
-	},
-/turf/open/floor/iron/grimy,
-/area/station/security/detectives_office)
 "kZl" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 8
@@ -52940,6 +52940,11 @@
 	dir = 4
 	},
 /area/station/hallway/floor3/aft)
+"nIU" = (
+/obj/structure/table,
+/obj/item/storage/briefcase/secure,
+/turf/open/floor/iron/dark,
+/area/station/command/teleporter)
 "nJb" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/heater{
 	dir = 1;
@@ -53677,6 +53682,23 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/pod/light,
 /area/station/maintenance/floor1/starboard/fore)
+"nUl" = (
+/obj/structure/rack,
+/obj/item/storage/briefcase{
+	pixel_x = -3;
+	pixel_y = 2
+	},
+/obj/item/storage/briefcase/secure{
+	pixel_x = 2;
+	pixel_y = -2
+	},
+/obj/item/clothing/glasses/sunglasses,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/wood/parquet,
+/area/station/service/lawoffice)
 "nUp" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -57440,11 +57462,6 @@
 /obj/structure/cable/multilayer/connected,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/turret_protected/aisat_interior)
-"oTF" = (
-/obj/item/storage/secure/safe/directional/east,
-/obj/structure/cable,
-/turf/open/floor/iron/grimy,
-/area/station/security/detectives_office)
 "oTG" = (
 /obj/structure/table,
 /obj/item/storage/fancy/donut_box{
@@ -58065,6 +58082,11 @@
 	},
 /turf/open/floor/pod/dark,
 /area/station/maintenance/floor2/port/fore)
+"pdN" = (
+/obj/structure/secure_safe/caps_spare/directional/south,
+/obj/effect/turf_decal/tile/purple/fourcorners,
+/turf/open/floor/iron/dark,
+/area/station/command/bridge)
 "pdO" = (
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 4
@@ -64144,6 +64166,12 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/catwalk_floor,
 /area/station/maintenance/floor1/port/fore)
+"qIP" = (
+/obj/structure/table/wood,
+/obj/item/storage/briefcase/secure,
+/obj/machinery/newscaster/directional/north,
+/turf/open/floor/carpet,
+/area/station/commons/vacant_room/office)
 "qIT" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -64979,7 +65007,12 @@
 /obj/machinery/door/airlock/hatch{
 	name = "MiniSat Access"
 	},
+<<<<<<< HEAD
 /obj/effect/mapping_helpers/airlock/access/any/science/robotics,
+=======
+/obj/effect/mapping_helpers/airlock/access/any/command/minisat,
+/obj/effect/mapping_helpers/airlock/access/any/command/general,
+>>>>>>> 94c339ce8 ([MIRROR] TGUI for Safes and Secure briefcases (Safes are now a structure, too) [MDB IGNORE] (#25059))
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/turret_protected/aisat/hallway)
 "qVv" = (
@@ -66987,23 +67020,6 @@
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/pod/light,
 /area/station/maintenance/floor2/port/aft)
-"rxd" = (
-/obj/structure/rack,
-/obj/item/storage/briefcase{
-	pixel_x = -3;
-	pixel_y = 2
-	},
-/obj/item/storage/secure/briefcase{
-	pixel_x = 2;
-	pixel_y = -2
-	},
-/obj/item/clothing/glasses/sunglasses,
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
-	},
-/obj/machinery/light/directional/north,
-/turf/open/floor/wood/parquet,
-/area/station/service/lawoffice)
 "rxe" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/structure/chair{
@@ -72437,11 +72453,6 @@
 	},
 /turf/open/floor/wood,
 /area/station/commons/dorms/apartment2)
-"sXl" = (
-/obj/item/storage/secure/safe/caps_spare/directional/south,
-/obj/effect/turf_decal/tile/purple/fourcorners,
-/turf/open/floor/iron/dark,
-/area/station/command/bridge)
 "sXp" = (
 /obj/structure/rack,
 /obj/item/radio/off{
@@ -73375,6 +73386,10 @@
 /obj/effect/spawner/random/engineering/flashlight,
 /turf/open/floor/pod/dark,
 /area/station/maintenance/floor1/starboard/aft)
+"tjB" = (
+/obj/structure/secure_safe/directional/east,
+/turf/open/floor/iron/dark,
+/area/station/command/heads_quarters/hop)
 "tjC" = (
 /obj/structure/sign/poster/official/random/directional/north,
 /turf/open/floor/iron/dark/textured,
@@ -74742,11 +74757,6 @@
 /obj/effect/mob_spawn/corpse/human/charredskeleton,
 /turf/open/floor/iron,
 /area/station/maintenance/floor4/starboard)
-"tBe" = (
-/obj/structure/table,
-/obj/item/storage/secure/briefcase,
-/turf/open/floor/iron/dark,
-/area/station/command/teleporter)
 "tBh" = (
 /obj/machinery/atmospherics/pipe/smart/simple/green/visible{
 	dir = 4
@@ -76210,6 +76220,16 @@
 /obj/structure/cable,
 /turf/open/floor/pod/light,
 /area/station/maintenance/floor1/starboard/fore)
+"tVx" = (
+/obj/structure/rack,
+/obj/item/storage/briefcase/secure,
+/obj/item/restraints/handcuffs,
+/obj/machinery/light/small/directional/south,
+/obj/machinery/camera/directional/east{
+	c_tag = "Detective's Backroom"
+	},
+/turf/open/floor/iron/grimy,
+/area/station/security/detectives_office)
 "tVz" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced/spawner/directional/north,
@@ -82265,10 +82285,6 @@
 /obj/machinery/duct,
 /turf/open/floor/wood/tile,
 /area/station/command/heads_quarters/captain/private)
-"vyv" = (
-/obj/item/storage/secure/safe/directional/south,
-/turf/open/floor/mineral/plastitanium,
-/area/station/maintenance/floor2/starboard/aft)
 "vyz" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -92310,10 +92326,6 @@
 	},
 /turf/open/misc/beach/sand,
 /area/station/hallway/floor2/fore)
-"yaY" = (
-/obj/item/storage/secure/safe/directional/east,
-/turf/open/floor/iron/dark,
-/area/station/command/heads_quarters/hop)
 "yba" = (
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -92794,6 +92806,10 @@
 "yhZ" = (
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/service/library/printer)
+"yij" = (
+/obj/structure/secure_safe/directional/south,
+/turf/open/floor/mineral/plastitanium,
+/area/station/maintenance/floor2/starboard/aft)
 "yil" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -202143,7 +202159,7 @@ mPw
 sQa
 spr
 aOa
-vyv
+yij
 spr
 pxw
 edO
@@ -263850,7 +263866,7 @@ oRz
 pfC
 nqr
 lRY
-ghQ
+qIP
 kux
 joL
 tmq
@@ -308051,7 +308067,7 @@ rrX
 shu
 hwM
 ukK
-sXl
+pdN
 uIx
 oad
 uxW
@@ -313455,7 +313471,7 @@ uqc
 rZV
 pld
 gLb
-tBe
+nIU
 wvq
 uWl
 gIl
@@ -315509,7 +315525,7 @@ cSF
 aEm
 oAe
 mxO
-kZi
+tVx
 mau
 eae
 mGT
@@ -315765,7 +315781,7 @@ iUT
 nyL
 xSQ
 dzE
-oTF
+adE
 mau
 mau
 mau
@@ -318830,7 +318846,7 @@ tlZ
 oaU
 nPE
 qPv
-yaY
+tjB
 wqP
 iNA
 obK
@@ -322711,7 +322727,7 @@ dPH
 vuf
 jjA
 gSD
-bSJ
+fbT
 iaO
 gMo
 jOc
@@ -325001,7 +325017,7 @@ hre
 shW
 ofD
 vxy
-rxd
+nUl
 oWC
 rbR
 ciU
