@@ -18521,17 +18521,6 @@
 	dir = 1
 	},
 /area/station/commons/locker)
-"ePC" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible,
-/obj/structure/cable,
-/obj/machinery/airalarm/directional/east,
-/obj/effect/mapping_helpers/airalarm/engine_access,
-/obj/effect/mapping_helpers/airalarm/link{
-	chamber_id = "engine"
-	},
-/obj/effect/mapping_helpers/airalarm/tlv_no_checks,
-/turf/open/floor/engine,
-/area/station/engineering/supermatter/room)
 "ePH" = (
 /obj/structure/railing{
 	dir = 4
@@ -23341,10 +23330,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/cargo/miningdock)
-"ghe" = (
-/obj/effect/baseturf_helper/reinforced_plating/ceiling,
-/turf/open/floor/engine,
-/area/station/engineering/supermatter)
 "ghg" = (
 /obj/effect/turf_decal/trimline/yellow/warning{
 	dir = 10
@@ -23675,13 +23660,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/security/brig)
-"glU" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/machinery/air_sensor/engine_chamber,
-/turf/open/floor/engine,
-/area/station/engineering/supermatter)
 "glW" = (
 /obj/structure/table,
 /obj/item/toy/cards/deck,
@@ -26062,6 +26040,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
+"gSd" = (
+/obj/effect/baseturf_helper/reinforced_plating/ceiling,
+/turf/open/floor/engine,
+/area/station/engineering/supermatter)
 "gSj" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -28218,10 +28200,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
-<<<<<<< HEAD
-/obj/effect/mapping_helpers/airlock/access/any/science/robotics,
-=======
->>>>>>> 94c339ce8 ([MIRROR] TGUI for Safes and Secure briefcases (Safes are now a structure, too) [MDB IGNORE] (#25059))
 /obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/airlock/access/any/command/minisat,
 /obj/effect/mapping_helpers/airlock/access/any/command/general,
@@ -29762,18 +29740,11 @@
 /obj/machinery/door/airlock/hatch{
 	name = "MiniSat Access"
 	},
-<<<<<<< HEAD
-/obj/effect/mapping_helpers/airlock/access/any/science/robotics,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/cable,
-=======
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
 /obj/effect/mapping_helpers/airlock/access/any/command/minisat,
 /obj/effect/mapping_helpers/airlock/access/any/command/general,
->>>>>>> 94c339ce8 ([MIRROR] TGUI for Safes and Secure briefcases (Safes are now a structure, too) [MDB IGNORE] (#25059))
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/turret_protected/aisat/hallway)
 "hQl" = (
@@ -35089,6 +35060,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/light,
 /area/station/maintenance/floor2/starboard)
+"jlK" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible,
+/obj/structure/cable,
+/obj/machinery/airalarm/directional/east,
+/obj/effect/mapping_helpers/airalarm/engine_access,
+/obj/effect/mapping_helpers/airalarm/link{
+	chamber_id = "engine"
+	},
+/obj/effect/mapping_helpers/airalarm/tlv_no_checks,
+/turf/open/floor/engine,
+/area/station/engineering/supermatter/room)
 "jlS" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green,
@@ -44433,6 +44415,13 @@
 /obj/effect/spawner/random/structure/crate,
 /turf/open/floor/pod/light,
 /area/station/maintenance/floor1/port/aft)
+"lET" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/air_sensor/engine_chamber,
+/turf/open/floor/engine,
+/area/station/engineering/supermatter)
 "lFa" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
@@ -45048,6 +45037,18 @@
 /obj/machinery/light/red/dim/directional/east,
 /turf/open/openspace,
 /area/station/maintenance/floor3/port/fore)
+"lNx" = (
+/obj/machinery/atmospherics/pipe/smart/simple/purple/visible{
+	dir = 4
+	},
+/obj/machinery/airalarm/directional/north,
+/obj/effect/mapping_helpers/airalarm/mixingchamber_access,
+/obj/effect/mapping_helpers/airalarm/link{
+	chamber_id = "ordnancefreezer"
+	},
+/obj/effect/mapping_helpers/airalarm/tlv_no_checks,
+/turf/open/floor/iron/dark,
+/area/station/science/ordnance/testlab)
 "lNA" = (
 /obj/effect/turf_decal/trimline/green/warning{
 	dir = 8
@@ -45778,24 +45779,6 @@
 	},
 /turf/open/floor/wood,
 /area/station/medical/psychology)
-"lVT" = (
-/obj/machinery/button/ignition/incinerator/ordmix{
-	pixel_x = 8;
-	pixel_y = 32
-	},
-/obj/machinery/button/door/incinerator_vent_ordmix{
-	pixel_x = -8;
-	pixel_y = 32
-	},
-/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible,
-/obj/machinery/airalarm/directional/west,
-/obj/effect/mapping_helpers/airalarm/mixingchamber_access,
-/obj/effect/mapping_helpers/airalarm/link{
-	chamber_id = "ordnanceburn"
-	},
-/obj/effect/mapping_helpers/airalarm/tlv_no_checks,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance/testlab)
 "lVU" = (
 /obj/machinery/atmospherics/pipe/smart/simple/yellow/visible{
 	dir = 4
@@ -60440,18 +60423,6 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/pod/light,
 /area/station/maintenance/floor1/port)
-"pLh" = (
-/obj/machinery/atmospherics/pipe/smart/simple/purple/visible{
-	dir = 4
-	},
-/obj/machinery/airalarm/directional/north,
-/obj/effect/mapping_helpers/airalarm/mixingchamber_access,
-/obj/effect/mapping_helpers/airalarm/link{
-	chamber_id = "ordnancefreezer"
-	},
-/obj/effect/mapping_helpers/airalarm/tlv_no_checks,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance/testlab)
 "pLy" = (
 /obj/effect/spawner/random/trash/cigbutt,
 /obj/machinery/shower/directional/west,
@@ -61004,6 +60975,24 @@
 	dir = 8
 	},
 /area/station/hallway/floor1/fore)
+"pSI" = (
+/obj/machinery/button/ignition/incinerator/ordmix{
+	pixel_x = 8;
+	pixel_y = 32
+	},
+/obj/machinery/button/door/incinerator_vent_ordmix{
+	pixel_x = -8;
+	pixel_y = 32
+	},
+/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible,
+/obj/machinery/airalarm/directional/west,
+/obj/effect/mapping_helpers/airalarm/mixingchamber_access,
+/obj/effect/mapping_helpers/airalarm/link{
+	chamber_id = "ordnanceburn"
+	},
+/obj/effect/mapping_helpers/airalarm/tlv_no_checks,
+/turf/open/floor/iron/dark,
+/area/station/science/ordnance/testlab)
 "pSV" = (
 /obj/machinery/griddle,
 /turf/open/floor/iron/kitchen,
@@ -65007,12 +64996,8 @@
 /obj/machinery/door/airlock/hatch{
 	name = "MiniSat Access"
 	},
-<<<<<<< HEAD
-/obj/effect/mapping_helpers/airlock/access/any/science/robotics,
-=======
 /obj/effect/mapping_helpers/airlock/access/any/command/minisat,
 /obj/effect/mapping_helpers/airlock/access/any/command/general,
->>>>>>> 94c339ce8 ([MIRROR] TGUI for Safes and Secure briefcases (Safes are now a structure, too) [MDB IGNORE] (#25059))
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/turret_protected/aisat/hallway)
 "qVv" = (
@@ -138438,7 +138423,7 @@ oqA
 wlP
 klY
 klY
-ePC
+jlK
 nHv
 cAf
 klY
@@ -138954,7 +138939,7 @@ sly
 uyD
 aFJ
 mMq
-ghe
+gSd
 uyD
 sHL
 ddT
@@ -139981,7 +139966,7 @@ kcB
 ppO
 fJE
 jxc
-glU
+lET
 wCu
 vap
 kBK
@@ -313437,7 +313422,7 @@ tQO
 mXH
 qyH
 mXH
-lVT
+pSI
 mUd
 xJx
 nPE
@@ -315231,7 +315216,7 @@ ucA
 ucA
 ucA
 sJm
-pLh
+lNx
 koC
 oOA
 tyR
