@@ -317,7 +317,7 @@
 /turf/closed/wall,
 /area/station/security/prison)
 "acn" = (
-/obj/item/storage/secure/safe/hos{
+/obj/structure/secure_safe/hos{
 	pixel_x = 35
 	},
 /obj/structure/closet/secure_closet/hos,
@@ -3395,7 +3395,7 @@
 /area/station/solars/starboard/aft)
 "auh" = (
 /obj/machinery/vending/wardrobe/det_wardrobe,
-/obj/item/storage/secure/safe/directional/west,
+/obj/structure/secure_safe/directional/west,
 /turf/open/floor/iron/grimy,
 /area/station/security/detectives_office)
 "auj" = (
@@ -9398,7 +9398,7 @@
 /area/station/command/bridge)
 "aRj" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/secure/briefcase,
+/obj/item/storage/briefcase/secure,
 /obj/item/storage/box/pdas{
 	pixel_x = 4;
 	pixel_y = 4
@@ -10189,7 +10189,7 @@
 "aUc" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/medkit/regular,
-/obj/item/storage/secure/safe/caps_spare{
+/obj/structure/secure_safe/caps_spare{
 	pixel_x = 37;
 	pixel_y = 32
 	},
@@ -13110,7 +13110,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
-/obj/item/storage/secure/safe/directional/south,
+/obj/structure/secure_safe/directional/south,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -13721,7 +13721,7 @@
 /obj/structure/table/wood,
 /obj/item/pinpointer/nuke,
 /obj/item/disk/nuclear,
-/obj/item/storage/secure/safe/directional/east,
+/obj/structure/secure_safe/directional/east,
 /obj/machinery/light/directional/east,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
@@ -36961,7 +36961,7 @@
 "gcO" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin/carbon,
-/obj/item/storage/secure/briefcase,
+/obj/item/storage/briefcase/secure,
 /obj/item/pen/fourcolor,
 /obj/item/coin/gold{
 	pixel_x = -7;
@@ -42371,8 +42371,8 @@
 	dir = 6
 	},
 /obj/structure/table,
-/obj/item/storage/secure/briefcase,
-/obj/item/storage/secure/safe/directional/south,
+/obj/item/storage/briefcase/secure,
+/obj/structure/secure_safe/directional/south,
 /obj/item/ai_module/core,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/rd)
@@ -59747,7 +59747,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
-/obj/item/storage/secure/safe/directional/north,
+/obj/structure/secure_safe/directional/north,
 /obj/machinery/light/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/medical/virology)

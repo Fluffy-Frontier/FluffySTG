@@ -6667,7 +6667,7 @@
 /area/station/maintenance/department/crew_quarters/bar)
 "cjq" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/secure/briefcase{
+/obj/item/storage/briefcase/secure{
 	pixel_y = 6
 	},
 /obj/item/radio{
@@ -28846,7 +28846,7 @@
 "jfK" = (
 /obj/structure/table/glass,
 /obj/item/stack/package_wrap,
-/obj/item/storage/secure/briefcase,
+/obj/item/storage/briefcase/secure,
 /obj/item/hand_labeler,
 /obj/item/reagent_containers/spray/cleaner,
 /obj/structure/cable,
@@ -30859,7 +30859,7 @@
 "jPq" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/cobweb,
-/obj/item/storage/secure/briefcase{
+/obj/item/storage/briefcase/secure{
 	pixel_y = 4
 	},
 /obj/item/radio{
@@ -35960,7 +35960,7 @@
 /obj/machinery/firealarm/directional/west,
 /obj/machinery/newscaster/directional/south,
 /obj/item/stack/package_wrap,
-/obj/item/storage/secure/briefcase{
+/obj/item/storage/briefcase/secure{
 	pixel_y = 4
 	},
 /obj/item/hand_labeler,
@@ -38276,7 +38276,7 @@
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/storage/secure/briefcase,
+/obj/item/storage/briefcase/secure,
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
@@ -41914,7 +41914,7 @@
 "nvA" = (
 /obj/machinery/suit_storage_unit/hos,
 /obj/effect/turf_decal/delivery,
-/obj/item/storage/secure/safe/hos{
+/obj/structure/secure_safe/hos{
 	pixel_x = 36;
 	pixel_y = 28
 	},
@@ -44579,7 +44579,7 @@
 /area/station/service/library)
 "otO" = (
 /obj/structure/table,
-/obj/item/storage/secure/briefcase,
+/obj/item/storage/briefcase/secure,
 /obj/item/taperecorder,
 /obj/structure/sign/warning/electric_shock/directional/south,
 /turf/open/floor/iron/dark,
@@ -46402,7 +46402,7 @@
 /obj/structure/table,
 /obj/item/healthanalyzer,
 /obj/item/hand_labeler,
-/obj/item/storage/secure/safe/caps_spare/directional/north,
+/obj/structure/secure_safe/caps_spare/directional/north,
 /obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 1
 	},
@@ -54144,7 +54144,7 @@
 /area/station/service/chapel)
 "rxt" = (
 /obj/structure/table/wood,
-/obj/item/storage/secure/briefcase{
+/obj/item/storage/briefcase/secure{
 	pixel_x = 5;
 	pixel_y = 5
 	},
@@ -66492,7 +66492,7 @@
 	},
 /obj/machinery/light/directional/east,
 /obj/item/lighter,
-/obj/item/storage/secure/safe/directional/east,
+/obj/structure/secure_safe/directional/east,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 8
 	},
