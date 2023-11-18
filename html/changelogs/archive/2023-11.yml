@@ -860,6 +860,13 @@
   - refactor: Wall safes are now structures, rather than items that can't be picked
       up.
   - refactor: Lockable items (Wall safes & Secure Briefcases) now use TGUI.
+  Melbert:
+  - bugfix: Plates now respect the weight class of items on top.
+  - bugfix: Fried items now respect existing volume cap.
+  - bugfix: Smartfridges now don't accept bulky food items, good thing we have none
+      of those right guys?
+  SapphicOverload:
+  - bugfix: You can once again use alt to turn while strafing in a mech
   Shadow-Quill:
   - bugfix: 'The CRAB-17 will now only take whole credits, as fractional credits were
       found to be worth less.
@@ -876,6 +883,8 @@
       ph of a solution making it less efficient but more faster. Just make the reaction
       chamber wait for longer periods of time to accurately balance ph
   - refactor: reagent holder code has been condensed. Report any bugs on GitHub
+  WarlockD:
+  - bugfix: ' Attaching a circuit to the air alarm now reads from the correct turf.'
   ZephyrTFA:
   - rscadd: Chat Reliability Layer
   - code_imp: TGUI chat messages now track their sequence and will be resent if the
