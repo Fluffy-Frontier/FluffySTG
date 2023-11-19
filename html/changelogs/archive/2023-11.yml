@@ -919,20 +919,38 @@
   - bugfix: The Galactic Material Market now respects quantity of materials purchased,
       removing them from the market when bought and preventing you from ordering more
       than are available at a given time.
+  DaCoolBoss:
+  - spellcheck: Nukie and ERT defibrillators now reference combat mode instead of
+      intents.
   Deek-Za:
   - image: New Digitigrade icons for red sec officer and HoS uniforms.
   Ghommie:
   - rscadd: Abductors have bigger brains.
+  KingkumaArt:
+  - bugfix: Stopped a DS crash when shooting a rebar crossbow in specific circumstances.
   LT3:
   - bugfix: Tram will no longer electrocute innocent, law abiding crew trying to use
       the crosswalk when there's no tram in sight
+  MTandi:
+  - bugfix: Hydrotrays consume nutrients according to their proportion in the mix,
+      instead of randomly picking reagents to consume every cycle.
   Melbert:
   - refactor: Refactored another large chuck of attack code, primarily involving melee
       item attacks and non-human mob attacks. Report if you see anything weird
   - bugfix: Pacifists clicking on simple robots or silicons no longer causes sparks
   - bugfix: Blocked thrown batons are now properly... blocked
+  Rhials:
+  - spellcheck: The Grey ID Cargo Crate is now spelled properly.
+  - rscadd: Nuclear Operatives, in an attempt to appeal to the more "tacticool" members
+      of their cause, have begun using callsigns to designate themselves. Check your
+      preferences to set your Operative Alias!
+  - qol: At the request of the more vain members of the cause, hair dye has been added
+      to the Operative Firebase dorms.
   Shroopy:
   - qol: Implanted HUDs can now be toggled on and off with an action.
+  SyncIt21, Iajret:
+  - bugfix: selling large amount of mats in cargo should not give you infinite credits
+  - bugfix: runtime when adjusting material market after buying
   Thlumyn:
   - rscadd: Telekinesis now lets you subtler at range.
   YakumoChen:
@@ -941,12 +959,19 @@
   distributivgesetz:
   - bugfix: Fixes a runtime when the radioactive nebula trait runs with a map that
       has no virology area.
+  jlsnow301:
+  - bugfix: Chat shouldn't bluescreen at the start of the round
   mc-oofert:
   - bugfix: you can climb over more stuff with a climbing hook
   san7890:
   - bugfix: '"Old Chat" (AKA: The old-styled non-TGUI raw-HTMLesque chat that you
       might see when it prods you with the "Failed to load fancy chat!" issue) should
       now get all text messages as expected.'
+  xXPawnStarrXx:
+  - rscadd: Added a stone griddle
+  - rscadd: Added a seed shelf & produce bin
+  - rscadd: Crafting recipes for stone cooking structures.
+  - rscadd: Crafting recipes for Paxil's fences.
   yooriss:
   - balance: Gravity suspension harnesses now arrive in crates instead of goody cases,
       meaning that they can be ordered via departmental budgets AND privately purchased
