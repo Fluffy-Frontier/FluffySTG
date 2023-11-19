@@ -914,3 +914,40 @@
   - bugfix: After correcting a slight miscalculation, Bit Avatars now have hands again.
   mc-oofert:
   - qol: if you die in a mech you automatically eject
+2023-11-19:
+  ArcaneMusic:
+  - bugfix: The Galactic Material Market now respects quantity of materials purchased,
+      removing them from the market when bought and preventing you from ordering more
+      than are available at a given time.
+  Deek-Za:
+  - image: New Digitigrade icons for red sec officer and HoS uniforms.
+  Ghommie:
+  - rscadd: Abductors have bigger brains.
+  LT3:
+  - bugfix: Tram will no longer electrocute innocent, law abiding crew trying to use
+      the crosswalk when there's no tram in sight
+  Melbert:
+  - refactor: Refactored another large chuck of attack code, primarily involving melee
+      item attacks and non-human mob attacks. Report if you see anything weird
+  - bugfix: Pacifists clicking on simple robots or silicons no longer causes sparks
+  - bugfix: Blocked thrown batons are now properly... blocked
+  Shroopy:
+  - qol: Implanted HUDs can now be toggled on and off with an action.
+  Thlumyn:
+  - rscadd: Telekinesis now lets you subtler at range.
+  YakumoChen:
+  - balance: Paint cans hold 20x more paint than before, painters rejoice! (Janitors
+      cry more)
+  distributivgesetz:
+  - bugfix: Fixes a runtime when the radioactive nebula trait runs with a map that
+      has no virology area.
+  mc-oofert:
+  - bugfix: you can climb over more stuff with a climbing hook
+  san7890:
+  - bugfix: '"Old Chat" (AKA: The old-styled non-TGUI raw-HTMLesque chat that you
+      might see when it prods you with the "Failed to load fancy chat!" issue) should
+      now get all text messages as expected.'
+  yooriss:
+  - balance: Gravity suspension harnesses now arrive in crates instead of goody cases,
+      meaning that they can be ordered via departmental budgets AND privately purchased
+      if needed. Rizz your local cargotech to defeat gravity, as the universe intended.
