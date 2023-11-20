@@ -15,6 +15,7 @@
 			// а доставкой прилетит набор с оружием.
 			/obj/item/gun/energy/blueshield = /obj/item/storage/belt/holster/energy/blueshield,
 			/obj/item/gun/ballistic/automatic/sol_smg = /obj/item/storage/toolbox/guncase/skyrat/carwo_large_case/sindano,
+			/obj/item/gun/ballistic/automatic/xhihao_smg = /obj/item/storage/toolbox/guncase/skyrat/xhihao_large_case/bogseo,
 		)
 		for(var/obj/item/weapon as anything in possible_weapons)
 			blueshield_weapons[initial(weapon.name)] = possible_weapons[weapon]
