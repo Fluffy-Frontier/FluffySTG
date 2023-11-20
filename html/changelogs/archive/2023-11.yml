@@ -976,3 +976,39 @@
   - balance: Gravity suspension harnesses now arrive in crates instead of goody cases,
       meaning that they can be ordered via departmental budgets AND privately purchased
       if needed. Rizz your local cargotech to defeat gravity, as the universe intended.
+2023-11-20:
+  Ghommie:
+  - bugfix: Fixed an issue with un-hidden (alien, syndie etc.) nodes not being researchable.
+  LT3:
+  - bugfix: Delam counter will correctly show 0 the shift after a delam
+  OrionTheFox:
+  - bugfix: fixed the Face Scarf not changing the icon correctly when toggled
+  - bugfix: fixed Vapes checking for digitigrade legs, rather than muzzles
+  - image: added muzzle compatibility to the Face Scarf
+  Paxilmaniac:
+  - rscadd: Adds a new weapon given to blueshields and available through cargo if
+      you REALLY wanted, the Bogseo submachinegun, firing .585 and able to give both
+      you and your target an equally bad day!
+  - image: Sprites for the Bogseo done by me :333
+  SyncIt21:
+  - bugfix: debug chem synthesizer works again. cleaned up chem dispenser, portable
+      chem dispenser & debug chem synthesizer ui code
+  - qol: ui for displaying beaker reagents for debug chem synthesizer has been improved.
+      Now displays input list for adding reagents
+  Tattle:
+  - bugfix: admin painting manager works again
+  jlsnow301:
+  - qol: Nearly every ghost alert should now feature a "VIEW" button, even those with
+      click interaction.
+  - rscdel: Ghost alerts no longer show the entire message in the tooltip, instead
+      have been replaced with titles.
+  - bugfix: Admins can spawn bitrunning events (again!)
+  lizardqueenlexi:
+  - spellcheck: Some roundstart tips have been made clearer regarding "suits" vs.
+      "exosuits".
+  - bugfix: Hardcore Random will no longer assign incompatible quirks.
+  vinylspiders:
+  - bugfix: fixes bug that was preventing high luminosity eyes' light from turning
+      on
+  - bugfix: fixes eyes being on the wrong side of the head when facing east/west
+  - bugfix: fixed a race condition with mutations
