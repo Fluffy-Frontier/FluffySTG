@@ -98,3 +98,4 @@
 	lose_text = span_notice("You feel a little less flexible.")
 	medical_record_text = "Patient has a history of uncanny fortune."
 	hardcore_value = 0
+	hidden_quirk = TRUE // FF EDIT: ADDITION - Removing freebie points, staff decision
