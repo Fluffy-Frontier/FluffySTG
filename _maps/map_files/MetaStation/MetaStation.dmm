@@ -57842,7 +57842,13 @@
 	dir = 4;
 	id = "garbage"
 	},
+<<<<<<< HEAD
 /obj/machinery/recycler,
+=======
+/obj/machinery/recycler{
+	dir = 8
+	},
+>>>>>>> aa15c5e6b ([MIRROR] Enzyme (var) exorcism in Metastation [MDB IGNORE] (#25130))
 /turf/open/floor/plating,
 /area/station/maintenance/disposal)
 "uEO" = (
@@ -67633,8 +67639,13 @@
 	pixel_y = 6
 	},
 /obj/item/reagent_containers/condiment/enzyme{
+<<<<<<< HEAD
 	layer = 5;
 	pixel_x = -6
+=======
+	pixel_x = -6;
+	pixel_y = 5
+>>>>>>> aa15c5e6b ([MIRROR] Enzyme (var) exorcism in Metastation [MDB IGNORE] (#25130))
 	},
 /turf/open/floor/iron/cafeteria,
 /area/station/service/kitchen)
