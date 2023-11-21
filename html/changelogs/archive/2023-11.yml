@@ -1018,3 +1018,65 @@
       on
   - bugfix: fixes eyes being on the wrong side of the head when facing east/west
   - bugfix: fixed a race condition with mutations
+2023-11-21:
+  00-Steven:
+  - balance: signers no longer suffer from social anxiety's speech changes when they
+      go non-verbal. Other effects are maintained.
+  Ghommie:
+  - bugfix: The aquarium auto-feeding feature now works correctly.
+  - bugfix: Fixed the infinite growth serum exploit.
+  - bugfix: Fixed generic nutriment processing even when dead.
+  Melbert:
+  - admin: Adds a button to check-antagonists that allows admins to send Nuke Op reinforcements
+      with a single button
+  - admin: Nuke Ops check antagonists now show you full war status (declared / not
+      declared)
+  - bugfix: Fixes multiple nuke teams (or an admin) being able to declare war at once
+  OrionTheFox:
+  - qol: Allergy Dogtags (and any other dogtags, really) are now Tiny items and can
+      fit into wallets.
+  SyncIt21:
+  - code_imp: Removes & merges `get_multiple_reagent_amounts()` proc with `get_reagent_amount()`
+      inside reagent holder
+  - code_imp: Removes & merges `get_reagent()` proc with `has_reagent()` inside reagent
+      holder
+  - code_imp: Removes & merges `has_chemical_flag()` proc with `has_reagent()` inside
+      reagent holder
+  - refactor: Reagent holder code has been further compressed. Report bugs on github
+  TheSS13Melon:
+  - rscadd: Adds a "negative" perk called gifted which gives 6 free points.
+  Thlumyn:
+  - bugfix: healing viruses can no longer have floor virus side effects
+  Vishenka0704:
+  - rscadd: Donator clothes base for FF
+  - rscadd: Donator cloak(coat)
+  necromanceranne:
+  - rscadd: The battle against Maint Khan's forces rages on in the periphery stations
+      of the Spinward Sector. And with it, a new breed of unarmed warrior has emerged;
+      the cybernetic martial artist. Nanotrasen, rather than quell the minor maintenance
+      civil war brewing in their sector, have chosen to exploit this conflict to push
+      their weapons and cybernetics research to new heights!
+  - rscadd: Advanced cybernetic arms can be printed at the Robotics exofabricator
+      once researched. They are unlocked by researching the Advanced Robotics Research
+      node.
+  - rscadd: Advanced cybernetic arms are more durable than standard limbs, and also
+      have higher unarmed potential.
+  - balance: Strongarm implants now utilize the attacking limb's unarmed potential
+      to determine damage and potential armor penetration. It also does additional
+      stamina damage (1.5x punch damage)
+  - balance: Surplus prosthetic limbs contribute more of their carried damage to overall
+      health (AKA they make you actively more vulnerable to damage), and deal less
+      damage with unarmed attacks. Take Quadruple Amputee at your own risk.
+  nikothedude:
+  - qol: Examining guns now shows you the safety keybind
+  vinylspiders:
+  - bugfix: fixes missing examine_more text when double examining a mob (e.g. dogtags
+      will now display)
+  - bugfix: clickable links in examine text will now be surrounded in [brackets].
+  yooriss:
+  - refactor: Icemoon wolves now use the basic mob framework and should act more intelligently,
+      defending their pack.
+  - rscadd: Icemoon wolves can be tamed with slabs of meat and can be ridden as mounts
+      once friendly. Being rather large dogs, they also have access to most of the
+      pet commands you'd expect, such as fetching things, and violently mauling people
+      their owners point at.
