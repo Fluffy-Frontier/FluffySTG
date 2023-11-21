@@ -47540,36 +47540,6 @@
 /obj/machinery/light/warm/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/service/bar)
-<<<<<<< HEAD
-"pWa" = (
-/obj/structure/filingcabinet/chestdrawer,
-/obj/effect/turf_decal/trimline/yellow/filled/line{
-	dir = 9
-	},
-/obj/machinery/button/door/directional/west{
-	id = "atmos";
-	name = "Atmospherics Lockdown";
-	pixel_y = 8;
-	req_access = list("atmospherics")
-	},
-/obj/machinery/button/door/directional/west{
-	id = "Secure Storage";
-	name = "Engineering Secure Storage";
-	req_access = list("engine_equip")
-	},
-/obj/machinery/button/door/directional/west{
-	id = "Engineering";
-	name = "Engineering Lockdown";
-	pixel_y = -8;
-	req_access = list("engineering")
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable,
-/mob/living/basic/parrot/poly,
-/turf/open/floor/iron,
-/area/station/command/heads_quarters/ce)
-=======
->>>>>>> 2b5ad5ba8 ([MIRROR] Adds one way exits to Tramstation science entrance [MDB IGNORE] (#25136))
 "pWt" = (
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 4
