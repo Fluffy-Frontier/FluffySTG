@@ -38,8 +38,15 @@
 	human.dna.body_markings = human.dna.species.get_random_body_markings(human.dna.features)
 	human.dna.species.mutant_bodyparts = human.dna.mutant_bodyparts.Copy()
 	human.dna.species.body_markings = human.dna.body_markings.Copy()
+<<<<<<< HEAD
 	//SKYRAT EDIT ADDITION END
 	human.dna.species.spec_updatehealth(human)
 	human.dna.update_dna_identity()
 	human.updateappearance()
 	human.update_body(is_creating = TRUE)
+=======
+	// SKYRAT EDIT ADDITION END
+	// Snowflake for Ethereals
+	human.updatehealth()
+	human.updateappearance(mutcolor_update = TRUE)
+>>>>>>> 9c5fcda89 ([MIRROR] Kills `spec_updatehealth`, replaces it with use of `COMSIG_LIVING_HEALTH_UPDATE` [MDB IGNORE] (#24152))
