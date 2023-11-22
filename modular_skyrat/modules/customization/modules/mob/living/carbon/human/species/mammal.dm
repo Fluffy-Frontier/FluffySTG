@@ -33,6 +33,22 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/mutant,
 	)
 
+<<<<<<< HEAD
+=======
+/datum/species/mammal/get_default_mutant_bodyparts()
+	return list(
+		"tail" = list("Husky", TRUE),
+		"snout" = list("Husky", TRUE),
+		"horns" = list("None", FALSE),
+		"ears" = list("Husky", TRUE),
+		"legs" = list("Normal Legs", TRUE),
+		"taur" = list("None", FALSE),
+		"fluff" = list("None", FALSE),
+		"wings" = list("None", FALSE),
+		"head_acc" = list("None", FALSE),
+		"neck_acc" = list("None", FALSE),
+	)
+>>>>>>> ec0245b89 (Changes default_mutant_bodyparts list to be index based (#25174))
 
 /obj/item/organ/internal/tongue/mammal
 	liked_foodtypes = GRAIN | MEAT

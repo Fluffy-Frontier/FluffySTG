@@ -63,6 +63,21 @@
 	/// This is the screen that is given to the user after they get revived. On death, their screen is temporarily set to BSOD before it turns off, hence the need for this var.
 	var/saved_screen = "Blank"
 
+<<<<<<< HEAD
+=======
+/datum/species/synthetic/get_default_mutant_bodyparts()
+	return list(
+		"tail" = list("None", FALSE),
+		"ears" = list("None", FALSE),
+		"legs" = list("Normal Legs", FALSE),
+		"snout" = list("None", FALSE),
+		MUTANT_SYNTH_ANTENNA = list("None", FALSE),
+		MUTANT_SYNTH_SCREEN = list("None", FALSE),
+		MUTANT_SYNTH_CHASSIS = list("Default Chassis", FALSE),
+		MUTANT_SYNTH_HEAD = list("Default Head", FALSE),
+	)
+
+>>>>>>> ec0245b89 (Changes default_mutant_bodyparts list to be index based (#25174))
 /datum/species/synthetic/spec_life(mob/living/carbon/human/human)
 	. = ..()
 

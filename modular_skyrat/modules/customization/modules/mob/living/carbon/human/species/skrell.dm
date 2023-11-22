@@ -34,6 +34,14 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/mutant/skrell,
 	)
 
+<<<<<<< HEAD
+=======
+/datum/species/skrell/get_default_mutant_bodyparts()
+	return list(
+		"skrell_hair" = list("Male", TRUE),
+	)
+
+>>>>>>> ec0245b89 (Changes default_mutant_bodyparts list to be index based (#25174))
 /datum/species/skrell/get_species_description()
 	return placeholder_description
 

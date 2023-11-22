@@ -34,6 +34,22 @@
 	)
 	eyes_icon = 'modular_skyrat/modules/organs/icons/insect_eyes.dmi'
 
+<<<<<<< HEAD
+=======
+/datum/species/insect/get_default_mutant_bodyparts()
+	return list(
+		"tail" = list("None", FALSE),
+		"snout" = list("None", FALSE),
+		"horns" = list("None", FALSE),
+		"ears" = list("None", FALSE),
+		"legs" = list("Normal Legs", FALSE),
+		"taur" = list("None", FALSE),
+		"fluff" = list("None", FALSE),
+		"wings" = list("Bee", FALSE),
+		"moth_antennae" = list("None", FALSE),
+	)
+
+>>>>>>> ec0245b89 (Changes default_mutant_bodyparts list to be index based (#25174))
 /datum/species/insect/get_species_description()
 	return placeholder_description
 

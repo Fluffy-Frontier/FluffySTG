@@ -51,6 +51,17 @@
 		LOADOUT_ITEM_EARS = VOX_EARS_ICON
 	)
 
+<<<<<<< HEAD
+=======
+/datum/species/vox/get_default_mutant_bodyparts()
+	return list(
+		"tail" = list("Vox Tail", FALSE),
+		"legs" = list(DIGITIGRADE_LEGS,FALSE),
+		"snout" = list("Vox Snout", FALSE),
+		"spines" = list("Vox Bands", TRUE),
+	)
+
+>>>>>>> ec0245b89 (Changes default_mutant_bodyparts list to be index based (#25174))
 /datum/species/vox/pre_equip_species_outfit(datum/job/job, mob/living/carbon/human/equipping, visuals_only)
 	. = ..()
 	if(job?.vox_outfit)

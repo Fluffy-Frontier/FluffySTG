@@ -7,9 +7,18 @@
 		TRAIT_LITERATE,
 	)
 	mutant_bodyparts = list()
+<<<<<<< HEAD
 	default_mutant_bodyparts = list(
 		"pod_hair" = ACC_RANDOM,
 		"legs" = "Normal Legs"
+=======
+	payday_modifier = 1.0
+
+/datum/species/pod/get_default_mutant_bodyparts()
+	return list(
+		"pod_hair" = list("Ivy", TRUE),
+		"legs" = list("Normal Legs", FALSE),
+>>>>>>> ec0245b89 (Changes default_mutant_bodyparts list to be index based (#25174))
 	)
 	payday_modifier = 1.0
 

@@ -36,6 +36,16 @@
 	//i dont have to worry about sprites due to limbs_icon, thank god
 	//also the head needs to be normal for hair to work
 
+<<<<<<< HEAD
+=======
+/datum/species/ghoul/get_default_mutant_bodyparts()
+	return list(
+		"tail" = list("None", FALSE),
+		"ears" = list("None", FALSE),
+		"legs" = list("Normal Legs", FALSE),
+	)
+
+>>>>>>> ec0245b89 (Changes default_mutant_bodyparts list to be index based (#25174))
 /proc/proof_ghoul_features(list/inFeatures)
 	// Missing Defaults in DNA? Randomize!
 	if(inFeatures["ghoulcolor"] == null || inFeatures["ghoulcolor"] == "")

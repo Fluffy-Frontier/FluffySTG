@@ -53,6 +53,16 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/mutant/teshari,
 	)
 
+<<<<<<< HEAD
+=======
+/datum/species/teshari/get_default_mutant_bodyparts()
+	return list(
+		"tail" = list("Teshari (Default)", TRUE),
+		"ears" = list("Teshari Regular", TRUE),
+		"legs" = list("Normal Legs", FALSE),
+	)
+
+>>>>>>> ec0245b89 (Changes default_mutant_bodyparts list to be index based (#25174))
 
 /obj/item/organ/internal/tongue/teshari
 	liked_foodtypes = MEAT
