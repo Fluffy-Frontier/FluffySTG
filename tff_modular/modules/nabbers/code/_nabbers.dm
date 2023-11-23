@@ -87,6 +87,7 @@
 		H.apply_damage(NABBER_DAMAGE_ONBURNING, OXY)
 
 /datum/species/nabber/randomize_features(mob/living/carbon/human/human_mob)
+	var/list/features = ..()
 	var/main_color
 	var/random = rand(1,6)
 	switch(random)
@@ -102,9 +103,10 @@
 			main_color = "#c0ad00"
 		if(6)
 			main_color = "#e6ff03"
-	human_mob.dna.features["mcolor"] = main_color
-	human_mob.dna.features["mcolor2"] = main_color
-	human_mob.dna.features["mcolor3"] = main_color
+	features["mcolor"] = main_color
+	features["mcolor2"] = main_color
+	features["mcolor3"] = main_color
+	return features
 
 /datum/species/nabber/prepare_human_for_preview(mob/living/carbon/human/nabber)
 	var/nabber_color = "#00ac1d"

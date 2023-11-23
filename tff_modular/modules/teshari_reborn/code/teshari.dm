@@ -41,9 +41,6 @@
 		LOADOUT_ITEM_ACCESSORY = TESHARI_ACCESSORIES_ICON,
 		LOADOUT_ITEM_EARS = TESHARI_EARS_ICON
 	)
-	default_mutant_bodyparts = list(
-		"legs" = "Normal Legs"
-	)
 	coldmod = TESHARI_ALT_COLDMOD
 	heatmod = TESHARI_ALT_HEATMOD
 	bodytemp_normal = BODYTEMP_NORMAL + (TEHSARI_ALT_TEMP_OFFSET/2)
@@ -76,15 +73,17 @@
 	. = ..()
 	teshari_agility.Destroy()
 	teshari_echolocation.Destroy()
+	qdel(C.GetComponent(/datum/component/weak_body))
 	C.mob_size = initial(C.mob_size)
 
 /datum/species/teshari/alt/randomize_features(mob/living/carbon/human/human_mob)
-	. = ..()
+	var/list/features = ..()
 	var/main_color = pick(COLOR_GRAY, COLOR_DARK_BROWN, COLOR_ALMOST_BLACK, COLOR_DARK_RED, COLOR_DARK_CYAN)
 	var/second_color = pick(COLOR_WHITE, COLOR_BLACK, COLOR_BLUE, COLOR_VIOLET)
-	human_mob.dna.features["mcolor"] = main_color
-	human_mob.dna.features["mcolor2"] = second_color
-	human_mob.dna.features["mcolor3"] = second_color
+	features["mcolor"] = main_color
+	features["mcolor2"] = second_color
+	features["mcolor3"] = second_color
+	return features
 
 /datum/species/teshari/alt/create_pref_unique_perks()
 	var/list/perk_descriptions = list()
