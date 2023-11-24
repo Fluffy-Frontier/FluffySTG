@@ -59,7 +59,7 @@
 		blooper_pitch_range = BLOOPER_VARIANCE_RAND
 		blooper_speed = rand(BLOOPER_DEFAULT_MINSPEED, BLOOPER_DEFAULT_MAXSPEED)
 
-/randomize_human(mob/living/carbon/human/human)
+/randomize_human(mob/living/carbon/human/human, randomize_mutations = FALSE)
 	. = ..()
 	human.set_blooper(pick(GLOB.blooper_list))
 	human.blooper_pitch = BLOOPER_PITCH_RAND(human.gender)
