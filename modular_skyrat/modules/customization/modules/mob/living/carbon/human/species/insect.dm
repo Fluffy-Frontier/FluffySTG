@@ -9,17 +9,6 @@
 	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
 	mutant_bodyparts = list()
-	default_mutant_bodyparts = list(
-		"tail" = "None",
-		"snout" = "None",
-		"horns" = "None",
-		"ears" = "None",
-		"legs" = "Normal Legs",
-		"taur" = "None",
-		"fluff" = "None",
-		"wings" = "Bee",
-		"moth_antennae" = "None"
-	)
 	mutanttongue = /obj/item/organ/internal/tongue/insect
 	payday_modifier = 1.0
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
@@ -34,8 +23,6 @@
 	)
 	eyes_icon = 'modular_skyrat/modules/organs/icons/insect_eyes.dmi'
 
-<<<<<<< HEAD
-=======
 /datum/species/insect/get_default_mutant_bodyparts()
 	return list(
 		"tail" = list("None", FALSE),
@@ -49,7 +36,6 @@
 		"moth_antennae" = list("None", FALSE),
 	)
 
->>>>>>> ec0245b89 (Changes default_mutant_bodyparts list to be index based (#25174))
 /datum/species/insect/get_species_description()
 	return placeholder_description
 

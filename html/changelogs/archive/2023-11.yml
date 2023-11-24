@@ -1146,3 +1146,76 @@
       this in poor ways may displease the Gods. Woe upon your lineage.
   - rscadd: A single pack of glowshroom mycelium has been added to the Hearth's starting
       seed stores for the benefit of creative healers, shamans, and radiation enthusiasts.
+2023-11-23:
+  Autisem:
+  - rscadd: Cyborg inducer for engineering borgs
+  - balance: The borg RPED can hold as many part as the BSRPED now
+  - balance: Cyborg chargers now draw from the power net as cell chargers do
+  Iajret:
+  - bugfix: borers can once again fill their hosts with various wonders of chemistry
+  Nerev4r:
+  - rscadd: NanoTrasen, after extensive testing in a variety of stars' light wavelengths,
+      have deemed their PDAs ready enough to actually use the onboard cameras they
+      already had.
+  OrionTheFox:
+  - qol: Allergy Dogtags (and any other dogtags, really) are now actually whitelisted
+      to fit into wallets.
+  san7890:
+  - code_imp: 'The currently operating rust-g version on a live server is posted to
+      places like the runtime.log, in the same place where the revision information
+      and any applicable test merges already were. /:cl:'
+2023-11-24:
+  Jacquerel:
+  - bugfix: The plasma river is about as deadly for animals as it is for humans.
+  - bugfix: Golems can now wade in the plasma river unscathed.
+  - bugfix: Undismemberable limbs will no longer be dismembered by the plasma river.
+  - balance: Golems and plasmamen cannot become husked.
+  - image: Robotic and Skeletal parts will remain distinct while the rest of the body
+      is husked.
+  LovliestPlant:
+  - rscadd: Adds links to any special rules or metaprotections to antag's objective
+      panels.
+  Melbert:
+  - balance: Transformation sting now lasts 8 minutes, down from permanent. However,
+      the effect is paused for dead and stasis mobs, making it permanent SO LONG AS
+      they stay dead or in stasis. The effect is also permanent if used on a monkey.
+  - balance: Transformation sting now costs 33 chemicals, down from 50.
+  - balance: Transformation sting now costs 2 dna points, down from 3.
+  - bugfix: Transformation sting works on monkeys again.
+  - refactor: Refactored a bit of human randomization.
+  - refactor: Refactors how ethereals update their color when damaged.
+  Nerev4r:
+  - bugfix: Chameleon mutation is toggleable again.
+  RatFromTheJungle:
+  - bugfix: fixes punches doing like triple stamina damage, by removing a 2.6x multiplier.
+  Smol42:
+  - rscadd: Added four acrador snouts.
+  SyncIt21:
+  - bugfix: autolathe does not diminish materials from custom material items like
+      toolboxes when printing them in bulk. Also does not gray out that item in the
+      UI
+  - bugfix: autloathe correctly updates UI after inserting items into it
+  - bugfix: RCD can build directional windows on top of existing grills & without
+      them.
+  TwistedSilicon:
+  - bugfix: Window damage overlays have been fixed.
+  Xander3359:
+  - admin: Remove "Make AI" from VV dropdown
+  Y0SH1M4S73R:
+  - rscadd: Certain types of pens now function like you expect they would when inserted
+      into a foam dart
+  - qol: Examining a foam dart closely will show you how to modify it, or what it
+      is modified with
+  aaaa1023:
+  - qol: adds pixel perfect 4x, 4.5x, and 5x
+  jjpark-kb:
+  - bugfix: gutlunches now produce miner salve instead of milk, as well as the other
+      reagents if fed the correct ore
+  - rscadd: you can craft the gutlunch trough
+  - qol: you can fill the gutlunch trough with a mining bag
+  lizardqueenlexi:
+  - bugfix: Skillsoft's skillchip stations are now ADA-compliant (Astronauts with
+      Disabilities Act). Paraplegic characters can now implant themselves with skillchips,
+      the same as anyone else.
+  vinylspiders:
+  - bugfix: fullupgrade chem dispensers will now spawn with all their chems

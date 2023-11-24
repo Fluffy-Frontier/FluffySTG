@@ -14,11 +14,6 @@
 		TRAIT_NO_UNDERWEAR,
 		TRAIT_HAS_MARKINGS,
 	)
-	default_mutant_bodyparts = list(
-		"tail" = ACC_RANDOM,
-		"ears" = ACC_RANDOM,
-		"legs" = "Normal Legs"
-	)
 	digitigrade_customization = DIGITIGRADE_NEVER
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	payday_modifier = 1.0
@@ -53,8 +48,6 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/mutant/teshari,
 	)
 
-<<<<<<< HEAD
-=======
 /datum/species/teshari/get_default_mutant_bodyparts()
 	return list(
 		"tail" = list("Teshari (Default)", TRUE),
@@ -62,7 +55,6 @@
 		"legs" = list("Normal Legs", FALSE),
 	)
 
->>>>>>> ec0245b89 (Changes default_mutant_bodyparts list to be index based (#25174))
 
 /obj/item/organ/internal/tongue/teshari
 	liked_foodtypes = MEAT

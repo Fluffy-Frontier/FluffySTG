@@ -4,11 +4,6 @@
 	examine_limb_id = SPECIES_GHOUL
 	can_have_genitals = FALSE //WHY WOULD YOU WANT TO FUCK ONE OF THESE THINGS?
 	mutant_bodyparts = list("ghoulcolor" = "Tan Necrotic")
-	default_mutant_bodyparts = list(
-		"tail" = "None",
-		"ears" = "None",
-		"legs" = "Normal Legs"
-	)
 	mutanttongue = /obj/item/organ/internal/tongue/ghoul
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
@@ -36,8 +31,6 @@
 	//i dont have to worry about sprites due to limbs_icon, thank god
 	//also the head needs to be normal for hair to work
 
-<<<<<<< HEAD
-=======
 /datum/species/ghoul/get_default_mutant_bodyparts()
 	return list(
 		"tail" = list("None", FALSE),
@@ -45,7 +38,6 @@
 		"legs" = list("Normal Legs", FALSE),
 	)
 
->>>>>>> ec0245b89 (Changes default_mutant_bodyparts list to be index based (#25174))
 /proc/proof_ghoul_features(list/inFeatures)
 	// Missing Defaults in DNA? Randomize!
 	if(inFeatures["ghoulcolor"] == null || inFeatures["ghoulcolor"] == "")

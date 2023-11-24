@@ -1,22 +1,9 @@
 /datum/species/jelly
-	default_mutant_bodyparts = list(
-		"tail" = "None",
-		"snout" = "None",
-		"ears" = "None",
-		"taur" = "None",
-		"wings" = "None",
-		"legs" = "Normal Legs",
-		"horns" = "None",
-		"spines" = "None",
-		"frills" = "None",
-	)
 	mutant_bodyparts = list()
 	hair_color = "mutcolor"
 	hair_alpha = 160 //a notch brighter so it blends better.
 	facial_hair_alpha = 160
 
-<<<<<<< HEAD
-=======
 /datum/species/jelly/get_default_mutant_bodyparts()
 	return list(
 		"tail" = list("None", FALSE),
@@ -30,7 +17,6 @@
 		"frills" = list("None", FALSE),
 	)
 
->>>>>>> ec0245b89 (Changes default_mutant_bodyparts list to be index based (#25174))
 /datum/species/jelly/get_species_description()
 	return placeholder_description
 

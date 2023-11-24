@@ -1,5 +1,6 @@
 /proc/make_skyrat_datum_references()
 	make_sprite_accessory_references()
+	make_default_mutant_bodypart_references()
 	make_body_marking_references()
 	make_body_marking_set_references()
 	make_body_marking_dna_block_references()
@@ -30,8 +31,6 @@
 			if(P.generic && !GLOB.generic_accessories[P.key])
 				GLOB.generic_accessories[P.key] = P.generic
 
-<<<<<<< HEAD
-=======
 /proc/make_default_mutant_bodypart_references()
 	// Build the global list for default species' mutant_bodyparts
 	for(var/path in subtypesof(/datum/species))
@@ -44,7 +43,6 @@
 					GLOB.default_mutant_bodyparts[species_instance.name] += list((genital) = list("None", FALSE))
 		qdel(species_instance)
 
->>>>>>> ec0245b89 (Changes default_mutant_bodyparts list to be index based (#25174))
 /proc/make_body_marking_references()
 	// Here we build the global list for all body markings
 	for(var/path in subtypesof(/datum/body_marking))
