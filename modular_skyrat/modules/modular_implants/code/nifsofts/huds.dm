@@ -24,7 +24,7 @@
 		ADD_TRAIT(linked_mob, trait, GLASSES_TRAIT)
 
 	for(var/trait as anything in added_eyewear_traits)
-		ADD_TRAIT(linked_mob, trait, NIFSOFT_TRAIT)
+		ADD_TRAIT(linked_mob, trait, TRAIT_NIFSOFT)
 
 	linked_mob.update_sight()
 
@@ -34,16 +34,11 @@
 		var/datum/atom_hud/hud = GLOB.huds[hud_type]
 		hud.hide_from(linked_mob)
 
-<<<<<<< HEAD
-	if(hud_trait)
-		REMOVE_TRAIT(linked_mob, hud_trait, NIFSOFT_TRAIT)
-=======
 	for(var/trait in hud_traits)
 		REMOVE_TRAIT(linked_mob, trait, TRAIT_NIFSOFT)
->>>>>>> 83f49e097 (Deprecates hud_trait where possible, introduces lists where not (#25204))
 
 	for(var/trait in added_eyewear_traits)
-		REMOVE_TRAIT(linked_mob, trait, NIFSOFT_TRAIT)
+		REMOVE_TRAIT(linked_mob, trait, TRAIT_NIFSOFT)
 
 	linked_mob.update_sight()
 	return TRUE
