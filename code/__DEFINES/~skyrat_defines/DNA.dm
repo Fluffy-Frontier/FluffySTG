@@ -38,6 +38,10 @@
 #define MUTANT_INDEX_COLOR_LIST		"color"
 #define MUTANT_INDEX_EMISSIVE_LIST	"emissive"
 
+// Defines for default mutant bodyparts indexes
+#define MUTANTPART_NAME 1
+#define MUTANTPART_CAN_RANDOMIZE 2
+
 // Defines for markings indexes
 #define MARKING_INDEX_COLOR 1
 #define MARKING_INDEX_EMISSIVE 2
