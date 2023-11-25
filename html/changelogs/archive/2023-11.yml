@@ -1267,9 +1267,16 @@
 2023-11-25:
   Danny Boy:
   - rscadd: Added Affection Aversion quirk which stops affection modules
+  MTandi:
+  - bugfix: Emag overlay on lockers fixed
+  - image: New locker sprites
+  - image: Added new lockers
+  - image: SM shard sprite updated
   Majkl-J:
   - bugfix: Projector hud traits now get applied correctly
   - refactor: hud_trait gets deprecated, using clothing_traits instead
+  ShizCalev:
+  - bugfix: Fixed a minor runtime when hallucinations are ending.
   SyncIt21:
   - code_imp: removes & merges `expose_multiple()` proc into `expose()` proc inside
       reagent holder
@@ -1277,3 +1284,12 @@
       holder and reagent
   - refactor: Reagent code has been trimmed and split into multiple files. report
       bugs on github
+  Time-Green:
+  - rscadd: Adds an arctangent2 component to circuitry!
+  san7890:
+  - server: Added a preventative measure to prevent calling both TGSHardRestart and
+      TGSReboot, as well as potentially invoking sensitive procs that are only meant
+      to be called once.
+  vinylspiders:
+  - bugfix: Fixes a bug where the computer ui wouldn't open up when using a pda on
+      a synth's eyes
