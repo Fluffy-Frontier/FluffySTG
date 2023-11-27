@@ -1337,3 +1337,8 @@
   vinylspiders:
   - bugfix: fixes a runtime in footstep code that would prevent the fov effect from
       playing to nearby mobs
+2023-11-27:
+  SyncIt21:
+  - code_imp: removes unused proc `generate_possible_reactions()` from reagent holder
+  san7890:
+  - bugfix: Poly should now remember phrases between shifts.
