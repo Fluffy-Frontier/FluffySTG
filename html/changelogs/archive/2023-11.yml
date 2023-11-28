@@ -1367,3 +1367,32 @@
   wesoda25:
   - bugfix: the dismemberment moodlet will now properly clear for ethereals who regrew
       a limb in their resurrection crystals
+2023-11-28:
+  FeudeyTF:
+  - code_imp: Removed currency value for free products
+  Ghasterino:
+  - bugfix: Made the hypospray actually use the "WAIT_" values for the respective
+      mode it's using.
+  - bugfix: Made the CMO hypospray actually instant, instead of seeming instant in
+      code but not actually instant in game.
+  Iajret:
+  - bugfix: You can now destructively analyze syndicate and abductor items. It works
+      this time, I promise!
+  LT3:
+  - bugfix: Getting beheaded by the tram increments the scoreboard
+  - bugfix: 'Disease outbreak: classic spawned from the admin secrets panel no longer
+      fails to start'
+  - bugfix: Disease outbreak provides a message about why it fails to start
+  MTandi:
+  - bugfix: fixed chemical closet door not rendering when open
+  Rhials:
+  - qol: Bar signs can now be purchased from cargo. Neat!
+  - qol: Bar signs can now be deconstructed with a screwdriver and wrench.
+  - qol: Bar signs can now be smashed to pieces, rather than just disabled.
+  Smol42:
+  - rscadd: Added custom donator item.
+  Y0SH1M4S73R:
+  - bugfix: People exposed to romerol while alive will once again revive as zombies
+      on death.
+  nikothedude:
+  - spellcheck: The vox N2 tank no longer directly references vox
