@@ -1396,3 +1396,13 @@
       on death.
   nikothedude:
   - spellcheck: The vox N2 tank no longer directly references vox
+2023-11-29:
+  Kylerace:
+  - code_imp: verb callbacks will no longer execute if the original client disconnected
+  Majkl-J:
+  - qol: Synths can now recharge in borg chargers
+  Thlumyn:
+  - rscadd: Added pet owner quirk to spawn with a pet in a pet carrier.
+  nikothedude:
+  - rscadd: Resonance degradation disorder, a highly customizable quirk that acts
+      as a far more in-depth version of DNR
