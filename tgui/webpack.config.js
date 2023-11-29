@@ -134,23 +134,11 @@ module.exports = (env = {}, argv) => {
 
   // Production build specific options
   if (mode === 'production') {
-    const TerserPlugin = require('terser-webpack-plugin');
+    const { EsbuildPlugin } = require('esbuild-loader');
     config.optimization.minimizer = [
-<<<<<<< HEAD
-      new TerserPlugin({
-        extractComments: false,
-        terserOptions: {
-          ie8: true,
-          output: {
-            ascii_only: true,
-            comments: false,
-          },
-        },
-=======
       new EsbuildPlugin({
         target: 'ie11',
         css: true,
->>>>>>> 1a617eacb ([MIRROR] Drops ie8 support [MDB IGNORE] (#25322))
       }),
     ];
   }

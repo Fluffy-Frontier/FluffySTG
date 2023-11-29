@@ -1396,3 +1396,33 @@
       on death.
   nikothedude:
   - spellcheck: The vox N2 tank no longer directly references vox
+2023-11-29:
+  Kylerace:
+  - code_imp: verb callbacks will no longer execute if the original client disconnected
+  MGO:
+  - rscadd: Introduces new inverse reagents for Salicylic Acid, Oxandrolone, Salbutamol,
+      Pentetic Acid, Atropine, Ammoniated Mercury and Rezadone!
+  Majkl-J:
+  - qol: Synths can now recharge in borg chargers
+  - qol: Synth brain surgery now actually targets the synth brain location
+  Mothblocks:
+  - image: Premade cleanbots are now always blue.
+  SyncIt21:
+  - bugfix: you no longer get an empty crate when ordering bluespace crystals from
+      the galactic material market.
+  Thlumyn:
+  - rscadd: Added pet owner quirk to spawn with a pet in a pet carrier.
+  WarlockD:
+  - bugfix: All drones now can craft again
+  - rscadd: Non-Shy drones can now strip people of their things
+  - bugfix: Centered the "pull" button properly over the drop button
+  nikothedude:
+  - rscadd: Resonance degradation disorder, a highly customizable quirk that acts
+      as a far more in-depth version of DNR
+  rarytech:
+  - bugfix: fixed the displaying of tacticool clothing for digi legs
+  san7890:
+  - bugfix: During the "Cursed Items" wizard event, you should only have smoke spawn
+      on you if you actually had a cursed item equipped to you.
+  vinylspiders:
+  - bugfix: fixed remaining footstep runtimes
