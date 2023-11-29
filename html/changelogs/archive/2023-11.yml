@@ -1367,3 +1367,62 @@
   wesoda25:
   - bugfix: the dismemberment moodlet will now properly clear for ethereals who regrew
       a limb in their resurrection crystals
+2023-11-28:
+  FeudeyTF:
+  - code_imp: Removed currency value for free products
+  Ghasterino:
+  - bugfix: Made the hypospray actually use the "WAIT_" values for the respective
+      mode it's using.
+  - bugfix: Made the CMO hypospray actually instant, instead of seeming instant in
+      code but not actually instant in game.
+  Iajret:
+  - bugfix: You can now destructively analyze syndicate and abductor items. It works
+      this time, I promise!
+  LT3:
+  - bugfix: Getting beheaded by the tram increments the scoreboard
+  - bugfix: 'Disease outbreak: classic spawned from the admin secrets panel no longer
+      fails to start'
+  - bugfix: Disease outbreak provides a message about why it fails to start
+  MTandi:
+  - bugfix: fixed chemical closet door not rendering when open
+  Rhials:
+  - qol: Bar signs can now be purchased from cargo. Neat!
+  - qol: Bar signs can now be deconstructed with a screwdriver and wrench.
+  - qol: Bar signs can now be smashed to pieces, rather than just disabled.
+  Smol42:
+  - rscadd: Added custom donator item.
+  Y0SH1M4S73R:
+  - bugfix: People exposed to romerol while alive will once again revive as zombies
+      on death.
+  nikothedude:
+  - spellcheck: The vox N2 tank no longer directly references vox
+2023-11-29:
+  Kylerace:
+  - code_imp: verb callbacks will no longer execute if the original client disconnected
+  MGO:
+  - rscadd: Introduces new inverse reagents for Salicylic Acid, Oxandrolone, Salbutamol,
+      Pentetic Acid, Atropine, Ammoniated Mercury and Rezadone!
+  Majkl-J:
+  - qol: Synths can now recharge in borg chargers
+  - qol: Synth brain surgery now actually targets the synth brain location
+  Mothblocks:
+  - image: Premade cleanbots are now always blue.
+  SyncIt21:
+  - bugfix: you no longer get an empty crate when ordering bluespace crystals from
+      the galactic material market.
+  Thlumyn:
+  - rscadd: Added pet owner quirk to spawn with a pet in a pet carrier.
+  WarlockD:
+  - bugfix: All drones now can craft again
+  - rscadd: Non-Shy drones can now strip people of their things
+  - bugfix: Centered the "pull" button properly over the drop button
+  nikothedude:
+  - rscadd: Resonance degradation disorder, a highly customizable quirk that acts
+      as a far more in-depth version of DNR
+  rarytech:
+  - bugfix: fixed the displaying of tacticool clothing for digi legs
+  san7890:
+  - bugfix: During the "Cursed Items" wizard event, you should only have smoke spawn
+      on you if you actually had a cursed item equipped to you.
+  vinylspiders:
+  - bugfix: fixed remaining footstep runtimes
