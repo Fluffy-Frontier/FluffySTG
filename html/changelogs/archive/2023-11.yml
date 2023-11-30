@@ -1427,18 +1427,27 @@
   vinylspiders:
   - bugfix: fixed remaining footstep runtimes
 2023-11-30:
+  Fikou:
+  - rscadd: turns triple ai mode into a station trait (admin spawn only)
   Ghommie:
   - rscadd: Standing on structures such as crates, tables and bed will now look like
       it.
   GoldenAlpharex:
   - rscdel: The Radioactive Nebula station trait will no longer cause radiation storms,
       but all of its other effects remain.
+  - bugfix: The Radioactive Nebula station trait will now respect its upper intensity
+      cap set at one hour and forty minutes, no longer scaling past that, as was initially
+      intended.
   Higgin:
   - code_imp: Made ARDS death check respect maxHealth.
+  Majkl-J:
+  - bugfix: Synth eyes now inhabit the correct body zone slot
   Momo8289:
   - bugfix: The quick carry module should now correctly apply the appropriate traits
   Rhials:
   - bugfix: Renames a bar door from "Kitchen" to "Bar" on Metastation.
+  Smol42:
+  - bugfix: Fixed warm coat, sweaters for digi sprites.
   capsaicinz:
   - spellcheck: your fiscal image is no longer actualized.
   itseasytosee:
