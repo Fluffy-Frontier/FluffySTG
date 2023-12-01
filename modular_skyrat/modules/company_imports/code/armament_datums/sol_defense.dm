@@ -73,12 +73,12 @@
 /* /datum/armament_entry/company_import/sol_defense/longarm/infanterie
 	item_type = /obj/item/gun/ballistic/automatic/sol_rifle
 	cost = PAYCHECK_COMMAND * 14
-	contraband = TRUE */ // FLUFFY FRONTIER TEMP REBALANCE
+	contraband = TRUE */ // FLUFFY FRONTIER REMOVAL - SOL WEAPONS REBALANCE
 
 /* /datum/armament_entry/company_import/sol_defense/longarm/outomaties
 	item_type = /obj/item/gun/ballistic/automatic/sol_rifle/machinegun
 	cost = PAYCHECK_COMMAND * 23
-	contraband = TRUE */ // FLUFFY FRONTIER TEMP REBALANCE
+	contraband = TRUE */ // FLUFFY FRONTIER REMOVAL - SOL WEAPONS REBALANCE
 
 /datum/armament_entry/company_import/sol_defense/longarm/kiboko
 	item_type = /obj/item/gun/ballistic/automatic/sol_grenade_launcher
@@ -108,7 +108,7 @@
 /* /datum/armament_entry/company_import/sol_defense/magazines/sol_rifle_drum
 	item_type = /obj/item/ammo_box/magazine/c40sol_rifle/drum/starts_empty
 	cost = PAYCHECK_COMMAND * 3
-	contraband = TRUE */ // FLUFFY FRONTIER TEMP REBALANCE
+	contraband = TRUE */ // FLUFFY FRONTIER REMOVAL - SOL WEAPONS REBALANCE
 
 /datum/armament_entry/company_import/sol_defense/magazines/sol_grenade_standard
 	item_type = /obj/item/ammo_box/magazine/c980_grenade/starts_empty
