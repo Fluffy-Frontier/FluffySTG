@@ -86,7 +86,7 @@
 	fire_delay = 0.75 SECONDS
 
 	spread = 0
-	projectile_damage_multiplier = 1.2
+	projectile_damage_multiplier = 0.85 // FLUFFY FRONTIER TEMP REBALANCE
 	projectile_wound_bonus = 10
 
 /obj/item/gun/ballistic/automatic/sol_rifle/marksman/Initialize(mapload)
