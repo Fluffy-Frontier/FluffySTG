@@ -9,3 +9,40 @@
   - bugfix: bitrunning den shows up on the camera console now.
   Vermidia:
   - spellcheck: fixed typo in one of spacer's moodlets
+2023-12-03:
+  00-Steven:
+  - bugfix: Sign Language action properly toggles between an active/inactive background
+      again.
+  Autisem:
+  - admin: A new debug verb to turn yourself into an MMI(almost the funniest thing)
+  - bugfix: MMI's inside mechs can now properly open doors like there posibrain counterparts
+  Ben10Omintrix:
+  - bugfix: fix parrots not appearing dead sometimes
+  Fikou:
+  - qol: psyker echolocation cooldown time has been reduced from 2 to 1.8 seconds
+  - bugfix: psyker heads no longer render an overlay of not having eyes
+  Ghommie:
+  - bugfix: Fixed an issue with the offsets of ridden vehicles on tables, and another
+      when buckled to a bed.
+  Jacquerel:
+  - rscadd: Agent IDs once more trick Beepsky into treating you more leniently.
+  - rscadd: Prisoner IDs make Beepsky treat you somewhat more suspiciously, as do
+      Syndicate IDs. Wearing a Centcomm ID means that Beepsky is aware that you are
+      above the law.
+  - rscadd: Player-controlled security bots can view someone's assessed threat level
+      by examining them.
+  MidoriWroth:
+  - bugfix: Icebox chemistry lab shutters are controlled by the button in the chemistry
+      lab and not in the pharmacy again.
+  Pickle-Coding:
+  - code_imp: The singularity processing is a bit more important than the other subsystems.
+  SyncIt21:
+  - bugfix: crafting food or any other items that require reagents will not leave
+      behind blank reagents. That and properly updates the holder those reagents are
+      stored in
+  jlsnow301:
+  - bugfix: Mod links are now disabled in the virtual realm.
+  mc-oofert:
+  - bugfix: shield wall gens actually use power now
+  - qol: shield wall gens may now be rebuilt and use some balloon alerts, and have
+      wiring
