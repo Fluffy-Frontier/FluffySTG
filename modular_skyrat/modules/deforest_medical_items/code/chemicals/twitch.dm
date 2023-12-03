@@ -161,7 +161,6 @@
 
 /datum/reagent/drug/twitch/overdose_process(mob/living/carbon/our_guy, seconds_per_tick, times_fired)
 	. = ..()
-
 	our_guy.set_jitter_if_lower(10 SECONDS * REM * seconds_per_tick)
 
 	our_guy.adjustOrganLoss(ORGAN_SLOT_HEART, 1 * REM * seconds_per_tick, required_organ_flag = affected_organ_flags)
@@ -175,7 +174,6 @@
 	if(SPT_PROB(10, seconds_per_tick))
 		our_guy.add_filter(TWITCH_OVERDOSE_BLUR_EFFECT, 2, phase_filter(8))
 		addtimer(CALLBACK(our_guy, TYPE_PROC_REF(/datum, remove_filter), TWITCH_OVERDOSE_BLUR_EFFECT), 0.5 SECONDS)
-
 
 /// Changes heard message spans into that defined on the drug earlier
 /datum/reagent/drug/twitch/proc/distort_hearing(datum/source, list/hearing_args)
