@@ -23179,10 +23179,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/science/xenobiology)
-"fIY" = (
-/obj/effect/spawner/random/structure/crate_empty,
-/turf/open/floor/plating,
-/area/station/maintenance/fore)
 "fJj" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
@@ -44029,6 +44025,18 @@
 	},
 /turf/open/floor/iron,
 /area/station/maintenance/port)
+"kUj" = (
+/obj/effect/decal/cleanable/oil/streak,
+/obj/structure/table,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/cup/soda_cans/space_mountain_wind{
+	pixel_x = 5
+	},
+/obj/machinery/camera/autoname/directional/south,
+/turf/open/floor/iron/dark/smooth_large,
+/area/station/cargo/bitrunning/den)
 "kUn" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/tile/brown{
@@ -63993,6 +64001,11 @@
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
 /turf/open/floor/iron,
 /area/station/science/xenobiology)
+"pWN" = (
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/effect/spawner/random/structure/closet_empty/crate,
+/turf/open/floor/iron,
+/area/station/maintenance/department/medical/morgue)
 "pWO" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -69399,11 +69412,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/cryo)
-"roI" = (
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/effect/spawner/random/structure/crate_empty,
-/turf/open/floor/iron,
-/area/station/maintenance/department/medical/morgue)
 "roX" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -78465,6 +78473,10 @@
 /obj/machinery/status_display/ai/directional/north,
 /turf/open/floor/iron,
 /area/station/engineering/main)
+"tDk" = (
+/obj/effect/spawner/random/structure/closet_empty/crate,
+/turf/open/floor/plating,
+/area/station/maintenance/fore)
 "tDo" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
@@ -81817,13 +81829,26 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron/dark,
 /area/station/science/xenobiology)
+<<<<<<< HEAD
+=======
+"uty" = (
+/obj/item/sign,
+/obj/effect/spawner/random/structure/closet_empty/crate,
+/obj/item/screwdriver,
+/turf/open/floor/plating,
+/area/station/maintenance/department/crew_quarters/bar)
+>>>>>>> 013003e73 ([MIRROR] The maintenance crate spawning crate is now a spawner [MDB IGNORE] (#25417))
 "utz" = (
 /obj/structure/bed/dogbed/runtime,
 /obj/item/radio/intercom/directional/south,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 1
 	},
+<<<<<<< HEAD
 /mob/living/simple_animal/pet/cat/runtime,
+=======
+/mob/living/basic/pet/cat/runtime,
+>>>>>>> 013003e73 ([MIRROR] The maintenance crate spawning crate is now a spawner [MDB IGNORE] (#25417))
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/cmo)
 "utK" = (
@@ -89410,12 +89435,6 @@
 	dir = 8
 	},
 /area/station/hallway/secondary/entry)
-"wnI" = (
-/obj/item/sign,
-/obj/effect/spawner/random/structure/crate_empty,
-/obj/item/screwdriver,
-/turf/open/floor/plating,
-/area/station/maintenance/department/crew_quarters/bar)
 "wnQ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -136273,7 +136292,7 @@ dla
 itV
 rzw
 fIR
-wnI
+uty
 pgF
 qAV
 ybV
@@ -136894,7 +136913,7 @@ jWI
 iVU
 eSD
 bhw
-roI
+pWN
 hYf
 bhw
 qpF
@@ -138313,7 +138332,7 @@ jdL
 jdL
 jdL
 cOR
-fIY
+tDk
 pxT
 gCB
 xOP
@@ -141173,7 +141192,11 @@ qbd
 gHq
 lJw
 tYI
+<<<<<<< HEAD
 uAi
+=======
+kUj
+>>>>>>> 013003e73 ([MIRROR] The maintenance crate spawning crate is now a spawner [MDB IGNORE] (#25417))
 hXg
 lDY
 tpZ

@@ -146,10 +146,6 @@
 	},
 /turf/open/floor/plating,
 /area/virtual_domain)
-"ev" = (
-/obj/effect/baseturf_helper/virtual_domain,
-/turf/template_noop,
-/area/virtual_domain)
 "eJ" = (
 /obj/structure/disposalpipe/sorting{
 	dir = 2
@@ -483,11 +479,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/virtual_domain)
-"po" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate/maint,
-/turf/open/floor/iron,
-/area/virtual_domain)
 "pv" = (
 /obj/structure/broken_flooring/side{
 	dir = 4
@@ -513,6 +504,13 @@
 	},
 /obj/structure/table/reinforced,
 /obj/effect/spawner/random/bureaucracy/briefcase,
+/turf/open/floor/iron,
+/area/virtual_domain)
+"qd" = (
+/obj/effect/spawner/random/structure/closet_empty/crate/with_loot,
+/obj/effect/turf_decal/stripes{
+	dir = 9
+	},
 /turf/open/floor/iron,
 /area/virtual_domain)
 "qk" = (
@@ -691,13 +689,6 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/virtual_domain)
-"vA" = (
-/obj/structure/closet/crate/maint,
-/obj/effect/turf_decal/stripes{
-	dir = 9
-	},
-/turf/open/floor/iron,
 /area/virtual_domain)
 "vL" = (
 /obj/effect/decal/cleanable/glass,
@@ -907,6 +898,12 @@
 /obj/structure/broken_flooring/corner/directional/east,
 /turf/open/floor/plating,
 /area/virtual_domain)
+"Bt" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/structure/closet_empty/crate/with_loot,
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/iron,
+/area/virtual_domain)
 "Bx" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave{
@@ -1004,6 +1001,9 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/catwalk_floor/iron,
 /area/virtual_domain)
+"DD" = (
+/turf/template_noop,
+/area/virtual_domain)
 "DE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -1040,6 +1040,7 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating,
 /area/virtual_domain)
+<<<<<<< HEAD
 "EK" = (
 /obj/structure/disposalpipe/broken,
 /turf/open/floor/plating,
@@ -1050,6 +1051,8 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
 /area/virtual_domain)
+=======
+>>>>>>> 013003e73 ([MIRROR] The maintenance crate spawning crate is now a spawner [MDB IGNORE] (#25417))
 "Ff" = (
 /obj/structure/disposalpipe/trunk/multiz{
 	dir = 4
@@ -1213,7 +1216,8 @@
 /obj/structure/sign/warning/chem_diamond/directional/west,
 /turf/open/floor/plating,
 /area/virtual_domain)
-"JR" = (
+"JG" = (
+/obj/effect/baseturf_helper/virtual_domain,
 /turf/template_noop,
 /area/virtual_domain)
 "JT" = (
@@ -1441,10 +1445,6 @@
 	},
 /turf/open/floor/plating,
 /area/virtual_domain)
-"Qo" = (
-/obj/effect/landmark/bitrunning/safehouse_spawn,
-/turf/template_noop,
-/area/virtual_domain)
 "Qr" = (
 /turf/closed/indestructible/fakedoor/maintenance{
 	name = "maintenance access"
@@ -1553,6 +1553,10 @@
 	dir = 8
 	},
 /turf/open/floor/iron,
+/area/virtual_domain)
+"St" = (
+/obj/effect/landmark/bitrunning/safehouse_spawn,
+/turf/template_noop,
 /area/virtual_domain)
 "SR" = (
 /obj/effect/turf_decal/trimline/yellow/line,
@@ -1819,7 +1823,11 @@
 /turf/open/floor/plating,
 /area/virtual_domain)
 "Ym" = (
+<<<<<<< HEAD
 /mob/living/simple_animal/pet/cat/space,
+=======
+/mob/living/basic/pet/cat/space,
+>>>>>>> 013003e73 ([MIRROR] The maintenance crate spawning crate is now a spawner [MDB IGNORE] (#25417))
 /obj/structure/bed/dogbed{
 	name = "cat bed"
 	},
@@ -1868,6 +1876,11 @@
 /turf/open/floor/carpet/royalblue{
 	icon_state = "carpet_royalblue-157"
 	},
+/area/virtual_domain)
+"Zs" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/structure/closet_empty/crate/with_loot,
+/turf/open/floor/iron,
 /area/virtual_domain)
 "Zy" = (
 /obj/structure/table,
@@ -2157,7 +2170,7 @@ yQ
 yQ
 RJ
 eg
-vA
+qd
 Dr
 bw
 Jq
@@ -2427,12 +2440,12 @@ eY
 aK
 aK
 aK
-JR
-JR
-JR
-JR
-JR
-Qo
+DD
+DD
+DD
+DD
+DD
+St
 aK
 RJ
 "}
@@ -2477,12 +2490,12 @@ eY
 eY
 aK
 aK
-JR
-JR
-JR
-JR
-JR
-JR
+DD
+DD
+DD
+DD
+DD
+DD
 aK
 RJ
 "}
@@ -2527,12 +2540,12 @@ XL
 eg
 tr
 eY
-JR
-JR
-JR
-JR
-JR
-JR
+DD
+DD
+DD
+DD
+DD
+DD
 aK
 RJ
 "}
@@ -2577,12 +2590,12 @@ Wp
 Ru
 hi
 gs
-JR
-JR
-JR
-JR
-JR
-JR
+DD
+DD
+DD
+DD
+DD
+DD
 aK
 RJ
 "}
@@ -2627,12 +2640,12 @@ cw
 eY
 tr
 eY
-JR
-JR
-JR
-JR
-JR
-JR
+DD
+DD
+DD
+DD
+DD
+DD
 aK
 RJ
 "}
@@ -2677,12 +2690,12 @@ eY
 eY
 aK
 aK
-JR
-JR
-JR
-JR
-JR
-JR
+DD
+DD
+DD
+DD
+DD
+DD
 aK
 RJ
 "}
@@ -2700,7 +2713,7 @@ QW
 My
 Qy
 kU
-po
+Zs
 eg
 tr
 Is
@@ -2727,12 +2740,12 @@ eY
 aK
 aK
 aK
-JR
-JR
-JR
-JR
-JR
-ev
+DD
+DD
+DD
+DD
+DD
+JG
 aK
 RJ
 "}
@@ -2861,7 +2874,7 @@ Tn
 kU
 Ou
 kU
-Fa
+Bt
 kU
 YF
 eg
