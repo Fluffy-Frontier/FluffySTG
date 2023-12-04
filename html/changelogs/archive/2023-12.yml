@@ -46,3 +46,62 @@
   - bugfix: shield wall gens actually use power now
   - qol: shield wall gens may now be rebuilt and use some balloon alerts, and have
       wiring
+2023-12-04:
+  Fikou:
+  - rscadd: Instead of punished sect healing people like the normal bibble- you take
+      their burdens on instead!
+  Ghommie:
+  - rscadd: Added the daily (roundstart) message server key to the Chief Engineer's
+      memories.
+  Hatterhat:
+  - bugfix: The toxin damage from overdosing on TWitch now respects server tickrate/REM.
+  IsaacExists:
+  - sound: Added human laughter to felinids
+  Jackraxxus:
+  - bugfix: Digi legs work with the QM's jumpskirt
+  MrMelbert:
+  - bugfix: smartfridges no longer show false overlays
+  Profakos:
+  - rscdel: Removes the slime's reagent holder. This will make them not slow down
+      from somehow imbibing morphine or frostoil.
+  Rhials:
+  - qol: Bar signs ordered from cargo will no longer be access-restricted.
+  - spellcheck: Fixes a typo in the Factory Quartermaster outfit name.
+  Vekter:
+  - rscdel: Replaced the "monkey cube" in Birdshot's tool storage with a different
+      "monkey cube".
+  - rscadd: Added a fun surprise item to Birdshot's tool storage to compensate for
+      the above change.
+  - rscadd: Added a new hostile variant of cats, "feral cats".
+  - rscadd: Added a new traitor item, "feral cat grenades". For 5 TC, you too can
+      throw a grenade at someone and make five cats maul them to death.
+  YesterdaysPromise:
+  - image: 'Following now have unique item sprites: syndicate war declaration radio,
+      curator and chief beacon''s, chaplain beacon.'
+  - image: 'Following now have unique inhand sprites: radio, export scanner, walkie-talkie,
+      syndicate war declaration radio, curator and chief beacon''s, chaplain beacon.'
+  distributivgesetz:
+  - balance: Clone damage dealt by the cosmic blade has been replaced with organ damage
+      and increased burn damage. Clone damage dealt by the cosmic beam has been removed.
+      The star gazer now deals burn damage instead of clone damage.
+  - bugfix: The health of mobs combo'd by a cosmic blade will now update correctly.
+  - spellcheck: Occurrences of "recieve" has been changed to "receive".
+  jjpark-kb:
+  - rscadd: added a new derelict station (for drones)-- Babylon Station 13
+  necromanceranne:
+  - bugfix: Blocking a tackler no longer causes things to go haywire and stun the
+      tackler/the tackle victim.
+  san7890:
+  - balance: The Meat Hook will now "ground" you whenever you fire it out at someone.
+      You get a very small immobilization every time you fire, which "upgrades" to
+      a full immobilization whenever you actually hit an atom and start to drag it
+      in.
+  - bugfix: A chain should now show up as you drag in something with the meat hooks.
+  - bugfix: Meat hooks should no longer play the "magical gun" suicide if you were
+      to use it, but instead do their own unique thing.
+  tralezab:
+  - balance: Honorbound no longer cares about innocence when it comes to lesser creatures.
+      They can still be considered unready in some cases.
+  - balance: Attacking a cultist with a halo or a nuclear operative first instantly
+      makes THEM guilty, allowing further attacks.
+  - balance: More favor for converting someone to the honorbound rules
