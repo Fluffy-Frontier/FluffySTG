@@ -5,13 +5,10 @@ Map Modification:
 
 # Changes to a .dmi
 Sprites:
-<<<<<<< HEAD
-- '**/*.dmi'
+- changed-files:
+  - any-glob-to-any-file: '**/*.dmi'
 
 # Chganges to a /config
 Config:
-- 'config/**'
-=======
 - changed-files:
-  - any-glob-to-any-file: '**/*.dmi'
->>>>>>> 42c733dc2 (Fixes the labeler in accordance to the new action version (#25430))
+  - any-glob-to-any-file: 'config/**'
