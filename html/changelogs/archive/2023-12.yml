@@ -140,3 +140,54 @@
   - balance: More favor for converting someone to the honorbound rules
   xXPawnStarrXx:
   - rscadd: Added sprites for bone spears to match the other bone items.
+2023-12-05:
+  Ben10Omintrix:
+  - refactor: medbots are now basic bots. please report any bugs
+  - rscadd: medbots can wear hats!
+  - refactor: cats are now basic pets. please report any bugs.
+  - rscadd: the cake cat and bread cat can now help the chef around in the kitchen
+  Ghommie:
+  - bugfix: Fixed some oopsie whoopsie with elevation, trams and beds causing people
+      to visually ascend or descend to heaven or hell.
+  Hatterhat:
+  - bugfix: SecTech restocking units are now actually named SecTech restocking units,
+      and not Generic restocking units.
+  HoodMilk:
+  - rscdel: Removed the holiday restriction on red-colored Christmas clothing.
+  Mothblocks:
+  - rscadd: Instead of teaming up random people together, blood brothers will now
+      start out with one player and let them convert a single other person over to
+      blood brother using a flash.
+  Nerev4r:
+  - bugfix: Lopland Security has finally negotiated an order of blue tackle gloves
+      with the FTU, abandoning the red NanoTrasen models.
+  Paxilmaniac:
+  - rscadd: All AK-whatever guns, the NRI pistol, and the nri smg, have been replaced
+      with a new selection of weapons now also for sale in the nearest cargo console.
+  - rscadd: The CIN clothing in company imports will now spawn with random colors,
+      rather than always being grey.
+  - sound: New Lanca firing sound from TGMC
+  - image: Resprites and sprites for the new weapons by me, Paxilmaniac
+  - rscadd: A whole host of new armors for protecting yourself from being turned into
+      red mist by a psycho with a rifle are for sale at relatively low cost from Sol
+      Defense in cargo!
+  - image: Sprites for every piece of new armor done by yours truly.
+  SyncIt21:
+  - bugfix: soups and other reactions where large quantities of reagents are required/present
+      should not have a random chance of reacting forever.
+  - bugfix: reactions which are overheated should diminish all the way to 0
+  - code_imp: cleaned up code in `datam/equilibrium` in general. Slightly optimized
+      soup reaction code
+  Vekter:
+  - bugfix: Fixes hole in Birdshot hallway
+  Vermidia:
+  - rscadd: Heterochromatic, Signer, Spacer, and Voracious quirks are now properly
+      accounted for in medical records.
+  tralezab:
+  - rscadd: 'Festival Sect has 3 new rites: Cogitandi Fidis, Portable Song Tuning,
+      and Illuminating Solo.'
+  - balance: lowers threshold for triggering a final effect. Consult your Cogitandi
+      Fidis for more information
+  xXPawnStarrXx:
+  - rscadd: Added new roast dinners, able to be cut into smaller portions hopefully
+      in time for the Christmas season.
