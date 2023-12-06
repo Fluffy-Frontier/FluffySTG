@@ -21,7 +21,13 @@
 		/obj/item/clothing/suit/armor/vest/blueshirt = 3,
 		/obj/item/clothing/gloves/tackler/security = 5,
 		/obj/item/grenade/stingbang = 5,
+<<<<<<< HEAD
 		/obj/item/watertank/pepperspray = 2
+=======
+		/obj/item/watertank/pepperspray = 2,
+		/obj/item/storage/belt/holster/energy = 4,
+		/obj/item/storage/box/holobadge = 1,
+>>>>>>> aedd0ac4 (Lopland holobadges in the loadout & security vendor! Also fixes them for detectives!  (#25198))
 	)
 	refill_canister = /obj/item/vending_refill/security_peacekeeper
 
