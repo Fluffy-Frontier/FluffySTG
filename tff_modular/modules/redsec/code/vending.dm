@@ -61,7 +61,8 @@
 					/obj/item/clothing/suit/jacket/officer/blue = 3,
 					/obj/item/clothing/head/beret/sec/navyofficer = 5,
 					/obj/item/clothing/glasses/hud/security/sunglasses = 3,
-					/obj/item/clothing/glasses/hud/security/sunglasses/redsec = 3
+					/obj/item/clothing/glasses/hud/security/sunglasses/redsec = 3,
+					/obj/item/storage/box/holobadge = 1,
 	)
 	light_color = "#abadcc"
 	vend_reply = "Beat these scumbags!"
