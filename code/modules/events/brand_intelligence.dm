@@ -48,7 +48,15 @@
 	origin_machine = pick_n_take(vending_machines)
 
 /datum/round_event/brand_intelligence/announce(fake)
+<<<<<<< HEAD
 	priority_announce("Rampant brand intelligence has been detected aboard [station_name()]. Please inspect any [origin_machine] brand vendors for aggressive marketing tactics, and reboot them if necessary.", "Machine Learning Alert", ANNOUNCER_BRANDINTELLIGENCE) //SKYRAT EDIT CHANGE
+=======
+	var/machine_name = initial(origin_machine.name)
+	if(fake)
+		var/obj/machinery/vending/prototype = pick(subtypesof(/obj/machinery/vending))
+		machine_name = initial(prototype.name)
+	priority_announce("Rampant brand intelligence has been detected aboard [station_name()]. Please inspect any [machine_name] brand vendors for aggressive marketing tactics, and reboot them if necessary.", "Machine Learning Alert", ANNOUNCER_BRANDINTELLIGENCE) //SKYRAT EDIT CHANGE - ORIGINAL: priority_announce("Rampant brand intelligence has been detected aboard [station_name()]. Please inspect any [machine_name] brand vendors for aggressive marketing tactics, and reboot them if necessary.", "Machine Learning Alert")
+>>>>>>> b15b1697 ([MIRROR] Attack chain refactoring: Broadening `tool_act` into `item_interact`, moving some item interactions to... `atom/item_interact` / `item/interact_with_atom` [MDB IGNORE] (#25516))
 
 /datum/round_event/brand_intelligence/start()
 	origin_machine.shut_up = FALSE

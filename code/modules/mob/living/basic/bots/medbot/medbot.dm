@@ -192,7 +192,11 @@
 /mob/living/basic/bot/medbot/multitool_act(mob/living/user, obj/item/multitool/tool)
 	if(!QDELETED(tool.buffer) && istype(tool.buffer, /datum/techweb))
 		linked_techweb = tool.buffer
+<<<<<<< HEAD
 	return TRUE
+=======
+	return ITEM_INTERACT_SUCCESS
+>>>>>>> b15b1697 ([MIRROR] Attack chain refactoring: Broadening `tool_act` into `item_interact`, moving some item interactions to... `atom/item_interact` / `item/interact_with_atom` [MDB IGNORE] (#25516))
 
 // Variables sent to TGUI
 /mob/living/basic/bot/medbot/ui_data(mob/user)

@@ -465,6 +465,7 @@ GLOBAL_LIST_INIT(gas_id_to_canister, init_gas_id_to_canister())
 	cell_container_opened = !cell_container_opened
 	to_chat(user, span_notice("You [cell_container_opened ? "open" : "close"] the cell container hatch of [src]."))
 	update_appearance()
+<<<<<<< HEAD
 	return TRUE
 
 /obj/machinery/portable_atmospherics/canister/crowbar_act(mob/living/user, obj/item/tool)
@@ -478,6 +479,22 @@ GLOBAL_LIST_INIT(gas_id_to_canister, init_gas_id_to_canister())
 	. = ..()
 	if(!I.tool_start_check(user, amount=1))
 		return TRUE
+=======
+	return ITEM_INTERACT_SUCCESS
+
+/obj/machinery/portable_atmospherics/canister/crowbar_act(mob/living/user, obj/item/tool)
+	if(!cell_container_opened || !internal_cell)
+		return ITEM_INTERACT_BLOCKING
+
+	internal_cell.forceMove(drop_location())
+	balloon_alert(user, "cell removed")
+	return ITEM_INTERACT_SUCCESS
+
+/obj/machinery/portable_atmospherics/canister/welder_act_secondary(mob/living/user, obj/item/I)
+	if(!I.tool_start_check(user, amount=1))
+		return ITEM_INTERACT_BLOCKING
+
+>>>>>>> b15b1697 ([MIRROR] Attack chain refactoring: Broadening `tool_act` into `item_interact`, moving some item interactions to... `atom/item_interact` / `item/interact_with_atom` [MDB IGNORE] (#25516))
 	var/pressure = air_contents.return_pressure()
 	if(pressure > 300)
 		to_chat(user, span_alert("The pressure gauge on [src] indicates a high pressure inside... maybe you want to reconsider?"))
@@ -489,7 +506,10 @@ GLOBAL_LIST_INIT(gas_id_to_canister, init_gas_id_to_canister())
 		deconstruct(TRUE)
 	return TRUE
 
+	return ITEM_INTERACT_SUCCESS
+
 /obj/machinery/portable_atmospherics/canister/welder_act(mob/living/user, obj/item/tool)
+<<<<<<< HEAD
 	. = ..()
 	if(user.combat_mode)
 		return FALSE
@@ -499,14 +519,27 @@ GLOBAL_LIST_INIT(gas_id_to_canister, init_gas_id_to_canister())
 		return TRUE
 	if(!tool.tool_start_check(user, amount=1))
 		return TRUE
+=======
+	if(user.combat_mode)
+		return
+	if(atom_integrity >= max_integrity || (machine_stat & BROKEN) || !tool.tool_start_check(user, amount = 1))
+		return ITEM_INTERACT_SUCCESS
+
+>>>>>>> b15b1697 ([MIRROR] Attack chain refactoring: Broadening `tool_act` into `item_interact`, moving some item interactions to... `atom/item_interact` / `item/interact_with_atom` [MDB IGNORE] (#25516))
 	to_chat(user, span_notice("You begin repairing cracks in [src]..."))
 	while(tool.use_tool(src, user, 2.5 SECONDS, volume=40))
 		atom_integrity = min(atom_integrity + 25, max_integrity)
 		if(atom_integrity >= max_integrity)
 			to_chat(user, span_notice("You've finished repairing [src]."))
+<<<<<<< HEAD
 			return TRUE
+=======
+			return ITEM_INTERACT_SUCCESS
+>>>>>>> b15b1697 ([MIRROR] Attack chain refactoring: Broadening `tool_act` into `item_interact`, moving some item interactions to... `atom/item_interact` / `item/interact_with_atom` [MDB IGNORE] (#25516))
 		to_chat(user, span_notice("You repair some of the cracks in [src]..."))
 	return TRUE
+
+	return ITEM_INTERACT_BLOCKING
 
 /obj/machinery/portable_atmospherics/canister/Exited(atom/movable/gone, direction)
 	. = ..()
