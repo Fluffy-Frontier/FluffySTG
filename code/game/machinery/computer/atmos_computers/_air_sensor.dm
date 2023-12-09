@@ -222,7 +222,7 @@
 	return ITEM_INTERACT_SUCCESS
 
 /obj/item/air_sensor/deconstruct(disassembled)
-	if(!(flags_1 & NODECONSTRUCT_1))
+	if(!(obj_flags & NO_DECONSTRUCTION))
 		new /obj/item/analyzer(loc)
 		new /obj/item/stack/sheet/iron(loc, 1)
 	return ..()
