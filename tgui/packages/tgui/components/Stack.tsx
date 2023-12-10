@@ -5,8 +5,20 @@
  */
 
 import { classes } from 'common/react';
+<<<<<<< HEAD
 import { RefObject } from 'inferno';
 import { computeFlexClassName, computeFlexItemClassName, computeFlexItemProps, computeFlexProps, FlexItemProps, FlexProps } from './Flex';
+=======
+import { RefObject } from 'react';
+import {
+  computeFlexClassName,
+  computeFlexItemClassName,
+  computeFlexItemProps,
+  computeFlexProps,
+  FlexItemProps,
+  FlexProps,
+} from './Flex';
+>>>>>>> 015a3cf1 ([MANUAL MIRROR] Replaces prettierx with the normal prettier (#80189)  (#25538))
 
 type StackProps = FlexProps & {
   vertical?: boolean;

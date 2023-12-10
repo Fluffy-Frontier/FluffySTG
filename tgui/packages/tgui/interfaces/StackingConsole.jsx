@@ -45,10 +45,16 @@ export const StackingConsoleContent = (props) => {
                   })
                 }
               />
+<<<<<<< HEAD
             }>
             <Box style={{ 'text-transform': 'capitalize' }}>
               {input_direction}
             </Box>
+=======
+            }
+          >
+            <Box style={{ textTransform: 'capitalize' }}>{input_direction}</Box>
+>>>>>>> 015a3cf1 ([MANUAL MIRROR] Replaces prettierx with the normal prettier (#80189)  (#25538))
           </LabeledList.Item>
           <LabeledList.Item
             label="Output"
@@ -62,8 +68,14 @@ export const StackingConsoleContent = (props) => {
                   })
                 }
               />
+<<<<<<< HEAD
             }>
             <Box style={{ 'text-transform': 'capitalize' }}>
+=======
+            }
+          >
+            <Box style={{ textTransform: 'capitalize' }}>
+>>>>>>> 015a3cf1 ([MANUAL MIRROR] Replaces prettierx with the normal prettier (#80189)  (#25538))
               {output_direction}
             </Box>
           </LabeledList.Item>
@@ -88,7 +100,8 @@ export const StackingConsoleContent = (props) => {
                       })
                     }
                   />
-                }>
+                }
+              >
                 {sheet.amount || 'Unknown'}
               </LabeledList.Item>
             ))}

@@ -44,10 +44,18 @@ export const Connections = (props: {
       width="100%"
       height="100%"
       style={{
+<<<<<<< HEAD
         'position': 'absolute',
         'pointer-events': 'none',
         'z-index': zLayer,
       }}>
+=======
+        position: 'absolute',
+        pointerEvents: 'none',
+        zIndex: zLayer,
+      }}
+    >
+>>>>>>> 015a3cf1 ([MANUAL MIRROR] Replaces prettierx with the normal prettier (#80189)  (#25538))
       {connections.map((val, index) => {
         const from = val.from;
         const to = val.to;

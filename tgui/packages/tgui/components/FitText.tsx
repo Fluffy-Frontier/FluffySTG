@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 import { Component, createRef, RefObject } from 'inferno';
+=======
+import {
+  Component,
+  createRef,
+  HTMLAttributes,
+  PropsWithChildren,
+  RefObject,
+} from 'react';
+>>>>>>> 015a3cf1 ([MANUAL MIRROR] Replaces prettierx with the normal prettier (#80189)  (#25538))
 
 const DEFAULT_ACCEPTABLE_DIFFERENCE = 5;
 
@@ -80,10 +90,19 @@ export class FitText extends Component<Props, State> {
       <span
         ref={this.ref}
         style={{
+<<<<<<< HEAD
           'font-size': `${this.state.fontSize}px`,
           ...(typeof this.props.native?.style === 'object' &&
             this.props.native.style),
         }}>
+=======
+          fontSize: `${this.state.fontSize}px`,
+          ...(typeof this.props.native?.style === 'object'
+            ? this.props.native.style
+            : {}),
+        }}
+      >
+>>>>>>> 015a3cf1 ([MANUAL MIRROR] Replaces prettierx with the normal prettier (#80189)  (#25538))
         {this.props.children}
       </span>
     );

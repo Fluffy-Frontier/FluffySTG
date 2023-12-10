@@ -88,8 +88,14 @@ export const IconStack = (props: IconStackProps) => {
   const { className, children, ...rest } = props;
   return (
     <span
+<<<<<<< HEAD
       class={classes(['IconStack', className, computeBoxClassName(rest)])}
       {...computeBoxProps(rest)}>
+=======
+      className={classes(['IconStack', className, computeBoxClassName(rest)])}
+      {...computeBoxProps(rest)}
+    >
+>>>>>>> 015a3cf1 ([MANUAL MIRROR] Replaces prettierx with the normal prettier (#80189)  (#25538))
       {children}
     </span>
   );

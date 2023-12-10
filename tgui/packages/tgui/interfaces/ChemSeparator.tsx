@@ -1,6 +1,13 @@
 import { BooleanLike } from 'common/react';
 import { useBackend } from '../backend';
-import { Box, ProgressBar, NoticeBox, Button, LabeledList, Section } from '../components';
+import {
+  Box,
+  ProgressBar,
+  NoticeBox,
+  Button,
+  LabeledList,
+  Section,
+} from '../components';
 import { Window } from '../layouts';
 
 type Data = {
@@ -68,18 +75,26 @@ export const ChemSeparator = (props) => {
                     />
                   )}
                 </Box>
-              }>
+              }
+            >
               <ProgressBar
                 height={2}
                 value={data.own_total_volume}
                 minValue={0}
                 maxValue={data.own_maximum_volume}
-                color={data.own_reagent_color}>
+                color={data.own_reagent_color}
+              >
                 <Box
                   lineHeight={1.9}
                   style={{
+<<<<<<< HEAD
                     'text-shadow': '1px 1px 0 black',
                   }}>
+=======
+                    textShadow: '1px 1px 0 black',
+                  }}
+                >
+>>>>>>> 015a3cf1 ([MANUAL MIRROR] Replaces prettierx with the normal prettier (#80189)  (#25538))
                   {`${Math.ceil(data.own_total_volume)} of ${
                     data.own_maximum_volume
                   } units at ${Math.ceil(data.temperature)}°C`}
@@ -115,18 +130,26 @@ export const ChemSeparator = (props) => {
                       onClick={() => act('eject')}
                     />
                   </Box>
-                }>
+                }
+              >
                 <ProgressBar
                   height={2}
                   value={data.beaker_total_volume}
                   minValue={0}
                   maxValue={data.beaker_maximum_volume}
-                  color={data.beaker_reagent_color}>
+                  color={data.beaker_reagent_color}
+                >
                   <Box
                     lineHeight={1.9}
                     style={{
+<<<<<<< HEAD
                       'text-shadow': '1px 1px 0 black',
                     }}>
+=======
+                      textShadow: '1px 1px 0 black',
+                    }}
+                  >
+>>>>>>> 015a3cf1 ([MANUAL MIRROR] Replaces prettierx with the normal prettier (#80189)  (#25538))
                     {`${Math.ceil(data.beaker_total_volume)} of ${
                       data.beaker_maximum_volume
                     } units`}
