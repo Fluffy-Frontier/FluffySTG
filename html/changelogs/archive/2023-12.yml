@@ -388,3 +388,61 @@
   - bugfix: false walls icons will now display again
   whataboutism-alos:
   - rscadd: Sprited and implemented a short lizard tail
+2023-12-11:
+  Hatterhat:
+  - balance: Energy shoulder holsters can now fit the CIN plasma pistols and their
+      associated batteries.
+  Higgin:
+  - balance: most diseases can now be slowed, mitigated, and eventually cured through
+      being well-fed, resting, and using spaceacillin. Curing diseases through this
+      way will give you immunity if you experience them at their peak/maximum and
+      aren't starving/malnourished when they cure.
+  - balance: disease symptoms can be forestalled for up to 100 cycles with a declining
+      chance of avoiding them over time using rest or spaceacillin.
+  - balance: This does not apply to things like fungal TB; it does apply to healing
+      viruses if you don't take care of yourself by staying fed and avoiding spaceacillin.
+  - balance: disease can be cured through direct injection or ingestion of cured blood.
+      However, curing disease in this way does not provide lasting immunity. You need
+      to naturally beat the virus or get a vaccine for that.
+  - balance: Wearing internals or using protective equipment while infected can limit
+      the spread of respiratory illnesses from yourself to others. Contact transmission
+      is still possible however.
+  - balance: Medical Doctors now have roundstart virology access. Paramedics and coroners
+      now get virology access on skeleton shift access. Virologists now have roundstart
+      pharmacy access.
+  - balance: Sentient Diseases now resist being overridden by other advanced diseases
+      and can always override other advanced diseases; they also have an extra bonus
+      on their stealth stat to help make up for early outing without a bit more testing.
+  - balance: biohazard lockers now also contain a syringe of spaceacillin (in line
+      with the orderable kit from cargo.)
+  - balance: Virus severity is now also a function of the number of symptoms out of
+      max your virus has. Experiment with different combinations using less than six
+      symptoms to make viruses that are deceptively less-obvious and less quick to
+      self-cure at the tradeoff of stats.
+  Melbert:
+  - refactor: Refactored some methods of items interacting with other objects or mobs,
+      such as surgery and health analzyers. Report if anything seems wrong
+  Thlumyn:
+  - rscadd: Slimepeople can now get wings from flight potions.
+  WarlockD:
+  - bugfix: 'The air_alarm_circuit to gets the environment from the proper turf.
+
+      :cl:'
+  honkpocket:
+  - bugfix: Changes the main chemical of the Narcolepsy medicine from synaphydramine
+      to modafinil
+  jlsnow301:
+  - refactor: 'TGUI V5: The UI has had its entire engine replaced with React v18.2.
+      This might cause obvious or laughably broken UIs in places you wouldn''t expect.
+      Please report any issues you find to the repo!'
+  san7890:
+  - admin: Object Possession has been reworked, please report any potential bugs.
+  - qol: Object Possession should now throw a screen alert for you to unpossess the
+      object instead of you having to search the stat-panel for the "release obj"
+      verb. You can still use the verb but it's a lot nicer now. Aghosting will also
+      work now.
+  vinylspiders:
+  - bugfix: randomized spawned mobs will now have their species' random mutant colors
+      and features applied properly
+  xXPawnStarrXx:
+  - bugfix: fixed big rice pans getting worse with cooking.
