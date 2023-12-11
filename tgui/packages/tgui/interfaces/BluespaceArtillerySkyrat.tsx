@@ -1,14 +1,6 @@
-// THIS IS A SKYRAT UI FILE
 import { BooleanLike } from 'common/react';
 import { useBackend } from '../backend';
-import {
-  Box,
-  Button,
-  LabeledList,
-  NoticeBox,
-  Section,
-  Slider,
-} from '../components';
+import { Box, Button, LabeledList, NoticeBox, Section, Slider } from '../components';
 import { Window } from '../layouts';
 import { formatPower } from '../format';
 
@@ -47,8 +39,7 @@ export const BluespaceArtillerySkyrat = (props) => {
             <Section title="System Status">
               <Box
                 color={status !== 'SYSTEM READY' ? 'bad' : 'green'}
-                fontSize="25px"
-              >
+                fontSize="25px">
                 {status}
               </Box>
             </Section>
@@ -60,8 +51,7 @@ export const BluespaceArtillerySkyrat = (props) => {
                   color="orange"
                   onClick={() => act('charge')}
                 />
-              }
-            >
+              }>
               <LabeledList>
                 <LabeledList.Item label="Capacitor Charge">
                   {formatPower(capacitor_charge, 1)}
@@ -95,8 +85,7 @@ export const BluespaceArtillerySkyrat = (props) => {
                   disabled={!unlocked}
                   onClick={() => act('recalibrate')}
                 />
-              }
-            >
+              }>
               <Box color={target ? 'average' : 'bad'} fontSize="25px">
                 {target || 'No Target Set'}
               </Box>

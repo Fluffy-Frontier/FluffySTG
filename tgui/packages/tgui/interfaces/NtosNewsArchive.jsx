@@ -25,8 +25,7 @@ export const NtosNewsArchive = (props) => {
               story.day +
               '/' +
               story.year
-            }
-          >
+            }>
             <Section>{story.text}</Section>
           </Collapsible>
         ))}

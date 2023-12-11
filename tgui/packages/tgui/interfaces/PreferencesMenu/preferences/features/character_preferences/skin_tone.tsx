@@ -1,11 +1,6 @@
 import { sortBy } from 'common/collections';
 import { Box, Stack } from '../../../../../components';
-import {
-  Feature,
-  FeatureChoicedServerData,
-  FeatureValueProps,
-  StandardizedDropdown,
-} from '../base';
+import { Feature, FeatureChoicedServerData, FeatureValueProps, StandardizedDropdown } from '../base';
 
 type HexValue = {
   lightness: number;
@@ -18,7 +13,7 @@ type SkinToneServerData = FeatureChoicedServerData & {
 };
 
 const sortHexValues = sortBy<[string, HexValue]>(
-  ([_, hexValue]) => -hexValue.lightness,
+  ([_, hexValue]) => -hexValue.lightness
 );
 
 export const skin_tone: Feature<string, string, SkinToneServerData> = {
@@ -33,7 +28,7 @@ export const skin_tone: Feature<string, string, SkinToneServerData> = {
     return (
       <StandardizedDropdown
         choices={sortHexValues(Object.entries(serverData.to_hex)).map(
-          ([key]) => key,
+          ([key]) => key
         )}
         displayNames={Object.fromEntries(
           Object.entries(serverData.display_names).map(([key, displayName]) => {
@@ -56,7 +51,7 @@ export const skin_tone: Feature<string, string, SkinToneServerData> = {
                 <Stack.Item grow>{displayName}</Stack.Item>
               </Stack>,
             ];
-          }),
+          })
         )}
         onSetValue={handleSetValue}
         value={value}

@@ -26,8 +26,7 @@ export const MicrofusionGunControl = (props) => {
                     })
                   }
                 />
-              }
-            >
+              }>
               <LabeledList>
                 <LabeledList.Item label="Players">
                   {server.players}/{server.max_players}

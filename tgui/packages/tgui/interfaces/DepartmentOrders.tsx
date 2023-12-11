@@ -1,16 +1,6 @@
 import { BooleanLike } from 'common/react';
 import { useBackend, useLocalState } from '../backend';
-import {
-  Box,
-  Button,
-  Dimmer,
-  Icon,
-  NoticeBox,
-  Section,
-  Stack,
-  Tabs,
-  Tooltip,
-} from '../components';
+import { Box, Button, Dimmer, Icon, NoticeBox, Section, Stack, Tabs, Tooltip } from '../components';
 import { Window } from '../layouts';
 
 // 15x crate value
@@ -107,8 +97,7 @@ const CooldownDimmer = (props) => {
             fontSize="14px"
             color="red"
             disabled={!can_override}
-            onClick={() => act('override_order')}
-          >
+            onClick={() => act('override_order')}>
             <Box fontSize="22px">Override</Box>
           </Button>
         </Stack.Item>
@@ -129,8 +118,7 @@ const DepartmentCatalog = (props) => {
             <Tabs.Tab
               key={cat.name}
               selected={tabCategory === cat}
-              onClick={() => setTabCategory(cat)}
-            >
+              onClick={() => setTabCategory(cat)}>
               {cat.name}
             </Tabs.Tab>
           ))}
@@ -148,8 +136,7 @@ const DepartmentCatalog = (props) => {
                         as="span"
                         style={{
                           borderBottom: '2px dotted rgba(255, 255, 255, 0.8)',
-                        }}
-                      >
+                        }}>
                         {pack.name}
                       </Box>
                     </Tooltip>
@@ -162,8 +149,7 @@ const DepartmentCatalog = (props) => {
                         act('order', {
                           id: pack.id,
                         })
-                      }
-                    >
+                      }>
                       Order
                     </Button>
                   </Stack.Item>

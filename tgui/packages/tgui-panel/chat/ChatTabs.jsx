@@ -19,8 +19,7 @@ const UnreadCountWidget = ({ value }) => (
       lineHeight: '1.55em',
       backgroundColor: 'crimson',
       color: '#fff',
-    }}
-  >
+    }}>
     {Math.min(value, 99)}
   </Box>
 );
@@ -46,10 +45,9 @@ export const ChatTabs = (props) => {
                 dispatch(
                   changeChatPage({
                     pageId: page.id,
-                  }),
+                  })
                 )
-              }
-            >
+              }>
               {page.name}
             </Tabs.Tab>
           ))}

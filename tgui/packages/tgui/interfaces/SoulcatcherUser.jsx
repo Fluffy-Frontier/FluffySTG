@@ -1,16 +1,7 @@
 // THIS IS A SKYRAT UI FILE
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
-import {
-  BlockQuote,
-  Button,
-  Divider,
-  Box,
-  Flex,
-  Collapsible,
-  LabeledList,
-  Section,
-} from '../components';
+import { BlockQuote, Button, Divider, Box, Flex, Collapsible, LabeledList, Section } from '../components';
 
 export const SoulcatcherUser = (props) => {
   const { act, data } = useBackend();
@@ -25,8 +16,7 @@ export const SoulcatcherUser = (props) => {
             <span style={{ color: current_room.color }}>
               {current_room.name}
             </span>
-          }
-        >
+          }>
           <BlockQuote preserveWhitespace>
             {' '}
             {current_room.description}

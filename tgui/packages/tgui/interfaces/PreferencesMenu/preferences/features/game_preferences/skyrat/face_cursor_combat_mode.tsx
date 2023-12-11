@@ -1,4 +1,3 @@
-// THIS IS A SKYRAT UI FILE
 import { multiline } from 'common/string';
 import { CheckboxInput, FeatureToggle } from '../../base';
 

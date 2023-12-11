@@ -60,8 +60,7 @@ export const ChemDebugSynthesizer = (props) => {
                 onClick={() => act('makecup')}
               />
             )
-          }
-        >
+          }>
           <BeakerDisplay beaker={beaker} showpH />
         </Section>
       </Window.Content>

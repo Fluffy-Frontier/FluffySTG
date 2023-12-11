@@ -1,4 +1,3 @@
-// THIS IS A SKYRAT UI FILE
 import { Feature, FeatureShortTextInput } from '../../base';
 
 export const headshot: Feature<string> = {

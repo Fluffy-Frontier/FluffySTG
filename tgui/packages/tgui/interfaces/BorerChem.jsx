@@ -33,8 +33,7 @@ export const BorerChem = (props) => {
                 })
               }
             />
-          ))}
-        >
+          ))}>
           <Box mr={-1}>
             {data.chemicals.map((chemical) => (
               <Button

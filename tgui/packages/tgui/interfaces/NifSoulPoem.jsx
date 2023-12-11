@@ -1,16 +1,7 @@
 // THIS IS A SKYRAT UI FILE
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
-import {
-  Section,
-  Divider,
-  Flex,
-  Box,
-  BlockQuote,
-  Input,
-  LabeledList,
-  Button,
-} from '../components';
+import { Section, Divider, Flex, Box, BlockQuote, Input, LabeledList, Button } from '../components';
 
 export const NifSoulPoem = (props) => {
   const { act, data } = useBackend();
@@ -67,8 +58,7 @@ export const NifSoulPoem = (props) => {
               <Button
                 fluid
                 onClick={() => act('toggle_transmitting', {})}
-                color={transmitting_data ? 'green' : 'red'}
-              >
+                color={transmitting_data ? 'green' : 'red'}>
                 {transmitting_data ? 'True' : 'False'}
               </Button>
             </LabeledList.Item>
@@ -76,8 +66,7 @@ export const NifSoulPoem = (props) => {
               <Button
                 fluid
                 onClick={() => act('toggle_receiving', {})}
-                color={receiving_data ? 'green' : 'red'}
-              >
+                color={receiving_data ? 'green' : 'red'}>
                 {receiving_data ? 'True' : 'False'}
               </Button>
             </LabeledList.Item>

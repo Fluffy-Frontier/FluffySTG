@@ -99,8 +99,7 @@ export const EventPanel = (props) => {
                 vote_in_progress
                   ? 'Available Events (' + toFixed(end_time) + ' seconds) '
                   : 'Available Events'
-              }
-            >
+              }>
               {vote_in_progress ? (
                 <LabeledList>
                   {event_list.map((event) => (
@@ -118,8 +117,7 @@ export const EventPanel = (props) => {
                             })
                           }
                         />
-                      }
-                    >
+                      }>
                       {!!show_votes || (!!admin_mode && event.votes)}
                     </LabeledList.Item>
                   ))}
@@ -136,8 +134,7 @@ export const EventPanel = (props) => {
                 grow
                 fill
                 height="150px"
-                title="Previous Events"
-              >
+                title="Previous Events">
                 {previous_events.length > 0 ? (
                   <LabeledList>
                     {previous_events.map((event) => (

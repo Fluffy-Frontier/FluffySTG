@@ -1,14 +1,5 @@
 import { useBackend, useLocalState } from '../backend';
-import {
-  NoticeBox,
-  Section,
-  Tabs,
-  Input,
-  Button,
-  NumberInput,
-  Stack,
-  Collapsible,
-} from '../components';
+import { NoticeBox, Section, Tabs, Input, Button, NumberInput, Stack, Collapsible } from '../components';
 import { Window } from '../layouts';
 
 type PthData = {
@@ -42,7 +33,7 @@ export const PlayerTicketHistory = (props: any) => {
 
   const [page, setPage] = useLocalState(
     'page',
-    data.target_ckey ? Pages.TicketHistory : Pages.Cache,
+    data.target_ckey ? Pages.TicketHistory : Pages.Cache
   );
 
   const [cacheInput, setCacheInput] = useLocalState('cacheInput', '');
@@ -64,22 +55,19 @@ export const PlayerTicketHistory = (props: any) => {
       height={300}
       title={`Player Ticket History${
         data.target_ckey ? ` - ${data.target_ckey}` : ''
-      }`}
-    >
+      }`}>
       <Window.Content>
         <Tabs>
           <Tabs.Tab
             key={Pages.Cache}
             selected={page === Pages.Cache}
-            onClick={() => setPage(Pages.Cache)}
-          >
+            onClick={() => setPage(Pages.Cache)}>
             Cache
           </Tabs.Tab>
           <Tabs.Tab
             key={Pages.TicketHistory}
             selected={page === Pages.TicketHistory}
-            onClick={() => setPage(Pages.TicketHistory)}
-          >
+            onClick={() => setPage(Pages.TicketHistory)}>
             Ticket History
           </Tabs.Tab>
         </Tabs>
@@ -110,7 +98,7 @@ const TicketHistory = (props: any) => {
 
   const [activeTicket, setActiveTicket] = useLocalState<TicketData | undefined>(
     'ticket',
-    undefined,
+    undefined
   );
 
   // sory by round then ticket number, descending
@@ -138,8 +126,7 @@ const TicketHistory = (props: any) => {
                 }
                 onClick={() => {
                   setActiveTicket(ticket);
-                }}
-              >
+                }}>
                 {`${ticket.round_id} #${ticket.ticket_number}`}
               </Button>
             </Stack.Item>
@@ -200,8 +187,7 @@ const Cache = (props: CacheProps) => {
             icon="user"
             onClick={() => {
               act('select-user', { target: ckey });
-            }}
-          >
+            }}>
             {ckey}
           </Button>
         ))}
@@ -230,8 +216,7 @@ const TicketView = (props: TicketViewProps) => {
           icon={forceExpand ? 'compress' : 'expand'}
           onClick={() => setForceExpand(!forceExpand)}
         />
-      }
-    >
+      }>
       {props.ticket.ticket_log.map((log, index) => (
         <Collapsible
           tooltip={log.timestamp}
@@ -239,8 +224,7 @@ const TicketView = (props: TicketViewProps) => {
           key={`${props.ticket.round_id}-${props.ticket.ticket_number}-${index}`}
           title={`${log.action} - ${log.origin_ckey}${
             log.target_ckey ? ` -> ${log.target_ckey}` : ''
-          }`}
-        >
+          }`}>
           {log.message}
         </Collapsible>
       ))}

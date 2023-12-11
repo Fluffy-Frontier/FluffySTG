@@ -4,14 +4,7 @@ import { toFixed } from 'common/math';
 import { BooleanLike } from 'common/react';
 import { ReactNode } from 'react';
 import { useBackend, useLocalState } from '../backend';
-import {
-  Box,
-  Button,
-  LabeledList,
-  ProgressBar,
-  Section,
-  Stack,
-} from '../components';
+import { Box, Button, LabeledList, ProgressBar, Section, Stack } from '../components';
 import { getGasFromPath } from '../constants';
 import { Window } from '../layouts';
 
@@ -132,8 +125,7 @@ export const SupermatterContent = (props: SupermatterProps) => {
           fill
           scrollable
           title={uid + '. ' + area_name}
-          buttons={sectionButton}
-        >
+          buttons={sectionButton}>
           <Stack vertical>
             <SupermatterEntry
               title="Integrity"
@@ -145,8 +137,7 @@ export const SupermatterContent = (props: SupermatterProps) => {
                     good: [0.9, Infinity],
                     average: [0.5, 0.9],
                     bad: [-Infinity, 0.5],
-                  }}
-                >
+                  }}>
                   {toFixed(integrity, 2) + ' %'}
                 </ProgressBar>
               }
@@ -157,8 +148,7 @@ export const SupermatterContent = (props: SupermatterProps) => {
                       <LabeledList.Item
                         key={name}
                         label={name + ' (∆)'}
-                        labelWrap
-                      >
+                        labelWrap>
                         <Box color={amount > 0 ? 'green' : 'red'}>
                           {toFixed(amount, 2) + ' %'}
                         </Box>
@@ -180,8 +170,7 @@ export const SupermatterContent = (props: SupermatterProps) => {
                     good: [-Infinity, 5000],
                     average: [5000, 7000],
                     bad: [7000, Infinity],
-                  }}
-                >
+                  }}>
                   {toFixed(internal_energy_coefficient, 3) +
                     internal_energy_unit}
                 </ProgressBar>
@@ -193,8 +182,7 @@ export const SupermatterContent = (props: SupermatterProps) => {
                       <LabeledList.Item
                         key={name}
                         label={name + ' (∆)'}
-                        labelWrap
-                      >
+                        labelWrap>
                         <Box color={amount > 0 ? 'green' : 'red'}>
                           {toFixed(amount, 3) + unit}
                         </Box>
@@ -217,8 +205,7 @@ export const SupermatterContent = (props: SupermatterProps) => {
                     good: [2e6, 1e7],
                     average: [1e6, 2e6],
                     bad: [-Infinity, 1e6],
-                  }}
-                >
+                  }}>
                   {toFixed(zap_transmission_coefficient, 2) +
                     zap_transmission_unit}
                 </ProgressBar>
@@ -248,8 +235,7 @@ export const SupermatterContent = (props: SupermatterProps) => {
                     good: [0, 900],
                     average: [900, 1800],
                     bad: [1800, Infinity],
-                  }}
-                >
+                  }}>
                   {toFixed(gas_total_moles, 2) + ' Moles'}
                 </ProgressBar>
               }
@@ -266,8 +252,7 @@ export const SupermatterContent = (props: SupermatterProps) => {
                     good: [logScale(100), logScale(300)],
                     average: [logScale(300), logScale(temp_limit)],
                     bad: [logScale(temp_limit), Infinity],
-                  }}
-                >
+                  }}>
                   {toFixed(gas_temperature, 2) + ' K'}
                 </ProgressBar>
               }
@@ -302,8 +287,7 @@ export const SupermatterContent = (props: SupermatterProps) => {
                     good: [-Infinity, 0.8],
                     average: [0.8, 2],
                     bad: [2, Infinity],
-                  }}
-                >
+                  }}>
                   {toFixed(waste_multiplier, 2) + ' x'}
                 </ProgressBar>
               }
@@ -336,12 +320,10 @@ export const SupermatterContent = (props: SupermatterProps) => {
           buttons={
             <Button
               icon={allGasActive ? 'times' : 'book-open'}
-              onClick={() => setAllGasActive(!allGasActive)}
-            >
+              onClick={() => setAllGasActive(!allGasActive)}>
               {allGasActive ? 'Hide Gases' : 'Show All Gases'}
             </Button>
-          }
-        >
+          }>
           <Stack vertical>
             {gas_composition.map(([gas_path, amount]) => (
               <SupermatterEntry
@@ -352,8 +334,7 @@ export const SupermatterContent = (props: SupermatterProps) => {
                     color={getGasFromPath(gas_path)?.color}
                     value={amount}
                     minValue={0}
-                    maxValue={1}
-                  >
+                    maxValue={1}>
                     {toFixed(amount * 100, 2) + '%'}
                   </ProgressBar>
                 }
@@ -381,13 +362,12 @@ export const SupermatterContent = (props: SupermatterProps) => {
                                         : effect.amount < 0
                                           ? 'green'
                                           : 'red'
-                                    }
-                                  >
+                                    }>
                                     {effect.amount > 0
                                       ? '+' + effect.amount + effect.unit
                                       : effect.amount + effect.unit}
                                   </LabeledList.Item>
-                                ),
+                                )
                             )}
                           </LabeledList>
                         </>

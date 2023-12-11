@@ -46,8 +46,7 @@ export const ExosuitFabricator = (props) => {
                         act('build', {
                           designs: category.children.map((design) => design.id),
                         });
-                      }}
-                    >
+                      }}>
                       Queue All
                     </Button>
                   )}
@@ -90,7 +89,7 @@ const Recipe = (props: RecipeProps) => {
 
   const canPrint = !Object.entries(design.cost).some(
     ([material, amount]) =>
-      !available[material] || amount > (available[material] ?? 0),
+      !available[material] || amount > (available[material] ?? 0)
   );
 
   return (
@@ -101,8 +100,7 @@ const Recipe = (props: RecipeProps) => {
             'FabricatorRecipe__Button',
             'FabricatorRecipe__Button--icon',
             !canPrint && 'FabricatorRecipe__Button--disabled',
-          ])}
-        >
+          ])}>
           <Icon name="question-circle" />
         </div>
       </Tooltip>
@@ -115,8 +113,7 @@ const Recipe = (props: RecipeProps) => {
             SHEET_MATERIAL_AMOUNT={SHEET_MATERIAL_AMOUNT}
             available={available}
           />
-        }
-      >
+        }>
         <div
           className={classes([
             'FabricatorRecipe__Title',
@@ -124,8 +121,7 @@ const Recipe = (props: RecipeProps) => {
           ])}
           onClick={() =>
             canPrint && act('build', { designs: [design.id], now: true })
-          }
-        >
+          }>
           <div className="FabricatorRecipe__Icon">
             <Box
               width={'32px'}
@@ -145,8 +141,7 @@ const Recipe = (props: RecipeProps) => {
             !canPrint && 'FabricatorRecipe__Button--disabled',
           ])}
           color={'transparent'}
-          onClick={() => act('build', { designs: [design.id] })}
-        >
+          onClick={() => act('build', { designs: [design.id] })}>
           <Icon name="plus-circle" />
         </div>
       </Tooltip>
@@ -159,8 +154,7 @@ const Recipe = (props: RecipeProps) => {
             !canPrint && 'FabricatorRecipe__Button--disabled',
           ])}
           color={'transparent'}
-          onClick={() => act('build', { designs: [design.id], now: true })}
-        >
+          onClick={() => act('build', { designs: [design.id], now: true })}>
           <Icon name="play" />
         </div>
       </Tooltip>
@@ -227,8 +221,7 @@ const Queue = (props: QueueProps) => {
                   />
                 )}
               </>
-            }
-          >
+            }>
             <MaterialCostSequence
               SHEET_MATERIAL_AMOUNT={SHEET_MATERIAL_AMOUNT}
               available={availableMaterials}
@@ -237,7 +230,7 @@ const Queue = (props: QueueProps) => {
           </Section>
         </Stack.Item>
         <Stack.Item grow>
-          <Section fill style={{ overflow: 'auto' }}>
+          <Section fill style={{ 'overflow': 'auto' }}>
             <QueueList
               availableMaterials={availableMaterials}
               SHEET_MATERIAL_AMOUNT={SHEET_MATERIAL_AMOUNT}
@@ -312,14 +305,12 @@ const QueueList = (props: QueueListProps) => {
                   SHEET_MATERIAL_AMOUNT={SHEET_MATERIAL_AMOUNT}
                   available={availableMaterials}
                 />
-              }
-            >
+              }>
               <div
                 className={classes([
                   'FabricatorRecipe__Title',
                   !entry.canPrint && 'FabricatorRecipe__Title--disabled',
-                ])}
-              >
+                ])}>
                 <div className="FabricatorRecipe__Icon">
                   <Box
                     width={'32px'}
@@ -346,8 +337,7 @@ const QueueList = (props: QueueListProps) => {
                   act('del_queue_part', {
                     index: entry.index + (queue[0]!.processing ? 0 : 1),
                   });
-                }}
-              >
+                }}>
                 <Tooltip content={'Remove from Queue'}>
                   <Icon name="minus-circle" />
                 </Tooltip>

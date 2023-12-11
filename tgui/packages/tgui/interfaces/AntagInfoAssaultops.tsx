@@ -1,15 +1,6 @@
 // THIS IS A SKYRAT UI FILE
 import { useBackend, useLocalState } from '../backend';
-import {
-  LabeledList,
-  Stack,
-  Button,
-  Section,
-  ProgressBar,
-  Box,
-  Tabs,
-  Divider,
-} from '../components';
+import { LabeledList, Stack, Button, Section, ProgressBar, Box, Tabs, Divider } from '../components';
 import { BooleanLike } from 'common/react';
 import { Window } from '../layouts';
 import { Rules } from './AntagInfoRules';
@@ -99,8 +90,7 @@ export const AntagInfoAssaultops = (props) => {
                   <LabeledList.Item
                     key={objective.count}
                     label={objective.name}
-                    color={objective.complete ? 'good' : 'bad'}
-                  >
+                    color={objective.complete ? 'good' : 'bad'}>
                     {objective.explanation}
                   </LabeledList.Item>
                 ))}
@@ -114,15 +104,13 @@ export const AntagInfoAssaultops = (props) => {
                   <Tabs.Tab
                     width="100%"
                     selected={tab === 1}
-                    onClick={() => setTab(1)}
-                  >
+                    onClick={() => setTab(1)}>
                     Targets
                   </Tabs.Tab>
                   <Tabs.Tab
                     width="100%"
                     selected={tab === 2}
-                    onClick={() => setTab(2)}
-                  >
+                    onClick={() => setTab(2)}>
                     GoldenEye Keycards
                   </Tabs.Tab>
                 </Tabs>
@@ -160,8 +148,7 @@ const TargetPrintout = (props) => {
                 <LabeledList.Item
                   key={target.name}
                   label={target.name}
-                  color="red"
-                >
+                  color="red">
                   {target.job}
                 </LabeledList.Item>
               ))}
@@ -180,8 +167,7 @@ const TargetPrintout = (props) => {
                 <LabeledList.Item
                   key={target.name}
                   label={target.name}
-                  color="good"
-                >
+                  color="good">
                   {target.job}
                 </LabeledList.Item>
               ))}
@@ -223,22 +209,22 @@ const KeyPrintout = (props) => {
                     content={
                       key.selected
                         ? key.name +
-                          ' (' +
-                          key.coord_x +
-                          ', ' +
-                          key.coord_y +
-                          ', ' +
-                          key.coord_z +
-                          ')' +
-                          ' (Tracking)'
+                        ' (' +
+                        key.coord_x +
+                        ', ' +
+                        key.coord_y +
+                        ', ' +
+                        key.coord_z +
+                        ')' +
+                        ' (Tracking)'
                         : key.name +
-                          ' (' +
-                          key.coord_x +
-                          ', ' +
-                          key.coord_y +
-                          ', ' +
-                          key.coord_z +
-                          ')'
+                        ' (' +
+                        key.coord_x +
+                        ', ' +
+                        key.coord_y +
+                        ', ' +
+                        key.coord_z +
+                        ')'
                     }
                     onClick={() =>
                       act('track_key', {

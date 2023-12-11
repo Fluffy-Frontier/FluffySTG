@@ -26,17 +26,14 @@ enum Page {
 }
 
 const CharacterProfiles = (props: {
-  activeSlot: number;
+  activeSlot: number; // SKYRAT EDIT CHANGE
   onClick: (index: number) => void;
   profiles: (string | null)[];
 }) => {
-  const { profiles, activeSlot, onClick } = props; // SKYRAT EDIT CHANGE
-
+  const { profiles, activeSlot, onClick } = props;
+  // SKYRAT EDIT CHANGE
   return (
-    <Flex
-      align="center"
-      justify="center" /* SKYRAT EDIT CHANGE START - Skyrat uses a dropdown instead of buttons */
-    >
+    <Flex align="center" justify="center">
       <Flex.Item width="25%">
         <Dropdown
           width="100%"
@@ -51,7 +48,7 @@ const CharacterProfiles = (props: {
           }}
         />
       </Flex.Item>
-    </Flex> /* SKYRAT EDIT CHANGE END */
+    </Flex>
   );
 };
 
@@ -127,8 +124,7 @@ export const CharacterPreferenceWindow = (props) => {
                   currentPage={currentPage}
                   page={Page.Main}
                   setPage={setCurrentPage}
-                  otherActivePages={[Page.Species]}
-                >
+                  otherActivePages={[Page.Species]}>
                   Character
                 </PageButton>
               </Stack.Item>
@@ -137,8 +133,7 @@ export const CharacterPreferenceWindow = (props) => {
                 <PageButton
                   currentPage={currentPage}
                   page={Page.Jobs}
-                  setPage={setCurrentPage}
-                >
+                  setPage={setCurrentPage}>
                   {/*
                     Fun fact: This isn't "Jobs" so that it intentionally
                     catches your eyes, because it's really important!
@@ -153,8 +148,7 @@ export const CharacterPreferenceWindow = (props) => {
                 <PageButton
                   currentPage={currentPage}
                   page={Page.Limbs}
-                  setPage={setCurrentPage}
-                >
+                  setPage={setCurrentPage}>
                   Augments+
                 </PageButton>
               </Stack.Item>
@@ -163,8 +157,7 @@ export const CharacterPreferenceWindow = (props) => {
                 <PageButton
                   currentPage={currentPage}
                   page={Page.Languages}
-                  setPage={setCurrentPage}
-                >
+                  setPage={setCurrentPage}>
                   Languages
                 </PageButton>
               </Stack.Item>
@@ -175,8 +168,7 @@ export const CharacterPreferenceWindow = (props) => {
                 <PageButton
                   currentPage={currentPage}
                   page={Page.Antags}
-                  setPage={setCurrentPage}
-                >
+                  setPage={setCurrentPage}>
                   Antagonists
                 </PageButton>
               </Stack.Item>
@@ -185,8 +177,7 @@ export const CharacterPreferenceWindow = (props) => {
                 <PageButton
                   currentPage={currentPage}
                   page={Page.Quirks}
-                  setPage={setCurrentPage}
-                >
+                  setPage={setCurrentPage}>
                   Quirks
                 </PageButton>
               </Stack.Item>

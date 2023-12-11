@@ -1,12 +1,6 @@
 // THIS IS A SKYRAT UI FILE
 import { useBackend, useLocalState } from '../backend';
-import {
-  Collapsible,
-  Section,
-  TextArea,
-  LabeledList,
-  Button,
-} from '../components';
+import { Collapsible, Section, TextArea, LabeledList, Button } from '../components';
 import { Window } from '../layouts';
 
 type StoryManagerData = {
@@ -40,7 +34,7 @@ export const StoryManager = (props) => {
           <br />
           <i>Anything published here will not appear until the next round!</i>
           <br />
-          <span style={{ color: 'red' }}>
+          <span style={{ 'color': 'red' }}>
             Do not mess with this unless you know what you&apos;re doing.
           </span>
         </Section>
@@ -77,12 +71,11 @@ export const StoryManager = (props) => {
             color="blue"
             onClick={() => {
               act('publish_article', {
-                title: title,
-                text: text,
-                id: id,
+                'title': title,
+                'text': text,
+                'id': id,
               });
-            }}
-          >
+            }}>
             Publish
           </Button>
         </Section>
@@ -99,8 +92,7 @@ export const StoryManager = (props) => {
                 story.day +
                 '/' +
                 story.year
-              }
-            >
+              }>
               <Section>
                 {story.text}
                 <br />
@@ -110,10 +102,9 @@ export const StoryManager = (props) => {
                   color="red"
                   onClick={() => {
                     act('archive_article', {
-                      id: story.id,
+                      'id': story.id,
                     });
-                  }}
-                >
+                  }}>
                   Archive
                 </Button>
               </Section>
@@ -133,8 +124,7 @@ export const StoryManager = (props) => {
                 story.day +
                 '/' +
                 story.year
-              }
-            >
+              }>
               <Section>
                 {story.text}
                 <br />
@@ -144,10 +134,9 @@ export const StoryManager = (props) => {
                   color="green"
                   onClick={() => {
                     act('circulate_article', {
-                      id: story.id,
+                      'id': story.id,
                     });
-                  }}
-                >
+                  }}>
                   Circulate
                 </Button>
               </Section>

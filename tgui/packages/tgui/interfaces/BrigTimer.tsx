@@ -33,8 +33,7 @@ export const BrigTimer = (props) => {
                 onClick={() => act('flash')}
               />
             </>
-          }
-        >
+          }>
           <Button
             icon="fast-backward"
             onClick={() => act('time', { adjust: -600 })}

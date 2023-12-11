@@ -1,23 +1,7 @@
 import { BooleanLike } from 'common/react';
 import { formatSiUnit } from '../format';
 import { useBackend, useLocalState } from '../backend';
-import {
-  Button,
-  ColorBox,
-  LabeledList,
-  ProgressBar,
-  Section,
-  Collapsible,
-  Box,
-  Icon,
-  Stack,
-  Table,
-  Dimmer,
-  NumberInput,
-  AnimatedNumber,
-  Dropdown,
-  NoticeBox,
-} from '../components';
+import { Button, ColorBox, LabeledList, ProgressBar, Section, Collapsible, Box, Icon, Stack, Table, Dimmer, NumberInput, AnimatedNumber, Dropdown, NoticeBox } from '../components';
 import { Window } from '../layouts';
 
 type MODsuitData = {
@@ -121,8 +105,7 @@ export const MODsuit = (props) => {
       width={600}
       height={600}
       theme={ui_theme}
-      title="MOD Interface Panel"
-    >
+      title="MOD Interface Panel">
       <Window.Content scrollable={!interface_break}>
         <MODsuitContent />
       </Window.Content>
@@ -173,9 +156,9 @@ const ConfigureNumberEntry = (props) => {
       width="39px"
       onChange={(e, value) =>
         act('configure', {
-          key: name,
-          value: value,
-          ref: module_ref,
+          'key': name,
+          'value': value,
+          'ref': module_ref,
         })
       }
     />
@@ -190,9 +173,9 @@ const ConfigureBoolEntry = (props) => {
       checked={value}
       onClick={() =>
         act('configure', {
-          key: name,
-          value: !value,
-          ref: module_ref,
+          'key': name,
+          'value': !value,
+          'ref': module_ref,
         })
       }
     />
@@ -208,8 +191,8 @@ const ConfigureColorEntry = (props) => {
         icon="paint-brush"
         onClick={() =>
           act('configure', {
-            key: name,
-            ref: module_ref,
+            'key': name,
+            'ref': module_ref,
           })
         }
       />
@@ -227,9 +210,9 @@ const ConfigureListEntry = (props) => {
       options={values}
       onSelected={(value) =>
         act('configure', {
-          key: name,
-          value: value,
-          ref: module_ref,
+          'key': name,
+          'value': value,
+          'ref': module_ref,
         })
       }
     />
@@ -347,7 +330,7 @@ const SuitStatusSection = (props) => {
       ? 'Active'
       : 'Inactive';
   const charge_percent = Math.round(
-    (100 * cell_charge_current) / cell_charge_max,
+    (100 * cell_charge_current) / cell_charge_max
   );
 
   return (
@@ -361,8 +344,7 @@ const SuitStatusSection = (props) => {
           content={status}
           onClick={() => act('activate')}
         />
-      }
-    >
+      }>
       <LabeledList>
         <LabeledList.Item label="Charge">
           <ProgressBar
@@ -374,8 +356,7 @@ const SuitStatusSection = (props) => {
             }}
             style={{
               textShadow: '1px 1px 0 black',
-            }}
-          >
+            }}>
             {!core_name
               ? 'No Core Detected'
               : cell_charge_max === 1
@@ -383,14 +364,14 @@ const SuitStatusSection = (props) => {
                 : cell_charge_current === 1e31
                   ? 'Infinite'
                   : `${formatSiUnit(
-                      cell_charge_current * 1000,
-                      0,
-                      'J',
-                    )} of ${formatSiUnit(
-                      cell_charge_max * 1000,
-                      0,
-                      'J',
-                    )} (${charge_percent}%)`}
+                    cell_charge_current * 1000,
+                    0,
+                    'J'
+                  )} of ${formatSiUnit(
+                    cell_charge_max * 1000,
+                    0,
+                    'J'
+                  )} (${charge_percent}%)`}
           </ProgressBar>
         </LabeledList.Item>
         <LabeledList.Item label="ID Lock">
@@ -512,8 +493,7 @@ const UserStatusSection = (props) => {
                 good: [0.5, Infinity],
                 average: [0.2, 0.5],
                 bad: [-Infinity, 0.2],
-              }}
-            >
+              }}>
               <AnimatedNumber value={active ? health : 0} />
             </ProgressBar>
           </LabeledList.Item>
@@ -526,8 +506,7 @@ const UserStatusSection = (props) => {
                 good: [-Infinity, 0.2],
                 average: [0.2, 0.5],
                 bad: [0.5, Infinity],
-              }}
-            >
+              }}>
               <AnimatedNumber value={active ? loss_brute : 0} />
             </ProgressBar>
           </LabeledList.Item>
@@ -540,8 +519,7 @@ const UserStatusSection = (props) => {
                 good: [-Infinity, 0.2],
                 average: [0.2, 0.5],
                 bad: [0.5, Infinity],
-              }}
-            >
+              }}>
               <AnimatedNumber value={active ? loss_fire : 0} />
             </ProgressBar>
           </LabeledList.Item>
@@ -554,8 +532,7 @@ const UserStatusSection = (props) => {
                 good: [-Infinity, 0.2],
                 average: [0.2, 0.5],
                 bad: [0.5, Infinity],
-              }}
-            >
+              }}>
               <AnimatedNumber value={active ? loss_oxy : 0} />
             </ProgressBar>
           </LabeledList.Item>
@@ -568,8 +545,7 @@ const UserStatusSection = (props) => {
                 good: [-Infinity, 0.2],
                 average: [0.2, 0.5],
                 bad: [0.5, Infinity],
-              }}
-            >
+              }}>
               <AnimatedNumber value={active ? loss_tox : 0} />
             </ProgressBar>
           </LabeledList.Item>
@@ -609,8 +585,7 @@ const UserStatusSection = (props) => {
               style={{
                 wordBreak: 'break-all',
                 wordWrap: 'break-word',
-              }}
-            >
+              }}>
               {active ? dna_unique_identity : '???'}
             </Box>
           </LabeledList.Item>
@@ -621,8 +596,7 @@ const UserStatusSection = (props) => {
               style={{
                 wordBreak: 'break-all',
                 wordWrap: 'break-word',
-              }}
-            >
+              }}>
               {active ? dna_unique_enzymes : '???'}
             </Box>
           </LabeledList.Item>
@@ -657,14 +631,13 @@ const ModuleSection = (props) => {
   const { complexity } = data.suit_status;
   const [configureState, setConfigureState] = useLocalState(
     'module_configuration',
-    '',
+    ''
   );
   return (
     <Section
       title="Modules"
       fill
-      buttons={`${complexity} of ${complexity_max} complexity used`}
-    >
+      buttons={`${complexity} of ${complexity_max} complexity used`}>
       {!module_info.length ? (
         <NoticeBox>No Modules Detected</NoticeBox>
       ) : (
@@ -710,7 +683,7 @@ const ModuleSection = (props) => {
               <Table.Row key={module.ref}>
                 <Table.Cell width={1}>
                   <Button
-                    onClick={() => act('select', { ref: module.ref })}
+                    onClick={() => act('select', { 'ref': module.ref })}
                     icon={
                       module.module_type === 3
                         ? module.module_active
@@ -728,7 +701,7 @@ const ModuleSection = (props) => {
                   <Button
                     onClick={() =>
                       setConfigureState(
-                        configureState === module.ref ? '' : module.ref,
+                        configureState === module.ref ? '' : module.ref
                       )
                     }
                     icon="cog"
@@ -740,7 +713,7 @@ const ModuleSection = (props) => {
                 </Table.Cell>
                 <Table.Cell width={1}>
                   <Button
-                    onClick={() => act('pin', { ref: module.ref })}
+                    onClick={() => act('pin', { 'ref': module.ref })}
                     icon="thumbtack"
                     selected={module.pinned}
                     tooltip="Pin"
@@ -751,8 +724,7 @@ const ModuleSection = (props) => {
                 <Table.Cell>
                   <Collapsible
                     title={module.module_name}
-                    color={module.module_active ? 'green' : 'default'}
-                  >
+                    color={module.module_active ? 'green' : 'default'}>
                     <Section mr={-19}>{module.description}</Section>
                   </Collapsible>
                   {configureState === module.ref && (

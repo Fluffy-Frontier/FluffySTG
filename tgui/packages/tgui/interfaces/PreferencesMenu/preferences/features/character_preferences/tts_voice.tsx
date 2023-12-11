@@ -1,15 +1,8 @@
-import {
-  FeatureChoiced,
-  FeatureChoicedServerData,
-  FeatureDropdownInput,
-  FeatureValueProps,
-  FeatureNumeric,
-  FeatureSliderInput,
-} from '../base';
+import { FeatureChoiced, FeatureChoicedServerData, FeatureDropdownInput, FeatureValueProps, FeatureNumeric, FeatureSliderInput } from '../base';
 import { Stack, Button } from '../../../../../components';
 
 const FeatureTTSDropdownInput = (
-  props: FeatureValueProps<string, string, FeatureChoicedServerData>,
+  props: FeatureValueProps<string, string, FeatureChoicedServerData>
 ) => {
   return (
     <Stack>

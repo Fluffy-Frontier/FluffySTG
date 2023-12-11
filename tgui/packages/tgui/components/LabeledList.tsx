@@ -59,8 +59,7 @@ const LabeledListItem = (props: LabeledListItemProps) => {
           as="span"
           style={{
             borderBottom: '2px dotted rgba(255, 255, 255, 0.8)',
-          }}
-        >
+          }}>
           {innerLabel}
         </Box>
       </Tooltip>
@@ -76,8 +75,7 @@ const LabeledListItem = (props: LabeledListItemProps) => {
         // Kinda flipped because we want nowrap as default. Cleaner CSS this way though.
         !labelWrap && 'LabeledList__label--nowrap',
       ])}
-      verticalAlign={verticalAlign}
-    >
+      verticalAlign={verticalAlign}>
       {innerLabel}
     </Box>
   );
@@ -91,8 +89,7 @@ const LabeledListItem = (props: LabeledListItemProps) => {
         textAlign={textAlign}
         className={classes(['LabeledList__cell', 'LabeledList__content'])}
         colSpan={buttons ? undefined : 2}
-        verticalAlign={verticalAlign}
-      >
+        verticalAlign={verticalAlign}>
         {content}
         {children}
       </Box>
@@ -116,8 +113,7 @@ const LabeledListDivider = (props: LabeledListDividerProps) => {
         style={{
           paddingTop: padding,
           paddingBottom: padding,
-        }}
-      >
+        }}>
         <Divider />
       </td>
     </tr>

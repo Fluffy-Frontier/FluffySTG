@@ -2,17 +2,7 @@ import { BooleanLike, classes } from 'common/react';
 import { decodeHtmlEntities } from 'common/string';
 import { multiline } from 'common/string';
 import { useBackend, useLocalState } from '../backend';
-import {
-  Box,
-  Button,
-  Collapsible,
-  Flex,
-  NoticeBox,
-  Section,
-  Stack,
-  Tabs,
-  TextArea,
-} from '../components';
+import { Box, Button, Collapsible, Flex, NoticeBox, Section, Stack, Tabs, TextArea } from '../components';
 import { Window } from '../layouts';
 import { formatTime } from '../format';
 
@@ -121,8 +111,7 @@ export const MafiaPanelData = (props) => {
                       <Tabs.Tab
                         align="center"
                         selected={mafia_tab === 'Role list'}
-                        onClick={() => setMafiaMode('Role list')}
-                      >
+                        onClick={() => setMafiaMode('Role list')}>
                         Role list
                         <Button
                           color="transparent"
@@ -137,8 +126,7 @@ export const MafiaPanelData = (props) => {
                       <Tabs.Tab
                         align="center"
                         selected={mafia_tab === 'Notes'}
-                        onClick={() => setMafiaMode('Notes')}
-                      >
+                        onClick={() => setMafiaMode('Notes')}>
                         Notes
                         <Button
                           color="transparent"
@@ -172,8 +160,7 @@ export const MafiaPanel = (props) => {
       title="Mafia"
       theme={roleinfo && roleinfo.role_theme}
       width={900}
-      height={600}
-    >
+      height={600}>
       <Window.Content>
         <MafiaPanelData />
       </Window.Content>
@@ -261,8 +248,7 @@ const MafiaLobby = (props) => {
             onClick={() => act('vote_to_start')}
           />
         </>
-      }
-    >
+      }>
       <NoticeBox info textAlign="center">
         The lobby currently has {readyGhosts ? readyGhosts.length : '0'}/12
         valid players signed up.
@@ -279,8 +265,7 @@ const MafiaLobby = (props) => {
           key={lobbyist.name}
           className="candystripe"
           p={1}
-          align="baseline"
-        >
+          align="baseline">
           <Stack.Item grow>
             {!is_observer ? 'Unknown Player' : lobbyist.name}
           </Stack.Item>
@@ -310,12 +295,10 @@ const MafiaRole = (props) => {
             fontSize: '14px',
             lineHeight: 1.5,
             fontWeight: 'bold',
-          }}
-        >
+          }}>
           {formatTime(timeleft)}
         </Box>
-      }
-    >
+      }>
       <Stack align="center">
         <Stack.Item grow>
           <Box bold>You are the {roleinfo.role}</Box>
@@ -325,14 +308,14 @@ const MafiaRole = (props) => {
           <Box
             className={classes(['mafia32x32', roleinfo.revealed_icon])}
             style={{
-              transform: 'scale(2) translate(0px, 10%)',
+              'transform': 'scale(2) translate(0px, 10%)',
               verticalAlign: 'middle',
             }}
           />
           <Box
             className={classes(['mafia32x32', roleinfo.hud_icon])}
             style={{
-              transform: 'scale(2) translate(-5px, -5px)',
+              'transform': 'scale(2) translate(-5px, -5px)',
               verticalAlign: 'middle',
             }}
           />
@@ -451,8 +434,7 @@ const MafiaPlayers = (props) => {
                 color={!player.alive && 'red'}
                 backgroundColor={
                   player.ref === person_voted_up_ref ? 'yellow' : null
-                }
-              >
+                }>
                 {player.name}
                 {(!!player.is_you && ' (YOU)') ||
                   (!!player.role_revealed && ' - ' + player.role_revealed)}
@@ -471,8 +453,7 @@ const MafiaPlayers = (props) => {
                         action_ref: action.ref,
                         target: player.ref,
                       })
-                    }
-                  >
+                    }>
                     {action.name}
                   </Button>
                 ))}
