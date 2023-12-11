@@ -389,6 +389,8 @@
   whataboutism-alos:
   - rscadd: Sprited and implemented a short lizard tail
 2023-12-11:
+  Ghommie:
+  - bugfix: Goldgrubs no longer block death bolts, even while alive.
   Hatterhat:
   - balance: Energy shoulder holsters can now fit the CIN plasma pistols and their
       associated batteries.
@@ -419,9 +421,35 @@
       max your virus has. Experiment with different combinations using less than six
       symptoms to make viruses that are deceptively less-obvious and less quick to
       self-cure at the tradeoff of stats.
+  - bugfix: Healing viruses now no longer self-cure for reasons they're not supposed
+      to and do for those that they are.
+  MTandi:
+  - image: New cleanbot sprites
+  - image: New bucket sprites
+  - rscdel: All buckets and cleanbots are back to being blue
   Melbert:
   - refactor: Refactored some methods of items interacting with other objects or mobs,
       such as surgery and health analzyers. Report if anything seems wrong
+  Rhials:
+  - bugfix: Sunset Saloon virtual domain should no longer sometimes spawn with holes
+      in the floor.
+  Rhials, MrMelbert:
+  - rscadd: The Tracker implant has had its teleport beacon functionality migrated
+      to the new (cargo accessible) Beacon implant.
+  - rscadd: Teleport Blocker security implant, that prevents the implantee from teleporting
+      by any means. Purchasable from cargo.
+  - rscadd: Security implants may now be harmlessly self-destructed at the Prisoner
+      Management Console.
+  - balance: The Tracker implant tracking radius has increased from 20 to 35 tiles.
+      The Prisoner Management Console will track and display the area the implantee
+      is in as well.
+  - balance: The exile implant now prevents implantees from operating shuttle controls.
+  - code_imp: Various code improvements and removal of unused vars in the Prisoner
+      Management Console
+  - code_imp: The HUD slots for chem/tracking implants have been converted to display
+      any implant with the IMPLANT_TYPE_SECURITY flag and an associated sprite.
+  - spellcheck: Modifies various implant pad readouts, removing false information
+      and rewriting some sections.
   Thlumyn:
   - rscadd: Slimepeople can now get wings from flight potions.
   WarlockD:
@@ -435,6 +463,7 @@
   - refactor: 'TGUI V5: The UI has had its entire engine replaced with React v18.2.
       This might cause obvious or laughably broken UIs in places you wouldn''t expect.
       Please report any issues you find to the repo!'
+  - bugfix: 'DNA Sequencer UI: You should be able to cycle in reverse with RMB again.'
   san7890:
   - admin: Object Possession has been reworked, please report any potential bugs.
   - qol: Object Possession should now throw a screen alert for you to unpossess the
