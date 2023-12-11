@@ -1,7 +1,6 @@
 import { range } from 'common/collections';
 import { BooleanLike } from 'common/react';
-import { PropsWithChildren } from 'react';
-
+import { SFC } from 'inferno';
 import { useBackend } from '../backend';
 import { Box, Button, FitText, Stack } from '../components';
 import { Window } from '../layouts';
@@ -24,12 +23,10 @@ type PuzzgridData = {
   wrong_group_select_cooldown: BooleanLike;
 };
 
-const PuzzgridButton = (
-  props: {
-    // In the future, this would be the TypeScript props of the button
-    [key: string]: unknown;
-  } & PropsWithChildren
-) => {
+const PuzzgridButton: SFC<{
+  // In the future, this would be the TypeScript props of the button
+  [key: string]: unknown;
+}> = (props) => {
   return (
     <Button
       verticalAlignContent="middle"
@@ -37,9 +34,9 @@ const PuzzgridButton = (
         'width': '100%',
         'height': '100%',
 
-        textAlign: 'center',
-        verticalAlign: 'middle',
-        whiteSpace: 'normal',
+        'text-align': 'center',
+        'vertical-align': 'middle',
+        'white-space': 'normal',
       }}
       {...props}>
       <FitText maxFontSize={17} maxWidth={CELL_WIDTH}>
@@ -109,8 +106,8 @@ export const Puzzgrid = (props) => {
           <Box
             color="red"
             style={{
-              textShadow: '1px 1px 1px #222',
-              fontSize: '30px',
+              'text-shadow': '1px 1px 1px #222',
+              'font-size': '30px',
               position: 'absolute',
               top: 0,
               left: '10px',
@@ -124,10 +121,10 @@ export const Puzzgrid = (props) => {
         {data.time_left && (
           <Box
             style={{
-              textShadow: '1px 1px 1px #222',
-              textAlign: 'right',
-              fontSize: '15px',
-              pointerEvents: 'none',
+              'text-shadow': '1px 1px 1px #222',
+              'text-align': 'right',
+              'font-size': '15px',
+              'pointer-events': 'none',
               position: 'absolute',
               top: 0,
               right: '10px',

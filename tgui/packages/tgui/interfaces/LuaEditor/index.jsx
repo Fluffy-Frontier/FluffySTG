@@ -9,7 +9,7 @@ import { Log } from './Log';
 import { TaskManager } from './TaskManager';
 import { sanitizeText } from '../../sanitize';
 import { marked } from 'marked';
-import { Component, createRef } from 'react';
+import { Component, createRef } from 'inferno';
 import hljs from 'highlight.js/lib/core';
 import lua from 'highlight.js/lib/languages/lua';
 hljs.registerLanguage('lua', lua);
@@ -192,7 +192,7 @@ export class LuaEditor extends Component {
                     displayedValue={
                       <Box
                         style={{
-                          pointerEvents: 'none',
+                          'pointer-events': 'none',
                         }}
                         dangerouslySetInnerHTML={{
                           __html: hljs.highlight(scriptInput, {

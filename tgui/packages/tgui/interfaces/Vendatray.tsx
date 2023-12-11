@@ -92,7 +92,8 @@ const VendingImage = (props) => {
         height="96px"
         width="96px"
         style={{
-          verticalAlign: 'middle',
+          '-ms-interpolation-mode': 'nearest-neighbor',
+          'vertical-align': 'middle',
         }}
       />
     </Section>

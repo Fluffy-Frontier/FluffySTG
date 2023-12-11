@@ -1,11 +1,11 @@
 import { Box, Stack, Section, Button, Input, Dropdown, Icon } from '../../components';
-import { Component } from 'react';
+import { Component } from 'inferno';
 import { shallowDiffers } from 'common/react';
 import { VARIABLE_ASSOC_LIST, VARIABLE_LIST, VARIABLE_NOT_A_LIST } from './constants';
 
 export class VariableMenu extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       variable_name: '',
       variable_type: 'any',

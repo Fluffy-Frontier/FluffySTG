@@ -90,16 +90,17 @@ export const InteractionMenu = (props) => {
                       tooltip={element.name}>
                       <Box
                         style={{
-                          width: '32px',
-                          height: '32px',
-                          margin: '0.5em 0',
+                          'width': '32px',
+                          'height': '32px',
+                          'margin': '0.5em 0',
                         }}>
                         {element.img ? (
                           <img
                             src={'data:image/png;base64,' + element.img}
                             style={{
-                              width: '100%',
-                              height: '100%',
+                              '-ms-interpolation-mode': 'nearest-neighbor',
+                              'width': '100%',
+                              'height': '100%',
                             }}
                           />
                         ) : (
@@ -109,7 +110,7 @@ export const InteractionMenu = (props) => {
                             ml={0}
                             mt={0.75}
                             style={{
-                              textAlign: 'center',
+                              'text-align': 'center',
                             }}
                           />
                         )}

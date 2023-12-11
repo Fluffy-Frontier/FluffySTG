@@ -1,5 +1,5 @@
 import { BooleanLike, classes } from 'common/react';
-import { Component } from 'react';
+import { Component } from 'inferno';
 import { Section, Stack, Box, Button, Flex, Tooltip, NoticeBox, Dimmer, Icon } from '../../components';
 import { calculateProgression, getDangerLevel, Rank } from './calculateDangerLevel';
 import { ObjectiveState } from './constants';
@@ -50,8 +50,8 @@ export class ObjectiveMenu extends Component<
   ObjectiveMenuProps,
   ObjectiveMenuState
 > {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       draggingObjective: null,
       objectiveX: 0,
@@ -206,7 +206,7 @@ export class ObjectiveMenu extends Component<
                         )) || (
                         <Box
                           style={{
-                            border: '2px dashed black',
+                            'border': '2px dashed black',
                           }}
                           width="100%"
                           height="100%"
@@ -225,7 +225,16 @@ export class ObjectiveMenu extends Component<
                   </Dimmer>
                 )) ||
                   (potentialObjectives.length < maximumPotentialObjectives && (
-                    <Flex.Item basis="100%" mb={1} mx="0.5%" minHeight="100px">
+                    <Flex.Item
+                      basis="100%"
+                      style={
+                        {
+                          // "background-color": "rgba(0, 0, 0, 0.5)",
+                        }
+                      }
+                      mb={1}
+                      mx="0.5%"
+                      minHeight="100px">
                       <Stack
                         align="center"
                         height="100%"
@@ -253,7 +262,7 @@ export class ObjectiveMenu extends Component<
             left={`${objectiveX - 180}px`}
             top={`${objectiveY}px`}
             style={{
-              pointerEvents: 'none',
+              'pointer-events': 'none',
             }}>
             {ObjectiveFunction(draggingObjective, false)}
           </Box>
@@ -437,10 +446,10 @@ export const ObjectiveElement = (props: ObjectiveElementProps) => {
                 <Stack align="center" justify="center">
                   <Box
                     style={{
-                      border: '2px solid rgba(0, 0, 0, 0.5)',
-                      borderLeft: 'none',
-                      borderRight: 'none',
-                      borderBottom: objectiveFinished ? 'none' : undefined,
+                      'border': '2px solid rgba(0, 0, 0, 0.5)',
+                      'border-left': 'none',
+                      'border-right': 'none',
+                      'border-bottom': objectiveFinished ? 'none' : undefined,
                     }}
                     className={dangerLevel.gradient}
                     py={0.5}
@@ -497,10 +506,10 @@ export const ObjectiveElement = (props: ObjectiveElementProps) => {
                     inline
                     className={dangerLevel.gradient}
                     style={{
-                      borderRadius: '0',
-                      border: '2px solid rgba(0, 0, 0, 0.5)',
-                      borderLeft: 'none',
-                      borderRight: 'none',
+                      'border-radius': '0',
+                      'border': '2px solid rgba(0, 0, 0, 0.5)',
+                      'border-left': 'none',
+                      'border-right': 'none',
                     }}
                     position="relative"
                     width="100%"
@@ -522,7 +531,7 @@ export const ObjectiveElement = (props: ObjectiveElementProps) => {
                       onClick={handleCompletion}
                       color={objectiveFailed ? 'bad' : 'good'}
                       style={{
-                        border: '1px solid rgba(0, 0, 0, 0.65)',
+                        'border': '1px solid rgba(0, 0, 0, 0.65)',
                       }}
                       my={1}>
                       TURN IN

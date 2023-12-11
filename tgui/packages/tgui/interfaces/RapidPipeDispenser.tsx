@@ -269,7 +269,7 @@ const PipeTypeSection = (props) => {
         {shownCategory?.recipes.map((recipe) => (
           <Table.Row
             key={recipe.pipe_index}
-            style={{ borderBottom: '1px solid #333' }}>
+            style={{ 'border-bottom': '1px solid #333' }}>
             <Table.Cell collapsing py="2px" pb="1px">
               <PreviewSelect
                 previews={recipe.previews}
@@ -278,7 +278,7 @@ const PipeTypeSection = (props) => {
               />
             </Table.Cell>
             <Table.Cell />
-            <Table.Cell style={{ verticalAlign: 'middle' }}>
+            <Table.Cell style={{ 'vertical-align': 'middle' }}>
               {recipe.pipe_name}
             </Table.Cell>
           </Table.Row>

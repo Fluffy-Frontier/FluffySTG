@@ -1,12 +1,12 @@
 import { Box, Stack, Button } from '../../components';
-import { Component } from 'react';
+import { Component } from 'inferno';
 import { shallowDiffers } from '../../../common/react';
 import { ABSOLUTE_Y_OFFSET, noop } from './constants';
 import { Port } from './Port';
 
 export class ObjectComponent extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       isDragging: false,
       dragPos: null,

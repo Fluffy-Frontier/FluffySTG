@@ -1,5 +1,5 @@
 import { BooleanLike } from 'common/react';
-import { ReactNode } from 'react';
+import { InfernoNode } from 'inferno';
 import { useBackend } from '../../backend';
 import { Button, Stack } from '../../components';
 
@@ -18,7 +18,7 @@ type ObjectivePrintoutProps = {
   // For passing onto the Stack component
   fill?: boolean;
   // Allows additional components to follow the printout in the same stack
-  objectiveFollowup?: ReactNode;
+  objectiveFollowup?: InfernoNode;
   // The prefix to use for each objective, defaults to "#" (#1, #2)
   objectivePrefix?: string;
   // The font size to use for each objective

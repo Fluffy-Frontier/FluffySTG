@@ -148,7 +148,7 @@ export const TraitorObjectiveDebug = (props) => {
           backgroundColor="green"
           height="5px"
           style={{
-            zIndex: 5,
+            'z-index': 5,
           }}
         />
         <Box
@@ -156,7 +156,7 @@ export const TraitorObjectiveDebug = (props) => {
           top={0}
           left={1}
           style={{
-            zIndex: 5,
+            'z-index': 5,
           }}>
           {/* Time in minutes of this threshold */}
           {Math.round((sizeLimit * (i / 100)) / 600)} mins
@@ -208,7 +208,7 @@ export const TraitorObjectiveDebug = (props) => {
               <Tabs width="100%" fluid textAlign="center">
                 {sortingOptions.map((value) => (
                   <Tabs.Tab
-                    key={value.name}
+                    key={value.sort}
                     selected={value.name === sortingFunc}
                     onClick={() => setSortingFunc(value.name)}>
                     {value.name}
@@ -363,8 +363,8 @@ const ObjectiveBox = (props: ObjectiveBoxProps) => {
       <Stack vertical width="100%">
         <Stack.Item
           style={{
-            textOverflow: 'ellipsis',
-            whiteSpace: 'nowrap',
+            'text-overflow': 'ellipsis',
+            'white-space': 'nowrap',
             'overflow': 'hidden',
           }}>
           {objective.name}
@@ -391,7 +391,7 @@ const ObjectiveBox = (props: ObjectiveBoxProps) => {
               (objective.progression_reward[1] / sizeLimit) * window.innerWidth
             }px`}
             style={{
-              whiteSpace: 'nowrap',
+              'white-space': 'nowrap',
             }}>
             {objective.progression_reward[0] / 600}
             &nbsp;to {objective.progression_reward[1] / 600} pr
@@ -405,7 +405,7 @@ const ObjectiveBox = (props: ObjectiveBoxProps) => {
             backgroundColor="red"
             width={`${objective.telecrystal_reward[1] * 10}px`}
             style={{
-              whiteSpace: 'nowrap',
+              'white-space': 'nowrap',
             }}>
             {objective.telecrystal_reward[0]}
             &nbsp;to {objective.telecrystal_reward[1]} tc

@@ -12,7 +12,7 @@ type MarkdownViewerData = {
 export const MarkdownViewer = (_: any) => {
   const { data } = useBackend<MarkdownViewerData>();
   return (
-    <Window theme="paper" title={data.title} width={300} height={300}>
+    <Window theme="paper" title={data.title}>
       <Window.Content scrollable backgroundColor={'#FFFFFF'}>
         <MarkdownRenderer content={data.content} />
       </Window.Content>

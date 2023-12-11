@@ -32,9 +32,9 @@ type GoldeneyeKeys = {
 };
 
 type Info = {
-  equipped: number;
-  required_keys: number;
-  uploaded_keys: number;
+  equipped: Number;
+  required_keys: Number;
+  uploaded_keys: Number;
   objectives: Objectives[];
   available_targets: AvailableTargets[];
   extracted_targets: ExtractedTargets[];

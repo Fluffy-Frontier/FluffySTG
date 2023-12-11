@@ -1,6 +1,6 @@
 import { resolveAsset } from '../assets';
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, NoticeBox, Section, Stack, Input } from '../components';
+import { Button, NoticeBox, Section, Stack, Input } from '../components';
 import { NtosWindow } from '../layouts';
 
 export const NtosPortraitPrinter = (props) => {
@@ -52,13 +52,13 @@ export const NtosPortraitPrinter = (props) => {
                 {got_paintings ? (
                   <>
                     <Stack.Item>
-                      <Box
-                        as="img"
+                      <img
                         src={resolveAsset(current_portrait_asset_name)}
                         height="128px"
                         width={`${Math.round(128 * current_portrait_ratio)}px`}
                         style={{
-                          verticalAlign: 'middle',
+                          'vertical-align': 'middle',
+                          '-ms-interpolation-mode': 'nearest-neighbor',
                         }}
                       />
                     </Stack.Item>

@@ -1,5 +1,6 @@
 import { map, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
+import { pureComponentHooks } from 'common/react';
 import { useBackend, useLocalState } from '../backend';
 import { Box, Button, Dimmer, Icon, Table, Tabs, Stack, Section } from '../components';
 import { Window } from '../layouts';
@@ -284,3 +285,5 @@ const statusChange = (status) => {
   // 0, 2, 3
   return status === 0 ? 2 : status === 2 ? 3 : 0;
 };
+
+AreaStatusColorButton.defaultHooks = pureComponentHooks;

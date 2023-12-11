@@ -110,7 +110,7 @@ const ShoppingTab = (props) => {
                 <Stack>
                   <span
                     style={{
-                      verticalAlign: 'middle',
+                      'vertical-align': 'middle',
                     }}
                   />{' '}
                   {!condensed && (
@@ -121,7 +121,8 @@ const ShoppingTab = (props) => {
                         height="34px"
                         width="34px"
                         style={{
-                          verticalAlign: 'middle',
+                          '-ms-interpolation-mode': 'nearest-neighbor',
+                          'vertical-align': 'middle',
                         }}
                       />
                     </Stack.Item>

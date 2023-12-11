@@ -1,11 +1,11 @@
-import { Component } from 'react';
+import { Component } from 'inferno';
 
 const DEFAULT_BLINKING_INTERVAL = 1000;
 const DEFAULT_BLINKING_TIME = 1000;
 
 export class Blink extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       hidden: false,
     };

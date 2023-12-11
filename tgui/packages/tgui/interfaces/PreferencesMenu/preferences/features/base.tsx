@@ -1,7 +1,7 @@
 import { sortBy, sortStrings } from 'common/collections';
 import { BooleanLike, classes } from 'common/react';
-import { ComponentType, createElement, ReactNode } from 'react';
-
+import { ComponentType, createComponentVNode, InfernoNode } from 'inferno';
+import { VNodeFlags } from 'inferno-vnode-flags';
 import { sendAct, useBackend, useLocalState } from '../../../../backend';
 // SKYRAT EDIT - adds TextArea to imports
 import { Box, Button, Dropdown, Input, NumberInput, Slider, Stack, TextArea } from '../../../../components';
@@ -9,7 +9,7 @@ import { Box, Button, Dropdown, Input, NumberInput, Slider, Stack, TextArea } fr
 import { createSetPreference, PreferencesMenuData } from '../../data';
 import { ServerPreferencesFetcher } from '../../ServerPreferencesFetcher';
 
-export const sortChoices = sortBy<[string, ReactNode]>(([name]) => name);
+export const sortChoices = sortBy<[string, InfernoNode]>(([name]) => name);
 
 export type Feature<
   TReceiving,
@@ -63,12 +63,12 @@ export const FeatureColorInput = (props: FeatureValueProps<string>) => {
                 ? props.value
                 : `#${props.value}`,
               border: '2px solid white',
-              boxSizing: 'content-box',
+              'box-sizing': 'content-box',
               height: '11px',
               width: '11px',
               ...(props.shrink
                 ? {
-                  margin: '1px',
+                  'margin': '1px',
                 }
                 : {}),
             }}
@@ -111,7 +111,7 @@ export const CheckboxInputInverse = (
 
 export const createDropdownInput = <T extends string | number = string>(
   // Map of value to display texts
-  choices: Record<T, ReactNode>,
+  choices: Record<T, InfernoNode>,
   dropdownProps?: Record<T, unknown>
 ): FeatureValue<T> => {
   return (props: FeatureValueProps<T>) => {
@@ -152,7 +152,7 @@ const capitalizeFirstLetter = (text: string) =>
 export const StandardizedDropdown = (props: {
   choices: string[];
   disabled?: boolean;
-  displayNames: Record<string, ReactNode>;
+  displayNames: Record<string, InfernoNode>;
   onSetValue: (newValue: string) => void;
   value: string;
   buttons?: boolean;
@@ -242,7 +242,7 @@ export const FeatureIconnedDropdownInput = (
 
   const displayNames = Object.fromEntries(
     Object.entries(textNames).map(([choice, textName]) => {
-      let element: ReactNode = textName;
+      let element: InfernoNode = textName;
 
       if (icons && icons[choice]) {
         const icon = icons[choice];
@@ -252,7 +252,7 @@ export const FeatureIconnedDropdownInput = (
               <Box
                 className={classes(['preferences32x32', icon])}
                 style={{
-                  transform: 'scale(0.8)',
+                  'transform': 'scale(0.8)',
                 }}
               />
             </Stack.Item>
@@ -350,15 +350,19 @@ export const FeatureValueInput = (props: {
   return (
     <ServerPreferencesFetcher
       render={(serverData) => {
-        return createElement(feature.component, {
-          act: props.act,
-          featureId: props.featureId,
-          serverData: serverData?.[props.featureId] as any,
-          shrink: props.shrink,
+        return createComponentVNode(
+          VNodeFlags.ComponentUnknown,
+          feature.component,
+          {
+            act: props.act,
+            featureId: props.featureId,
+            serverData: serverData && serverData[props.featureId],
+            shrink: props.shrink,
 
-          handleSetValue: changeValue,
-          value: predictedValue,
-        });
+            handleSetValue: changeValue,
+            value: predictedValue,
+          }
+        );
       }}
     />
   );

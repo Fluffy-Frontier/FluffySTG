@@ -47,7 +47,7 @@ export const ModulesPane = (props) => {
     <Section
       title="Equipment"
       fill
-      style={{ overflowY: 'auto' }}
+      style={{ 'overflow-y': 'auto' }}
       buttons={
         <Button
           icon={!weapons_safety ? 'triangle-exclamation' : 'helmet-safety'}
@@ -83,9 +83,9 @@ export const ModulesPane = (props) => {
                   <Stack.Item
                     lineHeight="32px"
                     style={{
-                      textTransform: 'capitalize',
+                      'text-transform': 'capitalize',
                       'overflow': 'hidden',
-                      textOverflow: 'ellipsis',
+                      'text-overflow': 'ellipsis',
                     }}>
                     {`${moduleSlotLabel(module.slot)} Slot`}
                   </Stack.Item>
@@ -113,9 +113,9 @@ export const ModulesPane = (props) => {
                   <Stack.Item
                     lineHeight="32px"
                     style={{
-                      textTransform: 'capitalize',
+                      'text-transform': 'capitalize',
                       'overflow': 'hidden',
-                      textOverflow: 'ellipsis',
+                      'text-overflow': 'ellipsis',
                     }}>
                     {module.name}
                   </Stack.Item>
@@ -144,7 +144,7 @@ export const ModuleDetails = (props) => {
           <Stack.Item>
             <Stack>
               <Stack.Item grow>
-                <h2 style={{ textTransform: 'capitalize' }}>{name}</h2>
+                <h2 style={{ 'text-transform': 'capitalize' }}>{name}</h2>
                 <Box italic opacity={0.5}>
                   {moduleSlotLabel(slot)}
                 </Box>
@@ -782,9 +782,9 @@ const SnowflakeOrebox = (props) => {
             <Stack.Item
               lineHeight="24px"
               style={{
-                textTransform: 'capitalize',
+                'text-transform': 'capitalize',
                 'overflow': 'hidden',
-                textOverflow: 'ellipsis',
+                'text-overflow': 'ellipsis',
               }}>
               {`${contents[item].amount}x ${contents[item].name}`}
             </Stack.Item>
@@ -823,7 +823,7 @@ const SnowflakeCargo = (props) => {
                 })
               }
               style={{
-                textTransform: 'capitalize',
+                'text-transform': 'capitalize',
               }}>
               {item.name}
             </Button>

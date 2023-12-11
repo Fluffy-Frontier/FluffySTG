@@ -1,6 +1,6 @@
 import { sortBy } from 'common/collections';
 import { classes } from 'common/react';
-import { ReactNode } from 'react';
+import { InfernoNode } from 'inferno';
 import { useSharedState } from '../../backend';
 import { Stack, Section, Icon, Dimmer } from '../../components';
 import { Design, MaterialMap } from './Types';
@@ -51,12 +51,12 @@ export type DesignBrowserProps<T extends Design = Design> = {
      * A callback to print the design.
      */
     onPrintDesign: (design: T, amount: number) => void
-  ) => ReactNode;
+  ) => InfernoNode;
 
   /**
    * If provided, renders a node into each category in the output.
    */
-  categoryButtons?: (category: Category<T>) => ReactNode;
+  categoryButtons?: (category: Category<T>) => InfernoNode;
 };
 
 /**
@@ -311,8 +311,8 @@ export const DesignBrowser = <T extends Design = Design>(
             {!!busy && (
               <Dimmer
                 style={{
-                  fontSize: '2em',
-                  textAlign: 'center',
+                  'font-size': '2em',
+                  'text-align': 'center',
                 }}>
                 <Icon name="cog" spin />
                 {' Building items...'}
@@ -431,12 +431,12 @@ type CategoryViewProps<T extends Design = Design> = {
      * A callback to print the design.
      */
     onPrintDesign: (design: T, amount: number) => void
-  ) => ReactNode;
+  ) => InfernoNode;
 
   /**
    * If provided, renders a node into each category in the output.
    */
-  categoryButtons?: (category: Category<T>) => ReactNode;
+  categoryButtons?: (category: Category<T>) => InfernoNode;
 };
 
 const CategoryView = <T extends Design = Design>(

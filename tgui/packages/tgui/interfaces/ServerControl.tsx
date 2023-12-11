@@ -46,7 +46,7 @@ export const ServerControl = (props) => {
     );
   }
   return (
-    <Window width={575} height={400}>
+    <Window width={575} height={400} scrollable fill>
       <Window.Content scrollable>
         {!servers ? (
           <NoticeBox mt={2} info>

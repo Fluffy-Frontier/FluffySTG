@@ -103,7 +103,8 @@ const RetrieveIcon = (props) => {
       height="64px"
       width="64px"
       style={{
-        verticalAlign: 'middle',
+        '-ms-interpolation-mode': 'nearest-neighbor',
+        'vertical-align': 'middle',
       }}
     />
   );

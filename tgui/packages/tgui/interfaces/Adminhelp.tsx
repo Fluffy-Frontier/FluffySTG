@@ -33,7 +33,7 @@ export const Adminhelp = (props) => {
     <Window title="Create Adminhelp" theme="admin" height={300} width={500}>
       <Window.Content
         style={{
-          backgroundImage: 'none',
+          'background-image': 'none',
         }}>
         <Stack vertical fill>
           <Stack.Item grow>
@@ -56,7 +56,7 @@ export const Adminhelp = (props) => {
                     fontFamily="arial"
                     backgroundColor="grey"
                     style={{
-                      fontStyle: 'normal',
+                      'font-style': 'normal',
                     }}>
                     Input &apos;{confirmationText}&apos; to proceed.
                     <Input

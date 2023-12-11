@@ -4,29 +4,34 @@
  * @license MIT
  */
 
-import { BooleanLike, classes } from 'common/react';
-import { PropsWithChildren, ReactNode } from 'react';
+import { BooleanLike, classes, pureComponentHooks } from 'common/react';
+import { InfernoNode } from 'inferno';
 import { Box, unit } from './Box';
 import { Divider } from './Divider';
 import { Tooltip } from './Tooltip';
 
-export const LabeledList = (props: PropsWithChildren) => {
+type LabeledListProps = {
+  children?: any;
+};
+
+export const LabeledList = (props: LabeledListProps) => {
   const { children } = props;
   return <table className="LabeledList">{children}</table>;
 };
 
+LabeledList.defaultHooks = pureComponentHooks;
+
 type LabeledListItemProps = Partial<{
-  buttons: ReactNode;
   className: string | BooleanLike;
-  color: string;
-  key: string | number;
-  label: string | ReactNode | BooleanLike;
-  labelColor: string;
+  label: string | InfernoNode | BooleanLike;
+  labelColor: string | BooleanLike;
   labelWrap: boolean;
-  textAlign: string;
+  color: string | BooleanLike;
+  textAlign: string | BooleanLike;
+  buttons: InfernoNode;
   /** @deprecated */
   content: any;
-  children: ReactNode;
+  children: InfernoNode;
   verticalAlign: string;
   tooltip: string;
 }>;
@@ -58,7 +63,7 @@ const LabeledListItem = (props: LabeledListItemProps) => {
         <Box
           as="span"
           style={{
-            borderBottom: '2px dotted rgba(255, 255, 255, 0.8)',
+            'border-bottom': '2px dotted rgba(255, 255, 255, 0.8)',
           }}>
           {innerLabel}
         </Box>
@@ -100,6 +105,8 @@ const LabeledListItem = (props: LabeledListItemProps) => {
   );
 };
 
+LabeledListItem.defaultHooks = pureComponentHooks;
+
 type LabeledListDividerProps = {
   size?: number;
 };
@@ -111,14 +118,16 @@ const LabeledListDivider = (props: LabeledListDividerProps) => {
       <td
         colSpan={3}
         style={{
-          paddingTop: padding,
-          paddingBottom: padding,
+          'padding-top': padding,
+          'padding-bottom': padding,
         }}>
         <Divider />
       </td>
     </tr>
   );
 };
+
+LabeledListDivider.defaultHooks = pureComponentHooks;
 
 LabeledList.Item = LabeledListItem;
 LabeledList.Divider = LabeledListDivider;

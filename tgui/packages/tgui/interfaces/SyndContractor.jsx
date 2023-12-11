@@ -1,4 +1,4 @@
-import { Component, Fragment } from 'react';
+import { Component, Fragment } from 'inferno';
 import { useBackend, useLocalState } from '../backend';
 import { Box, Button, Flex, Grid, Icon, LabeledList, Modal, NoticeBox, Section, Table, Tabs } from '../components';
 import { NtosWindow } from '../layouts';
@@ -227,17 +227,17 @@ export const StatusPane = (props) => {
                   onClick={() => act('PRG_redeem_TC')}
                 />
               }>
-              {String(redeemable_tc)}
+              {data.redeemable_tc}
             </LabeledList.Item>
             <LabeledList.Item label="TC Earned">
-              {String(earned_tc)}
+              {data.earned_tc}
             </LabeledList.Item>
           </LabeledList>
         </Grid.Column>
         <Grid.Column>
           <LabeledList>
             <LabeledList.Item label="Contracts Completed">
-              {String(contracts_completed)}
+              {data.contracts_completed}
             </LabeledList.Item>
             <LabeledList.Item label="Current Status">ACTIVE</LabeledList.Item>
           </LabeledList>
@@ -303,7 +303,7 @@ const ContractsTab = (props) => {
               buttons={
                 <>
                   <Box inline bold mr={1}>
-                    {`${contract.payout} (+${contract.payout_bonus}) TC`}
+                    {contract.payout} (+{contract.payout_bonus}) TC
                   </Box>
                   <Button
                     content={active ? 'Abort' : 'Accept'}

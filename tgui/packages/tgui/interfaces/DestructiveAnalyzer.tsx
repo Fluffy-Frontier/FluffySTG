@@ -56,7 +56,12 @@ export const DestructiveAnalyzer = (props) => {
     );
   }
   return (
-    <Window width={400} height={260} title="Destructive Analyzer">
+    <Window
+      width={400}
+      height={260}
+      scrollable
+      fill
+      title="Destructive Analyzer">
       <Window.Content scrollable>
         <Section
           title={loaded_item}
@@ -73,7 +78,8 @@ export const DestructiveAnalyzer = (props) => {
             height="64px"
             width="64px"
             style={{
-              verticalAlign: 'middle',
+              '-ms-interpolation-mode': 'nearest-neighbor',
+              'vertical-align': 'middle',
             }}
           />
         </Section>

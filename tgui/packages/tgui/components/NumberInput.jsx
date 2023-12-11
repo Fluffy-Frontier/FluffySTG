@@ -5,8 +5,8 @@
  */
 
 import { clamp } from 'common/math';
-import { classes } from 'common/react';
-import { Component, createRef } from 'react';
+import { classes, pureComponentHooks } from 'common/react';
+import { Component, createRef } from 'inferno';
 import { AnimatedNumber } from './AnimatedNumber';
 import { Box } from './Box';
 
@@ -165,15 +165,14 @@ export class NumberInput extends Component {
       displayValue = intermediateValue;
     }
 
+    // prettier-ignore
     const contentElement = (
-      <div className="NumberInput__content">
-        {animated && !dragging && !suppressingFlicker ? (
-          <AnimatedNumber value={displayValue} format={format} />
-        ) : format ? (
-          format(displayValue)
-        ) : (
-          displayValue
-        )}
+      <div className="NumberInput__content" unselectable={Byond.IS_LTE_IE8}>
+        {
+          (animated && !dragging && !suppressingFlicker) ?
+            (<AnimatedNumber value={displayValue} format={format} />) :
+            (format ? format(displayValue) : displayValue)
+        }
 
         {unit ? ' ' + unit : ''}
       </div>
@@ -195,12 +194,10 @@ export class NumberInput extends Component {
           <div
             className="NumberInput__bar"
             style={{
-              height:
-                clamp(
-                  ((displayValue - minValue) / (maxValue - minValue)) * 100,
-                  0,
-                  100
-                ) + '%',
+              // prettier-ignore
+              height: clamp(
+                (displayValue - minValue) / (maxValue - minValue) * 100,
+                0, 100) + '%',
             }}
           />
         </div>
@@ -211,8 +208,8 @@ export class NumberInput extends Component {
           style={{
             display: !editing ? 'none' : undefined,
             height: height,
-            lineHeight: lineHeight,
-            fontSize: fontSize,
+            'line-height': lineHeight,
+            'font-size': fontSize,
           }}
           onBlur={(e) => {
             if (!editing) {
@@ -277,6 +274,7 @@ export class NumberInput extends Component {
   }
 }
 
+NumberInput.defaultHooks = pureComponentHooks;
 NumberInput.defaultProps = {
   minValue: -Infinity,
   maxValue: +Infinity,

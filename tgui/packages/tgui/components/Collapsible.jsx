@@ -4,7 +4,7 @@
  * @license MIT
  */
 
-import { Component } from 'react';
+import { Component } from 'inferno';
 import { Box } from './Box';
 import { Button } from './Button';
 

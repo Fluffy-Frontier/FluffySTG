@@ -1,36 +1,33 @@
 import { createPopper, VirtualElement } from '@popperjs/core';
 import { classes } from 'common/react';
-import { Component, ReactNode } from 'react';
-import { findDOMNode, render } from 'react-dom';
+import { Component, findDOMfromVNode, InfernoNode, render } from 'inferno';
 import { Box, BoxProps } from './Box';
 import { Button } from './Button';
 import { Icon } from './Icon';
 import { Stack } from './Stack';
 
 export interface DropdownEntry {
-  displayText: string | number | ReactNode;
+  displayText: string | number | InfernoNode;
   value: string | number | Enumerator;
 }
 
-type DropdownUniqueProps = { options: string[] | DropdownEntry[] } & Partial<{
-  buttons: boolean;
-  clipSelectedText: boolean;
-  color: string;
-  disabled: boolean;
-  displayText: string | number | ReactNode;
-  dropdownStyle: any;
-  icon: string;
-  iconRotation: number;
-  iconSpin: boolean;
-  menuWidth: string;
-  nochevron: boolean;
-  onClick: (event) => void;
-  onSelected: (selected: any) => void;
-  over: boolean;
+type DropdownUniqueProps = {
+  options: string[] | DropdownEntry[];
+  icon?: string;
+  iconRotation?: number;
+  clipSelectedText?: boolean;
+  width?: string;
+  menuWidth?: string;
+  over?: boolean;
+  color?: string;
+  nochevron?: boolean;
+  displayText?: string | number | InfernoNode;
+  onClick?: (event) => void;
   // you freaks really are just doing anything with this shit
-  selected: any;
-  width: string;
-}>;
+  selected?: any;
+  onSelected?: (selected: any) => void;
+  buttons?: boolean;
+};
 
 export type DropdownProps = BoxProps & DropdownUniqueProps;
 
@@ -84,8 +81,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
   };
 
   getDOMNode() {
-    // eslint-disable-next-line react/no-find-dom-node
-    return findDOMNode(this) as Element;
+    return findDOMfromVNode(this.$LI, true);
   }
 
   componentDidMount() {
@@ -109,7 +105,11 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
     Dropdown.currentOpenMenu = domNode;
 
     renderedMenu.scrollTop = 0;
-    renderedMenu.style.width = this.props.menuWidth || '10rem';
+    renderedMenu.style.width =
+      this.props.menuWidth ||
+      // Hack, but domNode should *always* be the parent control meaning it will have width
+      // @ts-ignore
+      `${domNode.offsetWidth}px`;
     renderedMenu.style.opacity = '1';
     renderedMenu.style.pointerEvents = 'auto';
 

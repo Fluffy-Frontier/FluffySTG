@@ -116,7 +116,7 @@ const DepartmentCatalog = (props) => {
         <Tabs textAlign="center" fluid>
           {supplies.map((cat) => (
             <Tabs.Tab
-              key={cat.name}
+              key={cat}
               selected={tabCategory === cat}
               onClick={() => setTabCategory(cat)}>
               {cat.name}
@@ -135,7 +135,8 @@ const DepartmentCatalog = (props) => {
                       <Box
                         as="span"
                         style={{
-                          borderBottom: '2px dotted rgba(255, 255, 255, 0.8)',
+                          'border-bottom':
+                            '2px dotted rgba(255, 255, 255, 0.8)',
                         }}>
                         {pack.name}
                       </Box>

@@ -46,13 +46,14 @@ export const PaintingAdminPanel = (props) => {
               height="96px"
               width="96px"
               style={{
-                verticalAlign: 'middle',
+                'vertical-align': 'middle',
+                '-ms-interpolation-mode': 'nearest-neighbor',
               }}
             />
             <LabeledList>
               <LabeledList.Item label="md5" content={chosenPainting.md5} />
               <LabeledList.Item label="title">
-                <Box inline style={{ wordBreak: 'break-all' }}>
+                <Box inline style={{ 'word-break': 'break-all' }}>
                   {decodeHtmlEntities(chosenPainting.title)}
                 </Box>
                 <Button
@@ -147,7 +148,7 @@ export const PaintingAdminPanel = (props) => {
             </Table.Row>
             {paintings.map((painting) => (
               <Table.Row key={painting.ref} className="candystripe">
-                <Table.Cell style={{ wordBreak: 'break-all' }}>
+                <Table.Cell style={{ 'word-break': 'break-all' }}>
                   {decodeHtmlEntities(painting.title)}
                 </Table.Cell>
                 <Table.Cell>{painting.creator_ckey}</Table.Cell>
@@ -157,7 +158,8 @@ export const PaintingAdminPanel = (props) => {
                     height="36px"
                     width="36px"
                     style={{
-                      verticalAlign: 'middle',
+                      'vertical-align': 'middle',
+                      '-ms-interpolation-mode': 'nearest-neighbor',
                     }}
                   />
                 </Table.Cell>

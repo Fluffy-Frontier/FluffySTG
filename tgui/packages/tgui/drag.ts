@@ -203,7 +203,7 @@ const constraintPosition = (
 };
 
 // Start dragging the window
-export const dragStartHandler = (event) => {
+export const dragStartHandler = (event: MouseEvent) => {
   logger.log('drag start');
   dragging = true;
   dragPointOffset = vecSubtract(
@@ -218,7 +218,7 @@ export const dragStartHandler = (event) => {
 };
 
 // End dragging the window
-const dragEndHandler = (event) => {
+const dragEndHandler = (event: MouseEvent) => {
   logger.log('drag end');
   dragMoveHandler(event);
   document.removeEventListener('mousemove', dragMoveHandler);

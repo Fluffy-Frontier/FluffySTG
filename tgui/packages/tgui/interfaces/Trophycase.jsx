@@ -128,6 +128,9 @@ const ShowpieceImage = (props) => {
         src={`data:image/jpeg;base64,${showpiece_icon}`}
         height="96px"
         width="96px"
+        style={{
+          '-ms-interpolation-mode': 'nearest-neighbor',
+        }}
       />
     </Section>
   ) : (

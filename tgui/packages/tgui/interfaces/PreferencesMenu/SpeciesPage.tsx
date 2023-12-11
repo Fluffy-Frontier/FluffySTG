@@ -157,14 +157,14 @@ const SpeciesPerk = (props: { className: string; perk: Perk }) => {
           <Box>{perk.description}</Box>
         </Box>
       }>
-      <Box className={className} width="32px" height="32px">
+      <Box class={className} width="32px" height="32px">
         <Icon
           name={perk.ui_icon}
           size={1.5}
           ml={0}
           mt={1}
           style={{
-            textAlign: 'center',
+            'text-align': 'center',
             height: '100%',
             width: '100%',
           }}
@@ -191,7 +191,7 @@ const SpeciesPerks = (props: { perks: Species['perks'] }) => {
         </Stack>
       </Stack.Item>
 
-      <Stack>
+      <Stack grow>
         {neutral.map((perk) => {
           return (
             <Stack.Item key={perk.name}>
@@ -292,7 +292,7 @@ const SpeciesPageInner = (props: {
           </Stack.Item>
 
           <Stack.Item grow>
-            <Box>
+            <Box fill>
               <Box>
                 <Stack fill>
                   <Stack.Item width="70%">
@@ -309,7 +309,7 @@ const SpeciesPageInner = (props: {
                         /* SKYRAT EDIT START - Scrollable description */
                         title="Description"
                         maxHeight="14vh"
-                        scrollable
+                        scrollable:true
                         /* SKYRAT EDIT END*/
                       >
                         {currentSpecies.desc}

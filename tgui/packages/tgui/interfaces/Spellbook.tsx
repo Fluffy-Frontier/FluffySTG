@@ -3,7 +3,7 @@ import { multiline } from 'common/string';
 import { useBackend, useLocalState } from '../backend';
 import { Box, Button, Dimmer, Divider, Icon, Input, NoticeBox, ProgressBar, Section, Stack } from '../components';
 import { Window } from '../layouts';
-import { ReactNode } from 'react';
+import { InfernoNode } from 'inferno';
 
 enum SpellCategory {
   Offensive = 'Offensive',
@@ -49,7 +49,7 @@ type Data = {
 type TabType = {
   title: string;
   blurb?: string;
-  component?: () => ReactNode;
+  component?: () => InfernoNode;
   locked?: boolean;
   scrollable?: boolean;
 };

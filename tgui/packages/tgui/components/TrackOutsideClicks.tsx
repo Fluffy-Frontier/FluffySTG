@@ -1,14 +1,14 @@
-import { Component, createRef, PropsWithChildren } from 'react';
+import { Component, createRef } from 'inferno';
 
 type Props = {
   onOutsideClick: () => void;
-} & PropsWithChildren;
+};
 
 export class TrackOutsideClicks extends Component<Props> {
   ref = createRef<HTMLDivElement>();
 
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
 

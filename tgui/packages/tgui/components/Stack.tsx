@@ -5,17 +5,16 @@
  */
 
 import { classes } from 'common/react';
-import { RefObject } from 'react';
+import { RefObject } from 'inferno';
 import { computeFlexClassName, computeFlexItemClassName, computeFlexItemProps, computeFlexProps, FlexItemProps, FlexProps } from './Flex';
 
-type Props = Partial<{
-  vertical: boolean;
-  fill: boolean;
-  zebra: boolean;
-}> &
-  FlexProps;
+type StackProps = FlexProps & {
+  vertical?: boolean;
+  fill?: boolean;
+  zebra?: boolean;
+};
 
-export const Stack = (props: Props) => {
+export const Stack = (props: StackProps) => {
   const { className, vertical, fill, zebra, ...rest } = props;
   return (
     <div
@@ -35,10 +34,9 @@ export const Stack = (props: Props) => {
   );
 };
 
-type StackItemProps = FlexItemProps &
-  Partial<{
-    innerRef: RefObject<HTMLDivElement>;
-  }>;
+type StackItemProps = FlexProps & {
+  innerRef?: RefObject<HTMLDivElement>;
+};
 
 const StackItem = (props: StackItemProps) => {
   const { className, innerRef, ...rest } = props;
@@ -57,10 +55,9 @@ const StackItem = (props: StackItemProps) => {
 
 Stack.Item = StackItem;
 
-type StackDividerProps = FlexItemProps &
-  Partial<{
-    hidden: boolean;
-  }>;
+type StackDividerProps = FlexItemProps & {
+  hidden?: boolean;
+};
 
 const StackDivider = (props: StackDividerProps) => {
   const { className, hidden, ...rest } = props;

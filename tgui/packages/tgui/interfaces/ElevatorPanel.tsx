@@ -71,8 +71,8 @@ export const ElevatorPanel = (props) => {
                   <Stack.Item key={index}>
                     <Button
                       style={{
-                        fontWeight: 'bold',
-                        fontSize: '14px',
+                        'font-weight': 'bold',
+                        'font-size': '14px',
                       }}
                       fluid
                       ellipsis
@@ -183,9 +183,9 @@ const FloorPanel = (props) => {
         <Box
           textColor="white"
           style={{
-            fontFamily: 'Monospace',
-            fontSize: '50px',
-            fontWeight: 'bold',
+            'font-family': 'Monospace',
+            'font-size': '50px',
+            'font-weight': 'bold',
           }}>
           {current_floor - 1}
         </Box>
