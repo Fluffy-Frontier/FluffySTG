@@ -493,6 +493,14 @@
   - image: Claw hammer icon has been neatened up a little.
   Ghommie:
   - bugfix: climbing or being shoved into a glass table won't cause elevation issues.
+  Jacquerel:
+  - rscadd: Added subversive pins to the black market uplink which make security hate
+      you
+  - rscadd: The detective's spy cam can now be conveniently pinned onto people in
+      the same manner as medals
+  LT3, Majkl-J:
+  - image: SM now has holiday lights
+  - image: You can now put a santa hat on the SM
   LovliestPlant:
   - qol: '[Void Raptor] [Blueshift] Adds door timers to permabrig isolation cells,
       and directions for using the genpop system near prisoner lockers.'
@@ -510,18 +518,37 @@
   OrionTheFox:
   - image: The Head of Security's "Sturdy Shako" hat now uses the same gold color
       as his other hat
+  Rex9001:
+  - admin: Updates the admin smite "Ocky icky phobia" with some new words
   Rhials:
   - qol: Blackout drunkard personalities will now recieve a "you are about to sober
       up" warning at the 60/40/20 second mark, instead of repeatedly at the 50 second
       mark.
+  Ryll/Shaps:
+  - bugfix: You can no longer stack more than one applications of a burn wound at
+      once
   SyncIt21:
   - bugfix: no runtime when unwrenching Atmos components
   - spellcheck: fixed typo in attack chain define comment
+  Watermelon914:
+  - balance: Organs can now be preserved by putting them in freezing temperatures.
+  - balance: Morgue trays and freezers will now cool down the contents placed inside
+      of them.
+  - balance: Morgue trays will now properly display if someone stored within them
+      is revivable and make periodic beeps every minute.
+  dis-integrates-the-integration-tests:
+  - qol: Laser pointers are now more accessible, being now available in the loadout
+      and in the Good Clean Fun vendor.
   jlsnow301:
   - bugfix: Painting should be working again.
+  - bugfix: Cult chat, PDAs, succumbing, etc shouldn't blue screen anymore.
+  theselfish:
+  - image: The Snouted Clown mask is now the same colour scheme as the rest of the
+      species clown masks. A shared symbol of unity in Clown Brotherhood.
   vinylspiders:
   - bugfix: fixes some AI runtimes that were caused by the pawn becoming null
   - bugfix: fixes reinforced walls getting reverted back to the tg icon
+  - bugfix: Loadout menu will no longer crash when switching tabs
   vorpal-void:
   - bugfix: fixed outdated item description
   whataboutism-alos:
