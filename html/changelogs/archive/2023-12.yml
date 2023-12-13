@@ -480,3 +480,50 @@
   - bugfix: Dropdowns should show what you've selected again.
   - bugfix: You should be able to edit your character using the feature buttons again.
   - bugfix: You should be able to move stamps on paper again.
+2023-12-13:
+  Ben10Omintrix:
+  - bugfix: AIs can summon bots again
+  - bugfix: cleanbots can clean floors directly underneath them and prioritize floors
+      nearest to them
+  - bugfix: medbots drop empty medkits now
+  Buyrcsp2:
+  - bugfix: Bird Phobia now triggers on geese
+  DaCoolBoss:
+  - bugfix: Minor bug fixes and improvements to the garbage truck space ruins.
+  - image: Claw hammer icon has been neatened up a little.
+  Ghommie:
+  - bugfix: climbing or being shoved into a glass table won't cause elevation issues.
+  LovliestPlant:
+  - qol: '[Void Raptor] [Blueshift] Adds door timers to permabrig isolation cells,
+      and directions for using the genpop system near prisoner lockers.'
+  - qol: '[Void Raptor] [Blueshift] Adds translator glove MOD modules to the stack
+      of "accessibility" modules found in some storage rooms.'
+  - qol: '[Blueshift] Adds stacks of "accessibility" MOD modules to Engineering, Security,
+      and Medbay.'
+  - bugfix: '[Blueshift] The forgotten exosuit fabricator will no longer attempt to
+      output directly into the wall.'
+  Melbert:
+  - bugfix: When using an item on a mob, you will always attempt to fix wounds AFTER
+      surgery, BUT BEFORE the item's own interactions. As an example, this means using
+      a mesh on a mob will attempt to progress surgery first, then attempt to fix
+      any burn wounds, then heal burn damage.
+  OrionTheFox:
+  - image: The Head of Security's "Sturdy Shako" hat now uses the same gold color
+      as his other hat
+  Rhials:
+  - qol: Blackout drunkard personalities will now recieve a "you are about to sober
+      up" warning at the 60/40/20 second mark, instead of repeatedly at the 50 second
+      mark.
+  SyncIt21:
+  - bugfix: no runtime when unwrenching Atmos components
+  - spellcheck: fixed typo in attack chain define comment
+  jlsnow301:
+  - bugfix: Painting should be working again.
+  vinylspiders:
+  - bugfix: fixes some AI runtimes that were caused by the pawn becoming null
+  - bugfix: fixes reinforced walls getting reverted back to the tg icon
+  vorpal-void:
+  - bugfix: fixed outdated item description
+  whataboutism-alos:
+  - code_imp: Skyrat sprite override updated to reflect upstream lizard tail
+  - rscadd: Adds two-tone version of short lizard tail
