@@ -319,9 +319,27 @@
 				continue
 			if(parent != current_parent || user.get_active_held_item() != active_held)
 				continue
+<<<<<<< HEAD
 			if(requested_amount != item_stack.amount) //only split if its not the whole amount
 				target = fast_split_stack(item_stack, requested_amount) //split off the requested amount
 			requested_amount = 0
+=======
+			//untouchable, move it out the way, code copied from recycler
+			if(target_item.resistance_flags & INDESTRUCTIBLE)
+				target_item.forceMove(get_turf(parent))
+				continue
+			//user defined conditions
+			if(SEND_SIGNAL(src, COMSIG_MATCONTAINER_PRE_USER_INSERT, target_item, user) & MATCONTAINER_BLOCK_INSERT)
+				continue
+			//item is either not allowed for redemption, not in the allowed types
+			if((target_item.item_flags & NO_MAT_REDEMPTION) || (allowed_item_typecache && !is_type_in_typecache(target_item, allowed_item_typecache)))
+				if(!(mat_container_flags & MATCONTAINER_SILENT) && i == 1) //count only child items the 1st time around
+					var/list/status_data = chat_msgs["[MATERIAL_INSERT_ITEM_FAILURE]"] || list()
+					var/list/item_data = status_data[target_item.name] || list()
+					item_data["count"] += 1
+					status_data[target_item.name] = item_data
+					chat_msgs["[MATERIAL_INSERT_ITEM_FAILURE]"] = status_data
+>>>>>>> 932cc6ac ([MIRROR] [NO GBP] Fixes runtime in mat container chat display [MDB IGNORE] (#25617))
 
 		//is this item a stack and was it split by the player?
 		var/was_stack_split = !isnull(item_stack) && item_stack != target
