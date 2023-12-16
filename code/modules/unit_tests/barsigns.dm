@@ -9,6 +9,7 @@
 	var/icon/barsign_icon = initial(barsign_type.icon)
 	var/list/barsign_icon_states = icon_states(barsign_icon)
 	barsign_icon_states += icon_states(SKYRAT_BARSIGN_FILE) // SKYRAT EDIT ADDITION - Need to check modular barsigns
+	barsign_icon_states += icon_states('tff_modular/modules/barsigns/icons/barsigns.dmi') // THE FLUFFY FRONTIER - Need to check modular barsigns
 	barsign_icon_states += icon_states(SKYRAT_LARGE_BARSIGN_FILE) // SKYRAT EDIT ADDITION - Need to check modular  barsigns
 
 	// Check every datum real bar sign
