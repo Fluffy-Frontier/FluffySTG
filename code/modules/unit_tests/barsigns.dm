@@ -2,7 +2,7 @@
  * Test if icon states for each datum actually exist in the DMI.
  */
 /datum/unit_test/barsigns_icon
-	var/list/blacklisted_sign_types = list(/datum/barsign/skyrat, /datum/barsign/skyrat/large) // SKYRAT EDIT ADDITION - Modular barsigns
+	var/list/blacklisted_sign_types = list(/datum/barsign/fluffy, /datum/barsign/skyrat, /datum/barsign/skyrat/large) // SKYRAT EDIT ADDITION - Modular barsigns // THE FLUFFY FRONTIER EDIT ADDITION - Modular barsigns
 
 /datum/unit_test/barsigns_icon/Run()
 	var/obj/machinery/barsign_type = /obj/machinery/barsign
@@ -27,7 +27,7 @@
  * Check that bar signs have a name and desc, and that the name is unique.
  */
 /datum/unit_test/barsigns_name
-	var/list/blacklisted_sign_types = list(/datum/barsign/skyrat, /datum/barsign/skyrat/large) // SKYRAT EDIT ADDITION - Modular barsigns
+	var/list/blacklisted_sign_types = list(/datum/barsign/fluffy, /datum/barsign/skyrat, /datum/barsign/skyrat/large) // SKYRAT EDIT ADDITION - Modular barsigns // THE FLUFFY FRONTIER EDIT ADDITION - Modular barsigns
 
 /datum/unit_test/barsigns_name/Run()
 	var/list/existing_names = list()
