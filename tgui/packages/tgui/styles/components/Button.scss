@@ -94,7 +94,6 @@ $bg-map: colors.$bg-map !default;
 }
 
 .Button--ellipsis {
-  overflow: hidden;
   text-overflow: ellipsis;
   overflow: hidden;
 }
@@ -170,11 +169,8 @@ $bg-map: colors.$bg-map !default;
 .Button__content {
   display: block;
   align-self: stretch;
-<<<<<<< HEAD
-=======
 }
 
 .Button__textMargin {
   margin-left: 0.4rem;
->>>>>>> b450f358 ([MIRROR] Fixes keybindings page & Button margins [NO GBP] [MDB IGNORE] (#25630))
 }
