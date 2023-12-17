@@ -3,7 +3,7 @@
 	. = ..()
 	// Try to use TFF override
 	if(istype(chosen_sign, /datum/barsign/fluffy))
-		icon = 'tff_modular/modules/barsigns/icons/barsigns.dmi'
+		icon = TFF_BARSIGN_FILE
 		return
 
 /datum/barsign/fluffy/thelastlight
