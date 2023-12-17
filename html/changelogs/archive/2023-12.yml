@@ -606,3 +606,40 @@
   - rscadd: Adds a new discount experiment for unlocking the combat exosuit nodes
       - complete it by scanning two exosuits with equipment in the left and right
       hand slots. This replaces the prior discount experiment about destroying exosuits.
+2023-12-17:
+  ATHATH:
+  - rscadd: If your bitrunning avatar somehow acquires and consumes a red pill, they
+      will be disconnected from the Matrix.
+  DATA-xPUNGED:
+  - balance: Exosuit Materials 1 now only requires one mech.
+  - qol: "Exosuit Materials 1 is much more lenient on the percentage it requires.\n\
+      /\U0001F191"
+  FlufflesTheDog:
+  - bugfix: Fixed a rare false positive with morgue tray alarms.
+  Ghommie:
+  - balance: '"Scarves" and "Wallets!" are now neutral traits.'
+  IndieanaJones:
+  - bugfix: The clown car once again obtains the accesses of kidnapped crew within
+      the car. Supermatter crystals beware!
+  SyncIt21:
+  - bugfix: mobs that have the `TRAIT_PERMANENTLY_ONFIRE` trait cannot be extinguished
+      by anything.
+  - bugfix: stuff thrown into lava should not runtime. it currently does not but if
+      there is a slight chance it does not happen
+  jlsnow301:
+  - bugfix: Admin interview panel should feel snappier.
+  thegrb93:
+  - bugfix: Fix vox tails being unable to wag
+  - bugfix: fixed lizard spine sprites disappearing when wagging
+  tralezab:
+  - qol: Anesthetics tank description now mentions a rare quirk of anesthetic.
+  vinylspiders:
+  - bugfix: fixes a bug which was causing certain mutations to only get partially
+      removed
+  yooriss:
+  - bugfix: Loadout MODlink scryers now come with the NT frequency by default, allowing
+      them to actually be used without requiring complicated setup. Try them out again
+      and holocall all your friends!
+  zxaber:
+  - balance: Emagged and Hacked APCs now occasionally flicker a blue effect, and the
+      effect is not visible with cameras.
