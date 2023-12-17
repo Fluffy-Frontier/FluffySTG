@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import { Component } from 'react';
-=======
 import { BooleanLike } from 'common/react';
 import { Component, KeyboardEvent } from 'react';
->>>>>>> b0ad5ecd ([MIRROR] Input component in tsx [MDB IGNORE] (#25654))
 import { useBackend } from '../backend';
 import { Box, Stack, Section, Input, Button, Dropdown } from '../components';
 import { Window } from '../layouts';
@@ -22,7 +18,7 @@ type CircuitSignalHandlerState = {
   signal_id: string;
   responseList: Response[];
   parameterList: Parameter[];
-  global: Boolean;
+  global: BooleanLike;
 };
 
 type CircuitSignalHandlerData = {
