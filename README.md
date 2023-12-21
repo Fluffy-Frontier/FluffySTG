@@ -12,7 +12,7 @@
 | Git / GitHub cheatsheet   | [https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833](https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833) |
 | Guide to Modularization   | [./modular_skyrat/readme.md](./modular_skyrat/readme.md)            |
 | Code                      | [https://github.com/Skyrat-SS13/Skyrat-tg](https://github.com/Skyrat-SS13/Skyrat-tg)    |
-| Wiki                      | [https://wiki.skyrat13.space/index.php/Main_Page](https://wiki.skyrat13.space/index.php/Main_Page)   |
+| Wiki                      | [https://wiki.skyrat13.com/index.php/Main_Page](https://wiki.skyrat13.com/index.php/Main_Page)   |
 | Codedocs                  | [https://skyrat-ss13.github.io/Skyrat-tg/](https://skyrat-ss13.github.io/Skyrat-tg/)       |
 | Fluffy Frontier Discord   | [https://discord.com/invite/5GvhwtY](https://discord.com/invite/5GvhwtY) |
 | Coderbus Discord          | [https://discord.gg/Vh8TJp9](https://discord.gg/Vh8TJp9)               |
