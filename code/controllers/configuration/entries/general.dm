@@ -317,7 +317,11 @@
 /datum/config_entry/string/banappeals
 
 /datum/config_entry/string/wikiurl
+<<<<<<< HEAD
 	default = "https://wiki.skyrat13.tk/w/index.php" //SKYRAT EDIT - Original: "http://www.tgstation13.org/wiki"
+=======
+	default = "https://wiki.skyrat13.space/index.php" //SKYRAT EDIT - Original: "http://www.tgstation13.org/wiki"
+>>>>>>> ee13b168 (Fuck off (#25792))
 
 /datum/config_entry/string/forumurl
 	default = "http://tgstation13.org/phpBB/index.php"
