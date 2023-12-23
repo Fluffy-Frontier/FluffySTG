@@ -38,6 +38,7 @@
 					/obj/item/stack/shibari_rope/full = 10,
 					/obj/item/stack/shibari_rope/glow/full = 10,
 
+<<<<<<< HEAD
 					//clothing facial/head
 					/obj/item/clothing/mask/ballgag = 8,
 					/obj/item/clothing/mask/ballgag/choking = 8,
@@ -64,6 +65,37 @@
 					/obj/item/clothing/neck/human_petcollar/locked/cross = 8,
 					/obj/item/clothing/neck/human_petcollar/locked/spike = 8,
 					/obj/item/clothing/neck/size_collar = 8,
+=======
+				//Dildo (Use-on-crotch)
+				/obj/item/clothing/sextoy/dildo = 8,
+				/obj/item/clothing/sextoy/dildo/double_dildo = 3,
+				/obj/item/clothing/sextoy/dildo/custom_dildo = 8,
+				/obj/item/clothing/sextoy/fleshlight = 8,
+				/obj/item/clothing/sextoy/magic_wand = 4,
+				/obj/item/clothing/sextoy/vibrator = 4,
+
+				//belt
+				/obj/item/clothing/strapon = 6,
+
+				//Multi-use
+
+				/obj/item/kinky_shocker = 4,
+				/obj/item/clothing/mask/leatherwhip = 4,
+				/obj/item/bdsm_candle = 4,
+				/obj/item/spanking_pad = 4,
+				/obj/item/tickle_feather = 8,
+			),
+		),
+		list(
+			"name" = "Outfits",
+			"icon" = FA_ICON_SHIRT,
+			"products" = list(
+				/obj/item/clothing/under/pants/skyrat/chaps = 4,
+				/obj/item/clothing/under/costume/bunnylewd = 5,
+				/obj/item/clothing/under/costume/bunnylewd/white = 5,
+				/obj/item/clothing/head/costume/rabbitears = 4,//Ears together, right after Bunny Suit.
+				/obj/item/clothing/head/costume/kitty = 4,
+>>>>>>> 30b943f7 ([MIRROR] Fixes duplicating space beer [MDB IGNORE] (#25796))
 
 					//torso clothing
 					/obj/item/clothing/under/misc/latex_catsuit = 8,
