@@ -1467,8 +1467,13 @@
 	else
 		for(var/obj/item/item in src)
 			if(!dropItemToGround(item))
+<<<<<<< HEAD
 				qdel(item)
 				continue
+=======
+				if(!(item.item_flags & ABSTRACT))
+					qdel(item)
+>>>>>>> a26f32ae ([MIRROR] [NO GBP] Fixes polymorphing into drones gibbing you [MDB IGNORE] (#25819))
 			item_contents += item
 
 	var/mob/living/new_mob
