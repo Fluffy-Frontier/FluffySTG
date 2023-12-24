@@ -137,6 +137,35 @@
 		src.client << link(server_ip)
 
 /**
+<<<<<<< HEAD
+=======
+ * Shows currently available job traits
+ */
+/mob/dead/new_player/proc/show_job_traits()
+	if (!client || client.interviewee)
+		return
+	if(!length(GLOB.lobby_station_traits))
+		to_chat(src, span_warning("There are currently no job traits available!"))
+		return
+	var/list/available_lobby_station_traits = list()
+	for (var/datum/station_trait/trait as anything in GLOB.lobby_station_traits)
+		if (!trait.can_display_lobby_button(client))
+			continue
+		available_lobby_station_traits += trait
+
+	if(!LAZYLEN(available_lobby_station_traits))
+		to_chat(src, span_warning("There are currently no job traits available!"))
+		return
+
+	var/datum/station_trait/clicked_trait = tgui_input_list(src, "Select a job trait to sign up for:", "Job Traits", available_lobby_station_traits)
+
+	if(!clicked_trait)
+		return
+
+	clicked_trait.on_lobby_button_click(src)
+
+/**
+>>>>>>> d718af99 ([MIRROR] Bridge Assistant Station Trait [MDB IGNORE] (#25667))
  * Shows the player a list of current polls, if any.
  */
 /mob/dead/new_player/proc/playerpolls()
