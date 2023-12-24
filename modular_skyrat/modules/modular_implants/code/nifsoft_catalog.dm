@@ -18,7 +18,11 @@ GLOBAL_LIST_INIT(purchasable_nifsofts, list(
 	size = 3
 	tgui_id = "NtosNifsoftCatalog"
 	program_icon = "bag-shopping"
+<<<<<<< HEAD
 	usage_flags = PROGRAM_TABLET
+=======
+	can_run_on_flags = PROGRAM_PDA
+>>>>>>> 93613763 (PDA update (Messenger works while dead, Microwave works, etc). (#80069) [REMIRROR] (#25829))
 	///What bank account is money being drawn out of?
 	var/datum/bank_account/paying_account
 	///What NIF are the NIFSofts being sent to?
