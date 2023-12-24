@@ -193,8 +193,13 @@
 
 	if(src == computer.active_program)
 		computer.active_program = null
+<<<<<<< HEAD
 		if(computer.enabled)
 			computer.update_tablet_open_uis(usr)
+=======
+		if(!QDELETED(computer) && computer.enabled)
+			INVOKE_ASYNC(computer, TYPE_PROC_REF(/obj/item/modular_computer, update_tablet_open_uis), user)
+>>>>>>> cbaee82e ([MIRROR] The Spectre-Meter App, also a bootleg data disk item for the black market. [MDB IGNORE] (#25717))
 	if(src in computer.idle_threads)
 		computer.idle_threads.Remove(src)
 
@@ -217,5 +222,3 @@
 	computer.update_tablet_open_uis(usr)
 	computer.update_appearance(UPDATE_ICON)
 	return TRUE
-
-#undef PROGRAM_BASIC_CELL_USE
