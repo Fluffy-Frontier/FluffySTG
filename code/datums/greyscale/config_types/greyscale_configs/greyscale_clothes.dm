@@ -354,6 +354,21 @@ SKYRAT EDIT END */
 	icon_file = 'icons/mob/clothing/under/shorts_pants_shirts.dmi'
 	json_config = 'code/datums/greyscale/json_configs/buttondown_skirt_worn.json'
 
+<<<<<<< HEAD
+=======
+//
+// LABCOATS
+//
+
+/datum/greyscale_config/labcoat
+	name = "Labcoat"
+	icon_file = 'icons/obj/clothing/suits/labcoat.dmi'
+	json_config = 'code/datums/greyscale/json_configs/labcoat.json'
+
+/datum/greyscale_config/labcoat/worn
+	name = "Labcoat (Worn)"
+	icon_file = 'icons/mob/clothing/suits/labcoat.dmi'
+>>>>>>> aaa8c812 ([MIRROR] Fixes labcoats having the wrong sprites when thrown [MDB IGNORE] (#24772))
 
 //
 // SUITS

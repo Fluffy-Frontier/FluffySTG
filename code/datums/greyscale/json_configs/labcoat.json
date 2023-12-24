@@ -1,20 +1,20 @@
 {
-	"widebrim_feathered": [
+	"labcoat_job": [
 		{
 			"type": "icon_state",
-			"icon_state": "widebrim_base",
+			"icon_state": "labcoat_job",
 			"blend_mode": "overlay",
 			"color_ids": [ 1 ]
 		},
 		{
 			"type": "icon_state",
-			"icon_state": "widebrim_strip",
+			"icon_state": "sash",
 			"blend_mode": "overlay",
 			"color_ids": [ 2 ]
 		},
 		{
 			"type": "icon_state",
-			"icon_state": "feather",
+			"icon_state": "shoulder",
 			"blend_mode": "overlay",
 			"color_ids": [ 3 ]
 		},
@@ -25,24 +25,30 @@
 			"color_ids": [ 4 ]
 		}
 	],
-	"flatbrim_cowl": [
+	"labcoat_job_t": [
 		{
 			"type": "icon_state",
-			"icon_state": "cowboy_cowl",
-			"blend_mode": "overlay",
-			"color_ids": [ 3 ]
-		},
-		{
-			"type": "icon_state",
-			"icon_state": "flatbrim_base",
+			"icon_state": "labcoat_job_t",
 			"blend_mode": "overlay",
 			"color_ids": [ 1 ]
 		},
 		{
 			"type": "icon_state",
-			"icon_state": "flatbrim_strip",
+			"icon_state": "sash_t",
 			"blend_mode": "overlay",
 			"color_ids": [ 2 ]
+		},
+		{
+			"type": "icon_state",
+			"icon_state": "shoulder",
+			"blend_mode": "overlay",
+			"color_ids": [ 3 ]
+		},
+		{
+			"type": "icon_state",
+			"icon_state": "back_t",
+			"blend_mode": "overlay",
+			"color_ids": [ 4 ]
 		}
 	]
 }
