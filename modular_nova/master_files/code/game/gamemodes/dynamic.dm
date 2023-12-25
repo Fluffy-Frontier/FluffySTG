@@ -40,7 +40,7 @@
 	var/midround_median_frequency = 36000
 
 /// Divides threat budget based on the server config
-/datum/controller/subsystem/dynamic/generate_budgets()/generate_budgets()
+/datum/controller/subsystem/dynamic/generate_budgets()
 	if(CONFIG_GET(flag/split_threat_budget))
 		return ..()
 
@@ -49,7 +49,7 @@
 	mid_round_budget = threat_level
 
 /// Gets the chance for a heavy ruleset midround injection, the dry_run argument is only used for forced injection.
-datum/controller/subsystem/dynamic/generate_budgets()/get_heavy_midround_injection_chance(dry_run)
+datum/controller/subsystem/dynamic/get_heavy_midround_injection_chance(dry_run)
 	var/next_midround_roll = next_midround_injection() - SSticker.round_start_time
 
 	var/heavy_coefficient = CLAMP01((next_midround_roll - midround_light_upper_bound) / (midround_heavy_lower_bound - midround_light_upper_bound))
@@ -57,7 +57,7 @@ datum/controller/subsystem/dynamic/generate_budgets()/get_heavy_midround_injecti
 	return 100 * heavy_coefficient
 
 /// Determines the next midround injection attempt based on the set median and roll distance.
-datum/controller/subsystem/dynamic/generate_budgets()/next_midround_injection()
+/datum/controller/subsystem/dynamic/next_midround_injection()
 	if(!isnull(next_midround_injection))
 		return next_midround_injection
 
@@ -69,7 +69,7 @@ datum/controller/subsystem/dynamic/generate_budgets()/next_midround_injection()
 	return next_midround_injection
 
 /// If a midround injection fails to run, this can be called by the particular rule (if required) to attempt an alternate.
-datum/controller/subsystem/dynamic/generate_budgets()/proc/alternate_midround_injection()
+/datum/controller/subsystem/dynamic/proc/alternate_midround_injection()
 	next_midround_injection = world.time + rand(ALT_MIDROUND_LOWER_TIME, ALT_MIDROUND_UPPER_TIME)
 	log_dynamic_and_announce("Alternate midround injection in [DisplayTimeText(next_midround_injection - world.time)]")
 
