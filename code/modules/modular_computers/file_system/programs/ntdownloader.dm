@@ -92,7 +92,14 @@
 			download_netspeed = NTNETSPEED_HIGHSIGNAL
 		if(NTNET_ETHERNET_SIGNAL)
 			download_netspeed = NTNETSPEED_ETHERNET
+<<<<<<< HEAD
 	download_completion += download_netspeed
+=======
+	if(download_netspeed)
+		if(HAS_TRAIT(computer, TRAIT_MODPC_HALVED_DOWNLOAD_SPEED))
+			download_netspeed *= 0.5
+		download_completion += download_netspeed
+>>>>>>> 49452b38 ([MIRROR] The Coupon Master PDA app [MDB IGNORE] (#25855))
 
 /datum/computer_file/program/ntnetdownload/ui_act(action, params, datum/tgui/ui, datum/ui_state/state)
 	switch(action)
