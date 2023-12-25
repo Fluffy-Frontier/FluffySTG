@@ -71,6 +71,39 @@ export const LoadoutManager = (props) => {
                 onSelected={(curTab) => setSelectedTab(curTab)}
               />
             </Section>
+<<<<<<< HEAD
+=======
+            <Section>
+              <Stack>
+                <Stack.Item>
+                  <Input
+                    autoFocus
+                    mt={0.5}
+                    bottom="5%"
+                    height="20px"
+                    width="150px"
+                    placeholder="Search..."
+                    value={searchItem}
+                    onChange={(e, value) => {
+                      setSearchItem(value);
+                    }}
+                    fluid
+                  />
+                </Stack.Item>
+                <Stack.Divider hidden grow width="50%" />
+                <Stack.Item>
+                  <Button
+                    icon="check-double"
+                    color="good"
+                    align="center"
+                    content="Confirm"
+                    tooltip="Confirm loadout and exit UI."
+                    onClick={() => act('close_ui', { revert: 0 })}
+                  />
+                </Stack.Item>
+              </Stack>
+            </Section>
+>>>>>>> 69d0b321 ([MIRROR] Refactors TS in Box component [MDB IGNORE] (#25826))
           </Stack.Item>
           <Stack.Item grow>
             <Stack fill>
@@ -92,8 +125,13 @@ export const LoadoutManager = (props) => {
                       />
                     }
                   >
+<<<<<<< HEAD
                     <Stack grow vertical>
                       {selectedTab.contents.map((item) => (
+=======
+                    <Stack vertical zebra>
+                      {loadout_items_filtered?.map((item) => (
+>>>>>>> 69d0b321 ([MIRROR] Refactors TS in Box component [MDB IGNORE] (#25826))
                         <Stack.Item key={item.path}>
                           <Stack fontSize="15px">
                             <Stack.Item grow align="left">
