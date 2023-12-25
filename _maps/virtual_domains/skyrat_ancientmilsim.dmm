@@ -1,4 +1,10 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ab" = (
+/obj/structure/toilet,
+/obj/machinery/light/small/dim/directional/north,
+/obj/item/gun/ballistic/revolver/nagant,
+/turf/open/floor/iron,
+/area/virtual_domain)
 "al" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor/iron/smooth_half,
@@ -76,8 +82,23 @@
 	},
 /turf/open/floor/plating,
 /area/virtual_domain)
+"cy" = (
+/obj/structure/table,
+/obj/item/gun/ballistic/automatic/wylom,
+/turf/open/floor/iron,
+/area/virtual_domain)
 "cF" = (
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact,
+/turf/open/floor/iron,
+/area/virtual_domain)
+"cM" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/item/ammo_box/magazine/wylom{
+	pixel_y = 10;
+	pixel_x = -11
+	},
 /turf/open/floor/iron,
 /area/virtual_domain)
 "cV" = (
@@ -97,6 +118,16 @@
 "dH" = (
 /obj/effect/landmark/bitrunning/mob_segment,
 /turf/open/floor/iron/smooth,
+/area/virtual_domain)
+"dY" = (
+/obj/effect/decal/cleanable/blood/splatter{
+	pixel_y = 12
+	},
+/obj/effect/decal/cleanable/blood{
+	pixel_y = -4;
+	pixel_x = -5
+	},
+/turf/open/misc/dirt/planet,
 /area/virtual_domain)
 "ea" = (
 /obj/structure/extinguisher_cabinet/directional/west,
@@ -118,6 +149,13 @@
 /obj/item/grenade/smokebomb,
 /turf/open/floor/iron/smooth_large,
 /area/virtual_domain)
+"em" = (
+/obj/structure/table,
+/obj/item/reagent_containers/hypospray/medipen/deforest/adrenaline{
+	pixel_y = 7
+	},
+/turf/open/floor/iron,
+/area/virtual_domain)
 "er" = (
 /turf/closed/indestructible/rock,
 /area/virtual_domain)
@@ -135,6 +173,18 @@
 /obj/effect/spawner/random/trash/box,
 /obj/machinery/light/directional/west,
 /turf/open/floor/iron,
+/area/virtual_domain)
+"eF" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/decal/cleanable/blood/splatter{
+	pixel_x = 4;
+	pixel_y = -13
+	},
+/obj/effect/decal/cleanable/blood/gibs/down,
+/obj/machinery/door/poddoor{
+	id = "cin_armory"
+	},
+/turf/open/misc/dirt/planet,
 /area/virtual_domain)
 "eQ" = (
 /obj/structure/flora/bush/flowers_br/style_random,
@@ -165,6 +215,10 @@
 /obj/structure/railing,
 /turf/open/misc/grass/planet/ancient_milsim,
 /area/virtual_domain)
+"fG" = (
+/obj/item/mecha_ammo/lmg,
+/turf/open/misc/dirt/planet,
+/area/virtual_domain)
 "gb" = (
 /obj/item/keycard/yellow,
 /turf/open/floor/iron/dark,
@@ -173,6 +227,13 @@
 /obj/structure/table,
 /obj/item/grenade/chem_grenade/clf3,
 /turf/open/floor/plating,
+/area/virtual_domain)
+"gM" = (
+/obj/item/stock_parts/servo/nano,
+/obj/machinery/button/door/directional/north{
+	id = "cin_armory"
+	},
+/turf/open/floor/iron,
 /area/virtual_domain)
 "hj" = (
 /obj/structure/flora/bush/flowers_br/style_random,
@@ -188,6 +249,12 @@
 /turf/open/floor/iron/smooth_corner{
 	dir = 8
 	},
+/area/virtual_domain)
+"hs" = (
+/obj/vehicle/sealed/mecha/gygax{
+	color = "#016101"
+	},
+/turf/open/misc/dirt/planet,
 /area/virtual_domain)
 "hy" = (
 /obj/machinery/door/poddoor/ancient_milsim{
@@ -255,6 +322,10 @@
 /obj/structure/table,
 /turf/open/floor/iron,
 /area/virtual_domain)
+"jM" = (
+/obj/item/gun/ballistic/automatic/lanca,
+/turf/open/misc/dirt/planet,
+/area/virtual_domain)
 "jS" = (
 /obj/structure/chair/sofa/corp/left{
 	dir = 4
@@ -279,6 +350,13 @@
 /area/virtual_domain)
 "ki" = (
 /turf/open/floor/iron/dark,
+/area/virtual_domain)
+"kl" = (
+/obj/machinery/dryer{
+	pixel_y = -26
+	},
+/obj/item/stock_parts/servo/pico,
+/turf/open/floor/iron,
 /area/virtual_domain)
 "kv" = (
 /obj/structure/extinguisher_cabinet/directional/north,
@@ -356,6 +434,10 @@
 "mu" = (
 /obj/item/knife/combat/survival,
 /obj/structure/table,
+/obj/item/shield/riot/tele{
+	pixel_x = 6;
+	pixel_y = -3
+	},
 /turf/open/floor/iron,
 /area/virtual_domain)
 "mZ" = (
@@ -365,6 +447,8 @@
 "ne" = (
 /obj/structure/toilet,
 /obj/machinery/light/small/dim/directional/north,
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/flashbang,
+/obj/item/mecha_ammo/flashbang,
 /turf/open/floor/iron,
 /area/virtual_domain)
 "no" = (
@@ -393,9 +477,18 @@
 	},
 /turf/open/floor/iron,
 /area/virtual_domain)
+"nL" = (
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/misc/dirt/planet,
+/area/virtual_domain)
 "nM" = (
 /obj/item/storage/box/utensils,
 /turf/open/floor/iron,
+/area/virtual_domain)
+"nP" = (
+/obj/effect/mapping_helpers/broken_floor,
+/obj/item/stock_parts/scanning_module/phasic,
+/turf/open/floor/iron/dark,
 /area/virtual_domain)
 "nQ" = (
 /obj/machinery/light/floor,
@@ -467,6 +560,13 @@
 	dir = 1
 	},
 /area/virtual_domain)
+"qz" = (
+/obj/item/ammo_box/magazine/wylom{
+	pixel_y = -7;
+	pixel_x = -5
+	},
+/turf/open/floor/iron,
+/area/virtual_domain)
 "qA" = (
 /obj/structure/fence{
 	dir = 4
@@ -476,6 +576,11 @@
 "qV" = (
 /obj/machinery/vending/medical,
 /turf/open/floor/iron/white,
+/area/virtual_domain)
+"ra" = (
+/obj/structure/table,
+/obj/item/gun/ballistic/revolver/nagant,
+/turf/open/floor/iron,
 /area/virtual_domain)
 "rb" = (
 /obj/effect/spawner/random/trash/janitor_supplies,
@@ -497,6 +602,16 @@
 	id = "cin_place"
 	},
 /turf/open/floor/plating,
+/area/virtual_domain)
+"rL" = (
+/obj/effect/decal/cleanable/blood/gibs/limb,
+/obj/effect/decal/cleanable/blood/gibs/limb{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = 10
+	},
+/obj/effect/decal/cleanable/blood/gibs/core,
+/turf/open/misc/dirt/planet,
 /area/virtual_domain)
 "rT" = (
 /obj/effect/spawner/structure/window/reinforced/no_firelock,
@@ -641,6 +756,11 @@
 /obj/item/storage/backpack/duffelbag/syndie/c4,
 /turf/open/floor/iron,
 /area/virtual_domain)
+"vv" = (
+/obj/structure/table,
+/obj/item/reagent_containers/hypospray/medipen/deforest/aranepaine,
+/turf/open/floor/iron,
+/area/virtual_domain)
 "vz" = (
 /obj/structure/flippedtable{
 	dir = 4
@@ -654,9 +774,17 @@
 /obj/item/flamethrower/full/tank,
 /turf/open/misc/grass/planet/ancient_milsim,
 /area/virtual_domain)
+"vG" = (
+/obj/item/stock_parts/capacitor/super,
+/turf/open/misc/dirt/planet,
+/area/virtual_domain)
 "vL" = (
 /obj/structure/fence,
 /turf/open/misc/grass/planet/ancient_milsim,
+/area/virtual_domain)
+"vP" = (
+/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser,
+/turf/open/misc/dirt/planet,
 /area/virtual_domain)
 "wh" = (
 /obj/structure/table,
@@ -750,6 +878,13 @@
 /obj/effect/spawner/random/trash/bucket,
 /turf/open/floor/iron,
 /area/virtual_domain)
+"zo" = (
+/obj/item/flashlight/lantern{
+	pixel_y = 10;
+	pixel_x = 7
+	},
+/turf/open/misc/dirt/planet,
+/area/virtual_domain)
 "zp" = (
 /obj/machinery/door/puzzle/keycard/yellow_required,
 /turf/open/floor/iron/smooth_large,
@@ -769,6 +904,7 @@
 "Ab" = (
 /obj/structure/table,
 /obj/item/folder/documents,
+/obj/item/gun/ballistic/automatic/sol_rifle/marksman,
 /turf/open/floor/iron/dark,
 /area/virtual_domain)
 "AB" = (
@@ -828,6 +964,10 @@
 	dir = 4
 	},
 /turf/open/floor/iron/white,
+/area/virtual_domain)
+"Ci" = (
+/obj/structure/mecha_wreckage/gygax,
+/turf/open/floor/plating,
 /area/virtual_domain)
 "Cr" = (
 /obj/structure/chair/office/light{
@@ -970,6 +1110,13 @@
 /obj/item/food/cake/birthday,
 /turf/open/floor/iron/smooth_large,
 /area/virtual_domain)
+"EN" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/misc/dirt/planet,
+/area/virtual_domain)
 "EW" = (
 /obj/structure/reagent_dispensers/fueltank/large,
 /turf/open/floor/plating,
@@ -1004,6 +1151,18 @@
 /area/virtual_domain)
 "Fv" = (
 /turf/open/floor/iron/smooth_half,
+/area/virtual_domain)
+"FE" = (
+/obj/structure/table,
+/obj/item/ammo_box/magazine/lanca{
+	pixel_y = 6;
+	pixel_x = -3
+	},
+/obj/item/ammo_box/magazine/lanca{
+	pixel_y = 2;
+	pixel_x = 3
+	},
+/turf/open/misc/dirt/planet,
 /area/virtual_domain)
 "FN" = (
 /obj/item/ammo_box/c980grenade/shrapnel/phosphor,
@@ -1050,6 +1209,13 @@
 	},
 /turf/open/misc/grass/planet/ancient_milsim,
 /area/virtual_domain)
+"Hp" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/machinery/door/poddoor{
+	id = "cin_armory"
+	},
+/turf/open/misc/dirt/planet,
+/area/virtual_domain)
 "Hq" = (
 /obj/structure/flora/tree/jungle/small/style_random,
 /turf/open/misc/grass/planet/ancient_milsim,
@@ -1072,6 +1238,10 @@
 /obj/structure/toilet,
 /obj/machinery/light/small/dim/directional/north,
 /obj/effect/mob_spawn/ghost_role/human/ancient_milsim,
+/turf/open/floor/iron,
+/area/virtual_domain)
+"Im" = (
+/obj/item/storage/medkit/frontier/stocked,
 /turf/open/floor/iron,
 /area/virtual_domain)
 "Ir" = (
@@ -1139,6 +1309,14 @@
 	dir = 4
 	},
 /area/virtual_domain)
+"Li" = (
+/obj/item/clothing/head/utility/welding,
+/obj/item/weldingtool/electric/arc_welder{
+	pixel_y = 7;
+	pixel_x = 7
+	},
+/turf/open/misc/dirt/planet,
+/area/virtual_domain)
 "Lr" = (
 /turf/open/floor/iron/white,
 /area/virtual_domain)
@@ -1198,6 +1376,36 @@
 /obj/structure/table,
 /turf/open/floor/iron,
 /area/virtual_domain)
+"NC" = (
+/obj/effect/decal/cleanable/blood/splatter{
+	pixel_x = -6;
+	pixel_y = 7
+	},
+/obj/item/grenade/smokebomb{
+	pixel_x = 1;
+	pixel_y = -1
+	},
+/obj/item/grenade/smokebomb{
+	pixel_x = -9
+	},
+/obj/item/grenade/smokebomb{
+	pixel_y = -3;
+	pixel_x = -5
+	},
+/obj/item/grenade/smokebomb{
+	pixel_y = -4;
+	pixel_x = 6
+	},
+/obj/item/grenade/smokebomb{
+	pixel_y = -7;
+	pixel_x = 12
+	},
+/turf/open/misc/dirt/planet,
+/area/virtual_domain)
+"Ou" = (
+/obj/item/storage/medkit/frontier/stocked,
+/turf/open/floor/plating,
+/area/virtual_domain)
 "OA" = (
 /obj/machinery/sleeper/self_control,
 /obj/machinery/light/cold/directional/north,
@@ -1238,6 +1446,10 @@
 /obj/machinery/light/directional/west,
 /obj/structure/sign/poster/random/directional/west,
 /turf/open/floor/iron,
+/area/virtual_domain)
+"PF" = (
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg,
+/turf/open/misc/dirt/planet,
 /area/virtual_domain)
 "PJ" = (
 /obj/structure/flippedtable,
@@ -1300,6 +1512,15 @@
 	dir = 4
 	},
 /turf/open/floor/iron/white,
+/area/virtual_domain)
+"RH" = (
+/obj/structure/table,
+/obj/item/gun/ballistic/revolver/nagant,
+/obj/item/reagent_containers/hypospray/medipen/deforest/lipital{
+	pixel_x = 3;
+	pixel_y = 9
+	},
+/turf/open/misc/dirt/planet,
 /area/virtual_domain)
 "RP" = (
 /obj/effect/mapping_helpers/broken_floor,
@@ -1369,6 +1590,18 @@
 	},
 /turf/open/misc/grass/planet/ancient_milsim,
 /area/virtual_domain)
+"Ub" = (
+/obj/effect/decal/cleanable/blood/gibs{
+	pixel_y = 8;
+	pixel_x = -16
+	},
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood{
+	pixel_x = -15;
+	pixel_y = -5
+	},
+/turf/open/misc/dirt/planet,
+/area/virtual_domain)
 "Ue" = (
 /obj/structure/closet/crate/cardboard,
 /obj/item/stack/sheet/mineral/sandbags/fifty,
@@ -1377,6 +1610,10 @@
 "Ug" = (
 /obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating,
+/area/virtual_domain)
+"Up" = (
+/obj/item/mecha_parts/mecha_equipment/armor/antiproj_armor_booster,
+/turf/open/misc/grass/planet/ancient_milsim,
 /area/virtual_domain)
 "Ux" = (
 /obj/structure/closet/crate/trashcart/filled,
@@ -1426,6 +1663,11 @@
 	dir = 1
 	},
 /area/virtual_domain)
+"VQ" = (
+/obj/structure/extinguisher_cabinet/directional/west,
+/obj/item/stock_parts/scanning_module,
+/turf/open/floor/iron,
+/area/virtual_domain)
 "VX" = (
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/item/storage/backpack/duffelbag/syndie/c4,
@@ -1469,6 +1711,10 @@
 /obj/item/storage/medkit/expeditionary,
 /turf/open/floor/iron,
 /area/virtual_domain)
+"XE" = (
+/obj/item/autosurgeon/syndicate/anti_stun,
+/turf/open/misc/dirt/planet,
+/area/virtual_domain)
 "XK" = (
 /obj/effect/spawner/random/trash/bin,
 /obj/structure/sign/poster/random/directional/north,
@@ -1493,6 +1739,17 @@
 /obj/structure/sign/poster/random/directional/south,
 /turf/open/floor/iron,
 /area/virtual_domain)
+"Yn" = (
+/obj/item/stock_parts/cell/self_charge,
+/turf/closed/mineral/ash_rock,
+/area/virtual_domain)
+"Yw" = (
+/obj/item/ammo_box/magazine/wylom{
+	pixel_y = -7;
+	pixel_x = 3
+	},
+/turf/open/floor/iron,
+/area/virtual_domain)
 "Yx" = (
 /obj/structure/sign/departments/science/directional/north,
 /obj/structure/sign/flag/nri/directional/north,
@@ -1500,6 +1757,10 @@
 /area/virtual_domain)
 "YY" = (
 /turf/open/floor/iron,
+/area/virtual_domain)
+"YZ" = (
+/obj/item/storage/toolbox/mechanical,
+/turf/open/misc/dirt/planet,
 /area/virtual_domain)
 "Zd" = (
 /obj/structure/chair/sofa/corp/right{
@@ -1510,6 +1771,22 @@
 "Zg" = (
 /obj/structure/sign/poster/random/directional/west,
 /turf/open/floor/iron,
+/area/virtual_domain)
+"Zp" = (
+/obj/effect/decal/cleanable/blood/gibs/up{
+	pixel_y = 14
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	pixel_y = 11
+	},
+/turf/open/misc/dirt/planet,
+/area/virtual_domain)
+"Zr" = (
+/obj/item/mecha_parts/mecha_equipment/air_tank/full{
+	pixel_x = -9;
+	pixel_y = -8
+	},
+/turf/open/misc/dirt/planet,
 /area/virtual_domain)
 "ZA" = (
 /obj/effect/landmark/bitrunning/mob_segment,
@@ -1737,7 +2014,7 @@ nw
 mZ
 mZ
 AE
-ea
+VQ
 YY
 AE
 dd
@@ -1768,7 +2045,7 @@ qn
 JG
 qn
 qn
-qn
+fG
 bM
 Cd
 Cd
@@ -1885,7 +2162,7 @@ qn
 qn
 qn
 Cd
-qn
+PF
 qn
 Mv
 Mv
@@ -1920,7 +2197,7 @@ Mg
 Mg
 Mg
 Mg
-Mg
+hs
 Mg
 Mg
 Mg
@@ -1977,10 +2254,10 @@ Mg
 Mg
 Mg
 Mg
-Mg
-Mg
-Mg
-Mg
+vG
+Zr
+nL
+vP
 Mg
 Mg
 Mg
@@ -2008,7 +2285,7 @@ ki
 RP
 RP
 EB
-RP
+nP
 ki
 no
 Cd
@@ -2032,13 +2309,13 @@ YY
 kX
 kX
 dd
-qn
-qn
-Mg
-Mg
-Mg
-Mg
-Mg
+dd
+dd
+dd
+Li
+YZ
+zo
+FE
 Mg
 Mg
 Mg
@@ -2057,13 +2334,13 @@ qn
 qn
 qn
 qn
-qn
+fG
 qn
 qn
 Cd
 Eh
 FT
-qn
+XE
 qn
 Mv
 RZ
@@ -2092,11 +2369,11 @@ kX
 kX
 kX
 sD
-Mg
-Mg
-Mg
-Mg
-Mg
+eF
+EN
+Zp
+jM
+RH
 Mg
 Mg
 Mg
@@ -2148,11 +2425,11 @@ YY
 Wh
 dd
 kX
-qn
-qn
-Mg
-Mg
-Mg
+rL
+dY
+Hp
+Ub
+NC
 Mg
 Mg
 Mg
@@ -2199,7 +2476,7 @@ kX
 kX
 kX
 kX
-kX
+Ou
 kX
 kX
 YY
@@ -2321,7 +2598,7 @@ YY
 YY
 YY
 dd
-kX
+Ci
 kX
 kX
 kX
@@ -2499,7 +2776,7 @@ lz
 YY
 DW
 YY
-jc
+vv
 YY
 hJ
 bw
@@ -2558,8 +2835,8 @@ YY
 yt
 yt
 UD
-YY
-jc
+Yw
+cy
 Wh
 dd
 qn
@@ -2615,8 +2892,8 @@ dd
 JM
 sV
 nM
-YY
-YY
+Im
+qz
 YY
 lt
 dd
@@ -2660,10 +2937,10 @@ dd
 Ib
 Wq
 YY
-YY
+Im
 iI
 dd
-YY
+gM
 YY
 Bd
 NA
@@ -2673,10 +2950,10 @@ dd
 Dk
 YY
 yt
-jc
+em
 YY
 jc
-iW
+cM
 dd
 kX
 kX
@@ -2707,7 +2984,7 @@ JG
 Cd
 Cd
 Cd
-Cd
+Up
 Cd
 Cd
 Cd
@@ -2773,7 +3050,7 @@ Cd
 Cd
 Cd
 dd
-ne
+ab
 Wq
 YY
 YY
@@ -2893,9 +3170,9 @@ ne
 Wq
 Sh
 Sh
-iI
+kl
 dd
-jc
+ra
 te
 TE
 TE
@@ -3015,8 +3292,8 @@ Mg
 Mg
 Mg
 Mg
-Mg
-Mg
+Yn
+Yn
 Mg
 dd
 kX
