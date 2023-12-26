@@ -197,6 +197,12 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
 /area/virtual_domain)
+"eU" = (
+/obj/machinery/button/door/directional/north{
+	id = "cin_armory"
+	},
+/turf/open/floor/plating,
+/area/virtual_domain)
 "fk" = (
 /obj/machinery/light/floor,
 /turf/open/floor/plating,
@@ -216,8 +222,15 @@
 /turf/open/misc/grass/planet/ancient_milsim,
 /area/virtual_domain)
 "fG" = (
-/obj/item/mecha_ammo/lmg,
-/turf/open/misc/dirt/planet,
+/obj/item/ammo_casing/shotgun/frag12{
+	pixel_y = -5;
+	pixel_x = -19
+	},
+/obj/item/ammo_casing/shotgun/frag12{
+	pixel_y = -17;
+	pixel_x = 12
+	},
+/turf/open/floor/iron,
 /area/virtual_domain)
 "gb" = (
 /obj/item/keycard/yellow,
@@ -230,9 +243,6 @@
 /area/virtual_domain)
 "gM" = (
 /obj/item/stock_parts/servo/nano,
-/obj/machinery/button/door/directional/north{
-	id = "cin_armory"
-	},
 /turf/open/floor/iron,
 /area/virtual_domain)
 "hj" = (
@@ -320,6 +330,9 @@
 /area/virtual_domain)
 "jc" = (
 /obj/structure/table,
+/obj/item/knife{
+	pixel_x = 10
+	},
 /turf/open/floor/iron,
 /area/virtual_domain)
 "jM" = (
@@ -448,7 +461,6 @@
 /obj/structure/toilet,
 /obj/machinery/light/small/dim/directional/north,
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/flashbang,
-/obj/item/mecha_ammo/flashbang,
 /turf/open/floor/iron,
 /area/virtual_domain)
 "no" = (
@@ -666,6 +678,14 @@
 	},
 /turf/open/floor/plating,
 /area/virtual_domain)
+"tv" = (
+/obj/structure/chair/stool/bar/directional/south,
+/obj/item/stock_parts/cell/self_charge{
+	pixel_y = 7;
+	pixel_x = -9
+	},
+/turf/open/floor/iron,
+/area/virtual_domain)
 "tA" = (
 /obj/item/surgery_tray/full/deployed,
 /turf/open/floor/iron/white,
@@ -877,6 +897,10 @@
 "zf" = (
 /obj/effect/spawner/random/trash/bucket,
 /turf/open/floor/iron,
+/area/virtual_domain)
+"zh" = (
+/obj/item/mecha_parts/mecha_equipment/weapon/energy/tesla,
+/turf/open/misc/grass/planet/ancient_milsim,
 /area/virtual_domain)
 "zo" = (
 /obj/item/flashlight/lantern{
@@ -1342,6 +1366,9 @@
 /area/virtual_domain)
 "My" = (
 /obj/structure/table,
+/obj/item/gun/energy/ionrifle/carbine{
+	pixel_y = 7
+	},
 /turf/open/floor/iron/dark,
 /area/virtual_domain)
 "Mz" = (
@@ -1448,8 +1475,11 @@
 /turf/open/floor/iron,
 /area/virtual_domain)
 "PF" = (
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg,
-/turf/open/misc/dirt/planet,
+/obj/item/mecha_parts/mecha_equipment/extinguisher{
+	pixel_y = -7;
+	pixel_x = -8
+	},
+/turf/open/misc/grass/planet/ancient_milsim,
 /area/virtual_domain)
 "PJ" = (
 /obj/structure/flippedtable,
@@ -1612,7 +1642,7 @@
 /turf/open/floor/plating,
 /area/virtual_domain)
 "Up" = (
-/obj/item/mecha_parts/mecha_equipment/armor/antiproj_armor_booster,
+/obj/item/mecha_parts/mecha_equipment/armor/anticcw_armor_booster,
 /turf/open/misc/grass/planet/ancient_milsim,
 /area/virtual_domain)
 "Ux" = (
@@ -2045,7 +2075,7 @@ qn
 JG
 qn
 qn
-fG
+qn
 bM
 Cd
 Cd
@@ -2162,7 +2192,7 @@ qn
 qn
 qn
 Cd
-PF
+qn
 qn
 Mv
 Mv
@@ -2219,7 +2249,7 @@ qn
 qn
 qn
 qn
-Cd
+zh
 Cd
 bM
 Eh
@@ -2334,7 +2364,7 @@ qn
 qn
 qn
 qn
-fG
+qn
 qn
 qn
 Cd
@@ -2424,7 +2454,7 @@ kX
 YY
 Wh
 dd
-kX
+eU
 rL
 dY
 Hp
@@ -2818,7 +2848,7 @@ Hq
 hj
 hj
 rB
-YY
+fG
 cF
 tg
 YY
@@ -2942,7 +2972,7 @@ iI
 dd
 gM
 YY
-Bd
+tv
 NA
 Zg
 OS
@@ -3026,7 +3056,7 @@ JG
 qn
 Cs
 cb
-Cd
+PF
 Cd
 Cd
 Cd
