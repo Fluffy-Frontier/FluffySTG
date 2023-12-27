@@ -155,7 +155,13 @@ export const Rules = (props) => {
       return (
         <Stack vertical>
           <Stack.Item bold>Special Rules:</Stack.Item>
-          <Stack.Item>{<a>Dont be an asshole.</a>}</Stack.Item>
+          <Stack.Item>
+            {
+              <a href="https://wiki.skyrat13.com/index.php/Antagonist_Policy#Clockcult_(OPFOR)">
+                Special Rules and Metaprotections!
+              </a>
+            }
+          </Stack.Item>
         </Stack>
       );
     case 'AssaultOps':
