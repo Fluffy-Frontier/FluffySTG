@@ -19,15 +19,24 @@ handles linking back and forth.
 	var/allow_standalone
 	///Local size of container when silo = null
 	var/local_size = INFINITY
-	///Flags used when converting inserted materials into their component materials.
+	///Flags used for the local material container(exceptions for item insert & intent flags)
 	var/mat_container_flags = NONE
+	///List of signals to hook onto the local container
+	var/list/mat_container_signals
 
-/datum/component/remote_materials/Initialize(mapload, allow_standalone = TRUE, force_connect = FALSE, mat_container_flags = NONE)
+/datum/component/remote_materials/Initialize(
+	mapload,
+	allow_standalone = TRUE,
+	force_connect = FALSE,
+	mat_container_flags = NONE,
+	list/mat_container_signals = null
+)
 	if (!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
 
 	src.allow_standalone = allow_standalone
 	src.mat_container_flags = mat_container_flags
+	src.mat_container_signals = mat_container_signals
 
 	RegisterSignal(parent, COMSIG_ATOM_TOOL_ACT(TOOL_MULTITOOL), PROC_REF(OnMultitool))
 
@@ -50,6 +59,8 @@ handles linking back and forth.
  * only if allow_standalone = TRUE, else you a null mat_container
  */
 /datum/component/remote_materials/proc/_PrepareStorage(connect_to_silo)
+	PRIVATE_PROC(TRUE)
+
 	if (connect_to_silo)
 		silo = GLOB.ore_silo_default
 		if (silo)
@@ -68,6 +79,8 @@ handles linking back and forth.
 	return ..()
 
 /datum/component/remote_materials/proc/_MakeLocal()
+	PRIVATE_PROC(TRUE)
+
 	silo = null
 
 	var/static/list/allowed_mats = list(
@@ -89,6 +102,7 @@ handles linking back and forth.
 		allowed_mats, \
 		local_size, \
 		mat_container_flags, \
+		container_signals = mat_container_signals, \
 		allowed_items = /obj/item/stack \
 	)
 
@@ -254,3 +268,19 @@ handles linking back and forth.
 		drop_target = movable_parent.drop_location()
 
 	return mat_container.retrieve_sheets(eject_amount, material_ref, target = drop_target, context = parent)
+<<<<<<< HEAD
+=======
+
+/**
+ * Insert an item into the mat container, helper proc to insert items with the correct context
+ *
+ * Arguments
+ * * obj/item/weapon - the item you are trying to insert
+ * * multiplier - the multiplier applied on the materials consumed
+ */
+/datum/component/remote_materials/proc/insert_item(obj/item/weapon, multiplier = 1)
+	if(!_can_use_resource(FALSE))
+		return MATERIAL_INSERT_ITEM_FAILURE
+
+	return mat_container.insert_item(weapon, multiplier, parent)
+>>>>>>> 99bf83f35 ([MIRROR] Fixes for mat container & ORM [MDB IGNORE] (#25885))
