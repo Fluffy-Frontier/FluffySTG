@@ -56,24 +56,24 @@
 /datum/greyscale_config/nabber
 	name = "Nabber clothing"
 	icon_file = 'tff_modular/modules/nabbers/icons/nabber_fallbacks.dmi'
-	json_config = 'modular_skyrat/modules/GAGS/json_configs/nabber_fallbacks/uniform.json'
+	json_config = 'modular_nova/modules/GAGS/json_configs/nabber_fallbacks/uniform.json'
 
 /datum/greyscale_config/nabber/cloak
 	name = "Nabber Poncho"
-	json_config = 'modular_skyrat/modules/GAGS/json_configs/nabber_fallbacks/neck.json'
+	json_config = 'modular_nova/modules/GAGS/json_configs/nabber_fallbacks/neck.json'
 
 /datum/greyscale_config/nabber/tie
 	name = "Nabber Tie"
-	json_config = 'modular_skyrat/modules/GAGS/json_configs/nabber_fallbacks/neck.json'
+	json_config = 'modular_nova/modules/GAGS/json_configs/nabber_fallbacks/neck.json'
 
 /datum/greyscale_config/nabber/scarf
 	name = "Nabber Scarf"
-	json_config = 'modular_skyrat/modules/GAGS/json_configs/nabber_fallbacks/neck.json'
+	json_config = 'modular_nova/modules/GAGS/json_configs/nabber_fallbacks/neck.json'
 
 /datum/greyscale_config/nabber/gloves
 	name = "Nabber Gloves"
-	json_config = 'modular_skyrat/modules/GAGS/json_configs/nabber_fallbacks/gloves.json'
+	json_config = 'modular_nova/modules/GAGS/json_configs/nabber_fallbacks/gloves.json'
 
 /datum/greyscale_config/nabber/belt
 	name = "Nabber Belt"
-	json_config = 'modular_skyrat/modules/GAGS/json_configs/nabber_fallbacks/belt.json'
+	json_config = 'modular_nova/modules/GAGS/json_configs/nabber_fallbacks/belt.json'
