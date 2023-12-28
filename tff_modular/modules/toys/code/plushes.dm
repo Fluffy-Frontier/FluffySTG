@@ -10,7 +10,7 @@
 	icon_state = "plush_braiden"
 	attack_verb_continuous = list("pokes", "hugs", "cuddles against", "attacks")
 	attack_verb_simple = list("poke", "hug", "cuddle against", "attack")
-	squeak_override = list('modular_skyrat/modules/emotes/sound/emotes/blush.ogg' = 1)
+	squeak_override = list('modular_nova/modules/emotes/sound/emotes/blush.ogg' = 1)
 
 /obj/item/toy/plush/tff/cara
 	name = "Cara plushie"
@@ -42,7 +42,7 @@
 	icon_state = "plush_nataly"
 	attack_verb_continuous = list("meows at", "nuzzles against", "noms", "hugs")
 	attack_verb_simple = list("meow at", "nuzzle against", "nom", "hug")
-	squeak_override = list('tff_modular/modules/toys/sounds/nya.ogg' = 1, 'modular_skyrat/modules/emotes/sound/voice/feline_purr.ogg' = 1)
+	squeak_override = list('tff_modular/modules/toys/sounds/nya.ogg' = 1, 'modular_nova/modules/emotes/sound/voice/feline_purr.ogg' = 1)
 
 /obj/item/toy/plush/tff/novelia
 	name = "Novelia plushie"
@@ -74,4 +74,4 @@
 	icon_state = "plush_yulia"
 	attack_verb_continuous = list("attacks", "bites", "gnashes at", "hugs")
 	attack_verb_simple = list("attack", "bite", "gnash at", "hug")
-	squeak_override = list('sound/weapons/bite.ogg' = 1,'modular_skyrat/modules/emotes/sound/voice/feline_purr.ogg' = 1)
+	squeak_override = list('sound/weapons/bite.ogg' = 1,'modular_nova/modules/emotes/sound/voice/feline_purr.ogg' = 1)

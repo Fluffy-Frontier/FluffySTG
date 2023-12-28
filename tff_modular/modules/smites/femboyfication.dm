@@ -41,7 +41,7 @@
 	target.update_mutations_overlay()
 
 	to_chat(target, span_boldnotice("Something is r-r-rya~"))
-	playsound(get_turf(target), 'modular_skyrat/modules/modular_items/lewd_items/sounds/under_moan_f4.ogg', 50, TRUE, -1)
+	playsound(get_turf(target), 'modular_nova/modules/modular_items/lewd_items/sounds/under_moan_f4.ogg', 50, TRUE, -1)
 
 	// Init femboyflavor.
 	var/head = strings("fluffy/femboy_flavor.json", "head")

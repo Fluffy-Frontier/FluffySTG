@@ -31,10 +31,6 @@
 	///This is taken from the same file as the ModPC, so you can use usage_flags to prevent
 	///the program from being used on devices that don't have sprites for it.
 	var/program_open_overlay = null
-	///Boolean on whether the program will appear at the top on PDA menus, or in the app list with everything else.
-	var/header_program = FALSE
-	/// Set to 1 for program to require nonstop NTNet connection to run. If NTNet connection is lost program crashes.
-	var/requires_ntnet = FALSE
 	/// NTNet status, updated every tick by computer running this program. Don't use this for checks if NTNet works, computers do that. Use this for calculations, etc.
 	var/ntnet_status = 1
 	/// Name of the tgui interface. If this is not defined, this will not be available in NTNet.
