@@ -337,9 +337,16 @@
 	var/total_step_added = 0
 	for(var/product in reaction.results)
 		//create the products
+<<<<<<< HEAD
 		step_add = delta_chem_factor * reaction.results[product]
 		//Default handiling
 		holder.add_reagent(product, step_add, null, cached_temp, purity, override_base_ph = TRUE)
+=======
+		step_add = holder.add_reagent(product, delta_chem_factor * reaction.results[product], null, cached_temp, purity, override_base_ph = TRUE)
+		if(!step_add)
+			to_delete = TRUE
+			return
+>>>>>>> 97e515ceb ([MIRROR] [NO GBP] Some reaction & chamber fixes [MDB IGNORE] (#25879))
 
 		//Apply pH changes
 		var/pH_adjust

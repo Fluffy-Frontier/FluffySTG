@@ -145,6 +145,7 @@
 
 	if(machine_stat & NOPOWER)
 		return
+<<<<<<< HEAD
 	if(on)
 		if(beaker?.reagents.total_volume)
 			if(beaker.reagents.is_reacting)//on_reaction_step() handles this
@@ -152,8 +153,22 @@
 			//keep constant with the chemical acclimator please
 			beaker.reagents.adjust_thermal_energy((target_temperature - beaker.reagents.chem_temp) * heater_coefficient * seconds_per_tick * SPECIFIC_HEAT_DEFAULT * beaker.reagents.total_volume)
 			beaker.reagents.handle_reactions()
+=======
+
+	if(beaker.reagents.total_volume)
+		var/randomness = 1
+		if(beaker.reagents.is_reacting) //Give it a little wiggle room since we're actively reacting
+			randomness = rand(8, 11) * 0.1
+
+		//keep constant with the chemical acclimator please
+		beaker.reagents.adjust_thermal_energy((target_temperature - beaker.reagents.chem_temp) * heater_coefficient * seconds_per_tick * SPECIFIC_HEAT_DEFAULT * beaker.reagents.total_volume * randomness)
+		beaker.reagents.handle_reactions()
+>>>>>>> 97e515ceb ([MIRROR] [NO GBP] Some reaction & chamber fixes [MDB IGNORE] (#25879))
 
 			use_power(active_power_usage * seconds_per_tick)
+
+		//show changes to ui immediatly for responsivenes
+		SStgui.update_uis(src)
 
 /obj/machinery/chem_heater/wrench_act(mob/living/user, obj/item/tool)
 	. = ..()
@@ -179,6 +194,7 @@
 		return
 
 	if(beaker)
+<<<<<<< HEAD
 		if(istype(I, /obj/item/reagent_containers/dropper))
 			var/obj/item/reagent_containers/dropper/D = I
 			D.afterattack(beaker, user, 1)
@@ -187,6 +203,19 @@
 			var/obj/item/reagent_containers/syringe/S = I
 			S.afterattack(beaker, user, 1)
 			return
+=======
+		if(istype(held_item, /obj/item/reagent_containers/dropper) || istype(held_item, /obj/item/reagent_containers/syringe))
+			var/obj/item/reagent_containers/injector = held_item
+			injector.afterattack(beaker, user, proximity_flag = TRUE)
+			return TRUE
+
+	if(is_reagent_container(held_item)  && held_item.is_open_container())
+		if(replace_beaker(user, held_item))
+			ui_interact(user)
+		balloon_alert(user, "beaker added!")
+		return TRUE
+
+>>>>>>> 97e515ceb ([MIRROR] [NO GBP] Some reaction & chamber fixes [MDB IGNORE] (#25879))
 	return ..()
 
 /obj/machinery/chem_heater/on_deconstruction()
