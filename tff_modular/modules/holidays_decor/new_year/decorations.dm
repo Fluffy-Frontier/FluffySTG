@@ -7,7 +7,7 @@
 
 /obj/item/decoration/new_year/attack_hand(mob/user)
 	if (isclosedturf(loc) || istype(loc, /obj/structure/window))
-		var/choice = input("Do you want to take \the [src]?") in list("Yes", "Cancel")
+		var/choice = tgui_input_list(user, "Do you want to take \the [src]?", "Taking a decoration" , list("Yes", "Cancel"))
 		if(choice != "Yes" || get_dist(src, user) > 1)
 			return
 	set_light(0)
@@ -39,9 +39,9 @@
 	..()
 	update_garland()
 
-/obj/item/decoration/new_year/garland/AltClick(mob/user)
+/obj/item/decoration/new_year/garland/AltClick(mob/living/user)
 	if(get_dist(src, user) <= 1)
-		change_color()
+		change_color(user)
 
 /obj/item/decoration/new_year/garland/attack_self(mob/user)
 	. = ..()
@@ -56,8 +56,8 @@
 		icon_state = "[icon_state_off]"
 		set_light(0)
 
-/obj/item/decoration/new_year/garland/proc/change_color()
-	var/color = input("What color should we choose?") in light_colors
+/obj/item/decoration/new_year/garland/proc/change_color(mob/living/user)
+	var/color = tgui_input_list(user, "What color should we choose?", "Select lighting color", light_colors)
 	if(color)
 		light_color = light_colors[color]
 		update_garland()
@@ -73,29 +73,28 @@
 	name = "tinsel"
 	desc = "Soft tinsel, pleasant to the touch. Ahhh..."
 	icon_state = "tinsel_green"
-	var/list/variations = list("red", "green", "yellow", "white")
-	var/random = TRUE // random color
-
-/obj/item/decoration/new_year/tinsel/Initialize(mapload)
-	. = ..()
-	if(random)
-		icon_state = "tinsel_[pick(variations)]"
+	unique_reskin = list(
+		"Green" = "tinsel_green",
+		"Red" = "tinsel_red",
+		"Yellow" = "tinsel_yellow",
+		"White" = "tinsel_white",
+	)
 
 /obj/item/decoration/new_year/tinsel/green
 	icon_state = "tinsel_green"
-	random = FALSE
+	unique_reskin = list()
 
 /obj/item/decoration/new_year/tinsel/red
 	icon_state = "tinsel_red"
-	random = FALSE
+	unique_reskin = list()
 
 /obj/item/decoration/new_year/tinsel/yellow
 	icon_state = "tinsel_yellow"
-	random = FALSE
+	unique_reskin = list()
 
 /obj/item/decoration/new_year/tinsel/white
 	icon_state = "tinsel_white"
-	random = FALSE
+	unique_reskin = list()
 
 // Snowflakes
 /obj/item/decoration/new_year/snowflake
