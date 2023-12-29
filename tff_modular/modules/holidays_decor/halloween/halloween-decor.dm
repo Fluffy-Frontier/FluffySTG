@@ -1,8 +1,7 @@
-// Предмет - инициализатор категории. Не должен появится на сервере. Если вдруг появился, пишите в лс delingar
-/obj/item/decoration/
+/obj/item/decoration
 	name = "papier mache"
-	desc = "OOPS! Something went wrong. Report to delingar in Discord."
-	icon = 'tff_modular/modules/halloween-decor/halloween-decor.dmi'
+	desc = "OOPS! Something went wrong. You shouldn't have seen this. Report to our Discord!"
+	icon = 'tff_modular/modules/holidays_decor/halloween/halloween-decor.dmi'
 	icon_state = "debug"
 	inhand_icon_state = null
 	throwforce = 0
