@@ -7,7 +7,7 @@ import {
   KEY_Z,
 } from '../../common/keycodes';
 import { useBackend, useLocalState } from '../backend';
-import { Button, Input, Section, Stack } from '../components';
+import { Autofocus, Button, Input, Section, Stack } from '../components';
 import { Window } from '../layouts';
 import { InputButtons } from './common/InputButtons';
 import { Loader } from './common/Loader';
@@ -195,7 +195,12 @@ const ListDisplay = (props) => {
     props;
 
   return (
+<<<<<<< HEAD
     <Section fill scrollable tabIndex={0}>
+=======
+    <Section fill scrollable>
+      <Autofocus />
+>>>>>>> 80e6cc8c4 ([MIRROR] Makes ListInputModal autofocus [MDB IGNORE] (#25909))
       {filteredItems.map((item, index) => {
         return (
           <Button
