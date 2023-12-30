@@ -431,9 +431,26 @@ To continue set your target temperature to 390K."}
 			ui_interact(usr, null)
 
 
+<<<<<<< HEAD
 ///Moves a type of buffer from the heater to the beaker, or vice versa
 /obj/machinery/chem_heater/proc/move_buffer(buffer_type, volume)
 	if(!beaker)
+=======
+			dispense_volume = target
+			return TRUE
+
+/**
+ * Injects either acid/base buffer into the beaker
+ * Arguments
+ * * datum/reagent/buffer_type - the type of buffer[acid, base] to inject/withdraw
+ * * volume - how much to volume to inject -ve values means withdraw
+ */
+/obj/machinery/chem_heater/proc/move_buffer(datum/reagent/buffer_type, volume)
+	PRIVATE_PROC(TRUE)
+
+	//no beaker
+	if(QDELETED(beaker))
+>>>>>>> e1c7086ca ([MIRROR] [NO GBP] Fixes return values of some chem UI actions. [MDB IGNORE] (#25911))
 		say("No beaker found!")
 		return
 	if(buffer_type == "acid")
