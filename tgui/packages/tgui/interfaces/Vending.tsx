@@ -60,6 +60,7 @@ type UserData = {
 
 type StockItem = {
   name: string;
+  path: string;
   amount: number;
   colorable: boolean;
 };
@@ -222,7 +223,11 @@ const ProductDisplay = (props: {
               key={product.name}
               custom={custom}
               product={product}
+<<<<<<< HEAD
               productStock={stock[product.name]}
+=======
+              productStock={stock[product.path]}
+>>>>>>> 3e0e7c9d3 ([MIRROR] Fixes vendors displaying wrong amounts and wrong options for color customization availability [MDB IGNORE] (#25921))
             />
           ))}
       </Table>

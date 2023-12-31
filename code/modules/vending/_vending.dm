@@ -1208,11 +1208,16 @@
 	for (var/datum/data/vending_product/product_record as anything in product_records + coin_records + hidden_records)
 		var/list/product_data = list(
 			name = product_record.name,
+			path = replacetext(replacetext("[product_record.product_path]", "/obj/item/", ""), "/", "-"),
 			amount = product_record.amount,
 			colorable = product_record.colorable,
 		)
 
+<<<<<<< HEAD
 		.["stock"][product_record.name] = product_data
+=======
+		.["stock"][product_data["path"]] = product_data
+>>>>>>> 3e0e7c9d3 ([MIRROR] Fixes vendors displaying wrong amounts and wrong options for color customization availability [MDB IGNORE] (#25921))
 
 	.["extended_inventory"] = extended_inventory
 
