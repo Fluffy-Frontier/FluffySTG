@@ -1,4 +1,5 @@
 #define BOT_CLEAN_PATH_LIMIT 15
+#define POST_CLEAN_COOLDOWN 5 SECONDS
 
 /datum/ai_controller/basic_controller/bot/cleanbot
 	blackboard = list(
@@ -130,6 +131,7 @@
 
 /datum/ai_behavior/execute_clean/finish_action(datum/ai_controller/controller, succeeded, target_key, targeting_strategy_key, hiding_location_key)
 	. = ..()
+	controller.set_blackboard_key(BB_POST_CLEAN_COOLDOWN, POST_CLEAN_COOLDOWN + world.time)
 	var/atom/target = controller.blackboard[target_key]
 	if(QDELETED(target) || is_type_in_typecache(target, controller.blackboard[BB_HUNTABLE_TRASH]))
 		return
@@ -185,6 +187,16 @@
 		return human_target
 	return null
 
+<<<<<<< HEAD
+=======
+/datum/ai_planning_subtree/find_patrol_beacon/cleanbot
+
+/datum/ai_planning_subtree/find_patrol_beacon/cleanbot/SelectBehaviors(datum/ai_controller/basic_controller/bot/controller, seconds_per_tick)
+	if(controller.blackboard[BB_POST_CLEAN_COOLDOWN] >= world.time)
+		return
+	return ..()
+
+>>>>>>> 24afc641c ([MIRROR] hygeienbots basic bots [MDB IGNORE] (#25923))
 /datum/pet_command/point_targeting/clean
 	command_name = "Clean"
 	command_desc = "Command a cleanbot to clean the mess."
@@ -209,3 +221,4 @@
 	controller.clear_blackboard_key(BB_ACTIVE_PET_COMMAND)
 
 #undef BOT_CLEAN_PATH_LIMIT
+#undef POST_CLEAN_COOLDOWN
