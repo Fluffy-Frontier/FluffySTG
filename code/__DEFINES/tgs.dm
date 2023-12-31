@@ -1,6 +1,10 @@
 // tgstation-server DMAPI
 
+<<<<<<< HEAD
 #define TGS_DMAPI_VERSION "6.7.0"
+=======
+#define TGS_DMAPI_VERSION "7.0.1"
+>>>>>>> a1018119b ([MIRROR] Automatic TGS DMAPI Update [MDB IGNORE] (#25935))
 
 // All functions and datums outside this document are subject to change with any version and should not be relied on.
 
