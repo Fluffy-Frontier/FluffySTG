@@ -1,11 +1,11 @@
 // For any mob that can be ridden
 
-//SKYRAT EDIT START: Human Riding Defines
+//NOVA EDIT START: Human Riding Defines
 #define OVERSIZED_OFFSET 18
 #define OVERSIZED_SIDE_OFFSET 11
 #define REGULAR_OFFSET 6
 #define REGULAR_SIDE_OFFSET 4
-//SKYRAT EDIT END
+//NOVA EDIT END
 /datum/component/riding/creature
 	/// If TRUE, this creature's movements can be controlled by the rider while mounted (as opposed to riding cyborgs and humans, which is passive)
 	var/can_be_driven = TRUE
@@ -32,7 +32,7 @@
 		var/mob/living/simple_animal/simple_parent = parent
 		simple_parent.stop_automated_movement = TRUE
 
-/datum/component/riding/creature/Destroy(force, silent)
+/datum/component/riding/creature/Destroy(force)
 	unequip_buckle_inhands(parent)
 	if(isanimal(parent))
 		var/mob/living/simple_animal/simple_parent = parent
@@ -289,7 +289,7 @@
 
 /datum/component/riding/creature/human/get_offsets(pass_index)
 	var/mob/living/carbon/human/H = parent
-	//SKYRAT EDIT BEGIN - Oversized Overhaul
+	//NOVA EDIT BEGIN - Oversized Overhaul
 	if(H.buckle_lying)
 		return HAS_TRAIT(H, TRAIT_OVERSIZED) ? list(
 				TEXT_NORTH = list(0, OVERSIZED_OFFSET),
@@ -314,7 +314,7 @@
 				TEXT_EAST = list(-REGULAR_OFFSET, REGULAR_SIDE_OFFSET),
 				TEXT_WEST = list(REGULAR_OFFSET, REGULAR_SIDE_OFFSET)
 			)
-	//SKYRAT EDIT END
+	//NOVA EDIT END
 /datum/component/riding/creature/human/force_dismount(mob/living/dismounted_rider)
 	var/atom/movable/AM = parent
 	AM.unbuckle_mob(dismounted_rider)
@@ -464,7 +464,7 @@
 	var/mob/living/basic/mining/goliath/goliath = parent
 	goliath.add_movespeed_modifier(/datum/movespeed_modifier/goliath_mount)
 
-/datum/component/riding/creature/goliath/Destroy(force, silent)
+/datum/component/riding/creature/goliath/Destroy(force)
 	var/mob/living/basic/mining/goliath/goliath = parent
 	goliath.remove_movespeed_modifier(/datum/movespeed_modifier/goliath_mount)
 	return ..()
@@ -527,10 +527,6 @@
 /datum/component/riding/creature/leaper/handle_specials()
 	. = ..()
 	set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(17, 46), TEXT_SOUTH = list(17,51), TEXT_EAST = list(27, 46), TEXT_WEST = list(6, 46)))
-	set_rider_dir_plane(SOUTH, GAME_PLANE_UPPER)
-	set_rider_dir_plane(NORTH, GAME_PLANE)
-	set_rider_dir_plane(EAST, GAME_PLANE_UPPER)
-	set_rider_dir_plane(WEST, GAME_PLANE_UPPER)
 
 /datum/component/riding/creature/leaper/Initialize(mob/living/riding_mob, force = FALSE, ride_check_flags = NONE, potion_boost = FALSE)
 	. = ..()
@@ -550,9 +546,9 @@
 	. = ..()
 	UnregisterSignal(rider,  COMSIG_MOB_POINTED)
 
-//SKYRAT EDIT START: Human Riding Defines
+//NOVA EDIT START: Human Riding Defines
 #undef OVERSIZED_OFFSET
 #undef OVERSIZED_SIDE_OFFSET
 #undef REGULAR_OFFSET
 #undef REGULAR_SIDE_OFFSET
-//SKYRAT EDIT END
+//NOVA EDIT END

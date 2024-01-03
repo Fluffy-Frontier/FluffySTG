@@ -21,6 +21,7 @@
 	var/cooldown_time = 250
 	var/barometer_accuracy // 0 is the best accuracy.
 	var/list/last_gasmix_data
+	var/ranged_scan_distance = 1
 
 /obj/item/analyzer/Initialize(mapload)
 	. = ..()
@@ -131,16 +132,23 @@
 	return list("gasmixes" = last_gasmix_data)
 
 /obj/item/analyzer/attack_self(mob/user, modifiers)
-	if(user.stat != CONSCIOUS || !user.can_read(src)) //SKYRAT EDIT: Blind People Can Analyze Again
+	if(user.stat != CONSCIOUS || !user.can_read(src)) //NOVA EDIT: Blind People Can Analyze Again
 		return
 	atmos_scan(user=user, target=get_turf(src), silent=FALSE)
 	on_analyze(source=src, target=get_turf(src))
 
 /obj/item/analyzer/attack_self_secondary(mob/user, modifiers)
-	if(user.stat != CONSCIOUS || !user.can_read(src)) //SKYRAT EDIT: Blind People Can Analyze Again
+	if(user.stat != CONSCIOUS || !user.can_read(src)) //NOVA EDIT: Blind People Can Analyze Again
 		return
 
 	ui_interact(user)
+
+/obj/item/analyzer/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	if(!can_see(user, target, ranged_scan_distance))
+		return
+	. |= AFTERATTACK_PROCESSED_ITEM
+	atmos_scan(user, (target.return_analyzable_air() ? target : get_turf(target)))
 
 /// Called when our analyzer is used on something
 /obj/item/analyzer/proc/on_analyze(datum/source, atom/target)
@@ -217,10 +225,4 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = SMALL_MATERIAL_AMOUNT, /datum/material/glass = SMALL_MATERIAL_AMOUNT * 0.2, /datum/material/gold = SMALL_MATERIAL_AMOUNT*3, /datum/material/bluespace=SMALL_MATERIAL_AMOUNT*2)
 	grind_results = list(/datum/reagent/mercury = 5, /datum/reagent/iron = 5, /datum/reagent/silicon = 5)
-
-/obj/item/analyzer/ranged/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
-	. = ..()
-	if(!can_see(user, target, 15))
-		return
-	. |= AFTERATTACK_PROCESSED_ITEM
-	atmos_scan(user, (target.return_analyzable_air() ? target : get_turf(target)))
+	ranged_scan_distance = 15

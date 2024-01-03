@@ -108,7 +108,7 @@
 
 /obj/structure/window/singularity_pull(S, current_size)
 	..()
-	if(anchored && current_size >= STAGE_FIVE) //SKYRAT EDIT CHANGE
+	if(anchored && current_size >= STAGE_FIVE) //NOVA EDIT CHANGE
 		set_anchored(FALSE)
 	if(current_size >= STAGE_FIVE)
 		deconstruct(FALSE)
@@ -185,7 +185,7 @@
 /obj/structure/window/attack_paw(mob/user, list/modifiers)
 	return attack_hand(user, modifiers)
 
-/obj/structure/window/attack_generic(mob/user, damage_amount = 0, damage_type = BRUTE, damage_flag = 0, sound_effect = 1) //used by attack_alien, attack_animal, and attack_slime
+/obj/structure/window/attack_generic(mob/user, damage_amount = 0, damage_type = BRUTE, damage_flag = 0, sound_effect = 1) //used by attack_alien, attack_animal
 	if(!can_be_reached(user))
 		return
 	return ..()

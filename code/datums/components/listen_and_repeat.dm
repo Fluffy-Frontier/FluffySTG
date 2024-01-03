@@ -33,7 +33,7 @@
 
 	ADD_TRAIT(parent, TRAIT_SUBTREE_REQUIRED_OPERATIONAL_DATUM, type)
 
-/datum/component/listen_and_repeat/Destroy(force, silent)
+/datum/component/listen_and_repeat/Destroy(force)
 	REMOVE_TRAIT(parent, TRAIT_SUBTREE_REQUIRED_OPERATIONAL_DATUM, type)
 	return ..()
 
@@ -49,11 +49,11 @@
 
 	if(over_radio && prob(RADIO_IGNORE_CHANCE))
 		return
-	//SKYRAT EDIT ADDITION START - parrot commands
+	//NOVA EDIT ADDITION START - parrot commands
 	var/mob/living/basic/parrot/maybe_parrot = parent
 	if(!over_radio && istype(maybe_parrot))
 		maybe_parrot.check_command(message, speaker)
-	// SKYRAT EDIT ADDITION END
+	// NOVA EDIT ADDITION END
 
 	var/number_of_excess_strings = LAZYLEN(speech_buffer) - MAX_SPEECH_BUFFER_SIZE
 	if(number_of_excess_strings > 0) // only remove if we're overfull

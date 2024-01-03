@@ -57,9 +57,9 @@
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
 		"Blue Variant" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/suits/wintercoat.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/suits/wintercoat.dmi',
 			RESKIN_ICON_STATE = "coatsecurity_winter",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/suits/wintercoat.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/suits/wintercoat.dmi',
 			RESKIN_WORN_ICON_STATE = "coatsecurity_winter"
 		),
 		"Red Variant" = list(
@@ -73,9 +73,9 @@
 /obj/item/clothing/head/hooded/winterhood/security
 	unique_reskin = list(
 		"Blue Variant" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/head/winterhood.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/head/winterhood.dmi',
 			RESKIN_ICON_STATE = "winterhood_security",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/head/winterhood.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/head/winterhood.dmi',
 			RESKIN_WORN_ICON_STATE = "winterhood_security"
 		),
 		"Red Variant" = list(

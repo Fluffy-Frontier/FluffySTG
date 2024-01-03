@@ -3,9 +3,9 @@
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
 		"Blue Hud" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/glasses.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/glasses.dmi',
 			RESKIN_ICON_STATE = "security_hud",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/eyes.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/eyes.dmi',
 			RESKIN_WORN_ICON_STATE = "security_hud"
 		),
 		"Red Hud" = list(
@@ -20,9 +20,9 @@
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
 		"Blue Nightvision" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/glasses.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/glasses.dmi',
 			RESKIN_ICON_STATE = "security_hud_nv",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/eyes.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/eyes.dmi',
 			RESKIN_WORN_ICON_STATE = "security_hud_nv"
 		),
 		"Red Nightvision" = list(
@@ -86,9 +86,9 @@
 			RESKIN_WORN_ICON_STATE = "hudpatch"
 		),
 		"Blue Eyepatch" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/glasses.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/glasses.dmi',
 			RESKIN_ICON_STATE = "security_eyepatch",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/eyes.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/eyes.dmi',
 			RESKIN_WORN_ICON_STATE = "security_eyepatch"
 		),
 		"Fake Blindfold" = list(
@@ -101,9 +101,9 @@
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
 		"Blue Gars" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/glasses.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/glasses.dmi',
 			RESKIN_ICON_STATE = "gar_sec",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/eyes.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/eyes.dmi',
 			RESKIN_WORN_ICON_STATE = "gar_sec"
 		),
 		"Red Gars" = list(
@@ -118,9 +118,9 @@
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
 		"Blue Gigagars" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/glasses.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/glasses.dmi',
 			RESKIN_ICON_STATE = "gigagar_sec",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/eyes.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/eyes.dmi',
 			RESKIN_WORN_ICON_STATE = "gigagar_sec"
 		),
 		"Red Gigagars" = list(
@@ -172,9 +172,9 @@
 	uses_advanced_reskins = TRUE//только ради этого, оно в инишилайз уходит
 	unique_reskin = list(
 		"Blue Skirt" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/under/security.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/under/security.dmi',
 			RESKIN_ICON_STATE = "security_skirt",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/under/security.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/under/security.dmi',
 			RESKIN_WORN_ICON_STATE = "security_skirt"
 		),
 		"Red Skirt" = list(
@@ -261,9 +261,9 @@
 			RESKIN_WORN_ICON_STATE = "satchel-security"
 		),
 		"Blue Variant" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/backpacks.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/backpacks.dmi',
 			RESKIN_ICON_STATE = "satchel_security_black",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/back.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/back.dmi',
 			RESKIN_WORN_ICON_STATE = "satchel_security_black"
 		),
 	)
@@ -283,9 +283,9 @@
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
 		"Black Variant" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/head/helmet.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/head/helmet.dmi',
 			RESKIN_ICON_STATE = "security_helmet",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/head/helmet.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/head/helmet.dmi',
 		),
 		"Red Variant" = list(
 			RESKIN_ICON = 'icons/obj/clothing/head/helmet.dmi',
@@ -324,9 +324,9 @@
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
 		"Blue and Black" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/under/security.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/under/security.dmi',
 			RESKIN_ICON_STATE = "warden_black",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/under/security.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/under/security.dmi',
 			RESKIN_WORN_ICON_STATE = "warden_black"
 		),
 		"Red Suit" = list(
@@ -362,9 +362,9 @@
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
 		"Blue Krav Maga" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/gloves.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/gloves.dmi',
 			RESKIN_ICON_STATE = "fightgloves_blue",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/hands.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/hands.dmi',
 			RESKIN_WORN_ICON_STATE = "fightgloves_blue"
 		),
 		"Red Krav Maga" = list(
@@ -391,9 +391,9 @@
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
 		"Blue and Black" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/under/security.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/under/security.dmi',
 			RESKIN_ICON_STATE = "hos_black",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/under/security.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/under/security.dmi',
 			RESKIN_WORN_ICON_STATE = "hos_black"
 		),
 		"Red Suit" = list(
@@ -417,9 +417,9 @@
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
 		"Blue Variant" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/under/security.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/under/security.dmi',
 			RESKIN_ICON_STATE = "hosalt_blue",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/under/security.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/under/security.dmi',
 			RESKIN_WORN_ICON_STATE = "hosalt_blue"
 		),
 		"Red Variant" = list(
@@ -434,9 +434,9 @@
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
 		"Blue Variant" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/under/security.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/under/security.dmi',
 			RESKIN_ICON_STATE = "hosalt_skirt_blue",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/under/security.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/under/security.dmi',
 			RESKIN_WORN_ICON_STATE = "hosalt_skirt_blue"
 		),
 		"Red Variant" = list(
@@ -451,9 +451,9 @@
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
 		"Blue Variant" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/under/security.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/under/security.dmi',
 			RESKIN_ICON_STATE = "hos_parade_male_blue",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/under/security.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/under/security.dmi',
 			RESKIN_WORN_ICON_STATE = "hos_parade_male_blue"
 		),
 		"Red Variant" = list(
@@ -468,9 +468,9 @@
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
 		"Blue Variant" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/under/security.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/under/security.dmi',
 			RESKIN_ICON_STATE = "hos_parade_fem_blue",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/under/security.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/under/security.dmi',
 			RESKIN_WORN_ICON_STATE = "hos_parade_fem_blue"
 		),
 		"Red Variant" = list(
@@ -485,9 +485,9 @@
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
 		"Blue Variant" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/suits.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/suits.dmi',
 			RESKIN_ICON_STATE = "hosformal_blue",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/suit.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/suit.dmi',
 			RESKIN_WORN_ICON_STATE = "hosformal_blue"
 		),
 		"Red Variant" = list(
@@ -502,9 +502,9 @@
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
 		"Blue Variant" = list(
-			RESKIN_ICON = 'modular_skyrat/master_files/icons/obj/clothing/neck.dmi',
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/neck.dmi',
 			RESKIN_ICON_STATE = "hoscloak_blue",
-			RESKIN_WORN_ICON = 'modular_skyrat/master_files/icons/mob/clothing/neck.dmi',
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/neck.dmi',
 			RESKIN_WORN_ICON_STATE = "hoscloak_blue"
 		),
 		"Red Variant" = list(

@@ -13,7 +13,7 @@
 /datum/species/teshari/alt
 	name = "Teshari"
 	id = SPECIES_TESHARI_ALT
-	eyes_icon = 'modular_skyrat/modules/organs/icons/teshari_eyes.dmi'
+	eyes_icon = 'modular_nova/modules/organs/icons/teshari_eyes.dmi'
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,

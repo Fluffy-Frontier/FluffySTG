@@ -50,7 +50,7 @@ GLOBAL_LIST_EMPTY(escape_menus)
 	if (!isnull(ckey))
 		GLOB.escape_menus[ckey] = src
 
-/datum/escape_menu/Destroy(force, ...)
+/datum/escape_menu/Destroy(force)
 	QDEL_NULL(base_holder)
 	QDEL_NULL(page_holder)
 
@@ -80,8 +80,8 @@ GLOBAL_LIST_EMPTY(escape_menus)
 	switch (menu_page)
 		if (PAGE_HOME)
 			show_home_page()
-		//if (PAGE_LEAVE_BODY) //SKYRAT EDIT REMOVAL
-			//show_leave_body_page() //SKYRAT EDIT REMOVAL
+		//if (PAGE_LEAVE_BODY) //NOVA EDIT REMOVAL
+			//show_leave_body_page() //NOVA EDIT REMOVAL
 		else
 			CRASH("Unknown escape menu page: [menu_page]")
 

@@ -17,7 +17,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 29)
 	if(building)
 		opened = TRUE
 		//icon_state = "extinguisher_empty" ORIGINAL
-		icon_state = "extinguisher_empty_open"	//SKYRAT EDIT CHANGE - AESTHETICS
+		icon_state = "extinguisher_empty_open"	//NOVA EDIT CHANGE - AESTHETICS
 	else
 		stored_extinguisher = new /obj/item/extinguisher(src)
 	update_appearance(UPDATE_ICON)
@@ -107,6 +107,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 29)
 		if(!opened)
 			opened = 1
 			playsound(loc, 'sound/machines/click.ogg', 15, TRUE, -3)
+			update_appearance(UPDATE_ICON)
 	else
 		toggle_cabinet(user)
 
@@ -140,7 +141,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 29)
 		opened = !opened
 		update_appearance(UPDATE_ICON)
 
-/* SKYRAT EDIT REMOVAL BEGIN - AESTHETICS - MOVED TO MODULAR.
+/* NOVA EDIT REMOVAL BEGIN - AESTHETICS - MOVED TO MODULAR.
 /obj/structure/extinguisher_cabinet/update_icon_state()
 	icon_state = "extinguisher"
 

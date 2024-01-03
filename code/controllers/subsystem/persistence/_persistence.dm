@@ -20,8 +20,23 @@ SUBSYSTEM_DEF(persistence)
 	var/list/blocked_maps = list()
 	var/list/saved_trophies = list()
 	var/list/picture_logging_information = list()
-	var/list/obj/structure/sign/picture_frame/photo_frames
-	var/list/obj/item/storage/photo_album/photo_albums
+
+	/// A json_database linking to data/photo_frames.json.
+	/// Schema is persistence_id => array of photo names.
+	var/datum/json_database/photo_frames_database
+
+	/// A lazy list of every picture frame that is going to be loaded with persistent photos.
+	/// Will be null'd once the persistence system initializes, and never read from again.
+	var/list/obj/structure/sign/picture_frame/queued_photo_frames
+
+	/// A json_database linking to data/photo_albums.json.
+	/// Schema is persistence_id => array of photo names.
+	var/datum/json_database/photo_albums_database
+
+	/// A lazy list of every photo album that is going to be loaded with persistent photos.
+	/// Will be null'd once the persistence system initializes, and never read from again.
+	var/list/obj/item/storage/photo_album/queued_photo_albums
+
 	var/rounds_since_engine_exploded = 0
 	var/delam_highscore = 0
 	var/tram_hits_this_round = 0
@@ -37,7 +52,7 @@ SUBSYSTEM_DEF(persistence)
 	load_randomized_recipes()
 	load_custom_outfits()
 	load_delamination_counter()
-	load_panic_bunker() //SKYRAT EDIT ADDITION - PANICBUNKER
+	load_panic_bunker() //NOVA EDIT ADDITION - PANICBUNKER
 	load_tram_counter()
 	load_adventures()
 	return SS_INIT_SUCCESS
@@ -48,17 +63,16 @@ SUBSYSTEM_DEF(persistence)
 	save_prisoner_tattoos()
 	collect_trophies()
 	collect_maps()
-	save_photo_persistence() //THIS IS PERSISTENCE, NOT THE LOGGING PORTION.
 	save_randomized_recipes()
 	save_scars()
 	save_custom_outfits()
-	save_modular_persistence() // SKYRAT EDIT ADDITION - MODULAR_PERSISTENCE
+	save_modular_persistence() // NOVA EDIT ADDITION - MODULAR_PERSISTENCE
 	save_delamination_counter()
 	if(SStransport.can_fire)
 		for(var/datum/transport_controller/linear/tram/transport as anything in SStransport.transports_by_type[TRANSPORT_TYPE_TRAM])
 			save_tram_history(transport.specific_transport_id)
 		save_tram_counter()
-	save_panic_bunker() //SKYRAT EDIT ADDITION - PANICBUNKER
+	save_panic_bunker() //NOVA EDIT ADDITION - PANICBUNKER
 
 ///Loads up Poly's speech buffer.
 /datum/controller/subsystem/persistence/proc/load_poly()

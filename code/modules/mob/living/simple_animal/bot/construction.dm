@@ -273,10 +273,10 @@
 	switch(build_step)
 		if(ASSEMBLY_FIRST_STEP)
 			if(istype(W, /obj/item/healthanalyzer))
-				var/obj/item/healthanalyzer/analyzer = W // SKYRAT EDIT ADDITION BEGIN -- EXTRA ROBOTICS HEALTH ANALYZERS
+				var/obj/item/healthanalyzer/analyzer = W // NOVA EDIT ADDITION BEGIN -- EXTRA ROBOTICS HEALTH ANALYZERS
 				if (!analyzer.can_be_used_in_medibot())
 					user?.balloon_alert(user, "no attachment ports!")
-					return // SKYRAT EDIT ADDITION END
+					return // NOVA EDIT ADDITION END
 				if(!user.temporarilyRemoveItemFromInventory(W))
 					return
 				healthanalyzer = W.type
@@ -552,8 +552,8 @@
 				to_chat(user, span_notice("You start to pipe up [src]..."))
 				if(do_after(user, 40, target = src) && D.use(1))
 					to_chat(user, span_notice("You pipe up [src]."))
-					var/mob/living/simple_animal/bot/hygienebot/H = new(drop_location())
-					H.name = created_name
+					var/mob/living/basic/bot/hygienebot/new_bot = new(drop_location())
+					new_bot.name = created_name
 					qdel(src)
 			if(I.tool_behaviour == TOOL_SCREWDRIVER) //deconstruct
 				new /obj/item/assembly/prox_sensor(Tsec)

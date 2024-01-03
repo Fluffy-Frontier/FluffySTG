@@ -16,7 +16,7 @@
 	if(!uplink_flag)
 		uplink_flag = src.uplink_flag
 	src.uplink_handler = uplink_handler
-	RegisterSignal(src, COMSIG_COMPONENT_REMOVING, PROC_REF(_component_removal))
+	RegisterSignal(src, COMSIG_COMPONENT_REMOVING, PROC_REF(on_component_removing))
 
 /obj/item/implant/uplink/implant(mob/living/carbon/target, mob/user, silent, force)
 	. = ..()
@@ -34,26 +34,30 @@
  * generally by admin verbs or var editing. Implant does nothing without
  * the component, so delete itself.
  */
-/obj/item/implant/uplink/proc/_component_removal(datum/source, datum/component/component)
+/obj/item/implant/uplink/proc/on_component_removing(datum/source, datum/component/component)
 	SIGNAL_HANDLER
+
+	if (QDELING(src))
+		return
+
 	if(istype(component, /datum/component/uplink))
 		qdel(src)
 
 /obj/item/implanter/uplink
-	name = "implanter" // Skyrat edit , original was implanter (uplink)
+	name = "implanter" // NOVA EDIT , original was implanter (uplink)
 	imp_type = /obj/item/implant/uplink
-	special_desc_requirement = EXAMINE_CHECK_SYNDICATE // Skyrat edit
-	special_desc = "A Syndicate implanter for an uplink" // Skyrat edit
+	special_desc_requirement = EXAMINE_CHECK_SYNDICATE // NOVA EDIT
+	special_desc = "A Syndicate implanter for an uplink" // NOVA EDIT
 
 /obj/item/implanter/uplink/Initialize(mapload, uplink_handler)
 	imp = new imp_type(src, uplink_handler)
 	return ..()
 
 /obj/item/implanter/uplink/precharged
-	name = "implanter" // Skyrat edit , original was implanter (precharged uplink)
+	name = "implanter" // NOVA EDIT , original was implanter (precharged uplink)
 	imp_type = /obj/item/implant/uplink/precharged
-	special_desc_requirement = EXAMINE_CHECK_SYNDICATE // Skyrat edit
-	special_desc = "A Syndicate implanter for a precharged uplink" // Skyrat edit
+	special_desc_requirement = EXAMINE_CHECK_SYNDICATE // NOVA EDIT
+	special_desc = "A Syndicate implanter for a precharged uplink" // NOVA EDIT
 
 /obj/item/implant/uplink/precharged
 	starting_tc = TELECRYSTALS_PRELOADED_IMPLANT

@@ -25,6 +25,7 @@
 
 	additional_access = /datum/id_trim/job/paramedic
 	announcement_type = /datum/action/cooldown/bot_announcement/medbot
+	path_image_color = "#d9d9f4"
 
 	///anouncements when we find a target to heal
 	var/static/list/wait_announcements = list(
@@ -146,8 +147,10 @@
 	)
 
 	RegisterSignal(src, COMSIG_HOSTILE_PRE_ATTACKINGTARGET, PROC_REF(pre_attack))
+
 	if(!HAS_TRAIT(SSstation, STATION_TRAIT_MEDBOT_MANIA) || !mapload || !is_station_level(z))
-		return
+		return INITIALIZE_HINT_LATELOAD
+
 	skin = "advanced"
 	update_appearance(UPDATE_OVERLAYS)
 	damage_type_healer = HEAL_ALL_DAMAGE
@@ -315,12 +318,12 @@
 		return
 	if(!iscarbon(target))
 		return
-	// SKYRAT EDIT ADDITION START - Skip trying to heal synths
+	// NOVA EDIT ADDITION START - Skip trying to heal synths
 	if(ishuman(target))
 		var/mob/living/carbon/human/human_target = target
 		if(human_target.mob_biotypes & MOB_ROBOTIC)
 			return
-	// SKYRAT EDIT ADDITION END
+	// NOVA EDIT ADDITION END
 	INVOKE_ASYNC(src, PROC_REF(medicate_patient), target)
 	return COMPONENT_HOSTILE_NO_ATTACK
 
@@ -334,7 +337,7 @@
 
 	update_bot_mode(new_mode = BOT_HEALING, update_hud = FALSE)
 	patient.visible_message("[src] is trying to tend the wounds of [patient]", span_userdanger("[src] is trying to tend your wounds!"))
-	if(!do_after(src, delay = 10 SECONDS, target = patient, interaction_key = TEND_DAMAGE_INTERACTION)) //SKYRAT EDIT CHANGE : Increased time as tradeoff for automated healing. ORIGINAL: if(!do_after(src, delay = 0.5 SECONDS, target = patient, interaction_key = TEND_DAMAGE_INTERACTION))
+	if(!do_after(src, delay = 10 SECONDS, target = patient, interaction_key = TEND_DAMAGE_INTERACTION)) //NOVA EDIT CHANGE : Increased time as tradeoff for automated healing. ORIGINAL: if(!do_after(src, delay = 0.5 SECONDS, target = patient, interaction_key = TEND_DAMAGE_INTERACTION))
 		update_bot_mode(new_mode = BOT_IDLE)
 		return
 	var/modified_heal_amount = heal_amount

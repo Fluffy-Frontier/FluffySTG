@@ -39,7 +39,7 @@
 	desc = "Based on decommissioned Self-Actualization Device, this thing built to fight with diffirent types of activism among the crew on the station. \n\
 	\n\
 	ON FAIL WILL CAUSE SEVERE MENTAL SUFFERING!"
-	icon = 'modular_skyrat/modules/self_actualization_device/icons/self_actualization_device.dmi'
+	icon = 'modular_nova/modules/self_actualization_device/icons/self_actualization_device.dmi'
 	icon_state = "sad_open"
 	circuit = /obj/item/circuitboard/machine/custom_rev_deconvert_device
 	state_open = FALSE
@@ -186,11 +186,11 @@
 		occupant_mob.adjust_jitter_up_to(3 MINUTES, 6 MINUTES)
 		occupant_mob.adjust_hallucinations_up_to(4 MINUTES, 8 MINUTES)
 		occupant_mob.add_mood_event("deconvert_fail", /datum/mood_event/custom_rev_deconvert_fail)
-	
+
 	qdel(sec_radio)
 
 	// КОНЕЦ КОДА ДЕКОНВЕРТАЦИИ.
-	
+
 	open_machine()
 	playsound(src, 'sound/machines/microwave/microwave-end.ogg', 100, FALSE)
 

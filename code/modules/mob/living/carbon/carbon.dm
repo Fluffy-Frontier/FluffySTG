@@ -50,7 +50,8 @@
 	var/hurt = TRUE
 	var/extra_speed = 0
 	var/oof_noise = FALSE //We smacked something with denisty, so play a noise
-	if(throwingdatum.thrower != src)
+	var/mob/thrower = throwingdatum?.get_thrower()
+	if(thrower != src)
 		extra_speed = min(max(0, throwingdatum.speed - initial(throw_speed)), CARBON_MAX_IMPACT_SPEED_BONUS)
 
 	if(istype(throwingdatum))
@@ -137,6 +138,7 @@
 	if(prob(0.5))
 		verb_text = "yeet"
 	var/neckgrab_throw = FALSE // we can't check for if it's a neckgrab throw when totaling up power_throw since we've already stopped pulling them by then, so get it early
+	var/frequency_number = 1 //We assign a default frequency number for the sound of the throw.
 	if(!held_item)
 		if(pulling && isliving(pulling) && grab_state >= GRAB_AGGRESSIVE)
 			var/mob/living/throwable_mob = pulling
@@ -164,23 +166,34 @@
 		power_throw--
 	if(HAS_TRAIT(thrown_thing, TRAIT_DWARF))
 		power_throw++
-	//SKYRAT EDIT ADDITION
+	//NOVA EDIT ADDITION
 	if(HAS_TRAIT(src, TRAIT_OVERSIZED))
 		power_throw++
 	if(HAS_TRAIT(thrown_thing, TRAIT_OVERSIZED))
 		power_throw--
-	//SKYRAT EDIT END
+	//NOVA EDIT END
 	if(neckgrab_throw)
 		power_throw++
 	if(isitem(thrown_thing))
 		var/obj/item/thrown_item = thrown_thing
+		frequency_number = 1-(thrown_item.w_class-3)/8 //At normal weight, the frequency is at 1. For tiny, it is 1.25. For huge, it is 0.75.
 		if(thrown_item.throw_verb)
 			verb_text = thrown_item.throw_verb
-	do_attack_animation(target, no_effect = 1) //SKYRAT EDIT ADDITION - AESTHETICS
-	playsound(loc, 'sound/weapons/punchmiss.ogg', 50, TRUE, -1) //SKYRAT EDIT ADDITION - AESTHETICS
-	visible_message(span_danger("[src] [verb_text][plural_s(verb_text)] [thrown_thing][power_throw ? " really hard!" : "."]"), \
-					span_danger("You [verb_text] [thrown_thing][power_throw ? " really hard!" : "."]"))
-	log_message("has thrown [thrown_thing] [power_throw > 0 ? "really hard" : ""]", LOG_ATTACK)
+	do_attack_animation(target, no_effect = 1)
+	var/sound/throwsound = 'sound/weapons/throw.ogg'
+	var/power_throw_text = "."
+	if(power_throw > 0) //If we have anything that boosts our throw power like hulk, we use the rougher heavier variant.
+		throwsound = 'sound/weapons/throwhard.ogg'
+		power_throw_text = " really hard!"
+	if(power_throw < 0) //if we have anything that weakens our throw power like dward, we use a slower variant.
+		throwsound = 'sound/weapons/throwsoft.ogg'
+		power_throw_text = " flimsily."
+	frequency_number = frequency_number + (rand(-5,5)/100); //Adds a bit of randomness in the frequency to not sound exactly the same.
+	//The volume of the sound takes the minimum between the distance thrown or the max range an item, but no more than 50. Short throws are quieter. A fast throwing speed also makes the noise sharper.
+	playsound(src, throwsound, min(8*min(get_dist(loc,target),thrown_thing.throw_range), 50), vary = TRUE, extrarange = -1, frequency = frequency_number)
+	visible_message(span_danger("[src] [verb_text][plural_s(verb_text)] [thrown_thing][power_throw_text]"), \
+					span_danger("You [verb_text] [thrown_thing][power_throw_text]"))
+	log_message("has thrown [thrown_thing] [power_throw_text]", LOG_ATTACK)
 	var/extra_throw_range = HAS_TRAIT(src, TRAIT_THROWINGARM) ? 2 : 0
 	newtonian_move(get_dir(target, src))
 	thrown_thing.safe_throw_at(target, thrown_thing.throw_range + extra_throw_range, max(1,thrown_thing.throw_speed + power_throw), src, null, null, null, move_force)
@@ -920,18 +933,18 @@
 /mob/living/carbon/can_be_revived()
 	if(!get_organ_by_type(/obj/item/organ/internal/brain) && (!mind || !mind.has_antag_datum(/datum/antagonist/changeling)) || HAS_TRAIT(src, TRAIT_HUSK))
 		return FALSE
-//SKYRAT EDIT ADDITION - DNR TRAIT
+//NOVA EDIT ADDITION - DNR TRAIT
 	if(HAS_TRAIT(src, TRAIT_DNR))
 		return FALSE
-//SKYRAT EDIT ADDITION END - DNR TRAIT
+//NOVA EDIT ADDITION END - DNR TRAIT
 
 	return ..()
 
 /mob/living/carbon/proc/can_defib()
-//SKYRAT EDIT ADDITION - DNR TRAIT
+//NOVA EDIT ADDITION - DNR TRAIT
 	if(HAS_TRAIT(src, TRAIT_DNR)) //This is also added when a ghost DNR's!
 		return DEFIB_FAIL_DNR
-//SKYRAT EDIT ADDITION END - DNR TRAIT
+//NOVA EDIT ADDITION END - DNR TRAIT
 	if (HAS_TRAIT(src, TRAIT_SUICIDED))
 		return DEFIB_FAIL_SUICIDE
 
@@ -971,7 +984,7 @@
 	return DEFIB_POSSIBLE
 
 /mob/living/carbon/proc/can_defib_client()
-	return (client || get_ghost(FALSE, FALSE)) && (can_defib() & DEFIB_REVIVABLE_STATES) // SKYRAT EDIT - ORIGINAL: return (client || get_ghost(FALSE, TRUE)) && (can_defib() & DEFIB_REVIVABLE_STATES)
+	return (client || get_ghost(FALSE, FALSE)) && (can_defib() & DEFIB_REVIVABLE_STATES) // NOVA EDIT - ORIGINAL: return (client || get_ghost(FALSE, TRUE)) && (can_defib() & DEFIB_REVIVABLE_STATES)
 
 /mob/living/carbon/harvest(mob/living/user)
 	if(QDELETED(src))
@@ -1335,14 +1348,14 @@
 /// Special carbon interaction on lying down, to transform its sprite by a rotation.
 /mob/living/carbon/proc/lying_angle_on_lying_down(new_lying_angle)
 	if(!new_lying_angle)
-		//SKYRAT EDIT ADDITION BEGIN
+		//NOVA EDIT ADDITION BEGIN
 		if(dir == WEST)
 			set_lying_angle(270)
 			return
 		else if(dir == EAST)
 			set_lying_angle(90)
 			return
-		//SKYRAT EDIT END
+		//NOVA EDIT END
 		set_lying_angle(pick(90, 270))
 	else
 		set_lying_angle(new_lying_angle)

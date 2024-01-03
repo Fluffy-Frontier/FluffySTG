@@ -109,20 +109,18 @@
 /obj/structure/chair/proc/handle_layer()
 	if(has_buckled_mobs() && dir == NORTH)
 		layer = ABOVE_MOB_LAYER
-		SET_PLANE_IMPLICIT(src, GAME_PLANE_UPPER_FOV_HIDDEN)
 	else
 		layer = OBJ_LAYER
-		SET_PLANE_IMPLICIT(src, GAME_PLANE)
 
 /obj/structure/chair/post_buckle_mob(mob/living/M)
 	. = ..()
 	handle_layer()
-	//SKYRAT EDIT ADDITION
+	//NOVA EDIT ADDITION
 	if(HAS_TRAIT(M, TRAIT_OVERSIZED))
 		visible_message(span_warning("[src] buckles under the weight of [M] causing it to break!"))
-		playsound(src, 'modular_skyrat/modules/oversized/sound/chair_break.ogg', 70, TRUE)
+		playsound(src, 'modular_nova/modules/oversized/sound/chair_break.ogg', 70, TRUE)
 		deconstruct()
-	//SKYRAT EDIT END
+	//NOVA EDIT END
 /obj/structure/chair/post_unbuckle_mob()
 	. = ..()
 	handle_layer()
@@ -184,7 +182,6 @@
 /obj/structure/chair/comfy/proc/gen_armrest()
 	armrest = GetArmrest()
 	armrest.layer = ABOVE_MOB_LAYER
-	SET_PLANE_EXPLICIT(armrest, GAME_PLANE_UPPER, src)
 	update_armrest()
 
 /obj/structure/chair/comfy/proc/GetArmrest()

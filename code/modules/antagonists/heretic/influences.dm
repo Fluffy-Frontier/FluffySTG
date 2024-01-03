@@ -21,7 +21,7 @@
 	/// List of minds with the ability to see influences
 	var/list/datum/mind/tracked_heretics = list()
 
-/datum/reality_smash_tracker/Destroy(force, ...)
+/datum/reality_smash_tracker/Destroy(force)
 	if(GLOB.reality_smash_track == src)
 		stack_trace("[type] was deleted. Heretics may no longer access any influences. Fix it, or call coder support.")
 		message_admins("The [type] was deleted. Heretics may no longer access any influences. Fix it, or call coder support.")
@@ -94,10 +94,10 @@
 	tracked_heretics |= heretic
 
 	// If our heretic's on station, generate some new influences
-	//SKYRAT EDIT START
+	//NOVA EDIT START
 	var/area/heretic_area = get_area(heretic.current)
 	if(ishuman(heretic.current) && (!(is_centcom_level(heretic.current.z)) || istype(heretic_area, /area/centcom/interlink)) || istype(heretic_area, /area/shuttle/arrival))
-	//SKYRAT EDIT END
+	//NOVA EDIT END
 		generate_new_influences()
 
 	add_to_smashes(heretic)

@@ -17,6 +17,30 @@
 /datum/station_trait/distant_supply_lines/on_round_start()
 	SSeconomy.pack_price_modifier *= 1.2
 
+///A negative trait that stops mail from arriving (or the inverse if on holiday). It also enables a specific shuttle loan situation.
+/datum/station_trait/mail_blocked
+	name = "Postal workers strike"
+	trait_type = STATION_TRAIT_NEGATIVE
+	weight = 2
+	show_in_report = TRUE
+	report_message = "Due to an ongoing strike announced by the postal workers union, mail won't be delivered this shift."
+
+/datum/station_trait/mail_blocked/on_round_start()
+	//This is either a holiday or sunday... well then, let's flip the situation.
+	if(SSeconomy.mail_blocked)
+		name = "Postal system overtime"
+		report_message = "Despite being a day off, the postal system is working overtime today. Mail will be delivered this shift."
+	else
+		var/datum/round_event_control/shuttle_loan/our_event = locate() in SSevents.control
+		our_event.unavailable_situations -= /datum/shuttle_loan_situation/mail_strike
+	SSeconomy.mail_blocked = !SSeconomy.mail_blocked
+
+/datum/station_trait/mail_blocked/hangover/revert()
+	var/datum/round_event_control/shuttle_loan/our_event = locate() in SSevents.control
+	our_event.unavailable_situations |= /datum/shuttle_loan_situation/mail_strike
+	SSeconomy.mail_blocked = !SSeconomy.mail_blocked
+	return ..()
+
 ///A negative trait that reduces the amount of products available from vending machines throughout the station.
 /datum/station_trait/vending_shortage
 	name = "Vending products shortage"
@@ -458,11 +482,11 @@
 	var/list/shielding = list()
 
 /datum/station_trait/nebula/hostile/process(seconds_per_tick)
-	// SKYRAT EDIT ADDITION START
+	// NOVA EDIT ADDITION START
 	if(!storms_enabled)
 		get_shielding_level() // So shields still produce tritium
 		return
-	// SKYRAT EDIT ADDITION END
+	// NOVA EDIT ADDITION END
 	calculate_nebula_strength()
 
 	apply_nebula_effect(nebula_intensity - get_shielding_level())
@@ -528,7 +552,7 @@
 	threat_reduction = 30
 	dynamic_threat_id = "Radioactive Nebula"
 
-	intensity_increment_time = 10 MINUTES // SKYRAT EDIT longer shield duration - ORIGINAL: intensity_increment_time = 5 MINUTES /
+	intensity_increment_time = 10 MINUTES // NOVA EDIT longer shield duration - ORIGINAL: intensity_increment_time = 5 MINUTES /
 	maximum_nebula_intensity = 1 HOURS + 40 MINUTES
 
 	nebula_layer = /atom/movable/screen/parallax_layer/random/space_gas/radioactive
@@ -629,7 +653,7 @@
 	new /obj/effect/pod_landingzone (get_safe_random_station_turf(), new /obj/structure/closet/supplypod/centcompod (), new /obj/machinery/nebula_shielding/emergency/radiation ())
 
 /datum/station_trait/nebula/hostile/radiation/send_instructions()
-	/* SKYRAT EDIT REMOVAL START - No more radiation storms on station
+	/* NOVA EDIT REMOVAL START - No more radiation storms on station
 	var/obj/machinery/nebula_shielding/shielder = /obj/machinery/nebula_shielding/radiation
 	var/obj/machinery/gravity_generator/main/innate_shielding = /obj/machinery/gravity_generator/main
 	//How long do we have untill the first shielding unit needs to be up?
@@ -648,12 +672,12 @@
 		You have [deadline] before the nebula enters the station. \
 		Every shielding unit will provide an additional [shielder_time] of protection, fully protecting the station with [max_shielders] shielding units.
 	"}
-	SKYRAT EDIT REMOVAL END */
-	// SKYRAT EDIT CHANGE START - ORIGINAL: See above
+	NOVA EDIT REMOVAL END */
+	// NOVA EDIT CHANGE START - ORIGINAL: See above
 	var/announcement = {"Your station has been constructed inside a radioactive nebula. \
 		Standard spacesuits will not protect against the nebula and using them is strongly discouraged.
 	"}
-	// SKYRAT EDIT CHANGE END
+	// NOVA EDIT CHANGE END
 
 	priority_announce(announcement, sound = 'sound/misc/notice1.ogg')
 

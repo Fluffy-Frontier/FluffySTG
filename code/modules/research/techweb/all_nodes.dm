@@ -129,7 +129,6 @@
 		"universal_scanner",
 		"voice_analyzer",
 		"watering_can",
-		"gbp_machine", // SKYRAT EDIT ADDITION
 	)
 	experiments_to_unlock = list(
 		/datum/experiment/autopsy/nonhuman,
@@ -854,7 +853,7 @@
 	design_ids = list(
 		"assembly_shell",
 		"bot_shell",
-		"comp_mod_action",
+		"comp_equip_action",
 		"controller_shell",
 		"dispenser_shell",
 		"door_shell",
@@ -876,7 +875,6 @@
 		"bci_implanter",
 		"bci_shell",
 		"comp_bar_overlay",
-		"comp_bci_action",
 		"comp_counter_overlay",
 		"comp_install_detector",
 		"comp_object_overlay",
@@ -1115,6 +1113,7 @@
 		"holosignrestaurant",
 		"holosignbar",
 		"inducer",
+		"inducerengi",
 		"tray_goggles",
 		"holopad",
 		"vendatray",

@@ -1,6 +1,6 @@
 
 /mob/living/proc/run_armor_check(def_zone = null, attack_flag = MELEE, absorb_text = null, soften_text = null, armour_penetration, penetrated_text, silent=FALSE, weak_against_armour = FALSE)
-	SEND_SIGNAL(src, COMSIG_MOB_RUN_ARMOR) //SKYRAT EDIT ADDITION
+	SEND_SIGNAL(src, COMSIG_MOB_RUN_ARMOR) //NOVA EDIT ADDITION
 
 	var/our_armor = getarmor(def_zone, attack_flag)
 
@@ -151,17 +151,17 @@
 		return
 	. = combat_mode
 	combat_mode = new_mode
-	SEND_SIGNAL(src, COMSIG_LIVING_COMBAT_MODE_TOGGLE, new_mode) //SKYRAT EDIT ADDITION
+	SEND_SIGNAL(src, COMSIG_LIVING_COMBAT_MODE_TOGGLE, new_mode) //NOVA EDIT ADDITION
 	if(hud_used?.action_intent)
 		hud_used.action_intent.update_appearance()
-	//SKYRAT EDIT ADDITION BEGIN
+	//NOVA EDIT ADDITION BEGIN
 	if(!ishuman(src) && !ckey)
 		if(combat_mode)
 			set_combat_indicator(TRUE)
 		else
 			set_combat_indicator(FALSE)
 	face_mouse = (client?.prefs?.read_preference(/datum/preference/toggle/face_cursor_combat_mode) && combat_mode) ? TRUE : FALSE
-	//SKYRAT EDIT ADDITION END
+	//NOVA EDIT ADDITION END
 
 	if(silent || !(client?.prefs.read_preference(/datum/preference/toggle/sound_combatmode)))
 		return
@@ -295,30 +295,6 @@
 				Move(user.loc)
 	user.set_pull_offsets(src, grab_state)
 	return TRUE
-
-
-/mob/living/attack_slime(mob/living/simple_animal/slime/attacking_slime, list/modifiers)
-	if(attacking_slime.buckled)
-		if(attacking_slime in buckled_mobs)
-			attacking_slime.stop_feeding()
-		return // can't attack while eating!
-
-	if(HAS_TRAIT(attacking_slime, TRAIT_PACIFISM))
-		to_chat(attacking_slime, span_warning("You don't want to hurt anyone!"))
-		return FALSE
-
-	if(check_block(src, attacking_slime.melee_damage_upper, "[attacking_slime]'s glomp", MELEE_ATTACK, attacking_slime.armour_penetration, attacking_slime.melee_damage_type))
-		return FALSE
-
-	if (stat != DEAD)
-		log_combat(attacking_slime, src, "attacked")
-		attacking_slime.do_attack_animation(src)
-		visible_message(span_danger("\The [attacking_slime.name] glomps [src]!"), \
-						span_userdanger("\The [attacking_slime.name] glomps you!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, attacking_slime)
-		to_chat(attacking_slime, span_danger("You glomp [src]!"))
-		return TRUE
-
-	return FALSE
 
 /mob/living/attack_animal(mob/living/simple_animal/user, list/modifiers)
 	. = ..()

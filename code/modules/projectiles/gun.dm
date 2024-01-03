@@ -45,7 +45,7 @@
 	var/weapon_weight = WEAPON_LIGHT
 	var/dual_wield_spread = 24 //additional spread when dual wielding
 	///Can we hold up our target with this? Default to yes
-	var/can_hold_up = FALSE // SKYRAT EDIT - DISABLED ORIGINAL: TRUE
+	var/can_hold_up = FALSE // NOVA EDIT - DISABLED ORIGINAL: TRUE
 
 	/// Just 'slightly' snowflakey way to modify projectile damage for projectiles fired from this gun.
 	var/projectile_damage_multiplier = 1
@@ -82,8 +82,8 @@
 		pin = new pin(src)
 
 	add_seclight_point()
-	give_gun_safeties() // SKYRAT EDIT ADDITION - GUN SAFETIES
-	give_manufacturer_examine() // SKYRAT EDIT ADDITON - MANUFACTURER EXAMINE
+	give_gun_safeties() // NOVA EDIT ADDITION - GUN SAFETIES
+	give_manufacturer_examine() // NOVA EDIT ADDITON - MANUFACTURER EXAMINE
 
 /obj/item/gun/Destroy()
 	if(isobj(pin)) //Can still be the initial path, then we skip
@@ -573,6 +573,9 @@
 		knife_overlay.pixel_x = knife_x_offset
 		knife_overlay.pixel_y = knife_y_offset
 		. += knife_overlay
+
+/obj/item/gun/animate_atom_living(mob/living/owner)
+	new /mob/living/simple_animal/hostile/mimic/copy/ranged(drop_location(), src, owner)
 
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
 	if(!ishuman(user) || !ishuman(target))

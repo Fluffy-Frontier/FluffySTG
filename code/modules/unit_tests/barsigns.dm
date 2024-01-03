@@ -2,22 +2,22 @@
  * Test if icon states for each datum actually exist in the DMI.
  */
 /datum/unit_test/barsigns_icon
-	var/list/blacklisted_sign_types = list(/datum/barsign/fluffy, /datum/barsign/skyrat, /datum/barsign/skyrat/large) // SKYRAT EDIT ADDITION - Modular barsigns // THE FLUFFY FRONTIER EDIT ADDITION - Modular barsigns
+	var/list/blacklisted_sign_types = list(/datum/barsign/fluffy, /datum/barsign/skyrat, /datum/barsign/skyrat/large) // NOVA EDIT ADDITION - Modular barsigns // THE FLUFFY FRONTIER EDIT ADDITION - Modular barsigns
 
 /datum/unit_test/barsigns_icon/Run()
 	var/obj/machinery/barsign_type = /obj/machinery/barsign
 	var/icon/barsign_icon = initial(barsign_type.icon)
 	var/list/barsign_icon_states = icon_states(barsign_icon)
-	barsign_icon_states += icon_states(SKYRAT_BARSIGN_FILE) // SKYRAT EDIT ADDITION - Need to check modular barsigns
+	barsign_icon_states += icon_states(SKYRAT_BARSIGN_FILE) // NOVA EDIT ADDITION - Need to check modular barsigns
 	barsign_icon_states += icon_states(TFF_BARSIGN_FILE) // THE FLUFFY FRONTIER - Need to check modular barsigns
-	barsign_icon_states += icon_states(SKYRAT_LARGE_BARSIGN_FILE) // SKYRAT EDIT ADDITION - Need to check modular  barsigns
+	barsign_icon_states += icon_states(SKYRAT_LARGE_BARSIGN_FILE) // NOVA EDIT ADDITION - Need to check modular  barsigns
 
 	// Check every datum real bar sign
 	for(var/sign_type in (subtypesof(/datum/barsign) - /datum/barsign/hiddensigns))
-		// SKYRAT EDIT ADDITION BEGIN - MODULAR BARSIGNS
+		// NOVA EDIT ADDITION BEGIN - MODULAR BARSIGNS
 		if(sign_type in blacklisted_sign_types)
 			continue
-		// SKYRAT EDIT ADDITION END
+		// NOVA EDIT ADDITION END
 		var/datum/barsign/sign = new sign_type()
 
 		if(!(sign.icon_state in barsign_icon_states))
@@ -27,16 +27,16 @@
  * Check that bar signs have a name and desc, and that the name is unique.
  */
 /datum/unit_test/barsigns_name
-	var/list/blacklisted_sign_types = list(/datum/barsign/fluffy, /datum/barsign/skyrat, /datum/barsign/skyrat/large) // SKYRAT EDIT ADDITION - Modular barsigns // THE FLUFFY FRONTIER EDIT ADDITION - Modular barsigns
+	var/list/blacklisted_sign_types = list(/datum/barsign/fluffy, /datum/barsign/skyrat, /datum/barsign/skyrat/large) // NOVA EDIT ADDITION - Modular barsigns // THE FLUFFY FRONTIER EDIT ADDITION - Modular barsigns
 
 /datum/unit_test/barsigns_name/Run()
 	var/list/existing_names = list()
 
 	for(var/sign_type in (subtypesof(/datum/barsign) - /datum/barsign/hiddensigns))
-		// SKYRAT EDIT ADDITION BEGIN - MODULAR BARSIGNS
+		// NOVA EDIT ADDITION BEGIN - MODULAR BARSIGNS
 		if(sign_type in blacklisted_sign_types)
 			continue
-		// SKYRAT EDIT ADDITION END
+		// NOVA EDIT ADDITION END
 		var/datum/barsign/sign = new sign_type()
 
 		if(!sign.name)

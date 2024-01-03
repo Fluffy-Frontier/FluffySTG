@@ -131,13 +131,13 @@
 	results = list(/datum/reagent/consumable/hot_ramen = 3)
 	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/consumable/dry_ramen = 3)
 
-	pollutant_type = /datum/pollutant/food/spicy_noodles //SKYRAT EDIT ADDITION
+	pollutant_type = /datum/pollutant/food/spicy_noodles //NOVA EDIT ADDITION
 
 /datum/chemical_reaction/food/hell_ramen
 	results = list(/datum/reagent/consumable/hell_ramen = 6)
 	required_reagents = list(/datum/reagent/consumable/capsaicin = 1, /datum/reagent/consumable/hot_ramen = 6)
 
-	pollutant_type = /datum/pollutant/food/spicy_noodles //SKYRAT EDIT ADDITION
+	pollutant_type = /datum/pollutant/food/spicy_noodles //NOVA EDIT ADDITION
 
 /datum/chemical_reaction/food/imitationcarpmeat
 	required_reagents = list(/datum/reagent/toxin/carpotoxin = 5)
@@ -284,3 +284,9 @@
 	required_reagents = list(/datum/reagent/consumable/flour = 1, /datum/reagent/consumable/nutriment/soup/dashi = 1)
 	mix_message = "A smooth batter forms."
 	reaction_flags = REACTION_INSTANT
+
+/datum/chemical_reaction/food/vinegar
+	results = list(/datum/reagent/consumable/vinegar = 5)
+	required_reagents = list(/datum/reagent/consumable/grapejuice = 5)
+	required_catalysts = list(/datum/reagent/consumable/enzyme = 5)
+	mix_message = "The smell of the mixture reminds you of how you lost access to the country club..."

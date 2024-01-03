@@ -66,8 +66,6 @@ const QuirkList = (props: {
           <Box
             className={className}
             key={quirkKey}
-            role="button"
-            tabIndex="1"
             onClick={() => {
               if (props.selected) {
                 setCustomizationExpanded(false);
@@ -138,8 +136,10 @@ const QuirkList = (props: {
                     {quirk.description}
                     {!!quirk.customizable && (
                       <Popper
-                        options={{
-                          placement: 'bottom-end',
+                        placement="bottom-end"
+                        isOpen={customizationExpanded}
+                        onClickOutside={() => {
+                          setCustomizationExpanded(false);
                         }}
                         popperContent={
                           <Box>
@@ -156,7 +156,7 @@ const QuirkList = (props: {
                                     onClick={(e) => {
                                       e.stopPropagation();
                                     }}
-                                    maxWidth="400px" // SKYRAT EDIT - maxWidth to 600px from 300px
+                                    maxWidth="400px" // NOVA EDIT - maxWidth to 600px from 300px
                                     backgroundColor="black"
                                     px="5px"
                                     py="3px"
@@ -256,10 +256,10 @@ export const QuirksPage = (props) => {
 
   return (
     <ServerPreferencesFetcher
-      // SKYRAT EDIT START - Quirks balance refactor
+      // NOVA EDIT START - Quirks balance refactor
       render={(quirks_data) => {
         if (!quirks_data) {
-          // SKYRAT EDIT END
+          // NOVA EDIT END
           return <Box>Loading quirks...</Box>;
         }
 
@@ -267,7 +267,7 @@ export const QuirksPage = (props) => {
           max_positive_quirks: maxPositiveQuirks,
           quirk_blacklist: quirkBlacklist,
           quirk_info: quirkInfo,
-        } = quirks_data.quirks; // SKYRAT EDIT - Quirks balance refactor
+        } = quirks_data.quirks; // NOVA EDIT - Quirks balance refactor
 
         const quirks = Object.entries(quirkInfo);
         quirks.sort(([_, quirkA], [__, quirkB]) => {
@@ -278,10 +278,10 @@ export const QuirksPage = (props) => {
           }
         });
 
-        // SKYRAT EDIT START - Better Quirk Count Code
+        // NOVA EDIT START - Better Quirk Count Code
         let balance = -data.quirks_balance;
         let positiveQuirks = data.positive_quirk_count;
-        // SKYRAT EDIT END
+        // NOVA EDIT END
 
         const getReasonToNotAdd = (quirkName: string) => {
           const quirk = quirkInfo[quirkName];
@@ -294,14 +294,14 @@ export const QuirksPage = (props) => {
             }
           }
 
-          // SKYRAT EDIT START - Veteran quirks
+          // NOVA EDIT START - Veteran quirks
           if (quirk.veteran_only && !data.is_veteran) {
             if (quirk.allow_for_donator && !data.is_donator) {
               // THE FLUFFY FRONTIER EDIT - Donator quirk? Well...
               return 'You need to be a veteran to select this quirk, apply today!';
             }
           }
-          // SKYRAT EDIT END
+          // NOVA EDIT END
 
           const selectedQuirkNames = selectedQuirks.map((quirkKey) => {
             return quirkInfo[quirkKey].name;
@@ -380,7 +380,7 @@ export const QuirksPage = (props) => {
                           },
                         ];
                       })}
-                    serverData={quirks_data} // SKYRAT EDIT CHANGE
+                    serverData={quirks_data} // NOVA EDIT CHANGE
                     randomBodyEnabled={randomBodyEnabled}
                   />
                 </Stack.Item>
@@ -436,7 +436,7 @@ export const QuirksPage = (props) => {
                           },
                         ];
                       })}
-                    serverData={quirks_data} // sKYRAT EDIT CHANGE
+                    serverData={quirks_data} // NOVA EDIT CHANGE
                     randomBodyEnabled={randomBodyEnabled}
                   />
                 </Stack.Item>

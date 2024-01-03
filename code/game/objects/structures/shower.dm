@@ -120,12 +120,12 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/shower, (-16))
 
 	return TRUE
 
-//SKYRAT EDIT ADDITION
+//NOVA EDIT ADDITION
 /obj/machinery/shower/plunger_act(obj/item/plunger/P, mob/living/user, reinforced)
 	if(do_after(user, 3 SECONDS, src))
 		reagents.remove_any(reagents.total_volume)
 		balloon_alert(user, "reservoir emptied")
-//SKYRAT EDIT END
+//NOVA EDIT END
 
 /obj/machinery/shower/analyzer_act(mob/living/user, obj/item/tool)
 	. = ..()
@@ -204,7 +204,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/shower, (-16))
 		return
 	var/mutable_appearance/water_falling = mutable_appearance('icons/obj/watercloset.dmi', "water", ABOVE_MOB_LAYER)
 	water_falling.color = mix_color_from_reagents(reagents.reagent_list)
-	SET_PLANE_EXPLICIT(water_falling, GAME_PLANE_UPPER, src)
 	switch(dir)
 		if(NORTH)
 			water_falling.pixel_y += pixel_shift
