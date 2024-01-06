@@ -1,36 +1,21 @@
 ## Fluffy STG (Skyrat & /tg/station Downstream)
 
-<<<<<<< HEAD
 [![CI Suite](https://github.com/Fluffy-Frontier/FluffySTG/workflows/CI%20Suite/badge.svg)](https://github.com/Fluffy-Frontier/FluffySTG/actions?query=workflow%3A%22CI+Suite%22)
 [![Percentage of issues still open](https://isitmaintained.com/badge/open/Fluffy-Frontier/FluffySTG.svg)](https://isitmaintained.com/project/Fluffy-Frontier/FluffySTG "Percentage of issues still open")
 [![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/Fluffy-Frontier/FluffySTG.svg)](https://isitmaintained.com/project/Fluffy-Frontier/FluffySTG "Average time to resolve an issue")
 ![Coverage](https://img.shields.io/codecov/c/github/Fluffy-Frontier/FluffySTG)
-=======
-[![CI Suite](https://github.com/NovaSector/NovaSector/workflows/CI%20Suite/badge.svg)](https://github.com/NovaSector/NovaSector/actions?query=workflow%3A%22CI+Suite%22)
-[![Percentage of issues still open](https://isitmaintained.com/badge/open/NovaSector/NovaSector.svg)](https://isitmaintained.com/project/NovaSector/NovaSector "Percentage of issues still open")
-[![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/NovaSector/NovaSector.svg)](https://isitmaintained.com/project/NovaSector/NovaSector "Average time to resolve an issue")
-![Coverage](https://img.shields.io/codecov/c/github/NovaSector/NovaSector)
->>>>>>> de614eee1 (Interdyne Tweaks and improvements along with /nova/ Refactoring (#104))
 
 [![resentment](.github/images/badges/built-with-resentment.svg)](.github/images/comics/131-bug-free.png) [![technical debt](.github/images/badges/contains-technical-debt.svg)](.github/images/comics/106-tech-debt-modified.png) [![forinfinityandbyond](.github/images/badges/made-in-byond.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
 | Website                   | Link                                           |
 |---------------------------|------------------------------------------------|
 | Git / GitHub cheatsheet   | [https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833](https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833) |
-<<<<<<< HEAD
-| Guide to Modularization   | [./modular_skyrat/readme.md](./modular_skyrat/readme.md)            |
-| Code                      | [https://github.com/Skyrat-SS13/Skyrat-tg](https://github.com/Skyrat-SS13/Skyrat-tg)    |
-| Wiki                      | [https://wiki.skyrat13.com/index.php/Main_Page](https://wiki.skyrat13.com/index.php/Main_Page)   |
-| Codedocs                  | [https://skyrat-ss13.github.io/Skyrat-tg/](https://skyrat-ss13.github.io/Skyrat-tg/)       |
-| Fluffy Frontier Discord   | [https://discord.com/invite/5GvhwtY](https://discord.com/invite/5GvhwtY) |
-=======
 | Guide to Modularization   | [./modular_nova/readme.md](./modular_nova/readme.md)            |
 | Website                   | [https://www.tgstation13.org](https://www.tgstation13.org)          |
 | Code                      | [https://github.com/NovaSector/NovaSector](https://github.com/NovaSector/NovaSector)    |
 | Wiki                      | [https://wiki.novasector13.com](https://wiki.novasector13.com)   |
 | Codedocs                  | [https://GalacticStation.github.io/GalaxiaStation/](https://GalacticStation.github.io/GalaxiaStation/)       |
-| Nova Sector's Discord     | [https://discord.gg/novasector](https://discord.gg/novasector) |
->>>>>>> de614eee1 (Interdyne Tweaks and improvements along with /nova/ Refactoring (#104))
+| Fluffy Frontier Discord   | [https://discord.com/invite/5GvhwtY](https://discord.com/invite/5GvhwtY) |
 | Coderbus Discord          | [https://discord.gg/Vh8TJp9](https://discord.gg/Vh8TJp9)               |
 
 This is Fluffy Frontier's downstream fork of /tg/station & Skyrat created in byond.

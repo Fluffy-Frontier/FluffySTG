@@ -73,12 +73,8 @@ jobs:
         if: steps.linter-setup.conclusion == 'success' && !cancelled()
         run: |
           bash tools/ci/check_grep.sh
-<<<<<<< HEAD
-          bash skyrat/tools/skyrat_check_grep.sh # NOVA EDIT ADDITION - checking modular_nova code
-          bash fluffy/tools/fluffy_check_grep.sh # FLUFFY EDIT ADDITION - checking tff_modular code
-=======
           bash modular_nova/tools/nova_check_grep.sh # NOVA EDIT ADDITION - checking modular_nova code
->>>>>>> de614eee1 (Interdyne Tweaks and improvements along with /nova/ Refactoring (#104))
+          bash fluffy/tools/fluffy_check_grep.sh # FLUFFY EDIT ADDITION - checking tff_modular code
       - name: Ticked File Enforcement
         if: steps.linter-setup.conclusion == 'success' && !cancelled()
         run: |

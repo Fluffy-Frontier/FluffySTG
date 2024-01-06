@@ -34,10 +34,6 @@
 	new /obj/item/restraints/handcuffs(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
 	new /obj/item/storage/medkit/tactical/blueshield(src)
-<<<<<<< HEAD
 	// new /obj/item/storage/toolbox/guncase/skyrat/xhihao_large_case/bogseo(src) FF EDIT: DELETION - BLUESHIELD-REARM
-=======
-	new /obj/item/storage/toolbox/guncase/nova/xhihao_large_case/bogseo(src)
->>>>>>> de614eee1 (Interdyne Tweaks and improvements along with /nova/ Refactoring (#104))
 	new /obj/item/storage/bag/garment/blueshield(src)
 	new /obj/item/mod/control/pre_equipped/blueshield(src)
