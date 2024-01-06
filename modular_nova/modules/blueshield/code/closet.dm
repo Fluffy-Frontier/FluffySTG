@@ -3,7 +3,7 @@
 	desc = "A bag for storing extra clothes and shoes. This one belongs to the blueshield."
 
 /obj/item/storage/bag/garment/blueshield/PopulateContents()
-	new /obj/item/clothing/suit/hooded/wintercoat/skyrat/blueshield(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/nova/blueshield(src)
 	new /obj/item/clothing/head/beret/blueshield(src)
 	new /obj/item/clothing/head/beret/blueshield/navy(src)
 	new /obj/item/clothing/under/rank/blueshield(src)
@@ -34,6 +34,6 @@
 	new /obj/item/restraints/handcuffs(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
 	new /obj/item/storage/medkit/tactical/blueshield(src)
-	// new /obj/item/storage/toolbox/guncase/skyrat/xhihao_large_case/bogseo(src) FF EDIT: DELETION - BLUESHIELD-REARM
+	// new /obj/item/storage/toolbox/guncase/nova/xhihao_large_case/bogseo(src) FF EDIT: DELETION - BLUESHIELD-REARM
 	new /obj/item/storage/bag/garment/blueshield(src)
 	new /obj/item/mod/control/pre_equipped/blueshield(src)

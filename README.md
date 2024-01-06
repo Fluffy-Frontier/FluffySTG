@@ -10,10 +10,11 @@
 | Website                   | Link                                           |
 |---------------------------|------------------------------------------------|
 | Git / GitHub cheatsheet   | [https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833](https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833) |
-| Guide to Modularization   | [./modular_skyrat/readme.md](./modular_skyrat/readme.md)            |
-| Code                      | [https://github.com/Skyrat-SS13/Skyrat-tg](https://github.com/Skyrat-SS13/Skyrat-tg)    |
-| Wiki                      | [https://wiki.skyrat13.com/index.php/Main_Page](https://wiki.skyrat13.com/index.php/Main_Page)   |
-| Codedocs                  | [https://skyrat-ss13.github.io/Skyrat-tg/](https://skyrat-ss13.github.io/Skyrat-tg/)       |
+| Guide to Modularization   | [./modular_nova/readme.md](./modular_nova/readme.md)            |
+| Website                   | [https://www.tgstation13.org](https://www.tgstation13.org)          |
+| Code                      | [https://github.com/NovaSector/NovaSector](https://github.com/NovaSector/NovaSector)    |
+| Wiki                      | [https://wiki.novasector13.com](https://wiki.novasector13.com)   |
+| Codedocs                  | [https://GalacticStation.github.io/GalaxiaStation/](https://GalacticStation.github.io/GalaxiaStation/)       |
 | Fluffy Frontier Discord   | [https://discord.com/invite/5GvhwtY](https://discord.com/invite/5GvhwtY) |
 | Coderbus Discord          | [https://discord.gg/Vh8TJp9](https://discord.gg/Vh8TJp9)               |
 

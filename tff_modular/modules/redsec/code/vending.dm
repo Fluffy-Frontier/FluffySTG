@@ -22,7 +22,7 @@
 				/obj/item/clothing/glasses/hud/security/redsec = 5,
 				/obj/item/clothing/gloves/color/black = 5,
 				/obj/item/clothing/under/rank/security/officer/skirt/redsec = 5,
-				/obj/item/clothing/under/rank/security/skyrat/utility/redsec = 5,
+				/obj/item/clothing/under/rank/security/nova/utility/redsec = 5,
 				/obj/item/clothing/suit/toggle/jacket/sec/old = 5,
 				/obj/item/clothing/suit/armor/vest/alt/sec/redsec = 2
 			),
@@ -43,7 +43,7 @@
 				/obj/item/clothing/under/rank/security/officer = 10,
 				/obj/item/clothing/under/rank/security/officer/skirt = 10,
 				/obj/item/clothing/under/rank/security/peacekeeper = 10,
-				/obj/item/clothing/under/rank/security/skyrat/utility = 3,
+				/obj/item/clothing/under/rank/security/nova/utility = 3,
 				/obj/item/clothing/shoes/jackboots/sec = 10,
 				/obj/item/clothing/head/security_garrison = 10,
 				/obj/item/clothing/head/security_cap = 10,
