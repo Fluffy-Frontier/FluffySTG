@@ -42,9 +42,8 @@
 				/obj/item/clothing/mask/leatherwhip = 4,
 				/obj/item/bdsm_candle = 4,
 				/obj/item/spanking_pad = 4,
-/obj/item/tickle_feather = 8,
-
-
+				/obj/item/tickle_feather = 8,
+				/obj/item/borg/upgrade/dominatrixmodule = 5,
 			),
 		),
 		list(
