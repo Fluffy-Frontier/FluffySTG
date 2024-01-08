@@ -42,14 +42,8 @@
 				/obj/item/clothing/mask/leatherwhip = 4,
 				/obj/item/bdsm_candle = 4,
 				/obj/item/spanking_pad = 4,
-<<<<<<< HEAD
-/obj/item/tickle_feather = 8,
-
-
-=======
 				/obj/item/tickle_feather = 8,
 				/obj/item/borg/upgrade/dominatrixmodule = 5,
->>>>>>> f4c0a08a7 (Add dominatrix borg module to lustwish (#359))
 			),
 		),
 		list(
