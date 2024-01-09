@@ -157,11 +157,14 @@
 	item_type = /obj/item/ammo_box/magazine/c40sol_rifle/standard/starts_empty
 	cost = PAYCHECK_COMMAND
 
+<<<<<<< HEAD
 /* /datum/armament_entry/company_import/sol_defense/magazines/sol_rifle_drum
 	item_type = /obj/item/ammo_box/magazine/c40sol_rifle/drum/starts_empty
 	cost = PAYCHECK_COMMAND * 3
 	contraband = TRUE */ // FLUFFY FRONTIER REMOVAL - SOL WEAPONS REBALANCE
 
+=======
+>>>>>>> 6c3ed558 (Makes all three sol rifles more visually distinct from one another, and removes .40 sol drum magazines (#282))
 /datum/armament_entry/company_import/sol_defense/magazines/sol_grenade_standard
 	item_type = /obj/item/ammo_box/magazine/c980_grenade/starts_empty
 	cost = PAYCHECK_COMMAND * 2
