@@ -351,3 +351,21 @@
   yooriss:
   - rscadd: Talking now automatically capitalizes any lowercase 'i' in the middle
       of sentences, and ends sentences in a period if no other punctuation is present.
+2024-01-09:
+  Chubbygummibear:
+  - bugfix: 'popup screen locs will work on clients >1614. Security cameras and
+
+      Spyglass will work'
+  Hatterhat:
+  - qol: Much like their non-powertool counterpart, powered drivers on wirecutter
+      mode can now snip cablecuffs.
+  Paxilmaniac:
+  - balance: '"Tactically" reloading a gun no longer has a delay to swapping the magazine'
+  - code_imp: Some old code regarding gun stuff that isn't in the codebase anymore
+      has been removed
+  - bugfix: Deployable thermomachines now correctly put their pipe's visual direction
+      the right way
+  thegrb93:
+  - rscadd: Blood filter module to medic borg
+  - rscadd: Cherry juice and vineger to service borg shakers
+  - rscdel: Remove redundant service borgshaker
