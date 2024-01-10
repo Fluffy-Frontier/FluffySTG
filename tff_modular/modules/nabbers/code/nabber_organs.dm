@@ -45,7 +45,7 @@
 	var/datum/action/toggle_welding/shield
 	var/active = FALSE
 
-/obj/item/organ/internal/eyes/robotic/nabber/Insert(mob/living/carbon/eye_recipient, special, drop_if_replaced)
+/obj/item/organ/internal/eyes/robotic/nabber/Insert(mob/living/carbon/eye_recipient, special, movement_flags)
 	. = ..()
 	shield = new(eye_recipient)
 	shield.button_icon = ORGGAN_ICON_NABBER
