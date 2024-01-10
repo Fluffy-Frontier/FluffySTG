@@ -926,6 +926,7 @@
 2023-12-28:
   KannaLisvern:
   - rscadd: Added a new ERP emote. *lewdmoan
+  - qol: Removed Bluespace Crystals and Diamonds from medical emergency bed's recipe.
   Nerev4r:
   - rscadd: Due to increased availability of calcium supplements in Sector 13 due
       to Deep Spacer lobbying, snailpeople have found their shells to be more suited
@@ -940,11 +941,21 @@
   - balance: Shotgun shells, ESPECIALLY skyrat's shotgun shells, have been rebalanced
       to not either be useless or insane in every situation, see pr for details.
   - image: New sprites for some projectiles, like flechettes and whatnot
+  - qol: The names and descriptions of every paxilmaniac weapon have been improved
+      to be shorter (names) and mention at least what bullet the weapon fires (description)
+  - qol: Every weapon with an extended description has a hint in its normal examine
+      telling you that you can look further to get more info on the weapon
+  - code_imp: Two instances of now-deleted weapons paths (which i found out about
+      through someone getting one in a christmas tree) existing due to manufacturer
+      examines of all things have been cleaned up, players wont notice this one i
+      think
   Rhials:
   - bugfix: Icebox escape pods will now land randomly on the surface, instead of only
       in certain ruins.
   - qol: Wizard apprentices now spawn on the same tile as the contract that summoned
       them.
+  - qol: Obsessed crewmembers are now displayed in the orbit panel.
+  - qol: The Paradox Clone orbit menu tab is now white. Neat!
   zeroisthebiggay:
   - bugfix: '''A whole bunch of spiders in a SWAT suit'' to ''A whole bunch of spiders
       in a MODsuit'''
@@ -1047,8 +1058,6 @@
       This doesn''t affect 4/5 base /tg/ station maps.'
   - rscadd: 'New quirk for those who hate their appendix: Appendicitis Survivor! A
       positive (-2) quirk.'
-  KannaLisvern:
-  - qol: Removed Bluespace Crystals and Diamonds from medical emergency bed's recipe.
   LT3:
   - qol: TGUI will now wait longer trying to reconnect to a new round
   Lutowski:
@@ -1062,18 +1071,6 @@
   NovaBot13:
   - rscdel: Removes the wires from canisters. It's a cool idea, but cheap controlled
       maxcaps are bad actually
-  Paxilmaniac:
-  - qol: The names and descriptions of every paxilmaniac weapon have been improved
-      to be shorter (names) and mention at least what bullet the weapon fires (description)
-  - qol: Every weapon with an extended description has a hint in its normal examine
-      telling you that you can look further to get more info on the weapon
-  - code_imp: Two instances of now-deleted weapons paths (which i found out about
-      through someone getting one in a christmas tree) existing due to manufacturer
-      examines of all things have been cleaned up, players wont notice this one i
-      think
-  Rhials:
-  - qol: Obsessed crewmembers are now displayed in the orbit panel.
-  - qol: The Paradox Clone orbit menu tab is now white. Neat!
   Ryll/Shaps:
   - balance: Yawns are less likely to propagate
   goobliner:
