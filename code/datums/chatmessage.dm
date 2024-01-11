@@ -158,6 +158,22 @@
 	else if (extra_classes.Find("emote"))
 		var/image/r_icon = image('icons/ui_icons/chat/chat_icons.dmi', icon_state = "emote")
 		LAZYADD(prefixes, "\icon[r_icon]")
+<<<<<<< HEAD
+=======
+		chat_color_name_to_use = target.get_visible_name(add_id_name = FALSE) // use face name for nonverbal messages
+
+	if(isnull(chat_color_name_to_use))
+		if(HAS_TRAIT(target, TRAIT_SIGN_LANG))
+			chat_color_name_to_use = target.get_visible_name(add_id_name = FALSE) // use face name for signers too
+		else
+			chat_color_name_to_use = target.GetVoice() // for everything else, use the target's voice name
+
+	// Calculate target color if not already present
+	if (!target.chat_color || target.chat_color_name != chat_color_name_to_use)
+		target.chat_color = get_chat_color_string(chat_color_name_to_use) // NOVA EDIT CHANGE - ORIGINAL: target.chat_color = colorize_string(chat_color_name_to_use)
+		target.chat_color_darkened = get_chat_color_string(chat_color_name_to_use, darkened = TRUE) // NOVA EDIT CHANGE - ORIGINAL: target.chat_color_darkened = colorize_string(chat_color_name_to_use, 0.85, 0.85)
+		target.chat_color_name = chat_color_name_to_use
+>>>>>>> abcf99d22 ([MIRROR] Fix bad assumption in syndicate teleporter code (#407))
 
 	// Append language icon if the language uses one
 	var/datum/language/language_instance = GLOB.language_datum_instances[language]
