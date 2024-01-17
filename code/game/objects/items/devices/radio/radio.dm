@@ -285,6 +285,15 @@
 	if(use_command)
 		spans |= SPAN_COMMAND
 
+<<<<<<< HEAD
+=======
+	var/radio_message = message
+	if(LAZYACCESS(message_mods, WHISPER_MODE))
+		// Radios don't pick up whispers very well
+		radio_message = stars(radio_message)
+		spans |= SPAN_ITALICS
+
+>>>>>>> a1982ec55 ([MIRROR] Fixes `bad_index` runtime in `/obj/item/radio/talk_into_impl` (#514))
 	flick_overlay_view(overlay_mic_active, 5 SECONDS)
 
 	/*
