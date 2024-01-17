@@ -44,7 +44,11 @@
 	icon_state = "colony_lathe_working"
 	update_appearance()
 
+<<<<<<< HEAD
 /obj/machinery/rnd/production/colony_lathe/do_print(path, amount)
+=======
+/obj/machinery/rnd/production/colony_lathe/finalize_build()
+>>>>>>> 20d764f52 ([MIRROR] swap private procs on production procs to protected instead (#500))
 	. = ..()
 	soundloop.stop()
 	set_light(l_range = 0)
