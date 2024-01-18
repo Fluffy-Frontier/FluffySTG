@@ -492,3 +492,158 @@
       are wearing a mask with someone else's id)
   - qol: tweaks the chat color clamping algorithm to be a bit more restrictive while
       still allowing for edge cases like greys and whites
+2024-01-14:
+  13spacemen:
+  - bugfix: Healing simplemobs with sutures and other stacks works again
+  - spellcheck: Healing mobs with medical stacks like suture and mesh give better
+      user feedback messages
+  - image: New liquid plasma sprites from SS14!
+  ArcaneMusic:
+  - qol: ID cards now set their accounts with Alt-Right click.
+  - bugfix: ID cards now once again have contextual screen tips showing what buttons
+      do what actions.
+  IndieanaJones:
+  - balance: Nightmare's Light Eater can now stun targets under certain conditions.
+  LT3:
+  - bugfix: Icebox kitchen has its light switch again
+  - bugfix: Icebox medbay hallway now has a fire alarm
+  - bugfix: Tramstation east APC will no longer be destroyed when the tram crashes
+  - qol: Tramstation central power and disposals moved out of the wall
+  Majkl-J:
+  - code_imp: The check that prevents your stuff from dropping when you have robotic
+      parts is now more robust
+  Melbert:
+  - bugfix: Chameleon Suits will now automatically set your helmet into a hood if
+      using a hooded suit again
+  - bugfix: Blood Drunk Miner (Hunter version) should dash a bit more.
+  - bugfix: Lunar Parade has the potential to break less.
+  - bugfix: Ghost alert for buying a badass balloon should have a proper icon
+  - bugfix: Fixes some cult spells being unable to heal constructs (blood rites particularly)
+  - bugfix: Fix Ringleader's Rise not causing as many hallucinations as expected
+  OrionTheFox, sergeirocks100:
+  - image: The undershirt resprite has been ported over. Rejoice!
+  - rscadd: A bee shirt that was originally sitting unused in the icon files has been
+      properly added to the game.
+  Paxilmaniac:
+  - bugfix: The "required_container_accepts_subtypes" variable on chemical reactions
+      now actually works again
+  - qol: The heat-proof catwalk made by heat-proof rods will go away when a tile is
+      placed on it, rather than sticking around and needing to be removed manually
+  - bugfix: The lighting will not irreparably break on tiles where plating was placed
+      on lava-proof catwalks
+  - code_imp: Some single letter variables and the structure of the code around placing
+      tiles on lava-proof catwalks has been improved
+  - bugfix: The deployable component will now actually stop rotating things when the
+      variable to not do that is set
+  - image: Forged armor has had its sprites significantly improved over what they
+      were before
+  - rscdel: Forged horseshoes have been removed, no more invisible leg armor!
+  Rhials:
+  - bugfix: Specialty drinks crafted in the crafting menu will now create the intended
+      reagents, instead of containing the reagents used to craft it.
+  TheVekter:
+  - admin: Made logging for BSA targeting and firing easier to find for admins.
+  Watermelon914:
+  - bugfix: Fixed being able to download the contractor program on the syndie store.
+  nikothedude:
+  - bugfix: Silicon temp ftext overlay now works
+  - bugfix: Silicon temp ftext popout window now works
+  vinylspiders:
+  - bugfix: welding self as synth no longer makes you suffer through 3 progressbars
+  yooriss:
+  - bugfix: Autopunctuation no longer checks for underscores at the end of messages.
+  - bugfix: Autopunctuation now correctly inserts EOL periods for any bolded/italicised/underline
+      messages without them, if they don't already have punctuation of their own (like
+      exclamation marks, tildes, question marks, or hyphens).
+2024-01-15:
+  Ghommie:
+  - bugfix: Animals enlargened by the fugu gland are now visually aligned with the
+      turf they're standing on.
+  IndieanaJones:
+  - qol: The combat mode toggle button is now present on the HUD for simple and basic
+      mobs.
+  - bugfix: Rat King's abilities no longer require the user to click twice in order
+      to activate them.
+  - bugfix: Changeling eggs laid by headslugs work again
+  - bugfix: Changeling egg incubation times should feel much more consistent, hatching
+      after 4 minutes
+  LT3:
+  - bugfix: Fixed missing power cable outside Tramstation medbay
+  LemonInTheDark:
+  - admin: Confirming that you have read an admin message now uh, works. it's been
+      2 years bros
+  Melbert:
+  - bugfix: Anomalies spawned by grand ritual runes sound act more like anomalies
+  - bugfix: Fixes some eldritch painting messages having no chat span
+  - bugfix: Fixes eldritch painting messages triggering before the examine, making
+      it hard to see
+  - bugfix: Fix beauty eldritch painting doing nothing to heretics who examine it
+  Motho:
+  - rscadd: Added a civilian version of the Type-34P headset that actually has no
+      armor.
+  - rscadd: Added the aerostatic set to the loadout.
+  - qol: Removed job restrictions from a majority of loadout items.
+  OrionTheFox:
+  - bugfix: fixed the OpFor Syndicate Uplink Implanter giving a broken item - it will
+      now give the Implanter as intended.
+  RikuTheKiller:
+  - bugfix: Fixed round event controller pirate spawns.
+  SyncIt21:
+  - bugfix: chem heater with empty buffers can be refilled again
+  Thlumyn, Arta/Maxi for the sprites:
+  - rscadd: Added peacock tails
+  honkpocket:
+  - balance: Blueshift's vault, armoury, AI upload and prison are a little more antag
+      friendly!
+  - rscadd: Adds a forge room to Blueshift
+  jlsnow301:
+  - bugfix: Sections will be more polite by not stealing focus from Input boxes in
+      TGUI
+  - bugfix: Poppers (like the prefs menu options) shouldn't be hidden beneath the
+      character preview anymore.
+  yooriss:
+  - balance: Oversized characters no longer receive a flat +5 damage to all unarmed
+      attacks, and instead gain a +5 bonus to the  maximum possible damage. In addition,
+      the unarmed effectiveness value of their legs has increased by +5, making them
+      better at keeping people on the ground once they get them there, without doing
+      any extra damage with their kicks.
+  zxaber:
+  - bugfix: Borg tools that hold and use specific items now work correctly again.
+2024-01-17:
+  Ben10Omintrix:
+  - bugfix: fix bileworm ai going insane after eating someone
+  JohnFulpWillard:
+  - qol: Using a Lawyer badge in your hand now shows a thought bubble with the badge,
+      rather than giving a lousy message in your chat.
+  OrionTheFox:
+  - rscadd: Added a long-sleeve greyscale undershirt, and moved the Lizared Top to
+      be a Bra, along with a few other small tweaks - double-check your worn underwear!
+  - image: Updated some out of date underwear sprites to match TG's new resprite
+  aKromatopzia:
+  - rscadd: digitigrade cybernetics
+  - image: sprites for digitigrade cybernetics
+2024-01-18:
+  13spacemen:
+  - code_imp: Hub status shows if server is restarting, starting, time to start. The
+      "Time" is more accurate and based on roundstart now
+  Time-Green:
+  - bugfix: Radiation shelters (wherever they are) will protect against nebula storms
+  Voudez:
+  - qol: Players are now able to see in chat when they are being hit by obj/machinery,
+      got crushed into dense turf or get hit by thrown non carbon mob.
+  - admin: Scenarios like mob hits dense turf, obj/machinery hits mob, item without
+      "living thrower" hitting mob, mob gets hit by thrown non carbon mob now appear
+      in logs.
+  ZephyrTFA:
+  - bugfix: Autolathes no longer allow you to duplicate materials at higher levels
+      of stock parts
+  - qol: Autolathes now show name instead of typepath when selecting a custom material
+  - qol: Autolathe now print out items one by one instead of waiting for all of them
+      to print at once
+  aKromatopzia:
+  - rscadd: Teshari cybernetics
+  - image: sprites for teshari cybernetics
+  intercepti0n:
+  - refactor: Refactored Ore Silo Ui.
+  mc-oofert:
+  - image: the plumbing chemical splitter no longer has a wrongly rotated direction
