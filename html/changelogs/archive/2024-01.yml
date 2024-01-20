@@ -699,3 +699,18 @@
   - code_imp: removed a dupe trait entry in the traits_by_type list
   - code_imp: removed the timeout_mod arg from add_mood_event, which was only used
       for one thing and causes more issues than it's worth
+2024-01-20:
+  13spacemen:
+  - bugfix: Hub time should be correct again
+  Ben10Omintrix:
+  - bugfix: fix a runtime when loading ghosts to a mulebot
+  Ghommie:
+  - image: The "One Lean, Mean, Cleaning Machine" achievement now has its own icon.
+  Paxilmaniac:
+  - balance: Ore thumpers require twice as much power (50 kW), take twice as long
+      to make ore, and can have half as many ores around them before they stop producing.
+  - qol: Ore thumpers now relay more information to the player about themselves, making
+      them easier to set up and maintain.
+  nikothedude:
+  - bugfix: Synth burn wounds now apply scars
+  - spellcheck: Certain synth wounds have been rewritten
