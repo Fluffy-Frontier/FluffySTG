@@ -628,8 +628,6 @@
       circuit in while it's unanchored.
   - bugfix: Immobile shells properly propagate their on/off state after wrenching
       to inner modules.
-<<<<<<< HEAD
-=======
   - image: Resprited several fishes, and the aquarium.
   - bugfix: Bystanders will no longer think they've pulled out a victim's eyes after
       seeing someone else do it.
@@ -641,7 +639,6 @@
   - qol: Autolathes now show name instead of typepath when selecting a custom material
   - qol: Autolathe now print out items one by one instead of waiting for all of them
       to print at once
->>>>>>> 973ff6bd5 ([MISSED MIRRORS] Fixes clown ops getting their codes + Monkeys avoid obstacles  (#531))
   - bugfix: Signers no longer use the wrong verb when speaking directly into a radio
       for the first message after toggling sign language.
   - refactor: Moved the updating of verb variables into a new method which is called
@@ -650,6 +647,7 @@
   13spacemen:
   - code_imp: Hub status shows if server is restarting, starting, time to start. The
       "Time" is more accurate and based on roundstart now
+  - bugfix: Hub time should be correct again
   Ghommie:
   - rscadd: Most fishing rods come with a hook and line preinstalled. Fishing toolboxes
       come with separate reel and lines as usual.
@@ -700,7 +698,6 @@
   - image: the plumbing chemical splitter no longer has a wrongly rotated direction
   - code_imp: slightly cleans up dance machine code
   - bugfix: disco dances are less comparable to having a seizure
-<<<<<<< HEAD
   nikothedude:
   - rscadd: Interdyne botany now has separating windoors
   sqnztb:
@@ -714,9 +711,5 @@
   - code_imp: removed a dupe trait entry in the traits_by_type list
   - code_imp: removed the timeout_mod arg from add_mood_event, which was only used
       for one thing and causes more issues than it's worth
-=======
-  13spacemen:
-  - bugfix: Hub time should be correct again
   Ben10Omintrix:
   - bugfix: fix a runtime when loading ghosts to a mulebot
->>>>>>> 973ff6bd5 ([MISSED MIRRORS] Fixes clown ops getting their codes + Monkeys avoid obstacles  (#531))
