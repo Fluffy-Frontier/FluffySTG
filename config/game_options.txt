@@ -564,11 +564,6 @@ DISALLOW_TITLE_MUSIC
 ## don't need (or want) this.
 #GIVE_TUTORIALS_WITHOUT_DB
 
-<<<<<<< HEAD
-## FF CONFIGS
-ROUNDSTART_RACES nabber
-ROUNDSTART_RACES teshari_alt
-=======
 ## Configuration for station traits of each type.
 ## The first value (key) is the budget, or the space available to use for station traits of that type. Some take more space than others.
 ## The second value (assoc) is the weight associated with said budget compared to the rest for that type.
@@ -586,4 +581,7 @@ NEGATIVE_STATION_TRAITS 0 8
 NEGATIVE_STATION_TRAITS 1 4
 NEGATIVE_STATION_TRAITS 2 2
 NEGATIVE_STATION_TRAITS 3 1
->>>>>>> 5af948823 ([MIRROR] Increased odds of station traits a little. Introduced a "budget", so smaller traits only take half as much space. (#298))
+
+## FF CONFIGS
+ROUNDSTART_RACES nabber
+ROUNDSTART_RACES teshari_alt

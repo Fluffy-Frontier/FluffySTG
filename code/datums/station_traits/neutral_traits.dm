@@ -3,12 +3,8 @@
 	name = "Bananium Shipment"
 	trait_type = STATION_TRAIT_NEUTRAL
 	weight = 5
-<<<<<<< HEAD
-	report_message = "Rumors has it that the clown planet has been sending support packages to clowns in this system"
-=======
 	cost = STATION_TRAIT_COST_LOW
 	report_message = "Rumors has it that the clown planet has been sending support packages to clowns in this system."
->>>>>>> 5af948823 ([MIRROR] Increased odds of station traits a little. Introduced a "budget", so smaller traits only take half as much space. (#298))
 	trait_to_give = STATION_TRAIT_BANANIUM_SHIPMENTS
 
 /datum/station_trait/unnatural_atmosphere
