@@ -3881,7 +3881,6 @@
 /area/ruin/syndicate_lava_base/testlab)
 "zh" = (
 /obj/structure/rack,
-/obj/item/construction/rcd/loaded,
 /obj/item/rcd_ammo,
 /obj/item/rcd_ammo,
 /obj/item/rcd_ammo,
@@ -3889,6 +3888,8 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
+/obj/item/flatpacked_machine,
+/obj/item/construction/rcd/loaded,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
 "zm" = (
@@ -4297,8 +4298,8 @@
 /area/ruin/syndicate_lava_base/cargo)
 "Cn" = (
 /obj/structure/rack/shelf,
-/obj/item/storage/toolbox/syndicate,
 /obj/effect/turf_decal/tile/dark/full,
+/obj/item/storage/toolbox/syndicate,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
 "Co" = (
@@ -6380,8 +6381,11 @@
 /obj/item/knife/combat/survival,
 /obj/item/flashlight/seclite,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/item/gun/energy/recharge/kinetic_accelerator,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/item/flatpacked_machine/ore_thumper,
+/obj/item/flatpacked_machine/ore_thumper,
+/obj/item/flatpacked_machine/ore_thumper,
+/obj/item/gun/energy/recharge/kinetic_accelerator,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
 "Pz" = (
