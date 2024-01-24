@@ -25,6 +25,13 @@
 		"co2_cracker",
 		"portable_recycler",
 		"foodricator",
+<<<<<<< HEAD
+=======
+		"wall_heater",
+		"macrowave",
+		"frontier_range",
+		"tabletop_griddle",
+>>>>>>> 21b58a477 (makes the tabletop griddle actually printable (#583))
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000000000000000) // God save you
 	hidden = TRUE
