@@ -671,13 +671,13 @@
 	pixel_y = -4
 	},
 /obj/effect/turf_decal/trimline/dark/filled/end,
-/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate{
-	dir = 1
-	},
 /obj/effect/turf_decal/box/red/corners{
 	dir = 4
 	},
 /obj/effect/turf_decal/box/red/corners{
+	dir = 1
+	},
+/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base{
 	dir = 1
 	},
 /turf/open/floor/iron/dark,
@@ -1180,7 +1180,6 @@
 /turf/open/floor/grass,
 /area/ruin/syndicate_lava_base/main)
 "hK" = (
-/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/deckofficer,
 /obj/effect/turf_decal/trimline/dark/filled/end{
 	dir = 1
 	},
@@ -1194,6 +1193,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
 	},
+/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base/deck_officer,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/syndicate_lava_base/arrivals)
 "hV" = (
@@ -3111,7 +3111,6 @@
 /turf/open/floor/iron/dark/textured,
 /area/ruin/syndicate_lava_base/dormitories)
 "ut" = (
-/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/shaftminer,
 /obj/effect/turf_decal/trimline/dark/filled/end{
 	dir = 1
 	},
@@ -3126,6 +3125,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
 	},
+/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base/ice,
 /turf/open/floor/iron/dark,
 /area/ruin/syndicate_lava_base/arrivals)
 "uu" = (
@@ -5215,9 +5215,6 @@
 /area/ruin/syndicate_lava_base/medbay)
 "If" = (
 /obj/effect/turf_decal/trimline/dark/filled/end,
-/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate{
-	dir = 1
-	},
 /obj/effect/turf_decal/box/red/corners{
 	dir = 4
 	},
@@ -5227,6 +5224,9 @@
 /obj/effect/turf_decal/stripes/red/line,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/south{
 	pixel_y = -4
+	},
+/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base{
+	dir = 1
 	},
 /turf/open/floor/iron/dark/textured,
 /area/ruin/syndicate_lava_base/arrivals)
@@ -5537,9 +5537,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/reinforced,
 /area/lavaland/surface/outdoors)
-"Kp" = (
-/turf/closed/wall/r_wall/syndicate/cruiser,
-/area/ruin/syndicate_lava_base/testlab)
 "Kt" = (
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
@@ -6545,7 +6542,7 @@
 	},
 /obj/effect/turf_decal/trimline/dark/filled/end,
 /obj/structure/marker_beacon/burgundy,
-/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate{
+/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base{
 	dir = 1
 	},
 /turf/open/floor/iron/dark,
@@ -6653,9 +6650,6 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
-"Ra" = (
-/turf/closed/wall/r_wall/syndicate/cruiser,
-/area/ruin/syndicate_lava_base/bar)
 "Rb" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 8
@@ -6872,7 +6866,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/south{
 	pixel_y = -4
 	},
-/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate{
+/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base{
 	dir = 1
 	},
 /turf/open/floor/iron/dark,
@@ -7619,7 +7613,6 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
 	},
-/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/shaftminer,
 /obj/effect/turf_decal/trimline/dark/filled/end{
 	dir = 1
 	},
@@ -7627,6 +7620,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/box/red/corners,
+/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base/ice,
 /turf/open/floor/iron/dark,
 /area/ruin/syndicate_lava_base/arrivals)
 "Xg" = (
@@ -7714,8 +7708,8 @@
 /obj/effect/turf_decal/trimline/dark/filled/end{
 	dir = 1
 	},
-/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/shaftminer,
 /obj/structure/marker_beacon/burgundy,
+/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base/ice,
 /turf/open/floor/iron/dark,
 /area/ruin/syndicate_lava_base/arrivals)
 "Xz" = (
@@ -8682,11 +8676,11 @@ jv
 Qt
 IR
 qM
-Kp
+JV
 hK
 JS
 If
-Ra
+eg
 eg
 eg
 Si

@@ -1815,9 +1815,6 @@
 /area/ruin/syndicate_lava_base/main)
 "ln" = (
 /obj/effect/turf_decal/trimline/dark/filled/end,
-/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate{
-	dir = 1
-	},
 /obj/effect/turf_decal/box/red/corners{
 	dir = 4
 	},
@@ -1827,6 +1824,9 @@
 /obj/effect/turf_decal/stripes/red/line,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/south{
 	pixel_y = -4
+	},
+/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base/ice{
+	dir = 1
 	},
 /turf/open/floor/iron/dark/textured,
 /area/ruin/syndicate_lava_base/arrivals)
@@ -2101,7 +2101,7 @@
 	},
 /obj/effect/turf_decal/trimline/dark/filled/end,
 /obj/structure/marker_beacon/burgundy,
-/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate{
+/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base/ice{
 	dir = 1
 	},
 /turf/open/floor/iron/dark,
@@ -2297,7 +2297,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/south{
 	pixel_y = -4
 	},
-/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate{
+/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base/ice{
 	dir = 1
 	},
 /turf/open/floor/iron/dark,
@@ -3217,7 +3217,6 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
 	},
-/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/shaftminer,
 /obj/effect/turf_decal/trimline/dark/filled/end{
 	dir = 1
 	},
@@ -3225,6 +3224,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/box/red/corners,
+/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base/shaftminer/ice,
 /turf/open/floor/iron/dark,
 /area/ruin/syndicate_lava_base/arrivals)
 "uk" = (
@@ -3323,8 +3323,8 @@
 /obj/effect/turf_decal/trimline/dark/filled/end{
 	dir = 1
 	},
-/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/shaftminer,
 /obj/structure/marker_beacon/burgundy,
+/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base/shaftminer/ice,
 /turf/open/floor/iron/dark,
 /area/ruin/syndicate_lava_base/arrivals)
 "uX" = (
@@ -3481,7 +3481,6 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/testlab)
 "wa" = (
-/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/deckofficer,
 /obj/effect/turf_decal/trimline/dark/filled/end{
 	dir = 1
 	},
@@ -3495,6 +3494,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
 	},
+/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base/deck_officer/ice,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/syndicate_lava_base/arrivals)
 "wl" = (
@@ -3881,13 +3881,13 @@
 	pixel_y = -4
 	},
 /obj/effect/turf_decal/trimline/dark/filled/end,
-/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate{
-	dir = 1
-	},
 /obj/effect/turf_decal/box/red/corners{
 	dir = 4
 	},
 /obj/effect/turf_decal/box/red/corners{
+	dir = 1
+	},
+/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base/ice{
 	dir = 1
 	},
 /turf/open/floor/iron/dark,
@@ -5481,7 +5481,6 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/testlab)
 "IA" = (
-/obj/effect/mob_spawn/ghost_role/human/lavaland_syndicate/shaftminer,
 /obj/effect/turf_decal/trimline/dark/filled/end{
 	dir = 1
 	},
@@ -5496,6 +5495,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
 	},
+/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base/shaftminer/ice,
 /turf/open/floor/iron/dark,
 /area/ruin/syndicate_lava_base/arrivals)
 "IM" = (
@@ -7090,9 +7090,6 @@
 /obj/structure/flora/bush/flowers_pp/style_random,
 /turf/open/floor/grass,
 /area/ruin/syndicate_lava_base/main)
-"UX" = (
-/turf/closed/wall/r_wall/syndicate/cruiser,
-/area/ruin/syndicate_lava_base/testlab)
 "Ve" = (
 /obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 1
@@ -7804,9 +7801,6 @@
 /obj/structure/marker_beacon/burgundy,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
-"Zg" = (
-/turf/closed/wall/r_wall/syndicate/cruiser,
-/area/ruin/syndicate_lava_base/bar)
 "Zh" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 8
@@ -8591,11 +8585,11 @@ Mp
 my
 BA
 RH
-UX
+kf
 wa
 Xo
 ln
-Zg
+td
 td
 td
 RM
