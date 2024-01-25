@@ -960,3 +960,7 @@
       Spacer quirk.
   - bugfix: Players now receive a visible status effect alert when benefitting from
       the gravity wellness buff given by the Spacer quirk.
+2024-01-25:
+  ArcaneMusic:
+  - refactor: Stock market events are now their own objects, and are handled by the
+      stock market individually.
