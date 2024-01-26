@@ -47,6 +47,7 @@
 
 /// Sends a citation alert message to the target's PDA.
 /datum/crime/citation/proc/alert_owner(mob/sender, atom/source, target_name, message)
+	create_payment_countdown(target_name)	// FLUFFY FRONTIER ADDITION
 	for(var/messenger_ref in GLOB.pda_messengers)
 		var/datum/computer_file/program/messenger/messenger = GLOB.pda_messengers[messenger_ref]
 		if(messenger.computer.saved_identification != target_name)
