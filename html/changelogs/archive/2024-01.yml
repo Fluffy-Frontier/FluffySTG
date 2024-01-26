@@ -826,14 +826,50 @@
   A.C.M.O.:
   - rscadd: Added the forked cybernetic tongue to Augments+.
   - rscadd: Added the robotic lizard voicebox to Augments+ and the RoboDrobe vendor.
+  ArcaneMusic:
+  - bugfix: The smelter and refinery now properly hold mining points, only taking
+      a small amount out of net gained points.
+  FernandoJ8:
+  - bugfix: the blur effects for hallucinogenic withdrawal and psychic projection
+      are now properly centered on the screen
   Ghommie:
   - bugfix: Goldgrubs should no longer spit out things that aren't ore (e.g. stasised
       mobs from the polymorph belt).
+  Hatterhat:
+  - image: Proto-kinetic glaive sprites have been tweaked to be less... something.
+      I don't know, but they look better to me and I'm the only one poking at them,
+      so.
+  JohnFulpWillard:
+  - bugfix: Moved the curator's treasure hunter fedora up by a single pixel.
+  - bugfix: pAIs downloaded while in a PDA now gets the action button to control said
+      PDA.
+  - bugfix: pAI cards can now be ejected from a PDA when there is no pAI inhabiting
+      it.
+  - bugfix: Contractor support units now don't have flavortext telling them they work
+      for someone else but their agent.
+  - bugfix: Contractor support units now comes in an antag spawner (like syndicate
+      monkey, nukie borgs/reinforcements).
+  - bugfix: Syndicate monkeys now get their monkey antag datum.
+  LT3:
+  - bugfix: Server announcements again no longer escape HTML by default
+  - bugfix: You can no longer interact with medical beds while incapacitated
   Lutowski:
   - rscadd: Fluffier than ever before, moths can now have hair & facial hair.
+  Melbert:
+  - bugfix: Replacing a limb fully claimed by an infested burn wound now properly
+      grants you control of the limb back
+  - bugfix: Losing control of a limb now sounds less weird in chat
+  Nerev4r:
+  - image: Snails have been resprited, as well as the ivory versions of their shells
+      to allow for more accurate recoloring.
   Nerev4r, Vol:
   - rscadd: A new jacket option for Security has appeared in the loadout and their
       vendors.
+  Orion_the_Fox, Halcyon:
+  - image: updated the Crop Top Turtleneck sprite, including adding a Teshari-compatible
+      version!
+  - balance: removed on-the-fly recoloring, BUT now the turtleneck can carry some
+      basic items and warms you up a bit! ... as much as a croptop really can, I guess.
   Paxilmaniac:
   - image: A single missing frame from the prefab shutter closing animation has been
       re-placed, meaning they wont vanish for 1/10 of a second whenever closing
@@ -847,6 +883,40 @@
   - rscadd: Hunter shotgun slugs can now mine mineral walls, shotgun mining time baby.
   - bugfix: Hunter slugs and .60 AMR ammo will now properly do extra damage to the
       biotypes they are strong against.
+  - bugfix: Tabletop griddles can now actually be printed again
+  - bugfix: the stirling generator can now actually be printed
+  - rscadd: Cargo, and the rapid construction fabricator, are now hosts to a new source
+      of power. The stirling generator, operating something like the old TEG, creates
+      power from large differences in temperature. Handy!
+  - rscadd: A variety of special kitchen machines have been created for the rapid
+      construction fabricator. While they might not perform *too* much different from
+      their standard counterparts, they are easier to move around and can be printed
+      whole.
+  - rscadd: Three new crates have been added to cargo, each one featuring a bundle
+      of frontier equipment. In the service tab, kits for frontier kitchens and botany
+      chemical synthesizers can be found. In the engineering tab, the colony starter
+      kit can be found.
+  - qol: Many flatpack machines that were needlessly large have been made normal sized,
+      meaning they fit inside of backpacks now!
+  - bugfix: A large number of flatpack machines that were missing custom materials
+      now have them, meaning they can now be recycled as well.
+  - image: New sprites for all the new machines and whatnot made by me
+  - spellcheck: Every instance of Flat-packed has been changed to Flat-Packed where
+      appropriate
+  SyncIt21:
+  - bugfix: reactions that create multiple reagents now terminate without looping
+      endlessly.
+  - bugfix: oatmeal reactions now terminate & produce the right quantity of results
+      but without milk.
+  - bugfix: fixes runtime when mineral scanning, passes right argument for scanner
+      in golem eyes
+  Zergspower:
+  - code_imp: added an override file for pirate event spawns
+  - rscdel: Interdyne Pirates no longer can roll as a pirate antag
+  lizardqueenlexi:
+  - bugfix: Feature manipulation surgery will now properly update the patient's appearance.
+  - refactor: The tail portion of lizard spines will no longer draw on people who
+      do not have a tail.
   nikothedude:
   - bugfix: Synth wound oscillations will no longer cause you to reel from impacts
       if there were no impacts
@@ -855,11 +925,14 @@
       fix 4x more than suturing
   - balance: Synth wound oscillations now have a minimum of 3 seconds between each
       oscillation
+  - spellcheck: Fixed a typo in systemic fault's examine text
   scriptis:
   - spellcheck: iron sheets's what?
   vinylspiders:
   - bugfix: fixed ammo counter hud not updating for self-recharging energy weapons
   - bugfix: fixes features not updating when changing character slots
+  - bugfix: synthliz tail can have spines again
+  - bugfix: fixes a spurious CI failure from do_charge() signal overrides
   yooriss:
   - rscadd: A bunch of new stuff has been added to the loadout tab, such as civil
       defense & frontier medkits, a ton of Kahraman frontier clothing, wheely-heels
@@ -869,3 +942,25 @@
       slots (since they fit in both).
   - bugfix: Prisoners joining a round now properly have their implants removed as
       intended.
+  - bugfix: Custom say emotes now properly apply lowercase at the start where appropriate
+      and also trim excess whitespace. Cleaner and easier for everyone!
+  - rscadd: 'A new variant of the DeForest civil defense medical kit is now available:
+      the civil defense symptom support kit. Loaded with three pens of psifinil and
+      a bottle of alifil, this little thing''ll fit in your pocket and give your characters
+      guaranteed relief from sleepiness, stuttering and sickliness. Some side effects
+      may occur. Consult your doctor before use. This new kit is available cheaply
+      from cargo and from medical''s departmental orders, too.'
+  - balance: People with the Spacer or Narcolepsy quirks now start with a civil defense
+      symptom support kit. Spacers no longer start with a bottle of atrociously, unbelievably
+      useless ondansetron patches.
+  - bugfix: Loadout holobadges are now considered accessory category only, meaning
+      they can be paired up with neck slot loadout items without occupying both slots.
+      Wear a scarf and a holobadge together!
+  - bugfix: Anti-gravity harnesses now properly apply various interactions with the
+      Spacer quirk.
+  - bugfix: Players now receive a visible status effect alert when benefitting from
+      the gravity wellness buff given by the Spacer quirk.
+2024-01-25:
+  ArcaneMusic:
+  - refactor: Stock market events are now their own objects, and are handled by the
+      stock market individually.

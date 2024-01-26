@@ -28,6 +28,7 @@
 		"wall_heater",
 		"macrowave",
 		"frontier_range",
+		"tabletop_griddle",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000000000000000) // God save you
 	hidden = TRUE
@@ -99,7 +100,7 @@
 		RND_CATEGORY_INITIAL,
 		FABRICATOR_CATEGORY_APPLIANCES + FABRICATOR_SUBCATEGORY_ATMOS,
 	)
-	construction_time = 30 SECONDS
+	construction_time = 15 SECONDS
 
 // Plumbable chem machine that makes nothing but water
 
@@ -116,7 +117,7 @@
 		RND_CATEGORY_INITIAL,
 		FABRICATOR_CATEGORY_APPLIANCES + FABRICATOR_SUBCATEGORY_FLUIDS,
 	)
-	construction_time = 10 SECONDS
+	construction_time = 30 SECONDS
 
 // Plumbable chem machine that makes nothing but water
 
@@ -133,7 +134,7 @@
 		RND_CATEGORY_INITIAL,
 		FABRICATOR_CATEGORY_APPLIANCES + FABRICATOR_SUBCATEGORY_FLUIDS,
 	)
-	construction_time = 10 SECONDS
+	construction_time = 30 SECONDS
 
 // Chem dispenser that dispenses various flavored beverages and nutrislop, yum!
 
