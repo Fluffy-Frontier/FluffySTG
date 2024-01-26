@@ -35,7 +35,7 @@
 	},
 /obj/structure/railing,
 /obj/structure/marker_beacon/burgundy,
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull/reinforced/lavaland,
 /area/lavaland/surface/outdoors)
 "as" = (
 /obj/structure/marker_beacon/burgundy,
@@ -466,7 +466,7 @@
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/turf/open/floor/plating/reinforced,
+/turf/open/floor/plating/reinforced/lavaland,
 /area/ruin/syndicate_lava_base/cargo)
 "cL" = (
 /obj/structure/flora/ash/tall_shroom,
@@ -2086,7 +2086,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/testlab)
 "nr" = (
-/turf/open/floor/plating/reinforced,
+/turf/open/floor/plating/reinforced/lavaland,
 /area/lavaland/surface/outdoors)
 "nu" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -2425,7 +2425,7 @@
 /obj/structure/railing{
 	dir = 5
 	},
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull/reinforced/lavaland,
 /area/lavaland/surface/outdoors)
 "pq" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
@@ -2862,6 +2862,10 @@
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/syndicate_lava_base/bar)
+"sf" = (
+/obj/structure/marker_beacon/burgundy,
+/turf/open/floor/engine/hull/reinforced/lavaland,
+/area/lavaland/surface/outdoors)
 "sg" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/item/reagent_containers/cup/glass/drinkingglass{
@@ -3145,7 +3149,7 @@
 /turf/open/floor/iron/dark,
 /area/ruin/syndicate_lava_base/testlab)
 "uH" = (
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull/reinforced/lavaland,
 /area/lavaland/surface/outdoors)
 "uJ" = (
 /obj/effect/turf_decal/tile/dark_red/half{
@@ -3197,10 +3201,6 @@
 	},
 /turf/open/floor/grass,
 /area/ruin/syndicate_lava_base/main)
-"vj" = (
-/obj/structure/lattice/catwalk/mining,
-/turf/open/floor/plating/elevatorshaft,
-/area/lavaland/surface/outdoors)
 "vm" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/syndicate_lava_base/cargo)
@@ -3287,7 +3287,7 @@
 /obj/structure/railing{
 	dir = 5
 	},
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull/reinforced/lavaland,
 /area/ruin/syndicate_lava_base/cargo)
 "vJ" = (
 /obj/machinery/suit_storage_unit/mining,
@@ -3764,7 +3764,7 @@
 	},
 /obj/structure/railing,
 /obj/structure/marker_beacon/burgundy,
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull/reinforced/lavaland,
 /area/lavaland/surface/outdoors)
 "yF" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -3927,7 +3927,7 @@
 /obj/structure/railing{
 	dir = 9
 	},
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull/reinforced/lavaland,
 /area/lavaland/surface/outdoors)
 "zv" = (
 /obj/machinery/suit_storage_unit/mining,
@@ -3960,7 +3960,7 @@
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/turf/open/floor/plating/reinforced,
+/turf/open/floor/plating/reinforced/lavaland,
 /area/lavaland/surface/outdoors)
 "zV" = (
 /obj/item/flashlight{
@@ -4545,7 +4545,7 @@
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/turf/open/floor/plating/reinforced,
+/turf/open/floor/plating/reinforced/lavaland,
 /area/lavaland/surface/outdoors)
 "Eb" = (
 /obj/structure/table/reinforced/plastitaniumglass,
@@ -5133,10 +5133,6 @@
 /obj/effect/turf_decal/tile/dark/full,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/testlab)
-"HE" = (
-/obj/structure/marker_beacon/burgundy,
-/turf/open/floor/engine/hull/reinforced,
-/area/lavaland/surface/outdoors)
 "HF" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 4
@@ -5253,7 +5249,7 @@
 /obj/structure/railing/corner{
 	dir = 4
 	},
-/turf/open/floor/plating/reinforced,
+/turf/open/floor/plating/reinforced/lavaland,
 /area/ruin/syndicate_lava_base/cargo)
 "IB" = (
 /obj/effect/turf_decal/tile/dark_red{
@@ -5268,7 +5264,7 @@
 /turf/open/floor/engine,
 /area/ruin/syndicate_lava_base/testlab)
 "ID" = (
-/turf/open/floor/plating/reinforced,
+/turf/open/floor/plating/reinforced/lavaland,
 /area/ruin/syndicate_lava_base/cargo)
 "II" = (
 /obj/structure/table/reinforced/plastitaniumglass,
@@ -5536,7 +5532,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plating/reinforced,
+/turf/open/floor/plating/reinforced/lavaland,
 /area/lavaland/surface/outdoors)
 "Kt" = (
 /obj/effect/turf_decal/trimline/dark/filled/line,
@@ -6348,7 +6344,7 @@
 	dir = 4
 	},
 /obj/structure/railing/corner,
-/turf/open/floor/plating/reinforced,
+/turf/open/floor/plating/reinforced/lavaland,
 /area/lavaland/surface/outdoors)
 "Pk" = (
 /obj/structure/window/reinforced/survival_pod/spawner/directional/south,
@@ -6676,7 +6672,7 @@
 	dir = 4
 	},
 /obj/structure/railing/corner,
-/turf/open/floor/plating/reinforced,
+/turf/open/floor/plating/reinforced/lavaland,
 /area/lavaland/surface/outdoors)
 "Rj" = (
 /obj/machinery/modular_shield/module/node{
@@ -6927,7 +6923,7 @@
 	pixel_x = 7;
 	pixel_y = -20
 	},
-/turf/open/floor/engine/hull/reinforced,
+/turf/open/floor/engine/hull/reinforced/lavaland,
 /area/ruin/syndicate_lava_base/cargo)
 "SG" = (
 /obj/effect/turf_decal/siding/wood/corner,
@@ -8710,9 +8706,9 @@ Co
 eO
 zn
 uH
-HE
+sf
 pu
-HE
+sf
 uH
 mo
 eO
@@ -8768,8 +8764,8 @@ Co
 Co
 eO
 zn
-vj
-vj
+BZ
+BZ
 pu
 pu
 pu
@@ -8827,11 +8823,11 @@ Co
 Co
 eO
 yt
-HE
+sf
 nr
 pu
 nr
-HE
+sf
 te
 ZT
 BO
@@ -8945,11 +8941,11 @@ Co
 eO
 eO
 oh
-HE
+sf
 nr
 pu
 nr
-HE
+sf
 te
 ZT
 eO
@@ -9063,11 +9059,11 @@ Co
 Co
 eO
 oh
-HE
+sf
 nr
 pu
 nr
-HE
+sf
 Lr
 eO
 eO
@@ -9182,9 +9178,9 @@ eO
 eO
 oh
 uH
-HE
+sf
 pu
-HE
+sf
 uH
 Lr
 eO
