@@ -20,4 +20,9 @@
 
 	update_matching_security_huds(target.name)
 
+// Integration into main codebase
+/datum/crime/citation/alert_owner(mob/sender, atom/source, target_name, message)
+	. = ..()
+	create_payment_countdown(target_name)
+
 #undef CITATION_PAYMENT_PERIOD
