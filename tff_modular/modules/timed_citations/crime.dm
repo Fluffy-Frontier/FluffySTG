@@ -13,6 +13,7 @@
 	// Already payed or invalidated by Warden or HoS (or no record provided somehow)
 	if (!src.valid || src.fine == 0 || !target)
 		return
+	valid = FALSE
 
 	var/datum/crime/new_crime = new(name = "Просроченный платёж", details = "Просрочена оплата штрафа '[src.name]' от [src.time]", author = "Citation Server")
 	target.crimes += new_crime
