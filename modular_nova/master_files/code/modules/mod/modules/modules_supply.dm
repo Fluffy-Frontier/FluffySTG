@@ -6,8 +6,6 @@
 	. = ..()
 	REMOVE_TRAIT(mod.wearer, TRAIT_TRASHMAN, MOD_TRAIT)
 
-<<<<<<< HEAD
-=======
 /obj/item/mod/module/ash_accretion
 	incompatible_modules = list(/obj/item/mod/module/ash_accretion, /obj/item/mod/module/armor_booster)
 	/// Is this ash accretion module providing its perks? Separate from active, because I don't know how it would interact with everything else as it's a passive module.
@@ -71,4 +69,3 @@
 		mod.wearer.update_equipment_speed_mods()
 
 	traveled_tiles = 0
->>>>>>> 1c7021bef (Domain Expansion: Coffin of the Ashen Mountain (retracting your mining MOD is bad, actually) (#598))
