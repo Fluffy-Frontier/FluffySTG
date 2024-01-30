@@ -1074,3 +1074,70 @@
       will if the limb in question isn't wounded. Humanoid synthetics can take the
       quirk to allow themselves to remove their own limbs without the need for exterior
       coaxing.
+2024-01-30:
+  00-Steven:
+  - spellcheck: You no longer fail to find "a anything" when swabbing something for
+      cytology that doesn't have swabbing results.
+  - bugfix: Blobs sitting on APCs no longer break them when already broken, and so
+      no longer spam the power down noise.
+  - bugfix: Cats can be swabbed for feliform cells again.
+  - sound: Cats have had their mastery of silent walking revoked, and have their pitter-pattering
+      footsteps back again.
+  - bugfix: Jerry Tramstation can get laid again! (Fixed cat breeding.)
+  - bugfix: Removed kitten omniscience. (They stop pointing at you now.)
+  - bugfix: Rootbread soup now uses poached egg (egg reagents in soup pot) instead
+      of raw unpeeled egg (which would break into reagents upon coming into contact
+      with the soup pot) and is thus craftable again.
+  13spacemen:
+  - refactor: Husk icons are now dynamically generated. See if you can identify what
+      species it was!
+  Ben10Omintrix:
+  - bugfix: fixes a runtime that sometimes happens in ai controllers
+  DaCoolBoss:
+  - spellcheck: typos fixed in the fireproof clothing religious rite
+  Ghommie:
+  - image: Resprited the goldfish and lanternfish as well.
+  - image: Added an icon to the "My Watchlist Status is Not Important" achievement.
+  Iajret:
+  - bugfix: Ore Thumpers can now be placed on Tarkon asteroid
+  Inari-Whitebear:
+  - bugfix: Bone daggers and shivs are now longer electrically conductive
+  Krypandenej:
+  - bugfix: pesto pizza (cooked) is no longer raw, and cilbir is meat instead of fruit
+  LT3:
+  - bugfix: Emergency shuttle console now only works while on the emergency shuttle
+  - bugfix: Tramstation external atmos ports are now properly connected
+  Melbert:
+  - bugfix: You can build on some niche tables again, such as the Wabbajack Altar.
+  - bugfix: Wizarditis Timestop now has the desired effect.
+  - admin: Admins can now VV Timestop to make the caster not immune to their own Timestop.
+      If they really wanted.
+  - bugfix: Rush Gland now triggers correctly on being grabbed by a Goliath
+  MortoSasye:
+  - code_imp: The amount of slots for hearthkin (primitive demihumans) was changed
+      to 12 from 9.
+  SyncIt21:
+  - bugfix: sets minimum volume of reagent allowed to exist inside anything to 0.01
+      therefore allowing plumbing iv drip small transfer rates to occur without reagents
+      disappearing.
+  - spellcheck: shortened description for the PCM and capitalized some text for its
+      examines.
+  - code_imp: adds sanity checks and removed deprecated `content` tag from PCM UI.
+      Stops hologram items from being inserted.
+  - bugfix: auto lathes don't hog local apc supply when printing items
+  Whoneedspacee:
+  - refactor: Legions abilities have been changed into actions that can be added to
+      any mob.
+  honkpocket:
+  - balance: The forge weapons all gained +5 force, except the axe which became significantly
+      smaller
+  - balance: The forge dagger can be thrown effectively
+  - balance: The forge hammer needs two empty hands to be held
+  - balance: The forge katana gained some blockchance
+  - balance: The crusader-belt can now fit the forge katana, bokken, and dagger as
+      well as the forge sword
+  intercepti0n:
+  - refactor: 'Refactored Telecommunications Monitoring Console UI: added search bar,
+      made UI more compact.'
+  rageguy505:
+  - bugfix: ' The buttons for flashers on birdshot/tramstation now work'
