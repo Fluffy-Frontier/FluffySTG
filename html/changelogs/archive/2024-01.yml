@@ -1180,3 +1180,32 @@
   - bugfix: removed a few unintended cafe interactions
   - qol: now anyone can hang in the vox box's nitrogen atmosphere.
   - qol: all ds-2 and interdyne operatives now have a NIF box in their backpacks
+2024-01-31:
+  Jacquerel:
+  - bugfix: Cult pylons will no longer cover up "open space" (or water) with cult
+      floors
+  LT3:
+  - bugfix: Tram power consumption will no longer will randomly drain APCs
+  - bugfix: Tram power moved to area based rectifiers
+  - bugfix: ID card examine text shows how to set your linked bank account
+  - bugfix: ID card withdrawal from an unassigned account will ask if you want to
+      link an account
+  Melbert:
+  - bugfix: Fixed ore vent descriptions looking weird sometimes
+  - bugfix: Fixed being able to scan an ore vent multiple times at once
+  - bugfix: Fixed gaining scan points from scannning an ore vent without finishing
+      the scan
+  OrionTheFox:
+  - rscdel: Removed unused "Peacekeeper Belt" and put the remaining "Peacekeeper Webbing"
+      in-line with TG Sec Webbing
+  - image: updated the icon used for the "Slim" variant of sec belts (now called "Basic")
+  Paxilmaniac:
+  - rscadd: Four new implants have been added to either company imports in deforest
+      medical, or in combat implants research for free from robotics.
+  - image: Sprites for everything for the new implants done by me.
+  SapphicOverload:
+  - bugfix: Mk-II Ripley exosuits are spaceproof again.
+  - bugfix: Converted mechs now have their lights on if they did before the conversion.
+  distributivgesetz:
+  - bugfix: All Within Theoretical Limits should properly unlock now when the crystal
+      comes back from the countdown.
