@@ -11,8 +11,16 @@
 	if (controller.blackboard_key_exists(set_key))
 		finish_action(controller, TRUE)
 		return
+<<<<<<< HEAD
 	var/find_this_thing = search_tactic(controller, locate_path, search_range)
 	if(QDELETED(controller.pawn) || isnull(find_this_thing))
+=======
+	if(QDELETED(controller.pawn))
+		finish_action(controller, FALSE)
+		return
+	var/find_this_thing = search_tactic(controller, locate_path, search_range)
+	if(isnull(find_this_thing))
+>>>>>>> e43ff5c27 ([MIRROR] Fixes a spurious runtime in AI code (#784))
 		finish_action(controller, FALSE)
 		return
 	controller.set_blackboard_key(set_key, find_this_thing)
