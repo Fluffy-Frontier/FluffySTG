@@ -53,6 +53,16 @@
 /obj/machinery/telecomms/processor/preset_one,
 /turf/open/floor/circuit/telecomms/server,
 /area/station/tcommsat/server)
+"aaY" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
 "abt" = (
 /obj/machinery/shower/directional/west,
 /obj/structure/drain,
@@ -158,6 +168,12 @@
 	dir = 1
 	},
 /area/station/engineering/main)
+"acT" = (
+/obj/structure/railing/corner,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/siding/dark/corner,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "acW" = (
 /obj/effect/turf_decal/trimline/blue/filled/warning{
 	dir = 8
@@ -292,6 +308,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen/abandoned)
+"aeH" = (
+/obj/structure/chair/sofa/corp/right{
+	color = "#DE3A3A";
+	dir = 4
+	},
+/obj/structure/window/spawner/directional/west,
+/turf/open/floor/iron/cafeteria,
+/area/station/service/cafeteria)
 "aeL" = (
 /obj/machinery/status_display/evac,
 /turf/closed/wall/r_wall,
@@ -698,6 +722,7 @@
 	},
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/department/science/xenobiology)
+<<<<<<< HEAD
 "ajR" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -708,6 +733,8 @@
 /obj/effect/turf_decal/tile/green/diagonal_centre,
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "ajT" = (
 /obj/effect/turf_decal/trimline/blue/filled/warning{
 	dir = 4
@@ -918,6 +945,7 @@
 /obj/machinery/holopad,
 /turf/open/floor/wood,
 /area/station/commons/vacant_room/office)
+<<<<<<< HEAD
 "anI" = (
 /obj/structure/chair/sofa/corp/right{
 	color = "#DE3A3A";
@@ -925,6 +953,8 @@
 	},
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "anM" = (
 /obj/machinery/door/airlock/cmo{
 	name = "Chief Medical Officer's Quarters"
@@ -945,11 +975,14 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/wood/large,
 /area/station/command/heads_quarters/cmo)
+<<<<<<< HEAD
 "anP" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/deepfryer,
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "anW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet,
@@ -1384,6 +1417,21 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/wood/large,
 /area/station/medical/psychology)
+"aud" = (
+/obj/effect/turf_decal/trimline/brown/filled/line{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/brown/filled/mid_joiner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/brown/filled/mid_joiner,
+/obj/machinery/computer/department_orders/service,
+/obj/effect/turf_decal/bot,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/smooth_large,
+/area/station/hallway/secondary/service)
 "aus" = (
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 4
@@ -1668,6 +1716,13 @@
 "ayt" = (
 /turf/open/floor/carpet/purple,
 /area/station/common/night_club)
+"ayx" = (
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/machinery/light_switch/directional/west,
+/obj/machinery/light/directional/west,
+/obj/machinery/icecream_vat,
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
 "ayH" = (
 /obj/machinery/computer/telecomms/monitor{
 	dir = 4;
@@ -2216,6 +2271,10 @@
 "aFY" = (
 /turf/closed/wall,
 /area/station/engineering/atmos/storage/gas)
+"aGg" = (
+/obj/machinery/griddle,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "aGq" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/rack,
@@ -2457,6 +2516,19 @@
 /obj/machinery/holopad/secure,
 /turf/open/floor/carpet,
 /area/station/security/courtroom)
+"aLz" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/chem_master/condimaster,
+/obj/structure/railing{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "aLB" = (
 /obj/structure/chair/sofa/corp/right,
 /obj/effect/turf_decal/tile/dark/opposingcorners{
@@ -3400,6 +3472,7 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/greater)
+<<<<<<< HEAD
 "aXm" = (
 /obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/airlock/access/all/service/general,
@@ -3411,6 +3484,8 @@
 	},
 /turf/open/floor/iron/large,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "aXr" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin/carbon{
@@ -4318,6 +4393,7 @@
 	},
 /turf/open/floor/carpet/black,
 /area/station/command/heads_quarters/qm)
+<<<<<<< HEAD
 "bmk" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -4325,6 +4401,8 @@
 /obj/effect/turf_decal/tile/green/diagonal_centre,
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "bmt" = (
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 1
@@ -4707,6 +4785,11 @@
 	},
 /turf/open/floor/glass/reinforced,
 /area/station/security/execution/transfer)
+"bsF" = (
+/obj/effect/turf_decal/weather/snow,
+/obj/structure/kitchenspike,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
+/area/station/service/kitchen/coldroom)
 "bsI" = (
 /turf/closed/wall/r_wall,
 /area/station/science/auxlab)
@@ -4759,6 +4842,7 @@
 	dir = 4
 	},
 /area/station/hallway/primary/central)
+<<<<<<< HEAD
 "btx" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/disposalpipe/segment{
@@ -4767,6 +4851,8 @@
 /obj/effect/turf_decal/tile/green/diagonal_centre,
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "btY" = (
 /obj/structure/table/glass,
 /obj/item/folder/white{
@@ -4991,6 +5077,22 @@
 	dir = 8
 	},
 /area/station/science/xenobiology)
+"bwZ" = (
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/camera/directional/north{
+	c_tag = "Service - Service Hall";
+	dir = 9;
+	name = "service camera"
+	},
+/obj/effect/turf_decal/trimline/brown/filled/line,
+/obj/effect/turf_decal/trimline/brown/filled/mid_joiner,
+/obj/machinery/modular_computer/preset/cargochat/service,
+/obj/effect/turf_decal/bot,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/smooth_large,
+/area/station/hallway/secondary/service)
 "bxm" = (
 /obj/structure/cable,
 /obj/machinery/modular_computer/preset/engineering{
@@ -5880,6 +5982,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/department/science/xenobiology)
+<<<<<<< HEAD
 "bMB" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -5888,6 +5991,8 @@
 /obj/effect/landmark/start/hangover,
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "bMJ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -6006,6 +6111,21 @@
 /obj/machinery/duct,
 /turf/open/floor/iron/white,
 /area/station/science/lab)
+"bNV" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/holopad,
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
 "bNZ" = (
 /obj/machinery/door/airlock/external{
 	name = "External Solar Access"
@@ -6075,11 +6195,14 @@
 	},
 /turf/open/floor/iron/smooth_large,
 /area/station/construction/mining/aux_base)
+<<<<<<< HEAD
 "bOI" = (
 /obj/effect/landmark/start/hangover,
 /obj/structure/chair/stool/directional/north,
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "bOJ" = (
 /obj/structure/cable,
 /turf/open/floor/catwalk_floor/iron_smooth,
@@ -6127,11 +6250,14 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/iron/grimy,
 /area/station/security/detectives_office)
+<<<<<<< HEAD
 "bPG" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/effect/turf_decal/tile/green/diagonal_centre,
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "bPI" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -6263,6 +6389,7 @@
 	dir = 4
 	},
 /area/station/engineering/atmos)
+<<<<<<< HEAD
 "bRS" = (
 /obj/machinery/requests_console/directional/west{
 	department = "Kitchen";
@@ -6277,6 +6404,8 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "bSd" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/supply/hidden{
 	dir = 8
@@ -6663,6 +6792,16 @@
 	},
 /turf/open/floor/iron/smooth_edge,
 /area/station/engineering/atmos/storage)
+"bYX" = (
+/obj/structure/table,
+/obj/item/storage/bag/tray{
+	pixel_y = 3
+	},
+/obj/item/food/dough{
+	pixel_y = 5
+	},
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "bZi" = (
 /turf/closed/wall/r_wall,
 /area/station/engineering/supermatter)
@@ -6822,10 +6961,13 @@
 	},
 /turf/open/floor/iron/smooth_large,
 /area/station/security/checkpoint/engineering)
+<<<<<<< HEAD
 "cbP" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating/airless,
 /area/station/cargo/miningdock)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "cbV" = (
 /obj/effect/landmark/start/hangover,
 /obj/machinery/camera/directional/west{
@@ -7402,6 +7544,34 @@
 	dir = 4
 	},
 /area/station/science/xenobiology)
+"clj" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/cup/bottle/morphine,
+/obj/item/reagent_containers/cup/bottle/toxin{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/cup/bottle/epinephrine{
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/cup/bottle/multiver{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/syringe/epinephrine,
+/obj/effect/turf_decal/tile/yellow/fourcorners,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "chemistry_shutters";
+	name = "Pharmacy Shutters"
+	},
+/obj/machinery/door/window/right/directional/east{
+	name = "Pharmacy Desk";
+	req_access = list("pharmacy");
+	safe = 4;
+	dir = 8
+	},
+/turf/open/floor/iron/white/smooth_large,
+/area/station/medical/pharmacy)
 "clk" = (
 /obj/effect/spawner/random/trash/garbage,
 /turf/open/floor/iron/smooth,
@@ -7605,6 +7775,7 @@
 /obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/iron/dark,
 /area/station/security/office)
+<<<<<<< HEAD
 "coC" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
@@ -7622,6 +7793,8 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "coN" = (
 /obj/structure/table,
 /obj/item/reagent_containers/cup/glass/mug/britcup{
@@ -8071,10 +8244,13 @@
 /obj/effect/mapping_helpers/mail_sorting/science/experimentor_lab,
 /turf/open/floor/iron/white/diagonal,
 /area/station/science/research)
+<<<<<<< HEAD
 "cvp" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/airless,
 /area/station/cargo/miningdock)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "cvG" = (
 /obj/structure/sign/warning/biohazard/directional/east,
 /turf/open/space/basic,
@@ -8187,6 +8363,14 @@
 	},
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/starboard/fore)
+"cxP" = (
+/obj/effect/turf_decal/weather/snow,
+/obj/effect/landmark/event_spawn,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
+/area/station/service/kitchen/coldroom)
 "cxR" = (
 /obj/effect/landmark/start/hangover,
 /obj/structure/cable,
@@ -8809,6 +8993,14 @@
 	dir = 8
 	},
 /area/station/hallway/secondary/command)
+"cGV" = (
+/obj/structure/sign/warning/vacuum/directional/north,
+/obj/machinery/conveyor/inverted{
+	dir = 6;
+	id = "mining"
+	},
+/turf/open/floor/plating,
+/area/station/cargo/miningdock)
 "cGX" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 8
@@ -9000,6 +9192,7 @@
 /obj/effect/turf_decal/box,
 /turf/open/floor/carpet/executive,
 /area/station/command/heads_quarters/hop)
+<<<<<<< HEAD
 "cIT" = (
 /obj/effect/turf_decal/trimline/green/filled/warning{
 	dir = 9
@@ -9012,6 +9205,8 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "cIZ" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -10453,6 +10648,14 @@
 "dfF" = (
 /turf/closed/wall,
 /area/station/medical/medbay/lobby)
+"dfG" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/railing/corner,
+/obj/effect/turf_decal/siding/dark,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "dfM" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/engine,
@@ -10647,6 +10850,13 @@
 /obj/effect/landmark/start/captain,
 /turf/open/floor/wood/large,
 /area/station/command/heads_quarters/captain)
+"din" = (
+/obj/effect/turf_decal/weather/snow,
+/obj/machinery/airalarm/directional/north,
+/obj/effect/mapping_helpers/airalarm/tlv_cold_room,
+/obj/structure/kitchenspike,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
+/area/station/service/kitchen/coldroom)
 "dir" = (
 /obj/structure/sign/departments/evac,
 /turf/closed/wall/r_wall,
@@ -11253,6 +11463,11 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/large,
 /area/station/hallway/primary/fore)
+"dsd" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
 "dsg" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -11868,6 +12083,7 @@
 /obj/effect/mapping_helpers/airlock/access/any/service/crematorium,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/station/service/chapel/office)
+<<<<<<< HEAD
 "dAy" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -11875,6 +12091,8 @@
 /obj/effect/turf_decal/tile/green/diagonal_centre,
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "dAz" = (
 /obj/machinery/door/firedoor,
 /obj/structure/table/reinforced,
@@ -12829,6 +13047,10 @@
 	},
 /turf/open/floor/engine,
 /area/station/ai_monitored/security/armory)
+"dMh" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/station/cargo/office)
 "dMl" = (
 /obj/structure/chair/sofa/left/brown{
 	dir = 8
@@ -13946,6 +14168,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/pod,
 /area/station/service/chapel/funeral)
+<<<<<<< HEAD
 "ebp" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
@@ -13974,6 +14197,8 @@
 	},
 /turf/open/floor/iron/white/smooth_large,
 /area/station/medical/pharmacy)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "ebz" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green{
@@ -13998,6 +14223,19 @@
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/atmos)
+"ecl" = (
+/obj/structure/table,
+/obj/machinery/requests_console/directional/west{
+	department = "Kitchen";
+	name = "Kitchen Requests Console"
+	},
+/obj/machinery/microwave{
+	desc = "Cooks and boils stuff, somehow.";
+	pixel_x = -2;
+	pixel_y = 5
+	},
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "ecq" = (
 /obj/effect/spawner/structure/window/reinforced/plasma,
 /obj/machinery/door/poddoor/shutters/radiation/preopen{
@@ -14210,6 +14448,7 @@
 	},
 /turf/open/floor/iron/large,
 /area/station/hallway/primary/fore)
+<<<<<<< HEAD
 "eeS" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/disposalpipe/segment{
@@ -14217,6 +14456,8 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "eeX" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
@@ -14515,11 +14756,14 @@
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/pod/dark,
 /area/station/service/chapel)
+<<<<<<< HEAD
 "eil" = (
 /obj/effect/turf_decal/trimline/yellow/filled/corner,
 /obj/machinery/chem_mass_spec,
 /turf/open/floor/iron/freezer,
 /area/station/medical/pharmacy)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "ein" = (
 /obj/structure/displaycase/forsale/kitchen{
 	pixel_y = 8
@@ -14699,12 +14943,15 @@
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/command/bridge)
+<<<<<<< HEAD
 "ekG" = (
 /obj/structure/table,
 /obj/item/plate,
 /obj/item/food/sausage,
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "ekQ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -14778,6 +15025,7 @@
 /obj/structure/cable/layer3,
 /turf/open/floor/circuit/green,
 /area/station/ai_monitored/turret_protected/ai)
+<<<<<<< HEAD
 "ely" = (
 /obj/machinery/gibber,
 /obj/effect/turf_decal/stripes/end{
@@ -14787,6 +15035,8 @@
 /obj/machinery/light/cold/directional/east,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "elB" = (
 /obj/effect/turf_decal/tile/dark/opposingcorners{
 	dir = 1
@@ -14996,6 +15246,42 @@
 /obj/effect/turf_decal/delivery/blue,
 /turf/open/floor/iron/smooth,
 /area/station/commons/vacant_room)
+"eot" = (
+/obj/structure/table/reinforced,
+/obj/item/folder/white{
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/obj/item/pen{
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/machinery/door/firedoor,
+/obj/structure/desk_bell{
+	pixel_x = 7;
+	pixel_y = 6
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "chemistry_shutters_south";
+	name = "Pharmacy Shutters"
+	},
+/obj/machinery/door/window/left/directional/south{
+	name = "Pharmacy Desk";
+	req_access = list("pharmacy");
+	dir = 4
+	},
+/turf/open/floor/iron/white/smooth_large,
+/area/station/medical/pharmacy)
 "eou" = (
 /obj/structure/closet,
 /obj/effect/turf_decal/delivery,
@@ -15170,6 +15456,11 @@
 	},
 /turf/open/floor/iron/large,
 /area/station/service/hydroponics)
+"ern" = (
+/obj/effect/turf_decal/weather/snow,
+/obj/structure/closet/secure_closet/freezer/meat,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
+/area/station/service/kitchen/coldroom)
 "err" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -15267,6 +15558,7 @@
 /obj/effect/turf_decal/tile/dark_blue/anticorner,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/command/bridge)
+<<<<<<< HEAD
 "esZ" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -15274,6 +15566,8 @@
 	},
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "etd" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -15901,6 +16195,11 @@
 	},
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/power_room)
+"eCV" = (
+/obj/structure/railing/corner,
+/obj/structure/sink/kitchen/directional/west,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "eDh" = (
 /obj/structure/rack,
 /obj/item/clothing/suit/hazardvest,
@@ -15928,11 +16227,14 @@
 "eDt" = (
 /turf/closed/wall/r_wall,
 /area/station/science/research)
+<<<<<<< HEAD
 "eDx" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
 /turf/open/floor/plating/airless,
 /area/station/security/checkpoint/supply)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "eDF" = (
 /obj/structure/chair/stool/directional/west,
 /obj/machinery/power/apc/auto_name/directional/south,
@@ -15978,6 +16280,7 @@
 /obj/effect/turf_decal/tile/neutral/diagonal_centre,
 /turf/open/floor/iron/dark/diagonal,
 /area/station/security/execution/transfer)
+<<<<<<< HEAD
 "eEd" = (
 /obj/machinery/modular_computer/preset/cargochat/service,
 /obj/structure/sign/poster/random/directional/north,
@@ -15986,6 +16289,8 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron/smooth_large,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "eEi" = (
 /obj/effect/turf_decal/tile/dark_red/anticorner,
 /obj/structure/sign/poster/official/twelve_gauge/directional/east,
@@ -16269,6 +16574,7 @@
 	},
 /turf/open/floor/iron/smooth_edge,
 /area/station/cargo/storage)
+<<<<<<< HEAD
 "eGy" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
@@ -16302,6 +16608,8 @@
 /obj/structure/closet/secure_closet/freezer/meat,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "eGZ" = (
 /obj/structure/hedge,
 /obj/effect/turf_decal/trimline/green/arrow_cw{
@@ -16707,6 +17015,19 @@
 	dir = 1
 	},
 /area/station/engineering/atmos/storage)
+"eNr" = (
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/fake_stairs/directional/north,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "eNs" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
@@ -16786,6 +17107,21 @@
 /obj/effect/landmark/start/blueshield,
 /turf/open/floor/carpet/cyan,
 /area/station/command/heads_quarters/blueshield)
+"ePd" = (
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/effect/turf_decal/box,
+/obj/structure/railing{
+	dir = 10
+	},
+/obj/effect/landmark/event_spawn,
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "ePm" = (
 /obj/machinery/holopad,
 /obj/effect/turf_decal/box,
@@ -17459,6 +17795,7 @@
 /obj/structure/railing/corner,
 /turf/open/floor/iron/smooth,
 /area/station/command/cc_dock)
+<<<<<<< HEAD
 "eYX" = (
 /obj/structure/chair/sofa/corp/right{
 	color = "#DE3A3A";
@@ -17470,6 +17807,8 @@
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "eYY" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
@@ -18345,6 +18684,7 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark/telecomms,
 /area/station/tcommsat/server)
+<<<<<<< HEAD
 "foi" = (
 /obj/structure/chair/sofa/corp/corner{
 	color = "#DE3A3A";
@@ -18359,6 +18699,8 @@
 	},
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "fok" = (
 /obj/effect/turf_decal/trimline/purple/filled/corner{
 	dir = 8
@@ -18652,6 +18994,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/aft/greater)
+"frZ" = (
+/obj/structure/sign/poster/random/directional/north,
+/obj/effect/turf_decal/bot,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/large,
+/area/station/hallway/secondary/service)
 "fsb" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/thinplating{
@@ -18673,6 +19023,13 @@
 	dir = 1
 	},
 /area/station/hallway/primary/aft)
+"fsj" = (
+/obj/machinery/conveyor{
+	id = "mining";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/station/cargo/miningdock)
 "fsk" = (
 /obj/item/bedsheet/random/double,
 /obj/machinery/newscaster/directional/east,
@@ -18804,6 +19161,7 @@
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/department/crew_quarters/bar)
+<<<<<<< HEAD
 "fva" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -18813,6 +19171,8 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "fve" = (
 /obj/effect/turf_decal/trimline/blue/filled/corner{
 	dir = 8
@@ -18865,6 +19225,18 @@
 /obj/machinery/vending/wardrobe/chem_wardrobe,
 /turf/open/floor/iron/freezer,
 /area/station/medical/chemistry)
+"fvY" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 8
+	},
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "fwc" = (
 /obj/structure/table,
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -18961,11 +19333,14 @@
 /obj/item/toy/cards/deck/tarot,
 /turf/open/floor/iron/grimy,
 /area/station/commons/lounge)
+<<<<<<< HEAD
 "fxo" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/chair/stool/directional/east,
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "fxD" = (
 /obj/structure/sign/warning/chem_diamond/directional/north,
 /obj/structure/rack/shelf,
@@ -19012,10 +19387,13 @@
 /obj/structure/window/reinforced/spawner/directional/north,
 /turf/open/floor/carpet/stellar,
 /area/station/service/chapel/funeral)
+<<<<<<< HEAD
 "fye" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating/airless,
 /area/station/cargo/office)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "fys" = (
 /obj/effect/turf_decal/trimline/purple/filled/warning{
 	dir = 1
@@ -19825,6 +20203,7 @@
 	dir = 4
 	},
 /area/station/cargo/storage)
+<<<<<<< HEAD
 "fMm" = (
 /obj/structure/table,
 /obj/structure/displaycase/forsale/kitchen{
@@ -19838,6 +20217,8 @@
 	},
 /turf/open/floor/iron/large,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "fMy" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -19859,6 +20240,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/greater)
+"fNg" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/cafeteria,
+/area/station/service/cafeteria)
 "fNt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/paper/crumpled/fluff{
@@ -19912,6 +20305,7 @@
 	},
 /turf/open/floor/wood/large,
 /area/station/security/courtroom)
+<<<<<<< HEAD
 "fNX" = (
 /obj/machinery/conveyor/inverted{
 	dir = 5;
@@ -19920,6 +20314,8 @@
 /obj/machinery/bouldertech/refinery/smelter,
 /turf/open/floor/plating/airless,
 /area/station/cargo/miningdock)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "fNY" = (
 /obj/structure/closet/l3closet/virology,
 /obj/effect/turf_decal/trimline/dark_green/filled/line{
@@ -20263,6 +20659,11 @@
 	dir = 1
 	},
 /area/station/engineering/atmos)
+"fUb" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "fUc" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -20576,6 +20977,19 @@
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
 /area/space/nearstation)
+"fYn" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/biogenerator,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 1;
+	id = "hydroponics_counter";
+	name = "Hydroponics Counter Shutters"
+	},
+/obj/machinery/door/firedoor,
+/obj/structure/window/spawner/directional/east,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/iron/large,
+/area/station/service/hydroponics)
 "fYs" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/wood,
@@ -20601,6 +21015,7 @@
 /obj/structure/cable,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/department/electrical)
+<<<<<<< HEAD
 "fZg" = (
 /obj/effect/turf_decal/loading_area{
 	dir = 4
@@ -20608,6 +21023,8 @@
 /obj/effect/turf_decal/tile/green/diagonal_centre,
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "fZo" = (
 /obj/effect/turf_decal/trimline/yellow/filled/warning{
 	dir = 6
@@ -20843,6 +21260,15 @@
 	},
 /turf/open/floor/iron/grimy,
 /area/station/commons/lounge)
+"gcp" = (
+/obj/effect/turf_decal/stripes/end{
+	dir = 8
+	},
+/obj/item/radio/intercom/directional/east,
+/obj/machinery/light/cold/directional/east,
+/obj/machinery/gibber,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
+/area/station/service/kitchen/coldroom)
 "gcr" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -21980,6 +22406,20 @@
 	dir = 4
 	},
 /area/station/cargo/drone_bay)
+"gsl" = (
+/obj/effect/turf_decal/trimline/green/filled/warning{
+	dir = 9
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch/directional/north{
+	pixel_x = 14
+	},
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/station/service/hydroponics)
 "gsL" = (
 /obj/structure/showcase/cyborg/old{
 	dir = 8;
@@ -22081,6 +22521,7 @@
 /obj/effect/turf_decal/trimline/dark_red/arrow_ccw,
 /turf/open/floor/iron/small,
 /area/station/hallway/secondary/exit/departure_lounge)
+<<<<<<< HEAD
 "gtJ" = (
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 10
@@ -22093,6 +22534,8 @@
 /obj/machinery/computer/order_console/cook,
 /turf/open/floor/iron/smooth_large,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "gtM" = (
 /obj/effect/turf_decal/trimline/purple/filled/line,
 /obj/structure/closet/secure_closet/cytology,
@@ -22242,6 +22685,14 @@
 /obj/machinery/duct,
 /turf/open/floor/iron/white/smooth_large,
 /area/station/medical/storage)
+"gvO" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/siding/dark,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "gwc" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 8
@@ -22440,6 +22891,7 @@
 /obj/structure/window/reinforced/plasma/spawner/directional/east,
 /turf/open/floor/iron/smooth,
 /area/station/engineering/atmos)
+<<<<<<< HEAD
 "gyK" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -22448,6 +22900,8 @@
 	},
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "gzn" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -22912,6 +23366,7 @@
 /obj/structure/window/spawner/directional/south,
 /turf/open/floor/carpet,
 /area/station/service/library)
+<<<<<<< HEAD
 "gFG" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold{
 	dir = 1
@@ -22922,6 +23377,8 @@
 /obj/effect/turf_decal/weather/snow,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "gFW" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 1
@@ -23037,6 +23494,16 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/dark/hidden,
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/department/medical/central)
+"gHS" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/weather/snow,
+/obj/machinery/light_switch/directional/west{
+	pixel_x = -24
+	},
+/obj/structure/cable,
+/obj/structure/closet/secure_closet/freezer/kitchen,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
+/area/station/service/kitchen/coldroom)
 "gHW" = (
 /obj/structure/table/optable{
 	desc = "A cold, hard place for your final rest.";
@@ -23091,6 +23558,17 @@
 /obj/machinery/portable_atmospherics/canister,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/engineering/atmos)
+"gIy" = (
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/machinery/status_display/ai/directional/west,
+/obj/structure/table,
+/obj/machinery/fax{
+	fax_name = "Service Hallway";
+	name = "Service Fax Machine";
+	pixel_y = 3
+	},
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
 "gIB" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/cup/bucket{
@@ -23126,6 +23604,7 @@
 /obj/effect/landmark/start/security_officer,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/security/brig)
+<<<<<<< HEAD
 "gIO" = (
 /obj/effect/turf_decal/weather/snow,
 /obj/machinery/atmospherics/pipe/heat_exchanging/junction{
@@ -23135,6 +23614,8 @@
 /obj/structure/cable,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "gIT" = (
 /obj/structure/table/reinforced,
 /obj/item/book/manual/wiki/barman_recipes,
@@ -23248,6 +23729,18 @@
 /obj/effect/landmark/start/atmospheric_technician,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/engineering/atmos/hfr_room)
+"gKa" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/cafeteria,
+/area/station/service/cafeteria)
 "gKl" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -23798,6 +24291,15 @@
 /obj/effect/turf_decal/tile/bar/opposingcorners,
 /turf/open/floor/iron,
 /area/station/service/bar)
+"gRj" = (
+/obj/structure/noticeboard/directional/north,
+/obj/machinery/light_switch/directional/east,
+/obj/effect/turf_decal/bot,
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
+/turf/open/floor/iron/large,
+/area/station/hallway/secondary/service)
 "gRx" = (
 /obj/item/radio/intercom/directional/south,
 /obj/structure/closet/secure_closet/hos,
@@ -24402,6 +24904,21 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/station/command/heads_quarters/hop)
+"haL" = (
+/obj/machinery/computer/order_console/cook,
+/obj/effect/turf_decal/trimline/brown/filled/line{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/brown/filled/mid_joiner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/brown/filled/mid_joiner,
+/obj/effect/turf_decal/bot,
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/open/floor/iron/smooth_large,
+/area/station/hallway/secondary/service)
 "haU" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
@@ -25160,6 +25677,18 @@
 	dir = 1
 	},
 /area/station/cargo/miningdock)
+"hkU" = (
+/obj/structure/table,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "kitchen_counter";
+	name = "Kitchen Counter Shutters"
+	},
+/obj/item/plate,
+/obj/item/holosign_creator/robot_seat/restaurant,
+/turf/open/floor/iron/large,
+/area/station/service/kitchen)
 "hkX" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
@@ -25419,10 +25948,13 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/greater)
+<<<<<<< HEAD
 "hqe" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "hqf" = (
 /obj/machinery/digital_clock,
 /turf/closed/wall/r_wall,
@@ -25818,6 +26350,18 @@
 /obj/structure/sign/departments/science/directional/north,
 /turf/open/floor/iron/white/smooth_edge,
 /area/station/hallway/primary/fore)
+"hwE" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/iron/edge,
+/area/station/service/hydroponics)
 "hwG" = (
 /obj/structure/bed/double,
 /obj/item/bedsheet/cmo/double,
@@ -25998,6 +26542,16 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/station/command/bridge)
+"hyw" = (
+/obj/structure/chair/stool/directional/west{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow/opposingcorners,
+/obj/effect/turf_decal/tile/red/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/station/commons/lounge)
 "hyx" = (
 /obj/machinery/dna_scannernew,
 /obj/effect/turf_decal/delivery,
@@ -26279,9 +26833,12 @@
 	},
 /turf/open/floor/carpet/executive,
 /area/station/command/heads_quarters/hop)
+<<<<<<< HEAD
 "hBP" = (
 /turf/closed/wall,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "hBQ" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable,
@@ -26354,6 +26911,23 @@
 	},
 /turf/open/floor/engine,
 /area/station/engineering/supermatter)
+"hCJ" = (
+/obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/all/service/general,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/door/airlock/service/glass{
+	name = "Service Hall"
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/large,
+/area/station/service/cafeteria)
 "hCL" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -26584,6 +27158,7 @@
 /obj/effect/landmark/start/hangover,
 /turf/open/floor/glass/reinforced,
 /area/station/hallway/secondary/exit/departure_lounge)
+<<<<<<< HEAD
 "hFu" = (
 /obj/effect/turf_decal/bot,
 /obj/machinery/airalarm/directional/north,
@@ -26594,6 +27169,8 @@
 	},
 /turf/open/floor/iron/large,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "hFA" = (
 /obj/machinery/atmospherics/pipe/smart/simple/cyan/visible{
 	dir = 10
@@ -26664,6 +27241,30 @@
 /obj/structure/window/spawner/directional/south,
 /turf/open/floor/iron/smooth_large,
 /area/station/maintenance/disposal)
+"hGX" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/firedoor,
+/obj/item/paper_bin{
+	pixel_y = 4
+	},
+/obj/item/pen{
+	pixel_y = 4
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/window/left/directional/south{
+	name = "Hydroponics Desk";
+	req_access = list("hydroponics")
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 1;
+	id = "hydroponics_counter";
+	name = "Hydroponics Counter Shutters"
+	},
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/large,
+/area/station/service/hydroponics)
 "hHg" = (
 /obj/structure/table,
 /obj/item/tank/internals/emergency_oxygen{
@@ -26759,6 +27360,14 @@
 	},
 /turf/open/floor/iron/smooth,
 /area/station/science/ordnance/storage)
+"hIw" = (
+/obj/machinery/firealarm/directional/east,
+/obj/machinery/vending/dinnerware,
+/obj/item/toy/figure/chef{
+	pixel_y = 16
+	},
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "hIA" = (
 /turf/closed/wall/r_wall,
 /area/station/command/heads_quarters/captain)
@@ -27012,6 +27621,13 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/service/theater)
+"hNB" = (
+/obj/effect/turf_decal/weather/snow,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
+/area/station/service/kitchen/coldroom)
 "hND" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -27549,12 +28165,15 @@
 	dir = 1
 	},
 /area/station/engineering/atmos)
+<<<<<<< HEAD
 "hUv" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "hUD" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/heater/on{
 	dir = 8
@@ -27884,6 +28503,14 @@
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/hallway/secondary/command)
+"hZB" = (
+/obj/machinery/conveyor_switch/oneway{
+	id = "mining";
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating,
+/area/station/cargo/miningdock)
 "hZE" = (
 /obj/effect/turf_decal/trimline/green/filled/warning{
 	dir = 4
@@ -28206,6 +28833,20 @@
 	},
 /turf/open/floor/iron/white/small,
 /area/station/common/pool)
+"ige" = (
+/obj/structure/table,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "kitchen_counter";
+	name = "Kitchen Counter Shutters"
+	},
+/obj/structure/desk_bell{
+	pixel_x = 7;
+	pixel_y = 10
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/kitchen)
 "igk" = (
 /obj/structure/window/reinforced/spawner/directional/south,
 /obj/effect/landmark/start/chaplain,
@@ -28294,6 +28935,7 @@
 	dir = 4
 	},
 /area/station/medical/virology)
+<<<<<<< HEAD
 "ihS" = (
 /obj/machinery/light/directional/north,
 /obj/machinery/conveyor{
@@ -28303,6 +28945,8 @@
 /obj/machinery/bouldertech/refinery,
 /turf/open/floor/plating/airless,
 /area/station/cargo/miningdock)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "ihT" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -28754,6 +29398,7 @@
 /obj/effect/mapping_helpers/airlock/access/all/command/hop,
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/starboard/fore)
+<<<<<<< HEAD
 "iog" = (
 /obj/structure/table,
 /obj/effect/spawner/random/food_or_drink/cake_ingredients,
@@ -28769,6 +29414,8 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "iom" = (
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 9
@@ -28851,6 +29498,17 @@
 /obj/effect/turf_decal/trimline/neutral/mid_joiner,
 /turf/open/floor/iron/smooth_large,
 /area/station/cargo/sorting)
+"ioX" = (
+/obj/machinery/camera/directional/south{
+	c_tag = "Service - Cafeteria Aft";
+	name = "service camera"
+	},
+/obj/structure/chair/sofa/corp/left{
+	color = "#DE3A3A";
+	dir = 8
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/cafeteria)
 "ioZ" = (
 /obj/effect/turf_decal/stripes/end{
 	dir = 4
@@ -29149,6 +29807,20 @@
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/security/prison)
+"isq" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "kitchen_counter";
+	name = "Kitchen Counter Shutters"
+	},
+/obj/machinery/pollution_scrubber{
+	pixel_x = -7;
+	pixel_y = 1
+	},
+/obj/structure/table,
+/turf/open/floor/iron/large,
+/area/station/service/kitchen)
 "isr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/trash_pile,
@@ -29224,6 +29896,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
+<<<<<<< HEAD
 "itf" = (
 /obj/machinery/computer/department_orders/service,
 /obj/effect/turf_decal/trimline/brown/filled/line{
@@ -29238,6 +29911,8 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron/smooth_large,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "iti" = (
 /obj/structure/table/wood,
 /obj/machinery/fax{
@@ -29465,6 +30140,7 @@
 /obj/structure/cable,
 /turf/open/floor/grass,
 /area/station/command/heads_quarters/hos)
+<<<<<<< HEAD
 "ivZ" = (
 /obj/structure/table,
 /obj/item/storage/box/donkpockets{
@@ -29495,6 +30171,8 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "iwe" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -29864,6 +30542,19 @@
 /obj/effect/landmark/start/botanist,
 /turf/open/floor/iron/edge,
 /area/station/service/hydroponics)
+"iAU" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
 "iBe" = (
 /obj/structure/table,
 /obj/effect/turf_decal/trimline/purple/filled/line{
@@ -29958,10 +30649,13 @@
 /obj/machinery/light/cold/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/engineering/supermatter/room)
+<<<<<<< HEAD
 "iCW" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating/airless,
 /area/station/command/heads_quarters/qm)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "iCZ" = (
 /obj/machinery/computer/communications,
 /obj/machinery/keycard_auth{
@@ -30052,6 +30746,15 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/smooth_large,
 /area/station/hallway/secondary/entry)
+"iEJ" = (
+/obj/effect/turf_decal/weather/snow,
+/obj/machinery/camera/directional/west{
+	c_tag = "Service - Kitchen Coldroom";
+	dir = 5;
+	name = "service camera"
+	},
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
+/area/station/service/kitchen/coldroom)
 "iEL" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/machinery/door/airlock/external/glass{
@@ -30104,6 +30807,7 @@
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/hallway/primary/fore)
+<<<<<<< HEAD
 "iFV" = (
 /obj/machinery/conveyor{
 	id = "mining";
@@ -30111,6 +30815,8 @@
 	},
 /turf/open/floor/plating/airless,
 /area/station/cargo/miningdock)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "iFY" = (
 /obj/structure/cable,
 /obj/machinery/holopad,
@@ -30334,12 +31040,15 @@
 	dir = 1
 	},
 /area/station/security/prison)
+<<<<<<< HEAD
 "iIG" = (
 /obj/item/radio/intercom/directional/east,
 /obj/effect/turf_decal/box,
 /obj/structure/closet/secure_closet/freezer/kitchen,
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "iJg" = (
 /obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
 	dir = 1
@@ -30381,6 +31090,7 @@
 	dir = 8
 	},
 /area/station/engineering/atmos)
+<<<<<<< HEAD
 "iJt" = (
 /obj/machinery/light_switch/directional/south{
 	pixel_x = -15
@@ -30393,6 +31103,8 @@
 /obj/machinery/vending/dinnerware,
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "iJB" = (
 /obj/structure/closet/secure_closet/security/sec,
 /obj/effect/turf_decal/trimline/red/filled/line{
@@ -30604,15 +31316,23 @@
 	dir = 1
 	},
 /area/station/hallway/secondary/command)
-"iNa" = (
-/obj/effect/turf_decal/delivery,
-/obj/machinery/camera/directional/west{
-	c_tag = "Cargo - Mining"
+"iNb" = (
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
+<<<<<<< HEAD
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/airless,
 /area/station/cargo/miningdock)
+=======
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "iNk" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -30829,6 +31549,12 @@
 /obj/machinery/meter,
 /turf/open/floor/iron/smooth_large,
 /area/station/science/ordnance)
+"iRi" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/disposalpipe/segment,
+/obj/effect/landmark/start/cook,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "iRn" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 8
@@ -31590,6 +32316,33 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/engineering/atmos/hfr_room)
+"jaG" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/table,
+/obj/item/reagent_containers/condiment/saltshaker{
+	desc = "Salt. From space oceans, presumably. A staple of modern medicine.";
+	pixel_x = -8;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	desc = "Often used to flavor food or make people sneeze. Fashionably moved to the left side of the table.";
+	pixel_x = -8;
+	pixel_y = 2
+	},
+/obj/item/storage/box/donkpockets{
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/obj/item/storage/box/donkpockets/donkpocketpizza{
+	pixel_x = 5;
+	pixel_y = 6
+	},
+/obj/item/storage/box/donkpockets/donkpocketteriyaki{
+	pixel_x = 5;
+	pixel_y = 9
+	},
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "jbe" = (
 /obj/structure/table/wood/fancy/royalblack,
 /obj/machinery/computer/records/medical/laptop,
@@ -31759,6 +32512,7 @@
 /obj/machinery/door/airlock/external,
 /turf/open/floor/catwalk_floor,
 /area/station/engineering/main)
+<<<<<<< HEAD
 "jdH" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable,
@@ -31768,6 +32522,8 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "jdN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/generic_maintenance_landmark,
@@ -33396,6 +34152,7 @@
 /obj/effect/spawner/random/structure/crate,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/port/aft)
+<<<<<<< HEAD
 "jAS" = (
 /obj/machinery/conveyor{
 	id = "mining";
@@ -33405,6 +34162,8 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/airless,
 /area/station/cargo/miningdock)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "jBm" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 8
@@ -33691,10 +34450,18 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/command/storage/eva)
+"jDI" = (
+/obj/structure/chair/sofa/corp/left{
+	color = "#DE3A3A";
+	dir = 4
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/cafeteria)
 "jDS" = (
 /obj/effect/spawner/random/trash/caution_sign,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/starboard/greater)
+<<<<<<< HEAD
 "jDX" = (
 /obj/effect/turf_decal/delivery,
 /obj/effect/turf_decal/weather/snow,
@@ -33709,6 +34476,8 @@
 /obj/structure/cable,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "jDY" = (
 /obj/item/radio/intercom/directional/north,
 /obj/machinery/suit_storage_unit/ce,
@@ -33797,6 +34566,13 @@
 /obj/structure/closet/radiation,
 /turf/open/floor/iron/smooth,
 /area/station/engineering/atmos)
+"jEP" = (
+/obj/effect/turf_decal/weather/snow,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
+/area/station/service/kitchen/coldroom)
 "jET" = (
 /obj/structure/table/reinforced,
 /obj/machinery/camera/directional/west{
@@ -34465,6 +35241,15 @@
 	},
 /turf/open/floor/iron/smooth_large,
 /area/station/command/cc_dock)
+"jOj" = (
+/obj/machinery/light/directional/north,
+/obj/machinery/bouldertech/refinery,
+/obj/machinery/conveyor{
+	id = "mining";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/station/cargo/miningdock)
 "jOm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/auto_name/directional/north,
@@ -34842,6 +35627,7 @@
 	dir = 8
 	},
 /area/station/command/gateway)
+<<<<<<< HEAD
 "jUL" = (
 /obj/structure/chair/sofa/corp/left{
 	color = "#DE3A3A"
@@ -34859,6 +35645,8 @@
 	},
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "jUZ" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/trimline/red/filled/line{
@@ -34920,6 +35708,10 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/command/heads_quarters/qm)
+"jVW" = (
+/obj/structure/table,
+/turf/open/floor/iron/cafeteria,
+/area/station/service/cafeteria)
 "jWg" = (
 /obj/effect/turf_decal/trimline/yellow/filled/warning{
 	dir = 6
@@ -36255,10 +37047,13 @@
 	},
 /turf/open/space/basic,
 /area/space/nearstation)
+<<<<<<< HEAD
 "koZ" = (
 /obj/structure/chair/stool/directional/east,
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "kpg" = (
 /obj/effect/mapping_helpers/airlock/access/any/supply/shipping,
 /obj/structure/disposalpipe/segment{
@@ -37765,6 +38560,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/department/crew_quarters/bar)
+"kIg" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/door/airlock/freezer{
+	critical_machine = 1;
+	name = "Coldroom"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/service/kitchen,
+/obj/structure/fans/tiny,
+/obj/structure/cable,
+/turf/open/floor/iron/freezer,
+/area/station/service/kitchen/coldroom)
 "kIi" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 4;
@@ -37909,6 +38716,7 @@
 	dir = 8
 	},
 /area/station/science/xenobiology)
+<<<<<<< HEAD
 "kKA" = (
 /obj/structure/table,
 /obj/machinery/door/firedoor,
@@ -37929,6 +38737,19 @@
 	},
 /turf/open/floor/iron/large,
 /area/station/service/kitchen)
+=======
+"kKa" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet/chemical,
+/obj/item/storage/box/syringes,
+/obj/item/storage/box/beakers,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/iron/freezer,
+/area/station/medical/pharmacy)
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "kKC" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/closet/crate/freezer{
@@ -38808,6 +39629,23 @@
 /obj/machinery/duct,
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/department/engine/atmos)
+"kXo" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/machinery/status_display/ai/directional/north,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
 "kXu" = (
 /obj/item/folder/blue{
 	pixel_x = 3;
@@ -39611,6 +40449,7 @@
 /obj/machinery/duct,
 /turf/open/floor/iron/white/smooth_large,
 /area/station/medical/storage)
+<<<<<<< HEAD
 "liO" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
@@ -39618,6 +40457,8 @@
 /obj/effect/landmark/start/cook,
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "liS" = (
 /obj/item/kirbyplants/random,
 /obj/structure/cable,
@@ -39726,6 +40567,7 @@
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/pod/dark,
 /area/station/service/chapel/funeral)
+<<<<<<< HEAD
 "lkz" = (
 /obj/structure/chair/sofa/corp/left{
 	color = "#DE3A3A";
@@ -39733,6 +40575,8 @@
 	},
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "lkG" = (
 /obj/effect/turf_decal/trimline/green/filled/line,
 /obj/structure/disposalpipe/segment,
@@ -39743,10 +40587,13 @@
 "lkJ" = (
 /turf/open/floor/wood,
 /area/station/commons/vacant_room/office)
+<<<<<<< HEAD
 "lkM" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating/airless,
 /area/station/cargo/sorting)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "lkR" = (
 /obj/effect/spawner/random/structure/table_fancy,
 /obj/item/flashlight/lamp/green{
@@ -39881,6 +40728,7 @@
 	dir = 1
 	},
 /area/station/hallway/secondary/entry)
+<<<<<<< HEAD
 "lmY" = (
 /obj/machinery/conveyor_switch/oneway{
 	id = "mining";
@@ -39889,6 +40737,8 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/airless,
 /area/station/cargo/miningdock)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "lnc" = (
 /obj/effect/turf_decal/trimline/purple/filled/corner{
 	dir = 8
@@ -40008,6 +40858,17 @@
 	},
 /turf/open/floor/iron/grimy,
 /area/station/commons/lounge)
+"lnT" = (
+/obj/effect/turf_decal/delivery,
+/obj/structure/plasticflaps/opaque{
+	name = "Kitchen Deliveries"
+	},
+/obj/machinery/navbeacon{
+	codes_txt = "delivery;dir=8";
+	location = "Kitchen"
+	},
+/turf/open/floor/iron/large,
+/area/station/maintenance/starboard/greater)
 "lnU" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -40303,6 +41164,14 @@
 /obj/machinery/light/cold/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/security/prison/mess)
+"lsG" = (
+/obj/structure/chair/sofa/corp/right{
+	color = "#DE3A3A";
+	dir = 8
+	},
+/obj/effect/landmark/start/assistant,
+/turf/open/floor/iron/cafeteria,
+/area/station/service/cafeteria)
 "lsQ" = (
 /obj/machinery/duct,
 /obj/effect/turf_decal/trimline/blue/filled/warning{
@@ -41361,6 +42230,7 @@
 /obj/machinery/light/cold/directional/east,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/medical/morgue)
+<<<<<<< HEAD
 "lHd" = (
 /obj/structure/chair/sofa/corp/right{
 	color = "#DE3A3A";
@@ -41371,6 +42241,8 @@
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "lHf" = (
 /obj/effect/turf_decal/trimline/blue/corner{
 	dir = 1
@@ -41725,6 +42597,12 @@
 /obj/effect/turf_decal/tile/bar/opposingcorners,
 /turf/open/floor/iron,
 /area/station/service/bar)
+"lMt" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/landmark/start/cook,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "lMx" = (
 /obj/machinery/door/airlock/maintenance{
 	critical_machine = 1;
@@ -42061,6 +42939,10 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/security/lockers)
+"lQG" = (
+/obj/structure/sign/poster/contraband/mothic_rations,
+/turf/closed/wall,
+/area/station/service/kitchen)
 "lQK" = (
 /obj/structure/railing,
 /obj/structure/bed,
@@ -42569,6 +43451,7 @@
 /obj/structure/window/spawner/directional/north,
 /turf/open/floor/grass,
 /area/station/hallway/secondary/exit/departure_lounge)
+<<<<<<< HEAD
 "lWH" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -42580,6 +43463,8 @@
 /obj/effect/turf_decal/tile/green/diagonal_centre,
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "lWL" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/grimy,
@@ -43547,6 +44432,7 @@
 	},
 /turf/open/floor/iron/smooth_edge,
 /area/station/hallway/primary/aft)
+<<<<<<< HEAD
 "mkD" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/trimline/green/filled/line{
@@ -43563,6 +44449,8 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/iron/edge,
 /area/station/service/hydroponics)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "mkK" = (
 /obj/effect/turf_decal/trimline/dark_red/filled/corner{
 	dir = 8
@@ -44832,12 +45720,15 @@
 /obj/structure/sign/poster/contraband/communist_state/directional/east,
 /turf/open/floor/wood,
 /area/station/maintenance/rus_gambling)
+<<<<<<< HEAD
 "mFX" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/landmark/start/cook,
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "mGv" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -45396,6 +46287,17 @@
 /obj/effect/mapping_helpers/airlock/access/all/service/general,
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/starboard/greater)
+"mNK" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/fake_stairs/directional/north,
+/obj/effect/landmark/start/cook,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "mNO" = (
 /obj/effect/turf_decal/bot,
 /obj/machinery/portable_atmospherics/canister/air,
@@ -45505,6 +46407,19 @@
 /obj/item/radio/intercom/prison/directional/north,
 /turf/open/floor/iron/dark/smooth_edge,
 /area/station/security/prison)
+"mPf" = (
+/obj/structure/table,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "kitchen_counter";
+	name = "Kitchen Counter Shutters"
+	},
+/obj/structure/displaycase/forsale/kitchen{
+	pixel_y = 8
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/kitchen)
 "mPl" = (
 /obj/item/radio/intercom/directional/south,
 /obj/structure/chair/comfy/brown{
@@ -45941,6 +46856,7 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/atmos)
+<<<<<<< HEAD
 "mVt" = (
 /obj/effect/turf_decal/weather/snow,
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on/coldroom{
@@ -45952,6 +46868,8 @@
 	},
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "mVv" = (
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 5
@@ -46580,6 +47498,19 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/aft)
+"neg" = (
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/landmark/start/hangover,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/cafeteria,
+/area/station/service/cafeteria)
 "nel" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/landmark/start/hangover,
@@ -46836,6 +47767,27 @@
 	dir = 8
 	},
 /area/station/security/checkpoint/customs)
+"nja" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/obj/structure/table,
+/obj/item/serviette_pack{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/condiment/saltshaker{
+	desc = "Salt. From space oceans, presumably. A staple of modern medicine.";
+	pixel_x = -8;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	desc = "Often used to flavor food or make people sneeze. Fashionably moved to the left side of the table.";
+	pixel_x = -8;
+	pixel_y = 2
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/cafeteria)
 "njb" = (
 /obj/structure/cable,
 /obj/structure/chair/stool/directional/east,
@@ -46917,6 +47869,7 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron/dark/smooth_edge,
 /area/station/security/interrogation)
+<<<<<<< HEAD
 "njQ" = (
 /obj/machinery/door/firedoor,
 /obj/structure/table/reinforced,
@@ -46953,6 +47906,8 @@
 	},
 /turf/open/floor/iron/white/smooth_large,
 /area/station/medical/pharmacy)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "njV" = (
 /obj/effect/turf_decal/trimline/dark_green/filled/line{
 	dir = 5
@@ -48016,10 +48971,13 @@
 /obj/effect/spawner/random/trash/moisture_trap,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/starboard/greater)
+<<<<<<< HEAD
 "nyf" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating/airless,
 /area/station/cargo/miningoffice)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "nyh" = (
 /obj/structure/window/reinforced/spawner/directional/west{
 	layer = 2.9
@@ -48075,11 +49033,14 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/smooth_edge,
 /area/station/engineering/atmos)
+<<<<<<< HEAD
 "nzv" = (
 /obj/structure/cable,
 /obj/machinery/griddle,
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "nzw" = (
 /obj/structure/rack,
 /obj/item/poster/random_contraband,
@@ -48854,6 +49815,7 @@
 /obj/effect/spawner/random/maintenance/eight,
 /turf/open/floor/iron/smooth_large,
 /area/station/cargo/warehouse)
+<<<<<<< HEAD
 "nMk" = (
 /obj/structure/table,
 /obj/machinery/reagentgrinder{
@@ -48862,6 +49824,8 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "nMr" = (
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/starboard/aft)
@@ -48975,11 +49939,14 @@
 /obj/structure/cable,
 /turf/open/floor/iron/smooth_large,
 /area/station/cargo/drone_bay)
+<<<<<<< HEAD
 "nNS" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/landmark/start/cook,
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "nOq" = (
 /obj/machinery/light/directional/south,
 /turf/open/floor/engine,
@@ -49296,6 +50263,7 @@
 	dir = 4
 	},
 /area/station/science/xenobiology)
+<<<<<<< HEAD
 "nRy" = (
 /obj/effect/turf_decal/weather/snow,
 /obj/machinery/icecream_vat,
@@ -49308,6 +50276,8 @@
 	},
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "nRz" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 8
@@ -49373,6 +50343,22 @@
 	dir = 4
 	},
 /area/station/science/xenobiology)
+"nRS" = (
+/obj/structure/table,
+/obj/machinery/reagentgrinder{
+	pixel_x = 4;
+	pixel_y = 18
+	},
+/obj/item/reagent_containers/cup/beaker{
+	pixel_x = -8;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/cup/beaker{
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "nRV" = (
 /obj/structure/closet/secure_closet{
 	name = "contraband locker";
@@ -49528,6 +50514,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/south,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/commons/fitness/recreation/entertainment)
+<<<<<<< HEAD
 "nTI" = (
 /obj/structure/table,
 /obj/effect/turf_decal/tile/neutral{
@@ -49546,6 +50533,8 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "nTS" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -49626,6 +50615,7 @@
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
 /area/space/nearstation)
+<<<<<<< HEAD
 "nUo" = (
 /obj/structure/chair/sofa/corp/left{
 	color = "#DE3A3A";
@@ -49636,6 +50626,8 @@
 	},
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "nUy" = (
 /obj/effect/turf_decal/trimline/green/filled/warning,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -49959,10 +50951,13 @@
 /obj/machinery/light/cold/directional/south,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
+<<<<<<< HEAD
 "nYG" = (
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron/large,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "nYI" = (
 /obj/effect/landmark/secequipment,
 /obj/structure/sign/poster/official/random/directional/north,
@@ -50098,6 +51093,7 @@
 /obj/effect/landmark/start/hangover,
 /turf/open/floor/wood/large,
 /area/station/hallway/secondary/entry)
+<<<<<<< HEAD
 "obz" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 1
@@ -50107,6 +51103,8 @@
 /obj/effect/turf_decal/siding/green,
 /turf/open/floor/iron/edge,
 /area/station/service/hydroponics)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "ocb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
@@ -50177,12 +51175,15 @@
 	dir = 4
 	},
 /area/station/medical/surgery)
+<<<<<<< HEAD
 "ocK" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/box,
 /obj/machinery/holopad,
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "ocV" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
@@ -50766,6 +51767,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/port/greater)
+<<<<<<< HEAD
 "olm" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -50773,6 +51775,8 @@
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "olo" = (
 /obj/structure/chair/office{
 	dir = 8
@@ -50804,12 +51808,15 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/parquet,
 /area/station/common/night_club)
+<<<<<<< HEAD
 "olG" = (
 /obj/machinery/status_display/ai/directional/west,
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/tile/green/diagonal_centre,
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "olS" = (
 /obj/structure/bodycontainer/crematorium{
 	id = "crematoriumChapel"
@@ -51585,6 +52592,11 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/department/engine)
+"owG" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/station/cargo/sorting)
 "owP" = (
 /obj/machinery/atmospherics/pipe/smart/manifold/green/visible,
 /obj/effect/turf_decal/trimline/yellow/filled/line,
@@ -51941,6 +52953,7 @@
 "oCl" = (
 /turf/closed/wall/r_wall,
 /area/station/engineering/supermatter/room)
+<<<<<<< HEAD
 "oCm" = (
 /obj/structure/sign/warning/vacuum/directional/north,
 /obj/machinery/conveyor/inverted{
@@ -51949,6 +52962,8 @@
 	},
 /turf/open/floor/plating/airless,
 /area/station/cargo/miningdock)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "oCo" = (
 /obj/structure/railing/corner{
 	dir = 4
@@ -53011,6 +54026,16 @@
 /obj/structure/cable,
 /turf/open/floor/iron/smooth,
 /area/station/science/research/abandoned)
+"oSm" = (
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/sink/directional/west,
+/obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/structure/cable,
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
 "oSr" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
@@ -53944,6 +54969,21 @@
 /obj/machinery/incident_display/delam,
 /turf/closed/wall/r_wall,
 /area/station/security/checkpoint/engineering)
+"pdo" = (
+/obj/machinery/button/door/directional/south{
+	id = "kitchen_counter";
+	name = "Counter Shutters Control"
+	},
+/obj/structure/table,
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
+/obj/machinery/processor{
+	pixel_y = 12
+	},
+/obj/structure/railing,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "pdt" = (
 /obj/machinery/disposal/bin,
 /obj/effect/turf_decal/box,
@@ -54003,6 +55043,7 @@
 /obj/item/folder/white,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/medical/morgue)
+<<<<<<< HEAD
 "pei" = (
 /obj/structure/table,
 /obj/machinery/door/firedoor,
@@ -54017,6 +55058,8 @@
 	},
 /turf/open/floor/iron/large,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "pep" = (
 /obj/structure/table/glass,
 /obj/item/paper_bin{
@@ -55846,6 +56889,23 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/smooth_edge,
 /area/station/engineering/atmos/pumproom)
+"pDj" = (
+/obj/machinery/light/warm/directional/north,
+/obj/machinery/camera/directional/north{
+	c_tag = "Service - Cafeteria Fore";
+	name = "service camera"
+	},
+/obj/machinery/firealarm/directional/north{
+	pixel_x = 8
+	},
+/obj/item/radio/intercom/directional/north{
+	pixel_x = -6
+	},
+/obj/structure/table,
+/obj/item/plate,
+/obj/item/food/sausage,
+/turf/open/floor/iron/cafeteria,
+/area/station/service/cafeteria)
 "pDk" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/suit/utility/radiation,
@@ -56504,6 +57564,18 @@
 	dir = 1
 	},
 /area/station/medical/medbay/lobby)
+"pNs" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/sink/directional/south,
+/obj/effect/turf_decal/siding/green,
+/obj/machinery/firealarm/directional/north{
+	pixel_x = -6
+	},
+/turf/open/floor/iron/edge,
+/area/station/service/hydroponics)
 "pNw" = (
 /obj/structure/table/glass,
 /obj/item/reagent_containers/cup/beaker{
@@ -58594,6 +59666,7 @@
 	},
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/starboard/lesser)
+<<<<<<< HEAD
 "qor" = (
 /obj/structure/table,
 /obj/machinery/door/firedoor,
@@ -58608,6 +59681,8 @@
 	},
 /turf/open/floor/iron/large,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "qoE" = (
 /obj/machinery/digital_clock{
 	pixel_y = 5
@@ -59140,11 +60215,14 @@
 	},
 /turf/open/floor/wood/parquet,
 /area/station/common/night_club)
+<<<<<<< HEAD
 "qwy" = (
 /obj/machinery/holopad,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "qwH" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -59430,6 +60508,7 @@
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/hallway/primary/fore)
+<<<<<<< HEAD
 "qAn" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 9
@@ -59440,6 +60519,8 @@
 	},
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "qAt" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
@@ -59617,6 +60698,15 @@
 "qDk" = (
 /turf/closed/wall/r_wall,
 /area/station/maintenance/department/medical/morgue)
+"qDl" = (
+/obj/effect/turf_decal/delivery,
+/obj/machinery/door/window/right/directional/west{
+	name = "Kitchen Deliveries";
+	req_access = list("kitchen")
+	},
+/obj/structure/window/reinforced/spawner/directional/north,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
+/area/station/service/kitchen/coldroom)
 "qDp" = (
 /obj/structure/chair/office/light,
 /obj/effect/turf_decal/trimline/neutral/filled/warning,
@@ -60262,6 +61352,11 @@
 	},
 /turf/open/floor/iron/small,
 /area/station/commons/dorms)
+"qLC" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/station/cargo/office)
 "qLI" = (
 /obj/structure/table/reinforced/rglass,
 /obj/machinery/recharger,
@@ -60634,6 +61729,23 @@
 	dir = 8
 	},
 /area/station/commons/fitness/recreation)
+"qSs" = (
+/obj/structure/table,
+/obj/item/plate/large,
+/obj/item/plate,
+/obj/item/plate/small{
+	pixel_y = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/east,
+/obj/item/reagent_containers/condiment/enzyme{
+	pixel_x = 10;
+	pixel_y = 18
+	},
+/obj/item/knife/butcher{
+	pixel_x = 5
+	},
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "qSu" = (
 /turf/open/floor/iron/large,
 /area/station/hallway/primary/fore)
@@ -61057,6 +62169,10 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/department/engine)
+"qXo" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/station/command/heads_quarters/qm)
 "qXq" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -61983,6 +63099,18 @@
 	},
 /turf/open/floor/iron/smooth_large,
 /area/station/maintenance/disposal)
+"rla" = (
+/obj/effect/turf_decal/bot,
+/obj/structure/disposaloutlet{
+	dir = 4;
+	name = "Cargo Deliveries"
+	},
+/obj/structure/window/spawner/directional/south,
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/turf/open/floor/iron/large,
+/area/station/hallway/secondary/service)
 "rli" = (
 /turf/closed/wall,
 /area/station/cargo/office)
@@ -62535,6 +63663,13 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/command/bridge)
+"rtG" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/station/cargo/sorting)
 "rtS" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -62678,6 +63813,7 @@
 /obj/machinery/duct,
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/department/medical)
+<<<<<<< HEAD
 "rvS" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -62690,6 +63826,8 @@
 /obj/effect/turf_decal/tile/green/diagonal_centre,
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "rvY" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 1;
@@ -63381,6 +64519,7 @@
 	},
 /turf/open/floor/iron/freezer,
 /area/station/command/heads_quarters/captain/private)
+<<<<<<< HEAD
 "rGx" = (
 /obj/machinery/button/door/directional/south{
 	id = "kitchen_counter";
@@ -63388,6 +64527,8 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "rGH" = (
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/structure/cable,
@@ -63634,6 +64775,14 @@
 	dir = 1
 	},
 /area/station/hallway/primary/aft)
+"rKL" = (
+/obj/structure/chair/sofa/corp/right{
+	color = "#DE3A3A";
+	dir = 4
+	},
+/obj/effect/landmark/start/assistant,
+/turf/open/floor/iron/cafeteria,
+/area/station/service/cafeteria)
 "rKM" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
@@ -64146,11 +65295,32 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/station/maintenance/port)
+<<<<<<< HEAD
 "rSO" = (
 /obj/structure/table,
 /obj/item/plate,
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+"rSX" = (
+/obj/structure/table,
+/obj/item/reagent_containers/condiment/saltshaker{
+	desc = "Salt. From space oceans, presumably. A staple of modern medicine.";
+	pixel_x = 8;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	desc = "Often used to flavor food or make people sneeze. Fashionably moved to the left side of the table.";
+	pixel_x = 8;
+	pixel_y = 2
+	},
+/obj/effect/spawner/random/food_or_drink/cake_ingredients,
+/obj/item/kitchen/rollingpin{
+	pixel_x = -4
+	},
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "rSZ" = (
 /obj/item/kirbyplants/random,
 /obj/item/radio/intercom/directional/west,
@@ -64707,6 +65877,7 @@
 	},
 /turf/open/floor/iron,
 /area/station/commons/lounge)
+<<<<<<< HEAD
 "sbx" = (
 /obj/machinery/airalarm/directional/north,
 /obj/structure/chair/sofa/corp/corner{
@@ -64719,6 +65890,8 @@
 	},
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "sbH" = (
 /obj/effect/turf_decal/nova_decals/enclave/bottom/middle{
 	color = "#52B4E9"
@@ -64837,6 +66010,10 @@
 	},
 /turf/open/floor/plating/airless,
 /area/station/science/ordnance/bomb)
+"sdl" = (
+/obj/effect/landmark/start/cook,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "sdt" = (
 /obj/docking_port/stationary/laborcamp_home{
 	dir = 8
@@ -65022,6 +66199,10 @@
 /obj/effect/spawner/random/maintenance/three,
 /turf/open/floor/plating,
 /area/station/maintenance/port/greater)
+"sgl" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/station/cargo/miningoffice)
 "sgn" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -65142,6 +66323,11 @@
 	},
 /turf/open/floor/iron/white/smooth_edge,
 /area/station/medical/medbay/central)
+"shC" = (
+/obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/station/security/checkpoint/supply)
 "shE" = (
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/plating,
@@ -65833,6 +67019,7 @@
 /obj/effect/landmark/navigate_destination/research,
 /turf/open/floor/iron/white/smooth_large,
 /area/station/science/research)
+<<<<<<< HEAD
 "ssw" = (
 /obj/machinery/biogenerator,
 /obj/machinery/door/firedoor,
@@ -65845,6 +67032,8 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron/large,
 /area/station/service/hydroponics)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "ssL" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -66931,6 +68120,14 @@
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/iron/smooth_large,
 /area/station/hallway/primary/aft)
+"sHe" = (
+/obj/machinery/bouldertech/refinery/smelter,
+/obj/machinery/conveyor/inverted{
+	dir = 5;
+	id = "mining"
+	},
+/turf/open/floor/plating,
+/area/station/cargo/miningdock)
 "sHo" = (
 /obj/machinery/camera/directional/east{
 	c_tag = "Chapel Office";
@@ -67101,6 +68298,7 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/large,
 /area/station/hallway/primary/fore)
+<<<<<<< HEAD
 "sJb" = (
 /obj/structure/kitchenspike,
 /obj/effect/turf_decal/weather/snow,
@@ -67111,6 +68309,8 @@
 /obj/effect/mapping_helpers/airalarm/tlv_cold_room,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "sJd" = (
 /turf/closed/wall,
 /area/station/commons/vacant_room/office)
@@ -67836,6 +69036,16 @@
 	},
 /turf/open/floor/iron/smooth,
 /area/station/service/hydroponics/garden/abandoned)
+"sSd" = (
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable,
+/obj/machinery/light/directional/north,
+/obj/structure/table,
+/obj/machinery/light_switch/directional/north{
+	pixel_x = 13
+	},
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "sSf" = (
 /obj/effect/turf_decal/trimline/red/filled/corner{
 	dir = 8
@@ -67858,6 +69068,11 @@
 /obj/structure/transit_tube/crossing,
 /turf/open/space/basic,
 /area/space/nearstation)
+"sSm" = (
+/obj/structure/flora/bush/jungle/a/style_3,
+/obj/structure/window/fulltile,
+/turf/open/floor/grass,
+/area/station/service/kitchen)
 "sSn" = (
 /obj/effect/turf_decal/trimline/brown/filled/line,
 /obj/structure/table,
@@ -68701,6 +69916,18 @@
 	dir = 8
 	},
 /area/station/medical/virology)
+"tdG" = (
+/obj/structure/chair/stool/directional/west{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/cafeteria,
+/area/station/service/cafeteria)
 "tdL" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
@@ -68708,6 +69935,7 @@
 /obj/effect/spawner/random/trash/garbage,
 /turf/open/floor/plating,
 /area/station/maintenance/port)
+<<<<<<< HEAD
 "tdO" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hydroponics/glass{
@@ -68720,6 +69948,8 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/large,
 /area/station/service/hydroponics)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "tdY" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -69089,6 +70319,7 @@
 	dir = 8
 	},
 /area/station/hallway/primary/central/aft)
+<<<<<<< HEAD
 "tiJ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
@@ -69111,6 +70342,8 @@
 	},
 /turf/open/floor/iron/large,
 /area/station/service/hydroponics)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "tiL" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -69150,6 +70383,7 @@
 	},
 /turf/open/floor/iron/large,
 /area/station/commons/fitness/recreation)
+<<<<<<< HEAD
 "tja" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 5
@@ -69161,6 +70395,8 @@
 	},
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "tjr" = (
 /turf/closed/wall/r_wall,
 /area/station/engineering/atmos/hfr_room)
@@ -69275,6 +70511,7 @@
 /obj/structure/transit_tube/curved/flipped,
 /turf/open/space/basic,
 /area/space/nearstation)
+<<<<<<< HEAD
 "tlk" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/supply/hidden{
 	dir = 8
@@ -69290,6 +70527,8 @@
 /obj/structure/cable,
 /turf/open/floor/iron/large,
 /area/station/maintenance/starboard/greater)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "tlq" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -70719,6 +71958,11 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/smooth,
 /area/station/engineering/atmos)
+"tDA" = (
+/obj/structure/table,
+/obj/machinery/light/directional/north,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "tDI" = (
 /obj/machinery/portable_atmospherics/canister,
 /obj/effect/turf_decal/box,
@@ -70990,11 +72234,14 @@
 	},
 /turf/open/floor/vault,
 /area/station/ai_monitored/turret_protected/aisat/atmos)
+<<<<<<< HEAD
 "tGD" = (
 /obj/effect/turf_decal/box,
 /obj/structure/closet/secure_closet/freezer/fridge,
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "tGJ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
@@ -71430,11 +72677,14 @@
 /obj/effect/turf_decal/tile/purple/diagonal_centre,
 /turf/open/floor/iron/white/diagonal,
 /area/station/science/research)
+<<<<<<< HEAD
 "tNI" = (
 /obj/machinery/status_display/evac/directional/west,
 /obj/effect/turf_decal/tile/green/diagonal_centre,
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "tNN" = (
 /obj/structure/window/spawner/directional/east,
 /turf/open/floor/grass,
@@ -71662,6 +72912,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/freezer,
 /area/station/medical/pharmacy)
+"tRE" = (
+/obj/structure/cable,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "tRQ" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 1
@@ -71725,6 +72979,7 @@
 	dir = 4
 	},
 /area/station/hallway/secondary/command)
+<<<<<<< HEAD
 "tSE" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -71735,6 +72990,8 @@
 /obj/effect/turf_decal/tile/green/diagonal_centre,
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/secondary/service)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "tSH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/green{
@@ -71788,6 +73045,7 @@
 "tTx" = (
 /turf/open/floor/iron/white/smooth_large,
 /area/station/medical/medbay/central)
+<<<<<<< HEAD
 "tTC" = (
 /obj/structure/table,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -71802,6 +73060,8 @@
 	},
 /turf/open/floor/iron/large,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "tTI" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -71866,12 +73126,15 @@
 /obj/effect/mapping_helpers/mail_sorting/service/kitchen,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/hallway/primary/fore)
+<<<<<<< HEAD
 "tUw" = (
 /obj/effect/turf_decal/weather/snow,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/dark/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "tUB" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/stripes/line{
@@ -72061,6 +73324,11 @@
 	},
 /turf/open/floor/carpet/orange,
 /area/station/command/heads_quarters/ce)
+"tYp" = (
+/obj/machinery/chem_mass_spec,
+/obj/effect/turf_decal/trimline/yellow/filled/line,
+/turf/open/floor/iron/freezer,
+/area/station/medical/pharmacy)
 "tYr" = (
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -72075,6 +73343,7 @@
 /obj/effect/turf_decal/trimline/yellow/filled/corner,
 /turf/open/floor/iron/freezer,
 /area/station/medical/chemistry)
+<<<<<<< HEAD
 "tZu" = (
 /obj/structure/table,
 /obj/item/plate/large,
@@ -72088,6 +73357,8 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "tZx" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -73251,6 +74522,14 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/iron/large,
 /area/station/commons/fitness/recreation/entertainment)
+"upB" = (
+/obj/effect/turf_decal/weather/snow,
+/obj/machinery/firealarm/directional/north,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable,
+/obj/structure/closet/secure_closet/freezer/fridge,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
+/area/station/service/kitchen/coldroom)
 "upF" = (
 /obj/structure/cable,
 /obj/effect/spawner/structure/window/reinforced/plasma,
@@ -75354,11 +76633,6 @@
 	},
 /turf/open/floor/iron/small,
 /area/station/hallway/primary/central)
-"uQI" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/pod,
-/turf/open/floor/wood,
-/area/station/maintenance/rus_gambling)
 "uQV" = (
 /turf/closed/wall/r_wall,
 /area/station/ai_monitored/turret_protected/aisat/service)
@@ -75513,6 +76787,7 @@
 	},
 /turf/open/floor/vault,
 /area/station/ai_monitored/turret_protected/ai_upload)
+<<<<<<< HEAD
 "uTk" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/disposalpipe/segment{
@@ -75520,6 +76795,8 @@
 	},
 /turf/open/floor/plating/airless,
 /area/station/cargo/sorting)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "uTs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/emcloset,
@@ -76313,6 +77590,14 @@
 /obj/effect/turf_decal/stripes/end,
 /turf/open/floor/pod/dark,
 /area/station/engineering/storage/tech)
+"vga" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/hydroponics/glass{
+	name = "Hydroponics"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/service/hydroponics,
+/turf/open/floor/iron/large,
+/area/station/service/hydroponics)
 "vgc" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -76376,6 +77661,11 @@
 	},
 /turf/open/floor/iron/smooth_large,
 /area/station/cargo/warehouse)
+"vhh" = (
+/obj/structure/flora/bush/jungle,
+/obj/structure/window/fulltile,
+/turf/open/floor/grass,
+/area/station/service/hydroponics)
 "vhl" = (
 /obj/machinery/door/airlock{
 	id_tag = "Toilet1";
@@ -76774,11 +78064,14 @@
 	dir = 4
 	},
 /area/station/science/genetics)
+<<<<<<< HEAD
 "vmS" = (
 /obj/structure/chair/stool/directional/east,
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "vmX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock{
@@ -77139,11 +78432,14 @@
 /obj/machinery/space_heater,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/department/engine/atmos/lesser)
+<<<<<<< HEAD
 "vsK" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating/airless,
 /area/station/cargo/office)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "vsS" = (
 /obj/effect/turf_decal/trimline/yellow/filled/corner{
 	dir = 8
@@ -77511,6 +78807,16 @@
 "vwo" = (
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/commons/vacant_room)
+"vwy" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
 "vwz" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
@@ -77616,6 +78922,7 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark/telecomms,
 /area/station/tcommsat/server)
+<<<<<<< HEAD
 "vyb" = (
 /obj/machinery/restaurant_portal/restaurant,
 /obj/machinery/light/warm/directional/east,
@@ -77626,6 +78933,8 @@
 	},
 /turf/open/floor/iron/smooth_large,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "vyc" = (
 /obj/machinery/door/firedoor,
 /obj/structure/table/reinforced,
@@ -78052,6 +79361,16 @@
 /obj/structure/sign/poster/official/space_cops/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/security/holding_cell)
+"vFd" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
 "vFg" = (
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/stripes/line,
@@ -78163,6 +79482,16 @@
 /obj/structure/railing,
 /turf/open/floor/circuit,
 /area/station/ai_monitored/turret_protected/ai)
+"vGV" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "kitchen_counter";
+	name = "Kitchen Counter Shutters"
+	},
+/obj/structure/table,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "vHa" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -78499,6 +79828,14 @@
 "vLe" = (
 /turf/closed/wall,
 /area/station/service/janitor)
+"vLg" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
 "vLk" = (
 /obj/machinery/module_duplicator,
 /obj/effect/turf_decal/trimline/purple/filled/line{
@@ -79132,11 +80469,14 @@
 	dir = 4
 	},
 /area/station/engineering/atmos)
+<<<<<<< HEAD
 "vUt" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating/airless,
 /area/station/cargo/sorting)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "vUB" = (
 /obj/machinery/incident_display/delam,
 /turf/closed/wall/r_wall,
@@ -79505,11 +80845,14 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
+<<<<<<< HEAD
 "vZc" = (
 /obj/structure/cable,
 /obj/effect/landmark/start/cook,
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "vZk" = (
 /obj/machinery/cryopod,
 /obj/effect/turf_decal/siding/white,
@@ -80085,6 +81428,7 @@
 /obj/structure/table/wood/fancy,
 /turf/open/floor/pod/dark,
 /area/station/service/chapel)
+<<<<<<< HEAD
 "whq" = (
 /obj/structure/table,
 /obj/machinery/processor{
@@ -80092,6 +81436,8 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "whu" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
@@ -80522,12 +81868,15 @@
 /obj/machinery/atmospherics/pipe/smart/simple/dark/visible,
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/atmos)
+<<<<<<< HEAD
 "woE" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
 	},
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "woG" = (
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 4
@@ -80719,6 +82068,15 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/department/engine/atmos)
+"wrn" = (
+/obj/structure/chair/stool/directional/west{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/cafeteria)
 "wrA" = (
 /obj/structure/rack,
 /obj/item/clothing/head/helmet/sec{
@@ -81122,6 +82480,7 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/smooth_large,
 /area/station/cargo/sorting)
+<<<<<<< HEAD
 "wwr" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/turf_decal/trimline/yellow/filled/line{
@@ -81132,6 +82491,8 @@
 /obj/item/storage/box/beakers,
 /turf/open/floor/iron/freezer,
 /area/station/medical/pharmacy)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "wwA" = (
 /obj/structure/table,
 /obj/effect/turf_decal/tile/neutral{
@@ -81559,6 +82920,16 @@
 /obj/structure/cable,
 /turf/open/floor/iron/small,
 /area/station/commons/dorms)
+"wBf" = (
+/obj/machinery/light/warm/directional/east,
+/obj/machinery/status_display/ai/directional/east,
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
+/obj/effect/turf_decal/delivery/red,
+/obj/machinery/restaurant_portal/restaurant,
+/turf/open/floor/iron/smooth_large,
+/area/station/service/cafeteria)
 "wBk" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -82389,6 +83760,29 @@
 /obj/structure/sign/calendar/directional/west,
 /turf/open/floor/wood/large,
 /area/station/science/research)
+"wMw" = (
+/obj/item/plate/oven_tray{
+	pixel_x = -2;
+	pixel_y = 1
+	},
+/obj/item/plate/oven_tray{
+	pixel_x = -2;
+	pixel_y = 3
+	},
+/obj/item/clothing/suit/apron/chef{
+	pixel_y = 11
+	},
+/obj/item/book/manual/wiki/cooking_to_serve_man{
+	pixel_x = 3;
+	pixel_y = 2
+	},
+/obj/structure/table,
+/obj/item/knife/kitchen{
+	pixel_x = -13;
+	pixel_y = 3
+	},
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "wMA" = (
 /obj/effect/turf_decal/trimline/yellow/filled/warning{
 	dir = 4
@@ -82697,6 +84091,7 @@
 	dir = 4
 	},
 /area/station/service/hydroponics/garden)
+<<<<<<< HEAD
 "wQw" = (
 /obj/structure/kitchenspike,
 /obj/effect/turf_decal/weather/snow,
@@ -82706,6 +84101,8 @@
 /obj/structure/sink/kitchen/directional/west,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "wQx" = (
 /obj/effect/turf_decal/tile/red/anticorner{
 	dir = 8
@@ -82972,6 +84369,10 @@
 /obj/structure/table,
 /turf/open/floor/iron/dark,
 /area/station/science/robotics/lab)
+"wVD" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/station/cargo/sorting)
 "wVH" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -83014,6 +84415,15 @@
 	},
 /turf/open/floor/iron/smooth_edge,
 /area/station/cargo/storage)
+"wWa" = (
+/obj/effect/turf_decal/delivery,
+/obj/machinery/camera/directional/west{
+	c_tag = "Cargo - Mining"
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating,
+/area/station/cargo/miningdock)
 "wWw" = (
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/chair/office{
@@ -83284,6 +84694,12 @@
 /obj/effect/turf_decal/trimline/white/mid_joiner,
 /turf/open/floor/carpet/black,
 /area/station/commons/dorms)
+"xcq" = (
+/obj/structure/flora/bush/fullgrass,
+/obj/structure/flora/bush/ferny,
+/obj/structure/window/fulltile,
+/turf/open/floor/grass,
+/area/station/service/kitchen)
 "xcD" = (
 /obj/machinery/atmospherics/pipe/smart/simple/cyan/visible{
 	dir = 5
@@ -83429,6 +84845,7 @@
 /obj/effect/turf_decal/box,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/engineering/atmos)
+<<<<<<< HEAD
 "xgl" = (
 /obj/machinery/camera/directional/south{
 	c_tag = "Service - Cafeteria Aft";
@@ -83440,6 +84857,8 @@
 	},
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "xgv" = (
 /obj/machinery/smartfridge/chemistry/virology/preloaded,
 /obj/effect/turf_decal/trimline/dark_green/filled/line{
@@ -84014,6 +85433,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/station/maintenance/aft/lesser)
+"xou" = (
+/obj/machinery/holopad,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "xoG" = (
 /obj/machinery/biogenerator,
 /obj/item/reagent_containers/cup/beaker{
@@ -84481,6 +85905,10 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/department/medical)
+"xtx" = (
+/obj/machinery/deepfryer,
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "xtF" = (
 /obj/machinery/atmospherics/components/binary/crystallizer{
 	dir = 4
@@ -84923,6 +86351,19 @@
 "xAr" = (
 /turf/open/floor/iron/grimy,
 /area/station/commons/vacant_room/office)
+"xAy" = (
+/obj/machinery/airalarm/directional/north,
+/obj/effect/landmark/start/assistant,
+/obj/machinery/light_switch/directional/north{
+	pixel_x = 13
+	},
+/obj/structure/window/spawner/directional/west,
+/obj/structure/chair/sofa/corp/left{
+	color = "#DE3A3A";
+	dir = 4
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/cafeteria)
 "xAC" = (
 /obj/structure/railing{
 	dir = 8
@@ -85075,6 +86516,7 @@
 	},
 /turf/open/floor/wood/large,
 /area/station/service/theater)
+<<<<<<< HEAD
 "xDK" = (
 /obj/structure/table,
 /obj/item/plate/oven_tray{
@@ -85094,6 +86536,8 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "xDL" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -85367,6 +86811,12 @@
 	dir = 8
 	},
 /area/station/hallway/primary/fore)
+"xHx" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/weather/snow,
+/mob/living/basic/goat/pete,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
+/area/station/service/kitchen/coldroom)
 "xHB" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 8
@@ -85421,6 +86871,15 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/smooth_large,
 /area/station/cargo/office)
+"xIs" = (
+/obj/machinery/bouldertech/brm,
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/conveyor{
+	id = "mining";
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/station/cargo/miningdock)
 "xIu" = (
 /obj/effect/spawner/structure/window/reinforced/tinted,
 /obj/structure/cable,
@@ -85756,6 +87215,10 @@
 	},
 /turf/open/floor/iron/smooth_large,
 /area/station/cargo/lobby)
+"xOc" = (
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating,
+/area/station/cargo/miningdock)
 "xOh" = (
 /obj/effect/spawner/random/structure/girder,
 /obj/effect/decal/cleanable/dirt,
@@ -86246,12 +87709,15 @@
 	},
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/department/medical/morgue)
+<<<<<<< HEAD
 "xUG" = (
 /obj/structure/chair/stool/directional/east,
 /obj/effect/landmark/start/hangover,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/cafeteria,
 /area/station/service/cafeteria)
+=======
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 "xUK" = (
 /obj/structure/disposaloutlet{
 	dir = 1;
@@ -86513,6 +87979,16 @@
 /obj/item/storage/box/lights/mixed,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/department/medical/central)
+"xYN" = (
+/obj/item/radio/intercom/directional/east,
+/obj/structure/table,
+/obj/machinery/microwave{
+	desc = "Cooks and boils stuff, somehow.";
+	pixel_x = -2;
+	pixel_y = 5
+	},
+/turf/open/floor/iron/kitchen,
+/area/station/service/kitchen)
 "xZa" = (
 /obj/effect/turf_decal/trimline/green/filled/line,
 /turf/open/floor/iron/edge{
@@ -87131,6 +88607,10 @@
 	dir = 4
 	},
 /area/station/hallway/secondary/command)
+"yib" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/station/cargo/miningdock)
 "yis" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -118828,7 +120308,11 @@ oUR
 lnS
 cHc
 waR
+<<<<<<< HEAD
 sgE
+=======
+hyw
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 nmm
 sgE
 pEL
@@ -118868,7 +120352,7 @@ fDn
 aAN
 hns
 qZl
-ebp
+clj
 fDn
 fDn
 dof
@@ -119638,9 +121122,9 @@ tJU
 ykT
 vVO
 twU
-wwr
+kKa
 mJB
-eil
+tYp
 pAK
 mAC
 nIJ
@@ -120156,7 +121640,7 @@ pKg
 nXW
 kgk
 fDn
-njQ
+eot
 dPv
 eEq
 xkq
@@ -121398,8 +122882,13 @@ qSu
 qSu
 rUj
 bPZ
+<<<<<<< HEAD
 sbx
 anI
+=======
+xAy
+aeH
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 lxC
 cnA
 nUo
@@ -121655,8 +123144,8 @@ qSu
 gYN
 dqJ
 bPZ
-jUL
-ekG
+pDj
+jVW
 kLz
 cnA
 pUt
@@ -121912,6 +123401,7 @@ wAA
 mDP
 cau
 cau
+<<<<<<< HEAD
 hEN
 hUv
 qwy
@@ -121919,6 +123409,15 @@ cnA
 eYX
 lkz
 kLz
+=======
+wrn
+wrn
+wrn
+tdG
+fNg
+jDI
+rKL
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 rUb
 qQh
 fVT
@@ -122165,6 +123664,7 @@ qLY
 mMs
 vDG
 qAl
+<<<<<<< HEAD
 bPZ
 bPZ
 cau
@@ -122177,6 +123677,20 @@ gyK
 woE
 kLz
 vyb
+=======
+jSC
+jSC
+xcq
+isq
+tdn
+vGV
+hkU
+ige
+gKa
+nja
+gOt
+wBf
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 kPh
 ooa
 hZp
@@ -122423,6 +123937,7 @@ dcg
 pzr
 lcT
 bnA
+<<<<<<< HEAD
 bRS
 qor
 tdn
@@ -122433,6 +123948,18 @@ bOI
 bMB
 rSO
 xgl
+=======
+ecl
+wMw
+xtx
+sdl
+xFd
+eCV
+mPf
+neg
+lsG
+ioX
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 fLp
 oie
 oRJ
@@ -122680,6 +124207,7 @@ gzn
 tUt
 lkG
 wrT
+<<<<<<< HEAD
 coJ
 xRG
 eeS
@@ -122690,8 +124218,20 @@ sha
 esZ
 lHd
 foi
+=======
+jaG
+iRi
+xRG
+xRG
+fUb
+pdo
+jSC
+hCJ
+bPZ
+bPZ
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 fLp
-cIT
+gsl
 hhJ
 pep
 udR
@@ -122937,8 +124477,9 @@ hvD
 uKp
 eGd
 jSC
-jdH
+sSd
 ibK
+<<<<<<< HEAD
 yjs
 ocK
 rGx
@@ -122949,6 +124490,18 @@ hBP
 hBP
 fLp
 mkD
+=======
+xFd
+bYX
+acT
+aLz
+bnA
+iNb
+ayx
+gIy
+vhh
+hwE
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 fuP
 roz
 wne
@@ -123194,6 +124747,7 @@ hvD
 hUS
 eGd
 bnA
+<<<<<<< HEAD
 nzv
 puH
 tZu
@@ -123205,6 +124759,19 @@ dAy
 nTI
 olG
 tiJ
+=======
+aGg
+puH
+xFd
+gZD
+gvO
+mNK
+ogb
+aaY
+vFd
+dsd
+fYn
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 wQo
 jGl
 jio
@@ -123451,6 +125018,7 @@ jrX
 hUS
 eGd
 bnA
+<<<<<<< HEAD
 gZD
 vZc
 nMk
@@ -123459,9 +125027,19 @@ hqe
 ogb
 bkq
 btx
+=======
+aGg
+tRE
+xou
+gZD
+dfG
+eNr
+cbf
+aaY
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 eWX
 vOZ
-ssw
+vga
 bmN
 jGl
 jio
@@ -123707,6 +125285,7 @@ wzH
 hRr
 fba
 cUM
+<<<<<<< HEAD
 jSC
 whq
 orv
@@ -123716,9 +125295,20 @@ bLx
 cbf
 tSE
 lWH
+=======
+lQG
+tDA
+orv
+xFd
+nRS
+fvY
+ePd
+sSm
+iAU
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 gKB
-ajR
-tdO
+oSm
+hGX
 slL
 qEr
 bKI
@@ -123965,18 +125555,29 @@ hvD
 hUS
 eGd
 bnA
+<<<<<<< HEAD
 fva
+=======
+rSX
+lMt
+pow
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 pow
 coC
 liO
 tgy
 jSC
+<<<<<<< HEAD
 iUy
 ctf
+=======
+jSC
+kXo
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 vrL
 fLp
 fLp
-obz
+pNs
 jru
 qKf
 nGh
@@ -124222,14 +125823,20 @@ hvD
 hUS
 eGd
 bnA
+<<<<<<< HEAD
 iIG
 mFX
 tGD
+=======
+xYN
+qSs
+bLx
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 ehn
-iJt
+hIw
 jSC
-nYG
-rvS
+haL
+bNV
 vaJ
 fLp
 hnJ
@@ -124482,10 +126089,14 @@ hfU
 hfU
 gOj
 hfU
+<<<<<<< HEAD
+=======
+kIg
+>>>>>>> 991ab5af3 (Deletes the rest of Black Mesa content (#746))
 hfU
 hfU
 jSC
-hFu
+bwZ
 ctf
 uNs
 fLp
@@ -124736,13 +126347,13 @@ hvD
 dSe
 hzx
 hfU
-eGT
-tja
-nRy
-mVt
+upB
+gHS
+hNB
+ern
 hfU
-gtJ
-fZg
+rla
+aud
 koq
 trR
 fLp
@@ -124993,13 +126604,13 @@ hvD
 hUS
 eGd
 hfU
-sJb
-gFG
-gIO
-tUw
+din
+xHx
+cxP
+iEJ
 hfU
-eEd
-bPG
+frZ
+vLg
 ctf
 bdX
 fLp
@@ -125250,13 +126861,13 @@ nJH
 hUS
 fyP
 hfU
-wQw
-qAn
-ely
-jDX
+bsF
+jEP
+gcp
+qDl
 hfU
-itf
-bmk
+gRj
+vwy
 dIM
 rMB
 fLp
@@ -125510,7 +127121,7 @@ iNV
 iNV
 qzy
 iNV
-tlk
+lnT
 iNV
 iNV
 mNF
@@ -125831,7 +127442,7 @@ pnL
 txh
 fTO
 gjv
-vUt
+owG
 ssQ
 vIF
 ekf
@@ -126345,7 +127956,7 @@ pXL
 uTI
 djy
 rop
-lkM
+wVD
 wsP
 szj
 aqJ
@@ -127115,7 +128726,7 @@ vXh
 jTg
 nLC
 qni
-lkM
+wVD
 cfZ
 tjR
 eiX
@@ -127374,9 +128985,9 @@ hne
 mth
 rop
 rli
-fye
+dMh
 vuu
-fye
+dMh
 uzc
 qid
 rli
@@ -127629,7 +129240,7 @@ rop
 gSW
 xGe
 sSn
-lkM
+wVD
 jLQ
 ukJ
 nTB
@@ -127886,14 +129497,14 @@ cRU
 joy
 bey
 dGK
-lkM
+wVD
 rRS
 uLe
 bmS
 tkn
 gjm
 wJg
-fye
+dMh
 pgc
 gwM
 mGO
@@ -128097,7 +129708,7 @@ tDO
 wkm
 gDf
 djz
-uQI
+iAj
 ykh
 wtQ
 yep
@@ -128129,7 +129740,7 @@ izK
 mgS
 onP
 ofb
-iCW
+qXo
 onP
 pqh
 vCX
@@ -128138,11 +129749,11 @@ vCX
 nvF
 pqh
 pqh
-uTk
+rtG
 rop
 rop
 pOV
-lkM
+wVD
 rop
 nUi
 xaD
@@ -128150,7 +129761,7 @@ ltN
 xHW
 uLe
 kMM
-fye
+dMh
 pgc
 lxc
 gpK
@@ -128407,7 +130018,7 @@ dNV
 uSX
 wjH
 wMS
-vsK
+qLC
 umD
 jgI
 rKH
@@ -128664,7 +130275,7 @@ lCU
 eSk
 leb
 eEz
-vsK
+qLC
 mnf
 tWE
 rbW
@@ -129157,8 +130768,8 @@ xud
 xud
 xud
 xdZ
-nyf
-nyf
+sgl
+sgl
 yaj
 aJs
 sFi
@@ -129175,9 +130786,9 @@ sFi
 sFi
 sFi
 oLo
-eDx
-eDx
-eDx
+shC
+shC
+shC
 oLo
 sUo
 rzr
@@ -129406,8 +131017,8 @@ xMq
 xMq
 xMq
 oXI
-fNX
-iNa
+sHe
+wWa
 bkF
 hQq
 qBe
@@ -129431,7 +131042,7 @@ xTN
 git
 uho
 cHk
-eDx
+shC
 mqJ
 kBs
 nnr
@@ -129663,8 +131274,8 @@ odJ
 xqO
 xMq
 oXI
-ihS
-cvp
+jOj
+xOc
 nqU
 bcW
 njG
@@ -129673,7 +131284,7 @@ xCF
 xXC
 ueJ
 gjq
-nyf
+sgl
 gZb
 aJs
 wVQ
@@ -129692,7 +131303,7 @@ oLo
 nGM
 lGO
 pHC
-eDx
+shC
 dsj
 idx
 fsd
@@ -129920,17 +131531,17 @@ ttw
 odJ
 xMq
 oXI
-iFV
-lmY
+fsj
+hZB
 krz
 lon
-cbP
+yib
 szk
 haV
 xXC
 jay
 dMl
-nyf
+sgl
 cKl
 aJs
 eGw
@@ -129949,7 +131560,7 @@ sSV
 lKg
 npI
 oyG
-eDx
+shC
 hDf
 vNs
 mvz
@@ -130177,8 +131788,8 @@ ttw
 odJ
 xMq
 oXI
-oCm
-jAS
+cGV
+xIs
 krz
 pmM
 oXI
@@ -130431,9 +132042,9 @@ ttw
 ttw
 ttw
 ttw
-cbP
-cbP
-cbP
+yib
+yib
+yib
 qtr
 oWg
 qpX
@@ -130945,9 +132556,9 @@ ttw
 ttw
 ttw
 ttw
-cbP
-cbP
-cbP
+yib
+yib
+yib
 dpw
 pws
 ucK
