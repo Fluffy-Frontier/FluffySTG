@@ -3,3 +3,121 @@
   - balance: deforest cyber implants are bought from restricted consoles
   - balance: deforest cyber deck is bought from contraband access and requires illegal
       tech to craft.
+2024-02-06:
+  00-Steven:
+  - bugfix: Robotic voicebox actually lets you speak any language again (as long as
+      you know it).
+  CliffracerX:
+  - image: NT now supplies camo shorts appropriate for non-woodland environments!
+  - refactor: shorts & pants no longer use nonmodular edits, as a gift to your local
+      maintainers
+  Donglesplonge:
+  - bugfix: the top and top righthand doors of northstars cargo mail sorting room
+      now use any supply general, mining, and bitden access, and the top righthand
+      door no longer says its mining decontamination and uses the proper mail sorting
+      room airlock instead.
+  FernandoJ8:
+  - sound: The Guide to Advanced Mimery book series now only make a very faint noise
+      when turning their pages, in order to match their description
+  Hatterhat:
+  - rscadd: Drifting contractors now get their own bank account, and exploitables
+      access.
+  - balance: The contractor MODsuit now has no slowdown when deactivated to facilitate
+      use of its integrated chameleon module.
+  - balance: The contractor MODsuit's 0-complexity chameleon module is now unremovable.
+  - balance: The contractor MODsuit now has slowdown when activated, and its armor
+      booster has been made consistent (it now reduces slowdown instead of adding
+      it, when toggled on).
+  - bugfix: Ghostrole bank accounts no longer steal money from the station civilian
+      account.
+  Higgin:
+  - bugfix: fixes contractor abduction RRing people in the offmap hideout without
+      any feedback. You might not like how it turns out, but your body will get back
+      to the station now.
+  - qol: portable air pumps, scrubbers, heaters, canisters, liquid tanks, and racks
+      are now climbable.
+  Jacquerel:
+  - rscadd: Reading a newspaper will conceal your identity.
+  - bugfix: Making a mob sentient no longer gives you all of their factions.
+  JohnFulpWillard:
+  - bugfix: Cultists can now vote for a Cult leader again.
+  - bugfix: Slimes using Feed while buckled now stops feeding.
+  - bugfix: Slimes are no longer prompted to feed off of dead people.
+  - bugfix: Slimes that can only feed onto one person now immediately feeds off of
+      them.
+  - balance: Pirate suits can now hold the laser musket and smoothbore disabler.
+  Justavidya:
+  - image: modified the cherry cupcake and blue-cherry cupcake sprites
+  K4rlox:
+  - bugfix: makes the experiment chamber in syndicate lavaland base no longer explode
+      when testing grenades
+  LT3:
+  - bugfix: Fixed alt-click validation for tram interactions
+  Melbert:
+  - bugfix: Tinacusiate should break less, and break less things
+  - bugfix: Speaking to a Sign Languager with Tinacusiate in your system doesn't mess
+      with their text, because they're not speaking.
+  - bugfix: Fixed examining modular PCs
+  - bugfix: Robocontrol app maybe works better now.
+  - refactor: Jukebox has been refactored. Jukebox music now updates as the player
+      moves, mutes when the player is deafened, and overall sounds wayyy better. You
+      can also now toggle song repeat on jukeboxes.
+  Momo8289:
+  - rscadd: There's now a small chance to be a smartass when affected by Voice of
+      God
+  Motho:
+  - rscadd: Surplus equipment was added to Blueshift's engineering secure storage.
+  - rscdel: A donor item was removed from Blueshift's thrift shop.
+  OrionTheFox:
+  - image: Removed the RnD sprite overrides now that TG has resprited the items -
+      this comes with updates to all related Digitigrade icons as well as a resprite
+      of the "Science Utility Uniform"!
+  - rscdel: Removed the "Sleek Roboticist Jumpsuit" and "Research Director's Jumpsuit/Jumpskirt",
+      holdovers that were also from the RnD overrides
+  RatFromTheJungle:
+  - spellcheck: added a 'with' where needed on the sol EMT gear
+  Rhials:
+  - qol: Spider eggs will now close their spawn menu when you move away from them.
+  SapphicOverload:
+  - rscadd: Exosuit-mounted RCDs now have the same functionality as the handheld version.
+  - code_imp: Removes /obj/item/onetankbomb, assembly bombs are now handled by the
+      tank itself.
+  Swiftfeather:
+  - qol: Increased threshold of trace n2o required to make euphoria and giggles happen.
+  Whoneedspacee:
+  - bugfix: Ash drake's fire breath attack has proper cooldowns again
+  Xander3359:
+  - bugfix: burning a bible no longer gives you INFINITY curses
+  ZephyrTFA:
+  - bugfix: Meteor Satellites no longer erroneously count every piece of paper as
+      a protected turf.
+  - bugfix: As a result the station goal is slightly more difficult
+  - bugfix: lathes now respect always-powered areas
+  - balance: lathes now use power as they print instead of all at once
+  distributivgesetz:
+  - bugfix: Teleportations will no longer exceed reservation bounds.
+  intercepti0n:
+  - refactor: refactored experimentor UI to TGUI.
+  - bugfix: fixed ore vent's well being drawn over ash storm.
+  sqnztb:
+  - qol: '*turf can now be used while buckled to things'
+  - bugfix: lidocaine no longer makes you addicted to opioids.
+  sylvia-from-fulp-station:
+  - rscadd: '[IceBox] Botany now has a service accessible bio generator'
+  - qol: '[IceBox] Kitchen and service hall rearranged'
+  tf-4:
+  - rscadd: Caligram's Fleet surplus clothes are now available in SolFed markets.
+      (Navy reskins for Caligram fleet clothing and removal of the ckey whitelist.)
+  vinylspiders:
+  - bugfix: fixes being able to flip holographic tables into reality and harvest them
+      for materials
+  yooriss:
+  - rscadd: The Colonist, Doorman, Trauma Team Responder, Cyberneticist and Resonance
+      Researcher job alternate titles have been added to their appropriate jobs (Assistant,
+      Service Guard, Paramedic, Roboticist and Scientist respectively). Chaplain and
+      Cargo Technician have also received several gendered versions of existing titles
+      (Mail Carrier, High Priestess, Priestess, Nun, Shrine Maiden, Shrine Guardian,
+      etc).
+  zxaber:
+  - balance: Mech wire panels are now blocked when the mech is occupied. I guess it
+      was moved to be behind the seat.
