@@ -217,12 +217,8 @@
 //Krav Maga Gloves
 
 /obj/item/clothing/gloves/krav_maga
-<<<<<<< HEAD
-	var/datum/martial_art/krav_maga/style = new
-=======
 	var/datum/martial_art/krav_maga/style
 	clothing_traits = list(TRAIT_FAST_CUFFING)
->>>>>>> e13267b45 ([MIRROR] Kicks Martial Arts out of the attack chain (yippee), makes it use signals, plus a large clean up of existing martial arts (#734))
 
 /obj/item/clothing/gloves/krav_maga/Initialize(mapload)
 	. = ..()
