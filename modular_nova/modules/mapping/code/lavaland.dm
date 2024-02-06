@@ -21,5 +21,5 @@
 	suffix = "lavaland_surface_interdyne_base1.dmm"
 	allow_duplicates = FALSE
 	never_spawn_with = list(/datum/map_template/ruin/icemoon/underground/nova/interdyne_base)
-	always_place = TRUE
+	unpickable = TRUE //FF REMOVAL - INTERDYNE-REMAP. ORIGINAL always_place = TRUE
 
