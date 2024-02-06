@@ -564,11 +564,6 @@ DISALLOW_TITLE_MUSIC
 ## don't need (or want) this.
 #GIVE_TUTORIALS_WITHOUT_DB
 
-<<<<<<< HEAD
-## FF CONFIGS
-ROUNDSTART_RACES nabber
-ROUNDSTART_RACES teshari_alt
-=======
 ## Configuration for station traits of each type.
 ## The first value (key) is the budget, or the space available to use for station traits of that type. Some take more space than others.
 ## The second value (assoc) is the weight associated with said budget compared to the rest for that type.
@@ -597,4 +592,7 @@ NEGATIVE_STATION_TRAITS 3 1
 # If set to 0, then players won't be able to select any positive quirks.
 # If commented-out or undefined, the maximum default is 6.
 MAX_POSITIVE_QUIRKS 6
->>>>>>> c193bbc94 ([MIRROR] Add: 2 Quirks Configs (#549))
+
+## FF CONFIGS
+ROUNDSTART_RACES nabber
+ROUNDSTART_RACES teshari_alt
