@@ -56,13 +56,8 @@
 	// Progression elements are best left to the roundstart antagonists
 	// There will still be a timelock on uplink items
 	name = "\improper Infiltrator"
-<<<<<<< HEAD
-	//give_secondary_objectives = FALSE //FLUFFY FRONTIER REMOVAL - Трейторы всё же должны иметь побочки.
-	uplink_flag_given = UPLINK_TRAITORS | UPLINK_INFILTRATORS
-=======
 	give_secondary_objectives = FALSE
 	uplink_flag_given = UPLINK_INFILTRATORS
->>>>>>> e2eb4805e ([MIRROR] Lowers contractor baton cost. Baton can only be bought by roundstart traitors, while midroll/latejoin traitors cannot buy a baton (They must buy the contractor kit for one). (#762))
 
 /datum/antagonist/traitor/infiltrator/sleeper_agent
 	name = "\improper Syndicate Sleeper Agent"
