@@ -6,13 +6,11 @@
 	icon = 'modular_nova/modules/colony_fabricator/icons/machines.dmi'
 	icon_state = "colony_lathe"
 	base_icon_state = "colony_lathe"
-	production_animation = null
 	circuit = null
-	production_animation = "colony_lathe_n"
+	production_animation = "colony_lathe_working"
 	obj_flags = CAN_BE_HIT | NO_DECONSTRUCTION
 	light_color = LIGHT_COLOR_BRIGHT_YELLOW
 	light_power = 5
-	charges_tax = FALSE
 	allowed_buildtypes = COLONY_FABRICATOR
 	/// The item we turn into when repacked
 	var/repacked_type = /obj/item/flatpacked_machine
@@ -33,7 +31,7 @@
 	QDEL_NULL(soundloop)
 	return ..()
 
-/obj/machinery/rnd/production/colony_lathe/user_try_print_id(design_id, print_quantity)
+/* /obj/machinery/rnd/production/colony_lathe/user_try_print_id(design_id, print_quantity)
 	. = ..()
 
 	if(!.)
@@ -50,10 +48,15 @@
 	set_light(l_range = 0)
 	icon_state = base_icon_state
 	update_appearance()
-	flick("colony_lathe_finish_print", src)
+	flick("colony_lathe_finish_print", src) */
 
-/obj/machinery/rnd/production/colony_lathe/calculate_efficiency()
-	efficiency_coeff = 1
+
+/obj/machinery/rnd/production/colony_lathe/compute_efficiency()
+	return 1
+
+/obj/machinery/rnd/production/colony_lathe/RefreshParts()
+	. = ..()
+	materials.set_local_size(25000)
 
 // We take from all nodes even unresearched ones
 /obj/machinery/rnd/production/colony_lathe/update_designs()
