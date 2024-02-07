@@ -121,3 +121,33 @@
   zxaber:
   - balance: Mech wire panels are now blocked when the mech is occupied. I guess it
       was moved to be behind the seat.
+2024-02-07:
+  Jacquerel:
+  - rscadd: Mothic Fleet Rations now no longer get dirty or decompose if left on the
+      floor, due to their wrappers.
+  Lutowski:
+  - rscadd: Void Raptor's Kitchen is renovated and more spacious.
+  - bugfix: Void Raptor Mining Dock should have air again.
+  Momo8289:
+  - bugfix: Automated IV drips will now be on the layer set by the plumbing constructor
+      when created.
+  MortoSasye:
+  - rscadd: Modifies the hearthkin map to increase the mess hall size, as well as
+      place new objects in it.
+  SkeletalElite:
+  - rscadd: Wearing certain gloves (such as black gloves and combat oriented gloves)
+      allow you to cuff people faster
+  - balance: base handcuffing time is now 4 seconds
+  - balance: latex gloves now hide your fingerprints
+  burgerenergy:
+  - rscadd: Nanotransen has rolled back some of their religious restrictions; various
+      chaplain job clothes have been added to the suit, hat, and neck tabs of loadout!
+  chemistrymain2:
+  - balance: balancejakked the mantis blade implant into not being hackable by the
+      binyat
+  mc-oofert:
+  - bugfix: you may not toggle health assemblies from any range, even while crit
+  - bugfix: you may no longer rip pillow tags at range without telekinesis or crit
+      or any other time you shouldnt be capable of it
+  - bugfix: you may no longer altclick tape recorders at range to play them
+  - bugfix: you may no longer altclick ethereal disco balls while unconscious to anchor/unanchor
