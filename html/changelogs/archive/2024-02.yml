@@ -151,3 +151,54 @@
       or any other time you shouldnt be capable of it
   - bugfix: you may no longer altclick tape recorders at range to play them
   - bugfix: you may no longer altclick ethereal disco balls while unconscious to anchor/unanchor
+2024-02-08:
+  Higgin:
+  - bugfix: fixes ghetto surgery by gently adjusting time sensitivity cap and making
+      the cleaver not unintuitively bad at bone-sawing.
+  - bugfix: removed ability to buckle megafauna, constructs, blob minions, dragons,
+      and slimes.
+  IndieanaJones:
+  - bugfix: Regenerative Materia blobs can no longer drug non-carbons.
+  Jacquerel:
+  - bugfix: Being consumed by the flesh of the necropolis while inside a cryo tube
+      will no longer convert the tube into a legion spawn point until the tube is
+      destroyed
+  JohnFulpWillard:
+  - bugfix: Science Xenos no longer turn the entire roundend report into bold letters.
+  - rscadd: Paradox clones now have a bluespace stream instead of a syndicate poster
+      as their ghost poll icon.
+  - spellcheck: Mechs that have been renamed now are proper names, so are not described
+      as 'the' mech.
+  - qol: Service personnel now show up in green in the crew monitor console.
+  Justice12354:
+  - qol: You no longer need to manually set the CC Commander's Headset to high-volume.
+  Melbert:
+  - refactor: Big martial arts refactor, they should now overall act a ton more consistent.
+      Also technically any mob can do martial arts. Let me know if something is funky.
+  PapaMichael:
+  - bugfix: tramstation isolation cells now properly open on their timer.
+  Rhials:
+  - bugfix: You can no longer convert assassination targets to your blood brother
+      team.
+  - balance: Wallmounts now respect cameranets, and cannot be accessed from a view
+      of the adjacent wall.
+  SyncIt21:
+  - bugfix: deleting objects with local material storage(autolathe, drone dispenser
+      etc) no longer drops sheets, they only drop materials when deconstructed
+  ViktorKoL:
+  - bugfix: smoothed out a few asymmetries in the heretic research tree
+  Xander3359:
+  - balance: Contractor baton costs 7 TC (down from 12 TC)
+  - balance: Midroll/Latejoin traitors can no longer buy the baton, they must buy
+      the whole kit
+  - bugfix: Midroll/Latejoin traitors no longer have access to roundstart traitor
+      exclusive items
+  cnleth:
+  - balance: RD and QM coats can hold telebatons now
+  - qol: Quartermaster's coat can hold items that a normal jacket can hold, such as
+      small oxygen tanks
+  mc-oofert:
+  - bugfix: you may no longer reset autolathe drop direction at times when you shouldnt
+      be able to
+  vinylspiders:
+  - bugfix: fixes a runtime in AI search_tactic
