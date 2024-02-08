@@ -1388,6 +1388,21 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/wood/large,
 /area/station/medical/psychology)
+<<<<<<< HEAD
+=======
+"aud" = (
+/obj/effect/turf_decal/trimline/brown/filled/line{
+	dir = 6
+	},
+/obj/effect/turf_decal/trimline/brown/filled/mid_joiner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/brown/filled/mid_joiner,
+/obj/machinery/computer/department_orders/service,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/iron/smooth_large,
+/area/station/hallway/secondary/service)
+>>>>>>> 6080ed1a2 (Piped Out: Fixes Service Hall pipes on Void Raptor (#837))
 "aus" = (
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 4
@@ -1672,6 +1687,21 @@
 "ayt" = (
 /turf/open/floor/carpet/purple,
 /area/station/common/night_club)
+<<<<<<< HEAD
+=======
+"ayx" = (
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/machinery/light_switch/directional/west,
+/obj/machinery/light/directional/west,
+/obj/structure/table,
+/obj/machinery/fax{
+	fax_name = "Service Hallway";
+	name = "Service Fax Machine";
+	pixel_y = 3
+	},
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
+>>>>>>> 6080ed1a2 (Piped Out: Fixes Service Hall pipes on Void Raptor (#837))
 "ayH" = (
 /obj/machinery/computer/telecomms/monitor{
 	dir = 4;
@@ -3906,13 +3936,21 @@
 /turf/open/floor/wood/large,
 /area/station/commons/fitness/recreation)
 "bdX" = (
-/obj/machinery/disposal/bin,
-/obj/effect/turf_decal/box,
 /obj/item/radio/intercom/directional/south,
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
 /obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/obj/effect/turf_decal/bot,
+/obj/structure/rack,
+/obj/item/cultivator,
+/obj/item/reagent_containers/cup/glass/shaker,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/head/utility/chefhat,
+/obj/effect/spawner/random/maintenance,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/obj/item/storage/box/drinkingglasses,
+/obj/item/storage/box/lights/mixed,
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/secondary/service)
 "beb" = (
@@ -4986,6 +5024,22 @@
 	dir = 8
 	},
 /area/station/science/xenobiology)
+<<<<<<< HEAD
+=======
+"bwZ" = (
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/camera/directional/north{
+	c_tag = "Service - Service Hall";
+	dir = 9;
+	name = "service camera"
+	},
+/obj/effect/turf_decal/trimline/brown/filled/line,
+/obj/effect/turf_decal/trimline/brown/filled/mid_joiner,
+/obj/machinery/modular_computer/preset/cargochat/service,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/iron/smooth_large,
+/area/station/hallway/secondary/service)
+>>>>>>> 6080ed1a2 (Piped Out: Fixes Service Hall pipes on Void Raptor (#837))
 "bxm" = (
 /obj/structure/cable,
 /obj/machinery/modular_computer/preset/engineering{
@@ -11281,6 +11335,16 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/large,
 /area/station/hallway/primary/fore)
+<<<<<<< HEAD
+=======
+"dsd" = (
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
+>>>>>>> 6080ed1a2 (Piped Out: Fixes Service Hall pipes on Void Raptor (#837))
 "dsg" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -17320,9 +17384,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/effect/turf_decal/tile/green/diagonal_centre,
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/secondary/service)
@@ -18680,6 +18741,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/aft/greater)
+<<<<<<< HEAD
+=======
+"frZ" = (
+/obj/structure/sign/poster/random/directional/north,
+/obj/effect/turf_decal/bot,
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
+/turf/open/floor/iron/large,
+/area/station/hallway/secondary/service)
+>>>>>>> 6080ed1a2 (Piped Out: Fixes Service Hall pipes on Void Raptor (#837))
 "fsb" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/thinplating{
@@ -23145,6 +23217,19 @@
 /obj/machinery/portable_atmospherics/canister,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/engineering/atmos)
+<<<<<<< HEAD
+=======
+"gIy" = (
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/machinery/status_display/ai/directional/west,
+/obj/effect/turf_decal/box,
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/obj/machinery/disposal/bin,
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
+>>>>>>> 6080ed1a2 (Piped Out: Fixes Service Hall pipes on Void Raptor (#837))
 "gIB" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/cup/bucket{
@@ -23311,11 +23396,10 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/disposalpipe/segment,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/secondary/service)
 "gKO" = (
@@ -23840,6 +23924,15 @@
 /obj/effect/turf_decal/tile/bar/opposingcorners,
 /turf/open/floor/iron,
 /area/station/service/bar)
+<<<<<<< HEAD
+=======
+"gRj" = (
+/obj/structure/noticeboard/directional/north,
+/obj/machinery/light_switch/directional/east,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/iron/large,
+/area/station/hallway/secondary/service)
+>>>>>>> 6080ed1a2 (Piped Out: Fixes Service Hall pipes on Void Raptor (#837))
 "gRx" = (
 /obj/item/radio/intercom/directional/south,
 /obj/structure/closet/secure_closet/hos,
@@ -24444,6 +24537,21 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/station/command/heads_quarters/hop)
+<<<<<<< HEAD
+=======
+"haL" = (
+/obj/machinery/computer/order_console/cook,
+/obj/effect/turf_decal/trimline/brown/filled/line{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/brown/filled/mid_joiner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/brown/filled/mid_joiner,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/iron/smooth_large,
+/area/station/hallway/secondary/service)
+>>>>>>> 6080ed1a2 (Piped Out: Fixes Service Hall pipes on Void Raptor (#837))
 "haU" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
@@ -29901,6 +30009,22 @@
 /obj/effect/landmark/start/botanist,
 /turf/open/floor/iron/edge,
 /area/station/service/hydroponics)
+<<<<<<< HEAD
+=======
+"iAU" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
+>>>>>>> 6080ed1a2 (Piped Out: Fixes Service Hall pipes on Void Raptor (#837))
 "iBe" = (
 /obj/structure/table,
 /obj/effect/turf_decal/trimline/purple/filled/line{
@@ -38826,6 +38950,20 @@
 /obj/machinery/duct,
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/department/engine/atmos)
+<<<<<<< HEAD
+=======
+"kXo" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/machinery/status_display/ai/directional/north,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
+>>>>>>> 6080ed1a2 (Piped Out: Fixes Service Hall pipes on Void Raptor (#837))
 "kXu" = (
 /obj/item/folder/blue{
 	pixel_x = 3;
@@ -69783,21 +69921,12 @@
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/aft/greater)
 "trR" = (
-/obj/structure/rack,
-/obj/item/clothing/mask/gas,
-/obj/item/reagent_containers/cup/glass/shaker,
-/obj/item/cultivator,
-/obj/item/clothing/head/utility/chefhat,
-/obj/item/storage/box/lights/mixed,
-/obj/effect/spawner/random/maintenance,
 /obj/machinery/firealarm/directional/south,
+/obj/effect/turf_decal/tile/green/diagonal_centre,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/spawner/random/food_or_drink/donkpockets,
-/obj/item/storage/box/drinkingglasses,
-/obj/effect/turf_decal/tile/green/diagonal_centre,
-/obj/effect/turf_decal/bot,
+/obj/machinery/icecream_vat,
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/secondary/service)
 "tsb" = (
@@ -75060,7 +75189,6 @@
 /turf/open/floor/wood/large,
 /area/station/command/heads_quarters/blueshield)
 "uNs" = (
-/obj/structure/table,
 /obj/item/kitchen/rollingpin{
 	pixel_y = 4
 	},
@@ -75076,10 +75204,11 @@
 	pixel_x = -11;
 	pixel_y = 4
 	},
+/obj/effect/turf_decal/tile/green/diagonal_centre,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/structure/table,
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/secondary/service)
 "uNu" = (
@@ -76016,7 +76145,6 @@
 /turf/open/floor/circuit,
 /area/station/ai_monitored/turret_protected/ai)
 "vaJ" = (
-/obj/structure/table,
 /obj/item/storage/bag/plants{
 	pixel_y = 2
 	},
@@ -76024,10 +76152,11 @@
 	pixel_y = 3
 	},
 /obj/machinery/newscaster/directional/south,
+/obj/effect/turf_decal/tile/green/diagonal_centre,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/structure/table,
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/secondary/service)
 "vaL" = (
@@ -77085,11 +77214,11 @@
 	},
 /area/station/holodeck/rec_center)
 "vrL" = (
+/obj/effect/turf_decal/stripes/box,
+/obj/machinery/rnd/production/techfab/department/service,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/box,
-/obj/machinery/rnd/production/techfab/department/service,
 /turf/open/floor/iron/large,
 /area/station/hallway/secondary/service)
 "vrU" = (
@@ -77499,6 +77628,16 @@
 "vwo" = (
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/commons/vacant_room)
+<<<<<<< HEAD
+=======
+"vwy" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
+>>>>>>> 6080ed1a2 (Piped Out: Fixes Service Hall pipes on Void Raptor (#837))
 "vwz" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
@@ -78040,6 +78179,16 @@
 /obj/structure/sign/poster/official/space_cops/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/security/holding_cell)
+<<<<<<< HEAD
+=======
+"vFd" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
+>>>>>>> 6080ed1a2 (Piped Out: Fixes Service Hall pipes on Void Raptor (#837))
 "vFg" = (
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/stripes/line,
@@ -78487,6 +78636,17 @@
 "vLe" = (
 /turf/closed/wall,
 /area/station/service/janitor)
+<<<<<<< HEAD
+=======
+"vLg" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/effect/turf_decal/tile/green/diagonal_centre,
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/turf/open/floor/iron/diagonal,
+/area/station/hallway/secondary/service)
+>>>>>>> 6080ed1a2 (Piped Out: Fixes Service Hall pipes on Void Raptor (#837))
 "vLk" = (
 /obj/machinery/module_duplicator,
 /obj/effect/turf_decal/trimline/purple/filled/line{
@@ -123711,11 +123871,19 @@ vmS
 whq
 orv
 xFd
+<<<<<<< HEAD
 iog
 foi
 tZu
 tSE
 lWH
+=======
+nRS
+fvY
+ePd
+sSm
+aaY
+>>>>>>> 6080ed1a2 (Piped Out: Fixes Service Hall pipes on Void Raptor (#837))
 gKB
 ajR
 tdO
@@ -124998,9 +125166,15 @@ gFG
 gIO
 tUw
 hfU
+<<<<<<< HEAD
 eEd
 bPG
 ctf
+=======
+frZ
+vLg
+iAU
+>>>>>>> 6080ed1a2 (Piped Out: Fixes Service Hall pipes on Void Raptor (#837))
 bdX
 fLp
 qEC
