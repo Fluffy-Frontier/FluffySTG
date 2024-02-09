@@ -1058,9 +1058,7 @@
 /area/station/security/mechbay)
 "aic" = (
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/window/right/directional/north{
-	base_state = "left";
-	icon_state = "left";
+/obj/machinery/door/window/left/directional/north{
 	name = "Security Delivery";
 	req_access = list("brig")
 	},
@@ -12980,9 +12978,7 @@
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
 "bdj" = (
-/obj/machinery/door/window/left/directional/east{
-	base_state = "right";
-	icon_state = "right";
+/obj/machinery/door/window/right/directional/east{
 	name = "Captain's Desk Door";
 	req_access = list("captain")
 	},
@@ -13208,9 +13204,7 @@
 /area/station/maintenance/port)
 "beb" = (
 /obj/structure/table,
-/obj/machinery/door/window/left/directional/east{
-	base_state = "right";
-	icon_state = "right";
+/obj/machinery/door/window/right/directional/east{
 	name = "Core Modules";
 	req_access = list("captain")
 	},
@@ -14240,9 +14234,7 @@
 /obj/structure/window/reinforced/spawner/directional/south,
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/window/reinforced/spawner/directional/north,
-/obj/machinery/door/window/left/directional/east{
-	base_state = "right";
-	icon_state = "right";
+/obj/machinery/door/window/right/directional/east{
 	layer = 3
 	},
 /obj/effect/turf_decal/stripes/line{
@@ -41200,9 +41192,7 @@
 /area/station/ai_monitored/turret_protected/aisat_interior)
 "jpM" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/window/left/directional/south{
-	base_state = "right";
-	icon_state = "right";
+/obj/machinery/door/window/right/directional/south{
 	name = "Armory";
 	req_access = list("armory")
 	},
@@ -46114,9 +46104,7 @@
 /area/station/maintenance/starboard/aft)
 "nko" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/right/directional/south{
-	base_state = "left";
-	icon_state = "left";
+/obj/machinery/door/window/left/directional/south{
 	name = "Robotics Desk";
 	req_access = list("robotics")
 	},
@@ -46779,9 +46767,7 @@
 /area/station/cargo/bitrunning/den)
 "nNp" = (
 /obj/structure/window/reinforced/spawner/directional/north,
-/obj/machinery/door/window/right/directional/west{
-	base_state = "left";
-	icon_state = "left";
+/obj/machinery/door/window/left/directional/west{
 	name = "Research Division Delivery";
 	req_access = list("research")
 	},
@@ -49697,8 +49683,7 @@
 /area/station/hallway/primary/central)
 "qaV" = (
 /obj/structure/table/glass,
-/obj/machinery/door/window/left/directional/west{
-	icon_state = "right";
+/obj/machinery/door/window/right/directional/west{
 	name = "First-Aid Supplies";
 	red_alert_access = 1;
 	req_access = list("medical")
@@ -51480,9 +51465,7 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/window/right/directional/north{
-	base_state = "left";
-	icon_state = "left";
+/obj/machinery/door/window/left/directional/north{
 	name = "Pharmacy Desk";
 	req_access = list("pharmacy")
 	},
@@ -52271,9 +52254,7 @@
 /turf/open/floor/eighties,
 /area/station/maintenance/abandon_arcade)
 "sas" = (
-/obj/machinery/door/window/left/directional/east{
-	base_state = "right";
-	icon_state = "right";
+/obj/machinery/door/window/right/directional/east{
 	name = "Brig Infirmary"
 	},
 /obj/effect/turf_decal/tile/dark_blue{
@@ -52646,9 +52627,7 @@
 	id = "briggate";
 	name = "Security Shutters"
 	},
-/obj/machinery/door/window/left/directional/south{
-	base_state = "right";
-	icon_state = "right";
+/obj/machinery/door/window/right/directional/south{
 	name = "Brig Desk";
 	req_access = list("brig")
 	},
@@ -55438,8 +55417,7 @@
 /turf/open/floor/iron/dark,
 /area/station/security/processing)
 "uKZ" = (
-/obj/machinery/door/window/left/directional/east{
-	icon_state = "right";
+/obj/machinery/door/window/right/directional/east{
 	name = "Incoming Mail";
 	req_access = list("cargo")
 	},
@@ -58893,9 +58871,7 @@
 /area/station/security/office)
 "xme" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/right/directional/west{
-	base_state = "left";
-	icon_state = "left";
+/obj/machinery/door/window/left/directional/west{
 	name = "Robotics Desk";
 	req_access = list("robotics")
 	},
