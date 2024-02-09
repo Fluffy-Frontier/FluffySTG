@@ -139,8 +139,7 @@
 	dir = 8
 	},
 /obj/machinery/duct,
-/obj/machinery/door/window/survival_pod{
-	dir = 8;
+/obj/machinery/door/window/survival_pod/left/directional/west{
 	req_access = list("syndicate");
 	pixel_x = -4
 	},
@@ -713,8 +712,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 1
 	},
-/obj/machinery/door/window/survival_pod{
-	dir = 8;
+/obj/machinery/door/window/survival_pod/left/directional/west{
 	req_access = list("syndicate");
 	pixel_x = -4
 	},
@@ -766,8 +764,7 @@
 "eH" = (
 /obj/machinery/hydroponics/constructable,
 /obj/machinery/light/directional/north,
-/obj/machinery/door/window/survival_pod{
-	dir = 8;
+/obj/machinery/door/window/survival_pod/left/directional/west{
 	req_access = list("syndicate");
 	pixel_x = -4
 	},
@@ -1834,8 +1831,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/machinery/door/window/survival_pod{
-	dir = 8;
+/obj/machinery/door/window/survival_pod/left/directional/west{
 	req_access = list("syndicate");
 	pixel_x = -4
 	},
@@ -2591,7 +2587,7 @@
 /area/ruin/syndicate_lava_base/bar)
 "qE" = (
 /obj/structure/fans/tiny,
-/obj/machinery/door/window/survival_pod{
+/obj/machinery/door/window/survival_pod/left/directional/south{
 	req_access = list("syndicate");
 	name = "Slime Pacification Chamber"
 	},
@@ -2908,8 +2904,7 @@
 /area/ruin/syndicate_lava_base/bar)
 "sm" = (
 /obj/machinery/hydroponics/constructable,
-/obj/machinery/door/window/survival_pod{
-	dir = 8;
+/obj/machinery/door/window/survival_pod/left/directional/west{
 	req_access = list("syndicate");
 	pixel_x = -4
 	},
@@ -3750,7 +3745,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
-/obj/machinery/door/window/survival_pod{
+/obj/machinery/door/window/survival_pod/left/directional/south{
 	req_access = list("syndicate");
 	pixel_y = -4
 	},
@@ -4711,8 +4706,7 @@
 	req_access = list("syndicate");
 	pixel_y = 42
 	},
-/obj/machinery/door/window/survival_pod{
-	dir = 1;
+/obj/machinery/door/window/survival_pod/left/directional/north{
 	pixel_y = 4
 	},
 /obj/effect/turf_decal/stripes/red/line{
@@ -4899,7 +4893,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/main)
 "Gw" = (
-/obj/machinery/door/window/survival_pod{
+/obj/machinery/door/window/survival_pod/left/directional/south{
 	req_access = list("syndicate");
 	name = "Slime Euthanization Chamber"
 	},
@@ -4956,7 +4950,7 @@
 /area/ruin/syndicate_lava_base/medbay)
 "GK" = (
 /obj/structure/fans/tiny,
-/obj/machinery/door/window/survival_pod{
+/obj/machinery/door/window/survival_pod/left/directional/south{
 	req_access = list("syndicate")
 	},
 /obj/machinery/shower/directional/west,
@@ -5074,8 +5068,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 1
 	},
-/obj/machinery/door/window/survival_pod{
-	dir = 8;
+/obj/machinery/door/window/survival_pod/left/directional/west{
 	req_access = list("syndicate");
 	pixel_x = -4
 	},
@@ -6934,9 +6927,7 @@
 /area/ruin/syndicate_lava_base/main)
 "SH" = (
 /obj/structure/table/reinforced/plastitaniumglass,
-/obj/machinery/door/window/survival_pod{
-	dir = 1
-	},
+/obj/machinery/door/window/survival_pod/left/directional/north,
 /obj/effect/turf_decal/tile/dark/full,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/medbay)
@@ -7109,8 +7100,7 @@
 	dir = 1
 	},
 /obj/machinery/duct,
-/obj/machinery/door/window/survival_pod{
-	dir = 8;
+/obj/machinery/door/window/survival_pod/left/directional/west{
 	req_access = list("syndicate");
 	pixel_x = -4
 	},
@@ -7315,8 +7305,7 @@
 /area/ruin/syndicate_lava_base/dormitories)
 "Vz" = (
 /obj/machinery/biogenerator,
-/obj/machinery/door/window/survival_pod{
-	dir = 8;
+/obj/machinery/door/window/survival_pod/left/directional/west{
 	req_access = list("syndicate");
 	pixel_x = -4
 	},
@@ -7542,8 +7531,7 @@
 /area/ruin/syndicate_lava_base/main)
 "WW" = (
 /obj/machinery/hydroponics/constructable,
-/obj/machinery/door/window/survival_pod{
-	dir = 8;
+/obj/machinery/door/window/survival_pod/left/directional/west{
 	req_access = list("syndicate");
 	pixel_x = -4
 	},
