@@ -54,6 +54,7 @@
 /obj/item/ammo_box/c46x30mm/rubber
 	name = "ammo box (4.6x30mm rubber)"
 	ammo_type = /obj/item/ammo_casing/c46x30mm/rubber
+<<<<<<< HEAD
 
 /obj/item/ammo_box/c34
 	name = "ammo box (.34)"
@@ -82,3 +83,5 @@
 	new /obj/item/stock_parts/cell/microfusion/bluespace(src)
 	new /obj/item/stock_parts/cell/microfusion/bluespace(src)
 	new /obj/item/stock_parts/cell/microfusion/bluespace(src)
+=======
+>>>>>>> e1b64e887 (Cleans up a lot of old gun stuff, and either adds or tweaks some crates in preparation for some stuff i want to do later (#689))
