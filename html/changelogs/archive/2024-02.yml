@@ -215,3 +215,22 @@
   - bugfix: Fixed the colorful lights of the ethereal disco ball.
   vinylspiders:
   - bugfix: fixes a runtime in AI search_tactic
+2024-02-09:
+  IndieanaJones:
+  - bugfix: Xenomorphs now have legcuffs applied to them properly.
+  JohnFulpWillard:
+  - qol: The barcode scanner is now part of computer tech and can be printed at the
+      service techfab.
+  LT3:
+  - bugfix: SM cascade delam messages no longer display to clients not in game
+  Melbert:
+  - bugfix: When placing an item into storage (such as backpacks), all nearby mobs
+      now get a message, rather than just the first mob.
+  - bugfix: TGC decks of cards should act a bit less odd when looking inside.
+  - refactor: Refactored a bit of storage, cleaned up a fair bit of its code. Let
+      me know if you notice anything funky about storage (like backpacks).
+  - bugfix: Krav Maga users can shove again
+  Swiftfeather:
+  - qol: Added a new head-only target hotkey, unbound by default.
+  Wallem:
+  - rscadd: Adds a new suicide_act() to the smite spell
