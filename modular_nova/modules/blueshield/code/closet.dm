@@ -33,7 +33,13 @@
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/restraints/handcuffs(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
+<<<<<<< HEAD
 	new /obj/item/storage/medkit/tactical/blueshield(src)
 	// new /obj/item/storage/toolbox/guncase/nova/xhihao_large_case/bogseo(src) FF EDIT: DELETION - BLUESHIELD-REARM
+=======
+	new /obj/item/storage/medkit/frontier/stocked(src)
+	new /obj/item/storage/toolbox/guncase/nova/xhihao_large_case/bogseo(src)
+>>>>>>> b8061af7e (And look, the red just washes right out! | Changes a lot of blueshield equipment stuff and resprites their crew monitor (#372))
 	new /obj/item/storage/bag/garment/blueshield(src)
 	new /obj/item/mod/control/pre_equipped/blueshield(src)
+	new /obj/item/sensor_device/blueshield(src)
