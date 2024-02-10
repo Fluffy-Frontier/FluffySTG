@@ -62,8 +62,6 @@ GLOBAL_DATUM_INIT(language_holder_adjustor, /datum/language_holder_adjustor, new
 								/datum/language/machine = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 							/datum/language/machine = list(LANGUAGE_ATOM))
-<<<<<<< HEAD
-=======
 
 /// Modularized the Cyborg and AI language_holder, add here the languages that you want them to be able to speak and understand.
 /datum/language_holder/synthetic
@@ -129,4 +127,3 @@ GLOBAL_DATUM_INIT(language_holder_adjustor, /datum/language_holder_adjustor, new
 /datum/language_holder/drone_nova
 	understood_languages = list(/datum/language/drone = list(LANGUAGE_ATOM), /datum/language/common = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/drone = list(LANGUAGE_ATOM))
->>>>>>> 8dfe3fef5 ([MODULAR] [POLICY] Drone Changes (#850))
