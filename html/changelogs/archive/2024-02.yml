@@ -234,3 +234,73 @@
   - qol: Added a new head-only target hotkey, unbound by default.
   Wallem:
   - rscadd: Adds a new suicide_act() to the smite spell
+2024-02-10:
+  1393F:
+  - bugfix: The HFR now provides the max temperature for recipes
+  - bugfix: the crystallizer now provides the dangerous object created instead of
+      itself in admin logging
+  ArcaneMusic:
+  - bugfix: Icebox should have it's ore distribution and it's ore vents fixed, so
+      that vents should now produce ore.
+  - spellcheck: Boulder processing machines now don't mention things they don't do.
+  Holoo-1:
+  - admin: remade everyone is traitor into everyone is antag in secrets panel
+  LT3:
+  - qol: Health analyzer will now display blood alcohol content
+  LemonInTheDark:
+  - rscdel: Removes halloween screen tint, we're taking him to retire by the seaside
+      (he was alone and unloved)
+  Lutowski:
+  - rscadd: The barbers have been hard at work! Emo Long & Gloomy Bangs hairstyles
+      are updated to modern standards.
+  - bugfix: Service Hall's disposal pipes are fixed on Void Raptor.
+  Melbert:
+  - bugfix: You know that one bug that makes the cryo cells on Deltastation unusuable?
+      Well it's not fixed but at least those cryo cells are usuable again, maybe at
+      the cost of another station's cryo cells. Who knows!
+  - bugfix: Fixed Finger Guns giving a misleading chat message
+  - bugfix: Fixed some situations in which you couldn't interact with heretic runes
+  OrionTheFox:
+  - image: fixed some minor icon inconsistencies on the White Suit and Tan Suit
+  Paxilmaniac:
+  - rscadd: Adds the cropped jacket, it's like a jacket but some barbarian seems to
+      have ripped the bottom half off it
+  - bugfix: A few suit items that really ought to have some suit storage stuff, now
+      have that.
+  Stalkeros:
+  - rscadd: Blueshift Xen asteroid has been reworked into an OG red mining asteroid,
+      with appropriate fauna
+  - rscdel: Effectivelly everything else that was related to Black Mesa.
+  SyncIt21:
+  - bugfix: reactions now compute purity of reagents based on their volume, meaning
+      larger amounts of reagents created will have more significant effects on the
+      final purity of the solution
+  - qol: adds screentips & examines for screwdriver & crowbar acts & alt click.
+  - qol: techfabs can now use the mouse drop functionality to set drop target.
+  - qol: lathe printing animation plays on loop while printing rather than flicking
+      once for more visual feedback
+  - bugfix: lathe sheet insertion animations are now linked & work again for all material
+      types inserted via remote silo/local storage
+  - bugfix: printing custom materials items from autolathe works again.
+  - bugfix: printing multiple items from lathes will actually print that correct quantity
+      of items requested.
+  - bugfix: printing items the 2nd time around from lathes won't cause the UI to reload
+      each time.
+  - code_imp: autodoc for some vars & procs, merges procs.
+  - refactor: Optimized code for autolathe & techfabs in general. Report bugs on github
+  Zargoar:
+  - rscadd: 'Adds in the Red Mons, The Wizard, The Rune and MOTHS-MOTHS-MOTHS bar
+      signs from the bar sign contest.
+
+      Congratulations to the winners!'
+  - image: Adds in the Red Mons, The Wizard, The Rune and MOTHS-MOTHS-MOTHS bar signs
+      from the bar sign contest.
+  Zergspower:
+  - rscadd: Hilbert Hotel - Adds a beach condo
+  - bugfix: Apartment in Hilberts hotel regains its birb plush
+  - balance: Brings back non-proximity based ore spawns
+  - bugfix: fixes Icemoon not spawning ore
+  larentoun:
+  - bugfix: Now falsewalls visually don't close when they shouldn't.
+  nikothedude:
+  - bugfix: Synthetic organ manipulation no longer causes screaming
