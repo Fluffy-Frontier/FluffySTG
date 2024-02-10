@@ -223,11 +223,25 @@
 	if(!unique_reskin)
 		return
 	unique_reskin += list(
+		"Blue Slim Variant" = list(
+			RESKIN_ICON = 'tff_modular/modules/redsec_reskins/icons/belt_obj.dmi',
+			RESKIN_ICON_STATE = "belt_slim",
+			RESKIN_WORN_ICON = 'tff_modular/modules/redsec_reskins/icons/belt_worn.dmi',
+			RESKIN_WORN_ICON_STATE = "belt_slim"
+		),
+	)
+/obj/item/storage/belt/security/webbing/peacekeeper/Initialize(mapload)
+	. = ..()
+	uses_advanced_reskins = TRUE
+	current_skin = NONE
+	unique_reskin = list(
 		"Red Variant" = list(
-			RESKIN_ICON = 'icons/obj/clothing/belts.dmi',
-			RESKIN_ICON_STATE = "security",
-			RESKIN_WORN_ICON = 'icons/mob/clothing/belt.dmi',
-			RESKIN_WORN_ICON_STATE = "security"
+			RESKIN_ICON_STATE = "armadyne_webbing",
+			RESKIN_WORN_ICON_STATE = "armadyne_webbing"
+		),
+		"Blue Variant" = list(
+			RESKIN_ICON_STATE = "peacekeeper_webbing",
+			RESKIN_WORN_ICON_STATE = "peacekeeper_webbing"
 		),
 	)
 
@@ -265,6 +279,23 @@
 			RESKIN_ICON_STATE = "satchel_security_black",
 			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/back.dmi',
 			RESKIN_WORN_ICON_STATE = "satchel_security_black"
+		),
+	)
+
+/obj/item/storage/backpack/messenger/sec
+	uses_advanced_reskins = TRUE
+	unique_reskin = list(
+		"Red Variant" = list(
+			RESKIN_ICON = 'icons/obj/storage/backpack.dmi',
+			RESKIN_ICON_STATE = "messenger_security",
+			RESKIN_WORN_ICON = 'icons/mob/clothing/back/backpack.dmi',
+			RESKIN_WORN_ICON_STATE = "messenger_security"
+		),
+		"Blue Variant" = list(
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/backpacks.dmi',
+			RESKIN_ICON_STATE = "messenger_security_black",
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/back.dmi',
+			RESKIN_WORN_ICON_STATE = "messenger_security_black"
 		),
 	)
 
