@@ -24,7 +24,7 @@
 				/obj/item/clothing/under/rank/security/officer/skirt/redsec = 5,
 				/obj/item/clothing/under/rank/security/nova/utility/redsec = 5,
 				/obj/item/clothing/suit/toggle/jacket/sec/old = 5,
-				/obj/item/clothing/suit/armor/vest/alt/sec/redsec = 2
+				/obj/item/clothing/suit/armor/vest/alt/sec/redsec = 2,
 			),
 		),
 		list(
@@ -38,7 +38,7 @@
 				/obj/item/clothing/neck/security_cape/armplate = 5,
 				/obj/item/storage/backpack/security = 5,
 				/obj/item/storage/backpack/satchel/sec = 5,
-				/obj/item/storage/backpack/duffelbag/sec = 5,
+				/obj/item/storage/backpack/messenger/sec = 5,
 				/obj/item/storage/backpack/duffelbag/sec = 5,
 				/obj/item/clothing/under/rank/security/officer = 10,
 				/obj/item/clothing/under/rank/security/officer/skirt = 10,
