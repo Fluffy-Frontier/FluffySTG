@@ -10,9 +10,15 @@
 	)
 
 /datum/surgery/lipoplasty/can_start(mob/user, mob/living/carbon/target)
+<<<<<<< HEAD
 	if(HAS_TRAIT(target, TRAIT_FAT) && target.nutrition >= NUTRITION_LEVEL_WELL_FED)
 		return TRUE
 	return FALSE
+=======
+	if(!HAS_TRAIT(target, TRAIT_FAT) || target.nutrition < NUTRITION_LEVEL_WELL_FED)
+		return FALSE
+	return ..()
+>>>>>>> 8dcc529c6 ([MIRROR] Fix Lipoplasty not existing (#909))
 
 
 //cut fat
