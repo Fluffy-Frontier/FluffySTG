@@ -373,3 +373,10 @@
   - bugfix: The shove blocker module parent type now has the correct typepath.
   nikothedude:
   - bugfix: Synthetic organ manipulation no longer causes screaming
+2024-02-11:
+  Absolucy:
+  - bugfix: Fix succumb last words being double-encoded (i.e `i'm` becoming `i&#39;lm`)
+  Rhials:
+  - bugfix: You can now refine ectoplasmic raw cores at the implosion machine thing.
+  SyncIt21:
+  - bugfix: lathes now use moderate power for printing operations
