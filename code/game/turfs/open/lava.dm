@@ -310,13 +310,6 @@
 				burn_stuff(burn_content)
 		return TRUE
 
-<<<<<<< HEAD
-	var/mob/living/burn_living = burn_target
-	burn_living.AddElement(/datum/element/perma_fire_overlay)
-	burn_living.ignite_mob()
-	burn_living.adjust_fire_stacks(lava_firestacks * seconds_per_tick)
-	burn_living.adjustFireLoss(lava_damage * seconds_per_tick)
-=======
 	if(isliving(burn_target))
 		var/mob/living/burn_living = burn_target
 		if(!HAS_TRAIT_FROM(burn_living, TRAIT_NO_EXTINGUISH, TURF_TRAIT))
@@ -328,7 +321,6 @@
 		return TRUE
 
 	return FALSE
->>>>>>> f6062c23f ([MIRROR] Fix Flaky Failure From Fire  (#889))
 
 /turf/open/lava/can_cross_safely(atom/movable/crossing)
 	return HAS_TRAIT(src, TRAIT_LAVA_STOPPED) || HAS_TRAIT(crossing, immunity_trait ) || HAS_TRAIT(crossing, TRAIT_MOVE_FLYING)
