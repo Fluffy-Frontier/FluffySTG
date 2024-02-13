@@ -13,6 +13,10 @@ function getValueClass(value: number) {
     return 'positive';
   } else if (value < 0) {
     return 'negative';
+    // NOVA EDIT ADDITION BEGIN - Purple ERP quirks
+  } else if (quirk.erp_quirk) {
+    return 'erp_quirk';
+    // NOVA EDIT ADDITION END
   } else {
     return 'neutral';
   }
