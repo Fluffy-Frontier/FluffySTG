@@ -541,3 +541,38 @@
   - rscadd: port tarkon unique additions for access and cameras
   vinylspiders:
   - bugfix: '*wag emote is now functional again'
+2024-02-16:
+  CandleJaxx and Iamgoofball:
+  - bugfix: Fixes Krav Maga allowing pacifism bypasses.
+  IndieanaJones:
+  - balance: Nightmare's Light Eater takes less time in jaunt to gain a critical strike,
+      being reduced to 7 seconds from 15 seconds.
+  K4rlox:
+  - balance: Maintenance drones now can use RPED, RCD, Holosign, and Spray bottles
+  LemonInTheDark:
+  - rscadd: AI's acceleration now smoothly decays, instead of just falling back down
+      to 0 after 0.5 seconds
+  - bugfix: AI's standard movement (non accelerated) is smooth now, instead of constantly
+      jumping around
+  - bugfix: AIs will now follow their targets more closely, shouldn't have any issues
+      with them lagging behind anymore
+  Melbert:
+  - bugfix: Valentines no longer see themselves covered in hearts. They only see their
+      Valentine covered in hearts.
+  Rhials:
+  - bugfix: Ghost role polls should spam you less when multiple of the same roll occur
+      in succession.
+  Thlumyn:
+  - rscadd: Added hotspring to hearthkin ghost cafe spot.
+  - bugfix: Moved moved in hearth in cafe to not layer on top of fence.
+  Xander3359:
+  - balance: Contractor kit no longer gets RNG items, it's a specific pool now
+  vinylspiders:
+  - bugfix: mold should now spawn enemies again
+  yooriss:
+  - rscdel: Security and medical records can no longer be expunged or mass-purged
+      from their respective consoles.
+  - rscadd: Numerous implants have been added to the character preferences screen,
+      including a variety of handy toolsets and more. Every integrated tool has its
+      own unique description and company branding, but are always worse than their
+      in-hand counterparts you can find on the station. Style over substance!
