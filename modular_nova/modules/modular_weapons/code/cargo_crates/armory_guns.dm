@@ -5,9 +5,6 @@
 	contains = list(
 		/obj/item/storage/toolbox/guncase/nova/carwo_large_case/sindano = 3,
 	)
-<<<<<<< HEAD:modular_nova/modules/sec_haul/code/guns/cargo_stuff.dm
-	crate_name = "Carwo 'Sindano' Submachinegun Crate"
-=======
 	crate_name = "Sindano Submachinegun Crate"
 
 /datum/supply_pack/security/armory/renoster
@@ -55,4 +52,3 @@
 		/obj/item/gun/energy/modular_laser_rifle,
 	)
 	crate_name = "\improper Modular Laser Rifle Crate"
->>>>>>> e1b64e887 (Cleans up a lot of old gun stuff, and either adds or tweaks some crates in preparation for some stuff i want to do later (#689)):modular_nova/modules/modular_weapons/code/cargo_crates/armory_guns.dm
