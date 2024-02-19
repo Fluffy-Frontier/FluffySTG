@@ -4564,13 +4564,13 @@
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/main/dorms)
 "lw" = (
-/obj/item/bedsheet/dorms{
-	dir = 4
-	},
 /obj/structure/bed{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/spawner/random/bedsheet{
+	dir = 4
+	},
 /turf/open/floor/iron/smooth_large,
 /area/ruin/interdyne_planetary_base/main/dorms)
 "lx" = (
@@ -7178,19 +7178,6 @@
 /obj/effect/baseturf_helper/reinforced_plating/ceiling,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/interdyne_planetary_base/serv)
-<<<<<<< HEAD
-=======
-"Bx" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/bed/double{
-	dir = 1
-	},
-/obj/effect/spawner/random/bedsheet/any/double{
-	dir = 1
-	},
-/turf/open/floor/iron/smooth_large,
-/area/ruin/interdyne_planetary_base/main/dorms)
->>>>>>> 3eb7cadca4e ([MIRROR] [MDB Ignore] Converts random bedsheets to spawners + 3 bedsheets I made long time ago. (#982))
 "BG" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
