@@ -17148,10 +17148,7 @@
 	location = "QM #1"
 	},
 /obj/effect/turf_decal/bot,
-/mob/living/simple_animal/bot/mulebot{
-	home_destination = "QM #1";
-	suffix = "#1"
-	},
+/mob/living/simple_animal/bot/mulebot,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/cargo/storage)
 "brO" = (
@@ -17733,10 +17730,7 @@
 	location = "QM #2"
 	},
 /obj/effect/turf_decal/bot,
-/mob/living/simple_animal/bot/mulebot{
-	home_destination = "QM #2";
-	suffix = "#2"
-	},
+/mob/living/simple_animal/bot/mulebot,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/cargo/storage)
 "btt" = (
@@ -34332,7 +34326,7 @@
 "dZT" = (
 /obj/machinery/airalarm/directional/north,
 /obj/structure/rack/gunrack,
-/obj/effect/spawner/armory_spawn/microfusion,
+/obj/effect/spawner/armory_spawn/mod_lasers_small,
 /obj/effect/turf_decal/delivery/red,
 /turf/open/floor/iron/smooth,
 /area/station/ai_monitored/security/armory)
