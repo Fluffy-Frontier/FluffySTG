@@ -576,3 +576,96 @@
       including a variety of handy toolsets and more. Every integrated tool has its
       own unique description and company branding, but are always worse than their
       in-hand counterparts you can find on the station. Style over substance!
+2024-02-18:
+  00-Steven:
+  - bugfix: Space cats CAN into space. (They're back to surviving being in unsuitable
+      atmos.)
+  13spacemen:
+  - code_imp: Removed unused global lists and sprite accessories related to tail spines
+  - code_imp: removed redundant check for plasmamen in survival box code
+  A.C.M.O.:
+  - rscadd: Enabled the synth power cord implant to charge from any power cell. Renamed
+      it to charging implant.
+  GoldenAlpharex:
+  - bugfix: The Spawners menu now accurately displays the amount of uses left in each
+      spawner option, taking into account individual spawners that either allow more
+      than one use, or an infinite amount of uses.
+  IndieanaJones:
+  - bugfix: Blob Zombies now render their blob heads correctly again.
+  - bugfix: Tank spider corpses should no longer be conditionally invisible
+  Kylerace:
+  - admin: admins/maintainers can now make the profiler focus on specific subsystems
+      by setting the subsystem var profile_focused to TRUE
+  LemonInTheDark:
+  - refactor: Fucks with how movement keys are handled. Please report any bugs
+  Lutowski:
+  - rscadd: Parts from a discontinued synth chassis line from the Mariinsky Ballet
+      Company is making rounds on the black market - now available to install for
+      synths and chromed up organics!
+  - rscadd: Slightly alters Research Director's labcoat sprite.
+  MLGTASTICa:
+  - balance: Oxandrolone now scales with purity. Its default purity is 100%
+  - balance: Salicylic acid now scales with purity. Its default purity is 100%
+  Melbert:
+  - rscadd: Wizards have a new mobility option available, the Telegram Scepter. The
+      ability to travel anywhere you can see at the point of a wand... but at a price?
+  Roastglue:
+  - bugfix: Crafting Bulgogi no longer makes Bibimbap. It instead makes Bulgogi.
+  Sylphet:
+  - bugfix: cargo lockboxes update iconstates correctly now
+  SyncIt21:
+  - qol: adds examines & screentips for ore box
+  - code_imp: cleans up some procs for ore box
+  - spellcheck: corrected description & ui notice of ore box to specify it can hold
+      boulders too
+  - bugfix: Indestructible items like the pai card don't teleport to the ore silo
+      when you insert them into silo linked machine & also displays a message saying
+      it was rejected.
+  Thunder12345:
+  - qol: The bitrunning quantum console UI now lists domains in tabs by difficulty.
+  WinterDarkraven:
+  - rscadd: In an attempt to stop the greytide, NanoTrasen has increased security's
+      baton energy output. This has, through testing, done nothing but make the device
+      spark more than it used to.
+  destrucktoid:
+  - bugfix: Restorative Nanites now heal Slimepeople just as well as they do other
+      people.
+  mc-oofert:
+  - balance: assemblybombs are bulky
+  mogeoko:
+  - bugfix: Thermomachines now reconnect to pipes on multitool's act.
+  - bugfix: Multi-deck connectors won't connect pipes not located in front/top/bottom
+      of it.
+  nikothedude:
+  - bugfix: Characters with multiple bodytypes are no longer forced to bear broken
+      clothing sprites
+2024-02-19:
+  SyncIt21:
+  - qol: adds examines & screentips for crowbar, screwdriver acts to BRM & refinery
+      machines
+  - qol: adds examines about the number of boulders stored & processed to BRM & refinery
+      machines
+  - qol: BRM now has its lights turn on/off depending on wether automatic boulder
+      retrieval is on/off for visual clarity along with examines
+  - qol: refinery machines now display ballon alerts & plays sounds more frequently
+      when processing boulders for better feedback
+  - bugfix: vents now spawn boulders of all sizes & not just small ones
+  - bugfix: expanded gulag boulders now have correct materials in them.
+  - bugfix: manual tapping of vents now has a cooldown applied as intended.
+  - bugfix: BRM has its light turned off when area power goes off
+  - bugfix: boulders ejected from refineries by hand no longer teleport all over the
+      place occasionally.
+  - bugfix: refineries no longer eject boulders with 0 durability
+  - bugfix: Boulders & refineries no longer pile up on top of BRM's & refineries in
+      long rounds. Their locs have to be clear of boulders before they spit out more
+      boulders to prevent a large pile of boulders from causing lag
+  - bugfix: sheets ejected from lathes no longer get rejected when inserted back which
+      could happen at random, no more boulders with empty materials
+  - code_imp: splits boulder types into its own file along with other items
+  - code_imp: merges & autodocs procs, vars related to boulders
+  - refactor: repaths BRM to a simpler subtype
+  - refactor: BRM now spawns boulders in batches(batch size can be increased with
+      upgraded parts) with a boulder appearing every second. After a batch is processed
+      a 3 second cooldown is applied to stop the conveyer belt from clogging up, With
+      this BRM wires are removed as there is no need for timers to be attached to
+      wires which intefers without our batch processing timings.
