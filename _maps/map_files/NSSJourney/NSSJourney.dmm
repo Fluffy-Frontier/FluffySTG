@@ -2292,7 +2292,7 @@
 /area/station/maintenance/solars/starboard/fore)
 "apC" = (
 /obj/structure/bed/pod,
-/obj/item/bedsheet/random,
+/obj/effect/spawner/random/bedsheet/any,
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/wood,
 /area/station/maintenance/port/fore)
@@ -2411,7 +2411,7 @@
 /area/station/security/execution/education)
 "aqn" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/landmark/start/hangover,
 /obj/machinery/button/door{
 	id = "Dorm3";
@@ -2902,7 +2902,7 @@
 /area/station/commons/fitness)
 "ast" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /turf/open/floor/carpet,
 /area/station/commons/dorms)
 "asu" = (
@@ -3442,7 +3442,7 @@
 /area/station/security/checkpoint/customs)
 "auw" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/button/door{
 	id = "Dorm2";
 	name = "Dorm Bolt Control";
@@ -4775,7 +4775,7 @@
 /area/station/ai_monitored/command/storage/eva)
 "ayV" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/button/door{
 	id = "Dorm1";
 	name = "Dorm Bolt Control";
@@ -6955,7 +6955,7 @@
 /area/station/commons/dorms)
 "aHG" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/landmark/start/hangover,
 /obj/machinery/button/door{
 	id = "Dorm4";
@@ -7065,7 +7065,7 @@
 /area/station/commons/dorms)
 "aHU" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/machinery/button/door{
 	id = "Dorm5";
 	name = "Cabin Bolt Control";
