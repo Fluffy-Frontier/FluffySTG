@@ -951,6 +951,13 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/bar)
+"eZ" = (
+/obj/structure/marker_beacon/burgundy,
+/obj/structure/chair{
+	dir = 8
+	},
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "fd" = (
 /obj/effect/turf_decal/stripes/red/line,
 /obj/effect/turf_decal/tile/dark/full,
@@ -1949,9 +1956,9 @@
 	dir = 5
 	},
 /obj/structure/marker_beacon/violet,
-/obj/structure/curtain/bounty/start_closed{
-	alpha = 180;
-	color = "#7d7d7d"
+/obj/structure/curtain/bounty{
+	color = "#7d7d7d";
+	alpha = 180
 	},
 /turf/open/floor/iron/dark/small,
 /area/ruin/syndicate_lava_base/dormitories)
@@ -2259,6 +2266,10 @@
 /obj/structure/marker_beacon/burgundy,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/testlab)
+"on" = (
+/obj/item/binoculars,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "op" = (
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -3119,6 +3130,10 @@
 /obj/effect/turf_decal/tile/dark/full,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/main)
+"tv" = (
+/obj/item/serviette_pack,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "tw" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/storage/box/monkeycubes{
@@ -4409,7 +4424,8 @@
 /area/ruin/syndicate_lava_base/medbay)
 "CC" = (
 /obj/machinery/vending/dorms{
-	onstation = 0
+	onstation = 0;
+	extended_inventory = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/main)
@@ -8047,7 +8063,7 @@ ac
 ac
 SH
 Iy
-Iy
+eE
 Im
 ac
 ac
@@ -8181,7 +8197,7 @@ uQ
 Iy
 Iy
 Se
-Iy
+eE
 Im
 Iy
 ac
@@ -9315,7 +9331,7 @@ td
 ab
 ab
 Iy
-Iy
+eE
 ac
 ac
 "}
@@ -10210,7 +10226,7 @@ aa
 ac
 ac
 Iy
-Iy
+eE
 Se
 Iy
 SH
@@ -10434,7 +10450,7 @@ ab
 Iy
 Se
 Se
-Iy
+eE
 ac
 ac
 ac
@@ -10652,8 +10668,8 @@ Iy
 ab
 ab
 ab
-ab
-ab
+Iy
+SH
 ab
 ab
 ab
@@ -10889,7 +10905,7 @@ dM
 Iy
 Iy
 SH
-Iy
+on
 Se
 Iy
 dM
@@ -10947,13 +10963,13 @@ ac
 ac
 SH
 Jx
-Iy
-Im
-ac
+eE
+eZ
+tv
 ac
 Se
 Se
-Iy
+eE
 ac
 ac
 ac

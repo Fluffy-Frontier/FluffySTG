@@ -848,7 +848,8 @@
 /area/ruin/syndicate_lava_base/cargo)
 "fn" = (
 /obj/machinery/vending/dorms{
-	onstation = 0
+	onstation = 0;
+	extended_inventory = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/main)
@@ -1328,9 +1329,9 @@
 	dir = 5
 	},
 /obj/structure/marker_beacon/violet,
-/obj/structure/curtain/bounty/start_closed{
-	alpha = 180;
-	color = "#7d7d7d"
+/obj/structure/curtain/bounty{
+	color = "#7d7d7d";
+	alpha = 180
 	},
 /turf/open/floor/iron/dark/small,
 /area/ruin/syndicate_lava_base/dormitories)
@@ -1802,6 +1803,10 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/medbay)
+"lh" = (
+/obj/item/chair,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "lq" = (
 /obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 4
@@ -5328,6 +5333,10 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
+"Jh" = (
+/obj/item/serviette_pack,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Jm" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 1
@@ -6411,6 +6420,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/grass,
 /area/ruin/syndicate_lava_base/main)
+"PC" = (
+/obj/item/binoculars,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "PD" = (
 /obj/structure/marker_beacon/teal,
 /obj/structure/fans/tiny/forcefield,
@@ -8461,11 +8474,11 @@ CH
 Co
 Co
 ZT
-BO
+Jt
 eO
 eO
 eO
-BO
+Nv
 BO
 BO
 ZT
@@ -9687,7 +9700,7 @@ wS
 vS
 Lf
 kY
-BO
+Nv
 eO
 eO
 BO
@@ -10353,7 +10366,7 @@ Co
 Co
 BO
 BO
-eO
+BO
 eO
 eO
 eO
@@ -10413,8 +10426,8 @@ Co
 BO
 BO
 BO
-eO
-eO
+BO
+ZT
 eO
 eO
 eO
@@ -10472,9 +10485,9 @@ Co
 fU
 BO
 BO
-eO
-eO
-eO
+BO
+Jt
+BO
 eO
 eO
 eO
@@ -10532,8 +10545,8 @@ Co
 Nv
 BO
 BO
-eO
-eO
+BO
+ZT
 eO
 eO
 eO
@@ -10591,8 +10604,8 @@ Co
 Co
 BO
 BO
-eO
-eO
+BO
+BO
 eO
 eO
 eO
@@ -10651,8 +10664,8 @@ Co
 Co
 BO
 BO
-eO
-eO
+BO
+BO
 eO
 eO
 eO
@@ -10712,7 +10725,7 @@ Co
 fU
 BO
 BO
-eO
+BO
 eO
 eO
 eO
@@ -10732,8 +10745,8 @@ eO
 eO
 eO
 eO
-eO
-eO
+BO
+ZT
 eO
 eO
 eO
@@ -10771,8 +10784,8 @@ Co
 Co
 Co
 BO
-eO
-eO
+BO
+BO
 eO
 eO
 eO
@@ -10832,8 +10845,8 @@ Co
 Jt
 BO
 BO
-eO
-eO
+BO
+BO
 eO
 eO
 eO
@@ -10892,6 +10905,9 @@ ZT
 Co
 BO
 BO
+BO
+BO
+BO
 eO
 eO
 eO
@@ -10905,11 +10921,8 @@ eO
 eO
 eO
 eO
-eO
-eO
-eO
-eO
-eO
+BO
+BO
 eO
 eO
 eO
@@ -10956,22 +10969,22 @@ cL
 ZT
 BO
 BO
+ZT
+eO
+eO
 BO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
-eO
 ZT
 eO
 eO
 eO
+eO
+eO
+BO
+Jt
+ZT
+BO
+BO
+BO
 eO
 ZT
 BO
@@ -11025,11 +11038,11 @@ BO
 fU
 Nv
 ZT
-BO
-BO
-BO
+PC
+lh
+Jh
 fU
-BO
+Co
 BO
 Jt
 BO
