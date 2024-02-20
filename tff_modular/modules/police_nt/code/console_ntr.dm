@@ -1,0 +1,472 @@
+#define IMPORTANT_ACTION_COOLDOWN (60 SECONDS)
+
+#define STATE_MAIN "main"
+#define STATE_MESSAGES "messages"
+#define EMERGENCY_RESPONSE_POLICE "WOOP WOOP THAT'S THE SOUND OF THE POLICE"
+
+/obj/item/circuitboard/computer/comntr
+	name = "NTR"
+	greyscale_colors = CIRCUIT_COLOR_ENGINEERING
+	build_path = /obj/machinery/computer/comntr
+
+// The comntr computer
+/obj/machinery/computer/comntr
+	name = "NTR console"
+	desc = "A console special for NTR."
+	icon_screen = "comm"
+	icon_keyboard = "tech_key"
+	req_access = list(ACCESS_CENT_GENERAL)
+	circuit = /obj/item/circuitboard/computer/comntr
+	light_color = LIGHT_COLOR_BLUEGREEN
+
+	/// If the battlecruiser has been called
+	var/static/battlecruiser_called = FALSE
+
+	/// Cooldown for important actions, such as messaging CentCom or other sectors
+	COOLDOWN_DECLARE(static/important_action_cooldown)
+	COOLDOWN_DECLARE(static/emergency_access_cooldown)
+
+	/// The current state of the UI
+	var/state = STATE_MAIN
+
+	/// The current state of the UI for AIs
+	var/cyborg_state = STATE_MAIN
+
+	/// The name of the user who logged in
+	var/authorize_name
+
+	/// The access that the card had on login
+	var/list/authorize_access
+
+	/// The messages this console has been sent
+	var/list/datum/comm_message/messages
+
+	/// The timer ID for sending the next cross-comms message
+	var/send_cross_comms_message_timer
+
+	/// The last lines used for changing the status display
+	var/static/last_status_display
+
+	///how many uses the console has done of toggling the emergency access
+	var/toggle_uses = 0
+	///how many uses can you toggle emergency access with before cooldowns start occuring BOTH ENABLE/DISABLE
+	var/toggle_max_uses = 3
+	///when was emergency access last toggled
+	var/last_toggled
+
+/obj/machinery/computer/comntr/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/gps, "Unic NTR console Signal")
+
+/// Are we NOT a silicon, AND we're logged in as the captain?
+/obj/machinery/computer/comntr/proc/authenticated_as_non_silicon_captain(mob/user)
+	if (issilicon(user))
+		return FALSE
+	return ACCESS_CENT_GENERAL in authorize_access
+
+/// Are we a silicon, OR we're logged in as the captain?
+/obj/machinery/computer/comntr/proc/authenticated_as_silicon_or_captain(mob/user)
+	if (issilicon(user))
+		return TRUE
+	return ACCESS_CENT_GENERAL in authorize_access
+
+/// Are we a silicon, OR logged in?
+/obj/machinery/computer/comntr/proc/authenticated(mob/user)
+	if (issilicon(user))
+		return TRUE
+	return authenticated
+
+/// NOVA EDIT Start - Are we the AI?
+/obj/machinery/computer/comntr/proc/authenticated_as_ai_or_captain(mob/user)
+	if (isAI(user))
+		return TRUE
+	return ACCESS_CENT_GENERAL in authorize_access //NOVA EDIT End
+
+/obj/machinery/computer/comntr/attackby(obj/I, mob/user, params)
+	if(isidcard(I))
+		attack_hand(user)
+	else
+		return ..()
+
+/// Internal. Polls ghosts and sends in a team of space cops according to the alert level, accompanied by an announcement.
+/obj/machinery/computer/comntr/proc/call_911(ordered_team)
+	var/team_size
+	var/datum/antagonist/ert/cops_to_send
+	var/announcement_message = "sussus amogus"
+	var/announcer = "Sol Federation Marshal Department"
+	var/poll_question = "fuck you leatherman"
+	var/cell_phone_number = "911"
+	var/list_to_use = "911_responders"
+	switch(ordered_team)
+		if(EMERGENCY_RESPONSE_POLICE)
+			team_size = 8
+			cops_to_send = /datum/antagonist/ert/request_911/police
+			announcement_message = "Crewmembers of [station_name()]. this is the Sol Federation. We've recieved a request for immediate marshal support, and we are \
+				sending our best marshals to support your station.\n\n\
+				If the first responders request that they need SWAT support to do their job, or to report a faulty 911 call, we will send them in at additional cost to your station to the \
+				tune of $20,000.\n\n\
+				The transcript of the call is as follows:\n\
+				[GLOB.call_911_msg]"
+			announcer = "Sol Federation Marshal Department"
+			poll_question = "The station has called for the Marshals. Will you respond?"
+	priority_announce(announcement_message, announcer, 'sound/effects/families_police.ogg', has_important_message=TRUE, color_override = "yellow")
+	var/list/candidates = SSpolling.poll_ghost_candidates(
+		poll_question,
+		check_jobban = ROLE_DEATHSQUAD,
+		pic_source = /obj/item/solfed_reporter,
+		role_name_text = cops_to_send::name,
+	)
+
+	if(length(candidates))
+		//Pick the (un)lucky players
+		var/agents_number = min(team_size, candidates.len)
+
+		var/list/spawnpoints = GLOB.emergencyresponseteamspawn
+		var/index = 0
+		GLOB.solfed_responder_info[list_to_use][SOLFED_AMT] = agents_number
+		while(agents_number && candidates.len)
+			var/spawn_loc = spawnpoints[index + 1]
+			//loop through spawnpoints one at a time
+			index = (index + 1) % spawnpoints.len
+			var/mob/dead/observer/chosen_candidate = pick(candidates)
+			candidates -= chosen_candidate
+			if(!chosen_candidate.key)
+				continue
+
+			//Spawn the body
+			var/mob/living/carbon/human/cop = new(spawn_loc)
+			chosen_candidate.client.prefs.safe_transfer_prefs_to(cop, is_antag = TRUE)
+			cop.key = chosen_candidate.key
+
+			//Give antag datum
+			var/datum/antagonist/ert/request_911/ert_antag = new cops_to_send
+
+			cop.mind.add_antag_datum(ert_antag)
+			cop.mind.set_assigned_role(SSjob.GetJobType(ert_antag.ert_job_path))
+			SSjob.SendToLateJoin(cop)
+			cop.grant_language(/datum/language/common, source = LANGUAGE_SPAWNER)
+
+			if(cops_to_send == /datum/antagonist/ert/request_911/atmos) // charge for atmos techs
+				var/datum/bank_account/station_balance = SSeconomy.get_dep_account(ACCOUNT_CAR)
+				station_balance?.adjust_money(GLOB.solfed_tech_charge)
+			else
+				var/obj/item/gangster_cellphone/phone = new() // biggest gang in the city
+				phone.gang_id = cell_phone_number
+				phone.name = "[cell_phone_number] branded cell phone"
+				phone.w_class = WEIGHT_CLASS_SMALL	//They get that COMPACT phone hell yea
+				var/phone_equipped = phone.equip_to_best_slot(cop)
+				if(!phone_equipped)
+					to_chat(cop, "Your [phone.name] has been placed at your feet.")
+					phone.forceMove(get_turf(cop))
+
+			//Logging and cleanup
+			log_game("[key_name(cop)] has been selected as an [ert_antag.name]")
+			if(cops_to_send == /datum/antagonist/ert/request_911/atmos)
+				log_game("[abs(GLOB.solfed_tech_charge)] has been charged from the station budget for [key_name(cop)]")
+			agents_number--
+	GLOB.cops_arrived = TRUE
+	return TRUE
+
+/obj/machinery/computer/comntr/proc/calling_911(mob/user, called_group_pretty = "EMTs", called_group = EMERGENCY_RESPONSE_POLICE)
+	message_admins("[ADMIN_LOOKUPFLW(user)] is considering calling the Sol Federation [called_group_pretty].")
+	var/call_911_msg_are_you_sure = "Are you sure you want to call 911? Faulty 911 calls results in a $20,000 fine and a 5 year superjail \
+		sentence."
+	if(tgui_input_list(user, call_911_msg_are_you_sure, "Call 911", list("Yes", "No")) != "Yes")
+		return
+	message_admins("[ADMIN_LOOKUPFLW(user)] has acknowledged the faulty 911 call consequences.")
+	if(tgui_input_list(user, GLOB.call911_do_and_do_not[called_group], "Call [called_group_pretty]", list("Yes", "No")) != "Yes")
+		return
+	message_admins("[ADMIN_LOOKUPFLW(user)] has read and acknowleged the recommendations for what to call and not call [called_group_pretty] for.")
+	var/reason_to_call_911 = stripped_input(user, "What do you wish to call 911 [called_group_pretty] for?", "Call 911", null, MAX_MESSAGE_LEN)
+	if(!reason_to_call_911)
+		to_chat(user, "You decide not to call 911.")
+		return
+	GLOB.cops_arrived = TRUE
+	GLOB.call_911_msg = reason_to_call_911
+	GLOB.caller_of_911 = user.name
+	log_game("[key_name(user)] has called the Sol Federation [called_group_pretty] for the following reason:\n[GLOB.call_911_msg]")
+	message_admins("[ADMIN_LOOKUPFLW(user)] has called the Sol Federation [called_group_pretty] for the following reason:\n[GLOB.call_911_msg]")
+	deadchat_broadcast(" has called the Sol Federation [called_group_pretty] for the following reason:\n[GLOB.call_911_msg]", span_name("[user.real_name]"), user, message_type = DEADCHAT_ANNOUNCEMENT)
+
+	call_911(called_group)
+	to_chat(user, span_notice("Authorization confirmed. 911 call dispatched to the Sol Federation [called_group_pretty]."))
+	playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+
+/obj/machinery/computer/comntr/ui_act(action, list/params)
+	var/static/list/approved_states = list(STATE_MAIN, STATE_MESSAGES)
+
+	. = ..()
+	if (.)
+		return
+
+	if (!has_communication())
+		return
+
+	. = TRUE
+
+	switch (action)
+		if ("answerMessage")
+			if (!authenticated(usr))
+				return
+
+			var/answer_index = params["answer"]
+			var/message_index = params["message"]
+
+			// If either of these aren't numbers, then bad voodoo.
+			if(!isnum(answer_index) || !isnum(message_index))
+				message_admins("[ADMIN_LOOKUPFLW(usr)] provided an invalid index type when replying to a message on [src] [ADMIN_JMP(src)]. This should not happen. Please check with a maintainer and/or consult tgui logs.")
+				CRASH("Non-numeric index provided when answering comms console message.")
+
+			if (!answer_index || !message_index || answer_index < 1 || message_index < 1)
+				return
+			var/datum/comm_message/message = messages[message_index]
+			if (message.answered)
+				return
+			message.answered = answer_index
+			message.answer_callback.InvokeAsync()
+		if ("setState")
+			if (!authenticated(usr))
+				return
+			if (!(params["state"] in approved_states))
+				return
+			set_state(usr, params["state"])
+			playsound(src, SFX_TERMINAL_TYPE, 50, FALSE)
+		if ("callThePolice")
+			calling_911(usr, "Marshals", EMERGENCY_RESPONSE_POLICE)
+		if ("deleteMessage")
+			if (!authenticated(usr))
+				return
+			var/message_index = text2num(params["message"])
+			if (!message_index)
+				return
+			LAZYREMOVE(messages, LAZYACCESS(messages, message_index))
+		if ("messageAssociates")
+			if (!authenticated_as_ai_or_captain(usr)) //NOVA EDIT | Allows AI and Captain to send messages
+				return
+			if (!COOLDOWN_FINISHED(src, important_action_cooldown))
+				return
+
+			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+			var/message = trim(html_encode(params["message"]), MAX_MESSAGE_LEN)
+
+			var/associates = "CentCom"
+			usr.log_talk(message, LOG_SAY, tag = "message to [associates]")
+			deadchat_broadcast(" has messaged [associates], \"[message]\" at [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]"), usr, message_type = DEADCHAT_ANNOUNCEMENT)
+			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)
+		if ("sendToOtherSector")
+			if (!authenticated_as_non_silicon_captain(usr))
+				return
+			if (!can_send_messages_to_other_sectors(usr))
+				return
+			if (!COOLDOWN_FINISHED(src, important_action_cooldown))
+				return
+
+			var/message = trim(params["message"], MAX_MESSAGE_LEN)
+			if (!message)
+				return
+
+			var/list/hard_filter_result = is_ic_filtered(message)
+			if(hard_filter_result)
+				tgui_alert(usr, "Your message contains: (\"[hard_filter_result[CHAT_FILTER_INDEX_WORD]]\"), which is not allowed on this server.")
+				return
+
+			var/list/soft_filter_result = is_soft_ooc_filtered(message)
+			if(soft_filter_result)
+				if(tgui_alert(usr,"Your message contains \"[soft_filter_result[CHAT_FILTER_INDEX_WORD]]\". \"[soft_filter_result[CHAT_FILTER_INDEX_REASON]]\", Are you sure you want to use it?", "Soft Blocked Word", list("Yes", "No")) != "Yes")
+					return
+				message_admins("[ADMIN_LOOKUPFLW(usr)] has passed the soft filter for \"[soft_filter_result[CHAT_FILTER_INDEX_WORD]]\". They may be using a disallowed term for a cross-station message. Increasing delay time to reject.\n\n Message: \"[html_encode(message)]\"")
+				log_admin_private("[key_name(usr)] has passed the soft filter for \"[soft_filter_result[CHAT_FILTER_INDEX_WORD]]\". They may be using a disallowed term for a cross-station message. Increasing delay time to reject.\n\n Message: \"[message]\"")
+
+			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+
+			var/destination = params["destination"]
+
+			usr.log_message("is about to send the following message to [destination]: [message]", LOG_GAME)
+
+
+			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)
+
+		if ("toggleAuthentication")
+			// Log out if we're logged in
+			if (authorize_name)
+				authenticated = FALSE
+				authorize_access = null
+				authorize_name = null
+				playsound(src, 'sound/machines/terminal_off.ogg', 50, FALSE)
+				return
+
+			if (obj_flags & EMAGGED)
+				authenticated = TRUE
+				authorize_access = SSid_access.get_region_access_list(list(REGION_ALL_STATION))
+				authorize_name = "Unknown"
+				to_chat(usr, span_warning("[src] lets out a quiet alarm as its login is overridden."))
+				playsound(src, 'sound/machines/terminal_alert.ogg', 25, FALSE)
+			else if(isliving(usr))
+				var/mob/living/L = usr
+				var/obj/item/card/id/id_card = L.get_idcard(hand_first = TRUE)
+				if (check_access(id_card))
+					authenticated = TRUE
+					authorize_access = id_card.access.Copy()
+					authorize_name = "[id_card.registered_name] - [id_card.assignment]"
+
+			state = STATE_MAIN
+			playsound(src, 'sound/machines/terminal_on.ogg', 50, FALSE)
+
+/obj/machinery/computer/comntr/proc/send_cross_comms_message(mob/user, destination, message)
+	send_cross_comms_message_timer = null
+
+	var/list/payload = list()
+
+	payload["sender_ckey"] = usr.ckey
+	var/network_name = CONFIG_GET(string/cross_comms_network)
+	if(network_name)
+		payload["network"] = network_name
+
+	var/name_to_send = "[CONFIG_GET(string/cross_comms_name)]([station_name()])" //NOVA EDIT ADDITION
+
+	send2otherserver(html_decode(name_to_send), message, "Comms_Console", destination == "all" ? null : list(destination), additional_data = payload) //NOVA EDIT END
+	minor_announce(message, title = "Outgoing message to allied station")
+	usr.log_talk(message, LOG_SAY, tag = "message to the other server")
+	message_admins("[ADMIN_LOOKUPFLW(usr)] has sent a message to the other server\[s].")
+	deadchat_broadcast(" has sent an outgoing message to the other station(s).</span>", "<span class='bold'>[usr.real_name]", usr, message_type = DEADCHAT_ANNOUNCEMENT)
+
+/obj/machinery/computer/comntr/ui_data(mob/user)
+	var/list/data = list(
+		"authenticated" = FALSE,
+	)
+
+	var/ui_state = issilicon(user) ? cyborg_state : state
+
+	var/has_connection = has_communication()
+	data["hasConnection"] = has_connection
+	if (authenticated)
+		data["authenticated"] = TRUE
+		data["page"] = ui_state
+
+	switch (ui_state)
+		if (STATE_MAIN)
+			data["canMessageAssociates"] = TRUE
+			data["importantActionReady"] = COOLDOWN_FINISHED(src, important_action_cooldown)
+			data["alertLevel"] = SSsecurity_level.get_current_level_as_text()
+			data["authorizeName"] = authorize_name
+			data["canLogOut"] = !issilicon(user)
+
+			if (can_send_messages_to_other_sectors(user))
+				data["canSendToSectors"] = TRUE
+
+				var/list/sectors = list()
+				var/our_id = CONFIG_GET(string/cross_comms_name)
+
+				for (var/server in CONFIG_GET(keyed_list/cross_server))
+					if (server == our_id)
+						continue
+					sectors += server
+
+				data["sectors"] = sectors
+
+		if (STATE_MESSAGES)
+			data["messages"] = list()
+
+			if (messages)
+				for (var/_message in messages)
+					var/datum/comm_message/message = _message
+					data["messages"] += list(list(
+						"answered" = message.answered,
+						"content" = message.content,
+						"title" = message.title,
+						"possibleAnswers" = message.possible_answers,
+					))
+	return data
+
+/obj/machinery/computer/comntr/ui_interact(mob/user, datum/tgui/ui)
+	. = ..()
+	ui = SStgui.try_update_ui(user, src, ui)
+	if (!ui)
+		ui = new(user, src, "comNTR")
+		ui.open()
+
+/obj/machinery/computer/comntr/ui_static_data(mob/user)
+	return list(
+		"maxStatusLineLength" = MAX_STATUS_LINE_LENGTH,
+		"maxMessageLength" = MAX_MESSAGE_LEN,
+	)
+
+/obj/machinery/computer/comntr/Topic(href, href_list)
+	if (href_list["reject_cross_comms_message"])
+		if (!usr.client?.holder)
+			usr.log_message("tried to reject a cross-comms message without being an admin.", LOG_ADMIN)
+			message_admins("[key_name(usr)] tried to reject a cross-comms message without being an admin.")
+			return
+
+		if (isnull(send_cross_comms_message_timer))
+			to_chat(usr, span_warning("It's too late!"))
+			return
+
+		deltimer(send_cross_comms_message_timer)
+		send_cross_comms_message_timer = null
+
+		log_admin("[key_name(usr)] has cancelled the outgoing cross-comms message.")
+		message_admins("[key_name(usr)] has cancelled the outgoing cross-comms message.")
+
+		return TRUE
+
+	return ..()
+
+/// Returns whether or not the comntr console can communicate with the station
+/obj/machinery/computer/comntr/proc/has_communication()
+	var/turf/current_turf = get_turf(src)
+	var/z_level = current_turf.z
+	return is_station_level(z_level) || is_centcom_level(z_level)
+
+/obj/machinery/computer/comntr/proc/set_state(mob/user, new_state)
+	if (issilicon(user))
+		cyborg_state = new_state
+	else
+		state = new_state
+
+
+/obj/machinery/computer/comntr/proc/can_send_messages_to_other_sectors(mob/user)
+	if (!authenticated_as_non_silicon_captain(user))
+		return
+
+	return length(CONFIG_GET(keyed_list/cross_server)) > 0
+
+/obj/machinery/computer/comntr/proc/get_communication_players()
+	return GLOB.player_list
+
+/obj/machinery/computer/comntr/proc/post_status(command, data1, data2)
+
+	var/datum/radio_frequency/frequency = SSradio.return_frequency(FREQ_STATUS_DISPLAYS)
+
+	if(!frequency)
+		return
+
+	var/datum/signal/status_signal = new(list("command" = command))
+	switch(command)
+		if("message")
+			status_signal.data["top_text"] = data1
+			status_signal.data["bottom_text"] = data2
+			log_game("[key_name(usr)] has changed the station status display message to \"[data1] [data2]\" [loc_name(usr)]")
+
+		if("alert")
+			status_signal.data["picture_state"] = data1
+			log_game("[key_name(usr)] has changed the station status display message to \"[data1]\" [loc_name(usr)]")
+
+
+	frequency.post_signal(src, status_signal)
+
+/// Override the cooldown for special actions
+/// Used in places such as CentCom messaging back so that the crew can answer right away
+/obj/machinery/computer/comntr/proc/override_cooldown()
+	COOLDOWN_RESET(src, important_action_cooldown)
+
+/obj/machinery/computer/comntr/proc/add_message(datum/comm_message/new_message)
+	LAZYADD(messages, new_message)
+
+#undef IMPORTANT_ACTION_COOLDOWN
+#undef STATE_MAIN
+#undef STATE_MESSAGES
+
+//NOVA EDIT ADDITION
+#undef EMERGENCY_RESPONSE_POLICE
+//NOVA EDIT END
