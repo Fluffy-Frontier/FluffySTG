@@ -87,7 +87,7 @@
 			var/datum/deathmatch_lobby/chosen_lobby = lobbies[params["id"]]
 			if (!isnull(playing_lobby) && playing_lobby != chosen_lobby)
 				playing_lobby.leave(usr.ckey)
-			
+
 			if(isnull(playing_lobby))
 				log_game("[usr.ckey] joined deathmatch lobby [params["id"]] as a player.")
 				chosen_lobby.join(usr)

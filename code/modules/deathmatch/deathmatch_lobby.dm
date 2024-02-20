@@ -65,7 +65,7 @@
 /datum/deathmatch_lobby/proc/find_spawns_and_start_delay(datum/lazy_template/source, list/atoms)
 	SIGNAL_HANDLER
 	for(var/thing in atoms)
-		if(istype(thing, /obj/effect/landmark/deathmatch_player_spawn)) 
+		if(istype(thing, /obj/effect/landmark/deathmatch_player_spawn))
 			player_spawns += thing
 
 	UnregisterSignal(source, COMSIG_LAZY_TEMPLATE_LOADED)
@@ -145,10 +145,10 @@
 	if(players.len)
 		var/list/winner_info = players[pick(players)]
 		if(!isnull(winner_info["mob"]))
-			winner = winner_info["mob"] //only one should remain anyway but incase of a draw 
-	
+			winner = winner_info["mob"] //only one should remain anyway but incase of a draw
+
 	announce(span_reallybig("THE GAME HAS ENDED.<BR>THE WINNER IS: [winner ? winner.real_name : "no one"]."))
-	
+
 	for(var/ckey in players)
 		var/mob/loser = players[ckey]["mob"]
 		UnregisterSignal(loser, list(COMSIG_MOB_GHOSTIZED, COMSIG_QDELETING))
@@ -172,7 +172,7 @@
 			if(player_info["mob"] && player_info["mob"] == player)
 				ckey = potential_ckey
 				break
-	
+
 	if(!islist(players[ckey])) // if we STILL didnt find a good ckey
 		return
 
@@ -181,7 +181,7 @@
 	var/mob/dead/observer/ghost = !player.client ? player.get_ghost() : player.ghostize() //this doesnt work on those who used the ghost verb
 	if(!isnull(ghost))
 		add_observer(ghost, (host == ckey))
-	
+
 	announce(span_reallybig("[player.real_name] HAS DIED.<br>[players.len] REMAIN."))
 
 	if(!gibbed && !QDELING(player)) // for some reason dusting or deleting in chasm storage messes up tgui bad
@@ -237,7 +237,7 @@
 					players[key]["host"] = TRUE
 					break
 			GLOB.deathmatch_game.passoff_lobby(ckey, host)
-	
+
 	remove_ckey_from_play(ckey)
 
 /datum/deathmatch_lobby/proc/join(mob/player)
