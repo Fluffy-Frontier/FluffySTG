@@ -1,8 +1,3 @@
-/mob/living/carbon/human/is_shove_knockdown_blocked()
-	if(HAS_TRAIT(src, TRAIT_KNOCKDOWN_IMMUNE))
-		return TRUE
-	..()
-
 /mob/living/carbon/human/set_mob_height(new_height)
 	if(dna.species.body_size_restricted)
 		return FALSE

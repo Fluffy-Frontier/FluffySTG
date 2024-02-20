@@ -2,9 +2,9 @@
  * 	СЛАБОЕ ТЕЛО
  *
  * 	Этот компонент нанесет на установленного пользователя массу дебафов, что так, или иначе скажутся
- * 	На его работоспособности. 
- * 	
- * 	ВАЖНО! Этот компонент работает в тандеме с трейтом, что позволяет избежать некоторых ситуаций, 
+ * 	На его работоспособности.
+ *
+ * 	ВАЖНО! Этот компонент работает в тандеме с трейтом, что позволяет избежать некоторых ситуаций,
  *  где этот компонент остался после смены расы.
  *
  * 	Переменные:
@@ -24,7 +24,7 @@
 	if(!parent)
 		return
 
-	UnregisterSignal(parent, list(COMSIG_MOB_ITEM_AFTERATTACK, COMSIG_MOB_ITEM_AFTERATTACK_SECONDARY, COMSIG_MOB_FIRED_GUN, COMSIG_HUMAN_DISARM_HIT, COMSIG_LIVING_PICKED_UP_ITEM))
+	UnregisterSignal(parent, list(COMSIG_MOB_ITEM_AFTERATTACK, COMSIG_MOB_ITEM_AFTERATTACK_SECONDARY, COMSIG_MOB_FIRED_GUN, COMSIG_LIVING_DISARM_HIT, COMSIG_LIVING_PICKED_UP_ITEM))
 	UnregisterSignal(parent, list(COMSIG_MOVABLE_SET_GRAB_STATE, COMSIG_LIVING_START_PULL))
 
 /datum/component/weak_body/RegisterWithParent()
@@ -33,7 +33,7 @@
 
 	RegisterSignals(parent, list(COMSIG_MOB_ITEM_AFTERATTACK, COMSIG_MOB_ITEM_AFTERATTACK_SECONDARY), PROC_REF(after_attack_act), override = TRUE)
 	RegisterSignal(parent, COMSIG_MOB_FIRED_GUN, PROC_REF(fired_gun_act), override = TRUE)
-	RegisterSignal(parent, COMSIG_HUMAN_DISARM_HIT, PROC_REF(after_disarm), override = TRUE)
+	RegisterSignal(parent, COMSIG_LIVING_DISARM_HIT, PROC_REF(after_disarm), override = TRUE)
 	RegisterSignal(parent, COMSIG_LIVING_PICKED_UP_ITEM ,PROC_REF(pickup_item_act), override = TRUE)
 	RegisterSignal(parent, COMSIG_MOVABLE_SET_GRAB_STATE, PROC_REF(upgrade_grab), override = TRUE)
 	RegisterSignal(parent, COMSIG_LIVING_START_PULL, PROC_REF(pull_act), override = TRUE)
@@ -74,7 +74,7 @@
 	SIGNAL_HANDLER
 	if(!HAS_TRAIT(parent, TRAIT_WEAK_BODY))
 		return
-	
+
 	var/mob/living/carbon/human/victim = parent
 	if(check_antagonists())
 		return
@@ -140,7 +140,7 @@
 	SIGNAL_HANDLER
 	if(!HAS_TRAIT(parent, TRAIT_WEAK_BODY))
 		return
-		
+
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/teshari_pull)
 	user.update_movespeed()
 
@@ -155,7 +155,7 @@
 	SIGNAL_HANDLER
 	if(!HAS_TRAIT(parent, TRAIT_WEAK_BODY))
 		return
-		
+
 	var/addictional_spread = bonus_spread_values
 
 	if(weapon.weapon_weight >= WEAPON_MEDIUM)
@@ -194,7 +194,7 @@
 	SIGNAL_HANDLER
 	if(!HAS_TRAIT(parent, TRAIT_WEAK_BODY))
 		return
-		
+
 	if(!ismob(target))
 		return
 	var/mob/living/carbon/human/victim = parent
