@@ -93,7 +93,8 @@
 /obj/structure/closet/secure_closet/cytology{
 	anchored = 1;
 	pixel_x = 9;
-	locked = 0
+	locked = 0;
+	req_access = list("syndicate")
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -1801,10 +1802,6 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/medbay)
-"lh" = (
-/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/syndicate_lava_base/main)
 "lq" = (
 /obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 4
@@ -1864,6 +1861,7 @@
 	pixel_y = 42
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/apc/syndicate_access,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
 "lH" = (
@@ -2356,7 +2354,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
-/obj/structure/cable,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/main)
 "oT" = (
@@ -5331,10 +5328,6 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
-"Jh" = (
-/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
-/turf/open/floor/plating/reinforced,
-/area/ruin/syndicate_lava_base/main)
 "Jm" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 1
@@ -9326,7 +9319,7 @@ Ii
 Ii
 Wf
 df
-lh
+Wf
 pq
 pq
 pq
@@ -9850,7 +9843,7 @@ bz
 Xg
 ZB
 BX
-Jh
+Ii
 WG
 TT
 wa
@@ -9916,7 +9909,7 @@ Ii
 Ii
 Wf
 df
-lh
+Wf
 pq
 pq
 pq

@@ -951,10 +951,6 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/bar)
-"eZ" = (
-/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/syndicate_lava_base/main)
 "fd" = (
 /obj/effect/turf_decal/stripes/red/line,
 /obj/effect/turf_decal/tile/dark/full,
@@ -2943,7 +2939,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
-/obj/structure/cable,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/main)
 "sF" = (
@@ -3123,10 +3118,6 @@
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/tile/dark/full,
 /turf/open/floor/iron/dark/textured_large,
-/area/ruin/syndicate_lava_base/main)
-"tv" = (
-/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
-/turf/open/floor/plating/reinforced,
 /area/ruin/syndicate_lava_base/main)
 "tw" = (
 /obj/structure/table/reinforced/plastitaniumglass,
@@ -4655,6 +4646,7 @@
 	pixel_y = 42
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/apc/syndicate_access,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
 "DT" = (
@@ -5281,7 +5273,8 @@
 /obj/structure/closet/secure_closet/cytology{
 	anchored = 1;
 	pixel_x = 9;
-	locked = 0
+	locked = 0;
+	req_access = list("syndicate")
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -9246,7 +9239,7 @@ Pr
 Pr
 VP
 lc
-eZ
+VP
 ZU
 ZU
 ZU
@@ -9770,7 +9763,7 @@ qe
 aA
 JA
 Oz
-tv
+Pr
 yy
 dm
 rg
@@ -9836,7 +9829,7 @@ Pr
 Pr
 VP
 lc
-eZ
+VP
 ZU
 ZU
 ZU
