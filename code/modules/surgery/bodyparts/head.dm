@@ -70,11 +70,6 @@
 	///Current lipstick trait, if any (such as TRAIT_KISS_OF_DEATH)
 	var/stored_lipstick_trait
 
-	/// Draw this head as "debrained"
-	VAR_PROTECTED/show_debrained = FALSE
-	/// Draw this head as missing eyes
-	VAR_PROTECTED/show_eyeless = FALSE
-
 	/// Offset to apply to equipment worn on the ears
 	var/datum/worn_feature_offset/worn_ears_offset
 	/// Offset to apply to equipment worn on the eyes
@@ -85,6 +80,16 @@
 	var/datum/worn_feature_offset/worn_head_offset
 	/// Offset to apply to overlays placed on the face
 	var/datum/worn_feature_offset/worn_face_offset
+
+	VAR_PROTECTED
+		/// Draw this head as "debrained"
+		show_debrained = FALSE
+
+		/// Draw this head as missing eyes
+		show_eyeless = FALSE
+
+		/// Can this head be dismembered normally?
+		can_dismember = TRUE //FLUFFY FRONTIER EDIT. ORIGINAL //can_dismember = FALSE
 
 /obj/item/bodypart/head/Destroy()
 	QDEL_NULL(worn_ears_offset)
@@ -124,8 +129,12 @@
 			. += span_info("[real_name]'s tongue has been removed.")
 
 /obj/item/bodypart/head/can_dismember(obj/item/item)
+	if (!can_dismember)
+		return FALSE
+
 	if(owner.stat < HARD_CRIT)
 		return FALSE
+
 	return ..()
 
 /obj/item/bodypart/head/drop_organs(mob/user, violent_removal)
