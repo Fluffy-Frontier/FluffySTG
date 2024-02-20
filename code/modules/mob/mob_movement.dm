@@ -47,8 +47,8 @@
 /client/Move(new_loc, direct)
 	if(world.time < move_delay) //do not move anything ahead of this check please
 		return FALSE
-	next_move_dir_add = 0
-	next_move_dir_sub = 0
+	next_move_dir_add = NONE
+	next_move_dir_sub = NONE
 	var/old_move_delay = move_delay
 	move_delay = world.time + world.tick_lag //this is here because Move() can now be called mutiple times per tick
 	if(!direct || !new_loc)
@@ -76,7 +76,8 @@
 		return mob.remote_control.relaymove(mob, direct)
 
 	if(isAI(mob))
-		return AIMove(new_loc,direct,mob)
+		var/mob/living/silicon/ai/smoovin_ai = mob
+		return smoovin_ai.AIMove(direct)
 
 	if(Process_Grab()) //are we restrained by someone's grip?
 		return
@@ -347,6 +348,8 @@
  */
 /mob/proc/slip(knockdown_amount, obj/slipped_on, lube_flags, paralyze, force_drop = FALSE)
 	add_mob_memory(/datum/memory/was_slipped, antagonist = slipped_on)
+
+	SEND_SIGNAL(src, COMSIG_MOB_SLIPPED, knockdown_amount, slipped_on, lube_flags, paralyze, force_drop)
 
 //bodypart selection verbs - Cyberboss
 //8: repeated presses toggles through head - eyes - mouth

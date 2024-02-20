@@ -7215,10 +7215,7 @@
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/contraband/the_griffin/directional/north,
-/mob/living/simple_animal/bot/mulebot{
-	home_destination = "QM #1";
-	suffix = "#1"
-	},
+/mob/living/simple_animal/bot/mulebot,
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
 /turf/open/floor/iron/dark,
 /area/station/cargo/storage)
@@ -7647,7 +7644,7 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/machinery/airalarm/directional/east,
 /obj/effect/landmark/start/assistant,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/landmark/start/hangover,
 /obj/machinery/button/door/directional/north{
 	id = "Cabin_2";
@@ -18539,10 +18536,7 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/light/small/directional/north,
-/mob/living/simple_animal/bot/mulebot{
-	home_destination = "QM #2";
-	suffix = "#2"
-	},
+/mob/living/simple_animal/bot/mulebot,
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
 /turf/open/floor/iron/dark,
 /area/station/cargo/storage)
@@ -21960,7 +21954,7 @@
 	},
 /obj/machinery/airalarm/directional/west,
 /obj/effect/landmark/start/assistant,
-/obj/item/bedsheet/dorms{
+/obj/effect/spawner/random/bedsheet{
 	dir = 4
 	},
 /obj/effect/landmark/start/hangover,
@@ -55143,7 +55137,7 @@
 	dir = 4
 	},
 /obj/effect/landmark/start/assistant,
-/obj/item/bedsheet/dorms{
+/obj/effect/spawner/random/bedsheet{
 	dir = 4
 	},
 /obj/effect/landmark/start/hangover,
@@ -61124,7 +61118,7 @@
 /obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/rack/gunrack,
-/obj/effect/spawner/armory_spawn/microfusion,
+/obj/effect/spawner/armory_spawn/mod_lasers_small,
 /turf/open/floor/iron/showroomfloor,
 /area/station/ai_monitored/security/armory)
 "tGb" = (
@@ -72276,7 +72270,7 @@
 "xds" = (
 /obj/structure/bed,
 /obj/effect/landmark/start/assistant,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/landmark/start/hangover,
 /obj/item/pillow/random,
 /turf/open/floor/wood,
