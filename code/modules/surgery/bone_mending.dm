@@ -140,15 +140,18 @@
 		var/obj/item/stack/used_stack = tool
 		used_stack.use(1)
 
+#define IMPLEMENTS_THAT_FIX_BONES list( \
+	/obj/item/stack/medical/bone_gel = 100, \
+	/obj/item/stack/sticky_tape/surgical = 100, \
+	/obj/item/stack/sticky_tape/super = 50, \
+	/obj/item/stack/sticky_tape = 30, \
+)
+
 
 ///// Repair Compound Fracture (Crticial)
 /datum/surgery_step/repair_bone_compound
 	name = "repair compound fracture (bone gel/tape)"
-	implements = list(
-		/obj/item/stack/medical/bone_gel = 100,
-		/obj/item/stack/sticky_tape/surgical = 100,
-		/obj/item/stack/sticky_tape/super = 50,
-		/obj/item/stack/sticky_tape = 30)
+	implements = IMPLEMENTS_THAT_FIX_BONES
 	time = 40
 
 /datum/surgery_step/repair_bone_compound/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -187,8 +190,6 @@
 	if(isstack(tool))
 		var/obj/item/stack/used_stack = tool
 		used_stack.use(1)
-<<<<<<< HEAD
-=======
 
 /// Surgery to repair cranial fissures
 /datum/surgery/cranial_reconstruction
@@ -265,4 +266,3 @@
 	return ..()
 
 #undef IMPLEMENTS_THAT_FIX_BONES
->>>>>>> 642fe07a5 ([MIRROR] Fixes surgeries runtiming constantly when having the surgery initator open, fixes some surgeries missing sounds (#840))
