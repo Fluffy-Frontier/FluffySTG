@@ -6,9 +6,6 @@
 	/// All loadouts
 	var/list/datum/outfit/loadouts
 
-	/// All currently present spawnpoints, to be processed by a loading map
-	var/list/spawnpoint_processing = list()
-
 /datum/deathmatch_controller/New()
 	. = ..()
 	if (GLOB.deathmatch_game)
@@ -35,13 +32,6 @@
 	lobbies[new_host] = lobbies[host]
 	lobbies[host] = null
 	lobbies.Remove(host)
-
-/datum/deathmatch_controller/proc/load_lazyarena(map_key)
-	if(!isnull(map_key) && !isnull(maps[map_key]))
-		var/datum/lazy_template/deathmatch/temp = maps[map_key]
-		return temp.lazy_load() //returns rezervation
-
-	return FALSE
 
 /datum/deathmatch_controller/ui_state(mob/user)
 	return GLOB.observer_state
@@ -97,7 +87,7 @@
 			var/datum/deathmatch_lobby/chosen_lobby = lobbies[params["id"]]
 			if (!isnull(playing_lobby) && playing_lobby != chosen_lobby)
 				playing_lobby.leave(usr.ckey)
-			
+
 			if(isnull(playing_lobby))
 				log_game("[usr.ckey] joined deathmatch lobby [params["id"]] as a player.")
 				chosen_lobby.join(usr)

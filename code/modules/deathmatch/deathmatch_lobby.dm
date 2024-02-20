@@ -17,6 +17,8 @@
 	var/ready_count
 	/// List of loadouts, either gotten from the deathmatch controller or the map
 	var/list/loadouts
+	/// Current map player spawn locations, cleared after spawning
+	var/list/player_spawns = list()
 
 /datum/deathmatch_lobby/New(mob/player)
 	. = ..()
@@ -52,20 +54,25 @@
 		return
 	playing = TRUE
 
+	RegisterSignal(map, COMSIG_LAZY_TEMPLATE_LOADED, PROC_REF(find_spawns_and_start_delay))
 	location = map.lazy_load()
 	if (!location)
 		to_chat(get_mob_by_ckey(host), span_warning("Couldn't reserve/load a map location (all locations used?), try again later, or contact a coder."))
 		playing = FALSE
+		UnregisterSignal(map, COMSIG_LAZY_TEMPLATE_LOADED)
 		return FALSE
 
-	if (!length(GLOB.deathmatch_game.spawnpoint_processing))
-		clear_reservation()
-		playing = FALSE
-		return FALSE
+/datum/deathmatch_lobby/proc/find_spawns_and_start_delay(datum/lazy_template/source, list/atoms)
+	SIGNAL_HANDLER
+	for(var/thing in atoms)
+		if(istype(thing, /obj/effect/landmark/deathmatch_player_spawn))
+			player_spawns += thing
 
-	var/list/spawns = GLOB.deathmatch_game.spawnpoint_processing.Copy()
-	GLOB.deathmatch_game.spawnpoint_processing.Cut()
-	if (!length(spawns) || length(spawns) < length(players))
+	UnregisterSignal(source, COMSIG_LAZY_TEMPLATE_LOADED)
+	addtimer(CALLBACK(src, PROC_REF(start_game_after_delay)), 8 SECONDS)
+
+/datum/deathmatch_lobby/proc/start_game_after_delay()
+	if (!length(player_spawns) || length(player_spawns) < length(players))
 		stack_trace("Failed to get spawns when loading deathmatch map [map.name] for lobby [host].")
 		clear_reservation()
 		playing = FALSE
@@ -79,13 +86,12 @@
 			continue
 
 		// pick spawn and remove it.
-		var/picked_spawn = pick_n_take(spawns)
+		var/picked_spawn = pick_n_take(player_spawns)
 		spawn_observer_as_player(key, get_turf(picked_spawn))
 		qdel(picked_spawn)
 
 	// Remove rest of spawns.
-	for (var/unused_spawn in spawns)
-		qdel(unused_spawn)
+	QDEL_LIST(player_spawns)
 
 	for (var/observer_key in observers)
 		var/mob/observer = observers[observer_key]["mob"]
@@ -139,10 +145,10 @@
 	if(players.len)
 		var/list/winner_info = players[pick(players)]
 		if(!isnull(winner_info["mob"]))
-			winner = winner_info["mob"] //only one should remain anyway but incase of a draw 
-	
+			winner = winner_info["mob"] //only one should remain anyway but incase of a draw
+
 	announce(span_reallybig("THE GAME HAS ENDED.<BR>THE WINNER IS: [winner ? winner.real_name : "no one"]."))
-	
+
 	for(var/ckey in players)
 		var/mob/loser = players[ckey]["mob"]
 		UnregisterSignal(loser, list(COMSIG_MOB_GHOSTIZED, COMSIG_QDELETING))
@@ -166,7 +172,7 @@
 			if(player_info["mob"] && player_info["mob"] == player)
 				ckey = potential_ckey
 				break
-	
+
 	if(!islist(players[ckey])) // if we STILL didnt find a good ckey
 		return
 
@@ -175,7 +181,7 @@
 	var/mob/dead/observer/ghost = !player.client ? player.get_ghost() : player.ghostize() //this doesnt work on those who used the ghost verb
 	if(!isnull(ghost))
 		add_observer(ghost, (host == ckey))
-	
+
 	announce(span_reallybig("[player.real_name] HAS DIED.<br>[players.len] REMAIN."))
 
 	if(!gibbed && !QDELING(player)) // for some reason dusting or deleting in chasm storage messes up tgui bad
@@ -231,7 +237,7 @@
 					players[key]["host"] = TRUE
 					break
 			GLOB.deathmatch_game.passoff_lobby(ckey, host)
-	
+
 	remove_ckey_from_play(ckey)
 
 /datum/deathmatch_lobby/proc/join(mob/player)
@@ -305,6 +311,7 @@
 	.["host"] = (user.ckey == host)
 	.["admin"] = check_rights_for(user.client, R_ADMIN)
 	.["global_chat"] = global_chat
+	.["playing"] = playing
 	.["loadouts"] = list()
 	for (var/datum/outfit/deathmatch_loadout/loadout as anything in loadouts)
 		.["loadouts"] += initial(loadout.display_name)
