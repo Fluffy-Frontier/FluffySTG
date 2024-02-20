@@ -1,8 +1,0 @@
-author: "Paxilmaniac"
-delete-after: True
-changes:
-  - rscadd: "Two new crates can be found in the security armory tab, with renoster shotguns and kiboko launchers."
-  - balance: "The contents of the CIN surplus box have been changed around to contain some of the new CIN weapons, among other things. The weighting list has been changed as well."
-  - code_imp: "Some unused or otherwise pointless code additions from really old gunsec have been either tweaked or removed."
-  - refactor: "The CIN surplus crate has had its code refactored a bit."
-  - code_imp: "We no longer have to non-modularly comment out the russian surplus crate, instead using a single variable to hide it."

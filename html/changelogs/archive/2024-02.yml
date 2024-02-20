@@ -676,12 +676,20 @@
   A.C.M.O.:
   - qol: Enabled firedoors to automatically close when forced open.
   - qol: Shortened manual override of firedoors from 10 seconds to 5 seconds.
+  AstraFarera:
+  - bugfix: Interdyne map fixes, ql changes + Blackbox Recorder.
   Cursor:
   - rscadd: Security Officers are now Haram.
   Ghommie:
   - rscadd: Players holding cardboard cutouts will now assume their appearance, just
       like for potted plants.
   - qol: Circuit multitools can now mark (visible) items worn/held by a mob.
+  - rscadd: Added three new 'special' bedsheets. One of them is quite rare and made
+      from gondola hide.
+  - rscadd: Curators now get a 22.5% cut on credits spent on painting patronages (divided
+      by the number of curators). The service department also gets another, 12.5%
+      cut.
+  - qol: Added a zoom in and out buttons to the painting UI.
   GoldenAlpharex:
   - bugfix: Humanoid ghost roles now receive their job title on their mob, when that
       was previously not the case.
@@ -691,6 +699,11 @@
       another kin to come back out later.
   - qol: Icewalkers can now send their sleeping kins down the hole too, if they've
       been sleeping for long enough (30 minutes).
+  JohnFulpWillard:
+  - bugfix: The DNA scanner's joker button no longer instantly activates itself when
+      the cooldown between uses is done.
+  - bugfix: Regenerative cores (and other monster organs) now work when using it in-hand
+      while resting.
   Kashargul:
   - qol: hides the delete button on the main tab allows to reorder all other chat
       tabs
@@ -701,8 +714,11 @@
   LT3:
   - rscadd: The tram has been equipped with enhanced safety glass to reduce the severity
       of crew injuries
+  - qol: Air alarms now display the source of triggered fire alarms/firedoors
   LemonInTheDark:
   - bugfix: Maps loaded in after roundstart will no longer have broken smoothing
+  LemonInTheDark, Kryson:
+  - image: Modified railing sprites to be a bit more three-d
   Melbert:
   - admin: You can now set someone's TC to 0
   - admin: Removing Traitor from automatically removes the uplink from them
@@ -725,6 +741,16 @@
       rather than taking heart damage.
   - bugfix: The radial blur overlay for twitch now once again works properly, meaning
       you won't be basically entirely blinded by it anymore.
+  - rscadd: Two new crates can be found in the security armory tab, with renoster
+      shotguns and kiboko launchers.
+  - balance: The contents of the CIN surplus box have been changed around to contain
+      some of the new CIN weapons, among other things. The weighting list has been
+      changed as well.
+  - code_imp: Some unused or otherwise pointless code additions from really old gunsec
+      have been either tweaked or removed.
+  - refactor: The CIN surplus crate has had its code refactored a bit.
+  - code_imp: We no longer have to non-modularly comment out the russian surplus crate,
+      instead using a single variable to hide it.
   Rhials:
   - bugfix: Removes the double-newscaster from the arrivals sec post.
   SyncIt21:
@@ -732,6 +758,13 @@
       drilled.
   - bugfix: mecha drill will stop drilling if the mech moves even without changing
       direction. Also will use power & check other conditions every drill cycle.
+  - bugfix: boulders are no longer lost when teleported by the BRM
+  - bugfix: batch processing cooldown works when teleporting multiple boulders
+  - bugfix: multiple reactions occuring in the same holder like mixing drinks will
+      yield correct reagent result volumes
+  - code_imp: ' Removes `update_total()` from instant reactions improving performance
+      slightly'
+  - code_imp: merges `remove_all_direct()` with `remove_all()` to reduce code size
   kawaiinick:
   - rscadd: Your mouth now fits combat or survival knives(it's totally safe)
   mc-oofert:
@@ -740,6 +773,7 @@
   - rscadd: deathmatch minigame
   - bugfix: you may not put disposal outlets on cargo shuttle
   - qol: you may altclick action buttons to bind them to a key
+  - code_imp: deathmatch lobbies take 8 seconds to start as to give lighting a breather
   rageguy505:
   - bugfix: The door above tool storage on birdshot now has maintenance access on
       it and officials can now enter the CC dock room.
