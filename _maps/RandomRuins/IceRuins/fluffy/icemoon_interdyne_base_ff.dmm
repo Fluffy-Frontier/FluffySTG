@@ -80,6 +80,9 @@
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 1
 	},
+/obj/effect/turf_decal/stripes/red/corner{
+	dir = 1
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
 "as" = (
@@ -521,6 +524,7 @@
 /obj/structure/sign/poster/contraband/communist_state/directional/west,
 /obj/item/gun/ballistic/rifle/sniper_rifle,
 /obj/effect/turf_decal/tile/dark/full,
+/obj/item/gun/ballistic/rifle/sniper_rifle,
 /obj/item/modular_computer/laptop/preset/syndicate,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/main)
@@ -948,13 +952,19 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/bar)
 "eZ" = (
-/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/syndicate_lava_base/main)
+/obj/structure/marker_beacon/burgundy,
+/obj/structure/chair{
+	dir = 8
+	},
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "fd" = (
 /obj/effect/turf_decal/stripes/red/line,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/rack/shelf,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south{
+	pixel_y = -4
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/arrivals)
 "fe" = (
@@ -1226,6 +1236,7 @@
 /area/ruin/syndicate_lava_base/main)
 "gY" = (
 /obj/effect/turf_decal/stripes/red/line,
+/obj/structure/cable,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
 "gZ" = (
@@ -1648,6 +1659,7 @@
 	pixel_y = -4
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
+/obj/structure/reagent_dispensers/watertank/high,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/syndicate_lava_base/main)
 "kf" = (
@@ -1795,10 +1807,6 @@
 /obj/machinery/chem_dispenser/drinks/fullupgrade,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/syndicate_lava_base/bar)
-"lb" = (
-/obj/item/binoculars,
-/turf/closed/mineral/random/snow/underground,
-/area/icemoon/underground/explored)
 "lc" = (
 /obj/structure/marker_beacon/burgundy,
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
@@ -1917,6 +1925,7 @@
 	map_pad_link_id = "ds2";
 	name = "quantum pad to DS-2"
 	},
+/obj/structure/cable,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
 "mp" = (
@@ -1947,9 +1956,9 @@
 	dir = 5
 	},
 /obj/structure/marker_beacon/violet,
-/obj/structure/curtain/bounty/start_closed{
-	alpha = 180;
-	color = "#7d7d7d"
+/obj/structure/curtain/bounty{
+	color = "#7d7d7d";
+	alpha = 180
 	},
 /turf/open/floor/iron/dark/small,
 /area/ruin/syndicate_lava_base/dormitories)
@@ -2257,6 +2266,10 @@
 /obj/structure/marker_beacon/burgundy,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/testlab)
+"on" = (
+/obj/item/binoculars,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "op" = (
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -2264,7 +2277,8 @@
 	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
 /obj/machinery/door/airlock{
-	name = "Unisex Showers"
+	name = "Unisex Showers";
+	id_tag = "IDyneWC"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -2336,7 +2350,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/west{
 	pixel_x = -4
 	},
-/obj/machinery/portable_atmospherics/canister/air,
+/obj/machinery/portable_atmospherics/canister/plasma,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/syndicate_lava_base/main)
 "oG" = (
@@ -2374,10 +2388,9 @@
 /area/ruin/syndicate_lava_base/medbay)
 "oP" = (
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/module_duplicator{
-	name = "Interdyne module duplicator";
-	color = "#adadcd";
-	light_color = "#adadcd"
+/obj/machinery/ammo_workbench{
+	name = "Interdyne ammunitions workbench";
+	color = "#adadcd"
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/testlab)
@@ -2880,8 +2893,6 @@
 "so" = (
 /obj/structure/rack/shelf,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/item/gun/syringe/rapidsyringe,
-/obj/item/gun/syringe/rapidsyringe,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/testlab)
 "sr" = (
@@ -2939,7 +2950,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
-/obj/structure/cable,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/main)
 "sF" = (
@@ -3121,9 +3131,9 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/main)
 "tv" = (
-/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
-/turf/open/floor/plating/reinforced,
-/area/ruin/syndicate_lava_base/main)
+/obj/item/serviette_pack,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "tw" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/storage/box/monkeycubes{
@@ -3412,13 +3422,14 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/bar)
 "vH" = (
-/obj/machinery/computer/crew/syndie{
-	dir = 4;
-	pixel_x = -4;
-	name = "Interdyne crew monitoring console"
-	},
 /obj/effect/turf_decal/tile/dark/full,
-/obj/structure/marker_beacon/olive,
+/obj/machinery/vending/drugs{
+	name = "\improper SyndiDrug Plus";
+	onstation = 0;
+	extended_inventory = 1;
+	color = "#adadcd";
+	light_color = "#adadcd"
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/medbay)
 "vL" = (
@@ -3600,7 +3611,7 @@
 	},
 /obj/item/paper/fluff/ruins/interdyne/note_1{
 	name = "Forcefield Generator Maintenance";
-	default_raw_text = "To activate a deployable laboratory forcefield, open maintenance hatches of Generator itself, Relay, Well and Charger nodes with a screwdriver and upgrade them with provided parts by using rapid parts exchange device. Then close all hatches and activate every module of generator, by starting with closer to generator nodes in chain-like way. When preparations are done, set generator radius at maximum and press power button. If shield will recieve overwhelm damage, it requires some time to recharge and have to be turned back on manually."
+	default_raw_text = "To activate Frozen Moonlight's forcefield, open maintenance hatches of the generator itself, Relay, Well and Charger nodes with a screwdriver and upgrade them with provided parts by using a rapid parts exchange device. Then, close all hatches and, by using a multitool, activate every module of the generator in a chain-like way. When preparations are done, set the generator's radius at maximum and press the power button. If the forcefield sustains overwhelming damage, it will require some time to recharge and has to be turned back on manually. Wavefield Science wishes you a safe and productive day."
 	},
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 8
@@ -3612,8 +3623,12 @@
 /obj/structure/marker_beacon/burgundy,
 /obj/structure/sign/flag/syndicate/directional/north,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/ammo_workbench,
-/obj/item/disk/ammo_workbench/advanced,
+/obj/machinery/blackbox_recorder{
+	name = "Interdyne Blackbox Recorder";
+	desc = "Machine that contains lots of confidential Syndicate and Wavefield Science data.";
+	color = "#adadcd";
+	light_color = "#adadcd"
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/main)
 "wG" = (
@@ -3991,14 +4006,8 @@
 /obj/machinery/light/directional/south{
 	light_color = "#5148A6"
 	},
-/obj/item/storage/box/nif_ghost_box/ghost_role,
-/obj/item/storage/box/nif_ghost_box/ghost_role,
-/obj/item/storage/box/nif_ghost_box/ghost_role,
-/obj/item/storage/box/nif_ghost_box/ghost_role,
-/obj/item/storage/box/nif_ghost_box/ghost_role,
-/obj/item/storage/box/nif_ghost_box/ghost_role,
-/obj/item/storage/box/nif_ghost_box/ghost_role,
-/obj/item/storage/box/nif_ghost_box/ghost_role,
+/obj/item/gun/syringe/rapidsyringe,
+/obj/item/gun/syringe/rapidsyringe,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/testlab)
 "yY" = (
@@ -4173,12 +4182,13 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/medbay)
 "Bp" = (
-/obj/structure/table/reinforced/plastitaniumglass,
-/obj/item/storage/backpack/duffelbag/synth_treatment_kit/trauma/advanced/unzipped,
-/obj/item/healthanalyzer/advanced,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/east{
 	pixel_x = 4
+	},
+/obj/structure/marker_beacon/olive,
+/obj/machinery/computer/crew/syndie{
+	dir = 8
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/medbay)
@@ -4391,7 +4401,10 @@
 /obj/structure/marker_beacon/burgundy,
 /obj/structure/sign/poster/contraband/soviet_propaganda/directional/east,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/suit_storage_unit/syndicate/chameleon,
+/obj/machinery/suit_storage_unit/syndicate/chameleon{
+	color = "#adadcd";
+	light_color = "#adadcd"
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/main)
 "CA" = (
@@ -4411,7 +4424,8 @@
 /area/ruin/syndicate_lava_base/medbay)
 "CC" = (
 /obj/machinery/vending/dorms{
-	onstation = 0
+	onstation = 0;
+	extended_inventory = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/main)
@@ -4648,6 +4662,7 @@
 	pixel_y = 42
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/apc/syndicate_access,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
 "DT" = (
@@ -4667,14 +4682,12 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/testlab)
 "DZ" = (
-/obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/item/paper/fluff/ruins/interdyne/note_1{
-	default_raw_text = "Welcome to Interdyne laboratory Developed by Wavefield Science and designed by Astra Farera E'luna Awiarera. This base was dropped like a meteorite from space and deployed at crater created by landing impact. An advanced laboratory has deployed departments, defence perimeter turrets and even external bridge. Complex also fitted with a forcefield generator, which with a tiny bit of care allows to sustain harsh environmental conditions and most of invasions. Have a nice day full of new discoveries.";
-	name = "Frozen Moonlight Interdyne";
-	color = "#7D7D7D";
-	pixel_x = 5;
-	pixel_y = 5
+/obj/item/disk/ammo_workbench/advanced,
+/obj/machinery/module_duplicator{
+	name = "Interdyne module duplicator";
+	color = "#adadcd";
+	light_color = "#adadcd"
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/testlab)
@@ -5275,7 +5288,9 @@
 	},
 /obj/structure/closet/secure_closet/cytology{
 	anchored = 1;
-	pixel_x = 9
+	pixel_x = 9;
+	locked = 0;
+	req_access = list("syndicate")
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -5491,11 +5506,12 @@
 "IM" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/storage/backpack/duffelbag/syndie/surgery,
-/obj/item/healthanalyzer/advanced,
 /obj/machinery/defibrillator_mount/loaded{
 	pixel_x = 28
 	},
 /obj/effect/turf_decal/tile/dark/full,
+/obj/item/autopsy_scanner,
+/obj/item/healthanalyzer/advanced,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/medbay)
 "IP" = (
@@ -5545,6 +5561,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/caution/stand_clear/red,
+/obj/structure/cable,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
 "JP" = (
@@ -5576,15 +5593,16 @@
 /obj/effect/turf_decal/box/red/corners{
 	dir = 8
 	},
+/obj/structure/cable,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
 "Kg" = (
-/obj/machinery/stasis{
-	dir = 8
-	},
 /obj/effect/turf_decal/tile/dark/full,
 /obj/effect/turf_decal/stripes/blue{
 	dir = 1
+	},
+/obj/machinery/stasis{
+	dir = 8
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/medbay)
@@ -5682,14 +5700,14 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/main)
 "KP" = (
-/obj/structure/table/reinforced/plastitaniumglass,
-/obj/item/paper_bin{
-	pixel_y = 4
-	},
-/obj/item/pen{
-	pixel_y = 4
-	},
 /obj/effect/turf_decal/tile/dark/full,
+/obj/machinery/vending/medical/syndicate_access{
+	onstation = 0;
+	contraband = list(/obj/item/storage/box/gum/happiness=3, /obj/item/storage/box/hug/medical=3, /obj/item/mmi/syndie/interdyne=3);
+	extended_inventory = 1;
+	color = "#adadcd";
+	light_color = "#adadcd"
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/medbay)
 "KS" = (
@@ -5914,9 +5932,9 @@
 /area/ruin/syndicate_lava_base/medbay)
 "LP" = (
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/processor{
+/obj/machinery/processor/slime{
+	name = "Interdyne slime processor";
 	color = "#adadcd";
-	name = "Interdyne food processor";
 	light_color = "#adadcd"
 	},
 /turf/open/floor/iron/dark/textured_large,
@@ -5941,12 +5959,6 @@
 	color = "#adadcd";
 	name = "Inderdyne security camera";
 	network = list("Interdyne")
-	},
-/obj/vehicle/ridden/atv/snowmobile/syndicate{
-	dir = 8;
-	name = "Interdyne Crawler";
-	color = "#adadcd";
-	light_color = "#adadcd"
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
@@ -5984,14 +5996,14 @@
 /turf/open/floor/engine,
 /area/ruin/syndicate_lava_base/testlab)
 "Mt" = (
-/obj/machinery/stasis{
-	dir = 8
-	},
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/teal,
 /obj/structure/curtain/bounty{
 	color = "#7d7d7d";
 	alpha = 180
+	},
+/obj/machinery/stasis{
+	dir = 8
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/medbay)
@@ -6092,6 +6104,8 @@
 	pixel_y = 8
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/item/storage/backpack/duffelbag/synth_treatment_kit/trauma/advanced/unzipped,
+/obj/item/healthanalyzer/advanced,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/medbay)
 "Nv" = (
@@ -6148,6 +6162,13 @@
 /obj/structure/ore_box,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
+"NM" = (
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/wood/large,
+/area/ruin/syndicate_lava_base/main)
 "NS" = (
 /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
 /obj/machinery/door/poddoor{
@@ -6304,6 +6325,7 @@
 /area/ruin/syndicate_lava_base/medbay)
 "OV" = (
 /obj/structure/table/wood/fancy/black,
+/obj/item/food/chips/shrimp,
 /turf/open/floor/wood/large,
 /area/ruin/syndicate_lava_base/bar)
 "Pc" = (
@@ -6463,6 +6485,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/main)
 "PO" = (
+/obj/structure/cable,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
 "PQ" = (
@@ -6590,14 +6613,14 @@
 /obj/effect/turf_decal/stripes/red/corner{
 	dir = 1
 	},
-/obj/machinery/stasis{
-	dir = 8
-	},
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/teal,
 /obj/structure/curtain/bounty{
 	color = "#7d7d7d";
 	alpha = 180
+	},
+/obj/machinery/stasis{
+	dir = 8
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/medbay)
@@ -6639,6 +6662,7 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/item/gun/energy/plasmacutter,
 /obj/item/gun/energy/plasmacutter,
+/obj/item/binoculars,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/cargo)
 "Sd" = (
@@ -7109,7 +7133,8 @@
 /area/ruin/syndicate_lava_base/main)
 "Vr" = (
 /obj/machinery/vending/wardrobe/syndie_wardrobe{
-	onstation = 0
+	onstation = 0;
+	extended_inventory = 1
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/effect/turf_decal/tile/dark/full,
@@ -7251,11 +7276,11 @@
 	name = "Interdyne Storm Shutters RnD"
 	},
 /obj/machinery/fax{
-	fax_name = "Interdyne Pharmaceuticals";
-	pixel_y = 7;
+	fax_name = "Interdyne Fax";
 	name = "Interdyne Fax Machine";
-	color = "#adadcd";
-	light_color = "#adadcd"
+	pixel_y = 7;
+	syndicate_network = 1;
+	color = "#adadcd"
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/testlab)
@@ -7490,7 +7515,8 @@
 	},
 /obj/structure/marker_beacon/olive,
 /obj/machinery/computer/cryopod/interdyne/directional/west{
-	pixel_x = -18
+	pixel_x = -18;
+	req_one_access = list("syndicate")
 	},
 /obj/effect/turf_decal/trimline/dark/filled/end{
 	dir = 8
@@ -7913,7 +7939,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/syndicate_lava_base/main)
 "ZL" = (
-/obj/machinery/portable_atmospherics/canister/plasma,
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/syndicate_lava_base/main)
 "ZN" = (
@@ -8037,7 +8063,7 @@ ac
 ac
 SH
 Iy
-Iy
+eE
 Im
 ac
 ac
@@ -8171,7 +8197,7 @@ uQ
 Iy
 Iy
 Se
-Iy
+eE
 Im
 Iy
 ac
@@ -8280,7 +8306,7 @@ ab
 ab
 Iy
 Se
-Iy
+ab
 ab
 ab
 ab
@@ -9111,7 +9137,7 @@ pI
 xc
 Uo
 Tm
-cu
+NM
 Yf
 rv
 us
@@ -9229,7 +9255,7 @@ Pr
 Pr
 VP
 lc
-eZ
+VP
 ZU
 ZU
 ZU
@@ -9305,7 +9331,7 @@ td
 ab
 ab
 Iy
-Iy
+eE
 ac
 ac
 "}
@@ -9753,7 +9779,7 @@ qe
 aA
 JA
 Oz
-tv
+Pr
 yy
 dm
 rg
@@ -9819,7 +9845,7 @@ Pr
 Pr
 VP
 lc
-eZ
+VP
 ZU
 ZU
 ZU
@@ -9849,7 +9875,7 @@ eE
 Iy
 eE
 Iy
-Iy
+ab
 ab
 ab
 ab
@@ -9857,7 +9883,7 @@ SH
 cS
 wr
 BE
-yQ
+BE
 um
 yQ
 yQ
@@ -10200,7 +10226,7 @@ aa
 ac
 ac
 Iy
-Iy
+eE
 Se
 Iy
 SH
@@ -10424,7 +10450,7 @@ ab
 Iy
 Se
 Se
-Iy
+eE
 ac
 ac
 ac
@@ -10537,7 +10563,7 @@ ab
 ab
 ab
 ab
-ab
+Iy
 Iy
 SH
 Iy
@@ -10592,9 +10618,9 @@ SM
 ab
 ab
 ab
-Iy
-Iy
 ab
+Iy
+Iy
 Iy
 Iy
 Iy
@@ -10642,8 +10668,8 @@ Iy
 ab
 ab
 ab
-ab
-ab
+Iy
+SH
 ab
 ab
 ab
@@ -10870,8 +10896,8 @@ Se
 Se
 Iy
 Iy
-ab
-ab
+Iy
+Iy
 ab
 ab
 ab
@@ -10879,7 +10905,7 @@ dM
 Iy
 Iy
 SH
-Iy
+on
 Se
 Iy
 dM
@@ -10937,13 +10963,13 @@ ac
 ac
 SH
 Jx
-Iy
-Im
-lb
+eE
+eZ
+tv
 ac
 Se
 Se
-Iy
+eE
 ac
 ac
 ac
