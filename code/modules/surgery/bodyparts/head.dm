@@ -89,7 +89,7 @@
 		show_eyeless = FALSE
 
 		/// Can this head be dismembered normally?
-		can_dismember = FALSE
+		can_dismember = TRUE //FLUFFY FRONTIER EDIT. ORIGINAL //can_dismember = FALSE
 
 /obj/item/bodypart/head/Destroy()
 	QDEL_NULL(worn_ears_offset)
