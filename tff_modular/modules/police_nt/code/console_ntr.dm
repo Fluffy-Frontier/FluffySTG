@@ -1,5 +1,5 @@
 #define IMPORTANT_ACTION_COOLDOWN (60 SECONDS)
-
+GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 #define STATE_MAIN "main"
 #define STATE_MESSAGES "messages"
 #define EMERGENCY_RESPONSE_POLICE "WOOP WOOP THAT'S THE SOUND OF THE POLICE"
@@ -19,18 +19,12 @@
 	circuit = /obj/item/circuitboard/computer/comntr
 	light_color = LIGHT_COLOR_BLUEGREEN
 
-	/// If the battlecruiser has been called
-	var/static/battlecruiser_called = FALSE
-
 	/// Cooldown for important actions, such as messaging CentCom or other sectors
 	COOLDOWN_DECLARE(static/important_action_cooldown)
 	COOLDOWN_DECLARE(static/emergency_access_cooldown)
 
 	/// The current state of the UI
 	var/state = STATE_MAIN
-
-	/// The current state of the UI for AIs
-	var/cyborg_state = STATE_MAIN
 
 	/// The name of the user who logged in
 	var/authorize_name
@@ -44,43 +38,13 @@
 	/// The timer ID for sending the next cross-comms message
 	var/send_cross_comms_message_timer
 
-	/// The last lines used for changing the status display
-	var/static/last_status_display
-
-	///how many uses the console has done of toggling the emergency access
-	var/toggle_uses = 0
-	///how many uses can you toggle emergency access with before cooldowns start occuring BOTH ENABLE/DISABLE
-	var/toggle_max_uses = 3
-	///when was emergency access last toggled
-	var/last_toggled
-
 /obj/machinery/computer/comntr/Initialize(mapload)
 	. = ..()
+	GLOB.responding_centcom_consoles += src
 	AddComponent(/datum/component/gps, "Unic NTR console Signal")
 
-/// Are we NOT a silicon, AND we're logged in as the captain?
-/obj/machinery/computer/comntr/proc/authenticated_as_non_silicon_captain(mob/user)
-	if (issilicon(user))
-		return FALSE
-	return ACCESS_CENT_GENERAL in authorize_access
-
-/// Are we a silicon, OR we're logged in as the captain?
-/obj/machinery/computer/comntr/proc/authenticated_as_silicon_or_captain(mob/user)
-	if (issilicon(user))
-		return TRUE
-	return ACCESS_CENT_GENERAL in authorize_access
-
-/// Are we a silicon, OR logged in?
 /obj/machinery/computer/comntr/proc/authenticated(mob/user)
-	if (issilicon(user))
-		return TRUE
 	return authenticated
-
-/// NOVA EDIT Start - Are we the AI?
-/obj/machinery/computer/comntr/proc/authenticated_as_ai_or_captain(mob/user)
-	if (isAI(user))
-		return TRUE
-	return ACCESS_CENT_GENERAL in authorize_access //NOVA EDIT End
 
 /obj/machinery/computer/comntr/attackby(obj/I, mob/user, params)
 	if(isidcard(I))
@@ -241,21 +205,17 @@
 				return
 			LAZYREMOVE(messages, LAZYACCESS(messages, message_index))
 		if ("messageAssociates")
-			if (!authenticated_as_ai_or_captain(usr)) //NOVA EDIT | Allows AI and Captain to send messages
-				return
 			if (!COOLDOWN_FINISHED(src, important_action_cooldown))
 				return
 
 			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 			var/message = trim(html_encode(params["message"]), MAX_MESSAGE_LEN)
-
-			var/associates = "CentCom"
-			usr.log_talk(message, LOG_SAY, tag = "message to [associates]")
-			deadchat_broadcast(" has messaged [associates], \"[message]\" at [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]"), usr, message_type = DEADCHAT_ANNOUNCEMENT)
+			message_centcom(message, usr)
+			to_chat(usr, span_notice("Message transmitted to Central Command."))
+			usr.log_talk(message, LOG_SAY, tag = "message to CentCom")
+			deadchat_broadcast(" has messaged CentCom, \"[message]\" at [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]"), usr, message_type = DEADCHAT_ANNOUNCEMENT)
 			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)
 		if ("sendToOtherSector")
-			if (!authenticated_as_non_silicon_captain(usr))
-				return
 			if (!can_send_messages_to_other_sectors(usr))
 				return
 			if (!COOLDOWN_FINISHED(src, important_action_cooldown))
@@ -265,6 +225,7 @@
 			if (!message)
 				return
 
+			SScommunications.soft_filtering = FALSE
 			var/list/hard_filter_result = is_ic_filtered(message)
 			if(hard_filter_result)
 				tgui_alert(usr, "Your message contains: (\"[hard_filter_result[CHAT_FILTER_INDEX_WORD]]\"), which is not allowed on this server.")
@@ -276,7 +237,7 @@
 					return
 				message_admins("[ADMIN_LOOKUPFLW(usr)] has passed the soft filter for \"[soft_filter_result[CHAT_FILTER_INDEX_WORD]]\". They may be using a disallowed term for a cross-station message. Increasing delay time to reject.\n\n Message: \"[html_encode(message)]\"")
 				log_admin_private("[key_name(usr)] has passed the soft filter for \"[soft_filter_result[CHAT_FILTER_INDEX_WORD]]\". They may be using a disallowed term for a cross-station message. Increasing delay time to reject.\n\n Message: \"[message]\"")
-
+				SScommunications.soft_filtering = TRUE
 			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 
 			var/destination = params["destination"]
@@ -335,7 +296,7 @@
 		"authenticated" = FALSE,
 	)
 
-	var/ui_state = issilicon(user) ? cyborg_state : state
+	var/ui_state = state
 
 	var/has_connection = has_communication()
 	data["hasConnection"] = has_connection
@@ -419,16 +380,10 @@
 	return is_station_level(z_level) || is_centcom_level(z_level)
 
 /obj/machinery/computer/comntr/proc/set_state(mob/user, new_state)
-	if (issilicon(user))
-		cyborg_state = new_state
-	else
-		state = new_state
+	state = new_state
 
 
 /obj/machinery/computer/comntr/proc/can_send_messages_to_other_sectors(mob/user)
-	if (!authenticated_as_non_silicon_captain(user))
-		return
-
 	return length(CONFIG_GET(keyed_list/cross_server)) > 0
 
 /obj/machinery/computer/comntr/proc/get_communication_players()
@@ -462,6 +417,21 @@
 
 /obj/machinery/computer/comntr/proc/add_message(datum/comm_message/new_message)
 	LAZYADD(messages, new_message)
+
+/datum/controller/subsystem/communications/send_message(datum/comm_message/sending,print = TRUE,unique = FALSE)
+	for(var/obj/machinery/computer/comntr/C in GLOB.responding_centcom_consoles)
+		if(!(C.machine_stat & (BROKEN|NOPOWER)) && is_station_level(C.z))
+			if(unique)
+				C.add_message(sending)
+			else //We copy the message for each console, answers and deletions won't be shared
+				var/datum/comm_message/M = new(sending.title,sending.content,sending.possible_answers.Copy())
+				C.add_message(M)
+			if(print)
+				var/obj/item/paper/printed_paper = new /obj/item/paper(C.loc)
+				printed_paper.name = "paper - '[sending.title]'"
+				printed_paper.add_raw_text(sending.content)
+				printed_paper.update_appearance()
+	. = ..()
 
 #undef IMPORTANT_ACTION_COOLDOWN
 #undef STATE_MAIN

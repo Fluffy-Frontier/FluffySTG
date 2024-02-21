@@ -1,6 +1,5 @@
-import { capitalize } from 'common/string';
+// Если сломается - смотрите как реализован интерфейс CommunicationsConsole.jsx
 import { useState } from 'react';
-
 import { useBackend, useLocalState } from '../backend';
 import {
   Blink,
@@ -18,37 +17,6 @@ import { sanitizeText } from '../sanitize';
 
 const STATE_MAIN = 'main';
 const STATE_MESSAGES = 'messages';
-
-const SWIPE_NEEDED = 'SWIPE_NEEDED';
-
-const AlertButton = (props) => {
-  const { act, data } = useBackend();
-  const { alertLevelTick, canSetAlertLevel } = data;
-  const { alertLevel, setShowAlertLevelConfirm } = props;
-
-  const thisIsCurrent = data.alertLevel === alertLevel;
-
-  return (
-    <Button
-      icon="exclamation-triangle"
-      color={thisIsCurrent && 'good'}
-      content={capitalize(alertLevel)}
-      onClick={() => {
-        if (thisIsCurrent) {
-          return;
-        }
-
-        if (canSetAlertLevel === SWIPE_NEEDED) {
-          setShowAlertLevelConfirm([alertLevel, alertLevelTick]);
-        } else {
-          act('changeSecurityLevel', {
-            newSecurityLevel: alertLevel,
-          });
-        }
-      }}
-    />
-  );
-};
 
 const MessageModal = (props) => {
   const { data } = useBackend();
@@ -216,7 +184,7 @@ const PageMessages = (props) => {
   for (const [messageIndex, message] of Object.entries(messages)) {
     let answers = null;
 
-    if (message.possibleAnswers.length > 0) {
+    /*if (message.possibleAnswers.length > 0) {
       answers = (
         <Box mt={1}>
           {message.possibleAnswers.map((answer, answerIndex) => (
@@ -237,7 +205,7 @@ const PageMessages = (props) => {
           ))}
         </Box>
       );
-    }
+    }*/
 
     const textHtml = {
       __html: sanitizeText(message.content),
