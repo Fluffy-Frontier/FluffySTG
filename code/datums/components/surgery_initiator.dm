@@ -310,13 +310,6 @@
 			target.balloon_alert(user, "patient has \a [parse_zone(selected_zone)]!")
 		return
 
-<<<<<<< HEAD
-	if (!isnull(affecting_limb) && surgery.requires_bodypart_type && !(affecting_limb.bodytype & surgery.requires_bodypart_type))
-		target.balloon_alert(user, "not the right type of limb!")
-		return
-
-	// NOVA EDIT START - Limbs that can't be surgically removed
-=======
 	if (!isnull(affecting_limb))
 		if(surgery.requires_bodypart_type && !(affecting_limb.bodytype & surgery.requires_bodypart_type))
 			target.balloon_alert(user, "not the right type of limb!")
@@ -325,7 +318,6 @@
 			target.balloon_alert(user, "no wound to operate on!")
 			return
 	// NOVA EDIT ADDITION START - Limbs that can't be surgically removed
->>>>>>> 02e88b8812d ([MIRROR] Painkillers now actually induce analgesic effects (#957))
 	if (surgery.removes_target_bodypart && !isnull(affecting_limb) && !affecting_limb.can_be_surgically_removed)
 		target.balloon_alert(user, "limb can't be surgically removed!")
 		return
