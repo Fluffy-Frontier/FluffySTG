@@ -629,6 +629,12 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
+"dh" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 5
+	},
+/turf/open/water/hot_spring,
+/area/icemoon/underground/explored)
 "dj" = (
 /obj/machinery/suit_storage_unit/mining,
 /obj/effect/turf_decal/tile/dark/full,
@@ -1038,6 +1044,12 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
+"fm" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 10
+	},
+/turf/open/water/hot_spring,
+/area/icemoon/underground/explored)
 "fq" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -1110,6 +1122,11 @@
 /obj/structure/flora/bush/jungle/c/style_random,
 /turf/open/floor/grass,
 /area/ruin/interdyne_planetary_base/main)
+"fW" = (
+/obj/structure/flora/bush/snow/style_random,
+/obj/structure/flora/tree/pine/style_random,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "ge" = (
 /obj/structure/marker_beacon/bronze,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -1481,6 +1498,13 @@
 /obj/item/food/monkeycube,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
+"iH" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 6
+	},
+/obj/structure/marker_beacon/teal,
+/turf/open/water/hot_spring,
+/area/icemoon/underground/explored)
 "iL" = (
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 1
@@ -2808,6 +2832,12 @@
 /obj/structure/flora/rock/pile/icy/style_random,
 /turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
+"qh" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 9
+	},
+/turf/open/water/hot_spring,
+/area/icemoon/underground/explored)
 "qp" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 8
@@ -3058,6 +3088,10 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
+"sn" = (
+/obj/effect/turf_decal/weather/snow/corner,
+/turf/open/water/hot_spring,
+/area/icemoon/underground/explored)
 "so" = (
 /obj/structure/rack/shelf,
 /obj/effect/turf_decal/tile/dark/full,
@@ -4412,7 +4446,6 @@
 /area/icemoon/underground/explored)
 "AR" = (
 /obj/effect/decal/remains/human,
-/obj/structure/flora/tree/pine/style_random,
 /turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "AT" = (
@@ -6499,6 +6532,11 @@
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/icemoon/underground/explored)
+"NG" = (
+/obj/structure/flora/grass/both/style_random,
+/obj/structure/flora/tree/pine/style_random,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "NJ" = (
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
@@ -7513,6 +7551,11 @@
 /obj/structure/marker_beacon/teal,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/dorms)
+"Vm" = (
+/obj/structure/flora/rock/pile/icy/style_random,
+/obj/structure/flora/tree/pine/style_random,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "Vn" = (
 /obj/structure/tank_dispenser,
 /obj/effect/turf_decal/tile/dark/full,
@@ -8101,6 +8144,12 @@
 /obj/effect/turf_decal/tile/dark/full,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
+"Yq" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 1
+	},
+/turf/open/water/hot_spring,
+/area/icemoon/underground/explored)
 "Yv" = (
 /obj/structure/flora/bush/sparsegrass/style_random,
 /obj/structure/flora/bush/flowers_pp/style_random,
@@ -8812,7 +8861,7 @@ aa
 ac
 ac
 Se
-Iy
+eE
 Jx
 Iy
 Se
@@ -8926,8 +8975,8 @@ aa
 aa
 aa
 ac
-eE
 Iy
+eE
 dM
 dM
 SH
@@ -8984,17 +9033,17 @@ aa
 (11,1,1) = {"
 aa
 ac
-Iy
 eE
+Iy
 AR
-dM
+NG
 Im
 Iy
 Iy
 eE
 Iy
 Iy
-SM
+fW
 Iy
 dM
 Iy
@@ -9044,13 +9093,13 @@ aa
 ac
 eE
 SH
-Iy
+eE
 dM
 Se
+qh
+fm
 Iy
-Iy
-Iy
-Iy
+eE
 Se
 dM
 Iy
@@ -9106,12 +9155,12 @@ eE
 Iy
 eE
 Iy
-Iy
+Yq
+sn
 Iy
 Iy
 Iy
 eE
-Iy
 SH
 Iy
 dM
@@ -9165,8 +9214,8 @@ ac
 Iy
 eE
 dM
-Iy
-Iy
+dh
+iH
 Iy
 Se
 SH
@@ -9279,7 +9328,7 @@ ac
 (16,1,1) = {"
 ac
 ac
-Se
+Zx
 dM
 Se
 Iy
@@ -9287,7 +9336,7 @@ Iy
 eE
 dM
 Iy
-SH
+Vm
 dM
 Iy
 dM
@@ -9346,7 +9395,7 @@ Se
 Iy
 eE
 Iy
-eE
+Iy
 Iy
 Iy
 ab
