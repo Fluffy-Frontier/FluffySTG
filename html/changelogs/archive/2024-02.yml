@@ -778,6 +778,26 @@
   - bugfix: The door above tool storage on birdshot now has maintenance access on
       it and officials can now enter the CC dock room.
 2024-02-21:
+  00-Steven:
+  - bugfix: Ethereal heart revive doesn't delete organs alien to your species, like
+      prosthetics, cybernetics, and possibly itself.
+  - bugfix: Nightmare heart revive doesn't delete organs alien to your species, like
+      itself, upon which it would stop the conversion to shadowperson.
+  Cheshify:
+  - bugfix: The North Star's disposals are now functional!
+  - qol: The North Star has had a staggering amount of quality of life changes.
+  - rscadd: Nanotrasen has now supplied North Star security outposts with a disposals
+      line leading directly to the drunk tank.
+  DATA-xPUNGED:
+  - bugfix: Bystanders will no longer think they've pulled out a victim's eyes after
+      seeing someone else do it.
+  - qol: They will also be able to tell when someone starts pulling out a victim's
+      eyes.
+  Melbert:
+  - bugfix: Organs have the blood DNA of their owns on them again
+  - bugfix: Chasms no longer break your verbs
+  - bugfix: Fixed Puncture Repair surgery not having surgical sounds
+  - bugfix: Fixed Surgery Initiator potentially showing invalid surgeries
   Mothblocks:
   - balance: 'Instead of too much damage to the head beheading someone, it
 
@@ -790,3 +810,9 @@
 
       person, or someone with their skull split open.'
   - rscdel: Removed the beheading objectives from traitor.
+  Thlumyn:
+  - spellcheck: fixed typo describing male organ
+  mc-oofert:
+  - bugfix: if you died as a changeling/anyone that has cool mind spells you do not
+      get them in deathmatch
+  - bugfix: you may not teleport in or out of deathmatch arenas
