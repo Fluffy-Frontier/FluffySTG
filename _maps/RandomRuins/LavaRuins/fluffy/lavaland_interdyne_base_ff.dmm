@@ -728,18 +728,13 @@
 	name = "Interdyne meat fridge";
 	light_color = "#9d9ddd"
 	},
-/obj/effect/turf_decal/trimline/dark/filled/line{
-	dir = 10
-	},
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
-/obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
-	dir = 8
-	},
 /obj/structure/marker_beacon/indigo,
 /obj/structure/drain,
 /obj/effect/turf_decal/box/white/corners{
 	dir = 8
 	},
+/obj/effect/turf_decal/trimline/dark/filled/line,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "ep" = (
@@ -1152,9 +1147,6 @@
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "hh" = (
-/obj/effect/turf_decal/trimline/dark/filled/corner{
-	dir = 8
-	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "hi" = (
@@ -2258,16 +2250,6 @@
 /obj/item/healthanalyzer/advanced,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
-"nE" = (
-/obj/effect/turf_decal/trimline/dark/filled/line{
-	dir = 10
-	},
-/obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
-/obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
-	dir = 8
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/interdyne_planetary_base/serv)
 "nG" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 8
@@ -2710,8 +2692,6 @@
 	name = "Interdyne kitchen cabinet";
 	light_color = "#9d9ddd"
 	},
-/obj/item/reagent_containers/condiment/milk,
-/obj/item/reagent_containers/condiment/soymilk,
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
 /obj/effect/turf_decal/box/white/corners,
@@ -2879,13 +2859,27 @@
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
 "ru" = (
-/obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/processor{
-	color = "#adadcd";
-	name = "Interdyne food processor";
-	light_color = "#adadcd"
+/obj/structure/closet/secure_closet/freezer/fridge{
+	name = "Interdyne refrigerator";
+	light_color = "#9d9ddd";
+	color = "#9d9ddd";
+	req_access = list("syndicate")
 	},
+/obj/effect/turf_decal/trimline/dark/filled/line{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
+/obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
+	dir = 8
+	},
+/obj/item/food/cheese/mozzarella{
+	pixel_y = 7
+	},
+/obj/item/food/cheese/mozzarella{
+	pixel_y = 7
+	},
+/obj/item/storage/fancy/egg_box,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "rw" = (
@@ -7760,6 +7754,11 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/bronze,
 /obj/structure/table/reinforced/plastitaniumglass,
+/obj/machinery/processor{
+	color = "#adadcd";
+	name = "Interdyne food processor";
+	light_color = "#adadcd"
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "Wx" = (
@@ -9359,7 +9358,7 @@ JK
 kL
 MN
 BM
-nE
+Ly
 ru
 hV
 eO

@@ -125,6 +125,13 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
+"aC" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 6
+	},
+/obj/structure/marker_beacon/teal,
+/turf/open/water/hot_spring,
+/area/icemoon/underground/explored)
 "aE" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/structure/reagent_dispensers/wall/virusfood/directional/west,
@@ -360,6 +367,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
+"cc" = (
+/obj/effect/turf_decal/weather/snow/corner,
+/turf/open/water/hot_spring,
+/area/icemoon/underground/explored)
 "ce" = (
 /obj/item/tank/internals/oxygen/yellow,
 /obj/item/tank/internals/oxygen/yellow,
@@ -1139,18 +1150,13 @@
 	name = "Interdyne meat fridge";
 	light_color = "#9d9ddd"
 	},
-/obj/effect/turf_decal/trimline/dark/filled/line{
-	dir = 10
-	},
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
-/obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
-	dir = 8
-	},
 /obj/structure/marker_beacon/indigo,
 /obj/structure/drain,
 /obj/effect/turf_decal/box/white/corners{
 	dir = 8
 	},
+/obj/effect/turf_decal/trimline/dark/filled/line,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "gn" = (
@@ -1900,12 +1906,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
-"ld" = (
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 1
-	},
-/turf/open/water/hot_spring,
-/area/icemoon/underground/explored)
 "le" = (
 /obj/effect/baseturf_helper/reinforced_plating/ceiling,
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
@@ -2883,6 +2883,12 @@
 /obj/structure/flora/tree/jungle/style_random,
 /turf/open/floor/grass,
 /area/ruin/interdyne_planetary_base/main)
+"qN" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 5
+	},
+/turf/open/water/hot_spring,
+/area/icemoon/underground/explored)
 "qS" = (
 /obj/structure/marker_beacon/burgundy,
 /obj/effect/turf_decal/tile/dark/full,
@@ -3177,12 +3183,6 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
-"sU" = (
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 10
-	},
-/turf/open/water/hot_spring,
-/area/icemoon/underground/explored)
 "sY" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/storage/box/beakers/bluespace,
@@ -3361,10 +3361,6 @@
 /obj/effect/turf_decal/box/white/corners,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
-"tz" = (
-/obj/effect/turf_decal/weather/snow/corner,
-/turf/open/water/hot_spring,
-/area/icemoon/underground/explored)
 "tB" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/reagent_dispensers/fueltank,
@@ -3920,9 +3916,6 @@
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "wX" = (
-/obj/effect/turf_decal/trimline/dark/filled/corner{
-	dir = 8
-	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "xc" = (
@@ -5204,6 +5197,11 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/bronze,
 /obj/structure/table/reinforced/plastitaniumglass,
+/obj/machinery/processor{
+	color = "#adadcd";
+	name = "Interdyne food processor";
+	light_color = "#adadcd"
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "Fo" = (
@@ -5576,12 +5574,6 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
-"GY" = (
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 9
-	},
-/turf/open/water/hot_spring,
-/area/icemoon/underground/explored)
 "GZ" = (
 /obj/structure/railing{
 	dir = 8
@@ -5872,18 +5864,8 @@
 /turf/open/floor/grass,
 /area/ruin/interdyne_planetary_base/serv)
 "Jd" = (
-/obj/effect/turf_decal/trimline/dark/filled/line{
-	dir = 10
-	},
-/obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
-/obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
-	dir = 8
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/interdyne_planetary_base/serv)
-"Jg" = (
 /obj/effect/turf_decal/weather/snow/corner{
-	dir = 5
+	dir = 9
 	},
 /turf/open/water/hot_spring,
 /area/icemoon/underground/explored)
@@ -5951,6 +5933,12 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"Kd" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 10
+	},
+/turf/open/water/hot_spring,
+/area/icemoon/underground/explored)
 "Kg" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/effect/turf_decal/stripes/blue{
@@ -6660,13 +6648,27 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "OH" = (
-/obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/processor{
-	color = "#adadcd";
-	name = "Interdyne food processor";
-	light_color = "#adadcd"
+/obj/structure/closet/secure_closet/freezer/fridge{
+	name = "Interdyne refrigerator";
+	light_color = "#9d9ddd";
+	color = "#9d9ddd";
+	req_access = list("syndicate")
 	},
+/obj/effect/turf_decal/trimline/dark/filled/line{
+	dir = 10
+	},
+/obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
+/obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
+	dir = 8
+	},
+/obj/item/food/cheese/mozzarella{
+	pixel_y = 7
+	},
+/obj/item/food/cheese/mozzarella{
+	pixel_y = 7
+	},
+/obj/item/storage/fancy/egg_box,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "OI" = (
@@ -6953,6 +6955,12 @@
 /obj/effect/turf_decal/stripes/red/corner,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"Rg" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 1
+	},
+/turf/open/water/hot_spring,
+/area/icemoon/underground/explored)
 "Rl" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 4
@@ -6987,13 +6995,6 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/science)
-"RJ" = (
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 6
-	},
-/obj/structure/marker_beacon/teal,
-/turf/open/water/hot_spring,
-/area/icemoon/underground/explored)
 "RM" = (
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/interdyne_planetary_base/serv)
@@ -9082,8 +9083,8 @@ SH
 Iy
 dM
 Se
-GY
-sU
+Jd
+Kd
 Iy
 Iy
 Se
@@ -9141,8 +9142,8 @@ eE
 Iy
 eE
 Iy
-ld
-tz
+Rg
+cc
 Iy
 Iy
 eE
@@ -9200,8 +9201,8 @@ ac
 Iy
 eE
 dM
-Jg
-RJ
+qN
+aC
 Iy
 Se
 SH
@@ -9357,7 +9358,7 @@ xY
 xS
 Oc
 vv
-Jd
+Wz
 OH
 vo
 ab
