@@ -817,13 +817,37 @@
       get them in deathmatch
   - bugfix: you may not teleport in or out of deathmatch arenas
 2024-02-22:
+  1393F:
+  - qol: The crystallizer in Void Raptor atmos has been moved very slightly so the
+      recipes no longer spawn in the wall.
+  - bugfix: The cargo foundry on Void Raptor no longer has a fire alarm in space.
   Absolucy:
   - rscadd: Painkillers (i.e morphine, miner's salve) now actually induce analgesic
       effects, preventing various pain-related effects, such as screaming due to pain,
       and also provides a speed bonus during surgery.
   - rscadd: The tenacity trauma (traumatic neuropathy) also applies analgesic effects.
   - refactor: Simplified code related to reagents adding traits.
+  Derpguy3:
+  - bugfix: Adds a missing servo component into the MK1 Ripley Crate ordered from
+      cargo.
+  Ghommie:
+  - bugfix: sec-hailers no longer apply filters on TTS when pushed out of the way.
+  JohnFulpWillard:
+  - spellcheck: Removed a double space in health analyzer's message telling you someone
+      is deaf.
+  Lutowski:
+  - image: Slightly alters variants of the Research Director's labcoat sprite to appear
+      less bloated.
+  - rscadd: Adds regular labcoat, a normal variant of the RD labcoat without armor
+      buffs to the loadout.
   Melbert:
   - bugfix: Lipoplasty is An Option again
+  - rscdel: Deletes Mythril Coins from random coin spawners
+  - rscdel: Replaces Mythril sheets in icebox vent fishing with Runite sheets
+  Thlumyn:
+  - bugfix: animal pen doors on void raptor now open with maints access
+  - bugfix: fixed polls
+  nevimer:
+  - bugfix: ForceEvent tgui panel search is more reliable.
   vinylspiders:
   - bugfix: fixes Numbed alert being added twice while in stasis
