@@ -317,16 +317,6 @@
 /obj/effect/turf_decal/stripes/red/corner{
 	dir = 4
 	},
-/obj/machinery/button/door/directional/north{
-	name = "Interdyne Gate";
-	id = "interdynegate";
-	icon_state = "tram";
-	base_icon_state = "tram";
-	light_color = "#22CCFF";
-	pixel_x = 7;
-	pixel_y = 32;
-	req_access = list("syndicate")
-	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 1
 	},
@@ -497,6 +487,16 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/sand/plating/volcanic,
+/obj/machinery/button/door/directional/south{
+	base_icon_state = "tram";
+	name = "Interdyne Gate";
+	icon_state = "tram";
+	id = "interdynegateout";
+	light_color = "#22CCFF";
+	req_access = list("syndicate");
+	pixel_x = -27;
+	pixel_y = -20
+	},
 /turf/open/floor/plating/reinforced/lavaland,
 /area/ruin/interdyne_planetary_base/cargo)
 "cL" = (
@@ -579,6 +579,16 @@
 /obj/effect/turf_decal/stripes/red/line,
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 8
+	},
+/obj/machinery/button/door/directional/south{
+	base_icon_state = "tram";
+	name = "Interdyne Gate";
+	icon_state = "tram";
+	id = "interdynegate";
+	light_color = "#22CCFF";
+	req_access = list("syndicate");
+	pixel_x = -27;
+	pixel_y = -20
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
@@ -1468,6 +1478,27 @@
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
+"iY" = (
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/caution/red,
+/obj/effect/turf_decal/trimline/dark/filled/corner{
+	dir = 1
+	},
+/obj/structure/marker_beacon/burgundy,
+/obj/machinery/button/door/directional/north{
+	name = "Interdyne Gate";
+	id = "interdynegateout";
+	icon_state = "tram";
+	base_icon_state = "tram";
+	light_color = "#22CCFF";
+	pixel_x = -27;
+	pixel_y = 32;
+	req_access = list("syndicate")
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/cargo)
 "iZ" = (
 /obj/effect/turf_decal/vg_decals/atmos/air,
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -2478,16 +2509,6 @@
 /obj/effect/turf_decal/stripes/red/corner{
 	dir = 4
 	},
-/obj/machinery/button/door/directional/north{
-	name = "Interdyne Gate";
-	id = "interdynegateout";
-	icon_state = "tram";
-	base_icon_state = "tram";
-	light_color = "#22CCFF";
-	pixel_x = 7;
-	pixel_y = 32;
-	req_access = list("syndicate")
-	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 9
 	},
@@ -3361,16 +3382,6 @@
 /area/ruin/interdyne_planetary_base/cargo)
 "vA" = (
 /obj/effect/turf_decal/stripes/red/corner,
-/obj/machinery/button/door/directional/south{
-	base_icon_state = "tram";
-	name = "Interdyne Gate";
-	icon_state = "tram";
-	id = "interdynegate";
-	light_color = "#22CCFF";
-	req_access = list("syndicate");
-	pixel_x = 7;
-	pixel_y = -20
-	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 10
 	},
@@ -4728,6 +4739,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
+/obj/item/reagent_containers/dropper,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "Ec" = (
@@ -6218,6 +6230,16 @@
 	dir = 1
 	},
 /obj/structure/marker_beacon/burgundy,
+/obj/machinery/button/door/directional/north{
+	name = "Interdyne Gate";
+	id = "interdynegate";
+	icon_state = "tram";
+	base_icon_state = "tram";
+	light_color = "#22CCFF";
+	pixel_x = -27;
+	pixel_y = 32;
+	req_access = list("syndicate")
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "Nq" = (
@@ -7175,16 +7197,6 @@
 /obj/structure/railing{
 	dir = 9
 	},
-/obj/machinery/button/door/directional/south{
-	base_icon_state = "tram";
-	name = "Interdyne Gate";
-	icon_state = "tram";
-	id = "interdynegateout";
-	light_color = "#22CCFF";
-	req_access = list("syndicate");
-	pixel_x = 7;
-	pixel_y = -20
-	},
 /obj/effect/turf_decal/sand/plating/volcanic,
 /turf/open/floor/engine/hull/reinforced/lavaland,
 /area/ruin/interdyne_planetary_base/cargo)
@@ -7537,6 +7549,7 @@
 "Vi" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/tile/dark/full,
+/obj/item/disk/tech_disk,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "Vl" = (
@@ -9847,7 +9860,7 @@ Rd
 Rd
 cz
 dQ
-Nf
+iY
 dA
 oP
 Nf

@@ -313,6 +313,16 @@
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 8
 	},
+/obj/machinery/button/door/directional/south{
+	base_icon_state = "tram";
+	name = "Interdyne Gate";
+	icon_state = "tram";
+	id = "interdynegate";
+	light_color = "#22CCFF";
+	req_access = list("syndicate");
+	pixel_x = -27;
+	pixel_y = -20
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "bN" = (
@@ -1604,16 +1614,6 @@
 /area/ruin/interdyne_planetary_base/main)
 "jw" = (
 /obj/effect/turf_decal/stripes/red/corner,
-/obj/machinery/button/door/directional/south{
-	base_icon_state = "tram";
-	name = "Interdyne Gate";
-	icon_state = "tram";
-	id = "interdynegate";
-	light_color = "#22CCFF";
-	req_access = list("syndicate");
-	pixel_x = 7;
-	pixel_y = -20
-	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 10
 	},
@@ -1895,16 +1895,6 @@
 "lu" = (
 /obj/effect/turf_decal/stripes/red/corner{
 	dir = 4
-	},
-/obj/machinery/button/door/directional/north{
-	name = "Interdyne Gate";
-	id = "interdynegateout";
-	icon_state = "tram";
-	base_icon_state = "tram";
-	light_color = "#22CCFF";
-	pixel_x = 7;
-	pixel_y = 32;
-	req_access = list("syndicate")
 	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 9
@@ -2442,16 +2432,6 @@
 /obj/structure/railing{
 	dir = 9
 	},
-/obj/machinery/button/door/directional/south{
-	base_icon_state = "tram";
-	name = "Interdyne Gate";
-	icon_state = "tram";
-	id = "interdynegateout";
-	light_color = "#22CCFF";
-	req_access = list("syndicate");
-	pixel_x = 7;
-	pixel_y = -20
-	},
 /obj/effect/turf_decal/weather/snow/corner,
 /obj/effect/turf_decal/weather/snow{
 	layer = 3
@@ -2464,6 +2444,16 @@
 	},
 /obj/effect/turf_decal/weather/snow{
 	layer = 3
+	},
+/obj/machinery/button/door/directional/south{
+	base_icon_state = "tram";
+	name = "Interdyne Gate";
+	icon_state = "tram";
+	id = "interdynegateout";
+	light_color = "#22CCFF";
+	req_access = list("syndicate");
+	pixel_x = -27;
+	pixel_y = -20
 	},
 /turf/open/floor/plating/reinforced/icemoon,
 /area/ruin/interdyne_planetary_base/cargo)
@@ -3159,6 +3149,7 @@
 	id = "interdynelabs";
 	name = "Interdyne Storm Shutters Labs"
 	},
+/obj/item/reagent_containers/dropper,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "sZ" = (
@@ -5613,16 +5604,6 @@
 /obj/effect/turf_decal/stripes/red/corner{
 	dir = 4
 	},
-/obj/machinery/button/door/directional/north{
-	name = "Interdyne Gate";
-	id = "interdynegate";
-	icon_state = "tram";
-	base_icon_state = "tram";
-	light_color = "#22CCFF";
-	pixel_x = 7;
-	pixel_y = 32;
-	req_access = list("syndicate")
-	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 1
 	},
@@ -5840,6 +5821,27 @@
 	},
 /obj/effect/turf_decal/caution/stand_clear/red,
 /obj/structure/cable,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/cargo)
+"JO" = (
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/caution/red,
+/obj/effect/turf_decal/trimline/dark/filled/corner{
+	dir = 1
+	},
+/obj/structure/marker_beacon/burgundy,
+/obj/machinery/button/door/directional/north{
+	name = "Interdyne Gate";
+	id = "interdynegateout";
+	icon_state = "tram";
+	base_icon_state = "tram";
+	light_color = "#22CCFF";
+	pixel_x = -27;
+	pixel_y = 32;
+	req_access = list("syndicate")
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "JP" = (
@@ -8055,6 +8057,7 @@
 "Ym" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/tile/dark/full,
+/obj/item/disk/tech_disk,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "Yv" = (
@@ -8171,6 +8174,16 @@
 	dir = 1
 	},
 /obj/structure/marker_beacon/burgundy,
+/obj/machinery/button/door/directional/north{
+	name = "Interdyne Gate";
+	id = "interdynegate";
+	icon_state = "tram";
+	base_icon_state = "tram";
+	light_color = "#22CCFF";
+	pixel_x = -27;
+	pixel_y = 32;
+	req_access = list("syndicate")
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "YZ" = (
@@ -9845,7 +9858,7 @@ AJ
 AJ
 oB
 pp
-YS
+JO
 bM
 yn
 YS
