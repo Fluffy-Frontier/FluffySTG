@@ -2035,6 +2035,27 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
+"mL" = (
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/caution/red,
+/obj/effect/turf_decal/trimline/dark/filled/corner{
+	dir = 1
+	},
+/obj/structure/marker_beacon/burgundy,
+/obj/machinery/button/door/directional/north{
+	name = "Interdyne Gate";
+	id = "interdynegate";
+	icon_state = "tram";
+	base_icon_state = "tram";
+	light_color = "#22CCFF";
+	pixel_x = -27;
+	pixel_y = 32;
+	req_access = list("syndicate")
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/cargo)
 "mN" = (
 /obj/structure/statue/snow/snowman,
 /turf/open/misc/asteroid/snow/icemoon,
@@ -5823,27 +5844,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
-"JO" = (
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/caution/red,
-/obj/effect/turf_decal/trimline/dark/filled/corner{
-	dir = 1
-	},
-/obj/structure/marker_beacon/burgundy,
-/obj/machinery/button/door/directional/north{
-	name = "Interdyne Gate";
-	id = "interdynegateout";
-	icon_state = "tram";
-	base_icon_state = "tram";
-	light_color = "#22CCFF";
-	pixel_x = -27;
-	pixel_y = 32;
-	req_access = list("syndicate")
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/interdyne_planetary_base/cargo)
 "JP" = (
 /obj/item/stack/sheet/plasteel/fifty,
 /obj/item/stack/sheet/glass/fifty,
@@ -7833,6 +7833,9 @@
 /obj/item/bedsheet/cosmos/double,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
+"WU" = (
+/turf/open/misc/ice/smooth,
+/area/icemoon/underground/explored)
 "WX" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 6
@@ -8176,7 +8179,7 @@
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/button/door/directional/north{
 	name = "Interdyne Gate";
-	id = "interdynegate";
+	id = "interdynegateout";
 	icon_state = "tram";
 	base_icon_state = "tram";
 	light_color = "#22CCFF";
@@ -8192,6 +8195,10 @@
 	dir = 4
 	},
 /turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"Zg" = (
+/obj/structure/flora/grass/brown/style_random,
+/turf/open/misc/ice/smooth,
 /area/icemoon/underground/explored)
 "Zh" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -8516,9 +8523,9 @@ Se
 Se
 Iy
 dM
-Iy
-Iy
-Iy
+WU
+WU
+WU
 Iy
 Se
 Iy
@@ -8568,15 +8575,15 @@ Iy
 eE
 Iy
 SM
-Iy
-Iy
-Iy
+WU
+WU
+WU
 Se
 Iy
 Se
 Iy
-Iy
-Iy
+WU
+WU
 eE
 Iy
 dM
@@ -8586,7 +8593,7 @@ Iy
 uQ
 Iy
 Iy
-Se
+Zg
 eE
 Im
 Iy
@@ -8628,7 +8635,7 @@ Iy
 eE
 Iy
 Se
-Iy
+WU
 Iy
 SH
 Iy
@@ -8734,7 +8741,7 @@ SH
 Se
 Iy
 Im
-Iy
+WU
 SM
 Se
 Iy
@@ -8793,7 +8800,7 @@ Iy
 Jx
 Iy
 Se
-Iy
+WU
 SH
 Iy
 Iy
@@ -8852,7 +8859,7 @@ Iy
 Iy
 eE
 Iy
-Iy
+WU
 Iy
 Iy
 eE
@@ -9011,7 +9018,7 @@ ab
 Iy
 Iy
 SM
-Iy
+WU
 SH
 ac
 ac
@@ -9070,7 +9077,7 @@ ab
 ab
 Iy
 Se
-Iy
+WU
 ac
 ac
 ac
@@ -9378,7 +9385,7 @@ Se
 Iy
 dM
 SH
-Iy
+WU
 Iy
 Iy
 eE
@@ -9437,7 +9444,7 @@ Iy
 eE
 Iy
 Iy
-Iy
+WU
 Se
 Iy
 Iy
@@ -9858,10 +9865,10 @@ AJ
 AJ
 oB
 pp
-JO
+YS
 bM
 yn
-YS
+mL
 Pf
 Vs
 TI
@@ -10501,8 +10508,8 @@ eE
 Im
 Iy
 SH
-Iy
-Iy
+WU
+WU
 Iy
 Iy
 ab
@@ -10560,9 +10567,9 @@ Iy
 Iy
 eE
 Se
-Iy
-Iy
-Iy
+WU
+WU
+WU
 Iy
 dM
 ab
@@ -10956,7 +10963,7 @@ ab
 dM
 Iy
 Iy
-Iy
+WU
 Im
 ac
 ac
@@ -11015,7 +11022,7 @@ Iy
 Iy
 Iy
 SH
-Iy
+WU
 dM
 ac
 ac
@@ -11102,7 +11109,7 @@ SM
 Iy
 Se
 Se
-Iy
+WU
 Iy
 Iy
 ab
@@ -11161,7 +11168,7 @@ Se
 Iy
 Iy
 dM
-Iy
+WU
 Iy
 Iy
 dM
@@ -11220,7 +11227,7 @@ Iy
 Iy
 Im
 Iy
-Iy
+WU
 dM
 Iy
 Iy
