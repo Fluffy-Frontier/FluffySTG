@@ -851,3 +851,52 @@
   - bugfix: ForceEvent tgui panel search is more reliable.
   vinylspiders:
   - bugfix: fixes Numbed alert being added twice while in stasis
+2024-02-25:
+  00-Steven:
+  - bugfix: Chefs (not to be confused with cooks) actually display as being a part
+      of service on the crew monitor.
+  - bugfix: Chef and department security have the assignment on their ID imprinted
+      onto their PDA by default, instead of defaulting to Cook/Security Officer and
+      requiring you to do so manually.
+  13spacemen:
+  - refactor: Bloody item overlays no longer use icon procs to generate the overlay
+  13spacemen, Kapu1178:
+  - refactor: Footprint sprites are now based on your shoes and legs, shoes have priority
+  - image: Monkey legs now produce pawprints instead of footprints
+  A.C.M.O.:
+  - qol: CPR can be administered by species which do not need to breathe, so long
+      as they have functional lungs.
+  ArcaneMusic:
+  - bugfix: Mining cyborgs now keep the state of their mining scanner when stored,
+      without shutting off.
+  Echriser:
+  - bugfix: you can no longer feed people with covered mouths using spoons or ladles
+  JohnFulpWillard:
+  - refactor: Holographic mobs now gives better feedback to players and should more
+      consistently not give any drops.
+  - bugfix: Alien larvas' examine text no longer tells you they are missing arms and
+      legs.
+  Melbert:
+  - refactor: Frames have been refactored, you know the things you use to build computers
+      and machines, report any oddities
+  - bugfix: You can now smack (de)constructed computer and machine frames to break
+      them, rather than doing nothing.
+  - rscadd: Machine frames can now be deconstructed with screwdrivers, and computer
+      frames can now be deconstructed with welding torches. Welders are faster.
+  - bugfix: Cyborgs spark and spit out oil when smacked again. Among other things.
+  - bugfix: You can now take our your anger upon arcade cabinets upon losing (they
+      can be hit again)
+  Paxilmaniac:
+  - bugfix: Guns can no longer be worn in the overclothing slot, because it turns
+      out that ITEM_SLOT_OCLOTHING is not, in fact, the suit storage slot.
+  - qol: The Wylom no longer lies to you about having a functional scope
+  - bugfix: The Qani-Laaca sensory computer will now correctly give you the overdose
+      or not, because the buttons to do so are now separate actions.
+  - bugfix: If you are overdosing twitch immediately upon starting to process it,
+      your screen will be the correct color again.
+  SgtHunk:
+  - bugfix: The Summon Simians spell will now properly check for monkey faction, allowing
+      people who are monkeys to not be mauled.
+  vinylspiders:
+  - bugfix: fixes spurious CI failure in museum
+  - code_imp: adds a blacklist feature to spawners
