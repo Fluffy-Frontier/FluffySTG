@@ -1,3 +1,4 @@
+// Just copypaste of communications.dm
 #define IMPORTANT_ACTION_COOLDOWN (60 SECONDS)
 GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 #define STATE_MAIN "main"
@@ -9,7 +10,6 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 	greyscale_colors = CIRCUIT_COLOR_ENGINEERING
 	build_path = /obj/machinery/computer/comntr
 
-// The comntr computer
 /obj/machinery/computer/comntr
 	name = "NTR console"
 	desc = "A console special for NTR."
@@ -19,27 +19,20 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 	circuit = /obj/item/circuitboard/computer/comntr
 	light_color = LIGHT_COLOR_BLUEGREEN
 
-	/// Cooldown for important actions, such as messaging CentCom or other sectors
+
 	COOLDOWN_DECLARE(static/important_action_cooldown)
-	COOLDOWN_DECLARE(static/emergency_access_cooldown)
-
-	/// The current state of the UI
 	var/state = STATE_MAIN
-
-	/// The name of the user who logged in
 	var/authorize_name
-
-	/// The access that the card had on login
 	var/list/authorize_access
-
-	/// The messages this console has been sent
 	var/list/datum/comm_message/messages
-
-	/// The timer ID for sending the next cross-comms message
 	var/send_cross_comms_message_timer
 
 /obj/machinery/computer/comntr/Initialize(mapload)
 	. = ..()
+	if(!SSticker.HasRoundStarted())
+		var/list/adjacent_turfs = get_adjacent_open_turfs(src)
+		var/turf/open/random_open_spot = pick(adjacent_turfs)
+		src.setDir(get_dir(src, random_open_spot))
 	GLOB.responding_centcom_consoles += src
 	AddComponent(/datum/component/gps, "Unic NTR console Signal")
 
@@ -52,7 +45,6 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 	else
 		return ..()
 
-/// Internal. Polls ghosts and sends in a team of space cops according to the alert level, accompanied by an announcement.
 /obj/machinery/computer/comntr/proc/call_911(ordered_team)
 	var/team_size
 	var/datum/antagonist/ert/cops_to_send
@@ -153,6 +145,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 	deadchat_broadcast(" has called the Sol Federation [called_group_pretty] for the following reason:\n[GLOB.call_911_msg]", span_name("[user.real_name]"), user, message_type = DEADCHAT_ANNOUNCEMENT)
 
 	call_911(called_group)
+
 	to_chat(user, span_notice("Authorization confirmed. 911 call dispatched to the Sol Federation [called_group_pretty]."))
 	playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 
@@ -248,7 +241,6 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)
 
 		if ("toggleAuthentication")
-			// Log out if we're logged in
 			if (authorize_name)
 				authenticated = FALSE
 				authorize_access = null
@@ -341,6 +333,8 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 
 /obj/machinery/computer/comntr/ui_interact(mob/user, datum/tgui/ui)
 	. = ..()
+	if(issilicon(user))
+		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
 		ui = new(user, src, "comNTR")
@@ -373,7 +367,6 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 
 	return ..()
 
-/// Returns whether or not the comntr console can communicate with the station
 /obj/machinery/computer/comntr/proc/has_communication()
 	var/turf/current_turf = get_turf(src)
 	var/z_level = current_turf.z
@@ -381,8 +374,6 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 
 /obj/machinery/computer/comntr/proc/set_state(mob/user, new_state)
 	state = new_state
-
-
 /obj/machinery/computer/comntr/proc/can_send_messages_to_other_sectors(mob/user)
 	return length(CONFIG_GET(keyed_list/cross_server)) > 0
 
@@ -410,8 +401,6 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 
 	frequency.post_signal(src, status_signal)
 
-/// Override the cooldown for special actions
-/// Used in places such as CentCom messaging back so that the crew can answer right away
 /obj/machinery/computer/comntr/proc/override_cooldown()
 	COOLDOWN_RESET(src, important_action_cooldown)
 
@@ -436,7 +425,4 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 #undef IMPORTANT_ACTION_COOLDOWN
 #undef STATE_MAIN
 #undef STATE_MESSAGES
-
-//NOVA EDIT ADDITION
 #undef EMERGENCY_RESPONSE_POLICE
-//NOVA EDIT END
