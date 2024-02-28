@@ -30,6 +30,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 /obj/machinery/computer/comntr/Initialize(mapload)
 	. = ..()
 	// Костыльный способ развернуть консоль жопкой к стенке.
+	/*
 	if(!SSticker.HasRoundStarted())
 		var/list/adjacent_walls = list()
 		var/turf/closed/new_turf = get_step(src, NORTH)
@@ -41,7 +42,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 		new_turf = get_step(src, WEST)
 		adjacent_walls += new_turf
 		var/turf/closed/random_wall = pick(adjacent_walls)
-		src.setDir(get_dir(src, random_wall))
+		src.setDir(get_dir(src, random_wall))*/
 
 	GLOB.responding_centcom_consoles += src
 	AddComponent(/datum/component/gps, "Unic NTR console Signal")
