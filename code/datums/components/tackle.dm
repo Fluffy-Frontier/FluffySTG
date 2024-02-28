@@ -234,7 +234,7 @@
 			target.Knockdown(3 SECONDS)
 			target.adjust_staggered_up_to(STAGGERED_SLOWDOWN_LENGTH * 2, 10 SECONDS)
 			if(ishuman(target) && ishuman(user))
-				INVOKE_ASYNC(human_sacker.dna.species, TYPE_PROC_REF(/datum/species, grab), human_sacker, human_target)
+				INVOKE_ASYNC(human_sacker, TYPE_PROC_REF(/mob/living, grab), human_sacker, human_target)
 				human_sacker.setGrabState(GRAB_PASSIVE)
 
 		if(50 to INFINITY) // absolutely BODIED
@@ -260,7 +260,7 @@
 				target.Knockdown(3 SECONDS)
 				target.adjust_staggered_up_to(STAGGERED_SLOWDOWN_LENGTH * 3, 10 SECONDS)
 				if(ishuman(target) && ishuman(user))
-					INVOKE_ASYNC(human_sacker.dna.species, TYPE_PROC_REF(/datum/species, grab), human_sacker, human_target)
+					INVOKE_ASYNC(human_sacker, TYPE_PROC_REF(/mob/living, grab), human_sacker, human_target)
 					human_sacker.setGrabState(GRAB_AGGRESSIVE)
 
 /**
@@ -400,7 +400,7 @@
 			defense_mod += 2
 		if(tackle_target.mob_negates_gravity())
 			defense_mod += 1
-		if(HAS_TRAIT(tackle_target, TRAIT_SHOVE_KNOCKDOWN_BLOCKED)) // riot armor and such
+		if(HAS_TRAIT(tackle_target, TRAIT_BRAWLING_KNOCKDOWN_BLOCKED)) // riot armor and such
 			defense_mod += 5
 
 		var/obj/item/organ/external/tail/lizard/el_tail = tackle_target.get_organ_slot(ORGAN_SLOT_EXTERNAL_TAIL)
@@ -451,7 +451,7 @@
 			attack_mod += 15
 			human_sacker.adjustStaminaLoss(100) //AHAHAHAHAHAHAHAHA
 
-		if(HAS_TRAIT(human_sacker, TRAIT_SHOVE_KNOCKDOWN_BLOCKED)) // tackling with riot specialized armor, like riot armor, is effective but tiring
+		if(HAS_TRAIT(human_sacker, TRAIT_BRAWLING_KNOCKDOWN_BLOCKED)) // tackling with riot specialized armor, like riot armor, is effective but tiring
 			attack_mod += 2
 			human_sacker.adjustStaminaLoss(20)
 
@@ -499,14 +499,10 @@
 	var/danger_zone = (speed - 1) * 13 // for every extra speed we have over 1, take away 13 of the safest chance
 	danger_zone = max(min(danger_zone, 100), 1)
 
-	if(ishuman(user))
-		var/mob/living/carbon/human/S = user
-		var/head_slot = S.get_item_by_slot(ITEM_SLOT_HEAD)
-		var/suit_slot = S.get_item_by_slot(ITEM_SLOT_OCLOTHING)
-		if(head_slot && (istype(head_slot,/obj/item/clothing/head/helmet) || istype(head_slot,/obj/item/clothing/head/utility/hardhat)))
-			oopsie_mod -= 6
-		if(suit_slot && (istype(suit_slot,/obj/item/clothing/suit/armor/riot)))
-			oopsie_mod -= 6
+	if(HAS_TRAIT(user, TRAIT_BRAWLING_KNOCKDOWN_BLOCKED))
+		oopsie_mod -= 6
+	if(HAS_TRAIT(user, TRAIT_HEAD_INJURY_BLOCKED))
+		oopsie_mod -= 6
 
 	if(HAS_TRAIT(user, TRAIT_CLUMSY))
 		oopsie_mod += 6 //honk!
