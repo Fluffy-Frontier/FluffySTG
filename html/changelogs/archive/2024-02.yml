@@ -1021,3 +1021,13 @@
       a visual indicator in it that you are talking in the right channel
   mc-oofert:
   - bugfix: You may no longer make deathmatch arenas dark with a lightswitch.
+2024-02-29:
+  A.C.M.O.:
+  - config: Added two new config flags for quirks, DISABLE_QUIRK_POINTS and MAX_POSITIVE_QUIRKS.
+  Ghommie:
+  - refactor: Introduced a simple budget system to station traits, so that smaller
+      things only count as half a trait, for example.
+  - balance: Increased the odds and maximum number of station traits that can be rolled
+      each shift.
+  GoldenAlpharex:
+  - config: Config migration to /nova instead of /skyrat has been properly completed.
