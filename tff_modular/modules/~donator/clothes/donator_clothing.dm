@@ -31,7 +31,7 @@
 
 /obj/item/clothing/suit/hooded/wintercoat/specialops/winter
 	name = "security winter long jacket"
-	desc = "Long jacket developed by \"Armadain\" for security personnel working in harsh, low temperature conditions. Maintains body temperature at -40 Celsius. Armadine logo on the back in blue."
+	desc = "Long jacket developed by \"Armadyne\" for security personnel working in harsh, low temperature conditions. Maintains body temperature at -40 Celsius. Armadyne logo on the back in blue."
 
 	icon_state = "mercreapercoat_winter"
 	worn_icon_state = "mercreapercoat_winter"
