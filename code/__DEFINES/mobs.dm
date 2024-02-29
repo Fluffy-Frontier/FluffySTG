@@ -130,7 +130,6 @@
 #define SPECIES_NIGHTMARE "nightmare"
 #define SPECIES_MONKEY "monkey"
 #define SPECIES_MONKEY_FREAK "monkey_freak"
-#define SPECIES_MONKEY_HOLODECK "monkey_holodeck"
 #define SPECIES_MONKEY_HUMAN_LEGGED "monkey_human_legged"
 #define SPECIES_MOTH "moth"
 #define SPECIES_MUSHROOM "mush"
@@ -486,10 +485,6 @@
 #define FLASH_PROTECTION_NONE 0
 #define FLASH_PROTECTION_FLASH 1
 #define FLASH_PROTECTION_WELDER 2
-
-// Roundstart trait system
-
-#define MAX_QUIRKS 6 //The maximum amount of quirks one character can have at roundstart
 
 // AI Toggles
 #define AI_CAMERA_LUMINOSITY 5

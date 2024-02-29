@@ -851,3 +851,183 @@
   - bugfix: ForceEvent tgui panel search is more reliable.
   vinylspiders:
   - bugfix: fixes Numbed alert being added twice while in stasis
+2024-02-25:
+  00-Steven:
+  - bugfix: Chefs (not to be confused with cooks) actually display as being a part
+      of service on the crew monitor.
+  - bugfix: Chef and department security have the assignment on their ID imprinted
+      onto their PDA by default, instead of defaulting to Cook/Security Officer and
+      requiring you to do so manually.
+  13spacemen:
+  - refactor: Bloody item overlays no longer use icon procs to generate the overlay
+  13spacemen, Kapu1178:
+  - refactor: Footprint sprites are now based on your shoes and legs, shoes have priority
+  - image: Monkey legs now produce pawprints instead of footprints
+  A.C.M.O.:
+  - qol: CPR can be administered by species which do not need to breathe, so long
+      as they have functional lungs.
+  ArcaneMusic:
+  - bugfix: Mining cyborgs now keep the state of their mining scanner when stored,
+      without shutting off.
+  Echriser:
+  - bugfix: you can no longer feed people with covered mouths using spoons or ladles
+  JohnFulpWillard:
+  - refactor: Holographic mobs now gives better feedback to players and should more
+      consistently not give any drops.
+  - bugfix: Alien larvas' examine text no longer tells you they are missing arms and
+      legs.
+  Melbert:
+  - refactor: Frames have been refactored, you know the things you use to build computers
+      and machines, report any oddities
+  - bugfix: You can now smack (de)constructed computer and machine frames to break
+      them, rather than doing nothing.
+  - rscadd: Machine frames can now be deconstructed with screwdrivers, and computer
+      frames can now be deconstructed with welding torches. Welders are faster.
+  - bugfix: Cyborgs spark and spit out oil when smacked again. Among other things.
+  - bugfix: You can now take our your anger upon arcade cabinets upon losing (they
+      can be hit again)
+  Paxilmaniac:
+  - bugfix: Guns can no longer be worn in the overclothing slot, because it turns
+      out that ITEM_SLOT_OCLOTHING is not, in fact, the suit storage slot.
+  - qol: The Wylom no longer lies to you about having a functional scope
+  - bugfix: The Qani-Laaca sensory computer will now correctly give you the overdose
+      or not, because the buttons to do so are now separate actions.
+  - bugfix: If you are overdosing twitch immediately upon starting to process it,
+      your screen will be the correct color again.
+  SgtHunk:
+  - bugfix: The Summon Simians spell will now properly check for monkey faction, allowing
+      people who are monkeys to not be mauled.
+  vinylspiders:
+  - bugfix: fixes spurious CI failure in museum
+  - code_imp: adds a blacklist feature to spawners
+2024-02-27:
+  00-Steven:
+  - bugfix: Disabled the popsicle stick maximizer. (Producing popsicle sticks actually
+      deletes the input logs.)
+  A.C.M.O.:
+  - qol: Disabled CPR for synthetic species with a heatsink. Choosing cybernetic lungs
+      will allow CPR.
+  ArcaneMusic:
+  - bugfix: Fixed instances where holochip/holocredits would spawn with a total of
+      zero credits contained within.
+  CandleJaxx:
+  - rscadd: Zhenkov & Co. Foundries reports they launched a faulty shipment of legs
+      out to some mid-level zip code in the frontier.
+  - rscadd: People all across the frontier have figured out how to paint a line around
+      their legs. New marking, yippee.
+  Cheshify:
+  - bugfix: meatwheat is now firmly made out of meat, instead of sometimes being wheat
+      and sometimes being meat and sometimes being both.
+  - bugfix: The North Star finally has a bluespace gas sender system.
+  Derpguy3:
+  - bugfix: Three stationary water tanks on Birdshot which supplied a sink in the
+      bar, a sink in the medical storage and a sink in the perma-brig's kitchen are
+      now properly rotated and connected with the plumbing.
+  - bugfix: The unisex showers on Birdshot have been given a water tank for its plumbing.
+  EEASAS:
+  - balance: buffs corporate modsuit(centcom only)
+  GoldenAlpharex:
+  - bugfix: Millstones no longer take damage when produce that can do damage (like
+      tower-cap logs) get inserted in them.
+  - qol: Millstones now give better feedback when items are inserted and when grinding
+      is done.
+  - bugfix: Ant farms now drop all of the 20 pieces of sand that are required to make
+      them, when built in an invalid location.
+  - qol: Ant farms no longer accept food when ants have appeared, as it already does
+      nothing once ants have arrived.
+  - qol: Inserting food in an ant farm from a plant bag is now twice as fast!
+  - qol: Seed meshes now only take 2 seconds to process 5 sand/ash, and have a 50%
+      chance to produce a seed, up from 30%.
+  - qol: Grass can now be dried into thatch, rendering thatch floors accessible to
+      the crew, and not just a tool only for mappers.
+  - bugfix: Storage barrels and wooden shelves no longer drop clay upon being deconstructed.
+  - spellcheck: Decapitalized the various primitive storage structures that were wrongfully
+      capitalized.
+  Higgin:
+  - qol: Blood Brother convert objective now explains who you can convert and what
+      to do if you mess up with your flash.
+  LordVoidron:
+  - qol: added maintenance themes to shift start PDAs
+  MrDas:
+  - spellcheck: The tier of servo in mech construction is no longer explicitly stated.
+  Paxilmaniac:
+  - bugfix: The screen filter effects for twitch and demoneye no longer get slowly
+      worse every time you use them, so you can still see after using the drugs more
+      than once.
+  SSensum:
+  - rscadd: Added new, more humane way to deconvert default revs via ActiviZero2000.
+  SomeRandomOwl:
+  - rscdel: The syndicate recently lost their supplier of microbomb implants and no
+      longer are capable of providing the explosive devices to agents in the field.
+  aKromatopzia:
+  - image: corrects the offset for cybernetic digi legs
+  bigfatbananacyclops:
+  - rscadd: floortile camouflage suit, boots, gloves and crate containing the former
+      items
+  necromanceranne:
+  - balance: Nanotrasen, in direct response to the increasing danger posed by wannabe
+      martial artists and rioters in the fringes of the Spinward Sector, have upgraded
+      the impact dampeners found in their riot armor. Staff have also started to rediscover
+      the value of medieval armor; it isn't particularly easy to topple a knight in
+      a suit of plate with just your fists.
+  - balance: Melee-focused armor is now more able to protect you from various RNG-based
+      knockdowns, such as critical hits from punches (as well as the ones applied
+      through the staggered status), shoves, critical hits with a blunt weapon to
+      the chest, and body throws.
+  - balance: Melee-focused helmets also protect you from head injuries, such as bottle
+      smashes, accidentally hitting something dense during a tackle, and critical
+      hits from a blunt weapon to the head.
+  - balance: Bottlesmash knockdowns are less reliable in general.
+  - rscadd: A new module, the Safety-First Head Protection module, protects you from
+      head trauma! Available in most modsuits expected to take hits to the head often.
+      And from roundstart exofabricators.
+  vinylspiders:
+  - bugfix: fixes cardboard cutouts not updating when held and using the crayon on
+      them to change their appearance, and fixes the alt_appearance being added to
+      the cutout instead of the mob holding it
+2024-02-28:
+  00-Steven:
+  - bugfix: Fixed Bluespace RPEDs failing to apply circuits from a distance if you
+      had to select between multiple.
+  Cheshify:
+  - bugfix: the north star's main intersections are brighter, the elevator is properly
+      lit, and a single floating poster was moved.
+  - qol: The chapel has been slightly overhauled on Birdshot, with the chaplain now
+      having a place to preach sermons.
+  - bugfix: Sparring chaplains are now able to operate on Birdshot!
+  GoldenAlpharex:
+  - balance: Protolathes should now print items ten times faster.
+  - qol: Icewalkers and ghosts can now tell who joined and who left the Icemoon Dweller
+      hole via examining it twice quickly.
+  Iamgoofball:
+  - balance: Adds a 1 second delay to moving up and down with the verb/keybinds to
+      disable z-level combat cheese
+  JohnFulpWillard:
+  - qol: You can use atmos machines, holopads, crayons, spray cans, and disposal bins
+      while floored.
+  - bugfix: You can close extinguisher cabinets while floored.
+  - bugfix: You can climb onto a photocopier from the floor.
+  Momo8289:
+  - bugfix: Fixes the slot machine's jackpot. It should now give all of the available
+      prize money + 10,000 credits as payout for a jackpot.
+  - refactor: Converts the slot machine's UI over to TGUI
+  - rscadd: The slot machine now has a whole new type of jackpot! This one's a banger!
+  Nerev4r:
+  - rscadd: New persocom wireless standards have allowed for machines to wirelessly
+      link to ID cards, rather than using dedicated slots.
+  - rscadd: Adds some Security shorts to the loadout and vendors.
+  Singul0:
+  - bugfix: The say TGUI would recognize :g (changeling hivemind) prefix. and give
+      a visual indicator in it that you are talking in the right channel
+  mc-oofert:
+  - bugfix: You may no longer make deathmatch arenas dark with a lightswitch.
+2024-02-29:
+  A.C.M.O.:
+  - config: Added two new config flags for quirks, DISABLE_QUIRK_POINTS and MAX_POSITIVE_QUIRKS.
+  Ghommie:
+  - refactor: Introduced a simple budget system to station traits, so that smaller
+      things only count as half a trait, for example.
+  - balance: Increased the odds and maximum number of station traits that can be rolled
+      each shift.
+  GoldenAlpharex:
+  - config: Config migration to /nova instead of /skyrat has been properly completed.
