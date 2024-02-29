@@ -17,7 +17,7 @@
 
 /obj/item/clothing/suit/hooded/wintercoat/specialops
 	name = "security long jacket"
-	desc = "Long jacket developed by \"Armadyne\" for security officers. The Armadyne logo is blue on the back. Made from materials to retain heat and can be used down to -20 Celsius."
+	desc = "Long jacket developed by \"Armadyne\" for security officers. There is a blue Armadyne logo on the back. Made from materials to retain heat and can be used down to -20 Celsius."
 
 	icon = 'tff_modular/master_files/icons/donator/obj/clothing/suit.dmi'
 	icon_state = "mercreapercoat_summer"
@@ -31,7 +31,7 @@
 
 /obj/item/clothing/suit/hooded/wintercoat/specialops/winter
 	name = "security winter long jacket"
-	desc = "Long jacket developed by \"Armadyne\" for security personnel working in harsh, low temperature conditions. Maintains body temperature at -40 Celsius. Armadyne logo on the back in blue."
+	desc = "Long jacket developed by \"Armadyne\" for security personnel working in harsh, low temperature conditions. There is a blue Armadyne logo on the back. Made from materials to retain heat and can be used down to -40 Celsius."
 
 	icon_state = "mercreapercoat_winter"
 	worn_icon_state = "mercreapercoat_winter"
