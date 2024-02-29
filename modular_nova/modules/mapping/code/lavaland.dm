@@ -23,3 +23,15 @@
 	never_spawn_with = list(/datum/map_template/ruin/icemoon/underground/nova/interdyne_base)
 	unpickable = TRUE //FF REMOVAL - INTERDYNE-REMAP. ORIGINAL always_place = TRUE
 
+<<<<<<< HEAD
+=======
+/datum/map_template/ruin/lavaland/arena
+	name = "Lava-Ruin Grand Arena"
+	id = "arena"
+	description = "An ancient gladiatorial arena containing a deadly warrior within."
+	prefix = "_maps/RandomRuins/LavaRuins/nova/"
+	suffix = "lavaland_surface_arena.dmm"
+	cost = 0
+	always_place = TRUE //WOULD BE UNFAIR IF SOMETHING THAT IS ALWAYS PLACED HAD A COST...
+	allow_duplicates = FALSE
+>>>>>>> ebb6632cd25 (Fixes typo 'gladitoral' (#1196))
