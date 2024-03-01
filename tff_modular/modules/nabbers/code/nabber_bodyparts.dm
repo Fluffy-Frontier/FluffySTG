@@ -7,7 +7,7 @@
 
 /obj/item/bodypart/head/mutant/nabber
 	icon_greyscale = BODYPART_ICON_NABBER
-	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_CUSTOM
+	bodyshape = parent_type::bodyshape | BODYSHAPE_CUSTOM
 	limb_id = SPECIES_NABBER
 	brute_modifier = NABBER_BRUTE_MODIFIER
 	burn_modifier = NABBER_BURN_MODIFIER
@@ -34,7 +34,7 @@
 
 /obj/item/bodypart/chest/mutant/nabber
 	icon_greyscale = BODYPART_ICON_NABBER
-	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_CUSTOM
+	bodyshape = parent_type::bodyshape | BODYSHAPE_CUSTOM
 	limb_id = SPECIES_NABBER
 	brute_modifier = NABBER_BRUTE_MODIFIER
 	burn_modifier = NABBER_BURN_MODIFIER
@@ -55,7 +55,7 @@
 
 /obj/item/bodypart/arm/left/mutant/nabber
 	icon_greyscale = BODYPART_ICON_NABBER
-	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_CUSTOM
+	bodyshape = parent_type::bodyshape | BODYSHAPE_CUSTOM
 	limb_id = SPECIES_NABBER
 	unarmed_damage_low = NABBER_PUNCH_LOW
 	unarmed_damage_high = NABBER_PUNCH_HIGH
@@ -64,7 +64,7 @@
 
 /obj/item/bodypart/arm/right/mutant/nabber
 	icon_greyscale = BODYPART_ICON_NABBER
-	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_CUSTOM
+	bodyshape = parent_type::bodyshape | BODYSHAPE_CUSTOM
 	limb_id = SPECIES_NABBER
 	unarmed_damage_low = NABBER_PUNCH_LOW
 	unarmed_damage_high = NABBER_PUNCH_HIGH
@@ -73,14 +73,14 @@
 
 /obj/item/bodypart/leg/left/mutant/nabber
 	icon_greyscale = BODYPART_ICON_NABBER
-	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_CUSTOM
+	bodyshape = parent_type::bodyshape | BODYSHAPE_CUSTOM
 	limb_id = SPECIES_NABBER
 	brute_modifier = NABBER_BRUTE_MODIFIER
 	burn_modifier = NABBER_BURN_MODIFIER
 
 /obj/item/bodypart/leg/right/mutant/nabber
 	icon_greyscale = BODYPART_ICON_NABBER
-	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_CUSTOM
+	bodyshape = parent_type::bodyshape | BODYSHAPE_CUSTOM
 	limb_id = SPECIES_NABBER
 	brute_modifier = NABBER_BRUTE_MODIFIER
 	burn_modifier = NABBER_BURN_MODIFIER
