@@ -7,6 +7,8 @@
   13spacemen:
   - bugfix: You can build material airlocks again
   - bugfix: Blood overlays on items no longer leak onto other objects
+  - refactor: Bodytypes to do with character sprite shape now have their own bodyshape
+      var, all sprite handling is done with bodyshape and not bodytype anymore
   A.C.M.O.:
   - bugfix: Fixed the AI hologram's ability to copy the appearance of crew members.
   Absolucy:
@@ -18,6 +20,8 @@
   Ghommie:
   - balance: '"Freshness Jars full of Natural Bait" is now a goodie and costs 200
       credits instead of 2000'
+  - rscadd: Added a multi-dimensional bomb payload to the black market. It's very
+      expensive.
   Iamgoofball:
   - balance: xenomorph stomachs will no longer destroy items directly, refactored
       it to use acid_act()
@@ -32,6 +36,8 @@
       scary if not scarier than 3 gorillas were prior.
   - balance: ' Magillitis Serum Autoinjector now grants the resulting gorilla a slow
       passive regeneration effect which kicks in after not taking damage for 12 seconds.'
+  - rscadd: 'New Changeling Ability: Hive Head'
+  - bugfix: Fixed bees having an improper sprite offset
   JohnFulpWillard:
   - qol: Intelligent monkeys now punch people instead of biting them.
   KingkumaArt:
@@ -85,8 +91,13 @@
   - bugfix: Being in a Swat Suit appropriately protects you from collisions with a
       body, rather than the body thrown at you having these protections protecting
       YOU, the victim of the collision.
+  nikothedude:
+  - rscadd: Added antagonist opt-in! Brave crewmates wishing to be the target of nefarious
+      evildoers now may indicate this desire in their character preferences.
   softcerv:
   - code_imp: TRAIT_DEAF now works on non-carbon mobs
+  vinylspiders:
+  - bugfix: synths should now always drop their brains when gibbed
   yooriss:
   - qol: 'The telepathy genetics mutation has had significant usability improvements:
       it is now point-targeting based, and right-clicking the power allows for quick
