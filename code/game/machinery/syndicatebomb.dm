@@ -584,8 +584,6 @@
 
 	qdel(src)
 
-<<<<<<< HEAD
-=======
 #define DIMENSION_CHOICE_RANDOM "None/Randomized"
 
 /obj/item/bombcore/dimensional
@@ -650,7 +648,6 @@
 
 #undef DIMENSION_CHOICE_RANDOM
 
->>>>>>> beb979d19ac ([MIRROR] [NO GBP] Fixing the multi-dimensional bomb payload (#1209))
 ///Syndicate Detonator (aka the big red button)///
 
 /obj/item/syndicatedetonator
