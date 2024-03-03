@@ -1,5 +1,6 @@
 // Just copypaste of communications.dm
 #define IMPORTANT_ACTION_COOLDOWN (60 SECONDS)
+#define CALL_POLICE_COOLDOWN (360 SECONDS)
 GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 #define STATE_MAIN "main"
 #define STATE_MESSAGES "messages"
@@ -21,6 +22,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 
 
 	COOLDOWN_DECLARE(static/important_action_cooldown)
+	COOLDOWN_DECLARE(static/call_police_cooldown)
 	var/state = STATE_MAIN
 	var/authorize_name
 	var/list/authorize_access
@@ -59,23 +61,17 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 /obj/machinery/computer/comntr/proc/call_911(ordered_team)
 	var/team_size
 	var/datum/antagonist/ert/cops_to_send
-	var/announcement_message = "sussus amogus"
-	var/announcer = "Sol Federation Marshal Department"
-	var/poll_question = "fuck you leatherman"
-	var/cell_phone_number = "911"
+	var/announcement_message = "teshari dance"
+	var/announcer = "NT Central Command"
+	var/poll_question = "raize youre tails!"
 	var/list_to_use = "911_responders"
 	switch(ordered_team)
 		if(EMERGENCY_RESPONSE_POLICE)
-			team_size = 8
+			team_size = 3
 			cops_to_send = /datum/antagonist/ert/request_911/police
-			announcement_message = "Crewmembers of [station_name()]. this is the Sol Federation. We've recieved a request for immediate marshal support, and we are \
-				sending our best marshals to support your station.\n\n\
-				If the first responders request that they need SWAT support to do their job, or to report a faulty 911 call, we will send them in at additional cost to your station to the \
-				tune of $20,000.\n\n\
-				The transcript of the call is as follows:\n\
-				[GLOB.call_911_msg]"
-			announcer = "Sol Federation Marshal Department"
-			poll_question = "The station has called for the Marshals. Will you respond?"
+			announcement_message = "Attention, personnel of [station_name()]. \n NT Internal Security on the line. We've received a request from your corporate consultant, and we're sending a unit shortly. \n In case of any kind of escalation or injury to an Internal Security officers, a tactical squad will be dispatched to handle this issue. \n\n Stay safe, Glory to Nanotrasen."
+			announcer = "NT Central Command"
+			poll_question = "The station has called for the NT Internal Security. Will you respond?"
 	priority_announce(announcement_message, announcer, 'sound/effects/families_police.ogg', has_important_message=TRUE, color_override = "yellow")
 	var/list/candidates = SSpolling.poll_ghost_candidates(
 		poll_question,
@@ -116,15 +112,6 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 			if(cops_to_send == /datum/antagonist/ert/request_911/atmos) // charge for atmos techs
 				var/datum/bank_account/station_balance = SSeconomy.get_dep_account(ACCOUNT_CAR)
 				station_balance?.adjust_money(GLOB.solfed_tech_charge)
-			else
-				var/obj/item/gangster_cellphone/phone = new() // biggest gang in the city
-				phone.gang_id = cell_phone_number
-				phone.name = "[cell_phone_number] branded cell phone"
-				phone.w_class = WEIGHT_CLASS_SMALL	//They get that COMPACT phone hell yea
-				var/phone_equipped = phone.equip_to_best_slot(cop)
-				if(!phone_equipped)
-					to_chat(cop, "Your [phone.name] has been placed at your feet.")
-					phone.forceMove(get_turf(cop))
 
 			//Logging and cleanup
 			log_game("[key_name(cop)] has been selected as an [ert_antag.name]")
@@ -200,7 +187,9 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 			set_state(usr, params["state"])
 			playsound(src, SFX_TERMINAL_TYPE, 50, FALSE)
 		if ("callThePolice")
-			calling_911(usr, "Marshals", EMERGENCY_RESPONSE_POLICE)
+			if(COOLDOWN_FINISHED(src, call_police_cooldown))
+				COOLDOWN_START(src, call_police_cooldown, CALL_POLICE_COOLDOWN)
+				calling_911(usr, "Marshals", EMERGENCY_RESPONSE_POLICE)
 		if ("deleteMessage")
 			if (!authenticated(usr))
 				return
@@ -311,6 +300,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 		if (STATE_MAIN)
 			data["canMessageAssociates"] = TRUE
 			data["importantActionReady"] = COOLDOWN_FINISHED(src, important_action_cooldown)
+			data["callPoliceReady"] = COOLDOWN_FINISHED(src, call_police_cooldown)
 			data["alertLevel"] = SSsecurity_level.get_current_level_as_text()
 			data["authorizeName"] = authorize_name
 			data["canLogOut"] = !issilicon(user)
@@ -434,6 +424,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 	. = ..()
 
 #undef IMPORTANT_ACTION_COOLDOWN
+#undef CALL_POLICE_COOLDOWN
 #undef STATE_MAIN
 #undef STATE_MESSAGES
 #undef EMERGENCY_RESPONSE_POLICE

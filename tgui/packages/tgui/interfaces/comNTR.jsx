@@ -112,7 +112,7 @@ const NoConnectionModal = () => {
 
 const PageMain = (props) => {
   const { act, data } = useBackend();
-  const { canMessageAssociates, importantActionReady } = data;
+  const { canMessageAssociates, importantActionReady, callPoliceReady } = data;
   const [messagingAssociates, setMessagingAssociates] = useState(false);
 
   return (
@@ -138,6 +138,7 @@ const PageMain = (props) => {
             <Button
               icon="bullhorn"
               content="Call NT Internal Security"
+              disabled={!callPoliceReady}
               onClick={() => act('callThePolice')}
             />
           }
