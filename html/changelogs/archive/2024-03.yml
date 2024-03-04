@@ -220,3 +220,40 @@
   xXPawnStarrXx:
   - bugfix: makes custom pizzas dairy and vegetable free, unless you choose to add
       them.
+2024-03-04:
+  A.C.M.O.:
+  - qol: Added support for adding Character Headshots via files.byondhome.com, for
+      Byond members only.
+  LT3:
+  - image: Tram frame is now tram girder, because it acts like one
+  - bugfix: Tram floor tiles constructed inhand provides 4 instead of 1
+  - bugfix: Tram floor tiles provide correct stack item when pulled up
+  - image: Tram floor tiles have their own inhand icons
+  - qol: Tram floor tiles available in the engineering protolathe
+  - bugfix: You can reconstruct deconstructed tram benches
+  Nerev4r:
+  - qol: Ethereal charging now loops when they're charging (from) APCs or from power
+      cells!
+  Rhials:
+  - bugfix: Fixes some tiles outside the Icebox AI satellite not getting hit by storms.
+  - bugfix: Some tiny tiny changes to the smoking room ruin to make it a little less
+      ugly.
+  Singul0:
+  - rscadd: Adds a new changeling ability, "Darkness Adaptation". Making you more
+      translucent, especially in darkness and allowing you to see slightly better
+      in the dark
+  - balance: The changeling power "Chameleon Skin" has been buffed, Reduces the cost
+      to 1 and sped up the time it takes to turn invisible
+  SomeRandomOwl:
+  - bugfix: If you die or fall unconscious with Combat Indicator turned on, you will
+      properly lose CI and the surrender button
+  - refactor: Refactored how Combat Indicator is handled in the backend
+  - admin: Added additional logging for when someone dies / falls unconscious with
+      CI on, as well as changed the color of the logs for readability.
+  ViktorKoL:
+  - bugfix: made some heretic descriptions more accurate
+  - spellcheck: improved english of the heretical eldritch patrons
+  Zenitheevee:
+  - bugfix: 10 less roundstart active turfs
+  starrm4nn:
+  - bugfix: Makes Metastation surgery access more consistent with other maps
