@@ -365,11 +365,10 @@
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
 "bX" = (
-/obj/structure/railing{
-	dir = 5
-	},
 /obj/structure/lattice/catwalk/mining,
-/obj/effect/turf_decal/sand/plating/volcanic,
+/obj/structure/railing{
+	dir = 1
+	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "cc" = (
@@ -1923,6 +1922,14 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
+"lw" = (
+/obj/structure/railing{
+	dir = 5
+	},
+/obj/structure/lattice/catwalk/mining,
+/obj/effect/turf_decal/sand/plating/volcanic,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "lx" = (
 /obj/machinery/porta_turret/syndicate{
 	dir = 9;
@@ -2498,9 +2505,6 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
-/obj/structure/railing/corner{
-	dir = 1
-	},
 /obj/structure/lattice/catwalk/mining,
 /obj/effect/turf_decal/sand/plating/volcanic,
 /turf/open/lava/smooth/lava_land_surface,
@@ -2596,9 +2600,6 @@
 /area/ruin/interdyne_planetary_base/serv)
 "pN" = (
 /obj/structure/railing,
-/obj/structure/railing{
-	dir = 1
-	},
 /obj/structure/lattice/catwalk/mining,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -3718,9 +3719,6 @@
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/med)
 "xB" = (
-/obj/structure/railing/corner{
-	dir = 4
-	},
 /obj/structure/railing/corner,
 /obj/structure/lattice/catwalk/mining,
 /turf/open/lava/smooth/lava_land_surface,
@@ -4067,13 +4065,17 @@
 /area/ruin/interdyne_planetary_base/main)
 "zr" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/structure/railing,
 /obj/structure/railing{
 	dir = 9
 	},
 /obj/effect/turf_decal/sand/plating/volcanic,
+/obj/machinery/computer/shuttle/interdyne_cargo{
+	dir = 4;
+	icon_screen = "syndishuttle";
+	icon_keyboard = "syndie_key"
+	},
 /turf/open/floor/engine/hull/reinforced/lavaland,
-/area/lavaland/surface/outdoors)
+/area/ruin/interdyne_planetary_base)
 "zv" = (
 /obj/machinery/suit_storage_unit/mining,
 /obj/structure/marker_beacon/burgundy,
@@ -4721,9 +4723,6 @@
 	dir = 1
 	},
 /obj/effect/decal/remains/human,
-/obj/structure/railing/corner{
-	dir = 8
-	},
 /obj/structure/railing/corner{
 	dir = 1
 	},
@@ -7473,6 +7472,19 @@
 	},
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
+"UH" = (
+/obj/structure/marker_beacon/burgundy,
+/obj/effect/turf_decal/sand/plating/volcanic,
+/obj/docking_port/stationary{
+	height = 6;
+	name = "Interdyne Hangar";
+	width = 9;
+	shuttle_id = "interdyne_cargo_home";
+	roundstart_template = /datum/map_template/shuttle/ruin/interdyne_cargo;
+	dwidth = 2
+	},
+/turf/open/floor/engine/hull/reinforced/lavaland,
+/area/lavaland/surface/outdoors)
 "UN" = (
 /obj/structure/marker_beacon/teal,
 /obj/effect/decal/cleanable/glitter/blue,
@@ -8902,7 +8914,7 @@ Co
 CH
 "}
 (10,1,1) = {"
-CH
+Co
 Co
 eO
 eO
@@ -8961,12 +8973,12 @@ Co
 CH
 "}
 (11,1,1) = {"
-CH
 Co
-eO
+BO
 ku
 pp
 pp
+vT
 aS
 HQ
 vT
@@ -9020,12 +9032,12 @@ Co
 CH
 "}
 (12,1,1) = {"
-CH
 Co
-eO
+BO
 zn
 yq
 jT
+BZ
 DW
 sf
 uH
@@ -9080,11 +9092,11 @@ CH
 "}
 (13,1,1) = {"
 Co
-Co
-eO
+BO
 zn
 BZ
 DW
+BZ
 DW
 BZ
 lz
@@ -9140,13 +9152,13 @@ CH
 (14,1,1) = {"
 Co
 BO
-eO
 MQ
 sf
 nr
 BZ
+BZ
 OG
-jT
+UH
 xN
 ZT
 BO
@@ -9199,9 +9211,9 @@ Co
 (15,1,1) = {"
 Co
 BO
-eO
 yt
 pu
+BZ
 BZ
 DW
 BZ
@@ -9258,10 +9270,10 @@ Co
 (16,1,1) = {"
 Co
 eO
-eO
 oh
 jT
 nr
+BZ
 DW
 nr
 sf
@@ -9317,9 +9329,9 @@ Co
 (17,1,1) = {"
 Co
 eO
-eO
 oh
 lz
+BZ
 BZ
 DW
 BZ
@@ -9375,11 +9387,11 @@ Co
 "}
 (18,1,1) = {"
 Co
-Co
 eO
 oh
 sf
 nr
+BZ
 BZ
 OG
 sf
@@ -9434,11 +9446,11 @@ Co
 "}
 (19,1,1) = {"
 Co
-Co
 eO
 oh
 BZ
 DW
+BZ
 BZ
 BZ
 pu
@@ -9494,10 +9506,10 @@ Co
 (20,1,1) = {"
 Co
 BO
-eO
 Bx
 yq
 sf
+pu
 BZ
 sf
 yq
@@ -9553,10 +9565,10 @@ Co
 (21,1,1) = {"
 Co
 fU
-eO
-bX
+lw
 KR
 RS
+pu
 xB
 EE
 RS
@@ -9615,7 +9627,7 @@ hY
 BO
 eO
 eO
-eO
+bX
 pN
 eO
 eO
@@ -9674,7 +9686,7 @@ Co
 BO
 ZT
 eO
-eO
+bX
 pN
 eO
 eO
@@ -9733,7 +9745,7 @@ Co
 BO
 eO
 eO
-eO
+bX
 pN
 eO
 eO
@@ -9792,7 +9804,7 @@ Co
 ZT
 BO
 zr
-eO
+bX
 pN
 eO
 yE
@@ -9851,7 +9863,7 @@ BD
 BO
 BO
 DY
-Rd
+lz
 oU
 Rd
 zQ
