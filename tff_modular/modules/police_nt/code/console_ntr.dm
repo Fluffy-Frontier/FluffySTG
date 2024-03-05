@@ -6,6 +6,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 #define STATE_MESSAGES "messages"
 #define EMERGENCY_RESPONSE_POLICE "WOOP WOOP THAT'S THE SOUND OF THE POLICE"
 
+
 /obj/item/circuitboard/computer/comntr
 	name = "NTR"
 	greyscale_colors = CIRCUIT_COLOR_ENGINEERING
@@ -19,8 +20,6 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 	req_access = list(ACCESS_CENT_GENERAL)
 	circuit = /obj/item/circuitboard/computer/comntr
 	light_color = LIGHT_COLOR_BLUEGREEN
-
-
 	COOLDOWN_DECLARE(static/important_action_cooldown)
 	COOLDOWN_DECLARE(static/call_police_cooldown)
 	var/state = STATE_MAIN
@@ -58,95 +57,6 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 	else
 		return ..()
 
-/obj/machinery/computer/comntr/proc/call_911(ordered_team)
-	var/team_size
-	var/datum/antagonist/ert/cops_to_send
-	var/announcement_message = "teshari dance"
-	var/announcer = "NT Central Command"
-	var/poll_question = "raize youre tails!"
-	var/list_to_use = "911_responders"
-	switch(ordered_team)
-		if(EMERGENCY_RESPONSE_POLICE)
-			team_size = 3
-			cops_to_send = /datum/antagonist/ert/request_911/police
-			announcement_message = "Attention, personnel of [station_name()]. \n NT Internal Security on the line. We've received a request from your corporate consultant, and we're sending a unit shortly. \n In case of any kind of escalation or injury to an Internal Security officers, a tactical squad will be dispatched to handle this issue. \n\n Stay safe, Glory to Nanotrasen."
-			announcer = "NT Central Command"
-			poll_question = "The station has called for the NT Internal Security. Will you respond?"
-	priority_announce(announcement_message, announcer, 'sound/effects/families_police.ogg', has_important_message=TRUE, color_override = "yellow")
-	var/list/candidates = SSpolling.poll_ghost_candidates(
-		poll_question,
-		check_jobban = ROLE_DEATHSQUAD,
-		pic_source = /obj/item/solfed_reporter,
-		role_name_text = cops_to_send::name,
-	)
-
-	if(length(candidates))
-		//Pick the (un)lucky players
-		var/agents_number = min(team_size, candidates.len)
-
-		var/list/spawnpoints = GLOB.emergencyresponseteamspawn
-		var/index = 0
-		GLOB.solfed_responder_info[list_to_use][SOLFED_AMT] = agents_number
-		while(agents_number && candidates.len)
-			var/spawn_loc = spawnpoints[index + 1]
-			//loop through spawnpoints one at a time
-			index = (index + 1) % spawnpoints.len
-			var/mob/dead/observer/chosen_candidate = pick(candidates)
-			candidates -= chosen_candidate
-			if(!chosen_candidate.key)
-				continue
-
-			//Spawn the body
-			var/mob/living/carbon/human/cop = new(spawn_loc)
-			chosen_candidate.client.prefs.safe_transfer_prefs_to(cop, is_antag = TRUE)
-			cop.key = chosen_candidate.key
-
-			//Give antag datum
-			var/datum/antagonist/ert/request_911/ert_antag = new cops_to_send
-
-			cop.mind.add_antag_datum(ert_antag)
-			cop.mind.set_assigned_role(SSjob.GetJobType(ert_antag.ert_job_path))
-			SSjob.SendToLateJoin(cop)
-			cop.grant_language(/datum/language/common, source = LANGUAGE_SPAWNER)
-
-			if(cops_to_send == /datum/antagonist/ert/request_911/atmos) // charge for atmos techs
-				var/datum/bank_account/station_balance = SSeconomy.get_dep_account(ACCOUNT_CAR)
-				station_balance?.adjust_money(GLOB.solfed_tech_charge)
-
-			//Logging and cleanup
-			log_game("[key_name(cop)] has been selected as an [ert_antag.name]")
-			if(cops_to_send == /datum/antagonist/ert/request_911/atmos)
-				log_game("[abs(GLOB.solfed_tech_charge)] has been charged from the station budget for [key_name(cop)]")
-			agents_number--
-	GLOB.cops_arrived = TRUE
-	return TRUE
-
-/obj/machinery/computer/comntr/proc/calling_911(mob/user, called_group_pretty = "EMTs", called_group = EMERGENCY_RESPONSE_POLICE)
-	message_admins("[ADMIN_LOOKUPFLW(user)] is considering calling the Sol Federation [called_group_pretty].")
-	var/call_911_msg_are_you_sure = "Are you sure you want to call 911? Faulty 911 calls results in a $20,000 fine and a 5 year superjail \
-		sentence."
-	if(tgui_input_list(user, call_911_msg_are_you_sure, "Call 911", list("Yes", "No")) != "Yes")
-		return
-	message_admins("[ADMIN_LOOKUPFLW(user)] has acknowledged the faulty 911 call consequences.")
-	if(tgui_input_list(user, GLOB.call911_do_and_do_not[called_group], "Call [called_group_pretty]", list("Yes", "No")) != "Yes")
-		return
-	message_admins("[ADMIN_LOOKUPFLW(user)] has read and acknowleged the recommendations for what to call and not call [called_group_pretty] for.")
-	var/reason_to_call_911 = stripped_input(user, "What do you wish to call 911 [called_group_pretty] for?", "Call 911", null, MAX_MESSAGE_LEN)
-	if(!reason_to_call_911)
-		to_chat(user, "You decide not to call 911.")
-		return
-	GLOB.cops_arrived = TRUE
-	GLOB.call_911_msg = reason_to_call_911
-	GLOB.caller_of_911 = user.name
-	log_game("[key_name(user)] has called the Sol Federation [called_group_pretty] for the following reason:\n[GLOB.call_911_msg]")
-	message_admins("[ADMIN_LOOKUPFLW(user)] has called the Sol Federation [called_group_pretty] for the following reason:\n[GLOB.call_911_msg]")
-	deadchat_broadcast(" has called the Sol Federation [called_group_pretty] for the following reason:\n[GLOB.call_911_msg]", span_name("[user.real_name]"), user, message_type = DEADCHAT_ANNOUNCEMENT)
-
-	call_911(called_group)
-
-	to_chat(user, span_notice("Authorization confirmed. 911 call dispatched to the Sol Federation [called_group_pretty]."))
-	playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
-
 /obj/machinery/computer/comntr/ui_act(action, list/params)
 	var/static/list/approved_states = list(STATE_MAIN, STATE_MESSAGES)
 
@@ -167,7 +77,6 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 			var/answer_index = params["answer"]
 			var/message_index = params["message"]
 
-			// If either of these aren't numbers, then bad voodoo.
 			if(!isnum(answer_index) || !isnum(message_index))
 				message_admins("[ADMIN_LOOKUPFLW(usr)] provided an invalid index type when replying to a message on [src] [ADMIN_JMP(src)]. This should not happen. Please check with a maintainer and/or consult tgui logs.")
 				CRASH("Non-numeric index provided when answering comms console message.")
@@ -275,7 +184,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 	if(network_name)
 		payload["network"] = network_name
 
-	var/name_to_send = "[CONFIG_GET(string/cross_comms_name)]([station_name()])" //NOVA EDIT ADDITION
+	var/name_to_send = "[CONFIG_GET(string/cross_comms_name)]([station_name()])"
 
 	send2otherserver(html_decode(name_to_send), message, "Comms_Console", destination == "all" ? null : list(destination), additional_data = payload) //NOVA EDIT END
 	minor_announce(message, title = "Outgoing message to allied station")
