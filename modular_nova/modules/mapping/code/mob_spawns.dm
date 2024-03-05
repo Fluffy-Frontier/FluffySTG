@@ -126,6 +126,8 @@
 
 /obj/effect/mob_spawn/ghost_role/human/hotel_staff
 	random_appearance = FALSE
+	quirks_enabled = TRUE
+	loadout_enabled = TRUE
 
 /obj/effect/mob_spawn/ghost_role/human/hotel_staff/manager
 	name = "staff manager sleeper"
@@ -550,6 +552,7 @@
 
 /datum/id_trim/away/hotel/security
 	assignment = "Hotel Security"
+	access = list(ACCESS_TWIN_NEXUS_STAFF, ACCESS_TWIN_NEXUS_MANAGER)
 
 
 //CRYO CONSOLES

@@ -89,15 +89,18 @@
 /obj/machinery/light/floor{
 	use_power = 0
 	},
-/obj/machinery/power/shuttle_engine/heater{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/structure/window/reinforced/survival_pod/spawner/directional/west,
-/turf/open/floor/plating/airless,
-/area/ruin/interdyne_planetary_base)
+/turf/open/floor/iron/smooth_edge,
+/area/ruin/interdyne_planetary_base/cargo)
+"aW" = (
+/obj/structure/bed,
+/obj/effect/spawner/random/bedsheet,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/interdyne_planetary_base/cargo)
+"aX" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/cargo)
 "aY" = (
 /obj/effect/turf_decal/tile/dark_green,
 /obj/structure/cable,
@@ -3975,7 +3978,2639 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/pink,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/interdyne_planetary_base/science/xeno)
-"GT" = (
+"jk" = (
+/obj/machinery/camera/xray{
+	dir = 4;
+	network = list("fsci");
+	c_tag = "Xenobio East"
+	},
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science/xeno)
+"jl" = (
+/obj/item/book/random{
+	pixel_y = 3
+	},
+/obj/item/book/random{
+	pixel_y = 3
+	},
+/obj/item/book/random{
+	pixel_y = 3
+	},
+/obj/structure/bookcase/random/nonfiction,
+/obj/structure/sign/painting/library{
+	pixel_x = -32
+	},
+/turf/open/floor/wood,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"jm" = (
+/obj/structure/chair/comfy{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/floor/carpet/orange,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"jn" = (
+/obj/structure/table/glass,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet/orange,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"jo" = (
+/obj/structure/table/glass,
+/obj/item/ship_in_a_bottle{
+	name = "lavaboat in a bottle";
+	desc = "A tiny mysterious boat inside a bottle.";
+	pixel_x = -6;
+	anchored = 1;
+	anchored_tabletop_offset = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet/orange,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"jp" = (
+/obj/structure/chair/sofa/right{
+	dir = 8
+	},
+/obj/machinery/button/door/directional/north{
+	name = "window security button";
+	pixel_x = -4;
+	id = "interdynelibrary"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/carpet/orange,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"jq" = (
+/obj/machinery/photocopier,
+/obj/structure/sign/flag/interdyne/directional/north{
+	pixel_x = -13
+	},
+/turf/open/floor/wood,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"jr" = (
+/obj/structure/sign/poster/contraband/rush_propaganda/directional/north,
+/turf/open/floor/wood,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"js" = (
+/obj/structure/sign/painting/library{
+	pixel_x = 32
+	},
+/obj/machinery/modular_computer/preset/curator{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"jt" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/duct,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"ju" = (
+/obj/machinery/light/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/dark_red/half{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv)
+"jv" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"jw" = (
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/rstrm)
+"jx" = (
+/obj/machinery/duct,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/machinery/dryer{
+	pixel_y = 32;
+	pixel_x = -6
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/rstrm)
+"jy" = (
+/obj/structure/curtain/cloth/prison{
+	name = "privacy curtains";
+	color = "#FFFFFF"
+	},
+/obj/structure/drain,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
+/obj/effect/turf_decal/siding/dark/end{
+	dir = 1
+	},
+/obj/machinery/shower/directional/west{
+	desc = "A borrowed Nanotrasen Hygiene Division HS-452. It's one of the older 2550's series. A small sticker on the side insists it \"observes 2560 lead compliance!\"; passively replenishes itself with water when not in use."
+	},
+/turf/open/floor/iron/showroomfloor,
+/area/ruin/interdyne_planetary_base/serv/rstrm)
+"jz" = (
+/obj/structure/chair/plastic{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/sand/plating/volcanic,
+/turf/open/floor/plating/reinforced{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/interdyne_planetary_base/main)
+"jA" = (
+/obj/structure/table,
+/obj/effect/turf_decal/stripes/line,
+/obj/item/toy/tennis/red,
+/obj/effect/turf_decal/sand/plating/volcanic,
+/turf/open/floor/plating/reinforced{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/interdyne_planetary_base/main)
+"jB" = (
+/obj/structure/chair/plastic{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/sand/plating/volcanic,
+/turf/open/floor/plating/reinforced{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/interdyne_planetary_base/main)
+"jD" = (
+/turf/closed/wall/r_wall/syndicate,
+/area/ruin/interdyne_planetary_base/med/morgue)
+"jE" = (
+/obj/machinery/airalarm/directional/south{
+	req_access = list("syndicate")
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/med/pharm)
+"jF" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science/xeno)
+"jG" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science/xeno)
+"jH" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/west,
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science/xeno)
+"jI" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/west{
+	layer = 3.21
+	},
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science/xeno)
+"jJ" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/west,
+/obj/effect/turf_decal/tile/dark_red/half{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science/xeno)
+"jK" = (
+/obj/effect/turf_decal/tile/dark_red/half{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science/xeno)
+"jL" = (
+/obj/item/book/random{
+	pixel_y = 3
+	},
+/obj/item/book/random{
+	pixel_y = 3
+	},
+/obj/item/book/random{
+	pixel_y = 3
+	},
+/obj/structure/bookcase/random/reference,
+/obj/machinery/light/directional/west{
+	pixel_y = -16
+	},
+/turf/open/floor/wood,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"jM" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/carpet/orange,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"jN" = (
+/obj/structure/chair/sofa/left{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/carpet/orange,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"jO" = (
+/obj/structure/chair/sofa/middle{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/carpet/orange,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"jP" = (
+/obj/structure/chair/sofa/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/carpet/orange,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"jQ" = (
+/obj/machinery/libraryscanner,
+/turf/open/floor/wood,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"jR" = (
+/turf/open/floor/wood,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"jS" = (
+/obj/machinery/bookbinder,
+/turf/open/floor/wood,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"jT" = (
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv)
+"jU" = (
+/obj/structure/sink/directional/east,
+/obj/structure/mirror/directional/west,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/rstrm)
+"jV" = (
+/obj/machinery/duct,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/rstrm)
+"jW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
+/obj/machinery/light/small/directional/east,
+/obj/structure/towel_bin,
+/obj/structure/table{
+	layer = 2.79
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/turf/open/floor/iron/showroomfloor,
+/area/ruin/interdyne_planetary_base/serv/rstrm)
+"jX" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/sand/plating/volcanic,
+/turf/open/floor/plating/reinforced{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/interdyne_planetary_base/main)
+"jY" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/north,
+/obj/effect/turf_decal/tile/dark_red,
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science/xeno)
+"jZ" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east{
+	layer = 3.21
+	},
+/obj/structure/window/reinforced/survival_pod/spawner/directional/north,
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science/xeno)
+"ka" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/west{
+	layer = 3.21
+	},
+/obj/structure/window/reinforced/survival_pod/spawner/directional/north,
+/obj/effect/turf_decal/tile/dark_red,
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science/xeno)
+"kb" = (
+/obj/item/book/random{
+	pixel_y = 3
+	},
+/obj/item/book/random{
+	pixel_y = 3
+	},
+/obj/item/book/random{
+	pixel_y = 3
+	},
+/obj/structure/bookcase/random/reference,
+/obj/structure/sign/painting/library{
+	pixel_x = -32
+	},
+/turf/open/floor/wood,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"kc" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/turf/open/floor/wood,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"kd" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/turf/open/floor/wood,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"ke" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/floor/carpet/donk,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"kf" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/structure/table/wood,
+/obj/item/toy/cards/deck/cas{
+	pixel_y = 6
+	},
+/obj/machinery/light/directional/east{
+	pixel_y = 16
+	},
+/turf/open/floor/carpet/donk,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"kg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/duct,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/rstrm)
+"kh" = (
+/obj/structure/toilet{
+	dir = 8;
+	pixel_z = 8
+	},
+/obj/structure/curtain/cloth/prison{
+	name = "privacy curtains";
+	color = "#FFFFFF"
+	},
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/turf/open/floor/iron/showroomfloor,
+/area/ruin/interdyne_planetary_base/serv/rstrm)
+"ki" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/lattice/catwalk,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/interdyne_planetary_base/main)
+"kj" = (
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science/xeno)
+"kk" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science/xeno)
+"kl" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/west,
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science/xeno)
+"km" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science/xeno)
+"kn" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/west,
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science/xeno)
+"ko" = (
+/obj/effect/turf_decal/tile/dark_red{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science/xeno)
+"kp" = (
+/obj/item/book/random{
+	pixel_y = 3
+	},
+/obj/structure/bookcase/random/religion,
+/obj/item/book/random{
+	pixel_y = 3
+	},
+/turf/open/floor/wood,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"kq" = (
+/obj/structure/chair/office/light{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"kr" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/item/canvas/twentythree_twentythree,
+/obj/item/canvas/twentythree_twentythree,
+/obj/item/canvas/twentythree_nineteen,
+/obj/structure/easel,
+/turf/open/floor/wood,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"ks" = (
+/obj/machinery/button/door/directional/west{
+	name = "window security button";
+	id = "interdynescience";
+	req_access = list("syndicate")
+	},
+/obj/machinery/skill_station/plasmaglass,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/science)
+"kt" = (
+/obj/structure/table/wood,
+/obj/item/toy/crayon/spraycan{
+	pixel_x = 4;
+	pixel_y = 9
+	},
+/obj/item/toy/crayon/spraycan{
+	pixel_x = -5;
+	pixel_y = 9
+	},
+/obj/item/choice_beacon/music,
+/obj/item/choice_beacon/music,
+/obj/item/choice_beacon/music,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/airalarm/directional/south{
+	req_access = list("syndicate")
+	},
+/turf/open/floor/wood,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"ku" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/wood,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"kv" = (
+/obj/structure/chair/office/light{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/machinery/light_switch/directional/south,
+/turf/open/floor/carpet/donk,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"kw" = (
+/obj/machinery/computer/libraryconsole/bookmanagement{
+	dir = 8
+	},
+/obj/structure/table/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/structure/sign/painting/large/library{
+	dir = 4
+	},
+/turf/open/floor/carpet/donk,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"kx" = (
+/obj/machinery/light/directional/south,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/dark_red/half,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv)
+"ky" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/structure/sign/poster/contraband/jumbo_bar/directional/east,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"kA" = (
+/obj/machinery/duct,
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/rstrm)
+"kB" = (
+/obj/structure/toilet{
+	dir = 8;
+	pixel_z = 8
+	},
+/obj/structure/curtain/cloth/prison{
+	name = "privacy curtains";
+	color = "#FFFFFF"
+	},
+/obj/effect/turf_decal/siding/dark/end,
+/turf/open/floor/iron/showroomfloor,
+/area/ruin/interdyne_planetary_base/serv/rstrm)
+"kC" = (
+/obj/effect/baseturf_helper/reinforced_plating,
+/turf/closed/wall/r_wall/syndicate,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"kD" = (
+/turf/closed/wall/r_wall/syndicate,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"kE" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"kF" = (
+/obj/machinery/chem_mass_spec,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/med/pharm)
+"kG" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"kH" = (
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/door/airlock{
+	name = "Library"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/main/dorms/lib)
+"kI" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Service Wing"
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
+	cycle_id = "interdyne-service"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/duct,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"kJ" = (
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/serv)
+"kK" = (
+/obj/structure/bodycontainer/morgue,
+/obj/effect/decal/cleanable/blood/old,
+/obj/machinery/light/small/directional/west,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/med/morgue)
+"kL" = (
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/door/airlock{
+	name = "Unisex Restrooms"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/duct,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/rstrm)
+"kM" = (
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/door/airlock/maintenance/external,
+/obj/structure/fans/tiny,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv)
+"kN" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/serv)
+"kO" = (
+/obj/machinery/door/poddoor{
+	id = "interdyneservicehall"
+	},
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/serv)
+"kP" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/eng)
+"kQ" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/maintenance/external,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/eng)
+"kR" = (
+/obj/machinery/conveyor{
+	dir = 5;
+	id = "interdynedisp"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stamp/chameleon/broken,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"kS" = (
+/obj/structure/frame/machine{
+	icon_state = "box_1";
+	state = 2;
+	anchored = 1
+	},
+/obj/item/circuitboard/machine/recycler,
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "interdynedisp"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"kT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/conveyor{
+	dir = 6;
+	id = "interdynedisp"
+	},
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"kU" = (
+/obj/structure/dresser,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/smooth_large,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"kV" = (
+/obj/structure/bed,
+/obj/effect/spawner/random/bedsheet,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"kW" = (
+/obj/effect/spawner/random/bedsheet{
+	dir = 4
+	},
+/obj/structure/bed{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"kX" = (
+/obj/structure/dresser,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/iron/smooth_large,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"kY" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/sign/poster/contraband/cybersun_six_hundred/directional/west,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"kZ" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"la" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"lb" = (
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/public/glass{
+	name = "Service Wing"
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"ld" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/obj/machinery/duct,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"le" = (
+/obj/structure/reagent_dispensers/water_cooler/directional/north{
+	layer = 3.4
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"lf" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/structure/sign/poster/contraband/donut_corp/directional/north,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"lg" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/structure/sign/poster/contraband/donk_co/directional/north,
+/obj/machinery/light/directional/north,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"lh" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/duct,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"li" = (
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/public/glass{
+	name = "Service Wing"
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"lj" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/mapping_helpers/apc/syndicate_access,
+/obj/machinery/power/apc/auto_name/directional/north,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"lk" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/machinery/light/directional/north,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"ll" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"lm" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/machinery/light/directional/north,
+/obj/machinery/button/door/directional/north{
+	name = "window security button";
+	pixel_x = -4;
+	id = "interdyneservicehall"
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"ln" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/stripes/white/line{
+	dir = 4;
+	layer = 2.52
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"lo" = (
+/obj/item/pipe_dispenser,
+/obj/item/construction/rcd,
+/obj/item/t_scanner,
+/obj/machinery/light_switch/directional/west,
+/obj/structure/closet/crate/secure/engineering,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/eng)
+"lp" = (
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/eng)
+"lq" = (
+/obj/machinery/power/rtg/advanced,
+/obj/structure/cable,
+/obj/effect/turf_decal/stripes/white/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/bot/right,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/eng)
+"lr" = (
+/obj/structure/weightmachine,
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/turf/open/floor/eighties/red,
+/area/ruin/interdyne_planetary_base/cargo)
+"ls" = (
+/obj/machinery/power/rtg/advanced,
+/obj/structure/cable,
+/obj/effect/turf_decal/bot/left,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/eng)
+"lt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "interdynedisp"
+	},
+/obj/item/shard/plastitanium,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"lu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/frame/machine{
+	icon_state = "box_1";
+	state = 2;
+	anchored = 1
+	},
+/obj/item/circuitboard/machine/stacking_machine,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"lv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/conveyor{
+	id = "interdynedisp"
+	},
+/obj/structure/plasticflaps,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"lw" = (
+/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base{
+	dir = 4
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/iron/smooth_edge{
+	dir = 4
+	},
+/area/ruin/interdyne_planetary_base/main/dorms)
+"lx" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/airalarm/directional/east{
+	req_access = list("syndicate")
+	},
+/turf/open/floor/iron/smooth_edge{
+	dir = 8
+	},
+/area/ruin/interdyne_planetary_base/main/dorms)
+"ly" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/airalarm/directional/west{
+	req_access = list("syndicate")
+	},
+/turf/open/floor/iron/smooth_edge{
+	dir = 4
+	},
+/area/ruin/interdyne_planetary_base/main/dorms)
+"lz" = (
+/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base{
+	dir = 8
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/iron/smooth_edge{
+	dir = 8
+	},
+/area/ruin/interdyne_planetary_base/main/dorms)
+"lA" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/dark_red/half{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"lB" = (
+/obj/structure/cable,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"lC" = (
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"lD" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/dark_red/half{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv)
+"lE" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/dark_red/half{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv)
+"lF" = (
+/obj/effect/decal/cleanable/glass/plastitanium,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"lG" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/turf_decal/stripes/white/line{
+	dir = 4;
+	layer = 2.52
+	},
+/obj/machinery/duct,
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"lH" = (
+/obj/machinery/door/airlock/engineering{
+	name = "Engineering"
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/door/firedoor/heavy,
+/obj/machinery/duct,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/eng)
+"lI" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/machinery/duct,
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/eng)
+"lJ" = (
+/obj/machinery/power/rtg/advanced,
+/obj/machinery/power/terminal,
+/obj/structure/cable,
+/obj/effect/turf_decal/stripes/white/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/bot/right,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/eng)
+"lK" = (
+/obj/structure/cable,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/eng)
+"lL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "interdynedisp"
+	},
+/obj/item/serviette_used,
+/obj/item/shard/plastitanium,
+/obj/item/paper/valentine,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"lM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/conveyor_switch/oneway{
+	name = "disposal conveyor";
+	dir = 8;
+	id = "interdynedisp"
+	},
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"lN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/ash/large,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"lO" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/railing/corner,
+/obj/effect/turf_decal/sand/volcanic,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/interdyne_planetary_base/main)
+"lP" = (
+/obj/structure/railing{
+	dir = 9
+	},
+/obj/structure/lattice/catwalk,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"lQ" = (
+/obj/structure/closet/secure_closet/personal/wall{
+	icon_door = "locker_wall";
+	pixel_x = -30
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/obj/machinery/button/door/directional/south{
+	id = "interdynecabin2";
+	name = "door bolt control";
+	specialfunctions = 4;
+	normaldoorcontrol = 1
+	},
+/turf/open/floor/iron/smooth_large,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"lR" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/iron/smooth_large,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"lS" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/obj/structure/closet/secure_closet/personal/wall{
+	icon_door = "locker_wall";
+	pixel_x = 30
+	},
+/obj/machinery/button/door/directional/north{
+	id = "interdynecabin4";
+	name = "door bolt control";
+	specialfunctions = 4;
+	normaldoorcontrol = 1
+	},
+/turf/open/floor/iron/smooth_large,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"lT" = (
+/obj/machinery/light/directional/west,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"lU" = (
+/obj/machinery/power/rtg/advanced,
+/obj/structure/cable,
+/obj/structure/sign/poster/contraband/syndiemoth/directional/east,
+/obj/effect/turf_decal/bot/left,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/eng)
+"lV" = (
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/public/glass{
+	name = "Service Wing"
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"lW" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
+/obj/machinery/duct,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"lX" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/duct,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"lY" = (
+/obj/structure/disposalpipe/junction/flip{
+	dir = 4
+	},
+/obj/machinery/duct,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"lZ" = (
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/duct,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/public/glass{
+	name = "Service Wing"
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"ma" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/duct,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"mb" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/duct,
+/obj/machinery/firealarm/directional/south{
+	dir = 1
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"mc" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/duct,
+/obj/machinery/airalarm/directional/south{
+	req_access = list("syndicate")
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"md" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/duct,
+/obj/structure/disposalpipe/junction{
+	dir = 4
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"me" = (
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/stripes/white/line{
+	dir = 4;
+	layer = 2.52
+	},
+/obj/machinery/duct,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/serv)
+"mf" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/duct,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/light/directional/west,
+/obj/machinery/airalarm/directional/west{
+	req_access = list("syndicate")
+	},
+/obj/item/circuitboard/machine/smoke_machine,
+/obj/item/circuitboard/machine/cell_charger,
+/obj/item/circuitboard/machine/deep_fryer,
+/obj/item/circuitboard/machine/gibber,
+/obj/item/circuitboard/machine/processor,
+/obj/structure/closet/crate/secure/engineering,
+/obj/item/storage/box/stockparts/deluxe,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/eng)
+"mg" = (
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"mh" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/eng)
+"mi" = (
+/obj/machinery/power/smes/magical{
+	name = "bluespace-powered power storage unit";
+	desc = "A high-capacity superconducting magnetic energy storage (SMES) unit. Produces power through an unstable bluespace pocket.";
+	output_level = 200000
+	},
+/obj/structure/cable,
+/obj/effect/turf_decal/stripes/white/line{
+	dir = 5
+	},
+/obj/effect/turf_decal/bot/right,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/eng)
+"mj" = (
+/obj/effect/turf_decal/stripes/white/line,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/eng)
+"mk" = (
+/obj/structure/disposaloutlet{
+	dir = 1
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 2
+	},
+/obj/machinery/light_switch/directional/west,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"ml" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"mm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/trashcart/filled,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"mn" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/railing,
+/obj/effect/turf_decal/sand/volcanic,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/interdyne_planetary_base/main)
+"mo" = (
+/obj/structure/sign/poster/abductor/ayylian/directional/west,
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/sand/plating/volcanic,
+/turf/open/floor/plating/reinforced{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/interdyne_planetary_base/main)
+"mp" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/door/airlock{
+	name = "Cabin 2";
+	id_tag = "interdynecabin2"
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"mq" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/door/airlock{
+	name = "Cabin 1";
+	id_tag = "interdynecabin1"
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"ms" = (
+/obj/structure/chair/sofa/bench/right,
+/turf/open/floor/iron/dark/textured_corner,
+/area/ruin/interdyne_planetary_base/serv)
+"mt" = (
+/obj/structure/chair/sofa/bench/left,
+/turf/open/floor/iron/dark/small,
+/area/ruin/interdyne_planetary_base/serv)
+"mv" = (
+/obj/structure/table,
+/turf/open/floor/iron/dark/small,
+/area/ruin/interdyne_planetary_base/serv)
+"mw" = (
+/obj/machinery/light/directional/east,
+/obj/structure/table{
+	layer = 2.79
+	},
+/turf/open/floor/iron/dark/textured_corner{
+	dir = 8
+	},
+/area/ruin/interdyne_planetary_base/serv)
+"mx" = (
+/obj/effect/baseturf_helper/reinforced_plating,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"my" = (
+/obj/machinery/smartfridge/food,
+/obj/machinery/door/firedoor,
+/obj/structure/table/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "interdynekitchen"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
+/obj/structure/sign/poster/contraband/moffuchis_pizza/directional/east,
+/turf/open/floor/iron/terracotta,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"mz" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"mA" = (
+/obj/structure/cable,
+/obj/machinery/power/rtg/advanced,
+/obj/effect/turf_decal/stripes/white/line,
+/obj/machinery/light/directional/east,
+/obj/effect/turf_decal/bot/left,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/eng)
+"mB" = (
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"mC" = (
+/obj/machinery/door/firedoor,
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/survival_pod/left/directional/north,
+/obj/machinery/door/window/survival_pod/left/directional/south{
+	req_access = list("syndicate")
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"mD" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"mE" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/supply/hidden,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/stripes/white/line{
+	layer = 2.52
+	},
+/obj/machinery/duct,
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
+/obj/effect/mapping_helpers/apc/syndicate_access,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable,
+/obj/structure/closet/crate/radiation,
+/obj/item/clothing/suit/utility/radiation,
+/obj/item/clothing/head/utility/radiation,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/eng)
+"mF" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/stripes/white/line{
+	layer = 2.52
+	},
+/obj/machinery/duct,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/eng)
+"mG" = (
+/obj/machinery/duct,
+/obj/effect/turf_decal/stripes/white/corner{
+	dir = 8;
+	layer = 2.52
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/eng)
+"mH" = (
+/obj/machinery/door/airlock{
+	name = "Disposal Room"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/duct,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"mI" = (
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/obj/machinery/duct,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"mJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/duct,
+/obj/effect/turf_decal/arrows/white{
+	dir = 8
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"mK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/reagent_dispensers/plumbed{
+	name = "stationary very-high-capacity water tank";
+	desc = "A stationary, plumbed, very-high-capacity water tank.";
+	dir = 8;
+	prevent_rcd_deconstruction = 1;
+	tank_volume = 5000
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/eng/disp)
+"mL" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/effect/turf_decal/sand/volcanic,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/interdyne_planetary_base/main)
+"mM" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/door/airlock/hydroponics{
+	name = "Hydroponics"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/duct,
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"mN" = (
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/door/airlock/maintenance/external,
+/obj/structure/fans/tiny,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"mO" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"mP" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"mR" = (
+/obj/structure/table,
+/turf/open/floor/iron/dark,
+/area/ruin/interdyne_planetary_base/serv)
+"mS" = (
+/obj/effect/turf_decal/syndicateemblem/middle/left{
+	color = ""
+	},
+/obj/structure/table,
+/obj/item/serviette_pack,
+/turf/open/floor/iron/dark/small,
+/area/ruin/interdyne_planetary_base/serv)
+"mT" = (
+/turf/open/floor/iron/dark/small,
+/area/ruin/interdyne_planetary_base/serv)
+"mU" = (
+/obj/structure/chair{
+	dir = 1;
+	pixel_z = 8
+	},
+/turf/open/floor/iron/dark/small,
+/area/ruin/interdyne_planetary_base/serv)
+"mV" = (
+/obj/structure/chair{
+	dir = 1;
+	pixel_z = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/interdyne_planetary_base/serv)
+"mW" = (
+/obj/effect/turf_decal/siding/thinplating/dark/end{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters{
+	id = "interdynekitchen"
+	},
+/turf/open/floor/iron/terracotta,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"mX" = (
+/obj/machinery/light/directional/north,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/turf/open/floor/iron/terracotta,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"mY" = (
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/public/glass{
+	name = "Dormitories"
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"mZ" = (
+/obj/machinery/deepfryer,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"na" = (
+/obj/machinery/firealarm/directional/north,
+/obj/machinery/oven/range,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"nb" = (
+/obj/machinery/griddle,
+/obj/machinery/airalarm/directional/north{
+	req_access = list("syndicate")
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"nc" = (
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
+/obj/structure/chair/office/light{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 9
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/stone,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"nd" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/turf/open/floor/stone,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"ne" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/duct,
+/obj/effect/turf_decal/siding/dark{
+	dir = 5
+	},
+/turf/open/floor/stone,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"nf" = (
+/obj/machinery/light/directional/north,
+/obj/machinery/griddle,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"ng" = (
+/obj/machinery/atmospherics/components/binary/pump/on{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/west{
+	dir = 4
+	},
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng)
+"nh" = (
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng)
+"ni" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/binary/valve/digital/layer2,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng)
+"nj" = (
+/obj/structure/reagent_dispensers/fueltank,
+/obj/effect/turf_decal/box/white,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng)
+"nk" = (
+/obj/item/paper/guides/jobs/medical/morgue,
+/obj/structure/table/reinforced,
+/obj/item/storage/backpack/duffelbag/syndie/surgery,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/cup/bottle/formaldehyde{
+	pixel_x = 12;
+	pixel_y = 12
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/med/morgue)
+"nl" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/door/airlock{
+	name = "Cabin 3";
+	id_tag = "interdynecabin3"
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"nm" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/door/airlock{
+	name = "Cabin 4";
+	id_tag = "interdynecabin4"
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"nn" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"no" = (
+/obj/structure/chair/sofa/bench/left{
+	dir = 1;
+	pixel_z = 8
+	},
+/turf/open/floor/iron/dark/textured_corner{
+	dir = 4
+	},
+/area/ruin/interdyne_planetary_base/serv)
+"np" = (
+/obj/structure/chair/sofa/bench/right{
+	dir = 1;
+	pixel_z = 8
+	},
+/turf/open/floor/iron/dark/small,
+/area/ruin/interdyne_planetary_base/serv)
+"nq" = (
+/obj/structure/chair/stool/bar/directional/south,
+/turf/open/floor/iron/dark/small,
+/area/ruin/interdyne_planetary_base/serv)
+"nr" = (
+/obj/structure/chair/stool/bar/directional/south{
+	color = ""
+	},
+/turf/open/floor/iron/dark/small,
+/area/ruin/interdyne_planetary_base/serv)
+"ns" = (
+/obj/structure/chair/stool/bar/directional/south,
+/turf/open/floor/iron/dark/textured_corner{
+	dir = 1
+	},
+/area/ruin/interdyne_planetary_base/serv)
+"nt" = (
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 10
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters{
+	id = "interdynekitchen"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
+/turf/open/floor/iron/terracotta,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"nu" = (
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
+/turf/open/floor/iron/terracotta,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"nv" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/iron/terracotta,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"nw" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/iron/terracotta,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"nx" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 8
+	},
+/turf/open/floor/iron/terracotta,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"ny" = (
+/obj/effect/baseturf_helper/reinforced_plating,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/eng)
+"nz" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/turf/open/floor/stone,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"nA" = (
+/obj/machinery/vending/hydronutrients{
+	onstation = 0;
+	extended_inventory = 1
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"nB" = (
+/obj/machinery/smartfridge/food,
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"nC" = (
+/obj/structure/closet/crate/hydroponics,
+/obj/item/geneshears,
+/obj/item/gun/energy/floragun,
+/obj/item/plant_analyzer,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"nD" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/duct,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/turf/open/floor/stone,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"nE" = (
+/obj/machinery/seed_extractor,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"nF" = (
+/obj/machinery/atmospherics/components/trinary/mixer/airmix/inverse{
+	dir = 1
+	},
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng)
+"nG" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/green/visible,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng)
+"nI" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/green/visible,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng)
+"nJ" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/closed/wall/r_wall/syndicate,
+/area/ruin/interdyne_planetary_base/eng)
+"nK" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/sand/plating/volcanic,
+/obj/structure/sign/poster/official/there_is_no_gas_giant/directional/west,
+/turf/open/floor/plating/reinforced{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/interdyne_planetary_base/main)
+"nL" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/lattice/catwalk,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"nN" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/sign/poster/ripped/directional/west,
+/obj/machinery/cryopod{
+	dir = 4
+	},
+/obj/machinery/computer/cryopod/interdyne/directional/west{
+	req_one_access = list("syndicate")
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"nO" = (
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/effect/mapping_helpers/apc/syndicate_access,
+/obj/machinery/vending/clothing{
+	onstation = 0;
+	extended_inventory = 1
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"nP" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/serv/bar)
+"nQ" = (
+/obj/machinery/smartfridge/drinks,
+/obj/machinery/door/poddoor/shutters{
+	id = "interdynekitchen"
+	},
+/turf/open/floor/iron{
+	icon_state = "sepia";
+	base_icon_state = "sepia"
+	},
+/area/ruin/interdyne_planetary_base/serv/bar)
+"nR" = (
+/obj/machinery/door/firedoor,
+/obj/structure/pinata/syndie{
+	name = "syndicorgi pinata bar mascot";
+	desc = "A papier-mâché representation of a corgi that contains all sorts of bombastic treats. He doesn't move much but we still love him!";
+	layer = 3;
+	pixel_w = -8;
+	candy_options = list(/obj/item/food/bubblegum,/obj/item/food/candy,/obj/item/food/chocolatebar,/obj/item/food/gumball,/obj/item/food/lollipop)
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "interdynekitchen"
+	},
+/turf/open/floor/iron{
+	icon_state = "sepia";
+	base_icon_state = "sepia"
+	},
+/area/ruin/interdyne_planetary_base/serv/bar)
+"nS" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters{
+	id = "interdynekitchen"
+	},
+/turf/open/floor/iron{
+	icon_state = "sepia";
+	base_icon_state = "sepia"
+	},
+/area/ruin/interdyne_planetary_base/serv/bar)
+"nT" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/firedoor,
+/obj/item/reagent_containers/cup/glass/shaker{
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/cup/rag{
+	pixel_x = -4;
+	pixel_y = 3
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "interdynekitchen"
+	},
+/turf/open/floor/iron{
+	icon_state = "sepia";
+	base_icon_state = "sepia"
+	},
+/area/ruin/interdyne_planetary_base/serv/bar)
+"nU" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "interdynekitchen"
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/iron{
+	icon_state = "sepia";
+	base_icon_state = "sepia"
+	},
+/area/ruin/interdyne_planetary_base/serv/bar)
+"nV" = (
+/obj/machinery/door/firedoor,
+/obj/structure/table/reinforced,
+/obj/machinery/door/poddoor/shutters{
+	id = "interdynekitchen"
+	},
+/obj/effect/baseturf_helper/reinforced_plating,
+/turf/open/floor/iron/terracotta,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"nW" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/structure/sink/kitchen/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/turf/open/floor/iron/terracotta,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"nX" = (
+/obj/machinery/chem_dispenser/mutagensaltpeter,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"nY" = (
+/obj/machinery/vending/hydroseeds{
+	onstation = 0;
+	extended_inventory = 1
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"nZ" = (
+/obj/machinery/vending/dinnerware{
+	onstation = 0;
+	extended_inventory = 1
+	},
+/obj/machinery/duct,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"oa" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/iron/terracotta,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"ob" = (
+/obj/effect/baseturf_helper/reinforced_plating,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"oc" = (
+/obj/structure/table/reinforced,
+/obj/machinery/reagentgrinder,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"od" = (
+/obj/structure/table/reinforced,
+/obj/item/kitchen/rollingpin,
+/obj/item/reagent_containers/condiment/saltshaker,
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = 6
+	},
+/obj/item/reagent_containers/condiment/enzyme{
+	pixel_y = 8
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"oe" = (
+/obj/machinery/biogenerator,
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"of" = (
+/obj/structure/closet/crate/hydroponics,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"og" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/green/visible,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/portable_atmospherics/scrubber,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng)
+"oh" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
+/obj/machinery/portable_atmospherics/scrubber,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng)
+"oi" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
+/obj/machinery/portable_atmospherics/pump,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng)
+"oj" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/green/visible,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/secure_closet/ds2atmos{
+	anchored = 1;
+	anchorable = 0
+	},
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/eng)
+"ok" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/airalarm/directional/east{
+	req_access = list("syndicate")
+	},
+/turf/open/floor/iron/smooth_edge{
+	dir = 8
+	},
+/area/ruin/interdyne_planetary_base/main/dorms)
+"ol" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/airalarm/directional/west{
+	req_access = list("syndicate")
+	},
+/turf/open/floor/iron/smooth_edge{
+	dir = 4
+	},
+/area/ruin/interdyne_planetary_base/main/dorms)
+"om" = (
+/obj/machinery/light/directional/west,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/washing_machine{
+	pixel_x = -6;
+	pixel_y = 10;
+	layer = 2.91
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"on" = (
+/obj/structure/cable,
+/obj/machinery/vending/autodrobe{
+	onstation = 0;
+	extended_inventory = 1
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"op" = (
+/obj/effect/turf_decal/tile/bar{
+	dir = 8
+	},
+/turf/open/floor/iron{
+	icon_state = "sepia";
+	base_icon_state = "sepia"
+	},
+/area/ruin/interdyne_planetary_base/serv/bar)
+"oq" = (
+/obj/effect/turf_decal/tile/bar{
+	dir = 4
+	},
+/turf/open/floor/iron{
+	icon_state = "sepia";
+	base_icon_state = "sepia"
+	},
+/area/ruin/interdyne_planetary_base/serv/bar)
+"or" = (
+/obj/machinery/chem_master/condimaster,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"os" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/terracotta,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"ot" = (
+/obj/structure/rack,
+/obj/item/cultivator,
+/obj/item/shovel/spade,
+/obj/item/hatchet,
+/obj/item/secateurs,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"ou" = (
+/obj/structure/sink/directional/west,
+/obj/machinery/light_switch/directional/east,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"ov" = (
+/obj/structure/table/reinforced,
+/obj/item/book/manual/wiki/cooking_to_serve_man{
+	pixel_y = 2
+	},
+/obj/machinery/duct,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"ow" = (
+/obj/effect/baseturf_helper/reinforced_plating,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/serv/bar)
+"ox" = (
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/turf/open/floor/stone,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"oy" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/turf/open/floor/stone,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"oz" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/turf/open/floor/stone,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"oA" = (
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 1
+	},
+/obj/machinery/duct,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/turf/open/floor/stone,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"oB" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/bag/tray,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"oC" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
+	dir = 1
+	},
+/turf/open/floor/engine/o2,
+/area/ruin/interdyne_planetary_base/eng)
+"oD" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/north,
+/turf/open/floor/engine/o2,
+/area/ruin/interdyne_planetary_base/eng)
+"oE" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/west,
+/obj/structure/window/reinforced/survival_pod/spawner/directional/north,
+/turf/open/floor/engine/n2,
+/area/ruin/interdyne_planetary_base/eng)
+"oF" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
+	dir = 1
+	},
+/turf/open/floor/engine/n2,
+/area/ruin/interdyne_planetary_base/eng)
+"oG" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/sign/poster/contraband/blasto_detergent/directional/west,
+/obj/structure/closet/crate/trashcart/laundry,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"oH" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/random/food_or_drink/donkpockets{
+	pixel_x = 10;
+	pixel_y = 7
+	},
+/obj/item/storage/box/donkpockets{
+	pixel_x = -7;
+	pixel_y = 5
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"oI" = (
+/obj/machinery/quantumpad{
+	name = "quantum pad to DS-2";
+	layer = 2.8;
+	map_pad_id = "interdyne";
+	map_pad_link_id = "ds2"
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/cargo)
+"oJ" = (
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/obj/effect/turf_decal/tile/bar{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/iron{
+	icon_state = "sepia";
+	base_icon_state = "sepia"
+	},
+/area/ruin/interdyne_planetary_base/serv/bar)
+"oK" = (
+/obj/effect/turf_decal/tile/bar{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/iron{
+	icon_state = "sepia";
+	base_icon_state = "sepia"
+	},
+/area/ruin/interdyne_planetary_base/serv/bar)
+"oL" = (
+/obj/effect/turf_decal/tile/bar{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/iron{
+	icon_state = "sepia";
+	base_icon_state = "sepia"
+	},
+/area/ruin/interdyne_planetary_base/serv/bar)
+"oM" = (
+/obj/effect/turf_decal/tile/bar{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/iron{
+	icon_state = "sepia";
+	base_icon_state = "sepia"
+	},
+/area/ruin/interdyne_planetary_base/serv/bar)
+"oN" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/iron{
+	icon_state = "sepia";
+	base_icon_state = "sepia"
+	},
+/area/ruin/interdyne_planetary_base/serv/bar)
+"oO" = (
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_z = 6;
+	pixel_w = -3
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"oP" = (
+/obj/structure/disposalpipe/junction{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
+/turf/open/floor/iron/terracotta,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"oQ" = (
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/machinery/duct,
+/turf/open/floor/iron/terracotta,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"oR" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/machinery/duct,
+/turf/open/floor/iron/terracotta,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"oS" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/machinery/duct,
+/turf/open/floor/iron/terracotta,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"oT" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark/corner{
+	dir = 1
+	},
+/obj/machinery/duct,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/terracotta,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"oU" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/window/survival_pod/left/directional/east{
+	req_access = list("syndicate")
+	},
+/obj/machinery/door/window/survival_pod/left/directional/west{
+	req_access = list("syndicate")
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"oV" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/duct,
+/obj/effect/turf_decal/siding/dark{
+	dir = 10
+	},
+/turf/open/floor/stone,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"oW" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/duct,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/stone,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"oX" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/duct,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/turf/open/floor/stone,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"oY" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/duct,
+/obj/effect/turf_decal/siding/dark{
+	dir = 6
+	},
+/obj/structure/disposalpipe/junction/yjunction{
+	dir = 1
+	},
+/turf/open/floor/stone,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"oZ" = (
+/obj/structure/reagent_dispensers/watertank/high,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"pa" = (
+/obj/machinery/atmospherics/miner/oxygen,
+/turf/open/floor/engine/o2,
+/area/ruin/interdyne_planetary_base/eng)
+"pb" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/east,
+/obj/effect/turf_decal/vg_decals/atmos/oxygen{
+	dir = 1
+	},
+/turf/open/floor/engine/o2,
+/area/ruin/interdyne_planetary_base/eng)
+"pc" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/west,
+/obj/effect/turf_decal/vg_decals/atmos/nitrogen{
+	dir = 1
+	},
+/turf/open/floor/engine/n2,
+/area/ruin/interdyne_planetary_base/eng)
+"pd" = (
+/obj/machinery/atmospherics/miner/nitrogen,
+/turf/open/floor/engine/n2,
+/area/ruin/interdyne_planetary_base/eng)
+"pe" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/blood/gibs/old,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/med/morgue)
+"pf" = (
+/obj/machinery/button/door/directional/west{
+	name = "window security button";
+	id = "interdynedorms";
+	req_access = list("syndicate")
+	},
+/obj/structure/table/rolling,
+/obj/structure/bedsheetbin,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"pg" = (
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"ph" = (
+/obj/machinery/vending/dorms{
+	onstation = 0
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"pi" = (
+/obj/effect/turf_decal/tile/dark_red/half,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"pj" = (
+/obj/machinery/door/airlock/grunge{
+	name = "Bar"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"pk" = (
+/obj/machinery/door/airlock/grunge{
+	name = "Kitchen"
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/duct,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"pl" = (
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/hydr)
+"pm" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/sand/plating/volcanic,
+/turf/open/floor/plating/reinforced{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/interdyne_planetary_base/main)
+"pn" = (
+/obj/structure/table,
+/obj/machinery/chem_dispenser/drinks/fullupgrade{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/bar)
+"po" = (
+/obj/structure/table,
+/obj/item/storage/box/drinkingglasses{
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/cup/glass/drinkingglass{
+	pixel_y = 8
+	},
+/obj/machinery/airalarm/directional/south{
+	req_access = list("syndicate")
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/bar)
+"pp" = (
+/obj/structure/table,
+/obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/bar)
+"pq" = (
+/obj/machinery/vending/boozeomat/syndicate_access{
+	onstation = 0;
+	extended_inventory = 1
+	},
+/obj/machinery/light/directional/south,
+/obj/machinery/light_switch/directional/east,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/bar)
+"pr" = (
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/obj/machinery/light_switch/directional/west,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"ps" = (
+/obj/structure/closet/secure_closet/freezer/meat{
+	anchored = 1;
+	req_access = list("syndicate")
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"pt" = (
+/obj/machinery/light/directional/south,
+/obj/structure/closet/secure_closet/freezer/kitchen{
+	anchored = 1;
+	req_access = list("syndicate")
+	},
+/obj/item/reagent_containers/condiment/soymilk,
+/obj/item/reagent_containers/condiment/milk,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"pu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/bodycontainer/crematorium{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/med/morgue)
+"pv" = (
+/turf/closed/wall/r_wall/syndicate,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"pw" = (
+/obj/machinery/door/poddoor{
+	id = "interdynedorms"
+	},
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/main/dorms)
+"px" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/medipens{
+	pixel_x = 4;
+	pixel_y = 13
+	},
+/turf/open/floor/iron/white/textured_large,
+/area/ruin/interdyne_planetary_base/med)
+"py" = (
+/obj/machinery/processor,
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/interdyne_planetary_base/serv/kitchen)
+"pz" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave{
 	pixel_y = 9
