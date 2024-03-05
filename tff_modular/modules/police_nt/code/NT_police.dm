@@ -1,119 +1,5 @@
-#define NT_POLICE_AMT "amount"
-#define NT_POLICE_VOTES "votes"
-#define NT_POLICE_DECLARED "declared"
-#define EMERGENCY_RESPONSE_POLICE "WOOP WOOP THAT'S THE SOUND OF THE POLICE"
-
-GLOBAL_LIST_INIT(NT_police_responder_info, list(
-	"NT_police_regular" = list(
-		NT_POLICE_AMT = 0,
-		NT_POLICE_VOTES = 0,
-		NT_POLICE_DECLARED = FALSE
-	),
-	"NT_police_swat" = list(
-		NT_POLICE_AMT = 0,
-		NT_POLICE_VOTES = 0,
-		NT_POLICE_DECLARED = FALSE
-	),
-	"NT_police_guard" = list(
-		NT_POLICE_AMT = 0,
-		NT_POLICE_VOTES = 0,
-		NT_POLICE_DECLARED = FALSE
-	)
-))
-
-//GLOBAL_VAR(caller_of_911)
-//GLOBAL_VAR(call_911_msg)
-//GLOBAL_LIST_INIT(emergency_responders, list())
-
-/obj/machinery/computer/comntr/proc/call_911(ordered_team)
-	var/team_size
-	var/announcement_message = "teshari dance"
-	var/announcer = "NT Central Command"
-	var/poll_question = "raize youre tails!"
-	var/list_to_use = "NT_police_regular"
-	switch(ordered_team)
-		if(EMERGENCY_RESPONSE_POLICE)
-			team_size = 3
-			announcement_message = "Attention, personnel of [station_name()]. \n NT Internal Security on the line. We've received a request from your corporate consultant, and we're sending a unit shortly. \n In case of any kind of escalation or injury to an Internal Security officers, a tactical squad will be dispatched to handle this issue. \n\n Stay safe, Glory to Nanotrasen."
-			announcer = "NT Central Command"
-			poll_question = "The station has called for the NT Internal Security. Will you respond?"
-	priority_announce(announcement_message, announcer, 'sound/effects/families_police.ogg', has_important_message=TRUE, color_override = "yellow")
-	var/list/candidates = SSpolling.poll_ghost_candidates(
-		poll_question,
-		check_jobban = ROLE_DEATHSQUAD,
-		pic_source = /obj/item/solfed_reporter,
-		role_name_text = "NT Internal Security",
-	)
-
-	if(length(candidates))
-		//Pick the (un)lucky players
-		var/agents_number = min(team_size, candidates.len)
-
-		var/list/spawnpoints = GLOB.emergencyresponseteamspawn
-		var/index = 0
-		GLOB.NT_police_responder_info[list_to_use][NT_POLICE_AMT] = agents_number
-		while(agents_number && candidates.len)
-			var/spawn_loc = spawnpoints[index + 1]
-			//loop through spawnpoints one at a time
-			index = (index + 1) % spawnpoints.len
-			var/mob/dead/observer/chosen_candidate = pick(candidates)
-			candidates -= chosen_candidate
-			if(!chosen_candidate.key)
-				continue
-
-			//Spawn the body
-			var/mob/living/carbon/human/cop = new(spawn_loc)
-			chosen_candidate.client.prefs.safe_transfer_prefs_to(cop, is_antag = TRUE)
-			cop.key = chosen_candidate.key
-
-			//Give antag datum
-			var/datum/antagonist/ert/NT_police/ert_antag = new /datum/antagonist/ert/NT_police/regular
-
-			cop.mind.add_antag_datum(ert_antag)
-			cop.mind.set_assigned_role(SSjob.GetJobType(ert_antag.ert_job_path))
-			cop.grant_language(/datum/language/common, source = LANGUAGE_SPAWNER)
-			//Logging and cleanup
-			log_game("[key_name(cop)] has been selected as an [ert_antag.name]")
-			agents_number--
-	GLOB.cops_arrived = TRUE
-	return TRUE
-
-/obj/machinery/computer/comntr/proc/calling_911(mob/user, called_group_pretty = "EMTs", called_group = EMERGENCY_RESPONSE_POLICE)
-	message_admins("[ADMIN_LOOKUPFLW(user)] is considering calling the NT Internal Security [called_group_pretty].")
-	var/call_911_msg_are_you_sure = "Are you sure you want to call NT Internal Security"
-	if(tgui_input_list(user, call_911_msg_are_you_sure, "Call the POLICE?!", list("Yes", "No")) != "Yes")
-		return
-	var/police_responsability_chat = "You SHOULD call Marshals for:\n\
-		Security ignoring Command, Security violating civil rights, Security engaging in Mutiny, \
-		General Violation of Sol Federation Citizen Rights by Command/Security, etc.\n\
-		You SHOULD NOT call Marshals for:\n\
-		Corporate affairs, manhunts, settling arguments, etc.\n\
-		Are you sure you want to call Marshals?"
-	message_admins("[ADMIN_LOOKUPFLW(user)] has acknowledged the faulty 911 call consequences.")
-	if(tgui_input_list(user, police_responsability_chat, "Call [called_group_pretty]", list("Yes", "No")) != "Yes")
-		return
-	message_admins("[ADMIN_LOOKUPFLW(user)] has read and acknowleged the recommendations for what to call and not call [called_group_pretty] for.")
-	var/reason_to_call_911 = stripped_input(user, "What do you wish to call 911 [called_group_pretty] for?", "Call 911", null, MAX_MESSAGE_LEN)
-	if(!reason_to_call_911)
-		to_chat(user, "You decide not to call 911.")
-		return
-	GLOB.cops_arrived = TRUE
-	GLOB.call_911_msg = reason_to_call_911
-	GLOB.caller_of_911 = user.name
-	log_game("[key_name(user)] has called the Sol Federation [called_group_pretty] for the following reason:\n[GLOB.call_911_msg]")
-	message_admins("[ADMIN_LOOKUPFLW(user)] has called the Sol Federation [called_group_pretty] for the following reason:\n[GLOB.call_911_msg]")
-	deadchat_broadcast(" has called the Sol Federation [called_group_pretty] for the following reason:\n[GLOB.call_911_msg]", span_name("[user.real_name]"), user, message_type = DEADCHAT_ANNOUNCEMENT)
-
-	call_911(called_group)
-
-	to_chat(user, span_notice("Authorization confirmed. 911 call dispatched to the Sol Federation [called_group_pretty]."))
-	playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
-
-
-
-
 /datum/antagonist/ert/NT_police
-	name = "911 Responder"
+	name = "NTIS Unit"
 	antag_hud_name = "hud_spacecop"
 	suicide_cry = "FOR THE TRASEN!!"
 
@@ -127,7 +13,6 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 		H.infodisplay += giving_wanted_lvl
 		H.mymob.client.screen += giving_wanted_lvl
 
-
 /datum/antagonist/ert/NT_police/remove_innate_effects(mob/living/mob_override)
 	var/mob/living/M = mob_override || owner.current
 	if(M.hud_used)
@@ -136,26 +21,8 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 		QDEL_NULL(H.wanted_lvl)
 	..()
 
-/datum/antagonist/ert/NT_police/greet()
-	var/missiondesc =  ""
-	missiondesc += "<B><font size=5 color=red>You are NOT a Nanotrasen Employee. You work for the Sol Federation as a [role].</font></B>"
-	missiondesc += "<BR>You are responding to emergency calls from the station for immediate SolFed assistance!\n"
-	missiondesc += "<BR>Use the Cell Phone in your backpack to confer with fellow first responders!\n"
-	missiondesc += "<BR><B>911 Transcript is as follows</B>:"
-	missiondesc += "<BR> [GLOB.call_911_msg]"
-	missiondesc += "<BR><B>Your Mission</B>:"
-	missiondesc += "<BR> <B>1.</B> Contact [GLOB.caller_of_911] and assist them in resolving the matter."
-	missiondesc += "<BR> <B>2.</B> Protect, ensure, and uphold the rights of Sol Federation citizens on board [station_name()]."
-	missiondesc += "<BR> <B>3.</B> If you believe yourself to be in danger, unable to do the job assigned to you due to a dangerous situation, \
-		or that the 911 call was made in error, you can use the S.W.A.T. Backup Caller in your backpack to vote on calling a S.W.A.T. team to assist in the situation."
-	missiondesc += "<BR> <B>4.</B> When you have finished with your work on the station, use the Beamout Tool in your backpack to beam out yourself \
-		along with anyone you are pulling."
-	to_chat(owner, missiondesc)
-	var/mob/living/greeted_mob = owner.current
-	greeted_mob.playsound_local(greeted_mob, 'sound/effects/families_police.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
-
 /datum/outfit/NT_police
-	name = "911 Response: Base"
+	name = "NT Internal Security: Base"
 	back = /obj/item/storage/backpack/duffelbag/cops
 	backpack_contents = list(/obj/item/solfed_reporter/swat_caller = 1)
 
@@ -167,7 +34,7 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 
 	var/obj/item/card/id/ID_to_give = human_to_equip.wear_id
 	if(istype(ID_to_give))
-		shuffle_inplace(ID_to_give.access) // Shuffle access list to make NTNet passkeys less predictable
+		shuffle_inplace(ID_to_give.access)
 		ID_to_give.registered_name = human_to_equip.real_name
 		if(human_to_equip.age)
 			ID_to_give.registered_age = human_to_equip.age
@@ -180,12 +47,31 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 */
 
 /datum/antagonist/ert/NT_police/regular
-	name = "Marshal"
-	role = "Marshal"
+	name = "NTIS Unit"
+	role = "NTIS Unit"
 	outfit = /datum/outfit/NT_police/regular
 
+/datum/antagonist/ert/NT_police/greet()
+	var/missiondesc =  ""
+	missiondesc += "<B><font size=5 color=red>You are NOT a Nanotrasen Employee. You work for the Sol Federation as a [role].</font></B>"
+	missiondesc += "<BR>You are responding to emergency calls from the station for immediate SolFed assistance!\n"
+	missiondesc += "<BR>Use the Cell Phone in your backpack to confer with fellow first responders!\n"
+	missiondesc += "<BR><B>NTIS Transcript is as follows</B>:"
+	missiondesc += "<BR> [GLOB.call_NTIS_msg]"
+	missiondesc += "<BR><B>Your Mission</B>:"
+	missiondesc += "<BR> <B>1.</B> Contact [GLOB.caller_of_NTIS] and assist them in resolving the matter."
+	missiondesc += "<BR> <B>2.</B> Protect, ensure, and uphold the rights of Sol Federation citizens on board [station_name()]."
+	missiondesc += "<BR> <B>3.</B> If you believe yourself to be in danger, unable to do the job assigned to you due to a dangerous situation, \
+		or that the NTIS call was made in error, you can use the S.W.A.T. Backup Caller in your backpack to vote on calling a S.W.A.T. team to assist in the situation."
+	missiondesc += "<BR> <B>4.</B> When you have finished with your work on the station, use the Beamout Tool in your backpack to beam out yourself \
+		along with anyone you are pulling."
+	to_chat(owner, missiondesc)
+	var/mob/living/greeted_mob = owner.current
+	greeted_mob.playsound_local(greeted_mob, 'sound/effects/families_police.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
+
+
 /datum/outfit/NT_police/regular
-	name = "911 Response: Marshal"
+	name = "NTIS Unit: regular"
 
 	back = /obj/item/storage/backpack/security
 	gloves = /obj/item/clothing/gloves/tackler/combat
@@ -213,14 +99,14 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 
 
 /datum/antagonist/ert/NT_police/condom_destroyer
-	name = "Armed S.W.A.T. Officer"
+	name = "NTIS S.W.A.T. Officer"
 	role = "S.W.A.T. Officer"
 	outfit = /datum/outfit/NT_police/condom_destroyer
 
 /datum/antagonist/ert/NT_police/condom_destroyer/greet()
 	var/missiondesc =  ""
 	missiondesc += "<B><font size=5 color=red>You are NOT a Nanotrasen Employee. You work for the Sol Federation as a [role].</font></B>"
-	missiondesc += "<BR>You are here to backup the 911 first responders, as they have reported for your assistance..\n"
+	missiondesc += "<BR>You are here to backup the NTIS first responders, as they have reported for your assistance..\n"
 	missiondesc += "<BR><B>Your Mission</B>:"
 	missiondesc += "<BR> <B>1.</B> Contact the first responders using the Cell Phone in your backpack to figure out the situation."
 	missiondesc += "<BR> <B>2.</B> Arrest anyone who interferes the work of the first responders."
@@ -234,7 +120,7 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 	greeted_mob.playsound_local(greeted_mob, 'sound/effects/families_police.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 
 /datum/outfit/NT_police/condom_destroyer
-	name = "911 Response: Armed S.W.A.T. Officer"
+	name = "NTIS S.W.A.T. Officer"
 	back = /obj/item/storage/backpack
 	uniform = /obj/item/clothing/under/sol_peacekeeper
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -259,7 +145,7 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 	id_trim = /datum/id_trim/solfed
 
 /datum/antagonist/ert/NT_police/treason_destroyer
-	name = "Sol Federation Military"
+	name = "NTIS Military"
 	role = "Private"
 	outfit = /datum/outfit/NT_police/treason_destroyer
 
@@ -278,7 +164,7 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 	greeted_mob.playsound_local(greeted_mob, 'sound/effects/families_police.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 
 /datum/outfit/NT_police/treason_destroyer
-	name = "911 Response: SolFed Military"
+	name = "NTIS Military"
 
 	uniform = /obj/item/clothing/under/sol_peacekeeper
 	head = /obj/item/clothing/head/helmet/sf_sacrificial
@@ -316,7 +202,7 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 	/// What antagonist should be required to use the reporter?
 	var/type_to_check = /datum/antagonist/ert/NT_police
 	/// What table should we be incrementing votes in and checking against in the solfed responders global?
-	var/type_of_callers = "911_responders"
+	var/type_of_callers = "NTIS_responders"
 	/// What source should be supplied for the announcement message?
 	var/announcement_source = "Sol Federation S.W.A.T."
 	/// Should the station be issued a fine when the vote completes?
@@ -330,7 +216,7 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 	/// What table should be be incrementing amount in in the solfed responders global?
 	var/summoned_type = "swat"
 	/// What name and ID should be on the cell phone given to the squad members?
-	var/cell_phone_number = "911"
+	var/cell_phone_number = "NTIS"
 	/// What jobban should we be checking for the ghost polling?
 	var/jobban_to_check = ROLE_DEATHSQUAD
 	/// What announcement message should be displayed if the vote succeeds?
@@ -420,20 +306,20 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 	name = "S.W.A.T. backup caller"
 	desc = "Use this in-hand to vote to call SolFed S.W.A.T. backup. If half your team votes for it, SWAT will be dispatched."
 	type_to_check = /datum/antagonist/ert/NT_police
-	type_of_callers = "911_responders"
+	type_of_callers = "NTIS_responders"
 	announcement_source = "Sol Federation S.W.A.T."
 	fine_station = TRUE
-	ghost_poll_msg = "The Sol-Fed 911 services have requested a S.W.A.T. backup. Do you wish to become a S.W.A.T. member?"
+	ghost_poll_msg = "The Sol-Fed NTIS services have requested a S.W.A.T. backup. Do you wish to become a S.W.A.T. member?"
 	amount_to_summon = 6
 	type_to_summon = /datum/antagonist/ert/NT_police/condom_destroyer
 	summoned_type = "swat"
 	announcement_message = "Hello, crewmembers. Our emergency services have requested S.W.A.T. backup, either for assistance doing their job due to crew \
-		impediment, or due to a fraudulent 911 call. We have billed the station $20,000 for this, to cover the expenses of flying a second emergency response to \
+		impediment, or due to a fraudulent NTIS call. We have billed the station $20,000 for this, to cover the expenses of flying a second emergency response to \
 		your station. Please comply with all requests by said S.W.A.T. members."
 
 /obj/item/solfed_reporter/swat_caller/questions(mob/user)
 	var/question = "Does the situation require additional S.W.A.T. backup, involve the station impeding you from doing your job, \
-		or involve the station making a fraudulent 911 call and needing an arrest made on the caller?"
+		or involve the station making a fraudulent NTIS call and needing an arrest made on the caller?"
 	if(tgui_input_list(user, question, "S.W.A.T. Backup Caller", list("Yes", "No")) != "Yes")
 		to_chat(user, "You decide not to request S.W.A.T. backup.")
 		return FALSE
@@ -520,4 +406,4 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 	else
 		user.balloon_alert(user, "beam-out cancelled")
 */
-#undef EMERGENCY_RESPONSE_POLICE
+
