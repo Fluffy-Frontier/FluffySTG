@@ -366,11 +366,11 @@
 /area/ruin/interdyne_planetary_base/main)
 "bX" = (
 /obj/structure/railing{
-	dir = 5
+	dir = 4
 	},
-/obj/structure/lattice/catwalk/mining,
 /obj/effect/turf_decal/sand/plating/volcanic,
-/turf/open/lava/smooth/lava_land_surface,
+/obj/structure/marker_beacon/burgundy,
+/turf/open/floor/engine/hull/reinforced/lavaland,
 /area/lavaland/surface/outdoors)
 "cc" = (
 /obj/effect/turf_decal/trimline/dark/filled/corner,
@@ -1678,8 +1678,15 @@
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
 "jT" = (
-/obj/structure/marker_beacon/burgundy,
 /obj/effect/turf_decal/sand/plating/volcanic,
+/obj/docking_port/stationary{
+	height = 6;
+	name = "Interdyne Hangar";
+	width = 9;
+	shuttle_id = "interdyne_cargo_home";
+	roundstart_template = /datum/map_template/shuttle/ruin/interdyne_cargo;
+	dwidth = 2
+	},
 /turf/open/floor/engine/hull/reinforced/lavaland,
 /area/lavaland/surface/outdoors)
 "jX" = (
@@ -2380,6 +2387,14 @@
 /obj/structure/bookcase/random/adult,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
+"oB" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/turf_decal/sand/plating/volcanic,
+/obj/structure/marker_beacon/burgundy,
+/turf/open/floor/engine/hull/reinforced/lavaland,
+/area/lavaland/surface/outdoors)
 "oC" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/rack/shelf,
@@ -2498,9 +2513,6 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
-/obj/structure/railing/corner{
-	dir = 1
-	},
 /obj/structure/lattice/catwalk/mining,
 /obj/effect/turf_decal/sand/plating/volcanic,
 /turf/open/lava/smooth/lava_land_surface,
@@ -2596,9 +2608,6 @@
 /area/ruin/interdyne_planetary_base/serv)
 "pN" = (
 /obj/structure/railing,
-/obj/structure/railing{
-	dir = 1
-	},
 /obj/structure/lattice/catwalk/mining,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -3008,8 +3017,12 @@
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv)
 "sf" = (
-/obj/structure/marker_beacon/burgundy,
-/turf/open/floor/engine/hull/reinforced/lavaland,
+/obj/structure/railing{
+	dir = 5
+	},
+/obj/structure/lattice/catwalk/mining,
+/obj/effect/turf_decal/sand/plating/volcanic,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "sg" = (
 /obj/effect/turf_decal/tile/dark/full,
@@ -3718,9 +3731,6 @@
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/med)
 "xB" = (
-/obj/structure/railing/corner{
-	dir = 4
-	},
 /obj/structure/railing/corner,
 /obj/structure/lattice/catwalk/mining,
 /turf/open/lava/smooth/lava_land_surface,
@@ -4067,13 +4077,17 @@
 /area/ruin/interdyne_planetary_base/main)
 "zr" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/structure/railing,
 /obj/structure/railing{
 	dir = 9
 	},
 /obj/effect/turf_decal/sand/plating/volcanic,
+/obj/machinery/computer/shuttle/interdyne_cargo{
+	dir = 4;
+	icon_screen = "syndishuttle";
+	icon_keyboard = "syndie_key"
+	},
 /turf/open/floor/engine/hull/reinforced/lavaland,
-/area/lavaland/surface/outdoors)
+/area/ruin/interdyne_planetary_base)
 "zv" = (
 /obj/machinery/suit_storage_unit/mining,
 /obj/structure/marker_beacon/burgundy,
@@ -4174,6 +4188,13 @@
 /obj/effect/turf_decal/tile/dark/full,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
+"Ak" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/marker_beacon/burgundy,
+/turf/open/floor/engine/hull/reinforced/lavaland,
+/area/lavaland/surface/outdoors)
 "An" = (
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 4
@@ -4416,7 +4437,7 @@
 /turf/open/floor/plating/reinforced,
 /area/ruin/interdyne_planetary_base/main)
 "BZ" = (
-/obj/structure/lattice/catwalk/mining,
+/obj/effect/turf_decal/sand/plating/volcanic,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Cb" = (
@@ -4711,9 +4732,10 @@
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
 "DW" = (
-/obj/structure/lattice/catwalk/mining,
+/obj/structure/railing,
 /obj/effect/turf_decal/sand/plating/volcanic,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/obj/structure/marker_beacon/burgundy,
+/turf/open/floor/engine/hull/reinforced/lavaland,
 /area/lavaland/surface/outdoors)
 "DY" = (
 /obj/effect/turf_decal/caution/red,
@@ -4721,9 +4743,6 @@
 	dir = 1
 	},
 /obj/effect/decal/remains/human,
-/obj/structure/railing/corner{
-	dir = 8
-	},
 /obj/structure/railing/corner{
 	dir = 1
 	},
@@ -4761,6 +4780,14 @@
 /obj/effect/turf_decal/stripes/red/corner,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"Ed" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/turf_decal/sand/plating/volcanic,
+/obj/structure/marker_beacon/burgundy,
+/turf/open/floor/engine/hull/reinforced/lavaland,
+/area/lavaland/surface/outdoors)
 "Ef" = (
 /obj/structure/tank_dispenser,
 /obj/effect/turf_decal/tile/dark/full,
@@ -4799,8 +4826,8 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/structure/lattice/catwalk/mining,
-/turf/open/lava/smooth/lava_land_surface,
+/obj/structure/marker_beacon/burgundy,
+/turf/open/floor/engine/hull/reinforced/lavaland,
 /area/lavaland/surface/outdoors)
 "EH" = (
 /obj/machinery/autolathe/hacked{
@@ -5390,11 +5417,11 @@
 /turf/open/floor/plating/reinforced,
 /area/ruin/interdyne_planetary_base/med)
 "HQ" = (
-/obj/structure/lattice/catwalk/mining,
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/obj/structure/marker_beacon/burgundy,
+/turf/open/floor/engine/hull/reinforced/lavaland,
 /area/lavaland/surface/outdoors)
 "Ia" = (
 /obj/structure/disposalpipe/segment{
@@ -6176,12 +6203,11 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "MQ" = (
+/obj/structure/lattice/catwalk/mining,
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/structure/lattice/catwalk/mining,
-/obj/effect/turf_decal/sand/plating/volcanic,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "MT" = (
 /obj/machinery/power/smes/magical{
@@ -7533,6 +7559,11 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
+"Va" = (
+/obj/structure/railing,
+/obj/structure/marker_beacon/burgundy,
+/turf/open/floor/engine/hull/reinforced/lavaland,
+/area/lavaland/surface/outdoors)
 "Vc" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -8902,7 +8933,7 @@ Co
 CH
 "}
 (10,1,1) = {"
-CH
+Co
 Co
 eO
 eO
@@ -8961,12 +8992,12 @@ Co
 CH
 "}
 (11,1,1) = {"
-CH
 Co
-eO
+BO
 ku
 pp
-pp
+oB
+vT
 aS
 HQ
 vT
@@ -9020,14 +9051,14 @@ Co
 CH
 "}
 (12,1,1) = {"
-CH
 Co
-eO
+BO
 zn
 yq
-jT
-DW
-sf
+yq
+nr
+OG
+uH
 uH
 mo
 eO
@@ -9080,14 +9111,14 @@ CH
 "}
 (13,1,1) = {"
 Co
-Co
-eO
+BO
 zn
-BZ
-DW
-DW
-BZ
-lz
+nr
+OG
+OG
+OG
+nr
+OG
 mo
 eO
 BO
@@ -9140,14 +9171,14 @@ CH
 (14,1,1) = {"
 Co
 BO
-eO
-MQ
-sf
+Ed
+uH
 nr
-BZ
+yq
+uH
 OG
 jT
-xN
+DW
 ZT
 BO
 BO
@@ -9199,13 +9230,13 @@ Co
 (15,1,1) = {"
 Co
 BO
-eO
 yt
-pu
+nr
+nr
+OG
+OG
+nr
 BZ
-DW
-BZ
-DW
 xN
 hY
 BO
@@ -9258,14 +9289,14 @@ Co
 (16,1,1) = {"
 Co
 eO
-eO
-oh
-jT
-nr
-DW
-nr
-sf
-te
+Ak
+yq
+OG
+yq
+yq
+OG
+uH
+Va
 ZT
 uy
 BO
@@ -9317,13 +9348,13 @@ Co
 (17,1,1) = {"
 Co
 eO
-eO
 oh
-lz
-BZ
-DW
-BZ
-BZ
+OG
+nr
+OG
+OG
+nr
+nr
 te
 eO
 BO
@@ -9375,15 +9406,15 @@ Co
 "}
 (18,1,1) = {"
 Co
-Co
 eO
-oh
-sf
+Ak
+uH
 nr
-BZ
+yq
+uH
 OG
-sf
-Lr
+uH
+DW
 eO
 BO
 BO
@@ -9434,14 +9465,14 @@ Co
 "}
 (19,1,1) = {"
 Co
-Co
 eO
 oh
+nr
 BZ
-DW
-BZ
-BZ
-pu
+OG
+OG
+nr
+OG
 Lr
 eO
 ZT
@@ -9494,12 +9525,12 @@ Co
 (20,1,1) = {"
 Co
 BO
-eO
 Bx
 yq
-sf
-BZ
-sf
+uH
+nr
+nr
+uH
 yq
 Lr
 eO
@@ -9553,10 +9584,10 @@ Co
 (21,1,1) = {"
 Co
 fU
-eO
-bX
+sf
 KR
-RS
+bX
+pu
 xB
 EE
 RS
@@ -9615,7 +9646,7 @@ hY
 BO
 eO
 eO
-eO
+MQ
 pN
 eO
 eO
@@ -9674,7 +9705,7 @@ Co
 BO
 ZT
 eO
-eO
+MQ
 pN
 eO
 eO
@@ -9733,7 +9764,7 @@ Co
 BO
 eO
 eO
-eO
+MQ
 pN
 eO
 eO
@@ -9792,7 +9823,7 @@ Co
 ZT
 BO
 zr
-eO
+MQ
 pN
 eO
 yE
@@ -9851,7 +9882,7 @@ BD
 BO
 BO
 DY
-Rd
+lz
 oU
 Rd
 zQ
