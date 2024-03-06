@@ -8200,7 +8200,9 @@
 /area/icemoon/underground/explored)
 "Zg" = (
 /obj/structure/flora/grass/brown/style_random,
-/turf/open/misc/ice/smooth,
+/turf/open/misc/ice/smooth{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
 /area/icemoon/underground/explored)
 "Zh" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
