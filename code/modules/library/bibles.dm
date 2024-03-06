@@ -87,7 +87,6 @@ GLOBAL_LIST_INIT(bibleitemstates, list(
 		on_intercepted = CALLBACK(src, PROC_REF(on_intercepted_bullet)),\
 		block_charges = 1,\
 	)
-	carve_out()
 
 /// Destroy the bible when it's shot by a bullet
 /obj/item/book/bible/proc/on_intercepted_bullet(mob/living/victim, obj/projectile/bullet)
@@ -339,6 +338,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list(
 
 /obj/item/book/bible/booze/Initialize(mapload)
 	. = ..()
+	carve_out()
 	new /obj/item/reagent_containers/cup/glass/bottle/whiskey(src)
 
 /obj/item/book/bible/syndicate
