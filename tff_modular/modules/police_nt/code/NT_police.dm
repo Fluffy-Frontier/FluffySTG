@@ -26,8 +26,6 @@
 	back = /obj/item/storage/backpack/duffelbag/cops
 	backpack_contents = list(/obj/item/solfed_reporter/swat_caller = 1)
 
-	id_trim = /datum/id_trim/space_police
-
 /datum/outfit/NT_police/post_equip(mob/living/carbon/human/human_to_equip, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
@@ -87,7 +85,7 @@
 	r_pocket = /obj/item/flashlight/seclite
 	l_pocket = /obj/item/restraints/handcuffs
 	id = /obj/item/card/id/advanced/centcom/ert/security
-
+	id_trim = /datum/id_trim/centcom/naval/ltcr
 	backpack_contents = list(
 		/obj/item/storage/box/survival = 1,
 		/obj/item/storage/box/handcuffs = 1,
@@ -121,17 +119,25 @@
 
 /datum/outfit/NT_police/condom_destroyer
 	name = "NTIS S.W.A.T. Officer"
-	back = /obj/item/storage/backpack
-	uniform = /obj/item/clothing/under/sol_peacekeeper
-	shoes = /obj/item/clothing/shoes/jackboots
+	back = /obj/item/storage/backpack/security
+
+	gloves = /obj/item/clothing/gloves/combat
+	uniform = /obj/item/clothing/under/rank/security/officer
+	shoes = /obj/item/clothing/shoes/combat
 	glasses = /obj/item/clothing/glasses/sunglasses
-	ears = /obj/item/radio/headset/headset_sec/alt
-	head = /obj/item/clothing/head/helmet/sf_peacekeeper
+	ears = /obj/item/radio/headset/headset_cent/commander
+
+	head = /obj/item/clothing/head/helmet/sf_sacrificial
+	mask = /obj/item/clothing/mask/gas/nri_police
+
 	belt = /obj/item/gun/energy/disabler
-	suit = /obj/item/clothing/suit/armor/sf_peacekeeper
+
+	suit = /obj/item/clothing/suit/armor/vest/marine/security
+
 	r_pocket = /obj/item/flashlight/seclite
 	l_pocket = /obj/item/restraints/handcuffs
-	id = /obj/item/card/id/advanced/solfed
+	id = /obj/item/card/id/advanced/centcom/ert/security
+	id_trim = /datum/id_trim/centcom/naval/ltcr
 	l_hand = /obj/item/gun/ballistic/shotgun/riot/sol
 	backpack_contents = list(
 		/obj/item/storage/box/survival = 1,
@@ -141,8 +147,6 @@
 		/obj/item/solfed_reporter/treason_reporter = 1,
 		/obj/item/beamout_tool = 1,
 	)
-
-	id_trim = /datum/id_trim/solfed
 
 /datum/antagonist/ert/NT_police/treason_destroyer
 	name = "NTIS Military"

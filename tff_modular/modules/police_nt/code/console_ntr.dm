@@ -1,12 +1,16 @@
 // Just copypaste of communications.dm + SolFed Police, thx Nova dev.
+
 #define NT_POLICE_AMT "amount"
 #define NT_POLICE_VOTES "votes"
 #define NT_POLICE_DECLARED "declared"
+
 #define IMPORTANT_ACTION_COOLDOWN (60 SECONDS)
 #define CALL_POLICE_COOLDOWN (360 SECONDS)
+
 GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 GLOBAL_VAR(caller_of_NTIS)
 GLOBAL_VAR(call_NTIS_msg)
+
 #define STATE_MAIN "main"
 #define STATE_MESSAGES "messages"
 #define EMERGENCY_RESPONSE_POLICE "TESH POLICE CHICKEN GUN BANG DANG"
@@ -18,7 +22,9 @@ GLOBAL_VAR(call_NTIS_msg)
 	build_path = /obj/machinery/computer/comntr
 
 /obj/machinery/computer/comntr
+	// Имя поменять бы
 	name = "NTR console"
+	// Да и описание покруче нужно
 	desc = "A console special for NTR."
 	icon_screen = "comm"
 	icon_keyboard = "tech_key"
@@ -35,21 +41,6 @@ GLOBAL_VAR(call_NTIS_msg)
 
 /obj/machinery/computer/comntr/Initialize(mapload)
 	. = ..()
-	// Костыльный способ развернуть консоль жопкой к стенке.
-	/*
-	if(!SSticker.HasRoundStarted())
-		var/list/adjacent_walls = list()
-		var/turf/closed/new_turf = get_step(src, NORTH)
-		adjacent_walls += new_turf
-		new_turf = get_step(src, SOUTH)
-		adjacent_walls += new_turf
-		new_turf = get_step(src, EAST)
-		adjacent_walls += new_turf
-		new_turf = get_step(src, WEST)
-		adjacent_walls += new_turf
-		var/turf/closed/random_wall = pick(adjacent_walls)
-		src.setDir(get_dir(src, random_wall))*/
-
 	GLOB.responding_centcom_consoles += src
 	AddComponent(/datum/component/gps, "Unic NTR console Signal")
 
@@ -71,18 +62,12 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 	)
 ))
 
-/obj/machinery/computer/comntr/proc/call_NTIS(ordered_team)
-	var/team_size
-	var/announcement_message = "teshari dance"
+/obj/machinery/computer/comntr/proc/call_NTIS()
+	var/team_size = 3
+	var/announcement_message = "Attention, personnel of [station_name()]. \n NT Internal Security on the line. We've received a request from your corporate consultant, and we're sending a unit shortly. \n In case of any kind of escalation or injury to an Internal Security officers, a tactical squad will be dispatched to handle this issue. \n\n Stay safe, Glory to Nanotrasen."
 	var/announcer = "NT Central Command"
-	var/poll_question = "raize youre tails!"
+	var/poll_question = "The station has called for the NT Internal Security. Will you respond?"
 	var/list_to_use = "NT_police_regular"
-	switch(ordered_team)
-		if(EMERGENCY_RESPONSE_POLICE)
-			team_size = 3
-			announcement_message = "Attention, personnel of [station_name()]. \n NT Internal Security on the line. We've received a request from your corporate consultant, and we're sending a unit shortly. \n In case of any kind of escalation or injury to an Internal Security officers, a tactical squad will be dispatched to handle this issue. \n\n Stay safe, Glory to Nanotrasen."
-			announcer = "NT Central Command"
-			poll_question = "The station has called for the NT Internal Security. Will you respond?"
 	priority_announce(announcement_message, announcer, 'sound/effects/families_police.ogg', has_important_message=TRUE, color_override = "yellow")
 	var/list/candidates = SSpolling.poll_ghost_candidates(
 		poll_question,
@@ -92,7 +77,6 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 	)
 
 	if(length(candidates))
-		//Pick the (un)lucky players
 		var/agents_number = min(team_size, candidates.len)
 
 		var/list/spawnpoints = GLOB.emergencyresponseteamspawn
@@ -100,19 +84,16 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 		GLOB.NT_police_responder_info[list_to_use][NT_POLICE_AMT] = agents_number
 		while(agents_number && candidates.len)
 			var/spawn_loc = spawnpoints[index + 1]
-			//loop through spawnpoints one at a time
 			index = (index + 1) % spawnpoints.len
 			var/mob/dead/observer/chosen_candidate = pick(candidates)
 			candidates -= chosen_candidate
 			if(!chosen_candidate.key)
 				continue
 
-			//Spawn the body
 			var/mob/living/carbon/human/cop = new(spawn_loc)
 			chosen_candidate.client.prefs.safe_transfer_prefs_to(cop, is_antag = TRUE)
 			cop.key = chosen_candidate.key
 
-			//Give antag datum
 			var/datum/antagonist/ert/NT_police/ert_antag = new /datum/antagonist/ert/NT_police/regular
 			cop.mind.add_antag_datum(ert_antag)
 			cop.mind.set_assigned_role(SSjob.GetJobType(ert_antag.ert_job_path))
@@ -122,34 +103,32 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 	GLOB.cops_arrived = TRUE
 	return TRUE
 
-/obj/machinery/computer/comntr/proc/calling_NTIS(mob/user, called_group_pretty = "EMTs", called_group = EMERGENCY_RESPONSE_POLICE)
-	message_admins("[ADMIN_LOOKUPFLW(user)] is considering calling the NT Internal Security [called_group_pretty].")
+/obj/machinery/computer/comntr/proc/calling_NTIS(mob/user, called_group_pretty = "EMTs")
+	message_admins("[ADMIN_LOOKUPFLW(user)] is considering calling the NT Internal Security.")
+
 	var/call_NTIS_msg_are_you_sure = "Are you sure you want to call NT Internal Security"
+
 	if(tgui_input_list(user, call_NTIS_msg_are_you_sure, "Call the POLICE?!", list("Yes", "No")) != "Yes")
 		return
-	var/police_responsability_chat = "You SHOULD call Marshals for:\n\
-		Security ignoring Command, Security violating civil rights, Security engaging in Mutiny, \
-		General Violation of Sol Federation Citizen Rights by Command/Security, etc.\n\
-		You SHOULD NOT call Marshals for:\n\
-		Corporate affairs, manhunts, settling arguments, etc.\n\
-		Are you sure you want to call Marshals?"
+
+	var/police_responsability_chat = ""
+
 	message_admins("[ADMIN_LOOKUPFLW(user)] has acknowledged the faulty NTIS call consequences.")
-	if(tgui_input_list(user, police_responsability_chat, "Call [called_group_pretty]", list("Yes", "No")) != "Yes")
+	if(tgui_input_list(user, police_responsability_chat, "Call Nanotrasen Internal Security", list("Yes", "No")) != "Yes")
 		return
-	message_admins("[ADMIN_LOOKUPFLW(user)] has read and acknowleged the recommendations for what to call and not call [called_group_pretty] for.")
-	var/reason_to_call_NTIS = stripped_input(user, "What do you wish to call NTIS [called_group_pretty] for?", "Call NTIS", null, MAX_MESSAGE_LEN)
+	message_admins("[ADMIN_LOOKUPFLW(user)] has read and acknowleged the recommendations for what to call and not call Nanotrasen Internal Security for.")
+	var/reason_to_call_NTIS = stripped_input(user, "What do you wish to call Nanotrasen Internal Security for?", "Call NTIS", null, MAX_MESSAGE_LEN)
 	if(!reason_to_call_NTIS)
-		to_chat(user, "You decide not to call NTIS.")
+		to_chat(user, "You decide not to call Nanotrasen Internal Security.")
 		return
 	GLOB.cops_arrived = TRUE
 	GLOB.call_NTIS_msg = reason_to_call_NTIS
 	GLOB.caller_of_NTIS = user.name
-	log_game("[key_name(user)] has called the Sol Federation [called_group_pretty] for the following reason:\n[GLOB.call_NTIS_msg]")
-	message_admins("[ADMIN_LOOKUPFLW(user)] has called the Sol Federation [called_group_pretty] for the following reason:\n[GLOB.call_NTIS_msg]")
-	deadchat_broadcast(" has called the Sol Federation [called_group_pretty] for the following reason:\n[GLOB.call_NTIS_msg]", span_name("[user.real_name]"), user, message_type = DEADCHAT_ANNOUNCEMENT)
-	call_NTIS(called_group)
-
-	to_chat(user, span_notice("Authorization confirmed. NTIS call dispatched to the Sol Federation [called_group_pretty]."))
+	log_game("[key_name(user)] has called the Nanotrasen Internal Security for the following reason:\n[GLOB.call_NTIS_msg]")
+	message_admins("[ADMIN_LOOKUPFLW(user)] has called the Nanotrasen Internal Security for the following reason:\n[GLOB.call_NTIS_msg]")
+	deadchat_broadcast(" has called the Nanotrasen Internal Security for the following reason:\n[GLOB.call_NTIS_msg]", span_name("[user.real_name]"), user, message_type = DEADCHAT_ANNOUNCEMENT)
+	call_NTIS()
+	to_chat(user, span_notice("Authorization confirmed. Nanotrasen Internal Security call dispatched to the Nanotrasen Internal Security."))
 	playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 
 /obj/machinery/computer/comntr/proc/authenticated(mob/user)
@@ -202,7 +181,7 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 		if ("callThePolice")
 			if(COOLDOWN_FINISHED(src, call_police_cooldown))
 				COOLDOWN_START(src, call_police_cooldown, CALL_POLICE_COOLDOWN)
-				calling_NTIS(usr, "Marshals", EMERGENCY_RESPONSE_POLICE)
+				calling_NTIS(usr, "Marshals")
 		if ("deleteMessage")
 			if (!authenticated(usr))
 				return
@@ -387,6 +366,7 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 
 /obj/machinery/computer/comntr/proc/set_state(mob/user, new_state)
 	state = new_state
+
 /obj/machinery/computer/comntr/proc/can_send_messages_to_other_sectors(mob/user)
 	return length(CONFIG_GET(keyed_list/cross_server)) > 0
 
