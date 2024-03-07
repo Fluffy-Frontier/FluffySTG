@@ -15,11 +15,7 @@
 
 /datum/quirk_constant_data/pet_owner
 	associated_typepath = /datum/quirk/item_quirk/pet_owner
-<<<<<<< HEAD
-	customization_options = list(/datum/preference/choiced/pet_owner)
-=======
 	customization_options = list(/datum/preference/choiced/pet_owner, /datum/preference/choiced/pet_gender, /datum/preference/text/pet_name, /datum/preference/text/pet_desc)
->>>>>>> d01c5891b4b ([MODULAR] Pet Code Improvements + Donator item for Centralsmith (#1136))
 
 /datum/quirk/item_quirk/pet_owner/add_unique(client/client_source)
 	var/desired_pet = client_source?.prefs.read_preference(/datum/preference/choiced/pet_owner) || "Random"
@@ -32,8 +28,6 @@
 
 	var/obj/item/pet_carrier/carrier = new /obj/item/pet_carrier(get_turf(quirk_holder))
 	var/mob/living/simple_animal/pet/pet = new pet_type(carrier)
-<<<<<<< HEAD
-=======
 	var/new_name = client_source?.prefs.read_preference(/datum/preference/text/pet_name)
 	if (new_name)
 		pet.name = new_name
@@ -46,7 +40,6 @@
 	else if (new_gender)
 		pet.gender = new_gender
 	pet.befriend(quirk_holder) // Make sure the player is a friend.
->>>>>>> d01c5891b4b ([MODULAR] Pet Code Improvements + Donator item for Centralsmith (#1136))
 	carrier.add_occupant(pet)
 	give_item_to_holder(
 		carrier,
@@ -112,8 +105,6 @@ GLOBAL_LIST_INIT(possible_player_pet, list(
 
 /datum/preference/choiced/pet_owner/apply_to_human(mob/living/carbon/human/target, value)
 	return
-<<<<<<< HEAD
-=======
 
 /datum/preference/text/pet_name
 	category = PREFERENCE_CATEGORY_MANUALLY_RENDERED
@@ -172,4 +163,3 @@ GLOBAL_LIST_INIT(possible_player_pet, list(
 
 /datum/preference/choiced/pet_gender/apply_to_human(mob/living/carbon/human/target, value)
 	return
->>>>>>> d01c5891b4b ([MODULAR] Pet Code Improvements + Donator item for Centralsmith (#1136))
