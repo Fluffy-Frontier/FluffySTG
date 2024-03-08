@@ -306,6 +306,10 @@
 	venue_value = FOOD_PRICE_WORTHLESS
 	var/mutable_appearance/head
 	var/head_color = rgb(0, 0, 0)
+	/// NOVA EDIT ADDITION BEGIN
+	//Copies reagent metabolization from bubblegum so that you cant get infinite reagents from wearing lolipops
+	var/metabolization_amount = REAGENTS_METABOLISM / 2
+	// NOVA EDIT ADDITION END
 
 	/// NOVA ADDITION BEGIN
 	//Copies regent metabolization from bubblegum so that you cant get infinite reagents from wearing lolipops
@@ -357,6 +361,10 @@
 	food_flags = FOOD_FINGER_FOOD
 	slot_flags = ITEM_SLOT_MASK
 	crafting_complexity = FOOD_COMPLEXITY_1
+	// NOVA EDIT ADDITION BEGIN
+	//Copies reagent metabolization from bubblegum so that you cant get infinite reagents from wearing lolipops
+	var/metabolization_amount = REAGENTS_METABOLISM / 2
+	// NOVA EDIT ADDITION END
 
 	/// NOVA ADDITION BEGIN
 	//Copies regent metabolization from bubblegum so that you cant get infinite reagents from wearing lolipops
@@ -385,6 +393,10 @@
 	food_flags = FOOD_FINGER_FOOD
 	slot_flags = ITEM_SLOT_MASK
 	crafting_complexity = FOOD_COMPLEXITY_1
+	/// NOVA EDIT ADDITION BEGIN
+	//Copies reagent metabolization from bubblegum so that you cant get infinite reagents from wearing lolipops
+	var/metabolization_amount = REAGENTS_METABOLISM / 2
+	// NOVA EDIT ADDITION END
 
 	/// NOVA ADDITION BEGIN
 	//Copies regent metabolization from bubblegum so that you cant get infinite reagents from wearing lolipops
