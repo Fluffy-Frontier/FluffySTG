@@ -82,4 +82,4 @@
 	icon_state = "plush_ivolga"
 	attack_verb_continuous = list("attacks", "bites", "gnashes at", "casts at")
 	attack_verb_simple = list("attack", "bite", "gnash at", "cast at")
-	squeak_override = list('sound/weapons/bite.ogg' = 1,'tff_modular/modules/toys/sounds/rrr.ogg' = 1)
+	squeak_override = list('sound/weapons/bite.ogg' = 1,'tff_modular/modules/toys/sounds/castsummon.ogg' = 1)
