@@ -311,13 +311,18 @@
 	var/metabolization_amount = REAGENTS_METABOLISM / 2
 	// NOVA EDIT ADDITION END
 
+	/// NOVA ADDITION BEGIN
+	//Copies regent metabolization from bubblegum so that you cant get infinite reagents from wearing lolipops
+	var/metabolization_ammount = REAGENTS_METABOLISM / 2
+	// Nova ADDITION END
+
 /obj/item/food/lollipop/Initialize(mapload)
 	. = ..()
 	head = mutable_appearance('icons/obj/food/lollipop.dmi', "lollipop_head")
 	change_head_color(rgb(rand(0, 255), rand(0, 255), rand(0, 255)))
-	// NOVA EDIT CHANGE BEGIN: Original: AddElement(/datum/element/chewable)
-	AddElement(/datum/element/chewable, metabolization_amount)
-	// NOVA EDIT CHANGE END
+	// NOVA EDIT BEGIN: Original: AddElement(/datum/element/chewable)
+	AddElement(/datum/element/chewable, metabolization_ammount)
+	// NOVA EDIT END
 
 /obj/item/food/lollipop/proc/change_head_color(C)
 	head_color = C
@@ -361,11 +366,16 @@
 	var/metabolization_amount = REAGENTS_METABOLISM / 2
 	// NOVA EDIT ADDITION END
 
+	/// NOVA ADDITION BEGIN
+	//Copies regent metabolization from bubblegum so that you cant get infinite reagents from wearing lolipops
+	var/metabolization_ammount = REAGENTS_METABOLISM / 2
+	// Nova ADDITION END
+
 /obj/item/food/spiderlollipop/Initialize(mapload)
 	. = ..()
-	// NOVA EDIT CHANGE BEGIN: Original: AddElement(/datum/element/chewable)
-	AddElement(/datum/element/chewable, metabolization_amount)
-	// NOVA EDIT CHANGE END
+	// NOVA EDIT BEGIN: Original: AddElement(/datum/element/chewable)
+	AddElement(/datum/element/chewable, metabolization_ammount)
+	// NOVA EDIT END
 
 /obj/item/food/swirl_lollipop
 	name = "swirl lollipop"
@@ -388,8 +398,13 @@
 	var/metabolization_amount = REAGENTS_METABOLISM / 2
 	// NOVA EDIT ADDITION END
 
+	/// NOVA ADDITION BEGIN
+	//Copies regent metabolization from bubblegum so that you cant get infinite reagents from wearing lolipops
+	var/metabolization_ammount = REAGENTS_METABOLISM / 2
+	// Nova ADDITION END
+
 /obj/item/food/swirl_lollipop/Initialize(mapload)
 	. = ..()
-	// NOVA EDIT ADDITIONBEGIN: Original: AddElement(/datum/element/chewable)
-	AddElement(/datum/element/chewable, metabolization_amount)
-	// NOVA EDIT ADDITION END
+	// NOVA EDIT BEGIN: Original: AddElement(/datum/element/chewable)
+	AddElement(/datum/element/chewable, metabolization_ammount)
+	// NOVA EDIT END
