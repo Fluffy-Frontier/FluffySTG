@@ -16,7 +16,7 @@ const FeatureBlooperDropdownInput = (
   return (
     <Stack>
       <Stack.Item grow>
-        <FeatureDropdownInput {...props} />
+        <FeatureDropdownInput buttons {...props} />
       </Stack.Item>
       <Stack.Item>
         <Button
@@ -25,7 +25,7 @@ const FeatureBlooperDropdownInput = (
           }}
           icon="play"
           width="100%"
-          height="100%"
+          height="88%"
         />
       </Stack.Item>
     </Stack>
