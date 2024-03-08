@@ -139,7 +139,7 @@
 	room.send_message(message, src, FALSE)
 	return TRUE
 
-/mob/living/soulcatcher_soul/me_verb(message as text|null)
+/mob/living/soulcatcher_soul/me_verb(message as text)
 	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
 	if(!message)
 		return FALSE
