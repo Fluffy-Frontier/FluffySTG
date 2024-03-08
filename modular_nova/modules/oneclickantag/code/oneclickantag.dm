@@ -14,6 +14,8 @@
 	switch(antagtype)
 		if(ROLE_TRAITOR)
 			src.add_antag_datum(/datum/antagonist/traitor)
+		if(ROLE_SPY)
+			src.add_antag_datum(/datum/antagonist/spy)
 		if(ROLE_CHANGELING)
 			src.add_antag_datum(/datum/antagonist/changeling)
 		if(ROLE_REV)

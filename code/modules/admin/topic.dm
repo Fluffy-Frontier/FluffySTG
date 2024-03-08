@@ -60,7 +60,7 @@
 			to_chat(usr, "<span class='danger'>Not until the round starts!</span>", confidential = TRUE)
 			return
 
-		var/opt = null
+		var/opt = 1
 		switch(href_list["makeAntag"])
 			if(ROLE_BLOB)
 				opt = input("Set Blob Resource Gain Rate","Set Resource Rate",1) as num|null
@@ -78,6 +78,8 @@
 				opt = input("How Many", ROLE_OPERATIVE, 3) as num|null
 			if(ROLE_BROTHER)
 				opt = input("How Many", ROLE_BROTHER, 2) as num|null
+			if(ROLE_SPY)
+				opt = input("How Many", ROLE_SPY, 1) as num|null
 			if(ROLE_DRIFTING_CONTRACTOR)
 				opt = input("How Many", ROLE_DRIFTING_CONTRACTOR, 2) as num|null
 		if(src.make_antag(href_list["makeAntag"], opt))
