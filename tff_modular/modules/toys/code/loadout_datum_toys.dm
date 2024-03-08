@@ -33,3 +33,8 @@
 /datum/loadout_item/toys/special/yulia
 	name = "Yulia Plushie"
 	item_path = /obj/item/toy/plush/tff/yulia
+
+/datum/loadout_item/toys/special/maru
+	name = "Maru Plushie"
+	item_path = /obj/item/toy/plush/tff/maru
+	ckeywhitelist = list("mercreaper", "skadi999")
