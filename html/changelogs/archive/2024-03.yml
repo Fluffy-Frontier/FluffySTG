@@ -445,3 +445,67 @@
   - bugfix: Bridge assistant and veteran advisor now both have their own sechud icons.
   ReezeBL:
   - sound: modified sound effects of Maru plushiee
+2024-03-10:
+  00-Steven:
+  - bugfix: Plexagon Access Management actually updates the shown template list on
+      authentication, avoiding needing to refresh/reopen/somesuch the program manually.
+  A.C.M.O.:
+  - rscadd: Added Shapeshifter quirk for veteran-ranked players.
+  - rscadd: Added skintone alteration to the Alter Form action, primarily for Shapeshifter
+      quirk users.
+  - image: Added new icons for the Shapeshifter quirk radial menu.
+  Absolucy:
+  - refactor: Improved shuttle gibbing code, adding a new resistance flag, `SHUTTLE_CRUSH_PROOF`.
+  - bugfix: Immortality revival spectres can no longer be crushed by shuttles.
+  - rscadd: The ghost of Poly can no longer be shuttle-crushed, nor can anything incorporeal.
+  Drag:
+  - rscadd: Adds the Shark and Shork costume. Blahaj lovers rejoice!
+  Momo8289:
+  - code_imp: Chem stun reductions are now applied more consistently.
+  - bugfix: Chem stun reductions should now more consistently apply to unconsciousness.
+  - rscadd: Wheat and meatwheat can now be worn in the mask slot. Farmers rejoice!
+  Nerev4r:
+  - rscdel: New advents in therapy, social apps for support networks, and speech consultation
+      have resulted in people with social anxiety having less difficulty speaking.
+  - rscdel: Removed stuttering from Feign Impairment. I couldn't think of a funny
+      caption for this.
+  Paxilmaniac:
+  - balance: The Qani-Laaca implant will no longer make you immune to the after-effects
+      of Twitch.
+  - rscadd: A collection of nova exclusive items have been added to mystery boxes.
+  Pickle-Coding:
+  - qol: Extended the metric prefixes.
+  SSensum:
+  - balance: New upload consoles upon creation on station will trigger Nanotrasen
+      Cyber Security announcment.
+  - balance: Upload consoles now have small delay to prevent law spam.
+  Shroopy:
+  - qol: Uninverted the inverted corner of the Icebox medbay treatment center.
+  Singul0:
+  - rscadd: Adds 3 new kits into the syndie-kit spawn pool, 2 for special and another
+      for tactical
+  SyncIt21:
+  - bugfix: fixes toolact screentips & balloon alerts for boulder machines & machine
+      frame
+  - code_imp: Use a common list for acceptable silo materials for some stuff. Renamed
+      ore category into silo category.
+  TehSplinterCell:
+  - rscadd: A bushcraft club is paying tribute to one of Tizira's first extra-planetary
+      colonists by solo camping in separate regions of Lavaland.
+  - rscadd: Each one was given an ID with the name of that pioneering forefather for
+      'immersion.' Single-player LARP is a thing, I guess.
+  - rscadd: I know you're thinking about it. Stop it. Stealing a camper's Colonial
+      Supply Core is both burglary and potential lizardman-slaughter. Bad.
+  - rscadd: We're not seeing any EM readings from their camps. Maybe they're having
+      trouble with their power grids?
+  Zergspower:
+  - qol: Curtains and shower curtains are no longer solid objects that defy common
+      sense
+  mc-oofert:
+  - rscdel: Removed a nanomachine pizza from the deathmatch meat tower map that allowed
+      you to become a borg
+  necromanceranne:
+  - balance: Adjusts the values and contents of the Contraband Crate's item loot table.
+  - bugfix: Spies no longer have access to infinite use autosurgeons.
+  starrm4nn:
+  - qol: EVA can be given now in common access slots for non-command crewmembers.
