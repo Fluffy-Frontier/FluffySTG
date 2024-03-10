@@ -64,7 +64,7 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 
 /obj/machinery/computer/comntr/proc/call_NTIS()
 	var/team_size = 3
-	var/announcement_message = "Attention, personnel of [station_name()]. \n NT Internal Security on the line. We've received a request from your corporate consultant, and we're sending a unit shortly. \n In case of any kind of escalation or injury to an Internal Security officers, a tactical squad will be dispatched to handle this issue. \n\n Stay safe, Glory to Nanotrasen."
+	var/announcement_message = "Attention, personnel of [station_name()]. \nNT Internal Security on the line. We've received a request from your corporate consultant, and we're sending a unit shortly. \nIn case of any kind of escalation or injury to an Internal Security officers, a tactical squad will be dispatched to handle this issue. \n\n Stay safe, Glory to Nanotrasen."
 	var/announcer = "NT Central Command"
 	var/poll_question = "The station has called for the NT Internal Security. Will you respond?"
 	var/list_to_use = "NT_police_regular"
@@ -103,16 +103,12 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 	GLOB.cops_arrived = TRUE
 	return TRUE
 
-/obj/machinery/computer/comntr/proc/calling_NTIS(mob/user, called_group_pretty = "EMTs")
+/obj/machinery/computer/comntr/proc/calling_NTIS(mob/user)
 	message_admins("[ADMIN_LOOKUPFLW(user)] is considering calling the NT Internal Security.")
-
-	var/call_NTIS_msg_are_you_sure = "Are you sure you want to call NT Internal Security"
-
+	var/call_NTIS_msg_are_you_sure = "Are you sure you want to call NT Internal Security?"
 	if(tgui_input_list(user, call_NTIS_msg_are_you_sure, "Call the POLICE?!", list("Yes", "No")) != "Yes")
 		return
-
-	var/police_responsability_chat = ""
-
+	var/police_responsability_chat = "If pressure on employees has no effect, you have the right to call the corporate police unit to resolve the conflict. Keep in mind that calling the corporate police unnecessarily (threat to your life and health, riots, abuse of weapons) is strictly prohibited. For unnecessary use of the \"panic button,\" charges of negligence and company resource mismanagement will be brought against you; you will likely be replaced by a more capable employee. "
 	message_admins("[ADMIN_LOOKUPFLW(user)] has acknowledged the faulty NTIS call consequences.")
 	if(tgui_input_list(user, police_responsability_chat, "Call Nanotrasen Internal Security", list("Yes", "No")) != "Yes")
 		return
@@ -153,24 +149,6 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 	. = TRUE
 
 	switch (action)
-		if ("answerMessage")
-			if (!authenticated(usr))
-				return
-
-			var/answer_index = params["answer"]
-			var/message_index = params["message"]
-
-			if(!isnum(answer_index) || !isnum(message_index))
-				message_admins("[ADMIN_LOOKUPFLW(usr)] provided an invalid index type when replying to a message on [src] [ADMIN_JMP(src)]. This should not happen. Please check with a maintainer and/or consult tgui logs.")
-				CRASH("Non-numeric index provided when answering comms console message.")
-
-			if (!answer_index || !message_index || answer_index < 1 || message_index < 1)
-				return
-			var/datum/comm_message/message = messages[message_index]
-			if (message.answered)
-				return
-			message.answered = answer_index
-			message.answer_callback.InvokeAsync()
 		if ("setState")
 			if (!authenticated(usr))
 				return

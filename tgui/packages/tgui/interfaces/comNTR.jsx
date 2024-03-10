@@ -184,30 +184,6 @@ const PageMessages = (props) => {
 
   for (const [messageIndex, message] of Object.entries(messages)) {
     let answers = null;
-
-    /*if (message.possibleAnswers.length > 0) {
-      answers = (
-        <Box mt={1}>
-          {message.possibleAnswers.map((answer, answerIndex) => (
-            <Button
-              content={answer}
-              color={message.answered === answerIndex + 1 ? 'good' : undefined}
-              key={answerIndex}
-              onClick={
-                message.answered
-                  ? undefined
-                  : () =>
-                      act('answerMessage', {
-                        message: parseInt(messageIndex, 10) + 1,
-                        answer: answerIndex + 1,
-                      })
-              }
-            />
-          ))}
-        </Box>
-      );
-    }*/
-
     const textHtml = {
       __html: sanitizeText(message.content),
     };
