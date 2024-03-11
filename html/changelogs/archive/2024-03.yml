@@ -516,3 +516,28 @@
   - bugfix: Spies no longer have access to infinite use autosurgeons.
   starrm4nn:
   - qol: EVA can be given now in common access slots for non-command crewmembers.
+2024-03-11:
+  00-Steven:
+  - bugfix: When a carbon talks over robotic it uses their voice instead of visible
+      name. Meaning, voice changers work like they do over other comms regardless
+      of face covering.
+  JohnFulpWillard, Tattax:
+  - rscadd: 'Adds a new station trait job: The Human AI.'
+  LemonInTheDark:
+  - balance: Nerfs the burn times of flares and glowsticks, from 25/35 to 10/15 and
+      50/60! to 20/25.
+  - balance: Glowsticks now dim as they burn
+  - rscadd: Glowsticks no longer leave an unusable action button sitting around then
+      they're lit
+  - bugfix: Glowsticks actually burn down now (The code was broken)
+  - rscadd: Tweaked the saturation, color and intensity of a bunch of lights
+  PapaMichael:
+  - bugfix: Removed erroneous information on some health analyzer's examine text.
+  Rhials:
+  - code_imp: Players now receive antag datums specific for reinforcements/support
+      borgs.
+  TiviPlus:
+  - bugfix: fixed some errors with the prepackaged tts
+  necromanceranne:
+  - balance: Bulldog Shotguns now have a 2-round burst fire.
+  - balance: Lone Operatives now come with some additional Bulldog Shotgun magazines.
