@@ -67,12 +67,12 @@
 	var/mob/living/greeted_mob = owner.current
 	greeted_mob.playsound_local(greeted_mob, 'sound/effects/families_police.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 
-/datum/antagonist/ert/NT_police/guard
-	name = "NTIS Military"
-	role = "Private"
-	outfit = /datum/outfit/NT_police/guard
+/datum/antagonist/ert/NT_police/trooper
+	name = "NTIS Guard"
+	role = "NTIS Guard"
+	outfit = /datum/outfit/NT_police/trooper
 
-/datum/antagonist/ert/NT_police/guard/greet()
+/datum/antagonist/ert/NT_police/trooper/greet()
 	var/missiondesc =  ""
 	missiondesc += "<B><font size=5 color=red>You are NOT a Nanotrasen Employee. You work for the Sol Federation as a [role].</font></B>"
 	missiondesc += "<BR>You are here to assume control of [station_name()] due to the occupants engaging in Treason as reported by our SWAT team.\n"

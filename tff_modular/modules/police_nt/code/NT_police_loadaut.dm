@@ -7,13 +7,19 @@
 	. = ..()
 	assignment = "NTIS S.W.A.T."
 
-/datum/id_trim/centcom/ert/security/NT_police/guard/New()
+/datum/id_trim/centcom/ert/security/NT_police/trooper/New()
 	. = ..()
-	assignment = "NTIS Guard"
+	assignment = "NTIS Trooper"
 
 /obj/item/card/id/advanced/centcom/ert/NT_police
 	registered_name = "NT Internal Security"
 	trim = /datum/id_trim/centcom/ert/security/NT_police
+
+/obj/item/card/id/advanced/centcom/ert/NT_police/swat
+	trim = /datum/id_trim/centcom/ert/security/NT_police/swat
+
+/obj/item/card/id/advanced/centcom/ert/NT_police/trooper
+	trim = /datum/id_trim/centcom/ert/security/NT_police/trooper
 
 /datum/outfit/NT_police
 	name = "NT Internal Security: Base"
@@ -77,19 +83,19 @@
 
 	r_pocket = /obj/item/flashlight/seclite
 	l_pocket = /obj/item/restraints/handcuffs
-	id = /obj/item/card/id/advanced/centcom/ert/NT_police
+	id = /obj/item/card/id/advanced/centcom/ert/NT_police/swat
 	l_hand = /obj/item/gun/ballistic/shotgun/riot/sol
 	backpack_contents = list(
 		/obj/item/storage/box/survival = 1,
 		/obj/item/storage/box/handcuffs = 1,
 		/obj/item/melee/baton/security/loaded = 1,
 		/obj/item/storage/box/lethalshot = 2,
-		/obj/item/nt_reporter/guard_caller = 1,
+		/obj/item/nt_reporter/trooper_caller = 1,
 		/obj/item/beamout_tool = 1,
 	)
 
-/datum/outfit/NT_police/guard
-	name = "NTIS Guardian"
+/datum/outfit/NT_police/trooper
+	name = "NTIS Trooper"
 
 	uniform = /obj/item/clothing/under/sol_peacekeeper
 	head = /obj/item/clothing/head/helmet/sf_sacrificial
@@ -101,7 +107,7 @@
 	ears = /obj/item/radio/headset/headset_sec/alt
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/flashlight/seclite
-	id = /obj/item/card/id/advanced/centcom/ert/NT_police
+	id = /obj/item/card/id/advanced/centcom/ert/NT_police/trooper
 	r_hand = /obj/item/gun/ballistic/automatic/sol_rifle
 	backpack_contents = list(
 		/obj/item/storage/box/handcuffs = 1,
@@ -214,7 +220,7 @@
 	message_admins("[ADMIN_LOOKUPFLW(user)] has voted to summon S.W.A.T backup.")
 	return TRUE
 
-/obj/item/nt_reporter/guard_caller
+/obj/item/nt_reporter/trooper_caller
 	name = "Guard backup caller"
 	desc = "Use this in-hand to vote that the station is engaging in Treason. If half your team votes for it, the Military will handle the situation."
 	type_to_check = /datum/antagonist/ert/NT_police/swat
@@ -223,8 +229,8 @@
 	fine_station = FALSE
 	ghost_poll_msg = "The station has decided to engage in treason. Do you wish to join the NanoTrasen Military?"
 	amount_to_summon = 8
-	type_to_summon = /datum/antagonist/ert/NT_police/guard
-	summoned_type = "NT_police_guard"
+	type_to_summon = /datum/antagonist/ert/NT_police/trooper
+	summoned_type = "NT_police_trooper"
 	announcement_message = "Crewmembers of the station. You have refused to comply with first responders and SWAT officers, and have assaulted them, \
 		and they are unable to carry out the wills of the company.\n\
 		As such, we are charging those responsible with Treason. The penalty of which is death, or no less than twenty-five years in catorga.\n\
@@ -233,7 +239,7 @@
 		Non-offending citizens, prepare for evacuation. Comply with all orders given to you by NanoTrasen military personnel.\n\
 		To all those who are engaging in treason, lay down your weapons and surrender. Refusal to comply may be met with lethal force."
 
-/obj/item/nt_reporter/guard_caller/questions(mob/user)
+/obj/item/nt_reporter/trooper_caller/questions(mob/user)
 	var/list/list_of_questions = list(
 		"Treason is the crime of attacking a state authority to which one owes allegiance. The station is located within Sol Federation space, \
 			and owes allegiance to the Sol Federation despite being owned by Nanotrasen. Did the station engage in this today?",

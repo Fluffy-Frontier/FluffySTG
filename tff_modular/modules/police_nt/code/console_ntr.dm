@@ -55,7 +55,7 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 		NT_POLICE_VOTES = 0,
 		NT_POLICE_DECLARED = FALSE
 	),
-	"NT_police_guard" = list(
+	"NT_police_trooper" = list(
 		NT_POLICE_AMT = 0,
 		NT_POLICE_VOTES = 0,
 		NT_POLICE_DECLARED = FALSE
