@@ -72,8 +72,8 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 	var/list/candidates = SSpolling.poll_ghost_candidates(
 		poll_question,
 		check_jobban = ROLE_DEATHSQUAD,
-		pic_source = /obj/item/solfed_reporter,
-		role_name_text = "NT Internal Security",
+		pic_source = /obj/item/nt_reporter,
+		role_name_text = "NT Internal Security ",
 	)
 
 	if(length(candidates))

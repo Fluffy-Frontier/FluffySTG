@@ -40,18 +40,18 @@
 	missiondesc += "<BR> <B>3.</B> If you believe yourself to be in danger, unable to do the job assigned to you due to a dangerous situation, \
 		or that the NTIS call was made in error, you can use the S.W.A.T. Backup Caller in your backpack to vote on calling a S.W.A.T. team to assist in the situation."
 	missiondesc += "<BR> <B>4.</B> When you have finished (Don't forget to ask the NTR about it!) with your work on the station AND centcom, use the Beamout Tool in your backpack to beam out yourself \
-		along with anyone you are pulling."
+		along with anyone you are pulling.\n"
 	missiondesc += "<B><font size=5 color=red>Also don't forget to return to centcom on the ship!</font></B>"
 	to_chat(owner, missiondesc)
 	var/mob/living/greeted_mob = owner.current
 	greeted_mob.playsound_local(greeted_mob, 'sound/effects/families_police.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 
-/datum/antagonist/ert/NT_police/condom_destroyer
+/datum/antagonist/ert/NT_police/swat
 	name = "NTIS S.W.A.T. Officer"
 	role = "S.W.A.T. Officer"
-	outfit = /datum/outfit/NT_police/condom_destroyer
+	outfit = /datum/outfit/NT_police/swat
 
-/datum/antagonist/ert/NT_police/condom_destroyer/greet()
+/datum/antagonist/ert/NT_police/swat/greet()
 	var/missiondesc =  ""
 	missiondesc += "<B><font size=5 color=red>You are NOT a Nanotrasen Employee. You work for the Sol Federation as a [role].</font></B>"
 	missiondesc += "<BR>You are here to backup the NTIS first responders, as they have reported for your assistance..\n"
@@ -67,12 +67,12 @@
 	var/mob/living/greeted_mob = owner.current
 	greeted_mob.playsound_local(greeted_mob, 'sound/effects/families_police.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 
-/datum/antagonist/ert/NT_police/treason_destroyer
+/datum/antagonist/ert/NT_police/guard
 	name = "NTIS Military"
 	role = "Private"
-	outfit = /datum/outfit/NT_police/treason_destroyer
+	outfit = /datum/outfit/NT_police/guard
 
-/datum/antagonist/ert/NT_police/treason_destroyer/greet()
+/datum/antagonist/ert/NT_police/guard/greet()
 	var/missiondesc =  ""
 	missiondesc += "<B><font size=5 color=red>You are NOT a Nanotrasen Employee. You work for the Sol Federation as a [role].</font></B>"
 	missiondesc += "<BR>You are here to assume control of [station_name()] due to the occupants engaging in Treason as reported by our SWAT team.\n"
