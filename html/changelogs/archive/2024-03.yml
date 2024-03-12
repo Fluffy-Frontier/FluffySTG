@@ -565,6 +565,11 @@
   Iajret:
   - bugfix: Human AI should now get its own hud icon
   - balance: changed amount of obtainable smugglers satchels from 10 to 2
+  Melbert:
+  - bugfix: Some things which should pacify people (but aren't) now will properly,
+      like hypnoflash
+  - bugfix: Silicons can use asterisks in binary without fear of saying something
+      interesting.
   NeonNik2245:
   - rscadd: Adds hunger quirk for hunger people
   Rhials:
@@ -602,3 +607,5 @@
   vinylspiders:
   - rscdel: Due to a backend update, using discord for hosting headshots no longer
       works. Please use Gyazo or files.byondhome.com instead.
+  - bugfix: fixes a spurious CI runtime caused by explosive mines quite literally
+      blowing up the unit test area
