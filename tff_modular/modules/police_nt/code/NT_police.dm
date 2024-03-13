@@ -25,23 +25,23 @@
 */
 /datum/antagonist/ert/NT_police/regular
 	name = "NTIS Unit"
-	role = "NTIS Unit"
+	role = "Internal Security Unit"
 	outfit = /datum/outfit/NT_police/regular
 
 /datum/antagonist/ert/NT_police/greet()
 	var/missiondesc =  ""
-	missiondesc += "<B><font size=5 color=red>You are a Nanotrasen Employee. You work for the  Nanotrasen as a [role].</font></B>"
+	missiondesc += "<B><font size=5 color=red>You are a Nanotrasen Employee. You work for the Nanotrasen as a [role].</font></B>"
 	missiondesc += "<BR>You are responding to emergency calls from the station consultants!\n"
 	missiondesc += "<BR><B>NTIS Transcript is as follows</B>:"
 	missiondesc += "<BR> [GLOB.call_NTIS_msg]"
 	missiondesc += "<BR><B>Your Mission</B>:"
-	missiondesc += "<BR> <B>1.</B> Contact [GLOB.caller_of_NTIS] and assist them in resolving the matter."
-	missiondesc += "<BR> <B>2.</B> Protect, ensure, and uphold the rights of station employees on board [station_name()]."
+	missiondesc += "<BR> <B>1.</B> Contact consultant [GLOB.caller_of_NTIS]. Your job is to assist the consultant or \"evacuate\" them in case of a false alarm."
+	missiondesc += "<BR> <B>2.</B> Protect, ensure, and uphold the space law of station employees on board [station_name()]."
 	missiondesc += "<BR> <B>3.</B> If you believe yourself to be in danger, unable to do the job assigned to you due to a dangerous situation, \
 		or that the NTIS call was made in error, you can use the S.W.A.T. Backup Caller in your backpack to vote on calling a S.W.A.T. team to assist in the situation."
-	missiondesc += "<BR> <B>4.</B> When you have finished (Don't forget to ask the NTR about it!) with your work on the station AND centcom, use the Beamout Tool in your backpack to beam out yourself \
+	missiondesc += "<BR> <B>4.</B> When you have finished (Don't forget to ask the NTC about it!) with your work on the station AND centcom, use the beamout Tool in your backpack to beam out yourself \
 		along with anyone you are pulling.\n"
-	missiondesc += "<B><font size=5 color=red>Also don't forget to return to centcom on the ship!</font></B>"
+	missiondesc += "<B><font size=5 color=red>Also don't forget to return to centcom on the ship before using beamout tool!</font></B>"
 	to_chat(owner, missiondesc)
 	var/mob/living/greeted_mob = owner.current
 	greeted_mob.playsound_local(greeted_mob, 'sound/effects/families_police.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
@@ -53,48 +53,49 @@
 
 /datum/antagonist/ert/NT_police/swat/greet()
 	var/missiondesc =  ""
-	missiondesc += "<B><font size=5 color=red>You are NOT a Nanotrasen Employee. You work for the Sol Federation as a [role].</font></B>"
-	missiondesc += "<BR>You are here to backup the NTIS first responders, as they have reported for your assistance..\n"
+	missiondesc += "<B><font size=5 color=red>You are a Nanotrasen Employee. You work for the Nanotrasen as a [role].</font></B>"
+	missiondesc += "<BR>You are here to backup the NTIS police, as they have reported for your assistance.\n"
 	missiondesc += "<BR><B>Your Mission</B>:"
-	missiondesc += "<BR> <B>1.</B> Contact the first responders using the Cell Phone in your backpack to figure out the situation."
-	missiondesc += "<BR> <B>2.</B> Arrest anyone who interferes the work of the first responders."
+	missiondesc += "<BR> <B>1.</B> Contact the NTIS police to figure out the situation."
+	missiondesc += "<BR> <B>2.</B> Arrest anyone who interferes the work of the internal security."
 	missiondesc += "<BR> <B>3.</B> Use lethal force in the arrest of the suspects if they will not comply, or the station refuses to comply."
 	missiondesc += "<BR> <B>4.</B> If you believe the station is engaging in treason and is firing upon first responders and S.W.A.T. members, use the \
-		Treason Reporter in your backpack to call the military."
-	missiondesc += "<BR> <B>5.</B> When you have finished with your work on the station, use the Beamout Tool in your backpack to beam out yourself \
-		along with anyone you are pulling."
+		trooper caller in your backpack to call the military."
+	missiondesc += "<BR> <B>5.</B> When you have finished (Don't forget to ask the NTC about it!) with your work on the station AND centcom, use the beamout Tool in your backpack to beam out yourself \
+		along with anyone you are pulling.\n"
+	missiondesc += "<B><font size=5 color=red>Also don't forget to return to centcom on the ship before using beamout tool!</font></B>"
 	to_chat(owner, missiondesc)
 	var/mob/living/greeted_mob = owner.current
 	greeted_mob.playsound_local(greeted_mob, 'sound/effects/families_police.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 
 /datum/antagonist/ert/NT_police/trooper
-	name = "NTIS Guard"
-	role = "NTIS Guard"
+	name = "NTIS Trooper"
+	role = "NTIS Trooper"
 	outfit = /datum/outfit/NT_police/trooper
 
 /datum/antagonist/ert/NT_police/trooper/greet()
 	var/missiondesc =  ""
-	missiondesc += "<B><font size=5 color=red>You are NOT a Nanotrasen Employee. You work for the Sol Federation as a [role].</font></B>"
+	missiondesc += "<B><font size=5 color=red>You are a Nanotrasen Employee. You work for the Nanotrasen as a [role].</font></B>"
 	missiondesc += "<BR>You are here to assume control of [station_name()] due to the occupants engaging in Treason as reported by our SWAT team.\n"
 	missiondesc += "<BR><B>Your Mission</B>:"
-	missiondesc += "<BR> <B>1.</B> Contact the SWAT Team and the First Responders via your cell phone to get the situation from them."
+	missiondesc += "<BR> <B>1.</B> Contact the SWAT Team and the First Responders to get the situation from them."
 	missiondesc += "<BR> <B>2.</B> Arrest all suspects involved in the treason attempt."
-	missiondesc += "<BR> <B>3.</B> Assume control of the station for the Sol Federation, and initiate evacuation procedures to get non-offending citizens \
+	missiondesc += "<BR> <B>3.</B> Assume control of the station for the Corporation, and initiate evacuation procedures to get non-offending citizens \
 		away from the scene."
 	missiondesc += "<BR> <B>4.</B> If you need to use lethal force, do so, but only if you must."
 	to_chat(owner, missiondesc)
 	var/mob/living/greeted_mob = owner.current
 	greeted_mob.playsound_local(greeted_mob, 'sound/effects/families_police.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 
-/*
-/obj/item/beamout_tool
-	name = "beam-out tool" // TODO, find a way to make this into drop pods cuz that's cooler visually
-	desc = "Use this to begin the lengthy beam-out  process to return to Sol Federation space. It will bring anyone you are pulling with you."
+
+/obj/item/beamout_tool_nt
+	name = "beam-out tool"
+	desc = "Use this to begin the lengthy beam-out process to return to NTIS office. It will bring anyone you are pulling with you."
 	icon = 'modular_nova/modules/goofsec/icons/reporter.dmi'
 	icon_state = "beam_me_up_scotty"
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/beamout_tool/attack_self(mob/user, modifiers)
+/obj/item/beamout_tool_nt/attack_self(mob/user, modifiers)
 	. = ..()
 	if(!user.mind.has_antag_datum(/datum/antagonist/ert))
 		to_chat(user, span_warning("You don't understand how to use this device."))
@@ -102,8 +103,8 @@
 	message_admins("[ADMIN_LOOKUPFLW(user)] has begun to beam-out using their beam-out tool.")
 	to_chat(user, "You have begun the beam-out process. Please wait for the beam to reach the station.")
 	user.balloon_alert(user, "begun beam-out")
-	if(do_after(user, 30 SECONDS))
-		to_chat(user, "You have completed the beam-out process and are returning to the Sol Federation.")
+	if(do_after(user, 15 SECONDS))
+		to_chat(user, "You have completed the beam-out process and are returning to the NTIS office.")
 		message_admins("[ADMIN_LOOKUPFLW(user)] has beamed themselves out.")
 		if(isliving(user))
 			var/mob/living/living_user = user
@@ -129,5 +130,4 @@
 			qdel(user)
 	else
 		user.balloon_alert(user, "beam-out cancelled")
-*/
 

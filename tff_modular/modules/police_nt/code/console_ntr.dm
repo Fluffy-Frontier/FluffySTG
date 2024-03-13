@@ -13,7 +13,6 @@ GLOBAL_VAR(call_NTIS_msg)
 
 #define STATE_MAIN "main"
 #define STATE_MESSAGES "messages"
-#define EMERGENCY_RESPONSE_POLICE "TESH POLICE CHICKEN GUN BANG DANG"
 
 
 /obj/item/circuitboard/computer/comntr
@@ -65,7 +64,7 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 /obj/machinery/computer/comntr/proc/call_NTIS()
 	var/team_size = 3
 	var/announcement_message = "Attention, personnel of [station_name()]. \nNT Internal Security on the line. We've received a request from your corporate consultant, and we're sending a unit shortly. \nIn case of any kind of escalation or injury to an Internal Security officers, a tactical squad will be dispatched to handle this issue. \n\n Stay safe, Glory to Nanotrasen."
-	var/announcer = "NT Central Command"
+	var/announcer = "NanoTrasen Internal Security"
 	var/poll_question = "The station has called for the NT Internal Security. Will you respond?"
 	var/list_to_use = "NT_police_regular"
 	priority_announce(announcement_message, announcer, 'sound/effects/families_police.ogg', has_important_message=TRUE, color_override = "yellow")
@@ -375,4 +374,3 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 #undef CALL_POLICE_COOLDOWN
 #undef STATE_MAIN
 #undef STATE_MESSAGES
-#undef EMERGENCY_RESPONSE_POLICE

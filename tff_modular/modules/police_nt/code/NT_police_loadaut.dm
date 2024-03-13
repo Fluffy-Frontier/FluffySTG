@@ -62,7 +62,7 @@
 		/obj/item/storage/box/survival = 1,
 		/obj/item/storage/box/handcuffs = 1,
 		/obj/item/nt_reporter/swat_caller = 1,
-		/obj/item/beamout_tool = 1,
+		/obj/item/beamout_tool_nt = 1,
 	)
 
 	l_hand = /obj/item/gun/energy/disabler/smg
@@ -91,7 +91,7 @@
 		/obj/item/melee/baton/security/loaded = 1,
 		/obj/item/storage/box/lethalshot = 2,
 		/obj/item/nt_reporter/trooper_caller = 1,
-		/obj/item/beamout_tool = 1,
+		/obj/item/beamout_tool_nt = 1,
 	)
 
 /datum/outfit/NT_police/trooper
@@ -125,7 +125,7 @@
 	var/activated = FALSE
 	var/type_to_check = /datum/antagonist/ert/NT_police/regular
 	var/type_of_callers = "NT_police_regular"
-	var/announcement_source = "NanoTrasen S.W.A.T."
+	var/announcement_source = "NanoTrasen Internal Security"
 	var/fine_station = FALSE
 	var/ghost_poll_msg = "example crap"
 	var/amount_to_summon = 5
@@ -203,7 +203,6 @@
 	desc = "Use this in-hand to vote to call NanoTrasen S.W.A.T. backup. If half your team votes for it, SWAT will be dispatched."
 	type_to_check = /datum/antagonist/ert/NT_police/regular
 	type_of_callers = "NT_police_regular"
-	announcement_source = "NanoTrasen S.W.A.T."
 	ghost_poll_msg = "The NTIS have requested a S.W.A.T. backup. Do you wish to become a S.W.A.T. member?"
 	amount_to_summon = 5
 	type_to_summon = /datum/antagonist/ert/NT_police/swat
@@ -225,7 +224,6 @@
 	desc = "Use this in-hand to vote that the station is engaging in Treason. If half your team votes for it, the Military will handle the situation."
 	type_to_check = /datum/antagonist/ert/NT_police/swat
 	type_of_callers = "NT_police_swat"
-	announcement_source = "Sol Federation National Guard"
 	fine_station = FALSE
 	ghost_poll_msg = "The station has decided to engage in treason. Do you wish to join the NanoTrasen Military?"
 	amount_to_summon = 8
