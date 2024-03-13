@@ -625,6 +625,9 @@
   - bugfix: The museum piggy bank now spawns with at least 400 creds in it.
   Iajret:
   - bugfix: As a borg you shouldn't be able to resist from grab while locked down
+  JohnFulpWillard, Atlasle:
+  - balance: You no longer feel cold if you're drunk. You still take damage, but get
+      no warning or slowdown.
   MortoSasye:
   - rscadd: The hearthkin have recently unearthed a technique of their ancestors to
       make a new type of armor.
@@ -639,6 +642,17 @@
   - spellcheck: Fixed the tailored dress description.
   - qol: Changed the icon-state name of "dracula-rapping" to "precious-metals" to
       make it easier to find.
+  SyncIt21:
+  - bugfix: inserting a material sheet into an lathes should show the correct animation
+      color
+  ValuedEmployee:
+  - rscadd: Added Moffers as a crafting recipe in the entertainment section.
   Vermidia:
   - bugfix: Doors with ID scan disabled will no longer open when an ID is thrown at
       them
+  san7890:
+  - bugfix: All basic mobs are able to get wet. This means, among other things, that
+      you can clear the "slimed" status effect off your holoparasite or dog or whatever.
+  starrm4nn:
+  - balance: Ephedrine spasms won't affect small or tiny items
+  - balance: Ephedrine's movement speed bonus now scales with purity.
