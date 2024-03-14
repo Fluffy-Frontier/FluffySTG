@@ -99,7 +99,6 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 			cop.grant_language(/datum/language/common, source = LANGUAGE_SPAWNER)
 			log_game("[key_name(cop)] has been selected as an [ert_antag.name]")
 			agents_number--
-	GLOB.cops_arrived = TRUE
 	return TRUE
 
 /obj/machinery/computer/comntr/proc/calling_NTIS(mob/user)
@@ -116,7 +115,6 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 	if(!reason_to_call_NTIS)
 		to_chat(user, "You decide not to call Nanotrasen Internal Security.")
 		return
-	GLOB.cops_arrived = TRUE
 	GLOB.call_NTIS_msg = reason_to_call_NTIS
 	GLOB.caller_of_NTIS = user.name
 	log_game("[key_name(user)] has called the Nanotrasen Internal Security for the following reason:\n[GLOB.call_NTIS_msg]")

@@ -1,3 +1,86 @@
+/obj/item/choice_beacon/nt_police
+	name = "gunset beacon"
+	desc = "A single use beacon to deliver a gunset of your choice."
+	company_source = "NanoTrasen(tm)"
+	company_message = span_bold("Supply Pod incoming please stand by")
+
+/obj/item/storage/box/survival/hug/black/nt_police
+	name = "tactical cuddle kit"
+	desc = "A lovely little box filled with gear for the brutal police!"
+
+/*
+		END round ammunition
+*/
+
+/obj/item/storage/box/survival/hug/black/nt_police/revolver/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/mateba(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/storage/belt/holster(src)
+
+/obj/item/storage/box/survival/hug/black/nt_police/smg/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/proto/unrestricted(src)
+	new /obj/item/ammo_box/magazine/smgm9mm(src)
+	new /obj/item/ammo_box/magazine/smgm9mm(src)
+	new /obj/item/ammo_box/magazine/smgm9mm(src)
+	new /obj/item/storage/pouch/ammo(src)
+
+/obj/item/storage/box/survival/hug/black/nt_police/medic/PopulateContents()
+	new /obj/item/gun/energy/laser/scatter/shotty(src)
+	new /obj/item/storage/medkit/tactical/premium(src)
+	new /obj/item/storage/belt/medical/ert(src)
+	new /obj/item/reagent_containers/hypospray/combat/nanites(src)
+
+/obj/item/storage/box/survival/hug/black/nt_police/laser/PopulateContents()
+	new /obj/item/gun/energy/e_gun/nuclear(src)
+	new /obj/item/gun/energy/ionrifle/carbine(src)
+
+/*
+		S.W.A.T ammunition
+*/
+
+/obj/item/storage/box/survival/hug/black/nt_swat/revolver/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/c38(src)
+	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/c38(src)
+	new /obj/item/storage/belt/holster(src)
+
+/obj/item/storage/box/survival/hug/black/nt_swat/smg/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/wt550(src)
+	new /obj/item/ammo_box/magazine/wt550m9(src)
+	new /obj/item/ammo_box/magazine/wt550m9(src)
+	new /obj/item/ammo_box/magazine/wt550m9(src)
+	new /obj/item/storage/pouch/ammo(src)
+
+/obj/item/storage/box/survival/hug/black/nt_swat/medic/PopulateContents()
+	new /obj/item/gun/energy/laser/scatter/shotty(src)
+	new /obj/item/storage/medkit/tactical(src)
+	new /obj/item/storage/belt/medical(src)
+	new /obj/item/reagent_containers/hypospray/combat(src)
+
+/obj/item/storage/box/survival/hug/black/nt_swat/laser/PopulateContents()
+	new /obj/item/gun/energy/e_gun(src)
+
+/obj/item/choice_beacon/nt_police/generate_display_names()
+	var/static/list/selectable_builds = list(
+		"Officer" = /obj/item/storage/box/survival/hug/black/nt_police/revolver,
+		"Trooper" = /obj/item/storage/box/survival/hug/black/nt_police/smg,
+		"Laserguner" = /obj/item/storage/box/survival/hug/black/nt_police/laser,
+		"Medic" = /obj/item/storage/box/survival/hug/black/nt_police/medic,
+	)
+	return selectable_builds
+
+/obj/item/choice_beacon/nt_swat/generate_display_names()
+	var/static/list/selectable_builds = list(
+		"Officer" = /obj/item/storage/box/survival/hug/black/nt_swat/revolver,
+		"Trooper" = /obj/item/storage/box/survival/hug/black/nt_swat/smg,
+		"Laserguner" = /obj/item/storage/box/survival/hug/black/nt_swat/laser,
+		"Medic" = /obj/item/storage/box/survival/hug/black/nt_swat/medic,
+	)
+	return selectable_builds
+
 /datum/id_trim/centcom/ert/security/NT_police/New()
 	. = ..()
 	assignment = "NTIS Police"
@@ -24,7 +107,9 @@
 /datum/outfit/NT_police
 	name = "NT Internal Security: Base"
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	box = /obj/item/storage/box/survival/centcom
 	back = /obj/item/storage/backpack/security
+	ears = /obj/item/radio/headset/headset_cent/commander
 
 /datum/outfit/NT_police/post_equip(mob/living/carbon/human/human_to_equip, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -46,75 +131,71 @@
 /datum/outfit/NT_police/regular
 	name = "NTIS Unit Regular"
 	gloves = /obj/item/clothing/gloves/tackler/combat
-	uniform = /obj/item/clothing/under/rank/security/officer
 
+	uniform = /obj/item/clothing/under/rank/security/officer
 	suit = /obj/item/clothing/suit/armor/vest/marine
-	shoes = /obj/item/clothing/shoes/combat
-	ears = /obj/item/radio/headset/headset_cent/commander
 	head = /obj/item/clothing/head/hats/warden/police/patrol
 
+	shoes = /obj/item/clothing/shoes/combat
 	belt = /obj/item/melee/baton/security/loaded
-	r_pocket = /obj/item/flashlight/seclite
-	l_pocket = /obj/item/restraints/handcuffs
 	id = /obj/item/card/id/advanced/centcom/ert/NT_police
 
 	backpack_contents = list(
-		/obj/item/storage/box/survival = 1,
 		/obj/item/storage/box/handcuffs = 1,
 		/obj/item/nt_reporter/swat_caller = 1,
 		/obj/item/beamout_tool_nt = 1,
+		/obj/item/choice_beacon/nt_swat = 1,
+		/obj/item/melee/baton/telescopic = 1,
+		/obj/item/storage/medkit/tactical = 1,
 	)
-
-	l_hand = /obj/item/gun/energy/disabler/smg
+	r_pocket = /obj/item/flashlight/seclite
+	l_pocket = /obj/item/restraints/handcuffs
 
 /datum/outfit/NT_police/swat
 	name = "NTIS S.W.A.T. Officer"
+	id = /obj/item/card/id/advanced/centcom/ert/NT_police/swat
 	gloves = /obj/item/clothing/gloves/combat
-	uniform = /obj/item/clothing/under/rank/security/officer
-	shoes = /obj/item/clothing/shoes/combat
-	ears = /obj/item/radio/headset/headset_cent/commander
 
+	uniform = /obj/item/clothing/under/rank/security/officer
 	head = /obj/item/clothing/head/helmet/sf_sacrificial
 	mask = /obj/item/clothing/mask/gas/nri_police
-
-	belt = /obj/item/gun/energy/disabler
-
 	suit = /obj/item/clothing/suit/armor/vest/marine/security
 
-	r_pocket = /obj/item/flashlight/seclite
-	l_pocket = /obj/item/restraints/handcuffs
-	id = /obj/item/card/id/advanced/centcom/ert/NT_police/swat
-	l_hand = /obj/item/gun/ballistic/shotgun/riot/sol
+	belt = /obj/item/gun/energy/disabler
+	shoes = /obj/item/clothing/shoes/combat
+
 	backpack_contents = list(
-		/obj/item/storage/box/survival = 1,
 		/obj/item/storage/box/handcuffs = 1,
 		/obj/item/melee/baton/security/loaded = 1,
-		/obj/item/storage/box/lethalshot = 2,
 		/obj/item/nt_reporter/trooper_caller = 1,
 		/obj/item/beamout_tool_nt = 1,
+		/obj/item/choice_beacon/nt_swat = 1,
+		/obj/item/shield/riot/tele = 1,
 	)
+	r_pocket = /obj/item/flashlight/seclite
+	l_pocket = /obj/item/restraints/handcuffs
 
 /datum/outfit/NT_police/trooper
 	name = "NTIS Trooper"
+	id = /obj/item/card/id/advanced/centcom/ert/NT_police/trooper
 
 	uniform = /obj/item/clothing/under/sol_peacekeeper
 	head = /obj/item/clothing/head/helmet/sf_sacrificial
 	mask = /obj/item/clothing/mask/gas/alt
-	gloves = /obj/item/clothing/gloves/combat
 	suit = /obj/item/clothing/suit/armor/sf_sacrificial
+
+	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/jackboots
 
-	ears = /obj/item/radio/headset/headset_sec/alt
-	l_pocket = /obj/item/restraints/handcuffs
-	r_pocket = /obj/item/flashlight/seclite
-	id = /obj/item/card/id/advanced/centcom/ert/NT_police/trooper
-	r_hand = /obj/item/gun/ballistic/automatic/sol_rifle
 	backpack_contents = list(
 		/obj/item/storage/box/handcuffs = 1,
 		/obj/item/sacrificial_face_shield = 1,
 		/obj/item/melee/baton/security/loaded = 1,
-		/obj/item/ammo_box/magazine/c40sol_rifle/standard = 4,
+		/obj/item/choice_beacon/nt_police = 1,
+		/obj/item/shield/riot/tele = 1,
 	)
+	l_pocket = /obj/item/restraints/handcuffs
+	r_pocket = /obj/item/flashlight/seclite
 
 /obj/item/nt_reporter
 	name = "NanoTrasen reporter"
@@ -126,7 +207,6 @@
 	var/type_to_check = /datum/antagonist/ert/NT_police/regular
 	var/type_of_callers = "NT_police_regular"
 	var/announcement_source = "NanoTrasen Internal Security"
-	var/fine_station = FALSE
 	var/ghost_poll_msg = "example crap"
 	var/amount_to_summon = 5
 	var/type_to_summon = /datum/antagonist/ert/NT_police/swat
@@ -166,12 +246,12 @@
 			priority_announce(announcement_message, announcement_source, 'sound/effects/families_police.ogg', has_important_message = TRUE, color_override = "yellow")
 			var/list/candidates = SSpolling.poll_ghost_candidates(
 				ghost_poll_msg,
-				jobban_to_check,
+				check_jobban = jobban_to_check,
 				pic_source = /obj/item/nt_reporter,
 				role_name_text = summoned_type,
 			)
 
-			if(candidates.len)
+			if(length(candidates))
 				//Pick the (un)lucky players
 				var/agents_number = min(amount_to_summon, candidates.len)
 				GLOB.NT_police_responder_info[summoned_type][NT_POLICE_AMT] = agents_number
@@ -224,7 +304,6 @@
 	desc = "Use this in-hand to vote that the station is engaging in Treason. If half your team votes for it, the Military will handle the situation."
 	type_to_check = /datum/antagonist/ert/NT_police/swat
 	type_of_callers = "NT_police_swat"
-	fine_station = FALSE
 	ghost_poll_msg = "The station has decided to engage in treason. Do you wish to join the NanoTrasen Military?"
 	amount_to_summon = 8
 	type_to_summon = /datum/antagonist/ert/NT_police/trooper
