@@ -653,6 +653,12 @@
 /obj/structure/cable,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
+"dU" = (
+/obj/structure/fence/corner{
+	dir = 1
+	},
+/turf/closed/mineral/random/volcanic,
+/area/lavaland/surface/outdoors)
 "dW" = (
 /obj/effect/turf_decal/box/white/corners{
 	dir = 8
@@ -1360,17 +1366,13 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/dorms)
 "iu" = (
-/obj/structure/frame/machine{
-	anchored = 1;
-	state = 2;
-	icon_state = "box_1"
-	},
 /obj/item/circuitboard/machine/ore_redemption,
 /obj/item/assembly/igniter,
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
+/obj/structure/frame/machine/secured,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "iw" = (
@@ -2533,7 +2535,11 @@
 /obj/effect/turf_decal/box/white/corners{
 	dir = 1
 	},
-/obj/structure/extinguisher_cabinet/directional/west,
+/obj/machinery/computer/shuttle/interdyne_cargo{
+	dir = 4;
+	icon_screen = "syndishuttle";
+	icon_keyboard = "syndie_key"
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "pk" = (
@@ -3899,6 +3905,12 @@
 /obj/structure/bookcase/random/religion,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
+"yz" = (
+/obj/structure/fence/end{
+	dir = 4
+	},
+/turf/closed/mineral/random/volcanic,
+/area/lavaland/surface/outdoors)
 "yA" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/indigo,
@@ -3913,6 +3925,12 @@
 /obj/structure/rack/shelf,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/dorms)
+"yB" = (
+/obj/structure/fence/corner{
+	dir = 9
+	},
+/turf/closed/mineral/random/volcanic,
+/area/lavaland/surface/outdoors)
 "yE" = (
 /obj/structure/railing{
 	dir = 9
@@ -4081,13 +4099,8 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/sand/plating/volcanic,
-/obj/machinery/computer/shuttle/interdyne_cargo{
-	dir = 4;
-	icon_screen = "syndishuttle";
-	icon_keyboard = "syndie_key"
-	},
 /turf/open/floor/engine/hull/reinforced/lavaland,
-/area/ruin/interdyne_planetary_base)
+/area/lavaland/surface/outdoors)
 "zv" = (
 /obj/machinery/suit_storage_unit/mining,
 /obj/structure/marker_beacon/burgundy,
@@ -4121,6 +4134,12 @@
 	},
 /obj/effect/turf_decal/sand/plating/volcanic,
 /turf/open/floor/plating/reinforced/lavaland,
+/area/lavaland/surface/outdoors)
+"zS" = (
+/obj/structure/fence/end{
+	dir = 8
+	},
+/turf/closed/mineral/random/volcanic,
 /area/lavaland/surface/outdoors)
 "zV" = (
 /obj/item/flashlight{
@@ -5056,15 +5075,11 @@
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/serv)
 "Gc" = (
-/obj/structure/frame/machine{
-	anchored = 1;
-	state = 2;
-	icon_state = "box_1"
-	},
 /obj/item/circuitboard/machine/ore_silo,
 /obj/structure/marker_beacon/burgundy,
 /obj/structure/sign/flag/syndicate/directional/north,
 /obj/effect/turf_decal/tile/dark/full,
+/obj/structure/frame/machine/secured,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/vault)
 "Gf" = (
@@ -5658,6 +5673,12 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
+"JC" = (
+/obj/structure/fence/corner{
+	dir = 4
+	},
+/turf/closed/mineral/random/volcanic,
+/area/lavaland/surface/outdoors)
 "JJ" = (
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 4
@@ -6268,6 +6289,12 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"Nm" = (
+/obj/structure/fence{
+	dir = 4
+	},
+/turf/closed/mineral/random/volcanic,
+/area/lavaland/surface/outdoors)
 "Nq" = (
 /obj/structure/marker_beacon/teal,
 /obj/effect/decal/cleanable/glitter/blue,
@@ -6830,6 +6857,12 @@
 /obj/structure/cable,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
+"Qc" = (
+/obj/structure/fence/cut/large{
+	dir = 4
+	},
+/turf/closed/mineral/random/volcanic,
+/area/lavaland/surface/outdoors)
 "Qi" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 9
@@ -7580,7 +7613,6 @@
 "Vi" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/item/disk/tech_disk,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "Vl" = (
@@ -7619,6 +7651,10 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
+"Vr" = (
+/obj/structure/fence/corner,
+/turf/closed/mineral/random/volcanic,
+/area/lavaland/surface/outdoors)
 "Vv" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -8933,7 +8969,7 @@ Co
 CH
 "}
 (10,1,1) = {"
-Co
+yz
 Co
 eO
 eO
@@ -8992,7 +9028,7 @@ Co
 CH
 "}
 (11,1,1) = {"
-Co
+Nm
 BO
 ku
 pp
@@ -9051,7 +9087,7 @@ Co
 CH
 "}
 (12,1,1) = {"
-Co
+Nm
 BO
 zn
 yq
@@ -9110,7 +9146,7 @@ Co
 CH
 "}
 (13,1,1) = {"
-Co
+Nm
 BO
 zn
 nr
@@ -9169,7 +9205,7 @@ Co
 CH
 "}
 (14,1,1) = {"
-Co
+Qc
 BO
 Ed
 uH
@@ -9228,7 +9264,7 @@ Co
 Co
 "}
 (15,1,1) = {"
-Co
+Nm
 BO
 yt
 nr
@@ -9287,7 +9323,7 @@ BO
 Co
 "}
 (16,1,1) = {"
-Co
+Nm
 eO
 Ak
 yq
@@ -9346,7 +9382,7 @@ BO
 Co
 "}
 (17,1,1) = {"
-Co
+Nm
 eO
 oh
 OG
@@ -9405,7 +9441,7 @@ ZT
 Co
 "}
 (18,1,1) = {"
-Co
+Nm
 eO
 Ak
 uH
@@ -9464,7 +9500,7 @@ Co
 Co
 "}
 (19,1,1) = {"
-Co
+Nm
 eO
 oh
 nr
@@ -9523,7 +9559,7 @@ Co
 Co
 "}
 (20,1,1) = {"
-Co
+Nm
 BO
 Bx
 yq
@@ -9582,7 +9618,7 @@ Co
 Co
 "}
 (21,1,1) = {"
-Co
+Nm
 fU
 sf
 KR
@@ -9641,7 +9677,7 @@ fU
 Co
 "}
 (22,1,1) = {"
-Co
+Nm
 hY
 BO
 eO
@@ -9700,7 +9736,7 @@ BO
 Co
 "}
 (23,1,1) = {"
-Co
+Nm
 Co
 BO
 ZT
@@ -9759,8 +9795,8 @@ Co
 Co
 "}
 (24,1,1) = {"
-Co
-Co
+JC
+dU
 BO
 eO
 eO
@@ -9819,7 +9855,7 @@ Co
 "}
 (25,1,1) = {"
 fU
-Co
+Nm
 ZT
 BO
 zr
@@ -10055,7 +10091,7 @@ Co
 "}
 (29,1,1) = {"
 fU
-Co
+Nm
 BO
 BO
 pn
@@ -10113,8 +10149,8 @@ Co
 Co
 "}
 (30,1,1) = {"
-Co
-Co
+yB
+Vr
 Nv
 BO
 eO
@@ -10172,7 +10208,7 @@ Co
 Co
 "}
 (31,1,1) = {"
-Co
+Nm
 Co
 BO
 BO
@@ -10231,7 +10267,7 @@ Co
 Co
 "}
 (32,1,1) = {"
-Co
+Nm
 uy
 BO
 BO
@@ -10290,7 +10326,7 @@ Jt
 Co
 "}
 (33,1,1) = {"
-Co
+Nm
 fU
 BO
 ZT
@@ -10349,7 +10385,7 @@ fU
 Co
 "}
 (34,1,1) = {"
-Co
+Nm
 ZT
 Co
 BO
@@ -10408,7 +10444,7 @@ ZT
 Co
 "}
 (35,1,1) = {"
-Co
+zS
 Co
 Co
 Co
