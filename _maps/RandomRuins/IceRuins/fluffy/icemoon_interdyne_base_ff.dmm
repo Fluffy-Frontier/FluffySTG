@@ -6311,7 +6311,10 @@
 /obj/structure/bodycontainer/morgue{
 	dir = 8
 	},
-/obj/item/bodybag,
+/obj/item/bodybag{
+	pixel_x = 5;
+	pixel_y = 9
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "LP" = (
@@ -7824,6 +7827,16 @@
 /obj/effect/baseturf_helper/reinforced_plating,
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/main/vault)
+"Wo" = (
+/obj/machinery/camera/xray{
+	pixel_x = 10;
+	name = "Inderdyne security camera";
+	network = list("Interdyne");
+	color = "#adadcd";
+	pixel_y = 25
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base)
 "Wt" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/machinery/reagentgrinder{
@@ -9924,7 +9937,7 @@ ac
 "}
 (25,1,1) = {"
 Im
-Lh
+Wo
 SH
 Iy
 MR
@@ -10160,7 +10173,7 @@ ac
 "}
 (29,1,1) = {"
 Im
-Lh
+Wo
 dM
 Iy
 kr

@@ -1309,6 +1309,15 @@
 /obj/structure/cable,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/interdyne_planetary_base/main)
+"hX" = (
+/obj/machinery/computer/shuttle/interdyne_cargo{
+	dir = 2;
+	icon_screen = "syndishuttle";
+	icon_keyboard = "syndie_key";
+	pixel_y = -5
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/cargo)
 "hY" = (
 /obj/structure/flora/ash/stem_shroom,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
@@ -2535,11 +2544,7 @@
 /obj/effect/turf_decal/box/white/corners{
 	dir = 1
 	},
-/obj/machinery/computer/shuttle/interdyne_cargo{
-	dir = 4;
-	icon_screen = "syndishuttle";
-	icon_keyboard = "syndie_key"
-	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "pk" = (
@@ -3859,7 +3864,10 @@
 /obj/structure/bodycontainer/morgue{
 	dir = 8
 	},
-/obj/item/bodybag,
+/obj/item/bodybag{
+	pixel_x = 5;
+	pixel_y = 9
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "yi" = (
@@ -4052,14 +4060,14 @@
 /area/ruin/interdyne_planetary_base/science)
 "zh" = (
 /obj/structure/rack,
-/obj/item/rcd_ammo,
-/obj/item/rcd_ammo,
-/obj/item/rcd_ammo,
-/obj/item/rcd_ammo,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
 /obj/item/flatpacked_machine,
+/obj/item/rcd_ammo,
+/obj/item/rcd_ammo,
+/obj/item/rcd_ammo,
+/obj/item/rcd_ammo,
 /obj/item/construction/rcd/loaded/interdyne,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
@@ -6265,7 +6273,6 @@
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
 /obj/effect/turf_decal/stripes/red/line,
-/obj/structure/sign/poster/contraband/syndicate_medical/directional/north,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "Nf" = (
@@ -6416,6 +6423,16 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"NW" = (
+/obj/machinery/camera/xray{
+	pixel_x = 10;
+	name = "Inderdyne security camera";
+	network = list("Interdyne");
+	color = "#adadcd";
+	pixel_y = 25
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base)
 "Oc" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/large,
@@ -9855,11 +9872,11 @@ Co
 "}
 (25,1,1) = {"
 fU
-Nm
+NW
 ZT
 BO
 zr
-MQ
+pu
 pN
 eO
 yE
@@ -10091,7 +10108,7 @@ Co
 "}
 (29,1,1) = {"
 fU
-Nm
+NW
 BO
 BO
 pn
@@ -10165,7 +10182,7 @@ eO
 vm
 vm
 vm
-vm
+hX
 Na
 zV
 Od
