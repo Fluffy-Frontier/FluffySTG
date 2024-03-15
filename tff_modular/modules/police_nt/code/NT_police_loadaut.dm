@@ -69,10 +69,10 @@
 		/obj/item/beamout_tool_nt = 1,
 		/obj/item/melee/baton/telescopic = 1,
 		/obj/item/storage/medkit/tactical = 1,
+		/obj/item/gun/energy/disabler/smg = 1,
 	)
 	r_pocket = /obj/item/flashlight/seclite
 	l_pocket = /obj/item/restraints/handcuffs
-	l_hand = /obj/item/gun/energy/disabler/smg
 
 /datum/outfit/NT_police/swat
 	name = "NTIS S.W.A.T. Officer"
@@ -91,7 +91,8 @@
 		/obj/item/nt_reporter/trooper_caller = 1,
 		/obj/item/beamout_tool_nt = 1,
 		/obj/item/choice_beacon/nt_swat = 1,
-		/obj/item/shield/riot/tele = 1,
+		/obj/item/shield/ballistic = 1,
+		/obj/item/storage/medkit/tactical = 1,
 	)
 	r_pocket = /obj/item/flashlight/seclite
 	l_pocket = /obj/item/restraints/handcuffs
@@ -111,7 +112,7 @@
 		/obj/item/sacrificial_face_shield = 1,
 		/obj/item/melee/baton/security/loaded = 1,
 		/obj/item/choice_beacon/nt_police = 1,
-		/obj/item/shield/riot/tele = 1,
+		/obj/item/shield/ballistic = 1,
 	)
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/flashlight/seclite

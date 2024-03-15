@@ -18,7 +18,7 @@
 	limb_integrity = 700
 
 /obj/item/clothing/mask/gas/nt_police
-	name = "nt police mask"
+	name = "NT police mask"
 	desc = "A close-fitting tactical mask."
 	icon = 'tff_modular/modules/police_nt/icons/mask.dmi'
 	worn_icon = 'tff_modular/modules/police_nt/icons/wornmask.dmi'
@@ -153,7 +153,7 @@
 			var/list/candidates = SSpolling.poll_ghost_candidates(
 				ghost_poll_msg,
 				check_jobban = jobban_to_check,
-				pic_source = /obj/item/nt_reporter,
+				alert_pic = /obj/item/nt_reporter,
 				role_name_text = summoned_type,
 			)
 
