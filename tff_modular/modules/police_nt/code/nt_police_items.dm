@@ -16,13 +16,6 @@
 	armor_type = /datum/armor/armor_sf_nt_police
 	max_integrity = 700
 	limb_integrity = 700
-	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	armor_type = /datum/armor/nt_regular
-	cold_protection = CHEST | GROIN | LEGS | FEET | ARMS | HANDS
-	min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT_OFF
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/mask/gas/nt_police
 	name = "nt police mask"
