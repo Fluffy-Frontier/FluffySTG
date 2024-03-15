@@ -171,6 +171,12 @@
 		occupant_mind.current.log_message("has been deconverted from the [antag.rev_team.name] by deconvert machinery!", LOG_GAME, color="red")
 		success = TRUE
 
+	// Также деконвертим дефолтную реву, дабы была альтернатива сомнительному забиванию головы дубинкой
+	var/datum/antagonist/rev/d_rev = occupant_mind.has_antag_datum(/datum/antagonist/rev)
+	if(d_rev)
+		d_rev.remove_revolutionary("deconvert machinery")
+		success = TRUE
+
 	var/obj/item/radio/sec_radio = new (src)
 	sec_radio.set_listening(FALSE)
 	sec_radio.set_frequency(FREQ_SECURITY)

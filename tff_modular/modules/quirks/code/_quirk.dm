@@ -4,3 +4,6 @@
 
 /datum/quirk/oversized
 	allow_for_donator = TRUE
+
+/datum/quirk/item_quirk/pride_pin
+	hidden_quirk = TRUE
