@@ -721,6 +721,14 @@
       dual-wield cone.
   - balance: Thermal pistol crates are now 2000 credits, up from 1400 credits.
 2024-03-15:
+  13spacemen:
+  - bugfix: Fixed some poll alerts runtiming
   ArcaneMusic:
   - image: Your station's standard issue E-219 laser turrets within the AI upload
       and AI satellite have been updated to a newer, shinier model.
+  - code_imp: We now log how many ores spawned on lavaland each round, as well as
+      the sizes of all of the ore vents.
+  Iajret:
+  - balance: you can't take pride pin quirk anymore.
+  JohnFulpWillard:
+  - refactor: Instruments now use TGUI.
