@@ -67,7 +67,7 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 	var/announcer = "NanoTrasen Internal Security"
 	var/poll_question = "The station has called for the NT Internal Security. Will you respond?"
 	var/list_to_use = "NT_police_regular"
-	priority_announce(announcement_message, announcer, 'sound/effects/families_police.ogg', has_important_message=TRUE, color_override = "yellow")
+	priority_announce(announcement_message, announcer, sound = 'tff_modular/modules/police_nt/nt_police_first.ogg', has_important_message=TRUE, color_override = "yellow")
 	var/list/candidates = SSpolling.poll_ghost_candidates(
 		poll_question,
 		check_jobban = ROLE_DEATHSQUAD,
@@ -156,7 +156,7 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 		if ("callThePolice")
 			if(COOLDOWN_FINISHED(src, call_police_cooldown))
 				COOLDOWN_START(src, call_police_cooldown, CALL_POLICE_COOLDOWN)
-				calling_NTIS(usr, "Marshals")
+				calling_NTIS(usr)
 		if ("deleteMessage")
 			if (!authenticated(usr))
 				return

@@ -57,7 +57,7 @@
 /obj/item/storage/box/survival/hug/black/nt_swat/medic/PopulateContents()
 	new /obj/item/gun/energy/laser/scatter/shotty(src)
 	new /obj/item/storage/medkit/tactical(src)
-	new /obj/item/storage/belt/medical(src)
+	new /obj/item/storage/belt/medical/ert(src)
 	new /obj/item/reagent_containers/hypospray/combat(src)
 
 /obj/item/storage/box/survival/hug/black/nt_swat/laser/PopulateContents()
@@ -144,12 +144,12 @@
 		/obj/item/storage/box/handcuffs = 1,
 		/obj/item/nt_reporter/swat_caller = 1,
 		/obj/item/beamout_tool_nt = 1,
-		/obj/item/choice_beacon/nt_swat = 1,
 		/obj/item/melee/baton/telescopic = 1,
 		/obj/item/storage/medkit/tactical = 1,
 	)
 	r_pocket = /obj/item/flashlight/seclite
 	l_pocket = /obj/item/restraints/handcuffs
+	l_hand = /obj/item/gun/energy/disabler/smg
 
 /datum/outfit/NT_police/swat
 	name = "NTIS S.W.A.T. Officer"
@@ -213,11 +213,9 @@
 	var/summoned_type = "NTIS S.W.A.T."
 	var/jobban_to_check = ROLE_DEATHSQUAD
 	var/announcement_message = "Well..."
+	var/sound_nt = 'tff_modular/modules/police_nt/nt_police_second.ogg'
 
 /obj/item/nt_reporter/proc/pre_checks(mob/user)
-	if(GLOB.NT_police_responder_info[type_of_callers][NT_POLICE_AMT] == 0)
-		to_chat(user, span_warning("There are no responders. You likely spawned this in as an admin. Please don't do this."))
-		return FALSE
 	if(!user.mind.has_antag_datum(type_to_check))
 		to_chat(user, span_warning("You don't know how to use this!"))
 		return FALSE
@@ -243,7 +241,7 @@
 		if(current_votes >= amount_of_responders * 0.5)
 			GLOB.NT_police_responder_info[type_of_callers][NT_POLICE_DECLARED] = TRUE
 
-			priority_announce(announcement_message, announcement_source, 'sound/effects/families_police.ogg', has_important_message = TRUE, color_override = "yellow")
+			priority_announce(announcement_message, announcement_source, sound_nt, has_important_message = TRUE, color_override = "yellow")
 			var/list/candidates = SSpolling.poll_ghost_candidates(
 				ghost_poll_msg,
 				check_jobban = jobban_to_check,
@@ -287,8 +285,8 @@
 	amount_to_summon = 5
 	type_to_summon = /datum/antagonist/ert/NT_police/swat
 	summoned_type = "NT_police_swat"
-	announcement_message = "Hello, crewmembers. NTIS Police have requested S.W.A.T. backup, either for assistance doing their job due to crew \
-		impediment, or due to a fraudulent NTIS call. Please comply with all requests by said S.W.A.T. members."
+	sound_nt = 'tff_modular/modules/police_nt/nt_police_second.ogg'
+	announcement_message = "Attention, crew.\nNTIS Police have requested S.W.A.T. backup. Please comply with all requests by special squad members."
 
 /obj/item/nt_reporter/swat_caller/questions(mob/user)
 	var/question = "Does the situation require additional S.W.A.T. backup, involve the station impeding you from doing your job, \
@@ -308,13 +306,8 @@
 	amount_to_summon = 8
 	type_to_summon = /datum/antagonist/ert/NT_police/trooper
 	summoned_type = "NT_police_trooper"
-	announcement_message = "Crewmembers of the station. You have refused to comply with first responders and SWAT officers, and have assaulted them, \
-		and they are unable to carry out the wills of the company.\n\
-		As such, we are charging those responsible with Treason. The penalty of which is death, or no less than twenty-five years in catorga.\n\
-		Treason is a serious crime. Military forces are en route to your station. They will be assuming direct control of the station, and \
-		will be evacuating civilians from the scene.\n\
-		Non-offending citizens, prepare for evacuation. Comply with all orders given to you by NanoTrasen military personnel.\n\
-		To all those who are engaging in treason, lay down your weapons and surrender. Refusal to comply may be met with lethal force."
+	sound_nt = 'tff_modular/modules/police_nt/nt_police_third.ogg'
+	announcement_message = "Attention, crew.\nYou are accused of corporate treason. Lay down your weapons and surrender. Follow all the orders of the NanoTrasen response team. The perpetrators of corporate betrayal will be punished at the greatest extent."
 
 /obj/item/nt_reporter/trooper_caller/questions(mob/user)
 	var/list/list_of_questions = list(

@@ -43,8 +43,6 @@
 		along with anyone you are pulling.\n"
 	missiondesc += "<B><font size=5 color=red>Also don't forget to return to centcom on the ship before using beamout tool!</font></B>"
 	to_chat(owner, missiondesc)
-	var/mob/living/greeted_mob = owner.current
-	greeted_mob.playsound_local(greeted_mob, 'sound/effects/families_police.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 
 /datum/antagonist/ert/NT_police/swat
 	name = "NTIS S.W.A.T. Officer"
@@ -65,8 +63,6 @@
 		along with anyone you are pulling.\n"
 	missiondesc += "<B><font size=5 color=red>Also don't forget to return to centcom on the ship before using beamout tool!</font></B>"
 	to_chat(owner, missiondesc)
-	var/mob/living/greeted_mob = owner.current
-	greeted_mob.playsound_local(greeted_mob, 'sound/effects/families_police.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 
 /datum/antagonist/ert/NT_police/trooper
 	name = "NTIS Trooper"
@@ -84,8 +80,6 @@
 		away from the scene."
 	missiondesc += "<BR> <B>4.</B> If you need to use lethal force, do so, but only if you must."
 	to_chat(owner, missiondesc)
-	var/mob/living/greeted_mob = owner.current
-	greeted_mob.playsound_local(greeted_mob, 'sound/effects/families_police.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 
 
 /obj/item/beamout_tool_nt
