@@ -106,6 +106,9 @@ If anyone can figure out how to get Obsessed to work I would be very appreciativ
 		if(ROLE_CHANGELING)
 			p_p += MAKEANTAG_PL_DEFAULT_SECURITY
 			p_p += MAKEANTAG_PL_DEFAULT_HEADS
+		if(ROLE_SPY)
+			p_p += MAKEANTAG_PL_DEFAULT_SECURITY
+			p_p += MAKEANTAG_PL_DEFAULT_HEADS
 		if(ROLE_CULTIST)
 			p_p += MAKEANTAG_PL_DEFAULT_SECURITY
 			p_p += MAKEANTAG_PL_DEFAULT_HEADS
