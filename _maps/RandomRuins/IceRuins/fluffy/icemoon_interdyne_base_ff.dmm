@@ -1051,6 +1051,14 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
+"fi" = (
+/obj/structure/marker_beacon/burgundy,
+/obj/structure/sign/poster/contraband/syndicate_medical/directional/south{
+	name = "Interdyne Pharmaceutics";
+	desc = "Beware of perimeter turrets.'"
+	},
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "fq" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -1638,6 +1646,7 @@
 	},
 /obj/machinery/shower/directional/east,
 /obj/structure/drain,
+/obj/structure/sign/warning/cold_temp/directional/west,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "jy" = (
@@ -3440,11 +3449,19 @@
 "uk" = (
 /obj/structure/rack/shelf,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/item/storage/bag/ore,
-/obj/item/shovel,
+/obj/item/shovel{
+	throw_speed = 7;
+	throwforce = 7;
+	tk_throw_range = 18;
+	throw_range = 9;
+	attack_speed = 24;
+	name = "Bladed battle shovel";
+	desc = "A large tool for digging, and breaching skulls."
+	},
 /obj/item/pickaxe,
-/obj/item/t_scanner/adv_mining_scanner/lesser,
 /obj/item/pickaxe/drill,
+/obj/item/storage/bag/ore,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "um" = (
@@ -5680,6 +5697,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/box/white/corners,
+/obj/structure/sign/warning/gas_mask/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "HF" = (
@@ -10190,7 +10208,7 @@ ac
 ac
 "}
 (29,1,1) = {"
-Im
+fi
 Wo
 dM
 Iy

@@ -2358,6 +2358,14 @@
 /obj/item/pipe_dispenser,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
+"oh" = (
+/obj/structure/marker_beacon/burgundy,
+/obj/structure/sign/poster/contraband/syndicate_medical/directional/south{
+	name = "Interdyne Pharmaceutics";
+	desc = "Beware of perimeter turrets.'"
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "on" = (
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 5
@@ -3416,6 +3424,7 @@
 	},
 /obj/structure/drain,
 /obj/machinery/shower/directional/east,
+/obj/structure/sign/warning/hot_temp/directional/west,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "vF" = (
@@ -4515,6 +4524,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/box/white/corners,
+/obj/structure/sign/warning/gas_mask/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "Cn" = (
@@ -4601,10 +4611,18 @@
 "CS" = (
 /obj/structure/rack/shelf,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/item/storage/bag/ore,
-/obj/item/pickaxe/drill,
-/obj/item/shovel,
+/obj/item/shovel{
+	throw_speed = 7;
+	throwforce = 7;
+	tk_throw_range = 18;
+	throw_range = 9;
+	attack_speed = 24;
+	name = "Bladed battle shovel";
+	desc = "A large tool for digging, and breaching skulls."
+	},
 /obj/item/pickaxe,
+/obj/item/pickaxe/drill,
+/obj/item/storage/bag/ore,
 /obj/item/t_scanner/adv_mining_scanner/lesser,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
@@ -10122,7 +10140,7 @@ Co
 Co
 "}
 (29,1,1) = {"
-fU
+oh
 NW
 BO
 BO
