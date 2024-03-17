@@ -13,6 +13,10 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/item/mmi/posibrain/syndie/interdyne,
+/obj/item/clothing/neck/link_scryer{
+	pixel_x = 12;
+	pixel_y = 7
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "ag" = (
@@ -7756,6 +7760,7 @@
 	syndicate_network = 1;
 	color = "#adadcd"
 	},
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "VM" = (
