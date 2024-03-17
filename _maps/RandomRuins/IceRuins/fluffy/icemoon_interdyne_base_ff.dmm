@@ -1971,7 +1971,7 @@
 /obj/machinery/light/directional/south{
 	light_color = "#5148A6"
 	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "lZ" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1995,6 +1995,11 @@
 	dir = 4;
 	layer = 3
 	},
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"mg" = (
+/obj/structure/flora/grass/brown/style_random,
+/obj/structure/shipping_container/interdyne,
 /turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "mp" = (
@@ -2521,7 +2526,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
 	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "oO" = (
 /obj/structure/table/optable,
@@ -3624,6 +3629,9 @@
 /obj/item/restraints/legcuffs/beartrap,
 /obj/item/restraints/legcuffs/beartrap,
 /obj/item/restraints/legcuffs/beartrap,
+/obj/item/storage/toolbox/fishing{
+	pixel_y = 7
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "vz" = (
@@ -4364,8 +4372,8 @@
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "Am" = (
-/obj/machinery/suit_storage_unit/mining,
 /obj/effect/turf_decal/tile/dark/full,
+/obj/machinery/vending/wardrobe/syndie_wardrobe/interdyne,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "Au" = (
@@ -4581,7 +4589,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 8
 	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "Cc" = (
 /obj/effect/turf_decal/stripes/red/line{
@@ -4786,7 +4794,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
 	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "CZ" = (
 /obj/effect/turf_decal/trimline/dark/filled/corner{
@@ -5541,7 +5549,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/east{
 	pixel_x = 4
 	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "GM" = (
 /obj/effect/turf_decal/stripes/red/line{
@@ -5571,7 +5579,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
 	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "GV" = (
 /obj/effect/turf_decal/weather/snow/corner{
@@ -6673,7 +6681,9 @@
 /obj/item/rcd_ammo,
 /obj/item/rcd_ammo,
 /obj/item/rcd_ammo,
-/obj/item/construction/rcd/loaded/interdyne,
+/obj/item/construction/rcd/loaded/interdyne{
+	name = "interdyne RCD"
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "OH" = (
@@ -7341,8 +7351,8 @@
 /area/ruin/interdyne_planetary_base/serv)
 "TC" = (
 /obj/structure/rack/shelf,
-/obj/item/storage/toolbox/syndicate,
 /obj/effect/turf_decal/tile/dark/full,
+/obj/item/storage/toolbox/syndicate,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "TH" = (
@@ -7799,6 +7809,8 @@
 	network = list("Interdyne")
 	},
 /obj/item/bedsheet/syndie,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/item/lighter,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "Wa" = (
@@ -8048,9 +8060,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "Xw" = (
-/obj/structure/rack/wooden,
-/obj/item/stack/sheet/mineral/wood/fifty,
-/obj/item/lighter,
+/obj/structure/weightmachine/weightlifter,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "Xz" = (
@@ -8425,6 +8435,12 @@
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/item/stock_parts/subspace/amplifier{
+	desc = "Cybernetic spine replacement early prototype, that in one day will be able to sustain direct connection between human and station network systems, to fulfill ai duties.";
+	name = "Wavefield Science spinal cord implant prototype";
+	light_color = "#7d7fFF";
+	color = "#7d7fFF"
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "Zx" = (
@@ -10286,7 +10302,7 @@ ac
 KM
 FI
 SH
-Se
+mg
 Iy
 SH
 SH
@@ -10345,7 +10361,7 @@ ac
 Lh
 ac
 Iy
-eE
+Iy
 SM
 Iy
 Iy

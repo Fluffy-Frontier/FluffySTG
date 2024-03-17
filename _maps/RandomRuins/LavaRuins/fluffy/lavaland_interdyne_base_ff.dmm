@@ -871,6 +871,9 @@
 /obj/item/restraints/legcuffs/beartrap,
 /obj/item/restraints/legcuffs/beartrap,
 /obj/item/restraints/legcuffs/beartrap,
+/obj/item/storage/toolbox/fishing{
+	pixel_y = 7
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "fe" = (
@@ -1123,9 +1126,7 @@
 /turf/open/floor/carpet/red,
 /area/ruin/interdyne_planetary_base/serv)
 "gR" = (
-/obj/structure/rack/wooden,
-/obj/item/stack/sheet/mineral/wood/fifty,
-/obj/item/lighter,
+/obj/structure/weightmachine/weightlifter,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "gU" = (
@@ -2360,10 +2361,11 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "oh" = (
+/obj/structure/lattice/catwalk/mining,
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/structure/lattice/catwalk/mining,
+/obj/structure/shipping_container/interdyne,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "on" = (
@@ -2377,7 +2379,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 8
 	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "or" = (
 /obj/effect/baseturf_helper/reinforced_plating,
@@ -3021,6 +3023,8 @@
 	dir = 1
 	},
 /obj/item/bedsheet/syndie,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/item/lighter,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "se" = (
@@ -3383,7 +3387,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
 	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "vy" = (
 /obj/item/tank/internals/oxygen/yellow,
@@ -3878,7 +3882,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
 	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "yj" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -4059,7 +4063,9 @@
 /obj/item/rcd_ammo,
 /obj/item/rcd_ammo,
 /obj/item/rcd_ammo,
-/obj/item/construction/rcd/loaded/interdyne,
+/obj/item/construction/rcd/loaded/interdyne{
+	name = "interdyne RCD"
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "zm" = (
@@ -5049,8 +5055,8 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "FQ" = (
-/obj/machinery/suit_storage_unit/mining,
 /obj/effect/turf_decal/tile/dark/full,
+/obj/machinery/vending/wardrobe/syndie_wardrobe/interdyne,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "FS" = (
@@ -5910,7 +5916,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
 	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "KN" = (
 /obj/effect/turf_decal/siding/wood{
@@ -6510,7 +6516,7 @@
 /obj/machinery/light/directional/south{
 	light_color = "#5148A6"
 	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "Ox" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -7155,6 +7161,12 @@
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/item/stock_parts/subspace/amplifier{
+	desc = "Cybernetic spine replacement early prototype, that in one day will be able to sustain direct connection between human and station network systems, to fulfill ai duties.";
+	name = "Wavefield Science spinal cord implant prototype";
+	light_color = "#7d7fFF";
+	color = "#7d7fFF"
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "Sf" = (
@@ -8291,7 +8303,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/east{
 	pixel_x = 4
 	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "Zg" = (
 /obj/structure/table/wood/fancy/black,
@@ -9334,7 +9346,7 @@ Co
 "}
 (16,1,1) = {"
 Nm
-eO
+BO
 Ak
 yq
 OG
@@ -9393,8 +9405,8 @@ Co
 "}
 (17,1,1) = {"
 Nm
-eO
-oh
+BO
+yt
 OG
 nr
 OG
@@ -9452,7 +9464,7 @@ Co
 "}
 (18,1,1) = {"
 Nm
-eO
+BO
 Ak
 uH
 nr
@@ -9511,8 +9523,8 @@ Co
 "}
 (19,1,1) = {"
 Nm
-eO
-oh
+BO
+yt
 nr
 BZ
 OG
@@ -9692,7 +9704,7 @@ hY
 BO
 eO
 eO
-MQ
+oh
 pN
 eO
 eO
