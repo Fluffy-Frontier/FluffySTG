@@ -1151,9 +1151,6 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
 /obj/structure/marker_beacon/indigo,
 /obj/structure/drain,
-/obj/effect/turf_decal/box/white/corners{
-	dir = 8
-	},
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
@@ -2509,6 +2506,7 @@
 	dir = 5
 	},
 /obj/structure/hedge,
+/obj/item/decoration/new_year/garland,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "oN" = (
@@ -4947,6 +4945,7 @@
 	dir = 9
 	},
 /obj/structure/hedge,
+/obj/item/decoration/new_year/garland,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "DX" = (
@@ -5461,6 +5460,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
+/obj/item/decoration/new_year/garland,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "Gv" = (
@@ -6708,6 +6708,9 @@
 	pixel_y = 7
 	},
 /obj/item/storage/fancy/egg_box,
+/obj/effect/turf_decal/box/white/corners{
+	dir = 8
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "OI" = (
@@ -8206,6 +8209,7 @@
 "Ym" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/tile/dark/full,
+/obj/item/forcefield_projector,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "Yv" = (

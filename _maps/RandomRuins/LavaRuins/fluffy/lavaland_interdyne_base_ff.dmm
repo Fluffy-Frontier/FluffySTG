@@ -765,9 +765,6 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
 /obj/structure/marker_beacon/indigo,
 /obj/structure/drain,
-/obj/effect/turf_decal/box/white/corners{
-	dir = 8
-	},
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
@@ -1179,6 +1176,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
+/obj/item/decoration/new_year/garland,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "hh" = (
@@ -2360,14 +2358,6 @@
 /obj/item/pipe_dispenser,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
-"oh" = (
-/obj/structure/lattice/catwalk/mining,
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/structure/shipping_container/interdyne,
-/turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "on" = (
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 5
@@ -2927,6 +2917,9 @@
 	pixel_y = 7
 	},
 /obj/item/storage/fancy/egg_box,
+/obj/effect/turf_decal/box/white/corners{
+	dir = 8
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "rw" = (
@@ -3854,6 +3847,14 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
+"xZ" = (
+/obj/structure/lattice/catwalk/mining,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/shipping_container/interdyne,
+/turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "yc" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/bodycontainer/morgue{
@@ -4355,6 +4356,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
+/obj/item/decoration/new_year/garland,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "Bl" = (
@@ -6115,6 +6117,7 @@
 	dir = 5
 	},
 /obj/structure/hedge,
+/obj/item/decoration/new_year/garland,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "LX" = (
@@ -7418,6 +7421,7 @@
 	dir = 9
 	},
 /obj/structure/hedge,
+/obj/item/decoration/new_year/garland,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "TS" = (
@@ -7635,6 +7639,7 @@
 "Vi" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/tile/dark/full,
+/obj/item/forcefield_projector,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "Vl" = (
@@ -9704,7 +9709,7 @@ hY
 BO
 eO
 eO
-oh
+xZ
 pN
 eO
 eO
@@ -10350,7 +10355,7 @@ Co
 (33,1,1) = {"
 Nm
 fU
-BO
+ZT
 ZT
 BO
 Jt
@@ -10408,7 +10413,7 @@ Co
 "}
 (34,1,1) = {"
 Nm
-ZT
+BO
 Co
 BO
 Co
