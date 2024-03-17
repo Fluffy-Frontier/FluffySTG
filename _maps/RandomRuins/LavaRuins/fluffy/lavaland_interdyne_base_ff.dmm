@@ -1079,7 +1079,7 @@
 	},
 /obj/structure/cable,
 /obj/structure/closet/crate/secure/gear{
-	desc = "A secure gear crate, with the Syndicate logo on it.";
+	desc = "A secute crate with huge mark 'to Surface' on it.";
 	icon_state = "syndicrate";
 	base_icon_state = "syndicrate";
 	req_access = list("syndicate")
@@ -2773,7 +2773,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/closet/crate/secure/gear{
-	desc = "A secure gear crate, with the Syndicate logo on it.";
+	desc = "A secute crate with huge mark 'to Surface' on it.";
 	icon_state = "syndicrate";
 	base_icon_state = "syndicrate";
 	req_access = list("syndicate")
@@ -4168,7 +4168,7 @@
 /obj/effect/turf_decal/bot_red,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/closet/crate/secure/gear{
-	desc = "A secure gear crate, with the Syndicate logo on it.";
+	desc = "A secute crate with huge mark 'to Surface' on it.";
 	icon_state = "syndicrate";
 	base_icon_state = "syndicrate";
 	req_access = list("syndicate")
@@ -4523,7 +4523,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
 /obj/structure/closet/crate/secure/gear{
-	desc = "A secure gear crate, with the Syndicate logo on it.";
+	desc = "A secute crate with huge mark 'to Surface' on it.";
 	icon_state = "syndicrate";
 	base_icon_state = "syndicrate";
 	req_access = list("syndicate")
@@ -4707,31 +4707,31 @@
 /obj/structure/marker_beacon/bronze,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/cable,
+/obj/item/card/id/advanced/chameleon/black,
+/obj/item/card/id/advanced/chameleon/black,
+/obj/item/card/id/advanced/chameleon/black,
+/obj/item/radio/headset/interdyne,
+/obj/item/radio/headset/interdyne,
+/obj/item/radio/headset/interdyne,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/under/syndicate/combat,
+/obj/item/clothing/under/syndicate/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/storage/belt/military,
+/obj/item/storage/belt/military,
+/obj/item/clothing/glasses/night,
+/obj/item/clothing/glasses/night,
+/obj/item/clothing/glasses/night,
 /obj/structure/closet/crate/secure/gear{
-	desc = "A secure gear crate, with the Syndicate logo on it.";
+	desc = "A secute crate with huge mark 'to Surface' on it.";
 	icon_state = "syndicrate";
 	base_icon_state = "syndicrate";
 	req_access = list("syndicate")
 	},
-/obj/item/card/id/advanced/chameleon/black,
-/obj/item/card/id/advanced/chameleon/black,
-/obj/item/card/id/advanced/chameleon/black,
-/obj/item/radio/headset/interdyne,
-/obj/item/radio/headset/interdyne,
-/obj/item/radio/headset/interdyne,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/storage/belt/military,
-/obj/item/storage/belt/military,
-/obj/item/clothing/glasses/night,
-/obj/item/clothing/glasses/night,
-/obj/item/clothing/glasses/night,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "DT" = (
@@ -6403,14 +6403,16 @@
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/interdyne_planetary_base/main)
 "NU" = (
-/obj/machinery/vending/wardrobe/syndie_wardrobe{
-	onstation = 0;
-	extended_inventory = 1
-	},
 /obj/structure/marker_beacon/burgundy,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/effect/turf_decal/stripes/blue{
 	dir = 8
+	},
+/obj/machinery/vending/wardrobe/syndie_wardrobe{
+	onstation = 0;
+	extended_inventory = 1;
+	name = "SusDrobe";
+	desc = "A suspicious wardrobe with suspicious wares. Nothing to look at here."
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
@@ -6442,7 +6444,7 @@
 	pixel_y = -3
 	},
 /obj/structure/closet/crate/secure/gear{
-	desc = "A secure gear crate, with the Syndicate logo on it.";
+	desc = "A secute crate with huge mark 'to Surface' on it.";
 	icon_state = "syndicrate";
 	base_icon_state = "syndicrate";
 	req_access = list("syndicate")
