@@ -46,7 +46,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/under/nt_peacekeeper
-	name = "nt peacekeeper uniform"
+	name = "NT peacekeeper uniform"
 	desc = "A military-grade uniform with military grade comfort (none at all), often seen on \
 		NTIS's various peacekeeping forces, and usually alongside a blue helmet."
 	icon = 'modular_nova/modules/goofsec/icons/uniforms.dmi'
@@ -121,7 +121,7 @@
 	var/summoned_type = "NTIS S.W.A.T."
 	var/jobban_to_check = ROLE_DEATHSQUAD
 	var/announcement_message = "Well..."
-	var/sound_nt = 'tff_modular/modules/police_nt/nt_police_second.ogg'
+	var/sound_nt = 'tff_modular/modules/police_nt/sound/nt_police_second.ogg'
 
 /obj/item/nt_reporter/proc/pre_checks(mob/user)
 	if(!user.mind.has_antag_datum(type_to_check))
@@ -158,7 +158,6 @@
 			)
 
 			if(length(candidates))
-				//Pick the (un)lucky players
 				var/agents_number = min(amount_to_summon, candidates.len)
 				GLOB.NT_police_responder_info[summoned_type][NT_POLICE_AMT] = agents_number
 
@@ -180,7 +179,6 @@
 					cop.mind.add_antag_datum(ert_antag)
 					cop.mind.set_assigned_role(SSjob.GetJobType(ert_antag.ert_job_path))
 					cop.grant_language(/datum/language/common, source = LANGUAGE_SPAWNER)
-					//Logging and cleanup
 					log_game("[key_name(cop)] has been selected as an [ert_antag.name]")
 					agents_number--
 
@@ -193,7 +191,7 @@
 	amount_to_summon = 5
 	type_to_summon = /datum/antagonist/ert/NT_police/swat
 	summoned_type = "NT_police_swat"
-	sound_nt = 'tff_modular/modules/police_nt/nt_police_second.ogg'
+	sound_nt = 'tff_modular/modules/police_nt/sound/nt_police_second.ogg'
 	announcement_message = "Attention, crew.\nNTIS Police have requested S.W.A.T. backup. Please comply with all requests by special squad members."
 
 /obj/item/nt_reporter/swat_caller/questions(mob/user)
@@ -214,7 +212,7 @@
 	amount_to_summon = 8
 	type_to_summon = /datum/antagonist/ert/NT_police/trooper
 	summoned_type = "NT_police_trooper"
-	sound_nt = 'tff_modular/modules/police_nt/nt_police_third.ogg'
+	sound_nt = 'tff_modular/modules/police_nt/sound/nt_police_third.ogg'
 	announcement_message = "Attention, crew.\nYou are accused of corporate treason. Lay down your weapons and surrender. Follow all the orders of the NanoTrasen response team. The perpetrators of corporate betrayal will be punished at the greatest extent."
 
 /obj/item/nt_reporter/trooper_caller/questions(mob/user)

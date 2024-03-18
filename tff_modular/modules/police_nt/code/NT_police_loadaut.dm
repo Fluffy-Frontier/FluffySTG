@@ -62,13 +62,11 @@
 	shoes = /obj/item/clothing/shoes/combat
 	belt = /obj/item/melee/baton/security/loaded
 	id = /obj/item/card/id/advanced/centcom/ert/NT_police
-
 	backpack_contents = list(
 		/obj/item/storage/box/handcuffs = 1,
 		/obj/item/nt_reporter/swat_caller = 1,
 		/obj/item/beamout_tool_nt = 1,
 		/obj/item/melee/baton/telescopic = 1,
-		/obj/item/storage/medkit/tactical = 1,
 		/obj/item/gun/energy/disabler/smg = 1,
 	)
 	r_pocket = /obj/item/flashlight/seclite
@@ -85,14 +83,13 @@
 	belt = /obj/item/gun/energy/disabler
 	shoes = /obj/item/clothing/shoes/combat
 
+	l_hand = /obj/item/shield/riot/tele
 	backpack_contents = list(
 		/obj/item/storage/box/handcuffs = 1,
 		/obj/item/melee/baton/security/loaded = 1,
 		/obj/item/nt_reporter/trooper_caller = 1,
 		/obj/item/beamout_tool_nt = 1,
 		/obj/item/choice_beacon/nt_swat = 1,
-		/obj/item/shield/ballistic = 1,
-		/obj/item/storage/medkit/tactical = 1,
 	)
 	r_pocket = /obj/item/flashlight/seclite
 	l_pocket = /obj/item/restraints/handcuffs
@@ -106,13 +103,12 @@
 	mask = /obj/item/clothing/mask/gas/nt_police
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/jackboots
-
+	l_hand = /obj/item/shield/riot/tele
 	backpack_contents = list(
 		/obj/item/storage/box/handcuffs = 1,
 		/obj/item/sacrificial_face_shield = 1,
 		/obj/item/melee/baton/security/loaded = 1,
 		/obj/item/choice_beacon/nt_police = 1,
-		/obj/item/shield/ballistic = 1,
 	)
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/flashlight/seclite
