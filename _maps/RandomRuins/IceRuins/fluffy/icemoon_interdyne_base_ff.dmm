@@ -308,6 +308,23 @@
 	},
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv)
+"bK" = (
+/obj/machinery/camera/xray{
+	pixel_x = 10;
+	name = "Inderdyne security camera";
+	network = list("Interdyne");
+	color = "#adadcd";
+	pixel_y = 25
+	},
+/obj/machinery/vending/wallmed{
+	products = list(/obj/item/reagent_containers/pill/patch/libital = 5, /obj/item/reagent_containers/pill/patch/aiuri = 5, /obj/item/reagent_containers/pill/multiver = 2, /obj/item/storage/box/bandages = 4);
+	displayed_currency_name = " soviet ruble";
+	name = "Interdyne NanoMed";
+	light_color = "#adadcd";
+	color = "#adadcd"
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base)
 "bM" = (
 /obj/effect/turf_decal/stripes/red/line,
 /obj/effect/turf_decal/trimline/dark/filled/corner{
@@ -605,6 +622,14 @@
 /obj/structure/table/wood/fancy/black,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
+"da" = (
+/obj/structure/marker_beacon/burgundy,
+/obj/structure/sign/poster/contraband/syndicate_medical/directional/south{
+	name = "Interdyne Pharmaceutics";
+	desc = "Beware of perimeter turrets.'"
+	},
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "db" = (
 /obj/structure/sign/poster/contraband/c20r/directional/south,
 /obj/effect/turf_decal/trimline/dark/filled/line,
@@ -1051,14 +1076,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
-"fi" = (
-/obj/structure/marker_beacon/burgundy,
-/obj/structure/sign/poster/contraband/syndicate_medical/directional/south{
-	name = "Interdyne Pharmaceutics";
-	desc = "Beware of perimeter turrets.'"
-	},
-/turf/open/misc/asteroid/snow/icemoon,
-/area/icemoon/underground/explored)
 "fq" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -2008,8 +2025,8 @@
 /turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "mg" = (
-/obj/structure/flora/grass/brown/style_random,
-/obj/structure/shipping_container/interdyne,
+/obj/structure/marker_beacon/burgundy,
+/obj/structure/flora/grass/both/style_random,
 /turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "mp" = (
@@ -3094,7 +3111,8 @@
 /area/ruin/interdyne_planetary_base/serv)
 "ss" = (
 /obj/machinery/vending/hydronutrients{
-	onstation = 0
+	onstation = 0;
+	extended_inventory = 1
 	},
 /obj/effect/turf_decal/tile/dark/full,
 /turf/open/floor/iron/dark/textured_large,
@@ -4392,7 +4410,9 @@
 /area/ruin/interdyne_planetary_base/serv)
 "Am" = (
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/vending/wardrobe/syndie_wardrobe/interdyne,
+/obj/machinery/vending/wardrobe/syndie_wardrobe/interdyne{
+	extended_inventory = 1
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "Au" = (
@@ -4954,6 +4974,11 @@
 /obj/effect/mapping_helpers/apc/syndicate_access,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"DN" = (
+/obj/structure/flora/grass/brown/style_random,
+/obj/structure/shipping_container/interdyne,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "DQ" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 1
@@ -6773,6 +6798,18 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/storage/backpack/duffelbag/synth_treatment_kit/trauma/advanced/unzipped,
+/obj/item/borg/sight/hud/med{
+	pixel_y = 9
+	},
+/obj/item/borg/sight/hud/med{
+	pixel_y = 9
+	},
+/obj/item/borg/sight/hud/med{
+	pixel_y = 9
+	},
+/obj/item/borg/sight/hud/med{
+	pixel_y = 9
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "OV" = (
@@ -8293,7 +8330,8 @@
 /area/ruin/interdyne_planetary_base/serv)
 "YM" = (
 /obj/machinery/vending/hydroseeds{
-	onstation = 0
+	onstation = 0;
+	extended_inventory = 1
 	},
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/olive,
@@ -9801,7 +9839,7 @@ Iy
 uQ
 SH
 Se
-Se
+Iy
 SH
 Iy
 ab
@@ -9860,7 +9898,7 @@ Iy
 Se
 Iy
 Iy
-Iy
+dM
 ab
 ab
 ab
@@ -9972,8 +10010,8 @@ SH
 ac
 "}
 (25,1,1) = {"
-Im
-Wo
+mg
+bK
 SH
 Iy
 MR
@@ -10149,7 +10187,7 @@ ac
 ac
 "}
 (28,1,1) = {"
-Iy
+SH
 NF
 Iy
 sO
@@ -10208,16 +10246,16 @@ ac
 ac
 "}
 (29,1,1) = {"
-fi
+da
 Wo
 dM
 Iy
 kr
 ab
-Iy
+SH
 Iy
 tT
-Iy
+dM
 ab
 ab
 mp
@@ -10329,7 +10367,7 @@ ac
 KM
 FI
 SH
-mg
+DN
 Iy
 SH
 SH
