@@ -13,7 +13,7 @@ SUBSYSTEM_DEF(minor_mapping)
 	return SS_INIT_NO_NEED
 #else
 	trigger_migration(CONFIG_GET(number/mice_roundstart))
-	place_satchels(satchel_amount = 10) //NOVA EDIT CHANGE - ORIGINAL : place_satchels(satchel_amount = 2)
+	place_satchels(satchel_amount = 2) //FLUFFY FRONTIER CHANGE: back from 10 to 2 //NOVA EDIT CHANGE - ORIGINAL : place_satchels(satchel_amount = 2)
 	return SS_INIT_SUCCESS
 #endif
 

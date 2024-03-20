@@ -13,6 +13,10 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/item/mmi/posibrain/syndie/interdyne,
+/obj/item/clothing/neck/link_scryer{
+	pixel_x = 12;
+	pixel_y = 7
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "ag" = (
@@ -262,17 +266,13 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "bv" = (
-/obj/structure/frame/machine{
-	anchored = 1;
-	state = 2;
-	icon_state = "box_1"
-	},
 /obj/item/circuitboard/machine/ore_redemption,
 /obj/item/assembly/igniter,
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
+/obj/structure/frame/machine/secured,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "bz" = (
@@ -308,6 +308,23 @@
 	},
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv)
+"bK" = (
+/obj/machinery/camera/xray{
+	pixel_x = 10;
+	name = "Inderdyne security camera";
+	network = list("Interdyne");
+	color = "#adadcd";
+	pixel_y = 25
+	},
+/obj/machinery/vending/wallmed{
+	products = list(/obj/item/reagent_containers/pill/patch/libital = 5, /obj/item/reagent_containers/pill/patch/aiuri = 5, /obj/item/reagent_containers/pill/multiver = 2, /obj/item/storage/box/bandages = 4);
+	displayed_currency_name = " soviet ruble";
+	name = "Interdyne NanoMed";
+	light_color = "#adadcd";
+	color = "#adadcd"
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base)
 "bM" = (
 /obj/effect/turf_decal/stripes/red/line,
 /obj/effect/turf_decal/trimline/dark/filled/corner{
@@ -429,15 +446,11 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "cm" = (
-/obj/structure/frame/machine{
-	anchored = 1;
-	state = 2;
-	icon_state = "box_1"
-	},
 /obj/item/circuitboard/machine/ore_silo,
 /obj/structure/marker_beacon/burgundy,
 /obj/structure/sign/flag/syndicate/directional/north,
 /obj/effect/turf_decal/tile/dark/full,
+/obj/structure/frame/machine/secured,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/vault)
 "cn" = (
@@ -609,6 +622,14 @@
 /obj/structure/table/wood/fancy/black,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
+"da" = (
+/obj/structure/marker_beacon/burgundy,
+/obj/structure/sign/poster/contraband/syndicate_medical/directional/south{
+	name = "Interdyne Pharmaceutics";
+	desc = "Beware of perimeter turrets.'"
+	},
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "db" = (
 /obj/structure/sign/poster/contraband/c20r/directional/south,
 /obj/effect/turf_decal/trimline/dark/filled/line,
@@ -843,6 +864,12 @@
 	},
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
+"ei" = (
+/obj/structure/fence/end{
+	dir = 4
+	},
+/turf/closed/mineral/random/snow/underground,
+/area/icemoon/underground/explored)
 "ej" = (
 /obj/machinery/portable_atmospherics/canister/bz,
 /obj/machinery/atmospherics/components/unary/portables_connector,
@@ -1153,9 +1180,6 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
 /obj/structure/marker_beacon/indigo,
 /obj/structure/drain,
-/obj/effect/turf_decal/box/white/corners{
-	dir = 8
-	},
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
@@ -1247,6 +1271,13 @@
 	},
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv)
+"gH" = (
+/obj/effect/turf_decal/weather/snow/corner,
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 1
+	},
+/turf/open/misc/ice/icemoon,
+/area/icemoon/underground/explored)
 "gL" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -1359,7 +1390,7 @@
 	pixel_y = -3
 	},
 /obj/structure/closet/crate/secure/gear{
-	desc = "A secure gear crate, with the Syndicate logo on it.";
+	desc = "A secute crate with huge mark 'to Surface' on it.";
 	icon_state = "syndicrate";
 	base_icon_state = "syndicrate";
 	req_access = list("syndicate")
@@ -1454,6 +1485,12 @@
 /obj/structure/table/wood/fancy/black,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
+"io" = (
+/obj/structure/fence/corner{
+	dir = 1
+	},
+/turf/closed/mineral/random/snow/underground,
+/area/icemoon/underground/explored)
 "it" = (
 /obj/structure/bookcase/random/adult,
 /turf/open/floor/wood/large,
@@ -1626,6 +1663,7 @@
 	},
 /obj/machinery/shower/directional/east,
 /obj/structure/drain,
+/obj/structure/sign/warning/cold_temp/directional/west,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "jy" = (
@@ -1875,6 +1913,12 @@
 /obj/effect/baseturf_helper/reinforced_plating/ceiling,
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/main/vault)
+"lg" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 10
+	},
+/turf/open/misc/ice/icemoon,
+/area/icemoon/underground/explored)
 "ln" = (
 /obj/effect/turf_decal/trimline/dark/filled/end,
 /obj/effect/turf_decal/box/red/corners{
@@ -1911,6 +1955,12 @@
 /obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"lz" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 8
+	},
+/turf/open/misc/ice/icemoon,
+/area/icemoon/underground/explored)
 "lD" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/indigo,
@@ -1948,7 +1998,7 @@
 /obj/machinery/light/directional/south{
 	light_color = "#5148A6"
 	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "lZ" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1975,14 +2025,10 @@
 /turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "mg" = (
-/obj/machinery/quantumpad{
-	map_pad_id = "interdyne";
-	map_pad_link_id = "ds2";
-	name = "quantum pad to DS-2"
-	},
-/obj/structure/cable,
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/interdyne_planetary_base/cargo)
+/obj/structure/marker_beacon/burgundy,
+/obj/structure/flora/grass/both/style_random,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "mp" = (
 /obj/structure/marker_beacon/burgundy,
 /obj/structure/railing{
@@ -2490,6 +2536,7 @@
 	dir = 5
 	},
 /obj/structure/hedge,
+/obj/item/decoration/new_year/garland,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "oN" = (
@@ -2507,7 +2554,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
 	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "oO" = (
 /obj/structure/table/optable,
@@ -2663,6 +2710,12 @@
 	},
 /turf/open/floor/plating/elevatorshaft,
 /area/ruin/interdyne_planetary_base/cargo)
+"pv" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 5
+	},
+/turf/open/misc/ice/icemoon,
+/area/icemoon/underground/explored)
 "pF" = (
 /obj/structure/chair/comfy/black{
 	dir = 4
@@ -2825,31 +2878,31 @@
 /obj/structure/marker_beacon/bronze,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/cable,
+/obj/item/card/id/advanced/chameleon/black,
+/obj/item/card/id/advanced/chameleon/black,
+/obj/item/card/id/advanced/chameleon/black,
+/obj/item/radio/headset/interdyne,
+/obj/item/radio/headset/interdyne,
+/obj/item/radio/headset/interdyne,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/under/syndicate/combat,
+/obj/item/clothing/under/syndicate/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/storage/belt/military,
+/obj/item/storage/belt/military,
+/obj/item/clothing/glasses/night,
+/obj/item/clothing/glasses/night,
+/obj/item/clothing/glasses/night,
 /obj/structure/closet/crate/secure/gear{
-	desc = "A secure gear crate, with the Syndicate logo on it.";
+	desc = "A secute crate with huge mark 'to Surface' on it.";
 	icon_state = "syndicrate";
 	base_icon_state = "syndicrate";
 	req_access = list("syndicate")
 	},
-/obj/item/card/id/advanced/chameleon/black,
-/obj/item/card/id/advanced/chameleon/black,
-/obj/item/card/id/advanced/chameleon/black,
-/obj/item/radio/headset/interdyne,
-/obj/item/radio/headset/interdyne,
-/obj/item/radio/headset/interdyne,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/storage/belt/military,
-/obj/item/storage/belt/military,
-/obj/item/clothing/glasses/night,
-/obj/item/clothing/glasses/night,
-/obj/item/clothing/glasses/night,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "qK" = (
@@ -3058,7 +3111,8 @@
 /area/ruin/interdyne_planetary_base/serv)
 "ss" = (
 /obj/machinery/vending/hydronutrients{
-	onstation = 0
+	onstation = 0;
+	extended_inventory = 1
 	},
 /obj/effect/turf_decal/tile/dark/full,
 /turf/open/floor/iron/dark/textured_large,
@@ -3413,11 +3467,19 @@
 "uk" = (
 /obj/structure/rack/shelf,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/item/storage/bag/ore,
-/obj/item/shovel,
+/obj/item/shovel{
+	throw_speed = 7;
+	throwforce = 7;
+	tk_throw_range = 18;
+	throw_range = 9;
+	attack_speed = 24;
+	name = "Bladed battle shovel";
+	desc = "A large tool for digging, and breaching skulls."
+	},
 /obj/item/pickaxe,
-/obj/item/t_scanner/adv_mining_scanner/lesser,
 /obj/item/pickaxe/drill,
+/obj/item/storage/bag/ore,
+/obj/item/t_scanner/adv_mining_scanner/lesser,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "um" = (
@@ -3604,6 +3666,9 @@
 /obj/item/restraints/legcuffs/beartrap,
 /obj/item/restraints/legcuffs/beartrap,
 /obj/item/restraints/legcuffs/beartrap,
+/obj/item/storage/toolbox/fishing{
+	pixel_y = 7
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "vz" = (
@@ -3741,7 +3806,7 @@
 /obj/effect/turf_decal/bot_red,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/closet/crate/secure/gear{
-	desc = "A secure gear crate, with the Syndicate logo on it.";
+	desc = "A secute crate with huge mark 'to Surface' on it.";
 	icon_state = "syndicrate";
 	base_icon_state = "syndicrate";
 	req_access = list("syndicate")
@@ -4344,10 +4409,18 @@
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "Am" = (
-/obj/machinery/suit_storage_unit/mining,
 /obj/effect/turf_decal/tile/dark/full,
+/obj/machinery/vending/wardrobe/syndie_wardrobe/interdyne{
+	extended_inventory = 1
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"Au" = (
+/obj/structure/fence/corner{
+	dir = 4
+	},
+/turf/closed/mineral/random/snow/underground,
+/area/icemoon/underground/explored)
 "AF" = (
 /obj/machinery/light/directional/north{
 	bulb_colour = "#AC3CFF";
@@ -4480,6 +4553,13 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
+"BM" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 5
+	},
+/obj/effect/turf_decal/weather/snow/corner,
+/turf/open/misc/ice/icemoon,
+/area/icemoon/underground/explored)
 "BO" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
@@ -4548,7 +4628,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 8
 	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "Cc" = (
 /obj/effect/turf_decal/stripes/red/line{
@@ -4753,7 +4833,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
 	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "CZ" = (
 /obj/effect/turf_decal/trimline/dark/filled/corner{
@@ -4894,11 +4974,24 @@
 /obj/effect/mapping_helpers/apc/syndicate_access,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"DN" = (
+/obj/structure/flora/grass/brown/style_random,
+/obj/structure/shipping_container/interdyne,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"DQ" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/snow/corner,
+/turf/open/misc/ice/icemoon,
+/area/icemoon/underground/explored)
 "DT" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
 /obj/structure/hedge,
+/obj/item/decoration/new_year/garland,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "DX" = (
@@ -5249,6 +5342,10 @@
 /obj/effect/turf_decal/stripes/red/corner,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"FI" = (
+/obj/structure/fence/corner,
+/turf/closed/mineral/random/snow/underground,
+/area/icemoon/underground/explored)
 "FK" = (
 /obj/structure/chair/sofa/bench/left{
 	dir = 4
@@ -5409,6 +5506,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
+/obj/item/decoration/new_year/garland,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "Gv" = (
@@ -5497,7 +5595,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/east{
 	pixel_x = 4
 	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "GM" = (
 /obj/effect/turf_decal/stripes/red/line{
@@ -5527,8 +5625,14 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
 	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
+"GV" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 6
+	},
+/turf/open/misc/ice/icemoon,
+/area/icemoon/underground/explored)
 "GZ" = (
 /obj/structure/railing{
 	dir = 8
@@ -5559,6 +5663,15 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
+"Hl" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 6
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 8
+	},
+/turf/open/misc/ice/icemoon,
+/area/icemoon/underground/explored)
 "Hn" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/plumbing/input{
@@ -5609,6 +5722,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/box/white/corners,
+/obj/structure/sign/warning/gas_mask/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "HF" = (
@@ -5808,6 +5922,12 @@
 /obj/structure/sign/poster/contraband/the_griffin/directional/north,
 /turf/open/floor/grass,
 /area/ruin/interdyne_planetary_base/serv)
+"Jb" = (
+/obj/structure/fence/end{
+	dir = 8
+	},
+/turf/closed/mineral/random/snow/underground,
+/area/icemoon/underground/explored)
 "Jd" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 10
@@ -5854,7 +5974,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
 /obj/structure/closet/crate/secure/gear{
-	desc = "A secure gear crate, with the Syndicate logo on it.";
+	desc = "A secute crate with huge mark 'to Surface' on it.";
 	icon_state = "syndicrate";
 	base_icon_state = "syndicrate";
 	req_access = list("syndicate")
@@ -5869,6 +5989,11 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"JV" = (
+/obj/structure/flora/rock/pile/icy/style_random,
+/obj/structure/flora/tree/pine/style_random,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "Kb" = (
 /obj/effect/turf_decal/arrows/red,
 /obj/effect/turf_decal/box/red/corners,
@@ -5981,6 +6106,12 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
+"KM" = (
+/obj/structure/fence/corner{
+	dir = 9
+	},
+/turf/closed/mineral/random/snow/underground,
+/area/icemoon/underground/explored)
 "KP" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/vending/medical/syndicate_access{
@@ -6071,6 +6202,12 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/main)
+"Lh" = (
+/obj/structure/fence{
+	dir = 4
+	},
+/turf/closed/mineral/random/snow/underground,
+/area/icemoon/underground/explored)
 "Li" = (
 /obj/structure/chair/stool/bar{
 	dir = 4
@@ -6220,7 +6357,10 @@
 /obj/structure/bodycontainer/morgue{
 	dir = 8
 	},
-/obj/item/bodybag,
+/obj/item/bodybag{
+	pixel_x = 5;
+	pixel_y = 9
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "LP" = (
@@ -6460,6 +6600,12 @@
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/icemoon/underground/explored)
+"NI" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 9
+	},
+/turf/open/misc/ice/icemoon,
+/area/icemoon/underground/explored)
 "NJ" = (
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
@@ -6574,15 +6720,17 @@
 /area/ruin/interdyne_planetary_base/main)
 "OD" = (
 /obj/structure/rack,
-/obj/item/rcd_ammo,
-/obj/item/rcd_ammo,
-/obj/item/rcd_ammo,
-/obj/item/rcd_ammo,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
 /obj/item/flatpacked_machine,
-/obj/item/construction/rcd/loaded/interdyne,
+/obj/item/rcd_ammo,
+/obj/item/rcd_ammo,
+/obj/item/rcd_ammo,
+/obj/item/rcd_ammo,
+/obj/item/construction/rcd/loaded/interdyne{
+	name = "interdyne RCD"
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "OH" = (
@@ -6607,6 +6755,9 @@
 	pixel_y = 7
 	},
 /obj/item/storage/fancy/egg_box,
+/obj/effect/turf_decal/box/white/corners{
+	dir = 8
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "OI" = (
@@ -6647,6 +6798,18 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/storage/backpack/duffelbag/synth_treatment_kit/trauma/advanced/unzipped,
+/obj/item/borg/sight/hud/med{
+	pixel_y = 9
+	},
+/obj/item/borg/sight/hud/med{
+	pixel_y = 9
+	},
+/obj/item/borg/sight/hud/med{
+	pixel_y = 9
+	},
+/obj/item/borg/sight/hud/med{
+	pixel_y = 9
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "OV" = (
@@ -6720,6 +6883,15 @@
 /obj/structure/cable,
 /turf/open/floor/plating/reinforced,
 /area/ruin/interdyne_planetary_base/main)
+"Ps" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 10
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 1
+	},
+/turf/open/misc/ice/icemoon,
+/area/icemoon/underground/explored)
 "Pt" = (
 /obj/structure/dresser{
 	color = "#8d8d8d";
@@ -6927,6 +7099,16 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/science)
+"RL" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 10
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 4;
+	layer = 3
+	},
+/turf/open/misc/ice/icemoon,
+/area/icemoon/underground/explored)
 "RM" = (
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/interdyne_planetary_base/serv)
@@ -7231,8 +7413,8 @@
 /area/ruin/interdyne_planetary_base/serv)
 "TC" = (
 /obj/structure/rack/shelf,
-/obj/item/storage/toolbox/syndicate,
 /obj/effect/turf_decal/tile/dark/full,
+/obj/item/storage/toolbox/syndicate,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "TH" = (
@@ -7488,14 +7670,16 @@
 /turf/open/floor/engine/o2,
 /area/ruin/interdyne_planetary_base/main)
 "Vr" = (
-/obj/machinery/vending/wardrobe/syndie_wardrobe{
-	onstation = 0;
-	extended_inventory = 1
-	},
 /obj/structure/marker_beacon/burgundy,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/effect/turf_decal/stripes/blue{
 	dir = 8
+	},
+/obj/machinery/vending/wardrobe/syndie_wardrobe{
+	onstation = 0;
+	extended_inventory = 1;
+	name = "SusDrobe";
+	desc = "A suspicious wardrobe with suspicious wares. Nothing to look at here."
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
@@ -7631,6 +7815,7 @@
 	syndicate_network = 1;
 	color = "#adadcd"
 	},
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "VM" = (
@@ -7687,6 +7872,8 @@
 	network = list("Interdyne")
 	},
 /obj/item/bedsheet/syndie,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/item/lighter,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "Wa" = (
@@ -7694,10 +7881,30 @@
 /obj/effect/turf_decal/trimline/dark/filled/corner,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"Wj" = (
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 9
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 4;
+	layer = 3
+	},
+/turf/open/misc/ice/icemoon,
+/area/icemoon/underground/explored)
 "Wm" = (
 /obj/effect/baseturf_helper/reinforced_plating,
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/main/vault)
+"Wo" = (
+/obj/machinery/camera/xray{
+	pixel_x = 10;
+	name = "Inderdyne security camera";
+	network = list("Interdyne");
+	color = "#adadcd";
+	pixel_y = 25
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base)
 "Wt" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/machinery/reagentgrinder{
@@ -7753,7 +7960,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/closet/crate/secure/gear{
-	desc = "A secure gear crate, with the Syndicate logo on it.";
+	desc = "A secute crate with huge mark 'to Surface' on it.";
 	icon_state = "syndicrate";
 	base_icon_state = "syndicrate";
 	req_access = list("syndicate")
@@ -7834,9 +8041,11 @@
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
 "WU" = (
-/turf/open/misc/ice/smooth{
-	initial_gas_mix = "ICEMOON_ATMOS"
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 4;
+	layer = 3
 	},
+/turf/open/misc/ice/icemoon,
 /area/icemoon/underground/explored)
 "WX" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -7914,9 +8123,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "Xw" = (
-/obj/structure/rack/wooden,
-/obj/item/stack/sheet/mineral/wood/fifty,
-/obj/item/lighter,
+/obj/structure/weightmachine/weightlifter,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "Xz" = (
@@ -8062,7 +8269,7 @@
 "Ym" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/item/disk/tech_disk,
+/obj/item/forcefield_projector,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "Yv" = (
@@ -8123,7 +8330,8 @@
 /area/ruin/interdyne_planetary_base/serv)
 "YM" = (
 /obj/machinery/vending/hydroseeds{
-	onstation = 0
+	onstation = 0;
+	extended_inventory = 1
 	},
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/olive,
@@ -8154,7 +8362,7 @@
 	},
 /obj/structure/cable,
 /obj/structure/closet/crate/secure/gear{
-	desc = "A secure gear crate, with the Syndicate logo on it.";
+	desc = "A secute crate with huge mark 'to Surface' on it.";
 	icon_state = "syndicrate";
 	base_icon_state = "syndicrate";
 	req_access = list("syndicate")
@@ -8292,6 +8500,12 @@
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/item/stock_parts/subspace/amplifier{
+	desc = "Cybernetic spine replacement early prototype, that in one day will be able to sustain direct connection between human and station network systems, to fulfill ai duties.";
+	name = "Wavefield Science spinal cord implant prototype";
+	light_color = "#7d7fFF";
+	color = "#7d7fFF"
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "Zx" = (
@@ -8527,9 +8741,9 @@ Se
 Se
 Iy
 dM
-WU
-WU
-WU
+NI
+lz
+Hl
 Iy
 Se
 Iy
@@ -8579,15 +8793,15 @@ Iy
 eE
 Iy
 SM
-WU
-WU
-WU
+Wj
+lz
+RL
 Se
 Iy
 Se
 Iy
-WU
-WU
+pv
+GV
 eE
 Iy
 dM
@@ -8639,7 +8853,7 @@ Iy
 eE
 Iy
 Se
-WU
+BM
 Iy
 SH
 Iy
@@ -8659,7 +8873,7 @@ Iy
 Iy
 JM
 Se
-Iy
+eE
 SH
 ac
 ac
@@ -8723,7 +8937,7 @@ Iy
 dM
 Iy
 Im
-Iy
+eE
 ac
 ac
 ac
@@ -8745,7 +8959,7 @@ SH
 Se
 Iy
 Im
-WU
+Ps
 SM
 Se
 Iy
@@ -8804,7 +9018,7 @@ Iy
 Jx
 Iy
 Se
-WU
+gH
 SH
 Iy
 Iy
@@ -8844,7 +9058,7 @@ Se
 Iy
 Iy
 Iy
-Iy
+eE
 ac
 ac
 ac
@@ -8863,7 +9077,7 @@ Iy
 Iy
 eE
 Iy
-WU
+BM
 Iy
 Iy
 eE
@@ -9022,7 +9236,7 @@ ab
 Iy
 Iy
 SM
-WU
+Ps
 SH
 ac
 ac
@@ -9081,14 +9295,14 @@ ab
 ab
 Iy
 Se
-WU
+BM
 ac
 ac
 ac
 aa
 "}
 (13,1,1) = {"
-ac
+ei
 Iy
 eE
 Iy
@@ -9147,7 +9361,7 @@ ac
 aa
 "}
 (14,1,1) = {"
-ac
+Lh
 ac
 ac
 Iy
@@ -9206,7 +9420,7 @@ ac
 ac
 "}
 (15,1,1) = {"
-ac
+Lh
 ac
 ac
 Im
@@ -9265,9 +9479,9 @@ ac
 ac
 "}
 (16,1,1) = {"
+Lh
 ac
-ac
-Se
+Zx
 dM
 Se
 Iy
@@ -9317,14 +9531,14 @@ ab
 ab
 ab
 Iy
-Iy
 eE
 Iy
 Iy
+eE
 ac
 "}
 (17,1,1) = {"
-ac
+Lh
 ac
 Se
 SM
@@ -9383,13 +9597,13 @@ ac
 ac
 "}
 (18,1,1) = {"
-ac
-SH
+Lh
+JV
 Se
 Iy
 dM
 SH
-WU
+Ps
 Iy
 Iy
 eE
@@ -9442,13 +9656,13 @@ ac
 ac
 "}
 (19,1,1) = {"
-ac
+Lh
 Im
 Iy
 eE
 Iy
 Iy
-WU
+BM
 Se
 Iy
 Iy
@@ -9501,7 +9715,7 @@ ac
 ac
 "}
 (20,1,1) = {"
-ac
+Lh
 SH
 Iy
 Iy
@@ -9560,7 +9774,7 @@ ac
 ac
 "}
 (21,1,1) = {"
-ac
+Lh
 Iy
 eE
 Iy
@@ -9619,13 +9833,13 @@ ac
 ac
 "}
 (22,1,1) = {"
-ac
+Lh
 Zx
 Iy
 uQ
 SH
 Se
-Se
+Iy
 SH
 Iy
 ab
@@ -9678,13 +9892,13 @@ Se
 ac
 "}
 (23,1,1) = {"
-ac
+Lh
 ac
 Iy
 Se
 Iy
 Iy
-Iy
+dM
 ab
 ab
 ab
@@ -9737,8 +9951,8 @@ ac
 ac
 "}
 (24,1,1) = {"
-ac
-ac
+Au
+io
 Se
 Iy
 mN
@@ -9796,8 +10010,8 @@ SH
 ac
 "}
 (25,1,1) = {"
-Im
-ac
+mg
+bK
 SH
 Iy
 MR
@@ -9934,7 +10148,7 @@ Fk
 JN
 PO
 PO
-mg
+PO
 Kb
 bv
 er
@@ -9973,7 +10187,7 @@ ac
 ac
 "}
 (28,1,1) = {"
-Iy
+SH
 NF
 Iy
 sO
@@ -10032,16 +10246,16 @@ ac
 ac
 "}
 (29,1,1) = {"
-Im
-ac
+da
+Wo
 dM
 Iy
 kr
 ab
-Iy
+SH
 Iy
 tT
-Iy
+dM
 ab
 ab
 mp
@@ -10150,10 +10364,10 @@ ac
 ac
 "}
 (31,1,1) = {"
-ac
-ac
+KM
+FI
 SH
-Se
+DN
 Iy
 SH
 SH
@@ -10209,9 +10423,9 @@ ac
 ac
 "}
 (32,1,1) = {"
+Lh
 ac
 Iy
-eE
 Iy
 SM
 Iy
@@ -10268,7 +10482,7 @@ SM
 ac
 "}
 (33,1,1) = {"
-ac
+Lh
 eE
 Im
 SH
@@ -10327,7 +10541,7 @@ Im
 ac
 "}
 (34,1,1) = {"
-ac
+Lh
 ac
 Iy
 eE
@@ -10386,7 +10600,7 @@ SH
 ac
 "}
 (35,1,1) = {"
-ac
+Jb
 ac
 ac
 Jx
@@ -10512,8 +10726,8 @@ eE
 Im
 Iy
 SH
-WU
-WU
+NI
+lg
 Iy
 Iy
 ab
@@ -10571,9 +10785,9 @@ Iy
 Iy
 eE
 Se
+pv
 WU
-WU
-WU
+RL
 Iy
 dM
 ab
@@ -10967,7 +11181,7 @@ ab
 dM
 Iy
 Iy
-WU
+Ps
 Im
 ac
 ac
@@ -11026,7 +11240,7 @@ Iy
 Iy
 Iy
 SH
-WU
+BM
 dM
 ac
 ac
@@ -11113,7 +11327,7 @@ SM
 Iy
 Se
 Se
-WU
+Ps
 Iy
 Iy
 ab
@@ -11167,12 +11381,12 @@ aa
 ac
 ac
 ac
-Iy
+eE
 Se
 Iy
 Iy
 dM
-WU
+DQ
 Iy
 Iy
 dM
@@ -11227,14 +11441,14 @@ aa
 ac
 ac
 ac
-Iy
+eE
 Iy
 Im
 Iy
-WU
+BM
 dM
 Iy
-Iy
+eE
 Iy
 ab
 ab
