@@ -8423,6 +8423,7 @@
 	name = "Security Customs Checkpoint"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/security/general,
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/customs)
 "cQb" = (
@@ -8439,6 +8440,7 @@
 	name = "arrivals navigation beacon"
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
 "cQt" = (
@@ -11539,7 +11541,6 @@
 /turf/open/floor/plating,
 /area/station/maintenance/disposal/incinerator)
 "dNx" = (
-/obj/structure/cable,
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
@@ -15158,6 +15159,7 @@
 "eZL" = (
 /obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
 "fac" = (
@@ -23813,6 +23815,7 @@
 /obj/effect/landmark/start/hangover,
 /obj/effect/turf_decal/tile/blue/half/contrasted,
 /obj/effect/turf_decal/tile/neutral,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
 "hIq" = (
@@ -25456,7 +25459,7 @@
 "ifu" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/decal/cleanable/cobweb,
-/obj/structure/safe{
+/obj/structure/safe/vault{
 	pixel_x = 3
 	},
 /obj/item/book{
@@ -35744,6 +35747,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/hangover,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
 "luA" = (
@@ -36401,6 +36405,7 @@
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
 "lFC" = (
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
 "lFN" = (
@@ -37201,6 +37206,17 @@
 /obj/effect/landmark/start/blueshield,
 /turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/captain)
+"lUb" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/public/glass{
+	name = "Departure Lounge"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
+	cycle_id = "departures-entrance"
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/station/hallway/secondary/exit/departure_lounge)
 "lUq" = (
 /turf/closed/wall/r_wall/rust,
 /area/station/service/chapel/storage)
@@ -72469,7 +72485,6 @@
 /turf/open/floor/grass,
 /area/station/security/prison/garden)
 "xhJ" = (
-/obj/structure/cable,
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
@@ -116235,7 +116250,7 @@ wAZ
 cQR
 eMo
 fBh
-pIl
+lUb
 mbE
 iSw
 nXu
