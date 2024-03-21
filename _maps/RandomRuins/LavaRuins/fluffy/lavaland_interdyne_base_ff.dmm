@@ -1631,6 +1631,7 @@
 /obj/item/gun/ballistic/rifle/sniper_rifle,
 /obj/item/modular_computer/laptop/preset/syndicate,
 /obj/item/folder/syndicate/red,
+/obj/effect/spawner/random/entertainment/money_medium,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/vault)
 "jG" = (
@@ -2544,7 +2545,7 @@
 /obj/effect/turf_decal/box/white/corners{
 	dir = 1
 	},
-/obj/structure/extinguisher_cabinet/directional/west,
+/obj/structure/sign/warning/hot_temp/directional/west,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "pk" = (
@@ -2839,7 +2840,7 @@
 	name = "Inderdyne security camera";
 	network = list("Interdyne")
 	},
-/obj/structure/extinguisher_cabinet/directional/east,
+/obj/structure/sign/warning/gas_mask/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "qR" = (
@@ -3424,7 +3425,7 @@
 	},
 /obj/structure/drain,
 /obj/machinery/shower/directional/east,
-/obj/structure/sign/warning/hot_temp/directional/west,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "vF" = (
@@ -4536,7 +4537,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/box/white/corners,
-/obj/structure/sign/warning/gas_mask/directional/east,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "Cn" = (
@@ -5094,7 +5095,8 @@
 "FQ" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/vending/wardrobe/syndie_wardrobe/interdyne{
-	extended_inventory = 1
+	extended_inventory = 1;
+	onstation = 0
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
@@ -6122,7 +6124,8 @@
 	displayed_currency_name = " soviet ruble";
 	name = "Interdyne NanoMed";
 	light_color = "#adadcd";
-	color = "#adadcd"
+	color = "#adadcd";
+	onstation = 0
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base)
