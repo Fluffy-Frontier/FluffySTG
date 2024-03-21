@@ -426,8 +426,7 @@
 /area/ruin/interdyne_planetary_base/med)
 "co" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 6;
-	faction = list("Syndicate","neutral")
+	dir = 6
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -741,8 +740,7 @@
 /area/ruin/interdyne_planetary_base/main/dorms)
 "el" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 5;
-	faction = list("Syndicate","neutral")
+	dir = 5
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -1943,8 +1941,7 @@
 /area/ruin/interdyne_planetary_base/science)
 "lx" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 9;
-	faction = list("Syndicate","neutral")
+	dir = 9
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -6098,8 +6095,7 @@
 /area/ruin/interdyne_planetary_base/serv/rstrm)
 "LE" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 5;
-	faction = list("Syndicate","neutral")
+	dir = 5
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -7632,8 +7628,7 @@
 /area/ruin/interdyne_planetary_base/cargo)
 "UO" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 10;
-	faction = list("Syndicate","neutral")
+	dir = 10
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -8096,6 +8091,9 @@
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/storage/toolbox/electrical,
 /obj/effect/turf_decal/tile/dark/full,
+/obj/item/clothing/shoes/magboots{
+	pixel_y = 8
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "Xr" = (
