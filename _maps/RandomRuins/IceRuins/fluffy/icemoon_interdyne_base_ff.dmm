@@ -561,6 +561,8 @@
 /obj/item/modular_computer/laptop/preset/syndicate,
 /obj/item/folder/syndicate/red,
 /obj/effect/spawner/random/entertainment/money_medium,
+/obj/effect/spawner/random/entertainment/money_medium,
+/obj/effect/spawner/random/entertainment/money_medium,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/vault)
 "cS" = (
@@ -3112,7 +3114,8 @@
 "ss" = (
 /obj/machinery/vending/hydronutrients{
 	onstation = 0;
-	extended_inventory = 1
+	extended_inventory = 1;
+	products = list(/obj/item/gun/energy/floragun = 3, /obj/item/geneshears = 3, /obj/item/hatchet = 3, /obj/item/cultivator = 3, /obj/item/plant_analyzer = 3, /obj/item/reagent_containers/cup/bottle/nutrient/ez = 5, /obj/item/reagent_containers/cup/bottle/nutrient/l4z = 5, /obj/item/reagent_containers/cup/bottle/nutrient/rh = 3, /obj/item/reagent_containers/spray/pestspray = 2, /obj/item/reagent_containers/syringe = 5, /obj/item/secateurs = 3, /obj/item/shovel/spade = 3, /obj/item/storage/bag/plants = 3)
 	},
 /obj/effect/turf_decal/tile/dark/full,
 /turf/open/floor/iron/dark/textured_large,
@@ -4073,9 +4076,9 @@
 /area/ruin/interdyne_planetary_base/serv)
 "xY" = (
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/oven/range{
+/obj/machinery/griddle{
 	color = "#9d9ddd";
-	name = "Interdyne range";
+	name = "Interdyne griddle";
 	light_color = "#9d9ddd"
 	},
 /turf/open/floor/iron/dark/textured_large,
@@ -4454,7 +4457,6 @@
 /area/icemoon/underground/explored)
 "AR" = (
 /obj/effect/decal/remains/human,
-/obj/structure/flora/tree/pine/style_random,
 /turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "AT" = (
@@ -4948,9 +4950,9 @@
 "DI" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/griddle{
+/obj/machinery/oven/range{
 	color = "#9d9ddd";
-	name = "Interdyne griddle";
+	name = "Interdyne range";
 	light_color = "#9d9ddd"
 	},
 /turf/open/floor/iron/dark/textured_large,
@@ -7415,6 +7417,11 @@
 /obj/item/storage/toolbox/syndicate,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"TF" = (
+/obj/structure/flora/grass/both/style_random,
+/obj/structure/flora/tree/pine/style_random,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "TH" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
@@ -8482,13 +8489,6 @@
 /obj/structure/marker_beacon/teal,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/table/reinforced/plastitaniumglass,
-/obj/item/gun/energy/floragun,
-/obj/item/geneshears,
-/obj/item/shovel/spade,
-/obj/item/hatchet,
-/obj/item/cultivator,
-/obj/item/secateurs,
-/obj/item/plant_analyzer,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "Zr" = (
@@ -8952,7 +8952,7 @@ aa
 aa
 aa
 ac
-eE
+ac
 SH
 Se
 Iy
@@ -9012,7 +9012,7 @@ aa
 ac
 ac
 Se
-Iy
+eE
 Jx
 Iy
 Se
@@ -9068,9 +9068,9 @@ aa
 aa
 aa
 ac
+ac
 Iy
 eE
-Iy
 Iy
 Iy
 eE
@@ -9126,8 +9126,8 @@ aa
 aa
 aa
 ac
+ac
 eE
-Iy
 dM
 dM
 SH
@@ -9184,10 +9184,10 @@ aa
 (11,1,1) = {"
 aa
 ac
-Iy
+ac
 eE
 AR
-dM
+TF
 Im
 Iy
 Iy
@@ -9242,8 +9242,8 @@ aa
 "}
 (12,1,1) = {"
 ac
-eE
-SH
+ac
+JV
 Iy
 dM
 Se
@@ -9301,8 +9301,8 @@ aa
 "}
 (13,1,1) = {"
 ei
-Iy
 eE
+Iy
 Iy
 eE
 Iy
