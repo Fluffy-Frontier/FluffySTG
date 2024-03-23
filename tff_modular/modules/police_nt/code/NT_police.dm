@@ -1,9 +1,9 @@
-/datum/antagonist/ert/NT_police
+/datum/antagonist/ert/nt_police
 	name = "NTIS Unit"
 	antag_hud_name = "hud_spacecop"
 	suicide_cry = "FOR THE TRASEN!!"
 
-/datum/antagonist/ert/NT_police/apply_innate_effects(mob/living/mob_override)
+/datum/antagonist/ert/nt_police/apply_innate_effects(mob/living/mob_override)
 	..()
 	var/mob/living/M = mob_override || owner.current
 	if(M.hud_used)
@@ -13,7 +13,7 @@
 		H.infodisplay += giving_wanted_lvl
 		H.mymob.client.screen += giving_wanted_lvl
 
-/datum/antagonist/ert/NT_police/remove_innate_effects(mob/living/mob_override)
+/datum/antagonist/ert/nt_police/remove_innate_effects(mob/living/mob_override)
 	var/mob/living/M = mob_override || owner.current
 	if(M.hud_used)
 		var/datum/hud/H = M.hud_used
@@ -23,12 +23,12 @@
 /*
 *	POLICE
 */
-/datum/antagonist/ert/NT_police/agent
+/datum/antagonist/ert/nt_police/agent
 	name = "NTIS Agent"
 	role = "Internal Security Agent"
-	outfit = /datum/outfit/NT_police/agent
+	outfit = /datum/outfit/nt_police/agent
 
-/datum/antagonist/ert/NT_police/greet()
+/datum/antagonist/ert/nt_police/greet()
 	var/missiondesc =  ""
 	missiondesc += "<B><font size=5 color=red>You are a Nanotrasen Employee. You work for the Nanotrasen as a [role].</font></B>"
 	missiondesc += "<BR>You are responding to emergency calls from the station consultants!\n"
@@ -44,12 +44,12 @@
 	missiondesc += "<B><font size=5 color=red>Also don't forget to return to centcom on the ship before using beamout tool!</font></B>"
 	to_chat(owner, missiondesc)
 
-/datum/antagonist/ert/NT_police/swat
+/datum/antagonist/ert/nt_police/swat
 	name = "NTIS S.W.A.T. Officer"
 	role = "S.W.A.T. Officer"
-	outfit = /datum/outfit/NT_police/swat
+	outfit = /datum/outfit/nt_police/swat
 
-/datum/antagonist/ert/NT_police/swat/greet()
+/datum/antagonist/ert/nt_police/swat/greet()
 	var/missiondesc =  ""
 	missiondesc += "<B><font size=5 color=red>You are a Nanotrasen Employee. You work for the Nanotrasen as a [role].</font></B>"
 	missiondesc += "<BR>You are here to backup the NTIS police, as they have reported for your assistance.\n"
@@ -64,12 +64,12 @@
 	missiondesc += "<B><font size=5 color=red>Also don't forget to return to centcom on the ship before using beamout tool!</font></B>"
 	to_chat(owner, missiondesc)
 
-/datum/antagonist/ert/NT_police/trooper
+/datum/antagonist/ert/nt_police/trooper
 	name = "NTIS Trooper"
 	role = "NTIS Trooper"
-	outfit = /datum/outfit/NT_police/trooper
+	outfit = /datum/outfit/nt_police/trooper
 
-/datum/antagonist/ert/NT_police/trooper/greet()
+/datum/antagonist/ert/nt_police/trooper/greet()
 	var/missiondesc =  ""
 	missiondesc += "<B><font size=5 color=red>You are a Nanotrasen Employee. You work for the Nanotrasen as a [role].</font></B>"
 	missiondesc += "<BR>You are here to assume control of [station_name()] due to the occupants engaging in Treason as reported by our SWAT team.\n"

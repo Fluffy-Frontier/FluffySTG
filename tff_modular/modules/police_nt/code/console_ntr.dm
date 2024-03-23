@@ -43,18 +43,23 @@ GLOBAL_VAR(call_NTIS_msg)
 	GLOB.responding_centcom_consoles += src
 	AddComponent(/datum/component/gps, "Unic NTR console Signal")
 
-GLOBAL_LIST_INIT(NT_police_responder_info, list(
-	"NT_police_agent" = list(
+/obj/machinery/computer/comntr/Destroy()
+	. = ..()
+	GLOB.responding_centcom_consoles -= src
+	return ..()
+
+GLOBAL_LIST_INIT(nt_police_responder_info, list(
+	"nt_police_agent" = list(
 		NT_POLICE_AMT = 0,
 		NT_POLICE_VOTES = 0,
 		NT_POLICE_DECLARED = FALSE
 	),
-	"NT_police_swat" = list(
+	"nt_police_swat" = list(
 		NT_POLICE_AMT = 0,
 		NT_POLICE_VOTES = 0,
 		NT_POLICE_DECLARED = FALSE
 	),
-	"NT_police_trooper" = list(
+	"nt_police_trooper" = list(
 		NT_POLICE_AMT = 0,
 		NT_POLICE_VOTES = 0,
 		NT_POLICE_DECLARED = FALSE
@@ -66,7 +71,7 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 	var/announcement_message = "Attention, personnel of [station_name()]. \nNT Internal Security on the line. We've received a request from your corporate consultant, and we're sending a unit shortly. \nIn case of any kind of escalation or injury to an Internal Security officers, a tactical squad will be dispatched to handle this issue. \n\n Stay safe, Glory to Nanotrasen."
 	var/announcer = "NanoTrasen Internal Security"
 	var/poll_question = "The station has called for the NT Internal Security. Will you respond?"
-	var/list_to_use = "NT_police_agent"
+	var/list_to_use = "nt_police_agent"
 	priority_announce(announcement_message, announcer, sound = 'tff_modular/modules/police_nt/sound/nt_police_first.ogg', has_important_message=TRUE, color_override = "yellow")
 	var/list/candidates = SSpolling.poll_ghost_candidates(
 		poll_question,
@@ -80,7 +85,7 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 
 		var/list/spawnpoints = GLOB.emergencyresponseteamspawn
 		var/index = 0
-		GLOB.NT_police_responder_info[list_to_use][NT_POLICE_AMT] = agents_number
+		GLOB.nt_police_responder_info[list_to_use][NT_POLICE_AMT] = agents_number
 		while(agents_number && candidates.len)
 			var/spawn_loc = spawnpoints[index + 1]
 			index = (index + 1) % spawnpoints.len
@@ -93,7 +98,7 @@ GLOBAL_LIST_INIT(NT_police_responder_info, list(
 			chosen_candidate.client.prefs.safe_transfer_prefs_to(cop, is_antag = TRUE)
 			cop.key = chosen_candidate.key
 
-			var/datum/antagonist/ert/NT_police/ert_antag = new /datum/antagonist/ert/NT_police/agent
+			var/datum/antagonist/ert/nt_police/ert_antag = new /datum/antagonist/ert/nt_police/agent
 			cop.mind.add_antag_datum(ert_antag)
 			cop.mind.set_assigned_role(SSjob.GetJobType(ert_antag.ert_job_path))
 			cop.grant_language(/datum/language/common, source = LANGUAGE_SPAWNER)

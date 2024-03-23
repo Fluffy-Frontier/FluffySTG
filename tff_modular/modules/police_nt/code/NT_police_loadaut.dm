@@ -2,41 +2,41 @@
 		NTIS ID CARD
 */
 
-/datum/id_trim/centcom/ert/security/NT_police/New()
+/datum/id_trim/centcom/ert/security/nt_police/New()
 	. = ..()
 	assignment = "NTIS Agent"
 	access = SSid_access.get_region_access_list(list(REGION_CENTCOM, REGION_ALL_STATION))
 
-/datum/id_trim/centcom/ert/security/NT_police/swat/New()
+/datum/id_trim/centcom/ert/security/nt_police/swat/New()
 	. = ..()
 	assignment = "NTIS S.W.A.T."
 
-/datum/id_trim/centcom/ert/security/NT_police/trooper/New()
+/datum/id_trim/centcom/ert/security/nt_police/trooper/New()
 	. = ..()
 	assignment = "NTIS Trooper"
 
-/obj/item/card/id/advanced/centcom/ert/NT_police
+/obj/item/card/id/advanced/centcom/ert/nt_police
 	registered_name = "NT Internal Security"
-	trim = /datum/id_trim/centcom/ert/security/NT_police
+	trim = /datum/id_trim/centcom/ert/security/nt_police
 
-/obj/item/card/id/advanced/centcom/ert/NT_police/swat
-	trim = /datum/id_trim/centcom/ert/security/NT_police/swat
+/obj/item/card/id/advanced/centcom/ert/nt_police/swat
+	trim = /datum/id_trim/centcom/ert/security/nt_police/swat
 
-/obj/item/card/id/advanced/centcom/ert/NT_police/trooper
-	trim = /datum/id_trim/centcom/ert/security/NT_police/trooper
+/obj/item/card/id/advanced/centcom/ert/nt_police/trooper
+	trim = /datum/id_trim/centcom/ert/security/nt_police/trooper
 
 /*
 		NTIS OUTFIT
 */
 
-/datum/outfit/NT_police
+/datum/outfit/nt_police
 	name = "NTIS Base"
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	box = /obj/item/storage/box/survival/centcom
 	back = /obj/item/storage/backpack/security
 	ears = /obj/item/radio/headset/headset_cent/commander
 
-/datum/outfit/NT_police/post_equip(mob/living/carbon/human/human_to_equip, visualsOnly = FALSE)
+/datum/outfit/nt_police/post_equip(mob/living/carbon/human/human_to_equip, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
 
@@ -53,7 +53,7 @@
 		ID_to_give.update_icon()
 		human_to_equip.sec_hud_set_ID()
 
-/datum/outfit/NT_police/agent
+/datum/outfit/nt_police/agent
 	name = "NTIS Agent"
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	uniform = /obj/item/clothing/under/rank/security/officer
@@ -61,7 +61,7 @@
 	head = /obj/item/clothing/head/hats/warden/police/patrol // Вот это не заменил. Не скоро менять будут.
 	shoes = /obj/item/clothing/shoes/combat
 	belt = /obj/item/melee/baton/security/loaded
-	id = /obj/item/card/id/advanced/centcom/ert/NT_police
+	id = /obj/item/card/id/advanced/centcom/ert/nt_police
 	backpack_contents = list(
 		/obj/item/storage/box/handcuffs = 1,
 		/obj/item/nt_reporter/swat_caller = 1,
@@ -72,9 +72,9 @@
 	r_pocket = /obj/item/flashlight/seclite
 	l_pocket = /obj/item/restraints/handcuffs
 
-/datum/outfit/NT_police/swat
+/datum/outfit/nt_police/swat
 	name = "NTIS S.W.A.T."
-	id = /obj/item/card/id/advanced/centcom/ert/NT_police/swat
+	id = /obj/item/card/id/advanced/centcom/ert/nt_police/swat
 	gloves = /obj/item/clothing/gloves/combat
 	uniform = /obj/item/clothing/under/rank/security/officer
 	head = /obj/item/clothing/head/helmet/sf_sacrificial/nt_police
@@ -95,9 +95,9 @@
 	r_pocket = /obj/item/flashlight/seclite
 	l_pocket = /obj/item/restraints/handcuffs
 
-/datum/outfit/NT_police/trooper
+/datum/outfit/nt_police/trooper
 	name = "NTIS Trooper"
-	id = /obj/item/card/id/advanced/centcom/ert/NT_police/trooper
+	id = /obj/item/card/id/advanced/centcom/ert/nt_police/trooper
 	uniform = /obj/item/clothing/under/nt_peacekeeper
 	head = /obj/item/clothing/head/helmet/sf_sacrificial/nt_police // Это не планируют убирать. Я просто накину прочности.
 	suit = /obj/item/clothing/suit/armor/sf_sacrificial/nt_police // Это не планируют убирать. Я просто накину прочности.

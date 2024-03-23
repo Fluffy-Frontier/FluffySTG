@@ -112,12 +112,12 @@
 	icon_state = "reporter_off"
 	w_class = WEIGHT_CLASS_SMALL
 	var/activated = FALSE
-	var/type_to_check = /datum/antagonist/ert/NT_police/agent
-	var/type_of_callers = "NT_police_agent"
+	var/type_to_check = /datum/antagonist/ert/nt_police/agent
+	var/type_of_callers = "nt_police_agent"
 	var/announcement_source = "NanoTrasen Internal Security"
 	var/ghost_poll_msg = "example crap"
 	var/amount_to_summon = 5
-	var/type_to_summon = /datum/antagonist/ert/NT_police/swat
+	var/type_to_summon = /datum/antagonist/ert/nt_police/swat
 	var/summoned_type = "NTIS S.W.A.T."
 	var/jobban_to_check = ROLE_DEATHSQUAD
 	var/announcement_message = "Well..."
@@ -136,18 +136,18 @@
 	. = ..()
 	if(!pre_checks(user))
 		return
-	if(!activated && !GLOB.NT_police_responder_info[type_of_callers][NT_POLICE_DECLARED])
+	if(!activated && !GLOB.nt_police_responder_info[type_of_callers][NT_POLICE_DECLARED])
 		if(!questions(user))
 			return
 		activated = TRUE
 		icon_state = "reporter_on"
-		GLOB.NT_police_responder_info[type_of_callers][NT_POLICE_VOTES]++
-		var/current_votes = GLOB.NT_police_responder_info[type_of_callers][NT_POLICE_VOTES]
-		var/amount_of_responders = GLOB.NT_police_responder_info[type_of_callers][NT_POLICE_AMT]
+		GLOB.nt_police_responder_info[type_of_callers][NT_POLICE_VOTES]++
+		var/current_votes = GLOB.nt_police_responder_info[type_of_callers][NT_POLICE_VOTES]
+		var/amount_of_responders = GLOB.nt_police_responder_info[type_of_callers][NT_POLICE_AMT]
 		to_chat(user, span_warning("You have activated the device. \
 		Current Votes: [current_votes]/[amount_of_responders] votes."))
 		if(current_votes >= amount_of_responders * 0.5)
-			GLOB.NT_police_responder_info[type_of_callers][NT_POLICE_DECLARED] = TRUE
+			GLOB.nt_police_responder_info[type_of_callers][NT_POLICE_DECLARED] = TRUE
 
 			priority_announce(announcement_message, announcement_source, sound_nt, has_important_message = TRUE, color_override = "yellow")
 			var/list/candidates = SSpolling.poll_ghost_candidates(
@@ -159,7 +159,7 @@
 
 			if(length(candidates))
 				var/agents_number = min(amount_to_summon, candidates.len)
-				GLOB.NT_police_responder_info[summoned_type][NT_POLICE_AMT] = agents_number
+				GLOB.nt_police_responder_info[summoned_type][NT_POLICE_AMT] = agents_number
 
 				var/list/spawnpoints = GLOB.emergencyresponseteamspawn
 				var/index = 0
@@ -175,7 +175,7 @@
 					chosen_candidate.client.prefs.safe_transfer_prefs_to(cop, is_antag = TRUE)
 					cop.key = chosen_candidate.key
 
-					var/datum/antagonist/ert/NT_police/ert_antag = type_to_summon
+					var/datum/antagonist/ert/nt_police/ert_antag = type_to_summon
 					cop.mind.add_antag_datum(ert_antag)
 					cop.mind.set_assigned_role(SSjob.GetJobType(ert_antag.ert_job_path))
 					cop.grant_language(/datum/language/common, source = LANGUAGE_SPAWNER)
@@ -185,12 +185,12 @@
 /obj/item/nt_reporter/swat_caller
 	name = "S.W.A.T. backup caller"
 	desc = "Use this in-hand to vote to call NanoTrasen S.W.A.T. backup. If half your team votes for it, SWAT will be dispatched."
-	type_to_check = /datum/antagonist/ert/NT_police/agent
-	type_of_callers = "NT_police_agent"
+	type_to_check = /datum/antagonist/ert/nt_police/agent
+	type_of_callers = "nt_police_agent"
 	ghost_poll_msg = "The NTIS have requested a S.W.A.T. backup. Do you wish to become a S.W.A.T. member?"
 	amount_to_summon = 5
-	type_to_summon = /datum/antagonist/ert/NT_police/swat
-	summoned_type = "NT_police_swat"
+	type_to_summon = /datum/antagonist/ert/nt_police/swat
+	summoned_type = "nt_police_swat"
 	sound_nt = 'tff_modular/modules/police_nt/sound/nt_police_second.ogg'
 	announcement_message = "Attention, crew.\nNTIS Police have requested S.W.A.T. backup. Please comply with all requests by special squad members."
 
@@ -206,12 +206,12 @@
 /obj/item/nt_reporter/trooper_caller
 	name = "Guard backup caller"
 	desc = "Use this in-hand to vote that the station is engaging in Treason. If half your team votes for it, the Military will handle the situation."
-	type_to_check = /datum/antagonist/ert/NT_police/swat
-	type_of_callers = "NT_police_swat"
+	type_to_check = /datum/antagonist/ert/nt_police/swat
+	type_of_callers = "nt_police_swat"
 	ghost_poll_msg = "The station has decided to engage in treason. Do you wish to join the NanoTrasen Military?"
 	amount_to_summon = 8
-	type_to_summon = /datum/antagonist/ert/NT_police/trooper
-	summoned_type = "NT_police_trooper"
+	type_to_summon = /datum/antagonist/ert/nt_police/trooper
+	summoned_type = "nt_police_trooper"
 	sound_nt = 'tff_modular/modules/police_nt/sound/nt_police_third.ogg'
 	announcement_message = "Attention, crew.\nYou are accused of corporate treason. Lay down your weapons and surrender. Follow all the orders of the NanoTrasen response team. The perpetrators of corporate betrayal will be punished at the greatest extent."
 
