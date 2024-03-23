@@ -1,8 +1,3 @@
-/datum/area_replace_obj/comntr_console
-	target_areas = list(/area/station/command/heads_quarters/nt_rep)
-	desired_atom = /obj/machinery/computer/comntr
-	target_obj = /obj/machinery/modular_computer/preset/command
-
 /datum/controller/subsystem/area_spawn/Initialize()
 	for(var/iterating_type in subtypesof(/datum/area_replace_obj))
 		var/datum/area_replace_obj/iterating_area_replace_obj = new iterating_type
@@ -13,10 +8,11 @@
  * Spawns an atom ensted of atom or object.
  */
 /datum/area_replace_obj
+	/// Where?
 	var/list/target_areas
-	/// The atom type that we want to spawn
+	/// What we spawning?
 	var/desired_atom
-	/// Whom we will kill for replace
+	/// What we removing?
 	var/target_obj
 	/// Map blacklist, this is used to determine what maps we should not spawn on.
 	var/list/blacklisted_stations = list("Runtime Station", "MultiZ Debug", "Gateway Test")
@@ -45,3 +41,9 @@
 						some.setDir(mytarget.dir)
 						qdel(mytarget)
 						break
+
+/datum/area_replace_obj/comntr_console
+	target_areas = list(/area/station/command/heads_quarters/nt_rep)
+	desired_atom = /obj/machinery/computer/comntr
+	target_obj = /obj/machinery/modular_computer/preset/command
+

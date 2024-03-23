@@ -53,8 +53,8 @@
 		ID_to_give.update_icon()
 		human_to_equip.sec_hud_set_ID()
 
-/datum/outfit/NT_police/regular
-	name = "NTIS Unit Regular"
+/datum/outfit/NT_police/agent
+	name = "NTIS Agent"
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	uniform = /obj/item/clothing/under/rank/security/officer
 	suit = /obj/item/clothing/suit/armor/vest/nt_police
@@ -67,13 +67,13 @@
 		/obj/item/nt_reporter/swat_caller = 1,
 		/obj/item/beamout_tool_nt = 1,
 		/obj/item/melee/baton/telescopic = 1,
-		/obj/item/gun/energy/disabler/smg = 1,
+		/obj/item/choice_beacon/nt_police = 1,
 	)
 	r_pocket = /obj/item/flashlight/seclite
 	l_pocket = /obj/item/restraints/handcuffs
 
 /datum/outfit/NT_police/swat
-	name = "NTIS S.W.A.T. Officer"
+	name = "NTIS S.W.A.T."
 	id = /obj/item/card/id/advanced/centcom/ert/NT_police/swat
 	gloves = /obj/item/clothing/gloves/combat
 	uniform = /obj/item/clothing/under/rank/security/officer
@@ -89,7 +89,7 @@
 		/obj/item/melee/baton/security/loaded = 1,
 		/obj/item/nt_reporter/trooper_caller = 1,
 		/obj/item/beamout_tool_nt = 1,
-		/obj/item/choice_beacon/nt_swat = 1,
+		/obj/item/choice_beacon/nt_police/swat = 1,
 	)
 	r_pocket = /obj/item/flashlight/seclite
 	l_pocket = /obj/item/restraints/handcuffs
@@ -108,7 +108,7 @@
 		/obj/item/storage/box/handcuffs = 1,
 		/obj/item/sacrificial_face_shield = 1,
 		/obj/item/melee/baton/security/loaded = 1,
-		/obj/item/choice_beacon/nt_police = 1,
+		/obj/item/choice_beacon/nt_police/trooper = 1,
 	)
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/flashlight/seclite

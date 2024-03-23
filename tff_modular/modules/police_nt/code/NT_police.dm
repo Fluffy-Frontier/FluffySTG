@@ -23,10 +23,10 @@
 /*
 *	POLICE
 */
-/datum/antagonist/ert/NT_police/regular
-	name = "NTIS Unit"
-	role = "Internal Security Unit"
-	outfit = /datum/outfit/NT_police/regular
+/datum/antagonist/ert/NT_police/agent
+	name = "NTIS Agent"
+	role = "Internal Security Agent"
+	outfit = /datum/outfit/NT_police/agent
 
 /datum/antagonist/ert/NT_police/greet()
 	var/missiondesc =  ""

@@ -3,14 +3,14 @@
 */
 
 /datum/armor/armor_sf_nt_police
-	melee = ARMOR_LEVEL_MID
-	bullet = ARMOR_LEVEL_INSANE
-	laser = ARMOR_LEVEL_MID
-	energy = ARMOR_LEVEL_MID
-	bomb = WOUND_ARMOR_HIGH
-	fire = WOUND_ARMOR_HIGH
-	acid = WOUND_ARMOR_HIGH
-	wound = WOUND_ARMOR_HIGH
+	melee = 50
+	bullet = 90
+	laser = 60
+	energy = 60
+	bomb = 70
+	fire = 70
+	acid = 70
+	wound = 50
 
 /obj/item/clothing/head/helmet/sf_sacrificial/nt_police
 	armor_type = /datum/armor/armor_sf_nt_police
@@ -68,7 +68,7 @@
 	inhand_icon_state = "armor"
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	armor_type = /datum/armor/nt_regular
+	armor_type = /datum/armor/nt_agent
 	cold_protection = CHEST | GROIN | LEGS | FEET | ARMS | HANDS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT_OFF
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -79,7 +79,7 @@
 	icon_state = "marine_security"
 	armor_type = /datum/armor/nt_swat
 
-/datum/armor/nt_regular
+/datum/armor/nt_agent
 	melee = 40
 	bullet = 35
 	laser = 40
@@ -112,8 +112,8 @@
 	icon_state = "reporter_off"
 	w_class = WEIGHT_CLASS_SMALL
 	var/activated = FALSE
-	var/type_to_check = /datum/antagonist/ert/NT_police/regular
-	var/type_of_callers = "NT_police_regular"
+	var/type_to_check = /datum/antagonist/ert/NT_police/agent
+	var/type_of_callers = "NT_police_agent"
 	var/announcement_source = "NanoTrasen Internal Security"
 	var/ghost_poll_msg = "example crap"
 	var/amount_to_summon = 5
@@ -185,8 +185,8 @@
 /obj/item/nt_reporter/swat_caller
 	name = "S.W.A.T. backup caller"
 	desc = "Use this in-hand to vote to call NanoTrasen S.W.A.T. backup. If half your team votes for it, SWAT will be dispatched."
-	type_to_check = /datum/antagonist/ert/NT_police/regular
-	type_of_callers = "NT_police_regular"
+	type_to_check = /datum/antagonist/ert/NT_police/agent
+	type_of_callers = "NT_police_agent"
 	ghost_poll_msg = "The NTIS have requested a S.W.A.T. backup. Do you wish to become a S.W.A.T. member?"
 	amount_to_summon = 5
 	type_to_summon = /datum/antagonist/ert/NT_police/swat
@@ -279,91 +279,196 @@
 		Ammunition
 */
 
-/obj/item/choice_beacon/nt_police
-	name = "gunset beacon"
-	desc = "A single use beacon to deliver a gunset of your choice."
-	company_source = "NanoTrasen(tm)"
-	company_message = span_bold("Supply Pod incoming please stand by")
-
-/obj/item/choice_beacon/nt_swat
-	name = "gunset beacon"
-	desc = "A single use beacon to deliver a gunset of your choice."
-	company_source = "NanoTrasen(tm)"
-	company_message = span_bold("Supply Pod incoming please stand by")
-
-/obj/item/storage/box/survival/hug/black/nt_police
-	name = "tactical cuddle kit"
-	desc = "A lovely little box filled with gear for the brutal police!"
-
 /*
-		END round ammunition
+	NTIS AGENTS WEAPONRY
 */
 
-/obj/item/storage/box/survival/hug/black/nt_police/revolver/PopulateContents()
+/obj/item/choice_beacon/nt_police
+	name = "NTIS self-defence weapon delivery beacon"
+	desc = "Weapon delivery beacon designed for picky NTIS agents."
+	icon_state = "gangtool-white"
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/choice_beacon/nt_police/generate_display_names()
+	var/static/list/weapon_kits
+	if(!weapon_kits)
+		weapon_kits = list()
+		var/list/possible_kits = list(
+			/obj/item/gun/energy/disabler,
+			/obj/item/gun/energy/disabler/smg,
+		)
+		for(var/obj/item/kit as anything in possible_kits)
+			weapon_kits[initial(kit.name)] = kit
+
+	return weapon_kits
+
+/obj/item/storage/box/nt_police
+	// спрайтик коробки и спрайтик изображения на коробке
+	// вы можете сами изменить в случае необходимости
+	icon_state = "syndiebox"
+	illustration = "glasses"
+	desc = "Somewhat robust box for special gear."
+
+/obj/item/storage/box/nt_police/Initialize(mapload)
+	. = ..()
+	atom_storage.max_specific_storage = WEIGHT_CLASS_NORMAL
+
+/*
+    NTIS-SWAT WEAPONRY
+
+	ВАЖНО!
+
+	Билд меняется, так что при изменениях связанных с вооружением - обновляйте вооружение SWAT-овцам так,
+	чтобы оно было аналогичным или схожим станционному (тому что есть/можно раздобыть на станции)!
+*/
+
+/obj/item/choice_beacon/nt_police/swat
+	name = "NTIS-SWAT weapon delivery beacon"
+	desc = "Weapon delivery beacon designed for NTIS-SWAT units."
+
+/obj/item/choice_beacon/nt_police/swat/generate_display_names()
+	var/static/list/weapon_kits
+	if(!weapon_kits)
+		weapon_kits = list()
+		var/list/possible_kits = list(
+			/obj/item/storage/box/nt_police/swat/energy,
+			/obj/item/storage/box/nt_police/swat/smg,
+			/obj/item/storage/box/nt_police/swat/rifle,
+			/obj/item/storage/box/nt_police/swat/shotgun,
+		)
+		for(var/obj/item/kit as anything in possible_kits)
+			weapon_kits[initial(kit.name)] = kit
+
+	return weapon_kits
+
+/obj/item/storage/box/nt_police/swat
+	illustration = "handcuff"
+
+/obj/item/storage/box/nt_police/swat/energy
+	name = "Energy weapon kit"
+
+/obj/item/storage/box/nt_police/swat/energy/PopulateContents()
+	new /obj/item/gun/energy/modular_laser_rifle(src)
+	new /obj/item/gun/energy/e_gun/mini(src)
+
+/obj/item/storage/box/nt_police/swat/smg
+	name = "SMG kit"
+
+/obj/item/storage/box/nt_police/swat/smg/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/sol_smg(src)
+	new /obj/item/ammo_box/magazine/c35sol_pistol/stendo(src)
+	new /obj/item/ammo_box/magazine/c35sol_pistol/stendo(src)
+	new /obj/item/ammo_box/magazine/c35sol_pistol/stendo(src)
+	new /obj/item/gun/ballistic/automatic/pistol/sol(src)
+	new /obj/item/ammo_box/magazine/c35sol_pistol(src)
+	new /obj/item/suppressor/standard(src)
+	new /obj/item/storage/pouch/ammo(src)
+
+/obj/item/storage/box/nt_police/swat/rifle
+	name = "Rifle kit"
+
+/obj/item/storage/box/nt_police/swat/rifle/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/sol_rifle/marksman(src)
+	new /obj/item/ammo_box/magazine/c40sol_rifle/standard(src)
+	new /obj/item/ammo_box/magazine/c40sol_rifle/standard(src)
+	new /obj/item/ammo_box/magazine/c40sol_rifle/standard(src)
+	new /obj/item/gun/ballistic/revolver/sol(src)
+	new /obj/item/ammo_box/c35sol(src)
+	new /obj/item/storage/pouch/ammo(src)
+
+/obj/item/storage/box/nt_police/swat/shotgun
+	name = "Shotgun kit"
+
+/obj/item/storage/box/nt_police/swat/shotgun/PopulateContents()
+	new /obj/item/gun/ballistic/shotgun/riot/sol(src)
+	new /obj/item/ammo_box/advanced/s12gauge(src)
+	new /obj/item/ammo_box/advanced/s12gauge/flechette(src)
+	new /obj/item/gun/ballistic/revolver/takbok(src)
+	new /obj/item/ammo_box/c585trappiste(src)
+	new /obj/item/storage/pouch/ammo(src)
+
+/*
+    NTIS TROOPERS WEAPONRY
+*/
+
+/obj/item/choice_beacon/nt_police/trooper
+	name = "NTIS trooper weapon delivery beacon"
+	desc = "Weapon delivery beacon designed for NTIS troopers."
+
+/obj/item/choice_beacon/nt_police/trooper/generate_display_names()
+	var/static/list/weapon_kits
+	if(!weapon_kits)
+		weapon_kits = list()
+		var/list/possible_kits = list(
+			/obj/item/storage/box/nt_police/trooper/ar,
+		)
+		for(var/obj/item/kit as anything in possible_kits)
+			weapon_kits[initial(kit.name)] = kit
+
+	return weapon_kits
+
+/obj/item/storage/box/nt_police/trooper
+	illustration = "bodybags"
+
+/obj/item/storage/box/nt_police/trooper/ar
+	name = "NTIS trooper assault rifle kit"
+
+/obj/item/storage/box/nt_police/trooper/ar/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/ar(src)
+	new /obj/item/ammo_box/magazine/m223(src)
+	new /obj/item/ammo_box/magazine/m223(src)
+	new /obj/item/ammo_box/magazine/m223(src)
+	new /obj/item/ammo_box/magazine/m223(src)
 	new /obj/item/gun/ballistic/revolver/mateba(src)
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/ammo_box/a357(src)
-	new /obj/item/ammo_box/a357(src)
-	new /obj/item/storage/belt/holster(src)
-
-/obj/item/storage/box/survival/hug/black/nt_police/smg/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/proto/unrestricted(src)
-	new /obj/item/ammo_box/magazine/smgm9mm(src)
-	new /obj/item/ammo_box/magazine/smgm9mm(src)
-	new /obj/item/ammo_box/magazine/smgm9mm(src)
 	new /obj/item/storage/pouch/ammo(src)
 
-/obj/item/storage/box/survival/hug/black/nt_police/medic/PopulateContents()
-	new /obj/item/gun/energy/laser/scatter/shotty(src)
-	new /obj/item/storage/medkit/tactical/premium(src)
-	new /obj/item/storage/belt/medical/ert(src)
-	new /obj/item/reagent_containers/hypospray/combat/nanites(src)
-
-/obj/item/storage/box/survival/hug/black/nt_police/laser/PopulateContents()
-	new /obj/item/gun/energy/e_gun/nuclear(src)
-	new /obj/item/gun/energy/ionrifle/carbine(src)
 
 /*
-		S.W.A.T ammunition
+
+			Снаряжение для классовости SWAT и Troopers
+
 */
 
-/obj/item/storage/box/survival/hug/black/nt_swat/revolver/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/c38(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/storage/belt/holster(src)
+/obj/item/choice_beacon/nt_police/swat_class
+	name = "NTIS-SWAT tools delivery beacon"
+	desc = "Tools delivery beacon designed for NTIS-SWAT units."
 
-/obj/item/storage/box/survival/hug/black/nt_swat/smg/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/wt550(src)
-	new /obj/item/ammo_box/magazine/wt550m9(src)
-	new /obj/item/ammo_box/magazine/wt550m9(src)
-	new /obj/item/ammo_box/magazine/wt550m9(src)
-	new /obj/item/storage/pouch/ammo(src)
+/obj/item/choice_beacon/nt_police/swat_class/generate_display_names()
+	var/static/list/weapon_kits
+	if(!weapon_kits)
+		weapon_kits = list()
+		var/list/possible_kits = list(
+			/obj/item/storage/box/nt_police/swat/emp,
+			/obj/item/storage/box/nt_police/swat/medic,
+			/obj/item/storage/box/nt_police/swat/explosion,
+			/obj/item/storage/box/nt_police/swat/enginer,
+		)
+		for(var/obj/item/kit as anything in possible_kits)
+			weapon_kits[initial(kit.name)] = kit
 
-/obj/item/storage/box/survival/hug/black/nt_swat/medic/PopulateContents()
-	new /obj/item/gun/energy/laser/scatter/shotty(src)
-	new /obj/item/storage/medkit/tactical(src)
-	new /obj/item/storage/belt/medical/ert(src)
-	new /obj/item/reagent_containers/hypospray/combat(src)
+	return weapon_kits
 
-/obj/item/storage/box/survival/hug/black/nt_swat/laser/PopulateContents()
-	new /obj/item/gun/energy/e_gun(src)
+/obj/item/storage/box/nt_police/swat
+	illustration = "handcuff"
 
-/obj/item/choice_beacon/nt_police/generate_display_names()
-	var/static/list/selectable_builds = list(
-		"Officer" = /obj/item/storage/box/survival/hug/black/nt_police/revolver,
-		"Trooper" = /obj/item/storage/box/survival/hug/black/nt_police/smg,
-		"Laserguner" = /obj/item/storage/box/survival/hug/black/nt_police/laser,
-		"Medic" = /obj/item/storage/box/survival/hug/black/nt_police/medic,
-	)
-	return selectable_builds
+/obj/item/storage/box/nt_police/swat/emp
+	name = "Energy weapon kit"
 
-/obj/item/choice_beacon/nt_swat/generate_display_names()
-	var/static/list/selectable_builds = list(
-		"Officer" = /obj/item/storage/box/survival/hug/black/nt_swat/revolver,
-		"Trooper" = /obj/item/storage/box/survival/hug/black/nt_swat/smg,
-		"Laserguner" = /obj/item/storage/box/survival/hug/black/nt_swat/laser,
-		"Medic" = /obj/item/storage/box/survival/hug/black/nt_swat/medic,
-	)
-	return selectable_builds
+/obj/item/storage/box/nt_police/swat/emp/PopulateContents()
+
+/obj/item/storage/box/nt_police/swat/medic
+	name = "SMG kit"
+
+/obj/item/storage/box/nt_police/swat/medic/PopulateContents()
+
+/obj/item/storage/box/nt_police/swat/explosion
+	name = "Rifle kit"
+
+/obj/item/storage/box/nt_police/swat/explosion/PopulateContents()
+
+/obj/item/storage/box/nt_police/swat/enginer
+	name = "Shotgun kit"
+
+/obj/item/storage/box/nt_police/swat/enginer/PopulateContents()
