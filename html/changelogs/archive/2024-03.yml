@@ -721,6 +721,225 @@
       dual-wield cone.
   - balance: Thermal pistol crates are now 2000 credits, up from 1400 credits.
 2024-03-15:
+  13spacemen:
+  - bugfix: Fixed some poll alerts runtiming
   ArcaneMusic:
   - image: Your station's standard issue E-219 laser turrets within the AI upload
       and AI satellite have been updated to a newer, shinier model.
+  - code_imp: We now log how many ores spawned on lavaland each round, as well as
+      the sizes of all of the ore vents.
+  Iajret:
+  - balance: you can't take pride pin quirk anymore.
+  JohnFulpWillard:
+  - refactor: Instruments now use TGUI.
+2024-03-16:
+  Chelxox:
+  - balance: Increases the double-edged energy sword's block chance from 45 to 65.
+  Ghommie:
+  - bugfix: Fixed the "Fenced Goods" black market category.
+  - balance: Removed the LTSRBT from cargo and added it to the blackmarket, reduced
+      the price from 4000 to 625 on average.
+  - balance: The time it takes for captured mobs to be automatically sent back to
+      the station from the holding facility has been increased from 3-4 minutes to
+      6.
+  - rscadd: You can buy mobs captured by contractors, traitors and pirates from the
+      black market and have them sent back to the station in advance. For safety,
+      they'll also be handcuffed (not always) upon delivery.
+  - rscadd: Human mobs sold by pirates are not deleted anymore. Instead, they're now
+      captured and sent to the holding facility.
+  Hatterhat:
+  - balance: Cybersun Industries is now rolling out larger Hoshi chassis in order
+      to mitigate a heatsink issue, at the cost of making them unable to be stored
+      quite so easily.
+  Jacquerel:
+  - image: Updated button icon for Summon Simians and Gorilla Transformation.
+  projectkepler-ru:
+  - rscadd: The Bartender's double barrel shotgun can be purchased for 1,800 credits
+      on goodie tab
+2024-03-17:
+  00-Steven:
+  - sound: Placing paper in a paperbin is no longer silent.
+  ArcaneMusic:
+  - qol: Vending machines now have contextual tooltips for interactions with tools/objects/restocking/returns.
+  - qol: Vending machines can now be examined to see what type of restock module they
+      need to be refilled.
+  Bilbo367:
+  - bugfix: now spiders get extra damage by fly swatter
+  DaCoolBoss:
+  - qol: The LawDrobe now stocks two (2) boxes of evidence bags.
+  FlufflesTheDog:
+  - bugfix: Cleanbots once again require an emag to spray acid on people. They can
+      still acid trash objects normally.
+  - bugfix: Psyker vision no longer causes infinitely worsening lag
+  Ghommie:
+  - rscadd: Added a possible kit to the special syndie bundle B, which also has uses
+      these collars.
+  - balance: The pro skateboard and hoverboard are now faster.
+  - balance: The improvised skateboard is a nick more unstable than the standard,
+      so the two aren't exactly the same.
+  - rscadd: Riding a skateboard on walk intent will prevent you from crashing into
+      things, at the cost of speed.
+  - rscadd: 'hoverboards now actually hovers and can be used even in zero g. There
+      are a caveat to it: It cannot be ridden on open space gaps deeper than one level
+      or actual space, unless there''re objects that prevent falls, like lattice or
+      catwalks.'
+  - rscadd: Added 20+ modifiers to the deathmatch minigame, which can be enabled by
+      the host.
+  - rscadd: Ice cream and frozen treats now have a chilling effect.
+  - rscadd: You can add a scoop of ice cream on waffles.
+  - balance: added an action speed modifier to the generic food haste effect (you
+      do things, and not just run, an itsy bitsy faster)
+  Jacquerel:
+  - balance: If you work out under heavier-than-earth gravity, you will get gains
+      faster.
+  JohnFulpWillard:
+  - bugfix: Security camera consoles no longer have infinite range.
+  - bugfix: Human AI now closes regular AI job positions.
+  - bugfix: Time on servers hosted outside of the UK should now properly have their
+      timezone offset.
+  Kapu1178:
+  - bugfix: Modsuit Pathfinder module is significantly better at finding it's destination.
+  Melbert:
+  - bugfix: Fixes polling for things causing said things to have their planes and
+      layers screwed up (causing random objects or mobs to appear above runechat and
+      blindness, for example)
+  - rscadd: MODsuits now use the "suit charge" HUD element to show how much charge
+      they have left, rather than a screen alert
+  Nerev4r:
+  - image: The bat harpy wings are now three-way recolorable, with a fluffless version.
+  Rhials:
+  - qol: Posters now return to your hand when the hanging process is cancelled, or
+      they are snipped down.
+  - qol: Abductor posters can now only be cut down with abductor-tier wirecutters.
+  SyncIt21:
+  - bugfix: Lathes don't hang if materials run out mid printing. Also displays message
+      if materials are put on hold while printing
+  Tattle:
+  - rscadd: Getting shrunk makes you talk small
+  Webcomicartist:
+  - bugfix: Fixed RLD,RTD and Rebar crossbow not being storable on the engineering
+      winter coat slot.
+  intercepti0n:
+  - bugfix: Fixed cap overlay being added even when pipe is not hidden.
+  - bugfix: Fixed cap overlay being visible on turfs that are masked with darkness
+      plane, but still visible via mesons, cameras etc.
+  kawoppi:
+  - qol: added tooltip to newscaster to tell people that they need to insert paper
+      if they want to print a newspaper
+2024-03-18:
+  Ghommie:
+  - bugfix: FIXED CARGO EXPORTS!
+  RatFromTheJungle:
+  - balance: The Hoshi is once more, reduced in size, because it turns out bigger,
+      does not always equal better with heatsinks!
+2024-03-19:
+  13spacemen:
+  - qol: Sentience potion reason is set via alt-click
+  ArcaneMusic:
+  - bugfix: Tramstation now has a pepperspray dispenser in it's science security outpost,
+      as with other security outposts.
+  Bilbo367:
+  - bugfix: Deathmatch players should no longer be able to roll any midround antagonist.
+  - bugfix: ID locking and unlocking work.
+  Exester509:
+  - bugfix: Plasmamen will become human in the deathmatch so they don't instantly
+      die
+  JohnFulpWillard:
+  - bugfix: Action abilities hidden from players are now not shown to observers either.
+  Momo8289:
+  - bugfix: You can no longer determine the result of a dice roll from off-screen.
+  Rhials:
+  - bugfix: Plasmamen nukie reinforcements are now properly given a plasmaman-safe
+      outfit.
+  Runa-Dacino:
+  - bugfix: fixed consecutive tgui text input inheriting user input from previous
+      input form within the same proc
+  SyncIt21:
+  - bugfix: Selling stuff in cargo gives us money again.
+  san7890:
+  - bugfix: If you place a headset on a non-Poly Parrot, you should be able to remove
+      it from the parrot as-expected now rather than having the parrot send it to
+      the shadow realm.
+2024-03-20:
+  00-Steven:
+  - rscadd: Hemiplegic now lets you pick which side is disabled.
+  - rscadd: The medical records text for hemiplegics now shows which side is disabled.
+  ArcaneMusic:
+  - rscadd: Disposal bins can now hold destination taggers using right click, and
+      can be removed the same way. Some disposal bins should have some pre-loaded
+      as well.
+  - code_imp: Mineral logging now collects ore names more cleanly.
+  AstraFarera:
+  - bugfix: fixed a few Dyne things
+  Bilbo367:
+  - admin: cluster bombs stop spamming admin logs
+  Ghommie:
+  - bugfix: The deathmatch modifiers modal menu can actually be opened now. Also fixed
+      a bunch of issues it had.
+  - rscadd: Added a persistent piggy bank to the vault, which can carry up to a modest
+      2000 credits worth of dosh between rounds.
+  JohnFulpWillard:
+  - bugfix: The captain's safe is no longer on the wall, therefore cannot be cheesed
+      by breaking the wall it sits on.
+  - bugfix: Tearing down a wall that a safe is on now drops the safe with its contents,
+      rather than dropping the contents onto the floor. The safe's contents cannot
+      be interacted with while it's not on a wall.
+  JungleRat:
+  - balance: Security Belts now hold a max weight of 11, which is roughly 3 normal
+      sized items, 5 small sized items, and 11 tiny sized items.
+  LT3:
+  - bugfix: Export barcodes are visible on wrapped packages
+  Melbert:
+  - refactor: Infrared emitters now function better (or at least more how you would
+      expect them) (hopefully). Report any oddities
+  Nidvex250:
+  - qol: Can now use wirecutters when performing Tend Wounds.
+  Rhials:
+  - code_imp: Deathmatch files, map names, and keys should all be consistent now.
+  RikuTheKiller:
+  - balance: Smoke Machines, Showers, Vapes, etc will no longer arbitrarily delete
+      a random amount of the chems they are processing
+  SomeRandomOwl:
+  - admin: Deathmatch Bombs, Smoke, and Liquid floods are now suppressed in the logs
+      and will not actively spam admin logs.
+  - code_imp: adds a area flag to suppress logging for floods and bombs
+  - rscadd: Added new camera positions to blueshift, there is a bit more coverage
+      now in areas where there was a severe lack of coverage.
+  - bugfix: Fixed some floating cameras in blueshift.
+  Thlumyn:
+  - bugfix: removed some varedited turfs from the slaver syndie shuttle
+  - bugfix: removed some roundstart active turfs from syndie outpost and pirate fort
+      space ruin
+  antropod:
+  - bugfix: Vending machine no longer shocks you twice when you pulse high voltage
+      wire.
+  - bugfix: Airlock wires window closes when you get shocked
+  san7890:
+  - bugfix: Prisoners who are teleported to the Nanotrasen Work Camp should now always
+      be stripped of their gear to prevent escapes.
+  sqnztb:
+  - balance: blueshift's command bunker is more secure
+  xXPawnStarrXx:
+  - image: modified gi sprites, making them more customisable.
+  - image: added gags sprites for; Sailor dress, Evening gown, Cardigan skirts and
+      striped dresses.
+2024-03-22:
+  ArcaneMusic:
+  - bugfix: Vending machines now show the correct vending refill name when examine
+      and not full.
+  Higgin:
+  - bugfix: basic mob pirates no longer drop fake energy weapon lenses when shooting
+      you to death with lasers.
+  Iajret:
+  - balance: Entombed and Underworld Connections are moved to veteran only quirks
+  JohnFulpWillard:
+  - bugfix: Clients joining a round twice as a crewmember (via admins or otherwise)
+      no longer break security/medical record consoles permanently.
+  Singul0:
+  - bugfix: You can't complete a genetic makeup scan when the targets moves out of
+      target anymore using a genetic sequencer
+  Xander3359:
+  - bugfix: Fix hack comms console/locate weakpoint objective showing up multiple
+      times
+  Zergspower:
+  - rscadd: ah shit
