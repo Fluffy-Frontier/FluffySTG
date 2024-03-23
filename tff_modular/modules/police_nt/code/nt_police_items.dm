@@ -440,35 +440,93 @@
 	if(!weapon_kits)
 		weapon_kits = list()
 		var/list/possible_kits = list(
-			/obj/item/storage/box/nt_police/swat/emp,
-			/obj/item/storage/box/nt_police/swat/medic,
-			/obj/item/storage/box/nt_police/swat/explosion,
-			/obj/item/storage/box/nt_police/swat/enginer,
+			/obj/item/storage/box/nt_police/swat_class/emp,
+			/obj/item/storage/box/nt_police/swat_class/medic,
+			/obj/item/storage/box/nt_police/swat_class/explosion,
+			/obj/item/storage/box/nt_police/swat_class/enginer,
 		)
 		for(var/obj/item/kit as anything in possible_kits)
 			weapon_kits[initial(kit.name)] = kit
 
 	return weapon_kits
 
-/obj/item/storage/box/nt_police/swat
+/obj/item/storage/box/nt_police/swat_class
 	illustration = "handcuff"
 
-/obj/item/storage/box/nt_police/swat/emp
+/obj/item/storage/box/nt_police/swat_class/emp
 	name = "Energy weapon kit"
 
-/obj/item/storage/box/nt_police/swat/emp/PopulateContents()
+/obj/item/storage/box/nt_police/swat_class/emp/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/grenade/empgrenade(src)
+	new /obj/item/implanter/emp(src)
 
-/obj/item/storage/box/nt_police/swat/medic
-	name = "SMG kit"
+/obj/item/storage/box/nt_police/swat_class/medic
+	name = "Medical kit"
 
-/obj/item/storage/box/nt_police/swat/medic/PopulateContents()
+/obj/item/storage/box/nt_police/swat_class/medic/PopulateContents()
+	new /obj/item/autosurgeon/medical_hud(src)
+	new /obj/item/storage/medkit/tactical(src)
+	new /obj/item/reagent_containers/hypospray/combat(src)
+	new /obj/item/reagent_containers/hypospray/combat(src)
 
-/obj/item/storage/box/nt_police/swat/explosion
-	name = "Rifle kit"
+/obj/item/storage/box/nt_police/swat_class/explosion
+	name = "Explosive kit"
 
-/obj/item/storage/box/nt_police/swat/explosion/PopulateContents()
+/obj/item/storage/box/nt_police/swat_class/explosion/PopulateContents()
+	for(var/i in 1 to 8)
+		new /obj/item/grenade/c4(src)
 
-/obj/item/storage/box/nt_police/swat/enginer
-	name = "Shotgun kit"
+/obj/item/storage/box/nt_police/swat_class/enginer
+	name = "Enginer kit"
 
-/obj/item/storage/box/nt_police/swat/enginer/PopulateContents()
+/obj/item/storage/box/nt_police/swat_class/enginer/PopulateContents()
+	new /obj/item/autosurgeon/toolset(src)
+	new /obj/item/storage/barricade(src)
+	new /obj/item/holosign_creator/atmos(src)
+
+/obj/item/choice_beacon/nt_police/trooper_class
+	name = "NTIS-Trooper tools delivery beacon"
+	desc = "Tools delivery beacon designed for NTIS-SWAT units."
+
+/obj/item/choice_beacon/nt_police/trooper_class/generate_display_names()
+	var/static/list/weapon_kits
+	if(!weapon_kits)
+		weapon_kits = list()
+		var/list/possible_kits = list(
+			/obj/item/storage/box/nt_police/trooper_class/medic,
+			/obj/item/storage/box/nt_police/trooper_class/explosion,
+			/obj/item/storage/box/nt_police/trooper_class/enginer,
+		)
+		for(var/obj/item/kit as anything in possible_kits)
+			weapon_kits[initial(kit.name)] = kit
+
+	return weapon_kits
+
+/obj/item/storage/box/nt_police/trooper_class/medic
+	name = "Medical kit"
+
+/obj/item/storage/box/nt_police/trooper_class/medic/PopulateContents()
+	new /obj/item/autosurgeon/medical_hud(src)
+	new /obj/item/storage/medkit/tactical/premium(src)
+	new /obj/item/reagent_containers/hypospray/combat(src)
+	new /obj/item/reagent_containers/hypospray/combat/nanites(src)
+
+/obj/item/storage/box/nt_police/trooper_class/explosion
+	name = "Explosive kit"
+
+/obj/item/storage/box/nt_police/trooper_class/explosion/PopulateContents()
+	new /obj/item/storage/belt/grenade/full(src)
+
+/obj/item/storage/box/nt_police/trooper_class/enginer
+	name = "Enginer kit"
+
+/obj/item/storage/box/nt_police/trooper_class/enginer/PopulateContents()
+	new /obj/item/autosurgeon/toolset(src)
+	new /obj/item/storage/barricade(src)
+	for(var/i in 1 to 8)
+		new /obj/item/grenade/barrier(src)
+	new /obj/item/construction/rcd/arcd/mattermanipulator(src)
+	new /obj/item/holosign_creator/atmos(src)
+
+

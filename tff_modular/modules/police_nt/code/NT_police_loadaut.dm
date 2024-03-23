@@ -4,7 +4,7 @@
 
 /datum/id_trim/centcom/ert/security/NT_police/New()
 	. = ..()
-	assignment = "NTIS Police"
+	assignment = "NTIS Agent"
 	access = SSid_access.get_region_access_list(list(REGION_CENTCOM, REGION_ALL_STATION))
 
 /datum/id_trim/centcom/ert/security/NT_police/swat/New()
@@ -90,6 +90,7 @@
 		/obj/item/nt_reporter/trooper_caller = 1,
 		/obj/item/beamout_tool_nt = 1,
 		/obj/item/choice_beacon/nt_police/swat = 1,
+		/obj/item/choice_beacon/nt_police/swat_class = 1,
 	)
 	r_pocket = /obj/item/flashlight/seclite
 	l_pocket = /obj/item/restraints/handcuffs
@@ -109,6 +110,7 @@
 		/obj/item/sacrificial_face_shield = 1,
 		/obj/item/melee/baton/security/loaded = 1,
 		/obj/item/choice_beacon/nt_police/trooper = 1,
+		/obj/item/choice_beacon/nt_police/trooper_class = 1,
 	)
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/flashlight/seclite
