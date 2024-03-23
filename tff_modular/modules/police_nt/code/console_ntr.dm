@@ -44,9 +44,9 @@ GLOBAL_VAR(call_NTIS_msg)
 	AddComponent(/datum/component/gps, "Unic NTR console Signal")
 
 /obj/machinery/computer/comntr/Destroy()
-	. = ..()
 	GLOB.responding_centcom_consoles -= src
-	return ..()
+	. = ..()
+
 
 GLOBAL_LIST_INIT(nt_police_responder_info, list(
 	"nt_police_agent" = list(
