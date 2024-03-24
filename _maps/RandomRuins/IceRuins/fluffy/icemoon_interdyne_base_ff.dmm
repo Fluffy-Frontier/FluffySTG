@@ -1994,8 +1994,7 @@
 	name = "Interdyne exosuit fabricator";
 	color = "#adadcd";
 	light_color = "#adadcd";
-	hacked = 1;
-	id = awa
+	hacked = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
@@ -2456,8 +2455,7 @@
 	name = "Interdyne circuit imprinter";
 	color = "#adadcd";
 	light_color = "#adadcd";
-	hacked = 1;
-	id = awa
+	hacked = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
@@ -4418,14 +4416,13 @@
 /area/ruin/interdyne_planetary_base/main)
 "Ac" = (
 /obj/effect/turf_decal/tile/dark/full,
+/obj/structure/marker_beacon/burgundy,
 /obj/machinery/rnd/production/protolathe/offstation{
 	name = "Interdyne protolathe";
 	color = "#adadcd";
 	light_color = "#adadcd";
-	hacked = 1;
-	id = awa
+	hacked = 1
 	},
-/obj/structure/marker_beacon/burgundy,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "Ad" = (
@@ -4532,6 +4529,16 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"Bk" = (
+/obj/machinery/rnd/production/protolathe/offstation{
+	name = "Interdyne protolathe";
+	color = "#adadcd";
+	light_color = "#adadcd";
+	hacked = 1;
+	id = awa
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/med)
 "Bn" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 1
@@ -10606,7 +10613,7 @@ ce
 Vr
 Bf
 sP
-yQ
+Bk
 yQ
 Vz
 Er
