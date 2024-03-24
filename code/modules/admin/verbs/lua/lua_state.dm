@@ -89,8 +89,6 @@ GLOBAL_PROTECT(lua_usr)
 
 	return result
 
-<<<<<<< HEAD
-=======
 /datum/lua_state/process(seconds_per_tick)
 	if(timer_enabled)
 		var/result = call_function("__Timer_timer_process", seconds_per_tick)
@@ -100,7 +98,6 @@ GLOBAL_PROTECT(lua_usr)
 			log_result(result, verbose = FALSE)
 		functions_to_execute.Cut()
 
->>>>>>> 12ab2ab1664 ([MIRROR] Fixes lua error logging and a few timer.lua functions (#1591))
 /datum/lua_state/proc/call_function(function, ...)
 	var/call_args = length(args) > 1 ? args.Copy(2) : list()
 	if(islist(function))
