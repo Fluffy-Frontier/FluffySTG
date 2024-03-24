@@ -817,6 +817,16 @@
 "eC" = (
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/interdyne_planetary_base/science)
+"eF" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 10
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/sand/plating/volcanic,
+/turf/open/floor/plating/reinforced/lavaland,
+/area/lavaland/surface/outdoors)
 "eH" = (
 /obj/machinery/hydroponics/constructable,
 /obj/machinery/light/directional/north,
@@ -1354,11 +1364,6 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
-"ir" = (
-/obj/structure/lattice,
-/obj/structure/marker_beacon/cerulean,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/interdyne_planetary_base)
 "it" = (
 /obj/effect/turf_decal/stripes/red/line,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/south{
@@ -1828,12 +1833,9 @@
 /turf/open/floor/plating/reinforced,
 /area/ruin/interdyne_planetary_base/med)
 "kJ" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/structure/lattice/catwalk/mining,
-/turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/obj/structure/flora/rock/pile/style_random,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/interdyne_planetary_base)
 "kL" = (
 /obj/effect/turf_decal/box/white/corners{
 	dir = 4
@@ -1952,15 +1954,14 @@
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base)
 "lz" = (
-/obj/effect/turf_decal/stripes/blue{
-	dir = 1
+/obj/item/reagent_containers/cup/glass/bottle/vodka{
+	pixel_x = -9
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
-	},
-/obj/effect/turf_decal/sand/plating/volcanic,
-/turf/open/floor/plating/reinforced/lavaland,
-/area/ruin/interdyne_planetary_base)
+/obj/item/radio/headset/interdyne,
+/obj/structure/marker_beacon/cerulean,
+/obj/item/card/id/advanced/chameleon/black,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "lA" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -3800,11 +3801,8 @@
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/science)
 "xN" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 5
-	},
-/obj/effect/turf_decal/sand/plating/volcanic,
-/turf/open/floor/plating/reinforced/lavaland,
+/obj/structure/lattice,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "xR" = (
 /obj/effect/turf_decal/trimline/dark/filled/line,
@@ -4110,9 +4108,12 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "zn" = (
-/obj/structure/flora/rock/pile/style_random,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/interdyne_planetary_base)
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
+	},
+/obj/effect/turf_decal/sand/plating/volcanic,
+/turf/open/floor/plating/reinforced/lavaland,
+/area/lavaland/surface/outdoors)
 "zq" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
@@ -4870,6 +4871,16 @@
 	},
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
+"Er" = (
+/obj/effect/turf_decal/stripes/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/obj/effect/turf_decal/sand/plating/volcanic,
+/turf/open/floor/plating/reinforced/lavaland,
+/area/ruin/interdyne_planetary_base)
 "Et" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -5609,13 +5620,6 @@
 	},
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
-"IZ" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/effect/turf_decal/sand/plating/volcanic,
-/turf/open/floor/plating/reinforced/lavaland,
-/area/lavaland/surface/outdoors)
 "Jb" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 4
@@ -6068,15 +6072,16 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "Lr" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 10
-	},
-/obj/effect/turf_decal/weather/dirt{
+/obj/effect/turf_decal/stripes/blue{
 	dir = 1
+	},
+/obj/effect/turf_decal/caution/blue,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
 	},
 /obj/effect/turf_decal/sand/plating/volcanic,
 /turf/open/floor/plating/reinforced/lavaland,
-/area/lavaland/surface/outdoors)
+/area/ruin/interdyne_planetary_base)
 "Lu" = (
 /obj/structure/marker_beacon/bronze,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -6871,13 +6876,6 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
-"PL" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/sand/plating/volcanic,
-/turf/open/floor/plating/reinforced/lavaland,
-/area/lavaland/surface/outdoors)
 "PP" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 6
@@ -7030,6 +7028,13 @@
 	},
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv)
+"QM" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/sand/plating/volcanic,
+/turf/open/floor/plating/reinforced/lavaland,
+/area/lavaland/surface/outdoors)
 "QP" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/seed_extractor{
@@ -7067,16 +7072,12 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "Rd" = (
-/obj/effect/turf_decal/stripes/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/caution/blue,
 /obj/effect/turf_decal/weather/dirt{
-	dir = 5
+	dir = 4
 	},
 /obj/effect/turf_decal/sand/plating/volcanic,
 /turf/open/floor/plating/reinforced/lavaland,
-/area/ruin/interdyne_planetary_base)
+/area/lavaland/surface/outdoors)
 "Rf" = (
 /obj/structure/railing/corner{
 	dir = 4
@@ -7231,14 +7232,22 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "RS" = (
-/obj/structure/lattice,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/lattice/catwalk/mining,
+/turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "RU" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/tile/dark/full,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
+"RX" = (
+/obj/structure/lattice,
+/obj/structure/marker_beacon/cerulean,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/interdyne_planetary_base)
 "Sc" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/tile/dark/full,
@@ -9743,7 +9752,7 @@ bX
 pu
 xB
 EE
-kJ
+RS
 rW
 eO
 eO
@@ -9857,7 +9866,7 @@ Nm
 Co
 BO
 ZT
-BO
+lz
 MQ
 pN
 eO
@@ -9971,10 +9980,10 @@ Co
 Co
 "}
 (25,1,1) = {"
-ir
+RX
 LI
-RS
-RS
+xN
+xN
 zr
 pu
 pN
@@ -10030,9 +10039,9 @@ ZT
 Co
 "}
 (26,1,1) = {"
-zn
+kJ
 BD
-Lr
+eF
 BO
 DY
 pu
@@ -10089,10 +10098,10 @@ Co
 Co
 "}
 (27,1,1) = {"
-lz
+Er
 XB
-PL
-IZ
+Rd
+QM
 Kh
 OG
 OG
@@ -10148,18 +10157,18 @@ fU
 Co
 "}
 (28,1,1) = {"
-Rd
+Lr
 BD
 BO
-xN
+zn
 Ph
-kJ
-kJ
-kJ
+RS
+RS
+RS
 Rf
-kJ
-kJ
-kJ
+RS
+RS
+RS
 Iw
 gh
 FO
@@ -10209,8 +10218,8 @@ Co
 (29,1,1) = {"
 oh
 NW
-RS
-RS
+xN
+xN
 pn
 eO
 eO
