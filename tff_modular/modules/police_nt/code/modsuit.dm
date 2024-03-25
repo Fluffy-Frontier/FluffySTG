@@ -8,9 +8,8 @@
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	siemens_coefficient = 0
 	complexity_max = DEFAULT_MAX_COMPLEXITY + 5
-	slowdown_inactive = 1
-	slowdown_active = 0.5
-	inbuilt_modules = list(/obj/item/mod/module/armor_booster)
+	slowdown_inactive = 0.50
+	slowdown_active = 0
 	allowed_suit_storage = list(
 		/obj/item/ammo_box,
 		/obj/item/ammo_casing,
@@ -50,7 +49,7 @@
 
 /datum/armor/mod_theme_ntis_derevolutioner
 	melee = 60
-	bullet = 90
+	bullet = 65
 	laser = 60
 	energy = 60
 	bomb = 90
@@ -76,7 +75,6 @@
 	)
 	default_pins = list(
 		/obj/item/mod/module/jetpack/advanced,
-		/obj/item/mod/module/armor_booster,
 	)
 
 /obj/item/mod/control/pre_equipped/ntis_derevolutioner/set_mod_skin(new_skin)

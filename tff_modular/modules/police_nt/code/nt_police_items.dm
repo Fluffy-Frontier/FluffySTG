@@ -4,13 +4,13 @@
 
 /datum/armor/armor_sf_nt_police
 	melee = 50
-	bullet = 90
+	bullet = 65
 	laser = 60
 	energy = 60
 	bomb = 70
 	fire = 70
 	acid = 70
-	wound = 50
+	wound = 35
 
 /obj/item/clothing/head/helmet/sf_sacrificial/nt_police
 	armor_type = /datum/armor/armor_sf_nt_police
