@@ -24,6 +24,12 @@ GLOBAL_PROTECT(lua_usr)
 	/// Ckey of the last user who ran a script on this lua state.
 	var/ckey_last_runner = ""
 
+	/// Whether the timer.lua script has been included into this lua context state.
+	var/timer_enabled = FALSE
+
+	/// Callbacks that need to be ran on next tick
+	var/list/functions_to_execute = list()
+
 /datum/lua_state/vv_edit_var(var_name, var_value)
 	. = ..()
 	if(var_name == NAMEOF(src, internal_id))
