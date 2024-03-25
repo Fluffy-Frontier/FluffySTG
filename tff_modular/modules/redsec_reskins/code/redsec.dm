@@ -131,6 +131,24 @@
 		),
 	)
 
+/obj/item/clothing/glasses/hud/security/sunglasses/peacekeeper/Initialize(mapload)
+    . = ..()
+    uses_advanced_reskins = TRUE
+    unique_reskin = list(
+        "Armadyne Hud Glasses" = list(
+        RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/glasses.dmi',
+        RESKIN_ICON_STATE = "armadyne_glasses",
+        RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/eyes.dmi',
+        RESKIN_WORN_ICON_STATE = "armadyne_glasses"
+        ),
+        "Peacekeeper Hud Glasses" = list(
+        RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/glasses.dmi',
+        RESKIN_ICON_STATE = "peacekeeperglasses",
+        RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/eyes.dmi',
+        RESKIN_WORN_ICON_STATE = "peacekeeperglasses"
+        ),
+    )
+
 //Вещи Security Officer
 /obj/item/clothing/head/security_cap/Initialize(mapload)
 	. = ..()
