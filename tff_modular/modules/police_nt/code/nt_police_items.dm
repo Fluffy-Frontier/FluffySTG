@@ -286,7 +286,7 @@
 /obj/item/choice_beacon/nt_police
 	name = "NTIS self-defence weapon delivery beacon"
 	desc = "Weapon delivery beacon designed for picky NTIS agents."
-	icon_state = "gangtool-white"
+	icon_state = "generic_delivery"
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/choice_beacon/nt_police/generate_display_names()
