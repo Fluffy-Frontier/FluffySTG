@@ -104,6 +104,7 @@
 	mask = /obj/item/clothing/mask/gas/nt_police
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/jackboots
+	back = /obj/item/mod/control/pre_equipped/ntis_derevolutioner
 	l_hand = /obj/item/shield/riot/tele
 	backpack_contents = list(
 		/obj/item/storage/box/handcuffs = 1,
