@@ -946,6 +946,7 @@
 2024-03-25:
   00-Steven:
   - bugfix: Fixed patronizing paintings not giving a cut to the curators.
+  - qol: Smoke machines can actually be rotated with alt-click when unwrenched.
   AnturK:
   - bugfix: Painting patronage works again when there's no curator present during
       the round.
@@ -983,6 +984,8 @@
   JohnFulpWillard:
   - bugfix: Importing songs into instruments no longer cuts the first line of the
       song.
+  - bugfix: Changelings with a flesh ID now properly show the icon of the disguised
+      ID in examine.
   Melberet:
   - bugfix: Jellyperson, Luminescent, and Stargazer hair no longer look bad. All jellyperson
       types no longer have eyesockets.
@@ -992,6 +995,8 @@
   - qol: Hand labels now have a visual effect associated, and are also affected by
       heat / can be cleaned off like stickers.
   - refactor: Refactored hand labels. They're objects now!
+  Pickle-Coding:
+  - bugfix: Fixes flamethrower runtime preventing them from working.
   Regivald:
   - qol: Seeing dedication of her children, Ash Mother has blessed them. Ash Walker
       Camp's farming area is now clear of debris, bedchambers have a new room, grubs
@@ -1003,6 +1008,11 @@
   Rhials:
   - bugfix: Removes some dirt tiles on the Sunrise deathmatch map, which would fill
       the map with lavaland atmos.
+  - bugfix: Venus Human Traps can once again entangle victims and drag them into their
+      web.
+  Sadboysuss:
+  - bugfix: Musiver, Godblood, Synaphydramine, Hollow water and unholy water will
+      no longer show up in secret recipes
   Singul0:
   - qol: Adds contextual screentips to air alarms
   SomeRandomOwl:
@@ -1025,12 +1035,22 @@
   - bugfix: RCD logs are more human readable & stores the player name behind the action.
   - bugfix: failing to equip a dual handed item should properly clear out all status
       effects related to equipping it, for e.g. remove the action button from chainsaw
+  - bugfix: text fields which should save their value after hitting enter/closing
+      the UI now actually does that
+  - bugfix: lathe search bar now saves its previous search query after the UI is closed
+      and also reloads search results correctly
+  TheBoondock:
+  - qol: Gold and silver crates now accurately reflects NT's greed
   TheVekter:
   - rscadd: Added 5 new Felinid ear options, ported from Orbstation! (Sprites by Or-Fi-S)
   Thlumyn:
   - rscadd: Added corner filled warning decals
   - bugfix: fixed blueshift xenobio disposal
   - rscadd: Crowbars/wirecutters now deconstruct wooden/cardboard crates/boxes
+  Thunder12345:
+  - image: Everything that used the old gangtool sprites (door remotes, landing field
+      designators, some choice beacons, windicate borg reinforcements) has been resprited.
+  - image: Door remotes now visibly show their current mode.
   Watermelon914:
   - refactor: Auxlua no longer uses the timer subsystem to get stuff done, lua scripts
       shouldn't slow down timers anymore.
@@ -1046,3 +1066,5 @@
   iskawhiskers:
   - image: Added body marking sprites (monster2, monster3, weight2 (masc/fem variants),
       blankface2, bigoleyes)
+  mc-oofert:
+  - bugfix: the virgin mary picture no longer makes its initiates harddelete
