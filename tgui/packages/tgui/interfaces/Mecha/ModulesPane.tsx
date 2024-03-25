@@ -547,7 +547,7 @@ const SnowflakeRadio = (props) => {
       </LabeledList.Item>
       <LabeledList.Item label="Frequency">
         <NumberInput
-          animate
+          animated
           unit="kHz"
           step={0.2}
           stepPixelSize={10}
