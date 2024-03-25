@@ -943,3 +943,128 @@
       times
   Zergspower:
   - rscadd: ah shit
+2024-03-25:
+  00-Steven:
+  - bugfix: Fixed patronizing paintings not giving a cut to the curators.
+  - qol: Smoke machines can actually be rotated with alt-click when unwrenched.
+  AnturK:
+  - bugfix: Painting patronage works again when there's no curator present during
+      the round.
+  Bilbo367:
+  - bugfix: pet carrier unfriending pets put in it.
+  - bugfix: Fixes ghosts being able to change a lathes output direction.
+  - image: fixed Fulton balloon having its smallest sprite copy pasted over itself
+  ChungusGamer666:
+  - rscadd: Added colorblindness as a mild brain trauma.
+  DaCoolBoss:
+  - bugfix: A broken item was removed from the mimesvsclowns ruin. In its place is
+      a spent revolver round.
+  FlufflesTheDog:
+  - qol: Printing a hypospray or smartdart at a ChemMaster now names it appropriately
+      depending on what's inside.
+  Ghommie:
+  - bugfix: Fixed the LTSRBT.
+  - rscadd: Active skillchips are now copied on bitrunning avatars.
+  - rscadd: To celebrate it, a skillchip is now available from the bitrunning order
+      console, which lets you dodge projectiles for the duration of your flips, at
+      the cost of stamina.
+  - rscdel: Removed the (non-working) "Perma-Flipping" and "Echolocation" deathmatch
+      modifiers.
+  - rscadd: Added "No Slowdown", "Random Teleports", "Snail Crawl", "Forcefield Trail"
+      and "Manual Blinking/Breathing" modifiers.
+  - bugfix: Fixed deathmatch cruise missiles looking like standard pods.
+  GoldenAlpharex:
+  - bugfix: Drifting Contractors now respects the dynamic config, by no longer running
+      in the event system on top of the dynamic system.
+  Hatterhat:
+  - balance: Security belts no longer hold more than 2 normal-size items. Storage
+      capabilities largely remain the same, other than that.
+  Jacquerel:
+  - bugfix: Driving a vehicle into the supermatter will kill everyone riding the vehicle
+  JohnFulpWillard:
+  - bugfix: Importing songs into instruments no longer cuts the first line of the
+      song.
+  - bugfix: Changelings with a flesh ID now properly show the icon of the disguised
+      ID in examine.
+  Melberet:
+  - bugfix: Jellyperson, Luminescent, and Stargazer hair no longer look bad. All jellyperson
+      types no longer have eyesockets.
+  Melbert:
+  - refactor: Refactored bioware slightly (the stuff experimental surgeries gives
+      you). Report any weirdness
+  - qol: Hand labels now have a visual effect associated, and are also affected by
+      heat / can be cleaned off like stickers.
+  - refactor: Refactored hand labels. They're objects now!
+  Pickle-Coding:
+  - bugfix: Fixes flamethrower runtime preventing them from working.
+  Regivald:
+  - qol: Seeing dedication of her children, Ash Mother has blessed them. Ash Walker
+      Camp's farming area is now clear of debris, bedchambers have a new room, grubs
+      are herded inside their own pen, and front gate is protected from the storm
+      to not allow Outsiders without invitations inside.
+  - rscadd: As a reward for great hunters, and to give new Kins more chances to serve,
+      Ash Mother summoned new items for her children to use. Added 2 goliath shields,
+      2 sinew restraints and 5 gold bars.
+  Rhials:
+  - bugfix: Removes some dirt tiles on the Sunrise deathmatch map, which would fill
+      the map with lavaland atmos.
+  - bugfix: Venus Human Traps can once again entangle victims and drag them into their
+      web.
+  Sadboysuss:
+  - bugfix: Musiver, Godblood, Synaphydramine, Hollow water and unholy water will
+      no longer show up in secret recipes
+  Singul0:
+  - qol: Adds contextual screentips to air alarms
+  SomeRandomOwl:
+  - qol: Masks that hide your characters face (and flavor text) has a new action button
+      to toggle hiding your face (and thus show your flavor text)
+  - qol: Added additional user feedback to food preferences as to if preferences where
+      valid or invalid
+  - bugfix: Fixed a runtime in food preference that occurred whenever a player spawned
+      in
+  SyncIt21:
+  - bugfix: Vending machines will update its UI if ID is lost at any point
+  - bugfix: Vending machines won't brick if the payment fails (like due to lose of
+      ID) for any reason
+  - bugfix: reagent containers like cup & syringe only update target appearance if
+      action was successful.
+  - bugfix: envelops don't stack overlays when interacting with cup & syringes.
+  - bugfix: NumberInput(used in chem heater, plumbing reaction chamber etc) highlighting
+      & editing requires only single click like before
+  - refactor: Typescript conversion for NumberInput TGUI Component
+  - bugfix: RCD logs are more human readable & stores the player name behind the action.
+  - bugfix: failing to equip a dual handed item should properly clear out all status
+      effects related to equipping it, for e.g. remove the action button from chainsaw
+  - bugfix: text fields which should save their value after hitting enter/closing
+      the UI now actually does that
+  - bugfix: lathe search bar now saves its previous search query after the UI is closed
+      and also reloads search results correctly
+  TheBoondock:
+  - qol: Gold and silver crates now accurately reflects NT's greed
+  TheVekter:
+  - rscadd: Added 5 new Felinid ear options, ported from Orbstation! (Sprites by Or-Fi-S)
+  Thlumyn:
+  - rscadd: Added corner filled warning decals
+  - bugfix: fixed blueshift xenobio disposal
+  - rscadd: Crowbars/wirecutters now deconstruct wooden/cardboard crates/boxes
+  Thunder12345:
+  - image: Everything that used the old gangtool sprites (door remotes, landing field
+      designators, some choice beacons, windicate borg reinforcements) has been resprited.
+  - image: Door remotes now visibly show their current mode.
+  Watermelon914:
+  - refactor: Auxlua no longer uses the timer subsystem to get stuff done, lua scripts
+      shouldn't slow down timers anymore.
+  - bugfix: Fixed the lua editor being outright broken.
+  Y0SH1M4S73R:
+  - bugfix: lua scripting should work on BYOND 515.1633
+  Zergspower:
+  - qol: Blueshift - Gravity will now not go out in 10 minutes every shift-start
+  - bugfix: Blueshift - Numerous non-template cameras in blueshift have been moved
+      to autoname and replaces the VV'd ones
+  carshalash:
+  - qol: Fishfood is now more easily acquired through cargo
+  iskawhiskers:
+  - image: Added body marking sprites (monster2, monster3, weight2 (masc/fem variants),
+      blankface2, bigoleyes)
+  mc-oofert:
+  - bugfix: the virgin mary picture no longer makes its initiates harddelete
