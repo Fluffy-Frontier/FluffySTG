@@ -740,13 +740,8 @@ const SnowflakeAirTank = (props) => {
             minValue={tank_pump_pressure_min}
             maxValue={tank_pump_pressure_max}
             step={10}
-<<<<<<< HEAD
-            format={(value) => Math.round(value)}
-            onChange={(e, value) =>
-=======
             format={(value) => `${Math.round(value)}`}
             onChange={(value) =>
->>>>>>> 8674567b07d ([MIRROR] [NO GBP] NumberInput patches (#1601))
               act('equip_act', {
                 ref: ref,
                 gear_action: 'set_tank_pump_pressure',
