@@ -40,8 +40,7 @@
 /area/icemoon/underground/explored)
 "ak" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 5;
-	faction = list("Syndicate","neutral")
+	dir = 5
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -78,6 +77,7 @@
 /area/ruin/interdyne_planetary_base/science)
 "ap" = (
 /obj/structure/table/wood/fancy,
+/obj/effect/spawner/random/exotic/languagebook,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "ar" = (
@@ -195,6 +195,7 @@
 	dir = 1
 	},
 /obj/structure/table/wood/fancy/black,
+/obj/effect/spawner/random/food_or_drink,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "bf" = (
@@ -309,19 +310,20 @@
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv)
 "bK" = (
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/machinery/vending/wallmed{
 	products = list(/obj/item/reagent_containers/pill/patch/libital = 5, /obj/item/reagent_containers/pill/patch/aiuri = 5, /obj/item/reagent_containers/pill/multiver = 2, /obj/item/storage/box/bandages = 4);
 	displayed_currency_name = " soviet ruble";
 	name = "Interdyne NanoMed";
 	light_color = "#adadcd";
-	color = "#adadcd"
+	color = "#adadcd";
+	onstation = 0
+	},
+/obj/machinery/camera/xray{
+	pixel_x = 22;
+	name = "Inderdyne security camera";
+	network = list("Interdyne");
+	color = "#adadcd";
+	pixel_y = 25
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base)
@@ -387,6 +389,12 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
+"bZ" = (
+/obj/structure/fluff/metalpole/end{
+	dir = 1
+	},
+/turf/open/lava/plasma/ice_moon,
+/area/icemoon/underground/explored)
 "ce" = (
 /obj/item/tank/internals/oxygen/yellow,
 /obj/item/tank/internals/oxygen/yellow,
@@ -560,6 +568,9 @@
 /obj/item/gun/ballistic/rifle/sniper_rifle,
 /obj/item/modular_computer/laptop/preset/syndicate,
 /obj/item/folder/syndicate/red,
+/obj/effect/spawner/random/entertainment/money_medium,
+/obj/effect/spawner/random/entertainment/money_medium,
+/obj/effect/spawner/random/entertainment/money_medium,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/vault)
 "cS" = (
@@ -623,13 +634,24 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "da" = (
-/obj/structure/marker_beacon/burgundy,
 /obj/structure/sign/poster/contraband/syndicate_medical/directional/south{
 	name = "Interdyne Pharmaceutics";
 	desc = "Beware of perimeter turrets.'"
 	},
-/turf/open/misc/asteroid/snow/icemoon,
-/area/icemoon/underground/explored)
+/obj/effect/turf_decal/stripes/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 5
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 10
+	},
+/obj/effect/turf_decal/weather/snow{
+	layer = 3
+	},
+/turf/open/floor/plating/snowed/icemoon,
+/area/ruin/interdyne_planetary_base)
 "db" = (
 /obj/structure/sign/poster/contraband/c20r/directional/south,
 /obj/effect/turf_decal/trimline/dark/filled/line,
@@ -662,8 +684,7 @@
 /area/ruin/interdyne_planetary_base/cargo)
 "dk" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 6;
-	faction = list("Syndicate","neutral")
+	dir = 6
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -938,6 +959,7 @@
 	pixel_x = -8;
 	pixel_y = 6
 	},
+/obj/item/sharpener,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "ex" = (
@@ -1170,6 +1192,11 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
+"gk" = (
+/obj/structure/marker_beacon/burgundy,
+/obj/effect/spawner/random/medical/two_percent_xeno_egg_spawner,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "gm" = (
 /obj/structure/closet/secure_closet/freezer/meat{
 	req_access = list("syndicate");
@@ -1217,6 +1244,7 @@
 	dir = 5
 	},
 /obj/structure/hedge,
+/obj/item/decoration/new_year/garland,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
 "gy" = (
@@ -1612,9 +1640,6 @@
 	dir = 8
 	},
 /obj/structure/lattice/catwalk/mining,
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
 /turf/open/lava/plasma/ice_moon,
 /area/icemoon/underground/explored)
 "jo" = (
@@ -1663,7 +1688,7 @@
 	},
 /obj/machinery/shower/directional/east,
 /obj/structure/drain,
-/obj/structure/sign/warning/cold_temp/directional/west,
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "jy" = (
@@ -1952,7 +1977,7 @@
 /obj/effect/turf_decal/box/white/corners{
 	dir = 1
 	},
-/obj/structure/extinguisher_cabinet/directional/west,
+/obj/structure/sign/warning/cold_temp/directional/west,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "lz" = (
@@ -1964,12 +1989,12 @@
 "lD" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/indigo,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/mecha_part_fabricator{
 	name = "Interdyne exosuit fabricator";
 	color = "#adadcd";
 	light_color = "#adadcd"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "lH" = (
@@ -2015,9 +2040,6 @@
 	dir = 4
 	},
 /obj/structure/lattice/catwalk/mining,
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 4;
 	layer = 3
@@ -2025,10 +2047,9 @@
 /turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "mg" = (
-/obj/structure/marker_beacon/burgundy,
 /obj/structure/flora/grass/both/style_random,
 /turf/open/misc/asteroid/snow/icemoon,
-/area/icemoon/underground/explored)
+/area/ruin/interdyne_planetary_base)
 "mp" = (
 /obj/structure/marker_beacon/burgundy,
 /obj/structure/railing{
@@ -2428,12 +2449,12 @@
 /area/ruin/interdyne_planetary_base/main)
 "ol" = (
 /obj/effect/turf_decal/tile/dark/full,
+/obj/structure/marker_beacon/burgundy,
 /obj/machinery/rnd/production/circuit_imprinter/offstation{
 	name = "Interdyne circuit imprinter";
 	color = "#adadcd";
 	light_color = "#adadcd"
 	},
-/obj/structure/marker_beacon/burgundy,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "on" = (
@@ -2589,6 +2610,9 @@
 	},
 /obj/item/towel,
 /obj/item/towel,
+/obj/effect/spawner/random/bedsheet/double,
+/obj/effect/spawner/random/contraband,
+/obj/effect/spawner/random/clothing/syndie,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
 "oU" = (
@@ -2758,6 +2782,11 @@
 /obj/structure/cable,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
+"pJ" = (
+/obj/structure/flora/grass/both/style_random,
+/obj/structure/flora/tree/pine/style_random,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "pK" = (
 /obj/machinery/computer/pandemic{
 	name = "Interdyne PanD.E.M.I.C";
@@ -3112,7 +3141,8 @@
 "ss" = (
 /obj/machinery/vending/hydronutrients{
 	onstation = 0;
-	extended_inventory = 1
+	extended_inventory = 1;
+	products = list(/obj/item/gun/energy/floragun = 3, /obj/item/geneshears = 3, /obj/item/hatchet = 3, /obj/item/cultivator = 3, /obj/item/plant_analyzer = 3, /obj/item/reagent_containers/cup/bottle/nutrient/ez = 5, /obj/item/reagent_containers/cup/bottle/nutrient/l4z = 5, /obj/item/reagent_containers/cup/bottle/nutrient/rh = 3, /obj/item/reagent_containers/spray/pestspray = 2, /obj/item/reagent_containers/syringe = 5, /obj/item/secateurs = 3, /obj/item/shovel/spade = 3, /obj/item/storage/bag/plants = 3)
 	},
 /obj/effect/turf_decal/tile/dark/full,
 /turf/open/floor/iron/dark/textured_large,
@@ -3148,6 +3178,12 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
+"sC" = (
+/obj/effect/turf_decal/weather/snow{
+	layer = 3
+	},
+/turf/open/floor/plating/snowed/icemoon,
+/area/icemoon/underground/explored)
 "sE" = (
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 8
@@ -3184,7 +3220,13 @@
 /turf/open/floor/iron/recharge_floor,
 /area/ruin/interdyne_planetary_base/main/vault)
 "sO" = (
-/turf/open/floor/plating/snowed/smoothed/icemoon,
+/obj/effect/turf_decal/weather/snow{
+	layer = 3
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 5
+	},
+/turf/open/floor/plating/snowed/icemoon,
 /area/icemoon/underground/explored)
 "sP" = (
 /turf/closed/wall/r_wall/syndicate,
@@ -3562,9 +3604,6 @@
 	dir = 4
 	},
 /obj/structure/lattice/catwalk/mining,
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
 /turf/open/lava/plasma/ice_moon,
 /area/icemoon/underground/explored)
 "uN" = (
@@ -3572,6 +3611,7 @@
 	dir = 9
 	},
 /obj/structure/hedge,
+/obj/item/decoration/new_year/garland,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
 "uQ" = (
@@ -3920,9 +3960,6 @@
 /obj/effect/turf_decal/weather/snow{
 	layer = 3
 	},
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 1
-	},
 /turf/open/floor/plating/reinforced/icemoon,
 /area/icemoon/underground/explored)
 "wP" = (
@@ -3946,6 +3983,10 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"wQ" = (
+/obj/structure/fluff/metalpole/end,
+/turf/open/lava/plasma/ice_moon,
+/area/icemoon/underground/explored)
 "wU" = (
 /obj/structure/bookcase/random/religion,
 /turf/open/floor/wood/large,
@@ -4041,8 +4082,14 @@
 /area/ruin/interdyne_planetary_base/main)
 "xF" = (
 /obj/structure/fence/door,
-/turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/underground/explored)
+/obj/effect/turf_decal/weather/snow{
+	layer = 3
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 8
+	},
+/turf/open/floor/plating/snowed/icemoon,
+/area/ruin/interdyne_planetary_base)
 "xP" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 8
@@ -4073,9 +4120,9 @@
 /area/ruin/interdyne_planetary_base/serv)
 "xY" = (
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/oven/range{
+/obj/machinery/griddle{
 	color = "#9d9ddd";
-	name = "Interdyne range";
+	name = "Interdyne griddle";
 	light_color = "#9d9ddd"
 	},
 /turf/open/floor/iron/dark/textured_large,
@@ -4245,6 +4292,10 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"yH" = (
+/obj/structure/flora/ash/chilly,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "yJ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -4302,6 +4353,11 @@
 /obj/structure/cable,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
+"zm" = (
+/obj/structure/marker_beacon/burgundy,
+/obj/structure/flora/grass/brown/style_random,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "zp" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/stack/sheet/mineral/plasma{
@@ -4358,12 +4414,12 @@
 /area/ruin/interdyne_planetary_base/main)
 "Ac" = (
 /obj/effect/turf_decal/tile/dark/full,
+/obj/structure/marker_beacon/burgundy,
 /obj/machinery/rnd/production/protolathe/offstation{
 	name = "Interdyne protolathe";
 	color = "#adadcd";
 	light_color = "#adadcd"
 	},
-/obj/structure/marker_beacon/burgundy,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "Ad" = (
@@ -4411,7 +4467,8 @@
 "Am" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/vending/wardrobe/syndie_wardrobe/interdyne{
-	extended_inventory = 1
+	extended_inventory = 1;
+	onstation = 0
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
@@ -4420,6 +4477,11 @@
 	dir = 4
 	},
 /turf/closed/mineral/random/snow/underground,
+/area/icemoon/underground/explored)
+"AE" = (
+/obj/structure/flora/tree/pine/style_random,
+/obj/structure/flora/bush/flowers_br/style_random,
+/turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "AF" = (
 /obj/machinery/light/directional/north{
@@ -4439,21 +4501,16 @@
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "AJ" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/structure/lattice/catwalk/mining,
 /obj/effect/turf_decal/weather/snow{
 	layer = 3
 	},
 /obj/effect/turf_decal/weather/snow/corner{
-	dir = 8
+	dir = 4
 	},
-/turf/open/lava/plasma/ice_moon,
+/turf/open/floor/plating/snowed/icemoon,
 /area/icemoon/underground/explored)
 "AR" = (
 /obj/effect/decal/remains/human,
-/obj/structure/flora/tree/pine/style_random,
 /turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "AT" = (
@@ -4628,6 +4685,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 8
 	},
+/obj/effect/spawner/random/medical/two_percent_xeno_egg_spawner,
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "Cc" = (
@@ -4884,6 +4942,15 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"Du" = (
+/obj/effect/turf_decal/weather/snow{
+	layer = 3
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 8
+	},
+/turf/open/floor/plating/snowed/icemoon,
+/area/icemoon/underground/explored)
 "DA" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 10
@@ -4947,9 +5014,9 @@
 "DI" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/griddle{
+/obj/machinery/oven/range{
 	color = "#9d9ddd";
-	name = "Interdyne griddle";
+	name = "Interdyne range";
 	light_color = "#9d9ddd"
 	},
 /turf/open/floor/iron/dark/textured_large,
@@ -5036,8 +5103,7 @@
 /area/ruin/interdyne_planetary_base/science)
 "Ei" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 5;
-	faction = list("Syndicate","neutral")
+	dir = 5
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -5355,6 +5421,22 @@
 	},
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
+"FN" = (
+/obj/effect/turf_decal/stripes/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 4;
+	layer = 3
+	},
+/obj/effect/turf_decal/weather/snow{
+	layer = 3
+	},
+/turf/open/floor/plating/snowed/icemoon,
+/area/ruin/interdyne_planetary_base)
 "FO" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 4
@@ -5393,15 +5475,6 @@
 /obj/effect/turf_decal/stripes/red/corner{
 	dir = 1
 	},
-/obj/machinery/button/door{
-	id = "syndie_lavaland_vault";
-	name = "Vault Bolt Control";
-	normaldoorcontrol = 1;
-	pixel_x = -8;
-	pixel_y = 24;
-	req_access = list("syndicate");
-	specialfunctions = 4
-	},
 /obj/effect/turf_decal/trimline/dark/filled/corner,
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 8
@@ -5416,6 +5489,15 @@
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/machinery/button/door{
+	id = "syndie_lavaland_vault";
+	name = "Vault Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_x = -8;
+	pixel_y = 24;
+	req_access = list("syndicate");
+	specialfunctions = 4
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "FV" = (
@@ -5448,9 +5530,6 @@
 /obj/structure/lattice/catwalk/mining,
 /obj/structure/railing{
 	dir = 8
-	},
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
 	},
 /turf/open/lava/plasma/ice_moon,
 /area/icemoon/underground/explored)
@@ -5638,9 +5717,6 @@
 	dir = 8
 	},
 /obj/structure/lattice/catwalk/mining,
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
 /turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "Hb" = (
@@ -5722,7 +5798,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/box/white/corners,
-/obj/structure/sign/warning/gas_mask/directional/east,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "HF" = (
@@ -5780,6 +5856,12 @@
 /obj/effect/turf_decal/tile/dark/full,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
+"Id" = (
+/obj/structure/fluff/metalpole/end{
+	dir = 4
+	},
+/turf/open/lava/plasma/ice_moon,
+/area/icemoon/underground/explored)
 "Ie" = (
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 4
@@ -5934,6 +6016,20 @@
 	},
 /turf/open/water/hot_spring,
 /area/icemoon/underground/explored)
+"Jh" = (
+/obj/structure/flora/tree/pine/style_random,
+/obj/structure/flora/grass/brown/style_random,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
+"Ji" = (
+/obj/effect/turf_decal/weather/snow{
+	layer = 3
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 9
+	},
+/turf/open/floor/plating/snowed/icemoon,
+/area/icemoon/underground/explored)
 "Jo" = (
 /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
 /obj/structure/fans/tiny/forcefield,
@@ -5994,6 +6090,11 @@
 /obj/structure/flora/tree/pine/style_random,
 /turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
+"JY" = (
+/obj/effect/turf_decal/tile/dark/full,
+/obj/effect/spawner/random/medical/two_percent_xeno_egg_spawner,
+/turf/open/floor/plating/elevatorshaft,
+/area/ruin/interdyne_planetary_base/cargo)
 "Kb" = (
 /obj/effect/turf_decal/arrows/red,
 /obj/effect/turf_decal/box/red/corners,
@@ -6123,6 +6224,10 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
+"KQ" = (
+/obj/structure/flora/bush/flowers_br/style_random,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "KS" = (
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 8
@@ -6303,7 +6408,8 @@
 	req_access = list("syndicate");
 	lethal = 1;
 	control_area = "/area/ruin/interdyne_planetary_base";
-	ailock = 1
+	ailock = 1;
+	shoot_cyborgs = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/vault)
@@ -6393,7 +6499,7 @@
 	name = "Inderdyne security camera";
 	network = list("Interdyne")
 	},
-/obj/structure/extinguisher_cabinet/directional/east,
+/obj/structure/sign/warning/gas_mask/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "Mc" = (
@@ -6489,9 +6595,6 @@
 /obj/effect/turf_decal/weather/snow{
 	layer = 3
 	},
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 1
-	},
 /turf/open/floor/plating/reinforced/icemoon,
 /area/icemoon/underground/explored)
 "MG" = (
@@ -6585,6 +6688,13 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
+"NA" = (
+/obj/structure/flora/rock/pile/icy/style_random,
+/obj/structure/fluff/metalpole/end{
+	dir = 4
+	},
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "NB" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -6598,8 +6708,16 @@
 /obj/structure/fence{
 	dir = 4
 	},
-/turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/underground/explored)
+/obj/effect/turf_decal/weather/snow{
+	layer = 3
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 5
+	},
+/obj/effect/turf_decal/weather/snow/corner,
+/obj/structure/marker_beacon/cerulean,
+/turf/open/floor/plating/snowed/icemoon,
+/area/ruin/interdyne_planetary_base)
 "NI" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 9
@@ -6713,6 +6831,12 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/science)
+"Ox" = (
+/obj/structure/fluff/metalpole/end{
+	dir = 8
+	},
+/turf/open/lava/plasma/ice_moon,
+/area/icemoon/underground/explored)
 "Oz" = (
 /obj/structure/flora/bush/sparsegrass/style_random,
 /obj/structure/flora/bush/flowers_pp/style_random,
@@ -6844,8 +6968,7 @@
 /area/ruin/interdyne_planetary_base/serv)
 "Pn" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 10;
-	faction = list("Syndicate","neutral")
+	dir = 10
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -6903,8 +7026,7 @@
 /area/ruin/interdyne_planetary_base/serv/rstrm)
 "Pv" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 9;
-	faction = list("Syndicate","neutral")
+	dir = 9
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -7002,6 +7124,22 @@
 /obj/machinery/atmospherics/components/unary/portables_connector,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
+"Qj" = (
+/obj/effect/turf_decal/stripes/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/caution/blue,
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 10
+	},
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/snow{
+	layer = 3
+	},
+/turf/open/floor/plating/snowed/icemoon,
+/area/ruin/interdyne_planetary_base)
 "Qq" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/seed_extractor{
@@ -7164,6 +7302,8 @@
 "Sb" = (
 /obj/structure/rack/shelf,
 /obj/effect/turf_decal/tile/dark/full,
+/obj/item/melee/baton/security/loaded,
+/obj/item/melee/baton/security/loaded,
 /obj/item/gun/energy/plasmacutter,
 /obj/item/gun/energy/plasmacutter,
 /obj/item/binoculars,
@@ -7366,9 +7506,6 @@
 /obj/effect/turf_decal/weather/snow{
 	layer = 3
 	},
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 1
-	},
 /turf/open/floor/plating/reinforced/icemoon,
 /area/icemoon/underground/explored)
 "Tu" = (
@@ -7400,9 +7537,17 @@
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
 /obj/effect/turf_decal/stripes/red/line,
-/obj/structure/sign/poster/contraband/syndicate_medical/directional/north,
+/obj/structure/sign/poster/contraband/syndicate_medical/directional/north{
+	name = "Interdyne Pharmaceutics"
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"Tw" = (
+/obj/structure/fence/cut/large{
+	dir = 4
+	},
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "TB" = (
 /obj/machinery/biogenerator,
 /obj/machinery/door/window/survival_pod/left/directional/west{
@@ -7431,6 +7576,9 @@
 	},
 /obj/item/towel,
 /obj/item/towel,
+/obj/effect/spawner/random/bedsheet/double,
+/obj/effect/spawner/random/contraband,
+/obj/effect/spawner/random/clothing/syndie,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
 "TI" = (
@@ -7897,7 +8045,6 @@
 /area/ruin/interdyne_planetary_base/main/vault)
 "Wo" = (
 /obj/machinery/camera/xray{
-	pixel_x = 10;
 	name = "Inderdyne security camera";
 	network = list("Interdyne");
 	color = "#adadcd";
@@ -8282,6 +8429,10 @@
 	},
 /turf/open/floor/grass,
 /area/ruin/interdyne_planetary_base/serv)
+"Yw" = (
+/obj/structure/flora/rock/pile/icy/style_random,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/ruin/interdyne_planetary_base)
 "YA" = (
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 1
@@ -8313,6 +8464,15 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/science)
+"YH" = (
+/obj/item/reagent_containers/cup/glass/bottle/vodka{
+	pixel_x = -9
+	},
+/obj/item/radio/headset/interdyne,
+/obj/structure/marker_beacon/cerulean,
+/obj/item/card/id/advanced/chameleon/black,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "YI" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 1
@@ -8404,8 +8564,9 @@
 /obj/structure/fence{
 	dir = 4
 	},
+/obj/structure/marker_beacon/cerulean,
 /turf/open/misc/asteroid/snow/icemoon,
-/area/icemoon/underground/explored)
+/area/ruin/interdyne_planetary_base)
 "Zg" = (
 /obj/structure/flora/grass/brown/style_random,
 /turf/open/misc/ice/smooth{
@@ -8484,13 +8645,6 @@
 /obj/structure/marker_beacon/teal,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/table/reinforced/plastitaniumglass,
-/obj/item/gun/energy/floragun,
-/obj/item/geneshears,
-/obj/item/shovel/spade,
-/obj/item/hatchet,
-/obj/item/cultivator,
-/obj/item/secateurs,
-/obj/item/plant_analyzer,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "Zr" = (
@@ -8678,7 +8832,7 @@ ac
 ac
 SH
 Iy
-eE
+Jh
 Im
 ac
 ac
@@ -8737,18 +8891,18 @@ Im
 Iy
 Iy
 eE
-Se
+Iy
 Se
 Iy
 dM
 NI
 lz
 Hl
-Iy
 Se
 Iy
-Se
 Iy
+Iy
+Se
 Iy
 SH
 Iy
@@ -8785,7 +8939,7 @@ ac
 ac
 ac
 ac
-Iy
+eE
 Im
 Iy
 Iy
@@ -8805,7 +8959,7 @@ GV
 eE
 Iy
 dM
-Iy
+yH
 Iy
 Iy
 uQ
@@ -8847,21 +9001,21 @@ Iy
 Se
 Iy
 Iy
-Iy
 eE
 Iy
-eE
+Iy
+Jh
 Iy
 Se
 BM
 Iy
 SH
-Iy
+KQ
 ab
 ab
 Iy
 Se
-Se
+KQ
 Se
 Iy
 SH
@@ -8869,7 +9023,7 @@ Iy
 ab
 ab
 ab
-Iy
+KQ
 Iy
 JM
 Se
@@ -8909,7 +9063,7 @@ eE
 Iy
 Iy
 eE
-Se
+Iy
 dM
 Iy
 uQ
@@ -8937,7 +9091,7 @@ Iy
 dM
 Iy
 Im
-eE
+Jh
 ac
 ac
 ac
@@ -8954,7 +9108,7 @@ aa
 aa
 aa
 ac
-eE
+ac
 SH
 Se
 Iy
@@ -8967,7 +9121,7 @@ SH
 Iy
 Se
 Iy
-Iy
+yH
 Iy
 Iy
 Iy
@@ -8993,9 +9147,9 @@ Se
 Iy
 SH
 Iy
+yH
 Iy
 Iy
-Se
 Iy
 Jx
 ac
@@ -9014,7 +9168,7 @@ aa
 ac
 ac
 Se
-Iy
+eE
 Jx
 Iy
 Se
@@ -9070,9 +9224,9 @@ aa
 aa
 aa
 ac
+ac
 Iy
 eE
-Iy
 Iy
 Iy
 eE
@@ -9082,17 +9236,17 @@ Iy
 Iy
 eE
 Iy
+KQ
 Iy
 Iy
 Iy
 Iy
-Iy
 ab
 ab
 ab
 ab
 ab
-ab
+Ox
 yP
 kf
 kf
@@ -9104,7 +9258,7 @@ kf
 Fg
 dL
 Zr
-ab
+Ox
 ab
 ab
 ab
@@ -9114,7 +9268,7 @@ Iy
 SH
 Iy
 Iy
-eE
+Iy
 Se
 Iy
 Im
@@ -9128,8 +9282,8 @@ aa
 aa
 aa
 ac
+ac
 eE
-Iy
 dM
 dM
 SH
@@ -9186,17 +9340,17 @@ aa
 (11,1,1) = {"
 aa
 ac
-Iy
+ac
 eE
 AR
-dM
+pJ
 Im
 Iy
 Iy
 eE
 Iy
 Iy
-SM
+eE
 Iy
 dM
 Iy
@@ -9233,7 +9387,7 @@ ab
 ab
 ab
 ab
-Iy
+KQ
 Iy
 SM
 Ps
@@ -9244,16 +9398,16 @@ aa
 "}
 (12,1,1) = {"
 ac
-eE
-SH
-Iy
+ac
+JV
+KQ
 dM
 Se
 LE
 Jd
 Iy
 Iy
-Se
+Zx
 dM
 Iy
 Iy
@@ -9303,8 +9457,8 @@ aa
 "}
 (13,1,1) = {"
 ei
-Iy
 eE
+Iy
 Iy
 eE
 Iy
@@ -9312,7 +9466,7 @@ Oc
 CE
 Iy
 Iy
-eE
+Iy
 Iy
 SH
 Iy
@@ -9431,8 +9585,8 @@ Iy
 Iy
 eE
 Iy
-uQ
 Iy
+SM
 SH
 ab
 ab
@@ -9531,7 +9685,7 @@ ab
 ab
 ab
 Iy
-eE
+Se
 Iy
 Iy
 eE
@@ -9548,7 +9702,7 @@ Se
 Iy
 eE
 Iy
-eE
+Iy
 Iy
 Iy
 ab
@@ -9590,8 +9744,8 @@ ab
 ab
 ab
 dM
-Se
 Iy
+yH
 SH
 ac
 ac
@@ -9602,14 +9756,14 @@ JV
 Se
 Iy
 dM
-SH
+Iy
 Ps
 Iy
 Iy
-eE
 Iy
 Iy
-Iy
+yH
+KQ
 ab
 ab
 ab
@@ -9659,9 +9813,9 @@ ac
 Lh
 Im
 Iy
-eE
+AE
 Iy
-Iy
+SH
 BM
 Se
 Iy
@@ -9709,19 +9863,19 @@ ab
 ab
 ab
 ab
-Iy
+KQ
 Se
 ac
 ac
 "}
 (20,1,1) = {"
 Lh
+eE
+Iy
 SH
-Iy
-Iy
 Se
 Iy
-eE
+Iy
 Iy
 Iy
 SH
@@ -9781,14 +9935,14 @@ Iy
 Iy
 Iy
 Se
-Iy
+eE
 Se
 Iy
 ab
 ab
 ab
 ab
-ab
+bZ
 GI
 kf
 kf
@@ -9824,7 +9978,7 @@ ES
 ef
 Sm
 td
-ab
+wQ
 ab
 Pn
 ab
@@ -9839,7 +9993,7 @@ Iy
 uQ
 SH
 Se
-Iy
+eE
 SH
 Iy
 ab
@@ -9894,7 +10048,7 @@ ac
 (23,1,1) = {"
 Lh
 ac
-Iy
+yH
 Se
 Iy
 Iy
@@ -9954,9 +10108,9 @@ ac
 Au
 io
 Se
-Iy
+KQ
 mN
-ab
+Iy
 ab
 ab
 ab
@@ -10004,7 +10158,7 @@ vL
 NS
 ab
 ab
-Iy
+Se
 Jx
 SH
 ac
@@ -10063,24 +10217,24 @@ vB
 NS
 SH
 ab
-Se
+Iy
 Se
 ac
 ac
 "}
 (26,1,1) = {"
-sO
+Qj
 YZ
-sO
-sO
+Ji
+Du
 wN
 jn
 Gh
 GZ
 Uj
 jn
-AJ
-AJ
+jn
+jn
 oB
 pp
 YS
@@ -10128,10 +10282,10 @@ ac
 ac
 "}
 (27,1,1) = {"
-sO
+FN
 xF
-sO
-sO
+AJ
+sC
 Tn
 ai
 ai
@@ -10152,7 +10306,7 @@ PO
 Kb
 bv
 er
-dP
+JY
 dP
 ZU
 LC
@@ -10187,7 +10341,7 @@ ac
 ac
 "}
 (28,1,1) = {"
-SH
+Yw
 NF
 Iy
 sO
@@ -10240,7 +10394,7 @@ vt
 NS
 Se
 ab
-Iy
+KQ
 Iy
 ac
 ac
@@ -10253,7 +10407,7 @@ Iy
 kr
 ab
 SH
-Iy
+yH
 tT
 dM
 ab
@@ -10309,7 +10463,7 @@ ac
 IS
 dT
 Iy
-Iy
+KQ
 ab
 ab
 ab
@@ -10317,7 +10471,7 @@ ab
 ab
 ab
 ab
-Iy
+dM
 BF
 BF
 BF
@@ -10370,7 +10524,7 @@ SH
 DN
 Iy
 SH
-SH
+Jx
 ab
 ab
 ab
@@ -10425,17 +10579,17 @@ ac
 (32,1,1) = {"
 Lh
 ac
-Iy
+YH
 Iy
 SM
 Iy
 Iy
 Iy
-Iy
+Se
 ab
 ab
 ab
-Iy
+Se
 SH
 sP
 BF
@@ -10477,18 +10631,18 @@ RM
 ab
 ab
 ab
-Se
+Iy
 SM
 ac
 "}
 (33,1,1) = {"
 Lh
-eE
-Im
+AE
+gk
 SH
 eE
 Iy
-eE
+Iy
 SH
 Iy
 ab
@@ -10532,17 +10686,17 @@ GB
 tS
 jy
 td
-ab
+wQ
 ab
 dk
 ab
-Iy
-Im
+yH
+zm
 ac
 "}
 (34,1,1) = {"
-Lh
-ac
+Tw
+Iy
 Iy
 eE
 Iy
@@ -10550,7 +10704,7 @@ Se
 SH
 Iy
 uQ
-Iy
+KQ
 ab
 ab
 ab
@@ -10604,7 +10758,7 @@ Jb
 ac
 ac
 Jx
-Iy
+yH
 Iy
 Iy
 Se
@@ -10614,7 +10768,7 @@ SH
 ab
 ab
 ab
-Iy
+dM
 SH
 ds
 iG
@@ -10665,8 +10819,8 @@ ac
 eE
 Iy
 SH
-eE
-Se
+Jh
+Iy
 Iy
 dM
 Iy
@@ -10729,7 +10883,7 @@ SH
 NI
 lg
 Iy
-Iy
+yH
 ab
 ab
 ab
@@ -10771,8 +10925,8 @@ ab
 ab
 ab
 SH
-Se
 Iy
+Se
 ac
 ac
 "}
@@ -10783,7 +10937,7 @@ ac
 ac
 Iy
 Iy
-eE
+AE
 Se
 pv
 WU
@@ -10903,10 +11057,10 @@ ac
 ac
 SM
 Iy
+yH
 Iy
 Iy
-Iy
-eE
+AE
 Iy
 dM
 ab
@@ -10945,7 +11099,7 @@ ab
 ab
 ab
 ab
-Iy
+KQ
 SH
 Iy
 ac
@@ -11087,7 +11241,7 @@ Iy
 Iy
 Se
 Iy
-Iy
+yH
 ab
 ab
 ab
@@ -11147,7 +11301,7 @@ eE
 Iy
 Iy
 Iy
-Iy
+KQ
 ab
 ab
 ab
@@ -11155,7 +11309,7 @@ ab
 ab
 ab
 ab
-SH
+NA
 Mn
 yQ
 yQ
@@ -11216,7 +11370,7 @@ ab
 ab
 ab
 ab
-ab
+Id
 Mn
 yQ
 yQ
@@ -11228,14 +11382,14 @@ yQ
 NV
 zF
 Pw
-ab
+Id
 ab
 ab
 ab
 ab
 ab
 SH
-Iy
+KQ
 Iy
 Iy
 Iy
@@ -11267,7 +11421,7 @@ dM
 Iy
 Se
 Iy
-Iy
+Se
 Iy
 dM
 ab
@@ -11283,7 +11437,7 @@ Iy
 ab
 ab
 ab
-Iy
+KQ
 SH
 ab
 ab
@@ -11326,7 +11480,7 @@ SH
 SM
 Iy
 Se
-Se
+Iy
 Ps
 Iy
 Iy
@@ -11354,7 +11508,7 @@ Iy
 Iy
 Iy
 eE
-Iy
+yH
 Im
 Iy
 uQ
@@ -11383,11 +11537,11 @@ ac
 ac
 eE
 Se
-Iy
+yH
 Iy
 dM
 DQ
-Iy
+KQ
 Iy
 dM
 ab
@@ -11465,8 +11619,8 @@ ab
 Iy
 SH
 Iy
-Iy
-Iy
+KQ
+yH
 Se
 Iy
 SH
@@ -11508,11 +11662,11 @@ SH
 SM
 Iy
 Se
-Se
+Iy
 Iy
 dM
 Iy
-Iy
+yH
 ab
 ab
 ab
@@ -11567,7 +11721,7 @@ ac
 ac
 ac
 ac
-Im
+zm
 SH
 ac
 ac
