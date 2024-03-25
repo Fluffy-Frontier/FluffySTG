@@ -72,7 +72,6 @@
 		/obj/item/mod/module/jetpack/advanced,
 		/obj/item/mod/module/quick_carry,
 		/obj/item/mod/module/quick_cuff,
-		/obj/item/mod/module/headprotector,
 		/obj/item/mod/module/emp_shield,
 	)
 	default_pins = list(
