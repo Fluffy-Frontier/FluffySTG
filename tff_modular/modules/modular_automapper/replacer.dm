@@ -11,7 +11,7 @@
 	/// Where?
 	var/list/target_areas
 	/// What we spawning?
-	var/desired_atom
+	var/desired_obj
 	/// What we removing?
 	var/target_obj
 	/// Map blacklist, this is used to determine what maps we should not spawn on.
@@ -35,7 +35,7 @@
 				if(is_type_on_turf(candidate_turf, target_obj))
 					//Нашли клетку где стоит наш объект под замену, копируем направление старого.
 					var/obj/old_obj = pick(candidate_turf.get_all_contents_type(target_obj))
-					var/obj/new_atom =  new desired_atom(candidate_turf)
-					new_atom.setDir(old_obj.dir)
+					var/obj/new_obj=  new desired_obj(candidate_turf)
+					new_obj.setDir(old_obj.dir)
 					qdel(old_obj)
 					break
