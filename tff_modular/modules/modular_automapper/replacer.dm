@@ -33,11 +33,9 @@
 		for(var/list/zlevel_turfs as anything in found_area.get_zlevel_turf_lists())
 			for(var/turf/candidate_turf as anything in zlevel_turfs)
 				if(is_type_on_turf(candidate_turf, target_obj))
-					//Нашли клетку где стоит наш объект под замену.
-					var/obj/mytarget = pick(candidate_turf.get_all_contents_type(target_obj))
-					if(is_type_on_turf(candidate_turf, target_obj))
-						// Направление меняем.
-						var/obj/some =  new desired_atom(candidate_turf)
-						some.setDir(mytarget.dir)
-						qdel(mytarget)
-						break
+					//Нашли клетку где стоит наш объект под замену, копируем направление старого.
+					var/obj/old_obj = pick(candidate_turf.get_all_contents_type(target_obj))
+					var/obj/new_atom =  new desired_atom(candidate_turf)
+					new_atom.setDir(old_obj.dir)
+					qdel(old_obj)
+					break
