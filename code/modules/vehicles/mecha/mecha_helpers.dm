@@ -7,8 +7,13 @@
 /obj/vehicle/sealed/mecha/proc/get_charge()
 	return cell?.charge
 
+<<<<<<< HEAD
 /obj/vehicle/sealed/mecha/proc/use_power(amount)
 	var/output = get_charge() && cell.use(amount)
+=======
+/obj/vehicle/sealed/mecha/proc/use_energy(amount)
+	var/output = cell.use(amount)
+>>>>>>> c12267ad997 ([MIRROR] Fixing cell power usage (Part 1) (#1627))
 	if (output)
 		diag_hud_set_mechcell()
 	return output
