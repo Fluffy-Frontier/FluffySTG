@@ -1117,6 +1117,11 @@
   - bugfix: Stun batons and their variants now actually meaningfully consume charge
       when used.
 2024-03-27:
+  13spacemen:
+  - bugfix: the follow link upon poll completion should work properly now
+  Alecksohs:
+  - image: Updated the Advanced Surgical Tool's sprites
+  - code_imp: Updated the Advanced Surgical Tool's light code
   Melbert:
   - rscadd: Bitrunners can now broadcast their Bitruns to the station's Entertainment
       Monitors.
@@ -1129,5 +1134,13 @@
   - image: Sprites for rocket launchers, rockets, and rocket projectiles have been
       changed to something fresher looking.
   - balance: Rocket launchers can be worn on your back or armor vest.
+  SyncIt21:
+  - bugfix: abstract(like the dual hand thingy on your hand) & hologram things can't
+      be put inside storage items
+  Watermelon914:
+  - admin: Admins can now run lua files bigger than 36 KB by importing them directly.
   YakumoChen:
   - bugfix: Removed erroneous light switch in janitor office
+  carshalash:
+  - balance: The polymorph belt will no longer register space dragons as acceptable
+      DNA.
