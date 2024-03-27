@@ -491,7 +491,11 @@
 				to_chat(user, span_warning("You press the power button, but the computer fails to boot up, displaying variety of errors before shutting down again."))
 		return FALSE
 
+<<<<<<< HEAD
 	if(use_power()) // checks if the PC is powered
+=======
+	if(use_energy(base_active_power_usage)) // checks if the PC is powered
+>>>>>>> fb7c87be111 ([MIRROR] Fixes modular computer boot-up (#1668))
 		if(looping_sound)
 			soundloop.start()
 		enabled = TRUE
