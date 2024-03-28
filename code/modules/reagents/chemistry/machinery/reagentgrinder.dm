@@ -419,20 +419,10 @@
 
 	Shake(duration = duration)
 	operating = TRUE
-<<<<<<< HEAD
-	if(!silent)
-		if(!juicing)
-			playsound(src, 'sound/machines/blender.ogg', 50, TRUE)
-		else
-			playsound(src, 'sound/machines/juicer.ogg', 20, TRUE)
-	use_energy(active_power_usage * time / (1 SECONDS))
-	addtimer(CALLBACK(src, PROC_REF(stop_operating)), time / speed)
-=======
 	if(!juicing)
 		playsound(src, 'sound/machines/blender.ogg', 50, TRUE)
 	else
 		playsound(src, 'sound/machines/juicer.ogg', 20, TRUE)
->>>>>>> 7356d10bc6d ([MIRROR] General maintenance for reagent grinder (#1642))
 
 	var/total_weight
 	for(var/obj/item/weapon in src)
