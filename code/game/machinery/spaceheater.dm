@@ -7,7 +7,7 @@
 	anchored = FALSE
 	density = TRUE
 	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN
-	icon = 'icons/obj/pipes_n_cables/atmos.dmi' // NOVA EDIT CHANGE - ICON OVERRIDEN IN SKYRAT AESTHETICS - SEE MODULE
+	icon = 'icons/obj/pipes_n_cables/atmos.dmi'  // NOVA EDIT CHANGE - ICON OVERRIDEN IN SKYRAT AESTHETICS - SEE MODULE
 	icon_state = "sheater-off"
 	base_icon_state = "sheater"
 	name = "space heater"
@@ -32,11 +32,7 @@
 	///How much heat/cold we can deliver
 	var/heating_power = 40 KILO JOULES
 	///How efficiently we can deliver that heat/cold (higher indicates less cell consumption)
-<<<<<<< HEAD
-	var/efficiency = 20000
-=======
 	var/efficiency = 20
->>>>>>> d508152e7da ([MIRROR] Fixes space heater power usage (#1634))
 	///The amount of degrees above and below the target temperature for us to change mode to heater or cooler
 	var/temperature_tolerance = 1
 	///What's the middle point of our settable temperature (30 °C)
@@ -101,14 +97,10 @@
 	else
 		. += span_warning("There is no power cell installed.")
 	if(in_range(user, src) || isobserver(user))
-<<<<<<< HEAD
-		. += span_notice("The status display reads: Temperature range at <b>[settable_temperature_range]°C</b>.<br>Heating power at <b>[siunit(heating_power, "W", 1)]</b>.<br>Power consumption at <b>[(efficiency*-0.0025)+150]%</b>.") //100%, 75%, 50%, 25%
-=======
 		var/target_temp = round(target_temperature - T0C, 1)
 		var/min_temp = max(settable_temperature_median - settable_temperature_range, TCMB) - T0C
 		var/max_temp = settable_temperature_median + settable_temperature_range - T0C
 		. += span_info("The status display reads:<br>Heating power: <b>[siunit(heating_power, "W", 1)] at [(efficiency / 20) * 100]% efficiency.</b><br>Target temperature: <b>[target_temp]°C \[[min_temp]°C - [max_temp]°C]</b>") // Base efficiency 100%, higher with upgraded components
->>>>>>> d508152e7da ([MIRROR] Fixes space heater power usage (#1634))
 		. += span_notice("<b>Right-click</b> to toggle [on ? "off" : "on"].")
 
 /obj/machinery/space_heater/update_icon_state()
@@ -189,11 +181,7 @@
 	heating_power = laser * base_heating_power
 
 	settable_temperature_range = cap * 30
-<<<<<<< HEAD
-	efficiency = (cap + 1) * 10000
-=======
 	efficiency = (cap + 1) * 10
->>>>>>> d508152e7da ([MIRROR] Fixes space heater power usage (#1634))
 
 	target_temperature = clamp(target_temperature,
 		max(settable_temperature_median - settable_temperature_range, TCMB),
@@ -473,17 +461,13 @@
 	heating_power = lasers_rating * 20000
 
 	settable_temperature_range = capacitors_rating * 50 //-20 - 80 at base
-	efficiency = (capacitors_rating + 1) * 10000
+	efficiency = (capacitors_rating + 1) * 10
 
 	target_temperature = clamp(target_temperature,
 		max(settable_temperature_median - settable_temperature_range, TCMB),
 		settable_temperature_median + settable_temperature_range)
 
-<<<<<<< HEAD
-	chem_heating_power = efficiency/20000 //1-2.5
-=======
 	chem_heating_power = efficiency / 20
->>>>>>> d508152e7da ([MIRROR] Fixes space heater power usage (#1634))
 
 #undef HEATER_MODE_STANDBY
 #undef HEATER_MODE_HEAT
