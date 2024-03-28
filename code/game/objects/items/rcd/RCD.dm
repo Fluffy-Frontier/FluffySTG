@@ -549,11 +549,7 @@
 	if(!ismecha(owner))
 		return 0
 	var/obj/vehicle/sealed/mecha/gundam = owner
-<<<<<<< HEAD
-	if(!gundam.use_power(amount * mass_to_energy))
-=======
 	if(!gundam.use_energy(amount * MASS_TO_ENERGY))
->>>>>>> c12267ad997 ([MIRROR] Fixing cell power usage (Part 1) (#1627))
 		gundam.balloon_alert(user, "insufficient charge!")
 		return FALSE
 	return TRUE
