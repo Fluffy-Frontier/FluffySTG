@@ -543,7 +543,16 @@
 /turf/closed/wall/r_wall,
 /area/station/security/office)
 "adS" = (
-/obj/machinery/photobooth,
+/obj/machinery/ticket_machine{
+	pixel_y = 32
+	},
+/obj/effect/turf_decal/loading_area{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "hopqueue";
+	name = "HoP Queue Shutters"
+	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
 "adW" = (
@@ -17878,6 +17887,7 @@
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/access/any/command/teleporter,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/command/teleporter)
 "btN" = (
@@ -34632,6 +34642,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit)
+"emK" = (
+/obj/machinery/photobooth,
+/turf/open/floor/iron,
+/area/station/hallway/primary/central)
 "emV" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/turf_decal/siding/wood,
@@ -38906,7 +38920,7 @@
 	id = "secmechbay";
 	name = "Security Mech Bay Shutters"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/iron/dark,
 /area/station/security/mechbay)
 "hFS" = (
 /turf/closed/wall,
@@ -50560,7 +50574,7 @@
 	id = "secmechbay";
 	name = "Security Mech Bay Shutters"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/iron/dark,
 /area/station/security/mechbay)
 "qLV" = (
 /obj/effect/decal/cleanable/dirt,
@@ -56997,19 +57011,6 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/plating,
 /area/station/maintenance/disposal)
-"vRT" = (
-/obj/machinery/ticket_machine{
-	pixel_y = 32
-	},
-/obj/effect/turf_decal/loading_area{
-	dir = 4
-	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "hopqueue";
-	name = "HoP Queue Shutters"
-	},
-/turf/open/floor/iron,
-/area/station/hallway/primary/central)
 "vTk" = (
 /obj/structure/window/reinforced/tinted/spawner/directional/east,
 /obj/structure/chair/stool/directional/south,
@@ -85592,7 +85593,7 @@ boX
 bqv
 bqv
 bqv
-vRT
+adS
 aJw
 aJw
 aJq
@@ -85850,7 +85851,7 @@ bqy
 cBr
 bqy
 buK
-adS
+emK
 aJw
 aJq
 ova
