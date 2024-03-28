@@ -14,6 +14,8 @@
 	switch(antagtype)
 		if(ROLE_TRAITOR)
 			src.add_antag_datum(/datum/antagonist/traitor)
+		if(ROLE_SPY)
+			src.add_antag_datum(/datum/antagonist/spy)
 		if(ROLE_CHANGELING)
 			src.add_antag_datum(/datum/antagonist/changeling)
 		if(ROLE_REV)
@@ -70,6 +72,8 @@ If anyone can figure out how to get Obsessed to work I would be very appreciativ
 		return FALSE
 	if(!(targetrole in applicant.client.prefs.be_special))
 		return FALSE
+	if(!applicant.client.prefs.read_preference(/datum/preference/toggle/be_antag))
+		return FALSE
 	if(onstation)
 		var/turf/T = get_turf(applicant)
 		if(!is_station_level(T.z))
@@ -100,6 +104,9 @@ If anyone can figure out how to get Obsessed to work I would be very appreciativ
 			p_p += MAKEANTAG_PL_DEFAULT_SECURITY
 			p_p += MAKEANTAG_PL_DEFAULT_HEADS
 		if(ROLE_CHANGELING)
+			p_p += MAKEANTAG_PL_DEFAULT_SECURITY
+			p_p += MAKEANTAG_PL_DEFAULT_HEADS
+		if(ROLE_SPY)
 			p_p += MAKEANTAG_PL_DEFAULT_SECURITY
 			p_p += MAKEANTAG_PL_DEFAULT_HEADS
 		if(ROLE_CULTIST)
