@@ -19048,7 +19048,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/item/folder/blue,
+/obj/structure/desk_bell{
+	pixel_x = 7
+	},
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/hop)
 =======
@@ -32370,7 +32372,6 @@
 /obj/structure/tank_holder/extinguisher,
 /obj/machinery/camera/directional/south{
 	c_tag = "Library - Art Gallery";
-	default_camera_icon = "Service - Cafeteria Aft";
 	name = "library camera"
 	},
 /turf/open/floor/wood/tile,
@@ -49492,10 +49493,8 @@
 	req_access = list("kitchen")
 	},
 /obj/machinery/button/ticket_machine{
-	pixel_y = 22
-	},
-/obj/item/radio/intercom/directional/north{
-	pixel_y = 30
+	pixel_y = 22;
+	pixel_x = -6
 	},
 /obj/machinery/button/door/directional/west{
 	id = "hopblast";
@@ -49510,6 +49509,10 @@
 	req_access = list("hop")
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/machinery/button/photobooth{
+	pixel_y = 22;
+	pixel_x = 6
+	},
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/hop)
 =======
@@ -60109,6 +60112,7 @@
 /obj/structure/table/wood,
 /obj/item/papercutter,
 /obj/item/paper/fluff/ids_for_dummies,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/hop)
 =======
@@ -66351,11 +66355,9 @@
 /area/station/engineering/main)
 <<<<<<< HEAD
 "qyK" = (
-/obj/structure/table/reinforced,
-/obj/item/paper_bin,
-/obj/item/pen,
 /obj/machinery/light/small/directional/west,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/machinery/photobooth/security,
 /turf/open/floor/iron/dark,
 /area/station/security/execution/transfer)
 =======
@@ -67416,24 +67418,13 @@
 /area/station/security/courtroom)
 <<<<<<< HEAD
 "qLa" = (
-/obj/structure/table,
-/obj/item/paper_bin{
-	pixel_x = -6;
-	pixel_y = 5
-	},
-/obj/item/pen{
-	pixel_x = -6;
-	pixel_y = 5
-	},
 /obj/machinery/flasher/directional/east{
 	id = "hopflash";
 	pixel_x = 0;
 	pixel_y = 26
 	},
-/obj/structure/desk_bell{
-	pixel_x = 7
-	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/machinery/photobooth,
 /turf/open/floor/iron/dark,
 /area/station/hallway/primary/central/fore)
 =======
