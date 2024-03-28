@@ -3026,7 +3026,7 @@
 /turf/open/floor/iron/dark,
 /area/station/science/genetics)
 "aFb" = (
-/obj/machinery/modular_computer/preset/cargochat,
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/iron/dark,
 /area/station/tcommsat/computer)
 "aFf" = (
@@ -4726,9 +4726,6 @@
 	},
 /obj/effect/turf_decal/trimline/purple/filled/warning{
 	dir = 9
-	},
-/obj/machinery/computer/department_orders/science{
-	dir = 1
 	},
 /turf/open/floor/iron,
 /area/station/science/lab)
@@ -13798,6 +13795,9 @@
 	dir = 1
 	},
 /obj/item/radio/intercom/directional/west,
+/obj/machinery/modular_computer/preset/cargochat/security{
+	dir = 4
+	},
 /turf/open/floor/iron/dark/side{
 	dir = 8
 	},
@@ -36362,7 +36362,6 @@
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/loading_area,
 /obj/structure/disposalpipe/segment,
-/obj/machinery/computer/department_orders/security,
 /turf/open/floor/iron/dark/corner{
 	dir = 4
 	},
@@ -50134,9 +50133,6 @@
 /area/station/security/brig)
 "jDW" = (
 /obj/structure/window/spawner/directional/south,
-/obj/machinery/computer/department_orders/service{
-	dir = 1
-	},
 /turf/open/floor/iron/dark/side,
 /area/station/hallway/secondary/service)
 "jEg" = (
@@ -65894,9 +65890,6 @@
 /turf/open/floor/iron/dark,
 /area/station/science/cytology)
 "mER" = (
-/obj/machinery/computer/department_orders/engineering{
-	dir = 8
-	},
 /obj/machinery/light/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/engineering/break_room)
@@ -117911,7 +117904,6 @@
 /obj/effect/turf_decal/trimline/blue/filled/warning{
 	dir = 6
 	},
-/obj/machinery/computer/department_orders/medical,
 /obj/machinery/digital_clock/directional/north,
 /turf/open/floor/iron,
 /area/station/medical/break_room)
