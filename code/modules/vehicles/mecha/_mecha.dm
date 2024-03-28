@@ -554,7 +554,7 @@
 
 	if(internal_damage & MECHA_INT_SHORT_CIRCUIT && get_charge())
 		spark_system.start()
-		use_power(min(10 * seconds_per_tick, cell.charge))
+		use_energy(min(10 * seconds_per_tick, cell.charge))
 		cell.maxcharge -= min(10 * seconds_per_tick, cell.maxcharge)
 
 /obj/vehicle/sealed/mecha/proc/process_cabin_air(seconds_per_tick)
@@ -620,11 +620,7 @@
 	diag_hud_set_mechstat()
 
 /obj/vehicle/sealed/mecha/proc/process_constant_power_usage(seconds_per_tick)
-<<<<<<< HEAD
-	if(mecha_flags & LIGHTS_ON && !use_power(light_energy_drain * seconds_per_tick))
-=======
 	if(mecha_flags & LIGHTS_ON && !use_energy(light_power_drain * seconds_per_tick))
->>>>>>> c74394f498e ([MIRROR] Fixing cell power usage (Part 4) (#1669))
 		mecha_flags &= ~LIGHTS_ON
 		set_light_on(mecha_flags & LIGHTS_ON)
 		playsound(src,'sound/machines/clockcult/brass_skewer.ogg', 40, TRUE)
@@ -700,7 +696,7 @@
 
 	if(!has_charge(melee_energy_drain))
 		return
-	use_power(melee_energy_drain)
+	use_energy(melee_energy_drain)
 
 	SEND_SIGNAL(user, COMSIG_MOB_USED_MECH_MELEE, src)
 	target.mech_melee_attack(src, user)

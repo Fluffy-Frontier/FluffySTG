@@ -154,29 +154,17 @@
 	var/prefix = prefixes[prefix_index]
 	. = list(SI_COEFFICIENT = coefficient, SI_UNIT = " [prefix][unit]")
 
-///Format a power value in prefixed watts.
-/proc/display_power(powerused)
-	return siunit(powerused, "W", 3)
+/**Format a power value in prefixed watts.
+ * Converts from energy if convert is true.
+ * Args:
+ * - power: The value of power to format.
+ * - convert: Whether to convert this from joules.
+ * Returns: The string containing the formatted power.
+ */
+/proc/display_power(power, convert = TRUE)
+	power = convert ? energy_to_power(power) : power
+	return siunit(power, "W", 3)
 
-<<<<<<< HEAD
-///Format an energy value in prefixed joules.
-/proc/display_joules(units)
-	return siunit(units, "J", 3)
-
-/proc/joules_to_energy(joules)
-	return joules * (1 SECONDS) / SSmachines.wait
-
-/proc/energy_to_joules(energy_units)
-	return energy_units * SSmachines.wait / (1 SECONDS)
-
-///Format an energy value measured in Power Cell units.
-/proc/display_energy(units)
-	// APCs process every (SSmachines.wait * 0.1) seconds, and turn 1 W of
-	// excess power into watts when charging cells.
-	// With the current configuration of wait=20 and CELLRATE=0.002, this
-	// means that one unit is 1 kJ.
-	return display_joules(energy_to_joules(units) WATTS)
-=======
 /**
  * Format an energy value in prefixed joules.
  * Arguments
@@ -205,7 +193,6 @@
  */
 /proc/power_to_energy(watts, datum/controller/subsystem/scheduler = SSmachines)
 	return watts * scheduler.wait / (1 SECONDS)
->>>>>>> c74394f498e ([MIRROR] Fixing cell power usage (Part 4) (#1669))
 
 ///chances are 1:value. anyprob(1) will always return true
 /proc/anyprob(value)
