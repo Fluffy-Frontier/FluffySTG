@@ -604,6 +604,10 @@
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 4
 	},
+<<<<<<< HEAD
+=======
+/obj/machinery/photobooth/security,
+>>>>>>> 44135851d27 ([No GBP]Ci fixes for maps  (#1679))
 /turf/open/floor/iron,
 /area/station/security/execution/transfer)
 "acj" = (
@@ -12855,6 +12859,10 @@
 /obj/structure/sink/directional/west,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
+"dre" = (
+/mob/living/basic/slime,
+/turf/open/floor/engine,
+/area/station/science/xenobiology)
 "drh" = (
 /obj/structure/table,
 /obj/machinery/fax{
@@ -15549,6 +15557,13 @@
 /obj/machinery/newscaster/directional/west,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/command)
+"erX" = (
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 9
+	},
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/iron,
+/area/station/hallway/secondary/service)
 "esc" = (
 /obj/structure/sign/warning/electric_shock,
 /turf/closed/wall/r_wall,
@@ -27306,6 +27321,19 @@
 	},
 /turf/open/floor/carpet,
 /area/station/command/heads_quarters/hos)
+"iPh" = (
+/obj/machinery/camera/directional/north{
+	c_tag = "Service - Autolathe Room"
+	},
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/machinery/light/dim/directional/north,
+/obj/structure/table,
+/obj/machinery/fax{
+	fax_name = "Service Hallway";
+	name = "Service Fax Machine"
+	},
+/turf/open/floor/iron,
+/area/station/hallway/secondary/service)
 "iPi" = (
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 1
@@ -31421,6 +31449,15 @@
 /obj/structure/railing,
 /turf/open/space/openspace,
 /area/station/solars/starboard/fore)
+"khw" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/glass/reinforced,
+/area/station/science/research)
 "khE" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
@@ -32026,6 +32063,25 @@
 	},
 /turf/open/floor/catwalk_floor,
 /area/station/hallway/primary/tram/center)
+"kri" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 9
+	},
+/obj/machinery/status_display/evac/directional/west,
+/obj/effect/turf_decal/trimline/red/filled/warning{
+	dir = 4
+	},
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/obj/item/pen{
+	pixel_x = 3;
+	pixel_y = 8
+	},
+/turf/open/floor/iron,
+/area/station/security/office)
 "krk" = (
 /obj/structure/floodlight_frame,
 /obj/machinery/light/directional/north,
@@ -33958,6 +34014,17 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
+"kXX" = (
+/obj/effect/turf_decal/trimline/brown/filled/line{
+	dir = 5
+	},
+/obj/effect/turf_decal/trimline/yellow/filled/warning{
+	dir = 5
+	},
+/obj/structure/cable,
+/obj/structure/table,
+/turf/open/floor/iron,
+/area/station/engineering/break_room)
 "kXZ" = (
 /obj/machinery/door/airlock{
 	name = "Private Quarters L";
@@ -36180,6 +36247,11 @@
 	dir = 8
 	},
 /area/station/medical/medbay/central)
+"lLI" = (
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/iron,
+/area/station/hallway/secondary/service)
 "lLP" = (
 /obj/effect/turf_decal/trimline/blue/filled/corner{
 	dir = 8
@@ -38294,6 +38366,15 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/secondary/command)
+"myn" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/glass/reinforced,
+/area/station/science/research)
 "myo" = (
 /obj/structure/training_machine,
 /obj/item/target/alien,
@@ -38858,6 +38939,10 @@
 /area/station/command/heads_quarters/hop)
 "mHZ" = (
 /obj/item/radio/intercom/directional/east,
+<<<<<<< HEAD
+=======
+/obj/machinery/photobooth,
+>>>>>>> 44135851d27 ([No GBP]Ci fixes for maps  (#1679))
 /turf/open/floor/iron/grimy,
 /area/station/service/library/lounge)
 "mId" = (
@@ -39527,6 +39612,18 @@
 	},
 /turf/open/floor/iron,
 /area/station/escapepodbay)
+"mXv" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/white,
+/area/station/medical/medbay/central)
 "mXD" = (
 /obj/effect/turf_decal/trimline/red/filled/line,
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -49261,6 +49358,12 @@
 "qxm" = (
 /turf/closed/wall,
 /area/station/maintenance/starboard/central)
+"qxz" = (
+/obj/machinery/airalarm/directional/north,
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/machinery/modular_computer/preset/cargochat/service,
+/turf/open/floor/iron,
+/area/station/hallway/secondary/service)
 "qxG" = (
 /obj/structure/railing/corner{
 	dir = 4
@@ -56004,6 +56107,15 @@
 "sOS" = (
 /turf/open/floor/carpet,
 /area/station/cargo/miningdock)
+"sPk" = (
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/machinery/modular_computer/preset/cargochat/medical{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/station/medical/storage)
 "sPo" = (
 /obj/effect/turf_decal/trimline/neutral/filled/line{
 	dir = 8
@@ -58749,6 +58861,14 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/medical/virology)
+"tMd" = (
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 1
+	},
+/obj/machinery/newscaster/directional/north,
+/obj/machinery/modular_computer/preset/cargochat/science,
+/turf/open/floor/iron/white,
+/area/station/science/lab)
 "tMg" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 1
@@ -69914,6 +70034,20 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/white,
 /area/station/science/lower)
+"xKd" = (
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 1
+	},
+/obj/machinery/camera/directional/north{
+	c_tag = "Science - Research & Development";
+	network = list("ss13","rd")
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/item/kirbyplants/organic/plant10,
+/turf/open/floor/iron/white,
+/area/station/science/lab)
 "xKe" = (
 /obj/machinery/holopad,
 /obj/effect/turf_decal/bot,
@@ -102689,10 +102823,17 @@ apl
 iRL
 snQ
 iRL
+<<<<<<< HEAD
 trw
 tbm
 nNZ
 sMi
+=======
+qxz
+tbm
+nNZ
+lLI
+>>>>>>> 44135851d27 ([No GBP]Ci fixes for maps  (#1679))
 cWZ
 klk
 kNo
@@ -103203,7 +103344,11 @@ bje
 iRL
 snQ
 iRL
+<<<<<<< HEAD
 uaK
+=======
+erX
+>>>>>>> 44135851d27 ([No GBP]Ci fixes for maps  (#1679))
 twg
 dWn
 cWZ
@@ -103756,7 +103901,11 @@ ixT
 gYI
 cgR
 ial
+<<<<<<< HEAD
 qAk
+=======
+kXX
+>>>>>>> 44135851d27 ([No GBP]Ci fixes for maps  (#1679))
 amV
 mvy
 iXQ
@@ -103974,7 +104123,11 @@ aeF
 iRL
 quF
 iRL
+<<<<<<< HEAD
 ssN
+=======
+iPh
+>>>>>>> 44135851d27 ([No GBP]Ci fixes for maps  (#1679))
 sWF
 iog
 cWZ
@@ -115596,7 +115749,11 @@ dUT
 gdC
 qVr
 bfH
+<<<<<<< HEAD
 aJT
+=======
+dre
+>>>>>>> 44135851d27 ([No GBP]Ci fixes for maps  (#1679))
 ahk
 hdA
 mBm
@@ -115608,7 +115765,11 @@ hik
 sml
 bfH
 bfH
+<<<<<<< HEAD
 aJT
+=======
+dre
+>>>>>>> 44135851d27 ([No GBP]Ci fixes for maps  (#1679))
 jTC
 qVr
 aaa
@@ -118680,7 +118841,11 @@ hFH
 tYB
 qVr
 jTC
+<<<<<<< HEAD
 aJT
+=======
+dre
+>>>>>>> 44135851d27 ([No GBP]Ci fixes for maps  (#1679))
 bfH
 bfH
 nbI
@@ -118692,7 +118857,11 @@ rbU
 uAF
 ahk
 hdA
+<<<<<<< HEAD
 aJT
+=======
+dre
+>>>>>>> 44135851d27 ([No GBP]Ci fixes for maps  (#1679))
 bfH
 qVr
 aaa
@@ -156638,7 +156807,11 @@ dEv
 ukw
 pyF
 dEv
+<<<<<<< HEAD
 tJY
+=======
+kri
+>>>>>>> 44135851d27 ([No GBP]Ci fixes for maps  (#1679))
 rWT
 gYd
 isV
@@ -166207,7 +166380,11 @@ kZD
 wAe
 glU
 jSc
+<<<<<<< HEAD
 pza
+=======
+sPk
+>>>>>>> 44135851d27 ([No GBP]Ci fixes for maps  (#1679))
 xRx
 aLw
 pVk
@@ -167232,7 +167409,11 @@ jAc
 kkd
 qNI
 mrC
+<<<<<<< HEAD
 rCZ
+=======
+mXv
+>>>>>>> 44135851d27 ([No GBP]Ci fixes for maps  (#1679))
 tOw
 kGa
 djz
@@ -182137,14 +182318,22 @@ wxu
 yjY
 eYS
 oxL
+<<<<<<< HEAD
 faH
+=======
+xKd
+>>>>>>> 44135851d27 ([No GBP]Ci fixes for maps  (#1679))
 oGO
 xQN
 mEt
 vNk
 kTU
 xyt
+<<<<<<< HEAD
 srx
+=======
+khw
+>>>>>>> 44135851d27 ([No GBP]Ci fixes for maps  (#1679))
 ovC
 dCq
 uiV
@@ -183165,14 +183354,22 @@ aIv
 aHQ
 tJz
 oxL
+<<<<<<< HEAD
 aJI
+=======
+tMd
+>>>>>>> 44135851d27 ([No GBP]Ci fixes for maps  (#1679))
 lpC
 vTb
 vTb
 rbn
 crj
 wWT
+<<<<<<< HEAD
 fDB
+=======
+myn
+>>>>>>> 44135851d27 ([No GBP]Ci fixes for maps  (#1679))
 uvB
 rBb
 tbK
