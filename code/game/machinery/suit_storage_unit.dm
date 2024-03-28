@@ -53,11 +53,11 @@
 	/// Cooldown for occupant breakout messages via relaymove()
 	var/message_cooldown
 	/// How long it takes to break out of the SSU.
-	var/breakout_time = 300
+	var/breakout_time = 30 SECONDS
 	/// Power contributed by this machine to charge the mod suits cell without any capacitors
-	var/base_charge_rate = 200
+	var/base_charge_rate = 200 KILO WATTS
 	/// Final charge rate which is base_charge_rate + contribution by capacitors
-	var/final_charge_rate = 250
+	var/final_charge_rate = 250 KILO WATTS
 	/// is the card reader installed in this machine
 	var/card_reader_installed = FALSE
 	/// physical reference of the players id card to check for PERSONAL access level
@@ -287,7 +287,7 @@
 	. = ..()
 
 	for(var/datum/stock_part/capacitor/capacitor in component_parts)
-		final_charge_rate = base_charge_rate + (capacitor.tier * 50)
+		final_charge_rate = base_charge_rate + (capacitor.tier * 50 KILO WATTS)
 
 	set_access()
 
@@ -565,15 +565,9 @@
 	if(cell_count <= 0)
 		return
 
-<<<<<<< HEAD
-	var/cell_charged = cell.give(final_charge_rate * seconds_per_tick)
-	if(cell_charged)
-		use_power((active_power_usage + final_charge_rate) * seconds_per_tick)
-=======
 	var/charge_per_item = (final_charge_rate * seconds_per_tick) / cell_count
 	for(var/obj/item/stock_parts/cell/cell as anything in cells_to_charge)
 		charge_cell(charge_per_item, cell)
->>>>>>> 89ca2e10292 ([MIRROR] Suit Storage Units / Inducers can charge MODsuits without necessitating them be screwdrivered opened  (#1674))
 
 /obj/machinery/suit_storage_unit/proc/shock(mob/user, prb)
 	if(!prob(prb))
