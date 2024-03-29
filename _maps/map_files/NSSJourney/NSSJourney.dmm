@@ -543,15 +543,15 @@
 /turf/closed/wall/r_wall,
 /area/station/security/office)
 "adS" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "hopqueue";
-	name = "HoP Queue Shutters"
+/obj/machinery/ticket_machine{
+	pixel_y = 32
 	},
 /obj/effect/turf_decal/loading_area{
 	dir = 4
 	},
-/obj/machinery/ticket_machine{
-	pixel_y = 32
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "hopqueue";
+	name = "HoP Queue Shutters"
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
@@ -9768,6 +9768,7 @@
 /obj/structure/table/reinforced,
 /obj/item/assembly/flash/handheld,
 /obj/item/assembly/flash/handheld,
+/obj/machinery/recharger,
 /turf/open/floor/iron,
 /area/station/command/bridge)
 "aSw" = (
@@ -10138,7 +10139,7 @@
 /area/station/command/bridge)
 "aTV" = (
 /obj/structure/table/reinforced,
-/obj/machinery/recharger,
+/obj/structure/secure_safe/caps_spare,
 /turf/open/floor/iron,
 /area/station/command/bridge)
 "aTW" = (
@@ -10179,10 +10180,6 @@
 "aUc" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/medkit/regular,
-/obj/structure/secure_safe/caps_spare{
-	pixel_x = 37;
-	pixel_y = 32
-	},
 /turf/open/floor/iron,
 /area/station/command/bridge)
 "aUd" = (
@@ -17890,6 +17887,7 @@
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/access/any/command/teleporter,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/command/teleporter)
 "btN" = (
@@ -34644,6 +34642,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit)
+"emK" = (
+/obj/machinery/photobooth,
+/turf/open/floor/iron,
+/area/station/hallway/primary/central)
 "emV" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/turf_decal/siding/wood,
@@ -36237,7 +36239,7 @@
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
 "fBE" = (
-/mob/living/simple_animal/slime,
+/mob/living/basic/slime,
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
 "fBI" = (
@@ -38918,7 +38920,7 @@
 	id = "secmechbay";
 	name = "Security Mech Bay Shutters"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/iron/dark,
 /area/station/security/mechbay)
 "hFS" = (
 /turf/closed/wall,
@@ -50572,7 +50574,7 @@
 	id = "secmechbay";
 	name = "Security Mech Bay Shutters"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/iron/dark,
 /area/station/security/mechbay)
 "qLV" = (
 /obj/effect/decal/cleanable/dirt,
@@ -52538,7 +52540,7 @@
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 10
 	},
-/obj/structure/closet/secure_closet/brig/genpop,
+/obj/machinery/photobooth/security,
 /turf/open/floor/iron/dark,
 /area/station/security/execution/transfer)
 "snY" = (
@@ -85591,8 +85593,8 @@ boX
 bqv
 bqv
 bqv
-bqv
 adS
+aJw
 aJw
 aJq
 ova
@@ -85849,7 +85851,7 @@ bqy
 cBr
 bqy
 buK
-bqy
+emK
 aJw
 aJq
 ova
