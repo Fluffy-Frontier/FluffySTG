@@ -559,25 +559,6 @@
 /obj/structure/window/reinforced/spawner/directional/south,
 /turf/open/floor/circuit,
 /area/station/ai_monitored/turret_protected/ai_upload)
-<<<<<<< HEAD
-"akT" = (
-/obj/structure/table,
-/obj/effect/turf_decal/trimline/red/filled/line{
-	dir = 9
-	},
-/obj/machinery/camera/directional/south{
-	c_tag = "Prison Hallway Port";
-	network = list("ss13","prison")
-	},
-/obj/machinery/light/directional/south,
-/obj/item/storage/box/prisoner{
-	pixel_y = 8
-	},
-/obj/item/storage/box/prisoner,
-/turf/open/floor/iron,
-/area/station/security/execution/transfer)
-=======
->>>>>>> 95c538c3a57 ([MIRROR] [MDB Ignore] Combines Cargobus consoles with Dept. Order Consoles, freeing all departments of 1 whole tile of space (#1665))
 "akZ" = (
 /obj/machinery/atmospherics/pipe/smart/simple/dark/visible{
 	dir = 4
@@ -4090,36 +4071,6 @@
 /obj/structure/closet/bombcloset,
 /turf/open/floor/plating,
 /area/station/maintenance/aft/lesser)
-<<<<<<< HEAD
-"buw" = (
-/obj/structure/table,
-/obj/effect/turf_decal/tile/red/half/contrasted{
-	dir = 4
-	},
-/obj/item/clothing/under/rank/prisoner{
-	pixel_x = 8;
-	pixel_y = 5
-	},
-/obj/item/clothing/shoes/sneakers/orange{
-	pixel_x = -6;
-	pixel_y = 10
-	},
-/obj/item/clothing/shoes/sneakers/orange{
-	pixel_x = -6;
-	pixel_y = 4
-	},
-/obj/item/clothing/shoes/sneakers/orange{
-	pixel_x = -6;
-	pixel_y = -2
-	},
-/obj/item/clothing/shoes/sneakers/orange{
-	pixel_x = -6;
-	pixel_y = -8
-	},
-/turf/open/floor/iron,
-/area/station/security/execution/transfer)
-=======
->>>>>>> 95c538c3a57 ([MIRROR] [MDB Ignore] Combines Cargobus consoles with Dept. Order Consoles, freeing all departments of 1 whole tile of space (#1665))
 "buE" = (
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/window/spawner/directional/west,
@@ -23817,20 +23768,6 @@
 /obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/plating,
 /area/station/maintenance/solars/port/fore)
-<<<<<<< HEAD
-"iJx" = (
-/obj/structure/cable,
-/obj/structure/table,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/tile/red/anticorner/contrasted,
-/obj/item/clothing/gloves/color/orange,
-/obj/item/restraints/handcuffs,
-/obj/item/reagent_containers/spray/pepper,
-/turf/open/floor/iron,
-/area/station/security/execution/transfer)
-=======
->>>>>>> 95c538c3a57 ([MIRROR] [MDB Ignore] Combines Cargobus consoles with Dept. Order Consoles, freeing all departments of 1 whole tile of space (#1665))
 "iJC" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -30130,28 +30067,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
-<<<<<<< HEAD
-"kQz" = (
-/obj/effect/turf_decal/tile/red/half/contrasted{
-	dir = 4
-	},
-/obj/structure/table,
-/obj/item/clothing/under/rank/prisoner/skirt{
-	pixel_x = 9;
-	pixel_y = 5
-	},
-/obj/item/clothing/under/rank/prisoner{
-	pixel_x = -2;
-	pixel_y = 5
-	},
-/obj/item/clothing/under/rank/prisoner/skirt{
-	pixel_x = -13;
-	pixel_y = 5
-	},
-/turf/open/floor/iron,
-/area/station/security/execution/transfer)
-=======
->>>>>>> 95c538c3a57 ([MIRROR] [MDB Ignore] Combines Cargobus consoles with Dept. Order Consoles, freeing all departments of 1 whole tile of space (#1665))
 "kQP" = (
 /turf/closed/wall,
 /area/station/command/heads_quarters/qm)
@@ -44537,48 +44452,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/central)
-<<<<<<< HEAD
-"qaN" = (
-/obj/structure/table/wood,
-/obj/machinery/button/ticket_machine{
-	pixel_x = 38
-	},
-/obj/machinery/light_switch/directional/south{
-	pixel_x = 6;
-	pixel_y = -34
-	},
-/obj/machinery/button/door/directional/south{
-	id = "hop";
-	name = "Privacy Shutters Control";
-	pixel_x = -6;
-	req_access = list("hop")
-	},
-/obj/item/paper_bin/carbon{
-	pixel_x = -2;
-	pixel_y = 4
-	},
-/obj/item/stamp/head/hop{
-	pixel_x = -4;
-	pixel_y = 4
-	},
-/obj/machinery/button/door/directional/south{
-	id = "hopqueue";
-	name = "Queue Shutters Control";
-	pixel_x = -6;
-	pixel_y = -34;
-	req_access = list("hop")
-	},
-/obj/item/pen{
-	pixel_x = -4;
-	pixel_y = 3
-	},
-/obj/machinery/button/photobooth{
-	pixel_x = 26
-	},
-/turf/open/floor/wood,
-/area/station/command/heads_quarters/hop)
-=======
->>>>>>> 95c538c3a57 ([MIRROR] [MDB Ignore] Combines Cargobus consoles with Dept. Order Consoles, freeing all departments of 1 whole tile of space (#1665))
 "qaP" = (
 /obj/effect/turf_decal/plaque{
 	icon_state = "L3"
@@ -54833,29 +54706,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
-<<<<<<< HEAD
-"tIv" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door/window/brigdoor/right/directional/north{
-	name = "Head of Personnel's Desk";
-	req_access = list("hop")
-	},
-/obj/machinery/door/firedoor,
-/obj/machinery/door/window/left/directional/south{
-	name = "Reception Window"
-	},
-/obj/machinery/door/poddoor/preopen{
-	id = "hop";
-	name = "Privacy Shutters"
-	},
-/obj/structure/cable,
-/obj/structure/desk_bell{
-	pixel_x = 7
-	},
-/turf/open/floor/iron,
-/area/station/command/heads_quarters/hop)
-=======
->>>>>>> 95c538c3a57 ([MIRROR] [MDB Ignore] Combines Cargobus consoles with Dept. Order Consoles, freeing all departments of 1 whole tile of space (#1665))
 "tIx" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/disposalpipe/segment{
@@ -57196,15 +57046,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/engineering/break_room)
-<<<<<<< HEAD
-"uwC" = (
-/obj/effect/turf_decal/delivery,
-/obj/machinery/bluespace_vendor/directional/east,
-/obj/machinery/photobooth,
-/turf/open/floor/iron,
-/area/station/hallway/secondary/command)
-=======
->>>>>>> 95c538c3a57 ([MIRROR] [MDB Ignore] Combines Cargobus consoles with Dept. Order Consoles, freeing all departments of 1 whole tile of space (#1665))
 "uwK" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8

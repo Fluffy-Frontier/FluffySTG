@@ -21067,31 +21067,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/fore)
-<<<<<<< HEAD
-"hBv" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/table/reinforced,
-/obj/machinery/door/poddoor/preopen{
-	id = "hop";
-	name = "Privacy Shutters"
-	},
-/obj/machinery/door/firedoor,
-/obj/machinery/door/window/brigdoor/right/directional/east{
-	name = "Head of Personnel's Desk";
-	req_access = list("hop")
-	},
-/obj/machinery/door/window/left/directional/west{
-	name = "Reception Window"
-	},
-/obj/structure/desk_bell{
-	pixel_x = 7
-	},
-/turf/open/floor/iron/textured_large,
-/area/station/command/heads_quarters/hop)
-=======
->>>>>>> 95c538c3a57 ([MIRROR] [MDB Ignore] Combines Cargobus consoles with Dept. Order Consoles, freeing all departments of 1 whole tile of space (#1665))
 "hBA" = (
 /obj/structure/cable,
 /obj/effect/spawner/structure/window,
@@ -22340,15 +22315,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark,
 /area/station/medical/medbay/aft)
-<<<<<<< HEAD
-"ibq" = (
-/obj/machinery/bluespace_vendor/directional/north,
-/obj/machinery/light/small/directional/west,
-/obj/machinery/photobooth,
-/turf/open/floor/iron/textured_large,
-/area/station/hallway/primary/central/fore)
-=======
->>>>>>> 95c538c3a57 ([MIRROR] [MDB Ignore] Combines Cargobus consoles with Dept. Order Consoles, freeing all departments of 1 whole tile of space (#1665))
 "ibv" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/iron,
@@ -26207,41 +26173,6 @@
 /obj/machinery/light/cold/directional/north,
 /turf/open/floor/iron/white/small,
 /area/station/medical/storage)
-<<<<<<< HEAD
-"jxV" = (
-/obj/effect/turf_decal/tile/blue,
-/obj/machinery/modular_computer/preset/id,
-/obj/machinery/button/ticket_machine{
-	pixel_x = 9;
-	pixel_y = 23
-	},
-/obj/machinery/button/door/directional/south{
-	id = "hop";
-	name = "Privacy Shutters Control";
-	pixel_x = -2;
-	pixel_y = 23;
-	req_access = list("hop")
-	},
-/obj/machinery/button/door/directional/south{
-	id = "hopqueue";
-	name = "Queue Shutters Control";
-	pixel_x = -13;
-	pixel_y = 23;
-	req_access = list("hop")
-	},
-/obj/machinery/button/flasher{
-	id = "hopflash";
-	pixel_x = -24;
-	pixel_y = 6
-	},
-/obj/machinery/button/photobooth{
-	pixel_y = -6;
-	pixel_x = -24
-	},
-/turf/open/floor/iron/dark/textured_corner,
-/area/station/command/heads_quarters/hop)
-=======
->>>>>>> 95c538c3a57 ([MIRROR] [MDB Ignore] Combines Cargobus consoles with Dept. Order Consoles, freeing all departments of 1 whole tile of space (#1665))
 "jxZ" = (
 /obj/effect/turf_decal/siding/blue{
 	dir = 6
@@ -39285,17 +39216,6 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/iron/dark,
 /area/station/cargo/office)
-<<<<<<< HEAD
-"nZg" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/delivery,
-/turf/open/floor/iron/half,
-/area/station/hallway/primary/central/fore)
-=======
->>>>>>> 95c538c3a57 ([MIRROR] [MDB Ignore] Combines Cargobus consoles with Dept. Order Consoles, freeing all departments of 1 whole tile of space (#1665))
 "nZh" = (
 /obj/structure/table,
 /obj/item/stock_parts/scanning_module{
@@ -65549,25 +65469,6 @@
 "wuM" = (
 /turf/closed/wall,
 /area/station/command/heads_quarters/qm)
-<<<<<<< HEAD
-"wvg" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/tile/dark_red/half/contrasted{
-	dir = 8
-	},
-/obj/machinery/computer/security/telescreen/interrogation{
-	dir = 8;
-	name = "isolation room monitor";
-	network = list("isolation");
-	pixel_x = 30
-	},
-/obj/machinery/photobooth/security,
-/turf/open/floor/iron,
-/area/station/security/execution/transfer)
-=======
->>>>>>> 95c538c3a57 ([MIRROR] [MDB Ignore] Combines Cargobus consoles with Dept. Order Consoles, freeing all departments of 1 whole tile of space (#1665))
 "wvn" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
