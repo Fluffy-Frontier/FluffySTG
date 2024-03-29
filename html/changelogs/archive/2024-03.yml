@@ -1214,6 +1214,12 @@
       using an ammo box to reload them.
   - qol: Reloading a weapon in a way that encumbers you now says how long your handedness
       is impaired for in seconds.
+  Higgin:
+  - bugfix: air analyzers work again
+  Jacquerel:
+  - spellcheck: fixed grammatical error in chemical splashing
+  - rscadd: Wise cows produce surprising milk.
+  - spellcheck: You now milk the owner of an udder, not the udder.
   JohnFulpWillard:
   - bugfix: Cameras built in-round can be upgraded again.
   - bugfix: Deconstructing cameras now more consistently return to you the upgrades
@@ -1224,6 +1230,8 @@
   JohnFulpWillard, Twox:
   - rscadd: Added a new photobooth machine to the HoP's line.
   - bugfix: Things checking for access now checks your off hand, too.
+  Kapu1178:
+  - bugfix: Botanists will be given dank pizza when consuming the infinite pizza
   LT3:
   - bugfix: 'Fixed modular computers failing to boot up using cell power (eg: contractor
       tablet)'
@@ -1248,15 +1256,36 @@
   - refactor: Blood deficiency now handles its mail goods a tiny bit different, report
       any oddities.
   - bugfix: Fixed space suit thermal regulators cell usage.
+  - qol: Cargobus chat console and Departmental Order console are now combined into
+      one.
+  - qol: Mod PCs active on the "chat client" apps no longer look like AI uploads (and
+      now have their own sprite)
+  - refactor: Departmental order consoles were refactored a bit, report any oddities.
+  - bugfix: '"Mind Gate" does self brain damage as intended'
   Nerev4r:
   - qol: Interaction preferences have been expanded to make a wider array of characters
       more comfortable.
   Pickle-Coding:
   - bugfix: Fixes static power usage from being able to not draw power.
+  - bugfix: Fixes lavaland SMES and other crap from not starting with enough energy.
+  - bugfix: The pirate SMES are now magical instead of secretly infinite.
+  Profakos:
+  - refactor: Slimes are now basic mobs. Please report any strange behaviours!
+  - balance: Slimes only stun you for two seconds when they shock you, the rest of
+      the duration is a knockdown.
+  - balance: Slimes are not stunned from the cold, but rather, get frozen in a freon
+      icecube. BZ also puts them in complete stasis, instead of making them unconscious.
+      Their speed is likewise unchanged by temperatures.
+  - balance: Slimes do not passively heal, they instead rely on feeding.
+  - bugfix: Slimes can use the buckling screen alert to unbuckle and stop feeding,
+      along with clicking on the mob they are riding
   SSensum:
   - code_imp: Now it is possible to add custom hud icons.
   SomeRandomOwl:
   - rscadd: Added two new quirks, Kleptomaniac, and Possessive
+  - rscadd: Syndicate Sleeper Agent now has a popup poll for all valid players to
+      get sleeper agent asking if they want to be traitor. Now traitors wont be picked
+      when their pants are literally down.
   SyncIt21:
   - bugfix: Fixed more energy usages for cells(Part 3). See PR 82204 for details
   - bugfix: recharge stations draw the same amount of power as before but directly
@@ -1285,6 +1314,9 @@
       of items blended, meaining blending more number of items/larger items will consume
       more power
   - refactor: reagent grinder code has been optimized overall. Report bugs on github
+  - bugfix: anything that has reagents can be either grinded or juiced
+  - bugfix: stuff that does not have reagents but has grind results can still be grinded
+      but not juiced
   Thlumyn:
   - balance: added some cargo lathe items to the Interdyne mining equipment vendor
   - balance: add night vision health scanner mesons to the Interdyne mining equipment
@@ -1296,6 +1328,8 @@
   ZephyrTFA:
   - balance: You can now adjust the suit sensors of another player in the strip menu.
       No longer must you first take it off.
+  bigfatbananacyclops:
+  - balance: secbots no longer can be buckled
   honkpocket:
   - rscadd: Adds Gun Boots and some Baseball Bats to the DM Mystery Boxes
   icequibe:
@@ -1303,10 +1337,18 @@
       of ruin
   mc-oofert:
   - bugfix: turret id panel checks the access of the attacking item instead
+  - bugfix: Certain weather types that arent supposed to be glowing no longer glow
+  - image: Snow storms no longer glow
   myraowo:
   - rscadd: Added the Chief Engineer's turtleneck and turtleneck skirt to the game.
   - rscadd: Added the Chief Engineer and Chief Medical Officer's turtlenecks to their
       respectives garment bags.
+  necromanceranne:
+  - bugfix: Unfathomable Curios now properly block as expected.
+  - bugfix: The shielded component actually respects the shield_inhand when determining
+      blocking potential.
+  - bugfix: Ensures that the shielded component has a wearer before attempting to
+      block, and that this wearer is the same as the owner of the item.
   nikothedude:
   - rscadd: Roboticists now spawn with synthetic medkits to make their jobs a bit
       easier
@@ -1319,3 +1361,7 @@
       way the money on those cards work is now a bit different. Players shouldn't
       be able to use the money on those cards in any context though, don't fret about
       that. Just know that the money printer goes wrrrr
+  vinylspiders:
+  - bugfix: ghosts can now view general and security records once again
+  zeroisthebiggay:
+  - spellcheck: however, he burn`s` his finger in the process.
