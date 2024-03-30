@@ -1366,8 +1366,38 @@
   zeroisthebiggay:
   - spellcheck: however, he burn`s` his finger in the process.
 2024-03-30:
+  00-Steven:
+  - bugfix: You can actually hit racks with objects when in combat mode again. Importantly,
+      painting them with spraycans like that works again.
+  Absolucy:
+  - bugfix: Fixed double-encoded messages with AI holocalls.
+  Ben10Omintrix:
+  - balance: minebots have been buffed and have recieved new upgrades
+  Ghommie:
+  - bugfix: Fixed the "Random" deathmatch modifier. Also turned the "Heightened Hearing"
+      option into a modifier as well.
   Iajret:
   - bugfix: fixed capacity of medigun's cells to use new (bigger) numbers
+  - bugfix: fixed new birdshot engineering uses old anti-delam system automapper template
+  Jinshee:
+  - rscadd: Added rattlesnake tail
+  MajManatee:
+  - image: New lizard frills - Split - based off axolotls
+  Majkl-J:
+  - code_imp: Borgo rightclick ranged code
   Profakos:
   - bugfix: Slimes now feed faster, and should only need one monkey to reach their
       next lifestage.
+  - code_imp: Made the easter rabbits spawn on a more curated list.
+  SyncIt21:
+  - bugfix: chem dispenser UI doesn't brick when beaker is ejected while recording
+      recipes
+  - code_imp: removed deprecated `content` tag from buttons in chem dispenser
+  Xander3359:
+  - qol: You can now open airlocks (That you have access to) while inside a stealth
+      implant box
+  Zenitheevee:
+  - bugfix: Tarkon alien nest bosses spawn with correct faction.
+  - bugfix: Tarkon mines now resealed as aliens learned they needed to breath.
+  mc-oofert:
+  - bugfix: elevators may no longer pick up things from under the floor during movement
