@@ -1402,19 +1402,46 @@
   mc-oofert:
   - bugfix: elevators may no longer pick up things from under the floor during movement
 2024-03-31:
+  DATA-xPUNGED:
+  - rscadd: Prosthetic organ users are now allowed to pick what they want to start
+      with.
+  - rscadd: Junkie of all kinds, including smokers and alcoholics, are also able to
+      pick their favorite type.
+  Ebin-Halcyon:
+  - bugfix: Teshari no longer wear their turtlenecks backwards
+  FearfulFurnishing:
+  - rscadd: Add bone chisel, a primitive tool crafted with bone and sinew.
+  - rscadd: Made crafted primitive tools have the bone material type when examined.
   Iajret:
   - bugfix: fixed stirlings outputting only half the power they show on display
   - bugfix: fixed thumpers consuming half as much power as they need
   - code_imp: some or even all colony machinery should be dependent on TG defines
       for power
+  - bugfix: fixes SR-8 revolver having virtually unlimited ammo
+  Iamgoofball:
+  - balance: Your heart stops beating when you die now.
   JlereHda3oHbl1984:
   - rscadd: Added high heel sounds for some high heel shoes.
   Ketrai:
   - rscadd: Added a fennec to cargo and the pet carrier quirk.
+  Profakos:
+  - bugfix: Slimes stop being in stasis when taken out of a BZ filled environment
+  - bugfix: Slimes no longer become hungry while in stasis
+  SomeRandomOwl:
+  - bugfix: Tarkon roundstart SMES should start with full power
   SyncIt21:
   - bugfix: Fixed cell energy usage for a bunch of stuff(Part 5). See PR 82296 for
       details
+  Thunder12345:
+  - image: Pinpointers have been resprited
   Zytolg:
   - qol: Wholesale Revamp of Birdshots Engineering Department
   - bugfix: Some Birdshot Amtospherics Concerns
   - bugfix: Some Birdshot Engine Concerns
+  moocowswag:
+  - bugfix: anchored circuits no longer blow up after 2 components are used.
+  yooriss:
+  - rscadd: The Echolocation quirk is now available with several levels of customization,
+      granting 5 tiles of pulsing view distance and significantly enhanced hearing
+      at the downside of being blind when deafened and twice as vulnerable to ear
+      damage.
