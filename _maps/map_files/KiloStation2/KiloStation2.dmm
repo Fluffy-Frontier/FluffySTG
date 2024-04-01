@@ -6377,7 +6377,6 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/delivery,
 /obj/machinery/door/firedoor,
-/obj/item/folder/blue,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "hop";
 	name = "Privacy Shutters"
@@ -6388,6 +6387,16 @@
 	},
 /obj/machinery/door/window/right/directional/south{
 	name = "Reception Desk"
+	},
+/obj/item/paper_bin{
+	pixel_x = -5
+	},
+/obj/item/pen{
+	pixel_x = -5
+	},
+/obj/structure/desk_bell{
+	pixel_x = 7;
+	pixel_y = 10
 	},
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/hop)
@@ -8032,6 +8041,7 @@
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 1
 	},
+/obj/item/folder/blue,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/hop)
 "cHL" = (
@@ -9096,13 +9106,6 @@
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "dbi" = (
-/obj/structure/table,
-/obj/item/paper_bin{
-	pixel_x = -5
-	},
-/obj/item/pen{
-	pixel_x = -5
-	},
 /obj/machinery/light/directional/east,
 /obj/machinery/flasher/directional/east{
 	id = "hopflash";
@@ -9112,13 +9115,10 @@
 	dir = 8
 	},
 /obj/machinery/status_display/evac/directional/north,
-/obj/structure/desk_bell{
-	pixel_x = 7;
-	pixel_y = 10
-	},
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 8
 	},
+/obj/machinery/photobooth,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/hop)
 "dbp" = (
@@ -34106,10 +34106,7 @@
 /obj/effect/decal/cleanable/blood/gibs/old,
 /obj/effect/spawner/random/structure/crate,
 /obj/effect/mapping_helpers/burnt_floor,
-/mob/living/basic/chicken{
-	name = "Kentucky";
-	real_name = "Kentucky"
-	},
+/mob/living/basic/chicken/teshari,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard)
 "kVv" = (
@@ -42149,14 +42146,11 @@
 /turf/open/floor/iron,
 /area/station/security/brig)
 "nAa" = (
-/obj/structure/table,
-/obj/item/storage/box/bodybags{
-	pixel_y = 5
-	},
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 4
 	},
+/obj/machinery/photobooth/security,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "nAe" = (
@@ -42494,10 +42488,7 @@
 /area/station/cargo/storage)
 "nFN" = (
 /obj/machinery/igniter/incinerator_ordmix,
-/mob/living/basic/chicken{
-	name = "Kentucky";
-	real_name = "Kentucky"
-	},
+/mob/living/basic/chicken/teshari,
 /turf/open/floor/engine/vacuum,
 /area/station/science/ordnance/burnchamber)
 "nFT" = (
@@ -46368,7 +46359,6 @@
 /obj/structure/table,
 /obj/item/healthanalyzer,
 /obj/item/hand_labeler,
-/obj/structure/secure_safe/caps_spare/directional/north,
 /obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 1
 	},
@@ -49467,7 +49457,6 @@
 /area/station/service/chapel)
 "pXt" = (
 /obj/structure/table,
-/obj/machinery/recharger,
 /obj/machinery/light/directional/east,
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 4
@@ -49475,6 +49464,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+/obj/structure/secure_safe/caps_spare,
 /turf/open/floor/iron,
 /area/station/command/bridge)
 "pXN" = (
@@ -63460,6 +63450,9 @@
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 4
 	},
+/obj/item/storage/box/bodybags{
+	pixel_y = 5
+	},
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "urA" = (
@@ -65862,7 +65855,7 @@
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos)
 "vhx" = (
-/mob/living/simple_animal/slime,
+/mob/living/basic/slime,
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
 "vhK" = (
@@ -75590,7 +75583,7 @@
 /area/station/hallway/primary/central/fore)
 "yfS" = (
 /obj/machinery/light/small/directional/west,
-/mob/living/basic/chicken,
+/mob/living/basic/chicken/teshari,
 /turf/open/misc/sandy_dirt,
 /area/station/service/hydroponics/garden)
 "ygj" = (

@@ -139,7 +139,7 @@
 		say(pick(advertisements))
 		playsound(loc, 'sound/machines/chime.ogg', 30, FALSE)
 
-	use_power(500)
+	use_energy(500 JOULES)
 
 /// Дековерт тут.
 /obj/machinery/custom_rev_deconvert_device/proc/eject_new_you()
