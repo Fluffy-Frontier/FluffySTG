@@ -105,98 +105,46 @@
 		CALLERS AND BEAMOUT TOOL
 */
 
+GLOBAL_LIST_EMPTY(nt_reporter_list)
+
 /obj/item/nt_reporter
 	name = "NanoTrasen reporter"
 	desc = "Use this in-hand to vote to call NanoTrasen backup. If half your team votes for it, SWAT will be dispatched."
 	icon = 'tff_modular/modules/police_nt/icons/reporter.dmi'
 	icon_state = "reporter_off"
 	w_class = WEIGHT_CLASS_SMALL
+	var/requested_team = "agents" // "agents" "swat" "troopers"
 	var/activated = FALSE
-	var/type_to_check = /datum/antagonist/ert/nt_police/agent
-	var/type_of_callers = "nt_police_agent"
-	var/announcement_source = "NanoTrasen Internal Security"
-	var/ghost_poll_msg = "example crap"
-	var/amount_to_summon = 5
-	var/type_to_summon = /datum/antagonist/ert/nt_police/swat
-	var/summoned_type = "NTIS S.W.A.T."
-	var/jobban_to_check = ROLE_DEATHSQUAD
-	var/announcement_message = "Well..."
-	var/sound_nt = 'tff_modular/modules/police_nt/sound/nt_police_second.ogg'
 
-/obj/item/nt_reporter/proc/pre_checks(mob/user)
-	if(!user.mind.has_antag_datum(type_to_check))
-		to_chat(user, span_warning("You don't know how to use this!"))
-		return FALSE
-	return TRUE
+/obj/item/nt_reporter/New()
+	GLOB.nt_reporter_list += src
+	. = ..()
+
+/obj/item/nt_reporter/Del()
+	GLOB.nt_reporter_list -= src
+	. = ..()
 
 /obj/item/nt_reporter/proc/questions(mob/user)
 	return TRUE
 
 /obj/item/nt_reporter/attack_self(mob/user, modifiers)
 	. = ..()
-	if(!pre_checks(user))
-		return
-	if(!activated && !GLOB.nt_police_responder_info[type_of_callers][NT_POLICE_DECLARED])
+	if(!activated)
 		if(!questions(user))
 			return
-		activated = TRUE
-		icon_state = "reporter_on"
-		GLOB.nt_police_responder_info[type_of_callers][NT_POLICE_VOTES]++
-		var/current_votes = GLOB.nt_police_responder_info[type_of_callers][NT_POLICE_VOTES]
-		var/amount_of_responders = GLOB.nt_police_responder_info[type_of_callers][NT_POLICE_AMT]
-		to_chat(user, span_warning("You have activated the device. \
-		Current Votes: [current_votes]/[amount_of_responders] votes."))
-		if(current_votes >= amount_of_responders * 0.5)
-			GLOB.nt_police_responder_info[type_of_callers][NT_POLICE_DECLARED] = TRUE
-
-			priority_announce(announcement_message, announcement_source, sound_nt, has_important_message = TRUE, color_override = "yellow")
-			var/list/candidates = SSpolling.poll_ghost_candidates(
-				ghost_poll_msg,
-				check_jobban = jobban_to_check,
-				alert_pic = /obj/item/nt_reporter,
-				role_name_text = summoned_type,
-			)
-
-			if(length(candidates))
-				var/agents_number = min(amount_to_summon, candidates.len)
-				GLOB.nt_police_responder_info[summoned_type][NT_POLICE_AMT] = agents_number
-
-				var/list/spawnpoints = GLOB.emergencyresponseteamspawn
-				var/index = 0
-				while(agents_number && candidates.len)
-					var/spawn_loc = spawnpoints[index + 1]
-					index = (index + 1) % spawnpoints.len
-					var/mob/dead/observer/chosen_candidate = pick(candidates)
-					candidates -= chosen_candidate
-					if(!chosen_candidate.key)
-						continue
-
-					var/mob/living/carbon/human/cop = new(spawn_loc)
-					chosen_candidate.client.prefs.safe_transfer_prefs_to(cop, is_antag = TRUE)
-					cop.key = chosen_candidate.key
-
-					var/datum/antagonist/ert/nt_police/ert_antag = type_to_summon
-					cop.mind.add_antag_datum(ert_antag)
-					cop.mind.set_assigned_role(SSjob.GetJobType(ert_antag.ert_job_path))
-					cop.grant_language(/datum/language/common, source = LANGUAGE_SPAWNER)
-					log_game("[key_name(cop)] has been selected as an [ert_antag.name]")
-					agents_number--
+		for(var/obj/item/nt_reporter/A in GLOB.nt_reporter_list)
+			A.activated = TRUE
+			A.icon_state = "reporter_on"
+			GLOB.nt_reporter_list -= A
+		call_NTIS(requested_team)
 
 /obj/item/nt_reporter/swat_caller
 	name = "S.W.A.T. backup caller"
 	desc = "Use this in-hand to vote to call NanoTrasen S.W.A.T. backup. If half your team votes for it, SWAT will be dispatched."
-	type_to_check = /datum/antagonist/ert/nt_police/agent
-	type_of_callers = "nt_police_agent"
-	ghost_poll_msg = "The NTIS have requested a S.W.A.T. backup. Do you wish to become a S.W.A.T. member?"
-	amount_to_summon = 5
-	type_to_summon = /datum/antagonist/ert/nt_police/swat
-	summoned_type = "nt_police_swat"
-	sound_nt = 'tff_modular/modules/police_nt/sound/nt_police_second.ogg'
-	announcement_message = "Attention, crew.\nNTIS Police have requested S.W.A.T. backup. Please comply with all requests by special squad members."
+	requested_team = "swat"
 
 /obj/item/nt_reporter/swat_caller/questions(mob/user)
-	var/question = "Does the situation require additional S.W.A.T. backup, involve the station impeding you from doing your job, \
-		or involve the station making a fraudulent NTIS call and needing an arrest made on the caller?"
+	var/question = "Does the situation require additional S.W.A.T. backup for security?"
 	if(tgui_input_list(user, question, "S.W.A.T. Backup Caller", list("Yes", "No")) != "Yes")
 		to_chat(user, "You decide not to request S.W.A.T. backup.")
 		return FALSE
@@ -206,22 +154,10 @@
 /obj/item/nt_reporter/trooper_caller
 	name = "Guard backup caller"
 	desc = "Use this in-hand to vote that the station is engaging in Treason. If half your team votes for it, the Military will handle the situation."
-	type_to_check = /datum/antagonist/ert/nt_police/swat
-	type_of_callers = "nt_police_swat"
-	ghost_poll_msg = "The station has decided to engage in treason. Do you wish to join the NanoTrasen Military?"
-	amount_to_summon = 8
-	type_to_summon = /datum/antagonist/ert/nt_police/trooper
-	summoned_type = "nt_police_trooper"
-	sound_nt = 'tff_modular/modules/police_nt/sound/nt_police_third.ogg'
-	announcement_message = "Attention, crew.\nYou are accused of corporate treason. Lay down your weapons and surrender. Follow all the orders of the NanoTrasen response team. The perpetrators of corporate betrayal will be punished at the greatest extent."
-
+	requested_team = "troopers"
 /obj/item/nt_reporter/trooper_caller/questions(mob/user)
 	var/list/list_of_questions = list(
-		"Treason is the crime of attacking a state authority. Did the station engage in this today?",
-		"Did station crewmembers assault you or the SWAT team at the direction of Security and/or Command?",
-		"Did station crewmembers actively prevent you and the SWAT team from accomplishing your objectives at the direction of Security and/or Command?",
-		"Were you and your fellow SWAT members unable to handle the issue on your own?",
-		"Are you absolutely sure you wish to declare the station as engaging in Treason? Misuse of this can and will result in \
+		"Did station security/crew assault you or the NTIS at the direction of Command? Are you absolutely sure about that? Misuse of this can and will result in \
 			administrative action against your account."
 	)
 	for(var/question in list_of_questions)
@@ -234,7 +170,7 @@
 
 /obj/item/beamout_tool_nt
 	name = "beam-out tool"
-	desc = "Use this to begin the lengthy beam-out process to return to NTIS office. It will bring anyone you are pulling with you."
+	desc = "Use this to begin the lengthy beam-out process to return to NTIS office(Delete you from game!). It will bring anyone you are pulling with you. It's"
 	icon = 'tff_modular/modules/police_nt/icons/reporter.dmi'
 	icon_state = "beam_me_up_scotty"
 	w_class = WEIGHT_CLASS_SMALL
@@ -276,13 +212,8 @@
 		user.balloon_alert(user, "beam-out cancelled")
 
 /*
-		Ammunition
-*/
-
-/*
 	NTIS AGENTS WEAPONRY
 */
-
 /obj/item/choice_beacon/nt_police
 	name = "NTIS self-defence weapon delivery beacon"
 	desc = "Weapon delivery beacon designed for picky NTIS agents."
@@ -424,11 +355,8 @@
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/storage/pouch/ammo(src)
 
-
 /*
-
-			Снаряжение для классовости SWAT и Troopers
-
+	Снаряжение для классовости SWAT и Troopers
 */
 
 /obj/item/choice_beacon/nt_police/swat_class
@@ -454,7 +382,7 @@
 	illustration = "handcuff"
 
 /obj/item/storage/box/nt_police/swat_class/emp
-	name = "Energy weapon kit"
+	name = "EMP kit"
 
 /obj/item/storage/box/nt_police/swat_class/emp/PopulateContents()
 	for(var/i in 1 to 5)
@@ -487,7 +415,7 @@
 
 /obj/item/choice_beacon/nt_police/trooper_class
 	name = "NTIS-Trooper tools delivery beacon"
-	desc = "Tools delivery beacon designed for NTIS-SWAT units."
+	desc = "Tools delivery beacon designed for NTIS-Trooper units."
 
 /obj/item/choice_beacon/nt_police/trooper_class/generate_display_names()
 	var/static/list/weapon_kits

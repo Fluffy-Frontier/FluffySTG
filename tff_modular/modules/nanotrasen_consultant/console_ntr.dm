@@ -8,8 +8,6 @@
 #define CALL_POLICE_COOLDOWN (360 SECONDS)
 
 GLOBAL_LIST_EMPTY(responding_centcom_consoles)
-GLOBAL_VAR(caller_of_NTIS)
-GLOBAL_VAR(call_NTIS_msg)
 
 #define STATE_MAIN "main"
 #define STATE_MESSAGES "messages"
@@ -47,63 +45,8 @@ GLOBAL_VAR(call_NTIS_msg)
 	GLOB.responding_centcom_consoles -= src
 	. = ..()
 
-
-GLOBAL_LIST_INIT(nt_police_responder_info, list(
-	"nt_police_agent" = list(
-		NT_POLICE_AMT = 0,
-		NT_POLICE_VOTES = 0,
-		NT_POLICE_DECLARED = FALSE
-	),
-	"nt_police_swat" = list(
-		NT_POLICE_AMT = 0,
-		NT_POLICE_VOTES = 0,
-		NT_POLICE_DECLARED = FALSE
-	),
-	"nt_police_trooper" = list(
-		NT_POLICE_AMT = 0,
-		NT_POLICE_VOTES = 0,
-		NT_POLICE_DECLARED = FALSE
-	)
-))
-
-/obj/machinery/computer/comntr/proc/call_NTIS()
-	var/team_size = 3
-	var/announcement_message = "Attention, personnel of [station_name()]. \nNT Internal Security on the line. We've received a request from your corporate consultant, and we're sending a unit shortly. \nIn case of any kind of escalation or injury to an Internal Security officers, a tactical squad will be dispatched to handle this issue. \n\n Stay safe, Glory to Nanotrasen."
-	var/announcer = "NanoTrasen Internal Security"
-	var/poll_question = "The station has called for the NT Internal Security. Will you respond?"
-	var/list_to_use = "nt_police_agent"
-	priority_announce(announcement_message, announcer, sound = 'tff_modular/modules/police_nt/sound/nt_police_first.ogg', has_important_message=TRUE, color_override = "yellow")
-	var/list/candidates = SSpolling.poll_ghost_candidates(
-		poll_question,
-		check_jobban = ROLE_DEATHSQUAD,
-		alert_pic = /obj/item/nt_reporter,
-		role_name_text = "NT Internal Security ",
-	)
-
-	if(length(candidates))
-		var/agents_number = min(team_size, candidates.len)
-
-		var/list/spawnpoints = GLOB.emergencyresponseteamspawn
-		var/index = 0
-		GLOB.nt_police_responder_info[list_to_use][NT_POLICE_AMT] = agents_number
-		while(agents_number && candidates.len)
-			var/spawn_loc = spawnpoints[index + 1]
-			index = (index + 1) % spawnpoints.len
-			var/mob/dead/observer/chosen_candidate = pick(candidates)
-			candidates -= chosen_candidate
-			if(!chosen_candidate.key)
-				continue
-
-			var/mob/living/carbon/human/cop = new(spawn_loc)
-			chosen_candidate.client.prefs.safe_transfer_prefs_to(cop, is_antag = TRUE)
-			cop.key = chosen_candidate.key
-
-			var/datum/antagonist/ert/nt_police/ert_antag = new /datum/antagonist/ert/nt_police/agent
-			cop.mind.add_antag_datum(ert_antag)
-			cop.mind.set_assigned_role(SSjob.GetJobType(ert_antag.ert_job_path))
-			cop.grant_language(/datum/language/common, source = LANGUAGE_SPAWNER)
-			log_game("[key_name(cop)] has been selected as an [ert_antag.name]")
-			agents_number--
+/obj/machinery/computer/comntr/proc/call_NTSecs()
+	call_NTIS("agents")
 	return TRUE
 
 /obj/machinery/computer/comntr/proc/calling_NTIS(mob/user)
@@ -122,12 +65,13 @@ GLOBAL_LIST_INIT(nt_police_responder_info, list(
 		return
 	GLOB.call_NTIS_msg = reason_to_call_NTIS
 	GLOB.caller_of_NTIS = user.name
-	log_game("[key_name(user)] has called the Nanotrasen Internal Security for the following reason:\n[GLOB.call_NTIS_msg]")
-	message_admins("[ADMIN_LOOKUPFLW(user)] has called the Nanotrasen Internal Security for the following reason:\n[GLOB.call_NTIS_msg]")
-	deadchat_broadcast(" has called the Nanotrasen Internal Security for the following reason:\n[GLOB.call_NTIS_msg]", span_name("[user.real_name]"), user, message_type = DEADCHAT_ANNOUNCEMENT)
-	call_NTIS()
-	to_chat(user, span_notice("Authorization confirmed. Nanotrasen Internal Security call dispatched to the Nanotrasen Internal Security."))
-	playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+	if(call_NTSecs())
+		log_game("[key_name(user)] has called the Nanotrasen Internal Security for the following reason:\n[GLOB.call_NTIS_msg]")
+		message_admins("[ADMIN_LOOKUPFLW(user)] has called the Nanotrasen Internal Security for the following reason:\n[GLOB.call_NTIS_msg]")
+		deadchat_broadcast(" has called the Nanotrasen Internal Security for the following reason:\n[GLOB.call_NTIS_msg]", span_name("[user.real_name]"), user, message_type = DEADCHAT_ANNOUNCEMENT)
+		to_chat(user, span_notice("Authorization confirmed. Nanotrasen Internal Security call dispatched to the Nanotrasen Internal Security."))
+		COOLDOWN_START(src, call_police_cooldown, CALL_POLICE_COOLDOWN)
+		playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 
 /obj/machinery/computer/comntr/proc/authenticated(mob/user)
 	return authenticated
@@ -160,7 +104,6 @@ GLOBAL_LIST_INIT(nt_police_responder_info, list(
 			playsound(src, SFX_TERMINAL_TYPE, 50, FALSE)
 		if ("callThePolice")
 			if(COOLDOWN_FINISHED(src, call_police_cooldown))
-				COOLDOWN_START(src, call_police_cooldown, CALL_POLICE_COOLDOWN)
 				calling_NTIS(usr)
 		if ("deleteMessage")
 			if (!authenticated(usr))

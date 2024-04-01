@@ -5,15 +5,18 @@
 /datum/id_trim/centcom/ert/security/nt_police/New()
 	. = ..()
 	assignment = "NTIS Agent"
+	sechud_icon_state = "hudagent"
 	access = SSid_access.get_region_access_list(list(REGION_CENTCOM, REGION_ALL_STATION))
 
 /datum/id_trim/centcom/ert/security/nt_police/swat/New()
 	. = ..()
 	assignment = "NTIS S.W.A.T."
+	sechud_icon_state = "hudswat"
 
 /datum/id_trim/centcom/ert/security/nt_police/trooper/New()
 	. = ..()
 	assignment = "NTIS Trooper"
+	sechud_icon_state = "hudtrooper"
 
 /obj/item/card/id/advanced/centcom/ert/nt_police
 	registered_name = "NT Internal Security"
@@ -40,9 +43,10 @@
 	if(visualsOnly)
 		return
 
-	var/obj/item/implant/mindshield/mindshield = new /obj/item/implant/mindshield(human_to_equip)//hmm lets have centcom officials become revs
+	var/obj/item/implant/mindshield/mindshield = new /obj/item/implant/mindshield(human_to_equip)
 	mindshield.implant(human_to_equip, null, silent = TRUE)
-
+	if(human_to_equip.mind.has_antag_datum(/datum/antagonist/ert/nt_police))
+		RegisterSignal(human_to_equip, COMSIG_LIVING_DEATH, GLOBAL_PROC_REF(check_dead_ntis), TRUE) //- вот тут должен быть сигнал, но... Увы.
 	var/obj/item/card/id/ID_to_give = human_to_equip.wear_id
 	if(istype(ID_to_give))
 		shuffle_inplace(ID_to_give.access)
@@ -52,6 +56,9 @@
 		ID_to_give.update_label()
 		ID_to_give.update_icon()
 		human_to_equip.sec_hud_set_ID()
+
+/obj/item/radio/headset/headset_cent/alt/com
+	command = TRUE
 
 /datum/outfit/nt_police/agent
 	name = "NTIS Agent"
@@ -116,3 +123,15 @@
 	)
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/flashlight/seclite
+
+/datum/outfit/nt_police/agent/leader
+	name = "NTIS Agent-L"
+	ears = /obj/item/radio/headset/headset_cent/alt/com
+
+/datum/outfit/nt_police/swat/leader
+	name = "NTIS S.W.A.T.-L"
+	ears = /obj/item/radio/headset/headset_cent/alt/com
+
+/datum/outfit/nt_police/trooper/leader
+	name = "NTIS Trooper-L"
+	ears = /obj/item/radio/headset/headset_cent/alt/com
