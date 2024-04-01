@@ -120,7 +120,7 @@ GLOBAL_LIST_EMPTY(nt_reporter_list)
 	GLOB.nt_reporter_list += src
 	. = ..()
 
-/obj/item/nt_reporter/Del()
+/obj/item/nt_reporter/Destroy()
 	GLOB.nt_reporter_list -= src
 	. = ..()
 
