@@ -177,8 +177,9 @@ GLOBAL_LIST_EMPTY(nt_reporter_list)
 
 /obj/item/beamout_tool_nt/attack_self(mob/user, modifiers)
 	. = ..()
-	if(!user.mind.has_antag_datum(/datum/antagonist/ert))
-		to_chat(user, span_warning("You don't understand how to use this device."))
+	var/datum/antagonist/ert/nt_police/policeman = user.mind.has_antag_datum(/datum/antagonist/ert/nt_police)
+	if(!policeman)
+		to_chat(user, span_warning("You don't know the password of this tool!!!"))
 		return
 	message_admins("[ADMIN_LOOKUPFLW(user)] has begun to beam-out using their beam-out tool.")
 	to_chat(user, "You have begun the beam-out process. Please wait for the beam to reach the station.")
@@ -207,6 +208,11 @@ GLOBAL_LIST_EMPTY(nt_reporter_list)
 			sparks.set_up(10, 1, user_turf)
 			sparks.attach(user_turf)
 			sparks.start()
+			
+			// А ещё тут надо проверить остались ли участники отряда.
+			GLOB.nt_police_responder_info[policeman.type_of_police][NT_POLICE_AMT] -= 1
+			if(GLOB.nt_police_responder_info[policeman.type_of_police][NT_POLICE_AMT] == 0)
+				GLOB.nt_police_responder_info[policeman.type_of_police][NT_POLICE_DECLARED] = FALSE
 			qdel(user)
 	else
 		user.balloon_alert(user, "beam-out cancelled")

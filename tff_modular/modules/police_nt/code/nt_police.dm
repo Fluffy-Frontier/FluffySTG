@@ -1,17 +1,14 @@
 GLOBAL_LIST_INIT(nt_police_responder_info, list(
 	"nt_police_agent" = list(
 		NT_POLICE_AMT = 0,
-		NT_POLICE_VOTES = 0,
 		NT_POLICE_DECLARED = FALSE
 	),
 	"nt_police_swat" = list(
 		NT_POLICE_AMT = 0,
-		NT_POLICE_VOTES = 0,
 		NT_POLICE_DECLARED = FALSE
 	),
 	"nt_police_trooper" = list(
 		NT_POLICE_AMT = 0,
-		NT_POLICE_VOTES = 0,
 		NT_POLICE_DECLARED = FALSE
 	)
 ))
@@ -21,7 +18,7 @@ GLOBAL_VAR(call_NTIS_msg)
 
 /proc/check_dead_ntis(mob/living/whodead)
 	SIGNAL_HANDLER
-	var/datum/antagonist/A = whodead.mind.has_antag_datum(/datum/antagonist/ert/nt_police)
+	var/datum/antagonist/ert/nt_police/A = whodead.mind.has_antag_datum(/datum/antagonist/ert/nt_police)
 
 	//Цикл определения мёртвые ли челики.
 	if(A)
@@ -33,10 +30,10 @@ GLOBAL_VAR(call_NTIS_msg)
 			else
 				return FALSE
 
+	GLOB.nt_police_responder_info[A.type_of_police][NT_POLICE_AMT] = 0 // СПИСАНЫ
+	GLOB.nt_police_responder_info[A.type_of_police][NT_POLICE_DECLARED] = FALSE
 	var/who_we_call = "swat"
-	GLOB.nt_police_responder_info["nt_police_agent"][NT_POLICE_DECLARED] = FALSE
 	if(A.owner.has_antag_datum(/datum/antagonist/ert/nt_police/swat))
-		GLOB.nt_police_responder_info["nt_police_swat"][NT_POLICE_DECLARED] = FALSE
 		who_we_call = "troopers"
 	// До сюда мы дойдём лишь в том случае, если командаа полностью мертва. Тогда мы и вызываем следующее подкрепление.
 	// Это SWAT и Troopers. Сейчас будем пытаться узнать кто именно.
@@ -119,7 +116,6 @@ GLOBAL_VAR(call_NTIS_msg)
 		for(var/i in candidates)
 			var/mob/dead/observer/potential_leader = i
 			candidate_living_exps[potential_leader] = potential_leader.client?.get_exp_living(TRUE)
-
 		candidate_living_exps = sort_list(candidate_living_exps, cmp=/proc/cmp_numeric_dsc)
 		if(candidate_living_exps.len > 2) // Формируется лист из 3 топеров по времени. Я сделаю выбор из 2 людей.
 			candidate_living_exps = candidate_living_exps.Cut(3) // pick from the top ERT_EXPERIENCED_LEADER_CHOOSE_TOP contenders in playtime
@@ -181,6 +177,7 @@ GLOBAL_VAR(call_NTIS_msg)
 	antag_hud_name = "hud_spacecop"
 	suicide_cry = "FOR THE TRASEN!!"
 	leader = TRUE
+	var/type_of_police = "nt_police_agent"
 
 /datum/ert/nt_police
 	code = "Blue"
@@ -235,6 +232,7 @@ GLOBAL_VAR(call_NTIS_msg)
 /datum/antagonist/ert/nt_police/agent
 	name = "NTIS Agent"
 	role = "Internal Security Agent"
+	type_of_police = "nt_police_agent"
 	outfit = /datum/outfit/nt_police/agent
 
 /datum/antagonist/ert/nt_police/agent/leader
@@ -245,6 +243,7 @@ GLOBAL_VAR(call_NTIS_msg)
 /datum/antagonist/ert/nt_police/swat
 	name = "NTIS S.W.A.T. Officer"
 	role = "NTIS S.W.A.T. Officer"
+	type_of_police = "nt_police_swat"
 	outfit = /datum/outfit/nt_police/swat
 
 /datum/antagonist/ert/nt_police/swat/leader
@@ -255,6 +254,7 @@ GLOBAL_VAR(call_NTIS_msg)
 /datum/antagonist/ert/nt_police/trooper
 	name = "NTIS Trooper"
 	role = "NTIS Trooper"
+	type_of_police = "nt_police_trooper"
 	outfit = /datum/outfit/nt_police/trooper
 
 /datum/antagonist/ert/nt_police/trooper/leader

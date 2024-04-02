@@ -45,8 +45,10 @@
 
 	var/obj/item/implant/mindshield/mindshield = new /obj/item/implant/mindshield(human_to_equip)
 	mindshield.implant(human_to_equip, null, silent = TRUE)
-	if(human_to_equip.mind.has_antag_datum(/datum/antagonist/ert/nt_police))
+	if(human_to_equip.mind.has_antag_datum(/datum/antagonist/ert/nt_police/agent))
 		RegisterSignal(human_to_equip, COMSIG_LIVING_DEATH, GLOBAL_PROC_REF(check_dead_ntis), TRUE) //- вот тут должен быть сигнал, но... Увы.
+	if(human_to_equip.mind.has_antag_datum(/datum/antagonist/ert/nt_police/swat))
+		RegisterSignal(human_to_equip, COMSIG_LIVING_DEATH, GLOBAL_PROC_REF(check_dead_ntis), TRUE)
 	var/obj/item/card/id/ID_to_give = human_to_equip.wear_id
 	if(istype(ID_to_give))
 		shuffle_inplace(ID_to_give.access)
