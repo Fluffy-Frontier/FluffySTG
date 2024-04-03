@@ -12,6 +12,7 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
+#include "__odlint.dm"
 #include "_maps\_basemap.dm"
 #include "code\__byond_version_compat.dm"
 #include "code\_compile_options.dm"
@@ -3322,7 +3323,6 @@
 #include "code\modules\antagonists\traitor\objectives\final_objective\infect_ai.dm"
 #include "code\modules\antagonists\traitor\objectives\final_objective\objective_dark_matteor.dm"
 #include "code\modules\antagonists\traitor\objectives\final_objective\romerol.dm"
-#include "code\modules\antagonists\traitor\objectives\final_objective\space_dragon.dm"
 #include "code\modules\antagonists\traitor\objectives\final_objective\supermatter_cascade.dm"
 #include "code\modules\antagonists\valentines\heartbreaker.dm"
 #include "code\modules\antagonists\valentines\valentine.dm"
