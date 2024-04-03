@@ -35,3 +35,9 @@
 	// Snowflake for Ethereals
 	human.updatehealth()
 	human.updateappearance(mutcolor_update = TRUE)
+	// FLUFFY FRONTIER ADDITION START
+	human.set_blooper(pick(GLOB.blooper_list))
+	human.blooper_pitch = BLOOPER_PITCH_RAND(human.gender)
+	human.blooper_pitch_range = BLOOPER_VARIANCE_RAND
+	human.blooper_speed = rand(BLOOPER_DEFAULT_MINSPEED, BLOOPER_DEFAULT_MAXSPEED)
+	// FLUFFY FRONTIER ADDITION END
