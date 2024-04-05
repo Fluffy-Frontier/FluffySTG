@@ -1,6 +1,4 @@
 //attack with an item - open/close cover, insert cell, or (un)lock interface
-<<<<<<< HEAD
-=======
 
 /obj/machinery/power/apc/item_interaction(mob/living/user, obj/item/tool, list/modifiers, is_right_clicking)
 	. = ..()
@@ -222,7 +220,6 @@
 	update_appearance()
 	return ITEM_INTERACT_SUCCESS
 
->>>>>>> e90d93e4adf ([MIRROR] Replaces a number of deciseconds into SECONDS (#1812))
 /obj/machinery/power/apc/crowbar_act(mob/user, obj/item/crowbar)
 	. = TRUE
 
