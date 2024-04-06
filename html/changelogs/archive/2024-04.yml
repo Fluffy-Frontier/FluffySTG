@@ -159,3 +159,66 @@
   nikothedude:
   - bugfix: Root beer no longer causes laser carbines and disabler smgs to fire infinitely
       fast.
+2024-04-06:
+  00-Steven:
+  - refactor: APCs have had their item interaction chain refactored. This should functionally
+      be the same, but please report any issues.
+  - bugfix: 'All Nighter: fixed a runtime from not having a head, whether from hars/deletion/somesuch.'
+  - bugfix: 'All Nighter: losing and regaining your head while you had eyebags no
+      longer removes your eyebags until you''ve slept.'
+  - admin: Refresh button on the View Round Logs menu actually works, instead of just
+      adding a runtime to the logs (and not updating them).
+  Archie700:
+  - bugfix: changed value of cell charge from 5000 to 5 megajoules
+  Bisar:
+  - bugfix: Adjusted the code for changeling reviving stasis to only make them spend
+      chemicals once.
+  Blacklist897:
+  - balance: suit and cell chargers should draw from grid preventing instant apc blackouts
+      in most cases.
+  Cyprex:
+  - config: mech logging is now on by default. Existing config setups will not mirror
+      this change.
+  DATA-xPUNGED:
+  - bugfix: Fixes Alcoholic quirk selection
+  - bugfix: Fixes Junkie, Smoker, and Alcoholic not giving you more addiction when
+      you come clean.
+  KingkumaArt:
+  - bugfix: Moves that one wall on NorthStar to not block the maints passage
+  Majkl-J:
+  - bugfix: Observers can now see people's quirks again
+  Melbert:
+  - bugfix: Heretic sac restarts your heart
+  Momo8289:
+  - bugfix: Holographic energy swords have undergone some more rigorous safety inspections,
+      and should no longer be a danger to clumsy crew members.
+  Nerev4r:
+  - rscadd: Teshari are now more agile, better at hearing stuff, and can feast on
+      carrion!
+  - spellcheck: The language icon and description for Schechi has been reworked to
+      be more lore-compliant.
+  - qol: Ethereals now loop all their charging, whether from APCs or lights or cells.
+      As well as charging up APCs from their own supply!
+  - qol: More indepth feedback messaging for Ethereals charging, so you know what's
+      going on easier.
+  - balance: Ethereals are now 'insulated,' and no longer take permanent traumas from
+      reviving.
+  - balance: Ethereals are also now better against the cold, and no longer take toxin
+      damage from the second highest level of charge.
+  Rhials:
+  - rscadd: Nuclear Operatives now purchase an Intelligence Agent, who can watch cameras
+      and bodycams, move the shuttle, and provide radio support. Only 12 Telecrystals!
+  SchizophrenicFelinid:
+  - balance: Added EMP interactions for Qani-Laaca and Binyat implants.
+  Thunder12345:
+  - image: The jester costume now supports GAGS
+  Zergspower:
+  - bugfix: fixes Borg and Syndicate inducers not working
+  - bugfix: borg panel access now requires robotics access again
+  honkpocket:
+  - rscadd: Adds all versions of the Syndie clothing as fake, loadout-able gear instead
+      of just the Overalls
+  - balance: Fake Syndie clothing now isn't completely armorless, it has the same
+      armor as jumpsuits
+  - bugfix: The fake Syndie clothing display properly on Taur characters
+  - rscadd: The bouncer job can now access the janitor office
