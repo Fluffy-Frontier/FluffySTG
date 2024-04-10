@@ -288,3 +288,26 @@
   - qol: you may not bodyslam yourself as a demon
   - code_imp: slaughter and laughter demons are given their antag datum when their
       mind initializes
+2024-04-10:
+  00-Steven:
+  - bugfix: Lead acid batteries have had their power values fixed.
+  JohnFulpWillard:
+  - rscadd: A bunch of new medipens you can refill with the medipen refiller (survival/luxury/mutadone/saturnx/meth)
+  Melbert:
+  - bugfix: You can't fit items which are normally too large for a storage by fitting
+      it in the storage when it is small, then growing it to a larger size.
+  NeonNik2245:
+  - rscadd: Adds anosmia quirk
+  Pickle-Coding:
+  - bugfix: Fixes many instances of energy sources for ethereals supplying a thousand
+      times less energy than intended.
+  - bugfix: Fixes recharging stations not being able to charge ethereals.
+  - bugfix: Fixes recharge stations charging too fast.
+  - qol: Recharge stations display their recharging speed in formatted power, rather
+      than unformatted energy per cycle.
+  SyncIt21:
+  - bugfix: Reagent grinders display reagents of its beaker on examination
+  honkpocket:
+  - balance: Security bots now start with the 'check for weapon permit' option enabled
+  nikothedude:
+  - qol: Akula features are now documented in their species quirks
