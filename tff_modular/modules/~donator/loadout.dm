@@ -97,3 +97,8 @@
 	name = "Oktavia"
 	item_path= /obj/item/toy/plush/oktavia
 	ckeywhitelist = list("zanozkin")
+
+/datum/loadout_item/toys/maru
+	name = "Maru Plushie"
+	item_path = /obj/item/toy/plush/maru
+	ckeywhitelist = list("mercreaper", "skadi999")
