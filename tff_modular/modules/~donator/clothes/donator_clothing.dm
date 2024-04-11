@@ -131,7 +131,6 @@
 /obj/item/clothing/under/teshari/consultant/female
 	name = "crocs skirt"
 	icon_state = "zanozkin_consultant_skirt"
-	worn_icon_teshari = "zanozkin_consultant_skirt"
 
 /obj/item/clothing/under/teshari/nt_combineso
 	name = "combeniso NT"
