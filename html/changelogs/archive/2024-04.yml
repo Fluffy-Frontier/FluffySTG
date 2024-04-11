@@ -311,3 +311,86 @@
   - balance: Security bots now start with the 'check for weapon permit' option enabled
   nikothedude:
   - qol: Akula features are now documented in their species quirks
+2024-04-11:
+  Absolucy:
+  - qol: Added balloon alerts whenever you start plunging something (i.e )
+  ArcaneMusic:
+  - bugfix: Vorpal Scythe execute messages now read correctly.
+  Bilbo367:
+  - bugfix: fixes ody sleeper UI not updating to new chems to inject.
+  - bugfix: fixes ody sleeper not telling user why they can't pick up a person.
+  - code_imp: gives a common method for giving reagent list data to .tsx
+  Bisar:
+  - bugfix: Mechs will no longer delete their living non-occupant contents when destroyed.
+  Boviro:
+  - qol: Atmospherics Overalls now can store fire extinguishers in the suit storage
+      slot
+  - balance: Increased Advanced Extinguisher capacity to 100u
+  Higgin:
+  - balance: 'Spies can now get five additional types of objective: Protect Human,
+      Protect Nonhuman, Detain, Jailbreak, and Escape (Exile).'
+  - balance: Spy objectives now feature a much wider array of targets and treatments.
+  - refactor: added no_failure var to objectives. Objectives with no_failure = TRUE
+      do not print a success at roundend. Custom objectives use this now instead of
+      a separate string.
+  IndieanaJones:
+  - qol: Basic dexterous mobs now have a health doll and screen damage indication
+      like other basic mobs.
+  Jacquerel:
+  - bugfix: Medbots can no longer be used as especially large golden ID cards
+  JohnFulpWillard, Zeek the Rat:
+  - rscadd: Battle Arcade has been completely overhauled in a new progression system,
+      this time using TGUI.
+  - rscadd: The Curator's keys can now reset arcade cabinets.
+  - balance: You now need to be literate to play arcade games, except for Mediborg's
+      Amputation Adventure.
+  - bugfix: You can no longer screwdriver emagged arcade consoles. Accept your fate.
+  - bugfix: Silicons can no longer play Mediborg's Amputation Adventure.
+  LT3:
+  - bugfix: Multi-cell charger will now actually charge cells again, additionally
+      they won't kill your APC while doing it!
+  Pickle-Coding:
+  - balance: Cells will only consider 0.1% of their charge for calculating shock damage.
+  RaShCat:
+  - bugfix: custom say able to use unicode.
+  Rhials:
+  - bugfix: The tide of post-round blob zombies when a blob wins will no longer break
+      the speakers in your headset.
+  SchizophrenicFelinid:
+  - qol: Small changes to make life a little easier on DS-2 - such as a defibrillator,
+      better stock parts, and extra building materials.
+  SethLafuente:
+  - bugfix: Fixes Radiation Hood not having FOV blockage
+  SomeRandomOwl:
+  - bugfix: Telepathy quirk no longer sends empty messages on hitting the cancel button
+      or closing the window.
+  - balance: Adjusted amount of power required before APC's arc
+  SomeRandomOwl, Lt3:
+  - bugfix: Synth power cord works again
+  SyncIt21:
+  - bugfix: Autolathe correctly computes the print amount of custom material items
+      like toolboxes and doesn't grey out its print button
+  - refactor: refactors how objects are deconstructed in relation to the `NO_DECONSTRUCTION`
+      flag. Certain objects & machinery may display different tool interactions &
+      behaviours when destroyed/deconstructed. Report these changes if you feel like
+      they are bugs
+  Thunder12345:
+  - rscadd: Added support for directional explosions.
+  - rscadd: Rocket launcher backblast is now 271% more explosive, check your six for
+      friendlies!
+  - rscadd: X4 charges now explode in a cone away from the user when placed on a sufficiently
+      solid object.
+  - bugfix: 'X4 charges will now behave correctly when placed on dense atoms (note:
+      don''t try to read a variable from an atom you just blew up)'
+  Watermelon914:
+  - admin: LUA - Adds a new library called handler_group. Include it in your files
+      by doing require('handler_group')
+  mc-oofert:
+  - bugfix: deathmatch can no longer occassionally send people to nullspace
+  necromanceranne:
+  - image: Updates the colors of various material datum to bring them closer in-line
+      with their actual material stacks
+  - image: Improves the sprites for the material knight armor and helmet.
+  tf-4:
+  - bugfix: Trying to buy a NIFsoft without a NIF implant will now tell you why it
+      failed.
