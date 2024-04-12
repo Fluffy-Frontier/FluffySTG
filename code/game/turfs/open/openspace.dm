@@ -32,7 +32,6 @@
 	return INITIALIZE_HINT_LATELOAD
 
 /turf/open/openspace/LateInitialize()
-	. = ..()
 	AddElement(/datum/element/turf_z_transparency)
 
 /turf/open/openspace/ChangeTurf(path, list/new_baseturfs, flags)
@@ -188,13 +187,9 @@
 	if(!T)
 		return
 	if(T.turf_flags & NO_RUINS && protect_ruin)
-<<<<<<< HEAD
-		ChangeTurf(replacement_turf, null, CHANGETURF_IGNORE_AIR)
-=======
 		var/turf/newturf = ChangeTurf(replacement_turf, null, CHANGETURF_IGNORE_AIR)
 		if(!isopenspaceturf(newturf)) // only openspace turfs should be returning INITIALIZE_HINT_LATELOAD
 			return INITIALIZE_HINT_NORMAL
->>>>>>> d8c2c7cb582 ([MIRROR] [NO GBP] Fixes spurious runtime caused by icemoon (again) (#1923))
 		return
 	if(!ismineralturf(T) || !drill_below)
 		return
