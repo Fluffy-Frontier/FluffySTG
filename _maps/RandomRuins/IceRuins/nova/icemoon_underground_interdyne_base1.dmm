@@ -620,6 +620,21 @@
 	},
 /obj/structure/rack,
 /obj/effect/turf_decal/box/white,
+/obj/item/gps{
+	gpstag = "INTRDYN0"
+	},
+/obj/item/gps{
+	gpstag = "INTRDYN0"
+	},
+/obj/item/gps{
+	gpstag = "INTRDYN0"
+	},
+/obj/item/gps{
+	gpstag = "INTRDYN0"
+	},
+/obj/item/gps{
+	gpstag = "INTRDYN0"
+	},
 /turf/open/floor/iron/diagonal,
 /area/ruin/interdyne_planetary_base/cargo)
 "bR" = (
@@ -4413,6 +4428,7 @@
 /area/ruin/interdyne_planetary_base/serv/hydr)
 "lq" = (
 /obj/machinery/light_switch/directional/west,
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/eng)
 "lr" = (
@@ -6119,7 +6135,8 @@
 /area/ruin/interdyne_planetary_base/eng)
 "pq" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/closed/wall/r_wall/syndicate,
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/turf/open/floor/plating/reinforced,
 /area/ruin/interdyne_planetary_base/eng)
 "pr" = (
 /obj/structure/window/reinforced/survival_pod/spawner/directional/south,
@@ -7390,6 +7407,10 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/icemoon/underground/explored)
+"Pp" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/eng)
 "PD" = (
 /obj/structure/railing,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -10303,7 +10324,7 @@ lX
 lX
 ni
 my
-nw
+mZ
 pp
 pu
 py
@@ -10362,7 +10383,7 @@ lT
 mR
 nj
 pU
-jY
+nw
 pq
 jY
 jY
@@ -10422,8 +10443,8 @@ kk
 kk
 mA
 kk
-me
-qZ
+Pp
+jY
 as
 ab
 ab
@@ -10481,9 +10502,9 @@ dZ
 mb
 mB
 kk
-ac
+me
+qZ
 as
-ab
 ab
 ab
 ab
@@ -10540,8 +10561,8 @@ le
 mc
 mW
 kk
-ab
-ab
+ac
+as
 ab
 ab
 ab
