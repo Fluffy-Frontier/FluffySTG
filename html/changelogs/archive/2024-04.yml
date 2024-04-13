@@ -448,3 +448,23 @@
   disappointedButNotSuprised:
   - rscadd: Coffee machines can now carry over reagents from the beans to the coffee
       (surely no one will inject poison into them)
+2024-04-13:
+  00-Steven:
+  - refactor: Instead of being hardcoded to the pen, renaming items is now an element.
+      Currently only pens have this, and functionality should be the same, but please
+      report it if you find any items that were renamable but now aren't.
+  Chelxox:
+  - balance: Tajarans are able to land on their feet (like felinids).
+  Horatio22:
+  - spellcheck: grammar fixes in the roundstart advisory warnings
+  JohnFulpWillard:
+  - refactor: Blueprints now use TGUI.
+  - qol: Blueprints can now be used while lying down.
+  - bugfix: Mech pads, door buttons, message monitors, tram machines, abductor consoles
+      & holodeck computers now use power.
+  SyncIt21:
+  - bugfix: chem master properly shuts down if it loses power mid printing and won't
+      transfer reagents for the same
+  hyperjll:
+  - balance: Haloperidol now purges 2 units per second of itself, should the victim
+      have zero stamina. (Stamcrit)
