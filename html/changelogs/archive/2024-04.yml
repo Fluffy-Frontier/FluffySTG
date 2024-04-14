@@ -468,3 +468,58 @@
   hyperjll:
   - balance: Haloperidol now purges 2 units per second of itself, should the victim
       have zero stamina. (Stamcrit)
+2024-04-14:
+  DaCoolBoss:
+  - spellcheck: Fixes a typo in the cargo console.
+  Iamgoofball:
+  - bugfix: Fixes AI lag by re-adding idle mode to all AI that was lost with the simple
+      mob to basic mob conversion.
+  - bugfix: AI controllers with no clients around for 14 tiles will move into idle
+      mode and stop planning or acting.
+  - bugfix: AI controllers will now record how much time was spent on planning or
+      un-idling AI controllers.
+  Ketrai:
+  - qol: chef equipment can now deposit and withdraw to/from trays!
+  - qol: chef now has access to griddle and oven sized trays!
+  - qol: service can now print soup pots
+  Melbert:
+  - bugfix: You can't change the GPS tag of something unless you can actually use
+      the GPS
+  - bugfix: You can't set the teleporter to a location unless you can actually use
+      the teleporter
+  - bugfix: You can't reply to request console requests unless you can actually use
+      the console
+  - bugfix: You can't update AI lawboards unless you're actually holding them
+  - bugfix: You can't update a borg rename board unless you're actually holding it
+  - bugfix: You can't mess with plumbing machines unless you can actually use them
+  - bugfix: You can't recolor / relayer ducts unless you're actually holding them
+  - bugfix: You can't magically wire APCs and SMESs unless you're right by them
+  - bugfix: You can't use Stargazer Telepathy on people who you can't see
+  - bugfix: You can't configure the Inspector Hat unless you can actually use it
+  Metekillot:
+  - bugfix: Being in critical condition no longer damages zombies.
+  - code_imp: TRAIT_NODEATH will actually stop you dying in (most) cases.
+  SomeRandomOwl:
+  - qol: Added TGUI color prefixes for Tarkon :k, Solfed :l, Guild :p, Interdyne :w
+      and Cybersun :q
+  - rscadd: Two radio headsets for the Solfed EMT team, and Solfed Marshel / SWAT
+      / Marine teams
+  StrangeWeirdKitten:
+  - balance: The upload and communication boards directly have trackers installed,
+      activated only when authenticated.
+  Watermelon914:
+  - bugfix: 'LUA: Registering a signal on a deleted datum will throw a more descriptive
+      error message.'
+  jlsnow301:
+  - bugfix: Airlock electronics and other access-config type UIs should look much
+      better.
+  - bugfix: 'Deviants buffed: Rogue shoelacing, pickpocketing and restraint resisting
+      no longer give cogbar icons.'
+  nikothedude:
+  - rscadd: '*esigh, for exasperated sighing'
+  wesoda25:
+  - bugfix: blood rites - will no longer delete after running out of charges
+  - bugfix: blood rites - now heal shades as well
+  - bugfix: blood rites - now charge 1.65x for self healing as opposed to the ~2x
+      they were before
+  - code_imp: blood rites code hurts my eyes a bit less now
