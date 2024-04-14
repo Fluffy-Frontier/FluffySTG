@@ -469,6 +469,11 @@
   - balance: Haloperidol now purges 2 units per second of itself, should the victim
       have zero stamina. (Stamcrit)
 2024-04-14:
+  Chelxox:
+  - qol: The Blueshift's warden's office fire alarm was repositioned so it can actually
+      be interacted with.
+  - qol: The bridge's spare ID safe on Blueshift can be walked on and doesn't block
+      the path anymore.
   DaCoolBoss:
   - spellcheck: Fixes a typo in the cargo console.
   Iamgoofball:
@@ -482,6 +487,8 @@
   - qol: chef equipment can now deposit and withdraw to/from trays!
   - qol: chef now has access to griddle and oven sized trays!
   - qol: service can now print soup pots
+  LT3:
+  - rscdel: The unmistakable odour of decaying waste will no longer bombard your nostrils
   Melbert:
   - bugfix: You can't change the GPS tag of something unless you can actually use
       the GPS
@@ -510,6 +517,16 @@
   Watermelon914:
   - bugfix: 'LUA: Registering a signal on a deleted datum will throw a more descriptive
       error message.'
+  YehnBeep:
+  - bugfix: Fixed icebox interdyne outpost missing GPSs and canisters.
+  - qol: Blueshift's mixing/crystallizer room has had some pipes moved out of the
+      way of the central area.
+  Zergspower:
+  - rscadd: Adds a new powersource - A miniature Reactor - for ghost roles to replace
+      bluespace SMES and the need to RTG Spam
+  - qol: BMD now has a mining scanner! Gone are the days of accidentally blowing your
+      home apart trying to get silver to make one
+  - qol: Freighter, DS2 and Ice Interdyne receive a new reactor to give baseline power
   jlsnow301:
   - bugfix: Airlock electronics and other access-config type UIs should look much
       better.
@@ -517,6 +534,11 @@
       no longer give cogbar icons.'
   nikothedude:
   - rscadd: '*esigh, for exasperated sighing'
+  vinylspiders:
+  - bugfix: the station is now slightly less haunted - ghosts can no longer unflip
+      tables.
+  - bugfix: the remote flipping mechanisms have been removed from all the tables.
+      borgs can no longer remotely tableflip.
   wesoda25:
   - bugfix: blood rites - will no longer delete after running out of charges
   - bugfix: blood rites - now heal shades as well
