@@ -60,9 +60,15 @@
 	icon_state = "producebin"
 	icon = 'modular_nova/modules/primitive_structures/icons/storage.dmi'
 	resistance_flags = FLAMMABLE
+<<<<<<< HEAD
 	obj_flags = parent_type::obj_flags | NO_DECONSTRUCTION
 	base_build_path = /obj/machinery/smartfridge/produce_bin
 	base_icon_state = "produce"
+=======
+	base_build_path = /obj/machinery/smartfridge/wooden
+	base_icon_state = "producebin"
+	icon_state = "producebin"
+>>>>>>> 2e0fab72aaa (Mapping CI Failures Fix (attempts) (#2000))
 	use_power = NO_POWER_USE
 	light_power = 0
 	idle_power_usage = 0
@@ -71,7 +77,45 @@
 	can_atmos_pass = ATMOS_PASS_YES
 	visible_contents = TRUE
 
+<<<<<<< HEAD
 /obj/machinery/smartfridge/produce_bin/accept_check(obj/item/item_to_check)
+=======
+/obj/machinery/smartfridge/wooden/Initialize(mapload)
+	. = ..()
+	if(type == /obj/machinery/smartfridge/wooden) // don't even let these prototypes exist
+		return INITIALIZE_HINT_QDEL
+
+// formerly NO_DECONSTRUCTION
+/obj/machinery/smartfridge/wooden/default_deconstruction_screwdriver(mob/user, icon_state_open, icon_state_closed, obj/item/screwdriver)
+	return NONE
+
+/obj/machinery/smartfridge/wooden/default_deconstruction_crowbar(obj/item/crowbar, ignore_panel, custom_deconstruct)
+	return NONE
+
+/obj/machinery/smartfridge/wooden/default_pry_open(obj/item/crowbar, close_after_pry, open_density, closed_density)
+	return NONE
+
+/obj/machinery/smartfridge/wooden/crowbar_act(mob/living/user, obj/item/tool)
+	user.balloon_alert_to_viewers("disassembling...")
+	if(!tool.use_tool(src, user, 2 SECONDS, volume = 100))
+		return
+
+	new /obj/item/stack/sheet/mineral/wood(drop_location(), 10)
+	deconstruct(TRUE)
+	return ITEM_INTERACT_SUCCESS
+
+/obj/machinery/smartfridge/wooden/structure_examine()
+	. = span_info("The whole rack can be [EXAMINE_HINT("pried")] apart.")
+
+/obj/machinery/smartfridge/wooden/produce_bin
+	name = "produce bin"
+	desc = "A wooden hamper, used to hold plant products and try to keep them safe from pests."
+	icon_state = "producebin"
+	base_build_path = /obj/machinery/smartfridge/wooden/produce_bin
+	base_icon_state = "producebin"
+
+/obj/machinery/smartfridge/wooden/produce_bin/accept_check(obj/item/item_to_check)
+>>>>>>> 2e0fab72aaa (Mapping CI Failures Fix (attempts) (#2000))
 	var/static/list/accepted_items = list(
 		/obj/item/food/grown,
 		/obj/item/grown,
