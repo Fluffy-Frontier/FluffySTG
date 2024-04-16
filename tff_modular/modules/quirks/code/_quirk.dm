@@ -4,3 +4,12 @@
 
 /datum/quirk/oversized
 	allow_for_donator = TRUE
+
+/datum/quirk/equipping/entombed
+	veteran_only = TRUE
+
+/datum/quirk/item_quirk/underworld_connections
+	veteran_only = TRUE
+  
+/datum/quirk/item_quirk/pride_pin
+	hidden_quirk = TRUE

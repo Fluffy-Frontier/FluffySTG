@@ -229,6 +229,10 @@
 	uses_advanced_reskins = FALSE
 	unique_reskin = NONE
 
+/obj/item/clothing/shoes/jackboots/heel/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/squeak, list('modular_nova/master_files/sound/effects/heel1.ogg' = 1, 'modular_nova/master_files/sound/effects/heel2.ogg' = 1), 50)
+
 // Donation reward for Bloodrite
 /obj/item/clothing/shoes/clown_shoes/britches
 	desc = "The prankster's standard-issue clowning shoes. They look extraordinarily cute. Ctrl-click to toggle waddle dampeners."
@@ -905,7 +909,7 @@
 // Donation reward for CandleJax
 /obj/item/clothing/under/plasmaman/candlejax2
 	name = "azulean's environment suit"
-	desc = "An Azulean-made Enviro-Suit. Fitted to the Azulean form, it has surplus containment fabric designed to give the solidified mass of plasma that was once a tail some breathing room."
+	desc = "A form-fitting and modified bodysuit designed to fit the Akulean body. Embossments of the formal crest of the Kingdom of Agurkrral are seen on the shoulderpads."
 	icon = 'modular_nova/master_files/icons/donator/obj/clothing/uniform.dmi'
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/uniform.dmi'
 	icon_state = "ana_envirosuit"
