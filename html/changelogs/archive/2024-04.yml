@@ -587,6 +587,9 @@
   Ben10Omintrix:
   - bugfix: minebots no longer bomb each other (and other miners) through landmines
   - bugfix: minebot shields will no longer lose color in lower z levels
+  Iajret:
+  - bugfix: wiring newly built SMESes should place new teminal under the player and
+      not under the SMES itself.
   Jacquerel:
   - balance: The Bioscrambler will now actively attempt to get closer to living targets
       rather than chilling in a closet nobody goes into (unless you trap it in a containment
@@ -597,14 +600,23 @@
   - qol: Crayons can now draw up to 4 letters at a time per tile.
   - bugfix: Battle arcade's higher levels no longer gives you a "Gear" gear, and counterattacks
       can now properly kill enemies.
+  - bugfix: Advanced camera consoles now boots you off when you're moved out of reach.
   LT3:
   - rscdel: Removed modular override of fire alarm lighting
   - balance: Using the delam panic button will now reset the incident display counter
       to 0
   Nerev4r:
   - bugfix: Ethereals now get their proper revive maluses.
+  SyncIt21:
+  - code_imp: renamed `NO_DECONSTRUCTION` to `NO_DEBRIS_AFTER_DECONSTRUCTION` so its
+      name matches its intended purpose
+  - bugfix: fixes some items that incorrectly used `NO_DECONSTRUCTION` prior to its
+      refactor, meaning makes some objects non deconstructable again
   Thunder12345:
   - spellcheck: Pre-Approved Cyborg Candidates are no longer "Cantidates"
+  ZephyrTFA:
+  - admin: Something changed, but you shouldn't be able to notice. If verbs are funky
+      report this to <946283057915232337> on discord.
   jlsnow301:
   - rscadd: Added a loot window for alt-clicking tiles.
   - rscdel: Removed the item browser from the stat panel.
