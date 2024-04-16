@@ -14,16 +14,17 @@
 	can_charge = FALSE
 	ammo_type = list(
 		/obj/item/ammo_casing/energy/disabler/blueshield,
-		/obj/item/ammo_casing/energy/laser/blueshield, 
+		/obj/item/ammo_casing/energy/laser/blueshield,
 	)
 	cell_type = /obj/item/stock_parts/cell/super // Батарея с которой спавнится револьвер.
-	
+
 	var/obj/item/stock_parts/cell/zerocell/no_cell
 	var/acceptable_cell_type = /obj/item/stock_parts/cell
 
 /obj/item/gun/energy/blueshield/Initialize(mapload)
 	. = ..()
 	no_cell = new()
+	ADD_TRAIT(src, TRAIT_ALT_CLICK_BLOCKER, REF(src))
 
 /obj/item/gun/energy/blueshield/examine(mob/user)
 	. = ..()
@@ -43,13 +44,13 @@
 	cell.update_appearance()
 	user.put_in_hands(cell)
 	cell = no_cell
-	
+
 	playsound(usr, SFX_REVOLVER_SPIN, 30, FALSE)
 	update_appearance()
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD) // Для СкайРатовского ХУДа.
 
 	balloon_alert(user, "cell ejected")
-	
+
 
 /obj/item/gun/energy/blueshield/proc/try_insert_cell(var/obj/item/stock_parts/cell/new_cell, var/mob/user)
 	if(!new_cell)
@@ -68,7 +69,7 @@
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD) // Для СкайРатовского ХУДа.
 	balloon_alert(user, "cell inserted")
 	return TRUE
-	
+
 
 /obj/item/gun/energy/blueshield/AltClick(mob/user)
 	. = ..()
@@ -95,7 +96,7 @@
 	if(cell == no_cell)
 		return TRUE
 	return FALSE
-	
+
 /*
 *	(Почти) пустая батарейка.
 *	Её цель - встать на место извлечённой, чтобы не ломать неожиданным null'ом ничего.
