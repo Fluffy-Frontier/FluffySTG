@@ -121,7 +121,6 @@
 	user.remote_control = null
 	current_user = null
 	playsound(src, 'sound/machines/terminal_off.ogg', 25, FALSE)
-	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 
 /obj/machinery/computer/camera_advanced/on_set_is_operational(old_value)
 	if(!is_operational)
