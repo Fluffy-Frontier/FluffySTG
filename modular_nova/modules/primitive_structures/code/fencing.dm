@@ -6,7 +6,7 @@
 	icon = 'modular_nova/modules/primitive_structures/icons/wooden_fence.dmi'
 	icon_state = "fence"
 	resistance_flags = FLAMMABLE
-	flags_1 = NO_DECONSTRUCTION | ON_BORDER_1
+	flags_1 = ON_BORDER_1
 	/// If we randomize our icon on spawning
 	var/random_icons = TRUE
 
@@ -21,12 +21,6 @@
 	)
 	update_appearance()
 
-<<<<<<< HEAD
-=======
-/obj/structure/railing/wooden_fencing/atom_deconstruct(disassembled)
-	var/obj/plank = new /obj/item/stack/sheet/mineral/wood(drop_location(), 5)
-	transfer_fingerprints_to(plank)
-  
 // formerly NO_DECONSTRUCTION
 /obj/structure/railing/wirecutter_act(mob/living/user, obj/item/tool)
 	return NONE
@@ -38,7 +32,6 @@
 	deconstruct()
 	return TRUE
 
->>>>>>> 49326b6e529 (Makes wooden fences need a crowbar to deconstruct (#1998))
 // Fence gates for the above mentioned fences
 
 /obj/structure/railing/wooden_fencing/gate
