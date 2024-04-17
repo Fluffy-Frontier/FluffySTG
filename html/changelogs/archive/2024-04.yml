@@ -632,6 +632,9 @@
       else
   AMyriad:
   - image: Fixed the lobby menu's collapse button being offset by a pixel
+  - bugfix: Probably fixed directional tinted windows looking like directional frosted
+      windows
+  - image: Deleted a bunch of unused structure sprites
   Ben10Omintrix:
   - bugfix: basic bots no longer start with all access
   Chelxox:
@@ -646,22 +649,44 @@
   JohnFulpWillard:
   - bugfix: Medipens can no longer be deepfried, closing an exploit that allowed people
       to drain/inject chems into it with saltshakers and IV drips.
+  LT3:
+  - qol: Multi-cell charging rack cell charging power increased to 1.5MW
+  Melbert:
+  - bugfix: Blobs may rejoice, welding torches now consume fuel when attacking objects
+      again after two years.
+  - refactor: Staff of Healing should perform slightly better.
   RaShCat:
   - rscadd: NTIS for NTR
   - rscadd: Personal communication console for NTR
+  Rhials:
+  - sound: Nightmare has a new sound effect for entering/exiting shadow jaunt. It
+      also no longer can be heard through walls.
   SyncIt21:
   - bugfix: Ordinance lab igniter in Icebox works again
   - bugfix: facescarf ui toggle button works again
   - bugfix: advanced camera consoles correctly deactivate when something happens(no
       proximity, no power etc) to its user
+  - bugfix: closets & crates will dump all contents out first before deleting itself
+      regardless of `NO_DEBRIS_AFTER_DECONSTRUCTION` thus not for e.g. hard deleting
+      mobs inside it
   TheRyeGuyWhoWillNowDie:
   - bugfix: strip menu sensors change respects locked sensors
   Vect0r:
   - bugfix: 'BIRDSHOT: the clown now has a megaphone. Go honk!'
   Xackii:
   - bugfix: Birdshot now have engi wardrope
+  Zergspower:
+  - rscadd: Replaces the Chevvy with the Burst for the BMD role
+  - qol: rebrands the BMD to be more of a trader route, with an incentive to recruit
+      a partner from the station.
+  - code_imp: Ghost roles defined with an ID are excluded from paychecks properly
+      now
+  - code_imp: the Blackmarket area is not longer magically powered
   Zytolg:
   - bugfix: Cleans up some rocks on Birdshot
+  jlsnow301:
+  - bugfix: CentCom dispatched a team of interns to fix the loot panel's loading message.
+      It should now load properly. It did before too, but now the message is fixed.
   mc-oofert:
   - bugfix: tramstation AI sat starts full
   vinylspiders:
