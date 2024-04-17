@@ -620,3 +620,49 @@
   jlsnow301:
   - rscadd: Added a loot window for alt-clicking tiles.
   - rscdel: Removed the item browser from the stat panel.
+2024-04-17:
+  00-Steven:
+  - bugfix: RPEDs can be used on vendors again. Note that only bluespace RPEDs can
+      carry vendor refills as of writing.
+  - bugfix: RPEDs can display vendor parts again.
+  - bugfix: Restocking vendors gives credits whether done manually or by RPEDs.
+  - bugfix: Vendors reset their contained credits when restocked.
+  1393F:
+  - qol: the supermatter scram machine no longer blocks placement of vents/anything
+      else
+  AMyriad:
+  - image: Fixed the lobby menu's collapse button being offset by a pixel
+  Ben10Omintrix:
+  - bugfix: basic bots no longer start with all access
+  Chelxox:
+  - bugfix: Primitive wooden fencing drops wood upon deconstruction (instead of iron
+      rods)
+  Jacquerel:
+  - admin: Reactivating an anomaly core via the anomaly releaser is now logged.
+  - bugfix: Fixes various bugs related to dimensional/spectral anomalies moving when
+      they should not.
+  - bugfix: Anomalous Research ruin Bioscrambler anomalies won't home in on targets
+  - bugfix: Bioscrambler won't randomly drop its target for no reason
+  JohnFulpWillard:
+  - bugfix: Medipens can no longer be deepfried, closing an exploit that allowed people
+      to drain/inject chems into it with saltshakers and IV drips.
+  RaShCat:
+  - rscadd: NTIS for NTR
+  - rscadd: Personal communication console for NTR
+  SyncIt21:
+  - bugfix: Ordinance lab igniter in Icebox works again
+  - bugfix: facescarf ui toggle button works again
+  - bugfix: advanced camera consoles correctly deactivate when something happens(no
+      proximity, no power etc) to its user
+  TheRyeGuyWhoWillNowDie:
+  - bugfix: strip menu sensors change respects locked sensors
+  Vect0r:
+  - bugfix: 'BIRDSHOT: the clown now has a megaphone. Go honk!'
+  Xackii:
+  - bugfix: Birdshot now have engi wardrope
+  Zytolg:
+  - bugfix: Cleans up some rocks on Birdshot
+  mc-oofert:
+  - bugfix: tramstation AI sat starts full
+  vinylspiders:
+  - bugfix: you can deconstruct wooden fences again, but now you have to use a crowbar
