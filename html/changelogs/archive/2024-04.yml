@@ -691,3 +691,47 @@
   - bugfix: tramstation AI sat starts full
   vinylspiders:
   - bugfix: you can deconstruct wooden fences again, but now you have to use a crowbar
+2024-04-18:
+  Ben10Omintrix:
+  - rscadd: miners can now purchase grapple guns
+  - code_imp: The way mobs idle has been refactored, please report any issues with
+      non-reactive mobs
+  Iajret:
+  - bugfix: fixes heretics not getting their targets when antag opt-in disabled
+  LT3:
+  - balance: Rebalanced alcohol intoxication effects.
+  - balance: A unit of alcohol will now last longer in your system
+  - balance: Alcohol intoxicates at the same rate regardless if you chug it all at
+      once or sip it over a few minutes
+  - balance: Reduced light drinker quirk's booze penalty from 100% to 33%
+  Melbert:
+  - rscadd: Adds the Strong Stomach quirk, which allows you to eat grimy food without
+      worry about disease, and makes you a bit more resilient to the effects of vomiting.
+  - rscdel: Deviant Tastes no longer prevents you from getting a negative moodlet
+      from eating dirty food. Strong Stomach does that now.
+  - rscadd: Being deafnened from a loud sound (flashbang, explosions) will now force
+      people not naturally deaf to shout
+  - rscadd: Ear damage multiplier now only applies to taking damage, not healing damage,
+      meaning Felinids (who take 2x the ear damage) will no longer heal ear damage
+      2x faster.
+  - refactor: Ears have been refactored slightly, ear deafness should now update more
+      snappily
+  SomeRandomOwl:
+  - bugfix: Interdyne has noticed that the syndicate has stolen their secret recipe
+      for sanusfentynal, through extensive legal battles they have reclaimed their
+      stolen recipe. (AKA it no longer spawns in space ruins)
+  - rscadd: Added a variant of the interdyne modsuit to interdynes shuttle
+  Zergspower:
+  - qol: re-enabled Borg Resizing for wide and tall borgs
+  jlsnow301:
+  - bugfix: Netpods have had their security against exploits increased.
+  - bugfix: Bit avatars no longer have access to free binary comms with the AI outfit
+  mc-oofert:
+  - bugfix: you no longer need to put your sleeping carp gloves off and on in Deathmatch
+      to get the martial art
+  nikothedude:
+  - rscadd: Synthetic electrical damage can no longer worsen if its currently being
+      repaired
+  san7890:
+  - rscadd: Regal Rats are now able to tear down those colorful posters those weird
+      grey creatures keep spackling up on the walls of their rightful domain.
