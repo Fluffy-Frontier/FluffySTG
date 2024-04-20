@@ -57,7 +57,7 @@
 		to_chat(equipper, span_warning("[src] is far too small for you!"))
 		return FALSE
 	return ..()
-	
+
 /obj/item/clothing/under/teshari
 	name = "teshari base"
 	desc = "HOW YOU GET THIS?"
@@ -86,9 +86,6 @@
 /obj/item/clothing/suit/teshari/labcoat/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/toggle_icon)
-	
-/obj/item/clothing/suit/teshari/AltClick(mob/user)
-	. = ..()
 
 /obj/item/clothing/suit/teshari/graycoat
 	name = "grey coat"
@@ -104,7 +101,7 @@
 
 /obj/item/clothing/suit/teshari/jacket/noblue
 	icon_state = "zanozkin_coldcoat_noblue"
-	
+
 
 /obj/item/clothing/suit/teshari/russian_jacket
 	name = "russian raptor coat"
