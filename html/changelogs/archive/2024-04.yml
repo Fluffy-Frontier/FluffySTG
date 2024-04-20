@@ -802,3 +802,41 @@
   starrm4nn:
   - qol: Replaced the surgical tools in the Primary Surgery Theatre with 2 Surgery
       Trays.
+2024-04-20:
+  Iamgoofball:
+  - bugfix: Carps migrating through the station no longer idle so they don't get stuck
+      after spawning until someone walks by.
+  LT3:
+  - balance: Increased tesla coil zap conversion capacity
+  Motho:
+  - rscadd: Added wizard-themed deathmatch map.
+  - rscadd: Added mystery wand box.
+  Rhials:
+  - qol: Water tiles now extinguish fires on items and people.
+  Sightld2:
+  - bugfix: Ants are no longer picky eaters. Low Purity sugar will no longer result
+      in less Ants than you started with.
+  SyncIt21:
+  - code_imp: most cell power usages are scaled with defined constants to help adapt
+      to future changes
+  - bugfix: plumbing machinery begins processing only when wrenched & ends when unwrenched
+  - bugfix: plumbing machinery uses energy only when wrenched & doing work, will stop/use
+      less energy when idle
+  - bugfix: plumbing grinder chemical will grinds & juice stuff correctly i.e. prefer
+      grinding over juicing for most stuff
+  Vishenka0704:
+  - qol: added mass craft for personal crafting
+  ZephyrTFA:
+  - admin: Player Panel is back
+  - admin: New dropdown to force change a mob's name and the attached client's preferences.
+  iliyaxox:
+  - spellcheck: '''inisimin'' verb corrected to ''invisimin'''
+  jlsnow301:
+  - rscadd: The lootpanel now works at range.
+  - rscadd: Screentips for reskinnable items.
+  - bugfix: Alt click interactions have been refactored, which may lead to unintentional
+      changes to gameplay. Report any issues, please.
+  - bugfix: Mecha pilots are no longer bothered by incessant loot panels while holding
+      ALT for strafe disable.
+  vinylspiders:
+  - bugfix: fixes the preference menu bluescreen
