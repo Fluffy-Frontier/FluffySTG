@@ -91,18 +91,6 @@
 
 	chassis.toggle_strafe()
 
-<<<<<<< HEAD
-/obj/vehicle/sealed/mecha/AltClick(mob/living/user)
-	if(!(user in occupants) || !user.can_perform_action(src))
-		return
-	if(!(user in return_controllers_with_flag(VEHICLE_CONTROL_DRIVE)))
-		to_chat(user, span_warning("You're in the wrong seat to control movement."))
-		return
-
-	toggle_strafe()
-
-=======
->>>>>>> a77c9fea62f ([MIRROR] Alt click no longer conflicts with mech suit [no gbp] (#2093))
 /obj/vehicle/sealed/mecha/proc/toggle_strafe()
 	if(!(mecha_flags & CAN_STRAFE))
 		to_chat(occupants, "this mecha doesn't support strafing!")
