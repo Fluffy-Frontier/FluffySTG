@@ -88,15 +88,15 @@
 	. = ..()
 	. += span_notice("ALT-Click to turn ON when closed.")
 
-/obj/machinery/custom_rev_deconvert_device/AltClick(mob/user)
-	. = ..()
+/obj/machinery/custom_rev_deconvert_device/click_alt(mob/user)
 	if(!powered() || !occupant || state_open)
-		return FALSE
+		return CLICK_ACTION_BLOCKING
 
 	to_chat(user, "You power on [src].")
 	addtimer(CALLBACK(src, PROC_REF(eject_new_you)), processing_time, TIMER_OVERRIDE|TIMER_UNIQUE)
 	processing = TRUE
 	update_appearance()
+	return CLICK_ACTION_SUCCESS
 
 /obj/machinery/custom_rev_deconvert_device/container_resist_act(mob/living/user)
 	if(state_open)

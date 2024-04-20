@@ -27,12 +27,6 @@
 	. = ..()
 	. += span_notice("The maximum volume display reads: <b>[reagents.maximum_volume] units</b>.")
 
-<<<<<<< HEAD
-/obj/machinery/plumbing/AltClick(mob/user)
-	return ..() // This hotkey is BLACKLISTED since it's used by /datum/component/simple_rotation
-
-=======
->>>>>>> db154766762 ([MIRROR] Plumbing machinery power & processing tweaks (#2089))
 /obj/machinery/plumbing/wrench_act(mob/living/user, obj/item/tool)
 	if(user.combat_mode)
 		return NONE
