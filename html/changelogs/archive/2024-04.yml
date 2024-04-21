@@ -840,3 +840,28 @@
       ALT for strafe disable.
   vinylspiders:
   - bugfix: fixes the preference menu bluescreen
+2024-04-21:
+  Melbert:
+  - bugfix: You can open bags with alt click while resting again
+  - qol: Many items which previously required you to stand to alt-click now don't,
+      such as bedsheets and spray cans
+  Rhials:
+  - qol: Lava and plasma rivers now immerse you in them.
+  SyncIt21:
+  - bugfix: pseudo circuit adapter computes recharge delay durations correctly & won't
+      use power when on cooldown
+  - code_imp: uses standard cell defines for N-spect scanner
+  Zergspower:
+  - qol: Adjusted loot for Syndie Outpost to reflect the challenge
+  - qol: gives the BMD a Qpad board since they cant print one
+  - balance: Pirate Fort and Syndie Outpost ruins cant be cheesed anymore
+  - bugfix: fixed an AT on Blackmarket
+  jlsnow301:
+  - bugfix: Fixes the sight range on lootpanel.
+  - bugfix: Dropdowns received some much-needed QoL, like having the scrollbar follow
+      your selection.
+  - bugfix: AI voice changer now shows its current voice selection.
+  - bugfix: Deathmatch screen has been touched up.
+  - bugfix: Prefs menu has their dropdowns simplified, hopefully fixing issues
+  - bugfix: Fixed the targeting capability of mobs with full auto
+  - bugfix: You can now fire the marksman revolver at things you can see
