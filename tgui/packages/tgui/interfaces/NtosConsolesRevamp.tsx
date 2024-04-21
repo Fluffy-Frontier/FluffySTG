@@ -1,12 +1,12 @@
 // THIS IS A FLUFFY FONTIER UI FILE
 import { ReactElement } from 'react';
-import { NtosWindow, Window } from '../layouts';
-import { Dimmer, Flex, Icon, Box } from '../components';
-import { NtosMain } from './NtosMain';
 
+import { useBackend } from '../backend';
+import { Blink, Box, Dimmer, Flex, Icon } from '../components';
+import { NtosWindow, Window } from '../layouts';
+import { NtosMain } from './NtosMain';
 // Components for replacement
 import { ServerControl } from './ServerControl';
-import { useBackend } from '../backend';
 
 type Data = {
   reason: string;
@@ -36,16 +36,31 @@ export const NtosConsolesRevamp = (props) => {
             </Flex.Item>
             <br />
             <Flex.Item>
-              <Icon name="face-grimace" size={10} />
+              <Icon name="microchip" size={10} />
+
+              <Blink>
+                <div
+                  style={{
+                    background: '#db2828',
+                    bottom: '50%',
+                    left: '15%',
+                    height: '10px',
+                    position: 'relative',
+                    transform: 'rotate(45deg)',
+                    width: '200px',
+                  }}
+                />
+              </Blink>
             </Flex.Item>
             <br />
             <Flex.Item color="red" fontSize="20px">
               Error with process:
-              <br />'
+              <br />
+              &apos;
               <Box color="yellow" as="string">
                 {reason}
               </Box>
-              '
+              &apos;
             </Flex.Item>
             <hr />
             <Flex.Item fontSize="12px">

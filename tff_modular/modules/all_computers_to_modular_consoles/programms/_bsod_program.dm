@@ -17,7 +17,8 @@
 
 /datum/computer_file/program/bsod/New(bsod_source)
     . = ..()
-    bsod_reason = bsod_source
+    if (bsod_source)
+        bsod_reason = bsod_source
 
 /datum/computer_file/program/bsod/on_install(datum/computer_file/source, obj/item/modular_computer/computer_installing)
     ..()

@@ -22,7 +22,8 @@
     var/obj/item/multitool/attacking_tool = attacking_item
     if(!QDELETED(attacking_tool.buffer) && istype(attacking_tool.buffer, /datum/techweb))
         stored_research = attacking_tool.buffer
-    return TRUE
+        return TRUE
+    return FALSE
 
 /datum/computer_file/program/disk_binded/rdservercontrol/ui_data(mob/user)
     var/list/data = list()
