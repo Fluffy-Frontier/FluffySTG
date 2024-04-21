@@ -33,7 +33,7 @@
 		return FALSE
 	var/obj/item/multitool/attacking_tool = attacking_item
 	if(!QDELETED(attacking_tool.buffer) && istype(attacking_tool.buffer, /datum/techweb))
-		if (stored_research) stored_research.apps_accessing -= src	// FLUFFY FRONTIER ADD
+		handle_rnd_control_remove()	// FLUFFY FRONTIER ADD
 		stored_research = attacking_tool.buffer
 		handle_rnd_control_install()	// FLUFFY FRONTIER ADD
 	return TRUE

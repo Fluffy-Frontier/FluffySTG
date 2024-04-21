@@ -9,6 +9,9 @@
     computer.req_access = tmp_req_access
     computer.req_one_access = tmp_req_one_access
 */
+/datum/techweb
+    // We wanna track not only consoles but NT apps that connected to us oo
+    var/list/datum/computer_file/program/science/apps_accessing = list()
 
 /datum/computer_file/program/proc/can_run_Adjacent(mob/accessor, loud, access_to_check, downloading, list/access)
     // TODO: atom/allowed() handles syndie borgs. We - not.
@@ -34,3 +37,10 @@
             var/obj/vehicle/sealed/mecha/big_stompy_robot = brain_mmi.loc
             return can_run(accessor, loud, access_to_check, downloading, big_stompy_robot.accesses)
     return FALSE
+
+/datum/computer_file/program/proc/can_run_on_flags_to_text(flags = can_run_on_flags, as_list = FALSE)
+    if (flags == PROGRAM_ALL)
+        return as_list ? list("Anything") : "Anything"
+    else
+        var/list/supportable = bitfield_to_list(flags, list("Console", "Laptop", "PDA"))
+        return as_list ? supportable : supportable.Join(" | ")

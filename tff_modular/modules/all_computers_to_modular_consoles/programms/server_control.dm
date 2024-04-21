@@ -106,5 +106,5 @@
     app.locked = !app.locked
     return TRUE
 */
-/obj/item/computer_console_disk/rdservercontrol
+/obj/item/computer_console_disk/command/rdservercontrol
     program = /datum/computer_file/program/disk_binded/rdservercontrol

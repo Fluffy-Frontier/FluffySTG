@@ -25,3 +25,6 @@
         installed_clone = null
 
     . = ..()
+
+/obj/item/computer_console_disk/command
+    icon_state = "datadisk7"

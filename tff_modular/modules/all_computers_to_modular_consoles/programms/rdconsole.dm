@@ -2,10 +2,12 @@
 #define RND_DESIGN_DISK    "design"
 
 /datum/computer_file/program/science
-    /// The stored technology disk, if present
+    // The stored technology disk, if present
     var/obj/item/disk/tech_disk/t_disk
-    /// The stored design disk, if present
+    // The stored design disk, if present
     var/obj/item/disk/design_disk/d_disk
+    // Options same as can_run_on_flags
+    var/disk_support_hardware_flags = PROGRAM_CONSOLE
     var/techweb_tracked = FALSE
 
 /datum/computer_file/program/science/proc/handle_rnd_control_install()
@@ -18,6 +20,8 @@
             // Oh wait, you are off-station or emgged? Be unlocked, please!
             if (!istype(stored_research, /datum/techweb/science) || (computer.obj_flags & EMAGGED))
                 locked = FALSE
+    else
+        techweb_tracked = FALSE
 
 /datum/computer_file/program/science/proc/handle_rnd_control_remove()
     if (stored_research)
@@ -28,6 +32,9 @@
     handle_rnd_control_remove()
     . = ..()
 
+// Why? Because on computer_file init moment, we are in nullspace.
+// And bringing here LateInititialize() proc only for this is a bad idea
+// Still do not need nullspaced apps in my RD Server Control >=(
 /datum/computer_file/program/science/on_start(mob/living/user)
     . = ..()
     if (!techweb_tracked)
@@ -39,25 +46,30 @@
     temp.locked = TRUE
     return temp
 
-/*
-/datum/computer_file/program/science/on_examine(obj/item/modular_computer/source, mob/user)
-	var/list/examine_text = list()
-	if(!t_disk && !d_disk)
-		examine_text += "It has a slot installed for science data disk."
-		return examine_text
+/datum/computer_file/program/science/kill_program(mob/user)
+	try_eject(forced = TRUE)
+	return ..()
 
-	if(computer.Adjacent(user))
-		examine_text += "It has a slot installed for science data which contains: [t_disk ? t_disk.name : d_disk.name]"
-	else
-		examine_text += "It has a slot installed for science data, which appears to be occupied."
-	examine_text += span_info("Alt-click to eject the science data disk.")
-	return examine_text
-*/
+/datum/computer_file/program/science/on_examine(obj/item/modular_computer/source, mob/user)
+    if (!(disk_support_hardware_flags & source.hardware_flag))
+        return
+
+    var/list/examine_text = list()
+    if(!t_disk && !d_disk)
+        examine_text += "It has a slot installed for science data disk."
+        return examine_text
+
+    if(computer.Adjacent(user))
+        examine_text += "It has a slot installed for science data which contains: [t_disk ? t_disk.name : d_disk.name]"
+    else
+        examine_text += "It has a slot installed for science data, which appears to be occupied."
+    // examine_text += span_info("Alt-click to eject the science data disk.")
+    return examine_text
 
 /datum/computer_file/program/science/proc/handle_disks_insertion(obj/item/D, mob/living/user)
     // No disks in PDA please
-    if (!(computer.hardware_flag & PROGRAM_CONSOLE))
-        to_chat(user, span_warning("You fail to insert [D]. Maybe you should try stationary console?"))
+    if (!(disk_support_hardware_flags & computer.hardware_flag))
+        to_chat(user, span_warning("There is no slot for [D]. Maybe you should try: [can_run_on_flags_to_text(disk_support_hardware_flags)]?"))
         return FALSE
     // Unfortunatly eject code doesn't support diffrent ejectables
     if (t_disk || d_disk)
@@ -74,7 +86,7 @@
             return FALSE
         d_disk = D
     to_chat(user, span_notice("You insert [D] into \the [computer.name]!"))
-    playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
+    playsound(computer, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
     return TRUE
 
 /datum/computer_file/program/science/proc/handle_disks_ui_data(list/data)
@@ -90,7 +102,6 @@
     return data
 
 /datum/computer_file/program/science/proc/handle_disks_ui_act(action, list/params)
-
     switch(action)
         if ("ejectDisk")
             return try_eject()
