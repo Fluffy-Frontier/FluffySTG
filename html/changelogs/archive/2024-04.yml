@@ -865,3 +865,36 @@
   - bugfix: Prefs menu has their dropdowns simplified, hopefully fixing issues
   - bugfix: Fixed the targeting capability of mobs with full auto
   - bugfix: You can now fire the marksman revolver at things you can see
+2024-04-22:
+  EvilDragonfiend:
+  - code_imp: /appearance type references are now investigatable in vv editor.
+  - code_imp: '/image references display a summarised name with its dmi file name
+      and icon_state when it''s investigated from a datum where it uses. Format is:
+      "mob_hud_image = /image (hud.dmi:medical) [0x00000]"'
+  - code_imp: /image types no longer show first image incorrectly when its icon_state
+      is null
+  FlufflesTheDog:
+  - bugfix: loading oven trays from serving trays and other containers works again
+  Iajret:
+  - rscadd: added ventpointer that points toward nearby ore vents and can be bought
+      with mining points
+  - balance: scanned ore vents can now be found with GPS
+  - bugfix: fixed ore vents missing overlay icon for uranium
+  Regivald&DevillishOne:
+  - rscadd: Mother has blessed her children with the new nest - The Ash Fortress!
+      A place to hunt, worship and rest alike, it is full of new opportunities and
+      secrets!
+  SyncIt21:
+  - bugfix: off station & round start lathes with local storage don't have infinite
+      storage size.
+  - bugfix: HPLC can purify inverted chems and are now coloured green(clean) in the
+      UI
+  YehnBeep:
+  - bugfix: Fixed missing fuel tank on interdyne after a previous remap
+  grungussuss:
+  - sound: cyborgs now have sounds to indicate they are moving
+  san7890:
+  - bugfix: Evolved aliens should no longer have two numbers in their name.
+  vinylspiders:
+  - bugfix: dropdowns that use display_names as an alias for numeric values will no
+      longer cause tgui bluescreens
