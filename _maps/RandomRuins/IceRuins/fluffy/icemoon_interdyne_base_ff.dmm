@@ -3311,6 +3311,18 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/interdyne_planetary_base/serv)
+"tk" = (
+/obj/effect/turf_decal/stripes/red/line,
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 1
+	},
+/obj/machinery/door/poddoor{
+	id = "interdynegate";
+	name = "Inderdyne Gate"
+	},
+/obj/structure/cable,
+/turf/open/floor/plating/elevatorshaft,
+/area/ruin/interdyne_planetary_base/cargo)
 "tl" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 5
@@ -10300,7 +10312,7 @@ st
 pp
 JN
 gY
-Fk
+tk
 JN
 PO
 PO
