@@ -436,7 +436,8 @@
 /area/ruin/interdyne_planetary_base/med)
 "co" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 6
+	dir = 6;
+	faction = list("Syndicate","neutral")
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -751,7 +752,8 @@
 /area/ruin/interdyne_planetary_base/main/dorms)
 "el" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 5
+	dir = 5;
+	faction = list("Syndicate","neutral")
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -1958,7 +1960,8 @@
 /area/ruin/interdyne_planetary_base/science)
 "lx" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 9
+	dir = 9;
+	faction = list("Syndicate","neutral")
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -4356,13 +4359,10 @@
 	dir = 4
 	},
 /obj/structure/marker_beacon/olive,
-/obj/machinery/computer/cryopod/interdyne/directional/west{
-	pixel_x = -18;
-	req_one_access = list("syndicate")
-	},
 /obj/effect/turf_decal/trimline/dark/filled/end{
 	dir = 8
 	},
+/obj/machinery/computer/cryopod/interdyne/directional/west,
 /turf/open/floor/iron/dark,
 /area/ruin/interdyne_planetary_base/main/dorms)
 "AY" = (
@@ -6141,7 +6141,8 @@
 /area/ruin/interdyne_planetary_base/serv/rstrm)
 "LE" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 5
+	dir = 5;
+	faction = list("Syndicate","neutral")
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -7701,7 +7702,8 @@
 /area/ruin/interdyne_planetary_base/cargo)
 "UO" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 10
+	dir = 10;
+	faction = list("Syndicate","neutral")
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
