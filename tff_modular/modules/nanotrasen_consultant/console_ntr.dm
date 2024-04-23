@@ -133,7 +133,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 			if (!message)
 				return
 
-			SScommunications.soft_filtering = FALSE
+			DScommunications.soft_filtering = FALSE
 			var/list/hard_filter_result = is_ic_filtered(message)
 			if(hard_filter_result)
 				tgui_alert(usr, "Your message contains: (\"[hard_filter_result[CHAT_FILTER_INDEX_WORD]]\"), which is not allowed on this server.")
@@ -145,7 +145,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 					return
 				message_admins("[ADMIN_LOOKUPFLW(usr)] has passed the soft filter for \"[soft_filter_result[CHAT_FILTER_INDEX_WORD]]\". They may be using a disallowed term for a cross-station message. Increasing delay time to reject.\n\n Message: \"[html_encode(message)]\"")
 				log_admin_private("[key_name(usr)] has passed the soft filter for \"[soft_filter_result[CHAT_FILTER_INDEX_WORD]]\". They may be using a disallowed term for a cross-station message. Increasing delay time to reject.\n\n Message: \"[message]\"")
-				SScommunications.soft_filtering = TRUE
+				DScommunications.soft_filtering = TRUE
 			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 
 			var/destination = params["destination"]
@@ -299,7 +299,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 /obj/machinery/computer/comntr/proc/add_message(datum/comm_message/new_message)
 	LAZYADD(messages, new_message)
 
-/datum/controller/subsystem/communications/send_message(datum/comm_message/sending,print = TRUE,unique = FALSE)
+/datum/system/communications/send_message(datum/comm_message/sending,print = TRUE,unique = FALSE)
 	for(var/obj/machinery/computer/comntr/C in GLOB.responding_centcom_consoles)
 		if(!(C.machine_stat & (BROKEN|NOPOWER)) && is_station_level(C.z))
 			if(unique)
