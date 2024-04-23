@@ -30,4 +30,8 @@
 		finish_action(controller, TRUE, target_key) // Don't clear target
 		return FALSE
 	. = ..()
+<<<<<<< HEAD
 	finish_action(controller, TRUE, target_key) // Try doing something else
+=======
+	return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
+>>>>>>> 90b04cfc3cd ([MIRROR] fixes brimdemon AI (and some other mobs) (#2148))
