@@ -25,8 +25,6 @@
 ///Flags for ai_behavior new()
 #define AI_CONTROLLER_INCOMPATIBLE (1<<0)
 
-<<<<<<< HEAD
-=======
 //Return flags for ai_behavior/perform()
 ///Update this behavior's cooldown
 #define AI_BEHAVIOR_DELAY (1<<0)
@@ -37,7 +35,6 @@
 
 #define AI_BEHAVIOR_INSTANT (NONE)
 
->>>>>>> 90b04cfc3cd ([MIRROR] fixes brimdemon AI (and some other mobs) (#2148))
 ///Does this task require movement from the AI before it can be performed?
 #define AI_BEHAVIOR_REQUIRE_MOVEMENT (1<<0)
 ///Does this require the current_movement_target to be adjacent and in reach?
