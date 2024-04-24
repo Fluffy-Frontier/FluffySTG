@@ -58,6 +58,19 @@
         cpu.active_program = prog
         RegisterSignal(cpu, COMSIG_MODULAR_COMPUTER_TURNED_ON, PROC_REF(autorun))
 
+/obj/machinery/modular_computer/preset/battery_less/console/LateInitialize()
+    . = ..()
+    // Autoenable on init
+    // cpu.turn_on() copycode
+    if(cpu.use_energy(cpu.base_active_power_usage)) // checks if the PC is powered
+        if(cpu.looping_sound)
+            cpu.soundloop.skip_starting_sounds = TRUE
+            cpu.soundloop.start()
+            cpu.soundloop.skip_starting_sounds = initial(cpu.soundloop.skip_starting_sounds)
+        cpu.enabled = TRUE
+        cpu.update_appearance()
+        SEND_SIGNAL(cpu, COMSIG_MODULAR_COMPUTER_TURNED_ON, null)
+
 /obj/machinery/modular_computer/preset/battery_less/console/Destroy()
     UnregisterSignal(cpu, COMSIG_MODULAR_COMPUTER_TURNED_ON)
     . = ..()
