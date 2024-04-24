@@ -58,8 +58,6 @@
         cpu.active_program = prog
     RegisterSignal(cpu, COMSIG_MODULAR_COMPUTER_TURNED_ON, PROC_REF(autorun))
 
-/obj/machinery/modular_computer/preset/battery_less/console/LateInitialize()
-    . = ..()
     // Autoenable on init
     // cpu.turn_on() copycode
     if(cpu.use_energy(cpu.base_active_power_usage)) // checks if the PC is powered
