@@ -15,10 +15,12 @@
 /datum/computer_file/program/disk_binded/on_install(datum/computer_file/source, obj/item/modular_computer/computer_installing)
     ..()
     RegisterSignal(computer, COMSIG_MODULAR_COMPUTER_TURNED_ON, PROC_REF(autorun))
+    RegisterSignal(src, COMSIG_COMPUTER_FILE_DELETE, PROC_REF(remove_handler))
 
-/datum/computer_file/program/disk_binded/Destroy()
+/datum/computer_file/program/disk_binded/proc/remove_handler()
+    SIGNAL_HANDLER
+
     UnregisterSignal(computer, COMSIG_MODULAR_COMPUTER_TURNED_ON)
-    ..()
 
 /datum/computer_file/program/disk_binded/proc/autorun(datum/source, mob/user)
     SIGNAL_HANDLER
