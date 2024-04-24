@@ -918,11 +918,18 @@
       Like flight), and de/activating your modsuit no longer shows cogwheel effect
   - bugfix: Only brute damage causes brain damage when applied to the forehead, rather
       than all damage types
+  - bugfix: Playing Cards memory now reads better
+  - qol: Tuberculosis makes you cough more
+  - qol: Nicotine Addiciton makes you cough less
+  - qol: Medicine Addiction maybe makes you cough more, maybe makes you cough less
   Nerev4r:
   - rscadd: Dalba Masterworks, a Hermean corporation, has begun selling both hardware
       and blueprints for their 'Burrower' and 'Tunneler' drill implants.
   Pickle-Coding:
   - bugfix: Fixes mechanical sect gaining 1,000 times the favor from a cell sacrifice.
+  Rhials:
+  - bugfix: Fake handcuffs/Zipties no longer block clicks for a few seconds after
+      being resisted out of.
   Singul0:
   - rscadd: Adds an omnitoolset for both engineering and medical cyborgs, containing
       various basic tools
@@ -959,5 +966,8 @@
   - balance: Adds Evil Boxing, which is the evil and fucked up version of boxing that
       you kill people with and are allowed to flout the sacred rules of boxing as
       you please. Everyone is a victim!
+  - balance: Longfall modules no logner stun you when they activate.
+  - balance: Falling from a height greater than one z-level while using the longfall
+      module will still stagger you.
   tf-4:
   - rscdel: Shortened the Akulan language description in the language selection menu.
