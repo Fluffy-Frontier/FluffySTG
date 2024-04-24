@@ -10,7 +10,7 @@
     computer.req_one_access = tmp_req_one_access
 */
 /datum/techweb
-    // We wanna track not only consoles but NT apps that connected to us oo
+    // We wanna track not only consoles but NT apps that connected to us too
     var/list/datum/computer_file/program/science/apps_accessing = list()
 
 /datum/computer_file/program/proc/can_run_Adjacent(mob/accessor, loud, access_to_check, downloading, list/access)
@@ -37,6 +37,13 @@
             var/obj/vehicle/sealed/mecha/big_stompy_robot = brain_mmi.loc
             return can_run(accessor, loud, access_to_check, downloading, big_stompy_robot.accesses)
     return FALSE
+
+// Required access override for disk_binded
+/datum/computer_file/program/disk_binded/can_run_Adjacent(mob/accessor, loud, access_to_check, downloading, list/access)
+    if (!access_to_check && length(download_access))
+        access_to_check = download_access
+
+    return ..()
 
 /datum/computer_file/program/proc/can_run_on_flags_to_text(flags = can_run_on_flags, as_list = FALSE)
     if (flags == PROGRAM_ALL)

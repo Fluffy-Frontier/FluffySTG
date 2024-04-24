@@ -6,9 +6,10 @@
     program_flags = PROGRAM_REQUIRES_NTNET
     size = 0
     tgui_id = "NtosServerControl"
-    program_icon = "server"
-    run_access = list(ACCESS_RD)
-    /// Reference to global science techweb
+    program_icon = FA_ICON_SERVER
+    download_access = list(ACCESS_RD)
+    icon_keyboard = "rd_key"
+    // Reference to global science techweb
     var/datum/techweb/stored_research
 
 /datum/computer_file/program/disk_binded/rdservercontrol/on_install(datum/computer_file/source, obj/item/modular_computer/computer_installing)
@@ -22,6 +23,7 @@
     var/obj/item/multitool/attacking_tool = attacking_item
     if(!QDELETED(attacking_tool.buffer) && istype(attacking_tool.buffer, /datum/techweb))
         stored_research = attacking_tool.buffer
+        computer.say("[filedesc]: Established connection to [stored_research.organization] research network.")   //  Network id: [stored_research.id] not sure, id may be OOC info
         return TRUE
     return FALSE
 
@@ -64,7 +66,7 @@
         return TRUE
     if(!can_run_Adjacent(usr) && !(computer.obj_flags & EMAGGED))
         computer.say("Access denied!")
-        playsound(src, 'sound/machines/click.ogg', 20, TRUE)
+        playsound(computer, 'sound/machines/terminal_error.ogg', 20, TRUE)
         return TRUE
 
     switch(action)
@@ -109,3 +111,8 @@
 */
 /obj/item/computer_console_disk/command/rdservercontrol
     program = /datum/computer_file/program/disk_binded/rdservercontrol
+
+/obj/machinery/modular_computer/preset/battery_less/console/rdservercontrol
+    name = "R&D Server Controller"
+    desc = "Manages access to research databases and consoles."
+    console_disk = /obj/item/computer_console_disk/command/rdservercontrol

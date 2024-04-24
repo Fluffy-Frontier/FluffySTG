@@ -6,7 +6,8 @@
         return FALSE
 
     if (console_disk)
-        to_chat(user, span_warning("It's secure disk drive already occupied!"))
+        if (user)
+            to_chat(user, span_warning("It's secure disk drive already occupied!"))
         return FALSE
     if (!attacking_item.program)
         computer.say("I/O ERROR: Unable to access encrypted data disk. Ejecting...")
@@ -22,7 +23,7 @@
             computer.say("HARDWARE ERROR: Incompatible software. Ejecting... Supported devices: [supported_hardware]")
             return FALSE
 
-    if(!user.transferItemToLoc(attacking_item, computer))
+    if(user && !user.transferItemToLoc(attacking_item, computer))
         return FALSE
     console_disk = attacking_item
     playsound(computer, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
@@ -36,10 +37,8 @@
         var/datum/computer_file/program/disk_binded/clone = console_disk.program.clone()
         console_disk.installed_clone = clone
         computer.store_file(clone)
-        // Initial start after injecting is free
-        clone.run_access = list()
+        // Initial start
         computer.open_program(user, clone, computer.enabled)
-        clone.run_access = console_disk.program.run_access
 
     return TRUE
 
