@@ -56,7 +56,7 @@
         var/datum/computer_file/program/prog = locate(autorunnable) in cpu.stored_files
         // First start for free
         cpu.active_program = prog
-        RegisterSignal(cpu, COMSIG_MODULAR_COMPUTER_TURNED_ON, PROC_REF(autorun))
+    RegisterSignal(cpu, COMSIG_MODULAR_COMPUTER_TURNED_ON, PROC_REF(autorun))
 
 /obj/machinery/modular_computer/preset/battery_less/console/LateInitialize()
     . = ..()
@@ -95,9 +95,6 @@
         if (prog)
             // Not writing in active_programs so user need to check his access
             cpu.open_program(user, prog, cpu.enabled)
-    else if (cpu)
-        UnregisterSignal(cpu, COMSIG_MODULAR_COMPUTER_TURNED_ON)
-    // If else - something goes wrong
 
 // Actual presets of non console_disk computers
 /obj/machinery/modular_computer/preset/battery_less/console/rdconsole_unQoL
