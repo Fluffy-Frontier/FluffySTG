@@ -1,4 +1,3 @@
-
 /* EMOTE DATUMS */
 /datum/emote/living
 	mob_type_allowed_typecache = /mob/living
@@ -67,21 +66,6 @@
 		var/mob/living/L = user
 		L.Unconscious(40)
 
-<<<<<<< HEAD
-/datum/emote/living/cough
-	key = "cough"
-	key_third_person = "coughs"
-	message = "coughs!"
-	message_mime = "acts out an exaggerated cough!"
-	emote_type = EMOTE_VISIBLE | EMOTE_AUDIBLE
-
-/datum/emote/living/cough/can_run_emote(mob/user, status_check = TRUE , intentional)
-	. = ..()
-	if(HAS_TRAIT(user, TRAIT_SOOTHED_THROAT))
-		return FALSE
-
-=======
->>>>>>> 95f7b3a6fec ([MIRROR] More emote sounds and new whistle emote (#2172))
 /datum/emote/living/dance
 	key = "dance"
 	key_third_person = "dances"
