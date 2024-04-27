@@ -40,7 +40,8 @@
 /area/icemoon/underground/explored)
 "ak" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 5
+	dir = 5;
+	faction = list("Syndicate","neutral")
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -684,7 +685,8 @@
 /area/ruin/interdyne_planetary_base/cargo)
 "dk" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 6
+	dir = 6;
+	faction = list("Syndicate","neutral")
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -3309,6 +3311,18 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/interdyne_planetary_base/serv)
+"tk" = (
+/obj/effect/turf_decal/stripes/red/line,
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 1
+	},
+/obj/machinery/door/poddoor{
+	id = "interdynegate";
+	name = "Inderdyne Gate"
+	},
+/obj/structure/cable,
+/turf/open/floor/plating/elevatorshaft,
+/area/ruin/interdyne_planetary_base/cargo)
 "tl" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 5
@@ -5103,7 +5117,8 @@
 /area/ruin/interdyne_planetary_base/science)
 "Ei" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 5
+	dir = 5;
+	faction = list("Syndicate","neutral")
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -6968,7 +6983,8 @@
 /area/ruin/interdyne_planetary_base/serv)
 "Pn" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 10
+	dir = 10;
+	faction = list("Syndicate","neutral")
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -7026,7 +7042,8 @@
 /area/ruin/interdyne_planetary_base/serv/rstrm)
 "Pv" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 9
+	dir = 9;
+	faction = list("Syndicate","neutral")
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/camera/xray{
@@ -8230,13 +8247,10 @@
 	dir = 4
 	},
 /obj/structure/marker_beacon/olive,
-/obj/machinery/computer/cryopod/interdyne/directional/west{
-	pixel_x = -18;
-	req_one_access = list("syndicate")
-	},
 /obj/effect/turf_decal/trimline/dark/filled/end{
 	dir = 8
 	},
+/obj/machinery/computer/cryopod/interdyne/directional/west,
 /turf/open/floor/iron/dark,
 /area/ruin/interdyne_planetary_base/main/dorms)
 "Xh" = (
@@ -10298,7 +10312,7 @@ st
 pp
 JN
 gY
-Fk
+tk
 JN
 PO
 PO
