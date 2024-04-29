@@ -1075,16 +1075,41 @@
   - rscadd: Adds warlord and crude armor
   - rscadd: Adds medieval shuttle (made by striders18)
 2024-04-29:
+  13spacemen:
+  - bugfix: All alert polls ignore option works
+  EnterTheJake:
+  - image: The Infiltrator Suit has received a new model, sleeker than ever!
   FlufflesTheDog:
   - qol: ashwalker's pet chicken lays hardier chicks
   - qol: ashwalkers can how understand their pet chickens
+  - bugfix: minebot shields are now actually orderable
+  - bugfix: vinegar may once again be crafted with wine, water, and sugar
+  JohnFulpWillard:
+  - bugfix: Examining someone with Med/Sec HUDs will no longer filter the message
+      under Radio.
+  - bugfix: pAI requests should no longer randomly permanently break in a round.
   Melbert:
   - bugfix: Plasma cutters work again
+  Metekillot:
+  - bugfix: Mech domination now properly integrates with shunting.
+  - bugfix: Combat upgraded AIs no longer get two buggy malf ability pickers if they
+      also become malfunctioning
+  - refactor: Refactored most of the functionality around malf AI shunting, mech control
+  Rhials:
+  - admin: Lazy loading map templates now gives you the option to not ghost/teleport
+      to the loaded area upon completion.
   Sadboysuss:
   - admin: spy can now be rolebanned
+  SomeRandomOwl:
+  - qol: People who decline polls for sleeper agent will be considered ineligible
+      for all future rolls for the round
+  - admin: Sleeper agent polls should ignore people who are currently getting polled
+      in the case more than one are rolled.
   necromanceranne:
   - rscadd: Adds a higher capacity SMES unit to lower maintenance areas and maps.
   - bugfix: Miners can actually access and fix their engineering issues on the lavaland
       base via the engineering section of the base.
   - bugfix: The gulag SMES unit is no longer needlessly draining the entire power
       grid of the main mining base.
+  san7890:
+  - admin: Possess Object is now back in the right-click context menu.
