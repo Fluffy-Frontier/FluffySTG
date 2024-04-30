@@ -299,7 +299,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 /obj/machinery/computer/comntr/proc/add_message(datum/comm_message/new_message)
 	LAZYADD(messages, new_message)
 
-/datum/system/communications/send_message(datum/comm_message/sending,print = TRUE,unique = FALSE)
+/datum/communciations_controller/send_message(datum/comm_message/sending,print = TRUE,unique = FALSE)
 	for(var/obj/machinery/computer/comntr/C in GLOB.responding_centcom_consoles)
 		if(!(C.machine_stat & (BROKEN|NOPOWER)) && is_station_level(C.z))
 			if(unique)
