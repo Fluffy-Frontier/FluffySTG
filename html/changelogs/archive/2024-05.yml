@@ -66,6 +66,23 @@
       for instance) as well as restoring the ability to scream at will (with sound)
   - bugfix: restores a missing fourth lizard scream audio that was supposed to play
 2024-05-02:
+  Echriser:
+  - qol: conveyor switches now have direction-specific input signals
+  Fluffles:
+  - qol: you can pick up wheelchairs while on the ground
+  - qol: you can place wheelchairs a tile away from you, like roller beds
   JohnFulpWillard:
   - bugfix: Monkeys can no longer be knocked over by walking into a windoor on combat
       mode while they're behind it.
+  - bugfix: You can now re-construct pod doors that had deconstruction started.
+  - qol: You can now make pod door assemblies using plasteel in-hand.
+  - bugfix: AIs can now track Silicon as long as their built-in camera is online.
+  - bugfix: Constantly fleeing in Battle Arcade will no longer give you a very large
+      amount of decimals due to halving your gold every time.
+  - admin: Debug uplinks now shows all categories and won't lock upon buying items
+      like his grace and the syndicate balloon.
+  - bugfix: Monkey changelings that are disguised as someone can now take off their
+      flesh clothes.
+  Pickle-Coding:
+  - bugfix: Fixes hypercharged slime core cells and circuit guns having 1,000 times
+      less energy than intended.
