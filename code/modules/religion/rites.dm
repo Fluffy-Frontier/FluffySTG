@@ -128,6 +128,7 @@
 /datum/religion_rites/machine_blessing/invoke_effect(mob/living/user, atom/movable/religious_tool)
 	..()
 	var/altar_turf = get_turf(religious_tool)
+<<<<<<< HEAD
 	var/blessing = pick(
 		/obj/item/organ/internal/cyberimp/arm/surgery,
 		/obj/item/organ/internal/cyberimp/eyes/hud/diagnostic,
@@ -135,6 +136,38 @@
 		/obj/item/organ/internal/cyberimp/mouth/breathing_tube,
 		/obj/item/organ/internal/cyberimp/chest/thrusters,
 		/obj/item/organ/internal/eyes/robotic/glow,
+=======
+	var/blessing = pick_weight_recursive(
+		list(
+			// Arms
+			list(
+				/obj/item/organ/internal/cyberimp/arm/combat = 1,
+				/obj/item/organ/internal/cyberimp/arm/surgery = 1000000,
+				/obj/item/organ/internal/cyberimp/arm/toolset = 1500000,
+			) = 15,
+			// Eyes
+			list(
+				/obj/item/organ/internal/cyberimp/eyes/hud/diagnostic = 1,
+				/obj/item/organ/internal/cyberimp/eyes/hud/medical = 1,
+				/obj/item/organ/internal/eyes/robotic/glow = 1,
+				/obj/item/organ/internal/eyes/robotic/shield = 2,
+			) = 15,
+			// Chest
+			list(
+				/obj/item/organ/internal/cyberimp/chest/reviver = 1,
+				/obj/item/organ/internal/cyberimp/chest/thrusters = 2,
+			) = 9,
+			// Brain / Head
+			list(
+				/obj/item/organ/internal/cyberimp/brain/anti_drop = 100,
+				/obj/item/organ/internal/cyberimp/brain/anti_stun = 10,
+			) = 10,
+			// Misc
+			list(
+				/obj/item/organ/internal/cyberimp/mouth/breathing_tube = 1,
+			) = 5,
+		)
+>>>>>>> ca9ac2104e4 ([MIRROR] Fix warning on master (#2292))
 	)
 	new blessing(altar_turf)
 	return TRUE
