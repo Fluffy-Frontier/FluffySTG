@@ -128,15 +128,6 @@
 /datum/religion_rites/machine_blessing/invoke_effect(mob/living/user, atom/movable/religious_tool)
 	..()
 	var/altar_turf = get_turf(religious_tool)
-<<<<<<< HEAD
-	var/blessing = pick(
-		/obj/item/organ/internal/cyberimp/arm/surgery,
-		/obj/item/organ/internal/cyberimp/eyes/hud/diagnostic,
-		/obj/item/organ/internal/cyberimp/eyes/hud/medical,
-		/obj/item/organ/internal/cyberimp/mouth/breathing_tube,
-		/obj/item/organ/internal/cyberimp/chest/thrusters,
-		/obj/item/organ/internal/eyes/robotic/glow,
-=======
 	var/blessing = pick_weight_recursive(
 		list(
 			// Arms
@@ -167,7 +158,6 @@
 				/obj/item/organ/internal/cyberimp/mouth/breathing_tube = 1,
 			) = 5,
 		)
->>>>>>> ca9ac2104e4 ([MIRROR] Fix warning on master (#2292))
 	)
 	new blessing(altar_turf)
 	return TRUE
