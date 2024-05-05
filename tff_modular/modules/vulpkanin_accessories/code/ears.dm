@@ -2,9 +2,8 @@
 	icon = 'tff_modular/modules/vulpkanin_accessories/icons/ears.dmi'
 
 /*
-*  Ported from BlueMoon Station
-*  Source: https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/blob/c50a2f52896e5acb255bb740a87f68d08aa288e0/modular_bluemoon/kovac_shitcode/code/body_markings.dm#L170-L193
-*  Icons:  https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/blob/c50a2f52896e5acb255bb740a87f68d08aa288e0/modular_bluemoon/kovac_shitcode/icons/hair.dmi
+*  Ported from EX666 Paradise Station
+*  Icons: https://github.com/ss220-space/Paradise/blob/53bfe2674b16201976d290060a0611855fd1a948/icons/mob/human_races/r_vulpkanin.dmi
 */
 
 /datum/sprite_accessory/ears/mutant/vulpkanin/ttf/vulp
