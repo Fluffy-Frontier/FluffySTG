@@ -12,13 +12,13 @@
 	name = "Vulp Jagged"
 	icon_state = "jagged"
 
-/datum/sprite_accessory/hair/ttf/vulpkanin/kajtam1
-	name = "Vulp Kajtam 1"
-	icon_state = "kajtam1"
+/datum/sprite_accessory/hair/ttf/vulpkanin/kajam1
+	name = "Vulp Kajam 1"
+	icon_state = "kajam1"
 
-/datum/sprite_accessory/hair/ttf/vulpkanin/kajtam2
-	name = "Vulp Kajtam 2"
-	icon_state = "kajtam2"
+/datum/sprite_accessory/hair/ttf/vulpkanin/kajam2
+	name = "Vulp Kajam 2"
+	icon_state = "kajam2"
 
 /datum/sprite_accessory/hair/ttf/vulpkanin/keid
 	name = "Vulp Keid"
