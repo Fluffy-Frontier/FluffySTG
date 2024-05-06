@@ -87,6 +87,10 @@ _ADMIN_VERB(verb_path_name, verb_permissions, verb_name, verb_desc, verb_categor
 #define ADMIN_CATEGORY_OBJECT "Object"
 #define ADMIN_CATEGORY_MAPPING "Mapping"
 #define ADMIN_CATEGORY_PROFILE "Profile"
+<<<<<<< HEAD
+=======
+#define ADMIN_CATEGORY_IPINTEL "Admin.IPIntel"
+>>>>>>> 241ffd39086 ([MISSED MIRRORS] General IP intel tweaks (#82904) + fix ipintel caching to db not working. (#83046) (#2337))
 
 // Visibility flags
 #define ADMIN_VERB_VISIBLITY_FLAG_MAPPING_DEBUG "Map-Debug"
