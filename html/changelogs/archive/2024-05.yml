@@ -177,8 +177,25 @@
   Gaxeer:
   - bugfix: fix runtime when no events were drafted to be picked from
   - config: make events frequency configurable
+  UEDHighCommand:
+  - rscadd: Renamed the Syndicate CentCom fax to "Syndicate Sectorial Command"
+  - rscdel: Edited the intro text for DS-2 operatives, removing the edgy mention of
+      "terrorist cells"
+  Z0w0plankton:
+  - rscadd: Adds missing wagging animation for two fox tails.
+  improvedname:
+  - bugfix: fixes traditional equipment crate name
   larentoun:
   - bugfix: Materials are now correctly applied to crafted items (chairs, toilets,
       etc)
   paganiy:
   - qol: Admin modsuit now has a radiation protect module
+  unit0016:
+  - admin: The nuke codes will no longer be consistently randomly generated roundstart,
+      though it's still possible.
+  - bugfix: It's no longer possible to break into the emergency shuttle before it
+      reaches the station.
+  - rscadd: Leashes have been stocked in a very particular vendor in the dormitories.
+  vinylspiders:
+  - bugfix: laughs will now once again play the appropriate audio if you have a laugh
+      set in prefs instead of defaulting to the species laugh
