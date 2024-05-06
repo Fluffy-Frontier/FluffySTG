@@ -173,3 +173,12 @@
   - image: added directional sprites for radiation shutters
   mogeoko:
   - bugfix: Ventcrawling mobs can change Z-level using multiz-decks again.
+2024-05-06:
+  Gaxeer:
+  - bugfix: fix runtime when no events were drafted to be picked from
+  - config: make events frequency configurable
+  larentoun:
+  - bugfix: Materials are now correctly applied to crafted items (chairs, toilets,
+      etc)
+  paganiy:
+  - qol: Admin modsuit now has a radiation protect module
