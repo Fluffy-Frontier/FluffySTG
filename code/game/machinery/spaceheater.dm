@@ -8,7 +8,11 @@
 	anchored = FALSE
 	density = TRUE
 	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN
+<<<<<<< HEAD
 	icon = 'icons/obj/pipes_n_cables/atmos.dmi'  // NOVA EDIT CHANGE - ICON OVERRIDEN IN SKYRAT AESTHETICS - SEE MODULE
+=======
+	icon = 'icons/obj/pipes_n_cables/atmos.dmi' // NOVA EDIT CHANGE - ICON OVERRIDDEN IN NOVA AESTHETICS - SEE MODULE
+>>>>>>> 42930d1c74b ([MIRROR] Turns mush cap into an extorgan (#491))
 	icon_state = "sheater-off"
 	base_icon_state = "sheater"
 	name = "space heater"
