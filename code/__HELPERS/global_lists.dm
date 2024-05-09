@@ -54,6 +54,7 @@
 	sort_list(GLOB.laugh_types, GLOBAL_PROC_REF(cmp_typepaths_asc))
 	// NOVA EDIT ADDITION END
 
+<<<<<<< HEAD
 	//THE FLUFFY FRONTIER EDIT ADDITION BEGIN - Blooper
 	for(var/sound_blooper_path in subtypesof(/datum/blooper))
 		var/datum/blooper/B = new sound_blooper_path()
@@ -69,6 +70,8 @@
 		GLOB.species_list[species.id] = species_path
 	sort_list(GLOB.species_list, GLOBAL_PROC_REF(cmp_typepaths_asc))
 
+=======
+>>>>>>> 7296d5d50b6 ([MIRROR] Random Name Generation refactor, generate random names based on languages (for species without name lists, like Felinids and Podpeople) (#2314))
 /// Inits GLOB.surgeries
 /proc/init_surgeries()
 	var/surgeries = list()
@@ -90,7 +93,6 @@
 /proc/make_datum_reference_lists()
 	// I tried to eliminate this proc but I couldn't untangle their init-order interdependencies -Dominion/Cyberboss
 	init_sprite_accessories()
-	init_species_list()
 	init_hair_gradients()
 	init_keybindings()
 	GLOB.emote_list = init_emote_list() // WHY DOES THIS NEED TO GO HERE? IT JUST INITS DATUMS
