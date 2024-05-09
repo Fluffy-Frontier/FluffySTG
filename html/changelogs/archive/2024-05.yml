@@ -209,3 +209,69 @@
       when implanted into another species.
   aKromatopzia:
   - bugfix: moved raptor and digi cybernetics' categories
+2024-05-09:
+  Bisar:
+  - balance: Knockdown effects will know consistently disarm, instead of failing to
+      disarm if you're already lying down.
+  BurgerBB:
+  - qol: The inspector's Fedora now uses regex. When saying commands, it is much more
+      generous on picking up trigger word.
+  CandleJaxx:
+  - rscadd: We found a bunch of old synthetic casings that were left to rot in a scrapyard
+      out of Eridani. Have them, Frontier Scum.
+  Derpguy3:
+  - bugfix: A meter attached to distribution pipes in Birdshot's atmospherics has
+      been moved to the matching pipe layer.
+  Fikou:
+  - rscdel: You can no longer use another station's blueprint photo to look at wires
+      or do the traitor objective with.
+  Iamgoofball:
+  - balance: Spies can now use other spies' uplinks.
+  Melbert:
+  - bugfix: Map vote should work better
+  - bugfix: Height now applies less weird to certain worn items, bare-handed bloody
+      hands, and damage overlays.
+  - balance: To see wires in photos of blueprints, you first must squint at the photo.
+  MrEmre12, Majkl-J:
+  - rscadd: Fishing pool introduced to metastation garden
+  - refactor: All water tiles now handle fishing through a unified fishing_datum variable
+  ReturnToZender (hitting delete on a power cable):
+  - rscdel: Single loose power cable in icebox maintenance
+  Rhials:
+  - balance: Virtual domain ghost roles can no longer enter the safehouse/"equipment"
+      areas of a domain.
+  - bugfix: Pirate virtual domain ghost roles will no longer make a pirate team antag
+      datum.
+  ShizCalev:
+  - bugfix: Inducers no longer break completely after trying to charge a PDA with
+      them.
+  Thlumyn:
+  - bugfix: removed some directional var-edits from void raptor request consoles
+  - bugfix: moved some scrubbers in the blackmarket shuttle to not be layered on top
+      of same-layer pipes
+  Z0w0plankton:
+  - bugfix: fixed a icon state for wagging fox tail alt 2
+  chestlet:
+  - qol: Added an alternate version of "cat, big" ears, which are layered above hair.
+  delingar:
+  - rscadd: RD's skillchip adds cyborg wires knowledge
+  mc-oofert:
+  - qol: temporarily soulless (deathmatch, etc) bodies dont appear as soulless on
+      medhud
+  nikothedude:
+  - rscadd: Reimplemented taur sprites for a bunch of clothing items
+  - code_imp: Taur bodies are properly subtyped
+  - rscadd: Taurs now have custom leg names
+  vinylspiders:
+  - qol: cyborg screams now use the scream pref for determining which audio track
+      to play
+  - bugfix: emotes with audio use gender instead of physique for determining the gendered
+      track to play
+  - bugfix: (admins) 'Add/Revoke PB Bypass' verbs will now prompt for a ckey once
+      again
+  - bugfix: you can once again select 'None' as an option for pod hair in preferences
+  - bugfix: the icons of pod hair options in preferences will now look like the actual
+      hairstyles
+  white-snek:
+  - rscadd: A fresh shipment of blindfolds has arrived on station for visually impaired
+      crew, distributed to apropriate vendors.
