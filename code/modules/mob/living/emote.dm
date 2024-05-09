@@ -125,16 +125,16 @@
 	key_third_person = "flaps"
 	message = "flaps their wings."
 	hands_use_check = TRUE
-	var/wing_time = 20
+	var/wing_time = 0.35 SECONDS
 
 //NOVA EDIT REMOVAL BEGIN - EMOTES - Not working due to modified mutant code, TODO: Fix this
 /*
 /datum/emote/living/flap/run_emote(mob/user, params, type_override, intentional)
 	. = ..()
 	if(. && ishuman(user))
-		var/mob/living/carbon/human/H = user
+		var/mob/living/carbon/human/human_user = user
 		var/open = FALSE
-		var/obj/item/organ/external/wings/functional/wings = H.get_organ_slot(ORGAN_SLOT_EXTERNAL_WINGS)
+		var/obj/item/organ/external/wings/functional/wings = human_user.get_organ_slot(ORGAN_SLOT_EXTERNAL_WINGS)
 
 		// open/close functional wings
 		if(istype(wings))
@@ -145,11 +145,16 @@
 				wings.open_wings()
 			addtimer(CALLBACK(wings,  open ? TYPE_PROC_REF(/obj/item/organ/external/wings/functional, open_wings) : TYPE_PROC_REF(/obj/item/organ/external/wings/functional, close_wings)), wing_time)
 
+<<<<<<< HEAD
 		// play moth flutter noise if moth wing
 		if(istype(wings, /obj/item/organ/external/wings/moth))
 			playsound(H, 'sound/voice/moth/moth_flutter.ogg', 50, TRUE)
 */
 //NOVA EDIT REMOVAL END
+=======
+		// play a flapping noise if the wing has this implemented
+		wings.make_flap_sound(human_user)
+>>>>>>> d49470ff4e3 ([MIRROR] Fixes flap and wing emotes not updating wing sprites (for functional wings) (#2406))
 
 /datum/emote/living/flap/aflap
 	key = "aflap"
