@@ -27,4 +27,4 @@
 	radiation_pulse(source = holder, max_range = range, threshold = 0.3, chance = used_power)
 
 /datum/artifact_effect/radiate/DoEffectDestroy()
-	radiation_pulse(source = holder, max_range = range*2, threshold = 0, chance = 75) // Really powerful pulse
+	radiation_pulse(source = holder, max_range = range*2, threshold = 0.1, chance = 75) // Really powerful pulse
