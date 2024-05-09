@@ -13,7 +13,8 @@
 	. = ..()
 	if(!.)
 		return FALSE
-	var/datum/gas_mixture/env = holder.loc.return_air()
+	var/turf/T = get_turf(holder)
+	var/datum/gas_mixture/env = T.return_air()
 	if(!env)
 		return FALSE
 	return env
@@ -23,13 +24,15 @@
 	. = ..()
 	if(!.)
 		return FALSE
-	var/datum/gas_mixture/env = holder.loc.return_air()
+	var/turf/T = get_turf(holder)
+	var/datum/gas_mixture/env = T.return_air()
 	if(!env)
 		return FALSE
 	return env
 
 /datum/artifact_effect/temperature/DoEffectDestroy()
-	var/datum/gas_mixture/env = holder.loc.return_air()
+	var/turf/T = get_turf(holder)
+	var/datum/gas_mixture/env = T.return_air()
 	if(!env)
 		return FALSE
 	return env
