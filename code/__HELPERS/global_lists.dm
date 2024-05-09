@@ -54,7 +54,6 @@
 	sort_list(GLOB.laugh_types, GLOBAL_PROC_REF(cmp_typepaths_asc))
 	// NOVA EDIT ADDITION END
 
-<<<<<<< HEAD
 	//THE FLUFFY FRONTIER EDIT ADDITION BEGIN - Blooper
 	for(var/sound_blooper_path in subtypesof(/datum/blooper))
 		var/datum/blooper/B = new sound_blooper_path()
@@ -63,15 +62,6 @@
 			GLOB.blooper_random_list[B.id] = sound_blooper_path
 	//THE FLUFFY FRONTIER EDIT END
 
-/// Inits GLOB.species_list. Not using GLOBAL_LIST_INIT b/c it depends on GLOB.string_lists
-/proc/init_species_list()
-	for(var/species_path in subtypesof(/datum/species))
-		var/datum/species/species = new species_path()
-		GLOB.species_list[species.id] = species_path
-	sort_list(GLOB.species_list, GLOBAL_PROC_REF(cmp_typepaths_asc))
-
-=======
->>>>>>> 7296d5d50b6 ([MIRROR] Random Name Generation refactor, generate random names based on languages (for species without name lists, like Felinids and Podpeople) (#2314))
 /// Inits GLOB.surgeries
 /proc/init_surgeries()
 	var/surgeries = list()
