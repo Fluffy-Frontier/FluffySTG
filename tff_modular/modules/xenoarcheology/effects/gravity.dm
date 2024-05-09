@@ -22,7 +22,7 @@
 	var/turf/curr_turf = get_turf(holder)
 	if (grav_type == 2)
 		for(var/atom/movable/to_throw in range(range, curr_turf))
-			mayhem_throw(to_throw, curr_turf)
+			mayhem_throw(to_throw, curr_turf, 1)
 	else if (grav_type == 1)
 		for(var/atom/movable/to_throw in range(range, curr_turf))
 			repell(to_throw, curr_turf)
@@ -61,7 +61,7 @@
 		step_towards(to_pull, T)
 		turfs_to_step--
 
-/datum/artifact_effect/gravity/proc/mayhem_throw(atom/to_throw, turf/T, amplifier = 1)
+/datum/artifact_effect/gravity/proc/mayhem_throw(atom/to_throw, turf/T, amplifier)
 	var/protection = get_anomaly_protection(to_throw)
 	if(!protection)
 		return
