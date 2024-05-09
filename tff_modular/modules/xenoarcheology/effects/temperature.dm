@@ -11,9 +11,11 @@
 
 /datum/artifact_effect/temperature/DoEffectTouch(mob/user)
 	. = ..()
+	var/turf/T = get_turf(holder)
+	if (T == null)
+		return FALSE
 	if(!.)
 		return FALSE
-	var/turf/T = get_turf(holder)
 	var/datum/gas_mixture/env = T.return_air()
 	if(!env)
 		return FALSE
@@ -22,9 +24,11 @@
 
 /datum/artifact_effect/temperature/DoEffectAura()
 	. = ..()
+	var/turf/T = get_turf(holder)
+	if (T == null)
+		return FALSE
 	if(!.)
 		return FALSE
-	var/turf/T = get_turf(holder)
 	var/datum/gas_mixture/env = T.return_air()
 	if(!env)
 		return FALSE
@@ -32,6 +36,8 @@
 
 /datum/artifact_effect/temperature/DoEffectDestroy()
 	var/turf/T = get_turf(holder)
+	if (T == null)
+		return FALSE
 	var/datum/gas_mixture/env = T.return_air()
 	if(!env)
 		return FALSE
