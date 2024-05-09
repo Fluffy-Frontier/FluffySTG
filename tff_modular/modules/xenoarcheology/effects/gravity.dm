@@ -73,7 +73,7 @@
 	var/atom/movable/throw_atom = to_throw
 	var/turf/target_turf = pick(orange(get_turf(holder), range * 2 * protection))
 	if(!QDELETED(throw_atom))
-		throw_atom.throw_at(target_turf, 10 * protection * amplifier, throw_power * protection * amplifier/2, force = throw_power * protection * amplifier)
+		throw_atom.throw_at(target_turf, 10 * protection * amplifier, throw_power * protection * amplifier/2)
 
 /datum/artifact_effect/gravity/DoEffectDestroy()
 	var/turf/curr_turf = get_turf(holder)
