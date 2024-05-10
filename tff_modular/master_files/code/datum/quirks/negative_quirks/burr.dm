@@ -1,7 +1,7 @@
 /datum/quirk/burr
 	name = "Th'(r)oubles"
 	desc = "It's so hard to spell \"R\"... Bh'otheh's!"
-	icon = FA_ICON_COMMENT_SLASH
+	icon = FA_ICON_SPELL_CHECK
 	value = -1
 	gain_text = span_danger("It's time to wohh'y about my speach...")
 	lose_text = span_notice("Well, i know how to spell Rrrrr.")
