@@ -35,6 +35,12 @@
 		if(apply_stun(L, 10 * used_power))
 			to_chat(L, "<span class='warning'>A wave of energy overwhelms your senses!</span>")
 
+/datum/artifact_effect/stun/DoEffectDestroy()
+	var/turf/curr_turf = get_turf(holder)
+	for(var/mob/living/L in range(range+3, curr_turf))
+		if(apply_stun(L, 200))
+			to_chat(L, "<span class='warning'>A <b>massive</b> wave of energy overwhelms your senses!</span>")
+
 /datum/artifact_effect/stun/proc/apply_stun(mob/receiver, power)
 	var/weakened = get_anomaly_protection(receiver)
 	if(!weakened)
