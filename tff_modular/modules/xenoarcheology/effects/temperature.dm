@@ -89,7 +89,7 @@
 	if(!.)
 		return
 	var/datum/gas_mixture/env = .
-	if(env.temperature > target_temp)
+	if(env.temperature < target_temp)
 		env.temperature += 100
 
 /datum/artifact_effect/temperature/heat/DoEffectDestroy()
