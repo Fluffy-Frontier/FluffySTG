@@ -1,6 +1,6 @@
-#define ARTIFACT_SMALL_POWER  1
-#define ARTIFACT_MEDIUM_POWER 2
-#define ARTIFACT_LARGE_POWER  3
+#define ARTIFACT_SMALL_POWER "small"
+#define ARTIFACT_MEDIUM_POWER "medium"
+#define ARTIFACT_LARGE_POWER "big"
 
 #define ARTIFACT_ACTIVATION_MESSAGES list(\
 	"momentarily glows brightly!",\
@@ -64,16 +64,22 @@
  * Picks artifact type
  */
 /datum/artifact_effect/proc/create_artifact_type(chance_small, chance_medium, chance_large)
-	switch(pick(chance_small;ARTIFACT_SMALL_POWER, chance_medium;ARTIFACT_MEDIUM_POWER, chance_large;ARTIFACT_LARGE_POWER))
+	var/artifact_power = pick_weight(list(
+		ARTIFACT_SMALL_POWER = chance_small,
+		ARTIFACT_MEDIUM_POWER = chance_medium,
+		ARTIFACT_LARGE_POWER = chance_large))
+	switch(artifact_power)
 		if(ARTIFACT_SMALL_POWER)
 			maximum_charges = rand(5, 20)
 			range = rand(2, 4)
-		if(ARTIFACT_MEDIUM_POWER)
+		else if(ARTIFACT_MEDIUM_POWER)
 			maximum_charges = rand(15, 30)
 			range = rand(5, 7)
-		if(ARTIFACT_LARGE_POWER)
+		else if(ARTIFACT_LARGE_POWER)
 			maximum_charges = rand(20, 50)
 			range = rand(7, 10)
+		else
+			message_admins("Failed to create artifact type. Tell coders about it.")
 
 /**
  * Invokes async toggle artifact
@@ -91,8 +97,8 @@
 	if(!activated)
 		STOP_PROCESSING(SSobj, src)
 	if(istype(holder, /obj/machinery/artifact))
-		var/obj/machinery/artifact/A = holder
-		A.update_icon()
+		var/obj/machinery/artifact/Artifact = holder
+		Artifact.update_icon()
 	if(!reveal_toggle)
 		return
 	if(!holder)
@@ -228,32 +234,27 @@
  * returns NO_ANOMALY_PROTECTION if not human, returns calculated protection otherwise
  * higher returning number means less protection
  */
-/proc/get_anomaly_protection(mob/living/carbon/human/H)
-	if(!ishuman(H))
+/proc/get_anomaly_protection(mob/living/carbon/human/Human)
+	if(!ishuman(Human))
 		return NO_ANOMALY_PROTECTION
-
 	var/protection = 0
 	var/obj/item/bodypart/chest/userchest
 	var/obj/item/bodypart/head/userhead
-	for (var/obj/item/bodypart/checkpart in H.bodyparts)
+	for (var/obj/item/bodypart/checkpart in Human.bodyparts)
 		if (istype(checkpart, /obj/item/bodypart/chest))
 			userchest = checkpart
 		else if (istype(checkpart, /obj/item/bodypart/head))
 			userhead = checkpart
-
 	// use biohazard suits!
-	if(userchest && H.check_armor(userchest, BIO) >= 85)
+	if(userchest && Human.check_armor(userchest, BIO) >= 85)
 		protection += 0.5
-
-	if(userhead && H.check_armor(userhead, BIO) >= 85)
+	if(userhead && Human.check_armor(userhead, BIO) >= 85)
 		protection += 0.3
-
 	// latex gloves and science goggles also give a bit of bonus protection
-	if(istype(H.gloves,/obj/item/clothing/gloves/latex))
+	if(istype(Human.gloves, /obj/item/clothing/gloves/latex))
 		protection += 0.1
-	if(istype(H.glasses,/obj/item/clothing/glasses/science))
+	if(istype(Human.glasses, /obj/item/clothing/glasses/science))
 		protection += 0.1
-
 	return clamp(NO_ANOMALY_PROTECTION - protection, FULL_ANOMALY_PROTECTION, NO_ANOMALY_PROTECTION)
 
 #undef ARTIFACT_SMALL_POWER
