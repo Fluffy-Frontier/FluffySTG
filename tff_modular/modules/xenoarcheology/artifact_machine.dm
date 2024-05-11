@@ -32,12 +32,12 @@
 	if(!need_init)
 		return
 	//setup primary effect - these are the main ones (mixed)
-	var/effecttype = pick(global.valid_primary_effect_types)
+	var/effecttype = pick(GLOB.valid_primary_effect_types)
 	first_effect = new effecttype(src)
 
 	//65% chance to have a secondary effect
 	if(prob(65))
-		effecttype = pick(global.valid_secondary_effect_types)
+		effecttype = pick(GLOB.valid_secondary_effect_types)
 		secondary_effect = new effecttype(src)
 
 	init_artifact_type()
@@ -48,10 +48,17 @@
  * Picks random artifact icon, changes its name, description
  */
 /obj/machinery/artifact/proc/init_artifact_type()
-	icon_num = pick(ARTIFACT_WIZARD_LARGE,  ARTIFACT_WIZARD_SMALL, ARTIFACT_MARTIAN_LARGE,
-                    ARTIFACT_MARTIAN_SMALL, ARTIFACT_MARTIAN_PINK, ARTIFACT_CUBE,
-                    ARTIFACT_PILLAR,        ARTIFACT_COMPUTER,	   ARTIFACT_VENTS, ARTIFACT_FLOATING,
-                    ARTIFACT_CRYSTAL_GREEN) // 12th and 13th are just types of crystals, please ignore them at THAT point
+	icon_num = pick(ARTIFACT_WIZARD_LARGE,
+					ARTIFACT_WIZARD_SMALL,
+					ARTIFACT_MARTIAN_LARGE,
+                    ARTIFACT_MARTIAN_SMALL,
+					ARTIFACT_MARTIAN_PINK,
+					ARTIFACT_CUBE,
+                    ARTIFACT_PILLAR,
+					ARTIFACT_COMPUTER,
+					ARTIFACT_VENTS, ARTIFACT_FLOATING,
+                    ARTIFACT_CRYSTAL_GREEN,
+					) // 12th and 13th are just types of crystals, please ignore them at THAT point
 	switch(icon_num)
 		if(ARTIFACT_COMPUTER)
 			name = "alien computer"
@@ -178,8 +185,7 @@
 
 /obj/machinery/artifact/process()
 	//if either of our effects rely on environmental factors, work that out
-	if((first_effect?.trigger >= TRIGGER_HEAT && first_effect?.trigger <= TRIGGER_NITRO) ||\
-	 (secondary_effect?.trigger >= TRIGGER_HEAT && secondary_effect.trigger <= TRIGGER_NITRO))
+	if((first_effect?.trigger & TRIGGER_ATMOS) || (secondary_effect?.trigger & TRIGGER_ATMOS))
 		var/turf/T = get_turf(src)
 		var/datum/gas_mixture/env = T.return_air()
 		var/loc_gases = env.gases
@@ -210,52 +216,58 @@
 				toggle_effects_on(TRIGGER_NITRO)
 			else toggle_effects_off(TRIGGER_NITRO)
 	//TRIGGER_PROXY ACTIVATION
-	if((first_effect?.trigger >= TRIGGER_PROXY || secondary_effect?.trigger >= TRIGGER_PROXY))
+	if((first_effect?.trigger == TRIGGER_PROXY || secondary_effect?.trigger == TRIGGER_PROXY))
 		if(movement_around && (locate(/mob/living) in view(3, src)))
 			toggle_effects_on(TRIGGER_PROXY)
 		else
 			movement_around = FALSE
 			toggle_effects_off(TRIGGER_PROXY)
 
-/obj/machinery/artifact/Bumped(atom/AM)
+/obj/machinery/artifact/Bumped(atom/what_bumped)
 	..()
-	if(isobj(AM))
-		var/obj/O = AM
+	if(isobj(what_bumped))
+		var/obj/O = what_bumped
 		if(O.throwforce >= 10)
 			try_toggle_effects(TRIGGER_FORCE)
 	if(world.time >= last_time_touched + touch_cooldown)
 		last_time_touched = world.time
 		try_toggle_effects(TRIGGER_TOUCH)
 		if(first_effect.release_method == ARTIFACT_EFFECT_TOUCH && first_effect.activated && prob(50))
-			first_effect.DoEffectTouch(AM)
+			first_effect.DoEffectTouch(what_bumped)
 		if(secondary_effect && secondary_effect.release_method == ARTIFACT_EFFECT_TOUCH && secondary_effect.activated && prob(50))
-			secondary_effect.DoEffectTouch(AM)
-		if(ismob(AM))
-			to_chat(AM, "<b>You accidentally touch [src].</b>")
+			secondary_effect.DoEffectTouch(what_bumped)
+		if(ismob(what_bumped))
+			to_chat(what_bumped, "<b>You accidentally touch [src].</b>")
 	..()
 
-/obj/machinery/artifact/attackby(obj/item/W, mob/living/user)
-	if(istype(W, /obj/item/reagent_containers))
-		if(W.reagents.has_reagent(/datum/reagent/hydrogen, 1) || W.reagents.has_reagent(/datum/reagent/water, 1))
+/obj/machinery/artifact/proc/check_for_volatile(obj/item/reagent_containers/container)
+	for (var/datum/reagent/volatile in GLOB.volatile_reagents)
+		if (volatile in container.reagents.reagent_list)
+			return TRUE
+	return FALSE
+
+/obj/machinery/artifact/attackby(obj/item/attack_item, mob/living/user)
+	if(istype(attack_item, /obj/item/reagent_containers))
+		if(attack_item.reagents.has_reagent(/datum/reagent/hydrogen, 1) || attack_item.reagents.has_reagent(/datum/reagent/water, 1))
 			try_toggle_effects(TRIGGER_WATER)
-		else if(W.reagents.has_reagent(/datum/reagent/toxin/acid, 1, check_subtypes = TRUE))
+		else if(attack_item.reagents.has_reagent(/datum/reagent/toxin/acid, 1, check_subtypes = TRUE))
 			try_toggle_effects(TRIGGER_ACID)
-		else if(W.reagents.has_reagent(/datum/reagent/toxin/plasma, 1) || W.reagents.has_reagent(/datum/reagent/thermite, 1))
+		else if(check_for_volatile(attack_item))
 			try_toggle_effects(TRIGGER_VOLATILE)
-		else if(W.reagents.has_reagent(/datum/reagent/toxin, 1, check_subtypes = TRUE) || W.reagents.has_reagent(/datum/reagent/consumable/ethanol/neurotoxin, 1))
+		else if(attack_item.reagents.has_reagent(/datum/reagent/toxin, 1, check_subtypes = TRUE) || attack_item.reagents.has_reagent(/datum/reagent/consumable/ethanol/neurotoxin, 1))
 			try_toggle_effects(TRIGGER_TOXIN)
 	else
-		if(istype(W, /obj/item/melee/baton/security))
-			var/obj/item/melee/baton/security/B = W
-			if(B.active)
+		if(istype(attack_item, /obj/item/melee/baton/security))
+			var/obj/item/melee/baton/security/Batong = attack_item
+			if(Batong.active)
 				try_toggle_effects(TRIGGER_ENERGY)
-		else if(istype(W, /obj/item/melee/energy))
+		else if(istype(attack_item, /obj/item/melee/energy))
 			try_toggle_effects(TRIGGER_ENERGY)
-		else if (istype(W, /obj/item/xenoarch/handheld_scanner))
-			var/obj/item/xenoarch/handheld_scanner/scanner = W
+		else if (istype(attack_item, /obj/item/xenoarch/handheld_scanner))
+			var/obj/item/xenoarch/handheld_scanner/scanner = attack_item
 			get_scan(user, scanner)
 	if(first_effect?.trigger == TRIGGER_HEAT || secondary_effect?.trigger == TRIGGER_HEAT)
-		if(W.get_temperature() > 700)
+		if(attack_item.get_temperature() > 700)
 			try_toggle_effects(TRIGGER_HEAT)
 			return
 	..()
