@@ -241,7 +241,7 @@
 	..()
 
 /obj/machinery/artifact/proc/check_for_volatile(obj/item/reagent_containers/container)
-	for (var/datum/reagent/volatile in GLOB.volatile_reagents)
+	for (var/volatile in GLOB.volatile_reagents)
 		if (container.reagents.has_reagent(volatile, 1, check_subtypes = TRUE))
 			return TRUE
 	return FALSE
