@@ -357,3 +357,37 @@
       the top of the prefs menu (only viewable by slimes, and toggled on by default).
   - bugfix: using the flap emote with moth wings now makes a sound like it's supposed
       to
+2024-05-11:
+  00-Steven:
+  - bugfix: Pride pins can be reskinned again with alt-click.
+  GoldenAlpharex:
+  - bugfix: Fixed a donator item appearing on station when it wasn't supposed to.
+  Melbert:
+  - refactor: Random Name Generation has been refactored. Report any instances of
+      people having weird (or "Unknown") names.
+  - qol: Felinids, Slimepeople, Podpeople, and some other species without defined
+      namelists now automatically generate names based on their primary language(s).
+  - qol: More non-human names can be generated in codewords (and other misc. areas)
+      than just lizard names.
+  NeonNik2245:
+  - bugfix: anosmia holders now can't feel perfumes and some other things
+  Paxilmaniac:
+  - qol: Ammunition can now be made into piles of bullets by attacking one bullet
+      with another to create the pile. These piles delete themselves when empty, and
+      usually hold enough bullets to reload 1 or 1/2 of a magazine for the weapon
+      that uses that ammo, depending on the weapon.
+  - code_imp: some entirely unused code defines have been cleaned up
+  - balance: Razorwires do two (2) more damage (now 20 from 18)
+  - image: The melee item of the razorwire implant can now be alt-clicked to be recolored
+      to a few different pre-set variants
+  - rscadd: Many new options for treating synths without having to use the whole robotics
+      bay have been added to the common sources of DeForest branded medical supplies.
+  - balance: nanite slurry has been buffed to 3 healing rather than 1, so it's not
+      literally the worst healing chem in the entire game.
+  - image: All icons for the new synthetic treatment items are made by me, Paxilmaniac
+  - spellcheck: Some wording of a few strings in the wound treatment items has been
+      adjusted to fit better to the items.
+  carlarctg:
+  - rscadd: Chance to become crab on nonlethal DNA meltdown
+  mc-oofert:
+  - balance: punches no longer knock down and stamina damage dealt is (slightly) reduced
