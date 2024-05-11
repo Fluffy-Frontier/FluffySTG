@@ -38,16 +38,10 @@
 			if(1)//1 and 2 can only be selected once each to prevent more than two specific names/places/etc.
 				switch(rand(1,2))//Mainly to add more options later.
 					if(1)
-						if(names.len && prob(70))
+						if(length(names) && prob(70))
 							. += pick(names)
 						else
-							if(prob(10))
-								. += pick(lizard_name(MALE),lizard_name(FEMALE))
-							else
-								var/new_name = pick(pick(GLOB.first_names_male,GLOB.first_names_female))
-								new_name += " "
-								new_name += pick(GLOB.last_names)
-								. += new_name
+							. += generate_random_name()
 					if(2)
 						var/datum/job/job = pick(SSjob.joinable_occupations)
 						if(job)
