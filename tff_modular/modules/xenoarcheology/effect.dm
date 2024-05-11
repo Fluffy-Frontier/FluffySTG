@@ -72,14 +72,12 @@
 		if(ARTIFACT_SMALL_POWER)
 			maximum_charges = rand(5, 20)
 			range = rand(2, 4)
-		else if(ARTIFACT_MEDIUM_POWER)
+		if(ARTIFACT_MEDIUM_POWER)
 			maximum_charges = rand(15, 30)
 			range = rand(5, 7)
-		else if(ARTIFACT_LARGE_POWER)
+		if(ARTIFACT_LARGE_POWER)
 			maximum_charges = rand(20, 50)
 			range = rand(7, 10)
-		else
-			message_admins("Failed to create artifact type. Tell coders about it.")
 
 /**
  * Invokes async toggle artifact
