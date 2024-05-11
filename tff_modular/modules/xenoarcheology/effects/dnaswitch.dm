@@ -26,6 +26,14 @@
 	for(var/mob/living/carbon/human/H in range(range, curr_turf))
 		roll_and_change_genes(H, 20)
 
+/datum/artifact_effect/dnaswitch/DoEffectDestroy()
+	. = ..()
+	if(!.)
+		return
+	var/turf/curr_turf = get_turf(holder)
+	for(var/mob/living/carbon/human/H in range(range+3, curr_turf))
+		roll_and_change_genes(H, 90)
+
 /datum/artifact_effect/dnaswitch/proc/roll_and_change_genes(mob/living/carbon/human/receiver, chance)
 	var/weakness = get_anomaly_protection(receiver)
 	if(!prob(weakness * 100))
