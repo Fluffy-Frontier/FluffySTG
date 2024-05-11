@@ -15,18 +15,6 @@
 // * Add more effects from /vg/
 //
 
-
-/datum/artifact_find
-	var/artifact_id
-	var/artifact_find_type
-
-/datum/artifact_find/New()
-	artifact_id = "[pick("kappa","sigma","antaeres","beta","omicron","iota","epsilon","omega","gamma","delta","tau","alpha","fluffy","zeta")]-[rand(0,9999)]"
-
-	artifact_find_type = pick(\
-	5;/obj/machinery/power/supermatter_crystal/shard,\
-	1000;/obj/machinery/artifact)
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Boulders - sometimes turn up after excavating turf - excavate further to try and find large xenoarch finds
 
@@ -45,7 +33,8 @@
 	var/excavation_level = 0
 	var/target_excavation_level = 0
 	var/approximate_excavation_level = 0
-	var/datum/artifact_find/artifact_find = new /datum/artifact_find
+	var/artifact_find_type
+	var/artifact_id
 
 /obj/structure/boulder/examine(mob/user)
 	. = ..()
@@ -58,11 +47,16 @@
 /obj/structure/boulder/Initialize(mapload)
 	. = ..()
 	icon_state = "boulder[rand(1, 4)]"
-	target_excavation_level = rand(25, 100)
+	target_excavation_level = rand(25, 200)
 	approximate_excavation_level = target_excavation_level - (rand(-15,15))
+	artifact_find_type = pick_weight(list(
+	/obj/machinery/power/supermatter_crystal/shard = 5,
+	/obj/machinery/artifact = 1000
+	))
+	artifact_id = "[pick("kappa","sigma","antaeres","beta","omicron","iota","epsilon","omega","gamma","delta","tau","alpha","fluffy","zeta")]-[rand(0,9999)]"
 
 /obj/structure/boulder/proc/spawn_artifact()
-	var/obj/machinery/artifact/new_artifact = new artifact_find.artifact_find_type(get_turf(src))
+	var/obj/machinery/artifact/new_artifact = new artifact_find_type(get_turf(src))
 	if (!stabilised)
 		if (prob(50))
 			new_artifact.update_integrity(10) // It is on the edge of destruction
@@ -72,21 +66,21 @@
 /obj/structure/boulder/Destroy() // spawns and destroys artifact immideately
 	. = ..()
 	if (!stabilised)
-		var/obj/machinery/artifact/new_artifact = new artifact_find.artifact_find_type(get_turf(src))
+		var/obj/machinery/artifact/new_artifact = new artifact_find_type(get_turf(src))
 		new_artifact.Destroy()
 
-/obj/structure/boulder/Bumped(AM)
+/obj/structure/boulder/Bumped(who_moved)
 	. = ..()
-	if(ishuman(AM))
-		var/mob/living/carbon/human/H = AM
-		var/obj/item/offered_item = H.get_active_held_item()
+	if(ishuman(who_moved))
+		var/mob/living/carbon/human/Human = who_moved
+		var/obj/item/offered_item = Human.get_active_held_item()
 		if(istype(offered_item, /obj/item/xenoarch/hammer))
-			attackby(offered_item, H)
+			attackby(offered_item, Human)
 
-	else if(iscyborg(AM))
-		var/mob/living/silicon/robot/R = AM
-		if(istype(R.module_active, /obj/item/xenoarch/hammer))
-			attackby(R.module_active, R)
+	else if(iscyborg(who_moved))
+		var/mob/living/silicon/robot/Robot = who_moved
+		if(istype(Robot.module_active, /obj/item/xenoarch/hammer))
+			attackby(Robot.module_active, Robot)
 
 /obj/structure/boulder/proc/get_scanned(advanced)
 	if (advanced)
@@ -128,9 +122,9 @@
 	try_dig(1)
 	return BRUSH_NONE
 
-/obj/structure/boulder/attackby(obj/item/W, mob/user)
+/obj/structure/boulder/attackby(obj/item/attack_item, mob/user)
 	. = ..()
-	if(istype(W, /obj/item/pickaxe))
+	if(istype(attack_item, /obj/item/pickaxe))
 		to_chat(user, span_notice("You begin smashing the boulder."))
 		if(!do_after(user, 2.5 SECONDS, target = src))
 			to_chat(user, span_warning("You slip and smash the boulder with extra force!"))
@@ -146,8 +140,8 @@
 			if(DIG_ROCK)
 				to_chat(user, span_notice("You successfully dig the boulder. The item inside seems to be still intact."))
 
-	if(istype(W, /obj/item/xenoarch/hammer))
-		var/obj/item/xenoarch/hammer/hammer = W
+	if(istype(attack_item, /obj/item/xenoarch/hammer))
+		var/obj/item/xenoarch/hammer/hammer = attack_item
 		to_chat(user, span_notice("You begin carefully using your hammer."))
 		if(!do_after(user, hammer.dig_speed, target = src))
 			to_chat(user, span_warning("You interrupt your careful planning, damaging the boulder in the process!"))
@@ -163,8 +157,8 @@
 			if(DIG_ROCK)
 				to_chat(user, span_notice("You successfully dig around the item."))
 
-	if (istype(W, /obj/item/xenoarch/handheld_scanner))
-		var/obj/item/xenoarch/handheld_scanner/scanner = W
+	if (istype(attack_item, /obj/item/xenoarch/handheld_scanner))
+		var/obj/item/xenoarch/handheld_scanner/scanner = attack_item
 		if (holomark_adv || (holomark && !istype(scanner, /obj/item/xenoarch/handheld_scanner/advanced)))
 			to_chat(user, span_notice("The boulder was already scanned. You can even see the holomark attached to it."))
 			return
@@ -179,7 +173,7 @@
 				to_chat(user, span_notice("Thanks to the advanced scanner the holomark now also displays the exact depth needed!"))
 			return
 
-	if(istype(W, /obj/item/xenoarch/tape_measure))
+	if(istype(attack_item, /obj/item/xenoarch/tape_measure))
 		if (measured)
 			to_chat(user, span_notice("The boulder was already measured."))
 			return
@@ -192,8 +186,8 @@
 			to_chat(user, span_notice("You successfully attach a holo measuring tape to the boulder; the boulder will now report its dug depth always!"))
 			return
 
-	if(istype(W, /obj/item/xenoarch/brush))
-		var/obj/item/xenoarch/brush/brush = W
+	if(istype(attack_item, /obj/item/xenoarch/brush))
+		var/obj/item/xenoarch/brush/brush = attack_item
 		to_chat(user, span_notice("You begin carefully using your brush."))
 		if(!do_after(user, brush.dig_speed, target = src))
 			to_chat(user, span_warning("You interrupt your careful planning, damaging the boulder in the process!"))
@@ -209,13 +203,13 @@
 			if(BRUSH_NONE)
 				to_chat(user, span_notice("You brush around the item, but it wasn't revealed... hammer some more."))
 
-	if(istype(W, /obj/item/xenoarch/handheld_recoverer))
+	if(istype(attack_item, /obj/item/xenoarch/handheld_recoverer))
 		if (stabilised)
 			to_chat(user, span_notice("The boulder was already stabilised."))
 			return
-		to_chat(user, span_notice("You begin slowly stabilising the boulder with your [W]. You better not move during this delicate process."))
+		to_chat(user, span_notice("You begin slowly stabilising the boulder with your [attack_item]. You better not move during this delicate process."))
 		if(!do_after(user, 15 SECONDS, target = src))
-			to_chat(user, span_warning("Your hands slip and the [W] deals some serious damage to the boulder!"))
+			to_chat(user, span_warning("Your hands slip and the [attack_item] deals some serious damage to the boulder!"))
 			excavation_level += rand(5,25) // whoops, 2 bad
 			return
 		if(get_stabilised())
