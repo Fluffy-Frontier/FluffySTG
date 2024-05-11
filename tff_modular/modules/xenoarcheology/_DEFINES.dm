@@ -11,20 +11,23 @@
     ARTIFACT_EFFECT_PULSE)
 
 ///artifact trigger types
-#define TRIGGER_TOUCH 0
-#define TRIGGER_WATER 1
-#define TRIGGER_ACID 2
-#define TRIGGER_VOLATILE 3
-#define TRIGGER_TOXIN 4
-#define TRIGGER_FORCE 5
-#define TRIGGER_ENERGY 6
-#define TRIGGER_HEAT 7
-#define TRIGGER_COLD 8
-#define TRIGGER_PHORON 9
-#define TRIGGER_OXY 10
-#define TRIGGER_CO2 11
-#define TRIGGER_NITRO 12
-#define TRIGGER_PROXY 13
+#define TRIGGER_TOUCH (1<<2)
+#define TRIGGER_WATER (1<<3)
+#define TRIGGER_ACID (1<<4)
+#define TRIGGER_VOLATILE (1<<5)
+#define TRIGGER_TOXIN (1<<6)
+#define TRIGGER_FORCE (1<<7)
+#define TRIGGER_ENERGY (1<<8)
+#define TRIGGER_HEAT (1<<9)
+#define TRIGGER_COLD (1<<10)
+#define TRIGGER_PHORON (1<<11)
+#define TRIGGER_OXY (1<<12)
+#define TRIGGER_CO2 (1<<13)
+#define TRIGGER_NITRO (1<<14)
+#define TRIGGER_PROXY (1<<15)
+#define TRIGGER_TEMP (TRIGGER_COLD | TRIGGER_HEAT)
+#define TRIGGER_GASES (TRIGGER_PHORON | TRIGGER_OXY | TRIGGER_CO2 | TRIGGER_NITRO)
+#define TRIGGER_ATMOS (TRIGGER_HEAT | TRIGGER_COLD | TRIGGER_GASES)
 
 ///list of possible artifact triggers
 #define ARTIFACT_POSSIBLE_TRIGGERS list(\
@@ -76,8 +79,7 @@
 ///atomic synthesis
 #define ARTIFACT_EFFECT_SYNTH 7
 
-
-var/global/list/valid_primary_effect_types = list(
+GLOBAL_LIST_INIT(valid_primary_effect_types, list(
 	/datum/artifact_effect/temperature/cold,
 	/datum/artifact_effect/temperature/heat,
 	/datum/artifact_effect/dnaswitch,
@@ -87,12 +89,11 @@ var/global/list/valid_primary_effect_types = list(
 	/datum/artifact_effect/radiate,
 	/datum/artifact_effect/sleepy,
 	/datum/artifact_effect/stun,
-	/datum/artifact_effect/light,
 	/datum/artifact_effect/tesla,
 	/datum/artifact_effect/teleport
-	)
+	))
 
-var/global/list/valid_secondary_effect_types = list(
+GLOBAL_LIST_INIT(valid_secondary_effect_types, list(
 	/datum/artifact_effect/feelings/bad,
 	/datum/artifact_effect/feelings/good,
 	/datum/artifact_effect/cellcharge,
@@ -104,4 +105,21 @@ var/global/list/valid_secondary_effect_types = list(
 	/datum/artifact_effect/noise,
 	/datum/artifact_effect/roboheal,
 	/datum/artifact_effect/robohurt
-	)
+	))
+
+GLOBAL_LIST_INIT(volatile_reagents, list(
+	/datum/reagent/thermite,
+	/datum/reagent/toxin/plasma,
+	/datum/reagent/nitroglycerin,
+	/datum/reagent/clf3,
+	/datum/reagent/sorium,
+	/datum/reagent/liquid_dark_matter,
+	/datum/reagent/gunpowder,
+	/datum/reagent/rdx,
+	/datum/reagent/tatp,
+	/datum/reagent/flash_powder,
+	/datum/reagent/phlogiston,
+	/datum/reagent/napalm,
+	/datum/reagent/pyrosium,
+	/datum/reagent/teslium,
+	))
