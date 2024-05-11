@@ -16,8 +16,6 @@
 	var/need_init = TRUE
 	///how often do we scan
 	var/scan_delay = 2 SECONDS
-	///flag whether someone around
-	var/movement_around = FALSE
 	///touch cooldown to prevent spam in /bumped
 	var/touch_cooldown = 3 SECONDS
 	///last time mob touched us
@@ -41,8 +39,6 @@
 		secondary_effect = new effecttype(src)
 
 	init_artifact_type()
-	if(first_effect?.trigger == TRIGGER_PROXY || secondary_effect?.trigger == TRIGGER_PROXY)
-		new /datum/proximity_monitor(src, 3)
 
 /**
  * Picks random artifact icon, changes its name, description
@@ -217,10 +213,9 @@
 			else toggle_effects_off(TRIGGER_NITRO)
 	//TRIGGER_PROXY ACTIVATION
 	if((first_effect?.trigger == TRIGGER_PROXY || secondary_effect?.trigger == TRIGGER_PROXY))
-		if(movement_around && (locate(/mob/living) in view(3, src)))
+		if(locate(/mob/living) in view(3, src))
 			toggle_effects_on(TRIGGER_PROXY)
 		else
-			movement_around = FALSE
 			toggle_effects_off(TRIGGER_PROXY)
 
 /obj/machinery/artifact/Bumped(atom/what_bumped)
