@@ -120,7 +120,10 @@
 	name = "Forked tongue"
 	path = /obj/item/organ/internal/tongue/lizard
 
-<<<<<<< HEAD
+/datum/augment_item/organ/tongue/forked/filterless
+	name = "Forked tongue (Without TTS Filter)"
+	path = /obj/item/organ/internal/tongue/lizard/filterless
+
 //FF add, for auto-accent for anthropomorphs
 /datum/augment_item/organ/tongue/cat
 	name = "Cat tongue"
@@ -130,8 +133,3 @@
 	name = "Dog tongue"
 	path = /obj/item/organ/internal/tongue/dog
 //FF add ends.
-=======
-/datum/augment_item/organ/tongue/forked/filterless
-	name = "Forked tongue (Without TTS Filter)"
-	path = /obj/item/organ/internal/tongue/lizard/filterless
->>>>>>> 827b1aa496b (Adds a filterless forked tongue (#2437))
