@@ -7109,9 +7109,7 @@
 /area/station/service/bar)
 "aNv" = (
 /obj/effect/turf_decal/trimline/dark_blue/filled/warning,
-/obj/machinery/door/window/left/directional/east{
-	base_state = "right";
-	icon_state = "right";
+/obj/machinery/door/window/right/directional/east{
 	name = "Brig Desk";
 	req_access = list("brig")
 	},
@@ -11422,17 +11420,15 @@
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
 "bdj" = (
-/obj/machinery/door/window/left/directional/east{
-	base_state = "right";
-	icon_state = "right";
-	name = "Captain's Desk Door";
-	req_access = list("captain")
-	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/door/window/right/directional/east{
+	name = "Captain's Desk Door";
+	req_access = list("captain")
 	},
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
@@ -35837,8 +35833,6 @@
 	name = "Reception Window"
 	},
 /obj/machinery/door/window/brigdoor/left/directional/east{
-	base_state = "rightsecure";
-	icon_state = "rightsecure";
 	name = "Head of Personnel's Desk";
 	req_access = list("hop")
 	},
@@ -37441,7 +37435,6 @@
 /turf/open/floor/iron/dark,
 /area/station/commons/fitness)
 "hwW" = (
-/obj/machinery/door/firedoor,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -38625,10 +38618,6 @@
 /obj/machinery/dish_drive/bullet,
 /turf/open/floor/iron/dark,
 /area/station/security/office)
-"imq" = (
-/obj/structure/lattice,
-/turf/closed/wall/r_wall,
-/area/station/security/execution)
 "imH" = (
 /obj/effect/turf_decal/siding/purple/corner,
 /obj/structure/disposalpipe/segment{
@@ -45549,8 +45538,6 @@
 "nko" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/right/directional/south{
-	base_state = "left";
-	icon_state = "left";
 	name = "Robotics Desk";
 	req_access = list("robotics")
 	},
@@ -45813,6 +45800,7 @@
 	name = "Cell"
 	},
 /obj/structure/cable,
+/obj/machinery/door/firedoor,
 /turf/open/floor/iron,
 /area/station/security/prison/safe)
 "ntZ" = (
@@ -46112,8 +46100,6 @@
 	dir = 1
 	},
 /obj/machinery/door/window/left/directional/east{
-	base_state = "right";
-	icon_state = "right";
 	name = "Brig Desk";
 	req_access = list("brig")
 	},
@@ -48319,9 +48305,6 @@
 	name = "Courtroom"
 	},
 /obj/effect/landmark/navigate_destination,
-/obj/machinery/door/airlock/public/glass{
-	name = "Courtroom"
-	},
 /obj/effect/mapping_helpers/airlock/access/any/security/court,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -51353,8 +51336,6 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window/right/directional/north{
-	base_state = "left";
-	icon_state = "left";
 	name = "Pharmacy Desk";
 	req_access = list("pharmacy")
 	},
@@ -55641,7 +55622,6 @@
 /area/station/commons/dorms)
 "uKZ" = (
 /obj/machinery/door/window/left/directional/east{
-	icon_state = "right";
 	name = "Incoming Mail";
 	req_access = list("cargo")
 	},
@@ -56246,6 +56226,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/door/firedoor,
 /turf/open/floor/iron,
 /area/station/security/prison/shower)
 "vfR" = (
@@ -57036,6 +57017,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
+/obj/machinery/door/firedoor,
 /turf/open/floor/iron/dark,
 /area/station/security/prison)
 "vJg" = (
@@ -60109,7 +60091,6 @@
 	},
 /obj/item/storage/box/holobadge/hos,
 /obj/item/radio/off,
-/obj/machinery/recharger,
 /obj/machinery/recharger,
 /obj/machinery/light/directional/north,
 /obj/machinery/digital_clock{
@@ -82446,7 +82427,7 @@ nQs
 mZH
 ujH
 ujH
-imq
+fhp
 sUX
 sUX
 sUX
