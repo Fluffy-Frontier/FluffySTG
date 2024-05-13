@@ -50,7 +50,7 @@
 	//allocate a channel if necessary now so its the same for everyone
 	channel = channel || SSsounds.random_available_channel()
 
-	var/sound/S = sound(get_sfx(soundin))
+	var/sound/S = isdatum(soundin) ? soundin : sound(get_sfx(soundin))
 	var/maxdistance = SOUND_RANGE + extrarange
 	var/source_z = turf_source.z
 	var/list/listeners = SSmobs.clients_by_zlevel[source_z].Copy()
@@ -183,7 +183,7 @@
 
 /proc/get_sfx(soundin)
 	if(istext(soundin))
-		soundin = get_sfx_skyrat(soundin) //NOVA EDIT ADDITION - This overrides the default sound effects too, so use it to modularly change a sound effect output.
+		soundin = get_sfx_nova(soundin) // NOVA EDIT ADDITION - This overrides the default sound effects too, so use it to modularly change a sound effect output.
 		switch(soundin)
 			if(SFX_SHATTER)
 				soundin = pick('sound/effects/glassbr1.ogg','sound/effects/glassbr2.ogg','sound/effects/glassbr3.ogg')
@@ -424,5 +424,11 @@
 					'sound/items/reel3.ogg',
 					'sound/items/reel4.ogg',
 					'sound/items/reel5.ogg',
+				)
+			if(SFX_RATTLE)
+				soundin = pick(
+					'sound/items/rattle1.ogg',
+					'sound/items/rattle2.ogg',
+					'sound/items/rattle3.ogg',
 				)
 	return soundin

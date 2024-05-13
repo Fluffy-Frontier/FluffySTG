@@ -97,12 +97,13 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	var/list/jobs = list(
 		// Note that jobs divisible by 10 are considered heads of staff, and bolded
 		// 00: Captain
-		JOB_CAPTAIN = 00,
+		JOB_CAPTAIN = 0,
+		JOB_HUMAN_AI = 1,
 		// 10-19: Security
 		JOB_HEAD_OF_SECURITY = 10,
 		JOB_WARDEN = 11,
 		JOB_SECURITY_OFFICER = 12,
-		/* SKYRAT REMOVAL - We need those slots for our own jobs, these jobs aren't on Skyrat anymore anyway.
+		/* NOVA EDIT REMOVAL - We need those slots for our own jobs, these jobs aren't on Nova anymore anyway.
 		JOB_SECURITY_OFFICER_MEDICAL = 13,
 		JOB_SECURITY_OFFICER_ENGINEERING = 14,
 		JOB_SECURITY_OFFICER_SCIENCE = 15,
@@ -113,10 +114,10 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 		// 20-29: Medbay
 		JOB_CHIEF_MEDICAL_OFFICER = 20,
 		JOB_CHEMIST = 21,
-		JOB_VIROLOGIST = 22,
-		JOB_MEDICAL_DOCTOR = 23,
-		JOB_PARAMEDIC = 24,
-		JOB_CORONER = 25,
+		JOB_MEDICAL_DOCTOR = 22,
+		JOB_PARAMEDIC = 23,
+		JOB_CORONER = 24,
+		JOB_VIROLOGIST = 25, // NOVA EDIT ADDITION: Returns Virologist
 		JOB_ORDERLY = 26, // NOVA EDIT ADDITION
 		JOB_PSYCHOLOGIST = 27, // NOVA EDIT - ORIGINAL: JOB_PSYCHOLOGIST = 71,
 		// 30-39: Science
@@ -139,16 +140,17 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 		// 60+: Service
 		JOB_HEAD_OF_PERSONNEL = 60,
 		JOB_BARTENDER = 61,
-		JOB_COOK = 62,
-		JOB_BOTANIST = 63,
-		JOB_CURATOR = 64,
-		JOB_CHAPLAIN = 65,
-		JOB_CLOWN = 66,
-		JOB_MIME = 67,
-		JOB_JANITOR = 68,
-		JOB_LAWYER = 69,
-		JOB_BARBER = 71, // NOVA EDIT ADDITION
-		JOB_BOUNCER = 72, // NOVA EDIT ADDITION
+		JOB_CHEF = 62,
+		JOB_COOK = 63,
+		JOB_BOTANIST = 64,
+		JOB_CURATOR = 65,
+		JOB_CHAPLAIN = 66,
+		JOB_CLOWN = 67,
+		JOB_MIME = 68,
+		JOB_JANITOR = 69,
+		JOB_LAWYER = 70,
+		JOB_BARBER = 72, // NOVA EDIT ADDITION
+		JOB_BOUNCER = 73, // NOVA EDIT ADDITION
 		// 200-239: Centcom
 		JOB_CENTCOM_ADMIRAL = 200,
 		JOB_CENTCOM = 201,
@@ -176,7 +178,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 /datum/crewmonitor/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
-		ui = new(user, src, "CrewConsoleSkyrat")
+		ui = new(user, src, "CrewConsoleNova")
 		ui.open()
 
 /datum/crewmonitor/proc/show(mob/M, source)
@@ -194,7 +196,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 		z = T.z
 	. = list(
 		"sensors" = update_data(z),
-		"link_allowed" = isAI(user)
+		"link_allowed" = HAS_AI_ACCESS(user)
 	)
 
 /datum/crewmonitor/proc/update_data(z)
@@ -301,7 +303,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 			var/mob/living/silicon/ai/AI = usr
 			if(!istype(AI))
 				return
-			AI.ai_tracking_tool.set_tracked_mob(AI, params["name"])
+			AI.ai_tracking_tool.track_name(AI, params["name"])
 
 #undef SENSORS_UPDATE_PERIOD
 #undef UNKNOWN_JOB_ID

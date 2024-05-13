@@ -62,6 +62,8 @@
 					/obj/item/clothing/head/beret/sec/navyofficer = 5,
 					/obj/item/clothing/glasses/hud/security/sunglasses = 3,
 					/obj/item/clothing/glasses/hud/security/sunglasses/redsec = 3,
+					/obj/item/clothing/glasses/hud/security/sunglasses/peacekeeper = 3,
+					/obj/item/clothing/glasses/hud/security/sunglasses/peacekeeper/armadyne = 3,
 					/obj/item/storage/box/holobadge = 1,
 	)
 	light_color = "#abadcc"

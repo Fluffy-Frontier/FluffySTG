@@ -35,7 +35,7 @@
 
 		. += span_notice("And it can fit <b>[maximum_contained_items - length(contents)]</b> more items in it.")
 	else
-		. += span_notice("It can hold [maximum_contained_items] items, and there is nothing in it presently.")
+		. += span_notice("It can hold <b>[maximum_contained_items]</b> items, and there is nothing in it presently.")
 
 	. += span_notice("You can [anchored ? "un" : ""]secure [src] with <b>CTRL-Shift-Click</b>.")
 	. += span_notice("With a <b>prying tool</b> of some sort, you could take [src] apart.")
@@ -44,20 +44,19 @@
 	drop_everything_contained()
 	return ..()
 
-/obj/structure/millstone/deconstruct(disassembled)
-	var/obj/item/stack/sheet/mineral/stone = new (drop_location())
-	stone.amount = 6
-	stone.update_appearance(UPDATE_ICON)
+/obj/structure/millstone/atom_deconstruct(disassembled)
+	var/obj/item/stack/sheet/mineral/stone/stone = new(drop_location(), 6)
 	transfer_fingerprints_to(stone)
 	return ..()
 
-/obj/structure/millstone/AltClick(mob/user)
+/obj/structure/millstone/click_alt(mob/user)
 	if(!length(contents))
-		balloon_alert(user, "nothing inside")
-		return
+		balloon_alert(user, "nothing inside!")
+		return CLICK_ACTION_BLOCKING
 
 	drop_everything_contained()
 	balloon_alert(user, "removed all items")
+	return CLICK_ACTION_SUCCESS
 
 /obj/structure/millstone/CtrlShiftClick(mob/user)
 	set_anchored(!anchored)
@@ -112,7 +111,7 @@
 
 		return TRUE
 
-	if(!((istype(attacking_item, /obj/item/food/grown/)) || (istype(attacking_item, /obj/item/grown))))
+	if(!(istype(attacking_item, /obj/item/food/grown) || istype(attacking_item, /obj/item/grown)))
 		balloon_alert(user, "can only mill plants")
 		return ..()
 
@@ -121,7 +120,8 @@
 		return
 
 	attacking_item.forceMove(src)
-	return ..()
+	balloon_alert(user, "transferred [attacking_item]")
+	return TRUE
 
 /// Takes the content's seeds and spits them out on the turf, as well as grinding whatever the contents may be
 /obj/structure/millstone/proc/mill_it_up(mob/living/carbon/human/user)
@@ -150,7 +150,7 @@
 	for(var/target_item as anything in contents)
 		seedify(target_item, t_max = 1)
 
-	return
+	balloon_alert_to_viewers("finished grinding")
 
 #undef MILLSTONE_STAMINA_MINIMUM
 #undef MILLSTONE_STAMINA_USE

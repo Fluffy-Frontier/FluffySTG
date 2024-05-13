@@ -56,9 +56,6 @@
 //when someone pulls back their fishing rod
 #define COMSIG_FINISH_FISHING "finish_fishing"
 
-/// From mob/living/*/set_combat_mode(): (new_state)
-#define COMSIG_LIVING_COMBAT_MODE_TOGGLE "living_combat_mode_toggle"
-
 /// From /obj/item/organ/internal/stomach/after_eat(atom/edible)
 #define COMSIG_STOMACH_AFTER_EAT "stomach_after_eat"
 
@@ -87,3 +84,16 @@
 
 /// Whenever we need to get the soul of the mob inside of the soulcatcher.
 #define COMSIG_SOULCATCHER_SCAN_BODY "soulcatcher_scan_body"
+
+// CORRUPTION SIGNALS
+
+/// From /obj/structure/fleshmind/structure/proc/activate_ability() (src)
+#define COMSIG_CORRUPTION_STRUCTURE_ABILITY_TRIGGERED "corruption_structure_ability_triggered"
+
+/// From /mob/living/simple_animal/hostile/fleshmind/phaser/proc/phase_move_to(atom/target, nearby = FALSE)
+#define COMSIG_PHASER_PHASE_MOVE "phaser_phase_move"
+/// from /mob/living/simple_animal/hostile/fleshmind/phaser/proc/enter_nearby_closet()
+#define COMSIG_PHASER_ENTER_CLOSET "phaser_enter_closet"
+
+/// from /obj/structure/fleshmind/structure/core/proc/rally_troops()
+#define COMSIG_FLESHMIND_CORE_RALLY "fleshmind_core_rally"

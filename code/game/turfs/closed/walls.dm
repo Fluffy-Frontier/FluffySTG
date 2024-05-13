@@ -2,7 +2,7 @@
 
 /turf/closed/wall
 	name = "wall"
-	desc = "A huge chunk of iron used to separate rooms." //ICON OVERRIDEN IN SKYRAT AESTHETICS - SEE MODULE
+	desc = "A huge chunk of iron used to separate rooms." //ICON OVERRIDDEN IN NOVA AESTHETICS - SEE MODULE
 	icon = 'icons/turf/walls/wall.dmi'
 	icon_state = "wall-0"
 	base_icon_state = "wall"
@@ -140,7 +140,7 @@
 	for(var/obj/O in src.contents) //Eject contents!
 		if(istype(O, /obj/structure/sign/poster))
 			var/obj/structure/sign/poster/P = O
-			P.roll_and_drop(src)
+			INVOKE_ASYNC(P, TYPE_PROC_REF(/obj/structure/sign/poster, roll_and_drop), src)
 	if(decon_type)
 		ChangeTurf(decon_type, flags = CHANGETURF_INHERIT_AIR)
 	else

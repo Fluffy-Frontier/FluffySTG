@@ -80,11 +80,9 @@
 		if (is_banned_from(creature.ckey, list(antag_flag_override || antag_flag, ROLE_SYNDICATE)))
 			trimmed_list.Remove(creature)
 			continue
-
 		if (isnull(creature.mind))
 			continue
-
-		if (restrict_ghost_roles && (creature.mind.assigned_role.title in GLOB.exp_specialmap[EXP_TYPE_SPECIAL])) // Are they playing a ghost role?
+		if (restrict_ghost_roles && !(creature.mind.assigned_role.job_flags & JOB_CREW_MEMBER)) // Are they not playing a station role?
 			trimmed_list.Remove(creature)
 			continue
 		if (creature.mind.assigned_role.title in restricted_roles) // Does their job allow it?
@@ -144,11 +142,11 @@
 
 	SSdynamic.log_dynamic_and_announce("Polling [possible_volunteers.len] players to apply for the [name] ruleset.")
 	candidates = SSpolling.poll_ghost_candidates(
-		question = "Looking for volunteers to become [antag_flag] for [name]",
+		question = "Looking for volunteers to become [span_notice(antag_flag)] for [span_danger(name)]",
 		check_jobban = antag_flag_override,
 		role = antag_flag || antag_flag_override,
 		poll_time = 30 SECONDS,
-		pic_source = signup_item_path,
+		alert_pic = signup_item_path,
 		role_name_text = antag_flag,
 	)
 
@@ -272,9 +270,15 @@
 			candidates -= player // We don't autotator people in CentCom
 		else if(player.mind && (player.mind.special_role || player.mind.antag_datums?.len > 0))
 			candidates -= player // We don't autotator people with roles already
+		//NOVA EDIT ADDITION
+		else if(player in rejected_traitor)
+			candidates -= player
+		else if(player in sleeper_current_polling)
+			candidates -= player
+		//NOVA EDIT END
 
 /datum/dynamic_ruleset/midround/from_living/autotraitor/execute()
-	var/mob/M = pick(candidates)
+	var/mob/M = pick(poll_candidates_for_one(candidates)) // NOVA EDIT CHANGE - ORIGINAL: var/mob/M = pick(candidates)
 	assigned += M
 	candidates -= M
 	var/datum/antagonist/traitor/infiltrator/sleeper_agent/newTraitor = new
@@ -313,25 +317,29 @@
 	cost = 10
 	required_type = /mob/living/silicon/ai
 	blocking_rules = list(/datum/dynamic_ruleset/roundstart/malf_ai)
+	// AIs are technically considered "Ghost roles" as far as candidate selection are concerned
+	// So we need to allow it here. We filter of actual ghost role AIs (charlie) via trim_candidates ourselves
+	restrict_ghost_roles = FALSE
 
 /datum/dynamic_ruleset/midround/malf/trim_candidates()
 	..()
-	candidates = living_players
-	for(var/mob/living/player in candidates)
-		if(!isAI(player))
-			candidates -= player
+	candidates = list()
+	for(var/mob/living/silicon/ai/player in living_players)
+		if(!is_station_level(player.z))
 			continue
-
-		if(is_centcom_level(player.z))
-			candidates -= player
+		if(isnull(player.mind))
 			continue
+		if(player.mind.special_role || length(player.mind.antag_datums))
+			continue
+		candidates += player
 
-		if(player.mind && (player.mind.special_role || player.mind.antag_datums?.len > 0))
-			candidates -= player
+/datum/dynamic_ruleset/midround/malf/ready(forced)
+	if(!check_candidates())
+		log_dynamic("FAIL: No valid AI found for the Malfunctioning AI ruleset.")
+		return FALSE
+	return ..()
 
 /datum/dynamic_ruleset/midround/malf/execute()
-	if(!candidates || !candidates.len)
-		return FALSE
 	var/mob/living/silicon/ai/new_malf_ai = pick_n_take(candidates)
 	assigned += new_malf_ai.mind
 	var/datum/antagonist/malf_ai/malf_antag_datum = new
@@ -492,6 +500,11 @@
 	var/mob/living/carbon/human/blob_antag = pick_n_take(candidates)
 	assigned += blob_antag.mind
 	blob_antag.mind.special_role = antag_flag
+	notify_ghosts(
+		"[blob_antag] has become a blob host!",
+		source = blob_antag,
+		header = "So Bulbous...",
+	)
 	return ..()
 
 /// Midround Xenomorph Ruleset (From Ghosts)
@@ -861,6 +874,11 @@
 	obsessed.gain_trauma(/datum/brain_trauma/special/obsessed)
 	message_admins("[ADMIN_LOOKUPFLW(obsessed)] has been made Obsessed by the midround ruleset.")
 	log_game("[key_name(obsessed)] was made Obsessed by the midround ruleset.")
+	notify_ghosts(
+		"[obsessed] has developed an obsession with someone!",
+		source = obsessed,
+		header = "Love Can Bloom",
+	)
 	return TRUE
 
 /// Midround Space Changeling Ruleset (From Ghosts)
@@ -942,12 +960,16 @@
 /datum/dynamic_ruleset/midround/from_ghosts/paradox_clone/proc/find_original()
 	var/list/possible_targets = list()
 
+	var/opt_in_disabled = CONFIG_GET(flag/disable_antag_opt_in_preferences) // NOVA EDIT ADDITION - ANTAG OPT-IN
 	for(var/mob/living/carbon/human/player in GLOB.player_list)
 		if(!player.client || !player.mind || player.stat)
 			continue
 		if(!(player.mind.assigned_role.job_flags & JOB_CREW_MEMBER))
 			continue
-		possible_targets += player
+		// NOVA EDIT ADDITION START - Players in the interlink can't be obsession targets + Antag Optin
+		if (!opt_in_disabled && player.mind?.get_effective_opt_in_level() < OPT_IN_YES_ROUND_REMOVE)
+			continue
+		// NOVA EDIT ADDITION END
 
 	if(possible_targets.len)
 		return pick(possible_targets)

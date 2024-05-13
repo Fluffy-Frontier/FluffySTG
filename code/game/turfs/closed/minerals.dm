@@ -143,15 +143,15 @@
 		return rand(1,5)
 
 	if(distance < VENT_PROX_VERY_HIGH)
-		return 5
+		return ORE_WALL_VERY_HIGH
 	if(distance < VENT_PROX_HIGH)
-		return 4
+		return ORE_WALL_HIGH
 	if(distance < VENT_PROX_MEDIUM)
-		return 3
+		return ORE_WALL_MEDIUM
 	if(distance < VENT_PROX_LOW)
-		return 2
+		return ORE_WALL_LOW
 	if(distance < VENT_PROX_FAR)
-		return 1
+		return ORE_WALL_FAR
 	return 0
 
 /turf/closed/mineral/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
@@ -245,7 +245,7 @@
 
 /turf/closed/mineral/attack_hulk(mob/living/carbon/human/H)
 	..()
-	if(do_after(H, 50, target = src))
+	if(do_after(H, 5 SECONDS, target = src))
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 		H.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced = "hulk")
 		gets_drilled(H)
@@ -323,7 +323,7 @@
 				var/turf/closed/mineral/M = T
 				M.turf_type = src.turf_type
 				M.mineralAmt = scale_ore_to_vent()
-				SSore_generation.post_ore_random["[M.mineralAmt]"] += 1
+				GLOB.post_ore_random["[M.mineralAmt]"] += 1
 				src = M
 				M.levelupdate()
 			else
@@ -334,7 +334,7 @@
 			Change_Ore(path, FALSE)
 			Spread_Vein(path)
 			mineralAmt = scale_ore_to_vent()
-			SSore_generation.post_ore_manual["[mineralAmt]"] += 1
+			GLOB.post_ore_manual["[mineralAmt]"] += 1
 
 /turf/closed/mineral/random/high_chance
 	icon_state = "rock_highchance"
@@ -408,7 +408,7 @@
 	baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	defer_change = TRUE
-	proximity_based = TRUE // Nova Edit: Original TRUE //FF editr - reverted it back
+	proximity_based = FALSE // Nova Edit: Original TRUE
 	mineralChance = 7 // Nova Edit: Original 5 (13)
 
 /turf/closed/mineral/random/volcanic/mineral_chances()
@@ -436,7 +436,7 @@
 	baseturfs = /turf/open/misc/asteroid/snow/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	weak_turf = TRUE
-	proximity_based = TRUE // Nova Edit: Originally TRUE //FF editr - reverted it back
+	proximity_based = FALSE // Nova Edit: Originally TRUE
 	mineralChance = 8 // Nova Edit: Originally Not defined - lowers from 13
 
 /turf/closed/mineral/random/snow/Change_Ore(ore_type, random = 0)

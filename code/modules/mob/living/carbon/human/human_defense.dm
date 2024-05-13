@@ -146,7 +146,7 @@
 		return
 	if(!(shove_flags & SHOVE_KNOCKDOWN_BLOCKED))
 		target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)
-	if(!HAS_TRAIT(src, TRAIT_SHOVE_KNOCKDOWN_BLOCKED))
+	if(!HAS_TRAIT(src, TRAIT_BRAWLING_KNOCKDOWN_BLOCKED))
 		Knockdown(SHOVE_KNOCKDOWN_COLLATERAL)
 	target.visible_message(span_danger("[shover] shoves [target.name] into [name]!"),
 		span_userdanger("You're shoved into [name] by [shover]!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, src)
@@ -199,7 +199,7 @@
 			apply_damage(damage, BRUTE, affecting, run_armor_check(affecting, MELEE))
 		return TRUE
 
-//NOVA EDIT REMOVAL BEGIN - SKYRAT_XENO_REDO - Moved to: modular_nova\modules\xenos_skyrat_redo\code\human_defense.dm
+//NOVA EDIT REMOVAL BEGIN - NOVA_XENO_REDO - Moved to: modular_nova\modules\xenos_nova_redo\code\human_defense.dm
 /*
 /mob/living/carbon/human/attack_alien(mob/living/carbon/alien/adult/user, list/modifiers)
 	. = ..()

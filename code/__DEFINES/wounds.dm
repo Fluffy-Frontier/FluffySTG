@@ -123,11 +123,13 @@ GLOBAL_LIST_INIT(bio_state_anatomy, list(
 #define WOUND_SERIES_FLESH_PUNCTURE_BLEED "wound_series_flesh_puncture_bleed"
 /// Generic loss wounds. See loss.dm
 #define WOUND_SERIES_LOSS_BASIC "wound_series_loss_basic"
+/// Cranial fissure wound.
+#define WOUND_SERIES_CRANIAL_FISSURE "wound_series_cranial_fissure"
 
 // NOVA EDIT ADDITION BEGIN - MUSCLE AND SYNTH WOUNDS
 // Have to put it here so I can use it in the global list of wound series
 /// See muscle.dm and robotic_blunt.dm
-#define WOUND_SERIES_MUSCLE_DAMAGE "skyrat_wound_series_muscle_damage"
+#define WOUND_SERIES_MUSCLE_DAMAGE "nova_wound_series_muscle_damage"
 
 #define WOUND_SERIES_METAL_BLUNT_BASIC "wound_series_metal_blunt_basic"
 #define WOUND_SERIES_METAL_BURN_OVERHEAT "wound_series_metal_burn_basic"

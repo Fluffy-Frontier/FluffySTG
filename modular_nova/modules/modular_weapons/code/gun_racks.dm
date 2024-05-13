@@ -12,14 +12,10 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 	if(!mapload)
 		return
-	for(var/obj/item/found_item in loc.contents)
-		if(!isgun(found_item))
-			continue
-		rotate_weapon(found_item)
 
 /obj/structure/rack/gunrack/attackby(obj/item/attacking_item, mob/living/user, params)
 	var/list/modifiers = params2list(params)
-	if(attacking_item.tool_behaviour == TOOL_WRENCH && !(obj_flags & NO_DECONSTRUCTION) && LAZYACCESS(modifiers, RIGHT_CLICK))
+	if(attacking_item.tool_behaviour == TOOL_WRENCH && LAZYACCESS(modifiers, RIGHT_CLICK))
 		attacking_item.play_tool_sound(src)
 		deconstruct(TRUE)
 		return

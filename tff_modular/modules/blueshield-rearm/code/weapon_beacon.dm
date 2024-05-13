@@ -1,7 +1,7 @@
 /obj/item/choice_beacon/blueshield
 	name = "bodyguard weapon delivery beacon"
 	desc = "Weapon delivery beacon designed specially for picky Blueshield Agents."
-	icon_state = "gangtool-red"
+	icon_state = "self_delivery"
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/choice_beacon/blueshield/generate_display_names()

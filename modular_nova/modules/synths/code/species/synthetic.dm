@@ -51,6 +51,9 @@
 	/// This is the screen that is given to the user after they get revived. On death, their screen is temporarily set to BSOD before it turns off, hence the need for this var.
 	var/saved_screen = "Blank"
 
+/datum/species/synthetic/allows_food_preferences()
+	return FALSE
+
 /datum/species/synthetic/get_default_mutant_bodyparts()
 	return list(
 		"tail" = list("None", FALSE),
@@ -177,11 +180,6 @@
 	transformer.dna.mutant_bodyparts[MUTANT_SYNTH_SCREEN][MUTANT_INDEX_NAME] = screen_name
 	screen_organ.bodypart_overlay.set_appearance_from_dna(transformer.dna)
 	transformer.update_body()
-
-/datum/species/synthetic/random_name(gender, unique, lastname)
-	var/randname = pick(GLOB.posibrain_names)
-	randname = "[randname]-[rand(100, 999)]"
-	return randname
 
 /datum/species/synthetic/get_types_to_preload()
 	return ..() - typesof(/obj/item/organ/internal/cyberimp/arm/power_cord) // Don't cache things that lead to hard deletions.

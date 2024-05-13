@@ -5,6 +5,8 @@ GLOBAL_LIST_EMPTY(customizable_races)
 	digitigrade_customization = DIGITIGRADE_OPTIONAL // Doing this so that the legs preference actually works for everyone.
 	///Self explanatory
 	var/can_have_genitals = TRUE
+	/// Whether or not the gender shaping is disabled for this species
+	var/no_gender_shaping
 	///A list of actual body markings on the owner of the species. Associative lists with keys named by limbs defines, pointing to a list with names and colors for the marking to be rendered. This is also stored in the DNA
 	var/list/list/body_markings = list()
 	///Override of the eyes icon file, used for Vox and maybe more in the future - The future is now, with Teshari using it too
@@ -23,7 +25,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 	var/veteran_only = FALSE
 	///Flavor text of the species displayed on character creation screeen
 	var/flavor_text = "No description."
-	///Path to BODYTYPE_CUSTOM species worn icons. An assoc list of ITEM_SLOT_X => /icon
+	///Path to BODYSHAPE_CUSTOM species worn icons. An assoc list of ITEM_SLOT_X => /icon
 	var/list/custom_worn_icons = list()
 	///Is this species restricted from changing their body_size in character creation?
 	var/body_size_restricted = FALSE
@@ -124,7 +126,6 @@ GLOBAL_LIST_EMPTY(customizable_races)
 
 /datum/species/proc/handle_body(mob/living/carbon/human/species_human)
 	species_human.remove_overlay(BODY_LAYER)
-	var/height_offset = species_human.get_top_offset() // From high changed by varying limb height
 	var/list/standing = list()
 
 	var/obj/item/bodypart/head/noggin = species_human.get_bodypart(BODY_ZONE_HEAD)
@@ -135,9 +136,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 
 			if(eye_organ)
 				eye_organ.refresh(call_update = FALSE)
-				for(var/mutable_appearance/eye_overlay in eye_organ.generate_body_overlay(species_human))
-					eye_overlay.pixel_y += height_offset
-					standing += eye_overlay
+				standing += eye_organ.generate_body_overlay(species_human)
 
 	//Underwear, Undershirts & Socks
 	if(!HAS_TRAIT(species_human, TRAIT_NO_UNDERWEAR))
@@ -147,7 +146,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 			var/female_sprite_flags = FEMALE_UNIFORM_FULL // the default gender shaping
 			if(underwear)
 				var/icon_state = underwear.icon_state
-				if(underwear.has_digitigrade && (species_human.bodytype & BODYTYPE_DIGITIGRADE))
+				if(underwear.has_digitigrade && (species_human.bodyshape & BODYSHAPE_DIGITIGRADE))
 					icon_state += "_d"
 					female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY // for digi gender shaping
 				if(species_human.dna.species.sexes && species_human.physique == FEMALE && (underwear.gender == MALE))
@@ -156,7 +155,6 @@ GLOBAL_LIST_EMPTY(customizable_races)
 					underwear_overlay = mutable_appearance(underwear.icon, icon_state, -BODY_LAYER)
 				if(!underwear.use_static)
 					underwear_overlay.color = species_human.underwear_color
-				underwear_overlay.pixel_y += height_offset
 				standing += underwear_overlay
 
 		if(species_human.bra && !(species_human.underwear_visibility & UNDERWEAR_HIDE_BRA))
@@ -168,7 +166,6 @@ GLOBAL_LIST_EMPTY(customizable_races)
 				bra_overlay = mutable_appearance(bra.icon, icon_state, -BODY_LAYER)
 				if(!bra.use_static)
 					bra_overlay.color = species_human.bra_color
-				bra_overlay.pixel_y += height_offset
 				standing += bra_overlay
 
 		if(species_human.undershirt && !(species_human.underwear_visibility & UNDERWEAR_HIDE_SHIRT))
@@ -181,7 +178,6 @@ GLOBAL_LIST_EMPTY(customizable_races)
 					undershirt_overlay = mutable_appearance(undershirt.icon, undershirt.icon_state, -BODY_LAYER)
 				if(!undershirt.use_static)
 					undershirt_overlay.color = species_human.undershirt_color
-				undershirt_overlay.pixel_y += height_offset
 				standing += undershirt_overlay
 
 		if(species_human.socks && species_human.num_legs >= 2 && !(mutant_bodyparts["taur"]) && !(species_human.underwear_visibility & UNDERWEAR_HIDE_SOCKS))
@@ -189,7 +185,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 			if(socks)
 				var/mutable_appearance/socks_overlay
 				var/icon_state = socks.icon_state
-				if((species_human.bodytype & BODYTYPE_DIGITIGRADE))
+				if((species_human.bodyshape & BODYSHAPE_DIGITIGRADE))
 					icon_state += "_d"
 				socks_overlay = mutable_appearance(socks.icon, icon_state, -BODY_LAYER)
 				if(!socks.use_static)
@@ -202,50 +198,10 @@ GLOBAL_LIST_EMPTY(customizable_races)
 	species_human.apply_overlay(BODY_LAYER)
 	handle_mutant_bodyparts(species_human)
 
-/datum/species/spec_stun(mob/living/carbon/human/H,amount)
-	if(H)
-		stop_wagging_tail(H)
-	. = ..()
-
-/*
-*	TAIL WAGGING
-*/
-
-/datum/species/proc/can_wag_tail(mob/living/carbon/human/H)
-	if(!H) //Somewhere in the core code we're getting those procs with H being null
-		return FALSE
-	var/obj/item/organ/external/tail/T = H.get_organ_slot(ORGAN_SLOT_EXTERNAL_TAIL)
-	if(!T)
-		return FALSE
-	if(T.can_wag)
-		return TRUE
-	return FALSE
-
-/datum/species/proc/is_wagging_tail(mob/living/carbon/human/H)
-	if(!H) //Somewhere in the core code we're getting those procs with H being null
-		return FALSE
-	var/obj/item/organ/external/tail/T = H.get_organ_slot(ORGAN_SLOT_EXTERNAL_TAIL)
-	if(!T)
-		return FALSE
-	return T.wagging
-
-/datum/species/proc/start_wagging_tail(mob/living/carbon/human/H)
-	if(!H) //Somewhere in the core code we're getting those procs with H being null
-		return
-	var/obj/item/organ/external/tail/T = H.get_organ_slot(ORGAN_SLOT_EXTERNAL_TAIL)
-	if(!T)
-		return FALSE
-	T.wagging = TRUE
-	H.update_body()
-
-/datum/species/proc/stop_wagging_tail(mob/living/carbon/human/H)
-	if(!H) //Somewhere in the core code we're getting those procs with H being null
-		return
-	var/obj/item/organ/external/tail/T = H.get_organ_slot(ORGAN_SLOT_EXTERNAL_TAIL)
-	if(!T)
-		return
-	T.wagging = FALSE
-	H.update_body()
+/datum/species/spec_stun(mob/living/carbon/human/target, amount)
+	if(istype(target))
+		target.unwag_tail()
+	return ..()
 
 /datum/species/regenerate_organs(mob/living/carbon/target, datum/species/old_species, replace_current = TRUE, list/excluded_zones, visual_only = FALSE)
 	. = ..()

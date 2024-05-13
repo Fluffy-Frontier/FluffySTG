@@ -89,7 +89,7 @@ INITIALIZE_IMMEDIATE(/turf/closed/indestructible/splashscreen)
 	else if(width == 608) // 608x480 is widescreen
 		pixel_x = -64
 	// NOVA EDIT START - Wider widescreen
-	else if(width == 672) // Skyrat's widescreen is slightly wider than /tg/'s, so we need to accomodate that too.
+	else if(width == 672) // Nova's widescreen is slightly wider than /tg/'s, so we need to accomodate that too.
 		pixel_x = -96
 	// NOVA EDIT END
 
@@ -121,6 +121,16 @@ NOVA EDIT REMOVAL END */
 	smoothing_groups = SMOOTH_GROUP_WALLS + SMOOTH_GROUP_CLOSED_TURFS
 	canSmoothWith = SMOOTH_GROUP_WALLS
 
+/turf/closed/indestructible/reinforced/titanium
+	name = "reinforced titanium imitation wall"
+	desc = "A huge chunk of reinforced metal used to separate rooms. Naturally, to cut down on costs, this is just a really good paint job to resemble titanium. Effectively impervious to conventional methods of destruction."
+	icon = 'icons/turf/walls/shuttle_wall.dmi'
+	icon_state = "shuttle_wall-0"
+	base_icon_state = "shuttle_wall"
+
+/turf/closed/indestructible/reinforced/titanium/nodiagonal
+	icon_state = "shuttle_wall-15"
+	smoothing_flags = SMOOTH_BITMASK
 
 /turf/closed/indestructible/riveted
 	icon = 'icons/turf/walls/riveted.dmi'

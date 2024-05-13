@@ -6,6 +6,8 @@ GLOBAL_LIST_EMPTY(objectives) //NOVA EDIT ADDITION
 	var/datum/team/team //An alternative to 'owner': a team. Use this when writing new code.
 	var/name = "generic objective" //Name for admin prompts
 	var/explanation_text = "Nothing" //What that person is supposed to do.
+	///if this objective doesn't print failure or success in the roundend report
+	var/no_failure = FALSE 
 	///name used in printing this objective (Objective #1)
 	var/objective_name = "Objective"
 	var/team_explanation_text //For when there are multiple owners.
@@ -99,6 +101,8 @@ GLOBAL_LIST_EMPTY(objectives) //NOVA EDIT ADDITION
 
 /// Provides a string describing what a good job you did or did not do
 /datum/objective/proc/get_roundend_success_suffix()
+	if(no_failure)
+		return "" // Just print the objective with no success/fail evaluation, as it has no mechanical backing
 	return check_completion() ? span_greentext("Success!") : span_redtext("Fail.")
 
 /datum/objective/proc/is_unique_objective(possible_target, dupe_search_range)
@@ -157,6 +161,7 @@ GLOBAL_LIST_EMPTY(objectives) //NOVA EDIT ADDITION
 		var/datum/mind/O = I
 		if(O.late_joiner)
 			try_target_late_joiners = TRUE
+	var/opt_in_disabled = CONFIG_GET(flag/disable_antag_opt_in_preferences) // NOVA EDIT ADDITION - ANTAG OPT-IN
 	for(var/datum/mind/possible_target in get_crewmember_minds())
 		if(possible_target in owners)
 			continue
@@ -166,6 +171,10 @@ GLOBAL_LIST_EMPTY(objectives) //NOVA EDIT ADDITION
 			continue
 		if(!is_valid_target(possible_target))
 			continue
+		// NOVA EDIT ADDITION START - Antag Opt In
+		if (!opt_in_disabled && !opt_in_valid(possible_target))
+			continue
+		// NOVA EDIT ADDITION END
 		possible_targets += possible_target
 	if(try_target_late_joiners)
 		var/list/all_possible_targets = possible_targets.Copy()
@@ -356,6 +365,8 @@ GLOBAL_LIST_EMPTY(objectives) //NOVA EDIT ADDITION
 
 /datum/objective/protect/check_completion()
 	var/obj/item/organ/internal/brain/brain_target
+	if(isnull(target))
+		return FALSE
 	if(human_check)
 		brain_target = target.current?.get_organ_slot(ORGAN_SLOT_BRAIN)
 	//Protect will always suceed when someone suicides
@@ -405,7 +416,7 @@ GLOBAL_LIST_EMPTY(objectives) //NOVA EDIT ADDITION
 /datum/objective/jailbreak/detain/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Ensure that [target.name], the [!target_role_type ? target.assigned_role.title : target.special_role] is delivered to nanotrasen alive and in custody."
+		explanation_text = "Ensure that [target.name], the [!target_role_type ? target.assigned_role.title : target.special_role] is delivered to Nanotrasen alive and in custody."
 	else
 		explanation_text = "Free objective."
 
@@ -871,7 +882,15 @@ GLOBAL_LIST_EMPTY(possible_items)
 /datum/objective/destroy/find_target(dupe_search_range, list/blacklist)
 	var/list/possible_targets = active_ais(TRUE)
 	possible_targets -= blacklist
-	var/mob/living/silicon/ai/target_ai = pick(possible_targets)
+	//var/mob/living/silicon/ai/target_ai = pick(possible_targets) // NOVA EDIT REMOVAL - Uses the below loop
+	// NOVA EDIT ADDITION BEGIN - ANTAG OPTIN
+	var/mob/living/silicon/ai/target_ai
+	var/opt_in_disabled = CONFIG_GET(flag/disable_antag_opt_in_preferences) // NOVA EDIT ADDITION - ANTAG OPT-IN
+	for (var/mob/living/silicon/ai/possible_target as anything in shuffle(possible_targets))
+		if (!opt_in_disabled && !opt_in_valid(possible_target))
+			continue
+		target_ai = possible_target
+	// NOVA EDIT ADDITION END
 	target = target_ai.mind
 	update_explanation_text()
 	return target
@@ -992,14 +1011,12 @@ GLOBAL_LIST_EMPTY(possible_items)
 /datum/objective/custom
 	name = "custom"
 	admin_grantable = TRUE
+	no_failure = TRUE
 
 /datum/objective/custom/admin_edit(mob/admin)
 	var/expl = stripped_input(admin, "Custom objective:", "Objective", explanation_text)
 	if(expl)
 		explanation_text = expl
-
-/datum/objective/custom/get_roundend_success_suffix()
-	return "" // Just print the objective with no success/fail evaluation, as it has no mechanical backing
 
 //Ideally this would be all of them but laziness and unusual subtypes
 /proc/generate_admin_objective_list()
@@ -1016,6 +1033,11 @@ GLOBAL_LIST_EMPTY(possible_items)
 	var/payout = 0
 	var/payout_bonus = 0
 	var/area/dropoff = null
+
+/datum/objective/contract/is_valid_target(datum/mind/possible_target)
+	if(HAS_TRAIT(possible_target, TRAIT_HAS_BEEN_KIDNAPPED))
+		return FALSE
+	return ..()
 
 // Generate a random valid area on the station that the dropoff will happen.
 /datum/objective/contract/proc/generate_dropoff()

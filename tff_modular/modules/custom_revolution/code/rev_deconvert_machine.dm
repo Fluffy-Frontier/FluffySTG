@@ -88,15 +88,15 @@
 	. = ..()
 	. += span_notice("ALT-Click to turn ON when closed.")
 
-/obj/machinery/custom_rev_deconvert_device/AltClick(mob/user)
-	. = ..()
+/obj/machinery/custom_rev_deconvert_device/click_alt(mob/user)
 	if(!powered() || !occupant || state_open)
-		return FALSE
+		return CLICK_ACTION_BLOCKING
 
 	to_chat(user, "You power on [src].")
 	addtimer(CALLBACK(src, PROC_REF(eject_new_you)), processing_time, TIMER_OVERRIDE|TIMER_UNIQUE)
 	processing = TRUE
 	update_appearance()
+	return CLICK_ACTION_SUCCESS
 
 /obj/machinery/custom_rev_deconvert_device/container_resist_act(mob/living/user)
 	if(state_open)
@@ -139,7 +139,7 @@
 		say(pick(advertisements))
 		playsound(loc, 'sound/machines/chime.ogg', 30, FALSE)
 
-	use_power(500)
+	use_energy(500 JOULES)
 
 /// Дековерт тут.
 /obj/machinery/custom_rev_deconvert_device/proc/eject_new_you()
@@ -169,6 +169,12 @@
 			continue
 		occupant_mind.remove_antag_datum(antag)
 		occupant_mind.current.log_message("has been deconverted from the [antag.rev_team.name] by deconvert machinery!", LOG_GAME, color="red")
+		success = TRUE
+
+	// Также деконвертим дефолтную реву, дабы была альтернатива сомнительному забиванию головы дубинкой
+	var/datum/antagonist/rev/d_rev = occupant_mind.has_antag_datum(/datum/antagonist/rev)
+	if(d_rev)
+		d_rev.remove_revolutionary("deconvert machinery")
 		success = TRUE
 
 	var/obj/item/radio/sec_radio = new (src)

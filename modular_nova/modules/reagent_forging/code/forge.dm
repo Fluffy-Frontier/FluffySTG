@@ -309,7 +309,12 @@
 		baked_item.fire_act(1000) // Overcooked food really does burn, hot hot hot!
 
 		if(SPT_PROB(10, seconds_per_tick))
-			visible_message(span_danger("You smell a burnt smell coming from [src]!")) // Give indication that something is burning in the oven
+			var/list/asomnia_havers = get_hearers_in_view(DEFAULT_MESSAGE_RANGE, src)
+			for(var/mob/cannot_smell in asomnia_havers)
+				if(!HAS_TRAIT(cannot_smell, TRAIT_ANOSMIA))
+					asomnia_havers -= cannot_smell
+			visible_message(span_danger("You smell a burnt smell coming from [src]!"), ignored_mobs = asomnia_havers)
+			// Give indication that something is burning in the oven
 	set_smoke_state(worst_cooked_food_state)
 
 /// Sets the type of particles that the forge should be generating
@@ -459,6 +464,12 @@
 
 	if(istype(attacking_item, /obj/item/glassblowing/metal_cup))
 		handle_metal_cup_melting(attacking_item, user)
+		return TRUE
+
+	if(istype(attacking_item, /obj/item/stack/rods))
+		in_use = TRUE
+		smelt_iron_rods(attacking_item, user)
+		in_use = FALSE
 		return TRUE
 
 	return ..()
@@ -740,6 +751,41 @@
 	COOLDOWN_START(spawned_glass, remaining_heat, glassblowing_amount)
 	spawned_glass.total_time = glassblowing_amount
 
+/// Almost a copy from the proc smelt_ore but to smelt iron rods
+/obj/structure/reagent_forge/proc/smelt_iron_rods(obj/attacking_item, mob/living/user)
+
+	var/obj/item/stack/rods/rod_item = attacking_item
+
+	if(!istype(rod_item))
+		return
+
+	if(forge_temperature < MIN_FORGE_TEMP)
+		fail_message(user, "forge too cool")
+		return
+
+	var/skill_modifier = user.mind.get_skill_modifier(/datum/skill/smithing, SKILL_SPEED_MODIFIER)
+
+	if(rod_item.amount < 2)
+		fail_message(user, "too few iron rods to smelt")
+		return
+
+	balloon_alert_to_viewers("smelting...")
+
+	if(!do_after(user, skill_modifier * 3 SECONDS, target = src))
+		fail_message(user, "stopped smelting [rod_item]")
+		return
+
+	var/rods_to_sheet_amount = round((rod_item.amount / 2))
+	var/used_rods = rod_item.amount
+
+	if(ISODD(used_rods))
+		used_rods = used_rods - 1
+
+	rod_item.use(used_rods)
+	new /obj/item/stack/sheet/iron(drop_location(), rods_to_sheet_amount)
+
+	balloon_alert_to_viewers("finished smelting!")
+
 /obj/structure/reagent_forge/billow_act(mob/living/user, obj/item/tool)
 	if(in_use) // Preventing billow use if the forge is in use to prevent spam
 		fail_message(user, "forge busy")
@@ -747,8 +793,6 @@
 
 	var/skill_modifier = user.mind.get_skill_modifier(/datum/skill/smithing, SKILL_SPEED_MODIFIER)
 	var/obj/item/forging/forge_item = tool
-
-	in_use = TRUE
 
 	if(!forge_fuel_strong && !forge_fuel_weak)
 		fail_message(user, "no fuel in [src]")
@@ -760,9 +804,11 @@
 
 	balloon_alert_to_viewers("billowing...")
 
+	in_use = TRUE
 	while(forge_temperature < 91)
-		if(!do_after(user, skill_modifier * forge_item.toolspeed, target = src))
+		if(!do_after(user, (skill_modifier * forge_item.toolspeed) SECONDS, target = src))
 			balloon_alert_to_viewers("stopped billowing")
+			in_use = FALSE
 			return ITEM_INTERACT_SUCCESS
 
 		forge_temperature += 10
@@ -894,11 +940,13 @@
 	return ITEM_INTERACT_SUCCESS
 
 /obj/structure/reagent_forge/wrench_act(mob/living/user, obj/item/tool)
-	tool.play_tool_sound(src)
+	user.balloon_alert_to_viewers("disassembling...")
+	if(!tool.use_tool(src, user, 2 SECONDS, volume = 100))
+		return
 	deconstruct(TRUE)
 	return TRUE
 
-/obj/structure/reagent_forge/deconstruct(disassembled)
+/obj/structure/reagent_forge/atom_deconstruct(disassembled)
 	new /obj/item/stack/sheet/iron/ten(get_turf(src))
 	return ..()
 

@@ -11,7 +11,7 @@
 	spawned_human.grant_language(/datum/language/common, source = LANGUAGE_SPAWNER)
 
 /obj/effect/mob_spawn/ghost_role/human/blackmarket
-	name = "cryogenics pod"
+	name = "Black Market Trader"
 	prompt_name = "a blackmarket dealer"
 	desc = "A humming cryo pod. The machine is attempting to wake up its occupant."
 	mob_name = "a black market dealer"
@@ -21,7 +21,7 @@
 	you_are_text = "You are a black market dealer, with shop set up in Nanotrasen Space."
 	flavour_text = "FTU, Independent.. whatever, whoever you are. It doesn't matter out here. \
 	You've set up shop in a slightly shady, yet functional little asteroid for your dealings. \
-	Explore space, find valuable artifacts and nice loot - and pawn it off to those stooges at NT. \
+	Explore space, setup shop and find valuable artifacts and nice loot - and pawn it off to those stooges at NT. \
 	Or perhaps more exotic customers are in local space...?"
 	important_text = "You are not an antagonist."
 	outfit = /datum/outfit/black_market
@@ -34,7 +34,7 @@
 	name = "Black Market Trader"
 	uniform = /obj/item/clothing/under/rank/cargo/tech
 	shoes = /obj/item/clothing/shoes/laceup
-	id = /obj/item/card/id/away/blackmarket
+	id = /obj/item/card/id/advanced/chameleon/black/blackmarket
 
 /datum/outfit/black_market/post_equip(mob/living/carbon/human/shady, visualsOnly)
 	handlebank(shady)
@@ -44,7 +44,7 @@
 	name = "DS2 personnel"
 	use_outfit_name = TRUE
 	prompt_name = "DS2 personnel"
-	you_are_text = "You are a syndicate operative, employed in a top secret research facility developing biological weapons."
+	you_are_text = "You are a Syndicate operative, employed in a top secret research facility developing biological weapons."
 	flavour_text = "Unfortunately, your hated enemy, Nanotrasen, has begun mining in this sector. Continue operating as best you can, and try to keep a low profile."
 	quirks_enabled = TRUE
 	random_appearance = FALSE
@@ -54,7 +54,7 @@
 /obj/effect/mob_spawn/ghost_role/human/ds2/prisoner
 	name = "Syndicate Prisoner"
 	prompt_name = "a Syndicate prisoner"
-	you_are_text = "You are a syndicate prisoner aboard an unknown ship."
+	you_are_text = "You are a Syndicate prisoner aboard an unknown ship."
 	flavour_text = "Unaware of where you are, all you know is you are a prisoner. The plastitanium should clue you into who your captors are... as for why you're here? That's for you to know, and for us to find out."
 	important_text = "You are still subject to standard prisoner policy and must Adminhelp before antagonizing DS2."
 	icon = 'icons/obj/machines/sleeper.dmi'
@@ -68,8 +68,8 @@
 	prompt_name = "a Syndicate operative"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
-	you_are_text = "You are an operative of the Sothran Syndicate terrorist cell, employed onboard the Deep Space 2 FOB for reasons that are yours."
-	flavour_text = "The Sothran Syndicate has found it fit to send a forward operating base to Sector 13 to monitor NT's operations. Your orders are maintaining the ship's integrity and keeping a low profile as well as possible."
+	you_are_text = "You are a Syndicate operative, employed onboard the Deep Space 2 FOB for reasons that are yours."
+	flavour_text = "The Syndicate has found it fit to send a forward operating base to Sector 13 to monitor NT's operations. Your orders are maintaining the ship's integrity and keeping a low profile as well as possible."
 	important_text = "You are not an antagonist. Adminhelp before antagonizing station crew."
 	outfit = /datum/outfit/ds2/syndicate
 	computer_area = /area/ruin/space/has_grav/nova/des_two/halls
@@ -81,8 +81,8 @@
 	prompt_name = "a Syndicate leader"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
-	you_are_text = "You are a command operative of the Sothran Syndicate terrorist cell, employed onboard the Deep Space 2 FOB to guide it forward in its goals."
-	flavour_text = "The Sothran Syndicate has found it fit to send you to help command the forward operating base in Sector 13. Your orders are commanding the crew of DS-2 while keeping a low profile as well as possible."
+	you_are_text = "You are a Syndicate command operative, employed onboard the Deep Space 2 FOB to guide it forward in its goals."
+	flavour_text = "The Syndicate has found it fit to send you to help command the forward operating base in Sector 13. Your orders are commanding the crew of DS-2 while keeping a low profile as well as possible."
 	important_text = "Keep yourself to the same standards as Command Policy. You are not an antagonist and must Adminhelp before antagonizing station crew."
 	outfit = /datum/outfit/ds2/syndicate_command
 	computer_area = /area/ruin/space/has_grav/nova/des_two/halls
@@ -126,6 +126,8 @@
 
 /obj/effect/mob_spawn/ghost_role/human/hotel_staff
 	random_appearance = FALSE
+	quirks_enabled = TRUE
+	loadout_enabled = TRUE
 
 /obj/effect/mob_spawn/ghost_role/human/hotel_staff/manager
 	name = "staff manager sleeper"
@@ -176,7 +178,7 @@
 	ears = /obj/item/radio/headset/interdyne
 	back = /obj/item/storage/backpack
 	backpack_contents = list(
-		/obj/item/storage/box/survival = 1,
+		/obj/item/storage/box/survival/interdyne = 1,
 		/obj/item/storage/box/nif_ghost_box/ghost_role=1,
 		/obj/item/crowbar = 1,
 		)
@@ -190,7 +192,7 @@
 	belt = /obj/item/storage/bag/ore
 	back = /obj/item/storage/backpack/satchel/explorer
 	backpack_contents = list(
-		/obj/item/storage/box/survival = 1,
+		/obj/item/storage/box/survival/interdyne = 1,
 		/obj/item/storage/box/nif_ghost_box/ghost_role=1,
 		/obj/item/crowbar = 1,
 		/obj/item/knife/combat/survival = 1,
@@ -207,6 +209,9 @@
 	uniform = /obj/item/clothing/under/syndicate/nova/tactical
 	id_trim = /datum/id_trim/syndicom/nova/ds2/syndicatestaff
 	back = /obj/item/storage/backpack/satchel
+	backpack_contents = list(
+		/obj/item/storage/box/survival/interdyne = 1,
+	)
 	suit = /obj/item/clothing/suit/apron/chef
 	head = /obj/item/clothing/head/soft/mime
 
@@ -215,7 +220,7 @@
 	uniform = /obj/item/clothing/under/syndicate/nova/overalls
 	head = /obj/item/clothing/head/soft/sec/syndicate
 	backpack_contents = list(
-		/obj/item/storage/box/survival = 1,
+		/obj/item/storage/box/survival/interdyne = 1,
 		/obj/item/storage/box/nif_ghost_box/ghost_role=1,
 		)
 	id_trim = /datum/id_trim/syndicom/nova/ds2/enginetechnician
@@ -231,6 +236,9 @@
 	glasses = /obj/item/clothing/glasses/sunglasses/chemical
 	gloves = /obj/item/clothing/gloves/color/black
 	back = /obj/item/storage/backpack/satchel
+	backpack_contents = list(
+		/obj/item/storage/box/survival/interdyne = 1,
+	)
 
 /datum/outfit/ds2/syndicate/stationmed
 	name = "DS-2 Medical Officer"
@@ -241,7 +249,7 @@
 	gloves = /obj/item/clothing/gloves/latex/nitrile/ntrauma
 	back = /obj/item/storage/backpack/satchel
 	backpack_contents = list(
-		/obj/item/storage/box/survival = 1,
+		/obj/item/storage/box/survival/interdyne = 1,
 		/obj/item/storage/box/nif_ghost_box/ghost_role=1,
 		/obj/item/crowbar = 1,
 		/obj/item/storage/medkit/surgery = 1,
@@ -256,12 +264,17 @@
 	back = /obj/item/storage/backpack/security/redsec
 	head = /obj/item/clothing/head/helmet/swat/ds
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/redsec
+	backpack_contents = list(
+		/obj/item/storage/box/survival/interdyne = 1,
+		/obj/item/gun/ballistic/automatic/pistol/sol/evil = 1,
+		/obj/item/ammo_box/magazine/c35sol_pistol = 1,
+		)
 	r_pocket = /obj/item/flashlight/seclite
 	mask = /obj/item/clothing/mask/gas/syndicate
 	ears = /obj/item/radio/headset/interdyne
 
 /datum/outfit/ds2/syndicate/post_equip(mob/living/carbon/human/syndicate)
-	syndicate.faction |= ROLE_SYNDICATE
+	syndicate.faction |= ROLE_DS2
 	return ..()
 
 //DS-2 Command
@@ -272,7 +285,7 @@
 	ears = /obj/item/radio/headset/interdyne/command
 	back = /obj/item/storage/backpack
 	backpack_contents = list(
-		/obj/item/storage/box/survival = 1,
+		/obj/item/storage/box/survival/interdyne = 1,
 		/obj/item/storage/box/nif_ghost_box/ghost_role=1,
 		/obj/item/crowbar = 1,
 		)
@@ -288,6 +301,9 @@
 	suit = /obj/item/clothing/suit/armor/vest/warden/syndicate
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/redsec
 	back = /obj/item/storage/backpack/satchel/sec/redsec
+	backpack_contents = list(
+		/obj/item/storage/box/survival/interdyne = 1,
+	)
 	head = /obj/item/clothing/head/hats/hos/beret/syndicate
 	r_pocket = /obj/item/flashlight/seclite
 	implants = list(
@@ -301,6 +317,9 @@
 	head = /obj/item/clothing/head/fedora
 	shoes = /obj/item/clothing/shoes/laceup
 	back = /obj/item/storage/backpack/satchel
+	backpack_contents = list(
+		/obj/item/storage/box/survival/interdyne = 1,
+	)
 	id_trim = /datum/id_trim/syndicom/nova/ds2/corporateliasion
 
 /datum/outfit/ds2/syndicate_command/admiral
@@ -308,13 +327,16 @@
 	uniform = /obj/item/clothing/under/rank/captain/nova/utility/syndicate
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 	back = /obj/item/storage/backpack/satchel
+	backpack_contents = list(
+		/obj/item/storage/box/survival/interdyne = 1,
+	)
 	belt = /obj/item/gun/ballistic/automatic/pistol/aps
 	head = /obj/item/clothing/head/hats/hos/cap/syndicate
 	id = /obj/item/card/id/advanced/gold/generic
 	id_trim = /datum/id_trim/syndicom/nova/ds2/stationadmiral
 
 /datum/outfit/ds2/syndicate_command/post_equip(mob/living/carbon/human/syndicate)
-	syndicate.faction |= ROLE_SYNDICATE
+	syndicate.faction |= ROLE_DS2
 	return ..()
 
 /datum/outfit/hotelstaff
@@ -492,7 +514,7 @@
 	desc = "A perfectly generic identification card. Looks like it could use some flavor. This one looks like it belonged to someone important."
 	wildcard_slots = WILDCARD_LIMIT_SILVER
 
-/obj/item/card/id/away/blackmarket
+/obj/item/card/id/advanced/chameleon/black/blackmarket
 	name = "scuffed ID card"
 	desc = "A faded, scuffed, plastic ID card. You can make out the rank \"Deck Crewman\"."
 	trim = /datum/id_trim/away/blackmarket
@@ -530,6 +552,7 @@
 
 /datum/id_trim/away/hotel/security
 	assignment = "Hotel Security"
+	access = list(ACCESS_TWIN_NEXUS_STAFF, ACCESS_TWIN_NEXUS_MANAGER)
 
 
 //CRYO CONSOLES

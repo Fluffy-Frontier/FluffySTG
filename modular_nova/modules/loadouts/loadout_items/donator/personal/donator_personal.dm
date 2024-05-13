@@ -23,6 +23,11 @@
 	item_path = /obj/item/clothing/under/syndicate/tacticool/black
 	ckeywhitelist = list("thedragmeme")
 
+/datum/loadout_item/under/jumpsuit/long_skirtleneck
+	name = "Tacticool Skirtleneck (Long)"
+	item_path = /obj/item/clothing/under/syndicate/tacticool/skirt/long
+	ckeywhitelist = list("HollandaiseSauce", "Latinfishy", "Tf4")
+
 /datum/loadout_item/suit/ryddid
 	name = "The Ryddid"
 	item_path = /obj/item/clothing/suit/jacket/ryddid
@@ -91,10 +96,25 @@
 	item_path = /obj/item/clothing/under/plasmaman/candlejax
 	ckeywhitelist = list("candlejax")
 
+/datum/loadout_item/mask/divemask_koru
+	name = "S.O.K.O. Gaiter"
+	item_path = /obj/item/clothing/mask/gas/signalis_gaiter
+	ckeywhitelist = list("koruu", "foxyandiknowit", "candlejax", "shyelf", "opportunerover22")
+
+/datum/loadout_item/under/jumpsuit/divesuit_koru
+	name = "S.O.K.O. Bodysuit"
+	item_path = /obj/item/clothing/under/bodysuit_koruu
+	ckeywhitelist = list("koruu", "foxyandiknowit", "candlejax", "shyelf", "opportunerover22")
+
 /datum/loadout_item/under/jumpsuit/anasuit
 	name = "Azulean's Enviro-Suit"
 	item_path = /obj/item/clothing/under/plasmaman/candlejax2
 	ckeywhitelist = list("candlejax")
+
+/datum/loadout_item/mask/composite_filtration
+	name = "Composite Filtration Mask"
+	item_path = /obj/item/clothing/mask/gas/psycho_malice
+	ckeywhitelist = list("snakebittenn", "chillylobster", "candlejax", "theooz")
 
 /datum/loadout_item/suit/jacket/cherno
 	name = "Blue-Silvered Coat"
@@ -650,7 +670,7 @@
 
 /datum/loadout_item/head/somerandomowl
 	name = "Starry Witch Hat"
-	item_path = /obj/item/clothing/head/costume/strigihat
+	item_path = /obj/item/clothing/head/costume/owlhat
 	ckeywhitelist = list("somerandomowl")
 
 /datum/loadout_item/head/razurathhat
@@ -753,3 +773,33 @@
 	name = "Toaster Implant"
 	item_path = /obj/item/implanter/toaster
 	ckeywhitelist = list("jasohavents")
+
+/datum/loadout_item/under/miscellaneous/rem
+	name = "M.I.A. Limiter"
+	item_path = /obj/item/clothing/under/rem
+	ckeywhitelist = list("ignari")
+
+/datum/loadout_item/shoes/rem
+	name = "M.I.A. Heels"
+	item_path = /obj/item/clothing/shoes/rem_shoes
+	ckeywhitelist = list("ignari")
+
+/datum/loadout_item/under/miscellaneous/bwake
+	name = "Compression Bodysuit"
+	item_path = /obj/item/clothing/under/bwake
+	ckeywhitelist = list("ignari")
+
+/datum/loadout_item/inhand/pet/mrfluff_mothroach
+	name = "Mr. Fluff"
+	item_path = /obj/item/clothing/head/mob_holder/pet/donator/centralsmith
+	ckeywhitelist = list("centralsmith")
+
+/datum/loadout_item/under/jumpsuit/techpants
+    name = "Techwear Pants"
+    item_path = /obj/item/clothing/under/techpants
+    ckeywhitelist = list("alvcyktor")
+
+/datum/loadout_item/inhand/drop_pouch
+    name = "Drop Pouch"
+    item_path = /obj/item/storage/backpack/satchel/drop_pouch
+    ckeywhitelist = list("alvcyktor")

@@ -33,9 +33,6 @@
 /// Trait to spawn with a pet in a pet carrier (veteran only)
 #define TRAIT_PET_OWNER "pet_owner"
 
-/// adds -6 quirk to negative quirks for free points.
-#define TRAIT_GIFTED "gifted"
-
 //AdditionalEmotes *turf traits
 #define TRAIT_WATER_ASPECT "water_aspect"
 #define TRAIT_WEBBING_ASPECT "webbing_aspect"
@@ -44,7 +41,7 @@
 #define TRAIT_SPARKLE_ASPECT "sparkle_aspect"
 
 // Trait sources
-#define TRAIT_GHOSTROLE "ghostrole" // NOVA EDIT ADDITION -- Ghost Cafe Traits
+#define TRAIT_GHOSTROLE "ghostrole"
 
 /// One can breath under water, you get me?
 #define TRAIT_WATER_BREATHING "water_breathing"
@@ -54,8 +51,9 @@
 /// The trait which is applied when a `slick skin` trait haver actually gets wet_stacks
 #define TRAIT_SLIPPERY "slippery"
 
-/// Under the effect of a numbling agent, such as morphine, for surgery.
-#define TRAIT_NUMBED "numbed"
+/// When someone is fixing electrical damage, this trait is set and prevents the wound from worsening.
+// We use a trait to avoid erronous setting of a variable to false if two people are repairing and one stops.
+#define TRAIT_ELECTRICAL_DAMAGE_REPAIRING "electrical_damage_repairing"
 
 // felinid traits
 #define TRAIT_FELINE "feline_aspect"

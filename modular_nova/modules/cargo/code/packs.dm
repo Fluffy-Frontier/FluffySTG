@@ -42,6 +42,15 @@
 	for(var/i in 1 to 3)
 		new /mob/living/basic/pet/chinchilla(.)
 
+/datum/supply_pack/critter/fennec
+	name = "Fennec Crate"
+	desc = "For when you need someone that can really listen to you. \
+		Contains two fennecs. \
+		Warning, does not mean the fennecs will actually listen to you."
+	cost = CARGO_CRATE_VALUE * 7
+	contains = list(/mob/living/basic/pet/cat/fennec = 2)
+	crate_name = "fennec crate"
+
 /*
 *	MEDICAL
 */
@@ -710,34 +719,6 @@
 	. = ..()
 	for(var/i in 1 to 19)
 		new /obj/item/grown/log(.)
-
-/datum/supply_pack/imports/cin_surplus
-	name = "CIN Military Surplus Crate"
-	desc = "A collection of surplus equipment sourced from the Coalition of Independent Nations' military stockpiles. Likely to contain old and outdated equipment, as is the nature of surplus."
-	contraband = TRUE
-	cost = CARGO_CRATE_VALUE * 9
-	contains = list(
-		/obj/item/storage/box/colonial_rations = 1,
-		/obj/item/storage/toolbox/ammobox/strilka310 = 1,
-		/obj/item/storage/toolbox/ammobox/strilka310/surplus = 1,
-		/obj/item/storage/toolbox/maint_kit = 1,
-		/obj/item/storage/toolbox/guncase/soviet/sakhno = 2,
-		/obj/item/ammo_box/strilka310 = 1,
-		/obj/item/clothing/suit/armor/vest/cin_surplus_vest = 1,
-		/obj/item/clothing/head/helmet/cin_surplus_helmet/random_color = 1,
-		/obj/item/storage/backpack/industrial/cin_surplus/random_color = 1,
-		/obj/item/storage/belt/military/cin_surplus/random_color = 1,
-		/obj/item/clothing/gloves/tackler/combat = 1,
-		/obj/item/clothing/under/syndicate/rus_army/cin_surplus/random_color = 1,
-		/obj/item/clothing/shoes/jackboots = 1,
-		/obj/item/clothing/mask/gas/hecu2 = 1,
-		/obj/item/clothing/mask/balaclavaadjust = 1,
-	)
-
-/datum/supply_pack/imports/cin_surplus/fill(obj/structure/closet/crate/we_are_filling_this_crate)
-	for(var/i in 1 to 10)
-		var/item = pick_weight(contains)
-		new item(we_are_filling_this_crate)
 
 /*
 * VENDING RESTOCKS

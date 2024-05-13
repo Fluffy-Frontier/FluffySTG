@@ -54,9 +54,8 @@
 /datum/crafting_recipe/anointing_oil
 	name = "Anointing Bloodresin"
 	category = CAT_MISC
-
 	//recipe given to icecats as part of their spawner/team setting
-	always_available = FALSE
+	crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_MUST_BE_LEARNED
 
 	reqs = list(
 		/datum/reagent/consumable/liquidgibs = 80,
@@ -64,3 +63,28 @@
 	)
 
 	result = /obj/item/anointing_oil
+
+/obj/item/clothing/suit/armor/handcrafted_hearthkin_armor
+	name = "handcrafted hearthkin armor"
+	desc = "An armor obviously crafted by the expertise of a hearthkin. It has leather shoulder pads and a chain mail underneath."
+	icon_state = "chained_leather_armor"
+	icon = 'modular_nova/modules/primitive_catgirls/icons/clothing_greyscale.dmi'
+	worn_icon = 'modular_nova/modules/primitive_catgirls/icons/clothing_greyscale.dmi'
+	resistance_flags = FIRE_PROOF
+	body_parts_covered = GROIN|CHEST
+	obj_flags_nova = ANVIL_REPAIR
+	armor_type = /datum/armor/armor_forging_plate_armor
+
+/datum/crafting_recipe/handcrafted_hearthkin_armor
+	name = "Handcrafted Hearthkin Armor"
+	category = CAT_CLOTHING
+
+	//recipe given to icecats as part of their spawner/team setting
+	crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_MUST_BE_LEARNED
+
+	reqs = list(
+		/obj/item/forging/complete/chain = 4,
+		/obj/item/stack/sheet/leather = 2,
+	)
+
+	result = /obj/item/clothing/suit/armor/handcrafted_hearthkin_armor

@@ -6377,7 +6377,6 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/delivery,
 /obj/machinery/door/firedoor,
-/obj/item/folder/blue,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "hop";
 	name = "Privacy Shutters"
@@ -6388,6 +6387,16 @@
 	},
 /obj/machinery/door/window/right/directional/south{
 	name = "Reception Desk"
+	},
+/obj/item/paper_bin{
+	pixel_x = -5
+	},
+/obj/item/pen{
+	pixel_x = -5
+	},
+/obj/structure/desk_bell{
+	pixel_x = 7;
+	pixel_y = 10
 	},
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/hop)
@@ -7215,10 +7224,7 @@
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/contraband/the_griffin/directional/north,
-/mob/living/simple_animal/bot/mulebot{
-	home_destination = "QM #1";
-	suffix = "#1"
-	},
+/mob/living/simple_animal/bot/mulebot,
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
 /turf/open/floor/iron/dark,
 /area/station/cargo/storage)
@@ -7647,7 +7653,7 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/machinery/airalarm/directional/east,
 /obj/effect/landmark/start/assistant,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/landmark/start/hangover,
 /obj/machinery/button/door/directional/north{
 	id = "Cabin_2";
@@ -8035,6 +8041,7 @@
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 1
 	},
+/obj/item/folder/blue,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/hop)
 "cHL" = (
@@ -8426,6 +8433,7 @@
 	name = "Security Customs Checkpoint"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/security/general,
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/customs)
 "cQb" = (
@@ -8442,6 +8450,7 @@
 	name = "arrivals navigation beacon"
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
 "cQt" = (
@@ -9097,13 +9106,6 @@
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "dbi" = (
-/obj/structure/table,
-/obj/item/paper_bin{
-	pixel_x = -5
-	},
-/obj/item/pen{
-	pixel_x = -5
-	},
 /obj/machinery/light/directional/east,
 /obj/machinery/flasher/directional/east{
 	id = "hopflash";
@@ -9113,13 +9115,10 @@
 	dir = 8
 	},
 /obj/machinery/status_display/evac/directional/north,
-/obj/structure/desk_bell{
-	pixel_x = 7;
-	pixel_y = 10
-	},
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 8
 	},
+/obj/machinery/photobooth,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/hop)
 "dbp" = (
@@ -11542,7 +11541,6 @@
 /turf/open/floor/plating,
 /area/station/maintenance/disposal/incinerator)
 "dNx" = (
-/obj/structure/cable,
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
@@ -15161,6 +15159,7 @@
 "eZL" = (
 /obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
 "fac" = (
@@ -18539,10 +18538,7 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/light/small/directional/north,
-/mob/living/simple_animal/bot/mulebot{
-	home_destination = "QM #2";
-	suffix = "#2"
-	},
+/mob/living/simple_animal/bot/mulebot,
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
 /turf/open/floor/iron/dark,
 /area/station/cargo/storage)
@@ -21960,7 +21956,7 @@
 	},
 /obj/machinery/airalarm/directional/west,
 /obj/effect/landmark/start/assistant,
-/obj/item/bedsheet/dorms{
+/obj/effect/spawner/random/bedsheet{
 	dir = 4
 	},
 /obj/effect/landmark/start/hangover,
@@ -23819,6 +23815,7 @@
 /obj/effect/landmark/start/hangover,
 /obj/effect/turf_decal/tile/blue/half/contrasted,
 /obj/effect/turf_decal/tile/neutral,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
 "hIq" = (
@@ -23924,7 +23921,6 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
 /mob/living/basic/bot/cleanbot/medbay{
-	maints_access_required = list(22);
 	name = "Deacon Scrubsy"
 	},
 /turf/open/floor/iron/smooth_large,
@@ -25463,7 +25459,7 @@
 "ifu" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/decal/cleanable/cobweb,
-/obj/structure/safe{
+/obj/structure/safe/vault{
 	pixel_x = 3
 	},
 /obj/item/book{
@@ -34110,10 +34106,7 @@
 /obj/effect/decal/cleanable/blood/gibs/old,
 /obj/effect/spawner/random/structure/crate,
 /obj/effect/mapping_helpers/burnt_floor,
-/mob/living/basic/chicken{
-	name = "Kentucky";
-	real_name = "Kentucky"
-	},
+/mob/living/basic/chicken/teshari,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard)
 "kVv" = (
@@ -35751,6 +35744,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/hangover,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
 "luA" = (
@@ -36408,6 +36402,7 @@
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
 "lFC" = (
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
 "lFN" = (
@@ -37208,6 +37203,17 @@
 /obj/effect/landmark/start/blueshield,
 /turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/captain)
+"lUb" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/public/glass{
+	name = "Departure Lounge"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
+	cycle_id = "departures-entrance"
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/station/hallway/secondary/exit/departure_lounge)
 "lUq" = (
 /turf/closed/wall/r_wall/rust,
 /area/station/service/chapel/storage)
@@ -42140,14 +42146,11 @@
 /turf/open/floor/iron,
 /area/station/security/brig)
 "nAa" = (
-/obj/structure/table,
-/obj/item/storage/box/bodybags{
-	pixel_y = 5
-	},
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 4
 	},
+/obj/machinery/photobooth/security,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "nAe" = (
@@ -42485,10 +42488,7 @@
 /area/station/cargo/storage)
 "nFN" = (
 /obj/machinery/igniter/incinerator_ordmix,
-/mob/living/basic/chicken{
-	name = "Kentucky";
-	real_name = "Kentucky"
-	},
+/mob/living/basic/chicken/teshari,
 /turf/open/floor/engine/vacuum,
 /area/station/science/ordnance/burnchamber)
 "nFT" = (
@@ -46359,7 +46359,6 @@
 /obj/structure/table,
 /obj/item/healthanalyzer,
 /obj/item/hand_labeler,
-/obj/structure/secure_safe/caps_spare/directional/north,
 /obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 1
 	},
@@ -49458,7 +49457,6 @@
 /area/station/service/chapel)
 "pXt" = (
 /obj/structure/table,
-/obj/machinery/recharger,
 /obj/machinery/light/directional/east,
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 4
@@ -49466,6 +49464,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+/obj/structure/secure_safe/caps_spare,
 /turf/open/floor/iron,
 /area/station/command/bridge)
 "pXN" = (
@@ -55143,7 +55142,7 @@
 	dir = 4
 	},
 /obj/effect/landmark/start/assistant,
-/obj/item/bedsheet/dorms{
+/obj/effect/spawner/random/bedsheet{
 	dir = 4
 	},
 /obj/effect/landmark/start/hangover,
@@ -61124,7 +61123,7 @@
 /obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/rack/gunrack,
-/obj/effect/spawner/armory_spawn/microfusion,
+/obj/effect/spawner/armory_spawn/mod_lasers_small,
 /turf/open/floor/iron/showroomfloor,
 /area/station/ai_monitored/security/armory)
 "tGb" = (
@@ -63450,6 +63449,9 @@
 /obj/machinery/light/small/directional/west,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 4
+	},
+/obj/item/storage/box/bodybags{
+	pixel_y = 5
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
@@ -65853,7 +65855,7 @@
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos)
 "vhx" = (
-/mob/living/simple_animal/slime,
+/mob/living/basic/slime,
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
 "vhK" = (
@@ -72276,7 +72278,7 @@
 "xds" = (
 /obj/structure/bed,
 /obj/effect/landmark/start/assistant,
-/obj/item/bedsheet/dorms,
+/obj/effect/spawner/random/bedsheet,
 /obj/effect/landmark/start/hangover,
 /obj/item/pillow/random,
 /turf/open/floor/wood,
@@ -72476,7 +72478,6 @@
 /turf/open/floor/grass,
 /area/station/security/prison/garden)
 "xhJ" = (
-/obj/structure/cable,
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
@@ -75582,7 +75583,7 @@
 /area/station/hallway/primary/central/fore)
 "yfS" = (
 /obj/machinery/light/small/directional/west,
-/mob/living/basic/chicken,
+/mob/living/basic/chicken/teshari,
 /turf/open/misc/sandy_dirt,
 /area/station/service/hydroponics/garden)
 "ygj" = (
@@ -116242,7 +116243,7 @@ wAZ
 cQR
 eMo
 fBh
-pIl
+lUb
 mbE
 iSw
 nXu

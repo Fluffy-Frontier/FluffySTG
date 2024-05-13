@@ -114,13 +114,15 @@
 	/// String. If set to a non-empty one, it will be the key for the policy text value to show this role on spawn.
 	var/policy_index = ""
 
-	//SKYRAT ADDITION START
+	// NOVA EDIT ADDITION START
 	/// Job title to use for spawning. Allows a job to spawn without needing map edits.
 	var/job_spawn_title
-	//SKYRAT ADDITION END
-
-	///RPG job names, for the memes
+	// NOVA EDIT ADDITION END
+	/// RPG job names, for the memes
 	var/rpg_title
+
+	/// Alternate titles to register as pointing to this job.
+	var/list/alternate_titles
 
 	/// Does this job ignore human authority?
 	var/ignore_human_authority = FALSE
@@ -200,11 +202,12 @@
 #define VERY_LATE_ARRIVAL_TOAST_PROB 20
 
 /mob/living/carbon/human/on_job_equipping(datum/job/equipping, datum/preferences/used_pref, client/player_client) //NOVA EDIT CHANGE - ORIGINAL: /mob/living/carbon/human/on_job_equipping(datum/job/equipping)
-	var/datum/bank_account/bank_account = new(real_name, equipping, dna.species.payday_modifier)
-	bank_account.payday(STARTING_PAYCHECKS, TRUE)
-	account_id = bank_account.account_id
-	bank_account.replaceable = FALSE
-	add_mob_memory(/datum/memory/key/account, remembered_id = account_id)
+	if(equipping.paycheck_department)
+		var/datum/bank_account/bank_account = new(real_name, equipping, dna.species.payday_modifier)
+		bank_account.payday(STARTING_PAYCHECKS, TRUE)
+		account_id = bank_account.account_id
+		bank_account.replaceable = FALSE
+		add_mob_memory(/datum/memory/key/account, remembered_id = account_id)
 
 	dress_up_as_job(equipping, FALSE, used_pref) // NOVA EDIT CHANGE - ORIGINAL: dress_up_as_job(equipping)
 
@@ -312,6 +315,15 @@
 		info += span_boldnotice("As this station was initially staffed with a \
 			[CONFIG_GET(flag/jobs_have_minimal_access) ? "full crew, only your job's necessities" : "skeleton crew, additional access may"] \
 			have been added to your ID card.")
+	//NOVA EDIT ADDITION BEGIN - ANTAG OPT IN
+	if (!CONFIG_GET(flag/disable_antag_opt_in_preferences))
+		if (isnum(minimum_opt_in_level) && minimum_opt_in_level > OPT_IN_NOT_TARGET)
+			info += span_bolddanger("This job forces a minimum opt-in setting of [GLOB.antag_opt_in_strings["[minimum_opt_in_level]"]].")
+		if (heretic_sac_target)
+			info += span_bolddanger("This job can be sacrificed by heretics.")
+		if (contractable)
+			info += span_bolddanger("This job can be targeted by contractors.")
+	//NOVA EDIT ADDITION END
 	//NOVA EDIT ADDITION START - ALTERNATIVE_JOB_TITLES
 	if(alt_title != title)
 		info += span_warning("Remember that alternate titles are purely for flavor and roleplay.")
@@ -569,11 +581,11 @@
 			dna.species.roundstart_changed = TRUE
 			apply_pref_name(/datum/preference/name/backup_human, player_client)
 		if(CONFIG_GET(flag/force_random_names))
-			var/species_type = player_client.prefs.read_preference(/datum/preference/choiced/species)
-			var/datum/species/species = new species_type
-
-			var/gender = player_client.prefs.read_preference(/datum/preference/choiced/gender)
-			real_name = species.random_name(gender, TRUE)
+			real_name = generate_random_name_species_based(
+				player_client.prefs.read_preference(/datum/preference/choiced/gender),
+				TRUE,
+				player_client.prefs.read_preference(/datum/preference/choiced/species),
+			)
 	dna.update_dna_identity()
 
 
@@ -595,9 +607,11 @@
 			if(!player_client)
 				return // Disconnected while checking the appearance ban.
 
-			var/species_type = player_client.prefs.read_preference(/datum/preference/choiced/species)
-			var/datum/species/species = new species_type
-			organic_name = species.random_name(player_client.prefs.read_preference(/datum/preference/choiced/gender), TRUE)
+			organic_name = generate_random_name_species_based(
+				player_client.prefs.read_preference(/datum/preference/choiced/gender),
+				TRUE,
+				player_client.prefs.read_preference(/datum/preference/choiced/species),
+			)
 		else
 			if(!player_client)
 				return // Disconnected while checking the appearance ban.
