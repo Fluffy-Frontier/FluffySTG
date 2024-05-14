@@ -395,4 +395,35 @@
   - bugfix: The Coroner and Bitrunner can now be selected as a target for kidnapping
       and heirloom destruction objectives.
   - bugfix: The Chief Engineer is now a valid target for heirloom destruction objectives.
-
+2024-05-14:
+  FlufflesTheDog:
+  - bugfix: crafted wooden produce/seed shelves now properly store their intended
+      resourcessa
+  - qol: wooden "smartfridges" now start unwelded (but wrenched)
+  - bugfix: food vendors now drop the correct circuit and resupply canister
+  - rscadd: Customization for sensitive snout! Including an option for automatically
+      sneezing. Bless you.
+  Hatterhat:
+  - balance: The Vanguard Expeditionary Corps surplus crate now works off a weighted
+      budget system, like the CIN surplus crate.
+  - balance: Some more valuable equipment can now be rolled for from the Vanguard
+      surplus crate, like better gloves and medkits with improved medical supplies.
+  - balance: You can now shoot mold if you directly target (click) it.
+  Higgin:
+  - bugfix: Spies no longer get the 'nothing' / 'free objective' due to trying to
+      make Protect objectives without targets.
+  RatFromTheJungle:
+  - balance: gives the CE a RCF in their locker at the start of the round, removing
+      the need to get it from the colony starter crate.
+  Xander3359:
+  - bugfix: Ale now has a drinking_glass style
+  cherdaq:
+  - rscadd: added a commission plaque for blueshift
+  nikothedude:
+  - rscadd: A filterless forked tongue that has no TTS filters
+  - balance: Synth premium medkits no longer have a premium spray, instead having
+      a plasmide spray.
+  - balance: Plasmide now metabolizes slower
+  - balance: Synth blunt T3 now requires a T1 burn wound to mold
+  - balance: Synth blunt T3 heating step now gives a T1 burn wound
+  - balance: Synth blunt T3 heating now takes 3 secs
