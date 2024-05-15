@@ -120,6 +120,10 @@
 	name = "Forked tongue"
 	path = /obj/item/organ/internal/tongue/lizard
 
+/datum/augment_item/organ/tongue/forked/filterless
+	name = "Forked tongue (Without TTS Filter)"
+	path = /obj/item/organ/internal/tongue/lizard/filterless
+
 //FF add, for auto-accent for anthropomorphs
 /datum/augment_item/organ/tongue/cat
 	name = "Cat tongue"

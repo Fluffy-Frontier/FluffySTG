@@ -125,6 +125,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		no_tgui_adminhelp(input(src, "Enter your ahelp", "Ahelp") as null|message)
 		return
 
+	if(href_list["commandbar_typing"])
+		handle_commandbar_typing(href_list)
+
 	switch(href_list["_src_"])
 		if("holder")
 			hsrc = holder
@@ -257,6 +260,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	tgui_panel = new(src, "browseroutput")
 
 	tgui_say = new(src, "tgui_say")
+
+	initialize_commandbar_spy()
 
 	set_right_click_menu_mode(TRUE)
 
@@ -550,7 +555,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		initialize_menus()
 
 	loot_panel = new(src)
-	
+
 	view_size = new(src, getScreenSize(prefs.read_preference(/datum/preference/toggle/widescreen)))
 	view_size.resetFormat()
 	view_size.setZoomMode()
@@ -858,15 +863,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			return
 	qdel(query_get_notes)
 	create_message("note", key, system_ckey, message, null, null, 0, 0, null, 0, 0)
-
-
-/client/proc/check_ip_intel()
-	set waitfor = 0 //we sleep when getting the intel, no need to hold up the client connection while we sleep
-	if (CONFIG_GET(string/ipintel_email))
-		var/datum/ipintel/res = get_ip_intel(address)
-		if (res.intel >= CONFIG_GET(number/ipintel_rating_bad))
-			message_admins(span_adminnotice("Proxy Detection: [key_name_admin(src)] IP intel rated [res.intel*100]% likely to be a Proxy/VPN."))
-		ip_intel = res.intel
 
 /client/Click(atom/object, atom/location, control, params)
 	if(click_intercept_time)

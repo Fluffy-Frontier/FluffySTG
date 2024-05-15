@@ -199,3 +199,285 @@
   vinylspiders:
   - bugfix: laughs will now once again play the appropriate audio if you have a laugh
       set in prefs instead of defaulting to the species laugh
+2024-05-08:
+  CandleJaxx:
+  - rscadd: '''puppy'' ''kitten'' and ''spider'' pai skins'
+  JohnFulpWillard, Tattax:
+  - rscadd: Monkeys can now wear all jumpsuits.
+  - rscadd: Bioscrambler anomalies can now give monkey legs.
+  - bugfix: Monkeys can have their tails removed, and tails are no longer invisible
+      when implanted into another species.
+  aKromatopzia:
+  - bugfix: moved raptor and digi cybernetics' categories
+2024-05-09:
+  Bisar:
+  - balance: Knockdown effects will know consistently disarm, instead of failing to
+      disarm if you're already lying down.
+  BurgerBB:
+  - qol: The inspector's Fedora now uses regex. When saying commands, it is much more
+      generous on picking up trigger word.
+  CandleJaxx:
+  - rscadd: We found a bunch of old synthetic casings that were left to rot in a scrapyard
+      out of Eridani. Have them, Frontier Scum.
+  Derpguy3:
+  - bugfix: A meter attached to distribution pipes in Birdshot's atmospherics has
+      been moved to the matching pipe layer.
+  Fikou:
+  - rscdel: You can no longer use another station's blueprint photo to look at wires
+      or do the traitor objective with.
+  Iamgoofball:
+  - balance: Spies can now use other spies' uplinks.
+  Melbert:
+  - bugfix: Map vote should work better
+  - bugfix: Height now applies less weird to certain worn items, bare-handed bloody
+      hands, and damage overlays.
+  - balance: To see wires in photos of blueprints, you first must squint at the photo.
+  MrEmre12, Majkl-J:
+  - rscadd: Fishing pool introduced to metastation garden
+  - refactor: All water tiles now handle fishing through a unified fishing_datum variable
+  ReturnToZender (hitting delete on a power cable):
+  - rscdel: Single loose power cable in icebox maintenance
+  Rhials:
+  - balance: Virtual domain ghost roles can no longer enter the safehouse/"equipment"
+      areas of a domain.
+  - bugfix: Pirate virtual domain ghost roles will no longer make a pirate team antag
+      datum.
+  ShizCalev:
+  - bugfix: Inducers no longer break completely after trying to charge a PDA with
+      them.
+  Thlumyn:
+  - bugfix: removed some directional var-edits from void raptor request consoles
+  - bugfix: moved some scrubbers in the blackmarket shuttle to not be layered on top
+      of same-layer pipes
+  Z0w0plankton:
+  - bugfix: fixed a icon state for wagging fox tail alt 2
+  chestlet:
+  - qol: Added an alternate version of "cat, big" ears, which are layered above hair.
+  delingar:
+  - rscadd: RD's skillchip adds cyborg wires knowledge
+  mc-oofert:
+  - qol: temporarily soulless (deathmatch, etc) bodies dont appear as soulless on
+      medhud
+  nikothedude:
+  - rscadd: Reimplemented taur sprites for a bunch of clothing items
+  - code_imp: Taur bodies are properly subtyped
+  - rscadd: Taurs now have custom leg names
+  vinylspiders:
+  - qol: cyborg screams now use the scream pref for determining which audio track
+      to play
+  - bugfix: emotes with audio use gender instead of physique for determining the gendered
+      track to play
+  - bugfix: (admins) 'Add/Revoke PB Bypass' verbs will now prompt for a ckey once
+      again
+  - bugfix: you can once again select 'None' as an option for pod hair in preferences
+  - bugfix: the icons of pod hair options in preferences will now look like the actual
+      hairstyles
+  white-snek:
+  - rscadd: A fresh shipment of blindfolds has arrived on station for visually impaired
+      crew, distributed to apropriate vendors.
+2024-05-10:
+  00-Steven:
+  - qol: Added alt-click usage context to toggle_icon component
+  - bugfix: The stomach pump surgery actually works again.
+  - spellcheck: '"brusing" to "bruising" in the message you get when failing the stomach
+      pump surgery.'
+  AMyriad:
+  - bugfix: Removed stray pixels appearing on certain parts of railing
+  Echriser:
+  - bugfix: conveyor switches work for cyborgs again
+  Ghommie:
+  - bugfix: Added the missing  bulwark MOD module and the jawed fishing hook to the
+      black market.
+  GoldenAlpharex:
+  - bugfix: Removed another rogue cable from underneath a disconnected SMES.
+  GoldenAlpharex for the code, Thlumyn for the sprites:
+  - bugfix: Fixed smoothing turfs displaying some incorrect damaged overlays because
+      of a non-smoothing damage overlay of different dimensions than the smoothing
+      sprite used as the base. Less black void, let's go!
+  - image: Added smooth broken/burnt overlays for grass, meaning that it's going to
+      look a lot less broken when the grass tile is at the edge of a smoothing group.
+  Jacquerel:
+  - sound: Lasers adjust their pitch as they run out of charge, rather than frequency
+  - rscdel: Being sacrified by a Heretic no longer gives you an incurable phobia.
+  - rscadd: Being sacrificed by a Heretic will drop 2-4 of your organs on the ground
+      and replace them with "corrupt organs" with negative effects which can be suppressed
+      with Holy Water.
+  - rscadd: Players who have been sacrificed by Heretics will experience additional
+      and rapidly lethal consequences for attempting to fight someone who previously
+      sacrificed them, as long as that person is wearing a focus.
+  Jane:
+  - qol: The Coroner's Ritual Knife can now sit upon Med Belts!
+  Melbert:
+  - bugfix: Cult can build again
+  - qol: Morgue trays (and the contents inside) are now animated on open and close
+  - qol: Spies may spawn in less numbers, but rarely may also spawn in more numbers.
+  - bugfix: Fixed Slimepeople's hair not matching their slimey colors.
+  - qol: There is now a slight animation to entering a portal or teleporter.
+  MrStonedOne & Lilah Novi:
+  - rscadd: Say commands typed in the command bar now trigger typing indicators
+  Pickle-Coding:
+  - qol: The labor camp shuttle properly sets people to parole after they complete
+      their work.
+  - qol: The labor camp shuttle specifies which person returned to the station.
+  RatFromTheJungle:
+  - balance: buckshot, rubbershot, and their equivalents no longer do muchless damage
+      against people with the relevant armors.
+  ShizCalev:
+  - bugfix: Cursed Items wizard event actually works again.
+  Thlumyn:
+  - bugfix: removed a light inside the wall on the Interlink
+  - bugfix: removed some cobwebs in space in shuttle 8532 ruin
+  Time-Green, vinylspiders:
+  - code_imp: The mushroom cap is now an external organ (jungle station will never
+      happen)
+  - bugfix: Mushpeople caps are no longer solid black
+  - bugfix: you can no longer be dismembered by teleporters if you have TRAIT_NODISMEMBER
+  TiviPlus:
+  - bugfix: fixed clients being seen as stuck doing tutorials in some cases when changing
+      mobs
+  XElectricX:
+  - qol: Mech drills can auto-mine by walking into rock.
+  jlsnow301:
+  - bugfix: The quick equip 'E' hotkey shouldn't warn if one of your bags is full
+      anymore
+  - bugfix: Supermatter shards now have screentips with a wrench in hand
+  - bugfix: Silicons can set the teleporter destinations again.
+  malton33:
+  - bugfix: space heaters now display the correct mode when the maintenance panel
+      is closed
+  paganiy:
+  - bugfix: The shuttle will no longer delete you while you are in jaunt
+  vinylspiders:
+  - bugfix: moths with functional/flight potion wings get an animation when they *flap
+      once again, and it makes a sound
+  - bugfix: roundstart slimes can change their hair color once again and are no longer
+      locked to their mutant color
+  - qol: for roundstart slimes who actually want to be locked to mutant color there
+      is a new pref for them, 'allow mismatched hair color', and can be found near
+      the top of the prefs menu (only viewable by slimes, and toggled on by default).
+  - bugfix: using the flap emote with moth wings now makes a sound like it's supposed
+      to
+2024-05-11:
+  00-Steven:
+  - bugfix: Pride pins can be reskinned again with alt-click.
+  GoldenAlpharex:
+  - bugfix: Fixed a donator item appearing on station when it wasn't supposed to.
+  Melbert:
+  - refactor: Random Name Generation has been refactored. Report any instances of
+      people having weird (or "Unknown") names.
+  - qol: Felinids, Slimepeople, Podpeople, and some other species without defined
+      namelists now automatically generate names based on their primary language(s).
+  - qol: More non-human names can be generated in codewords (and other misc. areas)
+      than just lizard names.
+  NeonNik2245:
+  - bugfix: anosmia holders now can't feel perfumes and some other things
+  Paxilmaniac:
+  - qol: Ammunition can now be made into piles of bullets by attacking one bullet
+      with another to create the pile. These piles delete themselves when empty, and
+      usually hold enough bullets to reload 1 or 1/2 of a magazine for the weapon
+      that uses that ammo, depending on the weapon.
+  - code_imp: some entirely unused code defines have been cleaned up
+  - balance: Razorwires do two (2) more damage (now 20 from 18)
+  - image: The melee item of the razorwire implant can now be alt-clicked to be recolored
+      to a few different pre-set variants
+  - rscadd: Many new options for treating synths without having to use the whole robotics
+      bay have been added to the common sources of DeForest branded medical supplies.
+  - balance: nanite slurry has been buffed to 3 healing rather than 1, so it's not
+      literally the worst healing chem in the entire game.
+  - image: All icons for the new synthetic treatment items are made by me, Paxilmaniac
+  - spellcheck: Some wording of a few strings in the wound treatment items has been
+      adjusted to fit better to the items.
+  carlarctg:
+  - rscadd: Chance to become crab on nonlethal DNA meltdown
+  mc-oofert:
+  - balance: punches no longer knock down and stamina damage dealt is (slightly) reduced
+  norsvenska:
+  - bugfix: The Coroner and Bitrunner can now be selected as a target for kidnapping
+      and heirloom destruction objectives.
+  - bugfix: The Chief Engineer is now a valid target for heirloom destruction objectives.
+2024-05-14:
+  Bisar:
+  - qol: Most of the alternate click modes (right click, control clicking, shift clicking,
+      etc) have been enabled in the alt-click item menu.
+  - bugfix: You will no longer point at things you right-click in the alt-click item
+      menu.
+  Jacquerel:
+  - rscadd: People who spend time improving their bodies are able to evaluate the
+      relative physical strength of those they examine as a kind of "power level".
+  - rscadd: Changeling transformation copies the target's athletics skill level.
+  Melbert:
+  - rscadd: Cigarette smoke is now more smokey.
+  - rscadd: Taking a cigarette out of your mouth will let out a big puff of smoke.
+  PapaMichael:
+  - bugfix: Rat Kings can no longer trap mice inside of pipes by creating them while
+      ventcrawling.
+  - balance: Rat Kings can no longer create grime and miasma while ventcrawling.
+  Rhials:
+  - rscadd: Bitrunners now have their own job figurine. Cool!
+  Time-Green:
+  - bugfix: Deleting someones brain kills them again
+  jlsnow301:
+  - bugfix: Alt click will draw the captain's sabre again
+  nikothedude:
+  - spellcheck: Added a period to the end of the wendigo deathrattle
+  paganiy:
+  - qol: Now you can put a cigarette in your mouth just by hitting the pack of cigarettes
+      on yourself.
+  - bugfix: The cigarette pack no longer moves under the spaceman when they interacts
+      with it with the RMB
+  - bugfix: Accelerator laser gun no longer shoots sun size projectiles.
+  starrm4nn:
+  - qol: Gives Health sensor assemblies a UI so its easier to use.
+2024-05-15:
+  DaCoolBoss:
+  - bugfix: The random arcade machines in the 'Interdyne Spinward Research Base's
+      now function.
+  Hatterhat:
+  - bugfix: The SC/FISHER can now shoot floor lights.
+  Melbert:
+  - qol: Some alerts, such as Fleshmend's, show their remaining duration on their
+      icon.
+  Seven:
+  - bugfix: Fixed a runtime when using the cultist blood rites on yourself.
+  - bugfix: Destroyed solar panels no longer drop their overlays
+  Shadow-Quill:
+  - qol: The "Confirm Order" button on Cargo consoles is now active when the cargo
+      shuttle is at Central Command instead of at the station.
+  ShizCalev:
+  - bugfix: Spam clicking a modkit with a kinetic accelerator can no longer lead to
+      ghosted versions of the modkits appearing in the modkit list, breaking the gun.
+  SomeRandomOwl:
+  - rscadd: Added four new PKA crusher variants for miners to use out on the ashlands
+      and icewastes. Try them out today!
+  SyncIt21:
+  - bugfix: cell chargers, mechbay port chargers & recharge stations heat lost is
+      directly proportional to energy drawn from the grid to charge their respective
+      cells
+  - bugfix: cyborgs should charge more frequently & to their max capacity at recharge
+      stations
+  Webcomicartist:
+  - bugfix: The lavaland mining shuttle doors no longer trap cargo security on lavaland
+      due to access weirdness.
+  cherdaq:
+  - rscadd: added commission plaques for ouroboros and void raptor
+  grungussuss and Virgilcore:
+  - sound: portals now have a unique sound to them
+  iwishforducks:
+  - bugfix: Fixes random decal in space on Tramstation
+  jlsnow301:
+  - bugfix: Bitrunning antagonists no longer gib on teleport
+  - bugfix: Cyber tac now have a visible name / ID
+  - bugfix: 'Renamed the bitrunning malfunction event to just "Malfunction: x"'
+  necromanceranne:
+  - bugfix: Fixes an accidental reversion to greyscale plate armor.
+  - bugfix: Fixes the knife offset for pipeguns
+  nikothedude:
+  - rscadd: Stun batons now have the jousting component
+  sqnztb:
+  - rscadd: new donator item - replica parade jacket, find it under the suits category
+      in loadout
+  yooriss:
+  - qol: Paraplegic characters who also have the Entombed quirk now start with an
+      altered anti-gravity MOD module that allows them to emulate the effects of a
+      gravity harness at roundstart. In addition, entombed MODsuits can have longer
+      custom names (up to 64 chars from 48).
