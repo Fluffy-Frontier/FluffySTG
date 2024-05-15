@@ -451,6 +451,9 @@
 
 /datum/config_entry/flag/irc_first_connection_alert // do we notify the irc channel when somebody is connecting for the first time?
 
+/datum/config_entry/string/ipintel_base
+	default = "check.getipintel.net"
+
 /datum/config_entry/string/ipintel_email
 
 /datum/config_entry/string/ipintel_email/ValidateAndSet(str_val)
@@ -462,20 +465,6 @@
 	min_val = 0
 	max_val = 1
 
-<<<<<<< HEAD
-/datum/config_entry/number/ipintel_save_good
-	default = 12
-	integer = FALSE
-	min_val = 0
-
-/datum/config_entry/number/ipintel_save_bad
-	default = 1
-	integer = FALSE
-	min_val = 0
-
-/datum/config_entry/string/ipintel_domain
-	default = "check.getipintel.net"
-=======
 /datum/config_entry/flag/ipintel_reject_rate_limited
 	default = FALSE
 
@@ -496,7 +485,6 @@
 /datum/config_entry/number/ipintel_exempt_playtime_living
 	default = 5
 	min_val = 0
->>>>>>> 241ffd39086 ([MISSED MIRRORS] General IP intel tweaks (#82904) + fix ipintel caching to db not working. (#83046) (#2337))
 
 /datum/config_entry/flag/aggressive_changelog
 

@@ -1,18 +1,6 @@
 SUBSYSTEM_DEF(ipintel)
 	name = "XKeyScore"
 	init_order = INIT_ORDER_XKEYSCORE
-<<<<<<< HEAD
-	flags = SS_NO_FIRE
-	var/enabled = FALSE //disable at round start to avoid checking reconnects
-	var/throttle = 0
-	var/errors = 0
-
-	var/list/cache = list()
-
-/datum/controller/subsystem/ipintel/Initialize()
-	enabled = TRUE
-	return SS_INIT_SUCCESS
-=======
 	flags = SS_NO_INIT|SS_NO_FIRE
 	/// The threshold for probability to be considered a VPN and/or bad IP
 	var/probability_threshold
@@ -32,21 +20,21 @@ SUBSYSTEM_DEF(ipintel)
 
 /datum/controller/subsystem/ipintel/OnConfigLoad()
 	var/list/fail_messages = list()
-	
+
 	var/contact_email = CONFIG_GET(string/ipintel_email)
-	
+
 	if(!length(contact_email))
 		fail_messages += "No contact email"
-	
+
 	if(!findtext(contact_email, "@"))
 		fail_messages += "Invalid contact email"
 
 	if(!length(CONFIG_GET(string/ipintel_base)))
 		fail_messages += "Invalid query base"
-	
+
 	if (!CONFIG_GET(flag/sql_enabled))
 		fail_messages += "The database is not enabled"
-	
+
 	if(length(fail_messages))
 		message_admins("IPIntel: Initialization failed check logs!")
 		logger.Log(LOG_CATEGORY_GAME_ACCESS, "IPIntel is not enabled because the configs are not valid.", list(
@@ -152,7 +140,7 @@ SUBSYSTEM_DEF(ipintel)
 		date_restrictor = " AND date > DATE_SUB(NOW(), INTERVAL :ipintel_cache_length DAY)"
 		sql_args["ipintel_cache_length"] = ipintel_cache_length
 	var/datum/db_query/query = SSdbcore.NewQuery(
-		"SELECT * FROM [format_table_name("ipintel")] WHERE ip = INET_ATON(:address)[date_restrictor]", 
+		"SELECT * FROM [format_table_name("ipintel")] WHERE ip = INET_ATON(:address)[date_restrictor]",
 		sql_args
 	)
 	query.warn_execute()
@@ -201,7 +189,7 @@ SUBSYSTEM_DEF(ipintel)
 	query.NextRow()
 	. = !!query.item // if they have a row, they are whitelisted
 	qdel(query)
-	
+
 
 ADMIN_VERB(ipintel_allow, R_BAN, "Whitelist Player VPN", "Allow a player to connect even if they are using a VPN.", ADMIN_CATEGORY_IPINTEL, ckey as text)
 	if (!SSipintel.is_enabled())
@@ -283,7 +271,7 @@ ADMIN_VERB(ipintel_revoke, R_BAN, "Revoke Player VPN Whitelist", "Revoke a playe
 
 	if(!connection_rejected)
 		return
-	
+
 	var/list/contact_where = list()
 	var/forum_url = CONFIG_GET(string/forumurl)
 	if(forum_url)
@@ -301,4 +289,3 @@ ADMIN_VERB(ipintel_revoke, R_BAN, "Revoke Player VPN Whitelist", "Revoke a playe
 
 	to_chat_immediate(src, span_userdanger(message_string))
 	qdel(src)
->>>>>>> 241ffd39086 ([MISSED MIRRORS] General IP intel tweaks (#82904) + fix ipintel caching to db not working. (#83046) (#2337))

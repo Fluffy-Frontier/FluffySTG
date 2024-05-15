@@ -97,3 +97,6 @@
 
 /// from /obj/structure/fleshmind/structure/core/proc/rally_troops()
 #define COMSIG_FLESHMIND_CORE_RALLY "fleshmind_core_rally"
+
+/// Whenever a baton successfully executes its nonlethal attack. WARNING HORRIBLE FUCKING CODE THIS IS ASS AAAAAAAAAAAAH
+#define COMSIG_PRE_BATON_FINALIZE_ATTACK "pre_baton_finalize_attack"
