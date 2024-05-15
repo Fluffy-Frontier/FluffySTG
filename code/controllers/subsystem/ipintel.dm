@@ -1,18 +1,15 @@
 SUBSYSTEM_DEF(ipintel)
 	name = "XKeyScore"
 	init_order = INIT_ORDER_XKEYSCORE
-	flags = SS_NO_FIRE
-	var/enabled = FALSE //disable at round start to avoid checking reconnects
-	var/throttle = 0
-	var/errors = 0
+	flags = SS_NO_INIT|SS_NO_FIRE
+	/// The threshold for probability to be considered a VPN and/or bad IP
+	var/probability_threshold
 
-	var/list/cache = list()
+	/// Cache for previously queried IP addresses and those stored in the database
+	var/list/datum/ip_intel/cached_queries = list()
+	/// The store for rate limiting
+	var/list/rate_limit_minute
 
-<<<<<<< HEAD
-/datum/controller/subsystem/ipintel/Initialize()
-	enabled = TRUE
-	return SS_INIT_SUCCESS
-=======
 /// The ip intel for a given address
 /datum/ip_intel
 	/// If this intel was just queried, the status of the query
@@ -296,4 +293,3 @@ ADMIN_VERB(ipintel_revoke, R_BAN, "Revoke Player VPN Whitelist", "Revoke a playe
 
 	to_chat_immediate(src, span_userdanger(message_string))
 	qdel(src)
->>>>>>> 7c90f3f7152 ([MIRROR] Moves as many db related date/time operations to the db side to avoid byond bugs with dates and times. (#2460))
