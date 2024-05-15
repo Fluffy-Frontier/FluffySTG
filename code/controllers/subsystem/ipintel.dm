@@ -104,7 +104,9 @@ SUBSYSTEM_DEF(ipintel)
 	if(intel.query_status != "success")
 		return intel
 	intel.result = data["result"]
-	intel.date = SQLtime()
+	if(istext(intel.result))
+		intel.result = text2num(intel.result)
+	intel.date = ISOtime()
 	intel.address = address
 	cached_queries[address] = intel
 	add_intel_to_database(intel)
@@ -158,6 +160,8 @@ SUBSYSTEM_DEF(ipintel)
 	var/datum/ip_intel/intel = new
 	intel.query_status = "cached"
 	intel.result = data["intel"]
+	if(istext(intel.result))
+		intel.result = text2num(intel.result)
 	intel.date = data["date"]
 	intel.address = address
 	return TRUE
