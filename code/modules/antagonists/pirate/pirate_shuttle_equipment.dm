@@ -11,7 +11,7 @@
 	/// The amount of money stored in the machine
 	var/credits_stored = 0
 	/// The amount of money removed per tick
-	var/siphon_per_tick = 5
+	var/siphon_per_tick = 200 // FF edit: 5 -> 200
 
 /obj/machinery/shuttle_scrambler/Initialize(mapload)
 	. = ..()

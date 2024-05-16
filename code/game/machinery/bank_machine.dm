@@ -67,7 +67,7 @@
 		say("Insufficient power. Halting siphon.")
 		end_siphon()
 		return
-	var/siphon_am = 100 * seconds_per_tick
+	var/siphon_am = 1000 * seconds_per_tick // FF edit: 100 -> 1000
 	if(!synced_bank_account.has_money(siphon_am))
 		say("[synced_bank_account.account_holder] depleted. Halting siphon.")
 		end_siphon()

@@ -37,7 +37,7 @@
 #define RESPONSE_MAX_TIME 2 MINUTES
 
 /// How long till a spessman should come back after being captured and sent to the holding facility (which some antags use)
-#define COME_BACK_FROM_CAPTURE_TIME 6 MINUTES
+#define COME_BACK_FROM_CAPTURE_TIME 60 MINUTES // FF edit: 6 -> 60
 
 //ERT Types
 #define ERT_BLUE "Blue"
