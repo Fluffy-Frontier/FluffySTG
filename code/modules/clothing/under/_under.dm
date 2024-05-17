@@ -339,6 +339,20 @@
 		if(H.w_uniform == src)
 			H.update_suit_sensors()
 
+<<<<<<< HEAD
+=======
+/obj/item/clothing/under/CtrlClick(mob/user)
+	. = ..()
+	if(!.)
+		return
+	if(!can_toggle_sensors(user))
+		return
+
+	sensor_mode = SENSOR_COORDS
+	balloon_alert(user, "set to tracking")
+	to_chat(usr, span_notice("Your suit will now report your exact vital lifesigns as well as your coordinate position.")) // NOVA EDIT ADDITION
+
+>>>>>>> c0bef75b8c2 (Removes modular suit sensor QOL as it was added upstream already (#2538))
 /// Checks if the toggler is allowed to toggle suit sensors currently
 /obj/item/clothing/under/proc/can_toggle_sensors(mob/toggler)
 	if(!can_use(toggler) || toggler.stat == DEAD) //make sure they didn't hold the window open.
