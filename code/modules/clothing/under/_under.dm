@@ -69,6 +69,7 @@
 
 	if(isnull(held_item) && has_sensor == HAS_SENSORS)
 		context[SCREENTIP_CONTEXT_RMB] = "Toggle suit sensors"
+		context[SCREENTIP_CONTEXT_CTRL_LMB] = "Set suit sensors to tracking"
 		changed = TRUE
 
 	if(istype(held_item, /obj/item/clothing/accessory) && length(attached_accessories) < max_number_of_accessories)
@@ -339,8 +340,6 @@
 		if(H.w_uniform == src)
 			H.update_suit_sensors()
 
-<<<<<<< HEAD
-=======
 /obj/item/clothing/under/CtrlClick(mob/user)
 	. = ..()
 	if(!.)
@@ -352,7 +351,6 @@
 	balloon_alert(user, "set to tracking")
 	to_chat(usr, span_notice("Your suit will now report your exact vital lifesigns as well as your coordinate position.")) // NOVA EDIT ADDITION
 
->>>>>>> c0bef75b8c2 (Removes modular suit sensor QOL as it was added upstream already (#2538))
 /// Checks if the toggler is allowed to toggle suit sensors currently
 /obj/item/clothing/under/proc/can_toggle_sensors(mob/toggler)
 	if(!can_use(toggler) || toggler.stat == DEAD) //make sure they didn't hold the window open.

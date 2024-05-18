@@ -615,3 +615,17 @@
   vinylspiders:
   - bugfix: mobs with the obeys_commands component (e.g cleanbots, tamed mobs, and
       more) will now show all of the related examine text
+2024-05-18:
+  Adeheuer:
+  - rscadd: 'Added a new hairstyle: Simple Ponytail Alt'
+  - image: added hair_simple_ponytail_alt.dmi
+  Xander3359:
+  - rscdel: Removes the sleeper protocol traitor objective
+  - balance: RND server/Telecomms sabotage can now show up even later in the round
+  Zergspower:
+  - code_imp: gave names to modular Cargo Shuttles to tell them apart
+  hack-wrench:
+  - bugfix: fixed "bad text" error when using non-ascii characters in traitor announcements
+  jlsnow301:
+  - bugfix: Lootpanel now requires 515.1635 to generate most icons. TG support for
+      514 ended May 1. Update your client to fix the icons.
