@@ -629,3 +629,45 @@
   jlsnow301:
   - bugfix: Lootpanel now requires 515.1635 to generate most icons. TG support for
       514 ended May 1. Update your client to fix the icons.
+2024-05-19:
+  Absolucy:
+  - bugfix: You will now be ejected from Space Phase if you lose your focus or lose
+      consciousness somehow during the jaunt.
+  DaCoolBoss:
+  - bugfix: adds missing prefix to name of The Lizard's Gas Lava land ruin.
+  Echriser:
+  - bugfix: Fixes a bunch of hearts turning into errors when you try to eat them
+  Hatterhat:
+  - qol: The Ansem, suppressor, and SC/FISHER included in the Fisher gimmick bundle
+      now come together as one whole gun, the Ansem/SC. It's integrally suppressed,
+      and fires the disruptor on right-click.
+  - bugfix: The SC/FISHER disrupts APCs for an appropriate amount of time, not ten
+      times the intended disruption length.
+  Iamgoofball:
+  - rscadd: Adds a new neutral lawset, the Y.E.S.M.A.N. lawset, to the AI lawset boards
+      and random pool.
+  Jacquerel:
+  - bugfix: Mob spawners (such as lavaland tendrils) won't spawn more mobs than they
+      are supposed to, faster than they should.
+  Merek2:
+  - qol: Changed a recipe line for the beer battered sausage. Now chefs can know how
+      to make the beer batter! Find it by looking for the recipe in the crafting menu!
+  OzzyMcPseudonym:
+  - balance: Synths rejoice! The basic robotics medkit is now available for purchase
+      in mining vendors, at a small premium compared to kits for organics.
+  ShizCalev:
+  - bugfix: Malf AI can now override/overload closed turrets.
+  - bugfix: Fixed a scenario in which a turret would have its covers closed while
+      still firing.
+  grungussuss:
+  - qol: suit sensors can now be maxed by ctrl clicking your jumpsuit
+  improvedname:
+  - balance: Nukies ordnance now include more gasses and stock parts
+  nikothedude:
+  - bugfix: Taur legs' names are now respected in all aspects of the game
+  - spellcheck: Taur legs suffix now specifies they are legs
+  yooriss:
+  - bugfix: Medical bounties no longer accept the base IPC organs that could be printed
+      from medical's techfab pretty much at round start. Sorry, paramedics - you'll
+      have to wait a bit for science to research t2 cybernetic organs before the money
+      fountain opens again.
