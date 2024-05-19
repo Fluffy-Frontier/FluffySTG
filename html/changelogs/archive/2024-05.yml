@@ -643,18 +643,28 @@
       and fires the disruptor on right-click.
   - bugfix: The SC/FISHER disrupts APCs for an appropriate amount of time, not ten
       times the intended disruption length.
+  - rscadd: Xenoarch strange rocks can now show up in artifact boulders.
   Iamgoofball:
   - rscadd: Adds a new neutral lawset, the Y.E.S.M.A.N. lawset, to the AI lawset boards
       and random pool.
   Jacquerel:
   - bugfix: Mob spawners (such as lavaland tendrils) won't spawn more mobs than they
       are supposed to, faster than they should.
+  Melbert:
+  - rscadd: Adds Minecarts, (possibly admin only depending on when this PR is merged
+      in relation to the Icebox Bar PR)
+  - rscadd: 'Icebox: The bar returns to its home.'
+  - rscadd: 'Icebox: Standardizes some decal styles in the main hallway.'
+  - bugfix: 'Icebox: The lower brig''s missing air alarm has been found.'
   Merek2:
   - qol: Changed a recipe line for the beer battered sausage. Now chefs can know how
       to make the beer batter! Find it by looking for the recipe in the crafting menu!
   OzzyMcPseudonym:
   - balance: Synths rejoice! The basic robotics medkit is now available for purchase
       in mining vendors, at a small premium compared to kits for organics.
+  Sadboysuss:
+  - bugfix: fixed malf AI being able to overload shuttle consoles and the gateway
+      control console
   ShizCalev:
   - bugfix: Malf AI can now override/overload closed turrets.
   - bugfix: Fixed a scenario in which a turret would have its covers closed while
@@ -666,6 +676,8 @@
   nikothedude:
   - bugfix: Taur legs' names are now respected in all aspects of the game
   - spellcheck: Taur legs suffix now specifies they are legs
+  sheets, spacemenart, ben10omintrix, goofball, infrared baron, aofie:
+  - rscadd: adds lavaland raptors and the raptor ranch
   yooriss:
   - bugfix: Medical bounties no longer accept the base IPC organs that could be printed
       from medical's techfab pretty much at round start. Sorry, paramedics - you'll
