@@ -568,10 +568,10 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/item/gun/ballistic/rifle/sniper_rifle,
 /obj/item/modular_computer/laptop/preset/syndicate,
-/obj/item/folder/syndicate/red,
 /obj/effect/spawner/random/entertainment/money_medium,
 /obj/effect/spawner/random/entertainment/money_medium,
 /obj/effect/spawner/random/entertainment/money_medium,
+/obj/item/folder/syndicate/red/secretformula,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/vault)
 "cS" = (
@@ -1165,6 +1165,10 @@
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/item/clothing/glasses/science,
+/obj/item/storage/box/syndie_kit/sansufentanyl{
+	pixel_x = -4;
+	pixel_y = 15
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "fO" = (
@@ -1515,6 +1519,14 @@
 /obj/structure/table/wood/fancy/black,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
+"ij" = (
+/obj/effect/mapping_helpers/apc/syndicate_access,
+/obj/machinery/door/window/survival_pod/left/directional/west{
+	req_access = list("syndicate");
+	pixel_x = -4
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science)
 "io" = (
 /obj/structure/fence/corner{
 	dir = 1
@@ -1980,6 +1992,8 @@
 	dir = 1
 	},
 /obj/structure/sign/warning/cold_temp/directional/west,
+/obj/structure/drain,
+/obj/machinery/shower/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "lz" = (
@@ -2899,9 +2913,11 @@
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 1
 	},
-/obj/structure/window/reinforced/survival_pod/spawner/directional/west{
+/obj/machinery/door/window/survival_pod/left/directional/west{
+	req_access = list("syndicate");
 	pixel_x = -4
 	},
+/obj/effect/mapping_helpers/apc/syndicate_access,
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/science)
 "qH" = (
@@ -3082,16 +3098,9 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
 "sc" = (
-/obj/machinery/light/directional/east{
-	bulb_colour = "#2C3BFF";
-	color = "#0012FF";
-	light_color = "#0012FF"
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/turf/open/floor/wood/large,
-/area/ruin/interdyne_planetary_base/main)
+/obj/structure/transport/linear/tram/corner/southeast,
+/turf/open/lava/plasma/ice_moon,
+/area/icemoon/underground/explored)
 "sg" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 10
@@ -4348,6 +4357,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
+/obj/effect/mapping_helpers/apc/syndicate_access,
 /turf/open/floor/iron/dark,
 /area/ruin/interdyne_planetary_base/science)
 "zd" = (
@@ -4808,6 +4818,9 @@
 /obj/machinery/vending/dorms{
 	onstation = 0;
 	extended_inventory = 1
+	},
+/obj/machinery/light/directional/south{
+	color = "#0012FF"
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
@@ -5797,14 +5810,13 @@
 	req_access = list("syndicate");
 	name = "Slime Euthanization Chamber"
 	},
+/obj/effect/mapping_helpers/apc/syndicate_access,
 /turf/open/floor/circuit/telecomms,
 /area/ruin/interdyne_planetary_base/science)
 "Hy" = (
 /obj/effect/turf_decal/stripes/red/corner{
 	dir = 8
 	},
-/obj/structure/drain,
-/obj/machinery/shower/directional/west,
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 6
 	},
@@ -5813,7 +5825,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/box/white/corners,
-/obj/structure/extinguisher_cabinet/directional/east,
+/obj/machinery/suit_storage_unit/interdyne/nerfed,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "HF" = (
@@ -5845,16 +5857,16 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "HN" = (
-/obj/machinery/light/directional/west{
-	bulb_colour = "#2C3BFF";
-	color = "#0012FF";
-	light_color = "#0012FF"
+/obj/structure/window/reinforced/survival_pod/spawner/directional/west{
+	pixel_x = -4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/turf/open/floor/wood/large,
-/area/ruin/interdyne_planetary_base/main)
+/obj/effect/mapping_helpers/apc/syndicate_access,
+/obj/machinery/door/window/survival_pod/left/directional/south{
+	req_access = list("syndicate");
+	pixel_y = -4
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science)
 "HU" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -6515,6 +6527,7 @@
 	network = list("Interdyne")
 	},
 /obj/structure/sign/warning/gas_mask/directional/east,
+/obj/machinery/suit_storage_unit/interdyne/nerfed,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "Mc" = (
@@ -6641,6 +6654,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/general,
 /turf/open/floor/plating/reinforced,
 /area/ruin/interdyne_planetary_base/main)
+"MV" = (
+/obj/structure/transport/linear/tram/corner/northwest,
+/turf/open/lava/plasma/ice_moon,
+/area/icemoon/underground/explored)
 "Na" = (
 /obj/structure/marker_beacon/bronze,
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -7113,6 +7130,14 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
+"PM" = (
+/obj/effect/mapping_helpers/apc/syndicate_access,
+/obj/machinery/door/window/survival_pod/left/directional/south{
+	req_access = list("syndicate");
+	pixel_y = -4
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science)
 "PO" = (
 /obj/structure/cable,
 /turf/open/floor/iron/dark/textured_large,
@@ -7380,6 +7405,10 @@
 /obj/item/soap/syndie,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv)
+"Ss" = (
+/obj/structure/transport/linear/tram/corner/southwest,
+/turf/open/lava/plasma/ice_moon,
+/area/icemoon/underground/explored)
 "St" = (
 /obj/effect/turf_decal/box/white/corners{
 	dir = 8
@@ -7570,6 +7599,9 @@
 /obj/machinery/door/window/survival_pod/left/directional/west{
 	req_access = list("syndicate");
 	pixel_x = -4
+	},
+/obj/machinery/light/directional/south{
+	color = "#0012FF"
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
@@ -8348,7 +8380,6 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "XS" = (
-/obj/structure/window/reinforced/survival_pod/spawner/directional/south,
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 10
 	},
@@ -8356,6 +8387,11 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 8
 	},
+/obj/machinery/door/window/survival_pod/left/directional/south{
+	req_access = list("syndicate");
+	name = "Slime Euthanization Chamber"
+	},
+/obj/effect/mapping_helpers/apc/syndicate_access,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "XT" = (
@@ -8511,6 +8547,10 @@
 /obj/structure/marker_beacon/olive,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
+"YN" = (
+/obj/structure/transport/linear/tram/corner/northeast,
+/turf/open/lava/plasma/ice_moon,
+/area/icemoon/underground/explored)
 "YO" = (
 /obj/effect/turf_decal/bot_red,
 /obj/effect/turf_decal/tile/dark/full,
@@ -9383,7 +9423,7 @@ aP
 Xa
 yF
 Mp
-my
+PM
 BA
 RH
 kf
@@ -9431,7 +9471,7 @@ ab
 Pv
 ab
 ab
-ab
+MV
 sv
 sv
 FV
@@ -9444,7 +9484,7 @@ Gp
 qC
 eS
 Ow
-Ow
+ij
 kf
 mV
 EK
@@ -9455,7 +9495,7 @@ YM
 td
 eo
 vo
-SH
+Ss
 ab
 ab
 Pn
@@ -9489,7 +9529,7 @@ ab
 ab
 ab
 ab
-ab
+MV
 sv
 CQ
 vl
@@ -9515,7 +9555,7 @@ Qq
 jt
 vL
 vo
-ab
+Ss
 ab
 ab
 ab
@@ -9547,7 +9587,7 @@ ab
 ab
 ab
 ab
-ab
+MV
 sv
 PB
 Lm
@@ -9560,9 +9600,9 @@ Rl
 rX
 XS
 qC
-eS
+HN
 Ow
-Ow
+ij
 kf
 GM
 EK
@@ -9575,7 +9615,7 @@ bG
 bG
 Gb
 vo
-ab
+Ss
 ab
 ab
 ab
@@ -9605,7 +9645,7 @@ SH
 ab
 ab
 ab
-ab
+MV
 sv
 Fz
 pH
@@ -9635,7 +9675,7 @@ XD
 xm
 OI
 vo
-ab
+Ss
 ab
 ab
 Iy
@@ -9925,7 +9965,7 @@ Yf
 rv
 us
 us
-HN
+us
 RM
 aY
 Fn
@@ -10751,7 +10791,7 @@ xc
 iZ
 us
 us
-sc
+us
 RM
 td
 hu
@@ -11021,7 +11061,7 @@ ab
 ab
 ab
 ab
-ab
+YN
 ds
 qa
 rD
@@ -11051,7 +11091,7 @@ Wx
 gz
 Jq
 nP
-ab
+sc
 ab
 ab
 ab
@@ -11081,7 +11121,7 @@ ab
 ab
 ab
 ab
-ab
+YN
 ds
 Qx
 oO
@@ -11109,7 +11149,7 @@ Lw
 Mk
 mr
 nP
-ab
+sc
 ab
 ab
 ab
@@ -11141,7 +11181,7 @@ ab
 ab
 ab
 ab
-ab
+YN
 ds
 tc
 IM
@@ -11167,7 +11207,7 @@ it
 BB
 ap
 nP
-ab
+sc
 ab
 ab
 ab
@@ -11201,7 +11241,7 @@ ab
 Ei
 ab
 ab
-ab
+YN
 ds
 yQ
 yQ
@@ -11225,7 +11265,7 @@ zF
 td
 nP
 nP
-ab
+sc
 ab
 ab
 dk
