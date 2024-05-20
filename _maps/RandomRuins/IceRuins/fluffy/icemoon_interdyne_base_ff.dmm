@@ -1355,6 +1355,13 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/vault)
+"gV" = (
+/obj/machinery/door/window/survival_pod/left/directional/south{
+	req_access = list("syndicate");
+	pixel_y = -4
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science)
 "gY" = (
 /obj/effect/turf_decal/stripes/red/line,
 /obj/structure/cable,
@@ -1519,14 +1526,6 @@
 /obj/structure/table/wood/fancy/black,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
-"ij" = (
-/obj/effect/mapping_helpers/apc/syndicate_access,
-/obj/machinery/door/window/survival_pod/left/directional/west{
-	req_access = list("syndicate");
-	pixel_x = -4
-	},
-/turf/open/floor/engine,
-/area/ruin/interdyne_planetary_base/science)
 "io" = (
 /obj/structure/fence/corner{
 	dir = 1
@@ -2139,6 +2138,16 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
+"mM" = (
+/obj/structure/window/reinforced/survival_pod/spawner/directional/west{
+	pixel_x = -4
+	},
+/obj/machinery/door/window/survival_pod/left/directional/south{
+	req_access = list("syndicate");
+	pixel_y = -4
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science)
 "mN" = (
 /obj/structure/statue/snow/snowman,
 /turf/open/misc/asteroid/snow/icemoon,
@@ -2917,7 +2926,6 @@
 	req_access = list("syndicate");
 	pixel_x = -4
 	},
-/obj/effect/mapping_helpers/apc/syndicate_access,
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/science)
 "qH" = (
@@ -3098,7 +3106,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
 "sc" = (
-/obj/structure/transport/linear/tram/corner/southeast,
+/obj/structure/transport/linear/tram/corner/southwest,
 /turf/open/lava/plasma/ice_moon,
 /area/icemoon/underground/explored)
 "sg" = (
@@ -4113,6 +4121,10 @@
 	},
 /turf/open/floor/plating/snowed/icemoon,
 /area/ruin/interdyne_planetary_base)
+"xI" = (
+/obj/structure/transport/linear/tram/corner/southeast,
+/turf/open/lava/plasma/ice_moon,
+/area/icemoon/underground/explored)
 "xP" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 8
@@ -4357,7 +4369,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
-/obj/effect/mapping_helpers/apc/syndicate_access,
 /turf/open/floor/iron/dark,
 /area/ruin/interdyne_planetary_base/science)
 "zd" = (
@@ -4398,6 +4409,13 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
+"zs" = (
+/obj/machinery/door/window/survival_pod/left/directional/west{
+	req_access = list("syndicate");
+	pixel_x = -4
+	},
+/turf/open/floor/engine,
+/area/ruin/interdyne_planetary_base/science)
 "zu" = (
 /obj/machinery/vending/clothing{
 	onstation = 0
@@ -5810,7 +5828,6 @@
 	req_access = list("syndicate");
 	name = "Slime Euthanization Chamber"
 	},
-/obj/effect/mapping_helpers/apc/syndicate_access,
 /turf/open/floor/circuit/telecomms,
 /area/ruin/interdyne_planetary_base/science)
 "Hy" = (
@@ -5857,16 +5874,9 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "HN" = (
-/obj/structure/window/reinforced/survival_pod/spawner/directional/west{
-	pixel_x = -4
-	},
-/obj/effect/mapping_helpers/apc/syndicate_access,
-/obj/machinery/door/window/survival_pod/left/directional/south{
-	req_access = list("syndicate");
-	pixel_y = -4
-	},
-/turf/open/floor/engine,
-/area/ruin/interdyne_planetary_base/science)
+/obj/structure/transport/linear/tram/corner/northeast,
+/turf/open/lava/plasma/ice_moon,
+/area/icemoon/underground/explored)
 "HU" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -6607,6 +6617,10 @@
 	},
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
+"MC" = (
+/obj/structure/transport/linear/tram/corner/northwest,
+/turf/open/lava/plasma/ice_moon,
+/area/icemoon/underground/explored)
 "MD" = (
 /obj/effect/turf_decal/tile/dark/full,
 /turf/closed/wall/r_wall/syndicate,
@@ -6654,10 +6668,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/general,
 /turf/open/floor/plating/reinforced,
 /area/ruin/interdyne_planetary_base/main)
-"MV" = (
-/obj/structure/transport/linear/tram/corner/northwest,
-/turf/open/lava/plasma/ice_moon,
-/area/icemoon/underground/explored)
 "Na" = (
 /obj/structure/marker_beacon/bronze,
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -7130,14 +7140,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
-"PM" = (
-/obj/effect/mapping_helpers/apc/syndicate_access,
-/obj/machinery/door/window/survival_pod/left/directional/south{
-	req_access = list("syndicate");
-	pixel_y = -4
-	},
-/turf/open/floor/engine,
-/area/ruin/interdyne_planetary_base/science)
 "PO" = (
 /obj/structure/cable,
 /turf/open/floor/iron/dark/textured_large,
@@ -7405,10 +7407,6 @@
 /obj/item/soap/syndie,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv)
-"Ss" = (
-/obj/structure/transport/linear/tram/corner/southwest,
-/turf/open/lava/plasma/ice_moon,
-/area/icemoon/underground/explored)
 "St" = (
 /obj/effect/turf_decal/box/white/corners{
 	dir = 8
@@ -8391,7 +8389,6 @@
 	req_access = list("syndicate");
 	name = "Slime Euthanization Chamber"
 	},
-/obj/effect/mapping_helpers/apc/syndicate_access,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "XT" = (
@@ -8547,10 +8544,6 @@
 /obj/structure/marker_beacon/olive,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
-"YN" = (
-/obj/structure/transport/linear/tram/corner/northeast,
-/turf/open/lava/plasma/ice_moon,
-/area/icemoon/underground/explored)
 "YO" = (
 /obj/effect/turf_decal/bot_red,
 /obj/effect/turf_decal/tile/dark/full,
@@ -9423,7 +9416,7 @@ aP
 Xa
 yF
 Mp
-PM
+gV
 BA
 RH
 kf
@@ -9471,7 +9464,7 @@ ab
 Pv
 ab
 ab
-MV
+MC
 sv
 sv
 FV
@@ -9484,7 +9477,7 @@ Gp
 qC
 eS
 Ow
-ij
+zs
 kf
 mV
 EK
@@ -9495,7 +9488,7 @@ YM
 td
 eo
 vo
-Ss
+sc
 ab
 ab
 Pn
@@ -9529,7 +9522,7 @@ ab
 ab
 ab
 ab
-MV
+MC
 sv
 CQ
 vl
@@ -9555,7 +9548,7 @@ Qq
 jt
 vL
 vo
-Ss
+sc
 ab
 ab
 ab
@@ -9587,7 +9580,7 @@ ab
 ab
 ab
 ab
-MV
+MC
 sv
 PB
 Lm
@@ -9600,9 +9593,9 @@ Rl
 rX
 XS
 qC
-HN
+mM
 Ow
-ij
+zs
 kf
 GM
 EK
@@ -9615,7 +9608,7 @@ bG
 bG
 Gb
 vo
-Ss
+sc
 ab
 ab
 ab
@@ -9645,7 +9638,7 @@ SH
 ab
 ab
 ab
-MV
+MC
 sv
 Fz
 pH
@@ -9675,7 +9668,7 @@ XD
 xm
 OI
 vo
-Ss
+sc
 ab
 ab
 Iy
@@ -11061,7 +11054,7 @@ ab
 ab
 ab
 ab
-YN
+HN
 ds
 qa
 rD
@@ -11091,7 +11084,7 @@ Wx
 gz
 Jq
 nP
-sc
+xI
 ab
 ab
 ab
@@ -11121,7 +11114,7 @@ ab
 ab
 ab
 ab
-YN
+HN
 ds
 Qx
 oO
@@ -11149,7 +11142,7 @@ Lw
 Mk
 mr
 nP
-sc
+xI
 ab
 ab
 ab
@@ -11181,7 +11174,7 @@ ab
 ab
 ab
 ab
-YN
+HN
 ds
 tc
 IM
@@ -11207,7 +11200,7 @@ it
 BB
 ap
 nP
-sc
+xI
 ab
 ab
 ab
@@ -11241,7 +11234,7 @@ ab
 Ei
 ab
 ab
-YN
+HN
 ds
 yQ
 yQ
@@ -11265,7 +11258,7 @@ zF
 td
 nP
 nP
-sc
+xI
 ab
 ab
 dk
