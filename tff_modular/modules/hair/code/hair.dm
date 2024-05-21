@@ -107,6 +107,10 @@
 	name = "Simple short"
 	icon_state = "hair_simple_short"
 
+/datum/sprite_accessory/hair/ttf/simple_ponytail_alt
+	name = "Simple Ponytail Alt"
+	icon_state = "hair_simple_ponytail_alt"
+
 /datum/sprite_accessory/hair/ttf/strict
 	name = "Strict"
 	icon_state = "hair_strict"
