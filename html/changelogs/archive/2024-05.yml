@@ -743,3 +743,65 @@
   - balance: Multiver stops purging when Anacea is present in the bloodstream.
   tmyqlfpir:
   - bugfix: '[Metastation] Service hallway door being bypassed by lying down'
+2024-05-22:
+  Ben10Omintrix:
+  - bugfix: ' fixes being able to ride all mobs through space'
+  Bisar:
+  - balance: A wound being inflicted doesn't get broadcasted to everyone in view until
+      a higher severity now.
+  - sound: Wound sounds drop off more quickly, and no longer travel through walls.
+      This has no effect on attack sounds.
+  Fikou:
+  - spellcheck: the nuke op reinforcement beacon no longer talks about clones
+  Horatio22:
+  - spellcheck: Correctly spells "received."
+  - spellcheck: Corrects spelling of "amulette" to "amulet"
+  Jacquerel:
+  - balance: Certain unhealthy organs can be detected via the advanced health scanner
+  Profakos:
+  - bugfix: Slimes will no longer consider feeding upon slime people
+  SyncIt21:
+  - bugfix: Monkey power reactions are instant and won't occur when exact reagent
+      requirements (50u power & 1u water) or above aren't met. Stops players from
+      cheesing monkeys from plumbing factories
+  - bugfix: Crafting menu loads long lists faster
+  Watermelon914:
+  - bugfix: Fixed spies having a slightly increased chance of getting a different
+      cost model for the elite syndicate hardsuit
+  - qol: New players will no longer start with ghost ears, ghost sight and ghost whispers
+      on by default.
+  Wayland-Smithy:
+  - qol: Crew Monitor UI now scrolls properly even after clicking the inner list.
+  Xander3359:
+  - bugfix: The RD remote works on the AI upload door now
+  - bugfix: fixed a weird door in icebox bridge
+  Zergspower:
+  - code_imp: Altered the BMD's spawn to no longer be TRUE Spawn
+  - code_imp: Skub Revolution Station Trait weight set to 0
+  atosti:
+  - bugfix: Viewing Reticence's stats no longer causes an NtOS UI error
+  hack-wrench:
+  - rscadd: Added smoke kit (5 grenades) with four grenades to uplink by 2 TC
+  kawoppi:
+  - bugfix: 'underage drinkers beware: the Booze-O-Mat and ShadyCigs Deluxe check
+      your age again'
+  nikothedude:
+  - rscadd: Adds a new deathmatch modifier that enables quirks
+  - bugfix: The deathmatch modifier menu works now
+  - spellcheck: Improved the grammar/spelling of a few raptor descriptions
+  yooriss:
+  - bugfix: Entombed MODsuits now handle dismemberment much better, hopefully resulting
+      in less cases of discarded MOD clothing with the NODROP flag lying around. It
+      is also  safe for first responders to pick up and transport Entombed MODs without
+      them fusing to their hand and becoming undroppable.
+  - qol: 'Stasis beds (and other sources of the effect) now halt the life support
+      failure damage for Entombed characters. Side note: it is also possible to mitigate
+      the toxin damage this causes with slow IV drips of anti-tox chemicals.'
+  - qol: It is now possible to turn on an Entombed character's MODsuit via the strip
+      menu after a short delay if it is off and they are otherwise unconscious/unable/unwilling.
+      You cannot turn it off, however, as this would kill them.
+  - rscadd: 'The following items are now available in the loadout menu: bunny suit
+      (black), bunny suit (white), latex catsuit, geisha suit, jabroni outfit, CIN
+      combat uniform, shoulder holsters, cowboy belt, all the CIN surplus chest rigs,
+      expeditionary chest rig, the frontier chest rig, hairbrush (and combs), basic
+      robotic repair equipment kit (synthetic medkit) and the imperial police cloak.'
