@@ -110,22 +110,22 @@
 		if(bindedsoul)
 			bindedsoul.drama()
 
-/obj/item/toy/plush/tff/soulmates/love(obj/item/toy/plush/tff/soulmates/Kisser, mob/living/user)
-	if(istype(Kisser, missing_one))
-		if(Kisser != bindedsoul)
-			if(Kisser.bindedsoul)
-				Kisser.bindedsoul.bindedsoul = null
-				Kisser.bindedsoul.check_the_mate()
-				Kisser.bindedsoul = null
+/obj/item/toy/plush/tff/soulmates/love(obj/item/toy/plush/tff/soulmates/kisser, mob/living/user)
+	if(istype(kisser, missing_one))
+		if(kisser != bindedsoul)
+			if(kisser.bindedsoul)
+				kisser.bindedsoul.bindedsoul = null
+				kisser.bindedsoul.check_the_mate()
+				kisser.bindedsoul = null
 			if(bindedsoul)
 				src.bindedsoul.bindedsoul = null
 				src.bindedsoul.check_the_mate()
 				src.bindedsoul = null
-			src.bindedsoul = Kisser
-			Kisser.bindedsoul = src
-			Kisser.check_the_mate()
-		user.visible_message(span_notice("[user] makes [Kisser] kiss [src]!"),
-		span_notice("You make [Kisser] kiss [src]!"))
+			src.bindedsoul = kisser
+			kisser.bindedsoul = src
+			kisser.check_the_mate()
+		user.visible_message(span_notice("[user] makes [kisser] kiss [src]!"),
+		span_notice("You make [kisser] kiss [src]!"))
 	return
 
 /obj/item/toy/plush/tff/soulmates/proc/drama()
