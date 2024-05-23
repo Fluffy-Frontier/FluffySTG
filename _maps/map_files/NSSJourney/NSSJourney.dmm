@@ -1973,7 +1973,6 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/machinery/vending/dorms,
 /turf/open/floor/iron/dark,
 /area/station/commons/fitness)
 "aqu" = (
@@ -24351,9 +24350,8 @@
 /obj/effect/turf_decal/tile/dark{
 	dir = 1
 	},
-/obj/structure/chair/sofa/middle{
-	dir = 4;
-	color = "bd5d04"
+/obj/structure/chair/sofa/middle/brown{
+	dir = 4
 	},
 /turf/open/floor/iron/smooth_edge{
 	dir = 4
@@ -24532,9 +24530,8 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/dark,
-/obj/structure/chair/sofa/right{
-	dir = 4;
-	color = "#bd5d04"
+/obj/structure/chair/sofa/right/brown{
+	dir = 4
 	},
 /turf/open/floor/iron/smooth,
 /area/station/engineering/break_room)
@@ -48309,9 +48306,8 @@
 /obj/effect/turf_decal/tile/dark{
 	dir = 1
 	},
-/obj/structure/chair/sofa/corner{
-	dir = 4;
-	color = "#bd5d04"
+/obj/structure/chair/sofa/corner/brown{
+	dir = 4
 	},
 /turf/open/floor/iron/smooth,
 /area/station/engineering/break_room)
@@ -58031,9 +58027,7 @@
 /obj/effect/turf_decal/tile/dark{
 	dir = 1
 	},
-/obj/structure/chair/sofa/left{
-	color = "#bd5d04"
-	},
+/obj/structure/chair/sofa/left/brown,
 /turf/open/floor/iron/smooth_edge,
 /area/station/engineering/break_room)
 "wwV" = (
