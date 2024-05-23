@@ -85,17 +85,19 @@
 	var/happy_desc = " Oh! The toy is happy!"
 	var/depressed_desc = " It seems that toy is unhappy... sad."
 
+/obj/item/toy/plush/tff/soulmates/Initialize(mapload)
+	. = ..()
+	RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(check_the_mate))
+
 /obj/item/toy/plush/tff/soulmates/Destroy()
 	. = ..()
+	UnregisterSignal(src, COMSIG_MOVABLE_MOVED)
 	if(bindedsoul)
 		bindedsoul.bindedsoul = null
 		bindedsoul = null
 
-/obj/item/toy/plush/tff/soulmates/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change = TRUE)
-	. = ..()
-	check_the_mate()
-
 /obj/item/toy/plush/tff/soulmates/proc/check_the_mate()
+	SIGNAL_HANDLER
 	var/obj/item/toy/plush/tff/soulmates/that_missing_one = locate() in range(1, src)
 	if(istype(that_missing_one, missing_one))
 		if(that_missing_one == bindedsoul && that_missing_one.bindedsoul == src)
