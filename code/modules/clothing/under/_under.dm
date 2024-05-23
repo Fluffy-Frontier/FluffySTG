@@ -141,12 +141,13 @@
 
 	if(severity <= EMP_HEAVY)
 		has_sensor = BROKEN_SENSORS
+		sensor_mode = SENSOR_LIVING // NOVA EDIT ADDITION
 		if(ismob(loc))
 			var/mob/M = loc
 			to_chat(M,span_warning("[src]'s sensors short out!"))
 
 	else
-		sensor_mode = pick(SENSOR_OFF, SENSOR_OFF, SENSOR_OFF, SENSOR_LIVING, SENSOR_LIVING, SENSOR_VITALS, SENSOR_VITALS, SENSOR_COORDS)
+		sensor_mode = clamp(sensor_mode + pick(-1,1), SENSOR_OFF, SENSOR_COORDS) // NOVA EDIT CHANGE - ORIGINAL: sensor_mode = pick(SENSOR_OFF, SENSOR_OFF, SENSOR_OFF, SENSOR_LIVING, SENSOR_LIVING, SENSOR_VITALS, SENSOR_VITALS, SENSOR_COORDS)
 		if(ismob(loc))
 			var/mob/M = loc
 			to_chat(M,span_warning("The sensors on the [src] change rapidly!"))
@@ -342,13 +343,14 @@
 
 /obj/item/clothing/under/CtrlClick(mob/user)
 	. = ..()
-	if(!.)
+	if(.)
 		return
 	if(!can_toggle_sensors(user))
 		return
 
 	sensor_mode = SENSOR_COORDS
 	balloon_alert(user, "set to tracking")
+	to_chat(usr, span_notice("Your suit will now report your exact vital lifesigns as well as your coordinate position.")) // NOVA EDIT ADDITION
 
 /// Checks if the toggler is allowed to toggle suit sensors currently
 /obj/item/clothing/under/proc/can_toggle_sensors(mob/toggler)

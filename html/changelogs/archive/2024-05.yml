@@ -629,3 +629,193 @@
   jlsnow301:
   - bugfix: Lootpanel now requires 515.1635 to generate most icons. TG support for
       514 ended May 1. Update your client to fix the icons.
+2024-05-19:
+  Absolucy:
+  - bugfix: You will now be ejected from Space Phase if you lose your focus or lose
+      consciousness somehow during the jaunt.
+  DaCoolBoss:
+  - bugfix: adds missing prefix to name of The Lizard's Gas Lava land ruin.
+  Echriser:
+  - bugfix: Fixes a bunch of hearts turning into errors when you try to eat them
+  Hatterhat:
+  - qol: The Ansem, suppressor, and SC/FISHER included in the Fisher gimmick bundle
+      now come together as one whole gun, the Ansem/SC. It's integrally suppressed,
+      and fires the disruptor on right-click.
+  - bugfix: The SC/FISHER disrupts APCs for an appropriate amount of time, not ten
+      times the intended disruption length.
+  - rscadd: Xenoarch strange rocks can now show up in artifact boulders.
+  Iamgoofball:
+  - rscadd: Adds a new neutral lawset, the Y.E.S.M.A.N. lawset, to the AI lawset boards
+      and random pool.
+  Jacquerel:
+  - bugfix: Mob spawners (such as lavaland tendrils) won't spawn more mobs than they
+      are supposed to, faster than they should.
+  Melbert:
+  - rscadd: Adds Minecarts, (possibly admin only depending on when this PR is merged
+      in relation to the Icebox Bar PR)
+  - rscadd: 'Icebox: The bar returns to its home.'
+  - rscadd: 'Icebox: Standardizes some decal styles in the main hallway.'
+  - bugfix: 'Icebox: The lower brig''s missing air alarm has been found.'
+  Merek2:
+  - qol: Changed a recipe line for the beer battered sausage. Now chefs can know how
+      to make the beer batter! Find it by looking for the recipe in the crafting menu!
+  OzzyMcPseudonym:
+  - balance: Synths rejoice! The basic robotics medkit is now available for purchase
+      in mining vendors, at a small premium compared to kits for organics.
+  Sadboysuss:
+  - bugfix: fixed malf AI being able to overload shuttle consoles and the gateway
+      control console
+  ShizCalev:
+  - bugfix: Malf AI can now override/overload closed turrets.
+  - bugfix: Fixed a scenario in which a turret would have its covers closed while
+      still firing.
+  grungussuss:
+  - qol: suit sensors can now be maxed by ctrl clicking your jumpsuit
+  improvedname:
+  - balance: Nukies ordnance now include more gasses and stock parts
+  nikothedude:
+  - bugfix: Taur legs' names are now respected in all aspects of the game
+  - spellcheck: Taur legs suffix now specifies they are legs
+  sheets, spacemenart, ben10omintrix, goofball, infrared baron, aofie:
+  - rscadd: adds lavaland raptors and the raptor ranch
+  yooriss:
+  - bugfix: Medical bounties no longer accept the base IPC organs that could be printed
+      from medical's techfab pretty much at round start. Sorry, paramedics - you'll
+      have to wait a bit for science to research t2 cybernetic organs before the money
+      fountain opens again.
+2024-05-20:
+  ArcaneMusic:
+  - balance: Ore vents, if blocked off from all four sides while being defended, now
+      cause a mild gas explosion, resulting in a mild dissuasive explosion.
+  - bugfix: NODE drones spawned from ore vent defense have lower maximum health.
+  Ben10Omintrix:
+  - bugfix: playful raptors now correctly play with owners
+  EnterTheJake:
+  - spellcheck: Pulse of entropy description now displays the correct reagents for
+      the ritual
+  Fikou:
+  - bugfix: carps now properly stop floating when you kill them
+  Jacquerel:
+  - admin: Various bad things that can happen as a result of Legion organs are now
+      logged
+  - balance: If you can't absorb a species' DNA as a changeling, you also can't use
+      transform sting to turn someone into that species.
+  Melbert:
+  - qol: Custom emotes now default to both visible and audible rather than just audible
+  - qol: Invoking the custom emote verb now explains how to set your custom emote
+      to visible or audible
+  Pickle-Coding:
+  - balance: Cargo ripley's cell starts fully charged.
+  Sadboysuss:
+  - bugfix: HoS on birdshot now has a pet like on all other maps
+  - bugfix: jumpsuit sensors quick maxing now works
+  ShizCalev:
+  - bugfix: Icecream vats will no longer eat cyborg beakers.
+  - bugfix: Balloons are no longer invisible when held.
+  - bugfix: Malf AI can now properly interact with APCs under their control
+  - bugfix: Malf AI & their slaved cyborgs won't be told that access is denied when
+      trying to right-click lock/unlock APCs.
+  Striders13:
+  - admin: sentience balloon can now assign antag to affected mobs
+  carlarctg:
+  - balance: Halved Psyker echolocation cooldown. This will hopefully make it actually
+      usable.
+  dopamiin0:
+  - rscadd: Nanotrasen has made strides in their frontier sector food networks, increasing
+      the selection of produce available to chefs.
+  grungussuss and Virgilcore:
+  - sound: added sounds for the gateway
+  iwishforducks:
+  - image: Medical doctors and CMOs now start with their jumpsuits rather than surgery
+      scrubs and caps.
+  mogeoko:
+  - rscdel: Removed Teshari Alt and everything related to it.
+  necromanceranne:
+  - bugfix: Miners can actually access and fix their engineering issues on the lavaland
+      base via the engineering section of the base. AGAIN.
+  - bugfix: The gulag SMES unit is no longer needlessly draining the entire power
+      grid of the main mining base. AGAIN.
+  nikothedude:
+  - refactor: Secbelt flashbang to bola code is now handled by a config in a modular
+      fashion
+  starrm4nn:
+  - balance: Buffs Antihol's purge rate to 8u/tick when pure (6u/tick minimum).
+  - balance: Multiver stops purging when Anacea is present in the bloodstream.
+  tmyqlfpir:
+  - bugfix: '[Metastation] Service hallway door being bypassed by lying down'
+2024-05-22:
+  Ben10Omintrix:
+  - bugfix: ' fixes being able to ride all mobs through space'
+  Bisar:
+  - balance: A wound being inflicted doesn't get broadcasted to everyone in view until
+      a higher severity now.
+  - sound: Wound sounds drop off more quickly, and no longer travel through walls.
+      This has no effect on attack sounds.
+  Fikou:
+  - spellcheck: the nuke op reinforcement beacon no longer talks about clones
+  Horatio22:
+  - spellcheck: Correctly spells "received."
+  - spellcheck: Corrects spelling of "amulette" to "amulet"
+  Jacquerel:
+  - balance: Certain unhealthy organs can be detected via the advanced health scanner
+  Profakos:
+  - bugfix: Slimes will no longer consider feeding upon slime people
+  SyncIt21:
+  - bugfix: Monkey power reactions are instant and won't occur when exact reagent
+      requirements (50u power & 1u water) or above aren't met. Stops players from
+      cheesing monkeys from plumbing factories
+  - bugfix: Crafting menu loads long lists faster
+  Watermelon914:
+  - bugfix: Fixed spies having a slightly increased chance of getting a different
+      cost model for the elite syndicate hardsuit
+  - qol: New players will no longer start with ghost ears, ghost sight and ghost whispers
+      on by default.
+  Wayland-Smithy:
+  - qol: Crew Monitor UI now scrolls properly even after clicking the inner list.
+  Xander3359:
+  - bugfix: The RD remote works on the AI upload door now
+  - bugfix: fixed a weird door in icebox bridge
+  Zergspower:
+  - code_imp: Altered the BMD's spawn to no longer be TRUE Spawn
+  - code_imp: Skub Revolution Station Trait weight set to 0
+  - rscadd: EMP's on suit sensors now show flavor on the crew console
+  atosti:
+  - bugfix: Viewing Reticence's stats no longer causes an NtOS UI error
+  hack-wrench:
+  - rscadd: Added smoke kit (5 grenades) with four grenades to uplink by 2 TC
+  kawoppi:
+  - bugfix: 'underage drinkers beware: the Booze-O-Mat and ShadyCigs Deluxe check
+      your age again'
+  necromanceranne:
+  - rscadd: The Research Director is now actually strong.
+  - rscadd: Fitness bros will determine the Research Director to be stronger than
+      they actually are, without even working out. How does he do it?
+  - balance: Suplexing a rod grants a large burst of athletics experience.
+  - rscadd: The more sentient casualties of the rod, the more experience suplexing
+      that rod grants. Absorb the souls of the weak and feeble.
+  nikothedude:
+  - rscadd: Adds a new deathmatch modifier that enables quirks
+  - bugfix: The deathmatch modifier menu works now
+  - spellcheck: Improved the grammar/spelling of a few raptor descriptions
+  norsvenska:
+  - spellcheck: The message displayed when adjusting a mask no longer incorrectly
+      states the way in which the mask has moved.
+  yooriss:
+  - bugfix: Entombed MODsuits now handle dismemberment much better, hopefully resulting
+      in less cases of discarded MOD clothing with the NODROP flag lying around. It
+      is also  safe for first responders to pick up and transport Entombed MODs without
+      them fusing to their hand and becoming undroppable.
+  - qol: 'Stasis beds (and other sources of the effect) now halt the life support
+      failure damage for Entombed characters. Side note: it is also possible to mitigate
+      the toxin damage this causes with slow IV drips of anti-tox chemicals.'
+  - qol: It is now possible to turn on an Entombed character's MODsuit via the strip
+      menu after a short delay if it is off and they are otherwise unconscious/unable/unwilling.
+      You cannot turn it off, however, as this would kill them.
+  - rscadd: 'The following items are now available in the loadout menu: bunny suit
+      (black), bunny suit (white), latex catsuit, geisha suit, jabroni outfit, CIN
+      combat uniform, shoulder holsters, cowboy belt, all the CIN surplus chest rigs,
+      expeditionary chest rig, the frontier chest rig, hairbrush (and combs), basic
+      robotic repair equipment kit (synthetic medkit) and the imperial police cloak.'
+2024-05-23:
+  NeonNik2245:
+  - image: added new Cotton (Alt) hair

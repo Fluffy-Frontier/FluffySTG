@@ -292,7 +292,7 @@
 	icon_state = "deerear"
 
 /datum/sprite_accessory/ears/mutant/teshari
-	recommended_species = list(SPECIES_TESHARI, SPECIES_TESHARI_ALT) //FLUFFY FRONTIER EDIT - TESHARI_REBORN
+	recommended_species = list(SPECIES_TESHARI)
 
 /datum/sprite_accessory/ears/mutant/teshari/regular
 	name = "Teshari Regular"
