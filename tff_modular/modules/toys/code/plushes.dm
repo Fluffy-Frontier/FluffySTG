@@ -75,3 +75,82 @@
 	attack_verb_continuous = list("attacks", "bites", "gnashes at", "hugs")
 	attack_verb_simple = list("attack", "bite", "gnash at", "hug")
 	squeak_override = list('sound/weapons/bite.ogg' = 1,'modular_nova/modules/emotes/sound/voice/feline_purr.ogg' = 1)
+
+/obj/item/toy/plush/tff/soulmates
+	// Whom we should finde to do be happy toy
+	var/obj/item/toy/plush/tff/soulmates/missing_one
+	var/obj/item/toy/plush/tff/soulmates/bindedsoul
+	var/depressed_icon_state = ""
+	var/happy_icon_state = ""
+	var/happy_desc = " Oh! The toy is happy!"
+	var/depressed_desc = " It seems that toy is unhappy... sad."
+
+/obj/item/toy/plush/tff/soulmates/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change = TRUE)
+	. = ..()
+	Checkmate()
+
+/obj/item/toy/plush/tff/soulmates/proc/Checkmate()
+	var/obj/item/toy/plush/tff/soulmates/that_missing_one = locate() in range(1, src)
+	if(istype(that_missing_one, missing_one))
+		if(that_missing_one == bindedsoul && that_missing_one.bindedsoul == src)
+			src.Happy()
+			that_missing_one.Happy()
+		else
+			src.Drama()
+			if(bindedsoul)
+				bindedsoul.Drama()
+	else
+		src.Drama()
+		if(bindedsoul)
+			bindedsoul.Drama()
+
+/obj/item/toy/plush/tff/soulmates/love(obj/item/toy/plush/tff/soulmates/Kisser, mob/living/user)
+	if(istype(Kisser, missing_one))
+		if(Kisser.bindedsoul)
+			Kisser.bindedsoul.bindedsoul = null
+			Kisser.bindedsoul.Checkmate()
+			Kisser.bindedsoul = null
+		if(bindedsoul)
+			src.bindedsoul.bindedsoul = null
+			src.bindedsoul.Checkmate()
+			src.bindedsoul = null
+		src.bindedsoul = Kisser
+		Kisser.bindedsoul = src
+		src.Checkmate()
+		user.visible_message(span_notice("[user] makes [Kisser] kiss [src]!"),
+		span_notice("You make [Kisser] kiss [src]!"))
+	return
+
+/obj/item/toy/plush/tff/soulmates/proc/Drama()
+	icon_state = depressed_icon_state
+	mood_message = depressed_desc
+	update_appearance()
+
+/obj/item/toy/plush/tff/soulmates/proc/Happy()
+	icon_state = happy_icon_state
+	mood_message = happy_desc
+	update_appearance()
+
+/obj/item/toy/plush/tff/soulmates/junnia
+	name = "Junnia plushie"
+	gender = FEMALE
+	desc = "Looking for her beloved human."
+	icon_state = "plush_junnia_depressed"
+	depressed_icon_state = "plush_junnia_depressed"
+	happy_icon_state = "plush_junnia"
+	missing_one = /obj/item/toy/plush/tff/soulmates/howe
+	attack_verb_continuous = list("kisses", "hugs", "cuddles against", "bites", "dismisses")
+	attack_verb_simple = list("kiss", "hug", "cuddle against", "bite", "dismiss")
+	squeak_override = list('modular_nova/modules/emotes/sound/emotes/blush.ogg' = 1, 'modular_nova/modules/emotes/sound/voice/wurble.ogg' = 1, 'modular_nova/modules/emotes/sound/voice/peep_once.ogg' = 1)
+
+/obj/item/toy/plush/tff/soulmates/howe
+	name = "Howe plushie"
+	gender = MALE
+	desc = "Looking for her beloved teshari."
+	icon_state = "plush_howe_depressed"
+	depressed_icon_state = "plush_howe_depressed"
+	happy_icon_state = "plush_howe"
+	missing_one = /obj/item/toy/plush/tff/soulmates/junnia
+	attack_verb_continuous = list("hugs", "cuddles against", "protects")
+	attack_verb_simple = list("hug", "cuddle against", "protect")
+	squeak_override = list('modular_nova/modules/emotes/sound/emotes/blush.ogg' = 1)
