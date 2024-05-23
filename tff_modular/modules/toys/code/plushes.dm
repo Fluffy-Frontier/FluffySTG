@@ -78,55 +78,62 @@
 
 /obj/item/toy/plush/tff/soulmates
 	// Whom we should finde to do be happy toy
-	var/obj/item/toy/plush/tff/soulmates/missing_one
+	var/missing_one
 	var/obj/item/toy/plush/tff/soulmates/bindedsoul
 	var/depressed_icon_state = ""
 	var/happy_icon_state = ""
 	var/happy_desc = " Oh! The toy is happy!"
 	var/depressed_desc = " It seems that toy is unhappy... sad."
 
+/obj/item/toy/plush/tff/soulmates/Destroy()
+	. = ..()
+	if(bindedsoul)
+		bindedsoul.bindedsoul = null
+		bindedsoul = null
+
 /obj/item/toy/plush/tff/soulmates/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change = TRUE)
 	. = ..()
-	Checkmate()
+	check_the_mate()
 
-/obj/item/toy/plush/tff/soulmates/proc/Checkmate()
+/obj/item/toy/plush/tff/soulmates/proc/check_the_mate()
 	var/obj/item/toy/plush/tff/soulmates/that_missing_one = locate() in range(1, src)
 	if(istype(that_missing_one, missing_one))
 		if(that_missing_one == bindedsoul && that_missing_one.bindedsoul == src)
-			src.Happy()
-			that_missing_one.Happy()
+			src.happy()
+			that_missing_one.happy()
 		else
-			src.Drama()
+			src.drama()
 			if(bindedsoul)
-				bindedsoul.Drama()
+				bindedsoul.drama()
 	else
-		src.Drama()
+		src.drama()
 		if(bindedsoul)
-			bindedsoul.Drama()
+			bindedsoul.drama()
 
 /obj/item/toy/plush/tff/soulmates/love(obj/item/toy/plush/tff/soulmates/Kisser, mob/living/user)
 	if(istype(Kisser, missing_one))
-		if(Kisser.bindedsoul)
-			Kisser.bindedsoul.bindedsoul = null
-			Kisser.bindedsoul.Checkmate()
-			Kisser.bindedsoul = null
-		if(bindedsoul)
-			src.bindedsoul.bindedsoul = null
-			src.bindedsoul.Checkmate()
-			src.bindedsoul = null
-		src.bindedsoul = Kisser
-		Kisser.bindedsoul = src
-		src.Checkmate()
+		if(Kisser != bindedsoul)
+			if(Kisser.bindedsoul)
+				Kisser.bindedsoul.bindedsoul = null
+				Kisser.bindedsoul.check_the_mate()
+				Kisser.bindedsoul = null
+			if(bindedsoul)
+				src.bindedsoul.bindedsoul = null
+				src.bindedsoul.check_the_mate()
+				src.bindedsoul = null
+			src.bindedsoul = Kisser
+			Kisser.bindedsoul = src
+			Kisser.check_the_mate()
 		user.visible_message(span_notice("[user] makes [Kisser] kiss [src]!"),
 		span_notice("You make [Kisser] kiss [src]!"))
 	return
 
-/obj/item/toy/plush/tff/soulmates/proc/Drama()
+/obj/item/toy/plush/tff/soulmates/proc/drama()
 	icon_state = depressed_icon_state
 	mood_message = depressed_desc
 	update_appearance()
 
-/obj/item/toy/plush/tff/soulmates/proc/Happy()
+/obj/item/toy/plush/tff/soulmates/proc/happy()
 	icon_state = happy_icon_state
 	mood_message = happy_desc
 	update_appearance()
@@ -146,7 +153,7 @@
 /obj/item/toy/plush/tff/soulmates/howe
 	name = "Howe plushie"
 	gender = MALE
-	desc = "Looking for her beloved teshari."
+	desc = "Looking for his beloved teshari."
 	icon_state = "plush_howe_depressed"
 	depressed_icon_state = "plush_howe_depressed"
 	happy_icon_state = "plush_howe"
