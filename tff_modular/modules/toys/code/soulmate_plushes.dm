@@ -1,11 +1,16 @@
 /obj/item/toy/plush/tff/soulmates
-	// Whom we should finde to do be happy toy
+	/// Typepath of our soulmate. Used to determine with whom we could kiss and... :flooshed:
 	var/missing_one
+	/// link to our actual soulmate. One and only
 	var/obj/item/toy/plush/tff/soulmates/bindedsoul
+	/// icon_state when we are not on the same tile with [bindedsoul]
 	var/depressed_icon_state = ""
+	/// icon_state when we are on the same tile with [bindedsoul]
 	var/happy_icon_state = ""
-	var/happy_desc = " Oh! The toy is happy!"
+	/// same as [depressed_icon_state] but for description
 	var/depressed_desc = " It seems that toy is unhappy... sad."
+	/// same as [happy_icon_state] but for description
+	var/happy_desc = " Oh! The toy is happy!"
 
 /obj/item/toy/plush/tff/soulmates/Initialize(mapload)
 	. = ..()
@@ -18,6 +23,7 @@
 		bindedsoul.bindedsoul = null
 		bindedsoul = null
 
+/// Signal handler for [COMSIG_MOVABLE_MOVED]. Used to check when we are in proximitty with our soulmate to change our [icon_state] accordingly
 /obj/item/toy/plush/tff/soulmates/proc/check_the_mate()
 	SIGNAL_HANDLER
 	var/obj/item/toy/plush/tff/soulmates/that_missing_one = locate() in range(1, src)
@@ -52,11 +58,13 @@
 		span_notice("You make [kisser] kiss [src]!"))
 	return
 
+/// set our icon and message to sad state
 /obj/item/toy/plush/tff/soulmates/proc/drama()
 	icon_state = depressed_icon_state
 	mood_message = depressed_desc
 	update_appearance()
 
+//set our icon and message to happy state
 /obj/item/toy/plush/tff/soulmates/proc/happy()
 	icon_state = happy_icon_state
 	mood_message = happy_desc
