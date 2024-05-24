@@ -120,6 +120,15 @@
 	icon_state = "ears"
 	affected_bodyparts = HEAD
 
+<<<<<<< HEAD
+=======
+/datum/body_marking/other/insect_antennae
+	name = "Insect Antennae"
+	icon_state = "insect_antennae"
+	default_color = "#CCCCCC"
+	affected_bodyparts = HEAD
+
+>>>>>>> 44083aae830 ([NO GBP] Fixes screenshot test (#2649))
 /datum/body_marking/other/eyeliner
 	name = "Eyeliner"
 	icon_state = "eyeliner"
