@@ -172,6 +172,20 @@
 	affected_bodyparts = HEAD
 	always_color_customizable = TRUE
 
+/datum/body_marking/other/three_eyes
+	name = "Three Eyes"
+	icon_state = "3eyes"
+	default_color = "#FF0000"
+	affected_bodyparts = HEAD
+	always_color_customizable = TRUE
+
+/datum/body_marking/other/four_eyes
+	name = "Four Eyes"
+	icon_state = "4eyes"
+	default_color = "#FF0000"
+	affected_bodyparts = HEAD
+	always_color_customizable = TRUE
+
 /datum/body_marking/other/bands
 	name = "Color Bands"
 	icon_state = "bands"
