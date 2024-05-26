@@ -872,3 +872,60 @@
       instead. INSECT/MOTH PLAYERS, THIS MODIFIES YOUR BASE SPRITE APPEARANCE. PLEASE
       BE AWARE OF THIS
   - image: ported snout -- greyscale skulldog (from Bubberstation)
+2024-05-26:
+  00-Steven:
+  - bugfix: Airlock electronics created by deconstructing roundstart airlocks inherit
+      their cycling id properly.
+  - bugfix: Mixing the reagents for moon rocks, bLaSToFF ampoules, or SaturnX globs
+      in amounts less than the minimum for the recipe no longer eats the reagents
+      without doing anything.
+  - bugfix: Airlocks without access requirements no longer create airlock electronics
+      with a broken menu.
+  - spellcheck: Examining a renamed airlock assembly no longer says it has a paper
+      placard that is "labelled with written on it is".
+  - spellcheck: When a vendor tells you something dropped onto the floor, the line
+      no longer starts with a broken character in the case of cigarette boxes.
+  AstraFarera:
+  - rscadd: Interdyne secret formula and Sansufentanyl ingridients.
+  - bugfix: Dyne deco fixes.
+  Ben10Omintrix:
+  - balance: you can now polymorph into raptors
+  - balance: raptors overall have less health and no longer have armor against ranged
+      attacks
+  BramvanZijp:
+  - bugfix: Fixed an inconsistency regarding the interactions between the Piercing
+      Hypo Borg upgrade and Hacked Borg Hypos.
+  Derpguy3:
+  - spellcheck: A handful of grammar errors in some department signs has been fixed.
+  Jacquerel:
+  - bugfix: The destructive analyser once more hungers for multitools
+  Ketrai:
+  - qol: Makes Ouroboros quite a bit more spacious with area overhauls! (Ouroborous
+      changelog start)
+  - qol: Size increases to botany, robotics, chem, security meeting room, security
+      hall, bridge, bridge meeting room.
+  - qol: Increases the kitchen size, moving the kitchen to the same level as the main
+      counter. Also increases bar size.
+  - qol: Gave the bar their own side entrance. NT rep should now have an actual bedroom.
+  - qol: Adds a bunch of extra light switches as well. (Ouroborous changelog end)
+  PapaMichael:
+  - bugfix: Epinephrine will prevent metabolism of all allergic reagents (instead
+      of just one), if taken with multiple chemicals that one is allergic to.
+  TiviPlus:
+  - qol: Added a "Remind me later" button for tutorials
+  Twaticus:
+  - image: resprites egg (and more)
+  avimour:
+  - image: New wings added - Manta Ray
+  jlsnow301:
+  - bugfix: You can no longer open the loot panel at range as a blind person and cheese
+      item names
+  nikothedude:
+  - rscadd: Serpentine taurs can now use their tails to constrict things and crush
+      them
+  - rscadd: Serpentine taurs can no longer wear shoes
+  - code_imp: New signals for atom storage remove and insert
+  - rscadd: LOOC appears in runetext
+  vinylspiders:
+  - image: antennae head marking renamed from 'Colourable Moth Anetennae' to 'Insect
+      Antennae'
