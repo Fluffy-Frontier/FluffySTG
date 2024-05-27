@@ -12,6 +12,7 @@
 	brute_modifier = NABBER_BRUTE_MODIFIER
 	burn_modifier = NABBER_BURN_MODIFIER
 	head_flags = HEAD_EYESPRITES|HEAD_EYECOLOR|HEAD_EYEHOLES
+	eyes_icon = 'tff_modular/modules/nabbers/icons/organs/nabber_eyes.dmi'
 
 /obj/item/bodypart/head/mutant/nabber/Initialize(mapload)
 	worn_ears_offset = new(
