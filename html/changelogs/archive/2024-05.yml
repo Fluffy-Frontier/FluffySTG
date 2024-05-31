@@ -1044,3 +1044,45 @@
   - bugfix: Fixed a typo preventing creation of paystands using an ID.
   jlsnow301:
   - bugfix: Lootpanel no longer opens up when alt clicking objects on your person
+2024-05-31:
+  FlufflesTheDog:
+  - bugfix: viruses can no longer potentially have 8 symptoms
+  - bugfix: You can no longer change your ready state in the middle of the match starting.
+      Thanks, Eddie.
+  GoldenAlpharex:
+  - qol: Grown logs no longer spam your chat when cut into planks, instead displaying
+      balloon alerts informing you of how many planks were made!
+  - qol: Cotton and Durathread bundles no longer spam your chat either, and display
+      a balloon alert instead.
+  - bugfix: Cotton and Durathread bundles no longer runtime when creating raw cotton/durathread
+      from the created stack having been merged with an existing one.
+  - image: Disposal bins now use the proper sprites when disconnected from the floor.
+  - image: Junction pipes have received a very minor resprite, making their arrows
+      gray instead of blue.
+  - bugfix: The RPD will now display the correct sprites when displaying the disposals
+      options.
+  Jacquerel:
+  - bugfix: When removing a corrupted organ from a patient, the patient will now be
+      checked for Holy Water or magic resistance, rather than the person performing
+      the surgery.
+  - balance: Bioscramblers pulse more often but with less range, plus you can see
+      them pulsing.
+  MortoSasye:
+  - bugfix: Hearthkin remembered how to fall on their own two feet.
+  Vekter:
+  - spellcheck: Fixed a grammar inconsistency in round tips.
+  Wayland-Smithy:
+  - spellcheck: Fixed a missing space typo in ion law logic.
+  avimour:
+  - image: 'New body markings: splotches, top scars, and claw tips.'
+  grungussuss:
+  - admin: admin RCD now works much faster.
+  honkpocket:
+  - rscadd: You can now buy a sombrero from the autodrobe, or maybe you already have
+      one from the loadout list
+  jlsnow301:
+  - rscadd: Added a screentip for hilbert's hotel door
+  - bugfix: Fixed alt-click interaction with hilbert's hotel door
+  - bugfix: Slightly cleaned up PAI software downloads interface
+  yooriss:
+  - balance: The Freerunning quirk is no longer required to *flip.
