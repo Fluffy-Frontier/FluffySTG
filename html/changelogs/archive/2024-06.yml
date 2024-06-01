@@ -11,6 +11,11 @@
   Gottfrei:
   - bugfix: "\u0421ertain cooldowns should now be more accurate and will no longer\
       \ take an extra decisecond to clear."
+  JohnFulpWillard:
+  - rscadd: The Law office now has a pet goldfish.
+  Majkl-J:
+  - bugfix: Fixes janitor borgs killing the machinery subsystem by charging light
+      replacers 200k times a tick.
   Pickle-Coding:
   - admin: fix_air will also fix the turfs' temperatures.
   RatFromTheJungle:
@@ -24,12 +29,21 @@
   - bugfix: Trees will no longer be growing through railings on forest planets
   - bugfix: Trees/plants will no longer grow through wood pathways on Icebox
   - bugfix: Railings will no longer appear ontop of rock walls on icebox
+  SpathiCaptain:
+  - bugfix: pharmacist's labcoat can now hold chemistry bags
   Time-Green:
   - rscdel: Wipes the last echo of sentient disease from existence
+  - rscadd: 'Station-Wide Background Checks (station trait, rare): Disables crew antagonists,
+      but get a lot more non-crew antagonists'
+  - bugfix: Fixes railings being invisible
+  - bugfix: Snow walls dont spawn on railings anymore in icebox
   Vekter:
   - bugfix: Fixed a missing access helper in Northstar Medbay. Assistants should no
       longer be trapped post-mending.
   - bugfix: Replaced an incorrect disposal variant in Northstar's Medbay.
+  carlarctg:
+  - balance: Reworks Adrenaline Glands into Repurposed Glands (Realingment). Lose
+      the use of your arms, but you can escape any situation!
   grungussus:
   - bugfix: fixed metal foam plating description and add more user friendly explanation
       on how to replace tiling.
@@ -40,8 +54,22 @@
       amount of oculine in a carrot
   jlsnow301:
   - bugfix: Fixed screentips not appearing on clip on neckties
+  junkgle01:
+  - rscadd: Changes the layout of MetaStation's cargo to fit with new Nanotrasen guidelines.
   oranges:
   - spellcheck: Gripper gloves are now Enhanced Retrieval gloves
   tmyqlfpir:
   - bugfix: Drones stored inside objects will call the stored object's relaymove()
       and return upon move
+  - bugfix: '[Tramstation] Departures and under east tram distro/waste pipes now properly
+      connected'
+  tralezab:
+  - rscadd: New fish, the anxious zipzap
+  - rscadd: New syndicate fish, the monocloning jumpercable
+  - rscadd: New aquarium, the bioelectricity generator
+  - bugfix: Mixotrophic fish now properly lack food requirements
+  zxaber:
+  - bugfix: Minebots purchased via mining points are no longer stuck in idle mode.
+      Clicking on them will activate their AI.
+  - spellcheck: Removed the examine text about feeding ore to minebots; this functionality
+      was removed already.
