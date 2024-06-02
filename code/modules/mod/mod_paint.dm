@@ -151,7 +151,11 @@
 	if(!pick)
 		balloon_alert(user, "no skin picked!")
 		return
+<<<<<<< HEAD
 	mod.set_mod_skin(pick)
+=======
+	mod.theme.set_skin(mod, pick)
+>>>>>>> 62fa6154827 ([MIRROR] Dehardcoded modsuit fixes (#2709))
 
 /obj/item/mod/paint/proc/check_menu(obj/item/mod/control/mod, mob/user)
 	if(user.incapacitated() || !user.is_holding(src) || !mod || mod.active || mod.activating)
@@ -187,7 +191,11 @@
 	if(!istype(mod.theme, compatible_theme))
 		balloon_alert(user, "incompatible theme!")
 		return TRUE
+<<<<<<< HEAD
 	mod.set_mod_skin(skin)
+=======
+	mod.theme.set_skin(mod, skin)
+>>>>>>> 62fa6154827 ([MIRROR] Dehardcoded modsuit fixes (#2709))
 	balloon_alert(user, "skin applied")
 	qdel(src)
 	return TRUE
