@@ -9817,13 +9817,6 @@
 /obj/machinery/light/floor,
 /turf/open/floor/engine/vacuum,
 /area/station/engineering/atmos)
-"dmf" = (
-/obj/machinery/door/airlock/engineering/glass{
-	name = "Cargo Requests"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/engineering/engine_equipment,
-/turf/open/floor/iron/dark,
-/area/station/engineering/main)
 "dmp" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
@@ -20958,12 +20951,8 @@
 /turf/open/floor/iron/dark,
 /area/station/cargo/bitrunning/den)
 "gMC" = (
-/obj/machinery/suit_storage_unit/engine,
-/obj/effect/turf_decal/delivery,
-/obj/machinery/light/directional/east,
-/obj/item/radio/intercom/directional/east,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
-	dir = 8
+/obj/effect/turf_decal/tile/neutral/anticorner{
+	dir = 1
 	},
 /turf/open/floor/iron/dark,
 /area/station/engineering/main)
@@ -32070,11 +32059,10 @@
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics/garden)
 "kmo" = (
-/obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/tile/neutral/half/contrasted{
+/obj/effect/turf_decal/tile/yellow/opposingcorners{
 	dir = 8
 	},
-/turf/open/floor/iron/dark,
+/turf/open/floor/iron,
 /area/station/engineering/main)
 "kmt" = (
 /turf/open/floor/iron/grimy,
@@ -33211,7 +33199,11 @@
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
 "kHs" = (
-/obj/machinery/modular_computer/preset/cargochat/engineering,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/machinery/suit_storage_unit/engine,
+/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/engineering/main)
 "kHw" = (
@@ -39854,10 +39846,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/computer/department_orders/security{
+/obj/effect/turf_decal/tile/neutral/anticorner/contrasted,
+/obj/machinery/computer/records/security{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral/anticorner/contrasted,
 /turf/open/floor/iron/dark,
 /area/station/security/office)
 "mMa" = (
@@ -40719,9 +40711,12 @@
 /turf/open/floor/iron/dark,
 /area/station/hallway/primary/central)
 "nan" = (
-/obj/machinery/computer/department_orders/engineering{
+/obj/item/radio/intercom/directional/east,
+/obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
+/obj/machinery/suit_storage_unit/engine,
+/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/engineering/main)
 "naw" = (
@@ -50218,10 +50213,6 @@
 /obj/item/folder/white,
 /obj/effect/decal/cleanable/blood/old,
 /obj/machinery/airalarm/directional/south,
-/obj/item/toy/figure/virologist{
-	pixel_x = -6;
-	pixel_y = 8
-	},
 /obj/item/restraints/handcuffs,
 /obj/item/pen,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
@@ -52592,6 +52583,12 @@
 /area/station/engineering/atmos)
 "rbp" = (
 /obj/structure/sign/departments/cargo/directional/east,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 8
+	},
+/obj/machinery/light/directional/east,
+/obj/machinery/suit_storage_unit/engine,
+/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/engineering/main)
 "rbz" = (
@@ -61986,10 +61983,10 @@
 /turf/open/floor/iron/dark,
 /area/station/security/warden)
 "tWa" = (
-/obj/machinery/computer/records/security,
 /obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
 	dir = 4
 	},
+/obj/machinery/computer/security,
 /turf/open/floor/iron/dark,
 /area/station/security/office)
 "tWc" = (
@@ -62768,14 +62765,14 @@
 /area/station/medical/chemistry)
 "ugG" = (
 /obj/structure/cable,
-/obj/machinery/computer/department_orders/service{
-	dir = 4
-	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/effect/turf_decal/bot,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 4
+	},
+/obj/machinery/modular_computer/preset/cargochat/service{
 	dir = 4
 	},
 /turf/open/floor/iron/dark,
@@ -63500,8 +63497,8 @@
 /area/station/science/ordnance)
 "uso" = (
 /obj/effect/turf_decal/delivery,
-/obj/machinery/suit_storage_unit/engine,
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
+/obj/machinery/recharge_station,
 /turf/open/floor/iron/dark,
 /area/station/engineering/main)
 "usp" = (
@@ -64440,13 +64437,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/turf_decal/trimline/brown/filled/end{
-	dir = 4
-	},
-/obj/machinery/computer/department_orders/science{
-	dir = 1
-	},
-/turf/open/floor/iron/dark,
+/obj/effect/turf_decal/tile/purple/half/contrasted,
+/turf/open/floor/iron/showroomfloor,
 /area/station/science/research)
 "uJN" = (
 /obj/machinery/door/firedoor,
@@ -64622,9 +64614,6 @@
 /turf/open/floor/engine,
 /area/station/tcommsat/computer)
 "uMk" = (
-/obj/effect/turf_decal/loading_area{
-	dir = 8
-	},
 /obj/effect/turf_decal/tile/yellow/anticorner/contrasted,
 /obj/effect/turf_decal/tile/red,
 /turf/open/floor/iron,
@@ -64899,7 +64888,9 @@
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos/pumproom)
 "uSH" = (
-/turf/closed/wall/r_wall,
+/obj/machinery/airalarm/directional/north,
+/obj/effect/turf_decal/tile/neutral/half/contrasted,
+/turf/open/floor/iron/dark,
 /area/station/engineering/main)
 "uST" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -69953,10 +69944,6 @@
 /area/station/science/ordnance/bomb)
 "wqd" = (
 /obj/item/radio/intercom/directional/west,
-/obj/machinery/modular_computer/preset/cargochat/service{
-	dir = 4
-	},
-/obj/effect/turf_decal/bot,
 /obj/machinery/light_switch/directional/west{
 	pixel_y = -10
 	},
@@ -70809,9 +70796,6 @@
 	},
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment,
-/obj/machinery/computer/department_orders/medical{
-	dir = 8
-	},
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 4
@@ -73728,12 +73712,11 @@
 /area/station/hallway/primary/port)
 "xCr" = (
 /obj/effect/turf_decal/delivery,
-/obj/machinery/suit_storage_unit/engine,
 /obj/structure/extinguisher_cabinet/directional/north,
-/obj/machinery/airalarm/directional/east,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/machinery/modular_computer/preset/cargochat/engineering,
 /turf/open/floor/iron/dark,
 /area/station/engineering/main)
 "xCy" = (
@@ -74531,7 +74514,10 @@
 /turf/open/floor/iron,
 /area/station/commons/locker)
 "xOB" = (
-/turf/closed/wall/r_wall/rust,
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
 /area/station/engineering/main)
 "xOF" = (
 /obj/structure/sign/poster/contraband/missing_gloves,
@@ -113172,7 +113158,7 @@ jjs
 qZX
 qZX
 uSH
-dmf
+kmo
 xOB
 qZX
 qZX
@@ -113427,11 +113413,11 @@ iFa
 cAq
 oQk
 oQk
-cuV
+qZX
 kHs
 rbp
 nan
-cuV
+qZX
 vLG
 qZX
 sOJ
@@ -113684,11 +113670,11 @@ mFb
 qeX
 cXQ
 cAq
-cuV
-fuB
-cuV
-cuV
-cuV
+qZX
+jjs
+qZX
+qZX
+qZX
 aAU
 rap
 xBz
