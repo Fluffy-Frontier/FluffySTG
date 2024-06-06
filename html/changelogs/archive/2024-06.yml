@@ -278,6 +278,8 @@
       pixel-precision when setting down items onto them!
   - bugfix: You can no longer easily grief people using the anomalous crystal to change
       the theme of entire areas.
+  Jacquerel:
+  - rscadd: A unique kind of mob is created when a Monkey is infested by a Legion.
   LT3:
   - qol: Icebox's service hall has a disposal unit again
   MelokGleb:
@@ -286,6 +288,13 @@
   MortoSasye:
   - rscadd: The hearthkin have discovered an old book describing a technique to make
       fancy pelts beds. Comes in white and black!
+  Rhials:
+  - balance: cultist shades can no longer contribute to rune invocation until they've
+      been out of their soulstone for a minute. Put them in a shell for God's sake!
+  - code_imp: sweeps up cultist antag datum code into its own subfolder.
+  - code_imp: cult shades now have their own antag datum.
+  - bugfix: constructs now properly clear the cultist antag datum and transfer the
+      mind slightly earlier.
   carlarctg:
   - qol: Disgust vomit knocks you down rather than stunning you.
   - rscdel: Mitogen Metabolism Factor knocks you down rather than stunning you.
@@ -294,6 +303,9 @@
       icons.
   grungussuss:
   - sound: frog sounds will no longer explode your ears
+  mc-oofert:
+  - balance: cult stun gets weaker when they get red eyes and later more when they
+      have halos
   necromanceranne:
   - qol: Failing to hit someone with a proto-kinetic crusher one-handedly no longer
       force drops everything in your hands.
