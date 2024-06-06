@@ -265,3 +265,43 @@
       in the custom message mode
   vendingmachine24:
   - spellcheck: Changed grammar in cat_house.dm
+2024-06-06:
+  GoldenAlpharex:
+  - rscadd: Added Biomes capabilities to the Cave Generator, to allow for procedurally-placed
+      biomes to be introduced in cave generation. This feature is not currently used
+      on any map, but the tools are all there for anyone with the motivation to add
+      biomes to any cave-generating area, like Lavaland and Ice Box.
+  - code_imp: Biomes can now affect features (which are usually structures), on top
+      of flora and fauna.
+  - bugfix: Produce bins now display their contents overlay once more!
+  - bugfix: Wooden shelves can now be interacted with via mouse-drop once more, allowing
+      pixel-precision when setting down items onto them!
+  - bugfix: You can no longer easily grief people using the anomalous crystal to change
+      the theme of entire areas.
+  LT3:
+  - qol: Icebox's service hall has a disposal unit again
+  MelokGleb:
+  - code_imp: crab17 telegraph now uses animated spinning telegraph circle instead
+      of sniper scope button
+  MortoSasye:
+  - rscadd: The hearthkin have discovered an old book describing a technique to make
+      fancy pelts beds. Comes in white and black!
+  carlarctg:
+  - qol: Disgust vomit knocks you down rather than stunning you.
+  - rscdel: Mitogen Metabolism Factor knocks you down rather than stunning you.
+  githubuser4141:
+  - image: New icons for berserker, godslayer and adamantine armor. Removes the old
+      icons.
+  grungussuss:
+  - sound: frog sounds will no longer explode your ears
+  necromanceranne:
+  - qol: Failing to hit someone with a proto-kinetic crusher one-handedly no longer
+      force drops everything in your hands.
+  norsvenska:
+  - bugfix: Metastation's vault is now connected to the power grid
+  sprites by INFRARED_BARON:
+  - image: New icons for Marauder, Seraph, Mauler and adjusts the Phazon/Dark Gygax's
+      sprites.
+  vinylspiders:
+  - bugfix: 'fixes an /image harddel in station blueprints code: cleaned up some more
+      /image qdels'
