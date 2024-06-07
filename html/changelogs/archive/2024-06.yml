@@ -317,3 +317,76 @@
   vinylspiders:
   - bugfix: 'fixes an /image harddel in station blueprints code: cleaned up some more
       /image qdels'
+2024-06-07:
+  00-Steven:
+  - bugfix: RLD glowsticks actually glow again.
+  Absolucy:
+  - bugfix: When implanting functional wings into a new body, they will actually be
+      able to use said wings now.
+  Ben10Omintrix:
+  - refactor: honkbots are now basic mobs, please report any bugs
+  - rscadd: honkbots will try to slip people on banana peels
+  EEASAS:
+  - bugfix: fixed the mis-rotated disposals pipe on birdshot
+  GoldenAlpharex:
+  - bugfix: The examine menu will now close when the mob it's attached to gets deleted,
+      avoiding runtimes.
+  Iajret:
+  - bugfix: fixed orbit menu missing icons for NovaSector jobs
+  - bugfix: fixed ability to call shuttle from request console
+  Jacquerel:
+  - balance: Mutadone restores your originally monkey status, rather than always turning
+      monkeys into humans
+  - balance: Corrosive slime left behind after a slime fails to eat you can be scraped
+      off with your hands, or shaken off in some other way, by clicking on the debuff.
+      This is slower and less effective than washing it off using water.
+  LT3:
+  - balance: Doubled number of assignable wildcard slots on grey ID cards
+  - balance: Doubled number of assignable wildcard slots on silver ID cards
+  - balance: Doubled number of assignable wildcard slots on agent/chameleon ID cards
+  Pickle-Coding:
+  - bugfix: Fixes paradox clones using a different voice from the owner.
+  RedBaronFlyer:
+  - rscadd: Janitorial keyrings are now part of every janitor's toolkit instead of
+      just the first one.
+  ShizCalev:
+  - bugfix: Syndicate AI can no longer be selected via the station law upload console.
+  - bugfix: Non-syndicate borgs can no longer accidentally be slaved to syndicate
+      AI by pulsing their AI wires.
+  - bugfix: Syndicate borgs can no longer be slaved to the station AI by pulsing their
+      AI wires.
+  - bugfix: Syndicate operatives onboard the station can no longer end up with an
+      objective to destroy their own syndicate AI.
+  SyncIt21:
+  - qol: more examines & screentips for plumbing machinery
+  - qol: plumbing grinder has a grind/juice mode which be toggled by hand
+  - code_imp: improved attack chain for RPLD & plumbing grinder
+  - bugfix: You can deconstruct the plumbing grinder with the RPLD
+  - bugfix: You can attack the plumbing grinder with any item in combat mode without
+      getting that item consumed
+  - bugfix: You cannot grind abstract/ hologram items in the plumbing grinder
+  - bugfix: growing vat now uses the correct layer selected on rapid plumbing device
+  Wayland-Smithy:
+  - bugfix: Pre-Loaded Syndicate Intellicard AI's no longer appear in PDA messenger.
+  Whoneedspacee:
+  - bugfix: Bubblegum can no longer melee you while using his charge abilities.
+  YesterdaysPromise:
+  - image: Cleaned a single stray pixel in a single frame of a bite telegraphing accidentaly
+      found while re-organizing the files.
+  Zenitheevee:
+  - rscadd: Added Tarkon Clothing to the loadout menu
+  - bugfix: The tarkon welding hat no longer covers the mouth
+  necromanceranne:
+  - bugfix: Drake empowerment for berserker armor now uses valuable drake remains,
+      made from ashdrake hides and bones.
+  - rscadd: Drake armor is made use drake remains to construct. (This is a net neutral
+      to the previous recipe)
+  nikothedude:
+  - bugfix: COMSIG_ATOM_POST_DIR_CHANGE should ACTUALLY work now
+  san7890:
+  - bugfix: Using the 'ESC' key on your keyboard to unbind a key in the keybindings
+      preferences menu should now work as expected. This should also be fixed for
+      people in a variety of other spots too.
+  zxaber:
+  - bugfix: 'Tool-based flashes (read: from welders) are no longer incorrectly locked
+      at flash level 1. Wear proper PPE!'
