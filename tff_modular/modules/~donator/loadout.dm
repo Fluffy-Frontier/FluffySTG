@@ -106,4 +106,4 @@
 /datum/loadout_item/neck/officer_coat
 	name = "Senior Commander's Trenchcloak"
 	item_path = /obj/item/clothing/neck/cloak/trenchcloak
-	ckeywhitelist = list("romontesque", "vishenka0704")
+	ckeywhitelist = list("romontesque")
