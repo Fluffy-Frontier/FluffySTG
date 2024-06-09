@@ -390,3 +390,113 @@
   zxaber:
   - bugfix: 'Tool-based flashes (read: from welders) are no longer incorrectly locked
       at flash level 1. Wear proper PPE!'
+2024-06-09:
+  00-Steven:
+  - bugfix: Latejoiners with heterochromatic eyes no longer have the wrong fingerprint
+      in the security records.
+  - bugfix: Latejoiners actually have their quirks visible in the medical records.
+  Ben10Omintrix:
+  - bugfix: lobstrosities will no longer be able to fish out multiple necropolis chests
+  DATA-xPUNGED:
+  - rscadd: NT reports indicate that the Syndicate have increased listening activities
+      on Icemoon, crew is advised to watch out for possible communication interference.
+  DaCoolBoss:
+  - bugfix: Fixed entries in config file 'spaceruinsblacklist.txt'.
+  EnterTheJake:
+  - balance: Rust walkers' summoning ritual now requires 5 sheets of Titanium instead
+      of Iron.
+  - bugfix: Magic resistance grants complete immunity from the passive disgust buildup
+      from standing on Rusted turfs.
+  Erol509:
+  - qol: Cyborgs on AI statpanel now have jules energy format.
+  EuSouAFazer:
+  - qol: 'Swabbing the clown''s stamp also gives clown cells.
+
+      :cl:'
+  Goat:
+  - bugfix: mobs no longer move during cutscenes
+  IsaacExists:
+  - rscadd: You may choose a color preference for your blindfold with the blindness
+      quirk.
+  Jackraxxus:
+  - admin: The auto-mute system yells at you harder when you send a bunch of identical
+      messages.
+  LT3:
+  - bugfix: Fixed timing issue where tram crossing signals would be out of sync with
+      the moving tram
+  - bugfix: Tram crossing signals consistently show green when safe, blue when broken
+  - bugfix: Tram crossing signals show red instead of yellow when degraded
+  Melbert:
+  - bugfix: Fix some modifiers to do after speed (sanity, midas gun) stacking when
+      they shouldn't
+  MichiRecRoom:
+  - qol: Personal AI's face display selection is now a radial menu. As a bonus, now
+      you can see what the faces look like before selecting them.
+  MortoSasye:
+  - bugfix: Hearthkin no longer suffer eternal heart attacks via salts, or have the
+      choking moodlet if they survive through it.
+  Pickle-Coding:
+  - bugfix: Fixes the brig cell timer adjustment not working correctly on live timers.
+  Rhials:
+  - bugfix: Only filled graves will impact your mood.
+  - rscadd: Adds some more station-trait dependent pulsar star reports. Keep an eye
+      on that roundstart command report!
+  Sadboysuss:
+  - qol: you now don't need to weld a closet to install/uninstall electronics/card
+      readers.
+  - bugfix: curator whip will no longer disarm when parried
+  SyncIt21:
+  - spellcheck: Corrected wrench contextual screentip typo for smart fridge
+  - bugfix: autolathes don't hang when printing items in areas without apc or if it
+      runs out of materials mid printing
+  - bugfix: techfabs don't runtime & hang when printing in no apc areas
+  TheBoondock:
+  - sound: added operating sounds for wrench, wirecutter and crowbar
+  Thlumyn:
+  - rscadd: Remodeled Blueshift's atmos.
+  Time-Green:
+  - bugfix: admins can force rulesets on background checks station trait (fucking
+      lame)
+  - balance: You can now dodge sneezes
+  - balance: Infectious simple diseases that use sneezes now infect with sneezes and
+      have lowered airborn transmission
+  - balance: Damageless attacks, projectiles, hugs etc no longer drain shields
+  Watermelon914:
+  - spellcheck: Intern announcer no longer has a weird space before the introduction
+      message.
+  Wayland-Smithy:
+  - bugfix: Fixed Silicons not being able to (un)lock Air Alarms.
+  githubuser4141:
+  - balance: Antag/Centcom mechs now have top notch un-upgradeable armor out of the
+      box. You can't add armor to centcom or nukie mechs anymore, but their default
+      armor rating is a lot higher.
+  grungussuss:
+  - spellcheck: all instances of reactive armor are now spelt the same
+  lizelive:
+  - balance: remove human requirement for invisible wall
+  necromanceranne:
+  - bugfix: The armor plate component only adds the prefix once.
+  - qol: Coffee types are overall more consistent, causing jittering only from the
+      overdose effect.
+  - bugfix: Pumpkin lattes will actually work like coffee.
+  nikothedude:
+  - rscadd: 'New deathmatch modifier: "Random martial arts"'
+  projectkepler-ru:
+  - bugfix: smoking pipe not showing sprite when lit
+  sylvia-from-fulp-station:
+  - rscadd: final destination deathmatch map, loadouts
+  - bugfix: indestructible light tile emits light
+  thegrb93:
+  - bugfix: Fixes admin borg panel upgrade functions
+  - bugfix: Borg emag module jank when no longer emagged
+  - bugfix: Borg piercing hypospray fail message
+  tmyqlfpir:
+  - rscadd: Added new circuit camera components
+  - qol: Circuit drones can now recharge at recharge stations
+  vinylspiders:
+  - bugfix: fixes laugh emote not playing prefs-selected audio.
+  zxaber:
+  - bugfix: Fixed borg chargers (especially unpowered ones) constantly draining a
+      borg's cell.
+  - qol: Plexagon Access Management now tells you that you need an ID Trim before
+      applying a Template, rather than silently failing.
