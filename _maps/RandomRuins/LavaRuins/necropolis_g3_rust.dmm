@@ -6,13 +6,8 @@
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
-"d" = (
-/obj/structure/lattice,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "e" = (
 /obj/effect/mapping_helpers/bombable_wall,
-/obj/structure/lattice,
 /obj/structure/trap/eldritch/mad,
 /turf/closed/indestructible/riveted/boss/wasteland,
 /area/lavaland/surface/outdoors)
@@ -109,7 +104,6 @@
 /area/ruin/unpowered)
 "K" = (
 /obj/effect/mapping_helpers/bombable_wall,
-/obj/structure/lattice,
 /obj/structure/trap/eldritch/tentacle,
 /turf/closed/indestructible/riveted/boss/wasteland,
 /area/lavaland/surface/outdoors)
@@ -149,7 +143,7 @@
 (1,1,1) = {"
 o
 H
-d
+H
 F
 h
 h
@@ -232,7 +226,7 @@ F
 F
 h
 h
-d
+H
 "}
 (9,1,1) = {"
 F
@@ -240,8 +234,8 @@ F
 F
 F
 F
-d
+H
 h
-d
+H
 o
 "}
