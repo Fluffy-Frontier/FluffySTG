@@ -1,4 +1,4 @@
-// Hey! Listen! Update \config\lavaruinblacklist.txt with your new ruins!
+// Hey! Listen! Update /config/lavaruinblacklist.txt with your new ruins!
 
 /datum/map_template/ruin/lavaland
 	ruin_type = ZTRAIT_LAVA_RUINS
@@ -925,7 +925,7 @@
 //Old lavaland:
 
 
-// Hey! Listen! Update \config\lavaruinblacklist.txt with your new ruins!
+// Hey! Listen! Update/config/lavaruinblacklist.txt with your new ruins!
 
 // /datum/map_template/ruin/lavaland
 // 	ruin_type = ZTRAIT_LAVA_RUINS
@@ -939,14 +939,14 @@
 // /datum/map_template/ruin/lavaland/biodome/beach
 // 	name = "Lava-Ruin Biodome Beach"
 // 	id = "biodome-beach"
-// 	description = "Seemingly plucked from a tropical destination, this beach is calm and cool, with the salty waves roaring softly in the background. \
+// 	description = "Seemingly plucked from a tropical destination, this beach is calm and cool, with the salty waves roaring softly in the background.
 // 	Comes with a rustic wooden bar and suicidal bartender."
 // 	suffix = "lavaland_biodome_beach.dmm"
 
 // /datum/map_template/ruin/lavaland/biodome/winter
 // 	name = "Lava-Ruin Biodome Winter"
 // 	id = "biodome-winter"
-// 	description = "For those getaways where you want to get back to nature, but you don't want to leave the fortified military compound where you spend your days. \
+// 	description = "For those getaways where you want to get back to nature, but you don't want to leave the fortified military compound where you spend your days.
 // 	Includes a unique(*) laser pistol display case, and the recently introduced I.C.E(tm)."
 // 	suffix = "lavaland_surface_biodome_winter.dmm"
 
@@ -974,7 +974,7 @@
 // /datum/map_template/ruin/lavaland/seed_vault
 // 	name = "Lava-Ruin Seed Vault"
 // 	id = "seed-vault"
-// 	description = "The creators of these vaults were a highly advanced and benevolent race, and launched many into the stars, hoping to aid fledgling civilizations. \
+// 	description = "The creators of these vaults were a highly advanced and benevolent race, and launched many into the stars, hoping to aid fledgling civilizations.
 // 	However, all the inhabitants seem to do is grow drugs and guns."
 // 	suffix = "lavaland_surface_seed_vault.dmm"
 // 	cost = 10
@@ -985,7 +985,7 @@
 // /datum/map_template/ruin/lavaland/ash_walker
 // 	name = "Lava-Ruin Ash Walker Nest"
 // 	id = "ash-walker"
-// 	description = "A race of unbreathing lizards live here, that run faster than a human can, worship a broken dead city, and are capable of reproducing by something involving tentacles? \
+// 	description = "A race of unbreathing lizards live here, that run faster than a human can, worship a broken dead city, and are capable of reproducing by something involving tentacles?
 // 	Probably best to stay clear."
 // 	suffix = "lavaland_surface_ash_walker1.dmm"
 // 	cost = 20
@@ -1004,7 +1004,7 @@
 // /datum/map_template/ruin/lavaland/free_golem
 // 	name = "Lava-Ruin Free Golem Ship"
 // 	id = "golem-ship"
-// 	description = "Lumbering humanoids, made out of precious metals, move inside this ship. They frequently leave to mine more minerals, which they somehow turn into more of them. \
+// 	description = "Lumbering humanoids, made out of precious metals, move inside this ship. They frequently leave to mine more minerals, which they somehow turn into more of them.
 // 	Seem very intent on research and individual liberty, and also geology-based naming?"
 // 	cost = 20
 // 	prefix = "_maps/RandomRuins/AnywhereRuins/"
@@ -1038,7 +1038,7 @@
 // /datum/map_template/ruin/lavaland/sin/greed
 // 	name = "Lava-Ruin Ruin of Greed"
 // 	id = "greed"
-// 	description = "Sure you don't need magical powers, but you WANT them, and \
+// 	description = "Sure you don't need magical powers, but you WANT them, and
 // 		that's what's important."
 // 	suffix = "lavaland_surface_greed.dmm"
 
@@ -1107,7 +1107,7 @@
 // /datum/map_template/ruin/lavaland/xeno_nest
 // 	name = "Lava-Ruin Xenomorph Nest"
 // 	id = "xeno-nest"
-// 	description = "These xenomorphs got bored of horrifically slaughtering people on space stations, and have settled down on a nice lava-filled hellscape to focus on what's really important in life. \
+// 	description = "These xenomorphs got bored of horrifically slaughtering people on space stations, and have settled down on a nice lava-filled hellscape to focus on what's really important in life.
 // 	Quality memes."
 // 	suffix = "lavaland_surface_xeno_nest.dmm"
 // 	cost = 20
