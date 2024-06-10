@@ -1,0 +1,106 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"v" = (
+/obj/structure/flora/rock/pile/style_random,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"z" = (
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"B" = (
+/obj/structure/ore_vent/random{
+	ore_vent_options = list("large" = 0, "medium" = 15, "small" = 0);
+	name = "Medium ore vent"
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"D" = (
+/turf/template_noop,
+/area/template_noop)
+"J" = (
+/obj/structure/flora/rock/style_random,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"L" = (
+/mob/living/basic/mining/goliath,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"U" = (
+/turf/closed/mineral/strong{
+	base_icon_state = "smoothrocks";
+	icon = 'modular_nova/modules/liquids/icons/turf/smoothrocks.dmi';
+	icon_state = "smoothrocks-55"
+	},
+/area/lavaland/surface/outdoors)
+"Y" = (
+/turf/open/chasm/lavaland,
+/area/lavaland/surface/outdoors)
+
+(1,1,1) = {"
+D
+D
+U
+U
+U
+a
+a
+a
+a
+"}
+(2,1,1) = {"
+D
+U
+U
+J
+a
+a
+a
+a
+Y
+"}
+(3,1,1) = {"
+Y
+Y
+z
+v
+B
+z
+Y
+Y
+Y
+"}
+(4,1,1) = {"
+D
+Y
+Y
+z
+L
+v
+Y
+U
+D
+"}
+(5,1,1) = {"
+D
+Y
+Y
+a
+a
+J
+U
+U
+D
+"}
+(6,1,1) = {"
+D
+D
+Y
+U
+U
+U
+U
+D
+D
+"}

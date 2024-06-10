@@ -1,0 +1,57 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/item/ammo_box/rocket,
+/obj/effect/turf_decal/mining,
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/ruin/powered)
+"j" = (
+/obj/structure/marker_beacon/burgundy,
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/ruin/powered)
+"B" = (
+/obj/effect/spawner/random/medical/medkit_rare,
+/obj/item/stack/telecrystal/five{
+	name = "Nitra";
+	desc = "Rock and stone!";
+	icon = 'icons/obj/machines/engine/supermatter.dmi';
+	icon_state = "destabilizing_crystal";
+	light_color = "#FF5555";
+	color = "#FF5555"
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/powered)
+"D" = (
+/obj/item/ammo_box/a357,
+/obj/effect/turf_decal/mining/survival{
+	dir = 8
+	},
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/ruin/powered)
+"K" = (
+/obj/item/ammo_box/c9mm,
+/obj/effect/turf_decal/mining,
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/ruin/powered)
+"W" = (
+/obj/effect/turf_decal/mining/survival{
+	dir = 8
+	},
+/obj/item/ammo_box/advanced/s12gauge/buckshot,
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/ruin/powered)
+
+(1,1,1) = {"
+j
+D
+j
+"}
+(2,1,1) = {"
+K
+B
+a
+"}
+(3,1,1) = {"
+j
+W
+j
+"}

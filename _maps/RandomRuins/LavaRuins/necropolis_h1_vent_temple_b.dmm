@@ -1,0 +1,254 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered)
+"b" = (
+/obj/structure/stone_tile/slab/cracked,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
+"c" = (
+/turf/closed/indestructible/riveted/boss,
+/area/lavaland/surface/outdoors)
+"f" = (
+/obj/structure/ore_vent/random{
+	ore_vent_options = list("large" = 15, "medium" = 0, "small" = 0);
+	name = "Large ore vent"
+	},
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 6
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
+"j" = (
+/turf/template_noop,
+/area/template_noop)
+"k" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
+"n" = (
+/obj/structure/stone_tile/surrounding_tile/cracked,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
+"o" = (
+/turf/open/chasm/lavaland,
+/area/ruin/unpowered)
+"p" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 5
+	},
+/obj/structure/stone_tile/slab/cracked{
+	dir = 10
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"q" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/lavaland/surface/outdoors)
+"v" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 5
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
+"w" = (
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/unpowered)
+"x" = (
+/obj/structure/stone_tile/surrounding_tile/burnt{
+	dir = 4
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered)
+"y" = (
+/obj/structure/flora/rock/style_random,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
+"z" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 4
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"B" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/unpowered)
+"D" = (
+/mob/living/basic/mining/watcher,
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 1
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
+"E" = (
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 5
+	},
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
+"F" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 8
+	},
+/mob/living/basic/mining/watcher,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
+"J" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 9
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
+"K" = (
+/obj/structure/stone_tile/surrounding_tile/burnt,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered)
+"N" = (
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 9
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 8
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
+"O" = (
+/obj/structure/flora/rock/pile/style_random,
+/mob/living/basic/mining/watcher,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
+"P" = (
+/turf/open/chasm/lavaland,
+/area/lavaland/surface/outdoors)
+"S" = (
+/obj/structure/stone_tile/surrounding_tile/cracked,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"V" = (
+/turf/closed/mineral/strong{
+	base_icon_state = "smoothrocks";
+	icon = 'modular_nova/modules/liquids/icons/turf/smoothrocks.dmi';
+	icon_state = "smoothrocks-55"
+	},
+/area/ruin/unpowered)
+"X" = (
+/obj/structure/stone_tile/block/cracked{
+	pixel_y = -16
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered)
+
+(1,1,1) = {"
+j
+c
+c
+q
+c
+c
+j
+"}
+(2,1,1) = {"
+c
+c
+a
+V
+o
+c
+c
+"}
+(3,1,1) = {"
+c
+a
+x
+D
+o
+o
+c
+"}
+(4,1,1) = {"
+c
+a
+w
+k
+B
+o
+c
+"}
+(5,1,1) = {"
+c
+V
+V
+v
+n
+o
+c
+"}
+(6,1,1) = {"
+c
+V
+B
+f
+w
+B
+c
+"}
+(7,1,1) = {"
+c
+V
+J
+O
+y
+X
+c
+"}
+(8,1,1) = {"
+c
+o
+w
+F
+w
+a
+c
+"}
+(9,1,1) = {"
+c
+o
+E
+b
+K
+a
+c
+"}
+(10,1,1) = {"
+c
+c
+N
+a
+a
+c
+c
+"}
+(11,1,1) = {"
+j
+c
+c
+q
+c
+c
+j
+"}
+(12,1,1) = {"
+j
+j
+P
+z
+p
+S
+j
+"}

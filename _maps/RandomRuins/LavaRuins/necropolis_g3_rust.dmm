@@ -1,0 +1,247 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/item/organ/internal/tongue/cat/tajaran,
+/obj/effect/glowing_rune,
+/turf/open/floor/plating/rust{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"d" = (
+/obj/structure/lattice,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"e" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/obj/structure/lattice,
+/obj/structure/trap/eldritch/mad,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/lavaland/surface/outdoors)
+"h" = (
+/turf/closed/wall/r_wall/rust,
+/area/lavaland/surface/outdoors)
+"j" = (
+/obj/effect/glowing_rune,
+/turf/closed/wall/r_wall/rust,
+/area/lavaland/surface/outdoors)
+"l" = (
+/obj/structure/destructible/eldritch_crucible,
+/obj/effect/decal/cleanable/grand_remains/cheese,
+/obj/item/reagent_containers/cup/beaker/eldritch,
+/obj/item/food/kebab/monkey{
+	pixel_y = 5
+	},
+/turf/open/floor/plating/rust{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"m" = (
+/obj/item/clothing/neck/fake_heretic_amulet,
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "gibbl1"
+	},
+/obj/effect/spawner/random/maintenance,
+/turf/open/floor/plating/rust{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"o" = (
+/turf/template_noop,
+/area/template_noop)
+"p" = (
+/obj/effect/decal/cleanable/blood/old,
+/mob/living/basic/heretic_summon/raw_prophet/ruins,
+/turf/open/floor/plating/rust{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"v" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor4-old";
+	pixel_y = 10;
+	pixel_x = 5
+	},
+/obj/effect/glowing_rune,
+/turf/open/floor/plating/rust{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"w" = (
+/mob/living/basic/heretic_summon/raw_prophet/ruins,
+/obj/effect/gibspawner/human/bodypartless,
+/obj/effect/glowing_rune,
+/turf/open/floor/plating/rust{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"z" = (
+/obj/effect/spawner/random/maintenance,
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/plating/rust{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"A" = (
+/obj/structure/door_assembly/door_assembly_min,
+/turf/open/floor/plating/rust{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/lavaland/surface/outdoors)
+"B" = (
+/obj/effect/glowing_rune,
+/turf/closed/indestructible/riveted/boss,
+/area/lavaland/surface/outdoors)
+"F" = (
+/turf/closed/indestructible/riveted/boss,
+/area/lavaland/surface/outdoors)
+"H" = (
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"I" = (
+/obj/effect/gibspawner/human,
+/obj/item/antag_granter/heretic{
+	name = "Tentacle covered book"
+	},
+/mob/living/basic/heretic_summon/raw_prophet/ruins,
+/obj/item/stack/sheet/animalhide/monkey,
+/turf/open/floor/plating/rust{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"K" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/obj/structure/lattice,
+/obj/structure/trap/eldritch/tentacle,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/lavaland/surface/outdoors)
+"M" = (
+/obj/effect/mob_spawn/corpse/human/monkey,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating/rust{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"N" = (
+/obj/effect/spawner/random/maintenance,
+/obj/item/organ/internal/brain/felinid,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating/rust{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"P" = (
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating/rust{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"Y" = (
+/obj/effect/mapping_helpers/burnt_floor,
+/obj/effect/glowing_rune,
+/turf/open/floor/plating/rust{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"Z" = (
+/obj/structure/lattice,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+
+(1,1,1) = {"
+o
+H
+d
+F
+h
+h
+F
+o
+o
+"}
+(2,1,1) = {"
+H
+H
+F
+F
+F
+F
+F
+F
+h
+"}
+(3,1,1) = {"
+H
+F
+F
+B
+h
+h
+h
+F
+h
+"}
+(4,1,1) = {"
+H
+F
+m
+w
+M
+N
+h
+F
+A
+"}
+(5,1,1) = {"
+F
+F
+Y
+l
+v
+P
+h
+F
+Z
+"}
+(6,1,1) = {"
+F
+j
+I
+a
+p
+j
+F
+F
+o
+"}
+(7,1,1) = {"
+F
+h
+P
+z
+h
+K
+e
+h
+h
+"}
+(8,1,1) = {"
+F
+h
+h
+j
+F
+F
+h
+h
+d
+"}
+(9,1,1) = {"
+F
+F
+F
+F
+F
+d
+h
+d
+o
+"}

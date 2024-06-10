@@ -1,0 +1,145 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"d" = (
+/obj/structure/flora/rock/pile/style_random,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"e" = (
+/obj/structure/flora/rock/pile/style_random,
+/turf/closed/mineral/bananium,
+/area/lavaland/surface/outdoors)
+"h" = (
+/obj/item/stack/sheet/mineral/bananium/five,
+/obj/item/knife/butcher,
+/obj/item/clothing/shoes/clown_shoes/banana_shoes,
+/obj/item/bikehorn/airhorn,
+/obj/item/clothing/mask/gas/clown_hat,
+/obj/effect/gibspawner/human,
+/mob/living/basic/mold/centaur{
+	desc = "This creature is terror itself, a manifestation of the raw hunger and avarice of mortals.";
+	faction = list("mining","boss","hell");
+	name = "Apostate";
+	light_color = "#640000";
+	armour_penetration = 10;
+	attack_verb_continuous = "devours";
+	attack_verb_simple = "reaps";
+	attack_vis_effect = "slash";
+	bare_wound_bonus = 5;
+	damage_coeff = list("brute" = 0.03, "burn" = 0.03, "toxin" = 0.03, "stamina" = 1, "oxygen" = 0.03);
+	health = 1100;
+	icon = 'icons/mob/simple/clown_mobs.dmi';
+	icon_dead = "clown_dead";
+	icon_living = "mutant";
+	icon_state = "mutant";
+	irradiate_chance = 100;
+	maxHealth = 1400;
+	melee_damage_lower = 5;
+	speed = -0.9;
+	icon_gib = "clown_gib";
+	attack_sound = 'sound/items/bikehorn.ogg';
+	attacked_sound = 'sound/items/bikehorn.ogg';
+	melee_damage_type = "stamina";
+	melee_damage_upper = 30;
+	unsuitable_cold_damage = 0;
+	unsuitable_heat_damage = 0;
+	move_resist = 1;
+	pixel_x = -16;
+	death_sound = 'sound/misc/sadtrombone.ogg';
+	guaranteed_butcher_results = list(/obj/effect/gibspawner/generic,/obj/effect/gibspawner/generic/animal,/obj/effect/gibspawner/human,/obj/effect/gibspawner/human/bodypartless,/obj/effect/gibspawner/xeno/bodypartless,/obj/item/soap);
+	melee_attack_cooldown = 3;
+	obj_damage = 0
+	},
+/turf/closed/mineral/bananium,
+/area/lavaland/surface/outdoors)
+"i" = (
+/obj/item/grown/bananapeel/bluespace,
+/turf/closed/mineral/bananium,
+/area/lavaland/surface/outdoors)
+"j" = (
+/obj/item/bikehorn,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"v" = (
+/obj/item/bikehorn,
+/turf/closed/mineral/bananium,
+/area/lavaland/surface/outdoors)
+"w" = (
+/turf/template_noop,
+/area/template_noop)
+"S" = (
+/obj/item/stack/ore/bananium,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"U" = (
+/turf/closed/mineral/bananium,
+/area/lavaland/surface/outdoors)
+"V" = (
+/obj/item/stack/ore/bananium,
+/turf/closed/mineral/bananium,
+/area/lavaland/surface/outdoors)
+
+(1,1,1) = {"
+w
+w
+a
+a
+a
+a
+w
+"}
+(2,1,1) = {"
+w
+a
+a
+d
+V
+a
+a
+"}
+(3,1,1) = {"
+w
+a
+S
+V
+i
+S
+a
+"}
+(4,1,1) = {"
+a
+a
+v
+h
+S
+d
+a
+"}
+(5,1,1) = {"
+a
+d
+U
+V
+j
+a
+a
+"}
+(6,1,1) = {"
+a
+S
+e
+S
+a
+a
+w
+"}
+(7,1,1) = {"
+a
+a
+a
+a
+a
+w
+w
+"}

@@ -1,0 +1,823 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"be" = (
+/obj/structure/flora/grass/jungle/b/style_random,
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 1
+	},
+/obj/structure/flora/rock/pile/jungle/style_random,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"cS" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Escape Pod Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/pod/dark,
+/area/ruin/powered)
+"dX" = (
+/obj/structure/flora/rock/pile/style_random,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"eK" = (
+/obj/machinery/light/small/directional/east,
+/obj/structure/tubes,
+/obj/effect/decal/cleanable/robot_debris/old,
+/obj/effect/decal/cleanable/plastic,
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"gt" = (
+/obj/machinery/hydroponics/soil,
+/obj/structure/stone_tile/block/cracked,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"gU" = (
+/obj/machinery/smartfridge/survival_pod/preloaded,
+/obj/structure/sign/poster/contraband/soviet_propaganda/directional/north,
+/turf/open/floor/pod/dark,
+/area/ruin/powered)
+"ha" = (
+/obj/structure/stone_tile/slab/cracked,
+/obj/machinery/autolathe,
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"hk" = (
+/obj/structure/stone_tile/block/cracked,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"hs" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile/slab/cracked{
+	dir = 1
+	},
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"hC" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile/burnt{
+	dir = 1
+	},
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"hX" = (
+/obj/structure/flora/bush/fullgrass/style_random,
+/obj/item/storage/bag/plants/portaseeder,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"jz" = (
+/obj/item/storage/medkit/regular,
+/obj/structure/table/wood,
+/obj/item/flashlight/flare/torch{
+	pixel_x = 9;
+	pixel_y = 7
+	},
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"kv" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/machinery/hydroponics/soil,
+/obj/item/food/grown/mushroom/glowshroom,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"kM" = (
+/obj/structure/stone_tile/cracked,
+/obj/structure/flora/bush/fullgrass/style_random,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"kZ" = (
+/obj/effect/spawner/structure/window/reinforced/shuttle,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"la" = (
+/obj/structure/flora/ash/cacti,
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 1
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile/center/burnt,
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"mT" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/ash{
+	pixel_y = -5;
+	pixel_x = -3
+	},
+/obj/effect/decal/cleanable/ash{
+	pixel_x = -15;
+	pixel_y = -3
+	},
+/obj/effect/decal/cleanable/ash{
+	pixel_y = 3;
+	pixel_x = 12
+	},
+/obj/effect/decal/cleanable/ash{
+	pixel_x = -10;
+	pixel_y = 3
+	},
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"nh" = (
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"oI" = (
+/obj/structure/flora/bush/flowers_br/style_random,
+/obj/structure/stone_tile,
+/obj/structure/flora/bush/fullgrass/style_random,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"pn" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	pixel_x = 1;
+	pixel_y = -1
+	},
+/obj/structure/stone_tile/center,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"pt" = (
+/obj/structure/table/wood,
+/obj/structure/stone_tile/block/cracked,
+/obj/item/storage/toolbox/emergency,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mob_spawn/ghost_role/drone/derelict{
+	name = "Emergency drone shell";
+	desc = "A drone shell that should help to survive. Somehow.";
+	flavour_text = "Ensure your crew survival. If your designated crewmates are yet to wake up, you can make accommodations for their safety and well-being.";
+	important_text = "None.";
+	mob_name = "Emergency drone";
+	you_are_text = "You are an emergency drone designed to help the crew to survive in most extreme situations and to be their best companion.";
+	mob_type = /mob/living/basic/drone/classic;
+	spawner_job_path = /datum/job/maintenance_drone;
+	prompt_name = "an emergency drone"
+	},
+/turf/open/floor/grass,
+/area/ruin/powered)
+"qT" = (
+/obj/structure/fans,
+/turf/open/floor/pod/dark,
+/area/ruin/powered)
+"rG" = (
+/obj/structure/tubes,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/spawner/random/decoration/glowstick,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod/dark,
+/area/ruin/powered)
+"ss" = (
+/obj/structure/rack/shelf{
+	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
+	icon_state = "empty_shelf_1"
+	},
+/obj/effect/spawner/random/clothing/gloves{
+	pixel_y = -8
+	},
+/obj/effect/spawner/random/exotic/languagebook{
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/obj/structure/stone_tile/block/burnt{
+	dir = 4
+	},
+/obj/item/language_manual/dronespeak_manual{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"tg" = (
+/obj/item/wallframe/torch_mount,
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/powered)
+"tm" = (
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/obj/item/seeds/plump,
+/obj/item/seeds/reishi,
+/obj/item/seeds/tower,
+/obj/item/fuel_pellet,
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"ty" = (
+/obj/effect/decal/cleanable/glass/titanium,
+/turf/closed/wall/mineral/titanium/interior,
+/area/ruin/powered)
+"tV" = (
+/obj/structure/table/survival_pod,
+/obj/item/pickaxe/emergency,
+/obj/item/storage/bag/ore,
+/turf/open/floor/pod/dark,
+/area/ruin/powered)
+"uh" = (
+/obj/item/clothing/mask/gas/soviet{
+	pixel_x = -9
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod/dark,
+/area/ruin/powered)
+"uK" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 1
+	},
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"vi" = (
+/obj/item/cultivator,
+/obj/item/stack/marker_beacon/thirty{
+	pixel_y = 10;
+	pixel_x = 10
+	},
+/obj/structure/stone_tile/slab/cracked{
+	dir = 5
+	},
+/obj/structure/stone_tile/slab/cracked{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"vI" = (
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/obj/structure/stone_tile/cracked{
+	dir = 1
+	},
+/obj/item/hatchet/wooden,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"we" = (
+/obj/structure/stone_tile/slab/cracked,
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"wj" = (
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 5
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked,
+/obj/structure/flora/bush/fullgrass/style_random,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"xb" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/cracked,
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"xi" = (
+/obj/structure/water_source/puddle,
+/obj/structure/flora/bush/fullgrass/style_random,
+/mob/living/basic/frog,
+/obj/structure/marker_beacon/teal,
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 8
+	},
+/turf/open/floor/grass,
+/area/ruin/powered)
+"xZ" = (
+/obj/structure/stone_tile/cracked,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"yI" = (
+/obj/effect/spawner/structure/window/reinforced/shuttle,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"yW" = (
+/obj/structure/rack/shelf{
+	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
+	icon_state = "empty_shelf_1"
+	},
+/obj/effect/spawner/random/clothing{
+	pixel_y = 7
+	},
+/obj/effect/spawner/random/food_or_drink/booze{
+	pixel_x = 8
+	},
+/obj/effect/spawner/random/food_or_drink/booze{
+	pixel_x = 2
+	},
+/obj/effect/spawner/random/food_or_drink/snack{
+	pixel_x = -5;
+	pixel_y = -6
+	},
+/obj/effect/spawner/random/food_or_drink/snack{
+	pixel_x = -5;
+	pixel_y = -6
+	},
+/obj/effect/decal/cleanable/wrapping,
+/obj/structure/stone_tile/block/cracked{
+	dir = 1
+	},
+/turf/open/floor/grass,
+/area/ruin/powered)
+"zg" = (
+/obj/structure/bed/pod,
+/obj/structure/curtain/bounty,
+/obj/item/storage/toolbox/guncase/soviet{
+	pixel_y = 10
+	},
+/obj/effect/spawner/random/structure/musician,
+/obj/item/bedsheet/black,
+/obj/structure/sign/poster/contraband/communist_state/directional/north,
+/obj/structure/bed/pillow_tiny,
+/obj/effect/spawner/random/entertainment/plushie,
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"zh" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 1
+	},
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"zT" = (
+/obj/structure/closet/crate/wooden,
+/obj/effect/spawner/random/entertainment,
+/obj/structure/stone_tile/block/cracked,
+/obj/effect/spawner/random/exotic/technology,
+/obj/structure/marker_beacon/bronze,
+/obj/item/paper,
+/obj/item/pen/fountain/captain,
+/obj/item/stack/cable_coil/thirty,
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"Bn" = (
+/turf/template_noop,
+/area/template_noop)
+"Dj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mob_spawn/ghost_role/human/hermit,
+/turf/open/floor/pod/dark,
+/area/ruin/powered)
+"DC" = (
+/obj/structure/chair/wood/wings{
+	dir = 4
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 1
+	},
+/obj/item/stack/sheet/bone{
+	pixel_y = 10;
+	pixel_x = 14
+	},
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"DF" = (
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/burnt{
+	dir = 8
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"DK" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/oil,
+/obj/structure/stone_tile/burnt,
+/obj/item/door_seal,
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"DY" = (
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"EH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod/dark,
+/area/ruin/powered)
+"EK" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/robot_debris,
+/obj/structure/broken_flooring/pile,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"EZ" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"Fg" = (
+/turf/closed/wall/mineral/titanium,
+/area/ruin/powered)
+"Fy" = (
+/obj/structure/stone_tile/cracked{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/burnt{
+	dir = 8
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"FC" = (
+/obj/structure/bonfire/dense,
+/obj/structure/stone_tile/slab/burnt,
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"Gy" = (
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 4
+	},
+/obj/item/tank/internals/oxygen,
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"GK" = (
+/obj/effect/decal/cleanable/shreds,
+/obj/structure/stone_tile/center/cracked,
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 1
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"Ib" = (
+/obj/structure/marker_beacon/burgundy,
+/obj/structure/broken_flooring/singular,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"Iq" = (
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"JO" = (
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/powered)
+"JT" = (
+/obj/structure/stone_tile/burnt{
+	dir = 8
+	},
+/obj/structure/flora/bush/lavendergrass/style_random,
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 5
+	},
+/obj/structure/flora/tree/jungle/style_random,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"Ko" = (
+/obj/structure/stone_tile/cracked,
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"Kp" = (
+/obj/item/kinetic_crusher/spear,
+/obj/structure/stone_tile,
+/obj/structure/stone_tile/burnt{
+	dir = 1
+	},
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"Mv" = (
+/obj/structure/stone_tile/burnt{
+	dir = 1
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"MX" = (
+/obj/item/crowbar,
+/obj/item/storage/box/matches{
+	pixel_y = 9;
+	pixel_x = 7
+	},
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"Qt" = (
+/obj/effect/decal/cleanable/robot_debris,
+/obj/item/mining_scanner{
+	pixel_y = 10;
+	pixel_x = 10
+	},
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"QT" = (
+/turf/closed/indestructible/riveted/boss,
+/area/lavaland/surface/outdoors)
+"Ru" = (
+/obj/item/shovel,
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 4
+	},
+/obj/structure/flora/bush/flowers_br/style_random,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"Ss" = (
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"SU" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 4
+	},
+/obj/item/circuitboard/computer/exodrone_console,
+/obj/item/circuitboard/machine/exodrone_launcher,
+/obj/item/exodrone,
+/obj/item/fuel_pellet/advanced,
+/obj/item/clothing/suit/space/orange,
+/obj/item/clothing/head/helmet/space/orange,
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"TC" = (
+/obj/machinery/power/shuttle_engine/propulsion/burst{
+	dir = 8
+	},
+/turf/closed/wall/mineral/titanium/interior,
+/area/ruin/powered)
+"TR" = (
+/obj/item/pillow{
+	pixel_y = 5;
+	pixel_x = 15
+	},
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 4
+	},
+/obj/item/reagent_containers/cup/bowl/wood_bowl,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"Ue" = (
+/obj/item/reagent_containers/cup/bucket/wooden{
+	pixel_x = 10;
+	pixel_y = 4
+	},
+/obj/structure/stone_tile/block/burnt,
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/flora/bush/fullgrass/style_random,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"Wa" = (
+/obj/effect/decal/cleanable/blood/footprints{
+	dir = 1
+	},
+/obj/structure/fans/tiny,
+/obj/structure/marker_beacon/burgundy,
+/obj/effect/decal/cleanable/ash{
+	pixel_x = 15;
+	pixel_y = -7
+	},
+/obj/effect/decal/cleanable/ash{
+	pixel_x = -15;
+	pixel_y = -7
+	},
+/obj/machinery/door/airlock/survival_pod/glass,
+/turf/open/floor/pod/dark,
+/area/ruin/powered)
+"XQ" = (
+/obj/structure/sign/poster/ripped/directional/north,
+/obj/structure/broken_flooring/side,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mob_spawn/ghost_role/human/hermit,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"XT" = (
+/obj/effect/decal/cleanable/ash/large{
+	pixel_x = 15;
+	pixel_y = -5
+	},
+/obj/effect/decal/cleanable/ash{
+	pixel_y = -7;
+	pixel_x = 4
+	},
+/obj/effect/decal/cleanable/ash{
+	pixel_y = 7
+	},
+/turf/open/misc/asteroid/basalt,
+/area/ruin/powered)
+"Ya" = (
+/obj/structure/stone_tile/cracked{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"Yi" = (
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/ruin/powered)
+"Yn" = (
+/obj/structure/flora/rock/pile/style_random,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"ZJ" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 1
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+
+(1,1,1) = {"
+Bn
+Bn
+Bn
+Bn
+Bn
+Bn
+DF
+JO
+Yi
+Yi
+Yi
+Yi
+"}
+(2,1,1) = {"
+Bn
+QT
+Bn
+Fy
+JO
+JO
+JO
+JO
+qT
+Dj
+tV
+Yi
+"}
+(3,1,1) = {"
+Bn
+Bn
+Bn
+JO
+JO
+xb
+SU
+Yi
+gU
+uh
+EH
+Wa
+"}
+(4,1,1) = {"
+dX
+Mv
+JO
+JO
+Ue
+Ru
+Gy
+mT
+MX
+eK
+rG
+Yi
+"}
+(5,1,1) = {"
+ZJ
+JO
+JO
+gt
+xi
+pn
+hs
+XT
+Qt
+Yi
+JO
+Yi
+"}
+(6,1,1) = {"
+Bn
+JO
+ss
+hC
+zh
+DC
+we
+TC
+Ib
+TC
+JO
+Bn
+"}
+(7,1,1) = {"
+JO
+tg
+ha
+Ko
+uK
+FC
+pt
+kZ
+EK
+yI
+EZ
+Bn
+"}
+(8,1,1) = {"
+JO
+jz
+DY
+Iq
+Kp
+TR
+vi
+Fg
+XQ
+JO
+JO
+Yn
+"}
+(9,1,1) = {"
+JO
+zT
+Ss
+la
+wj
+be
+GK
+ty
+kZ
+JO
+hk
+nh
+"}
+(10,1,1) = {"
+JO
+zg
+oI
+vI
+hX
+yW
+DK
+tm
+JO
+JO
+xZ
+Bn
+"}
+(11,1,1) = {"
+JO
+JO
+JT
+kM
+kv
+JO
+cS
+JO
+JO
+Ya
+Bn
+Bn
+"}
+(12,1,1) = {"
+Bn
+JO
+JO
+JO
+JO
+JO
+Yn
+JO
+Bn
+Bn
+Bn
+Bn
+"}
