@@ -90,9 +90,12 @@
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "v" = (
-/obj/structure/lattice,
-/obj/structure/girder/bronze,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/obj/structure/fluff/clockwork/alloy_shards/medium_gearbit{
+	pixel_x = -12;
+	pixel_y = -7
+	},
+/obj/structure/fluff/clockwork/alloy_shards/small,
+/turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "w" = (
 /obj/structure/dead_ratvar,
@@ -142,7 +145,6 @@
 /area/ruin/unpowered/ratvar)
 "H" = (
 /obj/structure/lattice,
-/obj/structure/fluff/clockwork/alloy_shards/small,
 /turf/closed/indestructible/riveted/boss,
 /area/ruin/unpowered/ratvar)
 "J" = (
@@ -174,7 +176,6 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/ratvar)
 "Q" = (
-/obj/structure/lattice,
 /obj/structure/fluff/clockwork/alloy_shards/small,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/ratvar)
@@ -230,7 +231,7 @@ a
 h
 "}
 (4,1,1) = {"
-F
+U
 V
 U
 l
@@ -240,7 +241,7 @@ L
 k
 "}
 (5,1,1) = {"
-v
+K
 V
 U
 z
@@ -251,7 +252,7 @@ j
 "}
 (6,1,1) = {"
 o
-v
+K
 F
 y
 f
@@ -276,7 +277,7 @@ U
 n
 M
 O
-n
+m
 a
 "}
 (9,1,1) = {"
@@ -284,7 +285,7 @@ a
 a
 U
 A
-E
+v
 Y
 Q
 H
@@ -297,7 +298,7 @@ F
 y
 Y
 h
-Q
+h
 "}
 (11,1,1) = {"
 a
