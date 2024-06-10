@@ -58,7 +58,11 @@
 		span_notice("[user] severs [target]'s [target.parse_zone_with_bodypart(target_zone)]!"),
 		span_notice("[user] severs [target]'s [target.parse_zone_with_bodypart(target_zone)]!"),
 	)
+<<<<<<< HEAD
 	display_pain(target, "You can no longer feel your severed [target.parse_zone_with_bodypart(target_zone)]!")
+=======
+	display_pain(target, "You can no longer feel your severed [target.parse_zone_with_bodypart(target_zone)]!", mood_event_type = /datum/mood_event/surgery/success)
+>>>>>>> 87348e1ba3e ([MIRROR] Corrects a few surgery moods [MDB IGNORE] (#2956))
 
 	if(HAS_MIND_TRAIT(user, TRAIT_MORBID) && ishuman(user))
 		var/mob/living/carbon/human/morbid_weirdo = user
