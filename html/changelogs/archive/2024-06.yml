@@ -500,3 +500,64 @@
       borg's cell.
   - qol: Plexagon Access Management now tells you that you need an ID Trim before
       applying a Template, rather than silently failing.
+2024-06-10:
+  LT3:
+  - bugfix: Tram doors can now be constructed and assemblies built
+  - bugfix: Emergency opening tram doors no longer spam balloon alerts
+  - bugfix: Tram doors open faster on arrival
+  - bugfix: Tram doors correctly force close on attempt 3
+  - rscadd: Get ready for a trip to Wawastation, now with automapper templates!
+  - rscadd: Telecoms now has a central tram controller
+  - rscadd: Tram controller is now included in communications blackout event
+  - qol: Tram malfunction event only stops tram once, requiring engineering to reset
+      (no tools required)
+  - qol: Tram malfunction event no longer sends a Central Command announcement when
+      fixed
+  - rscdel: Tram doors no longer force crush you during tram malfunction event
+  - rscdel: Silicons can no longer control the tram when communication is lost
+  Majkl-J:
+  - bugfix: The orbit menu clicks are accurate again
+  - bugfix: Fixes several service and item-handling borg modules not functioning
+  Melbert:
+  - balance: Coders are now locked to the coderbus
+  ShizCalev:
+  - bugfix: Seeing heretical stuff while having the heresy phobia will now apply the
+      heresy mood event.
+  - bugfix: Seeing skeletons while having the skeleton phobia will now apply the spooked
+      (by skeletons) mood event.
+  - bugfix: Basic bots are now in the proper faction and will no longer be targeted
+      by turrets.
+  - bugfix: The spooky element will now apply the spooked mood event when someone
+      is spooked.
+  - bugfix: Fixed spookers getting a popup message when spooking mobs not actively
+      controlled by a player.
+  WebcomicArtist:
+  - rscadd: Added zaukerite (high damage/embed, low AP) and metallic hydrogen (High
+      AP and piercing, but low embed) crossbow ammo for the rebar crossbows
+  - rscadd: Added healium crystal ammo for the crossbow as well, which heals whomever
+      you shoot it at.
+  - rscadd: Added admin-only supermatter crossbow bolts that dust you, because why
+      the hell not.
+  - rscadd: Added non-harmful paper balls. Can be shot from a crossbow, or thrown
+      at co-workers.
+  - rscadd: Added a quiver made from cutting an o2 tank in half, to hold it all.
+  - image: added sprites for all the above.
+  - balance: Traitor Engineer Crossbow ammo now does 55 damage instead of 45, to make
+      it compete with revolver.
+  - balance: Stressed Rebar Crossbow now has a shorter delay required to rack it,
+      but can shoot you in the face on misfire.
+  - bugfix: fixed rebar crossbow shots not dropping items on hitting walls
+  - bugfix: fixed traitor crossbow having worse wound chance than the base one
+  - sound: added new crossbow firing sound effect
+  Zenitheevee:
+  - bugfix: fish with the Anxiety gene wont die when in the same loc as any 3 items
+  carlarctg:
+  - qol: Adds a chat message for fishing in a chasm with a normal and rescue hook,
+      to clarify that only rescue hooks can drag up corpses.
+  improvedname:
+  - balance: Roundstart mutadone pills now have less chems in them from 50 to 5
+  krookodilehunter:
+  - spellcheck: fixes bad raptor grammar
+  mc-oofert:
+  - code_imp: stacking machine consoles check in area instead of a tiny view range
+      on init
