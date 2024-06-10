@@ -18134,6 +18134,10 @@
 /area/station/cargo/lobby)
 "fnX" = (
 /obj/structure/fluff/fokoff_sign,
+/turf/open/floor/fake_snow{
+	initial_gas_mix = "o2=26;n2=97;TEMP=259.15";
+	slowdown = 0
+	},
 /area/station/science/ordnance)
 "foh" = (
 /obj/structure/window/reinforced/plasma/spawner/directional/south,
@@ -42259,6 +42263,10 @@
 /obj/effect/mapping_helpers/airlock/welded,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/fake_snow{
+	initial_gas_mix = "o2=26;n2=97;TEMP=259.15";
+	slowdown = 0
+	},
 /area/station/maintenance/abandon_cafeteria)
 "moO" = (
 /obj/effect/turf_decal/tile/purple/half/contrasted{
