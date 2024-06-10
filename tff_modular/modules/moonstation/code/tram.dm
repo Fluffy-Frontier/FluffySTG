@@ -32,9 +32,11 @@
 	obj_flags = parent_type::obj_flags | NO_DEBRIS_AFTER_DECONSTRUCTION
 
 /obj/machinery/transport/destination_sign/moonstation
+	icon = 'tff_modular/modules/moonstation/icons/tram_display.dmi'
 	configured_transport_id = MOONSTATION_LINE_1
 
 /obj/machinery/transport/destination_sign/indicator/moonstation
+	icon = 'tff_modular/modules/moonstation/icons/tram_indicator.dmi'
 	configured_transport_id = MOONSTATION_LINE_1
 
 /obj/machinery/transport/destination_sign/Initialize(mapload)
@@ -44,6 +46,7 @@
 /obj/machinery/computer/tram_controls/moonstation
 	name = "moon rover controls"
 	desc = "Unlike the iconic moon rover of yesteryears, our tram is here to remind you that even in space, mediocrity finds a way."
+	icon = 'tff_modular/modules/moonstation/icons/tram_controls.dmi'
 	specific_transport_id = MOONSTATION_LINE_1
 
 /obj/machinery/computer/tram_controls/moonstation/directional/north
