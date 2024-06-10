@@ -3,13 +3,16 @@
 	icon_state = "panelsAF"
 
 /area/station/engineering/atmos/asteroid
-	name = "\improper Ministation Atmospherics Room"
+	name = "\improper Abandoned Ministation Atmospherics Room"
 	icon_state = "atmos"
 
 /area/station/engineering/asteroid_lobby
-	name = "\improper Ministation Lobby"
+	name = "\improper Abandoned Ministation Lobby"
 	icon_state = "engine_hallway"
 
+/area/station/engineering/asteroid/reactor
+	name = "\improper Abandoned Ministation Lobby"
+	icon_state = "engine"
 
 //Additiional Station Areas
 /area/station/engineering/supermatter/emitter
@@ -59,14 +62,13 @@
 	icon_state = "shuttle"
 	requires_power = FALSE //Imagine if your funny gimmick had no power and people had to walk lmao
 
-
-
-
-
-
 /area/station/engineering/storage/eva
 	name = "\improper Engineering EVA Storage"
 	icon_state = "eva"
+
+/area/station/biodome
+	name = "\improper Station Biodome"
+	icon_state = "garden"
 
 /area/moonstation
 	name = "DO NOT USE"
