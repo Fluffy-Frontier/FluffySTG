@@ -11,7 +11,7 @@
 	icon_state = "engine_hallway"
 
 /area/station/engineering/asteroid/reactor
-	name = "\improper Abandoned Ministation Lobby"
+	name = "\improper Abandoned Ministation Reactor Room"
 	icon_state = "engine"
 
 //Additiional Station Areas
