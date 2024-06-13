@@ -22,6 +22,11 @@
 
 /datum/brain_trauma/mild/hallucinations/on_lose()
 	owner.remove_status_effect(/datum/status_effect/hallucination)
+<<<<<<< HEAD
+=======
+	if(!QDELING(owner))
+		owner.remove_language(/datum/language/aphasia, source = LANGUAGE_APHASIA)
+>>>>>>> 55113a9c4b4 ([MIRROR] Fixes random organ unit test failures [MDB IGNORE] (#3010))
 	return ..()
 
 /datum/brain_trauma/mild/stuttering
