@@ -19,14 +19,11 @@
 		#include "map_files\NSVBlueshift\Blueshift.dmm"
 		#include "map_files\Ouroboros\Ouroboros.dmm"
 		// NOVA EDIT END
-<<<<<<< HEAD
 		// FLUFFY FRONTIER ADDITION START
 		#include "map_files\NSSJourney\NSSJourney.dmm"
 		#include "map_files\KiloStation2\KiloStation2.dmm"
 		// FLUFFY FRONTIER ADDITION END
 
-=======
->>>>>>> 86811102631 ([MIRROR] Wawastation (#2829))
 		#ifdef CIBUILDING
 			#include "templates.dm"
 		#endif
