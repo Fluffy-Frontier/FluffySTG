@@ -22,22 +22,13 @@
 
 /obj/structure/closet/secure_closet/blueshield/New()
 	..()
-	// FLUFFY FRONTIER EDIT: ADDITION BEGIN - BLUESHIELD-REARM
-	// ВАЖНО!! ДАБЫ НЕ ПЕРЕНАСЫЩАТЬ БЩ ОРУЖИЕМ, ЛЮБЫЕ НОВЫЕ ПУШКИ ПЕРЕНОСИМ В МОДУЛЬ В /obj/item/choice_beacon/blueshield/
-	// Выдал БЩ дополнительные перчатки, аналогичные их стандартным, просто без эффекта рывка.
-	new /obj/item/clothing/gloves/combat(src)
-	// FLUFFY FRONTIER EDIT END - BLUESHIELD-REARM.
+	new /obj/item/clothing/gloves/combat(src) //FLUFFY FRONTIER ADDITION - Blueshield Rearm
 	new /obj/item/storage/briefcase/secure(src)
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/grenade/flashbang(src)
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/restraints/handcuffs(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
-<<<<<<< HEAD
-	new /obj/item/storage/medkit/tactical/blueshield(src)
-	// new /obj/item/storage/toolbox/guncase/nova/xhihao_large_case/bogseo(src) FF EDIT: DELETION - BLUESHIELD-REARM
-=======
-	new /obj/item/storage/medkit/frontier/stocked(src)
->>>>>>> 8e6f95651b7 (Blueshield QOL with other code cleanup (#2816))
+	new /obj/item/storage/medkit/tactical/blueshield(src) //FLUFFY FRONTIER CHANGE. ORIGINAL: new /obj/item/storage/medkit/frontier/stocked(src)
 	new /obj/item/storage/bag/garment/blueshield(src)
 	new /obj/item/mod/control/pre_equipped/blueshield(src)

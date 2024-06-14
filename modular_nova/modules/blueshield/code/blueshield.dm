@@ -43,7 +43,6 @@
 	job_flags = STATION_JOB_FLAGS | JOB_CANNOT_OPEN_SLOTS
 
 /datum/outfit/job/blueshield
-	// FLUFFY FRONTIER COMMENT - BLUESHIELD-REARM: Любое добавленное крысами тут оружие переносим в наш модуль, в /obj/item/choice_beacon/blueshield!
 	name = "Blueshield"
 	jobtype = /datum/job/blueshield
 	uniform = /obj/item/clothing/under/rank/blueshield
@@ -90,7 +89,8 @@
 	icon_state = "hellgun"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/hellfire/blueshield)
 
-/obj/item/choice_beacon/blueshield
+// FLUFFY FRONTIER EDIT START. REMOVAL - Blueshield Rearm
+/* /obj/item/choice_beacon/blueshield
 	name = "gunset beacon"
 	desc = "A single use beacon to deliver a gunset of your choice. Please only call this in your office"
 	company_source = "Sol Defense Contracting"
@@ -103,4 +103,5 @@
 		"Bogseo Submachinegun Gunset" = /obj/item/storage/toolbox/guncase/nova/xhihao_large_case/bogseo,
 	)
 
-	return selectable_gun_types
+	return selectable_gun_types */
+// FLUFFY FRONTIER EDIT END.
