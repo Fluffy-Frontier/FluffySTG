@@ -13,16 +13,11 @@
 
 /obj/item/storage/belt/holster/equipped(mob/user, slot)
 	. = ..()
-<<<<<<< HEAD
 	// FLUFFY FRONTIER EDIT BEGIN
 	// ORIGINAL LINE: if(slot & (ITEM_SLOT_BELT|ITEM_SLOT_SUITSTORE))
 	if(badass && slot & (ITEM_SLOT_BELT|ITEM_SLOT_SUITSTORE))
 	// FLUFFY FRONTIER EDIT END
-		ADD_TRAIT(user, TRAIT_GUNFLIP, CLOTHING_TRAIT)
-=======
-	if(slot & (ITEM_SLOT_BELT|ITEM_SLOT_SUITSTORE))
 		ADD_CLOTHING_TRAIT(user, TRAIT_GUNFLIP)
->>>>>>> 390666e4359 ([MIRROR] Fixes thermal holster trait issues [MDB IGNORE] (#3046))
 
 /obj/item/storage/belt/holster/dropped(mob/user)
 	. = ..()
