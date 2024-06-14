@@ -124,9 +124,6 @@
 		/mob/living/simple_animal/hostile/vox/ranged/space/laser,
 		/mob/living/simple_animal/hostile/zombie/cheesezombie,
 		/mob/living/simple_animal/hostile/zombie/nocorpse,
-<<<<<<< HEAD
-		/mob/living/simple_animal/pet/gondola/funky,
-		/mob/living/simple_animal/pet/poppy,
 		/mob/living/simple_animal/hostile/fleshmind/slicer,
 		/mob/living/simple_animal/hostile/fleshmind/floater,
 		/mob/living/simple_animal/hostile/fleshmind/globber,
@@ -138,8 +135,6 @@
 		/mob/living/simple_animal/hostile/fleshmind/mechiver,
 		/mob/living/simple_animal/hostile/fleshmind/mauler_monkey,
 		/mob/living/simple_animal/hostile/fleshmind,
-=======
->>>>>>> 867f2b1aeb3 ([MIRROR] Gondolas are now basic mobs (#2767))
 
 		// DO NOT ADD NEW ENTRIES TO THIS LIST
 		// READ THE COMMENT ABOVE
