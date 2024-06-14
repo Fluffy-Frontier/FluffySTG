@@ -11,6 +11,7 @@
 
 /datum/map_template/ruin/lavaland/fluffy
 	unpickable = FALSE
+	prefix = "_maps/RandomRuins/LavaRuins/fluffy/"
 	allow_duplicates = FALSE
 
 /datum/map_template/ruin/lavaland/fluffy/a0
