@@ -354,12 +354,6 @@
 	weapon_to_spawn = /obj/item/gun/ballistic/automatic/pistol/clandestine
 	extra_to_spawn = /obj/item/ammo_box/magazine/m10mm
 
-/obj/item/storage/toolbox/guncase/nova/wt550
-	name = "wt550 gun case"
-	name = "wt-550 gun case"
-	weapon_to_spawn = /obj/item/gun/ballistic/automatic/wt550
-	extra_to_spawn = /obj/item/ammo_box/magazine/wt550m9
-
 /obj/item/storage/toolbox/guncase/m90gl
 	name = "m-90gl gun case"
 	weapon_to_spawn = /obj/item/gun/ballistic/automatic/m90
