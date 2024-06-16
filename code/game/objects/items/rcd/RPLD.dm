@@ -248,8 +248,16 @@
 			if(duct_machine.duct_layer & layer_id)
 				return FALSE
 
+<<<<<<< HEAD
 /obj/item/construction/plumbing/interact_with_atom(atom/target, mob/living/user, list/modifiers)
 	. = NONE
+=======
+/obj/item/construction/plumbing/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	. = ..()
+	if(. & ITEM_INTERACT_ANY_BLOCKER)
+		return .
+
+>>>>>>> d685deb84d3 ([MIRROR] After Attack Fixes [MDB IGNORE] (#3041))
 	for(var/category_name in plumbing_design_types)
 		var/list/designs = plumbing_design_types[category_name]
 

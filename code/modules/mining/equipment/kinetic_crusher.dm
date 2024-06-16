@@ -87,6 +87,18 @@
 /obj/item/kinetic_crusher/attack(mob/living/target, mob/living/carbon/user)
 	if(!HAS_TRAIT(src, TRAIT_WIELDED) && !acts_as_if_wielded) // NOVA EDIT CHANGE - Original: if(!HAS_TRAIT(src, TRAIT_WIELDED))
 		user.balloon_alert(user, "must be wielded!")
+<<<<<<< HEAD
+=======
+		return TRUE
+	return .
+
+/obj/item/kinetic_crusher/attack(mob/living/target, mob/living/carbon/user)
+	target.apply_status_effect(/datum/status_effect/crusher_damage)
+	return ..()
+
+/obj/item/kinetic_crusher/afterattack(mob/living/target, mob/living/user, clickparams)
+	if(!isliving(target))
+>>>>>>> d685deb84d3 ([MIRROR] After Attack Fixes [MDB IGNORE] (#3041))
 		return
 	var/datum/status_effect/crusher_damage/crusher_damage_effect = target.has_status_effect(/datum/status_effect/crusher_damage)
 	if(!crusher_damage_effect)
