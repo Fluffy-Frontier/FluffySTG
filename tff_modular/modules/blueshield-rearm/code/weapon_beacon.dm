@@ -16,6 +16,7 @@
 			/obj/item/gun/energy/blueshield = /obj/item/storage/belt/holster/energy/blueshield,
 			/obj/item/gun/ballistic/automatic/sol_smg = /obj/item/storage/toolbox/guncase/nova/carwo_large_case/sindano,
 			/obj/item/gun/ballistic/automatic/xhihao_smg = /obj/item/storage/toolbox/guncase/nova/xhihao_large_case/bogseo,
+			/obj/item/gun/ballistic/automatic/wt550 = /obj/item/storage/toolbox/guncase/nova/wt550,
 		)
 		for(var/obj/item/weapon as anything in possible_weapons)
 			blueshield_weapons[initial(weapon.name)] = possible_weapons[weapon]
