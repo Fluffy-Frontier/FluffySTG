@@ -812,3 +812,51 @@
   thegrb93:
   - bugfix: Fix bug where you can't interact with a shocked door without shock protection
       even if it is depowered.
+2024-06-16:
+  Archie700:
+  - qol: Changes description of steal objective to match the name
+  BurgerBB:
+  - bugfix: Tweaks some instances of get_safe_turf so things like the nuclear disk
+      doesn't accidentally teleport to the Icebox Syndicate Base
+  EnterTheJake:
+  - qol: You can now repair portable scrubbers and pumps.
+  Exester509:
+  - balance: Phazon mechs use ectoplasm cores now
+  - balance: You can now acquire ectoplasm cores from the science supply interface
+  GPeckman:
+  - bugfix: The reset button in the bluespace launchpad UI should work again.
+  Goat:
+  - bugfix: A wrecked shuttle on lavaland no longer has asteroid tiles containing
+      the danger of space.
+  - code_imp: Added volcanic versions of all mineral turfs for those that did not
+      have it.
+  GoblinBackwards:
+  - bugfix: Fixed the patient information for the mech sleeper module not displaying
+      when the mech didn't also have a syringe gun.
+  Jacquerel:
+  - rscadd: Cats and Dogs can lick slashing wounds clean.
+  - rscadd: Basic Mobs with hands can relocate dislocated bones, and pluck eyeballs
+      out of pulped skulls.
+  - balance: Gorillas can strangle people.
+  - bugfix: Neutralising an anomaly cannot produce more anomaly cores than are supposed
+      to exist in a single round
+  LT3:
+  - bugfix: Wawastation barber and NT rep office are no longer blocked off by a wall
+  - bugfix: Wawastation NT rep office moved to command hallway
+  - bugfix: Various minor Wawastation fixes and updates
+  LucyGrind:
+  - bugfix: Crayons now fit in pdas
+  ShizCalev:
+  - bugfix: Fixed some surgery failure states not properly setting the correct mood
+      event.
+  - refactor: Minor refactor to how surgery events work, there is now better support
+      for per-surgery mood events!
+  Wayland-Smithy:
+  - bugfix: Fixed revenant spawning next to brains and other unharvestable dead mobs.
+  WebcomicArtist:
+  - bugfix: Healium bolt now no longer affects silicons.
+  carlarctg:
+  - qol: Baby plushies are now smaller than their parents
+  - bugfix: Cosmos spells will no longer star mark your steed
+  mc-oofert:
+  - rscadd: the flatpacker, a machine unlocked at industrial engineering
