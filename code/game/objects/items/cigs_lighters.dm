@@ -287,8 +287,14 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(!proximity || lit) //can't dip if cigarette is lit (it will heat the reagents in the glass instead)
 		return
 	if(!istype(glass)) //you can dip cigarettes into beakers
+<<<<<<< HEAD
 		return
 
+=======
+		return NONE
+	if(istype(glass, /obj/item/reagent_containers/cup/mortar))
+		return NONE
+>>>>>>> 82d31299189 ([MIRROR] Fixes Ghetto Grinding Cigarettes [MDB IGNORE] (#3091))
 	if(glass.reagents.trans_to(src, chem_volume, transferred_by = user)) //if reagents were transferred, show the message
 		to_chat(user, span_notice("You dip \the [src] into \the [glass]."))
 	//if not, either the beaker was empty, or the cigarette was full
