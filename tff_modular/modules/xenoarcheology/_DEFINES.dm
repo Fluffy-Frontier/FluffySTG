@@ -90,7 +90,8 @@ GLOBAL_LIST_INIT(valid_primary_effect_types, list(
 	/datum/artifact_effect/sleepy,
 	/datum/artifact_effect/stun,
 	/datum/artifact_effect/tesla,
-	/datum/artifact_effect/teleport
+	/datum/artifact_effect/teleport,
+	/datum/artifact_effect/bodyswap
 	))
 
 GLOBAL_LIST_INIT(valid_secondary_effect_types, list(
