@@ -17,32 +17,40 @@
 		/obj/item/assembly/flash,
 		/obj/item/melee/baton,
 	)
-	skins = list(
+	variants = list(
 		"ntis_derevolutioner" = list(
 			MOD_ICON_OVERRIDE = 'tff_modular/modules/police_nt/icons/ntis_derevolutioner_icon.dmi',
 			MOD_WORN_ICON_OVERRIDE = 'tff_modular/modules/police_nt/icons/ntis_derevolutioner_worn.dmi',
-			HELMET_FLAGS = list(
+			/obj/item/clothing/head/mod = list(
 				UNSEALED_LAYER = null,
 				UNSEALED_CLOTHING = SNUG_FIT|THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE|HEADINTERNALS,
 				UNSEALED_INVISIBILITY = HIDEEARS|HIDEHAIR,
 				SEALED_INVISIBILITY = HIDEFACIALHAIR|HIDEMASK|HIDEEYES|HIDEFACE|HIDESNOUT,
 				SEALED_COVER = HEADCOVERSMOUTH|HEADCOVERSEYES|PEPPERPROOF,
+				UNSEALED_MESSAGE = HELMET_UNSEAL_MESSAGE,
+				SEALED_MESSAGE = HELMET_SEAL_MESSAGE,
 			),
-			CHESTPLATE_FLAGS = list(
+			/obj/item/clothing/suit/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
 				SEALED_INVISIBILITY = HIDEJUMPSUIT,
+				UNSEALED_MESSAGE = HELMET_UNSEAL_MESSAGE,
+				SEALED_MESSAGE = HELMET_SEAL_MESSAGE,
 			),
-			GAUNTLETS_FLAGS = list(
+			/obj/item/clothing/gloves/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
 				CAN_OVERSLOT = TRUE,
+				UNSEALED_MESSAGE = HELMET_UNSEAL_MESSAGE,
+				SEALED_MESSAGE = HELMET_SEAL_MESSAGE,
 			),
-			BOOTS_FLAGS = list(
+			/obj/item/clothing/shoes/mod = list(
 				UNSEALED_CLOTHING = THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
 				CAN_OVERSLOT = TRUE,
+				UNSEALED_MESSAGE = HELMET_UNSEAL_MESSAGE,
+				SEALED_MESSAGE = HELMET_SEAL_MESSAGE,
 			),
 		),
 	)
@@ -77,9 +85,10 @@
 		/obj/item/mod/module/jetpack/advanced,
 	)
 
-/obj/item/mod/control/pre_equipped/ntis_derevolutioner/set_mod_skin(new_skin)
+/datum/mod_theme/ntis_derevolutioner/set_skin(obj/item/mod/control/mod, skin)
 	. = ..()
-	if(new_skin == "ntis_derevolutioner")
-		helmet.worn_icon_muzzled = 'tff_modular/modules/police_nt/icons/ntis_derevolutioner_worn_anthro.dmi'
-		chestplate.worn_icon_digi = 'tff_modular/modules/police_nt/icons/ntis_derevolutioner_worn_anthro.dmi'
-		boots.worn_icon_digi = 'tff_modular/modules/police_nt/icons/ntis_derevolutioner_worn_anthro.dmi'
+	for(var/obj/item/clothing/mod_part in mod.get_parts())
+		if(istype(mod_part, /obj/item/clothing/head))
+			mod_part.worn_icon_muzzled = 'tff_modular/modules/police_nt/icons/ntis_derevolutioner_worn_anthro.dmi'
+		if(istype(mod_part, /obj/item/clothing/suit) || istype(mod_part, /obj/item/clothing/shoes) )
+			mod_part.worn_icon_digi = 'tff_modular/modules/police_nt/icons/ntis_derevolutioner_worn_anthro.dmi'

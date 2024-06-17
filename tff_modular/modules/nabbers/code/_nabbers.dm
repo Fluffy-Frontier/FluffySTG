@@ -3,7 +3,6 @@
 /datum/species/nabber
 	name = "Giant Armored Serpentid"
 	id = SPECIES_NABBER
-	eyes_icon = 'tff_modular/modules/nabbers/icons/organs/nabber_eyes.dmi'
 	can_augment = FALSE
 	veteran_only = TRUE
 	inherent_traits = list(

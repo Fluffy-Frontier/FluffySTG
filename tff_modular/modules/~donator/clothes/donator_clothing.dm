@@ -172,3 +172,10 @@
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
 	worn_icon_teshari = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+
+/obj/item/clothing/neck/cloak/trenchcloak
+	name = "senior commander's trenchcloak"
+	desc = "Dark trenchcloak made to order for senior officers. Consists of really strong leather and armored fabric. The inside of the collar has a label with ''V'' written on it."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	icon_state = "romontesque_cloak"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
