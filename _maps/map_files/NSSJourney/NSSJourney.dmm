@@ -7159,6 +7159,12 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 4
+	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/aft)
 "aUx" = (
@@ -9767,9 +9773,7 @@
 /turf/open/floor/iron/smooth_large,
 /area/station/command/heads_quarters/ce)
 "beW" = (
-/obj/structure/window/reinforced/spawner/directional/north{
-	layer = 2.9
-	},
+/obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/table/reinforced,
 /obj/item/stack/wrapping_paper{
 	pixel_x = 3;
@@ -11182,9 +11186,7 @@
 	},
 /obj/effect/turf_decal/tile/yellow,
 /obj/structure/window/reinforced/spawner/directional/west,
-/obj/structure/window/reinforced/spawner/directional/north{
-	layer = 2.9
-	},
+/obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/white,
 /area/station/medical/pharmacy)
@@ -11709,9 +11711,7 @@
 	dir = 4
 	},
 /obj/machinery/chem_dispenser,
-/obj/structure/window/reinforced/spawner/directional/north{
-	layer = 2.9
-	},
+/obj/structure/window/reinforced/spawner/directional/north,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
@@ -12717,9 +12717,7 @@
 /turf/open/floor/iron,
 /area/station/cargo/office)
 "bqp" = (
-/obj/structure/window/reinforced/spawner/directional/north{
-	layer = 2.9
-	},
+/obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/table/reinforced,
 /obj/item/dest_tagger,
 /obj/item/dest_tagger,
@@ -12825,9 +12823,7 @@
 /area/station/hallway/primary/central)
 "bqM" = (
 /obj/effect/turf_decal/bot,
-/obj/structure/window/reinforced/spawner/directional/north{
-	layer = 2.9
-	},
+/obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/plasticflaps/opaque,
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -13414,16 +13410,17 @@
 	dir = 8
 	},
 /obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/trimline/blue/filled/corner,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/aft)
 "bsK" = (
-/obj/effect/turf_decal/trimline/blue/filled/line{
-	dir = 4
-	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/suit_storage_unit/medical,
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 5
+	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/aft)
 "bsM" = (
@@ -28028,23 +28025,6 @@
 /obj/structure/chair/sofa/corner/brown{
 	dir = 4
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---";
-	
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/dark{
-	dir = 1
-	},
-/obj/structure/chair/office/light{
-	dir = 8
-	},
 /turf/open/floor/iron/smooth,
 /area/station/engineering/break_room)
 "cQT" = (
@@ -30798,9 +30778,6 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/machinery/modular_computer/preset/cargochat/engineering{
-	dir = 8
-	},
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/break_room)
 "eCU" = (
@@ -30907,14 +30884,6 @@
 "eFG" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/stripes/line,
-/obj/item/reagent_containers/cup/glass/bottle/vodka/badminka{
-	pixel_x = 6;
-	pixel_y = 7
-	},
-/obj/item/reagent_containers/cup/glass/drinkingglass/shotglass{
-	pixel_y = 7;
-	pixel_x = -7
-	},
 /turf/open/floor/iron/dark/diagonal,
 /area/station/service/bar)
 "eFO" = (
@@ -31787,9 +31756,7 @@
 	codes_txt = "delivery;dir=4";
 	location = "Medbay"
 	},
-/obj/structure/window/reinforced/spawner/directional/north{
-	layer = 2.9
-	},
+/obj/structure/window/reinforced/spawner/directional/north,
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
@@ -32514,9 +32481,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
-/obj/structure/window/reinforced/spawner/directional/north{
-	pixel_y = 2
-	},
+/obj/structure/window/reinforced/spawner/directional/north,
 /obj/machinery/door/window/right/directional/west{
 	name = "First-Aid Supplies";
 	red_alert_access = 1;
@@ -32587,9 +32552,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
-/obj/structure/window/reinforced/spawner/directional/north{
-	pixel_y = 2
-	},
+/obj/structure/window/reinforced/spawner/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/medical/storage)
 "fMr" = (
@@ -33196,6 +33159,9 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/machinery/modular_computer/preset/cargochat/engineering{
+	dir = 8
+	},
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/break_room)
 "gfJ" = (
@@ -33268,13 +33234,6 @@
 /obj/structure/table/glass,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/stack/cable_coil/five,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---";
-	
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
-/obj/structure/table/glass,
-/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/iron,
 /area/station/science/lab)
 "gia" = (
@@ -33643,10 +33602,11 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/light/directional/east,
 /obj/machinery/recharge_station,
-/obj/effect/turf_decal/trimline/blue/filled/line{
-	dir = 4
+/obj/structure/window/reinforced/spawner/directional/north,
+/obj/effect/turf_decal/trimline/blue/filled/end{
+	dir = 1
 	},
-/turf/open/floor/iron/white,
+/turf/open/floor/iron,
 /area/station/medical/medbay/aft)
 "guI" = (
 /obj/structure/cable,
@@ -33737,13 +33697,6 @@
 /turf/open/floor/plating,
 /area/station/medical/surgery/fore)
 "gyT" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/effect/turf_decal/stripes/white/line,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---";
-	
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/turf_decal/stripes/white/line,
 /obj/machinery/modular_computer/preset/cargochat/service,
@@ -36281,6 +36234,7 @@
 /obj/effect/landmark/event_spawn,
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/stripes/line,
+/obj/effect/landmark/start/hangover,
 /turf/open/floor/iron/dark/diagonal,
 /area/station/service/bar)
 "iiB" = (
@@ -37324,6 +37278,13 @@
 /obj/structure/reagent_dispensers/cooking_oil,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen)
+"iNr" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/iron/white/herringbone,
+/area/station/service/bar)
 "iOt" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -38924,6 +38885,9 @@
 	dir = 8
 	},
 /obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 4
+	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/aft)
 "jQP" = (
@@ -39811,9 +39775,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/end{
 	dir = 1
 	},
-/obj/structure/window/reinforced/spawner/directional/north{
-	layer = 2.9
-	},
+/obj/structure/window/reinforced/spawner/directional/north,
 /turf/open/floor/iron,
 /area/station/medical/medbay/aft)
 "kxa" = (
@@ -40800,19 +40762,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/service/hydroponics/garden/abandoned)
-"kZZ" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door/firedoor/heavy,
-/obj/machinery/door/window/left/directional/east{
-	name = "Atmospherics Desk";
-	req_access = list("engineering")
-	},
-/obj/machinery/door/poddoor/preopen{
-	id = "atmos";
-	name = "Atmospherics Blast Door"
-	},
-/turf/open/floor/iron,
-/area/station/engineering/break_room)
 "laF" = (
 /obj/machinery/vending/wardrobe/det_wardrobe,
 /turf/open/floor/iron/grimy,
@@ -42427,7 +42376,14 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
-/obj/effect/landmark/start/hangover,
+/obj/item/reagent_containers/cup/glass/bottle/vodka/badminka{
+	pixel_x = 6;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/cup/glass/drinkingglass/shotglass{
+	pixel_y = 7;
+	pixel_x = -7
+	},
 /turf/open/floor/iron/dark/diagonal,
 /area/station/service/bar)
 "mem" = (
@@ -44594,21 +44550,9 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---";
-	
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/window/reinforced/spawner/directional/north{
-	layer = 2.9
-	},
-/obj/effect/turf_decal/tile/brown/full,
-/obj/machinery/modular_computer/preset/civilian{
-	dir = 8
-	},
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/break_room)
 "nzf" = (
@@ -45496,16 +45440,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/white/herringbone,
 /area/station/service/bar)
-"nZz" = (
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---";
-	
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
-/obj/machinery/modular_computer/preset/cargochat/security,
-/obj/effect/turf_decal/trimline/brown/filled/end,
-/turf/closed/wall/r_wall,
-/area/station/security/warden)
 "nZC" = (
 /turf/open/floor/iron,
 /area/station/commons/vacant_room)
@@ -46868,16 +46802,6 @@
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/security/brig)
-"oZr" = (
-/obj/structure/chair/stool/bar/directional/east{
-	dir = 1
-	},
-/obj/effect/landmark/start/bouncer,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/iron/white/herringbone,
-/area/station/service/bar)
 "oZw" = (
 /obj/structure/sink/directional/west,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -47509,9 +47433,7 @@
 	pixel_y = 3
 	},
 /obj/structure/window/reinforced/spawner/directional/south,
-/obj/structure/window/reinforced/spawner/directional/east{
-	layer = 2.9
-	},
+/obj/structure/window/reinforced/spawner/directional/east,
 /turf/open/floor/grass,
 /area/station/common/cryopods)
 "pwL" = (
@@ -49093,10 +49015,13 @@
 /turf/open/floor/iron,
 /area/station/commons/vacant_room)
 "qwE" = (
-/obj/item/kirbyplants/random,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
+/obj/structure/chair/stool/bar/directional/east{
+	dir = 1
+	},
+/obj/effect/landmark/start/bouncer,
 /turf/open/floor/iron/white/herringbone,
 /area/station/service/bar)
 "qwN" = (
@@ -50096,12 +50021,12 @@
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "rbA" = (
-/obj/effect/turf_decal/trimline/blue/filled/line{
-	dir = 4
-	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 6
+	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/aft)
 "rbC" = (
@@ -53068,7 +52993,6 @@
 /obj/structure/closet{
 	name = "evidence closet 3"
 	},
-/obj/item/knife/combat/marksman,
 /turf/open/floor/iron/dark,
 /area/station/security/interrogation)
 "tat" = (
@@ -54435,12 +54359,6 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced/spawner/directional/south,
-/obj/effect/turf_decal/trimline/brown/filled/end,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---";
-	
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
@@ -54449,10 +54367,8 @@
 /obj/machinery/modular_computer/preset/cargochat/medical{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/blue/filled/line{
-	dir = 4
-	},
-/turf/open/floor/iron/white,
+/obj/effect/turf_decal/trimline/blue/filled/end,
+/turf/open/floor/iron,
 /area/station/medical/medbay/aft)
 "tYi" = (
 /obj/structure/disposalpipe/segment,
@@ -55286,6 +55202,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 9
 	},
+/obj/effect/turf_decal/trimline/blue/filled/corner{
+	dir = 4
+	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/aft)
 "uyD" = (
@@ -56063,12 +55982,8 @@
 	pixel_x = -3;
 	pixel_y = -3
 	},
-/obj/structure/window/reinforced/spawner/directional/north{
-	layer = 2.9
-	},
-/obj/structure/window/reinforced/spawner/directional/east{
-	layer = 2.9
-	},
+/obj/structure/window/reinforced/spawner/directional/north,
+/obj/structure/window/reinforced/spawner/directional/east,
 /turf/open/floor/grass,
 /area/station/common/cryopods)
 "uUn" = (
@@ -90544,7 +90459,7 @@ bUE
 bWM
 bXJ
 bMK
-kZZ
+bYH
 bYH
 bYH
 bYH
@@ -92258,7 +92173,7 @@ xQV
 kUa
 egF
 fXk
-nZz
+agn
 qEg
 yhE
 ukX
@@ -95378,7 +95293,7 @@ gJY
 xWN
 kXx
 eFG
-oZr
+hcQ
 aOw
 xfd
 ofm
@@ -96406,7 +96321,7 @@ bby
 aiu
 vyZ
 sbh
-jIy
+iNr
 aOw
 vyl
 vIY
