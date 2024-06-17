@@ -481,10 +481,6 @@
 	for(var/obj/effect/rune/teleport/teleport_rune as anything in GLOB.teleport_runes)
 		potential_runes[avoid_assoc_duplicate_keys(teleport_rune.listkey, teleportnames)] = teleport_rune
 
-		if(!length(potential_runes))
-			to_chat(user, span_warning("There are no valid runes to teleport to!"))
-			return
-
 	if(!length(potential_runes))
 		to_chat(user, span_warning("There are no valid runes to teleport to!"))
 		return
