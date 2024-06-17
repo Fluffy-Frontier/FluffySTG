@@ -8,6 +8,33 @@
 	alert_type = null
 	var/total_damage = 0
 
+<<<<<<< HEAD
+=======
+/datum/status_effect/crusher_damage/on_apply()
+	RegisterSignal(owner, COMSIG_MOB_AFTER_APPLY_DAMAGE, PROC_REF(damage_taken))
+	return TRUE
+
+/datum/status_effect/crusher_damage/on_remove()
+	UnregisterSignal(owner, COMSIG_MOB_AFTER_APPLY_DAMAGE)
+
+/datum/status_effect/crusher_damage/proc/damage_taken(
+	datum/source,
+	damage_dealt,
+	damagetype,
+	def_zone,
+	blocked,
+	wound_bonus,
+	bare_wound_bonus,
+	sharpness,
+	attack_direction,
+	attacking_item,
+)
+	SIGNAL_HANDLER
+
+	if(istype(attacking_item, /obj/item/kinetic_crusher))
+		total_damage += (-1 * damage_dealt)
+
+>>>>>>> 8d2ad7dcbc9 ([MIRROR] Fixes the other half of the crusher bug [MDB IGNORE] (#3086))
 /datum/status_effect/syphon_mark
 	id = "syphon_mark"
 	duration = 50
