@@ -390,45 +390,28 @@
 	. = ..()
 	ui_interact(user)
 
-<<<<<<< HEAD
-/obj/item/construction/rcd/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
-	. = ..()
-	//proximity check for normal rcd & range check for arcd
-	if((!proximity_flag && !ranged) || (ranged && !range_check(target, user)))
-		return FALSE
-
-	//do the work
-=======
 /obj/item/construction/rcd/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
 	. = ..()
 	if(. & ITEM_INTERACT_ANY_BLOCKER)
 		return .
 
->>>>>>> d685deb84d3 ([MIRROR] After Attack Fixes [MDB IGNORE] (#3041))
-	mode = construction_mode
-	rcd_create(target, user)
-
-	return . | AFTERATTACK_PROCESSED_ITEM
-
-<<<<<<< HEAD
-/obj/item/construction/rcd/afterattack_secondary(atom/target, mob/user, proximity_flag, click_parameters)
-	. = ..()
-	//proximity check for normal rcd & range check for arcd
-	if((!proximity_flag && !ranged) || (ranged && !range_check(target, user)))
-		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-=======
 	mode = construction_mode
 	rcd_create(interacting_with, user)
 	return ITEM_INTERACT_SUCCESS
->>>>>>> d685deb84d3 ([MIRROR] After Attack Fixes [MDB IGNORE] (#3041))
 
-	//do the work
+/obj/item/construction/rcd/ranged_interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(!ranged || !range_check(interacting_with, user))
+		return ITEM_INTERACT_BLOCKING
+
+	mode = construction_mode
+	rcd_create(interacting_with, user)
+	return ITEM_INTERACT_SUCCESS
+
+/obj/item/construction/rcd/interact_with_atom_secondary(atom/interacting_with, mob/living/user, list/modifiers)
 	mode = RCD_DECONSTRUCT
-	rcd_create(target, user)
+	rcd_create(interacting_with, user)
+	return ITEM_INTERACT_SUCCESS
 
-<<<<<<< HEAD
-	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-=======
 /obj/item/construction/rcd/ranged_interact_with_atom_secondary(atom/interacting_with, mob/living/user, list/modifiers)
 	if(!ranged || !range_check(interacting_with, user))
 		return ITEM_INTERACT_BLOCKING
@@ -436,7 +419,6 @@
 	mode = RCD_DECONSTRUCT
 	rcd_create(interacting_with, user)
 	return ITEM_INTERACT_SUCCESS
->>>>>>> d685deb84d3 ([MIRROR] After Attack Fixes [MDB IGNORE] (#3041))
 
 /obj/item/construction/rcd/proc/detonate_pulse()
 	audible_message("<span class='danger'><b>[src] begins to vibrate and \
