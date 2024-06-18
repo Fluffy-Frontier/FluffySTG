@@ -13,11 +13,11 @@
 	id = "custom_rev_deconvert_device_node"
 	display_name = "Activism Countermeasures"
 	description = "Surplus activism countermeasure technologies for the moments when things got outta control."
-	prereq_ids = list("sec_basic")
+	prereq_ids = list("riot_supression")
 	design_ids = list(
 		"custom_rev_deconvert_device",
 	)
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_2_POINTS)
 
 
 /datum/design/board/custom_rev_deconvert_device
