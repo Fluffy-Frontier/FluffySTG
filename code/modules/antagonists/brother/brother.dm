@@ -11,6 +11,7 @@
 	hardcore_random_bonus = TRUE
 	VAR_PRIVATE
 		datum/team/brother_team/team
+	skip_custom_objectives_addition = TRUE // FF ADDITION - CUSTOM OBJECTIVES
 
 /datum/antagonist/brother/create_team(datum/team/brother_team/new_team)
 	if(!new_team)
@@ -203,6 +204,7 @@
 	. = ..()
 	if (!length(objectives))
 		forge_brother_objectives()
+		add_custom_objectives() // FF ADDITION - CUSTOM OBJECTIVES
 	if (!new_member.has_antag_datum(/datum/antagonist/brother))
 		add_brother(new_member.current)
 
