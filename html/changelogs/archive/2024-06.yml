@@ -968,3 +968,34 @@
   san7890:
   - qol: A message with a link to publicly accessible logs (if enabled by your server
       operators) should now be visible far earlier when a world is about to reboot.
+2024-06-19:
+  00-Steven:
+  - bugfix: Latejoiners' alt titles, general/medical/security records, backgrounds,
+      and exploitable information are actually saved to the manifest data. This means
+      your general/medical/security records actually show up in the records console
+      again.
+  Bisar:
+  - rscadd: Sparks now ignite flammable things. Including you. Keep a fire extinguisher
+      handy or stop dousing yourself in welding fuel!
+  - bugfix: Fixed a few oversights with welding fuel pools not igniting when you throw
+      lit/hot things into them or when you walk into them while on fire.
+  GoldenAlpharex:
+  - bugfix: APCs have received another budget cut, and will no longer come with surge
+      protectors built-in. Be careful of those electricity arcs if there's too much
+      power in the grid!
+  Melbert, vinylspiders:
+  - balance: Re-adds Bagulo (config disabled on nova)
+  - balance: 'The max number of bluespace cores available to the crew has been increased
+      to 16 (was: 8)'
+  - balance: Chucking a BoH into an uncharged singulo may save the station.
+  Motho, vinylspiders, LT3:
+  - rscadd: Ported the Character Directory from Bubberstation. Now you can advertise
+      your silly little characters! To view the character directory, check the OOC
+      tab in the verb panel.
+  kittysmooch:
+  - rscadd: 'a new hairstyle, the enigmatic mcsqueeb, has appeared in frontier stylist
+      catalogues.
+
+      :cl:'
+  vinylspiders:
+  - bugfix: adds back the missing nova-specific techweb nodes that went missing
