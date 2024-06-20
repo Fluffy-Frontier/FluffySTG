@@ -549,7 +549,6 @@
 	new_profile.laugh_type = target.selected_laugh?.type || /datum/laugh_type/none
 	//NOVA EDIT ADDITION END
 
-<<<<<<< HEAD
 	//THE FLUFFY FRONTIER EDIT ADDITION BEGIN - Blooper
 	new_profile.blooper_id = target.blooper_id
 	new_profile.blooper_pitch = target.blooper_pitch
@@ -557,12 +556,6 @@
 	new_profile.blooper_pitch_range = target.blooper_pitch_range
 	//THE FLUFFY FRONTIER EDIT END
 
-	// Hair and facial hair gradients, alongside their colours.
-	new_profile.grad_style = LAZYLISTDUPLICATE(target.grad_style)
-	new_profile.grad_color = LAZYLISTDUPLICATE(target.grad_color)
-
-=======
->>>>>>> a761c4182e7 ([MIRROR] Fixing the timeline (Paradox clone fixes) (#2782))
 	// Grab skillchips they have
 	new_profile.skillchips = target.clone_skillchip_list(TRUE)
 
