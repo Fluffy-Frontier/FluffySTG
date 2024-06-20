@@ -29096,19 +29096,13 @@
 /turf/open/floor/wood/tile,
 /area/station/security/detectives_office)
 "dCq" = (
-/obj/structure/bed{
-	dir = 4
-	},
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 9
 	},
-/obj/structure/bed{
-	dir = 4;
-	pixel_y = 13
+/obj/machinery/cryopod{
+	dir = 4
 	},
-/obj/structure/railing{
-	pixel_y = 3
-	},
+/obj/machinery/computer/cryopod/directional/west,
 /turf/open/floor/iron/dark/diagonal,
 /area/station/security/prison/safe)
 "dCz" = (
@@ -41151,6 +41145,7 @@
 /obj/structure/table,
 /obj/item/clothing/accessory/badge/holo/warden,
 /obj/effect/turf_decal/trimline/dark_blue/filled/line,
+/obj/machinery/recharger,
 /turf/open/floor/iron/dark,
 /area/station/security/warden)
 "luH" = (
@@ -55654,6 +55649,14 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/box/firingpins,
 /obj/item/storage/box/firingpins,
+/obj/machinery/recharger{
+	pixel_y = 2;
+	pixel_x = -6
+	},
+/obj/machinery/recharger{
+	pixel_x = 6;
+	pixel_y = 2
+	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "uQH" = (
@@ -56588,7 +56591,6 @@
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 6
 	},
-/obj/machinery/cryopod/prison/directional/south,
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/iron,
 /area/station/security/prison)
