@@ -1,70 +1,3 @@
-<<<<<<< HEAD
-//////////////////////////
-/////Initial Building/////
-//////////////////////////
-
-/proc/init_sprite_accessories()
-	//hair
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/hair, GLOB.hairstyles_list, GLOB.hairstyles_male_list, GLOB.hairstyles_female_list)
-	//facial hair
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/facial_hair, GLOB.facial_hairstyles_list, GLOB.facial_hairstyles_male_list, GLOB.facial_hairstyles_female_list)
-	//underwear
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/underwear, GLOB.underwear_list, GLOB.underwear_m, GLOB.underwear_f)
-	//undershirt
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/undershirt, GLOB.undershirt_list, GLOB.undershirt_m, GLOB.undershirt_f)
-	//socks
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/socks, GLOB.socks_list)
-	//NOVA EDIT REMOVAL BEGIN - CUSTOMIZATION
-	/*
-	//bodypart accessories (blizzard intensifies)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/body_markings, GLOB.body_markings_list)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/human, GLOB.tails_list_human, add_blank = TRUE)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/lizard, GLOB.tails_list_lizard, add_blank = TRUE)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/monkey, GLOB.tails_list_monkey, add_blank = FALSE)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/snouts, GLOB.snouts_list)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/horns,GLOB.horns_list)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/ears, GLOB.ears_list)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/wings, GLOB.wings_list)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/wings_open, GLOB.wings_open_list)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/frills, GLOB.frills_list)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/spines, GLOB.spines_list)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/tail_spines, GLOB.tail_spines_list)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/legs, GLOB.legs_list)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/caps, GLOB.caps_list)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/moth_wings, GLOB.moth_wings_list)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/moth_antennae, GLOB.moth_antennae_list)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/moth_markings, GLOB.moth_markings_list)
-*/ //NOVA EDIT REMOVAL END
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/pod_hair, GLOB.pod_hair_list)
-	// NOVA EDIT ADDITION START
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/bra, GLOB.bra_list, GLOB.bra_m, GLOB.bra_f)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/monkey, GLOB.tails_list_monkey, add_blank = TRUE)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/caps, GLOB.caps_list, add_blank = TRUE)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/wings/moth, GLOB.moth_wings_list)
-
-	//Scream types
-	for(var/spath in subtypesof(/datum/scream_type))
-		var/datum/scream_type/S = new spath()
-		GLOB.scream_types[S.name] = spath
-	sort_list(GLOB.scream_types, GLOBAL_PROC_REF(cmp_typepaths_asc))
-
-	//Laugh types
-	for(var/spath in subtypesof(/datum/laugh_type))
-		var/datum/laugh_type/L = new spath()
-		GLOB.laugh_types[L.name] = spath
-	sort_list(GLOB.laugh_types, GLOBAL_PROC_REF(cmp_typepaths_asc))
-	// NOVA EDIT ADDITION END
-
-	//THE FLUFFY FRONTIER EDIT ADDITION BEGIN - Blooper
-	for(var/sound_blooper_path in subtypesof(/datum/blooper))
-		var/datum/blooper/B = new sound_blooper_path()
-		GLOB.blooper_list[B.id] = sound_blooper_path
-		if(B.allow_random)
-			GLOB.blooper_random_list[B.id] = sound_blooper_path
-	//THE FLUFFY FRONTIER EDIT END
-
-=======
->>>>>>> d8bb4883f79 ([MIRROR] Moves "sprite accessories" (e.g. Hair, Undergarments, Mutant Bits) from `GLOB` to a datasystem (#2278))
 /// Inits GLOB.surgeries
 /proc/init_surgeries()
 	var/surgeries = list()
@@ -82,6 +15,7 @@
 	init_nova_stack_recipes() //NOVA EDIT ADDITION - More sheet recipes
 	init_crafting_recipes()
 	init_crafting_recipes_atoms()
+	init_blooper_prefs() // FLUFFY FRONTIER ADDITION - Blooper
 
 /// Inits crafting recipe lists
 /proc/init_crafting_recipes(list/crafting_recipes)
