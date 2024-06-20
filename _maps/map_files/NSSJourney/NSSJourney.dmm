@@ -3127,6 +3127,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/light/small/directional/east,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/maintenance/fore/lesser)
 "azZ" = (
@@ -8659,6 +8660,11 @@
 	},
 /turf/open/floor/carpet,
 /area/station/command/meeting_room)
+"baA" = (
+/obj/effect/turf_decal/trimline/dark_blue/filled/line,
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron/dark,
+/area/station/security/brig)
 "baC" = (
 /obj/structure/closet/emcloset,
 /obj/machinery/camera/directional/east{
@@ -30717,6 +30723,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/machinery/autolathe,
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/break_room)
 "eCU" = (
@@ -32037,8 +32044,14 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/obj/machinery/computer/security{
-	dir = 8
+/obj/structure/closet/secure_closet/blueshield,
+/obj/item/clothing/under/rank/centcom/officer_skirt/replica{
+	desc = "A cheaper, unarmored CentCom skirtleneck meant for everyday wear. Somewhat of a status symbol.";
+	name = "\improper Civilian CentCom skirtleneck"
+	},
+/obj/item/clothing/under/rank/centcom/officer/replica{
+	desc = "A cheaper, unarmored CentCom turtleneck meant for everyday wear. Somewhat of a status symbol.";
+	name = "\improper Civilian CentCom turtleneck"
 	},
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/nt_rep)
@@ -34059,8 +34072,8 @@
 /obj/effect/mapping_helpers/requests_console/ore_update,
 /obj/effect/mapping_helpers/requests_console/assistance,
 /obj/effect/mapping_helpers/requests_console/information,
-/obj/structure/frame/machine,
 /obj/effect/turf_decal/delivery,
+/obj/machinery/autolathe,
 /turf/open/floor/iron/checker,
 /area/station/science/lab)
 "gOV" = (
@@ -34487,7 +34500,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/item/kirbyplants/random,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/nt_rep)
 "hbT" = (
@@ -36730,7 +36742,6 @@
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 1
 	},
-/obj/machinery/light/directional/north,
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
@@ -39603,6 +39614,7 @@
 /obj/structure/table,
 /obj/item/storage/box/prisoner,
 /obj/item/clothing/suit/jacket/straight_jacket,
+/obj/item/shears,
 /turf/open/floor/iron/dark,
 /area/station/security/execution)
 "ktt" = (
@@ -40637,6 +40649,7 @@
 "kYi" = (
 /obj/structure/chair/sofa/corp/right,
 /obj/machinery/computer/security/telescreen/entertainment/directional/west,
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/iron/white/herringbone,
 /area/station/service/bar)
 "kYu" = (
@@ -41815,7 +41828,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/obj/structure/table/wood,
+/obj/machinery/computer/records/security{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/nt_rep)
 "lOQ" = (
@@ -42592,7 +42607,6 @@
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 1
 	},
-/obj/machinery/light/directional/north,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -43502,7 +43516,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/machinery/computer/records/security{
+/obj/machinery/computer/security{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -45293,6 +45307,7 @@
 	},
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/machinery/door/firedoor/heavy,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
 /area/station/engineering/break_room)
@@ -45617,7 +45632,7 @@
 	dir = 6
 	},
 /obj/effect/turf_decal/delivery,
-/obj/structure/frame/machine,
+/obj/machinery/flatpacker,
 /turf/open/floor/iron/checker,
 /area/station/science/lab)
 "ojX" = (
@@ -49364,10 +49379,10 @@
 /turf/open/floor/iron/dark,
 /area/station/science/cytology)
 "qLf" = (
-/obj/structure/filingcabinet/medical,
 /obj/structure/cable,
 /obj/machinery/light/directional/east,
 /obj/machinery/light_switch/directional/east,
+/obj/item/kirbyplants/random,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/nt_rep)
 "qLx" = (
@@ -50877,14 +50892,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/station/commons/storage/emergency/port)
-"rHv" = (
-/obj/machinery/camera/directional/west{
-	c_tag = "Bar West"
-	},
-/obj/structure/table/reinforced/plastitaniumglass,
-/obj/effect/landmark/start/hangover,
-/turf/open/floor/iron/white/herringbone,
-/area/station/service/bar)
 "rHB" = (
 /obj/effect/turf_decal/tile/brown{
 	dir = 4
@@ -51583,6 +51590,7 @@
 /obj/structure/railing{
 	dir = 6
 	},
+/obj/machinery/flatpacker,
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/break_room)
 "sfV" = (
@@ -56541,12 +56549,6 @@
 	},
 /turf/open/floor/iron/freezer,
 /area/station/security/prison/shower)
-"vwM" = (
-/obj/effect/turf_decal/trimline/dark_blue/filled/line,
-/obj/machinery/light/directional/south,
-/obj/machinery/door/firedoor,
-/turf/open/floor/iron/dark,
-/area/station/security/brig)
 "vwX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -58908,15 +58910,6 @@
 "wWl" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
-	},
-/obj/structure/closet/secure_closet/blueshield,
-/obj/item/clothing/under/rank/centcom/officer/replica{
-	desc = "A cheaper, unarmored CentCom turtleneck meant for everyday wear. Somewhat of a status symbol.";
-	name = "\improper Civilian CentCom turtleneck"
-	},
-/obj/item/clothing/under/rank/centcom/officer_skirt/replica{
-	desc = "A cheaper, unarmored CentCom skirtleneck meant for everyday wear. Somewhat of a status symbol.";
-	name = "\improper Civilian CentCom skirtleneck"
 	},
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/nt_rep)
@@ -83602,7 +83595,7 @@ hKh
 dmZ
 dmZ
 vjN
-qEg
+mye
 cpU
 ukX
 rda
@@ -83859,7 +83852,7 @@ mLd
 qXC
 jwx
 adR
-vZU
+dZD
 cpU
 kNV
 rda
@@ -86174,8 +86167,8 @@ tmO
 adR
 rwD
 scV
-ukX
-wLj
+baA
+rda
 for
 tAx
 qUx
@@ -86433,7 +86426,7 @@ mnw
 dWc
 wQt
 rda
-wLj
+rda
 wLj
 wLj
 rda
@@ -90286,7 +90279,7 @@ noz
 oau
 hDJ
 dWc
-vwM
+wQt
 brA
 brA
 jBB
@@ -94692,7 +94685,7 @@ xmk
 aOw
 euK
 kYi
-rHv
+gqM
 amX
 euK
 fMI
