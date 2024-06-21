@@ -122,10 +122,13 @@ GLOBAL_LIST_INIT(nova_leather_belt_recipes, list(
 	new/datum/stack_recipe("gear harness", /obj/item/clothing/under/misc/nova/gear_harness, 6, category = CAT_CLOTHING),
 	new/datum/stack_recipe("ammo pouch", /obj/item/storage/pouch/ammo, 4, category = CAT_CONTAINERS),
 	new/datum/stack_recipe("cowboy belt (thigh holster)", /obj/item/storage/belt/holster/cowboy, 3, crafting_flags = NONE, category = CAT_CONTAINERS),
+))
+
+/obj/item/stack/sheet/leather/get_main_recipes()
 	. = ..()
 	. += GLOB.nova_leather_recipes
 	add_recipes_to_sublist(., "belts", GLOB.nova_leather_belt_recipes)
-))
+
 // Titanium
 
 GLOBAL_LIST_INIT(nova_titanium_recipes, list(
