@@ -125,7 +125,7 @@ GLOBAL_LIST_INIT(nova_leather_belt_recipes, list(
 	. = ..()
 	. += GLOB.nova_leather_recipes
 	add_recipes_to_sublist(., "belts", GLOB.nova_leather_belt_recipes)
-
+))
 // Titanium
 
 GLOBAL_LIST_INIT(nova_titanium_recipes, list(
