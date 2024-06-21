@@ -1080,3 +1080,48 @@
   vinylspiders:
   - bugfix: the optional admin rainbow sparks (from item deletion) will no longer
       set things on fire
+2024-06-21:
+  ArcaneMusic:
+  - qol: Vending machines now give audio feedback when you restock a vending refill
+      and get a payout.
+  - qol: The Restock tracker NTOS app for tracking vending machine contents now works
+      on all consoles, and comes pre-installed on the cargochat cargo computers.
+  - balance: Vending machines now offer a bit more credits when missing contents at
+      the start of a round after getting restocked.
+  BeagleGaming1:
+  - rscadd: Added disks for accelerator modkits and crusher trophies to the bitrunning
+      vendor
+  FearfulFurnishing:
+  - bugfix: fixes Ashwalkers not being able to stabilize legion cores at there tendril.
+      Made message for using a stabilized core on tendril more clear.
+  GPeckman:
+  - bugfix: When on 'stream' mode, the cleaning spray from a bottle of space cleaner
+      should no longer be blocked by just about everything.
+  JackEnoff:
+  - bugfix: Repurposed Glands (Adrenals) now show their correct duration and chemical
+      cost in its description.
+  MTandi:
+  - bugfix: Fixed new compressor UI
+  Rex9001:
+  - bugfix: lunatics now get their hud properly
+  - bugfix: lunatics now get objectives
+  - qol: ascended moon heretics are now labelled as ringleaders and are easier for
+      lunatics to spot
+  SmArtKar:
+  - image: Resprited all jetpacks
+  SyncIt21:
+  - bugfix: breaking an APC will depower the area
+  grungussuss:
+  - bugfix: Welding protection module for MODsuits protect flash-sensitives from welding
+      arcs
+  mc-oofert:
+  - bugfix: fixed wrong access on one door on wawastation and also made lights on
+      elevators not break (On Wawastation)
+  - rscadd: every engineering lobby starts with a flatpacked flatpacker and multitool
+  - rscdel: CE locker no longer spawns with a flatpack
+  - rscadd: a hot dog vending machine has arrived at the ghost cafe
+  necromanceranne:
+  - rscadd: Replaces the Particle Acceleration Rifle with the Event Horizon anti-existential
+      beam rifle. It shoots black holes. You can make this in-game. That's right,
+      YOU!
+  - balance: Only one vortex anomaly can be made in a round.
