@@ -19,9 +19,8 @@ GLOBAL_LIST_INIT(custom_objectives, init_custom_objectives())
 /proc/init_custom_objectives()
 	. = list()
 
-	var/list/antags = GLOB.antags_to_names
 	for(var/antag_name as anything in GLOB.antags_to_names)
-		var/antag_path = antags[antag_name]
+		var/antag_path = GLOB.antags_to_names[antag_name]
 		.[antag_path] = list()
 
 	var/config_text = file2text(CUSTOM_OBJECTIVES_CONFIG_PATH)
@@ -45,7 +44,7 @@ GLOBAL_LIST_INIT(custom_objectives, init_custom_objectives())
 	for(var/antag_path as anything in GLOB.custom_objectives)
 		if(istype(src, antag_path))
 			custom_objs = GLOB.custom_objectives[antag_path]
-	if(custom_objs == null || length(custom_objs) == 0)
+	if(isnull(custom_objs) || !length(custom_objs))
 		return
 	var/list/objs2add = custom_objs.Copy()
 	while(objs2add.len > objectives.len)
@@ -62,7 +61,7 @@ GLOBAL_LIST_INIT(custom_objectives, init_custom_objectives())
 	for(var/antag_path as anything in GLOB.custom_objectives)
 		if(istype(src, antag_path))
 			custom_objs = GLOB.custom_objectives[antag_path]
-	if(custom_objs == null || length(custom_objs) == 0)
+	if(isnull(custom_objs) || !length(custom_objs))
 		return
 	var/list/objs2add = custom_objs.Copy()
 	while(objs2add.len > objectives.len)
