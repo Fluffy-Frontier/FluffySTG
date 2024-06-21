@@ -1088,20 +1088,41 @@
       on all consoles, and comes pre-installed on the cargochat cargo computers.
   - balance: Vending machines now offer a bit more credits when missing contents at
       the start of a round after getting restocked.
+  AyIong:
+  - qol: Fullscreen mode can now be toggled by pressing F11 or the button at the top
+      right
   BeagleGaming1:
   - rscadd: Added disks for accelerator modkits and crusher trophies to the bitrunning
       vendor
+  Bisar:
+  - bugfix: Felinids no longer remember losing their tail and regaining it roundstart;
+      you need to do it during the round to get that mood event.
+  EdgeLordExe:
+  - rscadd: Adds Feast of Owls ritual to heretic which allows one to forsake their
+      ascension in exchange for immediate power.
   FearfulFurnishing:
   - bugfix: fixes Ashwalkers not being able to stabilize legion cores at there tendril.
       Made message for using a stabilized core on tendril more clear.
+  FlufflesTheDog:
+  - bugfix: sanitization on citation pda alerts
   GPeckman:
   - bugfix: When on 'stream' mode, the cleaning spray from a bottle of space cleaner
       should no longer be blocked by just about everything.
   JackEnoff:
   - bugfix: Repurposed Glands (Adrenals) now show their correct duration and chemical
       cost in its description.
+  JupiterJaeden:
+  - bugfix: Conga lines of more than 2 no longer break when going up and down stairs.
   MTandi:
   - bugfix: Fixed new compressor UI
+  - balance: Added ordnance to extra access of geneticists and roboticists
+  - balance: Reduced parts scanning tests' machine count to 4 from 8
+  - balance: Reduced augmented organs scanning tests mob count to 1 from 2
+  - balance: Reduced equipped mech scanning test count to 1 from 2
+  - balance: Added polycrystal option to bluespace crystal scan test
+  - bugfix: Allowed NTNet relay in away circuit imprinter for NT Frontier app
+  - qol: NT Frontier app installed on RD and Scientists` PDAs by default
+  - qol: Updated NT Frontier app to be more user-friendly
   Rex9001:
   - bugfix: lunatics now get their hud properly
   - bugfix: lunatics now get objectives
@@ -1111,6 +1132,9 @@
   - image: Resprited all jetpacks
   SyncIt21:
   - bugfix: breaking an APC will depower the area
+  Thunder12345:
+  - rscdel: Locker staffs have been removed from the Ragin' Mages deathmatch lootcrate
+      pool.
   grungussuss:
   - bugfix: Welding protection module for MODsuits protect flash-sensitives from welding
       arcs
@@ -1120,6 +1144,7 @@
   - rscadd: every engineering lobby starts with a flatpacked flatpacker and multitool
   - rscdel: CE locker no longer spawns with a flatpack
   - rscadd: a hot dog vending machine has arrived at the ghost cafe
+  - bugfix: borg factory gives you your preference borg name
   necromanceranne:
   - rscadd: Replaces the Particle Acceleration Rifle with the Event Horizon anti-existential
       beam rifle. It shoots black holes. You can make this in-game. That's right,
