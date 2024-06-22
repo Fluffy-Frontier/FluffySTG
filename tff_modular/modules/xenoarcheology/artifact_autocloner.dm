@@ -74,7 +74,6 @@
 		/mob/living/basic/sheep, \
 		/mob/living/basic/alien/maid, \
 		/mob/living/carbon/human/species/monkey, \
-		/mob/living/simple_animal/pet/gondola, \
 		/mob/living/basic/pet/cat/fennec \
 		)
 
