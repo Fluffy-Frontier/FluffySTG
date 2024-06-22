@@ -1150,3 +1150,37 @@
       beam rifle. It shoots black holes. You can make this in-game. That's right,
       YOU!
   - balance: Only one vortex anomaly can be made in a round.
+2024-06-22:
+  00-Steven:
+  - refactor: Updated cards/ids to use the proper item interaction system instead
+      of attackby, please report any issues.
+  - bugfix: You can no longer recolour an ID at any point if you open the menu but
+      then don't select anything until later.
+  - bugfix: ID cards can be recoloured using crayons/spraycans again.
+  - qol: Prisoner IDs show genpop sentence time in hours/minutes/seconds instead of
+      seconds.
+  - qol: Prisoner IDs have genpop usage tips in their examine.
+  Bisar:
+  - rscadd: Ashwalkers are now better at riding, taming animals, and fishing.
+  - code_imp: Behavior for the settler trait has been partially atomized into several
+      traits instead.
+  MTandi:
+  - image: New gibber sprite
+  - image: New food/slime processor sprite
+  Mitsukiyo:
+  - qol: Added the cowboy belt holster to leather sheet recipes
+  Mothblocks:
+  - qol: Dramatically improves delete character UI and UX.
+  Rhials:
+  - balance: DRAGnets now come with a beacon they can be synced to, which will set
+      the destination for the snare round's teleport ability.
+  Zergspower:
+  - code_imp: Drone text now explicitly states not to touch the SM and removes vagueness
+      from the text in other areas
+  kittysmooch:
+  - image: 'Three new GAGS ready clothes are ready in the Clothesmate and loadouts.
+
+      :cl:'
+  vinylspiders:
+  - rscdel: removed the martyr escape objective from the antag escape objective pool
+      (aka "Die a glorious death!")
