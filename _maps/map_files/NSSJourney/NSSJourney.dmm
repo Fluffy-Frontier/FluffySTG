@@ -38766,14 +38766,6 @@
 /turf/open/floor/iron,
 /area/station/science/xenobiology)
 "jRt" = (
-/obj/item/screwdriver{
-	pixel_y = 10
-	},
-/obj/item/radio/off,
-/obj/machinery/light_switch/directional/west{
-	pixel_x = 0;
-	pixel_y = -39
-	},
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
@@ -38791,6 +38783,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
+/obj/machinery/light_switch/directional/west,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/engineering)
 "jRA" = (
@@ -53443,6 +53436,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/neutral,
+/obj/item/screwdriver{
+	pixel_y = 10
+	},
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/engineering)
 "tve" = (
@@ -60554,6 +60550,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/neutral,
+/obj/item/radio/off,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/engineering)
 "ydA" = (
