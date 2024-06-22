@@ -75,7 +75,7 @@
 	recommended_species = list(SPECIES_MAMMAL, SPECIES_HUMAN, SPECIES_SYNTH, SPECIES_TAJARAN, SPECIES_HUMANOID, SPECIES_GHOUL)
 
 /datum/sprite_accessory/tails/mammal/teshari
-	recommended_species = list(SPECIES_TESHARI, SPECIES_TESHARI_ALT) //FLUFFY FRONTIER EDIT - TESHARI_REBORN
+	recommended_species = list(SPECIES_TESHARI)
 
 /datum/sprite_accessory/tails/mammal/wagging/vulpkanin
 	recommended_species = list(SPECIES_MAMMAL, SPECIES_HUMAN, SPECIES_SYNTH, SPECIES_VULP, SPECIES_HUMANOID, SPECIES_GHOUL)

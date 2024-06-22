@@ -33,3 +33,11 @@
 /datum/loadout_item/toys/special/yulia
 	name = "Yulia Plushie"
 	item_path = /obj/item/toy/plush/tff/yulia
+
+/datum/loadout_item/toys/special/junnia
+	name = "Junnia Plushie"
+	item_path = /obj/item/toy/plush/tff/soulmates/junnia
+
+/datum/loadout_item/toys/special/howe
+	name = "Howe Plushie"
+	item_path = /obj/item/toy/plush/tff/soulmates/howe

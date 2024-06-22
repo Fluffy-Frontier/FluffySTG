@@ -6,14 +6,12 @@
 	name = "Teshari"
 	id = SPECIES_TESHARI
 	no_gender_shaping = TRUE // Female uniform shaping breaks Teshari worn sprites, so this is disabled. This will not affect anything else in regards to gender however.
-	eyes_icon = 'modular_nova/modules/organs/icons/teshari_eyes.dmi'
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,
 		TRAIT_LITERATE,
 		TRAIT_MUTANT_COLORS,
 		TRAIT_NO_UNDERWEAR,
-		TRAIT_HAS_MARKINGS,
 	)
 	digitigrade_customization = DIGITIGRADE_NEVER
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
@@ -60,17 +58,6 @@
 /obj/item/organ/internal/tongue/teshari
 	liked_foodtypes = MEAT | GORE | RAW
 	disliked_foodtypes = GROSS | GRAIN
-
-/datum/species/teshari/random_name(gender, unique, lastname)
-	if(unique)
-		return random_unique_teshari_name()
-
-	var/randname = teshari_name()
-
-	if(lastname)
-		randname += " [lastname]"
-
-	return randname
 
 /datum/species/teshari/prepare_human_for_preview(mob/living/carbon/human/tesh)
 	var/base_color = "#c0965f"

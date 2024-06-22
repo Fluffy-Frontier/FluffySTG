@@ -1,12 +1,38 @@
+/datum/antagonist/changeling
+	dna_max = 8 // changed from 6
+	genetic_points = 15 // changed from 10
+	total_genetic_points = 15 // changed from 10
+	/// The time that the horror form died.
+	var/true_form_death
+	/// Any quirks that we don't want to be mimicked when transforming
+	var/list/mimicable_quirks_list = list(
+		"Bad Touch",
+		"Sensitive Snout",
+		"Ash aspect (Emotes)",
+		"Canidae Traits",
+		"Excitable!",
+		"Feline Traits",
+		"Floral aspect (Emotes)",
+		"Heterochromatic",
+		"Hydra Heads",
+		"Oversized",
+		"Personal Space",
+		"Pseudobulbar Affect",
+		"Shifty Eyes",
+		"Smooth-Headed",
+		"Sparkle aspect (Emotes)",
+		"Water aspect (Emotes)",
+		"Webbing aspect (Emotes)",
+		"Friendly",
+		"Avian Traits",
+	)
+
 /datum/antagonist/changeling/forge_objectives()
 	return
-
 
 /datum/changeling_profile
 	/// The bra worn by the profile source
 	var/bra
-	/// The color of the underwear used by the profile source
-	var/underwear_color
 	/// The color of the undershirt used by the profile source
 	var/undershirt_color
 	/// The color of the socks used by the profile source
@@ -19,13 +45,6 @@
 	var/eye_color_right
 	/// Does the profile source's eyes glow
 	var/emissive_eyes
-	/// The profile sorce's gradient styles
-	var/list/grad_style = list("None", "None")
-	/// The colors for the profile source's gradients
-	var/list/grad_color = list(null, null)
-
-	/// The physique used by the profile source
-	var/physique
 	/// Profile source digi leg icons
 	var/list/worn_icon_digi_list = list()
 	/// profile source monkey icons
@@ -40,7 +59,3 @@
 	var/scream_type
 	/// The profile source laugh type
 	var/laugh_type
-	/// The profile source's age
-	var/age
-	/// The quirks used by the profile source
-	var/list/quirks = list()

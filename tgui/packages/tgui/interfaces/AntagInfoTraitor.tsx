@@ -1,5 +1,4 @@
 import { BooleanLike } from 'common/react';
-import { multiline } from 'common/string';
 
 import { useBackend } from '../backend';
 import { BlockQuote, Button, Dimmer, Section, Stack } from '../components';
@@ -50,15 +49,14 @@ const IntroductionSection = (props) => {
         <Stack.Item fontSize="25px">{intro}</Stack.Item>
         <Stack.Item grow>
           <ObjectivePrintout objectives={objectives} />
-        </Stack.Item>
-        {/* NOVA EDIT ADDITION START */}
-        <Stack.Item grow>
           {/* NOVA EDIT ADDITION START */}
-          <Stack.Item>
-            <Rules />
+          <Stack.Item grow>
+            <Stack.Item>
+              <Rules />
+            </Stack.Item>
           </Stack.Item>
+          {/* NOVA EDIT ADDITION END */}
         </Stack.Item>
-        {/* NOVA EDIT ADDITION END */}
       </Stack>
     </Section>
   );
@@ -75,7 +73,7 @@ const EmployerSection = (props) => {
       buttons={
         <Button
           icon="hammer"
-          tooltip={multiline`
+          tooltip={`
             This is a gameplay suggestion for bored traitors.
             You don't have to follow it, unless you want some
             ideas for how to spend the round.`}

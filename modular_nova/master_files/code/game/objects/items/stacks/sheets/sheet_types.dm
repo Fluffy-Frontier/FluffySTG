@@ -85,7 +85,7 @@ GLOBAL_LIST_INIT(nova_wood_recipes, list(
 	new/datum/stack_recipe("ration shelf", /obj/machinery/smartfridge/wooden/ration_shelf, 10, time = 2 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND, category = CAT_STRUCTURE),
 	new/datum/stack_recipe("storage barrel", /obj/structure/closet/crate/wooden/storage_barrel, 4, time = 2 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND, category = CAT_STRUCTURE),
 	new/datum/stack_recipe("worm barrel", /obj/structure/wormfarm, 5, time = 2 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND, category = CAT_TOOLS),
-	new/datum/stack_recipe("gutlunch trough", /obj/structure/ore_container/gutlunch_trough, 5, time = 2 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND, category = CAT_STRUCTURE),
+	new/datum/stack_recipe("gutlunch trough", /obj/structure/ore_container/food_trough/gutlunch_trough, 5, time = 2 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND, category = CAT_STRUCTURE),
 	new/datum/stack_recipe("sturdy wooden fence", /obj/structure/railing/wooden_fencing, 5, time = 2 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND, category = CAT_STRUCTURE),
 	new/datum/stack_recipe("sturdy wooden fence gate", /obj/structure/railing/wooden_fencing/gate, 5, time = 2 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND, category = CAT_STRUCTURE),
 	new/datum/stack_recipe("large wooden gate", /obj/structure/mineral_door/wood/large_gate, 10, time = 5 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND, category = CAT_STRUCTURE),
@@ -121,6 +121,7 @@ GLOBAL_LIST_INIT(nova_leather_belt_recipes, list(
 	new/datum/stack_recipe("medical bandolier", /obj/item/storage/belt/medbandolier, 5, category = CAT_CONTAINERS),
 	new/datum/stack_recipe("gear harness", /obj/item/clothing/under/misc/nova/gear_harness, 6, category = CAT_CLOTHING),
 	new/datum/stack_recipe("ammo pouch", /obj/item/storage/pouch/ammo, 4, category = CAT_CONTAINERS),
+	new/datum/stack_recipe("cowboy belt (thigh holster)", /obj/item/storage/belt/holster/cowboy, 3, crafting_flags = NONE, category = CAT_CONTAINERS),
 ))
 
 /obj/item/stack/sheet/leather/get_main_recipes()

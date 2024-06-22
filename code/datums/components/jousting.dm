@@ -44,7 +44,7 @@
 	RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
 	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(on_equip))
 	RegisterSignal(parent, COMSIG_ITEM_DROPPED, PROC_REF(on_drop))
-	RegisterSignal(parent, COMSIG_ITEM_POST_ATTACK, PROC_REF(on_successful_attack))
+	RegisterSignal(parent, COMSIG_ITEM_AFTERATTACK, PROC_REF(on_successful_attack))
 	RegisterSignal(parent, COMSIG_TRANSFORMING_ON_TRANSFORM, PROC_REF(on_transform))
 
 /datum/component/jousting/UnregisterFromParent()
@@ -53,7 +53,7 @@
 		COMSIG_ATOM_EXAMINE,
 		COMSIG_ITEM_EQUIPPED,
 		COMSIG_ITEM_DROPPED,
-		COMSIG_ITEM_POST_ATTACK,
+		COMSIG_ITEM_AFTERATTACK,
 		COMSIG_TRANSFORMING_ON_TRANSFORM,
 	))
 
@@ -115,6 +115,7 @@
 			target.Paralyze(knockdown_time)
 		user.visible_message(span_danger("[msg]!"))
 
+		return usable_charge // NOVA EDIT ADDITION - Baton jousting
 /**
  * Called when a mob moves.
  * Handles checking their direction, changing it if they turned,
