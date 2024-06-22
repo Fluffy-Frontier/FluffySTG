@@ -8325,11 +8325,6 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/north,
-/obj/structure/table,
-/obj/machinery/fax{
-	fax_name = "Service Hallway";
-	name = "Service Fax Machine"
-	},
 /turf/open/floor/iron/smooth_large,
 /area/station/hallway/secondary/service)
 "aMO" = (
@@ -8570,9 +8565,13 @@
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen)
 "aNP" = (
-/obj/machinery/modular_computer/preset/cargochat/service,
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 5
+	},
+/obj/structure/table,
+/obj/machinery/fax{
+	fax_name = "Service Hallway";
+	name = "Service Fax Machine"
 	},
 /turf/open/floor/wood,
 /area/station/hallway/secondary/service)
@@ -10337,12 +10336,13 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/window/reinforced/spawner/directional/south,
-/obj/effect/turf_decal/trimline/brown/filled/end,
-/obj/machinery/computer/department_orders/medical{
+/obj/machinery/modular_computer/preset/cargochat/medical{
 	dir = 8
 	},
-/turf/open/floor/iron,
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 4
+	},
+/turf/open/floor/iron/white,
 /area/station/medical/medbay/aft)
 "aUM" = (
 /obj/machinery/camera/directional/east{
@@ -25238,6 +25238,7 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
+/obj/effect/landmark/start/telecomms_specialist,
 /turf/open/floor/iron,
 /area/station/tcommsat/computer)
 "bWu" = (
@@ -26411,11 +26412,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
-"cbk" = (
-/obj/machinery/firealarm/directional/east,
-/obj/effect/turf_decal/tile/yellow,
-/turf/open/floor/iron,
-/area/station/hallway/primary/aft)
 "cbl" = (
 /obj/machinery/camera/directional/west{
 	c_tag = "Telecomms Server Room";
@@ -34309,7 +34305,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/mob/living/simple_animal/pet/poppy,
+/mob/living/basic/pet/poppy,
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
@@ -36145,6 +36141,10 @@
 /obj/structure/mineral_door/iron,
 /turf/open/floor/plating,
 /area/station/security/prison)
+"fyz" = (
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/iron,
+/area/station/hallway/primary/aft)
 "fyP" = (
 /obj/machinery/camera/directional/south{
 	c_tag = "Fore Primary Hallway East"
@@ -38033,17 +38033,12 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/window/reinforced/spawner/directional/north{
-	layer = 2.9
-	},
-/obj/effect/turf_decal/trimline/brown/filled/end{
-	dir = 1
-	},
-/obj/machinery/modular_computer/preset/cargochat/medical{
-	dir = 8
-	},
 /obj/machinery/light/directional/east,
-/turf/open/floor/iron,
+/obj/machinery/recharge_station,
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 4
+	},
+/turf/open/floor/iron/white,
 /area/station/medical/medbay/aft)
 "gZS" = (
 /obj/structure/window/spawner/directional/south,
@@ -42927,7 +42922,7 @@
 "kCD" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/turf_decal/stripes/white/line,
-/obj/machinery/computer/department_orders/service,
+/obj/machinery/modular_computer/preset/cargochat/service,
 /turf/open/floor/wood,
 /area/station/hallway/secondary/service)
 "kCI" = (
@@ -43482,7 +43477,7 @@
 	layer = 2.9
 	},
 /obj/effect/turf_decal/tile/brown/full,
-/obj/machinery/computer/department_orders/engineering{
+/obj/machinery/modular_computer/preset/civilian{
 	dir = 8
 	},
 /turf/open/floor/iron/smooth_large,
@@ -45281,7 +45276,6 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/recharge_station,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/aft)
 "mBv" = (
@@ -48562,9 +48556,6 @@
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/security/prison)
 "pjA" = (
-/obj/machinery/modular_computer/preset/civilian{
-	dir = 4
-	},
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
@@ -48573,6 +48564,9 @@
 	},
 /obj/effect/turf_decal/tile/dark{
 	dir = 1
+	},
+/obj/structure/chair/office/light{
+	dir = 8
 	},
 /turf/open/floor/iron/smooth,
 /area/station/engineering/break_room)
@@ -49387,7 +49381,6 @@
 	pixel_x = 7;
 	pixel_y = 7
 	},
-/obj/item/storage/toolbox/mechanical,
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/iron,
 /area/station/science/lab)
@@ -49548,6 +49541,19 @@
 /obj/structure/cable,
 /turf/open/floor/iron/showroomfloor,
 /area/station/hallway/secondary/service)
+"pUg" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/firedoor/heavy,
+/obj/machinery/door/window/left/directional/east{
+	name = "Atmospherics Desk";
+	req_access = list("engineering")
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "atmos";
+	name = "Atmospherics Blast Door"
+	},
+/turf/open/floor/iron,
+/area/station/engineering/break_room)
 "pUi" = (
 /obj/effect/turf_decal/trimline/blue/filled/warning{
 	dir = 1
@@ -49585,9 +49591,8 @@
 /turf/open/floor/iron/smooth_large,
 /area/station/service/hydroponics)
 "pWm" = (
-/obj/machinery/computer/department_orders/science{
-	dir = 1
-	},
+/obj/structure/table/glass,
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/iron,
 /area/station/science/lab)
 "pWp" = (
@@ -54583,10 +54588,8 @@
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/turret_protected/ai_upload)
 "tVr" = (
-/obj/effect/turf_decal/trimline/brown/filled/line{
-	dir = 10
-	},
 /obj/machinery/modular_computer/preset/cargochat/security,
+/obj/effect/turf_decal/trimline/brown/filled/end,
 /turf/open/floor/iron/dark,
 /area/station/security/office)
 "tVs" = (
@@ -57083,13 +57086,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/side,
 /area/station/security/prison/safe)
-"vWv" = (
-/obj/effect/turf_decal/trimline/brown/filled/line{
-	dir = 6
-	},
-/obj/machinery/computer/department_orders/security,
-/turf/open/floor/iron/dark,
-/area/station/security/office)
 "vWE" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
@@ -89472,8 +89468,8 @@ bQg
 bQg
 bQg
 bQg
-bQg
-cbk
+fyz
+bHP
 bDG
 bHP
 cbt
@@ -89730,7 +89726,7 @@ bUE
 bWM
 bXJ
 bMK
-bYH
+pUg
 bYH
 bYH
 bYH
@@ -91701,7 +91697,7 @@ iVu
 iVu
 sPH
 abo
-vWv
+iVu
 iVu
 egw
 oIB

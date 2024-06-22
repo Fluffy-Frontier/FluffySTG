@@ -41,9 +41,6 @@
 	payday_modifier = 1.5
 	ai_controlled_species = TRUE
 
-/datum/species/monkey/random_name(gender,unique,lastname)
-	return "monkey ([rand(1, 999)])"
-
 /datum/species/monkey/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load)
 	. = ..()
 	passtable_on(human_who_gained_species, SPECIES_TRAIT)
@@ -65,15 +62,7 @@
 	return ..()
 
 /datum/species/monkey/get_scream_sound(mob/living/carbon/human/monkey)
-	return pick(
-		'sound/creatures/monkey/monkey_screech_1.ogg',
-		'sound/creatures/monkey/monkey_screech_2.ogg',
-		'sound/creatures/monkey/monkey_screech_3.ogg',
-		'sound/creatures/monkey/monkey_screech_4.ogg',
-		'sound/creatures/monkey/monkey_screech_5.ogg',
-		'sound/creatures/monkey/monkey_screech_6.ogg',
-		'sound/creatures/monkey/monkey_screech_7.ogg',
-	)
+	return get_sfx(SFX_SCREECH)
 
 /datum/species/monkey/get_physical_attributes()
 	return "Monkeys are slippery, can crawl into vents, and are more dextrous than humans.. but only when stealing things. \

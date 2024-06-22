@@ -75,3 +75,4 @@
 	attack_verb_continuous = list("attacks", "bites", "gnashes at", "hugs")
 	attack_verb_simple = list("attack", "bite", "gnash at", "hug")
 	squeak_override = list('sound/weapons/bite.ogg' = 1,'modular_nova/modules/emotes/sound/voice/feline_purr.ogg' = 1)
+

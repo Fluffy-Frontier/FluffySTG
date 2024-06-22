@@ -72,7 +72,6 @@
 	var/cutter_bare_wound_bonus = CUTTER_WOUND_BONUS
 	tool_behaviour = TOOL_KNIFE
 	toolspeed = 1
-	item_flags = NEEDS_PERMIT //Beepers gets angry if you get caught with this.
 
 /obj/item/knife/razor_claws/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/items/change_drill.ogg', 50, TRUE)
@@ -110,6 +109,7 @@
 	knife_force = ENHANCED_KNIFE_FORCE
 	knife_wound_bonus = ENHANCED_KNIFE_WOUND_BONUS
 	armour_penetration = ENHANCED_KNIFE_ARMOR_PENETRATION //Let's give them some AP for the trouble.
+	item_flags |= NEEDS_PERMIT
 
 	if(tool_behaviour == TOOL_KNIFE)
 		force = knife_force
@@ -350,7 +350,7 @@
 	inhand_icon_state = "razorwire"
 	w_class = WEIGHT_CLASS_BULKY
 	sharpness = SHARP_EDGED
-	force = 18
+	force = 20
 	demolition_mod = 0.25 // This thing sucks at destroying stuff
 	wound_bonus = 10
 	bare_wound_bonus = 20
@@ -359,6 +359,30 @@
 	hitsound = 'sound/weapons/whip.ogg'
 	attack_verb_continuous = list("slashes", "whips", "lashes", "lacerates")
 	attack_verb_simple = list("slash", "whip", "lash", "lacerate")
+	obj_flags = UNIQUE_RENAME | INFINITE_RESKIN
+	uses_advanced_reskins = TRUE
+	unique_reskin = list(
+		"Evil Red" = list(
+			RESKIN_ICON_STATE = "razorwire_weapon",
+			RESKIN_INHAND_STATE = "razorwire"
+		),
+		"Teal I Think?" = list(
+			RESKIN_ICON_STATE = "razorwire_weapon_teal",
+			RESKIN_INHAND_STATE = "razorwire_teal"
+		),
+		"Yellow" = list(
+			RESKIN_ICON_STATE = "razorwire_weapon_yellow",
+			RESKIN_INHAND_STATE = "razorwire_yellow"
+		),
+		"Ourple" = list(
+			RESKIN_ICON_STATE = "razorwire_weapon_ourple",
+			RESKIN_INHAND_STATE = "razorwire_ourple"
+		),
+		"Green" = list(
+			RESKIN_ICON_STATE = "razorwire_weapon_green",
+			RESKIN_INHAND_STATE = "razorwire_green"
+		),
+	)
 
 /obj/item/organ/internal/cyberimp/arm/razorwire
 	name = "razorwire spool implant"

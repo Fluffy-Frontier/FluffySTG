@@ -6138,12 +6138,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/blue/filled/line,
-/obj/machinery/vending/imported{
-	default_price = 0;
-	extended_inventory = 1;
-	extra_price = 0;
-	fair_market_price = 0
-	},
+/obj/machinery/vending/hotdog/museum,
 /turf/open/indestructible/hoteltile{
 	icon_state = "floor"
 	},
@@ -7717,7 +7712,7 @@
 /area/centcom/interlink)
 "hjK" = (
 /obj/machinery/light/directional/north,
-/turf/closed/indestructible/riveted,
+/turf/open/floor/iron/dark,
 /area/centcom/interlink)
 "hkQ" = (
 /obj/effect/turf_decal/siding/wood{
@@ -25290,8 +25285,8 @@ aWb
 dkE
 tvw
 tvw
+tvw
 hjK
-aXG
 aXG
 ubn
 sci
