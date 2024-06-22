@@ -40,7 +40,7 @@ GLOBAL_LIST_INIT(custom_objectives, init_custom_objectives())
 
 /datum/antagonist/proc/add_custom_objectives()
 	var/list/custom_objs = GLOB.custom_objectives[type]
-	var/list/new_objs = custom_objs.Copy()
+	var/list/new_objs = custom_objs?.Copy()
 
 	if(isnull(new_objs) || !length(new_objs))
 		return
@@ -59,7 +59,7 @@ GLOBAL_LIST_INIT(custom_objectives, init_custom_objectives())
 
 /datum/team/proc/add_custom_objectives()
 	var/list/custom_objs = GLOB.custom_objectives[type]
-	var/list/new_objs = custom_objs.Copy()
+	var/list/new_objs = custom_objs?.Copy()
 
 	if(isnull(new_objs) || !length(new_objs))
 		return
