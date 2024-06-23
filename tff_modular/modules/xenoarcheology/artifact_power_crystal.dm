@@ -63,6 +63,7 @@
 		else
 			to_chat(user, "<span class='red'>The [src] is already wired.</span>")
 			return
+	..()
 
 /obj/machinery/power/crystal/attack_hand(mob/user)
 	. = ..()
@@ -78,12 +79,13 @@
 
 /obj/machinery/power/crystal/Destroy()
 	visible_message("<span class='warning'>[src] shatters!</span>")
+	var/turf/mainloc = get_turf(src)
 	var/count_crystal_bs = rand(1,3)
 	for(var/i = 0 to count_crystal_bs - 1)
-		new /obj/item/stack/sheet/bluespace_crystal(get_turf(src))
+		new /obj/item/stack/sheet/bluespace_crystal(mainloc)
 	var/count_shard = rand(1,10)
 	for(var/i = 0 to count_shard - 1)
-		new /obj/item/shard(get_turf(src))
+		new /obj/item/shard(mainloc)
 	return ..()
 
 /obj/machinery/power/crystal/proc/update_crystal()

@@ -55,6 +55,7 @@
 	/obj/machinery/artifact/bluespace_crystal = 100,
 	/obj/machinery/power/crystal = 100,
 	/obj/machinery/auto_cloner = 100,
+	/obj/machinery/replicator = 100,
 	/obj/machinery/artifact = 1000
 	))
 	artifact_id = "[pick("kappa","sigma","antaeres","beta","omicron","iota","epsilon","omega","gamma","delta","tau","alpha","fluffy","zeta")]-[rand(0,9999)]"
