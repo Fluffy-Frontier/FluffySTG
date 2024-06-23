@@ -1,13 +1,13 @@
 /obj/machinery/auto_cloner
 	name = "mysterious pod"
-	desc = "It's full of a viscous liquid, but appears dark and silent."
+	desc = "It's full of a viscous liquid, but appears dark and silent. Also suprisingly lightweight."
 	icon = 'tff_modular/modules/xenoarcheology/icons/artifacts_64x32.dmi'
 	icon_state = "autocloner_off"
 	var/spawn_type
 	var/time_spent_spawning = 0
 	var/time_per_spawn = 0
 	var/last_process= 0
-	anchored = 0
+	anchored = FALSE
 	density = TRUE
 	var/previous_power_state = 0
 
