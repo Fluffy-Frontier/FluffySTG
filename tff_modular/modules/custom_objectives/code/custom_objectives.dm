@@ -24,7 +24,7 @@ GLOBAL_LIST_INIT(custom_objectives, init_custom_objectives())
 		.[antag_path] = list()
 
 	var/config_text = file2text(CUSTOM_OBJECTIVES_CONFIG_PATH)
-	if(isnull(config_text) || !length(config_text))
+	if(!config_text)
 		return
 	var/list/config_json = json_decode(config_text)
 
@@ -39,41 +39,47 @@ GLOBAL_LIST_INIT(custom_objectives, init_custom_objectives())
 		.[antag_path] += custom_obj_to_add
 
 /datum/antagonist/proc/add_custom_objectives()
-	var/list/custom_objs = GLOB.custom_objectives[type]
-	var/list/new_objs = custom_objs?.Copy()
-
-	if(isnull(new_objs) || !length(new_objs))
+	var/list/glob_custom_objs
+	for(var/antag_path as anything in GLOB.custom_objectives)
+		if(istype(src, antag_path))
+			glob_custom_objs = GLOB.custom_objectives[antag_path]
+			break
+	if(isnull(glob_custom_objs) || !length(glob_custom_objs))
 		return
 
-	var/max_objectives = CONFIG_GET(number/traitor_objectives_amount)
+	var/list/custom_objs = glob_custom_objs.Copy()
+	var/custom_objs_amount = min(objectives.len, custom_objs.len)
+	var/list/objs_to_add = list()
+	while(objs_to_add.len < custom_objs_amount)
+		objs_to_add += pick_n_take(custom_objs)
 
-	for(var/i in 1 to max_objectives)
-		if(!length(new_objs))
-			break
-		var/datum/custom_objective/objective = pick_n_take(new_objs)
+	for(var/datum/custom_objective/obj as anything in objs_to_add)
 		var/datum/objective/custom/new_objective = new()
-		new_objective.explanation_text = objective.desc
-		objectives[i] = new_objective
-		if(objective.unique)
-			custom_objs.Remove(objective)
+		new_objective.explanation_text = obj.desc
+		objectives.Insert(1, new_objective)
+		if(obj.unique)
+			glob_custom_objs.Remove(obj)
 
 /datum/team/proc/add_custom_objectives()
-	var/list/custom_objs = GLOB.custom_objectives[type]
-	var/list/new_objs = custom_objs?.Copy()
-
-	if(isnull(new_objs) || !length(new_objs))
+	var/list/glob_custom_objs
+	for(var/antag_path as anything in GLOB.custom_objectives)
+		if(istype(src, antag_path))
+			glob_custom_objs = GLOB.custom_objectives[antag_path]
+			break
+	if(isnull(glob_custom_objs) || !length(glob_custom_objs))
 		return
 
-	var/max_objectives = CONFIG_GET(number/brother_objectives_amount)
+	var/list/custom_objs = glob_custom_objs.Copy()
+	var/custom_objs_amount = min(objectives.len, custom_objs.len)
+	var/list/objs_to_add = list()
+	while(objs_to_add.len < custom_objs_amount)
+		objs_to_add += pick_n_take(custom_objs)
 
-	for(var/i in 1 to max_objectives)
-		if(!length(new_objs))
-			break
-		var/datum/custom_objective/objective = pick_n_take(new_objs)
+	for(var/datum/custom_objective/obj as anything in objs_to_add)
 		var/datum/objective/custom/new_objective = new()
-		new_objective.explanation_text = objective.desc
-		objectives[i] = new_objective
-		if(objective.unique)
-			custom_objs.Remove(objective)
+		new_objective.explanation_text = obj.desc
+		objectives.Insert(1, new_objective)
+		if(obj.unique)
+			glob_custom_objs.Remove(obj)
 
 #undef CUSTOM_OBJECTIVES_CONFIG_PATH
