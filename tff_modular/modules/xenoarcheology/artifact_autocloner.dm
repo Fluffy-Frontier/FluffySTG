@@ -20,62 +20,60 @@
 	time_per_spawn = rand(1200,3600)
 	// 33% chance to spawn nasties
 	if(prob(33))
-		spawn_type = pick(\
-		/mob/living/basic/bear,\
-		/mob/living/basic/carp,\
-		/mob/living/basic/flesh_spider,\
-		/mob/living/basic/eyeball,\
-		/mob/living/basic/migo, \
-		/mob/living/basic/snake, \
-		/mob/living/basic/spider/giant/tank, \
-		/mob/living/basic/wumborian_fugu, \
-		/mob/living/basic/killer_tomato, \
-		/mob/living/basic/slime, \
-		/mob/living/basic/pet/cat/feral, \
-		/mob/living/basic/mining/basilisk, \
-		/mob/living/basic/mining/goliath, \
-		/mob/living/basic/mining/lobstrosity, \
-		/mob/living/basic/mining/watcher, \
-		/mob/living/basic/mega_arachnid, \
-		/mob/living/basic/leaper, \
-		/mob/living/basic/mining/wolf, \
-		/mob/living/basic/mining/ice_whelp, \
-		/mob/living/basic/alien, \
-		/mob/living/basic/alien/drone, \
-		/mob/living/basic/alien/queen, \
-		/mob/living/basic/alien/sentinel, \
-		/mob/living/simple_animal/hostile/illusion, \
-		/mob/living/simple_animal/hostile/mimic, \
-		/mob/living/simple_animal/hostile/retaliate/goose, \
-		/mob/living/basic/living_limb_flesh \
-		)
+		spawn_type = pick(
+		/mob/living/basic/bear,
+		/mob/living/basic/carp,
+		/mob/living/basic/flesh_spider,
+		/mob/living/basic/eyeball,
+		/mob/living/basic/migo,
+		/mob/living/basic/snake,
+		/mob/living/basic/spider/giant/tank,
+		/mob/living/basic/wumborian_fugu,
+		/mob/living/basic/killer_tomato,
+		/mob/living/basic/slime,
+		/mob/living/basic/pet/cat/feral,
+		/mob/living/basic/mining/basilisk,
+		/mob/living/basic/mining/goliath,
+		/mob/living/basic/mining/lobstrosity,
+		/mob/living/basic/mining/watcher,
+		/mob/living/basic/mega_arachnid,
+		/mob/living/basic/leaper,
+		/mob/living/basic/mining/wolf,
+		/mob/living/basic/mining/ice_whelp,
+		/mob/living/basic/alien,
+		/mob/living/basic/alien/drone,
+		/mob/living/basic/alien/queen,
+		/mob/living/basic/alien/sentinel,
+		/mob/living/simple_animal/hostile/illusion,
+		/mob/living/simple_animal/hostile/mimic,
+		/mob/living/simple_animal/hostile/retaliate/goose,
+		/mob/living/basic/living_limb_flesh)
 	else
-		spawn_type = pick(\
-		/mob/living/basic/axolotl,\
-		/mob/living/basic/crab,\
-		/mob/living/basic/bat,\
-		/mob/living/basic/spider/maintenance, \
-		/mob/living/basic/pet/cat, \
-		/mob/living/basic/pet/cat/cak, \
-		/mob/living/basic/pet/dog/pug, \
-		/mob/living/basic/pet/dog/bullterrier, \
-		/mob/living/basic/pet/dog/breaddog, \
-		/mob/living/basic/parrot, \
-		/mob/living/basic/pet/fox, \
-		/mob/living/basic/pet/penguin, \
-		/mob/living/basic/sloth, \
-		/mob/living/basic/seedling, \
-		/mob/living/basic/chicken, \
-		/mob/living/basic/cow, \
-		/mob/living/basic/goat, \
-		/mob/living/basic/deer, \
-		/mob/living/basic/pig, \
-		/mob/living/basic/pony, \
-		/mob/living/basic/sheep, \
-		/mob/living/basic/alien/maid, \
-		/mob/living/carbon/human/species/monkey, \
-		/mob/living/basic/pet/cat/fennec \
-		)
+		spawn_type = pick( // Useful for DNA Bunker, I guess?
+		/mob/living/basic/axolotl,
+		/mob/living/basic/crab, // Look sir! Free crabs!
+		/mob/living/basic/bat,
+		/mob/living/basic/spider/maintenance,
+		/mob/living/basic/pet/cat,
+		/mob/living/basic/pet/cat/cak,
+		/mob/living/basic/pet/dog/pug,
+		/mob/living/basic/pet/dog/bullterrier,
+		/mob/living/basic/pet/dog/breaddog,
+		/mob/living/basic/parrot,
+		/mob/living/basic/pet/fox,
+		/mob/living/basic/pet/penguin,
+		/mob/living/basic/sloth,
+		/mob/living/basic/seedling,
+		/mob/living/basic/chicken,
+		/mob/living/basic/cow,
+		/mob/living/basic/goat,
+		/mob/living/basic/deer,
+		/mob/living/basic/pig,
+		/mob/living/basic/pony,
+		/mob/living/basic/sheep,
+		/mob/living/basic/alien/maid,
+		/mob/living/carbon/human/species/monkey,
+		/mob/living/basic/pet/cat/fennec)
 
 /obj/machinery/auto_cloner/process()
 	if(powered(power_channel))
