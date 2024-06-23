@@ -72,6 +72,18 @@
 	id = "xenoarch_handscanner"
 	build_path = /obj/item/xenoarch/handheld_scanner
 
+/datum/design/xenoarch/tool/stabilizer
+	name = "Xenoarch Artifact Stabilizer"
+	desc = "An outdated tech to stabilize boulders."
+	id = "xenoarch_artifact_stabilizer"
+	build_path = /obj/item/xenoarch/anomaly_stabilizer
+
+/datum/design/xenoarch/tool/core_sampler
+	name = "Core Sampler"
+	desc = "An outdated way to take a sample of rocks and dirt."
+	id = "xenoarch_core_sampler"
+	build_path = /obj/item/xenoarch/core_sampler
+
 /datum/design/xenoarch/tool/advanced
 	materials = list(
 		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT,
@@ -172,6 +184,12 @@
 	id = "artifact_analyzer"
 	build_path = /obj/item/circuitboard/machine/artifact_analyser
 
+/datum/design/board/xenoarch/radiocarbon_spectrometer
+	name = "Machine Design (Radiocarbon spectrometer)"
+	desc = "Allows for the construction of circuit boards used to build a new xenoarch radiocarbon spectrometer."
+	id = "radiocarbon spectrometer"
+	build_path = /obj/item/circuitboard/machine/radiocarbon_spectrometer
+
 /datum/design/board/xenoarch/artifact_scanpad
 	name = "Machine Design (Artifact Scanpad)"
 	desc = "Allows for the construction of circuit boards used to build a new xenoarch artifact scanpad."
@@ -200,6 +218,8 @@
 		"xenoarch_brush",
 		"xenoarch_tapemeasure",
 		"xenoarch_handscanner",
+		"xenoarch_core_sampler",
+		"xenoarch_artifact_stabilizer",
 	)
 
 /datum/techweb_node/xenoarch_storage
@@ -224,6 +244,7 @@
 		"xeno_recoverer",
 		"artifact_analyzer",
 		"artifact_scanpad",
+		"radiocarbon spectrometer",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_1_POINTS)
 

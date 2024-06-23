@@ -18,7 +18,6 @@
 	SwapBodies(5)
 
 /datum/artifact_effect/bodyswap/proc/SwapBodies(add_range)
-	debug_admins("STARTED SWAPPING")
 	var/turf/curr_turf = get_turf(holder)
 	var/list/poor_humans = list()
 	for(var/mob/living/carbon/H in range(range + add_range, curr_turf))

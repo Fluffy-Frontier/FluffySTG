@@ -35,6 +35,8 @@
 	var/approximate_excavation_level = 0
 	var/artifact_find_type
 	var/artifact_id
+	var/artifact_stabilizing_field
+	var/artifact_age
 
 /obj/structure/boulder/examine(mob/user)
 	. = ..()
@@ -42,10 +44,10 @@
 	if(holomark_adv)
 		. += span_notice("The item depth is [target_excavation_level] cm.")
 	. += span_notice("[measured ? "This boulder has been measured. Dug Depth: [excavation_level]." : "This boulder has not been measured."]")
-	. += span_notice("[stabilised ? "This boulder has been stabilised." : "This boulder has not been stabilised."]")
 
 /obj/structure/boulder/Initialize(mapload)
 	. = ..()
+	artifact_age = rand(1000,9000000000)
 	icon_state = "boulder[rand(1, 4)]"
 	target_excavation_level = rand(25, 200)
 	approximate_excavation_level = target_excavation_level - (rand(-15,15))
@@ -58,6 +60,15 @@
 	/obj/machinery/replicator = 100,
 	/obj/machinery/artifact = 1000
 	))
+	artifact_stabilizing_field = pick(list(
+	"Diffracted carbon dioxide laser",
+	"Nitrogen tracer field",
+	"Potassium refrigerant cloud",
+	"Mercury dispersion wave",
+	"Iron wafer conduction field",
+	"Calcium binary deoxidiser",
+	"Chlorine diffusion emissions",
+	"Phoron saturated field"))
 	artifact_id = "[pick("kappa","sigma","antaeres","beta","omicron","iota","epsilon","omega","gamma","delta","tau","alpha","fluffy","zeta")]-[rand(0,9999)]"
 
 /obj/structure/boulder/proc/spawn_artifact()
@@ -209,18 +220,19 @@
 				to_chat(user, span_notice("You brush around the item, but it wasn't revealed... hammer some more."))
 
 	if(istype(attack_item, /obj/item/xenoarch/handheld_recoverer))
-		if (stabilised)
-			to_chat(user, span_notice("The boulder was already stabilised."))
+		to_chat(user, span_warning("The boulder must be stabilized using a different tool."))
+
+	if(istype(attack_item, /obj/item/xenoarch/core_sampler))
+		var/obj/item/xenoarch/core_sampler/sampler = attack_item
+		if(sampler.used)
+			balloon_alert(user, "This sampler was already used!")
 			return
-		to_chat(user, span_notice("You begin slowly stabilising the boulder with your [attack_item]. You better not move during this delicate process."))
-		if(!do_after(user, 15 SECONDS, target = src))
-			to_chat(user, span_warning("Your hands slip and the [attack_item] deals some serious damage to the boulder!"))
-			excavation_level += rand(5,25) // whoops, 2 bad
-			return
-		if(get_stabilised())
-			to_chat(user, span_notice("You successfully stabilise the object inside the boulder!"))
-			return
-		to_chat(user, span_warning("The boulder was already stabilised."))
+		sampler.sample = src
+		sampler.used = TRUE
+		sampler.icon_state = "sampler"
+		to_chat(user, span_notice("You successfully took a sample of [src]. Now take it to the radiocarbon spectrometer."))
+
+
 
 #undef BRUSH_DELETE
 #undef BRUSH_UNCOVER

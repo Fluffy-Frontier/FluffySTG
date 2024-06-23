@@ -91,7 +91,8 @@ GLOBAL_LIST_INIT(valid_primary_effect_types, list(
 	/datum/artifact_effect/stun,
 	/datum/artifact_effect/tesla,
 	/datum/artifact_effect/teleport,
-	/datum/artifact_effect/bodyswap
+	/datum/artifact_effect/bodyswap,
+	/datum/artifact_effect/bodyhorror
 	))
 
 GLOBAL_LIST_INIT(valid_secondary_effect_types, list(
@@ -105,7 +106,8 @@ GLOBAL_LIST_INIT(valid_secondary_effect_types, list(
 	/datum/artifact_effect/light/darkness,
 	/datum/artifact_effect/noise,
 	/datum/artifact_effect/roboheal,
-	/datum/artifact_effect/robohurt
+	/datum/artifact_effect/robohurt,
+	/datum/artifact_effect/disgust
 	))
 
 GLOBAL_LIST_INIT(volatile_reagents, list(
