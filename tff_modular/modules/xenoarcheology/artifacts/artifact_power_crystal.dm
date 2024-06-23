@@ -78,6 +78,8 @@
 	to_chat(user, "<b>You touch [src].</b>")
 
 /obj/machinery/power/crystal/Destroy()
+	if(first_effect)
+		QDEL_NULL(first_effect)
 	visible_message("<span class='warning'>[src] shatters!</span>")
 	var/turf/mainloc = get_turf(src)
 	var/count_crystal_bs = rand(1,3)

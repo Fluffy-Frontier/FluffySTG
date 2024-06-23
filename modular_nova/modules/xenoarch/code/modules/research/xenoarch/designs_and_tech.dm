@@ -166,6 +166,18 @@
 	id = "xeno_recoverer"
 	build_path = /obj/item/circuitboard/machine/xenoarch_machine/xenoarch_recoverer
 
+/datum/design/board/xenoarch/artifact_analyzer
+	name = "Machine Design (Artifact Analyzer)"
+	desc = "Allows for the construction of circuit boards used to build a new xenoarch artifact analyzer."
+	id = "artifact_analyzer"
+	build_path = /obj/item/circuitboard/machine/artifact_analyser
+
+/datum/design/board/xenoarch/artifact_scanpad
+	name = "Machine Design (Artifact Scanpad)"
+	desc = "Allows for the construction of circuit boards used to build a new xenoarch artifact scanpad."
+	id = "artifact_scanpad"
+	build_path = /obj/item/circuitboard/machine/artifact_scanpad
+
 /datum/design/board/xenoarch/digger
 	name = "Machine Design (Xenoarch Digger)"
 	desc = "Allows for the construction of circuit boards used to build a new xenoarch digger."
@@ -210,6 +222,8 @@
 		"xeno_researcher",
 		"xeno_scanner",
 		"xeno_recoverer",
+		"artifact_analyzer",
+		"artifact_scanpad",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_1_POINTS)
 

@@ -101,7 +101,7 @@
 					spawned_obj.name = "[source_material] " +  spawned_obj.name
 				if(length_char(source_material.desc) < MAX_MESSAGE_LEN * 2)
 					if(spawned_obj.desc)
-						spawned_obj.desc += " It is made of [source_material]."
+						spawned_obj.desc += "It is made of [source_material]."
 					else
 						spawned_obj.desc = "It is made of [source_material]."
 				source_material.loc = null
@@ -147,7 +147,7 @@
 		if(index > 0 && index <= construction.len)
 			if(stored_materials.len > spawning_types.len)
 				if(spawning_types.len)
-					visible_message("<span class='notice'>a [pick("light", "dial", "display", "meter", "pad")] on [src]'s front [pick("blinks", "flashes")] [pick("red", "yellow", "blue", "orange", "purple", "green", "white")].</span>")
+					visible_message("<span class='notice'>A [pick("light", "dial", "display", "meter", "pad")] on [src]'s front [pick("blinks", "flashes")] [pick("red", "yellow", "blue", "orange", "purple", "green", "white")].</span>")
 				else
 					visible_message("<span class='notice'>[src]'s front compartment slides shut.</span>")
 

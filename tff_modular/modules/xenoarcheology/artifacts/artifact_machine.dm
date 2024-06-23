@@ -272,13 +272,12 @@
 	if(!do_after(user, scanner.scanning_speed * 5, target = src))
 		to_chat(user, span_warning("You interrupt your scanning."))
 		return
-	var/out = "Anomalous alien device - composed of an unknown alloy.<br><br>"
+	to_chat(user, span_notice("[src] is too big to scan with [scanner]. Use static artifact analyzer."))
+	// var/out = "Anomalous alien device - composed of an unknown alloy.<br><br>"
 
-	if(first_effect)
-		out += first_effect.getDescription()
+	// if(first_effect)
+	// 	out += first_effect.getDescription()
 
-	if(secondary_effect)
-		out += "<br><br>Internal scans indicate ongoing secondary activity<br><br>"
-		out += secondary_effect.getDescription()
-
-	to_chat(user, out)
+	// if(secondary_effect)
+	// 	out += "<br><br>Internal scans indicate ongoing secondary activity<br><br>"
+	// 	out += secondary_effect.getDescription()
