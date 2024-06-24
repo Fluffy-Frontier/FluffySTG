@@ -19,7 +19,8 @@
 /turf/closed/wall/r_wall/rust,
 /area/lavaland/surface/outdoors)
 "k" = (
-/turf/template_noop,
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "l" = (
 /obj/structure/destructible/eldritch_crucible,
@@ -52,10 +53,6 @@
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
-"t" = (
-/obj/structure/punji_sticks/spikes,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "v" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor4-old";
@@ -162,7 +159,7 @@
 
 (1,1,1) = {"
 o
-t
+k
 H
 F
 H
@@ -172,7 +169,7 @@ o
 o
 "}
 (2,1,1) = {"
-t
+k
 H
 F
 F
@@ -191,7 +188,7 @@ h
 h
 F
 F
-t
+k
 "}
 (4,1,1) = {"
 H
@@ -238,7 +235,7 @@ h
 j
 "}
 (8,1,1) = {"
-k
+o
 F
 F
 j
@@ -246,16 +243,16 @@ F
 F
 h
 h
-t
+k
 "}
 (9,1,1) = {"
-k
-k
+o
+o
 F
 F
 F
 H
 j
-t
+k
 o
 "}
