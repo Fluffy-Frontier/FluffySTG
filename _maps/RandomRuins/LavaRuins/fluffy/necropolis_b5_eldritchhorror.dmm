@@ -45,6 +45,7 @@
 	dir = 8
 	},
 /obj/item/organ/internal/tongue/cat/tajaran,
+/obj/effect/glowing_rune,
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "eD" = (
@@ -107,6 +108,7 @@
 	dir = 8
 	},
 /obj/item/organ/internal/tongue/dwarven,
+/obj/effect/glowing_rune,
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "jP" = (
@@ -149,6 +151,7 @@
 /obj/structure/stone_tile/slab/burnt,
 /obj/effect/decal/cleanable/blood/gibs/up,
 /obj/item/organ/internal/tongue/insect,
+/obj/effect/glowing_rune,
 /turf/open/indestructible/boss,
 /area/ruin/unpowered)
 "md" = (
@@ -246,6 +249,7 @@
 	dir = 1
 	},
 /obj/item/organ/internal/tongue/golem,
+/obj/effect/glowing_rune,
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "xc" = (
@@ -287,6 +291,7 @@
 /obj/structure/stone_tile,
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/organ/internal/tongue/human,
+/obj/effect/glowing_rune,
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "Bw" = (
@@ -340,6 +345,7 @@
 	pixel_y = -1
 	},
 /obj/item/organ/internal/tongue/ethereal,
+/obj/effect/glowing_rune,
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "EL" = (
@@ -418,6 +424,10 @@
 	},
 /turf/open/indestructible/boss,
 /area/ruin/unpowered)
+"KF" = (
+/obj/structure/stone_tile/slab/burnt,
+/turf/open/indestructible/necropolis,
+/area/ruin/unpowered)
 "KS" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 8
@@ -450,13 +460,20 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"MM" = (
+/obj/structure/stone_tile/slab/burnt,
+/obj/effect/gibspawner/human,
+/turf/open/indestructible/necropolis,
+/area/ruin/unpowered)
 "MN" = (
 /obj/structure/stone_tile/slab/burnt,
-/turf/closed/mineral/random/high_chance/volcanic,
+/obj/effect/gibspawner,
+/turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "NR" = (
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/obj/effect/glowing_rune,
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/unpowered)
 "Ov" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -501,6 +518,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/gibs,
+/obj/effect/glowing_rune,
 /turf/open/indestructible/boss,
 /area/ruin/unpowered)
 "QI" = (
@@ -530,15 +548,15 @@
 	icon_living = "devourdemon";
 	icon_state = "devourdemon";
 	melee_attack_cooldown = 3;
-	speed = -0.9;
+	speed = -1.4;
 	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
 	melee_damage_lower = 5;
-	health = 900;
+	health = 1600;
 	bare_wound_bonus = 5;
 	wound_bonus = -1;
 	obj_damage = 40;
 	attack_vis_effect = "bite";
-	guaranteed_butcher_results = list(/obj/item/book/granter/action/spell/true_random = 1);
+	guaranteed_butcher_results = list(/obj/item/book/granter/action/spell/true_random = 1,/obj/item/antag_granter/heretic = 2);
 	armour_penetration = 10;
 	health_doll_icon = "bubblegum";
 	combat_mode = 1;
@@ -579,6 +597,30 @@
 	},
 /obj/structure/stone_tile,
 /obj/effect/decal/cleanable/blood/gibs/old,
+/mob/living/basic/faithless{
+	faction = list("mining","boss","hell");
+	name = "Ancient Demon";
+	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_simple = "tears";
+	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/internal/eyes/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
+	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
+	icon_dead = "demondead";
+	icon_living = "engorgedemon";
+	icon_state = "engorgedemon";
+	melee_attack_cooldown = 5;
+	speed = -0.1;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.5, "oxygen" = 1);
+	melee_damage_lower = 3;
+	melee_damage_upper = 7;
+	health = 640;
+	bare_wound_bonus = 5;
+	wound_bonus = -1;
+	obj_damage = 40;
+	attack_vis_effect = "slash";
+	attack_verb_continuous = "maniacally tears";
+	maxHealth = 240
+	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "TF" = (
@@ -767,7 +809,7 @@ Uk
 nS
 nS
 MN
-MN
+KF
 eD
 nS
 qr
@@ -782,8 +824,8 @@ Sr
 Xc
 lq
 nS
-nS
-MN
+NR
+MM
 lC
 Ur
 nS
@@ -823,7 +865,7 @@ Eu
 BI
 nS
 nS
-nS
+NR
 md
 Bw
 Ky
@@ -843,7 +885,7 @@ yh
 uz
 cv
 bd
-NR
+He
 QI
 "}
 (9,1,1) = {"
@@ -857,7 +899,7 @@ Ue
 Al
 nS
 nS
-nS
+NR
 Bw
 oA
 xc
@@ -884,8 +926,8 @@ Sr
 kt
 qr
 nS
-nS
-MN
+NR
+MM
 Kz
 kI
 nS
@@ -904,7 +946,7 @@ nS
 nS
 MN
 my
-MN
+MM
 nS
 qr
 XB

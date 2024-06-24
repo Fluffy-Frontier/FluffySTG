@@ -5,6 +5,7 @@
 "b" = (
 /obj/structure/meateor_fluff/eyeball,
 /obj/effect/gibspawner/human/bodypartless,
+/obj/item/antag_granter/changeling,
 /obj/item/food/meat/slab/meatproduct,
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
@@ -17,19 +18,22 @@
 /obj/effect/gibspawner/human/bodypartless,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"d" = (
-/obj/structure/stone_tile/slab/cracked,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "e" = (
 /obj/structure/stone_tile/block,
 /obj/effect/gibspawner/human/bodypartless,
+/mob/living/basic/mining/hivelord,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "f" = (
-/obj/structure/statue/bone/rib{
+/obj/structure/statue/uranium/eng{
+	icon = 'icons/obj/art/statuelarge.dmi';
+	icon_preview = 'icons/obj/fluff/previews.dmi';
+	icon_state = "rib";
+	icon_state_preview = "rib";
+	pixel_y = 10;
 	dir = 1;
-	pixel_y = 10
+	desc = "A giant teeth. Or a rib. You barely can figure.";
+	name = "Rib"
 	},
 /turf/closed/indestructible/meat,
 /area/lavaland/surface/outdoors)
@@ -65,11 +69,6 @@
 /obj/structure/flora/ash/tall_shroom,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"m" = (
-/mob/living/basic/mining/hivelord,
-/mob/living/basic/mining/hivelord/no_wander,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "n" = (
 /turf/open/chasm/lavaland,
 /area/lavaland/surface/outdoors)
@@ -90,14 +89,10 @@
 /obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"r" = (
-/obj/structure/statue/bone/rib{
-	dir = 8
-	},
-/turf/closed/indestructible/meat,
-/area/lavaland/surface/outdoors)
 "s" = (
 /obj/structure/flora/ash/fireblossom,
+/mob/living/basic/mining/hivelord,
+/obj/structure/flora/rock/pile/style_random,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "t" = (
@@ -136,6 +131,7 @@
 /area/lavaland/surface/outdoors)
 "y" = (
 /obj/effect/mapping_helpers/bombable_wall,
+/obj/structure/trap/eldritch/tentacle,
 /turf/closed/indestructible/riveted/boss/wasteland{
 	base_icon_state = "meat_wall";
 	icon = 'icons/turf/walls/meat_wall.dmi';
@@ -143,24 +139,16 @@
 	baseturfs = /turf/open/indestructible/meat
 	},
 /area/lavaland/surface/outdoors)
-"z" = (
-/obj/structure/stone_tile/slab/burnt,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "A" = (
-/obj/structure/statue/bone/rib{
-	pixel_y = 10
+/obj/structure/statue/uranium/eng{
+	icon = 'icons/obj/art/statuelarge.dmi';
+	icon_preview = 'icons/obj/fluff/previews.dmi';
+	icon_state = "rib";
+	icon_state_preview = "rib";
+	pixel_y = 10;
+	name = "Rib"
 	},
 /turf/closed/indestructible/meat,
-/area/lavaland/surface/outdoors)
-"B" = (
-/obj/structure/stone_tile{
-	dir = 8
-	},
-/obj/structure/stone_tile{
-	dir = 1
-	},
-/turf/open/chasm/lavaland,
 /area/lavaland/surface/outdoors)
 "C" = (
 /obj/structure/stone_tile/cracked{
@@ -183,13 +171,9 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"G" = (
-/obj/effect/gibspawner/human/bodypartless,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "H" = (
-/obj/structure/meateor_fluff/eyeball,
 /obj/effect/gibspawner/human,
+/obj/structure/meateor_fluff/eyeball,
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -250,12 +234,6 @@
 /obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"S" = (
-/obj/structure/stone_tile/surrounding_tile/burnt{
-	dir = 8
-	},
-/turf/open/chasm/lavaland,
-/area/lavaland/surface/outdoors)
 "T" = (
 /obj/structure/flora/rock/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -279,6 +257,7 @@
 /area/lavaland/surface/outdoors)
 "X" = (
 /obj/item/food/meat/slab/meatproduct,
+/mob/living/basic/meteor_heart,
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -290,7 +269,6 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Z" = (
-/obj/item/antag_granter/changeling,
 /mob/living/basic/meteor_heart,
 /obj/item/food/meat/slab/meatproduct,
 /turf/open/indestructible/meat{
@@ -317,8 +295,8 @@ M
 n
 T
 e
-m
-G
+n
+k
 i
 Y
 R
@@ -346,8 +324,8 @@ L
 n
 t
 f
-V
-r
+y
+f
 t
 n
 n
@@ -362,14 +340,14 @@ f
 K
 j
 V
-r
+f
 U
 n
 I
 a
 "}
 (6,1,1) = {"
-z
+n
 U
 f
 K
@@ -383,9 +361,9 @@ w
 a
 "}
 (7,1,1) = {"
-d
+n
 U
-V
+y
 j
 Z
 b
@@ -397,7 +375,7 @@ u
 a
 "}
 (8,1,1) = {"
-L
+n
 U
 A
 V
@@ -411,11 +389,11 @@ a
 a
 "}
 (9,1,1) = {"
-G
+k
 U
 t
 A
-V
+y
 A
 t
 U
@@ -432,7 +410,7 @@ U
 x
 U
 U
-B
+n
 o
 C
 g
@@ -440,7 +418,7 @@ M
 "}
 (11,1,1) = {"
 M
-S
+n
 n
 P
 c

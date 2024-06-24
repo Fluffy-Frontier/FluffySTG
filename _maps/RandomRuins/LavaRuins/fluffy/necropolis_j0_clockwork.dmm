@@ -492,6 +492,10 @@
 /obj/structure/stone_tile/slab/burnt,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"KX" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/powered)
 "Lg" = (
 /obj/structure/destructible/clockwork/trap/skewer,
 /obj/structure/window/bronze/fulltile,
@@ -715,7 +719,7 @@ yz
 ds
 VI
 aD
-dN
+KX
 GZ
 xR
 yz
@@ -731,7 +735,7 @@ AH
 ZC
 Fd
 dN
-HX
+KX
 Cm
 oX
 "}
@@ -781,7 +785,7 @@ aT
 DJ
 yi
 zE
-xR
+GZ
 FX
 Ut
 ji

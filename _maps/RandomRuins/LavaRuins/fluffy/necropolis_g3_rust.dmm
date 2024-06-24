@@ -2,15 +2,11 @@
 "a" = (
 /obj/item/organ/internal/tongue/cat/tajaran,
 /obj/effect/glowing_rune,
+/obj/item/reagent_containers/hypospray/medipen/survival/luxury,
 /turf/open/floor/plating/rust{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
-"e" = (
-/obj/effect/mapping_helpers/bombable_wall,
-/obj/structure/trap/eldritch/mad,
-/turf/closed/indestructible/riveted/boss/wasteland,
-/area/lavaland/surface/outdoors)
 "h" = (
 /turf/closed/wall/r_wall/rust,
 /area/lavaland/surface/outdoors)
@@ -38,6 +34,7 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gibbl1"
 	},
+/obj/item/storage/box/medipens,
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating/rust{
 	initial_gas_mix = "LAVALAND_ATMOS"
@@ -97,24 +94,8 @@
 /area/lavaland/surface/outdoors)
 "I" = (
 /obj/effect/gibspawner/human,
-/obj/item/antag_granter/heretic{
-	name = "Tentacle covered book"
-	},
+/obj/item/melee/sickly_blade/rust,
 /obj/item/stack/sheet/animalhide/monkey,
-/mob/living/basic/heretic_summon/raw_prophet/ruins{
-	name = "\improper Prophet of Agony";
-	light_color = "#77FF77";
-	color = "#77FF77";
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0, "oxygen" = 0);
-	melee_damage_type = "toxin";
-	health = 240;
-	melee_attack_cooldown = 2;
-	light_power = 12;
-	light_range = 2;
-	lighting_cutoff_blue = 35;
-	lighting_cutoff_green = 15;
-	lighting_cutoff_red = 25
-	},
 /turf/open/floor/plating/rust{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -148,6 +129,20 @@
 "Y" = (
 /obj/effect/mapping_helpers/burnt_floor,
 /obj/effect/glowing_rune,
+/mob/living/basic/heretic_summon/raw_prophet/ruins{
+	name = "\improper Prophet of Agony";
+	light_color = "#77FF77";
+	color = "#77FF77";
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0, "oxygen" = 0);
+	melee_damage_type = "toxin";
+	health = 240;
+	melee_attack_cooldown = 2;
+	light_power = 12;
+	light_range = 2;
+	lighting_cutoff_blue = 35;
+	lighting_cutoff_green = 15;
+	lighting_cutoff_red = 25
+	},
 /turf/open/floor/plating/rust{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -171,9 +166,9 @@ o
 (2,1,1) = {"
 k
 H
+H
 F
-F
-F
+K
 F
 F
 H
@@ -181,10 +176,10 @@ H
 "}
 (3,1,1) = {"
 H
-F
+H
 F
 B
-h
+P
 h
 F
 F
@@ -218,7 +213,7 @@ j
 I
 a
 p
-j
+P
 F
 F
 o
@@ -228,21 +223,21 @@ F
 F
 h
 z
-h
+F
 K
-e
-h
-j
+H
+H
+H
 "}
 (8,1,1) = {"
 o
 F
 F
-j
 F
 F
+H
 h
-h
+H
 k
 "}
 (9,1,1) = {"
