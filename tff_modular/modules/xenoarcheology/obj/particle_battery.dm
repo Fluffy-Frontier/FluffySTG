@@ -12,7 +12,13 @@
 	. = ..()
 	battery_effect = new()
 
+/obj/item/xenoarch/particles_battery/Destroy(force)
+	if(battery_effect)
+		del(battery_effect)
+	..()
+
 /obj/item/xenoarch/particles_battery/update_icon()
+	..()
 	var/power_stored = (stored_charge / capacity) * 100
 	power_stored = min(power_stored, 100)
 	icon_state = "particles_battery[round(power_stored, 25)]"
@@ -206,6 +212,7 @@
 	update_icon()
 
 /obj/item/xenoarch/xenoarch_utilizer/update_icon()
+	..()
 	if(!inserted_battery)
 		icon_state = "utilizer"
 		return
@@ -220,6 +227,8 @@
 	icon_state = "utilizer[round(power_battery, 25)][is_emitting]"
 
 /obj/item/xenoarch/xenoarch_utilizer/Destroy()
+	if(inserted_battery)
+		del(inserted_battery)
 	STOP_PROCESSING(SSobj, src)
 	..()
 

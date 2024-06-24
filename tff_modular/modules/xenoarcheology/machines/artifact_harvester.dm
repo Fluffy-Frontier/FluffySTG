@@ -27,15 +27,10 @@
 
 /obj/machinery/artifact_harvester/Initialize(mapload)
 	..()
-	return INITIALIZE_HINT_LATELOAD
-
-/obj/machinery/artifact_harvester/LateInitialize(mapload)
-	..()
-	// connect to a nearby scanner pad
 	owned_scanner = locate(/obj/machinery/artifact_scanpad) in get_step(src, dir)
 	if(!owned_scanner)
 		owned_scanner = locate(/obj/machinery/artifact_scanpad) in orange(1, src)
-
+	return INITIALIZE_HINT_LATELOAD
 
 /obj/machinery/artifact_harvester/attackby(obj/I, mob/user)
 	if(istype(I, /obj/item/xenoarch/particles_battery))
