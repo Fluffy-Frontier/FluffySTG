@@ -4,7 +4,6 @@
 	slot_flags = ITEM_SLOT_BACK
 	icon = 'tff_modular/modules/xenoarcheology/icons/tools.dmi'
 	worn_icon = 'tff_modular/modules/xenoarcheology/icons/worn.dmi'
-	inhand_icon_state = "wave_scanner"
 	icon_state = "wave_scanner"
 	worn_icon_state = "wave_scanner"
 	w_class = 3
