@@ -182,6 +182,10 @@
 "qr" = (
 /turf/closed/indestructible/riveted/boss,
 /area/lavaland/surface/outdoors)
+"su" = (
+/obj/structure/stone_tile/slab/burnt,
+/turf/open/indestructible/necropolis,
+/area/ruin/unpowered)
 "tn" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 8
@@ -424,10 +428,6 @@
 	},
 /turf/open/indestructible/boss,
 /area/ruin/unpowered)
-"KF" = (
-/obj/structure/stone_tile/slab/burnt,
-/turf/open/indestructible/necropolis,
-/area/ruin/unpowered)
 "KS" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 8
@@ -460,11 +460,6 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"MM" = (
-/obj/structure/stone_tile/slab/burnt,
-/obj/effect/gibspawner/human,
-/turf/open/indestructible/necropolis,
-/area/ruin/unpowered)
 "MN" = (
 /obj/structure/stone_tile/slab/burnt,
 /obj/effect/gibspawner,
@@ -521,6 +516,11 @@
 /obj/effect/glowing_rune,
 /turf/open/indestructible/boss,
 /area/ruin/unpowered)
+"QG" = (
+/obj/structure/stone_tile/slab/burnt,
+/obj/effect/gibspawner/human,
+/turf/open/indestructible/necropolis,
+/area/ruin/unpowered)
 "QI" = (
 /obj/effect/gibspawner/human/bodypartless,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
@@ -563,8 +563,8 @@
 	maxHealth = 1200;
 	melee_damage_upper = 30;
 	light_color = "#640000";
-	light_power = 12;
-	light_range = 2;
+	light_power = 18;
+	light_range = 3;
 	lighting_cutoff_blue = 35;
 	lighting_cutoff_green = 15;
 	lighting_cutoff_red = 25
@@ -809,7 +809,7 @@ Uk
 nS
 nS
 MN
-KF
+su
 eD
 nS
 qr
@@ -825,7 +825,7 @@ Xc
 lq
 nS
 NR
-MM
+QG
 lC
 Ur
 nS
@@ -927,7 +927,7 @@ kt
 qr
 nS
 NR
-MM
+QG
 Kz
 kI
 nS
@@ -946,7 +946,7 @@ nS
 nS
 MN
 my
-MM
+QG
 nS
 qr
 XB

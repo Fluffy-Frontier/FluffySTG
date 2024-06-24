@@ -18,8 +18,8 @@
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "f" = (
-/turf/closed/indestructible/riveted/boss,
-/area/lavaland/surface/outdoors)
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
 "h" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
@@ -27,7 +27,7 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 8
 	},
-/turf/open/chasm/lavaland,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "i" = (
 /obj/structure/stone_tile/burnt{
@@ -47,6 +47,10 @@
 "l" = (
 /obj/structure/stone_tile/burnt,
 /turf/open/chasm/lavaland,
+/area/ruin/unpowered)
+"m" = (
+/obj/structure/punji_sticks/spikes,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "o" = (
 /obj/structure/stone_tile/surrounding/cracked,
@@ -71,15 +75,17 @@
 	maxHealth = 1500;
 	desc = "An ancient demon, a spirit of the old nature. Chained. Hungry.";
 	light_color = "#333333";
-	color = "#333333"
+	color = "#333333";
+	crusher_loot = list(/obj/item/crusher_trophy/wendigo_horn,/obj/structure/closet/crate/necropolis/tendril);
+	loot = list(/obj/item/seeds/grass/fairy,/obj/item/book/granter/action/spell/summonitem)
 	},
 /obj/effect/decal/cleanable/grand_remains,
 /obj/effect/gibspawner/human/bodypartless,
 /obj/item/gun/ballistic/bow/tribalbow/ashen{
-	projectile_damage_multiplier = 2;
+	projectile_damage_multiplier = 3;
 	name = "Living bow";
 	attack_speed = 6;
-	desc = "Some sort of primitive projectile weapon made of bone and wrapped sinew, something wrong with it."
+	desc = "Some sort of primitive projectile weapon made of bone and wrapped sinew, something wrong with it. This feels... Angry. Somehow."
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/item/stack/ore/diamond{
@@ -92,7 +98,8 @@
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "s" = (
-/turf/closed/indestructible/riveted/boss,
+/obj/effect/decal/remains/human/smokey,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "t" = (
 /obj/effect/mapping_helpers/bombable_wall,
@@ -100,10 +107,11 @@
 /turf/closed/indestructible/riveted/boss/wasteland,
 /area/lavaland/surface/outdoors)
 "u" = (
+/obj/effect/mapping_helpers/bombable_wall,
 /obj/structure/fluff/big_chain{
 	pixel_y = 12
 	},
-/turf/closed/indestructible/riveted/boss,
+/turf/closed/indestructible/riveted/boss/wasteland,
 /area/ruin/unpowered)
 "v" = (
 /obj/structure/stone_tile/cracked{
@@ -119,6 +127,10 @@
 	dir = 4
 	},
 /turf/open/chasm/lavaland,
+/area/ruin/unpowered)
+"x" = (
+/obj/structure/flora/rock/pile/style_random,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "y" = (
 /obj/structure/stone_tile/surrounding_tile/cracked,
@@ -140,10 +152,11 @@
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "B" = (
+/obj/effect/mapping_helpers/bombable_wall,
 /obj/structure/fluff/big_chain{
 	pixel_y = 12
 	},
-/turf/closed/indestructible/riveted/boss,
+/turf/closed/indestructible/riveted/boss/wasteland,
 /area/lavaland/surface/outdoors)
 "C" = (
 /obj/structure/stone_tile/block/burnt{
@@ -155,7 +168,7 @@
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 6
 	},
-/turf/open/chasm/lavaland,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "F" = (
 /obj/structure/stone_tile/surrounding/cracked{
@@ -240,7 +253,7 @@
 /area/ruin/unpowered)
 "U" = (
 /obj/structure/stone_tile/slab/burnt,
-/turf/open/chasm/lavaland,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "V" = (
 /obj/effect/mapping_helpers/bombable_wall,
@@ -254,23 +267,23 @@
 	dir = 4
 	},
 /obj/structure/stone_tile/center/cracked,
-/turf/open/chasm/lavaland,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "Z" = (
 /obj/structure/stone_tile/slab,
-/turf/open/chasm/lavaland,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 
 (1,1,1) = {"
 a
 a
-f
-f
+V
+V
 a
 a
 a
-f
-f
+V
+V
 a
 a
 a
@@ -280,15 +293,15 @@ a
 "}
 (2,1,1) = {"
 a
-f
-f
-f
-f
-f
 V
-f
-f
-f
+V
+V
+V
+V
+V
+V
+V
+V
 a
 a
 a
@@ -296,64 +309,64 @@ a
 a
 "}
 (3,1,1) = {"
+V
+B
+x
+m
+L
+L
+s
+x
 f
 B
-X
-X
-X
-X
-X
-X
-X
-B
-f
-f
-f
+V
+V
+V
 a
 a
 "}
 (4,1,1) = {"
+V
 f
+s
 X
 X
+L
 X
 X
-X
-X
-X
-X
-X
-X
-X
-f
-f
-f
+x
+s
+u
+x
+V
+V
+V
 "}
 (5,1,1) = {"
-f
+V
+L
+X
+X
+X
+L
 X
 X
 X
 X
 X
-X
-X
-X
-X
-X
-X
-X
-X
-f
+m
+m
+L
+V
 "}
 (6,1,1) = {"
-f
-X
+V
+L
 X
 u
 L
 L
-s
+L
 u
 z
 X
@@ -364,10 +377,10 @@ T
 B
 "}
 (7,1,1) = {"
-f
-X
-X
+V
 s
+X
+L
 A
 j
 F
@@ -381,9 +394,9 @@ v
 t
 "}
 (8,1,1) = {"
-f
-X
-X
+V
+L
+L
 L
 r
 q
@@ -398,10 +411,10 @@ Z
 I
 "}
 (9,1,1) = {"
-f
+V
+x
 X
-X
-s
+L
 c
 e
 o
@@ -415,11 +428,11 @@ i
 G
 "}
 (10,1,1) = {"
-f
-X
+V
+L
 X
 u
-s
+L
 L
 L
 u
@@ -433,66 +446,66 @@ B
 "}
 (11,1,1) = {"
 V
+L
+X
+X
+X
+L
 X
 X
 X
 X
 X
-X
-X
-X
-X
-X
-X
-X
-X
-f
+m
+x
+L
+V
 "}
 (12,1,1) = {"
+V
+s
+m
+X
+X
+L
+X
+X
+s
 f
-X
-X
-X
-X
-X
-X
-X
-X
-X
-X
-X
-f
-f
-f
+u
+s
+V
+V
+V
 "}
 (13,1,1) = {"
-f
+V
 B
-X
-X
-X
-X
-X
-X
-X
+f
+x
+L
+L
+s
+m
+x
 B
 V
-f
-f
+V
+V
 a
 a
 "}
 (14,1,1) = {"
 a
-f
-f
-f
-f
-f
-f
-f
-f
-f
+V
+V
+V
+V
+V
+V
+V
+V
+V
 a
 a
 a
@@ -502,13 +515,13 @@ a
 (15,1,1) = {"
 a
 a
-f
-f
+V
+V
 a
 a
 a
-f
-f
+V
+V
 a
 a
 a
