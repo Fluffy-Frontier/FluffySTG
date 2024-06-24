@@ -8,33 +8,34 @@
 /turf/closed/wall/mineral/titanium/survival/pod,
 /area/ruin/powered)
 "B" = (
-/obj/effect/spawner/random/medical/medkit_rare,
 /obj/item/stack/telecrystal/five{
 	name = "Nitra";
 	desc = "Rock and stone!";
-	icon = 'icons/obj/machines/engine/supermatter.dmi';
-	icon_state = "destabilizing_crystal";
 	light_color = "#FF5555";
 	color = "#FF5555"
 	},
+/obj/effect/spawner/random/medical/medkit_rare,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "D" = (
 /obj/effect/turf_decal/mining/survival{
 	dir = 8
 	},
+/obj/item/reagent_containers/hypospray/medipen,
 /obj/item/ammo_box/rocket,
 /turf/closed/wall/mineral/titanium/survival/pod,
 /area/ruin/powered)
 "K" = (
-/obj/item/ammo_box/c9mm,
 /obj/effect/turf_decal/mining,
+/obj/item/reagent_containers/hypospray/medipen,
+/obj/item/ammo_box/c9mm,
 /turf/closed/wall/mineral/titanium/survival/pod,
 /area/ruin/powered)
 "W" = (
 /obj/effect/turf_decal/mining/survival{
 	dir = 8
 	},
+/obj/item/reagent_containers/hypospray/medipen,
 /obj/item/ammo_box/advanced/s12gauge/buckshot,
 /turf/closed/wall/mineral/titanium/survival/pod,
 /area/ruin/powered)
