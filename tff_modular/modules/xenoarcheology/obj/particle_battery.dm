@@ -12,10 +12,6 @@
 	. = ..()
 	battery_effect = new()
 
-/obj/item/xenoarch/particles_battery/Destroy(force)
-	if(battery_effect)
-		qdel(battery_effect)
-	..()
 
 /obj/item/xenoarch/particles_battery/update_icon()
 	..()
@@ -230,7 +226,7 @@
 	if(inserted_battery)
 		qdel(inserted_battery)
 	STOP_PROCESSING(SSobj, src)
-	..()
+	return ..()
 
 /obj/item/xenoarch/xenoarch_utilizer/attack(mob/living/M, mob/living/user, def_zone)
 	if (!istype(M))
