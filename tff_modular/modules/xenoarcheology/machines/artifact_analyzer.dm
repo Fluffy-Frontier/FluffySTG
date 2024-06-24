@@ -79,7 +79,7 @@
 	if(scan_in_progress && world.time > scan_completion_time)
 		// finish scanning
 		scan_in_progress = FALSE
-		ui_interact()
+		ui_interact(usr)
 
 		// print results
 		var/results = ""
@@ -160,7 +160,7 @@
 		scan_in_progress = 0
 		say("Scanning halted.")
 
-	ui_interact()
+	ui_interact(usr)
 
 // hardcoded responses, oh well
 /obj/machinery/artifact_analyser/proc/get_scan_info(obj/scanned_obj)

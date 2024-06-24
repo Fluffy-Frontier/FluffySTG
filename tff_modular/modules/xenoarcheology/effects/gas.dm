@@ -72,4 +72,3 @@
 	merger.gases[spawn_id][MOLES] = spawn_mol
 	merger.temperature = spawn_temp
 	O.assume_air(merger)
-	message_admins("OOO DA")

@@ -84,6 +84,27 @@
 	id = "xenoarch_core_sampler"
 	build_path = /obj/item/xenoarch/core_sampler
 
+/datum/design/xenoarch/tool/particles_battery
+	name = "Exotic particles power battery"
+	desc = "A battery, that can collect exotic particles and release them later, if used proreply."
+	id = "xenoarch_particles_battery"
+	build_path = /obj/item/xenoarch/particles_battery
+	materials = list(
+		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT,
+		/datum/material/plasma = HALF_SHEET_MATERIAL_AMOUNT,
+		/datum/material/bluespace = SMALL_MATERIAL_AMOUNT,
+	)
+
+/datum/design/xenoarch/tool/xenoarch_utilizer
+	name = "Exotic particles power utilizer"
+	desc = "A device used to discharge exotic particle batteries."
+	id = "xenoarch_utilizer"
+	build_path = /obj/item/xenoarch/xenoarch_utilizer
+	materials = list(
+		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT,
+		/datum/material/plasma = HALF_SHEET_MATERIAL_AMOUNT
+	)
+
 /datum/design/xenoarch/tool/wave_scanner_backpack
 	name = "Wave scanner backpack"
 	desc = "An outdated way to find exotic particles."
@@ -202,6 +223,12 @@
 	id = "radiocarbon spectrometer"
 	build_path = /obj/item/circuitboard/machine/radiocarbon_spectrometer
 
+/datum/design/board/xenoarch/artifact_harvester
+	name = "Machine Design (Exotic Particle Harvester)"
+	desc = "Allows for the construction of circuit boards used to build a new xenoarch exotic particle harvester."
+	id = "artifact_harvester"
+	build_path = /obj/item/circuitboard/machine/artifact_harvester
+
 /datum/design/board/xenoarch/artifact_scanpad
 	name = "Machine Design (Artifact Scanpad)"
 	desc = "Allows for the construction of circuit boards used to build a new xenoarch artifact scanpad."
@@ -228,10 +255,12 @@
 		"hammer_cm6",
 		"hammer_cm10",
 		"xenoarch_brush",
+		"xenoarch_utilizer",
 		"xenoarch_tapemeasure",
 		"xenoarch_handscanner",
 		"xenoarch_wave_scanner",
 		"xenoarch_core_sampler",
+		"xenoarch_particles_battery",
 		"xenoarch_artifact_stabilizer",
 	)
 
@@ -257,6 +286,7 @@
 		"xeno_recoverer",
 		"artifact_analyzer",
 		"artifact_scanpad",
+		"artifact_harvester",
 		"radiocarbon spectrometer",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_1_POINTS)

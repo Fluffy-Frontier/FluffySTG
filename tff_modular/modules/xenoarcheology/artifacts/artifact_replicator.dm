@@ -158,4 +158,4 @@
 			else
 				visible_message(fail_message)
 
-	ui_interact()
+	ui_interact(usr)

@@ -27,18 +27,11 @@
 		return FALSE
 
 	// Stolen from mage spell
-	var/mob/living/carbon/caster = pick(poor_humans)
-	poor_humans.Remove(caster)
-	var/mob/living/carbon/to_swap = pick(poor_humans)
+	var/mob/living/carbon/caster = pick_n_take(poor_humans)
+	var/mob/living/carbon/to_swap = pick_n_take(poor_humans)
 
 	if(!caster || !to_swap)
 		return FALSE
-
-	// Gives the target a mind if they don't have one
-	if(!to_swap.mind)
-		to_swap.mind_initialize()
-	if(!caster.mind)
-		to_swap.mind_initialize()
 
 	var/weakness_caster = get_anomaly_protection(caster)
 	var/weakness_to_swap = get_anomaly_protection(to_swap)
@@ -49,6 +42,12 @@
 		to_chat(to_swap, "<span class='notice'>You feel like you've just dodged a bullet.</span>")
 		return FALSE
 	}
+
+	// Gives the target a mind if they don't have one
+	if(!to_swap.mind)
+		to_swap.mind_initialize()
+	if(!caster.mind)
+		to_swap.mind_initialize()
 
 	// MIND TRANSFER BEGIN
 
