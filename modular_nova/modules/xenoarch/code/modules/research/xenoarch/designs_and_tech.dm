@@ -84,6 +84,18 @@
 	id = "xenoarch_core_sampler"
 	build_path = /obj/item/xenoarch/core_sampler
 
+/datum/design/xenoarch/tool/wave_scanner_backpack
+	name = "Wave scanner backpack"
+	desc = "An outdated way to find exotic particles."
+	id = "xenoarch_wave_scanner"
+	build_path = /obj/item/xenoarch/wave_scanner_backpack
+	materials = list(
+		/datum/material/iron = SHEET_MATERIAL_AMOUNT*2,
+		/datum/material/glass = HALF_SHEET_MATERIAL_AMOUNT,
+		/datum/material/plasma = SHEET_MATERIAL_AMOUNT,
+		/datum/material/bluespace = SMALL_MATERIAL_AMOUNT,
+	)
+
 /datum/design/xenoarch/tool/advanced
 	materials = list(
 		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT,
@@ -218,6 +230,7 @@
 		"xenoarch_brush",
 		"xenoarch_tapemeasure",
 		"xenoarch_handscanner",
+		"xenoarch_wave_scanner",
 		"xenoarch_core_sampler",
 		"xenoarch_artifact_stabilizer",
 	)

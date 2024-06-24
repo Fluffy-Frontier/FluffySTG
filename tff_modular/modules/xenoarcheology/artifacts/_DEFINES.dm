@@ -126,3 +126,5 @@ GLOBAL_LIST_INIT(volatile_reagents, list(
 	/datum/reagent/pyrosium,
 	/datum/reagent/teslium,
 	))
+
+GLOBAL_LIST_INIT(artifact_turfs, list())
