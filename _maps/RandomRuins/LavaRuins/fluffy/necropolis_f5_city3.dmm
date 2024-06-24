@@ -204,6 +204,7 @@
 /area/lavaland/surface/outdoors)
 "sn" = (
 /obj/structure/stone_tile/block/cracked,
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "sS" = (
@@ -275,6 +276,10 @@
 	},
 /obj/structure/stone_tile/center/cracked,
 /turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Dl" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/strange_rock/volcanic,
 /area/lavaland/surface/outdoors)
 "Dq" = (
 /obj/structure/flora/rock/pile/style_random,
@@ -406,6 +411,17 @@
 	dir = 4
 	},
 /turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"LN" = (
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Mk" = (
 /obj/structure/stone_tile/slab/cracked{
@@ -618,22 +634,22 @@ GY
 GY
 GY
 GY
-GY
-GY
-mz
-GY
-GY
-GY
-GY
-GY
-GY
-GY
-GY
-GY
+ZX
 fJ
+Nm
+Ib
+Ib
+GY
+GY
+GY
+GY
+GY
+GY
+GY
+II
 GY
 Id
-ZX
+Ib
 "}
 (3,1,1) = {"
 ZX
@@ -645,9 +661,9 @@ GY
 MO
 MO
 MO
-GY
-GY
-GY
+fJ
+fJ
+fJ
 tz
 tz
 tz
@@ -685,7 +701,7 @@ sS
 tz
 tz
 GY
-fJ
+II
 "}
 (5,1,1) = {"
 ZX
@@ -815,7 +831,7 @@ qV
 qV
 FQ
 GY
-ZX
+Ib
 "}
 (10,1,1) = {"
 UN
@@ -849,7 +865,7 @@ GY
 MO
 zW
 tz
-fJ
+II
 AX
 UN
 ZX
@@ -933,9 +949,9 @@ ZX
 ZX
 ZX
 UN
-KE
+Dl
 ZX
-ZX
+Ib
 UN
 qV
 qV
@@ -1018,7 +1034,7 @@ UN
 qV
 qV
 UN
-ZX
+Ib
 fJ
 UN
 UN
@@ -1161,8 +1177,8 @@ Tz
 GY
 GY
 GY
-GY
-GY
+ZX
+ZX
 GY
 GY
 GY
@@ -1178,7 +1194,7 @@ GY
 GY
 GY
 GY
-Va
+LN
 KE
 "}
 (24,1,1) = {"
@@ -1196,13 +1212,13 @@ UN
 UN
 UN
 UN
-ZX
-ZX
+Ib
+Ib
 ZX
 qV
 UN
 qy
-ZX
+Ib
 fJ
 ZX
 UN

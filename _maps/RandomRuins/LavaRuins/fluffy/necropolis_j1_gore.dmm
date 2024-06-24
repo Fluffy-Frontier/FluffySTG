@@ -56,12 +56,18 @@
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/powered)
+"k" = (
+/obj/effect/gibspawner/human/bodypartless,
+/mob/living/basic/mining/hivelord/no_wander,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "l" = (
 /obj/structure/flora/ash/tall_shroom,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "m" = (
 /mob/living/basic/mining/hivelord,
+/mob/living/basic/mining/hivelord/no_wander,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "n" = (
@@ -73,6 +79,7 @@
 	dir = 4
 	},
 /obj/effect/gibspawner/human/bodypartless,
+/mob/living/basic/mining/hivelord/no_wander,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "p" = (
@@ -94,16 +101,18 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "t" = (
-/obj/structure/stone_tile/block/cracked,
 /obj/effect/gibspawner/human/bodypartless,
-/mob/living/basic/mining/hivelord,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
 /area/lavaland/surface/outdoors)
 "u" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
 	},
-/turf/closed/mineral/volcanic/lava_land_surface,
+/mob/living/basic/mining/hivelord/no_wander,
+/mob/living/basic/mining/hivelord/no_wander,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "v" = (
 /obj/structure/stone_tile,
@@ -113,19 +122,25 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "w" = (
-/obj/structure/stone_tile/block,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"x" = (
+/obj/structure/stone_tile/block/cracked,
+/obj/effect/gibspawner/human/bodypartless,
+/mob/living/basic/mining/hivelord,
 /mob/living/basic/mining/hivelord/no_wander,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"x" = (
+/obj/effect/gibspawner/human,
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
 /area/lavaland/surface/outdoors)
 "y" = (
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland{
 	base_icon_state = "meat_wall";
 	icon = 'icons/turf/walls/meat_wall.dmi';
-	icon_state = "meat_wall-0"
+	icon_state = "meat_wall-0";
+	baseturfs = /turf/open/indestructible/meat
 	},
 /area/lavaland/surface/outdoors)
 "z" = (
@@ -179,6 +194,11 @@
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/powered)
+"I" = (
+/mob/living/basic/mining/hivelord/no_wander,
+/mob/living/basic/mining/hivelord/no_wander,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/template_noop)
 "J" = (
 /obj/structure/flora/ash/seraka,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -190,6 +210,7 @@
 "L" = (
 /obj/structure/flora/rock/pile/style_random,
 /mob/living/basic/mining/hivelord,
+/mob/living/basic/mining/hivelord/no_wander,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "M" = (
@@ -222,6 +243,7 @@
 	dir = 4
 	},
 /mob/living/basic/mining/hivelord,
+/mob/living/basic/mining/hivelord/no_wander,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "R" = (
@@ -239,11 +261,9 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "U" = (
-/obj/structure/stone_tile/block/cracked{
-	dir = 1
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
 	},
-/mob/living/basic/mining/hivelord/no_wander,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "V" = (
 /turf/closed/indestructible/meat,
@@ -266,6 +286,7 @@
 "Y" = (
 /mob/living/basic/mining/hivelord,
 /obj/effect/gibspawner/human/bodypartless,
+/mob/living/basic/mining/hivelord/no_wander,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Z" = (
@@ -309,12 +330,12 @@ M
 M
 n
 n
+U
+U
+x
 n
 n
-n
-n
-n
-G
+k
 n
 n
 M
@@ -323,11 +344,11 @@ M
 p
 L
 n
-n
+t
 f
 V
 r
-n
+t
 n
 n
 l
@@ -335,55 +356,55 @@ a
 "}
 (5,1,1) = {"
 q
-n
-n
+x
+U
 f
 K
 j
 V
 r
+U
 n
-x
-M
+I
 a
 "}
 (6,1,1) = {"
 z
-n
+U
 f
 K
 H
 X
 N
 y
+U
 n
-t
 w
 a
 "}
 (7,1,1) = {"
 d
-n
+U
 V
 j
 Z
 b
 K
 A
+x
 n
-U
 u
 a
 "}
 (8,1,1) = {"
 L
-n
+U
 A
 V
 j
 K
 A
-n
+U
 n
 n
 a
@@ -391,13 +412,13 @@ a
 "}
 (9,1,1) = {"
 G
-n
-n
+U
+t
 A
 V
 A
-n
-n
+t
+U
 M
 n
 W
@@ -407,10 +428,10 @@ M
 E
 s
 n
-n
-n
-n
-n
+U
+x
+U
+U
 B
 o
 C

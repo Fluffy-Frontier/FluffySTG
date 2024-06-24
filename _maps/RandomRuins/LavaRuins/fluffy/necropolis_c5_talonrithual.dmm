@@ -21,6 +21,10 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"bD" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "bE" = (
 /obj/structure/stone_tile/block,
 /obj/structure/stone_tile{
@@ -52,15 +56,41 @@
 /obj/item/book/granter/action/spell/random,
 /obj/effect/mob_spawn/corpse/human/blood_cultist,
 /obj/effect/gibspawner/human/bodypartless,
+/mob/living/basic/faithless{
+	faction = list("mining","boss","hell");
+	name = "Ancient Demon";
+	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_simple = "tears";
+	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/internal/eyes/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
+	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
+	icon_dead = "demondead";
+	icon_living = "engorgedemon";
+	icon_state = "engorgedemon";
+	melee_attack_cooldown = 5;
+	speed = -0.1;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.5, "oxygen" = 1);
+	melee_damage_lower = 3;
+	melee_damage_upper = 7;
+	health = 640;
+	bare_wound_bonus = 5;
+	wound_bonus = -1;
+	obj_damage = 40;
+	attack_vis_effect = "slash";
+	attack_verb_continuous = "maniacally tears";
+	maxHealth = 240
+	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "cC" = (
 /obj/structure/stone_tile,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "dL" = (
-/obj/structure/stone_tile/burnt,
-/turf/closed/mineral/random/high_chance/volcanic,
+/obj/structure/stone_tile/cracked,
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "eh" = (
 /obj/structure/stone_tile/block/burnt{
@@ -227,40 +257,12 @@
 	dir = 1
 	},
 /obj/item/knife/combat/bone,
-/mob/living/basic/faithless{
-	faction = list("mining","boss","hell");
-	name = "Ancient Demon";
-	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
-	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
-	attack_verb_simple = "tears";
-	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/internal/eyes/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
-	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
-	icon_dead = "demondead";
-	icon_living = "engorgedemon";
-	icon_state = "engorgedemon";
-	melee_attack_cooldown = 5;
-	speed = -0.1;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.5, "oxygen" = 1);
-	melee_damage_lower = 3;
-	melee_damage_upper = 7;
-	health = 640;
-	bare_wound_bonus = 5;
-	wound_bonus = -1;
-	obj_damage = 40;
-	attack_vis_effect = "slash";
-	attack_verb_continuous = "maniacally tears";
-	maxHealth = 240
-	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "mP" = (
 /obj/structure/stone_tile/surrounding/cracked,
 /obj/structure/stone_tile/center/burnt,
 /turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"nk" = (
-/obj/structure/stone_tile/slab/cracked,
-/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "nq" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
@@ -320,10 +322,8 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "pd" = (
-/obj/structure/stone_tile/cracked{
-	dir = 1
-	},
 /obj/structure/stone_tile/block,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "qW" = (
@@ -382,6 +382,13 @@
 /obj/effect/mob_spawn/corpse/human/miner,
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
+"xj" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "xy" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
@@ -419,6 +426,7 @@
 /area/lavaland/surface/outdoors)
 "Al" = (
 /obj/structure/stone_tile/block/cracked,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "AB" = (
@@ -457,6 +465,13 @@
 "Cd" = (
 /obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Cj" = (
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Ck" = (
 /obj/structure/stone_tile/cracked{
@@ -512,6 +527,7 @@
 /area/lavaland/surface/outdoors)
 "HV" = (
 /obj/structure/stone_tile,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "IF" = (
@@ -585,30 +601,6 @@
 "NG" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/effect/gibspawner/human/bodypartless,
-/mob/living/basic/faithless{
-	faction = list("mining","boss","hell");
-	name = "Ancient Demon";
-	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
-	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
-	attack_verb_simple = "tears";
-	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/internal/eyes/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
-	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
-	icon_dead = "demondead";
-	icon_living = "engorgedemon";
-	icon_state = "engorgedemon";
-	melee_attack_cooldown = 5;
-	speed = -0.1;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.5, "oxygen" = 1);
-	melee_damage_lower = 3;
-	melee_damage_upper = 7;
-	health = 640;
-	bare_wound_bonus = 5;
-	wound_bonus = -1;
-	obj_damage = 40;
-	attack_vis_effect = "slash";
-	attack_verb_continuous = "maniacally tears";
-	maxHealth = 240
-	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "Pv" = (
@@ -682,7 +674,7 @@ AB
 AB
 AB
 FN
-AU
+xj
 Cd
 AB
 Ae
@@ -695,7 +687,7 @@ vG
 Cd
 AB
 Ae
-Ck
+Cj
 AB
 AB
 AB
@@ -706,7 +698,7 @@ AB
 AB
 Ae
 Ae
-nk
+ce
 Ae
 Ae
 Ck
@@ -777,11 +769,11 @@ md
 Bp
 Zj
 on
-qX
+dL
 AB
 "}
 (5,1,1) = {"
-fC
+bD
 xX
 NG
 cs
@@ -904,7 +896,7 @@ eh
 Qc
 KR
 Ya
-Ck
+Cj
 AB
 AB
 AB
@@ -940,7 +932,7 @@ AB
 AB
 Ae
 ce
-dL
+ce
 Ae
 Ae
 qX

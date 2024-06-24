@@ -32,6 +32,16 @@
 /area/lavaland/surface/outdoors)
 "t" = (
 /obj/structure/stone_tile/slab,
+/mob/living/basic/mining/goliath,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"v" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"y" = (
+/obj/structure/stone_tile/block,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "F" = (
@@ -47,6 +57,7 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 8
 	},
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "J" = (
@@ -55,6 +66,11 @@
 /area/lavaland/surface/outdoors)
 "Q" = (
 /turf/closed/indestructible/riveted/boss,
+/area/lavaland/surface/outdoors)
+"R" = (
+/obj/structure/stone_tile/block/cracked,
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "S" = (
 /obj/structure/stone_tile/slab/cracked{
@@ -67,6 +83,7 @@
 /area/lavaland/surface/outdoors)
 "U" = (
 /obj/structure/stone_tile/surrounding/cracked,
+/mob/living/basic/mining/goliath,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "V" = (
@@ -92,7 +109,7 @@ Q
 l
 l
 h
-h
+v
 h
 l
 l
@@ -100,7 +117,7 @@ l
 "}
 (2,1,1) = {"
 Q
-J
+R
 l
 Q
 Q
@@ -129,7 +146,7 @@ U
 H
 l
 Q
-b
+y
 "}
 (5,1,1) = {"
 Q

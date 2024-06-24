@@ -6,7 +6,8 @@
 /obj/structure/fluff/divine/powerpylon,
 /obj/structure/marker_beacon/teal,
 /turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "d" = (
@@ -14,7 +15,8 @@
 /obj/item/clothing/neck/wreath/icewing,
 /obj/structure/marker_beacon/teal,
 /turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "e" = (
@@ -23,7 +25,8 @@
 	},
 /mob/living/basic/mining/ice_demon,
 /turf/open/misc/ice/icemoon{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "h" = (
@@ -32,7 +35,8 @@
 	dir = 9
 	},
 /turf/open/misc/ice/icemoon{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "i" = (
@@ -44,7 +48,8 @@
 "p" = (
 /obj/item/grenade/gas_crystal/nitrous_oxide_crystal,
 /turf/open/misc/ice/icemoon{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "q" = (
@@ -52,7 +57,8 @@
 	dir = 6
 	},
 /turf/open/misc/ice/icemoon{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "r" = (
@@ -60,7 +66,8 @@
 	dir = 1
 	},
 /turf/open/misc/ice/icemoon{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "y" = (
@@ -70,7 +77,8 @@
 "z" = (
 /obj/effect/turf_decal/weather/snow/corner,
 /turf/open/misc/ice/icemoon{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "B" = (
@@ -80,7 +88,8 @@
 /obj/structure/fluff/divine/powerpylon,
 /obj/structure/marker_beacon/teal,
 /turf/open/misc/ice/icemoon{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "C" = (
@@ -89,26 +98,30 @@
 	},
 /mob/living/basic/mining/ice_demon,
 /turf/open/misc/ice/icemoon{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "D" = (
 /mob/living/basic/mining/ice_demon,
 /obj/structure/flora/ash/chilly,
 /turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "G" = (
 /obj/structure/fluff/divine/conduit,
 /turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "I" = (
 /mob/living/basic/mining/ice_demon,
 /turf/open/misc/ice/icemoon{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "L" = (
@@ -120,30 +133,36 @@
 	},
 /obj/structure/fluff/divine/conduit,
 /turf/open/misc/ice/icemoon{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "N" = (
 /obj/structure/flora/rock/pile/icy/style_random,
 /turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "P" = (
 /obj/item/crusher_trophy/ice_demon_cube,
 /turf/open/misc/ice/icemoon{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "R" = (
-/obj/effect/mapping_helpers/bombable_wall,
-/turf/closed/indestructible/riveted/boss/wasteland,
+/turf/open/misc/snow/actually_safe{
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	},
 /area/ruin/unpowered)
 "U" = (
 /obj/item/stock_parts/cell/crystal_cell,
 /obj/structure/flora/grass/both/style_random,
 /turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "W" = (
@@ -152,7 +171,8 @@
 	},
 /obj/item/hypernoblium_crystal,
 /turf/open/misc/ice/icemoon{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "Y" = (
@@ -164,13 +184,15 @@
 	dir = 8
 	},
 /turf/open/misc/ice/icemoon{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 "Z" = (
 /obj/structure/fluff/divine/shrine,
 /turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS"
+	initial_gas_mix = "LAVALAND_ATMOS";
+	baseturfs = /turf/open/lava/smooth/lava_land_surface
 	},
 /area/ruin/unpowered)
 

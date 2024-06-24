@@ -90,6 +90,7 @@
 /area/lavaland/surface/outdoors)
 "n" = (
 /obj/item/stack/sheet/runed_metal/five,
+/mob/living/basic/mining/brimdemon,
 /turf/closed/mineral/strange_rock/volcanic,
 /area/lavaland/surface/outdoors)
 "o" = (
@@ -190,6 +191,10 @@
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"C" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/strange_rock/volcanic,
 /area/lavaland/surface/outdoors)
 "D" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
@@ -305,6 +310,10 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"V" = (
+/mob/living/basic/mining/brimdemon,
+/turf/closed/mineral/strange_rock/volcanic,
+/area/lavaland/surface/outdoors)
 "W" = (
 /obj/structure/stone_tile/block{
 	dir = 8
@@ -349,19 +358,19 @@ Z
 r
 R
 Y
-J
+C
 J
 "}
 (3,1,1) = {"
 a
-J
-J
+C
+V
 M
 D
 w
 Y
 J
-J
+C
 "}
 (4,1,1) = {"
 a
@@ -371,7 +380,7 @@ R
 j
 s
 N
-J
+V
 a
 "}
 (5,1,1) = {"
@@ -419,7 +428,7 @@ a
 a
 "}
 (9,1,1) = {"
-J
+C
 a
 a
 o
@@ -481,7 +490,7 @@ R
 w
 R
 X
-J
+C
 a
 "}
 (15,1,1) = {"
@@ -497,11 +506,11 @@ a
 "}
 (16,1,1) = {"
 a
-J
+C
 Q
 R
 P
-J
+V
 J
 a
 a
@@ -566,7 +575,7 @@ a
 J
 u
 R
-J
+V
 a
 a
 a
@@ -587,7 +596,7 @@ a
 a
 J
 J
-J
+C
 a
 a
 a

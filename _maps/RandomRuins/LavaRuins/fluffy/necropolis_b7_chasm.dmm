@@ -17,7 +17,15 @@
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"u" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "G" = (
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"H" = (
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "M" = (
@@ -35,7 +43,7 @@
 a
 a
 a
-G
+H
 a
 "}
 (2,1,1) = {"
@@ -60,11 +68,11 @@ n
 n
 "}
 (5,1,1) = {"
-n
+u
 k
 k
 k
-n
+u
 "}
 (6,1,1) = {"
 n
@@ -88,11 +96,11 @@ n
 h
 "}
 (9,1,1) = {"
-n
+u
 k
 k
 n
-G
+H
 "}
 (10,1,1) = {"
 n
@@ -103,7 +111,7 @@ a
 "}
 (11,1,1) = {"
 G
-n
+u
 n
 G
 a
@@ -111,7 +119,7 @@ a
 (12,1,1) = {"
 a
 a
-G
+H
 a
 a
 "}

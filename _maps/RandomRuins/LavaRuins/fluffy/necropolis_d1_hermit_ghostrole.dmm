@@ -130,9 +130,6 @@
 	},
 /turf/open/misc/asteroid/basalt,
 /area/ruin/powered)
-"nh" = (
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 "oI" = (
 /obj/structure/flora/bush/flowers_br/style_random,
 /obj/structure/stone_tile,
@@ -197,9 +194,9 @@
 /obj/structure/stone_tile/block/burnt{
 	dir = 4
 	},
-/obj/item/language_manual/dronespeak_manual{
-	pixel_x = 5;
-	pixel_y = 5
+/obj/item/electronics/apc{
+	pixel_x = 7;
+	pixel_y = 7
 	},
 /turf/open/misc/asteroid/basalt,
 /area/ruin/powered)
@@ -222,9 +219,7 @@
 /turf/closed/wall/mineral/titanium/interior,
 /area/ruin/powered)
 "tV" = (
-/obj/structure/table/survival_pod,
-/obj/item/pickaxe/emergency,
-/obj/item/storage/bag/ore,
+/obj/effect/mob_spawn/ghost_role/human/hermit,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "uh" = (
@@ -232,6 +227,7 @@
 	pixel_x = -9
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/storage/bag/ore,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "uK" = (
@@ -304,6 +300,7 @@
 /area/ruin/powered)
 "xZ" = (
 /obj/structure/stone_tile/cracked,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "yI" = (
@@ -367,6 +364,7 @@
 /obj/item/paper,
 /obj/item/pen/fountain/captain,
 /obj/item/stack/cable_coil/thirty,
+/obj/item/stack/tile/carpet/red/fifty,
 /turf/open/misc/asteroid/basalt,
 /area/ruin/powered)
 "Bn" = (
@@ -387,6 +385,10 @@
 /obj/item/stack/sheet/bone{
 	pixel_y = 10;
 	pixel_x = 14
+	},
+/obj/item/stock_parts/cell/high{
+	pixel_x = 9;
+	pixel_y = -15
 	},
 /turf/open/misc/asteroid/basalt,
 /area/ruin/powered)
@@ -420,6 +422,7 @@
 "EH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/pickaxe/emergency,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "EK" = (
@@ -538,9 +541,6 @@
 	},
 /turf/open/misc/asteroid/basalt,
 /area/ruin/powered)
-"QT" = (
-/turf/closed/indestructible/riveted/boss,
-/area/lavaland/surface/outdoors)
 "Ru" = (
 /obj/item/shovel,
 /obj/structure/stone_tile/surrounding_tile/cracked{
@@ -563,6 +563,7 @@
 /obj/item/fuel_pellet/advanced,
 /obj/item/clothing/suit/space/orange,
 /obj/item/clothing/head/helmet/space/orange,
+/obj/structure/table/survival_pod,
 /turf/open/misc/asteroid/basalt,
 /area/ruin/powered)
 "TC" = (
@@ -615,7 +616,12 @@
 /obj/structure/sign/poster/ripped/directional/north,
 /obj/structure/broken_flooring/side,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mob_spawn/ghost_role/human/hermit,
+/obj/item/flatpacked_machine/wind_turbine{
+	pixel_x = 7
+	},
+/obj/item/flatpacked_machine/wind_turbine{
+	pixel_x = -7
+	},
 /turf/open/floor/plating,
 /area/ruin/powered)
 "XT" = (
@@ -661,7 +667,7 @@ Bn
 Bn
 Bn
 DF
-JO
+Yi
 Yi
 Yi
 Yi
@@ -669,13 +675,13 @@ Yi
 "}
 (2,1,1) = {"
 Bn
-QT
+Bn
 Bn
 Fy
 JO
 JO
 JO
-JO
+Yi
 qT
 Dj
 tV
@@ -777,7 +783,7 @@ ty
 kZ
 JO
 hk
-nh
+EZ
 "}
 (10,1,1) = {"
 JO

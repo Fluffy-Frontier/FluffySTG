@@ -8,6 +8,18 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"d" = (
+/obj/structure/flora/rock/pile/style_random,
+/mob/living/basic/mining/brimdemon,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"h" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 1
+	},
+/mob/living/basic/mining/brimdemon,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "j" = (
 /obj/structure/stone_tile/block,
 /obj/structure/stone_tile/block,
@@ -22,7 +34,13 @@
 /area/lavaland/surface/outdoors)
 "q" = (
 /obj/structure/stone_tile/block,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"s" = (
+/obj/structure/stone_tile/block,
+/mob/living/basic/mining/brimdemon,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "t" = (
 /obj/structure/stone_tile/block/cracked{
@@ -32,6 +50,7 @@
 /area/lavaland/surface/outdoors)
 "u" = (
 /obj/structure/stone_tile/block,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "v" = (
@@ -77,9 +96,7 @@
 /area/lavaland/surface/outdoors)
 "W" = (
 /obj/structure/stone_tile/block/cracked,
-/obj/structure/stone_tile/block{
-	dir = 1
-	},
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Y" = (
@@ -118,7 +135,7 @@ u
 (6,1,1) = {"
 t
 a
-u
+s
 "}
 (7,1,1) = {"
 v
@@ -176,7 +193,7 @@ a
 v
 "}
 (18,1,1) = {"
-w
+h
 a
 v
 "}
@@ -206,7 +223,7 @@ a
 q
 "}
 (24,1,1) = {"
-y
+d
 a
 v
 "}

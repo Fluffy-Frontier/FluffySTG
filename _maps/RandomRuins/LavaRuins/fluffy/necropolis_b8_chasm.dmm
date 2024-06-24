@@ -6,17 +6,34 @@
 /obj/structure/flora/rock/style_random,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"i" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"o" = (
+/obj/structure/healingfountain,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "p" = (
 /turf/open/chasm/lavaland,
 /area/lavaland/surface/outdoors)
 "s" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"t" = (
+/mob/living/basic/mining/brimdemon,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "A" = (
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "C" = (
 /obj/structure/flora/rock/pile/style_random,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"D" = (
+/mob/living/basic/mining/goliath,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "O" = (
@@ -38,29 +55,29 @@ s
 A
 p
 p
-s
+i
 "}
 (3,1,1) = {"
 s
-A
+t
 C
 p
 A
 s
 "}
 (4,1,1) = {"
-s
+i
 p
 p
 p
-A
+D
 a
 "}
 (5,1,1) = {"
 s
 b
 p
-A
+o
 A
 a
 "}

@@ -1,6 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ai" = (
 /obj/structure/stone_tile/surrounding_tile,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/strange_rock/volcanic,
 /area/lavaland/surface/outdoors)
 "as" = (
@@ -52,6 +53,16 @@
 /obj/structure/stone_tile/slab,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"cW" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/gibspawner/human/bodypartless,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"dR" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/fermenting_barrel/gunpowder,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
 "eh" = (
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -60,8 +71,31 @@
 /area/ruin/unpowered)
 "ek" = (
 /obj/structure/stone_tile/slab,
-/mob/living/basic/mining/goliath,
-/turf/closed/mineral/random/high_chance/volcanic,
+/mob/living/basic/faithless{
+	faction = list("mining","boss","hell");
+	name = "Ancient Demon";
+	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_simple = "tears";
+	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/internal/eyes/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
+	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
+	icon_dead = "demondead";
+	icon_living = "engorgedemon";
+	icon_state = "engorgedemon";
+	melee_attack_cooldown = 5;
+	speed = -0.1;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.5, "oxygen" = 1);
+	melee_damage_lower = 3;
+	melee_damage_upper = 7;
+	health = 640;
+	bare_wound_bonus = 5;
+	wound_bonus = -1;
+	obj_damage = 40;
+	attack_vis_effect = "slash";
+	attack_verb_continuous = "maniacally tears";
+	maxHealth = 240
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "fr" = (
 /obj/structure/stone_tile/slab,
@@ -111,6 +145,10 @@
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
+"iW" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "ji" = (
 /obj/structure/stone_tile/surrounding_tile,
 /turf/closed/mineral/random/high_chance/volcanic,
@@ -134,13 +172,14 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 8
 	},
-/mob/living/basic/mining/goliath,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/obj/effect/gibspawner/human/bodypartless,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "jV" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
 	},
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "kJ" = (
@@ -148,6 +187,14 @@
 	dir = 8
 	},
 /turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"kR" = (
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "lC" = (
 /obj/structure/stone_tile/surrounding_tile{
@@ -362,6 +409,7 @@
 /area/lavaland/surface/outdoors)
 "xo" = (
 /obj/structure/stone_tile/block/cracked,
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "xq" = (
@@ -443,6 +491,35 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"BD" = (
+/obj/item/stack/sheet/mineral/silver,
+/obj/structure/stone_tile/slab,
+/mob/living/basic/faithless{
+	faction = list("mining","boss","hell");
+	name = "Ancient Demon";
+	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_simple = "tears";
+	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/internal/eyes/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
+	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
+	icon_dead = "demondead";
+	icon_living = "engorgedemon";
+	icon_state = "engorgedemon";
+	melee_attack_cooldown = 5;
+	speed = -0.1;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.5, "oxygen" = 1);
+	melee_damage_lower = 3;
+	melee_damage_upper = 7;
+	health = 640;
+	bare_wound_bonus = 5;
+	wound_bonus = -1;
+	obj_damage = 40;
+	attack_vis_effect = "slash";
+	attack_verb_continuous = "maniacally tears";
+	maxHealth = 240
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
 "CA" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
@@ -478,6 +555,13 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"DD" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "DF" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 8
@@ -500,6 +584,12 @@
 /obj/structure/flora/rock/pile/style_random,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Fm" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
 "FG" = (
 /obj/structure/stone_tile/block{
 	dir = 4
@@ -576,6 +666,10 @@
 /obj/structure/stone_tile/center,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Jp" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "JH" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -607,6 +701,7 @@
 /area/lavaland/surface/outdoors)
 "KD" = (
 /obj/structure/stone_tile/block,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "KH" = (
@@ -634,10 +729,8 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "LL" = (
-/obj/structure/stone_tile/block{
-	dir = 1
-	},
 /obj/structure/stone_tile/block,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "Mg" = (
@@ -659,10 +752,8 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "MT" = (
-/obj/structure/stone_tile/block{
-	dir = 1
-	},
 /obj/structure/stone_tile/block,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "MW" = (
@@ -698,12 +789,7 @@
 /obj/structure/stone_tile{
 	dir = 8
 	},
-/obj/structure/stone_tile{
-	dir = 1
-	},
-/obj/structure/stone_tile{
-	dir = 4
-	},
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "PD" = (
@@ -752,6 +838,11 @@
 /obj/structure/stone_tile/block,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"SJ" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/fermenting_barrel/gunpowder,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
 "Tv" = (
 /obj/structure/stone_tile/block{
 	dir = 1
@@ -779,6 +870,11 @@
 /mob/living/basic/mining/brimdemon,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"TM" = (
+/obj/structure/stone_tile/surrounding_tile,
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "TO" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -789,6 +885,13 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"TX" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/obj/effect/gibspawner/human/bodypartless,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
 "UI" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center/burnt,
@@ -930,8 +1033,8 @@ XM
 mR
 aK
 aK
-aK
-aK
+iW
+iW
 aK
 aK
 Tx
@@ -994,7 +1097,7 @@ Hj
 Hj
 aK
 aK
-vt
+Pd
 "}
 (4,1,1) = {"
 eh
@@ -1010,7 +1113,7 @@ wB
 ei
 lF
 mL
-XM
+iW
 fr
 lF
 sx
@@ -1035,7 +1138,7 @@ pT
 wB
 ei
 XM
-mL
+Jp
 Kp
 fr
 CN
@@ -1097,7 +1200,7 @@ eh
 aK
 aK
 aK
-XM
+iW
 XM
 "}
 (8,1,1) = {"
@@ -1134,19 +1237,19 @@ cS
 eh
 Is
 ei
-Yj
-iP
-wB
+TX
+BD
+dR
 ei
 pu
 as
 aK
 aK
-TD
+MT
 DP
 eh
 aK
-TD
+MT
 aX
 aK
 aK
@@ -1198,7 +1301,7 @@ Xu
 eh
 fZ
 TH
-Xu
+TM
 CH
 pT
 ZZ
@@ -1276,7 +1379,7 @@ VW
 Kl
 Vb
 Yr
-cQ
+DD
 JH
 UR
 ZQ
@@ -1302,7 +1405,7 @@ bN
 Ke
 aK
 aK
-TD
+MT
 aX
 aK
 aK
@@ -1321,7 +1424,7 @@ wB
 hV
 ei
 Dh
-Dh
+kR
 aK
 eh
 eh
@@ -1383,7 +1486,7 @@ aK
 aK
 aK
 aK
-XM
+iW
 pT
 "}
 (19,1,1) = {"
@@ -1432,8 +1535,8 @@ wB
 hV
 ei
 cf
-MA
-Yj
+cW
+Fm
 wB
 aK
 pT
@@ -1457,7 +1560,7 @@ wc
 wB
 MA
 MA
-MA
+cW
 ek
 wB
 wB
@@ -1485,7 +1588,7 @@ id
 ei
 wB
 ra
-wB
+SJ
 ei
 aK
 vt
@@ -1528,8 +1631,8 @@ XM
 Yc
 aK
 aK
-aK
-aK
+iW
+iW
 aK
 aK
 Wj

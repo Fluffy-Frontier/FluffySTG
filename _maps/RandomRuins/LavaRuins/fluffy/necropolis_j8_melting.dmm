@@ -3,15 +3,13 @@
 /obj/structure/stone_tile/slab,
 /mob/living/basic/mining/brimdemon,
 /obj/item/forging/incomplete/katana,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "c" = (
 /obj/structure/stone_tile{
-	dir = 4
-	},
-/obj/structure/stone_tile{
 	dir = 8
 	},
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "g" = (
@@ -58,7 +56,7 @@
 	dir = 4
 	},
 /obj/item/forging/incomplete/arrowhead,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "v" = (
 /obj/structure/stone_tile/slab,
@@ -66,7 +64,7 @@
 /area/lavaland/surface/outdoors)
 "w" = (
 /obj/structure/punji_sticks/spikes,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "x" = (
 /obj/structure/stone_tile,
@@ -159,7 +157,7 @@
 /obj/structure/stone_tile/block,
 /mob/living/basic/mining/legion,
 /obj/item/forging/incomplete/arrowhead,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "V" = (
 /obj/structure/stone_tile/surrounding_tile{
@@ -167,7 +165,7 @@
 	},
 /obj/structure/stone_tile/surrounding_tile,
 /obj/item/forging/incomplete/arrowhead,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Z" = (
 /turf/closed/indestructible/riveted/boss,

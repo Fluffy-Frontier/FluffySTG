@@ -14,6 +14,10 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"cH" = (
+/obj/structure/punji_sticks/spikes,
+/turf/template_noop,
+/area/template_noop)
 "cK" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -22,6 +26,10 @@
 /obj/structure/stone_tile{
 	dir = 4
 	},
+/turf/closed/mineral/strange_rock/volcanic,
+/area/lavaland/surface/outdoors)
+"dl" = (
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/strange_rock/volcanic,
 /area/lavaland/surface/outdoors)
 "dm" = (
@@ -111,6 +119,33 @@
 "me" = (
 /obj/item/stack/sheet/mineral/metal_hydrogen,
 /obj/structure/stone_tile/slab,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
+"mz" = (
+/mob/living/basic/faithless{
+	faction = list("mining","boss","hell");
+	name = "Ancient Demon";
+	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_simple = "tears";
+	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/internal/eyes/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
+	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
+	icon_dead = "demondead";
+	icon_living = "engorgedemon";
+	icon_state = "engorgedemon";
+	melee_attack_cooldown = 5;
+	speed = -0.1;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.5, "oxygen" = 1);
+	melee_damage_lower = 3;
+	melee_damage_upper = 7;
+	health = 640;
+	bare_wound_bonus = 5;
+	wound_bonus = -1;
+	obj_damage = 40;
+	attack_vis_effect = "slash";
+	attack_verb_continuous = "maniacally tears";
+	maxHealth = 240
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "ng" = (
@@ -272,6 +307,10 @@
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
+"zN" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
 "Ac" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
@@ -408,6 +447,13 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Mt" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Nv" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 6
@@ -417,10 +463,9 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Oj" = (
-/obj/structure/stone_tile/slab,
-/mob/living/basic/mining/brimdemon,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
-/area/ruin/unpowered)
+/area/lavaland/surface/outdoors)
 "On" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 6
@@ -463,6 +508,7 @@
 /area/lavaland/surface/outdoors)
 "Rt" = (
 /obj/structure/stone_tile/block/burnt,
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Rz" = (
@@ -495,7 +541,6 @@
 "TO" = (
 /obj/item/clothing/suit/cloak/ashencloak,
 /obj/structure/stone_tile/slab,
-/mob/living/basic/mining/brimdemon,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "TU" = (
@@ -622,7 +667,7 @@ je
 Xb
 sR
 sR
-Xb
+PN
 Rz
 je
 je
@@ -633,7 +678,7 @@ je
 je
 Xb
 ib
-Xb
+PN
 Xb
 je
 Xb
@@ -649,9 +694,9 @@ Zp
 HT
 HT
 HT
-HT
-HT
-HT
+TU
+Xb
+TU
 HT
 HT
 fW
@@ -670,7 +715,7 @@ dH
 Xb
 "}
 (3,1,1) = {"
-sR
+Oj
 HT
 HT
 Rb
@@ -700,7 +745,7 @@ Xb
 HT
 nG
 nG
-Xb
+PN
 nG
 vd
 je
@@ -740,9 +785,9 @@ ng
 ng
 ng
 Fg
-Xb
+PN
 BX
-je
+cH
 Rb
 HT
 Xb
@@ -818,7 +863,7 @@ ng
 ng
 ng
 je
-sq
+dl
 nG
 sR
 je
@@ -828,7 +873,7 @@ je
 (9,1,1) = {"
 je
 Po
-fW
+Mt
 OK
 WP
 nG
@@ -900,7 +945,7 @@ rs
 Po
 je
 Xb
-Xb
+PN
 je
 "}
 (12,1,1) = {"
@@ -930,7 +975,7 @@ tX
 je
 "}
 (13,1,1) = {"
-Xb
+PN
 HT
 HT
 OK
@@ -961,7 +1006,7 @@ HT
 nG
 nG
 Uk
-sq
+dl
 vd
 fG
 Fg
@@ -986,7 +1031,7 @@ Rz
 HT
 nG
 nG
-Xb
+PN
 vd
 Po
 Vt
@@ -1109,10 +1154,10 @@ Zh
 vy
 me
 HT
-sR
+Oj
 "}
 (20,1,1) = {"
-Xb
+PN
 HT
 At
 ng
@@ -1126,13 +1171,13 @@ HT
 je
 nG
 eE
-sR
+Oj
 vd
 PN
 je
 Tz
-Oj
-DS
+vy
+zN
 vy
 HT
 Xb
@@ -1151,17 +1196,17 @@ SB
 HT
 Rb
 nG
-sR
+Oj
 nG
 nG
 PN
 je
 DS
-DS
+mz
 vy
 au
 HT
-sR
+Oj
 "}
 (22,1,1) = {"
 Xb
@@ -1204,10 +1249,10 @@ wb
 HT
 HT
 HT
-HT
-HT
-HT
-HT
+Xb
+PN
+Xb
+PN
 TU
 HT
 HT
@@ -1218,25 +1263,25 @@ Xb
 (24,1,1) = {"
 je
 Xb
+PN
 Xb
-Xb
 je
 je
 je
 je
 Xb
+Oj
 sR
-sR
-sR
+Oj
 Xb
 je
 je
 Mr
-Xb
+PN
 sv
-Xb
+PN
 Mr
-sR
+Oj
 Mr
 Xb
 je

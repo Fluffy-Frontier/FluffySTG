@@ -15,6 +15,10 @@
 "c" = (
 /turf/closed/indestructible/riveted/boss,
 /area/lavaland/surface/outdoors)
+"e" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "i" = (
 /obj/effect/decal/cleanable/ash{
 	pixel_y = -7;
@@ -41,6 +45,10 @@
 	},
 /turf/open/floor/wood/lavaland,
 /area/ruin/unpowered)
+"l" = (
+/obj/structure/flora/rock/style_random,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "o" = (
 /obj/item/chair/wood,
 /obj/effect/turf_decal/siding/wood{
@@ -73,6 +81,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/under/costume/skeleton,
 /turf/open/floor/wood/lavaland,
 /area/ruin/unpowered)
 "u" = (
@@ -126,7 +135,6 @@
 /turf/open/floor/wood/lavaland,
 /area/ruin/unpowered)
 "E" = (
-/obj/item/claymore/cutlass,
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
@@ -146,7 +154,15 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/bedsheet/pirate,
+/obj/item/bedsheet/pirate{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/mob/living/basic/carp/mega{
+	name = "Captain Bite";
+	health = 200;
+	speed = 0.5
+	},
 /turf/open/floor/wood/lavaland,
 /area/ruin/unpowered)
 "H" = (
@@ -169,6 +185,7 @@
 	pixel_x = -15;
 	pixel_y = -7
 	},
+/obj/item/claymore/cutlass,
 /turf/open/floor/wood/lavaland,
 /area/ruin/unpowered)
 "K" = (
@@ -208,6 +225,10 @@
 /obj/item/clothing/under/costume/sailor,
 /turf/open/floor/wood/lavaland,
 /area/ruin/unpowered)
+"U" = (
+/obj/structure/flora/rock/pile/style_random,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "V" = (
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/wooden/crude,
@@ -225,6 +246,10 @@
 /obj/item/clothing/shoes/pirate/armored,
 /turf/open/floor/wood/lavaland,
 /area/ruin/unpowered)
+"W" = (
+/obj/structure/flora/rock/pile/style_random,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "X" = (
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/wooden/crude,
@@ -235,6 +260,7 @@
 /turf/open/floor/wood/lavaland,
 /area/ruin/unpowered)
 "Y" = (
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Z" = (
@@ -256,10 +282,10 @@ a
 (2,1,1) = {"
 a
 c
-Y
+l
 C
-Y
-B
+l
+U
 c
 "}
 (3,1,1) = {"
@@ -268,26 +294,26 @@ c
 C
 C
 C
-B
+e
 a
 "}
 (4,1,1) = {"
-B
-B
+e
+U
 C
 G
 C
-B
+U
 B
 "}
 (5,1,1) = {"
-B
+U
 C
 C
 D
 C
 C
-Y
+l
 "}
 (6,1,1) = {"
 c
@@ -296,10 +322,10 @@ j
 V
 K
 C
-Y
+W
 "}
 (7,1,1) = {"
-B
+e
 C
 s
 X
@@ -345,7 +371,7 @@ C
 "}
 (12,1,1) = {"
 C
-B
+U
 C
 a
 a

@@ -9,11 +9,13 @@
 /area/lavaland/surface/outdoors)
 "g" = (
 /obj/structure/fluff/clockwork/alloy_shards/small,
+/obj/structure/trap/cult,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "j" = (
 /obj/structure/fluff/clockwork/clockgolem_remains,
 /obj/structure/grille/broken,
+/obj/structure/trap/cult,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "l" = (
@@ -36,6 +38,7 @@
 "v" = (
 /obj/structure/girder/bronze,
 /obj/structure/fluff/clockwork/alloy_shards/large,
+/obj/structure/trap/cult,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "y" = (
@@ -48,10 +51,6 @@
 /obj/structure/fluff/clockwork/blind_eye,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
-"F" = (
-/obj/item/gun/ballistic/bow/clockwork,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "G" = (
 /obj/structure/fluff/clockwork/alloy_shards/medium{
 	pixel_x = -7;
@@ -69,6 +68,7 @@
 	pixel_y = 7
 	},
 /obj/structure/door_assembly/door_assembly_bronze,
+/obj/structure/trap/cult,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "J" = (
@@ -89,6 +89,7 @@
 /obj/item/stock_parts/cell/crystal_cell,
 /obj/effect/spawner/random/environmentally_safe_anomaly/immobile,
 /obj/structure/window/bronze/fulltile,
+/obj/item/gun/ballistic/bow/clockwork,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "Q" = (
@@ -164,7 +165,7 @@ f
 "}
 (9,1,1) = {"
 H
-F
+H
 l
 G
 H

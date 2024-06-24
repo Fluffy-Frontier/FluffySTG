@@ -5,6 +5,10 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"b" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "c" = (
 /obj/structure/stone_tile{
 	dir = 1
@@ -161,6 +165,11 @@
 /obj/structure/stone_tile/slab/burnt,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"M" = (
+/obj/structure/stone_tile,
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "N" = (
 /obj/structure/stone_tile/block{
 	dir = 8
@@ -182,6 +191,7 @@
 /area/lavaland/surface/outdoors)
 "Q" = (
 /obj/structure/stone_tile/burnt,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "R" = (
@@ -291,7 +301,7 @@ P
 G
 U
 r
-I
+b
 z
 z
 z
@@ -310,7 +320,7 @@ z
 z
 g
 z
-T
+M
 a
 y
 "}
@@ -374,7 +384,7 @@ z
 z
 g
 g
-T
+M
 i
 Q
 g

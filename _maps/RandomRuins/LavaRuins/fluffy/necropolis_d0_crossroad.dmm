@@ -30,10 +30,12 @@
 /area/lavaland/surface/outdoors)
 "g" = (
 /obj/structure/stone_tile/cracked,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "i" = (
 /obj/structure/stone_tile,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "l" = (
@@ -77,6 +79,11 @@
 /obj/structure/stone_tile/slab/burnt,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"A" = (
+/obj/structure/stone_tile/block/cracked,
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "B" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 1
@@ -96,6 +103,7 @@
 /obj/structure/stone_tile{
 	dir = 8
 	},
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "F" = (
@@ -184,6 +192,7 @@
 /area/lavaland/surface/outdoors)
 "X" = (
 /obj/structure/stone_tile/block,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Z" = (
@@ -241,7 +250,7 @@ Q
 R
 b
 b
-U
+A
 "}
 (6,1,1) = {"
 f

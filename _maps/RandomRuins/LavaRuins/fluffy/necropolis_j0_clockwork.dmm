@@ -36,7 +36,7 @@
 /obj/structure/stone_tile/block{
 	dir = 1
 	},
-/obj/structure/destructible/clockwork/gear_base/powered,
+/mob/living/basic/mining/brimdemon,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/powered)
 "ds" = (
@@ -110,6 +110,7 @@
 /obj/structure/girder/bronze,
 /obj/item/crowbar/brass,
 /obj/item/stack/sheet/bronze,
+/obj/structure/trap/cult,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/powered)
 "jG" = (
@@ -157,6 +158,9 @@
 /obj/structure/window/bronze/fulltile,
 /obj/structure/marker_beacon/purple,
 /obj/item/stock_parts/cell/crystal_cell,
+/obj/effect/spawner/random/environmentally_safe_anomaly,
+/obj/effect/spawner/random/environmentally_safe_anomaly,
+/obj/effect/spawner/random/environmentally_safe_anomaly,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/powered)
 "mf" = (
@@ -214,6 +218,7 @@
 	pixel_x = 7;
 	pixel_y = 3
 	},
+/obj/structure/trap/cult,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/powered)
 "tD" = (
@@ -252,6 +257,7 @@
 /obj/structure/destructible/clockwork/trap/skewer,
 /obj/item/clockwork/weapon/brass_battlehammer,
 /obj/structure/marker_beacon/burgundy,
+/obj/structure/trap/cult,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/powered)
 "xr" = (
@@ -323,6 +329,7 @@
 "Ac" = (
 /obj/item/stack/sheet/bronze,
 /obj/structure/window/bronze/fulltile,
+/obj/structure/trap/cult,
 /turf/open/floor/bronze/filled/lavaland,
 /area/lavaland/surface/outdoors)
 "Ah" = (
@@ -361,7 +368,8 @@
 /area/lavaland/surface/outdoors)
 "Cm" = (
 /obj/structure/girder/bronze,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/obj/structure/trap/cult,
+/turf/open/floor/bronze/filled/lavaland,
 /area/lavaland/surface/outdoors)
 "Cx" = (
 /turf/template_noop,
@@ -441,6 +449,7 @@
 /obj/structure/window/bronze/fulltile,
 /obj/structure/marker_beacon/burgundy,
 /obj/structure/destructible/clockwork/trap/skewer,
+/obj/structure/trap/cult,
 /turf/open/floor/bronze/filled/lavaland,
 /area/lavaland/surface/outdoors)
 "HX" = (
@@ -488,6 +497,7 @@
 "Lg" = (
 /obj/structure/destructible/clockwork/trap/skewer,
 /obj/structure/window/bronze/fulltile,
+/obj/structure/trap/cult,
 /turf/open/floor/bronze/filled/lavaland,
 /area/lavaland/surface/outdoors)
 "Ng" = (
@@ -517,8 +527,8 @@
 /turf/closed/wall/mineral/bronze,
 /area/ruin/powered)
 "RH" = (
-/obj/structure/destructible/clockwork/trap/pressure_sensor,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/obj/structure/trap/cult,
+/turf/open/floor/bronze/filled/lavaland,
 /area/lavaland/surface/outdoors)
 "SJ" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
@@ -576,7 +586,18 @@
 	pixel_x = -12;
 	pixel_y = -7
 	},
-/mob/living/basic/clockwork_marauder,
+/mob/living/basic/clockwork_marauder{
+	speed = 0.7;
+	light_color = "#FF7777";
+	color = "#FF7777";
+	name = "clockwork praetorian";
+	light_power = 12;
+	light_range = 2;
+	lighting_cutoff_blue = 35;
+	lighting_cutoff_green = 15;
+	lighting_cutoff_red = 25;
+	health = 420
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/powered)
 "WL" = (
@@ -590,10 +611,6 @@
 	icon_state = "smoothrocks-55"
 	},
 /area/lavaland/surface/outdoors)
-"WV" = (
-/obj/structure/destructible/clockwork/gear_base/powered,
-/turf/open/floor/bronze/filled/lavaland,
-/area/ruin/powered)
 "Xe" = (
 /obj/structure/railing/stone/right,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -605,6 +622,7 @@
 /obj/structure/window/bronze/fulltile,
 /obj/structure/destructible/clockwork/trap/skewer,
 /obj/item/wrench/brass,
+/obj/structure/trap/cult,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/powered)
 "YX" = (
@@ -682,10 +700,10 @@ BF
 xr
 Bj
 Wx
-RH
+Ya
 SJ
 YX
-mn
+RH
 VE
 CU
 ds
@@ -752,7 +770,7 @@ DJ
 Ya
 ep
 Hb
-WV
+uR
 af
 WD
 Dy
@@ -838,7 +856,7 @@ ds
 ds
 CY
 Ya
-mn
+RH
 Ya
 ds
 Ya

@@ -79,6 +79,11 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"jh" = (
+/obj/structure/stone_tile/block,
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "jt" = (
 /obj/structure/stone_tile/burnt,
 /turf/open/lava/smooth/lava_land_surface,
@@ -146,6 +151,10 @@
 "oZ" = (
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
+/area/lavaland/surface/outdoors)
+"pg" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "qO" = (
 /obj/structure/stone_tile/block/cracked,
@@ -238,6 +247,10 @@
 /obj/structure/flora/ash/leaf_shroom,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
+"yN" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "Aa" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
@@ -400,7 +413,7 @@
 KX
 KX
 KX
-yf
+pg
 yf
 MJ
 KX
@@ -409,7 +422,7 @@ yf
 yf
 yf
 yf
-yf
+pg
 KX
 KX
 KX
@@ -465,7 +478,7 @@ KX
 hW
 oj
 AA
-yf
+pg
 KX
 "}
 (5,1,1) = {"
@@ -488,7 +501,7 @@ yf
 "}
 (6,1,1) = {"
 KX
-yf
+pg
 KX
 Yj
 Lt
@@ -554,7 +567,7 @@ jt
 oK
 Lt
 fy
-yf
+pg
 DM
 LB
 "}
@@ -572,7 +585,7 @@ ai
 Gi
 Lt
 DM
-yf
+pg
 DM
 bY
 "}
@@ -614,7 +627,7 @@ ld
 "}
 (13,1,1) = {"
 yf
-yf
+pg
 DM
 WP
 ZX
@@ -628,7 +641,7 @@ DM
 KX
 DM
 DM
-Vv
+jh
 "}
 (14,1,1) = {"
 yf
@@ -685,7 +698,7 @@ Lt
 yf
 "}
 (17,1,1) = {"
-yf
+pg
 HX
 DM
 KX
@@ -722,7 +735,7 @@ yf
 "}
 (19,1,1) = {"
 yf
-yf
+pg
 yf
 KX
 KX
@@ -736,7 +749,7 @@ uP
 uP
 UP
 DM
-yf
+pg
 "}
 (20,1,1) = {"
 yf
@@ -759,7 +772,7 @@ yf
 (21,1,1) = {"
 yf
 AA
-AA
+yN
 ZX
 ZX
 Lt
@@ -776,7 +789,7 @@ KX
 "}
 (22,1,1) = {"
 yf
-yf
+pg
 yf
 sW
 oK
@@ -801,7 +814,7 @@ uP
 yp
 yf
 fY
-AA
+yN
 DM
 DM
 DM
@@ -821,7 +834,7 @@ KX
 yf
 KX
 DM
-yf
+pg
 KX
 KX
 KX

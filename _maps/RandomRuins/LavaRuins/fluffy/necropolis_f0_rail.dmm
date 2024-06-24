@@ -24,6 +24,10 @@
 /obj/structure/deployable_barricade/guardrail,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
+"u" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
 "x" = (
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
@@ -117,15 +121,15 @@ B
 (6,1,1) = {"
 S
 X
-H
+u
 "}
 (7,1,1) = {"
-H
+u
 h
-H
+u
 "}
 (8,1,1) = {"
-H
+u
 O
 n
 "}

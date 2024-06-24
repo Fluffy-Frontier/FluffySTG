@@ -28,7 +28,7 @@
 	attack_vis_effect = "slash";
 	bare_wound_bonus = 5;
 	damage_coeff = list("brute" = 0.03, "burn" = 0.03, "toxin" = 0.03, "stamina" = 1, "oxygen" = 0.03);
-	health = 1100;
+	health = 870;
 	icon = 'icons/mob/simple/clown_mobs.dmi';
 	icon_dead = "clown_dead";
 	icon_living = "mutant";
@@ -61,6 +61,10 @@
 /obj/item/bikehorn,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"p" = (
+/obj/structure/trap/cult,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "v" = (
 /obj/item/bikehorn,
 /turf/closed/mineral/bananium,
@@ -68,6 +72,10 @@
 "w" = (
 /turf/template_noop,
 /area/template_noop)
+"N" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "S" = (
 /obj/item/stack/ore/bananium,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -84,9 +92,9 @@
 w
 w
 a
+p
 a
-a
-a
+N
 w
 "}
 (2,1,1) = {"
@@ -95,12 +103,12 @@ a
 a
 d
 V
-a
+p
 a
 "}
 (3,1,1) = {"
 w
-a
+p
 S
 V
 i
@@ -114,31 +122,31 @@ v
 h
 S
 d
-a
+p
 "}
 (5,1,1) = {"
-a
+p
 d
 U
 V
 j
 a
-a
+N
 "}
 (6,1,1) = {"
-a
+N
 S
 e
 S
-a
+p
 a
 w
 "}
 (7,1,1) = {"
 a
 a
-a
-a
+p
+N
 a
 w
 w

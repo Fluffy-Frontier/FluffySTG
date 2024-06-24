@@ -2,6 +2,11 @@
 "a" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"b" = (
+/obj/structure/stone_tile/block/cracked,
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "c" = (
 /obj/structure/stone_tile/block/burnt,
 /obj/structure/stone_tile/burnt{
@@ -49,6 +54,10 @@
 	dir = 4
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"j" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "k" = (
 /obj/structure/stone_tile/block/burnt{
@@ -153,6 +162,10 @@
 /obj/structure/stone_tile/cracked,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"C" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "D" = (
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
@@ -195,6 +208,11 @@
 /obj/structure/stone_tile/block,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"L" = (
+/obj/structure/stone_tile/cracked,
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "M" = (
 /obj/structure/stone_tile/surrounding/burnt,
 /obj/structure/stone_tile/center/burnt,
@@ -234,6 +252,7 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 10
 	},
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "U" = (
@@ -243,6 +262,13 @@
 "V" = (
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
+/area/lavaland/surface/outdoors)
+"W" = (
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "X" = (
 /obj/structure/stone_tile/block,
@@ -270,7 +296,7 @@ l
 P
 v
 v
-l
+W
 v
 v
 v
@@ -295,7 +321,7 @@ v
 e
 Z
 Z
-a
+j
 q
 Z
 Z
@@ -316,16 +342,16 @@ w
 g
 O
 i
-B
+L
 v
 "}
 (5,1,1) = {"
-r
+b
 v
 v
 Z
 r
-D
+C
 F
 Z
 A
@@ -383,7 +409,7 @@ k
 o
 g
 Q
-l
+W
 v
 v
 v
@@ -415,7 +441,7 @@ v
 v
 Z
 D
-a
+j
 "}
 (12,1,1) = {"
 v

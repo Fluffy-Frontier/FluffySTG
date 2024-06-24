@@ -7,6 +7,10 @@
 /obj/structure/stone_tile/block/cracked,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
+"d" = (
+/obj/structure/flora/rock/pile/style_random,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "e" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/structure/trap/cult,
@@ -35,13 +39,19 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "h" = (
+/obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "i" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center,
+/obj/structure/trap/cult,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
+"l" = (
+/obj/structure/flora/rock/pile/style_random,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "n" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
@@ -130,12 +140,17 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"G" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "I" = (
 /obj/structure/stone_tile/surrounding/burnt,
 /obj/structure/stone_tile/center/burnt,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "J" = (
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "K" = (
@@ -148,11 +163,10 @@
 	},
 /area/ruin/unpowered)
 "L" = (
-/obj/structure/trap/cult,
 /obj/structure/stone_tile/surrounding/cracked,
 /obj/structure/stone_tile/center/cracked,
 /obj/item/chair/wood,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "M" = (
 /obj/structure/stone_tile{
@@ -191,8 +205,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/mob_spawn/corpse/human/miner,
 /obj/effect/gibspawner/human/bodypartless,
-/obj/effect/spawner/random/engineering/material_rare,
-/obj/effect/spawner/random/engineering/material_rare,
 /obj/effect/spawner/random/engineering/material_rare,
 /obj/item/organ/internal/liver,
 /mob/living/basic/faithless{
@@ -237,7 +249,7 @@ p
 p
 X
 J
-a
+d
 p
 p
 "}
@@ -246,13 +258,13 @@ p
 p
 p
 Z
-J
+l
 Z
 F
 p
 "}
 (3,1,1) = {"
-a
+G
 g
 Z
 Z
@@ -262,7 +274,7 @@ Z
 p
 "}
 (4,1,1) = {"
-a
+d
 Z
 Z
 Z
@@ -279,10 +291,10 @@ W
 e
 M
 I
-a
+G
 "}
 (6,1,1) = {"
-a
+p
 a
 L
 i
@@ -292,7 +304,7 @@ Z
 o
 "}
 (7,1,1) = {"
-a
+d
 o
 Z
 V
@@ -302,7 +314,7 @@ Z
 p
 "}
 (8,1,1) = {"
-a
+G
 s
 o
 c

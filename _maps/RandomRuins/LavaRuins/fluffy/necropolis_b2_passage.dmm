@@ -39,16 +39,19 @@
 /area/lavaland/surface/outdoors)
 "I" = (
 /obj/structure/stone_tile/block,
+/mob/living/basic/mining/legion,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Q" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 6
 	},
+/mob/living/basic/mining/legion,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "V" = (
 /obj/structure/flora/rock/pile/style_random,
+/mob/living/basic/mining/legion,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "W" = (

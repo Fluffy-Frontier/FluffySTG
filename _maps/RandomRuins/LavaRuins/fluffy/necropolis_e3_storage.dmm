@@ -32,6 +32,7 @@
 	dir = 1
 	},
 /obj/structure/stone_tile/surrounding_tile/cracked,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "g" = (
@@ -47,10 +48,8 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "i" = (
-/obj/structure/stone_tile/block{
-	dir = 1
-	},
 /obj/structure/stone_tile/block/cracked,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "j" = (
@@ -78,6 +77,7 @@
 /area/lavaland/surface/outdoors)
 "n" = (
 /obj/structure/stone_tile/block/cracked,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "o" = (
@@ -311,6 +311,7 @@
 "U" = (
 /obj/structure/stone_tile/block/burnt,
 /obj/item/ammo_casing/arrow/bone,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "V" = (
@@ -344,6 +345,14 @@
 	dir = 8
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Z" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/strong{
+	base_icon_state = "smoothrocks";
+	icon = 'modular_nova/modules/liquids/icons/turf/smoothrocks.dmi';
+	icon_state = "smoothrocks-55"
+	},
 /area/lavaland/surface/outdoors)
 
 (1,1,1) = {"
@@ -427,7 +436,7 @@ m
 a
 "}
 (9,1,1) = {"
-c
+Z
 D
 W
 R

@@ -32,7 +32,8 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "m" = (
-/turf/closed/mineral/random/high_chance/volcanic,
+/mob/living/basic/mining/goliath,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "n" = (
 /obj/effect/mapping_helpers/bombable_wall,
@@ -139,9 +140,9 @@
 y
 J
 X
+L
+J
 m
-J
-J
 y
 y
 y

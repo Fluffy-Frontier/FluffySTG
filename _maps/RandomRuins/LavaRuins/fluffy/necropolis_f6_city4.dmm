@@ -8,6 +8,13 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"cs" = (
+/obj/structure/rack/shelf{
+	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
+	icon_state = "empty_shelf_1"
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
 "cT" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 1
@@ -108,6 +115,11 @@
 /obj/item/stack/sheet/cloth/ten,
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"iu" = (
+/obj/structure/stone_tile,
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "iU" = (
 /obj/structure/stone_tile/slab,
@@ -230,7 +242,7 @@
 	},
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "rW" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -265,10 +277,8 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "tW" = (
-/obj/structure/stone_tile/block{
-	dir = 1
-	},
 /obj/structure/stone_tile/block,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ub" = (
@@ -631,9 +641,7 @@
 /obj/structure/stone_tile{
 	dir = 8
 	},
-/obj/structure/stone_tile{
-	dir = 4
-	},
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Mq" = (
@@ -678,7 +686,7 @@
 	},
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "NJ" = (
 /obj/structure/rack/shelf{
 	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
@@ -698,12 +706,8 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "NY" = (
-/obj/structure/rack/shelf{
-	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
-	icon_state = "empty_shelf_1"
-	},
-/obj/structure/stone_tile/slab,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Ok" = (
 /obj/structure/stone_tile/surrounding/burnt,
@@ -877,7 +881,7 @@
 	},
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "Zv" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -913,17 +917,17 @@ ws
 al
 JQ
 JQ
-ws
+uM
 al
 al
 Mq
 al
 al
-ws
+uM
 BY
 al
 JQ
-JQ
+NY
 ws
 al
 "}
@@ -1063,10 +1067,10 @@ LM
 vn
 vn
 vn
-vn
+UE
 La
 La
-vn
+UE
 vn
 vn
 Tq
@@ -1156,10 +1160,10 @@ La
 Kf
 PG
 GD
-JQ
+NY
 JQ
 UE
-JQ
+NY
 "}
 (11,1,1) = {"
 ws
@@ -1185,7 +1189,7 @@ lp
 lp
 ws
 vn
-ws
+uM
 "}
 (12,1,1) = {"
 ws
@@ -1211,19 +1215,19 @@ LR
 oM
 vn
 vn
-JQ
+NY
 "}
 (13,1,1) = {"
-JQ
-vn
-vn
-JA
 NY
+vn
+vn
+cs
+NJ
 Zp
 EE
-ml
-NY
-NY
+QB
+NJ
+NJ
 vn
 vn
 al
@@ -1237,19 +1241,19 @@ FV
 FV
 vn
 Zv
-ws
+uM
 "}
 (14,1,1) = {"
-JQ
-vn
+NY
+UE
 al
-Mq
-ml
-ml
+mM
+QB
+QB
 wZ
-ml
-Mq
-ml
+QB
+mM
+QB
 al
 vn
 al
@@ -1266,15 +1270,15 @@ vn
 ws
 "}
 (15,1,1) = {"
-ws
+uM
 vn
 al
-NY
-NY
-NY
+NJ
+NJ
+NJ
 al
 al
-ml
+QB
 al
 al
 vn
@@ -1297,10 +1301,10 @@ vn
 al
 al
 al
-ml
-ml
-PG
-PG
+QB
+QB
+sc
+sc
 NC
 al
 vn
@@ -1321,12 +1325,12 @@ BY
 al
 vn
 al
-NY
-NY
+NJ
+NJ
 rs
-ml
+QB
 hZ
-ml
+QB
 Mq
 Kf
 La
@@ -1409,7 +1413,7 @@ La
 La
 vn
 al
-ws
+uM
 wZ
 lp
 Mq
@@ -1434,10 +1438,10 @@ La
 La
 mq
 vn
-ws
+uM
 ek
 ek
-JQ
+NY
 vn
 al
 al
@@ -1463,7 +1467,7 @@ vn
 VB
 lp
 Wr
-ws
+uM
 vn
 FV
 Dx
@@ -1489,7 +1493,7 @@ XV
 al
 pQ
 kA
-ws
+uM
 NW
 vn
 vn
@@ -1508,7 +1512,7 @@ XF
 Zm
 om
 zk
-om
+iu
 JH
 om
 al
@@ -1518,8 +1522,8 @@ wZ
 al
 uU
 ws
-ws
-ws
+uM
+uM
 ws
 al
 al

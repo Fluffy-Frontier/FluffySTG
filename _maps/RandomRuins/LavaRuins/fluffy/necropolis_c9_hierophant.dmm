@@ -6,22 +6,11 @@
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
 /area/lavaland/surface/outdoors)
-"h" = (
-/obj/structure/flora/rock/pile/style_random,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/template_noop)
 "j" = (
 /turf/closed/indestructible/riveted/hierophant,
 /area/ruin/unpowered/hierophant)
 "m" = (
 /turf/closed/indestructible/riveted/boss,
-/area/ruin/unpowered/hierophant)
-"o" = (
-/obj/effect/light_emitter{
-	set_cap = 3;
-	set_luminosity = 5
-	},
-/turf/open/indestructible/hierophant,
 /area/ruin/unpowered/hierophant)
 "t" = (
 /obj/effect/light_emitter{
@@ -31,20 +20,22 @@
 /turf/open/indestructible/hierophant/two,
 /area/ruin/unpowered/hierophant)
 "u" = (
-/mob/living/simple_animal/hostile/megafauna/hierophant,
+/mob/living/simple_animal/hostile/megafauna/hierophant{
+	speed = 5;
+	health = 1800;
+	melee_damage_lower = 5;
+	melee_damage_upper = 30;
+	major_attack_cooldown = 30
+	},
 /turf/open/indestructible/hierophant/two,
 /area/ruin/unpowered/hierophant)
 "D" = (
 /turf/template_noop,
 /area/template_noop)
 "G" = (
-/obj/effect/light_emitter{
-	set_cap = 3;
-	set_luminosity = 5
-	},
 /obj/structure/flora/rock/pile/style_random,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/hierophant)
+/area/lavaland/surface/outdoors)
 "J" = (
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
@@ -140,13 +131,13 @@ D
 D
 D
 a
-a
 j
 a
 a
 a
-j
 a
+a
+j
 D
 D
 D
@@ -164,11 +155,11 @@ a
 j
 j
 D
+D
 a
 a
 a
-a
-a
+j
 a
 a
 G
@@ -177,7 +168,7 @@ a
 j
 j
 a
-a
+D
 D
 D
 "}
@@ -189,7 +180,7 @@ D
 j
 j
 a
-o
+D
 a
 a
 a
@@ -202,7 +193,7 @@ a
 j
 j
 a
-a
+D
 a
 D
 "}
@@ -211,23 +202,23 @@ D
 a
 a
 D
+D
 a
-a
 R
-R
-R
+D
+D
 j
 R
 R
 R
 j
 R
+j
 R
-R
 a
 a
-a
-a
+D
+D
 a
 D
 "}
@@ -236,22 +227,22 @@ U
 m
 a
 a
-a
-a
+D
+D
 R
+j
+D
+j
 R
+j
 R
 j
 R
 R
-R
-j
-R
-R
-R
-a
-a
-a
+D
+D
+D
+D
 a
 m
 U
@@ -261,7 +252,7 @@ U
 j
 a
 a
-o
+D
 a
 R
 R
@@ -275,7 +266,7 @@ R
 R
 R
 a
-o
+D
 a
 a
 j
@@ -317,9 +308,9 @@ R
 R
 R
 R
+j
 R
-R
-R
+j
 R
 R
 R
@@ -336,10 +327,10 @@ U
 j
 a
 a
-a
+j
 a
 R
-R
+j
 t
 R
 R
@@ -347,10 +338,10 @@ u
 R
 R
 t
-R
+j
 R
 a
-a
+j
 a
 a
 j
@@ -367,9 +358,9 @@ R
 R
 R
 R
+j
 R
-R
-R
+j
 R
 R
 R
@@ -386,7 +377,7 @@ U
 j
 a
 j
-a
+D
 a
 j
 j
@@ -411,7 +402,7 @@ U
 j
 a
 D
-o
+D
 a
 R
 R
@@ -425,7 +416,7 @@ R
 R
 R
 a
-o
+a
 a
 a
 j
@@ -438,17 +429,17 @@ a
 D
 a
 a
-R
-R
+D
+j
 R
 j
 R
-R
+j
 R
 j
 R
-R
-R
+j
+D
 a
 a
 a
@@ -462,19 +453,19 @@ a
 D
 D
 D
-a
+D
+D
+D
+R
+j
 R
 R
 R
 j
 R
 R
-R
-j
-R
-R
-R
-a
+D
+D
 a
 D
 a
@@ -495,10 +486,10 @@ a
 a
 a
 a
+D
+D
 a
-a
-a
-a
+D
 j
 j
 D
@@ -515,14 +506,14 @@ j
 j
 a
 a
-o
 a
 a
 a
+j
 a
 a
-o
-a
+D
+D
 D
 j
 j
@@ -564,7 +555,7 @@ a
 a
 a
 D
-h
+G
 a
 a
 a

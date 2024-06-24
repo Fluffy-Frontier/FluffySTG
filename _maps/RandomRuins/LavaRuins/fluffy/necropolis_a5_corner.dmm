@@ -2,6 +2,11 @@
 "a" = (
 /turf/closed/indestructible/riveted/boss,
 /area/lavaland/surface/outdoors)
+"c" = (
+/obj/structure/flora/rock/pile/style_random,
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "d" = (
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -69,6 +74,7 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 1
 	},
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "r" = (
@@ -215,6 +221,11 @@
 "T" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"U" = (
+/obj/structure/flora/ash/cap_shroom,
+/mob/living/basic/mining/goliath,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "V" = (
 /obj/structure/stone_tile/block,
 /turf/closed/mineral/random/high_chance/volcanic,
@@ -287,7 +298,7 @@ X
 a
 I
 f
-w
+U
 a
 R
 R
@@ -303,7 +314,7 @@ P
 t
 Y
 a
-T
+A
 j
 "}
 (5,1,1) = {"
@@ -349,7 +360,7 @@ u
 T
 "}
 (8,1,1) = {"
-T
+A
 K
 V
 d
@@ -360,7 +371,7 @@ C
 Q
 D
 E
-T
+A
 "}
 (9,1,1) = {"
 X
@@ -410,7 +421,7 @@ R
 R
 R
 a
-m
+c
 T
 L
 L

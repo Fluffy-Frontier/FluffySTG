@@ -45,6 +45,7 @@
 /area/lavaland/surface/outdoors)
 "s" = (
 /obj/structure/stone_tile/block,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "u" = (
@@ -54,6 +55,7 @@
 /obj/structure/stone_tile{
 	dir = 8
 	},
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "A" = (
@@ -81,12 +83,17 @@
 /area/lavaland/surface/outdoors)
 "F" = (
 /obj/structure/stone_tile/block/cracked,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "H" = (
 /obj/structure/stone_tile/block{
 	dir = 1
 	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"J" = (
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "K" = (
@@ -145,7 +152,7 @@ K
 F
 "}
 (5,1,1) = {"
-u
+J
 d
 T
 q

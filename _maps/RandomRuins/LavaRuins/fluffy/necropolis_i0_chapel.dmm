@@ -52,7 +52,7 @@
 /obj/structure/stone_tile/block{
 	dir = 8
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "r" = (
 /obj/structure/stone_tile/block/burnt{
@@ -63,7 +63,6 @@
 "s" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center,
-/mob/living/basic/mining/legion,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "u" = (
@@ -159,6 +158,31 @@
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
 	},
+/mob/living/basic/faithless{
+	faction = list("mining","boss","hell");
+	name = "Ancient Demon";
+	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_simple = "tears";
+	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/internal/eyes/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
+	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
+	icon_dead = "demondead";
+	icon_living = "engorgedemon";
+	icon_state = "engorgedemon";
+	melee_attack_cooldown = 5;
+	speed = -0.1;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.5, "oxygen" = 1);
+	melee_damage_lower = 3;
+	melee_damage_upper = 7;
+	health = 640;
+	bare_wound_bonus = 5;
+	wound_bonus = -1;
+	obj_damage = 40;
+	attack_vis_effect = "slash";
+	attack_verb_continuous = "maniacally tears";
+	maxHealth = 240
+	},
+/obj/effect/gibspawner,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 

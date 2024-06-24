@@ -99,6 +99,11 @@
 /obj/structure/railing/stone,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"nx" = (
+/obj/structure/railing/stone,
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "nI" = (
 /obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -153,6 +158,7 @@
 /obj/structure/railing/stone/right,
 /obj/structure/railing/stone/left,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/hay/lavaland,
 /area/lavaland/surface/outdoors)
 "wk" = (
@@ -191,9 +197,11 @@
 /area/ruin/unpowered)
 "ya" = (
 /obj/structure/stone_tile/surrounding_tile/cracked,
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "ze" = (
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/hay/lavaland,
 /area/ruin/unpowered)
 "zl" = (
@@ -223,6 +231,10 @@
 /obj/item/cultivator/rake,
 /turf/open/misc/hay/lavaland,
 /area/ruin/unpowered)
+"Ax" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "BE" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 8
@@ -233,6 +245,7 @@
 "BP" = (
 /obj/item/stack/sheet/bone,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/hay/lavaland,
 /area/ruin/unpowered)
 "CH" = (
@@ -244,6 +257,7 @@
 "Dm" = (
 /obj/structure/railing/stone/right,
 /obj/structure/railing/stone/left,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Ef" = (
@@ -269,6 +283,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/hay/lavaland,
 /area/ruin/unpowered)
 "Gb" = (
@@ -328,6 +343,7 @@
 /area/lavaland/surface/outdoors)
 "MD" = (
 /obj/structure/railing/stone/left,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "MY" = (
@@ -403,6 +419,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "UY" = (
@@ -462,7 +479,7 @@ cH
 cH
 zL
 My
-my
+nx
 Kt
 JT
 fB
@@ -497,7 +514,7 @@ pd
 Oq
 pd
 VL
-qu
+Ax
 "}
 (5,1,1) = {"
 cH
@@ -553,11 +570,11 @@ iN
 fZ
 hV
 VL
-qu
+Ax
 "}
 (9,1,1) = {"
 cH
-qu
+Ax
 Ah
 kn
 BE

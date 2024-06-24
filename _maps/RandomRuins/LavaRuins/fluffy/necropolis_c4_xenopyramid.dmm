@@ -16,7 +16,12 @@
 	pixel_y = 6;
 	pixel_x = 3
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "bj" = (
 /obj/structure/stone_tile/slab,
@@ -41,7 +46,12 @@
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor7-old"
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "cl" = (
 /obj/structure/stone_tile/block,
@@ -66,20 +76,35 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "dr" = (
-/obj/structure/alien/weeds,
-/obj/structure/alien/weeds,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/xenonest)
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "dE" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/blood,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "ep" = (
 /obj/structure/stone_tile/slab/burnt,
 /obj/item/nullrod/tribal_knife,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"er" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"ew" = (
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
+/area/ruin/unpowered/xenonest)
 "ez" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 8
@@ -92,17 +117,39 @@
 	slowdown = 0
 	},
 /area/ruin/unpowered)
+"eQ" = (
+/obj/item/flashlight/flare/torch,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "eW" = (
-/obj/structure/alien/weeds/node,
+/obj/structure/alien/resin/wall,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
+/area/ruin/unpowered/xenonest)
+"fP" = (
 /mob/living/basic/alien,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "hF" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor5-old"
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "iR" = (
 /obj/structure/bed/nest,
@@ -113,7 +160,12 @@
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/effect/mob_spawn/corpse/human/syndicatecommando/soft_suit,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "iW" = (
 /obj/structure/stone_tile/block,
@@ -125,6 +177,17 @@
 "jc" = (
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"jm" = (
+/obj/structure/alien/weeds,
+/obj/effect/spawner/random/junk_shell,
+/obj/structure/bed/nest,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
+/area/ruin/unpowered/xenonest)
 "jz" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -137,13 +200,56 @@
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/blood,
 /obj/item/clothing/mask/facehugger/impregnated,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "jT" = (
 /obj/structure/alien/weeds,
 /obj/item/flashlight/flare/torch,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
+"km" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/mob/living/basic/faithless{
+	faction = list("mining","boss","hell");
+	name = "Ancient Demon";
+	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_simple = "tears";
+	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/internal/eyes/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
+	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
+	icon_dead = "demondead";
+	icon_living = "engorgedemon";
+	icon_state = "engorgedemon";
+	melee_attack_cooldown = 5;
+	speed = -0.1;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.5, "oxygen" = 1);
+	melee_damage_lower = 3;
+	melee_damage_upper = 7;
+	health = 640;
+	bare_wound_bonus = 5;
+	wound_bonus = -1;
+	obj_damage = 40;
+	attack_vis_effect = "slash";
+	attack_verb_continuous = "maniacally tears";
+	maxHealth = 240
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
 "kz" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	desc = "Your instincts say you shouldn't be following these.";
@@ -153,6 +259,7 @@
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
 	},
+/obj/item/clothing/suit/space/syndicate/orange,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "kI" = (
@@ -162,16 +269,31 @@
 /obj/effect/decal/cleanable/blood,
 /obj/item/clothing/under/syndicate,
 /obj/item/clothing/glasses/night,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "li" = (
 /obj/structure/alien/weeds/node,
 /obj/structure/alien/weeds,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "ly" = (
 /obj/structure/alien/weeds,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "lM" = (
 /obj/effect/mapping_helpers/bombable_wall,
@@ -184,18 +306,33 @@
 	dir = 8
 	},
 /obj/effect/spawner/random/medical/two_percent_xeno_egg_spawner,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "mu" = (
 /mob/living/basic/alien/queen/large,
 /obj/structure/alien/weeds,
 /obj/structure/alien/egg/burst,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "mS" = (
 /obj/structure/alien/weeds,
 /mob/living/basic/alien,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "nL" = (
 /obj/structure/stone_tile/slab/cracked{
@@ -207,7 +344,12 @@
 /obj/structure/alien/weeds,
 /obj/structure/alien/weeds,
 /mob/living/basic/alien,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "oL" = (
 /obj/structure/stone_tile/cracked,
@@ -215,31 +357,51 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "pN" = (
-/obj/structure/alien/resin/wall,
-/obj/structure/alien/weeds,
-/obj/structure/alien/weeds,
-/obj/effect/mob_spawn/corpse/human/damaged,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered/xenonest)
 "pU" = (
 /obj/structure/alien/weeds,
 /obj/effect/gibspawner/human/bodypartless,
 /obj/effect/spawner/random/food_or_drink/snack/lizard,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "qd" = (
 /obj/structure/alien/resin/wall,
 /obj/effect/mob_spawn/corpse/human/damaged,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "rp" = (
 /turf/template_noop,
 /area/template_noop)
+"sE" = (
+/obj/structure/alien/weeds,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
+/area/ruin/unpowered)
 "sR" = (
 /obj/structure/alien/weeds/node,
 /obj/structure/alien/weeds,
 /mob/living/basic/alien,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "tq" = (
 /obj/structure/stone_tile/block/cracked{
@@ -276,6 +438,16 @@
 	slowdown = 0
 	},
 /area/ruin/unpowered)
+"us" = (
+/obj/structure/alien/weeds,
+/obj/structure/bed/nest,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
+/area/ruin/unpowered/xenonest)
 "uy" = (
 /obj/structure/stone_tile/block/cracked,
 /obj/structure/stone_tile/block/burnt{
@@ -291,7 +463,12 @@
 /obj/item/gun/ballistic/automatic/pistol,
 /obj/item/clothing/under/syndicate,
 /obj/structure/marker_beacon/burgundy,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "vn" = (
 /obj/structure/stone_tile/block,
@@ -310,37 +487,86 @@
 "wq" = (
 /obj/structure/alien/weeds,
 /obj/effect/spawner/random/junk_shell,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "wy" = (
 /obj/structure/stone_tile/surrounding_tile,
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
 	},
+/mob/living/basic/faithless{
+	faction = list("mining","boss","hell");
+	name = "Ancient Demon";
+	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_simple = "tears";
+	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/internal/eyes/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
+	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
+	icon_dead = "demondead";
+	icon_living = "engorgedemon";
+	icon_state = "engorgedemon";
+	melee_attack_cooldown = 5;
+	speed = -0.1;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.5, "oxygen" = 1);
+	melee_damage_lower = 3;
+	melee_damage_upper = 7;
+	health = 640;
+	bare_wound_bonus = 5;
+	wound_bonus = -1;
+	obj_damage = 40;
+	attack_vis_effect = "slash";
+	attack_verb_continuous = "maniacally tears";
+	maxHealth = 240
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "wD" = (
 /obj/structure/alien/weeds,
 /obj/effect/gibspawner/human/bodypartless,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "wP" = (
 /obj/structure/alien/weeds,
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/blood,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "xu" = (
 /obj/structure/alien/weeds,
 /mob/living/basic/alien/drone,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "xx" = (
 /obj/structure/bed/nest,
 /obj/structure/alien/weeds,
 /obj/effect/mob_spawn/corpse/human/miner,
 /obj/effect/spawner/random/contraband/grenades/dangerous,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "xJ" = (
 /obj/effect/spawner/random/medical/supplies,
@@ -348,6 +574,8 @@
 /obj/structure/stone_tile{
 	dir = 1
 	},
+/obj/item/clothing/mask/gas,
+/obj/item/tank/internals/oxygen,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "ya" = (
@@ -361,12 +589,32 @@
 "Am" = (
 /obj/structure/alien/weeds,
 /mob/living/basic/alien/sentinel,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
+/area/ruin/unpowered/xenonest)
+"AN" = (
+/mob/living/basic/alien/drone,
+/obj/structure/alien/weeds,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "Bl" = (
 /obj/structure/alien/weeds,
 /obj/structure/alien/egg/burst,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "Bu" = (
 /obj/structure/wall_torch/mount_only,
@@ -381,6 +629,10 @@
 	slowdown = 0
 	},
 /area/ruin/unpowered)
+"BF" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/unpowered/xenonest)
 "Ci" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -388,7 +640,13 @@
 	icon_state = "ltrails_1";
 	dir = 10
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/mob/living/basic/alien,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "CH" = (
 /obj/effect/decal/cleanable/blood/tracks,
@@ -398,7 +656,12 @@
 "CP" = (
 /obj/structure/alien/weeds,
 /obj/effect/mob_spawn/corpse/human/damaged/ashwalker,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "Da" = (
 /obj/effect/mapping_helpers/bombable_wall,
@@ -437,6 +700,30 @@
 "EH" = (
 /obj/structure/stone_tile/slab,
 /obj/item/flashlight/flare/torch,
+/mob/living/basic/faithless{
+	faction = list("mining","boss","hell");
+	name = "Ancient Demon";
+	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_simple = "tears";
+	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/internal/eyes/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
+	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
+	icon_dead = "demondead";
+	icon_living = "engorgedemon";
+	icon_state = "engorgedemon";
+	melee_attack_cooldown = 5;
+	speed = -0.1;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.5, "oxygen" = 1);
+	melee_damage_lower = 3;
+	melee_damage_upper = 7;
+	health = 640;
+	bare_wound_bonus = 5;
+	wound_bonus = -1;
+	obj_damage = 40;
+	attack_vis_effect = "slash";
+	attack_verb_continuous = "maniacally tears";
+	maxHealth = 240
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "EM" = (
@@ -461,7 +748,12 @@
 /obj/structure/alien/resin/wall,
 /obj/structure/alien/weeds,
 /obj/structure/alien/weeds,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "FS" = (
 /obj/structure/stone_tile/slab/cracked{
@@ -476,6 +768,7 @@
 /obj/structure/stone_tile{
 	dir = 4
 	},
+/obj/item/clothing/head/helmet/space/syndicate/orange,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "HJ" = (
@@ -487,18 +780,22 @@
 	dir = 6
 	},
 /mob/living/basic/alien,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "IE" = (
 /obj/structure/alien/weeds,
-/obj/structure/bed/nest,
-/obj/effect/decal/cleanable/blood/gibs,
-/obj/item/tank/internals/oxygen,
-/obj/item/clothing/suit/space/syndicate/orange,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/head/helmet/space/syndicate/orange,
-/obj/structure/marker_beacon/burgundy,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/obj/structure/alien/resin/wall,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "Jp" = (
 /obj/structure/fluff/drake_statue,
@@ -522,7 +819,12 @@
 "La" = (
 /obj/structure/alien/resin/wall,
 /obj/structure/alien/weeds,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "LA" = (
 /obj/structure/stone_tile/surrounding/cracked,
@@ -543,7 +845,12 @@
 /obj/structure/alien/weeds,
 /obj/structure/alien/weeds,
 /obj/effect/spawner/random/medical/two_percent_xeno_egg_spawner,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "Mw" = (
 /obj/structure/stone_tile/block{
@@ -561,7 +868,12 @@
 	dir = 10
 	},
 /obj/structure/alien/resin/wall,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "Oo" = (
 /obj/structure/stone_tile/surrounding_tile{
@@ -573,7 +885,12 @@
 "OC" = (
 /obj/structure/alien/weeds,
 /obj/effect/spawner/random/medical/two_percent_xeno_egg_spawner,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "OK" = (
 /obj/structure/stone_tile/burnt{
@@ -584,14 +901,24 @@
 "ON" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/structure/stone_tile/slab,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered)
 "Pu" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "Py" = (
 /turf/open/lava/smooth/lava_land_surface{
@@ -609,7 +936,12 @@
 /obj/structure/alien/weeds,
 /obj/effect/gibspawner/human/bodypartless,
 /obj/effect/spawner/random/food_or_drink/snack,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "Qf" = (
 /obj/structure/punji_sticks/spikes,
@@ -623,7 +955,12 @@
 /obj/structure/alien/weeds,
 /obj/effect/gibspawner/human/bodypartless,
 /obj/effect/spawner/random/contraband/narcotics,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "Ro" = (
 /obj/structure/alien/weeds/node,
@@ -631,13 +968,23 @@
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor7-old"
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "Ru" = (
 /obj/structure/alien/resin/wall,
 /obj/structure/alien/weeds,
 /obj/effect/mob_spawn/corpse/human/damaged/ashwalker,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "SM" = (
 /obj/structure/stone_tile/burnt,
@@ -645,6 +992,10 @@
 	slowdown = 0
 	},
 /area/ruin/unpowered)
+"SW" = (
+/obj/effect/spawner/random/junk_shell,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "SX" = (
 /obj/structure/stone_tile/block{
 	dir = 8
@@ -652,9 +1003,7 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "Tk" = (
-/obj/structure/alien/weeds,
-/obj/structure/alien/resin/wall,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered/xenonest)
 "To" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -666,7 +1015,12 @@
 /obj/effect/decal/cleanable/blood,
 /obj/effect/gibspawner/human/bodypartless,
 /obj/effect/spawner/random/medical/injector,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "TF" = (
 /turf/closed/indestructible/riveted/boss,
@@ -683,20 +1037,35 @@
 /obj/item/melee/baton/security/loaded,
 /obj/item/clothing/head/helmet,
 /obj/structure/marker_beacon/burgundy,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "Vg" = (
 /obj/structure/alien/weeds/node,
 /obj/structure/alien/weeds,
 /obj/effect/spawner/random/medical/two_percent_xeno_egg_spawner,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "Wa" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor7-old"
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "Wm" = (
 /obj/structure/stone_tile/surrounding/burnt,
@@ -717,7 +1086,12 @@
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor5-old"
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "WO" = (
 /obj/structure/alien/weeds,
@@ -726,7 +1100,32 @@
 	dir = 8;
 	icon_state = "ltrails_1"
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
+/area/ruin/unpowered/xenonest)
+"WU" = (
+/obj/structure/alien/weeds,
+/obj/effect/mob_spawn/corpse/human/damaged,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
+/area/ruin/unpowered/xenonest)
+"XW" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/weeds,
+/turf/open/indestructible/plating{
+	icon_state = "basalt";
+	base_icon_state = "basalt";
+	initial_gas_mix = "LAVALAND_ATMOS";
+	name = "volcanic floor"
+	},
 /area/ruin/unpowered/xenonest)
 "Yn" = (
 /obj/structure/stone_tile/surrounding,
@@ -756,8 +1155,8 @@ rp
 rp
 rp
 rp
-PN
-PN
+rp
+rp
 rp
 "}
 (2,1,1) = {"
@@ -782,9 +1181,9 @@ PN
 PN
 rp
 PN
-PN
-PN
-PN
+rp
+rp
+rp
 "}
 (3,1,1) = {"
 PN
@@ -803,14 +1202,14 @@ La
 Bl
 PN
 PN
-lM
+rp
 PN
 PN
 PN
 PN
-La
-PN
-PN
+rp
+rp
+rp
 "}
 (4,1,1) = {"
 rp
@@ -823,19 +1222,19 @@ mS
 TF
 TF
 TF
-TF
+fP
 La
 CP
 wP
-ly
-ly
-ly
-ly
-TF
-OC
-La
-pN
+BF
+er
+rp
+rp
 PN
+jc
+er
+rp
+rp
 rp
 "}
 (5,1,1) = {"
@@ -848,20 +1247,20 @@ wq
 ly
 cf
 OC
-dr
-dr
+XW
+XW
 Mg
 vG
 vG
 vG
 vG
-vG
-wD
-hF
+rp
+rp
 dr
-xu
-wq
-PN
+dr
+SW
+rp
+rp
 rp
 "}
 (6,1,1) = {"
@@ -869,7 +1268,7 @@ rp
 PN
 PN
 ly
-Tk
+IE
 ly
 wq
 La
@@ -882,13 +1281,13 @@ UB
 UB
 vG
 vG
-TF
-TF
-TF
-TF
-jT
-PN
-PN
+rp
+rp
+rp
+rp
+rp
+rp
+rp
 "}
 (7,1,1) = {"
 rp
@@ -898,33 +1297,33 @@ xu
 La
 Ty
 HJ
-TF
-TF
-TF
+wD
+eW
+WU
 TF
 vG
 Dz
 LX
-tO
+km
 db
 vG
 Tk
-IE
-eW
-TF
-ly
+rp
+rp
+rp
+eQ
 PN
-PN
+rp
 "}
 (8,1,1) = {"
 rp
 lM
 PN
 FL
-TF
-TF
-TF
-TF
+ly
+ly
+ly
+ly
 Qd
 ly
 xu
@@ -934,12 +1333,12 @@ tO
 Oo
 Dz
 vG
-ly
-jJ
-ly
-ly
-ly
-PN
+pN
+Tk
+rp
+rp
+rp
+rp
 rp
 "}
 (9,1,1) = {"
@@ -948,10 +1347,10 @@ PN
 PN
 ly
 ly
+us
+IE
 ly
-ly
-ly
-ly
+OC
 TF
 Ru
 vG
@@ -960,12 +1359,12 @@ bj
 PT
 db
 vG
-mS
-Bl
+pN
+pN
 Tk
-TF
-TF
 PN
+PN
+rp
 rp
 "}
 (10,1,1) = {"
@@ -992,7 +1391,7 @@ vG
 vG
 vG
 PN
-PN
+rp
 "}
 (11,1,1) = {"
 PN
@@ -1030,9 +1429,9 @@ Vg
 xu
 wq
 jJ
-ly
-ly
-vG
+xu
+IE
+Da
 db
 iW
 cl
@@ -1058,7 +1457,7 @@ Bl
 OC
 ly
 Ci
-Da
+vG
 db
 JG
 Em
@@ -1128,14 +1527,14 @@ PN
 rp
 PN
 PN
-dr
+us
 ly
-ly
+IE
 Wa
-ly
+us
 ly
 TF
-ly
+mS
 vG
 UB
 Dz
@@ -1155,11 +1554,11 @@ rp
 PN
 PN
 ly
-TF
-TF
-TF
-TF
-xu
+ly
+eW
+ly
+ly
+IE
 La
 ly
 vG
@@ -1181,12 +1580,12 @@ rp
 lM
 PN
 ly
-Tk
+IE
 UI
 xu
-TF
-TF
-TF
+ly
+AN
+IE
 TF
 vG
 Dz
@@ -1209,7 +1608,7 @@ PN
 ly
 Wa
 jJ
-Tk
+IE
 La
 Qz
 La
@@ -1240,12 +1639,12 @@ ly
 La
 ly
 ly
-wq
+jm
 vG
 vG
 vG
 vG
-vG
+sE
 ly
 ly
 xu
@@ -1260,12 +1659,12 @@ PN
 PN
 TF
 mS
-Tk
+IE
 Bl
 TF
 TF
 TF
-TF
+ew
 ly
 pU
 cf

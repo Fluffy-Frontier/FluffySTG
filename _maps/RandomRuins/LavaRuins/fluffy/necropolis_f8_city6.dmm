@@ -189,6 +189,10 @@
 /obj/structure/stone_tile/slab/cracked,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"gZ" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "ht" = (
 /turf/closed/mineral/strange_rock/volcanic,
 /area/lavaland/surface/outdoors)
@@ -377,10 +381,8 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "st" = (
-/obj/structure/stone_tile/block{
-	dir = 1
-	},
 /obj/structure/stone_tile/block,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "sx" = (
@@ -606,6 +608,10 @@
 /mob/living/basic/mining/lobstrosity/lava,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Cx" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/strange_rock/volcanic,
+/area/lavaland/surface/outdoors)
 "CX" = (
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -779,9 +785,7 @@
 /obj/structure/stone_tile{
 	dir = 8
 	},
-/obj/structure/stone_tile{
-	dir = 4
-	},
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Ou" = (
@@ -802,6 +806,34 @@
 /obj/structure/stone_tile/center,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Qu" = (
+/obj/structure/stone_tile/slab,
+/mob/living/basic/faithless{
+	faction = list("mining","boss","hell");
+	name = "Ancient Demon";
+	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_simple = "tears";
+	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/internal/eyes/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
+	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
+	icon_dead = "demondead";
+	icon_living = "engorgedemon";
+	icon_state = "engorgedemon";
+	melee_attack_cooldown = 5;
+	speed = -0.1;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.5, "oxygen" = 1);
+	melee_damage_lower = 3;
+	melee_damage_upper = 7;
+	health = 640;
+	bare_wound_bonus = 5;
+	wound_bonus = -1;
+	obj_damage = 40;
+	attack_vis_effect = "slash";
+	attack_verb_continuous = "maniacally tears";
+	maxHealth = 240
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
 "Qz" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile/burnt{
@@ -878,6 +910,10 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"UE" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/unpowered)
 "Vz" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -953,7 +989,7 @@
 
 (1,1,1) = {"
 Sb
-hG
+rM
 TI
 ek
 NL
@@ -978,7 +1014,7 @@ Sb
 Sb
 "}
 (2,1,1) = {"
-uH
+gZ
 LO
 aB
 aB
@@ -1050,10 +1086,10 @@ aB
 tw
 CX
 cT
-CX
+Qu
 FA
 aB
-uH
+gZ
 "}
 (5,1,1) = {"
 Sb
@@ -1071,7 +1107,7 @@ aB
 ID
 tt
 YS
-uH
+gZ
 uH
 OK
 BY
@@ -1123,7 +1159,7 @@ ID
 ID
 tI
 YS
-hG
+rM
 aB
 cT
 CX
@@ -1156,7 +1192,7 @@ vZ
 vZ
 zy
 vZ
-aB
+eV
 Sb
 "}
 (9,1,1) = {"
@@ -1175,18 +1211,18 @@ aB
 Sb
 gS
 nD
-hG
+rM
 aB
 EA
 qB
 CX
 FA
 FA
-aB
+rM
 Sb
 "}
 (10,1,1) = {"
-hG
+rM
 aB
 qB
 Bn
@@ -1208,11 +1244,11 @@ zy
 FA
 FA
 FA
-aB
+rM
 Sb
 "}
 (11,1,1) = {"
-uH
+gZ
 aB
 qB
 qB
@@ -1225,7 +1261,7 @@ xa
 cT
 aB
 uH
-hG
+rM
 lD
 hG
 aB
@@ -1233,12 +1269,12 @@ vZ
 sH
 dA
 dA
-vZ
-aB
+UE
+eV
 Sb
 "}
 (12,1,1) = {"
-uH
+gZ
 aB
 vZ
 Gt
@@ -1261,7 +1297,7 @@ eV
 aB
 aB
 kX
-hG
+rM
 "}
 (13,1,1) = {"
 ht
@@ -1290,16 +1326,16 @@ aB
 uH
 "}
 (14,1,1) = {"
-hG
+rM
 uH
 hy
 uH
-hG
+rM
 hG
 Xn
 YS
 Sb
-hG
+rM
 uH
 Ir
 aL
@@ -1446,7 +1482,7 @@ aB
 hG
 "}
 (20,1,1) = {"
-hG
+rM
 aB
 Bk
 aK
@@ -1495,7 +1531,7 @@ Sb
 Bk
 Bk
 aB
-uH
+gZ
 "}
 (22,1,1) = {"
 hG
@@ -1521,10 +1557,10 @@ zV
 zV
 aB
 aB
-hG
+rM
 "}
 (23,1,1) = {"
-hG
+rM
 Yk
 aB
 aB
@@ -1547,7 +1583,7 @@ aB
 aB
 aB
 rc
-hG
+rM
 "}
 (24,1,1) = {"
 Sb
@@ -1567,11 +1603,11 @@ DM
 Sb
 Sb
 Sb
-hG
+rM
 KG
 Sb
 Sb
-ht
-hG
+Cx
+rM
 Sb
 "}

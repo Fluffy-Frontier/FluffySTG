@@ -13,7 +13,26 @@
 "cv" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center,
-/turf/closed/mineral/random/high_chance/volcanic,
+/obj/effect/decal/cleanable/blood/gibs/limb{
+	pixel_y = 10
+	},
+/obj/effect/decal/cleanable/blood/old{
+	pixel_x = -5;
+	pixel_y = 15
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor4-old";
+	pixel_y = 10;
+	pixel_x = 5
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	desc = "Your instincts say you shouldn't be following these.";
+	icon_state = "ltrails_1";
+	dir = 10;
+	pixel_y = 15
+	},
+/obj/structure/trap/cult,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "dk" = (
 /obj/structure/stone_tile/block/cracked{
@@ -25,6 +44,7 @@
 /obj/structure/stone_tile{
 	dir = 8
 	},
+/obj/item/organ/internal/tongue/cat/tajaran,
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "eD" = (
@@ -75,7 +95,7 @@
 /obj/structure/stone_tile{
 	dir = 1
 	},
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ir" = (
 /obj/structure/stone_tile/surrounding_tile/cracked,
@@ -86,6 +106,7 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
 	},
+/obj/item/organ/internal/tongue/dwarven,
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "jP" = (
@@ -99,30 +120,6 @@
 /obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"kH" = (
-/obj/effect/decal/necropolis_gate_decal,
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor4-old";
-	pixel_y = 10;
-	pixel_x = 5
-	},
-/obj/effect/decal/cleanable/blood/old{
-	pixel_x = -5;
-	pixel_y = 15
-	},
-/obj/structure/stone_tile/slab/cracked,
-/obj/structure/necropolis_arch,
-/obj/effect/decal/cleanable/blood/gibs/limb{
-	pixel_y = 10
-	},
-/obj/effect/decal/cleanable/blood/tracks{
-	desc = "Your instincts say you shouldn't be following these.";
-	icon_state = "ltrails_1";
-	dir = 10;
-	pixel_y = 15
-	},
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered)
 "kI" = (
 /obj/structure/stone_tile/slab/burnt,
 /obj/item/stack/sheet/mineral/runite{
@@ -141,6 +138,7 @@
 /obj/item/stack/sheet/mineral/runite{
 	amount = 5
 	},
+/obj/item/organ/internal/tongue/alien,
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "lq" = (
@@ -150,13 +148,12 @@
 "lC" = (
 /obj/structure/stone_tile/slab/burnt,
 /obj/effect/decal/cleanable/blood/gibs/up,
+/obj/item/organ/internal/tongue/insect,
 /turf/open/indestructible/boss,
 /area/ruin/unpowered)
 "md" = (
 /obj/structure/stone_tile/block,
-/obj/structure/stone_tile/block{
-	dir = 1
-	},
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "my" = (
@@ -164,6 +161,7 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gibbl1"
 	},
+/obj/item/organ/internal/tongue/jelly,
 /turf/open/indestructible/boss,
 /area/ruin/unpowered)
 "nS" = (
@@ -174,10 +172,8 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "oA" = (
-/obj/structure/stone_tile/block{
-	dir = 1
-	},
 /obj/structure/stone_tile/block/cracked,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "qr" = (
@@ -206,7 +202,17 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor4-old"
 	},
+/obj/item/organ/internal/tongue/snail,
 /turf/open/indestructible/necropolis,
+/area/ruin/unpowered)
+"un" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"uz" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/obj/structure/necropolis_arch,
+/turf/closed/indestructible/riveted/boss/wasteland,
 /area/ruin/unpowered)
 "uA" = (
 /obj/structure/stone_tile/cracked{
@@ -239,8 +245,14 @@
 /obj/structure/stone_tile{
 	dir = 1
 	},
+/obj/item/organ/internal/tongue/golem,
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
+"xc" = (
+/obj/structure/stone_tile,
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "yh" = (
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
@@ -262,6 +274,7 @@
 /area/lavaland/surface/outdoors)
 "yI" = (
 /obj/structure/stone_tile/cracked,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Al" = (
@@ -273,13 +286,12 @@
 	},
 /obj/structure/stone_tile,
 /obj/effect/decal/cleanable/blood/old,
+/obj/item/organ/internal/tongue/human,
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "Bw" = (
-/obj/structure/stone_tile/block{
-	dir = 1
-	},
 /obj/structure/stone_tile/block/cracked,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "BI" = (
@@ -311,6 +323,7 @@
 /area/ruin/unpowered)
 "DQ" = (
 /obj/structure/stone_tile/surrounding_tile/cracked,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Eu" = (
@@ -326,6 +339,7 @@
 	pixel_x = 9;
 	pixel_y = -1
 	},
+/obj/item/organ/internal/tongue/ethereal,
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "EL" = (
@@ -338,6 +352,14 @@
 "FQ" = (
 /obj/structure/flora/ash/seraka,
 /turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"He" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Io" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/strange_rock/volcanic,
 /area/lavaland/surface/outdoors)
 "Iq" = (
 /obj/structure/stone_tile,
@@ -379,6 +401,13 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"Ky" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Kz" = (
 /obj/structure/stone_tile/slab/burnt,
 /obj/effect/decal/cleanable/blood/old{
@@ -406,6 +435,7 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
 	},
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/strange_rock/volcanic,
 /area/lavaland/surface/outdoors)
 "LX" = (
@@ -424,6 +454,9 @@
 /obj/structure/stone_tile/slab/burnt,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"NR" = (
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Ov" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -440,6 +473,7 @@
 	dir = 8;
 	icon_state = "ltrails_2"
 	},
+/obj/item/organ/internal/tongue/hemophage,
 /turf/open/indestructible/boss,
 /area/ruin/unpowered)
 "Ps" = (
@@ -453,7 +487,7 @@
 	dir = 1
 	},
 /obj/item/stack/sheet/animalhide/goliath_hide,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "PV" = (
 /obj/structure/stone_tile,
@@ -470,7 +504,8 @@
 /turf/open/indestructible/boss,
 /area/ruin/unpowered)
 "QI" = (
-/turf/closed/mineral/strange_rock/volcanic,
+/obj/effect/gibspawner/human/bodypartless,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Sr" = (
 /turf/template_noop,
@@ -569,6 +604,7 @@
 	icon_state = "ltrails_1";
 	dir = 10
 	},
+/obj/item/organ/internal/tongue/lizard/silver,
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "Uk" = (
@@ -651,10 +687,8 @@
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "XB" = (
-/obj/structure/stone_tile/block/cracked,
-/obj/structure/stone_tile/block/burnt{
-	dir = 1
-	},
+/obj/structure/stone_tile,
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Yt" = (
@@ -682,7 +716,7 @@ Sr
 Sr
 Sr
 TF
-Yw
+Ky
 Sr
 Sr
 Sr
@@ -691,12 +725,12 @@ Sr
 Sr
 Sr
 kt
-kt
+He
 tn
 qr
 qr
 qr
-Yw
+Ky
 Sr
 qr
 qr
@@ -706,7 +740,7 @@ Sr
 "}
 (3,1,1) = {"
 Sr
-kt
+He
 uA
 nS
 nS
@@ -731,9 +765,9 @@ MN
 eD
 nS
 qr
-Yw
+Ky
 Kk
-om
+XB
 Sr
 Sr
 Sr
@@ -767,7 +801,7 @@ PV
 nS
 nS
 qr
-kt
+He
 jP
 Sr
 Sr
@@ -786,11 +820,11 @@ nS
 nS
 md
 Bw
-Yw
+Ky
 ig
 "}
 (8,1,1) = {"
-kt
+He
 nS
 CN
 WI
@@ -800,10 +834,10 @@ TY
 eR
 ys
 yh
-kH
+uz
 cv
 bd
-Xo
+NR
 QI
 "}
 (9,1,1) = {"
@@ -818,9 +852,9 @@ Al
 nS
 nS
 nS
-XB
+Bw
 oA
-tF
+xc
 Ps
 "}
 (10,1,1) = {"
@@ -835,7 +869,7 @@ Ov
 nS
 nS
 qr
-kt
+He
 Sr
 Sr
 Sr
@@ -853,7 +887,7 @@ nS
 qr
 DQ
 bR
-kt
+He
 Sr
 Sr
 "}
@@ -867,15 +901,15 @@ my
 MN
 nS
 qr
-om
+XB
 Uk
-Yw
+Ky
 kw
-QI
+Io
 Sr
 "}
 (13,1,1) = {"
-kt
+He
 FQ
 LX
 nS
@@ -884,11 +918,11 @@ nS
 nS
 nS
 qr
-kt
+He
 qr
 qr
 yt
-kt
+He
 Sr
 "}
 (14,1,1) = {"
@@ -915,9 +949,9 @@ Sr
 Sr
 Sr
 Sr
-kt
+He
 VK
-Xo
+un
 Sr
 Mo
 tF

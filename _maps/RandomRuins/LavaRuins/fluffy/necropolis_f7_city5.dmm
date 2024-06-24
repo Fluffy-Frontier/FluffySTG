@@ -178,6 +178,10 @@
 /obj/structure/stone_tile/burnt,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"jO" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/unpowered)
 "jQ" = (
 /obj/structure/stone_tile{
 	dir = 1
@@ -315,6 +319,13 @@
 /obj/structure/stone_tile/center/burnt,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"rN" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "sw" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -331,6 +342,14 @@
 	},
 /obj/structure/stone_tile/block/cracked,
 /turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"sY" = (
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "to" = (
 /obj/structure/rack/shelf{
@@ -356,6 +375,10 @@
 	dir = 4
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"tI" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "tW" = (
 /obj/structure/stone_tile/block{
@@ -626,6 +649,12 @@
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
 /area/lavaland/surface/outdoors)
+"HZ" = (
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "In" = (
 /obj/structure/stone_tile/slab,
 /turf/open/lava/smooth/lava_land_surface,
@@ -776,9 +805,7 @@
 /area/lavaland/surface/outdoors)
 "PN" = (
 /obj/structure/stone_tile/block,
-/obj/structure/stone_tile/block{
-	dir = 1
-	},
+/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Qi" = (
@@ -787,6 +814,11 @@
 	dir = 1
 	},
 /turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Qm" = (
+/obj/structure/stone_tile/block,
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "QF" = (
 /obj/structure/stone_tile{
@@ -828,6 +860,7 @@
 /obj/structure/stone_tile{
 	dir = 8
 	},
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Rp" = (
@@ -1079,12 +1112,12 @@ cg
 ca
 vp
 nc
-vp
-nc
-vp
-nc
-vp
-nc
+QF
+HZ
+QF
+HZ
+rN
+HZ
 QF
 cg
 cg
@@ -1094,7 +1127,7 @@ cg
 Vn
 cg
 Gd
-Gd
+BH
 Gd
 Gd
 Gd
@@ -1107,10 +1140,10 @@ Vq
 HW
 Vq
 Vq
-Vq
-Vq
-Vq
-Vq
+HW
+Gd
+Gd
+HW
 Vq
 tG
 cg
@@ -1120,7 +1153,7 @@ cg
 AO
 Vq
 Vq
-Vq
+HW
 Vq
 Vq
 tG
@@ -1191,7 +1224,7 @@ iX
 eS
 iX
 Gd
-Gd
+BH
 tW
 PN
 MR
@@ -1228,7 +1261,7 @@ cg
 cg
 hc
 Vq
-Gd
+BH
 "}
 (7,1,1) = {"
 cg
@@ -1242,7 +1275,7 @@ EO
 rg
 EO
 iX
-Vq
+HW
 ag
 WX
 tD
@@ -1254,7 +1287,7 @@ cg
 Iw
 hc
 Vq
-Gd
+BH
 "}
 (8,1,1) = {"
 Uw
@@ -1289,7 +1322,7 @@ GU
 VS
 WV
 WV
-GU
+jO
 uV
 WV
 YI
@@ -1300,7 +1333,7 @@ pM
 Ec
 ag
 cX
-Vq
+HW
 GU
 GU
 GU
@@ -1312,10 +1345,10 @@ cg
 Yg
 oo
 Vq
-Vq
-Vq
-Vq
-Vq
+HW
+Gd
+Gd
+HW
 Vq
 Vq
 Vq
@@ -1325,8 +1358,8 @@ kv
 xx
 TQ
 vJ
-Vq
-GU
+HW
+jO
 WV
 md
 WV
@@ -1343,7 +1376,7 @@ Sm
 hf
 QO
 hf
-Sm
+sY
 hf
 Ec
 CR
@@ -1351,14 +1384,14 @@ yC
 DA
 IJ
 Sl
-Vq
+HW
 iX
 rg
 cg
 Iw
 md
-Vq
-Gd
+HW
+BH
 "}
 (12,1,1) = {"
 qF
@@ -1383,7 +1416,7 @@ TM
 cg
 cg
 WV
-Vq
+Gd
 Vn
 "}
 (13,1,1) = {"
@@ -1402,14 +1435,14 @@ In
 zv
 ag
 rC
-gz
+Qm
 BH
 XP
 oM
 cg
 MK
 WV
-Vq
+HW
 cg
 "}
 (14,1,1) = {"
@@ -1444,7 +1477,7 @@ xA
 Gd
 ag
 ag
-Vq
+HW
 Vq
 Vq
 Vq
@@ -1466,7 +1499,7 @@ cg
 "}
 (16,1,1) = {"
 Tr
-Vq
+HW
 ag
 ag
 ag
@@ -1492,7 +1525,7 @@ Gd
 "}
 (17,1,1) = {"
 Uw
-Vq
+HW
 ag
 ag
 ag
@@ -1514,7 +1547,7 @@ Az
 WV
 GU
 Vq
-Gd
+BH
 "}
 (18,1,1) = {"
 cg
@@ -1539,7 +1572,7 @@ lx
 kd
 XP
 to
-Vq
+HW
 Vn
 "}
 (19,1,1) = {"
@@ -1565,7 +1598,7 @@ oM
 iX
 XP
 pB
-Vq
+HW
 Jc
 "}
 (20,1,1) = {"
@@ -1636,7 +1669,7 @@ Vq
 ag
 Ys
 Ec
-Te
+tI
 Vq
 GU
 WV
@@ -1656,13 +1689,13 @@ Vq
 Vq
 Vq
 Vq
-Vq
+HW
 Vq
 Sw
 cg
 Hq
 xx
-Te
+tI
 AG
 Vq
 Vq
@@ -1688,7 +1721,7 @@ Gd
 cg
 Ok
 Sv
-Gd
+BH
 Te
 Vn
 Gd
