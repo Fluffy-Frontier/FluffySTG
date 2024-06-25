@@ -1229,3 +1229,41 @@
       by clicking the hololadder and netpod respectively.
   - rscdel: Removed the starfront saloon BR map.
   - bugfix: 'Syndicate assault map: Added pistols, reduced exploits.'
+2024-06-25:
+  DATA, with sounds by Beebblie:
+  - sound: Added sounds for turning on and off internals.
+  DaCoolBoss:
+  - spellcheck: rewrote GLA device's description for clarity
+  - spellcheck: Grapple gun's description has been updated.
+  GoblinBackwards:
+  - rscadd: Breathing nitrium now has a chance to make you burp.
+  Kocma-san:
+  - bugfix: you can hold Ian in your arms
+  LT3:
+  - bugfix: Smartfridge will now correctly respond 'no power' instead of 'forbidden
+      item' when it doesn't have power
+  Melbert:
+  - rscadd: Adds an effect for emagging an emag
+  - bugfix: Fixed plate shards not randomizing icon correctly
+  - qol: Gives plate sharts a more fitting hitsound / caltrop sound, gives them a
+      set caltrop stun duration (instead of default)
+  - bugfix: Touch Spells now apply click CD again
+  - bugfix: Touch Spells now apply fingerprints again
+  - bugfix: Touch Spells now check if your hands are blocked again
+  - bugfix: Fix DNA vault probes
+  - bugfix: Bloody footprints now go until you run out of blood on your feet instead
+      if only a single tile
+  Paxilmaniac:
+  - rscadd: Electric eels now prefer used car batteries for bait.
+  Rhials:
+  - sound: The abductor team now has their own antag stinger.
+  - bugfix: Admin-only deadchat broadcasts don't append a second "this message is
+      for admins only" string for every admin online.
+  - bugfix: Drone fabricator subtypes that spawn pre-loaded now actually start with
+      materials inside.
+  - bugfix: The binocular fabriactor on the MediSim shuttle works again.
+  ShizCalev:
+  - qol: Oven trays now count as valid trays to cut food on.
+  vinylspiders:
+  - bugfix: fixed an issue where peg limbs were not attachable to mobs with the "cybernetic
+      limb mounts" quirk
