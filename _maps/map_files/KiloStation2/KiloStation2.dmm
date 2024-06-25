@@ -9935,7 +9935,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
-/mob/living/simple_animal/pet/poppy,
+/mob/living/basic/pet/poppy,
 /turf/open/floor/iron,
 /area/station/engineering/lobby)
 "dnF" = (
@@ -58008,6 +58008,7 @@
 /obj/structure/chair/office{
 	dir = 1
 	},
+/obj/effect/landmark/start/telecomms_specialist,
 /turf/open/floor/engine,
 /area/station/tcommsat/computer)
 "sJM" = (

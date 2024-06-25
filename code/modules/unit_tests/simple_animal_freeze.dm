@@ -73,10 +73,6 @@
 		/mob/living/simple_animal/hostile/retaliate/goose/vomit,
 		/mob/living/simple_animal/hostile/vatbeast,
 		/mob/living/simple_animal/hostile/zombie,
-		/mob/living/simple_animal/pet,
-		/mob/living/simple_animal/pet/gondola,
-		/mob/living/simple_animal/pet/gondola/gondolapod,
-		/mob/living/simple_animal/pet/gondola/virtual_domain,
 		/mob/living/simple_animal/soulscythe,
 
 		// MODULAR NOVA ENTRIES
@@ -128,8 +124,6 @@
 		/mob/living/simple_animal/hostile/vox/ranged/space/laser,
 		/mob/living/simple_animal/hostile/zombie/cheesezombie,
 		/mob/living/simple_animal/hostile/zombie/nocorpse,
-		/mob/living/simple_animal/pet/gondola/funky,
-		/mob/living/simple_animal/pet/poppy,
 		/mob/living/simple_animal/hostile/fleshmind/slicer,
 		/mob/living/simple_animal/hostile/fleshmind/floater,
 		/mob/living/simple_animal/hostile/fleshmind/globber,
