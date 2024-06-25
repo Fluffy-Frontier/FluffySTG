@@ -277,6 +277,11 @@
 /obj/structure/stone_tile/center/cracked,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Cy" = (
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Dl" = (
 /obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/strange_rock/volcanic,
@@ -438,6 +443,11 @@
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"MX" = (
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "Ng" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -452,6 +462,11 @@
 /obj/structure/stone_tile{
 	dir = 4
 	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"NM" = (
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver/doubloon,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "OD" = (
@@ -656,7 +671,7 @@ ZX
 GY
 GY
 tz
-tz
+MX
 GY
 MO
 MO
@@ -681,7 +696,7 @@ Ng
 zW
 GY
 tz
-tz
+NM
 Mk
 FQ
 sd
@@ -694,7 +709,7 @@ MO
 tz
 WR
 tz
-tz
+MX
 mN
 sS
 sS
@@ -723,7 +738,7 @@ gq
 tz
 sS
 uY
-sS
+Cy
 mN
 tz
 GY
@@ -790,7 +805,7 @@ FQ
 MO
 tz
 mN
-tz
+MX
 sS
 GY
 qV
@@ -1088,7 +1103,7 @@ FQ
 Mk
 ZX
 tz
-sS
+Cy
 ry
 GY
 ZX
@@ -1125,7 +1140,7 @@ GY
 tz
 tz
 dP
-sS
+Cy
 AX
 UN
 mN

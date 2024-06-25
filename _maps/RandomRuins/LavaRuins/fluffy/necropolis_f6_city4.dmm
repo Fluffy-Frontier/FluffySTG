@@ -116,11 +116,22 @@
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
+"ih" = (
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
 "iu" = (
 /obj/structure/stone_tile,
 /obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"iI" = (
+/obj/structure/table/wood,
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
 "iU" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/stone_tile/slab/cracked{
@@ -172,6 +183,11 @@
 	dir = 4
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"nu" = (
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "om" = (
 /obj/structure/stone_tile,
@@ -231,6 +247,11 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"qC" = (
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "rs" = (
 /obj/structure/rack/shelf{
 	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
@@ -354,6 +375,15 @@
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"xu" = (
+/obj/item/coin/silver,
+/turf/closed/mineral/strange_rock/volcanic,
+/area/lavaland/surface/outdoors)
+"xD" = (
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "xM" = (
 /obj/item/reagent_containers/cup/bowl/wood_bowl,
 /obj/structure/stone_tile/slab,
@@ -436,6 +466,13 @@
 "BY" = (
 /obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"CB" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/obj/item/coin/silver,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "CX" = (
 /obj/structure/stone_tile/surrounding,
@@ -671,6 +708,12 @@
 	dir = 6
 	},
 /mob/living/basic/mining/lobstrosity/lava,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Nj" = (
+/obj/structure/table/wood,
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Nn" = (
@@ -1019,7 +1062,7 @@ La
 Kf
 ml
 uM
-wZ
+xD
 qx
 vn
 al
@@ -1051,7 +1094,7 @@ vn
 ws
 gR
 Mf
-uU
+xu
 vn
 La
 La
@@ -1108,7 +1151,7 @@ La
 La
 Kf
 EE
-lp
+nu
 qx
 vn
 JQ
@@ -1158,7 +1201,7 @@ dN
 fV
 La
 Kf
-PG
+Nj
 GD
 NY
 JQ
@@ -1251,7 +1294,7 @@ mM
 QB
 QB
 wZ
-QB
+ih
 mM
 QB
 al
@@ -1289,7 +1332,7 @@ al
 vn
 hF
 Eh
-hF
+qC
 Lj
 QB
 vn
@@ -1304,7 +1347,7 @@ al
 QB
 QB
 sc
-sc
+iI
 NC
 al
 vn
@@ -1366,7 +1409,7 @@ ml
 ws
 vn
 Gz
-QB
+ih
 hF
 Eh
 QB
@@ -1403,7 +1446,7 @@ al
 al
 UE
 lp
-qx
+CB
 ml
 Kf
 Kf
@@ -1415,7 +1458,7 @@ vn
 al
 uM
 wZ
-lp
+nu
 Mq
 al
 hI

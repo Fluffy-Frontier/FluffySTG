@@ -18,7 +18,7 @@
 /obj/item/clothing/mask/gas/clown_hat,
 /obj/effect/gibspawner/human,
 /mob/living/basic/mold/centaur{
-	desc = "This creature is terror itself, a manifestation of the raw hunger and avarice of mortals.";
+	desc = "Run or get honked.";
 	faction = list("mining","boss","hell");
 	name = "Apostate";
 	light_color = "#640000";
@@ -49,7 +49,12 @@
 	death_sound = 'sound/misc/sadtrombone.ogg';
 	guaranteed_butcher_results = list(/obj/effect/gibspawner/generic,/obj/effect/gibspawner/generic/animal,/obj/effect/gibspawner/human,/obj/effect/gibspawner/human/bodypartless,/obj/effect/gibspawner/xeno/bodypartless,/obj/item/soap);
 	melee_attack_cooldown = 3;
-	obj_damage = 0
+	obj_damage = 0;
+	light_range = 3;
+	light_power = 12;
+	lighting_cutoff_blue = 35;
+	lighting_cutoff_green = 15;
+	lighting_cutoff_red = 25
 	},
 /turf/closed/mineral/bananium,
 /area/lavaland/surface/outdoors)

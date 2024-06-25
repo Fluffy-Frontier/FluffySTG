@@ -126,6 +126,10 @@
 /obj/structure/stone_tile/center/cracked,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"ua" = (
+/obj/structure/ore_vein,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "ug" = (
 /obj/structure/stone_tile/surrounding_tile,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -465,6 +469,10 @@
 /mob/living/basic/mining/watcher,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"Wg" = (
+/obj/structure/ore_vein/diamond,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "WZ" = (
 /obj/structure/stone_tile{
 	dir = 4
@@ -525,7 +533,7 @@ gD
 mK
 jS
 mK
-mK
+ua
 mK
 Mq
 ec
@@ -538,7 +546,7 @@ tJ
 RB
 Mq
 mK
-mK
+ua
 mK
 mK
 dL
@@ -551,7 +559,7 @@ nj
 dZ
 cU
 mK
-mK
+Wg
 Ht
 mK
 dL
@@ -709,7 +717,7 @@ jX
 mK
 Vj
 hE
-mK
+ua
 ec
 "}
 (17,1,1) = {"

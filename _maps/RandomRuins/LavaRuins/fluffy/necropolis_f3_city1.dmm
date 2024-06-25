@@ -14,6 +14,13 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"aQ" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/obj/item/coin/silver,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "cH" = (
 /obj/structure/punji_sticks/spikes,
 /turf/template_noop,
@@ -302,6 +309,16 @@
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"wQ" = (
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"xy" = (
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "yN" = (
 /obj/item/clothing/shoes/jackboots/ashwalker,
 /obj/structure/stone_tile/slab,
@@ -337,6 +354,11 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 8
 	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"BQ" = (
+/obj/structure/punji_sticks/spikes,
+/obj/item/coin/silver,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "BX" = (
@@ -745,7 +767,7 @@ Xb
 HT
 nG
 nG
-PN
+BQ
 nG
 vd
 je
@@ -759,7 +781,7 @@ rs
 Vt
 At
 vd
-Rb
+aQ
 nG
 nG
 nG
@@ -1071,7 +1093,7 @@ Po
 Po
 HT
 vd
-nG
+xy
 Rb
 nG
 nG
@@ -1216,7 +1238,7 @@ rs
 Po
 HT
 hd
-SB
+wQ
 SB
 HT
 HT

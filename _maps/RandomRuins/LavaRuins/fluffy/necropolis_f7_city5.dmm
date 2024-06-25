@@ -34,6 +34,11 @@
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
+"dp" = (
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "ew" = (
 /obj/structure/stone_tile/block{
 	dir = 1
@@ -205,6 +210,7 @@
 	dir = 4
 	},
 /obj/structure/stone_tile/surrounding_tile,
+/obj/item/coin/silver,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "kC" = (
@@ -440,6 +446,12 @@
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
+"wF" = (
+/obj/structure/table/wood,
+/obj/structure/stone_tile/slab,
+/obj/item/sharpener,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "xx" = (
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
@@ -482,6 +494,13 @@
 /obj/structure/stone_tile/center/cracked,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"zo" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/obj/item/coin/silver,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
 "zv" = (
 /obj/structure/stone_tile/block/burnt,
 /turf/open/lava/smooth/lava_land_surface,
@@ -553,6 +572,11 @@
 /area/lavaland/surface/outdoors)
 "CX" = (
 /turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
+"Du" = (
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "DA" = (
 /obj/structure/stone_tile/block{
@@ -718,6 +742,18 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"KV" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/obj/item/coin/silver,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
+"Lg" = (
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
 "Lj" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
@@ -737,6 +773,11 @@
 /obj/structure/stone_tile/slab/cracked,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"LH" = (
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
 "MK" = (
 /obj/item/stack/sheet/mineral/clay,
 /obj/structure/stone_tile/slab,
@@ -777,6 +818,13 @@
 	},
 /turf/closed/mineral/strange_rock/volcanic,
 /area/lavaland/surface/outdoors)
+"Oq" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/obj/item/sharpener/cult,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "OE" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 6
@@ -1205,7 +1253,7 @@ Gd
 Vq
 iX
 CX
-XP
+Lg
 cg
 hc
 Vq
@@ -1242,7 +1290,7 @@ cg
 HW
 xV
 EO
-EO
+LH
 cg
 GU
 xV
@@ -1300,7 +1348,7 @@ EO
 EO
 EO
 EO
-iX
+Du
 Vq
 hV
 fM
@@ -1386,7 +1434,7 @@ IJ
 Sl
 HW
 iX
-rg
+zo
 cg
 Iw
 md
@@ -1438,7 +1486,7 @@ rC
 Qm
 BH
 XP
-oM
+wF
 cg
 MK
 WV
@@ -1465,7 +1513,7 @@ pW
 Vq
 RJ
 Rw
-Ek
+Oq
 EO
 md
 Vq
@@ -1587,7 +1635,7 @@ Fn
 xV
 xV
 iX
-OG
+dp
 YA
 In
 xx
@@ -1596,7 +1644,7 @@ OG
 iX
 oM
 iX
-XP
+Lg
 pB
 HW
 Jc
@@ -1636,7 +1684,7 @@ MR
 iN
 Vq
 iX
-Ek
+KV
 gY
 iX
 Vq

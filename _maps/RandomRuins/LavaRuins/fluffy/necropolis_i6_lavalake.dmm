@@ -2,15 +2,21 @@
 "a" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"c" = (
+/obj/structure/ore_vein/gold,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "d" = (
 /mob/living/basic/mining/lobstrosity/lava,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "e" = (
+/obj/structure/ore_vein,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "j" = (
 /obj/item/fishing_rod/bone,
+/obj/structure/ore_vein/diamond,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "l" = (
@@ -38,14 +44,17 @@
 /area/lavaland/surface/outdoors)
 "K" = (
 /obj/item/fishing_hook/bone,
+/obj/structure/ore_vein/plasma,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "L" = (
 /obj/item/reagent_containers/cup/bucket/wooden,
+/obj/structure/ore_vein/iron,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "P" = (
 /obj/item/fishing_line/sinew,
+/obj/structure/ore_vein/silver,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Q" = (
@@ -55,6 +64,10 @@
 "X" = (
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Y" = (
+/obj/structure/ore_vein,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 
 (1,1,1) = {"
 l
@@ -62,7 +75,7 @@ a
 a
 a
 a
-a
+Y
 a
 a
 l
@@ -128,12 +141,12 @@ l
 "}
 (6,1,1) = {"
 a
-a
+Y
 X
 X
-G
-j
 e
+j
+c
 X
 X
 e
@@ -162,15 +175,15 @@ X
 X
 X
 B
-G
+e
 X
 X
 e
-a
+Y
 "}
 (9,1,1) = {"
 l
-a
+Y
 a
 X
 X
@@ -217,7 +230,7 @@ l
 l
 a
 a
-a
+Y
 a
 a
 a

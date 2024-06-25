@@ -444,12 +444,14 @@
 	pixel_y = 15
 	},
 /obj/structure/stone_tile/slab,
+/obj/item/coin/silver/doubloon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "ym" = (
 /obj/structure/stone_tile/block{
 	dir = 8
 	},
+/obj/item/coin/silver/doubloon,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "yr" = (
@@ -920,6 +922,11 @@
 	},
 /obj/structure/stone_tile/block,
 /turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
+"VT" = (
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver/doubloon,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "VW" = (
 /obj/structure/stone_tile/surrounding_tile{
@@ -1562,7 +1569,7 @@ MA
 MA
 cW
 ek
-wB
+VT
 wB
 aK
 eh
