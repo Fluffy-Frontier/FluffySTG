@@ -1267,3 +1267,56 @@
   vinylspiders:
   - bugfix: fixed an issue where peg limbs were not attachable to mobs with the "cybernetic
       limb mounts" quirk
+2024-06-26:
+  ArcaneMusic:
+  - admin: Admins have a new secret to mass revive and heal all players on the server.
+  Bisar:
+  - bugfix: The light eater can now again eat lights from things with lights.
+  FlufflesTheDog:
+  - bugfix: printed medical beds are no longer randomly offset
+  GoblinBackwards:
+  - bugfix: Fixed ctrl-click not dragging the bluespace gas sender or hydroponics
+      trays.
+  IsaacExists:
+  - spellcheck: Shrapnel removal messages now have closing parenthesis, removed unnecessary
+      punctuation.
+  - spellcheck: The nutriment pump implant's description in the lathes are no longer
+      typo'd.
+  MTandi:
+  - bugfix: Autopsy experiments for techweb can be performed roundstart
+  - qol: NT Frontier app now allows to select experiments from inserted data disks
+  MortoSasye:
+  - rscadd: Added a new loincloth option for underwear.
+  - rscadd: 'Added a new hair style: Long Dreadlocks.'
+  - image: 'Updated the hair sprite for: floor-length twin tails, hair_rows 1 and
+      2.'
+  MrDas:
+  - bugfix: Fixed the duration of wizard's mutate spell.
+  SmArtKar:
+  - bugfix: Fixed crayons not being usable on anything except turfs (including washing
+      machines)
+  - rscadd: You can now click pens! Clickity clickery click!
+  - bugfix: E-Daggers can now break lockers/other renamable objects, and pendrivers
+      can now extract their electronics.
+  - code_imp: Most pen typechecks now check for writing implements.
+  SyncIt21:
+  - bugfix: you can piggyback on players again
+  - bugfix: you can strip someone while lying down
+  - bugfix: paraplegics can buckle others & themselves to chairs & mobs
+  - qol: improved feedback messages when an action cannot be done
+  necromanceranne:
+  - bugfix: The Stimmed mutation now has the appropriate instability value for a largely
+      meaningless mutation.
+  san7890:
+  - bugfix: You should no longer attack mobs that don't have a chest in the chest
+      (bots).
+  the-orange-cow:
+  - bugfix: Medicated suture, advanced regenerative mesh, and mourning poultice reactions
+      should more consistently spawn the items they are meant to produce.
+  uaioy:
+  - spellcheck: fixed typo in raptor emote
+  vinylspiders:
+  - bugfix: fixes an issue that was causing the quirk config tooltips to render behind
+      the window, making them nearly impossible to read.
+  zxaber:
+  - bugfix: Refactored borg omnitool code, fixing most of the unique interaction issues.
