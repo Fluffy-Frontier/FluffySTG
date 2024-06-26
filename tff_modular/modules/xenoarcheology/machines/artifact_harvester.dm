@@ -33,6 +33,13 @@
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/machinery/artifact_harvester/attackby(obj/I, mob/user)
+	if(default_deconstruction_screwdriver(user, icon_state, icon_state, I))
+		update_appearance()
+		return
+	if(default_pry_open(I))
+		return
+	if(default_deconstruction_crowbar(I))
+		return
 	if(istype(I, /obj/item/xenoarch/particles_battery))
 		if(!inserted_battery && user.transferItemToLoc(I, src))
 			to_chat(user, "<span class='notice'>You insert [I] into [src].</span>")

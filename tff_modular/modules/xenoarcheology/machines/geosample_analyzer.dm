@@ -23,6 +23,13 @@
 
 
 /obj/machinery/radiocarbon_spectrometer/attackby(obj/item/to_insert, mob/living/user)
+	if(default_deconstruction_screwdriver(user, icon_state, icon_state, to_insert))
+		update_appearance()
+		return
+	if(default_pry_open(to_insert))
+		return
+	if(default_deconstruction_crowbar(to_insert))
+		return
 	if(istype(to_insert, /obj/item/xenoarch/core_sampler))
 		var/obj/item/xenoarch/core_sampler/sampler = to_insert
 		if(!powered())
@@ -42,7 +49,7 @@
 		process_sample()
 	else
 		balloon_alert(user, "Geosamples only!")
-	..()
+	return ..()
 
 /obj/machinery/radiocarbon_spectrometer/proc/process_sample()
 	var/data = ""
