@@ -1320,3 +1320,126 @@
       the window, making them nearly impossible to read.
   zxaber:
   - bugfix: Refactored borg omnitool code, fixing most of the unique interaction issues.
+2024-06-27:
+  00-Steven:
+  - refactor: Modular computers (PDAs, laptops, etc) and their applications have had
+      their item interaction logic refactored. Please report any issues.
+  - bugfix: You can deposit cash into IDs inside of PDAs by slapping it against the
+      PDA again.
+  - qol: Split off settings for Death Degradation's degradation decay and recovery
+      while alive. You could now set both at once, letting you die by default while
+      letting buckle/rest/sleeping overpower the dying.
+  Ben10Omintrix:
+  - refactor: vibebots are not basic bots
+  - rscadd: vibebots will now seek out the depressed and cheer them up
+  DaCoolBoss:
+  - spellcheck: fixed typos in a few heretic items
+  - spellcheck: rewrote parts of the lunar heretic's abilities, items and traumas
+  Fluffles:
+  - bugfix: emoji show up in the messenger UI
+  - bugfix: emoji show up in the message server monitor UI
+  - bugfix: you can adjust your pda ringtone in-game
+  - bugfix: having an empty pAI in your pda doesn't break ringtones
+  - bugfix: pdas specifically set to not consume power don't constantly switch to
+      messenger
+  - bugfix: you can use the quick-reply button for messages while resting
+  - bugfix: deadchat pda messages show the imprinted sender's name instead of whoever
+      is holding the pda
+  - bugfix: emoji show up in deadchat pda messages
+  FlufflesTheDog:
+  - bugfix: screaming respects character preferences
+  - bugfix: multi-z hole repair works better, especially when the turf below is blocked
+      by items
+  - bugfix: apc arcing doesn't happen until the intended 4MW limit (previously 2MW
+      due to a conversion issue)
+  GPeckman:
+  - bugfix: Analyzers should work on bioscrambler anomalies again.
+  Goat:
+  - rscadd: Added boards for the library's book binder and scanner, printable at the
+      service fabricator once computer tech is researched. Spritework done by lepiromano.
+  GoblinBackwards:
+  - bugfix: Interacting with an assembly bomb in hand will now allow you to interact
+      with the attached assembly instead of opening the gas tank UI. Right-clicking
+      will display the gas tank UI instead.
+  Guestify:
+  - bugfix: Fixed secbots and mulebots bold text
+  - bugfix: The visor of the welding mask no longer goes down when you enable internals
+  Jacquerel:
+  - bugfix: Minebots, Tamed Wolves, and Regal Rat Minions will now give you some space
+      if you start attacking yourself, rather than joining in.
+  Jolly:
+  - rscadd: '[Blueshift] Added more powernet redundancy as compensation.'
+  - rscdel: '[Blueshift] There department power stations have been removed. Departments
+      are now powered by the main powernet.'
+  - rscdel: '[Blueshift] Removed the notice paper about the power stations in Engineering.'
+  LT3:
+  - bugfix: Fixed Blueshift and Void Raptor engineering/telecoms airlock access
+  - bugfix: Telecomms Tech job trim now actually has access to Blueshift's telecomms
+  MGOOOOOO:
+  - bugfix: Orange balloons are no longer invisible in the hand slot.
+  MercReaper:
+  - rscdel: Removed old NSSJourney brig and dorms
+  - rscadd: Added new NSSJourney brig and dorms
+  MortoSasye:
+  - rscadd: The loincloths now come in an underclothes variant, and was added in the
+      misc. under category of the loadout.
+  - rscadd: 'Added the above to the hearthkin''s wardrobe, plus: Robed Colourable
+      Cape, both Papakha''s variants, and the Hair Tie.'
+  - bugfix: Fixed the hearthkin armor icon when thrown.
+  - bugfix: Fixed the hearthkin armor not being able to carry forged weapons like
+      the forging plate armor.
+  - rscadd: Added new icons for rings when they're carried.
+  - bugfix: Fixed the in-hand sprite of forged rings.
+  NewyearnewmeUwu:
+  - qol: ' The xenobio console''s monkey placing command also clears dead monkeys
+      on the tile.'
+  ShizCalev:
+  - image: Foam darts in the magazine of a toy/riot C20R45 will now show the correct
+      color corresponding to the type of said dart loaded in it instead of a generic
+      bullet sprite.
+  SmArtKar:
+  - bugfix: RND console now properly rounds research points
+  Vekter:
+  - balance: The Event Horizon Anti-Existential Beam Rifle now requires Unregulated
+      Bluespace Research to be constructed.
+  Zergspower:
+  - balance: SMES Output/Input ability doubled
+  - qol: Solar power generation greatly improved
+  - bugfix: Cafe's Hotdog vendor will no longer try to crush you
+  hyperjll:
+  - balance: Thanks to incredible strides in selective slime breeding, slimes require
+      substantially less nutrients to grow into adults, and split into children.
+  jlsnow301:
+  - rscadd: 'Bitrunning: You can now choose your hacker alias in prefs.'
+  - rscadd: Bit avatars get orbit icons.
+  mc-oofert:
+  - bugfix: wawa ordnance air alarms dont send alerts roundstart
+  - qol: wawa ordnance gets more portable atmos machines to compensate for having
+      next to no actual portable atmos machines
+  - bugfix: wawa ordnance gets 3 random roundstart cores (forgor to add)
+  - bugfix: durand shield doesnt immediately depower the mech when taking stamina
+      damage
+  - balance: durand shield is a bit stronger
+  - rscadd: wawastation stand-in shuttle
+  necromanceranne:
+  - rscadd: The nullblade, a nullrod variant that is weaker outright, but can inflict
+      severe wounds by performing a sneak attack. Debilitate your target or attack
+      from behind.
+  - bugfix: The shortsword sprite no longer has a misaligned handle.
+  - code_imp: Organized the nullrod file, and removed some unnecessary subtyping on
+      various types of nullrods.
+  - bugfix: The Infiltrator module now has the same welding protections as the engineering
+      module.
+  - bugfix: The infiltrator module now properly protects you from head impacts. Helpful
+      if you wipe out on your hoverboard while fleeing the cops.
+  - code_imp: Improves the definitions for welding protection values.
+  norsvenska:
+  - bugfix: '[IceBox] The Head of Personnel''s Requests Console announcements now
+      correctly display the HoP as the announcer, rather than "Unknown"'
+  vinylspiders:
+  - qol: xenobiology research node no longer requires the cytology experiment; instead
+      it gives a discount
+  - qol: 'artificial selection research node no longer requires the wild harvest experiment;
+      instead it gives a discount
+
+      /:cl'
