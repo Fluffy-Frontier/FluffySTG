@@ -41,6 +41,10 @@
 /obj/structure/stone_tile/burnt{
 	dir = 1
 	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "s" = (
@@ -68,6 +72,25 @@
 	},
 /obj/structure/stone_tile/slab/cracked{
 	dir = 10
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"L" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 1
+	},
+/obj/structure/trap/cult{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF9911";
+	color = "#FF9911"
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -102,7 +125,7 @@ w
 s
 "}
 (3,1,1) = {"
-c
+L
 b
 X
 T

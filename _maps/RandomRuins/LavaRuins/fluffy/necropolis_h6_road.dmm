@@ -21,8 +21,7 @@
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
 	},
-/mob/living/basic/mining/goliath,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "e" = (
 /obj/structure/stone_tile/slab,
@@ -37,6 +36,14 @@
 /area/lavaland/surface/outdoors)
 "g" = (
 /obj/structure/stone_tile/slab,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"h" = (
+/obj/structure/flora/rock/pile/style_random,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "i" = (
@@ -72,7 +79,7 @@
 	dir = 1
 	},
 /obj/structure/stone_tile/center/cracked,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "n" = (
 /obj/structure/stone_tile/block{
@@ -148,6 +155,18 @@
 /mob/living/basic/mining/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"y" = (
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "z" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 6
@@ -216,7 +235,7 @@
 	dir = 1
 	},
 /obj/structure/stone_tile/block,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "K" = (
 /obj/structure/punji_sticks/spikes,
@@ -287,7 +306,34 @@
 /area/lavaland/surface/outdoors)
 "T" = (
 /obj/structure/ore_vein/silver,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/mob/living/basic/mining/wolf{
+	desc = "A massive feathery beast. This huge creature barely will tolerate taming.";
+	faction = list("mining","boss","hell");
+	name = "Very Very Fast Agile Strong Stealth Raptor of Menacing Endurance +15";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_continuous = "pecks";
+	attack_verb_simple = "chomps";
+	attack_vis_effect = "slash";
+	bare_wound_bonus = 5;
+	butcher_results = null;
+	can_tame = 0;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.12, "oxygen" = 1);
+	health = 420;
+	icon = 'icons/mob/simple/lavaland/raptor_big.dmi';
+	icon_dead = "raptor_red_dead";
+	icon_living = "raptor_red";
+	icon_state = "raptor_red";
+	maxHealth = 240;
+	melee_damage_lower = 7;
+	melee_attack_cooldown = 10;
+	speed = -0.5;
+	wound_bonus = -1;
+	guaranteed_butcher_results = list(/obj/item/organ/external/tail/lizard = 1,/obj/item/feather=12,/obj/item/food/egg/raptor_egg=1,/obj/item/clothing/shoes/cowboy/lizard=1,/obj/item/food/meat/slab/chicken=5);
+	current_size = 2;
+	base_pixel_y = -30;
+	melee_damage_upper = 25
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "U" = (
 /obj/structure/stone_tile/slab,
@@ -314,7 +360,15 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Y" = (
-/obj/item/clothing/head/ash_headdress/winged,
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Z" = (
@@ -331,7 +385,7 @@ v
 t
 a
 v
-Z
+h
 a
 v
 v
@@ -349,17 +403,17 @@ v
 v
 v
 A
-K
+y
 a
 c
-Y
+a
 K
 H
 Z
 v
 A
 a
-K
+Y
 v
 F
 g
@@ -427,7 +481,7 @@ E
 K
 v
 t
-K
+y
 g
 a
 v
@@ -449,7 +503,7 @@ t
 v
 v
 a
-Z
+h
 a
 v
 v

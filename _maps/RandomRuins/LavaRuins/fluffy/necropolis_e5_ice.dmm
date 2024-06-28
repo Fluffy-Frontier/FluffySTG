@@ -6,8 +6,7 @@
 /obj/structure/fluff/divine/powerpylon,
 /obj/structure/marker_beacon/teal,
 /turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
 "d" = (
@@ -15,8 +14,7 @@
 /obj/item/clothing/neck/wreath/icewing,
 /obj/structure/marker_beacon/teal,
 /turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
 "e" = (
@@ -24,9 +22,15 @@
 	dir = 9
 	},
 /mob/living/basic/mining/ice_demon,
-/turf/open/misc/ice/icemoon{
+/obj/item/hypernoblium_crystal,
+/turf/open/misc/snow/actually_safe{
 	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+	base_icon_state = "ice_turf-0";
+	icon = 'icons/turf/floors/ice_turf.dmi';
+	icon_state = "ice_turf-0";
+	desc = "Yooooooooo! Lick it!.";
+	name = "Real ice"
 	},
 /area/ruin/unpowered)
 "h" = (
@@ -34,9 +38,14 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 9
 	},
-/turf/open/misc/ice/icemoon{
+/turf/open/misc/snow/actually_safe{
 	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+	base_icon_state = "ice_turf-0";
+	icon = 'icons/turf/floors/ice_turf.dmi';
+	icon_state = "ice_turf-0";
+	desc = "Yooooooooo! Lick it!.";
+	name = "Real ice"
 	},
 /area/ruin/unpowered)
 "i" = (
@@ -47,27 +56,42 @@
 /area/lavaland/surface/outdoors)
 "p" = (
 /obj/item/grenade/gas_crystal/nitrous_oxide_crystal,
-/turf/open/misc/ice/icemoon{
+/turf/open/misc/snow/actually_safe{
 	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+	base_icon_state = "ice_turf-0";
+	icon = 'icons/turf/floors/ice_turf.dmi';
+	icon_state = "ice_turf-0";
+	desc = "Yooooooooo! Lick it!.";
+	name = "Real ice"
 	},
 /area/ruin/unpowered)
 "q" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 6
 	},
-/turf/open/misc/ice/icemoon{
+/turf/open/misc/snow/actually_safe{
 	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+	base_icon_state = "ice_turf-0";
+	icon = 'icons/turf/floors/ice_turf.dmi';
+	icon_state = "ice_turf-0";
+	desc = "Yooooooooo! Lick it!.";
+	name = "Real ice"
 	},
 /area/ruin/unpowered)
 "r" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 1
 	},
-/turf/open/misc/ice/icemoon{
+/turf/open/misc/snow/actually_safe{
 	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+	base_icon_state = "ice_turf-0";
+	icon = 'icons/turf/floors/ice_turf.dmi';
+	icon_state = "ice_turf-0";
+	desc = "Yooooooooo! Lick it!.";
+	name = "Real ice"
 	},
 /area/ruin/unpowered)
 "y" = (
@@ -76,9 +100,14 @@
 /area/lavaland/surface/outdoors)
 "z" = (
 /obj/effect/turf_decal/weather/snow/corner,
-/turf/open/misc/ice/icemoon{
+/turf/open/misc/snow/actually_safe{
 	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+	base_icon_state = "ice_turf-0";
+	icon = 'icons/turf/floors/ice_turf.dmi';
+	icon_state = "ice_turf-0";
+	desc = "Yooooooooo! Lick it!.";
+	name = "Real ice"
 	},
 /area/ruin/unpowered)
 "B" = (
@@ -87,9 +116,14 @@
 	},
 /obj/structure/fluff/divine/powerpylon,
 /obj/structure/marker_beacon/teal,
-/turf/open/misc/ice/icemoon{
+/turf/open/misc/snow/actually_safe{
 	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+	base_icon_state = "ice_turf-0";
+	icon = 'icons/turf/floors/ice_turf.dmi';
+	icon_state = "ice_turf-0";
+	desc = "Yooooooooo! Lick it!.";
+	name = "Real ice"
 	},
 /area/ruin/unpowered)
 "C" = (
@@ -97,31 +131,40 @@
 	dir = 6
 	},
 /mob/living/basic/mining/ice_demon,
-/turf/open/misc/ice/icemoon{
+/obj/item/hypernoblium_crystal,
+/turf/open/misc/snow/actually_safe{
 	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+	base_icon_state = "ice_turf-0";
+	icon = 'icons/turf/floors/ice_turf.dmi';
+	icon_state = "ice_turf-0";
+	desc = "Yooooooooo! Lick it!.";
+	name = "Real ice"
 	},
 /area/ruin/unpowered)
 "D" = (
-/mob/living/basic/mining/ice_demon,
 /obj/structure/flora/ash/chilly,
+/mob/living/basic/mining/ice_demon,
 /turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
 "G" = (
 /obj/structure/fluff/divine/conduit,
 /turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
 "I" = (
 /mob/living/basic/mining/ice_demon,
-/turf/open/misc/ice/icemoon{
+/turf/open/misc/snow/actually_safe{
 	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+	base_icon_state = "ice_turf-0";
+	icon = 'icons/turf/floors/ice_turf.dmi';
+	icon_state = "ice_turf-0";
+	desc = "Yooooooooo! Lick it!.";
+	name = "Real ice"
 	},
 /area/ruin/unpowered)
 "L" = (
@@ -132,47 +175,61 @@
 	dir = 8
 	},
 /obj/structure/fluff/divine/conduit,
-/turf/open/misc/ice/icemoon{
+/turf/open/misc/snow/actually_safe{
 	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+	base_icon_state = "ice_turf-0";
+	icon = 'icons/turf/floors/ice_turf.dmi';
+	icon_state = "ice_turf-0";
+	desc = "Yooooooooo! Lick it!.";
+	name = "Real ice"
 	},
 /area/ruin/unpowered)
+"M" = (
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "N" = (
 /obj/structure/flora/rock/pile/icy/style_random,
 /turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
 "P" = (
 /obj/item/crusher_trophy/ice_demon_cube,
-/turf/open/misc/ice/icemoon{
+/turf/open/misc/snow/actually_safe{
 	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+	base_icon_state = "ice_turf-0";
+	icon = 'icons/turf/floors/ice_turf.dmi';
+	icon_state = "ice_turf-0";
+	desc = "Yooooooooo! Lick it!.";
+	name = "Real ice"
 	},
 /area/ruin/unpowered)
 "R" = (
 /turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
 "U" = (
 /obj/item/stock_parts/cell/crystal_cell,
 /obj/structure/flora/grass/both/style_random,
 /turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
 "W" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 5
 	},
-/obj/item/hypernoblium_crystal,
-/turf/open/misc/ice/icemoon{
+/turf/open/misc/snow/actually_safe{
 	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+	base_icon_state = "ice_turf-0";
+	icon = 'icons/turf/floors/ice_turf.dmi';
+	icon_state = "ice_turf-0";
+	desc = "Yooooooooo! Lick it!.";
+	name = "Real ice"
 	},
 /area/ruin/unpowered)
 "Y" = (
@@ -183,16 +240,20 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 8
 	},
-/turf/open/misc/ice/icemoon{
+/turf/open/misc/snow/actually_safe{
 	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+	base_icon_state = "ice_turf-0";
+	icon = 'icons/turf/floors/ice_turf.dmi';
+	icon_state = "ice_turf-0";
+	desc = "Yooooooooo! Lick it!.";
+	name = "Real ice"
 	},
 /area/ruin/unpowered)
 "Z" = (
 /obj/structure/fluff/divine/shrine,
 /turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
+	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
 
@@ -200,7 +261,7 @@
 i
 i
 k
-k
+y
 i
 k
 k
@@ -216,10 +277,10 @@ a
 a
 k
 k
-i
+M
 "}
 (3,1,1) = {"
-k
+y
 k
 a
 U
@@ -230,7 +291,7 @@ k
 k
 "}
 (4,1,1) = {"
-k
+y
 a
 G
 D
@@ -252,7 +313,7 @@ R
 y
 "}
 (6,1,1) = {"
-k
+y
 a
 L
 I
@@ -263,7 +324,7 @@ a
 k
 "}
 (7,1,1) = {"
-k
+y
 k
 a
 W
@@ -281,17 +342,17 @@ a
 a
 a
 k
-k
+y
 i
 "}
 (9,1,1) = {"
 i
 i
 k
-k
+y
 i
-k
-k
+y
+y
 i
 i
 "}

@@ -17,6 +17,7 @@
 	pixel_x = 12;
 	pixel_y = 7
 	},
+/obj/effect/spawner/random/environmentally_safe_anomaly,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "f" = (
@@ -33,6 +34,10 @@
 /obj/item/stack/sheet/bronze{
 	pixel_y = 7;
 	pixel_x = -5
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
@@ -74,10 +79,18 @@
 	},
 /obj/structure/fluff/clockwork/alloy_shards/medium,
 /obj/structure/grille/broken,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "q" = (
 /obj/structure/grille/broken,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /obj/item/stack/sheet/bronze,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
@@ -141,6 +154,15 @@
 /area/ruin/unpowered/ratvar)
 "G" = (
 /obj/structure/fluff/clockwork/alloy_shards/large,
+/obj/structure/grille,
+/turf/open/floor/bronze/filled/lavaland,
+/area/ruin/unpowered/ratvar)
+"H" = (
+/obj/structure/fluff/clockwork/alloy_shards/medium{
+	pixel_x = -7;
+	pixel_y = 7
+	},
+/obj/effect/spawner/random/environmentally_safe_anomaly,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "J" = (
@@ -162,7 +184,8 @@
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "M" = (
-/obj/item/nullrod/spear,
+/obj/structure/fluff/clockwork/alloy_shards/small,
+/obj/structure/grille,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "O" = (
@@ -187,6 +210,14 @@
 /area/ruin/unpowered/ratvar)
 "U" = (
 /turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/ratvar)
+"X" = (
+/obj/structure/fluff/clockwork/alloy_shards/medium{
+	pixel_x = -7;
+	pixel_y = 7
+	},
+/obj/item/nullrod/spear,
+/turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "Y" = (
 /turf/open/lava/smooth/lava_land_surface,
@@ -260,14 +291,14 @@ A
 s
 Y
 y
-y
+M
 "}
 (8,1,1) = {"
 a
 a
 U
 n
-M
+f
 O
 m
 a
@@ -297,7 +328,7 @@ a
 a
 U
 f
-z
+H
 Y
 h
 h
@@ -308,7 +339,7 @@ a
 U
 b
 t
-z
+X
 h
 h
 "}

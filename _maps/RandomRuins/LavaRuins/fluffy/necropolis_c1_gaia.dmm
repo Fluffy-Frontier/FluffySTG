@@ -145,6 +145,18 @@
 /obj/structure/flora/bush/fullgrass/style_random,
 /turf/open/misc/grass/lavaland,
 /area/ruin/unpowered/gaia)
+"pA" = (
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "pZ" = (
 /mob/living/basic/lightgeist{
 	light_color = "#42ECFF"
@@ -159,6 +171,11 @@
 "qi" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /obj/structure/flora/tree/jungle/small/style_random,
+/turf/open/misc/grass/lavaland,
+/area/ruin/unpowered/gaia)
+"rf" = (
+/obj/structure/flora/bush/flowers_yw/style_random,
+/obj/effect/spawner/random/food_or_drink/salad,
 /turf/open/misc/grass/lavaland,
 /area/ruin/unpowered/gaia)
 "rg" = (
@@ -202,6 +219,15 @@
 "uS" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 1
+	},
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -335,6 +361,18 @@
 /obj/structure/flora/grass/jungle/a/style_random,
 /turf/open/misc/grass/lavaland,
 /area/ruin/unpowered/gaia)
+"Lj" = (
+/mob/living/basic/lightgeist{
+	light_color = "#FF2222";
+	current_size = 1.2;
+	health = 200;
+	name = "Bloodgeist";
+	color = "#FF2222";
+	melee_damage_upper = 15;
+	melee_attack_cooldown = 25
+	},
+/turf/open/misc/grass/lavaland,
+/area/ruin/unpowered/gaia)
 "LN" = (
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
@@ -366,6 +404,13 @@
 /obj/item/mod/construction/lavalandcore,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/gaia)
+"Oq" = (
+/obj/structure/flora/grass/jungle/b/style_random,
+/mob/living/basic/lightgeist{
+	light_color = "#42ECFF"
+	},
+/turf/open/misc/grass/lavaland,
+/area/ruin/unpowered/gaia)
 "Pl" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
@@ -376,6 +421,13 @@
 /obj/structure/flora/bush/flowers_br/style_random,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/gaia)
+"PO" = (
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Qg" = (
 /obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -389,6 +441,10 @@
 "Sh" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 1
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -420,6 +476,18 @@
 /obj/structure/flora/bush/flowers_br/style_random,
 /turf/closed/wall/mineral/bronze,
 /area/ruin/unpowered/gaia)
+"TT" = (
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "VN" = (
 /turf/closed/indestructible/riveted/boss,
 /area/lavaland/surface/outdoors)
@@ -437,6 +505,11 @@
 /mob/living/basic/mining/goliath,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Xk" = (
+/obj/structure/flora/grass/jungle/a/style_random,
+/obj/effect/spawner/random/food_or_drink/salad,
+/turf/open/misc/grass/lavaland,
+/area/ruin/unpowered/gaia)
 "XN" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -476,7 +549,7 @@ Za
 Za
 Za
 Qg
-XN
+TT
 XN
 aL
 lK
@@ -569,7 +642,7 @@ VN
 eP
 KK
 aw
-KK
+Xk
 SY
 Ad
 eP
@@ -582,12 +655,12 @@ Za
 "}
 (8,1,1) = {"
 XN
-XN
+PO
 VN
 aJ
 Wu
 ia
-pZ
+Lj
 zH
 aJ
 uH
@@ -645,7 +718,7 @@ TH
 eP
 PG
 br
-lL
+rf
 zN
 VN
 VN
@@ -661,18 +734,18 @@ VN
 jd
 sh
 Wu
-aJ
+Oq
 FL
 DH
 VN
 VN
 VN
-XN
+PO
 VN
 "}
 (13,1,1) = {"
 Za
-XN
+pA
 VN
 VN
 VN

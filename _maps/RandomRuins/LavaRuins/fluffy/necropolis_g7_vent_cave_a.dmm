@@ -22,6 +22,13 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"I" = (
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "K" = (
 /obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -47,29 +54,29 @@ V
 (2,1,1) = {"
 b
 b
-y
-y
+a
+a
 a
 a
 V
 "}
 (3,1,1) = {"
-b
 y
-y
+a
+a
 K
-j
+I
 a
 a
 "}
 (4,1,1) = {"
 b
-y
+a
 j
 z
 b
 b
-y
+a
 "}
 (5,1,1) = {"
 b
@@ -77,24 +84,24 @@ a
 X
 j
 b
-y
-y
+a
+a
 "}
 (6,1,1) = {"
 b
 a
 b
 b
-b
 y
+a
 V
 "}
 (7,1,1) = {"
 V
 a
 a
-y
-y
-y
+a
+a
+a
 V
 "}

@@ -70,6 +70,16 @@
 "gn" = (
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"gO" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 4
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "gX" = (
 /obj/structure/flora/rock/pile/style_random,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
@@ -116,9 +126,25 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"jz" = (
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "jE" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 8
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -206,6 +232,24 @@
 /obj/structure/stone_tile/slab/burnt,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"oO" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"pX" = (
+/obj/structure/flora/rock/pile/style_random,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "qB" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -243,6 +287,10 @@
 /obj/structure/stone_tile{
 	dir = 1
 	},
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "sw" = (
@@ -271,6 +319,19 @@
 /area/lavaland/surface/outdoors)
 "us" = (
 /obj/structure/flora/ash/tall_shroom,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"uI" = (
+/obj/structure/stone_tile/surrounding_tile/cracked,
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "vv" = (
@@ -409,6 +470,14 @@
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Es" = (
+/obj/structure/ore_vein,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "EU" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
@@ -440,6 +509,15 @@
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
 	dir = 8
+	},
+/obj/structure/trap/cult{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF9911";
+	color = "#FF9911"
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -727,7 +805,7 @@ fU
 us
 TV
 Yo
-OK
+Es
 QY
 OT
 OT
@@ -738,7 +816,7 @@ mT
 "}
 (5,1,1) = {"
 gn
-gX
+pX
 Os
 Os
 fU
@@ -758,7 +836,7 @@ mT
 gn
 gn
 hP
-Ju
+uI
 VK
 vv
 Zy
@@ -786,7 +864,7 @@ Nd
 hL
 Wk
 fU
-fU
+jz
 OT
 mT
 "}
@@ -838,7 +916,7 @@ DT
 kK
 Id
 xd
-By
+oO
 Os
 Os
 OK
@@ -882,7 +960,7 @@ mT
 "}
 (13,1,1) = {"
 mT
-fU
+jz
 Os
 Os
 ar
@@ -922,7 +1000,7 @@ mT
 fU
 zC
 ic
-Co
+gO
 Ju
 tN
 hk

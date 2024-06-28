@@ -1,62 +1,165 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"b" = (
-/obj/structure/stone_tile/block{
-	dir = 4
+"aL" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 8
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"c" = (
-/turf/closed/wall/mineral/abductor,
-/area/lavaland/surface/outdoors)
-"d" = (
-/obj/structure/stone_tile/block/cracked,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"e" = (
-/obj/structure/flora/rock/pile/style_random,
+"aW" = (
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 8
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"f" = (
-/obj/machinery/abductor/pad{
-	team_number = 100
+"dk" = (
+/turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"fd" = (
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
 	},
-/obj/item/cautery/alien,
-/turf/open/floor/plating/abductor{
-	initial_gas_mix = "LAVALAND_ATMOS"
-	},
-/area/ruin/unpowered)
-"g" = (
-/obj/item/bodypart/arm/left/abductor,
-/turf/open/floor/plating/abductor{
-	initial_gas_mix = "LAVALAND_ATMOS"
-	},
-/area/ruin/unpowered)
-"h" = (
-/obj/structure/stone_tile/burnt{
-	dir = 4
-	},
-/obj/structure/stone_tile/block/cracked,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
-"i" = (
+"gO" = (
+/obj/structure/stone_tile/burnt,
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"jb" = (
+/obj/structure/stone_tile/slab/cracked,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"jx" = (
+/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner{
+	icon = 'modular_nova/modules/awaymissions_nova/icons/abductors.dmi';
+	icon_living = "abductor_agent_combat_gun";
+	icon_state = "abductor_agent_combat_gun";
+	attack_sound = 'sound/weapons/punch1.ogg';
+	name = "Abructor Assault Trooper";
+	crusher_loot = list(/obj/effect/decal/remains/plasma,/obj/item/stock_parts/cell/infinite/abductor,/obj/item/organ/internal/heart/gland/heal,/obj/item/organ/internal/heart/gland/ventcrawling,/obj/item/abductor/silencer,/obj/item/crowbar/abductor,/obj/item/multitool/abductor,/obj/item/screwdriver/abductor,/obj/item/weldingtool/abductor,/obj/item/wirecutters/abductor,/obj/item/wrench/abductor);
+	loot = list(/obj/effect/decal/remains/plasma,/obj/item/organ/internal/heart/gland/heal,/obj/item/hemostat/alien,/obj/item/surgicaldrill/alien,/obj/item/cautery/alien,/obj/item/retractor/alien,/obj/item/circular_saw/alien,/obj/item/scalpel/alien);
+	health = 750;
+	speed = 1;
+	melee_damage_upper = 15;
+	unsuitable_atmos_damage = 0;
+	death_message = "falls to the ground with juicy slap.";
+	gps_name = "Distress Signal";
+	weather_immunities = list("lava_immune","ashstorm_immune");
+	wound_bonus = 15;
+	light_color = "#D00000";
+	summon_line = "TIME TO DIE!!!   ...ABDUCTOR ASSAULT IN PROGRESS... ";
+	zone_selected = "head";
+	friendly_verb_simple = "Save me!";
+	friendly_verb_continuous = "I need help!";
+	attack_verb_continuous = "hits";
+	attack_verb_simple = "tamis";
+	faction = list("mining,boss");
+	obj_damage = 40;
+	light_power = 5;
+	layer = 4;
+	speak_chance = 0.3;
+	speak = list(Hello!);
+	desc = "...!!!ABDUCTOR ASSAULT IN PROGRESS!!!......!!!ABDUCTOR ASSAULT IN PROGRESS!!!......!!!ABDUCTOR ASSAULT IN PROGRESS!!!......!!!ABDUCTOR ASSAULT IN PROGRESS!!!......!!!ABDUCTOR ASSAULT IN PROGRESS!!!......!!!ABDUCTOR ASSAULT IN PROGRESS!!!...";
+	armour_penetration = 10;
+	maxHealth = 950;
+	light_system = 2
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
+"lu" = (
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
+"ly" = (
+/obj/effect/mob_spawn/corpse/human/abductor,
+/turf/open/floor/plating/abductor2{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"nu" = (
+/turf/template_noop,
+/area/template_noop)
+"ox" = (
+/obj/structure/stone_tile/block/cracked,
+/turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"oP" = (
 /obj/structure/flora/rock/pile/style_random,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"j" = (
-/obj/structure/stone_tile/cracked,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"k" = (
-/obj/structure/stone_tile/surrounding/cracked,
-/turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"l" = (
+"qb" = (
+/obj/structure/closet/abductor{
+	anchored = 1
+	},
+/obj/item/organ/external/genital/anus,
+/obj/item/organ/internal/tongue/abductor,
+/obj/item/organ/internal/tongue/abductor,
+/turf/open/floor/plating/abductor{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"qs" = (
+/obj/structure/bed/abductor,
+/turf/open/floor/plating/abductor2{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"rx" = (
 /turf/closed/indestructible/riveted/boss,
 /area/lavaland/surface/outdoors)
-"m" = (
+"rD" = (
+/obj/structure/flora/rock/pile/style_random,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"su" = (
+/obj/effect/decal/cleanable/xenoblood,
+/obj/item/clothing/mask/facehugger/impregnated,
+/obj/structure/marker_beacon/indigo,
+/obj/item/paper/guides/antag/abductor,
+/turf/open/floor/plating/abductor{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"sK" = (
+/turf/closed/wall/mineral/abductor,
+/area/ruin/unpowered)
+"sZ" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 1
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"up" = (
+/turf/open/floor/plating/abductor{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"wo" = (
+/obj/structure/stone_tile/block/burnt{
+	dir = 1
+	},
+/obj/structure/stone_tile/burnt,
+/turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"yB" = (
+/obj/structure/stone_tile/burnt,
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"zf" = (
 /obj/structure/stone_tile/cracked,
 /obj/structure/stone_tile/burnt{
 	dir = 4
@@ -66,424 +169,413 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
-"n" = (
-/turf/closed/indestructible/riveted/boss,
-/area/ruin/unpowered)
-"o" = (
-/obj/machinery/abductor/experiment{
-	team_number = 100
-	},
-/obj/item/circular_saw/alien,
-/turf/open/floor/plating/abductor{
-	initial_gas_mix = "LAVALAND_ATMOS"
-	},
-/area/ruin/unpowered)
-"p" = (
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/ruin/unpowered)
-"q" = (
-/obj/structure/stone_tile/surrounding/cracked{
-	dir = 8
-	},
-/obj/structure/stone_tile/center/burnt,
-/obj/structure/stone_tile/surrounding_tile/cracked{
-	dir = 5
-	},
-/turf/open/lava/smooth/lava_land_surface,
+"zQ" = (
+/obj/structure/flora/rock/style_random,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"r" = (
-/obj/machinery/abductor/gland_dispenser,
-/turf/open/floor/plating/abductor{
-	initial_gas_mix = "LAVALAND_ATMOS"
-	},
-/area/ruin/unpowered)
-"s" = (
-/obj/structure/stone_tile/slab/cracked,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"t" = (
-/obj/item/stack/sheet/mineral/abductor,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/ruin/unpowered)
-"u" = (
-/obj/structure/stone_tile/block{
-	dir = 8
+"Af" = (
+/obj/structure/stone_tile/block/cracked,
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"v" = (
-/obj/structure/table/abductor,
-/turf/open/floor/plating/abductor{
-	initial_gas_mix = "LAVALAND_ATMOS"
-	},
-/area/ruin/unpowered)
-"w" = (
-/obj/structure/bed/abductor,
-/turf/open/floor/plating/abductor{
-	initial_gas_mix = "LAVALAND_ATMOS"
-	},
-/area/ruin/unpowered)
-"x" = (
+"BN" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
-	dir = 5
+	dir = 9
 	},
-/obj/structure/stone_tile/surrounding_tile/cracked,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"y" = (
-/turf/template_noop,
-/area/template_noop)
-"z" = (
-/obj/item/hemostat/alien,
-/turf/open/floor/plating/abductor{
+"Ct" = (
+/obj/structure/marker_beacon/purple,
+/obj/structure/table/abductor,
+/turf/open/floor/plating/abductor2{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
-"A" = (
-/turf/closed/wall/mineral/abductor,
-/area/ruin/unpowered)
-"B" = (
+"CP" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
 	},
 /obj/structure/stone_tile/block/burnt,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"C" = (
-/obj/item/retractor/alien,
-/turf/open/floor/plating/abductor{
-	initial_gas_mix = "LAVALAND_ATMOS"
-	},
-/area/ruin/unpowered)
-"D" = (
-/obj/structure/stone_tile/surrounding_tile/cracked{
-	dir = 8
-	},
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"E" = (
-/obj/item/bodypart/head/abductor,
-/mob/living/basic/alien,
-/turf/open/floor/plating/abductor{
-	initial_gas_mix = "LAVALAND_ATMOS"
-	},
-/area/ruin/unpowered)
-"F" = (
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"G" = (
-/obj/structure/stone_tile/block/cracked,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"H" = (
-/obj/structure/stone_tile/burnt,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"I" = (
-/obj/structure/table/optable/abductor,
-/obj/effect/decal/cleanable/xenoblood,
-/obj/item/clothing/mask/facehugger/impregnated,
-/turf/open/floor/plating/abductor{
-	initial_gas_mix = "LAVALAND_ATMOS"
-	},
-/area/ruin/unpowered)
-"J" = (
-/obj/structure/table/abductor,
-/obj/item/stock_parts/cell/infinite/abductor,
-/obj/item/storage/box/alienhandcuffs,
-/turf/open/floor/plating/abductor{
-	initial_gas_mix = "LAVALAND_ATMOS"
-	},
-/area/ruin/unpowered)
-"K" = (
-/obj/item/organ/internal/heart/gland/ventcrawling,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/ruin/unpowered)
-"L" = (
-/obj/item/surgical_drapes,
-/obj/item/paper/guides/antag/abductor,
-/obj/item/scalpel/alien,
-/turf/open/floor/plating/abductor{
-	initial_gas_mix = "LAVALAND_ATMOS"
-	},
-/area/ruin/unpowered)
-"M" = (
-/obj/effect/mob_spawn/corpse/human/abductor,
-/turf/open/floor/plating/abductor{
-	initial_gas_mix = "LAVALAND_ATMOS"
-	},
-/area/ruin/unpowered)
-"N" = (
-/obj/structure/stone_tile/slab/cracked{
-	dir = 8
-	},
-/turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"O" = (
-/obj/structure/stone_tile/surrounding_tile/cracked{
-	dir = 9
-	},
-/turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"P" = (
-/obj/structure/stone_tile/slab/cracked{
-	dir = 1
-	},
-/turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"Q" = (
-/obj/structure/flora/rock/style_random,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"R" = (
-/obj/structure/stone_tile/block,
-/obj/structure/stone_tile/cracked{
-	dir = 1
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"S" = (
-/obj/structure/stone_tile/burnt,
-/turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"T" = (
-/obj/structure/closet/abductor,
-/turf/open/floor/plating/abductor{
-	initial_gas_mix = "LAVALAND_ATMOS"
-	},
-/area/ruin/unpowered)
-"U" = (
-/obj/structure/stone_tile/burnt,
-/obj/structure/stone_tile{
-	dir = 8
-	},
-/obj/structure/stone_tile/cracked{
+"Fx" = (
+/obj/structure/stone_tile/block{
 	dir = 4
 	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"FR" = (
+/obj/structure/table/abductor,
+/obj/structure/marker_beacon/purple,
+/obj/item/organ/external/tail/lizard,
+/turf/open/floor/plating/abductor2{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"Gc" = (
+/obj/item/surgical_drapes,
+/turf/open/floor/plating/abductor2{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"HB" = (
+/obj/item/organ/external/tail/monkey,
+/turf/open/floor/plating/abductor2{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"Ig" = (
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"V" = (
-/obj/item/surgicaldrill/alien,
+"Ih" = (
+/obj/item/bodypart/arm/left/abductor,
 /turf/open/floor/plating/abductor{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
-"W" = (
+"Ip" = (
+/turf/closed/wall/mineral/abductor,
+/area/lavaland/surface/outdoors)
+"IJ" = (
+/obj/structure/closet/abductor,
+/turf/open/floor/plating/abductor2{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"IZ" = (
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"JW" = (
+/obj/machinery/abductor/experiment{
+	team_number = 100
+	},
+/turf/open/floor/plating/abductor2{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"Kq" = (
+/obj/item/bodypart/head/abductor,
+/turf/open/floor/plating/abductor{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"KD" = (
+/obj/structure/stone_tile/cracked,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Ls" = (
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 4
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Lz" = (
+/obj/structure/stone_tile/burnt{
+	dir = 4
+	},
+/obj/structure/stone_tile/block/cracked,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"Mh" = (
+/obj/machinery/abductor/console,
+/turf/open/floor/plating/abductor2{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"Nj" = (
+/obj/item/stack/sheet/mineral/abductor,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
+"Oq" = (
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"Ot" = (
 /obj/structure/stone_tile/cracked,
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
-"X" = (
-/obj/effect/mapping_helpers/bombable_wall,
-/turf/closed/indestructible/riveted/boss/wasteland,
+"Pv" = (
+/obj/structure/stone_tile/surrounding/cracked,
+/turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"Y" = (
-/turf/closed/mineral/volcanic/lava_land_surface,
+"PO" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 10
+	},
+/turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"Z" = (
-/obj/item/organ/internal/tongue/abductor,
-/turf/open/floor/plating/abductor{
+"Qc" = (
+/turf/open/floor/plating/abductor2{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
+"SK" = (
+/obj/structure/stone_tile/burnt,
+/turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"UO" = (
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"Vr" = (
+/obj/machinery/abductor/pad{
+	team_number = 100
+	},
+/turf/open/floor/plating/abductor2{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
+"VQ" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/lavaland/surface/outdoors)
+"Xf" = (
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Xp" = (
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 5
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"XS" = (
+/obj/structure/stone_tile/block,
+/obj/structure/stone_tile/cracked{
+	dir = 1
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 
 (1,1,1) = {"
-y
-l
-U
-s
-W
-X
-G
-y
-y
+nu
+rx
+yB
+jb
+Ot
+VQ
+Af
+nu
+nu
 "}
 (2,1,1) = {"
-y
-l
-l
-l
-m
-b
-F
-u
-y
+nu
+rx
+rx
+rx
+zf
+Fx
+IZ
+Ig
+nu
 "}
 (3,1,1) = {"
-l
-l
-A
-l
-l
-l
-l
-l
-l
+rx
+rx
+sK
+rx
+rx
+rx
+VQ
+VQ
+UO
 "}
 (4,1,1) = {"
-l
-A
-A
-K
-t
-p
-p
-X
-h
+rx
+sK
+sK
+Mh
+Nj
+jx
+lu
+VQ
+Lz
 "}
 (5,1,1) = {"
-l
-A
-o
-L
-C
-n
-r
-l
-l
+rx
+sK
+JW
+Gc
+Qc
+up
+qs
+rx
+rx
 "}
 (6,1,1) = {"
-l
-A
-J
-z
-I
-M
-v
-A
-l
+rx
+sK
+FR
+Qc
+su
+Qc
+Ct
+sK
+rx
 "}
 (7,1,1) = {"
-l
-A
-f
-E
-V
-Z
-w
-A
-l
+rx
+sK
+Vr
+Kq
+HB
+ly
+Qc
+sK
+rx
 "}
 (8,1,1) = {"
-l
-c
-A
-T
-g
-T
-A
-c
-l
+rx
+Ip
+sK
+qb
+Ih
+IJ
+sK
+Ip
+rx
 "}
 (9,1,1) = {"
-l
-a
-c
-A
-A
-A
-c
-a
-l
+rx
+dk
+sK
+sK
+sK
+sK
+sK
+dk
+rx
 "}
 (10,1,1) = {"
-X
-a
-a
-a
-a
-a
-a
-a
-D
+VQ
+dk
+dk
+dk
+PO
+wo
+dk
+dk
+aW
 "}
 (11,1,1) = {"
-P
-a
-a
-a
-a
-a
-a
-q
-s
+sZ
+dk
+dk
+dk
+dk
+dk
+dk
+Ls
+jb
 "}
 (12,1,1) = {"
-X
-d
-a
-a
-a
-a
-N
-l
-R
+VQ
+ox
+dk
+dk
+dk
+dk
+aL
+rx
+XS
 "}
 (13,1,1) = {"
-l
-S
-O
-a
-a
-i
-a
-B
-H
+rx
+SK
+BN
+dk
+dk
+dk
+dk
+CP
+gO
 "}
 (14,1,1) = {"
-x
-a
-Q
-a
-a
-F
-k
-X
-e
+Xp
+dk
+zQ
+dk
+dk
+oP
+Pv
+VQ
+rD
 "}
 (15,1,1) = {"
-F
-a
-F
-a
-F
-F
-F
-j
-y
+IZ
+dk
+Oq
+dk
+fd
+IZ
+IZ
+KD
+nu
 "}
 (16,1,1) = {"
-e
-F
-F
-a
-a
-F
-y
-l
-y
+rD
+IZ
+IZ
+dk
+dk
+IZ
+nu
+rx
+nu
 "}
 (17,1,1) = {"
-y
-Y
-F
-a
-F
-e
-y
-y
-y
+nu
+Xf
+IZ
+dk
+IZ
+rD
+nu
+nu
+nu
 "}
 (18,1,1) = {"
-y
-y
-e
-a
-Y
-y
-y
-y
-y
+nu
+nu
+rD
+dk
+Xf
+nu
+nu
+nu
+nu
 "}

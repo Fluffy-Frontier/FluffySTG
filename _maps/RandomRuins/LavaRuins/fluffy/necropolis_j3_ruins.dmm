@@ -20,6 +20,18 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"e" = (
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "f" = (
 /obj/structure/stone_tile/slab/burnt,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -50,6 +62,15 @@
 /area/lavaland/surface/outdoors)
 "l" = (
 /obj/structure/stone_tile/block/cracked,
+/mob/living/basic/mining/lobstrosity/lava,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"o" = (
+/obj/structure/stone_tile/slab,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "p" = (
@@ -78,6 +99,10 @@
 /area/lavaland/surface/outdoors)
 "u" = (
 /obj/structure/stone_tile,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "v" = (
@@ -104,6 +129,15 @@
 /area/lavaland/surface/outdoors)
 "z" = (
 /obj/structure/stone_tile/block/burnt,
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "B" = (
@@ -129,11 +163,23 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "G" = (
-/obj/structure/railing/stone/right,
+/obj/structure/railing/stone/right{
+	layer = -6
+	},
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "H" = (
 /obj/structure/stone_tile/surrounding_tile,
+/mob/living/basic/mining/lobstrosity/lava,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "I" = (
@@ -151,11 +197,22 @@
 /obj/item/reagent_containers/cup/bowl/wood_bowl,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"L" = (
+/obj/structure/stone_tile/block,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/mob/living/basic/mining/lobstrosity/lava,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "N" = (
 /obj/structure/stone_tile{
 	dir = 1
 	},
-/obj/structure/railing/stone/left,
+/obj/structure/railing/stone/left{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "P" = (
@@ -169,7 +226,9 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Q" = (
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "R" = (
@@ -184,6 +243,14 @@
 /area/lavaland/surface/outdoors)
 "T" = (
 /obj/structure/ore_vein,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"U" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 1
+	},
+/mob/living/basic/mining/lobstrosity/lava,
+/mob/living/basic/mining/lobstrosity/lava,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "V" = (
@@ -246,7 +313,7 @@ a
 (3,1,1) = {"
 q
 q
-y
+o
 a
 V
 g
@@ -264,7 +331,7 @@ a
 a
 Z
 x
-C
+e
 I
 K
 j
@@ -320,7 +387,7 @@ a
 a
 a
 a
-p
+U
 w
 C
 x
@@ -344,7 +411,7 @@ a
 (10,1,1) = {"
 p
 q
-V
+L
 a
 a
 a

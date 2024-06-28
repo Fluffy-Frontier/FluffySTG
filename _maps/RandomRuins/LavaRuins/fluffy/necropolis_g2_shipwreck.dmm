@@ -19,6 +19,10 @@
 /obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"g" = (
+/obj/structure/barricade/wooden,
+/turf/open/floor/wood/lavaland,
+/area/lavaland/surface/outdoors)
 "i" = (
 /obj/effect/decal/cleanable/ash{
 	pixel_y = -7;
@@ -63,7 +67,16 @@
 	pixel_y = -5
 	},
 /obj/effect/turf_decal/siding/wood,
+/obj/structure/barricade/wooden,
 /turf/open/floor/wood/lavaland,
+/area/lavaland/surface/outdoors)
+"q" = (
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/obj/structure/flora/rock/pile/style_random,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "r" = (
 /obj/structure/barricade/wooden/crude,
@@ -118,6 +131,15 @@
 /turf/open/floor/wood/lavaland,
 /area/ruin/unpowered)
 "B" = (
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "C" = (
@@ -132,12 +154,15 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/barricade/wooden/crude,
+/obj/item/claymore/cutlass,
 /turf/open/floor/wood/lavaland,
 /area/ruin/unpowered)
 "E" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
+/obj/effect/decal/remains/human/smokey,
 /turf/open/floor/wood/lavaland,
 /area/ruin/unpowered)
 "F" = (
@@ -158,11 +183,8 @@
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/mob/living/basic/carp/mega{
-	name = "Captain Bite";
-	health = 200;
-	speed = 0.5
-	},
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
 /turf/open/floor/wood/lavaland,
 /area/ruin/unpowered)
 "H" = (
@@ -176,6 +198,11 @@
 /obj/structure/mineral_door/wood{
 	color = "#6b6536"
 	},
+/obj/structure/barricade/wooden/crude,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/open/floor/wood/lavaland,
 /area/ruin/unpowered)
 "J" = (
@@ -185,7 +212,6 @@
 	pixel_x = -15;
 	pixel_y = -7
 	},
-/obj/item/claymore/cutlass,
 /turf/open/floor/wood/lavaland,
 /area/ruin/unpowered)
 "K" = (
@@ -193,8 +219,33 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/open/floor/wood/lavaland,
 /area/ruin/unpowered)
+"L" = (
+/obj/structure/flora/rock/pile/style_random,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"M" = (
+/obj/structure/flora/rock/pile/style_random,
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "O" = (
 /obj/effect/decal/remains/human/smokey,
 /turf/open/floor/wood/lavaland,
@@ -211,7 +262,7 @@
 /obj/structure/barricade/wooden/crude,
 /obj/item/ship_in_a_bottle,
 /turf/closed/wall/mineral/wood/nonmetal,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "R" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -224,6 +275,9 @@
 /obj/effect/decal/cleanable/glass/titanium,
 /obj/item/clothing/under/costume/sailor,
 /turf/open/floor/wood/lavaland,
+/area/ruin/unpowered)
+"T" = (
+/turf/closed/wall/mineral/wood/nonmetal,
 /area/ruin/unpowered)
 "U" = (
 /obj/structure/flora/rock/pile/style_random,
@@ -248,6 +302,7 @@
 /area/ruin/unpowered)
 "W" = (
 /obj/structure/flora/rock/pile/style_random,
+/obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "X" = (
@@ -267,6 +322,8 @@
 /obj/effect/decal/remains/human,
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/glass/titanium,
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
 /turf/open/floor/wood/lavaland,
 /area/ruin/unpowered)
 
@@ -282,55 +339,55 @@ a
 (2,1,1) = {"
 a
 c
-l
+c
 C
-l
-U
+c
+L
 c
 "}
 (3,1,1) = {"
 a
 c
-C
-C
-C
-e
+T
+T
+T
+c
 a
 "}
 (4,1,1) = {"
-e
-U
-C
+B
+c
+T
 G
-C
-U
+T
+c
 B
 "}
 (5,1,1) = {"
-U
-C
-C
+q
+T
+T
 D
-C
-C
+T
+T
 l
 "}
 (6,1,1) = {"
 c
-C
+T
 j
 V
 K
-C
+T
 W
 "}
 (7,1,1) = {"
 e
-C
+T
 s
 X
 z
-C
+T
 c
 "}
 (8,1,1) = {"
@@ -339,11 +396,11 @@ Q
 b
 J
 Z
-C
+T
 C
 "}
 (9,1,1) = {"
-Y
+M
 o
 A
 i
@@ -365,7 +422,7 @@ C
 r
 R
 I
-a
+g
 p
 C
 "}

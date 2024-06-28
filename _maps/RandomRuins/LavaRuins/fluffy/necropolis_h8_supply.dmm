@@ -8,11 +8,10 @@
 /turf/closed/wall/mineral/titanium/survival/pod,
 /area/ruin/powered)
 "B" = (
-/obj/item/stack/telecrystal/five{
+/obj/item/stack/telecrystal{
+	color = "#FF5555";
 	name = "Nitra";
-	desc = "Rock and stone!";
-	light_color = "#FF5555";
-	color = "#FF5555"
+	desc = "Rock and stone!"
 	},
 /obj/effect/spawner/random/medical/medkit_rare,
 /turf/open/floor/pod/dark,
@@ -22,7 +21,7 @@
 	dir = 8
 	},
 /obj/item/reagent_containers/hypospray/medipen,
-/obj/item/mod/module/jump_jet,
+/obj/item/clothing/shoes/bhop,
 /turf/closed/wall/mineral/titanium/survival/pod,
 /area/ruin/powered)
 "K" = (

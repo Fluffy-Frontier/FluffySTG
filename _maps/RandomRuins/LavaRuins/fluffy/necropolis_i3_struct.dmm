@@ -13,12 +13,29 @@
 /obj/item/reagent_containers/cup/bowl/wood_bowl,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"au" = (
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"aW" = (
+/obj/structure/stone_tile/slab,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "cS" = (
 /obj/structure/stone_tile/slab/burnt,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "cU" = (
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "dL" = (
@@ -53,11 +70,20 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"fJ" = (
+/obj/structure/railing/stone{
+	layer = -6
+	},
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "gD" = (
 /obj/structure/stone_tile{
 	dir = 8
 	},
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "hE" = (
@@ -73,6 +99,18 @@
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"jA" = (
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "jS" = (
 /turf/closed/indestructible/riveted/boss,
 /area/lavaland/surface/outdoors)
@@ -81,6 +119,18 @@
 	dir = 6
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"jZ" = (
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "mj" = (
 /obj/structure/stone_tile/slab,
@@ -121,6 +171,10 @@
 /obj/structure/stone_tile/surrounding/cracked,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"tj" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/indestructible/riveted/boss,
+/area/lavaland/surface/outdoors)
 "tJ" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center/cracked,
@@ -160,6 +214,13 @@
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"wW" = (
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "xW" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 6
@@ -196,12 +257,18 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"An" = (
+/obj/item/fish/boned,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "AO" = (
 /mob/living/basic/mining/watcher,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Bt" = (
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -277,7 +344,9 @@
 /obj/structure/stone_tile{
 	dir = 1
 	},
-/obj/structure/railing/stone/left,
+/obj/structure/railing/stone/left{
+	layer = -6
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Fl" = (
@@ -337,6 +406,7 @@
 /obj/structure/stone_tile/block/burnt{
 	dir = 4
 	},
+/obj/item/staff/bostaff,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Mq" = (
@@ -357,11 +427,15 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "OD" = (
-/obj/structure/railing/stone/right,
+/obj/structure/railing/stone/right{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "OW" = (
-/obj/structure/railing/stone/left,
+/obj/structure/railing/stone/left{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Pc" = (
@@ -398,7 +472,9 @@
 /obj/structure/stone_tile{
 	dir = 1
 	},
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "RF" = (
@@ -473,6 +549,16 @@
 /obj/structure/ore_vein/diamond,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Wn" = (
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "WZ" = (
 /obj/structure/stone_tile{
 	dir = 4
@@ -481,7 +567,9 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Xm" = (
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Xq" = (
@@ -520,7 +608,7 @@ mK
 jS
 BH
 mK
-mK
+jA
 ec
 ec
 "}
@@ -528,13 +616,13 @@ ec
 ec
 LG
 rW
-nj
+aW
 gD
 mK
 jS
 mK
 ua
-mK
+An
 Mq
 ec
 "}
@@ -547,7 +635,7 @@ RB
 Mq
 mK
 ua
-mK
+au
 mK
 dL
 dL
@@ -581,7 +669,7 @@ jS
 ec
 "}
 (7,1,1) = {"
-jS
+tj
 MA
 jX
 mK
@@ -609,10 +697,10 @@ mK
 ec
 "}
 (9,1,1) = {"
-mK
+An
 Vr
 ug
-El
+jZ
 jg
 Ka
 PZ
@@ -634,7 +722,7 @@ wc
 xW
 BD
 SN
-mK
+jA
 "}
 (11,1,1) = {"
 BZ
@@ -659,20 +747,20 @@ rx
 vN
 BH
 BH
-mK
+jA
 jS
 jS
 mK
 "}
 (13,1,1) = {"
 LG
-El
+jZ
 uG
 BQ
 EN
 GH
 BH
-eK
+Wn
 Ep
 mK
 jS
@@ -703,7 +791,7 @@ mK
 AO
 Rm
 Mj
-mK
+wW
 jS
 "}
 (16,1,1) = {"
@@ -739,7 +827,7 @@ ec
 ec
 nj
 mj
-Xm
+fJ
 jS
 mK
 Mn

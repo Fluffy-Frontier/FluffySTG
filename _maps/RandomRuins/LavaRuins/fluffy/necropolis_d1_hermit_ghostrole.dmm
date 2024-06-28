@@ -17,6 +17,15 @@
 /area/ruin/powered)
 "dX" = (
 /obj/structure/flora/rock/pile/style_random,
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "eK" = (
@@ -370,6 +379,11 @@
 "Bn" = (
 /turf/template_noop,
 /area/template_noop)
+"Dg" = (
+/obj/structure/flora/rock/pile/style_random,
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "Dj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mob_spawn/ghost_role/human/hermit,
@@ -519,6 +533,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
 /area/ruin/powered)
+"LI" = (
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "Mv" = (
 /obj/structure/stone_tile/burnt{
 	dir = 1
@@ -643,6 +669,10 @@
 	dir = 1
 	},
 /obj/structure/stone_tile,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Yi" = (
@@ -783,7 +813,7 @@ ty
 kZ
 JO
 hk
-EZ
+LI
 "}
 (10,1,1) = {"
 JO
@@ -820,7 +850,7 @@ JO
 JO
 JO
 JO
-Yn
+Dg
 JO
 Bn
 Bn

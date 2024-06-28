@@ -7,6 +7,18 @@
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
+"c" = (
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "h" = (
 /turf/closed/wall/r_wall/rust,
 /area/lavaland/surface/outdoors)
@@ -86,6 +98,13 @@
 /obj/effect/glowing_rune,
 /turf/closed/indestructible/riveted/boss,
 /area/lavaland/surface/outdoors)
+"D" = (
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "F" = (
 /turf/closed/indestructible/riveted/boss,
 /area/lavaland/surface/outdoors)
@@ -100,6 +119,18 @@
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
+"J" = (
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "K" = (
 /obj/effect/mapping_helpers/bombable_wall,
 /obj/structure/trap/eldritch/tentacle,
@@ -154,10 +185,10 @@
 
 (1,1,1) = {"
 o
-k
+c
 H
 F
-H
+c
 H
 F
 o
@@ -166,12 +197,12 @@ o
 (2,1,1) = {"
 k
 H
-H
+D
 F
 K
 F
 F
-H
+c
 H
 "}
 (3,1,1) = {"
@@ -186,7 +217,7 @@ F
 k
 "}
 (4,1,1) = {"
-H
+c
 F
 m
 w
@@ -225,7 +256,7 @@ h
 z
 F
 K
-H
+c
 H
 H
 "}
@@ -235,10 +266,10 @@ F
 F
 F
 F
-H
+c
 h
 H
-k
+J
 "}
 (9,1,1) = {"
 o

@@ -213,6 +213,15 @@
 /obj/structure/stone_tile/center,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"G" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/bed/maint,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
 "H" = (
 /obj/structure/bed/maint,
 /obj/structure/stone_tile/slab,
@@ -234,6 +243,10 @@
 "J" = (
 /obj/structure/stone_tile/surrounding_tile/burnt{
 	dir = 1
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -380,7 +393,7 @@ n
 (5,1,1) = {"
 n
 g
-f
+G
 Q
 S
 H

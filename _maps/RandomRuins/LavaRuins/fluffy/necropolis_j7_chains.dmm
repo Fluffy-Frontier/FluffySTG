@@ -33,6 +33,10 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 1
 	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "h" = (
@@ -41,6 +45,10 @@
 "k" = (
 /obj/structure/stone_tile/block{
 	dir = 1
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -77,6 +85,10 @@
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
 	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "F" = (
@@ -90,6 +102,10 @@
 /obj/item/forging/complete/chain{
 	pixel_x = 3;
 	pixel_y = 7
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -150,6 +166,10 @@
 /obj/item/forging/complete/chain{
 	pixel_x = 7;
 	pixel_y = 2
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)

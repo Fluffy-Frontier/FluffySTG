@@ -554,6 +554,7 @@
 	},
 /obj/structure/bed/pillow_large,
 /obj/effect/spawner/random/bedsheet/double,
+/obj/effect/spawner/random/food_or_drink/seed_vault,
 /turf/open/floor/carpet/red,
 /area/ruin/powered/seedvault)
 "Kh" = (
@@ -567,8 +568,16 @@
 /turf/open/floor/wood/large,
 /area/ruin/powered/seedvault)
 "Kt" = (
-/obj/effect/spawner/random/food_or_drink/seed_vault,
-/turf/open/misc/grass/jungle,
+/obj/effect/turf_decal/trimline/dark/filled/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/dark/filled/line,
+/obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
+/obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
+	dir = 1
+	},
+/obj/effect/spawner/random/medical/medkit,
+/turf/open/floor/iron/dark/smooth_large,
 /area/ruin/powered/seedvault)
 "KL" = (
 /obj/machinery/power/shuttle_engine/heater{
@@ -865,7 +874,7 @@ BV
 GR
 fC
 uU
-Kt
+TN
 xY
 xw
 fx
@@ -1023,7 +1032,7 @@ TB
 fW
 Oh
 TB
-ed
+Kt
 pi
 TB
 "}

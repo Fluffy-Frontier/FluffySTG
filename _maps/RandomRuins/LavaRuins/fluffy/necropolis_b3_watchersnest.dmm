@@ -92,6 +92,18 @@
 /obj/structure/flora/ash/fireblossom,
 /turf/open/misc/asteroid/basalt/wasteland,
 /area/ruin/unpowered)
+"v" = (
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "w" = (
 /obj/effect/decal/cleanable/blood/gibs/up,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
@@ -164,6 +176,18 @@
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
+"N" = (
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "O" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /obj/effect/decal/cleanable/blood/drip,
@@ -223,7 +247,7 @@ K
 b
 a
 a
-p
+v
 b
 a
 a
@@ -378,7 +402,7 @@ k
 a
 a
 p
-p
+N
 a
 a
 b

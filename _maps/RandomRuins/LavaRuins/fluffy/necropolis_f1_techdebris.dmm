@@ -5,6 +5,7 @@
 "f" = (
 /obj/structure/lattice,
 /obj/structure/fluff/clockwork/alloy_shards,
+/obj/effect/spawner/random/environmentally_safe_anomaly,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "g" = (
@@ -41,6 +42,13 @@
 /obj/structure/trap/cult,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
+"x" = (
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "y" = (
 /obj/structure/grille,
 /turf/open/floor/bronze/filled/lavaland,
@@ -49,6 +57,7 @@
 /obj/structure/fluff/clockwork/alloy_shards/small,
 /obj/structure/grille/broken,
 /obj/structure/fluff/clockwork/blind_eye,
+/obj/effect/spawner/random/environmentally_safe_anomaly,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "G" = (
@@ -90,6 +99,8 @@
 /obj/effect/spawner/random/environmentally_safe_anomaly/immobile,
 /obj/structure/window/bronze/fulltile,
 /obj/item/gun/ballistic/bow/clockwork,
+/obj/item/weldingtool/experimental/brass,
+/obj/item/xenoarch/broken_item/tech,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "Q" = (
@@ -126,7 +137,7 @@ H
 l
 I
 L
-H
+x
 "}
 (4,1,1) = {"
 J
@@ -143,7 +154,7 @@ g
 J
 "}
 (6,1,1) = {"
-H
+x
 J
 v
 J
@@ -175,7 +186,7 @@ a
 j
 t
 J
-H
+x
 "}
 (11,1,1) = {"
 a

@@ -6,6 +6,14 @@
 /mob/living/basic/mining/legion/dwarf,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"g" = (
+/obj/structure/flora/rock/pile/style_random,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "q" = (
 /obj/structure/flora/rock/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -58,7 +66,7 @@ a
 V
 r
 r
-y
+r
 V
 V
 "}
@@ -66,39 +74,39 @@ V
 V
 L
 E
+r
+r
 y
-y
-V
 "}
 (5,1,1) = {"
 V
 q
 c
 Z
+r
 y
-V
 "}
 (6,1,1) = {"
 V
 V
 L
-E
+g
 L
-V
+y
 "}
 (7,1,1) = {"
 a
 V
 V
-y
 r
-V
+y
+y
 "}
 (8,1,1) = {"
 a
 y
-y
-y
+r
+r
 r
 r
 "}

@@ -26,9 +26,6 @@
 /area/lavaland/surface/outdoors)
 "l" = (
 /obj/structure/stone_tile/block/cracked,
-/obj/structure/stone_tile/cracked{
-	dir = 1
-	},
 /obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -56,6 +53,10 @@
 	dir = 1
 	},
 /mob/living/basic/mining/lobstrosity/lava,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "t" = (
@@ -117,6 +118,10 @@
 	dir = 8
 	},
 /obj/structure/stone_tile/center/cracked,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "F" = (
@@ -134,6 +139,10 @@
 /area/ruin/unpowered)
 "K" = (
 /obj/structure/stone_tile/slab/cracked,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "L" = (
@@ -149,7 +158,15 @@
 /area/lavaland/surface/outdoors)
 "O" = (
 /obj/structure/stone_tile/surrounding_tile/cracked,
-/obj/structure/punji_sticks/spikes,
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Q" = (

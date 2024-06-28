@@ -57,6 +57,9 @@
 	dir = 8
 	},
 /obj/item/ceramic/bowl,
+/obj/item/food/grown/bluecherries{
+	pixel_y = 10
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "k" = (
@@ -81,6 +84,14 @@
 	dir = 8
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
+"n" = (
+/mob/living/basic/lightgeist{
+	light_color = "#42ECFF"
+	},
+/turf/open/water/hot_spring{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
 /area/ruin/unpowered)
 "o" = (
 /obj/structure/stone_tile/block,
@@ -116,6 +127,10 @@
 "u" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
@@ -325,7 +340,7 @@ M
 E
 a
 Z
-a
+n
 a
 o
 M
@@ -334,7 +349,7 @@ M
 h
 M
 k
-a
+n
 a
 a
 a

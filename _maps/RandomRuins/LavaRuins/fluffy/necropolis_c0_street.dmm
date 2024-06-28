@@ -3,6 +3,15 @@
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 8
 	},
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "aq" = (
@@ -50,6 +59,35 @@
 /turf/open/lava/smooth/lava_land_surface{
 	slowdown = 0
 	},
+/area/lavaland/surface/outdoors)
+"dt" = (
+/mob/living/basic/mining/wolf{
+	desc = "A baby goliath. Do it. Stomp it.";
+	faction = list("mining","boss","hell");
+	name = "Biter";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_continuous = "maniacally tears";
+	attack_verb_simple = "tears";
+	attack_vis_effect = "slash";
+	bare_wound_bonus = 5;
+	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
+	can_tame = 0;
+	health = 35;
+	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
+	icon_dead = "goliath_baby_dead";
+	icon_living = "goliath_baby";
+	icon_state = "goliath_baby";
+	maxHealth = 35;
+	melee_damage_lower = 1;
+	melee_attack_cooldown = 5;
+	speed = 0.2;
+	wound_bonus = -1;
+	icon_gib = "syndicate_gib";
+	melee_damage_upper = 2;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
+	crusher_loot = null
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "dZ" = (
 /obj/structure/stone_tile/slab/burnt,
@@ -174,30 +212,6 @@
 	dir = 1
 	},
 /obj/structure/glowshroom/shadowshroom,
-/mob/living/basic/faithless{
-	faction = list("mining","boss","hell");
-	name = "Ancient Demon";
-	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
-	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
-	attack_verb_simple = "tears";
-	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/internal/eyes/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
-	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
-	icon_dead = "demondead";
-	icon_living = "engorgedemon";
-	icon_state = "engorgedemon";
-	melee_attack_cooldown = 5;
-	speed = -0.1;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.5, "oxygen" = 1);
-	melee_damage_lower = 3;
-	melee_damage_upper = 7;
-	health = 640;
-	bare_wound_bonus = 5;
-	wound_bonus = -1;
-	obj_damage = 40;
-	attack_vis_effect = "slash";
-	attack_verb_continuous = "maniacally tears";
-	maxHealth = 240
-	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "lb" = (
@@ -234,6 +248,13 @@
 "nn" = (
 /obj/structure/stone_tile/block,
 /turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"nF" = (
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "nM" = (
 /obj/structure/stone_tile/cracked,
@@ -373,6 +394,14 @@
 	slowdown = 0
 	},
 /area/lavaland/surface/outdoors)
+"uv" = (
+/obj/structure/flora/rock/pile/style_random,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "uC" = (
 /obj/structure/stone_tile/surrounding/cracked,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -430,29 +459,30 @@
 "xo" = (
 /obj/effect/mob_spawn/corpse/human/skeleton,
 /obj/structure/glowshroom/shadowshroom,
-/mob/living/basic/faithless{
+/mob/living/basic/mining/wolf{
+	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
 	faction = list("mining","boss","hell");
 	name = "Ancient Demon";
-	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
 	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_continuous = "maniacally tears";
 	attack_verb_simple = "tears";
-	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/internal/eyes/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
+	attack_vis_effect = "slash";
+	bare_wound_bonus = 5;
+	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
+	can_tame = 0;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.42, "oxygen" = 1);
+	health = 240;
 	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
 	icon_dead = "demondead";
 	icon_living = "engorgedemon";
 	icon_state = "engorgedemon";
+	maxHealth = 240;
+	melee_damage_lower = 3;
 	melee_attack_cooldown = 5;
 	speed = -0.1;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.5, "oxygen" = 1);
-	melee_damage_lower = 3;
-	melee_damage_upper = 7;
-	health = 640;
-	bare_wound_bonus = 5;
 	wound_bonus = -1;
-	obj_damage = 40;
-	attack_vis_effect = "slash";
-	attack_verb_continuous = "maniacally tears";
-	maxHealth = 240
+	guaranteed_butcher_results = list(/obj/structure/trap/fire=1);
+	crusher_loot = /obj/item/organ/internal/eyes/shadow
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
@@ -539,6 +569,15 @@
 	dir = 1
 	},
 /obj/structure/stone_tile/center/burnt,
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "At" = (
@@ -558,6 +597,10 @@
 "Bv" = (
 /obj/structure/fluff/clockwork/alloy_shards,
 /obj/structure/fluff/clockwork/blind_eye,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "BL" = (
@@ -580,6 +623,13 @@
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"Dp" = (
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "DF" = (
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
@@ -608,6 +658,32 @@
 	},
 /obj/structure/stone_tile{
 	dir = 4
+	},
+/mob/living/basic/mining/wolf{
+	desc = "A baby goliath. Do it. Stomp it.";
+	faction = list("mining","boss","hell");
+	name = "Biter";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_continuous = "maniacally tears";
+	attack_verb_simple = "tears";
+	attack_vis_effect = "slash";
+	bare_wound_bonus = 5;
+	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
+	can_tame = 0;
+	health = 35;
+	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
+	icon_dead = "goliath_baby_dead";
+	icon_living = "goliath_baby";
+	icon_state = "goliath_baby";
+	maxHealth = 35;
+	melee_damage_lower = 1;
+	melee_attack_cooldown = 5;
+	speed = 0.2;
+	wound_bonus = -1;
+	icon_gib = "syndicate_gib";
+	melee_damage_upper = 2;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
+	crusher_loot = null
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -676,9 +752,38 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
+"Kf" = (
+/obj/structure/stone_tile/slab,
+/mob/living/basic/mining/wolf{
+	desc = "A baby goliath. Do it. Stomp it.";
+	faction = list("mining","boss","hell");
+	name = "Biter";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_continuous = "maniacally tears";
+	attack_verb_simple = "tears";
+	attack_vis_effect = "slash";
+	bare_wound_bonus = 5;
+	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
+	can_tame = 0;
+	health = 35;
+	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
+	icon_dead = "goliath_baby_dead";
+	icon_living = "goliath_baby";
+	icon_state = "goliath_baby";
+	maxHealth = 35;
+	melee_damage_lower = 1;
+	melee_attack_cooldown = 5;
+	speed = 0.2;
+	wound_bonus = -1;
+	icon_gib = "syndicate_gib";
+	melee_damage_upper = 2;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
+	crusher_loot = null
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "KU" = (
 /obj/structure/closet/crate/necropolis,
-/obj/item/cursed_dagger,
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
 	},
@@ -711,9 +816,34 @@
 	},
 /area/lavaland/surface/outdoors)
 "LY" = (
-/obj/effect/gluttony,
+/mob/living/basic/mining/wolf{
+	desc = "A baby goliath. Do it. Stomp it.";
+	faction = list("mining","boss","hell");
+	name = "Biter";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_continuous = "maniacally tears";
+	attack_verb_simple = "tears";
+	attack_vis_effect = "slash";
+	bare_wound_bonus = 5;
+	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
+	can_tame = 0;
+	health = 35;
+	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
+	icon_dead = "goliath_baby_dead";
+	icon_living = "goliath_baby";
+	icon_state = "goliath_baby";
+	maxHealth = 35;
+	melee_damage_lower = 1;
+	melee_attack_cooldown = 5;
+	speed = 0.2;
+	wound_bonus = -1;
+	icon_gib = "syndicate_gib";
+	melee_damage_upper = 2;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
+	crusher_loot = null
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
-/area/ruin/unpowered)
+/area/lavaland/surface/outdoors)
 "Mc" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -758,6 +888,10 @@
 "Og" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
@@ -807,6 +941,36 @@
 /obj/structure/stone_tile/block,
 /obj/structure/fluff/clockwork/alloy_shards,
 /turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"QH" = (
+/obj/structure/stone_tile/slab/burnt,
+/mob/living/basic/mining/wolf{
+	desc = "A baby goliath. Do it. Stomp it.";
+	faction = list("mining","boss","hell");
+	name = "Biter";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_continuous = "maniacally tears";
+	attack_verb_simple = "tears";
+	attack_vis_effect = "slash";
+	bare_wound_bonus = 5;
+	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
+	can_tame = 0;
+	health = 35;
+	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
+	icon_dead = "goliath_baby_dead";
+	icon_living = "goliath_baby";
+	icon_state = "goliath_baby";
+	maxHealth = 35;
+	melee_damage_lower = 1;
+	melee_attack_cooldown = 5;
+	speed = 0.2;
+	wound_bonus = -1;
+	icon_gib = "syndicate_gib";
+	melee_damage_upper = 2;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
+	crusher_loot = null
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "QP" = (
 /obj/structure/stone_tile/slab/cracked{
@@ -859,6 +1023,10 @@
 	dir = 1
 	},
 /obj/structure/stone_tile/center,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "SX" = (
@@ -879,6 +1047,31 @@
 	dir = 8
 	},
 /obj/effect/spawner/random/medical/organs,
+/mob/living/basic/mining/wolf{
+	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
+	faction = list("mining","boss","hell");
+	name = "Ancient Demon";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_continuous = "maniacally tears";
+	attack_verb_simple = "tears";
+	attack_vis_effect = "slash";
+	bare_wound_bonus = 5;
+	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
+	can_tame = 0;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.42, "oxygen" = 1);
+	health = 240;
+	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
+	icon_dead = "demondead";
+	icon_living = "engorgedemon";
+	icon_state = "engorgedemon";
+	maxHealth = 240;
+	melee_damage_lower = 3;
+	melee_attack_cooldown = 5;
+	speed = -0.1;
+	wound_bonus = -1;
+	guaranteed_butcher_results = list(/obj/structure/trap/fire=1);
+	crusher_loot = /obj/item/organ/internal/eyes/shadow
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "TH" = (
@@ -935,6 +1128,19 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"VR" = (
+/obj/structure/stone_tile/block/cracked,
+/obj/structure/trap/cult{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF9911";
+	color = "#FF9911"
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "VT" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -974,6 +1180,14 @@
 /obj/structure/stone_tile/block/cracked,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"Xi" = (
+/obj/structure/stone_tile/block,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Xl" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
@@ -991,6 +1205,10 @@
 "XD" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
+	},
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
@@ -1177,7 +1395,7 @@ hn
 At
 SX
 hS
-hn
+Kf
 LS
 LS
 Pd
@@ -1200,7 +1418,7 @@ XL
 uC
 pq
 pq
-DI
+Xi
 At
 hn
 bl
@@ -1267,7 +1485,7 @@ Pd
 (9,1,1) = {"
 Pd
 tL
-DH
+uv
 dZ
 aq
 WZ
@@ -1318,7 +1536,7 @@ ff
 "}
 (11,1,1) = {"
 Pd
-hn
+Kf
 hn
 iR
 bC
@@ -1345,7 +1563,7 @@ pq
 (12,1,1) = {"
 Pd
 Pd
-VF
+VR
 LS
 Pd
 Pd
@@ -1388,7 +1606,7 @@ oQ
 BV
 Yz
 pq
-fa
+Dp
 fa
 Hx
 pq
@@ -1424,7 +1642,7 @@ Pd
 pq
 pq
 fa
-Hx
+nF
 LS
 LS
 LS
@@ -1440,7 +1658,7 @@ LS
 nM
 Lz
 pq
-LY
+DF
 bD
 KU
 pq
@@ -1521,7 +1739,7 @@ pq
 pq
 xN
 kX
-LY
+DF
 pq
 "}
 (19,1,1) = {"
@@ -1559,16 +1777,16 @@ pq
 pq
 Pd
 Pd
-bC
+QH
 At
 Pd
 ff
-fa
+LY
 pq
 wM
 xT
 pq
-DH
+uv
 ff
 pq
 pq
@@ -1675,7 +1893,7 @@ LS
 ff
 pq
 pq
-Hx
+dt
 Pd
 Pd
 Pd

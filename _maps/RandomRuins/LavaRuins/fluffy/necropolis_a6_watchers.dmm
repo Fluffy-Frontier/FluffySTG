@@ -1,7 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ai" = (
-/mob/living/basic/mining/watcher,
 /obj/structure/stone_tile/slab,
+/mob/living/basic/mining/watcher/magmawing,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "bY" = (
@@ -58,6 +58,18 @@
 /obj/structure/millstone,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"fS" = (
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "fY" = (
 /mob/living/basic/mining/legion,
 /turf/closed/mineral/random/high_chance/volcanic,
@@ -91,6 +103,23 @@
 "jX" = (
 /obj/structure/large_mortar,
 /turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"ki" = (
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"kj" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "ku" = (
 /obj/structure/stone_tile,
@@ -126,11 +155,31 @@
 /obj/structure/flora/ash/cacti,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"mS" = (
+/obj/structure/stone_tile/slab,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "nl" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/necropolis_gate/locked,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
+"nV" = (
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "oj" = (
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/random/high_chance/volcanic,
@@ -178,6 +227,14 @@
 /obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"sp" = (
+/obj/structure/flora/rock/pile/style_random,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "sS" = (
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -215,8 +272,15 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ve" = (
-/obj/structure/stone_tile/slab,
-/mob/living/basic/mining/legion/dwarf,
+/obj/structure/trap/cult{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF9911";
+	color = "#FF9911"
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "vf" = (
@@ -251,6 +315,19 @@
 /obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"zO" = (
+/obj/structure/flora/rock/pile/style_random,
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "Aa" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
@@ -260,12 +337,43 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/ruin/unpowered)
+"Ab" = (
+/obj/structure/punji_sticks/spikes,
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "AA" = (
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
-"AY" = (
-/mob/living/basic/mining/watcher/magmawing,
+"AG" = (
 /obj/structure/stone_tile/slab,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"AY" = (
+/obj/structure/stone_tile/slab,
+/mob/living/basic/mining/watcher/magmawing{
+	name = "Spirit of fire";
+	desc = "Presented with extreme temperatures, adaptive watchers absorb heat through their circulatory wings and repurpose it as a weapon. This one definitely primed. ";
+	current_size = 1.25;
+	base_pixel_y = -7.5;
+	speed = -1;
+	health = 320;
+	maxHealth = 320;
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 2,/obj/structure/flora/ash/fireblossom=4,/obj/item/book/granter/action/spell/sacredflame=1,/obj/item/crusher_trophy/blaster_tubes/magma_wing=1);
+	light_power = 7
+	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/ruin/unpowered)
 "DM" = (
@@ -287,6 +395,27 @@
 /area/ruin/unpowered)
 "Hd" = (
 /obj/item/stack/sheet/bone,
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"HB" = (
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "HX" = (
@@ -376,6 +505,11 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/ruin/unpowered)
+"Uo" = (
+/obj/structure/stone_tile/slab,
+/mob/living/basic/mining/legion/dwarf,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "UP" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 5
@@ -387,8 +521,8 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "WP" = (
-/mob/living/basic/mining/watcher,
 /obj/structure/stone_tile/slab,
+/mob/living/basic/mining/watcher/magmawing,
 /turf/open/lava/smooth/lava_land_surface,
 /area/ruin/unpowered)
 "XW" = (
@@ -404,6 +538,12 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/ruin/unpowered)
+"ZE" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 1
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered)
 "ZX" = (
 /obj/structure/stone_tile/slab,
 /turf/open/lava/smooth/lava_land_surface,
@@ -414,14 +554,14 @@ KX
 KX
 KX
 pg
-yf
+oZ
 MJ
 KX
 KX
+ve
 yf
 yf
-yf
-yf
+oZ
 pg
 KX
 KX
@@ -432,8 +572,8 @@ KX
 KX
 KX
 JK
-DM
-DM
+oZ
+oZ
 DM
 Lt
 Lt
@@ -453,7 +593,7 @@ eV
 sS
 oZ
 ew
-yf
+ki
 Lt
 dj
 KX
@@ -467,11 +607,11 @@ KX
 KX
 KX
 KX
-ZX
+WP
 Pl
-DM
-oj
-ve
+oZ
+Uo
+sS
 hW
 KX
 KX
@@ -494,14 +634,14 @@ Lt
 ZX
 KX
 Lt
-sS
+mS
 oj
 DM
 yf
 "}
 (6,1,1) = {"
 KX
-pg
+fS
 KX
 Yj
 Lt
@@ -518,12 +658,12 @@ DM
 DM
 "}
 (7,1,1) = {"
-yf
+oZ
 fx
 KX
 ZX
 ZX
-MJ
+oZ
 oj
 Ue
 Lt
@@ -542,10 +682,10 @@ KX
 yp
 ZX
 DM
-oj
-rt
+qP
+zO
 sW
-uP
+ZE
 uP
 ku
 Ou
@@ -560,7 +700,7 @@ DM
 uP
 yf
 DM
-qP
+AG
 MR
 Lt
 jt
@@ -585,17 +725,17 @@ ai
 Gi
 Lt
 DM
-pg
+fS
 DM
 bY
 "}
 (11,1,1) = {"
-yf
+oZ
 fx
 KX
 KX
 rt
-AA
+HB
 uP
 Rh
 ZX
@@ -626,7 +766,7 @@ DM
 ld
 "}
 (13,1,1) = {"
-yf
+oZ
 pg
 DM
 WP
@@ -644,7 +784,7 @@ DM
 jh
 "}
 (14,1,1) = {"
-yf
+oZ
 HX
 DM
 ZX
@@ -657,7 +797,7 @@ DM
 DM
 hj
 KX
-LB
+sp
 DM
 Vv
 "}
@@ -681,7 +821,7 @@ yf
 "}
 (16,1,1) = {"
 DM
-HX
+kj
 DM
 lH
 Lt
@@ -698,7 +838,7 @@ Lt
 yf
 "}
 (17,1,1) = {"
-pg
+Ab
 HX
 DM
 KX
@@ -707,8 +847,8 @@ vT
 vT
 ZX
 ZX
-AY
 ZX
+AY
 ZX
 ZX
 Tv
@@ -766,7 +906,7 @@ Lt
 sW
 uP
 uP
-yf
+nV
 yf
 "}
 (21,1,1) = {"
@@ -790,7 +930,7 @@ KX
 (22,1,1) = {"
 yf
 pg
-yf
+oZ
 sW
 oK
 ZX
@@ -808,7 +948,7 @@ KX
 (23,1,1) = {"
 KX
 yf
-yf
+oZ
 uP
 uP
 yp
@@ -826,12 +966,12 @@ KX
 (24,1,1) = {"
 KX
 KX
-yf
+oZ
 KX
 KX
 KX
 KX
-yf
+oZ
 KX
 DM
 pg

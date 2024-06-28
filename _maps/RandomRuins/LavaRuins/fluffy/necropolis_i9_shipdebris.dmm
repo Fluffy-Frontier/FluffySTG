@@ -14,10 +14,11 @@
 	},
 /obj/structure/cable,
 /obj/structure/lattice/catwalk/mining,
-/obj/item/clothing/mask/facehugger/dead,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/item/ammo_casing/rebar/healium,
+/obj/item/clothing/mask/facehugger/dead,
 /turf/open/floor/plating/lavaland_atmos,
 /area/ruin/unpowered)
 "n" = (
@@ -51,6 +52,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/xenoblood,
+/mob/living/basic/alien/sentinel,
 /turf/open/floor/plating/lavaland_atmos,
 /area/ruin/unpowered)
 "D" = (

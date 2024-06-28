@@ -39,6 +39,10 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
 	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "h" = (
@@ -61,6 +65,10 @@
 /obj/structure/stone_tile/cracked{
 	dir = 4
 	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "l" = (
@@ -77,17 +85,20 @@
 /area/lavaland/surface/outdoors)
 "n" = (
 /obj/structure/stone_tile/block/cracked,
-/obj/structure/punji_sticks/spikes,
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "o" = (
-/obj/structure/closet/crate/wooden,
 /obj/item/screwdriver/ashwalker,
-/obj/item/crowbar/ashwalker,
-/obj/item/wrench/ashwalker,
-/obj/item/wirecutters/ashwalker,
 /obj/item/hatchet/wooden,
-/obj/item/weldingtool/mini,
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
@@ -102,7 +113,7 @@
 /area/lavaland/surface/outdoors)
 "r" = (
 /obj/structure/stone_tile/slab/cracked,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "s" = (
 /obj/structure/rack/shelf{
@@ -118,17 +129,9 @@
 	pixel_y = 7;
 	pixel_x = 7
 	},
-/obj/item/reagent_containers/cup/bowl/mushroom_bowl{
-	pixel_y = 11;
-	pixel_x = 1
-	},
 /obj/item/smelling_salts{
 	pixel_y = -9;
 	pixel_x = -5
-	},
-/obj/item/smelling_salts{
-	pixel_y = -9;
-	pixel_x = 6
 	},
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
@@ -157,19 +160,13 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "x" = (
-/obj/structure/closet/crate/wooden,
-/obj/item/reagent_containers/blood/lizard{
-	pixel_x = -2;
-	pixel_y = -2
-	},
-/obj/item/reagent_containers/blood/lizard{
-	pixel_x = 5;
-	pixel_y = -2
-	},
-/obj/item/stack/sheet/cloth/ten,
 /obj/structure/stone_tile/slab,
 /obj/structure/stone_tile/slab,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "y" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -212,6 +209,10 @@
 "D" = (
 /obj/structure/stone_tile/slab,
 /obj/item/flashlight/flare/torch,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "E" = (
@@ -438,8 +439,8 @@ a
 (9,1,1) = {"
 Z
 D
-W
 R
+W
 F
 w
 i

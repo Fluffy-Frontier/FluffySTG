@@ -80,6 +80,10 @@
 /area/lavaland/surface/outdoors)
 "w" = (
 /obj/structure/flora/rock/style_random,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "x" = (
@@ -239,7 +243,7 @@ q
 b
 b
 c
-r
+a
 i
 a
 a
@@ -252,12 +256,12 @@ Z
 b
 b
 X
-r
-r
+a
+a
 R
 a
 i
-r
+a
 b
 x
 B
@@ -266,7 +270,7 @@ B
 x
 O
 r
-r
+a
 w
 F
 L
@@ -299,7 +303,7 @@ i
 o
 a
 a
-r
+a
 b
 g
 G
@@ -310,10 +314,10 @@ b
 b
 a
 i
-r
-r
-r
-r
+a
+a
+a
+a
 b
 b
 G

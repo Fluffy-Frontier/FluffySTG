@@ -2,10 +2,6 @@
 "a" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"c" = (
-/obj/structure/ore_vein/gold,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "d" = (
 /mob/living/basic/mining/lobstrosity/lava,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
@@ -17,6 +13,26 @@
 "j" = (
 /obj/item/fishing_rod/bone,
 /obj/structure/ore_vein/diamond,
+/mob/living/basic/mining/lobstrosity/lava{
+	name = "Big Armored Daddy Chomper";
+	desc = "Damn... That's a big one.";
+	current_size = 2;
+	speed = -0.5;
+	health = 900;
+	melee_damage_lower = 30;
+	melee_damage_upper = 60;
+	melee_attack_cooldown = 20;
+	obj_damage = 60;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
+	maxHealth = 900;
+	butcher_results = null;
+	guaranteed_butcher_results = list(/obj/item/food/meat/slab/rawcrab = 8, /obj/item/stack/sheet/bone = 4, /obj/item/organ/internal/monster_core/rush_gland = 1,/obj/item/crusher_trophy/lobster_claw=1);
+	base_pixel_y = -30
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"k" = (
+/obj/structure/ore_vein/gold,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "l" = (
@@ -43,13 +59,21 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "K" = (
-/obj/item/fishing_hook/bone,
 /obj/structure/ore_vein/plasma,
+/obj/item/fishing_hook/rescue,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "L" = (
 /obj/item/reagent_containers/cup/bucket/wooden,
 /obj/structure/ore_vein/iron,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"N" = (
+/obj/structure/ore_vein,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "P" = (
@@ -61,12 +85,12 @@
 /obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"X" = (
-/turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"Y" = (
+"U" = (
 /obj/structure/ore_vein,
 /turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"X" = (
+/turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 
 (1,1,1) = {"
@@ -75,7 +99,7 @@ a
 a
 a
 a
-Y
+U
 a
 a
 l
@@ -141,12 +165,12 @@ l
 "}
 (6,1,1) = {"
 a
-Y
+U
 X
 X
-e
+N
 j
-c
+k
 X
 X
 e
@@ -175,15 +199,15 @@ X
 X
 X
 B
-e
+N
 X
 X
 e
-Y
+U
 "}
 (9,1,1) = {"
 l
-Y
+U
 a
 X
 X
@@ -230,7 +254,7 @@ l
 l
 a
 a
-Y
+U
 a
 a
 a

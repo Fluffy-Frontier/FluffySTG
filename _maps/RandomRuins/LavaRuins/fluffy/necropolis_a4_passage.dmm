@@ -18,8 +18,47 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"e" = (
+/obj/structure/stone_tile/slab/cracked,
+/mob/living/basic/mining/wolf{
+	desc = "A baby goliath. Do it. Stomp it.";
+	faction = list("mining","boss","hell");
+	name = "Biter";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_continuous = "maniacally tears";
+	attack_verb_simple = "tears";
+	attack_vis_effect = "slash";
+	bare_wound_bonus = 5;
+	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
+	can_tame = 0;
+	health = 35;
+	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
+	icon_dead = "goliath_baby_dead";
+	icon_living = "goliath_baby";
+	icon_state = "goliath_baby";
+	maxHealth = 35;
+	melee_damage_lower = 1;
+	melee_attack_cooldown = 5;
+	speed = 0.2;
+	wound_bonus = -1;
+	icon_gib = "syndicate_gib";
+	melee_damage_upper = 2;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
+	crusher_loot = null
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "f" = (
 /obj/structure/flora/rock/pile/style_random,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"i" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 5
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic"
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "j" = (
@@ -51,6 +90,35 @@
 /area/lavaland/surface/outdoors)
 "s" = (
 /obj/structure/flora/rock/pile/style_random,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"t" = (
+/mob/living/basic/mining/wolf{
+	desc = "A baby goliath. Do it. Stomp it.";
+	faction = list("mining","boss","hell");
+	name = "Biter";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_continuous = "maniacally tears";
+	attack_verb_simple = "tears";
+	attack_vis_effect = "slash";
+	bare_wound_bonus = 5;
+	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
+	can_tame = 0;
+	health = 35;
+	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
+	icon_dead = "goliath_baby_dead";
+	icon_living = "goliath_baby";
+	icon_state = "goliath_baby";
+	maxHealth = 35;
+	melee_damage_lower = 1;
+	melee_attack_cooldown = 5;
+	speed = 0.2;
+	wound_bonus = -1;
+	icon_gib = "syndicate_gib";
+	melee_damage_upper = 2;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
+	crusher_loot = null
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "v" = (
@@ -101,6 +169,15 @@
 /area/lavaland/surface/outdoors)
 "K" = (
 /obj/structure/stone_tile/block,
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "L" = (
@@ -129,6 +206,38 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"W" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/mob/living/basic/mining/wolf{
+	desc = "A baby goliath. Do it. Stomp it.";
+	faction = list("mining","boss","hell");
+	name = "Biter";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_continuous = "maniacally tears";
+	attack_verb_simple = "tears";
+	attack_vis_effect = "slash";
+	bare_wound_bonus = 5;
+	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
+	can_tame = 0;
+	health = 35;
+	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
+	icon_dead = "goliath_baby_dead";
+	icon_living = "goliath_baby";
+	icon_state = "goliath_baby";
+	maxHealth = 35;
+	melee_damage_lower = 1;
+	melee_attack_cooldown = 5;
+	speed = 0.2;
+	wound_bonus = -1;
+	icon_gib = "syndicate_gib";
+	melee_damage_upper = 2;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
+	crusher_loot = null
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "X" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 8
@@ -138,7 +247,7 @@
 
 (1,1,1) = {"
 y
-J
+n
 X
 L
 J
@@ -167,10 +276,10 @@ I
 E
 j
 I
-J
+t
 "}
 (4,1,1) = {"
-T
+W
 I
 k
 Q
@@ -205,7 +314,7 @@ I
 (7,1,1) = {"
 d
 I
-Q
+i
 H
 I
 Q
@@ -227,11 +336,11 @@ y
 (9,1,1) = {"
 y
 L
-I
+n
 o
 A
-G
-I
+e
+n
 J
 y
 "}

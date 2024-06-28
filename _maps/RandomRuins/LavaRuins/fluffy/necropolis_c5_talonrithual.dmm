@@ -22,7 +22,19 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "bD" = (
-/obj/structure/punji_sticks/spikes,
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "bE" = (
@@ -38,6 +50,7 @@
 	dir = 6
 	},
 /obj/structure/stone_tile/center/cracked,
+/obj/effect/gibspawner/human/bodypartless,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ce" = (
@@ -56,29 +69,9 @@
 /obj/item/book/granter/action/spell/random,
 /obj/effect/mob_spawn/corpse/human/blood_cultist,
 /obj/effect/gibspawner/human/bodypartless,
-/mob/living/basic/faithless{
-	faction = list("mining","boss","hell");
-	name = "Ancient Demon";
-	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
-	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
-	attack_verb_simple = "tears";
-	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/internal/eyes/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
-	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
-	icon_dead = "demondead";
-	icon_living = "engorgedemon";
-	icon_state = "engorgedemon";
-	melee_attack_cooldown = 5;
-	speed = -0.1;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.5, "oxygen" = 1);
-	melee_damage_lower = 3;
-	melee_damage_upper = 7;
-	health = 640;
-	bare_wound_bonus = 5;
-	wound_bonus = -1;
-	obj_damage = 40;
-	attack_vis_effect = "slash";
-	attack_verb_continuous = "maniacally tears";
-	maxHealth = 240
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
@@ -86,6 +79,20 @@
 /obj/structure/stone_tile,
 /obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"cI" = (
+/obj/structure/stone_tile/cracked{
+	dir = 1
+	},
+/turf/closed/indestructible/riveted/boss,
+/area/lavaland/surface/outdoors)
+"dr" = (
+/obj/structure/flora/rock/pile/style_random,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "dL" = (
 /obj/structure/stone_tile/cracked,
@@ -113,30 +120,6 @@
 	},
 /obj/effect/decal/cleanable/blood,
 /obj/effect/gibspawner/human/bodypartless,
-/mob/living/basic/faithless{
-	faction = list("mining","boss","hell");
-	name = "Ancient Demon";
-	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
-	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
-	attack_verb_simple = "tears";
-	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/internal/eyes/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
-	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
-	icon_dead = "demondead";
-	icon_living = "engorgedemon";
-	icon_state = "engorgedemon";
-	melee_attack_cooldown = 5;
-	speed = -0.1;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.5, "oxygen" = 1);
-	melee_damage_lower = 3;
-	melee_damage_upper = 7;
-	health = 640;
-	bare_wound_bonus = 5;
-	wound_bonus = -1;
-	obj_damage = 40;
-	attack_vis_effect = "slash";
-	attack_verb_continuous = "maniacally tears";
-	maxHealth = 240
-	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "eW" = (
@@ -162,6 +145,21 @@
 /obj/structure/stone_tile/slab/cracked,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"gs" = (
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "hq" = (
 /obj/structure/stone_tile/surrounding_tile/cracked,
 /obj/structure/stone_tile/surrounding_tile/cracked{
@@ -169,30 +167,6 @@
 	},
 /obj/structure/stone_tile/center/cracked,
 /obj/effect/gibspawner/human/bodypartless,
-/mob/living/basic/faithless{
-	faction = list("mining","boss","hell");
-	name = "Ancient Demon";
-	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
-	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
-	attack_verb_simple = "tears";
-	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/internal/eyes/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
-	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
-	icon_dead = "demondead";
-	icon_living = "engorgedemon";
-	icon_state = "engorgedemon";
-	melee_attack_cooldown = 5;
-	speed = -0.1;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.5, "oxygen" = 1);
-	melee_damage_lower = 3;
-	melee_damage_upper = 7;
-	health = 640;
-	bare_wound_bonus = 5;
-	wound_bonus = -1;
-	obj_damage = 40;
-	attack_vis_effect = "slash";
-	attack_verb_continuous = "maniacally tears";
-	maxHealth = 240
-	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "hr" = (
@@ -213,6 +187,31 @@
 	dir = 8
 	},
 /obj/item/stack/sheet/runed_metal/five,
+/mob/living/basic/mining/wolf{
+	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
+	faction = list("mining","boss","hell");
+	name = "Ancient Demon";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_continuous = "maniacally tears";
+	attack_verb_simple = "tears";
+	attack_vis_effect = "slash";
+	bare_wound_bonus = 5;
+	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
+	can_tame = 0;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.42, "oxygen" = 1);
+	health = 240;
+	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
+	icon_dead = "demondead";
+	icon_living = "engorgedemon";
+	icon_state = "engorgedemon";
+	maxHealth = 240;
+	melee_damage_lower = 3;
+	melee_attack_cooldown = 5;
+	speed = -0.1;
+	wound_bonus = -1;
+	guaranteed_butcher_results = list(/obj/structure/trap/fire=1);
+	crusher_loot = /obj/item/organ/internal/eyes/shadow
+	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "jX" = (
@@ -235,6 +234,14 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"kZ" = (
+/obj/structure/stone_tile/slab,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
 "lb" = (
 /obj/structure/stone_tile/surrounding/burnt,
 /turf/open/lava/smooth/lava_land_surface,
@@ -276,6 +283,10 @@
 	dir = 8
 	},
 /obj/structure/stone_tile/center/cracked,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "nv" = (
@@ -397,6 +408,31 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood,
+/mob/living/basic/mining/wolf{
+	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
+	faction = list("mining","boss","hell");
+	name = "Ancient Demon";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_continuous = "maniacally tears";
+	attack_verb_simple = "tears";
+	attack_vis_effect = "slash";
+	bare_wound_bonus = 5;
+	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
+	can_tame = 0;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.42, "oxygen" = 1);
+	health = 240;
+	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
+	icon_dead = "demondead";
+	icon_living = "engorgedemon";
+	icon_state = "engorgedemon";
+	maxHealth = 240;
+	melee_damage_lower = 3;
+	melee_attack_cooldown = 5;
+	speed = -0.1;
+	wound_bonus = -1;
+	guaranteed_butcher_results = list(/obj/structure/trap/fire=1);
+	crusher_loot = /obj/item/organ/internal/eyes/shadow
+	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "xX" = (
@@ -426,7 +462,15 @@
 /area/lavaland/surface/outdoors)
 "Al" = (
 /obj/structure/stone_tile/block/cracked,
-/obj/structure/punji_sticks/spikes,
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "AB" = (
@@ -442,6 +486,10 @@
 "AU" = (
 /obj/structure/stone_tile{
 	dir = 8
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -460,8 +508,19 @@
 /area/ruin/unpowered)
 "BB" = (
 /obj/structure/stone_tile/slab,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/mob/living/basic/mining/lobstrosity/lava,
+/mob/living/basic/mining/lobstrosity/lava,
+/mob/living/basic/mining/lobstrosity/lava,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"BV" = (
+/obj/structure/stone_tile/slab/cracked,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
 "Cd" = (
 /obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -483,10 +542,9 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "CV" = (
-/obj/structure/stone_tile/block/cracked{
-	pixel_y = -16
-	},
-/turf/open/lava/smooth/lava_land_surface,
+/obj/structure/flora/rock/pile/style_random,
+/mob/living/basic/mining/lobstrosity/lava,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "DD" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -503,15 +561,28 @@
 /obj/structure/stone_tile/cracked{
 	dir = 4
 	},
-/turf/closed/mineral/volcanic/lava_land_surface,
+/mob/living/basic/mining/lobstrosity/lava,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "EY" = (
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"Fo" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/obj/structure/statue/bone/rib{
+	dir = 1;
+	pixel_y = 10
+	},
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/lavaland/surface/outdoors)
 "FN" = (
 /obj/structure/stone_tile/cracked{
 	dir = 4
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -519,6 +590,31 @@
 /obj/structure/stone_tile/surrounding/cracked,
 /obj/structure/stone_tile/center/cracked,
 /obj/effect/mob_spawn/corpse/human/blood_cultist,
+/mob/living/basic/mining/wolf{
+	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
+	faction = list("mining","boss","hell");
+	name = "Ancient Demon";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_continuous = "maniacally tears";
+	attack_verb_simple = "tears";
+	attack_vis_effect = "slash";
+	bare_wound_bonus = 5;
+	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
+	can_tame = 0;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.42, "oxygen" = 1);
+	health = 240;
+	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
+	icon_dead = "demondead";
+	icon_living = "engorgedemon";
+	icon_state = "engorgedemon";
+	maxHealth = 240;
+	melee_damage_lower = 3;
+	melee_attack_cooldown = 5;
+	speed = -0.1;
+	wound_bonus = -1;
+	guaranteed_butcher_results = list(/obj/structure/trap/fire=1);
+	crusher_loot = /obj/item/organ/internal/eyes/shadow
+	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "HM" = (
@@ -569,7 +665,6 @@
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
 	},
-/obj/structure/stone_tile/burnt,
 /obj/structure/stone_tile/cracked{
 	dir = 8
 	},
@@ -607,10 +702,36 @@
 /obj/structure/stone_tile/surrounding/cracked,
 /obj/structure/stone_tile/center/burnt,
 /obj/effect/gibspawner/human/bodypartless,
+/mob/living/basic/mining/wolf{
+	desc = "A demonic creature that moves relatively fast, but doesn't do a lot of damage.";
+	faction = list("mining","boss","hell");
+	name = "Ancient Demon";
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_continuous = "maniacally tears";
+	attack_verb_simple = "tears";
+	attack_vis_effect = "slash";
+	bare_wound_bonus = 5;
+	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/external/tail/lizard = 1);
+	can_tame = 0;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.42, "oxygen" = 1);
+	health = 240;
+	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi';
+	icon_dead = "demondead";
+	icon_living = "engorgedemon";
+	icon_state = "engorgedemon";
+	maxHealth = 240;
+	melee_damage_lower = 3;
+	melee_attack_cooldown = 5;
+	speed = -0.1;
+	wound_bonus = -1;
+	guaranteed_butcher_results = list(/obj/structure/trap/fire=1);
+	crusher_loot = /obj/item/organ/internal/eyes/shadow
+	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "Qa" = (
 /obj/structure/stone_tile/slab,
+/mob/living/basic/mining/lobstrosity/lava,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Qb" = (
@@ -624,10 +745,9 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Sm" = (
-/obj/structure/stone_tile/burnt{
-	dir = 8
-	},
-/turf/open/lava/smooth/lava_land_surface,
+/obj/structure/flora/rock/pile/style_random,
+/mob/living/basic/mining/lobstrosity/lava,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Tp" = (
 /obj/structure/stone_tile/block/cracked,
@@ -644,14 +764,35 @@
 	dir = 1
 	},
 /obj/structure/flora/ash/seraka,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"UN" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 8
+	},
+/obj/effect/gibspawner/human/bodypartless,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "VD" = (
 /obj/structure/stone_tile/cracked{
 	dir = 1
 	},
 /obj/item/flashlight/flare/torch,
 /turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"WI" = (
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Ya" = (
 /obj/structure/stone_tile/block{
@@ -702,7 +843,7 @@ ce
 Ae
 Ae
 Ck
-Cd
+CV
 Ae
 Ae
 Ae
@@ -728,8 +869,8 @@ EY
 xX
 xX
 Ae
-IF
-zL
+Ae
+cI
 Ae
 ce
 nv
@@ -753,9 +894,9 @@ NA
 xy
 hq
 xX
-ce
+Fo
 Qb
-Sm
+Cq
 AB
 AB
 qZ
@@ -780,7 +921,7 @@ cs
 vQ
 pd
 Qb
-CV
+Cq
 kM
 AB
 AB
@@ -793,7 +934,7 @@ IF
 Cq
 ic
 kM
-Ck
+WI
 zT
 Cd
 kM
@@ -857,14 +998,14 @@ jX
 IN
 nz
 Uk
-KR
+UN
 AB
 kM
 AB
 VD
 Ae
 DD
-Zj
+Sm
 kN
 kM
 mq
@@ -880,7 +1021,7 @@ ce
 Ae
 xX
 Um
-EY
+kZ
 nq
 xX
 Ae
@@ -896,7 +1037,7 @@ eh
 Qc
 KR
 Ya
-Cj
+gs
 AB
 AB
 AB
@@ -906,7 +1047,7 @@ AB
 Ae
 xX
 xX
-fL
+BV
 Ls
 xX
 Ae
@@ -966,7 +1107,7 @@ AB
 Ae
 Ae
 cC
-Cd
+dr
 Ae
 Ae
 HV

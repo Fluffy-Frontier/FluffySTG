@@ -5,6 +5,10 @@
 "c" = (
 /obj/structure/table_frame/wood,
 /obj/structure/stone_tile/block/cracked,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "d" = (
@@ -50,6 +54,10 @@
 /area/ruin/unpowered)
 "l" = (
 /obj/structure/flora/rock/pile/style_random,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "n" = (
@@ -90,6 +98,16 @@
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
+"v" = (
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "w" = (
 /mob/living/basic/construct/proteon/hostile,
 /obj/effect/decal/cleanable/dirt,
@@ -97,6 +115,18 @@
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
+"y" = (
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "A" = (
 /obj/structure/destructible/cult/pylon,
 /turf/open/floor/engine/cult{
@@ -264,7 +294,7 @@ F
 p
 "}
 (3,1,1) = {"
-G
+y
 g
 Z
 Z
@@ -291,7 +321,7 @@ W
 e
 M
 I
-G
+y
 "}
 (6,1,1) = {"
 p
@@ -325,7 +355,7 @@ Z
 "}
 (9,1,1) = {"
 p
-F
+v
 Z
 u
 C

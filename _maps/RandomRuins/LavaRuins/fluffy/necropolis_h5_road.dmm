@@ -32,6 +32,18 @@
 /obj/structure/flora/rock/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"eB" = (
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "fd" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -64,7 +76,6 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 1
 	},
-/mob/living/basic/mining/goliath/ancient,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "lc" = (
@@ -92,6 +103,15 @@
 /area/lavaland/surface/outdoors)
 "ob" = (
 /obj/structure/stone_tile/block/burnt,
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "oD" = (
@@ -137,16 +157,22 @@
 /obj/structure/stone_tile{
 	dir = 8
 	},
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "rW" = (
-/obj/structure/railing/stone/left,
+/obj/structure/railing/stone/left{
+	layer = -6
+	},
 /obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "si" = (
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /obj/item/reagent_containers/cup/bowl/wood_bowl,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -156,11 +182,21 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"ul" = (
+/obj/structure/stone_tile/slab,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "uG" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
 	},
-/obj/structure/railing/stone/right,
+/obj/structure/railing/stone/right{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "uV" = (
@@ -206,7 +242,19 @@
 /area/lavaland/surface/outdoors)
 "Ai" = (
 /obj/structure/stone_tile,
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Ay" = (
+/obj/structure/railing/stone{
+	layer = -6
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "AW" = (
@@ -228,7 +276,9 @@
 /obj/structure/stone_tile{
 	dir = 1
 	},
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Fr" = (
@@ -242,7 +292,9 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Hk" = (
-/obj/structure/railing/stone/right,
+/obj/structure/railing/stone/right{
+	layer = -6
+	},
 /obj/structure/flora/rock/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -305,7 +357,26 @@
 /obj/structure/stone_tile{
 	dir = 1
 	},
-/obj/structure/railing/stone/left,
+/obj/structure/railing/stone/left{
+	layer = -6
+	},
+/mob/living/basic/mining/goliath{
+	name = "Chaser";
+	light_color = "#996666";
+	color = "#553333";
+	desc = "An armored tricky goliath that definitely not gonna give up on you so easily.";
+	current_size = 1.25;
+	speed = 0.5;
+	health = 600;
+	melee_attack_cooldown = 30;
+	melee_damage_lower = 10;
+	melee_damage_upper = 40;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.25, "oxygen" = 1);
+	alpha = 100;
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 4,/obj/effect/gibspawner/human = 1,/obj/effect/mob_spawn/corpse/human/miner=1,/obj/item/clothing/suit/cloak/ashencloak=1,/obj/item/clothing/head/ash_headdress/winged=1);
+	maxHealth = 600;
+	base_pixel_y = -7.5
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Nk" = (
@@ -322,8 +393,14 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Os" = (
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /obj/structure/flora/rock/pile/style_random,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Pf" = (
@@ -357,7 +434,9 @@
 /obj/structure/stone_tile{
 	dir = 4
 	},
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "WP" = (
@@ -367,7 +446,9 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "XU" = (
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "YE" = (
@@ -375,8 +456,14 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "YF" = (
-/obj/structure/stone_tile{
-	dir = 1
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -495,10 +582,10 @@ Pj
 (14,1,1) = {"
 rv
 Ai
-YE
+ul
 xp
 XU
-vv
+YF
 "}
 (15,1,1) = {"
 Pj
@@ -526,7 +613,7 @@ Pj
 "}
 (18,1,1) = {"
 Pj
-XU
+Ay
 YE
 YE
 XU
@@ -544,7 +631,7 @@ Pj
 Pj
 Hk
 rE
-vv
+eB
 Hk
 Pj
 "}

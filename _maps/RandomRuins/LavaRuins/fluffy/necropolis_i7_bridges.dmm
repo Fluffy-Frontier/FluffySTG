@@ -8,6 +8,10 @@
 	dir = 4
 	},
 /obj/structure/flora/ash/fireblossom,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "cQ" = (
@@ -25,13 +29,13 @@
 	dir = 4
 	},
 /obj/structure/stone_tile/surrounding_tile,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "el" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 4
 	},
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "eX" = (
 /obj/structure/stone_tile/surrounding/burnt,
@@ -41,10 +45,23 @@
 "fa" = (
 /obj/structure/stone_tile/slab,
 /obj/item/reagent_containers/cup/bowl/wood_bowl,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "ge" = (
 /obj/structure/railing/stone/left,
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "gX" = (
@@ -55,7 +72,7 @@
 	dir = 8
 	},
 /obj/structure/stone_tile/center/cracked,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "ha" = (
 /obj/structure/stone_tile{
@@ -67,7 +84,7 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
 	},
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "hY" = (
 /obj/structure/stone_tile/surrounding/burnt,
@@ -80,14 +97,27 @@
 /area/lavaland/surface/outdoors)
 "jJ" = (
 /obj/structure/stone_tile/surrounding,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"jR" = (
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "kB" = (
 /obj/structure/stone_tile/slab,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "lj" = (
 /obj/structure/stone_tile/block,
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ma" = (
@@ -100,13 +130,16 @@
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
 	},
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "mT" = (
 /obj/structure/stone_tile{
 	dir = 4
 	},
 /turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"ne" = (
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "nm" = (
 /obj/structure/stone_tile/block/cracked{
@@ -123,20 +156,29 @@
 	dir = 4
 	},
 /obj/structure/stone_tile/surrounding_tile/burnt,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"oY" = (
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "pc" = (
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "pP" = (
 /obj/structure/stone_tile/burnt,
-/obj/structure/stone_tile/burnt{
-	dir = 1
+/obj/structure/railing/stone{
+	layer = -6
 	},
-/obj/structure/stone_tile/cracked{
-	dir = 4
-	},
-/obj/structure/railing/stone,
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "rk" = (
@@ -159,7 +201,9 @@
 /obj/structure/stone_tile/surrounding_tile/burnt{
 	dir = 4
 	},
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ti" = (
@@ -171,7 +215,7 @@
 /obj/structure/stone_tile/block{
 	dir = 1
 	},
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "uv" = (
 /obj/structure/stone_tile/block,
@@ -180,7 +224,17 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"uN" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "vd" = (
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "vr" = (
@@ -195,7 +249,10 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "wC" = (
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "wF" = (
@@ -239,6 +296,14 @@
 /obj/structure/stone_tile/center/burnt,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"zR" = (
+/obj/structure/stone_tile/slab/burnt,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Ag" = (
 /obj/structure/stone_tile/block,
 /obj/structure/stone_tile/block/cracked{
@@ -265,7 +330,7 @@
 	dir = 6
 	},
 /mob/living/basic/mining/goliath,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Cu" = (
 /obj/structure/stone_tile/surrounding_tile{
@@ -273,6 +338,7 @@
 	},
 /obj/structure/stone_tile/surrounding_tile,
 /obj/structure/stone_tile/center/burnt,
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Cz" = (
@@ -295,7 +361,9 @@
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
 	},
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Ey" = (
@@ -305,7 +373,7 @@
 /obj/structure/stone_tile/block/burnt{
 	dir = 4
 	},
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "EB" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -319,6 +387,7 @@
 /area/lavaland/surface/outdoors)
 "FK" = (
 /obj/structure/railing/stone/right,
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "FP" = (
@@ -347,16 +416,27 @@
 /area/lavaland/surface/outdoors)
 "Kg" = (
 /obj/structure/stone_tile/slab/burnt,
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Ko" = (
 /obj/structure/stone_tile/surrounding/cracked,
+/obj/structure/stone_tile/center/burnt,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Lj" = (
 /obj/structure/stone_tile/slab/burnt,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Mf" = (
+/obj/structure/stone_tile/surrounding/cracked,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "MB" = (
 /obj/structure/stone_tile/surrounding_tile{
@@ -366,6 +446,10 @@
 	dir = 1
 	},
 /obj/structure/railing/stone/left,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "No" = (
@@ -387,7 +471,7 @@
 /obj/structure/stone_tile{
 	dir = 4
 	},
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Px" = (
 /obj/structure/stone_tile/burnt{
@@ -442,7 +526,7 @@
 /area/lavaland/surface/outdoors)
 "Uj" = (
 /obj/structure/stone_tile/block,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "VV" = (
 /obj/structure/stone_tile/block{
@@ -469,12 +553,17 @@
 /obj/structure/stone_tile{
 	dir = 4
 	},
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "YH" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 1
 	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"YS" = (
+/obj/structure/flora/rock/pile/style_random,
+/obj/structure/punji_sticks/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 
@@ -522,7 +611,7 @@ TE
 "}
 (4,1,1) = {"
 xp
-Ee
+ne
 pc
 pc
 pc
@@ -535,13 +624,13 @@ pc
 TE
 "}
 (5,1,1) = {"
-Ee
+jR
 kB
 EB
 hY
 Px
 Ek
-AO
+uN
 fa
 wC
 pc
@@ -612,11 +701,11 @@ pc
 pc
 EC
 Lj
-Id
+YS
 pc
 pc
 tJ
-Ee
+jR
 "}
 (11,1,1) = {"
 TE
@@ -648,7 +737,7 @@ jJ
 "}
 (13,1,1) = {"
 Ee
-RW
+Mf
 eX
 TE
 Hh
@@ -656,7 +745,7 @@ pc
 pc
 pc
 pc
-vd
+oY
 AO
 XI
 "}
@@ -723,7 +812,7 @@ TE
 TE
 TE
 TE
-Lj
+zR
 pc
 pc
 TE

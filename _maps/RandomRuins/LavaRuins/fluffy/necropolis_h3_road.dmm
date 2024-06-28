@@ -9,7 +9,9 @@
 /area/lavaland/surface/outdoors)
 "cr" = (
 /obj/structure/flora/rock/pile/style_random,
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "db" = (
@@ -38,12 +40,20 @@
 /obj/structure/stone_tile/surrounding_tile/burnt{
 	dir = 8
 	},
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "jj" = (
 /obj/structure/stone_tile/slab,
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "jk" = (
@@ -99,7 +109,15 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "wq" = (
-/obj/structure/punji_sticks/spikes,
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "wv" = (
@@ -128,6 +146,26 @@
 /obj/structure/stone_tile/block,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"AN" = (
+/obj/structure/stone_tile/slab,
+/mob/living/basic/mining/ice_whelp{
+	light_color = "#50f0f0";
+	light_power = 12;
+	light_range = 1.4;
+	color = "#50f0f0";
+	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
+	icon_dead = "brimdemon_dead";
+	icon_living = "brimdemon";
+	icon_state = "brimdemon";
+	speed = 3;
+	health = 600;
+	maxHealth = 600;
+	desc = "Quite a usual brim, but this one covered with runes and... something just wrong...";
+	name = "Lich";
+	butcher_results = list(/obj/item/food/meat/slab = 2, /obj/effect/decal/cleanable/brimdust = 1, /obj/item/organ/internal/monster_core/brimdust_sac = 1)
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "AZ" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -144,7 +182,9 @@
 /area/lavaland/surface/outdoors)
 "Cc" = (
 /obj/structure/punji_sticks/spikes,
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "CU" = (
@@ -164,6 +204,13 @@
 "Ik" = (
 /obj/structure/stone_tile/surrounding/burnt,
 /obj/structure/stone_tile/center/burnt,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Ip" = (
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Iv" = (
@@ -222,14 +269,18 @@
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 6
 	},
-/obj/structure/railing/stone/left,
+/obj/structure/railing/stone/left{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Ok" = (
 /obj/structure/stone_tile/surrounding_tile/burnt{
 	dir = 1
 	},
-/obj/structure/railing/stone/left,
+/obj/structure/railing/stone/left{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "OW" = (
@@ -240,16 +291,26 @@
 /obj/structure/stone_tile{
 	dir = 1
 	},
-/obj/structure/railing/stone/right,
+/obj/structure/railing/stone/right{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Pg" = (
 /obj/structure/stone_tile/surrounding_tile,
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Qo" = (
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Qx" = (
@@ -312,7 +373,9 @@
 /area/lavaland/surface/outdoors)
 "TP" = (
 /obj/structure/stone_tile/burnt,
-/obj/structure/railing/stone/right,
+/obj/structure/railing/stone/right{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "UO" = (
@@ -326,11 +389,19 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"WD" = (
+/obj/structure/railing/stone{
+	layer = -6
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "WL" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 8
 	},
-/obj/structure/railing/stone,
+/obj/structure/railing/stone{
+	layer = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "WX" = (
@@ -363,7 +434,7 @@ CU
 CU
 KO
 Td
-xi
+AN
 Mx
 lj
 CU
@@ -408,7 +479,7 @@ CU
 CU
 CU
 CU
-AZ
+Ip
 Ok
 LK
 JG
@@ -433,11 +504,11 @@ CU
 QI
 lQ
 To
-Qo
+WD
 Iz
 RO
 Qx
-Qo
+WD
 CU
 "}
 (8,1,1) = {"
@@ -461,12 +532,12 @@ jj
 AZ
 wv
 WX
-Qo
+WD
 CU
 "}
 (10,1,1) = {"
 CU
-AZ
+wq
 AZ
 db
 Cc
@@ -496,7 +567,7 @@ CU
 CU
 AZ
 pH
-AZ
+wq
 CU
 CU
 "}

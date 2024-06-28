@@ -40,7 +40,7 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 10
 	},
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/open/chasm/lavaland,
 /area/lavaland/surface/outdoors)
 "q" = (
 /obj/effect/mapping_helpers/bombable_wall,
@@ -50,6 +50,7 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 5
 	},
+/mob/living/basic/mining/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "w" = (
@@ -69,14 +70,13 @@
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 4
 	},
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/open/chasm/lavaland,
 /area/lavaland/surface/outdoors)
 "B" = (
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
 /area/ruin/unpowered)
 "D" = (
-/mob/living/basic/mining/watcher,
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 1
 	},
@@ -93,7 +93,7 @@
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 8
 	},
-/mob/living/basic/mining/watcher,
+/mob/living/basic/mining/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "J" = (
@@ -102,6 +102,10 @@
 	},
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 9
+	},
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
@@ -120,7 +124,7 @@
 /area/ruin/unpowered)
 "O" = (
 /obj/structure/flora/rock/pile/style_random,
-/mob/living/basic/mining/watcher,
+/mob/living/basic/mining/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "P" = (
@@ -128,6 +132,15 @@
 /area/lavaland/surface/outdoors)
 "S" = (
 /obj/structure/stone_tile/surrounding_tile/cracked,
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "V" = (
@@ -158,7 +171,7 @@ c
 c
 a
 V
-o
+a
 c
 c
 "}
@@ -167,8 +180,8 @@ c
 a
 x
 D
-o
-o
+a
+a
 c
 "}
 (4,1,1) = {"
@@ -177,7 +190,7 @@ a
 w
 k
 B
-o
+a
 c
 "}
 (5,1,1) = {"
@@ -186,13 +199,13 @@ V
 V
 v
 n
-o
+a
 c
 "}
 (6,1,1) = {"
 c
 V
-B
+w
 f
 w
 B
@@ -210,7 +223,7 @@ c
 (8,1,1) = {"
 c
 o
-w
+B
 F
 w
 a

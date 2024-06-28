@@ -1,7 +1,24 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/obj/effect/mine/explosive,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/obj/item/antag_granter/heretic{
+	name = "Oghma Infinium";
+	icon = 'icons/obj/service/library.dmi';
+	icon_state = "book1";
+	worn_icon_state = "book";
+	desc = "An ancient book covered in human skin. Reading will probably lead you to sudden death, but... Not many could resist the temptation of the Oghma Infinium. Now it is your turn to be put to the test.";
+	layer = 1;
+	pixel_y = -2
+	},
+/obj/structure/flora/rock/style_4{
+	max_integrity = 1500
+	},
+/obj/effect/glowing_rune{
+	layer = 4;
+	alpha = 55;
+	name = "Glowing rune";
+	desc = "Curious, isn't it?"
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 
 (1,1,1) = {"

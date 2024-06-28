@@ -7,6 +7,10 @@
 /obj/effect/spawner/random/structure/grille,
 /turf/open/floor/plating/lavaland_atmos,
 /area/lavaland/surface/outdoors)
+"j" = (
+/obj/structure/flora/rock/pile/style_random,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "o" = (
 /obj/item/reagent_containers/hash,
 /obj/structure/lattice/catwalk/mining,
@@ -24,9 +28,33 @@
 	},
 /turf/open/floor/plating/lavaland_atmos,
 /area/ruin/unpowered)
+"q" = (
+/obj/structure/trap/cult{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF9911";
+	color = "#FF9911"
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "v" = (
 /obj/structure/lattice,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"z" = (
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "D" = (
 /obj/item/reagent_containers/hash/dabs{
@@ -108,11 +136,19 @@
 /obj/effect/spawner/random/structure/grille,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Y" = (
+/obj/structure/flora/rock/pile/style_random,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 
 (1,1,1) = {"
 a
 v
-S
+q
 a
 a
 "}
@@ -121,7 +157,7 @@ a
 K
 i
 v
-S
+j
 "}
 (3,1,1) = {"
 K
@@ -135,7 +171,7 @@ K
 D
 E
 K
-S
+z
 "}
 (5,1,1) = {"
 K
@@ -145,15 +181,15 @@ K
 S
 "}
 (6,1,1) = {"
-S
+z
 Q
 V
-S
+Y
 a
 "}
 (7,1,1) = {"
 a
-S
+j
 K
 a
 a

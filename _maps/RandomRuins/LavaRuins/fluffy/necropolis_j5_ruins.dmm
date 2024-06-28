@@ -39,6 +39,10 @@
 /area/lavaland/surface/outdoors)
 "k" = (
 /obj/structure/stone_tile/slab/burnt,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "m" = (
@@ -48,6 +52,8 @@
 /obj/structure/stone_tile{
 	dir = 4
 	},
+/mob/living/basic/mining/brimdemon,
+/mob/living/basic/mining/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "n" = (
@@ -80,6 +86,8 @@
 /area/lavaland/surface/outdoors)
 "s" = (
 /obj/structure/flora/rock/pile/style_random,
+/mob/living/basic/mining/brimdemon,
+/mob/living/basic/mining/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "t" = (
@@ -97,6 +105,10 @@
 /area/lavaland/surface/outdoors)
 "x" = (
 /obj/structure/stone_tile/slab/cracked,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "y" = (
@@ -117,6 +129,8 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
 	},
+/mob/living/basic/mining/brimdemon,
+/mob/living/basic/mining/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "B" = (
@@ -126,9 +140,19 @@
 /mob/living/basic/mining/brimdemon,
 /mob/living/basic/mining/brimdemon,
 /mob/living/basic/mining/brimdemon,
-/mob/living/basic/mining/brimdemon,
-/mob/living/basic/mining/brimdemon,
 /obj/structure/stone_tile/slab/cracked,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "G" = (
@@ -142,6 +166,8 @@
 /obj/structure/stone_tile/cracked{
 	dir = 4
 	},
+/mob/living/basic/mining/brimdemon,
+/mob/living/basic/mining/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "L" = (
@@ -172,6 +198,10 @@
 "P" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 6
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)

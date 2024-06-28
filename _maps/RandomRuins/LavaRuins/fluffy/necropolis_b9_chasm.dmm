@@ -9,6 +9,12 @@
 "e" = (
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"g" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 1
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "h" = (
 /obj/structure/flora/rock/pile/style_random,
 /obj/structure/flora/rock/pile/style_random,
@@ -23,22 +29,107 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"s" = (
+/obj/structure/flora/rock/style_random,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"u" = (
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "v" = (
 /obj/structure/punji_sticks/spikes,
 /obj/effect/decal/cleanable/blood/gibs/old,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"y" = (
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"B" = (
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"C" = (
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "F" = (
 /obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"I" = (
+/obj/structure/flora/rock/pile/style_random,
+/obj/structure/trap/fire{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF1111";
+	color = "#FF1111"
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"L" = (
+/obj/effect/decal/cleanable/blood/old,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "P" = (
 /obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Q" = (
+/obj/structure/healingfountain,
+/obj/structure/stone_tile/slab,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "R" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"S" = (
+/obj/structure/trap/cult{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF9911";
+	color = "#FF9911"
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "U" = (
 /turf/open/chasm/lavaland,
@@ -54,7 +145,7 @@
 a
 a
 X
-F
+I
 Y
 "}
 (2,1,1) = {"
@@ -62,7 +153,7 @@ a
 X
 X
 U
-Y
+B
 "}
 (3,1,1) = {"
 a
@@ -93,7 +184,7 @@ P
 a
 "}
 (7,1,1) = {"
-X
+y
 U
 b
 Y
@@ -129,7 +220,7 @@ a
 "}
 (12,1,1) = {"
 X
-R
+L
 U
 b
 X
@@ -139,32 +230,32 @@ a
 X
 U
 U
-X
+S
 "}
 (14,1,1) = {"
 a
-Y
-e
+F
+C
 U
 F
 "}
 (15,1,1) = {"
 a
-F
+s
 v
 U
 Y
 "}
 (16,1,1) = {"
 a
-Y
-Y
+g
+Q
 U
 Y
 "}
 (17,1,1) = {"
 a
-Y
+s
 U
 U
 Y
@@ -181,7 +272,7 @@ F
 b
 U
 Y
-X
+u
 "}
 (20,1,1) = {"
 Y
@@ -191,7 +282,7 @@ F
 a
 "}
 (21,1,1) = {"
-Y
+B
 U
 b
 Y
@@ -213,7 +304,7 @@ a
 "}
 (24,1,1) = {"
 a
-F
+I
 X
 X
 a

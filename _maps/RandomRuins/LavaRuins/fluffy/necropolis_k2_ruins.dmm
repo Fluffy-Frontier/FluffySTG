@@ -16,6 +16,10 @@
 /obj/structure/stone_tile/block{
 	dir = 1
 	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "g" = (
@@ -87,9 +91,17 @@
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
 /area/lavaland/surface/outdoors)
+"w" = (
+/obj/structure/stone_tile,
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "y" = (
 /obj/structure/flora/rock/pile/style_random,
 /mob/living/basic/mining/legion,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"z" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "B" = (
@@ -140,7 +152,7 @@
 	dir = 4
 	},
 /obj/structure/stone_tile/center/burnt,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "N" = (
 /obj/structure/stone_tile/surrounding_tile{
@@ -153,6 +165,10 @@
 /obj/structure/stone_tile/block/cracked,
 /obj/structure/stone_tile{
 	dir = 1
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
@@ -211,7 +227,7 @@ a
 d
 v
 B
-U
+z
 W
 v
 h
@@ -227,11 +243,11 @@ Q
 "}
 (4,1,1) = {"
 o
-v
+z
 i
-U
+z
 M
-U
+z
 R
 "}
 (5,1,1) = {"
@@ -241,13 +257,13 @@ r
 p
 y
 e
-Y
+w
 "}
 (6,1,1) = {"
 a
 U
 N
-v
+z
 u
 U
 a
@@ -255,7 +271,7 @@ a
 (7,1,1) = {"
 a
 a
-Y
+w
 F
 g
 a

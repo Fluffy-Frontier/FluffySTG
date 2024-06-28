@@ -14,9 +14,27 @@
 /obj/structure/ore_vein/diamond,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"r" = (
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "v" = (
 /obj/structure/ore_vein/silver,
 /turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"x" = (
+/obj/structure/ore_vein/plasma,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"z" = (
+/turf/closed/indestructible/riveted/boss,
 /area/lavaland/surface/outdoors)
 "A" = (
 /obj/structure/ore_vein,
@@ -66,10 +84,10 @@ a
 a
 a
 a
-U
-U
-U
-U
+z
+z
+z
+z
 a
 "}
 (2,1,1) = {"
@@ -80,15 +98,15 @@ a
 a
 a
 a
-a
+z
 a
 a
 U
 U
 S
 H
-U
-U
+z
+z
 "}
 (3,1,1) = {"
 a
@@ -98,7 +116,7 @@ a
 a
 a
 a
-a
+z
 a
 U
 U
@@ -106,17 +124,17 @@ S
 T
 S
 S
-U
+z
 "}
 (4,1,1) = {"
+z
+a
+z
+z
+z
 a
 a
-U
-U
-U
-a
-a
-a
+z
 a
 e
 m
@@ -124,33 +142,33 @@ S
 A
 S
 S
-e
+z
 "}
 (5,1,1) = {"
-a
+z
 U
 U
 S
-U
-U
+z
+z
 a
-a
-a
-U
+z
+z
+z
 v
 S
 S
-X
+x
 m
-U
+z
 "}
 (6,1,1) = {"
-e
+z
 U
 S
 m
 T
-U
+z
 a
 a
 a
@@ -160,15 +178,15 @@ M
 S
 S
 S
-U
+z
 "}
 (7,1,1) = {"
-U
+z
 S
 v
 S
 S
-U
+z
 U
 a
 a
@@ -178,10 +196,10 @@ H
 S
 M
 S
-U
+z
 "}
 (8,1,1) = {"
-U
+z
 H
 S
 S
@@ -190,16 +208,16 @@ v
 U
 a
 a
-a
-U
-U
+z
+z
+z
 X
 S
 A
-U
+z
 "}
 (9,1,1) = {"
-U
+z
 S
 S
 X
@@ -210,56 +228,56 @@ a
 a
 a
 a
-e
+z
 S
 S
 T
 U
 "}
 (10,1,1) = {"
-U
+z
 S
 N
 S
 H
 S
-U
+z
+z
+z
 a
 a
-a
-a
-U
+z
 S
 m
 S
 U
 "}
 (11,1,1) = {"
-U
+z
 S
 m
-S
+r
 M
 T
-U
+z
 a
 a
 a
 a
-U
+z
 U
 S
 v
 U
 "}
 (12,1,1) = {"
-U
+z
 S
 S
 A
 S
 S
-U
+z
 a
 a
 a
@@ -271,25 +289,25 @@ U
 U
 "}
 (13,1,1) = {"
-U
+z
 U
 X
 S
 m
 S
-U
+z
 a
 a
 a
 a
 a
-U
-U
-U
+z
+z
+z
 a
 "}
 (14,1,1) = {"
-a
+z
 U
 S
 S
@@ -327,13 +345,13 @@ a
 (16,1,1) = {"
 a
 a
-U
-U
-U
-a
-a
-a
-a
+z
+z
+z
+z
+z
+z
+z
 a
 a
 a

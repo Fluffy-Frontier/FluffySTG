@@ -47,6 +47,18 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"o" = (
+/obj/structure/trap/cult{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	alpha = 180;
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#FF9911";
+	color = "#FF9911"
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "p" = (
 /obj/structure/stone_tile/block,
 /turf/closed/mineral/random/high_chance/volcanic,
@@ -73,6 +85,10 @@
 	dir = 1
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"A" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
 /area/lavaland/surface/outdoors)
 "B" = (
 /obj/structure/stone_tile/slab,
@@ -178,21 +194,21 @@ F
 G
 "}
 (7,1,1) = {"
-a
+A
 F
 l
 c
 x
 "}
 (8,1,1) = {"
-a
+A
 B
 a
 F
 a
 "}
 (9,1,1) = {"
-a
+A
 p
 U
 I
@@ -221,7 +237,7 @@ S
 "}
 (13,1,1) = {"
 S
-F
+o
 a
 a
 a
@@ -245,5 +261,5 @@ S
 S
 S
 C
-a
+A
 "}
