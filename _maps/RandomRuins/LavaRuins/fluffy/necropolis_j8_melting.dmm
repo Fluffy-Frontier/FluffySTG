@@ -20,7 +20,8 @@
 	icon = 'icons/obj/service/hydroponics/equipment.dmi';
 	icon_state = "woodspike";
 	light_color = "#FF1111";
-	color = "#FF1111"
+	color = "#FF1111";
+	max_integrity = 30
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -86,7 +87,8 @@
 	icon = 'icons/obj/service/hydroponics/equipment.dmi';
 	icon_state = "woodspike";
 	light_color = "#FF1111";
-	color = "#FF1111"
+	color = "#FF1111";
+	max_integrity = 30
 	},
 /obj/item/xenoarch/useless_relic{
 	name = "Ancient relic";

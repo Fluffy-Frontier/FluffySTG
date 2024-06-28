@@ -7,13 +7,15 @@
 	worn_icon_state = "book";
 	desc = "An ancient book covered in human skin. Reading will probably lead you to sudden death, but... Not many could resist the temptation of the Oghma Infinium. Now it is your turn to be put to the test.";
 	layer = 1;
-	pixel_y = -2
+	pixel_y = -2;
+	light_color = "#777777";
+	color = "#777777"
 	},
 /obj/structure/flora/rock/style_4{
 	max_integrity = 1500
 	},
 /obj/effect/glowing_rune{
-	layer = 4;
+	layer = 4.2;
 	alpha = 55;
 	name = "Glowing rune";
 	desc = "Curious, isn't it?"

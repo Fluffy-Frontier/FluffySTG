@@ -8,13 +8,6 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"c" = (
-/turf/closed/mineral/strong{
-	base_icon_state = "smoothrocks";
-	icon = 'modular_nova/modules/liquids/icons/turf/smoothrocks.dmi';
-	icon_state = "smoothrocks-55"
-	},
-/area/lavaland/surface/outdoors)
 "d" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center,
@@ -92,7 +85,8 @@
 	icon = 'icons/obj/service/hydroponics/equipment.dmi';
 	icon_state = "woodspike";
 	light_color = "#FF1111";
-	color = "#FF1111"
+	color = "#FF1111";
+	max_integrity = 30
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
@@ -347,14 +341,6 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"Z" = (
-/obj/structure/punji_sticks/spikes,
-/turf/closed/mineral/strong{
-	base_icon_state = "smoothrocks";
-	icon = 'modular_nova/modules/liquids/icons/turf/smoothrocks.dmi';
-	icon_state = "smoothrocks-55"
-	},
-/area/lavaland/surface/outdoors)
 
 (1,1,1) = {"
 a
@@ -437,7 +423,7 @@ m
 a
 "}
 (9,1,1) = {"
-Z
+j
 D
 R
 W
@@ -447,7 +433,7 @@ i
 a
 "}
 (10,1,1) = {"
-c
+j
 F
 F
 F

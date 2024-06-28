@@ -66,18 +66,6 @@
 /obj/item/bikehorn,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"p" = (
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111"
-	},
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "v" = (
 /obj/item/bikehorn,
 /turf/closed/mineral/bananium,
@@ -85,18 +73,6 @@
 "w" = (
 /turf/template_noop,
 /area/template_noop)
-"N" = (
-/obj/structure/trap/damage{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#DDFFDD";
-	color = "#77FF77";
-	alpha = 180
-	},
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "S" = (
 /obj/item/stack/ore/bananium,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -112,10 +88,10 @@
 (1,1,1) = {"
 w
 w
-p
 a
 a
-N
+a
+a
 w
 "}
 (2,1,1) = {"
@@ -137,13 +113,13 @@ S
 a
 "}
 (4,1,1) = {"
-N
+a
 a
 v
 h
 S
 d
-N
+a
 "}
 (5,1,1) = {"
 a
@@ -164,11 +140,11 @@ a
 w
 "}
 (7,1,1) = {"
-N
 a
 a
 a
-p
+a
+a
 w
 w
 "}

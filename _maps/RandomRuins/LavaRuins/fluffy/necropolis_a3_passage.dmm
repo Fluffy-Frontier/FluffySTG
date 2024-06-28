@@ -55,7 +55,8 @@
 	icon = 'icons/obj/service/hydroponics/equipment.dmi';
 	icon_state = "woodspike";
 	light_color = "#FF9911";
-	color = "#FF9911"
+	color = "#FF9911";
+	max_integrity = 30
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)

@@ -28,7 +28,8 @@
 	icon_state = "woodspike";
 	light_color = "#DDFFDD";
 	color = "#77FF77";
-	alpha = 180
+	alpha = 180;
+	max_integrity = 30
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -57,7 +58,9 @@
 /area/lavaland/surface/outdoors)
 "gE" = (
 /obj/item/food/meat/slab/meatproduct,
-/obj/structure/trap/eldritch/tentacle,
+/obj/structure/trap/eldritch/tentacle{
+	max_integrity = 30
+	},
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -70,7 +73,8 @@
 	icon_state = "woodspike";
 	light_color = "#DDFFDD";
 	color = "#77FF77";
-	alpha = 180
+	alpha = 180;
+	max_integrity = 30
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -93,7 +97,9 @@
 /obj/item/food/meat/slab/meatproduct,
 /obj/item/food/meat/slab/bugmeat,
 /obj/item/food/meat/slab/goliath,
-/obj/structure/trap/eldritch/tentacle,
+/obj/structure/trap/eldritch/tentacle{
+	max_integrity = 30
+	},
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -109,7 +115,9 @@
 /area/ruin/powered)
 "pH" = (
 /obj/effect/mapping_helpers/bombable_wall,
-/obj/structure/trap/eldritch/tentacle,
+/obj/structure/trap/eldritch/tentacle{
+	max_integrity = 30
+	},
 /turf/closed/indestructible/riveted/boss/wasteland{
 	base_icon_state = "meat_wall";
 	icon = 'icons/turf/walls/meat_wall.dmi';
@@ -173,7 +181,8 @@
 	icon_state = "woodspike";
 	light_color = "#DDFFDD";
 	color = "#77FF77";
-	alpha = 180
+	alpha = 180;
+	max_integrity = 30
 	},
 /obj/item/xenoarch/useless_relic/magnified{
 	name = "Ancient relic";
@@ -204,7 +213,9 @@
 /obj/item/food/meat/slab/meatproduct,
 /obj/effect/gibspawner/human,
 /obj/item/food/meat/slab/meatproduct,
-/obj/structure/trap/eldritch/tentacle,
+/obj/structure/trap/eldritch/tentacle{
+	max_integrity = 30
+	},
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -298,7 +309,9 @@
 /obj/effect/gibspawner/generic,
 /obj/item/food/meat/slab/meatproduct,
 /obj/item/food/meat/slab/meatproduct,
-/obj/structure/trap/eldritch/tentacle,
+/obj/structure/trap/eldritch/tentacle{
+	max_integrity = 30
+	},
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},

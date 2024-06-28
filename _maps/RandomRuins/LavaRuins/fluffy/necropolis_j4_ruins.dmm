@@ -156,7 +156,7 @@
 	attack_verb_simple = "tears";
 	attack_vis_effect = "slash";
 	bare_wound_bonus = 5;
-	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
+	butcher_results = null;
 	can_tame = 0;
 	health = 35;
 	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
@@ -215,7 +215,7 @@
 	attack_verb_simple = "tears";
 	attack_vis_effect = "slash";
 	bare_wound_bonus = 5;
-	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
+	butcher_results = null;
 	can_tame = 0;
 	health = 35;
 	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
@@ -276,7 +276,7 @@
 	attack_verb_simple = "tears";
 	attack_vis_effect = "slash";
 	bare_wound_bonus = 5;
-	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
+	butcher_results = null;
 	can_tame = 0;
 	health = 35;
 	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
@@ -303,7 +303,8 @@
 	icon = 'icons/obj/service/hydroponics/equipment.dmi';
 	icon_state = "woodspike";
 	light_color = "#FF1111";
-	color = "#FF1111"
+	color = "#FF1111";
+	max_integrity = 30
 	},
 /obj/item/xenoarch/useless_relic{
 	name = "Ancient relic";
@@ -330,7 +331,8 @@
 	icon = 'icons/obj/service/hydroponics/equipment.dmi';
 	icon_state = "woodspike";
 	light_color = "#FF1111";
-	color = "#FF1111"
+	color = "#FF1111";
+	max_integrity = 30
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
