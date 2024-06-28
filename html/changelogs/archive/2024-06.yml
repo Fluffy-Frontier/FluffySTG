@@ -1443,3 +1443,52 @@
       instead it gives a discount
 
       /:cl'
+2024-06-28:
+  00-Steven:
+  - bugfix: Fixed Death Degradation sending you into an endless stamcrit loop.
+  Ben10Omintrix:
+  - refactor: firebots are now basic bots
+  Deadgebert:
+  - rscadd: Crystallizer boards added to Delta and Tram HFR rooms
+  FlufflesTheDog:
+  - bugfix: hypovial quickswitching works
+  - bugfix: round-start drone dispensers are stocked again
+  GPeckman:
+  - bugfix: Protolathes/Circuit Imprinters/Techfabs with better parts should now print
+      items faster again.
+  Kapu1178:
+  - bugfix: MODsuit pathfinder module works. Again.
+  - code_imp: AI pathfinding should produce slightly better paths.
+  MTandi:
+  - rscdel: Removed tank dispenser UI to use left/right clicks instead
+  - rscadd: There is a chance that Spess Knife will be in a mail for engi and clowns
+  Melbert:
+  - bugfix: Fix timestop being 1 tile too small again, and fixes a lot of other field
+      effects from being 1-small as well
+  - bugfix: Fixed cyborg omnitools being unusable on some things
+  - sound: Glug-glug sound when dragging a leaking gas tank
+  - bugfix: Lizards and Moths don't deathgasp twice when they die
+  Melberte:
+  - rscadd: Cool Sword Cursor Maintenance App
+  SmArtKar:
+  - bugfix: Retracted pens can be put into PDAs
+  - bugfix: Spraycans can once more paint things.
+  SyncIt21:
+  - bugfix: actions buttons can be dragged anywhere again
+  alien3301:
+  - balance: Mediborg surgical omnitool upgrade makes the health analyzer advanced
+  carlarctg:
+  - bugfix: Fixed hunger affecting your speed in nograv
+  mc-oofert:
+  - qol: space dragon can see in the dark and the invalid rift location alert is more
+      informative
+  necromanceranne:
+  - bugfix: Headprotector modules and constructor modules work properly once more.
+  uaioy:
+  - bugfix: infiltrator modsuit sprite is not misaligned anymore
+  vinylspiders:
+  - bugfix: fixes gigantism mutation not reducing a mob's size upon losing when it
+      should be doing so.
+  - qol: 'polypore mycelium no longer contains sugar, preventing it from instantly
+      creating fringe weaver beverage when ground up. qol: sugar may be acquired from
+      grinding fireblossoms instead of polypore mycelium.'
