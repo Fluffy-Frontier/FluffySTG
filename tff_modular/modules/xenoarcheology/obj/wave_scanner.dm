@@ -85,7 +85,7 @@
 	desc = "Searches for exotic waves."
 	icon = 'tff_modular/modules/xenoarcheology/icons/tools.dmi'
 	icon_state = "wave_searcher"
-	w_class = 3
+	w_class = WEIGHT_CLASS_BULKY
 	throwforce = 0
 	throw_range = 0
 	slot_flags = null
@@ -151,8 +151,10 @@
 	nearest_artifact_distance = -1
 	var/turf/cur_turf = get_turf(src)
 	for(var/turf/closed/mineral/strange_rock/T in GLOB.artifact_turfs)
+		if(!T || !cur_turf)
+			continue
 		if(T.z == cur_turf.z)
 			var/cur_dist = get_dist(cur_turf, T) * 2
 			if(nearest_artifact_distance < 0 || cur_dist < nearest_artifact_distance)
 				nearest_artifact_distance = cur_dist + rand() * 2 - 1
-	cur_turf.visible_message("<span class='info'>[src] clicks.</span>")
+	visible_message("<span class='info'>[src] clicks.</span>")
