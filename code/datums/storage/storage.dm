@@ -144,8 +144,6 @@
 	orient_to_hud()
 
 /datum/storage/Destroy()
-	parent = null
-	real_location = null
 
 	for(var/mob/person in is_using)
 		if(person.active_storage == src)
@@ -157,6 +155,13 @@
 	QDEL_NULL(closer)
 
 	is_using.Cut()
+<<<<<<< HEAD
+=======
+	QDEL_LIST_ASSOC_VAL(storage_interfaces)
+
+	parent = null
+	real_location = null
+>>>>>>> 0b8b0e755a0 ([MIRROR] [NO GBP] Fixes critical storage issues [MDB IGNORE] (#3375))
 
 	return ..()
 
@@ -1100,6 +1105,12 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 	to_hide.client.screen -= boxes
 	to_hide.client.screen -= closer
 	to_hide.client.screen -= real_location.contents
+<<<<<<< HEAD
+=======
+	QDEL_NULL(storage_interfaces[to_hide])
+	storage_interfaces -= to_hide
+
+>>>>>>> 0b8b0e755a0 ([MIRROR] [NO GBP] Fixes critical storage issues [MDB IGNORE] (#3375))
 	return TRUE
 
 /datum/storage/proc/action_trigger(datum/source, datum/action/triggered)
