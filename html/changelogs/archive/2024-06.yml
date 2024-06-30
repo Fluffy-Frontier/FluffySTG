@@ -1541,3 +1541,55 @@
   - balance: Damage dealt by travelling through the disposal tubes has been reduced
       by 60%. You can now (sort of) safely use them as an escape method again without
       dosing yourself to the eyeballs on anti-brute medicine.
+2024-06-30:
+  00-Steven:
+  - bugfix: Fixes chronological age resetting.
+  EnterTheJake:
+  - rscadd: A new Anomaly organ has been introduced, The Voltaic Combat Cyberheart!
+  EvenInDeathIStillServe:
+  - rscadd: Adds donator item for BlindPoet.
+  Higgin:
+  - bugfix: Mood buffs/penalties are now properly equal on both positive/negative
+      sides.
+  JackEnoff:
+  - balance: Changelings regenerate chemicals faster when not on fire
+  - balance: Changelings regenerate chemicals slower when on fire
+  LT3:
+  - rscadd: New DeForest heavy medical kit, technician satchel
+  - rscadd: Small capacity piercing hypospray
+  - bugfix: Hyposprays that are supposed to have a starting vial now actually start
+      with the vial
+  MGOOOOOO:
+  - qol: The "Dental Implant" surgery no longer forces itself to restart after implanting
+      one pill. Now implanting pills in the surgery has another step to either search
+      the patient's mouth for another tooth to implant, or cauterization to end the
+      surgery.
+  Moonlit2000:
+  - bugfix: peg legs can't bleed
+  RuinedTrickster:
+  - rscadd: Make monkey tails waggable
+  ShizCalev:
+  - bugfix: Monkeys that become sentient through the sentience helmet will no longer
+      be notified that they can ventcrawl.
+  - bugfix: The soups wiki page no longer has error icons for soups that don't have
+      unique sprites.
+  - bugfix: Portaturrets no longer go invisible when unwrenched from the ground.
+  - bugfix: Toggling ambient ship sounds will now instantly turn it on/off.
+  SmArtKar:
+  - bugfix: Storage no longer deletes all of its viewers upon being deleted
+  - bugfix: Storage UI now renders properly
+  - image: Ripley and Ripley-based mechs now have consistent outlines
+  - code_imp: Rewrote a portion of storage UI code to allow it to be influenced by
+      UI style.
+  - image: Prettified storage UI and made it affected by UI theme.
+  carlarctg:
+  - bugfix: There's now a limit to how many dental implants you can cram into your
+      mouth, which is governed by your species' teeth limit.
+  - refactor: Most species have 32 teeth, due to being based on humans, weirding me
+      out when thinking about their teeth, or lack of enough information
+  - refactor: Moths and flypeople have NO teeth. They CAN'T get dental implants. I'm
+      NERFING moths.
+  - refactor: Lizards have seventy-five (!!!) teeth. Lizards are weird.
+  necromanceranne:
+  - qol: Punching bags are now a equal method of training to the fitness machinery.
+  - qol: Boxing grants more experience overall for participation.
