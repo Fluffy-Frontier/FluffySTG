@@ -1564,6 +1564,10 @@
       one pill. Now implanting pills in the surgery has another step to either search
       the patient's mouth for another tooth to implant, or cauterization to end the
       surgery.
+  MTandi:
+  - qol: Updated Microscope UI
+  - qol: Microscope is easier to use - you can remove dish with right click and swap
+      dishes
   Moonlit2000:
   - bugfix: peg legs can't bleed
   RuinedTrickster:
@@ -1582,6 +1586,11 @@
   - code_imp: Rewrote a portion of storage UI code to allow it to be influenced by
       UI style.
   - image: Prettified storage UI and made it affected by UI theme.
+  SyncIt21:
+  - bugfix: alt click runtime no more when using style meter
+  - code_imp: improved alt & ctrl click code
+  Thlumyn:
+  - rscadd: Added Honeysuckle plants for icewalkers to make their own honey.
   carlarctg:
   - bugfix: There's now a limit to how many dental implants you can cram into your
       mouth, which is governed by your species' teeth limit.
@@ -1590,6 +1599,23 @@
   - refactor: Moths and flypeople have NO teeth. They CAN'T get dental implants. I'm
       NERFING moths.
   - refactor: Lizards have seventy-five (!!!) teeth. Lizards are weird.
+  - spellcheck: Syndicate jaws of life are now jaws of death!
+  - spellcheck: Made its desc. more descriptive, stating that its faster.
+  hyperjll:
+  - balance: 'Due to selective breeding of slimes, some species require roughly 3x
+      more plasma than normal to activate a plasma reaction. Slime extracts affected
+      are: Oil, Adamantine, Orange, and Gold. Yellow slimes require 3x more blood
+      to activate a blood reaction.'
+  - balance: Oil slime extracts have become less potent during a plasma reaction due
+      to selective breeding conditions.
+  - balance: Gold slime extracts give rise to one less monster during a plasma reaction
+      due to selective breeding conditions.
+  - balance: Yellow slime extracts have become less potent during a blood reaction
+      due to selective breeding conditions.
+  - balance: Adamantine golem shells require 3 sheets rather than 1, due to unknown
+      circumstances.
+  mc-oofert:
+  - bugfix: both engineers and roboticists may now access the controls of a firebot
   necromanceranne:
   - qol: Punching bags are now a equal method of training to the fitness machinery.
   - qol: Boxing grants more experience overall for participation.
