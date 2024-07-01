@@ -99,7 +99,14 @@
 
 	update_client_colour()
 	update_mouse_pointer()
+<<<<<<< HEAD
 	refresh_looping_ambience()
+=======
+	update_ambience_area(get_area(src))
+
+	if(!can_hear())
+		stop_sound_channel(CHANNEL_AMBIENCE)
+>>>>>>> c949f8dbb56 ([MIRROR] Ambience Buzz Handling Changes + Ambience buzz requires enviorment power [MDB IGNORE] (#3440))
 
 	if(client)
 		if(client.view_size)
