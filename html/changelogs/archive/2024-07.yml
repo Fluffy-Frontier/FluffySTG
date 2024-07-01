@@ -1,0 +1,56 @@
+2024-07-01:
+  Exester509:
+  - spellcheck: Fixed two typos in the heretic lore
+  GoblinBackwards:
+  - bugfix: Fixed gas canister shields turning themselves off in unpowered areas when
+      they weren't drawing any cell power.
+  LT3:
+  - bugfix: Advanced hypospray is no longer available to security and Tarkon
+  - bugfix: Advanced hypospray is available to medical
+  - spellcheck: More hypospray text consistency
+  - spellcheck: Empty hypospray kits are now called cases, case/hypospray combos remain
+      kits
+  - qol: Hypospray application method is spray by default
+  - code_imp: Blood filter only pings and says finished when it's actually finished
+  Melbert:
+  - rscadd: Humanizing a monkey removes undergarments such as socks
+  Pickle-Coding:
+  - code_imp: Supermatter zap power generation takes perspective of the machines subsystem.
+  Sadboysuss:
+  - bugfix: fixed cyborgs and monkeys not being able to buckle to chairs
+  ShizCalev, SpaceLove:
+  - refactor: Techweb strings are defined now so to maintain modularity
+  - balance: Research papers will have less overall point generation.
+  SmArtKar:
+  - bugfix: Vent-born wendigos no longer create one-way portals
+  - bugfix: Guns no longer can be overfilled by 1 bullet
+  - bugfix: Russian revolvers now spawn with only 1 live round as originally intended,
+      and click when firing a blank.
+  SyncIt21:
+  - bugfix: you can access your inventory when lying down
+  Xander3359:
+  - bugfix: Fix being unable to add a flux core to new the combat heart cybernetic
+  aaaa1023:
+  - bugfix: Fixed the camera offset for the navigation console on a handful of Whiteships.
+  - bugfix: Fixed the Pubby Whiteship drifting sideways through hyperspace when in
+      flight.
+  - bugfix: Fixed the Kilo Whiteship flying backwards through hyperspace when in flight.
+  - bugfix: The Birdshot Whiteship should actually be able to spawn now.
+  - spellcheck: fixed spelling of "aggressive" in the shuttle manipulator description
+      for the Birdshot Whiteship.
+  carlarctg:
+  - rscadd: Added tons of new mutations to Genetics, alongside some recipes!
+  - rscadd: Thermal Adaptation has been made a combination mutation from the stronger
+      but narrower Cold and Heat adaptations.
+  - balance: Cryobeams have 9 tile range, and fiery sweat doesn't cause spread on
+      contact.
+  - image: Added some neat new sprites for the new mutations, and added a greyscale
+      version of the magic hand sprites.
+  - code_imp: Infinitesmally improved mutation code.
+  grungussuss , Kayozz:
+  - sound: exosuit fabricators, Autolathes and Techfabs will now produce sounds when
+      printing items
+  grungususs:
+  - bugfix: fixed the name of a request console in the medical sec outpost on metastation
+  thegrb93:
+  - bugfix: Game not refocusing after closing a TGUI
