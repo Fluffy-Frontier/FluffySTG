@@ -540,6 +540,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	for(var/atom/movable/recipient as anything in arrived.important_recursive_contents[RECURSIVE_CONTENTS_AREA_SENSITIVE])
 		SEND_SIGNAL(recipient, COMSIG_ENTER_AREA, src)
 
+<<<<<<< HEAD
 	if(!isliving(arrived))
 		return
 
@@ -559,6 +560,11 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		return
 
 	SEND_SOUND(src, sound(my_area.ambient_buzz, repeat = 1, wait = 0, volume = my_area.ambient_buzz_vol, channel = CHANNEL_BUZZ))
+=======
+	if(ismob(arrived))
+		var/mob/mob = arrived
+		mob.update_ambience_area(src)
+>>>>>>> c949f8dbb56 ([MIRROR] Ambience Buzz Handling Changes + Ambience buzz requires enviorment power [MDB IGNORE] (#3440))
 
 /**
  * Called when an atom exits an area
