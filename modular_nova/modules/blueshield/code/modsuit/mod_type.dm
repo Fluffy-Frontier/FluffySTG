@@ -3,11 +3,7 @@
 	icon = 'modular_nova/modules/blueshield/icons/praetorian.dmi'
 	icon_state = "praetorian-control"
 	theme = /datum/mod_theme/blueshield
-<<<<<<< HEAD
-	applied_cell = /obj/item/stock_parts/cell/super
-=======
 	applied_cell = /obj/item/stock_parts/power_store/cell/high
->>>>>>> 5064ac695a4 ([MIRROR] Adds a new power storage type: The Megacell. Drastically reduces power cell consumption/storage. [MDB Ignore] [MDB IGNORE] (#3268))
 	applied_modules = list(
 		/obj/item/mod/module/storage/large_capacity,
 		/obj/item/mod/module/magnetic_harness,
