@@ -1,0 +1,59 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/template_noop,
+/area/template_noop)
+"f" = (
+/obj/effect/decal/cleanable/blood/old{
+	pixel_x = -5;
+	pixel_y = 15
+	},
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/gibspawner/human,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"g" = (
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"l" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor4-old"
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"p" = (
+/obj/structure/ore_vent/boss{
+	excavation_warning = "Are you ready to die?";
+	defending_mobs = list(/mob/living/simple_animal/hostile/megafauna/bubblegum);
+	light_color = "#FF7777";
+	color = "#FF7777";
+	name = "bloody ore vent"
+	},
+/obj/effect/decal/cleanable/blood/old{
+	pixel_x = -5;
+	pixel_y = 15
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"u" = (
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "gibbl1"
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+
+(1,1,1) = {"
+a
+u
+a
+"}
+(2,1,1) = {"
+g
+p
+f
+"}
+(3,1,1) = {"
+a
+l
+a
+"}

@@ -1,4 +1,4 @@
-// Hey! Listen! Update \config\lavaruinblacklist.txt with your new ruins!
+// Hey! Listen! Update/config/lavaruinblacklist.txt with your new ruins!
 
 /datum/map_template/ruin/lavaland
 	ruin_type = ZTRAIT_LAVA_RUINS
@@ -53,12 +53,12 @@
 	cost = 10
 	allow_duplicates = FALSE
 
-// NOVA EDIT REMOVAL BEGIN - MAPPING
+//NOVA EDIT REMOVAL BEGIN - MAPPING
 /*
 /datum/map_template/ruin/lavaland/ash_walker
 	name = "Lava-Ruin Ash Walker Nest"
 	id = "ash-walker"
-	description = "A race of unbreathing lizards live here, that run faster than a human can, worship a broken dead city, and are capable of reproducing by something involving tentacles? \
+	description = "A race of unbreathing lizards live here, that run faster than a human can, worship a broken dead city, and are capable of reproducing by something involving tentacles?
 	Probably best to stay clear."
 	suffix = "lavaland_surface_ash_walker1.dmm"
 	cost = 20
@@ -142,7 +142,7 @@
 	id = "hierophant"
 	description = "A strange, square chunk of metal of massive size. Inside awaits only death and many, many squares."
 	suffix = "lavaland_surface_hierophant.dmm"
-	always_place = TRUE
+	//always_place = TRUE
 	allow_duplicates = FALSE
 
 /datum/map_template/ruin/lavaland/blood_drunk_miner
@@ -303,7 +303,7 @@
 	allow_duplicates = TRUE
 	cost = 0
 	mineral_cost = 1
-	always_place = TRUE
+	// always_place = TRUE
 
 /datum/map_template/ruin/lavaland/watcher_grave
 	name = "Lava-Ruin Watchers' Grave"

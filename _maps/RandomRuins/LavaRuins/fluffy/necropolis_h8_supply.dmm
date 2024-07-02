@@ -1,0 +1,48 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/machinery/door/airlock/survival_pod/glass,
+/turf/open/floor/pod/dark,
+/area/ruin/powered)
+"j" = (
+/obj/structure/marker_beacon/burgundy,
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/ruin/powered)
+"B" = (
+/obj/item/stack/telecrystal{
+	color = "#FF5555";
+	name = "Nitra";
+	desc = "Rock and stone!"
+	},
+/obj/effect/spawner/random/medical/medkit_rare,
+/turf/open/floor/pod/dark,
+/area/ruin/powered)
+"D" = (
+/obj/effect/turf_decal/mining/survival{
+	dir = 8
+	},
+/obj/item/reagent_containers/hypospray/medipen,
+/obj/item/clothing/shoes/bhop,
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/ruin/powered)
+"K" = (
+/obj/effect/turf_decal/mining,
+/obj/item/reagent_containers/hypospray/medipen,
+/obj/item/ammo_box/rocket,
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/ruin/powered)
+
+(1,1,1) = {"
+j
+D
+j
+"}
+(2,1,1) = {"
+K
+B
+a
+"}
+(3,1,1) = {"
+j
+D
+j
+"}

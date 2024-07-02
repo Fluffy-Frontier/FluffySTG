@@ -1,0 +1,638 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ap" = (
+/obj/structure/stone_tile/block/cracked,
+/obj/effect/gibspawner/human/bodypartless,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"ar" = (
+/mob/living/basic/meteor_heart{
+	health = 1200;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
+	melee_attack_cooldown = 10;
+	name = "Deep space meteor heart";
+	light_color = "#FF9999";
+	color = "#FF9999";
+	current_size = 1.25;
+	base_pixel_y = -7.5
+	},
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/powered)
+"eh" = (
+/obj/structure/stone_tile/surrounding_tile/cracked,
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180;
+	max_integrity = 30
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"fO" = (
+/obj/item/food/meat/slab/human,
+/obj/effect/gibspawner/xeno/bodypartless,
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/lavaland/surface/outdoors)
+"fR" = (
+/obj/structure/stone_tile/block,
+/obj/effect/gibspawner/human/bodypartless,
+/mob/living/basic/mining/hivelord,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"fT" = (
+/obj/item/food/meat/slab/chicken,
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/lavaland/surface/outdoors)
+"gE" = (
+/obj/item/food/meat/slab/meatproduct,
+/obj/structure/trap/eldritch/tentacle{
+	max_integrity = 30
+	},
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/powered)
+"hN" = (
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180;
+	max_integrity = 30
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"lL" = (
+/obj/item/food/meat/slab/goliath,
+/obj/effect/gibspawner/human/bodypartless,
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/lavaland/surface/outdoors)
+"mR" = (
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"oI" = (
+/obj/structure/meateor_fluff/eyeball,
+/obj/item/food/meat/slab/meatproduct,
+/obj/item/food/meat/slab/bugmeat,
+/obj/item/food/meat/slab/goliath,
+/obj/structure/trap/eldritch/tentacle{
+	max_integrity = 30
+	},
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/powered)
+"pe" = (
+/obj/structure/meateor_fluff/flesh_pod,
+/obj/item/food/meat/slab/human,
+/obj/item/food/meat/slab/human,
+/obj/item/food/meat/slab/meatproduct,
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/powered)
+"pH" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/obj/structure/trap/eldritch/tentacle{
+	max_integrity = 30
+	},
+/turf/closed/indestructible/riveted/boss/wasteland{
+	base_icon_state = "meat_wall";
+	icon = 'icons/turf/walls/meat_wall.dmi';
+	icon_state = "meat_wall-0";
+	baseturfs = /turf/open/indestructible/meat
+	},
+/area/ruin/powered)
+"qR" = (
+/obj/item/food/meat/slab/human/mutant/moth,
+/obj/effect/gibspawner/human/bodypartless,
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/lavaland/surface/outdoors)
+"rP" = (
+/obj/effect/gibspawner/human/bodypartless,
+/mob/living/basic/mining/hivelord/no_wander,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"sb" = (
+/mob/living/basic/mining/hivelord/no_wander,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"sA" = (
+/obj/effect/gibspawner/human,
+/obj/item/food/meat/slab/human/mutant/lizard,
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/lavaland/surface/outdoors)
+"tt" = (
+/obj/item/food/meat/slab/bugmeat,
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/lavaland/surface/outdoors)
+"vD" = (
+/mob/living/basic/mining/hivelord,
+/obj/effect/gibspawner/human/bodypartless,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"vK" = (
+/obj/item/food/meat/slab/corgi,
+/obj/item/food/meat/slab/human/mutant/plant,
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/lavaland/surface/outdoors)
+"wB" = (
+/obj/structure/flora/rock/pile/style_random,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"wM" = (
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 8
+	},
+/obj/structure/trap/damage{
+	name = "Anctient runic spikes";
+	desc = "A strange carving of some symbols. What's that for?";
+	icon = 'icons/obj/service/hydroponics/equipment.dmi';
+	icon_state = "woodspike";
+	light_color = "#DDFFDD";
+	color = "#77FF77";
+	alpha = 180;
+	max_integrity = 30
+	},
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"xg" = (
+/obj/item/food/meat/slab/human,
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/lavaland/surface/outdoors)
+"xu" = (
+/obj/structure/stone_tile/burnt,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/effect/gibspawner/human/bodypartless,
+/mob/living/basic/mining/hivelord/no_wander,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"xw" = (
+/obj/structure/flora/rock/style_random,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"xV" = (
+/obj/item/food/meat/slab/meatproduct,
+/obj/effect/gibspawner/human,
+/obj/item/food/meat/slab/meatproduct,
+/obj/structure/trap/eldritch/tentacle{
+	max_integrity = 30
+	},
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/powered)
+"yE" = (
+/obj/structure/punji_sticks/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"yJ" = (
+/obj/structure/punji_sticks/spikes,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"zb" = (
+/obj/structure/statue/uranium/eng{
+	icon = 'icons/obj/art/statuelarge.dmi';
+	icon_preview = 'icons/obj/fluff/previews.dmi';
+	icon_state = "rib";
+	icon_state_preview = "rib";
+	pixel_y = 10;
+	dir = 1;
+	desc = "A giant teeth. Or a rib. You barely can figure.";
+	name = "Rib";
+	custom_materials = list(/datum/material/uranium = 25);
+	max_integrity = 3000
+	},
+/turf/closed/indestructible/meat,
+/area/ruin/powered)
+"zP" = (
+/turf/closed/indestructible/meat,
+/area/ruin/powered)
+"Bm" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"BU" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 1
+	},
+/mob/living/basic/mining/hivelord/no_wander,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"DB" = (
+/obj/structure/stone_tile/burnt,
+/obj/structure/stone_tile/burnt{
+	dir = 1
+	},
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/mob/living/basic/mining/hivelord,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"DN" = (
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/obj/structure/stone_tile/block/burnt{
+	dir = 4
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"GH" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Hv" = (
+/turf/open/chasm/lavaland,
+/area/lavaland/surface/outdoors)
+"HA" = (
+/obj/effect/gibspawner/human,
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/lavaland/surface/outdoors)
+"Lr" = (
+/obj/effect/gibspawner/generic,
+/obj/item/food/meat/slab/meatproduct,
+/obj/item/food/meat/slab/meatproduct,
+/obj/structure/trap/eldritch/tentacle{
+	max_integrity = 30
+	},
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/powered)
+"LX" = (
+/turf/template_noop,
+/area/template_noop)
+"Mp" = (
+/obj/structure/flora/ash/tall_shroom,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Mr" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 6
+	},
+/obj/effect/gibspawner/human/bodypartless,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"ME" = (
+/obj/structure/flora/ash/seraka,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"MM" = (
+/obj/item/food/meat/slab/meatwheat,
+/turf/closed/indestructible/meat,
+/area/ruin/powered)
+"Os" = (
+/obj/effect/gibspawner/human/bodypartless,
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/lavaland/surface/outdoors)
+"PS" = (
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Rd" = (
+/obj/effect/gibspawner/human/bodypartless,
+/obj/item/food/meat/slab/meatproduct,
+/obj/structure/meateor_fluff/flesh_pod,
+/obj/item/food/meat/slab/human,
+/obj/item/food/meat/slab/human,
+/obj/item/food/meat/slab/human,
+/obj/item/food/meat/slab/meatproduct,
+/obj/item/food/meat/slab/meatproduct,
+/obj/item/dnainjector/paranoia{
+	icon = 'modular_nova/modules/opposing_force/icons/items.dmi';
+	icon_state = "changeling_injector";
+	name = "Unknown injector";
+	desc = "A blue injector filled with some viscous, red substance. It has no markings apart from an orange warning stripe near the large needle.";
+	inhand_icon_state = null
+	},
+/obj/item/antag_granter/changeling{
+	name = "Unknown injector"
+	},
+/obj/item/dnainjector/dwarf{
+	icon = 'modular_nova/modules/opposing_force/icons/items.dmi';
+	icon_state = "changeling_injector";
+	name = "Unknown injector";
+	desc = "A blue injector filled with some viscous, red substance. It has no markings apart from an orange warning stripe near the large needle.";
+	inhand_icon_state = null;
+	worn_icon_state = null
+	},
+/obj/item/food/meat/slab/meatproduct,
+/obj/item/food/meat/slab/meatproduct,
+/obj/item/food/meat/slab/meatproduct,
+/obj/item/food/meat/slab/human,
+/obj/item/food/meat/slab/human,
+/obj/item/dnainjector{
+	desc = "A blue injector filled with some viscous, red substance. It has no markings apart from an orange warning stripe near the large needle.";
+	name = "Unknown injector";
+	icon = 'modular_nova/modules/opposing_force/icons/items.dmi';
+	icon_state = "changeling_injector";
+	inhand_icon_state = null;
+	worn_icon_state = null
+	},
+/obj/item/food/meat/slab/human,
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/powered)
+"Rm" = (
+/obj/structure/flora/rock/pile/style_random,
+/mob/living/basic/mining/hivelord,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Tm" = (
+/obj/structure/statue/uranium/eng{
+	icon = 'icons/obj/art/statuelarge.dmi';
+	icon_preview = 'icons/obj/fluff/previews.dmi';
+	icon_state = "rib";
+	icon_state_preview = "rib";
+	pixel_y = 10;
+	name = "Rib";
+	desc = "A giant teeth. Or a rib. You barely can figure.";
+	custom_materials = list(/datum/material/uranium = 25);
+	max_integrity = 3000
+	},
+/turf/closed/indestructible/meat,
+/area/ruin/powered)
+"TW" = (
+/obj/effect/gibspawner/xeno/bodypartless,
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/lavaland/surface/outdoors)
+"Uo" = (
+/obj/structure/stone_tile/slab/cracked,
+/obj/item/flashlight/flare/torch,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Uz" = (
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Vo" = (
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/lavaland/surface/outdoors)
+"Vx" = (
+/obj/item/food/meat/slab/human/mutant/lizard,
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/lavaland/surface/outdoors)
+"Xn" = (
+/obj/item/food/meat/slab/human/mutant/ethereal,
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/lavaland/surface/outdoors)
+"Yr" = (
+/obj/structure/stone_tile/surrounding_tile/burnt{
+	dir = 1
+	},
+/obj/effect/gibspawner/human/bodypartless,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Zp" = (
+/obj/structure/flora/ash/fireblossom,
+/mob/living/basic/mining/hivelord,
+/obj/structure/flora/rock/pile/style_random,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"ZU" = (
+/obj/effect/gibspawner/human/bodypartless,
+/mob/living/basic/mining/hivelord/no_wander,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+
+(1,1,1) = {"
+LX
+LX
+LX
+LX
+hN
+xw
+Hv
+PS
+hN
+LX
+LX
+LX
+"}
+(2,1,1) = {"
+LX
+Hv
+xw
+fR
+Hv
+rP
+Hv
+vD
+wB
+PS
+LX
+LX
+"}
+(3,1,1) = {"
+LX
+Hv
+Hv
+tt
+vK
+HA
+Hv
+Hv
+ZU
+Hv
+Hv
+LX
+"}
+(4,1,1) = {"
+eh
+Rm
+Hv
+Os
+zb
+zP
+zb
+Os
+Hv
+Hv
+Mp
+hN
+"}
+(5,1,1) = {"
+yE
+sA
+Os
+zb
+MM
+pe
+zP
+zb
+tt
+Hv
+sb
+PS
+"}
+(6,1,1) = {"
+Hv
+Vo
+zb
+MM
+ar
+xV
+Lr
+pH
+TW
+Hv
+ap
+Hv
+"}
+(7,1,1) = {"
+Hv
+lL
+zP
+pe
+oI
+Rd
+zP
+Tm
+HA
+Hv
+BU
+PS
+"}
+(8,1,1) = {"
+Hv
+Vo
+Tm
+zP
+gE
+zP
+Tm
+qR
+xg
+Hv
+PS
+hN
+"}
+(9,1,1) = {"
+rP
+Vx
+Os
+Tm
+pH
+Tm
+Os
+xg
+Hv
+Hv
+DN
+LX
+"}
+(10,1,1) = {"
+wM
+Zp
+Hv
+fT
+HA
+fO
+Xn
+Hv
+xu
+Uz
+Uo
+LX
+"}
+(11,1,1) = {"
+LX
+Hv
+Hv
+yJ
+Yr
+DB
+Mr
+Hv
+GH
+mR
+Bm
+LX
+"}
+(12,1,1) = {"
+LX
+LX
+hN
+ME
+Hv
+Hv
+hN
+hN
+PS
+hN
+LX
+LX
+"}
