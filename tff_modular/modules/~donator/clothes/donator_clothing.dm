@@ -179,3 +179,96 @@
 	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
 	icon_state = "romontesque_cloak"
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+
+/**
+ * Позже желательно перенести на апстрим.
+ */
+
+/obj/item/clothing/neck/cloak/eldercoat
+	name = "hunter's cloak"
+	desc = "Just part of hunter's coat."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	icon_state = "eldercoat"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/suit/cloaked
+	var/cloaktype
+	var/alternative_mode = FALSE
+	var/cloak_up_affix = ""
+	var/cloak_down_overlay_suffix = ""
+	var/obj/item/clothing/neck/cloak/cloak
+
+/obj/item/clothing/suit/cloaked/Initialize(mapload)
+	. = ..()
+	if (!cloaktype)
+		return
+	AddComponent(\
+		/datum/component/toggle_attached_clothing,\
+		deployable_type = cloaktype,\
+		equipped_slot = ITEM_SLOT_NECK,\
+		action_name = "Toggle Cloak",\
+		destroy_on_removal = alternative_mode,\
+		parent_icon_state_suffix = cloak_up_affix,\
+		down_overlay_state_suffix = cloak_down_overlay_suffix, \
+		pre_creation_check = CALLBACK(src, PROC_REF(can_create_cloak)),\
+		on_created = CALLBACK(src, PROC_REF(on_cloak_created)),\
+		on_deployed = CALLBACK(src, PROC_REF(on_cloak_up)),\
+		on_removed = CALLBACK(src, PROC_REF(on_cloak_down)),\
+	)
+
+/obj/item/clothing/suit/cloaked/Destroy()
+	cloak = null
+	return ..()
+
+/obj/item/clothing/suit/cloaked/proc/can_create_cloak()
+	return TRUE
+
+/obj/item/clothing/suit/cloaked/proc/on_cloak_created(obj/item/clothing/neck/cloak)
+	SHOULD_CALL_PARENT(TRUE)
+	src.cloak = cloak
+	RegisterSignal(cloak, COMSIG_QDELETING, PROC_REF(on_cloak_deleted))
+
+/obj/item/clothing/suit/cloaked/proc/on_cloak_deleted()
+	SIGNAL_HANDLER
+	SHOULD_CALL_PARENT(TRUE)
+	cloak = null
+
+/obj/item/clothing/suit/cloaked/proc/on_cloak_up(obj/item/clothing/neck/cloak)
+	return
+
+/obj/item/clothing/suit/cloaked/proc/on_cloak_down(obj/item/clothing/neck/cloak)
+	return
+
+/obj/item/clothing/suit/cloaked/eldercoat
+	cloaktype = /obj/item/clothing/neck/cloak/eldercoat
+	name = "hunter's uniform"
+	desc = "Old-fashioned robes with a patterned pattern all over the clothes and a cape hanging from the left shoulder."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/suit.dmi'
+	icon_state = "eldercoat"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/suit.dmi'
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/shoes/eldercoat
+	name = "leather boots"
+	desc = "Old-fashioned leather boots in a dark shade"
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/shoes.dmi'
+	icon_state = "eldercoat"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/shoes.dmi'
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/gloves/eldercoat
+	name = "leather gloves"
+	desc = "Elongated leather gloves of an old-fashioned kind."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/gloves.dmi'
+	icon_state = "eldercoat"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/gloves.dmi'
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/head/eldercoat
+	name = "three-cornered hat"
+	desc = "A pointed leather hat in a dark shade with a protruding feather."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/head.dmi'
+	icon_state = "eldercoat"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/head.dmi'
+	resistance_flags = FIRE_PROOF
