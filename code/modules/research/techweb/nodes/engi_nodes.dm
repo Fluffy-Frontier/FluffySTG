@@ -83,6 +83,7 @@
 		"comm_monitor",
 		"comm_server",
 		"message_monitor",
+		"ntnet_relay",
 		"s_hub",
 		"s_messaging",
 		"s_server",
