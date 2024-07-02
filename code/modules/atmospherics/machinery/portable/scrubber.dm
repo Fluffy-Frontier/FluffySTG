@@ -59,8 +59,20 @@
 
 	excited = TRUE
 
+<<<<<<< HEAD
 	var/atom/target = holding || get_turf(src)
 	scrub(target.return_air())
+=======
+	if(!isnull(holding))
+		scrub(holding.return_air())
+		return ..()
+
+	var/turf/epicentre = get_turf(src)
+	if(isopenturf(epicentre))
+		scrub(epicentre.return_air())
+	for(var/turf/open/openturf as anything in epicentre.get_atmos_adjacent_turfs(alldir = TRUE))
+		scrub(openturf.return_air())
+>>>>>>> 641480a30e2 ([MIRROR] [no gbp] portascrubbers also scrub the tile theyre on [MDB IGNORE] (#3467))
 	//NOVA EDIT ADDITION
 	for(var/turf/open/open_turf in view(3, src))
 		if(open_turf.pollution)
