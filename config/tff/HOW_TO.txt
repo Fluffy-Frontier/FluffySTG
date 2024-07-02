@@ -1,0 +1,52 @@
+custom_objectives.json должен представлять собой JSON-массив из объектов, которые обязаны быть устроены следующим образом:
+	1. "name" - это название антагониста.
+	2. "desc" - сама задача.
+	3. "unique" - булево значение, которое отвечает за "уникальность" задачи.
+
+	Уникальные задачи, после выдачи одному антагонисту (или команде), выходят из пула кастомных задач, которые могут выпасть в этом раунде.
+
+Список доступных названий антагонистов с привязанными к этим названиям датумами:
+
+	TRAITOR = /datum/antagonist/traitor
+
+	CHANGELING = /datum/antagonist/changeling
+
+	WIZARD = /datum/antagonist/wizard
+
+	NINJA = /datum/antagonist/ninja
+
+	BLOOD_BROTHER = /datum/team/brother_team
+
+	SPY = /datum/antagonist/spy
+
+	OBSESSED = /datum/antagonist/obsessed
+
+Пример готового JSON файла:
+
+[
+	{
+		"name": "TRAITOR",
+		"desc": "Добиться увольнения одного из сотрудников станции.",
+		"unique": true
+	},
+	{
+		"name": "TRAITOR",
+		"desc": "Вывести из строя телекоммуникации.",
+		"unique": false
+	},
+	{
+		"name": "BLOOD_BROTHER",
+		"desc": "Заставить людей верить в то, что Синдикат лучше НТ.",
+		"unique": false
+	},
+	{
+		"name": "SPY",
+		"desc": "Расскрыть хотя бы одного из врагов НТ, за исключением других шпионов.",
+		"unique": true
+	},
+	{
+		"name": "SPY",
+		"desc": "Создать оппозиционный, по отношению к НТ, новостной канал.",
+		"unique": false
+	}
+]
