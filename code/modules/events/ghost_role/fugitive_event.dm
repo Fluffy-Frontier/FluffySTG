@@ -155,9 +155,6 @@
 					header = "Spawn Here!",
 				)
 
-<<<<<<< HEAD
-	priority_announce("Unidentified ship detected near the station.")
-=======
 	var/list/announcement_text_list = list()
 	var/announcement_title = ""
 	switch(backstory)
@@ -191,6 +188,5 @@
 		stack_trace("Fugitive hunter announcement was unable to generate an announcement title based on backstory: [backstory]")
 
 	priority_announce(jointext(announcement_text_list, " "), announcement_title)
->>>>>>> 79a6ca874dd ([MIRROR] Adds Perfectly Ordinary Food Truck [MDB IGNORE] (#3456))
 
 #undef TEAM_BACKSTORY_SIZE

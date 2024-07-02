@@ -23337,7 +23337,7 @@
 /obj/structure/table,
 /obj/item/stack/sheet/iron/fifty,
 /obj/item/stack/sheet/glass/fifty,
-/obj/item/stock_parts/cell/emproof{
+/obj/item/stock_parts/power_store/cell/emproof{
 	pixel_x = 6;
 	pixel_y = -2
 	},
@@ -23679,7 +23679,7 @@
 /obj/item/clothing/gloves/color/yellow,
 /obj/structure/cable,
 /obj/item/clothing/gloves/color/yellow,
-/obj/item/stock_parts/cell/emproof{
+/obj/item/stock_parts/power_store/cell/emproof{
 	pixel_x = -4;
 	pixel_y = -1
 	},
@@ -23756,7 +23756,7 @@
 /area/station/engineering/main)
 "coT" = (
 /obj/structure/table,
-/obj/item/stock_parts/cell/high,
+/obj/item/stock_parts/power_store/cell/high,
 /turf/open/floor/iron,
 /area/station/engineering/storage/tech)
 "coZ" = (
@@ -26041,7 +26041,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger,
-/obj/item/stock_parts/cell/high/empty,
+/obj/item/stock_parts/power_store/cell/high/empty,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/port/aft)
 "cAI" = (
@@ -29937,7 +29937,7 @@
 /obj/machinery/cell_charger{
 	pixel_y = 5
 	},
-/obj/item/stock_parts/cell/high{
+/obj/item/stock_parts/power_store/cell/high{
 	pixel_y = 6
 	},
 /turf/open/floor/iron/checker,
@@ -33704,7 +33704,7 @@
 /obj/machinery/cell_charger{
 	pixel_y = 5
 	},
-/obj/item/stock_parts/cell/high,
+/obj/item/stock_parts/power_store/cell/high,
 /turf/open/floor/iron/white,
 /area/station/science/explab)
 "gGQ" = (
@@ -34109,7 +34109,7 @@
 "gUr" = (
 /obj/structure/table,
 /obj/machinery/cell_charger,
-/obj/item/stock_parts/cell/high,
+/obj/item/stock_parts/power_store/cell/high,
 /turf/open/floor/iron/checker,
 /area/station/science/robotics/lab)
 "gUK" = (
@@ -35644,8 +35644,8 @@
 	pixel_x = -8;
 	pixel_y = 4
 	},
-/obj/item/stock_parts/cell/high,
-/obj/item/stock_parts/cell/high,
+/obj/item/stock_parts/power_store/cell/high,
+/obj/item/stock_parts/power_store/cell/high,
 /obj/item/crowbar,
 /obj/item/radio/headset/headset_sci{
 	pixel_x = -3
@@ -36131,7 +36131,7 @@
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/electronics/airlock,
 /obj/item/electronics/airlock,
-/obj/item/stock_parts/cell/high,
+/obj/item/stock_parts/power_store/cell/high,
 /obj/item/stack/sheet/mineral/plasma{
 	amount = 30
 	},
@@ -38435,7 +38435,7 @@
 /obj/item/clothing/glasses/meson{
 	pixel_y = 4
 	},
-/obj/item/stock_parts/cell/high,
+/obj/item/stock_parts/power_store/cell/high,
 /obj/item/reagent_containers/pill/patch/aiuri,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/ce)
@@ -43486,7 +43486,7 @@
 	pixel_y = 3
 	},
 /obj/item/stack/cable_coil,
-/obj/item/stock_parts/cell/high,
+/obj/item/stock_parts/power_store/cell/high,
 /obj/structure/window/spawner/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/engineering/storage/tech)
@@ -44564,7 +44564,7 @@
 /area/station/ai_monitored/security/armory)
 "nFa" = (
 /obj/structure/table/wood,
-/obj/item/stock_parts/cell/empty{
+/obj/item/stock_parts/power_store/cell/empty{
 	pixel_x = -5;
 	pixel_y = 8
 	},
@@ -46035,7 +46035,7 @@
 /obj/machinery/light_switch{
 	pixel_y = 28
 	},
-/obj/item/stock_parts/cell/high,
+/obj/item/stock_parts/power_store/cell/high,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/commons/storage/primary)
@@ -46814,7 +46814,7 @@
 "paK" = (
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger,
-/obj/item/stock_parts/cell/high,
+/obj/item/stock_parts/power_store/cell/high,
 /obj/item/rcl/pre_loaded,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/ce)
@@ -49888,8 +49888,8 @@
 /obj/structure/cable,
 /obj/structure/table,
 /obj/machinery/cell_charger,
-/obj/item/stock_parts/cell/high,
-/obj/item/stock_parts/cell/high,
+/obj/item/stock_parts/power_store/cell/high,
+/obj/item/stock_parts/power_store/cell/high,
 /turf/open/floor/iron,
 /area/station/maintenance/department/electrical)
 "reI" = (
@@ -51088,7 +51088,7 @@
 /obj/item/storage/box/lights/mixed,
 /obj/item/stack/cable_coil,
 /obj/item/stack/cable_coil,
-/obj/item/stock_parts/cell/emproof,
+/obj/item/stock_parts/power_store/cell/emproof,
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/engine_smes)
 "rZU" = (
@@ -53707,7 +53707,7 @@
 "tGV" = (
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger,
-/obj/item/stock_parts/cell/high,
+/obj/item/stock_parts/power_store/cell/high,
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/window/reinforced/spawner/directional/north,
 /turf/open/floor/iron/dark,
@@ -54971,11 +54971,11 @@
 	pixel_x = -4
 	},
 /obj/item/multitool/circuit,
-/obj/item/stock_parts/cell/high{
+/obj/item/stock_parts/power_store/cell/high{
 	pixel_x = 8;
 	pixel_y = -2
 	},
-/obj/item/stock_parts/cell/high{
+/obj/item/stock_parts/power_store/cell/high{
 	pixel_x = 8;
 	pixel_y = 9
 	},
@@ -56986,7 +56986,7 @@
 	},
 /obj/structure/table,
 /obj/item/crowbar/red,
-/obj/item/stock_parts/cell/high{
+/obj/item/stock_parts/power_store/cell/high{
 	pixel_x = 6;
 	pixel_y = -3
 	},
