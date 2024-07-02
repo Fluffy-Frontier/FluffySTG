@@ -71,7 +71,7 @@
 	icon = 'tff_modular/modules/police_nt/icons/ntis_derevolutioner_icon.dmi'
 	icon_state = "ntis_derevolutioner-control"
 	theme = /datum/mod_theme/ntis_derevolutioner
-	applied_cell = /obj/item/stock_parts/cell/bluespace
+	applied_cell = /obj/item/stock_parts/power_store/cell/bluespace
 	applied_modules = list(
 		/obj/item/mod/module/storage/large_capacity,
 		/obj/item/mod/module/magnetic_harness,
