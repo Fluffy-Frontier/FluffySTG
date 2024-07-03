@@ -282,14 +282,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
-<<<<<<< HEAD
-"agp" = (
-/obj/structure/table/wood,
-/obj/item/clothing/mask/cigarette/cigar/cohiba,
-/turf/open/floor/carpet,
-/area/station/commons/dorms)
-=======
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "agy" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/atmospherics/components/tank/oxygen{
@@ -1655,6 +1647,23 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/maintenance/central/lesser)
+"aGI" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/trash/can/food/pine_nuts{
+	pixel_x = 16;
+	pixel_y = 6
+	},
+/obj/machinery/cell_charger{
+	pixel_x = -1;
+	pixel_y = 2
+	},
+/obj/item/stock_parts/power_store/cell/high{
+	pixel_x = -1;
+	pixel_y = 1
+	},
+/turf/open/floor/iron/dark,
+/area/station/commons/storage/tools)
 "aGU" = (
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/iron,
@@ -2448,17 +2457,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/small,
 /area/station/engineering/supermatter/room)
-<<<<<<< HEAD
-"aXg" = (
-/obj/structure/cable,
-/obj/structure/table/reinforced,
-/obj/machinery/cell_charger,
-/obj/item/stock_parts/cell/high,
-/obj/machinery/status_display/ai/directional/north,
-/obj/machinery/camera/autoname/directional/north,
-/turf/open/floor/iron,
-/area/station/engineering/storage/tech)
-=======
 "aWJ" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -2476,7 +2474,6 @@
 	},
 /turf/open/floor/grass,
 /area/station/service/chapel)
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "aXy" = (
 /obj/effect/turf_decal/siding/wideplating{
 	dir = 1
@@ -3654,17 +3651,6 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/dock)
-<<<<<<< HEAD
-"bxk" = (
-/obj/effect/turf_decal/tile/neutral/full,
-/obj/structure/rack,
-/obj/item/weldingtool/mini,
-/obj/item/tank/internals/emergency_oxygen/empty,
-/obj/item/clothing/mask/cigarette/rollie,
-/turf/open/floor/iron/dark/smooth_large,
-/area/station/maintenance/central/lesser)
-=======
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "bxs" = (
 /obj/structure/railing{
 	dir = 1
@@ -4148,6 +4134,28 @@
 /obj/machinery/chem_heater/withbuffer,
 /turf/open/floor/iron/dark,
 /area/station/medical/pharmacy)
+"bHp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate,
+/obj/item/stock_parts/power_store/cell/high{
+	pixel_x = -11;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/cup/glass/bottle/vodka,
+/obj/item/food/grown/citrus/orange,
+/obj/item/food/grown/citrus/orange{
+	pixel_x = 4;
+	pixel_y = 2
+	},
+/obj/item/food/grown/grapes/green{
+	pixel_y = -4;
+	pixel_x = -6
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/turf/open/floor/iron/small,
+/area/station/maintenance/department/engine/atmos)
 "bHs" = (
 /obj/structure/rack,
 /obj/effect/spawner/random/maintenance,
@@ -5169,37 +5177,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/station/engineering/supermatter/room)
-<<<<<<< HEAD
-"ccO" = (
-/obj/machinery/atmospherics/pipe/smart/manifold/cyan/visible,
-/obj/structure/table,
-/obj/effect/turf_decal/siding/thinplating_new/dark{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating_new/dark,
-/obj/item/radio/intercom/directional/south,
-/obj/item/c_tube{
-	pixel_x = 20
-	},
-/obj/item/clothing/head/cone{
-	pixel_y = 5;
-	pixel_x = -6
-	},
-/obj/item/clothing/head/cone{
-	pixel_y = 7;
-	pixel_x = -6
-	},
-/obj/item/pipe_dispenser{
-	pixel_y = 9;
-	pixel_x = 14
-	},
-/obj/item/clothing/mask/cigarette{
-	pixel_y = 2
-	},
-/turf/open/floor/iron/small,
-/area/station/engineering/atmos/pumproom)
-=======
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "cdg" = (
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/grass,
@@ -5635,8 +5612,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/white/small,
 /area/station/command/heads_quarters/cmo)
-<<<<<<< HEAD
-=======
 "clB" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -5656,7 +5631,6 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/iron/smooth,
 /area/station/command/gateway)
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "clX" = (
 /obj/structure/railing/corner,
 /turf/open/floor/wood,
@@ -6732,22 +6706,6 @@
 	},
 /turf/open/floor/iron/small,
 /area/station/maintenance/port/lesser)
-"cGb" = (
-/obj/item/stack/sheet/iron/fifty,
-/obj/item/stack/rods/fifty,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/electronics/airlock,
-/obj/item/electronics/airlock,
-/obj/item/stock_parts/cell/high,
-/obj/item/stack/sheet/mineral/plasma{
-	amount = 30
-	},
-/obj/item/gps,
-/obj/structure/closet/crate/engineering,
-/obj/machinery/light/cold/directional/east,
-/obj/item/clothing/gloves/color/yellow,
-/turf/open/floor/iron/dark/small,
-/area/station/engineering/storage_shared)
 "cGj" = (
 /turf/closed/wall/r_wall,
 /area/station/security/execution/education)
@@ -10280,30 +10238,11 @@
 	dir = 1
 	},
 /area/station/science/xenobiology)
-<<<<<<< HEAD
-"dYc" = (
-/obj/structure/table,
-/obj/machinery/recharger{
-	pixel_x = 6;
-	pixel_y = 9
-	},
-/obj/item/multitool{
-	pixel_x = -6;
-	pixel_y = 3
-	},
-/obj/item/clothing/mask/cigarette{
-	pixel_x = 5;
-	pixel_y = 2
-	},
-/turf/open/floor/iron/dark,
-/area/station/security/lockers)
-=======
 "dXY" = (
 /mob/living/basic/deer,
 /obj/structure/flora/bush/sparsegrass,
 /turf/open/floor/grass,
 /area/station/service/chapel)
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "dYj" = (
 /obj/structure/table,
 /obj/effect/turf_decal/tile/dark_red,
@@ -11190,17 +11129,6 @@
 /obj/effect/landmark/navigate_destination/aiupload,
 /turf/open/floor/iron/white,
 /area/station/hallway/primary/starboard)
-<<<<<<< HEAD
-"enD" = (
-/obj/effect/turf_decal/tile/green{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/blue/opposingcorners,
-/obj/machinery/camera/autoname/directional/west,
-/obj/machinery/light_switch/directional/west,
-/turf/open/floor/iron,
-/area/station/service/hydroponics)
-=======
 "enq" = (
 /obj/structure/cable,
 /obj/structure/table/reinforced,
@@ -11210,7 +11138,6 @@
 /obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/iron,
 /area/station/engineering/storage/tech)
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "enE" = (
 /obj/item/cultivator/rake,
 /obj/structure/cable,
@@ -12008,6 +11935,20 @@
 	},
 /turf/open/floor/catwalk_floor,
 /area/station/engineering/break_room)
+"eDr" = (
+/obj/structure/table/glass,
+/obj/machinery/cell_charger,
+/obj/item/stock_parts/power_store/cell,
+/obj/machinery/status_display/evac/directional/north,
+/obj/structure/sign/directions/supply/directional/west,
+/obj/structure/sign/directions/engineering/directional/west{
+	pixel_y = 8
+	},
+/obj/structure/sign/directions/command/directional/west{
+	pixel_y = -8
+	},
+/turf/open/floor/iron/white,
+/area/station/hallway/primary/starboard)
 "eDt" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 1
@@ -12673,19 +12614,10 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/iron/showroomfloor,
 /area/station/medical/coldroom)
-<<<<<<< HEAD
-"ePg" = (
-/obj/structure/table,
-/obj/machinery/cell_charger,
-/obj/item/stock_parts/cell/high,
-/turf/open/floor/circuit,
-/area/station/maintenance/port/aft)
-=======
 "ePl" = (
 /obj/machinery/light/floor,
 /turf/open/floor/iron/kitchen/small,
 /area/station/service/kitchen)
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "ePn" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/light/small/directional/south,
@@ -13847,13 +13779,6 @@
 /obj/effect/landmark/start/depsec/science,
 /turf/open/floor/iron,
 /area/station/security/checkpoint/science)
-"fnm" = (
-/obj/structure/filingcabinet/chestdrawer,
-/obj/item/book/manual/wiki/engineering_guide{
-	pixel_y = 6
-	},
-/turf/open/floor/iron/grimy,
-/area/station/engineering/main)
 "fnw" = (
 /obj/structure/chair{
 	pixel_y = -2
@@ -18379,16 +18304,6 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/carpet/royalblue,
 /area/station/command/corporate_suite)
-<<<<<<< HEAD
-"gJQ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table,
-/obj/item/stack/spacecash/c1,
-/obj/item/clothing/mask/cigarette/cigar/havana,
-/turf/open/floor/light/colour_cycle/dancefloor_b,
-/area/station/maintenance/starboard/central)
-=======
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "gJS" = (
 /obj/machinery/atmospherics/pipe/smart/simple/general/visible,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -18776,20 +18691,6 @@
 	dir = 1
 	},
 /area/station/security/tram)
-<<<<<<< HEAD
-"gRG" = (
-/obj/structure/toilet{
-	dir = 8
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 8
-	},
-/obj/machinery/camera/autoname/directional/east,
-/obj/machinery/light_switch/directional/east,
-/turf/open/floor/iron/freezer,
-/area/station/command/heads_quarters/captain/private)
-=======
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "gRL" = (
 /obj/structure/disposalpipe/segment{
 	dir = 6
@@ -18862,18 +18763,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/service/chapel/funeral)
-"gSQ" = (
-/obj/structure/table/glass,
-/obj/item/stock_parts/cell/high{
-	pixel_x = 11;
-	pixel_y = 6
-	},
-/obj/item/folder/blue{
-	pixel_x = -3;
-	pixel_y = 2
-	},
-/turf/open/floor/carpet/executive,
-/area/station/command/meeting_room)
 "gSX" = (
 /obj/machinery/computer/piratepad_control/civilian{
 	dir = 1
@@ -19013,12 +18902,6 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
-"gUo" = (
-/obj/structure/table/greyscale,
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/wrench,
-/turf/open/floor/iron/grimy,
-/area/station/engineering/main)
 "gUC" = (
 /obj/structure/disposalpipe/segment{
 	dir = 6
@@ -19226,8 +19109,6 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/station/security/checkpoint/escape)
-<<<<<<< HEAD
-=======
 "gZy" = (
 /obj/structure/table,
 /obj/machinery/cell_charger{
@@ -19250,7 +19131,6 @@
 /obj/structure/displaycase/trophy,
 /turf/open/floor/wood/parquet,
 /area/station/service/library)
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "gZM" = (
 /obj/item/kirbyplants/random,
 /obj/machinery/light/cold/directional/east,
@@ -19792,23 +19672,6 @@
 /turf/open/floor/iron/dark/side{
 	dir = 4
 	},
-/area/station/commons/storage/tools)
-"hgb" = (
-/obj/structure/table,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/trash/can/food/pine_nuts{
-	pixel_x = 16;
-	pixel_y = 6
-	},
-/obj/machinery/cell_charger{
-	pixel_x = -1;
-	pixel_y = 2
-	},
-/obj/item/stock_parts/cell/high{
-	pixel_x = -1;
-	pixel_y = 1
-	},
-/turf/open/floor/iron/dark,
 /area/station/commons/storage/tools)
 "hgd" = (
 /obj/structure/table,
@@ -21159,18 +21022,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/department/engine/atmos)
-"hAQ" = (
-/obj/structure/table,
-/obj/effect/mapping_helpers/broken_floor,
-/obj/machinery/cell_charger,
-/obj/item/stock_parts/cell/high,
-/obj/item/clothing/mask/breath{
-	pixel_x = 15;
-	pixel_y = 5
-	},
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/iron/smooth,
-/area/station/command/gateway)
 "hAW" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -24718,6 +24569,30 @@
 /obj/structure/chair/stool/directional/east,
 /turf/open/floor/iron/cafeteria,
 /area/station/security/prison/mess)
+"iGM" = (
+/obj/effect/turf_decal/bot,
+/obj/machinery/light/cold/dim/directional/east,
+/obj/machinery/newscaster/directional/east,
+/obj/structure/cable,
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_x = 5;
+	pixel_y = 19
+	},
+/obj/item/pen{
+	pixel_x = 5;
+	pixel_y = 20
+	},
+/obj/machinery/cell_charger{
+	pixel_x = 2;
+	pixel_y = 1
+	},
+/obj/item/stock_parts/power_store/cell/high{
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/turf/open/floor/iron/smooth,
+/area/station/engineering/break_room)
 "iGO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/broken_flooring/pile/directional/east,
@@ -24813,6 +24688,22 @@
 	},
 /turf/open/floor/iron/dark/textured_edge,
 /area/station/command/heads_quarters/hop)
+"iIK" = (
+/obj/effect/turf_decal/bot,
+/obj/structure/rack,
+/obj/item/stack/sheet/plasteel/fifty,
+/obj/item/stack/sheet/plastic/five,
+/obj/item/stack/sheet/rglass/fifty,
+/obj/item/storage/medkit/fire{
+	pixel_x = 1;
+	pixel_y = 4
+	},
+/obj/machinery/airalarm/directional/east,
+/obj/item/stock_parts/power_store/cell/emproof{
+	pixel_y = 9
+	},
+/turf/open/floor/iron/small,
+/area/station/engineering/break_room)
 "iIN" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -25063,6 +24954,12 @@
 /obj/machinery/recharge_station,
 /turf/open/floor/plating,
 /area/station/maintenance/department/bridge)
+"iLZ" = (
+/obj/structure/table,
+/obj/machinery/cell_charger,
+/obj/item/stock_parts/power_store/cell/high,
+/turf/open/floor/circuit,
+/area/station/maintenance/port/aft)
 "iMg" = (
 /obj/structure/closet/crate,
 /obj/effect/turf_decal/stripes/line{
@@ -26072,20 +25969,6 @@
 "jaQ" = (
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/station/security/processing)
-"jbc" = (
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/structure/table/reinforced,
-/obj/machinery/cell_charger,
-/obj/item/stock_parts/cell/high{
-	pixel_x = 4;
-	pixel_y = 5
-	},
-/obj/item/stock_parts/cell/high,
-/turf/open/floor/iron/dark,
-/area/station/science/robotics/lab)
 "jbd" = (
 /obj/structure/cable,
 /obj/effect/spawner/structure/window/reinforced,
@@ -26159,13 +26042,6 @@
 /obj/machinery/door/window/right/directional/south,
 /turf/open/floor/plating,
 /area/station/service/chapel/funeral)
-"jcx" = (
-/obj/structure/filingcabinet/chestdrawer,
-/obj/item/stock_parts/cell/emproof{
-	pixel_y = 9
-	},
-/turf/open/floor/iron/grimy,
-/area/station/engineering/main)
 "jcE" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -27599,22 +27475,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/smooth,
 /area/station/cargo/warehouse)
-"jCY" = (
-/obj/structure/table/greyscale,
-/obj/item/screwdriver,
-/obj/item/stack/cable_coil/cut{
-	pixel_x = 11;
-	pixel_y = 7
-	},
-/obj/machinery/camera/directional/west{
-	c_tag = "Engineering - Office"
-	},
-/obj/item/stock_parts/cell/emproof{
-	pixel_x = -6;
-	pixel_y = 9
-	},
-/turf/open/floor/iron/grimy,
-/area/station/engineering/main)
 "jCZ" = (
 /obj/machinery/door/window/brigdoor/left/directional/west{
 	id = "Cell 1";
@@ -29281,8 +29141,6 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/solars/starboard/fore)
-<<<<<<< HEAD
-=======
 "kbI" = (
 /obj/structure/table/glass,
 /obj/machinery/cell_charger,
@@ -29298,7 +29156,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/port)
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "kci" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -30046,6 +29903,18 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/small,
 /area/station/maintenance/department/engine/atmos)
+"kmP" = (
+/obj/effect/turf_decal/tile/purple/opposingcorners,
+/obj/effect/turf_decal/siding/green{
+	dir = 9
+	},
+/obj/structure/table,
+/obj/machinery/cell_charger,
+/obj/item/stock_parts/power_store/cell/high,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable,
+/turf/open/floor/iron/cafeteria,
+/area/station/science/circuits)
 "kmT" = (
 /obj/structure/closet/firecloset,
 /turf/open/floor/plating,
@@ -32087,24 +31956,6 @@
 /obj/effect/mapping_helpers/airlock/abandoned,
 /turf/open/floor/wood,
 /area/station/maintenance/starboard/greater)
-"kWg" = (
-/obj/structure/table/greyscale,
-/obj/item/pen{
-	pixel_x = 13;
-	pixel_y = 4
-	},
-/obj/machinery/light/small/directional/south,
-/obj/item/flatpack{
-	board = /obj/item/circuitboard/machine/flatpacker;
-	pixel_x = -6;
-	pixel_y = 5
-	},
-/obj/item/multitool{
-	pixel_x = 7;
-	pixel_y = -2
-	},
-/turf/open/floor/iron/grimy,
-/area/station/engineering/main)
 "kWk" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -32540,42 +32391,6 @@
 	dir = 1
 	},
 /area/station/medical/treatment_center)
-<<<<<<< HEAD
-"leB" = (
-/obj/structure/table,
-/obj/effect/turf_decal/tile/dark_red,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/food/gumball{
-	pixel_x = 5;
-	pixel_y = 9
-	},
-/obj/item/clothing/mask/cigarette/candy{
-	pixel_x = -3;
-	pixel_y = 10
-	},
-/obj/item/food/gumball{
-	pixel_x = 2;
-	pixel_y = 5
-	},
-/obj/item/weldingtool/mini{
-	pixel_x = 5;
-	pixel_y = -11
-	},
-/obj/item/screwdriver{
-	pixel_x = 2;
-	pixel_y = -3
-	},
-/obj/item/storage/box/prisoner{
-	pixel_x = 5;
-	pixel_y = -12
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 10
-	},
-/turf/open/floor/iron/dark,
-/area/station/security/processing)
-=======
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "leC" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/dark_red/opposingcorners,
@@ -33090,22 +32905,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/cargo/storage)
-"lkQ" = (
-/obj/effect/turf_decal/bot,
-/obj/structure/rack,
-/obj/item/stack/sheet/plasteel/fifty,
-/obj/item/stack/sheet/plastic/five,
-/obj/item/stack/sheet/rglass/fifty,
-/obj/item/storage/medkit/fire{
-	pixel_x = 1;
-	pixel_y = 4
-	},
-/obj/machinery/airalarm/directional/east,
-/obj/item/stock_parts/cell/emproof{
-	pixel_y = 9
-	},
-/turf/open/floor/iron/small,
-/area/station/engineering/break_room)
 "lkR" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -34479,6 +34278,13 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/iron/smooth,
 /area/station/command/gateway)
+"lGJ" = (
+/obj/structure/filingcabinet/chestdrawer,
+/obj/item/book/manual/wiki/engineering_guide{
+	pixel_y = 6
+	},
+/turf/open/floor/iron/grimy,
+/area/station/engineering/main)
 "lGK" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -35005,22 +34811,6 @@
 	},
 /turf/open/floor/iron/small,
 /area/station/engineering/atmos)
-<<<<<<< HEAD
-"lNF" = (
-/obj/effect/spawner/random/entertainment/lighter,
-/obj/item/clothing/mask/cigarette/rollie/mindbreaker{
-	pixel_x = -2;
-	pixel_y = 6
-	},
-/obj/item/clothing/mask/cigarette/rollie/trippy{
-	pixel_x = 4
-	},
-/obj/effect/mapping_helpers/burnt_floor,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/station/maintenance/starboard/greater)
-=======
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "lNJ" = (
 /obj/effect/turf_decal/siding/yellow{
 	dir = 6
@@ -35569,28 +35359,9 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/iron/large,
 /area/station/hallway/primary/central/fore)
-<<<<<<< HEAD
-"lWp" = (
-/obj/structure/table,
-/obj/machinery/light/small/directional/west,
-/obj/item/clothing/head/costume/paper_hat{
-	pixel_y = 12;
-	pixel_x = -4
-	},
-/obj/item/clothing/head/collectable/petehat{
-	pixel_x = 5;
-	pixel_y = -5
-	},
-/obj/item/clothing/mask/cigarette/cigar/cohiba{
-	pixel_y = 4
-	},
-/turf/open/floor/iron/dark/small,
-/area/station/commons/fitness/locker_room)
-=======
 "lWs" = (
 /turf/closed/wall/rust,
 /area/station/cargo/drone_bay)
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "lWz" = (
 /obj/effect/turf_decal/tile/dark_red/opposingcorners,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
@@ -35767,26 +35538,6 @@
 "lYj" = (
 /turf/closed/wall/r_wall,
 /area/station/hallway/primary/fore)
-<<<<<<< HEAD
-"lYt" = (
-/obj/structure/table/wood/fancy/green,
-/obj/item/storage/wallet{
-	pixel_x = -3;
-	pixel_y = 10
-	},
-/obj/item/clothing/mask/cigarette/cigar{
-	pixel_x = -1;
-	pixel_y = -2
-	},
-/obj/item/lighter{
-	pixel_x = 11;
-	pixel_y = -7
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/iron/grimy,
-/area/station/command/heads_quarters/qm)
-=======
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "lYw" = (
 /obj/structure/hedge,
 /obj/item/radio/intercom/directional/south,
@@ -35999,6 +35750,17 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
+"mcj" = (
+/obj/effect/turf_decal/tile/yellow/opposingcorners,
+/obj/structure/table/reinforced/titaniumglass,
+/obj/item/rcl/pre_loaded,
+/obj/item/stock_parts/power_store/cell/high{
+	pixel_y = 17
+	},
+/obj/machinery/light/small/directional/south,
+/obj/structure/secure_safe/directional/east,
+/turf/open/floor/iron,
+/area/station/command/heads_quarters/ce)
 "mcl" = (
 /obj/structure/alien/weeds,
 /obj/effect/gibspawner/xeno,
@@ -36083,25 +35845,9 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-<<<<<<< HEAD
-/obj/machinery/camera/autoname/directional/south,
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/iron/showroomfloor,
-/area/station/commons/toilet/auxiliary)
-"mdU" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/camera/directional/north,
-/obj/structure/sign/poster/official/random/directional/north,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/turf/open/floor/iron,
-/area/station/hallway/primary/port)
-=======
 /obj/structure/cable,
 /turf/open/floor/grass,
 /area/station/service/chapel)
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "mdX" = (
 /obj/machinery/light/small/directional/north,
 /obj/machinery/conveyor_switch{
@@ -37288,6 +37034,12 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/misc/sandy_dirt,
 /area/station/hallway/primary/central/fore)
+"mAK" = (
+/obj/structure/table/greyscale,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/wrench,
+/turf/open/floor/iron/grimy,
+/area/station/engineering/main)
 "mAL" = (
 /obj/structure/window/reinforced/spawner/directional/north,
 /turf/open/floor/iron,
@@ -37541,6 +37293,22 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/circuit,
 /area/station/tcommsat/server)
+"mFH" = (
+/obj/structure/table/greyscale,
+/obj/item/screwdriver,
+/obj/item/stack/cable_coil/cut{
+	pixel_x = 11;
+	pixel_y = 7
+	},
+/obj/machinery/camera/directional/west{
+	c_tag = "Engineering - Office"
+	},
+/obj/item/stock_parts/power_store/cell/emproof{
+	pixel_x = -6;
+	pixel_y = 9
+	},
+/turf/open/floor/iron/grimy,
+/area/station/engineering/main)
 "mFL" = (
 /obj/structure/table,
 /obj/effect/turf_decal/siding/thinplating_new/terracotta{
@@ -37582,25 +37350,6 @@
 	},
 /turf/open/floor/carpet,
 /area/station/medical/psychology)
-<<<<<<< HEAD
-"mGn" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/item/clothing/gloves/color/fyellow{
-	pixel_y = 2
-	},
-/obj/item/wrench,
-/obj/item/clothing/mask/cigarette/xeno{
-	pixel_x = -3;
-	pixel_y = -9
-	},
-/obj/item/clothing/head/utility/welding,
-/turf/open/floor/iron/small,
-/area/station/maintenance/department/engine/atmos)
-=======
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "mGp" = (
 /obj/structure/table/glass,
 /obj/item/gun/ballistic/automatic/c20r/toy/unrestricted,
@@ -38107,6 +37856,22 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron,
 /area/station/hallway/primary/aft)
+"mOx" = (
+/obj/item/stack/sheet/iron/fifty,
+/obj/item/stack/rods/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/electronics/airlock,
+/obj/item/electronics/airlock,
+/obj/item/stock_parts/power_store/cell/high,
+/obj/item/stack/sheet/mineral/plasma{
+	amount = 30
+	},
+/obj/item/gps,
+/obj/structure/closet/crate/engineering,
+/obj/machinery/light/cold/directional/east,
+/obj/item/clothing/gloves/color/yellow,
+/turf/open/floor/iron/dark/small,
+/area/station/engineering/storage_shared)
 "mOI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/south,
@@ -40894,14 +40659,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/smooth,
 /area/station/cargo/warehouse)
-<<<<<<< HEAD
-"nLN" = (
-/obj/structure/cable,
-/obj/structure/disposalpipe/segment,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
-=======
 "nLM" = (
 /obj/structure/cable,
 /obj/structure/table/reinforced,
@@ -40915,7 +40672,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/engineering/storage/tech)
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "nMn" = (
 /obj/structure/disposalpipe/segment{
 	dir = 6
@@ -41721,19 +41477,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark,
 /area/station/commons/dorms)
-<<<<<<< HEAD
-"oaV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock/public/glass{
-	name = "Cargo Botique"
-	},
-/obj/machinery/door/firedoor,
-/turf/open/floor/iron/textured_half{
-	dir = 1
-	},
-/area/station/hallway/primary/central/fore)
-=======
 "oaY" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/effect/turf_decal/stripes/line{
@@ -41748,7 +41491,6 @@
 /obj/item/stock_parts/power_store/cell/high,
 /turf/open/floor/iron/dark,
 /area/station/science/robotics/lab)
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "obd" = (
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible{
 	dir = 10
@@ -43486,6 +43228,18 @@
 /obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /turf/open/floor/plating,
 /area/station/engineering/atmos/space_catwalk)
+"oGo" = (
+/obj/structure/table/glass,
+/obj/item/stock_parts/power_store/cell/high{
+	pixel_x = 11;
+	pixel_y = 6
+	},
+/obj/item/folder/blue{
+	pixel_x = -3;
+	pixel_y = 2
+	},
+/turf/open/floor/carpet/executive,
+/area/station/command/meeting_room)
 "oGJ" = (
 /obj/effect/turf_decal/trimline/neutral/line{
 	dir = 1
@@ -43553,6 +43307,24 @@
 	dir = 1
 	},
 /area/station/security/execution/transfer)
+"oHJ" = (
+/obj/structure/table/greyscale,
+/obj/item/pen{
+	pixel_x = 13;
+	pixel_y = 4
+	},
+/obj/machinery/light/small/directional/south,
+/obj/item/flatpack{
+	board = /obj/item/circuitboard/machine/flatpacker;
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/multitool{
+	pixel_x = 7;
+	pixel_y = -2
+	},
+/turf/open/floor/iron/grimy,
+/area/station/engineering/main)
 "oHO" = (
 /obj/structure/chair/plastic{
 	dir = 1
@@ -45469,22 +45241,9 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/iron/freezer,
 /area/station/command/corporate_suite)
-<<<<<<< HEAD
-"poh" = (
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/machinery/oven/range,
-/turf/open/floor/iron/cafeteria,
-/area/station/service/kitchen)
-"pot" = (
-/obj/structure/table/wood,
-/obj/item/clothing/mask/cigarette/cigar/premium{
-	pixel_y = 5
-=======
 "pov" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 	},
 /obj/machinery/newscaster/directional/west,
 /turf/open/floor/stone,
@@ -45901,30 +45660,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/white/small,
 /area/station/service/janitor)
-"psL" = (
-/obj/effect/turf_decal/bot,
-/obj/machinery/light/cold/dim/directional/east,
-/obj/machinery/newscaster/directional/east,
-/obj/structure/cable,
-/obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_x = 5;
-	pixel_y = 19
-	},
-/obj/item/pen{
-	pixel_x = 5;
-	pixel_y = 20
-	},
-/obj/machinery/cell_charger{
-	pixel_x = 2;
-	pixel_y = 1
-	},
-/obj/item/stock_parts/cell/high{
-	pixel_x = 2;
-	pixel_y = 2
-	},
-/turf/open/floor/iron/smooth,
-/area/station/engineering/break_room)
 "psP" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -46178,15 +45913,6 @@
 	dir = 1
 	},
 /area/station/security/prison/safe)
-<<<<<<< HEAD
-"pxO" = (
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
-/obj/machinery/duct,
-/turf/open/floor/iron/freezer,
-/area/station/service/kitchen/coldroom)
-=======
 "pxI" = (
 /obj/structure/cable,
 /obj/item/radio/intercom/directional/east,
@@ -46200,7 +45926,6 @@
 /obj/item/stock_parts/power_store/cell/high,
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "pxZ" = (
 /obj/structure/rack,
 /obj/effect/spawner/random/maintenance,
@@ -48007,17 +47732,6 @@
 /obj/structure/mirror/directional/north,
 /turf/open/floor/iron/white/small,
 /area/station/maintenance/port/aft)
-"qaH" = (
-/obj/structure/cable,
-/obj/effect/turf_decal/siding/dark_red/corner{
-	dir = 1
-	},
-/obj/structure/rack,
-/obj/effect/spawner/random/armory/riot_helmet,
-/obj/effect/spawner/random/armory/bulletproof_helmet,
-/obj/effect/spawner/random/armory/dragnet,
-/turf/open/floor/iron/dark/small,
-/area/station/ai_monitored/security/armory)
 "qaV" = (
 /obj/structure/disposalpipe/segment{
 	dir = 10
@@ -48550,14 +48264,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/tcommsat/server)
-"qiO" = (
-/obj/structure/table,
-/obj/machinery/cell_charger{
-	pixel_y = 5
-	},
-/obj/item/stock_parts/cell/high,
-/turf/open/floor/engine,
-/area/station/science/xenobiology)
 "qjh" = (
 /obj/machinery/light_switch/directional/west,
 /turf/open/floor/iron/white,
@@ -51156,26 +50862,6 @@
 	},
 /turf/open/floor/iron/smooth,
 /area/station/engineering/atmos)
-<<<<<<< HEAD
-"qYq" = (
-/obj/structure/table/glass,
-/obj/machinery/cell_charger,
-/obj/item/stock_parts/cell,
-/turf/open/floor/iron/white,
-/area/station/science/auxlab/firing_range)
-"qYu" = (
-/obj/structure/cable,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/firealarm/directional/south,
-/obj/effect/turf_decal/tile/green/diagonal_centre,
-/turf/open/floor/iron/diagonal,
-/area/station/hallway/primary/central/aft)
-=======
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "qYv" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment,
@@ -51487,40 +51173,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
-<<<<<<< HEAD
-/obj/item/clothing/mask/cigarette{
-	pixel_x = 6;
-	pixel_y = 4
-	},
-/obj/item/clothing/mask/gas{
-	pixel_y = 5
-	},
-/obj/item/clothing/head/cone{
-	pixel_x = 1;
-	pixel_y = 15
-	},
-/turf/open/floor/plating,
-/area/station/maintenance/department/engine)
-"rcr" = (
-/obj/structure/closet/crate/hydroponics,
-/obj/item/crowbar/red,
-/obj/item/reagent_containers/cup/watering_can,
-/obj/item/circuitboard/machine/biogenerator,
-/obj/item/wirecutters,
-/obj/item/wrench,
-/obj/item/shovel/spade,
-/obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/tile/green/opposingcorners,
-/obj/effect/turf_decal/tile/blue/opposingcorners{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron,
-/area/station/service/hydroponics)
-=======
 /turf/open/floor/iron/white,
 /area/station/hallway/primary/central/aft)
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "rcQ" = (
 /obj/item/kirbyplants/random,
 /obj/effect/decal/cleanable/dirt,
@@ -51763,41 +51417,6 @@
 /obj/structure/broken_flooring/corner/directional/south,
 /turf/open/floor/plating,
 /area/station/maintenance/port/aft)
-<<<<<<< HEAD
-"rhm" = (
-/obj/machinery/atmospherics/pipe/smart/simple/general/visible{
-	dir = 10
-	},
-/obj/structure/table,
-/obj/item/clothing/mask/cigarette,
-/obj/item/toy/toy_dagger,
-/obj/item/clothing/head/collectable/paper,
-/obj/item/toy/figure/roboticist{
-	pixel_x = 6;
-	pixel_y = 6
-	},
-/obj/item/toy/figure/syndie{
-	pixel_y = 5;
-	pixel_x = -6
-	},
-/obj/item/toy/figure/md{
-	pixel_x = 10
-	},
-/obj/item/toy/figure/hop{
-	pixel_x = 2;
-	pixel_y = -2
-	},
-/obj/item/toy/figure/ian{
-	pixel_x = -5;
-	pixel_y = -1
-	},
-/obj/item/toy/figure/lawyer{
-	pixel_x = -10
-	},
-/obj/item/toy/figure/detective,
-/turf/open/floor/plating,
-/area/station/maintenance/port/fore)
-=======
 "rhq" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -51807,7 +51426,6 @@
 /obj/effect/turf_decal/tile/neutral,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/aft)
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "rhu" = (
 /obj/effect/turf_decal/siding/yellow{
 	dir = 5
@@ -53493,41 +53111,6 @@
 /obj/structure/sign/poster/official/random/directional/north,
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine)
-<<<<<<< HEAD
-"rLu" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate,
-/obj/item/stock_parts/cell/high{
-	pixel_x = -11;
-	pixel_y = 2
-	},
-/obj/item/reagent_containers/cup/glass/bottle/vodka,
-/obj/item/food/grown/citrus/orange,
-/obj/item/food/grown/citrus/orange{
-	pixel_x = 4;
-	pixel_y = 2
-	},
-/obj/item/food/grown/grapes/green{
-	pixel_y = -4;
-	pixel_x = -6
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
-/turf/open/floor/iron/small,
-/area/station/maintenance/department/engine/atmos)
-"rLw" = (
-/obj/structure/cable,
-/obj/structure/disposalpipe/segment{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
-=======
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "rLx" = (
 /obj/effect/turf_decal/siding/thinplating/terracotta,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -56497,24 +56080,8 @@
 /obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/iron/cafeteria,
 /area/station/security/prison/mess)
-<<<<<<< HEAD
-"sFD" = (
-/obj/effect/turf_decal/tile/purple/opposingcorners,
-/obj/effect/turf_decal/siding/green{
-	dir = 9
-	},
-/obj/structure/table,
-/obj/machinery/cell_charger,
-/obj/item/stock_parts/cell/high,
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable,
-/turf/open/floor/iron/cafeteria,
-/area/station/science/circuits)
-"sFH" = (
-=======
 "sFW" = (
 /obj/machinery/light/warm/dim,
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -56922,20 +56489,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
-<<<<<<< HEAD
-"sNv" = (
-/obj/structure/cable,
-/obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/maintenance{
-	name = "Maintenance"
-	},
-/obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
-/obj/effect/mapping_helpers/airlock/unres{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/station/maintenance/port/greater)
-=======
 "sNr" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/siding/dark_red/corner{
@@ -56947,7 +56500,6 @@
 /obj/effect/spawner/random/armory/dragnet,
 /turf/open/floor/iron/dark/small,
 /area/station/ai_monitored/security/armory)
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "sNz" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment,
@@ -57841,20 +57393,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
-<<<<<<< HEAD
-"tcB" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock/hydroponics/glass{
-	name = "Service Breakroom"
-	},
-/obj/effect/mapping_helpers/airlock/access/any/service/general,
-/obj/machinery/duct,
-/turf/open/floor/iron/textured_half{
-	dir = 8
-	},
-/area/station/hallway/secondary/service)
-=======
 "tcA" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/item/stock_parts/power_store/cell/emproof{
@@ -57862,7 +57400,6 @@
 	},
 /turf/open/floor/iron/grimy,
 /area/station/engineering/main)
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "tcC" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -59101,20 +58638,6 @@
 	},
 /turf/open/floor/tram,
 /area/station/maintenance/department/medical/central)
-"twR" = (
-/obj/structure/table/glass,
-/obj/machinery/cell_charger,
-/obj/item/stock_parts/cell,
-/obj/machinery/status_display/evac/directional/north,
-/obj/structure/sign/directions/supply/directional/west,
-/obj/structure/sign/directions/engineering/directional/west{
-	pixel_y = 8
-	},
-/obj/structure/sign/directions/command/directional/west{
-	pixel_y = -8
-	},
-/turf/open/floor/iron/white,
-/area/station/hallway/primary/starboard)
 "twZ" = (
 /obj/structure/chair/sofa/bench/right,
 /obj/machinery/newscaster/directional/north,
@@ -59840,45 +59363,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/security/brig/entrance)
-<<<<<<< HEAD
-"tJD" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/light/small/directional/south,
-/obj/effect/turf_decal/tile/green/diagonal_centre,
-/turf/open/floor/iron/diagonal,
-/area/station/hallway/primary/central/aft)
-"tJF" = (
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/structure/rack,
-/obj/item/storage/toolbox/emergency{
-	pixel_x = -2;
-	pixel_y = -3
-	},
-/obj/item/clothing/mask/cigarette/cigar,
-/obj/effect/mapping_helpers/broken_floor,
-/obj/machinery/light_switch/directional/south,
-/turf/open/floor/iron/smooth,
-/area/station/command/bridge)
-"tJG" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/delivery,
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4;
-	id = "kihall"
-	},
-/obj/effect/turf_decal/tile/green/diagonal_centre,
-/turf/open/floor/iron/diagonal,
-/area/station/hallway/primary/central/aft)
-=======
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "tJX" = (
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
@@ -64744,21 +64228,6 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/greater)
-"vjx" = (
-/obj/structure/table,
-/obj/machinery/cell_charger{
-	pixel_y = 18
-	},
-/obj/item/stock_parts/cell/high{
-	pixel_y = 18
-	},
-/obj/item/clothing/suit/hazardvest,
-/obj/effect/turf_decal/siding/thinplating_new/terracotta{
-	dir = 4
-	},
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/iron,
-/area/station/command/teleporter)
 "vjI" = (
 /obj/machinery/door/airlock{
 	name = "Bathrooms"
@@ -65646,33 +65115,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/cargo/sorting)
-<<<<<<< HEAD
-"vuK" = (
-/obj/structure/cable,
-/obj/structure/table/reinforced,
-/obj/item/stack/cable_coil{
-	pixel_x = -3;
-	pixel_y = 3
-	},
-/obj/item/stock_parts/cell/high,
-/obj/item/electronics/airlock{
-	pixel_y = 13
-	},
-/turf/open/floor/iron,
-/area/station/engineering/storage/tech)
-"vuL" = (
-/obj/structure/disposalpipe/segment{
-	dir = 5
-	},
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/neutral/line,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/starboard)
-=======
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "vuR" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -68386,33 +67828,11 @@
 /obj/effect/turf_decal/tile/dark_red/half/contrasted{
 	dir = 4
 	},
-<<<<<<< HEAD
-/obj/structure/flora/bush/sunny/style_random,
-/turf/open/floor/grass,
-/area/station/service/chapel)
-"wjY" = (
-/obj/structure/window/spawner/directional/east,
-/obj/structure/table/wood,
-/obj/machinery/cell_charger{
-	pixel_y = 5
-	},
-/obj/item/stock_parts/cell/crap{
-	pixel_y = 5
-	},
-/obj/item/clothing/mask/cigarette/pipe/cobpipe{
-	pixel_x = 1;
-	pixel_y = -2
-	},
-/obj/structure/sign/poster/official/random/directional/north,
-/turf/open/floor/wood/tile,
-/area/station/command/corporate_showroom)
-=======
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 4
 	},
 /turf/open/floor/iron,
 /area/station/security/brig/entrance)
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "wjZ" = (
 /obj/structure/cable,
 /obj/effect/spawner/structure/window/reinforced,
@@ -68464,24 +67884,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/chapel,
 /area/station/maintenance/starboard/greater)
-<<<<<<< HEAD
-"wld" = (
-/obj/effect/turf_decal/tile/yellow/opposingcorners,
-/obj/structure/table/reinforced/titaniumglass,
-/obj/item/rcl/pre_loaded,
-/obj/item/stock_parts/cell/high{
-	pixel_y = 17
-	},
-/obj/machinery/light/small/directional/south,
-/obj/structure/secure_safe/directional/east,
-/turf/open/floor/iron,
-/area/station/command/heads_quarters/ce)
-"wlf" = (
-/obj/effect/landmark/start/hangover,
-/turf/open/floor/glass,
-/area/station/hallway/secondary/spacebridge)
-=======
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 "wlk" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 4
@@ -89958,7 +89360,7 @@ mVt
 dIt
 huN
 jBr
-qaH
+sNr
 syk
 vYD
 lox
@@ -91158,7 +90560,7 @@ ojz
 sLu
 urE
 ess
-jCY
+mFH
 vfG
 oSw
 jyl
@@ -91169,7 +90571,7 @@ obW
 grF
 ecn
 kmH
-rLu
+bHp
 cPe
 obW
 blb
@@ -91932,7 +91334,7 @@ euP
 all
 eWf
 eIx
-kWg
+oHJ
 bNq
 wxG
 uIX
@@ -92171,7 +91573,7 @@ ufR
 xYG
 xYG
 rDV
-cGb
+mOx
 dwC
 iAk
 sql
@@ -92185,11 +91587,11 @@ sHO
 drI
 cRq
 rbl
-jcx
+tcA
 uKO
 vfG
-fnm
-gUo
+lGJ
+mAK
 bNq
 hOX
 fEU
@@ -93755,7 +93157,7 @@ eEq
 sRg
 gQG
 hbw
-hgb
+aGI
 hmQ
 pGE
 jug
@@ -93843,7 +93245,7 @@ xAR
 trp
 etx
 fwS
-ePg
+iLZ
 trp
 jRx
 xul
@@ -94501,7 +93903,7 @@ paX
 rdH
 gpI
 ceP
-wld
+mcj
 gpI
 qCT
 rWH
@@ -94750,7 +94152,7 @@ cED
 nQE
 rLj
 gNt
-lkQ
+iIK
 gKL
 fMA
 gFF
@@ -96803,7 +96205,7 @@ gwl
 pPm
 jKU
 qbP
-psL
+iGM
 nck
 tau
 gKL
@@ -97094,7 +96496,7 @@ sUy
 muW
 mOk
 iap
-gSQ
+oGo
 iDk
 sUy
 jaK
@@ -98639,11 +98041,7 @@ xMk
 xsh
 hcc
 xGJ
-<<<<<<< HEAD
-wjY
-=======
 mOZ
->>>>>>> ab9aecc2f98 ([MANUAL MIRROR] - BirdShot Service Department Changes (#84080) (#3471))
 jwi
 qtd
 hOg
@@ -100451,7 +99849,7 @@ myT
 iMg
 iYj
 sDp
-vjx
+gZy
 kke
 dEr
 oGJ
@@ -106352,7 +105750,7 @@ gKg
 xbl
 uhI
 yhW
-hAQ
+clV
 gcz
 hyv
 fyH
@@ -111037,9 +110435,9 @@ aZL
 ciR
 mwu
 yeP
-aXg
+enq
 ivY
-vuK
+nLM
 ssz
 ssz
 kHo
@@ -113585,7 +112983,7 @@ vDX
 vDX
 xww
 vDX
-twR
+eDr
 xdc
 xtL
 xQW
@@ -120022,7 +119420,7 @@ wHg
 mbZ
 xia
 jYr
-jbc
+oaY
 lZB
 ivz
 jYr
@@ -120805,7 +120203,7 @@ pXQ
 kwA
 xaR
 sYa
-qiO
+pxW
 xlP
 gpy
 xlP
@@ -123088,7 +122486,7 @@ oyQ
 pVa
 qjh
 qzL
-qYq
+kbI
 xok
 vhC
 sHV
@@ -124405,7 +123803,7 @@ ifa
 ifa
 ifa
 ifa
-sFD
+kmP
 vLi
 tQr
 ifa
