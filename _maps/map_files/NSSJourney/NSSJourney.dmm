@@ -3153,14 +3153,11 @@
 /obj/item/wallframe/camera,
 /obj/item/wallframe/camera,
 /obj/item/assault_pod/mining,
-/obj/machinery/computer/security/telescreen/auxbase{
-	dir = 8;
-	pixel_x = 30
-	},
 /obj/effect/turf_decal/tile/brown{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/yellow,
+/obj/machinery/computer/security/telescreen/auxbase/directional/east,
 /turf/open/floor/iron,
 /area/station/construction/mining/aux_base)
 "azD" = (
@@ -10263,10 +10260,6 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 4
 	},
-/obj/machinery/computer/security/telescreen/cmo{
-	dir = 8;
-	pixel_x = 24
-	},
 /obj/effect/landmark/start/chief_medical_officer,
 /obj/machinery/button/door{
 	id = "cmoprivacy";
@@ -10275,6 +10268,7 @@
 	pixel_y = 22;
 	req_access = list("cmo")
 	},
+/obj/machinery/computer/security/telescreen/cmo/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/cmo)
 "bhq" = (
@@ -11952,11 +11946,9 @@
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/hop)
 "bnR" = (
-/obj/machinery/computer/security/telescreen/vault{
-	pixel_y = 30
-	},
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk,
+/obj/machinery/computer/security/telescreen/vault/directional/north,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/hop)
 "bnT" = (
@@ -17176,10 +17168,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
-/obj/machinery/computer/security/telescreen/rd{
-	dir = 4;
-	pixel_x = -26
-	},
+/obj/machinery/computer/security/telescreen/rd/directional/west,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/rd)
 "bHf" = (
@@ -23238,13 +23227,10 @@
 /obj/machinery/computer/station_alert{
 	dir = 4
 	},
-/obj/machinery/computer/security/telescreen/ce{
-	dir = 4;
-	pixel_x = -24
-	},
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
+/obj/machinery/computer/security/telescreen/ce/directional/west,
 /turf/open/floor/iron/white,
 /area/station/command/heads_quarters/ce)
 "cjV" = (
@@ -27990,6 +27976,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/computer/security/telescreen/engine/directional/south,
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/engine_smes)
 "cSW" = (
@@ -28008,10 +27995,6 @@
 "cSY" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
-	},
-/obj/machinery/computer/security/telescreen/engine{
-	dir = 8;
-	pixel_x = 24
 	},
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/engine_smes)
@@ -36207,10 +36190,7 @@
 /area/station/maintenance/abandon_cafeteria)
 "iiD" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible,
-/obj/machinery/computer/security/telescreen/research{
-	pixel_x = -2;
-	pixel_y = 32
-	},
+/obj/machinery/computer/security/telescreen/research/directional/north,
 /turf/open/floor/iron/white,
 /area/station/science/xenobiology)
 "iiZ" = (
@@ -49006,12 +48986,7 @@
 	pixel_y = 32
 	},
 /obj/effect/turf_decal/trimline/white/end,
-/obj/machinery/computer/security/telescreen/interrogation{
-	name = "isolation room monitor";
-	network = list("isolation");
-	dir = 4;
-	pixel_x = -30
-	},
+/obj/machinery/computer/security/telescreen/isolation/directional/west,
 /turf/open/floor/iron/dark,
 /area/station/security/execution/transfer)
 "qCf" = (
@@ -57534,10 +57509,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
-/obj/machinery/computer/security/telescreen/ordnance{
-	dir = 8;
-	pixel_x = 30
-	},
+/obj/machinery/computer/security/telescreen/ordnance/directional/east,
 /turf/open/floor/iron,
 /area/station/science/ordnance/bomb)
 "wed" = (
