@@ -16379,7 +16379,8 @@
 "bEn" = (
 /obj/machinery/light/directional/north,
 /obj/machinery/camera/directional/north{
-	c_tag = "Xenobiology Experimentation Cell"
+	c_tag = "Xenobiology Experimentation Cell";
+	network = list("xeno")
 	},
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
@@ -28602,15 +28603,12 @@
 /obj/machinery/computer/records/security{
 	dir = 8
 	},
-/obj/machinery/computer/security/telescreen/engine{
-	dir = 8;
-	pixel_x = 24
-	},
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/neutral,
+/obj/machinery/computer/security/telescreen/engine/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/engineering)
 "dnc" = (
@@ -33399,10 +33397,7 @@
 	id = "experilab";
 	name = "Chamber Shutters"
 	},
-/obj/machinery/computer/security/telescreen{
-	pixel_y = 32;
-	network = list("test")
-	},
+/obj/machinery/computer/security/telescreen/research/directional/north,
 /turf/open/floor/iron,
 /area/station/science/explab)
 "gwL" = (
@@ -36190,7 +36185,7 @@
 /area/station/maintenance/abandon_cafeteria)
 "iiD" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible,
-/obj/machinery/computer/security/telescreen/research/directional/north,
+/obj/machinery/computer/security/telescreen/xeno/directional/north,
 /turf/open/floor/iron/white,
 /area/station/science/xenobiology)
 "iiZ" = (
@@ -43099,14 +43094,7 @@
 	pixel_x = 6;
 	pixel_y = -24
 	},
-/obj/machinery/computer/security/telescreen{
-	desc = "Used to access the various cameras on the station.";
-	dir = 8;
-	layer = 3.1;
-	name = "Security Camera Monitor";
-	network = list("ss13");
-	pixel_x = 30
-	},
+/obj/machinery/computer/security/telescreen/normal/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "mKT" = (
@@ -48490,7 +48478,7 @@
 /area/station/maintenance/disposal/incinerator)
 "qmh" = (
 /obj/machinery/camera/directional/east{
-	network = list("test","rd");
+	network = list("rd");
 	c_tag = "Experimentation Chamber"
 	},
 /obj/effect/turf_decal/stripes/red/line{
