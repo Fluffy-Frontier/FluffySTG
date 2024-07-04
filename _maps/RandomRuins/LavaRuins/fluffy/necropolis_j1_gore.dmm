@@ -344,7 +344,6 @@
 	},
 /mob/living/basic/meteor_heart{
 	health = 1200;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
 	melee_attack_cooldown = 10;
 	name = "Deep space meteor heart";
 	light_color = "#FF9999";

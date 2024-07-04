@@ -224,6 +224,8 @@
 	icon_dead = "raptor_red_dead"
 	icon_state = "raptor_red"
 	icon_living = "raptor_red"
+	current_size = 1
+	base_pixel_y = 0
 	speed = 0.32
 	health = 240
 	maxHealth = 240

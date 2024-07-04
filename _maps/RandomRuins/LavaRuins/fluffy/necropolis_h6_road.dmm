@@ -80,7 +80,6 @@
 	},
 /obj/structure/stone_tile/center/cracked,
 /mob/living/basic/mining/ancient_demon/demoraptor{
-	current_size = 2;
 	base_pixel_y = -32;
 	maxHealth = 640;
 	health = 640;
@@ -90,7 +89,8 @@
 	speed = -0.1;
 	faction = list("mining","boss","hell","cult");
 	attack_vis_effect = "slash";
-	guaranteed_butcher_results = list(/obj/item/organ/external/tail/lizard = 1,/obj/item/feather=12,/obj/item/food/egg/raptor_egg=1,/obj/item/clothing/shoes/cowboy/lizard=1,/obj/item/food/meat/slab/chicken=5)
+	guaranteed_butcher_results = list(/obj/item/organ/external/tail/lizard = 1,/obj/item/feather=12,/obj/item/food/egg/raptor_egg=1,/obj/item/clothing/shoes/cowboy/lizard=1,/obj/item/food/meat/slab/chicken=5);
+	current_size = 2
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
