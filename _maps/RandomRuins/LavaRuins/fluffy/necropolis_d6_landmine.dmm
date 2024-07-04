@@ -18,7 +18,22 @@
 	layer = 4.2;
 	alpha = 55;
 	name = "Glowing rune";
-	desc = "Curious, isn't it?"
+	desc = "Curious, isn't it?";
+	pixel_x = -12
+	},
+/obj/effect/glowing_rune{
+	layer = 4.2;
+	alpha = 55;
+	name = "Glowing rune";
+	desc = "Curious, isn't it?";
+	pixel_x = 10
+	},
+/obj/effect/glowing_rune{
+	layer = 4.2;
+	alpha = 55;
+	name = "Glowing rune";
+	desc = "Curious, isn't it?";
+	pixel_y = -16
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)

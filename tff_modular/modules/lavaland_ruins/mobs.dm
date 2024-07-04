@@ -220,6 +220,7 @@
 	name = "Demoraptor"
 	real_name = "Demoraptor"
 	desc = "An Agressive predatory feathery beast. This one just won't tolerate you."
+	faction = list("mining","cult")
 	icon = 'icons/mob/simple/lavaland/raptor_big.dmi'
 	icon_dead = "raptor_red_dead"
 	icon_state = "raptor_red"
@@ -236,6 +237,7 @@
 	attack_verb_continuous = "pecks"
 	attack_verb_simple = "chomps"
 	butcher_results = list(/obj/item/organ/external/tail/lizard = 1,/obj/item/feather=4,/obj/item/food/egg/raptor_egg=1,/obj/item/food/meat/slab/chicken=3)
+	guaranteed_butcher_results = list(/obj/item/feather=4)
 	death_message = "falls down."
 
 /// Goliath
@@ -325,7 +327,7 @@
 	attack_verb_continuous = "beats down on"
 	attack_verb_simple = "beat down on"
 	butcher_results = list(/obj/item/food/meat/slab/goliath = 6, /obj/item/stack/sheet/bone = 6)
-	guaranteed_butcher_results = list(list(/obj/item/stack/sheet/animalhide/goliath_hide = 4,/obj/structure/closet/crate/necropolis/tendril=1,/obj/item/crusher_trophy/goliath_tentacle=1))
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 4,/obj/structure/closet/crate/necropolis/tendril=1,/obj/item/crusher_trophy/goliath_tentacle=1)
 /mob/living/basic/mining/brimdemon/infused/Initialize(mapload)
 	. = ..()
 	AddComponent(\
