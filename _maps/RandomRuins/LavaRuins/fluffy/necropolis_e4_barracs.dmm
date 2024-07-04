@@ -1,68 +1,172 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/obj/structure/stone_tile/slab,
-/obj/item/stack/sheet/bone,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+"ay" = (
+/obj/structure/stone_tile/surrounding/cracked,
+/obj/structure/stone_tile/center/burnt,
+/turf/open/lava/smooth/lava_land_surface,
 /area/ruin/unpowered)
-"b" = (
+"eN" = (
+/obj/structure/stone_tile/slab/cracked,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered)
+"hy" = (
+/obj/structure/stone_tile/slab,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"ii" = (
+/obj/structure/stone_tile/slab,
+/obj/item/knife/combat/bone,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"iG" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 5
+	},
+/obj/structure/stone_tile/slab/cracked{
+	dir = 10
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered)
+"iZ" = (
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
 /area/lavaland/surface/outdoors)
-"c" = (
-/obj/structure/wall_torch/mount_only,
-/turf/closed/indestructible/riveted/boss,
+"ji" = (
+/obj/structure/stone_tile/slab,
+/mob/living/basic/mining/legion,
+/obj/effect/decal/remains/human,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
-"d" = (
+"jG" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 1
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered)
+"np" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 1
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"e" = (
-/obj/structure/stone_tile/slab,
-/obj/effect/decal/cleanable/blood/old{
-	pixel_x = -5;
-	pixel_y = 15
-	},
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"f" = (
-/obj/structure/stone_tile/slab,
-/obj/structure/bed/maint,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/ruin/unpowered)
-"g" = (
-/turf/closed/indestructible/riveted/boss,
-/area/ruin/unpowered)
-"h" = (
+"nu" = (
 /obj/structure/stone_tile/slab,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor4-old"
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
-"i" = (
-/obj/structure/stone_tile/slab/cracked{
-	dir = 5
+"nz" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 1
 	},
-/obj/structure/stone_tile/slab/cracked{
-	dir = 8
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"j" = (
+/obj/structure/stone_tile/center/burnt,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered)
+"nU" = (
+/obj/structure/stone_tile/slab/burnt,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered)
+"oD" = (
+/obj/structure/bed/maint,
 /obj/structure/stone_tile/slab,
-/obj/item/knife/combat/bone,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"k" = (
-/obj/structure/stone_tile/center/cracked,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"se" = (
+/turf/template_noop,
+/area/template_noop)
+"so" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/decal/remains/human/smokey,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"sO" = (
+/obj/structure/rack/shelf{
+	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
+	icon_state = "empty_shelf_1"
+	},
+/obj/item/gun/ballistic/bow/longbow,
+/obj/structure/stone_tile/slab,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"tv" = (
+/obj/item/fireaxe/boneaxe,
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 6
 	},
+/obj/structure/stone_tile/center/cracked,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
+"tX" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/center/burnt,
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 8
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered)
+"uB" = (
+/obj/structure/stone_tile/slab/cracked,
+/obj/effect/decal/remains/human/smokey,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
-"l" = (
+"uQ" = (
+/obj/item/stack/sheet/bone,
+/obj/structure/stone_tile/block/cracked,
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"vJ" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 5
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"we" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/bed/maint,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
+"wH" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/surrounding_tile/burnt,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered)
+"wN" = (
+/obj/structure/stone_tile/slab,
+/mob/living/basic/mining/legion,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"yG" = (
+/obj/structure/stone_tile/slab,
+/mob/living/basic/mining/legion,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"yZ" = (
+/obj/structure/stone_tile/slab/cracked,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"zp" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/surrounding_tile,
+/obj/structure/stone_tile/center/cracked,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered)
+"zr" = (
 /obj/structure/rack/shelf{
 	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
 	icon_state = "empty_shelf_1"
@@ -74,7 +178,17 @@
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
-"m" = (
+"zQ" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered)
+"zY" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/unpowered)
+"Ab" = (
 /obj/structure/rack/shelf{
 	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
 	icon_state = "empty_shelf_1"
@@ -92,14 +206,50 @@
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
-"n" = (
-/turf/closed/indestructible/riveted/boss,
+"CP" = (
+/obj/structure/stone_tile/slab,
+/obj/item/ammo_casing/arrow/bone,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
-"o" = (
-/obj/structure/stone_tile/slab/cracked,
+"Ej" = (
+/obj/structure/stone_tile/slab,
+/obj/item/stack/sheet/bone,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"Et" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 1
+	},
+/obj/structure/stone_tile/block/burnt,
 /turf/open/lava/smooth/lava_land_surface,
 /area/ruin/unpowered)
-"p" = (
+"Hp" = (
+/obj/structure/stone_tile/surrounding,
+/obj/structure/stone_tile/center,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
+"Ia" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"JK" = (
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/unpowered)
+"Kc" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/center/burnt,
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 1
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered)
+"Kj" = (
+/turf/closed/indestructible/riveted/boss,
+/area/lavaland/surface/outdoors)
+"KM" = (
 /obj/item/ammo_casing/arrow/bone,
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
@@ -110,119 +260,12 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"q" = (
-/obj/item/stack/sheet/bone,
-/obj/structure/stone_tile/block/cracked,
-/obj/structure/stone_tile/cracked{
-	dir = 4
-	},
+"Lj" = (
+/obj/structure/stone_tile/slab,
+/obj/item/ammo_casing/arrow/bone,
 /turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"r" = (
-/obj/structure/stone_tile/surrounding_tile{
-	dir = 8
-	},
-/obj/structure/stone_tile/center/burnt,
-/obj/structure/stone_tile/surrounding_tile/cracked{
-	dir = 1
-	},
-/turf/open/lava/smooth/lava_land_surface,
 /area/ruin/unpowered)
-"s" = (
-/obj/structure/rack/shelf{
-	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
-	icon_state = "empty_shelf_1"
-	},
-/obj/item/gun/ballistic/bow/longbow,
-/obj/structure/stone_tile/slab,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered)
-"t" = (
-/turf/template_noop,
-/area/template_noop)
-"u" = (
-/obj/structure/bed/maint,
-/obj/structure/stone_tile/slab/cracked{
-	dir = 1
-	},
-/obj/structure/stone_tile/surrounding/cracked{
-	dir = 4
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"v" = (
-/obj/structure/stone_tile/surrounding/cracked{
-	dir = 1
-	},
-/turf/open/lava/smooth/lava_land_surface,
-/area/ruin/unpowered)
-"w" = (
-/obj/structure/stone_tile/surrounding/cracked,
-/obj/structure/stone_tile/center/burnt,
-/turf/open/lava/smooth/lava_land_surface,
-/area/ruin/unpowered)
-"x" = (
-/obj/structure/stone_tile/slab,
-/obj/item/storage/bag/quiver,
-/mob/living/basic/mining/legion,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered)
-"y" = (
-/obj/structure/stone_tile/slab,
-/mob/living/basic/mining/legion,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered)
-"z" = (
-/obj/structure/stone_tile/burnt{
-	dir = 8
-	},
-/obj/structure/stone_tile/cracked,
-/obj/structure/stone_tile/burnt{
-	dir = 1
-	},
-/turf/open/lava/smooth/lava_land_surface,
-/area/ruin/unpowered)
-"A" = (
-/obj/effect/mapping_helpers/bombable_wall,
-/turf/closed/indestructible/riveted/boss/wasteland,
-/area/ruin/unpowered)
-"B" = (
-/obj/structure/stone_tile/slab/cracked{
-	dir = 5
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"C" = (
-/obj/structure/stone_tile/slab,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"D" = (
-/obj/structure/stone_tile/slab/cracked,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"E" = (
-/obj/item/fireaxe/boneaxe,
-/obj/structure/stone_tile/surrounding/cracked{
-	dir = 6
-	},
-/obj/structure/stone_tile/center/cracked,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/ruin/unpowered)
-"F" = (
-/obj/structure/stone_tile/surrounding,
-/obj/structure/stone_tile/center,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/ruin/unpowered)
-"G" = (
-/obj/structure/stone_tile/slab,
-/obj/structure/bed/maint,
-/obj/item/xenoarch/useless_relic{
-	name = "Ancient relic";
-	desc = "Sort of relic that can be exported through Cargo."
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/ruin/unpowered)
-"H" = (
+"Ln" = (
 /obj/structure/bed/maint,
 /obj/structure/stone_tile/slab,
 /mob/living/basic/mining/legion,
@@ -233,14 +276,7 @@
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
-"I" = (
-/obj/structure/stone_tile/block/cracked{
-	dir = 1
-	},
-/obj/structure/stone_tile/block/burnt,
-/turf/open/lava/smooth/lava_land_surface,
-/area/ruin/unpowered)
-"J" = (
+"LK" = (
 /obj/structure/stone_tile/surrounding_tile/burnt{
 	dir = 1
 	},
@@ -250,263 +286,231 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"K" = (
-/obj/structure/stone_tile/surrounding_tile{
-	dir = 1
-	},
-/obj/structure/stone_tile/center/burnt,
-/obj/structure/stone_tile/surrounding_tile/cracked{
-	dir = 8
-	},
-/turf/open/lava/smooth/lava_land_surface,
-/area/ruin/unpowered)
-"L" = (
+"Ma" = (
 /obj/structure/stone_tile/slab,
-/mob/living/basic/mining/legion,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered)
-"M" = (
-/obj/structure/stone_tile/slab,
-/mob/living/basic/mining/legion,
-/obj/effect/decal/remains/human,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered)
-"N" = (
-/obj/structure/stone_tile/surrounding/cracked{
-	dir = 1
+/obj/effect/decal/cleanable/blood/old{
+	pixel_x = -5;
+	pixel_y = 15
 	},
-/obj/structure/stone_tile/center/burnt,
-/turf/open/lava/smooth/lava_land_surface,
-/area/ruin/unpowered)
-"O" = (
-/obj/structure/stone_tile/slab,
-/obj/item/ammo_casing/arrow/bone,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
-"P" = (
-/obj/structure/stone_tile/surrounding_tile{
+"Ms" = (
+/obj/structure/bed/maint,
+/obj/structure/stone_tile/slab/cracked{
+	dir = 1
+	},
+/obj/structure/stone_tile/surrounding/cracked{
 	dir = 4
 	},
-/obj/structure/stone_tile/surrounding_tile,
-/obj/structure/stone_tile/center/cracked,
-/turf/open/lava/smooth/lava_land_surface,
-/area/ruin/unpowered)
-"Q" = (
-/obj/structure/stone_tile/slab,
 /turf/closed/mineral/random/high_chance/volcanic,
-/area/ruin/unpowered)
-"R" = (
+/area/lavaland/surface/outdoors)
+"NQ" = (
 /obj/structure/stone_tile/slab,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
-"S" = (
-/obj/structure/stone_tile/slab/cracked,
-/obj/effect/decal/remains/human/smokey,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+"Sg" = (
+/obj/structure/wall_torch/mount_only,
+/turf/closed/indestructible/riveted/boss,
 /area/ruin/unpowered)
-"T" = (
-/obj/structure/stone_tile/slab/burnt,
-/turf/open/lava/smooth/lava_land_surface,
-/area/ruin/unpowered)
-"U" = (
-/obj/structure/stone_tile/slab/cracked{
+"SR" = (
+/obj/structure/stone_tile/center/cracked,
+/obj/structure/stone_tile/surrounding/cracked{
 	dir = 6
 	},
-/turf/open/lava/smooth/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
-"V" = (
-/obj/structure/stone_tile/surrounding_tile{
-	dir = 4
-	},
-/obj/structure/stone_tile/surrounding_tile/burnt,
-/turf/open/lava/smooth/lava_land_surface,
-/area/ruin/unpowered)
-"W" = (
+"TE" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 5
 	},
 /obj/structure/stone_tile/slab/cracked{
-	dir = 10
+	dir = 8
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"UC" = (
+/obj/structure/stone_tile/slab,
+/obj/item/storage/bag/quiver,
+/mob/living/basic/mining/legion,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"Wd" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/bed/maint,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
+"WL" = (
+/obj/structure/stone_tile/burnt{
+	dir = 8
+	},
+/obj/structure/stone_tile/cracked,
+/obj/structure/stone_tile/burnt{
+	dir = 1
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/ruin/unpowered)
-"X" = (
+"Yu" = (
 /obj/structure/stone_tile/slab,
-/obj/item/ammo_casing/arrow/bone,
 /turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"Y" = (
-/obj/structure/stone_tile/slab,
-/obj/effect/decal/cleanable/blood/old,
-/obj/effect/decal/remains/human/smokey,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered)
-"Z" = (
-/obj/structure/bed/maint,
-/obj/structure/stone_tile/slab,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 
 (1,1,1) = {"
-t
-t
-q
-i
-C
-p
-t
-t
+se
+se
+uQ
+TE
+hy
+KM
+se
+se
 "}
 (2,1,1) = {"
-t
-t
-b
-C
-e
-n
-t
-t
+se
+se
+zY
+NQ
+Ma
+JK
+se
+se
 "}
 (3,1,1) = {"
-t
-n
-g
-E
-F
-c
-n
-t
+se
+Kj
+JK
+tv
+Hp
+Sg
+Kj
+se
 "}
 (4,1,1) = {"
-n
-g
-g
-Q
-O
-g
-g
-n
+Kj
+JK
+JK
+Yu
+Lj
+JK
+JK
+Kj
 "}
 (5,1,1) = {"
-n
-g
-G
-Q
-S
-H
-g
-b
+Kj
+JK
+we
+Yu
+uB
+Ln
+JK
+iZ
 "}
 (6,1,1) = {"
-t
-g
-f
-R
-I
-Z
-g
-t
+se
+JK
+Wd
+Ia
+Et
+oD
+JK
+se
 "}
 (7,1,1) = {"
-t
-g
-c
-v
-w
-g
-g
-t
+se
+JK
+Sg
+jG
+ay
+JK
+JK
+se
 "}
 (8,1,1) = {"
-t
-g
-l
-T
-Y
-s
-g
-t
+se
+JK
+zr
+nU
+so
+sO
+JK
+se
 "}
 (9,1,1) = {"
-n
-g
-U
-V
-r
-x
-g
-n
+Kj
+JK
+zQ
+wH
+Kc
+UC
+JK
+Kj
 "}
 (10,1,1) = {"
-b
-g
-L
-K
-P
-W
-g
-n
+iZ
+JK
+wN
+tX
+zp
+iG
+JK
+Kj
 "}
 (11,1,1) = {"
-t
-g
-m
-y
-o
-z
-A
-t
+se
+JK
+Ab
+yG
+eN
+WL
+zY
+se
 "}
 (12,1,1) = {"
-t
-t
-A
-k
-N
-c
-g
-t
+se
+se
+zY
+SR
+nz
+Sg
+JK
+se
 "}
 (13,1,1) = {"
-t
-t
-u
-h
-a
-M
-g
-t
+se
+se
+Ms
+nu
+Ej
+ji
+JK
+se
 "}
 (14,1,1) = {"
-t
-t
-D
-X
-R
-Z
-g
-n
+se
+se
+yZ
+CP
+Ia
+oD
+JK
+Kj
 "}
 (15,1,1) = {"
-t
-t
-d
-B
-j
-g
-g
-n
+se
+se
+np
+vJ
+ii
+JK
+JK
+Kj
 "}
 (16,1,1) = {"
-t
-t
-t
-J
-n
-n
-b
-t
+se
+se
+se
+LK
+Kj
+Kj
+iZ
+se
 "}

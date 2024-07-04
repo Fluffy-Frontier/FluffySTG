@@ -97,14 +97,10 @@
 /area/lavaland/surface/outdoors)
 "hd" = (
 /obj/structure/stone_tile/slab/cracked{
-	dir = 4
+	dir = 6
 	},
-/obj/structure/stone_tile/slab/cracked{
-	dir = 8
-	},
-/mob/living/basic/mining/ancient_demon/ancient_demon_lesser,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
 "ib" = (
 /obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/random/high_chance/volcanic,
@@ -149,6 +145,14 @@
 "je" = (
 /turf/template_noop,
 /area/template_noop)
+"jw" = (
+/obj/structure/stone_tile/slab,
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
 "me" = (
 /obj/item/stack/sheet/mineral/metal_hydrogen,
 /obj/structure/stone_tile/slab,
@@ -204,7 +208,7 @@
 /obj/structure/stone_tile/slab,
 /obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "rs" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 6
@@ -414,6 +418,12 @@
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"CH" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 4
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
 "CI" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
@@ -468,6 +478,10 @@
 /obj/structure/stone_tile/burnt,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"HM" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/unpowered)
 "HT" = (
 /turf/closed/indestructible/riveted/boss,
 /area/lavaland/surface/outdoors)
@@ -707,7 +721,7 @@
 	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "WP" = (
 /obj/structure/stone_tile/block{
 	dir = 4
@@ -736,6 +750,16 @@
 /area/lavaland/surface/outdoors)
 "Yd" = (
 /turf/closed/indestructible/riveted/boss,
+/area/ruin/unpowered)
+"Ys" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "YJ" = (
 /obj/structure/stone_tile/block{
@@ -796,9 +820,9 @@ je
 (2,1,1) = {"
 cH
 Zp
-HT
-HT
-HT
+Yd
+Yd
+Yd
 TU
 Xb
 TU
@@ -812,18 +836,18 @@ HT
 HT
 HT
 HT
-HT
-TU
-HT
+Yd
+HM
+Yd
 HT
 dH
 cH
 "}
 (3,1,1) = {"
 QP
-HT
-HT
-Tp
+Yd
+Yd
+Ys
 nG
 uo
 Xb
@@ -840,15 +864,15 @@ vd
 vd
 nG
 qA
-SU
-HT
-HT
+CH
+Yd
+Yd
 QP
 "}
 (4,1,1) = {"
 cH
-HT
-nG
+Yd
+vy
 nG
 BQ
 nG
@@ -867,14 +891,14 @@ vd
 aQ
 nG
 nG
-pU
-HT
+jw
+Yd
 cH
 "}
 (5,1,1) = {"
 je
-HT
-pU
+Yd
+jw
 nG
 Zw
 Rb
@@ -893,15 +917,15 @@ Fg
 cH
 BX
 je
-Rb
-HT
+hd
+Yd
 cH
 "}
 (6,1,1) = {"
 je
-HT
-HT
-SU
+Yd
+Yd
+CH
 vd
 wn
 je
@@ -919,15 +943,15 @@ Po
 nG
 nG
 nG
-HT
-HT
+Yd
+Yd
 je
 "}
 (7,1,1) = {"
 je
 Hc
-HT
-TU
+Yd
+HM
 HT
 HT
 je
@@ -944,8 +968,8 @@ HT
 HT
 vd
 fB
-HT
-HT
+Yd
+Yd
 ua
 je
 "}
@@ -1056,10 +1080,10 @@ je
 (12,1,1) = {"
 cH
 Zp
-HT
-HT
-HT
-HT
+Yd
+Yd
+Yd
+Yd
 vd
 Po
 HT
@@ -1081,10 +1105,10 @@ je
 "}
 (13,1,1) = {"
 cH
-HT
-HT
+Yd
+Yd
 VQ
-nG
+vy
 nG
 On
 Po
@@ -1107,9 +1131,9 @@ je
 "}
 (14,1,1) = {"
 cH
-HT
-nG
-nG
+Yd
+vy
+vy
 Uk
 xI
 vd
@@ -1133,8 +1157,8 @@ je
 "}
 (15,1,1) = {"
 Rz
-HT
-nG
+Yd
+vy
 nG
 PN
 vd
@@ -1159,7 +1183,7 @@ je
 "}
 (16,1,1) = {"
 je
-HT
+Yd
 SU
 vd
 Nv
@@ -1218,21 +1242,21 @@ ng
 ng
 HT
 ng
-HT
-HT
-HT
+Yd
+Yd
+Yd
 HT
 je
 vd
 HT
 HT
 HT
-HT
-HT
-HT
-HT
-HT
-HT
+Yd
+Yd
+Yd
+Yd
+Yd
+Yd
 cH
 "}
 (19,1,1) = {"
@@ -1246,7 +1270,7 @@ ng
 ng
 yN
 ij
-HT
+Yd
 je
 je
 vd
@@ -1258,7 +1282,7 @@ rZ
 Zh
 vy
 me
-HT
+Yd
 QP
 "}
 (20,1,1) = {"
@@ -1272,7 +1296,7 @@ ng
 rs
 SB
 sQ
-HT
+Yd
 je
 nG
 eE
@@ -1284,7 +1308,7 @@ Tz
 vy
 zN
 vy
-HT
+Yd
 cH
 "}
 (21,1,1) = {"
@@ -1298,7 +1322,7 @@ Fg
 SB
 LH
 SB
-HT
+Yd
 Rb
 nG
 QP
@@ -1310,7 +1334,7 @@ DS
 mz
 vy
 au
-HT
+Yd
 QP
 "}
 (22,1,1) = {"
@@ -1319,12 +1343,12 @@ HT
 HT
 rs
 Po
-HT
-hd
+Yd
+ij
 wQ
 SB
-HT
-HT
+Yd
+Yd
 HT
 nG
 nG
@@ -1336,7 +1360,7 @@ Tz
 Tz
 TO
 Yd
-HT
+Yd
 Iz
 "}
 (23,1,1) = {"
@@ -1345,11 +1369,11 @@ cK
 HT
 HT
 HT
-HT
-HT
-TU
-HT
-HT
+Yd
+Yd
+HM
+Yd
+Yd
 wb
 HT
 HT
@@ -1358,10 +1382,10 @@ Xb
 cH
 Xb
 cH
-TU
-HT
-HT
-HT
+HM
+Yd
+Yd
+Yd
 Ue
 Xb
 "}

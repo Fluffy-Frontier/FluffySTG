@@ -113,6 +113,9 @@
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
+"sQ" = (
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/unpowered)
 "tK" = (
 /obj/item/gun/ballistic/bow/tribalbow,
 /obj/structure/stone_tile,
@@ -136,6 +139,10 @@
 /obj/structure/stone_tile/block/cracked,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"xo" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/unpowered)
 "xE" = (
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -301,11 +308,11 @@
 
 (1,1,1) = {"
 rb
-Ek
-Ek
-Ek
-Ek
-Ek
+sQ
+sQ
+sQ
+sQ
+sQ
 Ek
 rb
 rb
@@ -315,11 +322,11 @@ rb
 "}
 (2,1,1) = {"
 rb
-Ek
+sQ
 tK
 ep
 Xr
-Ek
+sQ
 VV
 FW
 rb
@@ -329,11 +336,11 @@ rb
 "}
 (3,1,1) = {"
 rb
-Ek
+sQ
 lQ
 Ch
 QQ
-Ek
+sQ
 MP
 kY
 hs
@@ -343,11 +350,11 @@ rb
 "}
 (4,1,1) = {"
 hV
-Ek
+sQ
 Ym
 MA
 Yc
-Ek
+sQ
 Yt
 id
 hN
@@ -357,11 +364,11 @@ iB
 "}
 (5,1,1) = {"
 qp
-Ek
-Ek
+sQ
+sQ
 ph
-Ek
-Ek
+sQ
+sQ
 Ek
 zo
 Ek
@@ -371,7 +378,7 @@ rb
 "}
 (6,1,1) = {"
 Ne
-Ek
+sQ
 fn
 rz
 zE
@@ -385,7 +392,7 @@ Xp
 "}
 (7,1,1) = {"
 qp
-Ek
+sQ
 Sy
 xE
 cB
@@ -399,7 +406,7 @@ zo
 "}
 (8,1,1) = {"
 zo
-hV
+xo
 Sy
 im
 oe
@@ -413,7 +420,7 @@ zo
 "}
 (9,1,1) = {"
 qp
-Ek
+sQ
 ZV
 IQ
 Ek
@@ -427,7 +434,7 @@ rb
 "}
 (10,1,1) = {"
 hV
-Ek
+sQ
 Ek
 oQ
 Gk

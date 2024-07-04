@@ -29,7 +29,7 @@
 "bH" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /turf/closed/indestructible/riveted/boss,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "cG" = (
 /obj/structure/stone_tile/cracked,
 /obj/effect/spawner/random/structure/spikes,
@@ -215,7 +215,7 @@
 "tC" = (
 /obj/structure/flora/grass/jungle/b/style_random,
 /turf/closed/indestructible/riveted/boss,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "tG" = (
 /obj/structure/stone_tile/slab/burnt,
 /obj/effect/spawner/random/mob/necropolis_mob,
@@ -339,6 +339,9 @@
 /obj/structure/flora/bush/ferny/style_random,
 /turf/open/misc/grass/lavaland,
 /area/ruin/unpowered/gaia)
+"Gw" = (
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/unpowered)
 "GL" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/effect/spawner/random/mob/necropolis_mob,
@@ -377,7 +380,7 @@
 "LN" = (
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "Mw" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
@@ -565,12 +568,12 @@ pA
 pA
 VN
 VN
-VN
-VN
-VN
-VN
+Gw
+Gw
+Gw
+Gw
 LN
-VN
+Gw
 VN
 XN
 pA
@@ -582,14 +585,14 @@ Za
 pA
 VN
 VN
-VN
-VN
+Gw
+Gw
 Db
 Aw
 uH
 jd
-VN
-VN
+Gw
+Gw
 VN
 pA
 pA
@@ -599,7 +602,7 @@ Qg
 VN
 Pl
 VN
-VN
+Gw
 tC
 KK
 DP
@@ -607,8 +610,8 @@ ph
 br
 it
 YZ
-VN
-VN
+Gw
+Gw
 VN
 pA
 Ww
@@ -616,8 +619,8 @@ Ww
 (6,1,1) = {"
 Ww
 Mw
-VN
-VN
+Gw
+Gw
 br
 wB
 Sj
@@ -626,15 +629,15 @@ br
 zV
 DP
 KK
-VN
-VN
+Gw
+Gw
 cG
 Za
 "}
 (7,1,1) = {"
 GT
 QG
-VN
+Gw
 eP
 KK
 aw
@@ -645,14 +648,14 @@ eP
 qd
 aJ
 MQ
-VN
+Gw
 wX
 Za
 "}
 (8,1,1) = {"
 pA
 PO
-VN
+Gw
 aJ
 Wu
 ia
@@ -663,14 +666,14 @@ uH
 ee
 cZ
 aJ
-VN
+Gw
 Lj
 Za
 "}
 (9,1,1) = {"
 Za
 Lj
-VN
+Gw
 PG
 KK
 ti
@@ -681,14 +684,14 @@ br
 MZ
 xO
 JI
-VN
+Gw
 pA
 VN
 "}
 (10,1,1) = {"
 Za
 pA
-VN
+Gw
 pZ
 lL
 MO
@@ -699,7 +702,7 @@ SY
 uH
 br
 Gc
-VN
+Gw
 cG
 VN
 "}
@@ -707,7 +710,7 @@ VN
 Za
 Mw
 bH
-VN
+Gw
 qi
 YN
 TH
@@ -716,8 +719,8 @@ PG
 br
 rf
 zN
-VN
-VN
+Gw
+Gw
 wX
 VN
 "}
@@ -725,16 +728,16 @@ VN
 VN
 tG
 VN
-VN
-VN
+Gw
+Gw
 jd
 sh
 Wu
 Oq
 FL
 DH
-VN
-VN
+Gw
+Gw
 VN
 PO
 VN
@@ -744,14 +747,14 @@ Za
 pA
 VN
 VN
-VN
-VN
+Gw
+Gw
 Wu
 go
 lL
 ee
-VN
-VN
+Gw
+Gw
 VN
 XN
 pA
@@ -763,12 +766,12 @@ Lj
 pA
 VN
 VN
-VN
-VN
+Gw
+Gw
 LN
-VN
-VN
-VN
+Gw
+Gw
+Gw
 VN
 pA
 Qg

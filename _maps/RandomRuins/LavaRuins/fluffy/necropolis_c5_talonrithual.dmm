@@ -167,6 +167,10 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"ir" = (
+/obj/structure/stone_tile/slab/cracked,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered)
 "jc" = (
 /obj/structure/stone_tile/burnt,
 /obj/structure/stone_tile/cracked{
@@ -507,7 +511,7 @@
 	pixel_y = 10
 	},
 /turf/closed/indestructible/riveted/boss/wasteland,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "FN" = (
 /obj/structure/stone_tile/cracked{
 	dir = 4
@@ -578,7 +582,7 @@
 	dir = 8
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "MV" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
@@ -662,7 +666,11 @@
 	},
 /obj/effect/gibspawner/human/bodypartless,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
+"Vk" = (
+/obj/structure/stone_tile/burnt,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered)
 "VD" = (
 /obj/structure/stone_tile/cracked{
 	dir = 1
@@ -724,11 +732,11 @@ AB
 "}
 (2,1,1) = {"
 AB
-Ae
-Ae
-ce
-Ae
-Ae
+xX
+xX
+Ls
+xX
+xX
 gs
 CV
 Ae
@@ -755,7 +763,7 @@ xX
 EY
 xX
 xX
-Ae
+xX
 Ae
 cI
 Ae
@@ -807,7 +815,7 @@ NG
 cs
 vQ
 pd
-Qb
+Vk
 Cq
 kM
 AB
@@ -859,7 +867,7 @@ eK
 GW
 fL
 vj
-DD
+ir
 oy
 AB
 AB
@@ -911,7 +919,7 @@ Um
 kZ
 nq
 xX
-Ae
+xX
 AB
 AB
 DR
@@ -937,7 +945,7 @@ xX
 BV
 Ls
 xX
-Ae
+xX
 AB
 AB
 Ae
@@ -958,11 +966,11 @@ AB
 "}
 (11,1,1) = {"
 AB
-Ae
-ce
-ce
-Ae
-Ae
+xX
+Ls
+Ls
+xX
+xX
 dL
 AB
 Ae

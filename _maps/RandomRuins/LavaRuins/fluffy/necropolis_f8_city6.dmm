@@ -178,7 +178,7 @@
 	},
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/volcanic/lava_land_surface,
-/area/ruin/unpowered)
+/area/lavaland/surface/outdoors)
 "fZ" = (
 /obj/structure/rack/shelf{
 	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
@@ -187,7 +187,7 @@
 /obj/item/coin/silver,
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "gk" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -242,7 +242,7 @@
 	dir = 1
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
-/area/ruin/unpowered)
+/area/lavaland/surface/outdoors)
 "jc" = (
 /obj/structure/rack/shelf{
 	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
@@ -504,7 +504,7 @@
 /obj/structure/stone_tile/slab,
 /mob/living/basic/mining/ancient_demon,
 /turf/closed/mineral/random/high_chance/volcanic,
-/area/ruin/unpowered)
+/area/lavaland/surface/outdoors)
 "vx" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 6
@@ -525,9 +525,8 @@
 /turf/closed/indestructible/riveted/boss,
 /area/ruin/unpowered)
 "we" = (
-/obj/structure/table/wood,
 /obj/structure/stone_tile/slab,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/lava/smooth/lava_land_surface,
 /area/ruin/unpowered)
 "wp" = (
 /obj/structure/stone_tile,
@@ -591,7 +590,7 @@
 /obj/item/coin/silver,
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/random/high_chance/volcanic,
-/area/ruin/unpowered)
+/area/lavaland/surface/outdoors)
 "zy" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 6
@@ -614,12 +613,10 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "zV" = (
-/obj/structure/rack/shelf{
-	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
-	icon_state = "empty_shelf_1"
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
 	},
-/obj/structure/stone_tile/slab,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Am" = (
 /obj/structure/flora/rock/pile/style_random,
@@ -866,7 +863,7 @@
 	},
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered)
+/area/lavaland/surface/outdoors)
 "MJ" = (
 /obj/structure/stone_tile/block,
 /obj/effect/spawner/random/structure/spikes,
@@ -898,7 +895,7 @@
 	dir = 1
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "OK" = (
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
@@ -1147,11 +1144,11 @@ sx
 BQ
 ID
 Ih
-aB
-aB
-eV
+vZ
+vZ
+UE
 uH
-aB
+vZ
 Rb
 hG
 "}
@@ -1172,13 +1169,13 @@ Tb
 nD
 kQ
 ID
-aB
+vZ
 vZ
 cB
 HY
 CQ
 vZ
-aB
+vZ
 uH
 "}
 (4,1,1) = {"
@@ -1198,13 +1195,13 @@ ID
 ID
 ZJ
 Sb
-aB
+vZ
 tw
 CX
 Jv
 Qu
 FA
-aB
+vZ
 gZ
 "}
 (5,1,1) = {"
@@ -1230,7 +1227,7 @@ BY
 FV
 FA
 OK
-aB
+vZ
 hG
 "}
 (6,1,1) = {"
@@ -1256,12 +1253,12 @@ ag
 tB
 Sl
 ir
-aB
+vZ
 hG
 "}
 (7,1,1) = {"
 Sb
-aB
+vZ
 vZ
 vZ
 vZ
@@ -1276,33 +1273,33 @@ ID
 tI
 YS
 rM
-aB
+vZ
 cT
 CX
 CX
 FA
 FA
-aB
+vZ
 KG
 "}
 (8,1,1) = {"
 Sb
-aB
+vZ
 qB
 ak
 mx
 mx
 Sb
-we
+xd
 Sb
 qB
 qB
-aB
+vZ
 ID
 kc
 az
 ID
-aB
+vZ
 vZ
 vZ
 vZ
@@ -1313,7 +1310,7 @@ Sb
 "}
 (9,1,1) = {"
 Sb
-aB
+vZ
 qB
 cT
 CQ
@@ -1323,64 +1320,64 @@ fU
 MH
 ln
 qB
-aB
+vZ
 Sb
 ID
 ID
 rM
-aB
+vZ
 EA
 qB
 CX
 FA
-FA
+Bk
 rM
 Sb
 "}
 (10,1,1) = {"
 rM
-aB
+vZ
 qB
 Bn
 eI
 jc
 iW
 uP
-CX
+Xn
 CX
 FA
-aB
+vZ
 uH
 Qh
 ID
 rM
-aB
+vZ
 qB
 zy
 FA
 FA
-FA
+Bk
 rM
 Sb
 "}
 (11,1,1) = {"
 gZ
-aB
+vZ
 qB
 qB
 HR
 zx
-FA
-FA
+Bk
+Bk
 qJ
 xa
 cT
-aB
+vZ
 uH
 rM
 ID
 rM
-aB
+vZ
 vZ
 sH
 oM
@@ -1391,42 +1388,42 @@ Sb
 "}
 (12,1,1) = {"
 gZ
-aB
+vZ
 vZ
 Gt
 Bn
 CX
-ir
-CX
+zV
+Xn
 Bi
 mx
 vZ
-aB
+vZ
 hG
 bj
 SR
 ID
 Sb
-aB
-aB
-eV
-aB
-aB
+vZ
+vZ
+UE
+vZ
+vZ
 kX
 rM
 "}
 (13,1,1) = {"
 ht
 Yk
-aB
-aB
-aB
-aB
+vZ
+vZ
+vZ
+vZ
 Bk
 rM
-aB
-aB
-aB
+vZ
+vZ
+vZ
 MZ
 Ir
 YS
@@ -1434,11 +1431,11 @@ gS
 Ed
 aB
 aB
-zV
-zl
+Bn
+mx
 fZ
-aB
-aB
+vZ
+vZ
 uH
 "}
 (14,1,1) = {"
@@ -1462,9 +1459,9 @@ aB
 Sb
 RI
 Sb
-YS
+qB
 Ou
-aB
+vZ
 uH
 "}
 (15,1,1) = {"
@@ -1489,8 +1486,8 @@ ID
 GL
 rX
 YS
-YS
-aB
+qB
+vZ
 hG
 "}
 (16,1,1) = {"
@@ -1515,8 +1512,8 @@ ID
 xd
 nD
 nD
-nD
-eV
+we
+UE
 Sb
 "}
 (17,1,1) = {"

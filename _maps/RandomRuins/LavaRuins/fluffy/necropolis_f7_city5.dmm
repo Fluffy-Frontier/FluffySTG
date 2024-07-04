@@ -81,7 +81,7 @@
 /obj/structure/table/wood,
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/random/high_chance/volcanic,
-/area/ruin/unpowered)
+/area/lavaland/surface/outdoors)
 "fw" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -179,11 +179,6 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"hF" = (
-/obj/structure/stone_tile/slab,
-/obj/effect/spawner/random/mob/necropolis_mob,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/ruin/unpowered)
 "hV" = (
 /obj/structure/stone_tile/block,
 /turf/open/lava/smooth/lava_land_surface,
@@ -513,7 +508,7 @@
 /obj/item/coin/silver,
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/random/high_chance/volcanic,
-/area/ruin/unpowered)
+/area/lavaland/surface/outdoors)
 "wg" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 4
@@ -874,7 +869,7 @@
 	},
 /obj/item/coin/silver,
 /turf/closed/mineral/volcanic/lava_land_surface,
-/area/ruin/unpowered)
+/area/lavaland/surface/outdoors)
 "Lg" = (
 /obj/structure/stone_tile/slab,
 /obj/item/coin/silver,
@@ -900,9 +895,10 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Lw" = (
-/obj/effect/spawner/random/structure/spikes,
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
-/area/ruin/unpowered)
+/area/lavaland/surface/outdoors)
 "LH" = (
 /obj/structure/stone_tile/slab,
 /obj/item/coin/silver,
@@ -1328,11 +1324,11 @@ cg
 (2,1,1) = {"
 Gd
 AO
-Vq
-HW
-Vq
-Vq
-HW
+GU
+jO
+GU
+GU
+jO
 Gd
 Gd
 HW
@@ -1343,78 +1339,78 @@ MR
 OG
 cg
 AO
-Vq
-Vq
-HW
-Vq
-Vq
+GU
+GU
+jO
+GU
+GU
 tG
 Gd
 "}
 (3,1,1) = {"
 Tr
-Vq
+GU
 GU
 CX
 EO
 WV
 GU
-XP
-XP
-lx
-GU
+MR
+MR
+hm
+Vq
 Vq
 Gd
 xA
 jq
 Gd
-Vq
+GU
 GU
 WV
 BB
 hc
 GU
-Vq
+GU
 Gd
 "}
 (4,1,1) = {"
 Gd
-Vq
+GU
 Gm
 EO
 rg
 YI
 GU
-CX
-hF
-XP
-XP
+Te
+mL
+MR
+MR
 Vq
 Te
 mL
 fM
 Gd
-Vq
+GU
 iX
 CX
 Lg
 cg
 hc
-HW
+jO
 Gd
 "}
 (5,1,1) = {"
 Gd
-Vq
+GU
 VT
 EO
 fQ
 WV
 GU
 vV
-iX
+OG
 eS
-iX
+OG
 Gd
 zl
 tW
@@ -1431,7 +1427,7 @@ Vn
 "}
 (6,1,1) = {"
 cg
-HW
+jO
 xV
 EO
 LH
@@ -1440,7 +1436,7 @@ GU
 xV
 qk
 oM
-Lw
+zl
 Gd
 ge
 Hq
@@ -1452,12 +1448,12 @@ Gg
 cg
 cg
 hc
-HW
+jO
 zl
 "}
 (7,1,1) = {"
 cg
-Vq
+GU
 WV
 EO
 wr
@@ -1472,18 +1468,18 @@ ag
 WX
 tD
 gP
-Vq
+GU
 Ek
 cg
 cg
 Iw
 BB
-Vq
+GU
 zl
 "}
 (8,1,1) = {"
 Uw
-Vq
+GU
 Gm
 rg
 EO
@@ -1493,23 +1489,23 @@ EO
 EO
 BH
 Du
-Vq
+GU
 hV
 ag
 Hq
 ag
-Vq
+GU
 GU
 hc
 WV
 hc
 GU
-Vq
+GU
 cg
 "}
 (9,1,1) = {"
 aY
-Vq
+GU
 GU
 VS
 Gm
@@ -1519,7 +1515,7 @@ uV
 WV
 YI
 GU
-Vq
+GU
 MU
 pM
 Ec
@@ -1529,34 +1525,34 @@ HW
 GU
 GU
 GU
-Vq
+GU
 QZ
 cg
 "}
 (10,1,1) = {"
 Yg
 oo
-Vq
-HW
+GU
+jO
 Gd
 Gd
-HW
-Vq
-Vq
-Vq
-Vq
+jO
+GU
+GU
+GU
+GU
 em
 kv
 xx
 TQ
 vJ
-HW
+jO
 jO
 WV
 md
 WV
 GU
-Vq
+GU
 cg
 "}
 (11,1,1) = {"
@@ -1576,13 +1572,13 @@ yC
 DA
 IJ
 Sl
-HW
+jO
 iX
 zo
 cg
 kd
 md
-Vq
+GU
 zl
 "}
 (12,1,1) = {"
@@ -1608,7 +1604,7 @@ TM
 cg
 cg
 WV
-Vq
+GU
 Vn
 "}
 (13,1,1) = {"
@@ -1634,7 +1630,7 @@ wF
 cg
 MK
 et
-Vq
+GU
 cg
 "}
 (14,1,1) = {"
@@ -1654,13 +1650,13 @@ iY
 Uv
 fD
 pW
-Vq
+GU
 RJ
 Rw
 se
 EO
 md
-Vq
+GU
 cg
 "}
 (15,1,1) = {"
@@ -1670,23 +1666,23 @@ Gd
 ag
 ag
 HW
-Vq
-Vq
-Vq
-Vq
-Vq
+GU
+GU
+GU
+GU
+GU
 sw
 RD
 xx
 Lo
 Za
-Vq
+GU
 GU
 Xl
 WV
 Wf
 GU
-Vq
+GU
 cg
 "}
 (16,1,1) = {"
@@ -1696,22 +1692,22 @@ ag
 ag
 ag
 ag
-Vq
+GU
 uK
 Gm
 WV
 GU
-Vq
+GU
 Rh
 AO
 PJ
 cg
 fw
-Vq
-Vq
-Vq
-Vq
-Vq
+GU
+GU
+GU
+GU
+GU
 QZ
 Gd
 "}
@@ -1727,18 +1723,18 @@ cg
 rg
 Oq
 EO
-Vq
+GU
 cg
 ag
 Hq
 ag
-Vq
+GU
 OE
 to
 Az
 WV
 GU
-Vq
+GU
 zl
 "}
 (18,1,1) = {"
@@ -1753,18 +1749,18 @@ Rw
 cg
 EO
 cg
-Vq
+GU
 cg
 IB
 Xy
 ag
-Vq
+GU
 iX
 lx
 XP
 XP
 to
-HW
+jO
 Vn
 "}
 (19,1,1) = {"
@@ -1778,7 +1774,7 @@ Vq
 Fn
 WU
 xV
-iX
+OG
 dp
 YA
 In
@@ -1790,7 +1786,7 @@ oM
 iX
 Lg
 pB
-HW
+jO
 Jc
 "}
 (20,1,1) = {"
@@ -1802,9 +1798,9 @@ hm
 iK
 Vq
 cg
-EO
+xx
 AY
-Ek
+kb
 OG
 OG
 Qi
@@ -1816,7 +1812,7 @@ NR
 iX
 Ek
 df
-Vq
+GU
 Gd
 "}
 (21,1,1) = {"
@@ -1827,22 +1823,22 @@ MR
 ug
 iK
 Vq
-iX
+OG
 KV
-gY
-iX
+Lw
+OG
 Vq
 Gd
 Lo
 In
 zl
-Vq
+GU
 rg
 EO
 cg
 cg
 NK
-Vq
+GU
 cg
 "}
 (22,1,1) = {"
@@ -1853,22 +1849,22 @@ iy
 MR
 iN
 Vq
-XP
-iX
-iX
-GU
+MR
+OG
+OG
+Vq
 Vq
 ag
 Ys
 Ec
 tI
-Vq
+GU
 GU
 WV
 Hn
 WV
 GU
-Vq
+GU
 cg
 "}
 (23,1,1) = {"
@@ -1889,11 +1885,11 @@ Hq
 xx
 tI
 AG
-Vq
-Vq
-Vq
-Vq
-Vq
+GU
+GU
+GU
+GU
+GU
 yy
 cg
 "}

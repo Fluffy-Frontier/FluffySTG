@@ -515,7 +515,7 @@
 	dir = 4
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "CH" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 1
@@ -576,6 +576,10 @@
 /obj/structure/flora/rock/pile/style_random,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Fg" = (
+/obj/structure/stone_tile/slab/burnt,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered)
 "Fm" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 6
@@ -639,7 +643,7 @@
 	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "IB" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
@@ -651,7 +655,7 @@
 	dir = 8
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "IW" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
@@ -697,7 +701,7 @@
 "Kp" = (
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/strange_rock/volcanic,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "Kw" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 6
@@ -905,7 +909,7 @@
 /obj/structure/stone_tile/slab,
 /mob/living/basic/mining/ancient_demon/ancient_demon_lesser,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "TO" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -1018,6 +1022,10 @@
 /obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"XJ" = (
+/obj/structure/flora/rock/pile/style_random,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "XM" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -1077,6 +1085,10 @@
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"ZV" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/unpowered)
 "ZZ" = (
 /obj/structure/stone_tile/block{
 	dir = 4
@@ -1116,17 +1128,17 @@ ZH
 aK
 zy
 aK
-aK
-aK
-aK
-aK
-aK
+ei
+ei
+ei
+ei
+ei
 Rb
 mL
 XM
 XM
-aK
-aK
+ei
+ei
 aK
 aK
 aK
@@ -1150,9 +1162,9 @@ ei
 ei
 fr
 fr
-aK
-aK
-CN
+ei
+ei
+wB
 CN
 aK
 Df
@@ -1168,7 +1180,7 @@ eh
 cS
 EI
 Hj
-fr
+MA
 id
 wB
 wB
@@ -1176,9 +1188,9 @@ QX
 ei
 lF
 mL
-iW
-fr
-lF
+GS
+MA
+hV
 sx
 CN
 Hj
@@ -1203,7 +1215,7 @@ ei
 XM
 gI
 Kp
-fr
+MA
 CN
 CN
 aK
@@ -1228,9 +1240,9 @@ Yj
 ei
 XM
 fr
-aK
-aK
-XC
+ei
+ei
+XJ
 Uq
 aK
 eh
@@ -1246,7 +1258,7 @@ aK
 fr
 Pd
 eh
-QA
+Fg
 ei
 MA
 xW
@@ -1255,9 +1267,9 @@ ei
 UI
 Lm
 XM
-aK
-zy
-aK
+ei
+ZV
+ei
 aK
 eh
 aK
@@ -1272,7 +1284,7 @@ aK
 fr
 EI
 eh
-Hj
+ry
 ei
 iP
 jB
@@ -1324,7 +1336,7 @@ aK
 ei
 UI
 eh
-aK
+ei
 ei
 ei
 ei
@@ -1542,13 +1554,13 @@ xq
 xV
 eh
 eh
-aK
-aK
-aK
-aK
-aK
-aK
-aK
+ei
+ei
+ei
+ei
+ei
+ei
+ei
 iW
 pT
 "}
@@ -1575,7 +1587,7 @@ um
 um
 wb
 ei
-aK
+ei
 pT
 "}
 (20,1,1) = {"
@@ -1601,7 +1613,7 @@ cf
 cW
 Fm
 Tg
-aK
+ei
 pT
 "}
 (21,1,1) = {"
@@ -1627,7 +1639,7 @@ rZ
 ry
 VT
 wB
-aK
+ei
 eh
 "}
 (22,1,1) = {"
@@ -1645,7 +1657,7 @@ aK
 Hj
 Hj
 aK
-aK
+ei
 rm
 Xz
 ei
@@ -1653,7 +1665,7 @@ wB
 ra
 SJ
 ei
-aK
+ei
 ek
 "}
 (23,1,1) = {"
@@ -1671,14 +1683,14 @@ XM
 mL
 mL
 Rb
-aK
-aK
-aK
-aK
-aK
-aK
-aK
-aK
+ei
+ei
+ei
+ei
+ei
+ei
+ei
+ei
 Gn
 pT
 "}

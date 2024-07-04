@@ -15,6 +15,10 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"i" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/unpowered)
 "j" = (
 /obj/structure/stone_tile/cracked{
 	dir = 1
@@ -30,6 +34,9 @@
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"n" = (
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/unpowered)
 "o" = (
 /obj/structure/stone_tile/cracked{
 	dir = 4
@@ -215,10 +222,10 @@
 (1,1,1) = {"
 y
 y
-H
-H
-H
-H
+n
+n
+n
+n
 F
 F
 y
@@ -228,11 +235,11 @@ t
 "}
 (2,1,1) = {"
 Q
-H
-H
+n
+n
 p
 A
-H
+n
 H
 F
 F
@@ -242,12 +249,12 @@ y
 "}
 (3,1,1) = {"
 v
-M
+i
 a
 z
 U
-H
-H
+n
+n
 H
 f
 H
@@ -256,12 +263,12 @@ H
 "}
 (4,1,1) = {"
 j
-H
+n
 K
 C
 u
 J
-M
+i
 x
 l
 t
@@ -270,12 +277,12 @@ o
 "}
 (5,1,1) = {"
 d
-H
+n
 J
 J
 a
 a
-H
+n
 D
 t
 t
@@ -284,12 +291,12 @@ S
 "}
 (6,1,1) = {"
 Y
-H
+n
 J
 a
 a
-H
-H
+n
+n
 M
 t
 H
@@ -298,11 +305,11 @@ H
 "}
 (7,1,1) = {"
 B
-H
-H
+n
+n
 V
 R
-H
+n
 H
 y
 t
@@ -313,10 +320,10 @@ y
 (8,1,1) = {"
 y
 y
-H
-H
-H
-H
+n
+n
+n
+n
 y
 y
 F

@@ -67,6 +67,10 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"jS" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/unpowered)
 "lu" = (
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
@@ -214,6 +218,9 @@
 /turf/open/floor/plating/abductor2{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
+/area/ruin/unpowered)
+"GO" = (
+/turf/closed/indestructible/riveted/boss,
 /area/ruin/unpowered)
 "HB" = (
 /obj/item/organ/external/tail/monkey,
@@ -381,11 +388,11 @@ nu
 rx
 rx
 sK
-rx
-rx
-rx
-VQ
-VQ
+GO
+GO
+GO
+jS
+jS
 UO
 "}
 (4,1,1) = {"
@@ -396,7 +403,7 @@ Mh
 Nj
 jx
 lu
-VQ
+jS
 Lz
 "}
 (5,1,1) = {"
@@ -407,7 +414,7 @@ Gc
 lu
 lu
 qs
-rx
+GO
 rx
 "}
 (6,1,1) = {"

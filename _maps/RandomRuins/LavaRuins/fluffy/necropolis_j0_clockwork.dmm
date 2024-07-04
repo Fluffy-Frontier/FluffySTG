@@ -160,7 +160,7 @@
 	icon = 'modular_nova/modules/liquids/icons/turf/smoothrocks.dmi';
 	icon_state = "smoothrocks-55"
 	},
-/area/lavaland/surface/outdoors)
+/area/ruin/powered)
 "jL" = (
 /obj/structure/flora/ash/leaf_shroom,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -379,7 +379,7 @@
 	icon = 'modular_nova/modules/liquids/icons/turf/smoothrocks.dmi';
 	icon_state = "smoothrocks-55"
 	},
-/area/lavaland/surface/outdoors)
+/area/ruin/powered)
 "Ac" = (
 /obj/item/stack/sheet/bronze,
 /obj/structure/window/bronze/fulltile,
@@ -512,7 +512,7 @@
 /obj/structure/marker_beacon/burgundy,
 /obj/structure/destructible/clockwork/trap/skewer,
 /turf/open/floor/bronze/filled/lavaland,
-/area/lavaland/surface/outdoors)
+/area/ruin/powered)
 "HX" = (
 /turf/closed/wall/mineral/bronze,
 /area/ruin/powered)
@@ -561,7 +561,7 @@
 /obj/structure/destructible/clockwork/trap/skewer,
 /obj/structure/window/bronze/fulltile,
 /turf/open/floor/bronze/filled/lavaland,
-/area/lavaland/surface/outdoors)
+/area/ruin/powered)
 "Ng" = (
 /obj/structure/fluff/clockwork/alloy_shards,
 /obj/structure/window/bronze/fulltile,
@@ -576,6 +576,9 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Oy" = (
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/powered)
 "OY" = (
 /obj/structure/destructible/clockwork/trap/flipper,
 /obj/structure/fluff/clockwork/blind_eye,
@@ -794,12 +797,12 @@ bU
 cH
 Ks
 nd
-ds
+Oy
 VI
 aD
 KX
-GZ
-xR
+KX
+HX
 nd
 GO
 "}
@@ -828,7 +831,7 @@ cy
 Kd
 kN
 HX
-GZ
+KX
 xQ
 "}
 (8,1,1) = {"
@@ -842,7 +845,7 @@ OY
 tw
 iX
 xo
-ds
+Oy
 si
 "}
 (9,1,1) = {"
@@ -856,21 +859,21 @@ WD
 Dy
 tD
 HX
-ds
+Oy
 aT
 "}
 (10,1,1) = {"
 DJ
 yi
 zE
-GZ
+KX
 FX
 Ut
 ji
 Qq
 uR
 YG
-ds
+Oy
 eL
 "}
 (11,1,1) = {"
@@ -878,13 +881,13 @@ DV
 cw
 EK
 Ac
-GZ
+KX
 Vf
 lj
 ZK
-ds
-ds
-ds
+Oy
+Oy
+Oy
 aT
 "}
 (12,1,1) = {"
@@ -892,11 +895,11 @@ Xe
 Ya
 Bj
 CX
-ds
+Oy
 sp
 Ng
 wJ
-ds
+Oy
 bj
 mf
 Cx
@@ -906,11 +909,11 @@ ds
 XY
 CY
 xR
-ds
-ds
-ds
-ds
-ds
+Oy
+Oy
+Oy
+Oy
+Oy
 xR
 el
 Cx

@@ -98,7 +98,7 @@
 	icon = 'modular_nova/modules/liquids/icons/turf/smoothrocks.dmi';
 	icon_state = "smoothrocks-55"
 	},
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "fA" = (
 /obj/item/reagent_containers/cup/bowl/wood_bowl,
 /obj/structure/stone_tile,
@@ -450,7 +450,7 @@
 /area/ruin/unpowered)
 "wa" = (
 /turf/closed/indestructible/riveted/boss,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "wI" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -479,7 +479,7 @@
 /obj/structure/stone_tile/slab,
 /obj/item/crowbar/ashwalker,
 /turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "yC" = (
 /obj/structure/stone_tile/surrounding/cracked,
 /obj/structure/stone_tile/center/burnt,
@@ -823,9 +823,9 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "SD" = (
-/obj/effect/mapping_helpers/bombable_wall,
-/turf/closed/indestructible/riveted/boss/wasteland,
-/area/lavaland/surface/outdoors)
+/obj/structure/wall_torch/mount_only,
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/unpowered)
 "TU" = (
 /obj/structure/stone_tile/slab/cracked,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -1010,7 +1010,7 @@ MA
 WT
 wa
 wa
-RH
+SD
 wa
 wa
 vN
@@ -1114,7 +1114,7 @@ RH
 NI
 sQ
 wa
-CK
+Rx
 wa
 Em
 uS
@@ -1244,7 +1244,7 @@ dA
 fO
 ng
 wa
-md
+Ky
 wa
 Rp
 NI
@@ -1341,14 +1341,14 @@ MA
 sQ
 wa
 wa
-RH
 SD
+oQ
 wa
 Xs
 NI
 wa
 wa
-RH
+SD
 wa
 wa
 Xs

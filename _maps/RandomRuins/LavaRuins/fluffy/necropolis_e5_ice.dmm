@@ -11,14 +11,9 @@
 	color = "#77FFFF";
 	name = "Ethereal crystal";
 	alpha = 150;
-	maxcharge = 7e+007;
 	desc = "A cold crystal that can serve as sort of power source. Probably."
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	icon = 'icons/turf/snow.dmi';
-	icon_state = "snow";
-	base_icon_state = null
-	},
+/turf/open/misc/snow,
 /area/ruin/unpowered)
 "d" = (
 /obj/structure/fluff/divine/nexus{
@@ -29,14 +24,9 @@
 	color = "#77FFFF";
 	name = "Ethereal crystal";
 	alpha = 150;
-	maxcharge = 7e+007;
 	desc = "A cold crystal that can serve as sort of power source. Probably."
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	icon = 'icons/turf/snow.dmi';
-	icon_state = "snow";
-	base_icon_state = null
-	},
+/turf/open/misc/snow,
 /area/ruin/unpowered)
 "e" = (
 /obj/effect/turf_decal/weather/snow/corner{
@@ -56,11 +46,7 @@
 	color = "#ccccFF";
 	light_color = "#ccccFF"
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	base_icon_state = "ice_turf-0";
-	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0"
-	},
+/turf/open/misc/ice,
 /area/ruin/unpowered)
 "h" = (
 /obj/effect/turf_decal/weather/snow/corner{
@@ -81,11 +67,7 @@
 	light_color = "#ccccFF"
 	},
 /obj/item/melee/frozen_moonlight,
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	base_icon_state = "ice_turf-0";
-	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0"
-	},
+/turf/open/misc/ice,
 /area/ruin/unpowered)
 "i" = (
 /turf/template_noop,
@@ -95,31 +77,19 @@
 /area/lavaland/surface/outdoors)
 "p" = (
 /obj/item/grenade/gas_crystal/nitrous_oxide_crystal,
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	base_icon_state = "ice_turf-0";
-	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0"
-	},
+/turf/open/misc/ice,
 /area/ruin/unpowered)
 "q" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 6
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	base_icon_state = "ice_turf-0";
-	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0"
-	},
+/turf/open/misc/ice,
 /area/ruin/unpowered)
 "r" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 1
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	base_icon_state = "ice_turf-0";
-	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0"
-	},
+/turf/open/misc/ice,
 /area/ruin/unpowered)
 "y" = (
 /obj/effect/mapping_helpers/bombable_wall,
@@ -127,21 +97,13 @@
 /area/lavaland/surface/outdoors)
 "z" = (
 /obj/effect/turf_decal/weather/snow/corner,
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	base_icon_state = "ice_turf-0";
-	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0"
-	},
+/turf/open/misc/ice,
 /area/ruin/unpowered)
 "B" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 10
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	base_icon_state = "ice_turf-0";
-	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0"
-	},
+/turf/open/misc/ice,
 /area/ruin/unpowered)
 "C" = (
 /obj/effect/turf_decal/weather/snow/corner{
@@ -161,11 +123,7 @@
 	color = "#ccccFF";
 	light_color = "#ccccFF"
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	base_icon_state = "ice_turf-0";
-	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0"
-	},
+/turf/open/misc/ice,
 /area/ruin/unpowered)
 "D" = (
 /obj/structure/flora/ash/chilly,
@@ -183,11 +141,7 @@
 	color = "#ccccFF";
 	light_color = "#ccccFF"
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	icon = 'icons/turf/snow.dmi';
-	icon_state = "snow";
-	base_icon_state = null
-	},
+/turf/open/misc/snow,
 /area/ruin/unpowered)
 "G" = (
 /obj/structure/fluff/divine/conduit{
@@ -197,14 +151,9 @@
 	color = "#77FFFF";
 	name = "Ethereal crystal";
 	alpha = 150;
-	maxcharge = 7e+007;
 	desc = "A cold crystal that can serve as sort of power source. Probably."
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	icon = 'icons/turf/snow.dmi';
-	icon_state = "snow";
-	base_icon_state = null
-	},
+/turf/open/misc/snow,
 /area/ruin/unpowered)
 "I" = (
 /mob/living/basic/mining/ice_demon{
@@ -221,11 +170,11 @@
 	color = "#ccccFF";
 	light_color = "#ccccFF"
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	base_icon_state = "ice_turf-0";
-	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0"
-	},
+/turf/open/misc/ice,
+/area/ruin/unpowered)
+"K" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
 /area/ruin/unpowered)
 "L" = (
 /obj/effect/turf_decal/weather/snow/corner{
@@ -234,11 +183,7 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 8
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	base_icon_state = "ice_turf-0";
-	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0"
-	},
+/turf/open/misc/ice,
 /area/ruin/unpowered)
 "M" = (
 /obj/effect/spawner/random/structure/spikes,
@@ -246,48 +191,24 @@
 /area/lavaland/surface/outdoors)
 "N" = (
 /obj/structure/flora/rock/pile/icy/style_random,
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	icon = 'icons/turf/snow.dmi';
-	icon_state = "snow";
-	base_icon_state = null
-	},
+/turf/open/misc/snow,
 /area/ruin/unpowered)
 "P" = (
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	base_icon_state = "ice_turf-0";
-	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0"
-	},
+/turf/open/misc/ice,
 /area/ruin/unpowered)
 "R" = (
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	icon = 'icons/turf/snow.dmi';
-	icon_state = "snow";
-	base_icon_state = null
-	},
+/turf/open/misc/snow,
 /area/ruin/unpowered)
 "U" = (
 /obj/structure/flora/grass/both/style_random,
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	icon = 'icons/turf/snow.dmi';
-	icon_state = "snow";
-	base_icon_state = null
-	},
+/turf/open/misc/snow,
 /area/ruin/unpowered)
 "W" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 5
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	base_icon_state = "ice_turf-0";
-	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0"
-	},
+/turf/open/misc/ice,
 /area/ruin/unpowered)
-"X" = (
-/obj/effect/spawner/random/structure/spikes,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/template_noop)
 "Y" = (
 /obj/structure/fluff/divine/shrine{
 	color = "#7777FF"
@@ -298,21 +219,13 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 8
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	base_icon_state = "ice_turf-0";
-	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0"
-	},
+/turf/open/misc/ice,
 /area/ruin/unpowered)
 "Z" = (
 /obj/structure/fluff/divine/shrine{
 	color = "#7777FF"
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface{
-	icon = 'icons/turf/snow.dmi';
-	icon_state = "snow";
-	base_icon_state = null
-	},
+/turf/open/misc/snow,
 /area/ruin/unpowered)
 
 (1,1,1) = {"
@@ -320,7 +233,7 @@ i
 i
 k
 y
-X
+M
 k
 k
 M
@@ -329,23 +242,23 @@ i
 (2,1,1) = {"
 i
 k
-k
 a
 a
 a
-k
+a
+a
 k
 M
 "}
 (3,1,1) = {"
 y
-k
+a
 a
 U
 e
 B
 a
-k
+a
 k
 "}
 (4,1,1) = {"
@@ -357,7 +270,7 @@ r
 p
 Y
 a
-k
+a
 "}
 (5,1,1) = {"
 M
@@ -368,7 +281,7 @@ P
 q
 N
 R
-y
+K
 "}
 (6,1,1) = {"
 y
@@ -379,27 +292,27 @@ z
 U
 Z
 a
-k
+a
 "}
 (7,1,1) = {"
 y
-k
+a
 a
 W
 C
 c
 a
-k
+a
 k
 "}
 (8,1,1) = {"
 M
 k
-k
 a
 a
 a
-k
+a
+a
 y
 i
 "}

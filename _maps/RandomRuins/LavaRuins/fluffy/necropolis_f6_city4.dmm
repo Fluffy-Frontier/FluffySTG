@@ -164,6 +164,10 @@
 /obj/item/coin/silver,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
+"iM" = (
+/obj/effect/spawner/random/structure/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "iU" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/stone_tile/slab/cracked{
@@ -242,7 +246,7 @@
 	icon_state = "empty_shelf_1"
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "pj" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -547,7 +551,7 @@
 	},
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "Dx" = (
 /obj/structure/rack/shelf{
 	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
@@ -750,7 +754,7 @@
 	},
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "Mf" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -999,6 +1003,10 @@
 /obj/item/reagent_containers/cup/bottle/cyanide,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
+"Wd" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/unpowered)
 "Wr" = (
 /obj/structure/stone_tile/slab,
 /mob/living/basic/mining/ancient_demon,
@@ -1116,9 +1124,9 @@ Sy
 In
 al
 rW
-vn
-vn
-vn
+FV
+FV
+FV
 vn
 vn
 hj
@@ -1141,8 +1149,8 @@ al
 Qr
 dR
 al
-vn
-vn
+FV
+FV
 VO
 NJ
 JA
@@ -1167,7 +1175,7 @@ al
 BL
 SG
 Bv
-vn
+FV
 mM
 Im
 EA
@@ -1193,7 +1201,7 @@ al
 wZ
 GD
 EZ
-vn
+FV
 Kf
 La
 La
@@ -1329,7 +1337,7 @@ Nj
 GD
 NY
 JQ
-UE
+Wd
 NY
 "}
 (11,1,1) = {"
@@ -1354,34 +1362,34 @@ al
 ml
 lp
 eC
-ws
-vn
+yS
+FV
 Bv
 "}
 (12,1,1) = {"
 Bv
 pj
 vn
-vn
-vn
-vn
+FV
+FV
+FV
 ws
 uU
-vn
-vn
-vn
+FV
+FV
+FV
 Am
 cT
 EA
 La
 Nn
 vn
-vn
+FV
 Dd
 LR
 oM
-vn
-vn
+FV
+FV
 NY
 "}
 (13,1,1) = {"
@@ -1395,18 +1403,18 @@ EE
 QB
 NJ
 NJ
-vn
+FV
 vn
 al
 HU
 wq
 al
 QE
-vn
 FV
 FV
 FV
-vn
+FV
+FV
 Zv
 Bv
 "}
@@ -1417,7 +1425,7 @@ al
 mM
 QB
 Wr
-Bv
+iM
 ih
 mM
 QB
@@ -1427,13 +1435,13 @@ al
 Kf
 EA
 al
-vn
+FV
 FV
 Xl
 zY
 Zx
 FV
-vn
+FV
 Bv
 "}
 (15,1,1) = {"
@@ -1453,13 +1461,13 @@ La
 Vc
 Ok
 al
-vn
+FV
 hF
 Eh
 qC
 tU
 QB
-vn
+FV
 Bv
 "}
 (16,1,1) = {"
@@ -1479,13 +1487,13 @@ La
 FE
 ml
 al
-vn
+FV
 SS
 tU
 Lj
 yS
 yS
-vn
+FV
 BY
 "}
 (17,1,1) = {"
@@ -1505,24 +1513,24 @@ La
 ln
 fM
 al
-vn
+FV
 FV
 FV
 FV
 hF
 FV
-vn
+FV
 uM
 "}
 (18,1,1) = {"
 al
 vn
 vn
-vn
-vn
-vn
-vn
-vn
+FV
+FV
+FV
+FV
+FV
 ml
 ml
 vn
@@ -1531,13 +1539,13 @@ La
 ml
 ml
 Bv
-vn
+FV
 Gz
 ih
 hF
 Eh
 QB
-vn
+FV
 al
 "}
 (19,1,1) = {"
@@ -1563,7 +1571,7 @@ sc
 QB
 yV
 QB
-vn
+FV
 al
 "}
 (20,1,1) = {"
@@ -1583,13 +1591,13 @@ al
 Bv
 wZ
 nu
-Mq
+mM
 al
 hI
 mM
 wN
 SJ
-vn
+FV
 Bv
 "}
 (21,1,1) = {"
@@ -1609,13 +1617,13 @@ Bv
 ek
 ek
 NY
-vn
+FV
 al
 al
 al
 al
 QB
-vn
+FV
 EZ
 "}
 (22,1,1) = {"
@@ -1635,13 +1643,13 @@ VB
 lp
 ze
 Bv
-vn
+FV
 FV
 Dx
 NJ
 NJ
 FV
-vn
+FV
 NY
 "}
 (23,1,1) = {"
@@ -1662,11 +1670,11 @@ pQ
 kA
 Bv
 NW
-vn
-vn
-vn
-vn
-vn
+FV
+FV
+FV
+FV
+FV
 fs
 vd
 "}

@@ -25,7 +25,7 @@
 /obj/effect/mapping_helpers/bombable_wall,
 /obj/structure/stone_tile/slab,
 /turf/closed/indestructible/riveted/boss/wasteland,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "h" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 4
@@ -65,14 +65,7 @@
 /obj/effect/mapping_helpers/bombable_wall,
 /obj/structure/stone_tile/slab/cracked,
 /turf/closed/indestructible/riveted/boss/wasteland,
-/area/lavaland/surface/outdoors)
-"t" = (
-/obj/effect/mapping_helpers/bombable_wall,
-/obj/structure/fluff/big_chain{
-	pixel_y = 12
-	},
-/turf/closed/indestructible/riveted/boss/wasteland,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "u" = (
 /obj/structure/flora/rock/pile/style_random,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
@@ -212,7 +205,7 @@
 /obj/effect/mapping_helpers/bombable_wall,
 /obj/structure/stone_tile/slab/burnt,
 /turf/closed/indestructible/riveted/boss/wasteland,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "P" = (
 /obj/structure/stone_tile/cracked{
 	dir = 4
@@ -293,15 +286,15 @@ E
 "}
 (2,1,1) = {"
 E
-G
-G
-G
-G
-G
-G
-G
-G
-G
+x
+x
+x
+x
+x
+x
+x
+x
+x
 E
 E
 E
@@ -309,8 +302,8 @@ E
 E
 "}
 (3,1,1) = {"
-G
-t
+x
+F
 u
 f
 x
@@ -318,15 +311,15 @@ x
 q
 u
 d
-t
-G
-G
-G
+F
+x
+x
+x
 E
 E
 "}
 (4,1,1) = {"
-G
+x
 d
 q
 l
@@ -338,12 +331,12 @@ u
 q
 F
 u
-G
-G
-G
+x
+x
+x
 "}
 (5,1,1) = {"
-G
+x
 x
 l
 l
@@ -357,10 +350,10 @@ l
 f
 f
 x
-G
+x
 "}
 (6,1,1) = {"
-G
+x
 x
 l
 F
@@ -374,10 +367,10 @@ l
 l
 l
 h
-t
+F
 "}
 (7,1,1) = {"
-G
+x
 q
 l
 x
@@ -394,7 +387,7 @@ P
 s
 "}
 (8,1,1) = {"
-G
+x
 x
 x
 x
@@ -411,7 +404,7 @@ C
 g
 "}
 (9,1,1) = {"
-G
+x
 u
 l
 x
@@ -428,7 +421,7 @@ M
 O
 "}
 (10,1,1) = {"
-G
+x
 x
 l
 F
@@ -442,10 +435,10 @@ l
 l
 l
 v
-t
+F
 "}
 (11,1,1) = {"
-G
+x
 x
 l
 l
@@ -459,10 +452,10 @@ l
 f
 u
 x
-G
+x
 "}
 (12,1,1) = {"
-G
+x
 q
 f
 l
@@ -474,13 +467,13 @@ q
 d
 F
 q
-G
-G
-G
+x
+x
+x
 "}
 (13,1,1) = {"
-G
-t
+x
+F
 d
 u
 x
@@ -488,24 +481,24 @@ x
 q
 f
 u
-t
-G
-G
-G
+F
+x
+x
+x
 E
 E
 "}
 (14,1,1) = {"
 E
-G
-G
-G
-G
-G
-G
-G
-G
-G
+x
+x
+x
+x
+x
+x
+x
+x
+x
 E
 E
 E

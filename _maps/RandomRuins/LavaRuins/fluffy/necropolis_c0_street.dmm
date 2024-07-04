@@ -232,7 +232,7 @@
 	desc = "Sort of relic that can be exported through Cargo."
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "nM" = (
 /obj/structure/stone_tile/cracked,
 /turf/open/lava/smooth/lava_land_surface{
@@ -343,18 +343,29 @@
 	slowdown = 0
 	},
 /area/lavaland/surface/outdoors)
+"rR" = (
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "sf" = (
 /obj/structure/stone_tile{
 	dir = 1
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"sj" = (
+/obj/effect/spawner/random/structure/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "sk" = (
 /obj/structure/stone_tile{
 	dir = 4
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"su" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/unpowered)
 "tz" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 1
@@ -533,6 +544,9 @@
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"Ak" = (
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/unpowered)
 "At" = (
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/random/high_chance/volcanic,
@@ -747,7 +761,7 @@
 /obj/item/clothing/suit/jacket/brasspriest,
 /obj/item/clockwork/weapon/brass_sword,
 /turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "Mw" = (
 /obj/structure/stone_tile/block,
 /obj/structure/stone_tile/block{
@@ -1022,6 +1036,11 @@
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"Xa" = (
+/obj/structure/flora/rock/pile/style_random,
+/obj/effect/spawner/random/structure/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "Xi" = (
 /obj/structure/stone_tile/block,
 /obj/item/xenoarch/useless_relic/magnified{
@@ -1129,10 +1148,10 @@ Pd
 Pd
 Pd
 Pd
-pq
-pq
-pq
-pq
+Ak
+Ak
+Ak
+Ak
 Pd
 Pd
 pq
@@ -1154,12 +1173,12 @@ RW
 zM
 Pd
 Pd
-pq
-pq
+Ak
+Ak
 Jj
 SW
-pq
-pq
+Ak
+Ak
 Mc
 LS
 LS
@@ -1180,12 +1199,12 @@ IR
 BL
 ag
 Pd
-pq
+Ak
 XD
 Hf
 bw
 Rf
-pq
+Ak
 pq
 ve
 QP
@@ -1206,12 +1225,12 @@ Pd
 RW
 FI
 iT
-pq
+Ak
 RH
 Lu
 tz
 Pi
-ff
+su
 hn
 Xn
 mv
@@ -1232,12 +1251,12 @@ Pd
 Pd
 pR
 Hw
-pq
+Ak
 oa
 oq
 CW
 TP
-ff
+su
 hn
 At
 SX
@@ -1258,12 +1277,12 @@ pQ
 Pd
 yb
 LY
-pq
+Ak
 Yj
 Hk
 XL
 uC
-pq
+Ak
 pq
 Xi
 At
@@ -1284,12 +1303,12 @@ Se
 hn
 IR
 UE
-pq
-pq
+Ak
+Ak
 GF
 DF
-pq
-pq
+Ak
+Ak
 PN
 zj
 jK
@@ -1311,10 +1330,10 @@ xj
 MG
 Qo
 zj
-pq
-pq
-pq
-pq
+Ak
+Ak
+Ak
+Ak
 pq
 DH
 pq
@@ -1461,8 +1480,8 @@ pq
 "}
 (14,1,1) = {"
 Pd
-pq
-pq
+Ak
+Ak
 LS
 LS
 pq
@@ -1487,8 +1506,8 @@ Pd
 "}
 (15,1,1) = {"
 pq
-pq
-fa
+Ak
+DF
 nF
 LS
 LS
@@ -1513,10 +1532,10 @@ pq
 "}
 (16,1,1) = {"
 Pd
-ff
-Hx
+su
+rR
 Mt
-jT
+Xa
 LS
 LS
 XR
@@ -1539,9 +1558,9 @@ pq
 "}
 (17,1,1) = {"
 Pd
-ff
-fa
-Hx
+su
+DF
+rR
 LS
 LS
 pq
@@ -1567,7 +1586,7 @@ pq
 pq
 LS
 LS
-Zv
+sj
 LS
 OZ
 ff

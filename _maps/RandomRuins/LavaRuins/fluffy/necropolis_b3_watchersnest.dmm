@@ -68,6 +68,13 @@
 /mob/living/basic/mining/watcher,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
+"o" = (
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/unpowered)
+"p" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/unpowered)
 "q" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -243,12 +250,12 @@ K
 K
 b
 v
-a
-a
-A
-a
-a
-a
+o
+o
+p
+o
+o
+o
 z
 K
 K
@@ -256,34 +263,34 @@ K
 (3,1,1) = {"
 b
 S
-a
-a
+o
+o
 j
 j
 W
 I
-a
-a
+o
+o
 h
 q
 "}
 (4,1,1) = {"
 a
-a
-a
+o
+o
 j
 j
 M
 l
 G
 j
-a
-a
+o
+o
 a
 "}
 (5,1,1) = {"
 a
-a
+o
 j
 D
 Z
@@ -292,12 +299,12 @@ t
 L
 j
 j
-a
+o
 a
 "}
 (6,1,1) = {"
 v
-a
+o
 F
 O
 Q
@@ -306,12 +313,12 @@ e
 C
 H
 j
-a
+o
 K
 "}
 (7,1,1) = {"
 b
-a
+o
 W
 c
 t
@@ -320,12 +327,12 @@ s
 Q
 R
 W
-a
+o
 K
 "}
 (8,1,1) = {"
 a
-a
+o
 j
 j
 E
@@ -334,34 +341,34 @@ f
 t
 m
 Y
-a
+o
 a
 "}
 (9,1,1) = {"
 a
-a
-a
+o
+o
 j
 j
 w
 i
 n
 d
-a
-a
+o
+o
 A
 "}
 (10,1,1) = {"
 K
 y
-a
-a
+o
+o
 j
 W
 m
 U
-a
-a
+o
+o
 P
 r
 "}
@@ -369,12 +376,12 @@ r
 K
 K
 g
-a
-a
-a
-A
-a
-a
+o
+o
+o
+p
+o
+o
 v
 b
 K

@@ -702,7 +702,7 @@
 "LY" = (
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "LZ" = (
 /obj/structure/stone_tile/block{
 	dir = 1
@@ -736,6 +736,9 @@
 /obj/structure/stone_tile/slab/cracked,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"PM" = (
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/unpowered)
 "PX" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -762,7 +765,7 @@
 "QZ" = (
 /obj/structure/wall_torch/mount_only,
 /turf/closed/indestructible/riveted/boss,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "Re" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	desc = "Your instincts say you shouldn't be following these.";
@@ -942,9 +945,9 @@ wd
 (4,1,1) = {"
 wd
 Er
-Xv
+PM
 TU
-Xv
+PM
 ao
 DL
 QQ
@@ -958,8 +961,8 @@ wd
 rX
 QZ
 BS
-Xv
-Xv
+PM
+PM
 AG
 YE
 Xv
@@ -970,9 +973,9 @@ wd
 (6,1,1) = {"
 wd
 uQ
-Xv
+PM
 iV
-Xv
+PM
 nR
 mq
 AK
@@ -988,7 +991,7 @@ Vl
 FW
 hC
 kV
-Xv
+PM
 AK
 AK
 KA
@@ -998,56 +1001,56 @@ wd
 (8,1,1) = {"
 wd
 Ji
-Xv
+PM
 ma
 ma
 ox
-Xv
-Xv
-Xv
-Xv
+PM
+PM
+PM
+PM
 wd
 wd
 "}
 (9,1,1) = {"
 wd
 AK
-Xv
+PM
 jg
 hZ
 Re
 Xu
-Xv
+PM
 BL
-Xv
+PM
 wd
 wd
 "}
 (10,1,1) = {"
 wd
 nX
-Xv
+PM
 EZ
 Zt
 dP
 nk
 DA
 gp
-Xv
+PM
 AK
 wd
 "}
 (11,1,1) = {"
 wd
 Yv
-Xv
-Xv
+PM
+PM
 mv
 pN
 KT
 zP
 ma
-Xv
+PM
 Ji
 ph
 "}
@@ -1055,7 +1058,7 @@ ph
 rm
 rg
 Fj
-Xv
+PM
 sM
 oa
 ge
@@ -1068,8 +1071,8 @@ ph
 (13,1,1) = {"
 LE
 wB
-Xv
-Xv
+PM
+PM
 sB
 bH
 td
@@ -1082,7 +1085,7 @@ Bn
 (14,1,1) = {"
 ne
 KU
-Xv
+PM
 iT
 Ag
 Mp
@@ -1096,7 +1099,7 @@ ph
 (15,1,1) = {"
 ap
 AK
-Xv
+PM
 Ei
 FP
 cA
@@ -1104,27 +1107,27 @@ uB
 Hb
 Bi
 Fp
-Xv
+PM
 iY
 "}
 (16,1,1) = {"
 wd
 PX
-Xv
-Xv
+PM
+PM
 BR
 pN
 TU
 xG
 KF
 dI
-Xv
+PM
 Ji
 "}
 (17,1,1) = {"
 wd
 AK
-Xv
+PM
 rN
 Yy
 BN
@@ -1138,7 +1141,7 @@ AK
 (18,1,1) = {"
 wd
 dT
-Xv
+PM
 Bi
 Fp
 ZE
@@ -1146,13 +1149,13 @@ UB
 jU
 jE
 DE
-Xv
+PM
 ph
 "}
 (19,1,1) = {"
 wd
 AK
-Xv
+PM
 Bi
 ng
 Bi
@@ -1160,21 +1163,21 @@ UZ
 nO
 hr
 QM
-Xv
+PM
 ph
 "}
 (20,1,1) = {"
 wd
 DL
-Xv
-Xv
+PM
+PM
 LY
-Xv
+PM
 ng
 KF
 Bi
 Bi
-Xv
+PM
 ph
 "}
 (21,1,1) = {"
@@ -1183,12 +1186,12 @@ AK
 ph
 Xv
 AK
-Xv
-Xv
+PM
+PM
 LY
 LY
-Xv
-Xv
+PM
+PM
 iY
 "}
 (22,1,1) = {"

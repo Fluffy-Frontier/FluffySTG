@@ -145,10 +145,6 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"O" = (
-/obj/effect/mapping_helpers/bombable_wall,
-/turf/closed/indestructible/riveted/boss/wasteland,
-/area/lavaland/surface/outdoors)
 "Q" = (
 /obj/structure/stone_tile/slab/cracked,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
@@ -225,34 +221,34 @@ b
 (3,1,1) = {"
 Z
 q
-b
-b
-O
-b
-O
-b
-b
-b
+i
+i
+L
+i
+L
+i
+i
+i
 K
 b
 "}
 (4,1,1) = {"
 q
-b
-b
+i
+i
 c
 a
 i
 a
 a
 a
-O
+L
 K
 Z
 "}
 (5,1,1) = {"
 b
-b
+i
 X
 a
 a
@@ -260,13 +256,13 @@ R
 a
 i
 a
-b
+i
 K
 q
 "}
 (6,1,1) = {"
 x
-O
+L
 r
 a
 w
@@ -274,13 +270,13 @@ F
 L
 i
 i
-b
+i
 K
 G
 "}
 (7,1,1) = {"
 x
-b
+i
 s
 a
 L
@@ -288,13 +284,13 @@ k
 a
 i
 Q
-b
+i
 K
 G
 "}
 (8,1,1) = {"
 G
-b
+i
 c
 a
 i
@@ -302,35 +298,35 @@ o
 a
 a
 a
-b
+i
 g
 G
 "}
 (9,1,1) = {"
 Z
-b
-b
+i
+i
 a
 i
 a
 a
 a
 a
-b
+i
 b
 G
 "}
 (10,1,1) = {"
 q
 N
-b
-O
-b
-b
-b
-b
-O
-b
+i
+L
+i
+i
+i
+i
+L
+i
 S
 y
 "}

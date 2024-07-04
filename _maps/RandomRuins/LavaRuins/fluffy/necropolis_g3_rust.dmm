@@ -14,6 +14,10 @@
 "h" = (
 /turf/closed/wall/r_wall/rust,
 /area/lavaland/surface/outdoors)
+"i" = (
+/obj/effect/glowing_rune,
+/turf/closed/wall/r_wall/rust,
+/area/ruin/unpowered)
 "j" = (
 /obj/effect/glowing_rune,
 /turf/closed/wall/r_wall/rust,
@@ -69,6 +73,9 @@
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
+"y" = (
+/turf/closed/wall/r_wall/rust,
+/area/ruin/unpowered)
 "z" = (
 /obj/effect/spawner/random/maintenance,
 /obj/effect/mapping_helpers/burnt_floor,
@@ -85,7 +92,7 @@
 "B" = (
 /obj/effect/glowing_rune,
 /turf/closed/indestructible/riveted/boss,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "D" = (
 /obj/item/xenoarch/useless_relic{
 	name = "Ancient relic";
@@ -111,7 +118,7 @@
 /obj/effect/mapping_helpers/bombable_wall,
 /obj/structure/trap/eldritch/tentacle,
 /turf/closed/indestructible/riveted/boss/wasteland,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "M" = (
 /obj/effect/mob_spawn/corpse/human/monkey,
 /obj/effect/mapping_helpers/broken_floor,
@@ -132,6 +139,9 @@
 /turf/open/floor/plating/rust{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
+/area/ruin/unpowered)
+"V" = (
+/turf/closed/indestructible/riveted/boss,
 /area/ruin/unpowered)
 "Y" = (
 /obj/effect/mapping_helpers/burnt_floor,
@@ -174,9 +184,9 @@ o
 c
 H
 D
-F
+V
 K
-F
+V
 F
 c
 H
@@ -184,53 +194,53 @@ H
 (3,1,1) = {"
 H
 H
-F
+V
 B
 P
-h
-F
+y
+V
 F
 c
 "}
 (4,1,1) = {"
 c
-F
+V
 m
 w
 M
 N
-h
+y
 F
 A
 "}
 (5,1,1) = {"
 F
-F
+V
 Y
 l
 v
 P
-h
+y
 F
 Z
 "}
 (6,1,1) = {"
 F
-j
+i
 I
 a
 p
 P
-F
+V
 F
 o
 "}
 (7,1,1) = {"
 F
-F
-h
+V
+y
 z
-F
+V
 K
 c
 H
@@ -238,10 +248,10 @@ H
 "}
 (8,1,1) = {"
 o
-F
-F
-F
-F
+V
+V
+V
+V
 c
 h
 H

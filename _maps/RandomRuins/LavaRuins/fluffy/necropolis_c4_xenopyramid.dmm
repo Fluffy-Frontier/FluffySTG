@@ -39,7 +39,7 @@
 "bW" = (
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "cf" = (
 /obj/structure/alien/weeds,
 /obj/structure/alien/weeds,
@@ -189,6 +189,10 @@
 	name = "volcanic floor"
 	},
 /area/ruin/unpowered/xenonest)
+"jv" = (
+/obj/effect/spawner/random/structure/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "jz" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -291,7 +295,7 @@
 	initial_gas_mix = "LAVALAND_ATMOS";
 	name = "volcanic floor"
 	},
-/area/ruin/unpowered/xenonest)
+/area/ruin/unpowered)
 "mu" = (
 /mob/living/basic/alien/queen/large{
 	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
@@ -830,7 +834,7 @@
 	initial_gas_mix = "LAVALAND_ATMOS";
 	name = "volcanic floor"
 	},
-/area/ruin/unpowered/xenonest)
+/area/ruin/unpowered)
 "Oo" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -965,7 +969,7 @@
 /obj/structure/stone_tile/slab/cracked,
 /obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "Ty" = (
 /obj/structure/alien/resin/wall,
 /obj/structure/alien/weeds,
@@ -1134,11 +1138,11 @@ PN
 rp
 rp
 lM
-PN
-PN
-PN
-PN
-PN
+vG
+vG
+vG
+vG
+vG
 rp
 rp
 PN
@@ -1152,20 +1156,20 @@ rp
 (3,1,1) = {"
 PN
 PN
-PN
-PN
-PN
-PN
-PN
-PN
-lM
-lM
-PN
+vG
+vG
+vG
+vG
+vG
+vG
+Da
+Da
+vG
 La
 La
 Bl
-PN
-PN
+vG
+vG
 rp
 PN
 PN
@@ -1178,7 +1182,7 @@ rp
 (4,1,1) = {"
 rp
 PN
-PN
+vG
 TF
 La
 La
@@ -1191,7 +1195,7 @@ La
 CP
 wP
 BF
-er
+jv
 rp
 rp
 PN
@@ -1204,7 +1208,7 @@ rp
 (5,1,1) = {"
 rp
 rp
-PN
+vG
 ly
 mS
 wq
@@ -1230,7 +1234,7 @@ rp
 (6,1,1) = {"
 rp
 PN
-PN
+vG
 ly
 IE
 ly
@@ -1256,7 +1260,7 @@ rp
 (7,1,1) = {"
 rp
 PN
-PN
+vG
 xu
 La
 Ty
@@ -1282,7 +1286,7 @@ rp
 (8,1,1) = {"
 rp
 lM
-PN
+vG
 FL
 ly
 ly
@@ -1308,7 +1312,7 @@ rp
 (9,1,1) = {"
 rp
 PN
-PN
+vG
 ly
 ly
 us
@@ -1333,8 +1337,8 @@ rp
 "}
 (10,1,1) = {"
 rp
-PN
-PN
+vG
+vG
 TF
 TF
 TF
@@ -1354,12 +1358,12 @@ vG
 vG
 vG
 vG
-PN
+vG
 rp
 "}
 (11,1,1) = {"
 PN
-PN
+vG
 Am
 iR
 mS
@@ -1380,12 +1384,12 @@ vG
 KF
 SX
 Qf
-PN
-PN
+vG
+vG
 "}
 (12,1,1) = {"
 PN
-PN
+vG
 La
 mu
 wq
@@ -1406,12 +1410,12 @@ tq
 uy
 vG
 Wm
-jc
+Dz
 bW
 "}
 (13,1,1) = {"
 PN
-PN
+vG
 La
 Bl
 WI
@@ -1432,12 +1436,12 @@ ud
 ez
 vG
 Fv
-lM
+Da
 To
 "}
 (14,1,1) = {"
 PN
-PN
+vG
 mS
 va
 Am
@@ -1458,13 +1462,13 @@ Bu
 bR
 SM
 Py
-PN
-lM
+vG
+Da
 "}
 (15,1,1) = {"
 rp
-PN
-PN
+vG
+vG
 TF
 TF
 TF
@@ -1484,13 +1488,13 @@ vG
 Da
 vG
 vG
-PN
-PN
+vG
+vG
 "}
 (16,1,1) = {"
 rp
 PN
-PN
+vG
 us
 ly
 IE
@@ -1510,13 +1514,13 @@ am
 OK
 vG
 vG
-PN
+vG
 rp
 "}
 (17,1,1) = {"
 rp
 PN
-PN
+vG
 ly
 ly
 eW
@@ -1536,13 +1540,13 @@ Wq
 CH
 ON
 Og
-PN
+vG
 rp
 "}
 (18,1,1) = {"
 rp
 lM
-PN
+vG
 ly
 IE
 UI
@@ -1562,13 +1566,13 @@ kz
 oL
 vG
 lQ
-PN
+vG
 PN
 "}
 (19,1,1) = {"
 rp
 PN
-PN
+vG
 ly
 Wa
 jJ
@@ -1588,13 +1592,13 @@ vG
 vG
 vG
 Pu
-PN
+vG
 PN
 "}
 (20,1,1) = {"
 rp
 rp
-PN
+vG
 Bl
 li
 ly
@@ -1614,13 +1618,13 @@ ly
 xu
 dE
 wD
-PN
+vG
 rp
 "}
 (21,1,1) = {"
 rp
 PN
-PN
+vG
 TF
 mS
 IE
@@ -1640,33 +1644,33 @@ TF
 mS
 Bl
 hF
-lM
+Da
 rp
 "}
 (22,1,1) = {"
 PN
 PN
-PN
-PN
-PN
-PN
-PN
-PN
-lM
-PN
-PN
+vG
+vG
+vG
+vG
+vG
+vG
+Da
+vG
+vG
 sR
 ly
 OC
-PN
-PN
-PN
-PN
-PN
-PN
-PN
+vG
+vG
+vG
+vG
+vG
+vG
+vG
 mS
-PN
+vG
 lM
 "}
 (23,1,1) = {"
@@ -1680,19 +1684,19 @@ lM
 rp
 rp
 lM
-PN
-PN
-PN
-PN
-PN
+vG
+vG
+vG
+vG
+vG
 rp
 rp
 lM
 PN
 rp
-PN
-PN
-PN
+vG
+vG
+vG
 PN
 "}
 (24,1,1) = {"

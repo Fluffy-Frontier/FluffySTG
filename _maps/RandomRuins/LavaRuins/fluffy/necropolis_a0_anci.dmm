@@ -109,6 +109,10 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
+"mk" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/unpowered)
 "nc" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/statue/bone/rib,
@@ -474,7 +478,7 @@
 "Yb" = (
 /obj/structure/stone_tile/slab/cracked,
 /turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "Yh" = (
 /obj/structure/stone_tile/slab/burnt,
 /turf/open/lava/smooth/lava_land_surface{
@@ -559,11 +563,11 @@ vT
 (4,1,1) = {"
 Ge
 QR
-pT
-pT
-vT
-pT
-pT
+AW
+AW
+mk
+AW
+AW
 XU
 qB
 pT
@@ -576,8 +580,8 @@ QR
 "}
 (5,1,1) = {"
 vT
-pT
-pT
+AW
+AW
 en
 Sd
 tC
@@ -594,7 +598,7 @@ QR
 "}
 (6,1,1) = {"
 jo
-pT
+AW
 XT
 fC
 Fl
@@ -612,7 +616,7 @@ zh
 "}
 (7,1,1) = {"
 ae
-pT
+AW
 yY
 DB
 LI
@@ -630,7 +634,7 @@ zh
 "}
 (8,1,1) = {"
 QR
-pT
+AW
 eF
 ez
 RY
@@ -648,7 +652,7 @@ zh
 "}
 (9,1,1) = {"
 QR
-pT
+AW
 QQ
 Bp
 ic
@@ -666,7 +670,7 @@ QR
 "}
 (10,1,1) = {"
 it
-pT
+AW
 nc
 ou
 BT
@@ -684,8 +688,8 @@ zh
 "}
 (11,1,1) = {"
 vT
-pT
-pT
+AW
+AW
 Ci
 en
 ou
@@ -703,12 +707,12 @@ QR
 (12,1,1) = {"
 zh
 xz
-pT
-pT
-pT
-pT
-pT
-pT
+AW
+AW
+AW
+AW
+AW
+AW
 vT
 zC
 Aq
