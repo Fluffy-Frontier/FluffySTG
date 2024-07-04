@@ -17,12 +17,6 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"d" = (
-/obj/structure/stone_tile/block/cracked{
-	dir = 1
-	},
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "e" = (
 /obj/structure/stone_tile/slab,
 /obj/item/reagent_containers/cup/bowl/wood_bowl,
@@ -92,7 +86,7 @@
 	attack_vis_effect = "slash";
 	guaranteed_butcher_results = list(/obj/item/organ/external/tail/lizard = 1,/obj/item/feather=12,/obj/item/food/egg/raptor_egg=1,/obj/item/clothing/shoes/cowboy/lizard=1,/obj/item/food/meat/slab/chicken=5)
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "n" = (
 /obj/structure/stone_tile/block{
@@ -241,7 +235,7 @@
 	dir = 1
 	},
 /obj/structure/stone_tile/block,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "K" = (
 /obj/effect/spawner/random/structure/spikes,
@@ -312,7 +306,7 @@
 /area/lavaland/surface/outdoors)
 "T" = (
 /obj/structure/ore_vein/silver,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "U" = (
 /obj/structure/stone_tile/slab,
@@ -424,7 +418,7 @@ z
 N
 W
 g
-d
+k
 m
 b
 Q

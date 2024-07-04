@@ -11,22 +11,6 @@
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/powered)
-"bn" = (
-/obj/effect/spawner/random/structure/spikes,
-/obj/structure/statue/uranium/eng{
-	icon = 'icons/obj/art/statuelarge.dmi';
-	icon_preview = 'icons/obj/fluff/previews.dmi';
-	icon_state = "rib";
-	icon_state_preview = "rib";
-	pixel_y = 10;
-	name = "Rib";
-	desc = "A giant teeth. Or a rib. You barely can figure.";
-	custom_materials = list(/datum/material/uranium = 25);
-	max_integrity = 3000;
-	anchored = 1
-	},
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "eh" = (
 /obj/structure/stone_tile/surrounding_tile/cracked,
 /obj/effect/spawner/random/structure/spikes,
@@ -137,6 +121,7 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "sb" = (
+/obj/structure/flora/ash/tall_shroom,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "sA" = (
@@ -214,20 +199,6 @@
 /area/lavaland/surface/outdoors)
 "xw" = (
 /obj/structure/flora/rock/style_random,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"xV" = (
-/obj/item/food/meat/slab/meatproduct,
-/obj/effect/gibspawner/human,
-/obj/item/food/meat/slab/meatproduct,
-/obj/structure/trap/eldritch/tentacle{
-	max_integrity = 30
-	},
-/turf/open/indestructible/meat{
-	initial_gas_mix = "LAVALAND_ATMOS"
-	},
-/area/ruin/powered)
-"yE" = (
 /obj/structure/statue/uranium/eng{
 	icon = 'icons/obj/art/statuelarge.dmi';
 	icon_preview = 'icons/obj/fluff/previews.dmi';
@@ -241,8 +212,19 @@
 	max_integrity = 3000;
 	anchored = 1
 	},
-/turf/open/chasm/lavaland,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"xV" = (
+/obj/item/food/meat/slab/meatproduct,
+/obj/effect/gibspawner/human,
+/obj/item/food/meat/slab/meatproduct,
+/obj/structure/trap/eldritch/tentacle{
+	max_integrity = 30
+	},
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/powered)
 "yJ" = (
 /obj/structure/punji_sticks/spikes,
 /obj/item/xenoarch/useless_relic/magnified{
@@ -354,10 +336,6 @@
 "LX" = (
 /turf/template_noop,
 /area/template_noop)
-"Mp" = (
-/obj/structure/flora/ash/tall_shroom,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "Mr" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 6
@@ -554,7 +532,7 @@ LX
 LX
 LX
 LX
-VR
+PS
 xw
 Hv
 PS
@@ -579,7 +557,7 @@ LX
 "}
 (3,1,1) = {"
 LX
-yE
+Hv
 Hv
 tt
 vK
@@ -588,7 +566,7 @@ Hv
 Hv
 ZU
 Hv
-yE
+Hv
 LX
 "}
 (4,1,1) = {"
@@ -602,11 +580,11 @@ zb
 Os
 Hv
 Hv
-Mp
+VR
 hN
 "}
 (5,1,1) = {"
-hN
+zE
 sA
 Os
 zb
@@ -620,7 +598,7 @@ sb
 PS
 "}
 (6,1,1) = {"
-yE
+Hv
 Vo
 zb
 MM
@@ -706,7 +684,7 @@ LX
 (12,1,1) = {"
 LX
 LX
-bn
+vD
 ME
 Hv
 Hv
