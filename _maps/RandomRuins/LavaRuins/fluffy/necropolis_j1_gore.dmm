@@ -58,25 +58,6 @@
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/lavaland/surface/outdoors)
-"mR" = (
-/obj/structure/stone_tile,
-/obj/structure/stone_tile{
-	dir = 8
-	},
-/obj/structure/statue/uranium/eng{
-	icon = 'icons/obj/art/statuelarge.dmi';
-	icon_preview = 'icons/obj/fluff/previews.dmi';
-	icon_state = "rib";
-	icon_state_preview = "rib";
-	pixel_y = 10;
-	name = "Rib";
-	desc = "A giant teeth. Or a rib. You barely can figure.";
-	custom_materials = list(/datum/material/uranium = 25);
-	max_integrity = 3000;
-	anchored = 1
-	},
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "oI" = (
 /obj/structure/meateor_fluff/eyeball,
 /obj/item/food/meat/slab/meatproduct,
@@ -197,23 +178,6 @@
 /obj/effect/gibspawner/human/bodypartless,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"xw" = (
-/obj/structure/flora/rock/style_random,
-/obj/structure/statue/uranium/eng{
-	icon = 'icons/obj/art/statuelarge.dmi';
-	icon_preview = 'icons/obj/fluff/previews.dmi';
-	icon_state = "rib";
-	icon_state_preview = "rib";
-	pixel_y = 10;
-	dir = 1;
-	desc = "A giant teeth. Or a rib. You barely can figure.";
-	name = "Rib";
-	custom_materials = list(/datum/material/uranium = 25);
-	max_integrity = 3000;
-	anchored = 1
-	},
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "xV" = (
 /obj/item/food/meat/slab/meatproduct,
 /obj/effect/gibspawner/human,
@@ -249,23 +213,6 @@
 	},
 /turf/closed/indestructible/meat,
 /area/ruin/powered)
-"zE" = (
-/obj/effect/spawner/random/structure/spikes,
-/obj/structure/statue/uranium/eng{
-	icon = 'icons/obj/art/statuelarge.dmi';
-	icon_preview = 'icons/obj/fluff/previews.dmi';
-	icon_state = "rib";
-	icon_state_preview = "rib";
-	pixel_y = 10;
-	dir = 1;
-	desc = "A giant teeth. Or a rib. You barely can figure.";
-	name = "Rib";
-	custom_materials = list(/datum/material/uranium = 25);
-	max_integrity = 3000;
-	anchored = 1
-	},
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "zP" = (
 /turf/closed/indestructible/meat,
 /area/ruin/powered)
@@ -426,7 +373,6 @@
 	},
 /area/ruin/powered)
 "Rm" = (
-/obj/effect/gibspawner/human/bodypartless,
 /obj/structure/statue/uranium/eng{
 	icon = 'icons/obj/art/statuelarge.dmi';
 	icon_preview = 'icons/obj/fluff/previews.dmi';
@@ -533,10 +479,10 @@ LX
 LX
 LX
 PS
-xw
+VR
 Hv
 PS
-zE
+VR
 LX
 LX
 LX
@@ -544,7 +490,7 @@ LX
 (2,1,1) = {"
 LX
 Hv
-xw
+VR
 fR
 Hv
 rP
@@ -584,7 +530,7 @@ VR
 hN
 "}
 (5,1,1) = {"
-zE
+VR
 sA
 Os
 zb
@@ -677,7 +623,7 @@ DB
 Mr
 Hv
 GH
-mR
+vD
 Bm
 LX
 "}
