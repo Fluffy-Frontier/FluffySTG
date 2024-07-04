@@ -1,58 +1,9 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ab" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/stack/sheet/bone,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/basic/mining/wolf{
-	desc = "A baby goliath. Do it. Stomp it.";
-	faction = list("mining","boss","hell");
-	name = "Biter";
-	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
-	attack_verb_continuous = "maniacally tears";
-	attack_verb_simple = "tears";
-	attack_vis_effect = "slash";
-	bare_wound_bonus = 5;
-	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
-	can_tame = 0;
-	health = 35;
-	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
-	icon_dead = "goliath_baby_dead";
-	icon_living = "goliath_baby";
-	icon_state = "goliath_baby";
-	maxHealth = 35;
-	melee_damage_lower = 1;
-	melee_attack_cooldown = 5;
-	speed = 0.2;
-	wound_bonus = -1;
-	icon_gib = "syndicate_gib";
-	melee_damage_upper = 2;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
-	crusher_loot = null
-	},
-/mob/living/basic/mining/wolf{
-	desc = "A baby goliath. Do it. Stomp it.";
-	faction = list("mining","boss","hell");
-	name = "Biter";
-	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
-	attack_verb_continuous = "maniacally tears";
-	attack_verb_simple = "tears";
-	attack_vis_effect = "slash";
-	bare_wound_bonus = 5;
-	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
-	can_tame = 0;
-	health = 35;
-	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
-	icon_dead = "goliath_baby_dead";
-	icon_living = "goliath_baby";
-	icon_state = "goliath_baby";
-	maxHealth = 35;
-	melee_damage_lower = 1;
-	melee_attack_cooldown = 5;
-	speed = 0.2;
-	wound_bonus = -1;
-	icon_gib = "syndicate_gib";
-	melee_damage_upper = 2;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
-	crusher_loot = null
-	},
+/obj/effect/spawner/random/mob/goliath,
 /turf/open/misc/hay/lavaland,
 /area/ruin/unpowered)
 "aj" = (
@@ -80,32 +31,6 @@
 /area/template_noop)
 "dB" = (
 /obj/structure/stone_tile/slab/burnt,
-/mob/living/basic/mining/wolf{
-	desc = "A baby goliath. Do it. Stomp it.";
-	faction = list("mining","boss","hell");
-	name = "Biter";
-	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
-	attack_verb_continuous = "maniacally tears";
-	attack_verb_simple = "tears";
-	attack_vis_effect = "slash";
-	bare_wound_bonus = 5;
-	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
-	can_tame = 0;
-	health = 35;
-	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
-	icon_dead = "goliath_baby_dead";
-	icon_living = "goliath_baby";
-	icon_state = "goliath_baby";
-	maxHealth = 35;
-	melee_damage_lower = 1;
-	melee_attack_cooldown = 5;
-	speed = 0.2;
-	wound_bonus = -1;
-	icon_gib = "syndicate_gib";
-	melee_damage_upper = 2;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
-	crusher_loot = null
-	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "dN" = (
@@ -138,38 +63,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/misc/hay/lavaland,
 /area/ruin/unpowered)
-"iw" = (
-/mob/living/basic/mining/wolf{
-	desc = "A baby goliath. Do it. Stomp it.";
-	faction = list("mining","boss","hell");
-	name = "Biter";
-	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
-	attack_verb_continuous = "maniacally tears";
-	attack_verb_simple = "tears";
-	attack_vis_effect = "slash";
-	bare_wound_bonus = 5;
-	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
-	can_tame = 0;
-	health = 35;
-	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
-	icon_dead = "goliath_baby_dead";
-	icon_living = "goliath_baby";
-	icon_state = "goliath_baby";
-	maxHealth = 35;
-	melee_damage_lower = 1;
-	melee_attack_cooldown = 5;
-	speed = 0.2;
-	wound_bonus = -1;
-	icon_gib = "syndicate_gib";
-	melee_damage_upper = 2;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
-	crusher_loot = null
-	},
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/ruin/unpowered)
 "iB" = (
 /obj/item/stack/sheet/bone,
 /obj/structure/flora/rock/pile/style_random,
+/obj/effect/spawner/random/mob/goliath,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "iN" = (
@@ -196,10 +93,9 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "kn" = (
-/mob/living/basic/mining/goliath,
-/obj/structure/flora/rock/pile/style_random,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/ruin/unpowered)
+/obj/effect/spawner/random/mob/goliath,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "kr" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 4
@@ -232,16 +128,7 @@
 /obj/structure/railing/stone{
 	layer = -6
 	},
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "nI" = (
@@ -261,32 +148,6 @@
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 1
 	},
-/mob/living/basic/mining/wolf{
-	desc = "A baby goliath. Do it. Stomp it.";
-	faction = list("mining","boss","hell");
-	name = "Biter";
-	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
-	attack_verb_continuous = "maniacally tears";
-	attack_verb_simple = "tears";
-	attack_vis_effect = "slash";
-	bare_wound_bonus = 5;
-	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
-	can_tame = 0;
-	health = 35;
-	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
-	icon_dead = "goliath_baby_dead";
-	icon_living = "goliath_baby";
-	icon_state = "goliath_baby";
-	maxHealth = 35;
-	melee_damage_lower = 1;
-	melee_attack_cooldown = 5;
-	speed = 0.2;
-	wound_bonus = -1;
-	icon_gib = "syndicate_gib";
-	melee_damage_upper = 2;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
-	crusher_loot = null
-	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "ql" = (
@@ -305,32 +166,6 @@
 /area/lavaland/surface/outdoors)
 "rv" = (
 /obj/structure/stone_tile/slab,
-/mob/living/basic/mining/wolf{
-	desc = "A baby goliath. Do it. Stomp it.";
-	faction = list("mining","boss","hell");
-	name = "Biter";
-	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
-	attack_verb_continuous = "maniacally tears";
-	attack_verb_simple = "tears";
-	attack_vis_effect = "slash";
-	bare_wound_bonus = 5;
-	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
-	can_tame = 0;
-	health = 35;
-	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
-	icon_dead = "goliath_baby_dead";
-	icon_living = "goliath_baby";
-	icon_state = "goliath_baby";
-	maxHealth = 35;
-	melee_damage_lower = 1;
-	melee_attack_cooldown = 5;
-	speed = 0.2;
-	wound_bonus = -1;
-	icon_gib = "syndicate_gib";
-	melee_damage_upper = 2;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
-	crusher_loot = null
-	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "sn" = (
@@ -344,45 +179,10 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/basic/mining/wolf{
-	desc = "A baby goliath. Do it. Stomp it.";
-	faction = list("mining","boss","hell");
-	name = "Biter";
-	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
-	attack_verb_continuous = "maniacally tears";
-	attack_verb_simple = "tears";
-	attack_vis_effect = "slash";
-	bare_wound_bonus = 5;
-	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
-	can_tame = 0;
-	health = 35;
-	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
-	icon_dead = "goliath_baby_dead";
-	icon_living = "goliath_baby";
-	icon_state = "goliath_baby";
-	maxHealth = 35;
-	melee_damage_lower = 1;
-	melee_attack_cooldown = 5;
-	speed = 0.2;
-	wound_bonus = -1;
-	icon_gib = "syndicate_gib";
-	melee_damage_upper = 2;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
-	crusher_loot = null
-	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "vx" = (
-/obj/structure/trap/damage{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#DDFFDD";
-	color = "#77FF77";
-	alpha = 180;
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "vF" = (
@@ -393,16 +193,7 @@
 	layer = -6
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/open/misc/hay/lavaland,
 /area/lavaland/surface/outdoors)
 "wk" = (
@@ -441,11 +232,11 @@
 /area/ruin/unpowered)
 "ya" = (
 /obj/structure/stone_tile/surrounding_tile/cracked,
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "ze" = (
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/open/misc/hay/lavaland,
 /area/ruin/unpowered)
 "zl" = (
@@ -475,12 +266,9 @@
 	dir = 4
 	},
 /obj/item/cultivator/rake,
+/obj/effect/spawner/random/mob/goliath,
 /turf/open/misc/hay/lavaland,
 /area/ruin/unpowered)
-"Ax" = (
-/obj/structure/punji_sticks/spikes,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "BE" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 8
@@ -491,7 +279,7 @@
 "BP" = (
 /obj/item/stack/sheet/bone,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/open/misc/hay/lavaland,
 /area/ruin/unpowered)
 "CH" = (
@@ -507,7 +295,7 @@
 /obj/structure/railing/stone/left{
 	layer = -6
 	},
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Ef" = (
@@ -534,16 +322,7 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 1
 	},
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/open/misc/hay/lavaland,
 /area/ruin/unpowered)
 "Gb" = (
@@ -553,17 +332,9 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "GK" = (
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
-/turf/closed/mineral/volcanic/lava_land_surface,
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/mob/goliath,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "GP" = (
 /obj/item/shovel,
@@ -619,7 +390,6 @@
 /obj/structure/stone_tile/block/burnt{
 	dir = 1
 	},
-/mob/living/basic/mining/goliath,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Kz" = (
@@ -657,16 +427,7 @@
 /obj/structure/railing/stone/left{
 	layer = -6
 	},
-/obj/structure/trap/damage{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#DDFFDD";
-	color = "#77FF77";
-	alpha = 180;
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "MY" = (
@@ -736,6 +497,7 @@
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 1
 	},
+/obj/effect/spawner/random/mob/goliath,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "RP" = (
@@ -755,7 +517,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "UY" = (
@@ -764,36 +526,6 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"Vw" = (
-/obj/machinery/hydroponics/soil,
-/mob/living/basic/mining/wolf{
-	desc = "A baby goliath. Do it. Stomp it.";
-	faction = list("mining","boss","hell");
-	name = "Biter";
-	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
-	attack_verb_continuous = "maniacally tears";
-	attack_verb_simple = "tears";
-	attack_vis_effect = "slash";
-	bare_wound_bonus = 5;
-	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
-	can_tame = 0;
-	health = 35;
-	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
-	icon_dead = "goliath_baby_dead";
-	icon_living = "goliath_baby";
-	icon_state = "goliath_baby";
-	maxHealth = 35;
-	melee_damage_lower = 1;
-	melee_attack_cooldown = 5;
-	speed = 0.2;
-	wound_bonus = -1;
-	icon_gib = "syndicate_gib";
-	melee_damage_upper = 2;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
-	crusher_loot = null
-	},
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/ruin/unpowered)
 "VL" = (
 /obj/structure/railing/stone{
 	layer = -6
@@ -803,32 +535,7 @@
 /area/lavaland/surface/outdoors)
 "Xc" = (
 /obj/structure/stone_tile/slab,
-/mob/living/basic/mining/wolf{
-	desc = "A baby goliath. Do it. Stomp it.";
-	faction = list("mining","boss","hell");
-	name = "Biter";
-	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
-	attack_verb_continuous = "maniacally tears";
-	attack_verb_simple = "tears";
-	attack_vis_effect = "slash";
-	bare_wound_bonus = 5;
-	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
-	can_tame = 0;
-	health = 35;
-	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
-	icon_dead = "goliath_baby_dead";
-	icon_living = "goliath_baby";
-	icon_state = "goliath_baby";
-	maxHealth = 35;
-	melee_damage_lower = 1;
-	melee_attack_cooldown = 5;
-	speed = 0.2;
-	wound_bonus = -1;
-	icon_gib = "syndicate_gib";
-	melee_damage_upper = 2;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
-	crusher_loot = null
-	},
+/obj/effect/spawner/random/mob/goliath,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Yh" = (
@@ -848,11 +555,6 @@
 	},
 /turf/open/misc/hay/lavaland,
 /area/ruin/unpowered)
-"ZE" = (
-/obj/structure/stone_tile/slab,
-/mob/living/basic/mining/goliath,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 
 (1,1,1) = {"
 cH
@@ -880,7 +582,7 @@ fB
 nI
 zl
 my
-qu
+kn
 "}
 (3,1,1) = {"
 cH
@@ -903,12 +605,12 @@ zl
 zl
 fB
 lS
-OO
+GK
 pd
 Oq
 pd
 VL
-GK
+vx
 "}
 (5,1,1) = {"
 cH
@@ -934,7 +636,7 @@ tb
 wU
 Ob
 Kz
-Vw
+iN
 HQ
 cH
 "}
@@ -946,8 +648,8 @@ An
 UA
 jX
 xq
-TK
-iw
+ab
+Ah
 fZ
 Dm
 cH
@@ -964,13 +666,13 @@ iN
 fZ
 hV
 VL
-Ax
+vx
 "}
 (9,1,1) = {"
 cH
 vx
 Ah
-kn
+fZ
 BE
 Gb
 OO
@@ -987,7 +689,7 @@ oL
 Ah
 kr
 OO
-ZE
+OO
 iN
 BP
 TK
@@ -1004,7 +706,7 @@ wk
 Pk
 iN
 ms
-ab
+Kz
 vF
 cH
 "}

@@ -52,8 +52,6 @@
 /obj/structure/stone_tile{
 	dir = 4
 	},
-/mob/living/basic/mining/brimdemon,
-/mob/living/basic/mining/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "n" = (
@@ -68,6 +66,7 @@
 /obj/structure/stone_tile/cracked{
 	dir = 4
 	},
+/obj/effect/spawner/random/mob/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "q" = (
@@ -86,8 +85,6 @@
 /area/lavaland/surface/outdoors)
 "s" = (
 /obj/structure/flora/rock/pile/style_random,
-/mob/living/basic/mining/brimdemon,
-/mob/living/basic/mining/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "t" = (
@@ -129,8 +126,7 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
 	},
-/mob/living/basic/mining/brimdemon,
-/mob/living/basic/mining/brimdemon,
+/obj/effect/spawner/random/mob/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "B" = (
@@ -166,8 +162,7 @@
 /obj/structure/stone_tile/cracked{
 	dir = 4
 	},
-/mob/living/basic/mining/brimdemon,
-/mob/living/basic/mining/brimdemon,
+/obj/effect/spawner/random/mob/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "L" = (

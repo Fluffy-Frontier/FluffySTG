@@ -3,20 +3,7 @@
 /turf/template_noop,
 /area/template_noop)
 "c" = (
-/obj/structure/trap/damage{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#DDFFDD";
-	color = "#77FF77";
-	alpha = 180;
-	max_integrity = 30
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"h" = (
-/obj/structure/flora/rock/pile/style_random,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "k" = (
@@ -24,84 +11,22 @@
 /area/lavaland/surface/outdoors)
 "m" = (
 /obj/structure/flora/rock/pile/style_random,
-/obj/structure/trap/cult{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF9911";
-	color = "#FF9911";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "n" = (
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "p" = (
-/mob/living/basic/mining/brimdemon,
-/mob/living/basic/mining/brimdemon,
-/mob/living/basic/mining/brimdemon,
-/mob/living/basic/mining/goliath,
-/obj/item/melee/moonlight_greatsword{
-	name = "Frozen Moonlight";
-	desc = "A legendary sword of yore, still imbued with astral magic after all these years. Ancient runes bears the tale of E'luna's blessing.";
-	light_color = "#7777FF";
-	color = "#7777FF";
-	light_range = 3;
-	attack_speed = 24;
-	block_chance = 45;
-	bare_wound_bonus = 25;
-	force = 120;
-	throwforce = 42;
-	slowdown = 1.5;
-	armour_penetration = 12;
-	cold_protection = 1;
-	heat_protection = 1;
-	drag_slowdown = 1.5;
-	light_system = 2;
-	heat = -35
-	},
-/obj/structure/stone_tile/slab,
-/turf/closed/mineral/random/high_chance/volcanic,
+/obj/effect/spawner/random/structure/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "u" = (
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"v" = (
-/obj/structure/trap/cult{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF9911";
-	color = "#FF9911";
-	max_integrity = 30
-	},
-/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "G" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"H" = (
-/obj/structure/punji_sticks/spikes,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"L" = (
-/obj/structure/trap/cult{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF9911";
-	color = "#FF9911";
-	max_integrity = 30
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "M" = (
 /obj/structure/flora/rock/style_random,
@@ -116,21 +41,12 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "V" = (
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "W" = (
-/obj/structure/flora/rock/style_random,
 /obj/structure/stone_tile/block/cracked,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "X" = (
@@ -138,6 +54,7 @@
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 
@@ -151,23 +68,23 @@ a
 (2,1,1) = {"
 a
 a
-v
-n
+V
+u
 a
 "}
 (3,1,1) = {"
 a
-G
+p
 k
-h
+m
 a
 "}
 (4,1,1) = {"
 n
 M
 k
-n
-n
+u
+u
 "}
 (5,1,1) = {"
 u
@@ -179,49 +96,49 @@ X
 (6,1,1) = {"
 c
 W
-p
 k
-L
+k
+u
 "}
 (7,1,1) = {"
 u
 M
 k
 k
-n
+u
 "}
 (8,1,1) = {"
 P
 k
 k
-n
-h
+u
+m
 "}
 (9,1,1) = {"
 u
 k
 k
-n
-H
+u
+G
 "}
 (10,1,1) = {"
-n
+u
 k
 m
-n
+u
 a
 "}
 (11,1,1) = {"
-G
+V
 u
 n
-G
+p
 a
 "}
 (12,1,1) = {"
 a
 a
-V
+p
 a
 a
 "}

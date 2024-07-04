@@ -21,13 +21,12 @@
 	health = 900;
 	melee_damage_lower = 30;
 	melee_damage_upper = 60;
-	melee_attack_cooldown = 20;
 	obj_damage = 60;
 	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
 	maxHealth = 900;
 	butcher_results = null;
-	guaranteed_butcher_results = list(/obj/item/food/meat/slab/rawcrab = 8, /obj/item/stack/sheet/bone = 4, /obj/item/organ/internal/monster_core/rush_gland = 1,/obj/item/crusher_trophy/lobster_claw=1);
-	base_pixel_y = -30
+	guaranteed_butcher_results = list(/obj/item/food/meat/slab/rawcrab = 16, /obj/item/stack/sheet/bone = 4, /obj/item/organ/internal/monster_core/rush_gland = 1,/obj/item/crusher_trophy/lobster_claw=1);
+	base_pixel_y = -32
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -42,8 +41,20 @@
 /obj/structure/flora/ash/stem_shroom,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"q" = (
+/mob/living/basic/mining/lobstrosity/lava,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"v" = (
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "x" = (
 /obj/structure/flora/ash/seraka,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"y" = (
+/obj/structure/flora/rock/pile/style_random,
+/mob/living/basic/mining/lobstrosity/lava,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "B" = (
@@ -131,7 +142,7 @@ X
 G
 a
 a
-a
+q
 l
 l
 "}
@@ -144,7 +155,7 @@ X
 X
 X
 X
-d
+v
 a
 a
 l
@@ -223,8 +234,8 @@ a
 l
 a
 a
-Q
-d
+y
+v
 X
 X
 X

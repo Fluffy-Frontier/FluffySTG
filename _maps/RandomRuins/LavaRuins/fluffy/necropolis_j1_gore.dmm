@@ -5,32 +5,31 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ar" = (
-/mob/living/basic/meteor_heart{
-	health = 1200;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
-	melee_attack_cooldown = 10;
-	name = "Deep space meteor heart";
-	light_color = "#FF9999";
-	color = "#FF9999";
-	current_size = 1.25;
-	base_pixel_y = -7.5
-	},
+/obj/effect/gibspawner/human/bodypartless,
+/obj/item/food/meat/slab/human,
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/powered)
+"bn" = (
+/obj/effect/spawner/random/structure/spikes,
+/obj/structure/statue/uranium/eng{
+	icon = 'icons/obj/art/statuelarge.dmi';
+	icon_preview = 'icons/obj/fluff/previews.dmi';
+	icon_state = "rib";
+	icon_state_preview = "rib";
+	pixel_y = 10;
+	name = "Rib";
+	desc = "A giant teeth. Or a rib. You barely can figure.";
+	custom_materials = list(/datum/material/uranium = 25);
+	max_integrity = 3000;
+	anchored = 1
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "eh" = (
 /obj/structure/stone_tile/surrounding_tile/cracked,
-/obj/structure/trap/damage{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#DDFFDD";
-	color = "#77FF77";
-	alpha = 180;
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "fO" = (
@@ -43,7 +42,6 @@
 "fR" = (
 /obj/structure/stone_tile/block,
 /obj/effect/gibspawner/human/bodypartless,
-/mob/living/basic/mining/hivelord,
 /obj/item/xenoarch/useless_relic/magnified{
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
@@ -66,16 +64,7 @@
 	},
 /area/ruin/powered)
 "hN" = (
-/obj/structure/trap/damage{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#DDFFDD";
-	color = "#77FF77";
-	alpha = 180;
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "lL" = (
@@ -89,6 +78,18 @@
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
 	dir = 8
+	},
+/obj/structure/statue/uranium/eng{
+	icon = 'icons/obj/art/statuelarge.dmi';
+	icon_preview = 'icons/obj/fluff/previews.dmi';
+	icon_state = "rib";
+	icon_state_preview = "rib";
+	pixel_y = 10;
+	name = "Rib";
+	desc = "A giant teeth. Or a rib. You barely can figure.";
+	custom_materials = list(/datum/material/uranium = 25);
+	max_integrity = 3000;
+	anchored = 1
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -105,7 +106,6 @@
 	},
 /area/ruin/powered)
 "pe" = (
-/obj/structure/meateor_fluff/flesh_pod,
 /obj/item/food/meat/slab/human,
 /obj/item/food/meat/slab/human,
 /obj/item/food/meat/slab/meatproduct,
@@ -134,11 +134,9 @@
 /area/lavaland/surface/outdoors)
 "rP" = (
 /obj/effect/gibspawner/human/bodypartless,
-/mob/living/basic/mining/hivelord/no_wander,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "sb" = (
-/mob/living/basic/mining/hivelord/no_wander,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "sA" = (
@@ -155,9 +153,19 @@
 	},
 /area/lavaland/surface/outdoors)
 "vD" = (
-/mob/living/basic/mining/hivelord,
-/obj/effect/gibspawner/human/bodypartless,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/obj/structure/statue/uranium/eng{
+	icon = 'icons/obj/art/statuelarge.dmi';
+	icon_preview = 'icons/obj/fluff/previews.dmi';
+	icon_state = "rib";
+	icon_state_preview = "rib";
+	pixel_y = 10;
+	name = "Rib";
+	desc = "A giant teeth. Or a rib. You barely can figure.";
+	custom_materials = list(/datum/material/uranium = 25);
+	max_integrity = 3000;
+	anchored = 1
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "vK" = (
 /obj/item/food/meat/slab/corgi,
@@ -202,7 +210,6 @@
 	dir = 4
 	},
 /obj/effect/gibspawner/human/bodypartless,
-/mob/living/basic/mining/hivelord/no_wander,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "xw" = (
@@ -221,8 +228,20 @@
 	},
 /area/ruin/powered)
 "yE" = (
-/obj/structure/punji_sticks/spikes,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/obj/structure/statue/uranium/eng{
+	icon = 'icons/obj/art/statuelarge.dmi';
+	icon_preview = 'icons/obj/fluff/previews.dmi';
+	icon_state = "rib";
+	icon_state_preview = "rib";
+	pixel_y = 10;
+	dir = 1;
+	desc = "A giant teeth. Or a rib. You barely can figure.";
+	name = "Rib";
+	custom_materials = list(/datum/material/uranium = 25);
+	max_integrity = 3000;
+	anchored = 1
+	},
+/turf/open/chasm/lavaland,
 /area/lavaland/surface/outdoors)
 "yJ" = (
 /obj/structure/punji_sticks/spikes,
@@ -243,10 +262,28 @@
 	desc = "A giant teeth. Or a rib. You barely can figure.";
 	name = "Rib";
 	custom_materials = list(/datum/material/uranium = 25);
-	max_integrity = 3000
+	max_integrity = 3000;
+	anchored = 1
 	},
 /turf/closed/indestructible/meat,
 /area/ruin/powered)
+"zE" = (
+/obj/effect/spawner/random/structure/spikes,
+/obj/structure/statue/uranium/eng{
+	icon = 'icons/obj/art/statuelarge.dmi';
+	icon_preview = 'icons/obj/fluff/previews.dmi';
+	icon_state = "rib";
+	icon_state_preview = "rib";
+	pixel_y = 10;
+	dir = 1;
+	desc = "A giant teeth. Or a rib. You barely can figure.";
+	name = "Rib";
+	custom_materials = list(/datum/material/uranium = 25);
+	max_integrity = 3000;
+	anchored = 1
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "zP" = (
 /turf/closed/indestructible/meat,
 /area/ruin/powered)
@@ -263,7 +300,6 @@
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
 	},
-/mob/living/basic/mining/hivelord/no_wander,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "DB" = (
@@ -274,7 +310,6 @@
 /obj/structure/stone_tile/cracked{
 	dir = 4
 	},
-/mob/living/basic/mining/hivelord,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "DN" = (
@@ -348,9 +383,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Rd" = (
-/obj/effect/gibspawner/human/bodypartless,
 /obj/item/food/meat/slab/meatproduct,
-/obj/structure/meateor_fluff/flesh_pod,
 /obj/item/food/meat/slab/human,
 /obj/item/food/meat/slab/human,
 /obj/item/food/meat/slab/human,
@@ -362,9 +395,6 @@
 	name = "Unknown injector";
 	desc = "A blue injector filled with some viscous, red substance. It has no markings apart from an orange warning stripe near the large needle.";
 	inhand_icon_state = null
-	},
-/obj/item/antag_granter/changeling{
-	name = "Unknown injector"
 	},
 /obj/item/dnainjector/dwarf{
 	icon = 'modular_nova/modules/opposing_force/icons/items.dmi';
@@ -387,15 +417,51 @@
 	inhand_icon_state = null;
 	worn_icon_state = null
 	},
-/obj/item/food/meat/slab/human,
+/mob/living/basic/meteor_heart{
+	health = 1200;
+	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
+	melee_attack_cooldown = 10;
+	name = "Deep space meteor heart";
+	light_color = "#FF9999";
+	color = "#FF9999";
+	current_size = 1.25;
+	base_pixel_y = -7.5
+	},
+/obj/item/dnainjector{
+	desc = "A blue injector filled with some viscous, red substance. It has no markings apart from an orange warning stripe near the large needle.";
+	name = "Unknown injector";
+	icon = 'modular_nova/modules/opposing_force/icons/items.dmi';
+	icon_state = "changeling_injector";
+	inhand_icon_state = null;
+	worn_icon_state = null
+	},
+/obj/item/dnainjector{
+	desc = "A blue injector filled with some viscous, red substance. It has no markings apart from an orange warning stripe near the large needle.";
+	name = "Unknown injector";
+	icon = 'modular_nova/modules/opposing_force/icons/items.dmi';
+	icon_state = "changeling_injector";
+	inhand_icon_state = null;
+	worn_icon_state = null
+	},
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/powered)
 "Rm" = (
-/obj/structure/flora/rock/pile/style_random,
-/mob/living/basic/mining/hivelord,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/obj/effect/gibspawner/human/bodypartless,
+/obj/structure/statue/uranium/eng{
+	icon = 'icons/obj/art/statuelarge.dmi';
+	icon_preview = 'icons/obj/fluff/previews.dmi';
+	icon_state = "rib";
+	icon_state_preview = "rib";
+	pixel_y = 10;
+	name = "Rib";
+	desc = "A giant teeth. Or a rib. You barely can figure.";
+	custom_materials = list(/datum/material/uranium = 25);
+	max_integrity = 3000;
+	anchored = 1
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Tm" = (
 /obj/structure/statue/uranium/eng{
@@ -407,7 +473,8 @@
 	name = "Rib";
 	desc = "A giant teeth. Or a rib. You barely can figure.";
 	custom_materials = list(/datum/material/uranium = 25);
-	max_integrity = 3000
+	max_integrity = 3000;
+	anchored = 1
 	},
 /turf/closed/indestructible/meat,
 /area/ruin/powered)
@@ -439,6 +506,22 @@
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/lavaland/surface/outdoors)
+"VR" = (
+/obj/structure/statue/uranium/eng{
+	icon = 'icons/obj/art/statuelarge.dmi';
+	icon_preview = 'icons/obj/fluff/previews.dmi';
+	icon_state = "rib";
+	icon_state_preview = "rib";
+	pixel_y = 10;
+	dir = 1;
+	desc = "A giant teeth. Or a rib. You barely can figure.";
+	name = "Rib";
+	custom_materials = list(/datum/material/uranium = 25);
+	max_integrity = 3000;
+	anchored = 1
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Xn" = (
 /obj/item/food/meat/slab/human/mutant/ethereal,
 /turf/open/indestructible/meat{
@@ -454,13 +537,11 @@
 /area/lavaland/surface/outdoors)
 "Zp" = (
 /obj/structure/flora/ash/fireblossom,
-/mob/living/basic/mining/hivelord,
 /obj/structure/flora/rock/pile/style_random,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ZU" = (
 /obj/effect/gibspawner/human/bodypartless,
-/mob/living/basic/mining/hivelord/no_wander,
 /obj/item/xenoarch/useless_relic/magnified{
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
@@ -473,11 +554,11 @@ LX
 LX
 LX
 LX
-hN
+VR
 xw
 Hv
 PS
-hN
+zE
 LX
 LX
 LX
@@ -490,7 +571,7 @@ fR
 Hv
 rP
 Hv
-vD
+rP
 wB
 PS
 LX
@@ -498,7 +579,7 @@ LX
 "}
 (3,1,1) = {"
 LX
-Hv
+yE
 Hv
 tt
 vK
@@ -507,12 +588,12 @@ Hv
 Hv
 ZU
 Hv
-Hv
+yE
 LX
 "}
 (4,1,1) = {"
 eh
-Rm
+wB
 Hv
 Os
 zb
@@ -525,7 +606,7 @@ Mp
 hN
 "}
 (5,1,1) = {"
-yE
+hN
 sA
 Os
 zb
@@ -539,7 +620,7 @@ sb
 PS
 "}
 (6,1,1) = {"
-Hv
+yE
 Vo
 zb
 MM
@@ -577,11 +658,11 @@ Tm
 qR
 xg
 Hv
-PS
+vD
 hN
 "}
 (9,1,1) = {"
-rP
+Rm
 Vx
 Os
 Tm
@@ -625,12 +706,12 @@ LX
 (12,1,1) = {"
 LX
 LX
-hN
+bn
 ME
 Hv
 Hv
-hN
-hN
+PS
+vD
 PS
 hN
 LX

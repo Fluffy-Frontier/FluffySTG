@@ -17,16 +17,7 @@
 /area/ruin/powered)
 "dX" = (
 /obj/structure/flora/rock/pile/style_random,
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "eK" = (
@@ -310,7 +301,7 @@
 /area/ruin/powered)
 "xZ" = (
 /obj/structure/stone_tile/cracked,
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "yI" = (
@@ -382,7 +373,7 @@
 /area/template_noop)
 "Dg" = (
 /obj/structure/flora/rock/pile/style_random,
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Dj" = (
@@ -449,10 +440,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/powered)
-"EZ" = (
-/obj/structure/punji_sticks/spikes,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 "Fg" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/powered)
@@ -535,16 +522,7 @@
 /turf/open/floor/grass,
 /area/ruin/powered)
 "LI" = (
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Mv" = (
@@ -786,7 +764,7 @@ pt
 kZ
 EK
 yI
-EZ
+LI
 Bn
 "}
 (8,1,1) = {"

@@ -1,31 +1,24 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "f" = (
 /obj/structure/stone_tile/block/cracked,
-/obj/structure/trap/cult{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF9911";
-	color = "#FF9911";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/mob/brimdemon,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "g" = (
 /turf/template_noop,
 /area/template_noop)
 "l" = (
-/obj/structure/punji_sticks/spikes,
-/turf/closed/mineral/random/high_chance/volcanic,
+/obj/structure/stone_tile/block,
+/obj/effect/spawner/random/structure/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "m" = (
 /obj/structure/stone_tile/block/cracked,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "p" = (
@@ -43,22 +36,24 @@
 /area/lavaland/surface/outdoors)
 "y" = (
 /obj/structure/stone_tile/block,
+/obj/effect/spawner/random/mob/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "z" = (
 /obj/structure/stone_tile/block,
-/mob/living/basic/mining/brimdemon,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "C" = (
 /obj/structure/flora/rock/pile/style_random,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "F" = (
 /obj/structure/stone_tile/block,
 /obj/structure/stone_tile/block,
 /obj/structure/stone_tile/block,
-/mob/living/basic/mining/brimdemon,
+/obj/effect/spawner/random/mob/brimdemon,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "I" = (
@@ -71,39 +66,25 @@
 /obj/structure/stone_tile/block{
 	dir = 1
 	},
+/obj/effect/spawner/random/mob/brimdemon,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "U" = (
-/obj/structure/trap/damage{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#DDFFDD";
-	color = "#77FF77";
-	alpha = 180;
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "V" = (
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
+/obj/structure/stone_tile/block/cracked{
+	dir = 1
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/obj/effect/spawner/random/mob/brimdemon,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "X" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
 	},
-/mob/living/basic/mining/brimdemon,
+/obj/effect/spawner/random/mob/brimdemon,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Y" = (
@@ -114,6 +95,7 @@
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 
@@ -140,10 +122,10 @@ q
 (5,1,1) = {"
 I
 q
-y
+l
 "}
 (6,1,1) = {"
-p
+V
 q
 z
 "}
@@ -200,7 +182,7 @@ q
 (17,1,1) = {"
 p
 q
-l
+U
 "}
 (18,1,1) = {"
 X
@@ -228,7 +210,7 @@ q
 g
 "}
 (23,1,1) = {"
-V
+U
 q
 y
 "}

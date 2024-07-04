@@ -25,6 +25,10 @@
 /obj/structure/ore_vein/silver,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"w" = (
+/obj/effect/spawner/random/mob/necropolis_mob,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "x" = (
 /obj/structure/ore_vein/plasma,
 /obj/item/xenoarch/useless_relic/magnified{
@@ -38,6 +42,11 @@
 /area/lavaland/surface/outdoors)
 "A" = (
 /obj/structure/ore_vein,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"G" = (
+/obj/structure/ore_vein/iron,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "H" = (
@@ -66,6 +75,11 @@
 	icon = 'modular_nova/modules/liquids/icons/turf/smoothrocks.dmi';
 	icon_state = "smoothrocks-55"
 	},
+/area/lavaland/surface/outdoors)
+"V" = (
+/obj/structure/ore_vein,
+/obj/effect/spawner/random/mob/necropolis_mob,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "X" = (
 /obj/structure/ore_vein/plasma,
@@ -139,7 +153,7 @@ a
 e
 m
 S
-A
+V
 S
 S
 z
@@ -201,7 +215,7 @@ z
 (8,1,1) = {"
 z
 H
-S
+w
 S
 M
 v
@@ -212,7 +226,7 @@ z
 z
 z
 X
-S
+w
 A
 z
 "}
@@ -239,7 +253,7 @@ z
 S
 N
 S
-H
+G
 S
 z
 z

@@ -3,16 +3,7 @@
 /obj/structure/railing/stone/left{
 	layer = -6
 	},
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "cs" = (
@@ -26,6 +17,7 @@
 /area/lavaland/surface/outdoors)
 "cQ" = (
 /obj/structure/stone_tile,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "cZ" = (
@@ -48,16 +40,7 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
 	},
-/obj/structure/trap/cult{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF9911";
-	color = "#FF9911";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "kl" = (
@@ -88,6 +71,7 @@
 /obj/structure/railing/stone/left{
 	layer = -6
 	},
+/obj/effect/spawner/random/mob/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "lK" = (
@@ -136,7 +120,7 @@
 /obj/structure/railing/stone/right{
 	layer = -6
 	},
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "rE" = (
@@ -168,10 +152,8 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "wf" = (
-/obj/structure/stone_tile/block{
-	dir = 8
-	},
-/mob/living/basic/mining/brimdemon,
+/obj/structure/stone_tile/slab/cracked,
+/obj/effect/spawner/random/mob/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "wp" = (
@@ -196,16 +178,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "xC" = (
-/obj/structure/trap/damage{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#DDFFDD";
-	color = "#77FF77";
-	alpha = 180;
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "xU" = (
@@ -243,6 +216,7 @@
 /obj/structure/railing/stone{
 	layer = -6
 	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "zh" = (
@@ -252,6 +226,7 @@
 /obj/structure/railing/stone{
 	layer = -6
 	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Ak" = (
@@ -266,20 +241,12 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "CL" = (
-/obj/structure/trap/damage{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#DDFFDD";
-	color = "#77FF77";
-	alpha = 180;
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Dn" = (
 /obj/structure/stone_tile/slab/burnt,
+/obj/effect/spawner/random/mob/brimdemon,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Fh" = (
@@ -295,16 +262,7 @@
 /area/lavaland/surface/outdoors)
 "HX" = (
 /obj/structure/stone_tile/block/burnt,
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Im" = (
@@ -331,13 +289,6 @@
 	dir = 4
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"Mw" = (
-/obj/structure/punji_sticks/spikes,
-/obj/structure/railing/stone{
-	layer = -6
-	},
-/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Nq" = (
 /obj/structure/stone_tile/surrounding_tile/burnt{
@@ -376,19 +327,8 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "PY" = (
-/obj/structure/railing/stone{
-	layer = -6
-	},
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
+/obj/structure/stone_tile/slab/cracked,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Qb" = (
@@ -428,12 +368,14 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
 	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Ze" = (
 /obj/structure/railing/stone{
 	layer = -6
 	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 
@@ -445,7 +387,7 @@ QZ
 nz
 QZ
 Ov
-Ax
+PY
 ge
 QZ
 "}
@@ -493,7 +435,7 @@ oW
 lc
 cZ
 Ls
-wf
+kN
 kR
 QZ
 "}
@@ -518,7 +460,7 @@ yD
 kl
 Nq
 Ox
-PY
+Ze
 ml
 "}
 (8,1,1) = {"
@@ -550,10 +492,10 @@ Fh
 Fh
 Uf
 Qb
-Mw
+Ze
 CL
 QJ
-Ax
+wf
 zh
 xC
 "}

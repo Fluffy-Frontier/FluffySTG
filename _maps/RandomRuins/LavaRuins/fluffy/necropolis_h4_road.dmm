@@ -20,16 +20,7 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "gs" = (
-/obj/structure/trap/cult{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF9911";
-	color = "#FF9911";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "gJ" = (
@@ -71,16 +62,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "kV" = (
-/obj/structure/trap/damage{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#DDFFDD";
-	color = "#77FF77";
-	alpha = 180;
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "lm" = (
@@ -127,28 +109,6 @@
 	dir = 6
 	},
 /obj/structure/stone_tile/center/burnt,
-/mob/living/basic/mining/basilisk{
-	icon_dead = "legion";
-	icon_living = "legion";
-	icon_state = "legion";
-	icon_gib = "syndicate_gib";
-	speed = 1;
-	name = "Butcher";
-	light_color = "#D00000";
-	color = "#FF7755";
-	melee_attack_cooldown = 10;
-	damage_coeff = list("brute" = 1, "burn" = 0.1, "toxin" = 1, "stamina" = 0.2, "oxygen" = 1);
-	melee_damage_upper = 24;
-	attack_sound = 'modular_nova/master_files/sound/weapons/bloodyslice.ogg';
-	attack_verb_continuous = "cleaves";
-	attack_verb_simple = "cleave";
-	light_power = 12;
-	light_range = 1.4;
-	guaranteed_butcher_results = list(/obj/item/knife/butcher,/obj/item/organ/internal/legion_tumour,/obj/item/crusher_trophy/legion_skull);
-	maxHealth = 600;
-	health = 600;
-	attack_vis_effect = "slash"
-	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "pI" = (
@@ -175,16 +135,8 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "tZ" = (
-/obj/structure/trap/damage{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#DDFFDD";
-	color = "#77FF77";
-	alpha = 180;
-	max_integrity = 30
-	},
+/obj/structure/ore_vein/plasma,
+/mob/living/basic/mining/legion/massive,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "vh" = (
@@ -195,10 +147,6 @@
 /obj/structure/stone_tile{
 	dir = 1
 	},
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"vq" = (
-/obj/structure/punji_sticks/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "xg" = (
@@ -265,9 +213,7 @@
 /obj/structure/stone_tile{
 	dir = 8
 	},
-/obj/structure/stone_tile{
-	dir = 4
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "LZ" = (
@@ -383,7 +329,7 @@ lM
 mk
 mT
 tS
-vq
+kV
 nH
 "}
 (5,1,1) = {"
@@ -400,7 +346,7 @@ qR
 KO
 qR
 SO
-Ch
+tZ
 jc
 qR
 ia
@@ -419,7 +365,7 @@ il
 (8,1,1) = {"
 Wv
 Ss
-tZ
+gs
 fM
 Vw
 jc
@@ -434,7 +380,7 @@ Ss
 jc
 jc
 qR
-qR
+kV
 "}
 (10,1,1) = {"
 qR
@@ -449,7 +395,7 @@ kV
 (11,1,1) = {"
 nH
 Gg
-vq
+kV
 Mr
 aD
 Ss
@@ -458,7 +404,7 @@ nH
 "}
 (12,1,1) = {"
 nH
-qR
+kV
 qR
 GU
 kF

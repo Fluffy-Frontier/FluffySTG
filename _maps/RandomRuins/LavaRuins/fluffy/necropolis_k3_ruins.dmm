@@ -18,32 +18,6 @@
 /obj/structure/stone_tile/cracked{
 	dir = 4
 	},
-/mob/living/basic/mining/wolf{
-	desc = "A baby goliath. Do it. Stomp it.";
-	faction = list("mining","boss","hell");
-	name = "Biter";
-	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
-	attack_verb_continuous = "maniacally tears";
-	attack_verb_simple = "tears";
-	attack_vis_effect = "slash";
-	bare_wound_bonus = 5;
-	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
-	can_tame = 0;
-	health = 35;
-	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
-	icon_dead = "goliath_baby_dead";
-	icon_living = "goliath_baby";
-	icon_state = "goliath_baby";
-	maxHealth = 35;
-	melee_damage_lower = 1;
-	melee_attack_cooldown = 5;
-	speed = 0.2;
-	wound_bonus = -1;
-	icon_gib = "syndicate_gib";
-	melee_damage_upper = 2;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
-	crusher_loot = null
-	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "f" = (
@@ -135,32 +109,7 @@
 "L" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center/cracked,
-/mob/living/basic/mining/wolf{
-	desc = "A baby goliath. Do it. Stomp it.";
-	faction = list("mining","boss","hell");
-	name = "Biter";
-	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
-	attack_verb_continuous = "maniacally tears";
-	attack_verb_simple = "tears";
-	attack_vis_effect = "slash";
-	bare_wound_bonus = 5;
-	butcher_results = list(/obj/item/food/meat/slab/goliath = 1);
-	can_tame = 0;
-	health = 35;
-	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi';
-	icon_dead = "goliath_baby_dead";
-	icon_living = "goliath_baby";
-	icon_state = "goliath_baby";
-	maxHealth = 35;
-	melee_damage_lower = 1;
-	melee_attack_cooldown = 5;
-	speed = 0.2;
-	wound_bonus = -1;
-	icon_gib = "syndicate_gib";
-	melee_damage_upper = 2;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 1, "oxygen" = 1);
-	crusher_loot = null
-	},
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "M" = (
@@ -195,6 +144,7 @@
 	dir = 10
 	},
 /obj/item/flashlight/flare/torch,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "W" = (

@@ -39,7 +39,7 @@
 /area/lavaland/surface/outdoors)
 "dR" = (
 /obj/structure/stone_tile/slab,
-/mob/living/basic/mining/brimdemon,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ek" = (
@@ -49,6 +49,11 @@
 /obj/structure/stone_tile/block{
 	dir = 4
 	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"eC" = (
+/obj/structure/stone_tile/slab,
+/mob/living/basic/mining/ancient_demon/ancient_demon_lesser,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "fs" = (
@@ -72,6 +77,7 @@
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
 	},
+/mob/living/basic/mining/ancient_demon/ancient_demon_lesser,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "fV" = (
@@ -149,7 +155,7 @@
 /area/lavaland/surface/outdoors)
 "iu" = (
 /obj/structure/stone_tile,
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "iI" = (
@@ -223,16 +229,11 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ow" = (
-/obj/structure/trap/damage{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#DDFFDD";
-	color = "#77FF77";
-	alpha = 180;
-	max_integrity = 30
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
 	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "oM" = (
@@ -277,7 +278,7 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
 	},
-/mob/living/basic/mining/legion,
+/mob/living/basic/mining/ancient_demon/demoraptor,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "qx" = (
@@ -334,24 +335,17 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 1
 	},
+/mob/living/basic/mining/ancient_demon/demoraptor,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "tU" = (
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
+/obj/structure/stone_tile/slab,
+/mob/living/basic/mining/ancient_demon/ancient_demon_lesser,
 /turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "tW" = (
 /obj/structure/stone_tile/block,
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ub" = (
@@ -374,8 +368,8 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "uM" = (
-/obj/structure/punji_sticks/spikes,
-/turf/closed/mineral/volcanic/lava_land_surface,
+/obj/effect/spawner/random/structure/spikes,
+/turf/closed/mineral/strange_rock/volcanic,
 /area/lavaland/surface/outdoors)
 "uU" = (
 /turf/closed/mineral/strange_rock/volcanic,
@@ -384,20 +378,11 @@
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 1
 	},
-/mob/living/basic/mining/legion,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "vd" = (
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
+/mob/living/basic/mining/ancient_demon/demoraptor,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "vj" = (
@@ -440,8 +425,8 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "wN" = (
-/mob/living/basic/mining/legion,
 /obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "wZ" = (
@@ -487,7 +472,7 @@
 /area/ruin/unpowered)
 "ze" = (
 /obj/structure/stone_tile/slab,
-/mob/living/basic/mining/brimdemon,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "zh" = (
@@ -500,7 +485,7 @@
 /obj/structure/stone_tile/block{
 	dir = 4
 	},
-/mob/living/basic/mining/brimdemon,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "zY" = (
@@ -523,16 +508,7 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Bv" = (
-/obj/structure/trap/cult{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF9911";
-	color = "#FF9911";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "BL" = (
@@ -610,7 +586,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "EZ" = (
-/mob/living/basic/mining/goliath,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "FE" = (
@@ -780,16 +756,7 @@
 /obj/structure/stone_tile{
 	dir = 8
 	},
-/obj/structure/trap/cult{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF9911";
-	color = "#FF9911";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Mq" = (
@@ -811,15 +778,13 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 6
 	},
-/mob/living/basic/mining/brimdemon,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Na" = (
-/obj/structure/stone_tile/slab/cracked{
-	dir = 6
-	},
-/mob/living/basic/mining/lobstrosity/lava,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/obj/structure/flora/rock/pile/style_random,
+/mob/living/basic/mining/ancient_demon/demoraptor,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Nj" = (
 /obj/structure/table/wood,
@@ -829,7 +794,7 @@
 /area/lavaland/surface/outdoors)
 "Nn" = (
 /obj/structure/stone_tile/surrounding_tile,
-/mob/living/basic/mining/brimdemon,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "NC" = (
@@ -864,7 +829,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "NY" = (
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Ok" = (
@@ -941,7 +906,7 @@
 /obj/structure/stone_tile/block{
 	dir = 1
 	},
-/mob/living/basic/mining/brimdemon,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "SE" = (
@@ -1022,7 +987,7 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "VB" = (
-/mob/living/basic/mining/hivelord,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "VO" = (
@@ -1036,9 +1001,9 @@
 /area/ruin/unpowered)
 "Wr" = (
 /obj/structure/stone_tile/slab,
-/mob/living/basic/mining/goliath,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
+/mob/living/basic/mining/ancient_demon,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
 "Xl" = (
 /obj/structure/rack/shelf{
 	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
@@ -1088,6 +1053,7 @@
 	dir = 8
 	},
 /obj/structure/stone_tile/burnt,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Zx" = (
@@ -1112,9 +1078,9 @@ La
 La
 La
 al
-ws
-BY
-ws
+Bv
+Na
+Bv
 al
 JQ
 JQ
@@ -1124,7 +1090,7 @@ al
 Mq
 al
 al
-uM
+Bv
 BY
 al
 JQ
@@ -1200,7 +1166,7 @@ UE
 al
 BL
 SG
-ws
+Bv
 vn
 mM
 Im
@@ -1211,7 +1177,7 @@ vn
 al
 "}
 (5,1,1) = {"
-ws
+Bv
 vn
 KP
 MY
@@ -1237,7 +1203,7 @@ vn
 al
 "}
 (6,1,1) = {"
-JQ
+NY
 vn
 vn
 ml
@@ -1263,7 +1229,7 @@ vn
 BY
 "}
 (7,1,1) = {"
-JQ
+NY
 LM
 vn
 vn
@@ -1286,7 +1252,7 @@ vn
 lp
 vn
 vn
-JQ
+NY
 "}
 (8,1,1) = {"
 al
@@ -1312,7 +1278,7 @@ EE
 nu
 Se
 vn
-is
+ow
 "}
 (9,1,1) = {"
 HJ
@@ -1335,10 +1301,10 @@ La
 ln
 PG
 wZ
-lp
+ze
 lp
 vn
-JQ
+NY
 "}
 (10,1,1) = {"
 tM
@@ -1361,13 +1327,13 @@ La
 Kf
 Nj
 GD
-ow
+NY
 JQ
 UE
 NY
 "}
 (11,1,1) = {"
-ws
+Bv
 ws
 ws
 al
@@ -1387,13 +1353,13 @@ vn
 al
 ml
 lp
-lp
+eC
 ws
 vn
-vd
+Bv
 "}
 (12,1,1) = {"
-ws
+Bv
 pj
 vn
 vn
@@ -1419,7 +1385,7 @@ vn
 NY
 "}
 (13,1,1) = {"
-tU
+NY
 vn
 vn
 cs
@@ -1442,7 +1408,7 @@ FV
 FV
 vn
 Zv
-OU
+Bv
 "}
 (14,1,1) = {"
 NY
@@ -1450,7 +1416,7 @@ UE
 al
 mM
 QB
-QB
+Wr
 Bv
 ih
 mM
@@ -1468,10 +1434,10 @@ zY
 Zx
 FV
 vn
-ws
+Bv
 "}
 (15,1,1) = {"
-OU
+Bv
 vn
 al
 NJ
@@ -1491,10 +1457,10 @@ vn
 hF
 Eh
 qC
-Lj
+tU
 QB
 vn
-ws
+Bv
 "}
 (16,1,1) = {"
 al
@@ -1515,7 +1481,7 @@ ml
 al
 vn
 SS
-Lj
+tU
 Lj
 yS
 yS
@@ -1546,7 +1512,7 @@ FV
 hF
 FV
 vn
-uU
+uM
 "}
 (18,1,1) = {"
 al
@@ -1564,7 +1530,7 @@ La
 La
 ml
 ml
-ws
+Bv
 vn
 Gz
 ih
@@ -1582,7 +1548,7 @@ is
 JQ
 pI
 ml
-Na
+MY
 al
 La
 La
@@ -1614,7 +1580,7 @@ La
 La
 vn
 al
-uM
+Bv
 wZ
 nu
 Mq
@@ -1624,7 +1590,7 @@ mM
 wN
 SJ
 vn
-ws
+Bv
 "}
 (21,1,1) = {"
 al
@@ -1639,10 +1605,10 @@ La
 La
 mq
 vn
-OU
+Bv
 ek
 ek
-tU
+NY
 vn
 al
 al
@@ -1650,7 +1616,7 @@ al
 al
 QB
 vn
-JQ
+EZ
 "}
 (22,1,1) = {"
 QE
@@ -1667,8 +1633,8 @@ vn
 vn
 VB
 lp
-Wr
-uM
+ze
+Bv
 vn
 FV
 Dx
@@ -1676,7 +1642,7 @@ NJ
 NJ
 FV
 vn
-JQ
+NY
 "}
 (23,1,1) = {"
 al
@@ -1694,7 +1660,7 @@ XV
 al
 pQ
 kA
-uM
+Bv
 NW
 vn
 vn
@@ -1702,7 +1668,7 @@ vn
 vn
 vn
 fs
-ws
+vd
 "}
 (24,1,1) = {"
 al
@@ -1721,11 +1687,11 @@ al
 wZ
 wZ
 al
-uU
-ws
-vd
 uM
-ws
+Bv
+Bv
+Bv
+Bv
 al
 al
 al

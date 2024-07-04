@@ -6,6 +6,7 @@
 /obj/structure/stone_tile/cracked{
 	dir = 4
 	},
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "f" = (
@@ -26,7 +27,7 @@
 /area/lavaland/surface/outdoors)
 "l" = (
 /obj/structure/stone_tile/block/cracked,
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "o" = (
@@ -36,10 +37,10 @@
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 8
 	},
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "p" = (
-/mob/living/basic/mining/hivelord,
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 1
 	},
@@ -64,7 +65,7 @@
 /area/lavaland/surface/outdoors)
 "u" = (
 /obj/structure/stone_tile/block/cracked,
-/mob/living/basic/mining/legion/dwarf,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "v" = (
@@ -92,6 +93,7 @@
 /obj/structure/stone_tile/block/burnt{
 	dir = 8
 	},
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "A" = (
@@ -158,16 +160,7 @@
 /area/lavaland/surface/outdoors)
 "O" = (
 /obj/structure/stone_tile/surrounding_tile/cracked,
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Q" = (
@@ -196,7 +189,7 @@
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 5
 	},
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "V" = (

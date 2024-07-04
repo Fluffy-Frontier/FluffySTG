@@ -3,14 +3,12 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "h" = (
-/mob/living/basic/mining/brimdemon,
-/mob/living/basic/mining/brimdemon,
-/mob/living/basic/mining/brimdemon,
 /obj/item/crusher_trophy/brimdemon_fang,
 /obj/item/xenoarch/useless_relic/magnified{
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
+/mob/living/basic/mining/brimdemon/infused,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "x" = (
@@ -21,15 +19,15 @@
 (1,1,1) = {"
 x
 a
-a
+x
 "}
 (2,1,1) = {"
 a
 h
-x
+a
 "}
 (3,1,1) = {"
 x
 a
-a
+x
 "}

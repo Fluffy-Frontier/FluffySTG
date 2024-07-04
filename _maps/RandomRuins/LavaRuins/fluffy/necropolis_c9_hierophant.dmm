@@ -21,11 +21,12 @@
 /area/ruin/unpowered/hierophant)
 "u" = (
 /mob/living/simple_animal/hostile/megafauna/hierophant{
-	speed = 5;
-	health = 1800;
-	melee_damage_lower = 5;
+	speed = 3;
 	melee_damage_upper = 30;
-	major_attack_cooldown = 30
+	major_attack_cooldown = 30;
+	ranged_cooldown_time = 20;
+	health = 1800;
+	maxHealth = 1800
 	},
 /turf/open/indestructible/hierophant/two,
 /area/ruin/unpowered/hierophant)
@@ -234,7 +235,7 @@ j
 D
 j
 R
-j
+R
 R
 j
 R
@@ -308,9 +309,9 @@ R
 R
 R
 R
-j
 R
-j
+R
+R
 R
 R
 R
@@ -330,7 +331,7 @@ a
 j
 a
 R
-j
+R
 t
 R
 R
@@ -338,7 +339,7 @@ u
 R
 R
 t
-j
+R
 R
 a
 j
@@ -358,9 +359,9 @@ R
 R
 R
 R
-j
 R
-j
+R
+R
 R
 R
 R
@@ -434,7 +435,7 @@ j
 R
 j
 R
-j
+R
 R
 j
 R

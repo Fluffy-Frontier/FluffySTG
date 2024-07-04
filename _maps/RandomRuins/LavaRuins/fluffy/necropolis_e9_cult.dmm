@@ -1,7 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "c" = (
 /obj/structure/table_frame/wood,
 /obj/structure/stone_tile/block/cracked,
@@ -116,16 +113,8 @@
 	},
 /area/ruin/unpowered)
 "y" = (
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
+/obj/structure/flora/rock/pile/style_random,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "A" = (
@@ -169,10 +158,11 @@
 /obj/structure/stone_tile/cracked{
 	dir = 8
 	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "G" = (
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "I" = (
@@ -181,7 +171,7 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "J" = (
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "K" = (
@@ -206,7 +196,7 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 1
 	},
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "N" = (
 /obj/structure/stone_tile/cracked{
@@ -295,7 +285,7 @@ F
 p
 "}
 (3,1,1) = {"
-y
+G
 g
 Z
 Z
@@ -305,7 +295,7 @@ Z
 p
 "}
 (4,1,1) = {"
-d
+y
 Z
 Z
 Z
@@ -316,17 +306,17 @@ p
 "}
 (5,1,1) = {"
 p
-a
+G
 Z
 W
 e
 M
 I
-y
+G
 "}
 (6,1,1) = {"
 p
-a
+G
 L
 i
 P
@@ -335,7 +325,7 @@ Z
 o
 "}
 (7,1,1) = {"
-d
+y
 o
 Z
 V

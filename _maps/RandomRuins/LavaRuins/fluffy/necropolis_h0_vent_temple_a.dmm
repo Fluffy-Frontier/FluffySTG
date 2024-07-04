@@ -14,6 +14,7 @@
 /area/ruin/unpowered)
 "g" = (
 /obj/structure/stone_tile/block/cracked,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "i" = (
@@ -50,6 +51,7 @@
 	},
 /area/ruin/unpowered)
 "q" = (
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "r" = (
@@ -94,10 +96,6 @@
 	dir = 8
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"B" = (
-/obj/structure/punji_sticks/spikes,
-/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "C" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
@@ -173,7 +171,7 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "V" = (
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/strong{
 	base_icon_state = "smoothrocks";
 	icon = 'modular_nova/modules/liquids/icons/turf/smoothrocks.dmi';
@@ -201,8 +199,8 @@ G
 G
 G
 b
-B
 q
+x
 Z
 G
 G
@@ -263,8 +261,8 @@ a
 i
 a
 b
-x
-B
+K
+q
 "}
 (6,1,1) = {"
 x
@@ -277,7 +275,7 @@ L
 i
 i
 b
-x
+K
 G
 "}
 (7,1,1) = {"
@@ -291,7 +289,7 @@ a
 i
 Q
 b
-x
+K
 G
 "}
 (8,1,1) = {"
@@ -342,9 +340,9 @@ G
 V
 m
 n
-x
-x
-x
+K
+K
+K
 I
 K
 E

@@ -23,7 +23,7 @@
 /turf/template_noop,
 /area/template_noop)
 "k" = (
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "n" = (
@@ -86,7 +86,7 @@
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 5
 	},
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "F" = (
@@ -132,16 +132,7 @@
 /area/lavaland/surface/outdoors)
 "S" = (
 /obj/structure/stone_tile/surrounding_tile/cracked,
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "V" = (

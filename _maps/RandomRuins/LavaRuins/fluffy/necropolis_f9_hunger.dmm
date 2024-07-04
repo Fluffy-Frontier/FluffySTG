@@ -1,41 +1,39 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/template_noop,
-/area/template_noop)
-"c" = (
 /obj/structure/stone_tile/surrounding/cracked{
-	dir = 8
-	},
-/obj/structure/stone_tile/slab/cracked{
-	dir = 8
-	},
-/turf/open/indestructible/necropolis,
-/area/ruin/unpowered)
-"e" = (
-/obj/structure/stone_tile/block/burnt{
-	dir = 8
-	},
-/turf/open/indestructible/necropolis,
-/area/ruin/unpowered)
-"f" = (
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered)
-"h" = (
-/obj/structure/stone_tile/slab/cracked{
 	dir = 4
 	},
-/obj/structure/stone_tile/slab/cracked{
-	dir = 8
-	},
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/turf/open/chasm/lavaland,
 /area/ruin/unpowered)
-"i" = (
-/obj/structure/stone_tile/burnt{
+"b" = (
+/obj/structure/stone_tile/surrounding/cracked{
 	dir = 1
 	},
-/obj/structure/stone_tile/burnt{
+/obj/structure/stone_tile/slab/cracked{
+	dir = 1
+	},
+/turf/open/indestructible/necropolis,
+/area/ruin/unpowered)
+"d" = (
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"f" = (
+/obj/structure/punji_sticks/spikes,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"g" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/obj/structure/stone_tile/slab,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/lavaland/surface/outdoors)
+"h" = (
+/obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 4
 	},
+/turf/open/chasm/lavaland,
+/area/ruin/unpowered)
+"i" = (
+/obj/structure/stone_tile/surrounding_tile/cracked,
 /turf/open/chasm/lavaland,
 /area/ruin/unpowered)
 "j" = (
@@ -45,25 +43,107 @@
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "l" = (
-/obj/structure/stone_tile/burnt,
 /turf/open/chasm/lavaland,
 /area/ruin/unpowered)
 "m" = (
-/obj/structure/punji_sticks/spikes,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered)
-"o" = (
-/obj/structure/stone_tile/surrounding/cracked,
+/obj/structure/stone_tile/block/cracked{
+	dir = 1
+	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
-"p" = (
-/obj/structure/stone_tile/block/cracked,
-/obj/structure/stone_tile/cracked{
+"q" = (
+/obj/effect/decal/remains/human/smokey,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"r" = (
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
+/turf/open/chasm/lavaland,
+/area/ruin/unpowered)
+"s" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/obj/structure/stone_tile/slab/cracked,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/lavaland/surface/outdoors)
+"t" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/obj/structure/fluff/big_chain{
+	pixel_y = 12
+	},
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/lavaland/surface/outdoors)
+"u" = (
+/obj/structure/flora/rock/pile/style_random,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"v" = (
+/obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 1
 	},
 /turf/open/chasm/lavaland,
 /area/ruin/unpowered)
-"q" = (
+"w" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 4
+	},
+/turf/open/indestructible/necropolis,
+/area/ruin/unpowered)
+"x" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/unpowered)
+"z" = (
+/obj/structure/stone_tile/block/burnt{
+	dir = 8
+	},
+/turf/open/indestructible/necropolis,
+/area/ruin/unpowered)
+"A" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile/center/cracked,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"B" = (
+/obj/structure/stone_tile/slab/burnt,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"C" = (
+/obj/structure/stone_tile/slab,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"D" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 4
+	},
+/turf/open/chasm/lavaland,
+/area/ruin/unpowered)
+"E" = (
+/turf/template_noop,
+/area/template_noop)
+"F" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/obj/structure/fluff/big_chain{
+	pixel_y = 12
+	},
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/unpowered)
+"G" = (
+/obj/effect/mapping_helpers/bombable_wall,
+/turf/closed/indestructible/riveted/boss/wasteland,
+/area/lavaland/surface/outdoors)
+"H" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 8
+	},
+/obj/structure/stone_tile/slab/cracked{
+	dir = 8
+	},
+/turf/open/indestructible/necropolis,
+/area/ruin/unpowered)
+"I" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 5
 	},
@@ -93,27 +173,47 @@
 	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
-"r" = (
+"J" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile/slab/cracked{
+	dir = 8
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"K" = (
 /obj/structure/stone_tile/block/burnt,
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
-"s" = (
-/obj/effect/decal/remains/human/smokey,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+"L" = (
+/obj/structure/stone_tile/block/burnt{
+	dir = 8
+	},
+/turf/open/chasm/lavaland,
 /area/ruin/unpowered)
-"t" = (
+"M" = (
+/obj/structure/stone_tile/burnt{
+	dir = 1
+	},
+/obj/structure/stone_tile/burnt{
+	dir = 4
+	},
+/turf/open/chasm/lavaland,
+/area/ruin/unpowered)
+"N" = (
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile/block/burnt,
+/turf/open/chasm/lavaland,
+/area/ruin/unpowered)
+"O" = (
 /obj/effect/mapping_helpers/bombable_wall,
-/obj/structure/stone_tile/slab/cracked,
+/obj/structure/stone_tile/slab/burnt,
 /turf/closed/indestructible/riveted/boss/wasteland,
 /area/lavaland/surface/outdoors)
-"u" = (
-/obj/effect/mapping_helpers/bombable_wall,
-/obj/structure/fluff/big_chain{
-	pixel_y = 12
-	},
-/turf/closed/indestructible/riveted/boss/wasteland,
-/area/ruin/unpowered)
-"v" = (
+"P" = (
 /obj/structure/stone_tile/cracked{
 	dir = 4
 	},
@@ -122,94 +222,30 @@
 	},
 /turf/open/chasm/lavaland,
 /area/ruin/unpowered)
-"w" = (
-/obj/structure/stone_tile/surrounding/cracked{
-	dir = 4
-	},
-/turf/open/chasm/lavaland,
-/area/ruin/unpowered)
-"x" = (
-/obj/structure/flora/rock/pile/style_random,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered)
-"y" = (
-/obj/structure/stone_tile/surrounding_tile/cracked,
-/turf/open/chasm/lavaland,
-/area/ruin/unpowered)
-"z" = (
-/obj/structure/stone_tile/cracked{
-	dir = 8
-	},
-/turf/open/chasm/lavaland,
-/area/ruin/unpowered)
-"A" = (
-/obj/structure/stone_tile/surrounding/cracked{
-	dir = 1
-	},
-/obj/structure/stone_tile/slab/cracked{
-	dir = 1
-	},
-/turf/open/indestructible/necropolis,
-/area/ruin/unpowered)
-"B" = (
-/obj/effect/mapping_helpers/bombable_wall,
-/obj/structure/fluff/big_chain{
-	pixel_y = 12
-	},
-/turf/closed/indestructible/riveted/boss/wasteland,
-/area/lavaland/surface/outdoors)
-"C" = (
-/obj/structure/stone_tile/block/burnt{
-	dir = 8
-	},
-/turf/open/chasm/lavaland,
-/area/ruin/unpowered)
-"E" = (
+"Q" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 6
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
-"F" = (
-/obj/structure/stone_tile/surrounding/cracked{
-	dir = 4
-	},
+"S" = (
+/obj/structure/stone_tile/surrounding/cracked,
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
-"G" = (
-/obj/effect/mapping_helpers/bombable_wall,
-/obj/structure/stone_tile/slab/burnt,
-/turf/closed/indestructible/riveted/boss/wasteland,
-/area/lavaland/surface/outdoors)
-"H" = (
-/obj/structure/stone_tile/block{
-	dir = 4
-	},
-/turf/open/chasm/lavaland,
-/area/ruin/unpowered)
-"I" = (
-/obj/effect/mapping_helpers/bombable_wall,
-/obj/structure/stone_tile/slab,
-/turf/closed/indestructible/riveted/boss/wasteland,
-/area/lavaland/surface/outdoors)
-"J" = (
-/obj/structure/stone_tile/block/cracked{
-	dir = 4
-	},
-/turf/open/chasm/lavaland,
-/area/ruin/unpowered)
-"K" = (
+"T" = (
+/obj/structure/stone_tile/block/cracked,
 /obj/structure/stone_tile/cracked{
-	dir = 4
+	dir = 1
 	},
-/obj/structure/stone_tile/block/burnt,
 /turf/open/chasm/lavaland,
 /area/ruin/unpowered)
-"L" = (
-/obj/effect/mapping_helpers/bombable_wall,
-/turf/closed/indestructible/riveted/boss/wasteland,
+"U" = (
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/turf/open/chasm/lavaland,
 /area/ruin/unpowered)
-"M" = (
+"V" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 10
 	},
@@ -218,19 +254,17 @@
 	},
 /turf/open/chasm/lavaland,
 /area/ruin/unpowered)
-"N" = (
+"W" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 8
 	},
 /turf/open/chasm/lavaland,
 /area/ruin/unpowered)
-"O" = (
-/obj/structure/stone_tile/block/cracked{
-	dir = 1
-	},
-/turf/open/indestructible/necropolis,
+"X" = (
+/obj/structure/stone_tile/burnt,
+/turf/open/chasm/lavaland,
 /area/ruin/unpowered)
-"P" = (
+"Z" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 9
 	},
@@ -239,293 +273,259 @@
 	},
 /turf/open/chasm/lavaland,
 /area/ruin/unpowered)
-"R" = (
-/obj/structure/stone_tile/surrounding_tile/cracked{
-	dir = 1
-	},
-/turf/open/chasm/lavaland,
-/area/ruin/unpowered)
-"T" = (
-/obj/structure/stone_tile/surrounding_tile/cracked{
-	dir = 4
-	},
-/turf/open/chasm/lavaland,
-/area/ruin/unpowered)
-"U" = (
-/obj/structure/stone_tile/slab/burnt,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered)
-"V" = (
-/obj/effect/mapping_helpers/bombable_wall,
-/turf/closed/indestructible/riveted/boss/wasteland,
-/area/lavaland/surface/outdoors)
-"X" = (
-/turf/open/chasm/lavaland,
-/area/ruin/unpowered)
-"Y" = (
-/obj/structure/stone_tile/surrounding/cracked{
-	dir = 4
-	},
-/obj/structure/stone_tile/center/cracked,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered)
-"Z" = (
-/obj/structure/stone_tile/slab,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered)
 
 (1,1,1) = {"
-a
-a
-V
-V
-a
-a
-a
-V
-V
-a
-a
-a
-a
-a
-a
+E
+E
+G
+G
+E
+E
+E
+G
+G
+E
+E
+E
+E
+E
+E
 "}
 (2,1,1) = {"
-a
-V
-V
-V
-V
-V
-V
-V
-V
-V
-a
-a
-a
-a
-a
+E
+G
+G
+G
+G
+G
+G
+G
+G
+G
+E
+E
+E
+E
+E
 "}
 (3,1,1) = {"
-V
-B
-x
-m
-L
-L
-s
-x
+G
+t
+u
 f
-B
-V
-V
-V
-a
-a
+x
+x
+q
+u
+d
+t
+G
+G
+G
+E
+E
 "}
 (4,1,1) = {"
-V
-f
-s
-X
-X
-L
-X
-X
+G
+d
+q
+l
+l
 x
-s
+l
+l
 u
-x
-V
-V
-V
+q
+F
+u
+G
+G
+G
 "}
 (5,1,1) = {"
-V
-L
-X
-X
-X
-L
-X
-X
-X
-X
-X
-m
-m
-L
-V
+G
+x
+l
+l
+l
+x
+l
+l
+l
+l
+l
+f
+f
+x
+G
 "}
 (6,1,1) = {"
-V
-L
-X
-u
-L
-L
-L
-u
-z
-X
-X
-X
-X
-T
-B
+G
+x
+l
+F
+x
+x
+x
+F
+U
+l
+l
+l
+l
+h
+t
 "}
 (7,1,1) = {"
-V
-s
-X
-L
-A
+G
+q
+l
+x
+b
 j
-F
-L
-M
-K
-C
-P
+w
+x
+V
 N
+L
+Z
+W
+P
+s
+"}
+(8,1,1) = {"
+G
+x
+x
+x
+K
+I
+m
+x
+C
+B
+A
+J
+Q
+C
+g
+"}
+(9,1,1) = {"
+G
+u
+l
+x
+H
+z
+S
+x
+a
+T
+D
+v
+r
+M
+O
+"}
+(10,1,1) = {"
+G
+x
+l
+F
+x
+x
+x
+F
+X
+i
+l
+l
+l
 v
 t
 "}
-(8,1,1) = {"
-V
-L
-L
-L
-r
-q
-O
-L
-Z
-U
-Y
-h
-E
-Z
-I
-"}
-(9,1,1) = {"
-V
+(11,1,1) = {"
+G
 x
-X
-L
-c
-e
-o
-L
-w
-p
-J
-R
-H
-i
+l
+l
+l
+x
+l
+l
+l
+l
+l
+f
+u
+x
 G
 "}
-(10,1,1) = {"
-V
-L
-X
-u
-L
-L
-L
-u
-l
-y
-X
-X
-X
-R
-B
-"}
-(11,1,1) = {"
-V
-L
-X
-X
-X
-L
-X
-X
-X
-X
-X
-m
-x
-L
-V
-"}
 (12,1,1) = {"
-V
-s
-m
-X
-X
-L
-X
-X
-s
+G
+q
 f
-u
-s
-V
-V
-V
+l
+l
+x
+l
+l
+q
+d
+F
+q
+G
+G
+G
 "}
 (13,1,1) = {"
-V
-B
+G
+t
+d
+u
+x
+x
+q
 f
-x
-L
-L
-s
-m
-x
-B
-V
-V
-V
-a
-a
+u
+t
+G
+G
+G
+E
+E
 "}
 (14,1,1) = {"
-a
-V
-V
-V
-V
-V
-V
-V
-V
-V
-a
-a
-a
-a
-a
+E
+G
+G
+G
+G
+G
+G
+G
+G
+G
+E
+E
+E
+E
+E
 "}
 (15,1,1) = {"
-a
-a
-V
-V
-a
-a
-a
-V
-V
-a
-a
-a
-a
-a
-a
+E
+E
+G
+G
+E
+E
+E
+G
+G
+E
+E
+E
+E
+E
+E
 "}

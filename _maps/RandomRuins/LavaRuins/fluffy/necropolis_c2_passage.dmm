@@ -24,6 +24,11 @@
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
 /area/lavaland/surface/outdoors)
+"h" = (
+/obj/structure/stone_tile/block,
+/obj/effect/spawner/random/mob/necropolis_mob,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "j" = (
 /obj/structure/stone_tile/block{
 	dir = 1
@@ -56,6 +61,13 @@
 	slowdown = 0
 	},
 /area/lavaland/surface/outdoors)
+"o" = (
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/obj/effect/spawner/random/mob/necropolis_mob,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "p" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -64,6 +76,7 @@
 /obj/structure/stone_tile{
 	dir = 1
 	},
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "r" = (
@@ -109,6 +122,13 @@
 /obj/structure/stone_tile/cracked{
 	dir = 8
 	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"J" = (
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "N" = (
@@ -177,7 +197,7 @@ Z
 a
 g
 C
-f
+J
 a
 a
 a
@@ -216,7 +236,7 @@ a
 "}
 (5,1,1) = {"
 N
-U
+h
 a
 a
 x
@@ -291,16 +311,16 @@ N
 a
 a
 N
-U
+h
 a
 Y
 a
-Z
+o
 a
 "}
 (11,1,1) = {"
 a
-f
+J
 a
 a
 N

@@ -31,7 +31,7 @@
 "f" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/stone_tile/slab,
-/mob/living/basic/mining/brimdemon,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "g" = (
@@ -79,6 +79,20 @@
 	dir = 1
 	},
 /obj/structure/stone_tile/center/cracked,
+/mob/living/basic/mining/ancient_demon/demoraptor{
+	current_size = 2;
+	base_pixel_y = -32;
+	maxHealth = 640;
+	health = 640;
+	melee_damage_lower = 7;
+	melee_damage_upper = 25;
+	desc =  "A massive feathery beast. This huge creature barely will tolerate taming.";
+	name = "Extremely Fast Agile Strong Stealth Demoraptor of Brutal Despair +15";
+	speed = -0.1;
+	faction = list("mining","boss","hell","cult");
+	attack_vis_effect = "slash";
+	guaranteed_butcher_results = list(/obj/item/organ/external/tail/lizard = 1,/obj/item/feather=12,/obj/item/food/egg/raptor_egg=1,/obj/item/clothing/shoes/cowboy/lizard=1,/obj/item/food/meat/slab/chicken=5)
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "n" = (
@@ -152,20 +166,12 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
 	},
-/mob/living/basic/mining/brimdemon,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "y" = (
-/obj/structure/trap/damage{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#DDFFDD";
-	color = "#77FF77";
-	alpha = 180;
-	max_integrity = 30
-	},
+/obj/structure/stone_tile/slab/cracked,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "z" = (
@@ -239,7 +245,7 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "K" = (
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "L" = (
@@ -307,33 +313,6 @@
 /area/lavaland/surface/outdoors)
 "T" = (
 /obj/structure/ore_vein/silver,
-/mob/living/basic/mining/wolf{
-	desc = "A massive feathery beast. This huge creature barely will tolerate taming.";
-	faction = list("mining","boss","hell");
-	name = "Very Very Fast Agile Strong Stealth Raptor of Menacing Endurance +15";
-	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
-	attack_verb_continuous = "pecks";
-	attack_verb_simple = "chomps";
-	attack_vis_effect = "slash";
-	bare_wound_bonus = 5;
-	butcher_results = null;
-	can_tame = 0;
-	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.12, "oxygen" = 1);
-	health = 420;
-	icon = 'icons/mob/simple/lavaland/raptor_big.dmi';
-	icon_dead = "raptor_red_dead";
-	icon_living = "raptor_red";
-	icon_state = "raptor_red";
-	maxHealth = 240;
-	melee_damage_lower = 7;
-	melee_attack_cooldown = 10;
-	speed = -0.5;
-	wound_bonus = -1;
-	guaranteed_butcher_results = list(/obj/item/organ/external/tail/lizard = 1,/obj/item/feather=12,/obj/item/food/egg/raptor_egg=1,/obj/item/clothing/shoes/cowboy/lizard=1,/obj/item/food/meat/slab/chicken=5);
-	current_size = 2;
-	base_pixel_y = -30;
-	melee_damage_upper = 25
-	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "U" = (
@@ -361,16 +340,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Y" = (
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Z" = (
@@ -405,8 +375,8 @@ v
 v
 v
 A
-y
-a
+K
+Y
 c
 a
 K
@@ -415,7 +385,7 @@ Z
 v
 A
 a
-Y
+K
 v
 F
 g
@@ -463,7 +433,7 @@ D
 o
 s
 j
-N
+y
 L
 "}
 (5,1,1) = {"
@@ -483,7 +453,7 @@ E
 K
 v
 t
-y
+K
 g
 a
 v

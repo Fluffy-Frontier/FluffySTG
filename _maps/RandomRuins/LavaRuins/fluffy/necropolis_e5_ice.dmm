@@ -3,49 +3,88 @@
 /turf/closed/indestructible/riveted/boss,
 /area/ruin/unpowered)
 "c" = (
-/obj/structure/fluff/divine/powerpylon,
+/obj/structure/fluff/divine/powerpylon{
+	color = "#7777FF"
+	},
 /obj/structure/marker_beacon/teal,
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS"
+/obj/item/stock_parts/cell/crystal_cell{
+	color = "#77FFFF";
+	name = "Ethereal crystal";
+	alpha = 150;
+	maxcharge = 7e+007;
+	desc = "A cold crystal that can serve as sort of power source. Probably."
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface{
+	icon = 'icons/turf/snow.dmi';
+	icon_state = "snow";
+	base_icon_state = null
 	},
 /area/ruin/unpowered)
 "d" = (
-/obj/structure/fluff/divine/nexus,
-/obj/item/clothing/neck/wreath/icewing,
+/obj/structure/fluff/divine/nexus{
+	color = "#7777FF"
+	},
 /obj/structure/marker_beacon/teal,
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS"
+/obj/item/stock_parts/cell/crystal_cell{
+	color = "#77FFFF";
+	name = "Ethereal crystal";
+	alpha = 150;
+	maxcharge = 7e+007;
+	desc = "A cold crystal that can serve as sort of power source. Probably."
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface{
+	icon = 'icons/turf/snow.dmi';
+	icon_state = "snow";
+	base_icon_state = null
 	},
 /area/ruin/unpowered)
 "e" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 9
 	},
-/mob/living/basic/mining/ice_demon,
-/obj/item/hypernoblium_crystal,
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+/mob/living/basic/mining/ice_demon{
+	health = 300;
+	name = "Rime";
+	speed = 0;
+	current_size = 1.25;
+	base_pixel_y = -7.5;
+	melee_damage_lower = 10;
+	melee_damage_upper = 20;
+	melee_damage_type = "burn";
+	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
+	melee_attack_cooldown = 10;
+	color = "#ccccFF";
+	light_color = "#ccccFF"
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface{
 	base_icon_state = "ice_turf-0";
 	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0";
-	desc = "Yooooooooo! Lick it!.";
-	name = "Real ice"
+	icon_state = "ice_turf-0"
 	},
 /area/ruin/unpowered)
 "h" = (
-/mob/living/basic/mining/ice_demon,
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 9
 	},
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+/mob/living/basic/mining/ice_demon{
+	health = 300;
+	name = "Rime";
+	speed = 0;
+	current_size = 1.25;
+	base_pixel_y = -7.5;
+	melee_damage_lower = 10;
+	melee_damage_upper = 20;
+	melee_damage_type = "burn";
+	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
+	melee_attack_cooldown = 10;
+	color = "#ccccFF";
+	light_color = "#ccccFF"
+	},
+/obj/item/melee/frozen_moonlight,
+/turf/open/misc/asteroid/basalt/lava_land_surface{
 	base_icon_state = "ice_turf-0";
 	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0";
-	desc = "Yooooooooo! Lick it!.";
-	name = "Real ice"
+	icon_state = "ice_turf-0"
 	},
 /area/ruin/unpowered)
 "i" = (
@@ -56,42 +95,30 @@
 /area/lavaland/surface/outdoors)
 "p" = (
 /obj/item/grenade/gas_crystal/nitrous_oxide_crystal,
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+/turf/open/misc/asteroid/basalt/lava_land_surface{
 	base_icon_state = "ice_turf-0";
 	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0";
-	desc = "Yooooooooo! Lick it!.";
-	name = "Real ice"
+	icon_state = "ice_turf-0"
 	},
 /area/ruin/unpowered)
 "q" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 6
 	},
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+/turf/open/misc/asteroid/basalt/lava_land_surface{
 	base_icon_state = "ice_turf-0";
 	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0";
-	desc = "Yooooooooo! Lick it!.";
-	name = "Real ice"
+	icon_state = "ice_turf-0"
 	},
 /area/ruin/unpowered)
 "r" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 1
 	},
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+/turf/open/misc/asteroid/basalt/lava_land_surface{
 	base_icon_state = "ice_turf-0";
 	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0";
-	desc = "Yooooooooo! Lick it!.";
-	name = "Real ice"
+	icon_state = "ice_turf-0"
 	},
 /area/ruin/unpowered)
 "y" = (
@@ -100,71 +127,104 @@
 /area/lavaland/surface/outdoors)
 "z" = (
 /obj/effect/turf_decal/weather/snow/corner,
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+/turf/open/misc/asteroid/basalt/lava_land_surface{
 	base_icon_state = "ice_turf-0";
 	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0";
-	desc = "Yooooooooo! Lick it!.";
-	name = "Real ice"
+	icon_state = "ice_turf-0"
 	},
 /area/ruin/unpowered)
 "B" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 10
 	},
-/obj/structure/fluff/divine/powerpylon,
-/obj/structure/marker_beacon/teal,
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+/turf/open/misc/asteroid/basalt/lava_land_surface{
 	base_icon_state = "ice_turf-0";
 	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0";
-	desc = "Yooooooooo! Lick it!.";
-	name = "Real ice"
+	icon_state = "ice_turf-0"
 	},
 /area/ruin/unpowered)
 "C" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 6
 	},
-/mob/living/basic/mining/ice_demon,
-/obj/item/hypernoblium_crystal,
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+/mob/living/basic/mining/ice_demon{
+	health = 300;
+	name = "Rime";
+	speed = 0;
+	current_size = 1.25;
+	base_pixel_y = -7.5;
+	melee_damage_lower = 10;
+	melee_damage_upper = 20;
+	melee_damage_type = "burn";
+	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
+	melee_attack_cooldown = 10;
+	color = "#ccccFF";
+	light_color = "#ccccFF"
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface{
 	base_icon_state = "ice_turf-0";
 	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0";
-	desc = "Yooooooooo! Lick it!.";
-	name = "Real ice"
+	icon_state = "ice_turf-0"
 	},
 /area/ruin/unpowered)
 "D" = (
 /obj/structure/flora/ash/chilly,
-/mob/living/basic/mining/ice_demon,
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS"
+/mob/living/basic/mining/ice_demon{
+	health = 300;
+	name = "Rime";
+	speed = 0;
+	current_size = 1.25;
+	base_pixel_y = -7.5;
+	melee_damage_lower = 10;
+	melee_damage_upper = 20;
+	melee_damage_type = "burn";
+	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
+	melee_attack_cooldown = 10;
+	color = "#ccccFF";
+	light_color = "#ccccFF"
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface{
+	icon = 'icons/turf/snow.dmi';
+	icon_state = "snow";
+	base_icon_state = null
 	},
 /area/ruin/unpowered)
 "G" = (
-/obj/structure/fluff/divine/conduit,
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS"
+/obj/structure/fluff/divine/conduit{
+	color = "#7777FF"
+	},
+/obj/item/stock_parts/cell/crystal_cell{
+	color = "#77FFFF";
+	name = "Ethereal crystal";
+	alpha = 150;
+	maxcharge = 7e+007;
+	desc = "A cold crystal that can serve as sort of power source. Probably."
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface{
+	icon = 'icons/turf/snow.dmi';
+	icon_state = "snow";
+	base_icon_state = null
 	},
 /area/ruin/unpowered)
 "I" = (
-/mob/living/basic/mining/ice_demon,
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+/mob/living/basic/mining/ice_demon{
+	health = 300;
+	name = "Rime";
+	speed = 0;
+	current_size = 1.25;
+	base_pixel_y = -7.5;
+	melee_damage_lower = 10;
+	melee_damage_upper = 20;
+	melee_damage_type = "burn";
+	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
+	melee_attack_cooldown = 10;
+	color = "#ccccFF";
+	light_color = "#ccccFF"
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface{
 	base_icon_state = "ice_turf-0";
 	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0";
-	desc = "Yooooooooo! Lick it!.";
-	name = "Real ice"
+	icon_state = "ice_turf-0"
 	},
 /area/ruin/unpowered)
 "L" = (
@@ -174,86 +234,84 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 8
 	},
-/obj/structure/fluff/divine/conduit,
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+/turf/open/misc/asteroid/basalt/lava_land_surface{
 	base_icon_state = "ice_turf-0";
 	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0";
-	desc = "Yooooooooo! Lick it!.";
-	name = "Real ice"
+	icon_state = "ice_turf-0"
 	},
 /area/ruin/unpowered)
 "M" = (
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "N" = (
 /obj/structure/flora/rock/pile/icy/style_random,
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS"
+/turf/open/misc/asteroid/basalt/lava_land_surface{
+	icon = 'icons/turf/snow.dmi';
+	icon_state = "snow";
+	base_icon_state = null
 	},
 /area/ruin/unpowered)
 "P" = (
-/obj/item/crusher_trophy/ice_demon_cube,
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+/turf/open/misc/asteroid/basalt/lava_land_surface{
 	base_icon_state = "ice_turf-0";
 	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0";
-	desc = "Yooooooooo! Lick it!.";
-	name = "Real ice"
+	icon_state = "ice_turf-0"
 	},
 /area/ruin/unpowered)
 "R" = (
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS"
+/turf/open/misc/asteroid/basalt/lava_land_surface{
+	icon = 'icons/turf/snow.dmi';
+	icon_state = "snow";
+	base_icon_state = null
 	},
 /area/ruin/unpowered)
 "U" = (
-/obj/item/stock_parts/cell/crystal_cell,
 /obj/structure/flora/grass/both/style_random,
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS"
+/turf/open/misc/asteroid/basalt/lava_land_surface{
+	icon = 'icons/turf/snow.dmi';
+	icon_state = "snow";
+	base_icon_state = null
 	},
 /area/ruin/unpowered)
 "W" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 5
 	},
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+/turf/open/misc/asteroid/basalt/lava_land_surface{
 	base_icon_state = "ice_turf-0";
 	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0";
-	desc = "Yooooooooo! Lick it!.";
-	name = "Real ice"
+	icon_state = "ice_turf-0"
 	},
 /area/ruin/unpowered)
+"X" = (
+/obj/effect/spawner/random/structure/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/template_noop)
 "Y" = (
-/obj/structure/fluff/divine/shrine,
+/obj/structure/fluff/divine/shrine{
+	color = "#7777FF"
+	},
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 6
 	},
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 8
 	},
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS";
-	baseturfs = /turf/open/lava/smooth/lava_land_surface;
+/turf/open/misc/asteroid/basalt/lava_land_surface{
 	base_icon_state = "ice_turf-0";
 	icon = 'icons/turf/floors/ice_turf.dmi';
-	icon_state = "ice_turf-0";
-	desc = "Yooooooooo! Lick it!.";
-	name = "Real ice"
+	icon_state = "ice_turf-0"
 	},
 /area/ruin/unpowered)
 "Z" = (
-/obj/structure/fluff/divine/shrine,
-/turf/open/misc/snow/actually_safe{
-	initial_gas_mix = "LAVALAND_ATMOS"
+/obj/structure/fluff/divine/shrine{
+	color = "#7777FF"
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface{
+	icon = 'icons/turf/snow.dmi';
+	icon_state = "snow";
+	base_icon_state = null
 	},
 /area/ruin/unpowered)
 
@@ -262,10 +320,10 @@ i
 i
 k
 y
-i
+X
 k
 k
-i
+M
 i
 "}
 (2,1,1) = {"
@@ -302,7 +360,7 @@ a
 k
 "}
 (5,1,1) = {"
-i
+M
 a
 d
 h
@@ -335,7 +393,7 @@ k
 k
 "}
 (8,1,1) = {"
-i
+M
 k
 k
 a
@@ -347,10 +405,10 @@ i
 "}
 (9,1,1) = {"
 i
-i
+M
 k
 y
-i
+M
 y
 y
 i

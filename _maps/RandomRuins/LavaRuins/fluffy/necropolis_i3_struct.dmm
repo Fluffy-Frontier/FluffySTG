@@ -36,6 +36,7 @@
 /obj/structure/railing/stone{
 	layer = -6
 	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "dL" = (
@@ -45,7 +46,7 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 6
 	},
-/mob/living/basic/mining/watcher,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "ec" = (
@@ -74,7 +75,7 @@
 /obj/structure/railing/stone{
 	layer = -6
 	},
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "gD" = (
@@ -100,16 +101,7 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "jA" = (
-/obj/structure/trap/damage{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#DDFFDD";
-	color = "#77FF77";
-	alpha = 180;
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "jS" = (
@@ -122,16 +114,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "jZ" = (
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "mj" = (
@@ -161,6 +144,7 @@
 /area/lavaland/surface/outdoors)
 "rE" = (
 /obj/structure/stone_tile/block/burnt,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "rW" = (
@@ -174,7 +158,7 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "tj" = (
-/obj/structure/punji_sticks/spikes,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/indestructible/riveted/boss,
 /area/lavaland/surface/outdoors)
 "tJ" = (
@@ -257,6 +241,7 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
 	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "An" = (
@@ -264,7 +249,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "AO" = (
-/mob/living/basic/mining/watcher,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Bt" = (
@@ -290,6 +275,7 @@
 /area/lavaland/surface/outdoors)
 "BR" = (
 /obj/structure/stone_tile/burnt,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "BZ" = (
@@ -326,7 +312,11 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "El" = (
-/turf/open/misc/asteroid/basalt/lava_land_surface,
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/obj/effect/spawner/random/mob/necropolis_mob,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Ep" = (
 /obj/item/stack/sheet/bone,
@@ -438,6 +428,7 @@
 /obj/structure/railing/stone/left{
 	layer = -6
 	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Pc" = (
@@ -500,13 +491,14 @@
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 6
 	},
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "SN" = (
-/mob/living/basic/mining/watcher,
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
 	},
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Ty" = (
@@ -544,7 +536,7 @@
 /area/lavaland/surface/outdoors)
 "VY" = (
 /obj/structure/stone_tile/slab,
-/mob/living/basic/mining/watcher,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Wg" = (
@@ -651,7 +643,7 @@ cU
 mK
 Wg
 Ht
-mK
+jA
 dL
 dL
 ec
@@ -673,7 +665,7 @@ ec
 (7,1,1) = {"
 tj
 MA
-jX
+El
 mK
 OD
 Fl
@@ -690,8 +682,8 @@ ZH
 Rm
 at
 mK
-El
-El
+jZ
+vN
 dL
 dL
 jS
@@ -752,7 +744,7 @@ BH
 jA
 jS
 jS
-mK
+jA
 "}
 (13,1,1) = {"
 LG
@@ -773,7 +765,7 @@ mK
 LJ
 wc
 Vt
-Xm
+fJ
 jS
 jS
 mK
@@ -789,7 +781,7 @@ Eu
 ZH
 Xm
 eK
-mK
+jA
 AO
 Rm
 Mj
@@ -843,7 +835,7 @@ ec
 ec
 qi
 Ow
-Xm
+fJ
 jS
 jS
 Fr

@@ -27,6 +27,7 @@
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
 	},
+/obj/effect/spawner/random/mob/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "dQ" = (
@@ -34,6 +35,7 @@
 	dir = 1
 	},
 /obj/structure/stone_tile/block/cracked,
+/obj/effect/spawner/random/mob/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "iX" = (
@@ -109,16 +111,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "wq" = (
-/obj/structure/trap/damage{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#DDFFDD";
-	color = "#77FF77";
-	alpha = 180;
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "wv" = (
@@ -170,6 +163,11 @@
 "AZ" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Bj" = (
+/obj/structure/stone_tile,
+/obj/effect/spawner/random/structure/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "BF" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 1
@@ -182,10 +180,10 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Cc" = (
-/obj/structure/punji_sticks/spikes,
 /obj/structure/railing/stone{
 	layer = -6
 	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "CU" = (
@@ -228,9 +226,6 @@
 /obj/structure/stone_tile/block/burnt{
 	dir = 4
 	},
-/mob/living/basic/mining/brimdemon,
-/mob/living/basic/mining/brimdemon,
-/mob/living/basic/mining/brimdemon,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Kf" = (
@@ -264,6 +259,7 @@
 /area/lavaland/surface/outdoors)
 "MT" = (
 /obj/structure/stone_tile/block/burnt,
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Nw" = (
@@ -303,6 +299,11 @@
 	layer = -6
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Pk" = (
+/obj/structure/stone_tile/slab/burnt,
+/obj/effect/spawner/random/mob/brimdemon,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Qo" = (
 /obj/structure/railing/stone{
@@ -367,9 +368,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "To" = (
-/mob/living/basic/mining/brimdemon,
-/mob/living/basic/mining/brimdemon,
-/mob/living/basic/mining/brimdemon,
+/obj/effect/spawner/random/mob/brimdemon,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "TP" = (
@@ -443,7 +442,7 @@ CU
 (2,1,1) = {"
 CU
 CU
-AZ
+wq
 wq
 Td
 Zx
@@ -469,7 +468,7 @@ CU
 Ik
 bq
 jk
-yM
+Pk
 Vg
 SH
 Yw
@@ -486,19 +485,19 @@ LK
 JG
 dN
 Nw
-AZ
+wq
 "}
 (6,1,1) = {"
 CU
 Iz
-AZ
+wq
 AZ
 cr
 BF
 Rt
 bq
 Pg
-lQ
+Bj
 "}
 (7,1,1) = {"
 CU
@@ -509,12 +508,12 @@ WD
 Iz
 RO
 Qx
-WD
+Cc
 CU
 "}
 (8,1,1) = {"
 CU
-AZ
+wq
 aU
 AZ
 WL
@@ -530,10 +529,10 @@ lQ
 Iv
 AZ
 jj
-AZ
+wq
 wv
 WX
-WD
+Cc
 CU
 "}
 (10,1,1) = {"
@@ -542,7 +541,7 @@ wq
 AZ
 db
 Cc
-AZ
+wq
 yM
 Fn
 iX
@@ -551,14 +550,14 @@ CU
 (11,1,1) = {"
 CU
 CU
-AZ
-AZ
+wq
+wq
 OW
-AZ
+wq
 dQ
 ki
 TP
-lQ
+Bj
 "}
 (12,1,1) = {"
 CU
@@ -566,7 +565,7 @@ CU
 CU
 CU
 CU
-AZ
+wq
 pH
 wq
 CU

@@ -4,16 +4,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "b" = (
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "c" = (
@@ -37,16 +28,6 @@
 /area/lavaland/surface/outdoors)
 "m" = (
 /obj/structure/flora/rock/pile/style_random,
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "r" = (
@@ -55,17 +36,12 @@
 "s" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"u" = (
+/obj/item/xenoarch/useless_relic/magnified,
+/turf/open/misc/asteroid/lavaland_atmos,
+/area/lavaland/surface/outdoors)
 "w" = (
-/obj/structure/trap/fire{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	alpha = 180;
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#FF1111";
-	color = "#FF1111";
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "z" = (
@@ -118,7 +94,7 @@ Y
 a
 r
 Y
-b
+s
 r
 r
 s
@@ -129,7 +105,7 @@ Y
 "}
 (2,1,1) = {"
 Y
-s
+b
 r
 r
 G
@@ -149,31 +125,31 @@ j
 s
 z
 L
-j
+w
 a
 r
 r
 r
 "}
 (4,1,1) = {"
-s
+b
 M
 a
 C
 H
 c
 g
-L
+u
 s
-s
+b
 r
 Y
 "}
 (5,1,1) = {"
-s
+b
 F
 s
-c
+L
 L
 J
 P
@@ -203,7 +179,7 @@ s
 j
 c
 g
-J
+u
 L
 j
 s
@@ -219,7 +195,7 @@ H
 L
 z
 s
-s
+b
 Y
 Y
 r
@@ -232,7 +208,7 @@ s
 s
 l
 j
-s
+b
 Y
 Y
 Y
@@ -254,7 +230,7 @@ r
 r
 "}
 (11,1,1) = {"
-s
+b
 m
 r
 M
@@ -269,10 +245,10 @@ Y
 "}
 (12,1,1) = {"
 Y
-s
+b
 r
-s
-s
+b
+b
 r
 r
 Y
