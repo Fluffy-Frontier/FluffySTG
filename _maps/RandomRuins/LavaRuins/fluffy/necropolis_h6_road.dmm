@@ -21,6 +21,7 @@
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
 	},
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "e" = (
@@ -79,18 +80,6 @@
 	dir = 1
 	},
 /obj/structure/stone_tile/center/cracked,
-/mob/living/basic/mining/ancient_demon/demoraptor{
-	base_pixel_y = -32;
-	maxHealth = 640;
-	health = 640;
-	melee_damage_lower = 7;
-	melee_damage_upper = 25;
-	name = "Extremely Fast Agile Strong Stealth Demoraptor of Brutal Despair +15";
-	speed = -0.1;
-	faction = list("mining","boss","hell","cult");
-	guaranteed_butcher_results = list(/obj/item/organ/external/tail/lizard = 1,/obj/item/feather=12,/obj/item/food/egg/raptor_egg=1,/obj/item/clothing/shoes/cowboy/lizard=1,/obj/item/food/meat/slab/chicken=5);
-	current_size = 2
-	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "n" = (
@@ -307,6 +296,7 @@
 	dir = 1
 	},
 /obj/structure/stone_tile/block/cracked,
+/obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "T" = (

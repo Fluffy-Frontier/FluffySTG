@@ -15,25 +15,30 @@
 	max_integrity = 1500
 	},
 /obj/effect/glowing_rune{
-	layer = 4.2;
-	alpha = 55;
+	layer = 4.1;
 	name = "Glowing rune";
-	desc = "Curious, isn't it?";
-	pixel_x = -12
+	desc = "Curious, isn't it?"
 	},
 /obj/effect/glowing_rune{
-	layer = 4.2;
-	alpha = 55;
+	layer = 4.1;
 	name = "Glowing rune";
 	desc = "Curious, isn't it?";
-	pixel_x = 10
+	pixel_x = 12;
+	pixel_y = -9
 	},
 /obj/effect/glowing_rune{
-	layer = 4.2;
-	alpha = 55;
+	layer = 4.1;
 	name = "Glowing rune";
 	desc = "Curious, isn't it?";
-	pixel_y = -16
+	pixel_x = -9;
+	pixel_y = -9
+	},
+/obj/effect/glowing_rune{
+	layer = 4.1;
+	name = "Glowing rune";
+	desc = "Curious, isn't it?";
+	pixel_x = 12;
+	pixel_y = -9
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
