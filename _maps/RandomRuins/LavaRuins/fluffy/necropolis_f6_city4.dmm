@@ -175,6 +175,16 @@
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"jI" = (
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "kA" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center,
@@ -450,6 +460,13 @@
 /obj/item/reagent_containers/cup/bowl/wood_bowl,
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"yo" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "yH" = (
 /obj/structure/stone_tile/surrounding_tile{
@@ -1095,7 +1112,7 @@ JQ
 OU
 al
 al
-Mq
+yo
 al
 al
 Bv
@@ -1689,7 +1706,7 @@ om
 zk
 iu
 JH
-om
+jI
 al
 al
 wZ

@@ -22,6 +22,13 @@
 /obj/item/coin/silver,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"bO" = (
+/obj/structure/flora/rock/pile/style_random,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "cH" = (
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -103,6 +110,8 @@
 /area/ruin/unpowered)
 "ib" = (
 /obj/structure/flora/rock/pile/style_random,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "ic" = (
@@ -428,6 +437,7 @@
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
 	},
+/mob/living/basic/mining/ancient_demon/goliath_pup,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Dz" = (
@@ -590,6 +600,16 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"Rg" = (
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Rq" = (
 /obj/structure/stone_tile/block{
 	dir = 1
@@ -604,6 +624,8 @@
 /area/lavaland/surface/outdoors)
 "Rz" = (
 /obj/structure/flora/rock/pile/style_random,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "RF" = (
@@ -1156,7 +1178,7 @@ HT
 je
 "}
 (15,1,1) = {"
-Rz
+bO
 Yd
 vy
 nG
@@ -1405,7 +1427,7 @@ QP
 cH
 je
 je
-Mr
+Rg
 cH
 sv
 cH

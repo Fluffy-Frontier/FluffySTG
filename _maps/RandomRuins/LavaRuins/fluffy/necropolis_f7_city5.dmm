@@ -238,6 +238,7 @@
 	dir = 1
 	},
 /obj/structure/stone_tile/burnt,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "kb" = (
@@ -361,6 +362,14 @@
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
+"qn" = (
+/obj/structure/stone_tile/slab,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "qF" = (
 /obj/structure/stone_tile/surrounding_tile,
 /obj/structure/stone_tile/surrounding_tile{
@@ -498,6 +507,16 @@
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"vx" = (
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "vJ" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
@@ -572,6 +591,14 @@
 "yC" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center/cracked,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"yX" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "zl" = (
@@ -994,6 +1021,21 @@
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"Qv" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "QF" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -1338,7 +1380,7 @@ cg
 MR
 OG
 cg
-AO
+Qv
 GU
 GU
 jO
@@ -1712,7 +1754,7 @@ QZ
 Gd
 "}
 (17,1,1) = {"
-Uw
+yX
 HW
 ag
 ag
@@ -1742,7 +1784,7 @@ cg
 ag
 ag
 ag
-OG
+qn
 dp
 OG
 Rw
@@ -1842,7 +1884,7 @@ GU
 cg
 "}
 (22,1,1) = {"
-aY
+vx
 Vq
 Vq
 iy

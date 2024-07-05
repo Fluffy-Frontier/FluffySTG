@@ -133,6 +133,9 @@
 /area/lavaland/surface/outdoors)
 "nI" = (
 /obj/structure/flora/rock/pile/style_random,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "oL" = (
@@ -345,6 +348,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/misc/hay/lavaland,
 /area/ruin/unpowered)
+"HK" = (
+/obj/structure/stone_tile/slab,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "HQ" = (
 /obj/structure/railing/stone{
 	layer = -6
@@ -440,6 +449,8 @@
 /obj/structure/railing/stone/left{
 	layer = -6
 	},
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Ob" = (
@@ -498,6 +509,13 @@
 	dir = 1
 	},
 /obj/effect/spawner/random/mob/goliath,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Pu" = (
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "RP" = (
@@ -689,12 +707,12 @@ oL
 Ah
 kr
 OO
-OO
+HK
 iN
 BP
 TK
 El
-qu
+Pu
 "}
 (11,1,1) = {"
 cH

@@ -11,6 +11,11 @@
 /obj/structure/stone_tile/slab/burnt,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"bc" = (
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "cf" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -53,6 +58,8 @@
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center,
 /obj/effect/spawner/random/mob/goliath,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "fC" = (
@@ -213,6 +220,12 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
+"uN" = (
+/obj/structure/stone_tile/slab,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "va" = (
 /obj/structure/stone_tile/center,
 /obj/structure/stone_tile/surrounding_tile/cracked{
@@ -307,6 +320,12 @@
 /obj/structure/stone_tile/slab,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/necropolis,
+/area/ruin/unpowered)
+"FK" = (
+/obj/structure/stone_tile/surrounding,
+/obj/structure/stone_tile/center,
+/mob/living/basic/mining/ancient_demon/goliath_pup,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "Ge" = (
 /turf/template_noop,
@@ -511,7 +530,7 @@ Ge
 Ge
 Ge
 Ge
-zh
+bc
 zh
 zh
 vT
@@ -610,7 +629,7 @@ lP
 AW
 Jz
 cU
-nh
+uN
 pT
 zh
 "}
@@ -657,7 +676,7 @@ QQ
 Bp
 ic
 pR
-Ok
+FK
 ou
 LB
 um
@@ -684,7 +703,7 @@ Jz
 Eo
 nh
 pT
-zh
+bc
 "}
 (11,1,1) = {"
 vT
