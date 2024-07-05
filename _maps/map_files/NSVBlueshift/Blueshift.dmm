@@ -931,7 +931,6 @@
 /area/station/hallway/primary/central)
 "ajA" = (
 /obj/structure/hoop{
-	layer = 3.3;
 	pixel_y = 17
 	},
 /turf/open/floor/iron,
@@ -2090,8 +2089,7 @@
 	dir = 4
 	},
 /obj/structure/chair/sofa/bench/left{
-	dir = 4;
-	layer = 2.8
+	dir = 4
 	},
 /obj/structure/railing{
 	dir = 9
@@ -4096,8 +4094,7 @@
 	dir = 4
 	},
 /obj/structure/chair/sofa/bench/right{
-	dir = 4;
-	layer = 2.8
+	dir = 4
 	},
 /obj/structure/railing{
 	dir = 10
@@ -10636,8 +10633,7 @@
 /area/station/command/heads_quarters/hop)
 "cdd" = (
 /obj/structure/chair/sofa/bench{
-	dir = 4;
-	layer = 2.8
+	dir = 4
 	},
 /obj/structure/railing{
 	dir = 8
@@ -16556,7 +16552,6 @@
 	pixel_y = -11
 	},
 /obj/structure/mirror{
-	layer = 3;
 	pixel_x = 1;
 	pixel_y = 4
 	},
@@ -26997,9 +26992,7 @@
 /obj/machinery/suit_storage_unit/atmos,
 /obj/machinery/camera/autoname/directional/east,
 /obj/effect/turf_decal/delivery,
-/obj/structure/window/reinforced/spawner/directional/north{
-	layer = 2.9
-	},
+/obj/structure/window/reinforced/spawner/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos/office)
 "feB" = (
@@ -30075,8 +30068,7 @@
 	icon_state = "dirt-flat-1"
 	},
 /obj/structure/chair/wood{
-	dir = 4;
-	layer = 2.8
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/station/service/abandoned_gambling_den)
@@ -33025,9 +33017,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/delivery,
-/obj/structure/window/reinforced/spawner/directional/north{
-	layer = 2.9
-	},
+/obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
@@ -34105,8 +34095,7 @@
 "gzF" = (
 /obj/structure/railing,
 /obj/structure/chair/plastic{
-	dir = 8;
-	layer = 2.7
+	dir = 8
 	},
 /turf/open/floor/iron/dark/side,
 /area/station/hallway/primary/upper)
@@ -39092,8 +39081,7 @@
 	dir = 8
 	},
 /obj/structure/chair/sofa/corp{
-	dir = 4;
-	layer = 2.8
+	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -45492,8 +45480,7 @@
 /obj/structure/statue/sandstone/venus{
 	anchored = 1;
 	pixel_x = -3;
-	pixel_y = 7;
-	layer = 3.4
+	pixel_y = 7
 	},
 /turf/open/floor/grass,
 /area/station/hallway/primary/aft)
@@ -48734,7 +48721,6 @@
 	},
 /obj/machinery/button/door{
 	id = "SecJusticeChamber";
-	layer = 4;
 	name = "Justice Vent Control";
 	pixel_x = -36;
 	pixel_y = 26;
@@ -55626,9 +55612,7 @@
 /area/station/maintenance/clown_chamber)
 "kEw" = (
 /obj/structure/cable,
-/obj/structure/statue/sandstone/venus{
-	layer = 3.1
-	},
+/obj/structure/statue/sandstone/venus,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/disposalpipe/junction{
@@ -64711,9 +64695,7 @@
 /area/station/cargo/office)
 "mvK" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/firealarm/directional/east{
-	layer = 3.5
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -67662,8 +67644,7 @@
 /area/station/cargo/miningdock)
 "mYf" = (
 /obj/structure/chair/plastic{
-	dir = 4;
-	layer = 2.7
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
@@ -68647,8 +68628,7 @@
 	anchored = 1;
 	dir = 1;
 	pixel_x = 3;
-	pixel_y = 7;
-	layer = 3.4
+	pixel_y = 7
 	},
 /turf/open/floor/grass,
 /area/station/hallway/primary/aft)
@@ -88517,14 +88497,12 @@
 "qWS" = (
 /obj/machinery/button/door{
 	id = "cargounload";
-	layer = 4;
 	name = "Loading Doors";
 	pixel_x = 24;
 	pixel_y = -8
 	},
 /obj/machinery/button/door{
 	id = "cargoload";
-	layer = 4;
 	name = "Loading Doors";
 	pixel_x = 24;
 	pixel_y = 8
@@ -91704,8 +91682,7 @@
 /area/station/hallway/primary/central)
 "rCe" = (
 /obj/structure/chair/sofa/corp/right{
-	dir = 4;
-	layer = 2.8
+	dir = 4
 	},
 /obj/structure/railing{
 	dir = 10
@@ -94832,9 +94809,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/department/medical)
 "shS" = (
-/obj/structure/shipping_container/nanotrasen{
-	layer = 4.6
-	},
+/obj/structure/shipping_container/nanotrasen,
 /turf/open/floor/iron/dark/small,
 /area/station/cargo/miningdock)
 "shW" = (
@@ -100882,8 +100857,7 @@
 	dir = 8
 	},
 /obj/structure/chair/wood{
-	dir = 4;
-	layer = 2.8
+	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
@@ -100975,8 +100949,7 @@
 	icon_state = "dirt-flat-1"
 	},
 /obj/structure/chair/wood{
-	dir = 4;
-	layer = 2.8
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/station/service/abandoned_gambling_den)
@@ -101545,8 +101518,7 @@
 	dir = 9
 	},
 /obj/structure/chair/sofa/corp/left{
-	dir = 4;
-	layer = 2.8
+	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -104888,9 +104860,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 6
 	},
-/obj/machinery/firealarm/directional/east{
-	layer = 3.5
-	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
 "udr" = (
@@ -120212,9 +120182,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/department/security/greater)
 "wTQ" = (
-/obj/structure/shipping_container/donk_co{
-	layer = 4.6
-	},
+/obj/structure/shipping_container/donk_co,
 /turf/open/floor/iron/dark/small,
 /area/station/cargo/miningdock)
 "wTR" = (
@@ -123777,8 +123745,7 @@
 "xFd" = (
 /obj/structure/railing,
 /obj/structure/chair/plastic{
-	dir = 4;
-	layer = 2.7
+	dir = 4
 	},
 /turf/open/floor/iron/dark/side,
 /area/station/hallway/primary/upper)
@@ -124178,9 +124145,7 @@
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/closet/secure_closet/atmospherics,
 /obj/effect/turf_decal/delivery,
-/obj/structure/window/reinforced/spawner/directional/north{
-	layer = 2.9
-	},
+/obj/structure/window/reinforced/spawner/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos/office)
 "xJH" = (
