@@ -111,6 +111,9 @@
 
 /mob/living/basic/mining/ancient_demon/ancient_demon_lesser
 	name = "Lesser Ancient Demon"
+	mob_size = MOB_SIZE_SMALL
+	pass_flags = PASSTABLE
+	combat_mode = FALSE
 	health = 55
 	maxHealth = 55
 	melee_damage_lower = 1
@@ -225,6 +228,7 @@
 	icon_dead = "raptor_red_dead"
 	icon_state = "raptor_red"
 	icon_living = "raptor_red"
+	pass_flags = PASSTABLE
 	current_size = 1
 	base_pixel_y = 0
 	speed = 0.32
@@ -248,6 +252,9 @@
 	icon_dead = "goliath_baby_dead"
 	icon_state = "goliath_baby"
 	icon_living = "goliath_baby"
+	mob_size = MOB_SIZE_TINY
+	pass_flags = PASSTABLE
+	combat_mode = FALSE
 	speed = 0.5
 	health = 16
 	maxHealth = 16
@@ -269,7 +276,9 @@
 
 /mob/living/basic/mining/goliath/young
 	name = "Young goliath"
-	desc = "Tentacle thing... But smaller. "
+	desc = "Tentacle thing... But smaller."
+	mob_size = MOB_SIZE_SMALL
+	pass_flags = PASSTABLE
 	health = 75
 	maxHealth = 75
 	melee_attack_cooldown = 10
@@ -373,8 +382,8 @@
 	AddComponent(\
 		/datum/component/spawner,\
 		spawn_types = list(/mob/living/basic/mining/brimdemon/awakened),\
-		spawn_time = 12 SECONDS,\
-		max_spawned = 2,\
+		spawn_time = 3 SECONDS,\
+		max_spawned = 1,\
 		spawn_text = "peels itself off from",\
 		faction = faction,\
 	)
