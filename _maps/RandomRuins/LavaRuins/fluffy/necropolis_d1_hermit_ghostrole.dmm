@@ -153,17 +153,6 @@
 /obj/structure/stone_tile/block/cracked,
 /obj/item/storage/toolbox/emergency,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mob_spawn/ghost_role/drone/derelict{
-	name = "Emergency drone shell";
-	desc = "A drone shell that should help to survive. Somehow.";
-	flavour_text = "Ensure your crew survival. If your designated crewmates are yet to wake up, you can make accommodations for their safety and well-being.";
-	important_text = "None.";
-	mob_name = "Emergency drone";
-	you_are_text = "You are an emergency drone designed to help the crew to survive in most extreme situations and to be their best companion.";
-	mob_type = /mob/living/basic/drone/classic;
-	spawner_job_path = /datum/job/maintenance_drone;
-	prompt_name = "an emergency drone"
-	},
 /turf/open/floor/grass,
 /area/ruin/powered)
 "qT" = (
