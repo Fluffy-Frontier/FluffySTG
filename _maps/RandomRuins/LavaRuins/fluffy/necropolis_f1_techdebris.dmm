@@ -15,6 +15,7 @@
 "j" = (
 /obj/structure/fluff/clockwork/clockgolem_remains,
 /obj/structure/grille/broken,
+/obj/effect/spawner/random/environmentally_safe_anomaly,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "l" = (
@@ -23,6 +24,7 @@
 /area/ruin/unpowered/ratvar)
 "o" = (
 /obj/structure/fluff/clockwork/alloy_shards,
+/obj/effect/spawner/random/environmentally_safe_anomaly,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "t" = (
@@ -63,6 +65,7 @@
 	pixel_y = 7
 	},
 /obj/structure/fluff/clockwork/alloy_shards/large,
+/obj/effect/spawner/random/environmentally_safe_anomaly,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "H" = (
@@ -113,6 +116,10 @@
 /obj/structure/window/bronze/fulltile,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
+"Z" = (
+/obj/effect/spawner/random/environmentally_safe_anomaly,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 
 (1,1,1) = {"
 a
@@ -129,7 +136,7 @@ o
 a
 "}
 (3,1,1) = {"
-H
+Z
 l
 I
 L
