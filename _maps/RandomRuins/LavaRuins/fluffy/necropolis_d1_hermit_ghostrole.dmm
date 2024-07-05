@@ -34,8 +34,8 @@
 /turf/open/floor/grass,
 /area/ruin/powered)
 "gU" = (
-/obj/machinery/smartfridge/survival_pod/preloaded,
 /obj/structure/sign/poster/contraband/soviet_propaganda/directional/north,
+/obj/machinery/smartfridge/survival_pod,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "ha" = (
@@ -68,15 +68,21 @@
 /area/ruin/powered)
 "hX" = (
 /obj/structure/flora/bush/fullgrass/style_random,
-/obj/item/storage/bag/plants/portaseeder,
+/obj/item/storage/bag/plants/portaseeder{
+	pixel_x = 6;
+	pixel_y = 5
+	},
 /turf/open/floor/grass,
 /area/ruin/powered)
 "jz" = (
-/obj/item/storage/medkit/regular,
+/obj/item/storage/medkit/regular{
+	pixel_x = -5;
+	pixel_y = 9
+	},
 /obj/structure/table/wood,
 /obj/item/flashlight/flare/torch{
-	pixel_x = 9;
-	pixel_y = 7
+	pixel_x = 10;
+	pixel_y = 5
 	},
 /turf/open/misc/asteroid/basalt,
 /area/ruin/powered)
@@ -162,7 +168,10 @@
 "rG" = (
 /obj/structure/tubes,
 /obj/effect/decal/cleanable/blood/drip,
-/obj/effect/spawner/random/decoration/glowstick,
+/obj/effect/spawner/random/decoration/glowstick{
+	pixel_x = 0;
+	pixel_y = -5
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
@@ -217,7 +226,10 @@
 	pixel_x = -9
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore{
+	pixel_x = 2;
+	pixel_y = -5
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "uK" = (
@@ -248,7 +260,10 @@
 /obj/structure/stone_tile/cracked{
 	dir = 1
 	},
-/obj/item/hatchet/wooden,
+/obj/item/hatchet/wooden{
+	pixel_x = 9;
+	pixel_y = -8
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
 /area/ruin/powered)
@@ -265,7 +280,6 @@
 /turf/open/floor/grass,
 /area/ruin/powered)
 "xb" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/structure/stone_tile{
 	dir = 1
 	},
@@ -273,6 +287,10 @@
 	dir = 8
 	},
 /obj/structure/stone_tile/cracked,
+/obj/machinery/portable_atmospherics/canister/air{
+	pixel_x = -5;
+	pixel_y = 1
+	},
 /turf/open/misc/asteroid/basalt,
 /area/ruin/powered)
 "xi" = (
@@ -335,6 +353,7 @@
 /obj/structure/bed/pillow_tiny,
 /obj/effect/spawner/random/entertainment/plushie,
 /obj/item/clothing/mask/gas/soviet,
+/obj/item/knife/combat/survival,
 /turf/open/misc/asteroid/basalt,
 /area/ruin/powered)
 "zh" = (
@@ -373,7 +392,9 @@
 	dir = 1
 	},
 /obj/structure/chair/wood/wings{
-	dir = 4
+	dir = 4;
+	pixel_x = 6;
+	pixel_y = -2
 	},
 /turf/open/misc/asteroid/basalt,
 /area/ruin/powered)
@@ -442,6 +463,14 @@
 "Gy" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 4
+	},
+/obj/item/clothing/head/helmet/space/orange{
+	pixel_x = -11;
+	pixel_y = 6
+	},
+/obj/item/clothing/suit/space/orange{
+	pixel_x = 3;
+	pixel_y = -2
 	},
 /obj/item/tank/internals/oxygen,
 /turf/open/misc/asteroid/basalt,
@@ -542,12 +571,10 @@
 	dir = 4
 	},
 /obj/item/circuitboard/computer/exodrone_console,
-/obj/item/circuitboard/machine/exodrone_launcher,
-/obj/item/exodrone,
-/obj/item/fuel_pellet/advanced,
-/obj/item/clothing/suit/space/orange,
-/obj/item/clothing/head/helmet/space/orange,
 /obj/structure/table/survival_pod,
+/obj/item/fuel_pellet/advanced,
+/obj/item/exodrone,
+/obj/item/circuitboard/machine/exodrone_launcher,
 /turf/open/misc/asteroid/basalt,
 /area/ruin/powered)
 "TC" = (
@@ -558,13 +585,16 @@
 /area/ruin/powered)
 "TR" = (
 /obj/item/pillow{
-	pixel_y = 5;
-	pixel_x = 15
+	pixel_y = 6;
+	pixel_x = 5
 	},
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 4
 	},
-/obj/item/reagent_containers/cup/bowl/wood_bowl,
+/obj/item/reagent_containers/cup/bowl/wood_bowl{
+	pixel_x = -5;
+	pixel_y = -6
+	},
 /turf/open/floor/grass,
 /area/ruin/powered)
 "Ue" = (

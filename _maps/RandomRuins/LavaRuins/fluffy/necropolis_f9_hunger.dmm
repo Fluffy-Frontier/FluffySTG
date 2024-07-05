@@ -143,9 +143,7 @@
 /obj/structure/stone_tile/center/burnt,
 /mob/living/simple_animal/hostile/megafauna/wendigo{
 	name = "Hunger";
-	speed = 1;
-	health = 1500;
-	maxHealth = 1500;
+	speed = 0.5;
 	desc = "An ancient demon, a spirit of the old nature. Chained. Hungry.";
 	light_color = "#333333";
 	color = "#333333";
@@ -161,9 +159,6 @@
 	desc = "Some sort of primitive projectile weapon made of bone and wrapped sinew, something wrong with it. This feels... Angry. Somehow."
 	},
 /obj/structure/marker_beacon/burgundy,
-/obj/item/stack/ore/diamond{
-	amount = 25
-	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "J" = (
