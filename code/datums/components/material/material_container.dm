@@ -276,6 +276,7 @@
 	//All messages to be displayed to chat
 	var/list/chat_msgs = list()
 	//differs from held_item when using TK
+<<<<<<< HEAD
 	var/active_held = user.get_active_held_item()
 	//storage items to retrive items from
 	var/static/list/storage_items
@@ -285,6 +286,11 @@
 			/obj/item/storage/bag,
 			/obj/item/storage/box,
 		)
+=======
+	var/obj/item/active_held = user.get_active_held_item()
+	//omni tools can act as any tool so get its real behaviour
+	active_held = active_held.get_proxy_attacker_for(held_item)
+>>>>>>> c82c60a392c ([MIRROR] Makes the omnitool lathe proof [MDB IGNORE] (#3553))
 
 	//1st iteration consumes all items that do not have contents inside
 	//2nd iteration consumes items who do have contents inside(but they were consumed in the 1st iteration so its empty now)
