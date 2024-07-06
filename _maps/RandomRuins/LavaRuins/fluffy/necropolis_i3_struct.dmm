@@ -365,7 +365,10 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Ht" = (
-/obj/item/kitchen/fork,
+/obj/item/kitchen/fork{
+	pixel_x = 7;
+	pixel_y = 8
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Ka" = (

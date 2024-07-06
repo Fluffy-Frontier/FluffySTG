@@ -36,6 +36,7 @@
 /obj/structure/stone_tile/block{
 	dir = 4
 	},
+/obj/effect/spawner/random/entertainment/coin,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "cU" = (
@@ -68,6 +69,7 @@
 /area/lavaland/surface/outdoors)
 "dW" = (
 /obj/structure/stone_tile/surrounding/cracked,
+/obj/effect/spawner/random/entertainment/coin,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "dZ" = (
@@ -100,7 +102,10 @@
 	},
 /area/ruin/unpowered)
 "fA" = (
-/obj/item/reagent_containers/cup/bowl/wood_bowl,
+/obj/item/reagent_containers/cup/bowl/wood_bowl{
+	pixel_x = -4;
+	pixel_y = 6
+	},
 /obj/structure/stone_tile,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
@@ -517,7 +522,10 @@
 /area/lavaland/surface/outdoors)
 "BS" = (
 /obj/structure/stone_tile/slab,
-/obj/item/reagent_containers/cup/bowl/wood_bowl,
+/obj/item/reagent_containers/cup/bowl/wood_bowl{
+	pixel_x = -9;
+	pixel_y = -6
+	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "BT" = (
@@ -716,6 +724,11 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"Le" = (
+/obj/structure/stone_tile/slab/cracked,
+/obj/effect/spawner/random/entertainment/coin,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "LW" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center,
@@ -750,6 +763,13 @@
 /obj/structure/stone_tile/center/burnt,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"MY" = (
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/obj/effect/spawner/random/entertainment/coin,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "NG" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 1
@@ -758,6 +778,11 @@
 /area/lavaland/surface/outdoors)
 "NI" = (
 /turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Oy" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "OI" = (
 /obj/structure/stone_tile/block{
@@ -828,6 +853,11 @@
 /area/ruin/unpowered)
 "TU" = (
 /obj/structure/stone_tile/slab/cracked,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"UG" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Vb" = (
@@ -971,7 +1001,7 @@ MA
 WT
 cU
 pF
-cU
+MY
 ro
 MA
 MA
@@ -1175,7 +1205,7 @@ DI
 OO
 "}
 (9,1,1) = {"
-md
+UG
 md
 vo
 Ds
@@ -1256,7 +1286,7 @@ MA
 MA
 MA
 lQ
-CK
+Oy
 VQ
 MA
 MA
@@ -1379,6 +1409,6 @@ cS
 Xs
 MA
 MA
-TU
+Le
 MA
 "}

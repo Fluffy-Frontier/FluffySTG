@@ -57,6 +57,10 @@
 /obj/structure/stone_tile/block{
 	dir = 1
 	},
+/obj/item/coin/silver/doubloon{
+	pixel_x = 5;
+	pixel_y = -7
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ia" = (
@@ -282,6 +286,14 @@
 /obj/effect/spawner/random/food_or_drink/seed_rare,
 /turf/open/misc/grass/lavaland,
 /area/ruin/unpowered/gaia)
+"zS" = (
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver/doubloon{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "zV" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /mob/living/basic/lightgeist{
@@ -785,7 +797,7 @@ pA
 rg
 aL
 av
-aL
+zS
 TT
 jf
 DF

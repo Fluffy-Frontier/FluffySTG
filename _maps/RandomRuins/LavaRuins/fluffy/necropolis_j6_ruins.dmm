@@ -48,7 +48,10 @@
 /area/lavaland/surface/outdoors)
 "o" = (
 /obj/structure/stone_tile/slab,
-/obj/item/stack/sheet/bone,
+/obj/item/stack/sheet/bone{
+	pixel_x = 9;
+	pixel_y = -2
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "q" = (
@@ -101,7 +104,10 @@
 /area/lavaland/surface/outdoors)
 "A" = (
 /obj/structure/stone_tile/slab,
-/obj/item/forging/complete/axe,
+/obj/item/forging/complete/axe{
+	pixel_x = 9;
+	pixel_y = 9
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "B" = (

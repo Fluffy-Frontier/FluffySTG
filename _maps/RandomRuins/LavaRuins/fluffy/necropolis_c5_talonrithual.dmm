@@ -160,6 +160,7 @@
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 6
 	},
+/obj/item/clothing/gloves/military/claw,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ic" = (
@@ -362,6 +363,12 @@
 /mob/living/basic/mining/ancient_demon/ancient_demon_lesser,
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
+"wI" = (
+/obj/structure/flora/rock/pile/style_random,
+/obj/effect/spawner/random/structure/spikes,
+/obj/item/hemostat/ashwalker,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "xj" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -491,6 +498,11 @@
 "DT" = (
 /obj/structure/flora/rock/pile/style_random,
 /obj/effect/spawner/random/mob/necropolis_mob,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"EP" = (
+/obj/structure/flora/rock/pile/style_random,
+/obj/item/clothing/shoes/wraps/ashwalker,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ER" = (
@@ -738,7 +750,7 @@ Ls
 xX
 xX
 gs
-CV
+wI
 Ae
 Ae
 Ae
@@ -924,7 +936,7 @@ AB
 AB
 DR
 am
-Cd
+EP
 Qc
 ej
 bc

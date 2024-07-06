@@ -131,7 +131,10 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "tX" = (
-/obj/item/ceramic/bowl,
+/obj/item/ceramic/bowl{
+	pixel_x = 5;
+	pixel_y = -5
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "tZ" = (
@@ -179,7 +182,10 @@
 /area/lavaland/surface/outdoors)
 "DM" = (
 /obj/structure/stone_tile/slab,
-/obj/item/ceramic/cup,
+/obj/item/ceramic/cup{
+	pixel_x = -10;
+	pixel_y = 14
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Ew" = (

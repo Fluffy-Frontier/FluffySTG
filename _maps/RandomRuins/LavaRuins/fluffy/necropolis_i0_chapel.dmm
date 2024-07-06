@@ -40,7 +40,10 @@
 "n" = (
 /obj/structure/stone_tile/surrounding/burnt,
 /obj/structure/stone_tile/center/burnt,
-/obj/item/ceramic/cup,
+/obj/item/ceramic/cup{
+	pixel_x = 6;
+	pixel_y = -5
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "o" = (
@@ -59,6 +62,10 @@
 "s" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center,
+/obj/item/shield/buckler{
+	pixel_x = -5;
+	pixel_y = -5
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "u" = (

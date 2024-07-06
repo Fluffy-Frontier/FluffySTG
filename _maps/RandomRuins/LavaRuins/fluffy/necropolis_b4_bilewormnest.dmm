@@ -50,6 +50,10 @@
 /obj/structure/flora/rock/pile/style_random,
 /turf/open/misc/asteroid/lavaland_atmos,
 /area/lavaland/surface/outdoors)
+"A" = (
+/obj/item/stack/sheet/mineral/sandbags,
+/turf/open/misc/asteroid/lavaland_atmos,
+/area/lavaland/surface/outdoors)
 "C" = (
 /obj/item/xenoarch/useless_relic{
 	name = "Ancient relic";
@@ -80,10 +84,25 @@
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
 /area/lavaland/surface/outdoors)
+"N" = (
+/obj/item/stack/sheet/mineral/sandstone/thirty{
+	pixel_x = -8;
+	pixel_y = 5
+	},
+/turf/open/misc/asteroid/lavaland_atmos,
+/area/lavaland/surface/outdoors)
 "P" = (
 /obj/effect/decal/cleanable/xenoblood{
 	icon_state = "xltrails_1";
 	dir = 8
+	},
+/turf/open/misc/asteroid/lavaland_atmos,
+/area/lavaland/surface/outdoors)
+"X" = (
+/obj/structure/flora/rock/pile/style_random,
+/obj/item/food/canned/desert_snails{
+	pixel_x = 5;
+	pixel_y = -5
 	},
 /turf/open/misc/asteroid/lavaland_atmos,
 /area/lavaland/surface/outdoors)
@@ -151,7 +170,7 @@ Y
 b
 F
 s
-L
+N
 L
 J
 P
@@ -182,7 +201,7 @@ j
 c
 g
 u
-L
+A
 j
 s
 Y
@@ -195,7 +214,7 @@ G
 j
 H
 L
-z
+X
 s
 b
 Y

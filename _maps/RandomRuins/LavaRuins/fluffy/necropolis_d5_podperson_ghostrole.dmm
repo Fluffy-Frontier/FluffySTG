@@ -22,7 +22,10 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
-/obj/structure/extinguisher_cabinet/directional/south,
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = -8;
+	pixel_y = -29
+	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/powered/seedvault)
 "cJ" = (
@@ -136,10 +139,9 @@
 /area/ruin/powered/seedvault)
 "lz" = (
 /obj/structure/window/reinforced/shuttle/survival_pod,
-/obj/structure/curtain/bounty/start_closed{
-	color = "#7d7d7d"
+/obj/item/decoration/new_year/garland{
+	anchored = 1
 	},
-/obj/item/decoration/new_year/garland,
 /turf/open/floor/pod/dark,
 /area/ruin/powered/seedvault)
 "lN" = (
@@ -405,6 +407,10 @@
 	pixel_y = 5;
 	pixel_x = 15
 	},
+/obj/structure/curtain/bounty/start_closed{
+	color = "#7d7d7d";
+	pixel_y = 30
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/powered/seedvault)
 "BB" = (
@@ -432,7 +438,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/item/reagent_containers/cup/bucket/wooden,
+/obj/item/reagent_containers/cup/bucket/wooden{
+	pixel_x = -7;
+	pixel_y = -4
+	},
 /turf/open/misc/grass/jungle,
 /area/ruin/powered/seedvault)
 "CY" = (
@@ -448,9 +457,13 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
-/obj/item/construction/plumbing/engineering,
+/obj/item/construction/plumbing/engineering{
+	pixel_x = -1;
+	pixel_y = 4
+	},
 /obj/item/storage/bag/plants{
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = -6
 	},
 /turf/open/floor/wood/large,
 /area/ruin/powered/seedvault)
@@ -481,6 +494,10 @@
 "EF" = (
 /obj/effect/mob_spawn/ghost_role/human/seed_vault,
 /obj/effect/turf_decal/siding/wood,
+/obj/structure/curtain/bounty/start_closed{
+	color = "#7d7d7d";
+	pixel_y = -30
+	},
 /turf/open/floor/wood/large,
 /area/ruin/powered/seedvault)
 "FP" = (
@@ -650,6 +667,10 @@
 	dir = 8
 	},
 /obj/machinery/chem_master/condimaster,
+/obj/structure/curtain/bounty/start_closed{
+	color = "#7d7d7d";
+	pixel_x = -30
+	},
 /turf/open/floor/wood/large,
 /area/ruin/powered/seedvault)
 "PM" = (
@@ -694,6 +715,10 @@
 	dir = 8
 	},
 /obj/machinery/seed_extractor,
+/obj/structure/curtain/bounty/start_closed{
+	color = "#7d7d7d";
+	pixel_x = -30
+	},
 /turf/open/floor/wood/large,
 /area/ruin/powered/seedvault)
 "RU" = (
@@ -720,6 +745,10 @@
 "TQ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
+	},
+/obj/structure/curtain/bounty/start_closed{
+	color = "#7d7d7d";
+	pixel_y = 30
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/powered/seedvault)
@@ -790,6 +819,10 @@
 	dir = 1
 	},
 /obj/item/binoculars,
+/obj/structure/curtain/bounty/start_closed{
+	color = "#7d7d7d";
+	pixel_y = 30
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/powered/seedvault)
 "WY" = (

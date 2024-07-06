@@ -42,7 +42,6 @@
 /obj/effect/spawner/random/entertainment/musical_instrument,
 /obj/effect/spawner/random/food_or_drink/snack,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/item/stack/sheet/mineral/uranium/half,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "bU" = (
@@ -76,8 +75,8 @@
 	dir = 6
 	},
 /obj/item/storage/medkit/fire{
-	pixel_y = 6;
-	pixel_x = -1
+	pixel_y = -3;
+	pixel_x = 1
 	},
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
@@ -144,7 +143,10 @@
 	pixel_y = -7;
 	pixel_x = 4
 	},
-/obj/item/bodypart/head/golem,
+/obj/item/bodypart/head/golem{
+	pixel_x = -9;
+	pixel_y = 0
+	},
 /obj/effect/turf_decal/tile/dark/full,
 /turf/open/floor/pod,
 /area/ruin/powered)
@@ -210,8 +212,8 @@
 "iy" = (
 /obj/structure/table,
 /obj/item/chisel{
-	pixel_y = 8;
-	pixel_x = -7
+	pixel_y = 2;
+	pixel_x = -12
 	},
 /obj/item/stack/marker_beacon/thirty{
 	pixel_y = 10;
@@ -247,7 +249,10 @@
 /area/ruin/powered)
 "lR" = (
 /obj/effect/decal/cleanable/glass/titanium,
-/obj/item/stack/ore/silver,
+/obj/item/stack/ore/silver{
+	pixel_x = 3;
+	pixel_y = -6
+	},
 /turf/open/floor/pod,
 /area/ruin/powered)
 "mh" = (
@@ -324,7 +329,10 @@
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/dark/filled/line,
-/obj/item/organ/internal/liver/golem,
+/obj/item/organ/internal/liver/golem{
+	pixel_x = 6;
+	pixel_y = -7
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "sm" = (
@@ -368,7 +376,10 @@
 /turf/open/floor/holofloor/hyperspace,
 /area/ruin/powered)
 "tG" = (
-/obj/effect/decal/cleanable/shreds,
+/obj/effect/decal/cleanable/shreds{
+	pixel_x = 0;
+	pixel_y = -8
+	},
 /obj/effect/turf_decal/trimline/dark/filled/corner,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
@@ -390,7 +401,6 @@
 /area/ruin/powered)
 "uD" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/random/animalhide,
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
@@ -436,7 +446,10 @@
 /turf/open/floor/pod,
 /area/ruin/powered)
 "wb" = (
-/obj/item/wrench,
+/obj/item/wrench{
+	pixel_x = -7;
+	pixel_y = 0
+	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 1
 	},
@@ -465,7 +478,10 @@
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "xF" = (
-/obj/structure/extinguisher_cabinet/directional/south,
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = -9;
+	pixel_y = -29
+	},
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
@@ -579,7 +595,10 @@
 	pixel_x = -5;
 	pixel_y = -5
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = -9;
+	pixel_y = 29
+	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 1
 	},
@@ -587,7 +606,7 @@
 /area/ruin/powered)
 "Ei" = (
 /obj/structure/flora/ash/stem_shroom,
-/obj/effect/mob_spawn/corpse/human/miner,
+/obj/effect/mob_spawn/corpse/human/pirate,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "EP" = (
@@ -700,7 +719,10 @@
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "LT" = (
-/obj/effect/spawner/random/entertainment/cigar,
+/obj/effect/spawner/random/entertainment/cigar{
+	pixel_x = 10;
+	pixel_y = -5
+	},
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
@@ -749,7 +771,10 @@
 /turf/open/floor/holofloor/hyperspace,
 /area/ruin/powered)
 "OS" = (
-/obj/item/stack/sheet/iron/ten,
+/obj/item/stack/sheet/iron/ten{
+	pixel_x = 5;
+	pixel_y = 9
+	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 8
 	},
@@ -856,7 +881,10 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Tj" = (
-/obj/item/wrench/makeshift,
+/obj/item/wrench/makeshift{
+	pixel_x = -7;
+	pixel_y = 8
+	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 4
 	},
@@ -953,10 +981,15 @@
 "Yn" = (
 /obj/structure/table,
 /obj/item/stock_parts/micro_laser{
-	pixel_x = -2
+	pixel_x = -6;
+	pixel_y = 0
 	},
 /obj/item/screwdriver{
 	pixel_y = 10
+	},
+/obj/item/stack/sheet/mineral/uranium/half{
+	pixel_x = 9;
+	pixel_y = 1
 	},
 /turf/open/floor/pod,
 /area/ruin/powered)
@@ -964,8 +997,8 @@
 /obj/structure/stone_tile/slab,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/disk/design_disk/golem_shell{
-	pixel_y = 2;
-	pixel_x = 6
+	pixel_y = 8;
+	pixel_x = 8
 	},
 /turf/open/floor/holofloor/hyperspace,
 /area/ruin/powered)

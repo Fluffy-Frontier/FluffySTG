@@ -17,7 +17,10 @@
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/item/ammo_casing/rebar/healium,
+/obj/item/ammo_casing/rebar/healium{
+	pixel_x = 0;
+	pixel_y = -3
+	},
 /obj/item/clothing/mask/facehugger/dead,
 /turf/open/floor/plating/lavaland_atmos,
 /area/ruin/unpowered)

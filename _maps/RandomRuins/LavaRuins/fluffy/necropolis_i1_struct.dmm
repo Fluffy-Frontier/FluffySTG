@@ -146,7 +146,10 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "oA" = (
-/obj/item/reagent_containers/cup/bowl/wood_bowl,
+/obj/item/reagent_containers/cup/bowl/wood_bowl{
+	pixel_x = 7;
+	pixel_y = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "pa" = (

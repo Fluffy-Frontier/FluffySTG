@@ -209,12 +209,10 @@
 /obj/structure/table/abductor,
 /obj/structure/marker_beacon/purple,
 /obj/item/organ/external/tail/lizard,
-/turf/open/floor/plating/abductor2{
-	initial_gas_mix = "LAVALAND_ATMOS"
+/obj/item/surgical_drapes{
+	pixel_x = -5;
+	pixel_y = 5
 	},
-/area/ruin/unpowered)
-"Gc" = (
-/obj/item/surgical_drapes,
 /turf/open/floor/plating/abductor2{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -410,7 +408,7 @@ Lz
 rx
 sK
 JW
-Gc
+Qc
 lu
 lu
 qs

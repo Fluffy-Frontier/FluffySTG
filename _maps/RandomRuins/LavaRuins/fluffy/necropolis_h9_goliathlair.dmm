@@ -145,7 +145,10 @@
 /area/lavaland/surface/outdoors)
 "iT" = (
 /obj/structure/stone_tile/slab,
-/obj/item/ceramic/cup,
+/obj/item/ceramic/cup{
+	pixel_x = -6;
+	pixel_y = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "iV" = (

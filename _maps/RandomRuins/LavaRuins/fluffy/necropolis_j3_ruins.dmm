@@ -177,7 +177,10 @@
 /area/lavaland/surface/outdoors)
 "K" = (
 /obj/structure/stone_tile/slab/burnt,
-/obj/item/reagent_containers/cup/bowl/wood_bowl,
+/obj/item/reagent_containers/cup/bowl/wood_bowl{
+	pixel_x = 9;
+	pixel_y = 11
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "L" = (

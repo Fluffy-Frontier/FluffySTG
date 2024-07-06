@@ -48,7 +48,10 @@
 /obj/structure/stone_tile{
 	dir = 8
 	},
-/obj/item/organ/internal/tongue/cat/tajaran,
+/obj/item/organ/internal/tongue/cat/tajaran{
+	pixel_x = 7;
+	pixel_y = 3
+	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "eD" = (
@@ -118,8 +121,10 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
 	},
-/obj/item/organ/internal/tongue/dwarven,
-/obj/effect/glowing_rune,
+/obj/item/organ/internal/tongue/dwarven{
+	pixel_x = 6;
+	pixel_y = -5
+	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "jP" = (
@@ -138,7 +143,9 @@
 "kI" = (
 /obj/structure/stone_tile/slab/burnt,
 /obj/item/stack/sheet/mineral/runite{
-	amount = 5
+	amount = 5;
+	pixel_x = 7;
+	pixel_y = -5
 	},
 /turf/open/indestructible/boss,
 /area/ruin/unpowered)
@@ -151,9 +158,14 @@
 	dir = 4
 	},
 /obj/item/stack/sheet/mineral/runite{
-	amount = 5
+	amount = 5;
+	pixel_x = -7;
+	pixel_y = -10
 	},
-/obj/item/organ/internal/tongue/alien,
+/obj/item/organ/internal/tongue/alien{
+	pixel_x = 10;
+	pixel_y = -14
+	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "lq" = (
@@ -170,7 +182,6 @@
 "lC" = (
 /obj/structure/stone_tile/slab/burnt,
 /obj/effect/decal/cleanable/blood/gibs/up,
-/obj/effect/glowing_rune,
 /turf/open/indestructible/boss,
 /area/ruin/unpowered)
 "md" = (
@@ -229,7 +240,6 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor4-old"
 	},
-/obj/item/organ/internal/tongue/snail,
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "un" = (
@@ -273,7 +283,10 @@
 /obj/structure/stone_tile{
 	dir = 1
 	},
-/obj/item/organ/internal/tongue/golem,
+/obj/item/organ/internal/tongue/golem{
+	pixel_x = -13;
+	pixel_y = 3
+	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "xc" = (
@@ -375,8 +388,10 @@
 	pixel_x = 9;
 	pixel_y = -1
 	},
-/obj/item/organ/internal/tongue/ethereal,
-/obj/effect/glowing_rune,
+/obj/item/organ/internal/tongue/ethereal{
+	pixel_x = -6;
+	pixel_y = -5
+	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "EL" = (
@@ -384,6 +399,10 @@
 	dir = 4
 	},
 /obj/item/soulstone,
+/obj/item/organ/internal/tongue/snail{
+	pixel_x = -10;
+	pixel_y = 6
+	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "FQ" = (
@@ -466,7 +485,9 @@
 	},
 /obj/structure/stone_tile,
 /obj/item/stack/sheet/mineral/runite{
-	amount = 5
+	amount = 5;
+	pixel_x = 5;
+	pixel_y = 10
 	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
@@ -547,8 +568,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/gibs,
-/obj/effect/glowing_rune,
-/obj/item/sharpener/cult,
+/obj/item/sharpener/cult{
+	pixel_x = -9;
+	pixel_y = 9
+	},
 /turf/open/indestructible/boss,
 /area/ruin/unpowered)
 "QG" = (
@@ -587,7 +610,10 @@
 /obj/structure/stone_tile{
 	dir = 4
 	},
-/obj/item/disk/design_disk/knight_gear,
+/obj/item/disk/design_disk/knight_gear{
+	pixel_x = 10;
+	pixel_y = 9
+	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "SB" = (
@@ -638,7 +664,10 @@
 	icon_state = "ltrails_1";
 	dir = 10
 	},
-/obj/item/organ/internal/tongue/lizard/silver,
+/obj/item/organ/internal/tongue/lizard/silver{
+	pixel_x = 6;
+	pixel_y = -6
+	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "Uk" = (
@@ -702,7 +731,9 @@
 	icon_state = "gibbl1"
 	},
 /obj/item/stack/sheet/mineral/runite{
-	amount = 5
+	amount = 5;
+	pixel_x = 6;
+	pixel_y = 10
 	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)

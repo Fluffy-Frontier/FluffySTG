@@ -210,7 +210,10 @@
 /obj/item/seeds/plump,
 /obj/item/seeds/reishi,
 /obj/item/seeds/tower,
-/obj/item/fuel_pellet,
+/obj/item/fuel_pellet{
+	pixel_x = 7;
+	pixel_y = -7
+	},
 /turf/open/misc/asteroid/basalt,
 /area/ruin/powered)
 "ty" = (
@@ -239,7 +242,10 @@
 /turf/open/misc/asteroid/basalt,
 /area/ruin/powered)
 "vi" = (
-/obj/item/cultivator,
+/obj/item/cultivator{
+	pixel_x = 6;
+	pixel_y = -2
+	},
 /obj/item/stack/marker_beacon/thirty{
 	pixel_y = 10;
 	pixel_x = 10
@@ -259,10 +265,6 @@
 	},
 /obj/structure/stone_tile/cracked{
 	dir = 1
-	},
-/obj/item/hatchet/wooden{
-	pixel_x = 9;
-	pixel_y = -8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
@@ -290,6 +292,10 @@
 /obj/machinery/portable_atmospherics/canister/air{
 	pixel_x = -5;
 	pixel_y = 1
+	},
+/obj/item/fuel_pellet/advanced{
+	pixel_x = 2;
+	pixel_y = 5
 	},
 /turf/open/misc/asteroid/basalt,
 /area/ruin/powered)
@@ -416,7 +422,10 @@
 	},
 /obj/effect/decal/cleanable/oil,
 /obj/structure/stone_tile/burnt,
-/obj/item/door_seal,
+/obj/item/door_seal{
+	pixel_x = 7;
+	pixel_y = -4
+	},
 /turf/open/misc/asteroid/basalt,
 /area/ruin/powered)
 "DY" = (
@@ -539,7 +548,10 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "MX" = (
-/obj/item/crowbar,
+/obj/item/crowbar{
+	pixel_x = 4;
+	pixel_y = -9
+	},
 /obj/item/storage/box/matches{
 	pixel_y = 9;
 	pixel_x = 7
@@ -570,11 +582,19 @@
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
 	},
-/obj/item/circuitboard/computer/exodrone_console,
+/obj/item/circuitboard/computer/exodrone_console{
+	pixel_x = 3;
+	pixel_y = -7
+	},
 /obj/structure/table/survival_pod,
-/obj/item/fuel_pellet/advanced,
-/obj/item/exodrone,
-/obj/item/circuitboard/machine/exodrone_launcher,
+/obj/item/exodrone{
+	pixel_x = 2;
+	pixel_y = 9
+	},
+/obj/item/circuitboard/machine/exodrone_launcher{
+	pixel_x = 3;
+	pixel_y = -7
+	},
 /turf/open/misc/asteroid/basalt,
 /area/ruin/powered)
 "TC" = (

@@ -91,7 +91,10 @@
 	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
 	icon_state = "empty_shelf_1"
 	},
-/obj/item/stack/sheet/mineral/coal/ten,
+/obj/item/stack/sheet/mineral/coal/ten{
+	pixel_x = -5;
+	pixel_y = -5
+	},
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
@@ -184,7 +187,10 @@
 	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
 	icon_state = "empty_shelf_1"
 	},
-/obj/item/coin/silver,
+/obj/item/coin/silver{
+	pixel_x = 4;
+	pixel_y = 3
+	},
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
@@ -289,7 +295,10 @@
 /area/ruin/unpowered)
 "lo" = (
 /obj/structure/stone_tile/slab,
-/obj/item/reagent_containers/cup/bowl/wood_bowl,
+/obj/item/reagent_containers/cup/bowl/wood_bowl{
+	pixel_x = 7;
+	pixel_y = -5
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "lD" = (
@@ -366,7 +375,10 @@
 	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
 	icon_state = "empty_shelf_1"
 	},
-/obj/item/stack/sheet/mineral/coal/ten,
+/obj/item/stack/sheet/mineral/coal/ten{
+	pixel_x = 4;
+	pixel_y = -8
+	},
 /obj/structure/stone_tile/slab,
 /obj/item/xenoarch/useless_relic{
 	name = "Ancient relic";
@@ -420,7 +432,10 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 6
 	},
-/obj/item/coin/silver,
+/obj/item/coin/silver{
+	pixel_x = -7;
+	pixel_y = -7
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "sd" = (
@@ -452,7 +467,10 @@
 	icon = 'modular_nova/modules/mapping/icons/unique/furniture.dmi';
 	icon_state = "empty_shelf_1"
 	},
-/obj/item/stack/sheet/mineral/coal/ten,
+/obj/item/stack/sheet/mineral/coal/ten{
+	pixel_x = 0;
+	pixel_y = -7
+	},
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
@@ -592,7 +610,10 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "zx" = (
-/obj/item/coin/silver,
+/obj/item/coin/silver{
+	pixel_x = 4;
+	pixel_y = -6
+	},
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
@@ -865,8 +886,8 @@
 "MH" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/cup/beaker/large/ceramic{
-	pixel_x = 7;
-	pixel_y = -5
+	pixel_x = -4;
+	pixel_y = 7
 	},
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
@@ -894,7 +915,10 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Ou" = (
-/obj/item/coin/eldritch,
+/obj/item/coin/eldritch{
+	pixel_x = -2;
+	pixel_y = -7
+	},
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
 	},
@@ -958,7 +982,10 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "RI" = (
-/obj/item/coin/silver/doubloon,
+/obj/item/coin/silver/doubloon{
+	pixel_x = 8;
+	pixel_y = -4
+	},
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -967,7 +994,10 @@
 /area/template_noop)
 "Sl" = (
 /obj/structure/stone_tile/slab,
-/obj/item/coin/silver,
+/obj/item/coin/silver{
+	pixel_x = 5;
+	pixel_y = -5
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "SR" = (
@@ -1057,6 +1087,18 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"WW" = (
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver{
+	pixel_x = -17;
+	pixel_y = 2
+	},
+/obj/item/coin/silver{
+	pixel_x = 13;
+	pixel_y = -6
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
 "WZ" = (
 /obj/structure/stone_tile/block{
 	dir = 8
@@ -1318,7 +1360,7 @@ Sb
 (9,1,1) = {"
 Sb
 vZ
-qB
+WW
 cT
 CQ
 Sb

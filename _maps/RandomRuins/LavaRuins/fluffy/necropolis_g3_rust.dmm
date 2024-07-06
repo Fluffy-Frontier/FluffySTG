@@ -25,8 +25,8 @@
 "l" = (
 /obj/structure/destructible/eldritch_crucible,
 /obj/effect/decal/cleanable/grand_remains/cheese,
-/obj/item/reagent_containers/cup/beaker/eldritch,
-/obj/item/food/kebab/monkey{
+/obj/item/reagent_containers/cup/beaker/eldritch{
+	pixel_x = 0;
 	pixel_y = 5
 	},
 /turf/open/floor/plating/rust{
@@ -140,6 +140,15 @@
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
+"R" = (
+/obj/effect/mapping_helpers/broken_floor,
+/obj/item/food/kebab/monkey{
+	pixel_y = 5
+	},
+/turf/open/floor/plating/rust{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
 "V" = (
 /turf/closed/indestructible/riveted/boss,
 /area/ruin/unpowered)
@@ -230,7 +239,7 @@ i
 I
 a
 p
-P
+R
 V
 F
 o

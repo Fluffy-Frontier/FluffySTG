@@ -70,12 +70,18 @@
 /obj/item/pickaxe,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/spawner/random/entertainment/cigarette,
-/obj/item/wormhole_jaunter,
+/obj/item/wormhole_jaunter{
+	pixel_x = -12;
+	pixel_y = 2
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "L" = (
 /obj/structure/table/survival_pod,
-/obj/item/knife/combat/survival,
+/obj/item/knife/combat/survival{
+	pixel_x = 2;
+	pixel_y = -6
+	},
 /obj/effect/spawner/random/engineering/tool_advanced,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
@@ -94,6 +100,7 @@
 /obj/structure/sign/poster/contraband/lusty_xenomorph/directional/east,
 /obj/item/bedsheet/black,
 /obj/item/kheiral_cuffs,
+/obj/item/condom_pack,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "R" = (

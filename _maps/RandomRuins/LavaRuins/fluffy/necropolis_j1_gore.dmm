@@ -6,7 +6,10 @@
 /area/lavaland/surface/outdoors)
 "ar" = (
 /obj/effect/gibspawner/human/bodypartless,
-/obj/item/food/meat/slab/human,
+/obj/item/food/meat/slab/human{
+	pixel_x = 7;
+	pixel_y = 6
+	},
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -17,7 +20,10 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "fO" = (
-/obj/item/food/meat/slab/human,
+/obj/item/food/meat/slab/human{
+	pixel_x = -5;
+	pixel_y = 5
+	},
 /obj/effect/gibspawner/xeno/bodypartless,
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
@@ -33,13 +39,19 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "fT" = (
-/obj/item/food/meat/slab/chicken,
+/obj/item/food/meat/slab/chicken{
+	pixel_x = -5;
+	pixel_y = -13
+	},
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/lavaland/surface/outdoors)
 "gE" = (
-/obj/item/food/meat/slab/meatproduct,
+/obj/item/food/meat/slab/meatproduct{
+	pixel_x = -5;
+	pixel_y = -7
+	},
 /obj/structure/trap/eldritch/tentacle{
 	max_integrity = 30
 	},
@@ -51,8 +63,20 @@
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"iL" = (
+/obj/item/food/meat/slab/human{
+	pixel_x = -2;
+	pixel_y = -3
+	},
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/lavaland/surface/outdoors)
 "lL" = (
-/obj/item/food/meat/slab/goliath,
+/obj/item/food/meat/slab/goliath{
+	pixel_x = 7;
+	pixel_y = 7
+	},
 /obj/effect/gibspawner/human/bodypartless,
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
@@ -60,9 +84,18 @@
 /area/lavaland/surface/outdoors)
 "oI" = (
 /obj/structure/meateor_fluff/eyeball,
-/obj/item/food/meat/slab/meatproduct,
-/obj/item/food/meat/slab/bugmeat,
-/obj/item/food/meat/slab/goliath,
+/obj/item/food/meat/slab/meatproduct{
+	pixel_x = -9;
+	pixel_y = 0
+	},
+/obj/item/food/meat/slab/bugmeat{
+	pixel_x = 5;
+	pixel_y = 12
+	},
+/obj/item/food/meat/slab/goliath{
+	pixel_x = 7;
+	pixel_y = -9
+	},
 /obj/structure/trap/eldritch/tentacle{
 	max_integrity = 30
 	},
@@ -71,9 +104,18 @@
 	},
 /area/ruin/powered)
 "pe" = (
-/obj/item/food/meat/slab/human,
-/obj/item/food/meat/slab/human,
-/obj/item/food/meat/slab/meatproduct,
+/obj/item/food/meat/slab/human{
+	pixel_x = 12;
+	pixel_y = 2
+	},
+/obj/item/food/meat/slab/human{
+	pixel_x = -7;
+	pixel_y = 8
+	},
+/obj/item/food/meat/slab/meatproduct{
+	pixel_x = -5;
+	pixel_y = -9
+	},
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -91,7 +133,10 @@
 	},
 /area/ruin/powered)
 "qR" = (
-/obj/item/food/meat/slab/human/mutant/moth,
+/obj/item/food/meat/slab/human/mutant/moth{
+	pixel_x = 0;
+	pixel_y = 8
+	},
 /obj/effect/gibspawner/human/bodypartless,
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
@@ -107,17 +152,30 @@
 /area/lavaland/surface/outdoors)
 "sA" = (
 /obj/effect/gibspawner/human,
-/obj/item/food/meat/slab/human/mutant/lizard,
+/obj/item/food/meat/slab/human/mutant/lizard{
+	pixel_x = 6;
+	pixel_y = 8
+	},
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/lavaland/surface/outdoors)
 "tt" = (
-/obj/item/food/meat/slab/bugmeat,
+/obj/item/food/meat/slab/bugmeat{
+	pixel_x = 4;
+	pixel_y = 7
+	},
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/lavaland/surface/outdoors)
+"tZ" = (
+/obj/item/food/meat/slab/meatwheat{
+	pixel_x = 5;
+	pixel_y = -6
+	},
+/turf/closed/indestructible/meat,
+/area/ruin/powered)
 "vD" = (
 /obj/structure/statue/uranium/eng{
 	icon = 'icons/obj/art/statuelarge.dmi';
@@ -133,9 +191,24 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"vG" = (
+/obj/item/food/meat/slab/bugmeat{
+	pixel_x = -3;
+	pixel_y = -6
+	},
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/lavaland/surface/outdoors)
 "vK" = (
-/obj/item/food/meat/slab/corgi,
-/obj/item/food/meat/slab/human/mutant/plant,
+/obj/item/food/meat/slab/corgi{
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/item/food/meat/slab/human/mutant/plant{
+	pixel_x = 6;
+	pixel_y = -7
+	},
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -165,7 +238,10 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "xg" = (
-/obj/item/food/meat/slab/human,
+/obj/item/food/meat/slab/human{
+	pixel_x = -8;
+	pixel_y = 8
+	},
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -179,11 +255,19 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "xV" = (
-/obj/item/food/meat/slab/meatproduct,
+/obj/item/food/meat/slab/meatproduct{
+	pixel_x = 9;
+	pixel_y = 10
+	},
 /obj/effect/gibspawner/human,
-/obj/item/food/meat/slab/meatproduct,
+/obj/item/food/meat/slab/meatproduct{
+	pixel_x = -4;
+	pixel_y = -1
+	},
 /obj/structure/trap/eldritch/tentacle{
-	max_integrity = 30
+	max_integrity = 30;
+	pixel_x = 0;
+	pixel_y = -1
 	},
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
@@ -271,8 +355,14 @@
 /area/lavaland/surface/outdoors)
 "Lr" = (
 /obj/effect/gibspawner/generic,
-/obj/item/food/meat/slab/meatproduct,
-/obj/item/food/meat/slab/meatproduct,
+/obj/item/food/meat/slab/meatproduct{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/food/meat/slab/meatproduct{
+	pixel_x = -8;
+	pixel_y = 8
+	},
 /obj/structure/trap/eldritch/tentacle{
 	max_integrity = 30
 	},
@@ -295,7 +385,10 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "MM" = (
-/obj/item/food/meat/slab/meatwheat,
+/obj/item/food/meat/slab/meatwheat{
+	pixel_x = 7;
+	pixel_y = -5
+	},
 /turf/closed/indestructible/meat,
 /area/ruin/powered)
 "Os" = (
@@ -304,14 +397,40 @@
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/lavaland/surface/outdoors)
+"OC" = (
+/obj/item/food/meat/slab/human{
+	pixel_x = -8;
+	pixel_y = -3
+	},
+/obj/item/food/meat/slab/human{
+	pixel_x = 7;
+	pixel_y = 6
+	},
+/obj/item/food/meat/slab/meatproduct{
+	pixel_x = 6;
+	pixel_y = -9
+	},
+/turf/open/indestructible/meat{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/powered)
 "PS" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Rd" = (
 /obj/item/food/meat/slab/meatproduct,
-/obj/item/food/meat/slab/human,
-/obj/item/food/meat/slab/human,
-/obj/item/food/meat/slab/human,
+/obj/item/food/meat/slab/human{
+	pixel_x = -11;
+	pixel_y = 0
+	},
+/obj/item/food/meat/slab/human{
+	pixel_x = 9;
+	pixel_y = -9
+	},
+/obj/item/food/meat/slab/human{
+	pixel_x = -6;
+	pixel_y = -9
+	},
 /obj/item/food/meat/slab/meatproduct,
 /obj/item/food/meat/slab/meatproduct,
 /obj/item/dnainjector/paranoia{
@@ -331,9 +450,34 @@
 	},
 /obj/item/food/meat/slab/meatproduct,
 /obj/item/food/meat/slab/meatproduct,
-/obj/item/food/meat/slab/meatproduct,
-/obj/item/food/meat/slab/human,
-/obj/item/food/meat/slab/human,
+/obj/item/food/meat/slab/meatproduct{
+	pixel_x = 9;
+	pixel_y = 13
+	},
+/obj/item/food/meat/slab/human{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/food/meat/slab/human{
+	pixel_x = -12;
+	pixel_y = 10
+	},
+/obj/item/dnainjector{
+	desc = "A blue injector filled with some viscous, red substance. It has no markings apart from an orange warning stripe near the large needle.";
+	name = "Unknown injector";
+	icon = 'modular_nova/modules/opposing_force/icons/items.dmi';
+	icon_state = "changeling_injector";
+	inhand_icon_state = null;
+	worn_icon_state = null
+	},
+/obj/item/dnainjector{
+	desc = "A blue injector filled with some viscous, red substance. It has no markings apart from an orange warning stripe near the large needle.";
+	name = "Unknown injector";
+	icon = 'modular_nova/modules/opposing_force/icons/items.dmi';
+	icon_state = "changeling_injector";
+	inhand_icon_state = null;
+	worn_icon_state = null
+	},
 /obj/item/dnainjector{
 	desc = "A blue injector filled with some viscous, red substance. It has no markings apart from an orange warning stripe near the large needle.";
 	name = "Unknown injector";
@@ -350,22 +494,6 @@
 	color = "#FF9999";
 	current_size = 1.25;
 	base_pixel_y = -7.5
-	},
-/obj/item/dnainjector{
-	desc = "A blue injector filled with some viscous, red substance. It has no markings apart from an orange warning stripe near the large needle.";
-	name = "Unknown injector";
-	icon = 'modular_nova/modules/opposing_force/icons/items.dmi';
-	icon_state = "changeling_injector";
-	inhand_icon_state = null;
-	worn_icon_state = null
-	},
-/obj/item/dnainjector{
-	desc = "A blue injector filled with some viscous, red substance. It has no markings apart from an orange warning stripe near the large needle.";
-	name = "Unknown injector";
-	icon = 'modular_nova/modules/opposing_force/icons/items.dmi';
-	icon_state = "changeling_injector";
-	inhand_icon_state = null;
-	worn_icon_state = null
 	},
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
@@ -424,7 +552,10 @@
 	},
 /area/lavaland/surface/outdoors)
 "Vx" = (
-/obj/item/food/meat/slab/human/mutant/lizard,
+/obj/item/food/meat/slab/human/mutant/lizard{
+	pixel_x = -7;
+	pixel_y = -5
+	},
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -446,7 +577,10 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Xn" = (
-/obj/item/food/meat/slab/human/mutant/ethereal,
+/obj/item/food/meat/slab/human/mutant/ethereal{
+	pixel_x = -9;
+	pixel_y = 4
+	},
 /turf/open/indestructible/meat{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -504,7 +638,7 @@ LX
 LX
 Hv
 Hv
-tt
+vG
 vK
 HA
 Hv
@@ -546,7 +680,7 @@ PS
 Hv
 Vo
 zb
-MM
+tZ
 ar
 xV
 Lr
@@ -560,7 +694,7 @@ Hv
 Hv
 lL
 zP
-pe
+OC
 oI
 Rd
 zP
@@ -592,7 +726,7 @@ Tm
 pH
 Tm
 Os
-xg
+iL
 Hv
 Hv
 DN

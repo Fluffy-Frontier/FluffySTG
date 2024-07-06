@@ -149,7 +149,10 @@
 /area/lavaland/surface/outdoors)
 "jG" = (
 /obj/structure/stone_tile/slab,
-/obj/item/reagent_containers/cup/bowl/wood_bowl,
+/obj/item/reagent_containers/cup/bowl/wood_bowl{
+	pixel_x = 8;
+	pixel_y = -7
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "kd" = (
@@ -271,7 +274,10 @@
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 1
 	},
-/obj/item/kitchen/fork,
+/obj/item/kitchen/fork{
+	pixel_x = -14;
+	pixel_y = -5
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "sg" = (
@@ -557,7 +563,10 @@
 "Lt" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center/cracked,
-/obj/item/coin/silver,
+/obj/item/coin/silver{
+	pixel_x = 6;
+	pixel_y = -7
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Nd" = (

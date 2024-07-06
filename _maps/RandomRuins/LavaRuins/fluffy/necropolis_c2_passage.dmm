@@ -4,6 +4,10 @@
 /area/template_noop)
 "c" = (
 /obj/structure/stone_tile/slab/cracked,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 7;
+	pixel_y = -4
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "e" = (

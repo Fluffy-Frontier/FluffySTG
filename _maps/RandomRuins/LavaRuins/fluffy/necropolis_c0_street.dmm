@@ -15,7 +15,10 @@
 /obj/structure/stone_tile/block{
 	dir = 1
 	},
-/obj/item/reagent_containers/cup/bowl/wood_bowl,
+/obj/item/reagent_containers/cup/bowl/wood_bowl{
+	pixel_x = 3;
+	pixel_y = -4
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "bw" = (
@@ -44,6 +47,14 @@
 /turf/open/lava/smooth/lava_land_surface{
 	slowdown = 0
 	},
+/area/lavaland/surface/outdoors)
+"dk" = (
+/obj/structure/stone_tile/slab,
+/obj/item/clothing/under/costume/gladiator/ash_walker/greentrib{
+	pixel_x = -9;
+	pixel_y = 0
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "dm" = (
 /obj/structure/stone_tile/surrounding,
@@ -168,6 +179,7 @@
 "jT" = (
 /obj/structure/flora/rock/pile/style_random,
 /obj/effect/spawner/random/structure/spikes,
+/obj/item/gun/ballistic/bow/tribalbow/ashen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "kw" = (
@@ -366,6 +378,14 @@
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
 /area/ruin/unpowered)
+"tj" = (
+/obj/structure/stone_tile/slab,
+/obj/item/fishing_hook/rescue{
+	pixel_x = -5;
+	pixel_y = -13
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "tz" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 1
@@ -572,7 +592,10 @@
 /area/lavaland/surface/outdoors)
 "BL" = (
 /obj/structure/stone_tile/slab,
-/obj/item/reagent_containers/cup/bowl/wood_bowl,
+/obj/item/reagent_containers/cup/bowl/wood_bowl{
+	pixel_x = 7;
+	pixel_y = -5
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "BV" = (
@@ -615,6 +638,14 @@
 "DI" = (
 /obj/structure/stone_tile/block,
 /obj/effect/spawner/random/structure/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Eg" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/obj/structure/stone_tile/block/cracked,
+/obj/item/clothing/under/costume/gladiator/ash_walker/tribal,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Fr" = (
@@ -703,6 +734,11 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
+"Jy" = (
+/obj/structure/stone_tile/slab,
+/obj/item/clothing/under/costume/gladiator/ash_walker/legskirt_d,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Kf" = (
 /obj/structure/stone_tile/slab,
 /obj/effect/spawner/random/mob/necropolis_mob,
@@ -758,8 +794,12 @@
 	},
 /area/lavaland/surface/outdoors)
 "Mt" = (
+/obj/item/clockwork_alloy,
 /obj/item/clothing/suit/jacket/brasspriest,
-/obj/item/clockwork/weapon/brass_sword,
+/obj/item/clockwork/replica_fabricator{
+	pixel_x = 5;
+	pixel_y = -4
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "Mw" = (
@@ -894,6 +934,10 @@
 /area/lavaland/surface/outdoors)
 "Se" = (
 /obj/structure/stone_tile/surrounding,
+/obj/item/reagent_containers/cup/bowl/wood_bowl{
+	pixel_x = -7;
+	pixel_y = 7
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Sh" = (
@@ -1286,7 +1330,7 @@ Ak
 pq
 Xi
 At
-hn
+dk
 bl
 pq
 pq
@@ -1300,7 +1344,7 @@ Pd
 pq
 pt
 Se
-hn
+Jy
 IR
 UE
 Ak
@@ -1442,7 +1486,7 @@ pq
 ff
 nn
 Bp
-hn
+tj
 XR
 pq
 pq
@@ -1676,7 +1720,7 @@ pq
 vj
 df
 oQ
-VF
+Eg
 xm
 gm
 ff

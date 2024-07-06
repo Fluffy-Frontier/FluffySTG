@@ -88,7 +88,10 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
 	},
-/obj/item/ceramic/brick,
+/obj/item/ceramic/brick{
+	pixel_x = 7;
+	pixel_y = 1
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "lQ" = (
@@ -329,7 +332,10 @@
 /obj/structure/stone_tile/cracked{
 	dir = 4
 	},
-/obj/item/reagent_containers/cup/bucket/wooden,
+/obj/item/reagent_containers/cup/bucket/wooden{
+	pixel_x = 6;
+	pixel_y = -1
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Rk" = (
@@ -379,7 +385,10 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "UO" = (
-/obj/item/ceramic/cup,
+/obj/item/ceramic/cup{
+	pixel_x = 9;
+	pixel_y = 1
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Vg" = (

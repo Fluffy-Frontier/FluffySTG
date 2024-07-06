@@ -22,6 +22,11 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"n" = (
+/obj/effect/spawner/random/structure/spikes,
+/obj/item/forging/complete/arrowhead,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "o" = (
 /obj/structure/stone_tile/block{
 	dir = 8
@@ -49,6 +54,7 @@
 "s" = (
 /obj/structure/stone_tile/block,
 /obj/effect/spawner/random/structure/spikes,
+/obj/item/forging/complete/arrowhead,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "u" = (
@@ -60,6 +66,7 @@
 	dir = 8
 	},
 /obj/effect/spawner/random/structure/spikes,
+/obj/item/forging/complete/arrowhead,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "A" = (
@@ -88,6 +95,7 @@
 "F" = (
 /obj/structure/stone_tile/block/cracked,
 /obj/effect/spawner/random/structure/spikes,
+/obj/item/ammo_casing/arrow/ash,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "H" = (
@@ -123,6 +131,7 @@
 "Z" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center,
+/obj/item/ammo_casing/arrow/holy,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 
@@ -155,7 +164,7 @@ K
 F
 "}
 (5,1,1) = {"
-u
+n
 d
 T
 q

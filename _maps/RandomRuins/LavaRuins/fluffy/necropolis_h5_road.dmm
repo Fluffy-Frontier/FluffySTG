@@ -161,7 +161,10 @@
 /obj/structure/railing/stone{
 	layer = -6
 	},
-/obj/item/reagent_containers/cup/bowl/wood_bowl,
+/obj/item/reagent_containers/cup/bowl/wood_bowl{
+	pixel_x = 7;
+	pixel_y = 3
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "sl" = (
@@ -339,7 +342,10 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 6
 	},
-/obj/item/stack/sheet/bone,
+/obj/item/stack/sheet/bone{
+	pixel_x = 8;
+	pixel_y = -5
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "MN" = (

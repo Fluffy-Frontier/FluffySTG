@@ -80,7 +80,10 @@
 /area/lavaland/surface/outdoors)
 "nT" = (
 /obj/structure/stone_tile/slab,
-/obj/item/reagent_containers/cup/bowl/wood_bowl,
+/obj/item/reagent_containers/cup/bowl/wood_bowl{
+	pixel_x = -6;
+	pixel_y = -5
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ob" = (
@@ -293,7 +296,10 @@
 	},
 /obj/structure/stone_tile/surrounding_tile,
 /obj/structure/stone_tile/center/burnt,
-/obj/item/kitchen/fork,
+/obj/item/kitchen/fork{
+	pixel_x = 9;
+	pixel_y = -1
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ZH" = (

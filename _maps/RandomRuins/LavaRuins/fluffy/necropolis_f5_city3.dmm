@@ -16,6 +16,14 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"br" = (
+/obj/structure/stone_tile/slab,
+/obj/item/shield/buckler{
+	pixel_x = -7;
+	pixel_y = -4
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "bO" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -247,6 +255,14 @@
 /area/lavaland/surface/outdoors)
 "tz" = (
 /obj/structure/stone_tile/slab,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"tC" = (
+/obj/structure/stone_tile/slab,
+/obj/item/reagent_containers/cup/bucket/wooden{
+	pixel_x = 10;
+	pixel_y = 4
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "tH" = (
@@ -804,7 +820,7 @@ cP
 cP
 GY
 GY
-tz
+tC
 MX
 GY
 MO
@@ -818,7 +834,7 @@ tz
 tz
 kZ
 GY
-sS
+br
 sS
 Rd
 tz

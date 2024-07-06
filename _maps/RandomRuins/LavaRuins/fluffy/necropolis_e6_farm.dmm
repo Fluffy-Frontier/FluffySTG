@@ -107,7 +107,10 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "lV" = (
-/obj/item/hatchet/wooden,
+/obj/item/hatchet/wooden{
+	pixel_x = -5;
+	pixel_y = 8
+	},
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 4
 	},

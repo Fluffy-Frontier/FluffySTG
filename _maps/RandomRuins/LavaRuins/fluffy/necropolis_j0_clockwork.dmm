@@ -137,7 +137,10 @@
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/powered)
 "iX" = (
-/obj/item/stack/sheet/bronze,
+/obj/item/stack/sheet/bronze{
+	pixel_x = 8;
+	pixel_y = -1
+	},
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/powered)
 "ji" = (
@@ -176,7 +179,10 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "kD" = (
-/obj/item/coin/silver,
+/obj/item/coin/silver{
+	pixel_x = 10;
+	pixel_y = 7
+	},
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -230,7 +236,10 @@
 /area/lavaland/surface/outdoors)
 "ok" = (
 /obj/structure/lattice,
-/obj/item/stack/sheet/bronze,
+/obj/item/stack/sheet/bronze{
+	pixel_x = -7;
+	pixel_y = -3
+	},
 /obj/item/xenoarch/useless_relic/magnified{
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."

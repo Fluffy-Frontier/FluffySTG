@@ -99,7 +99,10 @@
 /area/ruin/unpowered)
 "p" = (
 /obj/structure/stone_tile/slab,
-/obj/item/stack/marker_beacon/ten,
+/obj/item/stack/marker_beacon/ten{
+	pixel_x = 7;
+	pixel_y = -6
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "r" = (
@@ -122,7 +125,10 @@
 /obj/structure/stone_tile/block{
 	dir = 8
 	},
-/obj/effect/spawner/random/food_or_drink/salad,
+/obj/effect/spawner/random/food_or_drink/salad{
+	pixel_x = 6;
+	pixel_y = 9
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "u" = (
@@ -215,6 +221,15 @@
 "H" = (
 /turf/closed/indestructible/riveted/boss,
 /area/ruin/unpowered)
+"I" = (
+/obj/item/toy/seashell{
+	pixel_x = -3;
+	pixel_y = -18
+	},
+/turf/open/water/hot_spring{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered)
 "J" = (
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -244,12 +259,24 @@
 /obj/structure/stone_tile/block{
 	dir = 8
 	},
-/obj/item/reagent_containers/cup/beaker/large/ceramic,
+/obj/item/reagent_containers/cup/beaker/large/ceramic{
+	pixel_x = 7;
+	pixel_y = 13
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "P" = (
 /obj/structure/stone_tile/block/cracked,
 /turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
+"Q" = (
+/obj/item/toy/seashell{
+	pixel_x = -10;
+	pixel_y = -2
+	},
+/turf/open/water/hot_spring{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
 /area/ruin/unpowered)
 "R" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -271,6 +298,16 @@
 "T" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"U" = (
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/obj/effect/spawner/random/food_or_drink/salad{
+	pixel_x = 5;
+	pixel_y = -5
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
@@ -299,7 +336,10 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/ruin/unpowered)
 "Z" = (
-/obj/item/toy/seashell,
+/obj/item/toy/seashell{
+	pixel_x = 6;
+	pixel_y = 6
+	},
 /turf/open/water/hot_spring{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -332,7 +372,7 @@ G
 H
 T
 i
-t
+U
 t
 O
 u
@@ -367,7 +407,7 @@ K
 p
 a
 a
-a
+Q
 o
 J
 "}
@@ -375,7 +415,7 @@ J
 w
 H
 F
-a
+I
 a
 b
 C

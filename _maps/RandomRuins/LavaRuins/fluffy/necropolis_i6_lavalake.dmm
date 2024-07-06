@@ -11,7 +11,10 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "j" = (
-/obj/item/fishing_rod/bone,
+/obj/item/fishing_rod/bone{
+	pixel_x = 11;
+	pixel_y = -5
+	},
 /obj/structure/ore_vein/diamond,
 /mob/living/basic/mining/lobstrosity/lava{
 	name = "Big Armored Daddy Chomper";
@@ -58,7 +61,10 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "B" = (
-/obj/item/chair/wood,
+/obj/item/chair/wood{
+	pixel_x = 4;
+	pixel_y = -6
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "C" = (
@@ -71,11 +77,17 @@
 /area/lavaland/surface/outdoors)
 "K" = (
 /obj/structure/ore_vein/plasma,
-/obj/item/fishing_hook/rescue,
+/obj/item/fishing_hook/rescue{
+	pixel_x = -14;
+	pixel_y = -15
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "L" = (
-/obj/item/reagent_containers/cup/bucket/wooden,
+/obj/item/reagent_containers/cup/bucket/wooden{
+	pixel_x = 9;
+	pixel_y = 8
+	},
 /obj/structure/ore_vein/iron,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -88,7 +100,10 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "P" = (
-/obj/item/fishing_line/sinew,
+/obj/item/fishing_line/sinew{
+	pixel_x = 8;
+	pixel_y = 5
+	},
 /obj/structure/ore_vein/silver,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)

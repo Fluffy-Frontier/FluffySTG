@@ -20,6 +20,13 @@
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"e" = (
+/obj/structure/flora/ash/fireblossom{
+	pixel_x = -5;
+	pixel_y = 1
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "f" = (
 /turf/open/chasm/lavaland,
 /area/lavaland/surface/outdoors)
@@ -31,7 +38,10 @@
 /obj/structure/stone_tile{
 	dir = 4
 	},
-/obj/structure/flora/ash/fireblossom,
+/obj/structure/flora/ash/fireblossom{
+	pixel_x = -10;
+	pixel_y = -4
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "h" = (
@@ -70,7 +80,10 @@
 	dir = 8
 	},
 /obj/structure/stone_tile/center/burnt,
-/obj/structure/flora/ash/fireblossom,
+/obj/structure/flora/ash/fireblossom{
+	pixel_x = -9;
+	pixel_y = 13
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "t" = (
@@ -80,7 +93,10 @@
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
 	},
-/obj/structure/flora/ash/fireblossom,
+/obj/structure/flora/ash/fireblossom{
+	pixel_x = -6;
+	pixel_y = 12
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "v" = (
@@ -148,7 +164,17 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "W" = (
-/obj/structure/flora/ash/fireblossom,
+/obj/structure/flora/ash/fireblossom{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"X" = (
+/obj/structure/flora/ash/fireblossom{
+	pixel_x = -5;
+	pixel_y = 9
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Z" = (
@@ -204,7 +230,7 @@ t
 f
 G
 f
-W
+X
 W
 G
 f
@@ -218,7 +244,7 @@ f
 f
 G
 f
-W
+e
 f
 f
 f
