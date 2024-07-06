@@ -26737,7 +26737,7 @@
 /area/station/security/prison/shower)
 "fcE" = (
 /obj/machinery/light/directional/south,
-/turf/open/floor/engine,
+/turf/open/floor/engine/xenobio,
 /area/station/science/xenobiology)
 "fcK" = (
 /obj/structure/cable,
@@ -33008,7 +33008,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
-/turf/open/floor/engine,
+/turf/open/floor/engine/xenobio,
 /area/station/science/xenobiology)
 "goT" = (
 /obj/structure/railing/corner{
@@ -40006,7 +40006,7 @@
 /obj/machinery/sparker/directional/north{
 	id = "Xenobio"
 	},
-/turf/open/floor/engine,
+/turf/open/floor/engine/xenobio,
 /area/station/science/xenobiology)
 "hJf" = (
 /obj/structure/table,
@@ -43846,7 +43846,7 @@
 /area/station/hallway/secondary/entry)
 "ivy" = (
 /obj/effect/spawner/random/medical/two_percent_xeno_egg_spawner,
-/turf/open/floor/engine,
+/turf/open/floor/engine/xenobio,
 /area/station/science/xenobiology)
 "ivB" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -49039,7 +49039,7 @@
 	name = "xenobiology camera";
 	network = list("ss13","xeno","rd")
 	},
-/turf/open/floor/engine,
+/turf/open/floor/engine/xenobio,
 /area/station/science/xenobiology)
 "jvQ" = (
 /obj/structure/cable,
@@ -62411,7 +62411,7 @@
 "lXo" = (
 /obj/item/beacon,
 /obj/effect/turf_decal/bot,
-/turf/open/floor/engine,
+/turf/open/floor/engine/xenobio,
 /area/station/science/xenobiology)
 "lXp" = (
 /obj/effect/spawner/random/trash/mess,
@@ -65100,7 +65100,7 @@
 	dir = 5
 	},
 /obj/structure/disposalpipe/segment,
-/turf/open/floor/engine,
+/turf/open/floor/engine/xenobio,
 /area/station/science/xenobiology)
 "mzC" = (
 /obj/machinery/power/shieldwallgen/anchored{
@@ -81648,6 +81648,9 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
+"pJC" = (
+/turf/open/floor/engine/xenobio,
+/area/station/science/xenobiology)
 "pJI" = (
 /obj/effect/spawner/random/trash/moisture,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -83478,7 +83481,7 @@
 /area/station/cargo/bitrunning/den)
 "qaH" = (
 /obj/structure/disposalpipe/segment,
-/turf/open/floor/circuit/green,
+/turf/open/floor/circuit/green/xenobio,
 /area/station/science/xenobiology)
 "qaJ" = (
 /obj/effect/decal/cleanable/dirt{
@@ -93795,7 +93798,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 8
 	},
-/turf/open/floor/engine,
+/turf/open/floor/engine/xenobio,
 /area/station/science/xenobiology)
 "rXO" = (
 /obj/machinery/light/directional/west,
@@ -124013,7 +124016,7 @@
 /turf/open/floor/iron/dark/small,
 /area/station/cargo/miningoffice)
 "xHP" = (
-/turf/open/floor/circuit/green,
+/turf/open/floor/circuit/green/xenobio,
 /area/station/science/xenobiology)
 "xHQ" = (
 /obj/structure/table/reinforced,
@@ -220918,11 +220921,11 @@ bDn
 xoO
 qgS
 fDT
-euU
-euU
+pJC
+pJC
 jvA
-euU
-euU
+pJC
+pJC
 fDT
 gLc
 gLc
@@ -221179,7 +221182,7 @@ goS
 xHP
 xHP
 xHP
-euU
+pJC
 fDT
 gLc
 gLc
@@ -221693,7 +221696,7 @@ rXM
 xHP
 xHP
 xHP
-euU
+pJC
 fDT
 gLc
 gLc
@@ -221947,9 +221950,9 @@ xoO
 icO
 fDT
 hJb
-euU
-euU
-euU
+pJC
+pJC
+pJC
 ivy
 fDT
 gLc
