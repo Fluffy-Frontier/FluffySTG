@@ -421,11 +421,16 @@
 	)
 
 	for (var/obj/item/organ/organ as anything in check.organs)
+<<<<<<< HEAD
 		if (IS_ORGANIC_ORGAN(organ))
 			continue
 		if (!(organ.slot in vital_organ_slots))
 			continue
 		return TRUE
+=======
+		if ((organ.slot in vital_organ_slots) && IS_ROBOTIC_ORGAN(organ))
+			return TRUE
+>>>>>>> 89fc892268f ([MIRROR] [NO GBP] Augmented organs experiment hotfix [MDB IGNORE] (#3566))
 	return FALSE
 
 /// Scan for skillchips
