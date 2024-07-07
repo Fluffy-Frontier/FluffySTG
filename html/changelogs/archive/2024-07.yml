@@ -393,3 +393,104 @@
   - code_imp: Very very minor xenomorph code cleanup
   - refactor: Muzzles are now an element
   - rscadd: 254 new vox lines
+2024-07-07:
+  00-Steven:
+  - image: Goody case locked/unlocked sprites have been swapped again, having a gap
+      for unlocked and no gap for locked.
+  ArcaneMusic:
+  - qol: Examining a windoor will now provide the construction steps, like other standard
+      buildable objects.
+  Bisar:
+  - bugfix: Dastardly clowns will no longer be able to get counted for three times
+      the steps by moving diagonally.
+  CandleJaxx:
+  - rscadd: Hairstylists across the Frontier have figured out how to use their trimmers
+      more effectively!
+  CliffracerX:
+  - image: GAGS piercing hypos now look capable of piercing.
+  Ghommie:
+  - rscadd: A station trait that fills maintenance with glowsticks.
+  - bugfix: Fixed toggleable screen colors for glasses.
+  - code_imp: De-hardcoded, refactored the above, now-fixed feature.
+  - rscadd: Pumpkin hardhats and the hood of the flash suit now affect the color of
+      your screen.
+  - rscadd: Prism glasses, obtainable through xenobiology crossbreeding, now also
+      affect the color of your screen.
+  GoblinBackwards:
+  - bugfix: Firefighting backpack tank nozzle can be used to hit objects and destroy
+      atmos resin again.
+  GremlinSeeker:
+  - bugfix: fixed Birdshot bar and surrounding areas not properly connected to the
+      power grid.
+  Holoo-1:
+  - bugfix: fixed ninja's adrenaline boost module not being rechargable
+  MTandi:
+  - bugfix: 'Techweb: Moved upgraded cyber organs to tier 3 from tier 4'
+  - qol: 'Techweb: Added fully augmented android scan discount experiment for Advanced
+      Cybernetic Organs techweb node'
+  Neocloudy:
+  - qol: You can now choose which footstep sound you make when barefoot.
+  OrbisAnima:
+  - rscadd: Added the ability for Gear Harness to be used on the Exo Suit slot in
+      addition to the under slot. They can be used as our Colonist forefathers intended,
+      with clips for a variety number of equipment, but, they offer no protection.
+  - rscadd: Added the recipe for Leaf/Leaves based gear harness, no longer this fashion
+      call will be restricted to those bold enough to arrive as their creator intended.
+  - qol: Purple Vendors now have 20 gear harnesses in them to accomodate to the new
+      demand.
+  OrionTheFox:
+  - image: fixed and touched up the icons for the Doorjack and Cryptographic Sequencer
+      (EMAG)
+  Seven:
+  - balance: Bloody footprint trails go a longer distance now.
+  ShizCalev:
+  - bugfix: Fixed a number of shuttles having parts (such as lattices) completely
+      disappearing.
+  - bugfix: Fixed the ceilings above shuttles on station maps being full-bright.
+  - bugfix: Fixed lattices sometimes appearing at random locations in space on station
+      maps.
+  - bugfix: Cleaned up a number of accidentally placed objects in space across all
+      station maps.
+  - bugfix: Fixed a false positive with the mapload_space_verification unit test failing
+      on turfs that weren't actually part of shuttles.
+  - code_imp: Added a unit test that automatically finds all base space turfs with
+      objects on them, as well as non-space turfs that are set to space areas (meaning
+      that these squares weren't lit properly.)
+  SmArtKar:
+  - refactor: Bayonet attachment is now a component.
+  - bugfix: You require breathing once more.
+  SyncIt21:
+  - bugfix: you can craft the singulo hammer with either a supermatter engine/shard
+      again
+  - bugfix: you can hold your wound while resting via ctrl click
+  - code_imp: Improves cpu performance of transferring & removing reagents
+  - bugfix: Autolathe won't eat the borg omni tool
+  Thunder12345:
+  - bugfix: Birdshot's AI core no longer has windoors concealed under open shutters.
+  bob-b-b:
+  - rscadd: Added flatpacker & multitool to all R&D labs
+  carlarctg:
+  - bugfix: Fixed temp n space adaptations not conflicting
+  - rscadd: Heretics can now sacrifice Cultists for sweet loot.
+  - rscadd: Cultists can now sacrifice Heretics for sick trinkets.
+  - rscdel: Removed Bastard Blade from the game, code, and life
+  - balance: Aggressive Spread now rusts non-turfs next to you as well
+  - balance: Raise Construction cd raised to 7, now breaks rust walls as well, improved
+      autoaim making it actually usable midfight
+  - refactor: Auto-aim code now works on any atoms if configured
+  - rscadd: Projectile Dampener field now reduces stuns and stamina damage from incoming
+      projectiles
+  hyperjll:
+  - bugfix: Reagent containers are no longer mysteriously fireproof.
+  mc-oofert:
+  - qol: CE and Engineer start with their hardhat as the respective welding hard hat
+      variant
+  necromanceranne:
+  - balance: Settlers are a bit slower on their steeds.
+  vinylspiders:
+  - bugfix: fixes rodstoppers leaving a permanent (inert) bag of holding tear effect
+  wivernshy:
+  - rscadd: '2 new (alt) hairstyles: Fluffy Bangs and Diagonal Bangs Alt'
+  zeroisthebiggay:
+  - bugfix: the warm and heart sweater now have `body_parts_covered = CHEST|ARMS`
+      so your boobs don't hang out
