@@ -214,11 +214,7 @@
 	dir = 8
 	},
 /turf/open/space/openspace,
-<<<<<<< HEAD
 /area/space)
-=======
-/area/space/nearstation)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "acp" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
@@ -3430,11 +3426,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
-<<<<<<< HEAD
 /area/space)
-=======
-/area/space/nearstation)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "aTU" = (
 /obj/effect/turf_decal/trimline/purple/line,
 /obj/effect/turf_decal/trimline/purple/line{
@@ -7214,11 +7206,7 @@
 	dir = 4
 	},
 /turf/open/space/basic,
-<<<<<<< HEAD
 /area/space)
-=======
-/area/space/nearstation)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "bOq" = (
 /obj/machinery/door/airlock/maintenance/external,
 /obj/effect/turf_decal/stripes/line{
@@ -11454,13 +11442,6 @@
 	pixel_y = 9
 	},
 /obj/effect/turf_decal/tile/purple/fourcorners,
-<<<<<<< HEAD
-=======
-/obj/item/flatpack{
-	board = /obj/item/circuitboard/machine/flatpacker
-	},
-/obj/item/multitool,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /turf/open/floor/iron/white,
 /area/station/science/lab)
 "cSc" = (
@@ -12705,11 +12686,7 @@
 	dir = 4
 	},
 /turf/open/space/openspace,
-<<<<<<< HEAD
 /area/space)
-=======
-/area/space/nearstation)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "djd" = (
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
@@ -12816,11 +12793,7 @@
 	dir = 4
 	},
 /turf/open/space/openspace,
-<<<<<<< HEAD
 /area/space)
-=======
-/area/space/nearstation)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "dks" = (
 /obj/structure/girder,
 /obj/item/stack/sheet/iron,
@@ -13729,6 +13702,14 @@
 /obj/structure/cable,
 /turf/open/floor/engine/hull/reinforced,
 /area/space/nearstation)
+"dyE" = (
+/obj/machinery/plumbing/growing_vat{
+	dir = 4
+	},
+/obj/machinery/light/cold/no_nightlight/directional/north,
+/obj/machinery/status_display/ai/directional/north,
+/turf/open/misc/dirt/jungle,
+/area/station/science/cytology)
 "dyG" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -14523,14 +14504,6 @@
 /obj/structure/cable,
 /turf/open/floor/pod/dark,
 /area/station/maintenance/floor2/starboard/aft)
-"dJs" = (
-/obj/machinery/vatgrower{
-	dir = 4
-	},
-/obj/machinery/light/cold/no_nightlight/directional/south,
-/obj/machinery/status_display/evac/directional/south,
-/turf/open/misc/sandy_dirt,
-/area/station/science/cytology)
 "dJu" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/railing{
@@ -15670,13 +15643,9 @@
 /obj/item/storage/box/syringes{
 	pixel_y = 6
 	},
-<<<<<<< HEAD
 /obj/item/stack/medical/mesh{
 	layer = 3.01
 	},
-=======
-/obj/item/stack/medical/mesh,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
 "dXz" = (
@@ -23303,13 +23272,9 @@
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /obj/structure/table/reinforced/rglass,
 /obj/item/pai_card,
-<<<<<<< HEAD
 /obj/item/reagent_containers/spray/cleaner{
 	layer = 3.01
 	},
-=======
-/obj/item/reagent_containers/spray/cleaner,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /turf/open/floor/iron/white/textured,
 /area/station/medical/treatment_center)
 "gcs" = (
@@ -23674,24 +23639,16 @@
 	pixel_y = 10
 	},
 /obj/machinery/cell_charger{
-<<<<<<< HEAD
 	pixel_y = 1;
 	layer = 2.91
-=======
-	pixel_y = 1
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 	},
 /obj/item/stock_parts/power_store/cell/high{
 	pixel_y = 9;
 	pixel_x = -1
 	},
 /obj/item/stock_parts/power_store/cell/high{
-<<<<<<< HEAD
 	pixel_x = -1;
 	layer = 3.01
-=======
-	pixel_x = -1
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 	},
 /turf/open/floor/iron/white/textured,
 /area/station/medical/treatment_center)
@@ -27031,13 +26988,9 @@
 /turf/open/floor/iron/dark,
 /area/station/security/courtroom)
 "hbW" = (
-<<<<<<< HEAD
 /obj/structure/railing{
 	layer = 3.1
 	},
-=======
-/obj/structure/railing,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 6
 	},
@@ -33769,12 +33722,8 @@
 	},
 /obj/machinery/door/window/right/directional/south{
 	name = "Upload Console Window";
-<<<<<<< HEAD
 	req_access = list("ai_upload");
 	layer = 3
-=======
-	req_access = list("ai_upload")
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/turret_protected/ai_upload)
@@ -33974,11 +33923,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/dark/side,
 /area/station/commons/locker)
-"iQR" = (
-/obj/effect/turf_decal/bot,
-/obj/machinery/portable_atmospherics/pipe_scrubber,
-/turf/open/floor/iron,
-/area/station/engineering/atmos)
 "iQU" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -44102,13 +44046,9 @@
 /obj/effect/turf_decal/arrows{
 	dir = 4
 	},
-<<<<<<< HEAD
 /obj/structure/railing{
 	layer = 3.1
 	},
-=======
-/obj/structure/railing,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /obj/effect/decal/cleanable/robot_debris,
 /obj/effect/landmark/start/bitrunner,
 /turf/open/floor/iron/dark/textured_large,
@@ -45984,10 +45924,7 @@
 /obj/structure/window/reinforced/spawner/directional/east,
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/machinery/door/window/left/directional/south{
-<<<<<<< HEAD
 	layer = 3.1;
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 	name = "Cyborg Upload Console Window";
 	req_access = list("ai_upload")
 	},
@@ -61379,11 +61316,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
-<<<<<<< HEAD
 /area/space)
-=======
-/area/space/nearstation)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "pNW" = (
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 1
@@ -65666,11 +65599,7 @@
 	dir = 8
 	},
 /turf/open/space/openspace,
-<<<<<<< HEAD
 /area/space)
-=======
-/area/space/nearstation)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "qRW" = (
 /obj/structure/disposalpipe/junction{
 	dir = 8
@@ -67078,10 +67007,7 @@
 /turf/open/floor/iron/dark,
 /area/station/hallway/floor1/aft)
 "rjB" = (
-<<<<<<< HEAD
 /obj/structure/sign/warning/biohazard/directional/east,
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /obj/machinery/light/cold/no_nightlight/directional/east,
 /turf/open/floor/engine/xenobio,
 /area/station/science/xenobiology)
@@ -69918,10 +69844,6 @@
 /area/station/maintenance/floor1/port)
 "sav" = (
 /obj/effect/turf_decal/box/corners,
-<<<<<<< HEAD
-=======
-/obj/structure/sign/warning/biohazard/directional/east,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /turf/open/floor/engine/xenobio,
 /area/station/science/xenobiology)
 "saA" = (
@@ -72555,11 +72477,7 @@
 	c_tag = "Minisat - Aft"
 	},
 /turf/open/space/openspace,
-<<<<<<< HEAD
 /area/space)
-=======
-/area/space/nearstation)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "sLe" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/decal/cleanable/dirt,
@@ -74611,11 +74529,7 @@
 "tlJ" = (
 /obj/machinery/camera/autoname/directional/east,
 /turf/open/space/openspace,
-<<<<<<< HEAD
 /area/space)
-=======
-/area/space/nearstation)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "tlK" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
@@ -78355,11 +78269,7 @@
 "ujI" = (
 /obj/structure/railing,
 /turf/open/space/openspace,
-<<<<<<< HEAD
 /area/space)
-=======
-/area/space/nearstation)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "ujQ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
@@ -80186,14 +80096,6 @@
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/catwalk_floor,
 /area/station/maintenance/floor1/port)
-"uJq" = (
-/obj/machinery/vatgrower{
-	dir = 4
-	},
-/obj/machinery/light/cold/no_nightlight/directional/north,
-/obj/machinery/status_display/ai/directional/north,
-/turf/open/misc/dirt/jungle,
-/area/station/science/cytology)
 "uJr" = (
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/grass/fairy,
@@ -80616,12 +80518,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/maintenance/floor2/starboard/aft)
-"uOc" = (
-/obj/effect/turf_decal/tile/neutral/full,
-/obj/machinery/portable_atmospherics/pipe_scrubber,
-/obj/effect/turf_decal/bot,
-/turf/open/floor/iron,
-/area/station/science/ordnance/testlab)
 "uOd" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
@@ -82627,13 +82523,9 @@
 /area/station/maintenance/floor4/port/fore)
 "voX" = (
 /obj/machinery/door/firedoor/border_only,
-<<<<<<< HEAD
 /obj/structure/railing{
 	layer = 3.1
 	},
-=======
-/obj/structure/railing,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer{
 	dir = 1
 	},
@@ -83527,13 +83419,9 @@
 /area/station/cargo/lobby)
 "vzo" = (
 /obj/machinery/netpod,
-<<<<<<< HEAD
 /obj/structure/railing{
 	layer = 3.1
 	},
-=======
-/obj/structure/railing,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/station/cargo/bitrunning/den)
 "vzu" = (
@@ -85009,10 +84897,6 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
-<<<<<<< HEAD
-=======
-/obj/structure/sign/warning/gas_mask/directional/east,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /turf/open/floor/engine/xenobio,
 /area/station/science/xenobiology)
 "vTY" = (
@@ -85688,11 +85572,7 @@
 	dir = 1
 	},
 /turf/open/space/openspace,
-<<<<<<< HEAD
 /area/space)
-=======
-/area/space/nearstation)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "wci" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -86055,6 +85935,14 @@
 	dir = 4
 	},
 /area/station/command/bridge)
+"wfG" = (
+/obj/machinery/plumbing/growing_vat{
+	dir = 4
+	},
+/obj/machinery/light/cold/no_nightlight/directional/south,
+/obj/machinery/status_display/evac/directional/south,
+/turf/open/misc/sandy_dirt,
+/area/station/science/cytology)
 "wfI" = (
 /obj/machinery/light_switch/directional/west,
 /turf/open/floor/wood,
@@ -86429,10 +86317,7 @@
 "wkP" = (
 /obj/structure/table,
 /obj/item/reagent_containers/condiment/saltshaker{
-<<<<<<< HEAD
 	layer = 3.1;
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 	pixel_x = -2;
 	pixel_y = 2
 	},
@@ -90547,11 +90432,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
-<<<<<<< HEAD
 /area/space)
-=======
-/area/space/nearstation)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "xlu" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -90758,9 +90639,6 @@
 	},
 /turf/open/floor/grass,
 /area/station/service/hydroponics/garden/abandoned)
-"xpw" = (
-/turf/open/space/basic,
-/area/space/nearstation)
 "xpA" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -91235,13 +91113,9 @@
 /obj/item/reagent_containers/cup/beaker{
 	pixel_x = 5
 	},
-<<<<<<< HEAD
 /obj/item/reagent_containers/condiment/enzyme{
 	layer = 5
 	},
-=======
-/obj/item/reagent_containers/condiment/enzyme,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
 "xvO" = (
@@ -92343,9 +92217,6 @@
 	},
 /turf/open/floor/catwalk_floor,
 /area/station/maintenance/floor4/starboard)
-"xIV" = (
-/turf/open/space/openspace,
-/area/space/nearstation)
 "xJk" = (
 /obj/machinery/seed_extractor,
 /obj/effect/turf_decal/tile/green/full,
@@ -92469,11 +92340,7 @@
 "xKt" = (
 /obj/structure/railing/corner,
 /turf/open/space/openspace,
-<<<<<<< HEAD
 /area/space)
-=======
-/area/space/nearstation)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "xKy" = (
 /obj/machinery/modular_computer/preset/id{
 	dir = 8
@@ -93163,11 +93030,7 @@
 	dir = 1
 	},
 /turf/open/space/openspace,
-<<<<<<< HEAD
 /area/space)
-=======
-/area/space/nearstation)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "xUB" = (
 /obj/machinery/light/floor,
 /turf/open/floor/iron/dark/side{
@@ -135142,11 +135005,7 @@ oIJ
 hRR
 qXk
 hHB
-<<<<<<< HEAD
 hHB
-=======
-iQR
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 gmw
 hOy
 lHR
@@ -147212,7 +147071,6 @@ owI
 owI
 owI
 aTO
-<<<<<<< HEAD
 fCp
 pNV
 aTO
@@ -147222,17 +147080,6 @@ xln
 aTO
 fCp
 fCp
-=======
-rcO
-pNV
-aTO
-rcO
-rcO
-xln
-aTO
-rcO
-rcO
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 xln
 teq
 teq
@@ -147273,7 +147120,6 @@ iSU
 iSU
 iSU
 iSU
-<<<<<<< HEAD
 fCp
 fCp
 xln
@@ -147283,17 +147129,6 @@ fCp
 xln
 aTO
 fCp
-=======
-rcO
-rcO
-xln
-aTO
-rcO
-rcO
-xln
-aTO
-rcO
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 pNV
 aTO
 owI
@@ -147753,16 +147588,6 @@ owI
 owI
 owI
 owI
-<<<<<<< HEAD
-=======
-xpw
-xpw
-xpw
-owI
-xpw
-xpw
-xpw
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 owI
 owI
 owI
@@ -147802,7 +147627,6 @@ owI
 owI
 owI
 owI
-<<<<<<< HEAD
 owI
 owI
 owI
@@ -147817,15 +147641,6 @@ owI
 owI
 owI
 owI
-=======
-xpw
-xpw
-xpw
-owI
-xpw
-xpw
-xpw
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 owI
 owI
 owI
@@ -174809,11 +174624,7 @@ oyh
 oyh
 oyh
 oyh
-<<<<<<< HEAD
 ucA
-=======
-xIV
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 ucA
 ucA
 ucA
@@ -175070,11 +174881,7 @@ oyh
 oyh
 oyh
 oyh
-<<<<<<< HEAD
 ucA
-=======
-xIV
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 ucA
 ucA
 ucA
@@ -175331,11 +175138,7 @@ oyh
 oyh
 oyh
 oyh
-<<<<<<< HEAD
 ucA
-=======
-xIV
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 ucA
 ucA
 ucA
@@ -175592,11 +175395,7 @@ oyh
 oyh
 oyh
 oyh
-<<<<<<< HEAD
 ucA
-=======
-xIV
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 ucA
 ucA
 ucA
@@ -175853,11 +175652,7 @@ oyh
 oyh
 oyh
 oyh
-<<<<<<< HEAD
 ucA
-=======
-xIV
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 ucA
 ucA
 ucA
@@ -176114,11 +175909,7 @@ oyh
 oyh
 oyh
 oyh
-<<<<<<< HEAD
 ucA
-=======
-xIV
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 ucA
 ucA
 ucA
@@ -192010,13 +191801,13 @@ iuW
 eHf
 dGa
 rkM
-uJq
+dyE
 nuv
 cLA
 npF
 lcT
 aAE
-dJs
+wfG
 qun
 nVT
 iCi
@@ -315632,11 +315423,7 @@ hHi
 fMc
 gOF
 ddH
-<<<<<<< HEAD
 ddH
-=======
-uOc
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 nPE
 pDq
 vfi

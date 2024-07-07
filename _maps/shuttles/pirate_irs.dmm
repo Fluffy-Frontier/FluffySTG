@@ -1420,11 +1420,7 @@
 	},
 /area/shuttle/pirate)
 "LV" = (
-/obj/machinery/computer/camera_advanced/shuttle_docker/syndicate/pirate{
-	y_offset = 11;
-	x_offset = -4;
-	view_range = 10
-	},
+/obj/machinery/computer/camera_advanced/shuttle_docker/syndicate/pirate,
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 5
 	},

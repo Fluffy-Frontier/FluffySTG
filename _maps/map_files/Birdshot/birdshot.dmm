@@ -719,21 +719,6 @@
 /obj/effect/spawner/random/structure/steam_vent,
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine/atmos)
-"aqG" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/neutral/line,
-/obj/machinery/navbeacon{
-	codes_txt = "patrol;next_patrol=16.0-CentralFore-CentralPort";
-	location = "15.0-CentralStarboard-CentralFore"
-	},
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
 "aqV" = (
 /obj/machinery/door/airlock/glass,
 /obj/machinery/door/firedoor,
@@ -1064,20 +1049,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/aft)
-"awC" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 8
-	},
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
 "awE" = (
 /obj/structure/disposalpipe/sorting/mail/flip{
 	dir = 8
@@ -1165,11 +1136,7 @@
 /obj/machinery/sparker/directional/north{
 	id = "Xenobio"
 	},
-<<<<<<< HEAD
 /turf/open/floor/engine,
-=======
-/turf/open/floor/engine/xenobio,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /area/station/science/xenobiology)
 "axX" = (
 /obj/effect/turf_decal/siding/yellow,
@@ -1237,15 +1204,6 @@
 	},
 /turf/open/floor/wood,
 /area/station/engineering/main)
-"ayT" = (
-/obj/effect/turf_decal/siding/thinplating_new/light{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating_new/light/corner{
-	dir = 8
-	},
-/turf/open/floor/iron/white/small,
-/area/station/service/hydroponics)
 "ayV" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -1819,15 +1777,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine/atmos)
-"aIr" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door/window/right/directional/south,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "kitchenshutters";
-	name = "Kitchen Shutters"
-	},
-/turf/open/floor/iron/kitchen/small,
-/area/station/service/kitchen)
 "aIu" = (
 /obj/structure/bookcase/random/reference,
 /obj/machinery/camera/autoname/directional/north,
@@ -2005,16 +1954,6 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/iron/small,
 /area/station/hallway/secondary/service)
-"aLC" = (
-/obj/machinery/atmospherics/pipe/smart/simple/dark/visible,
-/obj/machinery/camera/autoname/directional/east,
-/obj/machinery/light/cold/directional/east,
-/obj/machinery/power/apc/auto_name/directional/east{
-	areastring = "/area/station/science/ordnance/burnchamber"
-	},
-/obj/structure/cable,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "aLS" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/disposalpipe/segment,
@@ -2277,13 +2216,6 @@
 /obj/effect/turf_decal/siding/wideplating/dark/corner,
 /turf/open/floor/iron,
 /area/station/security)
-"aQZ" = (
-/obj/effect/turf_decal/stripes/white/line{
-	dir = 5
-	},
-/obj/structure/window/reinforced/spawner/directional/west,
-/turf/open/floor/engine,
-/area/station/science/cytology)
 "aRa" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 8
@@ -3524,19 +3456,6 @@
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/iron/showroomfloor,
 /area/station/medical/virology)
-"bpY" = (
-/obj/structure/cable,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 10
-	},
-/obj/effect/turf_decal/trimline/neutral/corner{
-	dir = 4
-	},
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/aft)
 "bqd" = (
 /obj/item/reagent_containers/cup/bottle/ammonia,
 /obj/structure/steam_vent,
@@ -3841,10 +3760,6 @@
 	dir = 4
 	},
 /area/station/hallway/secondary/entry)
-"bvi" = (
-/obj/machinery/griddle,
-/turf/open/floor/iron/kitchen/small,
-/area/station/service/kitchen)
 "bvt" = (
 /turf/closed/mineral/random/stationside,
 /area/station/maintenance/department/electrical)
@@ -3882,22 +3797,6 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/dock)
-<<<<<<< HEAD
-=======
-"bxc" = (
-/obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "bxk" = (
 /obj/effect/turf_decal/tile/neutral/full,
 /obj/structure/rack,
@@ -4117,19 +4016,6 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/station/engineering/atmospherics_engine)
-<<<<<<< HEAD
-=======
-"bBL" = (
-/obj/structure/table,
-/obj/item/storage/bag/tray,
-/obj/item/knife/kitchen{
-	pixel_y = 2
-	},
-/obj/effect/spawner/random/food_or_drink/cake_ingredients,
-/obj/item/kitchen/rollingpin,
-/turf/open/floor/iron/kitchen/small,
-/area/station/service/kitchen)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "bBN" = (
 /obj/structure/window/spawner/directional/east,
 /obj/structure/table/wood,
@@ -4658,23 +4544,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/smooth,
 /area/station/engineering/main)
-"bLS" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock{
-	name = "Library Maintenance"
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/effect/mapping_helpers/airlock/unres{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
-/turf/open/floor/plating,
-/area/station/service/library)
 "bLT" = (
 /obj/structure/cable,
 /obj/structure/window/reinforced/spawner/directional/south,
@@ -4688,15 +4557,6 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/iron,
 /area/station/commons/storage/art)
-"bMn" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
-/obj/effect/turf_decal/weather/snow/corner,
-/turf/open/floor/iron/freezer,
-/area/station/service/kitchen/coldroom)
 "bMt" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
@@ -4991,18 +4851,6 @@
 /obj/machinery/camera/directional/north,
 /turf/open/floor/grass,
 /area/station/service/chapel)
-"bTD" = (
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 9
-	},
-/obj/effect/turf_decal/weather/snow,
-/obj/structure/closet/secure_closet/freezer/meat,
-/obj/effect/turf_decal/weather/snow/corner,
-/obj/item/food/meat/slab/monkey,
-/obj/item/food/meat/slab/monkey,
-/obj/item/food/meat/slab/monkey,
-/turf/open/floor/iron/freezer,
-/area/station/service/kitchen/coldroom)
 "bTE" = (
 /obj/effect/turf_decal/tile/brown/half,
 /obj/effect/turf_decal/tile/brown/half{
@@ -6219,17 +6067,6 @@
 /obj/effect/landmark/start/shaft_miner,
 /turf/open/floor/iron,
 /area/station/cargo/miningoffice)
-"coi" = (
-/obj/structure/cable/layer3,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/window/left/directional/south{
-	name = "AI Security Door"
-	},
-/obj/machinery/flasher/directional/east{
-	id = "ai"
-	},
-/turf/open/floor/circuit/red,
-/area/station/ai_monitored/turret_protected/ai)
 "cop" = (
 /obj/machinery/portable_atmospherics/canister/anesthetic_mix,
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
@@ -7058,7 +6895,6 @@
 /obj/effect/landmark/start/hangover,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/aft)
-<<<<<<< HEAD
 "cEs" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/door/window/brigdoor/right/directional/north{
@@ -7072,8 +6908,6 @@
 	},
 /turf/open/floor/circuit/red,
 /area/station/ai_monitored/turret_protected/ai)
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "cED" = (
 /obj/structure/railing/corner,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
@@ -7177,7 +7011,6 @@
 /obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/greater)
-<<<<<<< HEAD
 "cFz" = (
 /obj/structure/cable/layer3,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -7192,8 +7025,6 @@
 	},
 /turf/open/floor/circuit/red,
 /area/station/ai_monitored/turret_protected/ai)
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "cFR" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -7257,31 +7088,6 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/service/lawoffice)
-"cHG" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
-"cHI" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 4
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/obj/machinery/vatgrower{
-	dir = 4
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
-/obj/effect/turf_decal/box/corners,
-/turf/open/floor/engine,
-/area/station/science/cytology)
 "cHO" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/tile/blue/full,
@@ -7399,7 +7205,6 @@
 	dir = 4
 	},
 /area/station/science/lab)
-<<<<<<< HEAD
 "cKc" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/flasher/directional/west{
@@ -7408,8 +7213,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/stairs,
 /area/station/ai_monitored/turret_protected/ai)
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "cKk" = (
 /turf/closed/mineral/random/stationside,
 /area/station/ai_monitored/turret_protected/aisat/maint)
@@ -7484,16 +7287,6 @@
 	},
 /turf/open/floor/grass,
 /area/station/service/chapel)
-"cLR" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/door/window/right/directional/south{
-	name = "AI Security Door"
-	},
-/obj/machinery/flasher/directional/west{
-	id = "ai"
-	},
-/turf/open/floor/circuit/red,
-/area/station/ai_monitored/turret_protected/ai)
 "cLS" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 10
@@ -7862,17 +7655,6 @@
 	},
 /turf/open/floor/iron/showroomfloor,
 /area/station/security/prison/shower)
-"cSy" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/trimline/neutral/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 5
-	},
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/aft)
 "cSC" = (
 /turf/closed/wall,
 /area/station/commons/vacant_room/office)
@@ -8011,19 +7793,6 @@
 	},
 /turf/open/floor/iron/dark/small,
 /area/station/service/chapel/storage)
-"cVm" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 4
-	},
-/turf/open/floor/iron/small,
-/area/station/hallway/primary/central/aft)
 "cVx" = (
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 4
@@ -8327,17 +8096,6 @@
 /obj/structure/thermoplastic,
 /turf/open/floor/tram,
 /area/station/security/tram)
-"cZI" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/structure/closet/secure_closet/freezer/fridge,
-/obj/effect/turf_decal/weather/snow/corner,
-/obj/item/food/meat/bacon,
-/obj/item/food/meat/bacon,
-/obj/item/food/meat/slab/monkey,
-/obj/item/food/meat/slab/monkey,
-/obj/item/food/meat/slab/monkey,
-/turf/open/floor/iron/freezer,
-/area/station/service/kitchen/coldroom)
 "cZL" = (
 /obj/item/reagent_containers/cup/bucket,
 /obj/item/mop,
@@ -11527,20 +11285,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
 /area/station/security)
-"elb" = (
-/obj/structure/table/reinforced,
-/obj/structure/displaycase/forsale/kitchen{
-	pixel_y = 5
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "kitchenshutters";
-	name = "Kitchen Shutters"
-	},
-/turf/open/floor/plating,
-/area/station/service/kitchen)
 "eld" = (
 /obj/machinery/atmospherics/pipe/smart/simple/orange/hidden,
 /obj/machinery/camera/directional/west{
@@ -12010,7 +11754,6 @@
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/circuit,
 /area/station/maintenance/port/aft)
-<<<<<<< HEAD
 "etD" = (
 /obj/structure/cable/layer3,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -12019,8 +11762,6 @@
 	},
 /turf/open/floor/iron/stairs,
 /area/station/ai_monitored/turret_protected/ai)
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "etX" = (
 /obj/structure/sign/warning/hot_temp/directional/east,
 /turf/open/floor/iron/stairs/right,
@@ -12142,6 +11883,18 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/small,
 /area/station/maintenance/department/engine)
+"ewo" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/obj/machinery/plumbing/growing_vat{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/station/science/cytology)
 "ewt" = (
 /obj/structure/cable,
 /obj/machinery/firealarm/directional/south,
@@ -12383,7 +12136,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/smooth,
 /area/station/ai_monitored/turret_protected/aisat/teleporter)
-<<<<<<< HEAD
 "eAU" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/door/window/right/directional/south{
@@ -12392,8 +12144,6 @@
 /obj/machinery/status_display/evac/directional/west,
 /turf/open/floor/circuit/red,
 /area/station/ai_monitored/turret_protected/ai)
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "eAY" = (
 /turf/open/floor/grass,
 /area/station/science/xenobiology)
@@ -12495,7 +12245,6 @@
 /obj/structure/flora/bush/pale,
 /turf/open/floor/grass,
 /area/station/hallway/primary/central/fore)
-<<<<<<< HEAD
 "eDl" = (
 /obj/structure/cable/layer3,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -12505,8 +12254,6 @@
 /obj/machinery/status_display/evac/directional/east,
 /turf/open/floor/circuit/red,
 /area/station/ai_monitored/turret_protected/ai)
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "eDo" = (
 /obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/airlock/access/any/engineering/construction,
@@ -13008,16 +12755,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/smooth,
 /area/station/engineering/supermatter/room)
-"eMb" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/portables_connector/visible{
-	dir = 8
-	},
-/obj/machinery/portable_atmospherics/pipe_scrubber,
-/turf/open/floor/iron,
-/area/station/engineering/atmos)
 "eMc" = (
 /obj/machinery/flasher/portable,
 /obj/effect/turf_decal/stripes/line{
@@ -13161,17 +12898,6 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/iron/showroomfloor,
 /area/station/medical/coldroom)
-"ePk" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/neutral/line,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
 "ePn" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/light/small/directional/south,
@@ -13627,15 +13353,6 @@
 	},
 /turf/open/floor/stone,
 /area/station/maintenance/aft)
-"eXR" = (
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/neutral/line,
-/obj/effect/landmark/start/hangover,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
 "eXW" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -14434,10 +14151,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/window/reinforced/spawner/directional/east,
-<<<<<<< HEAD
-=======
-/obj/machinery/atmospherics/components/binary/pump,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /obj/machinery/button/door/directional/north{
 	id = "Xenolab";
 	name = "Test Chamber Blast Doors";
@@ -14445,10 +14158,7 @@
 	pixel_y = -2;
 	req_access = list("xenobiology")
 	},
-<<<<<<< HEAD
 /obj/machinery/atmospherics/components/binary/pump,
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /turf/open/floor/iron/white/side{
 	dir = 8
 	},
@@ -14835,7 +14545,6 @@
 /area/station/command/heads_quarters/hos)
 "fvH" = (
 /obj/effect/decal/cleanable/dirt,
-<<<<<<< HEAD
 /obj/structure/table,
 /obj/item/electropack,
 /obj/machinery/light/small/directional/east,
@@ -14864,11 +14573,6 @@
 /obj/structure/table,
 /turf/open/floor/iron/kitchen/small,
 /area/station/service/kitchen)
-=======
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/engine/xenobio,
-/area/station/science/xenobiology)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "fvL" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
@@ -15561,17 +15265,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/station/ai_monitored/turret_protected/aisat/maint)
-<<<<<<< HEAD
-=======
-"fGk" = (
-/obj/machinery/smartfridge,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "kitchenshutters";
-	name = "Kitchen Shutters"
-	},
-/turf/open/floor/iron/kitchen/small,
-/area/station/service/kitchen)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "fGT" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -16370,11 +16063,7 @@
 /obj/machinery/atmospherics/pipe/smart/simple/general/visible{
 	dir = 4
 	},
-<<<<<<< HEAD
 /turf/open/floor/engine,
-=======
-/turf/open/floor/engine/xenobio,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /area/station/science/xenobiology)
 "fSx" = (
 /obj/structure/cable,
@@ -16912,16 +16601,6 @@
 /obj/effect/mapping_helpers/requests_console/assistance,
 /turf/open/floor/iron/white/small,
 /area/station/science/lab)
-"gbj" = (
-/obj/item/book/manual/chef_recipes,
-/obj/item/stack/package_wrap{
-	pixel_y = 2
-	},
-/obj/item/holosign_creator/robot_seat/restaurant,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/table,
-/turf/open/floor/iron/kitchen/small,
-/area/station/service/kitchen)
 "gby" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/herringbone,
@@ -17602,21 +17281,6 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/circuit/red,
 /area/station/ai_monitored/turret_protected/ai)
-"gnL" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 6
-	},
-/obj/effect/turf_decal/trimline/neutral/corner{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/aft)
 "gnQ" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/scrubbers/hidden,
 /obj/effect/spawner/structure/window,
@@ -17700,14 +17364,10 @@
 /area/station/maintenance/department/medical/central)
 "gpy" = (
 /obj/effect/decal/cleanable/dirt,
-<<<<<<< HEAD
 /obj/item/toy/plush/slimeplushie{
 	name = "Nanners"
 	},
 /turf/open/floor/engine,
-=======
-/turf/open/floor/engine/xenobio,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /area/station/science/xenobiology)
 "gpA" = (
 /obj/effect/turf_decal/siding/thinplating/terracotta,
@@ -17991,20 +17651,6 @@
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/iron/small,
 /area/station/engineering/atmos/storage/gas)
-"gwm" = (
-/obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 8
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
 "gwx" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -18484,16 +18130,6 @@
 "gCT" = (
 /turf/closed/wall,
 /area/station/hallway/secondary/command)
-"gDc" = (
-/obj/structure/table/reinforced,
-/obj/item/folder/blue{
-	pixel_y = 2
-	},
-/obj/item/pen,
-/obj/machinery/airalarm/directional/south,
-/obj/machinery/status_display/evac/directional/east,
-/turf/open/floor/circuit/red,
-/area/station/ai_monitored/turret_protected/ai)
 "gDe" = (
 /obj/machinery/atmospherics/pipe/smart/simple/cyan/visible{
 	dir = 4
@@ -18945,19 +18581,6 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/carpet/royalblue,
 /area/station/command/corporate_suite)
-<<<<<<< HEAD
-=======
-"gJD" = (
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "gJQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
@@ -19424,10 +19047,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
-<<<<<<< HEAD
 /obj/machinery/camera/autoname/directional/east,
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /obj/machinery/light_switch/directional/east,
 /turf/open/floor/iron/freezer,
 /area/station/command/heads_quarters/captain/private)
@@ -19711,11 +19331,7 @@
 "gWf" = (
 /obj/effect/spawner/random/medical/two_percent_xeno_egg_spawner,
 /obj/effect/decal/cleanable/dirt,
-<<<<<<< HEAD
 /turf/open/floor/engine,
-=======
-/turf/open/floor/engine/xenobio,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /area/station/science/xenobiology)
 "gWk" = (
 /obj/effect/turf_decal/siding/wood,
@@ -20800,12 +20416,6 @@
 /obj/structure/chair/stool/directional/east,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/solars/port/aft)
-"hmn" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron/white,
-/area/station/hallway/primary/central/aft)
 "hmt" = (
 /obj/structure/closet/crate,
 /obj/item/stack/license_plates/empty/fifty,
@@ -20831,21 +20441,6 @@
 	},
 /turf/open/floor/stone,
 /area/station/service/chapel)
-"hmK" = (
-/obj/machinery/door/airlock/wood{
-	name = "Bar Backroom"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/service/bar,
-/obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/machinery/door/firedoor,
-/turf/open/floor/stone,
-/area/station/service/bar)
 "hmQ" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/table,
@@ -21123,16 +20718,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/aft)
-"hrl" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door/firedoor,
-/obj/machinery/door/window/right/directional/west,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "kitchenshutters";
-	name = "Kitchen Shutters"
-	},
-/turf/open/floor/iron,
-/area/station/service/kitchen)
 "hrx" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -23803,9 +23388,6 @@
 	},
 /turf/open/floor/iron/small,
 /area/station/hallway/secondary/service)
-"ily" = (
-/turf/open/floor/engine,
-/area/station/science/cytology)
 "ilz" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -24694,20 +24276,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/catwalk_floor,
 /area/station/engineering/atmos/storage/gas)
-"izP" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/landmark/event_spawn,
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/neutral/line,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
 "izT" = (
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 8
@@ -24843,19 +24411,6 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plating,
 /area/station/maintenance/port/fore)
-"iBt" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 8
-	},
-/obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/siding/wood/corner,
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
-	},
-/obj/structure/cable,
-/turf/open/floor/stone,
-/area/station/service/bar/backroom)
 "iBu" = (
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/smooth,
@@ -25223,10 +24778,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/maintenance/port/greater)
-"iId" = (
-/obj/structure/table,
-/turf/open/floor/iron/kitchen/small,
-/area/station/service/kitchen)
 "iIs" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
@@ -25911,16 +25462,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/iron/small,
 /area/station/commons/fitness/locker_room)
-"iRk" = (
-/obj/effect/turf_decal/stripes/white/line{
-	dir = 8
-	},
-/obj/machinery/door/window/brigdoor/left/directional/west{
-	name = "Cytology Pen";
-	req_access = list("research")
-	},
-/turf/open/floor/engine,
-/area/station/science/cytology)
 "iRl" = (
 /obj/structure/table/wood,
 /obj/item/food/grown/citrus/lemon{
@@ -26507,19 +26048,6 @@
 /obj/structure/cable,
 /turf/open/floor/wood/parquet,
 /area/station/service/library)
-"iZO" = (
-/obj/structure/disposalpipe/segment{
-	dir = 10
-	},
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 5
-	},
-/obj/effect/turf_decal/trimline/neutral/corner{
-	dir = 8
-	},
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
 "iZU" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -26664,17 +26192,6 @@
 /obj/machinery/photocopier,
 /turf/open/floor/iron/dark,
 /area/station/security/office)
-"jbX" = (
-/obj/effect/landmark/start/assistant,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/neutral/line,
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/aft)
 "jch" = (
 /turf/open/floor/iron/white/corner,
 /area/station/hallway/secondary/exit/departure_lounge)
@@ -28181,19 +27698,6 @@
 	},
 /turf/open/floor/iron/dark/small,
 /area/station/ai_monitored/security/armory)
-"jBu" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock/wood{
-	name = "Bar Backroom"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/service/bar,
-/obj/machinery/door/firedoor,
-/turf/open/floor/iron/textured_half{
-	dir = 8
-	},
-/area/station/service/bar)
 "jBA" = (
 /obj/structure/cable,
 /obj/machinery/power/smes/super/full,
@@ -28782,17 +28286,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine)
-"jKb" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door/firedoor,
-/obj/machinery/door/window/right/directional/east{
-	req_access = list("hydroponics");
-	name = "Hydroponics Service Desk"
-	},
-/turf/open/floor/iron/textured_half{
-	dir = 8
-	},
-/area/station/service/hydroponics)
 "jKg" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -28956,11 +28449,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-<<<<<<< HEAD
 /turf/open/floor/engine,
-=======
-/turf/open/floor/engine/xenobio,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /area/station/science/xenobiology)
 "jML" = (
 /obj/structure/cable,
@@ -29143,21 +28632,6 @@
 /obj/effect/spawner/structure/window/reinforced/tinted,
 /turf/open/floor/plating,
 /area/station/maintenance/fore/greater)
-"jPI" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 4
-	},
-/turf/open/floor/iron/small,
-/area/station/hallway/primary/central/aft)
 "jPM" = (
 /obj/structure/rack,
 /obj/effect/spawner/random/techstorage/security_all,
@@ -29296,16 +28770,6 @@
 /obj/item/bedsheet/brown,
 /turf/open/floor/wood,
 /area/station/maintenance/starboard/greater)
-"jSp" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/door/firedoor,
-/obj/effect/turf_decal/stripes/red/line,
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 1
-	},
-/obj/structure/cable,
-/turf/open/floor/iron/small,
-/area/station/hallway/primary/central/fore)
 "jSw" = (
 /obj/structure/railing,
 /turf/open/floor/catwalk_floor,
@@ -29356,16 +28820,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/textured_half,
 /area/station/security/detectives_office)
-"jTj" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
 "jTu" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -30133,11 +29587,7 @@
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/components/unary/passive_vent,
 /turf/open/space/basic,
-<<<<<<< HEAD
 /area/space)
-=======
-/area/space/nearstation)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "kgw" = (
 /obj/machinery/door/airlock{
 	name = "Gambling Den"
@@ -30367,19 +29817,6 @@
 	dir = 8
 	},
 /area/station/hallway/secondary/dock)
-"kjx" = (
-/mob/living/basic/goat/pete,
-/obj/effect/turf_decal/weather/snow,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 6
-	},
-/obj/structure/cable,
-/obj/effect/turf_decal/weather/snow/corner,
-/turf/open/floor/iron/freezer,
-/area/station/service/kitchen/coldroom)
 "kjO" = (
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/turf_decal/siding/white{
@@ -30466,11 +29903,6 @@
 /obj/machinery/duct,
 /turf/open/floor/iron/kitchen/small,
 /area/station/security/prison/mess)
-"klf" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/aft)
 "klF" = (
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 4
@@ -32350,7 +31782,6 @@
 "kPW" = (
 /turf/open/floor/plating,
 /area/station/maintenance/port/fore)
-<<<<<<< HEAD
 "kQc" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/trimline/neutral/line{
@@ -32368,21 +31799,13 @@
 /obj/machinery/button/door/directional/west{
 	id = "QMLoaddoor";
 	layer = 4;
-=======
-"kQe" = (
-/obj/machinery/button/door/directional/west{
-	id = "QMLoaddoor";
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 	name = "Loading Doors";
 	pixel_y = -8;
 	req_access = list("cargo")
 	},
 /obj/machinery/button/door/directional/west{
 	id = "QMLoaddoor2";
-<<<<<<< HEAD
 	layer = 4;
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 	name = "Loading Doors";
 	pixel_y = 8;
 	req_access = list("cargo")
@@ -32653,10 +32076,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/small,
 /area/station/hallway/primary/central/fore)
-"kUa" = (
-/obj/structure/cable,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "kUf" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -32911,15 +32330,6 @@
 /obj/structure/flora/grass/jungle/b/style_3,
 /turf/open/floor/grass,
 /area/station/service/chapel)
-"kZv" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "AI Core shutters";
-	name = "AI Core Shutter"
-	},
-/turf/open/floor/iron/stairs,
-/area/station/ai_monitored/turret_protected/ai)
 "kZx" = (
 /obj/machinery/button/door/directional/north{
 	id = "main_surgery";
@@ -32965,20 +32375,6 @@
 	},
 /turf/open/floor/stone,
 /area/station/service/chapel)
-"lab" = (
-/obj/structure/cable,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 8
-	},
-/turf/open/floor/iron/small,
-/area/station/hallway/primary/central/aft)
 "lae" = (
 /obj/machinery/atmospherics/components/binary/pump/on{
 	name = "Cold Loop to Gas"
@@ -33951,15 +33347,6 @@
 /obj/structure/ore_box,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/greater)
-"lnM" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/door/window/brigdoor/right/directional/north{
-	atom_integrity = 300;
-	name = "AI Core Chamber Access";
-	req_access = list("ai_upload")
-	},
-/turf/open/floor/circuit/red,
-/area/station/ai_monitored/turret_protected/ai)
 "lnN" = (
 /obj/effect/turf_decal/tile/blue/opposingcorners{
 	dir = 8
@@ -35998,19 +35385,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/engineering/atmos/pumproom)
-"lRM" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/neutral/line,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
 "lRU" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -36838,10 +36212,7 @@
 /obj/structure/chair{
 	dir = 1
 	},
-<<<<<<< HEAD
 /obj/machinery/camera/autoname/directional/south,
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/iron/showroomfloor,
 /area/station/commons/toilet/auxiliary)
@@ -37265,18 +36636,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/smooth,
 /area/station/engineering/break_room)
-"mlD" = (
-/obj/structure/disposalpipe/segment,
-/obj/effect/landmark/start/hangover,
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 8
-	},
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
 "mlK" = (
 /obj/structure/disposalpipe/segment{
 	dir = 6
@@ -37899,18 +37258,12 @@
 /area/station/hallway/primary/aft)
 "mwJ" = (
 /obj/effect/decal/cleanable/dirt,
-<<<<<<< HEAD
 /obj/structure/table,
 /obj/item/stack/cable_coil,
 /obj/item/multitool,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/engine,
-=======
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/engine/xenobio,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /area/station/science/xenobiology)
 "mwN" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -39100,12 +38453,6 @@
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible,
 /turf/open/floor/iron/stairs/left,
 /area/station/engineering/atmos)
-"mRB" = (
-/obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/trimline/neutral/end,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
 "mRD" = (
 /obj/effect/turf_decal/bot_white,
 /obj/effect/spawner/random/maintenance,
@@ -39324,16 +38671,6 @@
 	},
 /turf/open/floor/wood/parquet,
 /area/station/service/library)
-"mUm" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/machinery/status_display/ai/directional/west,
-/obj/structure/disposalpipe/segment,
-/obj/machinery/light/cold/directional/west,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
 "mUn" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock{
@@ -39586,7 +38923,6 @@
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "mYT" = (
-<<<<<<< HEAD
 /obj/structure/table,
 /obj/item/assembly/igniter{
 	pixel_x = -5;
@@ -39605,14 +38941,6 @@
 	pixel_y = -1
 	},
 /turf/open/floor/engine,
-=======
-/obj/machinery/door/poddoor/preopen{
-	id = "Xenolab";
-	name = "Test Chamber Blast Door"
-	},
-/obj/structure/sign/warning/gas_mask/directional/north,
-/turf/open/floor/catwalk_floor/iron,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /area/station/science/xenobiology)
 "mYW" = (
 /obj/machinery/camera{
@@ -39847,21 +39175,6 @@
 	},
 /turf/open/floor/tram,
 /area/station/maintenance/department/medical/central)
-"ndJ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/landmark/navigate_destination/teleporter,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
 "ndM" = (
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/iron,
@@ -40181,20 +39494,6 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating,
 /area/station/hallway/secondary/construction)
-"njT" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 1
-	},
-/obj/structure/cable,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/neutral/line,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/aft)
 "njW" = (
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
@@ -40337,24 +39636,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/small,
 /area/station/engineering/break_room)
-"nmC" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/item/reagent_containers/cup/bowl{
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/cup/bowl{
-	pixel_y = 8;
-	pixel_x = 3
-	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "kitchenshutters";
-	name = "Kitchen Shutters"
-	},
-/turf/open/floor/plating,
-/area/station/service/kitchen)
 "nmH" = (
 /obj/structure/railing,
 /obj/effect/turf_decal/siding/wideplating,
@@ -41240,18 +40521,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/construction/mining/aux_base)
-"nCt" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/neutral/line,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
 "nCC" = (
 /obj/structure/chair/stool/directional/south,
 /obj/effect/turf_decal/siding/yellow{
@@ -41446,14 +40715,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/command/heads_quarters/cmo)
-"nFH" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
 "nFI" = (
 /obj/effect/turf_decal/stripes/end{
 	dir = 8
@@ -41629,20 +40890,6 @@
 /obj/structure/sign/poster/official/random/directional/north,
 /turf/open/floor/plating,
 /area/station/maintenance/disposal/incinerator)
-"nHU" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 8
-	},
-/obj/structure/cable,
-/turf/open/floor/iron/small,
-/area/station/hallway/primary/central/fore)
 "nId" = (
 /turf/open/floor/circuit/green,
 /area/station/ai_monitored/command/nuke_storage)
@@ -41983,21 +41230,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/smooth_large,
 /area/station/cargo/warehouse)
-"nPY" = (
-/obj/structure/table/reinforced,
-/obj/structure/desk_bell{
-	pixel_x = 4;
-	pixel_y = 3
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "kitchenshutters";
-	name = "Kitchen Shutters"
-	},
-/turf/open/floor/plating,
-/area/station/service/kitchen)
 "nQa" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
@@ -42224,13 +41456,9 @@
 /area/station/security/tram)
 "nTz" = (
 /obj/effect/turf_decal/tile/yellow/anticorner/contrasted,
-<<<<<<< HEAD
 /obj/machinery/chem_dispenser{
 	layer = 2.7
 	},
-=======
-/obj/machinery/chem_dispenser,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/iron/dark,
 /area/station/medical/pharmacy)
@@ -43949,6 +43177,12 @@
 /obj/structure/sign/poster/official/random/directional/south,
 /turf/open/floor/eighties/red,
 /area/station/hallway/primary/central/fore)
+"oxK" = (
+/obj/effect/turf_decal/stripes/white/line{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/station/science/cytology)
 "oyn" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/public/glass{
@@ -44386,7 +43620,6 @@
 	},
 /turf/open/floor/carpet/executive,
 /area/station/command/meeting_room)
-<<<<<<< HEAD
 "oGJ" = (
 /obj/effect/turf_decal/trimline/neutral/line{
 	dir = 1
@@ -44394,8 +43627,6 @@
 /obj/effect/turf_decal/trimline/neutral/line,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/fore)
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "oGL" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -44430,13 +43661,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/stairs,
 /area/station/maintenance/port/greater)
-"oHp" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/aft)
 "oHw" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -44641,16 +43865,6 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/iron/smooth_large,
 /area/station/science/auxlab/firing_range)
-"oJO" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/disposalpipe/sorting/mail{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/mail_sorting/service/bar,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
 "oJP" = (
 /obj/structure/cable,
 /obj/machinery/telecomms/broadcaster/preset_left,
@@ -45394,16 +44608,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/engineering/supermatter/room)
-<<<<<<< HEAD
-=======
-"oWU" = (
-/obj/machinery/door/airlock{
-	name = "Hydroponics Maintenance"
-	},
-/obj/effect/mapping_helpers/airlock/access/any/service/hydroponics,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "oXa" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -45693,17 +44897,6 @@
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/grass,
 /area/station/service/chapel)
-"pbO" = (
-/obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 8
-	},
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
 "pbT" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 4
@@ -46262,28 +45455,6 @@
 /obj/item/weldingtool,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/department/engine/atmos)
-"pkQ" = (
-/obj/effect/landmark/event_spawn,
-/obj/structure/table,
-/obj/machinery/reagentgrinder{
-	pixel_y = 9;
-	pixel_x = 4
-	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_x = 3
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -3
-	},
-/obj/item/reagent_containers/condiment/enzyme{
-	pixel_x = -7;
-	pixel_y = 6
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 8
-	},
-/turf/open/floor/iron/kitchen/small,
-/area/station/service/kitchen)
 "pkR" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -46731,7 +45902,6 @@
 /obj/effect/landmark/start/prisoner,
 /turf/open/floor/iron/dark,
 /area/station/security/prison/safe)
-<<<<<<< HEAD
 "prt" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -46740,8 +45910,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/aft)
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "prI" = (
 /turf/closed/wall,
 /area/station/engineering/hallway)
@@ -48371,11 +47539,6 @@
 /obj/effect/turf_decal/tile/blue/half/contrasted,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
-"pRR" = (
-/obj/machinery/portable_atmospherics/canister/air,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
 "pSc" = (
 /obj/item/bikehorn/rubberducky{
 	pixel_x = 6;
@@ -48946,16 +48109,6 @@
 /obj/item/shard/titanium,
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine/atmos)
-"qan" = (
-/obj/structure/cable/layer3,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/window/brigdoor/left/directional/north{
-	atom_integrity = 300;
-	name = "AI Core Chamber Access";
-	req_access = list("ai_upload")
-	},
-/turf/open/floor/circuit/red,
-/area/station/ai_monitored/turret_protected/ai)
 "qaF" = (
 /obj/structure/sink/directional/south,
 /obj/structure/mirror/directional/north,
@@ -50760,7 +49913,6 @@
 	dir = 8
 	},
 /area/station/science/lobby)
-<<<<<<< HEAD
 "qEk" = (
 /obj/structure/table/reinforced,
 /obj/item/folder/blue{
@@ -50770,8 +49922,6 @@
 /obj/machinery/airalarm/directional/south,
 /turf/open/floor/circuit/red,
 /area/station/ai_monitored/turret_protected/ai)
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "qEm" = (
 /obj/effect/turf_decal/tile/yellow/opposingcorners,
 /obj/machinery/atmospherics/pipe/smart/simple/cyan/hidden{
@@ -50959,20 +50109,6 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/iron/white/side,
 /area/station/science/lower)
-<<<<<<< HEAD
-=======
-"qIb" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock{
-	name = "Maintenance"
-	},
-/obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
-/obj/effect/mapping_helpers/airlock/unres,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "qIf" = (
 /turf/closed/wall,
 /area/station/medical/cryo)
@@ -52718,22 +51854,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
-"rko" = (
-/obj/structure/sign/directions/evac/directional/west,
-/obj/structure/sign/directions/science/directional/west{
-	dir = 4;
-	pixel_y = -8
-	},
-/obj/structure/sign/directions/security/directional/west{
-	pixel_y = 8
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/turf_decal/stripes/red/line,
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 1
-	},
-/turf/open/floor/iron/small,
-/area/station/hallway/primary/central/fore)
 "rkI" = (
 /obj/structure/disposalpipe/trunk,
 /obj/structure/disposaloutlet{
@@ -53237,12 +52357,6 @@
 /turf/open/floor/iron/small,
 /area/station/ai_monitored/command/storage/eva)
 "rtI" = (
-<<<<<<< HEAD
-=======
-/obj/item/toy/plush/slimeplushie{
-	name = "Nanners"
-	},
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /turf/open/floor/iron/white/corner{
 	dir = 8
 	},
@@ -54577,11 +53691,7 @@
 /area/station/engineering/atmos/space_catwalk)
 "rQw" = (
 /obj/machinery/light/small/directional/north,
-<<<<<<< HEAD
 /turf/open/floor/engine,
-=======
-/turf/open/floor/engine/xenobio,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /area/station/science/xenobiology)
 "rQA" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -54847,6 +53957,12 @@
 "rUd" = (
 /turf/closed/wall,
 /area/station/security/prison)
+"rUg" = (
+/obj/effect/turf_decal/stripes/white/line{
+	dir = 5
+	},
+/turf/open/floor/engine,
+/area/station/science/cytology)
 "rUq" = (
 /obj/item/assembly/mousetrap/armed,
 /turf/open/floor/stone,
@@ -55002,13 +54118,6 @@
 /obj/item/stock_parts/matter_bin{
 	pixel_y = 5
 	},
-<<<<<<< HEAD
-=======
-/obj/item/multitool,
-/obj/item/flatpack{
-	board = /obj/item/circuitboard/machine/flatpacker
-	},
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /turf/open/floor/iron/dark,
 /area/station/science/lab)
 "rWs" = (
@@ -55736,18 +54845,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/station/maintenance/port/fore)
-<<<<<<< HEAD
-=======
-"sjK" = (
-/obj/structure/disposalpipe/segment{
-	dir = 6
-	},
-/obj/effect/mapping_helpers/broken_floor,
-/obj/effect/spawner/random/trash,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "sjL" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/trimline/neutral/line{
@@ -55797,13 +54894,9 @@
 /obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 8
 	},
-<<<<<<< HEAD
 /obj/machinery/chem_dispenser{
 	layer = 2.7
 	},
-=======
-/obj/machinery/chem_dispenser,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/iron,
 /area/station/medical/chemistry)
@@ -55968,26 +55061,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/security/courtroom)
-<<<<<<< HEAD
-=======
-"sne" = (
-/obj/structure/table/reinforced,
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_x = 3
-	},
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -3
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "kitchenshutters";
-	name = "Kitchen Shutters"
-	},
-/turf/open/floor/plating,
-/area/station/service/kitchen)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "snj" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/disposalpipe/segment{
@@ -56302,16 +55375,6 @@
 	},
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-"srg" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
 "srn" = (
 /obj/structure/disposalpipe/segment,
 /turf/closed/wall,
@@ -57402,17 +56465,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
-"sKm" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/door/firedoor,
-/obj/effect/turf_decal/stripes/red/line,
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron/small,
-/area/station/hallway/primary/central/fore)
 "sKq" = (
 /obj/structure/chair/comfy/brown{
 	dir = 8
@@ -58216,15 +57268,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/port)
-"sXu" = (
-/obj/structure/cable/layer3,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "AI Core shutters";
-	name = "AI Core Shutter"
-	},
-/turf/open/floor/iron/stairs,
-/area/station/ai_monitored/turret_protected/ai)
 "sXw" = (
 /obj/machinery/telecomms/receiver/preset_left,
 /turf/open/floor/circuit,
@@ -59270,16 +58313,6 @@
 /obj/effect/landmark/start/atmospheric_technician,
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos)
-<<<<<<< HEAD
-=======
-"tnN" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "tnZ" = (
 /obj/structure/bookcase/random,
 /obj/structure/sign/poster/official/random/directional/west,
@@ -60388,11 +59421,7 @@
 /area/station/medical/chemistry)
 "tGp" = (
 /obj/machinery/light/small/directional/south,
-<<<<<<< HEAD
 /turf/open/floor/engine,
-=======
-/turf/open/floor/engine/xenobio,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /area/station/science/xenobiology)
 "tGq" = (
 /turf/closed/wall,
@@ -60837,14 +59866,11 @@
 	},
 /turf/open/floor/iron,
 /area/station/commons/storage/tools)
-<<<<<<< HEAD
 "tOK" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/machinery/griddle,
 /turf/open/floor/iron/kitchen/small,
 /area/station/service/kitchen)
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "tOO" = (
 /obj/structure/flora/bush/large/style_random{
 	pixel_x = -20;
@@ -64606,13 +63632,6 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/construction)
-"uVH" = (
-/obj/machinery/modular_computer/preset/civilian{
-	dir = 4
-	},
-/obj/machinery/status_display/evac/directional/west,
-/turf/open/floor/circuit/red,
-/area/station/ai_monitored/turret_protected/ai)
 "uVO" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/mapping_helpers/broken_floor,
@@ -64768,17 +63787,6 @@
 /obj/effect/turf_decal/stripes/end,
 /turf/open/floor/plating,
 /area/station/security/brig/entrance)
-"uYM" = (
-/obj/machinery/microwave{
-	pixel_y = 5
-	},
-/obj/machinery/light_switch/directional/north,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/table,
-/turf/open/floor/iron/kitchen/small,
-/area/station/service/kitchen)
 "uYO" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -66344,18 +65352,6 @@
 /obj/effect/mapping_helpers/airlock/access/all/science/xenobio,
 /turf/open/floor/catwalk_floor/iron,
 /area/station/science/xenobiology)
-"vuD" = (
-/obj/structure/disposalpipe/segment{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
 "vuH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/auto_name/directional/west,
@@ -66876,15 +65872,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/science/research)
-"vCi" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 9
-	},
-/obj/effect/turf_decal/trimline/neutral/corner,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/aft)
 "vCl" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -67276,11 +66263,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/maintenance/starboard/aft)
-"vIz" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
-/obj/structure/cable,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "vIC" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -69064,14 +68046,6 @@
 	},
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-"wlN" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/structure/disposalpipe/segment,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
 "wlS" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/atmospherics/pipe/smart/simple/purple/visible{
@@ -69275,20 +68249,6 @@
 /obj/item/wrench,
 /turf/open/floor/catwalk_floor,
 /area/station/science/xenobiology)
-"woK" = (
-/obj/structure/disposalpipe/segment{
-	dir = 6
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/neutral/line,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
 "woP" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 8
@@ -69405,16 +68365,6 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/security/prison/workout)
-"wrj" = (
-/obj/effect/spawner/random/trash,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
 "wrk" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
@@ -69908,13 +68858,9 @@
 /obj/effect/turf_decal/tile/yellow/anticorner/contrasted{
 	dir = 1
 	},
-<<<<<<< HEAD
 /obj/machinery/chem_dispenser{
 	layer = 2.7
 	},
-=======
-/obj/machinery/chem_dispenser,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /obj/effect/decal/cleanable/cobweb,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/iron/dark,
@@ -70885,18 +69831,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
-"wNs" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/neutral/line,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
 "wNv" = (
 /obj/effect/landmark/navigate_destination/bridge,
 /turf/open/floor/iron/smooth_half,
@@ -71992,15 +70926,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/herringbone,
 /area/station/ai_monitored/command/nuke_storage)
-"xcz" = (
-/obj/structure/window/spawner/directional/west,
-/obj/structure/flora/bush/jungle/a/style_random,
-/obj/structure/flora/bush/flowers_pp/style_random,
-/obj/structure/window/spawner/directional/east,
-/obj/machinery/light/floor,
-/obj/structure/window/spawner/directional/north,
-/turf/open/floor/grass,
-/area/station/service/hydroponics)
 "xcF" = (
 /turf/open/floor/iron,
 /area/station/commons/dorms)
@@ -72691,22 +71616,8 @@
 /turf/open/floor/plating,
 /area/station/science/xenobiology)
 "xlP" = (
-<<<<<<< HEAD
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
-/turf/open/floor/engine/xenobio,
-/area/station/science/xenobiology)
-"xlU" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "xlZ" = (
 /turf/open/floor/iron,
 /area/station/maintenance/hallway/abandoned_command)
@@ -73154,10 +72065,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/door/window/right/directional/south{
-<<<<<<< HEAD
 	layer = 3.1;
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 	name = "Upload Console Window";
 	req_access = list("ai_upload")
 	},
@@ -74913,20 +73821,6 @@
 /obj/effect/landmark/start/hangover,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/recreation)
-"xPJ" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/neutral/line{
-	dir = 8
-	},
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central/fore)
 "xPN" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -75955,18 +74849,11 @@
 	},
 /area/station/hallway/secondary/entry)
 "ybF" = (
-<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/smart/simple/general/visible{
 	dir = 4
 	},
 /obj/effect/spawner/random/engineering/tracking_beacon,
 /turf/open/floor/engine,
-=======
-/obj/effect/spawner/random/engineering/tracking_beacon,
-/turf/open/floor/iron/white/side{
-	dir = 4
-	},
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /area/station/science/xenobiology)
 "ybJ" = (
 /obj/structure/cable,
@@ -76105,6 +74992,16 @@
 /obj/effect/turf_decal/tile/blue,
 /turf/open/floor/iron/dark/side,
 /area/station/hallway/primary/central/fore)
+"ydH" = (
+/obj/effect/turf_decal/box/corners,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/machinery/plumbing/input{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/station/science/cytology)
 "ydI" = (
 /obj/machinery/light/cold/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -76272,24 +75169,16 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/maintenance/department/engine/atmos)
-<<<<<<< HEAD
 "yfP" = (
 /obj/machinery/modular_computer/preset/civilian{
 	dir = 4
 	},
 /turf/open/floor/circuit/red,
 /area/station/ai_monitored/turret_protected/ai)
-=======
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 "yfQ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/station/maintenance/department/science/xenobiology)
-"yfX" = (
-/obj/machinery/space_heater,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
 "yfY" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -76305,11 +75194,7 @@
 	c_tag = "Xenobiology Lab - Test Chamber";
 	network = list("ss13","rd","xeno")
 	},
-<<<<<<< HEAD
 /turf/open/floor/engine,
-=======
-/turf/open/floor/engine/xenobio,
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 /area/station/science/xenobiology)
 "ygu" = (
 /turf/open/floor/iron/white,
@@ -87795,11 +86680,7 @@ gKs
 gKs
 aOb
 utf
-<<<<<<< HEAD
 mfV
-=======
-eMb
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 mFD
 mrW
 hYC
@@ -94887,11 +93768,7 @@ dDB
 dDB
 dDB
 dDB
-<<<<<<< HEAD
 dbY
-=======
-qyN
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 kgu
 wOl
 dby
@@ -95831,11 +94708,7 @@ frI
 frI
 oyp
 mXZ
-<<<<<<< HEAD
 bie
-=======
-mUm
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 mAR
 qWG
 fkS
@@ -98152,11 +97025,7 @@ avp
 avp
 qiI
 jVM
-<<<<<<< HEAD
 jzf
-=======
-bLS
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 xeO
 xeO
 xeO
@@ -98428,13 +97297,8 @@ yfC
 yfC
 yfC
 xli
-<<<<<<< HEAD
 equ
 sYp
-=======
-jPI
-cVm
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 ifH
 iuR
 tYX
@@ -98675,15 +97539,9 @@ eXB
 eIW
 mqz
 jVM
-<<<<<<< HEAD
 fgJ
 pWj
 fDX
-=======
-srg
-oWU
-ayT
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 sZo
 yfC
 lnN
@@ -98697,11 +97555,7 @@ qiC
 mKY
 hoc
 lhT
-<<<<<<< HEAD
 mfa
-=======
-jbX
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 diP
 rgM
 trB
@@ -98942,11 +97796,7 @@ uGD
 nAq
 pSI
 jVM
-<<<<<<< HEAD
 fgJ
-=======
-srg
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 jVM
 nrg
 xXD
@@ -98961,13 +97811,8 @@ oun
 wBc
 kxY
 mka
-<<<<<<< HEAD
 yfG
 fVQ
-=======
-vCi
-gnL
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 diP
 trB
 trB
@@ -99986,17 +98831,10 @@ cJv
 yfC
 yfC
 erf
-<<<<<<< HEAD
 bKd
 tkm
 yfC
 oUV
-=======
-xcz
-tkm
-yfC
-jKb
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 tQC
 yfC
 yfC
@@ -100756,11 +99594,7 @@ nlQ
 chI
 mTT
 jVM
-<<<<<<< HEAD
 tpQ
-=======
-jTj
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 keb
 jVM
 tGq
@@ -100771,11 +99605,7 @@ lAt
 xmt
 xmt
 xmt
-<<<<<<< HEAD
 ouF
-=======
-hrl
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 xmt
 xmt
 xli
@@ -101021,17 +99851,10 @@ uvs
 mpx
 oxy
 jVM
-<<<<<<< HEAD
 tpQ
 jVM
 tGq
 nxy
-=======
-jTj
-jVM
-tGq
-bTD
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 tGq
 sxl
 aTg
@@ -101275,13 +100098,8 @@ opn
 jwa
 opn
 jYY
-<<<<<<< HEAD
 jrl
 oGJ
-=======
-ndJ
-rJZ
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 wQB
 xZS
 sRT
@@ -101293,11 +100111,7 @@ jVM
 lzB
 jVM
 haH
-<<<<<<< HEAD
 hHn
-=======
-cZI
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 tGq
 ipG
 aTg
@@ -101542,11 +100356,7 @@ jLR
 jLR
 xMY
 dCu
-<<<<<<< HEAD
 tsO
-=======
-eXR
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 eBC
 bPv
 jVM
@@ -101558,7 +100368,6 @@ jVM
 ulE
 jVM
 amK
-<<<<<<< HEAD
 anD
 rzH
 mog
@@ -101570,19 +100379,6 @@ tOK
 aTg
 aTg
 xUp
-=======
-kjx
-rzH
-mog
-aTg
-gbj
-iId
-iId
-bvi
-aTg
-aTg
-aIr
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 sWq
 gLO
 pbD
@@ -101829,7 +100625,6 @@ jVM
 ruS
 sem
 bxl
-<<<<<<< HEAD
 uZy
 tGq
 fvK
@@ -101841,19 +100636,6 @@ tOK
 aTg
 aTg
 xUp
-=======
-bMn
-tGq
-uYM
-aTg
-pkQ
-bBL
-iId
-bvi
-aTg
-aTg
-aIr
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 bIN
 bVJ
 sTb
@@ -102052,7 +100834,7 @@ hJp
 wct
 wct
 iWV
-uVH
+yfP
 wct
 isj
 isj
@@ -102305,9 +101087,9 @@ cfk
 fkj
 dMg
 cyk
-lnM
-kZv
-cLR
+cEs
+cKc
+eAU
 cRI
 dbs
 fkj
@@ -102352,13 +101134,8 @@ xND
 ind
 jVM
 oZy
-<<<<<<< HEAD
 pMc
 pMc
-=======
-wlN
-wlN
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 uvx
 jVM
 tGq
@@ -102366,19 +101143,11 @@ tGq
 tGq
 xmt
 ohy
-<<<<<<< HEAD
 wLa
 xJv
 luD
 jvL
 mbC
-=======
-fGk
-nmC
-nPY
-sne
-elb
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 xmt
 xmt
 xli
@@ -102615,21 +101384,13 @@ lun
 wNv
 mzM
 wCM
-<<<<<<< HEAD
 kyZ
-=======
-woK
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 kJR
 qcB
 jVM
 jVM
 jVM
-<<<<<<< HEAD
 cLy
-=======
-wrj
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 jVM
 sON
 aYj
@@ -102880,7 +101641,6 @@ gfs
 ivl
 mzM
 wCM
-<<<<<<< HEAD
 uFG
 tgx
 jVM
@@ -102888,15 +101648,6 @@ jnO
 pSO
 wzj
 vEY
-=======
-ePk
-tgx
-jVM
-yfX
-pRR
-wzj
-xlU
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 jVM
 oVl
 uBN
@@ -103147,29 +101898,17 @@ jxC
 ufb
 xCl
 cYY
-<<<<<<< HEAD
 kzu
-=======
-wNs
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 wiF
 jVM
 jVM
 jVM
 jVM
-<<<<<<< HEAD
 hHj
 eoM
 cqD
 vYJ
 kTr
-=======
-oJO
-eoM
-cqD
-iBt
-hmK
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 dMi
 vkh
 caW
@@ -103376,9 +102115,9 @@ cfk
 fkj
 dPa
 dZZ
-qan
-sXu
-coi
+cFz
+etD
+eDl
 eND
 dbz
 fkj
@@ -103416,7 +102155,6 @@ jye
 jOs
 mAv
 khS
-<<<<<<< HEAD
 dIN
 mwN
 jVM
@@ -103424,15 +102162,6 @@ vMV
 eWC
 eWC
 fUz
-=======
-aqG
-mwN
-jVM
-sjK
-tnN
-nFH
-cHG
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 jVM
 iXW
 dRb
@@ -103647,7 +102376,7 @@ wct
 wct
 wct
 eNU
-gDc
+qEk
 wct
 gOm
 gOm
@@ -103683,17 +102412,10 @@ quU
 quU
 tsF
 ubK
-<<<<<<< HEAD
 buv
 lZW
 wKM
 oFM
-=======
-lRM
-vuD
-qIb
-gJD
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 hPb
 jVM
 cCe
@@ -103947,11 +102669,7 @@ liG
 rRQ
 tsF
 kiB
-<<<<<<< HEAD
 nBL
-=======
-izP
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 wNW
 jVM
 jVM
@@ -104208,11 +102926,7 @@ jyu
 ezx
 tsF
 vIJ
-<<<<<<< HEAD
 kzx
-=======
-nHU
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 twJ
 tgl
 iSi
@@ -104469,11 +103183,7 @@ uff
 mak
 tsF
 qlV
-<<<<<<< HEAD
 uFG
-=======
-ePk
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 tmQ
 tgl
 lut
@@ -104730,11 +103440,7 @@ rth
 mbp
 tsF
 kpF
-<<<<<<< HEAD
 uFG
-=======
-ePk
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 wQB
 tgl
 lvA
@@ -104759,13 +103465,8 @@ ycS
 swW
 ove
 nUd
-<<<<<<< HEAD
 eXZ
 qBn
-=======
-cSy
-bpY
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 sMt
 tYX
 dDB
@@ -104996,11 +103697,7 @@ jyG
 meu
 tsF
 lAS
-<<<<<<< HEAD
 uFG
-=======
-ePk
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 wQB
 tgl
 wHO
@@ -105026,11 +103723,7 @@ jFm
 ove
 nUd
 vip
-<<<<<<< HEAD
 kmz
-=======
-njT
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 fGT
 tYX
 dDB
@@ -105261,11 +103954,7 @@ lGK
 mfP
 tsF
 lPo
-<<<<<<< HEAD
 kzu
-=======
-wNs
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 wQB
 tgl
 tgl
@@ -105522,11 +104211,7 @@ lGK
 jOS
 tsF
 vrn
-<<<<<<< HEAD
 uFG
-=======
-ePk
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 smf
 aCO
 iLA
@@ -105536,11 +104221,7 @@ qDd
 xHD
 xHD
 vkh
-<<<<<<< HEAD
 dGm
-=======
-jBu
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 vkh
 vkh
 vkh
@@ -105556,11 +104237,7 @@ vkh
 vkh
 bnU
 mVc
-<<<<<<< HEAD
 giB
-=======
-lab
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 axd
 xli
 qir
@@ -105791,11 +104468,7 @@ lGK
 mgt
 tsF
 kiO
-<<<<<<< HEAD
 nDV
-=======
-nCt
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 wNW
 coC
 pVj
@@ -105818,11 +104491,7 @@ khY
 khY
 khY
 lmz
-<<<<<<< HEAD
 uLK
-=======
-rko
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 diP
 prt
 gaj
@@ -106056,21 +104725,12 @@ iaw
 uoB
 tsF
 kjg
-<<<<<<< HEAD
 oXV
 kJX
 kQc
 vrH
 xIw
 xIw
-=======
-iZO
-awC
-gwm
-xPJ
-pbO
-pbO
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 icN
 mZd
 sDZ
@@ -106081,7 +104741,6 @@ mut
 pjA
 mut
 otJ
-<<<<<<< HEAD
 xIw
 rTl
 xIw
@@ -106092,18 +104751,6 @@ fFr
 ddG
 hUj
 hWG
-=======
-pbO
-bxc
-pbO
-mlD
-xPJ
-pbO
-mRB
-jSp
-klf
-oHp
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 huj
 fIj
 uhM
@@ -106358,21 +105005,12 @@ aPK
 aPK
 aPK
 mcS
-<<<<<<< HEAD
 rLA
-=======
-sKm
-dRT
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 dRT
 loN
 nNz
 inU
-<<<<<<< HEAD
 fsb
-=======
-hmn
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 bcv
 kov
 viy
@@ -119499,11 +118137,7 @@ gYH
 sYa
 yfs
 hPU
-<<<<<<< HEAD
 xKX
-=======
-ybF
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 fKN
 xMc
 xKX
@@ -120018,11 +118652,7 @@ sYa
 rtI
 dXU
 aSy
-<<<<<<< HEAD
 deQ
-=======
-mYT
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 tst
 deQ
 aSy
@@ -120794,11 +119424,7 @@ cVz
 sYa
 rQw
 xlP
-<<<<<<< HEAD
 ybF
-=======
-fSg
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 xlP
 tGp
 eWI
@@ -121015,8 +119641,8 @@ xau
 rsL
 xSt
 xWq
-iRk
-aQZ
+oxK
+rUg
 wJL
 prf
 dSb
@@ -121271,8 +119897,8 @@ rsL
 mIh
 rsL
 xTO
-cHI
-ily
+ewo
+ydH
 xPj
 wJL
 sHX
@@ -121567,19 +120193,11 @@ pXQ
 kwA
 xaR
 sYa
-<<<<<<< HEAD
 pxW
 xlP
 gpy
 xlP
 mYT
-=======
-xlP
-xlP
-gpy
-xlP
-xlP
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 eWI
 eWI
 eWI
@@ -126705,17 +125323,10 @@ oZz
 xZJ
 aVT
 enG
-<<<<<<< HEAD
 xHb
 xHb
 xHb
 pHS
-=======
-kUa
-kUa
-kUa
-vIz
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 xpR
 kQt
 nhl
@@ -126969,11 +125580,7 @@ nWh
 xEn
 nWh
 xnR
-<<<<<<< HEAD
 ebo
-=======
-aLC
->>>>>>> 1d5e01ecce7 ([MIRROR] Cytology without plumbing [MDB IGNORE] (#3537))
 wLZ
 xwn
 cns
