@@ -63,26 +63,24 @@
 	light_system = 2
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_BELT
-	block_chance = 24
 	block_sound = 'sound/weapons/parry.ogg'
-	sharpness = SHARP_EDGED
 	item_flags = NO_BLOOD_ON_ITEM | SLOWS_WHILE_IN_HAND | IMMUTABLE_SLOW
-	slowdown = 1.35
-	drag_slowdown = 1.35
+	resistance_flags = INDESTRUCTIBLE
+	sharpness = SHARP_EDGED
+	slowdown = 1.32
+	drag_slowdown = 1.32
 
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
 	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
 
-	attack_speed = 24
+	attack_speed = 18
 	force = 42
 	throwforce = 18
-	wound_bonus = 29
-	bare_wound_bonus = 15
-	resistance_flags = INDESTRUCTIBLE
-	armour_penetration = 12
+	wound_bonus = 24
+	bare_wound_bonus = 16
+	armour_penetration = 16
 	block_chance = 18
-	sharpness = SHARP_EDGED
 
 	var/static/list/lunar_nemesis_factions = list("mining", "boss")
 	var/roll_stamcost = 7

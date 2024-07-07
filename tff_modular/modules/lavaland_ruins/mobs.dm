@@ -136,8 +136,10 @@
 	icon_dead = "demondead"
 	speak_emote = list("echoes")
 	speed = 0.35
-	maxHealth = 1200
-	health = 1200
+	maxHealth = 2200
+	health = 2200
+	current_size = 1.25
+	base_pixel_y = -7.5
 
 	melee_attack_cooldown = 0.25 SECONDS
 	melee_damage_lower = 3

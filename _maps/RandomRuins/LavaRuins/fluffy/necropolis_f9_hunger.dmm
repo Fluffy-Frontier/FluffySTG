@@ -147,8 +147,12 @@
 	desc = "An ancient demon, a spirit of the old nature. Chained. Hungry.";
 	light_color = "#333333";
 	color = "#333333";
-	crusher_loot = list(/obj/item/crusher_trophy/wendigo_horn,/obj/structure/closet/crate/necropolis/tendril);
-	loot = list(/obj/item/seeds/grass/fairy,/obj/item/book/granter/action/spell/summonitem)
+	crusher_loot = list(/obj/item/crusher_trophy/wendigo_horn,/obj/structure/closet/crate/necropolis/tendril,/obj/item/book/granter/action/spell/summonitem);
+	loot = list(/obj/item/seeds/grass/fairy,/obj/item/book/granter/action/spell/summonitem);
+	health = 3400;
+	maxHealth = 3400;
+	scream_cooldown_time = 60;
+	ranged_cooldown_time = 15
 	},
 /obj/effect/decal/cleanable/grand_remains,
 /obj/effect/gibspawner/human/bodypartless,
