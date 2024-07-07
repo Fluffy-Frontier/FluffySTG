@@ -44033,13 +44033,13 @@
 /turf/closed/wall/r_wall/rust,
 /area/station/engineering/supermatter)
 "okq" = (
-/obj/machinery/portable_atmospherics/scrubber,
 /obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /obj/effect/turf_decal/box,
 /obj/effect/turf_decal/tile/red/opposingcorners{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/yellow/opposingcorners,
+/obj/machinery/portable_atmospherics/pipe_scrubber,
 /turf/open/floor/iron/showroomfloor,
 /area/station/engineering/atmos)
 "okr" = (
@@ -74897,10 +74897,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold/scrubbers/visible{
 	dir = 8
 	},
-/obj/machinery/portable_atmospherics/scrubber,
 /obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 1
 	},
+/obj/machinery/portable_atmospherics/pipe_scrubber,
 /turf/open/floor/iron/showroomfloor,
 /area/station/science/ordnance)
 "xWh" = (

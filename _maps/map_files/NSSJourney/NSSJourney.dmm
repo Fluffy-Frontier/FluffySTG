@@ -18681,7 +18681,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 6
 	},
-/obj/machinery/portable_atmospherics/scrubber,
+/obj/machinery/portable_atmospherics/pipe_scrubber,
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "bMM" = (
@@ -46561,13 +46561,13 @@
 /turf/open/floor/iron/dark,
 /area/station/cargo/bitrunning/den)
 "oUq" = (
-/obj/machinery/portable_atmospherics/scrubber,
 /obj/effect/turf_decal/bot,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/directional/south{
 	c_tag = "Ordnance Lab South";
 	network = list("ss13","rd")
 	},
+/obj/machinery/portable_atmospherics/pipe_scrubber,
 /turf/open/floor/iron,
 /area/station/science/ordnance)
 "oUO" = (
