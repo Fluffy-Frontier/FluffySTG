@@ -16380,7 +16380,7 @@
 	c_tag = "Xenobiology Experimentation Cell";
 	network = list("xeno")
 	},
-/turf/open/floor/engine,
+/turf/open/floor/engine/xenobio,
 /area/station/science/xenobiology)
 "bEo" = (
 /obj/machinery/firealarm/directional/north,
@@ -17556,7 +17556,8 @@
 	dir = 1
 	},
 /obj/structure/disposalpipe/trunk,
-/turf/open/floor/engine,
+/obj/structure/sign/warning/biohazard/directional/east,
+/turf/open/floor/engine/xenobio,
 /area/station/science/xenobiology)
 "bIA" = (
 /obj/effect/turf_decal/stripes/line{
@@ -25991,7 +25992,7 @@
 /obj/machinery/igniter{
 	id = "changelingmoment"
 	},
-/turf/open/floor/engine,
+/turf/open/floor/engine/xenobio,
 /area/station/science/xenobiology)
 "cAD" = (
 /obj/effect/decal/cleanable/dirt,
@@ -26000,7 +26001,8 @@
 /area/station/maintenance/port/aft)
 "cAE" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on,
-/turf/open/floor/engine,
+/obj/structure/sign/warning/gas_mask/directional/west,
+/turf/open/floor/engine/xenobio,
 /area/station/science/xenobiology)
 "cAF" = (
 /turf/open/floor/plating,
@@ -42465,7 +42467,7 @@
 /area/station/maintenance/fore)
 "mjp" = (
 /obj/effect/spawner/random/medical/two_percent_xeno_egg_spawner,
-/turf/open/floor/engine,
+/turf/open/floor/engine/xenobio,
 /area/station/science/xenobiology)
 "mjq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -47288,6 +47290,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay)
+"pum" = (
+/turf/open/floor/engine/xenobio,
+/area/station/science/xenobiology)
 "pun" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
@@ -103146,9 +103151,9 @@ byf
 byf
 byf
 bDb
-xAv
-xAv
-xAv
+pum
+pum
+pum
 bDb
 aWv
 aYN
@@ -103403,9 +103408,9 @@ jAK
 omI
 daa
 bDb
-xAv
-xAv
-xAv
+pum
+pum
+pum
 bDb
 ylY
 aZi
@@ -103660,9 +103665,9 @@ fHZ
 htg
 qdT
 bDb
-xAv
-xAv
-xAv
+pum
+pum
+pum
 cAE
 peU
 baW
@@ -103919,8 +103924,8 @@ bBV
 bDb
 bEn
 cAC
-xAv
-xAv
+pum
+pum
 aWC
 bdB
 bMi
@@ -104174,9 +104179,9 @@ bzv
 bAA
 bBU
 bDb
-xAv
-xAv
-xAv
+pum
+pum
+pum
 bIy
 bJK
 bKZ
@@ -104431,9 +104436,9 @@ grP
 bAD
 bBX
 bDb
-xAv
-xAv
-xAv
+pum
+pum
+pum
 bDb
 ylY
 juX
@@ -104689,8 +104694,8 @@ bAC
 bBW
 bDb
 mjp
-xAv
-xAv
+pum
+pum
 bDb
 aWv
 bgC
