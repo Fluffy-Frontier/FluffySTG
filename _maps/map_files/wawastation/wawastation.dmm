@@ -959,18 +959,6 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/iron,
 /area/station/cargo/storage)
-"apA" = (
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/layer_manifold/supply/hidden{
-	dir = 1
-	},
-/obj/machinery/camera/autoname/directional/west{
-	network = list("ss13","rd")
-	},
-/turf/open/floor/engine,
-/area/station/science/ordnance/burnchamber)
 "apH" = (
 /obj/structure/chair/comfy/beige{
 	dir = 1
@@ -1368,6 +1356,10 @@
 	},
 /turf/open/floor/iron,
 /area/station/security/prison)
+"awf" = (
+/obj/machinery/igniter/incinerator_ordmix,
+/turf/open/floor/engine/vacuum,
+/area/station/science/ordnance/burnchamber)
 "awi" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable,
@@ -1797,10 +1789,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
-"aDF" = (
-/obj/structure/broken_flooring/singular/directional/east,
-/turf/open/space/openspace,
-/area/space/nearstation)
 "aDI" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -2049,15 +2037,12 @@
 /obj/structure/railing/corner,
 /turf/open/floor/iron,
 /area/station/security/prison)
-<<<<<<< HEAD
 "aHZ" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
 /turf/open/floor/plating/airless,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "aIc" = (
 /obj/structure/table,
 /obj/effect/spawner/random/bureaucracy/paper,
@@ -2268,7 +2253,6 @@
 /obj/structure/rack,
 /turf/open/floor/plating,
 /area/station/maintenance/department/medical/central)
-<<<<<<< HEAD
 "aKU" = (
 /obj/effect/landmark/start/ai/secondary,
 /obj/machinery/door/window/brigdoor/left/directional/north{
@@ -2296,8 +2280,6 @@
 	},
 /turf/open/floor/circuit/green,
 /area/station/ai_monitored/turret_protected/ai)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "aLe" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -2566,14 +2548,6 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/iron/white/textured_large,
 /area/station/science/xenobiology)
-"aPM" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/door/airlock/maintenance,
-/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
-/obj/effect/mapping_helpers/airlock/abandoned,
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
 "aPO" = (
 /obj/machinery/door/poddoor/shutters/window{
 	id = "maintbridge"
@@ -2677,11 +2651,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/wood/parquet,
 /area/station/service/theater)
-"aSn" = (
-/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/co2,
-/obj/effect/turf_decal/tile/blue/fourcorners,
-/turf/open/floor/catwalk_floor/flat_white,
-/area/station/medical/treatment_center)
 "aSE" = (
 /obj/structure/bodycontainer/morgue{
 	dir = 2
@@ -3353,7 +3322,6 @@
 "bfN" = (
 /turf/open/floor/iron/dark,
 /area/station/maintenance/radshelter/civil)
-<<<<<<< HEAD
 "bfX" = (
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden{
 	dir = 4
@@ -3364,8 +3332,6 @@
 	},
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "bga" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -3769,7 +3735,6 @@
 /obj/effect/spawner/random/structure/table_or_rack,
 /turf/open/floor/plating,
 /area/station/maintenance/port/lesser)
-<<<<<<< HEAD
 "bpN" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/door/airlock/maintenance,
@@ -3779,8 +3744,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating,
 /area/station/maintenance/central/greater)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "bpW" = (
 /obj/effect/turf_decal/stripes/white/line,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
@@ -4302,16 +4265,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/misc/asteroid,
 /area/station/asteroid)
-"bzx" = (
-/obj/structure/table,
-/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
-	dir = 8
-	},
-/obj/effect/spawner/random/entertainment/cigarette_pack,
-/obj/item/cigarette/rollie/mindbreaker,
-/obj/machinery/airalarm/directional/east,
-/turf/open/floor/iron,
-/area/station/cargo/miningoffice)
 "bzB" = (
 /obj/effect/turf_decal/tile/purple/opposingcorners,
 /obj/machinery/recharger,
@@ -4672,11 +4625,6 @@
 /obj/machinery/light/warm/directional/south,
 /turf/open/floor/wood/tile,
 /area/station/command/corporate_showroom)
-"bEY" = (
-/obj/structure/window/reinforced/spawner/directional/north,
-/obj/structure/window/reinforced/spawner/directional/east,
-/turf/open/floor/engine,
-/area/station/science/xenobiology)
 "bFa" = (
 /obj/machinery/duct,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
@@ -5175,25 +5123,6 @@
 /obj/effect/turf_decal/sand/plating,
 /turf/open/floor/plating,
 /area/station/cargo/miningoffice)
-"bPx" = (
-/obj/structure/ladder,
-/obj/structure/window/reinforced/spawner/directional/east{
-	pixel_x = 3
-	},
-/obj/machinery/door/window/brigdoor/left/directional/south{
-	pixel_y = -3;
-	name = "Monkey Pen";
-	req_one_access = list("genetics")
-	},
-/obj/machinery/camera/autoname/directional/west{
-	network = list("ss13","rd")
-	},
-/obj/effect/turf_decal/siding/purple/corner,
-/obj/structure/sign/poster/random/directional/north,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/floor/iron/white/textured,
-/area/station/science/genetics)
 "bPH" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/yellow{
@@ -6253,6 +6182,11 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/engineering/supermatter/room)
+"ckb" = (
+/obj/effect/turf_decal/siding/dark_blue,
+/obj/machinery/holopad,
+/turf/open/floor/iron/textured_large,
+/area/station/command/bridge)
 "ckc" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/grass,
@@ -6850,12 +6784,9 @@
 /obj/structure/rack,
 /turf/open/floor/plating,
 /area/station/maintenance/central/lesser)
-<<<<<<< HEAD
 "cxg" = (
 /turf/open/misc/asteroid/airless,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "cxr" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -7019,6 +6950,18 @@
 	},
 /turf/open/floor/plating/airless,
 /area/station/science/ordnance/bomb)
+"cAG" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold/supply/hidden{
+	dir = 1
+	},
+/obj/machinery/camera/autoname/directional/west{
+	network = list("ss13","rd")
+	},
+/turf/open/floor/engine,
+/area/station/science/ordnance/burnchamber)
 "cAQ" = (
 /obj/vehicle/sealed/mecha/ripley/cargo,
 /obj/effect/decal/cleanable/dirt,
@@ -7483,13 +7426,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
-<<<<<<< HEAD
 "cKD" = (
 /mob/living/basic/mining/basilisk,
 /turf/open/misc/asteroid/airless,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "cLd" = (
 /obj/machinery/oven/range,
 /obj/machinery/light/directional/north,
@@ -7830,6 +7770,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/parquet,
 /area/station/cargo/boutique)
+"cQu" = (
+/obj/machinery/atmospherics/pipe/smart/simple/dark/hidden{
+	dir = 8
+	},
+/turf/open/floor/engine/vacuum,
+/area/station/science/ordnance/burnchamber)
 "cQK" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 4
@@ -8616,10 +8562,6 @@
 /obj/effect/landmark/start/hangover/closet,
 /turf/open/floor/iron,
 /area/station/commons/fitness/recreation)
-"deV" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/incinerator_ordmix,
-/turf/open/floor/engine,
-/area/station/science/ordnance/burnchamber)
 "deX" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 4
@@ -9472,6 +9414,16 @@
 	dir = 8
 	},
 /area/station/science/robotics/lab)
+"drZ" = (
+/obj/effect/turf_decal/tile/green/half/contrasted{
+	dir = 4
+	},
+/obj/structure/chair{
+	name = "Defense"
+	},
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/station/security/courtroom)
 "dsa" = (
 /obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 8
@@ -9763,6 +9715,29 @@
 	},
 /turf/open/floor/iron,
 /area/station/commons/locker)
+"dyS" = (
+/obj/machinery/door/airlock/research/glass/incinerator/ordmix_exterior{
+	name = "Burn Chamber Interior Airlock";
+	id_tag = "ordmix_airlock_interior"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/airlock/access/all/science/ordnance,
+/obj/machinery/airlock_controller/incinerator_ordmix{
+	pixel_y = -26
+	},
+/obj/machinery/button/ignition/incinerator/ordmix{
+	pixel_x = -6;
+	pixel_y = 24
+	},
+/obj/machinery/button/door/incinerator_vent_ordmix{
+	pixel_x = 8;
+	pixel_y = 24
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/engine/vacuum,
+/area/station/science/ordnance/burnchamber)
 "dyV" = (
 /obj/structure/railing{
 	dir = 1
@@ -9906,10 +9881,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/engineering/main)
-"dAn" = (
-/obj/structure/broken_flooring/pile/directional/east,
-/turf/open/space/openspace,
-/area/space/nearstation)
 "dAo" = (
 /obj/structure/table,
 /obj/item/electronics/airalarm{
@@ -10136,7 +10107,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/command/storage/eva)
-<<<<<<< HEAD
 "dCv" = (
 /obj/structure/railing{
 	layer = 3.01
@@ -10145,8 +10115,6 @@
 /obj/machinery/light_switch/directional/west,
 /turf/open/floor/carpet/red,
 /area/station/command/heads_quarters/qm)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "dCG" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
@@ -10546,15 +10514,12 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/execution/education)
-<<<<<<< HEAD
 "dJM" = (
 /obj/structure/table/optable,
 /obj/item/radio/intercom/directional/east,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "dKp" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -10581,12 +10546,6 @@
 /obj/effect/turf_decal/box,
 /turf/open/floor/iron/textured,
 /area/station/engineering/atmos/upper)
-"dLd" = (
-/obj/machinery/sparker/directional/north{
-	id = "Xenobio"
-	},
-/turf/open/floor/engine/xenobio,
-/area/station/science/xenobiology)
 "dLf" = (
 /obj/machinery/camera/directional/west{
 	c_tag = "Atmospherics Tank - Plasma"
@@ -10621,13 +10580,10 @@
 /obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/iron,
 /area/station/engineering/atmos/upper)
-<<<<<<< HEAD
 "dLY" = (
 /obj/structure/broken_flooring/singular/directional/east,
 /turf/open/space/openspace,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "dMa" = (
 /obj/structure/chair/office,
 /obj/effect/turf_decal/tile/brown/fourcorners,
@@ -10732,12 +10688,6 @@
 	},
 /turf/open/floor/iron/dark/small,
 /area/station/science/cytology)
-"dOt" = (
-/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/open/floor/engine/vacuum,
-/area/station/science/ordnance/burnchamber)
 "dOv" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -10894,16 +10844,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/station/maintenance/department/cargo)
-"dQJ" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable,
-/obj/machinery/door/poddoor/preopen{
-	id = "Xenolab";
-	name = "Test Chamber Blast Door"
-	},
-/obj/structure/sign/warning/gas_mask/directional/north,
-/turf/open/floor/engine,
-/area/station/science/xenobiology)
 "dQQ" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -11143,13 +11083,10 @@
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/iron/dark,
 /area/station/security/warden)
-<<<<<<< HEAD
 "dUc" = (
 /obj/structure/lattice,
 /turf/open/space/basic,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "dUi" = (
 /turf/closed/wall/r_wall,
 /area/station/engineering/lobby)
@@ -11581,7 +11518,6 @@
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
-<<<<<<< HEAD
 "ebE" = (
 /obj/effect/spawner/structure/window/hollow/end,
 /turf/open/floor/plating,
@@ -11590,8 +11526,6 @@
 /obj/structure/broken_flooring/pile/directional/east,
 /turf/open/space/openspace,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "ebP" = (
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/effect/mapping_helpers/apc/cell_5k,
@@ -11657,6 +11591,20 @@
 	},
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
+"ecM" = (
+/obj/structure/table,
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -2;
+	pixel_y = 8
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = 3;
+	pixel_y = -2
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/station/science/ordnance)
 "edv" = (
 /obj/machinery/computer/order_console/cook,
 /turf/open/floor/iron,
@@ -11748,6 +11696,10 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance)
+"efL" = (
+/obj/effect/spawner/structure/window/reinforced/plasma,
+/turf/open/floor/engine/vacuum,
+/area/station/science/ordnance/burnchamber)
 "efQ" = (
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
@@ -11759,12 +11711,6 @@
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/iron/dark/textured,
 /area/station/hallway/secondary/exit/departure_lounge)
-"egj" = (
-/obj/machinery/atmospherics/pipe/smart/simple/dark/visible{
-	dir = 4
-	},
-/turf/closed/wall/r_wall,
-/area/station/science/ordnance/burnchamber)
 "ego" = (
 /obj/effect/turf_decal/tile/neutral/opposingcorners,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
@@ -11796,6 +11742,12 @@
 /obj/machinery/light_switch/directional/east,
 /turf/open/floor/iron,
 /area/station/command/gateway)
+"egV" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 8
+	},
+/turf/open/floor/engine/vacuum,
+/area/station/science/ordnance/burnchamber)
 "egY" = (
 /obj/machinery/light_switch/directional/west,
 /turf/open/openspace,
@@ -11832,12 +11784,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/maintenance/central/greater)
-"ehN" = (
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "gib5-old"
-	},
-/turf/open/floor/engine/xenobio,
-/area/station/science/xenobiology)
 "ehO" = (
 /obj/effect/landmark/start/hangover,
 /turf/open/floor/iron,
@@ -12262,16 +12208,6 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/command)
-"epy" = (
-/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/blood/drip,
-/obj/effect/decal/cleanable/blood/footprints{
-	dir = 8
-	},
-/turf/open/floor/engine/xenobio,
-/area/station/science/xenobiology)
 "epA" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -12614,15 +12550,6 @@
 /obj/effect/mapping_helpers/airlock/access/all/engineering/external,
 /turf/open/floor/plating,
 /area/station/maintenance/department/science)
-"evA" = (
-/obj/machinery/atmospherics/components/unary/thermomachine/freezer/on{
-	dir = 4;
-	name = "euthanization chamber freezer"
-	},
-/obj/structure/window/reinforced/spawner/directional/east,
-/obj/effect/turf_decal/tile/blue/fourcorners,
-/turf/open/floor/iron,
-/area/station/science/xenobiology)
 "evN" = (
 /obj/machinery/rnd/server/master,
 /obj/effect/turf_decal/siding/blue{
@@ -13199,12 +13126,6 @@
 	},
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-"eEX" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/turf/open/floor/plating/airless,
-/area/space/nearstation)
 "eFj" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -13242,7 +13163,6 @@
 /obj/structure/table,
 /turf/open/floor/iron/textured,
 /area/station/security/processing)
-<<<<<<< HEAD
 "eFJ" = (
 /obj/structure/table,
 /obj/item/biopsy_tool,
@@ -13251,8 +13171,6 @@
 	},
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "eFK" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -13372,7 +13290,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/engineering/supermatter/room)
-<<<<<<< HEAD
 "eIo" = (
 /obj/structure/statue/sandstone/venus{
 	dir = 1;
@@ -13380,8 +13297,6 @@
 	},
 /turf/open/floor/grass,
 /area/station/science/research)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "eIy" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
@@ -13481,6 +13396,20 @@
 "eKR" = (
 /turf/closed/wall/r_wall,
 /area/station/command/bridge)
+"eKT" = (
+/obj/structure/table,
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/item/pipe_dispenser{
+	pixel_x = 3;
+	pixel_y = 7
+	},
+/obj/item/pipe_dispenser,
+/obj/machinery/power/apc/auto_name/directional/south{
+	areastring = "/area/station/science/ordnance/burnchamber"
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/station/science/ordnance)
 "eLe" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/effect/turf_decal/tile/red/half/contrasted{
@@ -13570,10 +13499,6 @@
 /obj/effect/spawner/costume/sexyclown,
 /turf/open/floor/plating,
 /area/station/maintenance/aft/upper)
-"eNk" = (
-/obj/item/stack/cable_coil,
-/turf/open/space/openspace,
-/area/space/nearstation)
 "eNr" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -13831,12 +13756,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmospherics_engine)
-"eTi" = (
-/obj/structure/closet/crate/critter,
-/mob/living/basic/mothroach,
-/obj/item/stack/spacecash/c100,
-/turf/open/space/basic,
-/area/space/nearstation)
 "eTn" = (
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/iron/dark,
@@ -14223,10 +14142,6 @@
 /obj/item/coin/plasma,
 /turf/open/misc/asteroid,
 /area/station/maintenance/department/science)
-"fcC" = (
-/mob/living/basic/mining/basilisk,
-/turf/open/misc/asteroid/airless,
-/area/space/nearstation)
 "fcH" = (
 /obj/structure/frame/computer{
 	anchored = 1;
@@ -14568,7 +14483,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/textured,
 /area/station/construction/mining/aux_base)
-<<<<<<< HEAD
 "fjb" = (
 /obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/window/reinforced/spawner/directional/east{
@@ -14576,8 +14490,6 @@
 	},
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "fjg" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
@@ -14649,12 +14561,6 @@
 	},
 /turf/open/floor/iron/white/smooth_large,
 /area/station/medical/chemistry/minisat)
-"fkG" = (
-/obj/structure/railing,
-/obj/structure/dresser,
-/obj/machinery/light_switch/directional/west,
-/turf/open/floor/carpet/red,
-/area/station/command/heads_quarters/qm)
 "flc" = (
 /obj/structure/window/spawner/directional/south,
 /obj/machinery/door/window/right/directional/east{
@@ -14685,15 +14591,12 @@
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/station/maintenance/department/medical/central)
-<<<<<<< HEAD
 "flF" = (
 /obj/structure/railing{
 	dir = 8
 	},
 /turf/open/space/basic,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "flH" = (
 /obj/structure/closet/boxinggloves,
 /obj/effect/landmark/start/hangover/closet,
@@ -15150,15 +15053,12 @@
 	},
 /turf/open/floor/plating/airless,
 /area/station/science/ordnance/bomb)
-<<<<<<< HEAD
 "fsV" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gib3-old"
 	},
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "fsZ" = (
 /obj/machinery/door/window/brigdoor/left/directional/south{
 	name = "Research Director Observation";
@@ -15204,10 +15104,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/command/bridge)
-"ftW" = (
-/obj/structure/girder,
-/turf/open/misc/asteroid/airless,
-/area/space/nearstation)
 "ftX" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -15767,17 +15663,6 @@
 "fDz" = (
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance)
-"fDI" = (
-/obj/machinery/door/airlock/research/glass/incinerator/ordmix_exterior{
-	name = "Burn Chamber Exterior Airlock"
-	},
-/obj/effect/mapping_helpers/airlock/locked,
-/obj/effect/mapping_helpers/airlock/access/all/science/ordnance,
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/turf/open/floor/engine/vacuum,
-/area/station/science/ordnance/burnchamber)
 "fDK" = (
 /obj/machinery/door/morgue{
 	name = "Relic Closet";
@@ -16424,14 +16309,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/wood,
 /area/station/service/bar)
-"fOu" = (
-/obj/machinery/camera/directional/east{
-	c_tag = "Xenobiology Lab - Secure Pen";
-	network = list("ss13","rd","xeno")
-	},
-/obj/structure/sign/warning/biohazard/directional/east,
-/turf/open/floor/engine/xenobio,
-/area/station/science/xenobiology)
 "fOv" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/girder,
@@ -16598,10 +16475,6 @@
 /obj/effect/mapping_helpers/airalarm/tlv_no_checks,
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance)
-"fQE" = (
-/obj/structure/sign/warning/biohazard/directional/east,
-/turf/open/floor/engine/xenobio,
-/area/station/science/xenobiology)
 "fQG" = (
 /obj/machinery/door/airlock/virology/glass{
 	name = "Virology Lab";
@@ -17292,14 +17165,6 @@
 /obj/machinery/duct,
 /turf/open/floor/iron/dark,
 /area/station/medical/treatment_center)
-"gdj" = (
-/obj/structure/chair{
-	name = "Defense"
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/security/courtroom)
 "gdA" = (
 /obj/structure/chair/sofa/bench/right,
 /turf/open/floor/iron/white,
@@ -17801,14 +17666,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/station/security/mechbay)
-<<<<<<< HEAD
 "gmm" = (
 /obj/structure/table,
 /obj/item/storage/box/monkeycubes,
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "gms" = (
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible{
 	dir = 4
@@ -17819,10 +17681,6 @@
 /obj/machinery/light_switch/directional/south,
 /turf/open/floor/iron/dark/corner,
 /area/station/engineering/atmos)
-"gmC" = (
-/obj/machinery/igniter/incinerator_ordmix,
-/turf/open/floor/engine/vacuum,
-/area/station/science/ordnance/burnchamber)
 "gmH" = (
 /obj/structure/window/reinforced/spawner/directional/south,
 /turf/open/floor/engine,
@@ -17894,10 +17752,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
-"goL" = (
-/obj/effect/turf_decal/siding/dark_blue,
-/turf/open/floor/iron/textured_large,
-/area/station/command/bridge)
 "goX" = (
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 8
@@ -18084,7 +17938,6 @@
 	},
 /turf/open/openspace,
 /area/station/engineering/supermatter/room)
-<<<<<<< HEAD
 "gsi" = (
 /obj/machinery/computer/cargo{
 	dir = 4
@@ -18108,8 +17961,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/cargo/storage)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "gsm" = (
 /obj/machinery/hydroponics/constructable,
 /obj/machinery/firealarm/directional/north,
@@ -18805,10 +18656,6 @@
 	},
 /turf/open/floor/wood/tile,
 /area/station/service/bar)
-"gEp" = (
-/obj/effect/landmark/carpspawn,
-/turf/open/space/openspace,
-/area/space/nearstation)
 "gEr" = (
 /obj/effect/turf_decal/arrows{
 	dir = 8;
@@ -18857,10 +18704,6 @@
 /obj/machinery/light_switch/directional/north,
 /turf/open/floor/iron,
 /area/station/cargo/miningoffice)
-"gFe" = (
-/obj/structure/fluff/iced_abductor,
-/turf/open/misc/asteroid/airless,
-/area/space/nearstation)
 "gFg" = (
 /obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/siding/purple{
@@ -19539,6 +19382,16 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/iron/white,
 /area/station/science/research)
+"gTF" = (
+/obj/structure/table,
+/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
+	dir = 8
+	},
+/obj/effect/spawner/random/entertainment/cigarette_pack,
+/obj/item/cigarette/rollie/mindbreaker,
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/iron,
+/area/station/cargo/miningoffice)
 "gTI" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 4
@@ -20373,11 +20226,6 @@
 	},
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
-"hfX" = (
-/obj/structure/window/reinforced/spawner/directional/east,
-/obj/machinery/light/directional/south,
-/turf/open/floor/engine,
-/area/station/science/xenobiology)
 "hgi" = (
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 4
@@ -20471,10 +20319,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/science/xenobiology)
-"him" = (
-/obj/machinery/shower/directional/east,
-/turf/open/floor/iron/showroomfloor,
-/area/station/cargo/storage)
 "his" = (
 /obj/effect/decal/cleanable/greenglow/radioactive,
 /obj/machinery/light/small/directional/west,
@@ -21783,15 +21627,12 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
-<<<<<<< HEAD
 "hFN" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 8
 	},
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "hFO" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable,
@@ -22371,10 +22212,6 @@
 /obj/effect/landmark/start/depsec/medical,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/medical)
-"hQR" = (
-/obj/machinery/door/poddoor/incinerator_ordmix,
-/turf/open/floor/engine/vacuum,
-/area/station/science/ordnance/burnchamber)
 "hQY" = (
 /obj/structure/table,
 /obj/effect/spawner/random/bureaucracy/folder,
@@ -22560,7 +22397,6 @@
 	dir = 1
 	},
 /area/station/engineering/atmos/pumproom)
-<<<<<<< HEAD
 "hTZ" = (
 /obj/structure/table,
 /obj/item/reagent_containers/cup/beaker{
@@ -22571,8 +22407,6 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "hUm" = (
 /obj/machinery/light/cold/dim/directional/south,
 /turf/open/floor/catwalk_floor/iron_dark,
@@ -23135,12 +22969,9 @@
 /obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/iron,
 /area/station/engineering/lobby)
-<<<<<<< HEAD
 "ifd" = (
 /turf/open/floor/engine/airless,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "ifj" = (
 /turf/open/floor/circuit/red,
 /area/station/ai_monitored/turret_protected/ai_upload)
@@ -23148,12 +22979,6 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/station/medical/storage)
-"ift" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 8
-	},
-/turf/open/floor/engine/vacuum,
-/area/station/science/ordnance/burnchamber)
 "ifE" = (
 /obj/machinery/vending/medical,
 /obj/effect/turf_decal/tile/blue/fourcorners,
@@ -23627,7 +23452,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
-<<<<<<< HEAD
 "ipq" = (
 /obj/structure/table,
 /obj/item/reagent_containers/condiment/saltshaker{
@@ -23648,8 +23472,6 @@
 /obj/effect/turf_decal/tile/red/opposingcorners,
 /turf/open/floor/iron/white,
 /area/station/security/prison/mess)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "ipu" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/dark/hidden,
 /obj/machinery/door/airlock/public/glass/incinerator/atmos_interior,
@@ -23749,7 +23571,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
-<<<<<<< HEAD
 "irf" = (
 /obj/structure/ladder,
 /obj/structure/window/reinforced/spawner/directional/east{
@@ -23770,8 +23591,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/white/textured,
 /area/station/science/genetics)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "irx" = (
 /obj/structure/chair/sofa/bench/right{
 	dir = 4
@@ -24440,13 +24259,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
-"iEq" = (
-/obj/machinery/camera/motion/directional/west{
-	network = list("aicore");
-	c_tag = "Secure - AI Upper External East"
-	},
-/turf/open/space/openspace,
-/area/space/nearstation)
 "iEA" = (
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/machinery/light/cold/directional/south,
@@ -24678,6 +24490,11 @@
 	},
 /turf/open/floor/iron,
 /area/station/commons/storage/tools)
+"iII" = (
+/obj/machinery/shower/directional/east,
+/obj/machinery/camera/autoname/directional/south,
+/turf/open/floor/iron/showroomfloor,
+/area/station/cargo/storage)
 "iIR" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/sorting/mail/flip{
@@ -25540,14 +25357,11 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
-"jbK" = (
-/obj/structure/table,
-/obj/item/reagent_containers/cup/beaker{
-	pixel_x = 5
-	},
-/obj/item/reagent_containers/condiment/enzyme,
-/turf/open/floor/iron/kitchen,
-/area/station/service/kitchen)
+"jbL" = (
+/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted,
+/turf/open/floor/iron/white,
+/area/station/science/lobby)
 "jbM" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/structure/table/reinforced,
@@ -26083,12 +25897,6 @@
 /obj/machinery/digital_clock/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
-"jky" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on{
-	dir = 8
-	},
-/turf/open/floor/engine/xenobio,
-/area/station/science/xenobiology)
 "jkF" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/tile/dark_red/opposingcorners,
@@ -26277,16 +26085,6 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/station/command/corporate_dock)
-"jnL" = (
-/obj/machinery/door/airlock/maintenance,
-/obj/effect/mapping_helpers/airlock/unres{
-	dir = 1
-	},
-/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
-/obj/effect/mapping_helpers/airlock/abandoned,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
 "jnP" = (
 /obj/machinery/mech_bay_recharge_port{
 	dir = 8
@@ -26560,11 +26358,6 @@
 /obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/iron/dark,
 /area/station/medical/chemistry/minisat)
-"jsr" = (
-/obj/structure/window/reinforced/spawner/directional/east,
-/obj/machinery/light/directional/north,
-/turf/open/floor/engine,
-/area/station/science/xenobiology)
 "jss" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/structure/chair/sofa/bench/left{
@@ -26597,13 +26390,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/holofloor/dark,
 /area/station/command/heads_quarters/cmo)
-"jsX" = (
-/obj/effect/turf_decal/trimline/green/filled/line{
-	dir = 4
-	},
-/obj/machinery/firealarm/directional/east,
-/turf/open/floor/iron/white,
-/area/station/hallway/secondary/entry)
 "jtc" = (
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -26744,7 +26530,6 @@
 	},
 /turf/open/floor/wood,
 /area/station/commons/lounge)
-<<<<<<< HEAD
 "jvV" = (
 /obj/machinery/computer/operating{
 	dir = 8
@@ -26752,8 +26537,6 @@
 /obj/structure/sign/warning/biohazard/directional/east,
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "jwa" = (
 /obj/structure/lattice,
 /obj/effect/spawner/random/structure/grille,
@@ -27613,6 +27396,14 @@
 /obj/structure/sign/poster/contraband/lusty_xenomorph/directional/north,
 /turf/open/floor/plating,
 /area/station/maintenance/central/greater)
+"jIY" = (
+/obj/structure/chair{
+	name = "Defense"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/station/security/courtroom)
 "jJb" = (
 /turf/closed/wall/r_wall,
 /area/station/hallway/secondary/entry)
@@ -28389,10 +28180,6 @@
 /obj/effect/turf_decal/bot_red,
 /turf/open/floor/iron/textured_large,
 /area/station/cargo/sorting)
-"jXv" = (
-/obj/structure/broken_flooring/singular/directional/south,
-/turf/open/space/openspace,
-/area/space/nearstation)
 "jXL" = (
 /obj/effect/spawner/random/trash/garbage{
 	spawn_scatter_radius = 1
@@ -28972,15 +28759,12 @@
 /obj/machinery/disposal/bin,
 /turf/open/floor/iron,
 /area/station/commons/storage/primary)
-<<<<<<< HEAD
 "khJ" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gib5-old"
 	},
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "khL" = (
 /obj/effect/turf_decal/trimline/green/filled/line,
 /obj/machinery/status_display/evac/directional/south,
@@ -29703,7 +29487,6 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/iron,
 /area/station/security/prison)
-<<<<<<< HEAD
 "krz" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on{
 	dir = 4;
@@ -29716,8 +29499,6 @@
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /turf/open/floor/iron,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "krJ" = (
 /obj/machinery/atmospherics/pipe/smart/simple/purple/visible{
 	dir = 10
@@ -29868,12 +29649,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/showroomfloor,
 /area/station/maintenance/department/engine)
-"kuk" = (
-/obj/item/toy/plush/lizard_plushie/space/green{
-	name = "Delaminates-The-Supermatter"
-	},
-/turf/open/misc/asteroid/airless,
-/area/space/nearstation)
 "kuy" = (
 /obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/siding/wood{
@@ -29896,12 +29671,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/station/service/cafeteria)
-"kuW" = (
-/obj/structure/statue/sandstone/venus{
-	dir = 1
-	},
-/turf/open/floor/grass,
-/area/station/science/research)
 "kuX" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -30280,12 +30049,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/department/science)
-"kBs" = (
-/obj/structure/window/reinforced/spawner/directional/south,
-/obj/structure/flora/bush/fullgrass/style_random,
-/obj/structure/window/reinforced/spawner/directional/east,
-/turf/open/floor/grass,
-/area/station/science/research)
 "kBt" = (
 /obj/machinery/modular_computer/preset/civilian,
 /obj/machinery/button/door/directional/north{
@@ -30866,11 +30629,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/commons/lounge)
-"kLQ" = (
-/obj/structure/window/reinforced/spawner/directional/south,
-/obj/structure/window/reinforced/spawner/directional/east,
-/turf/open/floor/engine,
-/area/station/science/xenobiology)
 "kLU" = (
 /obj/machinery/firealarm/directional/east,
 /obj/effect/turf_decal/tile/yellow{
@@ -31572,20 +31330,6 @@
 	},
 /turf/open/floor/iron/herringbone,
 /area/station/hallway/primary/central)
-"kYN" = (
-/obj/structure/table,
-/obj/item/paper_bin,
-/obj/item/pen,
-/obj/item/clothing/glasses/science,
-/obj/machinery/camera/autoname/directional/north{
-	network = list("ss13","rd")
-	},
-/obj/item/flatpack{
-	board = /obj/item/circuitboard/machine/flatpacker
-	},
-/obj/item/multitool,
-/turf/open/floor/iron/white,
-/area/station/science/lab)
 "kYT" = (
 /turf/closed/wall/r_wall,
 /area/station/maintenance/department/medical)
@@ -31929,6 +31673,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/station/security/brig/entrance)
+"lfq" = (
+/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible{
+	dir = 8
+	},
+/turf/closed/wall/r_wall,
+/area/station/science/ordnance/burnchamber)
 "lfu" = (
 /obj/effect/turf_decal/tile/dark_red/opposingcorners,
 /obj/effect/landmark/start/bartender,
@@ -32324,7 +32074,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/ai_monitored/command/storage/eva)
-<<<<<<< HEAD
 "lny" = (
 /obj/structure/window/reinforced/spawner/directional/east{
 	layer = 2.9
@@ -32332,8 +32081,6 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "lnG" = (
 /obj/structure/bed,
 /obj/machinery/airalarm/directional/north,
@@ -32825,11 +32572,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/station/maintenance/port/greater)
-"lxy" = (
-/obj/machinery/door/firedoor,
-/obj/effect/turf_decal/tile/purple/anticorner/contrasted,
-/turf/open/floor/iron/white,
-/area/station/science/lobby)
 "lxI" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/wood/parquet,
@@ -33119,6 +32861,10 @@
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/iron/white,
 /area/station/medical/chemistry/minisat)
+"lCK" = (
+/obj/effect/turf_decal/siding/dark_blue,
+/turf/open/floor/iron/textured_large,
+/area/station/command/bridge)
 "lCO" = (
 /obj/structure/chair/pew{
 	dir = 4
@@ -33398,13 +33144,10 @@
 "lHm" = (
 /turf/closed/wall,
 /area/station/engineering/storage/tech)
-<<<<<<< HEAD
 "lHp" = (
 /obj/effect/spawner/random/medical/two_percent_xeno_egg_spawner,
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "lHx" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Auxiliary Base Construction"
@@ -33694,12 +33437,6 @@
 /obj/machinery/newscaster/directional/south,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
-"lNx" = (
-/obj/machinery/atmospherics/pipe/smart/simple/dark/hidden{
-	dir = 8
-	},
-/turf/open/floor/engine/vacuum,
-/area/station/science/ordnance/burnchamber)
 "lNz" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
@@ -34514,13 +34251,6 @@
 /obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/iron/dark,
 /area/station/commons/locker)
-"mdv" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/carpet,
-/area/station/commons/dorms)
 "mdw" = (
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
@@ -34643,14 +34373,6 @@
 	},
 /turf/open/space/basic,
 /area/space)
-"mgF" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/visible{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/simple/purple/visible/layer1,
-/obj/machinery/portable_atmospherics/pipe_scrubber,
-/turf/open/floor/iron/textured,
-/area/station/engineering/atmos)
 "mgH" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
@@ -34816,6 +34538,12 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/engineering)
+"miM" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/monitored/ordnance_burn_chamber_input{
+	dir = 8
+	},
+/turf/open/floor/engine/vacuum,
+/area/station/science/ordnance/burnchamber)
 "miR" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -35079,7 +34807,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/department/engine)
-<<<<<<< HEAD
 "mnm" = (
 /obj/machinery/chem_dispenser{
 	layer = 2.7
@@ -35095,8 +34822,6 @@
 	dir = 1
 	},
 /area/station/medical/pharmacy)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "mnt" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -36001,6 +35726,10 @@
 /obj/machinery/holopad,
 /turf/open/floor/wood/parquet,
 /area/station/cargo/boutique)
+"mDx" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/closed/wall/r_wall,
+/area/station/science/ordnance/burnchamber)
 "mDF" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 4
@@ -36075,20 +35804,6 @@
 /obj/item/computer_disk/maintenance/spectre_meter,
 /turf/open/misc/asteroid/airless,
 /area/station/asteroid)
-"mEO" = (
-/obj/structure/table,
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/item/pipe_dispenser{
-	pixel_x = 3;
-	pixel_y = 7
-	},
-/obj/item/pipe_dispenser,
-/obj/machinery/power/apc/auto_name/directional/south{
-	areastring = "/area/station/science/ordnance/burnchamber"
-	},
-/obj/structure/cable,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "mEQ" = (
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/plating,
@@ -36236,15 +35951,6 @@
 /obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
-"mHx" = (
-/obj/structure/window/spawner/directional/east,
-/obj/machinery/portable_atmospherics/pipe_scrubber,
-/obj/effect/turf_decal/stripes/corner{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/floor/iron/dark/smooth_large,
-/area/station/science/ordnance)
 "mHG" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /obj/effect/mapping_helpers/airlock/access/all/medical/general,
@@ -36304,6 +36010,15 @@
 	},
 /turf/open/floor/wood/large,
 /area/station/cargo/boutique)
+"mIG" = (
+/obj/structure/window/spawner/directional/east,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/portable_atmospherics/scrubber,
+/turf/open/floor/iron/dark/smooth_large,
+/area/station/science/ordnance)
 "mIH" = (
 /obj/structure/lattice,
 /obj/effect/turf_decal/stripes/asteroid/line{
@@ -37314,6 +37029,9 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
+"nbS" = (
+/turf/open/floor/engine/vacuum,
+/area/station/science/ordnance/burnchamber)
 "ncc" = (
 /obj/structure/flora/bush/flowers_br/style_random,
 /obj/structure/window/spawner/directional/north,
@@ -37897,6 +37615,9 @@
 	dir = 1
 	},
 /area/station/engineering/atmos)
+"nkM" = (
+/turf/closed/wall/r_wall,
+/area/station/science/ordnance/burnchamber)
 "nli" = (
 /obj/machinery/atmospherics/pipe/smart/simple/dark/visible,
 /obj/machinery/airalarm/directional/east,
@@ -38311,6 +38032,10 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/hallway/secondary/entry)
+"ntd" = (
+/obj/machinery/camera/autoname/directional/north,
+/turf/open/floor/iron/showroomfloor,
+/area/station/command/heads_quarters/qm)
 "ntQ" = (
 /obj/structure/sign/warning/docking,
 /turf/closed/wall,
@@ -38332,7 +38057,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/chapel,
 /area/station/service/chapel)
-<<<<<<< HEAD
 "nur" = (
 /obj/structure/chair/wood{
 	dir = 1;
@@ -38341,8 +38065,6 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/carpet,
 /area/station/commons/dorms)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "nuu" = (
 /obj/machinery/bouldertech/refinery,
 /obj/machinery/conveyor{
@@ -38669,13 +38391,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/white,
 /area/station/command/heads_quarters/cmo)
-"nAt" = (
-/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/blood/drip,
-/turf/open/floor/engine/xenobio,
-/area/station/science/xenobiology)
 "nAu" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -39304,12 +39019,6 @@
 "nMI" = (
 /turf/closed/wall/r_wall,
 /area/station/maintenance/port/lesser)
-"nMK" = (
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "gib3-old"
-	},
-/turf/open/floor/engine/xenobio,
-/area/station/science/xenobiology)
 "nMP" = (
 /obj/structure/sign/poster/random/directional/south,
 /obj/machinery/light/small/directional/south,
@@ -39460,7 +39169,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance)
-<<<<<<< HEAD
 "nQm" = (
 /obj/machinery/camera/motion/directional/west{
 	network = list("aicore");
@@ -39468,8 +39176,6 @@
 	},
 /turf/open/space/openspace,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "nQs" = (
 /obj/machinery/light/small/directional/north,
 /turf/open/misc/asteroid,
@@ -39615,10 +39321,6 @@
 /obj/item/emergency_bed,
 /turf/open/floor/iron/white,
 /area/station/maintenance/aft/upper)
-"nUJ" = (
-/obj/effect/spawner/structure/window/reinforced/plasma,
-/turf/open/floor/engine/vacuum,
-/area/station/science/ordnance/burnchamber)
 "nUS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
@@ -39873,15 +39575,12 @@
 "oaP" = (
 /turf/open/floor/plating,
 /area/station/maintenance/department/medical/central)
-<<<<<<< HEAD
 "oaR" = (
 /obj/structure/closet/crate/critter,
 /mob/living/basic/mothroach,
 /obj/item/stack/spacecash/c100,
 /turf/open/space/basic,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "oaY" = (
 /obj/effect/landmark/start/medical_doctor,
 /obj/effect/turf_decal/trimline/blue/filled/line,
@@ -40366,13 +40065,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
-"oma" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
-/obj/structure/railing,
-/turf/open/floor/carpet,
-/area/station/service/theater)
 "omv" = (
 /obj/structure/rack,
 /obj/effect/spawner/random/clothing/backpack,
@@ -40541,25 +40233,6 @@
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/station/maintenance/department/medical/central)
-"oql" = (
-/obj/structure/table,
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -2;
-	pixel_y = 2
-	},
-/obj/item/reagent_containers/condiment/peppermill{
-	desc = "Often used to flavor food or make people sneeze. Fashionably moved to the left side of the table.";
-	pixel_x = -8;
-	pixel_y = 2
-	},
-/obj/item/reagent_containers/condiment/enzyme{
-	pixel_x = 9;
-	pixel_y = 3
-	},
-/obj/item/book/manual/chef_recipes,
-/obj/effect/turf_decal/tile/red/opposingcorners,
-/turf/open/floor/iron/white,
-/area/station/security/prison/mess)
 "oqp" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/stripes/line{
@@ -42225,7 +41898,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/security/prison)
-<<<<<<< HEAD
 "oUk" = (
 /obj/effect/spawner/random{
 	loot = list(/obj/item/cardboard_cutout/nuclear_operative,/obj/item/cardboard_cutout/nuclear_operative,/obj/structure/fluff/balloon_nuke);
@@ -42236,8 +41908,6 @@
 	},
 /turf/open/space/basic,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "oUm" = (
 /obj/effect/turf_decal/tile/red/anticorner/contrasted{
 	dir = 8
@@ -42318,7 +41988,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/circuit/green,
 /area/station/ai_monitored/turret_protected/ai_upload)
-<<<<<<< HEAD
 "oVV" = (
 /obj/structure/table,
 /obj/machinery/camera/directional/east{
@@ -42328,8 +41997,6 @@
 /obj/structure/sign/warning/biohazard/directional/east,
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "oVX" = (
 /obj/structure/table,
 /obj/structure/window/spawner/directional/east,
@@ -42849,12 +42516,6 @@
 	},
 /turf/open/floor/iron/dark/corner,
 /area/station/engineering/atmos/upper)
-"pfe" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/turf/open/space/basic,
-/area/space/nearstation)
 "pfg" = (
 /obj/structure/barricade/wooden,
 /turf/open/misc/asteroid,
@@ -42954,16 +42615,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/freezer,
 /area/station/commons/toilet/restrooms)
-"phq" = (
-/obj/machinery/atmospherics/components/binary/pump/on{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/layer_manifold/scrubbers/hidden,
-/obj/machinery/airlock_sensor/incinerator_ordmix{
-	pixel_y = -24
-	},
-/turf/open/floor/engine,
-/area/station/science/ordnance/burnchamber)
 "phA" = (
 /obj/machinery/computer/exodrone_control_console{
 	dir = 8
@@ -43476,10 +43127,6 @@
 /obj/item/pickaxe/improvised,
 /turf/open/misc/asteroid,
 /area/station/maintenance/port/greater)
-"ppO" = (
-/obj/effect/spawner/structure/window/hollow/end,
-/turf/open/floor/plating,
-/area/station/security/courtroom)
 "ppR" = (
 /obj/machinery/atmospherics/pipe/smart/simple/cyan/visible{
 	dir = 8
@@ -43517,12 +43164,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/engineering/supermatter/room)
-"pqX" = (
-/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible{
-	dir = 8
-	},
-/turf/closed/wall/r_wall,
-/area/station/science/ordnance/burnchamber)
 "prc" = (
 /obj/machinery/field/generator,
 /turf/open/floor/plating,
@@ -43895,13 +43536,10 @@
 	},
 /turf/open/floor/iron/white/smooth_large,
 /area/station/medical/treatment_center)
-<<<<<<< HEAD
 "pwU" = (
 /obj/structure/fluff/iced_abductor,
 /turf/open/misc/asteroid/airless,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "pwV" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -44098,13 +43736,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/engineering/break_room)
-<<<<<<< HEAD
 "pAK" = (
 /obj/item/stack/cable_coil,
 /turf/open/space/openspace,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "pAP" = (
 /obj/effect/spawner/random/food_or_drink/seed{
 	spawn_all_loot = 1;
@@ -44489,9 +44124,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/carpet,
 /area/station/security/detectives_office)
-"pGt" = (
-/turf/open/floor/engine/vacuum,
-/area/station/science/ordnance/burnchamber)
 "pGH" = (
 /obj/machinery/door/airlock/external{
 	name = "Server Room"
@@ -44581,11 +44213,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/security/warden)
-"pIM" = (
-/obj/structure/flora/bush/fullgrass/style_random,
-/obj/structure/window/reinforced/spawner/directional/east,
-/turf/open/floor/grass,
-/area/station/science/research)
 "pIN" = (
 /obj/effect/landmark/atmospheric_sanity/ignore_area,
 /turf/closed/wall/r_wall,
@@ -44654,10 +44281,6 @@
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/iron/white,
 /area/station/medical/surgery/theatre)
-"pKn" = (
-/obj/structure/lattice,
-/turf/open/floor/engine/airless,
-/area/space/nearstation)
 "pKH" = (
 /obj/effect/landmark/start/hangover,
 /obj/machinery/duct,
@@ -44667,7 +44290,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/freezer,
 /area/station/commons/toilet/restrooms)
-<<<<<<< HEAD
 "pKI" = (
 /obj/structure/window/reinforced/spawner/directional/south,
 /obj/structure/flora/bush/fullgrass/style_random,
@@ -44676,8 +44298,6 @@
 	},
 /turf/open/floor/grass,
 /area/station/science/research)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "pLd" = (
 /obj/machinery/door/airlock/security,
 /obj/machinery/door/firedoor,
@@ -44860,7 +44480,6 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating,
 /area/station/maintenance/department/cargo)
-<<<<<<< HEAD
 "pNW" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line,
 /obj/machinery/chem_dispenser{
@@ -44869,8 +44488,6 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/iron/white,
 /area/station/medical/chemistry)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "pOd" = (
 /obj/structure/disposalpipe/segment{
 	dir = 10
@@ -45024,10 +44641,6 @@
 /obj/structure/chair/stool/directional/east,
 /turf/open/floor/wood,
 /area/station/commons/lounge)
-"pRb" = (
-/obj/machinery/light/floor,
-/turf/open/floor/engine/xenobio,
-/area/station/science/xenobiology)
 "pRk" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 9
@@ -45314,7 +44927,6 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/iron/textured,
 /area/station/commons/storage/art)
-<<<<<<< HEAD
 "pVd" = (
 /obj/structure/chair/wood{
 	dir = 1;
@@ -45323,8 +44935,6 @@
 /obj/structure/railing,
 /turf/open/floor/carpet,
 /area/station/service/theater)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "pVh" = (
 /obj/machinery/light/warm/directional/south,
 /obj/effect/turf_decal/siding/wood,
@@ -45593,6 +45203,17 @@
 /obj/effect/spawner/random/structure/grille,
 /turf/open/floor/plating,
 /area/station/maintenance/department/cargo)
+"pZK" = (
+/obj/machinery/door/airlock/research/glass/incinerator/ordmix_exterior{
+	name = "Burn Chamber Exterior Airlock"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/airlock/access/all/science/ordnance,
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/engine/vacuum,
+/area/station/science/ordnance/burnchamber)
 "pZP" = (
 /obj/machinery/atmospherics/pipe/multiz/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/multiz/scrubbers/visible/layer2,
@@ -45905,14 +45526,11 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/hop)
-<<<<<<< HEAD
 "qgy" = (
 /obj/effect/turf_decal/trimline/green/filled/line,
 /obj/structure/railing/corner,
 /turf/open/floor/iron/white,
 /area/station/hallway/secondary/entry)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "qgA" = (
 /obj/structure/window/spawner/directional/east,
 /obj/structure/table,
@@ -46109,13 +45727,10 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/solars/port/fore)
-<<<<<<< HEAD
 "qjk" = (
 /obj/structure/broken_flooring/singular/directional/south,
 /turf/open/space/openspace,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "qjp" = (
 /obj/structure/flora/bush/flowers_yw/style_random,
 /obj/structure/window/spawner/directional/north,
@@ -46745,11 +46360,6 @@
 	},
 /turf/open/floor/wood/tile,
 /area/station/service/bar)
-"qvh" = (
-/obj/effect/turf_decal/siding/dark_blue,
-/obj/machinery/holopad,
-/turf/open/floor/iron/textured_large,
-/area/station/command/bridge)
 "qvA" = (
 /turf/closed/wall,
 /area/station/medical/surgery)
@@ -47153,15 +46763,12 @@
 /obj/item/book/codex_gigas,
 /turf/open/floor/engine/cult,
 /area/station/service/library)
-<<<<<<< HEAD
 "qEr" = (
 /obj/structure/table,
 /obj/item/electropack,
 /obj/item/electropack,
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "qEC" = (
 /obj/effect/turf_decal/stripes{
 	dir = 1
@@ -47953,7 +47560,6 @@
 	},
 /turf/open/openspace,
 /area/station/science/xenobiology)
-<<<<<<< HEAD
 "qUz" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/effect/mapping_helpers/airlock/unres{
@@ -47965,8 +47571,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/maintenance/central/greater)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "qUA" = (
 /obj/effect/landmark/generic_maintenance_landmark,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
@@ -48525,7 +48129,6 @@
 /obj/machinery/telecomms/processor/preset_one,
 /turf/open/floor/circuit/green/telecomms/mainframe,
 /area/station/tcommsat/server)
-<<<<<<< HEAD
 "rdP" = (
 /obj/machinery/chem_dispenser{
 	layer = 2.7
@@ -48542,8 +48145,6 @@
 	dir = 1
 	},
 /area/station/medical/pharmacy)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "rdR" = (
 /obj/structure/broken_flooring/pile,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -48620,20 +48221,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/commons/fitness/recreation)
-"reJ" = (
-/obj/machinery/chem_dispenser,
-/obj/machinery/newscaster/directional/east,
-/obj/effect/turf_decal/trimline/yellow/filled/line{
-	dir = 6
-	},
-/obj/effect/turf_decal/trimline/yellow/filled/mid_joiner,
-/obj/effect/turf_decal/trimline/yellow/filled/mid_joiner{
-	dir = 4
-	},
-/turf/open/floor/iron/white/smooth_corner{
-	dir = 1
-	},
-/area/station/medical/pharmacy)
 "reK" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -49314,27 +48901,6 @@
 /obj/structure/window/spawner/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/commons/fitness/recreation)
-"rpb" = (
-/obj/machinery/computer/cargo{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/brown/half/contrasted{
-	dir = 8
-	},
-/obj/machinery/button/door/directional/west{
-	id = "QMLoaddoor";
-	name = "Loading Doors";
-	pixel_y = -8;
-	req_access = list("cargo")
-	},
-/obj/machinery/button/door/directional/west{
-	id = "QMLoaddoor2";
-	name = "Loading Doors";
-	pixel_y = 8;
-	req_access = list("cargo")
-	},
-/turf/open/floor/iron,
-/area/station/cargo/storage)
 "rpy" = (
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 8
@@ -49443,7 +49009,6 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/iron/dark,
 /area/station/security/execution/education)
-<<<<<<< HEAD
 "rqC" = (
 /obj/machinery/camera/motion/directional/north{
 	network = list("aicore");
@@ -49451,8 +49016,6 @@
 	},
 /turf/open/space/openspace,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "rqJ" = (
 /obj/machinery/air_sensor/plasma_tank,
 /turf/open/floor/engine/plasma,
@@ -49796,9 +49359,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance/testlab)
-"rxr" = (
-/turf/open/floor/engine/xenobio,
-/area/station/science/xenobiology)
 "rxv" = (
 /obj/effect/mapping_helpers/broken_floor,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -50832,16 +50392,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/construction/mining/aux_base)
-"rPL" = (
-/obj/effect/spawner/random{
-	loot = list(/obj/item/cardboard_cutout/nuclear_operative,/obj/item/cardboard_cutout/nuclear_operative,/obj/structure/fluff/balloon_nuke);
-	spawn_all_loot = 1;
-	spawn_loot_chance = 5;
-	spawn_loot_double = 0;
-	spawn_scatter_radius = 1
-	},
-/turf/open/space/basic,
-/area/space/nearstation)
 "rPR" = (
 /obj/effect/turf_decal/siding/green{
 	dir = 5
@@ -50871,9 +50421,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/science/robotics/mechbay)
-"rQy" = (
-/turf/open/floor/iron/showroomfloor,
-/area/station/command/heads_quarters/qm)
 "rQC" = (
 /obj/structure/chair/sofa/bench/right{
 	dir = 4
@@ -50983,12 +50530,6 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance/testlab)
-"rRP" = (
-/obj/effect/turf_decal/trimline/green/filled/line,
-/obj/structure/railing/corner,
-/obj/machinery/firealarm/directional/south,
-/turf/open/floor/iron/white,
-/area/station/hallway/secondary/entry)
 "rRY" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -51116,10 +50657,6 @@
 "rTM" = (
 /turf/closed/wall/r_wall,
 /area/station/security/mechbay)
-"rTQ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/closed/wall/r_wall,
-/area/station/science/ordnance/burnchamber)
 "rTV" = (
 /obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 8
@@ -52053,16 +51590,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
-"shI" = (
-/obj/effect/turf_decal/tile/green/half/contrasted{
-	dir = 4
-	},
-/obj/structure/chair{
-	name = "Defense"
-	},
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/security/courtroom)
 "sia" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -52323,12 +51850,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
-"sml" = (
-/obj/structure/window/reinforced/spawner/directional/north,
-/obj/structure/flora/bush/fullgrass/style_random,
-/obj/structure/window/reinforced/spawner/directional/east,
-/turf/open/floor/grass,
-/area/station/science/research)
 "smn" = (
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
@@ -52805,7 +52326,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
-<<<<<<< HEAD
 "sug" = (
 /obj/structure/table,
 /obj/item/assembly/igniter{
@@ -52818,8 +52338,6 @@
 	},
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "suq" = (
 /obj/effect/landmark/start/station_engineer,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -53314,7 +52832,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/engineering/break_room)
-<<<<<<< HEAD
 "sDq" = (
 /obj/structure/window/reinforced/spawner/directional/east{
 	layer = 2.9
@@ -53322,8 +52839,6 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "sDr" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -53662,13 +53177,6 @@
 /obj/effect/spawner/random/food_or_drink/donkpockets,
 /turf/open/floor/iron,
 /area/station/engineering/lobby)
-"sJz" = (
-/obj/machinery/camera/motion/directional/north{
-	network = list("aicore");
-	c_tag = "Secure - AI Upper External South"
-	},
-/turf/open/space/openspace,
-/area/space/nearstation)
 "sJG" = (
 /obj/effect/turf_decal/stripes{
 	dir = 8
@@ -53743,6 +53251,16 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/station/service/bar/backroom)
+"sLr" = (
+/obj/machinery/atmospherics/components/binary/pump/on{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold/scrubbers/hidden,
+/obj/machinery/airlock_sensor/incinerator_ordmix{
+	pixel_y = -24
+	},
+/turf/open/floor/engine,
+/area/station/science/ordnance/burnchamber)
 "sLt" = (
 /obj/machinery/camera/autoname/directional/east,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -54197,10 +53715,6 @@
 /obj/item/paper_bin/bundlenatural,
 /turf/open/floor/iron/textured_large,
 /area/station/cargo/sorting)
-"sUy" = (
-/obj/structure/sign/poster/contraband/communist_state/directional/east,
-/turf/open/space/basic,
-/area/space/nearstation)
 "sUz" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -55299,7 +54813,6 @@
 /obj/machinery/telecomms/bus/preset_two,
 /turf/open/floor/circuit/green/telecomms/mainframe,
 /area/station/tcommsat/server)
-<<<<<<< HEAD
 "toV" = (
 /obj/structure/table,
 /obj/item/paper_bin,
@@ -55310,8 +54823,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/science/lab)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "tpj" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -55964,7 +55475,6 @@
 	},
 /turf/open/floor/engine/vacuum,
 /area/station/engineering/atmos)
-<<<<<<< HEAD
 "tBC" = (
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden{
 	dir = 4
@@ -55972,8 +55482,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "tBF" = (
 /obj/structure/closet/secure_closet/chief_medical,
 /obj/item/screwdriver,
@@ -56180,12 +55688,6 @@
 /obj/effect/turf_decal/tile/yellow,
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
-"tEU" = (
-/obj/structure/window/reinforced/spawner/directional/west,
-/obj/structure/stairs/north,
-/obj/structure/window/reinforced/spawner/directional/east,
-/turf/open/floor/iron/dark/textured_large,
-/area/station/engineering/storage/tech)
 "tEW" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -56205,7 +55707,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/station/security/mechbay)
-<<<<<<< HEAD
 "tFf" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -56218,8 +55719,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/station/maintenance/central/greater)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "tFD" = (
 /obj/structure/sink/directional/west,
 /obj/structure/mirror/directional/east,
@@ -56592,7 +56091,6 @@
 /obj/item/clothing/suit/utility/fire/firefighter,
 /turf/open/floor/plating/reinforced,
 /area/station/command/emergency_closet)
-<<<<<<< HEAD
 "tMu" = (
 /obj/structure/railing{
 	layer = 3.01
@@ -56600,8 +56098,6 @@
 /obj/effect/spawner/random/structure/closet_private,
 /turf/open/floor/carpet/red,
 /area/station/command/heads_quarters/qm)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "tMz" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -57434,23 +56930,16 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/iron/showroomfloor,
 /area/station/maintenance/department/engine)
-<<<<<<< HEAD
 "uak" = (
 /obj/structure/table,
 /obj/item/restraints/handcuffs,
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "uat" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/station/maintenance/department/science)
-"uaw" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/closed/wall/r_wall,
-/area/station/science/ordnance/burnchamber)
 "uay" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/white/line{
@@ -58021,10 +57510,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/medical/pharmacy)
-"ujW" = (
-/obj/machinery/air_sensor/ordnance_burn_chamber,
-/turf/open/floor/engine/vacuum,
-/area/station/science/ordnance/burnchamber)
 "ukl" = (
 /obj/machinery/door/airlock/external{
 	name = "Solar Maintenance"
@@ -58174,7 +57659,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
-<<<<<<< HEAD
 "umA" = (
 /obj/structure/window/reinforced/spawner/directional/south,
 /obj/structure/window/reinforced/spawner/directional/east{
@@ -58182,8 +57666,6 @@
 	},
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "umK" = (
 /obj/effect/spawner/random/structure/crate_abandoned,
 /turf/open/floor/plating,
@@ -58267,9 +57749,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
-"unZ" = (
-/turf/closed/mineral/asteroid,
-/area/space/nearstation)
 "uoi" = (
 /obj/machinery/space_heater,
 /turf/open/floor/plating,
@@ -58279,6 +57758,11 @@
 /obj/machinery/atmospherics/components/binary/valve,
 /turf/open/floor/plating,
 /area/station/maintenance/department/medical/central)
+"uoP" = (
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/co2,
+/obj/effect/turf_decal/tile/blue/fourcorners,
+/turf/open/floor/catwalk_floor/flat_white,
+/area/station/medical/treatment_center)
 "uoY" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/trimline/purple/filled/arrow_ccw,
@@ -58728,20 +58212,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/engineering/storage)
-"uwN" = (
-/obj/structure/table,
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = -2;
-	pixel_y = 8
-	},
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = 3;
-	pixel_y = -2
-	},
-/obj/structure/cable,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "uwV" = (
 /obj/machinery/door/poddoor/shutters/window/preopen{
 	id = "ordstorage"
@@ -59168,9 +58638,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/iron,
 /area/station/security)
-"uEn" = (
-/turf/open/floor/engine/airless,
-/area/space/nearstation)
 "uEo" = (
 /turf/closed/wall,
 /area/station/service/chapel/office)
@@ -59357,11 +58824,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/engineering/atmos/upper)
-"uIu" = (
-/obj/item/radio/intercom/directional/east,
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/engine/xenobio,
-/area/station/science/xenobiology)
 "uIx" = (
 /obj/machinery/airalarm/directional/west,
 /obj/structure/bed/double{
@@ -59815,29 +59277,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/cargo/storage)
-"uPj" = (
-/obj/machinery/door/airlock/research/glass/incinerator/ordmix_exterior{
-	name = "Burn Chamber Interior Airlock";
-	id_tag = "ordmix_airlock_interior"
-	},
-/obj/effect/mapping_helpers/airlock/locked,
-/obj/effect/mapping_helpers/airlock/access/all/science/ordnance,
-/obj/machinery/airlock_controller/incinerator_ordmix{
-	pixel_y = -26
-	},
-/obj/machinery/button/ignition/incinerator/ordmix{
-	pixel_x = -6;
-	pixel_y = 24
-	},
-/obj/machinery/button/door/incinerator_vent_ordmix{
-	pixel_x = 8;
-	pixel_y = 24
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/turf/open/floor/engine/vacuum,
-/area/station/science/ordnance/burnchamber)
 "uPv" = (
 /obj/machinery/atmospherics/pipe/smart/simple/cyan/visible{
 	dir = 10
@@ -60425,15 +59864,12 @@
 "vaC" = (
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/station/command/corporate_dock)
-<<<<<<< HEAD
 "vaU" = (
 /obj/item/toy/plush/lizard_plushie/space/green{
 	name = "Delaminates-The-Supermatter"
 	},
 /turf/open/misc/asteroid/airless,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "vaY" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/broken_flooring/pile,
@@ -60723,13 +60159,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/station/maintenance/department/engine)
-<<<<<<< HEAD
 "vgW" = (
 /obj/structure/lattice,
 /turf/open/floor/engine/airless,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "vhf" = (
 /obj/machinery/atmospherics/pipe/multiz/supply/visible/layer4,
 /obj/machinery/atmospherics/pipe/multiz/scrubbers/visible/layer2,
@@ -60777,6 +60210,12 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/command/bridge)
+"vib" = (
+/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/engine/vacuum,
+/area/station/science/ordnance/burnchamber)
 "viK" = (
 /obj/effect/turf_decal/tile/dark_blue/half/contrasted{
 	dir = 8
@@ -61069,16 +60508,6 @@
 	},
 /turf/open/floor/wood,
 /area/station/service/theater)
-"vns" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable,
-/obj/machinery/door/poddoor/preopen{
-	id = "Xenolab";
-	name = "Test Chamber Blast Door"
-	},
-/obj/structure/sign/warning/gas_mask/directional/south,
-/turf/open/floor/engine,
-/area/station/science/xenobiology)
 "vnG" = (
 /obj/machinery/disposal/bin,
 /obj/machinery/requests_console/directional/north{
@@ -61539,6 +60968,12 @@
 	mineralChance = 20
 	},
 /area/station/asteroid)
+"vxZ" = (
+/obj/machinery/atmospherics/pipe/smart/simple/dark/visible{
+	dir = 4
+	},
+/turf/closed/wall/r_wall,
+/area/station/science/ordnance/burnchamber)
 "vyj" = (
 /obj/structure/stairs/east,
 /obj/structure/railing,
@@ -61951,7 +61386,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/security/brig)
-<<<<<<< HEAD
 "vFG" = (
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/stairs/north,
@@ -61960,8 +61394,6 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/station/engineering/storage/tech)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "vFH" = (
 /obj/effect/turf_decal/trimline/blue/line{
 	dir = 9
@@ -62217,7 +61649,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/station/maintenance/department/cargo)
-<<<<<<< HEAD
 "vLa" = (
 /obj/structure/flora/bush/fullgrass/style_random,
 /obj/structure/window/reinforced/spawner/directional/east{
@@ -62225,8 +61656,6 @@
 	},
 /turf/open/floor/grass,
 /area/station/science/research)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "vLs" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/fence,
@@ -62331,6 +61760,10 @@
 /obj/structure/flora/coconuts,
 /turf/open/floor/grass,
 /area/station/medical/chemistry)
+"vMR" = (
+/obj/machinery/door/poddoor/incinerator_ordmix,
+/turf/open/floor/engine/vacuum,
+/area/station/science/ordnance/burnchamber)
 "vNc" = (
 /obj/machinery/modular_computer/preset/id{
 	dir = 1
@@ -62819,32 +62252,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/showroomfloor,
 /area/station/engineering/main)
-"vVc" = (
-/obj/effect/landmark/start/ai/secondary,
-/obj/machinery/door/window/brigdoor/right/directional/south{
-	name = "Secondary AI Core Access";
-	req_access = list("ai_upload");
-	pixel_y = -4
-	},
-/obj/machinery/flasher/directional/west{
-	id = "AI";
-	pixel_y = -8
-	},
-/obj/item/radio/intercom/directional/north{
-	pixel_x = -27;
-	frequency = 1447;
-	freerange = 1;
-	on = 0;
-	name = "Private Channel"
-	},
-/obj/item/radio/intercom/directional/north{
-	pixel_x = 27;
-	name = "Common Channel";
-	freerange = 1;
-	listening = 0
-	},
-/turf/open/floor/circuit/green,
-/area/station/ai_monitored/turret_protected/ai)
 "vVe" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable,
@@ -63466,6 +62873,10 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
+"wgI" = (
+/obj/machinery/air_sensor/ordnance_burn_chamber,
+/turf/open/floor/engine/vacuum,
+/area/station/science/ordnance/burnchamber)
 "wgK" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
@@ -63491,19 +62902,6 @@
 /obj/structure/broken_flooring/side/directional/east,
 /turf/open/floor/plating,
 /area/station/maintenance/department/medical)
-"whz" = (
-/obj/machinery/chem_dispenser,
-/obj/item/radio/intercom/directional/north,
-/obj/effect/turf_decal/trimline/yellow/filled/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/yellow/filled/mid_joiner{
-	dir = 1
-	},
-/turf/open/floor/iron/white/smooth_edge{
-	dir = 1
-	},
-/area/station/medical/pharmacy)
 "whG" = (
 /obj/structure/table/reinforced/rglass,
 /obj/item/folder/blue,
@@ -63864,17 +63262,6 @@
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmospherics_engine)
-"wos" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/door/airlock/maintenance,
-/obj/effect/mapping_helpers/airlock/unres{
-	dir = 1
-	},
-/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
 "wou" = (
 /obj/structure/table,
 /obj/item/reagent_containers/cup/glass/coffee,
@@ -64828,12 +64215,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/kitchen,
 /area/station/service/kitchen)
-"wEj" = (
-/obj/effect/turf_decal/trimline/yellow/filled/line,
-/obj/machinery/chem_dispenser,
-/obj/machinery/light/directional/south,
-/turf/open/floor/iron/white,
-/area/station/medical/chemistry)
 "wEs" = (
 /obj/item/target,
 /obj/structure/window/reinforced/spawner/directional/north,
@@ -64988,13 +64369,10 @@
 /obj/structure/closet,
 /turf/open/floor/iron/textured,
 /area/station/hallway/primary/central)
-<<<<<<< HEAD
 "wHl" = (
 /obj/structure/girder,
 /turf/open/misc/asteroid/airless,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "wHo" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/spawner/random/entertainment/arcade{
@@ -65079,13 +64457,10 @@
 "wJy" = (
 /turf/closed/wall,
 /area/station/medical/storage)
-<<<<<<< HEAD
 "wJC" = (
 /obj/structure/sign/poster/contraband/communist_state/directional/east,
 /turf/open/space/basic,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "wJN" = (
 /obj/machinery/space_heater/improvised_chem_heater,
 /turf/open/floor/plating,
@@ -65525,12 +64900,9 @@
 /obj/machinery/status_display/ai/directional/west,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
-<<<<<<< HEAD
 "wSj" = (
 /turf/closed/mineral/asteroid,
 /area/space)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "wSn" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/carpet,
@@ -66055,9 +65427,6 @@
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/hos)
-"xbg" = (
-/turf/closed/wall/r_wall,
-/area/station/science/ordnance/burnchamber)
 "xbi" = (
 /obj/effect/landmark/start/depsec/engineering,
 /obj/effect/turf_decal/trimline/red/filled/line,
@@ -66166,12 +65535,6 @@
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
-"xcX" = (
-/obj/machinery/sparker/directional/south{
-	id = "Xenobio"
-	},
-/turf/open/floor/engine/xenobio,
-/area/station/science/xenobiology)
 "xdf" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -66337,6 +65700,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/cargo/storage)
+"xfQ" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/closed/wall/r_wall,
+/area/station/science/ordnance/burnchamber)
 "xfS" = (
 /obj/structure/sign/departments/aisat/directional/east,
 /obj/effect/turf_decal/tile/dark_blue/anticorner/contrasted{
@@ -66366,12 +65733,6 @@
 	},
 /turf/open/openspace,
 /area/station/science/xenobiology)
-"xgy" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/monitored/ordnance_burn_chamber_input{
-	dir = 8
-	},
-/turf/open/floor/engine/vacuum,
-/area/station/science/ordnance/burnchamber)
 "xgG" = (
 /turf/closed/wall/rust,
 /area/station/maintenance/department/medical/central)
@@ -66719,14 +66080,11 @@
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
-<<<<<<< HEAD
 "xna" = (
 /obj/structure/table,
 /obj/item/tank/internals/anesthetic,
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "xnc" = (
 /obj/machinery/door/airlock/command/glass{
 	name = "Bridge"
@@ -67242,11 +66600,6 @@
 /obj/structure/cable/layer1,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
-"xwG" = (
-/obj/structure/railing,
-/obj/effect/spawner/random/structure/closet_private,
-/turf/open/floor/carpet/red,
-/area/station/command/heads_quarters/qm)
 "xwO" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/disposalpipe/segment,
@@ -67305,7 +66658,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
-<<<<<<< HEAD
 "xxO" = (
 /obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/flora/bush/fullgrass/style_random,
@@ -67314,8 +66666,6 @@
 	},
 /turf/open/floor/grass,
 /area/station/science/research)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "xxT" = (
 /obj/structure/chair/wood,
 /obj/effect/turf_decal/siding/wood{
@@ -68303,32 +67653,6 @@
 	},
 /turf/open/floor/catwalk_floor,
 /area/station/cargo/storage)
-"xRu" = (
-/obj/effect/landmark/start/ai/secondary,
-/obj/machinery/door/window/brigdoor/left/directional/north{
-	name = "Tertiary AI Core Access";
-	req_access = list("ai_upload");
-	pixel_y = 3
-	},
-/obj/item/radio/intercom/directional/south{
-	pixel_x = -27;
-	freerange = 1;
-	listening = 0;
-	name = "Common Channel"
-	},
-/obj/item/radio/intercom/directional/south{
-	pixel_x = 27;
-	frequency = 1447;
-	freerange = 1;
-	listening = 0;
-	name = "Private Channel"
-	},
-/obj/machinery/flasher/directional/east{
-	pixel_y = 8;
-	id = "AI"
-	},
-/turf/open/floor/circuit/green,
-/area/station/ai_monitored/turret_protected/ai)
 "xRG" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -68556,7 +67880,6 @@
 /obj/effect/landmark/start/bitrunner,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/station/cargo/bitrunning/den)
-<<<<<<< HEAD
 "xWR" = (
 /obj/effect/landmark/start/ai/secondary,
 /obj/machinery/door/window/brigdoor/right/directional/south{
@@ -68584,8 +67907,6 @@
 	},
 /turf/open/floor/circuit/green,
 /area/station/ai_monitored/turret_protected/ai)
-=======
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 "xXh" = (
 /obj/machinery/power/shieldwallgen,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -68629,6 +67950,10 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/medical/morgue)
+"xXF" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/incinerator_ordmix,
+/turf/open/floor/engine,
+/area/station/science/ordnance/burnchamber)
 "xXY" = (
 /obj/effect/turf_decal/tile/neutral/opposingcorners,
 /obj/effect/turf_decal/siding/wideplating/dark/end{
@@ -69126,10 +68451,6 @@
 /obj/effect/spawner/random/structure/closet_maintenance,
 /turf/open/floor/iron,
 /area/station/maintenance/department/medical/central)
-"ygW" = (
-/obj/effect/spawner/random/medical/two_percent_xeno_egg_spawner,
-/turf/open/floor/engine/xenobio,
-/area/station/science/xenobiology)
 "yhj" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/smart/simple/green/visible{
@@ -81400,7 +80721,7 @@ sfu
 sfu
 bgv
 lam
-rpb
+gsi
 lam
 goX
 nZt
@@ -81458,11 +80779,7 @@ oDH
 bfl
 bwC
 wfz
-<<<<<<< HEAD
 dUc
-=======
-bwC
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 bwC
 shs
 cLf
@@ -82978,7 +82295,7 @@ kFT
 kFT
 qIS
 osT
-aSn
+uoP
 ioh
 gzw
 dKw
@@ -85992,7 +85309,7 @@ eFK
 iEO
 oCR
 bxs
-oql
+ipq
 jza
 mHL
 iHG
@@ -87366,7 +86683,7 @@ mXM
 cLf
 cLf
 cLf
-eTi
+oaR
 cLf
 cLf
 cLf
@@ -87594,7 +86911,7 @@ vLx
 lZb
 mAa
 qfB
-whz
+mnm
 bII
 icw
 mnc
@@ -88111,7 +87428,7 @@ qfB
 vyO
 hjW
 dGs
-reJ
+rdP
 qfB
 rgx
 goI
@@ -89923,11 +89240,7 @@ jNJ
 pUY
 kJT
 hgV
-<<<<<<< HEAD
 wJC
-=======
-sUy
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 bwC
 uuN
 gJE
@@ -91678,7 +90991,7 @@ heI
 jAG
 oed
 oed
-ppO
+ebE
 fpH
 bxH
 oed
@@ -91933,7 +91246,7 @@ rWZ
 bZH
 sRV
 jAG
-gdj
+jIY
 wpc
 mAX
 aHl
@@ -92190,7 +91503,7 @@ dIT
 ked
 ked
 iCa
-shI
+drZ
 dBS
 vhT
 fYj
@@ -96066,7 +95379,7 @@ enu
 cLd
 cdk
 fTl
-jbK
+hTZ
 bJo
 cdk
 rPg
@@ -96528,7 +95841,7 @@ cLf
 iUF
 cLf
 cLf
-rPL
+oUk
 cLf
 cLf
 bqX
@@ -96537,7 +95850,7 @@ yhk
 fUR
 rUi
 typ
-qvh
+ckb
 jlw
 iRB
 gkQ
@@ -96794,7 +96107,7 @@ qlc
 wbf
 lYZ
 typ
-goL
+lCK
 aHs
 iRB
 kZg
@@ -98646,7 +97959,7 @@ fkn
 sAc
 bmL
 wSn
-oma
+pVd
 axa
 xbs
 bmp
@@ -101703,7 +101016,7 @@ tCE
 rOq
 fDa
 wGu
-mdv
+nur
 jkG
 fDa
 mgV
@@ -102981,7 +102294,7 @@ grl
 pJN
 iKc
 rSL
-lxy
+jbL
 lFE
 cBr
 deY
@@ -105073,7 +104386,7 @@ cLf
 cLf
 uuN
 xAy
-tEU
+vFG
 ugN
 pWE
 hYF
@@ -105803,7 +105116,7 @@ vfJ
 rXG
 raz
 cPt
-kYN
+toV
 hEw
 irJ
 cPt
@@ -107353,7 +106666,7 @@ tVF
 wAy
 mUP
 hfB
-kuW
+eIo
 smE
 xCw
 rAz
@@ -107609,9 +106922,9 @@ mmV
 tVF
 jiw
 sHn
-sml
-pIM
-kBs
+xxO
+vLa
+pKI
 lBJ
 puX
 thf
@@ -108609,11 +107922,11 @@ cLf
 cLf
 cLf
 cLf
-pfe
+flF
 neT
 utU
 neT
-pfe
+flF
 cLf
 cLf
 cLf
@@ -109418,7 +108731,7 @@ sSN
 nal
 gOY
 vxX
-kkx
+cxg
 vxX
 bwC
 bwC
@@ -109674,8 +108987,8 @@ gOY
 tDS
 cpJ
 gOY
-kkx
-kkx
+cxg
+cxg
 vxX
 nbu
 nbu
@@ -109692,7 +109005,7 @@ oRf
 sYU
 hLj
 syl
-mgF
+nDN
 nDN
 nDN
 pPv
@@ -109931,8 +109244,8 @@ uPL
 pVG
 oLj
 gOY
-ftW
-kkx
+wHl
+cxg
 vxX
 nbu
 aXt
@@ -110188,8 +109501,8 @@ gOY
 wOn
 gOY
 gOY
-kkx
-kkx
+cxg
+cxg
 vxX
 nbu
 aXt
@@ -110445,8 +109758,8 @@ bPc
 efJ
 dPh
 gOY
-kkx
-kkx
+cxg
+cxg
 vxX
 nbu
 aXt
@@ -110703,7 +110016,7 @@ rkI
 rYe
 gOY
 gOY
-kkx
+cxg
 vxX
 nbu
 nbu
@@ -110960,7 +110273,7 @@ fDz
 fDz
 gqV
 gOY
-kkx
+cxg
 vxX
 nbu
 pIV
@@ -111217,7 +110530,7 @@ fDz
 dyd
 vrG
 gOY
-kkx
+cxg
 vxX
 nbu
 pIV
@@ -111474,7 +110787,7 @@ vvE
 aWM
 vzP
 gOY
-kkx
+cxg
 vxX
 nbu
 pIV
@@ -111725,13 +111038,13 @@ aks
 tTK
 tvB
 cSI
-xbg
-egj
-uPj
-pqX
-rTQ
+nkM
+vxZ
+dyS
+lfq
+mDx
 gOY
-kkx
+cxg
 vxX
 nbu
 nbu
@@ -111981,14 +111294,14 @@ gOY
 gOY
 tTK
 rFA
-mHx
-uaw
-apA
-deV
-phq
-rTQ
-kkx
-kkx
+mIG
+xfQ
+cAG
+xXF
+sLr
+mDx
+cxg
+cxg
 vxX
 nbu
 msY
@@ -112237,15 +111550,15 @@ mnS
 gOY
 iJZ
 lcd
-uwN
-mEO
-xbg
-egj
-fDI
-pqX
-xbg
-kkx
-kkx
+ecM
+eKT
+nkM
+vxZ
+pZK
+lfq
+nkM
+cxg
+cxg
 vxX
 nbu
 msY
@@ -112496,7 +111809,6 @@ elG
 uXb
 cmn
 jgl
-<<<<<<< HEAD
 efL
 cQu
 wgI
@@ -112504,15 +111816,6 @@ vib
 vMR
 bwC
 cxg
-=======
-nUJ
-lNx
-ujW
-dOt
-hQR
-bwC
-kkx
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 vxX
 nbu
 msY
@@ -112763,7 +112066,6 @@ joD
 ffK
 cut
 rcR
-<<<<<<< HEAD
 efL
 miM
 awf
@@ -112771,15 +112073,6 @@ egV
 vMR
 bwC
 cxg
-=======
-nUJ
-xgy
-gmC
-ift
-hQR
-bwC
-kkx
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 vxX
 nbu
 nbu
@@ -113030,19 +112323,11 @@ kke
 wmM
 auA
 icz
-<<<<<<< HEAD
 efL
 nbS
 nbS
 nbS
 vMR
-=======
-nUJ
-pGt
-pGt
-pGt
-hQR
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 bwC
 cLf
 vxX
@@ -113295,19 +112580,11 @@ gOY
 gOY
 roK
 gOY
-<<<<<<< HEAD
 nkM
 nkM
 nkM
 nkM
 nkM
-=======
-xbg
-xbg
-xbg
-xbg
-xbg
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 bwC
 cLf
 bwC
@@ -114112,8 +113389,8 @@ kGZ
 vuh
 wmr
 bBr
-bwC
-bwC
+dUc
+dUc
 jnY
 alX
 kQF
@@ -114369,8 +113646,8 @@ nLd
 owL
 fpg
 bBr
-bwC
-bwC
+dUc
+dUc
 jnY
 alX
 nPW
@@ -114626,7 +113903,7 @@ bBr
 kUX
 kUX
 kUX
-bwC
+dUc
 vxX
 uFC
 spr
@@ -115616,7 +114893,7 @@ cLf
 cLf
 bwC
 ojz
-eEX
+aHZ
 ojz
 bwC
 bwC
@@ -115672,8 +114949,8 @@ ncv
 ncm
 uFC
 vxX
-kkx
-kkx
+cxg
+cxg
 xzT
 tgj
 tgj
@@ -116185,7 +115462,7 @@ sIm
 sIm
 kEu
 uFC
-kuk
+vaU
 vxX
 vxX
 vxX
@@ -119225,17 +118502,17 @@ bwC
 jQS
 tLO
 jQS
-jsr
+sDq
 aJA
-kLQ
+umA
 beE
 asn
 hBF
 sAf
 jSV
-bEY
+fjb
 aJA
-hfX
+lny
 jQS
 ifV
 jQS
@@ -121029,7 +120306,7 @@ jQS
 ufD
 jQS
 tMz
-evA
+krz
 tMz
 jQS
 sOj
@@ -123073,13 +122350,8 @@ cLf
 cLf
 cLf
 bwC
-<<<<<<< HEAD
 dUc
 dUc
-=======
-bwC
-bwC
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 fZF
 jQS
 jQS
@@ -123335,13 +122607,8 @@ cLf
 cLf
 cLf
 bwC
-<<<<<<< HEAD
 dUc
 dUc
-=======
-bwC
-bwC
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 fZF
 jQS
 jQS
@@ -123350,19 +122617,11 @@ jQS
 jQS
 jQS
 jQS
-<<<<<<< HEAD
 pXV
 pXV
 hNP
 pXV
 pXV
-=======
-dQJ
-pXV
-hNP
-pXV
-vns
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 jQS
 jQS
 jQS
@@ -123614,7 +122873,6 @@ fZF
 fZF
 jQS
 jQS
-<<<<<<< HEAD
 kOL
 kOL
 fsV
@@ -123622,15 +122880,6 @@ bfX
 kOL
 kOL
 kOL
-=======
-rxr
-rxr
-nMK
-epy
-rxr
-rxr
-rxr
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 jQS
 jQS
 fZF
@@ -123881,7 +123130,6 @@ cLf
 fZF
 jQS
 jQS
-<<<<<<< HEAD
 eFJ
 kOL
 kOL
@@ -123889,15 +123137,6 @@ tBC
 kOL
 kOL
 qEr
-=======
-dLd
-rxr
-rxr
-nAt
-rxr
-rxr
-rxr
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 jQS
 jQS
 fZF
@@ -124148,7 +123387,6 @@ bwC
 fZF
 jQS
 jQS
-<<<<<<< HEAD
 gmm
 kOL
 mvh
@@ -124156,15 +123394,6 @@ hFN
 mvh
 khJ
 sug
-=======
-rxr
-rxr
-pRb
-jky
-pRb
-ehN
-xcX
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 jQS
 jQS
 fZF
@@ -124415,7 +123644,6 @@ cLf
 fZF
 jQS
 jQS
-<<<<<<< HEAD
 kOL
 kOL
 kOL
@@ -124423,15 +123651,6 @@ kOL
 kOL
 kOL
 lHp
-=======
-rxr
-rxr
-rxr
-rxr
-rxr
-rxr
-ygW
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 jQS
 jQS
 fZF
@@ -124683,19 +123902,11 @@ fZF
 jQS
 jQS
 jQS
-<<<<<<< HEAD
 uak
 oVV
 dJM
 jvV
 xna
-=======
-rxr
-fOu
-uIu
-fQE
-rxr
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 jQS
 jQS
 jQS
@@ -146752,19 +145963,11 @@ hhX
 hhX
 hhX
 hhX
-<<<<<<< HEAD
 hhX
 fNW
 hhX
 hhX
 hhX
-=======
-hen
-gEp
-hen
-hen
-hen
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 vxX
 vxX
 vxX
@@ -148587,7 +147790,7 @@ bBo
 iaN
 fON
 jds
-bzx
+gTF
 sdc
 sdc
 rWv
@@ -148606,7 +147809,7 @@ mUi
 fpx
 rDE
 uIx
-fkG
+dCv
 fxF
 fxF
 wOU
@@ -148863,7 +148066,7 @@ mUi
 rxK
 tCm
 lwu
-xwG
+tMu
 fxF
 fxF
 wOU
@@ -149134,7 +148337,7 @@ dhj
 xmy
 sZH
 pWr
-wEj
+pNW
 ahq
 kuI
 sKt
@@ -150403,7 +149606,7 @@ gli
 gli
 wEd
 wOU
-rQy
+ntd
 pZj
 wOU
 vxX
@@ -152198,7 +151401,7 @@ sdc
 rDa
 ljk
 jTa
-him
+iII
 vOu
 dDm
 xeA
@@ -154251,7 +153454,7 @@ oMn
 ocJ
 brc
 ofc
-jnL
+qUz
 hhU
 xCI
 gYW
@@ -155783,7 +154986,7 @@ vxX
 gYW
 dum
 hdN
-aPM
+bpN
 hdN
 gYW
 ucb
@@ -156815,7 +156018,7 @@ mMN
 jVk
 jVk
 fuk
-wos
+tFf
 xiM
 hVN
 aLN
@@ -157358,7 +156561,7 @@ sxV
 sxV
 hrI
 leZ
-rRP
+qgy
 uXD
 uXD
 uXD
@@ -158379,11 +157582,7 @@ oKx
 oKx
 dzu
 oKx
-<<<<<<< HEAD
 oKx
-=======
-jsX
->>>>>>> 4e31a0ec0e5 ([MIRROR] Pipe Scrubber [MDB IGNORE] (#3521))
 mCn
 cUv
 nsY
@@ -170210,7 +169409,7 @@ mCN
 xAy
 cLf
 hhX
-uEn
+ifd
 bkk
 eng
 msi
@@ -170467,7 +169666,7 @@ gVC
 xAy
 cLf
 hhX
-uEn
+ifd
 bkk
 qwG
 msi
@@ -170724,7 +169923,7 @@ sWT
 bdC
 fSP
 tPb
-pKn
+vgW
 uJV
 qwG
 eeB
@@ -170981,7 +170180,7 @@ pbY
 xAy
 cLf
 hhX
-uEn
+ifd
 bkk
 oJU
 eeB
@@ -171238,7 +170437,7 @@ rCv
 xAy
 cLf
 hhX
-uEn
+ifd
 bkk
 qwG
 eeB
@@ -172200,7 +171399,7 @@ uVI
 pFE
 kWb
 kWb
-vVc
+xWR
 qDl
 qDl
 kdR
@@ -172210,7 +171409,7 @@ kWb
 mjq
 qDl
 qDl
-xRu
+aKU
 kWb
 kWb
 vxX
@@ -173241,7 +172440,7 @@ kWb
 kWb
 kWb
 kWb
-sJz
+rqC
 hhX
 hhX
 hhX
@@ -173342,8 +172541,8 @@ qzZ
 qzZ
 igG
 mtH
-jXv
-aDF
+qjk
+dLY
 uJc
 mml
 mml
@@ -173509,7 +172708,7 @@ fYe
 lJq
 raz
 lAc
-bPx
+irf
 tsy
 jCT
 rin
@@ -173592,7 +172791,7 @@ jdd
 hhX
 hhX
 hhX
-aDF
+dLY
 hhX
 hhX
 hhX
@@ -174105,9 +173304,9 @@ vxX
 jVV
 pnS
 hhX
-dAn
+ebN
 hhX
-eNk
+pAK
 hhX
 vUj
 mml
@@ -174261,7 +173460,7 @@ vxX
 hhX
 hhX
 jVV
-iEq
+nQm
 jVV
 hhX
 hhX
@@ -198036,8 +197235,8 @@ hhX
 hhX
 hhX
 hhX
-kkx
-kkx
+cxg
+cxg
 hhX
 hhX
 hhX
@@ -198292,10 +197491,10 @@ hhX
 hhX
 hhX
 hhX
-kkx
-fcC
-unZ
-kkx
+cxg
+cKD
+wSj
+cxg
 hhX
 hhX
 hhX
@@ -198548,11 +197747,11 @@ hhX
 hhX
 hhX
 hhX
-kkx
-unZ
-gFe
-unZ
-unZ
+cxg
+wSj
+pwU
+wSj
+wSj
 hhX
 hhX
 hhX
@@ -198805,10 +198004,10 @@ hhX
 hhX
 hhX
 hhX
-kkx
-unZ
-unZ
-unZ
+cxg
+wSj
+wSj
+wSj
 hhX
 hhX
 hhX
