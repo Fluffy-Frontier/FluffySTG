@@ -263,3 +263,133 @@
   - rscadd: 'Added a bitrunning deathmatch map: Island Brawl. Both ghosts and runners
       get many more spawns than normal.'
   - bugfix: Lowered the static vision time in domain load in.
+2024-07-05:
+  jlsnow301:
+  - bugfix: Reverts the fully interactive lootpanel, please just refresh it if you
+      want to see new contents
+2024-07-06:
+  Absolucy:
+  - qol: Linked speech now prevents messages from highlighting if its a message you
+      sent, or if you are the owner of said link..
+  - qol: Linked speech messages are now marked as radio messages, for chat tab purposes.
+  ArcaneDefence:
+  - rscadd: You can now microwave station pets that you can pick up, with predictable
+      outcomes
+  ArcaneMusic:
+  - rscadd: The Illumination Applications technode now includes a gunkit for a new
+      gun, the Photon Cannon.
+  Ben10Omintrix:
+  - bugfix: fixes not being able to clean microwaves
+  - bugfix: fixes mansus grasp not clearing runes
+  DATA_, with sounds made by Beebblie:
+  - sound: You will now be able to hear your muffled breathing while using internals.
+      This can be turned off in the game settings.
+  DaCoolBoss:
+  - code_imp: Cleaned up relic code.
+  - image: Added necrotech themed relics.
+  FlufflesTheDog:
+  - bugfix: wall heaters use an appropriate amount of power
+  - bugfix: wall heaters don't offset your height when walking past them
+  - bugfix: wall heaters don't drop free frames and batteries when deconstructed
+  - qol: wall heater frames save the cell that was in the heater
+  - qol: cells can be replaced in wall heater frames, before placement
+  Ghommie:
+  - qol: You no longer need to reach the very edge of the game screen to reach the
+      maximum zoom range when scoped.
+  Iamgoofball:
+  - rscadd: You can now craft a singularity hammer using all nine anomaly cores and
+      the supermatter.
+  LT3:
+  - qol: Crew monitor defaults to sort by vitals
+  - sound: Changed blood filter cycle sound
+  MTandi:
+  - image: Fixed the cargo crate having wrong stripe width in open state
+  - qol: Data disks are now printed in lathes instead of circuit imprinter
+  - bugfix: Binary devices no longer ignore the volume of the output pipe network
+  - balance: 'Techweb: High yield explosive is now a discount experiment for Exotic
+      Ammo node, giving more free points'
+  - balance: 'Techweb: Replaced the botany/xenobio discount experiments with a new
+      mutant scan experiment for the Gene Engineering node'
+  - balance: 'Techweb: Damaged mech scan is a discount experiment for tier 4 Mech
+      Energy Guns node, giving twice more free points'
+  - balance: 'Techweb: Added a new anomaly scan experiment that gives full discount
+      for the Advanced Anomaly Shells, also moving the node to tier 5'
+  - balance: 'Techweb: Moved mech RCD to the Experimental Tools node'
+  - balance: 'Techweb: Moved handcuffs to T2 security node, leaving only zipties in
+      T1'
+  - balance: 'Techweb: Non-human Autopsy is a discount experiment instead of a required
+      one now'
+  - balance: 'Techweb: Parts scan experiments require 6 machines instead of 4'
+  - rscdel: 'Techweb: Removed the New Toys node moving contents to sec and medbay
+      trees'
+  - qol: Made air horn craftable from a spraycan and a bikehorn
+  - qol: 'Techweb: Better wording on the slime scan experiment'
+  OrionTheFox:
+  - rscadd: updated Icebox's lavaland ruin. The incursion grows...
+  Paxilmaniac:
+  - image: The sprites for the projectile dampener field have been updated
+  RuinedTrickster:
+  - rscadd: Added 'Shihakusho' and 'White Robe' to autodrobe and clothesmate
+  - rscadd: '''Shihakusho'' and ''White Robe'' added to loadout options'
+  ShizCalev:
+  - bugfix: The power for all science burn chambers across all maps now works properly.
+  SmArtKar:
+  - rscdel: You can no longer get turned into a dullahan by a genetic meltdown
+  - refactor: Refactored genetic meltdown code into datums, making it more extendable.
+  - image: Some gloves have received new sprites
+  - image: Updated diamond stacks to fit its "unstacked" version.
+  SyncIt21:
+  - bugfix: material container won't consume the contents of an item if that item
+      itself is rejected for any reason
+  - qol: you can use any storage medium & not just bags/boxes to dump stuff into material
+      containers
+  - bugfix: omni crowbar tool interaction for replacing tiles has been fixed
+  - bugfix: techfab screentip does not runtime when you hover over it with an omnitool
+      multitool
+  - bugfix: medi borgs can do brain surgery again
+  - code_imp: improved multitool & general tool code for some machines
+  - code_imp: improved mouse drag & drop code
+  Varoxus:
+  - rscadd: increased maximum penis and testicle size.
+  ViktorKoL:
+  - rscadd: the Feast of Owls now leaves more dramatic messages in your chat
+  - sound: the Feast of Owls now has a little theme
+  Zergspower:
+  - rscadd: 'Added a new ritual for Ashwalkers: Attunement to the land. Pacify yourself
+      to have the general fauna ignore you and even try to save you.'
+  - qol: Returned the speed modifier Age Ritual for Ashwalkers, granting the Ash Storm
+      immunity trait from the start.
+  - bugfix: fixes faction gunk relating to lavaland mobs and Ashwalkers, they should
+      behave normally once again
+  - code_imp: Ash Ritual code is now in one file for OCD reasons
+  - bugfix: fixes borgs ability to climb
+  aaaa1023:
+  - qol: Increased view_range on the Psyker Bounty Hunters' Shuttle navigation console.
+  - bugfix: 'Fixed the shuttle navigation console camera eye being incorrectly offset
+      on: the SpacePol van, the Russian bounty hunters, the default bounty hunters,
+      the Psyker bounty hunters, and the MI13 Foodtruck.'
+  - bugfix: Fixed the SpacePol van, Russian bounty hunters, default bounty hunters,
+      and Psyker bounty hunters' shuttles all flying in incorrect directions.
+  carlarctg:
+  - qol: Transhumanist and prosthetic limb no longer conflict. If you pick the same
+      limb for both it uses the weaker prosthetic (dumbass)
+  - code_imp: Made the name for prosthetic limb global list more intelligible
+  jlsnow301:
+  - bugfix: Bitrunning hacker aliases are now much more permissive
+  mc-oofert:
+  - bugfix: deathmatch OSHA Violator map has actually functioning field gens now
+  - bugfix: being polymorphed in deathmatch does not count you dead
+  - bugfix: deathmatch cyborgs may not talk in binary
+  - qol: deathmatch map names are sorted alphabetically
+  - spellcheck: deathmatch final destination clown and chef loadouts have been renamed
+      to avoid confusion
+  - rscadd: mecha wire that shoots you or anyone nearby if pulsed or cut
+  - bugfix: mecha shock wire shocks you
+  - balance: removed tasers, the unfirable turret gun, death wand, polymorph wands
+      and the enchanted modsuit from lootbox loot tables
+  - bugfix: lootbox guns should now mostly not have syndicate firing pins so you can
+      actually use them
+  - balance: Facehuggers dont make people go to sleep but muffles speech
+  - code_imp: Very very minor xenomorph code cleanup
+  - refactor: Muzzles are now an element
+  - rscadd: 254 new vox lines
