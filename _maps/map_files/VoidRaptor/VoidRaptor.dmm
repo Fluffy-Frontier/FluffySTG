@@ -8080,7 +8080,7 @@
 "cvG" = (
 /obj/structure/sign/warning/biohazard/directional/east,
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "cvH" = (
 /turf/closed/wall,
 /area/station/medical/psychology)
@@ -11111,7 +11111,6 @@
 /turf/open/floor/pod/dark,
 /area/station/service/chapel/funeral)
 "dou" = (
-/obj/machinery/airalarm/directional/south,
 /obj/structure/rack,
 /obj/effect/turf_decal/trimline/dark_red/filled/line,
 /obj/item/pipe_dispenser,
@@ -20563,7 +20562,7 @@
 "fYK" = (
 /obj/structure/sign/warning/biohazard/directional/south,
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "fYR" = (
 /obj/machinery/light/small/directional/east,
 /obj/structure/flora/bush/sparsegrass/style_random,
@@ -21681,9 +21680,6 @@
 /obj/structure/closet/crate/solarpanel_small,
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/solars/starboard/fore)
-"got" = (
-/turf/closed/wall/r_wall,
-/area/station/maintenance/eva_shed/port)
 "gou" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -25831,14 +25827,18 @@
 	},
 /obj/item/stock_parts/matter_bin{
 	pixel_x = -10;
-	pixel_y = 4
+	pixel_y = 9
 	},
 /obj/item/stock_parts/matter_bin{
-	pixel_x = 2;
-	pixel_y = 7
+	pixel_x = 6;
+	pixel_y = 10
 	},
 /obj/item/stock_parts/micro_laser{
-	pixel_x = 4;
+	pixel_x = 10;
+	pixel_y = 4
+	},
+/obj/item/flatpack{
+	pixel_x = -2;
 	pixel_y = 4
 	},
 /turf/open/floor/iron/white/smooth_edge,
@@ -28093,6 +28093,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/dark_red/filled/corner,
+/obj/structure/cable,
 /turf/open/floor/iron/smooth_corner,
 /area/station/science/ordnance)
 "idO" = (
@@ -29370,7 +29371,7 @@
 	pixel_x = 32
 	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "iuZ" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -31260,6 +31261,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/cable,
 /turf/open/floor/iron/smooth_large,
 /area/station/science/ordnance)
 "iXk" = (
@@ -41905,7 +41907,7 @@
 "lPC" = (
 /obj/structure/sign/warning/secure_area/directional/north,
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "lPJ" = (
 /obj/effect/mapping_helpers/airlock/unres{
 	dir = 1
@@ -44071,6 +44073,7 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/bot,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/iron/smooth,
 /area/station/science/ordnance)
 "mvb" = (
@@ -46503,7 +46506,6 @@
 /area/station/command/bridge)
 "ncR" = (
 /obj/structure/closet/bombcloset,
-/obj/structure/cable,
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 1
 	},
@@ -69228,7 +69230,7 @@
 	pixel_x = -32
 	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "tmb" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/machinery/light/small/directional/west,
@@ -83441,6 +83443,10 @@
 	name = "science camera";
 	network = list("ss13","rd")
 	},
+/obj/machinery/power/apc/auto_name/directional/east{
+	areastring = "/area/station/science/ordnance/burnchamber"
+	},
+/obj/structure/cable,
 /turf/open/floor/iron/smooth_edge{
 	dir = 8
 	},
@@ -118845,7 +118851,7 @@ ttw
 xMq
 xMq
 xMq
-got
+xxv
 lbj
 jSB
 ska
@@ -119618,7 +119624,7 @@ ttw
 ttw
 xxv
 ska
-got
+xxv
 nxj
 cut
 cut
