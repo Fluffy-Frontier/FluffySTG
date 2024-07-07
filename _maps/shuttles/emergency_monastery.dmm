@@ -8,10 +8,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
-"af" = (
-/obj/structure/window/reinforced/spawner/directional/east,
-/turf/open/space,
-/area/shuttle/escape)
 "ap" = (
 /obj/structure/chair/wood/wings{
 	dir = 1
@@ -24,10 +20,6 @@
 	dir = 1
 	},
 /turf/open/floor/carpet,
-/area/shuttle/escape)
-"as" = (
-/obj/structure/window/reinforced/spawner/directional/south,
-/turf/open/space,
 /area/shuttle/escape)
 "aF" = (
 /obj/machinery/light/small/directional/south,
@@ -65,6 +57,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/closed/wall,
 /area/shuttle/escape)
+<<<<<<< HEAD
 "aT" = (
 /obj/structure/window/reinforced/spawner/directional/west{
 	layer = 2.9
@@ -78,6 +71,8 @@
 /obj/structure/lattice,
 /turf/open/space/basic,
 /area/shuttle/escape)
+=======
+>>>>>>> a1475517b75 ([MIRROR] Various minor fixes to Emergency Shuttles [MDB IGNORE] (#3527))
 "bb" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
@@ -198,6 +193,10 @@
 "cC" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
+/area/shuttle/escape)
+"cH" = (
+/obj/structure/window/reinforced/spawner/directional/south,
+/turf/open/space,
 /area/shuttle/escape)
 "cT" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -374,11 +373,6 @@
 /obj/structure/bookcase/random/religion,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/iron/dark,
-/area/shuttle/escape)
-"fA" = (
-/obj/structure/window/reinforced/spawner/directional/east,
-/obj/structure/window/reinforced/spawner/directional/south,
-/turf/open/space,
 /area/shuttle/escape)
 "fL" = (
 /obj/structure/window/reinforced/spawner/directional/east,
@@ -763,13 +757,14 @@
 /obj/machinery/door/airlock/external/ruin,
 /turf/open/floor/plating,
 /area/shuttle/escape)
-"lj" = (
-/obj/structure/lattice/catwalk,
-/turf/open/space/basic,
-/area/shuttle/escape)
 "lm" = (
 /obj/machinery/meter,
 /turf/open/floor/plating,
+/area/shuttle/escape)
+"ln" = (
+/obj/structure/window/reinforced/spawner/directional/east,
+/obj/structure/window/reinforced/spawner/directional/south,
+/turf/open/space,
 /area/shuttle/escape)
 "lB" = (
 /turf/open/floor/iron/chapel{
@@ -797,6 +792,10 @@
 	dir = 4
 	},
 /turf/open/floor/iron,
+/area/shuttle/escape)
+"ml" = (
+/obj/structure/window/reinforced/spawner/directional/west,
+/turf/open/space,
 /area/shuttle/escape)
 "mm" = (
 /obj/structure/lattice/catwalk,
@@ -1219,6 +1218,11 @@
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
+"rZ" = (
+/obj/structure/window/reinforced/spawner/directional/east,
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/shuttle/escape)
 "sa" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -1317,6 +1321,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
+"ti" = (
+/obj/structure/lattice/catwalk,
+/turf/open/space/basic,
+/area/shuttle/escape)
 "tm" = (
 /obj/structure/table/wood/fancy,
 /obj/item/storage/box/matches{
@@ -1386,6 +1394,10 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/escape/brig)
+"uP" = (
+/obj/structure/window/reinforced/spawner/directional/east,
+/turf/open/space,
+/area/shuttle/escape)
 "uX" = (
 /obj/machinery/power/smes,
 /turf/open/floor/plating,
@@ -2423,10 +2435,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
-"Jl" = (
-/obj/structure/window/reinforced/spawner/directional/west,
-/turf/open/space,
-/area/shuttle/escape)
 "Jp" = (
 /obj/structure/table,
 /obj/item/crowbar,
@@ -2517,8 +2525,7 @@
 "JZ" = (
 /obj/docking_port/mobile/emergency{
 	movement_force = list("KNOCKDOWN"=3,"THROW"=6);
-	name = "\proper a monastery with engines strapped to it";
-	port_direction = 1
+	name = "\proper a monastery with engines strapped to it"
 	},
 /turf/closed/mineral,
 /area/shuttle/escape)
@@ -2671,6 +2678,7 @@
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
+<<<<<<< HEAD
 "Mm" = (
 /obj/item/kirbyplants/organic/plant21{
 	pixel_y = 3
@@ -2687,6 +2695,8 @@
 /obj/structure/lattice,
 /turf/open/space,
 /area/shuttle/escape)
+=======
+>>>>>>> a1475517b75 ([MIRROR] Various minor fixes to Emergency Shuttles [MDB IGNORE] (#3527))
 "MC" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -2866,6 +2876,10 @@
 "OJ" = (
 /obj/effect/station_crash/devastating,
 /turf/open/floor/iron/dark,
+/area/shuttle/escape)
+"OL" = (
+/obj/structure/lattice,
+/turf/open/space,
 /area/shuttle/escape)
 "OM" = (
 /obj/item/cultivator,
@@ -4380,8 +4394,13 @@ nr
 nr
 nr
 nr
+<<<<<<< HEAD
 om
 nQ
+=======
+uP
+hq
+>>>>>>> a1475517b75 ([MIRROR] Various minor fixes to Emergency Shuttles [MDB IGNORE] (#3527))
 JG
 JG
 JG
@@ -4917,7 +4936,7 @@ JG
 JG
 JG
 PB
-lj
+ti
 iw
 iw
 iw
@@ -4999,7 +5018,7 @@ JG
 JG
 JG
 PB
-lj
+ti
 iw
 JG
 JG
@@ -5081,10 +5100,10 @@ JG
 JG
 JG
 PB
-lj
-Mt
-af
-fA
+ti
+OL
+uP
+ln
 zE
 zE
 AJ
@@ -5158,7 +5177,7 @@ JG
 JG
 JG
 iw
-Mt
+OL
 iw
 iw
 iw
@@ -5243,7 +5262,7 @@ iw
 JG
 JG
 dp
-af
+uP
 zE
 Zf
 zE
@@ -5322,7 +5341,7 @@ JG
 JG
 JG
 bd
-Mt
+OL
 bT
 zE
 zE
@@ -5404,7 +5423,7 @@ aH
 iw
 iw
 iw
-as
+cH
 zE
 zE
 jc
@@ -5481,11 +5500,19 @@ JG
 JG
 "}
 (21,1,1) = {"
+<<<<<<< HEAD
 af
 af
 nQ
 aW
 nQ
+=======
+uP
+uP
+hq
+rZ
+hq
+>>>>>>> a1475517b75 ([MIRROR] Various minor fixes to Emergency Shuttles [MDB IGNORE] (#3527))
 bl
 zE
 jc
@@ -5891,7 +5918,7 @@ JG
 JG
 "}
 (26,1,1) = {"
-as
+cH
 zE
 ox
 bb
@@ -6310,7 +6337,7 @@ LK
 zE
 LK
 dX
-Jl
+ml
 fm
 zE
 zE
@@ -6385,12 +6412,21 @@ hC
 (32,1,1) = {"
 JG
 JG
+<<<<<<< HEAD
 aT
 aT
 Ms
 Ms
 Ms
 aT
+=======
+IM
+IM
+ml
+ml
+ml
+IM
+>>>>>>> a1475517b75 ([MIRROR] Various minor fixes to Emergency Shuttles [MDB IGNORE] (#3527))
 JG
 JG
 JG
@@ -6477,7 +6513,7 @@ JG
 JG
 JG
 JG
-Jl
+ml
 fm
 zE
 zE
@@ -6728,8 +6764,8 @@ JG
 JG
 JG
 JG
-Jl
-Jl
+ml
+ml
 jS
 zE
 ko
@@ -6977,7 +7013,7 @@ JG
 JG
 JG
 JG
-Mt
+OL
 mm
 kJ
 IM
