@@ -17410,7 +17410,7 @@
 	start_active = 1
 	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "bIc" = (
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
@@ -17507,7 +17507,7 @@
 	start_active = 1
 	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "bIr" = (
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
@@ -17866,7 +17866,7 @@
 	start_active = 1
 	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "bJw" = (
 /obj/machinery/camera/directional/north{
 	c_tag = "MiniSat External South";
@@ -17874,7 +17874,7 @@
 	start_active = 1
 	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "bJx" = (
 /obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/tile/blue{
@@ -18055,7 +18055,7 @@
 	dir = 6
 	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "bKt" = (
 /obj/structure/table,
 /obj/item/stock_parts/micro_laser,
@@ -18314,7 +18314,7 @@
 	dir = 10
 	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "bLq" = (
 /turf/closed/indestructible/riveted{
 	desc = "A wall impregnated with Fixium, able to withstand massive explosions with ease";
@@ -18361,7 +18361,7 @@
 "bLw" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple,
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "bLx" = (
 /obj/structure/table,
 /obj/item/stock_parts/subspace/transmitter,
@@ -40824,6 +40824,12 @@
 	},
 /turf/open/floor/iron/chapel,
 /area/station/service/chapel)
+"lgs" = (
+/obj/structure/cable,
+/obj/structure/lattice/catwalk,
+/obj/item/stack/cable_coil,
+/turf/open/space/basic,
+/area/station/solars/port/fore)
 "lgt" = (
 /mob/living/carbon/human/species/monkey,
 /obj/machinery/light/small/directional/north,
@@ -51462,7 +51468,7 @@
 	use_power = 0
 	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "smo" = (
 /obj/machinery/recharger{
 	pixel_y = 4
@@ -56132,6 +56138,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/station/maintenance/abandon_cafeteria)
+"vkB" = (
+/obj/structure/lattice,
+/obj/item/stack/cable_coil,
+/turf/open/space/basic,
+/area/space/nearstation)
 "vkD" = (
 /obj/effect/landmark/event_spawn,
 /obj/structure/cable,
@@ -57152,9 +57163,11 @@
 /turf/open/floor/iron/white,
 /area/station/medical/cryo)
 "vPR" = (
-/obj/item/stack/cable_coil,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 4
+	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "vQg" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 6
@@ -60293,9 +60306,11 @@
 /turf/open/floor/wood,
 /area/station/hallway/secondary/service)
 "xWd" = (
-/obj/structure/lattice,
+/obj/structure/cable,
+/obj/structure/lattice/catwalk,
+/obj/item/stack/cable_coil,
 /turf/open/space/basic,
-/area/space)
+/area/station/solars/port/aft)
 "xWn" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -75331,7 +75346,7 @@ xzh
 xzh
 xzh
 xzh
-vPR
+xzh
 xzh
 xzh
 xzh
@@ -75587,7 +75602,7 @@ xrV
 agg
 xzh
 agg
-xrV
+lgs
 agg
 xzh
 agg
@@ -76190,7 +76205,7 @@ xzh
 xzh
 bJc
 xzh
-fep
+xWd
 fep
 fep
 fep
@@ -77474,7 +77489,7 @@ xzh
 xzh
 xzh
 bJc
-vPR
+xzh
 atY
 atY
 atY
@@ -85977,7 +85992,7 @@ cji
 cDZ
 cro
 kvq
-bLn
+vPR
 kvq
 bKr
 kKU
@@ -87005,7 +87020,7 @@ cig
 cig
 ccw
 kvq
-bLn
+vPR
 kvq
 bKr
 kKU
@@ -95221,7 +95236,7 @@ cTE
 clZ
 clZ
 bOh
-xWd
+sUX
 xzh
 xzh
 xzh
@@ -97576,7 +97591,7 @@ xzh
 xzh
 xzh
 xzh
-xzh
+hLb
 bJo
 xzh
 xzh
@@ -109106,7 +109121,7 @@ bJc
 xzh
 sUX
 xzh
-vPR
+xzh
 xzh
 xzh
 xzh
@@ -109364,7 +109379,7 @@ xzh
 aud
 jSK
 aud
-sUX
+vkB
 aud
 jSK
 aud
