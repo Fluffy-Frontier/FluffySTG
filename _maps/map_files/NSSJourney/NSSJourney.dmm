@@ -7086,9 +7086,7 @@
 /obj/structure/table,
 /obj/item/kitchen/rollingpin,
 /obj/item/stack/package_wrap,
-/obj/item/reagent_containers/condiment/enzyme{
-	layer = 5
-	},
+/obj/item/reagent_containers/condiment/enzyme,
 /turf/open/floor/iron/cafeteria,
 /area/station/service/kitchen)
 "aTO" = (
@@ -17410,7 +17408,7 @@
 	start_active = 1
 	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "bIc" = (
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
@@ -17507,7 +17505,7 @@
 	start_active = 1
 	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "bIr" = (
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
@@ -17564,9 +17562,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/thermomachine/freezer{
-	piping_layer = 2
-	},
+/obj/machinery/atmospherics/components/unary/thermomachine/freezer,
 /turf/open/floor/iron,
 /area/station/science/ordnance)
 "bIB" = (
@@ -17834,7 +17830,7 @@
 	start_active = 1
 	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "bJq" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -17866,7 +17862,7 @@
 	start_active = 1
 	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "bJw" = (
 /obj/machinery/camera/directional/north{
 	c_tag = "MiniSat External South";
@@ -17874,7 +17870,7 @@
 	start_active = 1
 	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "bJx" = (
 /obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/tile/blue{
@@ -18055,7 +18051,7 @@
 	dir = 6
 	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "bKt" = (
 /obj/structure/table,
 /obj/item/stock_parts/micro_laser,
@@ -18296,12 +18292,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/science/ordnance/bomb)
-"bLn" = (
-/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
-	dir = 4
-	},
-/turf/open/space/basic,
-/area/space)
 "bLo" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 5
@@ -18314,7 +18304,7 @@
 	dir = 10
 	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "bLq" = (
 /turf/closed/indestructible/riveted{
 	desc = "A wall impregnated with Fixium, able to withstand massive explosions with ease";
@@ -18361,7 +18351,7 @@
 "bLw" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple,
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "bLx" = (
 /obj/structure/table,
 /obj/item/stock_parts/subspace/transmitter,
@@ -33097,17 +33087,14 @@
 	pixel_y = -3
 	},
 /obj/item/clothing/head/helmet/alt{
-	layer = 3.00001;
 	pixel_x = 3;
 	pixel_y = -3
 	},
 /obj/item/clothing/head/helmet/alt{
-	layer = 3.00001;
 	pixel_x = 3;
 	pixel_y = -3
 	},
 /obj/item/clothing/head/helmet/alt{
-	layer = 3.00001;
 	pixel_x = 3;
 	pixel_y = -3
 	},
@@ -34616,8 +34603,7 @@
 	dir = 1
 	},
 /obj/structure/chair/sofa/bench/left{
-	dir = 4;
-	layer = 2.8
+	dir = 4
 	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/iron,
@@ -35071,9 +35057,7 @@
 /obj/structure/window/reinforced/spawner/directional/south,
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/window/reinforced/spawner/directional/north,
-/obj/machinery/door/window/left/directional/east{
-	layer = 3
-	},
+/obj/machinery/door/window/left/directional/east,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
@@ -40824,6 +40808,12 @@
 	},
 /turf/open/floor/iron/chapel,
 /area/station/service/chapel)
+"lgs" = (
+/obj/structure/cable,
+/obj/structure/lattice/catwalk,
+/obj/item/stack/cable_coil,
+/turf/open/space/basic,
+/area/station/solars/port/fore)
 "lgt" = (
 /mob/living/carbon/human/species/monkey,
 /obj/machinery/light/small/directional/north,
@@ -44893,7 +44883,6 @@
 "nQx" = (
 /obj/machinery/button/door{
 	id = "QMLoaddoor";
-	layer = 4;
 	name = "Loading Doors";
 	pixel_x = -24;
 	pixel_y = -8;
@@ -44901,7 +44890,6 @@
 	},
 /obj/machinery/button/door{
 	id = "QMLoaddoor2";
-	layer = 4;
 	name = "Loading Doors";
 	pixel_x = -24;
 	pixel_y = 8;
@@ -51462,7 +51450,7 @@
 	use_power = 0
 	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "smo" = (
 /obj/machinery/recharger{
 	pixel_y = 4
@@ -52528,8 +52516,7 @@
 "sWB" = (
 /obj/machinery/hydroponics/constructable,
 /obj/structure/railing{
-	dir = 9;
-	layer = 3.1
+	dir = 9
 	},
 /turf/open/floor/grass,
 /area/station/security/prison/garden)
@@ -53276,8 +53263,7 @@
 	dir = 8
 	},
 /obj/structure/chair/sofa/bench/left{
-	dir = 4;
-	layer = 2.8
+	dir = 4
 	},
 /obj/structure/railing{
 	dir = 1
@@ -55278,9 +55264,7 @@
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "uMp" = (
-/obj/machinery/door/window/left/directional/east{
-	layer = 3
-	},
+/obj/machinery/door/window/left/directional/east,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
@@ -56132,6 +56116,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/station/maintenance/abandon_cafeteria)
+"vkB" = (
+/obj/structure/lattice,
+/obj/item/stack/cable_coil,
+/turf/open/space/basic,
+/area/space/nearstation)
 "vkD" = (
 /obj/effect/landmark/event_spawn,
 /obj/structure/cable,
@@ -57152,9 +57141,11 @@
 /turf/open/floor/iron/white,
 /area/station/medical/cryo)
 "vPR" = (
-/obj/item/stack/cable_coil,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 4
+	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "vQg" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 6
@@ -60293,9 +60284,11 @@
 /turf/open/floor/wood,
 /area/station/hallway/secondary/service)
 "xWd" = (
-/obj/structure/lattice,
+/obj/structure/cable,
+/obj/structure/lattice/catwalk,
+/obj/item/stack/cable_coil,
 /turf/open/space/basic,
-/area/space)
+/area/station/solars/port/aft)
 "xWn" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -75331,7 +75324,7 @@ xzh
 xzh
 xzh
 xzh
-vPR
+xzh
 xzh
 xzh
 xzh
@@ -75587,7 +75580,7 @@ xrV
 agg
 xzh
 agg
-xrV
+lgs
 agg
 xzh
 agg
@@ -76190,7 +76183,7 @@ xzh
 xzh
 bJc
 xzh
-fep
+xWd
 fep
 fep
 fep
@@ -77474,7 +77467,7 @@ xzh
 xzh
 xzh
 bJc
-vPR
+xzh
 atY
 atY
 atY
@@ -85977,7 +85970,7 @@ cji
 cDZ
 cro
 kvq
-bLn
+vPR
 kvq
 bKr
 kKU
@@ -86491,7 +86484,7 @@ cqx
 cqR
 crp
 kvq
-bLn
+vPR
 kvq
 bKr
 kKU
@@ -87005,7 +86998,7 @@ cig
 cig
 ccw
 kvq
-bLn
+vPR
 kvq
 bKr
 kKU
@@ -95221,7 +95214,7 @@ cTE
 clZ
 clZ
 bOh
-xWd
+sUX
 xzh
 xzh
 xzh
@@ -109106,7 +109099,7 @@ bJc
 xzh
 sUX
 xzh
-vPR
+xzh
 xzh
 xzh
 xzh
@@ -109364,7 +109357,7 @@ xzh
 aud
 jSK
 aud
-sUX
+vkB
 aud
 jSK
 aud
