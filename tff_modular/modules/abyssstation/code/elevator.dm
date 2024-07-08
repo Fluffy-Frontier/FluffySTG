@@ -6,7 +6,6 @@
 #define ABYSS_MINE_ELEVATOR_ID "mineElevator"
 #define ABYSS_CONTRABAND_ELEVATOR_ID "contrabandElevator"
 
-
 // ENTRY
 /obj/effect/landmark/transport/transport_id/abyss_station/entry_elevator
 	specific_transport_id = ABYSS_ENTRY_ELEVATOR_ID
@@ -97,3 +96,12 @@
 /obj/machinery/button/elevator/abyss_station/contraband_elevator
 	id = ABYSS_CONTRABAND_ELEVATOR_ID
 	name = "Contraband elevator button"
+
+#undef ABYSS_ENTRY_ELEVATOR_ID
+#undef ABYSS_CARGO_ELEVATOR_ID
+#undef ABYSS_ENGINEERING_ELEVATOR_ID
+#undef ABYSS_DEPARTURE_ELEVATOR_ID
+#undef ABYSS_SECURITY_ELEVATOR_ID
+#undef ABYSS_MINE_ELEVATOR_ID
+#undef ABYSS_CONTRABAND_ELEVATOR_ID
+#undef ABYSS_CONTRABAND_ELEVATOR_ID

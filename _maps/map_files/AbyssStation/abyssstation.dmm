@@ -83,13 +83,6 @@
 /obj/effect/turf_decal/sand,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/department/engineering/lesser)
-"abB" = (
-/obj/machinery/hydroponics/soil,
-/obj/machinery/hydroponics/soil,
-/turf/open/floor/grass{
-	planetary_atmos = 1
-	},
-/area/station/service/chapel)
 "abD" = (
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 4
@@ -98,8 +91,7 @@
 /area/abyss_station/exterior/ocean)
 "abI" = (
 /obj/structure/chair/plastic{
-	dir = 4;
-	layer = 2.7
+	dir = 4
 	},
 /obj/effect/landmark/start/prisoner,
 /turf/open/misc/sandy_dirt/planet,
@@ -240,15 +232,16 @@
 /turf/open/floor/iron,
 /area/station/engineering/atmos/office)
 "aeh" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
+/obj/structure/chair{
+	dir = 1
 	},
-/obj/structure/chair/wood{
-	dir = 4;
-	layer = 2.8
+/obj/effect/turf_decal/tile/dark_red/fourcorners,
+/obj/machinery/computer/security/telescreen/normal/directional/north{
+	name = "Intercom screen 2";
+	network = list("prison_visitation2")
 	},
-/turf/open/floor/wood,
-/area/station/hallway/primary/starboard)
+/turf/open/floor/iron,
+/area/station/security/prison/visit)
 "aei" = (
 /turf/open/openspace{
 	planetary_atmos = 1
@@ -2078,8 +2071,7 @@
 "aDF" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/railing{
-	dir = 9;
-	layer = 3.1
+	dir = 9
 	},
 /obj/item/kirbyplants/random,
 /turf/open/openspace{
@@ -3198,6 +3190,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/dark_red/fourcorners,
+/obj/machinery/computer/security/telescreen/normal/directional/north{
+	name = "Intercom screen 1";
+	network = list("prison_visitation1")
+	},
 /turf/open/floor/iron,
 /area/station/security/prison/visit)
 "aWJ" = (
@@ -7308,11 +7304,16 @@
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/abyss_station/exterior/abyss)
 "cmM" = (
-/obj/effect/turf_decal/tile/dark_red/half/contrasted,
-/obj/machinery/light/warm/directional/south,
-/obj/machinery/light/warm/directional/south,
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/dark_red/fourcorners,
+/obj/machinery/computer/security/telescreen/normal/directional/north{
+	name = "Intercom screen 3";
+	network = list("prison_visitation3")
+	},
 /turf/open/floor/iron,
-/area/station/security/brig)
+/area/station/security/prison/visit)
 "cmN" = (
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
@@ -15155,9 +15156,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2{
-	dir = 6
-	},
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
 "eEV" = (
@@ -15542,7 +15540,6 @@
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on{
 	dir = 1
 	},
-/obj/machinery/airalarm/directional/south,
 /obj/machinery/airalarm/directional/south,
 /obj/effect/turf_decal/stripes/corner{
 	dir = 4
@@ -16789,10 +16786,6 @@
 	c_tag = "Intercom 3 - Visitor";
 	network = list("prison_visitation3");
 	dir = 1
-	},
-/obj/machinery/computer/security/telescreen{
-	name = "Intercom screen 3";
-	network = list("prison_visitation3")
 	},
 /obj/item/radio/intercom/directional/north{
 	name = "Prison Visitation Intercom 3";
@@ -31068,11 +31061,6 @@
 	c_tag = "Intercom 3 - Prisoner";
 	network = list("prison_visitation3")
 	},
-/obj/machinery/computer/security/telescreen{
-	name = "Intercom screen 3";
-	network = list("prison_visitation3");
-	dir = 1
-	},
 /obj/item/radio/intercom/directional/south{
 	broadcasting = 1;
 	freqlock = 1;
@@ -32298,11 +32286,18 @@
 /turf/open/floor/wood,
 /area/station/medical/psychology)
 "jNI" = (
-/obj/machinery/space_heater,
-/obj/machinery/space_heater,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/smooth,
-/area/station/maintenance/starboard/greater)
+/obj/effect/turf_decal/tile/dark_red/fourcorners,
+/obj/structure/chair,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/obj/machinery/light/small/directional/east,
+/obj/machinery/computer/security/telescreen/normal/directional/south{
+	name = "Intercom screen 3";
+	network = list("prison_visitation3")
+	},
+/turf/open/floor/iron,
+/area/station/security/prison)
 "jNL" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -35259,10 +35254,6 @@
 	c_tag = "Intercom 1 - Visitor";
 	network = list("prison_visitation1");
 	dir = 1
-	},
-/obj/machinery/computer/security/telescreen{
-	name = "Intercom screen 1";
-	network = list("prison_visitation1")
 	},
 /obj/item/radio/intercom/directional/north{
 	name = "Prison Visitation Intercom 1";
@@ -39687,15 +39678,18 @@
 /turf/open/floor/iron,
 /area/abyss_station/exterior/one_level)
 "lWs" = (
-/obj/effect/turf_decal/tile/dark_red/half/contrasted,
-/obj/structure/table,
-/obj/machinery/computer/security/telescreen{
-	name = "Intercom screen main";
-	network = list("prison_visitation1","prison_visitation2","prison_visitation3");
+/obj/effect/turf_decal/tile/dark_red/fourcorners,
+/obj/structure/chair,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
+/obj/machinery/light/small/directional/east,
+/obj/machinery/computer/security/telescreen/normal/directional/south{
+	name = "Intercom screen 2";
+	network = list("prison_visitation2")
+	},
 /turf/open/floor/iron,
-/area/station/security/prison/upper)
+/area/station/security/prison)
 "lWu" = (
 /obj/effect/turf_decal/trimline/purple/filled/line,
 /obj/structure/disposalpipe/segment{
@@ -41291,8 +41285,7 @@
 /area/station/engineering/storage_shared)
 "mxk" = (
 /obj/structure/chair/sofa/bench{
-	dir = 4;
-	layer = 2.8
+	dir = 4
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
@@ -44368,11 +44361,6 @@
 /obj/machinery/camera{
 	c_tag = "Intercom 1 - Prisoner";
 	network = list("prison_visitation1")
-	},
-/obj/machinery/computer/security/telescreen{
-	name = "Intercom screen 1";
-	network = list("prison_visitation1");
-	dir = 1
 	},
 /obj/item/radio/intercom/directional/south{
 	broadcasting = 1;
@@ -48301,7 +48289,6 @@
 /obj/machinery/portable_atmospherics/scrubber,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/east,
-/obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/department/security/brig)
 "oBU" = (
@@ -56499,8 +56486,7 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/structure/chair/sofa/bench{
-	dir = 4;
-	layer = 2.8
+	dir = 4
 	},
 /obj/machinery/camera{
 	c_tag = "Dorms - Lift 2 - 1";
@@ -57085,8 +57071,7 @@
 "rbs" = (
 /obj/effect/turf_decal/tile/dark_red/half/contrasted,
 /obj/structure/chair/plastic{
-	dir = 4;
-	layer = 2.7
+	dir = 4
 	},
 /obj/structure/cable,
 /turf/open/floor/iron,
@@ -57207,9 +57192,6 @@
 /area/station/service/janitor)
 "rdv" = (
 /obj/machinery/keycard_auth/directional/west,
-/obj/machinery/modular_computer/preset/id{
-	dir = 4
-	},
 /obj/machinery/modular_computer/preset/id{
 	dir = 4
 	},
@@ -57349,7 +57331,6 @@
 /turf/open/floor/catwalk_floor/iron,
 /area/station/engineering/engine_smes)
 "rfv" = (
-/obj/machinery/light/small/directional/south,
 /obj/machinery/light/small/directional/south,
 /obj/machinery/quantum_server,
 /turf/open/floor/plating,
@@ -60484,8 +60465,7 @@
 /area/station/science/explab)
 "seX" = (
 /obj/structure/chair/sofa/bench{
-	dir = 4;
-	layer = 2.8
+	dir = 4
 	},
 /obj/machinery/light/warm/directional/west,
 /turf/open/floor/iron/dark,
@@ -63105,8 +63085,7 @@
 /area/station/science/ordnance)
 "sUw" = (
 /obj/structure/chair/plastic{
-	dir = 4;
-	layer = 2.7
+	dir = 4
 	},
 /obj/structure/cable,
 /turf/open/floor/iron,
@@ -66034,6 +66013,10 @@
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/computer/security/telescreen/normal/directional/south{
+	name = "Intercom screen main";
+	network = list("prison_visitation1","prison_visitation2","prison_visitation3")
+	},
 /turf/open/floor/iron,
 /area/station/security/prison/upper)
 "tOZ" = (
@@ -68391,6 +68374,10 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/east,
+/obj/machinery/computer/security/telescreen/normal/directional/south{
+	name = "Intercom screen 1";
+	network = list("prison_visitation1")
+	},
 /turf/open/floor/iron,
 /area/station/security/prison)
 "uBh" = (
@@ -70667,10 +70654,6 @@
 	network = list("prison_visitation2");
 	dir = 1
 	},
-/obj/machinery/computer/security/telescreen{
-	name = "Intercom screen 2";
-	network = list("prison_visitation2")
-	},
 /obj/item/radio/intercom/directional/north{
 	name = "Prison Visitation Intercom 2";
 	broadcasting = 1;
@@ -71747,13 +71730,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
-"vuj" = (
-/obj/machinery/light/small/directional/east,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/space_heater,
-/obj/machinery/space_heater,
-/turf/open/floor/iron/smooth,
-/area/station/maintenance/department/cargo)
 "vuk" = (
 /obj/machinery/vending/cola/blue,
 /obj/structure/railing{
@@ -74660,11 +74636,6 @@
 /obj/machinery/camera{
 	c_tag = "Intercom 2 - Prisoner";
 	network = list("prison_visitation2")
-	},
-/obj/machinery/computer/security/telescreen{
-	name = "Intercom screen 2";
-	network = list("prison_visitation2");
-	dir = 1
 	},
 /obj/item/radio/intercom/directional/south{
 	broadcasting = 1;
@@ -175891,7 +175862,7 @@ kxd
 pAu
 aRp
 oLr
-uBd
+jNI
 jvd
 yfJ
 clV
@@ -176407,7 +176378,7 @@ uJc
 uxV
 exr
 oLr
-uBd
+lWs
 wpT
 yfJ
 rUS
@@ -180818,7 +180789,7 @@ woi
 cVA
 xbe
 ndl
-cmM
+kMr
 mRt
 mRt
 mRt
@@ -229921,7 +229892,7 @@ gMJ
 noU
 beV
 hET
-vuj
+ddh
 gcl
 xdz
 flQ
@@ -241940,7 +241911,7 @@ kKy
 pXe
 yei
 ffm
-aWC
+cmM
 iEu
 yei
 hQq
@@ -242453,10 +242424,10 @@ wAJ
 wAJ
 oSw
 tOY
-lWs
+cqW
 yei
 vfY
-aWC
+aeh
 ezC
 yei
 hQq
@@ -262407,7 +262378,7 @@ gTd
 gjS
 uQO
 hTw
-abB
+dNs
 dNs
 dNs
 hTw
@@ -265772,7 +265743,7 @@ cmN
 uOY
 lvK
 xkj
-jNI
+tVt
 rMV
 cpe
 oVM
@@ -333630,7 +333601,7 @@ wZS
 okC
 rRw
 cUw
-aeh
+sFz
 kQj
 kQj
 sFz
