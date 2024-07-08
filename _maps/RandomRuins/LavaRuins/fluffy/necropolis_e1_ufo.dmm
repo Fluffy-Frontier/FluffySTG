@@ -30,43 +30,6 @@
 /obj/structure/stone_tile/slab/cracked,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
-"jx" = (
-/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner{
-	icon = 'modular_nova/modules/awaymissions_nova/icons/abductors.dmi';
-	icon_living = "abductor_agent_combat_gun";
-	icon_state = "abductor_agent_combat_gun";
-	attack_sound = 'sound/weapons/punch1.ogg';
-	name = "Abructor Assault Trooper";
-	crusher_loot = list(/obj/item/organ/internal/heart/gland/heal,/obj/item/organ/internal/heart/gland/ventcrawling,/obj/item/abductor/silencer,/obj/item/crowbar/abductor,/obj/item/multitool/abductor,/obj/item/screwdriver/abductor,/obj/item/weldingtool/abductor,/obj/item/wirecutters/abductor,/obj/item/wrench/abductor);
-	loot = list(/obj/effect/decal/remains/plasma,/obj/item/organ/internal/heart/gland/heal,/obj/item/hemostat/alien,/obj/item/surgicaldrill/alien,/obj/item/cautery/alien,/obj/item/retractor/alien,/obj/item/circular_saw/alien,/obj/item/scalpel/alien);
-	health = 750;
-	speed = 1;
-	melee_damage_upper = 15;
-	unsuitable_atmos_damage = 0;
-	death_message = "falls to the ground with juicy slap.";
-	gps_name = "Distress Signal";
-	weather_immunities = list("lava_immune","ashstorm_immune");
-	wound_bonus = 15;
-	light_color = "#D00000";
-	summon_line = "TIME TO DIE!!!   ...ABDUCTOR ASSAULT IN PROGRESS... ";
-	zone_selected = "head";
-	friendly_verb_simple = "Save me!";
-	friendly_verb_continuous = "I need help!";
-	attack_verb_continuous = "hits";
-	attack_verb_simple = "tamis";
-	faction = list("mining,boss");
-	obj_damage = 40;
-	light_power = 5;
-	layer = 4;
-	speak_chance = 0.3;
-	speak = list(Hello!);
-	desc = "...!!!ABDUCTOR ASSAULT IN PROGRESS!!!......!!!ABDUCTOR ASSAULT IN PROGRESS!!!......!!!ABDUCTOR ASSAULT IN PROGRESS!!!......!!!ABDUCTOR ASSAULT IN PROGRESS!!!......!!!ABDUCTOR ASSAULT IN PROGRESS!!!......!!!ABDUCTOR ASSAULT IN PROGRESS!!!...";
-	armour_penetration = 10;
-	maxHealth = 950;
-	light_system = 2
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/ruin/unpowered)
 "jS" = (
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
@@ -222,6 +185,35 @@
 /area/ruin/unpowered)
 "HB" = (
 /obj/item/organ/external/tail/monkey,
+/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner{
+	icon = 'modular_nova/modules/awaymissions_nova/icons/abductors.dmi';
+	icon_living = "abductor_agent_combat_gun";
+	icon_state = "abductor_agent_combat_gun";
+	attack_sound = 'sound/weapons/punch1.ogg';
+	name = "Abructor Assault Trooper";
+	crusher_loot = list(/obj/item/organ/internal/heart/gland/heal,/obj/item/organ/internal/heart/gland/ventcrawling,/obj/item/abductor/silencer,/obj/item/crowbar/abductor,/obj/item/multitool/abductor,/obj/item/screwdriver/abductor,/obj/item/weldingtool/abductor,/obj/item/wirecutters/abductor,/obj/item/wrench/abductor);
+	loot = list(/obj/effect/decal/remains/plasma,/obj/item/organ/internal/heart/gland/heal,/obj/item/hemostat/alien,/obj/item/surgicaldrill/alien,/obj/item/cautery/alien,/obj/item/retractor/alien,/obj/item/circular_saw/alien,/obj/item/scalpel/alien);
+	speed = 1;
+	melee_damage_upper = 15;
+	unsuitable_atmos_damage = 0;
+	death_message = "falls to the ground with juicy slap.";
+	gps_name = "Distress Signal";
+	weather_immunities = list("lava_immune","ashstorm_immune");
+	wound_bonus = 15;
+	light_color = "#D00000";
+	summon_line = "TIME TO DIE!!!   ...ABDUCTOR ASSAULT IN PROGRESS... ";
+	zone_selected = "head";
+	attack_verb_continuous = "hits";
+	attack_verb_simple = "tamis";
+	faction = list("mining,boss");
+	obj_damage = 40;
+	light_power = 5;
+	speak_chance = 0.3;
+	armour_penetration = 10;
+	maxHealth = 950;
+	light_system = 2;
+	desc = "...!!!ABDUCTOR ASSAULT IN PROGRESS!!!......!!!ABDUCTOR ASSAULT IN PROGRESS!!!......!!!ABDUCTOR ASSAULT IN PROGRESS!!!......!!!ABDUCTOR ASSAULT IN PROGRESS!!!......!!!ABDUCTOR ASSAULT IN PROGRESS!!!......!!!ABDUCTOR ASSAULT IN PROGRESS!!!..."
+	},
 /turf/open/floor/plating/abductor2{
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
@@ -399,7 +391,7 @@ sK
 sK
 Mh
 Nj
-jx
+lu
 lu
 jS
 Lz
