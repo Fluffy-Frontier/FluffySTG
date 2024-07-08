@@ -494,3 +494,104 @@
   zeroisthebiggay:
   - bugfix: the warm and heart sweater now have `body_parts_covered = CHEST|ARMS`
       so your boobs don't hang out
+2024-07-08:
+  00-Steven:
+  - code_imp: Moved bedsheet interactions to the item interaction code. Please report
+      any issues.
+  - bugfix: Bedsheets adjust their offset to match that of the living they're tucking
+      in.
+  - sound: Bedsheets use the cloth drop/pickup sounds instead of being silent.
+  - qol: You can tuck someone in telekinetically.
+  - bugfix: Fixes hacker alias name preference not working.
+  Ghommie:
+  - rscadd: 12% chance of a ouija board spawning in the chaplain office. Wawastation
+      always has one.
+  Jolly:
+  - code_imp: Behind the scenes, maps had a little bit of tweaking. If you see things
+      rendering in weird ways, or they don't look like how they used to/supposed to,
+      please report them on GitHub!
+  - bugfix: Our maps (Ouroboros, Blueshift, Voidraptor) now have pipe scrubbers in
+      atmos and ordnance!
+  - rscadd: '[Ouroboros] Something writhes deep within Ouroboros.. but what is it?'
+  Loafin34:
+  - rscadd: There's a previously undiscovered variant of a nullrod, recently revealed
+      from the depths of the skating rink..
+  MTandi:
+  - qol: portable scubber, pump and pipe scrubber are buildable as any other machines
+  - bugfix: Fixed the augmented organs experiment
+  - rscadd: Added Pipe Scrubber portable atmos machine
+  - refactor: Vat grower is a normal machine now that doesn't need plumbing
+  - qol: Cytology petri dish smartfridge starts with 3 random samples
+  - rscadd: Added protein powder condiment bottle, available in the cytology supplies
+      locker and the cargo pack
+  - rscdel: Removed science variant of plumbing RCD
+  - bugfix: Fixed a bug when machines without stock parts didn't spawn frames on deconstruction
+  - bugfix: Fixed vat grower not growing
+  Profakos:
+  - bugfix: Instruments enhanced with portable tuning can perform the rites that have
+      been granted
+  Rhials:
+  - admin: Quiet-announce random events still announce to admins and can therefore
+      be rerolled.
+  SmArtKar:
+  - bugfix: Mending touch no longer damages non-humans
+  - bugfix: Added a forgotten firelock on second floor of wawa
+  Sosmaster9000:
+  - balance: 'Xenobiologists now have a BZ-filled containment pen. Don''t breathe
+      that!
+
+      balance:Some items which either cannot be printed elsewhere or are part of game
+      progression (e.g. teleporter endpoints and, of course, Nanners) have been moved.
+      Alien Spawnpoints are in the same spot.'
+  SyncIt21:
+  - bugfix: plumbing machinery should have consistent volumes throughout the course
+      of its operations
+  - bugfix: plumbing iv drop now only accepts reagents from ducts but won't put reagents
+      back into it i.e. it only has a input pipe
+  Toastgoats:
+  - rscadd: Added the designer EVA suit, a unique pirate hardsuit for Silverscales.
+  - balance: Increased the equipment available to Silverscales
+  - image: Sprites for the designer EVA suit
+  ViktorKoL:
+  - rscadd: Added a new UI for heretic research.
+  Xackii:
+  - rscadd: 'New traitor mech: Justice. Emag fabricator to get it.'
+  Zergspower:
+  - bugfix: Ashwalker Factions now apply properly
+  - bugfix: Lavaland Tendril factions now apply the Mining Fauna Faction properly
+  aaaa1023:
+  - bugfix: 'Fixed the following shuttles flying in unexpected directions: Pubby escape
+      pod,  Humpback emergency shuttle, Pubby monastery shuttle, Birdboat emergency
+      shuttle, Birdshot emergency shuttle'
+  carlarctg:
+  - spellcheck: Renamed the organ thrower module to the 'organizer'
+  - spellcheck: Made its description more accurate. Did you know it instantly replaces
+      up to 5 organs in active surgery?
+  homexp13:
+  - bugfix: ' Examining a fishing spot twice with sufficiently high fishing skill
+      (or the skillchip) will get you a list of fishes that can ACTUALLY be caught'
+  lorwp:
+  - rscadd: using 'skibidi' as a chaplain deity now gives you brain damage
+  mc-oofert:
+  - bugfix: defibrillator no longer has an abstract cell
+  - code_imp: defibrillator attackby replaced with item_interaction
+  - bugfix: you may now use a legion core on an elite tumor
+  necromanceranne:
+  - bugfix: Knight helmets no longer burn as though made of cloth.
+  vinylspiders:
+  - qol: flashbangs will now give a warning if you attempt to trigger them during
+      green alert as sec/command. Company policy forbids their use below blue alert
+      but you can CTRL+Click to blatantly disobey this and face IC consequences. There
+      is a hotkey for this as well, CTRL+Z.
+  - bugfix: fixed detective's id not imprinting onto pda at roundstart, same with
+      bouncer and departmental security officers
+  yooriss:
+  - balance: Characters now start with 10 paychecks in their bank account instead
+      of 5, functionally doubling the credits people enter the round with.
+  - balance: It is no longer possible to sell materials to the Galactic Materials
+      Market. Purchasing remains untouched.
+  - rscadd: The crates of 50 iron, 50 glass, and 20/50 plasteel have returned to cargo
+      terminals to help cover materials shortages during low population rounds and
+      facilitate construction projects for the rest of the crew.
+  - code_imp: Price minimum/maximum magic numbers in the GMM subsystem have been pulled
+      out into defines to make tweaking buy/sell prices easier in the future.
