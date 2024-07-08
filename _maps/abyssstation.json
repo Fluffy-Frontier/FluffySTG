@@ -1,0 +1,57 @@
+{
+	"version": 1,
+	"map_name": "Abyss Station",
+	"map_path": "map_files/AbyssStation",
+	"map_file": "abyssstation.dmm",
+	"planetary": 1,
+	"shuttles": {
+		"cargo": "cargo_skyrat",
+		"ferry": "ferry_fancy",
+		"whiteship": "whiteship_box",
+		"emergency": "emergency_box"
+	},
+	"ignored_unit_tests": [
+		"/datum/unit_test/atmospherics_sanity"
+	],
+	"traits": [
+		{
+			"Up": true,
+			"Gravity": true,
+			"Baseturf": "/turf/open/chasm",
+			"No Parallax": true,
+			"Linkage": "Cross"
+		},
+		{
+			"Up": true,
+			"Down": true,
+			"Gravity": true,
+			"Baseturf": "/turf/open/openspace",
+			"No Parallax": true,
+			"Linkage": "Cross"
+		},
+		{
+			"Up": true,
+			"Down": true,
+			"Gravity": true,
+			"Baseturf": "/turf/open/openspace",
+			"No Parallax": true,
+			"Linkage": "Cross"
+		},
+		{
+			"Down": true,
+			"Gravity": true,
+			"Baseturf": "/turf/open/openspace",
+			"No Parallax": true,
+			"Linkage": "Cross"
+		}
+	],
+	"job_changes": {
+		"Cook": {
+			"additional_cqc_areas": ["/area/station/service/kitchen/diner"]
+		},
+		"Captain": {
+			"special_charter": "moon"
+		}
+	},
+	"minetype": "none"
+}
