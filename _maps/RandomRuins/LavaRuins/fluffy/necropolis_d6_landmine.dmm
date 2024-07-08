@@ -6,39 +6,19 @@
 	icon_state = "book1";
 	worn_icon_state = "book";
 	desc = "An ancient book covered in human skin. Reading will probably lead you to sudden death, but... Not many could resist the temptation of the Oghma Infinium. Now it is your turn to be put to the test.";
-	layer = 1;
 	pixel_y = -2;
 	light_color = "#777777";
-	color = "#777777"
+	color = "#777777";
+	alpha = 120
 	},
 /obj/structure/flora/rock/style_4{
 	max_integrity = 1500
 	},
 /obj/effect/glowing_rune{
-	layer = 4.1;
-	name = "Glowing rune";
-	desc = "Curious, isn't it?"
-	},
-/obj/effect/glowing_rune{
-	layer = 4.1;
 	name = "Glowing rune";
 	desc = "Curious, isn't it?";
-	pixel_x = 12;
-	pixel_y = -9
-	},
-/obj/effect/glowing_rune{
-	layer = 4.1;
-	name = "Glowing rune";
-	desc = "Curious, isn't it?";
-	pixel_x = -9;
-	pixel_y = -9
-	},
-/obj/effect/glowing_rune{
-	layer = 4.1;
-	name = "Glowing rune";
-	desc = "Curious, isn't it?";
-	pixel_x = 12;
-	pixel_y = -9
+	pixel_y = 10;
+	pixel_x = 10
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)

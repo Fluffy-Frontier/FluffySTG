@@ -45,41 +45,6 @@
 	AddElement(/datum/element/footstep, FOOTSTEP_MOB_SHOE)
 	AddElement(/datum/element/mob_grabber, steal_from_others = FALSE)
 	AddElement(/datum/element/simple_flying)
-	if(smashes_walls)
-		AddElement(/datum/element/wall_tearer, allow_reinforced = FALSE)
-	if(can_repair)
-		AddComponent(\
-			/datum/component/healing_touch,\
-			heal_brute = 5,\
-			heal_burn = 0,\
-			heal_time = 0,\
-			valid_targets_typecache = typecacheof(list(/mob/living/basic/mining/ancient_demon)),\
-			valid_biotypes = MOB_ORGANIC|MOB_HUMANOID,\
-			self_targeting = can_repair_self ? HEALING_TOUCH_ANYONE : HEALING_TOUCH_NOT_SELF,\
-			action_text = "%SOURCE% begins mending %TARGET%'s dents.",\
-			complete_text = "%TARGET%'s health restored.",\
-			show_health = TRUE,\
-			heal_color = COLOR_CULT_RED,\
-		)
-		var/static/list/structure_types = typecacheof(list(/obj/structure/destructible/cult))
-		AddElement(\
-			/datum/element/structure_repair,\
-			structure_types_typecache = structure_types,\
-			)
-	add_traits(list(TRAIT_HEALS_FROM_CULT_PYLONS, TRAIT_SPACEWALK), INNATE_TRAIT)
-	grant_actions_by_list(construct_spells)
-
-	var/spell_count = 1
-	for(var/datum/action/spell as anything in actions)
-		if(!(spell.type in construct_spells))
-			continue
-
-		var/pos = 2 + spell_count * 31
-		if(construct_spells.len >= 4)
-			pos -= 31 * (construct_spells.len - 4)
-		spell.default_button_position = "6:[pos],4:-2" // Set the default position to this random position
-		spell_count++
-		update_action_buttons()
 
 	var/datum/callback/retaliate_callback = CALLBACK(src, PROC_REF(ai_retaliate_behaviour))
 	AddComponent(/datum/component/ai_retaliate_advanced, retaliate_callback)

@@ -33,9 +33,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "eB" = (
-/obj/structure/railing/stone{
-	layer = -6
-	},
+/obj/structure/railing/stone,
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -144,23 +142,17 @@
 /obj/structure/stone_tile{
 	dir = 8
 	},
-/obj/structure/railing/stone{
-	layer = -6
-	},
+/obj/structure/railing/stone,
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "rW" = (
-/obj/structure/railing/stone/left{
-	layer = -6
-	},
+/obj/structure/railing/stone/left,
 /obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "si" = (
-/obj/structure/railing/stone{
-	layer = -6
-	},
+/obj/structure/railing/stone,
 /obj/item/reagent_containers/cup/bowl/wood_bowl{
 	pixel_x = 7;
 	pixel_y = 3
@@ -185,9 +177,7 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
 	},
-/obj/structure/railing/stone/right{
-	layer = -6
-	},
+/obj/structure/railing/stone/right,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "uV" = (
@@ -234,15 +224,11 @@
 /area/lavaland/surface/outdoors)
 "Ai" = (
 /obj/structure/stone_tile,
-/obj/structure/railing/stone{
-	layer = -6
-	},
+/obj/structure/railing/stone,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Ay" = (
-/obj/structure/railing/stone{
-	layer = -6
-	},
+/obj/structure/railing/stone,
 /obj/item/xenoarch/useless_relic{
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
@@ -268,9 +254,7 @@
 /obj/structure/stone_tile{
 	dir = 1
 	},
-/obj/structure/railing/stone{
-	layer = -6
-	},
+/obj/structure/railing/stone,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Fr" = (
@@ -284,9 +268,7 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Hk" = (
-/obj/structure/railing/stone/right{
-	layer = -6
-	},
+/obj/structure/railing/stone/right,
 /obj/structure/flora/rock/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -352,9 +334,7 @@
 /obj/structure/stone_tile{
 	dir = 1
 	},
-/obj/structure/railing/stone/left{
-	layer = -6
-	},
+/obj/structure/railing/stone/left,
 /mob/living/basic/mining/goliath{
 	name = "Chaser";
 	light_color = "#996666";
@@ -363,7 +343,6 @@
 	current_size = 1.25;
 	speed = 0.5;
 	health = 600;
-	melee_attack_cooldown = 30;
 	melee_damage_lower = 10;
 	melee_damage_upper = 40;
 	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.25, "oxygen" = 1);
@@ -388,9 +367,7 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Os" = (
-/obj/structure/railing/stone{
-	layer = -6
-	},
+/obj/structure/railing/stone,
 /obj/structure/flora/rock/pile/style_random,
 /obj/item/xenoarch/useless_relic{
 	name = "Ancient relic";
@@ -429,9 +406,7 @@
 /obj/structure/stone_tile{
 	dir = 4
 	},
-/obj/structure/railing/stone{
-	layer = -6
-	},
+/obj/structure/railing/stone,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "WP" = (
@@ -441,9 +416,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "XU" = (
-/obj/structure/railing/stone{
-	layer = -6
-	},
+/obj/structure/railing/stone,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "YE" = (

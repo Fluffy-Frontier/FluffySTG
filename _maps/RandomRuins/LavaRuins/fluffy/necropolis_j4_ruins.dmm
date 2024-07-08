@@ -16,9 +16,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "d" = (
-/obj/structure/railing/stone{
-	layer = -6
-	},
+/obj/structure/railing/stone,
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -28,9 +26,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "f" = (
-/obj/structure/railing/stone/left{
-	layer = -6
-	},
+/obj/structure/railing/stone/left,
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -79,9 +75,7 @@
 /obj/structure/stone_tile/surrounding_tile/burnt{
 	dir = 1
 	},
-/obj/structure/railing/stone/left{
-	layer = -6
-	},
+/obj/structure/railing/stone/left,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "o" = (
@@ -177,9 +171,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "H" = (
-/obj/structure/railing/stone/right{
-	layer = -6
-	},
+/obj/structure/railing/stone/right,
 /obj/structure/stone_tile/surrounding/burnt,
 /obj/structure/stone_tile/center/burnt,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -281,9 +273,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Y" = (
-/obj/structure/railing/stone{
-	layer = -6
-	},
+/obj/structure/railing/stone,
 /obj/item/xenoarch/useless_relic{
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
@@ -298,9 +288,7 @@
 /obj/structure/stone_tile{
 	dir = 1
 	},
-/obj/structure/railing/stone/right{
-	layer = -6
-	},
+/obj/structure/railing/stone/right,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 

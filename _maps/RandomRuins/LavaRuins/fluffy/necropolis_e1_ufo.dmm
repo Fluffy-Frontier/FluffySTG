@@ -37,7 +37,7 @@
 	icon_state = "abductor_agent_combat_gun";
 	attack_sound = 'sound/weapons/punch1.ogg';
 	name = "Abructor Assault Trooper";
-	crusher_loot = list(/obj/effect/decal/remains/plasma,/obj/item/stock_parts/cell/infinite/abductor,/obj/item/organ/internal/heart/gland/heal,/obj/item/organ/internal/heart/gland/ventcrawling,/obj/item/abductor/silencer,/obj/item/crowbar/abductor,/obj/item/multitool/abductor,/obj/item/screwdriver/abductor,/obj/item/weldingtool/abductor,/obj/item/wirecutters/abductor,/obj/item/wrench/abductor);
+	crusher_loot = list(/obj/item/organ/internal/heart/gland/heal,/obj/item/organ/internal/heart/gland/ventcrawling,/obj/item/abductor/silencer,/obj/item/crowbar/abductor,/obj/item/multitool/abductor,/obj/item/screwdriver/abductor,/obj/item/weldingtool/abductor,/obj/item/wirecutters/abductor,/obj/item/wrench/abductor);
 	loot = list(/obj/effect/decal/remains/plasma,/obj/item/organ/internal/heart/gland/heal,/obj/item/hemostat/alien,/obj/item/surgicaldrill/alien,/obj/item/cautery/alien,/obj/item/retractor/alien,/obj/item/circular_saw/alien,/obj/item/scalpel/alien);
 	health = 750;
 	speed = 1;
