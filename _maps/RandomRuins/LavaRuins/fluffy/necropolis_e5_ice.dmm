@@ -7,12 +7,7 @@
 	color = "#7777FF"
 	},
 /obj/structure/marker_beacon/teal,
-/obj/item/stock_parts/cell/crystal_cell{
-	color = "#77FFFF";
-	name = "Ethereal crystal";
-	alpha = 150;
-	desc = "A cold crystal that can serve as sort of power source. Probably."
-	},
+/obj/item/stock_parts/cell/crystal_cell,
 /turf/open/misc/snow,
 /area/ruin/unpowered)
 "d" = (
@@ -20,12 +15,7 @@
 	color = "#7777FF"
 	},
 /obj/structure/marker_beacon/teal,
-/obj/item/stock_parts/cell/crystal_cell{
-	color = "#77FFFF";
-	name = "Ethereal crystal";
-	alpha = 150;
-	desc = "A cold crystal that can serve as sort of power source. Probably."
-	},
+/obj/item/stock_parts/cell/crystal_cell,
 /turf/open/misc/snow,
 /area/ruin/unpowered)
 "e" = (
@@ -44,7 +34,8 @@
 	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
 	melee_attack_cooldown = 10;
 	color = "#ccccFF";
-	light_color = "#ccccFF"
+	light_color = "#ccccFF";
+	maxHealth = 300
 	},
 /turf/open/misc/ice,
 /area/ruin/unpowered)
@@ -52,6 +43,7 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 9
 	},
+/obj/item/melee/frozen_moonlight,
 /mob/living/basic/mining/ice_demon{
 	health = 300;
 	name = "Rime";
@@ -64,9 +56,9 @@
 	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
 	melee_attack_cooldown = 10;
 	color = "#ccccFF";
-	light_color = "#ccccFF"
+	light_color = "#ccccFF";
+	maxHealth = 300
 	},
-/obj/item/melee/frozen_moonlight,
 /turf/open/misc/ice,
 /area/ruin/unpowered)
 "i" = (
@@ -121,7 +113,8 @@
 	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
 	melee_attack_cooldown = 10;
 	color = "#ccccFF";
-	light_color = "#ccccFF"
+	light_color = "#ccccFF";
+	maxHealth = 300
 	},
 /turf/open/misc/ice,
 /area/ruin/unpowered)
@@ -139,7 +132,8 @@
 	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
 	melee_attack_cooldown = 10;
 	color = "#ccccFF";
-	light_color = "#ccccFF"
+	light_color = "#ccccFF";
+	maxHealth = 300
 	},
 /turf/open/misc/snow,
 /area/ruin/unpowered)
@@ -147,12 +141,7 @@
 /obj/structure/fluff/divine/conduit{
 	color = "#7777FF"
 	},
-/obj/item/stock_parts/cell/crystal_cell{
-	color = "#77FFFF";
-	name = "Ethereal crystal";
-	alpha = 150;
-	desc = "A cold crystal that can serve as sort of power source. Probably."
-	},
+/obj/item/stock_parts/cell/crystal_cell,
 /turf/open/misc/snow,
 /area/ruin/unpowered)
 "I" = (
@@ -168,7 +157,8 @@
 	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
 	melee_attack_cooldown = 10;
 	color = "#ccccFF";
-	light_color = "#ccccFF"
+	light_color = "#ccccFF";
+	maxHealth = 300
 	},
 /turf/open/misc/ice,
 /area/ruin/unpowered)
