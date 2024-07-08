@@ -22656,8 +22656,7 @@
 /area/station/service/library)
 "gXa" = (
 /obj/structure/chair/plastic{
-	dir = 8;
-	layer = 2.7
+	dir = 8
 	},
 /obj/effect/landmark/start/prisoner,
 /turf/open/misc/sandy_dirt/planet,
@@ -26227,8 +26226,7 @@
 "hTa" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/chair/plastic{
-	dir = 8;
-	layer = 2.7
+	dir = 8
 	},
 /obj/item/target/syndicate,
 /turf/open/openspace{
@@ -29945,9 +29943,7 @@
 /turf/open/floor/carpet,
 /area/station/commons/vacant_room/office)
 "jcz" = (
-/obj/structure/statue/sandstone/venus{
-	layer = 3.1
-	},
+/obj/structure/statue/sandstone/venus,
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
@@ -37175,9 +37171,8 @@
 	pixel_y = 9
 	},
 /obj/item/reagent_containers/condiment/enzyme{
-	layer = 5;
 	pixel_y = 19;
-	pixel_x = -6
+	pixel_x = -12
 	},
 /obj/item/reagent_containers/cup/beaker{
 	pixel_x = 5;
@@ -38895,6 +38890,15 @@
 	},
 /turf/open/floor/iron/smooth_large,
 /area/station/command/secure_bunker)
+"lLL" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/chair/sofa/bench{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/abyss_station/exterior/abyss)
 "lLN" = (
 /obj/effect/turf_decal/tile/dark_red/fourcorners,
 /obj/machinery/door/airlock/security/old{
@@ -39865,8 +39869,7 @@
 /area/abyss_station/station/security)
 "lZI" = (
 /obj/structure/chair/plastic{
-	dir = 4;
-	layer = 2.7
+	dir = 4
 	},
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos/office)
@@ -42565,7 +42568,6 @@
 /area/station/science/ordnance)
 "mSK" = (
 /obj/structure/statue/sandstone/venus{
-	layer = 3.1;
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood{
@@ -43512,8 +43514,7 @@
 /area/station/service/library)
 "nhN" = (
 /obj/structure/chair/plastic{
-	dir = 8;
-	layer = 2.7
+	dir = 8
 	},
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos/office)
@@ -44755,8 +44756,7 @@
 /area/station/hallway/secondary/entry)
 "nCq" = (
 /obj/structure/chair/plastic{
-	dir = 8;
-	layer = 2.7
+	dir = 8
 	},
 /obj/effect/landmark/start/atmospheric_technician,
 /turf/open/floor/iron/dark,
@@ -49844,8 +49844,7 @@
 "oZp" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/chair/plastic{
-	dir = 4;
-	layer = 2.7
+	dir = 4
 	},
 /obj/item/target/syndicate,
 /turf/open/openspace{
@@ -50496,8 +50495,7 @@
 /area/station/science/ordnance)
 "phA" = (
 /obj/structure/railing{
-	dir = 9;
-	layer = 3.1
+	dir = 9
 	},
 /obj/structure/chair/sofa/corp/corner{
 	dir = 4
@@ -53722,8 +53720,7 @@
 /area/station/maintenance/department/cargo)
 "qce" = (
 /obj/structure/chair/plastic{
-	dir = 8;
-	layer = 2.7
+	dir = 8
 	},
 /obj/structure/railing,
 /turf/open/floor/iron/dark,
@@ -65070,8 +65067,7 @@
 /area/station/science/research)
 "tBd" = (
 /obj/structure/chair/plastic{
-	dir = 4;
-	layer = 2.7
+	dir = 4
 	},
 /turf/open/floor/iron,
 /area/station/maintenance/disposal)
@@ -159629,7 +159625,7 @@ pPZ
 pPZ
 pPZ
 oIP
-qwN
+gPc
 gaw
 pPZ
 pPZ
@@ -177973,15 +177969,15 @@ ixh
 ixh
 ixh
 gns
-jyQ
+lLL
 gIu
 lKG
 gns
-jyQ
+lLL
 gIu
 lKG
 gns
-jyQ
+lLL
 gIu
 lKG
 gCB
