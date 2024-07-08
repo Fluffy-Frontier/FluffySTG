@@ -76,13 +76,13 @@
 		/obj/item/mod/module/storage/large_capacity,
 		/obj/item/mod/module/magnetic_harness,
 		/obj/item/mod/module/flashlight,
-		/obj/item/mod/module/jetpack/advanced,
+		/obj/item/mod/module/jetpack,
 		/obj/item/mod/module/quick_carry,
 		/obj/item/mod/module/quick_cuff,
 		/obj/item/mod/module/emp_shield,
 	)
 	default_pins = list(
-		/obj/item/mod/module/jetpack/advanced,
+		/obj/item/mod/module/jetpack,
 	)
 
 /datum/mod_theme/ntis_derevolutioner/set_skin(obj/item/mod/control/mod, skin)
