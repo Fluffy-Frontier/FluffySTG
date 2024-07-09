@@ -4722,13 +4722,12 @@
 /area/station/service/kitchen)
 "bxG" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/left/directional/north{
-	dir = 8;
+/obj/machinery/door/firedoor/heavy,
+/obj/effect/turf_decal/tile/blue/fourcorners,
+/obj/machinery/door/window/left/directional/west{
 	name = "Atmospherics Desk";
 	req_access = list("atmospherics")
 	},
-/obj/machinery/door/firedoor/heavy,
-/obj/effect/turf_decal/tile/blue/fourcorners,
 /turf/open/floor/iron,
 /area/station/engineering/atmos/office)
 "bxH" = (
@@ -6777,12 +6776,10 @@
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
 "ces" = (
-/obj/machinery/door/window/brigdoor/right{
-	dir = 1;
-	name = "Command Chair";
-	req_access = list("command")
+/obj/machinery/door/window/brigdoor/left/directional/north{
+	req_access = list("command");
+	name = "Command Chair"
 	},
-/obj/structure/window/reinforced/spawner/directional/north,
 /turf/open/floor/iron/smooth_large,
 /area/station/command/secure_bunker)
 "cev" = (
@@ -10148,15 +10145,14 @@
 /area/station/engineering/engine_smes)
 "diW" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/left{
-	dir = 8;
-	name = "Genetics Desk";
-	req_access = list("genetics")
-	},
 /obj/effect/turf_decal/tile/green/fourcorners,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "rdgene";
 	name = "Genetics Lab Shutters"
+	},
+/obj/machinery/door/window/left/directional/west{
+	req_access = list("genetics");
+	name = "Genetics Desk"
 	},
 /turf/open/floor/iron/white,
 /area/station/science/genetics)
@@ -11155,13 +11151,11 @@
 /area/station/medical/aslyum)
 "dzk" = (
 /obj/machinery/light/warm/directional/east,
-/obj/machinery/door/window/brigdoor{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
 	},
+/obj/machinery/door/window/left/directional/north,
 /turf/open/floor/iron/freezer,
 /area/abyss_station/station/security)
 "dzn" = (
@@ -11686,18 +11680,16 @@
 /turf/open/floor/iron/white,
 /area/station/hallway/primary/central)
 "dHs" = (
-/obj/machinery/door/window/left{
-	name = "First-Aid Supplies";
-	red_alert_access = 1;
-	req_access = list("medical");
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/blue{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
+	},
+/obj/machinery/door/window/left/directional/north{
+	name = "First-Aid Supplies";
+	req_access = list("medical")
 	},
 /turf/open/floor/iron/dark,
 /area/station/medical/medbay/central)
@@ -14471,15 +14463,13 @@
 /area/station/hallway/primary/starboard)
 "evV" = (
 /obj/structure/window/reinforced/spawner/directional/east,
-/obj/machinery/door/window/brigdoor{
-	dir = 1;
-	id = "crgcell";
-	name = "Cargo Cell";
-	req_access = list("security")
-	},
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
+	},
+/obj/machinery/door/window/brigdoor/left/directional/north{
+	req_access = list("security");
+	name = "Security Post Cell"
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/supply)
@@ -34292,15 +34282,13 @@
 /area/station/engineering/engine_smes)
 "ksV" = (
 /obj/structure/window/reinforced/spawner/directional/east,
-/obj/machinery/door/window/brigdoor{
-	dir = 1;
-	id = "crgcell";
-	name = "Engineering Cell";
-	req_access = list("security")
-	},
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
+	},
+/obj/machinery/door/window/brigdoor/left/directional/north{
+	req_access = list("security");
+	name = "Security Post Cell"
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/engineering)
@@ -64964,15 +64952,13 @@
 /area/station/command/heads_quarters/captain/private)
 "tAC" = (
 /obj/structure/window/reinforced/spawner/directional/west,
-/obj/machinery/door/window/brigdoor{
-	dir = 1;
-	id = "crgcell";
-	name = "Cargo Cell";
-	req_access = list("security")
-	},
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
+	},
+/obj/machinery/door/window/brigdoor/left/directional/north{
+	req_access = list("security");
+	name = "Security Post Cell"
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/supply)
@@ -65117,16 +65103,15 @@
 /area/station/service/lawoffice)
 "tCX" = (
 /obj/structure/cable,
-/obj/machinery/door/window/brigdoor/security/holding{
-	id = "Holding Cell";
-	name = "Monkey Cell";
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/smart/simple/supply/hidden/layer4{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2{
 	dir = 4
+	},
+/obj/machinery/door/window/brigdoor/right/directional/east{
+	name = "The Blue Shields Equipment";
+	req_access = list("security")
 	},
 /turf/open/floor/iron/smooth_half{
 	dir = 1
@@ -65652,15 +65637,13 @@
 /area/abyss_station/exterior/abyss)
 "tMc" = (
 /obj/structure/window/reinforced/spawner/directional/west,
-/obj/machinery/door/window/brigdoor{
-	dir = 1;
-	id = "crgcell";
-	name = "Engineering Cell";
-	req_access = list("security")
-	},
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
+	},
+/obj/machinery/door/window/brigdoor/left/directional/north{
+	req_access = list("security");
+	name = "Security Post Cell"
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/engineering)
@@ -67535,13 +67518,11 @@
 /area/station/command/teleporter)
 "upK" = (
 /obj/machinery/light/warm/directional/west,
-/obj/machinery/door/window/brigdoor{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
 	},
+/obj/machinery/door/window/left/directional/north,
 /turf/open/floor/iron/freezer,
 /area/abyss_station/station/security)
 "upL" = (
@@ -67912,15 +67893,14 @@
 	name = "HoP Privacy Shutters"
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/left/directional/north{
-	dir = 2;
-	name = "Reception Window"
-	},
 /obj/effect/turf_decal/tile/green/fourcorners,
 /obj/structure/cable,
 /obj/machinery/door/window/brigdoor/left/directional/north{
 	req_access = list("hop");
 	name = "Head of Personnel's Desk"
+	},
+/obj/machinery/door/window/left/directional/south{
+	name = "Reception Window"
 	},
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/hop)
@@ -77406,9 +77386,7 @@
 	dir = 8;
 	id = "garbage"
 	},
-/obj/machinery/door/window/right{
-	base_state = "left";
-	icon_state = "left";
+/obj/machinery/door/window/right/directional/south{
 	name = "Danger: Conveyor Access";
 	req_access = list("maint_tunnels")
 	},

@@ -20,6 +20,7 @@
 		#include "map_files\Ouroboros\Ouroboros.dmm"
 		// NOVA EDIT END
 		// FLUFFY FRONTIER ADDITION START
+		#include "map_files\AbyssStation\abyssstation.dmm"
 		#include "map_files\NSSJourney\NSSJourney.dmm"
 		#include "map_files\KiloStation2\KiloStation2.dmm"
 		// FLUFFY FRONTIER ADDITION END
