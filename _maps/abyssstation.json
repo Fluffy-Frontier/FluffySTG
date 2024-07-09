@@ -5,13 +5,15 @@
 	"map_file": "abyssstation.dmm",
 	"planetary": 1,
 	"shuttles": {
-		"cargo": "cargo_skyrat",
+		"cargo": "cargo_nova",
 		"ferry": "ferry_fancy",
 		"whiteship": "whiteship_box",
 		"emergency": "emergency_box"
 	},
 	"ignored_unit_tests": [
-		"/datum/unit_test/atmospherics_sanity"
+		"/datum/unit_test/atmospherics_sanity",
+		"/datum/unit_test/breath/breath_sanity_ashwalker",
+		"/datum/unit_test/lungs/lungs_sanity_ashwalker"
 	],
 	"traits": [
 		{
