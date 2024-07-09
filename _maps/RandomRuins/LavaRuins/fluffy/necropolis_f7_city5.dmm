@@ -266,6 +266,12 @@
 /mob/living/basic/mining/ancient_demon/goliath_pup,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"ka" = (
+/obj/structure/table/wood,
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
 "kb" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 6
@@ -661,6 +667,12 @@
 /obj/structure/table/wood,
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
+"yo" = (
+/obj/structure/table/wood,
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "yy" = (
 /obj/structure/stone_tile,
@@ -1627,7 +1639,7 @@ EO
 LH
 cg
 GU
-xV
+ka
 qk
 oM
 zl
@@ -1976,7 +1988,7 @@ xx
 JK
 OG
 gY
-oM
+yo
 af
 Lg
 pB

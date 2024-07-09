@@ -65,7 +65,10 @@
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 1
 	},
-/obj/item/knife/envy,
+/obj/item/knife/envy{
+	pixel_x = -7;
+	pixel_y = 4
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "E" = (
@@ -115,6 +118,10 @@
 /area/lavaland/surface/outdoors)
 "T" = (
 /obj/structure/stone_tile/slab/cracked,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 3;
+	pixel_y = -8
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "U" = (
@@ -128,7 +135,10 @@
 "V" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center,
-/obj/item/clothing/suit/hooded/bloated_human,
+/obj/item/clothing/suit/hooded/bloated_human{
+	pixel_x = -4;
+	pixel_y = 0
+	},
 /obj/effect/decal/cleanable/blood/old,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
@@ -139,7 +149,10 @@
 "X" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center,
-/obj/effect/spawner/random/entertainment/coin,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 5;
+	pixel_y = -5
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "Y" = (

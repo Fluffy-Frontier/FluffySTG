@@ -242,9 +242,18 @@
 	pixel_x = -7;
 	pixel_y = 12
 	},
-/obj/effect/spawner/random/entertainment/coin,
-/obj/effect/spawner/random/entertainment/coin,
-/obj/effect/spawner/random/entertainment/coin,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 3;
+	pixel_y = 6
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -2;
+	pixel_y = -5
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 6;
+	pixel_y = -9
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "BB" = (
@@ -318,7 +327,10 @@
 /area/ruin/unpowered)
 "KW" = (
 /obj/structure/stone_tile/slab,
-/obj/effect/spawner/random/entertainment/coin,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 4;
+	pixel_y = 7
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Lw" = (
@@ -335,7 +347,10 @@
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 1
 	},
-/obj/effect/spawner/random/entertainment/coin,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -6;
+	pixel_y = 6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Rx" = (

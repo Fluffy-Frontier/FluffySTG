@@ -67,12 +67,16 @@
 "F" = (
 /obj/structure/lattice/catwalk/mining,
 /obj/item/reagent_containers/heroinbrick{
-	pixel_x = 9;
+	pixel_x = 13;
 	pixel_y = 12
 	},
 /obj/item/reagent_containers/heroin{
 	pixel_x = 9;
 	pixel_y = 4
+	},
+/obj/item/reagent_containers/heroinbrick{
+	pixel_x = -5;
+	pixel_y = -5
 	},
 /turf/open/floor/plating/lavaland_atmos,
 /area/ruin/unpowered)
@@ -92,7 +96,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/item/reagent_containers/heroinbrick,
+/obj/structure/cursed_slot_machine,
 /turf/open/floor/plating/lavaland_atmos,
 /area/ruin/unpowered)
 "Q" = (

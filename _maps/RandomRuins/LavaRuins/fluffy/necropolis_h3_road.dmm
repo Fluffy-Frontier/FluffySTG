@@ -7,6 +7,16 @@
 /obj/structure/stone_tile/slab/burnt,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"cf" = (
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -8;
+	pixel_y = 9
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "cr" = (
 /obj/structure/flora/rock/pile/style_random,
 /obj/structure/railing/stone,
@@ -329,6 +339,10 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
 	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 4;
+	pixel_y = 8
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "RO" = (
@@ -440,7 +454,7 @@ CU
 Mx
 BK
 Iv
-Iz
+cf
 Fn
 HN
 wW

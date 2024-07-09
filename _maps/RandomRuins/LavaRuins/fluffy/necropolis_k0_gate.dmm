@@ -121,6 +121,21 @@
 /obj/structure/stone_tile/surrounding/burnt,
 /obj/structure/stone_tile/center/cracked,
 /obj/structure/necropolis_arch,
+/mob/living/simple_animal/hostile/megafauna/dragon{
+	color = "#FF7777";
+	light_color = "#FF7777";
+	maxHealth = 5000;
+	health = 5000;
+	melee_damage_upper = 80;
+	speed = 0.5;
+	ranged_cooldown_time = 10;
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/ashdrake = 20,/obj/effect/spawner/random/entertainment/coin = 80,/obj/item/storage/bag/money = 1,/obj/structure/cursed_money = 1);
+	butcher_results = list(/obj/item/stack/ore/diamond = 15, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 50);
+	current_size = 1.25;
+	base_pixel_y = -7.5;
+	name = "Platidansax";
+	desc = "Tax guardian of the necropolis."
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "C" = (

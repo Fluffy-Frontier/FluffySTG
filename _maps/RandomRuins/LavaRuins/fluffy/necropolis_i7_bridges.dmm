@@ -508,6 +508,18 @@
 /obj/structure/stone_tile{
 	dir = 1
 	},
+/mob/living/basic/mining/ancient_demon/goliath_pup{
+	desc = "Boro baka.";
+	name = "Sho baka";
+	health = 24000;
+	maxHealth = 24000;
+	attack_sound = 'sound/effects/wounds/crackandbleed.ogg';
+	attack_verb_continuous = "nyoms";
+	attack_verb_simple = "nyom";
+	attacked_sound = "bite";
+	butcher_results = list(/obj/item/food/meat/slab/goliath = 1,/obj/item/dog_bone = 1,/obj/item/instrument/trombone = 1,/obj/item/implantcase/sad_trombone = 1);
+	melee_damage_type = "brute"
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Yz" = (

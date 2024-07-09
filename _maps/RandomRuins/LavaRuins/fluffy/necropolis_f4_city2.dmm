@@ -49,6 +49,10 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "cf" = (
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -6;
+	pixel_y = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "cm" = (
@@ -145,6 +149,14 @@
 /obj/item/xenoarch/useless_relic{
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"hx" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 6;
+	pixel_y = -7
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -302,6 +314,14 @@
 "pT" = (
 /turf/template_noop,
 /area/template_noop)
+"qg" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 1;
+	pixel_y = -6
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "ra" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
@@ -312,7 +332,10 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "rm" = (
-/obj/item/reagent_containers/cup/bottle/silver,
+/obj/item/reagent_containers/cup/bottle/silver{
+	pixel_x = 5;
+	pixel_y = 3
+	},
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
@@ -534,6 +557,14 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"BC" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -10;
+	pixel_y = 8
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "BD" = (
 /obj/item/stack/sheet/mineral/silver{
 	pixel_x = 7;
@@ -595,11 +626,29 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"DN" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 4
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
 "DP" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
 	},
 /turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Ej" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -5;
+	pixel_y = -7
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "EI" = (
 /obj/structure/stone_tile/slab/cracked{
@@ -663,6 +712,14 @@
 /obj/structure/stone_tile/center/burnt,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Hd" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
 "Hj" = (
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
@@ -765,6 +822,16 @@
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"LR" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -8;
+	pixel_y = -4
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Mc" = (
 /obj/structure/stone_tile/slab,
 /obj/item/xenoarch/useless_relic{
@@ -895,6 +962,14 @@
 /obj/structure/fermenting_barrel/gunpowder,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"SL" = (
+/obj/item/reagent_containers/cup/bottle/silver{
+	pixel_x = -7;
+	pixel_y = 4
+	},
+/obj/structure/stone_tile/slab,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "Ta" = (
 /obj/structure/stone_tile/block{
 	dir = 4
@@ -974,6 +1049,14 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"UB" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "UI" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center/burnt,
@@ -987,6 +1070,10 @@
 "UR" = (
 /obj/structure/stone_tile/block{
 	dir = 8
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 6;
+	pixel_y = -4
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -1202,8 +1289,8 @@ nk
 Jp
 aK
 Df
-Hj
-Hj
+BC
+qg
 aK
 aK
 ek
@@ -1394,7 +1481,7 @@ MT
 iW
 aK
 cd
-ry
+Hd
 eh
 eh
 aK
@@ -1437,7 +1524,7 @@ eh
 xC
 QA
 FG
-fr
+Ej
 jy
 OU
 MT
@@ -1465,7 +1552,7 @@ cS
 cY
 QA
 TO
-fr
+UB
 Sc
 "}
 (14,1,1) = {"
@@ -1552,7 +1639,7 @@ aK
 My
 eh
 eh
-zq
+LR
 ei
 nk
 vG
@@ -1615,7 +1702,7 @@ QA
 eh
 aK
 sH
-rm
+SL
 ei
 um
 um
@@ -1641,7 +1728,7 @@ eh
 eh
 cS
 nk
-hV
+DN
 ei
 sH
 cW
@@ -1659,7 +1746,7 @@ fr
 Kw
 cS
 QA
-Qq
+hx
 Hj
 eh
 eh

@@ -554,6 +554,10 @@
 /area/lavaland/surface/outdoors)
 "IF" = (
 /obj/structure/stone_tile/block/cracked,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -2;
+	pixel_y = -1
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "IN" = (

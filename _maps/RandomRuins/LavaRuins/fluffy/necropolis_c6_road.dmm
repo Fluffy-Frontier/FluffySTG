@@ -77,6 +77,14 @@
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"t" = (
+/obj/structure/stone_tile/slab/cracked,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 7;
+	pixel_y = -4
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "u" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 1
@@ -97,6 +105,14 @@
 	},
 /obj/structure/stone_tile/slab/cracked{
 	dir = 1
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"E" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -4;
+	pixel_y = 8
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -226,7 +242,7 @@ i
 (7,1,1) = {"
 a
 V
-N
+t
 H
 N
 "}
@@ -239,7 +255,7 @@ b
 "}
 (9,1,1) = {"
 O
-U
+E
 Y
 a
 a

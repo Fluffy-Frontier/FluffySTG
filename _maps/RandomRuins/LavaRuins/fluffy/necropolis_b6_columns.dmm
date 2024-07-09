@@ -132,6 +132,14 @@
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center,
 /obj/item/ammo_casing/arrow/holy,
+/obj/item/choice_beacon/holy{
+	pixel_x = -8;
+	pixel_y = 12
+	},
+/obj/effect/mob_spawn/corpse/human{
+	pixel_x = 0;
+	pixel_y = -4
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 

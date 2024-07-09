@@ -22,6 +22,10 @@
 	pixel_x = 9;
 	pixel_y = -7
 	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 0;
+	pixel_y = -1
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "f" = (
@@ -53,6 +57,10 @@
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center,
 /obj/structure/trap/cult,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 0;
+	pixel_y = 0
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "l" = (
@@ -178,6 +186,10 @@
 "I" = (
 /obj/structure/stone_tile/surrounding/burnt,
 /obj/structure/stone_tile/center/burnt,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 5;
+	pixel_y = 5
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "J" = (
@@ -229,6 +241,26 @@
 	dir = 4
 	},
 /obj/structure/stone_tile/surrounding_tile,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 3;
+	pixel_y = -8
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -7;
+	pixel_y = -3
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 10;
+	pixel_y = -2
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -7;
+	pixel_y = 8
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "Q" = (
@@ -255,12 +287,12 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "W" = (
-/obj/item/coin/gold{
-	pixel_x = -10;
-	pixel_y = 8
-	},
 /obj/structure/stone_tile{
 	dir = 1
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -11;
+	pixel_y = 9
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)

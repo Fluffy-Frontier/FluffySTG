@@ -7,6 +7,10 @@
 /obj/structure/stone_tile/block{
 	dir = 1
 	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -8;
+	pixel_y = -20
+	},
 /turf/open/lava/smooth/lava_land_surface{
 	slowdown = 0
 	},
@@ -76,6 +80,10 @@
 /area/lavaland/surface/outdoors)
 "t" = (
 /obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 12;
+	pixel_y = -8
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "u" = (

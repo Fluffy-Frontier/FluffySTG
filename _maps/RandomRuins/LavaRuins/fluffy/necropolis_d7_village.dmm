@@ -36,7 +36,10 @@
 /obj/structure/stone_tile/block{
 	dir = 4
 	},
-/obj/effect/spawner/random/entertainment/coin,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -9;
+	pixel_y = -4
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "cU" = (
@@ -44,6 +47,14 @@
 	dir = 8
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"cV" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -8;
+	pixel_y = -7
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "dk" = (
 /obj/structure/stone_tile/block{
@@ -69,7 +80,10 @@
 /area/lavaland/surface/outdoors)
 "dW" = (
 /obj/structure/stone_tile/surrounding/cracked,
-/obj/effect/spawner/random/entertainment/coin,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 4;
+	pixel_y = -9
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "dZ" = (
@@ -143,6 +157,14 @@
 /mob/living/basic/mining/ancient_demon,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"in" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 5;
+	pixel_y = -7
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "ip" = (
 /obj/item/reagent_containers/cup/mortar{
 	pixel_y = 12;
@@ -328,7 +350,10 @@
 	pixel_y = 7;
 	pixel_x = 12
 	},
-/obj/effect/spawner/random/entertainment/drugs,
+/obj/effect/spawner/random/entertainment/drugs{
+	pixel_x = -10;
+	pixel_y = -8
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "rb" = (
@@ -520,6 +545,14 @@
 /obj/structure/stone_tile/slab/burnt,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"BI" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 4;
+	pixel_y = -6
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "BK" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 4
@@ -666,7 +699,10 @@
 	dir = 8
 	},
 /obj/effect/spawner/random/exotic/antag_gear_weak,
-/obj/item/stack/sheet/runed_metal/five,
+/obj/item/stack/sheet/runed_metal/five{
+	pixel_x = 7;
+	pixel_y = 7
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "GT" = (
@@ -742,7 +778,10 @@
 /area/lavaland/surface/outdoors)
 "Le" = (
 /obj/structure/stone_tile/slab/cracked,
-/obj/effect/spawner/random/entertainment/coin,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -8;
+	pixel_y = 7
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "LW" = (
@@ -797,7 +836,10 @@
 /area/lavaland/surface/outdoors)
 "Oy" = (
 /obj/structure/stone_tile/slab,
-/obj/effect/spawner/random/entertainment/coin,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 5;
+	pixel_y = -9
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "OI" = (
@@ -873,7 +915,10 @@
 /area/lavaland/surface/outdoors)
 "UG" = (
 /obj/structure/stone_tile/slab,
-/obj/effect/spawner/random/entertainment/coin,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -10;
+	pixel_y = 6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Vb" = (
@@ -893,6 +938,10 @@
 "Wg" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 6
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 11;
+	pixel_y = 2
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -955,7 +1004,10 @@
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 4
 	},
-/obj/item/clothing/suit/hooded/cultrobes,
+/obj/item/clothing/suit/hooded/cultrobes{
+	pixel_x = -6;
+	pixel_y = -6
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "Yv" = (
@@ -980,6 +1032,10 @@
 	},
 /obj/structure/stone_tile/slab/cracked{
 	dir = 10
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -8;
+	pixel_y = -10
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -1134,7 +1190,7 @@ NI
 NI
 wa
 wa
-Ky
+in
 wa
 wa
 Em
@@ -1179,7 +1235,7 @@ NI
 NI
 Hm
 Su
-md
+cV
 MN
 Yv
 BP
@@ -1316,7 +1372,7 @@ BT
 WT
 wa
 wa
-Ky
+BI
 wa
 wa
 vN

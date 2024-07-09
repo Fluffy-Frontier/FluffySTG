@@ -58,6 +58,10 @@
 "S" = (
 /obj/structure/healingfountain,
 /obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/medical/minor_healing{
+	pixel_x = 0;
+	pixel_y = -7
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "X" = (

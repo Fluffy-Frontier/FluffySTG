@@ -56,7 +56,14 @@
 /area/lavaland/surface/outdoors)
 "W" = (
 /obj/structure/stone_tile/block/cracked,
-/obj/effect/spawner/random/mob/necropolis_mob,
+/obj/item/mecha_ammo/scattershot,
+/obj/item/mecha_ammo/scattershot,
+/obj/item/mecha_ammo/scattershot,
+/obj/item/mecha_ammo/scattershot,
+/obj/structure/mecha_wreckage/ripley{
+	pixel_x = -2;
+	pixel_y = 13
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "X" = (

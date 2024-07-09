@@ -213,6 +213,10 @@
 /area/ruin/unpowered/ratvar)
 "Q" = (
 /obj/structure/fluff/clockwork/alloy_shards/small,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 8;
+	pixel_y = -8
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/ratvar)
 "R" = (

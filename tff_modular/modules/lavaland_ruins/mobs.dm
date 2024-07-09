@@ -404,5 +404,4 @@
 		/mob/living/basic/mining/legion = 1,
 		/mob/living/basic/mining/legion/massive = 0.5,
 		/mob/living/basic/mining/lobstrosity/lava = 1,
-		/mob/living/basic/mining/watcher = 1,
 	)

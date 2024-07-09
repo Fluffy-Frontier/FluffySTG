@@ -37,6 +37,10 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
 	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -6;
+	pixel_y = 4
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "aL" = (
@@ -58,6 +62,16 @@
 	},
 /obj/structure/stone_tile/burnt,
 /turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"bt" = (
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "bv" = (
 /obj/structure/stone_tile/surrounding_tile{
@@ -126,6 +140,16 @@
 	dir = 1
 	},
 /turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"eH" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -5;
+	pixel_y = 8
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "eI" = (
 /obj/structure/rack/shelf{
@@ -320,6 +344,14 @@
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"ml" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 6;
+	pixel_y = -7
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "mo" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -374,6 +406,16 @@
 /obj/structure/stone_tile/burnt,
 /obj/effect/spawner/random/mob/necropolis_mob,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"oL" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/effect/spawner/random/entertainment/coin,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "oM" = (
 /obj/structure/rack/shelf{
@@ -806,6 +848,16 @@
 /obj/effect/spawner/random/mob/necropolis_mob,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"HM" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "HR" = (
 /obj/item/reagent_containers/cup/glass/bottle/ale,
 /obj/structure/stone_tile/slab,
@@ -960,6 +1012,12 @@
 "OK" = (
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"OL" = (
+/obj/structure/stone_tile/surrounding,
+/obj/structure/stone_tile/center/cracked,
+/obj/effect/spawner/random/entertainment/coin,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "PT" = (
 /obj/structure/stone_tile/slab,
 /obj/item/xenoarch/useless_relic/magnified{
@@ -1186,10 +1244,10 @@ TI
 ek
 NL
 zv
-cG
+oL
 ty
 cG
-zv
+bt
 cG
 TS
 ht
@@ -1219,7 +1277,7 @@ aB
 aB
 wp
 HS
-sx
+OL
 BQ
 ID
 Ih
@@ -1316,9 +1374,9 @@ ID
 lD
 Lo
 fv
-YS
+ml
 sd
-vx
+eH
 lD
 ID
 ID
@@ -1669,7 +1727,7 @@ ID
 ID
 Tt
 YS
-vx
+HM
 aB
 TS
 "}

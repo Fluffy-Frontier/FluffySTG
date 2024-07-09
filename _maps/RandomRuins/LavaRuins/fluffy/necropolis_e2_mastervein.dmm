@@ -7,10 +7,22 @@
 	},
 /area/lavaland/surface/outdoors)
 "i" = (
-/obj/item/stack/ore/diamond,
-/obj/item/dnainjector/dwarf,
-/obj/item/dnainjector/dwarf,
-/obj/item/dnainjector/dwarf,
+/obj/item/stack/ore/diamond{
+	pixel_x = -4;
+	pixel_y = 2
+	},
+/obj/item/dnainjector/dwarf{
+	pixel_x = 10;
+	pixel_y = -7
+	},
+/obj/item/dnainjector/dwarf{
+	pixel_x = -12;
+	pixel_y = 11
+	},
+/obj/item/dnainjector/dwarf{
+	pixel_x = 12;
+	pixel_y = 7
+	},
 /turf/closed/mineral/bscrystal,
 /area/lavaland/surface/outdoors)
 "k" = (

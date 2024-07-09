@@ -3,6 +3,13 @@
 /obj/structure/stone_tile/slab/burnt,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"dL" = (
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 8;
+	pixel_y = -8
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "dQ" = (
 /obj/structure/stone_tile{
 	dir = 1
@@ -94,6 +101,14 @@
 /area/lavaland/surface/outdoors)
 "mn" = (
 /obj/structure/flora/ash/cacti,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"mG" = (
+/obj/structure/stone_tile/slab/burnt,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -8;
+	pixel_y = 11
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "mT" = (
@@ -233,6 +248,10 @@
 /area/lavaland/surface/outdoors)
 "Mr" = (
 /obj/structure/stone_tile/cracked,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 9;
+	pixel_y = 10
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Oi" = (
@@ -302,7 +321,7 @@ nH
 Ss
 Ew
 Oi
-aD
+mG
 kV
 ia
 nH
@@ -339,7 +358,7 @@ qR
 "}
 (6,1,1) = {"
 KO
-qR
+dL
 SO
 tZ
 Ch

@@ -45,6 +45,16 @@
 /obj/structure/stone_tile/slab/cracked,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"cb" = (
+/obj/structure/stone_tile/block{
+	dir = 8
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 5;
+	pixel_y = -3
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "cs" = (
 /obj/effect/spawner/random/structure/orevein_longregen,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
@@ -375,6 +385,10 @@
 /area/lavaland/surface/outdoors)
 "zf" = (
 /obj/structure/flora/ash/fireblossom,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 10;
+	pixel_y = 5
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "zl" = (
@@ -570,6 +584,14 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"LF" = (
+/obj/structure/stone_tile/surrounding/cracked,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 5;
+	pixel_y = -5
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Nd" = (
 /obj/structure/stone_tile/surrounding/burnt,
 /obj/structure/stone_tile/center/burnt,
@@ -667,6 +689,10 @@
 	},
 /obj/structure/stone_tile{
 	dir = 1
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -7;
+	pixel_y = -7
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -781,7 +807,7 @@ Os
 PM
 mT
 hi
-tN
+LF
 dn
 hi
 OT
@@ -932,7 +958,7 @@ GR
 Os
 Os
 Hh
-aB
+cb
 mT
 "}
 (12,1,1) = {"

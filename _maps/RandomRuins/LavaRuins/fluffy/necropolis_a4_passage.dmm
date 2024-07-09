@@ -68,8 +68,15 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"r" = (
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "s" = (
 /obj/structure/flora/rock/pile/style_random,
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot{
+	pixel_x = 12;
+	pixel_y = 2
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "t" = (
@@ -78,7 +85,6 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "v" = (
-/obj/structure/stone_tile/block,
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 4
 	},
@@ -91,9 +97,19 @@
 "y" = (
 /turf/template_noop,
 /area/template_noop)
+"z" = (
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "A" = (
 /obj/structure/stone_tile/block{
 	dir = 4
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"B" = (
+/obj/structure/stone_tile/block,
+/obj/structure/stone_tile/block{
+	dir = 1
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -194,7 +210,7 @@ T
 I
 f
 T
-I
+r
 E
 j
 I
@@ -205,7 +221,7 @@ T
 I
 k
 Q
-I
+r
 G
 k
 I
@@ -215,8 +231,8 @@ t
 y
 x
 G
-H
-I
+z
+B
 v
 k
 I
@@ -227,7 +243,7 @@ P
 I
 s
 e
-n
+r
 K
 G
 I
@@ -238,7 +254,7 @@ d
 I
 i
 H
-I
+x
 Q
 b
 x
@@ -250,7 +266,7 @@ I
 I
 I
 I
-O
+z
 I
 W
 y

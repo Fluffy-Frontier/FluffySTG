@@ -77,6 +77,14 @@
 	dir = 6
 	},
 /obj/item/reagent_containers/cup/bowl/wood_bowl,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 2;
+	pixel_y = -3
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -3;
+	pixel_y = 0
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "fZ" = (
@@ -118,6 +126,10 @@
 /obj/structure/stone_tile/slab,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 6;
+	pixel_y = -6
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "jl" = (
@@ -406,6 +418,22 @@
 /obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Ds" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 8;
+	pixel_y = -8
+	},
+/turf/closed/mineral/strong{
+	base_icon_state = "smoothrocks";
+	icon = 'modular_nova/modules/liquids/icons/turf/smoothrocks.dmi';
+	icon_state = "smoothrocks-55"
+	},
+/area/ruin/unpowered)
 "Dx" = (
 /obj/structure/stone_tile/block{
 	dir = 1
@@ -530,6 +558,18 @@
 /obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"No" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -8;
+	pixel_y = 0
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "NU" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 1
@@ -721,7 +761,7 @@ xr
 (4,1,1) = {"
 dV
 yk
-ty
+No
 UV
 aN
 fZ
@@ -909,7 +949,7 @@ xZ
 Dx
 WA
 jV
-ze
+Ds
 UV
 sD
 kU

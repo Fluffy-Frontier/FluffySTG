@@ -52,6 +52,10 @@
 	pixel_x = 7;
 	pixel_y = 3
 	},
+/obj/effect/spawner/random/exotic/languagebook{
+	pixel_x = -7;
+	pixel_y = 9
+	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
 "eD" = (
@@ -402,6 +406,15 @@
 /obj/item/organ/internal/tongue/snail{
 	pixel_x = -10;
 	pixel_y = 6
+	},
+/turf/open/indestructible/necropolis,
+/area/ruin/unpowered)
+"Fu" = (
+/obj/structure/stone_tile/slab/burnt,
+/obj/effect/gibspawner/human,
+/obj/effect/spawner/random/exotic/languagebook{
+	pixel_x = 11;
+	pixel_y = 11
 	},
 /turf/open/indestructible/necropolis,
 /area/ruin/unpowered)
@@ -938,7 +951,7 @@ nS
 nS
 MN
 my
-QG
+Fu
 nS
 nS
 aM

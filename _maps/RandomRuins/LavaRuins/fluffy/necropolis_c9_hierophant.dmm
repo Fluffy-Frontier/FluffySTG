@@ -12,6 +12,13 @@
 "m" = (
 /turf/closed/indestructible/riveted/boss,
 /area/ruin/unpowered/hierophant)
+"n" = (
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 8;
+	pixel_y = -9
+	},
+/turf/open/indestructible/hierophant,
+/area/ruin/unpowered/hierophant)
 "t" = (
 /obj/effect/light_emitter{
 	set_cap = 3;
@@ -41,6 +48,13 @@
 "J" = (
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
+/area/ruin/unpowered/hierophant)
+"M" = (
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -9;
+	pixel_y = 5
+	},
+/turf/open/indestructible/hierophant,
 /area/ruin/unpowered/hierophant)
 "R" = (
 /turf/open/indestructible/hierophant/two,
@@ -108,7 +122,7 @@ D
 a
 a
 a
-a
+n
 a
 a
 a
@@ -519,7 +533,7 @@ D
 D
 j
 j
-a
+M
 D
 D
 D

@@ -125,6 +125,14 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"kI" = (
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "kZ" = (
 /obj/structure/stone_tile/slab,
 /obj/item/xenoarch/useless_relic{
@@ -142,6 +150,14 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"mB" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 4;
+	pixel_y = -7
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
 "mN" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 6
@@ -163,6 +179,14 @@
 	},
 /obj/structure/stone_tile/slab/cracked{
 	dir = 1
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
+"pE" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 4;
+	pixel_y = -5
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
@@ -345,6 +369,14 @@
 "yQ" = (
 /obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"zy" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 8;
+	pixel_y = 7
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "zW" = (
 /obj/structure/flora/rock/pile/style_random,
@@ -573,7 +605,10 @@
 /area/lavaland/surface/outdoors)
 "MX" = (
 /obj/structure/stone_tile/slab,
-/obj/item/coin/silver,
+/obj/item/coin/silver{
+	pixel_x = 3;
+	pixel_y = -12
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Ng" = (
@@ -595,7 +630,10 @@
 /area/lavaland/surface/outdoors)
 "NM" = (
 /obj/structure/stone_tile/slab,
-/obj/item/coin/silver/doubloon,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -6;
+	pixel_y = -10
+	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Oy" = (
@@ -622,7 +660,10 @@
 /area/ruin/unpowered)
 "Pv" = (
 /obj/structure/stone_tile/slab,
-/obj/item/coin/silver,
+/obj/item/coin/silver{
+	pixel_x = -6;
+	pixel_y = 0
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "QB" = (
@@ -660,10 +701,26 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Sa" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -10;
+	pixel_y = 3
+	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "Sg" = (
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"Sk" = (
+/obj/structure/stone_tile/slab,
+/obj/item/coin/silver{
+	pixel_x = -8;
+	pixel_y = 7
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "SJ" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -776,6 +833,16 @@
 /obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"Zs" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 6;
+	pixel_y = -8
+	},
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "ZX" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -837,7 +904,7 @@ cP
 GY
 GY
 tC
-MX
+kI
 GY
 MO
 MO
@@ -906,7 +973,7 @@ sS
 uY
 Pv
 WQ
-Sg
+mB
 fi
 cP
 "}
@@ -931,7 +998,7 @@ fi
 QB
 xF
 XE
-Sg
+pE
 CU
 fi
 UN
@@ -971,7 +1038,7 @@ FQ
 MO
 tz
 mN
-MX
+Sa
 Oy
 GY
 qV
@@ -1266,10 +1333,10 @@ qV
 qV
 qV
 FQ
-Mk
+Zs
 ZX
 yQ
-Cy
+Sk
 ry
 fi
 ZX
@@ -1333,7 +1400,7 @@ fi
 oJ
 yQ
 tz
-sS
+zy
 sS
 Oy
 GY

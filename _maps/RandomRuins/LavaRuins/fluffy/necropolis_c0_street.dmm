@@ -313,18 +313,6 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
-"pM" = (
-/obj/structure/stone_tile{
-	dir = 4
-	},
-/obj/structure/stone_tile{
-	dir = 8
-	},
-/obj/structure/stone_tile{
-	dir = 1
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 "pQ" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -715,6 +703,10 @@
 "Hf" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 1
+	},
+/obj/effect/spawner/random/medical/minor_healing{
+	pixel_x = 3;
+	pixel_y = -4
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
@@ -1402,8 +1394,8 @@ pq
 dm
 UF
 pq
-Pd
-Pd
+fa
+ff
 pq
 pq
 pq
@@ -1428,13 +1420,13 @@ sf
 kw
 NJ
 wu
-pM
-Pd
+fa
+ff
 Pd
 Pd
 Pd
 pq
-pq
+ff
 "}
 (10,1,1) = {"
 Pd
@@ -1460,7 +1452,7 @@ pq
 cr
 Pd
 Pd
-ff
+fa
 "}
 (11,1,1) = {"
 Pd
@@ -1486,7 +1478,7 @@ pq
 DH
 LS
 LS
-pq
+ff
 "}
 (12,1,1) = {"
 Pd

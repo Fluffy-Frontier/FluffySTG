@@ -16,6 +16,10 @@
 /area/lavaland/surface/outdoors)
 "cL" = (
 /obj/structure/stone_tile/surrounding,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -9;
+	pixel_y = 3
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "di" = (
@@ -261,6 +265,10 @@
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 6
 	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 1;
+	pixel_y = -1
+	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "GY" = (
@@ -346,7 +354,7 @@
 	melee_damage_lower = 10;
 	melee_damage_upper = 40;
 	damage_coeff = list("brute" = 1, "burn" = 1, "toxin" = 1, "stamina" = 0.25, "oxygen" = 1);
-	alpha = 100;
+	alpha = 60;
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 4,/obj/effect/gibspawner/human = 1,/obj/effect/mob_spawn/corpse/human/miner=1,/obj/item/clothing/suit/cloak/ashencloak=1,/obj/item/clothing/head/ash_headdress/winged=1);
 	maxHealth = 600;
 	base_pixel_y = -7.5

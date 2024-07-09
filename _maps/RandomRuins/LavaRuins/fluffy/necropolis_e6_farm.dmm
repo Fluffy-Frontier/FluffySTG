@@ -139,6 +139,15 @@
 /obj/structure/flora/rock/pile/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"oP" = (
+/obj/structure/railing/stone,
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -9;
+	pixel_y = -3
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "pd" = (
 /obj/machinery/hydroponics/soil,
 /obj/effect/decal/cleanable/dirt,
@@ -159,6 +168,10 @@
 "qp" = (
 /obj/structure/stone_tile/block/cracked,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = -11;
+	pixel_y = 8
+	},
 /turf/open/misc/hay/lavaland,
 /area/ruin/unpowered)
 "qu" = (
@@ -382,6 +395,10 @@
 /obj/structure/stone_tile/block/cracked,
 /obj/structure/stone_tile/block/burnt{
 	dir = 1
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 6;
+	pixel_y = 6
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
@@ -661,7 +678,7 @@ Pr
 iN
 fZ
 hV
-VL
+oP
 vx
 "}
 (9,1,1) = {"
