@@ -19415,14 +19415,13 @@
 "fZA" = (
 /obj/machinery/atmospherics/components/binary/pump,
 /obj/structure/cable,
-/obj/machinery/door/window/right{
+/obj/machinery/door/window/right/directional/north{
 	name = "Research Test Chamber";
 	req_access = list("research")
 	},
-/obj/machinery/door/window/right{
+/obj/machinery/door/window/right/directional/south{
 	name = "Research Test Chamber";
-	req_access = list("research");
-	dir = 1
+	req_access = list("research")
 	},
 /turf/open/floor/engine,
 /area/station/science/explab)
@@ -31926,7 +31925,7 @@
 	dir = 4
 	},
 /obj/machinery/door/window/brigdoor/right/directional/east{
-	name = "The Blue Shields Equipment";
+	name = "Blue Shield Surgery";
 	req_access = list("command")
 	},
 /turf/open/floor/iron/white,
@@ -36007,13 +36006,12 @@
 "kTV" = (
 /obj/machinery/atmospherics/pipe/smart/simple/dark/visible,
 /obj/machinery/door/window/brigdoor{
-	dir = 1;
 	name = "Creature Pen";
 	req_access = list("research")
 	},
-/obj/machinery/door/window/brigdoor{
-	name = "Creature Pen";
-	req_access = list("research")
+/obj/machinery/door/window/brigdoor/left/directional/north{
+	req_access = list("research");
+	name = "Creature Pen"
 	},
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
@@ -40613,10 +40611,9 @@
 "mnu" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/tile/yellow/fourcorners,
-/obj/machinery/door/window/left{
+/obj/machinery/door/window/left/directional/north{
 	name = "Chemistry Desk";
-	req_access = list("pharmacy");
-	dir = 1
+	req_access = list("pharmacy")
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
@@ -41721,10 +41718,9 @@
 "mGc" = (
 /obj/effect/turf_decal/tile/dark_red/fourcorners,
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/brigdoor{
-	dir = 4;
-	name = "Brig Control Desk";
-	req_access = list("armory")
+/obj/machinery/door/window/brigdoor/left/directional/east{
+	req_access = list("armory");
+	name = "Brig Control Desk"
 	},
 /turf/open/floor/iron,
 /area/station/security/warden)
@@ -42997,6 +42993,10 @@
 	dir = 4;
 	id = "chemisttop";
 	name = "Pharmacy Shutters"
+	},
+/obj/machinery/door/window/left/directional/west{
+	name = "Chemistry Desk";
+	req_access = list("pharmacy")
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/pharmacy)
@@ -50937,12 +50937,8 @@
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/department/security/brig)
 "pmY" = (
-/obj/structure/rack{
-	icon = 'icons/obj/stationobjs.dmi';
-	icon_state = "minibar";
-	name = "skeletal minibar"
-	},
 /obj/item/storage/fancy/candle_box,
+/obj/structure/rack/skeletal,
 /turf/open/floor/engine/cult,
 /area/station/service/library/private)
 "pno" = (
@@ -51385,6 +51381,9 @@
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/effect/turf_decal/tile/dark_red/full,
 /obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/modular_computer/preset/command{
 	dir = 4
 	},
 /turf/open/floor/iron/dark/smooth_large,
@@ -66523,6 +66522,7 @@
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/airlock/access/all/science/research,
 /turf/open/floor/iron/white,
 /area/mine/xenoarch/science/xenoarch)
 "uat" = (
@@ -74513,13 +74513,12 @@
 /turf/open/floor/iron,
 /area/station/security/prison)
 "wpW" = (
-/obj/machinery/door/window/brigdoor/right{
-	dir = 4;
-	name = "Blue Shield Surgery";
-	req_access = list("command")
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
+	},
+/obj/machinery/door/window/brigdoor/right/directional/east{
+	name = "The Blue Shields Equipment";
+	req_access = list("command")
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/command/heads_quarters/blueshield)
@@ -75439,6 +75438,9 @@
 	req_access = list("science")
 	},
 /obj/item/radio/intercom/directional/south,
+/obj/machinery/modular_computer/preset/civilian{
+	dir = 4
+	},
 /turf/open/floor/iron/dark,
 /area/mine/xenoarch/science/xenoarch)
 "wFi" = (
@@ -77540,14 +77542,13 @@
 "xkJ" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/tile/purple/fourcorners,
-/obj/machinery/door/window/left{
-	name = "Xenoarch Desk";
-	req_access = list("science");
-	dir = 1
-	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "xenoarch";
 	name = "Xenoarch Lab Shutters"
+	},
+/obj/machinery/door/window/right/directional/north{
+	name = "Xenoarch Desk";
+	req_access = list("science")
 	},
 /turf/open/floor/iron/white,
 /area/mine/xenoarch/science/xenoarch)
@@ -78857,15 +78858,14 @@
 /turf/open/floor/wood,
 /area/abyss_station/exterior/ocean/beach)
 "xFf" = (
-/obj/machinery/door/window{
-	name = "Library Desk";
-	req_access = list("library");
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
 /obj/machinery/light/directional/north,
+/obj/machinery/door/window/left/directional/west{
+	name = "Library Desk";
+	req_access = list("library")
+	},
 /turf/open/floor/carpet,
 /area/station/service/library)
 "xFr" = (
