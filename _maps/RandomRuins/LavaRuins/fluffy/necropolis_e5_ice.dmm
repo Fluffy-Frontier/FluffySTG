@@ -10,38 +10,18 @@
 /turf/open/misc/snow,
 /area/ruin/unpowered)
 "d" = (
+/obj/structure/marker_beacon/teal,
+/obj/structure/flora/rock/pile/icy/style_random,
 /obj/structure/fluff/divine/nexus{
 	color = "#7777FF"
 	},
-/obj/structure/marker_beacon/teal,
+/obj/item/melee/frozen_moonlight,
 /turf/open/misc/snow,
 /area/ruin/unpowered)
 "e" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 9
 	},
-/mob/living/basic/mining/ice_demon{
-	health = 300;
-	name = "Rime";
-	speed = 0;
-	current_size = 1.25;
-	base_pixel_y = -7.5;
-	melee_damage_lower = 10;
-	melee_damage_upper = 20;
-	melee_damage_type = "burn";
-	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
-	melee_attack_cooldown = 10;
-	color = "#ccccFF";
-	light_color = "#ccccFF";
-	maxHealth = 300
-	},
-/turf/open/misc/ice,
-/area/ruin/unpowered)
-"h" = (
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 9
-	},
-/obj/item/melee/frozen_moonlight,
 /mob/living/basic/mining/ice_demon{
 	health = 300;
 	name = "Rime";
@@ -67,6 +47,21 @@
 /area/lavaland/surface/outdoors)
 "p" = (
 /obj/item/grenade/gas_crystal/nitrous_oxide_crystal,
+/mob/living/basic/mining/ice_demon{
+	health = 300;
+	name = "Rime";
+	speed = 0;
+	current_size = 1.25;
+	base_pixel_y = -7.5;
+	melee_damage_lower = 10;
+	melee_damage_upper = 20;
+	melee_damage_type = "burn";
+	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
+	melee_attack_cooldown = 10;
+	color = "#ccccFF";
+	light_color = "#ccccFF";
+	maxHealth = 300
+	},
 /turf/open/misc/ice,
 /area/ruin/unpowered)
 "q" = (
@@ -136,6 +131,7 @@
 /turf/open/misc/snow,
 /area/ruin/unpowered)
 "G" = (
+/obj/structure/flora/rock/pile/icy/style_random,
 /obj/structure/fluff/divine/conduit{
 	color = "#7777FF"
 	},
@@ -170,6 +166,21 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 8
 	},
+/mob/living/basic/mining/ice_demon{
+	health = 300;
+	name = "Rime";
+	speed = 0;
+	current_size = 1.25;
+	base_pixel_y = -7.5;
+	melee_damage_lower = 10;
+	melee_damage_upper = 20;
+	melee_damage_type = "burn";
+	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
+	melee_attack_cooldown = 10;
+	color = "#ccccFF";
+	light_color = "#ccccFF";
+	maxHealth = 300
+	},
 /turf/open/misc/ice,
 /area/ruin/unpowered)
 "M" = (
@@ -182,9 +193,6 @@
 /area/ruin/unpowered)
 "P" = (
 /turf/open/misc/ice,
-/area/ruin/unpowered)
-"R" = (
-/turf/open/misc/snow,
 /area/ruin/unpowered)
 "U" = (
 /obj/structure/flora/grass/both/style_random,
@@ -209,6 +217,7 @@
 /turf/open/misc/ice,
 /area/ruin/unpowered)
 "Z" = (
+/obj/structure/flora/rock/pile/icy/style_random,
 /obj/structure/fluff/divine/shrine{
 	color = "#7777FF"
 	},
@@ -263,11 +272,11 @@ a
 M
 a
 d
-h
+e
 P
 q
 N
-R
+N
 K
 "}
 (6,1,1) = {"
