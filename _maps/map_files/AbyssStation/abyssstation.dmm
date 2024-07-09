@@ -4150,7 +4150,7 @@
 /area/abyss_station/exterior/ocean/shore)
 "bnH" = (
 /obj/structure/lattice/catwalk,
-/obj/machinery/door/window/brigdoor{
+/obj/machinery/door/window/brigdoor/left/directional/south{
 	name = "Creature Pen";
 	req_access = list("research")
 	},
@@ -15680,12 +15680,12 @@
 "eNi" = (
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/window/reinforced/spawner/directional/east,
-/obj/machinery/door/window/brigdoor{
-	name = "Creature Pen";
-	req_access = list("research")
-	},
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 5
+	},
+/obj/machinery/door/window/brigdoor/left/directional/south{
+	name = "Creature Pen";
+	req_access = list("research")
 	},
 /turf/open/floor/iron/white,
 /area/station/science/xenobiology)
@@ -20477,11 +20477,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/machinery/door/window/brigdoor/right{
-	dir = 4;
-	name = "Command Bed";
-	req_access = list("command")
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
@@ -20490,6 +20485,10 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
+	},
+/obj/machinery/door/window/brigdoor/right/directional/east{
+	name = "Command Bed";
+	req_access = list("command")
 	},
 /turf/open/floor/wood/tile,
 /area/station/command/heads_quarters/captain/private)
@@ -30510,15 +30509,13 @@
 /area/abyss_station/exterior/abyss)
 "jmq" = (
 /obj/structure/window/reinforced/spawner/directional/east,
-/obj/machinery/door/window/brigdoor{
-	dir = 1;
-	id = "crgcell";
-	name = "Service Cell";
-	req_access = list("security")
-	},
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
+	},
+/obj/machinery/door/window/brigdoor/left/directional/north{
+	req_access = list("security");
+	name = "Security Post Cell"
 	},
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/service)
@@ -37531,10 +37528,9 @@
 /area/abyss_station/station/service/garden)
 "lpI" = (
 /obj/structure/lattice/catwalk,
-/obj/machinery/door/window/brigdoor{
-	dir = 1;
-	name = "Creature Pen";
-	req_access = list("research")
+/obj/machinery/door/window/brigdoor/left/directional/north{
+	req_access = list("research");
+	name = "Creature Pen"
 	},
 /turf/open/openspace{
 	planetary_atmos = 1
@@ -37840,13 +37836,12 @@
 "lvu" = (
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/window/reinforced/spawner/directional/east,
-/obj/machinery/door/window/brigdoor{
-	dir = 1;
-	name = "Creature Pen";
-	req_access = list("research")
-	},
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 6
+	},
+/obj/machinery/door/window/brigdoor/left/directional/north{
+	req_access = list("research");
+	name = "Creature Pen"
 	},
 /turf/open/floor/iron/white,
 /area/station/science/xenobiology)
@@ -46384,15 +46379,13 @@
 /area/station/cargo/storage)
 "obL" = (
 /obj/structure/window/reinforced/spawner/directional/west,
-/obj/machinery/door/window/brigdoor{
-	dir = 1;
-	id = "crgcell";
-	name = "Service Cell";
-	req_access = list("security")
-	},
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
+	},
+/obj/machinery/door/window/brigdoor/left/directional/north{
+	req_access = list("security");
+	name = "Security Post Cell"
 	},
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/service)
@@ -47288,9 +47281,7 @@
 	dir = 4;
 	id = "garbage"
 	},
-/obj/machinery/door/window/right{
-	base_state = "left";
-	icon_state = "left";
+/obj/machinery/door/window/right/directional/south{
 	name = "Danger: Conveyor Access";
 	req_access = list("maint_tunnels")
 	},
@@ -65110,7 +65101,7 @@
 	dir = 4
 	},
 /obj/machinery/door/window/brigdoor/right/directional/east{
-	name = "The Blue Shields Equipment";
+	name = "Brig Cell";
 	req_access = list("security")
 	},
 /turf/open/floor/iron/smooth_half{
@@ -65324,7 +65315,6 @@
 /obj/item/storage/box/syringes,
 /obj/item/storage/box/gloves,
 /obj/item/storage/box/masks,
-/obj/item/construction/plumbing/research,
 /obj/effect/turf_decal/trimline/purple/filled/end{
 	dir = 8
 	},
@@ -72971,10 +72961,8 @@
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/hop)
 "vQW" = (
-/obj/machinery/door/window/right{
-	name = "Research Test Chamber";
-	req_access = list("research");
-	dir = 8
+/obj/machinery/door/window/right/directional/west{
+	name = "Research Test Chamber"
 	},
 /turf/open/floor/engine,
 /area/station/science/explab)
