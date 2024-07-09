@@ -33,12 +33,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
-"ai" = (
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
-/turf/open/floor/plating/reinforced/icemoon,
-/area/icemoon/underground/explored)
 "ak" = (
 /obj/machinery/porta_turret/syndicate{
 	dir = 5;
@@ -162,7 +156,6 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
-/obj/machinery/duct,
 /obj/machinery/door/window/survival_pod/left/directional/west{
 	req_access = list("syndicate");
 	pixel_x = -4
@@ -587,9 +580,7 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/east,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/west,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north,
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/reinforced,
 /area/icemoon/underground/explored)
 "cT" = (
@@ -656,9 +647,7 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 10
 	},
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/snowed/icemoon,
 /area/ruin/interdyne_planetary_base)
 "db" = (
@@ -1870,12 +1859,10 @@
 /obj/structure/railing{
 	dir = 5
 	},
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 5
 	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/engine/hull/reinforced/icemoon,
 /area/icemoon/underground/explored)
 "ks" = (
@@ -2057,11 +2044,11 @@
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
 /obj/effect/turf_decal/caution/red,
-/obj/machinery/duct,
 /obj/machinery/light/directional/south{
 	light_color = "#5148A6"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/vatgrower,
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "lZ" = (
@@ -2080,8 +2067,7 @@
 	},
 /obj/structure/lattice/catwalk/mining,
 /obj/effect/turf_decal/weather/snow/corner{
-	dir = 4;
-	layer = 3
+	dir = 4
 	},
 /turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
@@ -2094,12 +2080,10 @@
 /obj/structure/railing{
 	dir = 5
 	},
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 6
 	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/engine/hull/reinforced/icemoon,
 /area/ruin/interdyne_planetary_base/cargo)
 "mr" = (
@@ -2179,9 +2163,7 @@
 	},
 /obj/structure/railing,
 /obj/structure/marker_beacon/burgundy,
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/engine/hull/reinforced/icemoon,
 /area/icemoon/underground/explored)
 "mV" = (
@@ -2273,9 +2255,7 @@
 /obj/structure/railing/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/reinforced/icemoon,
 /area/ruin/interdyne_planetary_base/cargo)
 "nq" = (
@@ -2370,9 +2350,7 @@
 	dir = 4
 	},
 /obj/structure/railing/corner,
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/reinforced/icemoon,
 /area/icemoon/underground/explored)
 "nP" = (
@@ -2462,7 +2440,6 @@
 /obj/effect/turf_decal/stripes/blue/corner{
 	dir = 8
 	},
-/obj/machinery/duct,
 /obj/machinery/door/window/survival_pod/left/directional/west{
 	req_access = list("syndicate");
 	pixel_x = -4
@@ -2569,17 +2546,12 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/weather/snow/corner,
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/engine/hull/reinforced/icemoon,
 /area/ruin/interdyne_planetary_base/cargo)
 "oB" = (
 /obj/structure/railing/corner{
 	dir = 1
-	},
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
 	},
 /obj/machinery/button/door/directional/south{
 	base_icon_state = "tram";
@@ -2591,6 +2563,7 @@
 	pixel_x = -27;
 	pixel_y = -20
 	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/reinforced/icemoon,
 /area/ruin/interdyne_planetary_base/cargo)
 "oE" = (
@@ -2618,7 +2591,6 @@
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 5
 	},
-/obj/machinery/duct,
 /obj/structure/marker_beacon/burgundy,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
@@ -3206,9 +3178,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "st" = (
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/reinforced/icemoon,
 /area/ruin/interdyne_planetary_base/cargo)
 "sv" = (
@@ -3237,9 +3207,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "sC" = (
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/snowed/icemoon,
 /area/icemoon/underground/explored)
 "sE" = (
@@ -3278,9 +3246,7 @@
 /turf/open/floor/iron/recharge_floor,
 /area/ruin/interdyne_planetary_base/main/vault)
 "sO" = (
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
+/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 5
 	},
@@ -3539,15 +3505,13 @@
 	},
 /obj/structure/railing,
 /obj/structure/marker_beacon/burgundy,
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 6
 	},
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 1
 	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/engine/hull/reinforced/icemoon,
 /area/icemoon/underground/explored)
 "ub" = (
@@ -4038,9 +4002,7 @@
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/reinforced/icemoon,
 /area/icemoon/underground/explored)
 "wP" = (
@@ -4163,12 +4125,10 @@
 /area/ruin/interdyne_planetary_base/main)
 "xF" = (
 /obj/structure/fence/door,
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 8
 	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/snowed/icemoon,
 /area/ruin/interdyne_planetary_base)
 "xP" = (
@@ -4585,12 +4545,10 @@
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "AJ" = (
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 4
 	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/snowed/icemoon,
 /area/icemoon/underground/explored)
 "AR" = (
@@ -4650,6 +4608,10 @@
 	},
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv)
+"Bz" = (
+/obj/effect/turf_decal/weather/snow,
+/turf/open/floor/plating/reinforced/icemoon,
+/area/icemoon/underground/explored)
 "BA" = (
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/science)
@@ -4979,7 +4941,6 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 1
 	},
-/obj/machinery/plumbing/growing_vat,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
 	},
@@ -5035,9 +4996,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "Du" = (
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
+/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 8
 	},
@@ -5523,12 +5482,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/weather/snow/corner{
-	dir = 4;
-	layer = 3
+	dir = 4
 	},
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/snowed/icemoon,
 /area/ruin/interdyne_planetary_base)
 "FO" = (
@@ -5765,7 +5721,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
-/obj/machinery/duct,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/east{
 	pixel_x = 4
 	},
@@ -5848,9 +5803,6 @@
 /area/icemoon/underground/explored)
 "Hn" = (
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/plumbing/input{
-	dir = 1
-	},
 /obj/structure/closet/secure_closet/cytology{
 	anchored = 1;
 	pixel_x = 9;
@@ -6117,12 +6069,10 @@
 /turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "Ji" = (
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 9
 	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/snowed/icemoon,
 /area/icemoon/underground/explored)
 "Jo" = (
@@ -6371,7 +6321,6 @@
 "Ld" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/duct,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
@@ -6701,9 +6650,7 @@
 	dir = 4
 	},
 /obj/structure/railing/corner,
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/reinforced/icemoon,
 /area/icemoon/underground/explored)
 "MG" = (
@@ -6722,12 +6669,10 @@
 /obj/structure/railing{
 	dir = 9
 	},
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 9
 	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/engine/hull/reinforced/icemoon,
 /area/icemoon/underground/explored)
 "MT" = (
@@ -6817,14 +6762,12 @@
 /obj/structure/fence{
 	dir = 4
 	},
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 5
 	},
 /obj/effect/turf_decal/weather/snow/corner,
 /obj/structure/marker_beacon/cerulean,
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/snowed/icemoon,
 /area/ruin/interdyne_planetary_base)
 "NI" = (
@@ -7247,9 +7190,7 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/snowed/icemoon,
 /area/ruin/interdyne_planetary_base)
 "Qq" = (
@@ -7363,8 +7304,7 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/weather/snow/corner{
-	dir = 4;
-	layer = 3
+	dir = 4
 	},
 /turf/open/misc/ice/icemoon,
 /area/icemoon/underground/explored)
@@ -7632,9 +7572,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood/old,
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/reinforced/icemoon,
 /area/icemoon/underground/explored)
 "Tu" = (
@@ -7812,9 +7750,7 @@
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/weather/snow{
-	layer = 3
-	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/reinforced/icemoon,
 /area/icemoon/underground/explored)
 "Uo" = (
@@ -8190,8 +8126,7 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/weather/snow/corner{
-	dir = 4;
-	layer = 3
+	dir = 4
 	},
 /turf/open/misc/ice/icemoon,
 /area/icemoon/underground/explored)
@@ -8356,8 +8291,7 @@
 /area/ruin/interdyne_planetary_base/serv/rstrm)
 "WU" = (
 /obj/effect/turf_decal/weather/snow/corner{
-	dir = 4;
-	layer = 3
+	dir = 4
 	},
 /turf/open/misc/ice/icemoon,
 /area/icemoon/underground/explored)
@@ -10457,13 +10391,13 @@ xF
 AJ
 sC
 Tn
-ai
-ai
-ai
-ai
-ai
-ai
-ai
+Bz
+Bz
+Bz
+Bz
+Bz
+Bz
+Bz
 st
 pp
 JN
