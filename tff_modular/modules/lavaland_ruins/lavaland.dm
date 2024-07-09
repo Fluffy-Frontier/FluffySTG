@@ -289,7 +289,7 @@
 	suffix = "necropolis_e4_barracs.dmm"
 
 /datum/map_template/ruin/lavaland/fluffy/e5
-	name = "Lava-Ruin (FF) Barracs"
+	name = "Lava-Ruin (FF) Ice"
 	id = "e5"
 	description = "9x9 ice demons with crystals"
 	suffix = "necropolis_e5_ice.dmm"

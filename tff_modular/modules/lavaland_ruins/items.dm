@@ -99,7 +99,7 @@
 
 
 /obj/item/melee/frozen_moonlight/examine()
-	. = list("<span style='color:#9988FF;'>This is the [icon2html(src, usr)] \a <b>Frozen Moonlight</b>.\n A legendary runic sword of yore. \n It's still imbued with astral magic after all these years. \n <b>Fight for E'luna!</b>")
+	. = list("<span style='color:#9988FF;'>This is the [icon2html(src, usr)] <b>Frozen Moonlight</b>.\n A legendary runic sword of yore. \n It's still imbued with astral magic after all these years. \n <b>Fight for E'luna!</b>")
 	. += "</span>"
 	. += span_warning(" Forged to face demonic legions. Protects agile warriors.")
 	return .
