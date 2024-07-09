@@ -18762,13 +18762,12 @@
 /turf/open/floor/iron,
 /area/station/security/brig)
 "fOr" = (
-/obj/machinery/door/window/left{
-	dir = 1;
+/obj/structure/flora/bush/flowers_yw/style_random,
+/obj/structure/flora/bush/flowers_pp/style_random,
+/obj/machinery/door/window/left/directional/north{
 	name = "'Monkey Pen";
 	req_access = list("genetics")
 	},
-/obj/structure/flora/bush/flowers_yw/style_random,
-/obj/structure/flora/bush/flowers_pp/style_random,
 /turf/open/floor/grass{
 	planetary_atmos = 1
 	},
@@ -42984,11 +42983,6 @@
 "nbb" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/tile/yellow/fourcorners,
-/obj/machinery/door/window/left{
-	name = "Chemistry Desk";
-	req_access = list("pharmacy");
-	dir = 8
-	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 4;
 	id = "chemisttop";
