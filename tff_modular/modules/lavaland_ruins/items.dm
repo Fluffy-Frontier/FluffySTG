@@ -46,6 +46,79 @@
 		/obj/structure/trap/cult/spikes_soft = 5,
 	)
 
+
+/obj/structure/ore_vein/stone/longregen
+	name = "large rocks"
+	desc = "Various types of high quality stone that could probably make a good construction material if dug up and refined."
+	regeneration_time = 24 MINUTES
+	mining_time = 18 SECONDS
+
+/obj/structure/ore_vein/iron/longregen
+	name = "rusted rocks"
+	desc = "The rusty brown color on these rocks gives away the fact they are full of iron!"
+	icon_state = "iron1"
+	base_icon_state = "iron"
+	ore_descriptor = "iron"
+	ore_type = /obj/item/stack/ore/iron
+	regeneration_time = 24 MINUTES
+	mining_time = 18 SECONDS
+
+/obj/structure/ore_vein/silver/longregen
+	name = "silvery-blue rocks"
+	desc = "These rocks have the giveaway blued-silver look of, well, raw silver."
+	icon_state = "silver1"
+	base_icon_state = "silver"
+	ore_descriptor = "silver"
+	ore_type = /obj/item/stack/ore/silver
+	regeneration_time = 24 MINUTES
+	mining_time = 18 SECONDS
+
+/obj/structure/ore_vein/gold/longregen
+	name = "gold streaked rocks"
+	desc = "Fairly normal looking rocks... aside from the streaks of shining gold running through some of them!."
+	icon_state = "gold1"
+	base_icon_state = "gold"
+	ore_descriptor = "gold"
+	ore_type = /obj/item/stack/ore/gold
+	regeneration_time = 24 MINUTES
+	mining_time = 18 SECONDS
+
+/obj/structure/ore_vein/plasma/longregen
+	name = "plasma rich rocks"
+	desc = "Rocks with unrefined plasma visible on the outside of several... Do be careful with open flames near this."
+	icon_state = "plasma1"
+	base_icon_state = "plasma"
+	ore_descriptor = "plasma"
+	ore_type = /obj/item/stack/ore/plasma
+	regeneration_time = 24 MINUTES
+	mining_time = 18 SECONDS
+
+/obj/structure/ore_vein/diamond/longregen
+	name = "diamond studded rocks"
+	desc = "While nowhere near as rare as you'd think, the diamonds studding these rocks are still both useful and valuable."
+	icon_state = "diamond1"
+	base_icon_state = "diamond"
+	ore_descriptor = "diamond"
+	ore_type = /obj/item/stack/ore/diamond
+	regeneration_time = 24 MINUTES
+	mining_time = 18 SECONDS
+
+/obj/effect/spawner/random/structure/orevein_longregen
+	name = "Random ore vein spawner"
+	desc = "Random ore with 24min to regen"
+	icon = 'modular_nova/modules/stone/icons/ore.dmi'
+	icon_state = "diamond1"
+	base_icon_state = "diamond"
+	spawn_loot_chance = 50
+	loot = list(
+		/obj/structure/ore_vein/stone/longregen = 50,
+		/obj/structure/ore_vein/iron/longregen = 40,
+		/obj/structure/ore_vein/silver/longregen = 30,
+		/obj/structure/ore_vein/gold/longregen = 20,
+		/obj/structure/ore_vein/plasma/longregen = 10,
+		/obj/structure/ore_vein/diamond/longregen = 5,
+	)
+
 ///Soooord!
 /obj/item/melee/frozen_moonlight
 	name = "Frozen Moonlight"

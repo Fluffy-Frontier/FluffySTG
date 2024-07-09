@@ -107,6 +107,10 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"hm" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "hq" = (
 /obj/item/clothing/gloves/bracer,
 /obj/structure/stone_tile/slab,
@@ -336,6 +340,10 @@
 	dir = 8
 	},
 /obj/structure/stone_tile/center/cracked,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"yQ" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "zW" = (
@@ -590,6 +598,10 @@
 /obj/item/coin/silver/doubloon,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"Oy" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "OD" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/effect/spawner/random/mob/necropolis_mob,
@@ -614,7 +626,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "QB" = (
-/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/strange_rock/volcanic,
 /area/ruin/unpowered)
 "QN" = (
@@ -760,6 +772,10 @@
 /obj/structure/stone_tile/block,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"XE" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
 "ZX" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -774,7 +790,7 @@ UN
 UN
 UN
 ZX
-ZX
+Oy
 ZX
 ZX
 ZX
@@ -787,7 +803,7 @@ UN
 mz
 fJ
 Nm
-ZX
+Oy
 UN
 "}
 (2,1,1) = {"
@@ -826,11 +842,11 @@ GY
 MO
 MO
 MO
+yQ
 fJ
 fJ
-fJ
-tz
-tz
+yQ
+yQ
 tz
 kZ
 GY
@@ -871,14 +887,14 @@ tc
 (5,1,1) = {"
 cP
 fn
-MO
+hm
 UN
 wU
 qV
 qV
 qV
 qV
-Mt
+hm
 GY
 MO
 MO
@@ -897,7 +913,7 @@ cP
 (6,1,1) = {"
 UN
 GY
-MO
+hm
 dB
 qV
 qV
@@ -914,7 +930,7 @@ MO
 fi
 QB
 xF
-Sg
+XE
 Sg
 CU
 fi
@@ -956,7 +972,7 @@ MO
 tz
 mN
 MX
-sS
+Oy
 GY
 qV
 qV
@@ -968,7 +984,7 @@ Mk
 qV
 qV
 qV
-Mt
+hm
 fn
 UN
 "}
@@ -1055,7 +1071,7 @@ UN
 GY
 GY
 kZ
-sS
+Oy
 sS
 UN
 UN
@@ -1123,7 +1139,7 @@ qV
 qV
 UN
 sS
-ZX
+Oy
 aq
 ZX
 UN
@@ -1149,7 +1165,7 @@ kb
 Ec
 MO
 Hb
-fJ
+yQ
 FB
 OD
 sn
@@ -1252,7 +1268,7 @@ qV
 FQ
 Mk
 ZX
-tz
+yQ
 Cy
 ry
 fi
@@ -1287,14 +1303,14 @@ ZX
 (21,1,1) = {"
 cP
 fi
-Sg
+XE
 Sg
 dP
 Cy
 AX
 UN
 mN
-tz
+yQ
 GY
 xb
 UN
@@ -1315,11 +1331,11 @@ cP
 fi
 fi
 oJ
+yQ
 tz
-tz
 sS
 sS
-sS
+Oy
 GY
 GY
 GY
@@ -1331,7 +1347,7 @@ qV
 FQ
 MO
 fJ
-Sg
+XE
 fi
 fi
 fJ

@@ -124,6 +124,13 @@
 /obj/structure/stone_tile/center/burnt,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"gD" = (
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "hb" = (
 /obj/structure/millstone,
 /obj/structure/stone_tile/surrounding,
@@ -295,6 +302,10 @@
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
 /area/ruin/unpowered)
+"pt" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "pF" = (
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
@@ -713,6 +724,11 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Kp" = (
+/obj/effect/spawner/random/structure/spikes,
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Ky" = (
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -1000,7 +1016,7 @@
 MA
 WT
 cU
-pF
+pt
 MY
 ro
 MA
@@ -1113,7 +1129,7 @@ MA
 NI
 NI
 pH
-ut
+Kp
 NI
 NI
 wa
@@ -1155,7 +1171,7 @@ MA
 (7,1,1) = {"
 MA
 MA
-sQ
+gD
 mG
 Xs
 ut
@@ -1245,7 +1261,7 @@ Ap
 kJ
 pF
 us
-pF
+pt
 us
 ng
 QL

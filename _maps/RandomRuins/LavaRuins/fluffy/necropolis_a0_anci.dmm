@@ -482,6 +482,10 @@
 	slowdown = 0
 	},
 /area/lavaland/surface/outdoors)
+"Xz" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "XT" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/statue/bone/rib{
@@ -503,6 +507,10 @@
 /turf/open/lava/smooth/lava_land_surface{
 	slowdown = 0
 	},
+/area/lavaland/surface/outdoors)
+"Yj" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Yu" = (
 /obj/structure/flora/rock/pile/style_random,
@@ -532,7 +540,7 @@ Ge
 Ge
 bc
 zh
-zh
+Xz
 vT
 vT
 vT
@@ -575,7 +583,7 @@ Ep
 xz
 xz
 zh
-zh
+Xz
 zh
 vT
 "}
@@ -594,7 +602,7 @@ pT
 pT
 cu
 xz
-zh
+Xz
 QR
 "}
 (5,1,1) = {"
@@ -688,7 +696,7 @@ Yh
 QR
 "}
 (10,1,1) = {"
-it
+Xz
 AW
 nc
 ou
@@ -762,7 +770,7 @@ vT
 (14,1,1) = {"
 Ge
 Ge
-xz
+Yj
 xz
 Ct
 pT
@@ -771,7 +779,7 @@ OG
 xz
 xz
 qH
-zh
+Xz
 zh
 IU
 zh

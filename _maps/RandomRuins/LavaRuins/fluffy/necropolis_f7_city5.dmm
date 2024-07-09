@@ -1,6 +1,14 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"af" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "ag" = (
 /turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"aS" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "aY" = (
 /obj/structure/stone_tile{
@@ -181,6 +189,10 @@
 	},
 /obj/structure/stone_tile/center/burnt,
 /turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"hq" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "hs" = (
 /obj/structure/stone_tile/block{
@@ -730,6 +742,10 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"AJ" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
 "AO" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -1325,6 +1341,10 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"Ud" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
 "Up" = (
 /obj/structure/stone_tile/burnt,
 /obj/effect/spawner/random/structure/spikes,
@@ -1525,11 +1545,11 @@ Gd
 Tr
 GU
 GU
-CX
-EO
+Ud
+AJ
 WV
 GU
-MR
+hq
 MR
 hm
 Vq
@@ -1551,21 +1571,21 @@ Gd
 Gd
 GU
 Gm
-EO
+AJ
 rg
 YI
 GU
 Te
 mL
 MR
-MR
+hq
 Vq
 Te
 mL
 fM
 Gd
 GU
-iX
+af
 CX
 HB
 cg
@@ -1931,8 +1951,8 @@ ag
 GU
 iX
 lx
-XP
-XP
+Ud
+Ud
 to
 jO
 Vn
@@ -1941,7 +1961,7 @@ Vn
 ag
 ag
 ag
-OG
+aS
 MR
 MR
 Vq
@@ -1957,7 +1977,7 @@ JK
 OG
 gY
 oM
-iX
+af
 Lg
 pB
 jO
@@ -1966,7 +1986,7 @@ Jc
 (20,1,1) = {"
 ag
 ag
-OG
+aS
 zl
 hm
 iK
@@ -1992,7 +2012,7 @@ Gd
 (21,1,1) = {"
 ag
 Vq
-OG
+aS
 MR
 ug
 iK
@@ -2000,7 +2020,7 @@ Vq
 OG
 KV
 Lw
-OG
+aS
 Vq
 Gd
 Lo
@@ -2024,8 +2044,8 @@ MR
 iN
 Vq
 MR
-OG
-OG
+aS
+aS
 Vq
 Vq
 ag

@@ -161,6 +161,10 @@
 /obj/structure/stone_tile/surrounding/cracked,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"fq" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "fv" = (
 /obj/item/reagent_containers/cup/glass/bottle/small{
 	pixel_x = 3;
@@ -228,6 +232,7 @@
 /mob/living/basic/mining/ancient_demon/goliath_pup,
 /mob/living/basic/mining/ancient_demon/goliath_pup,
 /mob/living/basic/mining/ancient_demon/goliath_pup,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ir" = (
@@ -386,6 +391,10 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"pk" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
 "qb" = (
 /obj/structure/stone_tile/block{
 	dir = 8
@@ -404,6 +413,10 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"qs" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered)
 "qB" = (
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
@@ -560,6 +573,10 @@
 	dir = 4
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"wr" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "xa" = (
 /obj/structure/stone_tile/slab,
@@ -794,6 +811,10 @@
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
+"HS" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "HY" = (
 /obj/structure/fermenting_barrel/gunpowder,
 /obj/structure/stone_tile/slab,
@@ -874,6 +895,15 @@
 /obj/structure/stone_tile{
 	dir = 4
 	},
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"Me" = (
+/obj/structure/stone_tile/slab,
+/obj/item/xenoarch/useless_relic/magnified{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Ms" = (
@@ -1188,7 +1218,7 @@ aB
 aB
 aB
 wp
-uH
+HS
 sx
 BQ
 ID
@@ -1246,7 +1276,7 @@ ZJ
 Sb
 vZ
 tw
-CX
+fq
 Jv
 Qu
 FA
@@ -1326,8 +1356,8 @@ vZ
 cT
 CX
 CX
-FA
-FA
+pk
+pk
 vZ
 KG
 "}
@@ -1342,7 +1372,7 @@ Sb
 xd
 Sb
 qB
-qB
+qs
 vZ
 ID
 kc
@@ -1368,7 +1398,7 @@ Sb
 fU
 MH
 ln
-qB
+qs
 vZ
 Sb
 ID
@@ -1386,7 +1416,7 @@ Sb
 (10,1,1) = {"
 rM
 vZ
-qB
+qs
 Bn
 eI
 jc
@@ -1401,7 +1431,7 @@ Qh
 ID
 rM
 vZ
-qB
+qs
 zy
 FA
 FA
@@ -1412,7 +1442,7 @@ Sb
 (11,1,1) = {"
 gZ
 vZ
-qB
+qs
 qB
 HR
 zx
@@ -1485,7 +1515,7 @@ mx
 fZ
 vZ
 vZ
-uH
+HS
 "}
 (14,1,1) = {"
 rM
@@ -1511,7 +1541,7 @@ Sb
 qB
 Ou
 vZ
-uH
+HS
 "}
 (15,1,1) = {"
 SU
@@ -1537,7 +1567,7 @@ rX
 YS
 qB
 vZ
-hG
+wr
 "}
 (16,1,1) = {"
 mV
@@ -1646,7 +1676,7 @@ TS
 (20,1,1) = {"
 rM
 aB
-PT
+Me
 aK
 Tt
 ID
@@ -1665,14 +1695,14 @@ ID
 ID
 vx
 YS
-Bk
+HS
 aB
 Am
 "}
 (21,1,1) = {"
 gZ
 eV
-PT
+Me
 Et
 ID
 ID
@@ -1690,8 +1720,8 @@ ID
 ID
 Sb
 Sb
-Bk
-Bk
+HS
+HS
 aB
 gZ
 "}
@@ -1749,7 +1779,7 @@ rM
 "}
 (24,1,1) = {"
 Sb
-hG
+wr
 Qw
 KX
 ID

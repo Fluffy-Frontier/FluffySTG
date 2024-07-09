@@ -38,6 +38,10 @@
 /obj/structure/stone_tile/slab/cracked,
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"cU" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "de" = (
 /obj/structure/stone_tile/surrounding_tile,
 /obj/structure/stone_tile/surrounding_tile{
@@ -368,6 +372,7 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "HX" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Jq" = (
@@ -679,12 +684,12 @@
 (1,1,1) = {"
 NS
 tZ
-NI
+cU
 Sg
 tZ
 NI
 Sg
-NI
+cU
 PY
 Sg
 tZ
@@ -703,14 +708,14 @@ NS
 NS
 YR
 LN
-NI
+cU
 Sg
 Dr
 YR
-NI
+cU
 bU
 PY
-NI
+cU
 LN
 YR
 Sg
@@ -793,7 +798,7 @@ Vy
 PY
 Jq
 yH
-NI
+cU
 Le
 sd
 NS
@@ -801,9 +806,9 @@ NS
 Rb
 Ng
 Zo
-NI
+cU
 Oi
-NI
+cU
 UX
 Rb
 Sg
@@ -823,7 +828,7 @@ NS
 Rb
 Rb
 Ug
-NI
+cU
 lF
 ty
 Rb
@@ -831,12 +836,12 @@ Rb
 hA
 "}
 (8,1,1) = {"
-NI
+cU
 hA
 vh
 wR
 KR
-NI
+cU
 Rb
 Mb
 AV
@@ -853,7 +858,7 @@ zN
 tZ
 "}
 (9,1,1) = {"
-NI
+cU
 WE
 ZY
 Yt
@@ -876,7 +881,7 @@ tZ
 "}
 (10,1,1) = {"
 tZ
-NI
+cU
 Su
 OD
 RK
@@ -907,7 +912,7 @@ Rb
 Rb
 Ey
 bU
-NI
+cU
 tZ
 tZ
 tZ

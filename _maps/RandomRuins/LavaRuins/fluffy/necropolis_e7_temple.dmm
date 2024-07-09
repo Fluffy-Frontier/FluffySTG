@@ -69,6 +69,7 @@
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "eX" = (
@@ -188,6 +189,7 @@
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "nF" = (
@@ -206,6 +208,10 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"pJ" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "qD" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -221,9 +227,9 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "rh" = (
-/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
+/area/ruin/unpowered)
 "sD" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -521,6 +527,7 @@
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "NU" = (
@@ -530,6 +537,7 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "OB" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "QB" = (
@@ -540,9 +548,7 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Rk" = (
-/obj/structure/stone_tile/block{
-	dir = 8
-	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Sm" = (
@@ -689,7 +695,7 @@ xr
 OB
 dV
 Sm
-rh
+Rk
 nF
 nF
 xr
@@ -868,7 +874,7 @@ yk
 yk
 yk
 iz
-uA
+rh
 fZ
 yk
 yk
@@ -888,7 +894,7 @@ Xl
 uA
 wA
 gW
-uA
+rh
 yk
 nF
 "}
@@ -922,8 +928,8 @@ TZ
 Bg
 yk
 yk
-ty
-uA
+pJ
+rh
 yk
 yk
 cK

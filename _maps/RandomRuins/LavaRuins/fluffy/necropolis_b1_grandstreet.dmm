@@ -84,6 +84,7 @@
 "n" = (
 /obj/item/stack/sheet/runed_metal/five,
 /obj/effect/spawner/random/mob/brimdemon,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/strange_rock/volcanic,
 /area/lavaland/surface/outdoors)
 "o" = (
@@ -245,6 +246,12 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "J" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/strange_rock/volcanic,
+/area/lavaland/surface/outdoors)
+"K" = (
+/obj/effect/spawner/random/mob/brimdemon,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/strange_rock/volcanic,
 /area/lavaland/surface/outdoors)
 "L" = (
@@ -587,7 +594,7 @@ a
 l
 T
 V
-d
+K
 a
 x
 l

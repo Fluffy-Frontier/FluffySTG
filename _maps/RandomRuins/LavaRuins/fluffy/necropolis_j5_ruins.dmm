@@ -1,8 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/obj/structure/stone_tile/slab,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "b" = (
 /obj/structure/stone_tile/block{
 	dir = 4
@@ -38,11 +34,11 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "k" = (
-/obj/structure/stone_tile/slab/burnt,
 /obj/item/xenoarch/useless_relic{
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "m" = (
@@ -82,10 +78,6 @@
 	dir = 4
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"s" = (
-/obj/structure/flora/rock/pile/style_random,
-/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "t" = (
 /obj/structure/stone_tile/block,
@@ -228,9 +220,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "X" = (
-/obj/structure/stone_tile{
-	dir = 4
-	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Z" = (
@@ -272,7 +262,7 @@ Z
 D
 T
 g
-s
+X
 "}
 (5,1,1) = {"
 O
@@ -287,7 +277,7 @@ e
 h
 M
 L
-a
+X
 x
 i
 B

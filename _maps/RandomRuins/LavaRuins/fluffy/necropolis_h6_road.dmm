@@ -309,12 +309,16 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "T" = (
-/obj/structure/ore_vein/silver,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "U" = (
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"V" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "W" = (
 /obj/structure/stone_tile,
@@ -352,10 +356,10 @@ v
 v
 v
 t
-a
+V
 v
 h
-a
+V
 v
 v
 v
@@ -375,13 +379,13 @@ A
 K
 Y
 c
-a
+V
 K
 H
 Z
 v
 A
-a
+V
 K
 v
 F
@@ -452,7 +456,7 @@ v
 t
 K
 g
-a
+V
 v
 "}
 (6,1,1) = {"
@@ -462,7 +466,7 @@ v
 Z
 e
 Z
-a
+V
 K
 v
 v
@@ -471,9 +475,9 @@ v
 t
 v
 v
-a
+V
 h
-a
+V
 v
 v
 "}

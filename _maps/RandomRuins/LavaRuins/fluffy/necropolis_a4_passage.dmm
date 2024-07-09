@@ -27,8 +27,8 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "f" = (
-/obj/structure/flora/rock/pile/style_random,
 /obj/effect/spawner/random/structure/spikes,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "i" = (
@@ -70,6 +70,11 @@
 /area/lavaland/surface/outdoors)
 "s" = (
 /obj/structure/flora/rock/pile/style_random,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"t" = (
+/obj/effect/spawner/random/structure/spikes,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "v" = (
@@ -204,7 +209,7 @@ I
 G
 k
 I
-W
+t
 "}
 (5,1,1) = {"
 y

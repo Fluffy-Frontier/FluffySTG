@@ -9,6 +9,7 @@
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 8
 	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "dk" = (
@@ -19,6 +20,7 @@
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "gO" = (
@@ -49,6 +51,10 @@
 "ox" = (
 /obj/structure/stone_tile/block/cracked,
 /turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"oL" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "oP" = (
 /obj/structure/flora/rock/pile/style_random,
@@ -289,6 +295,7 @@
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Ot" = (
@@ -370,7 +377,7 @@ rx
 rx
 zf
 Fx
-IZ
+oL
 Ig
 nu
 "}
@@ -513,14 +520,14 @@ Oq
 dk
 fd
 UO
-IZ
+oL
 KD
 nu
 "}
 (16,1,1) = {"
 up
 IZ
-IZ
+oL
 dk
 dk
 UO
@@ -531,9 +538,9 @@ nu
 (17,1,1) = {"
 nu
 Xf
-IZ
+oL
 dk
-IZ
+oL
 up
 nu
 nu

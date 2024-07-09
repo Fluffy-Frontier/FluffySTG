@@ -162,6 +162,7 @@
 /turf/open/misc/hay/lavaland,
 /area/ruin/unpowered)
 "qu" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "rv" = (
@@ -524,6 +525,10 @@
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"WK" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "Xc" = (
 /obj/structure/stone_tile/slab,
 /obj/effect/spawner/random/mob/goliath,
@@ -677,7 +682,7 @@ qu
 cH
 cH
 oL
-Ah
+WK
 kr
 OO
 HK

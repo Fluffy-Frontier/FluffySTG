@@ -49,6 +49,11 @@
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"D" = (
+/obj/effect/spawner/random/structure/spikes,
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "F" = (
 /obj/structure/stone_tile/block,
 /obj/structure/stone_tile/block,
@@ -182,7 +187,7 @@ q
 (17,1,1) = {"
 p
 q
-U
+D
 "}
 (18,1,1) = {"
 X
@@ -210,7 +215,7 @@ q
 g
 "}
 (23,1,1) = {"
-U
+D
 q
 y
 "}

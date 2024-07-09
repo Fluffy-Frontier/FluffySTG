@@ -38,7 +38,13 @@
 /area/ruin/unpowered)
 "q" = (
 /obj/effect/spawner/random/structure/spikes,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"w" = (
+/obj/effect/spawner/random/structure/spikes,
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "A" = (
 /obj/structure/stone_tile/surrounding/cracked{
@@ -103,7 +109,7 @@ T
 a
 "}
 (3,1,1) = {"
-T
+w
 C
 o
 W
@@ -120,6 +126,6 @@ M
 a
 q
 T
-T
+w
 T
 "}

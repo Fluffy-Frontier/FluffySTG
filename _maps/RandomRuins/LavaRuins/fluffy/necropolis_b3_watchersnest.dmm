@@ -43,9 +43,11 @@
 /area/lavaland/surface/outdoors)
 "i" = (
 /obj/effect/decal/cleanable/blood/gibs/bubblegum,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "j" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "k" = (
@@ -62,6 +64,7 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "m" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "n" = (
@@ -179,6 +182,11 @@
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
+"N" = (
+/obj/structure/flora/ash/fireblossom,
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/open/misc/asteroid/basalt/wasteland,
+/area/ruin/unpowered)
 "O" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /obj/effect/decal/cleanable/blood/drip,
@@ -295,7 +303,7 @@ j
 D
 Z
 Q
-t
+N
 L
 j
 j

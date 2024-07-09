@@ -21,11 +21,21 @@
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"s" = (
+/obj/effect/spawner/random/structure/spikes,
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "u" = (
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "G" = (
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"K" = (
+/obj/effect/spawner/random/structure/spikes,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "M" = (
@@ -74,7 +84,7 @@ a
 "}
 (3,1,1) = {"
 a
-p
+K
 k
 m
 a
@@ -83,7 +93,7 @@ a
 n
 M
 k
-u
+s
 u
 "}
 (5,1,1) = {"
@@ -105,7 +115,7 @@ u
 M
 k
 k
-u
+s
 "}
 (8,1,1) = {"
 P
@@ -115,7 +125,7 @@ u
 m
 "}
 (9,1,1) = {"
-u
+s
 k
 k
 u
@@ -125,7 +135,7 @@ G
 u
 k
 m
-u
+s
 a
 "}
 (11,1,1) = {"

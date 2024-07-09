@@ -17,6 +17,7 @@
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "gs" = (
@@ -177,7 +178,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Ch" = (
-/obj/structure/ore_vein/plasma,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "DM" = (
@@ -204,10 +205,6 @@
 /obj/structure/stone_tile/cracked{
 	dir = 4
 	},
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"Gg" = (
-/obj/structure/ore_vein/iron,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "GU" = (
@@ -255,7 +252,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "QW" = (
-/obj/structure/ore_vein/gold,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Ss" = (
@@ -266,10 +263,6 @@
 /obj/structure/flora/rock/style_random,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
-"Vw" = (
-/obj/structure/ore_vein/gold,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 "Wv" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -278,10 +271,6 @@
 /obj/structure/stone_tile{
 	dir = 4
 	},
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"WV" = (
-/obj/structure/ore_vein/plasma,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Yw" = (
@@ -343,7 +332,7 @@ dQ
 xg
 jc
 QW
-qR
+QW
 pI
 lm
 qR
@@ -353,15 +342,15 @@ KO
 qR
 SO
 tZ
-jc
-qR
+Ch
+QW
 ia
 gJ
 "}
 (7,1,1) = {"
 Fe
-WV
-Vw
+QW
+Ch
 gs
 SO
 Ch
@@ -373,19 +362,19 @@ Wv
 Ss
 gs
 fM
-Vw
-jc
-qR
+Ch
+Ch
+QW
 ia
 "}
 (9,1,1) = {"
 mn
 lV
-WV
+QW
 Ss
-jc
-jc
-qR
+Ch
+Ch
+QW
 kV
 "}
 (10,1,1) = {"
@@ -400,7 +389,7 @@ kV
 "}
 (11,1,1) = {"
 nH
-Gg
+QW
 kV
 Mr
 aD

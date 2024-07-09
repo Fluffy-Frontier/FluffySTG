@@ -176,11 +176,19 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"wB" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "wU" = (
 /turf/template_noop,
 /area/template_noop)
 "xv" = (
 /obj/structure/flora/ash/cacti,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"yg" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "yk" = (
@@ -395,8 +403,8 @@ dH
 "}
 (6,1,1) = {"
 fO
-oU
-oU
+yg
+yg
 uJ
 MY
 jO
@@ -468,22 +476,22 @@ wU
 hV
 hV
 ev
-oU
+yg
 hV
 hV
 wU
 wU
 hV
-bQ
+wB
 EW
 "}
 (12,1,1) = {"
 wU
 wU
 vx
-oU
-oU
-oU
+yg
+yg
+yg
 bQ
 IC
 wU

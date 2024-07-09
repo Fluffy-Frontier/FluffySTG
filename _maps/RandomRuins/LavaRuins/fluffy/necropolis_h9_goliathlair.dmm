@@ -19,6 +19,10 @@
 /obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"aw" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "bH" = (
 /obj/structure/stone_tile/surrounding_tile,
 /obj/structure/stone_tile/surrounding_tile{
@@ -81,6 +85,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "hr" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "hC" = (
@@ -229,6 +234,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ng" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "nk" = (
@@ -294,6 +300,7 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "ph" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "pN" = (
@@ -417,6 +424,7 @@
 /area/lavaland/surface/outdoors)
 "xG" = (
 /obj/structure/stone_tile/surrounding_tile,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "xK" = (
@@ -1145,7 +1153,7 @@ AK
 wd
 dT
 PM
-Bi
+aw
 Fp
 ZE
 UB
@@ -1159,9 +1167,9 @@ ph
 wd
 AK
 PM
-Bi
+aw
 ng
-Bi
+aw
 UZ
 nO
 hr
@@ -1178,8 +1186,8 @@ LY
 PM
 ng
 KF
-Bi
-Bi
+aw
+aw
 PM
 ph
 "}

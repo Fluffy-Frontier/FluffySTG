@@ -57,7 +57,7 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "v" = (
-/obj/structure/ore_vein,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "x" = (
@@ -120,6 +120,10 @@
 "N" = (
 /obj/effect/spawner/random/food_or_drink/seed_rare,
 /turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"O" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "P" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -200,7 +204,7 @@ A
 B
 b
 F
-I
+O
 "}
 (9,1,1) = {"
 A

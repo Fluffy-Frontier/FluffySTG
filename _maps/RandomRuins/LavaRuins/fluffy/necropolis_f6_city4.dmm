@@ -94,6 +94,10 @@
 /obj/structure/stone_tile/burnt,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"gZ" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "hj" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -169,10 +173,10 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "iU" = (
-/obj/structure/stone_tile/slab,
 /obj/structure/stone_tile/slab/cracked{
 	dir = 8
 	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "jI" = (
@@ -386,6 +390,7 @@
 /turf/closed/mineral/strange_rock/volcanic,
 /area/lavaland/surface/outdoors)
 "uU" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/strange_rock/volcanic,
 /area/lavaland/surface/outdoors)
 "uX" = (
@@ -421,6 +426,10 @@
 	dir = 1
 	},
 /turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"wm" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "wp" = (
 /obj/structure/stone_tile/surrounding/cracked{
@@ -630,6 +639,10 @@
 /area/lavaland/surface/outdoors)
 "FV" = (
 /turf/closed/indestructible/riveted/boss,
+/area/ruin/unpowered)
+"Gb" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "Gz" = (
 /obj/structure/stone_tile/slab/cracked{
@@ -1021,6 +1034,10 @@
 /obj/item/reagent_containers/cup/bottle/cyanide,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
+"VR" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "Wd" = (
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
@@ -1233,7 +1250,7 @@ NY
 vn
 vn
 ml
-Kf
+La
 La
 La
 Kd
@@ -1354,7 +1371,7 @@ Kf
 Nj
 GD
 NY
-JQ
+VR
 Wd
 NY
 "}
@@ -1365,10 +1382,10 @@ ws
 al
 al
 al
-ws
+wm
 JQ
 ws
-JQ
+VR
 ws
 uX
 fH
@@ -1382,7 +1399,7 @@ lp
 eC
 yS
 FV
-Bv
+wm
 "}
 (12,1,1) = {"
 Bv
@@ -1480,11 +1497,11 @@ Vc
 Ok
 al
 FV
-hF
+gZ
 Eh
 qC
 tU
-QB
+Gb
 FV
 Bv
 "}
@@ -1571,7 +1588,7 @@ al
 vn
 xM
 is
-JQ
+VR
 pI
 ml
 MY
@@ -1595,7 +1612,7 @@ al
 (20,1,1) = {"
 al
 UE
-lp
+VR
 CB
 ml
 Kf
@@ -1658,7 +1675,7 @@ ml
 vn
 vn
 VB
-lp
+VR
 ze
 Bv
 FV

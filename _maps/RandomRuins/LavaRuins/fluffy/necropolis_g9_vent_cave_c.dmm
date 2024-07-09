@@ -35,6 +35,18 @@
 /mob/living/basic/mining/goliath,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"O" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/strong{
+	base_icon_state = "smoothrocks";
+	icon = 'modular_nova/modules/liquids/icons/turf/smoothrocks.dmi';
+	icon_state = "smoothrocks-55"
+	},
+/area/lavaland/surface/outdoors)
+"P" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "U" = (
 /turf/closed/mineral/strong{
 	base_icon_state = "smoothrocks";
@@ -51,7 +63,7 @@ D
 D
 U
 U
-U
+O
 a
 a
 a
@@ -59,7 +71,7 @@ a
 "}
 (2,1,1) = {"
 D
-U
+O
 U
 J
 a
@@ -71,10 +83,10 @@ Y
 (3,1,1) = {"
 Y
 a
-z
+P
 r
 B
-z
+P
 a
 a
 Y
@@ -98,14 +110,14 @@ a
 a
 J
 U
-U
+O
 D
 "}
 (6,1,1) = {"
 D
 D
 Y
-U
+O
 U
 U
 U

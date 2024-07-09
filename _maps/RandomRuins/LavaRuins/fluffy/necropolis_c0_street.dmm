@@ -40,6 +40,11 @@
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"cr" = (
+/obj/effect/spawner/random/mob/goliath,
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "df" = (
 /obj/structure/stone_tile{
 	dir = 1
@@ -71,6 +76,10 @@
 /obj/structure/stone_tile/slab/burnt,
 /obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"eB" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "fa" = (
 /turf/closed/mineral/random/high_chance/volcanic,
@@ -356,6 +365,7 @@
 	},
 /area/lavaland/surface/outdoors)
 "rR" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "sf" = (
@@ -613,6 +623,10 @@
 /obj/effect/spawner/random/mob/necropolis_mob,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"CG" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
 "CW" = (
 /mob/living/basic/mining/legion/large{
 	name = "Pile of Bones"
@@ -921,6 +935,10 @@
 	},
 /obj/effect/spawner/random/mob/necropolis_mob,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Rw" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "RH" = (
 /obj/structure/stone_tile/cracked{
@@ -1439,7 +1457,7 @@ TS
 ff
 pq
 pq
-dt
+cr
 Pd
 Pd
 ff
@@ -1517,8 +1535,8 @@ BV
 Yz
 pq
 Dp
-fa
-Hx
+Rw
+eB
 pq
 pq
 "}
@@ -1551,7 +1569,7 @@ Pd
 (15,1,1) = {"
 pq
 Ak
-DF
+CG
 nF
 LS
 LS
@@ -1568,7 +1586,7 @@ LS
 nM
 Lz
 pq
-DF
+CG
 bD
 KU
 pq
@@ -1603,7 +1621,7 @@ pq
 (17,1,1) = {"
 Pd
 su
-DF
+CG
 rR
 LS
 LS
@@ -1649,7 +1667,7 @@ pq
 pq
 xN
 kX
-DF
+CG
 pq
 "}
 (19,1,1) = {"
@@ -1724,9 +1742,9 @@ Eg
 xm
 gm
 ff
-fa
+Rw
 MO
-Hx
+eB
 pq
 pq
 "}
@@ -1777,7 +1795,7 @@ LS
 pq
 pq
 pq
-fa
+Rw
 Zv
 LS
 pq

@@ -52,6 +52,10 @@
 /obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"A" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "B" = (
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
@@ -71,6 +75,14 @@
 /obj/structure/flora/rock/pile/style_random,
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"J" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
+"K" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "L" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -118,7 +130,7 @@ y
 (2,1,1) = {"
 a
 X
-X
+A
 U
 B
 "}
@@ -127,7 +139,7 @@ a
 Y
 U
 U
-X
+A
 "}
 (4,1,1) = {"
 X
@@ -137,14 +149,14 @@ r
 X
 "}
 (5,1,1) = {"
-Y
+J
 h
 U
 e
 a
 "}
 (6,1,1) = {"
-Y
+J
 U
 U
 P
@@ -167,19 +179,19 @@ a
 (9,1,1) = {"
 y
 U
-b
+K
 Y
 a
 "}
 (10,1,1) = {"
-Y
+J
 U
 U
 P
 a
 "}
 (11,1,1) = {"
-Y
+J
 b
 U
 b
@@ -211,7 +223,7 @@ a
 s
 v
 U
-Y
+J
 "}
 (16,1,1) = {"
 a
@@ -225,11 +237,11 @@ a
 s
 U
 U
-Y
+J
 "}
 (18,1,1) = {"
 a
-X
+A
 U
 r
 Y
@@ -242,7 +254,7 @@ Y
 u
 "}
 (20,1,1) = {"
-Y
+J
 U
 U
 F
@@ -259,12 +271,12 @@ a
 R
 U
 U
-Y
+J
 a
 "}
 (23,1,1) = {"
 X
-Y
+J
 U
 F
 a

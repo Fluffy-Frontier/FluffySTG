@@ -91,7 +91,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "iZ" = (
-/obj/structure/ore_vein,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "jg" = (
@@ -404,6 +404,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "UC" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Wx" = (
@@ -467,7 +468,7 @@ gN
 YB
 lP
 lP
-CE
+iZ
 gN
 gN
 gN
@@ -480,8 +481,8 @@ gN
 (3,1,1) = {"
 xn
 xn
-CE
-CE
+iZ
+iZ
 Gx
 gN
 gN
@@ -551,7 +552,7 @@ gN
 gN
 fZ
 sN
-CE
+iZ
 rI
 ex
 ua

@@ -242,6 +242,10 @@
 /obj/item/coin/silver,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"sf" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "sq" = (
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/strange_rock/volcanic,
@@ -259,6 +263,7 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "sR" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "sV" = (
@@ -378,6 +383,7 @@
 /area/ruin/unpowered)
 "zN" = (
 /obj/effect/spawner/random/structure/spikes,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
 "Ac" = (
@@ -442,6 +448,7 @@
 /area/lavaland/surface/outdoors)
 "Dz" = (
 /obj/item/ammo_casing/rebar,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "DS" = (
@@ -551,6 +558,10 @@
 "Nv" = (
 /obj/item/clothing/suit/ash_plates/decorated,
 /obj/effect/spawner/random/mob/necropolis_mob,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"NP" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Oj" = (
@@ -664,6 +675,7 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Tz" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "TO" = (
@@ -744,6 +756,10 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
+"Wb" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
 "WP" = (
 /obj/structure/stone_tile/block{
 	dir = 4
@@ -815,7 +831,7 @@
 
 (1,1,1) = {"
 je
-Xb
+NP
 sR
 sR
 cH
@@ -879,7 +895,7 @@ HT
 HT
 HT
 nL
-vd
+NP
 RU
 HT
 vd
@@ -894,8 +910,8 @@ QP
 (4,1,1) = {"
 cH
 Yd
-vy
-nG
+Wb
+sR
 BQ
 nG
 vd
@@ -903,16 +919,16 @@ je
 vd
 vd
 HT
-nG
-nG
+sR
+sR
 vd
 rs
 Vt
 At
 vd
 aQ
-nG
-nG
+sR
+sR
 jw
 Yd
 cH
@@ -921,7 +937,7 @@ cH
 je
 Yd
 jw
-nG
+sR
 Zw
 Rb
 je
@@ -1154,8 +1170,8 @@ je
 (14,1,1) = {"
 cH
 Yd
-vy
-vy
+Wb
+Wb
 Uk
 xI
 vd
@@ -1180,7 +1196,7 @@ je
 (15,1,1) = {"
 bO
 Yd
-vy
+Wb
 nG
 PN
 vd
@@ -1195,9 +1211,9 @@ Po
 Fg
 At
 Vt
-vd
-vd
-vd
+NP
+NP
+NP
 ng
 id
 HT
@@ -1207,7 +1223,7 @@ je
 je
 Yd
 SU
-vd
+NP
 Nv
 Po
 sV
@@ -1219,12 +1235,12 @@ nG
 Ub
 je
 Po
-Po
+sf
 HT
-vd
+NP
 xy
 Rb
-nG
+sR
 yt
 HT
 je
@@ -1232,7 +1248,7 @@ je
 (17,1,1) = {"
 je
 HT
-vd
+NP
 vd
 Vt
 Fg
@@ -1244,14 +1260,14 @@ HT
 vd
 vd
 vd
-vd
+NP
 dl
 HT
 pU
-nG
-nG
+sR
+sR
 yt
-nG
+sR
 HT
 je
 "}
@@ -1349,7 +1365,7 @@ Rb
 nG
 QP
 nG
-nG
+sR
 cH
 je
 DS
@@ -1364,7 +1380,7 @@ cH
 HT
 HT
 rs
-Po
+sf
 Yd
 ij
 wQ

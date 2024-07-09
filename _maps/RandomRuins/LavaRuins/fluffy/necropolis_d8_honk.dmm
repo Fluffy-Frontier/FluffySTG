@@ -84,13 +84,17 @@
 /obj/item/stack/ore/bananium,
 /turf/closed/mineral/bananium,
 /area/lavaland/surface/outdoors)
+"W" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 
 (1,1,1) = {"
 w
 w
+W
 a
-a
-a
+W
 a
 w
 "}
@@ -101,7 +105,7 @@ a
 d
 V
 a
-a
+W
 "}
 (3,1,1) = {"
 w
@@ -122,7 +126,7 @@ d
 a
 "}
 (5,1,1) = {"
-a
+W
 d
 U
 V
@@ -136,13 +140,13 @@ S
 e
 S
 a
-a
+W
 w
 "}
 (7,1,1) = {"
 a
 a
-a
+W
 a
 a
 w

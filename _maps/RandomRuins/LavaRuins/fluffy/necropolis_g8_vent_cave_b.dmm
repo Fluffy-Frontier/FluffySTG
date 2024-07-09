@@ -14,6 +14,14 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"p" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/strong{
+	base_icon_state = "smoothrocks";
+	icon = 'modular_nova/modules/liquids/icons/turf/smoothrocks.dmi';
+	icon_state = "smoothrocks-55"
+	},
+/area/lavaland/surface/outdoors)
 "q" = (
 /obj/structure/flora/rock/style_random,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -37,6 +45,10 @@
 	icon = 'modular_nova/modules/liquids/icons/turf/smoothrocks.dmi';
 	icon_state = "smoothrocks-55"
 	},
+/area/lavaland/surface/outdoors)
+"Y" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Z" = (
 /obj/structure/ore_vent/random{
@@ -68,11 +80,11 @@ r
 r
 r
 V
-V
+p
 "}
 (4,1,1) = {"
-V
-L
+p
+Y
 E
 r
 r
@@ -97,7 +109,7 @@ r
 (7,1,1) = {"
 a
 V
-V
+p
 r
 y
 r

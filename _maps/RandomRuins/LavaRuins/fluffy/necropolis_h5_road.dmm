@@ -122,7 +122,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "rq" = (
-/obj/structure/ore_vein/plasma,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "rv" = (
@@ -417,6 +417,7 @@
 /area/lavaland/surface/outdoors)
 "XU" = (
 /obj/structure/railing/stone,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "YE" = (

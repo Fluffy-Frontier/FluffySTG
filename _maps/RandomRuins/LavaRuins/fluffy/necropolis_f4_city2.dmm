@@ -259,6 +259,14 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"nk" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/ruin/unpowered)
+"nw" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "nM" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
@@ -349,6 +357,10 @@
 /obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"sH" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/ruin/unpowered)
 "sY" = (
 /obj/structure/stone_tile/block{
 	dir = 4
@@ -691,16 +703,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Jp" = (
-/obj/structure/trap/damage{
-	name = "Anctient runic spikes";
-	desc = "A strange carving of some symbols. What's that for?";
-	icon = 'icons/obj/service/hydroponics/equipment.dmi';
-	icon_state = "woodspike";
-	light_color = "#DDFFDD";
-	color = "#77FF77";
-	alpha = 180;
-	max_integrity = 30
-	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "JH" = (
@@ -1195,8 +1198,8 @@ fr
 fr
 ei
 ei
-wB
-CN
+nk
+Jp
 aK
 Df
 Hj
@@ -1220,7 +1223,7 @@ ei
 lF
 mL
 GS
-MA
+sH
 hV
 sx
 CN
@@ -1241,9 +1244,9 @@ TM
 GS
 pT
 pT
-wB
+nk
 ei
-XM
+nw
 gI
 Kp
 MA
@@ -1269,7 +1272,7 @@ sb
 pT
 Yj
 ei
-XM
+nw
 fr
 ei
 ei
@@ -1286,7 +1289,7 @@ eh
 (7,1,1) = {"
 pT
 aK
-fr
+nw
 Pd
 eh
 Fg
@@ -1312,7 +1315,7 @@ XM
 (8,1,1) = {"
 PI
 aK
-fr
+nw
 EI
 eh
 ry
@@ -1395,7 +1398,7 @@ ry
 eh
 eh
 aK
-MA
+sH
 uA
 Uz
 ei
@@ -1475,7 +1478,7 @@ eh
 aK
 pT
 tN
-MA
+sH
 ei
 QB
 sY
@@ -1526,7 +1529,7 @@ eh
 Qq
 ei
 Bz
-wB
+nk
 hV
 ei
 Dh
@@ -1551,12 +1554,12 @@ eh
 eh
 zq
 ei
-wB
+nk
 vG
 MA
 ei
 CN
-fr
+nw
 oz
 eh
 WL
@@ -1573,7 +1576,7 @@ NI
 iW
 aK
 id
-cS
+eh
 eh
 cS
 ei
@@ -1598,8 +1601,8 @@ pT
 (19,1,1) = {"
 XC
 aK
-fr
-fr
+nw
+nw
 eh
 eh
 aK
@@ -1611,7 +1614,7 @@ zq
 QA
 eh
 aK
-MA
+sH
 rm
 ei
 um
@@ -1624,8 +1627,8 @@ pT
 (20,1,1) = {"
 gI
 aK
-CN
-fr
+Jp
+nw
 cS
 eh
 eh
@@ -1637,10 +1640,10 @@ cS
 eh
 eh
 cS
-wB
+nk
 hV
 ei
-cf
+sH
 cW
 Fm
 Tg
@@ -1710,9 +1713,9 @@ aK
 zy
 aK
 aK
-XM
-mL
-mL
+nw
+Jp
+Jp
 Rb
 ei
 ei
@@ -1733,7 +1736,7 @@ gI
 iW
 pT
 pT
-XM
+nw
 Yc
 aK
 aK

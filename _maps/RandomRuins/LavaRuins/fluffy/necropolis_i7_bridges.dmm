@@ -123,6 +123,7 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ne" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "nm" = (
@@ -241,9 +242,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "yx" = (
-/obj/structure/stone_tile/surrounding_tile{
-	dir = 1
-	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "zj" = (
@@ -380,8 +379,8 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Kg" = (
-/obj/structure/stone_tile/slab/burnt,
 /obj/structure/railing/stone,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Ko" = (
@@ -545,7 +544,7 @@ TE
 TE
 ge
 pc
-Ee
+yx
 TE
 "}
 (2,1,1) = {"
@@ -559,7 +558,7 @@ RW
 NK
 wC
 pc
-Ee
+yx
 TE
 "}
 (3,1,1) = {"

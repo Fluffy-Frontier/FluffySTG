@@ -47,6 +47,10 @@
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/lavaland/surface/outdoors)
+"gf" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "gE" = (
 /obj/item/food/meat/slab/meatproduct{
 	pixel_x = -5;
@@ -353,6 +357,9 @@
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/lavaland/surface/outdoors)
+"KR" = (
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Lr" = (
 /obj/effect/gibspawner/generic,
 /obj/item/food/meat/slab/meatproduct{
@@ -574,7 +581,7 @@
 	max_integrity = 3000;
 	anchored = 1
 	},
-/turf/closed/mineral/volcanic/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Xn" = (
 /obj/item/food/meat/slab/human/mutant/ethereal{
@@ -611,10 +618,10 @@ LX
 LX
 LX
 LX
-PS
+KR
 VR
 Hv
-PS
+KR
 VR
 LX
 LX
@@ -630,7 +637,7 @@ rP
 Hv
 rP
 wB
-PS
+gf
 LX
 LX
 "}
@@ -674,7 +681,7 @@ zb
 tt
 Hv
 sb
-PS
+gf
 "}
 (6,1,1) = {"
 Hv
@@ -702,7 +709,7 @@ Tm
 HA
 Hv
 BU
-PS
+gf
 "}
 (8,1,1) = {"
 Hv
@@ -715,7 +722,7 @@ Tm
 qR
 xg
 Hv
-vD
+Rm
 hN
 "}
 (9,1,1) = {"
@@ -763,12 +770,12 @@ LX
 (12,1,1) = {"
 LX
 LX
-vD
+Rm
 ME
 Hv
 Hv
-PS
-vD
+KR
+Rm
 PS
 hN
 LX

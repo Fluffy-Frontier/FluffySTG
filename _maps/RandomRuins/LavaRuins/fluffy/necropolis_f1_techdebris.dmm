@@ -2,6 +2,14 @@
 "a" = (
 /turf/template_noop,
 /area/template_noop)
+"d" = (
+/obj/item/xenoarch/useless_relic{
+	name = "Ancient relic";
+	desc = "Sort of relic that can be exported through Cargo."
+	},
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "f" = (
 /obj/structure/lattice,
 /obj/structure/fluff/clockwork/alloy_shards,
@@ -12,6 +20,10 @@
 /obj/structure/fluff/clockwork/alloy_shards/small,
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
+"i" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "j" = (
 /obj/structure/fluff/clockwork/clockgolem_remains,
 /obj/structure/grille/broken,
@@ -80,6 +92,7 @@
 /turf/open/floor/bronze/filled/lavaland,
 /area/ruin/unpowered/ratvar)
 "J" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "K" = (
@@ -116,6 +129,7 @@
 /area/ruin/unpowered/ratvar)
 "Z" = (
 /obj/effect/spawner/random/environmentally_safe_anomaly,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 
@@ -145,7 +159,7 @@ J
 L
 P
 Q
-H
+i
 "}
 (5,1,1) = {"
 a
@@ -155,18 +169,18 @@ g
 J
 "}
 (6,1,1) = {"
-x
+d
 J
 v
 J
 J
 "}
 (7,1,1) = {"
-H
+i
 W
 L
 l
-H
+i
 "}
 (8,1,1) = {"
 J
@@ -176,8 +190,8 @@ K
 f
 "}
 (9,1,1) = {"
-H
-H
+i
+i
 l
 G
 H
@@ -193,13 +207,13 @@ x
 a
 L
 J
-H
+i
 a
 "}
 (12,1,1) = {"
 a
 f
-H
+i
 a
 a
 "}

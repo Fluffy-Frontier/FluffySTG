@@ -10,57 +10,20 @@
 	icon_state = "smoothrocks-55"
 	},
 /area/lavaland/surface/outdoors)
-"m" = (
-/obj/structure/ore_vein/diamond,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 "r" = (
 /obj/item/xenoarch/useless_relic/magnified{
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"v" = (
-/obj/structure/ore_vein/silver,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "w" = (
 /obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
-"x" = (
-/obj/structure/ore_vein/plasma,
-/obj/item/xenoarch/useless_relic/magnified{
-	name = "Ancient relic";
-	desc = "Sort of relic that can be exported through Cargo."
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 "z" = (
 /turf/closed/indestructible/riveted/boss,
-/area/lavaland/surface/outdoors)
-"A" = (
-/obj/structure/ore_vein,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"G" = (
-/obj/structure/ore_vein/iron,
-/obj/effect/spawner/random/mob/necropolis_mob,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"H" = (
-/obj/structure/ore_vein/iron,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"M" = (
-/obj/structure/ore_vein/gold,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"N" = (
-/obj/structure/flora/rock/pile/style_random,
-/obj/structure/ore_vein/gold,
-/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "S" = (
 /turf/closed/mineral/random/high_chance/volcanic,
@@ -77,12 +40,12 @@
 	},
 /area/lavaland/surface/outdoors)
 "V" = (
-/obj/structure/ore_vein,
 /obj/effect/spawner/random/mob/necropolis_mob,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "X" = (
-/obj/structure/ore_vein/plasma,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 
@@ -118,7 +81,7 @@ a
 U
 U
 S
-H
+S
 z
 z
 "}
@@ -136,7 +99,7 @@ U
 U
 S
 T
-S
+X
 S
 z
 "}
@@ -151,36 +114,36 @@ a
 z
 a
 e
-m
+X
 S
 V
-S
-S
+X
+X
 z
 "}
 (5,1,1) = {"
 z
 U
 U
-S
+X
 z
 z
 a
 z
 z
 z
-v
-S
-S
-x
-m
+X
+X
+X
+r
+X
 z
 "}
 (6,1,1) = {"
 z
 U
 S
-m
+X
 T
 z
 a
@@ -188,17 +151,17 @@ a
 a
 U
 S
-M
+X
 S
-S
-S
+X
+X
 z
 "}
 (7,1,1) = {"
 z
 S
-v
-S
+X
+X
 S
 z
 U
@@ -206,19 +169,19 @@ a
 a
 U
 U
-H
 S
-M
-S
+X
+X
+X
 z
 "}
 (8,1,1) = {"
 z
-H
-w
 S
-M
-v
+w
+X
+X
+X
 U
 a
 a
@@ -227,16 +190,16 @@ z
 z
 X
 w
-A
+S
 z
 "}
 (9,1,1) = {"
 z
 S
-S
+X
 X
 S
-S
+X
 U
 a
 a
@@ -244,17 +207,17 @@ a
 a
 z
 S
-S
+X
 T
 U
 "}
 (10,1,1) = {"
 z
+X
+T
 S
-N
-S
-G
-S
+w
+X
 z
 z
 z
@@ -262,16 +225,16 @@ a
 a
 z
 S
-m
-S
+X
+X
 U
 "}
 (11,1,1) = {"
 z
 S
-m
+X
 r
-M
+X
 T
 z
 a
@@ -281,16 +244,16 @@ a
 z
 U
 S
-v
+S
 U
 "}
 (12,1,1) = {"
 z
 S
+X
 S
-A
-S
-S
+X
+X
 z
 a
 a
@@ -298,7 +261,7 @@ a
 a
 a
 U
-H
+S
 U
 U
 "}
@@ -306,8 +269,8 @@ U
 z
 U
 X
+X
 S
-m
 S
 z
 a
@@ -324,7 +287,7 @@ a
 z
 U
 S
-S
+X
 T
 U
 U
@@ -342,7 +305,7 @@ a
 a
 U
 U
-H
+S
 U
 U
 a

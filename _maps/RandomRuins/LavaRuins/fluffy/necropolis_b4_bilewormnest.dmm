@@ -61,6 +61,10 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"E" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "F" = (
 /obj/structure/stone_tile/slab/cracked,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -73,11 +77,16 @@
 /obj/structure/flora/ash/cacti,
 /turf/open/misc/asteroid/lavaland_atmos,
 /area/lavaland/surface/outdoors)
+"I" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "J" = (
 /mob/living/basic/mining/bileworm/vileworm,
 /turf/open/misc/asteroid/lavaland_atmos,
 /area/lavaland/surface/outdoors)
 "L" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/open/misc/asteroid/lavaland_atmos,
 /area/lavaland/surface/outdoors)
 "M" = (
@@ -161,7 +170,7 @@ H
 c
 g
 u
-s
+I
 b
 r
 Y
@@ -169,7 +178,7 @@ Y
 (5,1,1) = {"
 b
 F
-s
+I
 N
 L
 J
@@ -196,14 +205,14 @@ r
 "}
 (7,1,1) = {"
 r
-s
+I
 j
 c
 g
 u
 A
 j
-s
+I
 Y
 r
 r
@@ -240,8 +249,8 @@ Y
 r
 r
 r
-s
-j
+I
+E
 s
 Y
 Y

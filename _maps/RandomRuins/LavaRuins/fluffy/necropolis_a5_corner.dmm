@@ -139,6 +139,10 @@
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"uX" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "vy" = (
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
@@ -179,6 +183,10 @@
 /obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
+"Ef" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Ek" = (
 /turf/closed/indestructible/riveted/boss,
 /area/lavaland/surface/outdoors)
@@ -368,7 +376,7 @@ Yt
 id
 hN
 Ek
-oe
+Ef
 iB
 "}
 (5,1,1) = {"
@@ -419,7 +427,7 @@ xo
 Sy
 im
 oe
-Xp
+Ef
 zE
 zE
 NL
@@ -478,7 +486,7 @@ hV
 bI
 zo
 bI
-bI
+uX
 zo
 rb
 rb

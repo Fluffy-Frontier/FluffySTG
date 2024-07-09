@@ -95,7 +95,7 @@
 /turf/closed/indestructible/riveted/boss,
 /area/lavaland/surface/outdoors)
 "v" = (
-/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "w" = (
@@ -146,6 +146,10 @@
 	dir = 1
 	},
 /obj/effect/spawner/random/mob/necropolis_mob,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"I" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "J" = (
@@ -298,7 +302,7 @@ l
 l
 i
 u
-Z
+I
 K
 "}
 (9,1,1) = {"
@@ -376,7 +380,7 @@ l
 D
 u
 E
-Z
+I
 "}
 (20,1,1) = {"
 l

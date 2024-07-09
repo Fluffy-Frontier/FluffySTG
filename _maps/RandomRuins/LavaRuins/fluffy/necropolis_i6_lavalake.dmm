@@ -6,16 +6,11 @@
 /mob/living/basic/mining/lobstrosity/lava,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"e" = (
-/obj/structure/ore_vein,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "j" = (
 /obj/item/fishing_rod/bone{
 	pixel_x = 11;
 	pixel_y = -5
 	},
-/obj/structure/ore_vein/diamond,
 /mob/living/basic/mining/lobstrosity/lava{
 	name = "Big Armored Daddy Chomper";
 	desc = "Damn... That's a big one.";
@@ -31,10 +26,11 @@
 	guaranteed_butcher_results = list(/obj/item/food/meat/slab/rawcrab = 16, /obj/item/stack/sheet/bone = 4, /obj/item/organ/internal/monster_core/rush_gland = 1,/obj/item/crusher_trophy/lobster_claw=1);
 	base_pixel_y = -32
 	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "k" = (
-/obj/structure/ore_vein/gold,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "l" = (
@@ -76,11 +72,11 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "K" = (
-/obj/structure/ore_vein/plasma,
 /obj/item/fishing_hook/rescue{
 	pixel_x = -14;
 	pixel_y = -15
 	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "L" = (
@@ -88,7 +84,7 @@
 	pixel_x = 9;
 	pixel_y = 8
 	},
-/obj/structure/ore_vein/iron,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "N" = (
@@ -104,7 +100,7 @@
 	pixel_x = 8;
 	pixel_y = 5
 	},
-/obj/structure/ore_vein/silver,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Q" = (
@@ -112,7 +108,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "U" = (
-/obj/structure/ore_vein,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "X" = (
@@ -121,13 +117,13 @@
 
 (1,1,1) = {"
 l
-a
+U
 a
 a
 a
 U
 a
-a
+U
 l
 l
 l
@@ -141,21 +137,21 @@ a
 d
 a
 a
-a
+U
 x
 l
 l
 l
 "}
 (3,1,1) = {"
-a
+U
 a
 X
 X
 X
 X
 G
-a
+U
 a
 q
 l
@@ -164,7 +160,7 @@ l
 (4,1,1) = {"
 a
 C
-e
+k
 X
 X
 X
@@ -172,11 +168,11 @@ X
 X
 v
 a
-a
+U
 l
 "}
 (5,1,1) = {"
-a
+U
 a
 G
 X
@@ -186,7 +182,7 @@ X
 X
 X
 G
-a
+U
 l
 "}
 (6,1,1) = {"
@@ -199,12 +195,12 @@ j
 k
 X
 X
-e
+k
 a
 a
 "}
 (7,1,1) = {"
-a
+U
 a
 d
 X
@@ -228,7 +224,7 @@ B
 N
 X
 X
-e
+k
 U
 "}
 (9,1,1) = {"
@@ -257,20 +253,20 @@ X
 X
 X
 G
-a
+U
 "}
 (11,1,1) = {"
 l
 l
 a
-a
+U
 a
 o
-e
+k
 d
 X
 a
-a
+U
 a
 "}
 (12,1,1) = {"
@@ -283,7 +279,7 @@ a
 U
 a
 a
-a
+U
 a
 l
 "}

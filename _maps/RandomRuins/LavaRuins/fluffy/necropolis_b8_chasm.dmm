@@ -29,6 +29,11 @@
 /obj/structure/stone_tile/block/cracked,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"z" = (
+/obj/effect/spawner/random/structure/spikes,
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/random/high_chance/volcanic,
+/area/lavaland/surface/outdoors)
 "A" = (
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/random/high_chance/volcanic,
@@ -55,6 +60,11 @@
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"X" = (
+/obj/effect/spawner/random/structure/spikes,
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 
 (1,1,1) = {"
 a
@@ -78,10 +88,10 @@ t
 S
 p
 A
-i
+X
 "}
 (4,1,1) = {"
-i
+X
 p
 p
 p
@@ -107,7 +117,7 @@ a
 (7,1,1) = {"
 a
 a
-A
+z
 C
 a
 a

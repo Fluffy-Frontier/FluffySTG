@@ -46,6 +46,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "cs" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "dc" = (
@@ -586,7 +587,7 @@
 /turf/closed/indestructible/riveted/boss,
 /area/lavaland/surface/outdoors)
 "OK" = (
-/obj/structure/ore_vein,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "OT" = (
@@ -795,7 +796,7 @@ gn
 cs
 zd
 Os
-fU
+OK
 us
 TV
 Yo
@@ -813,7 +814,7 @@ gn
 pX
 Os
 Os
-fU
+OK
 fx
 xn
 RJ
@@ -857,7 +858,7 @@ mW
 Nd
 hL
 Wk
-fU
+OK
 Zs
 OT
 mT
@@ -899,8 +900,8 @@ bh
 HK
 "}
 (10,1,1) = {"
-fU
-fU
+OK
+OK
 fU
 ID
 RV
@@ -917,7 +918,7 @@ OK
 mT
 "}
 (11,1,1) = {"
-fU
+OK
 Os
 Os
 fU
@@ -958,12 +959,12 @@ Zs
 Os
 Os
 ar
-fU
+OK
 Zs
 Hs
 aU
 yG
-fU
+OK
 By
 HB
 iA
@@ -977,11 +978,11 @@ sb
 Os
 Os
 Os
-fU
+OK
 WS
 le
 hi
-fU
+OK
 Os
 Os
 fU
@@ -991,7 +992,7 @@ hP
 (15,1,1) = {"
 mT
 mT
-fU
+OK
 zC
 ic
 gO

@@ -28,6 +28,7 @@
 /area/lavaland/surface/outdoors)
 "bU" = (
 /obj/structure/railing/stone,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "cw" = (
@@ -618,6 +619,7 @@
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 5
 	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/strong{
 	base_icon_state = "smoothrocks";
 	icon = 'modular_nova/modules/liquids/icons/turf/smoothrocks.dmi';
@@ -686,6 +688,7 @@
 /area/lavaland/surface/outdoors)
 "Xe" = (
 /obj/structure/railing/stone/right,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "XY" = (
@@ -702,6 +705,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Ya" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "YG" = (

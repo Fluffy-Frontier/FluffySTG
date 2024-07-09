@@ -10,6 +10,7 @@
 	},
 /area/lavaland/surface/outdoors)
 "j" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "y" = (
@@ -21,6 +22,14 @@
 	name = "Medium ore vent"
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"D" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/strong{
+	base_icon_state = "smoothrocks";
+	icon = 'modular_nova/modules/liquids/icons/turf/smoothrocks.dmi';
+	icon_state = "smoothrocks-55"
+	},
 /area/lavaland/surface/outdoors)
 "I" = (
 /obj/item/xenoarch/useless_relic{
@@ -52,7 +61,7 @@ a
 V
 "}
 (2,1,1) = {"
-b
+D
 b
 a
 a
@@ -75,11 +84,11 @@ a
 j
 z
 b
-b
+D
 a
 "}
 (5,1,1) = {"
-b
+D
 a
 X
 j
@@ -88,7 +97,7 @@ a
 a
 "}
 (6,1,1) = {"
-b
+D
 a
 b
 b

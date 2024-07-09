@@ -18,6 +18,7 @@
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "aW" = (
@@ -161,7 +162,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ua" = (
-/obj/structure/ore_vein,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ug" = (
@@ -359,6 +360,7 @@
 	pixel_x = 7;
 	pixel_y = 8
 	},
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Ka" = (
@@ -526,10 +528,6 @@
 /obj/effect/spawner/random/mob/necropolis_mob,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
-"Wg" = (
-/obj/structure/ore_vein/diamond,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
 "Wn" = (
 /obj/structure/stone_tile{
 	dir = 4
@@ -549,6 +547,7 @@
 /area/lavaland/surface/outdoors)
 "Xm" = (
 /obj/structure/railing/stone,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Xq" = (
@@ -612,7 +611,7 @@ Eu
 tJ
 RB
 Mq
-mK
+ua
 ua
 au
 mK
@@ -626,7 +625,7 @@ nj
 dZ
 cU
 mK
-Wg
+ua
 Ht
 jA
 dL
@@ -672,7 +671,7 @@ vN
 dL
 dL
 jS
-mK
+ua
 ec
 "}
 (9,1,1) = {"
@@ -761,7 +760,7 @@ jS
 "}
 (15,1,1) = {"
 ec
-mK
+ua
 Eu
 ZH
 Xm
@@ -779,7 +778,7 @@ Fl
 jX
 VY
 Xm
-mK
+ua
 jX
 mK
 Vj
@@ -793,7 +792,7 @@ ec
 yL
 ae
 Xm
-mK
+ua
 Ty
 wa
 eH
@@ -808,7 +807,7 @@ nj
 mj
 fJ
 jS
-mK
+ua
 Mn
 mK
 PX

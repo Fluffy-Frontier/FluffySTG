@@ -41,6 +41,7 @@
 	dir = 8
 	},
 /obj/structure/railing/stone,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "jj" = (
@@ -120,10 +121,6 @@
 	dir = 4
 	},
 /obj/structure/stone_tile/surrounding_tile/burnt,
-/turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"xi" = (
-/obj/structure/stone_tile/slab,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "yM" = (
@@ -208,7 +205,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Iv" = (
-/obj/structure/ore_vein/gold,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Iz" = (
@@ -285,6 +282,7 @@
 "Pg" = (
 /obj/structure/stone_tile/surrounding_tile,
 /obj/structure/railing/stone,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Pk" = (
@@ -357,6 +355,7 @@
 /area/lavaland/surface/outdoors)
 "To" = (
 /obj/effect/spawner/random/mob/brimdemon,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "TP" = (
@@ -380,6 +379,7 @@
 /area/lavaland/surface/outdoors)
 "WD" = (
 /obj/structure/railing/stone,
+/obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "WL" = (
@@ -439,7 +439,7 @@ CU
 (3,1,1) = {"
 Mx
 BK
-xi
+Iv
 Iz
 Fn
 HN
@@ -500,7 +500,7 @@ CU
 CU
 wq
 aU
-AZ
+Iv
 WL
 UO
 yV
@@ -512,7 +512,7 @@ Rk
 lQ
 lQ
 Iv
-AZ
+Iv
 jj
 wq
 wv

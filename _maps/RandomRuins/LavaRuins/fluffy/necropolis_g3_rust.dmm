@@ -114,6 +114,10 @@
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/ruin/unpowered)
+"J" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "K" = (
 /obj/effect/mapping_helpers/bombable_wall,
 /obj/structure/trap/eldritch/tentacle,
@@ -181,28 +185,28 @@
 (1,1,1) = {"
 o
 c
-H
+J
 F
 c
-H
+J
 F
 o
 o
 "}
 (2,1,1) = {"
 c
-H
+J
 D
 V
 K
 V
 F
 c
-H
+J
 "}
 (3,1,1) = {"
 H
-H
+J
 V
 B
 P
@@ -252,7 +256,7 @@ z
 V
 K
 c
-H
+J
 H
 "}
 (8,1,1) = {"
@@ -263,7 +267,7 @@ V
 V
 c
 h
-H
+J
 c
 "}
 (9,1,1) = {"
@@ -272,7 +276,7 @@ o
 F
 F
 F
-H
+J
 j
 c
 o
