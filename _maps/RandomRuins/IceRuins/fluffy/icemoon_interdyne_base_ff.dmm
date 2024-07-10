@@ -400,7 +400,7 @@
 /obj/structure/fluff/metalpole/end{
 	dir = 1
 	},
-/turf/open/lava/plasma/ice_moon,
+/turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "ce" = (
 /obj/item/tank/internals/oxygen/yellow,
@@ -1568,7 +1568,6 @@
 /area/ruin/interdyne_planetary_base/main)
 "iG" = (
 /obj/structure/table/reinforced/plastitaniumglass,
-/obj/item/clothing/glasses/hud/health,
 /obj/item/reagent_containers/dropper{
 	pixel_y = -6
 	},
@@ -1577,6 +1576,10 @@
 	},
 /obj/effect/turf_decal/tile/dark/full,
 /obj/item/food/monkeycube,
+/obj/item/clothing/glasses/hud/health{
+	pixel_x = -1;
+	pixel_y = 11
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "iL" = (
@@ -2650,7 +2653,7 @@
 	transport_controller_type = null;
 	transport_id = null
 	},
-/turf/open/lava/plasma/ice_moon,
+/turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "oS" = (
 /obj/structure/closet/cabinet{
@@ -4066,7 +4069,7 @@
 /area/ruin/interdyne_planetary_base/cargo)
 "wQ" = (
 /obj/structure/fluff/metalpole/end,
-/turf/open/lava/plasma/ice_moon,
+/turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "wU" = (
 /obj/structure/bookcase/random/religion,
@@ -5931,7 +5934,7 @@
 	transport_controller_type = null;
 	transport_id = null
 	},
-/turf/open/lava/plasma/ice_moon,
+/turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "HU" = (
 /obj/effect/turf_decal/siding/wood{
@@ -5953,7 +5956,7 @@
 /obj/structure/fluff/metalpole/end{
 	dir = 4
 	},
-/turf/open/lava/plasma/ice_moon,
+/turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "Ie" = (
 /obj/effect/turf_decal/trimline/dark/filled/corner{
@@ -6944,7 +6947,7 @@
 /obj/structure/fluff/metalpole/end{
 	dir = 8
 	},
-/turf/open/lava/plasma/ice_moon,
+/turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "Oz" = (
 /obj/structure/flora/bush/sparsegrass/style_random,
@@ -7031,17 +7034,9 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/storage/backpack/duffelbag/synth_treatment_kit/trauma/advanced/unzipped,
-/obj/item/borg/sight/hud/med{
-	pixel_y = 9
-	},
-/obj/item/borg/sight/hud/med{
-	pixel_y = 9
-	},
-/obj/item/borg/sight/hud/med{
-	pixel_y = 9
-	},
-/obj/item/borg/sight/hud/med{
-	pixel_y = 9
+/obj/item/clothing/glasses/hud/health{
+	pixel_x = 0;
+	pixel_y = 10
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
@@ -7294,7 +7289,7 @@
 	transport_controller_type = null;
 	transport_id = null
 	},
-/turf/open/lava/plasma/ice_moon,
+/turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "Rd" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -7893,7 +7888,7 @@
 	transport_controller_type = null;
 	transport_id = null
 	},
-/turf/open/lava/plasma/ice_moon,
+/turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "UO" = (
 /obj/effect/turf_decal/siding/dark{
@@ -9183,13 +9178,13 @@ SH
 KQ
 ab
 ab
-Iy
+ab
 Se
 KQ
 Se
 Iy
 SH
-Iy
+dM
 ab
 ab
 ab
@@ -9237,7 +9232,17 @@ Iy
 dM
 Iy
 uQ
-Iy
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -9245,16 +9250,6 @@ ab
 ab
 Iy
 Se
-Iy
-dM
-ab
-ab
-ab
-ab
-ab
-ab
-Iy
-Iy
 Iy
 SM
 Iy
@@ -9294,8 +9289,8 @@ Iy
 yH
 Iy
 Iy
-Iy
-Iy
+ab
+ab
 ab
 ab
 Pv
@@ -9313,7 +9308,7 @@ ab
 Pn
 ab
 ab
-Se
+ab
 Iy
 SH
 Iy
@@ -9352,29 +9347,29 @@ Iy
 SH
 Iy
 Se
-Iy
-ab
-ab
-ab
-ab
-ab
 ab
 ab
 ab
 ab
 ab
 SH
+Iy
+dM
+Iy
+dM
+Se
 SH
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+SH
+dM
 Iy
+SH
 Iy
+dM
+ab
+ab
+ab
+ab
+Se
 Iy
 Iy
 eE
@@ -9408,14 +9403,14 @@ eE
 Iy
 KQ
 Iy
+dM
+ab
+ab
+ab
+ab
+ab
 Iy
 Iy
-Iy
-ab
-ab
-ab
-ab
-ab
 Ox
 yP
 kf
@@ -9429,14 +9424,14 @@ Fg
 dL
 Zr
 Ox
-ab
-ab
-ab
-ab
-Se
 Iy
+dM
+ab
+ab
+ab
+ab
+ab
 SH
-Iy
 Iy
 Iy
 Se
@@ -9467,13 +9462,13 @@ Iy
 Iy
 SH
 Iy
-dM
 ab
 ab
 ab
 ab
-ab
-ab
+Iy
+SH
+Iy
 yP
 kf
 kf
@@ -9489,9 +9484,9 @@ Xc
 MD
 rx
 RM
-ab
-ab
-ab
+Iy
+SH
+Iy
 ab
 ab
 ab
@@ -9528,8 +9523,8 @@ ab
 ab
 ab
 ab
-ab
-ab
+dM
+Iy
 SH
 Iz
 Iz
@@ -9551,8 +9546,8 @@ td
 td
 RM
 SH
-ab
-ab
+Iy
+SH
 ab
 ab
 ab
@@ -9581,12 +9576,12 @@ Zx
 dM
 Iy
 Iy
-Iy
+eE
 ab
 ab
 Pv
 ab
-ab
+SH
 oR
 sv
 sv
@@ -9612,7 +9607,7 @@ td
 eo
 vo
 UK
-ab
+Iy
 ab
 Pn
 ab
@@ -9644,7 +9639,7 @@ dM
 ab
 ab
 ab
-ab
+Iy
 oR
 sv
 CQ
@@ -9672,7 +9667,7 @@ jt
 vL
 vo
 UK
-ab
+dM
 ab
 ab
 ab
@@ -9702,7 +9697,7 @@ Iy
 ab
 ab
 ab
-ab
+Iy
 oR
 sv
 PB
@@ -9732,7 +9727,7 @@ TL
 Gb
 vo
 UK
-ab
+SH
 ab
 ab
 SH
@@ -9760,7 +9755,7 @@ SM
 SH
 ab
 ab
-ab
+SH
 oR
 sv
 Fz
@@ -9792,9 +9787,9 @@ xm
 OI
 vo
 UK
-ab
-ab
 Iy
+ab
+ab
 SH
 Iy
 Iy
@@ -9815,11 +9810,11 @@ dM
 Iy
 SH
 dM
+eE
+ab
+ab
+ab
 Iy
-dM
-ab
-ab
-ab
 sv
 PB
 vZ
@@ -9851,10 +9846,10 @@ vv
 Wz
 OH
 vo
+SH
 ab
 ab
 ab
-Iy
 Se
 Iy
 Iy
@@ -9872,13 +9867,13 @@ Se
 Iy
 eE
 Iy
+dM
 Iy
+KQ
+ab
+ab
+dM
 Iy
-Iy
-ab
-ab
-ab
-ab
 sv
 Ua
 ad
@@ -9910,11 +9905,11 @@ ry
 wX
 gm
 eo
-ab
+Iy
+dM
 ab
 ab
 dM
-Iy
 yH
 SH
 ac
@@ -9933,10 +9928,10 @@ Iy
 Iy
 Iy
 yH
-KQ
 ab
 ab
 ab
+Iy
 sv
 fB
 Mu
@@ -9970,10 +9965,10 @@ HI
 tx
 td
 RM
+Iy
 ab
 ab
 ab
-SH
 Iy
 Iy
 ac
@@ -9990,12 +9985,12 @@ BM
 Se
 Iy
 Iy
-Iy
 SH
 ab
 ab
 ab
-ab
+SH
+Iy
 sv
 DZ
 VO
@@ -10029,8 +10024,8 @@ dZ
 En
 DA
 td
-ab
-ab
+Iy
+SH
 ab
 ab
 KQ
@@ -10048,12 +10043,12 @@ Iy
 Iy
 Iy
 Iy
-SH
+eE
+ab
+ab
+ab
+ab
 Iy
-ab
-ab
-ab
-ab
 yE
 kf
 oP
@@ -10089,7 +10084,7 @@ WM
 ub
 td
 RM
-ab
+Iy
 ab
 ab
 ab
@@ -10107,11 +10102,11 @@ Iy
 Se
 eE
 Se
-Iy
+SH
 ab
 ab
 ab
-ab
+dM
 bZ
 GI
 kf
@@ -10149,7 +10144,7 @@ ef
 Sm
 td
 wQ
-ab
+dM
 Pn
 ab
 Im
@@ -10169,8 +10164,8 @@ Iy
 ab
 ab
 ab
-ab
-ab
+SH
+Iy
 sP
 BF
 BF
@@ -10208,7 +10203,7 @@ Cd
 td
 td
 RM
-ab
+Iy
 ab
 ab
 Se
@@ -10221,14 +10216,14 @@ ac
 yH
 Se
 Iy
-Iy
+eE
 dM
 ab
 ab
 ab
 ak
 ab
-ab
+Iy
 cG
 BF
 BF
@@ -10267,7 +10262,7 @@ Xq
 LK
 cw
 td
-ab
+SH
 ab
 Iy
 eE
@@ -10287,7 +10282,7 @@ ab
 ab
 ab
 ab
-ab
+SH
 RV
 BF
 BF
@@ -10326,7 +10321,7 @@ FO
 QU
 vL
 NS
-ab
+Iy
 ab
 Se
 Jx
@@ -10680,7 +10675,7 @@ Wz
 NJ
 IP
 NS
-ab
+Iy
 ab
 ab
 Iy
@@ -10739,7 +10734,7 @@ Ou
 uX
 cw
 td
-ab
+Iy
 ab
 ab
 Se
@@ -10754,7 +10749,7 @@ Iy
 SM
 Iy
 Iy
-Iy
+eE
 Se
 ab
 ab
@@ -10798,7 +10793,7 @@ YI
 td
 td
 RM
-ab
+dM
 ab
 ab
 Iy
@@ -10857,7 +10852,7 @@ tS
 jy
 td
 wQ
-ab
+SH
 dk
 ab
 yH
@@ -10915,7 +10910,7 @@ yJ
 Xh
 td
 RM
-ab
+Iy
 ab
 ab
 ab
@@ -10933,7 +10928,7 @@ Iy
 Iy
 Se
 Iy
-Iy
+eE
 SH
 ab
 ab
@@ -10973,8 +10968,8 @@ EJ
 Wu
 zT
 td
-ab
-ab
+Iy
+dM
 ab
 ab
 ab
@@ -10998,7 +10993,7 @@ ab
 ab
 ab
 ab
-ab
+Iy
 ds
 Ij
 sR
@@ -11032,7 +11027,7 @@ xq
 Et
 td
 RM
-ab
+Iy
 ab
 ab
 ab
@@ -11057,8 +11052,8 @@ yH
 ab
 ab
 ab
-ab
-ab
+dM
+Iy
 ds
 gA
 cN
@@ -11090,8 +11085,8 @@ tS
 Jq
 cT
 nP
-ab
-ab
+Iy
+SH
 ab
 ab
 SH
@@ -11117,7 +11112,7 @@ dM
 ab
 ab
 ab
-ab
+Iy
 ds
 cx
 VQ
@@ -11149,7 +11144,7 @@ th
 Jq
 bf
 nP
-ab
+dM
 ab
 ab
 dM
@@ -11176,7 +11171,7 @@ Iy
 ab
 ab
 ab
-ab
+Iy
 Rb
 ds
 qa
@@ -11208,7 +11203,7 @@ gz
 Jq
 nP
 HN
-ab
+Iy
 ab
 ab
 Iy
@@ -11236,7 +11231,7 @@ dM
 ab
 ab
 ab
-ab
+dM
 Rb
 ds
 Qx
@@ -11266,7 +11261,7 @@ Mk
 mr
 nP
 HN
-ab
+Iy
 ab
 ab
 KQ
@@ -11296,7 +11291,7 @@ ab
 ab
 ab
 ab
-ab
+Iy
 Rb
 ds
 tc
@@ -11324,7 +11319,7 @@ BB
 ap
 nP
 HN
-ab
+SH
 ab
 ab
 ab
@@ -11356,7 +11351,7 @@ ab
 ab
 Ei
 ab
-ab
+dM
 Rb
 ds
 yQ
@@ -11382,7 +11377,7 @@ td
 nP
 nP
 HN
-ab
+Se
 ab
 dk
 ab
@@ -11416,8 +11411,8 @@ ab
 ab
 ab
 ab
-ab
-ab
+Iy
+Iy
 SH
 Mn
 yQ
@@ -11438,9 +11433,9 @@ TH
 zF
 zF
 RM
-ab
-ab
-ab
+Iy
+dM
+Iy
 ab
 ab
 ab
@@ -11477,8 +11472,8 @@ ab
 ab
 ab
 ab
-ab
-ab
+dM
+Iy
 NA
 Mn
 yQ
@@ -11495,15 +11490,15 @@ RQ
 zF
 zF
 Pw
-ab
-ab
+Iy
+Iy
+SH
 ab
 ab
 ab
 ab
 ab
 dM
-Iy
 Iy
 Ps
 Im
@@ -11538,8 +11533,8 @@ ab
 ab
 ab
 ab
-ab
-ab
+Iy
+Iy
 Id
 Mn
 yQ
@@ -11553,14 +11548,14 @@ NV
 zF
 Pw
 Id
-ab
-ab
-ab
-ab
-ab
-SH
-KQ
 Iy
+dM
+ab
+ab
+ab
+ab
+ab
+KQ
 Iy
 Iy
 SH
@@ -11599,26 +11594,26 @@ ab
 ab
 ab
 ab
-ab
-ab
+dM
+Iy
 SH
 Se
 Iy
-ab
-ab
-ab
+Iy
+dM
+Iy
 KQ
 SH
-ab
-ab
-ab
-ab
-ab
-ab
-dM
-Jx
-Se
 Iy
+dM
+Iy
+ab
+ab
+ab
+ab
+ab
+ab
+SH
 SM
 Se
 Iy
@@ -11674,8 +11669,8 @@ dk
 ab
 ab
 ab
-Iy
-Iy
+ab
+Jx
 Iy
 eE
 yH
@@ -11731,9 +11726,9 @@ ab
 ab
 ab
 ab
-Iy
+ab
 SH
-Iy
+dM
 Iy
 eE
 Iy

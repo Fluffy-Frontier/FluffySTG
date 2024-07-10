@@ -1149,6 +1149,10 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/interdyne_planetary_base/serv)
+"gP" = (
+/obj/structure/flora/rock/style_random,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "gR" = (
 /obj/structure/weightmachine/weightlifter,
 /obj/effect/decal/cleanable/dirt,
@@ -1288,7 +1292,10 @@
 /area/ruin/interdyne_planetary_base/main)
 "hH" = (
 /obj/structure/table/reinforced/plastitaniumglass,
-/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/glasses/hud/health{
+	pixel_x = -1;
+	pixel_y = 10
+	},
 /obj/item/reagent_containers/dropper{
 	pixel_y = -6
 	},
@@ -1372,7 +1379,7 @@
 	transport_controller_type = null;
 	transport_id = null
 	},
-/turf/open/lava/smooth/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "il" = (
 /obj/machinery/modular_shield/module/charger{
@@ -3243,7 +3250,7 @@
 	transport_controller_type = null;
 	transport_id = null
 	},
-/turf/open/lava/smooth/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "tx" = (
 /obj/effect/turf_decal/siding/wood{
@@ -4080,17 +4087,9 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/storage/backpack/duffelbag/synth_treatment_kit/trauma/advanced/unzipped,
-/obj/item/borg/sight/hud/med{
-	pixel_y = 9
-	},
-/obj/item/borg/sight/hud/med{
-	pixel_y = 9
-	},
-/obj/item/borg/sight/hud/med{
-	pixel_y = 9
-	},
-/obj/item/borg/sight/hud/med{
-	pixel_y = 9
+/obj/item/clothing/glasses/hud/health{
+	pixel_x = 0;
+	pixel_y = 11
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
@@ -4447,7 +4446,7 @@
 	transport_controller_type = null;
 	transport_id = null
 	},
-/turf/open/lava/smooth/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "AY" = (
 /obj/structure/chair/sofa/bench/left{
@@ -5550,7 +5549,7 @@
 	transport_controller_type = null;
 	transport_id = null
 	},
-/turf/open/lava/smooth/lava_land_surface,
+/turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "HD" = (
 /obj/structure/table/reinforced/plastitaniumglass,
@@ -8949,7 +8948,7 @@ BO
 BO
 BO
 BO
-BO
+gP
 BO
 BO
 BO
@@ -9060,7 +9059,7 @@ BO
 eO
 ZT
 BO
-BO
+gP
 BO
 BO
 eO
@@ -9132,14 +9131,14 @@ hY
 eO
 eO
 eO
+gP
+eO
+gP
 eO
 eO
-BO
 eO
 eO
-eO
-eO
-BO
+gP
 eO
 eO
 eO
@@ -9171,7 +9170,7 @@ BO
 BO
 fU
 BO
-BO
+gP
 eO
 ZT
 eO
@@ -9180,18 +9179,18 @@ eO
 eO
 eO
 eO
-BO
-BO
+eO
+eO
 eO
 eO
 lx
+ZT
 eO
 eO
 eO
 eO
-eO
-eO
-eO
+BO
+BO
 eO
 eO
 eO
@@ -9200,11 +9199,11 @@ UO
 eO
 eO
 eO
-BO
+gP
 ZT
 eO
 eO
-BO
+gP
 xN
 BO
 Co
@@ -9243,20 +9242,20 @@ eO
 ZT
 eO
 eO
-eO
-eO
-eO
-eO
-eO
+BO
+BO
+BO
+BO
+ZT
 BO
 ZT
 ZT
-eO
-eO
-eO
-eO
-eO
-eO
+BO
+BO
+ZT
+BO
+BO
+ZT
 eO
 eO
 eO
@@ -9280,28 +9279,28 @@ CH
 Co
 Co
 eO
-BO
+gP
 eO
 eO
 eO
 eO
 eO
-BO
+gP
 eO
 eO
 eO
 eO
 eO
 eO
-BO
+gP
 xN
 eO
 eO
 eO
 eO
 eO
-eO
-eO
+BO
+BO
 RS
 eC
 JV
@@ -9315,9 +9314,9 @@ pq
 pq
 kg
 RS
-eO
-eO
-eO
+BO
+BO
+ZT
 eO
 eO
 eO
@@ -9357,9 +9356,9 @@ eO
 eO
 eO
 eO
-eO
-eO
-eO
+BO
+BO
+BO
 eC
 JV
 JV
@@ -9375,10 +9374,10 @@ AT
 yN
 vN
 Si
-eO
-eO
-eO
-eO
+BO
+BO
+BO
+BO
 eO
 eO
 eO
@@ -9409,13 +9408,13 @@ eO
 eO
 BO
 BO
+gP
+eO
+eO
+eO
+eO
 BO
-eO
-eO
-eO
-eO
-eO
-eO
+BO
 ZT
 lV
 lV
@@ -9438,8 +9437,8 @@ eg
 Si
 ZT
 BO
-eO
-eO
+BO
+BO
 eO
 eO
 eO
@@ -9454,7 +9453,7 @@ CH
 "}
 (12,1,1) = {"
 Nm
-BO
+gP
 Bx
 yq
 yq
@@ -9464,7 +9463,7 @@ uH
 uH
 mo
 eO
-BO
+gP
 eO
 BO
 Nv
@@ -9472,7 +9471,7 @@ BO
 eO
 lx
 eO
-eO
+BO
 ik
 DT
 DT
@@ -9498,8 +9497,8 @@ eg
 nE
 hV
 HB
-eO
-eO
+ZT
+BO
 UO
 eO
 eO
@@ -9530,7 +9529,7 @@ BO
 BO
 eO
 eO
-eO
+BO
 ik
 DT
 Kd
@@ -9558,8 +9557,8 @@ Tm
 yJ
 hV
 HB
-eO
-eO
+BO
+BO
 eO
 eO
 eO
@@ -9588,7 +9587,7 @@ BO
 ZT
 eO
 eO
-eO
+ZT
 ik
 DT
 Qi
@@ -9618,11 +9617,11 @@ jX
 Yi
 hV
 HB
-eO
-eO
-eO
 ZT
 BO
+eO
+ZT
+gP
 eO
 BO
 BO
@@ -9642,11 +9641,11 @@ BZ
 te
 hY
 BO
-BO
+gP
 fO
 BO
 eO
-eO
+BO
 ik
 DT
 qe
@@ -9678,9 +9677,9 @@ dn
 jz
 hV
 HB
-eO
-eO
 BO
+eO
+eO
 ZT
 eO
 eO
@@ -9705,7 +9704,7 @@ BO
 BO
 eO
 eO
-eO
+BO
 DT
 Qi
 Gr
@@ -9737,9 +9736,9 @@ BM
 Ly
 ru
 hV
-eO
-eO
 BO
+eO
+eO
 eO
 eO
 xN
@@ -9763,8 +9762,8 @@ BO
 hY
 BO
 eO
-eO
-eO
+ZT
+BO
 DT
 jG
 xt
@@ -9796,12 +9795,12 @@ rm
 hh
 en
 nE
-eO
-eO
-eO
-eO
-eO
 BO
+ZT
+eO
+eO
+eO
+gP
 Nv
 ZT
 Co
@@ -9822,7 +9821,7 @@ BO
 xN
 eO
 eO
-eO
+BO
 DT
 bx
 Ox
@@ -9856,7 +9855,7 @@ JJ
 qD
 eg
 Si
-eO
+BO
 eO
 eO
 eO
@@ -9880,8 +9879,8 @@ eO
 ZT
 eO
 eO
-eO
-eO
+ZT
+BO
 DT
 JM
 TC
@@ -9915,9 +9914,9 @@ mF
 kD
 Sz
 eg
-eO
-eO
-eO
+BO
+BO
+gP
 eO
 eO
 BO
@@ -9939,7 +9938,7 @@ eO
 eO
 eO
 eO
-eO
+BO
 Sy
 JV
 UB
@@ -9975,8 +9974,8 @@ aX
 XI
 eg
 Si
-eO
-eO
+BO
+ZT
 eO
 eO
 eO
@@ -9997,7 +9996,7 @@ rW
 eO
 eO
 eO
-eO
+gP
 lz
 JV
 JV
@@ -10035,7 +10034,7 @@ rP
 ZJ
 eg
 BN
-eO
+BO
 UO
 eO
 eO
@@ -10046,17 +10045,17 @@ Co
 Nm
 hY
 BO
-BO
+gP
 BO
 xZ
 pN
+BO
+gP
 eO
 eO
 eO
-eO
-eO
-eO
-eO
+BO
+BO
 cZ
 vm
 vm
@@ -10094,10 +10093,10 @@ zy
 eg
 eg
 Si
-eO
-eO
-eO
 BO
+BO
+eO
+gP
 BO
 Co
 "}
@@ -10110,11 +10109,11 @@ Xp
 MQ
 pN
 eO
-eO
+ZT
 eO
 el
 eO
-eO
+BO
 GD
 vm
 vm
@@ -10153,7 +10152,7 @@ TD
 kr
 Si
 eg
-eO
+BO
 eO
 eO
 ZT
@@ -10173,7 +10172,7 @@ eO
 eO
 eO
 eO
-eO
+ZT
 vm
 vm
 vm
@@ -10212,7 +10211,7 @@ Rz
 Kt
 yJ
 kY
-eO
+BO
 eO
 eO
 BO
@@ -10527,7 +10526,7 @@ eO
 eO
 eO
 eO
-eO
+ZT
 vm
 vm
 vm
@@ -10566,7 +10565,7 @@ Ly
 gE
 KB
 kY
-eO
+BO
 eO
 eO
 eO
@@ -10578,7 +10577,7 @@ Nm
 Co
 BO
 BO
-BO
+gP
 Lr
 eO
 eO
@@ -10586,7 +10585,7 @@ eO
 eO
 lx
 eO
-eO
+BO
 cZ
 vm
 vm
@@ -10625,8 +10624,8 @@ ML
 wb
 Si
 eg
-eO
-eO
+ZT
+gP
 eO
 eO
 Co
@@ -10645,7 +10644,7 @@ eO
 eO
 eO
 eO
-eO
+BO
 ZT
 cZ
 vm
@@ -10684,7 +10683,7 @@ KQ
 eg
 eg
 Si
-eO
+BO
 eO
 eO
 eO
@@ -10699,7 +10698,7 @@ ZT
 BO
 Jt
 BO
-BO
+gP
 eO
 eO
 eO
@@ -10743,7 +10742,7 @@ iT
 ot
 eg
 BN
-eO
+BO
 co
 eO
 eO
@@ -10752,7 +10751,7 @@ Co
 "}
 (34,1,1) = {"
 Nm
-BO
+gP
 Co
 BO
 Co
@@ -10763,7 +10762,7 @@ eO
 eO
 eO
 eO
-BO
+gP
 ZT
 Jt
 Qx
@@ -10801,7 +10800,7 @@ gO
 AM
 eg
 Si
-eO
+BO
 eO
 eO
 eO
@@ -10859,8 +10858,8 @@ Uw
 EA
 aL
 eg
-eO
-eO
+BO
+BO
 eO
 eO
 eO
@@ -10883,7 +10882,7 @@ eO
 eO
 eO
 eO
-eO
+gP
 BO
 Sl
 tn
@@ -10918,11 +10917,11 @@ YE
 Yb
 eg
 Si
-eO
-eO
 BO
 eO
-BO
+gP
+eO
+gP
 Nv
 Co
 Co
@@ -10933,17 +10932,17 @@ Co
 Co
 Co
 fU
-BO
+gP
 xN
 ZT
 BO
-BO
+gP
 eO
 eO
 eO
 eO
 eO
-eO
+ZT
 BO
 Sl
 Tp
@@ -10976,8 +10975,8 @@ iT
 yS
 Tf
 tS
-eO
-eO
+BO
+ZT
 eO
 ZT
 eO
@@ -11003,7 +11002,7 @@ eO
 eO
 eO
 eO
-eO
+BO
 Sl
 UU
 RJ
@@ -11035,8 +11034,8 @@ qm
 yS
 fy
 tS
-eO
-eO
+BO
+BO
 eO
 eO
 eO
@@ -11062,7 +11061,7 @@ BO
 eO
 eO
 eO
-eO
+BO
 tt
 Sl
 qL
@@ -11094,7 +11093,7 @@ ND
 yS
 tS
 AV
-eO
+BO
 eO
 eO
 BO
@@ -11122,7 +11121,7 @@ BO
 ZT
 eO
 eO
-eO
+BO
 tt
 Sl
 mE
@@ -11152,11 +11151,11 @@ Mh
 Vl
 tS
 AV
-eO
+BO
 eO
 eO
 ZT
-BO
+gP
 eO
 eO
 eO
@@ -11176,13 +11175,13 @@ uy
 BO
 BO
 Jt
-BO
+gP
 xN
 eO
 eO
 eO
 eO
-eO
+ZT
 tt
 Sl
 eA
@@ -11210,9 +11209,9 @@ mt
 pK
 tS
 AV
-eO
-eO
-eO
+BO
+BO
+ZT
 eO
 eO
 eO
@@ -11242,7 +11241,7 @@ eO
 hY
 LE
 eO
-eO
+BO
 tt
 Sl
 VP
@@ -11268,8 +11267,8 @@ eg
 tS
 tS
 AV
-eO
-eO
+BO
+ZT
 co
 BO
 eO
@@ -11296,13 +11295,13 @@ BO
 BO
 ZT
 BO
-BO
+gP
 eO
 eO
 ZT
 eO
-eO
-eO
+gP
+BO
 BO
 ZT
 Qx
@@ -11325,8 +11324,8 @@ ST
 ST
 Si
 ZT
-eO
-eO
+BO
+BO
 eO
 eO
 ZT
@@ -11360,7 +11359,7 @@ BO
 eO
 eO
 eO
-eO
+ZT
 eO
 eO
 BO
@@ -11383,7 +11382,7 @@ ST
 Du
 ZT
 BO
-eO
+BO
 eO
 eO
 eO
@@ -11424,8 +11423,8 @@ eO
 eO
 eO
 eO
-eO
-eO
+BO
+BO
 zn
 Qx
 VP
@@ -11445,7 +11444,7 @@ eO
 eO
 eO
 eO
-BO
+gP
 eO
 eO
 eO
@@ -11477,30 +11476,30 @@ BO
 BO
 BO
 eO
-BO
+gP
 eO
-BO
-BO
-eO
-eO
-eO
-eO
-eO
-eO
-ZT
+gP
 BO
 eO
 eO
 eO
 eO
+BO
 BO
 ZT
+BO
+ZT
+BO
+BO
+BO
+BO
+ZT
+BO
+BO
+BO
 eO
-eO
-eO
-eO
-eO
-eO
+BO
+gP
 eO
 eO
 BO
@@ -11508,7 +11507,7 @@ Nv
 eO
 eO
 fO
-BO
+gP
 BO
 ZT
 Co
@@ -11541,30 +11540,30 @@ BO
 BO
 Nv
 BO
-BO
+gP
 eO
 eO
 LE
+BO
 eO
 eO
+gP
+BO
+BO
 eO
 eO
-eO
-eO
-eO
-eO
-eO
+gP
 eO
 eO
 co
 eO
 eO
-eO
+ZT
 eO
 BO
 ZT
 BO
-BO
+gP
 eO
 eO
 cL
@@ -11608,7 +11607,7 @@ eO
 eO
 eO
 eO
-eO
+ZT
 eO
 eO
 eO
@@ -11664,13 +11663,13 @@ eO
 eO
 eO
 eO
-BO
+gP
 uy
 eO
 eO
 eO
 BO
-BO
+gP
 xN
 eO
 eO
