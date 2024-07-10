@@ -641,3 +641,104 @@
       facilitate construction projects for the rest of the crew.
   - code_imp: Price minimum/maximum magic numbers in the GMM subsystem have been pulled
       out into defines to make tweaking buy/sell prices easier in the future.
+2024-07-10:
+  00-Steven:
+  - qol: You can now copy blast door controller IDs directly onto shutters/blast doors,
+      avoiding the need to open a menu for each one. Additionally, this lets you fix
+      sets of roundstart shutters without needing to change the IDs on all of the
+      ones in that set.
+  ArcaneMusic:
+  - bugfix: Ore vents that are caught in the cross-fire of a lavaland tendril collapsing
+      will now spare the ore vent and it's associated turf.
+  Astrogem2:
+  - sound: Added audible zipping to winter coats.
+  Derpguy3:
+  - bugfix: Missing janitor access restrictions have been added to Birdshot's custodial
+      closet doors.
+  EnterTheJake:
+  - balance: Jetpacks are now briefly disabled by EMP.
+  - balance: Mirage module has been removed from Sec modsuits.
+  - balance: Security modsuits now spawn with a better cell and the jetpack module
+      preinstalled.
+  Ghommie:
+  - bugfix: Fixed a whoopsie with bait-related calculations for fishing.
+  GoblinBackwards:
+  - qol: Docked emergency shuttles will always reset their departure timer when a
+      hostile environment is stopped, regardless of if the timer displays ETD or ERR.
+  - bugfix: Fixed missing wires leading to the port hallway APC on Birdshot.
+  Inari-Whitebear:
+  - bugfix: Fixed space heater heating power and power consumption
+  JackEnoff:
+  - bugfix: Welding helmet and hardhat will now properly protect against pepperspray
+      while its down
+  JohnFulpWillard:
+  - qol: You can now use a spoon or ladle on an ice cream vat to spill a reagent,
+      ridding the machine of all reagent of that type.
+  Jolly:
+  - bugfix: '[Birdshot] There are no longer two barbershops on Birdshot.'
+  - rscdel: '[Birdshot] The NTC office is no longer next to the Captain''s office,
+      instead, its near the HoPs office!'
+  Kocma-san:
+  - qol: the disposal unit has been added to the cargo bay and miner's office.
+  - bugfix: missed disposal pipe returned at QM's office
+  LemonInTheDark:
+  - bugfix: Grass turfs will render properly now. Reworked how floors render, please
+      report any bugs!
+  - bugfix: Cameras now properly capture lighting
+  - bugfix: The layering seen in photos should better match the actual game
+  Rhials:
+  - bugfix: Certain items can no longer be purchased or be offered with a discount
+      on a loneop uplink. This is stuff like base cards (functionally useless) or
+      Overwatch Intel Agents (which break the role).
+  - balance: Loneops may now purchase chameleon noslips, station blackout triggers,
+      and station comms failure triggers.
+  SmArtKar:
+  - bugfix: Blood filters should filter out reagents completely now instead of leaving
+      a small amount no matter what.
+  - bugfix: Bloody footprints no longer bloody your shoes even more when walked over.
+  - bugfix: Embedding now properly changes its values.
+  - bugfix: Exosuit Stress Failure experiment now works
+  - bugfix: Living limbs can no longer make you touch ghosts or abstract concepts
+      of start, landmark, influence or job
+  - spellcheck: Fixed improper word usage and improved grammar for living limbs
+  SyncIt21:
+  - bugfix: hydroponic trays take in all reagents "proportionally" from plumbing ducts
+      without leaving any behind
+  - bugfix: plumbing bottler pumps out all reagents "proportionally" into output beakers
+  - bugfix: paintings can be sponsored again
+  - bugfix: stacking machines can be linked with its console via multitool
+  Thlumyn for the map and sprites, GoldenAlpharex for most of the code:
+  - rscadd: Added SerenityStation map.
+  - rscadd: Added lightshroom, mushroom bush, mushroom tree, and colored ash flora
+      mushroom plants.
+  - rscadd: Added Stillcap and Mega Deer mobs.
+  - rscadd: Add forest cave generation and mushroom cave biome generation.
+  - config: Add SerenityStation to the map config.
+  Xander3359:
+  - bugfix: fixed CNS rebooter/Changeling adrenaline not preventing/fixing stamina
+      crit
+  aaaa1023:
+  - rscdel: 'Removed the shuttle manipulator entries for the following shuttles: Northstar
+      ferry, Omegastation arrivals shuttle, and Donutstation cargo ferry. (These shuttles
+      didn''t actually exist but they still had entries in the manipulator.)'
+  - bugfix: 'Fixed the following shuttles flying in unexpected directions: Basic CC
+      Ferry, Meat Ferry, Lighthouse Ferry, ERT bounty shuttle, Kilo cargo shuttle,
+      Pubby cargo shuttle, and Delta cargo shuttle.'
+  - bugfix: Fixed the ERT bounty shuttle having incorrect offsets in the shuttle navigation
+      console.
+  carlarctg:
+  - qol: Using a multitool inhand tells you where the area APC is
+  grungussuss:
+  - sound: pen click now has a proper sound
+  - bugfix: fixed an unrestricted airlock in metastation brig maints
+  - sound: scalpel cutting sound now has a clean sound.
+  grungussuss, ported from Beestation:
+  - sound: abductee, hypnotized and brainwashed now have sound when becoming one.
+  lizardqueenlexi:
+  - bugfix: Amputating a paraplegic's leg no longer miraculously allows them to walk.
+  mc-oofert:
+  - qol: the path to the wawastation chemsat is more clear now
+  rageguy505:
+  - bugfix: no more xenobio active turfs
+  zoomachina:
+  - bugfix: fixed dubious chem dispenser feedback when the beaker is full
