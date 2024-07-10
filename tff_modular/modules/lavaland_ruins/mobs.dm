@@ -34,7 +34,9 @@
 	var/can_repair_self = FALSE
 	var/smashes_walls = FALSE
 
-	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/external/tail/lizard = 1,/obj/item/organ/internal/eyes/shadow = 1,/obj/structure/trap/fire=1)
+	crusher_drop_chance = 15
+	crusher_loot = /obj/item/organ/internal/eyes/shadow
+	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/external/tail/lizard = 1,/obj/structure/trap/fire=1)
 
 	ai_controller = /datum/ai_controller/basic_controller/proteon
 
