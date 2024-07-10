@@ -7,13 +7,14 @@
 	"shuttles": {
 		"cargo": "cargo_nova",
 		"ferry": "ferry_fancy",
-		"whiteship": "whiteship_box",
-		"emergency": "emergency_box"
+		"whiteship": "whiteship_tram",
+		"emergency": "emergency_tram"
 	},
 	"ignored_unit_tests": [
-		"/datum/unit_test/atmospherics_sanity",
+		"/datum/unit_test/atmospherics_sanity" ,
 		"/datum/unit_test/breath/breath_sanity_ashwalker",
 		"/datum/unit_test/lungs/lungs_sanity_ashwalker"
+
 	],
 	"traits": [
 		{

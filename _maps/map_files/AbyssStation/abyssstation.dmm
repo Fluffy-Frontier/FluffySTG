@@ -1386,7 +1386,7 @@
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple,
 /obj/structure/kitchenspike,
 /obj/effect/turf_decal/bot/right,
-/turf/open/floor/iron/dark/textured,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
 "auA" = (
 /obj/effect/turf_decal/trimline/purple/filled/line,
@@ -9626,7 +9626,7 @@
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on/coldroom{
 	dir = 4
 	},
-/turf/open/floor/iron/dark/textured,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
 "dar" = (
 /obj/structure/disposalpipe/segment{
@@ -24383,7 +24383,7 @@
 	},
 /obj/structure/kitchenspike,
 /obj/effect/turf_decal/bot/left,
-/turf/open/floor/iron/dark/textured,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
 "htF" = (
 /obj/machinery/light/small/directional/north,
@@ -26108,7 +26108,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/turf/open/floor/iron/dark/textured,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
 "hQg" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
@@ -37931,7 +37931,7 @@
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
 	},
-/obj/machinery/portable_atmospherics/canister/miasma,
+/obj/machinery/portable_atmospherics/canister,
 /turf/open/floor/iron,
 /area/station/hallway/primary/aft)
 "ltR" = (
@@ -46941,7 +46941,7 @@
 	dir = 10
 	},
 /obj/structure/reagent_dispensers/cooking_oil,
-/turf/open/floor/iron/dark/textured,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
 "ogJ" = (
 /obj/structure/railing/corner{
@@ -59123,9 +59123,6 @@
 	},
 /turf/open/floor/wood/tile,
 /area/abyss_station/station/command/heads_quarters/captain)
-"rFL" = (
-/turf/open/floor/iron/stairs/medium,
-/area/abyss_station/station/service/diner)
 "rFP" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -296959,7 +296956,7 @@ sLu
 cvq
 qVY
 blD
-rFL
+blD
 cEl
 oFz
 hDd
@@ -297217,7 +297214,7 @@ cFn
 nQi
 fSd
 blD
-rFL
+blD
 cEl
 mTm
 uHS
