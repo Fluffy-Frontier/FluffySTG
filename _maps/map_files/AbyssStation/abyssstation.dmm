@@ -30712,6 +30712,7 @@
 	dir = 1
 	},
 /obj/structure/chair/stool/directional/east,
+/obj/effect/landmark/start/telecomms_specialist,
 /turf/open/floor/wood,
 /area/station/hallway/primary/aft)
 "jhm" = (
@@ -57420,6 +57421,10 @@
 /obj/effect/turf_decal/stripes/full,
 /turf/open/floor/iron,
 /area/station/cargo/storage)
+"qXq" = (
+/obj/effect/landmark/start/telecomms_specialist,
+/turf/open/floor/iron,
+/area/station/tcommsat/computer)
 "qXs" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/disposalpipe/segment{
@@ -80196,6 +80201,7 @@
 /area/station/science/research)
 "xJA" = (
 /obj/structure/chair/office/light,
+/obj/effect/landmark/start/telecomms_specialist,
 /turf/open/floor/iron/dark/side{
 	dir = 1
 	},
@@ -307994,7 +308000,7 @@ apm
 mEj
 dJL
 fHQ
-wod
+qXq
 oMk
 sPB
 mEj
