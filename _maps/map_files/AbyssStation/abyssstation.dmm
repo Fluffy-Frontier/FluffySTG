@@ -1042,7 +1042,7 @@
 /obj/effect/turf_decal/tile/green/half/contrasted{
 	dir = 8
 	},
-/obj/structure/reagent_anvil,
+/obj/structure/musician/piano,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
 "apm" = (
@@ -2414,6 +2414,13 @@
 /obj/effect/spawner/random/vending/snackvend,
 /turf/open/floor/iron,
 /area/abyss_station/exterior/abyss)
+"aIJ" = (
+/obj/machinery/conveyor_switch/oneway{
+	id = "mining_internal";
+	name = "smelter conveyor"
+	},
+/turf/open/floor/wood,
+/area/station/cargo/miningoffice)
 "aIL" = (
 /obj/effect/turf_decal/trimline/blue/filled/end,
 /obj/machinery/light/directional/south,
@@ -5341,6 +5348,15 @@
 /obj/structure/bodycontainer/morgue,
 /turf/open/floor/iron/dark,
 /area/station/medical/morgue)
+"bHe" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable,
+/obj/machinery/door/poddoor/preopen{
+	id = "briglockdown";
+	name = "Brig Shutters"
+	},
+/turf/open/floor/plating,
+/area/station/security/brig)
 "bHm" = (
 /obj/effect/turf_decal/tile/dark_red/fourcorners,
 /obj/machinery/door/airlock/hos{
@@ -6697,7 +6713,7 @@
 	name = "Brig Shutters"
 	},
 /turf/open/floor/plating,
-/area/station/security/brig)
+/area/station/security/warden)
 "cbI" = (
 /obj/effect/turf_decal/tile/green/anticorner/contrasted{
 	dir = 1
@@ -9479,15 +9495,6 @@
 	},
 /turf/open/floor/carpet,
 /area/station/medical/psychology)
-"cXj" = (
-/obj/effect/turf_decal/stripes/white/line{
-	dir = 8
-	},
-/obj/machinery/modular_computer/preset/civilian{
-	dir = 1
-	},
-/turf/open/floor/iron/dark,
-/area/station/science/circuits)
 "cXo" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 4
@@ -30410,6 +30417,14 @@
 /obj/structure/window/reinforced/plasma/spawner/directional/north,
 /turf/open/floor/plating,
 /area/station/engineering/atmos/upper)
+"jdx" = (
+/obj/machinery/mineral/unloading_machine{
+	dir = 1;
+	icon_state = "unloader-corner";
+	input_dir = 2
+	},
+/turf/open/floor/wood,
+/area/station/cargo/miningoffice)
 "jdA" = (
 /obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 1
@@ -30551,6 +30566,13 @@
 	},
 /turf/open/floor/iron,
 /area/abyss_station/station/service/garden)
+"jfG" = (
+/obj/machinery/conveyor{
+	dir = 6;
+	id = "mining_internal"
+	},
+/turf/open/floor/wood,
+/area/station/cargo/miningoffice)
 "jfN" = (
 /turf/open/misc/sandy_dirt/planet,
 /area/station/security/prison/safe)
@@ -31759,10 +31781,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/engineering/main)
-"jzJ" = (
-/obj/machinery/modular_computer/preset/civilian,
-/turf/open/floor/iron/dark,
-/area/station/science/circuits)
 "jAf" = (
 /obj/machinery/door/airlock/command{
 	name = "MiniSat Access"
@@ -32500,6 +32518,15 @@
 /obj/effect/turf_decal/stripes/full,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/department/cargo)
+"jKt" = (
+/obj/effect/turf_decal/stripes/white/line{
+	dir = 8
+	},
+/obj/machinery/modular_computer/preset/civilian{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/station/science/circuits)
 "jKF" = (
 /obj/structure/closet/emcloset,
 /obj/effect/turf_decal/stripes/white/line{
@@ -35719,14 +35746,9 @@
 /turf/open/floor/iron/dark,
 /area/station/hallway/primary/starboard)
 "kHG" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable,
-/obj/machinery/door/poddoor/preopen{
-	id = "briglockdown";
-	name = "Brig Shutters"
-	},
+/obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
-/area/station/security/warden)
+/area/station/cargo/miningoffice)
 "kHI" = (
 /obj/structure/table,
 /obj/structure/railing{
@@ -38711,6 +38733,10 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
+"lBq" = (
+/obj/machinery/modular_computer/preset/civilian,
+/turf/open/floor/iron/dark,
+/area/station/science/circuits)
 "lBt" = (
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 8
@@ -40318,6 +40344,10 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/disposal/incinerator)
+"lZR" = (
+/obj/machinery/computer/order_console/mining,
+/turf/open/floor/wood,
+/area/station/cargo/miningoffice)
 "lZZ" = (
 /obj/effect/turf_decal/tile/dark_red/anticorner/contrasted{
 	dir = 4
@@ -46973,6 +47003,10 @@
 	},
 /turf/open/floor/glass/reinforced,
 /area/abyss_station/exterior/park/skate)
+"odt" = (
+/obj/structure/decorative/shelf,
+/turf/open/misc/beach/sand,
+/area/station/cargo/miningoffice)
 "odw" = (
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/hidden/layer2,
 /turf/open/floor/wood,
@@ -57311,9 +57345,9 @@
 /turf/open/floor/iron,
 /area/station/engineering/lobby)
 "qXS" = (
-/obj/structure/chair/stool/directional/east,
-/turf/open/floor/wood,
-/area/station/hallway/primary/aft)
+/obj/machinery/mineral/processing_unit_console,
+/turf/closed/wall/mineral/wood/nonmetal,
+/area/station/cargo/miningoffice)
 "qXX" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -65190,6 +65224,13 @@
 /obj/structure/chair/sofa/corner,
 /turf/open/floor/wood/tile,
 /area/abyss_station/station/service/diner)
+"tsy" = (
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "mining_internal"
+	},
+/turf/open/floor/wood,
+/area/station/cargo/miningoffice)
 "tsz" = (
 /obj/structure/cable/multilayer/multiz,
 /obj/effect/turf_decal/stripes/end{
@@ -66814,6 +66855,12 @@
 "tTh" = (
 /turf/open/floor/iron/dark,
 /area/station/tcommsat/computer)
+"tTk" = (
+/obj/machinery/conveyor{
+	id = "mining_internal"
+	},
+/turf/open/floor/wood,
+/area/station/cargo/miningoffice)
 "tTu" = (
 /obj/structure/chair/sofa/bench/right{
 	dir = 1
@@ -66981,7 +67028,7 @@
 /turf/open/floor/iron/white,
 /area/station/medical/surgery)
 "tWf" = (
-/obj/structure/decorative/shelf/crates,
+/obj/structure/decorative/shelf,
 /turf/open/floor/wood,
 /area/station/cargo/miningoffice)
 "tWL" = (
@@ -67836,6 +67883,11 @@
 /obj/effect/landmark/start/nanotrasen_consultant,
 /turf/open/floor/iron/freezer,
 /area/station/command/heads_quarters/nt_rep)
+"ujp" = (
+/obj/structure/closet/crate/bin,
+/obj/structure/plasticflaps,
+/turf/open/floor/wood,
+/area/station/cargo/miningoffice)
 "ujT" = (
 /obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 4
@@ -75285,6 +75337,10 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/chemistry)
+"wpC" = (
+/obj/structure/chair/stool/directional/east,
+/turf/open/floor/wood,
+/area/station/hallway/primary/aft)
 "wpD" = (
 /obj/machinery/camera{
 	c_tag = "Prison - Yard 1";
@@ -80907,6 +80963,14 @@
 "xWv" = (
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/qm)
+"xWA" = (
+/obj/machinery/mineral/processing_unit{
+	dir = 1;
+	input_dir = 8;
+	output_dir = 4
+	},
+/turf/open/floor/plating,
+/area/station/cargo/miningoffice)
 "xWC" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/monitored/plasma_input,
 /obj/machinery/atmospherics/pipe/smart/simple/green/visible/layer1,
@@ -178810,7 +178874,7 @@ qZe
 obH
 jgV
 eiD
-qXS
+wpC
 fNy
 pea
 emV
@@ -195354,15 +195418,15 @@ cDl
 cDl
 cDl
 cDl
-cDl
-cDl
-cDl
-cDl
-cDl
-cDl
-cDl
-cDl
-cDl
+cUk
+cUk
+cUk
+cUk
+cUk
+cUk
+cUk
+cUk
+eFl
 cDl
 cDl
 cDl
@@ -195611,16 +195675,16 @@ eFl
 cDl
 cDl
 cDl
-cDl
-cDl
-cDl
-cDl
-cDl
-cDl
-cDl
-cDl
-cDl
-cDl
+dcR
+gUf
+gUf
+gUf
+gUf
+gUf
+gUf
+gUf
+cAY
+pKg
 cDl
 cDl
 cDl
@@ -195869,16 +195933,16 @@ tSD
 cUk
 eFl
 cDl
-cDl
-cDl
-cDl
-cDl
-cDl
-cDl
-cDl
-cDl
-cDl
-cDl
+oTF
+pvE
+jdx
+qOE
+qOE
+lQC
+tWf
+pvE
+mLW
+pKg
 cDl
 cDl
 cDl
@@ -196127,16 +196191,16 @@ mLW
 mLW
 tSD
 cUk
-cUk
-cUk
-cUk
-cUk
-cUk
-cUk
-cUk
-eFl
-cDl
-cDl
+bdl
+pvE
+tsy
+qXS
+aIJ
+qOE
+tWf
+pvE
+mLW
+pKg
 cDl
 cDl
 cDl
@@ -196386,15 +196450,15 @@ mLW
 mLW
 mLW
 mLW
+pvE
+xWA
+kHG
+kHG
+qOE
+odt
+pvE
 mLW
-mLW
-mLW
-mLW
-mLW
-mLW
-tSD
-cUk
-eFl
+pKg
 cDl
 cDl
 cDl
@@ -196644,14 +196708,14 @@ mLW
 mLW
 mLW
 mLW
+pvE
+jfG
+tTk
+ujp
+qOE
+lZR
+pvE
 mLW
-mLW
-mLW
-mLW
-mLW
-lFH
-lFH
-lFH
 tSD
 cUk
 cUk
@@ -196906,7 +196970,7 @@ pvE
 pvE
 pvE
 pvE
-pvE
+qOE
 pvE
 pvE
 lFH
@@ -197679,7 +197743,7 @@ mLW
 pvE
 kgC
 qOE
-qOE
+tWf
 tWf
 qOE
 lFH
@@ -197937,7 +198001,7 @@ mLW
 pvE
 kgC
 qOE
-lQC
+odt
 tWf
 qOE
 lFH
@@ -198196,7 +198260,7 @@ pvE
 lQC
 kgC
 qOE
-tWf
+qOE
 jag
 lFH
 lFH
@@ -245075,7 +245139,7 @@ uMb
 dDx
 dDx
 dDx
-cXj
+jKt
 uxf
 tvM
 ycC
@@ -245248,7 +245312,7 @@ jlK
 mMU
 fZK
 aIb
-cbv
+bHe
 pCb
 oSk
 gYs
@@ -245587,7 +245651,7 @@ snV
 lOA
 pef
 kit
-jzJ
+lBq
 iRN
 vYy
 iRN
@@ -245762,8 +245826,8 @@ bPz
 qIO
 mGc
 bPz
-kHG
-kHG
+cbv
+cbv
 bPz
 vVw
 tBv
@@ -246022,7 +246086,7 @@ jPE
 lOz
 hKg
 nct
-kHG
+cbv
 dAM
 nBE
 wpv
@@ -246538,7 +246602,7 @@ kuJ
 uEQ
 iBA
 dJj
-kHG
+cbv
 dAM
 nBE
 wpv
@@ -246794,8 +246858,8 @@ bPz
 bPz
 bPz
 bPz
-kHG
-kHG
+cbv
+cbv
 bPz
 vVw
 ueL
@@ -256227,10 +256291,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 hQq
 bYj
@@ -256485,10 +256549,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 hQq
 hQq
@@ -256743,10 +256807,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 hQq
 hQq
@@ -257001,10 +257065,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 hQq
 hQq
@@ -257259,10 +257323,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 hQq
 hQq
@@ -257517,10 +257581,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 hQq
 hQq
@@ -258032,11 +258096,11 @@ hQq
 hQq
 hQq
 hQq
-wMI
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
+vPu
 hQq
 hQq
 hQq
@@ -259059,10 +259123,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 hQq
 hQq
@@ -259317,10 +259381,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 hQq
 hQq
@@ -259575,10 +259639,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 hQq
 hQq
@@ -259833,10 +259897,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 hQq
 hQq
@@ -260091,10 +260155,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 hQq
 hQq
@@ -260349,10 +260413,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 hQq
 hQq
@@ -260607,10 +260671,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 hQq
 hQq
@@ -260865,10 +260929,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 hQq
 hQq
@@ -261123,10 +261187,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 hQq
 hQq
@@ -261381,10 +261445,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 hQq
 hQq
@@ -261639,10 +261703,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 hQq
 hQq
@@ -261897,10 +261961,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 hQq
 hQq
@@ -261919,13 +261983,13 @@ hQq
 hQq
 hQq
 hQq
-hQq
-hQq
-hQq
-hQq
-hQq
-hQq
-hQq
+vPu
+vPu
+vPu
+vPu
+vPu
+vPu
+vPu
 hQq
 hQq
 hQq
@@ -262177,13 +262241,13 @@ hQq
 hQq
 hQq
 hQq
-hQq
-hQq
-hQq
-hQq
-hQq
-hQq
-hQq
+vPu
+vPu
+vPu
+vPu
+vPu
+vPu
+vPu
 hQq
 hQq
 hQq
@@ -262435,13 +262499,13 @@ hQq
 hQq
 hQq
 hQq
-hQq
-hQq
-hQq
-hQq
-hQq
-hQq
-hQq
+vPu
+vPu
+vPu
+vPu
+vPu
+vPu
+vPu
 hQq
 hQq
 hQq
@@ -262693,13 +262757,13 @@ hQq
 hQq
 hQq
 hQq
-hQq
-hQq
-hQq
-hQq
-hQq
-hQq
-hQq
+vPu
+vPu
+vPu
+vPu
+vPu
+vPu
+vPu
 hQq
 hQq
 hQq
@@ -262952,10 +263016,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 vPu
 vPu
@@ -263210,10 +263274,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 vPu
 vPu
@@ -263468,10 +263532,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 vPu
 vPu
@@ -263726,10 +263790,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 vPu
 vPu
@@ -263984,10 +264048,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 vPu
 vPu
@@ -264242,10 +264306,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 vPu
 vPu
@@ -264500,10 +264564,10 @@ hQq
 hQq
 hQq
 vPu
-wMI
-wMI
-wMI
-wMI
+vPu
+vPu
+vPu
+vPu
 vPu
 vPu
 vPu
