@@ -742,3 +742,13 @@
   - bugfix: no more xenobio active turfs
   zoomachina:
   - bugfix: fixed dubious chem dispenser feedback when the beaker is full
+2024-07-11:
+  Jolly:
+  - code_imp: Behind the scenes, atmos machines (freezers/mixers) in maps were tweaked
+      a bit. If you see them no longer connected to specific pipenets, please make
+      an issue report, this is not intended behavior!!
+  Kocma-san:
+  - bugfix: Fixed lights stopping emitting light in some situations
+  SmArtKar:
+  - rscadd: Living flesh arms have a chance to actually touch the thing they're targeting
+      instead of pulling it. Careful with supermatter!
