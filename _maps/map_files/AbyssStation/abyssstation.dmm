@@ -21753,10 +21753,10 @@
 /area/abyss_station/exterior/abyss)
 "gEJ" = (
 /obj/machinery/light/directional/north,
-/obj/machinery/requests_console/auto_name/directional/north,
 /obj/effect/turf_decal/tile/green/half/contrasted{
 	dir = 1
 	},
+/obj/machinery/newscaster/directional/north,
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
 "gEW" = (
@@ -66656,11 +66656,11 @@
 /turf/open/openspace,
 /area/abyss_station/exterior/abyss)
 "tOn" = (
-/obj/machinery/newscaster/directional/north,
 /obj/effect/turf_decal/tile/green/anticorner/contrasted{
 	dir = 1
 	},
 /obj/effect/mapping_helpers/requests_console/supplies,
+/obj/machinery/requests_console/auto_name/directional/north,
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
 "tOx" = (
