@@ -2,7 +2,7 @@
 /mob/living/basic/mining/ancient_demon
 	name = "Ancient Demon"
 	real_name = "Ancient Demon"
-	desc = "A demonic creature of the ancient world. Did they ruled here before?"
+	desc = "A demonic creature of the ancient world. Did they rule here before?"
 	basic_mob_flags = 0
 	icon = 'modular_nova/master_files/icons/mob/newmobs32x64.dmi'
 	icon_state = "engorgedemon"
@@ -34,7 +34,7 @@
 	var/can_repair_self = FALSE
 	var/smashes_walls = FALSE
 
-	crusher_drop_chance = 15
+	crusher_drop_chance = 20
 	crusher_loot = /obj/item/organ/internal/eyes/shadow
 	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/external/tail/lizard = 1,/obj/structure/trap/fire=1)
 
@@ -66,7 +66,7 @@
 /mob/living/basic/mining/ancient_demon/proc/ai_retaliate_behaviour(mob/living/attacker)
 	if (!istype(attacker))
 		return
-	var/random_timer = rand(1 SECONDS, 3 SECONDS) //for unpredictability
+	var/random_timer = rand(1 SECONDS, 1.8 SECONDS) //for unpredictability
 	addtimer(CALLBACK(src, PROC_REF(clear_retaliate_list)), random_timer)
 
 /mob/living/basic/mining/ancient_demon/proc/clear_retaliate_list()
@@ -166,9 +166,9 @@
 	current_size = 1.25
 	base_pixel_y = -7.5
 	health_doll_icon = "legion"
-	speed = 0.5
-	health = 250
-	maxHealth = 250
+	speed = 5.5
+	health = 450
+	maxHealth = 450
 	melee_damage_lower = 15
 	melee_damage_upper = 25
 	obj_damage = 30
@@ -178,7 +178,7 @@
 	AddComponent(\
 		/datum/component/spawner,\
 		spawn_types = list(/mob/living/basic/mining/legion/dwarf),\
-		spawn_time = 12 SECONDS,\
+		spawn_time = 5 SECONDS,\
 		max_spawned = 2,\
 		spawn_text = "peels itself off from",\
 		faction = faction,\
@@ -191,7 +191,7 @@
 /mob/living/basic/mining/ancient_demon/demoraptor
 	name = "Demoraptor"
 	real_name = "Demoraptor"
-	desc = "An Agressive predatory feathery beast. This one just won't tolerate you."
+	desc = "An agressive predatory feathery beast. This one just won't tolerate you."
 	faction = list("mining","cult")
 	icon = 'icons/mob/simple/lavaland/raptor_big.dmi'
 	icon_dead = "raptor_red_dead"
@@ -216,7 +216,7 @@
 /// Goliath
 /mob/living/basic/mining/ancient_demon/goliath_pup //kinda junky, but this ai just nice
 	name = "Goliath pup"
-	desc = "In one day it will grow to something majestic. Or not. Do it. Stomp it."
+	desc = "In one day it will grow to something majestic. Or not. Stomp it."
 	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi'
 	icon_dead = "goliath_baby_dead"
 	icon_state = "goliath_baby"
@@ -225,16 +225,16 @@
 	pass_flags = PASSTABLE
 	combat_mode = FALSE
 	speed = 0.5
-	health = 16
-	maxHealth = 16
-	melee_damage_lower = 5
-	melee_damage_upper = 15
+	health = 24
+	maxHealth = 24
+	melee_damage_lower = 1
+	melee_damage_upper = 24
 	melee_attack_cooldown = 1 SECONDS
 	melee_damage_type = "stamina"//miners hande burn damage just fine, while borgs - dont.
-	attack_verb_continuous = "punches"
-	attack_verb_simple = "punch"
+	attack_verb_continuous = "jumps on"
+	attack_verb_simple = "jump on"
 	attack_vis_effect = null
-	attack_sound = 'sound/weapons/punch1.ogg'
+	attack_sound = 'sound/weapons/thudswoosh.ogg'
 	butcher_results = list(/obj/item/food/meat/slab/goliath = 1)
 	death_message = "slaps."
 	move_force = MOVE_FORCE_WEAK
@@ -256,8 +256,8 @@
 	current_size = 0.75
 	base_pixel_y = 5
 	speed = 1
-	butcher_results = list(/obj/effect/spawner/random/entertainment/coin = 1,/obj/effect/gibspawner/generic = 1,/obj/item/stack/sheet/animalhide/goliath_hide = 1,/obj/item/food/meat/slab/goliath = 1, /obj/item/stack/sheet/bone = 1)
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 1,/obj/item/food/meat/slab/goliath = 1, /obj/item/stack/sheet/bone = 1)
+	butcher_results = list(/obj/effect/spawner/random/entertainment/coin = 1,/obj/effect/gibspawner/generic = 1,/obj/item/stack/sheet/animalhide/goliath_hide = 1)
+	guaranteed_butcher_results = list(/obj/item/food/meat/slab/goliath = 1, /obj/item/stack/sheet/bone = 1)
 
 
 /mob/living/basic/mining/goliath/chonk
@@ -277,8 +277,8 @@
 /mob/living/basic/mining/goliath/gigachonk
 	name = "Gigachonk"
 	desc = "!!! OH LAWD, HE COMIN' !!!"
-	health = 2480
-	maxHealth = 2480
+	health = 3480
+	maxHealth = 3480
 	melee_attack_cooldown = 25
 	melee_damage_lower = 85
 	melee_damage_upper = 125
@@ -378,8 +378,6 @@
 	desc = "Spawns a random size brimdemon"
 	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi'
 	icon_state = "brimdemon"
-	pixel_x = -12
-	base_pixel_x = -12
 	spawn_loot_chance = 50
 	loot = list(
 		/mob/living/basic/mining/brimdemon/awakened = 50,
@@ -393,7 +391,7 @@
 	desc = "Spawns a random necropolis mob."
 	icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi'
 	icon_state = "large_egg"
-	spawn_loot_chance = 50
+	spawn_loot_chance = 75
 	loot = list(
 		/mob/living/basic/mining/ancient_demon/goliath_pup = 1,
 		/mob/living/basic/mining/goliath/young = 1.5,
@@ -402,7 +400,7 @@
 		/mob/living/basic/mining/brimdemon/awakened = 1.5,
 		/mob/living/basic/mining/brimdemon = 1,
 		/mob/living/basic/mining/brimdemon/infused = 1,
-		/mob/living/basic/mining/legion/dwarf = 1.5,
+		/mob/living/basic/mining/legion/dwarf = 1,
 		/mob/living/basic/mining/legion = 1,
 		/mob/living/basic/mining/legion/massive = 0.5,
 		/mob/living/basic/mining/lobstrosity/lava = 1,
