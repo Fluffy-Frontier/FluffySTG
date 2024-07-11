@@ -117,7 +117,7 @@
 	throw_blocked_message = "bounces off the shell of"
 	attack_sound = 'sound/effects/wounds/crackandbleed.ogg'
 	butcher_results = list(/obj/item/food/grown/mushroom/glowshroom/shadowshroom = 1,/obj/item/food/meat/slab/human/mutant/shadow = 1,/obj/item/organ/internal/eyes/shadow = 1)
-	guaranteed_butcher_results = list(/obj/item/book/granter/action/spell/true_random = 2,/obj/item/melee/cultblade=2,/obj/item/clothing/suit/hooded/cultrobes=2)
+	guaranteed_butcher_results = list(/obj/item/dice/d20/fate = 1,/obj/item/melee/cultblade=2,/obj/item/clothing/suit/hooded/cultrobes=2)
 
 	ai_controller = /datum/ai_controller/basic_controller/basilisk
 	/// The component we use for making ranged attacks
