@@ -111,6 +111,7 @@
 	melee_attack_cooldown = 0.25 SECONDS
 	melee_damage_lower = 3
 	melee_damage_upper = 7
+	melee_damage_type = "brute"
 	obj_damage = 600
 	attack_verb_continuous = "devours"
 	attack_verb_simple = "reaps"
