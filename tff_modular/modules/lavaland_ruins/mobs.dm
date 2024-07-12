@@ -66,7 +66,7 @@
 /mob/living/basic/mining/ancient_demon/proc/ai_retaliate_behaviour(mob/living/attacker)
 	if (!istype(attacker))
 		return
-	var/random_timer = rand(1 SECONDS, 1.8 SECONDS) //for unpredictability
+	var/random_timer = rand(1 SECONDS, 2.2 SECONDS) //for unpredictability
 	addtimer(CALLBACK(src, PROC_REF(clear_retaliate_list)), random_timer)
 
 /mob/living/basic/mining/ancient_demon/proc/clear_retaliate_list()

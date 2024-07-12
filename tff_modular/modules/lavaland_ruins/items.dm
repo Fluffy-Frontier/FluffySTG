@@ -1,11 +1,11 @@
 ///Spike traps! Even with a random!
 /obj/structure/punji_sticks/spikes_soft
-	name = "Anctient spikes"
+	name = "Ancient spikes"
 	icon_state = "woodspike"
 	max_integrity = 9
 
 /obj/structure/trap/damage/spikes_soft
-	name = "Anctient runic spikes"
+	name = "Ancient runic spikes"
 	desc = "A simple trap carved with some menacing symbols."
 	icon = 'icons/obj/service/hydroponics/equipment.dmi'
 	icon_state = "woodspike"
@@ -15,7 +15,7 @@
 	max_integrity = 9
 
 /obj/structure/trap/fire/spikes_soft
-	name = "Anctient runic spikes"
+	name = "Ancient runic spikes"
 	desc = "A simple trap carved with some menacing symbols."
 	icon = 'icons/obj/service/hydroponics/equipment.dmi'
 	icon_state = "woodspike"
@@ -25,7 +25,7 @@
 	max_integrity = 9
 
 /obj/structure/trap/cult/spikes_soft
-	name = "Anctient runic spikes"
+	name = "Ancient runic spikes"
 	desc = "A simple trap carved with some menacing symbols."
 	icon = 'icons/obj/service/hydroponics/equipment.dmi'
 	icon_state = "woodspike"
