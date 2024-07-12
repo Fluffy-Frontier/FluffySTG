@@ -752,3 +752,71 @@
   SmArtKar:
   - rscadd: Living flesh arms have a chance to actually touch the thing they're targeting
       instead of pulling it. Careful with supermatter!
+2024-07-12:
+  00-Steven:
+  - bugfix: Using a dual wielded deck to add another card to a single card bases the
+      position of the resulting hand of cards on the position of the card.
+  FernandoJ8:
+  - bugfix: humanoid species featured are randomized correctly once again
+  GPeckman:
+  - bugfix: Mapped in grounding rods can be upgraded again (not that upgraded parts
+      do anything for it) and don't disappear when deconstructed anymore.
+  - bugfix: The modsuit paint kit is no longer broken.
+  Ghommie:
+  - balance: Buffed the matrix flip skillchip duration. Lowered the stamina cost very,
+      very slightly.
+  - qol: You can now longer matrix-flip yourself into exhaustion, unless the emote
+      is unintentional.
+  GoblinBackwards:
+  - bugfix: Fixed being unable to cauterise wounds with improvised cautery tools such
+      as welders.
+  Ical92:
+  - bugfix: gave tram's primary tool storage functional disposals
+  JackEnoff:
+  - balance: Experimentor will no longer duplicate Bags of Holding
+  Jolly:
+  - bugfix: '[Birdshot] The Ordnance freezer chamber is now linked to an APC, much
+      like the burn chamber.'
+  - bugfix: '[Birdshot] The Janitors quarters no longer uses `/area/station/commons`,
+      instead, it uses the janitors regular area.'
+  - bugfix: '[Birdshot] The entertainment center now has an APC.'
+  - bugfix: '[Birdshot] A handful of smaller areas have received air alarms.'
+  LemonInTheDark:
+  - rscadd: Most door animations now better line up with when they are/are not passable.
+  Melbert:
+  - rscadd: 'Bot Language station trait split into two: One that affects bots (retains
+      the old weight and cost) and one that affects machine (half weight, double the
+      cost)'
+  - rscdel: Bot Language station trait and (new) Machine Language station trait no
+      longer affect newly created machines or bots, just those present at game start
+  - rscdel: Machine Language station trait cannot affect the Automated Announcer in
+      telecomms
+  OrbisAnima:
+  - rscadd: Adds stone bricks to the trading goods you can order from cargo.
+  OrionTheFox:
+  - image: re-sprited Catwalk Floor Tiles to fit with TG floor tiles
+  SmArtKar:
+  - bugfix: Steaks and meatpacks no longer have an absurd amount of blood stored inside
+      of them.
+  - refactor: Refactored a lot of speech modifiers to use a component instead of copied
+      over code.
+  - bugfix: You no longer try to pull out someones eyes in combat mode if they have
+      cranial fissure
+  - bugfix: Vapes use correct fill level overlays
+  SyncIt21:
+  - bugfix: all icons in the crafting menu (some that you missed) are now fixed permanently
+  Xackii:
+  - rscadd: You can emag grapple gun to use it on station.
+  carlarctg:
+  - bugfix: Fixed an oversight that caused knockdown vomits to stun instead.
+  - qol: TV helmet no longer has gas mask FOV, nor does it give you flash sensitivity.
+  - qol: Since those are gone, removed pepper proof from it as well.
+  grungussuss:
+  - sound: Zippos, Lighters and cigarettes now have sound
+  imedial:
+  - code_imp: added a crash report and removes an arg
+  mc-oofert:
+  - bugfix: fixes the rightmost wawastation cryo cell
+  zoomachina:
+  - balance: bluespace navigation gigabeacons are now unlocked with Applied Bluespace
+      Research
