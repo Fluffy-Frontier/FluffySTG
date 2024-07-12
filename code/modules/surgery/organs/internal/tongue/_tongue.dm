@@ -195,6 +195,32 @@
 	liked_foodtypes = GORE | MEAT | SEAFOOD | NUTS | BUGS
 	disliked_foodtypes = GRAIN | DAIRY | CLOTH | GROSS
 	voice_filter = @{"[0:a] asplit [out0][out2]; [out0] asetrate=%SAMPLE_RATE%*0.9,aresample=%SAMPLE_RATE%,atempo=1/0.9,aformat=channel_layouts=mono,volume=0.2 [p0]; [out2] asetrate=%SAMPLE_RATE%*1.1,aresample=%SAMPLE_RATE%,atempo=1/1.1,aformat=channel_layouts=mono,volume=0.2[p2]; [p0][0][p2] amix=inputs=3"}
+<<<<<<< HEAD
+=======
+	var/static/list/speech_replacements = list(
+		new /regex("s+", "g") = "sss",
+		new /regex("S+", "g") = "SSS",
+		new /regex(@"(\w)x", "g") = "$1kss",
+		//new /regex(@"(\w)X", "g") = "$1KSSS", // NOVA EDIT REMOVAL
+		new /regex(@"\bx([\-|r|R]|\b)", "g") = "ecks$1",
+		new /regex(@"\bX([\-|r|R]|\b)", "g") = "ECKS$1",
+	)
+	// NOVA EDIT ADDITION START - Russian version - yes copy pasted from above because static lists are great.
+	var/static/list/russian_speech_replacements = list(
+		new /regex("s+", "g") = "sss",
+		new /regex("S+", "g") = "SSS",
+		new /regex(@"(\w)x", "g") = "$1kss",
+		new /regex(@"\bx([\-|r|R]|\b)", "g") = "ecks$1",
+		new /regex(@"\bX([\-|r|R]|\b)", "g") = "ECKS$1",
+		new /regex("с+", "g") = "ссс",
+		new /regex("С+", "g") = "ССС",
+		"з" = "с",
+		"З" = "С",
+		"ж" = "ш",
+		"Ж" = "Ш",
+	)
+	// NOVA EDIT ADDITION END
+>>>>>>> 763e35515e5 ([MIRROR] You can now see whether or not a piece of clothing is pressure-proof when examining [MDB IGNORE] (#3696))
 
 /obj/item/organ/internal/tongue/lizard/modify_speech(datum/source, list/speech_args)
 	var/static/regex/lizard_hiss = new("s+", "g")
