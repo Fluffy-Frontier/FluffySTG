@@ -129,7 +129,7 @@
 	melee_damage_upper = 80;
 	speed = 0.5;
 	ranged_cooldown_time = 10;
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/ashdrake = 20,/obj/effect/spawner/random/entertainment/coin = 80,/obj/item/storage/bag/money = 1,/obj/structure/cursed_money = 1);
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/ashdrake = 20,/obj/effect/spawner/random/entertainment/coin = 80,/obj/item/storage/bag/money = 1,/obj/structure/cursed_money = 1,/obj/item/book/granter/action/spell/true_random = 2,/obj/item/book/granter/action/spell/fireball = 1,/obj/item/clothing/under/costume/dragon_maid = 1);
 	butcher_results = list(/obj/item/stack/ore/diamond = 15, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 50);
 	current_size = 1.25;
 	base_pixel_y = -7.5;

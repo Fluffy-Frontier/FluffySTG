@@ -132,7 +132,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	color = "#7777FF"
 	light_color = "#7777FF"
-	light_range = 3
+	light_range = 4
 	light_system = 2
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_BELT
@@ -140,8 +140,8 @@
 	item_flags = NO_BLOOD_ON_ITEM | SLOWS_WHILE_IN_HAND | IMMUTABLE_SLOW
 	resistance_flags = INDESTRUCTIBLE
 	sharpness = SHARP_EDGED
-	slowdown = 1.32
-	drag_slowdown = 1.32
+	slowdown = 1.24
+	drag_slowdown = 1.24
 
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
@@ -164,7 +164,7 @@
 	for(var/found_faction in target.faction)
 		if(found_faction in lunar_nemesis_factions)
 			lunar_is_nemesis_faction = TRUE
-			force += 78
+			force += 98
 			break
 	. = ..()
 	if(lunar_is_nemesis_faction)
