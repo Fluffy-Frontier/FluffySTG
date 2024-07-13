@@ -88,14 +88,15 @@
 "gT" = (
 /obj/structure/fans/tiny,
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/door/airlock/survival_pod,
+/obj/machinery/door/airlock/survival_pod{
+	id_tag = "podperson"
+	},
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/dark/filled/corner,
-/obj/item/card/id/advanced/mining,
-/obj/item/radio/headset/headset_cargo/mining,
 /obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/pod/dark,
 /area/ruin/powered/seedvault)
 "hh" = (
@@ -204,6 +205,8 @@
 /obj/structure/curtain/bounty/start_closed{
 	color = "#7d7d7d"
 	},
+/obj/item/card/id/advanced/mining,
+/obj/item/radio/headset/headset_cargo/mining,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/powered/seedvault)
 "pi" = (
@@ -279,6 +282,14 @@
 	desc = "Your instincts say you shouldn't be following these.";
 	icon_state = "ltrails_1";
 	dir = 10
+	},
+/obj/machinery/button/door{
+	id = "podperson";
+	name = "Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_x = -23;
+	pixel_y = -9;
+	specialfunctions = 4
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/powered/seedvault)
@@ -847,13 +858,16 @@
 "Yn" = (
 /obj/structure/fans/tiny,
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/door/airlock/survival_pod,
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 4
 	},
+/obj/machinery/door/airlock/survival_pod{
+	id_tag = "podperson"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/pod/dark,
 /area/ruin/powered/seedvault)
 "YH" = (

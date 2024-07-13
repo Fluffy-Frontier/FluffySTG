@@ -10,9 +10,11 @@
 /area/ruin/powered)
 "cS" = (
 /obj/machinery/door/airlock/titanium{
-	name = "Escape Pod Airlock"
+	name = "Escape Pod Airlock";
+	id_tag = "hermit"
 	},
 /obj/structure/fans/tiny,
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "dX" = (
@@ -25,6 +27,14 @@
 /obj/structure/tubes,
 /obj/effect/decal/cleanable/robot_debris/old,
 /obj/effect/decal/cleanable/plastic,
+/obj/machinery/button/door{
+	id = "hermit";
+	name = "Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_x = 23;
+	pixel_y = 8;
+	specialfunctions = 4
+	},
 /turf/open/misc/asteroid/basalt,
 /area/ruin/powered)
 "gt" = (
@@ -667,7 +677,10 @@
 	pixel_x = -15;
 	pixel_y = -7
 	},
-/obj/machinery/door/airlock/survival_pod/glass,
+/obj/machinery/door/airlock/survival_pod/glass{
+	id_tag = "hermit"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "XQ" = (

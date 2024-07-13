@@ -49,6 +49,14 @@
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 1
 	},
+/obj/machinery/button/door{
+	id = "golem";
+	name = "Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_x = 6;
+	pixel_y = 21;
+	specialfunctions = 4
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "bW" = (
@@ -302,7 +310,10 @@
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 4
 	},
-/obj/machinery/door/airlock/survival_pod,
+/obj/machinery/door/airlock/survival_pod{
+	id_tag = "golem"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "qf" = (
@@ -438,8 +449,11 @@
 "vu" = (
 /obj/structure/fans/tiny,
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/door/airlock/survival_pod,
 /obj/effect/turf_decal/trimline/dark/filled/corner,
+/obj/machinery/door/airlock/survival_pod{
+	id_tag = "golem"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "vx" = (
@@ -835,19 +849,25 @@
 "QL" = (
 /obj/structure/fans/tiny,
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/door/airlock/survival_pod,
+/obj/machinery/door/airlock/survival_pod{
+	id_tag = "golem"
+	},
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 8
 	},
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "RN" = (
 /obj/structure/fans/tiny,
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/door/airlock/survival_pod,
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 1
 	},
+/obj/machinery/door/airlock/survival_pod{
+	id_tag = "golem"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "RW" = (
