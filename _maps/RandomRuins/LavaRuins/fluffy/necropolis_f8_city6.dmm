@@ -247,7 +247,7 @@
 /area/lavaland/surface/outdoors)
 "hy" = (
 /obj/effect/spawner/random/mob/necropolis_mob,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "hG" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -703,10 +703,6 @@
 	},
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
-"Am" = (
-/obj/structure/flora/rock/pile/style_random,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 "AJ" = (
 /obj/structure/flora/rock/pile/style_random,
 /mob/living/basic/mining/ancient_demon/goliath_pup,
@@ -947,7 +943,7 @@
 /obj/structure/stone_tile{
 	dir = 4
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Me" = (
 /obj/structure/stone_tile/slab,
@@ -973,11 +969,6 @@
 	},
 /obj/structure/stone_tile/slab,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"MJ" = (
-/obj/structure/stone_tile/block,
-/obj/effect/spawner/random/structure/spikes,
-/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "MZ" = (
 /obj/structure/stone_tile{
@@ -1118,15 +1109,6 @@
 /obj/effect/spawner/random/mob/necropolis_mob,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"TI" = (
-/obj/structure/stone_tile{
-	dir = 8
-	},
-/obj/structure/stone_tile{
-	dir = 4
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 "TS" = (
 /obj/item/xenoarch/useless_relic{
 	name = "Ancient relic";
@@ -1240,7 +1222,7 @@
 (1,1,1) = {"
 Sb
 rM
-TI
+cG
 ek
 NL
 zv
@@ -1258,13 +1240,13 @@ ID
 ID
 Sb
 Sb
-uH
+hG
 hG
 Sb
 Sb
 "}
 (2,1,1) = {"
-gZ
+rM
 LO
 aB
 aB
@@ -1284,7 +1266,7 @@ Ih
 vZ
 vZ
 UE
-uH
+hG
 vZ
 Rb
 hG
@@ -1313,7 +1295,7 @@ HY
 CQ
 vZ
 vZ
-uH
+hG
 "}
 (4,1,1) = {"
 Sb
@@ -1339,7 +1321,7 @@ Jv
 Qu
 FA
 vZ
-gZ
+rM
 "}
 (5,1,1) = {"
 Sb
@@ -1498,7 +1480,7 @@ rM
 Sb
 "}
 (11,1,1) = {"
-gZ
+rM
 vZ
 qs
 qB
@@ -1524,7 +1506,7 @@ eV
 Sb
 "}
 (12,1,1) = {"
-gZ
+rM
 vZ
 vZ
 Gt
@@ -1573,13 +1555,13 @@ mx
 fZ
 vZ
 vZ
-HS
+wr
 "}
 (14,1,1) = {"
 rM
-uH
+hG
 hy
-gZ
+rM
 rM
 rM
 Xn
@@ -1599,12 +1581,12 @@ Sb
 qB
 Ou
 vZ
-HS
+wr
 "}
 (15,1,1) = {"
 SU
 Hq
-MJ
+st
 Xn
 gk
 YV
@@ -1755,7 +1737,7 @@ vx
 YS
 HS
 aB
-Am
+KG
 "}
 (21,1,1) = {"
 gZ
@@ -1781,7 +1763,7 @@ Sb
 HS
 HS
 aB
-gZ
+rM
 "}
 (22,1,1) = {"
 rM

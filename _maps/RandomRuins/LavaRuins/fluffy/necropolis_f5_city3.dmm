@@ -619,15 +619,6 @@
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"Nm" = (
-/obj/structure/stone_tile{
-	dir = 8
-	},
-/obj/structure/stone_tile{
-	dir = 4
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 "NM" = (
 /obj/structure/stone_tile/slab,
 /obj/effect/spawner/random/entertainment/coin{
@@ -868,8 +859,8 @@ UN
 IL
 UN
 mz
-fJ
-Nm
+ZX
+mz
 Oy
 UN
 "}
@@ -883,8 +874,8 @@ GY
 GY
 GY
 ZX
-fJ
-Nm
+ZX
+mz
 cP
 cP
 GY
@@ -894,7 +885,7 @@ GY
 GY
 GY
 GY
-tc
+cP
 GY
 Id
 cP
@@ -909,18 +900,18 @@ GY
 MO
 MO
 MO
-yQ
-fJ
-fJ
-yQ
+Oy
+ZX
+ZX
+Oy
 yQ
 tz
 kZ
 GY
 br
 sS
-Rd
-tz
+zW
+sS
 fi
 fi
 Ng
@@ -949,7 +940,7 @@ sS
 LE
 Sg
 fi
-tc
+cP
 "}
 (5,1,1) = {"
 cP
@@ -1391,7 +1382,7 @@ sS
 Pm
 tN
 fi
-fJ
+ZX
 "}
 (22,1,1) = {"
 cP
@@ -1467,7 +1458,7 @@ qV
 UN
 qy
 cP
-fJ
+ZX
 ZX
 UN
 "}

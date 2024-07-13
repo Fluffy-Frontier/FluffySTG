@@ -69,7 +69,7 @@
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "n" = (
 /obj/structure/stone_tile/block/cracked{
@@ -91,7 +91,7 @@
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "u" = (
 /obj/item/clothing/suit/chaplainsuit/whiterobe{
@@ -192,10 +192,6 @@
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
-"J" = (
-/obj/effect/spawner/random/structure/spikes,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 "K" = (
 /obj/item/flashlight/flare/torch{
 	pixel_x = -8
@@ -300,7 +296,7 @@
 /obj/structure/stone_tile/block/cracked{
 	dir = 8
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Z" = (
 /turf/closed/indestructible/riveted/boss,
@@ -311,7 +307,7 @@ p
 p
 p
 X
-J
+G
 d
 p
 p

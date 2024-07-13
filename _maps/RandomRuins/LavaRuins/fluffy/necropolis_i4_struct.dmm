@@ -163,9 +163,6 @@
 "tZ" = (
 /turf/template_noop,
 /area/template_noop)
-"us" = (
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 "uL" = (
 /obj/structure/stone_tile{
 	dir = 4
@@ -193,7 +190,7 @@
 "vh" = (
 /obj/structure/railing/stone,
 /obj/structure/flora/rock/pile/style_random,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "vr" = (
 /obj/structure/stone_tile{
@@ -215,19 +212,19 @@
 "wR" = (
 /obj/structure/stone_tile/surrounding/cracked,
 /obj/effect/spawner/random/mob/necropolis_mob,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "wY" = (
 /obj/structure/stone_tile/block{
 	dir = 1
 	},
 /obj/structure/stone_tile/block/cracked,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "xe" = (
 /obj/structure/stone_tile/slab,
 /obj/item/stack/sheet/bone,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "xt" = (
 /obj/structure/stone_tile{
@@ -287,7 +284,7 @@
 /obj/structure/stone_tile/cracked{
 	dir = 1
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Cv" = (
 /obj/structure/stone_tile/block{
@@ -378,10 +375,6 @@
 "Jq" = (
 /obj/structure/stone_tile/slab,
 /turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"Kr" = (
-/obj/structure/flora/rock/pile/style_random,
-/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Kv" = (
 /obj/structure/stone_tile/surrounding_tile{
@@ -544,7 +537,7 @@
 	},
 /obj/structure/stone_tile/block,
 /obj/effect/spawner/random/mob/necropolis_mob,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Sg" = (
 /obj/effect/spawner/random/structure/spikes,
@@ -646,7 +639,7 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 6
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "YR" = (
 /obj/structure/wall_torch/mount_only,
@@ -784,8 +777,8 @@ ka
 eh
 lF
 NI
-Kr
-us
+PY
+NI
 BQ
 ZU
 NI

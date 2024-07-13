@@ -3,6 +3,10 @@
 /obj/effect/spawner/random/structure/orevein_longregen,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
+"T" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "W" = (
 /mob/living/basic/mining/lobstrosity/lava,
 /mob/living/basic/mining/lobstrosity/lava,
@@ -22,9 +26,9 @@
 /area/lavaland/surface/outdoors)
 
 (1,1,1) = {"
+T
 a
-a
-a
+T
 "}
 (2,1,1) = {"
 a
@@ -32,7 +36,7 @@ W
 a
 "}
 (3,1,1) = {"
+T
 a
-a
-a
+T
 "}

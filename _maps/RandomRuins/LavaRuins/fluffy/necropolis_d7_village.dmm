@@ -15,7 +15,7 @@
 	dir = 4
 	},
 /obj/structure/stone_tile/surrounding_tile,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "cy" = (
 /obj/structure/stone_tile/slab,
@@ -23,7 +23,7 @@
 /area/lavaland/surface/outdoors)
 "cD" = (
 /obj/structure/stone_tile/block/cracked,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "cM" = (
 /obj/structure/stone_tile{
@@ -40,13 +40,7 @@
 	pixel_x = -9;
 	pixel_y = -4
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"cU" = (
-/obj/structure/stone_tile/block{
-	dir = 8
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "cV" = (
 /obj/structure/stone_tile/slab,
@@ -129,10 +123,6 @@
 /obj/structure/reagent_water_basin,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/unpowered)
-"fO" = (
-/obj/structure/flora/rock/pile/style_random,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 "fT" = (
 /obj/structure/stone_tile/surrounding/cracked,
 /obj/structure/stone_tile/center/burnt,
@@ -207,7 +197,7 @@
 /obj/structure/stone_tile{
 	dir = 4
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "jE" = (
 /obj/structure/stone_tile{
@@ -221,12 +211,6 @@
 	dir = 8
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"kJ" = (
-/obj/structure/stone_tile{
-	dir = 8
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "kP" = (
 /obj/structure/table/wood,
@@ -253,7 +237,7 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 8
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "lQ" = (
 /obj/structure/stone_tile,
@@ -270,7 +254,7 @@
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "lW" = (
 /obj/structure/stone_tile/surrounding_tile/burnt,
@@ -326,10 +310,10 @@
 /area/ruin/unpowered)
 "pt" = (
 /obj/effect/spawner/random/structure/orevein_longregen,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "pF" = (
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "pH" = (
 /obj/structure/stone_tile/surrounding,
@@ -383,7 +367,7 @@
 "sa" = (
 /obj/structure/stone_tile/slab/burnt,
 /obj/item/reagent_containers/cup/bowl/wood_bowl,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "sQ" = (
 /obj/structure/stone_tile{
@@ -508,7 +492,7 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 1
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "xl" = (
 /obj/structure/stone_tile/block{
@@ -603,17 +587,6 @@
 	dir = 1
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"CK" = (
-/obj/structure/stone_tile/slab,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
-"Dq" = (
-/obj/structure/stone_tile/block,
-/obj/structure/stone_tile/block{
-	dir = 1
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "Ds" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -823,7 +796,7 @@
 	dir = 8
 	},
 /obj/effect/spawner/random/entertainment/coin,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "NG" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
@@ -840,7 +813,7 @@
 	pixel_x = 5;
 	pixel_y = -9
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "OI" = (
 /obj/structure/stone_tile/block{
@@ -1071,7 +1044,7 @@
 (1,1,1) = {"
 MA
 WT
-cU
+xl
 pt
 MY
 ro
@@ -1131,7 +1104,7 @@ dC
 MA
 MA
 Yc
-CK
+md
 LW
 MA
 MA
@@ -1167,8 +1140,8 @@ XM
 Xd
 MG
 wa
-dC
-Dq
+GT
+dZ
 dZ
 MA
 "}
@@ -1193,7 +1166,7 @@ wa
 in
 wa
 wa
-Em
+Xs
 iW
 re
 MA
@@ -1288,7 +1261,7 @@ TU
 rb
 KZ
 hv
-mG
+TU
 cD
 mG
 WH
@@ -1314,11 +1287,11 @@ IK
 NI
 WT
 Ap
-kJ
+ro
 pF
-us
+ut
 pt
-us
+ut
 ng
 QL
 vN
@@ -1331,8 +1304,8 @@ MA
 (11,1,1) = {"
 RH
 IK
-ng
-us
+WT
+ut
 cM
 MA
 RH
@@ -1343,7 +1316,7 @@ fz
 wa
 ip
 dA
-fO
+IK
 ng
 wa
 Ky
@@ -1476,7 +1449,7 @@ MA
 MA
 sQ
 Ai
-us
+ut
 cS
 Xs
 MA

@@ -262,7 +262,7 @@
 	desc = "Sort of relic that can be exported through Cargo."
 	},
 /obj/effect/spawner/random/structure/spikes,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "oM" = (
 /obj/structure/rack/shelf{
@@ -272,16 +272,9 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "pj" = (
-/obj/structure/stone_tile{
-	dir = 8
-	},
-/obj/structure/stone_tile{
-	dir = 1
-	},
-/obj/structure/stone_tile{
-	dir = 4
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/obj/structure/stone_tile/slab,
+/obj/effect/spawner/random/mob/necropolis_mob,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "pI" = (
 /obj/structure/stone_tile/slab/cracked{
@@ -429,7 +422,7 @@
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "vn" = (
 /turf/closed/indestructible/riveted/boss,
@@ -748,12 +741,6 @@
 	icon_state = "empty_shelf_1"
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"JH" = (
-/obj/structure/stone_tile/block{
-	dir = 4
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "JQ" = (
 /turf/closed/mineral/random/high_chance/volcanic,
@@ -1182,8 +1169,8 @@ Bv
 Na
 Bv
 al
-JQ
-JQ
+ws
+ws
 OU
 al
 al
@@ -1193,8 +1180,8 @@ al
 Bv
 BY
 al
-JQ
-NY
+ws
+Bv
 ws
 al
 "}
@@ -1222,7 +1209,7 @@ FV
 vn
 vn
 hj
-JQ
+ws
 "}
 (3,1,1) = {"
 al
@@ -1303,7 +1290,7 @@ vn
 al
 "}
 (6,1,1) = {"
-NY
+Bv
 vn
 vn
 ml
@@ -1329,7 +1316,7 @@ vn
 BY
 "}
 (7,1,1) = {"
-NY
+Bv
 LM
 vn
 vn
@@ -1352,7 +1339,7 @@ vn
 lp
 vn
 vn
-NY
+Bv
 "}
 (8,1,1) = {"
 al
@@ -1404,7 +1391,7 @@ wZ
 ze
 lp
 vn
-NY
+Bv
 "}
 (10,1,1) = {"
 tM
@@ -1430,7 +1417,7 @@ GD
 NY
 VR
 Wd
-NY
+Bv
 "}
 (11,1,1) = {"
 Bv
@@ -1460,7 +1447,7 @@ wm
 "}
 (12,1,1) = {"
 Bv
-pj
+rW
 vn
 FV
 FV
@@ -1482,10 +1469,10 @@ LR
 oM
 FV
 FV
-NY
+Bv
 "}
 (13,1,1) = {"
-NY
+Bv
 vn
 vn
 cs
@@ -1511,7 +1498,7 @@ Zv
 Bv
 "}
 (14,1,1) = {"
-NY
+Bv
 UE
 al
 mM
@@ -1716,7 +1703,7 @@ al
 al
 QB
 FV
-EZ
+VB
 "}
 (22,1,1) = {"
 QE
@@ -1733,7 +1720,7 @@ vn
 vn
 VB
 VR
-ze
+pj
 Bv
 FV
 FV
@@ -1742,7 +1729,7 @@ NJ
 NJ
 FV
 FV
-NY
+Bv
 "}
 (23,1,1) = {"
 al
@@ -1780,7 +1767,7 @@ Zm
 om
 zk
 iu
-JH
+Zm
 jI
 al
 al

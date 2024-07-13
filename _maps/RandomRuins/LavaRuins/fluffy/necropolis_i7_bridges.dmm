@@ -76,7 +76,7 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "hY" = (
 /obj/structure/stone_tile/surrounding/burnt,
@@ -89,7 +89,7 @@
 /area/lavaland/surface/outdoors)
 "jJ" = (
 /obj/structure/stone_tile/surrounding,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "jR" = (
 /obj/effect/spawner/random/structure/spikes,
@@ -188,7 +188,7 @@
 /obj/structure/stone_tile/block{
 	dir = 1
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "uv" = (
 /obj/structure/stone_tile/block,
@@ -198,10 +198,8 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "uN" = (
-/obj/structure/stone_tile/slab/cracked{
-	dir = 6
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/obj/structure/stone_tile/slab,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "vd" = (
 /obj/item/xenoarch/useless_relic{
@@ -398,7 +396,7 @@
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "MB" = (
 /obj/structure/stone_tile/surrounding_tile{
@@ -434,7 +432,7 @@
 /obj/structure/stone_tile{
 	dir = 4
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Px" = (
 /obj/structure/stone_tile/burnt{
@@ -491,7 +489,7 @@
 /area/lavaland/surface/outdoors)
 "Uj" = (
 /obj/structure/stone_tile/block,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "VV" = (
 /obj/structure/stone_tile/block{
@@ -518,7 +516,8 @@
 	attack_verb_simple = "nyom";
 	attacked_sound = "bite";
 	butcher_results = list(/obj/item/food/meat/slab/goliath = 1,/obj/item/dog_bone = 1,/obj/item/instrument/trombone = 1,/obj/item/implantcase/sad_trombone = 1);
-	melee_damage_type = "brute"
+	melee_damage_type = "brute";
+	melee_damage_upper = 12
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -580,8 +579,8 @@ pc
 pc
 WU
 zo
-kB
 uN
+AO
 wC
 pc
 mT
@@ -608,7 +607,7 @@ EB
 hY
 Px
 Ek
-uN
+AO
 fa
 wC
 pc
@@ -668,7 +667,7 @@ IR
 zj
 zL
 Ko
-kB
+uN
 nm
 "}
 (10,1,1) = {"

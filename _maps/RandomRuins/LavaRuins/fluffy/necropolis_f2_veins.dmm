@@ -10,13 +10,21 @@
 	icon_state = "smoothrocks-55"
 	},
 /area/lavaland/surface/outdoors)
+"n" = (
+/obj/effect/spawner/random/structure/orevein_longregen,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "r" = (
 /obj/item/xenoarch/useless_relic/magnified{
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
 /obj/effect/spawner/random/structure/orevein_longregen,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"s" = (
+/obj/structure/flora/rock/pile/style_random,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "w" = (
 /obj/effect/spawner/random/mob/necropolis_mob,
@@ -24,6 +32,13 @@
 /area/lavaland/surface/outdoors)
 "z" = (
 /turf/closed/indestructible/riveted/boss,
+/area/lavaland/surface/outdoors)
+"E" = (
+/obj/effect/spawner/random/mob/necropolis_mob,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"M" = (
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "S" = (
 /turf/closed/mineral/random/high_chance/volcanic,
@@ -81,7 +96,7 @@ a
 U
 U
 S
-S
+M
 z
 z
 "}
@@ -97,9 +112,9 @@ z
 a
 U
 U
-S
-T
-X
+M
+s
+n
 S
 z
 "}
@@ -114,8 +129,8 @@ a
 z
 a
 e
-X
-S
+n
+M
 V
 X
 X
@@ -125,62 +140,62 @@ z
 z
 U
 U
-X
+n
 z
 z
 a
 z
 z
 z
-X
+n
 X
 X
 r
-X
+n
 z
 "}
 (6,1,1) = {"
 z
 U
-S
-X
+M
+n
 T
 z
 a
 a
 a
 U
-S
+M
 X
 S
 X
-X
+n
 z
 "}
 (7,1,1) = {"
 z
-S
-X
-X
-S
+M
+n
+n
+M
 z
 U
 a
 a
 U
 U
-S
+M
 X
 X
-X
+n
 z
 "}
 (8,1,1) = {"
 z
-S
-w
+M
+E
 X
-X
+n
 X
 U
 a
@@ -195,27 +210,27 @@ z
 "}
 (9,1,1) = {"
 z
-S
+M
+n
 X
-X
-S
-X
+M
+n
 U
 a
 a
 a
 a
 z
-S
+M
 X
 T
 U
 "}
 (10,1,1) = {"
 z
-X
-T
-S
+n
+s
+M
 w
 X
 z
@@ -225,17 +240,17 @@ a
 a
 z
 S
-X
+n
 X
 U
 "}
 (11,1,1) = {"
 z
-S
-X
+M
+n
 r
 X
-T
+s
 z
 a
 a
@@ -243,17 +258,17 @@ a
 a
 z
 U
-S
+M
 S
 U
 "}
 (12,1,1) = {"
 z
-S
+M
 X
-S
-X
-X
+M
+n
+n
 z
 a
 a
@@ -268,9 +283,9 @@ U
 (13,1,1) = {"
 z
 U
+n
 X
-X
-S
+M
 S
 z
 a
@@ -287,8 +302,8 @@ a
 z
 U
 S
-X
-T
+n
+s
 U
 U
 a
@@ -305,7 +320,7 @@ a
 a
 U
 U
-S
+M
 U
 U
 a

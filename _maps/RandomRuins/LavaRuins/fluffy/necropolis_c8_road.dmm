@@ -83,12 +83,6 @@
 "hV" = (
 /turf/closed/indestructible/riveted/boss,
 /area/lavaland/surface/outdoors)
-"it" = (
-/obj/structure/stone_tile/block/cracked{
-	dir = 4
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 "ix" = (
 /obj/structure/stone_tile/cracked,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -147,7 +141,7 @@
 /obj/structure/stone_tile/cracked{
 	dir = 1
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "tO" = (
 /obj/structure/stone_tile/cracked{
@@ -177,8 +171,10 @@
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "wB" = (
-/obj/effect/spawner/random/structure/orevein_longregen,
-/turf/closed/mineral/random/high_chance/volcanic,
+/obj/structure/stone_tile/block/cracked{
+	dir = 8
+	},
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "wU" = (
 /turf/template_noop,
@@ -267,16 +263,12 @@
 /obj/item/skeleton_key,
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
-"RI" = (
-/obj/effect/spawner/random/structure/spikes,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 "Tq" = (
 /obj/structure/stone_tile/burnt{
 	dir = 1
 	},
 /obj/structure/stone_tile/cracked,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "UY" = (
 /obj/structure/stone_tile/cracked{
@@ -314,7 +306,7 @@
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "YP" = (
 /obj/structure/stone_tile/block,
@@ -387,7 +379,7 @@ QE
 Tq
 wq
 gz
-it
+zx
 ob
 wU
 "}
@@ -397,7 +389,7 @@ wU
 wU
 hV
 ZP
-RI
+EW
 yk
 hV
 sE
@@ -421,7 +413,7 @@ wU
 "}
 (7,1,1) = {"
 oU
-bQ
+oU
 qs
 VF
 au
@@ -435,7 +427,7 @@ wU
 "}
 (8,1,1) = {"
 mo
-gz
+AD
 sG
 dH
 YC
@@ -453,7 +445,7 @@ al
 aZ
 Jz
 wf
-wq
+wB
 al
 UY
 wU
@@ -486,7 +478,7 @@ hV
 wU
 wU
 hV
-wB
+yg
 EW
 "}
 (12,1,1) = {"

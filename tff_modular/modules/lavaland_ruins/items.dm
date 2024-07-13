@@ -52,6 +52,7 @@
 	desc = "Various types of high quality stone that could probably make a good construction material if dug up and refined."
 	regeneration_time = 24 MINUTES
 	mining_time = 18 SECONDS
+	density = FALSE
 
 /obj/structure/ore_vein/iron/longregen
 	name = "rusted rocks"
@@ -62,6 +63,7 @@
 	ore_type = /obj/item/stack/ore/iron
 	regeneration_time = 24 MINUTES
 	mining_time = 18 SECONDS
+	density = FALSE
 
 /obj/structure/ore_vein/silver/longregen
 	name = "silvery-blue rocks"
@@ -72,6 +74,7 @@
 	ore_type = /obj/item/stack/ore/silver
 	regeneration_time = 24 MINUTES
 	mining_time = 18 SECONDS
+	density = FALSE
 
 /obj/structure/ore_vein/gold/longregen
 	name = "gold streaked rocks"
@@ -82,6 +85,7 @@
 	ore_type = /obj/item/stack/ore/gold
 	regeneration_time = 24 MINUTES
 	mining_time = 18 SECONDS
+	density = FALSE
 
 /obj/structure/ore_vein/plasma/longregen
 	name = "plasma rich rocks"
@@ -92,6 +96,7 @@
 	ore_type = /obj/item/stack/ore/plasma
 	regeneration_time = 24 MINUTES
 	mining_time = 18 SECONDS
+	density = FALSE
 
 /obj/structure/ore_vein/diamond/longregen
 	name = "diamond studded rocks"
@@ -102,6 +107,7 @@
 	ore_type = /obj/item/stack/ore/diamond
 	regeneration_time = 24 MINUTES
 	mining_time = 18 SECONDS
+	density = FALSE
 
 /obj/effect/spawner/random/structure/orevein_longregen
 	name = "Random ore vein spawner"
@@ -130,8 +136,8 @@
 	worn_icon_state = "swordon"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	color = "#7777FF"
-	light_color = "#7777FF"
+	color = "#AAAAFF"
+	light_color = "#AAAAFF"
 	light_range = 4
 	light_system = 2
 	w_class = WEIGHT_CLASS_BULKY
@@ -147,7 +153,7 @@
 	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
 	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
 
-	attack_speed = 18
+	attack_speed = 16
 	force = 42
 	throwforce = 18
 	wound_bonus = 24
@@ -193,7 +199,7 @@
 	id = "dodgeroll_dodging"
 	alert_type = null
 	status_type = STATUS_EFFECT_REFRESH
-	duration = 1.5 SECONDS
+	duration = 1.6 SECONDS
 
 /datum/status_effect/dodgeroll_iframes/on_apply()
 	RegisterSignal(owner, COMSIG_LIVING_CHECK_BLOCK, PROC_REF(whiffa))

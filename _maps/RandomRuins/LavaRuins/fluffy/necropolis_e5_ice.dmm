@@ -23,21 +23,6 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 9
 	},
-/mob/living/basic/mining/ice_demon{
-	health = 300;
-	name = "Rime";
-	speed = 0;
-	current_size = 1.25;
-	base_pixel_y = -7.5;
-	melee_damage_lower = 10;
-	melee_damage_upper = 20;
-	melee_damage_type = "burn";
-	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
-	melee_attack_cooldown = 10;
-	color = "#ccccFF";
-	light_color = "#ccccFF";
-	maxHealth = 300
-	},
 /turf/open/misc/ice,
 /area/ruin/unpowered)
 "i" = (
@@ -48,21 +33,6 @@
 /area/lavaland/surface/outdoors)
 "p" = (
 /obj/item/grenade/gas_crystal/nitrous_oxide_crystal,
-/mob/living/basic/mining/ice_demon{
-	health = 300;
-	name = "Rime";
-	speed = 0;
-	current_size = 1.25;
-	base_pixel_y = -7.5;
-	melee_damage_lower = 10;
-	melee_damage_upper = 20;
-	melee_damage_type = "burn";
-	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
-	melee_attack_cooldown = 10;
-	color = "#ccccFF";
-	light_color = "#ccccFF";
-	maxHealth = 300
-	},
 /turf/open/misc/ice,
 /area/ruin/unpowered)
 "q" = (
@@ -93,7 +63,97 @@
 /area/ruin/unpowered)
 "C" = (
 /obj/effect/turf_decal/weather/snow/corner{
-	dir = 6
+	dir = 9
+	},
+/mob/living/basic/mining/ice_demon{
+	health = 300;
+	name = "Rime";
+	speed = 0;
+	current_size = 1.25;
+	base_pixel_y = -7.5;
+	melee_damage_lower = 10;
+	melee_damage_upper = 20;
+	melee_damage_type = "burn";
+	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
+	melee_attack_cooldown = 10;
+	color = "#ccccFF";
+	light_color = "#ccccFF";
+	maxHealth = 300
+	},
+/mob/living/basic/mining/ice_demon{
+	health = 300;
+	name = "Rime";
+	speed = 0;
+	current_size = 1.25;
+	base_pixel_y = -7.5;
+	melee_damage_lower = 10;
+	melee_damage_upper = 20;
+	melee_damage_type = "burn";
+	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
+	melee_attack_cooldown = 10;
+	color = "#ccccFF";
+	light_color = "#ccccFF";
+	maxHealth = 300
+	},
+/mob/living/basic/mining/ice_demon{
+	health = 300;
+	name = "Rime";
+	speed = 0;
+	current_size = 1.25;
+	base_pixel_y = -7.5;
+	melee_damage_lower = 10;
+	melee_damage_upper = 20;
+	melee_damage_type = "burn";
+	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
+	melee_attack_cooldown = 10;
+	color = "#ccccFF";
+	light_color = "#ccccFF";
+	maxHealth = 300
+	},
+/mob/living/basic/mining/ice_demon{
+	health = 300;
+	name = "Rime";
+	speed = 0;
+	current_size = 1.25;
+	base_pixel_y = -7.5;
+	melee_damage_lower = 10;
+	melee_damage_upper = 20;
+	melee_damage_type = "burn";
+	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
+	melee_attack_cooldown = 10;
+	color = "#ccccFF";
+	light_color = "#ccccFF";
+	maxHealth = 300
+	},
+/mob/living/basic/mining/ice_demon{
+	health = 300;
+	name = "Rime";
+	speed = 0;
+	current_size = 1.25;
+	base_pixel_y = -7.5;
+	melee_damage_lower = 10;
+	melee_damage_upper = 20;
+	melee_damage_type = "burn";
+	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
+	melee_attack_cooldown = 10;
+	color = "#ccccFF";
+	light_color = "#ccccFF";
+	maxHealth = 300
+	},
+/mob/living/basic/mining/ice_demon{
+	health = 300;
+	name = "Rime";
+	speed = 0;
+	current_size = 1.25;
+	base_pixel_y = -7.5;
+	melee_damage_lower = 10;
+	melee_damage_upper = 20;
+	melee_damage_type = "burn";
+	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
+	melee_attack_cooldown = 10;
+	color = "#ccccFF";
+	light_color = "#ccccFF";
+	maxHealth = 300
 	},
 /mob/living/basic/mining/ice_demon{
 	health = 300;
@@ -114,21 +174,6 @@
 /area/ruin/unpowered)
 "D" = (
 /obj/structure/flora/ash/chilly,
-/mob/living/basic/mining/ice_demon{
-	health = 300;
-	name = "Rime";
-	speed = 0;
-	current_size = 1.25;
-	base_pixel_y = -7.5;
-	melee_damage_lower = 10;
-	melee_damage_upper = 20;
-	melee_damage_type = "burn";
-	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
-	melee_attack_cooldown = 10;
-	color = "#ccccFF";
-	light_color = "#ccccFF";
-	maxHealth = 300
-	},
 /turf/open/misc/snow,
 /area/ruin/unpowered)
 "G" = (
@@ -137,24 +182,6 @@
 	color = "#7777FF"
 	},
 /turf/open/misc/snow,
-/area/ruin/unpowered)
-"I" = (
-/mob/living/basic/mining/ice_demon{
-	health = 300;
-	name = "Rime";
-	speed = 0;
-	current_size = 1.25;
-	base_pixel_y = -7.5;
-	melee_damage_lower = 10;
-	melee_damage_upper = 20;
-	melee_damage_type = "burn";
-	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
-	melee_attack_cooldown = 10;
-	color = "#ccccFF";
-	light_color = "#ccccFF";
-	maxHealth = 300
-	},
-/turf/open/misc/ice,
 /area/ruin/unpowered)
 "K" = (
 /obj/effect/mapping_helpers/bombable_wall,
@@ -166,21 +193,6 @@
 	},
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 8
-	},
-/mob/living/basic/mining/ice_demon{
-	health = 300;
-	name = "Rime";
-	speed = 0;
-	current_size = 1.25;
-	base_pixel_y = -7.5;
-	melee_damage_lower = 10;
-	melee_damage_upper = 20;
-	melee_damage_type = "burn";
-	damage_coeff = list("brute" = 1, "burn" = 0, "toxin" = 0, "stamina" = 0, "oxygen" = 0);
-	melee_attack_cooldown = 10;
-	color = "#ccccFF";
-	light_color = "#ccccFF";
-	maxHealth = 300
 	},
 /turf/open/misc/ice,
 /area/ruin/unpowered)
@@ -273,7 +285,7 @@ a
 M
 a
 d
-e
+C
 P
 q
 N
@@ -284,7 +296,7 @@ K
 y
 a
 L
-I
+P
 z
 U
 Z
@@ -296,7 +308,7 @@ y
 a
 a
 W
-C
+q
 c
 a
 a

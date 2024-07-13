@@ -187,11 +187,6 @@
 /obj/effect/spawner/random/structure/spikes,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"ji" = (
-/obj/structure/stone_tile/surrounding_tile,
-/obj/effect/spawner/random/structure/spikes,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 "jk" = (
 /obj/structure/stone_tile/block,
 /obj/effect/spawner/random/structure/spikes,
@@ -726,7 +721,7 @@
 /area/lavaland/surface/outdoors)
 "Il" = (
 /obj/structure/flora/rock/pile/style_random,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "Is" = (
 /obj/item/stack/ore/silver,
@@ -1150,16 +1145,6 @@
 "XM" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"Yc" = (
-/obj/structure/stone_tile,
-/obj/structure/stone_tile{
-	dir = 1
-	},
-/obj/structure/stone_tile{
-	dir = 4
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 "Yj" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 6
@@ -1210,12 +1195,6 @@
 /obj/effect/mapping_helpers/bombable_wall,
 /turf/closed/indestructible/riveted/boss/wasteland,
 /area/ruin/unpowered)
-"ZZ" = (
-/obj/structure/stone_tile/block{
-	dir = 4
-	},
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 
 (1,1,1) = {"
 pT
@@ -1255,7 +1234,7 @@ ei
 ei
 ei
 Rb
-mL
+XM
 XM
 XM
 ei
@@ -1452,7 +1431,7 @@ aK
 KH
 "}
 (10,1,1) = {"
-gI
+iW
 aK
 ei
 UI
@@ -1500,8 +1479,8 @@ TH
 Xu
 CH
 pT
-ZZ
-ji
+Gr
+Xu
 "}
 (12,1,1) = {"
 pT
@@ -1656,7 +1635,7 @@ Ta
 ai
 CH
 Gr
-ZZ
+Gr
 NI
 "}
 (18,1,1) = {"
@@ -1712,7 +1691,7 @@ ei
 pT
 "}
 (20,1,1) = {"
-gI
+iW
 aK
 Jp
 nw
@@ -1764,7 +1743,7 @@ ei
 eh
 "}
 (22,1,1) = {"
-gI
+iW
 aK
 aK
 DF
@@ -1819,12 +1798,12 @@ pT
 pT
 iW
 iW
-gI
+iW
 iW
 pT
 pT
 nw
-Yc
+bq
 aK
 aK
 iW
@@ -1834,7 +1813,7 @@ aK
 Wj
 pT
 oX
-Jp
+nw
 oX
 pT
 yr

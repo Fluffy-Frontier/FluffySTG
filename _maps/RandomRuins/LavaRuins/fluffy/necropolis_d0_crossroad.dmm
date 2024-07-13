@@ -126,6 +126,13 @@
 /obj/effect/spawner/random/mob/goliath,
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"G" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/obj/structure/stone_tile/block/cracked,
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "H" = (
 /turf/closed/indestructible/riveted/boss,
 /area/lavaland/surface/outdoors)
@@ -151,13 +158,15 @@
 /obj/structure/stone_tile/block{
 	dir = 1
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "N" = (
-/obj/structure/stone_tile{
+/obj/structure/stone_tile/center/burnt,
+/obj/structure/stone_tile/surrounding/cracked{
 	dir = 1
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/obj/effect/spawner/random/structure/spikes,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "O" = (
 /obj/structure/stone_tile/block,
@@ -185,7 +194,7 @@
 "S" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "T" = (
 /obj/effect/spawner/random/structure/orevein_longregen,
@@ -229,7 +238,7 @@ a
 a
 a
 H
-d
+N
 s
 H
 a
@@ -257,7 +266,7 @@ V
 "}
 (5,1,1) = {"
 O
-K
+G
 I
 Q
 R
@@ -272,7 +281,7 @@ r
 q
 T
 C
-m
+b
 p
 "}
 (7,1,1) = {"
@@ -308,7 +317,7 @@ a
 (10,1,1) = {"
 a
 a
-N
+J
 t
 a
 g

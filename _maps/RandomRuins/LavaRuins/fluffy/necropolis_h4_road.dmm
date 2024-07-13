@@ -25,7 +25,7 @@
 	desc = "Sort of relic that can be exported through Cargo."
 	},
 /obj/effect/spawner/random/structure/orevein_longregen,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "gs" = (
 /obj/effect/spawner/random/structure/spikes,
@@ -77,13 +77,6 @@
 /obj/structure/ore_vein/iron,
 /mob/living/basic/mining/lobstrosity/lava,
 /turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"lM" = (
-/obj/structure/stone_tile/surrounding_tile{
-	dir = 4
-	},
-/obj/structure/stone_tile/surrounding_tile,
-/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "lV" = (
 /obj/structure/stone_tile,
@@ -339,7 +332,7 @@ nH
 (4,1,1) = {"
 rJ
 vh
-lM
+xg
 mk
 mT
 tS
@@ -359,9 +352,9 @@ qR
 (6,1,1) = {"
 KO
 dL
-SO
+Ss
 tZ
-Ch
+QW
 QW
 ia
 gJ
@@ -369,20 +362,20 @@ gJ
 (7,1,1) = {"
 Fe
 QW
-Ch
+QW
 gs
 SO
-Ch
+QW
 Oi
 il
 "}
 (8,1,1) = {"
 Wv
 Ss
-gs
+kV
 fM
 Ch
-Ch
+QW
 QW
 ia
 "}
@@ -391,8 +384,8 @@ mn
 lV
 QW
 Ss
-Ch
-Ch
+QW
+QW
 QW
 kV
 "}

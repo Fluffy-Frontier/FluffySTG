@@ -133,13 +133,6 @@
 /obj/effect/spawner/random/mob/necropolis_mob,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"gz" = (
-/obj/structure/stone_tile/block{
-	dir = 1
-	},
-/obj/structure/stone_tile/block,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 "gP" = (
 /mob/living/basic/mining/ancient_demon/ancient_demon_lesser,
 /turf/closed/mineral/volcanic/lava_land_surface,
@@ -305,7 +298,7 @@
 	},
 /obj/structure/stone_tile/surrounding_tile,
 /obj/structure/stone_tile/center,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "lx" = (
 /obj/structure/stone_tile/slab/cracked{
@@ -545,10 +538,6 @@
 	dir = 4
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
-/area/lavaland/surface/outdoors)
-"tI" = (
-/obj/effect/spawner/random/structure/spikes,
-/turf/closed/mineral/random/high_chance/volcanic,
 /area/lavaland/surface/outdoors)
 "tW" = (
 /obj/structure/stone_tile/block{
@@ -990,7 +979,7 @@
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "JK" = (
 /obj/structure/stone_tile/slab/cracked{
@@ -1299,7 +1288,7 @@
 	pixel_x = -9;
 	pixel_y = 7
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "So" = (
 /obj/structure/stone_tile/block{
@@ -1561,8 +1550,8 @@ Ud
 AJ
 WV
 GU
-hq
-MR
+aS
+OG
 hm
 Vq
 Vq
@@ -1587,7 +1576,7 @@ AJ
 rg
 YI
 GU
-Te
+Gd
 mL
 MR
 hq
@@ -1790,8 +1779,8 @@ zl
 (12,1,1) = {"
 qF
 DJ
-gz
-hm
+ew
+kb
 Ww
 kb
 Pl
@@ -2063,7 +2052,7 @@ Vq
 ag
 Ys
 Ec
-tI
+zl
 GU
 GU
 WV
@@ -2089,7 +2078,7 @@ Sw
 cg
 Hq
 xx
-tI
+zl
 AG
 GU
 GU
@@ -2116,7 +2105,7 @@ cg
 Ok
 Sv
 zl
-Te
+Gd
 Vn
 Gd
 Gd

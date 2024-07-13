@@ -13,7 +13,7 @@
 "c" = (
 /obj/structure/stone_tile/block/cracked,
 /obj/effect/spawner/random/structure/spikes,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "d" = (
 /obj/structure/stone_tile/block{
@@ -40,7 +40,7 @@
 "n" = (
 /obj/structure/stone_tile/block,
 /obj/effect/spawner/random/structure/spikes,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "q" = (
 /obj/structure/stone_tile{
@@ -59,7 +59,7 @@
 /obj/structure/stone_tile/block{
 	dir = 1
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "w" = (
 /obj/structure/stone_tile/surrounding/cracked{
@@ -80,7 +80,7 @@
 /obj/structure/stone_tile/block{
 	dir = 4
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "H" = (
 /obj/structure/stone_tile{
@@ -90,7 +90,7 @@
 /area/lavaland/surface/outdoors)
 "J" = (
 /obj/effect/spawner/random/structure/spikes,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "K" = (
 /obj/structure/stone_tile/slab/burnt,
@@ -155,11 +155,6 @@
 	},
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
-"Y" = (
-/obj/structure/stone_tile/burnt,
-/obj/effect/spawner/random/structure/spikes,
-/turf/closed/mineral/random/high_chance/volcanic,
-/area/lavaland/surface/outdoors)
 
 (1,1,1) = {"
 a
@@ -221,6 +216,6 @@ a
 d
 a
 G
-Y
+j
 a
 "}

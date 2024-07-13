@@ -13,7 +13,6 @@
 /obj/item/stack/ore/iron,
 /obj/item/stack/ore/iron,
 /obj/item/stack/ore/iron,
-/obj/item/stack/ore/diamond/five,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 "h" = (
@@ -60,21 +59,21 @@
 /obj/item/stack/sheet/mineral/coal/ten,
 /mob/living/basic/mining/ancient_demon/goliath_pup,
 /mob/living/basic/mining/ancient_demon/goliath_pup,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "F" = (
 /obj/item/stack/sheet/mineral/coal/ten{
 	pixel_y = -12
 	},
 /obj/effect/spawner/random/mob/necropolis_mob,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "H" = (
 /obj/item/xenoarch/useless_relic{
 	name = "Ancient relic";
 	desc = "Sort of relic that can be exported through Cargo."
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "L" = (
 /obj/structure/closet/crate/miningcar,
@@ -102,14 +101,14 @@
 /area/ruin/unpowered)
 "P" = (
 /obj/effect/spawner/random/structure/spikes,
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "S" = (
 /obj/item/shovel,
 /obj/item/stack/sheet/mineral/coal/ten{
 	pixel_y = -12
 	},
-/turf/closed/mineral/random/high_chance/volcanic,
+/turf/closed/mineral/volcanic/lava_land_surface,
 /area/ruin/unpowered)
 "U" = (
 /obj/structure/closet/crate/miningcar,
@@ -124,7 +123,6 @@
 /obj/item/stack/ore/gold,
 /obj/item/stack/ore/gold,
 /obj/item/stack/ore/gold,
-/obj/item/stack/ore/plasma,
 /obj/item/stack/ore/plasma,
 /obj/item/stack/ore/plasma,
 /obj/item/stack/ore/plasma,
@@ -155,13 +153,8 @@
 /obj/item/stack/sheet/mineral/coal/ten{
 	pixel_y = -12
 	},
-/obj/item/stack/ore/diamond,
-/obj/item/stack/ore/diamond,
-/obj/item/stack/ore/diamond,
-/obj/item/stack/ore/diamond,
-/obj/item/stack/ore/diamond,
-/obj/item/stack/ore/diamond,
 /obj/item/stack/ore/bluespace_crystal,
+/obj/item/stack/ore/plasma,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered)
 
