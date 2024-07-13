@@ -13,7 +13,7 @@
 /obj/machinery/elevator_control_panel/abyss_station/entry_elevator
 	name = "Entry elevator control"
 	linked_elevator_id = ABYSS_ENTRY_ELEVATOR_ID
-	preset_destination_names = list("2"="First        Floor", "3"="Second        Floor", "4"="Third        Floor")
+	preset_destination_names = list("3"="First        Floor", "4"="Second        Floor", "5"="Third        Floor")
 
 /obj/machinery/button/elevator/abyss_station/entry_elevator
 	id = ABYSS_ENTRY_ELEVATOR_ID
@@ -26,7 +26,7 @@
 /obj/machinery/elevator_control_panel/abyss_station/cargo_elevator
 	name = "Cargo elevator control"
 	linked_elevator_id = ABYSS_CARGO_ELEVATOR_ID
-	preset_destination_names = list("2"="First        Floor", "3"="Second        Floor")
+	preset_destination_names = list("3"="First        Floor", "4"="Second        Floor")
 
 /obj/machinery/button/elevator/abyss_station/cargo_elevator
 	id = ABYSS_CARGO_ELEVATOR_ID
@@ -39,7 +39,7 @@
 /obj/machinery/elevator_control_panel/abyss_station/engineering_elevator
 	name = "Engineering elevator control"
 	linked_elevator_id = ABYSS_ENGINEERING_ELEVATOR_ID
-	preset_destination_names = list("2"="First        Floor", "3"="Second        Floor", "4"="Third        Floor")
+	preset_destination_names = list("3"="First        Floor", "4"="Second        Floor", "5"="Third        Floor")
 
 /obj/machinery/button/elevator/abyss_station/engineering_elevator
 	id = ABYSS_ENGINEERING_ELEVATOR_ID
@@ -52,7 +52,7 @@
 /obj/machinery/elevator_control_panel/abyss_station/departure_elevator
 	name = "Departure elevator control"
 	linked_elevator_id = ABYSS_DEPARTURE_ELEVATOR_ID
-	preset_destination_names = list("2"="First        Floor", "3"="Second        Floor", "4"="Third        Floor")
+	preset_destination_names = list("3"="First        Floor", "4"="Second        Floor", "5"="Third        Floor")
 
 /obj/machinery/button/elevator/abyss_station/departure_elevator
 	id = ABYSS_DEPARTURE_ELEVATOR_ID
@@ -65,7 +65,7 @@
 /obj/machinery/elevator_control_panel/abyss_station/security_elevator
 	name = "Security elevator control"
 	linked_elevator_id = ABYSS_SECURITY_ELEVATOR_ID
-	preset_destination_names = list("2"="First        Floor", "3"="Second        Floor", "4"="Third        Floor")
+	preset_destination_names = list("3"="First        Floor", "4"="Second        Floor", "5"="Third        Floor")
 
 /obj/machinery/button/elevator/abyss_station/security_elevator
 	id = ABYSS_SECURITY_ELEVATOR_ID
@@ -78,7 +78,7 @@
 /obj/machinery/elevator_control_panel/abyss_station/mine_elevator
 	name = "Mine elevator control"
 	linked_elevator_id = ABYSS_MINE_ELEVATOR_ID
-	preset_destination_names = list("1"="First        Floor", "2"="Second        Floor")
+	preset_destination_names = list("2"="First        Floor", "3"="Second        Floor")
 
 /obj/machinery/button/elevator/abyss_station/mine_elevator
 	id = ABYSS_MINE_ELEVATOR_ID
@@ -91,7 +91,7 @@
 /obj/machinery/elevator_control_panel/abyss_station/contraband_elevator
 	name = "Contraband elevator control"
 	linked_elevator_id = ABYSS_CONTRABAND_ELEVATOR_ID
-	preset_destination_names = list("1"="First        Floor", "2"="Second        Floor")
+	preset_destination_names = list("2"="First        Floor", "3"="Second        Floor")
 
 /obj/machinery/button/elevator/abyss_station/contraband_elevator
 	id = ABYSS_CONTRABAND_ELEVATOR_ID
