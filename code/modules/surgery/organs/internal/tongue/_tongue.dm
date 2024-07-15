@@ -94,22 +94,18 @@
 /obj/item/organ/internal/tongue/proc/handle_speech(datum/source, list/speech_args)
 	SIGNAL_HANDLER
 
-<<<<<<< HEAD
-	if(speech_args[SPEECH_LANGUAGE] in languages_native)
-		return FALSE //no changes
-	// FF add, for auto-accent
-	if(HAS_TRAIT(source, TRAIT_NO_ACCENT))
-		return FALSE //accent disabled by user.
-=======
 	if(should_modify_speech(source, speech_args))
 		modify_speech(source, speech_args)
 
 /obj/item/organ/internal/tongue/proc/should_modify_speech(datum/source, list/speech_args)
->>>>>>> c9dd836c92f ([MIRROR] Fix Tongue Based Speech Modifiers Being Applied To Users Native Languages [MDB IGNORE] (#3777))
 	if(speech_args[SPEECH_LANGUAGE] in languages_native) // Speaking a native language?
 		return FALSE // Don't modify speech
 	if(HAS_TRAIT(source, TRAIT_SIGN_LANG)) // No modifiers for signers - I hate this but I simply cannot get these to combine into one statement
 		return FALSE // Don't modify speech
+	// FLUFFY FRONTIER EDIT START. ADDITION - autoaccent
+	if(HAS_TRAIT(source, TRAIT_NO_ACCENT))
+		return FALSE //accent disabled by user.
+	// FLUFFY FRONTIER EDIT END.
 	return TRUE
 
 /obj/item/organ/internal/tongue/proc/modify_speech(datum/source, list/speech_args)
