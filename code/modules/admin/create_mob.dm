@@ -11,7 +11,7 @@
 	user << browse(create_panel_helper(create_mob_html), "window=create_mob;size=425x475")
 
 /**
- * Randomizes everything about a human, including DNA and name
+ * Fully randomizes everything about a human, including DNA and name.
  */
 /proc/randomize_human(mob/living/carbon/human/human, randomize_mutations = FALSE)
 	human.gender = human.dna.species.sexes ? pick(MALE, FEMALE, PLURAL, NEUTER) : PLURAL
@@ -35,14 +35,12 @@
 	// Snowflake for Ethereals
 	human.updatehealth()
 	human.updateappearance(mutcolor_update = TRUE)
-<<<<<<< HEAD
 	// FLUFFY FRONTIER ADDITION START
 	human.set_blooper(pick(GLOB.blooper_list))
 	human.blooper_pitch = BLOOPER_PITCH_RAND(human.gender)
 	human.blooper_pitch_range = BLOOPER_VARIANCE_RAND
 	human.blooper_speed = rand(BLOOPER_DEFAULT_MINSPEED, BLOOPER_DEFAULT_MAXSPEED)
 	// FLUFFY FRONTIER ADDITION END
-=======
 
 /**
  * Randomizes a human, but produces someone who looks exceedingly average (by most standards).
@@ -72,4 +70,3 @@
 	human.dna.initialize_dna(newblood_type = random_blood_type(), create_mutation_blocks = randomize_mutations, randomize_features = TRUE)
 	human.updatehealth()
 	human.updateappearance(mutcolor_update = TRUE)
->>>>>>> 15d8ab6ea31 ([MIRROR] Adds informed default values for a bunch of preferences (to produce less outlandish random characters) [MDB IGNORE] (#3599))
