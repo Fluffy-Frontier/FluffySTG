@@ -825,3 +825,101 @@
   - qol: With voting turned off for the dead, you can now understand why you can't
       vote (being dead).
   - admin: Voting switch for the dead players
+2024-07-15:
+  Ben10Omintrix:
+  - bugfix: mothroaches will no longer be crawling out of bags every minute
+  - refactor: request managers have been refactored to typescript
+  - bugfix: request manager type filter now works
+  Deadgebert:
+  - balance: Moves XL beaker from Chemical Synthesis to Medbay Equipment
+  - balance: Removes Plumbing node and moves most items to Chemical synthesis node
+  - balance: Moves piercing syringe from Plumbing node to Advanced Medbay Equipment
+  EuSouAFazer:
+  - rscadd: Cytology Lab has been added to Icebox
+  - rscadd: Delta now has soy seeds on the Cytology Lab
+  - bugfix: Cytology is playable again on Icebox
+  FlufflesTheDog:
+  - bugfix: Attachment points on toolset implants have been improved, to prevent against
+      recycler related decouplings.
+  GPeckman:
+  - balance: If you remove a security officer's mindshield, then you can flash them
+      to make them your blood brother.
+  - bugfix: H.A.R.S. will no longer disable your skillchips or show you text reserved
+      for total brain removal.
+  Ghommie:
+  - balance: Tetrodotoxin can now be synthesized (bees, the odysseus mech, strange
+      seeds...)
+  - balance: Upped the amount of tetrodotoxin you can harvest from pufferfishes (or
+      any fish with the trait).
+  - spellcheck: Fixed some typos with the toxin.
+  - rscadd: Add the National Ice Cream Day holiday, which falls on the third Sunday
+      of July.
+  LT3, distributivgesetz, unit0016:
+  - bugfix: Several liquids rendering issues have been tackled.
+  MTandi:
+  - bugfix: Fixed dead slime icon not showing when cores are extracted
+  - qol: Slime core removal surgery extracts all cores on completion
+  - rscadd: Added airlock pump atmos device to create cycling airlocks
+  - balance: War declaration gives 600 research points to the station
+  - qol: Research nodes can be queued, one per player. RDs can place their node at
+      the beginning of the queue.
+  Melbert:
+  - qol: If you're in oxycrit (>50 oxy damage) or otherwise made unconscious through
+      other means, blood loss will only kill you if you're *actually* missing a lethal
+      amount of blood.
+  - qol: Lattices now make the same footstep sound as catwalks
+  - qol: Roundstart Mannitol pills are 15u (up from 14u)
+  Merek2:
+  - qol: Grammar fix for a few of the quirks.
+  MrDas:
+  - bugfix: Clown operative reinforcements' uplink no longer break the syndicates'
+      economy by creating TC from nothingness.
+  NewyearnewmeUwu:
+  - image: the smoking pipe's directional looks have been altered to make it less
+      ugly
+  Singul0:
+  - bugfix: Fixes Icemoon syndie listening station APC's from being affected by station-side
+      events
+  SmArtKar:
+  - qol: Using ctrl + your quick MOD button now opens module selector on your mouse
+      position
+  - bugfix: Other mobs no longer hear your breathing
+  - admin: Ghosts can no longer create deathmatch lobbies or join existing ones when
+      admins disable minigames
+  - balance: Experimentor's reduction chance is multiplicative, and chance to copy
+      an object has been slightly lowered.
+  - rscadd: A new ork mutation which can be acquired by mixing hulk and clumsy.
+  - bugfix: Fixed tables and racks being climbable from half a mile away
+  - spellcheck: Firelocks no longer output their full name in their balloon alert.
+  - spellcheck: Failure message when a xenomorph tries to force open a welded firelock
+      is now a balloon alert.
+  - qol: Heads of staff PDAs start with twice as much disk space
+  - qol: Pathfinder MODule can now be triggered while wearing the MODsuit to implant
+      yourself without having to pull it out of the suit.
+  - image: MOD hyposprays no longer use syringe fill sprites
+  - admin: Outfit manager UI no longer harddels after closing and thus is usable more
+      than once
+  SyncIt21:
+  - bugfix: borgs have alt right click functionality
+  TheBoondock:
+  - sound: added pickup, dropping and opening sound for pill bottle
+  Thedragmeme:
+  - bugfix: Fixes the Plague hat having what the Plague mask should have
+  Yobrocharlie:
+  - bugfix: makes outpost45 cause less lag
+  aaaa1023:
+  - bugfix: Added a Mechbay power console to the Metastation cargo warehouse so that
+      the cargo ripley is able to be charged.
+  necromanceranne:
+  - balance: Cryokinesis and pyrokinesis more severely adjust temperature.
+  - balance: Cryokinesis forces a target to slow down on hit for a few seconds.
+  - balance: Pyrokinesis can ignite objects.
+  - balance: Temperature projectiles change the temperature of the target's contained
+      reagents.
+  r3dj4ck0424:
+  - bugfix: Destroying the jungle grass tiles in Tramstation's science wing should
+      no longer open a chasm.
+  vinylspiders:
+  - bugfix: password doors and shutters will now play their sound effects again instead
+      of just silently opening/closing
+  - bugfix: french berets will no longer force the user to speak spanish
