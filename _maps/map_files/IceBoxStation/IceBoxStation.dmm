@@ -859,9 +859,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/commons/dorms)
-"aoC" = (
-/turf/open/openspace,
-/area/icemoon/underground/explored)
 "apb" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
@@ -1157,7 +1154,7 @@
 	dir = 4
 	},
 /obj/structure/lattice/catwalk,
-/turf/open/openspace,
+/turf/open/openspace/icemoon,
 /area/icemoon/underground/explored)
 "asM" = (
 /obj/machinery/light/directional/east,
@@ -14253,7 +14250,7 @@
 	dir = 1
 	},
 /obj/structure/lattice/catwalk,
-/turf/open/openspace,
+/turf/open/openspace/icemoon,
 /area/icemoon/underground/explored)
 "egj" = (
 /obj/structure/rack,
@@ -14573,7 +14570,7 @@
 	dir = 1
 	},
 /obj/structure/lattice/catwalk,
-/turf/open/openspace,
+/turf/open/openspace/icemoon,
 /area/icemoon/underground/explored)
 "ekW" = (
 /obj/structure/cable,
@@ -29373,8 +29370,12 @@
 	pixel_y = 2
 	},
 /obj/structure/lattice/catwalk,
-/turf/open/openspace,
-/area/station/science/cytology)
+/obj/machinery/camera/directional/south{
+	c_tag = "Ordnance Lower Mix Lab";
+	network = list("ss13","rd")
+	},
+/turf/open/openspace/icemoon,
+/area/icemoon/underground/explored)
 "iPP" = (
 /obj/effect/turf_decal/tile/bar/opposingcorners,
 /obj/effect/landmark/start/bartender,
@@ -33588,7 +33589,7 @@
 	dir = 1
 	},
 /obj/structure/railing,
-/turf/open/openspace,
+/turf/open/openspace/icemoon,
 /area/icemoon/underground/explored)
 "kdT" = (
 /obj/machinery/iv_drip,
@@ -38880,10 +38881,6 @@
 	dir = 1
 	},
 /area/station/hallway/secondary/service)
-"lEc" = (
-/obj/structure/stairs/east,
-/turf/open/misc/asteroid/snow,
-/area/station/science/ordnance)
 "lEg" = (
 /obj/machinery/door/window/left/directional/north{
 	name = "AI Core Door";
@@ -40958,7 +40955,7 @@
 	dir = 5
 	},
 /obj/structure/lattice/catwalk,
-/turf/open/openspace,
+/turf/open/openspace/icemoon,
 /area/icemoon/underground/explored)
 "mnC" = (
 /obj/structure/grille,
@@ -42535,7 +42532,7 @@
 	dir = 8
 	},
 /obj/structure/lattice/catwalk,
-/turf/open/openspace,
+/turf/open/openspace/icemoon,
 /area/icemoon/underground/explored)
 "mRr" = (
 /obj/structure/cable,
@@ -43355,7 +43352,7 @@
 /area/station/service/hydroponics)
 "nce" = (
 /obj/structure/lattice/catwalk,
-/turf/open/openspace,
+/turf/open/openspace/icemoon,
 /area/icemoon/underground/explored)
 "nci" = (
 /obj/structure/cable,
@@ -46179,7 +46176,7 @@
 	dir = 9
 	},
 /obj/structure/lattice/catwalk,
-/turf/open/openspace,
+/turf/open/openspace/icemoon,
 /area/icemoon/underground/explored)
 "nOb" = (
 /obj/machinery/door/airlock/external{
@@ -53789,8 +53786,8 @@
 	dir = 8
 	},
 /obj/structure/lattice/catwalk,
-/turf/open/openspace,
-/area/station/science/cytology)
+/turf/open/openspace/icemoon,
+/area/icemoon/underground/explored)
 "qbA" = (
 /obj/structure/cable,
 /obj/machinery/airalarm/directional/east,
@@ -54348,6 +54345,13 @@
 /obj/structure/girder,
 /turf/open/floor/plating,
 /area/station/maintenance/port/fore)
+"qjs" = (
+/obj/machinery/camera/directional/south{
+	c_tag = "Ordnance Lower Mix Lab";
+	network = list("ss13","rd")
+	},
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "qjx" = (
 /obj/structure/cable,
 /obj/machinery/holopad/secure,
@@ -66999,7 +67003,7 @@
 	dir = 4
 	},
 /obj/structure/lattice/catwalk,
-/turf/open/openspace,
+/turf/open/openspace/icemoon,
 /area/icemoon/underground/explored)
 "tTL" = (
 /obj/structure/chair,
@@ -80716,6 +80720,10 @@
 	},
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/south,
+/obj/machinery/camera/directional/south{
+	c_tag = "Ordnance Lower Mix Lab";
+	network = list("ss13","rd")
+	},
 /turf/open/floor/iron/smooth_large,
 /area/station/science/cytology)
 "ybf" = (
@@ -129268,7 +129276,7 @@ iDt
 iDt
 iDt
 iDt
-iDt
+qjs
 fIt
 fIt
 oSU
@@ -193516,9 +193524,9 @@ thA
 thA
 xMq
 xMq
-aoC
-aoC
-aoC
+lvt
+lvt
+lvt
 kdJ
 iDt
 iDt
@@ -193773,11 +193781,11 @@ thA
 thA
 xMq
 xMq
-aoC
-aoC
-aoC
+lvt
+lvt
+lvt
 kdJ
-aoC
+lvt
 wnp
 wnp
 sjD
@@ -194029,10 +194037,10 @@ thA
 thA
 thA
 xMq
-aoC
-aoC
-aoC
-aoC
+lvt
+lvt
+lvt
+lvt
 mRp
 qbz
 wnp
@@ -194286,9 +194294,9 @@ thA
 thA
 thA
 rcY
-aoC
-aoC
-aoC
+lvt
+lvt
+lvt
 nNV
 ege
 iPK
@@ -194543,9 +194551,9 @@ thA
 tjo
 tjo
 rcY
-aoC
-aoC
-aoC
+lvt
+lvt
+lvt
 ekN
 nce
 qcl
@@ -194800,9 +194808,9 @@ thA
 tjo
 tjo
 rcY
-aoC
-aoC
-aoC
+lvt
+lvt
+lvt
 mnB
 tTK
 rSZ
@@ -195057,10 +195065,10 @@ thA
 tjo
 tjo
 rcY
-aoC
-aoC
-aoC
-aoC
+lvt
+lvt
+lvt
+lvt
 asG
 qcl
 qcl
@@ -195315,12 +195323,12 @@ tjo
 tjo
 qZG
 ebX
-aoC
-aoC
-aoC
+lvt
+lvt
+lvt
 kdJ
-aoC
-aoC
+lvt
+lvt
 wnp
 wnp
 dqt
@@ -195574,11 +195582,11 @@ tjo
 qZG
 kNC
 ebX
-aoC
+lvt
 kdJ
-aoC
-aoC
-aoC
+lvt
+lvt
+lvt
 wnp
 qcl
 qcl
@@ -195586,7 +195594,7 @@ wnp
 uIf
 odm
 odm
-lEc
+odm
 odm
 nqy
 jGR
