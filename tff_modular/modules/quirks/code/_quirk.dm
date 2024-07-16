@@ -10,6 +10,3 @@
 
 /datum/quirk/item_quirk/underworld_connections
 	veteran_only = TRUE
-  
-/datum/quirk/item_quirk/pride_pin
-	hidden_quirk = TRUE
