@@ -22,7 +22,8 @@
 	suffix = "des_two.dmm"
 	name = "Space-Ruin DS-2"
 	description = "If DS-1 was so good..."
-	always_place = TRUE
+	// always_place = TRUE
+	unpickable = TRUE
 
 /datum/map_template/ruin/space/nova/derelictferry
 	id = "derelictferry"

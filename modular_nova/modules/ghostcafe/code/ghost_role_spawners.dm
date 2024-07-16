@@ -8,7 +8,8 @@
 /obj/effect/mob_spawn/ghost_role/robot/ghostcafe
 	name = "Cafe Robotic Storage"
 	prompt_name = "a ghost cafe robot"
-	infinite_use = TRUE
+	// infinite_use = TRUE
+	uses = 0
 	deletes_on_zero_uses_left = FALSE
 	icon = 'modular_nova/modules/ghostcafe/icons/robot_storage.dmi'
 	icon_state = "robostorage"
@@ -44,7 +45,8 @@
 /obj/effect/mob_spawn/ghost_role/human/ghostcafe
 	name = "Cafe Sleeper"
 	prompt_name = "a ghost cafe human"
-	infinite_use = TRUE
+	// infinite_use = TRUE
+	uses = 0
 	deletes_on_zero_uses_left = FALSE
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
