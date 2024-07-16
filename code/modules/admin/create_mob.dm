@@ -35,14 +35,12 @@
 	// Snowflake for Ethereals
 	human.updatehealth()
 	human.updateappearance(mutcolor_update = TRUE)
-<<<<<<< HEAD
 	// FLUFFY FRONTIER ADDITION START
 	human.set_blooper(pick(GLOB.blooper_list))
 	human.blooper_pitch = BLOOPER_PITCH_RAND(human.gender)
 	human.blooper_pitch_range = BLOOPER_VARIANCE_RAND
 	human.blooper_speed = rand(BLOOPER_DEFAULT_MINSPEED, BLOOPER_DEFAULT_MAXSPEED)
 	// FLUFFY FRONTIER ADDITION END
-=======
 
 /**
  * Randomizes a human, but produces someone who looks exceedingly average (by most standards).
@@ -82,4 +80,3 @@
 	human.dna.initialize_dna(newblood_type = random_blood_type(), create_mutation_blocks = randomize_mutations, randomize_features = TRUE)
 	human.updatehealth()
 	human.updateappearance(mutcolor_update = TRUE)
->>>>>>> 66d5ca91419 ([MIRROR] Adds more "curated" version of human randomization (for humonkeys, corpse spawners, and fresh characters) [MDB IGNORE] (#3490))
