@@ -183,7 +183,6 @@ export type PreferencesMenuData = {
   preview_selection: string; // NOVA EDIT ADDITION
 
   is_veteran: BooleanLike; // NOVA EDIT - Veteran status
-  is_donator: BooleanLike; // THE FLUFFY FRONTIER - For donators
 
   character_preferences: {
     clothing: Record<string, string>;
