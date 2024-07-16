@@ -1040,8 +1040,6 @@
 /obj/item/lighter,
 /turf/open/floor/carpet/red,
 /area/station/command/heads_quarters/qm)
-<<<<<<< HEAD
-=======
 "aqz" = (
 /obj/effect/turf_decal/caution/stand_clear/red,
 /obj/effect/turf_decal/stripes/line,
@@ -1053,7 +1051,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/science/ordnance/storage)
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 "aqG" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/siding/purple/corner,
@@ -1228,16 +1225,6 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/iron/textured_large,
 /area/station/service/hydroponics/garden)
-"auA" = (
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/simple/green/hidden{
-	dir = 5
-	},
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "auB" = (
 /turf/open/floor/engine,
 /area/station/medical/chemistry)
@@ -2380,11 +2367,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/station/commons/lounge)
-"aMS" = (
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "aMU" = (
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/flora/bush/fullgrass/style_random,
@@ -4465,14 +4447,6 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
-"bBJ" = (
-/obj/machinery/processor/slime,
-/obj/effect/turf_decal/bot_red,
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/turf/open/openspace/xenobio,
-/area/station/science/xenobiology)
 "bBX" = (
 /obj/structure/window/spawner/directional/north,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -4977,10 +4951,6 @@
 /obj/effect/turf_decal/bot_red,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/iron/white/textured_large,
-/area/station/science/xenobiology)
-"bLJ" = (
-/obj/structure/cable,
-/turf/open/openspace/xenobio,
 /area/station/science/xenobiology)
 "bLS" = (
 /obj/effect/turf_decal/stripes/box,
@@ -6464,17 +6434,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/turret_protected/aisat/foyer)
-"cqt" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/visible{
-	dir = 8
-	},
-/obj/effect/turf_decal/bot,
-/obj/machinery/button/door/directional/east{
-	name = "shutter control";
-	id = "ordauxgarage"
-	},
-/turf/open/floor/plating,
-/area/station/science/ordnance)
 "cqH" = (
 /obj/structure/transit_tube,
 /obj/structure/lattice,
@@ -6747,10 +6706,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
 /turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
-"cuA" = (
-/obj/machinery/portable_atmospherics/canister,
-/turf/open/floor/iron/white/smooth_large,
-/area/station/science/ordnance/storage)
 "cuE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/plastic{
@@ -7063,10 +7018,7 @@
 "cBB" = (
 /obj/machinery/airalarm/directional/east,
 /obj/structure/table/reinforced,
-<<<<<<< HEAD
-=======
 /obj/item/stack/sheet/iron/fifty,
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 /obj/item/storage/toolbox/mechanical,
 /obj/item/clothing/head/utility/welding,
 /obj/effect/turf_decal/siding/purple{
@@ -7890,13 +7842,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
-"cQX" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 9
-	},
-/obj/structure/cable,
-/turf/open/floor/iron/white,
-/area/station/science/ordnance/storage)
 "cRa" = (
 /obj/structure/window/reinforced/spawner/directional/south,
 /obj/structure/chair/office{
@@ -7993,13 +7938,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/ce)
-"cSI" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 9
-	},
-/obj/machinery/portable_atmospherics/scrubber,
-/turf/open/floor/iron/dark/smooth_large,
-/area/station/science/ordnance)
 "cSJ" = (
 /obj/structure/table,
 /obj/effect/spawner/random/food_or_drink/snack,
@@ -8517,15 +8455,6 @@
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /turf/open/floor/catwalk_floor/iron_white,
 /area/station/medical/treatment_center)
-<<<<<<< HEAD
-"dck" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 1
-	},
-/turf/open/openspace/xenobio,
-/area/station/science/xenobiology)
-=======
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 "dcl" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/item/pickaxe,
@@ -10444,13 +10373,6 @@
 /obj/machinery/light/small/dim/directional/north,
 /turf/open/misc/asteroid,
 /area/station/maintenance/department/cargo)
-"dGX" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/simple/green/visible{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/station/maintenance/department/science)
 "dHa" = (
 /obj/effect/turf_decal/tile/purple/opposingcorners,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
@@ -11722,20 +11644,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
-"ecM" = (
-/obj/structure/table,
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = -2;
-	pixel_y = 8
-	},
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = 3;
-	pixel_y = -2
-	},
-/obj/structure/cable,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "edv" = (
 /obj/machinery/computer/order_console/cook,
 /turf/open/floor/iron,
@@ -12154,11 +12062,6 @@
 /obj/structure/door_assembly,
 /turf/open/misc/asteroid,
 /area/station/asteroid)
-"elG" = (
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/machinery/atmospherics/pipe/smart/simple/green/hidden,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "elT" = (
 /obj/effect/turf_decal/tile/neutral/opposingcorners{
 	dir = 1
@@ -12228,18 +12131,6 @@
 /obj/structure/stairs/north,
 /turf/open/floor/iron,
 /area/station/command/corporate_showroom)
-"enX" = (
-/obj/effect/turf_decal/caution/stand_clear/red,
-/obj/effect/turf_decal/stripes/line,
-/obj/machinery/door/poddoor/shutters/window/preopen{
-	id = "ordstorage"
-	},
-/obj/structure/cable,
-/obj/effect/turf_decal/stripes/corner{
-	dir = 1
-	},
-/turf/open/floor/iron/white,
-/area/station/science/ordnance/storage)
 "eon" = (
 /obj/effect/spawner/random/structure/chair_comfy{
 	dir = 4
@@ -13545,22 +13436,6 @@
 "eKR" = (
 /turf/closed/wall/r_wall,
 /area/station/command/bridge)
-<<<<<<< HEAD
-"eKT" = (
-/obj/structure/table,
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/item/pipe_dispenser{
-	pixel_x = 3;
-	pixel_y = 7
-	},
-/obj/item/pipe_dispenser,
-/obj/machinery/power/apc/auto_name/directional/south{
-	areastring = "/area/station/science/ordnance/burnchamber"
-	},
-/obj/structure/cable,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
-=======
 "eLb" = (
 /obj/machinery/door/airlock/command{
 	name = "Research Director's Observatory"
@@ -13569,7 +13444,6 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/station/science/ordnance/testlab)
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 "eLe" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/effect/turf_decal/tile/red/half/contrasted{
@@ -14485,19 +14359,6 @@
 	},
 /turf/closed/wall/r_wall,
 /area/station/engineering/atmos/pumproom)
-"ffK" = (
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/structure/cable,
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/simple/green/hidden{
-	dir = 4
-	},
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "ffT" = (
 /obj/structure/rack,
 /obj/effect/spawner/random/maintenance/no_decals/two,
@@ -15330,15 +15191,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
-"fuF" = (
-/obj/effect/turf_decal/stripes/line,
-/obj/machinery/door/poddoor/shutters/window/preopen{
-	id = "ordstorage"
-	},
-/obj/effect/turf_decal/caution/stand_clear/red,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron/white,
-/area/station/science/ordnance/storage)
 "fuZ" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 4
@@ -16747,19 +16599,6 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/command/storage/eva)
-"fSi" = (
-/obj/machinery/light/directional/north,
-/obj/structure/table,
-/obj/item/pen{
-	pixel_x = 9;
-	pixel_y = 4
-	},
-/obj/item/hand_labeler{
-	pixel_y = 10;
-	pixel_x = -13
-	},
-/turf/open/floor/glass/reinforced,
-/area/station/science/xenobiology)
 "fSk" = (
 /obj/structure/chair/office{
 	dir = 1
@@ -16802,14 +16641,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/security/checkpoint/supply)
-"fSD" = (
-/obj/machinery/atmospherics/components/binary/valve/digital{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "fSK" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 6
@@ -18189,16 +18020,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/cargo/miningoffice)
-"gsw" = (
-/obj/machinery/door/poddoor/shutters/window/preopen{
-	id = "ordstorage"
-	},
-/obj/effect/turf_decal/stripes/line,
-/obj/effect/turf_decal/caution/stand_clear/red,
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/floor/iron/white,
-/area/station/science/ordnance/storage)
 "gsM" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 8
@@ -20648,16 +20469,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/wood,
 /area/station/service/library)
-<<<<<<< HEAD
-"hkG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/tank/oxygen{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/station/maintenance/department/science)
-=======
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 "hld" = (
 /obj/structure/cable,
 /obj/machinery/firealarm/directional/east,
@@ -22749,14 +22560,6 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/iron,
 /area/station/engineering/storage)
-"hVm" = (
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/simple/green/hidden{
-	dir = 6
-	},
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "hVs" = (
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -23683,16 +23486,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/secondary/command)
-"iox" = (
-/obj/machinery/computer/camera_advanced/xenobio{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/item/storage/box/monkeycubes,
-/turf/open/openspace/xenobio,
-/area/station/science/xenobiology)
 "ioL" = (
 /obj/item/radio/intercom/directional/east,
 /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -24333,14 +24126,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/white,
 /area/station/science/lobby)
-"iAx" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/visible{
-	dir = 4
-	},
-/obj/effect/turf_decal/box/red,
-/obj/item/radio/intercom/directional/north,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "iAE" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -25181,15 +24966,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/station/command/corporate_showroom)
-<<<<<<< HEAD
-"iPW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/tank/oxygen{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/station/maintenance/department/science)
-=======
 "iQo" = (
 /obj/structure/table,
 /obj/machinery/reagentgrinder{
@@ -25200,7 +24976,6 @@
 	},
 /turf/open/floor/iron/white/textured_large,
 /area/station/science/xenobiology)
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 "iQt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/random/trash/food_packaging,
@@ -25930,12 +25705,6 @@
 /obj/item/clothing/glasses/meson,
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine)
-"jgl" = (
-/obj/structure/table,
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/item/holosign_creator/atmos,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "jgs" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
@@ -26430,15 +26199,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/maintenance/port/lesser)
-"joD" = (
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/machinery/camera/autoname/directional/north{
-	network = list("ss13","rd")
-	},
-/obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "joH" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 8
@@ -28242,14 +28002,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/department/medical)
-"jSR" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "jSV" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 1
@@ -28279,16 +28031,6 @@
 /obj/structure/cable/layer3,
 /turf/open/floor/iron/dark/telecomms,
 /area/station/tcommsat/server)
-"jTw" = (
-/obj/machinery/door/airlock/research{
-	glass = 1;
-	name = "Slime Euthanization Chamber";
-	opacity = 0
-	},
-/obj/effect/turf_decal/tile/blue/fourcorners,
-/obj/effect/mapping_helpers/airlock/access/all/science/xenobio,
-/turf/open/openspace/xenobio,
-/area/station/science/xenobiology)
 "jTB" = (
 /turf/closed/wall/r_wall,
 /area/station/science/ordnance/storage)
@@ -29261,13 +29003,6 @@
 /obj/machinery/duct,
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
-"kke" = (
-/obj/structure/tank_dispenser,
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/item/radio/intercom/directional/north,
-/obj/machinery/light_switch/directional/east,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "kkf" = (
 /obj/machinery/portable_atmospherics/canister/nitrous_oxide,
 /turf/open/floor/plating,
@@ -30355,18 +30090,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/large,
 /area/station/service/hydroponics/garden)
-"kBr" = (
-/obj/structure/barricade/wooden,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/simple/green/visible{
-	dir = 4
-	},
-/obj/item/flashlight/glowstick/blue{
-	start_on = 1;
-	light_range = 2
-	},
-/turf/open/floor/plating,
-/area/station/maintenance/department/science)
 "kBt" = (
 /obj/machinery/modular_computer/preset/civilian,
 /obj/machinery/button/door/directional/north{
@@ -30902,15 +30625,6 @@
 /obj/machinery/light/small/dim/directional/west,
 /turf/open/floor/iron/textured_large,
 /area/station/hallway/primary/central)
-"kKC" = (
-/obj/machinery/atmospherics/pipe/smart/simple/dark/visible{
-	dir = 8
-	},
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "kKJ" = (
 /obj/machinery/rnd/destructive_analyzer,
 /obj/machinery/light/directional/north,
@@ -31168,12 +30882,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating,
 /area/station/engineering/lobby)
-"kQB" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
-/obj/structure/sign/poster/official/wtf_is_co2/directional/north,
-/obj/machinery/light_switch/directional/east,
-/turf/open/floor/iron/white/smooth_large,
-/area/station/science/ordnance/storage)
 "kQF" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/engine,
@@ -31713,10 +31421,7 @@
 	},
 /obj/structure/fireaxecabinet/mechremoval/directional/east,
 /obj/item/stack/sheet/glass/fifty,
-<<<<<<< HEAD
-=======
 /obj/item/stack/sheet/iron/fifty,
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 /turf/open/floor/iron/dark/textured,
 /area/station/science/robotics/lab)
 "kZg" = (
@@ -31901,10 +31606,7 @@
 /area/station/science/ordnance)
 "lcj" = (
 /obj/item/stack/sheet/glass,
-<<<<<<< HEAD
-=======
 /obj/item/stack/sheet/iron/fifty,
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 /obj/item/clothing/glasses/welding,
 /obj/item/disk/tech_disk{
 	pixel_y = 6
@@ -33077,15 +32779,6 @@
 "lAj" = (
 /turf/closed/wall,
 /area/station/construction/mining/aux_base)
-"lAl" = (
-/obj/structure/window/spawner/directional/east,
-/obj/machinery/portable_atmospherics/pipe_scrubber,
-/obj/effect/turf_decal/stripes/corner{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/floor/iron/dark/smooth_large,
-/area/station/science/ordnance)
 "lAm" = (
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 1
@@ -33131,15 +32824,6 @@
 	dir = 4
 	},
 /area/station/command/meeting_room)
-"lBm" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/simple/green/hidden{
-	dir = 9
-	},
-/turf/open/floor/iron/white,
-/area/station/science/ordnance/testlab)
 "lBu" = (
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 1
@@ -34225,14 +33909,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/station/maintenance/port/greater)
-"lVy" = (
-/obj/machinery/door/airlock/command{
-	name = "Research Director's Observatory"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/science/rd,
-/obj/machinery/door/firedoor,
-/turf/open/floor/plating,
-/area/station/command/heads_quarters/rd)
 "lVB" = (
 /turf/closed/mineral/random/stationside/asteroid/porus,
 /area/station/maintenance/department/science)
@@ -34725,20 +34401,6 @@
 /obj/effect/baseturf_helper/reinforced_plating/ceiling,
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance)
-<<<<<<< HEAD
-"mgi" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "ordauxgarage";
-	dir = 1
-	},
-/obj/effect/turf_decal/sand/plating,
-/obj/effect/turf_decal/stripes/asteroid/end{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/station/science/ordnance)
-=======
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 "mgn" = (
 /obj/docking_port/stationary{
 	dir = 8;
@@ -35248,14 +34910,6 @@
 "mnP" = (
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
-"mnS" = (
-/obj/machinery/portable_atmospherics/pump,
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/iron/dark/smooth_large,
-/area/station/science/ordnance)
 "mnU" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 1
@@ -35284,10 +34938,6 @@
 "mog" = (
 /turf/open/openspace,
 /area/station/engineering/main)
-"mol" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/openspace/xenobio,
-/area/station/science/xenobiology)
 "mor" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -35367,8 +35017,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance)
-<<<<<<< HEAD
-=======
 "mqn" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
@@ -35376,7 +35024,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/white,
 /area/station/science/ordnance/storage)
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 "mqz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -36196,17 +35843,6 @@
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/plating,
 /area/station/maintenance/port/greater)
-"mFa" = (
-/obj/machinery/door/firedoor/heavy,
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/machinery/door/airlock/research{
-	name = "Ordnance Auxiliary Storage"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/science/ordnance,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/simple/green/hidden,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "mFb" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor/massdriver_chapel,
@@ -36307,11 +35943,6 @@
 	},
 /turf/open/floor/engine,
 /area/station/command/heads_quarters/captain/private)
-"mHc" = (
-/obj/machinery/airalarm/directional/west,
-/obj/machinery/portable_atmospherics/canister/oxygen,
-/turf/open/floor/iron/white/smooth_large,
-/area/station/science/ordnance/storage)
 "mHf" = (
 /obj/structure/table,
 /obj/item/controller,
@@ -37698,18 +37329,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/central/greater)
-"nfk" = (
-/obj/structure/table,
-/obj/item/paper_bin{
-	pixel_x = -2;
-	pixel_y = 6
-	},
-/obj/item/pen{
-	pixel_x = -2;
-	pixel_y = 5
-	},
-/turf/open/floor/glass/reinforced,
-/area/station/science/xenobiology)
 "nfn" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -39161,10 +38780,6 @@
 /obj/effect/spawner/random/maintenance,
 /turf/open/misc/asteroid,
 /area/station/maintenance/department/cargo)
-"nIQ" = (
-/obj/item/radio/intercom/directional/south,
-/turf/open/floor/catwalk_floor/iron_white,
-/area/station/science/ordnance/testlab)
 "nIS" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -39438,12 +39053,6 @@
 /obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
-"nNl" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 5
-	},
-/turf/open/floor/iron/white,
-/area/station/science/ordnance/storage)
 "nNo" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 1
@@ -39545,17 +39154,6 @@
 "nPW" = (
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
-"nQl" = (
-/obj/machinery/atmospherics/pipe/smart/simple/yellow/visible{
-	dir = 4
-	},
-/obj/machinery/camera/autoname/directional/north{
-	network = list("ss13","rd")
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "nQm" = (
 /obj/machinery/camera/motion/directional/west{
 	network = list("aicore");
@@ -40348,15 +39946,6 @@
 	},
 /turf/open/floor/iron/textured,
 /area/station/cargo/drone_bay)
-<<<<<<< HEAD
-"ojR" = (
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/simple/green/hidden,
-/turf/open/floor/iron/white,
-/area/station/science/ordnance/testlab)
-=======
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 "oka" = (
 /obj/effect/turf_decal/siding/purple{
 	dir = 1
@@ -41509,17 +41098,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/department/medical/central)
-"oFp" = (
-/obj/effect/turf_decal/tile/neutral/opposingcorners{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/purple{
-	dir = 4
-	},
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/floor/iron/dark,
-/area/station/command/heads_quarters/rd)
 "oFu" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -41682,16 +41260,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/security/warden)
-"oIu" = (
-/obj/structure/table,
-/obj/machinery/reagentgrinder{
-	pixel_y = 8
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/turf/open/openspace/xenobio,
-/area/station/science/xenobiology)
 "oID" = (
 /obj/structure/lattice,
 /obj/effect/spawner/random/structure/grille,
@@ -42011,13 +41579,8 @@
 /area/station/command/bridge)
 "oOP" = (
 /obj/structure/cable,
-<<<<<<< HEAD
-/obj/structure/fireaxecabinet/directional/south,
-/obj/effect/turf_decal/tile/dark_blue/half/contrasted,
-=======
 /obj/effect/turf_decal/tile/dark_blue/half/contrasted,
 /obj/machinery/incident_display/bridge/directional/south,
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 /turf/open/floor/iron,
 /area/station/command/bridge)
 "oOR" = (
@@ -43249,16 +42812,6 @@
 	dir = 8
 	},
 /area/station/service/theater)
-<<<<<<< HEAD
-"pjL" = (
-/obj/structure/table,
-/obj/item/paper_bin{
-	pixel_x = -5;
-	pixel_y = 6
-	},
-/turf/open/floor/glass/reinforced,
-/area/station/science/xenobiology)
-=======
 "pjK" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/machinery/light_switch/directional/east,
@@ -43266,7 +42819,6 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/iron/white/smooth_large,
 /area/station/science/ordnance/storage)
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 "pjN" = (
 /obj/structure/transit_tube/horizontal{
 	dir = 2
@@ -45097,13 +44649,6 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/carpet,
 /area/station/commons/dorms)
-"pQG" = (
-/obj/machinery/atmospherics/components/trinary/mixer{
-	dir = 4
-	},
-/obj/machinery/light/directional/north,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "pQM" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 1;
@@ -45961,15 +45506,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine)
-"qeY" = (
-/obj/machinery/meter,
-/obj/machinery/atmospherics/pipe/smart/simple/dark/visible{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "qfu" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/white/textured_large,
@@ -46380,11 +45916,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/commons/storage/primary)
-"qmI" = (
-/obj/effect/turf_decal/tile/purple/fourcorners,
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/iron,
-/area/station/science/ordnance)
 "qmU" = (
 /obj/item/radio/intercom/command/directional/west,
 /turf/open/floor/glass,
@@ -46431,14 +45962,6 @@
 	},
 /turf/open/floor/iron/white/smooth_half,
 /area/station/science/robotics/lab)
-"qnV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/broken/directional/north,
-/obj/machinery/atmospherics/components/tank/oxygen{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/station/maintenance/department/science)
 "qob" = (
 /obj/structure/table,
 /obj/item/stock_parts/micro_laser{
@@ -47713,14 +47236,6 @@
 /obj/effect/spawner/random/structure/table_or_rack,
 /turf/open/floor/plating,
 /area/station/maintenance/port/lesser)
-"qOt" = (
-/obj/machinery/portable_atmospherics/canister,
-/obj/machinery/atmospherics/components/unary/portables_connector/visible{
-	dir = 8
-	},
-/obj/effect/turf_decal/box/red,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "qOz" = (
 /obj/structure/girder,
 /turf/open/floor/plating,
@@ -48204,8 +47719,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
-<<<<<<< HEAD
-=======
 "qXg" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -48214,7 +47727,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance)
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 "qXm" = (
 /turf/open/floor/iron/showroomfloor,
 /area/station/engineering/main)
@@ -48500,13 +48012,6 @@
 	dir = 8
 	},
 /area/station/hallway/secondary/exit/departure_lounge)
-"rbS" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/simple/green/visible{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/station/maintenance/department/science)
 "rce" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green{
@@ -49118,15 +48623,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/station/science/xenobiology)
-"rkd" = (
-/obj/structure/closet/crate/science,
-/obj/item/wrench,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/firealarm/directional/west,
-/obj/effect/spawner/random/maintenance,
-/obj/effect/turf_decal/stripes/line,
-/turf/open/floor/iron/dark/smooth_large,
-/area/station/science/ordnance)
 "rkm" = (
 /obj/machinery/washing_machine,
 /turf/open/floor/iron/freezer,
@@ -49397,20 +48893,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/security)
-"roK" = (
-/obj/machinery/door/airlock/research{
-	name = "Ordnance Lab"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/science/ordnance,
-/obj/structure/cable,
-/obj/machinery/door/firedoor/heavy,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/simple/green/hidden{
-	dir = 4
-	},
-/turf/open/floor/catwalk_floor/iron_white,
-/area/station/science/ordnance)
 "roO" = (
 /obj/machinery/door/airlock/security/glass{
 	name = "Prison Wing"
@@ -49433,10 +48915,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/cargo/sorting)
-"rpC" = (
-/obj/effect/decal/remains/human,
-/turf/open/floor/plating,
-/area/station/science/ordnance/storage)
 "rpD" = (
 /obj/structure/closet/secure_closet/brig/genpop,
 /obj/machinery/light/dim/directional/east,
@@ -50471,15 +49949,6 @@
 /obj/effect/landmark/start/prisoner,
 /turf/open/floor/iron/freezer,
 /area/station/security/prison/shower)
-"rFA" = (
-/obj/structure/window/spawner/directional/east,
-/obj/machinery/portable_atmospherics/pump,
-/obj/effect/turf_decal/stripes/line{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/floor/iron/dark/smooth_large,
-/area/station/science/ordnance)
 "rFK" = (
 /obj/effect/turf_decal/sand/plating,
 /obj/effect/decal/cleanable/rubble,
@@ -51716,12 +51185,6 @@
 	},
 /turf/open/floor/carpet/black,
 /area/station/command/heads_quarters/hos)
-"sar" = (
-/obj/machinery/camera/autoname/directional/south{
-	network = list("ss13","rd")
-	},
-/turf/open/floor/catwalk_floor/iron_white,
-/area/station/science/ordnance/testlab)
 "sas" = (
 /obj/machinery/door/airlock/command/glass{
 	name = "Emergency Spatial Evacuation"
@@ -54552,15 +54015,12 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/paramedic)
-<<<<<<< HEAD
-=======
 "sZr" = (
 /obj/machinery/atmospherics/pipe/smart/simple/purple/visible{
 	dir = 5
 	},
 /turf/closed/wall/r_wall,
 /area/station/science/ordnance/storage)
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 "sZs" = (
 /obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/siding/wood,
@@ -55440,8 +54900,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/station/maintenance/central/lesser)
-<<<<<<< HEAD
-=======
 "tqf" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/monitored/oxygen_input{
 	dir = 4;
@@ -55449,7 +54907,6 @@
 	},
 /turf/open/floor/engine/o2,
 /area/station/science/ordnance)
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 "tqk" = (
 /obj/machinery/conveyor{
 	id = "garbage";
@@ -58843,22 +58300,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/engineering/storage)
-"uwV" = (
-/obj/machinery/door/poddoor/shutters/window/preopen{
-	id = "ordstorage"
-	},
-/obj/effect/turf_decal/stripes/line,
-/obj/machinery/button/door/directional/east{
-	req_access = list("ordnance");
-	name = "Ordnance Storage Shutter Control";
-	id = "ordstorage"
-	},
-/obj/effect/turf_decal/caution/stand_clear/red,
-/obj/effect/turf_decal/stripes/corner{
-	dir = 4
-	},
-/turf/open/floor/iron/white,
-/area/station/science/ordnance/storage)
 "uwW" = (
 /obj/structure/cable/layer1,
 /turf/open/floor/iron,
@@ -60269,19 +59710,6 @@
 	},
 /turf/open/floor/iron/dark/corner,
 /area/station/engineering/atmos/upper)
-"uXb" = (
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/structure/cable,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/simple/green/hidden{
-	dir = 5
-	},
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "uXe" = (
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
@@ -61345,18 +60773,6 @@
 	dir = 8
 	},
 /area/station/service/theater)
-"vrG" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/machinery/atmospherics/components/unary/portables_connector/visible{
-	dir = 1
-	},
-/obj/machinery/portable_atmospherics/canister,
-/obj/effect/turf_decal/box/red,
-/obj/machinery/light/directional/south,
-/turf/open/floor/iron/dark/smooth_large,
-/area/station/science/ordnance)
 "vrR" = (
 /obj/effect/spawner/random/engineering/tracking_beacon,
 /turf/open/floor/wood,
@@ -62434,15 +61850,6 @@
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/iron,
 /area/station/engineering/main)
-"vNl" = (
-/obj/machinery/atmospherics/pipe/smart/simple/dark/visible{
-	dir = 10
-	},
-/obj/structure/railing/corner,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "vNB" = (
 /obj/machinery/vending/tool,
 /obj/effect/decal/cleanable/dirt,
@@ -62657,10 +62064,7 @@
 /obj/effect/turf_decal/tile/dark_blue/half/contrasted{
 	dir = 4
 	},
-<<<<<<< HEAD
-=======
 /obj/structure/fireaxecabinet/directional/east,
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 /turf/open/floor/iron,
 /area/station/command/bridge)
 "vQT" = (
@@ -63474,13 +62878,6 @@
 	},
 /turf/open/floor/iron/textured,
 /area/station/engineering/atmos)
-"wfU" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/simple/green/visible{
-	dir = 6
-	},
-/turf/open/floor/plating,
-/area/station/maintenance/department/science)
 "wfW" = (
 /obj/structure/lattice/catwalk,
 /obj/item/food/pie/cream,
@@ -63805,17 +63202,6 @@
 /obj/effect/turf_decal/stripes,
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmospherics_engine)
-"wmM" = (
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/structure/cable,
-/obj/machinery/light/directional/east,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/simple/green/hidden{
-	dir = 10
-	},
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "wmO" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/glass/reinforced,
@@ -63851,12 +63237,6 @@
 	dir = 8
 	},
 /area/station/science/xenobiology)
-"wnH" = (
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable,
-/obj/machinery/portable_atmospherics/canister/oxygen,
-/turf/open/floor/iron/white,
-/area/station/science/ordnance/storage)
 "wnL" = (
 /turf/open/floor/plating,
 /area/station/medical/medbay/central)
@@ -65994,15 +65374,6 @@
 /obj/machinery/vending/wallmed/directional/south,
 /turf/open/floor/iron/white,
 /area/station/command/heads_quarters/cmo)
-"xaw" = (
-/obj/machinery/atmospherics/pipe/smart/manifold/purple/visible{
-	dir = 8
-	},
-/obj/structure/disposalpipe/trunk/multiz{
-	dir = 1
-	},
-/turf/open/floor/iron/dark,
-/area/station/science/ordnance)
 "xay" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -67929,16 +67300,6 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
-"xJt" = (
-/obj/effect/turf_decal/sand/plating,
-/obj/machinery/light/small/directional/south,
-/obj/structure/broken_flooring/pile,
-/obj/machinery/atmospherics/components/binary/pump/off/green/hidden{
-	dir = 4;
-	name = "Aux Oxygen To Port"
-	},
-/turf/open/floor/plating,
-/area/station/science/ordnance)
 "xJA" = (
 /obj/structure/table/wood/fancy/blue,
 /obj/effect/spawner/random/aimodule/neutral,
@@ -109129,9 +108490,9 @@ foX
 aku
 ouA
 jJe
-ilp
-ixU
-ixU
+gOY
+gOY
+gOY
 gOY
 gOY
 gOY
@@ -109386,17 +108747,7 @@ foX
 aku
 aku
 ilp
-ilp
-jTB
-rpC
 gOY
-<<<<<<< HEAD
-iAx
-boy
-gql
-abh
-xaw
-=======
 luh
 tId
 rdM
@@ -109405,7 +108756,6 @@ boy
 gql
 abh
 pEq
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 uPL
 sSN
 nal
@@ -109654,18 +109004,11 @@ rji
 foX
 ilp
 ilp
-jTB
-jTB
-jTB
 gOY
-<<<<<<< HEAD
-pQG
-=======
 tqf
 qfE
 tKD
 hNI
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 atb
 qVB
 iOH
@@ -109917,21 +109260,13 @@ uOo
 aku
 aku
 ilp
+ilp
 jTB
-<<<<<<< HEAD
-jTB
-mHc
-wnH
-gOY
-nQl
-jSR
-=======
 eTG
 sZr
 gOY
 nUN
 rkK
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 nTZ
 urY
 czh
@@ -110183,26 +109518,15 @@ aku
 ilp
 ilp
 jTB
-<<<<<<< HEAD
-jGd
-eBH
-cQX
-enX
-=======
 jTB
 olY
 eNt
 gOY
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 rSB
 bwj
 mSG
 rSh
-<<<<<<< HEAD
-qOt
-=======
 ivy
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 gOY
 wOn
 gOY
@@ -110451,19 +109775,11 @@ aku
 ilp
 ilp
 jTB
-<<<<<<< HEAD
-dkr
-hbH
-naU
-gsw
-fSD
-=======
 jGd
 eBH
 cIk
 aqz
 qXg
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 lCw
 vlz
 fDz
@@ -110716,19 +110032,11 @@ uro
 rji
 ilp
 jTB
-<<<<<<< HEAD
-sqJ
-wiT
-rBt
-aPG
-qeY
-=======
 dkr
 hbH
 naU
 rwA
 eCJ
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 aMG
 vlz
 xTs
@@ -110981,19 +110289,11 @@ aku
 ilp
 ilp
 jTB
-<<<<<<< HEAD
-dEn
-lIn
-tra
-qGr
-kKC
-=======
 sqJ
 wiT
 rBt
 aPG
 cPu
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 mqb
 vlz
 fDz
@@ -111246,10 +110546,10 @@ aku
 ilp
 ilp
 jTB
-gbV
-jqY
-rus
-fuF
+dEn
+lIn
+tra
+qGr
 gzF
 kEM
 fDz
@@ -111258,11 +110558,7 @@ fDz
 oWy
 fDz
 dyd
-<<<<<<< HEAD
-vrG
-=======
 bfq
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 gOY
 cxg
 vxX
@@ -111507,19 +110803,11 @@ aku
 ilp
 ilp
 jTB
-<<<<<<< HEAD
-cuA
-cuA
-nNl
-uwV
-vNl
-=======
 gbV
 jqY
 rus
 xpb
 rfA
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 nCo
 tGW
 tGW
@@ -111772,16 +111060,6 @@ aku
 ieo
 ilp
 jTB
-<<<<<<< HEAD
-jTB
-kQB
-ioL
-gOY
-aks
-tTK
-tvB
-cSI
-=======
 dYY
 epB
 mqn
@@ -111790,7 +111068,6 @@ hTv
 tTK
 tvB
 fNi
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 nkM
 vxZ
 dyS
@@ -112039,25 +111316,15 @@ uOo
 aku
 vfR
 ilp
-ilp
 jTB
 jTB
-jTB
-<<<<<<< HEAD
-=======
 pjK
 ioL
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 gOY
-gOY
+aks
 tTK
-<<<<<<< HEAD
-rFA
-lAl
-=======
 rtq
 oTP
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 xfQ
 cAG
 xXF
@@ -112306,22 +111573,15 @@ uOo
 aku
 aku
 fbN
-gsW
-gsW
-mnS
-mnS
+rji
+jTB
+jTB
+jTB
 gOY
-<<<<<<< HEAD
-iJZ
-lcd
-ecM
-eKT
-=======
 gOY
 tTK
 dZQ
 jvp
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 nkM
 vxZ
 pZK
@@ -112570,17 +111830,6 @@ uOo
 aku
 aku
 pkw
-<<<<<<< HEAD
-mgi
-rkd
-aMS
-hVm
-mFa
-elG
-uXb
-cmn
-jgl
-=======
 gsW
 ikJ
 jtp
@@ -112590,7 +111839,6 @@ iJZ
 lcd
 tky
 cQx
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 efL
 cQu
 wgI
@@ -112842,17 +112090,10 @@ aku
 ajs
 gop
 cqf
-<<<<<<< HEAD
-xJt
-gOY
-joD
-ffK
-=======
 hWl
 hCB
 cmn
 fYW
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 cut
 rcR
 efL
@@ -113106,19 +112347,11 @@ aku
 vjB
 jEw
 cmn
-<<<<<<< HEAD
-cqt
-gOY
-kke
-wmM
-auA
-=======
 oyd
 gOY
 lFI
 kCh
 nGb
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 icz
 efL
 nbS
@@ -113374,12 +112607,8 @@ grm
 gsW
 gOY
 gOY
-<<<<<<< HEAD
-=======
 oxW
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 gOY
-roK
 gOY
 nkM
 nkM
@@ -113632,16 +112861,11 @@ aku
 aku
 aku
 xAd
-wfU
-rbS
+upd
+upd
 kAI
-<<<<<<< HEAD
-ojR
-lBm
-=======
 cra
 nNF
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 uvx
 mna
 gXw
@@ -113894,13 +113118,8 @@ aku
 aku
 vfR
 vfJ
-<<<<<<< HEAD
-dGX
-upd
-=======
 pgI
 vfJ
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 moe
 jxe
 aaR
@@ -114156,13 +113375,8 @@ tsz
 lJq
 obA
 vfJ
-<<<<<<< HEAD
-kBr
-vfJ
-=======
 dxZ
 xrY
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 moe
 tLh
 dlE
@@ -114674,15 +113888,9 @@ lJq
 jBM
 lJq
 obA
-<<<<<<< HEAD
-qnV
-iPW
-hkG
-=======
 daT
 eyx
 eyx
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 moe
 mJU
 bpW
@@ -177393,11 +176601,7 @@ raz
 raz
 nzk
 fpY
-<<<<<<< HEAD
-clQ
-=======
 fEW
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 ssg
 vtN
 ylR
@@ -177653,8 +176857,8 @@ iSz
 uba
 vfJ
 nzk
-qmI
-wYI
+fpY
+clQ
 elT
 elT
 elT
@@ -177910,16 +177114,6 @@ vmk
 uba
 pBN
 nzk
-<<<<<<< HEAD
-hEi
-hEi
-wFI
-mmU
-ibE
-wts
-oFp
-oFp
-=======
 tEm
 wYI
 kbc
@@ -177928,7 +177122,6 @@ kbc
 kbc
 iHV
 iHV
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 tcx
 qJN
 uHQ
@@ -178179,15 +177372,6 @@ wtI
 vfJ
 vfJ
 hEi
-<<<<<<< HEAD
-myW
-myW
-fsZ
-jfB
-sab
-sab
-jzM
-=======
 hEi
 wFI
 mmU
@@ -178195,7 +177379,6 @@ ibE
 wts
 hmd
 bIP
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 iFN
 kHf
 xkL
@@ -178446,13 +177629,13 @@ bfp
 vfJ
 mNZ
 hEi
-mlm
-rsI
-gmH
-iVp
+myW
+myW
+fsZ
+jfB
 sab
 sab
-sdn
+jzM
 iFN
 aXl
 fyJ
@@ -178703,13 +177886,13 @@ lVB
 vfJ
 mNZ
 hEi
-hUH
-dfk
+mlm
+rsI
 gmH
-rXS
-tOL
-fPv
-iAM
+iVp
+sab
+sab
+sdn
 iFN
 mZn
 oND
@@ -178960,13 +178143,13 @@ mNZ
 mNZ
 mNZ
 hEi
-hEi
-hEi
-hEi
-hEi
-hEi
-hEi
-lVy
+hUH
+dfk
+gmH
+rXS
+tOL
+fPv
+iAM
 iFN
 rEv
 vjQ
@@ -179216,16 +178399,6 @@ mNZ
 mNZ
 mNZ
 mNZ
-<<<<<<< HEAD
-mNZ
-mNZ
-ivx
-ivx
-ivx
-ivx
-wkG
-nIQ
-=======
 kxB
 kxB
 kxB
@@ -179234,7 +178407,6 @@ kxB
 kxB
 moe
 eLb
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 iFN
 iFN
 iFN
@@ -179487,18 +178659,11 @@ mNZ
 mNZ
 mNZ
 ivx
-moe
 wkG
-<<<<<<< HEAD
-wkG
-wkG
-sar
-=======
 jYT
 guJ
 bXM
 rIJ
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 moe
 vxX
 vxX
@@ -179753,9 +178918,9 @@ mNZ
 gEA
 wkG
 jYT
-jYT
-jYT
-rIJ
+wkG
+wkG
+wkG
 moe
 vxX
 vxX
@@ -180011,9 +179176,9 @@ ivx
 wkG
 jYT
 wkG
-wkG
-wkG
-moe
+ivx
+ivx
+ivx
 vxX
 vxX
 vxX
@@ -186961,19 +186126,11 @@ wPP
 tIs
 tPE
 lKY
-<<<<<<< HEAD
-bBJ
-mol
-bqs
-bqs
-uHz
-=======
 fTO
 wmO
 ybO
 ybO
 ybO
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 wmO
 rmi
 lKY
@@ -187226,19 +186383,11 @@ jQS
 uVe
 tPE
 avA
-<<<<<<< HEAD
-iox
-mol
-bqs
-bqs
-uHz
-=======
 uke
 wmO
 ybO
 ybO
 ybO
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 wmO
 xGG
 uBm
@@ -187491,19 +186640,11 @@ jQS
 qZX
 tPE
 lKY
-<<<<<<< HEAD
-oIu
-mol
-bqs
-bqs
-uHz
-=======
 iQo
 wmO
 ybO
 ybO
 ybO
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 wmO
 bLI
 lKY
@@ -187756,17 +186897,10 @@ jQS
 iXn
 ieU
 cWL
-<<<<<<< HEAD
-mol
-orY
-mol
-jTw
-=======
 tMz
 jQS
 wmO
 htn
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 jgA
 jQS
 tMz
@@ -188016,16 +187150,6 @@ hhX
 hhX
 fZF
 jQS
-<<<<<<< HEAD
-pjL
-jEt
-gdM
-rdn
-dck
-orY
-orY
-orY
-=======
 lCS
 jEt
 gdM
@@ -188034,18 +187158,13 @@ dJr
 wnA
 wnA
 wnA
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 wnA
 viT
 bUl
 cNh
 iXB
 jEt
-<<<<<<< HEAD
-nfk
-=======
 svE
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 jQS
 fZF
 hhX
@@ -188288,16 +187407,6 @@ hhX
 hhX
 fZF
 jQS
-<<<<<<< HEAD
-fSi
-fXW
-jej
-krO
-bLJ
-bLJ
-bLJ
-bLJ
-=======
 oaz
 fXW
 jej
@@ -188306,7 +187415,6 @@ krO
 krO
 krO
 krO
->>>>>>> df7e7dd181a ([MIRROR] Fixes Wawastation xenobio openspace bz turfs in the main room [MDB IGNORE] (#3789))
 krO
 krO
 krO
