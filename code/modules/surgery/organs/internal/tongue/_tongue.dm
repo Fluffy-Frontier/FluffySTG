@@ -94,16 +94,19 @@
 /obj/item/organ/internal/tongue/proc/handle_speech(datum/source, list/speech_args)
 	SIGNAL_HANDLER
 
-	if(speech_args[SPEECH_LANGUAGE] in languages_native)
-		return FALSE //no changes
-	// FF add, for auto-accent
-	if(HAS_TRAIT(source, TRAIT_NO_ACCENT))
-		return FALSE //accent disabled by user.
+	if(should_modify_speech(source, speech_args))
+		modify_speech(source, speech_args)
+
+/obj/item/organ/internal/tongue/proc/should_modify_speech(datum/source, list/speech_args)
 	if(speech_args[SPEECH_LANGUAGE] in languages_native) // Speaking a native language?
 		return FALSE // Don't modify speech
 	if(HAS_TRAIT(source, TRAIT_SIGN_LANG)) // No modifiers for signers - I hate this but I simply cannot get these to combine into one statement
 		return FALSE // Don't modify speech
-	modify_speech(source, speech_args)
+	// FLUFFY FRONTIER EDIT START. ADDITION - autoaccent
+	if(HAS_TRAIT(source, TRAIT_NO_ACCENT))
+		return FALSE //accent disabled by user.
+	// FLUFFY FRONTIER EDIT END.
+	return TRUE
 
 /obj/item/organ/internal/tongue/proc/modify_speech(datum/source, list/speech_args)
 	return speech_args[SPEECH_MESSAGE]
@@ -210,9 +213,6 @@
 		new /regex(@"(\w)x", "g") = "$1kss",
 		new /regex(@"\bx([\-|r|R]|\b)", "g") = "ecks$1",
 		new /regex(@"\bX([\-|r|R]|\b)", "g") = "ECKS$1",
-		new /regex(@"(\w)x", "g") = "$1kss",
-		new /regex(@"\bx([\-|r|R]|\b)", "g") = "ecks$1",
-		new /regex(@"\bX([\-|r|R]|\b)", "g") = "ECKS$1",
 		new /regex("с+", "g") = "ссс",
 		new /regex("С+", "g") = "ССС",
 		"з" = "с",
@@ -224,7 +224,7 @@
 
 /obj/item/organ/internal/tongue/lizard/New(class, timer, datum/mutation/human/copymut)
 	. = ..()
-	AddComponent(/datum/component/speechmod, replacements = CONFIG_GET(flag/russian_text_formation) ? russian_speech_replacements : speech_replacements) // NOVA EDIT CHANGE - ORIGINAL: AddComponent(/datum/component/speechmod, replacements = speech_replacements)
+	AddComponent(/datum/component/speechmod, replacements = CONFIG_GET(flag/russian_text_formation) ? russian_speech_replacements : speech_replacements, should_modify_speech = CALLBACK(src, PROC_REF(should_modify_speech))) // NOVA EDIT CHANGE - ORIGINAL: AddComponent(/datum/component/speechmod, replacements = speech_replacements, should_modify_speech = CALLBACK(src, PROC_REF(should_modify_speech)))
 
 /obj/item/organ/internal/tongue/lizard/silver
 	name = "silver tongue"

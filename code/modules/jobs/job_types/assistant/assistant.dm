@@ -37,13 +37,9 @@ Assistant
 	rpg_title = "Lout"
 	config_tag = "ASSISTANT"
 
-<<<<<<< HEAD
-/datum/job/assistant/get_outfit()
-=======
 /datum/job/assistant/get_outfit(consistent)
 	if(consistent)
 		return /datum/outfit/job/assistant/preview
->>>>>>> 999549d7448 ([MIRROR] Adds an assistant preview outfit for previewing assistant loadouts [MDB IGNORE] (#3788))
 	if(!HAS_TRAIT(SSstation, STATION_TRAIT_ASSISTANT_GIMMICKS))
 		return ..()
 

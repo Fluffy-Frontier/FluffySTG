@@ -1,6 +1,7 @@
 import { BooleanLike } from 'common/react';
 
 import { sendAct } from '../../backend';
+import { LoadoutCategory, LoadoutList } from './loadout/base';
 import { Gender } from './preferences/gender';
 
 export enum Food {
@@ -182,7 +183,6 @@ export type PreferencesMenuData = {
   preview_selection: string; // NOVA EDIT ADDITION
 
   is_veteran: BooleanLike; // NOVA EDIT - Veteran status
-  is_donator: BooleanLike; // THE FLUFFY FRONTIER - For donators
 
   character_preferences: {
     clothing: Record<string, string>;
@@ -202,6 +202,8 @@ export type PreferencesMenuData = {
       gender: Gender;
       joblessrole: JoblessRole;
       species: string;
+      loadout_list: LoadoutList;
+      job_clothes: BooleanLike;
     };
 
     randomization: Record<string, RandomSetting>;
@@ -235,6 +237,8 @@ export type PreferencesMenuData = {
   quirks_balance: number;
   positive_quirk_count: number;
   species_restricted_jobs?: string[];
+  ckey: string;
+  is_donator: BooleanLike;
   // NOVA EDIT END
   keybindings: Record<string, string[]>;
   overflow_role: string;
@@ -261,6 +265,9 @@ export type ServerData = {
   quirks: QuirkInfo;
   random: {
     randomizable: string[];
+  };
+  loadout: {
+    loadout_tabs: LoadoutCategory[];
   };
   species: Record<string, Species>;
   [otheyKey: string]: unknown;
