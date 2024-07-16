@@ -35,9 +35,41 @@
 	// Snowflake for Ethereals
 	human.updatehealth()
 	human.updateappearance(mutcolor_update = TRUE)
+<<<<<<< HEAD
 	// FLUFFY FRONTIER ADDITION START
 	human.set_blooper(pick(GLOB.blooper_list))
 	human.blooper_pitch = BLOOPER_PITCH_RAND(human.gender)
 	human.blooper_pitch_range = BLOOPER_VARIANCE_RAND
 	human.blooper_speed = rand(BLOOPER_DEFAULT_MINSPEED, BLOOPER_DEFAULT_MAXSPEED)
 	// FLUFFY FRONTIER ADDITION END
+=======
+
+/**
+ * Randomizes a human, but produces someone who looks exceedingly average (by most standards).
+ *
+ * (IE, no wacky hair styles / colors)
+ */
+/proc/randomize_human_normie(mob/living/carbon/human/human, randomize_mutations = FALSE)
+	// Sorry enbys but statistically you are not average enough
+	human.gender = human.dna.species.sexes ? pick(MALE, FEMALE) : PLURAL
+	human.physique = human.gender
+	human.real_name = human.generate_random_mob_name()
+	human.name = human.get_visible_name()
+	human.eye_color_left = random_eye_color()
+	human.eye_color_right = human.eye_color_left
+	human.skin_tone = pick(GLOB.skin_tones)
+	// No underwear generation handled here
+	var/picked_color = random_hair_color()
+	human.set_haircolor(picked_color, update = FALSE)
+	human.set_facial_haircolor(picked_color, update = FALSE)
+	var/datum/sprite_accessory/hairstyle = SSaccessories.hairstyles_list[random_hairstyle(human.gender)]
+	if(hairstyle && hairstyle.natural_spawn && !hairstyle.locked)
+		human.set_hairstyle(hairstyle.name, update = FALSE)
+	var/datum/sprite_accessory/facial_hair = SSaccessories.facial_hairstyles_list[random_facial_hairstyle(human.gender)]
+	if(facial_hair && facial_hair.natural_spawn && !facial_hair.locked)
+		human.set_facial_hairstyle(facial_hair.name, update = FALSE)
+	// Normal DNA init stuff, these can generally be wacky but we care less, they're aliens after all
+	human.dna.initialize_dna(newblood_type = random_blood_type(), create_mutation_blocks = randomize_mutations, randomize_features = TRUE)
+	human.updatehealth()
+	human.updateappearance(mutcolor_update = TRUE)
+>>>>>>> 15d8ab6ea31 ([MIRROR] Adds informed default values for a bunch of preferences (to produce less outlandish random characters) [MDB IGNORE] (#3599))
