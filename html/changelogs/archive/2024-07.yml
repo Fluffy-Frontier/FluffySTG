@@ -1010,3 +1010,58 @@
   lizardqueenlexi:
   - bugfix: You can no longer cause a bluescreen by attempting to recolor non-recolorable
       loadout items.
+2024-07-18:
+  CandleJaxx:
+  - rscadd: Added new stomach type for Lithovores (Rock Eaters) in the augments menu.
+  FlufflesTheDog:
+  - bugfix: some things such as towels can once again be ctrl clicked
+  - bugfix: certain togglable clothes properly update their appearance while worn
+  - bugfix: frontier jumpsuit sensors work properly, they're enabled to max by default
+  Kocma-san:
+  - qol: added disposal unit to medbay storage on voidraptor
+  - balance: Caligram Armored Tan Parka available for more roles in the loadout menu.
+  LT3:
+  - balance: Price adjustments to DeForest heavy duty medical kits
+  - balance: DeForest heavy duty medical crates via department order includes one
+      pre-stocked kit instead of two
+  Melbert:
+  - bugfix: Using hulk (and a myriad of similar effects) now properly updates your
+      movespeed to ignore the damage movespeed penalty
+  - bugfix: Some things which temporarily make you fly don't make you fly forever
+  - bugfix: MODsuit ball module now properly makes you immune to damage movespeed
+      penalty when in ball form
+  - bugfix: Adding Hulk via VV dropdown doesn't default to adding the strongest hulk
+      available (that which is used by the medieval pirates)
+  Pickle-Coding:
+  - bugfix: Fixes space heater cell relative consumption inadvertently being changed
+      from the introduction of megacells.
+  - qol: The improvised chemical heater gives a more accurate description of its heating
+      power on examine.
+  - qol: Improved feedback when attempting to turn on a space heater that is lacking
+      a cell, has no charge or is broken.
+  - code_imp: Space heater relative cell consumption is consistent regardless of the
+      cell charge scale.
+  Rhials:
+  - bugfix: Xenos have a "resist" ui element now. Cool!
+  Sadboysuss:
+  - bugfix: added a missing cable to Wawastation perma
+  SmArtKar:
+  - qol: Stopping orbiting now automatically breaks you out of autoobserve
+  - qol: You can properly aim mining bombs at turfs now
+  - bugfix: Fixes hulks being able to activate dualsabers despite not being able to
+      actually do anything with them
+  SyncIt21:
+  - bugfix: borgs can't put their integrated tools into the reagent grinder
+  Yobrocharlie:
+  - bugfix: Removed bitrunning beach brawl fax machine
+  afonamos2:
+  - bugfix: malf ai voice changer no longer accepts dangerous inputs
+  dis-integrates-the-integration-tests:
+  - bugfix: Minor Hotdoggo-Vend typo fix
+  grungussuss:
+  - rscadd: You can now buckle to bar stools
+  grungususs:
+  - spellcheck: fixed a typo for carrot sword description
+  xXPawnStarrXx:
+  - qol: made fish better quality when butchered, smushy koibeans and useable gunner
+      jellyfish.
