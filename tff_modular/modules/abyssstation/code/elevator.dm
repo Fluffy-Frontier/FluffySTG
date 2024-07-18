@@ -19,6 +19,17 @@
 	id = ABYSS_ENTRY_ELEVATOR_ID
 	name = "Entry elevator button"
 
+/obj/machinery/door/window/elevator/left/abyss_station/entry_elevator
+	transport_linked_id = ABYSS_ENTRY_ELEVATOR_ID
+	elevator_mode = TRUE
+
+/obj/machinery/door/window/elevator/right/abyss_station/entry_elevator
+	transport_linked_id = ABYSS_ENTRY_ELEVATOR_ID
+	elevator_mode = TRUE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/door/window/elevator/left/abyss_station/entry_elevator, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/door/window/elevator/right/abyss_station/entry_elevator, 0)
+
 // CARGO
 /obj/effect/landmark/transport/transport_id/abyss_station/cargo_elevator
 	specific_transport_id = ABYSS_CARGO_ELEVATOR_ID
@@ -45,6 +56,17 @@
 	id = ABYSS_ENGINEERING_ELEVATOR_ID
 	name = "Engineering elevator button"
 
+/obj/machinery/door/window/elevator/left/abyss_station/engineering_elevator
+	transport_linked_id = ABYSS_ENGINEERING_ELEVATOR_ID
+	elevator_mode = TRUE
+
+/obj/machinery/door/window/elevator/right/abyss_station/engineering_elevator
+	transport_linked_id = ABYSS_ENGINEERING_ELEVATOR_ID
+	elevator_mode = TRUE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/door/window/elevator/left/abyss_station/engineering_elevator, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/door/window/elevator/right/abyss_station/engineering_elevator, 0)
+
 // DEPARTURE
 /obj/effect/landmark/transport/transport_id/abyss_station/departure_elevator
 	specific_transport_id = ABYSS_DEPARTURE_ELEVATOR_ID
@@ -58,6 +80,17 @@
 	id = ABYSS_DEPARTURE_ELEVATOR_ID
 	name = "Departure elevator button"
 
+/obj/machinery/door/window/elevator/left/abyss_station/departure_elevator
+	transport_linked_id = ABYSS_DEPARTURE_ELEVATOR_ID
+	elevator_mode = TRUE
+
+/obj/machinery/door/window/elevator/right/abyss_station/departure_elevator
+	transport_linked_id = ABYSS_DEPARTURE_ELEVATOR_ID
+	elevator_mode = TRUE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/door/window/elevator/left/abyss_station/departure_elevator, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/door/window/elevator/right/abyss_station/departure_elevator, 0)
+
 // SECURITY
 /obj/effect/landmark/transport/transport_id/abyss_station/security_elevator
 	specific_transport_id = ABYSS_SECURITY_ELEVATOR_ID
@@ -70,6 +103,17 @@
 /obj/machinery/button/elevator/abyss_station/security_elevator
 	id = ABYSS_SECURITY_ELEVATOR_ID
 	name = "Security elevator button"
+
+/obj/machinery/door/window/elevator/left/abyss_station/security_elevator
+	transport_linked_id = ABYSS_SECURITY_ELEVATOR_ID
+	elevator_mode = TRUE
+
+/obj/machinery/door/window/elevator/right/abyss_station/security_elevator
+	transport_linked_id = ABYSS_SECURITY_ELEVATOR_ID
+	elevator_mode = TRUE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/door/window/elevator/left/abyss_station/security_elevator, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/door/window/elevator/right/abyss_station/security_elevator, 0)
 
 // MINE
 /obj/effect/landmark/transport/transport_id/abyss_station/mine_elevator
