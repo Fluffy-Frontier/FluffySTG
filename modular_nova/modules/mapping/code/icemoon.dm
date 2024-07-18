@@ -22,10 +22,7 @@
 	suffix = "icemoon_underground_interdyne_base1.dmm"
 	allow_duplicates = FALSE
 	never_spawn_with = list(/datum/map_template/ruin/lavaland/nova/interdyne_base)
-<<<<<<< HEAD
 	unpickable = TRUE //FF REMOVAL - INTERDYNE-REMAP. ORIGINAL always_place = TRUE
-=======
-	always_place = TRUE
 
 /*----- Above Ground -----*/
 ////// Yes, I know the "Above Ground" Is very limited in space. This is a... ~17x17? ruin.
@@ -36,4 +33,3 @@
 	prefix = "_maps/RandomRuins/IceRuins/nova/"
 	suffix = "icemoon_surface_turretbunker.dmm"
 	allow_duplicates = FALSE
->>>>>>> e4ab33f7153 ([MODULAR] More Deployable Turret Work + Ruins for them (#3464))
