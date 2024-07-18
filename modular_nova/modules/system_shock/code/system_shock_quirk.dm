@@ -1,3 +1,4 @@
+/* // FLUFFY FRONTIER REMOVAL START
 /datum/quirk/system_shock
 	name = "System Shock"
 	desc = "You and electricity have a volatile relationship. One spark's liable to forcefully reboot your systems. Note: This quirk only works on synths."
@@ -28,3 +29,4 @@
 
 /datum/quirk/system_shock/proc/knock_out(var/length)
 	quirk_holder.Sleeping(length)
+*/ // // FLUFFY FRONTIER REMOVAL END
