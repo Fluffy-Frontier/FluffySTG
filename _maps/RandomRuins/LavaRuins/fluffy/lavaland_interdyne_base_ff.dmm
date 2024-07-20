@@ -86,9 +86,6 @@
 /area/ruin/interdyne_planetary_base/med)
 "aB" = (
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/plumbing/input{
-	dir = 1
-	},
 /obj/structure/closet/secure_closet/cytology{
 	anchored = 1;
 	pixel_x = 9;
@@ -168,7 +165,6 @@
 /obj/effect/turf_decal/stripes/blue/corner{
 	dir = 8
 	},
-/obj/machinery/duct,
 /obj/machinery/door/window/survival_pod/left/directional/west{
 	req_access = list("syndicate");
 	pixel_x = -4
@@ -3494,7 +3490,6 @@
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 5
 	},
-/obj/machinery/duct,
 /obj/structure/marker_beacon/burgundy,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
@@ -5987,10 +5982,10 @@
 	pixel_y = 7;
 	light_color = "#adadcd"
 	},
-/obj/item/stock_parts/cell/bluespace,
-/obj/item/stock_parts/cell/bluespace,
-/obj/item/stock_parts/cell/bluespace,
-/obj/item/stock_parts/cell/bluespace,
+/obj/item/stock_parts/power_store/cell/bluespace,
+/obj/item/stock_parts/power_store/cell/bluespace,
+/obj/item/stock_parts/power_store/cell/bluespace,
+/obj/item/stock_parts/power_store/cell/bluespace,
 /obj/effect/turf_decal/tile/dark/full,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
@@ -6119,7 +6114,6 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 1
 	},
-/obj/machinery/plumbing/growing_vat,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/north{
 	pixel_y = 4
 	},
@@ -6772,11 +6766,11 @@
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
 /obj/effect/turf_decal/caution/red,
-/obj/machinery/duct,
 /obj/machinery/light/directional/south{
 	light_color = "#5148A6"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/vatgrower,
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "Ox" = (
@@ -7763,7 +7757,6 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
-/obj/machinery/duct,
 /obj/machinery/door/window/survival_pod/left/directional/west{
 	req_access = list("syndicate");
 	pixel_x = -4
@@ -8294,7 +8287,6 @@
 "Xd" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/duct,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "Xf" = (
@@ -8631,7 +8623,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
-/obj/machinery/duct,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/east{
 	pixel_x = 4
 	},

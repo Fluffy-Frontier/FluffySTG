@@ -18,17 +18,17 @@
 	atom_storage.max_specific_storage = WEIGHT_CLASS_NORMAL
 	atom_storage.set_holdable(list(
 		/obj/item/gun/energy/blueshield,
-		/obj/item/stock_parts/cell,
+		/obj/item/stock_parts/power_store/cell,
 		))
 
 /obj/item/storage/belt/holster/energy/blueshield/PopulateContents()
 	. = ..()
 	new	/obj/item/gun/energy/blueshield(src)
-	new	/obj/item/stock_parts/cell/super(src)
-	new	/obj/item/stock_parts/cell/super(src)
+	new	/obj/item/stock_parts/power_store/cell/super(src)
+	new	/obj/item/stock_parts/power_store/cell/super(src)
 
 // worn_icon_teshari не используеться когда что-то надеваеться в хранилище верхней одежды.
-/obj/item/storage/belt/holster/energy/blueshield/equipped(mob/user, slot) 
+/obj/item/storage/belt/holster/energy/blueshield/equipped(mob/user, slot)
 	. = ..()
 	if(is_species(user, /datum/species/teshari))
 		worn_icon = 'tff_modular/modules/blueshield-rearm/icons/holster_teshari.dmi'

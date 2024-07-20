@@ -16,10 +16,10 @@
 		/obj/item/ammo_casing/energy/disabler/blueshield,
 		/obj/item/ammo_casing/energy/laser/blueshield,
 	)
-	cell_type = /obj/item/stock_parts/cell/super // Батарея с которой спавнится револьвер.
+	cell_type = /obj/item/stock_parts/power_store/cell/super // Батарея с которой спавнится револьвер.
 
-	var/obj/item/stock_parts/cell/zerocell/no_cell
-	var/acceptable_cell_type = /obj/item/stock_parts/cell
+	var/obj/item/stock_parts/power_store/cell/zerocell/no_cell
+	var/acceptable_cell_type = /obj/item/stock_parts/power_store/cell
 
 /obj/item/gun/energy/blueshield/Initialize(mapload)
 	. = ..()
@@ -37,7 +37,7 @@
 	. += "\n"
 	. += "[src] is currently in <b>[ammo_type[select]:select_name]</b> mode."
 
-/obj/item/gun/energy/blueshield/proc/eject_cell(var/mob/user)
+/obj/item/gun/energy/blueshield/proc/eject_cell(mob/user)
 	if(has_empty_cell())
 		return
 	cell.update_appearance()
@@ -51,7 +51,7 @@
 	balloon_alert(user, "cell ejected")
 
 
-/obj/item/gun/energy/blueshield/proc/try_insert_cell(var/obj/item/stock_parts/cell/new_cell, var/mob/user)
+/obj/item/gun/energy/blueshield/proc/try_insert_cell(obj/item/stock_parts/power_store/cell/new_cell, var/mob/user)
 	if(!new_cell)
 		return FALSE
 	if(!has_empty_cell())
@@ -97,5 +97,5 @@
 *	(Почти) пустая батарейка.
 *	Её цель - встать на место извлечённой, чтобы не ломать неожиданным null'ом ничего.
 */
-/obj/item/stock_parts/cell/zerocell
+/obj/item/stock_parts/power_store/cell/zerocell
 	maxcharge = 1
