@@ -192,61 +192,63 @@
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/suit/cloaked
+/obj/item/clothing/under/cloaked
 	var/cloaktype
 	var/alternative_mode = FALSE
-	var/cloak_up_affix = ""
-	var/cloak_down_overlay_suffix = ""
+	var/cloak_up_suffix = "_t"
+	var/cloak_down_suffix = ""
 	var/obj/item/clothing/neck/cloak/cloak
 
-/obj/item/clothing/suit/cloaked/Initialize(mapload)
+/obj/item/clothing/under/cloaked/Initialize(mapload)
 	. = ..()
 	if (!cloaktype)
 		return
 	AddComponent(\
-		/datum/component/toggle_attached_clothing,\
+		/datum/component/attached_clothing,\
 		deployable_type = cloaktype,\
 		equipped_slot = ITEM_SLOT_NECK,\
 		action_name = "Toggle Cloak",\
 		destroy_on_removal = alternative_mode,\
-		parent_icon_state_suffix = cloak_up_affix,\
-		down_overlay_state_suffix = cloak_down_overlay_suffix, \
+		parent_icon_state_suffix = cloak_up_suffix,\
+		down_overlay_state_suffix = cloak_down_suffix,\
+		deployable_icon_up_state_suffix = cloak_up_suffix,\
+		deployable_icon_down_state_suffix = cloak_down_suffix,\
 		pre_creation_check = CALLBACK(src, PROC_REF(can_create_cloak)),\
 		on_created = CALLBACK(src, PROC_REF(on_cloak_created)),\
 		on_deployed = CALLBACK(src, PROC_REF(on_cloak_up)),\
-		on_removed = CALLBACK(src, PROC_REF(on_cloak_down)),\
+		on_removed = CALLBACK(src, PROC_REF(on_cloak_removed)),\
 	)
 
-/obj/item/clothing/suit/cloaked/Destroy()
+/obj/item/clothing/under/cloaked/Destroy()
 	cloak = null
 	return ..()
 
-/obj/item/clothing/suit/cloaked/proc/can_create_cloak()
+/obj/item/clothing/under/cloaked/proc/can_create_cloak()
 	return TRUE
 
-/obj/item/clothing/suit/cloaked/proc/on_cloak_created(obj/item/clothing/neck/cloak)
+/obj/item/clothing/under/cloaked/proc/on_cloak_created(obj/item/clothing/neck/cloak)
 	SHOULD_CALL_PARENT(TRUE)
 	src.cloak = cloak
 	RegisterSignal(cloak, COMSIG_QDELETING, PROC_REF(on_cloak_deleted))
 
-/obj/item/clothing/suit/cloaked/proc/on_cloak_deleted()
+/obj/item/clothing/under/cloaked/proc/on_cloak_deleted()
 	SIGNAL_HANDLER
 	SHOULD_CALL_PARENT(TRUE)
 	cloak = null
 
-/obj/item/clothing/suit/cloaked/proc/on_cloak_up(obj/item/clothing/neck/cloak)
+/obj/item/clothing/under/cloaked/proc/on_cloak_up(obj/item/clothing/neck/cloak)
 	return
 
-/obj/item/clothing/suit/cloaked/proc/on_cloak_down(obj/item/clothing/neck/cloak)
+/obj/item/clothing/under/cloaked/proc/on_cloak_removed(obj/item/clothing/neck/cloak)
 	return
 
-/obj/item/clothing/suit/cloaked/eldercoat
+/obj/item/clothing/under/cloaked/eldercoat
 	cloaktype = /obj/item/clothing/neck/cloak/eldercoat
 	name = "hunter's uniform"
 	desc = "Old-fashioned robes with a patterned pattern all over the clothes and a cape hanging from the left shoulder."
-	icon = 'tff_modular/master_files/icons/donator/obj/clothing/suit.dmi'
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/under.dmi'
 	icon_state = "eldercoat"
-	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/suit.dmi'
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/under.dmi'
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/shoes/eldercoat
