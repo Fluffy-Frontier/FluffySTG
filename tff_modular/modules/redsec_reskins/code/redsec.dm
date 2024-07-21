@@ -195,6 +195,18 @@
 			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/under/security.dmi',
 			RESKIN_WORN_ICON_STATE = "security_skirt"
 		),
+		"Blue Jumpskirt" = list(
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/under/security.dmi',
+			RESKIN_ICON_STATE = "jumpskirt_blue",
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/under/security.dmi',
+			RESKIN_ICON_STATE = "jumpskirt_blue"
+		),
+		"Black Jumpskirt" = list(
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/under/security.dmi',
+			RESKIN_ICON_STATE = "jumpskirt_black",
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/mob/clothing/under/security.dmi',
+			RESKIN_ICON_STATE = "jumpskirt_black"
+		),
 		"Red Skirt" = list(
 			RESKIN_ICON = 'icons/obj/clothing/under/security.dmi',
 			RESKIN_ICON_STATE = "secskirt",
