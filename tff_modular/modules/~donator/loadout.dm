@@ -107,3 +107,23 @@
 	name = "Senior Commander's Trenchcloak"
 	item_path = /obj/item/clothing/neck/cloak/trenchcloak
 	ckeywhitelist = list("romontesque")
+
+/datum/loadout_item/under/elder_suit
+	name = "Elder Suit"
+	item_path = /obj/item/clothing/under/cloaked/eldercoat
+	ckeywhitelist = list("MercReaper", "skadi999", "Smol42")
+
+/datum/loadout_item/shoes/elder_shoes
+	name = "Elder Shoes"
+	item_path = /obj/item/clothing/shoes/eldercoat
+	ckeywhitelist = list("MercReaper", "skadi999", "Smol42")
+
+/datum/loadout_item/gloves/elder_gloves
+	name = "Elder Gloves"
+	item_path = /obj/item/clothing/gloves/eldercoat
+	ckeywhitelist = list("MercReaper", "skadi999", "Smol42")
+
+/datum/loadout_item/head/elder_head
+	name = "Elder Hat"
+	item_path = /obj/item/clothing/head/eldercoat
+	ckeywhitelist = list("MercReaper", "skadi999", "Smol42")
