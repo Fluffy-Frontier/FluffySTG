@@ -179,3 +179,10 @@
 	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
 	icon_state = "romontesque_cloak"
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+
+/obj/item/clothing/neck/cloak/tendercloak
+	name = "bayou old mantle"
+	desc = "This is a very shabby (and time-worn) cape, it smells funny of silt."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	icon_state = "ten_neck"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
