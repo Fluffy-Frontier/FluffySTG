@@ -108,6 +108,11 @@
 	item_path = /obj/item/clothing/neck/cloak/trenchcloak
 	ckeywhitelist = list("romontesque")
 
+/datum/loadout_item/neck/officer_coat
+	name = "Bayou Old Mantle"
+	item_path = /obj/item/clothing/neck/cloak/tendercloak
+	ckeywhitelist = list("mercreaper", "byratishka")
+
 /datum/loadout_item/under/elder_suit
 	name = "Elder Suit"
 	item_path = /obj/item/clothing/under/cloaked/eldercoat
