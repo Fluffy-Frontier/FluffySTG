@@ -102,7 +102,6 @@
 
 /// При перемещении в слот одежды пытается одеть и плащик.
 /datum/component/toggle_attached_clothing/left_side_cloak/on_parent_equipped(obj/item/clothing/source, mob/equipper, slot)
-	SIGNAL_HANDLER
 	if (slot & ITEM_SLOT_ICLOTHING)
 		toggle_deployable()
 		return
