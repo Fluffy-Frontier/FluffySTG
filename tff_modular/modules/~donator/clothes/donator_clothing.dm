@@ -207,7 +207,7 @@
 	if (!cloaktype)
 		return
 	AddComponent(\
-		/datum/component/attached_clothing,\
+		/datum/component/toggle_attached_clothing/left_side_cloak,\
 		deployable_type = cloaktype,\
 		equipped_slot = ITEM_SLOT_NECK,\
 		action_name = "Toggle Cloak",\
