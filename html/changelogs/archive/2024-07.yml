@@ -1381,16 +1381,74 @@
       8 to 6.
   - balance: Your athletic ability allows you to climb faster.
 2024-07-24:
+  Ben10Omintrix:
+  - qol: fish analyzers now have a UI
   Dragonfruits:
   - image: Added Black-backed Jackal tail & matching markings
   - image: Added Canine (Alt) snout
   - image: Added "Belly Slim (Alt) + Body Tonage" marking
+  FeenieRU:
+  - qol: Now IDs and PDAs have money-reader module for picking some cash into your
+      bank by swiping on money.
+  Ghommie:
+  - balance: reduced the prices of some blackmarket items across the board.
+  - balance: the thermite bottle (from the contraband spawner and the blackmarket),
+      now spawns with 50u of thermite vs 30, enough to melt one reinforced wall.
+  - rscadd: Replaced the science googles from the blackmarket with a security + health
+      scanner HUD.
+  - rscadd: Replaced the single shotgun dart from the blackmarket with a box of XL
+      shotgun darts.
+  - rscadd: The donk pocket box from the blackmarket now comes in different flavors.
+  Jacquerel, Kok0nut, Imaginos:
+  - image: Wall-mounted and Table-mounted ID card authorisation machines now use different
+      sprites
+  - bugfix: Wall-mounted ID card authorisation devices will now be destroyed if their
+      wall is destroyed
+  JohnFulpWillard:
+  - balance: Human AIs no longer have a teleport blocking implant or borg costume,
+      but now has a portable crew monitor.
   RashCat:
   - bugfix: mistake in donated lodaut
   SmArtKar:
   - bugfix: You can now put dead mice into mortars/grinders properly
+  - bugfix: You can no longer dupe metal by breaking walls under small light fixtures
+  - bugfix: Fixes Hereditary Manifold Sickness's 4th stage not updating health when
+      it should
+  - bugfix: Stacking machine consoles link to machinery now
+  - bugfix: Ghosts can no longer move chairs
+  - code_imp: Cleaned up clamp code.
+  - bugfix: Clamp no longer anchors down some objects upon failing to pick them up
+  - bugfix: Deathsquad KILL CLAMP finally works once more
+  - balance: Mechs now take armor into consideration when calculating punch damage
+  - bugfix: Mechs no longer deal direct limb damage
+  - bugfix: Drills automatically pick up ore on non-ripley mechs now without having
+      to move
+  - bugfix: Drills no longer dismember people immune to melee damage
+  - bugfix: Drills now take armor from correct bodyparts when attacking
+  - code_imp: Cleaned up one-letter variables in mech drill code
+  - bugfix: Having your liver fail no longer keeps drug traits active without metabolizing
+      them
+  - bugfix: You can attack bookshelves in a variety of states once more
+  - qol: You can fire PKAs/plasma cutters point blank at turfs.
+  - bugfix: You can no longer microwave kisses, slappers, and other abstract items
+  Thedragmeme:
+  - qol: re-maps the raptor barn to not stick out like a sore thumb
+  - bugfix: Miners and the public both can access the raptor barn without having to
+      make a bridge themselves
+  - image: Adds a series of traditional yukata's and kimono's
+  - image: Adds in black sandals and a traditional hairpin for the back of the hair
   Time-Green:
   - bugfix: Animal/people skin is no longer metallic sounding
+  Vekter:
+  - spellcheck: Reworded Voidwalker's objectives to be more descriptive of their actual
+      goals as opposed to just fluff.
+  grungussuss:
+  - bugfix: Serenity station kitchen now has all fire safety-equipment
+  - bugfix: Serenity station robotics stray decals have been removed
+  - bugfix: Serenity station Arrivals Transport Airlocks now have correct unrestricted
+      access
+  - bugfix: Serenity station bridge maintenance has more redundancy
+  - bugfix: Serenity station extra lightbulb in a bathroom stall has been removed
   nikothedude:
   - bugfix: Alexander no longer causes harddels
   - bugfix: Removed a theoretical infinite block exploit from alexander
