@@ -1452,3 +1452,30 @@
   nikothedude:
   - bugfix: Alexander no longer causes harddels
   - bugfix: Removed a theoretical infinite block exploit from alexander
+2024-07-25:
+  AyIong:
+  - qol: Photocopier updated their UI
+  Ghommie:
+  - bugfix: Fixed fishing.
+  JoshAdamPowell:
+  - admin: 'Nanotrasen has brought Central Command kicking and screaming into the
+      20th Century by providing them with a real fax machine.
+
+      :cl:'
+  MTandi:
+  - bugfix: Borgs and AI can now use research queue
+  - rscadd: Dehydrator, a machine version of drying rack, with a circuit board and
+      available on some kitchens roundstart.
+  - image: Updated the color palette of Smart Fridge
+  Majkl-J:
+  - bugfix: fixes bitrunning breaking upon repeatedly climbing in and out the pod
+  SmArtKar:
+  - refactor: HUD traits now apply their corresponding hud automatically
+  - refactor: Pod code now uses datums instead of being a huge nested list
+  necromanceranne:
+  - bugfix: Restores some of the items accidentally lost in the autodrobe.
+  - balance: Strong-arm implants go on cooldown when activated, but deal more overall
+      lethal damage on a single blow.
+  - balance: The strong-arm implant does additional damage to fauna and some other
+      dangerous mobs.
+  - qol: You can pair toolset arm implants with the strong-arm implants.
