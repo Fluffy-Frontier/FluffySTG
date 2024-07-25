@@ -1457,6 +1457,8 @@
   - qol: Photocopier updated their UI
   Ghommie:
   - bugfix: Fixed fishing.
+  Holoo-1:
+  - bugfix: fixed ghost huds
   JoshAdamPowell:
   - admin: 'Nanotrasen has brought Central Command kicking and screaming into the
       20th Century by providing them with a real fax machine.
@@ -1472,6 +1474,16 @@
   SmArtKar:
   - refactor: HUD traits now apply their corresponding hud automatically
   - refactor: Pod code now uses datums instead of being a huge nested list
+  - refactor: Refactored parrying to be projectile-side and not user-side.
+  - rscadd: You can now parry crusher projectiles to give them some more range, add
+      damage and make the mark always count as a backstab.
+  - rscadd: Projectile parrying has been significantly improved, making parrying and
+      boosting projectiles actually possible. Includes a small grace period as lag
+      compensation for players with higher pings.
+  - balance: Crusher marks can now be detonated by any crusher, not only the one that
+      applied it, as to incentivise coop mining for crusher users.
+  - balance: Projectile boosting now gives a significantly bigger damage and speed
+      increase
   necromanceranne:
   - bugfix: Restores some of the items accidentally lost in the autodrobe.
   - balance: Strong-arm implants go on cooldown when activated, but deal more overall
@@ -1479,3 +1491,8 @@
   - balance: The strong-arm implant does additional damage to fauna and some other
       dangerous mobs.
   - qol: You can pair toolset arm implants with the strong-arm implants.
+  - balance: Quality cybernetic hearts combat bleeds and restore blood, rather than
+      inject you with epinephrine when you enter crit. This can result in mild toxin
+      buildup, however.
+  - balance: Upgraded cybernetic hearts give an extremely brief amount of action when
+      you enter softcrit (but not hardcrit).
