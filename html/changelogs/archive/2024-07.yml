@@ -1497,6 +1497,18 @@
   - balance: Upgraded cybernetic hearts give an extremely brief amount of action when
       you enter softcrit (but not hardcrit).
 2024-07-26:
+  00-Steven:
+  - bugfix: Fixes a half-port accidentally causing the Dwoop emote to be usable by
+      not just synths and silicons, but every single living entity except non-synth
+      humans. It is now fully ported to the new silicon emotes system, allowing it
+      to be used by everything that can use silicon emotes.
+  - bugfix: Robotic lizard voicebox allows silicon emotes parallel to the stock robotic
+      voicebox.
+  DaCoolBoss:
+  - rscadd: Adds the Haunted Trading Post space ruin.
+  - rscadd: Adds 10+ unique items for the Haunted Trading Post
+  - rscadd: Adds 5 dangerous mobs for the Haunted Trading Post
+  - rscadd: Adds 4 new types of hazardous traps for the Haunted Trading Post.
   FlufflesTheDog:
   - bugfix: prescription huds work
   - bugfix: venus human traps properly despawn when used
@@ -1537,6 +1549,8 @@
       mode
   Thedragmeme:
   - rscadd: donator sets for Thedragmeme and Snailomi
+  larentoun:
+  - config: Added an entry for TRAITOR_SCALING_MULTIPLIER, disabled by default
   rick hick/tommy for the amazing music tracks, GoldenAlpharex for the code:
   - sound: Added some new ambience tracks to SerenityStation's Mushroom Caves, including
       the absolute banger that is Mushroom Theme, all composed by rick hick/tommy!
