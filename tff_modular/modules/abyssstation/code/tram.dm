@@ -14,6 +14,11 @@
 #define ABYSS_TRAMSTATION_SOUTH 1
 #define ABYSS_TRAMSTATION_SOUTH_CENTRAL 2
 
+/obj/machinery/door/airlock/tram/abyss_statiom/multi_tile
+	icon = 'tff_modular/modules/abyssstation/icons/tram.dmi'
+	overlays_file = 'tff_modular/modules/abyssstation/icons/tram_overlays.dmi'
+	multi_tile = TRUE
+
 /obj/machinery/computer/tram_controls/abyss_station
 	icon = 'tff_modular/modules/abyssstation/icons/computer.dmi'
 
