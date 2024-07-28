@@ -1602,6 +1602,14 @@
   00-Steven:
   - bugfix: Clicking on a table in the lootpanel with an item in-hand tries to place
       it in the center again.
+  Axidyuwu:
+  - bugfix: now Justice invisibility turns off in non combat mode as it supposed to
+  CliffracerX:
+  - qol: You can now open crop-top jackets!
+  - rscadd: GAGS Officer's Caps, Naval Caps, and Labcoats.
+  DrDiasyl aka DrTuxedo:
+  - sound: Hearing and talking into the radio now produces a sound. Heads get a special
+      sound.
   Ghommie:
   - bugfix: Centcom technicians have been trained to recognize cargo-bought fish.
       You will no longer be able to trick the economy system by buying fish and sending
@@ -1609,15 +1617,42 @@
   GoldenAlpharex:
   - bugfix: Assistant jumpsuits/jumpskirts no longer override the undersuit loadout
       item in the character preview.
+  Helg2:
+  - rscadd: Emergency climbing hooks now spawn in emergency boxes on all of the multi-z
+      level stations.
+  JohnFulpWillard:
+  - bugfix: '[Mafia] The show_help button no longer shows you who the Obsessed''s
+      target is.'
   LT3:
   - balance: SMES throughput is now a multiplier based on capacitor tier
+  - bugfix: Players now receive a notification when trying to perform surgery steps
+      that involve chemicals
   MortoSasye:
   - image: Resprited the hairstyles for Jessica, Gently Brushed, Spicy and Curly.
   - bugfix: The Hearthkin's armor now inherits from the forged variety.
+  - rscadd: The hearthkin have decided to construct yet another new hearth, similar
+      in some aspects to the previous one.
+  - rscadd: Archery targets are now an available crafting object. Try to flex your
+      archery master with others, and accidentally shot your friend who stepped in
+      too close to watch.
+  Nerev4r:
+  - image: Replaces the Longer Bedhead sprite with a better one. Floorlength Bedhead
+      has been deprecated.
+  OrbisAnima:
+  - balance: Blast Cannons are no longer obtainable via the traitor uplink. They still
+      exist in the code.
+  - rscadd: Following their success with the frontier modsuits, Kahraman Industries
+      decided to expand their line of products to offer Civilian grade modsuits, a
+      lightweight modsuit that while not spaceproof, can be used as an entry level
+      tool to modsuits.
   Rhials:
   - bugfix: Clown Ops gear has been returned to being available only to clown ops.
       Whoops!
   - bugfix: Monkey wizards can now interact with grand ritual runes.
+  SmArtKar:
+  - bugfix: Mirage grenade dispensers and ionic jump jets now work
+  - bugfix: People with tooltips enabled no longer lag the server when they move their
+      mouse. Oops.
   StrangeWeirdKitten:
   - bugfix: Voidwalker should not run on planetary maps.
   Thedragmeme:
@@ -1626,6 +1661,14 @@
   - sound: the sneeze projectile no longer makes a sound when making contact.
   - sound: the default metal sound has been changed
   - sound: gas tanks now have sound
+  - bugfix: birdshot holodeck's lighting has been fixed.
+  - bugfix: lavaland no longer has roundstart atmos processing because of a passive
+      vent
+  - bugfix: Med sec telescreens are no longer the same item as the CMO telescreen.
+  - spellcheck: correcte name for the CMO telescreen mount
+  mc-oofert:
+  - bugfix: wawastation ordnance no longer has a light fixture on a window and looks
+      objectively slightly better
   rutek-code:
   - rscadd: Adds a below-hair variant to the antenna-less bug snout.
   yooriss:
