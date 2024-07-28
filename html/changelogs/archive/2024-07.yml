@@ -1598,3 +1598,36 @@
   - code_imp: If testing is enabled everyone is polled in ghost polls.
   mc-oofert:
   - bugfix: wawastation engineering water tanks are now highcap
+2024-07-28:
+  00-Steven:
+  - bugfix: Clicking on a table in the lootpanel with an item in-hand tries to place
+      it in the center again.
+  Ghommie:
+  - bugfix: Centcom technicians have been trained to recognize cargo-bought fish.
+      You will no longer be able to trick the economy system by buying fish and sending
+      it right back. Also nerfed fish selling price very slightly.
+  GoldenAlpharex:
+  - bugfix: Assistant jumpsuits/jumpskirts no longer override the undersuit loadout
+      item in the character preview.
+  LT3:
+  - balance: SMES throughput is now a multiplier based on capacitor tier
+  MortoSasye:
+  - image: Resprited the hairstyles for Jessica, Gently Brushed, Spicy and Curly.
+  - bugfix: The Hearthkin's armor now inherits from the forged variety.
+  Rhials:
+  - bugfix: Clown Ops gear has been returned to being available only to clown ops.
+      Whoops!
+  - bugfix: Monkey wizards can now interact with grand ritual runes.
+  StrangeWeirdKitten:
+  - bugfix: Voidwalker should not run on planetary maps.
+  Thedragmeme:
+  - bugfix: Fixes a duplicate item left by my donor PR and fixes a typo
+  grungussuss:
+  - sound: the sneeze projectile no longer makes a sound when making contact.
+  - sound: the default metal sound has been changed
+  - sound: gas tanks now have sound
+  rutek-code:
+  - rscadd: Adds a below-hair variant to the antenna-less bug snout.
+  yooriss:
+  - balance: The GMM's prices are now much narrower, making arbitrage harder and initial
+      purchases a little more expensive.
