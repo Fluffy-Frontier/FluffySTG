@@ -1674,3 +1674,13 @@
   yooriss:
   - balance: The GMM's prices are now much narrower, making arbitrage harder and initial
       purchases a little more expensive.
+2024-07-29:
+  FlufflesTheDog:
+  - bugfix: Backpack internals can be toggled from the strip menu
+  SmArtKar:
+  - qol: If you have auto fit viewport enabled, it will trigger upon entering or exiting
+      fullscreen
+  - bugfix: Recyclers no longer recycle contents of indestructible items
+  Time-Green:
+  - bugfix: Fixes void eater not refreshing
+  - bugfix: Fixes planetary gravity not killing voidwalkers and voideds
