@@ -1675,12 +1675,42 @@
   - balance: The GMM's prices are now much narrower, making arbitrage harder and initial
       purchases a little more expensive.
 2024-07-29:
+  DaCoolBoss:
+  - spellcheck: military javelin's name is now fully uncapitalised
   FlufflesTheDog:
   - bugfix: Backpack internals can be toggled from the strip menu
+  Melbert:
+  - qol: All randomly spawned monkeys (and lizardpeople) will spawn with tails. You
+      can still select to be tailless.
+  - code_imp: Cleaned up some code relating to species features (like tails, markings,
+      etc). Report any oddities
+  MortoSasye:
+  - bugfix: An oversight in the building of the hearthkin's hearth has been corrected,
+      to ensure privacy.
+  - rscadd: 'Three new ruins have been unearthed on the icemoon: an ancient temple
+      sacred to the natives, an old hearth ravaged by battle, and an especially magical
+      hot springs spot.'
+  OrbisAnima:
+  - rscadd: Cargo and Civilian Modsuits Control units were miniaturized to belt versions,
+      while they dont hold as much as their old counterparts, and some functionality
+      like the use of jetpacks was lost, Users can now use their backpack of choice
+      along these practical modsuits!
+  - rscadd: 'The following modparts were adapted to both regular and miniaturized
+      modsuits: Hydraulic Clamps, Hydraulic Arms, Hydraulic Magnet and the Status
+      Monitor.'
   SmArtKar:
   - qol: If you have auto fit viewport enabled, it will trigger upon entering or exiting
       fullscreen
   - bugfix: Recyclers no longer recycle contents of indestructible items
+  - bugfix: VIM no longer requires hands to enter
+  - rscadd: Mining headsets now allow you to make callouts via pointing. You can use
+      them to communicate with fellow miners or order your army of bots and raptors!
+  - rscadd: Mining headsets keep your voice loud and clear in low-pressure environments
+      (not vacuum!)
+  StrangeWeirdKitten:
+  - rscadd: Cosmic Skull glows purple.
   Time-Green:
   - bugfix: Fixes void eater not refreshing
   - bugfix: Fixes planetary gravity not killing voidwalkers and voideds
+  unit0016:
+  - bugfix: Icedyne's fire alarms are now rotated the right way around.
