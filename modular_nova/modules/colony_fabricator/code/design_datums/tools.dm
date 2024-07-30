@@ -31,7 +31,7 @@
 	)
 
 // Crowbar that is completely normal except it can force doors
-// FF balance
+// FLUFFY FRONTIER REMOVAL BEGIN - No public door openers
 /*
 /datum/design/colony_door_crowbar
 	name = "Prybar"
@@ -47,6 +47,7 @@
 		RND_CATEGORY_TOOLS + RND_SUBCATEGORY_TOOLS_ENGINEERING_ADVANCED,
 	)
 */
+// FLUFFY FRONTIER REMOVAL END
 
 // Welder that takes no fuel or power to run but is quite slow, at least it sounds cool as hell
 

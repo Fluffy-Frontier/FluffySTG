@@ -11,12 +11,13 @@
 /datum/armament_entry/company_import/akh_frontier/basic/omni_drill
 	item_type = /obj/item/screwdriver/omni_drill
 
-//FF balance
+// FLUFFY FRONTIER REMOVAL BEGIN - No public door openers
 /*
 /datum/armament_entry/company_import/akh_frontier/basic/prybar
 	item_type = /obj/item/crowbar/large/doorforcer
 	restricted = TRUE
 */
+// FLUFFY FRONTIER REMOVAL END
 
 /datum/armament_entry/company_import/akh_frontier/basic/arc_welder
 	item_type = /obj/item/weldingtool/electric/arc_welder
