@@ -1717,6 +1717,11 @@
 2024-07-30:
   13spacemen:
   - balance: TTV bombs can be implanted into people's chest once again
+  AyIong:
+  - rscadd: Stat Panel now scales like a chat, depends on the font size. Defaults
+      from the chat font size, but you can separate it.
+  - refactor: Refactored Stat Panel styles and Byond skin theme applying. Stat Panel
+      now looks more like a TGUI
   Bisar:
   - bugfix: All mining mobs now properly listen to the signals sent by attackers and
       will respond appropriately.
@@ -1764,5 +1769,10 @@
   - sound: leather, skins and cardboard have their own sound now
   grungussuss and Kayozz:
   - sound: more maintenance ambience has been added
+  rroqc:
+  - bugfix: plants no longer select reagent genes they already have while cross pollinating
+  - code_imp: 'improves reagent cross pollination code
+
+      :cl:'
   vinylspiders:
   - rscadd: Colonist modsuit skin can now be selected for the Entombed quirk
