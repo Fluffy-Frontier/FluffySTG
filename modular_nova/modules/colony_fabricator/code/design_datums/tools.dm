@@ -4,10 +4,7 @@
 	description = "Contains all of the colony fabricator's tool designs."
 	design_ids = list(
 		"colony_power_drive",
-		// FLUFFY FRONTIER REMOVAL BEGIN - No public door openers
-		/*
-		"colony_prybar",
-		*/
+		// "colony_prybar", // FLUFFY FRONTIER REMOVAL
 		"colony_arc_welder",
 		"colony_compact_drill",
 	)
