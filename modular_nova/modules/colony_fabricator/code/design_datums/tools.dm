@@ -31,7 +31,8 @@
 	)
 
 // Crowbar that is completely normal except it can force doors
-
+// FF balance
+/*
 /datum/design/colony_door_crowbar
 	name = "Prybar"
 	id = "colony_prybar"
@@ -45,6 +46,7 @@
 		RND_CATEGORY_INITIAL,
 		RND_CATEGORY_TOOLS + RND_SUBCATEGORY_TOOLS_ENGINEERING_ADVANCED,
 	)
+*/
 
 // Welder that takes no fuel or power to run but is quite slow, at least it sounds cool as hell
 
