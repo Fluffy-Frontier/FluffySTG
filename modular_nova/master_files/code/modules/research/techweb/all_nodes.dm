@@ -11,7 +11,7 @@
 		"ci-xray",
 		"ci-thermals-moth",
 		"ci-xray-moth",
-		"cybernetic_heart_anomalock", //FLUFFY FRONTIER Combar Heart balance
+		"cybernetic_heart_anomalock", //FLUFFY FRONTIER Combat Heart balance
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_2_POINTS)
 
