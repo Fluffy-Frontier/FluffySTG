@@ -1777,8 +1777,36 @@
   vinylspiders:
   - rscadd: Colonist modsuit skin can now be selected for the Entombed quirk
 2024-07-31:
+  Hardly:
+  - bugfix: Removes unusable sustenance machine in NT Rep's maintenance in Icebox
+      Station
+  - bugfix: Adds missing air alarms in Blueshift's Engineering Room and Transit Tube
+  Jacquerel:
+  - image: Big balls are now much rounder, to more easily slide down into a cannon.
   OrbisAnima:
   - qol: Integrated to the Loadout system the Yukata, Kimonos and accesories that
       were introduced before in clothesmate.
+  - qol: Kahraman Heavy Industries revised their adverts for their Modsuits, to make
+      it more clear what they do and what they are used for.
   SmArtKar:
   - image: All implants have received a fresh coat of paint
+  necromanceranne:
+  - rscadd: Robotic variants of many of the standard and advanced humanoid surgeries.
+      You cannot perform self surgery with these surgeries.
+  - balance: It is easier to do robotic surgeries with normal surgery tools.
+  - qol: It is now possible to detect EMP organ failure cascades via health scanners.
+  - qol: EMP organ failure cascades can be reversed by doing organ repair surgeries
+      targeting the failing organ.
+  - balance: Synth EMP effects have been refactored to be direct and without stacking
+      multiples
+  - balance: Synth EMP Hardstun has been replaced with a less instant-win condition
+  - bugfix: You can no longer build borgs from synth corpses
+  - rscadd: Synths and IPC's rejoice! You can now print bases of your entire body!
+  - rscadd: Synthetic Organ surgeries are now present! But only when they have damage
+  rroqc:
+  - bugfix: 'fix a bug where botany reagents would dissapear from existing plants
+
+      :cl:'
+  thegrb93:
+  - bugfix: Fixes getting permanently hot or cold if wearing thermal insulation as
+      a lizard
