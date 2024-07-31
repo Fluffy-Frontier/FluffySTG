@@ -3,7 +3,7 @@
 
 /datum/techweb_node/adv_vision
 	id = TECHWEB_NODE_ADVANCED_VISION
-	display_name = "Combat Cybernetic Eyes"
+	display_name = "Combat Cybernetic Organs" //FLUFFY FRONTIER Combar Heart balance; old name: "Combat Cybernetic Eyes"
 	description = "Military grade combat implants to improve vision."
 	prereq_ids = list(TECHWEB_NODE_COMBAT_IMPLANTS, TECHWEB_NODE_ALIEN_SURGERY)
 	design_ids = list(
@@ -11,6 +11,7 @@
 		"ci-xray",
 		"ci-thermals-moth",
 		"ci-xray-moth",
+		"cybernetic_heart_anomalock", //FLUFFY FRONTIER Combar Heart balance
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_2_POINTS)
 
