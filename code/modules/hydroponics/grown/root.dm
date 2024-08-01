@@ -85,7 +85,7 @@
 
 // Cahn'root
 /obj/item/seeds/carrot/cahnroot
-	name = "pack of cahn'root seeds"
+	name = "cahn'root seed pack"
 	desc = "These seeds grow into cahn'roots."
 	icon_state = "seed-cahn'root"
 	species = "cahn'root"
