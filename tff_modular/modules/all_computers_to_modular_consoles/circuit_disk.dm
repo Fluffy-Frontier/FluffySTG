@@ -18,11 +18,9 @@
 
 /obj/item/computer_console_disk/Destroy(force)
     if (program && isdatum(program))
-        qdel(program)
-        program = null
+        QDEL_NULL(program)
     if (installed_clone)
-        qdel(installed_clone)
-        installed_clone = null
+        QDEL_NULL(installed_clone)
 
     . = ..()
 

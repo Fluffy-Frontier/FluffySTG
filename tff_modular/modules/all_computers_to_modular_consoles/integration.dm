@@ -1,5 +1,6 @@
 GLOBAL_LIST_INIT(consoles_replacement_map, list(
     /obj/machinery/computer/rdservercontrol = /obj/machinery/modular_computer/preset/battery_less/console/rdservercontrol,
+    /obj/item/circuitboard/computer/rdservercontrol = /obj/item/computer_console_disk/command/rdservercontrol,
 ))
 
 /obj/machinery/computer/Initialize(mapload, obj/item/circuitboard/C)
@@ -19,3 +20,8 @@ GLOBAL_LIST_INIT(consoles_replacement_map, list(
 
     if (console.cpu)
         console.cpu.desc = desc
+
+/datum/design/board/New()
+    . = ..()
+    if (build_path in GLOB.consoles_replacement_map)
+        build_path = GLOB.consoles_replacement_map[build_path]

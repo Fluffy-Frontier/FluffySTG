@@ -45,12 +45,12 @@
     computer.icon_state_menu = initial_icon_state_menu
 
     // Curse you staionary console!
-    if (computer.physical && istype(computer.physical, /obj/machinery/modular_computer))
+    if (!QDELETED(computer) && computer.physical && istype(computer.physical, /obj/machinery/modular_computer))
         var/obj/machinery/modular_computer/console = computer.physical
         console.screen_icon_state_menu = modular_icon_state_menu
         console.screen_icon_screensaver = modular_icon_state_screensaver
 
-    computer.physical?.visible_message(span_notice("\The [computer] flashes its screen few times as it reboots from safe mode."))
+    computer?.physical?.visible_message(span_notice("\The [computer] flashes its screen few times as it reboots from safe mode."))
     playsound(computer, 'sound/machines/computer/computer_start.ogg', 10)
     update_computer_icon()
     UnregisterSignal(computer, COMSIG_MODULAR_COMPUTER_TURNED_ON)
