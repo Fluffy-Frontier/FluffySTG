@@ -1,0 +1,51 @@
+2024-08-01:
+  00-Steven:
+  - bugfix: You no longer render on top of tall enough objects that get vertically
+      offset when anchored to a table when standing on the tile directly to the north
+      of them. Examples are soda and booze dispensers.
+  - bugfix: Removing the vertical offset some objects get when anchored to a table
+      can be done by unanchoring it at any point, rather than only on a table.
+  Axidyuwu:
+  - bugfix: fixes a way of duplicating iron with wallmounted sparklers and light switches
+  Ghommie:
+  - config: Added a config for specific gateway delays so locations like the beach
+      and the museum don't have to take 30 minutes to become available like the rest.
+  Jackraxxus:
+  - bugfix: AI mech control beacons and malf AI dominate mech work again.
+  MTandi:
+  - bugfix: Portable atmos machine circuit boards list correct components
+  - bugfix: Portable atmos machine circuit boards accept unwrenched fittings
+  - bugfix: Portable atmos machines are movable on construction
+  Momo8289:
+  - bugfix: The charge indicators on power cells now work properly.
+  - code_imp: Removed some now redundant power cell appearance updates
+  Sadboysuss:
+  - bugfix: The clown planet domain is now completable
+  - bugfix: spray can face spraying will no longer work on light-sensitives with eyewear
+      and people wearing eye covering masks
+  SmArtKar:
+  - qol: You no longer goofily swap with others trying to move in the same direction
+      as you if you're not faster than them
+  - code_imp: Moved mobswap check logic into a separate proc and made it more readable
+  - balance: Discounts now pick 4-6 items each from a unique category
+  - balance: Items that cost below 4 TC cannot get discounted anymore
+  - balance: Elite syndicate MODs for traitors can no longer get discounted
+  - bugfix: Bank cards speak once more
+  - bugfix: Fixed NT Frontier discounts not applying
+  - admin: Subtype vendor no longer requries an ID
+  - bugfix: Removed a rogue wall grinder on icebox
+  - bugfix: Fixed advanced pods showing up as cultist pods
+  - balance: Mining MODsuits are now considered thick clothing and gained expanded
+      storage.
+  - image: Mining MODsuits got a slight glowup and hide belts now
+  - qol: You can now reorder items inside storages by dragging them
+  - bugfix: Silicons and simplemobs can also hear radio chatter now
+  - bugfix: Heart eater wizard perk no longer works activates on organs that haven't
+      been used before
+  Xackii:
+  - rscadd: RD can emag mech fabricator(like roboticist).
+  carlarctg:
+  - rscdel: Revert "Heretic spell invocations now use one dead language per path"
+  grungussuss:
+  - bugfix: the abandoned plasma research facility on icemoon no longer has an item
+      that shouldn't exist
