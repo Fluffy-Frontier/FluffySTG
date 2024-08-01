@@ -11,11 +11,15 @@
 |---------------------------|------------------------------------------------|
 | Git / GitHub cheatsheet   | [https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833](https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833) |
 | Guide to Modularization   | [./modular_nova/readme.md](./modular_nova/readme.md)            |
-| Website                   | [https://www.tgstation13.org](https://www.tgstation13.org)          |
 | Code                      | [https://github.com/NovaSector/NovaSector](https://github.com/NovaSector/NovaSector)    |
 | Wiki                      | [https://wiki.novasector13.com](https://wiki.novasector13.com)   |
+<<<<<<< HEAD
 | Codedocs                  | [https://GalacticStation.github.io/GalaxiaStation/](https://GalacticStation.github.io/GalaxiaStation/)       |
 | Fluffy Frontier Discord   | [https://discord.com/invite/5GvhwtY](https://discord.com/invite/5GvhwtY) |
+=======
+| Codedocs                  | [https://NovaSector.github.io/NovaSector/](https://NovaSector.github.io/NovaSector/)       |
+| Nova Sector's Discord     | [https://discord.gg/novasector](https://discord.gg/novasector) |
+>>>>>>> dd5cde1f284 (Update README.md with fixed links (#4141))
 | Coderbus Discord          | [https://discord.gg/Vh8TJp9](https://discord.gg/Vh8TJp9)               |
 
 This is Fluffy Frontier's downstream fork of /tg/station & Skyrat created in byond.
