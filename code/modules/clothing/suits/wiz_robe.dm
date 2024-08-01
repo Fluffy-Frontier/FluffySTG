@@ -49,6 +49,17 @@
 	resistance_flags = FLAMMABLE
 	dog_fashion = /datum/dog_fashion/head/blue_wizard
 
+/obj/item/clothing/head/wizard/chanterelle
+	name = "chanterelle hat"
+	desc = "An oversized chanterelle with hollow out space to fit a head in. Kinda looks like wizard's hat."
+	icon_state = "chanterelle"
+	inhand_icon_state = "chanterellehat"
+	armor_type = /datum/armor/none
+	resistance_flags = FLAMMABLE
+
+/obj/item/clothing/head/wizard/chanterelle/fr
+	resistance_flags = FIRE_PROOF
+
 /obj/item/clothing/head/wizard/marisa
 	name = "witch hat"
 	desc = "Strange-looking hat-wear. Makes you want to cast fireballs."
@@ -205,8 +216,6 @@
 	actions_types = list(/datum/action/item_action/stickmen)
 
 
-<<<<<<< HEAD
-=======
 /obj/item/clothing/suit/wizrobe/durathread
 	name = "durathread robe"
 	desc = "A rather dull durathread robe; not quite as protective as a proper piece of armour, but much stylish."
@@ -264,7 +273,6 @@
 	icon_state = "durathread-necro"
 
 
->>>>>>> 0b1323debcc ([MIRROR] Durathread robes can now hold botany gear [MDB IGNORE] (#4149))
 /obj/item/clothing/suit/wizrobe/paper/ui_action_click(mob/user, action)
 	stickmen()
 
