@@ -39,9 +39,11 @@
 	..()
 	update_garland()
 
-/obj/item/decoration/new_year/garland/AltClick(mob/living/user)
-	if(get_dist(src, user) <= 1)
-		change_color(user)
+/obj/item/decoration/new_year/garland/click_alt(mob/user)
+	if(get_dist(src, user) > 1)
+		return CLICK_ACTION_BLOCKING
+	change_color(user)
+	return CLICK_ACTION_SUCCESS
 
 /obj/item/decoration/new_year/garland/attack_self(mob/user)
 	. = ..()

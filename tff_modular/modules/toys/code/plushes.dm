@@ -76,10 +76,3 @@
 	attack_verb_simple = list("attack", "bite", "gnash at", "hug")
 	squeak_override = list('sound/weapons/bite.ogg' = 1,'modular_nova/modules/emotes/sound/voice/feline_purr.ogg' = 1)
 
-/obj/item/toy/plush/tff/maru
-	name = "Maru plushie"
-	desc = "An adorable stuffed toy, resembling a shark, wearing a formal maid suit. Beware of runes on the floor!"
-	icon_state = "plush_ivolga"
-	attack_verb_continuous = list("attacks", "bites", "gnashes at", "casts at")
-	attack_verb_simple = list("attack", "bite", "gnash at", "cast at")
-	squeak_override = list('sound/weapons/bite.ogg' = 1,'tff_modular/modules/toys/sounds/castsummon.ogg' = 1)

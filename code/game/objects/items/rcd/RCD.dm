@@ -203,6 +203,11 @@
  * * [mob][user]- the user building this structure
  */
 /obj/item/construction/rcd/proc/rcd_create(atom/target, mob/user)
+	//straight up cant touch this
+	if(mode == RCD_DECONSTRUCT && (target.resistance_flags & INDESTRUCTIBLE))
+		balloon_alert(user, "too durable!")
+		return
+
 	//does this atom allow for rcd actions?
 	var/list/rcd_results = target.rcd_vals(user, src)
 	if(!rcd_results)
@@ -249,7 +254,7 @@
 	if(ranged)
 		var/atom/beam_source = owner ? owner : user
 		beam = beam_source.Beam(target, icon_state = "rped_upgrade", time = delay)
-	if(delay && !do_after(user, delay, target = target)) // no need for do_after with no delay
+	if(!build_delay(user, delay, target = target)) // no need for do_after with no delay
 		qdel(rcd_effect)
 		if(!isnull(beam))
 			qdel(beam)
@@ -374,6 +379,7 @@
 			construction_mode = mode
 			rcd_design_path = design["[RCD_DESIGN_PATH]"]
 			design_title = initial(rcd_design_path.name)
+			blueprint_changed = TRUE
 
 		else
 			airlock_electronics.do_action(action, params)
@@ -423,7 +429,7 @@
 	desc = "A device used to rapidly build walls and floors."
 	banned_upgrades = RCD_UPGRADE_SILO_LINK
 	/// enery usage
-	var/energyfactor = 72 KILO JOULES
+	var/energyfactor = 0.072 * STANDARD_CELL_CHARGE
 
 /obj/item/construction/rcd/borg/get_matter(mob/user)
 	if(!iscyborg(user))
@@ -465,7 +471,7 @@
 	desc = "A reverse-engineered RCD with black market upgrades that allow this device to deconstruct reinforced walls. Property of Donk Co."
 	icon_state = "ircd"
 	inhand_icon_state = "ircd"
-	energyfactor = 66 KILO JOULES
+	energyfactor = 0.066 * STANDARD_CELL_CHARGE
 	canRturf = TRUE
 
 /obj/item/construction/rcd/loaded
@@ -501,6 +507,7 @@
 	max_matter = INFINITY
 	matter = INFINITY
 	upgrade = RCD_ALL_UPGRADES & ~RCD_UPGRADE_SILO_LINK
+	delay_mod = 0.1
 
 // Ranged RCD
 /obj/item/construction/rcd/arcd
@@ -517,7 +524,7 @@
 	upgrade = RCD_ALL_UPGRADES & ~RCD_UPGRADE_SILO_LINK
 
 ///How much charge is used up for each matter unit.
-#define MASS_TO_ENERGY (16 KILO JOULES)
+#define MASS_TO_ENERGY (0.016 * STANDARD_CELL_CHARGE)
 
 /obj/item/construction/rcd/exosuit
 	name = "mounted RCD"

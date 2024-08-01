@@ -54,11 +54,8 @@
 	color_src = USE_ONE_COLOR
 
 /datum/sprite_accessory/tails/monkey/default
-	name = "Monkey"
-	icon_state = "monkey"
-	icon = 'icons/mob/human/species/monkey/monkey_tail.dmi'
+	icon_state = "monkey_default"
 	recommended_species = list(SPECIES_HUMAN, SPECIES_SYNTH, SPECIES_FELINE, SPECIES_MAMMAL, SPECIES_MONKEY, SPECIES_GHOUL)
-	color_src = FALSE
 	organ_type = /obj/item/organ/external/tail/monkey
 
 /datum/sprite_accessory/tails/mammal
@@ -78,7 +75,7 @@
 	recommended_species = list(SPECIES_MAMMAL, SPECIES_HUMAN, SPECIES_SYNTH, SPECIES_TAJARAN, SPECIES_HUMANOID, SPECIES_GHOUL)
 
 /datum/sprite_accessory/tails/mammal/teshari
-	recommended_species = list(SPECIES_TESHARI, SPECIES_TESHARI_ALT) //FLUFFY FRONTIER EDIT - TESHARI_REBORN
+	recommended_species = list(SPECIES_TESHARI)
 
 /datum/sprite_accessory/tails/mammal/wagging/vulpkanin
 	recommended_species = list(SPECIES_MAMMAL, SPECIES_HUMAN, SPECIES_SYNTH, SPECIES_VULP, SPECIES_HUMANOID, SPECIES_GHOUL)

@@ -162,7 +162,7 @@
 	name = "mutadone pill"
 	desc = "Used to treat genetic damage."
 	icon_state = "pill20"
-	list_reagents = list(/datum/reagent/medicine/mutadone = 50)
+	list_reagents = list(/datum/reagent/medicine/mutadone = 5)
 	rename_with_volume = TRUE
 
 /obj/item/reagent_containers/pill/salicylic
@@ -313,6 +313,12 @@
 	icon_state = "pill8"
 	list_reagents = list(/datum/reagent/gravitum = 5)
 	rename_with_volume = TRUE
+
+/obj/item/reagent_containers/pill/ondansetron
+	name = "ondansetron pill"
+	desc = "Alleviates nausea. May cause drowsiness."
+	icon_state = "pill11"
+	list_reagents = list(/datum/reagent/medicine/ondansetron = 10)
 
 // Pill styles for chem master
 

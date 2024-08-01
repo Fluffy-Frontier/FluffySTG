@@ -141,11 +141,9 @@ GLOBAL_LIST_INIT(wire_node_generating_types, typecacheof(list(/obj/structure/gri
 
 	return ..() // then go ahead and delete the cable
 
-/obj/structure/cable/deconstruct(disassembled = TRUE)
-	if(!(obj_flags & NO_DECONSTRUCTION))
-		var/obj/item/stack/cable_coil/cable = new(drop_location(), 1)
-		cable.set_cable_color(cable_color)
-	qdel(src)
+/obj/structure/cable/atom_deconstruct(disassembled = TRUE)
+	var/obj/item/stack/cable_coil/cable = new(drop_location(), 1)
+	cable.set_cable_color(cable_color)
 
 ///////////////////////////////////
 // General procedures
@@ -507,7 +505,7 @@ GLOBAL_LIST_INIT(wire_node_generating_types, typecacheof(list(/obj/structure/gri
 	if(!user)
 		return
 
-	var/image/restraints_icon = image(icon = 'icons/obj/restraints.dmi', icon_state = "cuff")
+	var/image/restraints_icon = image(icon = 'icons/obj/weapons/restraints.dmi', icon_state = "cuff")
 	restraints_icon.maptext = MAPTEXT("<span [amount >= CABLE_RESTRAINTS_COST ? "" : "style='color: red'"]>[CABLE_RESTRAINTS_COST]</span>")
 	restraints_icon.color = color
 
@@ -765,9 +763,10 @@ GLOBAL_LIST(hub_radial_layer_list)
 			C.deconstruct() // remove adversary cable
 	auto_propagate_cut_cable(src) // update the powernets
 
-/obj/structure/cable/multilayer/CtrlClick(mob/living/user)
+/obj/structure/cable/multilayer/click_ctrl(mob/user)
 	to_chat(user, span_warning("You push the reset button."))
 	addtimer(CALLBACK(src, PROC_REF(Reload)), 10, TIMER_UNIQUE) //spam protect
+	return CLICK_ACTION_SUCCESS
 
 // This is a mapping aid. In order for this to be placed on a map and function, all three layers need to have their nodes active
 /obj/structure/cable/multilayer/connected

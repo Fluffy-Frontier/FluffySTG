@@ -3,12 +3,12 @@ import {
   CheckboxInput,
   FeatureChoiced,
   FeatureChoicedServerData,
-  FeatureDropdownInput,
   FeatureNumberInput,
   FeatureNumeric,
   FeatureToggle,
   FeatureValueProps,
 } from '../../base';
+import { FeatureDropdownInput } from '../../dropdowns';
 
 const FeatureBlooperDropdownInput = (
   props: FeatureValueProps<string, string, FeatureChoicedServerData>,

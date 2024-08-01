@@ -118,6 +118,11 @@ GLOBAL_LIST_INIT(loadout_miscunders, generate_loadout_items(/datum/loadout_item/
 	name = "Grey Officer's Naval Jumpsuit (Trousers)"
 	item_path = /obj/item/clothing/under/rank/captain/nova/imperial/generic/pants
 
+/datum/loadout_item/under/jumpsuit/security_dress
+	name = "Security Battle Dress"
+	item_path = /obj/item/clothing/under/rank/security/peacekeeper/dress
+	restricted_roles = list(JOB_SECURITY_OFFICER, JOB_WARDEN, JOB_HEAD_OF_SECURITY)
+
 /datum/loadout_item/under/jumpsuit/security_trousers
 	name = "Security Trousers"
 	item_path = /obj/item/clothing/under/rank/security/peacekeeper/trousers
@@ -128,6 +133,26 @@ GLOBAL_LIST_INIT(loadout_miscunders, generate_loadout_items(/datum/loadout_item/
 	item_path = /obj/item/clothing/under/rank/security/peacekeeper/trousers/shorts
 	restricted_roles = list(JOB_SECURITY_OFFICER, JOB_WARDEN, JOB_HEAD_OF_SECURITY)
 
+/datum/loadout_item/under/jumpsuit/security_jumpskirt
+	name = "Security Jumpskirt"
+	item_path = /obj/item/clothing/under/rank/security/officer/skirt
+	restricted_roles = list(JOB_SECURITY_OFFICER, JOB_WARDEN, JOB_HEAD_OF_SECURITY)
+
+/datum/loadout_item/under/jumpsuit/security_plain_skirt
+	name = "Security Plain Skirt"
+	item_path = /obj/item/clothing/under/rank/security/peacekeeper/plain_skirt
+	restricted_roles = list(JOB_SECURITY_OFFICER, JOB_WARDEN, JOB_HEAD_OF_SECURITY)
+
+/datum/loadout_item/under/jumpsuit/security_miniskirt
+	name = "Security Miniskirt"
+	item_path = /obj/item/clothing/under/rank/security/peacekeeper/miniskirt
+	restricted_roles = list(JOB_SECURITY_OFFICER, JOB_WARDEN, JOB_HEAD_OF_SECURITY)
+
+/datum/loadout_item/under/jumpsuit/security_jumpsuit
+	name = "Security Jumpsuit"
+	item_path = /obj/item/clothing/under/rank/security/peacekeeper/jumpsuit
+	restricted_roles = list(JOB_SECURITY_OFFICER, JOB_WARDEN, JOB_HEAD_OF_SECURITY)
+
 /datum/loadout_item/under/jumpsuit/security_peacekeeper
 	name = "Security Peacekeeper Uniform"
 	item_path = /obj/item/clothing/under/rank/security/peacekeeper
@@ -136,7 +161,10 @@ GLOBAL_LIST_INIT(loadout_miscunders, generate_loadout_items(/datum/loadout_item/
 /datum/loadout_item/under/jumpsuit/imperial_police_uniform
 	name = "Imperial Police Uniform"
 	item_path = /obj/item/clothing/under/colonial/nri_police
-	restricted_roles = list(JOB_SECURITY_OFFICER, JOB_DETECTIVE)
+
+/datum/loadout_item/under/jumpsuit/cin_surplus_uniform
+	name = "CIN Combat Uniform"
+	item_path = /obj/item/clothing/under/syndicate/rus_army/cin_surplus
 
 /datum/loadout_item/under/jumpsuit/disco
 	name = "Superstar Cop Uniform"
@@ -220,6 +248,41 @@ GLOBAL_LIST_INIT(loadout_miscunders, generate_loadout_items(/datum/loadout_item/
 	name = "Command Utility Uniform"
 	item_path = /obj/item/clothing/under/rank/captain/nova/utility
 	restricted_roles = list(JOB_CAPTAIN, JOB_HEAD_OF_PERSONNEL, JOB_BLUESHIELD, JOB_HEAD_OF_SECURITY, JOB_RESEARCH_DIRECTOR, JOB_QUARTERMASTER, JOB_CHIEF_MEDICAL_OFFICER, JOB_CHIEF_ENGINEER)
+
+/datum/loadout_item/under/jumpsuit/tarkon
+	name = "Tarkon Deck Jumpsuit"
+	item_path = /obj/item/clothing/under/tarkon
+	blacklisted_roles = list(JOB_CAPTAIN, JOB_HEAD_OF_PERSONNEL, JOB_BLUESHIELD, JOB_HEAD_OF_SECURITY, JOB_RESEARCH_DIRECTOR, JOB_QUARTERMASTER, JOB_CHIEF_MEDICAL_OFFICER, JOB_CHIEF_ENGINEER, JOB_SECURITY_OFFICER, JOB_DETECTIVE, JOB_WARDEN, JOB_BLUESHIELD, JOB_CORRECTIONS_OFFICER)
+
+/datum/loadout_item/under/jumpsuit/tarkon/sci
+	name = "Tarkon Science Jumpsuit"
+	item_path = /obj/item/clothing/under/tarkon/sci
+	blacklisted_roles = list(JOB_CAPTAIN, JOB_HEAD_OF_PERSONNEL, JOB_BLUESHIELD, JOB_HEAD_OF_SECURITY, JOB_RESEARCH_DIRECTOR, JOB_QUARTERMASTER, JOB_CHIEF_MEDICAL_OFFICER, JOB_CHIEF_ENGINEER, JOB_SECURITY_OFFICER, JOB_DETECTIVE, JOB_WARDEN, JOB_BLUESHIELD, JOB_CORRECTIONS_OFFICER)
+
+/datum/loadout_item/under/jumpsuit/tarkon/eng
+	name = "Tarkon Engineer Jumpsuit"
+	item_path = /obj/item/clothing/under/tarkon/eng
+	blacklisted_roles = list(JOB_CAPTAIN, JOB_HEAD_OF_PERSONNEL, JOB_BLUESHIELD, JOB_HEAD_OF_SECURITY, JOB_RESEARCH_DIRECTOR, JOB_QUARTERMASTER, JOB_CHIEF_MEDICAL_OFFICER, JOB_CHIEF_ENGINEER, JOB_SECURITY_OFFICER, JOB_DETECTIVE, JOB_WARDEN, JOB_BLUESHIELD, JOB_CORRECTIONS_OFFICER)
+
+/datum/loadout_item/under/jumpsuit/tarkon/med
+	name = "Tarkon Medical Jumpsuit"
+	item_path = /obj/item/clothing/under/tarkon/med
+	blacklisted_roles = list(JOB_CAPTAIN, JOB_HEAD_OF_PERSONNEL, JOB_BLUESHIELD, JOB_HEAD_OF_SECURITY, JOB_RESEARCH_DIRECTOR, JOB_QUARTERMASTER, JOB_CHIEF_MEDICAL_OFFICER, JOB_CHIEF_ENGINEER, JOB_SECURITY_OFFICER, JOB_DETECTIVE, JOB_WARDEN, JOB_BLUESHIELD, JOB_CORRECTIONS_OFFICER)
+
+/datum/loadout_item/under/jumpsuit/tarkon/cargo
+	name = "Tarkon Cargo Jumpsuit"
+	item_path = /obj/item/clothing/under/tarkon/cargo
+	blacklisted_roles = list(JOB_CAPTAIN, JOB_HEAD_OF_PERSONNEL, JOB_BLUESHIELD, JOB_HEAD_OF_SECURITY, JOB_RESEARCH_DIRECTOR, JOB_QUARTERMASTER, JOB_CHIEF_MEDICAL_OFFICER, JOB_CHIEF_ENGINEER, JOB_SECURITY_OFFICER, JOB_DETECTIVE, JOB_WARDEN, JOB_BLUESHIELD, JOB_CORRECTIONS_OFFICER)
+
+/datum/loadout_item/under/jumpsuit/tarkon/sec
+	name = "Tarkon Guard Jumpsuit"
+	item_path = /obj/item/clothing/under/tarkon/sec
+	blacklisted_roles = list(JOB_CAPTAIN, JOB_HEAD_OF_PERSONNEL, JOB_BLUESHIELD, JOB_HEAD_OF_SECURITY, JOB_RESEARCH_DIRECTOR, JOB_QUARTERMASTER, JOB_CHIEF_MEDICAL_OFFICER, JOB_CHIEF_ENGINEER, JOB_SECURITY_OFFICER, JOB_DETECTIVE, JOB_WARDEN, JOB_BLUESHIELD, JOB_CORRECTIONS_OFFICER)
+
+/datum/loadout_item/under/jumpsuit/tarkon/com
+	name = "Tarkon Command Jumpsuit"
+	item_path = /obj/item/clothing/under/tarkon/com
+	blacklisted_roles = list(JOB_CAPTAIN, JOB_HEAD_OF_PERSONNEL, JOB_BLUESHIELD, JOB_HEAD_OF_SECURITY, JOB_RESEARCH_DIRECTOR, JOB_QUARTERMASTER, JOB_CHIEF_MEDICAL_OFFICER, JOB_CHIEF_ENGINEER, JOB_SECURITY_OFFICER, JOB_DETECTIVE, JOB_WARDEN, JOB_BLUESHIELD, JOB_CORRECTIONS_OFFICER)
 
 /*
  *	MISC UNDERSUITS
@@ -561,6 +624,10 @@ GLOBAL_LIST_INIT(loadout_miscunders, generate_loadout_items(/datum/loadout_item/
 	name = "Suspicious Utility Overalls Skirtleneck"
 	item_path = /obj/item/clothing/under/syndicate/nova/overalls/unarmoured/skirt
 
+/datum/loadout_item/under/miscellaneous/expeditionary_corps
+	name = "Expeditionary Corps Uniform"
+	item_path = /obj/item/clothing/under/rank/expeditionary_corps
+
 /datum/loadout_item/under/miscellaneous/tactical_pants
 	name = "Tactical Pants"
 	item_path = /obj/item/clothing/under/pants/tactical
@@ -568,6 +635,26 @@ GLOBAL_LIST_INIT(loadout_miscunders, generate_loadout_items(/datum/loadout_item/
 /datum/loadout_item/under/miscellaneous/blastwave_uniform
 	name = "Blastwave Uniform"
 	item_path = /obj/item/clothing/under/blastwave
+
+/datum/loadout_item/under/miscellaneous/black_bunnysuit
+	name = "Black Bunny Suit"
+	item_path = /obj/item/clothing/under/costume/bunnylewd //contrary to the path, it's actually tame
+
+/datum/loadout_item/under/miscellaneous/white_bunnysuit
+	name = "White Bunny Suit"
+	item_path = /obj/item/clothing/under/costume/bunnylewd/white //also tame
+
+/datum/loadout_item/under/miscellaneous/latex_catsuit
+	name = "Latex Catsuit"
+	item_path = /obj/item/clothing/under/misc/latex_catsuit
+
+/datum/loadout_item/under/miscellaneous/geisha_suit
+	name = "Geisha Suit"
+	item_path = /obj/item/clothing/under/costume/geisha
+
+/datum/loadout_item/under/miscellaneous/jabroni
+	name = "Jabroni Outfit"
+	item_path = /obj/item/clothing/under/costume/jabroni
 
 //HALLOWEEN
 /datum/loadout_item/under/miscellaneous/pj_blood

@@ -42,16 +42,16 @@
 	wearer.update_mob_action_buttons()
 
 //Тоже переназначаем растёгивание/застёгивание шубы из-за привязки смены текстуры к initial(icon_state)
-/obj/item/clothing/suit/hooded/wintercoat/security/AltClick(mob/user)
-	. = ..()
+/obj/item/clothing/suit/hooded/wintercoat/security/click_alt(mob/user)
 	if(!current_skin)
-		return
+		return CLICK_ACTION_BLOCKING
 	icon_state = "[unique_reskin[current_skin][RESKIN_ICON_STATE]][zipped ? "_t" : ""]"
 	worn_icon_state = "[unique_reskin[current_skin][RESKIN_WORN_ICON_STATE]][zipped ? "_t" : ""]"
 
 	if(ishuman(loc))
 		var/mob/living/carbon/human/wearer = loc
 		wearer.update_worn_oversuit()
+	return CLICK_ACTION_SUCCESS
 
 /obj/item/clothing/suit/hooded/wintercoat/security
 	uses_advanced_reskins = TRUE

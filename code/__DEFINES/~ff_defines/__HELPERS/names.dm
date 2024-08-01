@@ -38,16 +38,10 @@
 			if(1)//1 and 2 can only be selected once each to prevent more than two specific names/places/etc.
 				switch(rand(1,2))//Mainly to add more options later.
 					if(1)
-						if(names.len && prob(70))
+						if(length(names) && prob(70))
 							. += pick(names)
 						else
-							if(prob(10))
-								. += pick(lizard_name(MALE),lizard_name(FEMALE))
-							else
-								var/new_name = pick(pick(GLOB.first_names_male,GLOB.first_names_female))
-								new_name += " "
-								new_name += pick(GLOB.last_names)
-								. += new_name
+							. += generate_random_name()
 					if(2)
 						var/datum/job/job = pick(SSjob.joinable_occupations)
 						if(job)
@@ -59,22 +53,22 @@
 			if(2)
 				switch(rand(1,3))//Food, drinks, or places. Only selectable once.
 					if(1)
-						. += lowertext(pick(drinks))
+						. += LOWER_TEXT(pick(drinks))
 					if(2)
-						. += lowertext(pick(foods))
+						. += LOWER_TEXT(pick(foods))
 					if(3)
-						. += lowertext(pick(locations))
+						. += LOWER_TEXT(pick(locations))
 				safety -= 2
 			if(3)
 				switch(rand(1,4))//Abstract nouns, objects, adjectives, threats. Can be selected more than once.
 					if(1)
-						. += lowertext(pick(nouns))
+						. += LOWER_TEXT(pick(nouns))
 					if(2)
-						. += lowertext(pick(objects))
+						. += LOWER_TEXT(pick(objects))
 					if(3)
-						. += lowertext(pick(adjectives))
+						. += LOWER_TEXT(pick(adjectives))
 					if(4)
-						. += lowertext(pick(threats))
+						. += LOWER_TEXT(pick(threats))
 		if(!return_list)
 			if(words == 1)
 				. += "."

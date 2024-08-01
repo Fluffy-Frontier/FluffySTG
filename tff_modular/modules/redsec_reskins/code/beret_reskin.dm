@@ -4,12 +4,11 @@
 	var/list/color_variants
 	var/recolored = FALSE
 
-/obj/item/clothing/head/AltClick(mob/user)
-	. = ..()
+/obj/item/clothing/head/click_alt(mob/user)
 	if(recolored) //буквально повторение функционала рескинов. Без повторных перекрашиваний.
-		return
+		return CLICK_ACTION_BLOCKING
 	if(!LAZYLEN(color_variants))
-		return
+		return CLICK_ACTION_BLOCKING
 
 	var/list/beret_recolors = list()
 	for(var/color in color_variants)
@@ -17,7 +16,7 @@
 		beret_recolors += list("[color]" = beret_preview)
 	var/pick = show_radial_menu(user, src, beret_recolors, custom_check = CALLBACK(src, PROC_REF(check_reskin_menu), user), radius = 38, require_near = TRUE)
 	if(!pick)
-		return
+		return CLICK_ACTION_BLOCKING
 	var/new_color = color_variants[pick]
 
 	set_greyscale(new_color)
@@ -26,6 +25,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/wearer = user
 		wearer.regenerate_icons()
+	return CLICK_ACTION_SUCCESS
 
 /obj/item/clothing/head/beret/sec/peacekeeper //и теперь, у нас есть возможность прописывать свои варианты. ура-а-а....
 	color_variants = list(
