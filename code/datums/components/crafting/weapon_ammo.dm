@@ -111,8 +111,6 @@
 	)
 	category = CAT_WEAPON_AMMO
 	crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_MUST_BE_LEARNED
-<<<<<<< HEAD
-=======
 
 /datum/crafting_recipe/arrow
 	name = "Arrow"
@@ -178,4 +176,3 @@
 	time = 5 SECONDS
 	category = CAT_WEAPON_AMMO
 	crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_MUST_BE_LEARNED
->>>>>>> 231a3b8077d ([MIRROR] Melon Armours, Mock up wizardry, and other cool botany stuff, Gnomes and Gardens style. [MDB IGNORE] (#3991))

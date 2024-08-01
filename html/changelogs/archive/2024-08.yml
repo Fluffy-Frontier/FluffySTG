@@ -5,24 +5,54 @@
       of them. Examples are soda and booze dispensers.
   - bugfix: Removing the vertical offset some objects get when anchored to a table
       can be done by unanchoring it at any point, rather than only on a table.
+  ArcaneMusic:
+  - qol: NODE drones summoned to tap a vent within ore vents now display a green status
+      light to show how much longer they need the vent defended for.
   Axidyuwu:
   - bugfix: fixes a way of duplicating iron with wallmounted sparklers and light switches
+  Bisar:
+  - qol: Machines check their parts during initialization now; this will usually apply
+      in cases such as a machine in a prefab having been varedited to be upgraded.
+  - code_imp: All machines check their parts during initialization.
+  Deadgebert:
+  - bugfix: peg limbs can now be amputated
+  FlufflesTheDog:
+  - bugfix: Existing gas flow meters have been recalled and replaced due to a faulty
+      screen connection, and once again convey pressure and temperature
   Ghommie:
   - config: Added a config for specific gateway delays so locations like the beach
       and the museum don't have to take 30 minutes to become available like the rest.
+  Helg2:
+  - bugfix: Emergency climbing hooks now shouldn't spawn on non multi-z stations.
   Jackraxxus:
   - bugfix: AI mech control beacons and malf AI dominate mech work again.
+  LT3:
+  - bugfix: Scanner gate now detects items thrown through it
+  - bugfix: Scanner gate does not alarm for guns on players with mindshield
+  - bugfix: Scanner gate does not alarm for guns on players with weapons ID card access
+  - sound: Reduced volume of scanner gate alarm
   MTandi:
   - bugfix: Portable atmos machine circuit boards list correct components
   - bugfix: Portable atmos machine circuit boards accept unwrenched fittings
   - bugfix: Portable atmos machines are movable on construction
+  - qol: smart fridge UI now groups items by type+name instead of just type
+  - qol: smart fridge UI now shows item names next to the images
+  - qol: smart fridge UI has a list view option (default for chem and viro versions)
+  - bugfix: fixed smart fridge stacking sounds when dispensing multiple items
+  Majkl-J:
+  - bugfix: Fixes the echolocation screen overlay not appearing with default arguments
+      due to using the wrong icon state
   Momo8289:
   - bugfix: The charge indicators on power cells now work properly.
   - code_imp: Removed some now redundant power cell appearance updates
+  Rhials:
+  - qol: Sentience potions can now be used without a provided summon reason.
   Sadboysuss:
   - bugfix: The clown planet domain is now completable
   - bugfix: spray can face spraying will no longer work on light-sensitives with eyewear
       and people wearing eye covering masks
+  - bugfix: birdshot engineering feedback has been applied
+  - bugfix: rod sounds will now vary in pitch
   SmArtKar:
   - qol: You no longer goofily swap with others trying to move in the same direction
       as you if you're not faster than them
@@ -44,8 +74,18 @@
       been used before
   Xackii:
   - rscadd: RD can emag mech fabricator(like roboticist).
+  - bugfix: Justice design no longer disappears
+  - bugfix: Mechs can attack other mechs in melee
   carlarctg:
   - rscdel: Revert "Heretic spell invocations now use one dead language per path"
   grungussuss:
   - bugfix: the abandoned plasma research facility on icemoon no longer has an item
       that shouldn't exist
+  mc-oofert:
+  - bugfix: wawastation pharmacy now has a hand labeller
+  necromanceranne:
+  - rscadd: Fletching starter kit! Make your own bow, shoot your friends in an unfortunate
+      workplace accident. Replace all those holy arrows you lost.
+  - bugfix: Bows now properly undraw once they have fired an arrow.
+  - code_imp: Bows now utilize overlays in order to display loaded arrows. Unique
+      overlays per arrow.
