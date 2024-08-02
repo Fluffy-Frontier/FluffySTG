@@ -136,6 +136,13 @@
   Watermelon914:
   - bugfix: Fixes SS13.wait not working when called multiple times before it finishes
       waiting.
+  - admin: Turfs in lua will no longer become invalid on deletion.
+  Y0SH1M4S73R:
+  - admin: Admin lua scripting uses a new library that (probably) will not break when
+      BYOND updates.
+  - admin: The layout of the lua editor has been tweaked slightly.
+  - admin: In the lua editor, you can now toggle whether to log runtimes the viewed
+      state is involved in.
   YesterdaysPromise:
   - rscadd: All the melons are now sliceable, and have inhands, instead of just watermelon
       and holymelon respectively.
