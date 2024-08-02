@@ -1,6 +1,30 @@
 GLOBAL_LIST_INIT(consoles_replacement_map, list(
+    // Unique disk_binded consoles
     /obj/machinery/computer/rdservercontrol = /obj/machinery/modular_computer/preset/battery_less/console/rdservercontrol,
+
+    // Disk_binded disks instead circuits in fabricators
     /obj/item/circuitboard/computer/rdservercontrol = /obj/item/computer_console_disk/command/rdservercontrol,
+
+    // Consoles with regular programs. We just boost behavior with our disks
+    /obj/machinery/computer/aifixer = /obj/machinery/modular_computer/preset/battery_less/console/aifixer,
+    /obj/machinery/computer/rdconsole = /obj/machinery/modular_computer/preset/battery_less/console/rdconsole,
+    /obj/machinery/computer/station_alert = /obj/machinery/modular_computer/preset/battery_less/console/station_alert,
+    /obj/machinery/computer/security = /obj/machinery/modular_computer/preset/battery_less/console/security,
+	/obj/machinery/computer/security/mining = /obj/machinery/modular_computer/preset/battery_less/console/security/mining,
+	/obj/machinery/computer/security/research = /obj/machinery/modular_computer/preset/battery_less/console/security/science,
+	/obj/machinery/computer/security/hos = /obj/machinery/modular_computer/preset/battery_less/console/security/hos,
+	/obj/machinery/computer/security/labor = /obj/machinery/modular_computer/preset/battery_less/console/security/labor,
+	/obj/machinery/computer/security/qm = /obj/machinery/modular_computer/preset/battery_less/console/security/qm,
+    /obj/machinery/computer/monitor = /obj/machinery/modular_computer/preset/battery_less/console/monitor,
+
+    // Disk_binded disks instead circuits in fabricators for regular programs
+	/obj/item/circuitboard/computer/aifixer = /obj/item/computer_console_disk/command/aifixer,
+	/obj/item/circuitboard/computer/rdconsole = /obj/item/computer_console_disk/science/rdconsole,
+	/obj/item/circuitboard/computer/stationalert = /obj/item/computer_console_disk/engineering/station_alert,
+	/obj/item/circuitboard/computer/security = /obj/item/computer_console_disk/security/secureye,
+	/obj/item/circuitboard/computer/mining = /obj/item/computer_console_disk/cargo/secureye,
+	/obj/item/circuitboard/computer/research = /obj/item/computer_console_disk/science/secureye,
+	/obj/item/circuitboard/computer/powermonitor = /obj/item/computer_console_disk/engineering/monitor,
 ))
 
 /obj/machinery/computer/Initialize(mapload, obj/item/circuitboard/C)

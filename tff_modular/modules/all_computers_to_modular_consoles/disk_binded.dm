@@ -11,18 +11,3 @@
     run_access = list()
     // Icon_state of the keyboard overlay for mapload. If any...
     var/icon_keyboard
-
-/datum/computer_file/program/disk_binded/on_install(datum/computer_file/source, obj/item/modular_computer/computer_installing)
-    ..()
-    RegisterSignal(computer, COMSIG_MODULAR_COMPUTER_TURNED_ON, PROC_REF(autorun))
-
-/datum/computer_file/program/disk_binded/Destroy()
-    . = ..()
-
-    if (!QDELETED(computer))
-        UnregisterSignal(computer, COMSIG_MODULAR_COMPUTER_TURNED_ON)
-
-/datum/computer_file/program/disk_binded/proc/autorun(datum/source, mob/user)
-    SIGNAL_HANDLER
-
-    computer.open_program(user, src, computer.enabled)

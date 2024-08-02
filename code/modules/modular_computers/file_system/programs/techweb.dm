@@ -32,6 +32,7 @@
 	if(!istype(attacking_item, /obj/item/multitool))
 		return FALSE
 	var/obj/item/multitool/attacking_tool = attacking_item
+	if(!(!QDELETED(attacking_tool.buffer) && istype(attacking_tool.buffer, /datum/techweb))) return FALSE	// FLUFFY FRONTIER ADD (do not eat ALL multitool interactions. Only techweb related!)
 	if(!QDELETED(attacking_tool.buffer) && istype(attacking_tool.buffer, /datum/techweb))
 		handle_rnd_control_remove()	// FLUFFY FRONTIER ADD
 		stored_research = attacking_tool.buffer

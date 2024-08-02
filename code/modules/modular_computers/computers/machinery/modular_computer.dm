@@ -129,9 +129,15 @@
 
 // Modular computers can have battery in them, we handle power in previous proc, so prevent this from messing it up for us.
 /obj/machinery/modular_computer/power_change()
+	var/initial_stat = machine_stat	// FLUFFY FRONTIER ADD
 	if(cpu?.use_energy()) // If it still has a power source, PC wouldn't go offline.
 		set_machine_stat(machine_stat & ~NOPOWER)
 		update_appearance()
+		// FLUFFY FRONTIER ADD START
+		if (initial_stat & NOPOWER)
+			SEND_SIGNAL(src, COMSIG_MACHINERY_POWER_RESTORED)
+			. = TRUE
+		// FLUFFY FRONTIER ADD END
 		return
 	return ..()
 
