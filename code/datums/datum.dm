@@ -111,12 +111,9 @@
 	tag = null
 	datum_flags &= ~DF_USE_TAG //In case something tries to REF us
 	weak_reference = null //ensure prompt GCing of weakref.
-<<<<<<< HEAD
-=======
 	if(!(datum_flags & DF_STATIC_OBJECT))
 		DREAMLUAU_CLEAR_REF_USERDATA(vars) // vars ceases existing when src does, so we need to clear any lua refs to it that exist.
 		DREAMLUAU_CLEAR_REF_USERDATA(src)
->>>>>>> 50e615ffc4f ([MIRROR] Turfs in lua will no longer null out their reference on deletion. [MDB IGNORE] (#4125))
 
 	if(_active_timers)
 		var/list/timers = _active_timers
