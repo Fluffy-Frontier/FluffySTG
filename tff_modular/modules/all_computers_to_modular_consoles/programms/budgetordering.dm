@@ -316,27 +316,27 @@
 	if(.)
 		post_signal(cargo_shuttle)
 
-/datum/computer_file/program/budgetorders/master/application_attackby(obj/item/attacking_item, mob/living/user)
-	if (istype(attacking_item, /obj/item/trade_chip))
-		var/obj/item/trade_chip/contract = attacking_item
+/datum/computer_file/program/budgetorders/master/application_item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if (istype(tool, /obj/item/trade_chip))
+		var/obj/item/trade_chip/contract = tool
 		contract.try_to_unlock_contract(user)
-		return TRUE
-	else if (istype(attacking_item, /obj/item/coupon))
-		var/obj/item/coupon/c = attacking_item
+		return ITEM_INTERACT_SUCCESS
+	else if (istype(tool, /obj/item/coupon))
+		var/obj/item/coupon/c = tool
 		if(c.discount_pct_off == COUPON_OMEN)
 			to_chat(user, span_warning("\The [computer] validates the coupon as authentic, but refuses to accept it..."))
 			computer.say("Coupon fulfillment already in progress...")
-			return TRUE
+			return ITEM_INTERACT_SUCCESS
 
 		c.inserted_console = src // Well coupon deletion may suck
 		LAZYADD(loaded_coupons, c)
 		computer.say("Coupon for [initial(c.discounted_pack.name)] applied!")
 		c.forceMove(computer)
-		return TRUE
-	else if (istype(attacking_item, /obj/item/paper/paperslip/ration_ticket))
-		var/obj/item/paper/paperslip/ration_ticket/ticket = attacking_item
+		return ITEM_INTERACT_SUCCESS
+	else if (istype(tool, /obj/item/paper/paperslip/ration_ticket))
+		var/obj/item/paper/paperslip/ration_ticket/ticket = tool
 		ticket.try_to_make_ration_order_list(computer.physical, user)
-		return TRUE
+		return ITEM_INTERACT_SUCCESS
 	else
 		return ..()
 

@@ -5,31 +5,31 @@
 /datum/computer_file/program/filemanager
     var/obj/item/computer_console_disk/console_disk
 
-/datum/computer_file/program/filemanager/application_attackby(obj/item/computer_console_disk/attacking_item, mob/living/user)
-    if (!istype(attacking_item))
-        return FALSE
+/datum/computer_file/program/filemanager/application_item_interaction(mob/living/user, obj/item/computer_console_disk/tool, list/modifiers)
+    if (!istype(tool))
+        return NONE
 
     if (console_disk)
         if (user)
             to_chat(user, span_warning("It's secure disk drive already occupied!"))
-        return FALSE
-    if (!attacking_item.program)
+        return ITEM_INTERACT_BLOCKING
+    if (!tool.program)
         computer.say("I/O ERROR: Unable to access encrypted data disk. Ejecting...")
-        return FALSE
+        return ITEM_INTERACT_BLOCKING
 
-    if (!attacking_item.program.is_supported_by_hardware(computer.hardware_flag))
-        var/supported_hardware = attacking_item.program.can_run_on_flags_to_text()
+    if (!tool.program.is_supported_by_hardware(computer.hardware_flag))
+        var/supported_hardware = tool.program.can_run_on_flags_to_text()
         if (supported_hardware == "Anything")
             // how you aren't supported, if you support anything?!
-            computer.say("HARDWARE ERROR: Software compatibility mismatch! Please report that info to NTTechSupport. PC hardware code: [computer.hardware_flag]. Filename: [attacking_item.program.filename].[lowertext(attacking_item.program.filetype)]")
-            return FALSE
+            computer.say("HARDWARE ERROR: Software compatibility mismatch! Please report that info to NTTechSupport. PC hardware code: [computer.hardware_flag]. Filename: [tool.program.filename].[lowertext(tool.program.filetype)]")
+            return ITEM_INTERACT_BLOCKING
         else
             computer.say("HARDWARE ERROR: Incompatible software. Ejecting... Supported devices: [supported_hardware]")
-            return FALSE
+            return ITEM_INTERACT_BLOCKING
 
-    if(user && !user.transferItemToLoc(attacking_item, computer))
-        return FALSE
-    console_disk = attacking_item
+    if(user && !user.transferItemToLoc(tool, computer))
+        return ITEM_INTERACT_BLOCKING
+    console_disk = tool
     playsound(computer, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
     console_disk.RegisterPC(computer)
 
@@ -46,7 +46,7 @@
         // Initial start
         computer.open_program(user, clone, computer.enabled)
 
-    return TRUE
+    return ITEM_INTERACT_SUCCESS
 
 /datum/computer_file/program/filemanager/try_eject(mob/living/user, forced = FALSE)
     if (forced || !user || HAS_TRAIT(user, TRAIT_KNOW_ENGI_WIRES))

@@ -62,17 +62,18 @@
     examine_text += span_notice("However you can reboot [computer]\s driver with <b>multitool</b> to remove that noisy message.\nOr just install another similar program.")
     return examine_text
 
-/datum/computer_file/program/bsod/application_attackby(obj/item/attacking_item, mob/living/user)
-    if(!istype(attacking_item, /obj/item/multitool))
-        return FALSE
+/datum/computer_file/program/bsod/application_item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+    if(!istype(tool, /obj/item/multitool))
+        return NONE
 
-    user.visible_message(span_notice("[user] tries to diagnose [computer]\s BSOD reason."), span_notice("You plug [attacking_item] pins into [computer] to force restart its drivers..."))
+    user.visible_message(span_notice("[user] tries to diagnose [computer]\s BSOD reason."), span_notice("You plug [tool] pins into [computer] to force restart its drivers..."))
     playsound(computer, 'sound/machines/terminal_processing.ogg', 50)
     if (do_after(user, 10 SECONDS, computer.physical ? computer.physical : get_turf(computer)))
         playsound(computer, 'sound/machines/high_tech_confirm.ogg', 50)
         computer.remove_file(src)
-        return TRUE
-    return FALSE
+        return ITEM_INTERACT_SUCCESS
+	// You can't do anything until fixing me
+    return ITEM_INTERACT_BLOCKING
 
 /datum/computer_file/program/bsod/ui_static_data(mob/user)
     var/list/data = list()

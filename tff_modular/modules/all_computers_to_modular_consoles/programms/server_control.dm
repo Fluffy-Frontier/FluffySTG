@@ -17,15 +17,15 @@
 	if(!CONFIG_GET(flag/no_default_techweb_link) && !stored_research)
 		CONNECT_TO_RND_SERVER_ROUNDSTART(stored_research, computer)
 
-/datum/computer_file/program/disk_binded/rdservercontrol/application_attackby(obj/item/attacking_item, mob/living/user)
-	if(!istype(attacking_item, /obj/item/multitool))
-		return FALSE
-	var/obj/item/multitool/attacking_tool = attacking_item
+/datum/computer_file/program/disk_binded/rdservercontrol/application_item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if(!istype(tool, /obj/item/multitool))
+		return NONE
+	var/obj/item/multitool/attacking_tool = tool
 	if(!QDELETED(attacking_tool.buffer) && istype(attacking_tool.buffer, /datum/techweb))
 		stored_research = attacking_tool.buffer
 		computer.say("[filedesc]: Established connection to [stored_research.organization] research network.")   //  Network id: [stored_research.id] not sure, id may be OOC info
-		return TRUE
-	return FALSE
+		return ITEM_INTERACT_SUCCESS
+	return NONE
 
 /datum/computer_file/program/disk_binded/rdservercontrol/ui_data(mob/user)
 	var/list/data = list()

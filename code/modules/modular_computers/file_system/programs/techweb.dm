@@ -30,11 +30,11 @@
 /datum/computer_file/program/science/application_item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	if(istype(tool, /obj/item/multitool))
 		return multitool_act(user, tool)
-	if (istype(tool, /obj/item/disk/tech_disk) || istype(attacking_item, /obj/item/disk/design_disk))	return handle_disks_insertion(attacking_item, user)	// FLUFFY FRONTTIER ADD
+	if (istype(tool, /obj/item/disk/tech_disk) || istype(tool, /obj/item/disk/design_disk))	return handle_disks_insertion(tool, user)	// FLUFFY FRONTTIER ADD
 
 /datum/computer_file/program/science/proc/multitool_act(mob/living/user, obj/item/multitool/used_multitool)
 	if(QDELETED(used_multitool.buffer) || !istype(used_multitool.buffer, /datum/techweb))
-		return ITEM_INTERACT_BLOCKING
+		return NONE	// FLUFFY FRONTIER EDIT WAS	return ITEM_INTERACT_BLOCKING
 	handle_rnd_control_remove()	// FLUFFY FRONTIER ADD
 	stored_research = used_multitool.buffer
 	computer.balloon_alert(user, "buffer linked!")
