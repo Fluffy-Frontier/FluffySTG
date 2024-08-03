@@ -6,7 +6,7 @@
     size = 0
     power_cell_use = NONE
     program_flags = PROGRAM_HEADER | PROGRAM_RUNS_WITHOUT_POWER
-    program_open_overlay = "bsod"
+    program_open_overlay = "command"
     program_icon = "bug-slash"
     tgui_id = "NtosConsolesRevamp"
 
@@ -28,13 +28,13 @@
     initial_icon_state_menu = computer_installing.icon_state_menu
 
     // Show BSOD in any condition
-    computer_installing.icon_state_menu = "bsod"
+    computer_installing.icon_state_menu = "command"
     if (computer_installing.physical && istype(computer_installing.physical, /obj/machinery/modular_computer))
         var/obj/machinery/modular_computer/console = computer_installing.physical
         modular_icon_state_menu = console.screen_icon_state_menu
         modular_icon_state_screensaver = console.screen_icon_screensaver
 
-        console.screen_icon_state_menu = "bsod"
+        console.screen_icon_state_menu = "command"
         console.screen_icon_screensaver = "bsod"
 
     if(!computer.open_program(null, src, computer_installing.enabled))

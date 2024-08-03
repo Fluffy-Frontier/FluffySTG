@@ -85,11 +85,8 @@
 		return FALSE
 	return cpu.emag_act(user)
 
-/obj/machinery/modular_computer/update_appearance(updates)
-	. = ..()
-	set_light(cpu?.enabled ? light_strength : 0)
-
 /obj/machinery/modular_computer/update_icon_state()
+	set_light(cpu?.enabled ? light_strength : 0)
 	if(!cpu || !cpu.enabled || (machine_stat & NOPOWER))
 		icon_state = icon_state_unpowered
 	else
@@ -103,6 +100,7 @@
 
 	if(cpu.enabled)
 		. += cpu.active_program?.program_open_overlay || screen_icon_state_menu
+		. += emissive_appearance(icon, cpu.active_program ? cpu.active_program.program_open_overlay : screen_icon_state_menu, src)	// FLUFFY FRONTIER ADD
 	else if(!(machine_stat & NOPOWER))
 		. += screen_icon_screensaver
 

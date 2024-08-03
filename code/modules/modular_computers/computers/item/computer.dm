@@ -450,6 +450,7 @@
 
 	if(enabled)
 		. += active_program ? mutable_appearance(init_icon, active_program.program_open_overlay) : mutable_appearance(init_icon, icon_state_menu)
+		. += active_program ? emissive_appearance(init_icon, active_program.program_open_overlay, physical) : emissive_appearance(init_icon, icon_state_menu, physical)	// FLUFFY FRONTIER ADD
 	if(atom_integrity <= integrity_failure * max_integrity)
 		. += mutable_appearance(init_icon, "bsod")
 		. += mutable_appearance(init_icon, "broken")

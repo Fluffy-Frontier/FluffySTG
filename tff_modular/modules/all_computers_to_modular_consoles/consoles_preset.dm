@@ -19,14 +19,14 @@
 	desc = "Nanotrasen Internal Requisition Network interface for supply purchasing using a department budget account."
 	console_disk = /obj/item/computer_console_disk/cargo/budgetorders
 
-/obj/item/computer_console_disk/command/aifixer
+/obj/item/computer_console_disk/science/aifixer
 	icon_keyboard = "tech_key"
 	program = /datum/computer_file/program/ai_restorer
 
 /obj/machinery/modular_computer/preset/battery_less/console/aifixer
 	name = "\improper AI system integrity restorer"
 	desc = "Used with intelliCards containing nonfunctional AIs to restore them to working order."
-	console_disk = /obj/item/computer_console_disk/command/aifixer
+	console_disk = /obj/item/computer_console_disk/science/aifixer
 
 /obj/item/computer_console_disk/engineering/station_alert
 	icon_keyboard = "atmos_key"
@@ -66,6 +66,7 @@
 	filename = "outposteye"
 	filedesc = "OutpostEye"
 	extended_desc = "This program allows access to outpost camera network."
+	// No "mining" overlay?
 	program_open_overlay = "forensic"
 	network = list(CAMERANET_NETWORK_MINE, CAMERANET_NETWORK_AUXBASE)
 
@@ -140,6 +141,7 @@
 /obj/item/computer_console_disk/engineering/monitor
 	icon_keyboard = "power_key"
 	program = /datum/computer_file/program/power_monitor
+	light_color = COLOR_BRIGHT_ORANGE
 
 /obj/machinery/modular_computer/preset/battery_less/console/monitor
 	name = "power monitoring console"
