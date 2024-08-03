@@ -1,3 +1,6 @@
+/datum/loadout_item/toys/special
+	abstract_type = /datum/loadout_item/toys/special
+
 /datum/loadout_item/toys/special/braiden
 	name = "Braiden Plushie"
 	item_path = /obj/item/toy/plush/tff/braiden

@@ -11,7 +11,7 @@
 	integrity_failure = 0.1
 	custom_materials = list(/datum/material/iron =SHEET_MATERIAL_AMOUNT)
 	layer = OBJ_LAYER
-	interaction_flags_mouse_drop = NEED_HANDS | NEED_DEXTERITY
+	interaction_flags_mouse_drop = ALLOW_RESTING
 
 	var/buildstacktype = /obj/item/stack/sheet/iron
 	var/buildstackamount = 1
@@ -269,15 +269,16 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/stool, 0)
 	return
 
 /obj/structure/chair/mouse_drop_dragged(atom/over_object, mob/user, src_location, over_location, params)
-	if(over_object == user)
-		if(!item_chair || has_buckled_mobs())
-			return
-		user.visible_message(span_notice("[user] grabs \the [src.name]."), span_notice("You grab \the [src.name]."))
-		var/obj/item/C = new item_chair(loc)
-		C.set_custom_materials(custom_materials)
-		TransferComponents(C)
-		user.put_in_hands(C)
-		qdel(src)
+	if(!isliving(user) || over_object != user)
+		return
+	if(!item_chair || has_buckled_mobs())
+		return
+	user.visible_message(span_notice("[user] grabs \the [src.name]."), span_notice("You grab \the [src.name]."))
+	var/obj/item/C = new item_chair(loc)
+	C.set_custom_materials(custom_materials)
+	TransferComponents(C)
+	user.put_in_hands(C)
+	qdel(src)
 
 /obj/structure/chair/user_buckle_mob(mob/living/M, mob/user, check_loc = TRUE)
 	return ..()
@@ -287,6 +288,13 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/stool, 0)
 	desc = "It has some unsavory stains on it..."
 	icon_state = "bar"
 	item_chair = /obj/item/chair/stool/bar
+	can_buckle = TRUE
+
+/obj/structure/chair/stool/bar/post_buckle_mob(mob/living/M)
+	M.pixel_y += 4
+
+/obj/structure/chair/stool/bar/post_unbuckle_mob(mob/living/M)
+	M.pixel_y -= 4
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/stool/bar, 0)
 
@@ -372,17 +380,15 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/stool/bar, 0)
 		return TRUE
 	return FALSE
 
-/obj/item/chair/afterattack(atom/target, mob/living/carbon/user, proximity)
-	. = ..()
-	if(!proximity)
+/obj/item/chair/afterattack(atom/target, mob/user, click_parameters)
+	if(!prob(break_chance))
 		return
-	if(prob(break_chance))
-		user.visible_message(span_danger("[user] smashes \the [src] to pieces against \the [target]"))
-		if(iscarbon(target))
-			var/mob/living/carbon/C = target
-			if(C.health < C.maxHealth*0.5)
-				C.Paralyze(20)
-		smash(user)
+	user.visible_message(span_danger("[user] smashes [src] to pieces against [target]"))
+	if(iscarbon(target))
+		var/mob/living/carbon/C = target
+		if(C.health < C.maxHealth*0.5)
+			C.Paralyze(20)
+	smash(user)
 
 /obj/item/chair/greyscale
 	material_flags = MATERIAL_EFFECTS | MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
@@ -444,7 +450,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/stool/bar, 0)
 	buildstacktype = /obj/item/stack/sheet/bronze
 	buildstackamount = 1
 	item_chair = null
-	interaction_flags_click = NEED_DEXTERITY
 	/// Total rotations made
 	var/turns = 0
 

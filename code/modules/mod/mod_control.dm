@@ -117,7 +117,6 @@
 		uninstall(module, deleting = TRUE)
 	if(core)
 		QDEL_NULL(core)
-	QDEL_NULL(wires)
 	QDEL_NULL(mod_link)
 	for(var/datum/mod_part/part_datum as anything in get_part_datums(all = TRUE))
 		part_datum.part_item = null
@@ -129,8 +128,6 @@
 		wearer.visible_message(span_danger("[src] fall[p_s()] apart, completely destroyed!"), vision_distance = COMBAT_MESSAGE_RANGE)
 		clean_up()
 	for(var/obj/item/mod/module/module as anything in modules)
-		for(var/obj/item/item in module)
-			item.forceMove(drop_location())
 		uninstall(module)
 	if(ai_assistant)
 		if(ispAI(ai_assistant))
@@ -253,33 +250,28 @@
 			add_fingerprint(user)
 
 /obj/item/mod/control/wrench_act(mob/living/user, obj/item/wrench)
-	if(..())
-		return TRUE
 	if(seconds_electrified && get_charge() && shock(user))
-		return TRUE
+		return ITEM_INTERACT_BLOCKING
 	if(open)
 		if(!core)
 			balloon_alert(user, "no core!")
-			return TRUE
+			return ITEM_INTERACT_BLOCKING
 		balloon_alert(user, "removing core...")
 		wrench.play_tool_sound(src, 100)
 		if(!wrench.use_tool(src, user, 3 SECONDS) || !open)
 			balloon_alert(user, "interrupted!")
-			return TRUE
+			return ITEM_INTERACT_BLOCKING
 		wrench.play_tool_sound(src, 100)
 		balloon_alert(user, "core removed")
 		core.forceMove(drop_location())
-		return TRUE
-	return ..()
+		return ITEM_INTERACT_SUCCESS
+	return NONE
 
 /obj/item/mod/control/screwdriver_act(mob/living/user, obj/item/screwdriver)
-	. = ..()
-	if(.)
-		return TRUE
 	if(active || activating || ai_controller)
 		balloon_alert(user, "deactivate suit first!")
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
-		return FALSE
+		return ITEM_INTERACT_BLOCKING
 	balloon_alert(user, "[open ? "closing" : "opening"] cover...")
 	screwdriver.play_tool_sound(src, 100)
 	if(screwdriver.use_tool(src, user, 1 SECONDS))
@@ -290,21 +282,20 @@
 		open = !open
 	else
 		balloon_alert(user, "interrupted!")
-	return TRUE
+	return ITEM_INTERACT_SUCCESS
 
 /obj/item/mod/control/crowbar_act(mob/living/user, obj/item/crowbar)
-	. = ..()
 	if(!open)
 		balloon_alert(user, "open the cover first!")
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
-		return FALSE
+		return ITEM_INTERACT_BLOCKING
 	if(!allowed(user))
 		balloon_alert(user, "insufficient access!")
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
-		return
+		return ITEM_INTERACT_BLOCKING
 	if(SEND_SIGNAL(src, COMSIG_MOD_MODULE_REMOVAL, user) & MOD_CANCEL_REMOVAL)
 		playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
-		return FALSE
+		return ITEM_INTERACT_BLOCKING
 	if(length(modules))
 		var/list/removable_modules = list()
 		for(var/obj/item/mod/module/module as anything in modules)
@@ -313,55 +304,88 @@
 			removable_modules += module
 		var/obj/item/mod/module/module_to_remove = tgui_input_list(user, "Which module to remove?", "Module Removal", removable_modules)
 		if(!module_to_remove?.mod)
-			return FALSE
+			return ITEM_INTERACT_BLOCKING
 		uninstall(module_to_remove)
 		module_to_remove.forceMove(drop_location())
 		crowbar.play_tool_sound(src, 100)
 		SEND_SIGNAL(src, COMSIG_MOD_MODULE_REMOVED, user)
-		return TRUE
+		return ITEM_INTERACT_SUCCESS
 	balloon_alert(user, "no modules!")
 	playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
-	return FALSE
+	return ITEM_INTERACT_BLOCKING
 
-/obj/item/mod/control/attackby(obj/item/attacking_item, mob/living/user, params)
-	if(istype(attacking_item, /obj/item/pai_card))
+/obj/item/mod/control/storage_insert_on_interacted_with(datum/storage, obj/item/inserted, mob/living/user)
+	// Hack. revisit later
+	if(istype(inserted, /obj/item/aicard))
+		var/obj/item/aicard/ai_card = inserted
+		if(ai_card.AI)
+			return FALSE // we want to get an AI assistant, try uploading instead of insertion
+		if(ai_assistant)
+			return FALSE // we already have an AI assistant, try withdrawing instead of insertion
+	return TRUE
+
+// Makes use of tool act to prevent shoving stuff into our internal storage
+/obj/item/mod/control/tool_act(mob/living/user, obj/item/tool, list/modifiers)
+	if(istype(tool, /obj/item/pai_card))
 		if(!open)
 			balloon_alert(user, "open the cover first!")
-			return FALSE
-		insert_pai(user, attacking_item)
-		return TRUE
-	if(istype(attacking_item, /obj/item/mod/module))
+			return ITEM_INTERACT_BLOCKING
+		insert_pai(user, tool)
+		return ITEM_INTERACT_SUCCESS
+	if(istype(tool, /obj/item/mod/paint))
+		var/obj/item/mod/paint/paint_kit = tool
+		if(active || activating)
+			balloon_alert(user, "suit is active!")
+			return ITEM_INTERACT_BLOCKING
+		if(LAZYACCESS(modifiers, RIGHT_CLICK)) // Right click
+			if(paint_kit.editing_mod == src)
+				return ITEM_INTERACT_BLOCKING
+			paint_kit.editing_mod = src
+			paint_kit.proxy_view = new()
+			paint_kit.proxy_view.generate_view("color_matrix_proxy_[REF(user.client)]")
+
+			paint_kit.proxy_view.appearance = paint_kit.editing_mod.appearance
+			paint_kit.proxy_view.color = null
+			paint_kit.proxy_view.display_to(user)
+			paint_kit.ui_interact(user)
+			return ITEM_INTERACT_SUCCESS
+		else // Left click
+			paint_kit.paint_skin(src, user)
+			return ITEM_INTERACT_SUCCESS
+	if(istype(tool, /obj/item/mod/module))
 		if(!open)
 			balloon_alert(user, "open the cover first!")
 			playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
-			return FALSE
-		install(attacking_item, user)
+			return ITEM_INTERACT_BLOCKING
+		install(tool, user)
 		SEND_SIGNAL(src, COMSIG_MOD_MODULE_ADDED, user)
-		return TRUE
-	else if(istype(attacking_item, /obj/item/mod/core))
+		return ITEM_INTERACT_SUCCESS
+	if(istype(tool, /obj/item/mod/core))
 		if(!open)
 			balloon_alert(user, "open the cover first!")
 			playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
-			return FALSE
+			return ITEM_INTERACT_BLOCKING
 		if(core)
 			balloon_alert(user, "core already installed!")
 			playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
-			return FALSE
-		var/obj/item/mod/core/attacking_core = attacking_item
+			return ITEM_INTERACT_BLOCKING
+		var/obj/item/mod/core/attacking_core = tool
 		attacking_core.install(src)
 		balloon_alert(user, "core installed")
 		playsound(src, 'sound/machines/click.ogg', 50, TRUE, SILENCED_SOUND_EXTRARANGE)
-		return TRUE
-	else if(is_wire_tool(attacking_item) && open)
-		wires.interact(user)
-		return TRUE
-	else if(open && attacking_item.GetID())
-		update_access(user, attacking_item.GetID())
-		return TRUE
+		return ITEM_INTERACT_SUCCESS
+	if(open)
+		if(is_wire_tool(tool))
+			wires.interact(user)
+			return ITEM_INTERACT_SUCCESS
+		var/obj/item/id = tool.GetID()
+		if(id)
+			update_access(user, id)
+			return ITEM_INTERACT_SUCCESS
 	return ..()
 
 /obj/item/mod/control/get_cell()
-	var/obj/item/stock_parts/cell/cell = get_charge_source()
+	var/obj/item/stock_parts/power_store/cell = get_charge_source()
 	if(!istype(cell))
 		return null
 	return cell
@@ -451,6 +475,7 @@
 	SEND_SIGNAL(src, COMSIG_MOD_WEARER_SET, wearer)
 	RegisterSignal(wearer, COMSIG_ATOM_EXITED, PROC_REF(on_exit))
 	RegisterSignal(wearer, COMSIG_SPECIES_GAIN, PROC_REF(on_species_gain))
+	RegisterSignal(wearer, COMSIG_MOB_CLICKON, PROC_REF(click_on))
 	update_charge_alert()
 	for(var/obj/item/mod/module/module as anything in modules)
 		module.on_equip()
@@ -458,7 +483,7 @@
 /obj/item/mod/control/proc/unset_wearer()
 	for(var/obj/item/mod/module/module as anything in modules)
 		module.on_unequip()
-	UnregisterSignal(wearer, list(COMSIG_ATOM_EXITED, COMSIG_SPECIES_GAIN))
+	UnregisterSignal(wearer, list(COMSIG_ATOM_EXITED, COMSIG_SPECIES_GAIN, COMSIG_MOB_CLICKON))
 	SEND_SIGNAL(src, COMSIG_MOD_WEARER_UNSET, wearer)
 	wearer.update_spacesuit_hud_icon("0")
 	wearer = null
@@ -492,7 +517,14 @@
 		forceMove(drop_location())
 		return
 
-/obj/item/mod/control/proc/quick_module(mob/user)
+/obj/item/mod/control/proc/click_on(mob/source, atom/A, list/modifiers)
+	SIGNAL_HANDLER
+
+	if (LAZYACCESS(modifiers, CTRL_CLICK) && LAZYACCESS(modifiers, source.client?.prefs.read_preference(/datum/preference/choiced/mod_select) || MIDDLE_CLICK))
+		INVOKE_ASYNC(src, PROC_REF(quick_module), source, get_turf(A))
+		return COMSIG_MOB_CANCEL_CLICKON
+
+/obj/item/mod/control/proc/quick_module(mob/user, anchor_override = null)
 	if(!length(modules))
 		return
 	var/list/display_names = list()
@@ -514,7 +546,9 @@
 	var/radial_anchor = src
 	if(istype(user.loc, /obj/effect/dummy/phased_mob))
 		radial_anchor = get_turf(user.loc) //they're phased out via some module, anchor the radial on the turf so it may still display
-	var/pick = show_radial_menu(user, radial_anchor, items, custom_check = FALSE, require_near = TRUE, tooltips = TRUE)
+	if (!isnull(anchor_override))
+		radial_anchor = anchor_override
+	var/pick = show_radial_menu(user, radial_anchor, items, custom_check = FALSE, require_near = isnull(anchor_override), tooltips = TRUE)
 	if(!pick)
 		return
 	var/module_reference = display_names[pick]

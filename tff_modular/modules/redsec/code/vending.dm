@@ -42,6 +42,7 @@
 				/obj/item/storage/backpack/duffelbag/sec = 5,
 				/obj/item/clothing/under/rank/security/officer = 10,
 				/obj/item/clothing/under/rank/security/officer/skirt = 10,
+				/obj/item/clothing/under/rank/security/peacekeeper/plain_skirt = 10,
 				/obj/item/clothing/under/rank/security/peacekeeper = 10,
 				/obj/item/clothing/under/rank/security/nova/utility = 3,
 				/obj/item/clothing/shoes/jackboots/sec = 10,

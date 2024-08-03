@@ -97,6 +97,12 @@
 	var/fail_prob = 0//100 - fail_prob = success_prob
 	var/advance = FALSE
 
+	if(!chem_check(target))
+		user.balloon_alert(user, "missing [LOWER_TEXT(get_chem_list())]!")
+		to_chat(user, span_warning("[target] is missing the [LOWER_TEXT(get_chem_list())] required to perform this surgery step!"))
+		surgery.step_in_progress = FALSE
+		return FALSE
+
 	if(preop(user, target, target_zone, tool, surgery) == SURGERY_STEP_FAIL)
 		update_surgery_mood(target, SURGERY_STATE_FAILURE)
 		surgery.step_in_progress = FALSE
@@ -117,6 +123,11 @@
 	if(HAS_TRAIT(target, TRAIT_ANALGESIA))
 		speed_mod *= SURGERY_SPEED_TRAIT_ANALGESIA
 
+// FLUFFY FRONTIER EDIT START. ADDITION - Stasis surgery nerf
+	if(HAS_TRAIT (target, TRAIT_STASIS))
+		to_chat(user, span_warning("[target] seems to be in stasis, it is impossible to work with [target] tissue!"))
+		speed_mod *= 5
+// FLUFFY FRONTIER EDIT END.
 	var/implement_speed_mod = 1
 	if(implement_type) //this means it isn't a require hand or any item step.
 		implement_speed_mod = implements[implement_type] / 100.0
@@ -150,9 +161,7 @@
 	// NOVA EDIT ADDITION END
 	if(do_after(user, modded_time, target = target, interaction_key = user.has_status_effect(/datum/status_effect/hippocratic_oath) ? target : DOAFTER_SOURCE_SURGERY)) //If we have the hippocratic oath, we can perform one surgery on each target, otherwise we can only do one surgery in total.
 
-		var/chem_check_result = chem_check(target)
-		if((prob(100-fail_prob) || (iscyborg(user) && !silicons_obey_prob)) && chem_check_result && !try_to_fail)
-
+		if((prob(100-fail_prob) || (iscyborg(user) && !silicons_obey_prob)) && !try_to_fail)
 			if(success(user, target, target_zone, tool, surgery))
 				update_surgery_mood(target, SURGERY_STATE_SUCCESS)
 				play_success_sound(user, target, target_zone, tool, surgery)
@@ -162,8 +171,6 @@
 				play_failure_sound(user, target, target_zone, tool, surgery)
 				update_surgery_mood(target, SURGERY_STATE_FAILURE)
 				advance = TRUE
-			if(chem_check_result)
-				return .(user, target, target_zone, tool, surgery, try_to_fail) //automatically re-attempt if failed for reason other than lack of required chemical
 		if(advance && !repeatable)
 			surgery.status++
 			if(surgery.status > surgery.steps.len)
@@ -195,7 +202,7 @@
 		return
 	if(target.stat >= UNCONSCIOUS)
 		var/datum/mood_event/surgery/target_mood_event = target.mob_mood.mood_events[SURGERY_MOOD_CATEGORY]
-		if(target_mood_event?.surgery_completed) //don't give sleeping mobs trauma. that said, if they fell asleep mid-surgery after already getting the bad mood, lets make sure they wake up to a (hopefully) happy memory.
+		if(!target_mood_event || target_mood_event.surgery_completed) //don't give sleeping mobs trauma. that said, if they fell asleep mid-surgery after already getting the bad mood, lets make sure they wake up to a (hopefully) happy memory.
 			return
 	target.add_mood_event("severe_surgery", /datum/mood_event/severe_surgery) // NOVA EDIT ADDITION - Adds additional mood effects to surgeries
 	switch(surgery_state)

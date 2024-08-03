@@ -274,7 +274,7 @@
 		SSquirks.AssignQuirks(humanc, humanc.client)
 
 	if(humanc) // Quirks may change manifest datapoints, so inject only after assigning quirks
-		GLOB.manifest.inject(humanc)
+		GLOB.manifest.inject(humanc, humanc.client) // NOVA EDIT - RP Records - ORIGINAL: GLOB.manifest.inject(humanc)
 
 	var/area/station/arrivals = GLOB.areas_by_type[/area/station/hallway/secondary/entry]
 	if(humanc && arrivals && !arrivals.power_environ) //arrivals depowered
@@ -283,7 +283,8 @@
 
 	// NOVA EDIT ADDITION START
 	if(humanc)
-		for(var/datum/loadout_item/item as anything in loadout_list_to_datums(humanc?.client?.prefs?.loadout_list))
+		var/list/loadout = loadout_list_to_datums(humanc.client?.prefs?.read_preference(/datum/preference/loadout))
+		for(var/datum/loadout_item/item as anything in loadout)
 			if (item.restricted_roles && length(item.restricted_roles) && !(job.title in item.restricted_roles))
 				continue
 			item.post_equip_item(humanc.client?.prefs, humanc)

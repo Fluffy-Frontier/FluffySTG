@@ -16,7 +16,7 @@
 
 <details>
 <summary>Скриншоты/Видео</summary>
-  
+
 </details>
 
 ## Changelog
