@@ -39,6 +39,12 @@
 		if (bsod)
 			computer.remove_file(bsod)
 
+		// We are supreme! Delete our pale imitation!
+		var/datum/computer_file/program/already_present = computer.find_file_by_name(console_disk.program.filename)
+		if (already_present)
+			to_chat(user, span_notice("You was able to notice an popup which says that [filedesc] runs reinstallation of [console_disk.program.filename].[lowertext(console_disk.program.filetype)]"))
+			computer.remove_file(already_present)
+
 		var/datum/computer_file/program/clone = console_disk.program.clone()
 		console_disk.installed_clone = clone
 		computer.store_file(clone)
