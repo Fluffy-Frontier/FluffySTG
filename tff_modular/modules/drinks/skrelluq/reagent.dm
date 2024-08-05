@@ -1,7 +1,7 @@
 /datum/reagent/consumable/skrelluq
 	name = "Skrelluq"
 	description = "A popular skrell drink made from plasma and citrus, causes numbness!"
-	taste_description = "You feel extreme bitterness and wetness. The tip of your tongue is suddenly numb."
+	taste_description = "extreme bitterness and wetness. The tip of your tongue is suddenly numb."
 	color = "#570099"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	quality = DRINK_VERYGOOD
