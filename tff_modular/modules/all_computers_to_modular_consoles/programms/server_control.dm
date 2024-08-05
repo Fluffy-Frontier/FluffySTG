@@ -4,7 +4,6 @@
 	program_open_overlay = "research"
 	extended_desc = "Connect to the internal science server in order to control their behavior."
 	program_flags = PROGRAM_REQUIRES_NTNET
-	size = 0
 	tgui_id = "NtosServerControl"
 	program_icon = FA_ICON_SERVER
 	download_access = list(ACCESS_RD)

@@ -7,6 +7,9 @@ import { NtosWindow, Window } from '../layouts';
 import { NtosMain } from './NtosMain';
 // Components for replacement
 import { ServerControl } from './ServerControl';
+import { AccountingConsole } from './AccountingConsole';
+import { OperatingComputer } from './OperatingComputer';
+import { AtmosAlertConsole } from './AtmosAlertConsole';
 
 type Data = {
   reason: string;
@@ -77,4 +80,16 @@ export const NtosConsolesRevamp = (props) => {
 
 export const NtServerControl = (props) => {
   return replaceWindowWithNtosWindow(ServerControl(Window));
+};
+
+export const NtAccounting = (props) => {
+  return replaceWindowWithNtosWindow(AccountingConsole(Window));
+};
+
+export const NtOperating = (props) => {
+  return replaceWindowWithNtosWindow(OperatingComputer(Window));
+};
+
+export const NtAtmosAlert = (props) => {
+  return replaceWindowWithNtosWindow(AtmosAlertConsole(Window));
 };

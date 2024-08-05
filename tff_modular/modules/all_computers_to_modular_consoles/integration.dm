@@ -3,11 +3,17 @@ GLOBAL_LIST_INIT(consoles_replacement_map, list(
 	/obj/machinery/computer/rdservercontrol = /obj/machinery/modular_computer/preset/battery_less/console/rdservercontrol,
 	/obj/machinery/computer/cargo = /obj/machinery/modular_computer/preset/battery_less/console/cargo,
 	/obj/machinery/computer/cargo/request = /obj/machinery/modular_computer/preset/battery_less/console/cargo/request,
+	/obj/machinery/computer/accounting = /obj/machinery/modular_computer/preset/battery_less/console/accounting,
+	/obj/machinery/computer/operating = /obj/machinery/modular_computer/preset/battery_less/console/operating,
+	/obj/machinery/computer/atmos_alert = /obj/machinery/modular_computer/preset/battery_less/console/atmos_alert,
 
 	// Disk_binded disks instead circuits in fabricators
 	/obj/item/circuitboard/computer/rdservercontrol = /obj/item/computer_console_disk/command/rdservercontrol,
 	/obj/item/circuitboard/computer/cargo = /obj/item/computer_console_disk/cargo/budgetorders/master,
 	/obj/item/circuitboard/computer/cargo/request = /obj/item/computer_console_disk/cargo/budgetorders/master/slave,
+	/obj/item/circuitboard/computer/accounting = /obj/item/computer_console_disk/command/accounting,
+	/obj/item/circuitboard/computer/operating = /obj/item/computer_console_disk/medical/operating,
+	/obj/item/circuitboard/computer/atmos_alert = /obj/item/computer_console_disk/engineering/station_alert,
 
 	// Consoles with regular programs. We just boost behavior with our disks
 	/obj/machinery/computer/aifixer = /obj/machinery/modular_computer/preset/battery_less/console/aifixer,

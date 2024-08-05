@@ -55,8 +55,8 @@
 	return ITEM_INTERACT_SUCCESS
 
 /datum/computer_file/program/filemanager/try_eject(mob/living/user, forced = FALSE)
-	if (forced || !user || HAS_TRAIT(user, TRAIT_KNOW_ENGI_WIRES))
-		if (user)
+	if (forced || !user || HAS_TRAIT(user, TRAIT_KNOW_ENGI_WIRES) || issilicon(user))
+		if (user && !HAS_SILICON_ACCESS(user))
 			user.visible_message(span_notice("[user] quickly presses few buttons on [computer]."), span_notice("You use 'Safely Remove Hardware' option to eject [console_disk] from [computer].."))
 			if (do_after(user, EJECT_TIME_SKILLED, computer.physical ? computer.physical : get_turf(computer)))
 				user.put_in_hands(console_disk)

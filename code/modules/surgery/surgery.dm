@@ -158,6 +158,8 @@
 	if (isnull(operating_computer))
 		return null
 
+	if (!istype(operating_computer))	return operating_program_instead_of_console_hack(operating_computer)	// FLUFFY FRONTIER ADD
+
 	if(operating_computer.machine_stat & (NOPOWER|BROKEN))
 		return null
 
