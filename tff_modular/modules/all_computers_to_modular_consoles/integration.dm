@@ -6,6 +6,12 @@ GLOBAL_LIST_INIT(consoles_replacement_map, list(
 	/obj/machinery/computer/accounting = /obj/machinery/modular_computer/preset/battery_less/console/accounting,
 	/obj/machinery/computer/operating = /obj/machinery/modular_computer/preset/battery_less/console/operating,
 	/obj/machinery/computer/atmos_alert = /obj/machinery/modular_computer/preset/battery_less/console/atmos_alert,
+	/obj/machinery/computer/crew = /obj/machinery/modular_computer/preset/battery_less/console/crewmonitor,
+	/obj/machinery/computer/crew/syndie = /obj/machinery/modular_computer/preset/battery_less/console/crewmonitor/syndie,
+	/obj/machinery/computer/records/medical = /obj/machinery/modular_computer/preset/battery_less/console/records_medical,
+	/obj/machinery/computer/records/medical/syndie = /obj/machinery/modular_computer/preset/battery_less/console/records_medical/syndie,
+	/obj/machinery/computer/records/security = /obj/machinery/modular_computer/preset/battery_less/console/records_security,
+	/obj/machinery/computer/records/security/syndie = /obj/machinery/modular_computer/preset/battery_less/console/records_security/syndie,
 
 	// Disk_binded disks instead circuits in fabricators
 	/obj/item/circuitboard/computer/rdservercontrol = /obj/item/computer_console_disk/command/rdservercontrol,
@@ -14,6 +20,9 @@ GLOBAL_LIST_INIT(consoles_replacement_map, list(
 	/obj/item/circuitboard/computer/accounting = /obj/item/computer_console_disk/command/accounting,
 	/obj/item/circuitboard/computer/operating = /obj/item/computer_console_disk/medical/operating,
 	/obj/item/circuitboard/computer/atmos_alert = /obj/item/computer_console_disk/engineering/station_alert,
+	/obj/item/circuitboard/computer/crew = /obj/item/computer_console_disk/medical/crewmonitor,
+	/obj/item/circuitboard/computer/med_data = /obj/item/computer_console_disk/medical/records,
+	/obj/item/circuitboard/computer/secure_data = /obj/item/computer_console_disk/security/records,
 
 	// Consoles with regular programs. We just boost behavior with our disks
 	/obj/machinery/computer/aifixer = /obj/machinery/modular_computer/preset/battery_less/console/aifixer,

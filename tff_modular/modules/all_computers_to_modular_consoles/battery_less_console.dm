@@ -31,6 +31,13 @@
 
 		filemanager.application_item_interaction(null, console_disk)
 
+	else if (cpu && starting_programs && starting_programs.len == 1)
+		cpu.active_program = cpu.find_file_by_name(starting_programs[1].filename)
+		if (istype(cpu.active_program, /datum/computer_file/program/disk_binded))
+			var/datum/computer_file/program/disk_binded/db = cpu.active_program
+			if (!icon_keyboard && db.icon_keyboard)
+				icon_keyboard = db.icon_keyboard
+
 /obj/machinery/modular_computer/preset/battery_less/console/post_machine_initialize()
 	. = ..()
 	if (cpu && console_disk && console_disk.installed_clone)

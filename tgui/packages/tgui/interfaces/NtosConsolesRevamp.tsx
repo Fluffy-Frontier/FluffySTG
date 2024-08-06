@@ -1,4 +1,4 @@
-// THIS IS A FLUFFY FONTIER UI FILE
+// THIS IS A FLUFFY FRONTIER UI FILE
 import { ReactElement } from 'react';
 
 import { useBackend } from '../backend';
@@ -10,6 +10,8 @@ import { ServerControl } from './ServerControl';
 import { AccountingConsole } from './AccountingConsole';
 import { OperatingComputer } from './OperatingComputer';
 import { AtmosAlertConsole } from './AtmosAlertConsole';
+import { CrewConsoleNova } from './CrewConsoleNova';
+import { MedicalRecords } from './MedicalRecords';
 
 type Data = {
   reason: string;
@@ -17,7 +19,11 @@ type Data = {
 
 const replaceWindowWithNtosWindow = (node: ReactElement) => {
   return (
-    <NtosWindow width={node.props.width} height={node.props.height}>
+    <NtosWindow
+      {...node.props.title}
+      width={node.props.width}
+      height={node.props.height}
+    >
       <NtosWindow.Content {...node.props.children.props.scrollable}>
         {node.props.children.props.children}
       </NtosWindow.Content>
@@ -92,4 +98,8 @@ export const NtOperating = (props) => {
 
 export const NtAtmosAlert = (props) => {
   return replaceWindowWithNtosWindow(AtmosAlertConsole(Window));
+};
+
+export const NtCrewMonitor = (props) => {
+  return replaceWindowWithNtosWindow(CrewConsoleNova());
 };

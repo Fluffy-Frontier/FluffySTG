@@ -11,7 +11,7 @@
 	var/obj/structure/table/optable/table
 	var/list/advanced_surgeries = list()
 	var/datum/techweb/linked_techweb
-	program_icon = FA_ICON_FILE_MEDICAL
+	program_icon = FA_ICON_HEARTBEAT
 	icon_keyboard = "med_key"
 	tgui_id = "NtosOperating"
 	var/datum/component/experiment_handler/experiment_handler

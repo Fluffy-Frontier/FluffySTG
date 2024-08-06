@@ -57,11 +57,6 @@
 	icon_keyboard = "security_key"
 	console_disk = /obj/item/computer_console_disk/security/secureye
 
-/obj/machinery/modular_computer/preset/battery_less/console/security/post_machine_initialize()
-	. = ..()
-	if (cpu && starting_programs && starting_programs.len == 1)
-		cpu.active_program = cpu.find_file_by_name(starting_programs[1].filename)
-
 /datum/computer_file/program/secureye/disked/mining
 	filename = "outposteye"
 	filedesc = "OutpostEye"
