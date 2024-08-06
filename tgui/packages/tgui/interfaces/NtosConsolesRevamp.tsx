@@ -4,14 +4,12 @@ import { ReactElement } from 'react';
 import { useBackend } from '../backend';
 import { Blink, Box, Dimmer, Flex, Icon } from '../components';
 import { NtosWindow, Window } from '../layouts';
-import { NtosMain } from './NtosMain';
-// Components for replacement
-import { ServerControl } from './ServerControl';
 import { AccountingConsole } from './AccountingConsole';
-import { OperatingComputer } from './OperatingComputer';
 import { AtmosAlertConsole } from './AtmosAlertConsole';
 import { CrewConsoleNova } from './CrewConsoleNova';
-import { MedicalRecords } from './MedicalRecords';
+import { NtosMain } from './NtosMain';
+import { OperatingComputer } from './OperatingComputer';
+import { ServerControl } from './ServerControl';
 
 type Data = {
   reason: string;

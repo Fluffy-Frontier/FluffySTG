@@ -1,7 +1,7 @@
 /datum/computer_file/program/disk_binded/atmos_alert
 	filename = "atmosalert"
 	filedesc = "Atmos Alert"
-	program_open_overlay = "atmos-green"
+	program_open_overlay = "alert-green"
 	extended_desc = "Connect to local atmospherics server for remotely oversee breathable atmosphere."
 	program_flags = PROGRAM_REQUIRES_NTNET
 	tgui_id = "NtosAtmosAlert"
