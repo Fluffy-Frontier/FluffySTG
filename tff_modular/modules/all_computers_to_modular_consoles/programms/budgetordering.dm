@@ -264,7 +264,7 @@
 
 	// Eject unused coupons
 	for(var/obj/item/coupon/c in loaded_coupons)
-		c.forceMove(c.drop_location(computer ? computer.physical : owner_object))
+		c.forceMove(c.drop_location(computer ? computer.physical : disk_host))
 		LAZYREMOVE(loaded_coupons, c)
 		c.inserted_console = null
 
