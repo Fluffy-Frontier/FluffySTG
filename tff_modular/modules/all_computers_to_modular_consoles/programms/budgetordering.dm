@@ -257,13 +257,14 @@
 		return ..()
 
 /datum/computer_file/program/budgetorders/master/Destroy()
-	var/datum/component/armament/company_imports/tweaked/gun_comp = computer.physical.GetComponent(/datum/component/armament/company_imports/tweaked)
-	if(gun_comp)
-		RemoveComponentSource(REF(computer.physical), /datum/component/armament/company_imports/tweaked)
+	if (computer)
+		var/datum/component/armament/company_imports/tweaked/gun_comp = computer.physical.GetComponent(/datum/component/armament/company_imports/tweaked)
+		if(gun_comp)
+			RemoveComponentSource(REF(computer.physical), /datum/component/armament/company_imports/tweaked)
 
 	// Eject unused coupons
 	for(var/obj/item/coupon/c in loaded_coupons)
-		c.forceMove(c.drop_location(computer.physical))
+		c.forceMove(c.drop_location(computer ? computer.physical : owner_object))
 		LAZYREMOVE(loaded_coupons, c)
 		c.inserted_console = null
 

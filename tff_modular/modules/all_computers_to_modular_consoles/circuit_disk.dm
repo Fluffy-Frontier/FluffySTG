@@ -75,7 +75,7 @@
 	RegisterSignal(installed_clone.computer, COMSIG_MODULAR_COMPUTER_TURNED_ON, PROC_REF(autorun))
 
 /obj/item/computer_console_disk/proc/CloneUnInstalled()
-	if (!QDELETED(installed_clone.computer))
+	if (installed_clone && !QDELETED(installed_clone.computer))
 		UnregisterSignal(installed_clone.computer, COMSIG_MODULAR_COMPUTER_TURNED_ON)
 
 /obj/item/computer_console_disk/proc/autorun(datum/source, mob/user)

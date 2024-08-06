@@ -23,7 +23,8 @@
 
 
 /datum/computer_file/program/disk_binded/records/security/Destroy()
-	UnregisterSignal(computer.physical, COMSIG_ATOM_EMP_ACT)
+	if (computer)
+		UnregisterSignal(computer.physical, COMSIG_ATOM_EMP_ACT)
 	. = ..()
 
 /datum/computer_file/program/disk_binded/records/security/proc/emp_act(datum/source, severity, protection)

@@ -61,7 +61,8 @@
 /datum/computer_file/program/disk_binded/operating/Destroy()
 	if(table && table.computer == src)
 		table.computer = null
-	RemoveComponentSource(computer.physical, /datum/component/experiment_handler)
+	if (computer)
+		RemoveComponentSource(computer.physical, /datum/component/experiment_handler)
 	QDEL_NULL(experiment_handler)
 	return ..()
 
