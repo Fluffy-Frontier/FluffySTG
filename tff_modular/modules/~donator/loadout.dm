@@ -115,7 +115,12 @@
 
 /datum/loadout_item/under/elder_suit
 	name = "Elder Suit"
-	item_path = /obj/item/clothing/under/cloaked/eldercoat
+	item_path = /obj/item/clothing/under/eldercoat
+	ckeywhitelist = list("MercReaper", "skadi999", "Smol42")
+
+/datum/loadout_item/under/elder_cloak
+	name = "Elder cloak"
+	item_path = /obj/item/clothing/neck/cloak/eldercoat
 	ckeywhitelist = list("MercReaper", "skadi999", "Smol42")
 
 /datum/loadout_item/shoes/elder_shoes
