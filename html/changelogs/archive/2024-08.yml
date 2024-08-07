@@ -213,6 +213,11 @@
       minutes in-game.'
   - bugfix: You can no longer work on the same piece with multiple people at the same
       time.
+  MrSunabouzu:
+  - rscadd: Snowglobe Station, a new icemoon station
+  - config: adds new areas to station_areas in modular_nova
+  - config: adds snowglobe to maps.txt
+  - config: adds snowglobe to automapper blacklist
   RatFromTheJungle:
   - qol: Let's the coroner store their autopsy scanner in the big-evil-medical-bag,
       if they have it for some reason.
@@ -222,3 +227,5 @@
   - rscadd: add new drink (1 plasma + 1 menthol + 2 triple citrus) = 4 Skrelluq
   honkpocket:
   - qol: Hides the 'no texture' checkerboard sprite when wearing medkits on the suitslot
+  - bugfix: Snowglobe's service guard kiosk its windoor now requires security access
+      to open
