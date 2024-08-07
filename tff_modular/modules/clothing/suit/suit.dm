@@ -18,7 +18,7 @@
 	restricted_roles = list(JOB_CHIEF_MEDICAL_OFFICER, JOB_PARAMEDIC)
 
 /obj/item/clothing/suit/toggle/jacket/sec/blue
-	icon = 'tff_modular/modules/clothing/suit/suit.dmi'
+	icon = 'tff_modular/modules/clothing/suit/suit_icon.dmi'
 	worn_icon = 'tff_modular/modules/clothing/suit/suit.dmi'
 	name = "bluesec jacket"
 	desc = "A comfortable jacket in security blue. Probably against uniform regulations."
@@ -27,7 +27,7 @@
 	unique_reskin = list()
 
 /obj/item/clothing/suit/toggle/jacket/sec/bluewinter
-	icon = 'tff_modular/modules/clothing/suit/suit.dmi'
+	icon = 'tff_modular/modules/clothing/suit/suit_icon.dmi'
 	worn_icon = 'tff_modular/modules/clothing/suit/suit.dmi'
 	name = "bluesec winter jacket"
 	desc = "A comfortable jacket in security blue. Probably against uniform regulations."
