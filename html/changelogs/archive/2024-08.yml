@@ -200,3 +200,25 @@
   - bugfix: shock collars no longer turn invisible when enabled/disabled
   rutek-code:
   - bugfix: Fixes the broken medical record consoles in SerenityStation.
+2024-08-07:
+  FeenieRU:
+  - balance: Moving Voltaic Combat Cyberheart from "Advanced Anomaly Shells" to "Combat
+      Cybernetic Organs"
+  - code_imp: '"Combat Cybernetic Eyes" was renamed to "Combat Cybernetic Organs"'
+  MortoSasye & Kaostico:
+  - qol: Swapped the hit-system for smithing with an automatic one, to avoid people
+      going insane/getting carpal tunnel due to bad ping.
+  - bugfix: 'Patched up an exploit re: to forging, where heating up an object repeatedly
+      would quickly give you enough xp to reach legendary smith, in less than fifteen
+      minutes in-game.'
+  - bugfix: You can no longer work on the same piece with multiple people at the same
+      time.
+  RatFromTheJungle:
+  - qol: Let's the coroner store their autopsy scanner in the big-evil-medical-bag,
+      if they have it for some reason.
+  SmArtKar:
+  - bugfix: Lizards no longer die from cold on icebox despite wearing insulation
+  hack-wrench:
+  - rscadd: add new drink (1 plasma + 1 menthol + 2 triple citrus) = 4 Skrelluq
+  honkpocket:
+  - qol: Hides the 'no texture' checkerboard sprite when wearing medkits on the suitslot
