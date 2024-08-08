@@ -112,3 +112,28 @@
 	name = "Bayou Old Mantle"
 	item_path = /obj/item/clothing/neck/cloak/tendercloak
 	ckeywhitelist = list("mercreaper", "byratishka")
+
+/datum/loadout_item/under/elder_suit
+	name = "Elder Suit"
+	item_path = /obj/item/clothing/under/eldercoat
+	ckeywhitelist = list("MercReaper", "skadi999", "Smol42")
+
+/datum/loadout_item/under/elder_cloak
+	name = "Elder cloak"
+	item_path = /obj/item/clothing/neck/cloak/eldercoat
+	ckeywhitelist = list("MercReaper", "skadi999", "Smol42")
+
+/datum/loadout_item/shoes/elder_shoes
+	name = "Elder Shoes"
+	item_path = /obj/item/clothing/shoes/eldercoat
+	ckeywhitelist = list("MercReaper", "skadi999", "Smol42")
+
+/datum/loadout_item/gloves/elder_gloves
+	name = "Elder Gloves"
+	item_path = /obj/item/clothing/gloves/eldercoat
+	ckeywhitelist = list("MercReaper", "skadi999", "Smol42")
+
+/datum/loadout_item/head/elder_head
+	name = "Elder Hat"
+	item_path = /obj/item/clothing/head/eldercoat
+	ckeywhitelist = list("MercReaper", "skadi999", "Smol42")

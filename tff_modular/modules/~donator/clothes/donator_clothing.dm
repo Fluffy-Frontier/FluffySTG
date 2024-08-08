@@ -186,3 +186,43 @@
 	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
 	icon_state = "ten_neck"
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+
+/obj/item/clothing/neck/cloak/eldercoat
+	name = "hunter's cloak"
+	desc = "Just part of hunter's coat."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	icon_state = "eldercoat"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/under/eldercoat
+	name = "hunter's uniform"
+	desc = "Old-fashioned robes with a patterned pattern all over the clothes and a cape hanging from the left shoulder."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/under.dmi'
+	icon_state = "eldercoat"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/under.dmi'
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/shoes/eldercoat
+	name = "leather boots"
+	desc = "Old-fashioned leather boots in a dark shade"
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/shoes.dmi'
+	icon_state = "eldercoat"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/shoes.dmi'
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/gloves/eldercoat
+	name = "leather gloves"
+	desc = "Elongated leather gloves of an old-fashioned kind."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/gloves.dmi'
+	icon_state = "eldercoat"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/gloves.dmi'
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/head/eldercoat
+	name = "three-cornered hat"
+	desc = "A pointed leather hat in a dark shade with a protruding feather."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/head.dmi'
+	icon_state = "eldercoat"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/head.dmi'
+	resistance_flags = FIRE_PROOF
