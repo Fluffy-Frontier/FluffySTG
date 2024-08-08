@@ -373,6 +373,18 @@
 
 	return TRUE
 
+/datum/computer_file/program/disk_binded/records/security/hack_console(mob/living/carbon/human/hacker)
+	for(var/datum/record/crew/target in GLOB.manifest.general)
+		target.wanted_status = WANTED_ARREST
+	update_all_security_huds()
+
+	var/datum/antagonist/ninja/ninja_antag = hacker.mind.has_antag_datum(/datum/antagonist/ninja)
+	if(!ninja_antag)
+		return
+	var/datum/objective/security_scramble/objective = locate() in ninja_antag.objectives
+	if(objective)
+		objective.completed = TRUE
+
 
 /**
  * Security circuit component

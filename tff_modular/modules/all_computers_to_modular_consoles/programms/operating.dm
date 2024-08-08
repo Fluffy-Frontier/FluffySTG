@@ -212,4 +212,3 @@
 	name = "operating computer"
 	desc = "Monitors patient vitals and displays surgery steps. Can be loaded with surgery disks to perform experimental procedures. Automatically syncs to operating tables within its line of sight for surgical tech advancement."
 	console_disk = /obj/item/computer_console_disk/medical/operating
-	circuit = /obj/item/circuitboard/computer/operating

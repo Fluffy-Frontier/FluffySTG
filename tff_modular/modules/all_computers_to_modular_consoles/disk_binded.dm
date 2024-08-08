@@ -21,3 +21,7 @@
 		owner_object = fm.console_disk
 	if (!owner_object)
 		owner_object = computer.physical
+
+
+/datum/computer_file/program/disk_binded/proc/hack_console(mob/living/carbon/human/hacker)
+	return

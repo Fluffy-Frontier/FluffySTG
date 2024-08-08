@@ -128,7 +128,7 @@ const CrimeDisplay = ({ item }: { item: Crime }) => {
           <LabeledList.Item color={!valid ? 'bad' : 'good'} label="Status">
             {!valid ? 'Void' : 'Active'}
           </LabeledList.Item>
-          {!!fine && fine > 0 ? (
+          {!!fine && fine > 0 && (
             <>
               <LabeledList.Item color="bad" label="Fine">
                 {fine}cr <Icon color="gold" name="coins" />
@@ -137,8 +137,6 @@ const CrimeDisplay = ({ item }: { item: Crime }) => {
                 {paid}cr <Icon color="gold" name="coins" />
               </LabeledList.Item>
             </>
-          ) : (
-            ''
           )}
         </LabeledList>
         <Box color="label" mt={1} mb={1}>
