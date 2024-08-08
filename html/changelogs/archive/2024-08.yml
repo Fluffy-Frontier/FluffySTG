@@ -229,3 +229,18 @@
   - qol: Hides the 'no texture' checkerboard sprite when wearing medkits on the suitslot
   - bugfix: Snowglobe's service guard kiosk its windoor now requires security access
       to open
+2024-08-08:
+  FearfulFurnishing:
+  - bugfix: fixes ghost roles sometimes being given random mutant body parts if no
+      selection for the part was made
+  Iamgoofball:
+  - bugfix: Fixes Service Guards not being able to use their batons in the Bar Lounge
+      or the Delta Service Promenade.
+  honkpocket:
+  - balance: Xenohybrids inherit the initial heal factor of xenomorph resin weeds,
+      instead of 0
+  sqnztb:
+  - rscadd: a few donation items for sqn
+  - rscadd: Added a donator box for donator items. People with multiple Donator items
+      can open a PR to create their own variant of it to contain all of their donator
+      items, to avoid inventory clutter.
