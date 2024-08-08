@@ -108,6 +108,7 @@
 	var/datum/computer_file/program/ai_restorer/airestore_app = locate() in stored_files
 	if(airestore_app?.stored_card)
 		data["removable_media"] += "intelliCard"
+	data["removable_media"] += handle_ui_removable_media_insert(user)	// FLUFFY FRONTIER ADD
 
 	data["programs"] = list()
 	for(var/datum/computer_file/program/program in stored_files)
@@ -207,6 +208,7 @@
 					if(RemoveID(user))
 						playsound(src, 'sound/machines/card_slide.ogg', 50)
 						return TRUE
+			return handle_ui_removable_media_eject(param, user)	// FLUFFFY FRONTIER ADD
 
 		if("PC_Imprint_ID")
 			imprint_id()

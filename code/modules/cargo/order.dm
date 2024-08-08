@@ -107,12 +107,12 @@
 	requisition_text += "Order #[id]<br/>"
 	requisition_text+= "Time of Order: [station_time_timestamp()]<br/>"
 	requisition_text += "Item: [pack.name]<br/>"
-	requisition_text += "Access Restrictions: [SSid_access.get_access_desc(pack.access)]<br/>"
+	requisition_text += "Access Restrictions: [SSid_access.get_access_desc(pack.access) || "N/A"]<br/>"
 	requisition_text += "Requested by: [orderer]<br/>"
 	if(paying_account)
 		requisition_text += "Paid by: [paying_account.account_holder]<br/>"
-	requisition_text += "Rank: [orderer_rank]<br/>"
-	requisition_text += "Comment: [reason]<br/>"
+	requisition_text += "Rank: [orderer_rank || "N/A"]<br/>"
+	requisition_text += "Comment: [reason || "N/A"]<br/>"
 
 	requisition_paper.add_raw_text(requisition_text)
 	requisition_paper.update_appearance()
