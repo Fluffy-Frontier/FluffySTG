@@ -125,25 +125,25 @@
 	switch(action)
 		if("send")
 			if(!SSshuttle.supply.canMove())
-				computer.say(safety_warning)
+				say(safety_warning)
 				return
 			if(SSshuttle.supply_blocked)
-				computer.say(blockade_warning)
+				say(blockade_warning)
 				return
 			if(SSshuttle.supply.getDockedId() == docking_home)
 				SSshuttle.moveShuttle(cargo_shuttle, docking_away, TRUE)
-				computer.say("The supply shuttle is departing.")
+				say("The supply shuttle is departing.")
 				usr.investigate_log("sent the supply shuttle away.", INVESTIGATE_CARGO)
 			else
 				usr.investigate_log("called the supply shuttle.", INVESTIGATE_CARGO)
-				computer.say("The supply shuttle has been called and will arrive in [SSshuttle.supply.timeLeft(600)] minutes.")
+				say("The supply shuttle has been called and will arrive in [SSshuttle.supply.timeLeft(600)] minutes.")
 				SSshuttle.moveShuttle(cargo_shuttle, docking_home, TRUE)
 			. = TRUE
 		if("loan")
 			if(!SSshuttle.shuttle_loan)
 				return
 			if(SSshuttle.supply_blocked)
-				computer.say(blockade_warning)
+				say(blockade_warning)
 				return
 			else if(SSshuttle.supply.mode != SHUTTLE_IDLE)
 				return
@@ -153,7 +153,7 @@
 				return
 			else
 				SSshuttle.shuttle_loan.loan_shuttle()
-				computer.say("The supply shuttle has been loaned to CentCom.")
+				say("The supply shuttle has been loaned to CentCom.")
 				usr.investigate_log("accepted a shuttle loan event.", INVESTIGATE_CARGO)
 				usr.log_message("accepted a shuttle loan event.", LOG_GAME)
 				. = TRUE
@@ -241,12 +241,12 @@
 		var/obj/item/coupon/c = tool
 		if(c.discount_pct_off == COUPON_OMEN)
 			to_chat(user, span_warning("\The [computer] validates the coupon as authentic, but refuses to accept it..."))
-			computer.say("Coupon fulfillment already in progress...")
+			say("Coupon fulfillment already in progress...")
 			return ITEM_INTERACT_SUCCESS
 
 		c.inserted_console = src // Well coupon deletion may suck
 		LAZYADD(loaded_coupons, c)
-		computer.say("Coupon for [initial(c.discounted_pack.name)] applied!")
+		say("Coupon for [initial(c.discounted_pack.name)] applied!")
 		c.forceMove(computer)
 		return ITEM_INTERACT_SUCCESS
 	else if (istype(tool, /obj/item/paper/paperslip/ration_ticket))
@@ -305,18 +305,18 @@
 		var/mob/living/living_user = user
 		var/obj/item/card/id/id_card = living_user.get_idcard(TRUE)
 		if(!istype(id_card))
-			computer.say("No ID card detected.")
+			say("No ID card detected.")
 			return
 		if(IS_DEPARTMENTAL_CARD(id_card))
-			computer.say("The [src] rejects [id_card].")
+			say("The [src] rejects [id_card].")
 			return
 		account = id_card.registered_account
 		if(!istype(account))
-			computer.say("Invalid bank account.")
+			say("Invalid bank account.")
 			return
 		var/list/access = id_card.GetAccess()
 		if(pack.access_view && !(pack.access_view in access))
-			computer.say("[id_card] lacks the requisite access for this purchase.")
+			say("[id_card] lacks the requisite access for this purchase.")
 			return
 
 	// The list we are operating on right now
@@ -330,13 +330,13 @@
 
 	if(pack.goody && !self_paid)
 		playsound(computer, 'sound/machines/buzz-sigh.ogg', 50, FALSE)
-		computer.say("ERROR: Small crates may only be purchased by private accounts.")
+		say("ERROR: Small crates may only be purchased by private accounts.")
 		return
 
 	var/similar_count = SSshuttle.supply.get_order_count(pack)
 	if(similar_count == OVER_ORDER_LIMIT)
 		playsound(computer, 'sound/machines/buzz-sigh.ogg', 50, FALSE)
-		computer.say("ERROR: No more then [CARGO_MAX_ORDER] of any pack may be ordered at once")
+		say("ERROR: No more then [CARGO_MAX_ORDER] of any pack may be ordered at once")
 		return
 
 	amount = clamp(amount, 1, CARGO_MAX_ORDER - similar_count)
@@ -344,7 +344,7 @@
 		var/obj/item/coupon/applied_coupon
 		for(var/obj/item/coupon/coupon_check in loaded_coupons)
 			if(pack.type == coupon_check.discounted_pack)
-				computer.say("Coupon found! [round(coupon_check.discount_pct_off * 100)]% off applied!")
+				say("Coupon found! [round(coupon_check.discount_pct_off * 100)]% off applied!")
 				coupon_check.moveToNullspace()
 				applied_coupon = coupon_check
 				break
@@ -364,7 +364,7 @@
 		working_list += order
 
 	if(self_paid)
-		computer.say("Order processed. The price will be charged to [account.account_holder]'s bank account on delivery.")
+		say("Order processed. The price will be charged to [account.account_holder]'s bank account on delivery.")
 	if(requestonly && message_cooldown < world.time)
 		var/message = amount == 1 ? "A new order has been requested." : "[amount] order has been requested."
 		// radio used by the console to send messages on supply channel
@@ -383,10 +383,10 @@
 		if(order.id != id)
 			continue
 		if(order.department_destination)
-			computer.say("Only the department that ordered this item may cancel it.")
+			say("Only the department that ordered this item may cancel it.")
 			return FALSE
 		if(order.applied_coupon)
-			computer.say("Coupon refunded.")
+			say("Coupon refunded.")
 			order.applied_coupon.forceMove(get_turf(computer.physical))
 		SSshuttle.shopping_list -= order
 		qdel(order)

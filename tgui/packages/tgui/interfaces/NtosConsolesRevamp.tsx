@@ -7,6 +7,7 @@ import { NtosWindow, Window } from '../layouts';
 import { AccountingConsole } from './AccountingConsole';
 import { AtmosAlertConsole } from './AtmosAlertConsole';
 import { CrewConsoleNova } from './CrewConsoleNova';
+import { Holodeck } from './Holodeck';
 import { NtosMain } from './NtosMain';
 import { OperatingComputer } from './OperatingComputer';
 import { ServerControl } from './ServerControl';
@@ -100,4 +101,8 @@ export const NtAtmosAlert = (props) => {
 
 export const NtCrewMonitor = (props) => {
   return replaceWindowWithNtosWindow(CrewConsoleNova());
+};
+
+export const NtHolodeck = (props) => {
+  return replaceWindowWithNtosWindow(Holodeck(Window));
 };

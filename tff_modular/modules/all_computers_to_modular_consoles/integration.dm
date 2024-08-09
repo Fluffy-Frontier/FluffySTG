@@ -12,6 +12,7 @@ GLOBAL_LIST_INIT(consoles_replacement_map, list(
 	/obj/machinery/computer/records/medical/syndie = /obj/machinery/modular_computer/preset/battery_less/console/records_medical/syndie,
 	/obj/machinery/computer/records/security = /obj/machinery/modular_computer/preset/battery_less/console/records_security,
 	/obj/machinery/computer/records/security/syndie = /obj/machinery/modular_computer/preset/battery_less/console/records_security/syndie,
+	/obj/machinery/computer/holodeck = /obj/machinery/modular_computer/preset/battery_less/console/holodeck,
 
 	// Disk_binded disks instead circuits in fabricators
 	/obj/item/circuitboard/computer/rdservercontrol = /obj/item/computer_console_disk/command/rdservercontrol,
@@ -51,7 +52,10 @@ GLOBAL_LIST_INIT(consoles_replacement_map, list(
 	if (mapload && (src.type in GLOB.consoles_replacement_map))
 		var/obj/machinery/modular_computer/preset/battery_less/console/console = GLOB.consoles_replacement_map[src.type]
 		console = new console(src.loc)
-		transfer_data_to_modular_console(console)
+		if (!transfer_data_to_modular_console(console))
+			// Abort replacement
+			qdel(console)
+			return .
 		console.update_appearance()
 		return INITIALIZE_HINT_QDEL
 
@@ -61,8 +65,31 @@ GLOBAL_LIST_INIT(consoles_replacement_map, list(
 	console.setDir(dir)
 	console.name = name
 
+	// Oh shit! I am an holoconsole!
+	var/area/station/holodeck/computer_area = get_area(src)
+	if(istype(computer_area))
+		var/datum/computer_file/program/disk_binded/holodeck/holocontrols = computer_area.linked
+		if (!istype(holocontrols, /obj/machinery/computer/holodeck))
+			var/obj/machinery/modular_computer/mc = holocontrols
+			if(!istype(mc) || !mc.cpu)
+				stack_trace("Holoconsole was asked for data transfer to modular_console. But holocontrols PC is broken, so I can't bind it")
+				return FALSE
+			holocontrols = mc.cpu.find_file_by_name("holodeck_admin")
+			if(!holocontrols)
+				stack_trace("Holoconsole was asked for data transfer to modular_console. But I am unable to locate holocontrols program, so I can't bind it")
+				return FALSE
+
+		holocontrols.effects += console
+		if (console.cpu)
+			holocontrols.effects += console.cpu
+			var/datum/computer_file/program/filemanager/fm = console.cpu.find_file_by_name("filemanager")
+			if (fm && fm.console_disk)
+				holocontrols.effects += fm.console_disk
+
 	if (console.cpu)
 		console.cpu.desc = desc
+
+	return TRUE
 
 /datum/design/board/New()
 	. = ..()

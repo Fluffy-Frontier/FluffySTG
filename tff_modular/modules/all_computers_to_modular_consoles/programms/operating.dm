@@ -21,7 +21,8 @@
 	if(!CONFIG_GET(flag/no_default_techweb_link) && !linked_techweb)
 		CONNECT_TO_RND_SERVER_ROUNDSTART(linked_techweb, src)
 
-	experiment_handler = computer.physical.AddComponent(
+	if (!experiment_handler)
+		experiment_handler = computer.physical.AddComponent(
 		/datum/component/experiment_handler, \
 		allowed_experiments = list(/datum/experiment/autopsy), \
 		config_flags = EXPERIMENT_CONFIG_ALWAYS_ACTIVE, \
@@ -30,22 +31,6 @@
 	)
 	experiment_handler.RegisterSignal(src, COMSIG_OPERATING_COMPUTER_AUTOPSY_COMPLETE, TYPE_PROC_REF(/datum/component/experiment_handler, try_run_autopsy_experiment))
 	RegisterSignal(computer.physical, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
-
-// Required for autopsy experiment
-/datum/computer_file/program/disk_binded/operating/proc/say(
-	message,
-	bubble_type,
-	list/spans = list(),
-	sanitize = TRUE,
-	datum/language/language,
-	ignore_spam = FALSE,
-	forced,
-	filterproof = FALSE,
-	message_range = 7,
-	datum/saymode/saymode,
-	list/message_mods = list(),
-)
-	return computer?.say(message, bubble_type, spans, sanitize, language, ignore_spam, forced, filterproof, message_range, saymode, message_mods)
 
 /datum/computer_file/program/disk_binded/operating/on_start(mob/living/user)
 	. = ..()

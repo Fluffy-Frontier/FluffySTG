@@ -4,6 +4,7 @@
 	icon = 'icons/obj/devices/circuitry_n_data.dmi'
 	icon_state = "datadisk6"
 	w_class = WEIGHT_CLASS_TINY
+	var/uses = INFINITE
 	// Actual program for instalation
 	var/datum/computer_file/program/program
 	// Pointer to program, cloned into PC, to remove when disk ejecting
@@ -83,6 +84,15 @@
 
 	installed_clone.computer.open_program(user, installed_clone, installed_clone.computer.enabled)
 
+/*
+/obj/item/computer_console_disk/one_use
+	icon_state = "virusdisk"
+	uses = TRUE
+
+/obj/item/computer_console_disk/one_use/Initialize(mapload)
+	. = ..()
+	desc = "This disk is used for one time uploads.\n\n[desc]"
+*/
 
 // Disk subtypes
 /obj/item/computer_console_disk/command

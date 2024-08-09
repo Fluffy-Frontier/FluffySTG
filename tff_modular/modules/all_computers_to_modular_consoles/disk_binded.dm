@@ -9,6 +9,9 @@
 	// So I didn't have to create another access variable
 	download_access = list()
 	run_access = list()
+
+	// Eat dat pawah!
+	power_cell_use = BASE_MACHINE_ACTIVE_CONSUMPTION
 	// Icon_state of the keyboard overlay for mapload. If any...
 	var/icon_keyboard
 	// For logs. Prefer disk if not found - PC

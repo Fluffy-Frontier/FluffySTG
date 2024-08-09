@@ -14,17 +14,17 @@
 			to_chat(user, span_warning("It's secure disk drive already occupied!"))
 		return ITEM_INTERACT_BLOCKING
 	if (!tool.program)
-		computer.say("I/O ERROR: Unable to access encrypted data disk. Ejecting...")
+		say("I/O ERROR: Unable to access encrypted data disk. Ejecting...")
 		return ITEM_INTERACT_BLOCKING
 
 	if (!tool.program.is_supported_by_hardware(computer.hardware_flag))
 		var/supported_hardware = tool.program.can_run_on_flags_to_text()
 		if (supported_hardware == "Anything")
 			// how you aren't supported, if you support anything?!
-			computer.say("HARDWARE ERROR: Software compatibility mismatch! Please report that info to NTTechSupport. PC hardware code: [computer.hardware_flag]. Filename: [tool.program.filename].[lowertext(tool.program.filetype)]")
+			say("HARDWARE ERROR: Software compatibility mismatch! Please report that info to NTTechSupport. PC hardware code: [computer.hardware_flag]. Filename: [tool.program.filename].[lowertext(tool.program.filetype)]")
 			return ITEM_INTERACT_BLOCKING
 		else
-			computer.say("HARDWARE ERROR: Incompatible software. Ejecting... Supported devices: [supported_hardware]")
+			say("HARDWARE ERROR: Incompatible software. Ejecting... Supported devices: [supported_hardware]")
 			return ITEM_INTERACT_BLOCKING
 
 	if(user && !user.transferItemToLoc(tool, computer))
@@ -55,6 +55,9 @@
 	return ITEM_INTERACT_SUCCESS
 
 /datum/computer_file/program/filemanager/try_eject(mob/living/user, forced = FALSE)
+	if (!console_disk)
+		return TRUE
+
 	if (forced || !user || HAS_TRAIT(user, TRAIT_KNOW_ENGI_WIRES) || issilicon(user))
 		if (user && !HAS_SILICON_ACCESS(user))
 			user.visible_message(span_notice("[user] quickly presses few buttons on [computer]."), span_notice("You use 'Safely Remove Hardware' option to eject [console_disk] from [computer].."))

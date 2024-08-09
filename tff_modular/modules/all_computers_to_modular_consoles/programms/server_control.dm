@@ -22,7 +22,7 @@
 	var/obj/item/multitool/attacking_tool = tool
 	if(!QDELETED(attacking_tool.buffer) && istype(attacking_tool.buffer, /datum/techweb))
 		stored_research = attacking_tool.buffer
-		computer.say("[filedesc]: Established connection to [stored_research.organization] research network.")   //  Network id: [stored_research.id] not sure, id may be OOC info
+		say("Established connection to [stored_research.organization] research network.")   //  Network id: [stored_research.id] not sure, id may be OOC info
 		return ITEM_INTERACT_SUCCESS
 	return NONE
 
@@ -64,7 +64,7 @@
 	if(.)
 		return TRUE
 	if(!can_run_Adjacent(usr) && !(computer.obj_flags & EMAGGED))
-		computer.say("Access denied!")
+		say("Access denied!")
 		playsound(computer, 'sound/machines/terminal_error.ogg', 20, TRUE)
 		return TRUE
 

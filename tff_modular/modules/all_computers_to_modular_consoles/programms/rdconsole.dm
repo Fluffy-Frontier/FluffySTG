@@ -108,28 +108,28 @@
         if ("uploadDisk")
             if (params["type"] == RND_DESIGN_DISK)
                 if(QDELETED(d_disk))
-                    computer.say("No design disk inserted!")
+                    say("No design disk inserted!")
                     return TRUE
                 for(var/D in d_disk.blueprints)
                     if(D)
                         stored_research.add_design(D, TRUE)
-                computer.say("Uploading blueprints from disk.")
+                say("Uploading blueprints from disk.")
                 d_disk.on_upload(stored_research)
                 return TRUE
             if (params["type"] == RND_TECH_DISK)
                 if (QDELETED(t_disk))
-                    computer.say("No tech disk inserted!")
+                    say("No tech disk inserted!")
                     return TRUE
-                computer.say("Uploading technology disk.")
+                say("Uploading technology disk.")
                 t_disk.stored_research.copy_research_to(stored_research)
             return TRUE
         //Tech disk-only action.
         if ("loadTech")
             if(QDELETED(t_disk))
-                computer.say("No tech disk inserted!")
+                say("No tech disk inserted!")
                 return
             stored_research.copy_research_to(t_disk.stored_research)
-            computer.say("Downloading to technology disk.")
+            say("Downloading to technology disk.")
             return TRUE
 
 /datum/computer_file/program/science/try_eject(mob/living/user, forced = FALSE)
@@ -144,7 +144,7 @@
         user.put_in_hands(disk)
     else
         disk.forceMove(computer.drop_location())
-    
+
     t_disk = null
     d_disk = null
 

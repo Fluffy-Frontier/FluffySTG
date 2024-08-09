@@ -13,6 +13,22 @@
     // We wanna track not only consoles but NT apps that connected to us too
     var/list/datum/computer_file/program/science/apps_accessing = list()
 
+/datum/computer_file/program/proc/say(
+	message,
+	bubble_type,
+	list/spans = list(),
+	sanitize = TRUE,
+	datum/language/language,
+	ignore_spam = FALSE,
+	forced,
+	filterproof = FALSE,
+	message_range = 7,
+	datum/saymode/saymode,
+	list/message_mods = list(),
+)
+	return computer?.say("\[[filedesc]\]: [message]", bubble_type, spans, sanitize, language, ignore_spam, forced, filterproof, message_range, saymode, message_mods)
+
+
 /datum/computer_file/program/proc/can_run_Adjacent(mob/accessor, loud, access_to_check, downloading, list/access)
     // TODO: atom/allowed() handles syndie borgs. We - not.
     if (can_run(accessor, loud, access_to_check, downloading, access))
