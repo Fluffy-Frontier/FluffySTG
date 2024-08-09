@@ -90,6 +90,8 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 /datum/computer_file/program/disk_binded/holodeck/on_install(datum/computer_file/source, obj/item/modular_computer/computer_installing)
 	. = ..()
 
+
+	// TODO move to can_install
 	var/datum/computer_file/program/filemanager/fm = computer_installing.find_file_by_name("filemanager")
 	if (fm && fm.console_disk)
 		var/datum/computer_file/program/prg = fm.console_disk.installed_clone
@@ -101,7 +103,7 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 		log_mapping("[src] at [AREACOORD(computer_installing)] has no matching holodeck area.")
 		if (fm)
 			INVOKE_ASYNC(fm, PROC_REF(try_eject), null, TRUE)
-		qdel(src)
+		computer_installing.remove_file(source)
 		return
 
 	bottom_left = locate(linked.x, linked.y, computer_installing.physical.z)
@@ -444,6 +446,11 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 	. = ..()
 	if (!.)
 		return
+
+	// TODO rework (in case of failed installatin)
+	if (!linked || !bottom_left || !offline_program || istype(get_area(computer.physical), /area/station/holodeck))
+		return
+
 	last_program = program
 	load_program(offline_program, TRUE)
 	active = FALSE
