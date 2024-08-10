@@ -11,11 +11,8 @@
 |---------------------------|------------------------------------------------|
 | Git / GitHub cheatsheet   | [https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833](https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833) |
 | Guide to Modularization   | [./modular_nova/readme.md](./modular_nova/readme.md)            |
-<<<<<<< HEAD
 | Website                   | [https://www.tgstation13.org](https://www.tgstation13.org)          |
-=======
 | Guide to Mirorring        | [./modular_nova/mirroring_guide.md](./modular_nova/mirroring_guide.md)          |
->>>>>>> deaa8fd19a9 ([s] Guide on how to mirror Pull requests from TG (#4185))
 | Code                      | [https://github.com/NovaSector/NovaSector](https://github.com/NovaSector/NovaSector)    |
 | Wiki                      | [https://wiki.novasector13.com](https://wiki.novasector13.com)   |
 | Codedocs                  | [https://GalacticStation.github.io/GalaxiaStation/](https://GalacticStation.github.io/GalaxiaStation/)       |
