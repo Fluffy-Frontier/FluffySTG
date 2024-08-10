@@ -218,7 +218,7 @@
 		"mech_laser",
 		"mech_laser_heavy",
 		"mech_ion",
-		"mech_tesla",
+		//"mech_tesla", - FLUFFY FRONTIER EDIT
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_4_POINTS)
 	discount_experiments = list(/datum/experiment/scanning/random/mecha_damage_scan = TECHWEB_TIER_4_POINTS)
