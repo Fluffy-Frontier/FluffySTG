@@ -64,6 +64,8 @@ GLOBAL_LIST_INIT(consoles_replacement_map, list(
 
 	console.setDir(dir)
 	console.name = name
+	console.set_base_pixel_x(src.base_pixel_x)
+	console.set_base_pixel_y(src.base_pixel_y)
 
 	// Oh shit! I am an holoconsole!
 	var/area/station/holodeck/computer_area = get_area(src)

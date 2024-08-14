@@ -18,7 +18,7 @@
 	// Sprites from consoles file. Written by program on console_disk. Can be overriden by you or mapper
 	var/icon_keyboard
 
-/obj/machinery/modular_computer/preset/battery_less/console/Initialize(mapload)
+/obj/machinery/modular_computer/preset/battery_less/console/post_machine_initialize()
 	. = ..()
 
 	if (cpu && console_disk)
@@ -38,11 +38,15 @@
 			if (!icon_keyboard && db.icon_keyboard)
 				icon_keyboard = db.icon_keyboard
 
-/obj/machinery/modular_computer/preset/battery_less/console/post_machine_initialize()
-	. = ..()
 	if (cpu && console_disk && console_disk.installed_clone)
 		console_disk.installed_clone.on_start()
 		cpu.active_program = console_disk.installed_clone
+
+		// Free roundstart... For everyone
+		var/datum/computer_file/program/science/rd = cpu.active_program
+		if (istype(rd))
+			rd.locked = FALSE
+
 	// Autoenable on init
 	// cpu.turn_on() copycode
 	if(cpu.use_energy(cpu.base_active_power_usage)) // checks if the PC is powered

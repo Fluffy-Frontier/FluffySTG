@@ -1,3 +1,6 @@
+/datum/computer_file/program/budgetorders
+	var/circuit_emagged = FALSE
+
 /datum/computer_file/program/budgetorders/master
 	filename = "ordermasterapp"
 	filedesc = "Supply Interface"
@@ -79,14 +82,14 @@
 			if (ishuman(user))
 				var/mob/living/carbon/human/H = user
 				card = H.get_idcard()
-		if(!is_visible_pack(user, P.access_view , card ? card.GetAccess() : null, FALSE) || (P.hidden && !(computer.obj_flags & EMAGGED)))
+		if(!is_visible_pack(user, P.access_view , card ? card.GetAccess() : null, FALSE) || (P.hidden && !(computer.obj_flags & EMAGGED) && !circuit_emagged))
 			continue
 		if(!data["supplies"][P.group])
 			data["supplies"][P.group] = list(
 				"name" = P.group,
 				"packs" = list()
 			)
-		if(((P.hidden && !(computer.obj_flags & EMAGGED)) && (P.contraband && !contraband) || (P.special && !P.special_enabled) || P.drop_pod_only))
+		if(((P.hidden && !(computer.obj_flags & EMAGGED) && !circuit_emagged) || (P.contraband && !contraband) || (P.special && !P.special_enabled) || P.drop_pod_only))
 			continue
 		data["supplies"][P.group]["packs"] += list(list(
 			"name" = P.name,
@@ -286,7 +289,7 @@
 		CRASH("Unknown supply pack id given by order console ui. ID: [id]")
 	if(amount > CARGO_MAX_ORDER || amount < 1) // Holy shit fuck off
 		CRASH("Invalid amount passed into add_item")
-	if((pack.hidden && !(computer.obj_flags & EMAGGED)) || (pack.contraband && !contraband) || pack.drop_pod_only || (pack.special && !pack.special_enabled))
+	if((pack.hidden && !(computer.obj_flags & EMAGGED) && !circuit_emagged) || (pack.contraband && !contraband) || pack.drop_pod_only || (pack.special && !pack.special_enabled))
 		return
 
 	var/name = "*None Provided*"
@@ -618,6 +621,42 @@
 
 			self_paid = !self_paid
 
+/datum/computer_file/program/budgetorders/clone()
+	var/datum/computer_file/program/budgetorders/temp = ..()
+	temp.contraband = contraband
+	temp.circuit_emagged = circuit_emagged
+	temp.stationcargo = stationcargo
+	temp.requestonly = stationcargo
+	temp.can_approve_requests = can_approve_requests
+	return temp
+
+/obj/item/computer_console_disk/cargo/budgetorders
+	var/contraband = FALSE
+
+/obj/item/computer_console_disk/cargo/budgetorders/multitool_act(mob/living/user, obj/item/tool)
+	. = ..()
+	if(!(obj_flags & EMAGGED))
+		contraband = !contraband
+		to_chat(user, span_notice("Receiver spectrum set to [contraband ? "Broad" : "Standard"]."))
+		if (program && istype(program, /datum/computer_file/program/budgetorders))
+			var/datum/computer_file/program/budgetorders/prg = program
+			prg.contraband = contraband
+	else
+		to_chat(user, span_alert("The spectrum chip is unresponsive."))
+
+/obj/item/computer_console_disk/cargo/budgetorders/emag_act(mob/user, obj/item/card/emag/emag_card)
+	if (obj_flags & EMAGGED)
+		return FALSE
+
+	contraband = TRUE
+	obj_flags |= EMAGGED
+	if (program && istype(program, /datum/computer_file/program/budgetorders))
+		var/datum/computer_file/program/budgetorders/prg = program
+		prg.circuit_emagged = TRUE
+		prg.contraband = TRUE
+
+	to_chat(user, span_notice("You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband."))
+	return TRUE
 
 /obj/item/computer_console_disk/cargo/budgetorders/master/slave
 	program = /datum/computer_file/program/budgetorders/master/request
