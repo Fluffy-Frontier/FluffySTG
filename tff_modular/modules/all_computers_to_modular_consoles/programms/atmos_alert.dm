@@ -81,11 +81,11 @@
 		ui_header = "alarm_green.gif"
 	update_computer_icon() // Always update the icon after we check our conditional because we might've changed it
 
-/obj/item/computer_console_disk/engineering/station_alert
+/obj/item/computer_console_disk/engineering/atmos_alert
 	light_color = LIGHT_COLOR_CYAN
 	program = /datum/computer_file/program/disk_binded/atmos_alert
 
 /obj/machinery/modular_computer/preset/battery_less/console/atmos_alert
 	name = "atmospheric alert console"
 	desc = "Used to monitor the station's air alarms."
-	console_disk = /obj/item/computer_console_disk/engineering/station_alert
+	console_disk = /obj/item/computer_console_disk/engineering/atmos_alert
