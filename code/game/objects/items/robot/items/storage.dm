@@ -287,6 +287,7 @@
 	desc = "A special apparatus for carrying and manipulating circuit boards."
 	icon_state = "borg_hardware_apparatus"
 	storable = list(/obj/item/circuitboard,
+				/obj/item/computer_console_disk,	// FLUFFY FRONTIER ADD
 				/obj/item/electronics)
 
 /obj/item/borg/apparatus/circuit/Initialize(mapload)
