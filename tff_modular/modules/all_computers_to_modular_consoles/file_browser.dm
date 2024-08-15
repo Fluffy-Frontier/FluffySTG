@@ -29,6 +29,7 @@
 
 	if(user && !user.transferItemToLoc(tool, computer))
 		return ITEM_INTERACT_BLOCKING
+
 	console_disk = tool
 	playsound(computer, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 	console_disk.RegisterPC(computer)

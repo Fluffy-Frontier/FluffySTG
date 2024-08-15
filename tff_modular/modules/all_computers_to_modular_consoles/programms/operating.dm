@@ -180,6 +180,27 @@
 #undef MENU_OPERATION
 #undef MENU_SURGERIES
 
+// Hack into /obj/item/surgical_processor/interact_with_atom should give us surgeries
+/obj/item/surgical_processor/proc/handle_modular_consoles(/obj/item/modular_computer/computer, mob/living/user)
+	if(!istype(computer))
+		var/obj/machinery/modular_computer/cp = computer
+		computer = cpu
+	var/datum/computer_file/program/disk_binded/operating/operating = computer.find_file_by_name("operating")
+	// Check for enabeled (also non broken) comp and that our programm is running
+	if (!operating || !computer.enabled || computer.active_program != operating)
+		balloon_alert(user, "that program has no surgeries data...")
+		return NONE
+
+	balloon_alert(user, "copying designs...")
+	playsound(src, 'sound/machines/terminal_processing.ogg', 25, TRUE)
+	if(do_after(user, 1 SECONDS, target = computer.physical))
+		loaded_surgeries |= operating.advanced_surgeries
+		playsound(src, 'sound/machines/terminal_success.ogg', 25, TRUE)
+		downloaded = TRUE
+		update_appearance(UPDATE_OVERLAYS)
+		return ITEM_INTERACT_SUCCESS
+	return ITEM_INTERACT_BLOCKING
+
 // Hack into /datum/surgery/proc/locate_operating_computer should check that its our programm and its working
 /datum/surgery/proc/operating_program_instead_of_console_hack(datum/computer_file/program/disk_binded/operating/operating_computer)
 	if (!istype(operating_computer))
@@ -197,3 +218,14 @@
 	name = "operating computer"
 	desc = "Monitors patient vitals and displays surgery steps. Can be loaded with surgery disks to perform experimental procedures. Automatically syncs to operating tables within its line of sight for surgical tech advancement."
 	console_disk = /obj/item/computer_console_disk/medical/operating
+
+/datum/computer_file/program/disk_binded/operating/oldstation
+	filedesc = "Outdated Surgeon Assistant"
+	advanced_surgeries = list(/datum/surgery/advanced/experimental_dissection)
+
+/obj/item/computer_console_disk/medical/operating/oldstation
+	program = /datum/computer_file/program/disk_binded/operating/oldstation
+
+/obj/machinery/modular_computer/preset/battery_less/console/operating/oldstation
+	name = "ancient operating computer"
+	console_disk = /obj/item/computer_console_disk/medical/operating/oldstation

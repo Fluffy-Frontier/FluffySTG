@@ -369,6 +369,7 @@
 	UnregisterSignal(user, COMSIG_SURGERY_STARTING)
 
 /obj/item/surgical_processor/interact_with_atom(atom/design_holder, mob/living/user, list/modifiers)
+	if(istype(design_holder, /obj/machinery/modular_computer) || istype(design_holder, /obj/item/modular_computer))	return handle_modular_consoles(design_holder, user)	// FLUFFY FRONTIER ADD
 	if(!istype(design_holder, /obj/item/disk/surgery) && !istype(design_holder, /obj/machinery/computer/operating))
 		return NONE
 	balloon_alert(user, "copying designs...")

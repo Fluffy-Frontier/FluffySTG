@@ -5,6 +5,7 @@ GLOBAL_LIST_INIT(consoles_replacement_map, list(
 	/obj/machinery/computer/cargo/request = /obj/machinery/modular_computer/preset/battery_less/console/cargo/request,
 	/obj/machinery/computer/accounting = /obj/machinery/modular_computer/preset/battery_less/console/accounting,
 	/obj/machinery/computer/operating = /obj/machinery/modular_computer/preset/battery_less/console/operating,
+	/obj/machinery/computer/operating/oldstation = /obj/machinery/modular_computer/preset/battery_less/console/operating/oldstation,
 	/obj/machinery/computer/atmos_alert = /obj/machinery/modular_computer/preset/battery_less/console/atmos_alert,
 	/obj/machinery/computer/crew = /obj/machinery/modular_computer/preset/battery_less/console/crewmonitor,
 	/obj/machinery/computer/crew/syndie = /obj/machinery/modular_computer/preset/battery_less/console/crewmonitor/syndie,
