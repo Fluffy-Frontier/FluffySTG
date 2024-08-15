@@ -10,7 +10,9 @@
 
 /datum/reagent/consumable/skrelluq/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, times_fired)
 	. = ..()
-	affected_mob.emote("wurble")
+	affected_mob.apply_status_effect(/datum/status_effect/stoned)
+	if(SPT_PROB(20, seconds_per_tick))
+		affected_mob.emote("wurble")
 
 /datum/reagent/consumable/skrelluq/overdose_process(mob/living/affected_mob, seconds_per_tick, times_fired)
 	. = ..()
