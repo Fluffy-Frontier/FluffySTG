@@ -69,7 +69,7 @@
 
 	else if(istype(to_insert, /obj/item/circuitboard/machine) || istype(to_insert, /obj/item/circuitboard/computer))
 		return TRUE
-
+	else if(istype(to_insert, /obj/item/computer_console_disk))	return TRUE	// FLUFFY FRONTIER ADD
 	//check normal insertion of other stock parts
 	else if(!to_insert.get_part_rating())
 		return FALSE

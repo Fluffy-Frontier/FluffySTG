@@ -67,3 +67,49 @@
 			. += mutable_appearance('icons/obj/machines/computer.dmi', "[icon_keyboard]_off")
 		else
 			. += mutable_appearance('icons/obj/machines/computer.dmi', icon_keyboard)
+
+// Whoop-whoop cranky overload of RPED interaction
+/obj/machinery/modular_computer/exchange_parts(mob/user, obj/item/storage/part_replacer/replacer)
+	if(!istype(replacer) || !length(replacer.contents))
+		return FALSE
+
+	var/list/circuit_boards = list()
+	for(var/obj/item/computer_console_disk/board as anything in replacer)
+		if(istype(board, /obj/item/computer_console_disk))
+			circuit_boards[board.name] = board
+
+	if(!length(circuit_boards))
+		return FALSE
+
+	var/datum/computer_file/program/filemanager/fm = cpu?.find_file_by_name("filemanager")
+	if(!fm)
+		return FALSE
+	if(fm.console_disk)
+		balloon_alert(user, "disk already installed")
+		return TRUE
+
+	//if there is only one board directly install it else pick from list
+	var/obj/item/computer_console_disk/target_board
+	if(length(circuit_boards) == 1)
+		for(var/obj/item/computer_console_disk/board_name in circuit_boards)
+			target_board = circuit_boards["[program.filedesc] ([program.filename])"]
+
+	else
+		var/option = tgui_input_list(user, "Select Disk To Install"," Available Disks", circuit_boards)
+		target_board = circuit_boards[option]
+		// Everything still where it should be after the UI closed?
+		if(QDELETED(target_board) || QDELETED(src) || QDELETED(user) || !(target_board in replacer) || !user.is_holding(replacer))
+			return FALSE
+		// User still within range?
+		var/close_enough = replacer.works_from_distance || user.Adjacent(src)
+		if(!close_enough)
+			return FALSE
+
+	var/datum/computer_file/program/filemanager/fm = cpu?.find_file_by_name("filemanager")
+	if(!target_board)
+		return FALSE
+
+	// No matter success or not we're wzhoohiing that comp!
+	fm.application_item_interaction(user, target_board)
+	replacer.play_rped_sound()
+	return TRUE
