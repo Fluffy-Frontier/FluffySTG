@@ -76,7 +76,7 @@
 	var/list/circuit_boards = list()
 	for(var/obj/item/computer_console_disk/board as anything in replacer)
 		if(istype(board, /obj/item/computer_console_disk))
-			circuit_boards[board.name] = board
+			circuit_boards["[board.program.filedesc] ([board.program.filename])"] = board
 
 	if(!length(circuit_boards))
 		return FALSE
@@ -91,8 +91,8 @@
 	//if there is only one board directly install it else pick from list
 	var/obj/item/computer_console_disk/target_board
 	if(length(circuit_boards) == 1)
-		for(var/obj/item/computer_console_disk/board_name in circuit_boards)
-			target_board = circuit_boards["[program.filedesc] ([program.filename])"]
+		for(var/board_name in circuit_boards)
+			target_board = circuit_boards[board_name]
 
 	else
 		var/option = tgui_input_list(user, "Select Disk To Install"," Available Disks", circuit_boards)
@@ -105,7 +105,6 @@
 		if(!close_enough)
 			return FALSE
 
-	var/datum/computer_file/program/filemanager/fm = cpu?.find_file_by_name("filemanager")
 	if(!target_board)
 		return FALSE
 

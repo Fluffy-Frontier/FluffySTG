@@ -181,10 +181,10 @@
 #undef MENU_SURGERIES
 
 // Hack into /obj/item/surgical_processor/interact_with_atom should give us surgeries
-/obj/item/surgical_processor/proc/handle_modular_consoles(/obj/item/modular_computer/computer, mob/living/user)
+/obj/item/surgical_processor/proc/handle_modular_consoles(obj/item/modular_computer/computer, mob/living/user)
 	if(!istype(computer))
 		var/obj/machinery/modular_computer/cp = computer
-		computer = cpu
+		computer = cp.cpu
 	var/datum/computer_file/program/disk_binded/operating/operating = computer.find_file_by_name("operating")
 	// Check for enabeled (also non broken) comp and that our programm is running
 	if (!operating || !computer.enabled || computer.active_program != operating)
