@@ -287,8 +287,6 @@
 			name = "footprints"
 		if(FOOTPRINT_SPRITE_PAWS)
 			name = "pawprints"
-		if(FOOTPRINT_SPRITE_TAIL)
-			name = "tailprint"
 	dryname = "dried [name]"
 	return ..()
 
