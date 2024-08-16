@@ -1,8 +1,14 @@
 // Вывод кода следов ГБСов в модуль
 /obj/effect/decal/cleanable/blood/footprints/update_name(updates)
-  ..()
-  if(FOOTPRINT_SPRITE_TAIL)
-    name = "tailprint"
+  switch(footprint_sprite)
+    if(FOOTPRINT_SPRITE_CLAWS)
+      name = "clawprints"
+    if(FOOTPRINT_SPRITE_SHOES)
+      name = "footprints"
+    if(FOOTPRINT_SPRITE_PAWS)
+      name = "pawprints"
+    if(FOOTPRINT_SPRITE_TAIL)
+      name = "tailprint"
   dryname = "dried [name]"
   return ..()
 
