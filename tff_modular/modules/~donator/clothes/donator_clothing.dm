@@ -226,3 +226,15 @@
 	icon_state = "eldercoat"
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/head.dmi'
 	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/cloak/haori
+	name = "Flaming Haori"
+	desc = "A white haori with a flaming pattern on the end. It seems to radiate heat and energy. It seems."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	icon_state = "romontesque_haori"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	resistance_flags = FIRE_PROOF
+
+
+
+

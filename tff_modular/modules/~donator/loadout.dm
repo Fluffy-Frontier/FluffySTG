@@ -137,3 +137,8 @@
 	name = "Elder Hat"
 	item_path = /obj/item/clothing/head/eldercoat
 	ckeywhitelist = list("MercReaper", "skadi999", "Smol42")
+
+/datum/loadout_item/neck/haori
+	name = "Flaming Haori"
+	item_path = /obj/item/clothing/neck/cloak/haori
+	ckeywhitelist = list("romontesque")
