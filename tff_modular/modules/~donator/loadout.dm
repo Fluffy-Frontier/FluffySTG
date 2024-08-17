@@ -103,11 +103,6 @@
 	item_path = /obj/item/toy/plush/maru
 	ckeywhitelist = list("mercreaper", "skadi999")
 
-/datum/loadout_item/neck/officer_coat
-	name = "Senior Commander's Trenchcloak"
-	item_path = /obj/item/clothing/neck/cloak/trenchcloak
-	ckeywhitelist = list("romontesque")
-
 /datum/loadout_item/neck/tendercloak
 	name = "Bayou Old Mantle"
 	item_path = /obj/item/clothing/neck/cloak/tendercloak
