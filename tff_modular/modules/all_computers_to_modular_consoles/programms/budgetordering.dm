@@ -138,6 +138,39 @@
 				say("The supply shuttle is departing.")
 				usr.investigate_log("sent the supply shuttle away.", INVESTIGATE_CARGO)
 			else
+
+				//create the paper from the SSshuttle.shopping_list
+				if(length(SSshuttle.shopping_list))
+					// He he
+					if (!computer.stored_paper)
+						playsound(computer, 'sound/machines/terminal_error.ogg', 50, FALSE)
+						say("Unable to print requisition form. Shuttle call was denied. Check [computer.physical]\s paper level.")
+						return TRUE
+					computer.stored_paper--
+
+					var/obj/item/paper/requisition_paper = new(get_turf(computer))
+					requisition_paper.name = "requisition form - [station_time_timestamp()]"
+					var/requisition_text = "<h2>[station_name()] Supply Requisition</h2>"
+					requisition_text += "<hr/>"
+					requisition_text += "Time of Order: [station_time_timestamp()]<br/><br/>"
+					for(var/datum/supply_order/order as anything in SSshuttle.shopping_list)
+						requisition_text += "<b>[order.pack.name]</b></br>"
+						requisition_text += "- Order ID: [order.id]</br>"
+						var/restrictions = SSid_access.get_access_desc(order.pack.access)
+						if(restrictions)
+							requisition_text += "- Access Restrictions: [restrictions]</br>"
+						requisition_text += "- Ordered by: [order.orderer] ([order.orderer_rank])</br>"
+						var/paying_account = order.paying_account
+						if(paying_account)
+							requisition_text += "- Paid Privately by: [order.paying_account.account_holder]<br/>"
+						var/reason = order.reason
+						if(reason)
+							requisition_text += "- Reason Given: [reason]</br>"
+						requisition_text += "</br></br>"
+					requisition_paper.add_raw_text(requisition_text)
+					requisition_paper.color = "#9ef5ff"
+					requisition_paper.update_appearance()
+
 				usr.investigate_log("called the supply shuttle.", INVESTIGATE_CARGO)
 				say("The supply shuttle has been called and will arrive in [SSshuttle.supply.timeLeft(600)] minutes.")
 				SSshuttle.moveShuttle(cargo_shuttle, docking_home, TRUE)
@@ -344,6 +377,15 @@
 
 	amount = clamp(amount, 1, CARGO_MAX_ORDER - similar_count)
 	for(var/count in 1 to amount)
+		// He he
+		if (!computer.stored_paper)
+			playsound(computer, 'sound/machines/terminal_error.ogg', 50, FALSE)
+			say("Unable to print requisition form. Order was [count > 1 ? "partically procceded" : "canceled"]. Check [computer.physical]\s paper level.")
+			if (count == 1)
+				return
+			break
+		computer.stored_paper--
+
 		var/obj/item/coupon/applied_coupon
 		for(var/obj/item/coupon/coupon_check in loaded_coupons)
 			if(pack.type == coupon_check.discounted_pack)
@@ -499,6 +541,13 @@
 	if(!istype(armament_entry))
 		return
 
+	// He he
+	if (!possible_downloader.stored_paper)
+		playsound(possible_downloader, 'sound/machines/terminal_error.ogg', 50, FALSE)
+		parent_prog.say("Unable to print requisition form. Order was canceled. Check [possible_downloader.physical]\s paper level.")
+		return
+	possible_downloader.stored_paper--
+
 	var/mob/living/carbon/human/the_person = user
 
 	if(istype(the_person))
@@ -626,7 +675,7 @@
 	temp.contraband = contraband
 	temp.circuit_emagged = circuit_emagged
 	temp.stationcargo = stationcargo
-	temp.requestonly = stationcargo
+	temp.requestonly = requestonly
 	temp.can_approve_requests = can_approve_requests
 	return temp
 

@@ -34,14 +34,16 @@
 
 /datum/computer_file/program/disk_binded/operating/on_start(mob/living/user)
 	. = ..()
-	table = null
 	find_table()
 
-/datum/computer_file/program/disk_binded/operating/proc/on_move()
-	if(table && table.computer == src)
-		table.computer = null
-		table = null
-	find_table()
+/datum/computer_file/program/disk_binded/operating/proc/on_move(atom/movable/mover, turf/old_loc)
+	SIGNAL_HANDLER
+
+	// Different Z - probably shuttle. Give it a moment to move our table too
+	if (mover.z != old_loc.z)
+		addtimer(CALLBACK(src, PROC_REF(find_table)), 1	SECONDS)
+	else
+		find_table()
 
 /datum/computer_file/program/disk_binded/operating/Destroy()
 	if(table && table.computer == src)
@@ -80,6 +82,10 @@
 		advanced_surgeries |= D.surgery
 
 /datum/computer_file/program/disk_binded/operating/proc/find_table()
+	if(table && table.computer == src)
+		table.computer = null
+		table = null
+
 	for(var/direction in GLOB.alldirs)
 		table = locate(/obj/structure/table/optable) in get_step(computer.physical, direction)
 		if(table)
