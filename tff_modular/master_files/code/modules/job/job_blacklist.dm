@@ -35,6 +35,9 @@
 /datum/job/atmospheric_technician
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
+/datum/job/station_engineer
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
 /datum/job/engineering_guard
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
@@ -48,10 +51,19 @@
 /datum/job/doctor
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
+/datum/job/chemist
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
 /datum/job/virologist
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
+/datum/job/paramedic
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
 /datum/job/orderly
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
+/datum/job/coroner
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 //РнД
@@ -64,6 +76,9 @@
 /datum/job/geneticist
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
+/datum/job/roboticist
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
 /datum/job/science_guard
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
@@ -72,6 +87,9 @@
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 /datum/job/shaft_miner
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
+/datum/job/cargo_technician
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 /datum/job/customs_agent
@@ -90,6 +108,12 @@
 /datum/job/mime
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
+/datum/job/bartender
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
+/datum/job/cook
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
 /datum/job/chaplain
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
@@ -102,9 +126,34 @@
 /datum/job/bouncer
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
+/datum/job/curator
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
+/datum/job/janitor
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
+/datum/job/botanist
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
+/datum/job/barber
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
 //Особые должности
 /datum/job/veteran_advisor
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 /datum/job/bridge_assistant
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
+/datum/job/assistant
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
+/datum/job/prisoner
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
+//Кремний
+/datum/job/ai
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
+/datum/job/cyborg
 	species_blacklist = list(SPECIES_NABBER = TRUE)
