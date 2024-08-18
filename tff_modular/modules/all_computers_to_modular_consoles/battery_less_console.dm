@@ -112,3 +112,7 @@
 	fm.application_item_interaction(user, target_board)
 	replacer.play_rped_sound()
 	return TRUE
+
+// God please let me cook
+/obj/item/modular_computer
+	allow_chunky = TRUE
