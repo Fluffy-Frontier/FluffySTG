@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 #define EMOTE_DELAY (2 SECONDS) //To prevent spam emotes. // THE FLUFFY FRONTIER EDIT: 5 sec -> 2 sec
+=======
+#define EMOTE_DELAY (2 SECONDS) //To prevent spam emotes.
+>>>>>>> c48777d9a38 (Meowing faster, everything faster! | Reduces global emote CDs drastically. (#4277))
 
 /mob
 	var/nextsoundemote = 1 //Time at which the next emote can be played
