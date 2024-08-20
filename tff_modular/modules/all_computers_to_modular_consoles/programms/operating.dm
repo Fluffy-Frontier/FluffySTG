@@ -186,6 +186,17 @@
 #undef MENU_OPERATION
 #undef MENU_SURGERIES
 
+// Hack for acccept NtOS operating console as bounty target instead old computer
+/datum/bounty/item/medical/surgerycomp/applies_to(obj/machinery/modular_computer/shipped)
+	if(shipped.flags_1 & HOLOGRAM_1)
+		return FALSE
+	if(!istype(shipped) || !shipped.cpu)
+		// Well backward compitability is sacred
+		return ..()
+	if(!shipped.cpu.find_file_by_name("operating"))
+		return FALSE
+	return shipped_count < required_count
+
 // Hack into /obj/item/surgical_processor/interact_with_atom should give us surgeries
 /obj/item/surgical_processor/proc/handle_modular_consoles(obj/item/modular_computer/computer, mob/living/user)
 	if(!istype(computer))
@@ -218,6 +229,7 @@
 
 /obj/item/computer_console_disk/medical/operating
 	program = /datum/computer_file/program/disk_binded/operating
+	icon_keyboard = "med_key"
 	light_color = LIGHT_COLOR_BLUE
 
 /obj/machinery/modular_computer/preset/battery_less/console/operating

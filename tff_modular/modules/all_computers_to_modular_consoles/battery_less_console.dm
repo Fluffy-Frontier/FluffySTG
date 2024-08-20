@@ -116,3 +116,10 @@
 // God please let me cook
 /obj/item/modular_computer
 	allow_chunky = TRUE
+
+/obj/item/modular_computer/handle_deconstruct(disassembled)
+	if (disassembled)
+		var/datum/computer_file/program/filemanager/fm = find_file_by_name("filemanager")
+		if (fm)
+			fm.try_eject(null, TRUE)
+	. = ..()

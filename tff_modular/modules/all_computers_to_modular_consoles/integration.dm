@@ -58,6 +58,14 @@ GLOBAL_LIST_INIT(consoles_replacement_map, list(
 			qdel(console)
 			return .
 		console.update_appearance()
+
+		// Bitch, all machinery have INITIALIZE_HINT_LATELOAD,
+		// why on the fucking Earth you think, you can override it, AND return SAME hint?!
+		if (src.type in list(
+			/obj/machinery/computer/operating,
+		))
+			QDEL_IN(src, 1 SECONDS)
+
 		return INITIALIZE_HINT_QDEL
 
 /obj/machinery/computer/proc/transfer_data_to_modular_console(obj/machinery/modular_computer/preset/battery_less/console/console)

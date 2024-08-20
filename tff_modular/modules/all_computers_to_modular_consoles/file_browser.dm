@@ -93,5 +93,15 @@
 		to_chat(user, span_warning("You should be near \the [computer.physical ? computer.physical : computer]!"))
 	return FALSE
 
+/datum/computer_file/program/filemanager/Destroy(force)
+	if (console_disk)
+		console_disk.CloneUnInstalled()
+		computer.remove_file(console_disk.installed_clone)
+		console_disk.UnRegisterPC()
+		console_disk.installed_clone = null
+		QDEL_NULL(console_disk)
+
+	. = ..()
+
 #undef EJECT_TIME_UNSKILLED
 #undef EJECT_TIME_SKILLED
