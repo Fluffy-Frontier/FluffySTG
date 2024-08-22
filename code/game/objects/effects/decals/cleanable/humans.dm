@@ -287,6 +287,8 @@
 			name = "footprints"
 		if(FOOTPRINT_SPRITE_PAWS)
 			name = "pawprints"
+		if(FOOTPRINT_SPRITE_TAIL) // FF ADDITION START
+			name = "tailprint" // FF ADDITION END
 	dryname = "dried [name]"
 	return ..()
 

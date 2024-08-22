@@ -3,7 +3,6 @@
 #define BODYPART_ICON_NABBER 'tff_modular/modules/nabbers/icons/bodyparts/nabber_parts_greyscale.dmi'
 #define NABBER_BRUTE_MODIFIER 0.7 // SHEE-E--E-E-E-E-E-ES, да это живые танки.
 #define NABBER_BURN_MODIFIER 1.2
-#define FOOTPRINT_SPRITE_TAIL "tail"
 //Nabbers
 
 /obj/item/bodypart/head/mutant/nabber
