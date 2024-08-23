@@ -496,6 +496,8 @@
 
 // AUGUST
 
+// FLUFFY FRONTIER EDIT START
+/*
 /datum/holiday/ukraine
 	name = "Independence Day of Ukraine"
 	begin_month = AUGUST
@@ -504,6 +506,8 @@
 
 /datum/holiday/ukraine/getStationPrefix()
 	return pick("Kyiv", "Ukraine")
+*/
+// FLUFFY FRONTIER EDIT END
 
 // SEPTEMBER
 
