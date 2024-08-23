@@ -1,3 +1,5 @@
+var/datum/martial_art/martial_to_learn = new /datum/martial_art/nabber_grab()
+
 /obj/item/melee/nabber_blade
 	name = "Mantis arm"
 	desc = "A grotesque matn made out of bone and flesh that cleaves through people as a hot knife through butter."
@@ -107,6 +109,8 @@
 
 	nabber.put_in_active_hand(active_hand)
 	nabber.put_in_inactive_hand(inactive_hand)
+	//var/datum/martial_art/martial_to_learn = new /datum/martial_art/nabber_grab()
+	martial_to_learn.teach(nabber)
 
 	RegisterSignal(owner, COMSIG_CARBON_REMOVE_LIMB, PROC_REF(on_lose_hand))
 	button_icon_state = "arms_on"
@@ -137,6 +141,7 @@
 		if(istype(held, /obj/item/melee/nabber_blade))
 			qdel(held)
 
+	martial_to_learn.remove(nabber)
 	UnregisterSignal(owner, COMSIG_CARBON_REMOVE_LIMB)
 	nabber.balloon_alert(nabber, "Arms down!")
 	button_icon_state = "arms_off"
