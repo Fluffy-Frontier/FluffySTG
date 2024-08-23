@@ -228,6 +228,24 @@
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
 	resistance_flags = FIRE_PROOF
 
+/obj/item/clothing/suit/hooded/cloak/wakamo
+    name = "Wakamo holo-projector"
+    desc = "A standard version of a prototype cloak given out by Nanotrasen higher ups. It's surprisingly thick and heavy for a cloak despite having most of its tech stripped. It also comes with a bluespace trinket which calls its accompanying hat onto the user. A worn inscription on the inside of the cloak reads 'Fleuret' ...the rest is faded away."
+    icon = 'tff_modular/master_files/icons/donator/obj/clothing/neck.dmi'
+    icon_state = "wakamo"
+    worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+    hoodtype = /obj/item/clothing/head/hooded/cloakhood/wakamo
+    body_parts_covered = HEAD|NECK
+    slot_flags = ITEM_SLOT_NECK //it's a cloak. it's cosmetic. so why the hell not? what could possibly go wrong?
+    supports_variations_flags = NONE
+    resistance_flags = FIRE_PROOF
 
-
-
+/obj/item/clothing/head/hooded/cloakhood/wakamo
+    name = "Wakamo halo"
+    desc = "This hat is unquestionably the best one, bluespaced to and from CentCom. It smells of Fish and Tea with a hint of antagonism"
+    icon = 'tff_modular/master_files/icons/donator/obj/clothing/head.dmi'
+    icon_state = "wakamo"
+    worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/head.dmi'
+    flags_inv = null
+    supports_variations_flags = NONE
+    resistance_flags = FIRE_PROOF
