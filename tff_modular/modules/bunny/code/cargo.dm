@@ -15,3 +15,12 @@
 	item_path = /obj/item/storage/backpack/duffelbag/mining_bunny
 	desc = "A mining outfit kit themed around bunnies, they do live in burrows after all..."
 	cost_per_order = 500
+
+/datum/supply_pack/vending/wardrobes/command
+	name = "Bunny Wardrobe Supply Crate"
+	desc = "BNNUY"
+	cost = CARGO_CRATE_VALUE * 3
+	contains = list(
+		/obj/item/vending_refill/wardrobe/bunny,
+	)
+	crate_name = "Bunny Resupply Crate"
