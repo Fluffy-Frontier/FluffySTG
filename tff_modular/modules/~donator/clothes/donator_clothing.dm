@@ -173,16 +173,101 @@
 	worn_icon_teshari = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 
-/obj/item/clothing/neck/cloak/trenchcloak
-	name = "senior commander's trenchcloak"
-	desc = "Dark trenchcloak made to order for senior officers. Consists of really strong leather and armored fabric. The inside of the collar has a label with ''V'' written on it."
-	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
-	icon_state = "romontesque_cloak"
-	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
-
 /obj/item/clothing/neck/cloak/tendercloak
 	name = "bayou old mantle"
 	desc = "This is a very shabby (and time-worn) cape, it smells funny of silt."
 	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
 	icon_state = "ten_neck"
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+
+/obj/item/clothing/neck/cloak/eldercoat
+	name = "hunter's cloak"
+	desc = "Just part of hunter's coat."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	icon_state = "eldercoat"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/under/eldercoat
+	name = "hunter's uniform"
+	desc = "Old-fashioned robes with a patterned pattern all over the clothes and a cape hanging from the left shoulder."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/under.dmi'
+	icon_state = "eldercoat"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/under.dmi'
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/shoes/eldercoat
+	name = "leather boots"
+	desc = "Old-fashioned leather boots in a dark shade"
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/shoes.dmi'
+	icon_state = "eldercoat"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/shoes.dmi'
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/gloves/eldercoat
+	name = "leather gloves"
+	desc = "Elongated leather gloves of an old-fashioned kind."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/gloves.dmi'
+	icon_state = "eldercoat"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/gloves.dmi'
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/head/eldercoat
+	name = "three-cornered hat"
+	desc = "A pointed leather hat in a dark shade with a protruding feather."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/head.dmi'
+	icon_state = "eldercoat"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/head.dmi'
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/cloak/haori
+	name = "Flaming Haori"
+	desc = "A white haori with a flaming pattern on the end. It seems to radiate heat and energy. It seems."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	icon_state = "romontesque_haori"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/suit/hooded/cloak/wakamo
+	name = "Wakamo holo-projector"
+	desc =  "Prototype version of a Holo-Projector that creates projection above your head."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/neck.dmi'
+	icon_state = "wakamo"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	hoodtype = /obj/item/clothing/head/hooded/cloakhood/wakamo
+	body_parts_covered = HEAD|NECK
+	slot_flags = ITEM_SLOT_NECK //it's a cloak. it's cosmetic. so why the hell not? what could possibly go wrong?
+	supports_variations_flags = NONE
+	resistance_flags = FIRE_PROOF
+	greyscale_colors = "#AC3232"
+	greyscale_config = /datum/greyscale_config/wakamo
+	greyscale_config_worn = /datum/greyscale_config/wakamo/worn
+	flags_1 = IS_PLAYER_COLORABLE_1
+
+/obj/item/clothing/suit/hooded/cloak/wakamo/set_greyscale(list/colors, new_config, new_worn_config, new_inhand_left, new_inhand_right)
+	. = ..()
+	if(!hood)
+		return
+	var/list/coat_colors = SSgreyscale.ParseColorString(greyscale_colors)
+	var/list/new_coat_colors = coat_colors.Copy(1)
+	hood.set_greyscale(new_coat_colors) //Adopt the suit's grayscale coloring for visual clarity.
+	hood.update_slot_icon()
+
+//But also keep old method in case the hood is (re-)created later
+/obj/item/clothing/suit/hooded/cloak/wakamo/on_hood_created(obj/item/clothing/head/hooded/hood)
+	. = ..()
+	var/list/coat_colors = (SSgreyscale.ParseColorString(greyscale_colors))
+	var/list/new_coat_colors = coat_colors.Copy(1)
+	hood.set_greyscale(new_coat_colors) //Adopt the suit's grayscale coloring for visual clarity.
+
+/obj/item/clothing/head/hooded/cloakhood/wakamo
+	name = "Wakamo halo"
+	desc = "This is a projection of a Halo above the head. Looks neat. But now you feel Responsibilities weighing on your shoulders since you have grown out of it."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/head.dmi'
+	icon_state = "wakamo"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/head.dmi'
+	flags_inv = null
+	supports_variations_flags = NONE
+	resistance_flags = FIRE_PROOF
+	greyscale_config = /datum/greyscale_config/wakamo_halo
+	greyscale_config_worn = /datum/greyscale_config/wakamo_halo/worn

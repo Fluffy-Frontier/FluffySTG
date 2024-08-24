@@ -3,14 +3,15 @@
 
 /datum/techweb_node/adv_vision
 	id = TECHWEB_NODE_ADVANCED_VISION
-	display_name = "Combat Cybernetic Eyes"
-	description = "Military grade combat implants to improve vision."
+	display_name = "Combat Cybernetic Organs" //FLUFFY FRONTIER Combat Heart balance; old name: "Combat Cybernetic Eyes"
+	description = "Military grade combat implants to improve efficiency." //FLUFFY FRONTIER Combat Heart balance; old description: "Military grade combat implants to improve vision."
 	prereq_ids = list(TECHWEB_NODE_COMBAT_IMPLANTS, TECHWEB_NODE_ALIEN_SURGERY)
 	design_ids = list(
 		"ci-thermals",
 		"ci-xray",
 		"ci-thermals-moth",
 		"ci-xray-moth",
+		"cybernetic_heart_anomalock", //FLUFFY FRONTIER Combat Heart balance
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_2_POINTS)
 

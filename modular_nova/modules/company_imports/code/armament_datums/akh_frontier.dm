@@ -11,14 +11,6 @@
 /datum/armament_entry/company_import/akh_frontier/basic/omni_drill
 	item_type = /obj/item/screwdriver/omni_drill
 
-// FLUFFY FRONTIER REMOVAL BEGIN - No public door openers
-/*
-/datum/armament_entry/company_import/akh_frontier/basic/prybar
-	item_type = /obj/item/crowbar/large/doorforcer
-	restricted = TRUE
-*/
-// FLUFFY FRONTIER REMOVAL END
-
 /datum/armament_entry/company_import/akh_frontier/basic/arc_welder
 	item_type = /obj/item/weldingtool/electric/arc_welder
 
@@ -32,7 +24,7 @@
 
 /datum/armament_entry/company_import/akh_frontier/deployables_fab/rapid_construction_fabricator
 	item_type = /obj/item/flatpacked_machine
-	cost = CARGO_CRATE_VALUE * 6
+	cost = CARGO_CRATE_VALUE * 8
 	restricted = TRUE
 
 /datum/armament_entry/company_import/akh_frontier/deployables_fab/foodricator

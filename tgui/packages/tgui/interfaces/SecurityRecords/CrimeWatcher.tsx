@@ -102,7 +102,8 @@ const CrimeDisplay = ({ item }: { item: Crime }) => {
   const { crew_ref } = foundRecord;
   const { act, data } = useBackend<SecurityRecordsData>();
   const { current_user, higher_access } = data;
-  const { author, crime_ref, details, fine, name, paid, time, valid } = item;
+  const { author, crime_ref, details, fine, name, paid, time, valid, voider } =
+    item;
   const showFine = !!fine && fine > 0 ? `: ${fine} cr` : ': PAID OFF';
 
   let collapsibleColor = '';
@@ -128,6 +129,14 @@ const CrimeDisplay = ({ item }: { item: Crime }) => {
           <LabeledList.Item color={!valid ? 'bad' : 'good'} label="Status">
             {!valid ? 'Void' : 'Active'}
           </LabeledList.Item>
+          {!valid && (
+            <LabeledList.Item
+              color={voider ? 'gold' : 'good'}
+              label="Voided by"
+            >
+              {!voider ? 'Automation' : voider}
+            </LabeledList.Item>
+          )}
           {!!fine && fine > 0 && (
             <>
               <LabeledList.Item color="bad" label="Fine">
@@ -155,7 +164,7 @@ const CrimeDisplay = ({ item }: { item: Crime }) => {
             </Button>
             <Button.Confirm
               content="Invalidate"
-              disabled={!valid || (!higher_access && author !== current_user)} // FLUFFY FRONTIER EDIT. WAS disabled={!higher_access || !valid}
+              disabled={!valid || (!higher_access && author !== current_user)}
               icon="ban"
               onClick={() =>
                 act('invalidate_crime', {

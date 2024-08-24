@@ -103,12 +103,42 @@
 	item_path = /obj/item/toy/plush/maru
 	ckeywhitelist = list("mercreaper", "skadi999")
 
-/datum/loadout_item/neck/officer_coat
-	name = "Senior Commander's Trenchcloak"
-	item_path = /obj/item/clothing/neck/cloak/trenchcloak
-	ckeywhitelist = list("romontesque")
-
 /datum/loadout_item/neck/tendercloak
 	name = "Bayou Old Mantle"
 	item_path = /obj/item/clothing/neck/cloak/tendercloak
 	ckeywhitelist = list("mercreaper", "byratishka")
+
+/datum/loadout_item/under/elder_suit
+	name = "Elder Suit"
+	item_path = /obj/item/clothing/under/eldercoat
+	ckeywhitelist = list("MercReaper", "skadi999", "Smol42")
+
+/datum/loadout_item/under/elder_cloak
+	name = "Elder cloak"
+	item_path = /obj/item/clothing/neck/cloak/eldercoat
+	ckeywhitelist = list("MercReaper", "skadi999", "Smol42")
+
+/datum/loadout_item/shoes/elder_shoes
+	name = "Elder Shoes"
+	item_path = /obj/item/clothing/shoes/eldercoat
+	ckeywhitelist = list("MercReaper", "skadi999", "Smol42")
+
+/datum/loadout_item/gloves/elder_gloves
+	name = "Elder Gloves"
+	item_path = /obj/item/clothing/gloves/eldercoat
+	ckeywhitelist = list("MercReaper", "skadi999", "Smol42")
+
+/datum/loadout_item/head/elder_head
+	name = "Elder Hat"
+	item_path = /obj/item/clothing/head/eldercoat
+	ckeywhitelist = list("MercReaper", "skadi999", "Smol42")
+
+/datum/loadout_item/neck/haori
+	name = "Flaming Haori"
+	item_path = /obj/item/clothing/neck/cloak/haori
+	ckeywhitelist = list("romontesque")
+
+/datum/loadout_item/neck/wakamo // Lafrien's clothing
+	name = "Wakamo holo-projector"
+	item_path = /obj/item/clothing/suit/hooded/cloak/wakamo
+	donator_only = TRUE
