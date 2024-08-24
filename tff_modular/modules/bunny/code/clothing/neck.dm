@@ -9,7 +9,7 @@
 	desc = "A fancy tie that includes a collar. Looking snazzy!"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/neck.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/neck.dmi'
-	icon_state = "bowtie_collar_tied"
+	icon_state = "bowtie_collar_tied_base"
 	tie_type = "bowtie_collar"
 	flags_1 = IS_PLAYER_COLORABLE_1
 	alternate_worn_layer = UNDER_SUIT_LAYER

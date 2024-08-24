@@ -4,7 +4,7 @@
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
-	icon_state = "playbunny"
+	icon_state = "playbunny_base"
 	flags_1 = IS_PLAYER_COLORABLE_1
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
