@@ -42,6 +42,12 @@
 			RESKIN_WORN_ICON = 'icons/mob/clothing/eyes.dmi',
 			RESKIN_WORN_ICON_STATE = "sunhudsec"
 		),
+		"Orange Hud" = list(
+			RESKIN_ICON = 'icons/obj/clothing/glasses.dmi',
+			RESKIN_ICON_STATE = "orangeglasses",
+			RESKIN_WORN_ICON = 'icons/mob/clothing/eyes.dmi',
+			RESKIN_WORN_ICON_STATE = "orangeglasses"
+		),
 	)
 
 //ну и удаляем эти скины из подтипов, ведь им это тоже меняет...
