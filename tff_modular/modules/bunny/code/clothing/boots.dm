@@ -8,7 +8,6 @@
 	name = "syndiheels"
 	desc = "Heel in more way than one."
 	greyscale_colors = "#18191E"
-	armor_type = /datum/armor/shoes_combat
 	lace_time = 12 SECONDS
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	strip_delay = 2 SECONDS
