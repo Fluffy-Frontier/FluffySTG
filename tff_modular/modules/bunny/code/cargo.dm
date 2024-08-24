@@ -16,7 +16,7 @@
 	desc = "A mining outfit kit themed around bunnies, they do live in burrows after all..."
 	cost_per_order = 500
 
-/datum/supply_pack/vending/wardrobes/command
+/datum/supply_pack/vending/wardrobes/bunny
 	name = "Bunny Wardrobe Supply Crate"
 	desc = "BNNUY"
 	cost = CARGO_CRATE_VALUE * 3
