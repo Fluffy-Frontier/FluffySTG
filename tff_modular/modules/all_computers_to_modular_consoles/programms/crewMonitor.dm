@@ -4,6 +4,7 @@
 	program_open_overlay = "crew"
 	extended_desc = "Connect to crewmembers undies to track their vitals."
 	program_flags = PROGRAM_REQUIRES_NTNET
+	can_run_on_flags = PROGRAM_CONSOLE | PROGRAM_LAPTOP
 	tgui_id = "NtosCrewMonitor"
 	program_icon = "heartbeat"
 	icon_keyboard = "med_key"
@@ -19,19 +20,9 @@
 	/// The records retrieved
 	var/datum/port/output/records
 
-	var/obj/attached_console
-
 /obj/item/circuit_component/mod_program/crewmonitor/populate_ports()
 	. = ..()
 	records = add_output_port("Crew Monitoring Data", PORT_TYPE_TABLE)
-
-/obj/item/circuit_component/mod_program/crewmonitor/register_usb_parent(atom/movable/shell)
-	. = ..()
-	attached_console = associated_program.computer.physical
-
-/obj/item/circuit_component/mod_program/crewmonitor/unregister_usb_parent(atom/movable/shell)
-	attached_console = null
-	return ..()
 
 /obj/item/circuit_component/mod_program/crewmonitor/get_ui_notices()
 	. = ..()
@@ -49,11 +40,11 @@
 	))
 
 /obj/item/circuit_component/mod_program/crewmonitor/input_received(datum/port/input/port)
-	if(!attached_console || !GLOB.crewmonitor)
+	if(!associated_program || !associated_program.computer ||!GLOB.crewmonitor)
 		return
 
 	var/list/new_table = list()
-	for(var/list/player_record as anything in GLOB.crewmonitor.update_data(attached_console.z))
+	for(var/list/player_record as anything in GLOB.crewmonitor.update_data(associated_program.computer.physical.z))
 		var/list/entry = list()
 		entry["name"] = player_record["name"]
 		entry["job"] = player_record["assignment"]
