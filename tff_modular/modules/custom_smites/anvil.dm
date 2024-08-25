@@ -1,8 +1,10 @@
-/proc/anvilgib(var/mob/living/poor_soul)
+/proc/anvilgib(mob/living/poor_soul)
 	poor_soul.Stun(20 SECONDS, ignore_canstun = TRUE) // Cant move by themself
 	poor_soul.mobility_flags = NONE // Cant rest to break animation
 	GLOB.move_manager.stop_looping(poor_soul) // Cant be grabbed
 	poor_soul.density = 0 // Cant be moved by walking into them
+	poor_soul.move_resist = MOVE_RESIST_DEFAULT * 1000
+	poor_soul.anchored = TRUE
 
 	var/obj/anvil = new /obj/structure/reagent_anvil(get_turf(poor_soul))
 	anvil.anchored = TRUE
@@ -16,7 +18,7 @@
 	animate(anvil_shadow, alpha = 150, transform = matrix(0.25, 0, 0, 0, 0.17, 0), easing = EASE_IN | QUAD_EASING, time = 1.75 SECONDS, flags = ANIMATION_PARALLEL)
 
 	playsound(get_turf(poor_soul), 'tff_modular/modules/custom_smites/sounds/cartoon_fall.ogg', 50, FALSE)
-	sleep(1.7 SECONDS)
+	sleep(1.6 SECONDS)
 	poor_soul.gib()
 	anvil.anchored = FALSE
 	qdel(anvil_shadow)
