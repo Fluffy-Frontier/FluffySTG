@@ -8,7 +8,6 @@
 	sweet_sweet_boy.density = 0 // Cant be moved by walking into them
 	sweet_sweet_boy.layer = 0
 	sweet_sweet_boy.move_resist = MOVE_RESIST_DEFAULT * 1000
-	sweet_sweet_boy.anchored = TRUE
 	var/turf/open/the_turf = pick(RANGE_TURFS(1, get_turf(sweet_sweet_boy)))
 
 	while(the_turf == get_turf(sweet_sweet_boy))
@@ -82,7 +81,6 @@
 	sweet_sweet_boy.density = 0
 	sweet_sweet_boy.layer = 0
 	sweet_sweet_boy.move_resist = MOVE_RESIST_DEFAULT * 1000
-	sweet_sweet_boy.anchored = TRUE
 
 	animate_slide(the_turf, 0, 0, 5 SECONDS)
 	// The show begins
@@ -119,7 +117,7 @@
 	gender = "male"
 	plane = -7
 	layer = 0
-	anchored = TRUE
+	move_resist = MOVE_RESIST_DEFAULT * 1000
 
 /mob/living/carbon/human/species/vulpkanin/gib_vulp/Initialize()
 	. = ..()

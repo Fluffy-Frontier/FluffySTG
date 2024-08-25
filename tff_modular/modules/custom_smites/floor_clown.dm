@@ -8,7 +8,6 @@
 	clowns_dinner.density = 0 // Cant be moved by walking into them
 	clowns_dinner.layer = 0
 	clowns_dinner.move_resist = MOVE_RESIST_DEFAULT * 1000
-	clowns_dinner.anchored = TRUE
 	var/turf/open/the_turf = pick(RANGE_TURFS(1, get_turf(clowns_dinner)))
 
 	while(the_turf == get_turf(clowns_dinner))
@@ -87,7 +86,7 @@
 	gender = "male"
 	plane = -7
 	layer = 0
-	anchored = TRUE
+	move_resist = MOVE_RESIST_DEFAULT * 1000
 
 /mob/living/carbon/human/floor_clown/Initialize()
 	. = ..()

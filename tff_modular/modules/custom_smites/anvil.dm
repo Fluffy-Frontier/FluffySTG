@@ -4,7 +4,6 @@
 	GLOB.move_manager.stop_looping(poor_soul) // Cant be grabbed
 	poor_soul.density = 0 // Cant be moved by walking into them
 	poor_soul.move_resist = MOVE_RESIST_DEFAULT * 1000
-	poor_soul.anchored = TRUE
 
 	var/obj/anvil = new /obj/structure/reagent_anvil(get_turf(poor_soul))
 	anvil.anchored = TRUE
