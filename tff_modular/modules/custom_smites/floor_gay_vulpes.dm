@@ -122,7 +122,7 @@
 	anchored = TRUE
 
 /mob/living/carbon/human/species/vulpkanin/gib_vulp/Initialize()
-	..()
+	. = ..()
 	status_flags = GODMODE
 	mobility_flags = NONE
 	GLOB.move_manager.stop_looping(src)

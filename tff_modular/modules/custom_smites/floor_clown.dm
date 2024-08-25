@@ -90,7 +90,7 @@
 	anchored = TRUE
 
 /mob/living/carbon/human/floor_clown/Initialize()
-	..()
+	. = ..()
 	status_flags = GODMODE
 	mobility_flags = NONE
 	GLOB.move_manager.stop_looping(src)
