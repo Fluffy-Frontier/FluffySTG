@@ -73,6 +73,8 @@ GLOBAL_LIST_INIT(consoles_replacement_map, list(
 
 	console.setDir(dir)
 	console.name = name
+	console.pixel_x = src.pixel_x
+	console.pixel_y = src.pixel_y
 	console.set_base_pixel_x(src.base_pixel_x)
 	console.set_base_pixel_y(src.base_pixel_y)
 

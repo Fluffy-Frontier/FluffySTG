@@ -33,7 +33,7 @@
 	if(protection & EMP_PROTECT_SELF)
 		return
 
-	if (!computer.enabled && computer.active_program != src)
+	if (!computer || !computer.enabled && computer.active_program != src)
 		return
 
 	for(var/datum/record/crew/target in GLOB.manifest.general)

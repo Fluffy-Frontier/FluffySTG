@@ -113,6 +113,12 @@
 	replacer.play_rped_sound()
 	return TRUE
 
+/obj/machinery/modular_computer/examine_more(mob/user)
+	. = cpu?.examine_more(user) || ..()
+
+/obj/machinery/modular_computer/screwdriver_act_secondary(mob/user, obj/item/tool)
+	return (cpu && !HAS_TRAIT_FROM(src, TRAIT_MODPC_INTERACTING_WITH_FRAME, REF(user))) ? cpu.screwdriver_act_secondary(user, tool) : ..()
+
 // God please let me cook
 /obj/item/modular_computer
 	allow_chunky = TRUE
@@ -123,3 +129,18 @@
 		if (fm)
 			fm.try_eject(null, TRUE)
 	. = ..()
+
+/obj/item/modular_computer/processor/paper_act(mob/user, obj/item/paper/new_paper)
+	// Bureaucracy Defender
+	if (find_file_by_name("orderslaveapp") || find_file_by_name("ordermasterapp") || find_file_by_name("orderapp"))
+		if (istype(new_paper, /obj/item/paper/fluff/jobs/cargo/manifest))
+			balloon_alert(user, "some app forbids printer to accept this")
+			return ITEM_INTERACT_BLOCKING
+		// Bad way of detecting this... But...
+		else if (findtext(new_paper.name, "requisition form - ") && new_paper.color == "#9ef5ff")
+			balloon_alert(user, "some app forbids printer to accept this")
+			return ITEM_INTERACT_BLOCKING
+
+	. = ..()
+
+
