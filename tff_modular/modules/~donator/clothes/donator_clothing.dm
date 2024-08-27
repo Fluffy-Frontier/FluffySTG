@@ -271,3 +271,71 @@
 	resistance_flags = FIRE_PROOF
 	greyscale_config = /datum/greyscale_config/wakamo_halo
 	greyscale_config_worn = /datum/greyscale_config/wakamo_halo/worn
+
+/obj/item/clothing/glasses/hud/security/sunglasses/ballistic
+	name = "hud ballistic security glasses"
+	desc = "Made from the same cheap plastic as regular glasses. Don't expect them to help you. They have some strange orange shield logo on side."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/glasses.dmi'
+	icon_state = "delingar_googles_redsec"
+	uses_advanced_reskins = TRUE
+	unique_reskin = list(
+		"Default" = list(
+			RESKIN_ICON_STATE = "delingar_googles_redsec",
+			RESKIN_WORN_ICON_STATE = "delingar_googles_redsec"
+		),
+		"Blue" = list(
+			RESKIN_ICON_STATE = "delingar_googles_bluesec",
+			RESKIN_WORN_ICON_STATE = "delingar_googles_bluesec"
+		),
+		"Black" = list(
+			RESKIN_ICON_STATE = "delingar_googles_blacksec",
+			RESKIN_WORN_ICON_STATE = "delingar_googles_blacksec"
+		),
+	)
+
+/obj/item/clothing/glasses/meson/ballistic
+	name = "meson ballistic glasses"
+	desc = "Made from the same cheap plastic as regular glasses. Don't expect them to help you. They have some strange orange shield logo on side."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/glasses.dmi'
+	icon_state = "delingar_goggles_meson"
+	uses_advanced_reskins = TRUE
+	unique_reskin = list(
+		"Default" = list(
+			RESKIN_ICON_STATE = "delingar_googles_meson",
+			RESKIN_WORN_ICON_STATE = "delingar_googles_meson"
+		),
+		"Orange" = list(
+			RESKIN_ICON_STATE = "delingar_googles_orange",
+			RESKIN_WORN_ICON_STATE = "delingar_googles_orange"
+		),
+	)
+
+/obj/item/clothing/glasses/hud/health/ballistic
+	name = "health-check ballistic glasses"
+	desc = "Made from the same cheap plastic as regular glasses. Don't expect them to help you. They have some strange orange shield logo on side."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/glasses.dmi'
+	icon_state = "delingar_goggles_medical"
+
+/obj/item/clothing/glasses/hud/diagnostic/ballistic
+	name = "diagnostic ballistic glasses"
+	desc = "Made from the same cheap plastic as regular glasses. Don't expect them to help you. They have some strange orange shield logo on side."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/glasses.dmi'
+	icon_state = "delingar_goggles_diagnostic"
+
+/obj/item/clothing/glasses/ballistic
+	name = "ballistic glasses"
+	desc = "Made from the same cheap plastic as regular glasses. Don't expect them to help you. They have some strange orange shield logo on side."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/glasses.dmi'
+	icon_state = "delingar_goggles_orange"
+
+/obj/item/clothing/glasses/science
+	name = "science ballistic glasses"
+	desc = "Made from the same cheap plastic as regular glasses. Don't expect them to help you. They have some strange orange shield logo on side."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/glasses.dmi'
+	icon_state = "delingar_goggles_science"
