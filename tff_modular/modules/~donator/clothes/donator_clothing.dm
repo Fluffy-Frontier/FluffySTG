@@ -333,7 +333,7 @@
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/glasses.dmi'
 	icon_state = "delingar_goggles_orange"
 
-/obj/item/clothing/glasses/science
+/obj/item/clothing/glasses/science/ballistic
 	name = "science ballistic glasses"
 	desc = "Made from the same cheap plastic as regular glasses. Don't expect them to help you. They have some strange orange shield logo on side."
 	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
