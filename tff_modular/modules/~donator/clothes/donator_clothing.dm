@@ -295,7 +295,7 @@
 	)
 
 /obj/item/clothing/glasses/meson/ballistic
-	name = "meson ballistic glasses"
+	name = "ballistic meson glasses"
 	desc = "Made from the same cheap plastic as regular glasses. Don't expect them to help you. They have some strange orange shield logo on side."
 	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
 	icon_state = "delingar_glasses_meson"
@@ -313,14 +313,14 @@
 	)
 
 /obj/item/clothing/glasses/hud/health/ballistic
-	name = "health-check ballistic glasses"
+	name = "ballistic health-check glasses"
 	desc = "Made from the same cheap plastic as regular glasses. Don't expect them to help you. They have some strange orange shield logo on side."
 	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
 	icon_state = "delingar_glasses_medical"
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/glasses.dmi'
 
 /obj/item/clothing/glasses/hud/diagnostic/ballistic
-	name = "diagnostic ballistic glasses"
+	name = "ballistic diagnostic glasses"
 	desc = "Made from the same cheap plastic as regular glasses. Don't expect them to help you. They have some strange orange shield logo on side."
 	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
 	icon_state = "delingar_glasses_diagnostic"
@@ -334,7 +334,7 @@
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/glasses.dmi'
 
 /obj/item/clothing/glasses/science/ballistic
-	name = "science ballistic glasses"
+	name = "ballistic science glasses"
 	desc = "Made from the same cheap plastic as regular glasses. Don't expect them to help you. They have some strange orange shield logo on side."
 	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
 	icon_state = "delingar_glasses_science"

@@ -144,31 +144,31 @@
 	donator_only = TRUE
 
 /datum/loadout_item/glasses/delingar_glasses_redsec
-	name = "Security Ballistic Glasses"
+	name = "Ballistic Security Glasses"
 	item_path = /obj/item/clothing/glasses/hud/security/sunglasses/ballistic
 	restricted_roles = list(JOB_SECURITY_OFFICER, JOB_WARDEN, JOB_HEAD_OF_SECURITY, JOB_CORRECTIONS_OFFICER, JOB_BOUNCER, JOB_ORDERLY, JOB_SCIENCE_GUARD, JOB_CUSTOMS_AGENT, JOB_ENGINEERING_GUARD, JOB_BLUESHIELD)
 	ckeywhitelist = list("Delingar")
 
 /datum/loadout_item/glasses/delingar_glasses_meson
-	name = "Meson Ballistic Glasses"
+	name = "Ballistic Meson Glasses"
 	item_path = /obj/item/clothing/glasses/meson/ballistic
 	restricted_roles = list(JOB_ATMOSPHERIC_TECHNICIAN, JOB_CHIEF_ENGINEER, JOB_STATION_ENGINEER, JOB_SHAFT_MINER)
 	ckeywhitelist = list("Delingar")
 
 /datum/loadout_item/glasses/delingar_glasses_medic
-	name = "Medical Ballistic Glasses"
+	name = "Ballistic Medical Glasses"
 	item_path = /obj/item/clothing/glasses/hud/health/ballistic
 	restricted_roles = list(JOB_CORONER, JOB_CHIEF_MEDICAL_OFFICER, JOB_MEDICAL_DOCTOR, JOB_PARAMEDIC)
 	ckeywhitelist = list("Delingar")
 
 /datum/loadout_item/glasses/delingar_glasses_science
-	name = "Science Ballistic Glasses"
+	name = "Ballistic Science Glasses"
 	item_path = /obj/item/clothing/glasses/science/ballistic
 	restricted_roles = list(JOB_CHEMIST, JOB_CHIEF_MEDICAL_OFFICER, JOB_RESEARCH_DIRECTOR, JOB_SCIENTIST)
 	ckeywhitelist = list("Delingar")
 
 /datum/loadout_item/glasses/delingar_glasses_diagnostic
-	name = "Diagnostic Ballistic Glasses"
+	name = "Ballistic Diagnostic Glasses"
 	item_path = /obj/item/clothing/glasses/hud/diagnostic/ballistic
 	restricted_roles = list(JOB_RESEARCH_DIRECTOR, JOB_SCIENTIST, JOB_ROBOTICIST)
 	ckeywhitelist = list("Delingar")
