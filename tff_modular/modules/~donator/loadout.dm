@@ -152,7 +152,7 @@
 /datum/loadout_item/glasses/delingar_glasses_meson
 	name = "Ballistic Meson Glasses"
 	item_path = /obj/item/clothing/glasses/meson/ballistic
-	restricted_roles = list(JOB_ATMOSPHERIC_TECHNICIAN, JOB_CHIEF_ENGINEER, JOB_STATION_ENGINEER, JOB_SHAFT_MINER)
+	restricted_roles = list(JOB_ATMOSPHERIC_TECHNICIAN, JOB_CHIEF_ENGINEER, JOB_STATION_ENGINEER, JOB_SHAFT_MINER, JOB_TELECOMMS_SPECIALIST)
 	ckeywhitelist = list("Delingar")
 
 /datum/loadout_item/glasses/delingar_glasses_medic
