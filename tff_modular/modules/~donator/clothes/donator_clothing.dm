@@ -312,6 +312,8 @@
 		),
 	)
 
+// Sprites of ballistic glasses by ebin_halcyon
+
 /obj/item/clothing/glasses/hud/health/ballistic
 	name = "ballistic health-check glasses"
 	desc = "Made from the same cheap plastic as regular glasses. Don't expect them to help you. They have some strange orange shield logo on side."
