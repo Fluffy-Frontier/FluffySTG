@@ -8,6 +8,7 @@ export const CHANNELS = [
   'Do', // NOVA EDIT ADDITION - Do roleplay addition
   'OOC',
   'Admin',
+  'Event', // TFF EDIT - Eventmaker
 ] as const;
 
 /** Window sizes in pixels */

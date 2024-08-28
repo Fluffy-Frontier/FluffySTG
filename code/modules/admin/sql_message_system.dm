@@ -5,7 +5,7 @@
 	if(!type)
 		return
 	var/target_ckey = ckey(target_key)
-	if(!target_key && (type == "note" || type == "message" || type == "watchlist entry"))
+	if(!target_key && (type == "note" || type == "message" || type == "watchlist entry" || type == "eventmaker note")) // TFF EDIT - Eventmaker
 		var/new_key = input(usr,"Who would you like to create a [type] for?","Enter a key or ckey",null) as null|text
 		if(!new_key)
 			return
@@ -381,7 +381,8 @@
 	var/list/navbar = list("<a href='?_src_=holder;[HrefToken()];nonalpha=1'>All</a><a href='?_src_=holder;[HrefToken()];nonalpha=2'>#</a>")
 	for(var/letter in GLOB.alphabet)
 		navbar += "<a href='?_src_=holder;[HrefToken()];showmessages=[letter]'>[letter]</a>"
-	navbar += "<a href='?_src_=holder;[HrefToken()];showmemo=1'>Memos</a><a href='?_src_=holder;[HrefToken()];showwatch=1'>Watchlist</a>"
+	if(!usr?.client.is_eventmaker()) // TFF ADDITION - Eventmaker
+		navbar += "<a href='?_src_=holder;[HrefToken()];showmemo=1'>Memos</a><a href='?_src_=holder;[HrefToken()];showwatch=1'>Watchlist</a>"
 	navbar += "<br><form method='GET' name='search' action='?'>\
 	<input type='hidden' name='_src_' value='holder'>\
 	[HrefTokenFormField()]\
@@ -438,6 +439,10 @@
 			var/playtime = query_get_type_messages.item[11]
 			var/round_id = query_get_type_messages.item[12] // NOVA EDIT CHANGE END - MULTISERVER
 			output += "<b>"
+			// TFF ADDITION START - Eventmaker
+			if(type != "eventmaker note" && usr?.client.is_eventmaker())
+				continue
+			// TFF ADDITION END
 			if(type == "watchlist entry")
 				output += "[t_key] | "
 			output += "[timestamp] | [server] | Round [round_id] | [admin_key]"
@@ -482,6 +487,10 @@
 		var/list/messagedata = list()
 		var/list/watchdata = list()
 		var/list/notedata = list()
+		// TFF ADDITION START - Eventmaker
+		var/list/rating = 5 // Изначальный рейтинг пользователя, далее его.. понижают нотесы с тяжестью.
+		var/list/eventnotedata = list() // Храним в себе нотесы ивентеров
+		// TFF ADDITION END
 		var/skipped = 0
 		while(query_get_messages.NextRow())
 			if(QDELETED(usr))
@@ -519,6 +528,15 @@
 					alphatext = "filter: alpha(opacity=[alpha]); opacity: [alpha/100];"
 			var/list/data = list("<div style='margin:0px;[alphatext]'><p class='severity'>")
 			if(severity)
+				// TFF ADDITION START - Eventmaker
+				switch(severity)
+					if("high")
+						rating -= 0.4
+					if("medium")
+						rating -= 0.2
+					if("minor")
+						rating -= 0.1
+				// TFF ADDITION END
 				data += "<img src='[SSassets.transport.get_asset_url("[severity]_button.png")]' height='24' width='24'></img> "
 			data += "<b>[timestamp] | [server] | Round [round_id] | [admin_key][secret ? " | <i>- Secret</i>" : ""] | [get_exp_format(text2num(playtime))] Living Playtime"
 			if(expire_timestamp)
@@ -553,6 +571,10 @@
 					watchdata += data
 				if("note")
 					notedata += data
+				// TFF ADDITION START - Eventmaker
+				if("eventmaker note")
+					eventnotedata += data
+				// TFF ADDITION END
 		qdel(query_get_messages)
 		if(!target_key)
 			var/datum/db_query/query_get_message_key = SSdbcore.NewQuery({"
@@ -565,21 +587,24 @@
 				target_key = query_get_message_key.item[1]
 			qdel(query_get_message_key)
 		output += "<h2><center>[target_key]</center></h2><center>"
+		output += "<h3>Player Rating: <font color ='[rating > 4 ? COLOR_GREEN : rating > 2 ? COLOR_ORANGE : COLOR_RED]'>[rating > -1 ? rating : 0]</font></h3>" // TFF ADDITION - Eventmaker
 		if(!linkless)
-			output += "<a href='?_src_=holder;[HrefToken()];addnote=[target_key]'>Add note</a>"
-			output += " <a href='?_src_=holder;[HrefToken()];addmessage=[target_key]'>Add message</a>"
-			output += " <a href='?_src_=holder;[HrefToken()];addwatch=[target_key]'>Add to watchlist</a>"
+			if(!usr?.client.is_eventmaker()) // TFF ADDITION - Eventmaker
+				output += "<a href='?_src_=holder;[HrefToken()];addnote=[target_key]'>Add note</a>"
+				output += " <a href='?_src_=holder;[HrefToken()];addmessage=[target_key]'>Add message</a>"
+				output += " <a href='?_src_=holder;[HrefToken()];addwatch=[target_key]'>Add to watchlist</a>"
+			output += " <a href='?_src_=holder;[HrefToken()];addeventnote=[target_key]'>Add event note</a>" // TFF ADDITION - Eventmaker
 			output += " <a href='?_src_=holder;[HrefToken()];showmessageckey=[target_ckey]'>Refresh page</a></center>"
 		else
 			output += " <a href='?_src_=holder;[HrefToken()];showmessageckeylinkless=[target_ckey]'>Refresh page</a></center>"
 		output += ruler
-		if(messagedata)
+		if(messagedata && !usr?.client.is_eventmaker())// TFF ADDITION - Eventmaker
 			output += "<h2>Messages</h2>"
 			output += messagedata
-		if(watchdata)
+		if(watchdata && !usr?.client.is_eventmaker())// TFF ADDITION - Eventmaker
 			output += "<h2>Watchlist</h2>"
 			output += watchdata
-		if(notedata)
+		if(notedata && !usr?.client.is_eventmaker())// TFF ADDITION - Eventmaker
 			output += "<h2>Notes</h2>"
 			output += notedata
 			if(!linkless)
@@ -590,9 +615,15 @@
 						output += "<center><a href='?_src_=holder;[HrefToken()];showmessageckey=[target_ckey];showall=1'>Show All</a></center>"
 				else
 					output += "<center><a href='?_src_=holder;[HrefToken()];showmessageckey=[target_ckey]'>Hide Old</a></center>"
+		// TFF ADDITION START - Eventmaker
+		if(eventnotedata)
+			output += "<h2>Event Notes</h2>"
+			output += eventnotedata
+		// TFF ADDITION END
 	if(index)
 		var/search
-		output += "<center><a href='?_src_=holder;[HrefToken()];addmessageempty=1'>Add message</a><a href='?_src_=holder;[HrefToken()];addwatchempty=1'>Add watchlist entry</a><a href='?_src_=holder;[HrefToken()];addnoteempty=1'>Add note</a></center>"
+		if(!usr?.client.is_eventmaker()) // TFF ADDITION - Eventmaker
+			output += "<center><a href='?_src_=holder;[HrefToken()];addmessageempty=1'>Add message</a><a href='?_src_=holder;[HrefToken()];addwatchempty=1'>Add watchlist entry</a><a href='?_src_=holder;[HrefToken()];addnoteempty=1'>Add note</a></center>"
 		output += ruler
 		switch(index)
 			if(1)
@@ -624,7 +655,7 @@
 				index_key = index_ckey
 			output += "<a href='?_src_=holder;[HrefToken()];showmessageckey=[index_ckey]'>[index_key]</a><br>"
 		qdel(query_list_messages)
-	else if(!type && !target_ckey && !index)
+	else if(!type && !target_ckey && !index && !usr?.client.is_eventmaker()) // TFF EDIT - Eventmaker
 		output += "<center><a href='?_src_=holder;[HrefToken()];addmessageempty=1'>Add message</a><a href='?_src_=holder;[HrefToken()];addwatchempty=1'>Add watchlist entry</a><a href='?_src_=holder;[HrefToken()];addnoteempty=1'>Add note</a></center>"
 		output += ruler
 	var/datum/browser/browser = new(usr, "Note panel", "Manage player notes", 1000, 500)

@@ -352,6 +352,10 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	else if(GLOB.deadmins[ckey])
 		add_verb(src, /client/proc/readmin)
 		connecting_admin = TRUE
+	// TFF ADDITION START - Eventmaker
+	else if(GLOB.eventmaker_datums[ckey])
+		add_verb(src, /client/proc/reeventmake)
+	// TFF ADDITION END
 	//NOVA EDIT ADDITION START - We will check the population here, because we need to know if the client is an admin or not.
 	if(!check_population(connecting_admin))
 		qdel(src)
@@ -1034,7 +1038,13 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 					movement_keys[key] = SOUTH
 				if(ADMIN_CHANNEL)
 					if(holder)
-						var/asay = tgui_say_create_open_command(ADMIN_CHANNEL)
+					// TFF EDIT START - Eventmaker
+						var/asay
+						if(is_eventmaker())
+							asay = tgui_say_create_open_command(EVENT_CHANNEL)
+						else
+							asay = tgui_say_create_open_command(ADMIN_CHANNEL)
+					// TFF EDIT END
 						winset(src, "default-[REF(key)]", "parent=default;name=[key];command=[asay]")
 					else
 						winset(src, "default-[REF(key)]", "parent=default;name=[key];command=")

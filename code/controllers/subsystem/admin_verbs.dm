@@ -12,7 +12,24 @@ SUBSYSTEM_DEF(admin_verbs)
 	var/list/admin_visibility_flags = list()
 	/// A list of all admins that are pending initialization of this SS.
 	var/list/admins_pending_subsytem_init = list()
-
+	// TFF ADDITION START - Eventmaker
+	/// A list of all blacklisted verbs to eventmakers
+	var/list/eventmakers_blacklist_verbs = list(
+		//Admin
+		"Add PB Bypass" = TRUE, "ASay" = TRUE, "Cross-server Help Request" = TRUE, "DeAdmin" = TRUE,
+		"Get Current Logs" = TRUE, "Get Server Logs" = TRUE, "Known Alts Panel" = TRUE,
+		"loudAsay" = TRUE, "Paintings manager" = TRUE, "Player Playtime" = TRUE, "Player Ticket History" = TRUE,
+		"Reload Admins" = TRUE, "Revoke PB Bypass" = TRUE, "Trophy Manager" = TRUE, "View Round Logs" = TRUE, "ReAdmin" = TRUE,
+		"Load Away Mission" = TRUE, "Mass Zombie Cure" = TRUE, "Mass Zombie Infection" = TRUE,
+		"Polymorph All" = TRUE, "Title Screen: Change" = TRUE, "Title Screen: Set HTML" = TRUE, "Title Screen: Set Notice" = TRUE,
+		"Secrets" = TRUE, "Show Lag Switches" = TRUE,
+		//Server
+		"Reestablish DB Connection" = TRUE, "Reset Player OOC Color" = TRUE, "Set Player OOC Color" = TRUE,
+		"Toggle Antag OOC" = TRUE, "Toggle CDN" = TRUE, "Toggle OOC" = TRUE, "Toggle Security OOC" = TRUE,
+		//Debug
+		"Debug Stat Panel" = TRUE, "Migrate Player Ranks" = TRUE, "Open LUA Editor" = TRUE, "Re-establish Connection To TTS" = TRUE, "Reload Configuration" = TRUE, "Run Empty Query" = TRUE, "View Runtime" = TRUE
+	)
+	//TFF ADDITION END
 /datum/controller/subsystem/admin_verbs/Initialize()
 	setup_verb_list()
 	process_pending_admins()
@@ -59,6 +76,10 @@ SUBSYSTEM_DEF(admin_verbs)
 		var/datum/admin_verb/verb_singleton = admin_verbs_by_type[verb_type]
 		if(!verify_visibility(admin, verb_singleton))
 			continue
+		// TFF ADDITION START - Eventmaker
+		if(admin.eventmaker_datum && eventmakers_blacklist_verbs["[verb_singleton.name]"])
+			continue
+		// TFF ADDITION END
 
 		var/verb_permissions = verb_singleton.permissions
 		if(verb_permissions == R_NONE)
@@ -109,7 +130,7 @@ SUBSYSTEM_DEF(admin_verbs)
 	if(!admin.holder.check_for_rights(verb_singleton.permissions))
 		to_chat(admin, span_adminnotice("You lack the permissions to do this."))
 		return
-
+	to_chat(world, "[verb_singleton.name]") // TFF ADDITION - Eventmaker
 	var/old_usr = usr
 	usr = admin.mob
 	// THE MACRO ENSURES THIS EXISTS. IF IT EVER DOESNT EXIST SOMEONE DIDNT USE THE DAMN MACRO!

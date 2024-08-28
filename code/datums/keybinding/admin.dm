@@ -107,7 +107,12 @@
 	. = ..()
 	if(.)
 		return
-	SSadmin_verbs.dynamic_invoke_verb(user, /datum/admin_verb/deadmin)
+	// TFF ADDITION START - Eventmaker
+	if(user.is_eventmaker())
+		user.deeventmake()
+	else
+		// TFF ADDITION END
+		SSadmin_verbs.dynamic_invoke_verb(user, /datum/admin_verb/deadmin)
 	return TRUE
 
 /datum/keybinding/admin/readmin
@@ -121,7 +126,12 @@
 	. = ..()
 	if(.)
 		return
-	user.readmin()
+	// TFF ADDITION START - Eventmaker
+	if(user.is_eventmaker())
+		user.reeventmake()
+	else
+		// TFF ADDITION END
+		user.readmin()
 	return TRUE
 
 /datum/keybinding/admin/view_tags

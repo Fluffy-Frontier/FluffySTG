@@ -1,6 +1,6 @@
 ADMIN_VERB(cmd_admin_say, R_NONE, "ASay", "Send a message to other admins", ADMIN_CATEGORY_MAIN, message as text)
 	message = emoji_parse(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
-	if(!message)
+	if(!message || user.is_eventmaker()) // TFF EDIT - Eventmaker
 		return
 
 	if(findtext(message, "@") || findtext(message, "#"))

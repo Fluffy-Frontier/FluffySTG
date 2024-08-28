@@ -305,7 +305,7 @@ DROP TABLE IF EXISTS `SS13_messages`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SS13_messages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `type` enum('memo','message','message sent','note','watchlist entry') NOT NULL,
+  `type` enum('memo','message','message sent','note','watchlist entry', 'eventmaker note') NOT NULL,
   `targetckey` varchar(32) NOT NULL,
   `adminckey` varchar(32) NOT NULL,
   `text` varchar(2048) NOT NULL,

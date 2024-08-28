@@ -417,6 +417,10 @@ GLOBAL_PROTECT(href_token)
 
 	return combined_flags
 
+// TODO: ПЕРЕНЕСТИ И ЗАМЕНИТЬ ДЕФАЙНАМИ
+/datum/admins/eventmakers/rank_flags()
+	return 7275 // ну да цифры бога
+
 /// Get the permissions this admin is allowed to edit on other ranks
 /datum/admins/proc/can_edit_rights_flags()
 	var/combined_flags = NONE
