@@ -7,6 +7,7 @@
 	ascended_mob.mobility_flags = NONE // Cant rest to break animation
 	GLOB.move_manager.stop_looping(ascended_mob) // Cant be grabbed
 	ascended_mob.density = 0 // Cant be moved by walking into them
+	ADD_TRAIT(ascended_mob, TRAIT_NO_TELEPORT, SMITE_TRAIT)
 	ascended_mob.move_resist = MOVE_RESIST_DEFAULT * 1000
 	playsound(gods_turf, 'tff_modular/modules/custom_smites/sounds/heaven.ogg', 50, 0)
 	animate(lightbeam, alpha=255, time=4.5 SECONDS)

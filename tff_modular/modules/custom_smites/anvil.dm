@@ -1,4 +1,5 @@
 /proc/anvilgib(mob/living/poor_soul)
+	ADD_TRAIT(poor_soul, TRAIT_NO_TELEPORT, SMITE_TRAIT)
 	poor_soul.Stun(20 SECONDS, ignore_canstun = TRUE) // Cant move by themself
 	poor_soul.mobility_flags = NONE // Cant rest to break animation
 	GLOB.move_manager.stop_looping(poor_soul) // Cant be grabbed

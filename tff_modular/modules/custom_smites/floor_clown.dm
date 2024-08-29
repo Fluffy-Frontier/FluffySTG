@@ -2,6 +2,7 @@
 	if(isobserver(clowns_dinner))
 		return
 
+	ADD_TRAIT(clowns_dinner, TRAIT_NO_TELEPORT, SMITE_TRAIT)
 	clowns_dinner.Stun(200 SECONDS, ignore_canstun = TRUE) // Cant move by themself
 	clowns_dinner.mobility_flags = NONE // Cant rest to break animation
 	GLOB.move_manager.stop_looping(clowns_dinner) // Cant be grabbed
@@ -94,6 +95,7 @@
 	mobility_flags = NONE
 	GLOB.move_manager.stop_looping(src)
 	density = 0
+	ADD_TRAIT(src, TRAIT_NO_TELEPORT, SMITE_TRAIT)
 	equipOutfit(/datum/outfit/consumed_clown)
 	set_jitter(60 SECONDS)
 

@@ -2,6 +2,7 @@
 	if(isobserver(sweet_sweet_boy))
 		return
 
+	ADD_TRAIT(sweet_sweet_boy, TRAIT_NO_TELEPORT, SMITE_TRAIT)
 	sweet_sweet_boy.Stun(200 SECONDS, ignore_canstun = TRUE) // Cant move by themself
 	sweet_sweet_boy.mobility_flags = NONE // Cant rest to break animation
 	GLOB.move_manager.stop_looping(sweet_sweet_boy) // Cant be grabbed
@@ -125,6 +126,7 @@
 	mobility_flags = NONE
 	GLOB.move_manager.stop_looping(src)
 	density = 0
+	ADD_TRAIT(src, TRAIT_NO_TELEPORT, SMITE_TRAIT)
 	set_active_language(/datum/language/common)
 	equipOutfit(/datum/outfit/job/assistant)
 
