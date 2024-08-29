@@ -279,6 +279,9 @@ SUBSYSTEM_DEF(player_ranks)
 	if(rank_title == veteran_controller.rank_title)
 		return veteran_controller
 
+	if(rank_title == eventmaker_controller.rank_title)
+		return eventmaker_controller
+
 	CRASH("Invalid player_rank_controller \"[rank_title || "*null*"]\" used in get_controller_for_group()!")
 
 

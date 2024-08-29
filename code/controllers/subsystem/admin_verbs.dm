@@ -77,7 +77,7 @@ SUBSYSTEM_DEF(admin_verbs)
 		if(!verify_visibility(admin, verb_singleton))
 			continue
 		// TFF ADDITION START - Eventmaker
-		if(admin.eventmaker_datum && eventmakers_blacklist_verbs["[verb_singleton.name]"])
+		if(admin.is_eventmaker() && eventmakers_blacklist_verbs["[verb_singleton.name]"])
 			continue
 		// TFF ADDITION END
 
@@ -130,7 +130,6 @@ SUBSYSTEM_DEF(admin_verbs)
 	if(!admin.holder.check_for_rights(verb_singleton.permissions))
 		to_chat(admin, span_adminnotice("You lack the permissions to do this."))
 		return
-	to_chat(world, "[verb_singleton.name]") // TFF ADDITION - Eventmaker
 	var/old_usr = usr
 	usr = admin.mob
 	// THE MACRO ENSURES THIS EXISTS. IF IT EVER DOESNT EXIST SOMEONE DIDNT USE THE DAMN MACRO!

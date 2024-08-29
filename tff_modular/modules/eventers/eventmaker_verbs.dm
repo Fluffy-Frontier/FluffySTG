@@ -57,27 +57,6 @@
 		message_admins("[key_name_admin(src)] deeventmakered themselves.")
 		BLACKBOX_LOG_ADMIN_VERB("DeEventered")
 
-
-// /client/proc/cmd_eventmaker_say(msg as text)
-// 	set category = "Eventology"
-// 	set name = "Esay"
-// 	set hidden = 1
-// 	if(!is_eventmaker())
-// 		return
-
-// 	msg = copytext_char(sanitize(msg), 1, MAX_MESSAGE_LEN)
-// 	if(!msg)
-// 		return
-
-// 	msg = emoji_parse(msg)
-// 	log_eventmaker("EVENTMAKER: [key_name(src)] : [msg]")
-
-// 	if(check_rights_for(src, R_ADMIN,0))
-// 		msg = span_eventmaker("<b><font color ='#008327'><span class='prefix'>EVENTMAKER:</span> <EM>[key_name(src, 0, 0)]</EM>: <span class='message'>[msg]</span></font></b>")
-// 	else
-// 		msg = span_eventmaker("<b><font color ='#00970d'><span class='prefix'>EVENTMAKER:</span> <EM>[key_name(src, 0, 0)]</EM>: <span class='message'>[msg]</span></font></b>")
-// 	to_chat(GLOB.admins | GLOB.eventmakers, msg)
-
 ADMIN_VERB(cmd_eventmaker_say, R_NONE, "ESay", "Send a message to eventmakes", ADMIN_CATEGORY_MAIN, message as text)
 	message = emoji_parse(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
 	if(!message)
@@ -90,8 +69,4 @@ ADMIN_VERB(cmd_eventmaker_say, R_NONE, "ESay", "Send a message to eventmakes", A
 		type = MESSAGE_TYPE_ADMINCHAT,
 		html = message,
 		confidential = TRUE)
-	BLACKBOX_LOG_ADMIN_VERB("Asay")
-
-// /client/proc/get_admin_say()
-// 	var/msg = input(src, null, "asay \"text\"") as text|null
-// 	SSadmin_verbs.dynamic_invoke_verb(src, /datum/admin_verb/cmd_admin_say, msg)
+	BLACKBOX_LOG_ADMIN_VERB("Esay")

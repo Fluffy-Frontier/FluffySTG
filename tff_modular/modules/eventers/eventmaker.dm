@@ -14,14 +14,18 @@ GLOBAL_PROTECT(eventmaker_href_token)
 	target = ckey(ckey)
 	name = "[ckey]'s eventmaker datum"
 	href_token = GenerateToken()
+	admin_signature = "Nanotrasen Officer #[rand(0,9)][rand(0,9)][rand(0,9)]"
 	GLOB.eventmaker_datums[target] = src
+
+/datum/admins/eventmakers/rank_flags()
+	return R_ADMIN | R_BUILD | R_DEBUG | R_FUN | R_SOUND | R_SPAWN | R_POSSESS |R_VAREDIT
 
 /datum/admins/eventmakers/proc/remove_eventmaker() // удаление
 	if(owner)
 		GLOB.eventmakers -= owner
 		owner.eventmaker_datum = null
-		owner = null
 		owner.holder?.disassociate()
+		owner = null
 	log_admin_private("[target] was removed from the rank of eventmaker.")
 	GLOB.eventmaker_datums -= target
 	qdel(src)
@@ -31,7 +35,6 @@ GLOBAL_PROTECT(eventmaker_href_token)
 		alert_to_permissions_elevation_attempt(usr)
 		return
 	GLOB.deadmins -= target
-	GLOB.eventmaker_datums[target] = src
 	deadmined = FALSE
 	plane_debug = new(src)
 	if (GLOB.directory[target])
@@ -52,7 +55,6 @@ GLOBAL_PROTECT(eventmaker_href_token)
 	if (!isnull(client))
 		disassociate()
 		add_verb(client, /client/proc/reeventmake)
-		remove_verb(client, /client/proc/deeventmake)
 		client.disable_combo_hud()
 		client.update_special_keybinds()
 
@@ -90,6 +92,7 @@ GLOBAL_PROTECT(eventmaker_href_token)
 		return
 	if(owner)
 		GLOB.eventmakers -= owner
+		remove_verb(owner, /client/proc/deeventmake)
 		owner.remove_admin_verbs()
 		owner.holder = null
 		owner = null

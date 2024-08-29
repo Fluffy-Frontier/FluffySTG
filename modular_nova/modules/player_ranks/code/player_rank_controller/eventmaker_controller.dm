@@ -16,7 +16,12 @@
 
 	ckey = ckey(ckey)
 
-	new /datum/admins/eventmakers(ckey)
+	var/datum/admins/eventmakers/eventmaker = new (ckey)
+	var/client/user = GLOB.directory[ckey]
+	if(user)
+		user.eventmaker_datum_set()
+		eventmaker.activate()
+
 
 
 /datum/player_rank_controller/eventmaker/remove_player(ckey)

@@ -12,7 +12,7 @@ ADMIN_VERB(manage_player_ranks, R_PERMISSIONS, "Manage Player Ranks", "Manage wh
 	if(!check_rights(R_PERMISSIONS))
 		return
 
-	var/choice = tgui_alert(usr, "Which rank would you like to manage?", "Manage Player Ranks", NOVA_PLAYER_RANKS)
+	var/choice = tgui_input_list(usr, "Which rank would you like to manage?", "Manage Player Ranks", NOVA_PLAYER_RANKS) // TFF EDIT - Eventmaker - не ясна реакция, учитывая что прошлое вполне должно было вернуть список.
 	if(!choice || !(choice in NOVA_PLAYER_RANKS))
 		return
 
