@@ -19,4 +19,4 @@
  * Returns whether or not the user is qualified as a eventmaker.
  */
 /client/proc/is_eventmaker()
-	return !isnull(GLOB.eventmaker_datums[ckey]) || !isnull(GLOB.deadmins[ckey])
+	return !isnull(GLOB.eventmaker_datums[ckey])

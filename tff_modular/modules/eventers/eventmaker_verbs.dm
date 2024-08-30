@@ -59,7 +59,7 @@
 
 ADMIN_VERB(cmd_eventmaker_say, R_NONE, "ESay", "Send a message to eventmakes", ADMIN_CATEGORY_MAIN, message as text)
 	message = emoji_parse(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
-	if(!message)
+	if(!message && !user.holder)
 		return
 
 	user.mob.log_talk(message, LOG_ASAY)

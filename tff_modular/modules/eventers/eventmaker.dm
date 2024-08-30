@@ -35,6 +35,7 @@ GLOBAL_PROTECT(eventmaker_href_token)
 		alert_to_permissions_elevation_attempt(usr)
 		return
 	GLOB.deadmins -= target
+	GLOB.eventmaker_datums[target] = src
 	deadmined = FALSE
 	plane_debug = new(src)
 	if (GLOB.directory[target])
