@@ -15,11 +15,11 @@
 		attacker.setGrabState(GRAB_AGGRESSIVE) //Instant aggressive grab if on grab intent
 		log_combat(attacker, defender, "grabbed", addition="aggressively")
 		defender.visible_message(
-			span_warning("[attacker] violently grabs [defender]!"),
-			span_userdanger("You're grabbed violently by [attacker]!"),
+			span_warning("[attacker] grabs [defender] in his scythes!"),
+			span_userdanger("You're grabbed in scythes by [attacker]!"),
 			span_hear("You hear sounds of aggressive fondling!"),
 			COMBAT_MESSAGE_RANGE,
 			attacker,
 		)
-		to_chat(attacker, span_danger("You violently grab [defender]!"))
+		to_chat(attacker, span_danger("You grab [defender] in your scythes!"))
 	return MARTIAL_ATTACK_SUCCESS
