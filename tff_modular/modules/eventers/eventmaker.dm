@@ -1,103 +1,34 @@
-GLOBAL_LIST_EMPTY(eventmaker_datums)
-GLOBAL_PROTECT(eventmaker_datums)
-
-GLOBAL_VAR_INIT(eventmaker_href_token, GenerateToken())
-GLOBAL_PROTECT(eventmaker_href_token)
-
-/datum/admins/eventmakers
-	name = "someone's eventmaker datum"
-
-/datum/admins/eventmakers/New(ckey) // добавление
-	if(!ckey)
-		QDEL_IN(src, 0)
-		CRASH("eventmaker datum created without a ckey")
-	target = ckey(ckey)
-	name = "[ckey]'s eventmaker datum"
-	href_token = GenerateToken()
-	admin_signature = "Nanotrasen Officer #[rand(0,9)][rand(0,9)][rand(0,9)]"
-	GLOB.eventmaker_datums[target] = src
-
-/datum/admins/eventmakers/rank_flags()
-	return R_ADMIN | R_BUILD | R_DEBUG | R_FUN | R_SOUND | R_SPAWN | R_POSSESS |R_VAREDIT
-
-/datum/admins/eventmakers/proc/remove_eventmaker() // удаление
-	if(owner)
-		GLOB.eventmakers -= owner
-		owner.eventmaker_datum = null
-		owner.holder?.disassociate()
-		owner = null
-	log_admin_private("[target] was removed from the rank of eventmaker.")
-	GLOB.eventmaker_datums -= target
-	qdel(src)
-
-/datum/admins/eventmakers/activate()
-	if(IsAdminAdvancedProcCall())
-		alert_to_permissions_elevation_attempt(usr)
-		return
-	GLOB.deadmins -= target
-	GLOB.eventmaker_datums[target] = src
-	deadmined = FALSE
-	plane_debug = new(src)
-	if (GLOB.directory[target])
-		associate(GLOB.directory[target]) //find the client for a ckey if they are connected and associate them with us
+/**
+ * Returns whether or not the user is qualified as a eventmaker.
+ */
+/client/proc/is_eventmaker()
+	return holder?.ranks && holder.ranks[1].name == "Eventmaker"
 
 
-/datum/admins/eventmakers/deactivate()
-	if(IsAdminAdvancedProcCall())
-		alert_to_permissions_elevation_attempt(usr)
-		return
-	GLOB.deadmins[target] = src
-	GLOB.eventmaker_datums -= target
-	QDEL_NULL(plane_debug)
-	deadmined = TRUE
+/datum/controller/subsystem/admin_verbs/get_valid_verbs_for_admin(client/admin)
+	if(isnull(admin.holder))
+		CRASH("Why are we checking a non-admin for their valid... ahem... admin verbs?")
 
-	var/client/client = owner || GLOB.directory[target]
+	var/list/has_permission = list()
+	for(var/permission_flag in GLOB.bitflags)
+		if(admin.holder.check_for_rights(permission_flag))
+			has_permission["[permission_flag]"] = TRUE
 
-	if (!isnull(client))
-		disassociate()
-		add_verb(client, /client/proc/reeventmake)
-		client.disable_combo_hud()
-		client.update_special_keybinds()
+	var/list/valid_verbs = list()
+	for(var/datum/admin_verb/verb_type as anything in admin_verbs_by_type)
+		var/datum/admin_verb/verb_singleton = admin_verbs_by_type[verb_type]
+		if(!verify_visibility(admin, verb_singleton))
+			continue
 
-/datum/admins/eventmakers/associate(client/client)
-	if(IsAdminAdvancedProcCall())
-		alert_to_permissions_elevation_attempt(usr)
-		return
+		if(admin.is_eventmaker() && GLOB.eventmakers_blacklist_verbs["[verb_singleton.name]"])
+			continue
 
-	if(!istype(client))
-		return
+		var/verb_permissions = verb_singleton.permissions
+		if(verb_permissions == R_NONE)
+			valid_verbs |= list(verb_singleton)
+		else for(var/permission_flag in bitfield_to_list(verb_permissions))
+			if(!has_permission["[permission_flag]"])
+				continue
+			valid_verbs |= list(verb_singleton)
 
-	if(client?.ckey != target)
-		var/msg = " has attempted to associate with [target]'s eventmaker datum"
-		message_admins("[key_name_admin(client)][msg]")
-		log_admin("[key_name(client)][msg]")
-		return
-
-	if (deadmined)
-		activate()
-
-	owner = client
-	owner.holder = src
-	owner.add_admin_verbs()
-	remove_verb(owner, /client/proc/reeventmake)
-	add_verb(owner, /client/proc/deeventmake)
-	owner.init_verbs() //re-initialize the verb list
-	owner.update_special_keybinds()
-	GLOB.eventmakers |= client
-
-	try_give_profiling()
-
-/datum/admins/eventmakers/disassociate()
-	if(IsAdminAdvancedProcCall())
-		alert_to_permissions_elevation_attempt(usr)
-		return
-	if(owner)
-		GLOB.eventmakers -= owner
-		remove_verb(owner, /client/proc/deeventmake)
-		owner.remove_admin_verbs()
-		owner.holder = null
-		owner = null
-
-/client
-	/// Acts the same way holder does towards admin: it holds the eventmaker datum. if set, the guy's a eventmaker.
-	var/datum/admins/eventmakers/eventmaker_datum
+	return valid_verbs

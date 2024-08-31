@@ -33,7 +33,7 @@
 			continue
 		hearted_mob.client.adjust_heart()
 		message += "[hearted_ckey][i == hearts.len ? "" : ", "]"
-	message_admins(message.Join())
+	message_admins(message.Join(), TRUE)
 
 /// Ask someone if they'd like to award a commendation for the round, 3 tries to get the name they want before we give up
 /mob/proc/query_heart(attempt=1)

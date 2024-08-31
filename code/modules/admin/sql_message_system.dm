@@ -102,7 +102,7 @@
 	qdel(query_create_message)
 	if(logged)
 		log_admin_private(pm)
-		message_admins("[header]:<br>[text]")
+		message_admins("[header]:<br>[text]", TRUE)
 		admin_ticket_log(target_ckey, "<font color='blue'>[header]</font><br>[text]")
 		if(browse)
 			browse_messages("[type]")
@@ -146,7 +146,7 @@
 		var/m1 = "[user_key_name] has deleted a [type][(type == "note" || type == "message" || type == "watchlist entry") ? " for" : " made by"] [target_key]: [text]"
 		var/m2 = "[user_name_admin] has deleted a [type][(type == "note" || type == "message" || type == "watchlist entry") ? " for" : " made by"] [target_key]:<br>[text]"
 		log_admin_private(m1)
-		message_admins(m2)
+		message_admins(m2, TRUE)
 		if(browse)
 			browse_messages("[type]")
 		else
@@ -195,7 +195,7 @@
 			return
 		qdel(query_edit_message)
 		log_admin_private("[kn] has edited a [type] [(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""] made by [admin_key] from [old_text] to [new_text]")
-		message_admins("[kna] has edited a [type] [(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""] made by [admin_key] from<br>[old_text]<br>to<br>[new_text]")
+		message_admins("[kna] has edited a [type] [(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""] made by [admin_key] from<br>[old_text]<br>to<br>[new_text]", TRUE)
 		if(browse)
 			browse_messages("[type]")
 		else
@@ -266,7 +266,7 @@
 			return
 		qdel(query_edit_message_expiry)
 		log_admin_private("[kn] has edited the expiration time of a [type] [(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""] made by [admin_key] from [(old_expiry ? old_expiry : "no expiration date")] to [new_expiry]")
-		message_admins("[kna] has edited the expiration time of a [type] [(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""] made by [admin_key] from [(old_expiry ? old_expiry : "no expiration date")] to [new_expiry]")
+		message_admins("[kna] has edited the expiration time of a [type] [(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""] made by [admin_key] from [(old_expiry ? old_expiry : "no expiration date")] to [new_expiry]", TRUE)
 		if(browse)
 			browse_messages("[type]")
 		else
@@ -320,7 +320,7 @@
 			return
 		qdel(query_edit_note_severity)
 		log_admin_private("[kn] has edited the severity of a [type] for [target_key] made by [admin_key] from [old_severity] to [new_severity]")
-		message_admins("[kna] has edited the severity time of a [type] for [target_key] made by [admin_key] from [old_severity] to [new_severity]")
+		message_admins("[kna] has edited the severity time of a [type] for [target_key] made by [admin_key] from [old_severity] to [new_severity]", TRUE)
 		browse_messages(target_ckey = ckey(target_key), agegate = TRUE)
 	qdel(query_find_edit_note_severity)
 
@@ -364,7 +364,7 @@
 			return
 		qdel(query_message_secret)
 		log_admin_private("[kn] has toggled [target_key]'s [type] made by [admin_key] to [secret ? "not secret" : "secret"]")
-		message_admins("[kna] has toggled [target_key]'s [type] made by [admin_key] to [secret ? "not secret" : "secret"]")
+		message_admins("[kna] has toggled [target_key]'s [type] made by [admin_key] to [secret ? "not secret" : "secret"]", TRUE)
 		browse_messages(target_ckey = ckey(target_key), agegate = TRUE)
 	qdel(query_find_message_secret)
 
@@ -748,7 +748,7 @@
 
 /proc/scream_about_watchlists(client/read_from)
 	for(var/datum/admin_message/message in get_message_output("watchlist entry", read_from.ckey))
-		message_admins("<font color='[COLOR_RED]'><B>Notice: </B></font><font color='[COLOR_ADMIN_PINK]'>[key_name_admin(read_from.ckey)] has been on the watchlist since [message.timestamp] and has just connected - Reason: [message.text]</font>")
+		message_admins("<font color='[COLOR_RED]'><B>Notice: </B></font><font color='[COLOR_ADMIN_PINK]'>[key_name_admin(read_from.ckey)] has been on the watchlist since [message.timestamp] and has just connected - Reason: [message.text]</font>", TRUE)
 		send2tgs_adminless_only("Watchlist", "[key_name(read_from.ckey)] is on the watchlist and has just connected - Reason: [message.text]")
 
 #define NOTESFILE "data/player_notes.sav"

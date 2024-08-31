@@ -1,5 +1,5 @@
 /// The list of the available special player ranks
-#define NOVA_PLAYER_RANKS list("Donator", "Mentor", "Veteran", "Eventmaker") // TFF EDIT - Eventmaker
+#define NOVA_PLAYER_RANKS list("Donator", "Mentor", "Veteran")
 
 ADMIN_VERB(manage_player_ranks, R_PERMISSIONS, "Manage Player Ranks", "Manage who has the special player ranks while the server is running.", ADMIN_CATEGORY_MAIN)
 	usr.client?.holder.manage_player_ranks()
@@ -12,7 +12,7 @@ ADMIN_VERB(manage_player_ranks, R_PERMISSIONS, "Manage Player Ranks", "Manage wh
 	if(!check_rights(R_PERMISSIONS))
 		return
 
-	var/choice = tgui_input_list(usr, "Which rank would you like to manage?", "Manage Player Ranks", NOVA_PLAYER_RANKS) // TFF EDIT - Eventmaker - не ясна реакция, учитывая что прошлое вполне должно было вернуть список.
+	var/choice = tgui_alert(usr, "Which rank would you like to manage?", "Manage Player Ranks", NOVA_PLAYER_RANKS)
 	if(!choice || !(choice in NOVA_PLAYER_RANKS))
 		return
 

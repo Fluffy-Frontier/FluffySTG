@@ -12,24 +12,7 @@ SUBSYSTEM_DEF(admin_verbs)
 	var/list/admin_visibility_flags = list()
 	/// A list of all admins that are pending initialization of this SS.
 	var/list/admins_pending_subsytem_init = list()
-	// TFF ADDITION START - Eventmaker
-	/// A list of all blacklisted verbs to eventmakers
-	var/list/eventmakers_blacklist_verbs = list(
-		//Admin
-		"Add PB Bypass" = TRUE, "ASay" = TRUE, "Cross-server Help Request" = TRUE, "DeAdmin" = TRUE,
-		"Get Current Logs" = TRUE, "Get Server Logs" = TRUE, "Known Alts Panel" = TRUE,
-		"loudAsay" = TRUE, "Paintings manager" = TRUE, "Player Playtime" = TRUE, "Player Ticket History" = TRUE,
-		"Reload Admins" = TRUE, "Revoke PB Bypass" = TRUE, "Trophy Manager" = TRUE, "View Round Logs" = TRUE, "ReAdmin" = TRUE,
-		"Load Away Mission" = TRUE, "Mass Zombie Cure" = TRUE, "Mass Zombie Infection" = TRUE,
-		"Polymorph All" = TRUE, "Title Screen: Change" = TRUE, "Title Screen: Set HTML" = TRUE, "Title Screen: Set Notice" = TRUE,
-		"Secrets" = TRUE, "Show Lag Switches" = TRUE,
-		//Server
-		"Reestablish DB Connection" = TRUE, "Reset Player OOC Color" = TRUE, "Set Player OOC Color" = TRUE,
-		"Toggle Antag OOC" = TRUE, "Toggle CDN" = TRUE, "Toggle OOC" = TRUE, "Toggle Security OOC" = TRUE,
-		//Debug
-		"Debug Stat Panel" = TRUE, "Migrate Player Ranks" = TRUE, "Open LUA Editor" = TRUE, "Re-establish Connection To TTS" = TRUE, "Reload Configuration" = TRUE, "Run Empty Query" = TRUE, "View Runtime" = TRUE
-	)
-	//TFF ADDITION END
+
 /datum/controller/subsystem/admin_verbs/Initialize()
 	setup_verb_list()
 	process_pending_admins()
@@ -77,7 +60,7 @@ SUBSYSTEM_DEF(admin_verbs)
 		if(!verify_visibility(admin, verb_singleton))
 			continue
 		// TFF ADDITION START - Eventmaker
-		if(admin.is_eventmaker() && eventmakers_blacklist_verbs["[verb_singleton.name]"])
+		if(admin.is_eventmaker() && GLOB.eventmakers_blacklist_verbs["[verb_singleton.name]"])
 			continue
 		// TFF ADDITION END
 

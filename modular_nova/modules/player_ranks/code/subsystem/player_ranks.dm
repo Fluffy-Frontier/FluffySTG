@@ -20,8 +20,6 @@ SUBSYSTEM_DEF(player_ranks)
 	var/datum/player_rank_controller/mentor/mentor_controller
 	/// The veteran player rank controller.
 	var/datum/player_rank_controller/veteran/veteran_controller
-	/// The eventmaker play rank controller.
-	var/datum/player_rank_controller/eventmaker/eventmaker_controller // TFF ADDITION - Eventmaker
 
 
 /datum/controller/subsystem/player_ranks/Initialize()
@@ -31,7 +29,6 @@ SUBSYSTEM_DEF(player_ranks)
 	load_donators()
 	load_mentors()
 	load_veterans()
-	load_eventmakers() // TFF ADDITION - Eventmaker
 
 	return SS_INIT_SUCCESS
 
@@ -42,7 +39,6 @@ SUBSYSTEM_DEF(player_ranks)
 	QDEL_NULL(donator_controller)
 	QDEL_NULL(mentor_controller)
 	QDEL_NULL(veteran_controller)
-	QDEL_NULL(eventmaker_controller) // TFF ADDITION - Eventmaker
 
 
 /**
@@ -207,33 +203,6 @@ SUBSYSTEM_DEF(player_ranks)
 
 	load_player_rank_sql(veteran_controller)
 
-// TFF ADDITION START - Eventmaker
-/// Handles loading mentors either via SQL or using the legacy system,
-/// based on configs.
-/datum/controller/subsystem/player_ranks/proc/load_eventmakers()
-	PROTECTED_PROC(TRUE)
-
-	if(IsAdminAdvancedProcCall())
-		return
-
-	eventmaker_controller = new
-
-	if(CONFIG_GET(flag/eventmaker_legacy_system))
-		eventmaker_controller.load_legacy()
-		return
-
-	if(!SSdbcore.Connect())
-		var/message = "Failed to connect to database in load_eventmaker(). Reverting to legacy system."
-		log_config(message)
-		log_game(message)
-		message_admins(message)
-		CONFIG_SET(flag/eventmaker_legacy_system, TRUE)
-		eventmaker_controller.load_legacy()
-		return
-
-	load_player_rank_sql(eventmaker_controller)
-// TFF ADDITION END
-
 /**
  * Handles populating the player rank from the database.
  *
@@ -278,9 +247,6 @@ SUBSYSTEM_DEF(player_ranks)
 
 	if(rank_title == veteran_controller.rank_title)
 		return veteran_controller
-
-	if(rank_title == eventmaker_controller.rank_title)
-		return eventmaker_controller
 
 	CRASH("Invalid player_rank_controller \"[rank_title || "*null*"]\" used in get_controller_for_group()!")
 

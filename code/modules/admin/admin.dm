@@ -1,7 +1,13 @@
 ////////////////////////////////
-/proc/message_admins(msg)
+/proc/message_admins(msg, not_to_eventmaker)
 	msg = "<span class=\"admin\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[msg]</span></span>"
-	to_chat(GLOB.admins,
+	var/list/addressee = GLOB.admins.Copy()
+	if(not_to_eventmaker)
+		for(var/client/admin in GLOB.admins)
+			if(admin.is_eventmaker())
+				addressee -= admin
+
+	to_chat(addressee,
 		type = MESSAGE_TYPE_ADMINLOG,
 		html = msg,
 		confidential = TRUE)
