@@ -19,6 +19,11 @@
 	organ_owner.dna.species.no_equip_flags |= ITEM_SLOT_FEET
 	organ_owner.dna.species.modsuit_slot_exceptions |= ITEM_SLOT_FEET
 
+	var/obj/item/bodypart/leg/right_leg = organ_owner.get_bodypart(BODY_ZONE_R_LEG) // FF ADDITION START
+	var/obj/item/bodypart/leg/left_leg = organ_owner.get_bodypart(BODY_ZONE_L_LEG)
+	right_leg.footprint_sprite = FOOTPRINT_SPRITE_TAIL
+	left_leg.footprint_sprite = FOOTPRINT_SPRITE_TAIL // FF ADDITION END
+
 	var/obj/item/clothing/shoes/shoe = organ_owner.get_item_by_slot(ITEM_SLOT_FEET)
 	if (shoe && !HAS_TRAIT(shoe, TRAIT_NODROP))
 		shoe.forceMove(get_turf(organ_owner))

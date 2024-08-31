@@ -30,9 +30,9 @@ Space Station 13 is a paranoia-laden round-based roleplaying game set against th
 You are responsible for the testing of your content and providing proof of such in your pull request. You should not mark a pull request ready for review until you have actually tested it. If you require a separate client for testing, you can use a guest account by logging out of BYOND and connecting to your test server. Test merges are not for bug finding, they are for stress tests where local testing simply doesn't allow for this.
 
 ## DEVELOPMENT FLOWCHART
-![image](https://i.imgur.com/VLcZh4A.png)
+![image](https://i.imgur.com/lgbYurx.png)
 
-[Modularisation Guide](./modular_skyrat/readme.md)
+[Modularisation Guide](./modular_nova/readme.md)
 
 ## DOWNLOADING
 [Downloading](.github/guides/DOWNLOADING.md)

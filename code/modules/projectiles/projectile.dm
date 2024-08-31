@@ -15,7 +15,7 @@
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC
 	layer = MOB_LAYER
 	//The sound this plays on impact.
-	var/hitsound // NOVA EDIT CHANGE
+	var/hitsound // NOVA EDIT CHANGE - ORIGINAL: var/hitsound = 'sound/weapons/pierce.ogg'
 	var/hitsound_wall = ""
 
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
@@ -299,6 +299,11 @@
 		hitx = target.pixel_x + rand(-8, 8)
 		hity = target.pixel_y + rand(-8, 8)
 
+	if(isturf(target) && hitsound_wall)
+		var/volume = clamp(vol_by_damage() + 20, 0, 100)
+		if(suppressed)
+			volume = 5
+		playsound(loc, hitsound_wall, volume, TRUE, -1)
 	// NOVA EDIT ADDITION BEGIN - IMPACT SOUNDS
 	var/impact_sound
 	if(hitsound)
@@ -321,13 +326,6 @@
 	if(!isliving(target))
 		if(impact_effect_type && !hitscan)
 			new impact_effect_type(target_turf, hitx, hity)
-		/* NOVA EDIT REMOVAL - IMPACT SOUNDS
-		if(isturf(target) && hitsound_wall)
-			var/volume = clamp(vol_by_damage() + 20, 0, 100)
-			if(suppressed)
-				volume = 5
-			playsound(loc, hitsound_wall, volume, TRUE, -1)
-		NOVA EDIT REMOVAL END */
 		return BULLET_ACT_HIT
 
 	var/mob/living/living_target = target
@@ -587,12 +585,15 @@
 	if((target.pass_flags_self & pass_flags) && !direct_target)
 		return FALSE
 	if(HAS_TRAIT(target, TRAIT_UNHITTABLE_BY_PROJECTILES))
+		if(!HAS_TRAIT(target, TRAIT_BLOCKING_PROJECTILES) && isliving(target))
+			var/mob/living/living_target = target
+			living_target.block_projectile_effects()
 		return FALSE
 	if(!ignore_source_check && firer)
 		var/mob/M = firer
 		if((target == firer) || ((target == firer.loc) && ismecha(firer.loc)) || (target in firer.buckled_mobs) || (istype(M) && (M.buckled == target)))
 			return FALSE
-	if(ignored_factions?.len && ismob(target) && (!direct_target || ignore_direct_target)) //NOVA EDIT: ignore_direct_target
+	if(ignored_factions?.len && ismob(target) && (!direct_target || ignore_direct_target)) // NOVA EDIT CHANGE - ORIGINAL: if(ignored_factions?.len && ismob(target) && !direct_target)
 		var/mob/target_mob = target
 		if(faction_check(target_mob.faction, ignored_factions))
 			return FALSE
@@ -998,11 +999,15 @@
 	trajectory_ignore_forcemove = FALSE
 
 	starting = source_loc
-	pixel_x = source.pixel_x
-	pixel_y = source.pixel_y
+	// Find the last atom movable in our loc chain, or if we're a turf use us
+	var/atom/source_position = get_highest_loc(source, /atom/movable) || source
+	pixel_x = source_position.pixel_x
+	pixel_y = source_position.pixel_y
+	pixel_w = source_position.pixel_w
+	pixel_z = source_position.pixel_z
 	original = target
 	if(length(modifiers))
-		var/list/calculated = calculate_projectile_angle_and_pixel_offsets(source, target_loc && target, modifiers)
+		var/list/calculated = calculate_projectile_angle_and_pixel_offsets(source_position, target_loc && target, modifiers)
 
 		p_x = calculated[2]
 		p_y = calculated[3]
@@ -1037,7 +1042,7 @@
 		var/turf/source_loc = get_turf(source)
 		var/turf/target_loc = get_turf(target)
 		var/dx = ((target_loc.x - source_loc.x) * world.icon_size) + (target.pixel_x - source.pixel_x) + (p_x - (world.icon_size / 2))
-		var/dy = ((target_loc.y - source_loc.y) * world.icon_size) + (target.pixel_y - source.pixel_y) + (p_y - (world.icon_size / 2))
+		var/dy = ((target_loc.y - source_loc.y) * world.icon_size) + (target.pixel_y - source.pixel_y) + (target.pixel_z - source.pixel_z) + (p_y - (world.icon_size / 2))
 
 		angle = ATAN2(dy, dx)
 		return list(angle, p_x, p_y)
@@ -1057,13 +1062,15 @@
 	var/list/screen_loc_Y = splittext(screen_loc_params[2],":")
 
 	var/tx = (text2num(screen_loc_X[1]) - 1) * world.icon_size + text2num(screen_loc_X[2])
-	var/ty = (text2num(screen_loc_Y[1]) - 1) * world.icon_size + text2num(screen_loc_Y[2])
+	// We are here trying to lower our target location by the firing source's visual offset
+	// So visually things make a nice straight line while properly accounting for actual physical position
+	var/ty = (text2num(screen_loc_Y[1]) - 1) * world.icon_size + text2num(screen_loc_Y[2]) - source.pixel_z
 
 	//Calculate the "resolution" of screen based on client's view and world's icon size. This will work if the user can view more tiles than average.
 	var/list/screenview = view_to_pixels(user.client.view)
 
 	var/ox = round(screenview[1] / 2) - user.client.pixel_x //"origin" x
-	var/oy = round(screenview[2] / 2) - user.client.pixel_y //"origin" y
+	var/oy = round(screenview[2] / 2) - user.client.pixel_y - source.pixel_z //"origin" y
 	angle = ATAN2(tx - oy, ty - ox)
 	return list(angle, p_x, p_y)
 

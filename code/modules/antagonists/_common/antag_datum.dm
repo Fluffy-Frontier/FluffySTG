@@ -73,6 +73,7 @@ GLOBAL_LIST_EMPTY(antagonists)
 
 	/// A weakref to the HUD shown to teammates, created by `add_team_hud`
 	var/datum/weakref/team_hud_ref
+	var/skip_custom_objectives_addition = FALSE // FLUFFY FRONTIER ADDITION - Custom Objectives
 
 /datum/antagonist/New()
 	GLOB.antagonists += src
@@ -128,7 +129,7 @@ GLOBAL_LIST_EMPTY(antagonists)
 		ui = new(user, src, ui_name, name)
 		ui.open()
 
-/datum/antagonist/ui_act(action, params)
+/datum/antagonist/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return
@@ -241,6 +242,10 @@ GLOBAL_LIST_EMPTY(antagonists)
 ///Called by the add_antag_datum() mind proc after the instanced datum is added to the mind's antag_datums list.
 /datum/antagonist/proc/on_gain()
 	SHOULD_CALL_PARENT(TRUE)
+// FLUFFY FRONTIER CHANGE START- Custom Objectives
+	if(!skip_custom_objectives_addition)
+		add_custom_objectives()
+// FLUFFY FRONTIER CHANGE END
 	var/datum/action/antag_info/info_button
 	if(!owner)
 		CRASH("[src] ran on_gain() without a mind")
