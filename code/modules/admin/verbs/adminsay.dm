@@ -24,9 +24,7 @@ ADMIN_VERB(cmd_admin_say, R_NONE, "ASay", "Send a message to other admins", ADMI
 	message = "[span_adminsay("[span_prefix("ADMIN:")] <EM>[key_name_admin(user)]</EM> [ADMIN_FLW(user.mob)]: [custom_asay_color]<span class='message linkify'>[message]")]</span>[custom_asay_color ? "</font>":null]"
 	var/addressee = GLOB.admins.Copy()
 	for(var/client/admin in addressee)
-		to_chat(world, "[admin.ckey] - проходит проверку")
 		if(admin.is_eventmaker())
-			to_chat(world, "[admin.ckey] - пидорас")
 			addressee -= admin
 
 	to_chat(addressee,

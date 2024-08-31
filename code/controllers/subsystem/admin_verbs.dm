@@ -59,10 +59,6 @@ SUBSYSTEM_DEF(admin_verbs)
 		var/datum/admin_verb/verb_singleton = admin_verbs_by_type[verb_type]
 		if(!verify_visibility(admin, verb_singleton))
 			continue
-		// TFF ADDITION START - Eventmaker
-		if(admin.is_eventmaker() && GLOB.eventmakers_blacklist_verbs["[verb_singleton.name]"])
-			continue
-		// TFF ADDITION END
 
 		var/verb_permissions = verb_singleton.permissions
 		if(verb_permissions == R_NONE)
