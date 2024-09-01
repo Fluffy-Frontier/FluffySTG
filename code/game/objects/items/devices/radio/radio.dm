@@ -435,11 +435,7 @@
 		return
 
 	var/mob/living/holder = loc
-<<<<<<< HEAD
-	if(!holder.client?.prefs.read_preference(/datum/preference/toggle/radio_noise) && !HAS_TRAIT(holder, TRAIT_DEAF))
-=======
 	if(!radio_noise || HAS_TRAIT(holder, TRAIT_DEAF) || !holder.client?.prefs.read_preference(/datum/preference/toggle/radio_noise)) // NOVA EDIT CHANGE - Preemptive fix
->>>>>>> 80f651a0867 (Fixes doubled up radio sounds (#4339))
 		return
 
 	var/list/spans = data["spans"]
