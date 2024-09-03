@@ -288,6 +288,10 @@
 			RESKIN_ICON = 'icons/obj/clothing/shoes.dmi',
 			RESKIN_ICON_STATE = "jackboots",
 		),
+		"Red Variant" = list(
+			RESKIN_ICON = 'icons/obj/clothing/shoes.dmi',
+			RESKIN_ICON_STATE = "jackboots_sec",
+		)
 	)
 
 /obj/item/storage/backpack/duffelbag/sec/Initialize(mapload)
@@ -580,4 +584,22 @@
 			RESKIN_WORN_ICON = 'icons/mob/clothing/neck.dmi',
 			RESKIN_WORN_ICON_STATE = "hoscloak"
 		),
+	)
+
+//Разгрузка миротворца. Добавляется редсек вариант в виде спрайта разгрузки Армадайн ЕРТшников, которых... А их спавнили хоть раз?
+/obj/item/storage/belt/security/webbing/peacekeeper
+	uses_advanced_reskins = TRUE
+	unique_reskin = list(
+		"Blue Variant" = list(
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/belts.dmi',
+			RESKIN_ICON_STATE = "peacekeeper_webbing",
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/obj/clothing/belts.dmi',
+			RESKIN_WORN_ICON_STATE = "peacekeeper_webbing"
+		),
+		"Red Variant" = list(
+			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/belts.dmi',
+			RESKIN_ICON_STATE = "armadyne_webbing",
+			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/obj/clothing/belts.dmi',
+			RESKIN_WORN_ICON_STATE = "armadyne_webbing"
+		)
 	)
