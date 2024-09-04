@@ -603,15 +603,11 @@
 	uses_advanced_reskins = TRUE
 	unique_reskin = list(
 		"Blue Variant" = list(
-			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/belts.dmi',
 			RESKIN_ICON_STATE = "peacekeeper_webbing",
-			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/obj/clothing/belts.dmi',
 			RESKIN_WORN_ICON_STATE = "peacekeeper_webbing"
 		),
 		"Red Variant" = list(
-			RESKIN_ICON = 'modular_nova/master_files/icons/obj/clothing/belts.dmi',
 			RESKIN_ICON_STATE = "armadyne_webbing",
-			RESKIN_WORN_ICON = 'modular_nova/master_files/icons/obj/clothing/belts.dmi',
 			RESKIN_WORN_ICON_STATE = "armadyne_webbing"
 		)
 	)
