@@ -1,4 +1,10 @@
-#define MINIMUM_CLOTHING_STOCK 5
+/*
+	FLUFFY FRONTIER MODULAR: ADDITIONAL PRODUCTS
+
+	PARTLY DISABLED AND INTEGRATED IN modular_nova/modules/modular_vending/code/vending.dm
+*/
+
+// #define MINIMUM_CLOTHING_STOCK 5
 
 /obj/machinery/vending
 	/// Additions to the `products` list  of the vending machine, modularly. Will become null after Initialize, to free up memory.
@@ -10,6 +16,7 @@
 	/// Additions to the `contraband` list  of the vending machine, modularly. Will become null after Initialize, to free up memory.
 	var/list/contraband_ff
 
+/* INTEGRATED
 /obj/machinery/vending/Initialize(mapload)
 	if(products_nova)
 		// We need this, because duplicates screw up the spritesheet!
@@ -90,3 +97,4 @@
 	return ..()
 
 #undef MINIMUM_CLOTHING_STOCK
+*/
