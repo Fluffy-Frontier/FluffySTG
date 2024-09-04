@@ -252,6 +252,18 @@
 			RESKIN_WORN_ICON = 'icons/mob/clothing/hands.dmi',
 			RESKIN_WORN_ICON_STATE = "black"
 		),
+		"Red Old Gloves" = list(
+			RESKIN_ICON = 'icons/obj/clothing/gloves.dmi',
+			RESKIN_ICON_STATE = "sec",
+			RESKIN_WORN_ICON = 'icons/mob/clothing/hands.dmi',
+			RESKIN_WORN_ICON_STATE = "sec"
+		),
+		"Blu Old Gloves" = list(
+			RESKIN_ICON = 'icons/obj/clothing/gloves.dmi',
+			RESKIN_ICON_STATE = "sec_blu",
+			RESKIN_WORN_ICON = 'icons/mob/clothing/hands.dmi',
+			RESKIN_WORN_ICON_STATE = "sec_blu"
+		)
 	)
 
 /obj/item/storage/belt/security/Initialize(mapload)
