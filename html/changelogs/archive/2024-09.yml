@@ -1,0 +1,114 @@
+2024-09-01:
+  vinylspiders:
+  - bugfix: sneezes will no longer sound like bullets upon impact
+  - bugfix: foam darts will also no longer get the bullet impact sounds
+2024-09-02:
+  DaCoolBoss:
+  - bugfix: Aquarium decorations now contain plastic.
+  - spellcheck: Added item descriptions for aquarium decorations.
+  DrDiasyl aka DrTuxedo:
+  - rscadd: Curator has received a new BROADCAST CAMERA which can broadcast the surroundings
+      LIVE on Entertainment Screens/ Alongside with some other Journalism related
+      gear in his Heroic Beacon
+  - sound: Entertainment screens now play muffled speech when hearing a message on
+      Entertainment frequency
+  EnterTheJake:
+  - balance: Rusted Ritual now requries 10 sheets of Iron instead of Titanium.
+  FeudeyTF:
+  - bugfix: Fixed detective board placing
+  GPeckman:
+  - bugfix: The instagib, ragecage, mech madness, secu-ring, shooting range, and sniper
+      elite deathmatch maps are available again.
+  Ghommie:
+  - bugfix: Fixes the chainsaw evolution for goldfishes.
+  - rscadd: You can place papers, photos and cash bills (no holochips) inside bottles
+      and then toss them into the ocean (or fishing portal gen with relative settings)
+      with right-click, for others to fish them up on future rounds.
+  - rscadd: Added Athletic Fishing Gloves and Fishing Glove Module to the advanced
+      fishing tech node. Both can be used to fish without having to hold a fishing
+      rod.  The athletic fishing gloves will also train your athletics skill.
+  - bugfix: You can no longer pickup closets and crates wrapped in a package with
+      a fishing rod.
+  - bugfix: Fixed a few harddel issues with mob spawns that caused charred corpses
+      fished from lavaland to create an invisible blockade.
+  - bugfix: Fixed being able to fish up mobs that have fallen in totally different
+      z-levels with a rescue hook (i.e. from bitrunning domains to lavaland).
+  Iajret:
+  - rscdel: '''Guild'' radio channel key (for "Privateer Slaver" role) has been swapped
+      from :p to :i , to avoid conflict with the new Curator ''Entertainment'' channel'
+  LT3:
+  - spellcheck: Sneak a peek of Hilbert's Hotel, not a sneak peak
+  Majkl-J:
+  - rscadd: Achievement for eating 500 cigarettes
+  - balance: Cigarettes are now edible
+  - code_imp: Adds a variable to hide the food examine on the edible element
+  - bugfix: SSPolling no longer fills in the candidate list with empty entries to
+      guarantee it returns a list size of amount_to_pick
+  SmArtKar:
+  - bugfix: Marine helmets no longer change their sprite to security helmets when
+      their flashlight is toggled
+  - spellcheck: Hierophant no longer lies about obliterating someone
+  - bugfix: Removed all ways of teleportation from deathmatch and replaced all consoles
+      on a certain map with non-functional variants. Loadouts have been adjusted to
+      account for this.
+  - rscdel: Species Warfare no longer has atmospherics-related equipment on it.
+  - spellcheck: Fixed a typo on snowdin shuttle transi(s)t consoles
+  TheBoondock:
+  - qol: goliath arm can defuse gibonite by bumping or direct click
+  YesterdaysPromise:
+  - rscadd: Added crates of the following varieties; Interdyne, Interdyne freezer,
+      Tiger Co-Op, S.E.L.F. MI13, A.R.C., Cybersun (4 colour variants), Waffle Corp,
+      Donk, Gorlex, Gorlex weapons, DeForest, Nakamure Engineeing, Robust Industries
+  grungussuss:
+  - sound: lead pipe has sound
+  hack-wrench:
+  - bugfix: fixed input size for traitor announcer (512 -> 2048 chars)
+  vinylspiders:
+  - bugfix: wet hides and hairless hides no longer make metal clanging noises when
+      picked up/dropped
+  - bugfix: fixes doubled up nova and tg radio talk sounds
+  - rscadd: the headset radio talk sound changed from the TG beep to more of... a
+      familiar chirp. the old Nova talk sound is now used for walkie talkies and intercoms.
+2024-09-04:
+  OrbisAnima:
+  - qol: Added additional storages for Forged Weapons and bows, colonist and mining
+      types exosuits (this includes gear harness) now store them too. Shoe types with
+      storage also store forged daggers.
+  - qol: Forged weapons are now also lavaproof.
+  - balance: Forged weapons are now electrically conductive.
+  - balance: "Forged weapons ungodly throwing stats were balanced and brough to more\
+      \ normal levels, allow C\xFAchulainn to rest."
+  - balance: All Forged weapons (plus shields and mining tools) gain the Bane element
+      against Beasts and Megafauna, this means that they do a bonus damage equal to
+      their melee damage against against them (so a sword does 40 when you hit with
+      it, and 25 if you throw it). This affects more creatures than the ones in the
+      mines, like carps or Ian.
+  - balance: Forged Sword does 20 damage, with 20 AP, 20 block chance and has 20%
+      more damage against objects. Bulky sized.
+  - balance: Forged Katana does 20 damage, with 40 AP, and 10 block chance. Bulky
+      sized.
+  - balance: Forged Dagger does 13 damage, 25% less to objects, and 17 damage when
+      thrown, it additionally has a bonus when used to butcher. It has the same speed
+      as other knives and fits in shoes as other knives. Small sized.
+  - balance: Forged Spear does 13 damage while unwielded, 23 while wielded, with 10
+      AP, 24 damage when thrown and reach of 2 tiles. Bulky sized.
+  - balance: Forged Axe does 15 damage, armor penetration 10, throw force of 20 and
+      20% more damage against objects. Normal sized.
+  - balance: Forged Hammer forces you to carry it two handed, does 25 damage, with
+      10 AP and does double damage against objects. Bulky sized.
+  - balance: Forged Buckler does 10 damage, has 30 block chance and 150 integrity
+      (a lot for a shield). Normal sized.
+  - balance: Forged Pavise does 12 damage, has 50 block chance, requires only one
+      hand but slows you down while in your hand, with 300 integrity. Huge sized.
+  - balance: Forged Pickaxe does 15 damage, has a 15% bonus against objects, and have
+      a 25% speed bonus when used to mine. Bulky sized.
+  - balance: Forged Shovel does 8 damage and have a 25% speed bonus when used to mine.
+      Normal sized.
+  - balance: '''Forged'' Bokken, the wooden sword that can be made on the workbench
+      with no anvil or fuel, its now flammable, doesnt affect mobs, and does entirely
+      stamina damage. It has 40 AP, in one hand it does 15 damage and has a block
+      chance of 20, while wielded does 25 damage and has a 40 block chance. It''s
+      quite a powerfull non lethal option.'
+  vinylspiders:
+  - bugfix: fixed a bug that could sometimes cause moths to retain the flight trait
+      indefinitely when using their dash
