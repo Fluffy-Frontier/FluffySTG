@@ -279,21 +279,6 @@
 		),
 	)
 
-/obj/item/storage/belt/security/webbing/peacekeeper/Initialize(mapload)
-	. = ..()
-	uses_advanced_reskins = TRUE
-	current_skin = NONE
-	unique_reskin = list(
-		"Red Variant" = list(
-			RESKIN_ICON_STATE = "armadyne_webbing",
-			RESKIN_WORN_ICON_STATE = "armadyne_webbing"
-		),
-		"Blue Variant" = list(
-			RESKIN_ICON_STATE = "peacekeeper_webbing",
-			RESKIN_WORN_ICON_STATE = "peacekeeper_webbing"
-		),
-	)
-
 /obj/item/clothing/shoes/jackboots/sec/Initialize(mapload)
 	. = ..()
 	unique_reskin += list(
@@ -602,7 +587,12 @@
 //Разгрузка миротворца. Добавляется редсек вариант в виде спрайта разгрузки Армадайн ЕРТшников, которых... А их спавнили хоть раз?
 /obj/item/storage/belt/security/webbing/peacekeeper
 	uses_advanced_reskins = TRUE
-	unique_reskin = list(
+	current_skin = NONE
+	unique_reskin = list()
+
+/obj/item/storage/belt/security/webbing/peacekeeper/Initialize(mapload)
+	. = ..()
+	unique_reskin = list( //re-redefine of belt/security skins
 		"Blue Variant" = list(
 			RESKIN_ICON_STATE = "peacekeeper_webbing",
 			RESKIN_WORN_ICON_STATE = "peacekeeper_webbing"
