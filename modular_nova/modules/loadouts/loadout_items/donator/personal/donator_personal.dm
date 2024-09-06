@@ -1,3 +1,8 @@
+/*
+	FLUFFY FRONTER REMOVAL
+*/
+
+/*
 /datum/loadout_item/toys/miafoxplush
 	name = "Mia's fox plushie"
 	item_path = /obj/item/toy/plush/nova/donator/fox/mia
@@ -865,3 +870,4 @@
 	name = "Shendyt"
 	item_path = /obj/item/clothing/under/costume/shendyt
 	ckeywhitelist = list("hyperhazel")
+*/
