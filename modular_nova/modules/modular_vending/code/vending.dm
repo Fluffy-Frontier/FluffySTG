@@ -40,7 +40,6 @@
 
 	// FLUFFY FRONTIER EDIT START; INTEGRATION FROM tff_modular/modules/vending/vending.dm
 	if(products_ff)
-		// We need this, because duplicates screw up the spritesheet!
 		for(var/item_to_add in products_ff)
 			products[item_to_add] = products_ff[item_to_add]
 
@@ -57,12 +56,10 @@
 				product_categories += category
 
 	if(premium_ff)
-		// We need this, because duplicates screw up the spritesheet!
 		for(var/item_to_add in premium_ff)
 			premium[item_to_add] = premium_ff[item_to_add]
 
 	if(contraband_ff)
-		// We need this, because duplicates screw up the spritesheet!
 		for(var/item_to_add in contraband_ff)
 			contraband[item_to_add] = contraband_ff[item_to_add]
 	// FLUFFY FRONTIER EDIT END
