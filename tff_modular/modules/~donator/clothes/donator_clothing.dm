@@ -229,7 +229,7 @@
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/suit/hooded/cloak/wakamo
-	name = "Wakamo holo-projector"
+	name = "nimb holo-projector"
 	desc =  "Prototype version of a Holo-Projector that creates projection above your head."
 	icon = 'tff_modular/master_files/icons/donator/obj/clothing/neck.dmi'
 	icon_state = "wakamo"
@@ -261,7 +261,7 @@
 	hood.set_greyscale(new_coat_colors) //Adopt the suit's grayscale coloring for visual clarity.
 
 /obj/item/clothing/head/hooded/cloakhood/wakamo
-	name = "Wakamo halo"
+	name = "nimb halo"
 	desc = "This is a projection of a Halo above the head. Looks neat. But now you feel Responsibilities weighing on your shoulders since you have grown out of it."
 	icon = 'tff_modular/master_files/icons/donator/obj/clothing/head.dmi'
 	icon_state = "wakamo"
