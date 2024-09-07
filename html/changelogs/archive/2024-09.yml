@@ -125,3 +125,21 @@
   Stalkeros:
   - rscadd: Hyperhazel's donator item
   - rscadd: Returns the LTSRBTB (LTSRBT board) to the Black Market uplink's selection
+2024-09-07:
+  FeenieRU:
+  - code_imp: Modular vending was modified and now we can easily add our own products
+      in our modules without redacting TG and Nova code.
+  Stalkeros, Moldb for the space suit sprites:
+  - rscadd: '"Voskhod" space suits have been made available for purchase by the "Surplus"
+      military surplus imports company'
+  - rscdel: Deletes all of the NRI posters as I come up with new ones.
+  - qol: Fixes an oversight with most of the not-NRI police equipment being Cargo-locked.
+  delingar:
+  - rscadd: Added redsec versions for security boots and peacekeeprs webbings.
+  - rscadd: Added TG security gloves as new skins.
+  vinylspiders:
+  - bugfix: SolFed radio channel key has been switched from :l to :f , to avoid conflict
+      with the lefthand radio shortcut.
+  - bugfix: guild radio channel key has been switched from :i to :d , to avoid conflict
+      with the intercom radio shortcut.
+  - bugfix: fixes bluesec/redsec night vision goggles having invisible icons
