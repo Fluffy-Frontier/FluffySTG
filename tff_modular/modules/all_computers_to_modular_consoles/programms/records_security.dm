@@ -16,6 +16,8 @@
 	icon_keyboard = "security_key"
 	/// The current state of the printer
 	var/printing = FALSE
+	// I am too dumb to do it via state, as it should be
+	var/selecting_photo = FALSE
 
 /datum/computer_file/program/disk_binded/records/security/on_install(datum/computer_file/source, obj/item/modular_computer/computer_installing)
 	. = ..()
@@ -26,6 +28,24 @@
 	if (computer)
 		UnregisterSignal(computer.physical, COMSIG_ATOM_EMP_ACT)
 	. = ..()
+
+/datum/computer_file/program/disk_binded/records/security/kill_program(mob/user)
+	. = ..()
+	selecting_photo = FALSE
+
+/datum/computer_file/program/disk_binded/records/security/ui_interact(mob/user, datum/tgui/ui)
+	. = ..()
+	var/list/data = get_picture_assets()
+	SSassets.transport.send_assets(user, data)
+
+/datum/computer_file/program/disk_binded/records/security/proc/get_picture_assets()
+	var/list/data = list()
+	for(var/datum/computer_file/picture/photo in computer.stored_files)
+		if(photo.stored_picture.psize_x > world.icon_size || photo.stored_picture.psize_y > world.icon_size)
+			continue
+		data |= photo.picture_name
+
+	return data
 
 /datum/computer_file/program/disk_binded/records/security/proc/emp_act(datum/source, severity, protection)
 	SIGNAL_HANDLER
@@ -56,18 +76,13 @@
 			qdel(target)
 			continue
 
-/datum/computer_file/program/disk_binded/records/security/application_item_interaction(mob/living/user, obj/item/tool, list/modifiers)
-	if(!istype(tool, /obj/item/photo))
-		return NONE
-	insert_new_record(user, tool)
-	return ITEM_INTERACT_SUCCESS
-
 /datum/computer_file/program/disk_binded/records/security/ui_data(mob/user)
 	var/list/data = ..()
 
 	data["available_statuses"] = WANTED_STATUSES()
 	data["current_user"] = user.name
 	data["higher_access"] = has_armory_access(user)
+	data["selecting_photo"] = selecting_photo
 
 	var/list/records = list()
 	for(var/datum/record/crew/target in GLOB.manifest.general)
@@ -117,6 +132,18 @@
 
 	data["records"] = records
 
+	var/list/stored_photos = list()
+	for(var/datum/computer_file/picture/photo_file in computer.stored_files)
+		// Just ignore big photos
+		if(photo_file.stored_picture.psize_x > world.icon_size || photo_file.stored_picture.psize_y > world.icon_size)
+			continue
+		stored_photos += list(list(
+			"uid" = photo_file.uid,
+			"path" = SSassets.transport.get_asset_url(photo_file.picture_name)
+		))
+
+	data["storedPhotos"] = stored_photos
+
 	return data
 
 /datum/computer_file/program/disk_binded/records/security/ui_static_data(mob/user)
@@ -129,9 +156,26 @@
 /datum/computer_file/program/disk_binded/records/security/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
+		if (!authenticated)	selecting_photo = FALSE
 		return
 
 	var/mob/user = ui.user
+	switch(action)
+		if("add_record")
+			selecting_photo = FALSE
+
+			var/photo_uid = text2num(params["uid"])
+			var/datum/computer_file/picture/selected_photo = computer.find_file_by_uid(photo_uid)
+
+			if(!istype(selected_photo))
+				return FALSE
+
+			insert_new_record(user, selected_photo)
+			return TRUE
+
+		if("photo_selector")
+			selecting_photo = !selecting_photo
+			return TRUE
 
 	var/datum/record/crew/target
 	if(params["crew_ref"])
@@ -372,6 +416,16 @@
 	addtimer(CALLBACK(src, PROC_REF(print_finish), printable), 2 SECONDS, TIMER_UNIQUE | TIMER_STOPPABLE)
 
 	return TRUE
+
+/// Sends new datum/picture assets to everyone
+/datum/computer_file/program/disk_binded/records/security/proc/update_pictures_for_all()
+	var/list/data = get_picture_assets()
+
+	if(isnull(computer.open_uis))
+		return
+
+	for(var/datum/tgui/window as anything in computer.open_uis)
+		SSassets.transport.send_assets(window.user, data)
 
 /datum/computer_file/program/disk_binded/records/security/hack_console(mob/living/carbon/human/hacker)
 	for(var/datum/record/crew/target in GLOB.manifest.general)

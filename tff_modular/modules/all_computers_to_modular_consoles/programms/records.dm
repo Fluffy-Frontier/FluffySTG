@@ -175,6 +175,24 @@
 		playsound(computer.physical, 'sound/machines/terminal_error.ogg', 70, TRUE)
 		return FALSE
 
+	if (!istype(mugshot))
+		if (istype(mugshot, /datum/computer_file/picture))
+			var/datum/computer_file/picture/photo = mugshot
+			if(photo.stored_picture.psize_x > world.icon_size || photo.stored_picture.psize_y > world.icon_size)
+				computer.physical.balloon_alert(user, "photo too large!")
+				playsound(computer.physical, 'sound/machines/terminal_error.ogg', 70, TRUE)
+				return FALSE
+
+			var/name = tgui_input_text(user, "Enter the name of the new record.", "New Record", "Crewman Default", MAX_NAME_LEN)
+			if(!name || !computer.enabled || computer.active_program != src || !user.can_perform_action(computer.physical, ALLOW_SILICON_REACH) || !photo || QDELETED(photo) || QDELETED(src))
+				return FALSE
+
+			new /datum/record/crew(name = name, character_appearance = photo.stored_picture.picture_image)
+			computer.physical.balloon_alert(user, "record created")
+			playsound(computer.physical, 'sound/machines/terminal_success.ogg', 70, TRUE)
+			return TRUE
+		return FALSE
+
 	if(mugshot.picture.psize_x > world.icon_size || mugshot.picture.psize_y > world.icon_size)
 		computer.physical.balloon_alert(user, "photo too large!")
 		playsound(computer.physical, 'sound/machines/terminal_error.ogg', 70, TRUE)
