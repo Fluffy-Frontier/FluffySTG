@@ -6800,6 +6800,10 @@
 #include "modular_nova\master_files\code\modules\mining\equipment\explorer_gear.dm"
 #include "modular_nova\master_files\code\modules\mining\equipment\monster_organs\monster_organ.dm"
 #include "modular_nova\master_files\code\modules\mob\login.dm"
+#include "modular_nova\master_files\code\modules\mob\basic\alien\_alien.dm"
+#include "modular_nova\master_files\code\modules\mob\basic\alien\drone.dm"
+#include "modular_nova\master_files\code\modules\mob\basic\alien\queen.dm"
+#include "modular_nova\master_files\code\modules\mob\basic\alien\sentinel.dm"
 #include "modular_nova\master_files\code\modules\mob\dead\new_player\latejoin_menu.dm"
 #include "modular_nova\master_files\code\modules\mob\dead\new_player\new_player.dm"
 #include "modular_nova\master_files\code\modules\mob\dead\new_player\preferences_setup.dm"
@@ -8609,6 +8613,7 @@
 #include "modular_nova\modules\xenoarch\code\modules\research\xenoarch\xenoarch_machine.dm"
 #include "modular_nova\modules\xenoarch\code\modules\research\xenoarch\xenoarch_reward.dm"
 #include "modular_nova\modules\xenoarch\code\modules\research\xenoarch\xenoarch_tool.dm"
+<<<<<<< HEAD
 #include "modular_nova\modules\xenos_nova_redo\code\base_nova_xeno.dm"
 #include "modular_nova\modules\xenos_nova_redo\code\human_defense.dm"
 #include "modular_nova\modules\xenos_nova_redo\code\larva.dm"
@@ -8713,4 +8718,6 @@
 #include "tff_modular\modules\~donator\clothes\donator_clothing.dm"
 #include "tff_modular\modules\~donator\grayscale\grayscale.dm"
 #include "tff_modular\modules\~donator\items\donator_items.dm"
+=======
+>>>>>>> bab5ab0350c (Death to Xenomorphs, long live Xenomorphs (#4307))
 // END_INCLUDE
