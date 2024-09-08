@@ -143,3 +143,19 @@
   - bugfix: guild radio channel key has been switched from :i to :d , to avoid conflict
       with the intercom radio shortcut.
   - bugfix: fixes bluesec/redsec night vision goggles having invisible icons
+2024-09-08:
+  GoldenAlpharex:
+  - bugfix: Fixed a CRITICAL bug where the "Random Event" admin message missing a
+      closing parenthesis at its end.
+  - config: Updated jobconfig.toml to match the one on the server, this should remove
+      some in-game warnings about some jobs missing from said jobconfig.
+  Hatterhat:
+  - balance: The Lanca battle rifle now has ten-round magazines.
+  - balance: The Rengo sporterized bolt-action rifle now uses detachable Lanca magazines.
+  Stalkeros:
+  - balance: You can now order up to fifteen (15) Goodies per briefcase; S&H tax for
+      overcapacity has been decreased to a hundred fifty (150) credits
+  Zergspower:
+  - rscadd: overrides for xenomorph basic mobs for variety
+  - rscdel: xenomorph antag overrides
+  - image: icon overrides for xenomorph basic mobs
