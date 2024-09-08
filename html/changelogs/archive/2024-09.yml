@@ -112,3 +112,50 @@
   vinylspiders:
   - bugfix: fixed a bug that could sometimes cause moths to retain the flight trait
       indefinitely when using their dash
+2024-09-06:
+  Floofies:
+  - bugfix: Fixed some donator-only food items by removing the public-facing recipes
+      for Miso Pasta, Red Bay Chicken Meatballs, Tiramisu, Red Planet Parm, Aubergine
+      Rolls, and Pineapple Trifle.
+  OrbisAnima:
+  - rscdel: Removes the Sloth Ruin from the rotation (ie, add it to the blacklist)
+  Oxotnak:
+  - rscadd: added meson scouter alt skin (engi version too)
+  - image: added meson scouter icons
+  Stalkeros:
+  - rscadd: Hyperhazel's donator item
+  - rscadd: Returns the LTSRBTB (LTSRBT board) to the Black Market uplink's selection
+2024-09-07:
+  FeenieRU:
+  - code_imp: Modular vending was modified and now we can easily add our own products
+      in our modules without redacting TG and Nova code.
+  Stalkeros, Moldb for the space suit sprites:
+  - rscadd: '"Voskhod" space suits have been made available for purchase by the "Surplus"
+      military surplus imports company'
+  - rscdel: Deletes all of the NRI posters as I come up with new ones.
+  - qol: Fixes an oversight with most of the not-NRI police equipment being Cargo-locked.
+  delingar:
+  - rscadd: Added redsec versions for security boots and peacekeeprs webbings.
+  - rscadd: Added TG security gloves as new skins.
+  vinylspiders:
+  - bugfix: SolFed radio channel key has been switched from :l to :f , to avoid conflict
+      with the lefthand radio shortcut.
+  - bugfix: guild radio channel key has been switched from :i to :d , to avoid conflict
+      with the intercom radio shortcut.
+  - bugfix: fixes bluesec/redsec night vision goggles having invisible icons
+2024-09-08:
+  GoldenAlpharex:
+  - bugfix: Fixed a CRITICAL bug where the "Random Event" admin message missing a
+      closing parenthesis at its end.
+  - config: Updated jobconfig.toml to match the one on the server, this should remove
+      some in-game warnings about some jobs missing from said jobconfig.
+  Hatterhat:
+  - balance: The Lanca battle rifle now has ten-round magazines.
+  - balance: The Rengo sporterized bolt-action rifle now uses detachable Lanca magazines.
+  Stalkeros:
+  - balance: You can now order up to fifteen (15) Goodies per briefcase; S&H tax for
+      overcapacity has been decreased to a hundred fifty (150) credits
+  Zergspower:
+  - rscadd: overrides for xenomorph basic mobs for variety
+  - rscdel: xenomorph antag overrides
+  - image: icon overrides for xenomorph basic mobs
