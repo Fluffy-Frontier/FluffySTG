@@ -22,7 +22,7 @@
 	)
 	body_size_restricted = TRUE
 	digitigrade_customization = DIGITIGRADE_NEVER
-	no_equip_flags = ITEM_SLOT_FEET | ITEM_SLOT_OCLOTHING | ITEM_SLOT_SUITSTORE
+	no_equip_flags = ITEM_SLOT_FEET | ITEM_SLOT_OCLOTHING | ITEM_SLOT_SUITSTORE | ITEM_SLOT_EYES
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	mutanttongue = /obj/item/organ/internal/tongue/nabber
 	always_customizable = FALSE
