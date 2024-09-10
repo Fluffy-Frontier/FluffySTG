@@ -538,6 +538,7 @@
 	emote_type = EMOTE_AUDIBLE
 	vary = TRUE
 	sound = 'modular_nova/modules/emotes/sound/voice/mggaow.ogg'
+	sound_wall_ignore = TRUE // FF ADDITION
 
 /datum/emote/living/mrrp
 	key = "mrrp"
