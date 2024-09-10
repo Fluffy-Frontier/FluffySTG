@@ -60,7 +60,7 @@ var/datum/martial_art/martial_to_learn = new /datum/martial_art/nabber_grab()
 	if(!nabber)
 		return FALSE
 
-	if(isdead(nabber) || nabber.incapacitated())
+	if(isdead(nabber) || nabber.incapacitated)
 		nabber.balloon_alert(nabber, "Incapacitated!")
 		return FALSE
 
