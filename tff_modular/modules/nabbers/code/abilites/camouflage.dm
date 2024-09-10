@@ -15,7 +15,7 @@
 	if(!owner)
 		return FALSE
 
-	if(isdead(owner) || owner.incapacitated())
+	if(isdead(owner) || owner.incapacitated)
 		owner.balloon_alert(owner, "Incapacitated!")
 		return FALSE
 
