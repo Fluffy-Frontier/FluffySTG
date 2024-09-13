@@ -91,9 +91,8 @@ var/datum/martial_art/martial_to_learn = new /datum/martial_art/nabber_grab()
 	nabber.visible_message(span_warning("[nabber] starts to pump blood into their mantis arms!"), span_warning("You start pumping blood into your mantis arms and emmitting defensive screech! Stay still!"), span_hear("You hear ramping up screech!"))
 	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
 
-	if(!do_after(nabber, 2 SECONDS, nabber))
+	if(!do_after(nabber, 2 SECONDS, nabber, IGNORE_USER_LOC_CHANGE))
 		StartCooldown()
-		nabber.balloon_alert(nabber, "Stand still!")
 		return FALSE
 
 	nabber.balloon_alert(nabber, "Arms rised!")
@@ -131,8 +130,7 @@ var/datum/martial_art/martial_to_learn = new /datum/martial_art/nabber_grab()
 
 	nabber.balloon_alert(nabber, "Starting pumping blood out!")
 
-	if(!do_after(nabber, 2 SECONDS, nabber))
-		nabber.balloon_alert(nabber, "Stand still!")
+	if(!do_after(nabber, 2 SECONDS, nabber, IGNORE_USER_LOC_CHANGE))
 		return	FALSE
 
 	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
