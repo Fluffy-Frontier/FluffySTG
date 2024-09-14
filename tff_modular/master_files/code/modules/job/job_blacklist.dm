@@ -54,9 +54,6 @@
 /datum/job/orderly
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
-/datum/job/coroner
-	species_blacklist = list(SPECIES_NABBER = TRUE)
-
 //РнД
 /datum/job/research_director
 	species_blacklist = list(SPECIES_NABBER = TRUE)
@@ -103,15 +100,6 @@
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 /datum/job/bouncer
-	species_blacklist = list(SPECIES_NABBER = TRUE)
-
-/datum/job/curator
-	species_blacklist = list(SPECIES_NABBER = TRUE)
-
-/datum/job/botanist
-	species_blacklist = list(SPECIES_NABBER = TRUE)
-
-/datum/job/barber
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 //Особые должности
