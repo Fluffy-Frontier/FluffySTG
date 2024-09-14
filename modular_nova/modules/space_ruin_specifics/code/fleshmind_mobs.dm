@@ -117,9 +117,9 @@
 	if(key)
 		return
 	if(!suffering_malfunction && malfunction_chance && prob(malfunction_chance * delta_time) && stat != DEAD)
-		malfunction()
+		INVOKE_ASYNC(src, PROC_REF(malfunction))
 	if(passive_speak_lines && prob(passive_speak_chance * delta_time))
-		say_passive_speech()
+		INVOKE_ASYNC(src, PROC_REF(say_passive_speech))
 	if(escapes_closets)
 		closet_interaction()
 
