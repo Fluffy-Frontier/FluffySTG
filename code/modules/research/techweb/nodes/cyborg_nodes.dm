@@ -141,6 +141,7 @@
 		"implanter",
 		"locator",
 		"c38_trac",
+		"implant_gasspeech",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_1_POINTS)
 

@@ -22,14 +22,15 @@
 	)
 	body_size_restricted = TRUE
 	digitigrade_customization = DIGITIGRADE_NEVER
-	no_equip_flags = ITEM_SLOT_FEET | ITEM_SLOT_OCLOTHING | ITEM_SLOT_SUITSTORE | ITEM_SLOT_EYES
+	no_equip_flags = ITEM_SLOT_FEET | ITEM_SLOT_OCLOTHING | ITEM_SLOT_SUITSTORE | ITEM_SLOT_EYES | ITEM_SLOT_LEGCUFFED
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	mutanttongue = /obj/item/organ/internal/tongue/nabber
-	always_customizable = FALSE
+	always_customizable = TRUE
 	hair_alpha = 0
 	facial_hair_alpha = 0
 	payday_modifier = 0.75
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	species_cookie = /obj/item/food/grown/cabbage
 	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT - 10)
 	mutantbrain = /obj/item/organ/internal/brain/nabber
 	mutanteyes = /obj/item/organ/internal/eyes/robotic/nabber
@@ -58,6 +59,9 @@
 	var/datum/action/cooldown/toggle_arms/arms
 	var/datum/action/cooldown/optical_camouflage/camouflage
 	var/datum/action/cooldown/nabber_threat/threat_mod
+	var/obj/item/restraints/legcuffs/gas_placeholder/anti_cuffs
+	species_language_holder = /datum/language_holder/nabber
+	language_prefs_whitelist = list(/datum/language/nabber)
 
 /datum/species/nabber/on_species_gain(mob/living/carbon/human/C, datum/species/old_species, pref_load)
 	. = ..()
@@ -68,9 +72,14 @@
 	threat_mod = new(C)
 	threat_mod.Grant(C)
 
-	// Предохраняемся от получения проклятого квирка. Ломающего ГБС
-	if(C.has_quirk(/datum/quirk/oversized))
-		C.remove_quirk(/datum/quirk/oversized)
+	var/is_dummy = istype(C, /mob/living/carbon/human/dummy)
+
+	if(!is_dummy)
+		anti_cuffs = new()
+		C.equip_to_slot(anti_cuffs, ITEM_SLOT_LEGCUFFED, initial = TRUE)
+
+		var/obj/item/implant/gas_sol_speaker/imp_in = new()
+		imp_in.implant(C)
 
 /datum/species/nabber/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()
@@ -78,7 +87,19 @@
 	camouflage.Destroy()
 	threat_mod.Destroy()
 
+	if(anti_cuffs)
+		anti_cuffs.Destroy()
+		anti_cuffs = null
+
+	if(C.legcuffed)
+		C.legcuffed.Destroy()
+		C.legcuffed = null
+
 /datum/species/nabber/spec_life(mob/living/carbon/human/H, seconds_per_tick, times_fired)
+	// Вызываем это перед проверкой на смерть, чтобы даже у мёртвых ГБСов была заглушка
+	if(H.num_legs >= 2 && QDELETED(anti_cuffs))
+		anti_cuffs = new()
+		H.equip_to_slot(anti_cuffs, ITEM_SLOT_LEGCUFFED, initial = TRUE)
 	. = ..()
 	if(isdead(H))
 		return
@@ -172,7 +193,10 @@
 /mob/living/carbon/human/species/nabber
 	race = /datum/species/nabber
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 47ec772863d (lategaming)
 
 // Отображение для других наличия повреждений у голосового импланта
 /mob/living/carbon/human/examine(mob/user)
@@ -198,6 +222,7 @@
 
 // В режиме кос агро грабы не будут замедлять
 /mob/living/carbon/human/add_movespeed_modifier(datum/movespeed_modifier/type_or_datum, update = TRUE)
+<<<<<<< HEAD
 	if(isnabber(src) && type_or_datum == /datum/movespeed_modifier/grab_slowdown/aggressive)
 		var/datum/species/nabber/our_nabber = src.dna.species
 		var/datum/action/cooldown/toggle_arms/arms = our_nabber.arms
@@ -212,3 +237,18 @@
 		return FALSE
 	. = ..()
 >>>>>>> cebe4fd9d76 (i hate tabs)
+=======
+    if(isnabber(src) && type_or_datum == /datum/movespeed_modifier/grab_slowdown/aggressive)
+        var/datum/species/nabber/our_nabber = src.dna.species
+        var/datum/action/cooldown/toggle_arms/arms = our_nabber.arms
+        if(arms.button_icon_state == "arms_on")
+            return FALSE
+    return ..()
+
+// ЧС квирков
+/mob/living/carbon/human/add_quirk(datum/quirk/quirktype, client/override_client)
+    var/bad_nabber_quirks = list(/datum/quirk/oversized, /datum/quirk/prosthetic_limb, /datum/quirk/quadruple_amputee) // Дополнить
+    if(isnabber(src) && quirktype in bad_nabber_quirks)
+        return FALSE
+    . = ..()
+>>>>>>> 47ec772863d (lategaming)

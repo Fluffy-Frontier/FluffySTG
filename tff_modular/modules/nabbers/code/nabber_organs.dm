@@ -13,6 +13,14 @@
 	liked_foodtypes = RAW | GORE | GRAIN
 	disliked_foodtypes = CLOTH | FRIED | TOXIC
 	toxic_foodtypes = DAIRY
+	var/static/list/languages_possible_gas = typecacheof(list(
+		/datum/language/common,
+		/datum/language/nabber,
+	))
+
+/obj/item/organ/internal/tongue/nabber/get_possible_languages()
+	RETURN_TYPE(/list)
+	return languages_possible_gas
 
 /obj/item/organ/internal/ears/nabber
 	name = "nabber ears"
@@ -41,6 +49,7 @@
 	desc = "Small orange orbs. With pair welding shield linses."
 	icon = ORGGAN_ICON_NABBER
 	icon_state = "eyes"
+	organ_flags = ORGAN_ORGANIC | ORGAN_EDIBLE | ORGAN_VIRGIN
 	flash_protect = FLASH_PROTECTION_SENSITIVE
 	var/datum/action/toggle_welding/shield
 	var/active = FALSE
