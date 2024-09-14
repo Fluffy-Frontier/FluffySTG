@@ -284,7 +284,7 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 		if(raw_message != gbs_translation_check)
 			message_mods[MODE_CUSTOM_SAY_EMOTE] = gbs_translation_check
 			message_mods[MODE_CUSTOM_SAY_ERASE_INPUT] = TRUE
-    // FLUFFY EDIT END
+	// FLUFFY EDIT END
 
 	var/deaf_message
 	var/deaf_type
