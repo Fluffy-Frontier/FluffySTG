@@ -139,7 +139,11 @@ var/datum/martial_art/martial_to_learn = new /datum/martial_art/nabber_grab()
 			qdel(held)
 
 	martial_to_learn.remove(nabber)
+<<<<<<< HEAD
 	UnregisterSignal(owner, COMSIG_CARBON_REMOVE_LIMB)
+=======
+	UnregisterSignal(owner, COMSIG_CARBON_POST_REMOVE_LIMB)
+>>>>>>> 6ccb0ab9d7e (i almost died)
 	nabber.balloon_alert(nabber, "Arms down!")
 	button_icon_state = "arms_off"
 	nabber.update_action_buttons()
