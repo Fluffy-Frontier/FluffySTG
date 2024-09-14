@@ -171,3 +171,44 @@
 
 /mob/living/carbon/human/species/nabber
 	race = /datum/species/nabber
+<<<<<<< HEAD
+=======
+
+// Отображение для других наличия повреждений у голосового импланта
+/mob/living/carbon/human/examine(mob/user)
+	. = ..()
+
+	if(isnabber(src))
+		var/is_really_borked = FALSE
+		for(var/obj/item/implant/gas_sol_speaker/imp in implants)
+			var/is_borked = imp.emp_damage
+			if (is_borked > 0)
+				is_really_borked = TRUE
+		if(is_really_borked)
+			. += span_notice("[user.p_Their()] speech synthesizer emits constant silent white noise.") + "\n"
+
+// Не заковывается при наличии кос
+/mob/living/carbon/human/canBeHandcuffed()
+	if(isnabber(src))
+		var/obj/item/held = get_active_held_item()
+		var/obj/item/inactive = get_inactive_held_item()
+		if(istype((inactive || held), /obj/item/melee/nabber_blade))
+			return FALSE
+	. = ..()
+
+// В режиме кос агро грабы не будут замедлять
+/mob/living/carbon/human/add_movespeed_modifier(datum/movespeed_modifier/type_or_datum, update = TRUE)
+	if(isnabber(src) && type_or_datum == /datum/movespeed_modifier/grab_slowdown/aggressive)
+		var/datum/species/nabber/our_nabber = src.dna.species
+		var/datum/action/cooldown/toggle_arms/arms = our_nabber.arms
+		if(arms.button_icon_state == "arms_on")
+			return FALSE
+	return ..()
+
+// ЧС квирков
+/mob/living/carbon/human/add_quirk(datum/quirk/quirktype, client/override_client)
+	var/bad_nabber_quirks = list(/datum/quirk/oversized, /datum/quirk/prosthetic_limb, /datum/quirk/quadruple_amputee) // Дополнить
+	if(isnabber(src) && quirktype in bad_nabber_quirks)
+		return FALSE
+	. = ..()
+>>>>>>> cebe4fd9d76 (i hate tabs)
