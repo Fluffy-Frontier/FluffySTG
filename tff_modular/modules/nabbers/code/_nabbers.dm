@@ -194,9 +194,13 @@
 	race = /datum/species/nabber
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 47ec772863d (lategaming)
+=======
+=======
+>>>>>>> e44e20f2464 (aaa)
 
 // Отображение для других наличия повреждений у голосового импланта
 /mob/living/carbon/human/examine(mob/user)
@@ -223,6 +227,9 @@
 // В режиме кос агро грабы не будут замедлять
 /mob/living/carbon/human/add_movespeed_modifier(datum/movespeed_modifier/type_or_datum, update = TRUE)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e44e20f2464 (aaa)
 	if(isnabber(src) && type_or_datum == /datum/movespeed_modifier/grab_slowdown/aggressive)
 		var/datum/species/nabber/our_nabber = src.dna.species
 		var/datum/action/cooldown/toggle_arms/arms = our_nabber.arms
@@ -237,6 +244,7 @@
 		return FALSE
 	. = ..()
 >>>>>>> cebe4fd9d76 (i hate tabs)
+<<<<<<< HEAD
 =======
     if(isnabber(src) && type_or_datum == /datum/movespeed_modifier/grab_slowdown/aggressive)
         var/datum/species/nabber/our_nabber = src.dna.species
@@ -252,3 +260,5 @@
         return FALSE
     . = ..()
 >>>>>>> 47ec772863d (lategaming)
+=======
+>>>>>>> e44e20f2464 (aaa)
