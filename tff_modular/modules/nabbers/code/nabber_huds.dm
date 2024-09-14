@@ -1,6 +1,5 @@
 #define NABBER_HUD_Y_SHIFT 12
 
-<<<<<<< HEAD
 /mob/living/carbon/human/species/nabber/med_hud_set_status()
 	. = ..()
 	var/image/holder = hud_list?[STATUS_HUD]
@@ -42,7 +41,6 @@
 			return
 		holder.pixel_y += NABBER_HUD_Y_SHIFT
 
-=======
 /mob/living/carbon/human/med_hud_set_status()
 	. = ..()
 	if(isnabber(src))
@@ -89,5 +87,4 @@
 				return
 			holder.pixel_y += NABBER_HUD_Y_SHIFT
 
->>>>>>> 47ec772863d (lategaming)
 #undef NABBER_HUD_Y_SHIFT

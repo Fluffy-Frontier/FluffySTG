@@ -157,24 +157,8 @@ var/datum/martial_art/martial_to_learn = new /datum/martial_art/nabber_grab()
 		if(istype(held, /obj/item/melee/nabber_blade))
 			qdel(held)
 
-<<<<<<< HEAD
-	martial_to_learn.remove(nabber)
-<<<<<<< HEAD
-	UnregisterSignal(owner, COMSIG_CARBON_REMOVE_LIMB)
-=======
 	UnregisterSignal(owner, COMSIG_CARBON_POST_REMOVE_LIMB)
->>>>>>> 6ccb0ab9d7e (i almost died)
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-	UnregisterSignal(owner, COMSIG_CARBON_REMOVE_LIMB)
-=======
 	martial_to_learn.remove(nabber)
-	UnregisterSignal(owner, COMSIG_CARBON_POST_REMOVE_LIMB)
->>>>>>> Stashed changes
->>>>>>> 47ec772863d (lategaming)
-=======
->>>>>>> b55bc4f8fd1 (aaa2)
 	nabber.balloon_alert(nabber, "Arms down!")
 	button_icon_state = "arms_off"
 	nabber.update_action_buttons()
