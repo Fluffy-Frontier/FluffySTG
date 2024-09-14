@@ -2386,6 +2386,7 @@
 "ug" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/machinery/light/cold/directional/east,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating,
 /area/ruin/interdyne_planetary_base/eng)
 "ui" = (
@@ -2564,7 +2565,7 @@
 	req_access = list("syndicate")
 	},
 /obj/effect/turf_decal/delivery/white,
-/obj/machinery/suit_storage_unit/medical,
+/obj/machinery/suit_storage_unit/interdyne/nerfed,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "vO" = (
@@ -5214,7 +5215,7 @@
 /obj/effect/turf_decal/siding/dark_green{
 	dir = 1
 	},
-/obj/machinery/vending/boozeomat/syndicate_access{
+/obj/machinery/vending/boozeomat/syndicate{
 	onstation = 0
 	},
 /turf/open/floor/wood/tile,
@@ -5498,7 +5499,7 @@
 /turf/open/floor/plating,
 /area/ruin/interdyne_planetary_base/cargo/deck)
 "TH" = (
-/obj/machinery/vending/medical/syndicate_access{
+/obj/machinery/vending/medical/syndicate{
 	onstation = 0
 	},
 /turf/open/floor/iron/dark/small,

@@ -26,7 +26,7 @@
 /obj/item/spanking_pad/proc/check_menu(mob/living/user)
 	if(!istype(user))
 		return FALSE
-	if(user.incapacitated())
+	if(user.incapacitated)
 		return FALSE
 	return TRUE
 
@@ -43,19 +43,17 @@
 	icon_state = "[base_icon_state]_[current_color]"
 	inhand_icon_state = "[base_icon_state]_[current_color]"
 
-/obj/item/spanking_pad/AltClick(mob/user)
+/obj/item/spanking_pad/click_alt(mob/user)
 	if(color_changed)
-		return
-	. = ..()
-	if(.)
-		return
+		return CLICK_ACTION_BLOCKING
 	var/choice = show_radial_menu(user, src, spankpad_designs, custom_check = CALLBACK(src, PROC_REF(check_menu), user), radius = 36, require_near = TRUE)
 	if(!choice)
-		return FALSE
+		return CLICK_ACTION_BLOCKING
 	current_color = choice
 	update_icon_state()
 	update_icon()
 	color_changed = TRUE
+	return CLICK_ACTION_SUCCESS
 
 /obj/item/spanking_pad/attack(mob/living/carbon/human/target, mob/living/carbon/human/user)
 	. = ..()
@@ -82,4 +80,4 @@
 			if(prob(10) && (target.stat != DEAD))
 				target.apply_status_effect(/datum/status_effect/subspace)
 			user.visible_message(span_purple("[user] [message]!"))
-			play_lewd_sound(loc, 'modular_nova/modules/modular_items/lewd_items/sounds/slap.ogg', 100, 1, -1)
+			playsound_if_pref(loc, 'modular_nova/modules/modular_items/lewd_items/sounds/slap.ogg', 100, 1, -1)

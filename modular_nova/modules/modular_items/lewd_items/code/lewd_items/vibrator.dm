@@ -42,19 +42,17 @@
 		"yellow" = image(icon = src.icon, icon_state = "vibrator_yellow_low"),
 		"green" = image(icon = src.icon, icon_state = "vibrator_green_low"))
 
-/obj/item/clothing/sextoy/vibrator/AltClick(mob/user)
+/obj/item/clothing/sextoy/vibrator/click_alt(mob/user)
 	if(color_changed)
-		return
-	. = ..()
-	if(.)
 		return
 	var/choice = show_radial_menu(user, src, vibrator_designs, custom_check = CALLBACK(src, PROC_REF(check_menu), user), radius = 36, require_near = TRUE)
 	if(!choice)
-		return FALSE
+		return CLICK_ACTION_BLOCKING
 	current_color = choice
 	update_icon_state()
 	update_icon()
 	color_changed = TRUE
+	return CLICK_ACTION_SUCCESS
 
 /obj/item/clothing/sextoy/vibrator/Initialize(mapload)
 	. = ..()
@@ -167,7 +165,7 @@
 	if(!targetedsomewhere)
 		return
 	user.visible_message(span_purple("[user] [message]!"))
-	play_lewd_sound(loc, 'modular_nova/modules/modular_items/lewd_items/sounds/vibrate.ogg', 10, TRUE)
+	playsound_if_pref(loc, 'modular_nova/modules/modular_items/lewd_items/sounds/vibrate.ogg', 10, TRUE)
 
 /obj/item/clothing/sextoy/vibrator/attack_self(mob/user, obj/item/attack_item)
 	toggle_mode()
@@ -188,21 +186,21 @@
 	switch(vibration_mode)
 		if("low")
 			toy_on = TRUE
-			play_lewd_sound(loc, 'sound/weapons/magin.ogg', 20, TRUE)
+			playsound_if_pref(loc, 'sound/weapons/magin.ogg', 20, TRUE)
 			soundloop1.start()
 		if("medium")
 			toy_on = TRUE
-			play_lewd_sound(loc, 'sound/weapons/magin.ogg', 20, TRUE)
+			playsound_if_pref(loc, 'sound/weapons/magin.ogg', 20, TRUE)
 			soundloop1.stop()
 			soundloop2.start()
 		if("hard")
 			toy_on = TRUE
-			play_lewd_sound(loc, 'sound/weapons/magin.ogg', 20, TRUE)
+			playsound_if_pref(loc, 'sound/weapons/magin.ogg', 20, TRUE)
 			soundloop2.stop()
 			soundloop3.start()
 		if("off")
 			toy_on = FALSE
-			play_lewd_sound(loc, 'sound/weapons/magout.ogg', 20, TRUE)
+			playsound_if_pref(loc, 'sound/weapons/magout.ogg', 20, TRUE)
 			soundloop3.stop()
 
 #undef DEFAULT_AROUSAL_INCREASE

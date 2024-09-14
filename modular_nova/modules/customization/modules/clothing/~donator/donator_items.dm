@@ -1,5 +1,10 @@
+//In the event someone needs one.
+/obj/item/storage/box/donator
+	name = "personal items box"
+	desc = "It's full of things you brought from home."
+
 //Donator reward for UltramariFox
-/obj/item/clothing/mask/cigarette/khi
+/obj/item/cigarette/khi
 	name = "\improper Kitsuhana Singularity cigarette"
 	icon = 'modular_nova/master_files/icons/obj/clothing/masks.dmi'
 	worn_icon = 'modular_nova/master_files/icons/mob/clothing/mask.dmi'
@@ -18,7 +23,7 @@
 	icon = 'modular_nova/master_files/icons/obj/cigarettes_khi.dmi'
 	icon_state = "khi_cig_packet"
 	base_icon_state = "khi_cig_packet"
-	spawn_type = /obj/item/clothing/mask/cigarette/khi
+	spawn_type = /obj/item/cigarette/khi
 
 //Donator reward for Stonetear
 /obj/item/hairbrush/switchblade
@@ -155,7 +160,15 @@
 #undef EXTEND_ANTENNA
 #undef SLAP_SIDE
 
-// Donation reward for SQNZTB
+// Donation rewards for SQNZTB
+/obj/item/storage/box/donator/sqn
+
+/obj/item/storage/box/donator/sqn/PopulateContents()
+	new /obj/item/holosign_creator/hardlight_wheelchair(src)
+	new /obj/item/nanite_leg_reinforcement(src)
+	new /obj/item/lipstick/quantum/sqn(src)
+	new /obj/item/clothing/glasses/hud/ar/projector/science/sqn(src)
+
 /obj/vehicle/ridden/wheelchair/hardlight
 	name = "hardlight wheelchair"
 	desc = "A wheelchair made out of hardlight, propulsed by miniaturized bluespace technology."
@@ -222,6 +235,58 @@
 	. += span_notice("<i>Etched underneath the handle is the following message:</i>\n")
 	. += span_smallnoticeital("\"I told you I would find a way to make it all easier.\" - A.H.")
 
+
+/datum/action/innate/nanite_leg_reinforcement
+	name = "Toggle Leg Reinforcement"
+	desc = "Gain the ability to stand temporarily."
+	button_icon = 'icons/obj/clothing/shoes.dmi'
+	button_icon_state = "jackboots"
+	/// Type of the quirk we want to stash away.
+	var/quirk_to_stash = /datum/quirk/paraplegic
+	/// Reference to the quirk that was stashed away.
+	var/datum/quirk/stashed_quirk
+
+/datum/action/innate/nanite_leg_reinforcement/Activate()
+	var/mob/living/living_owner = owner
+	stashed_quirk = living_owner.get_quirk(quirk_to_stash)
+	stashed_quirk.remove_from_current_holder(TRUE)
+	active = TRUE
+
+/datum/action/innate/nanite_leg_reinforcement/Deactivate()
+	stashed_quirk.add_to_holder(owner, TRUE)
+	stashed_quirk = null
+	active = FALSE
+	build_all_button_icons(UPDATE_BUTTON_BACKGROUND)
+
+/obj/item/nanite_leg_reinforcement
+	name = "nanite leg reinforcement"
+	desc = "Gives you the ability to channel your nanites into letting you stand for a time."
+	icon = 'modular_nova/modules/modular_implants/icons/obj/nifs.dmi'
+	icon_state = "base_nif"
+	/// Which action this item grants you.
+	var/action_to_grant = /datum/action/innate/nanite_leg_reinforcement
+
+/obj/item/nanite_leg_reinforcement/attack_self(mob/user, modifiers)
+	. = ..()
+	var/mob/living/living_user = user
+	if(!istype(user) || !living_user.has_quirk(/datum/quirk/paraplegic))
+		to_chat(user, "You feel like [src] wouldn't be very helpful to you.")
+		return
+	var/datum/action/action = new action_to_grant(user)
+	action.Grant(user)
+	to_chat(user, "[src] vanishes in a puff of smoke!")
+	qdel(src)
+
+/obj/item/lipstick/quantum/sqn
+	name = "\improper SW:10KK lipstick"
+	desc = "Starlight Wanderers brand Ten Thousand Kisses lipstick with adjustable pigmentation. Guaranteed not to smudge, stain, or leave lip prints unless you want it to. This tube looks heavily used."
+
+/obj/item/clothing/glasses/hud/ar/projector/science/sqn
+	name = "micro-retinal display"
+	desc = "A retinal display so small, it's invisible to everyone but you."
+	worn_icon = 'modular_nova/master_files/icons/mob/clothing/under/misc.dmi'
+	worn_icon_state = "gear_harness"
+
 /obj/item/instrument/piano_synth/headphones/catear_headphone
 	name = "Cat-Ear Headphones"
 	desc = "Merch of their Electric Guitarist Demi Galgan from the Singularity Shredders. It's heavily customizable and even comes with a holographic tail!"
@@ -256,12 +321,62 @@
 		else
 			icon_state = "catear_headphone[song?.playing ? "_on" : null]"
 
-/obj/item/instrument/piano_synth/headphones/catear_headphone/AltClick(mob/user)
-	. = ..()
+/obj/item/instrument/piano_synth/headphones/catear_headphone/click_alt(mob/user)
 	catTailToggled = !catTailToggled
 	user.update_worn_head()
 	update_icon(UPDATE_OVERLAYS)
+	return CLICK_ACTION_SUCCESS
 
 /obj/item/instrument/piano_synth/headphones/catear_headphone/update_overlays()
 	. = ..()
 	. += emissive_appearance('modular_nova/modules/GAGS/icons/head/catear_headphone.dmi', "catearphones_obj_lights_emissive", src, alpha = src.alpha)
+
+/obj/item/mod/skin_applier/akari
+	name = "nanite MODsuit refitter"
+	desc = "A small kit full of nanites designed to refit a MODsuit to Akari's personal design. Only compatible with fused MODsuits due to the refit's reliance on a symbiote."
+	icon = 'icons/obj/clothing/modsuit/mod_construction.dmi'
+	icon_state = "skinapplier"
+	skin = "akari"
+
+/obj/item/mod/skin_applier/akari/pre_attack(atom/attacked_atom, mob/living/user, params)
+	if(!istype(attacked_atom, /obj/item/mod/control/pre_equipped/entombed))
+		return ..()
+	var/obj/item/mod/control/mod = attacked_atom
+	mod.theme.variants += list("akari" = list(
+		MOD_ICON_OVERRIDE = 'modular_nova/master_files/icons/donator/obj/clothing/modsuit.dmi',
+		MOD_WORN_ICON_OVERRIDE = 'modular_nova/master_files/icons/donator/mob/clothing/modsuit.dmi',
+		/obj/item/clothing/head/mod = list(
+			UNSEALED_LAYER = HEAD_LAYER,
+			UNSEALED_CLOTHING = SNUG_FIT,
+			UNSEALED_COVER = HEADCOVERSEYES|PEPPERPROOF,
+			UNSEALED_INVISIBILITY = HIDEHAIR|HIDEEYES|HIDESNOUT,
+			SEALED_CLOTHING = THICKMATERIAL|STOPSPRESSUREDAMAGE,
+			SEALED_INVISIBILITY =  HIDEFACIALHAIR|HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDESNOUT,
+			SEALED_COVER = HEADCOVERSMOUTH|HEADCOVERSEYES|PEPPERPROOF,
+			UNSEALED_MESSAGE = HELMET_UNSEAL_MESSAGE,
+			SEALED_MESSAGE = HELMET_SEAL_MESSAGE,
+		),
+		/obj/item/clothing/suit/mod = list(
+			UNSEALED_CLOTHING = THICKMATERIAL,
+			SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
+			SEALED_INVISIBILITY = HIDEJUMPSUIT|HIDETAIL,
+			UNSEALED_MESSAGE = CHESTPLATE_UNSEAL_MESSAGE,
+			SEALED_MESSAGE = CHESTPLATE_SEAL_MESSAGE,
+		),
+		/obj/item/clothing/gloves/mod = list(
+			UNSEALED_CLOTHING = THICKMATERIAL,
+			SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
+			CAN_OVERSLOT = TRUE,
+			UNSEALED_MESSAGE = GAUNTLET_UNSEAL_MESSAGE,
+			SEALED_MESSAGE = GAUNTLET_SEAL_MESSAGE,
+		),
+		/obj/item/clothing/shoes/mod = list(
+			UNSEALED_CLOTHING = THICKMATERIAL,
+			SEALED_CLOTHING = STOPSPRESSUREDAMAGE,
+			CAN_OVERSLOT = TRUE,
+			UNSEALED_MESSAGE = BOOT_UNSEAL_MESSAGE,
+			SEALED_MESSAGE = BOOT_SEAL_MESSAGE,
+		),
+	))
+	return ..()
+

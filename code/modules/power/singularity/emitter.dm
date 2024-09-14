@@ -1,7 +1,7 @@
 /obj/machinery/power/emitter
 	name = "emitter"
 	desc = "A heavy-duty industrial laser, often used in containment fields and power generation."
-	icon = 'icons/obj/machines/engine/singularity.dmi' //NOVA EDIT CHANGE - ICON OVERRIDEN IN SKYRAT AESTHETICS - SEE MODULE
+	icon = 'icons/obj/machines/engine/singularity.dmi' //NOVA EDIT CHANGE - ICON OVERRIDDEN IN NOVA AESTHETICS - SEE MODULE
 	icon_state = "emitter"
 	base_icon_state = "emitter"
 
@@ -60,6 +60,8 @@
 
 /obj/machinery/power/emitter/Initialize(mapload)
 	. = ..()
+	//Add to the early process queue to prioritize power draw
+	SSmachines.processing_early += src
 	RefreshParts()
 	set_wires(new /datum/wires/emitter(src))
 	if(welded)
@@ -187,7 +189,7 @@
 	togglelock(user)
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
-/obj/machinery/power/emitter/process(seconds_per_tick)
+/obj/machinery/power/emitter/process_early(seconds_per_tick)
 	var/power_usage = active_power_usage * seconds_per_tick
 	if(machine_stat & (BROKEN))
 		return
@@ -346,8 +348,6 @@
 			return
 	return ..()
 
-/obj/machinery/power/emitter/AltClick(mob/user)
-	return ..() // This hotkey is BLACKLISTED since it's used by /datum/component/simple_rotation
 
 /obj/machinery/power/emitter/proc/integrate(obj/item/gun/energy/energy_gun, mob/user)
 	if(!istype(energy_gun, /obj/item/gun/energy))
@@ -423,7 +423,7 @@
 	. = ..()
 
 /obj/machinery/power/emitter/prototype/user_buckle_mob(mob/living/buckled_mob, mob/user, check_loc = TRUE)
-	if(user.incapacitated() || !istype(user))
+	if(user.incapacitated || !istype(user))
 		return
 	for(var/atom/movable/atom in get_turf(src))
 		if(atom.density && (atom != src && atom != buckled_mob))
@@ -505,11 +505,14 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
 
-/obj/item/turret_control/afterattack(atom/targeted_atom, mob/user, proxflag, clickparams)
-	. = ..()
-	. |= AFTERATTACK_PROCESSED_ITEM
+/obj/item/turret_control/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(HAS_TRAIT(interacting_with, TRAIT_COMBAT_MODE_SKIP_INTERACTION))
+		return NONE
+	return ranged_interact_with_atom(interacting_with, user, modifiers)
+
+/obj/item/turret_control/ranged_interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
 	var/obj/machinery/power/emitter/emitter = user.buckled
-	emitter.setDir(get_dir(emitter,targeted_atom))
+	emitter.setDir(get_dir(emitter, interacting_with))
 	user.setDir(emitter.dir)
 	switch(emitter.dir)
 		if(NORTH)
@@ -545,7 +548,7 @@
 			user.pixel_x = 8
 			user.pixel_y = -12
 
-	emitter.last_projectile_params = calculate_projectile_angle_and_pixel_offsets(user, null, clickparams)
+	emitter.last_projectile_params = calculate_projectile_angle_and_pixel_offsets(user, null, list2params(modifiers))
 
 	if(emitter.charge >= 10 && world.time > delay)
 		emitter.charge -= 10
@@ -553,6 +556,7 @@
 		delay = world.time + 10
 	else if (emitter.charge < 10)
 		playsound(src,'sound/machines/buzz-sigh.ogg', 50, TRUE)
+	return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/power/emitter/ctf
 	name = "Energy Cannon"

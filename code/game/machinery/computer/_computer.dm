@@ -93,7 +93,7 @@
 		return
 	for(var/obj/item/circuitboard/computer/board in src.contents)
 		if(!contents || board.GetComponent(/datum/component/gps))
-			return
+			CRASH("[src] Called imprint_gps without setting gps_tag")
 		board.AddComponent(/datum/component/gps, "[tracker]")
 		balloon_alert_to_viewers("board tracker enabled", vision_distance = 1)
 
@@ -117,7 +117,9 @@
 	new_frame.set_anchored(TRUE)
 	new_frame.circuit = circuit
 	// Circuit removal code is handled in /obj/machinery/Exited()
+	component_parts -= circuit
 	circuit.forceMove(new_frame)
+
 	if((machine_stat & BROKEN) || !disassembled)
 		var/atom/drop_loc = drop_location()
 		playsound(src, 'sound/effects/hit_on_shattered_glass.ogg', 70, TRUE)
@@ -128,22 +130,21 @@
 		new_frame.state = FRAME_COMPUTER_STATE_GLASSED
 	new_frame.update_appearance(UPDATE_ICON_STATE)
 
-/obj/machinery/computer/AltClick(mob/user)
-	. = ..()
-	if(!can_interact(user))
-		return
-	if(!user.can_perform_action(src, ALLOW_SILICON_REACH) || !is_operational)
-		return
-
 /obj/machinery/computer/ui_interact(mob/user, datum/tgui/ui)
 	SHOULD_CALL_PARENT(TRUE)
 	//NOVA EDIT ADDITON BEGIN - AESTHETICS
 	if(clicksound && world.time > next_clicksound && isliving(user))
 		next_clicksound = world.time + rand(50, 150)
-		playsound(src, get_sfx_skyrat(clicksound), clickvol)
+		playsound(src, get_sfx_nova(clicksound), clickvol)
 	//NOVA EDIT END
 	. = ..()
 	update_use_power(ACTIVE_POWER_USE)
+
+/obj/machinery/computer/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	SHOULD_CALL_PARENT(TRUE)
+	. = ..()
+	if(!issilicon(ui.user))
+		playsound(src, SFX_KEYBOARD_CLICKS, 10, TRUE, FALSE)
 
 /obj/machinery/computer/ui_close(mob/user)
 	SHOULD_CALL_PARENT(TRUE)

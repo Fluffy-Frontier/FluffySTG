@@ -107,20 +107,14 @@
 		to_chat(user, span_notice("You turn off [src]."))
 	return TRUE
 
-/obj/item/hand_labeler/item_interaction(mob/living/user, obj/item/tool, list/modifiers, is_right_clicking)
-	. = ..()
-	if(. & ITEM_INTERACT_ANY_BLOCKER)
-		return .
+/obj/item/hand_labeler/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	if(!istype(tool, /obj/item/hand_labeler_refill))
-		return .
+		return NONE
 
 	balloon_alert(user, "refilled")
 	qdel(tool)
 	labels_left = initial(labels_left) //Yes, it's capped at its initial value
 	return ITEM_INTERACT_SUCCESS
-
-/obj/item/hand_labeler/attackby_storage_insert(datum/storage, atom/storage_holder, mob/user)
-	return !mode
 
 /obj/item/hand_labeler/borg
 	name = "cyborg-hand labeler"

@@ -10,9 +10,6 @@
 	name = "\improper Clown Biodome"
 	ambientsounds = list('sound/ambience/clown.ogg')
 
-/area/ruin/lizard_gaslava
-	name = "\improper Lizard's Gas(Lava)"
-
 /area/ruin/unpowered/gaia
 	name = "\improper Patch of Eden"
 
@@ -48,6 +45,12 @@
 	area_flags = CULT_PERMITTED
 	ambience_index = AMBIENCE_SPOOKY
 
+/area/ruin/thelizardsgas_lavaland
+	name = "\improper The Lizard's Gas"
+	icon_state = "lizardgas"
+	sound_environment = SOUND_ENVIRONMENT_ROOM
+	ambient_buzz = 'sound/ambience/magma.ogg'
+
 //Syndicate lavaland base
 
 /area/ruin/syndicate_lava_base/engineering
@@ -82,6 +85,9 @@
 
 /area/ruin/syndicate_lava_base/telecomms
 	name = "\improper Syndicate Lavaland Telecommunications"
+
+/area/ruin/syndicate_lava_base/hydroponics
+	name = "\improper Syndicate Lavaland Hydroponics"
 
 //Xeno Nest
 

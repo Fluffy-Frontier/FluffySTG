@@ -1,6 +1,6 @@
 #define MEATSPIKE_IRONROD_REQUIREMENT 4
 
-/obj/structure/kitchenspike_frame//NOVA EDIT - ICON OVERRIDEN BY AESTHETICS - SEE MODULE
+/obj/structure/kitchenspike_frame//NOVA EDIT - ICON OVERRIDDEN BY AESTHETICS - SEE MODULE
 	name = "meatspike frame"
 	icon = 'icons/obj/service/kitchen.dmi'
 	icon_state = "spikeframe"
@@ -34,7 +34,7 @@
 	return CONTEXTUAL_SCREENTIP_SET
 
 /obj/structure/kitchenspike_frame/welder_act(mob/living/user, obj/item/tool)
-	if(!tool.tool_start_check(user, amount = 0))
+	if(!tool.tool_start_check(user, amount = 0, heat_required = HIGH_TEMPERATURE_REQUIRED))
 		return FALSE
 	to_chat(user, span_notice("You begin cutting \the [src] apart..."))
 	if(!tool.use_tool(src, user, 5 SECONDS, volume = 50))
@@ -64,7 +64,7 @@
 		return
 	balloon_alert(user, "[MEATSPIKE_IRONROD_REQUIREMENT] rods needed!")
 
-/obj/structure/kitchenspike//NOVA EDIT - ICON OVERRIDEN BY AESTHETICS - SEE MODULE
+/obj/structure/kitchenspike//NOVA EDIT - ICON OVERRIDDEN BY AESTHETICS - SEE MODULE
 	name = "meat spike"
 	icon = 'icons/obj/service/kitchen.dmi'
 	icon_state = "spike"

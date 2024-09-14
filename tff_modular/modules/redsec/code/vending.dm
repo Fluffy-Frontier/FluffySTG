@@ -32,6 +32,8 @@
 			"icon" = "user-tie",
 			"products" = list(
 				/obj/item/clothing/suit/hooded/wintercoat/security = 5,
+				/obj/item/clothing/suit/toggle/jacket/sec/blue = 5,
+				/obj/item/clothing/suit/toggle/jacket/sec/bluewinter = 5,
 				/obj/item/clothing/suit/toggle/jacket/sec = 5,
 				/obj/item/clothing/suit/armor/vest/peacekeeper/brit = 5,
 				/obj/item/clothing/neck/security_cape = 5,
@@ -42,6 +44,7 @@
 				/obj/item/storage/backpack/duffelbag/sec = 5,
 				/obj/item/clothing/under/rank/security/officer = 10,
 				/obj/item/clothing/under/rank/security/officer/skirt = 10,
+				/obj/item/clothing/under/rank/security/peacekeeper/plain_skirt = 10,
 				/obj/item/clothing/under/rank/security/peacekeeper = 10,
 				/obj/item/clothing/under/rank/security/nova/utility = 3,
 				/obj/item/clothing/shoes/jackboots/sec = 10,

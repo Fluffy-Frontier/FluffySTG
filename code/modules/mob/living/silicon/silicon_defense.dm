@@ -18,7 +18,6 @@
 				flash_act(affect_silicon = 1)
 			log_combat(user, src, "attacked")
 			adjustBruteLoss(damage)
-			updatehealth()
 		else
 			playsound(loc, 'sound/weapons/slashmiss.ogg', 25, TRUE, -1)
 			visible_message(span_danger("[user]'s swipe misses [src]!"), \
@@ -77,7 +76,7 @@
 		return TRUE
 	else
 		// NOVA EDIT ADDITION START
-		if(HAS_TRAIT(src, TRAIT_QUICKREFLEXES) && (src.stat != UNCONSCIOUS) && !src.incapacitated(IGNORE_RESTRAINTS))
+		if(HAS_TRAIT(src, TRAIT_QUICKREFLEXES) && (src.stat != UNCONSCIOUS) && !INCAPACITATED_IGNORING(src, INCAPABLE_RESTRAINTS))
 			visible_message(span_warning("[user] tries to pet [src], but it moves out of the way."))
 			return TRUE
 		// NOVA EDIT ADDITION END

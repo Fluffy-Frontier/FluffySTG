@@ -47,6 +47,11 @@ map tramstation
 	votable
 endmap
 
+map wawastation
+	votable
+	minplayers 40
+endmap
+
 # Debug-only maps.
 
 map gateway_test
@@ -75,6 +80,11 @@ map ouroboros
 	votable
 endmap
 
+map serenitystation
+	votable
+endmap
+
+<<<<<<< HEAD
 ##FF MAPS##
 map kilostation2
 	maxplayers 50
@@ -83,6 +93,8 @@ endmap
 
 map nssjourney
 	maxplayers 100
+=======
+map snowglobe
+>>>>>>> 8b771c19a8d (Snowglobe Station - A new icemoon station for nova! (#3207))
 	votable
 endmap
-

@@ -45,7 +45,7 @@
 		get_asset_datum(/datum/asset/simple/contracts),
 	)
 
-/obj/item/antag_spawner/contract/ui_act(action, list/params)
+/obj/item/antag_spawner/contract/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(used || polling || !ishuman(usr))
 		return
@@ -83,7 +83,7 @@
 		app.wiz_team = master_wizard.wiz_team
 		master_wizard.wiz_team.add_member(app_mind)
 	app_mind.add_antag_datum(app)
-	app_mind.set_assigned_role(SSjob.GetJobType(/datum/job/wizard_apprentice))
+	app_mind.set_assigned_role(SSjob.get_job_type(/datum/job/wizard_apprentice))
 	app_mind.special_role = ROLE_WIZARD_APPRENTICE
 	SEND_SOUND(M, sound('sound/effects/magic.ogg'))
 
@@ -95,7 +95,7 @@
  */
 /obj/item/antag_spawner/nuke_ops
 	name = "syndicate operative beacon"
-	desc = "MI13 designed one-use radio for calling immediate backup. Have no regards for safety of whom it summons - they are all inferior clones from Interdyne's genebanks anyway."
+	desc = "A single-use beacon designed to quickly launch reinforcement operatives into the field."
 	icon = 'icons/obj/devices/voice.dmi'
 	icon_state = "nukietalkie"
 	/// The name of the special role given to the recruit
@@ -105,7 +105,7 @@
 	/// The antag datum applied
 	var/antag_datum = /datum/antagonist/nukeop/reinforcement
 	/// Style used by the droppod
-	var/pod_style = STYLE_SYNDICATE
+	var/pod_style = /datum/pod_style/syndicate
 	/// Do we use a random subtype of the outfit?
 	var/use_subtypes = TRUE
 	/// Where do we land our pod?
@@ -170,7 +170,7 @@
 /obj/item/antag_spawner/nuke_ops/overwatch
 	name = "overwatch support beacon"
 	desc = "Assigns an Overwatch Intelligence Agent to your operation. Stationed at their own remote outpost, they can view station cameras, alarms, and even move the Infiltrator shuttle! \
-		Also, all members of your operation will recieve body cameras that they can view your progress from."
+		Also, all members of your operation will receive body cameras that they can view your progress from."
 	special_role_name = ROLE_OPERATIVE_OVERWATCH
 	outfit = /datum/outfit/syndicate/support
 	use_subtypes = FALSE
@@ -187,8 +187,8 @@
 	desc = "A single-use beacon designed to quickly launch reinforcement clown operatives into the field."
 	special_role_name = ROLE_CLOWN_OPERATIVE
 	outfit = /datum/outfit/syndicate/clownop/no_crystals
-	antag_datum = /datum/antagonist/nukeop/clownop
-	pod_style = STYLE_HONK
+	antag_datum = /datum/antagonist/nukeop/reinforcement/clownop
+	pod_style = /datum/pod_style/clown
 	use_subtypes = FALSE
 
 //////SYNDICATE BORG
@@ -313,7 +313,7 @@
 	/// The antag datum applied
 	var/datum/antagonist/antag_datum
 	/// Style used by the droppod
-	var/pod_style = STYLE_SYNDICATE
+	var/pod_style = /datum/pod_style/syndicate
 	/// Do we use a random subtype of the outfit?
 	var/use_subtypes = TRUE
 	/// The antag role we check if the ghosts have enabled to get the poll.
@@ -424,15 +424,7 @@
 
 	monkey_man.fully_replace_character_name(monkey_man.real_name, pick(GLOB.syndicate_monkey_names))
 
-	monkey_man.dna.add_mutation(/datum/mutation/human/clever)
-	// Can't make them human or nonclever. At least not with the easy and boring way out.
-	for(var/datum/mutation/human/mutation as anything in monkey_man.dna.mutations)
-		mutation.mutadone_proof = TRUE
-		mutation.instability = 0
-
-	// Extra backup!
-	ADD_TRAIT(monkey_man, TRAIT_NO_DNA_SCRAMBLE, SPECIES_TRAIT)
-	// Anything else requires enough effort that they deserve it.
+	monkey_man.make_clever_and_no_dna_scramble()
 
 	monkey_man.mind.enslave_mind_to_creator(user)
 
@@ -443,7 +435,7 @@
 	name = "Syndicate Monkey Agent Kit"
 
 	head = /obj/item/clothing/head/fedora
-	mask = /obj/item/clothing/mask/cigarette/syndicate
+	mask = /obj/item/cigarette/syndicate
 	uniform = /obj/item/clothing/under/syndicate
 	l_pocket = /obj/item/reagent_containers/cup/soda_cans/monkey_energy
 	r_pocket = /obj/item/storage/fancy/cigarettes/cigpack_syndicate

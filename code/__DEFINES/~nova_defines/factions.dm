@@ -1,10 +1,3 @@
-// Black Mesa away mission factions
-
-#define FACTION_XEN "xen"
-#define FACTION_HECU "hecu"
-#define FACTION_BLACKOPS "blackops"
-#define FACTION_BLACKMESA "blackmesa"
-
 // ERT faction
 #define FACTION_ERT "ert"
 
@@ -15,3 +8,9 @@
 
 // Tarkon faction
 #define FACTION_TARKON "tarkon"
+
+// Lavaland Mobs
+#define FACTION_MINING_FAUNA "mining_fauna"
+
+// Ruin Turret faction
+#define FACTION_MALF_TURRET "malf-turret"

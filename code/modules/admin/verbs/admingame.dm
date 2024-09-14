@@ -1,4 +1,7 @@
-ADMIN_VERB_AND_CONTEXT_MENU(show_player_panel, R_ADMIN, "Show Player Panel", "Get the player panel for the target mob.", ADMIN_CATEGORY_MAIN, mob/player in world)
+ADMIN_VERB(cmd_player_panel, R_ADMIN, "Player Panel", "See all players and their Player Panel.", ADMIN_CATEGORY_GAME)
+	user.holder.player_panel_new()
+
+ADMIN_VERB_ONLY_CONTEXT_MENU(show_player_panel, R_ADMIN, "Show Player Panel", mob/player in world)
 	log_admin("[key_name(user)] checked the individual player panel for [key_name(player)][isobserver(user.mob)?"":" while in game"].")
 
 	if(!player)
@@ -205,7 +208,7 @@ ADMIN_VERB(respawn_character, R_ADMIN, "Respawn Character", "Respawn a player th
 		if(findtext(G_found.real_name,"monkey"))
 			if(tgui_alert(user,"This character appears to have been a monkey. Would you like to respawn them as such?",,list("Yes","No")) == "Yes")
 				var/mob/living/carbon/human/species/monkey/new_monkey = new
-				SSjob.SendToLateJoin(new_monkey)
+				SSjob.send_to_late_join(new_monkey)
 				G_found.mind.transfer_to(new_monkey) //be careful when doing stuff like this! I've already checked the mind isn't in use
 				new_monkey.key = G_found.key
 				to_chat(new_monkey, "You have been fully respawned. Enjoy the game.", confidential = TRUE)
@@ -217,7 +220,7 @@ ADMIN_VERB(respawn_character, R_ADMIN, "Respawn Character", "Respawn a player th
 
 	//Ok, it's not a monkey. So, spawn a human.
 	var/mob/living/carbon/human/new_character = new//The mob being spawned.
-	SSjob.SendToLateJoin(new_character)
+	SSjob.send_to_late_join(new_character)
 
 	var/datum/record/locked/record_found //Referenced to later to either randomize or not randomize the character.
 	if(G_found.mind && !G_found.mind.active) //mind isn't currently in use by someone/something
@@ -240,7 +243,7 @@ ADMIN_VERB(respawn_character, R_ADMIN, "Respawn Character", "Respawn a player th
 	else
 		new_character.mind_initialize()
 	if(is_unassigned_job(new_character.mind.assigned_role))
-		new_character.mind.set_assigned_role(SSjob.GetJobType(SSjob.overflow_role))
+		new_character.mind.set_assigned_role(SSjob.get_job_type(SSjob.overflow_role))
 
 	new_character.key = G_found.key
 
@@ -257,7 +260,7 @@ ADMIN_VERB(respawn_character, R_ADMIN, "Respawn Character", "Respawn a player th
 	//Now for special roles and equipment.
 	var/datum/antagonist/traitor/traitordatum = new_character.mind.has_antag_datum(/datum/antagonist/traitor)
 	if(traitordatum)
-		SSjob.EquipRank(new_character, new_character.mind.assigned_role, new_character.client)
+		SSjob.equip_rank(new_character, new_character.mind.assigned_role, new_character.client)
 		new_character.mind.give_uplink(silent = TRUE, antag_datum = traitordatum)
 
 	switch(new_character.mind.special_role)
@@ -286,7 +289,7 @@ ADMIN_VERB(respawn_character, R_ADMIN, "Respawn Character", "Respawn a player th
 					new_character = new_character.AIize()
 				else
 					if(!traitordatum) // Already equipped there.
-						SSjob.EquipRank(new_character, new_character.mind.assigned_role, new_character.client)//Or we simply equip them.
+						SSjob.equip_rank(new_character, new_character.mind.assigned_role, new_character.client)//Or we simply equip them.
 
 	//Announces the character on all the systems, based on the record.
 	if(!record_found && (new_character.mind.assigned_role.job_flags & JOB_CREW_MEMBER))
@@ -376,7 +379,7 @@ ADMIN_VERB(combo_hud, R_ADMIN, "Toggle Combo HUD", "Toggles the Admin Combo HUD.
 
 	combo_hud_enabled = TRUE
 
-	for (var/hudtype in list(DATA_HUD_SECURITY_ADVANCED, DATA_HUD_MEDICAL_ADVANCED, DATA_HUD_DIAGNOSTIC_ADVANCED))
+	for (var/hudtype in list(DATA_HUD_SECURITY_ADVANCED, DATA_HUD_MEDICAL_ADVANCED, DATA_HUD_DIAGNOSTIC, DATA_HUD_BOT_PATH))
 		var/datum/atom_hud/atom_hud = GLOB.huds[hudtype]
 		atom_hud.show_to(mob)
 
@@ -392,7 +395,7 @@ ADMIN_VERB(combo_hud, R_ADMIN, "Toggle Combo HUD", "Toggles the Admin Combo HUD.
 
 	combo_hud_enabled = FALSE
 
-	for (var/hudtype in list(DATA_HUD_SECURITY_ADVANCED, DATA_HUD_MEDICAL_ADVANCED, DATA_HUD_DIAGNOSTIC_ADVANCED))
+	for (var/hudtype in list(DATA_HUD_SECURITY_ADVANCED, DATA_HUD_MEDICAL_ADVANCED, DATA_HUD_DIAGNOSTIC, DATA_HUD_BOT_PATH))
 		var/datum/atom_hud/atom_hud = GLOB.huds[hudtype]
 		atom_hud.hide_from(mob)
 
@@ -443,6 +446,6 @@ ADMIN_VERB(lag_switch_panel, R_ADMIN, "Show Lag Switches", "Display the controls
 	dat += "Disable examine icons: <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_USR_ICON2HTML]'><b>[SSlag_switch.measures[DISABLE_USR_ICON2HTML] ? "On" : "Off"]</b></a> - <span style='font-size:80%'>trait applies to examiner</span><br/>"
 	dat += "Disable parallax: <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_PARALLAX]'><b>[SSlag_switch.measures[DISABLE_PARALLAX] ? "On" : "Off"]</b></a> - <span style='font-size:80%'>trait applies to character</span><br />"
 	dat += "Disable footsteps: <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_FOOTSTEPS]'><b>[SSlag_switch.measures[DISABLE_FOOTSTEPS] ? "On" : "Off"]</b></a> - <span style='font-size:80%'>trait applies to character</span><br />"
-	dat += "Disable character creator: <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_CREATOR]'><b>[SSlag_switch.measures[DISABLE_CREATOR] ? "On" : "Off"]</b></a> - <span style='font-size:80%'>trait applies to all</span><br />" // SKRYAT EDIT ADDITION
+	dat += "Disable character creator: <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_CREATOR]'><b>[SSlag_switch.measures[DISABLE_CREATOR] ? "On" : "Off"]</b></a> - <span style='font-size:80%'>trait applies to all</span><br />" // NOVA EDIT ADDITION
 	dat += "</body></html>"
 	user << browse(dat.Join(), "window=lag_switch_panel;size=420x480")

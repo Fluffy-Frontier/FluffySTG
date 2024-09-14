@@ -93,6 +93,7 @@ GLOBAL_DATUM_INIT(language_holder_adjustor, /datum/language_holder_adjustor, new
 		/datum/language/siiktajr = list(LANGUAGE_ATOM),
 		/datum/language/canilunzt = list(LANGUAGE_ATOM),
 		/datum/language/akulan = list(LANGUAGE_ATOM),
+		/datum/language/selestial = list(LANGUAGE_ATOM), // tff edit
 	)
 	spoken_languages = list(
 		/datum/language/common = list(LANGUAGE_ATOM),
@@ -122,6 +123,7 @@ GLOBAL_DATUM_INIT(language_holder_adjustor, /datum/language_holder_adjustor, new
 		/datum/language/siiktajr = list(LANGUAGE_ATOM),
 		/datum/language/canilunzt = list(LANGUAGE_ATOM),
 		/datum/language/akulan = list(LANGUAGE_ATOM),
+		/datum/language/selestial = list(LANGUAGE_ATOM), // tff edit
 	)
 
 /datum/language_holder/drone_nova

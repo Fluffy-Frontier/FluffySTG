@@ -6,14 +6,13 @@
 // Part of the food code. Also is where all the food
 // condiments, additives, and such go.
 
-
 /datum/reagent/consumable
 	name = "Consumable"
 	taste_description = "generic food"
 	taste_mult = 4
 	inverse_chem_val = 0.1
 	inverse_chem = null
-	creation_purity = 0.5 // 50% pure by default. Below - synthetic food. Above - natural food.
+	creation_purity = CONSUMABLE_STANDARD_PURITY
 	/// How much nutrition this reagent supplies
 	var/nutriment_factor = 1
 	/// affects mood, typically higher for mixed drinks with more complex recipes'
@@ -54,10 +53,10 @@
 			var/obj/item/the_real_food = holder.my_atom
 			if(isitem(the_real_food) && !is_reagent_container(the_real_food))
 				exposed_mob.add_mob_memory(/datum/memory/good_food, food = the_real_food)
-		// SKYRAT ADDITION BEGIN - Racial Drinks
+		// NOVA EDIT ADDITION BEGIN - Racial Drinks
 		if (RACE_DRINK)
 			exposed_mob.add_mood_event("quality_drink", /datum/mood_event/race_drink)
-		// SKYRAT ADDITION END
+		// NOVA EDIT ADDITION END
 
 /// Gets just how much nutrition this reagent is worth for the passed mob
 /datum/reagent/consumable/proc/get_nutriment_factor(mob/living/carbon/eater)
@@ -144,6 +143,7 @@
 	brute_heal = 0.8 //Rewards the player for eating a balanced diet.
 	nutriment_factor = 9 //45% as calorie dense as oil.
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	default_container = /obj/item/reagent_containers/condiment/protein
 
 /datum/reagent/consumable/nutriment/fat
 	name = "Fat"
@@ -953,7 +953,7 @@
 	var/mob/living/carbon/exposed_carbon = exposed_mob
 	var/obj/item/organ/internal/stomach/ethereal/stomach = exposed_carbon.get_organ_slot(ORGAN_SLOT_STOMACH)
 	if(istype(stomach))
-		stomach.adjust_charge(reac_volume * 0.03 * STANDARD_CELL_CHARGE)
+		stomach.adjust_charge(reac_volume * 0.03 * ETHEREAL_CHARGE_NORMAL)
 
 /datum/reagent/consumable/liquidelectricity/enriched/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, times_fired)
 	. = ..()

@@ -16,6 +16,16 @@
 		"wings" = list("None", FALSE),
 	)
 
+/datum/species/lizard/ashwalker/get_default_mutant_bodyparts()
+	var/list/default_parts = ..()
+	default_parts["spines"] = list("None", TRUE)
+	return default_parts
+
+/datum/species/lizard/silverscale/get_default_mutant_bodyparts()
+	var/list/default_parts = ..()
+	default_parts["spines"] = list("None", TRUE)
+	return default_parts
+
 /datum/species/lizard/randomize_features()
 	var/list/features = ..()
 	var/main_color = "#[random_color()]"
@@ -50,9 +60,7 @@
 /datum/species/lizard/ashwalker
 	always_customizable = TRUE
 	inherent_traits = list(
-		TRAIT_NO_UNDERWEAR,
 		TRAIT_MUTANT_COLORS,
-		TRAIT_TACKLING_TAILED_DEFENDER,
 	)
 
 

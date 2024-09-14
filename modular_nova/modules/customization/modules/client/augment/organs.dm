@@ -63,6 +63,15 @@
 	name = "Cybernetic stomach"
 	path = /obj/item/organ/internal/stomach/cybernetic
 
+/datum/augment_item/organ/stomach/lithovore
+	name = "Lithovore Stomach"
+	path = /obj/item/organ/internal/stomach/lithovore
+
+/datum/augment_item/organ/stomach/lithovore/apply(mob/living/carbon/human/H, character_setup = FALSE, datum/preferences/prefs)
+	if(prefs && ("Oversized" in prefs.all_quirks))
+		path = /obj/item/organ/internal/stomach/lithovore/oversized
+	return ..()
+
 //EYES
 /datum/augment_item/organ/eyes
 	slot = AUGMENT_SLOT_EYES
@@ -119,6 +128,10 @@
 /datum/augment_item/organ/tongue/forked
 	name = "Forked tongue"
 	path = /obj/item/organ/internal/tongue/lizard
+
+/datum/augment_item/organ/tongue/forked/filterless
+	name = "Forked tongue (Without TTS Filter)"
+	path = /obj/item/organ/internal/tongue/lizard/filterless
 
 //FF add, for auto-accent for anthropomorphs
 /datum/augment_item/organ/tongue/cat

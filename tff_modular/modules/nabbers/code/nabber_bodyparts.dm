@@ -12,6 +12,7 @@
 	brute_modifier = NABBER_BRUTE_MODIFIER
 	burn_modifier = NABBER_BURN_MODIFIER
 	head_flags = HEAD_EYESPRITES|HEAD_EYECOLOR|HEAD_EYEHOLES
+	eyes_icon = 'tff_modular/modules/nabbers/icons/organs/nabber_eyes.dmi'
 
 /obj/item/bodypart/head/mutant/nabber/Initialize(mapload)
 	worn_ears_offset = new(
@@ -77,6 +78,7 @@
 	limb_id = SPECIES_NABBER
 	brute_modifier = NABBER_BRUTE_MODIFIER
 	burn_modifier = NABBER_BURN_MODIFIER
+	footprint_sprite = FOOTPRINT_SPRITE_TAIL
 
 /obj/item/bodypart/leg/right/mutant/nabber
 	icon_greyscale = BODYPART_ICON_NABBER
@@ -84,6 +86,7 @@
 	limb_id = SPECIES_NABBER
 	brute_modifier = NABBER_BRUTE_MODIFIER
 	burn_modifier = NABBER_BURN_MODIFIER
+	footprint_sprite = FOOTPRINT_SPRITE_TAIL
 
 #undef NABBER_PUNCH_LOW
 #undef NABBER_PUNCH_HIGH

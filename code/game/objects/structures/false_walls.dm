@@ -91,7 +91,7 @@
 		qdel(src)
 	return T
 
-/obj/structure/falsewall/item_interaction(mob/living/user, obj/item/tool, list/modifiers, is_right_clicking)
+/obj/structure/falsewall/tool_act(mob/living/user, obj/item/tool, list/modifiers)
 	if(!opening || !tool.tool_behaviour)
 		return ..()
 	to_chat(user, span_warning("You must wait until the door has stopped moving!"))

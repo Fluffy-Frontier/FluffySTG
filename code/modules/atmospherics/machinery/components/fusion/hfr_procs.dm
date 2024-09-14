@@ -330,7 +330,7 @@
 	var/obj/machinery/power/apc/apc = area.apc
 	if (!apc)
 		return 0
-	var/obj/item/stock_parts/cell/cell = apc.cell
+	var/obj/item/stock_parts/power_store/cell = apc.cell
 	if (!cell)
 		return 0
 	return cell.percent()
@@ -430,7 +430,7 @@
 			radio.talk_into(src, "[safe_alert] Failsafe has been disengaged.", common_channel)
 			final_countdown = FALSE
 			return
-		else if((i % 50) != 0 && i > 50) // A message once every 5 seconds until the final 5 seconds which count down individualy
+		else if((i % 50) != 0 && i > 50) // A message once every 5 seconds until the final 5 seconds which count down individually
 			sleep(1 SECONDS)
 			continue
 		else if(i > 50)

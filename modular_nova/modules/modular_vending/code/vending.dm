@@ -38,6 +38,32 @@
 		for(var/item_to_add in contraband_nova)
 			contraband[item_to_add] = contraband_nova[item_to_add]
 
+	// FLUFFY FRONTIER EDIT START; INTEGRATION FROM tff_modular/modules/vending/vending.dm
+	if(products_ff)
+		for(var/item_to_add in products_ff)
+			products[item_to_add] = products_ff[item_to_add]
+
+	if(product_categories_ff)
+		for(var/category in product_categories_ff)
+			var/already_exists = FALSE
+			for(var/existing_category in product_categories)
+				if(existing_category["name"] == category["name"])
+					existing_category["products"] += category["products"]
+					already_exists = TRUE
+					break
+
+			if(!already_exists)
+				product_categories += category
+
+	if(premium_ff)
+		for(var/item_to_add in premium_ff)
+			premium[item_to_add] = premium_ff[item_to_add]
+
+	if(contraband_ff)
+		for(var/item_to_add in contraband_ff)
+			contraband[item_to_add] = contraband_ff[item_to_add]
+	// FLUFFY FRONTIER EDIT END
+
 	// Time to make clothes amounts consistent!
 	for (var/obj/item/clothing/item in products)
 		if(products[item] < MINIMUM_CLOTHING_STOCK && allow_increase(item))
@@ -56,6 +82,12 @@
 	QDEL_NULL(product_categories_nova)
 	QDEL_NULL(premium_nova)
 	QDEL_NULL(contraband_nova)
+	// FLUFFY FRONTIER EDIT START
+	QDEL_NULL(products_ff)
+	QDEL_NULL(product_categories_ff)
+	QDEL_NULL(premium_ff)
+	QDEL_NULL(contraband_ff)
+	// FLUFFY FRONTIER EDIT END
 	return ..()
 
 /// This proc checks for forbidden traits cause it'd be pretty bad to have 5 insuls available to assistants roundstart at the vendor!

@@ -41,6 +41,7 @@
 	obj_flags_nova = ANVIL_REPAIR
 	armor_type = /datum/armor/gloves_forging_plate_gloves
 	material_flags = MATERIAL_EFFECTS | MATERIAL_ADD_PREFIX | MATERIAL_GREYSCALE | MATERIAL_COLOR
+	body_parts_covered = HANDS|ARMS
 
 /datum/armor/gloves_forging_plate_gloves
 	melee = 40
@@ -98,6 +99,7 @@
 	resistance_flags = FIRE_PROOF
 	obj_flags_nova = ANVIL_REPAIR
 	can_be_tied = FALSE
+	body_parts_covered = FEET|LEGS
 
 /datum/armor/shoes_forging_plate_boots
 	melee = 20
@@ -114,8 +116,8 @@
 	desc = "A tiny ring, sized to wrap around a finger."
 	icon_state = "ringsilver"
 	worn_icon_state = "sring"
-	inhand_icon_state = null
-	material_flags = MATERIAL_EFFECTS | MATERIAL_ADD_PREFIX | MATERIAL_GREYSCALE | MATERIAL_COLOR
+	inhand_icon_state = "ringsilver"
+	material_flags = MATERIAL_EFFECTS | MATERIAL_ADD_PREFIX | MATERIAL_COLOR
 	obj_flags_nova = ANVIL_REPAIR
 
 /obj/item/clothing/gloves/ring/reagent_clothing/Initialize(mapload)

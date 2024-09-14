@@ -78,7 +78,7 @@
 
 ///Called by update_icon after sanity. There is a target
 /obj/item/pinpointer/proc/get_direction_icon(here, there)
-	if(get_dist_euclidian(here,there) <= minimum_range)
+	if(get_dist_euclidean(here,there) <= minimum_range)
 		return "pinon[alert ? "alert" : ""]direct[icon_suffix]"
 	else
 		setDir(get_dir(here, there))
@@ -152,7 +152,7 @@
 		return
 	if(isnull(names[pinpoint_target]))
 		return
-	if(QDELETED(src) || !user || !user.is_holding(src) || user.incapacitated())
+	if(QDELETED(src) || !user || !user.is_holding(src) || user.incapacitated)
 		return
 	target = names[pinpoint_target]
 	toggle_on()

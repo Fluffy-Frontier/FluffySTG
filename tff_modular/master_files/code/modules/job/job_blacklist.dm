@@ -14,19 +14,19 @@
 
 //Служба безопасности
 /datum/job/head_of_security
-	species_blacklist = list(SPECIES_NABBER = TRUE, SPECIES_TESHARI_ALT = TRUE)
+	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 /datum/job/warden
-	species_blacklist = list(SPECIES_NABBER = TRUE, SPECIES_TESHARI_ALT = TRUE)
+	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 /datum/job/detective
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 /datum/job/security_officer
-	species_blacklist = list(SPECIES_NABBER = TRUE, SPECIES_TESHARI_ALT = TRUE)
+	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 /datum/job/corrections_officer
-	species_blacklist = list(SPECIES_NABBER = TRUE, SPECIES_TESHARI_ALT = TRUE)
+	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 //Инженерный
 /datum/job/chief_engineer
@@ -36,7 +36,10 @@
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 /datum/job/engineering_guard
-	species_blacklist = list(SPECIES_NABBER = TRUE, SPECIES_TESHARI_ALT = TRUE)
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
+/datum/job/telecomms_specialist
+	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 //Медбэй
 /datum/job/chief_medical_officer
@@ -49,7 +52,7 @@
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 /datum/job/orderly
-	species_blacklist = list(SPECIES_NABBER = TRUE, SPECIES_TESHARI_ALT = TRUE)
+	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 //РнД
 /datum/job/research_director
@@ -62,17 +65,20 @@
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 /datum/job/science_guard
-	species_blacklist = list(SPECIES_NABBER = TRUE, SPECIES_TESHARI_ALT = TRUE)
+	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 //Карго
 /datum/job/quartermaster
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 /datum/job/shaft_miner
-	species_blacklist = list(SPECIES_NABBER = TRUE, SPECIES_TESHARI_ALT = TRUE)
+	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 /datum/job/customs_agent
-	species_blacklist = list(SPECIES_NABBER = TRUE, SPECIES_TESHARI_ALT = TRUE)
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
+/datum/job/bitrunner
+	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 //Сервис
 /datum/job/head_of_personnel
@@ -94,4 +100,11 @@
 	species_blacklist = list(SPECIES_NABBER = TRUE)
 
 /datum/job/bouncer
-	species_blacklist = list(SPECIES_NABBER = TRUE, SPECIES_TESHARI_ALT = TRUE)
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
+//Особые должности
+/datum/job/veteran_advisor
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
+/datum/job/bridge_assistant
+	species_blacklist = list(SPECIES_NABBER = TRUE)

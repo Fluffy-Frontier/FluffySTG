@@ -15,7 +15,7 @@
 	var/boulders_held_max = 1
 	/// What sound plays when a thing operates?
 	var/usage_sound = 'sound/machines/mining/wooping_teleport.ogg'
-	/// Silo link to it's materials list.
+	/// Silo link to its materials list.
 	var/datum/component/remote_materials/silo_materials
 	/// Mining points held by the machine for miners.
 	var/points_held = 0
@@ -244,9 +244,9 @@
 
 	return FALSE
 
-/obj/machinery/bouldertech/item_interaction(mob/living/user, obj/item/tool, list/modifiers, is_right_clicking)
+/obj/machinery/bouldertech/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	if(panel_open || user.combat_mode)
-		return ..()
+		return NONE
 
 	if(istype(tool, /obj/item/boulder))
 		var/obj/item/boulder/my_boulder = tool
@@ -276,7 +276,7 @@
 		to_chat(user, span_notice("You claim [amount] mining points from \the [src] to [id_card]."))
 		return ITEM_INTERACT_SUCCESS
 
-	return ..()
+	return NONE
 
 /obj/machinery/bouldertech/wrench_act(mob/living/user, obj/item/tool)
 	. = ITEM_INTERACT_BLOCKING

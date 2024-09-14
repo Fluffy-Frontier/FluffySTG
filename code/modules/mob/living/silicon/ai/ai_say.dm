@@ -1,20 +1,3 @@
-/mob/living/silicon/ai/say(
-	message,
-	bubble_type,
-	list/spans = list(),
-	sanitize = TRUE,
-	datum/language/language,
-	ignore_spam = FALSE,
-	forced,
-	filterproof = FALSE,
-	message_range = 7,
-	datum/saymode/saymode,
-	list/message_mods = list(),
-)
-	if(istype(parent) && parent.stat != DEAD) //If there is a defined "parent" AI, it is actually an AI, and it is alive, anything the AI tries to say is said by the parent instead.
-		return parent.say(arglist(args))
-	return ..()
-
 /mob/living/silicon/ai/compose_track_href(atom/movable/speaker, namepart)
 	var/mob/M = speaker.GetSource()
 	if(M)
@@ -35,12 +18,23 @@
 	return ..()
 
 /mob/living/silicon/ai/radio(message, list/message_mods = list(), list/spans, language)
-	if(incapacitated())
+	if(incapacitated)
 		return FALSE
 	if(!radio_enabled) //AI cannot speak if radio is disabled (via intellicard) or depowered.
 		to_chat(src, span_danger("Your radio transmitter is offline!"))
 		return FALSE
-	..()
+	. = ..()
+	if(.)
+		return .
+	if(message_mods[MODE_HEADSET])
+		if(radio)
+			radio.talk_into(src, message, , spans, language, message_mods)
+		return NOPASS
+	else if(message_mods[RADIO_EXTENSION] in GLOB.radiochannels)
+		if(radio)
+			radio.talk_into(src, message, message_mods[RADIO_EXTENSION], spans, language, message_mods)
+			return NOPASS
+	return FALSE
 
 //For holopads only. Usable by AI.
 /mob/living/silicon/ai/proc/holopad_talk(message, language)
@@ -72,7 +66,7 @@
 	set desc = "Display a list of vocal words to announce to the crew."
 	set category = "AI Commands"
 
-	if(incapacitated())
+	if(incapacitated)
 		return
 
 	var/dat = {"
@@ -111,7 +105,7 @@
 
 	last_announcement = message
 
-	if(incapacitated())
+	if(incapacitated)
 		return
 
 	if(control_disabled)

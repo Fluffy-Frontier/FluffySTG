@@ -11,7 +11,7 @@
 	worn_icon = 'modular_nova/master_files/icons/mob/clothing/under/medical.dmi'
 	icon_state = "scrubswhite" // Because for some reason TG's scrubs dont have an icon on their basetype
 	desc = "It's made of a special fiber that provides minor protection against biohazards. This one seems to be the original Scrub."
-	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION | CLOTHING_MONKEY_VARIATION
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/rank/medical/chemist/nova
 	icon = 'modular_nova/master_files/icons/obj/clothing/under/medical.dmi'
@@ -35,7 +35,7 @@
 	name = "medical utility uniform"
 	desc = "A utility uniform worn by Medical doctors."
 	icon_state = "util_med"
-	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION | CLOTHING_MONKEY_VARIATION
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/rank/medical/doctor/nova/utility/syndicate
 	armor_type = /datum/armor/clothing_under/utility_syndicate
@@ -85,7 +85,7 @@
 
 /obj/item/clothing/under/rank/medical/paramedic/nova/light/skirt
 	name = "light paramedic skirt"
-	desc = "A brighter variant of the typical Paramedic uniform made with special fibers that provide minor protection against biohazards, this one has had it's legs replaced with a skirt."
+	desc = "A brighter variant of the typical Paramedic uniform made with special fibers that provide minor protection against biohazards, this one has had its legs replaced with a skirt."
 	icon_state = "paramedic_light_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT

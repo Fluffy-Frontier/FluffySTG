@@ -22,7 +22,7 @@
 	if(!nabber)
 		return	FALSE
 
-	if(isdead(nabber) || nabber.incapacitated())
+	if(isdead(nabber) || nabber.incapacitated)
 		nabber.balloon_alert(nabber, "Incapacitated!")
 		return FALSE
 

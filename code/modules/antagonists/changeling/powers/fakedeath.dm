@@ -7,6 +7,7 @@
 	req_dna = 1
 	req_stat = DEAD
 	ignores_fakedeath = TRUE
+	disabled_by_fire = FALSE
 
 	/// How long it takes for revival to ready upon entering stasis.
 	/// The changeling can opt to stay in fakedeath for longer, though.
@@ -122,7 +123,7 @@
 		return
 
 	var/datum/antagonist/changeling/ling = IS_CHANGELING(user)
-	if(QDELETED(ling) || !(src in ling.innate_powers + ling.purchased_powers)) // checking both innate and purchased for full coverage
+	if(QDELETED(ling) || !(src in (ling.innate_powers + ling.purchased_powers))) // checking both innate and purchased for full coverage
 		return
 	if(!HAS_TRAIT_FROM(user, TRAIT_DEATHCOMA, CHANGELING_TRAIT))
 		return

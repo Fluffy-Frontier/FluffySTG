@@ -11,6 +11,7 @@
 	brute_modifier = TESHARI_BRUTE_MODIFIER
 	burn_modifier = TESHARI_BURN_MODIFIER
 	head_flags = HEAD_EYESPRITES|HEAD_EYECOLOR|HEAD_EYEHOLES|HEAD_DEBRAIN
+	eyes_icon = 'modular_nova/modules/organs/icons/teshari_eyes.dmi'
 
 /obj/item/bodypart/head/mutant/teshari/Initialize(mapload)
 	worn_ears_offset = new(
@@ -38,6 +39,7 @@
 	limb_id = SPECIES_TESHARI
 	brute_modifier = TESHARI_BRUTE_MODIFIER
 	burn_modifier = TESHARI_BURN_MODIFIER
+	bodypart_traits = list(TRAIT_NO_UNDERWEAR)
 
 /obj/item/bodypart/chest/mutant/teshari/Initialize(mapload)
 	worn_back_offset = new(

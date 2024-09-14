@@ -8,11 +8,12 @@
 	max_integrity = 500
 	anchored = FALSE
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	interaction_flags_click = NEED_DEXTERITY
 	/// How many reagents at maximum can it hold
 	var/max_volume = 10000
 	/// Whether spewing reagents out, instead of siphoning them
 	var/spewing_mode = FALSE
-	/// Whether its turned on and processing
+	/// Whether it's turned on and processing
 	var/turned_on = FALSE
 	/// How fast does the pump work, in percentages relative to the volume we're working with
 	var/pump_speed_percentage = 0.4
@@ -33,18 +34,17 @@
 	to_chat(user, span_notice("You turn [src] [turned_on ? "off" : "on"]."))
 	toggle_working()
 
-/obj/structure/liquid_pump/AltClick(mob/living/user)
-	if(!user.can_perform_action(src, NEED_DEXTERITY))
-		return
+/obj/structure/liquid_pump/click_alt(mob/living/user)
 	to_chat(user, span_notice("You flick [src]'s spewing mode [spewing_mode ? "off" : "on"]."))
 	spewing_mode = !spewing_mode
 	update_icon()
+	return CLICK_ACTION_SUCCESS
 
 /obj/structure/liquid_pump/examine(mob/user)
 	. = ..()
-	. += span_notice("It's anchor bolts are [anchored ? "down and secured" : "up"].")
-	. += span_notice("It's currently [turned_on ? "ON" : "OFF"].")
-	. += span_notice("It's mode currently is set to [spewing_mode ? "SPEWING" : "SIPHONING"]. (Alt-click to switch)")
+	. += span_notice("Its anchor bolts are [anchored ? "down and secured" : "up"].")
+	. += span_notice("Its currently [turned_on ? "ON" : "OFF"].")
+	. += span_notice("Its mode currently is set to [spewing_mode ? "SPEWING" : "SIPHONING"]. (Alt-click to switch)")
 	. += span_notice("The pressure gauge shows [reagents.total_volume]/[reagents.maximum_volume].")
 
 /obj/structure/liquid_pump/process()

@@ -12,6 +12,7 @@
 	force = 12 //9 hit crit
 	w_class = WEIGHT_CLASS_NORMAL
 	wound_bonus = 15
+	sound_vary = TRUE
 
 	/// Whether this baton is active or not
 	var/active = TRUE
@@ -184,6 +185,7 @@
 	if(!in_attack_chain && HAS_TRAIT_FROM(target, TRAIT_IWASBATONED, REF(user)))
 		return BATON_ATTACK_DONE
 
+	SEND_SIGNAL(src, COMSIG_PRE_BATON_FINALIZE_ATTACK, target, user, modifiers, in_attack_chain) // NOVA EDIT ADDITION
 	cooldown_check = world.time + cooldown
 	if(on_stun_sound)
 		playsound(get_turf(src), on_stun_sound, on_stun_volume, TRUE, -1)
@@ -212,6 +214,7 @@
 		if(!trait_check)
 			target.Knockdown((isnull(stun_override) ? knockdown_time : stun_override))
 		additional_effects_non_cyborg(target, user)
+	SEND_SIGNAL(target, COMSIG_MOB_BATONED, user, src)
 	return TRUE
 
 /// Description for trying to stun when still on cooldown.
@@ -317,7 +320,13 @@
 	bare_wound_bonus = 5
 	clumsy_knockdown_time = 15 SECONDS
 	active = FALSE
-
+	var/folded_drop_sound = 'sound/items/baton/telescopic_baton_folded_drop.ogg'
+	var/folded_pickup_sound = 'sound/items/baton/telescopic_baton_folded_pickup.ogg'
+	var/unfolded_drop_sound = 'sound/items/baton/telescopic_baton_unfolded_drop.ogg'
+	var/unfolded_pickup_sound = 'sound/items/baton/telescopic_baton_unfolded_pickup.ogg'
+	pickup_sound = 'sound/items/baton/telescopic_baton_folded_pickup.ogg'
+	drop_sound = 'sound/items/baton/telescopic_baton_folded_drop.ogg'
+	sound_vary = TRUE
 	/// The sound effecte played when our baton is extended.
 	var/on_sound = 'sound/weapons/batonextend.ogg'
 	/// The inhand iconstate used when our baton is extended.
@@ -337,6 +346,9 @@
 		attack_verb_simple_on = list("smack", "strike", "crack", "beat"), \
 	)
 	RegisterSignal(src, COMSIG_TRANSFORMING_ON_TRANSFORM, PROC_REF(on_transform))
+
+/obj/item/melee/baton/telescopic/additional_effects_non_cyborg(mob/living/target, mob/living/user)
+	target.apply_status_effect(/datum/status_effect/next_shove_stuns)
 
 /obj/item/melee/baton/telescopic/suicide_act(mob/living/user)
 	var/mob/living/carbon/human/human_user = user
@@ -370,6 +382,12 @@
 	inhand_icon_state = active ? on_inhand_icon_state : null // When inactive, there is no inhand icon_state.
 	if(user)
 		balloon_alert(user, active ? "extended" : "collapsed")
+	if(!active)
+		drop_sound = folded_drop_sound
+		pickup_sound = folded_pickup_sound
+	else
+		drop_sound = unfolded_drop_sound
+		pickup_sound = unfolded_pickup_sound
 	playsound(src, on_sound, 50, TRUE)
 	return COMPONENT_NO_DEFAULT_MESSAGE
 
@@ -391,6 +409,8 @@
 	clumsy_knockdown_time = 24 SECONDS
 	affect_cyborg = TRUE
 	on_stun_sound = 'sound/effects/contractorbatonhit.ogg'
+	unfolded_drop_sound = 'sound/items/baton/contractor_baton_unfolded_pickup.ogg'
+	unfolded_pickup_sound = 'sound/items/baton/contractor_baton_unfolded_pickup.ogg'
 
 	on_inhand_icon_state = "contractor_baton_on"
 	on_sound = 'sound/weapons/contractorbatonextend.ogg'
@@ -400,6 +420,7 @@
 	return span_danger("The baton is still charging!")
 
 /obj/item/melee/baton/telescopic/contractor_baton/additional_effects_non_cyborg(mob/living/target, mob/living/user)
+	. = ..()
 	target.set_jitter_if_lower(40 SECONDS)
 	target.set_stutter_if_lower(40 SECONDS)
 
@@ -431,10 +452,16 @@
 	light_on = FALSE
 	light_color = LIGHT_COLOR_ORANGE
 	light_power = 0.5
-
+	var/inactive_drop_sound = 'sound/items/baton/stun_baton_inactive_drop.ogg'
+	var/inactive_pickup_sound = 'sound/items/baton/stun_baton_inactive_pickup.ogg'
+	var/active_drop_sound = 'sound/items/baton/stun_baton_active_drop.ogg'
+	var/active_pickup_sound = 'sound/items/baton/stun_baton_active_pickup.ogg'
+	drop_sound = 'sound/items/baton/stun_baton_inactive_drop.ogg'
+	pickup_sound = 'sound/items/baton/stun_baton_inactive_pickup.ogg'
+	sound_vary = TRUE
 
 	var/throw_stun_chance = 35
-	var/obj/item/stock_parts/cell/cell
+	var/obj/item/stock_parts/power_store/cell
 	var/preload_cell_type //if not empty the baton starts with this type of cell
 	var/cell_hit_cost = STANDARD_CELL_CHARGE
 	var/can_remove_cell = TRUE
@@ -448,12 +475,11 @@
 /obj/item/melee/baton/security/Initialize(mapload)
 	. = ..()
 	if(preload_cell_type)
-		if(!ispath(preload_cell_type, /obj/item/stock_parts/cell))
+		if(!ispath(preload_cell_type, /obj/item/stock_parts/power_store/cell))
 			log_mapping("[src] at [AREACOORD(src)] had an invalid preload_cell_type: [preload_cell_type].")
 		else
 			cell = new preload_cell_type(src)
 	RegisterSignal(src, COMSIG_ATOM_ATTACKBY, PROC_REF(convert))
-	RegisterSignal(src, COMSIG_HIT_BY_SABOTEUR, PROC_REF(on_saboteur))
 	update_appearance()
 
 /obj/item/melee/baton/security/get_cell()
@@ -488,20 +514,19 @@
 	qdel(item)
 	qdel(src)
 
-/obj/item/melee/baton/security/proc/on_saboteur(datum/source, disrupt_duration)
-	SIGNAL_HANDLER
+/obj/item/melee/baton/security/on_saboteur(datum/source, disrupt_duration)
+	. = ..()
 	if(!active)
 		return
-	toggle_light()
-	active = FALSE
+	turn_off()
 	update_appearance()
-	return COMSIG_SABOTEUR_SUCCESS
+	return TRUE
+
 /obj/item/melee/baton/security/Exited(atom/movable/mov_content)
 	. = ..()
 	if(mov_content == cell)
-		cell.update_appearance()
 		cell = null
-		active = FALSE
+		turn_off()
 		update_appearance()
 
 /obj/item/melee/baton/security/update_icon_state()
@@ -527,8 +552,8 @@
 	return TRUE
 
 /obj/item/melee/baton/security/attackby(obj/item/item, mob/user, params)
-	if(istype(item, /obj/item/stock_parts/cell))
-		var/obj/item/stock_parts/cell/active_cell = item
+	if(istype(item, /obj/item/stock_parts/power_store/cell))
+		var/obj/item/stock_parts/power_store/cell/active_cell = item
 		if(cell)
 			to_chat(user, span_warning("[src] already has a cell!"))
 		else
@@ -551,25 +576,40 @@
 	return FALSE
 
 /obj/item/melee/baton/security/attack_self(mob/user)
-	if(cell?.charge >= cell_hit_cost)
-		active = !active
-		balloon_alert(user, "turned [active ? "on" : "off"]")
-		playsound(src, SFX_SPARKS, 75, TRUE, -1)
-		toggle_light(user)
-		do_sparks(1, TRUE, src)
+	if(cell?.charge >= cell_hit_cost && !active)
+		turn_on(user)
+		balloon_alert(user, "turned on")
 	else
-		active = FALSE
+		turn_off()
 		if(!cell)
 			balloon_alert(user, "no power source!")
-		else
+		else if(cell?.charge < cell_hit_cost)
 			balloon_alert(user, "out of charge!")
-	update_appearance()
+		else
+			balloon_alert(user, "turned off")
 	add_fingerprint(user)
 
 /// Toggles the stun baton's light
-/obj/item/melee/baton/security/proc/toggle_light(mob/user)
+/obj/item/melee/baton/security/proc/toggle_light()
 	set_light_on(!light_on)
 	return
+
+/obj/item/melee/baton/security/proc/turn_on(mob/user)
+	active = TRUE
+	playsound(src, SFX_SPARKS, 75, TRUE, -1)
+	update_appearance()
+	toggle_light()
+	do_sparks(1, TRUE, src)
+	drop_sound = active_drop_sound
+	pickup_sound = active_pickup_sound
+
+/obj/item/melee/baton/security/proc/turn_off()
+	active = FALSE
+	set_light_on(FALSE)
+	update_appearance()
+	playsound(src, SFX_SPARKS, 75, TRUE, -1)
+	drop_sound = inactive_drop_sound
+	pickup_sound = inactive_pickup_sound
 
 /obj/item/melee/baton/security/proc/deductcharge(deducted_charge)
 	if(!cell)
@@ -579,10 +619,7 @@
 	. = cell.use(deducted_charge)
 	if(active && cell.charge < cell_hit_cost)
 		//we're below minimum, turn off
-		active = FALSE
-		set_light_on(FALSE)
-		update_appearance()
-		playsound(src, SFX_SPARKS, 75, TRUE, -1)
+		turn_off()
 
 /obj/item/melee/baton/security/clumsy_check(mob/living/carbon/human/user)
 	. = ..()
@@ -677,7 +714,7 @@
 	update_appearance()
 
 /obj/item/melee/baton/security/loaded //this one starts with a cell pre-installed.
-	preload_cell_type = /obj/item/stock_parts/cell/high
+	preload_cell_type = /obj/item/stock_parts/power_store/cell/high
 
 //Makeshift stun baton. Replacement for stun gloves.
 /obj/item/melee/baton/security/cattleprod
@@ -775,7 +812,7 @@
 		finalize_baton_attack(hit_atom, thrown_by, in_attack_chain = FALSE)
 
 /obj/item/melee/baton/security/boomerang/loaded //Same as above, comes with a cell.
-	preload_cell_type = /obj/item/stock_parts/cell/high
+	preload_cell_type = /obj/item/stock_parts/power_store/cell/high
 
 /obj/item/melee/baton/security/cattleprod/teleprod
 	name = "teleprod"

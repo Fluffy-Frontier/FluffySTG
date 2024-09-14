@@ -130,6 +130,24 @@
 	new /obj/item/clothing/under/ethereal_tunic/trailwarden(src)
 	new /obj/item/storage/backpack/saddlepack(src)
 
+/obj/item/storage/box/hero/journalist
+	name = "Assassinated by CIA - 1984." // Literally
+	desc = "Many courageous individuals risked their lives to report on events the government sought to keep hidden from the public, ensuring that the truth remained buried and unheard. These garments are replicas of the clothing worn by one such 'journalist,' a silent sentinel in the fight for truth."
+
+/obj/item/storage/box/hero/journalist/PopulateContents()
+	new /obj/item/clothing/under/costume/buttondown/slacks(src)
+	new /obj/item/clothing/suit/toggle/suspenders(src)
+	new /obj/item/clothing/neck/tie/red(src)
+	new /obj/item/clothing/head/fedora/beige/press(src)
+	new /obj/item/clothing/accessory/press_badge(src)
+	new /obj/item/clothing/suit/hazardvest/press(src)
+	new /obj/item/radio/entertainment/microphone/physical(src)
+	new /obj/item/radio/entertainment/speakers/physical(src)
+	new /obj/item/clipboard(src)
+	new /obj/item/taperecorder(src)
+	new /obj/item/camera(src)
+	new /obj/item/wallframe/telescreen/entertainment(src)
+
 /obj/item/storage/box/holy
 	name = "Templar Kit"
 	/// This item is used to generate a preview image for this set.
@@ -223,3 +241,16 @@
 /obj/item/storage/box/collar_bomb/PopulateContents()
 	var/obj/item/collar_bomb_button/button = new(src)
 	new /obj/item/clothing/neck/collar_bomb(src, button)
+	
+/obj/item/storage/box/lewd_toys
+	name = "lewd toys box"
+	desc = "Contains lewd impliments for spending time alone, or together with someone! Try to hide it better next time."
+
+/obj/item/storage/box/lewd_toys/PopulateContents()
+	new /obj/item/clothing/sextoy/dildo(src)
+	new /obj/item/clothing/sextoy/buttplug(src)
+	new /obj/item/stack/shibari_rope/full(src)
+	new /obj/item/spanking_pad(src)
+	new /obj/item/clothing/mask/ballgag(src)
+	new /obj/item/clothing/suit/straight_jacket/shackles(src)
+	new /obj/item/clothing/glasses/blindfold/kinky(src)

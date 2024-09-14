@@ -100,6 +100,11 @@ TRAITOR_SCALING_COEFF 6
 BROTHER_SCALING_COEFF 6
 CHANGELING_SCALING_COEFF 6
 
+## Global scaling for traitor progression.
+## Higher values will accelerate traitor progression, while lower values will decrease it.
+## Bypasses an upper limit of 1 MINUTE
+#TRAITOR_SCALING_MULTIPLIER 1
+
 ## Variables calculate how number of open security officer positions will scale to population.
 ## Used as (Officers = Population / Coeff)
 ## Set to 0 to disable scaling and use default numbers instead.
@@ -140,13 +145,20 @@ ALLOW_RANDOM_EVENTS
 #FORBID_STATION_TRAITS
 
 ## Multiplier for earliest start time of dangerous events.
-## Set to 0 to make dangerous events avaliable from round start.
+## Set to 0 to make dangerous events available from round start.
 EVENTS_MIN_TIME_MUL 1
 
 ## Multiplier for minimal player count (players = alive non-AFK humans) for dangerous events to start.
-## Set to 0 to make dangerous events avaliable for all populations.
+## Set to 0 to make dangerous events available for all populations.
 EVENTS_MIN_PLAYERS_MUL 1
 
+## The lower bound, in deciseconds, for how soon another random event can be scheduled.
+## Defaults to 1500 deciseconds or 2.5 minutes
+EVENTS_FREQUENCY_LOWER 1500
+
+## The upper bound, in deciseconds, for how soon another random event can be scheduled.
+## Defaults to 4200 deciseconds or 7 minutes
+EVENTS_FREQUENCY_UPPER 4200
 
 ## AI ###
 
@@ -173,13 +185,17 @@ ALLOW_AI_MULTICAM
 ## 600 is one minute.
 GATEWAY_DELAY 18000
 
+## Overrides to gateway delay for specific away mission start points.
+GATEWAY_DELAYS_BY_ID AWAYSTART_BEACH 6000
+GATEWAY_DELAYS_BY_ID AWAYSTART_MUSEUM 9000
+
 ## The probability of the gateway mission being a config one
 CONFIG_GATEWAY_CHANCE 0
 
 ## ACCESS ###
 
 ## If the number of players ready at round starts exceeds this threshold, JOBS_HAVE_MINIMAL_ACCESS will automatically be enabled. Otherwise, it will be disabled.
-## This is useful for accomodating both low and high population rounds on the same server.
+## This is useful for accommodating both low and high population rounds on the same server.
 ## Comment this out or set to 0 to disable this automatic toggle.
 MINIMAL_ACCESS_THRESHOLD 20
 
@@ -192,7 +208,7 @@ MINIMAL_ACCESS_THRESHOLD 20
 ## Uncomment to give assistants maint access.
 #ASSISTANTS_HAVE_MAINT_ACCESS
 
-## Uncoment to give security maint access. Note that if you dectivate JOBS_HAVE_MINIMAL_ACCESS security already gets maint from that.
+## Uncoment to give security maint access. Note that if you deactivate JOBS_HAVE_MINIMAL_ACCESS security already gets maint from that.
 #SECURITY_HAS_MAINT_ACCESS
 
 ## Uncomment to give everyone maint access.
@@ -226,7 +242,7 @@ NEAR_DEATH_EXPERIENCE
 ## Set to 0/commented out for "off", silicons will just start with Asimov.
 ## Set to 1 for "custom", silicons will start with the custom laws defined in silicon_laws.txt. (If silicon_laws.txt is empty, the AI will spawn with asimov and Custom boards will auto-delete.)
 ## Set to 2 for "random", silicons will start with a random lawset picked from random laws specified below.
-## Set to 3 for "weighted random", using values in "silicon_weights.txt", a law will be selected, with weights specifed in that file.
+## Set to 3 for "weighted random", using values in "silicon_weights.txt", a law will be selected, with weights specified in that file.
 ## Set to 4 for "specified", silicons will start with an existing lawset. (If no specified lawset is identified, the AI will spawn with asimov.)
 
 
@@ -251,34 +267,36 @@ SPECIFIED_LAWS asimovpp
 ## See datums\ai_laws.dm for the full law lists
 
 ## standard-ish laws. These are fairly ok to run
-#NOVA EDIT ADDITION BEGIN
-RANDOM_LAWS armadyne_safeguard
 RANDOM_LAWS asimov
 RANDOM_LAWS asimovpp
 RANDOM_LAWS paladin
 RANDOM_LAWS robocop
 RANDOM_LAWS corporate
-RANDOM_LAWS dagothbot
 
 ## Quirky laws. Shouldn't cause too much harm
 #RANDOM_LAWS hippocratic
 #RANDOM_LAWS maintain
+#RANDOM_LAWS drone
 #RANDOM_LAWS liveandletlive
 #RANDOM_LAWS peacekeeper
 #RANDOM_LAWS reporter
 #RANDOM_LAWS hulkamania
 #RANDOM_LAWS ten_commandments
-#RANDOM_LAWS texas
+#RANDOM_LAWS yesman
 
 ## Bad idea laws. Probably shouldn't enable these
 #RANDOM_LAWS syndie
 #RANDOM_LAWS ninja
 #RANDOM_LAWS antimov
 #RANDOM_LAWS thermodynamic
-#RANDOM_LAWS drone
 
 ## meme laws. Honk
 #RANDOM_LAWS buildawall
+## NOVA EDIT ADDITION BEGIN - Nova Laws
+#RANDOM_LAWS armadyne_safeguard
+#RANDOM_LAWS dagothbot
+#RANDOM_LAWS texas
+## NOVA EDIT ADDITION END
 
 ## If weighted laws are selected (DEFAULT_LAWS = 3),
 ## then an AI's starting laws will be determined by the weights of these values
@@ -341,7 +359,7 @@ SILICON_MAX_LAW_AMOUNT 12
 
 ## Roundstart Races
 ##-------------------------------------------------------------------------------------------
-## Uncommenting races will allow them to be choosen at roundstart while join_with_muntant_race is on. You'll need at least one.
+## Uncommenting races will allow them to be chosen at roundstart while join_with_muntant_race is on. You'll need at least one.
 
 ## See code/__DEFINES/DNA.dm for more options than the ones below.
 
@@ -478,7 +496,7 @@ ARRIVALS_SHUTTLE_DOCK_WINDOW 55
 ## Uncomment to prevent late join players from spawning if the arrivals shuttle is depressurized
 #ARRIVALS_SHUTTLE_REQUIRE_SAFE_LATEJOIN
 
-## How many wirechewing rodents you want to spawn on exposed maintenane wires at the start of the round. You may wish to set this to 0 if you're testing powernets.
+## How many wirechewing rodents you want to spawn on exposed maintenance wires at the start of the round. You may wish to set this to 0 if you're testing powernets.
 
 MICE_ROUNDSTART 10
 
@@ -564,6 +582,10 @@ NEGATIVE_STATION_TRAITS 3 1
 # If commented-out or undefined, the maximum default is 6.
 MAX_POSITIVE_QUIRKS 6
 
+# A config that skews with the random spawners weights
+# If the value is lower than 1, it'll tend to even out the odds
+# If higher than 1, it'll lean toward common spawns even more.
+RANDOM_LOOT_WEIGHT_MODIFIER 1
+
 ## FF CONFIGS
 ROUNDSTART_RACES nabber
-#ROUNDSTART_RACES teshari_alt неАКТУАЛочка

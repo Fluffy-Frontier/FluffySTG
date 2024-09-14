@@ -70,9 +70,14 @@
 	path = /obj/item/organ/internal/cyberimp/arm/arc_welder/left_arm
 
 /datum/augment_item/implant/l_arm/electrical_toolset
-	name = "Left Electrical Toolset Implant (Screwdriver + Multitool)"
+	name = "Left Electrical Toolset Implant (Screwdriver + Multitool + Wirecutters)"
 	cost = 8
 	path = /obj/item/organ/internal/cyberimp/arm/electrical_toolset/left_arm
+
+/datum/augment_item/implant/l_arm/mining_drill
+	name = "Left Daiba Masterworks 'Burrower' Drill"
+	cost = 8
+	path = /obj/item/organ/internal/cyberimp/arm/mining_drill/left_arm
 
 //RIGHT ARM IMPLANTS
 /datum/augment_item/implant/r_arm
@@ -124,9 +129,14 @@
 	path = /obj/item/organ/internal/cyberimp/arm/arc_welder/right_arm
 
 /datum/augment_item/implant/r_arm/electrical_toolset
-	name = "Right Electrical Toolset Implant (Screwdriver + Multitool)"
+	name = "Right Electrical Toolset Implant (Screwdriver + Multitool + Wirecutters)"
 	cost = 8
 	path = /obj/item/organ/internal/cyberimp/arm/electrical_toolset/right_arm
+
+/datum/augment_item/implant/r_arm/mining_drill
+	name = "Right Daiba Masterworks 'Burrower' Drill"
+	cost = 8
+	path = /obj/item/organ/internal/cyberimp/arm/mining_drill/right_arm
 
 //EYES IMPLANTS
 /datum/augment_item/implant/eyes

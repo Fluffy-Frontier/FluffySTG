@@ -196,9 +196,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Chief Medical Officer"
 	icon_state = "Chief Medical Officer"
 
-/obj/effect/landmark/start/virologist
-	name = "Virologist"
-	icon_state = "Virologist"
 
 /obj/effect/landmark/start/psychologist
 	name = "Psychologist"
@@ -319,6 +316,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	..()
 	GLOB.newplayer_start += loc
 	return INITIALIZE_HINT_QDEL
+
+/obj/effect/landmark/start/pun_pun
+	name = JOB_PUN_PUN
+	icon = 'icons/mob/human/human.dmi'
+	icon_state = "monkey"
 
 /obj/effect/landmark/latejoin
 	name = "JoinLate"

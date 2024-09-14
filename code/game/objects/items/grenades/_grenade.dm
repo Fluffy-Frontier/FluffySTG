@@ -16,17 +16,19 @@
 	flags_1 = PREVENT_CONTENTS_EXPLOSION_1 // We detonate upon being exploded.
 	obj_flags = CONDUCTS_ELECTRICITY
 	slot_flags = ITEM_SLOT_BELT
-	resistance_flags = FLAMMABLE
 	max_integrity = 40
+	pickup_sound = 'sound/items/grenade_pick_up.ogg'
+	drop_sound = 'sound/items/grenade_drop.ogg'
+	sound_vary = TRUE
 	/// Bitfields which prevent the grenade from detonating if set. Includes ([GRENADE_DUD]|[GRENADE_USED])
 	var/dud_flags = NONE
 	///Is this grenade currently armed?
 	var/active = FALSE
-	///Is it a cluster grenade? We dont wanna spam admin logs with these.
+	///Is it a cluster grenade? We don't wanna spam admin logs with these.
 	var/type_cluster = FALSE
 	///How long it takes for a grenade to explode after being armed
 	var/det_time = 5 SECONDS
-	///Will this state what it's det_time is when examined?
+	///Will this state what its det_time is when examined?
 	var/display_timer = TRUE
 	///Used in botch_check to determine how a user's clumsiness affects that user's ability to prime a grenade correctly.
 	var/clumsy_check = GRENADE_CLUMSY_FUMBLE
@@ -47,13 +49,12 @@
 	var/shrapnel_type
 	/// the higher this number, the more projectiles are created as shrapnel
 	var/shrapnel_radius
-	///Did we add the component responsible for spawning sharpnel to this?
+	///Did we add the component responsible for spawning shrapnel to this?
 	var/shrapnel_initialized
 
 /obj/item/grenade/Initialize(mapload)
 	. = ..()
 	ADD_TRAIT(src, TRAIT_ODD_CUSTOMIZABLE_FOOD_INGREDIENT, type)
-	ADD_TRAIT(src, TRAIT_ALT_CLICK_BLOCKER, REF(src))
 	RegisterSignal(src, COMSIG_ITEM_USED_AS_INGREDIENT, PROC_REF(on_used_as_ingredient))
 
 /obj/item/grenade/suicide_act(mob/living/carbon/user)
@@ -61,7 +62,7 @@
 	playsound(src, 'sound/items/eatfood.ogg', 50, TRUE)
 	arm_grenade(user, det_time)
 	user.transferItemToLoc(src, user, TRUE)//>eat a grenade set to 5 seconds >rush captain
-	sleep(det_time)//so you dont die instantly
+	sleep(det_time)//so you don't die instantly
 	return dud_flags ? SHAME : BRUTELOSS
 
 /obj/item/grenade/atom_deconstruct(disassembled = TRUE)
@@ -264,8 +265,8 @@
 			qdel(src)
 		return TRUE //It hit the grenade, not them
 
-/obj/item/grenade/afterattack(atom/target, mob/user)
-	. = ..()
+/obj/item/grenade/ranged_interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
 	if(active)
-		user.throw_item(target)
-		return . | AFTERATTACK_PROCESSED_ITEM
+		user.throw_item(interacting_with)
+		return ITEM_INTERACT_SUCCESS
+	return NONE

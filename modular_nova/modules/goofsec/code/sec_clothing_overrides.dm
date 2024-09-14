@@ -171,7 +171,7 @@
 		resolve_parent.balloon_alert(user, "can't reach!")
 		return FALSE
 
-	if(!isliving(user) || user.incapacitated())
+	if(!isliving(user) || user.incapacitated)
 		return FALSE
 
 	var/obj/item/gun/gun_to_draw = locate() in real_location
@@ -250,7 +250,7 @@
 	. = ..()
 	if(.)
 		return
-	if(user.incapacitated() || !can_toggle)
+	if(user.incapacitated || !can_toggle)
 		return
 	up = !up
 	flags_1 ^= visor_flags
@@ -264,7 +264,7 @@
 	user.update_worn_head()
 	if(iscarbon(user))
 		var/mob/living/carbon/carbon_user = user
-		carbon_user.head_update(src, forced = TRUE)
+		carbon_user.update_worn_head()
 
 
 //Beret replacement
@@ -400,11 +400,11 @@
 		),
 	)
 
-/obj/item/clothing/neck/security_cape/AltClick(mob/user)
-	. = ..()
+/obj/item/clothing/neck/security_cape/click_alt(mob/user)
 	swapped = !swapped
 	to_chat(user, span_notice("You swap which arm [src] will lay over."))
 	update_appearance()
+	return CLICK_ACTION_SUCCESS
 
 /obj/item/clothing/neck/security_cape/update_appearance(updates)
 	. = ..()
@@ -439,6 +439,10 @@
 			RESKIN_WORN_ICON_STATE = "gloves_white"
 		),
 	)
+
+/obj/item/clothing/gloves/color/black/security/blu // Wait why these a subtype of black?!? Who did this
+	icon = 'icons/obj/clothing/gloves.dmi'
+	worn_icon = 'icons/mob/clothing/hands.dmi'
 
 /obj/item/clothing/gloves/tackler/security	//Can't just overwrite tackler, as there's a ton of subtypes that we'd then need to account for. This is easier. MUCH easier.
 	icon = 'modular_nova/master_files/icons/obj/clothing/gloves.dmi'
@@ -579,13 +583,24 @@
 	unique_reskin = null // prevents you from losing the unique sprite
 
 /obj/item/clothing/under/rank/security/officer/skirt
-	name = "security battle dress"
-	desc = "An asymmetrical, unisex uniform with the legs replaced by a utility skirt."
-	worn_icon_state = "security_skirt"
-	icon_state = "security_skirt"
-	uses_advanced_reskins = FALSE
-	unique_reskin = null
-	alt_covers_chest = FALSE
+	name = "security jumpskirt"
+	desc = "Turtleneck sweater commonly worn by Peacekeepers, attached with a skirt."
+	icon = 'modular_nova/master_files/icons/obj/clothing/under/security.dmi'
+	worn_icon = 'modular_nova/master_files/icons/mob/clothing/under/security.dmi'
+	icon_state = "jumpskirt_blue"
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
+	gets_cropped_on_taurs = FALSE
+	uses_advanced_reskins = TRUE
+	unique_reskin = list(
+		"Blue Variant" = list(
+			RESKIN_ICON_STATE = "jumpskirt_blue",
+			RESKIN_WORN_ICON_STATE = "jumpskirt_blue"
+        ),
+		"Black Variant" = list(
+			RESKIN_ICON_STATE = "jumpskirt_black",
+			RESKIN_WORN_ICON_STATE = "jumpskirt_black"
+		),
+	)
 
 //Warden
 /obj/item/clothing/under/rank/security/warden
@@ -690,7 +705,7 @@
 	worn_icon = 'icons/mob/clothing/eyes.dmi'
 	icon_state = "sunhudsec"
 	glass_colour_type = /datum/client_colour/glass_colour/darkred
-	current_skin = "sunhudsec" //prevents reskinning; a bit hacky to say its already reskinned but its better than a code rewrite
+	current_skin = "sunhudsec" //prevents reskinning; a bit hacky to say it's already reskinned but it's better than a code rewrite
 
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch/redsec
 	icon = 'icons/obj/clothing/glasses.dmi'

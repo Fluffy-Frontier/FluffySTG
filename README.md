@@ -12,6 +12,7 @@
 | Git / GitHub cheatsheet   | [https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833](https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833) |
 | Guide to Modularization   | [./modular_nova/readme.md](./modular_nova/readme.md)            |
 | Website                   | [https://www.tgstation13.org](https://www.tgstation13.org)          |
+| Guide to Mirorring        | [./modular_nova/mirroring_guide.md](./modular_nova/mirroring_guide.md)          |
 | Code                      | [https://github.com/NovaSector/NovaSector](https://github.com/NovaSector/NovaSector)    |
 | Wiki                      | [https://wiki.novasector13.com](https://wiki.novasector13.com)   |
 | Codedocs                  | [https://GalacticStation.github.io/GalaxiaStation/](https://GalacticStation.github.io/GalaxiaStation/)       |
@@ -29,9 +30,9 @@ Space Station 13 is a paranoia-laden round-based roleplaying game set against th
 You are responsible for the testing of your content and providing proof of such in your pull request. You should not mark a pull request ready for review until you have actually tested it. If you require a separate client for testing, you can use a guest account by logging out of BYOND and connecting to your test server. Test merges are not for bug finding, they are for stress tests where local testing simply doesn't allow for this.
 
 ## DEVELOPMENT FLOWCHART
-![image](https://i.imgur.com/VLcZh4A.png)
+![image](https://i.imgur.com/lgbYurx.png)
 
-[Modularisation Guide](./modular_skyrat/readme.md)
+[Modularisation Guide](./modular_nova/readme.md)
 
 ## DOWNLOADING
 [Downloading](.github/guides/DOWNLOADING.md)

@@ -57,7 +57,7 @@
 	return TRUE
 
 /datum/sprite_accessory/wings/none
-	name = "None"
+	name = SPRITE_ACCESSORY_NONE
 	icon_state = "none"
 	factual = FALSE
 
@@ -250,6 +250,11 @@
 	icon_state = "succubus"
 	color_src = USE_MATRIXED_COLORS
 
+/datum/sprite_accessory/wings/mammal/manta
+	name = "Manta Ray"
+	icon_state = "manta"
+	color_src = USE_MATRIXED_COLORS
+
 /datum/sprite_accessory/wings/mammal/tiny
 	color_src = USE_ONE_COLOR
 
@@ -307,7 +312,7 @@
 	relevent_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/wings/moth/none
-	name = "None"
+	name = SPRITE_ACCESSORY_NONE
 	icon_state = "none"
 
 /datum/sprite_accessory/wings/moth/atlas
@@ -408,7 +413,7 @@
 	icon_state = "moffra"
 
 /datum/sprite_accessory/wings/moth/lightbearer
-	name = "Lightbearer"
+	name = "Moth (Lightbearer)"
 	icon_state = "lightbearer"
 
 /datum/sprite_accessory/wings/mammal/top/arfel_harpy

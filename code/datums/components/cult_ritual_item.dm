@@ -128,6 +128,7 @@
 		INVOKE_ASYNC(src, PROC_REF(do_destroy_girder), target, cultist)
 		return COMPONENT_NO_AFTERATTACK
 
+
 	if(istype(target, /obj/structure/destructible/cult))
 		INVOKE_ASYNC(src, PROC_REF(do_unanchor_structure), target, cultist)
 		return COMPONENT_NO_AFTERATTACK
@@ -403,7 +404,7 @@
 	if(!rune.Adjacent(cultist))
 		return FALSE
 
-	if(cultist.incapacitated())
+	if(cultist.incapacitated)
 		return FALSE
 
 	if(cultist.stat == DEAD)
@@ -426,7 +427,7 @@
 	if(QDELETED(tool) || !cultist.is_holding(tool))
 		return FALSE
 
-	if(cultist.incapacitated() || cultist.stat == DEAD)
+	if(cultist.incapacitated || cultist.stat == DEAD)
 		to_chat(cultist, span_warning("You can't draw a rune right now."))
 		return FALSE
 

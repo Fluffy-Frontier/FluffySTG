@@ -14,10 +14,12 @@
 	throw_speed = 3
 	throw_range = 5
 	merge_type = /obj/item/stack/sheet/mineral/clay
+	drop_sound = SFX_BRICK_DROP
+	pickup_sound = SFX_BRICK_PICKUP
 
 GLOBAL_LIST_INIT(clay_recipes, list ( \
-	new/datum/stack_recipe("clay range", /obj/machinery/primitive_stove, 10, time = 5 SECONDS, one_per_turf = TRUE, on_solid_ground = TRUE, category = CAT_MISC), \
-	new/datum/stack_recipe("clay oven", /obj/machinery/oven/stone, 10, time = 5 SECONDS, one_per_turf = FALSE, on_solid_ground = TRUE, category = CAT_MISC) \
+	new/datum/stack_recipe("clay range", /obj/machinery/primitive_stove, 10, time = 5 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND, category = CAT_MISC), \
+	new/datum/stack_recipe("clay oven", /obj/machinery/oven/stone, 10, time = 5 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND, category = CAT_MISC) \
 	))
 
 /obj/item/stack/sheet/mineral/clay/get_main_recipes()

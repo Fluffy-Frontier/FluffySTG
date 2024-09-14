@@ -57,7 +57,7 @@
 	ADD_TRAIT(src, TRAIT_AGEUSIA, NO_TONGUE_TRAIT)
 
 /mob/living/carbon/human/proc/setup_human_dna()
-	randomize_human(src, randomize_mutations = TRUE)
+	randomize_human_normie(src, randomize_mutations = TRUE)
 
 /mob/living/carbon/human/Destroy()
 	QDEL_NULL(physiology)
@@ -88,11 +88,59 @@
 
 
 /mob/living/carbon/human/Topic(href, href_list)
-	if(href_list["item"]) //canUseTopic check for this is handled by mob/Topic()
-		var/slot = text2num(href_list["item"])
-		if(check_obscured_slots(TRUE) & slot)
-			to_chat(usr, span_warning("You can't reach that! Something is covering it."))
+
+	if(href_list["see_id"])
+		var/mob/viewer = usr
+		var/can_see_still = (viewer in viewers(src))
+
+		var/obj/item/card/id/id = wear_id?.GetID()
+		var/same_id = id && (href_list["id_ref"] == REF(id) || href_list["id_name"] == id.registered_name)
+		if(!same_id && can_see_still)
+			to_chat(viewer, span_notice("[p_They()] [p_are()] no longer wearing that ID card."))
 			return
+
+		var/viable_time = can_see_still ? 3 MINUTES : 1 MINUTES // assuming 3min is the length of a hop line visit - give some leeway if they're still in sight
+		if(!same_id || (text2num(href_list["examine_time"]) + viable_time) < world.time)
+			to_chat(viewer, span_notice("You don't have that good of a memory. Examine [p_them()] again."))
+			return
+		if(HAS_TRAIT(src, TRAIT_UNKNOWN))
+			to_chat(viewer, span_notice("You can't make out that ID anymore."))
+			return
+		if(get_dist(viewer, src) > ID_EXAMINE_DISTANCE + 1) // leeway
+			to_chat(viewer, span_notice("You can't make out that ID from here."))
+			return
+
+		var/id_name = id.registered_name
+		var/id_age = id.registered_age
+		var/id_job = id.assignment
+		// Should probably be recorded on the ID, but this is easier (albiet more restrictive) on chameleon ID users
+		var/datum/record/crew/record = find_record(id_name)
+		var/id_blood_type = record?.blood_type
+		var/id_gender = record?.gender
+		var/id_species = record?.species
+		var/id_icon = jointext(id.get_id_examine_strings(viewer), "")
+		// Fill in some blanks for chameleon IDs to maintain the illusion of a real ID
+		if(istype(id, /obj/item/card/id/advanced/chameleon))
+			id_gender ||= gender
+			id_species ||= dna.species.name
+			id_blood_type ||= dna.blood_type
+
+		var/id_examine = span_slightly_larger(separator_hr("This is <em>[src]'s ID card</em>."))
+		id_examine += "<div class='img_by_text_container'>"
+		id_examine += "[id_icon]"
+		id_examine += "<div class='img_text'>"
+		id_examine += jointext(list(
+			"&bull; Name: [id_name || "Unknown"]",
+			"&bull; Job: [id_job || "Unassigned"]",
+			"&bull; Age: [id_age || "Unknown"]",
+			"&bull; Gender: [id_gender || "Unknown"]",
+			"&bull; Blood Type: [id_blood_type || "?"]",
+			"&bull; Species: [id_species || "Unknown"]",
+		), "<br>")
+		id_examine += "</div>" // container
+		id_examine += "</div>" // text
+
+		to_chat(viewer, examine_block(span_info(id_examine)))
 
 ///////HUDs///////
 	if(href_list["hud"])
@@ -103,7 +151,7 @@
 		if(!HAS_TRAIT(human_or_ghost_user, TRAIT_SECURITY_HUD) && !HAS_TRAIT(human_or_ghost_user, TRAIT_MEDICAL_HUD))
 			return
 		if((text2num(href_list["examine_time"]) + 1 MINUTES) < world.time)
-			to_chat(human_or_ghost_user, "[span_notice("It's too late to use this now!")]")
+			to_chat(human_or_ghost_user, span_notice("It's too late to use this now!"))
 			return
 		var/datum/record/crew/target_record = find_record(perpname)
 		if(href_list["photo_front"] || href_list["photo_side"])
@@ -349,7 +397,11 @@
 			var/examined_name = get_face_name(get_id_name("")) //Named as such because this is the name we see when we examine
 			var/datum/record/crew/target_record = find_record(examined_name)
 			to_chat(usr, "<b>Exploitable information:</b> [target_record.exploitable_information]")
-	//NOVA EDIT END
+	if(href_list["medrecords"])
+		var/examined_name = get_face_name(get_id_name("")) //Named as such because this is the name we see when we examine
+		var/datum/record/crew/target_record = find_record(examined_name)
+		to_chat(usr, "<b>Medical Record:</b> [target_record.past_medical_records]")
+	//NOVA EDIT ADDITION END
 
 	..() //end of this massive fucking chain. TODO: make the hud chain not spooky. - Yeah, great job doing that.
 
@@ -569,7 +621,7 @@
 #undef CPR_PANIC_SPEED
 
 /mob/living/carbon/human/cuff_resist(obj/item/I)
-	if(dna?.check_mutation(/datum/mutation/human/hulk))
+	if(HAS_TRAIT(src, TRAIT_HULK))
 		say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced = "hulk")
 		if(..(I, cuff_break = FAST_CUFFBREAK))
 			dropItemToGround(I)
@@ -632,7 +684,7 @@
 	// Check and wash stuff that can be covered
 	var/obscured = check_obscured_slots()
 
-	if(w_uniform && !(obscured & ITEM_SLOT_ICLOTHING) && w_uniform.wash(clean_types))
+	if(!(obscured & ITEM_SLOT_ICLOTHING) && w_uniform?.wash(clean_types))
 		update_worn_undersuit()
 		. = TRUE
 
@@ -692,12 +744,12 @@
 		visible_message(span_danger("[src] manages to [cuff_break ? "break" : "remove"] [I]!"))
 		to_chat(src, span_notice("You successfully [cuff_break ? "break" : "remove"] [I]."))
 		return TRUE
-	//SKYRAT ERP UPDATE ADDITION: NOW GLOVES CAN RESTRAIN PLAYERS
+	// NOVA EDIT ADDITION: NOW GLOVES CAN RESTRAIN PLAYERS
 	if(I == gloves)
 		visible_message(span_danger("[src] manages to [cuff_break ? "break" : "remove"] [I]!"))
 		to_chat(src, span_notice("You successfully [cuff_break ? "break" : "remove"] [I]."))
 		return TRUE
-	//SKYRAT ERP UPDATE ADDITION END
+	// NOVA EDIT ADDITION END
 
 /mob/living/carbon/human/replace_records_name(oldname, newname) // Only humans have records right now, move this up if changed.
 	var/datum/record/crew/crew_record = find_record(oldname)
@@ -782,6 +834,10 @@
 
 /mob/living/carbon/human/vv_edit_var(var_name, var_value)
 	if(var_name == NAMEOF(src, mob_height))
+		var/static/list/monkey_heights = list(
+			MONKEY_HEIGHT_DWARF,
+			MONKEY_HEIGHT_MEDIUM,
+		)
 		var/static/list/heights = list(
 			HUMAN_HEIGHT_SHORTEST,
 			HUMAN_HEIGHT_SHORT,
@@ -790,7 +846,10 @@
 			HUMAN_HEIGHT_TALLER,
 			HUMAN_HEIGHT_TALLEST
 		)
-		if(!(var_value in heights))
+		if(ismonkey(src))
+			if(!(var_value in monkey_heights))
+				return
+		else if(!(var_value in heights))
 			return
 
 		. = set_mob_height(var_value)
@@ -871,7 +930,7 @@
 	if(href_list[VV_HK_SET_SPECIES])
 		if(!check_rights(R_SPAWN))
 			return
-		var/result = input(usr, "Please choose a new species","Species") as null|anything in GLOB.species_list
+		var/result = input(usr, "Please choose a new species","Species") as null|anything in sortTim(GLOB.species_list, GLOBAL_PROC_REF(cmp_text_asc))
 		if(result)
 			var/newtype = GLOB.species_list[result]
 			admin_ticket_log("[key_name_admin(usr)] has modified the bodyparts of [src] to [result]")
@@ -965,13 +1024,13 @@
 	return ishuman(target) && target.body_position == LYING_DOWN
 
 /mob/living/carbon/human/proc/fireman_carry(mob/living/carbon/target)
-	if(!can_be_firemanned(target) || incapacitated(IGNORE_GRAB))
+	if(!can_be_firemanned(target) || INCAPACITATED_IGNORING(src, INCAPABLE_GRAB))
 		to_chat(src, span_warning("You can't fireman carry [target] while [target.p_they()] [target.p_are()] standing!"))
 		return
 
 	var/carrydelay = 5 SECONDS //if you have latex you are faster at grabbing
 	var/skills_space
-	var/fitness_level = mind.get_skill_level(/datum/skill/fitness) - 1
+	var/fitness_level = mind?.get_skill_level(/datum/skill/athletics) - 1
 	if(HAS_TRAIT(src, TRAIT_QUICKER_CARRY))
 		carrydelay -= 2 SECONDS
 	else if(HAS_TRAIT(src, TRAIT_QUICK_CARRY))
@@ -979,6 +1038,10 @@
 
 	// can remove up to 2 seconds at legendary
 	carrydelay -= fitness_level * (1/3) SECONDS
+
+	var/obj/item/organ/internal/cyberimp/chest/spine/potential_spine = get_organ_slot(ORGAN_SLOT_SPINE)
+	if(istype(potential_spine))
+		carrydelay *= potential_spine.athletics_boost_multiplier
 
 	if(carrydelay <= 3 SECONDS)
 		skills_space = " very quickly"
@@ -996,7 +1059,7 @@
 		return
 
 	//Second check to make sure they're still valid to be carried
-	if(!can_be_firemanned(target) || incapacitated(IGNORE_GRAB) || target.buckled)
+	if(!can_be_firemanned(target) || INCAPACITATED_IGNORING(src, INCAPABLE_GRAB) || target.buckled)
 		visible_message(span_warning("[src] fails to fireman carry [target]!"))
 		return
 
@@ -1012,7 +1075,7 @@
 		visible_message(span_warning("[target] fails to climb onto [src]!"))
 		return
 
-	if(target.incapacitated(IGNORE_GRAB) || incapacitated(IGNORE_GRAB))
+	if(INCAPACITATED_IGNORING(target, INCAPABLE_GRAB) || INCAPACITATED_IGNORING(src, INCAPABLE_GRAB))
 		target.visible_message(span_warning("[target] can't hang onto [src]!"))
 		return
 	//NOVA EDIT START
@@ -1059,10 +1122,6 @@
 
 /mob/living/carbon/human/updatehealth()
 	. = ..()
-	if(HAS_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN))
-		remove_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown)
-		remove_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown_flying)
-		return
 	var/health_deficiency = max((maxHealth - health), staminaloss)
 	if(health_deficiency >= 40)
 		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, multiplicative_slowdown = health_deficiency / 75)
@@ -1102,7 +1161,18 @@
 /mob/living/carbon/human/species/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE, list/override_features, list/override_mutantparts, list/override_markings, retain_features = FALSE, retain_mutantparts = FALSE) // NOVA EDIT - Customization
 	. = ..()
 	if(use_random_name)
-		fully_replace_character_name(real_name, dna.species.random_name())
+		fully_replace_character_name(real_name, generate_random_mob_name())
+
+///Proc used to prevent syndicate monkeys and player-selectable Pun Pun able to use objects while stuck in monkey mode.
+/mob/living/carbon/human/proc/make_clever_and_no_dna_scramble()
+	dna.add_mutation(/datum/mutation/human/clever)
+	// Can't make them human or nonclever. At least not with the easy and boring way out.
+	for(var/datum/mutation/human/mutation as anything in dna.mutations)
+		mutation.mutadone_proof = TRUE
+		mutation.instability = 0
+
+	// Extra backup!
+	ADD_TRAIT(src, TRAIT_NO_DNA_SCRAMBLE, SPECIES_TRAIT)
 
 /mob/living/carbon/human/species/abductor
 	race = /datum/species/abductor
@@ -1178,3 +1248,6 @@
 
 /mob/living/carbon/human/species/zombie/infectious
 	race = /datum/species/zombie/infectious
+
+/mob/living/carbon/human/species/voidwalker
+	race = /datum/species/voidwalker

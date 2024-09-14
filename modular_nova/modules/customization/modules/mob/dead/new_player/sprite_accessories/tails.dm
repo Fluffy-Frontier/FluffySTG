@@ -28,7 +28,7 @@
 			return TRUE
 
 /datum/sprite_accessory/tails/none
-	name = "None"
+	name = SPRITE_ACCESSORY_NONE
 	icon_state = "none"
 	recommended_species = list(SPECIES_SYNTH, SPECIES_MAMMAL, SPECIES_HUMAN, SPECIES_HUMANOID, SPECIES_GHOUL)
 	color_src = null
@@ -53,12 +53,17 @@
 	icon_state = "cat"
 	color_src = USE_ONE_COLOR
 
-/datum/sprite_accessory/tails/monkey/default
-	name = "Monkey"
-	icon_state = "monkey"
-	icon = 'icons/mob/human/species/monkey/monkey_tail.dmi'
+/datum/sprite_accessory/tails/human/monkeyColorable
+	icon = 'modular_nova/master_files/icons/mob/sprite_accessory/tails.dmi'
+	icon_state = "monkey_colorable"
 	recommended_species = list(SPECIES_HUMAN, SPECIES_SYNTH, SPECIES_FELINE, SPECIES_MAMMAL, SPECIES_MONKEY, SPECIES_GHOUL)
-	color_src = FALSE
+	color_src = USE_ONE_COLOR
+	name = "Monkey Colorable"
+
+/datum/sprite_accessory/tails/monkey/default
+	icon = 'modular_nova/master_files/icons/mob/sprite_accessory/tails.dmi'
+	icon_state = "monkey"
+	recommended_species = list(SPECIES_HUMAN, SPECIES_SYNTH, SPECIES_FELINE, SPECIES_MAMMAL, SPECIES_MONKEY, SPECIES_GHOUL)
 	organ_type = /obj/item/organ/external/tail/monkey
 
 /datum/sprite_accessory/tails/mammal
@@ -78,7 +83,7 @@
 	recommended_species = list(SPECIES_MAMMAL, SPECIES_HUMAN, SPECIES_SYNTH, SPECIES_TAJARAN, SPECIES_HUMANOID, SPECIES_GHOUL)
 
 /datum/sprite_accessory/tails/mammal/teshari
-	recommended_species = list(SPECIES_TESHARI, SPECIES_TESHARI_ALT) //FLUFFY FRONTIER EDIT - TESHARI_REBORN
+	recommended_species = list(SPECIES_TESHARI)
 
 /datum/sprite_accessory/tails/mammal/wagging/vulpkanin
 	recommended_species = list(SPECIES_MAMMAL, SPECIES_HUMAN, SPECIES_SYNTH, SPECIES_VULP, SPECIES_HUMANOID, SPECIES_GHOUL)
@@ -258,11 +263,11 @@
 	name = "Otusian"
 	icon_state = "otie"
 
-/datum/sprite_accessory/tails/mammal/wagging/plug
+/datum/sprite_accessory/tails/mammal/plug
 	name = "Plug"
 	icon_state = "plugtail"
 
-/datum/sprite_accessory/tails/mammal/wagging/plug/scorpion
+/datum/sprite_accessory/tails/mammal/plug/scorpion
 	name = "Scorpion Plug"
 	icon_state = "scorptail"
 
@@ -441,3 +446,7 @@
 /datum/sprite_accessory/tails/mammal/wagging/rattlesnake
 	name = "Rattlesnake"
 	icon_state = "rattlesnake"
+
+/datum/sprite_accessory/tails/mammal/black_jackal
+	name = "Black-backed Jackal"
+	icon_state = "blackjackal"

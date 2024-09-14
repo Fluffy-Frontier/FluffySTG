@@ -1,10 +1,7 @@
 //attack with an item - open/close cover, insert cell, or (un)lock interface
 
-/obj/machinery/power/apc/item_interaction(mob/living/user, obj/item/tool, list/modifiers, is_right_clicking)
-	. = ..()
-	if(.)
-		return .
-
+/obj/machinery/power/apc/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	. = NONE
 	if(HAS_TRAIT(tool, TRAIT_APC_SHOCKING))
 		. = fork_outlet_act(user, tool)
 		if(.)
@@ -14,10 +11,10 @@
 		togglelock(user)
 		return ITEM_INTERACT_SUCCESS
 
-	if(istype(tool, /obj/item/stock_parts/cell))
+	if(istype(tool, /obj/item/stock_parts/power_store))
 		. = cell_act(user, tool)
 	else if(istype(tool, /obj/item/stack/cable_coil))
-		. = cable_act(user, tool, is_right_clicking)
+		. = cable_act(user, tool, LAZYACCESS(modifiers, RIGHT_CLICK))
 	else if(istype(tool, /obj/item/electronics/apc))
 		. = electronics_act(user, tool)
 	else if(istype(tool, /obj/item/electroadaptive_pseudocircuit))
@@ -55,7 +52,7 @@
 		return ITEM_INTERACT_SUCCESS
 
 /// Called when we interact with the APC with a cell, attempts to insert it
-/obj/machinery/power/apc/proc/cell_act(mob/living/user, obj/item/stock_parts/cell/new_cell)
+/obj/machinery/power/apc/proc/cell_act(mob/living/user, obj/item/stock_parts/power_store/new_cell)
 	if(!opened)
 		return NONE
 
@@ -113,7 +110,7 @@
 		if(isnull(choice) \
 			|| !user.is_holding(installing_cable) \
 			|| !user.Adjacent(src) \
-			|| user.incapacitated() \
+			|| user.incapacitated \
 			|| !can_place_terminal(user, installing_cable, silent = TRUE) \
 		)
 			return ITEM_INTERACT_BLOCKING
@@ -171,7 +168,7 @@
 		if(machine_stat & BROKEN)
 			balloon_alert(user, "frame is too damaged!")
 			return ITEM_INTERACT_BLOCKING
-		if(!pseudocircuit.adapt_circuit(user, circuit_cost = 50 KILO JOULES))
+		if(!pseudocircuit.adapt_circuit(user, circuit_cost = 0.05 * STANDARD_CELL_CHARGE))
 			return ITEM_INTERACT_BLOCKING
 		user.visible_message(
 			span_notice("[user] fabricates a circuit and places it into [src]."),
@@ -185,9 +182,9 @@
 		if(machine_stat & MAINT)
 			balloon_alert(user, "no board for a cell!")
 			return ITEM_INTERACT_BLOCKING
-		if(!pseudocircuit.adapt_circuit(user, circuit_cost = 500 KILO JOULES))
+		if(!pseudocircuit.adapt_circuit(user, circuit_cost = 0.5 * STANDARD_CELL_CHARGE))
 			return ITEM_INTERACT_BLOCKING
-		var/obj/item/stock_parts/cell/crap/empty/bad_cell = new(src)
+		var/obj/item/stock_parts/power_store/battery/crap/empty/bad_cell = new(src)
 		bad_cell.forceMove(src)
 		cell = bad_cell
 		user.visible_message(
@@ -323,7 +320,6 @@
 		balloon_alert(user, "cell removed")
 		var/turf/user_turf = get_turf(user)
 		cell.forceMove(user_turf)
-		cell.update_appearance()
 		cell = null
 		charging = APC_NOT_CHARGING
 		update_appearance()
@@ -427,7 +423,7 @@
 		if(machine_stat & MAINT)
 			balloon_alert(user, "no board for a cell!")
 			return FALSE
-		var/obj/item/stock_parts/cell/crap/empty/C = new(src)
+		var/obj/item/stock_parts/power_store/battery/crap/empty/C = new(src)
 		C.forceMove(src)
 		cell = C
 		balloon_alert(user, "power cell installed")
@@ -487,7 +483,7 @@
 	else if(machine_stat & (BROKEN|MAINT))
 		balloon_alert(user, "nothing happens!")
 	else
-		if(allowed(usr) && !wires.is_cut(WIRE_IDSCAN) && !malfhack && !remote_control_user)
+		if(allowed(usr) && !wires.is_cut(WIRE_IDSCAN) && ((!malfhack && !remote_control_user) || (malfhack && (malfai == user || (user in malfai.connected_robots)))))
 			locked = !locked
 			balloon_alert(user, locked ? "locked" : "unlocked")
 			update_appearance()

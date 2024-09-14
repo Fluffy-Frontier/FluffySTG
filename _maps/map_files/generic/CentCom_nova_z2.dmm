@@ -530,24 +530,6 @@
 /turf/open/floor/carpet/purple,
 /area/centcom/holding/cafe)
 "akJ" = (
-/obj/item/reagent_containers/cup/beaker/bluespace{
-	luminosity = 3;
-	name = "floofmagic beaker";
-	possible_transfer_amounts = list(5,10,15,20,25,30,50,100,150,200,250,500);
-	volume = 500
-	},
-/obj/item/reagent_containers/cup/beaker/bluespace{
-	luminosity = 3;
-	name = "floofmagic beaker";
-	possible_transfer_amounts = list(5,10,15,20,25,30,50,100,150,200,250,500);
-	volume = 500
-	},
-/obj/item/reagent_containers/cup/beaker/bluespace{
-	luminosity = 3;
-	name = "floofmagic beaker";
-	possible_transfer_amounts = list(5,10,15,20,25,30,50,100,150,200,250,500);
-	volume = 500
-	},
 /obj/structure/table/wood,
 /turf/open/indestructible/hoteltile{
 	icon_state = "cafeteria"
@@ -696,6 +678,8 @@
 /obj/item/watertank,
 /obj/item/storage/bag/plants/portaseeder,
 /obj/structure/closet,
+/obj/item/seeds/wheat/meat,
+/obj/item/seeds/wheat/meat,
 /turf/open/indestructible/hoteltile{
 	icon_state = "darkfull"
 	},
@@ -880,17 +864,8 @@
 	},
 /area/centcom/holding/cafepark)
 "anL" = (
-/obj/item/storage/box/donkpockets{
-	pixel_x = 7
-	},
 /obj/structure/table/wood,
-/obj/item/reagent_containers/condiment/saltshaker{
-	pixel_x = -9;
-	pixel_y = 9
-	},
-/obj/item/reagent_containers/condiment/peppermill{
-	pixel_x = -9
-	},
+/obj/machinery/reagentgrinder,
 /turf/open/indestructible/hoteltile{
 	icon_state = "cafeteria"
 	},
@@ -905,6 +880,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 27
 	},
+/obj/structure/sink/kitchen/directional/west,
 /turf/open/indestructible/hoteltile{
 	icon_state = "cafeteria"
 	},
@@ -1004,23 +980,32 @@
 	},
 /area/centcom/holding/cafe)
 "apu" = (
-/obj/item/knife{
-	pixel_x = 10;
-	pixel_y = 3
+/obj/item/reagent_containers/cup/beaker/bluespace{
+	luminosity = 3;
+	name = "floofmagic beaker";
+	possible_transfer_amounts = list(5,10,15,20,25,30,50,100,150,200,250,500);
+	volume = 500
 	},
-/obj/item/storage/bag/tray,
-/obj/item/storage/box/drinkingglasses{
-	pixel_x = -5;
-	pixel_y = 7
+/obj/item/reagent_containers/cup/beaker/bluespace{
+	luminosity = 3;
+	name = "floofmagic beaker";
+	possible_transfer_amounts = list(5,10,15,20,25,30,50,100,150,200,250,500);
+	volume = 500
 	},
-/obj/item/storage/box/cups{
-	pixel_x = -5
-	},
-/obj/item/kitchen/rollingpin{
-	pixel_x = 3;
-	pixel_y = -5
+/obj/item/reagent_containers/cup/beaker/bluespace{
+	luminosity = 3;
+	name = "floofmagic beaker";
+	possible_transfer_amounts = list(5,10,15,20,25,30,50,100,150,200,250,500);
+	volume = 500
 	},
 /obj/structure/table/wood,
+/obj/item/reagent_containers/condiment/saltshaker{
+	pixel_x = -9;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/condiment/peppermill{
+	pixel_x = -9
+	},
 /turf/open/indestructible/hoteltile{
 	icon_state = "cafeteria"
 	},
@@ -1206,7 +1191,9 @@
 /area/centcom/holding/cafepark)
 "asp" = (
 /obj/machinery/hydroponics/constructable,
-/turf/open/misc/dirt/planet,
+/turf/open/indestructible/hoteltile{
+	icon_state = "darkfull"
+	},
 /area/centcom/holding/cafe)
 "asv" = (
 /obj/machinery/door/poddoor/ert,
@@ -1295,11 +1282,27 @@
 	},
 /area/centcom/holding/cafe)
 "ats" = (
-/obj/structure/table,
-/obj/machinery/reagentgrinder{
-	desc = "Used to grind things up into raw materials and liquids.";
-	pixel_x = -5;
-	pixel_y = 5
+/obj/structure/closet/crate,
+/obj/item/storage/box/ingredients/vegetarian,
+/obj/item/storage/box/ingredients/italian,
+/obj/item/storage/box/ingredients/fruity,
+/obj/item/storage/box/ingredients/fiesta,
+/obj/item/storage/box/ingredients/american,
+/obj/item/storage/box/ingredients/exotic,
+/obj/item/reagent_containers/condiment/flour{
+	list_reagents = list(/datum/reagent/consumable/flour = 90);
+	name = "large flour sack";
+	possible_transfer_amounts = list(1,5,10,15,30,60,90);
+	volume = 90
+	},
+/obj/item/reagent_containers/condiment/flour{
+	list_reagents = list(/datum/reagent/consumable/flour = 90);
+	name = "large flour sack";
+	possible_transfer_amounts = list(1,5,10,15,30,60,90);
+	volume = 90
+	},
+/obj/item/storage/box/donkpockets{
+	pixel_x = 7
 	},
 /turf/open/indestructible/hoteltile{
 	icon_state = "cafeteria"
@@ -1415,7 +1418,9 @@
 "auU" = (
 /obj/machinery/hydroponics/constructable,
 /obj/machinery/light/directional/south,
-/turf/open/misc/dirt/planet,
+/turf/open/indestructible/hoteltile{
+	icon_state = "darkfull"
+	},
 /area/centcom/holding/cafe)
 "avb" = (
 /obj/structure/flora/grass/green{
@@ -2169,7 +2174,9 @@
 "aBW" = (
 /obj/machinery/hydroponics/constructable,
 /obj/machinery/light/directional/north,
-/turf/open/misc/dirt/planet,
+/turf/open/indestructible/hoteltile{
+	icon_state = "darkfull"
+	},
 /area/centcom/holding/cafe)
 "aCa" = (
 /obj/effect/spawner/liquids_spawner,
@@ -2324,9 +2331,8 @@
 	},
 /area/centcom/holding/cafepark)
 "aDY" = (
-/obj/machinery/processor,
-/obj/machinery/light/directional/west,
-/obj/structure/table,
+/obj/machinery/deepfryer,
+/obj/machinery/light/directional/north,
 /turf/open/indestructible/hoteltile{
 	icon_state = "cafeteria"
 	},
@@ -2337,7 +2343,6 @@
 /area/centcom/holding/cafepark)
 "aEf" = (
 /obj/structure/water_source/puddle{
-	layer = 2.89;
 	pixel_x = 14;
 	pixel_y = 9
 	},
@@ -2357,7 +2362,24 @@
 	},
 /area/centcom/holding/cafe)
 "aEG" = (
-/obj/machinery/vending/dinnerware,
+/obj/item/knife{
+	pixel_x = 10;
+	pixel_y = 3
+	},
+/obj/item/storage/bag/tray,
+/obj/item/storage/box/drinkingglasses{
+	pixel_x = -5;
+	pixel_y = 7
+	},
+/obj/item/storage/box/cups{
+	pixel_x = -5
+	},
+/obj/item/kitchen/rollingpin{
+	pixel_x = 3;
+	pixel_y = -5
+	},
+/obj/structure/table/wood,
+/obj/item/sharpener,
 /turf/open/indestructible/hoteltile{
 	icon_state = "cafeteria"
 	},
@@ -2530,8 +2552,13 @@
 	},
 /area/centcom/holding/cafe)
 "aGV" = (
-/obj/item/sharpener,
-/obj/structure/table/wood,
+/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/item/reagent_containers/condiment/enzyme{
+	name = "universally-sized universal enzyme";
+	pixel_x = -4;
+	volume = 2000
+	},
+/obj/machinery/light/directional/west,
 /turf/open/indestructible/hoteltile{
 	icon_state = "cafeteria"
 	},
@@ -2577,9 +2604,7 @@
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/obj/structure/window/reinforced/spawner/directional/east{
-	layer = 2.9
-	},
+/obj/structure/window/reinforced/spawner/directional/east,
 /obj/structure/window/reinforced/spawner/directional/south,
 /turf/open/floor/grass/fairy,
 /area/centcom/holding/cafepark)
@@ -2660,13 +2685,11 @@
 "aIt" = (
 /obj/structure/table/wood,
 /obj/item/gun/energy/floragun,
+/obj/item/gun/energy/floragun,
+/obj/item/gun/energy/floragun,
 /obj/item/geneshears,
-/obj/machinery/smartfridge/disks{
-	pixel_y = 2
-	},
-/obj/item/storage/fancy/rollingpapers,
-/obj/item/secateurs,
-/obj/item/hatchet,
+/obj/item/geneshears,
+/obj/item/geneshears,
 /turf/open/indestructible/hoteltile{
 	icon_state = "darkfull"
 	},
@@ -2894,8 +2917,8 @@
 /turf/open/floor/light/colour_cycle/dancefloor_a,
 /area/centcom/holding/cafepark)
 "aLY" = (
-/obj/machinery/gibber,
-/obj/machinery/light/directional/north,
+/obj/machinery/vending/dinnerware,
+/obj/machinery/light/directional/east,
 /turf/open/indestructible/hoteltile{
 	icon_state = "cafeteria"
 	},
@@ -3361,13 +3384,14 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/centcom/interlink)
 "aQD" = (
-/obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/reagent_containers/condiment/enzyme{
-	layer = 5;
-	name = "universally-sized universal enzyme";
-	pixel_x = -4;
-	volume = 2000
+/obj/structure/closet/crate{
+	name = "frontier appliances"
 	},
+/obj/machinery/chem_dispenser/frontier_appliance,
+/obj/machinery/griddle/frontier_tabletop/unanchored,
+/obj/machinery/microwave/frontier_printed/unanchored,
+/obj/machinery/oven/range_frontier/unanchored,
+/obj/machinery/biogenerator/foodricator,
 /turf/open/indestructible/hoteltile{
 	icon_state = "cafeteria"
 	},
@@ -3829,10 +3853,8 @@
 	},
 /area/centcom/holding/cafepark)
 "aUT" = (
-/obj/structure/closet/crate/freezer,
-/turf/open/indestructible/hoteltile{
-	icon_state = "cafeteria"
-	},
+/obj/machinery/gibber,
+/turf/open/floor/iron/showroomfloor,
 /area/centcom/holding/cafe)
 "aUZ" = (
 /obj/effect/turf_decal/tile/green,
@@ -4183,7 +4205,8 @@
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding/cafe)
 "aZC" = (
-/obj/machinery/deepfryer,
+/obj/machinery/smartfridge/drying,
+/obj/machinery/light/directional/north,
 /turf/open/indestructible/hoteltile{
 	icon_state = "cafeteria"
 	},
@@ -4530,9 +4553,7 @@
 /turf/open/floor/wood/parquet,
 /area/centcom/interlink)
 "buX" = (
-/obj/machinery/vending/hydronutrients{
-	products = list(/obj/item/reagent_containers/cup/bottle/nutrient/ez = 50, /obj/item/reagent_containers/cup/bottle/nutrient/l4z = 20, /obj/item/reagent_containers/cup/bottle/nutrient/rh = 10, /obj/item/reagent_containers/spray/pestspray = 30, /obj/item/reagent_containers/syringe = 5, /obj/item/storage/bag/plants = 30, /obj/item/cultivator = 10, /obj/item/shovel/spade = 10, /obj/item/plant_analyzer = 10)
-	},
+/obj/machinery/vending/hydronutrients,
 /turf/open/indestructible/hoteltile{
 	icon_state = "darkfull"
 	},
@@ -4688,7 +4709,9 @@
 	},
 /area/centcom/holding/cafepark)
 "bIf" = (
-/obj/machinery/biogenerator,
+/obj/machinery/biogenerator{
+	biomass = 5000
+	},
 /turf/closed/indestructible/wood,
 /area/centcom/holding/cafe)
 "bIs" = (
@@ -4957,10 +4980,10 @@
 /turf/open/floor/grass,
 /area/centcom/interlink)
 "bWy" = (
-/obj/machinery/button/door/directional/east{
+/obj/machinery/button/door/indestructible/no_telekinesis/directional/east{
+	pixel_y = -8;
 	id = "arr_hall_lookout";
 	name = "Lookout Shutters Control";
-	pixel_y = -8;
 	req_access = list("command")
 	},
 /turf/open/floor/iron/dark,
@@ -5129,8 +5152,7 @@
 /area/centcom/interlink)
 "cna" = (
 /obj/structure/chair/wood{
-	dir = 1;
-	layer = 2.8
+	dir = 1
 	},
 /obj/structure/wall_torch/spawns_lit/directional/east,
 /turf/open/floor/wood,
@@ -5244,6 +5266,15 @@
 	},
 /turf/open/floor/iron/white,
 /area/centcom/interlink)
+"cyQ" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/centcom/interlink)
 "czd" = (
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 4
@@ -5315,7 +5346,7 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 10
 	},
-/obj/machinery/smartfridge/drying_rack,
+/obj/machinery/smartfridge/drying/rack,
 /turf/open/misc/dirt/planet,
 /area/centcom/holding/cafepark)
 "cEy" = (
@@ -5344,13 +5375,8 @@
 /turf/open/indestructible/carpet,
 /area/centcom/holding/cafe)
 "cHy" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/iron,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
 /area/centcom/interlink)
 "cHY" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -5390,10 +5416,7 @@
 /turf/open/floor/iron,
 /area/centcom/interlink)
 "cMd" = (
-/obj/structure/disposaloutlet{
-	dir = 4
-	},
-/obj/structure/disposalpipe/trunk,
+/obj/structure/sign/poster/random/directional/west,
 /turf/open/floor/plating,
 /area/centcom/interlink)
 "cMh" = (
@@ -5593,6 +5616,14 @@
 /obj/structure/closet/secure_closet/freezer/kitchen/all_access,
 /turf/open/floor/iron/showroomfloor,
 /area/centcom/holding/cafe)
+"dda" = (
+/obj/machinery/disposal/bin,
+/obj/effect/turf_decal/delivery,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/centcom/interlink)
 "ddp" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -5685,6 +5716,10 @@
 "doA" = (
 /turf/open/floor/wood/large,
 /area/centcom/holding/cafe)
+"dpn" = (
+/obj/structure/window/reinforced/spawner/directional/north,
+/turf/open/floor/plating,
+/area/centcom/interlink)
 "drE" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -6125,12 +6160,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/blue/filled/line,
-/obj/machinery/vending/imported{
-	default_price = 0;
-	extended_inventory = 1;
-	extra_price = 0;
-	fair_market_price = 0
-	},
+/obj/machinery/vending/hotdog/museum,
 /turf/open/indestructible/hoteltile{
 	icon_state = "floor"
 	},
@@ -6314,7 +6344,7 @@
 	},
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "intersposals"
+	id = "interdisposals"
 	},
 /turf/open/floor/plating,
 /area/centcom/interlink)
@@ -6492,7 +6522,7 @@
 "eXn" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "intersposals"
+	id = "interdisposals"
 	},
 /turf/open/floor/plating,
 /area/centcom/interlink)
@@ -6899,12 +6929,10 @@
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding/cafe)
 "fLG" = (
-/obj/machinery/disposal/bin,
-/obj/effect/turf_decal/delivery,
-/obj/structure/disposalpipe/trunk{
-	dir = 8
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
-/turf/open/floor/iron/dark,
+/turf/open/floor/plating,
 /area/centcom/interlink)
 "fMM" = (
 /obj/machinery/duct,
@@ -7706,7 +7734,7 @@
 /area/centcom/interlink)
 "hjK" = (
 /obj/machinery/light/directional/north,
-/turf/closed/indestructible/riveted,
+/turf/open/floor/iron/dark,
 /area/centcom/interlink)
 "hkQ" = (
 /obj/effect/turf_decal/siding/wood{
@@ -7861,8 +7889,8 @@
 /turf/open/floor/mineral/titanium,
 /area/centcom/interlink)
 "huK" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/structure/disposalpipe/junction/flip{
+	dir = 8
 	},
 /turf/open/floor/iron/dark,
 /area/centcom/interlink)
@@ -8288,13 +8316,12 @@
 /turf/open/floor/carpet,
 /area/centcom/holding/cafe)
 "ikj" = (
-/obj/effect/turf_decal/trimline/dark_green/filled/line{
-	dir = 4
+/obj/effect/turf_decal/delivery,
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
-/turf/open/floor/iron,
+/turf/open/floor/iron/dark,
 /area/centcom/interlink)
 "ikl" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -8457,6 +8484,11 @@
 	smoothing_flags = 0
 	},
 /area/centcom/holding/cafepark)
+"iuy" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/window/reinforced/spawner/directional/north,
+/turf/open/floor/plating,
+/area/centcom/interlink)
 "iuK" = (
 /obj/effect/light_emitter/interlink,
 /turf/open/floor/carpet/red,
@@ -8852,8 +8884,9 @@
 /turf/open/indestructible/plating,
 /area/centcom/holding/cafepark)
 "jfB" = (
+/obj/structure/window/reinforced/spawner/directional/north,
 /obj/machinery/conveyor_switch/oneway{
-	id = "cargodisposals";
+	id = "interdisposals";
 	name = "disposals conveyor switch"
 	},
 /turf/open/floor/plating,
@@ -8933,25 +8966,20 @@
 	pixel_x = 7;
 	pixel_y = 5
 	},
-/obj/item/paper/fluff/junkmail_redpill/true,
-/obj/item/paper/fluff/junkmail_redpill{
-	pixel_x = 1;
-	pixel_y = 8
-	},
 /obj/item/paper/fluff/jobs/prisoner/letter,
 /obj/item/paper/fluff/jobs/security/court_judgement{
 	pixel_x = -5;
 	pixel_y = 1
 	},
 /obj/machinery/light/cold/directional/east,
-/obj/machinery/button/door/directional/east{
-	id = "arriv_hall";
-	name = "Arrivals Access Shutter Control";
-	pixel_y = 8;
-	req_access = list("security")
-	},
 /obj/effect/turf_decal/tile/red/opposingcorners,
 /obj/effect/turf_decal/delivery,
+/obj/machinery/button/door/indestructible/no_telekinesis/directional/east{
+	pixel_y = 8;
+	id = "arriv_hall";
+	name = "Arrivals Access Shutter Control";
+	req_access = list("security")
+	},
 /turf/open/floor/iron/dark,
 /area/centcom/interlink)
 "joj" = (
@@ -9067,7 +9095,8 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/window/indestructible{
 	id = "arriv_hall";
-	name = "Windowed Interlink Access Shutters"
+	name = "Windowed Interlink Access Shutters";
+	move_resist = 3001
 	},
 /turf/open/floor/plating,
 /area/centcom/interlink)
@@ -9257,20 +9286,13 @@
 /turf/open/floor/grass,
 /area/centcom/interlink)
 "jTQ" = (
-/obj/structure/closet/crate/bin,
-/obj/item/paper/pamphlet/centcom/visitor_info,
-/obj/item/paper/pamphlet/centcom/visitor_info{
-	pixel_x = -9
-	},
-/obj/item/paper/pamphlet/centcom/visitor_info{
-	pixel_x = -3
-	},
-/obj/item/paper/pamphlet/centcom/visitor_info{
-	pixel_x = 3
-	},
 /obj/effect/turf_decal/delivery,
 /obj/effect/turf_decal/trimline/dark_green/filled/line{
 	dir = 6
+	},
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
 	},
 /turf/open/floor/iron,
 /area/centcom/interlink)
@@ -9949,6 +9971,11 @@
 	},
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding/cafe)
+"laK" = (
+/obj/structure/window/reinforced/spawner/directional/north,
+/obj/structure/chair/stool/directional/north,
+/turf/open/floor/plating,
+/area/centcom/interlink)
 "laX" = (
 /obj/structure/fans/tiny/invisible,
 /obj/structure/railing/corner{
@@ -10266,9 +10293,7 @@
 /area/centcom/interlink)
 "lCi" = (
 /obj/structure/window/reinforced/spawner/directional/east,
-/obj/structure/window/reinforced/spawner/directional/north{
-	layer = 2.9
-	},
+/obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/chair/stool/directional/south{
 	dir = 1
 	},
@@ -11720,6 +11745,11 @@
 /obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood,
 /area/centcom/interlink/dorm_rooms)
+"nYN" = (
+/obj/effect/mapping_helpers/broken_floor,
+/obj/machinery/light/warm/directional/north,
+/turf/open/floor/plating,
+/area/centcom/interlink)
 "nZP" = (
 /obj/machinery/light/cold/directional/west,
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -11832,7 +11862,8 @@
 "onb" = (
 /obj/machinery/door/poddoor/shutters/indestructible{
 	id = "arriv_hall";
-	name = "Interlink Access Shutters"
+	name = "Interlink Access Shutters";
+	move_resist = 3001
 	},
 /turf/open/floor/iron/dark,
 /area/centcom/interlink)
@@ -11998,9 +12029,7 @@
 	pixel_y = 3
 	},
 /obj/structure/flora/bush/ferny,
-/obj/structure/window/reinforced/spawner/directional/east{
-	layer = 2.9
-	},
+/obj/structure/window/reinforced/spawner/directional/east,
 /turf/open/floor/grass/fairy,
 /area/centcom/holding/cafepark)
 "oyi" = (
@@ -12216,6 +12245,16 @@
 	},
 /turf/open/floor/iron/dark,
 /area/centcom/holding/cafe)
+"oPO" = (
+/obj/machinery/light/directional/north,
+/obj/effect/turf_decal/trimline/dark_green/filled/line{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
+/turf/open/floor/iron,
+/area/centcom/interlink)
 "oQW" = (
 /obj/structure/chair/sofa/right/brown{
 	dir = 1
@@ -12618,6 +12657,12 @@
 	},
 /turf/open/floor/carpet/black,
 /area/centcom/holding/cafe)
+"ptB" = (
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/centcom/interlink)
 "puo" = (
 /obj/effect/turf_decal/sand,
 /obj/machinery/light/directional/east,
@@ -12754,6 +12799,15 @@
 /obj/effect/mapping_helpers/airlock/access/all/service/kitchen,
 /turf/open/floor/iron/freezer,
 /area/centcom/interlink)
+"pFm" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/centcom/interlink)
 "pFr" = (
 /obj/effect/mapping_helpers/airlock/access/all/security/general,
 /obj/machinery/door/airlock/security{
@@ -12802,7 +12856,8 @@
 /obj/effect/turf_decal/trimline/dark_green/corner,
 /obj/machinery/door/poddoor/shutters/indestructible{
 	id = "arr_hall_lookout";
-	name = "Interlink Access Shutters"
+	name = "Interlink Access Shutters";
+	move_resist = 3001
 	},
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /obj/effect/mapping_helpers/airlock/access/any/cent_com/rep_or_captain,
@@ -13080,6 +13135,14 @@
 	icon_state = "darkfull"
 	},
 /area/centcom/holding/cafepark)
+"pYA" = (
+/obj/structure/disposaloutlet{
+	dir = 4
+	},
+/obj/structure/disposalpipe/trunk,
+/obj/structure/window/reinforced/spawner/directional/west,
+/turf/open/floor/plating,
+/area/centcom/interlink)
 "pYF" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
@@ -13113,7 +13176,8 @@
 	},
 /obj/machinery/door/poddoor/shutters/indestructible{
 	id = "arriv_hall";
-	name = "Interlink Access Shutters"
+	name = "Interlink Access Shutters";
+	move_resist = 3001
 	},
 /turf/open/floor/iron/dark,
 /area/centcom/interlink)
@@ -13209,12 +13273,11 @@
 /turf/open/floor/iron,
 /area/centcom/interlink)
 "qjL" = (
-/obj/effect/turf_decal/delivery,
-/obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk{
-	dir = 8
+/obj/effect/mapping_helpers/broken_floor,
+/obj/machinery/door/window/brigdoor/left/directional/north{
+	name = "Danger: Conveyor Access"
 	},
-/turf/open/floor/iron/dark,
+/turf/open/floor/plating,
 /area/centcom/interlink)
 "qkZ" = (
 /obj/effect/turf_decal/tile/dark_blue/opposingcorners,
@@ -13232,6 +13295,13 @@
 	dir = 4
 	},
 /turf/open/floor/iron/dark,
+/area/centcom/holding/cafe)
+"qmK" = (
+/obj/machinery/processor,
+/obj/structure/table/wood,
+/turf/open/indestructible/hoteltile{
+	icon_state = "cafeteria"
+	},
 /area/centcom/holding/cafe)
 "qna" = (
 /obj/structure/barricade/wooden,
@@ -13965,13 +14035,6 @@
 	icon_state = "darkfull"
 	},
 /area/centcom/holding/cafepark)
-"rCG" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/centcom/interlink)
 "rDg" = (
 /obj/effect/light_emitter/interlink,
 /obj/effect/turf_decal/weather/dirt{
@@ -14533,6 +14596,13 @@
 	},
 /turf/open/floor/iron,
 /area/centcom/interlink)
+"sqk" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/centcom/interlink)
 "sqZ" = (
 /obj/structure/chair/sofa/bench/left,
 /turf/open/floor/iron/cafeteria,
@@ -14991,6 +15061,10 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron/freezer,
 /area/centcom/interlink)
+"sYV" = (
+/obj/machinery/door/poddoor/ert,
+/turf/closed/indestructible/riveted,
+/area/centcom/interlink)
 "sYY" = (
 /obj/effect/turf_decal/tile/blue/anticorner/contrasted{
 	dir = 4
@@ -15017,9 +15091,7 @@
 /turf/open/floor/iron,
 /area/centcom/interlink)
 "tag" = (
-/obj/machinery/vending/tool{
-	onstation = 0
-	},
+/obj/machinery/vending/tool,
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding/cafe)
 "tbI" = (
@@ -15490,7 +15562,7 @@
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding/cafepark)
 "tYf" = (
-/obj/machinery/vending/autodrobe/all_access,
+/obj/machinery/vending/autodrobe,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron/dark,
 /area/centcom/interlink)
@@ -15524,25 +15596,6 @@
 /turf/open/floor/iron,
 /area/centcom/interlink)
 "uab" = (
-/obj/structure/closet/crate,
-/obj/item/storage/box/ingredients/vegetarian,
-/obj/item/storage/box/ingredients/italian,
-/obj/item/storage/box/ingredients/fruity,
-/obj/item/storage/box/ingredients/fiesta,
-/obj/item/storage/box/ingredients/american,
-/obj/item/storage/box/ingredients/exotic,
-/obj/item/reagent_containers/condiment/flour{
-	list_reagents = list(/datum/reagent/consumable/flour = 90);
-	name = "large flour sack";
-	possible_transfer_amounts = list(1,5,10,15,30,60,90);
-	volume = 90
-	},
-/obj/item/reagent_containers/condiment/flour{
-	list_reagents = list(/datum/reagent/consumable/flour = 90);
-	name = "large flour sack";
-	possible_transfer_amounts = list(1,5,10,15,30,60,90);
-	volume = 90
-	},
 /obj/machinery/button/door{
 	id = "ghostcafekitchen";
 	name = "Kitchen Shutters Control";
@@ -15633,9 +15686,7 @@
 /area/centcom/holding/cafe)
 "ueC" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/condiment/enzyme{
-	layer = 5
-	},
+/obj/item/reagent_containers/condiment/enzyme,
 /obj/machinery/light/directional/south,
 /obj/item/reagent_containers/cup/beaker/bluespace{
 	luminosity = 3;
@@ -15847,7 +15898,9 @@
 /turf/open/misc/grass/planet,
 /area/centcom/holding/cafepark)
 "uxo" = (
-/obj/structure/disposalpipe/segment,
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
 /turf/open/floor/plating,
 /area/centcom/interlink)
 "uxW" = (
@@ -16875,13 +16928,9 @@
 /turf/open/floor/grass,
 /area/centcom/interlink)
 "wwF" = (
-/obj/effect/turf_decal/trimline/dark_green/filled/line{
-	dir = 5
+/turf/closed/indestructible/fakedoor{
+	name = "Interlink Disposal Access"
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 6
-	},
-/turf/open/floor/iron,
 /area/centcom/interlink)
 "wyd" = (
 /obj/structure/railing/wooden_fencing{
@@ -17296,13 +17345,11 @@
 /turf/open/floor/wood/tile,
 /area/centcom/interlink)
 "xkb" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 4
+/obj/machinery/mass_driver/trash{
+	dir = 1;
+	id = "interlinkdriver"
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/iron,
+/turf/open/floor/plating,
 /area/centcom/interlink)
 "xkO" = (
 /obj/structure/railing{
@@ -17683,7 +17730,8 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/indestructible{
 	id = "arr_hall_lookout";
-	name = "Interlink Access Shutters"
+	name = "Interlink Access Shutters";
+	move_resist = 3001
 	},
 /turf/open/floor/plating,
 /area/centcom/interlink)
@@ -17752,13 +17800,13 @@
 	req_access = list("security")
 	},
 /obj/machinery/light/cold/directional/west,
-/obj/machinery/button/door/directional/west{
-	id = "arriv_hall";
-	name = "Arrivals Access Shutter Control";
-	pixel_y = 8;
-	req_access = list("security")
-	},
 /obj/effect/turf_decal/tile/red/opposingcorners,
+/obj/machinery/button/door/indestructible/no_telekinesis/directional/west{
+	pixel_y = 8;
+	req_access = list("security");
+	id = "arriv_hall";
+	name = "Arrivals Access Shutter Control"
+	},
 /turf/open/floor/iron/dark,
 /area/centcom/interlink)
 "xVV" = (
@@ -25239,8 +25287,8 @@ aWb
 dkE
 tvw
 tvw
+tvw
 hjK
-aXG
 aXG
 ubn
 sci
@@ -33939,8 +33987,8 @@ aaa
 aaa
 aaa
 aaa
-aaa
-tvw
+wwF
+aqG
 cMd
 uxo
 fov
@@ -34196,10 +34244,10 @@ aaa
 aaa
 aaa
 aaa
-aaa
 tvw
-eXn
+nYN
 aqG
+fLG
 tvw
 mtv
 eOx
@@ -34208,7 +34256,7 @@ pZh
 jtl
 aXG
 huK
-xyz
+ikj
 pHQ
 pZh
 pZh
@@ -34453,10 +34501,10 @@ aaa
 aaa
 aaa
 aaa
-aaa
 tvw
-eGs
-aqG
+pYA
+iuy
+ptB
 tvw
 bjh
 cAI
@@ -34464,7 +34512,7 @@ mDs
 xqq
 tUz
 uYo
-cHy
+pFm
 uYo
 eNn
 xqq
@@ -34710,10 +34758,10 @@ aaa
 aaa
 aaa
 aaa
-aaa
 tvw
 eXn
-aqG
+dpn
+cHy
 tvw
 aXG
 aXG
@@ -34967,10 +35015,10 @@ aaa
 aaa
 aaa
 aaa
-aaa
 tvw
-eXn
+eGs
 jfB
+aqG
 tvw
 aDg
 uTg
@@ -34987,9 +35035,9 @@ alx
 aDg
 tvw
 tvw
-ukp
-lrp
-eYX
+oPO
+bIs
+eXw
 jTQ
 tvw
 aFe
@@ -35224,10 +35272,10 @@ aaa
 aaa
 aaa
 aaa
-aaa
 tvw
-tvw
-tvw
+eXn
+laK
+aqG
 tvw
 aXG
 bdI
@@ -35244,7 +35292,7 @@ cal
 aXG
 tvw
 oAn
-uUo
+oOC
 nJp
 tvw
 tvw
@@ -35481,10 +35529,10 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
+tvw
+eXn
+qjL
+aqG
 tvw
 dLq
 lsV
@@ -35501,7 +35549,7 @@ dHD
 aXG
 tvw
 fGC
-bIG
+hvQ
 nJp
 tvw
 iVr
@@ -35738,10 +35786,10 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
+tvw
+eXn
+tvw
+tvw
 tvw
 aXG
 alO
@@ -35758,7 +35806,7 @@ wYH
 aXG
 tvw
 fGC
-bIG
+hvQ
 nJp
 tvw
 tfe
@@ -35995,9 +36043,9 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
+sYV
+xkb
+tvw
 aaa
 tvw
 aXG
@@ -36015,7 +36063,7 @@ aXG
 aXG
 tvw
 vsB
-bIG
+hvQ
 nJp
 tvw
 tvw
@@ -36252,9 +36300,9 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
+tvw
+tvw
+tvw
 aaa
 ckV
 hES
@@ -36263,7 +36311,7 @@ eHo
 amv
 tvw
 aDg
-rCG
+sqk
 aDg
 tvw
 amv
@@ -36272,7 +36320,7 @@ aXG
 aXG
 tvw
 iMY
-bIG
+hvQ
 pSt
 kOZ
 sga
@@ -36520,7 +36568,7 @@ inr
 nrl
 rYR
 rYR
-xkb
+cyQ
 rYR
 rYR
 ojv
@@ -36528,8 +36576,8 @@ liU
 aXG
 gAj
 tvw
-wwF
-ikj
+iIb
+eYX
 eYX
 eYX
 aPe
@@ -36785,7 +36833,7 @@ aXG
 aXG
 aXG
 tvw
-qjL
+xyz
 dAM
 dmR
 tvw
@@ -37034,7 +37082,7 @@ aXG
 aXG
 aXG
 aXG
-fLG
+dda
 aXG
 aXG
 aXG
@@ -58651,7 +58699,7 @@ aFP
 aLH
 aFP
 aAc
-aFP
+auf
 mCg
 aFP
 aFP
@@ -58907,7 +58955,7 @@ aqf
 aFP
 aFP
 aFP
-auf
+aFP
 aFP
 kPK
 aFP
@@ -59674,13 +59722,13 @@ alH
 alH
 alH
 aSP
-aSP
-aFP
-aFP
-aFP
-aFP
-aFP
-lwv
+aqf
+aqf
+aqf
+aqf
+aqf
+aqf
+aqf
 bkA
 wUS
 gMy
@@ -59931,13 +59979,13 @@ aFN
 aFN
 aFN
 aSP
-aSP
-auf
-aFP
-aFP
-aFP
-aMJ
-lwv
+aqf
+aDY
+aPG
+wcf
+aGV
+rxB
+aqf
 sGf
 wUS
 gMy
@@ -60188,13 +60236,13 @@ fTb
 fTb
 fTb
 aSP
-aSP
-aFP
-aFP
-aFP
-aFP
-aFP
-lwv
+aqf
+aga
+aBd
+aBd
+aBd
+aQD
+aqf
 oaM
 wUS
 gMy
@@ -60446,11 +60494,11 @@ ajj
 ajj
 ajj
 aqf
-aqf
-aqf
-aqf
-aqf
-aqf
+aga
+aBd
+aBd
+aBd
+ats
 aqf
 aqf
 aqf
@@ -60703,12 +60751,12 @@ aqf
 aqf
 aqf
 aqf
-aga
-aPG
-ats
+awM
+aBd
+aBd
+aBd
+aBd
 amH
-aDY
-aUT
 aqf
 aOw
 aUo
@@ -60962,8 +61010,8 @@ dRs
 aqf
 awM
 aBd
-aBd
-aBd
+qmK
+apu
 aBd
 uab
 aqf
@@ -61222,7 +61270,7 @@ aBd
 anL
 akJ
 aBd
-rxB
+aBd
 aFn
 gPN
 aUo
@@ -61474,10 +61522,10 @@ aNY
 aNY
 asY
 aqf
-aZC
+atq
 aBd
-apu
-aGV
+akJ
+akJ
 aBd
 aBd
 aNj
@@ -61729,14 +61777,14 @@ aqf
 liK
 aNY
 aNY
-asY
+aUT
 aqf
-aLY
+atq
 aBd
 aBd
 aBd
 aBd
-aZK
+aBd
 aFn
 koF
 aUo
@@ -61988,12 +62036,12 @@ aHb
 aqf
 aqf
 aqf
-atq
+aZC
 aoq
 aEG
-wcf
+aLY
 aBd
-aQD
+aZK
 aqf
 ptd
 aUo

@@ -56,7 +56,7 @@
 	desc = "A plated mantle that one might wrap around the upper torso. The 'scales' of the garment signify the members of security and how you're carrying them on your shoulders."
 	icon = 'modular_nova/master_files/icons/mob/clothing/neck.dmi'
 	worn_icon = 'modular_nova/master_files/icons/mob/clothing/neck.dmi'
-	icon_state = "hosmantle_blue" //There's a red version if you remove the _blue, but its not coded in currently.
+	icon_state = "hosmantle_blue" //There's a red version if you remove the _blue, but it's not coded in currently.
 
 /obj/item/clothing/neck/mantle/bsmantle
 	name = "\proper the blueshield's mantle"
@@ -103,12 +103,12 @@
 	. = ..()
 	AddComponent(/datum/component/toggle_icon, toggle_noun = "scarf")
 
-/obj/item/clothing/neck/face_scarf/AltClick(mob/user) //Make sure that toggling actually hides the snout so that it doesn't clip
-	. = ..()
+/obj/item/clothing/neck/face_scarf/click_alt(mob/user) //Make sure that toggling actually hides the snout so that it doesn't clip
 	if(icon_state != "face_scarf_t")
 		flags_inv = HIDEFACIALHAIR | HIDESNOUT
 	else
 		flags_inv = HIDEFACIALHAIR
+	return CLICK_ACTION_SUCCESS
 
 /obj/item/clothing/neck/maid_neck_cover
 	name = "maid neck cover"

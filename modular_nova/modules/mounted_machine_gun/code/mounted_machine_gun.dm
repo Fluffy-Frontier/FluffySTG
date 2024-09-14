@@ -153,7 +153,7 @@
 	. = ..()
 
 /obj/machinery/mounted_machine_gun/user_buckle_mob(mob/living/user_to_buckle, mob/buckling_user, check_loc = TRUE)
-	if(user_to_buckle.incapacitated() || !istype(user_to_buckle))
+	if(user_to_buckle.incapacitated || !istype(user_to_buckle))
 		return
 	user_to_buckle.forceMove(get_turf(src))
 	. = ..()
@@ -169,11 +169,9 @@
 
 	update_positioning()
 
-/obj/machinery/mounted_machine_gun/AltClick(mob/user)
-	. = ..()
-	if(!can_interact(user))
-		return
+/obj/machinery/mounted_machine_gun/click_alt(mob/user)
 	toggle_cover(user)
+	return CLICK_ACTION_SUCCESS
 
 /obj/machinery/mounted_machine_gun/attack_hand_secondary(mob/living/user, list/modifiers)
 	. = ..()
@@ -193,12 +191,12 @@
 	if(!istype(weapon, ammo_box_type))
 		return
 	if(ammo_box)
-		balloon_alert("already loaded!")
+		balloon_alert(user, "already loaded!")
 		return
 	ammo_box = weapon
 	weapon.forceMove(src)
 	playsound(src, 'modular_nova/modules/mounted_machine_gun/sound/insert_ammobox.ogg', 100)
-	balloon_alert("ammo box inserted!")
+	balloon_alert(user, "ammo box inserted!")
 
 /obj/machinery/mounted_machine_gun/proc/remove_ammo_box(mob/living/user)
 	ammo_box.forceMove(drop_location())
@@ -404,7 +402,7 @@
 			direction_track(current_user, target_turf)
 
 /obj/machinery/mounted_machine_gun/proc/direction_track(mob/user, atom/targeted)
-	if(user.incapacitated())
+	if(user.incapacitated)
 		return
 	setDir(get_dir(src, targeted))
 	user.setDir(dir)

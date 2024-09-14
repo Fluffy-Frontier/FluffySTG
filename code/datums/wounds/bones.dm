@@ -146,16 +146,38 @@
 			if(1 to 6)
 				victim.bleed(blood_bled, TRUE)
 			if(7 to 13)
-				victim.visible_message("<span class='smalldanger'>A thin stream of blood drips from [victim]'s mouth from the blow to [victim.p_their()] chest.</span>", span_danger("You cough up a bit of blood from the blow to your chest."), vision_distance=COMBAT_MESSAGE_RANGE)
+				victim.visible_message(
+					span_smalldanger("A thin stream of blood drips from [victim]'s mouth from the blow to [victim.p_their()] chest."),
+					span_danger("You cough up a bit of blood from the blow to your chest."),
+					vision_distance = COMBAT_MESSAGE_RANGE,
+				)
 				victim.bleed(blood_bled, TRUE)
 			if(14 to 19)
-				victim.visible_message("<span class='smalldanger'>Blood spews out of [victim]'s mouth from the blow to [victim.p_their()] chest!</span>", span_danger("You spit out a string of blood from the blow to your chest!"), vision_distance=COMBAT_MESSAGE_RANGE)
-				new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir)
+				victim.visible_message(
+					span_smalldanger("Blood spews out of [victim]'s mouth from the blow to [victim.p_their()] chest!"),
+					span_danger("You spit out a string of blood from the blow to your chest!"),
+					vision_distance = COMBAT_MESSAGE_RANGE,
+				)
+				// NOVA EDIT ADDITION BEGIN - Xenohybrid blood color
+				if(victim.get_blood_id() == /datum/reagent/toxin/acid)
+					new /obj/effect/temp_visual/dir_setting/bloodsplatter/xenosplatter(victim.loc, victim.dir)
+				else
+					new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir)
+				// NOVA EDIT ADDITION END
 				victim.bleed(blood_bled)
 			if(20 to INFINITY)
-				victim.visible_message(span_danger("Blood spurts out of [victim]'s mouth from the blow to [victim.p_their()] chest!"), span_danger("<b>You choke up on a spray of blood from the blow to your chest!</b>"), vision_distance=COMBAT_MESSAGE_RANGE)
+				victim.visible_message(
+					span_danger("Blood spurts out of [victim]'s mouth from the blow to [victim.p_their()] chest!"),
+					span_bolddanger("You choke up on a spray of blood from the blow to your chest!"),
+					vision_distance = COMBAT_MESSAGE_RANGE,
+				)
 				victim.bleed(blood_bled)
-				new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir)
+				// NOVA EDIT ADDITION BEGIN - Xenohybrid blood color
+				if(victim.get_blood_id() == /datum/reagent/toxin/acid)
+					new /obj/effect/temp_visual/dir_setting/bloodsplatter/xenosplatter(victim.loc, victim.dir)
+				else
+					new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir)
+				// NOVA EDIT ADDITION END
 				victim.add_splatter_floor(get_step(victim.loc, victim.dir))
 
 /datum/wound/blunt/bone/modify_desc_before_span(desc)
@@ -232,8 +254,10 @@
 		victim.visible_message(span_danger("[victim]'s dislocated [limb.plaintext_zone] pops back into place!"), span_userdanger("Your dislocated [limb.plaintext_zone] pops back into place! Ow!"))
 		remove_wound()
 
-/datum/wound/blunt/bone/moderate/try_handling(mob/living/carbon/human/user)
-	if(user.pulling != victim || user.zone_selected != limb.body_zone)
+/datum/wound/blunt/bone/moderate/try_handling(mob/living/user)
+	if(user.usable_hands <= 0 || user.pulling != victim)
+		return FALSE
+	if(!isnull(user.hud_used?.zone_select) && user.zone_selected != limb.body_zone)
 		return FALSE
 
 	if(user.grab_state == GRAB_PASSIVE)

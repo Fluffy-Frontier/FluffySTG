@@ -249,7 +249,7 @@
 	if(get_dist(shooter, target) <= 0)
 		target = get_step(shooter, shooter.dir) //Shoot in the direction faced if the mouse is on the same tile as we are.
 		target_loc = target
-	else if(!in_view_range(shooter, target))
+	else if(!CAN_THEY_SEE(target, shooter))
 		stop_autofiring() //Elvis has left the building.
 		return FALSE
 	shooter.face_atom(target)
@@ -275,7 +275,7 @@
 // Gun procs.
 
 /obj/item/gun/proc/on_autofire_start(mob/living/shooter)
-	if(semicd || shooter.incapacitated() || !can_trigger_gun(shooter))
+	if(semicd || shooter.incapacitated || !can_trigger_gun(shooter))
 		return FALSE
 	if(!can_shoot())
 		shoot_with_empty_chamber(shooter)
@@ -295,7 +295,7 @@
 
 /obj/item/gun/proc/do_autofire(datum/source, atom/target, mob/living/shooter, allow_akimbo, params)
 	SIGNAL_HANDLER
-	if(semicd || shooter.incapacitated())
+	if(semicd || shooter.incapacitated)
 		return NONE
 	if(!can_shoot())
 		shoot_with_empty_chamber(shooter)

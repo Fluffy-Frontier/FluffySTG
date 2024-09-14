@@ -1,4 +1,4 @@
-/obj/item/radio/intercom //ICON OVERRIDEN IN SKYRAT AESTHETICS - SEE MODULE
+/obj/item/radio/intercom //ICON OVERRIDDEN IN NOVA AESTHETICS - SEE MODULE
 	name = "station intercom"
 	desc = "A trusty station intercom, ready to spring into action even when the headsets go silent."
 	icon = 'icons/obj/machines/wallmounts.dmi'
@@ -11,7 +11,7 @@
 	item_flags = NO_BLOOD_ON_ITEM
 
 	overlay_speaker_idle = "intercom_s"
-	overlay_speaker_active = "intercom_recieve"
+	overlay_speaker_active = "intercom_receive"
 
 	overlay_mic_idle = "intercom_m"
 	overlay_mic_active = null
@@ -118,7 +118,7 @@
 			return FALSE
 
 	if(freq == FREQ_SYNDICATE)
-		if(!(syndie))
+		if(!(special_channels &= RADIO_SPECIAL_SYNDIE))
 			return FALSE//Prevents broadcast of messages over devices lacking the encryption
 
 	return TRUE
@@ -219,6 +219,19 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 27)
 	command = TRUE
 	icon_off = "intercom_command-p"
 
+/obj/item/radio/intercom/syndicate
+	name = "syndicate intercom"
+	desc = "Talk smack through this."
+	command = TRUE
+	special_channels = RADIO_SPECIAL_SYNDIE
+
+/obj/item/radio/intercom/syndicate/freerange
+	name = "syndicate wide-band intercom"
+	desc = "A custom-made Syndicate-issue intercom used to transmit on all Nanotrasen frequencies. Particularly expensive."
+	freerange = TRUE
+
 MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/prison, 27)
 MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/chapel, 27)
 MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/command, 27)
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/syndicate, 27)
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/syndicate/freerange, 27)

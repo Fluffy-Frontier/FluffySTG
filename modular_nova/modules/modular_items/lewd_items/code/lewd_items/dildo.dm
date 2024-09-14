@@ -41,18 +41,16 @@
 		"human" = image(icon = src.icon, icon_state = "[base_icon_state]_human"),
 		"tentacle" = image(icon = src.icon, icon_state = "[base_icon_state]_tentacle"))
 
-/obj/item/clothing/sextoy/dildo/AltClick(mob/user)
+/obj/item/clothing/sextoy/dildo/click_alt(mob/user)
 	if(color_changed)
-		return
-	. = ..()
-	if(.)
-		return
+		return CLICK_ACTION_BLOCKING
 	var/choice = show_radial_menu(user, src, dildo_designs, custom_check = CALLBACK(src, PROC_REF(check_menu), user), radius = 36, require_near = TRUE)
 	if(!choice)
-		return FALSE
+		return CLICK_ACTION_BLOCKING
 	current_type = choice
 	update_icon()
 	color_changed = TRUE
+	return CLICK_ACTION_SUCCESS
 
 /obj/item/clothing/sextoy/dildo/Initialize(mapload)
 	. = ..()
@@ -163,7 +161,7 @@
 		target.try_lewd_autoemote(pick(possible_emotes))
 
 	user.visible_message(span_purple("[user] [message]!"))
-	play_lewd_sound(loc, pick('modular_nova/modules/modular_items/lewd_items/sounds/bang1.ogg',
+	playsound_if_pref(loc, pick('modular_nova/modules/modular_items/lewd_items/sounds/bang1.ogg',
 						'modular_nova/modules/modular_items/lewd_items/sounds/bang2.ogg',
 						'modular_nova/modules/modular_items/lewd_items/sounds/bang3.ogg',
 						'modular_nova/modules/modular_items/lewd_items/sounds/bang4.ogg',
@@ -209,23 +207,22 @@ GLOBAL_LIST_INIT(dildo_colors, list(//mostly neon colors
 		"medium" = image(icon = src.icon, icon_state = "[base_icon_state]_medium"),
 		"big" = image(icon = src.icon, icon_state = "[base_icon_state]_big"))
 
-/obj/item/clothing/sextoy/dildo/custom_dildo/AltClick(mob/living/user)
+/obj/item/clothing/sextoy/dildo/custom_dildo/click_alt(mob/living/user)
 	if(!size_changed)
 		var/choice = show_radial_menu(user, src, dildo_sizes, custom_check = CALLBACK(src, PROC_REF(check_menu), user), radius = 36, require_near = TRUE)
 		if(!choice)
-			return FALSE
+			return CLICK_ACTION_BLOCKING
 		poly_size = choice
 		update_icon()
 		size_changed = TRUE
-
 	else
 		if(color_changed)
-			return
+			return CLICK_ACTION_BLOCKING
 		if(!istype(user) || !user.can_perform_action(src, FORBID_TELEKINESIS_REACH))
-			return
+			return CLICK_ACTION_BLOCKING
 		customize(user)
 		color_changed = TRUE
-		return TRUE
+	return CLICK_ACTION_SUCCESS
 
 /obj/item/clothing/sextoy/dildo/custom_dildo/Initialize(mapload)
 	. = ..()
@@ -234,7 +231,7 @@ GLOBAL_LIST_INIT(dildo_colors, list(//mostly neon colors
 
 /// Choose a color and transparency level for the toy
 /obj/item/clothing/sextoy/dildo/custom_dildo/proc/customize(mob/living/user)
-	if(!src || !user || user.incapacitated() || !in_range(user, src))
+	if(!src || !user || user.incapacitated || !in_range(user, src))
 		return FALSE
 
 	var/color_choice = tgui_input_list(user, "Choose a color for your dildo.", "Dildo Color", GLOB.dildo_colors)
@@ -292,8 +289,8 @@ GLOBAL_LIST_INIT(dildo_colors, list(//mostly neon colors
 /obj/item/clothing/sextoy/dildo/double_dildo/populate_dildo_designs()
 	return
 
-/obj/item/clothing/sextoy/dildo/double_dildo/AltClick(mob/user)
-	return
+/obj/item/clothing/sextoy/dildo/double_dildo/click_alt(mob/user)
+	return NONE
 
 /obj/item/clothing/sextoy/dildo/double_dildo/lewd_equipped(mob/living/carbon/human/user, slot, initial)
 	. = ..()
@@ -389,7 +386,7 @@ GLOBAL_LIST_INIT(dildo_colors, list(//mostly neon colors
 
 /// Code for taking out/putting away the other end of the toy when one end is in you
 /obj/item/clothing/sextoy/dildo/double_dildo/proc/toggle(mob/living/carbon/human/user)
-	play_lewd_sound(user, 'modular_nova/modules/modular_items/lewd_items/sounds/latex.ogg', 40, TRUE)
+	playsound_if_pref(user, 'modular_nova/modules/modular_items/lewd_items/sounds/latex.ogg', 40, TRUE)
 
 	if(!end_in_hand)
 		take_in_hand(user)

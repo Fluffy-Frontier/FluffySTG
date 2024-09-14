@@ -16,7 +16,7 @@
 	progression_reward = list(5 MINUTES, 9 MINUTES)
 	telecrystal_reward = list(0, 1)
 
-	/// area type the objective owner must be in to recieve the contraband
+	/// area type the objective owner must be in to receive the contraband
 	var/area/smuggle_spawn_type
 	/// the contraband that must be exported on the shuttle
 	var/obj/item/contraband
@@ -33,7 +33,7 @@
 	for(var/datum/traitor_objective/smuggle/objective_to_compare as anything in possible_duplicates)
 		if(objective_to_compare.contraband_type == contraband_type)
 			return FALSE
-		// it's too similar if its from the same area
+		// it's too similar if it's from the same area
 		if(objective_to_compare.smuggle_spawn_type == smuggle_spawn_type)
 			return FALSE
 	return TRUE
@@ -73,7 +73,7 @@
 	if(generating_for.assigned_role.departments_bitflags & DEPARTMENT_BITFLAG_CARGO)
 		return FALSE
 
-	// choose starting area to recieve contraband
+	// choose starting area to receive contraband
 	var/list/possible_areas = GLOB.the_station_areas.Copy()
 	for(var/area/possible_area as anything in possible_areas)
 		// remove areas too close to the destination, too obvious for our poor shmuck, or just unfair

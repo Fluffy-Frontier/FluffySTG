@@ -20,10 +20,6 @@
 	if(isnull(ref))
 		return FALSE
 
-	if(!source_turf.Adjacent(user)) // Source tile is no longer valid
-		reset_contents()
-		return FALSE
-
 	var/datum/search_object/index = locate(ref) in contents
 	var/atom/thing = index?.item
 	if(QDELETED(index) || QDELETED(thing)) // Obj is gone
@@ -40,6 +36,11 @@
 		modifiers += "middle=1;"
 	if(params["shift"])
 		modifiers += "shift=1;"
+	if(params["alt"])
+		modifiers += "alt=1;"
+	if(params["right"])
+		modifiers += "right=1;"
+
 
 	user.ClickOn(thing, modifiers)
 

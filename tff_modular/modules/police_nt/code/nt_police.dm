@@ -167,7 +167,7 @@ GLOBAL_VAR(call_NTIS_msg)
 				// ИЛИ СПАВН ЧУВАКОВ!!!
 
 				cop.mind.add_antag_datum(ert_antag, agents_team)
-				cop.mind.set_assigned_role(SSjob.GetJobType(ert_antag.ert_job_path))
+				cop.mind.set_assigned_role(SSjob.get_job_type(ert_antag.ert_job_path))
 				cop.grant_language(/datum/language/common, source = LANGUAGE_SPAWNER)
 				log_game("[key_name(cop)] has been selected as an [ert_antag.name]")
 				agents_number--

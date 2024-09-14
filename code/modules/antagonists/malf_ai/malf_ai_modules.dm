@@ -47,6 +47,9 @@ GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
 		/obj/machinery/hypertorus/corner,
 		/obj/machinery/atmospherics/components/binary/valve,
 		/obj/machinery/portable_atmospherics/canister,
+		/obj/machinery/computer/shuttle,
+		/obj/machinery/computer/emergency_shuttle,
+		/obj/machinery/computer/gateway_control,
 	)))
 
 GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
@@ -443,14 +446,19 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 	desc = "[desc] It has [uses] use\s remaining."
 
 /datum/action/innate/ai/ranged/override_machine/do_ability(mob/living/caller, atom/clicked_on)
-	if(caller.incapacitated())
+	if(caller.incapacitated)
 		unset_ranged_ability(caller)
 		return FALSE
 	if(!ismachinery(clicked_on))
 		to_chat(caller, span_warning("You can only animate machines!"))
 		return FALSE
 	var/obj/machinery/clicked_machine = clicked_on
-	if(!clicked_machine.can_be_overridden() || is_type_in_typecache(clicked_machine, GLOB.blacklisted_malf_machines))
+
+	if(istype(clicked_machine, /obj/machinery/porta_turret_cover)) //clicking on a closed turret will attempt to override the turret itself instead of the animated/abstract cover.
+		var/obj/machinery/porta_turret_cover/clicked_turret = clicked_machine
+		clicked_machine = clicked_turret.parent_turret
+
+	if((clicked_machine.resistance_flags & INDESTRUCTIBLE) || is_type_in_typecache(clicked_machine, GLOB.blacklisted_malf_machines))
 		to_chat(caller, span_warning("That machine can't be overridden!"))
 		return FALSE
 
@@ -491,6 +499,11 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 
 /datum/action/innate/ai/destroy_rcds/Activate()
 	for(var/I in GLOB.rcd_list)
+		// NOVA EDIT ADDITION START - Don't detonate RCDs in the protected areas
+		var/rcd_area = get_area(I)
+		if(is_type_in_typecache(rcd_area, protected_areas))
+			continue
+		// NOVA EDIT ADDITION END
 		if(!istype(I, /obj/item/construction/rcd/borg)) //Ensures that cyborg RCDs are spared.
 			var/obj/item/construction/rcd/RCD = I
 			RCD.detonate_pulse()
@@ -531,14 +544,19 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 		qdel(to_explode)
 
 /datum/action/innate/ai/ranged/overload_machine/do_ability(mob/living/caller, atom/clicked_on)
-	if(caller.incapacitated())
+	if(caller.incapacitated)
 		unset_ranged_ability(caller)
 		return FALSE
 	if(!ismachinery(clicked_on))
 		to_chat(caller, span_warning("You can only overload machines!"))
 		return FALSE
 	var/obj/machinery/clicked_machine = clicked_on
-	if(is_type_in_typecache(clicked_machine, GLOB.blacklisted_malf_machines))
+
+	if(istype(clicked_machine, /obj/machinery/porta_turret_cover)) //clicking on a closed turret will attempt to override the turret itself instead of the animated/abstract cover.
+		var/obj/machinery/porta_turret_cover/clicked_turret = clicked_machine
+		clicked_machine = clicked_turret.parent_turret
+
+	if((clicked_machine.resistance_flags & INDESTRUCTIBLE) || is_type_in_typecache(clicked_machine, GLOB.blacklisted_malf_machines))
 		to_chat(caller, span_warning("You cannot overload that device!"))
 		return FALSE
 
@@ -575,6 +593,10 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 
 /datum/action/innate/ai/blackout/Activate()
 	for(var/obj/machinery/power/apc/apc as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/power/apc))
+		// NOVA EDIT ADDITION START - Don't blackout Tarkon or Ghost cafe
+		if(is_type_in_typecache(apc.area, protected_areas))
+			continue
+		// NOVA EDIT ADDITION END
 		if(prob(30 * apc.overload))
 			apc.overload_lighting()
 		else
@@ -608,6 +630,11 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 	for(var/obj/item/radio/intercom/found_intercom as anything in GLOB.intercoms_list)
 		if(!found_intercom.is_on() || !found_intercom.get_listening() || found_intercom.wires.is_cut(WIRE_RX)) //Only operating intercoms play the honk
 			continue
+		// NOVA EDIT ADDITION START - Don't honk off-station intercoms (e.g. Tarkon, Ghost Cafe)
+		var/intercom_area = get_area(found_intercom)
+		if(is_type_in_typecache(intercom_area, protected_areas))
+			continue
+		// NOVA EDIT ADDITION END
 		found_intercom.audible_message(message = "[found_intercom] crackles for a split second.", hearing_distance = 3)
 		playsound(found_intercom, 'sound/items/airhorn.ogg', 100, TRUE)
 		for(var/mob/living/carbon/honk_victim in ohearers(6, found_intercom))
@@ -621,7 +648,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 /// Robotic Factory: Places a large machine that converts humans that go through it into cyborgs. Unlocking this ability removes shunting.
 /datum/ai_module/utility/place_cyborg_transformer
 	name = "Robotic Factory (Removes Shunting)"
-	description = "Build a machine anywhere, using expensive nanomachines, that will slowly create loyal cyborgs for you." // NOVA EDIT
+	description = "Build a machine anywhere, using expensive nanomachines, that will slowly create loyal cyborgs for you." // NOVA EDIT CHANGE - ORIGINAL: description = "Build a machine anywhere, using expensive nanomachines, that can convert a living human into a loyal cyborg slave when placed inside."
 	cost = 100
 	power_type = /datum/action/innate/ai/place_transformer
 	unlock_text = span_notice("You make contact with Space Amazon and request a robotics factory for delivery.")
@@ -629,7 +656,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 
 /datum/action/innate/ai/place_transformer
 	name = "Place Robotics Factory"
-	desc = "Places a machine that creates cyborgs efficiently. Conveyor belts included!" // NOVA EDIT
+	desc = "Places a machine that creates cyborgs efficiently. Conveyor belts included!" // NOVA EDIT CHANGE - ORIGINAL: desc = "Places a machine that converts humans into cyborgs. Conveyor belts included!"
 	button_icon_state = "robotic_factory"
 	uses = 1
 	auto_use_uses = FALSE //So we can attempt multiple times
@@ -652,7 +679,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 		active = FALSE
 		return
 	var/turf/T = get_turf(owner_AI.eyeobj)
-	var/obj/machinery/transformer_rp/conveyor = new(T) //NOVA EDIT CHANGE - SILLICONQOL - ORIGINAL: var/obj/machinery/transformer/conveyor = new(T)
+	var/obj/machinery/transformer_rp/conveyor = new(T) // NOVA EDIT CHANGE - SILLICONQOL - ORIGINAL: var/obj/machinery/transformer/conveyor = new(T)
 	conveyor.master_ai = owner
 	playsound(T, 'sound/effects/phasein.ogg', 100, TRUE)
 	if(owner_AI.can_shunt) //prevent repeated messages
@@ -666,7 +693,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 		C.images -= I
 
 /mob/living/silicon/ai/proc/can_place_transformer(datum/action/innate/ai/place_transformer/action)
-	if(!eyeobj || !isturf(loc) || incapacitated() || !action)
+	if(!eyeobj || !isturf(loc) || incapacitated || !action)
 		return
 	var/turf/middle = get_turf(eyeobj)
 	var/list/turfs = list(middle, locate(middle.x - 1, middle.y, middle.z), locate(middle.x + 1, middle.y, middle.z))
@@ -945,6 +972,8 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 	var/prev_verbs
 	/// Saved span state, used to restore after a voice change
 	var/prev_span
+	/// The list of available voices
+	var/static/list/voice_options = list("normal", SPAN_ROBOT, SPAN_YELL, SPAN_CLOWN)
 
 /obj/machinery/ai_voicechanger/Initialize(mapload)
 	. = ..()
@@ -972,14 +1001,15 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 
 /obj/machinery/ai_voicechanger/ui_data(mob/user)
 	var/list/data = list()
-	data["voices"] = list("normal", SPAN_ROBOT, SPAN_YELL, SPAN_CLOWN) //manually adding this since i dont see other option
+	data["voices"] = voice_options
 	data["loud"] = loudvoice
 	data["on"] = changing_voice
 	data["say_verb"] = say_verb
 	data["name"] = say_name
+	data["selected"] = say_span || owner.speech_span
 	return data
 
-/obj/machinery/ai_voicechanger/ui_act(action, params)
+/obj/machinery/ai_voicechanger/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	if(..())
 		return
 	switch(action)
@@ -1010,18 +1040,32 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 			if(changing_voice)
 				owner.radio.use_command = loudvoice
 		if("look")
-			say_span = params["look"]
+			var/selection = params["look"]
+			if(isnull(selection))
+				return FALSE
+
+			var/found = FALSE
+			for(var/option in voice_options)
+				if(option == selection)
+					found = TRUE
+					break
+			if(!found)
+				stack_trace("User attempted to select an unavailable voice option")
+				return FALSE
+
+			say_span = selection
 			if(changing_voice)
 				owner.speech_span = say_span
+			to_chat(usr, span_notice("Voice set to [selection]."))
 		if("verb")
-			say_verb = params["verb"]
+			say_verb = strip_html(params["verb"], MAX_NAME_LEN)
 			if(changing_voice)
 				owner.verb_say = say_verb
 				owner.verb_ask = say_verb
 				owner.verb_exclaim = say_verb
 				owner.verb_yell = say_verb
 		if("name")
-			say_name = params["name"]
+			say_name = strip_html(params["name"], MAX_NAME_LEN)
 
 /datum/ai_module/utility/emag
 	name = "Targeted Safeties Override"
@@ -1066,7 +1110,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 
 	var/mob/living/silicon/ai/ai_caller = caller
 
-	if(ai_caller.incapacitated())
+	if(ai_caller.incapacitated)
 		unset_ranged_ability(caller)
 		return FALSE
 
@@ -1156,7 +1200,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 		return FALSE
 	var/mob/living/silicon/ai/ai_caller = caller
 
-	if (ai_caller.incapacitated() || !isturf(ai_caller.loc))
+	if (ai_caller.incapacitated || !isturf(ai_caller.loc))
 		return FALSE
 
 	var/turf/target = get_turf(clicked_on)
@@ -1184,7 +1228,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 	COOLDOWN_START(src, time_til_next_tilt, roll_over_cooldown)
 
 /datum/action/innate/ai/ranged/core_tilt/proc/do_roll_over(mob/living/silicon/ai/ai_caller, picked_dir)
-	if (ai_caller.incapacitated() || !isturf(ai_caller.loc)) // prevents bugs where the ai is carded and rolls
+	if (ai_caller.incapacitated || !isturf(ai_caller.loc)) // prevents bugs where the ai is carded and rolls
 		return
 
 	var/turf/target = get_step(ai_caller, picked_dir) // in case we moved we pass the dir not the target turf
@@ -1198,7 +1242,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 
 /// Used in our radial menu, state-checking proc after the radial menu sleeps
 /datum/action/innate/ai/ranged/core_tilt/proc/radial_check(mob/living/silicon/ai/caller)
-	if (QDELETED(caller) || caller.incapacitated() || caller.stat == DEAD)
+	if (QDELETED(caller) || caller.incapacitated || caller.stat == DEAD)
 		return FALSE
 
 	if (uses <= 0)
@@ -1245,7 +1289,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 		return FALSE
 	var/mob/living/silicon/ai/ai_caller = caller
 
-	if(ai_caller.incapacitated())
+	if(ai_caller.incapacitated)
 		unset_ranged_ability(caller)
 		return FALSE
 
@@ -1301,7 +1345,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 
 /// Used in our radial menu, state-checking proc after the radial menu sleeps
 /datum/action/innate/ai/ranged/remote_vendor_tilt/proc/radial_check(mob/living/silicon/ai/caller, obj/machinery/vending/clicked_vendor)
-	if (QDELETED(caller) || caller.incapacitated() || caller.stat == DEAD)
+	if (QDELETED(caller) || caller.incapacitated || caller.stat == DEAD)
 		return FALSE
 
 	if (QDELETED(clicked_vendor))

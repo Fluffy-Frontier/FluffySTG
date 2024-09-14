@@ -47,7 +47,7 @@
 	return ..()
 
 /obj/structure/closet/body_bag/attackby(obj/item/interact_tool, mob/user, params)
-	if (istype(interact_tool, /obj/item/pen) || istype(interact_tool, /obj/item/toy/crayon))
+	if (IS_WRITING_UTENSIL(interact_tool))
 		if(!user.can_write(interact_tool))
 			return
 		var/t = tgui_input_text(user, "What would you like the label to be?", name, max_length = 53)
@@ -186,7 +186,7 @@
 	contents_thermal_insulation = 0.5
 	foldedbag_path = /obj/item/bodybag/environmental
 	/// The list of weathers we protect from.
-	var/list/weather_protection = list(TRAIT_ASHSTORM_IMMUNE, TRAIT_RADSTORM_IMMUNE, TRAIT_SNOWSTORM_IMMUNE, TRAIT_VOIDSTORM_IMMUNE) // Does not protect against lava or the The Floor Is Lava spell.
+	var/list/weather_protection = list(TRAIT_ASHSTORM_IMMUNE, TRAIT_RADSTORM_IMMUNE, TRAIT_SNOWSTORM_IMMUNE) // Does not protect against lava or the The Floor Is Lava spell.
 	/// The contents of the gas to be distributed to an occupant. Set in Initialize()
 	var/datum/gas_mixture/air_contents = null
 
@@ -276,7 +276,7 @@
 	else
 		icon_state = initial(icon_state)
 
-/obj/structure/closet/body_bag/environmental/prisoner/container_resist_act(mob/living/user)
+/obj/structure/closet/body_bag/environmental/prisoner/container_resist_act(mob/living/user, loc_required = TRUE)
 	/// copy-pasted with changes because flavor text as well as some other misc stuff
 	if(opened)
 		return
@@ -369,7 +369,7 @@
 	icon_state = "holobag_med"
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	foldedbag_path = null
-	weather_protection = list(TRAIT_VOIDSTORM_IMMUNE, TRAIT_SNOWSTORM_IMMUNE)
+	weather_protection = list(TRAIT_SNOWSTORM_IMMUNE)
 
 /obj/structure/closet/body_bag/environmental/hardlight/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	if(damage_type in list(BRUTE, BURN))
@@ -381,7 +381,7 @@
 	icon_state = "holobag_sec"
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	foldedbag_path = null
-	weather_protection = list(TRAIT_VOIDSTORM_IMMUNE, TRAIT_SNOWSTORM_IMMUNE)
+	weather_protection = list(TRAIT_SNOWSTORM_IMMUNE)
 
 /obj/structure/closet/body_bag/environmental/prisoner/hardlight/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	if(damage_type in list(BRUTE, BURN))

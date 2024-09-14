@@ -9,9 +9,9 @@
 	density = FALSE
 	circuit = /obj/item/circuitboard/machine/dish_drive
 	pass_flags = PASSTABLE
+	interaction_flags_click = ALLOW_SILICON_REACH
 	/// List of dishes the drive can hold
-	var/list/collectable_items = list(/obj/item/trash/waffles, // NOVA EDIT CHANGE - non-static list
-		/obj/item/trash/waffles,
+	var/list/collectable_items = list( // NOVA EDIT CHANGE - non-static list - ORIGINAL: var/static/list/collectable_items = list(
 		/obj/item/broken_bottle,
 		/obj/item/kitchen/fork,
 		/obj/item/plate,
@@ -22,8 +22,7 @@
 		/obj/item/trash/tray,
 	)
 	/// List of items the drive detects as trash
-	var/static/list/disposable_items = list(/obj/item/trash/waffles,
-		/obj/item/trash/waffles,
+	var/static/list/disposable_items = list(
 		/obj/item/broken_bottle,
 		/obj/item/plate_shard,
 		/obj/item/shard,
@@ -143,9 +142,9 @@
 	balloon_alert(user, "disposal signal sent")
 	do_the_dishes(TRUE)
 
-/obj/machinery/dish_drive/AltClick(mob/living/user)
-	if(user.can_perform_action(src, ALLOW_SILICON_REACH))
-		do_the_dishes(TRUE)
+/obj/machinery/dish_drive/click_alt(mob/living/user)
+	do_the_dishes(TRUE)
+	return CLICK_ACTION_SUCCESS
 
 /obj/machinery/dish_drive/proc/do_the_dishes(manual)
 	if(!LAZYLEN(dish_drive_contents))

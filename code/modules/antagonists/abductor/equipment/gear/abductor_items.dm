@@ -48,7 +48,7 @@
 		icon_state = "gizmo_scan"
 	to_chat(user, span_notice("You switch the device to [mode == GIZMO_SCAN? "SCAN": "MARK"] MODE"))
 
-/obj/item/abductor/gizmo/interact_with_atom(atom/interacting_with, mob/living/user)
+/obj/item/abductor/gizmo/ranged_interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
 	if(!ScientistCheck(user))
 		return ITEM_INTERACT_SKIP_TO_ATTACK // So you slap them with it
 	if(!console)
@@ -63,14 +63,10 @@
 
 	return ITEM_INTERACT_SUCCESS
 
-/obj/item/abductor/gizmo/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
-	. = ..()
-	// Proximity is already handled via the interact_with_atom proc
-	if(proximity_flag)
-		return
-
-	. |= AFTERATTACK_PROCESSED_ITEM
-	interact_with_atom(target, user)
+/obj/item/abductor/gizmo/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(!ismob(interacting_with))
+		return NONE
+	return ranged_interact_with_atom(interacting_with, user, modifiers)
 
 /obj/item/abductor/gizmo/proc/scan(atom/target, mob/living/user)
 	if(ishuman(target))
@@ -110,21 +106,17 @@
 	icon_state = "silencer"
 	inhand_icon_state = "gizmo"
 
-/obj/item/abductor/silencer/interact_with_atom(atom/interacting_with, mob/living/user)
+/obj/item/abductor/silencer/ranged_interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
 	if(!AbductorCheck(user))
 		return ITEM_INTERACT_SKIP_TO_ATTACK // So you slap them with it
 
 	radio_off(interacting_with, user)
 	return ITEM_INTERACT_SUCCESS
 
-/obj/item/abductor/silencer/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
-	. = ..()
-	// Proximity is already handled via the interact_with_atom proc
-	if(proximity_flag)
-		return
-
-	. |= AFTERATTACK_PROCESSED_ITEM
-	interact_with_atom(target, user)
+/obj/item/abductor/silencer/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(!ismob(interacting_with))
+		return NONE
+	return ranged_interact_with_atom(interacting_with, user, modifiers)
 
 /obj/item/abductor/silencer/proc/radio_off(atom/target, mob/living/user)
 	if( !(user in (viewers(7,target))) )
@@ -167,17 +159,21 @@
 		icon_state = "mind_device_message"
 	to_chat(user, span_notice("You switch the device to [mode == MIND_DEVICE_MESSAGE? "TRANSMISSION": "COMMAND"] MODE"))
 
-/obj/item/abductor/mind_device/afterattack(atom/target, mob/living/user, flag, params)
-	. = ..()
-	. |= AFTERATTACK_PROCESSED_ITEM
+/obj/item/abductor/mind_device/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(!ismob(interacting_with))
+		return NONE
+	return ranged_interact_with_atom(interacting_with, user, modifiers)
+
+/obj/item/abductor/mind_device/ranged_interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
 	if(!ScientistCheck(user))
-		return
+		return ITEM_INTERACT_BLOCKING
 
 	switch(mode)
 		if(MIND_DEVICE_CONTROL)
-			mind_control(target, user)
+			mind_control(interacting_with, user)
 		if(MIND_DEVICE_MESSAGE)
-			mind_message(target, user)
+			mind_message(interacting_with, user)
+	return ITEM_INTERACT_SUCCESS
 
 /obj/item/abductor/mind_device/proc/mind_control(atom/target, mob/living/user)
 	if(iscarbon(target))
@@ -285,8 +281,8 @@
 <br>
 Congratulations! You are now trained for invasive xenobiology research!"}
 
-/obj/item/paper/guides/antag/abductor/AltClick()
-	return //otherwise it would fold into a paperplane.
+/obj/item/paper/guides/antag/abductor/click_alt()
+	return CLICK_ACTION_BLOCKING //otherwise it would fold into a paperplane.
 
 /obj/item/melee/baton/abductor
 	name = "advanced baton"
@@ -394,7 +390,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 
 /obj/item/melee/baton/abductor/proc/SleepAttack(mob/living/target, mob/living/user)
 	playsound(src, on_stun_sound, 50, TRUE, -1)
-	if(target.incapacitated(IGNORE_RESTRAINTS|IGNORE_GRAB))
+	if(INCAPACITATED_IGNORING(target, INCAPABLE_RESTRAINTS|INCAPABLE_GRAB))
 		if(target.can_block_magic(MAGIC_RESISTANCE_MIND))
 			to_chat(user, span_warning("The specimen has some kind of mental protection that is interfering with the sleep inducement! It seems you've been foiled."))
 			target.visible_message(span_danger("[user] tried to induced sleep in [target] with [src], but is unsuccessful!"), \
@@ -699,7 +695,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 /obj/item/abductor/alien_omnitool/proc/check_menu(mob/user)
 	if(!istype(user))
 		return FALSE
-	if(user.incapacitated() || !user.Adjacent(src))
+	if(user.incapacitated || !user.Adjacent(src))
 		return FALSE
 	return TRUE
 

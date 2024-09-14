@@ -8,6 +8,7 @@
 	melee_damage_lower = 20 //Refers to unarmed damage, aliens do unarmed attacks.
 	melee_damage_upper = 20
 	max_grab = GRAB_AGGRESSIVE
+
 	var/caste = ""
 	var/alt_icon = 'icons/mob/nonhuman-player/alienleap.dmi' //used to switch between the two alien icon files.
 	var/leap_on_click = 0
@@ -77,6 +78,7 @@ GLOBAL_LIST_INIT(strippable_alien_humanoid_items, create_strippable_list(list(
 	SEND_SIGNAL(src, COMSIG_MOVABLE_SET_GRAB_STATE, newstate)
 	. = grab_state
 	grab_state = newstate
+	update_incapacitated()
 	switch(grab_state) // Current state.
 		if(GRAB_PASSIVE)
 			REMOVE_TRAIT(pulling, TRAIT_IMMOBILIZED, CHOKEHOLD_TRAIT)
@@ -91,7 +93,7 @@ GLOBAL_LIST_INIT(strippable_alien_humanoid_items, create_strippable_list(list(
 			if(. <= GRAB_AGGRESSIVE)
 				ADD_TRAIT(pulling, TRAIT_FLOORED, CHOKEHOLD_TRAIT)
 
-/mob/living/carbon/alien/adult/MouseDrop_T(atom/dropping, atom/user)
+/mob/living/carbon/alien/adult/mouse_drop_receive(atom/dropping, mob/user, params)
 	if(devour_lad(dropping))
 		return
 	return ..()
@@ -100,7 +102,7 @@ GLOBAL_LIST_INIT(strippable_alien_humanoid_items, create_strippable_list(list(
 /mob/living/carbon/alien/adult/proc/can_consume(atom/movable/poor_soul)
 	if(!isliving(poor_soul) || pulling != poor_soul)
 		return FALSE
-	if(incapacitated() || grab_state < GRAB_AGGRESSIVE || stat != CONSCIOUS)
+	if(incapacitated || grab_state < GRAB_AGGRESSIVE || stat != CONSCIOUS)
 		return FALSE
 	if(get_dir(src, poor_soul) != dir) // Gotta face em 4head
 		return FALSE
@@ -139,7 +141,7 @@ GLOBAL_LIST_INIT(strippable_alien_humanoid_items, create_strippable_list(list(
 	return TRUE
 
 /mob/living/carbon/alien/adult/get_butt_sprite()
-	return BUTT_SPRITE_XENOMORPH
+	return icon('icons/mob/butts.dmi', BUTT_SPRITE_XENOMORPH)
 
 // Aliens can touch acid
 /mob/living/carbon/alien/can_touch_acid(atom/acided_atom, acid_power, acid_volume)
