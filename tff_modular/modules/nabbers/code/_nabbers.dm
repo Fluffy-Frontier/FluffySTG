@@ -33,7 +33,7 @@
 	species_cookie = /obj/item/food/grown/cabbage
 	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT - 10)
 	mutantbrain = /obj/item/organ/internal/brain/nabber
-	mutanteyes = /obj/item/organ/internal/eyes/robotic/nabber
+	mutanteyes = /obj/item/organ/internal/eyes/nabber
 	mutantlungs = /obj/item/organ/internal/lungs/nabber
 	mutantheart = /obj/item/organ/internal/heart/nabber
 	mutantliver = /obj/item/organ/internal/liver/nabber
