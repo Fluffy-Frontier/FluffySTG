@@ -225,6 +225,6 @@
 // ЧС квирков
 /mob/living/carbon/human/add_quirk(datum/quirk/quirktype, client/override_client)
 	var/bad_nabber_quirks = list(/datum/quirk/oversized, /datum/quirk/prosthetic_limb, /datum/quirk/quadruple_amputee) // Дополнить
-	if(isnabber(src) && quirktype in bad_nabber_quirks)
+	if(isnabber(src) && (quirktype in bad_nabber_quirks))
 		return FALSE
 	. = ..()
