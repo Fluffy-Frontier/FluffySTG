@@ -186,6 +186,11 @@
 /mob/living/carbon/human/species/nabber
 	race = /datum/species/nabber
 
+/mob/living/carbon/human/Destroy()
+	if(isnabber(src) && !QDELETED(legcuffed))
+		QDEL_NULL(legcuffed)
+	. = ..()
+	
 // Отображение для других наличия повреждений у голосового импланта
 /mob/living/carbon/human/examine(mob/user)
 	. = ..()
