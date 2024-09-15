@@ -59,7 +59,6 @@
 	var/datum/action/cooldown/toggle_arms/arms
 	var/datum/action/cooldown/optical_camouflage/camouflage
 	var/datum/action/cooldown/nabber_threat/threat_mod
-	var/obj/item/restraints/legcuffs/gas_placeholder/anti_cuffs
 	species_language_holder = /datum/language_holder/nabber
 	language_prefs_whitelist = list(/datum/language/nabber)
 
@@ -75,8 +74,10 @@
 	var/is_dummy = istype(C, /mob/living/carbon/human/dummy)
 
 	if(!is_dummy)
-		anti_cuffs = new()
-		C.equip_to_slot(anti_cuffs, ITEM_SLOT_LEGCUFFED, initial = TRUE)
+		C.uncuff()
+		if(!C.legcuffed)
+			var/obj/item/restraints/legcuffs/gas_placeholder/anti_cuffs = new()
+			C.equip_to_slot(anti_cuffs, ITEM_SLOT_LEGCUFFED, initial = TRUE)
 
 		var/obj/item/implant/gas_sol_speaker/imp_in = new()
 		imp_in.implant(C)
@@ -87,18 +88,10 @@
 	camouflage.Destroy()
 	threat_mod.Destroy()
 
-	if(anti_cuffs)
-		anti_cuffs.Destroy()
-		anti_cuffs = null
-
-	if(C.legcuffed)
-		C.legcuffed.Destroy()
-		C.legcuffed = null
-
 /datum/species/nabber/spec_life(mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	// Вызываем это перед проверкой на смерть, чтобы даже у мёртвых ГБСов была заглушка
-	if(H.num_legs >= 2 && QDELETED(anti_cuffs))
-		anti_cuffs = new()
+	if(H.num_legs >= 2 && !H.legcuffed && !QDELETED(H))
+		var/obj/item/restraints/legcuffs/gas_placeholder/anti_cuffs = new()
 		H.equip_to_slot(anti_cuffs, ITEM_SLOT_LEGCUFFED, initial = TRUE)
 	. = ..()
 	if(isdead(H))
@@ -193,6 +186,11 @@
 /mob/living/carbon/human/species/nabber
 	race = /datum/species/nabber
 
+/mob/living/carbon/human/Destroy()
+	if(isnabber(src) && !QDELETED(legcuffed))
+		QDEL_NULL(legcuffed)
+	. = ..()
+	
 // Отображение для других наличия повреждений у голосового импланта
 /mob/living/carbon/human/examine(mob/user)
 	. = ..()
@@ -227,6 +225,6 @@
 // ЧС квирков
 /mob/living/carbon/human/add_quirk(datum/quirk/quirktype, client/override_client)
 	var/bad_nabber_quirks = list(/datum/quirk/oversized, /datum/quirk/prosthetic_limb, /datum/quirk/quadruple_amputee) // Дополнить
-	if(isnabber(src) && quirktype in bad_nabber_quirks)
+	if(isnabber(src) && (quirktype in bad_nabber_quirks))
 		return FALSE
 	. = ..()

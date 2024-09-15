@@ -53,13 +53,13 @@
 
 /obj/item/implant/gas_sol_speaker/implant(mob/living/target, mob/user, silent = FALSE, force = FALSE)
 	. = ..()
-	if(isnabber(target))
+	if(isnabber(target) && !QDELING(target))
 		var/mob/living/carbon/human/species/nabber/our_gas = target
 		our_gas.grant_language(/datum/language/common, language_flags = SPOKEN_LANGUAGE, source = LANGUAGE_ATOM)
 
 /obj/item/implant/gas_sol_speaker/removed(mob/target, silent = FALSE, special = FALSE)
 	. = ..()
-	if(isnabber(target))
+	if(isnabber(target) && !QDELING(target))
 		var/mob/living/carbon/human/species/nabber/our_gas = target
 		our_gas.remove_language(/datum/language/common, language_flags = SPOKEN_LANGUAGE)
 		if(our_gas.has_status_effect(/datum/status_effect/speech/stutter/nabber))
