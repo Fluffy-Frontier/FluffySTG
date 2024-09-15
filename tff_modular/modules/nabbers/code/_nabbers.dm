@@ -59,7 +59,6 @@
 	var/datum/action/cooldown/toggle_arms/arms
 	var/datum/action/cooldown/optical_camouflage/camouflage
 	var/datum/action/cooldown/nabber_threat/threat_mod
-	var/obj/item/restraints/legcuffs/gas_placeholder/anti_cuffs
 	species_language_holder = /datum/language_holder/nabber
 	language_prefs_whitelist = list(/datum/language/nabber)
 
