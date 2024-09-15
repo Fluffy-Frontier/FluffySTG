@@ -88,14 +88,6 @@
 	camouflage.Destroy()
 	threat_mod.Destroy()
 
-	if(anti_cuffs)
-		anti_cuffs.Destroy()
-		anti_cuffs = null
-
-	if(C.legcuffed)
-		C.legcuffed.Destroy()
-		C.legcuffed = null
-
 /datum/species/nabber/spec_life(mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	// Вызываем это перед проверкой на смерть, чтобы даже у мёртвых ГБСов была заглушка
 	if(H.num_legs >= 2 && QDELETED(anti_cuffs))
