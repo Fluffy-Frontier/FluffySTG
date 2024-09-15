@@ -90,8 +90,8 @@
 
 /datum/species/nabber/spec_life(mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	// Вызываем это перед проверкой на смерть, чтобы даже у мёртвых ГБСов была заглушка
-	if(H.num_legs >= 2 && QDELETED(anti_cuffs))
-		anti_cuffs = new()
+	if(H.num_legs >= 2 && !H.legcuffed && !QDELETED(H))
+		var/obj/item/restraints/legcuffs/gas_placeholder/anti_cuffs = new()
 		H.equip_to_slot(anti_cuffs, ITEM_SLOT_LEGCUFFED, initial = TRUE)
 	. = ..()
 	if(isdead(H))
