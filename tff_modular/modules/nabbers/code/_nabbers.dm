@@ -74,8 +74,10 @@
 	var/is_dummy = istype(C, /mob/living/carbon/human/dummy)
 
 	if(!is_dummy)
-		anti_cuffs = new()
-		C.equip_to_slot(anti_cuffs, ITEM_SLOT_LEGCUFFED, initial = TRUE)
+		C.uncuff()
+		if(!C.legcuffed)
+			var/obj/item/restraints/legcuffs/gas_placeholder/anti_cuffs = new()
+			C.equip_to_slot(anti_cuffs, ITEM_SLOT_LEGCUFFED, initial = TRUE)
 
 		var/obj/item/implant/gas_sol_speaker/imp_in = new()
 		imp_in.implant(C)
