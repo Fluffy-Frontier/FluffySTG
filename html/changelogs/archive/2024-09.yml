@@ -502,3 +502,12 @@
   - bugfix: fixed 'Enable Radio Noise' pref only being respected for deaf people
   - bugfix: fixed a race condition that was causing carpotoxin to cause liver damage
       to felinids despite being immune
+2024-09-15:
+  LT3:
+  - bugfix: Fixed crew monitor sometimes labelling synthetics as organic creatures
+  vinylspiders:
+  - bugfix: fixes orbit menu job filter not showing department colors for Nova jobs
+  - bugfix: specific-colored loadout sneakers no longer allow you to change greyscale
+      colors (use the 'colorable' version for that)
+  - bugfix: fixed a bug where De Forest medvends were overly aggressive and eligible
+      for brand intelligence even if they spawned off station.
