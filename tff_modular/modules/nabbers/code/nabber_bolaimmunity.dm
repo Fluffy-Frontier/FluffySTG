@@ -45,10 +45,13 @@
 
 // Это ужас
 /obj/item/restraints/legcuffs/gas_placeholder/canStrip(mob/stripper, mob/owner)
+	INVOKE_ASYNC(src, PROC_REF(touch_ze_bug), stripper, owner)
+	return ..()
+	
+/obj/item/restraints/legcuffs/gas_placeholder/proc/touch_ze_bug(mob/stripper, mob/owner)
 	owner.visible_message(
 						  span_purple("[stripper] сочно жамкает хвост ГБСа."),
 						  span_purple("[stripper] лапает мой хвост!"),
 						  blind_message = span_hear("You hear lewd bug noises."),
 						)
 	playsound(get_turf(owner), 'modular_nova/modules/modular_items/lewd_items/sounds/vax2.ogg', 50, TRUE)
-	return FALSE
