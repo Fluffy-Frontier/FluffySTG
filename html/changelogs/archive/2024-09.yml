@@ -511,3 +511,8 @@
       colors (use the 'colorable' version for that)
   - bugfix: fixed a bug where De Forest medvends were overly aggressive and eligible
       for brand intelligence even if they spawned off station.
+2024-09-16:
+  vinylspiders:
+  - spellcheck: examining a mob will use an exclamation point after the thing's name,
+      for everything else you get a period
+  - bugfix: SSD timers on examine have returned
