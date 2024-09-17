@@ -138,11 +138,6 @@
 	item_path = /obj/item/clothing/neck/cloak/haori
 	ckeywhitelist = list("romontesque")
 
-/datum/loadout_item/neck/wakamo // Lafrien's clothing
-	name = "Wakamo holo-projector"
-	item_path = /obj/item/clothing/suit/hooded/cloak/wakamo
-	donator_only = TRUE
-
 /datum/loadout_item/glasses/delingar_glasses_redsec
 	name = "Ballistic Security Glasses"
 	item_path = /obj/item/clothing/glasses/hud/security/sunglasses/ballistic
