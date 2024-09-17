@@ -19,6 +19,7 @@
 		TRAIT_NO_BLOOD_OVERLAY,
 		TRAIT_NO_SLIP_WATER,
 		TRAIT_BRAWLING_KNOCKDOWN_BLOCKED,
+		TRAIT_PERSONALSPACE, // Нет жопы :с
 	)
 	body_size_restricted = TRUE
 	digitigrade_customization = DIGITIGRADE_NEVER
@@ -59,6 +60,9 @@
 	var/datum/action/cooldown/toggle_arms/arms
 	var/datum/action/cooldown/optical_camouflage/camouflage
 	var/datum/action/cooldown/nabber_threat/threat_mod
+	placeholder_description = "Giant armoured serpentids (GAS), also known as Nabbers, or snake-bugs, are a massive predatory species who are trained by a company to work with humans. Physically, although they look intimidating, they're unlikely to harm a human except in times of great stress. If you see them getting their large attack arms ready, it's telling you to back off."
+	placeholder_lore = "https://fluffy-frontier.ru/osobye-rasy"
+
 	species_language_holder = /datum/language_holder/nabber
 	language_prefs_whitelist = list(/datum/language/nabber)
 
@@ -141,7 +145,7 @@
 	))
 
 	perk_descriptions += list(list(
-		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
+		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 		SPECIES_PERK_ICON = "dna",
 		SPECIES_PERK_NAME = "Robust chitin",
 		SPECIES_PERK_DESC = "GAS possess durable chitinous exoskeletons and can withstand a lot of brute damage."
@@ -190,7 +194,7 @@
 	if(isnabber(src) && !QDELETED(legcuffed))
 		QDEL_NULL(legcuffed)
 	. = ..()
-	
+
 // Отображение для других наличия повреждений у голосового импланта
 /mob/living/carbon/human/examine(mob/user)
 	. = ..()
@@ -224,7 +228,106 @@
 
 // ЧС квирков
 /mob/living/carbon/human/add_quirk(datum/quirk/quirktype, client/override_client)
-	var/bad_nabber_quirks = list(/datum/quirk/oversized, /datum/quirk/prosthetic_limb, /datum/quirk/quadruple_amputee) // Дополнить
+	var/bad_nabber_quirks = list(
+		// негативные
+		/datum/quirk/oversized,
+		/datum/quirk/prosthetic_limb,
+		/datum/quirk/quadruple_amputee,
+		/datum/quirk/item_quirk/addict/junkie,
+		/datum/quirk/item_quirk/addict/smoker,
+		/datum/quirk/item_quirk/addict/alcoholic,
+		/datum/quirk/all_nighter,
+		/datum/quirk/item_quirk/allergic, // До введения системы дыхания
+		/datum/quirk/badback,
+		/datum/quirk/bighands,
+		/datum/quirk/item_quirk/blindness,
+		/datum/quirk/blooddeficiency,
+		/datum/quirk/body_purist,
+		/datum/quirk/item_quirk/brainproblems,
+		/datum/quirk/item_quirk/chronic_illness,
+		/datum/quirk/clumsy,
+		/datum/quirk/item_quirk/deafness,
+		/datum/quirk/item_quirk/family_heirloom,
+		/datum/quirk/item_quirk/food_allergic,
+		/datum/quirk/frail,
+		/datum/quirk/glass_jaw,
+		/datum/quirk/hemiplegic,
+		/datum/quirk/indebted,
+		/datum/quirk/insanity,
+		/datum/quirk/light_drinker,
+		/datum/quirk/mute,
+		/datum/quirk/item_quirk/nearsighted,
+		/datum/quirk/nonviolent,
+		/datum/quirk/numb,
+		/datum/quirk/nyctophobia,
+		/datum/quirk/paraplegic,
+		/datum/quirk/photophobia,
+		/datum/quirk/prosopagnosia,
+		/datum/quirk/pushover,
+		/datum/quirk/social_anxiety,
+		/datum/quirk/softspoken,
+		/datum/quirk/tin_man,
+		/datum/quirk/touchy,
+		/datum/quirk/narcolepsy,
+		/datum/quirk/fragile,
+		/datum/quirk/alexithymia,
+		// Нейтральные
+		/datum/quirk/item_quirk/bald,
+		/datum/quirk/item_quirk/borg_ready,
+		/datum/quirk/deviant_tastes,
+		/datum/quirk/foreigner,
+		/datum/quirk/gamer,
+		/datum/quirk/no_taste,
+		/datum/quirk/item_quirk/photographer,
+		/datum/quirk/pineapple_hater,
+		/datum/quirk/pineapple_liker,
+		/datum/quirk/snob,
+		/datum/quirk/transhumanist,
+		/datum/quirk/vegetarian,
+		/datum/quirk/canine_aspect,
+		/datum/quirk/feline_aspect,
+		/datum/quirk/avian_aspect,
+		/datum/quirk/water_aspect,
+		/datum/quirk/webbing_aspect,
+		/datum/quirk/floral_aspect,
+		/datum/quirk/ash_aspect,
+		/datum/quirk/sparkle_aspect,
+		/datum/quirk/excitable,
+		/datum/quirk/personalspace, // Встроен
+		/datum/quirk/item_quirk/joker,
+		/datum/quirk/overweight,
+		/datum/quirk/echolocation,
+		/datum/quirk/equipping/entombed,
+		/datum/quirk/hydra,
+		/datum/quirk/possessive,
+		/datum/quirk/kleptomaniac,
+		/datum/quirk/masochism,
+		/datum/quirk/sadism,
+		/datum/quirk/ropebunny,
+		/datum/quirk/rigger,
+		/datum/quirk/telepathic,
+		/datum/quirk/burr,
+		/datum/quirk/item_quirk/underworld_connections,
+		/datum/quirk/unsteady,
+		// Позитивные
+		/datum/quirk/alcohol_tolerance,
+		/datum/quirk/bilingual,
+		/datum/quirk/drunkhealing,
+		/datum/quirk/light_step, // Встроен
+		/datum/quirk/item_quirk/musician,
+		/datum/quirk/item_quirk/settler,
+		/datum/quirk/item_quirk/signer,
+		/datum/quirk/item_quirk/pet_owner,
+		/datum/quirk/skittish,
+		/datum/quirk/spacer_born,
+		/datum/quirk/item_quirk/spiritual,
+		/datum/quirk/hard_soles, // Встроен
+		/datum/quirk/linguist,
+		/datum/quirk/sharpclaws,
+		/datum/quirk/water_breathing,
+		/datum/quirk/no_appendix, // Нет аппендикса
+		/datum/quirk/shapeshifter,
+	)
 	if(isnabber(src) && (quirktype in bad_nabber_quirks))
 		return FALSE
 	. = ..()
