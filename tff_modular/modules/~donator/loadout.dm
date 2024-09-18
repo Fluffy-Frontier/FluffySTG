@@ -136,7 +136,7 @@
 /datum/loadout_item/neck/haori
 	name = "Flaming Haori"
 	item_path = /obj/item/clothing/neck/cloak/haori
-	ckeywhitelist = list("romontesque")
+	ckeywhitelist = list("romontesque", "yaqapi")
 
 /datum/loadout_item/glasses/delingar_glasses_redsec
 	name = "Ballistic Security Glasses"
