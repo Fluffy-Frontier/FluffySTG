@@ -297,3 +297,24 @@
 	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
 	icon_state = "delingar_glasses_science"
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/glasses.dmi'
+
+/*
+	Fluffs for PhenyaMomota, contributor and maintainer
+*/
+
+/obj/item/clothing/suit/jacket/leather/futuristic
+	name = "futuristic jacket"
+	desc = "This jacket is equipped with electronic components, lighting, heating and other additional mechanisms from the hi-tech world. Inside you can find a tag that says it is Charles Ray property."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/suit.dmi'
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/suit.dmi'
+	icon_state = "fjacket"
+	worn_icon_state = "fjacket"
+	greyscale_config = /datum/greyscale_config/fjacket
+	greyscale_config_worn = /datum/greyscale_config/fjacket/worn
+	greyscale_colors = "#ffd900#00b7ff"
+	flags_1 = IS_PLAYER_COLORABLE_1
+
+/obj/item/clothing/suit/jacket/leather/futuristic/worn_overlays(mutable_appearance/standing, isinhands, icon_file)
+	. = ..()
+	if(!isinhands)
+		. += emissive_appearance('tff_modular/master_files/icons/donator/mob/clothing/suit.dmi', "fjacket-emissive", src, alpha = src.alpha)
