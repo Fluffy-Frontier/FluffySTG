@@ -297,3 +297,40 @@
 	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
 	icon_state = "delingar_glasses_science"
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/glasses.dmi'
+
+/obj/item/clothing/neck/voidarr_cape
+	name = "Voidarr personel cape"
+	desc = "Garment fit for Voidarr workforce, darker than the void of stars, as though woven from the very shadow that falleth betwixt dusk and dawn. The cape doth glisten faintly, upon its length, there lieth a subtle sprinkling of moondust."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	icon_state = "smol42_voidarr_cape"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	resistance_flags = FIRE_PROOF
+	uses_advanced_reskins = TRUE
+	unique_reskin = list(
+		"Snow" = list(
+			RESKIN_ICON_STATE = "smol42_voidarr_cape_snow",
+			RESKIN_WORN_ICON_STATE = "smol42_voidarr_cape_snow"
+		)
+	)
+
+/obj/item/clothing/neck/smoltrenchcoat
+	name = "Secure Trenchcoat"
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	icon_state = "smol42_trenchcoat"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	uses_advanced_reskins = TRUE
+	unique_reskin = list(
+		"Snow" = list(
+			RESKIN_ICON_STATE = "smol42_trenchcoat_white",
+			RESKIN_WORN_ICON_STATE = "smol42_trenchcoat_white"
+		),
+		"Tin" = list(
+			RESKIN_ICON_STATE = "smol42_trenchcoat_tin",
+			RESKIN_WORN_ICON_STATE = "smol42_trenchcoat_tin"
+		),
+		"Blue" = list(
+			RESKIN_ICON_STATE = "smol42_trenchcoat_blue",
+			RESKIN_WORN_ICON_STATE = "smol42_trenchcoat_blue"
+		)
+	)
