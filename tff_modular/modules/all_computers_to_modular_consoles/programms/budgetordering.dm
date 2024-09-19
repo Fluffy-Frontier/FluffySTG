@@ -13,7 +13,7 @@
 	requestonly = FALSE
 	can_approve_requests = TRUE
 	program_flags = PROGRAM_REQUIRES_NTNET
-	can_run_on_flags = PROGRAM_CONSOLE
+	can_run_on_flags = PROGRAM_CONSOLE | PROGRAM_LAPTOP
 
 /datum/computer_file/program/budgetorders/master/request
 	filename = "orderslaveapp"
@@ -22,6 +22,7 @@
 	can_send = FALSE
 	requestonly = TRUE
 	can_approve_requests = FALSE
+	can_run_on_flags = PROGRAM_ALL
 
 /datum/computer_file/program/budgetorders/master/ui_data(mob/user)
 	var/list/data = list()
@@ -82,6 +83,7 @@
 			if (ishuman(user))
 				var/mob/living/carbon/human/H = user
 				card = H.get_idcard()
+
 		if(!is_visible_pack(user, P.access_view , card ? card.GetAccess() : null, FALSE) || (P.hidden && !(computer.obj_flags & EMAGGED) && !circuit_emagged))
 			continue
 		if(!data["supplies"][P.group])
@@ -261,7 +263,7 @@
 			if(!gun_comp)
 				computer.physical.AddComponent(/datum/component/armament/company_imports/tweaked, subtypesof(/datum/armament_entry/company_import), 0)
 			gun_comp = computer.physical.GetComponent(/datum/component/armament/company_imports/tweaked)
-			gun_comp.parent_prog ||= src
+			gun_comp.parent_prog = src
 			gun_comp.ui_interact(usr)
 			. = TRUE
 		//NOVA EDIT END
@@ -296,7 +298,7 @@
 	if (computer)
 		var/datum/component/armament/company_imports/tweaked/gun_comp = computer.physical.GetComponent(/datum/component/armament/company_imports/tweaked)
 		if(gun_comp)
-			RemoveComponentSource(REF(computer.physical), /datum/component/armament/company_imports/tweaked)
+			qdel(gun_comp)
 
 	// Eject unused coupons
 	for(var/obj/item/coupon/c in loaded_coupons)
@@ -306,6 +308,22 @@
 
 	. = ..()
 
+/datum/computer_file/program/budgetorders/master/kill_program(mob/user)
+	. = ..()
+	if (computer)
+		var/datum/component/armament/company_imports/tweaked/gun_comp = computer.physical.GetComponent(/datum/component/armament/company_imports/tweaked)
+		if(gun_comp)
+			SStgui.close_uis(gun_comp)
+
+/datum/computer_file/program/budgetorders/master/is_visible_pack(mob/user, paccess_to_check, list/access, contraband)
+	. = ..()
+	if (!.)
+		if(HAS_SILICON_ACCESS(user)) //Borgs can buy things.
+			return TRUE
+
+		// If not private - I don't care
+		if(!self_paid)
+			return TRUE
 
 /**
  * adds an supply pack to the checkout cart

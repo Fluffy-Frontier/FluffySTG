@@ -33,6 +33,8 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 	program_flags = null
 	tgui_id = "NtosHolodeck"
 	program_icon = FA_ICON_WAND_SPARKLES
+	// All that simulating data... You know...
+	size = 64
 
 	var/safeties = TRUE
 

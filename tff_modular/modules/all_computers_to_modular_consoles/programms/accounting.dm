@@ -1,7 +1,7 @@
 /datum/computer_file/program/disk_binded/accounting
 	filename = "accounting"
 	filedesc = "Employee Banking Accounts"
-	program_open_overlay = "bounty"
+	program_open_overlay = "bountyboard"
 	extended_desc = "Connect to the NT Accounting Division for control of employee finances."
 	program_flags = PROGRAM_REQUIRES_NTNET
 	tgui_id = "NtosAccounting"
