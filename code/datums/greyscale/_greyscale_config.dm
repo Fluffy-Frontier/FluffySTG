@@ -58,8 +58,11 @@
 		stack_trace("Greyscale config object [DebugName()] is missing a json configuration, make sure `json_config` has been assigned a value.")
 	string_json_config = "[json_config]"
 	var/static/regex/nova_gags_regex = regex(@"^modular_nova\/modules\/GAGS\/(?:[\w]+\/)*json_configs\/(?:[\w]+\/)*\w+\.json$") // NOVA EDIT ADDITION - Added recognition for the Nova GAGS folder
-	if(findtext(string_json_config, "code/datums/greyscale/json_configs/") != 1 && nova_gags_regex.Find(string_json_config) != 1) // NOVA EDIT CHANGE - ORIGINAL: if(findtext(string_json_config, "code/datums/greyscale/json_configs/") != 1)
-		stack_trace("All greyscale json configuration files should be located within '/greyscale/json_configs/' or 'modular_nova/modules/GAGS/json_configs/'.") // NOVA EDIT CHANGE - ORIGINAL: stack_trace("All greyscale json configuration files should be located within 'code/datums/greyscale/json_configs/'")
+	// FLUFFY FRONTIER ADDITION START - Added FF greyscale json
+	var/static/regex/ff_regex = regex(@"^tff_modular\/modules\/greyscale\/(?:[\w]+\/)*json_configs\/(?:[\w]+\/)*\w+\.json$")
+	if(findtext(string_json_config, "code/datums/greyscale/json_configs/") != 1 && nova_gags_regex.Find(string_json_config) != 1 && ff_regex.Find(string_json_config) != 1) // NOVA EDIT CHANGE - ORIGINAL: if(findtext(string_json_config, "code/datums/greyscale/json_configs/") != 1)
+		stack_trace("All greyscale json configuration files should be located within '/greyscale/json_configs/', 'modular_nova/modules/GAGS/json_configs/' or 'tff_modular/modules/greyscale/json_configs/'.") // NOVA EDIT CHANGE - ORIGINAL: stack_trace("All greyscale json configuration files should be located within 'code/datums/greyscale/json_configs/'")
+	// FLUFFY FRONTIER ADDITION END
 	if(!icon_file)
 		stack_trace("Greyscale config object [DebugName()] is missing an icon file, make sure `icon_file` has been assigned a value.")
 	string_icon_file = "[icon_file]"
