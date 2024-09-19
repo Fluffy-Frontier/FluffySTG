@@ -120,6 +120,37 @@
 		standing.add_filter("bluespace_shell", 2, list("type" = "outline", "color" = COLOR_BLUE_LIGHT, "alpha" = SHELL_TRANSPARENCY_ALPHA, "size" = 1))
 	return standing
 
+<<<<<<< HEAD
+=======
+/obj/item/storage/backpack/snail/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if(storage_core || !istype(tool, /obj/item/assembly/signaler/anomaly/bluespace))
+		return NONE
+
+	qdel(tool)
+	upgrade_to_bluespace(user)
+	to_chat(user, span_notice("You insert [tool] into your shell, and it starts to glow blue with expanded storage potential!"))
+	return ITEM_INTERACT_SUCCESS
+
+/// Upgrades the storage capacity of the snail shell and gives it a glowy blue outline
+/obj/item/storage/backpack/snail/proc/upgrade_to_bluespace(mob/living/wearer)
+	add_filter("bluespace_shell", 2, list("type" = "outline", "color" = COLOR_BLUE_LIGHT, "size" = 1))
+	playsound(src, 'sound/machines/click.ogg', 50, TRUE)
+	storage_core = TRUE
+	var/old_inventory = atom_storage.return_inv(FALSE)
+	emptyStorage()
+	create_storage(max_specific_storage = WEIGHT_CLASS_GIGANTIC, max_total_storage = 35, max_slots = 30, storage_type = /datum/storage/bag_of_holding)
+	for(var/obj/item/stored_item in old_inventory)
+		atom_storage.attempt_insert(stored_item, override = TRUE, messages = FALSE, force = TRUE)
+	name = "snail shell of holding"
+	update_appearance()
+
+	// Update the worn sprite with the blue outline too if applicable
+	if(isnull(wearer))
+		wearer = loc
+	if(istype(wearer))
+		wearer.update_worn_back()
+
+>>>>>>> 53fe9c3672d (Bluespace snail shells will no longer eat additional inserted anomaly cores (#4414))
 /datum/species/snail/prepare_human_for_preview(mob/living/carbon/human/snail)
 	snail.dna.features["mcolor"] = "#adaba7"
 	snail.update_body(TRUE)
