@@ -172,3 +172,13 @@
 	name = "Ballistic Glasses"
 	item_path = /obj/item/clothing/glasses/ballistic
 	ckeywhitelist = list("Delingar")
+
+/datum/loadout_item/neck/voidarr_cape
+	name = "Voidarr Personel cape"
+	item_path = /obj/item/clothing/neck/voidarr_cape
+	ckeywhitelist = list("Smol42", "Sage4or")
+
+/datum/loadout_item/neck/smoltrenchcoat
+	name = "Secure Trenchcoat"
+	item_path = /obj/item/clothing/neck/smoltrenchcoat
+	ckeywhitelist = list("Smol42")
