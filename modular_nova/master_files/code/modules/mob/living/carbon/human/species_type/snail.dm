@@ -120,8 +120,6 @@
 		standing.add_filter("bluespace_shell", 2, list("type" = "outline", "color" = COLOR_BLUE_LIGHT, "alpha" = SHELL_TRANSPARENCY_ALPHA, "size" = 1))
 	return standing
 
-<<<<<<< HEAD
-=======
 /obj/item/storage/backpack/snail/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	if(storage_core || !istype(tool, /obj/item/assembly/signaler/anomaly/bluespace))
 		return NONE
@@ -150,7 +148,6 @@
 	if(istype(wearer))
 		wearer.update_worn_back()
 
->>>>>>> 53fe9c3672d (Bluespace snail shells will no longer eat additional inserted anomaly cores (#4414))
 /datum/species/snail/prepare_human_for_preview(mob/living/carbon/human/snail)
 	snail.dna.features["mcolor"] = "#adaba7"
 	snail.update_body(TRUE)
