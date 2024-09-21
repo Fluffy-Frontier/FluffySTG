@@ -91,11 +91,10 @@
 
 /mob/living/carbon/human/floor_clown/Initialize()
 	. = ..()
-	status_flags = GODMODE
 	mobility_flags = NONE
 	GLOB.move_manager.stop_looping(src)
 	density = 0
-	ADD_TRAIT(src, TRAIT_NO_TELEPORT, SMITE_TRAIT)
+	src.add_traits(list(TRAIT_GODMODE, TRAIT_NO_TELEPORT), SMITE_TRAIT)
 	equipOutfit(/datum/outfit/consumed_clown)
 	set_jitter(60 SECONDS)
 
