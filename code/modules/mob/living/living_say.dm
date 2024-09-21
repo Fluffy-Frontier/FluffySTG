@@ -284,6 +284,10 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 		if(raw_message != gbs_translation_check)
 			message_mods[MODE_CUSTOM_SAY_EMOTE] = gbs_translation_check
 			message_mods[MODE_CUSTOM_SAY_ERASE_INPUT] = TRUE
+
+	if(ispath(message_language, /datum/language/nabber) && isnabber(src))
+		message_mods[MODE_CUSTOM_SAY_EMOTE] = null
+		message_mods[MODE_CUSTOM_SAY_ERASE_INPUT] = FALSE
 	// FLUFFY EDIT END
 
 	var/deaf_message
