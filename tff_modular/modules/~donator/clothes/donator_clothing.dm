@@ -298,6 +298,23 @@
 	icon_state = "delingar_glasses_science"
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/glasses.dmi'
 
+/obj/item/clothing/suit/jacket/leather/futuristic //Fluffs for PhenyaMomota, contributor and maintainer
+	name = "futuristic jacket"
+	desc = "This jacket is equipped with electronic components, lighting, heating and other additional mechanisms from the hi-tech world. Inside you can find a tag that says it is Charles Ray property."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/suit.dmi'
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/suit.dmi'
+	icon_state = "fjacket"
+	worn_icon_state = "fjacket"
+	greyscale_config = /datum/greyscale_config/fjacket
+	greyscale_config_worn = /datum/greyscale_config/fjacket/worn
+	greyscale_colors = "#ffd900#00b7ff"
+	flags_1 = IS_PLAYER_COLORABLE_1
+
+/obj/item/clothing/suit/jacket/leather/futuristic/worn_overlays(mutable_appearance/standing, isinhands, icon_file)
+	. = ..()
+	if(!isinhands)
+		. += emissive_appearance('tff_modular/master_files/icons/donator/mob/clothing/suit.dmi', "fjacket-emissive", src, alpha = src.alpha)
+
 /obj/item/clothing/neck/voidarr_cape
 	name = "Voidarr personel cape"
 	desc = "Garment fit for Voidarr workforce, darker than the void of stars, as though woven from the very shadow that falleth betwixt dusk and dawn. The cape doth glisten faintly, upon its length, there lieth a subtle sprinkling of moondust."

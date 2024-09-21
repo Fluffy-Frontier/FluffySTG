@@ -173,6 +173,11 @@
 	item_path = /obj/item/clothing/glasses/ballistic
 	ckeywhitelist = list("Delingar")
 
+/datum/loadout_item/suit/fjacket // Feenie's clothing
+	name = "Futuristic jacket"
+	item_path = /obj/item/clothing/suit/jacket/leather/futuristic
+	ckeywhitelist = list("PhenyaMomota", "Deadsec17", "Lafrien", "Iajret", "Vishenka0704")
+
 /datum/loadout_item/neck/voidarr_cape
 	name = "Voidarr Personel cape"
 	item_path = /obj/item/clothing/neck/voidarr_cape
