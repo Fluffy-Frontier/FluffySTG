@@ -7,4 +7,3 @@
 	var/list/premium_ff
 	/// Additions to the `contraband` list  of the vending machine, modularly. Will become null after Initialize, to free up memory.
 	var/list/contraband_ff
-
