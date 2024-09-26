@@ -76,3 +76,19 @@
 	attack_verb_simple = list("attack", "bite", "gnash at", "hug")
 	squeak_override = list('sound/weapons/bite.ogg' = 1,'modular_nova/modules/emotes/sound/voice/feline_purr.ogg' = 1)
 
+/obj/item/toy/plush/tff/anvar //sprites by exkessa/tonya, sounds by... Sandstorm station? Bluemoon?
+	name = "Anvar plushie"
+	desc = "An adorable stuffed toy, resembling a stoopid synth-guy! Don't let him install implants!"
+	icon_state = "plush_anvar"
+	attack_verb_continuous = list("attacks", "kicks", "cuts")
+	attack_verb_simple = list("attack", "kick", "cut")
+	squeak_override = list('tff_modular/modules/toys/sounds/fucku.ogg' = 1,'tff_modular/modules/toys/sounds/ihateu.ogg' = 1)
+	uses_advanced_reskins = TRUE
+	unique_reskin = list(
+		"Default" = list(
+			RESKIN_ICON_STATE = "plush_anvar",
+		),
+		"Security" = list(
+			RESKIN_ICON_STATE = "plush_anvar_sec",
+		),
+	)
