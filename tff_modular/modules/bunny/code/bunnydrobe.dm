@@ -1,72 +1,66 @@
-/obj/machinery/vending/access/bunny
+/obj/machinery/vending/access/playbunny
 	name = "\improper Bunny Outfitting Station"
 	desc = "A vending machine for specialised clothing for BNNUY."
-	product_ads = "Nya style!;Everybody can be bunny!;You have the right to lie and bunny!;What's up doc?"
-	icon = 'tff_modular/modules/bunny/icons/obj/vending.dmi'
-	icon_state = "bunnydrobe"
+	product_ads = "Nya style!;Everybody can be playbunny!;You have the right to lie and playbunny!;What's up doc?"
+	icon = 'tff_modular/modules/playbunny/icons/obj/vending.dmi'
+	icon_state = "playbunnydrobe"
 	light_mask = "wardrobe-light-mask"
 	vend_reply = "Thank you for using the CommDrobe!"
 	auto_build_products = TRUE
 	payment_department = ACCOUNT_SRV
-	refill_canister = /obj/item/vending_refill/wardrobe/bunny
+	refill_canister = /obj/item/vending_refill/wardrobe/playbunny
 	light_color = COLOR_SERVICE_LIME
 
-/obj/item/vending_refill/wardrobe/bunny
+/obj/item/vending_refill/wardrobe/playbunny
 	machine_name = "Bunny Outfitting Station"
 
-/obj/machinery/vending/access/bunny/build_access_list(list/access_lists)
+/obj/machinery/vending/access/playbunny/build_access_list(list/access_lists)
 	// Command
 	access_lists["[ACCESS_CAPTAIN]"] = list(
-		/obj/item/clothing/under/rank/captain/bunnysuit = 3,
-		/obj/item/clothing/suit/armor/vest/capcarapace/tailcoat_captain = 3,
-		/obj/item/clothing/neck/bunny/bunnytie/captain = 3,
-		/obj/item/clothing/head/hats/caphat/bunnyears_captain = 3,
+		/obj/item/clothing/under/costume/playbunny/captain = 3,
+		/obj/item/clothing/suit/jacket/playbunny/captain = 3,
+		/obj/item/clothing/neck/playbunny/tie/captain = 3,
+		/obj/item/clothing/head/playbunny/captain = 3,
 	)
 	access_lists["[ACCESS_HOP]"] = list(
-		/obj/item/clothing/under/rank/civilian/hop_bunnysuit = 3,
-		/obj/item/clothing/suit/armor/hop_tailcoat = 3,
-		/obj/item/clothing/neck/bunny/bunnytie/hop = 3,
-		/obj/item/clothing/head/playbunnyears/hop = 3,
+		/obj/item/clothing/under/costume/playbunny/hop = 3,
+		/obj/item/clothing/suit/jacket/playbunny/hop = 3,
+		/obj/item/clothing/neck/playbunny/tie/hop = 3,
+		/obj/item/clothing/head/playbunny/hop = 3,
 	)
 	access_lists["[ACCESS_CMO]"] = list(
-		/obj/item/clothing/under/rank/medical/cmo_bunnysuit = 3,
-		/obj/item/clothing/suit/toggle/labcoat/doctor_tailcoat/cmo = 3,
-		/obj/item/clothing/neck/bunny/bunnytie/cmo = 3,
-		/obj/item/clothing/head/playbunnyears/cmo = 3,
+		/obj/item/clothing/under/costume/playbunny/cmo = 3,
+		/obj/item/clothing/suit/toggle/labcoat/playbunny/cmo = 3,
+		/obj/item/clothing/neck/playbunny/tie/cmo = 3,
+		/obj/item/clothing/head/playbunny/cmo = 3,
 	)
 	access_lists["[ACCESS_RD]"] = list(
-		/obj/item/clothing/under/rank/rnd/research_director/bunnysuit = 3,
-		/obj/item/clothing/suit/jacket/research_director/tailcoat = 3,
-		/obj/item/clothing/neck/bunny/bunnytie/rd = 3,
-		/obj/item/clothing/head/playbunnyears/rd = 3,
+		/obj/item/clothing/under/costume/playbunny/rd = 3,
+		/obj/item/clothing/suit/jacket/playbunny/rd = 3,
+		/obj/item/clothing/neck/playbunny/tie/rd = 3,
+		/obj/item/clothing/head/playbunny/rd = 3,
 	)
 	access_lists["[ACCESS_CE]"] = list(
-		/obj/item/clothing/under/rank/engineering/chief_engineer/bunnysuit = 3,
-		/obj/item/clothing/suit/utility/fire/ce_tailcoat = 3,
-		/obj/item/clothing/neck/bunny/bunnytie/ce = 3,
-		/obj/item/clothing/head/playbunnyears/ce = 3,
+		/obj/item/clothing/under/costume/playbunny/ce = 3,
+		/obj/item/clothing/suit/jacket/playbunny/ce = 3,
+		/obj/item/clothing/neck/playbunny/tie/ce = 3,
+		/obj/item/clothing/head/playbunny/ce = 3,
 	)
 	access_lists["[ACCESS_HOS]"] = list(
-		/obj/item/clothing/under/rank/security/head_of_security/bunnysuit = 3,
-		/obj/item/clothing/suit/armor/hos_tailcoat = 3,
-		/obj/item/clothing/neck/bunny/bunnytie/security = 3,
-		/obj/item/clothing/head/playbunnyears/hos = 3,
+		/obj/item/clothing/under/costume/playbunny/hos = 3,
+		/obj/item/clothing/suit/jacket/playbunny/security_tailcoat/hos = 3,
+		/obj/item/clothing/neck/playbunny/tie/security = 3,
+		/obj/item/clothing/head/playbunny/hos = 3,
 	)
 	access_lists["[ACCESS_QM]"] = list(
-		/obj/item/clothing/under/rank/cargo/quartermaster_bunnysuit = 3,
-		/obj/item/clothing/suit/jacket/tailcoat/quartermaster = 3,
-		/obj/item/clothing/neck/bunny/bunnytie/cargo = 3,
-		/obj/item/clothing/head/playbunnyears/quartermaster = 3,
+		/obj/item/clothing/under/costume/playbunny/qm = 3,
+		/obj/item/clothing/suit/jacket/playbunny/qm = 3,
+		/obj/item/clothing/neck/playbunny/tie/cargo = 3,
+		/obj/item/clothing/head/playbunny/qm = 3,
 	)
 	access_lists["[ACCESS_CENT_GENERAL]"] = list(
 		/obj/item/clothing/under/costume/playbunny/centcom = 3,
-		/obj/item/clothing/suit/armor/security_tailcoat/centcom = 3,
-		/obj/item/clothing/neck/bunny/bunnytie/centcom = 3,
-		/obj/item/clothing/head/playbunnyears/centcom = 3,
-	)
-	access_lists["[ACCESS_COMMAND]"] = list(
-		/obj/item/clothing/under/rank/captain/bunnysuit = 3,
-		/obj/item/clothing/suit/armor/vest/capcarapace/tailcoat_captain = 3,
-		/obj/item/clothing/neck/bunny/bunnytie/captain = 3,
-		/obj/item/clothing/head/hats/caphat/bunnyears_captain = 3,
+		/obj/item/clothing/suit/jacket/playbunny/security_tailcoat/centcom = 3,
+		/obj/item/clothing/neck/playbunny/tie/centcom = 3,
+		/obj/item/clothing/head/playbunny/centcom = 3,
 	)
