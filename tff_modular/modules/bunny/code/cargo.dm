@@ -11,16 +11,16 @@
 	new /obj/item/clothing/under/costume/playbunny/miner(src)
 	new /obj/item/clothing/shoes/workboots/mining/heeled(src)
 
-/datum/orderable_item/mining/bunny
+/datum/orderable_item/mining/playbunny
 	item_path = /obj/item/storage/backpack/duffelbag/mining_bunny
 	desc = "A mining outfit kit themed around bunnies, they do live in burrows after all..."
 	cost_per_order = 500
 
-/datum/supply_pack/vending/wardrobes/bunny
+/datum/supply_pack/vending/wardrobes/playbunny
 	name = "Bunny Wardrobe Supply Crate"
 	desc = "BNNUY"
 	cost = CARGO_CRATE_VALUE * 3
 	contains = list(
-		/obj/item/vending_refill/wardrobe/bunny,
+		/obj/item/vending_refill/wardrobe/playbunny,
 	)
 	crate_name = "Bunny Resupply Crate"

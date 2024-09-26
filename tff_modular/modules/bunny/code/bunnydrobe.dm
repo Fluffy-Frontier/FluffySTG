@@ -2,7 +2,7 @@
 	name = "\improper Bunny Outfitting Station"
 	desc = "A vending machine for specialised clothing for BNNUY."
 	product_ads = "Nya style!;Everybody can be playbunny!;You have the right to lie and playbunny!;What's up doc?"
-	icon = 'tff_modular/modules/playbunny/icons/obj/vending.dmi'
+	icon = 'tff_modular/modules/bunny/icons/obj/vending.dmi'
 	icon_state = "playbunnydrobe"
 	light_mask = "wardrobe-light-mask"
 	vend_reply = "Thank you for using the CommDrobe!"
