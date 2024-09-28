@@ -178,7 +178,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 					authorize_name = "[id_card.registered_name] - [id_card.assignment]"
 
 			state = STATE_MAIN
-			playsound(src, 'sound/machines/terminal_on.ogg', 50, FALSE)
+			playsound(src, 'sound/machines/terminal/terminal_on.ogg', 50, FALSE)
 
 /obj/machinery/computer/comntr/proc/send_cross_comms_message(mob/user, destination, message)
 	send_cross_comms_message_timer = null

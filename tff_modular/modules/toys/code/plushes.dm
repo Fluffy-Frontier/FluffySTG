@@ -18,7 +18,7 @@
 	icon_state = "plush_cara"
 	attack_verb_continuous = list("noms", "gnashes at", "bites", "hugs")
 	attack_verb_simple = list("nom", "gnash at", "bite", "hug")
-	squeak_override = list('sound/weapons/bite.ogg' = 1)
+	squeak_override = list('sound/items/weapons/bite.ogg' = 1)
 
 /obj/item/toy/plush/tff/grant
 	name = "Grant-ED plushie"
