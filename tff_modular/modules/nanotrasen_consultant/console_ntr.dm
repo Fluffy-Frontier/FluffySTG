@@ -71,7 +71,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 		deadchat_broadcast(" has called the Nanotrasen Internal Security for the following reason:\n[GLOB.call_NTIS_msg]", span_name("[user.real_name]"), user, message_type = DEADCHAT_ANNOUNCEMENT)
 		to_chat(user, span_notice("Authorization confirmed. Nanotrasen Internal Security call dispatched to the Nanotrasen Internal Security."))
 		COOLDOWN_START(src, call_police_cooldown, CALL_POLICE_COOLDOWN)
-		playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+		playsound(src, 'sound/machines/terminal/terminal_prompt_confirm.ogg', 50, FALSE)
 
 /obj/machinery/computer/comntr/proc/authenticated(mob/user)
 	return authenticated
@@ -116,7 +116,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 			if (!COOLDOWN_FINISHED(src, important_action_cooldown))
 				return
 
-			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+			playsound(src, 'sound/machines/terminal/terminal_prompt_confirm.ogg', 50, FALSE)
 			var/message = trim(html_encode(params["message"]), MAX_MESSAGE_LEN)
 			message_centcom(message, usr)
 			to_chat(usr, span_notice("Message transmitted to Central Command."))
@@ -146,7 +146,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 				message_admins("[ADMIN_LOOKUPFLW(usr)] has passed the soft filter for \"[soft_filter_result[CHAT_FILTER_INDEX_WORD]]\". They may be using a disallowed term for a cross-station message. Increasing delay time to reject.\n\n Message: \"[html_encode(message)]\"")
 				log_admin_private("[key_name(usr)] has passed the soft filter for \"[soft_filter_result[CHAT_FILTER_INDEX_WORD]]\". They may be using a disallowed term for a cross-station message. Increasing delay time to reject.\n\n Message: \"[message]\"")
 				GLOB.communications_controller.soft_filtering = TRUE
-			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+			playsound(src, 'sound/machines/terminal/terminal_prompt_confirm.ogg', 50, FALSE)
 
 			var/destination = params["destination"]
 
@@ -160,7 +160,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 				authenticated = FALSE
 				authorize_access = null
 				authorize_name = null
-				playsound(src, 'sound/machines/terminal_off.ogg', 50, FALSE)
+				playsound(src, 'sound/machines/terminal/terminal_off.ogg', 50, FALSE)
 				return
 
 			if (obj_flags & EMAGGED)
@@ -168,7 +168,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 				authorize_access = SSid_access.get_region_access_list(list(REGION_ALL_STATION))
 				authorize_name = "Unknown"
 				to_chat(usr, span_warning("[src] lets out a quiet alarm as its login is overridden."))
-				playsound(src, 'sound/machines/terminal_alert.ogg', 25, FALSE)
+				playsound(src, 'sound/machines/terminal/terminal_alert.ogg', 25, FALSE)
 			else if(isliving(usr))
 				var/mob/living/L = usr
 				var/obj/item/card/id/id_card = L.get_idcard(hand_first = TRUE)
@@ -178,7 +178,7 @@ GLOBAL_LIST_EMPTY(responding_centcom_consoles)
 					authorize_name = "[id_card.registered_name] - [id_card.assignment]"
 
 			state = STATE_MAIN
-			playsound(src, 'sound/machines/terminal_on.ogg', 50, FALSE)
+			playsound(src, 'sound/machines/terminal/terminal_on.ogg', 50, FALSE)
 
 /obj/machinery/computer/comntr/proc/send_cross_comms_message(mob/user, destination, message)
 	send_cross_comms_message_timer = null
