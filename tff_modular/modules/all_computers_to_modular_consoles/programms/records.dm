@@ -180,7 +180,7 @@
 			var/datum/computer_file/picture/photo = mugshot
 			if(photo.stored_picture.psize_x > world.icon_size || photo.stored_picture.psize_y > world.icon_size)
 				computer.physical.balloon_alert(user, "photo too large!")
-				playsound(computer.physical, 'sound/machines/terminal_error.ogg', 70, TRUE)
+				playsound(computer.physical, 'sound/machines/terminal/terminal_error.ogg', 70, TRUE)
 				return FALSE
 
 			var/name = tgui_input_text(user, "Enter the name of the new record.", "New Record", "Crewman Default", MAX_NAME_LEN)
@@ -189,7 +189,7 @@
 
 			new /datum/record/crew(name = name, character_appearance = photo.stored_picture.picture_image)
 			computer.physical.balloon_alert(user, "record created")
-			playsound(computer.physical, 'sound/machines/terminal_success.ogg', 70, TRUE)
+			playsound(computer.physical, 'sound/machines/terminal/terminal_success.ogg', 70, TRUE)
 			return TRUE
 		return FALSE
 
