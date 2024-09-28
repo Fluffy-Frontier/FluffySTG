@@ -63,6 +63,7 @@ GLOBAL_LIST_INIT(consoles_replacement_map, list(
 		// why on the fucking Earth you think, you can override it, AND return SAME hint?!
 		if (src.type in list(
 			/obj/machinery/computer/operating,
+			/obj/machinery/computer/operating/oldstation,
 		))
 			QDEL_IN(src, 1 SECONDS)
 
