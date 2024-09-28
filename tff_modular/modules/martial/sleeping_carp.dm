@@ -28,7 +28,7 @@
 		return MARTIAL_ATTACK_SUCCESS
 
 	attacker.do_attack_animation(defender, ATTACK_EFFECT_PUNCH)
-	playsound(defender, 'sound/weapons/punch1.ogg', 25, TRUE, -1)
+	playsound(defender, 'sound/items/weapons/punch1.ogg', 25, TRUE, -1)
 	defender.apply_damage(20, STAMINA)
 	log_combat(attacker, defender, "disarmed (Sleeping Carp)")
 	return MARTIAL_ATTACK_INVALID // normal disarm
