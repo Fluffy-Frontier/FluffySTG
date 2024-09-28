@@ -24,7 +24,7 @@
 	..()
 	RegisterSignal(computer, COMSIG_MODULAR_COMPUTER_TURNED_ON, PROC_REF(computer_on))
 
-	playsound(computer, 'sound/machines/terminal_alert.ogg', 100)
+	playsound(computer, 'sound/machines/terminal/terminal_alert.ogg', 100)
 	initial_icon_state_menu = computer_installing.icon_state_menu
 
 	// Show BSOD in any condition
@@ -68,7 +68,7 @@
 		return NONE
 
 	user.visible_message(span_notice("[user] tries to diagnose [computer]\s BSOD reason."), span_notice("You plug [tool] pins into [computer] to force restart its drivers..."))
-	playsound(computer, 'sound/machines/terminal_processing.ogg', 50)
+	playsound(computer, 'sound/machines/terminal/terminal_processing.ogg', 50)
 	if (do_after(user, 10 SECONDS, computer.physical ? computer.physical : get_turf(computer)))
 		playsound(computer, 'sound/machines/high_tech_confirm.ogg', 50)
 		computer.remove_file(src)

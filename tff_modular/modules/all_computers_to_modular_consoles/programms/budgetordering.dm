@@ -143,7 +143,7 @@
 				if(length(SSshuttle.shopping_list))
 					// He he
 					if (!computer.stored_paper)
-						playsound(computer, 'sound/machines/terminal_error.ogg', 50, FALSE)
+						playsound(computer, 'sound/machines/terminal/terminal_error.ogg', 50, FALSE)
 						say("Unable to print requisition form. Shuttle call was denied. Check [computer.physical]\s paper level.")
 						return TRUE
 					computer.stored_paper--
@@ -365,13 +365,13 @@
 			return
 
 	if(pack.goody && !self_paid)
-		playsound(computer, 'sound/machines/buzz-sigh.ogg', 50, FALSE)
+		playsound(computer, 'sound/machines/buzz/buzz-sigh.ogg', 50, FALSE)
 		say("ERROR: Small crates may only be purchased by private accounts.")
 		return
 
 	var/similar_count = SSshuttle.supply.get_order_count(pack)
 	if(similar_count == OVER_ORDER_LIMIT)
-		playsound(computer, 'sound/machines/buzz-sigh.ogg', 50, FALSE)
+		playsound(computer, 'sound/machines/buzz/buzz-sigh.ogg', 50, FALSE)
 		say("ERROR: No more then [CARGO_MAX_ORDER] of any pack may be ordered at once")
 		return
 
@@ -379,7 +379,7 @@
 	for(var/count in 1 to amount)
 		// He he
 		if (!computer.stored_paper)
-			playsound(computer, 'sound/machines/terminal_error.ogg', 50, FALSE)
+			playsound(computer, 'sound/machines/terminal/terminal_error.ogg', 50, FALSE)
 			say("Unable to print requisition form. Order was [count > 1 ? "partically procceded" : "canceled"]. Check [computer.physical]\s paper level.")
 			if (count == 1)
 				return
@@ -543,7 +543,7 @@
 
 	// He he
 	if (!possible_downloader.stored_paper)
-		playsound(possible_downloader, 'sound/machines/terminal_error.ogg', 50, FALSE)
+		playsound(possible_downloader, 'sound/machines/terminal/terminal_error.ogg', 50, FALSE)
 		parent_prog.say("Unable to print requisition form. Order was canceled. Check [possible_downloader.physical]\s paper level.")
 		return
 	possible_downloader.stored_paper--

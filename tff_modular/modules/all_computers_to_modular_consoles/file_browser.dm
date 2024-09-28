@@ -31,7 +31,7 @@
 		return ITEM_INTERACT_BLOCKING
 
 	console_disk = tool
-	playsound(computer, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
+	playsound(computer, 'sound/machines/terminal/terminal_insert_disc.ogg', 50, FALSE)
 	console_disk.RegisterPC(computer)
 
 	if (console_disk.program)

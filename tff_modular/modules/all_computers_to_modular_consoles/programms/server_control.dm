@@ -65,7 +65,7 @@
 		return TRUE
 	if(!can_run_Adjacent(usr) && !(computer.obj_flags & EMAGGED))
 		say("Access denied!")
-		playsound(computer, 'sound/machines/terminal_error.ogg', 20, TRUE)
+		playsound(computer, 'sound/machines/terminal/terminal_error.ogg', 20, TRUE)
 		return TRUE
 
 	switch(action)

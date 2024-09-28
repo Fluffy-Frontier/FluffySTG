@@ -209,10 +209,10 @@
 		return NONE
 
 	balloon_alert(user, "copying designs...")
-	playsound(src, 'sound/machines/terminal_processing.ogg', 25, TRUE)
+	playsound(src, 'sound/machines/terminal/terminal_processing.ogg', 25, TRUE)
 	if(do_after(user, 1 SECONDS, target = computer.physical))
 		loaded_surgeries |= operating.advanced_surgeries
-		playsound(src, 'sound/machines/terminal_success.ogg', 25, TRUE)
+		playsound(src, 'sound/machines/terminal/terminal_success.ogg', 25, TRUE)
 		downloaded = TRUE
 		update_appearance(UPDATE_OVERLAYS)
 		return ITEM_INTERACT_SUCCESS

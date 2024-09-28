@@ -88,7 +88,7 @@
 			return FALSE
 		d_disk = D
 	to_chat(user, span_notice("You insert [D] into \the [computer.name]!"))
-	playsound(computer, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
+	playsound(computer, 'sound/machines/terminal/terminal_insert_disc.ogg', 50, FALSE)
 	return TRUE
 
 /datum/computer_file/program/science/proc/handle_disks_ui_data(list/data)

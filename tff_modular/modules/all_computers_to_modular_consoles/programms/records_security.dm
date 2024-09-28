@@ -188,13 +188,13 @@
 	var/input_name = strip_html_full(params["name"], MAX_CRIME_NAME_LEN)
 	if(!input_name)
 		to_chat(usr, span_warning("You must enter a name for the crime."))
-		playsound(computer.physical, 'sound/machines/terminal_error.ogg', 75, TRUE)
+		playsound(computer.physical, 'sound/machines/terminal/terminal_error.ogg', 75, TRUE)
 		return FALSE
 
 	var/max = CONFIG_GET(number/maxfine)
 	if(params["fine"] > max)
 		to_chat(usr, span_warning("The maximum fine is [max] credits."))
-		playsound(computer.physical, 'sound/machines/terminal_error.ogg', 75, TRUE)
+		playsound(computer.physical, 'sound/machines/terminal/terminal_error.ogg', 75, TRUE)
 		return FALSE
 
 	var/input_details
@@ -305,7 +305,7 @@
 /// Finishes printing, resets the printer.
 /datum/computer_file/program/disk_binded/records/security/proc/print_finish(obj/item/printable)
 	printing = FALSE
-	playsound(computer.physical, 'sound/machines/terminal_eject.ogg', 100, TRUE)
+	playsound(computer.physical, 'sound/machines/terminal/terminal_eject.ogg', 100, TRUE)
 	printable.forceMove(computer.physical.loc)
 
 	return TRUE
@@ -314,12 +314,12 @@
 /datum/computer_file/program/disk_binded/records/security/proc/print_record(mob/user, datum/record/crew/target, list/params)
 	if(printing)
 		computer.physical.balloon_alert(user, "printer busy")
-		playsound(computer.physical, 'sound/machines/terminal_error.ogg', 100, TRUE)
+		playsound(computer.physical, 'sound/machines/terminal/terminal_error.ogg', 100, TRUE)
 		return FALSE
 
 	if (!computer.stored_paper)
 		computer.physical.balloon_alert(user, "paper bin empty")
-		playsound(computer.physical, 'sound/machines/terminal_error.ogg', 100, TRUE)
+		playsound(computer.physical, 'sound/machines/terminal/terminal_error.ogg', 100, TRUE)
 		return FALSE
 
 	computer.stored_paper--

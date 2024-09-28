@@ -83,7 +83,7 @@
 
 			expunge_record_info(target)
 			computer.physical.balloon_alert(user, "record expunged")
-			playsound(computer.physical, 'sound/machines/terminal_eject.ogg', 70, TRUE)
+			playsound(computer.physical, 'sound/machines/terminal/terminal_eject.ogg', 70, TRUE)
 			owner_object.investigate_log("[key_name(user)] expunged the record of [target.name].", INVESTIGATE_RECORDS)
 
 			return TRUE
@@ -95,7 +95,7 @@
 
 		if("logout")
 			computer.physical.balloon_alert(user, "logged out")
-			playsound(computer.physical, 'sound/machines/terminal_off.ogg', 70, TRUE)
+			playsound(computer.physical, 'sound/machines/terminal/terminal_off.ogg', 70, TRUE)
 			authenticated = FALSE
 
 			return TRUE
@@ -172,12 +172,12 @@
 
 	if(!authenticated && !can_run_Adjacent(user))
 		computer.physical.balloon_alert(user, "access denied")
-		playsound(computer.physical, 'sound/machines/terminal_error.ogg', 70, TRUE)
+		playsound(computer.physical, 'sound/machines/terminal/terminal_error.ogg', 70, TRUE)
 		return FALSE
 
 	if(mugshot.picture.psize_x > world.icon_size || mugshot.picture.psize_y > world.icon_size)
 		computer.physical.balloon_alert(user, "photo too large!")
-		playsound(computer.physical, 'sound/machines/terminal_error.ogg', 70, TRUE)
+		playsound(computer.physical, 'sound/machines/terminal/terminal_error.ogg', 70, TRUE)
 		return FALSE
 
 	var/trimmed = copytext(mugshot.name, 9, MAX_NAME_LEN) // Remove "photo - "
@@ -188,7 +188,7 @@
 	new /datum/record/crew(name = name, character_appearance = mugshot.picture.picture_image)
 
 	computer.physical.balloon_alert(user, "record created")
-	playsound(computer.physical, 'sound/machines/terminal_insert_disc.ogg', 70, TRUE)
+	playsound(computer.physical, 'sound/machines/terminal/terminal_insert_disc.ogg', 70, TRUE)
 
 	qdel(mugshot)
 
@@ -201,10 +201,10 @@
 
 	if(!can_run_Adjacent(user))
 		computer.physical.balloon_alert(user, "access denied")
-		playsound(computer.physical, 'sound/machines/terminal_error.ogg', 70, TRUE)
+		playsound(computer.physical, 'sound/machines/terminal/terminal_error.ogg', 70, TRUE)
 		return FALSE
 
 	computer.physical.balloon_alert(user, "logged in")
-	playsound(computer.physical, 'sound/machines/terminal_on.ogg', 70, TRUE)
+	playsound(computer.physical, 'sound/machines/terminal/terminal_on.ogg', 70, TRUE)
 
 	return TRUE
