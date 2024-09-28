@@ -402,7 +402,7 @@
 	spells_to_add = list(
 		/datum/action/cooldown/spell/aoe/magic_missile,
 		/datum/action/cooldown/spell/forcewall,
-		/datum/action/cooldown/spell/jaunt/ethereal_jaunt,
+		/datum/action/cooldown/spell/pointed/projectile/fireball,
 	)
 
 /datum/outfit/deathmatch_loadout/wizard/pyro
@@ -440,7 +440,7 @@
 	head = /obj/item/clothing/head/wizard/black
 	spells_to_add = list(
 		/datum/action/cooldown/spell/touch/scream_for_me,
-		/datum/action/cooldown/spell/teleport/radius_turf/blink,
+		/datum/action/cooldown/spell/conjure/link_worlds,
 	)
 
 /datum/outfit/deathmatch_loadout/wizard/larp
@@ -1106,10 +1106,10 @@
 
 	spells_to_add = list(
 		/datum/action/cooldown/spell/touch/mansus_grasp,
-		/datum/action/cooldown/spell/jaunt/ethereal_jaunt/ash,
+		/datum/action/cooldown/spell/conjure/cosmic_expansion,
 		/datum/action/cooldown/spell/pointed/projectile/star_blast,
 		/datum/action/cooldown/spell/touch/star_touch,
-		/datum/action/cooldown/spell/pointed/void_phase,
+		/datum/action/cooldown/spell/cone/staggered/cone_of_cold/void,
 		/datum/action/cooldown/spell/aoe/void_pull,
 	)
 

@@ -675,6 +675,7 @@
 		/obj/machinery/vending/imported/tiziran = "Tiziran Imported Delicacies", //NOVA EDIT ADDITION
 		/obj/machinery/vending/imported/yangyu = "Fudobenda", //NOVA EDIT ADDITION
 		/obj/machinery/vending/deforest_medvend = "DeForest Med-Vend", //NOVA EDIT ADDITION
+		/obj/machinery/vending/access/bunny = "Bunny Outfitting Station", // FLUFFY FRONTIER EDIT ADDITION
 	)
 
 /obj/item/circuitboard/machine/vendor/screwdriver_act(mob/living/user, obj/item/tool)
@@ -930,6 +931,9 @@
 		/datum/stock_part/servo = 1,
 		/obj/item/stack/cable_coil = 1,
 		/obj/item/stack/sheet/glass = 2)
+
+/obj/item/circuitboard/machine/sleeper/syndie
+	build_path = /obj/machinery/sleeper/syndie
 
 /obj/item/circuitboard/machine/sleeper/fullupgrade
 	build_path = /obj/machinery/sleeper/syndie/fullupgrade

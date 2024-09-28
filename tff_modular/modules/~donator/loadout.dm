@@ -136,9 +136,54 @@
 /datum/loadout_item/neck/haori
 	name = "Flaming Haori"
 	item_path = /obj/item/clothing/neck/cloak/haori
-	ckeywhitelist = list("romontesque")
+	ckeywhitelist = list("romontesque", "yaqapi")
 
-/datum/loadout_item/neck/wakamo // Lafrien's clothing
-	name = "Wakamo holo-projector"
-	item_path = /obj/item/clothing/suit/hooded/cloak/wakamo
-	donator_only = TRUE
+/datum/loadout_item/glasses/delingar_glasses_redsec
+	name = "Ballistic Security Glasses"
+	item_path = /obj/item/clothing/glasses/hud/security/sunglasses/ballistic
+	restricted_roles = list(JOB_SECURITY_OFFICER, JOB_WARDEN, JOB_HEAD_OF_SECURITY, JOB_CORRECTIONS_OFFICER, JOB_BOUNCER, JOB_ORDERLY, JOB_SCIENCE_GUARD, JOB_CUSTOMS_AGENT, JOB_ENGINEERING_GUARD, JOB_BLUESHIELD)
+	ckeywhitelist = list("Delingar")
+
+/datum/loadout_item/glasses/delingar_glasses_meson
+	name = "Ballistic Meson Glasses"
+	item_path = /obj/item/clothing/glasses/meson/ballistic
+	restricted_roles = list(JOB_ATMOSPHERIC_TECHNICIAN, JOB_CHIEF_ENGINEER, JOB_STATION_ENGINEER, JOB_SHAFT_MINER, JOB_TELECOMMS_SPECIALIST)
+	ckeywhitelist = list("Delingar")
+
+/datum/loadout_item/glasses/delingar_glasses_medic
+	name = "Ballistic Medical Glasses"
+	item_path = /obj/item/clothing/glasses/hud/health/ballistic
+	restricted_roles = list(JOB_CORONER, JOB_CHIEF_MEDICAL_OFFICER, JOB_MEDICAL_DOCTOR, JOB_PARAMEDIC)
+	ckeywhitelist = list("Delingar")
+
+/datum/loadout_item/glasses/delingar_glasses_science
+	name = "Ballistic Science Glasses"
+	item_path = /obj/item/clothing/glasses/science/ballistic
+	restricted_roles = list(JOB_CHEMIST, JOB_CHIEF_MEDICAL_OFFICER, JOB_RESEARCH_DIRECTOR, JOB_SCIENTIST)
+	ckeywhitelist = list("Delingar")
+
+/datum/loadout_item/glasses/delingar_glasses_diagnostic
+	name = "Ballistic Diagnostic Glasses"
+	item_path = /obj/item/clothing/glasses/hud/diagnostic/ballistic
+	restricted_roles = list(JOB_RESEARCH_DIRECTOR, JOB_SCIENTIST, JOB_ROBOTICIST)
+	ckeywhitelist = list("Delingar")
+
+/datum/loadout_item/glasses/delingar_glasses_common
+	name = "Ballistic Glasses"
+	item_path = /obj/item/clothing/glasses/ballistic
+	ckeywhitelist = list("Delingar")
+
+/datum/loadout_item/suit/fjacket // Feenie's clothing
+	name = "Futuristic jacket"
+	item_path = /obj/item/clothing/suit/jacket/leather/futuristic
+	ckeywhitelist = list("PhenyaMomota", "Deadsec17", "Lafrien", "Iajret", "Vishenka0704")
+
+/datum/loadout_item/neck/voidarr_cape
+	name = "Voidarr Personel cape"
+	item_path = /obj/item/clothing/neck/voidarr_cape
+	ckeywhitelist = list("Smol42", "Sage4or")
+
+/datum/loadout_item/neck/smoltrenchcoat
+	name = "Secure Trenchcoat"
+	item_path = /obj/item/clothing/neck/smoltrenchcoat
+	ckeywhitelist = list("Smol42")

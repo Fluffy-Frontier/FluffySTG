@@ -252,6 +252,18 @@
 			RESKIN_WORN_ICON = 'icons/mob/clothing/hands.dmi',
 			RESKIN_WORN_ICON_STATE = "black"
 		),
+		"Red Old Gloves" = list(
+			RESKIN_ICON = 'icons/obj/clothing/gloves.dmi',
+			RESKIN_ICON_STATE = "sec",
+			RESKIN_WORN_ICON = 'icons/mob/clothing/hands.dmi',
+			RESKIN_WORN_ICON_STATE = "sec"
+		),
+		"Blu Old Gloves" = list(
+			RESKIN_ICON = 'icons/obj/clothing/gloves.dmi',
+			RESKIN_ICON_STATE = "sec_blu",
+			RESKIN_WORN_ICON = 'icons/mob/clothing/hands.dmi',
+			RESKIN_WORN_ICON_STATE = "sec_blu"
+		)
 	)
 
 /obj/item/storage/belt/security/Initialize(mapload)
@@ -266,20 +278,6 @@
 			RESKIN_WORN_ICON_STATE = "belt_slim"
 		),
 	)
-/obj/item/storage/belt/security/webbing/peacekeeper/Initialize(mapload)
-	. = ..()
-	uses_advanced_reskins = TRUE
-	current_skin = NONE
-	unique_reskin = list(
-		"Red Variant" = list(
-			RESKIN_ICON_STATE = "armadyne_webbing",
-			RESKIN_WORN_ICON_STATE = "armadyne_webbing"
-		),
-		"Blue Variant" = list(
-			RESKIN_ICON_STATE = "peacekeeper_webbing",
-			RESKIN_WORN_ICON_STATE = "peacekeeper_webbing"
-		),
-	)
 
 /obj/item/clothing/shoes/jackboots/sec/Initialize(mapload)
 	. = ..()
@@ -288,6 +286,10 @@
 			RESKIN_ICON = 'icons/obj/clothing/shoes.dmi',
 			RESKIN_ICON_STATE = "jackboots",
 		),
+		"Red Variant" = list(
+			RESKIN_ICON = 'icons/obj/clothing/shoes.dmi',
+			RESKIN_ICON_STATE = "jackboots_sec",
+		)
 	)
 
 /obj/item/storage/backpack/duffelbag/sec/Initialize(mapload)
@@ -580,4 +582,23 @@
 			RESKIN_WORN_ICON = 'icons/mob/clothing/neck.dmi',
 			RESKIN_WORN_ICON_STATE = "hoscloak"
 		),
+	)
+
+//Разгрузка миротворца. Добавляется редсек вариант в виде спрайта разгрузки Армадайн ЕРТшников, которых... А их спавнили хоть раз?
+/obj/item/storage/belt/security/webbing/peacekeeper
+	uses_advanced_reskins = TRUE
+	current_skin = NONE
+	unique_reskin = list()
+
+/obj/item/storage/belt/security/webbing/peacekeeper/Initialize(mapload)
+	. = ..()
+	unique_reskin = list( //re-redefine of belt/security skins
+		"Blue Variant" = list(
+			RESKIN_ICON_STATE = "peacekeeper_webbing",
+			RESKIN_WORN_ICON_STATE = "peacekeeper_webbing"
+		),
+		"Red Variant" = list(
+			RESKIN_ICON_STATE = "armadyne_webbing",
+			RESKIN_WORN_ICON_STATE = "armadyne_webbing"
+		)
 	)

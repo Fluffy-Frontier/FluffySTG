@@ -30029,6 +30029,12 @@
 /obj/structure/dresser,
 /turf/open/floor/carpet/black,
 /area/station/commons/dorms)
+"ehe" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/detectiveboard/directional/east,
+/turf/open/floor/wood/tile,
+/area/station/security/detectives_office)
 "ehk" = (
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 1
@@ -42650,7 +42656,7 @@
 /turf/open/floor/engine,
 /area/station/science/explab)
 "mrX" = (
-/obj/machinery/vending/autodrobe/all_access,
+/obj/machinery/vending/autodrobe,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
 "msM" = (
@@ -50056,7 +50062,7 @@
 /turf/open/floor/iron/dark/textured,
 /area/station/science/genetics)
 "roq" = (
-/obj/machinery/vending/autodrobe/all_access,
+/obj/machinery/vending/autodrobe,
 /turf/open/floor/iron/dark/herringbone,
 /area/station/commons/dorms)
 "roJ" = (
@@ -57101,7 +57107,7 @@
 /turf/open/floor/plating,
 /area/station/science/server)
 "vOr" = (
-/obj/machinery/vending/autodrobe/all_access,
+/obj/machinery/vending/autodrobe,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/station/maintenance/abandon_cafeteria)
@@ -58089,7 +58095,7 @@
 /area/station/science/xenobiology)
 "wCp" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/vending/boozeomat/all_access,
+/obj/machinery/vending/boozeomat,
 /turf/open/floor/wood,
 /area/station/maintenance/abandon_cafeteria)
 "wCx" = (
@@ -86907,7 +86913,7 @@ wdv
 wYB
 xLC
 tXb
-tXb
+ehe
 tXb
 tXb
 knQ

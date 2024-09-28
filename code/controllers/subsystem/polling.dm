@@ -155,7 +155,7 @@ SUBSYSTEM_DEF(polling)
 			act_never = "[custom_link_style_start]<a href='?src=[REF(poll_alert_button)];never=1'[custom_link_style_end]>\[Never For This Round\]</a>"
 
 		if(!duplicate_message_check(alert_poll)) //Only notify people once. They'll notice if there are multiple and we don't want to spam people.
-			SEND_SOUND(candidate_mob, 'sound/misc/notice2.ogg')
+			SEND_SOUND(candidate_mob, 'sound/announcer/notice/notice2.ogg')
 			var/surrounding_icon
 			if(chat_text_border_icon)
 				var/image/surrounding_image
@@ -174,6 +174,8 @@ SUBSYSTEM_DEF(polling)
 	// Sleep until the time is up
 	UNTIL(new_poll.finished)
 	if(!(amount_to_pick > 0))
+		return new_poll.signed_up
+	if(length(new_poll.signed_up) < amount_to_pick)
 		return new_poll.signed_up
 	for(var/pick in 1 to amount_to_pick)
 		new_poll.chosen_candidates += pick_n_take(new_poll.signed_up)

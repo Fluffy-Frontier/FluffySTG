@@ -228,46 +228,126 @@
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/suit/hooded/cloak/wakamo
-	name = "Wakamo holo-projector"
-	desc =  "Prototype version of a Holo-Projector that creates projection above your head."
-	icon = 'tff_modular/master_files/icons/donator/obj/clothing/neck.dmi'
-	icon_state = "wakamo"
-	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
-	hoodtype = /obj/item/clothing/head/hooded/cloakhood/wakamo
-	body_parts_covered = HEAD|NECK
-	slot_flags = ITEM_SLOT_NECK //it's a cloak. it's cosmetic. so why the hell not? what could possibly go wrong?
-	supports_variations_flags = NONE
-	resistance_flags = FIRE_PROOF
-	greyscale_colors = "#AC3232"
-	greyscale_config = /datum/greyscale_config/wakamo
-	greyscale_config_worn = /datum/greyscale_config/wakamo/worn
+/obj/item/clothing/glasses/hud/security/sunglasses/ballistic
+	name = "ballistic security glasses"
+	desc = "Made from the same cheap plastic as regular glasses. Don't expect them to help you. They have some strange orange shield logo on side."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
+	icon_state = "delingar_glasses_redsec"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/glasses.dmi'
+	uses_advanced_reskins = TRUE
+	unique_reskin = list(
+		"Default" = list(
+			RESKIN_ICON_STATE = "delingar_glasses_redsec",
+			RESKIN_WORN_ICON_STATE = "delingar_glasses_redsec"
+		),
+		"Blue" = list(
+			RESKIN_ICON_STATE = "delingar_glasses_bluesec",
+			RESKIN_WORN_ICON_STATE = "delingar_glasses_bluesec"
+		),
+		"Black" = list(
+			RESKIN_ICON_STATE = "delingar_glasses_blacksec",
+			RESKIN_WORN_ICON_STATE = "delingar_glasses_blacksec"
+		),
+	)
+
+/obj/item/clothing/glasses/meson/ballistic
+	name = "ballistic meson glasses"
+	desc = "Made from the same cheap plastic as regular glasses. Don't expect them to help you. They have some strange orange shield logo on side."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
+	icon_state = "delingar_glasses_meson"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/glasses.dmi'
+	uses_advanced_reskins = TRUE
+	unique_reskin = list(
+		"Default" = list(
+			RESKIN_ICON_STATE = "delingar_glasses_meson",
+			RESKIN_WORN_ICON_STATE = "delingar_glasses_meson"
+		),
+		"Orange" = list(
+			RESKIN_ICON_STATE = "delingar_glasses_yellow",
+			RESKIN_WORN_ICON_STATE = "delingar_glasses_yellow"
+		),
+	)
+
+// Sprites of ballistic glasses by ebin_halcyon
+
+/obj/item/clothing/glasses/hud/health/ballistic
+	name = "ballistic health-check glasses"
+	desc = "Made from the same cheap plastic as regular glasses. Don't expect them to help you. They have some strange orange shield logo on side."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
+	icon_state = "delingar_glasses_medical"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/glasses.dmi'
+
+/obj/item/clothing/glasses/hud/diagnostic/ballistic
+	name = "ballistic diagnostic glasses"
+	desc = "Made from the same cheap plastic as regular glasses. Don't expect them to help you. They have some strange orange shield logo on side."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
+	icon_state = "delingar_glasses_diagnostic"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/glasses.dmi'
+
+/obj/item/clothing/glasses/ballistic
+	name = "ballistic glasses"
+	desc = "Made from the same cheap plastic as regular glasses. Don't expect them to help you. They have some strange orange shield logo on side."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
+	icon_state = "delingar_glasses_yellow"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/glasses.dmi'
+
+/obj/item/clothing/glasses/science/ballistic
+	name = "ballistic science glasses"
+	desc = "Made from the same cheap plastic as regular glasses. Don't expect them to help you. They have some strange orange shield logo on side."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/glasses.dmi'
+	icon_state = "delingar_glasses_science"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/glasses.dmi'
+
+/obj/item/clothing/suit/jacket/leather/futuristic //Fluffs for PhenyaMomota, contributor and maintainer
+	name = "futuristic jacket"
+	desc = "This jacket is equipped with electronic components, lighting, heating and other additional mechanisms from the hi-tech world. Inside you can find a tag that says it is Charles Ray property."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/suit.dmi'
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/suit.dmi'
+	icon_state = "fjacket"
+	worn_icon_state = "fjacket"
+	greyscale_config = /datum/greyscale_config/fjacket
+	greyscale_config_worn = /datum/greyscale_config/fjacket/worn
+	greyscale_colors = "#ffd900#00b7ff"
 	flags_1 = IS_PLAYER_COLORABLE_1
 
-/obj/item/clothing/suit/hooded/cloak/wakamo/set_greyscale(list/colors, new_config, new_worn_config, new_inhand_left, new_inhand_right)
+/obj/item/clothing/suit/jacket/leather/futuristic/worn_overlays(mutable_appearance/standing, isinhands, icon_file)
 	. = ..()
-	if(!hood)
-		return
-	var/list/coat_colors = SSgreyscale.ParseColorString(greyscale_colors)
-	var/list/new_coat_colors = coat_colors.Copy(1)
-	hood.set_greyscale(new_coat_colors) //Adopt the suit's grayscale coloring for visual clarity.
-	hood.update_slot_icon()
+	if(!isinhands)
+		. += emissive_appearance('tff_modular/master_files/icons/donator/mob/clothing/suit.dmi', "fjacket-emissive", src, alpha = src.alpha)
 
-//But also keep old method in case the hood is (re-)created later
-/obj/item/clothing/suit/hooded/cloak/wakamo/on_hood_created(obj/item/clothing/head/hooded/hood)
-	. = ..()
-	var/list/coat_colors = (SSgreyscale.ParseColorString(greyscale_colors))
-	var/list/new_coat_colors = coat_colors.Copy(1)
-	hood.set_greyscale(new_coat_colors) //Adopt the suit's grayscale coloring for visual clarity.
-
-/obj/item/clothing/head/hooded/cloakhood/wakamo
-	name = "Wakamo halo"
-	desc = "This is a projection of a Halo above the head. Looks neat. But now you feel Responsibilities weighing on your shoulders since you have grown out of it."
-	icon = 'tff_modular/master_files/icons/donator/obj/clothing/head.dmi'
-	icon_state = "wakamo"
-	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/head.dmi'
-	flags_inv = null
-	supports_variations_flags = NONE
+/obj/item/clothing/neck/voidarr_cape
+	name = "Voidarr personel cape"
+	desc = "Garment fit for Voidarr workforce, darker than the void of stars, as though woven from the very shadow that falleth betwixt dusk and dawn. The cape doth glisten faintly, upon its length, there lieth a subtle sprinkling of moondust."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	icon_state = "smol42_voidarr_cape"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
 	resistance_flags = FIRE_PROOF
-	greyscale_config = /datum/greyscale_config/wakamo_halo
-	greyscale_config_worn = /datum/greyscale_config/wakamo_halo/worn
+	uses_advanced_reskins = TRUE
+	unique_reskin = list(
+		"Snow" = list(
+			RESKIN_ICON_STATE = "smol42_voidarr_cape_snow",
+			RESKIN_WORN_ICON_STATE = "smol42_voidarr_cape_snow"
+		)
+	)
+
+/obj/item/clothing/neck/smoltrenchcoat
+	name = "Secure Trenchcoat"
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	icon_state = "smol42_trenchcoat"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	uses_advanced_reskins = TRUE
+	unique_reskin = list(
+		"Snow" = list(
+			RESKIN_ICON_STATE = "smol42_trenchcoat_white",
+			RESKIN_WORN_ICON_STATE = "smol42_trenchcoat_white"
+		),
+		"Tin" = list(
+			RESKIN_ICON_STATE = "smol42_trenchcoat_tin",
+			RESKIN_WORN_ICON_STATE = "smol42_trenchcoat_tin"
+		),
+		"Blue" = list(
+			RESKIN_ICON_STATE = "smol42_trenchcoat_blue",
+			RESKIN_WORN_ICON_STATE = "smol42_trenchcoat_blue"
+		)
+	)

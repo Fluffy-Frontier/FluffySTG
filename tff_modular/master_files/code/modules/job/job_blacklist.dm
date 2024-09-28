@@ -108,3 +108,9 @@
 
 /datum/job/bridge_assistant
 	species_blacklist = list(SPECIES_NABBER = TRUE)
+
+/datum/job/assistant
+	species_blacklist = list(SPECIES_NABBER = TRUE)
+
+/datum/job/prisoner
+	species_blacklist = list(SPECIES_NABBER = TRUE)

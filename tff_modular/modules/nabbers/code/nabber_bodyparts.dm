@@ -78,6 +78,7 @@
 	limb_id = SPECIES_NABBER
 	brute_modifier = NABBER_BRUTE_MODIFIER
 	burn_modifier = NABBER_BURN_MODIFIER
+	footprint_sprite = FOOTPRINT_SPRITE_TAIL
 
 /obj/item/bodypart/leg/right/mutant/nabber
 	icon_greyscale = BODYPART_ICON_NABBER
@@ -85,6 +86,7 @@
 	limb_id = SPECIES_NABBER
 	brute_modifier = NABBER_BRUTE_MODIFIER
 	burn_modifier = NABBER_BURN_MODIFIER
+	footprint_sprite = FOOTPRINT_SPRITE_TAIL
 
 #undef NABBER_PUNCH_LOW
 #undef NABBER_PUNCH_HIGH
