@@ -10,15 +10,39 @@
 /obj/item/clothing/suit/jacket/playbunny/magician //Not really a robe but it's MAGIC
 	name = "magician's tailcoat"
 	desc = "A magnificent, gold-lined tailcoat that seems to radiate power."
-	icon_state = "tailcoat_wiz"
+	icon_state = "wiz"
 	inhand_icon_state = null
 	flags_inv = null
 
 /obj/item/clothing/suit/jacket/playbunny/security_tailcoat/centcom
 	name = "centcom tailcoat"
 	desc = "A reinforced tailcoat worn by bunny themed centcom officers."
-	icon_state = "tailcoat_centcom"
+	icon_state = "centcom"
 
+/obj/item/clothing/suit/jacket/playbunny/syndi
+	name = "blood-red tailcoat"
+	desc = "The staple of any bunny themed syndicate assassins. Features an extra layer for concealment."
+	icon_state = "syndi"
+
+/obj/item/clothing/suit/jacket/playbunny/brit
+	name = "british tailcoat"
+	desc = "The staple of any bunny themed monarchists. Smells like a cup of tea."
+	icon_state = "brit"
+
+/obj/item/clothing/suit/jacket/playbunny/communist
+	name = "really red tailcoat"
+	desc = "The staple of any bunny themed communists. It suits you just right, comrade!"
+	icon_state = "communist"
+
+/obj/item/clothing/suit/jacket/playbunny/plasma
+	name = "plasma tailcoat"
+	desc = "A tailcoat of a marvellous purple substance. Would it ignite like plasma?"
+	icon_state = "plasma"
+
+/obj/item/clothing/suit/jacket/playbunny/stars
+	name = "stellar tailcoat"
+	desc = "A tailcoat covered in stars. You can look at it so endlessly.... Are they moving?"
+	icon_state = "stars"
 
 //CAPTAIN
 

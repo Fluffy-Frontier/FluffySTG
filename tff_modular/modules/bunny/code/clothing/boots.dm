@@ -115,7 +115,7 @@
 /obj/item/clothing/shoes/jackboots/gogo_boots
 	name = "tactical go-go boots"
 	desc = "Highly tactical footwear designed to give you a better view of the battlefield."
-	icon_state = "hos_boots"
+	icon_state = "hos"
 	icon = 'tff_modular/modules/bunny/icons/obj/feet.dmi'
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/feet.dmi'
 

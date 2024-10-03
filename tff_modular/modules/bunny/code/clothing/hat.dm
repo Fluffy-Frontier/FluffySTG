@@ -8,37 +8,34 @@
 	desc = "A pair of bunny ears attached to a headband. One of the ears is already crooked."
 	icon = 'tff_modular/modules/bunny/icons/obj/hats.dmi'
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/hats.dmi'
-	icon_state = "playbunny_ears"
+	icon_state = "playbunny"
 	flags_1 = IS_PLAYER_COLORABLE_1
 
 /obj/item/clothing/head/playbunny/syndicate
 	name = "blood-red bunny ears headband"
 	desc = "An unusually suspicious pair of bunny ears attached to a headband. The headband looks reinforced with plasteel... but why?"
-	icon_state = "syndibunny_ears"
+	icon_state = "syndi"
 	clothing_flags = SNUG_FIT
-
-/obj/item/clothing/head/playbunny/syndicate/fake
-	armor_type = /datum/armor/none
 
 /obj/item/clothing/head/playbunny/centcom
 	name = "centcom bunny ears headband"
 	desc = "A pair of very professional bunny ears attached to a headband. The ears themselves came from an endangered species of green rabbits."
-	icon_state = "playbunny_ears_centcom"
+	icon_state = "centcom"
 
 /obj/item/clothing/head/playbunny/british
 	name = "british bunny ears headband"
 	desc = "A pair of classy bunny ears attached to a headband. Worn to honor the crown."
-	icon_state = "playbunny_ears_brit"
+	icon_state = "brit"
 
 /obj/item/clothing/head/playbunny/communist
 	name = "really red bunny ears headband"
 	desc = "A pair of red and gold bunny ears attached to a headband. Commonly used by any collectivizing bunny waiters."
-	icon_state = "playbunny_ears_communist"
+	icon_state = "communist"
 
 /obj/item/clothing/head/playbunny/usa
 	name = "usa bunny ears headband"
 	desc = "A pair of star spangled bunny ears attached to a headband. The headband of a true patriot."
-	icon_state = "playbunny_ears_usa"
+	icon_state = "usa"
 
 //CAPTAIN
 

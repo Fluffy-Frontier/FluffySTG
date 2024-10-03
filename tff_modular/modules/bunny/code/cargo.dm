@@ -6,7 +6,7 @@
 
 /obj/item/storage/backpack/duffelbag/mining_bunny/PopulateContents()
 	new /obj/item/clothing/head/playbunny/miner(src)
-	new /obj/item/clothing/neck/playbunny/tie/miner(src)
+	new /obj/item/clothing/neck/playbunny/miner(src)
 	new /obj/item/clothing/suit/jacket/playbunny/miner(src)
 	new /obj/item/clothing/under/costume/playbunny/miner(src)
 	new /obj/item/clothing/shoes/workboots/mining/heeled(src)

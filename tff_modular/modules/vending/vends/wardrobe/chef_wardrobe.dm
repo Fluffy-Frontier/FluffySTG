@@ -2,7 +2,7 @@
 	products_ff = list(
 		/obj/item/clothing/under/costume/playbunny/cook = 3,
 		/obj/item/clothing/suit/jacket/playbunny/cook = 3,
-		/obj/item/clothing/neck/playbunny/tie/cook = 3,
+		/obj/item/clothing/neck/playbunny/cook = 3,
 		/obj/item/clothing/head/playbunny/cook = 3,
 		/obj/item/clothing/shoes/fancy_heels/white = 3,
 		/obj/item/clothing/shoes/fancy_heels/black = 3,
