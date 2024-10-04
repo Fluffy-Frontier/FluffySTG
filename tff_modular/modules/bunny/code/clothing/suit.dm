@@ -7,9 +7,12 @@
 	icon_state = "tailcoat"
 	flags_1 = IS_PLAYER_COLORABLE_1
 
-/obj/item/clothing/suit/jacket/playbunny/magician //Not really a robe but it's MAGIC
+/obj/item/clothing/suit/wizrobe/playbunny/magician //Not really a robe but it's MAGIC
 	name = "magician's tailcoat"
 	desc = "A magnificent, gold-lined tailcoat that seems to radiate power."
+	worn_icon = 'tff_modular/modules/bunny/icons/mob/suit.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/suit_digi.dmi'
+	icon = 'tff_modular/modules/bunny/icons/obj/suit.dmi'
 	icon_state = "wiz"
 	inhand_icon_state = null
 	flags_inv = null
