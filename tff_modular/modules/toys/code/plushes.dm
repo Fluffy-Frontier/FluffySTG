@@ -18,7 +18,7 @@
 	icon_state = "plush_cara"
 	attack_verb_continuous = list("noms", "gnashes at", "bites", "hugs")
 	attack_verb_simple = list("nom", "gnash at", "bite", "hug")
-	squeak_override = list('sound/weapons/bite.ogg' = 1)
+	squeak_override = list('sound/items/weapons/bite.ogg' = 1)
 
 /obj/item/toy/plush/tff/grant
 	name = "Grant-ED plushie"
@@ -26,7 +26,7 @@
 	icon_state = "plush_grant"
 	attack_verb_continuous = list("beeps at", "hisses at", "hugs", "bites")
 	attack_verb_simple = list("beep at", "hiss at", "hug", "bite")
-	squeak_override = list('sound/machines/beep.ogg' = 1,'sound/machines/twobeep.ogg' = 1,'tff_modular/modules/toys/sounds/error.ogg' = 1)
+	squeak_override = list('sound/machines/beep/beep.ogg' = 1,'sound/machines/beep/twobeep.ogg' = 1,'tff_modular/modules/toys/sounds/error.ogg' = 1)
 
 /obj/item/toy/plush/tff/kylius
 	name = "Kylius plushie"
@@ -58,7 +58,7 @@
 	icon_state = "plush_404"
 	attack_verb_continuous = list("beeps at", "hisses at", "hugs", "bites", "mews at")
 	attack_verb_simple = list("beep at", "hiss at", "hug", "bite", "mew at")
-	squeak_override = list('tff_modular/modules/toys/sounds/error.ogg' = 1,'sound/machines/twobeep.ogg' = 1,'tff_modular/modules/toys/sounds/mewo.ogg' = 1)
+	squeak_override = list('tff_modular/modules/toys/sounds/error.ogg' = 1,'sound/machines/beep/twobeep.ogg' = 1,'tff_modular/modules/toys/sounds/mewo.ogg' = 1)
 
 /obj/item/toy/plush/tff/wojciecha
 	name = "Wojciecha plushie"
@@ -74,5 +74,5 @@
 	icon_state = "plush_yulia"
 	attack_verb_continuous = list("attacks", "bites", "gnashes at", "hugs")
 	attack_verb_simple = list("attack", "bite", "gnash at", "hug")
-	squeak_override = list('sound/weapons/bite.ogg' = 1,'modular_nova/modules/emotes/sound/voice/feline_purr.ogg' = 1)
+	squeak_override = list('sound/items/weapons/bite.ogg' = 1,'modular_nova/modules/emotes/sound/voice/feline_purr.ogg' = 1)
 

@@ -9,7 +9,7 @@
 	desc = "Heel in more way than one."
 	greyscale_colors = "#18191E"
 	lace_time = 12 SECONDS
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	hitsound = 'sound/items/weapons/bladeslice.ogg'
 	strip_delay = 2 SECONDS
 	force = 10
 	throwforce = 15
