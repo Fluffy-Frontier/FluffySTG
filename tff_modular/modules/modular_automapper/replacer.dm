@@ -22,7 +22,7 @@
  */
 /datum/area_replace_obj/proc/try_spawn()
 	// Ищем область где будем искать объект под замену.
-	if(SSmapping.config.map_name in blacklisted_stations)
+	if(SSmapping.current_map.map_name in blacklisted_stations)
 		return
 
 	for(var/area_type in target_areas)
