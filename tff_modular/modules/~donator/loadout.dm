@@ -191,4 +191,4 @@
 /datum/loadout_item/neck/mousecloak
 	name = "Winter Assault Jacket"
 	item_path = /obj/item/clothing/neck/mousecloak
-	ckeywhitelist = list("mercreaper", "yaqapi", "siamant", "flippingtable")
+	ckeywhitelist = list("mercreaper", "yaqapi", "siamant", "flippingtable", "phenyamomota")
