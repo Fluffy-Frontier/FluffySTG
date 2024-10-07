@@ -169,8 +169,6 @@
 	icon_state = "green"
 	icon = 'modular_nova/master_files/icons/obj/clothing/accessories.dmi'
 	worn_icon = 'modular_nova/master_files/icons/mob/clothing/accessories.dmi'
-<<<<<<< HEAD
-=======
 	attachment_slot = NONE
 	/// Who the pin originally belonged to, for purposes of tracking hours of playtime left
 	var/datum/weakref/owner_ref
@@ -219,7 +217,6 @@
 		examine_list += "A green pin is attached to [human_wearer.p_their()] [attached_to.name][owner ? ", belonging to [owner]." : "."][green_time_remaining_text]"
 	else
 		examine_list += "A green pin is attached to [source][owner ? ", belonging to [owner]." : "."][green_time_remaining_text]"
->>>>>>> e14623763fa (Minor Loadout Accessory Tweaks (#4456))
 
 /obj/item/clothing/accessory/green_pin/examine(mob/user)
 	. = ..()
