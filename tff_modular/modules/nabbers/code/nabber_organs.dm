@@ -13,6 +13,14 @@
 	liked_foodtypes = RAW | GORE | GRAIN
 	disliked_foodtypes = CLOTH | FRIED | TOXIC
 	toxic_foodtypes = DAIRY
+	var/static/list/languages_possible_gas = typecacheof(list(
+		/datum/language/common,
+		/datum/language/nabber,
+	))
+
+/obj/item/organ/internal/tongue/nabber/get_possible_languages()
+	RETURN_TYPE(/list)
+	return languages_possible_gas
 
 /obj/item/organ/internal/ears/nabber
 	name = "nabber ears"
@@ -31,13 +39,6 @@
 
 /obj/item/organ/internal/eyes/nabber
 	name = "nabber eyes"
-	desc = "Small orange orbs."
-	icon = ORGGAN_ICON_NABBER
-	icon_state = "eyes"
-	flash_protect = FLASH_PROTECTION_SENSITIVE
-
-/obj/item/organ/internal/eyes/robotic/nabber
-	name = "nabber eyes"
 	desc = "Small orange orbs. With pair welding shield linses."
 	icon = ORGGAN_ICON_NABBER
 	icon_state = "eyes"
@@ -45,7 +46,7 @@
 	var/datum/action/toggle_welding/shield
 	var/active = FALSE
 
-/obj/item/organ/internal/eyes/robotic/nabber/Insert(mob/living/carbon/eye_recipient, special, movement_flags)
+/obj/item/organ/internal/eyes/nabber/Insert(mob/living/carbon/eye_recipient, special, movement_flags)
 	. = ..()
 	shield = new(eye_recipient)
 	shield.button_icon = ORGGAN_ICON_NABBER
@@ -53,7 +54,7 @@
 	shield.Grant(eye_recipient)
 	shield.eyes = src
 
-/obj/item/organ/internal/eyes/robotic/nabber/proc/toggle_shielding()
+/obj/item/organ/internal/eyes/nabber/proc/toggle_shielding()
 	if(!owner)
 		return
 
@@ -72,7 +73,7 @@
 	owner.update_tint()
 	owner.balloon_alert(owner, "Welder eyelids open!")
 
-/obj/item/organ/internal/eyes/robotic/nabber/Remove(mob/living/carbon/eye_owner, special)
+/obj/item/organ/internal/eyes/nabber/Remove(mob/living/carbon/eye_owner, special)
 	. = ..()
 	shield.Destroy()
 	active = FALSE
