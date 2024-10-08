@@ -25,16 +25,20 @@
 	. = ..()
 	if(!CONFIG_GET(flag/no_default_techweb_link) && !stored_research)
 		CONNECT_TO_RND_SERVER_ROUNDSTART(stored_research, computer)
+	handle_rnd_control_install()	// FLUFFY FRONTIER ADD
 
 /datum/computer_file/program/science/application_item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	if(istype(tool, /obj/item/multitool))
 		return multitool_act(user, tool)
+	if (istype(tool, /obj/item/disk/tech_disk) || istype(tool, /obj/item/disk/design_disk))	return handle_disks_insertion(tool, user)	// FLUFFY FRONTTIER ADD
 
 /datum/computer_file/program/science/proc/multitool_act(mob/living/user, obj/item/multitool/used_multitool)
 	if(QDELETED(used_multitool.buffer) || !istype(used_multitool.buffer, /datum/techweb))
-		return ITEM_INTERACT_BLOCKING
+		return NONE	// FLUFFY FRONTIER EDIT WAS	return ITEM_INTERACT_BLOCKING
+	handle_rnd_control_remove()	// FLUFFY FRONTIER ADD
 	stored_research = used_multitool.buffer
 	computer.balloon_alert(user, "buffer linked!")
+	handle_rnd_control_install()	// FLUFFY FRONTIER ADD
 	return ITEM_INTERACT_SUCCESS
 
 /datum/computer_file/program/science/ui_assets(mob/user)
@@ -61,6 +65,7 @@
 		"d_disk" = null, //See above.
 		"locked" = locked,
 	)
+	data = handle_disks_ui_data(data)	// FLUFFY FRONTIER ADD
 
 	// Serialize all nodes to display
 	for(var/tier in stored_research.tiers)
@@ -105,6 +110,7 @@
 	if (locked && action != "toggleLock")
 		computer.say("Console is locked, cannot perform further actions.")
 		return TRUE
+	if (action in list("ejectDisk", "uploadDisk", "loadTech")) return handle_disks_ui_act(action, params)	// FLUFFY FRONTIER ADD
 
 	switch (action)
 		if ("toggleLock")
