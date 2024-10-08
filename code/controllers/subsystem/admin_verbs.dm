@@ -109,7 +109,6 @@ SUBSYSTEM_DEF(admin_verbs)
 	if(!admin.holder.check_for_rights(verb_singleton.permissions))
 		to_chat(admin, span_adminnotice("You lack the permissions to do this."))
 		return
-
 	var/old_usr = usr
 	usr = admin.mob
 	// THE MACRO ENSURES THIS EXISTS. IF IT EVER DOESNT EXIST SOMEONE DIDNT USE THE DAMN MACRO!

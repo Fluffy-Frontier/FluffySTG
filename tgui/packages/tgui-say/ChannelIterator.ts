@@ -8,7 +8,8 @@ export type Channel =
   | 'Do'
   // NOVA EDIT ADDITION END
   | 'OOC'
-  | 'Admin';
+  | 'Admin'
+  | 'Event'; // TFF EDIT - Eventmaker
 
 /**
  * ### ChannelIterator
@@ -29,9 +30,10 @@ export class ChannelIterator {
     // NOVA EDIT ADDITION
     'OOC',
     'Admin',
+    'Event', // TFF EDIT - Eventmaker
   ];
-  private readonly blacklist: Channel[] = ['Admin'];
-  private readonly quiet: Channel[] = ['OOC', 'LOOC', 'Admin']; // NOVA EDIT CHANGE (Add LOOC)
+  private readonly blacklist: Channel[] = ['Admin', 'Event']; // TFF EDIT - Eventmaker
+  private readonly quiet: Channel[] = ['OOC', 'LOOC', 'Admin', 'Event']; // NOVA EDIT CHANGE (Add LOOC) // TFF EDIT - Eventmaker
 
   public next(): Channel {
     if (this.blacklist.includes(this.channels[this.index])) {
