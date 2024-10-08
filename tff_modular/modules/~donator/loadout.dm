@@ -187,3 +187,8 @@
 	name = "Secure Trenchcoat"
 	item_path = /obj/item/clothing/neck/smoltrenchcoat
 	ckeywhitelist = list("Smol42")
+
+/datum/loadout_item/neck/mousecloak
+	name = "Winter Assault Jacket"
+	item_path = /obj/item/clothing/neck/mousecloak
+	ckeywhitelist = list("mercreaper", "yaqapi", "siamant", "flippingtable", "phenyamomota")

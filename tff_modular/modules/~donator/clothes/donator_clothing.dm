@@ -351,3 +351,16 @@
 			RESKIN_WORN_ICON_STATE = "smol42_trenchcoat_blue"
 		)
 	)
+
+/obj/item/clothing/neck/mousecloak
+	name = "Winter assault cloak"
+	desc = "Life is all about doing whatever you want. Waterproof with handmade details, it includes special sleeves, detachable parts and zipper pockets."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	icon_state = "siamant_sectac_w"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/neck.dmi'
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/mousecloak/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/toggle_clothes, "siamant_sectac_w_t")
