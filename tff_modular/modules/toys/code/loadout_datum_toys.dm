@@ -44,3 +44,7 @@
 /datum/loadout_item/toys/special/howe
 	name = "Howe Plushie"
 	item_path = /obj/item/toy/plush/tff/soulmates/howe
+
+/datum/loadout_item/toys/special/anvar
+	name = "Anvar Plushie"
+	item_path = /obj/item/toy/plush/tff/anvar
