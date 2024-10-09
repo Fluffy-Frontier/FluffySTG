@@ -105,7 +105,7 @@
 	icon = 'tff_modular/modules/bunny/icons/obj/suit.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
 	body_parts_covered = CHEST|GROIN|ARMS
-	slowdown = 0
+	slowdown = 1
 	armor_type = /datum/armor/atmos_tech_tailcoat
 	flags_inv = null
 	clothing_flags = null
@@ -132,7 +132,7 @@
 	icon = 'tff_modular/modules/bunny/icons/obj/suit.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
 	body_parts_covered = CHEST|GROIN|ARMS
-	slowdown = 0
+	slowdown = 1
 	armor_type = /datum/armor/ce_tailcoat
 	flags_inv = null
 	clothing_flags = null
@@ -378,3 +378,8 @@
 	name = "centcom tailcoat"
 	desc = "A reinforced tailcoat worn by bunny themed centcom officers."
 	icon_state = "tailcoat_centcom"
+
+/obj/item/clothing/suit/armor/security_tailcoat/syndi
+	name = "syndie's tailcoat"
+	desc = "A reinforced tailcoat worn by illegal bunnies. Stylishly holds hidden flak plates."
+	icon_state = "tailcoat_syndi"
