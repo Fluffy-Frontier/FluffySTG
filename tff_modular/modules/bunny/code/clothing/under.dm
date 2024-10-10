@@ -9,10 +9,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
 
-/obj/item/clothing/under/costume/playbunny/Initialize(mapload)
-	. = ..()
-	create_storage(storage_type = /datum/storage/pockets/tiny)
-
 /obj/item/clothing/under/syndicate/syndibunny //heh
 	name = "blood-red bunny suit"
 	desc = "The staple of any bunny themed syndicate assassins. Are those carbon nanotube stockings?"
@@ -22,10 +18,6 @@
 	icon_state = "syndibunny"
 	body_parts_covered = CHEST|GROIN|LEGS
 
-/obj/item/clothing/under/syndicate/syndibunny/Initialize(mapload)
-	. = ..()
-	create_storage(storage_type = /datum/storage/pockets/small)
-
 /obj/item/clothing/under/syndicate/syndibunny/fake
 	armor_type = /datum/armor/clothing_under/none
 
@@ -33,6 +25,7 @@
 	name = "magician's bunny suit"
 	desc = "The staple of any bunny themed stage magician."
 	icon_state = "playbunny_wiz"
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 
 /obj/item/clothing/under/costume/playbunny/magician/Initialize(mapload)
 	. = ..()
@@ -74,14 +67,10 @@
 	icon_state = "bunnysuit_captain"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/captain/bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 //CARGO
 
@@ -91,14 +80,10 @@
 	icon_state = "bunnysuit_qm"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/cargo/quartermaster_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/cargo/cargo_bunnysuit
 	name = "cargo bunny suit"
@@ -106,14 +91,10 @@
 	icon_state = "bunnysuit_cargo"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/cargo/cargo_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/cargo/miner/bunnysuit
 	name = "shaft miner's bunny suit"
@@ -121,14 +102,10 @@
 	icon_state = "bunnysuit_miner"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/cargo/miner/bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/cargo/mailman_bunnysuit
 	name = "mailman's bunny suit"
@@ -136,14 +113,10 @@
 	icon_state = "bunnysuit_mail"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/cargo/mailman_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/cargo/bitrunner/bunnysuit
 	name = "bunrunner suit"
@@ -151,6 +124,7 @@
 	icon_state = "bunnysuit_bitrunner"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -166,14 +140,10 @@
 	icon_state = "bunnysuit_engi"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/engineering/engineer_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/engineering/atmos_tech_bunnysuit
 	name = "atmospheric technician's bunny suit"
@@ -181,14 +151,10 @@
 	icon_state = "bunnysuit_atmos"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/engineering/atmos_tech_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/engineering/chief_engineer/bunnysuit
 	name = "chief engineer's bunny suit"
@@ -196,14 +162,10 @@
 	icon_state = "bunnysuit_ce"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/engineering/chief_engineer/bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 //MEDICAL
 
@@ -212,84 +174,60 @@
 	name = "medical bunnysuit"
 	icon_state = "bunnysuit_doctor"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/medical/doctor_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/medical/paramedic_bunnysuit
 	desc = "The staple of any bunny themed paramedics. Comes with spare pockets for medical supplies fastened to the leggings."
 	name = "paramedic's bunnysuit"
 	icon_state = "bunnysuit_paramedic"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/medical/paramedic_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/medical/chemist/bunnysuit
 	desc = "The staple of any bunny themed chemists. The stockings are both airy and acid resistant."
 	name = "chemist's bunnysuit"
 	icon_state = "bunnysuit_chem"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/medical/chemist/bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/medical/pathologist_bunnysuit
 	desc = "The staple of any bunny themed pathologists. The stockings, while cute, do nothing to combat pathogens."
 	name = "pathologist's bunnysuit"
 	icon_state = "bunnysuit_viro"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/medical/pathologist_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/medical/coroner_bunnysuit
 	desc = "The staple of any bunny themed coroners. A rejected mime costume."
 	name = "coroner's bunnysuit"
 	icon_state = "bunnysuit_coroner"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/medical/coroner_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/medical/cmo_bunnysuit
 	desc = "The staple of any bunny themed chief medical officers. The more vibrant blue accents denote a higher status."
 	name = "chief medical officer's bunnysuit"
 	icon_state = "bunnysuit_cmo"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/medical/cmo_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 //SCIENCE
 
@@ -298,57 +236,42 @@
 	name = "scientist's bunnysuit"
 	icon_state = "bunnysuit_sci"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
 
-/obj/item/clothing/under/rank/rnd/scientist/bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/rnd/scientist/roboticist_bunnysuit
 	desc = "The staple of any bunny themed roboticists. The open design and thin leggings help to keep cool when piloting mechs."
 	name = "roboticist's bunnysuit"
 	icon_state = "bunnysuit_roboticist"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/rnd/scientist/roboticist_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/rnd/geneticist/bunnysuit
 	desc = "The staple of any bunny themed geneticists. Doesn’t go great with an abominable green muscled physique, but then again, what does?"
 	name = "geneticist's bunnysuit"
 	icon_state = "bunnysuit_genetics"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/rnd/geneticist/bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/rnd/research_director/bunnysuit
 	desc = "The staple of any bunny themed head researchers. Advanced technology allows this suit to stimulate spontaneous bunny tail growth when worn, though it's nigh-indistinguishable from the standard cottonball and disappears as soon as the suit is removed."
 	name = "research director's bunnysuit"
 	icon_state = "bunnysuit_rd"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	can_adjust = TRUE
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/rnd/research_director/bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 //SECURITY
 
@@ -357,112 +280,80 @@
 	name = "security bunnysuit"
 	icon_state = "bunnysuit_sec"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/security/security_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/security/security_assistant_bunnysuit
 	desc = "The staple of any bunny themed security assistants. Can't lost respect you don't have!"
 	name = "security assistant's bunnysuit"
 	icon_state = "bunnysuit_sec_assistant"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/security/security_assistant_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/security/warden_bunnysuit
 	desc = "The staple of any bunny themed wardens. The more formal security bunny suit for a less combat focused job."
 	name = "warden's bunnysuit"
 	icon_state = "bunnysuit_warden"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/security/warden_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/security/brig_phys_bunnysuit
 	desc = "The staple of any bunny themed brig physicians. The rejected alternative to an already discontinued alternate uniform, now sold at a premium!"
 	name = "brig physician's bunnysuit"
 	icon_state = "bunnysuit_brig_phys"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/security/brig_phys_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/security/detective_bunnysuit
 	desc = "The staple of any bunny themed detectives. Capable of storing precious candy corns."
 	name = "detective's bunnysuit"
 	icon_state = "bunnysuit_det"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/security/detective_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/security/detective_bunnysuit/noir
 	desc = "The staple of any noir bunny themed detectives. Capable of storing precious candy corns."
 	name = "noir detective's bunnysuit"
 	icon_state = "bunnysuit_det_noir"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/security/detective_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/security/prisoner_bunnysuit
 	desc = "The staple of any bunny themed prisoners. Great for hiding shanks and other small contrabands."
 	name = "prisoner's bunnysuit"
 	icon_state = "bunnysuit_prisoner"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/security/prisoner_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/security/head_of_security/bunnysuit
 	desc = "The staple of any bunny themed security commanders. Includes kevlar weave stockings and a gilded tail."
 	name = "Head of Security's bunnysuit"
 	icon_state = "bunnysuit_hos"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/security/head_of_security/bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 //SERVICE
 
@@ -472,14 +363,10 @@
 	icon_state = "bunnysuit_hop"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/civilian/hop_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/civilian/janitor/bunnysuit
 	name = "janitor's bunny suit"
@@ -487,14 +374,10 @@
 	icon_state = "bunnysuit_janitor"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/civilian/janitor/bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/civilian/bartender_bunnysuit
 	name = "bartender's bunnysuit"
@@ -502,15 +385,11 @@
 	icon_state = "bunnysuit_bar"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
 	custom_price = PAYCHECK_CREW
-
-/obj/item/clothing/under/rank/civilian/bartender_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/civilian/cook_bunnysuit
 	name = "cook's bunny suit"
@@ -518,14 +397,10 @@
 	icon_state = "bunnysuit_chef"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/civilian/cook_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/civilian/hydroponics/bunnysuit
 	name = "botanist's bunny suit"
@@ -533,14 +408,10 @@
 	icon_state = "bunnysuit_botany"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/civilian/hydroponics/bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/civilian/clown/clown_bunnysuit
 	name = "clown's bunny suit"
@@ -548,14 +419,10 @@
 	icon_state = "bunnysuit_clown"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/civilian/clown/clown_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/civilian/mime_bunnysuit
 	name = "mime's bunny suit"
@@ -563,14 +430,10 @@
 	icon_state = "bunnysuit_mime"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/civilian/mime_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/civilian/chaplain_bunnysuit
 	name = "chaplain's bunny suit"
@@ -578,14 +441,10 @@
 	icon_state = "bunnysuit_chaplain"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/civilian/chaplain_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/civilian/curator_bunnysuit_red
 	name = "curator's red bunny suit"
@@ -593,14 +452,10 @@
 	icon_state = "bunnysuit_curator_red"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/civilian/curator_bunnysuit_red/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/civilian/curator_bunnysuit_green
 	name = "curator's green bunny suit"
@@ -608,14 +463,10 @@
 	icon_state = "bunnysuit_curator_green"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/civilian/curator_bunnysuit_green/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/civilian/curator_bunnysuit_teal
 	name = "curator's teal bunny suit"
@@ -623,14 +474,10 @@
 	icon_state = "bunnysuit_curator_teal"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/civilian/curator_bunnysuit_teal/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/civilian/lawyer_bunnysuit_black
 	name = "lawyer's black bunny suit"
@@ -638,14 +485,10 @@
 	icon_state = "bunnysuit_law_black"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/civilian/lawyer_bunnysuit_black/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/civilian/lawyer_bunnysuit_blue
 	name = "lawyer's blue bunny suit"
@@ -653,14 +496,10 @@
 	icon_state = "bunnysuit_law_blue"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/civilian/lawyer_bunnysuit_blue/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/civilian/lawyer_bunnysuit_red
 	name = "lawyer's red bunny suit"
@@ -668,14 +507,10 @@
 	icon_state = "bunnysuit_law_red"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/civilian/lawyer_bunnysuit_red/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/civilian/lawyer_bunnysuit_good
 	name = "good lawyer's bunny suit"
@@ -683,14 +518,11 @@
 	icon_state = "bunnysuit_law_good"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
 
-/obj/item/clothing/under/rank/civilian/lawyer_bunnysuit_good/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
 
 /obj/item/clothing/under/rank/civilian/psychologist_bunnysuit
 	name = "psychologist's bunny suit"
@@ -698,11 +530,7 @@
 	icon_state = "bunnysuit_psychologist"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
-
-/obj/item/clothing/under/rank/civilian/psychologist_bunnysuit/Initialize(mapload)
-	. = ..()
-
-	create_storage(storage_type = /datum/storage/pockets/tiny)
