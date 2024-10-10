@@ -25,6 +25,7 @@
 	name = "magician's bunny suit"
 	desc = "The staple of any bunny themed stage magician."
 	icon_state = "playbunny_wiz"
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 
 /obj/item/clothing/under/costume/playbunny/magician/Initialize(mapload)
 	. = ..()
@@ -66,6 +67,7 @@
 	icon_state = "bunnysuit_captain"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -78,6 +80,7 @@
 	icon_state = "bunnysuit_qm"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -88,6 +91,7 @@
 	icon_state = "bunnysuit_cargo"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -98,6 +102,7 @@
 	icon_state = "bunnysuit_miner"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -108,6 +113,7 @@
 	icon_state = "bunnysuit_mail"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -118,6 +124,7 @@
 	icon_state = "bunnysuit_bitrunner"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -133,6 +140,7 @@
 	icon_state = "bunnysuit_engi"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -143,6 +151,7 @@
 	icon_state = "bunnysuit_atmos"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -153,6 +162,7 @@
 	icon_state = "bunnysuit_ce"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -164,6 +174,7 @@
 	name = "medical bunnysuit"
 	icon_state = "bunnysuit_doctor"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -173,6 +184,7 @@
 	name = "paramedic's bunnysuit"
 	icon_state = "bunnysuit_paramedic"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -182,6 +194,7 @@
 	name = "chemist's bunnysuit"
 	icon_state = "bunnysuit_chem"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -191,6 +204,7 @@
 	name = "pathologist's bunnysuit"
 	icon_state = "bunnysuit_viro"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -200,6 +214,7 @@
 	name = "coroner's bunnysuit"
 	icon_state = "bunnysuit_coroner"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -209,6 +224,7 @@
 	name = "chief medical officer's bunnysuit"
 	icon_state = "bunnysuit_cmo"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -220,6 +236,7 @@
 	name = "scientist's bunnysuit"
 	icon_state = "bunnysuit_sci"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -230,6 +247,7 @@
 	name = "roboticist's bunnysuit"
 	icon_state = "bunnysuit_roboticist"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -239,6 +257,7 @@
 	name = "geneticist's bunnysuit"
 	icon_state = "bunnysuit_genetics"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -248,6 +267,7 @@
 	name = "research director's bunnysuit"
 	icon_state = "bunnysuit_rd"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	can_adjust = TRUE
@@ -260,6 +280,7 @@
 	name = "security bunnysuit"
 	icon_state = "bunnysuit_sec"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -269,6 +290,7 @@
 	name = "security assistant's bunnysuit"
 	icon_state = "bunnysuit_sec_assistant"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -278,6 +300,7 @@
 	name = "warden's bunnysuit"
 	icon_state = "bunnysuit_warden"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -287,14 +310,17 @@
 	name = "brig physician's bunnysuit"
 	icon_state = "bunnysuit_brig_phys"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
+
 /obj/item/clothing/under/rank/security/detective_bunnysuit
 	desc = "The staple of any bunny themed detectives. Capable of storing precious candy corns."
 	name = "detective's bunnysuit"
 	icon_state = "bunnysuit_det"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -304,6 +330,7 @@
 	name = "noir detective's bunnysuit"
 	icon_state = "bunnysuit_det_noir"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -313,6 +340,7 @@
 	name = "prisoner's bunnysuit"
 	icon_state = "bunnysuit_prisoner"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -322,6 +350,7 @@
 	name = "Head of Security's bunnysuit"
 	icon_state = "bunnysuit_hos"
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -334,6 +363,7 @@
 	icon_state = "bunnysuit_hop"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -344,6 +374,7 @@
 	icon_state = "bunnysuit_janitor"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -354,6 +385,7 @@
 	icon_state = "bunnysuit_bar"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -365,6 +397,7 @@
 	icon_state = "bunnysuit_chef"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -375,6 +408,7 @@
 	icon_state = "bunnysuit_botany"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -385,6 +419,7 @@
 	icon_state = "bunnysuit_clown"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -395,6 +430,7 @@
 	icon_state = "bunnysuit_mime"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -405,6 +441,7 @@
 	icon_state = "bunnysuit_chaplain"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -415,6 +452,7 @@
 	icon_state = "bunnysuit_curator_red"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -425,6 +463,7 @@
 	icon_state = "bunnysuit_curator_green"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -435,6 +474,7 @@
 	icon_state = "bunnysuit_curator_teal"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -445,6 +485,7 @@
 	icon_state = "bunnysuit_law_black"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -455,6 +496,7 @@
 	icon_state = "bunnysuit_law_blue"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -465,6 +507,7 @@
 	icon_state = "bunnysuit_law_red"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -475,6 +518,7 @@
 	icon_state = "bunnysuit_law_good"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
@@ -486,6 +530,7 @@
 	icon_state = "bunnysuit_psychologist"
 	inhand_icon_state = null
 	worn_icon = 'tff_modular/modules/bunny/icons/mob/under.dmi'
+	worn_icon_digi = 'tff_modular/modules/bunny/icons/mob/under_digi.dmi'
 	icon = 'tff_modular/modules/bunny/icons/obj/under.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS
 	alt_covers_chest = TRUE
