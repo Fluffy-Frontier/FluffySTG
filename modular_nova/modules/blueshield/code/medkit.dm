@@ -14,19 +14,18 @@
 	new /obj/item/healthanalyzer(src)
 	new /obj/item/sensor_device/blueshield(src)
 	*/
-	new /obj/item/stack/medical/gauze(src)
-	new /obj/item/stack/medical/suture/medicated(src)
-	new /obj/item/stack/medical/mesh/advanced(src)
-	new /obj/item/reagent_containers/hypospray/medipen/salacid(src)
-	new /obj/item/reagent_containers/hypospray/medipen/oxandrolone(src)
-	new /obj/item/reagent_containers/hypospray/medipen/salbutamol(src)
-	new /obj/item/reagent_containers/hypospray/medipen/salbutamol(src)
-	new /obj/item/reagent_containers/hypospray/medipen/penacid(src)
-	new /obj/item/reagent_containers/hypospray/medipen/penacid(src)
-	new /obj/item/reagent_containers/hypospray/medipen(src)
-	new /obj/item/reagent_containers/hypospray/medipen(src)
-	new /obj/item/reagent_containers/hypospray/medipen/deforest/coagulants(src)
-	new /obj/item/reagent_containers/hypospray/medipen/deforest/coagulants(src)
-	new /obj/item/sensor_device/blueshield(src)
-	new /obj/item/healthanalyzer/advanced(src)
-// FLUFFY FRONTIER EDIT END
+	var/static/items_inside = list(
+		/obj/item/stack/medical/gauze = 1,
+		/obj/item/stack/medical/suture/medicated = 1,
+		/obj/item/stack/medical/mesh/advanced = 1,
+		/obj/item/reagent_containers/hypospray/medipen/salacid = 2,
+		/obj/item/reagent_containers/hypospray/medipen/oxandrolone = 2,
+		/obj/item/reagent_containers/hypospray/medipen/salbutamol = 2,
+		/obj/item/reagent_containers/hypospray/medipen/penacid = 2,
+		/obj/item/reagent_containers/hypospray/medipen = 2,
+		/obj/item/reagent_containers/hypospray/medipen/deforest/coagulants = 2,
+		/obj/item/sensor_device/blueshield = 1,
+		/obj/item/healthanalyzer/advanced = 1,
+	)
+	generate_items_inside(items_inside,src)
+	// FLUFFY FRONTIER EDIT END
