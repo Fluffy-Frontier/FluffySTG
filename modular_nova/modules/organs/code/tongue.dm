@@ -148,10 +148,20 @@
 	say_mod = "hisses"
 	taste_sensitivity = 10
 	liked_foodtypes = MEAT
+	modifies_speech = TRUE // Только добавляет hiss, прямо как у истинных ксеноморфов
 
 /obj/item/organ/internal/tongue/xeno_hybrid/Initialize(mapload)
 	. = ..()
 	voice_filter = /obj/item/organ/internal/tongue/alien::voice_filter
+
+/// FLUFFY FRONTIER CHANGE
+/obj/item/organ/internal/tongue/xeno_hybrid/modify_speech(datum/source, list/speech_args)
+	var/datum/saymode/xeno/hivemind = speech_args[SPEECH_SAYMODE]
+	if(hivemind)
+		return
+
+	playsound(owner, SFX_HISS, 25, TRUE, TRUE)
+/// FLUFFY FRONTIER CHANGE END
 
 /obj/item/organ/internal/tongue/skrell
 	name = "skrell tongue"
