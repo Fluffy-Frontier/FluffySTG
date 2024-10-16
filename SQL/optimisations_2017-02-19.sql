@@ -124,7 +124,7 @@ ALTER TABLE `library`
 , CHANGE COLUMN `deleted` `deleted` TINYINT(1) UNSIGNED NULL DEFAULT NULL;
 
 ALTER TABLE `messages`
- CHANGE COLUMN `type` `type` ENUM('memo', 'message', 'message sent', 'note', 'watchlist entry') NOT NULL
+ CHANGE COLUMN `type` `type` ENUM('memo', 'message', 'message sent', 'note', 'watchlist entry', 'eventmaker note') NOT NULL
 , CHANGE COLUMN `text` `text` VARCHAR(2048) NOT NULL
 , CHANGE COLUMN `secret` `secret` TINYINT(1) UNSIGNED NOT NULL;
 
