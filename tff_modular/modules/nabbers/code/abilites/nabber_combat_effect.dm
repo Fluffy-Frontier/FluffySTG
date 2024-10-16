@@ -51,7 +51,7 @@
 
 /datum/movespeed_modifier/nabber_combat
 	blacklisted_movetypes = FLYING
-	multiplicative_slowdown = -0.25
+	multiplicative_slowdown = -0.40
 
 #undef NABBER_THREAT_ICON
 #undef NABBER_THREAT_ICON_STATE
