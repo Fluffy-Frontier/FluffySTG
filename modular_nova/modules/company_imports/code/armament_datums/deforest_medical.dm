@@ -15,12 +15,13 @@
 	item_type = /obj/item/storage/medkit/civil_defense/stocked
 	cost = PAYCHECK_COMMAND * 3.75 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_COMMAND * 2.5
 
-// FLUFFY FRONTIER REMOVAL START - cargo rebalance
-/*
+
 /datum/armament_entry/company_import/deforest/first_aid_kit/frontier
 	item_type = /obj/item/storage/medkit/frontier/stocked
-	cost = PAYCHECK_COMMAND * 3.5
+	cost = PAYCHECK_COMMAND * 5.25 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_COMMAND * 3.5
 
+// FLUFFY FRONTIER REMOVAL START - cargo rebalance
+/*
 /datum/armament_entry/company_import/deforest/first_aid_kit/combat_surgeon
 	item_type = /obj/item/storage/medkit/combat_surgeon/stocked
 	cost = PAYCHECK_COMMAND * 3.5
@@ -54,11 +55,11 @@
 
 /datum/armament_entry/company_import/deforest/first_aid/coagulant
 	item_type = /obj/item/stack/medical/suture/coagulant
-	cost = PAYCHECK_LOWER * 1.5 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_LOWER
+	cost = PAYCHECK_LOWER * 1.6 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_LOWER
 
 /datum/armament_entry/company_import/deforest/first_aid/suture
 	item_type = /obj/item/stack/medical/suture
-	cost = PAYCHECK_LOWER * 1.5 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_LOWER
+	cost = PAYCHECK_LOWER * 1.6 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_LOWER
 
 /datum/armament_entry/company_import/deforest/first_aid/medicated_sutures
 	item_type = /obj/item/stack/medical/suture/medicated
@@ -66,15 +67,15 @@
 
 /datum/armament_entry/company_import/deforest/first_aid/red_sun
 	item_type = /obj/item/stack/medical/ointment/red_sun
-	cost = PAYCHECK_LOWER * 1.5 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_LOWER
+	cost = PAYCHECK_LOWER * 1.6 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_LOWER
 
 /datum/armament_entry/company_import/deforest/first_aid/ointment
 	item_type = /obj/item/stack/medical/ointment
-	cost = PAYCHECK_LOWER * 1.5 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_LOWER
+	cost = PAYCHECK_LOWER * 1.6 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_LOWER
 
 /datum/armament_entry/company_import/deforest/first_aid/mesh
 	item_type = /obj/item/stack/medical/mesh
-	cost = PAYCHECK_LOWER * 1.5 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_LOWER
+	cost = PAYCHECK_LOWER * 1.6 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_LOWER
 
 /datum/armament_entry/company_import/deforest/first_aid/advanced_mesh
 	item_type = /obj/item/stack/medical/mesh/advanced
@@ -82,7 +83,7 @@
 
 /datum/armament_entry/company_import/deforest/first_aid/sterile_gauze
 	item_type = /obj/item/stack/medical/gauze/sterilized
-	cost = PAYCHECK_LOWER * 1.5 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_LOWER
+	cost = PAYCHECK_LOWER * 1.6 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_LOWER
 
 /datum/armament_entry/company_import/deforest/first_aid/amollin
 	item_type = /obj/item/storage/pill_bottle/painkiller
