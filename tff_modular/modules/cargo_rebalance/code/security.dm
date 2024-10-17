@@ -1,6 +1,4 @@
-/datum/armament_entry/company_import/nri_surplus/clothing/space_suit
-	item_type = /obj/item/clothing/suit/space/voskhod
-	cost = PAYCHECK_COMMAND*3
+/datum/supply_pack/security/space_suit
 	name = "Voskhod armor Crate"
 	desc = "A single kit of NRI armored space suit."
 	cost = CARGO_CRATE_VALUE * 2.5
