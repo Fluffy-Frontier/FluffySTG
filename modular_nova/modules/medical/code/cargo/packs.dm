@@ -5,7 +5,7 @@
 	contains = list(/obj/item/reagent_containers/spray/hercuri/chilled = 3, /obj/item/reagent_containers/spray/dinitrogen_plasmide = 3)
 	crate_name = "chilled hercuri crate"
 
-	access_view = FALSE
+	access_view = ACCESS_ROBOTICS // FLUFFY FRONTIER EDIT. ORIGINAL: FALSE
 	access = FALSE
 	access_any = FALSE
 
@@ -16,7 +16,7 @@
 	contains = list(/obj/item/storage/backpack/duffelbag/synth_treatment_kit = 2)
 	crate_name = "synthetic treatment kits crate"
 
-	access_view = FALSE
+	access_view = ACCESS_ROBOTICS // FLUFFY FRONTIER EDIT. ORIGINAL: FALSE
 	access = FALSE
 	access_any = FALSE
 
@@ -31,7 +31,7 @@
 	)
 	crate_name = "synthetic medicine crate"
 
-	access_view = FALSE
+	access_view = ACCESS_ROBOTICS // FLUFFY FRONTIER EDIT. ORIGINAL: FALSE
 	access = FALSE
 	access_any = FALSE
 
@@ -43,6 +43,6 @@
 
 	crate_name = "synthetic repair kits crate"
 
-	access_view = FALSE
+	access_view = ACCESS_ROBOTICS // FLUFFY FRONTIER EDIT. ORIGINAL: FALSE
 	access = FALSE
 	access_any = FALSE

@@ -190,37 +190,3 @@
 	contains = list(/obj/item/mod/core/standard = 3)
 	crate_name = "\improper MOD core crate"
 	crate_type = /obj/structure/closet/crate/nakamura
-
-// FLUFFY FRONTIER ADDITION START - cargo rebalance
-
-/datum/supply_pack/science/kinesis
-	name = "Kinesis module Crate"
-	desc = "A single kinesis module, you can use their limbs to deal damage without wasting any ammo, huh."
-	cost = CARGO_CRATE_VALUE * 8,5
-	access = ACCESS_ROBOTICS
-	access_view = ACCESS_ROBOTICS
-	contains = list(/obj/item/mod/module/anomaly_locked/kinesis/prebuilt/locked = 1)
-	crate_name = "\improper MOD kinesis module"
-	crate_type = /obj/structure/closet/crate/nakamura
-
-/datum/supply_pack/science/antigrav
-	name = "Antigrav module Crate"
-	desc = "One antigrav module. Still can't touch your ceiling? Maybe there's none?"
-	cost = CARGO_CRATE_VALUE * 8,5
-	access = ACCESS_ROBOTICS
-	access_view = ACCESS_ROBOTICS
-	contains = list(/obj/item/mod/module/anomaly_locked/antigrav/prebuilt/locked = 1)
-	crate_name = "\improper MOD antigrav module"
-	crate_type = /obj/structure/closet/crate/nakamura
-
-/datum/supply_pack/science/teleporter
-	name = "Teleporter module Crate"
-	desc = "One teleporter module inside. You won't use it to make any crimes. Right?"
-	cost = CARGO_CRATE_VALUE * 10
-	access = ACCESS_ROBOTICS
-	access_view = ACCESS_ROBOTICS
-	contains = list(/obj/item/mod/module/anomaly_locked/teleporter/prebuilt/locked = 1)
-	crate_name = "\improper MOD teleporter module"
-	crate_type = /obj/structure/closet/crate/nakamura
-
-// FLUFFY FRONTIER ADDITION END
