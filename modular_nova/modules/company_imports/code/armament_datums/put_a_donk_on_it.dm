@@ -114,6 +114,7 @@
 /datum/armament_entry/company_import/donk/mod_modules/dart_collector
 	item_type = /obj/item/mod/module/recycler/donk
 	cost = PAYCHECK_COMMAND * 4
+	contraband = TRUE // FLUFFY FRONTIER EDIT. ORIGINAL: FALSE
 
 /datum/armament_entry/company_import/donk/foamforce_ammo
 	subcategory = "Foam Force (TM) Dart Accessories"
@@ -126,6 +127,7 @@
 /datum/armament_entry/company_import/donk/foamforce_ammo/riot_darts
 	item_type = /obj/item/ammo_box/foambox/riot
 	cost = PAYCHECK_COMMAND * 1.5
+	contraband = TRUE // FLUFFY FRONTIER EDIT. ORIGINAL: FALSE
 
 /datum/armament_entry/company_import/donk/foamforce_ammo/pistol_mag
 	item_type = /obj/item/ammo_box/magazine/toy/pistol

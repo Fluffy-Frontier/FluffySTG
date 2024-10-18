@@ -62,8 +62,8 @@
 	)
 
 	refill_canister = /obj/item/vending_refill/medical_deforest
-	default_price = PAYCHECK_CREW
-	extra_price = PAYCHECK_COMMAND * 4
+	default_price = PAYCHECK_CREW * 1.5 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_CREW
+	extra_price = PAYCHECK_COMMAND * 6 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_COMMAND * 4
 	payment_department = NO_FREEBIES
 
 /obj/item/vending_refill/medical_deforest
