@@ -30,7 +30,7 @@ If you create T5+ please take a pass at mech_fabricator.dm. The parts being good
 		return FALSE
 
 	var/obj/machinery/attacked_machinery = attacked_object
-	if(!LAZYLEN(attacked_machinery.component_parts))
+	if(!LAZYLEN(attacked_machinery.component_parts) && !istype(attacked_object, /obj/machinery/modular_computer))	// FLUFFY FRONTIER EDIT. WAS	if(!LAZYLEN(attacked_machinery.component_parts))
 		return FALSE
 
 	if(attacked_machinery.exchange_parts(user, src) && works_from_distance)
