@@ -17,7 +17,7 @@
 	species_blacklist = list(SPECIES_NABBER = TRUE, SPECIES_TESHARI = TRUE)
 
 /datum/job/warden
-	species_blacklist = list(SPECIES_NABBER = TRUE)
+	species_blacklist = list(SPECIES_NABBER = TRUE, SPECIES_TESHARI = TRUE)
 
 /datum/job/detective
 	species_blacklist = list(SPECIES_NABBER = TRUE)
