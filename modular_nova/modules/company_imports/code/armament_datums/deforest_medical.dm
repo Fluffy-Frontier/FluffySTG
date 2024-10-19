@@ -25,14 +25,19 @@
 /datum/armament_entry/company_import/deforest/first_aid_kit/combat_surgeon
 	item_type = /obj/item/storage/medkit/combat_surgeon/stocked
 	cost = PAYCHECK_COMMAND * 3.5
+*/
+// FLUFFY FRONTIER REMOVAL END
 
 /datum/armament_entry/company_import/deforest/first_aid_kit/robo_repair
 	item_type = /obj/item/storage/medkit/robotic_repair/stocked
-	cost = PAYCHECK_COMMAND * 3.5
+	cost = PAYCHECK_COMMAND * 5.25 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_COMMAND * 3.5
 
 /datum/armament_entry/company_import/deforest/first_aid_kit/robo_repair_super
 	item_type = /obj/item/storage/medkit/robotic_repair/preemo/stocked
-	cost = PAYCHECK_COMMAND * 8
+	cost = PAYCHECK_COMMAND * 12 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_COMMAND * 8
+
+// FLUFFY FRONTIER REMOVAL START - cargo rebalance
+/*
 
 /datum/armament_entry/company_import/deforest/first_aid_kit/first_responder
 	item_type = /obj/item/storage/backpack/duffelbag/deforest_surgical/stocked
@@ -61,9 +66,13 @@
 	item_type = /obj/item/stack/medical/suture
 	cost = PAYCHECK_LOWER * 1.6 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_LOWER
 
+// FLUFFY FRONTIER REMOVAL START - cargo rebalance
+/*
 /datum/armament_entry/company_import/deforest/first_aid/medicated_sutures
 	item_type = /obj/item/stack/medical/suture/medicated
-	cost = PAYCHECK_LOWER * 2.4 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_LOWER * 1.6
+	cost = PAYCHECK_LOWER * 1.6
+*/
+// FLUFFY FRONTIER REMOVAL END
 
 /datum/armament_entry/company_import/deforest/first_aid/red_sun
 	item_type = /obj/item/stack/medical/ointment/red_sun
@@ -77,9 +86,13 @@
 	item_type = /obj/item/stack/medical/mesh
 	cost = PAYCHECK_LOWER * 1.6 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_LOWER
 
+// FLUFFY FRONTIER REMOVAL START - cargo rebalance
+/*
 /datum/armament_entry/company_import/deforest/first_aid/advanced_mesh
 	item_type = /obj/item/stack/medical/mesh/advanced
-	cost = PAYCHECK_LOWER * 2.4 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_LOWER * 1.6
+	cost = PAYCHECK_LOWER * 1.6
+*/
+// FLUFFY FRONTIER REMOVAL END
 
 /datum/armament_entry/company_import/deforest/first_aid/sterile_gauze
 	item_type = /obj/item/stack/medical/gauze/sterilized
@@ -105,17 +118,13 @@
 	item_type = /obj/item/stack/medical/wound_recovery/rapid_coagulant
 	cost = PAYCHECK_COMMAND * 3 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_COMMAND * 2
 
-// FLUFFY FRONTIER REMOVAL START - cargo rebalance
-/*
 /datum/armament_entry/company_import/deforest/first_aid/robofoam
 	item_type = /obj/item/stack/medical/wound_recovery/robofoam
-	cost = PAYCHECK_COMMAND * 2
+	cost = PAYCHECK_COMMAND * 3 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_COMMAND * 2
 
 /datum/armament_entry/company_import/deforest/first_aid/super_robofoam
 	item_type = /obj/item/stack/medical/wound_recovery/robofoam_super
-	cost = PAYCHECK_COMMAND * 4
-*/
-// FLUFFY FRONTIER REMOVAL END
+	cost = PAYCHECK_COMMAND * 6 // FLUFFY FRONTIER EDIT. ORIGINAL: PAYCHECK_COMMAND * 4
 
 // Autoinjectors for healing
 
@@ -150,15 +159,11 @@
 /datum/armament_entry/company_import/deforest/medpens/halobinin
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/halobinin
 
-// FLUFFY FRONTIER REMOVAL START - cargo rebalance
-/*
 /datum/armament_entry/company_import/deforest/medpens/robo_solder
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/robot_liquid_solder
 
 /datum/armament_entry/company_import/deforest/medpens/robo_cleaner
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/robot_system_cleaner
-*/
-// FLUFFY FRONTIER REMOVAL END
 
 /datum/armament_entry/company_import/deforest/medpens/pentibinin
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/pentibinin
