@@ -3,7 +3,7 @@
 /datum/supply_pack/science/razorwire
 	name = "Razorwire Spool Implant Crate"
 	desc = "One razorwize spool implant. Finally something useful for the Cook or maybe the Head of Security?"
-	cost = CARGO_CRATE_VALUE * 10
+	cost = CARGO_CRATE_VALUE * 2.25
 	access = ACCESS_ROBOTICS
 	access_view = ACCESS_ROBOTICS
 	contains = list(/obj/item/organ/internal/cyberimp/arm/razorwire = 1)
@@ -12,7 +12,7 @@
 /datum/supply_pack/science/shell_launcher
 	name = "Shell Launch System Implant Crate"
 	desc = "One shell launch system implant. Where have you been hiding that shotgun all this time?"
-	cost = CARGO_CRATE_VALUE * 10
+	cost = CARGO_CRATE_VALUE * 2.25
 	access = ACCESS_ROBOTICS
 	access_view = ACCESS_ROBOTICS
 	contains = list(/obj/item/organ/internal/cyberimp/arm/shell_launcher = 1)
@@ -21,7 +21,7 @@
 /datum/supply_pack/science/sandy
 	name = "Qani-Laaca Sensory Computer Implant Crate"
 	desc = "One Qani-Laaca implant, one cappuccino and don't forget to put some milk in it!"
-	cost = CARGO_CRATE_VALUE * 10
+	cost = CARGO_CRATE_VALUE * 3.75
 	access = ACCESS_ROBOTICS
 	access_view = ACCESS_ROBOTICS
 	contains = list(/obj/item/organ/internal/cyberimp/sensory_enhancer = 1)
@@ -30,7 +30,7 @@
 /datum/supply_pack/science/hackerman
 	name = "Binyat Wireless Hacking System Implant Crate"
 	desc = "One Binyat wireless hacking implant, probably some new kind of cybernetic pinata?"
-	cost = CARGO_CRATE_VALUE * 10
+	cost = CARGO_CRATE_VALUE * 7.5
 	access = ACCESS_ROBOTICS
 	access_view = ACCESS_ROBOTICS
 	contains = list(/obj/item/organ/internal/cyberimp/hackerman_deck = 1)
