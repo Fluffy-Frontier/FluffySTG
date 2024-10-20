@@ -192,3 +192,9 @@
 	name = "Winter Assault Jacket"
 	item_path = /obj/item/clothing/neck/mousecloak
 	ckeywhitelist = list("mercreaper", "yaqapi", "siamant", "flippingtable", "phenyamomota")
+
+/datum/loadout_item/under/miscellaneous/trurl_uniform
+	name = "NAV Trurl Officer Uniform"
+	item_path = /obj/item/clothing/under/rank/nanotrasen_consultant/trurl
+	restricted_roles = list(JOB_NT_REP)
+	ckeywhitelist = list("UEDHighCommand")
