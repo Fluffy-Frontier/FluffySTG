@@ -80,6 +80,7 @@
 	flash_color(mod.wearer, flash_color = "#FF0000", flash_time = 10 SECONDS)
 	set_off = FALSE
 
+/* FLUFFY FRONTIER REFACTOR
 ///Rave Visor - Gives you a rainbow visor and plays jukebox music to you.
 /obj/item/mod/module/visor/rave
 	name = "MOD rave visor module"
@@ -158,6 +159,7 @@
 				return
 
 			music_player.selection = new_song
+*/ // FLUFFY FRONTIER REFACTOR END
 
 ///Tanner - Tans you with spraytan.
 /obj/item/mod/module/tanner
