@@ -365,6 +365,8 @@
 	. = ..()
 	AddComponent(/datum/component/toggle_clothes, "siamant_sectac_w_t")
 
+// Uniform sprite copied from SS1984 Paradise Station
+
 /obj/item/clothing/under/rank/nanotrasen_consultant/trurl
 	icon = 'tff_modular/master_files/icons/donator/obj/clothing/under.dmi'
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/under.dmi'
