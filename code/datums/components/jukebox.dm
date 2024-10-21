@@ -1,4 +1,4 @@
-/* FLUFFY FRONTIER REFACTOR
+/* FLUFFY FRONTIER REFACTOR: BAR JUKEBOX (#5115)
 /// Checks if the mob has jukebox muted in their preferences
 #define IS_PREF_MUTED(mob) (!isnull(mob.client) && !mob.client.prefs.read_preference(/datum/preference/toggle/sound_jukebox))
 
