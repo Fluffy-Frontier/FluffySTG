@@ -1,4 +1,4 @@
-/* FLUFFY FRONTIER REFACTOR
+/* FLUFFY FRONTIER REFACTOR: BAR JUKEBOX (#5115)
 /obj/machinery/jukebox
 	name = "jukebox"
 	desc = "A classic music player."
