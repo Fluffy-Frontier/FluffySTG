@@ -222,6 +222,12 @@ GLOBAL_LIST_INIT(typecache_holodeck_linked_floorcheck_ok, typecacheof(list(/turf
 	template = SSmapping.holodeck_templates[map_id]
 	template.load(bottom_left) //this is what actually loads the holodeck simulation into the map
 
+// FLUFFY FRONTIER START
+	if (effects.len)
+		spawned += effects
+		effects.Cut()
+// FLUFFY FRONTIER END
+
 	if(template.restricted)
 		usr.log_message("loaded a restricted Holodeck program: [program].", LOG_GAME)
 		message_admins("[ADMIN_LOOKUPFLW(usr)] loaded a restricted Holodeck program: [program].")
