@@ -282,6 +282,13 @@
 			return
 		var/target_key = href_list["addwatch"]
 		create_message("watchlist entry", target_key, secret = 1)
+	// TFF ADDITION START - Eventmaker
+	else if(href_list["addeventnote"])
+		if(!check_rights(R_ADMIN))
+			return
+		var/target_key = href_list["addeventnote"]
+		create_message("eventmaker note", target_key, secret = 1)
+	// TFF ADDITION END
 
 	else if(href_list["addmemo"])
 		if(!check_rights(R_ADMIN))
