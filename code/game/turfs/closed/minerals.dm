@@ -152,7 +152,7 @@
 		return ORE_WALL_LOW
 	if(distance < VENT_PROX_FAR)
 		return ORE_WALL_FAR
-	return 0
+	return rand(1,5) // FLUFFY FRONTIER EDIT - mineralAmt FIX. ORIGINAL return 0
 
 /turf/closed/mineral/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
 	if(turf_type)
