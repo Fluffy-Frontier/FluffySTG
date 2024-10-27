@@ -1892,10 +1892,10 @@
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 8
 	},
-/obj/machinery/door/window/left/directional/south{
+/obj/machinery/door/window/left/directional/north{
 	name = "Court Cell";
 	req_access = list("brig");
-	dir = 1
+	pixel_y = 4
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 4
