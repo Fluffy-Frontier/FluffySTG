@@ -24711,11 +24711,10 @@
 /turf/open/floor/plating,
 /area/station/ai_monitored/turret_protected/aisat_interior)
 "csZ" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/turf/open/floor/iron/dark{
-	icon_state = "textured_dark_half"
+/turf/open/floor/wood/tile{
+	icon_state = "wood_large"
 	},
-/area/station/maintenance/fore/lesser)
+/area/station/security/detectives_office)
 "cta" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4;
@@ -33118,23 +33117,17 @@
 /turf/open/floor/iron/dark/herringbone,
 /area/station/security/lockers)
 "fUX" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 6
+/obj/effect/turf_decal/trimline/dark_blue/filled/line{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 6
-	},
-/obj/machinery/door/airlock/corporate{
-	name = "Court Entrance"
-	},
-/obj/effect/mapping_helpers/airlock/access/any/cent_com/rep_or_captain,
-/obj/effect/mapping_helpers/airlock/access/any/security/brig,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
-/turf/open/floor/iron/dark{
-	icon_state = "textured_dark_large"
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
-/area/station/maintenance/fore/lesser)
+/turf/open/floor/iron/dark,
+/area/station/security/brig)
 "fVk" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
@@ -33937,17 +33930,13 @@
 	},
 /area/station/holodeck/rec_center)
 "gua" = (
-/obj/structure/cable,
-/obj/effect/turf_decal/trimline/dark_blue/filled/line{
-	dir = 4
+/obj/machinery/navbeacon{
+	codes_txt = "delivery;dir=1";
+	location = "Security"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
+/obj/structure/plasticflaps/opaque,
 /turf/open/floor/iron/dark,
-/area/station/security/brig)
+/area/station/security/detectives_office)
 "gui" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -35103,17 +35092,23 @@
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
 "hei" = (
-/obj/effect/turf_decal/trimline/dark_blue/filled/line{
-	dir = 8
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
+	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/door/airlock/corporate{
+	name = "Court Entrance"
+	},
+/obj/effect/mapping_helpers/airlock/access/any/cent_com/rep_or_captain,
+/obj/effect/mapping_helpers/airlock/access/any/security/brig,
 /obj/structure/cable,
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/turf/open/floor/iron/dark{
+	icon_state = "textured_dark_large"
 	},
-/turf/open/floor/iron/dark,
-/area/station/security/brig)
+/area/station/maintenance/fore/lesser)
 "hep" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical{
@@ -35491,13 +35486,11 @@
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/turret_protected/aisat_interior)
 "hns" = (
-/obj/machinery/navbeacon{
-	codes_txt = "delivery;dir=1";
-	location = "Security"
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/turf/open/floor/iron/dark{
+	icon_state = "textured_dark_half"
 	},
-/obj/structure/plasticflaps/opaque,
-/turf/open/floor/iron/dark,
-/area/station/security/detectives_office)
+/area/station/maintenance/fore/lesser)
 "hnt" = (
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
@@ -44501,11 +44494,11 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/obj/structure/window/reinforced/spawner/directional/south{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 6
+	},
+/obj/structure/window/reinforced/spawner/directional/east{
+	dir = 8
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/courtroom)
@@ -51446,16 +51439,17 @@
 /turf/open/floor/plating,
 /area/station/maintenance/fore)
 "rch" = (
-/obj/structure/chair/sofa/corner{
-	dir = 2;
-	light_color = null;
-	color = "#4465a6"
+/obj/structure/cable,
+/obj/effect/turf_decal/trimline/dark_blue/filled/line{
+	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/disposalpipe/segment{
+	dir = 9
 	},
-/turf/open/floor/carpet/blue,
-/area/station/security/detectives_office)
+/turf/open/floor/iron/dark,
+/area/station/security/brig)
 "rcv" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/research/glass/incinerator/ordmix_exterior,
@@ -56007,9 +56001,8 @@
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/medical)
 "tSc" = (
-/turf/open/floor/wood/tile{
-	icon_state = "wood_large"
-	},
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/carpet/blue,
 /area/station/security/detectives_office)
 "tSe" = (
 /obj/effect/turf_decal/box/blue,
@@ -58267,7 +58260,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
 	},
-/obj/structure/window/reinforced/spawner/directional/south{
+/obj/structure/window/reinforced/spawner/directional/east{
 	dir = 8
 	},
 /turf/open/floor/iron/dark,
@@ -62223,7 +62216,14 @@
 	},
 /area/station/hallway/secondary/exit)
 "xNa" = (
-/obj/effect/turf_decal/siding/wood,
+/obj/structure/chair/sofa/corner{
+	dir = 2;
+	light_color = null;
+	color = "#4465a6"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
 /turf/open/floor/carpet/blue,
 /area/station/security/detectives_office)
 "xNc" = (
@@ -88929,7 +88929,7 @@ tcz
 uHO
 uca
 tcz
-hei
+fUX
 kDW
 wYB
 pVZ
@@ -89186,7 +89186,7 @@ kFq
 kFq
 kFq
 kFq
-gua
+rch
 wdv
 wYB
 xLC
@@ -89444,7 +89444,7 @@ aiX
 aiX
 aiX
 wYB
-hns
+gua
 wYB
 gmK
 wYB
@@ -89702,7 +89702,7 @@ vRY
 aiX
 mPd
 hGW
-tSc
+csZ
 uOe
 wYB
 jQz
@@ -89958,7 +89958,7 @@ qUT
 hkA
 aiX
 cyP
-xNa
+tSc
 adu
 uOe
 wYB
@@ -90472,7 +90472,7 @@ agj
 agj
 aiX
 cBy
-xNa
+tSc
 adu
 nQB
 wYB
@@ -90728,7 +90728,7 @@ vad
 nJO
 kUI
 aiX
-rch
+xNa
 huh
 adu
 nGc
@@ -96381,7 +96381,7 @@ hfM
 aaU
 xHD
 anF
-fUX
+hei
 ajm
 miY
 ajp
@@ -96635,7 +96635,7 @@ kxi
 viO
 mwk
 oOI
-csZ
+hns
 nas
 gOB
 aiA
