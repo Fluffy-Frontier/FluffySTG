@@ -161,7 +161,6 @@
 	name = "Forked tongue (Without TTS Filter)"
 	path = /obj/item/organ/internal/tongue/lizard/filterless
 
-<<<<<<< HEAD
 //FF add, for auto-accent for anthropomorphs
 /datum/augment_item/organ/tongue/cat
 	name = "Cat tongue"
@@ -171,7 +170,7 @@
 	name = "Dog tongue"
 	path = /obj/item/organ/internal/tongue/dog
 //FF add ends.
-=======
+
 //EARS
 /datum/augment_item/organ/ears
 	slot = AUGMENT_SLOT_EARS
@@ -184,4 +183,3 @@
 /datum/augment_item/organ/ears/cybernetic
 	name = "Cybernetic ears"
 	path = /obj/item/organ/internal/ears/cybernetic
->>>>>>> b7c608deafc (Augments+ Ears & Extras (#4492))
