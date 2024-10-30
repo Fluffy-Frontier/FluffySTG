@@ -1,5 +1,5 @@
 /obj/machinery/vending/clothing
-	product_categories = list(
+	product_categories_ff = list(
 		list(
 			"name" = "Special",
 			"icon" = "star",
