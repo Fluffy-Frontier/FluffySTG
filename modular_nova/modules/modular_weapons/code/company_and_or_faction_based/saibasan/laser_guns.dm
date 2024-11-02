@@ -28,7 +28,7 @@
 	can_select = FALSE
 	ammo_x_offset = 0
 	selfcharge = 1
-	charge_delay = 15
+	charge_delay = 7 // FLUFFY FRONTIER BALANCE: MODULAR LASER - old: 15
 	shaded_charge = TRUE
 	slot_flags = ITEM_SLOT_BACK
 	obj_flags = UNIQUE_RENAME
