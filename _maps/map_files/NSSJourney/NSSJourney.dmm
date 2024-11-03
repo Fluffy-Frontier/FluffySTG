@@ -24,12 +24,10 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners{
 	icon_state = "tile_half_contrasted"
 	},
-/obj/structure/window/reinforced/spawner/directional/west{
-	dir = 1
-	},
 /obj/structure/railing{
 	dir = 1
 	},
+/obj/structure/window/reinforced/spawner/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/commons/fitness)
 "aav" = (
@@ -1885,17 +1883,13 @@
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 8
 	},
-/obj/machinery/door/window/left/directional/south{
-	name = "Court Cell";
-	req_access = list("brig");
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/door/window/left/directional/north,
 /turf/open/floor/iron/dark{
 	icon_state = "textured_dark_large"
 	},
@@ -24551,12 +24545,10 @@
 	icon_state = "tile_half_contrasted";
 	dir = 8
 	},
-/obj/structure/window/reinforced/spawner/directional/west{
-	dir = 4
-	},
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/structure/window/reinforced/spawner/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/commons/fitness)
 "csd" = (
@@ -29324,10 +29316,7 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced/spawner/directional/west,
-/obj/machinery/door/window/left/directional/west{
-	name = "Fitness Ring";
-	dir = 2
-	},
+/obj/machinery/door/window/left/directional/south,
 /turf/open/floor/iron/dark,
 /area/station/commons/fitness)
 "dCe" = (
@@ -32056,12 +32045,10 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners{
 	icon_state = "tile_half_contrasted"
 	},
-/obj/structure/window/reinforced/spawner/directional/west{
-	dir = 1
-	},
 /obj/structure/railing{
 	dir = 1
 	},
+/obj/structure/window/reinforced/spawner/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/commons/fitness)
 "fjm" = (
@@ -33748,11 +33735,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
 	},
-/obj/machinery/door/window/brigdoor/left/directional/south{
-	name = "Court";
-	req_access = list("brig");
-	dir = 2
-	},
+/obj/machinery/door/window/brigdoor/left/directional/south,
 /turf/open/floor/carpet/blue,
 /area/station/security/courtroom)
 "goX" = (
@@ -35955,9 +35938,7 @@
 /turf/open/floor/iron/dark/diagonal,
 /area/station/security/prison/safe)
 "hBQ" = (
-/obj/machinery/door/airlock/security{
-	name = "Court maintenance"
-	},
+/obj/machinery/door/airlock/security,
 /obj/effect/mapping_helpers/airlock/access/any/security/brig,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -38208,13 +38189,11 @@
 	icon_state = "tile_corner";
 	dir = 8
 	},
-/obj/structure/window/reinforced/spawner/directional/west{
-	dir = 4
-	},
 /obj/structure/railing{
 	dir = 4
 	},
 /obj/machinery/door/window/left/directional/north,
+/obj/structure/window/reinforced/spawner/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/commons/fitness)
 "iXa" = (
@@ -41944,9 +41923,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock/security{
-	name = "Court maintenance"
-	},
+/obj/machinery/door/airlock/security,
 /obj/effect/mapping_helpers/airlock/access/any/security/brig,
 /turf/open/floor/iron/dark{
 	icon_state = "textured_dark_large"
@@ -42045,10 +42022,8 @@
 	icon_state = "tile_half_contrasted";
 	dir = 1
 	},
-/obj/structure/window/reinforced/spawner/directional/west{
-	dir = 2
-	},
 /obj/structure/railing,
+/obj/structure/window/reinforced/spawner/directional/south,
 /turf/open/floor/iron/dark,
 /area/station/commons/fitness)
 "lmF" = (
@@ -46788,9 +46763,7 @@
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "oiB" = (
-/obj/machinery/door/airlock/security{
-	name = "Court maintenance"
-	},
+/obj/machinery/door/airlock/security,
 /obj/effect/mapping_helpers/airlock/access/any/cent_com/rep_or_captain,
 /obj/effect/mapping_helpers/airlock/access/any/security/brig,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
@@ -47123,12 +47096,10 @@
 	icon_state = "tile_corner"
 	},
 /obj/structure/window/reinforced/spawner/directional/west,
-/obj/structure/window/reinforced/spawner/directional/west{
-	dir = 1
-	},
 /obj/structure/railing{
 	dir = 1
 	},
+/obj/structure/window/reinforced/spawner/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/commons/fitness)
 "otF" = (
@@ -54841,16 +54812,12 @@
 	icon_state = "tile_corner";
 	dir = 1
 	},
-/obj/structure/window/reinforced/spawner/directional/west{
-	dir = 2
-	},
-/obj/structure/window/reinforced/spawner/directional/west{
-	dir = 4
-	},
 /obj/structure/railing{
 	dir = 6
 	},
 /obj/structure/railing,
+/obj/structure/window/reinforced/spawner/directional/east,
+/obj/structure/window/reinforced/spawner/directional/south,
 /turf/open/floor/iron/dark,
 /area/station/commons/fitness)
 "tiR" = (
@@ -59204,9 +59171,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
-/obj/structure/chair/stool/bar/directional/east{
-	dir = 1
-	},
 /obj/structure/chair/comfy{
 	color = "#8a3033";
 	dir = 1
@@ -59592,14 +59556,10 @@
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 6
 	},
-/obj/machinery/door/window/brigdoor/right/directional/west{
-	name = "Security Delivery";
-	req_access = list("brig");
-	dir = 1
-	},
 /obj/structure/window/reinforced/spawner/directional/east{
 	dir = 8
 	},
+/obj/machinery/door/window/brigdoor/right/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "wdA" = (
