@@ -31313,7 +31313,6 @@
 /turf/open/floor/iron,
 /area/station/command/bridge)
 "eKV" = (
-/obj/machinery/power/apc/auto_name/directional/west,
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
@@ -50127,7 +50126,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/wood/tile,
 /area/station/security/detectives_office)
 "qnW" = (
@@ -56399,8 +56397,6 @@
 /turf/open/space/basic,
 /area/station/solars/port/fore)
 "ufL" = (
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable,
 /obj/item/kirbyplants/synthetic/plant28,
 /turf/open/floor/iron,
 /area/station/service/hydroponics/garden)
@@ -57054,10 +57050,6 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/iron/dark,
 /area/station/security/execution/transfer)
-"uBY" = (
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/port)
 "uDg" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/public/glass{
@@ -61205,7 +61197,9 @@
 	},
 /obj/structure/cable,
 /obj/structure/barricade/wooden/crude,
-/obj/machinery/door/puzzle/keycard/library,
+/obj/machinery/door/airlock/maintenance{
+	name = "Garden Maintenance"
+	},
 /turf/open/floor/plating,
 /area/station/maintenance/port/fore)
 "xac" = (
@@ -79709,7 +79703,7 @@ aFO
 aHA
 azF
 ufL
-uBY
+aLE
 avG
 aOl
 aPA
