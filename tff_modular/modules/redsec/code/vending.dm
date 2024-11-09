@@ -25,6 +25,7 @@
 				/obj/item/clothing/under/rank/security/nova/utility/redsec = 5,
 				/obj/item/clothing/suit/toggle/jacket/sec/old = 5,
 				/obj/item/clothing/suit/armor/vest/alt/sec/redsec = 2,
+				/obj/item/storage/backpack/waistbag/redsec = 3,
 			),
 		),
 		list(
@@ -55,6 +56,7 @@
 				/obj/item/clothing/head/hats/warden/police/patrol = 5,
 				/obj/item/clothing/head/costume/ushanka/sec = 10,
 				/obj/item/clothing/gloves/color/black/security = 10,
+				/obj/item/storage/backpack/waistbag/bluesec = 3,
 			),
 		),
 	)
