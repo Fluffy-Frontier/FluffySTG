@@ -191,7 +191,7 @@
 /datum/loadout_item/neck/mousecloak
 	name = "Winter Assault Jacket"
 	item_path = /obj/item/clothing/neck/mousecloak
-	ckeywhitelist = list("mercreaper", "yaqapi", "siamant", "flippingtable", "phenyamomota")
+	ckeywhitelist = list("mercreaper", "yaqapi", "siamant", "flippingtable", "phenyamomota", "romontesque")
 
 /datum/loadout_item/under/miscellaneous/trurl_uniform
 	name = "NAV Trurl Officer Uniform"
