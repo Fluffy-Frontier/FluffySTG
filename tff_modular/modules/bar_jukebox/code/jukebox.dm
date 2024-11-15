@@ -35,10 +35,10 @@
 		ui = new(user, src, "Jukebox", name)
 		ui.open()
 
-/datum/supply_pack/misc/jukebox
+/datum/supply_pack/service/jukebox
 	name = "Jukebox kit start"
 	desc = "Make everyone happy by good music in your bar!"
-	cost = CARGO_CRATE_VALUE * 50
+	cost = CARGO_CRATE_VALUE * 15
 	contains = list(/obj/machinery/jukebox/bar)
 	crate_name = "jukebox crate"
 	crate_type = /obj/structure/closet/crate/large
