@@ -527,27 +527,20 @@ GLOBAL_LIST_INIT(call911_do_and_do_not, list(
 	name = "911 Response: SolFed Military"
 
 	uniform = /obj/item/clothing/under/sol_peacekeeper
-	head = /obj/item/clothing/head/helmet/sf_sacrificial
+	head = /obj/item/clothing/head/helmet/swat/nanotrasen
 	mask = /obj/item/clothing/mask/gas/alt
 	gloves = /obj/item/clothing/gloves/combat
-	suit = /obj/item/clothing/suit/armor/sf_sacrificial
+	suit = /obj/item/clothing/suit/armor/vest
 	shoes = /obj/item/clothing/shoes/jackboots
 
 	back = /obj/item/storage/backpack
 	glasses = /obj/item/clothing/glasses/sunglasses
 	ears = /obj/item/radio/headset/headset_solfed/sec
-	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/flashlight/seclite
-	id = /obj/item/card/id/advanced/solfed
-	r_hand = /obj/item/gun/ballistic/automatic/sol_rifle
+	id = /obj/item/card/id/blue
 	backpack_contents = list(
-		/obj/item/storage/box/handcuffs = 1,
-		/obj/item/sacrificial_face_shield = 1,
-		/obj/item/melee/baton/security/loaded = 1,
-		/obj/item/ammo_box/magazine/c40sol_rifle/standard = 4,
+		/obj/item/storage/box/survival/engineer/marine = 1,
 	)
-
-	id_trim = /datum/id_trim/solfed
 
 /obj/item/solfed_reporter
 	name = "SolFed reporter"

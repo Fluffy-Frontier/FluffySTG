@@ -35,8 +35,7 @@
 	mask = /obj/item/clothing/mask/gas/syndicate
 	back = /obj/item/mod/control/pre_equipped/nuclear
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
-	id = /obj/item/card/id/advanced/chameleon
-	id_trim = /datum/id_trim/chameleon/operative
+	id = /obj/item/card/id/red
 
 /obj/effect/mob_spawn/corpse/human/syndicatecommando/lessenedgear
 	outfit = /datum/outfit/syndicatecommandocorpse/lessenedgear
@@ -327,8 +326,7 @@
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	head = /obj/item/clothing/head/helmet/swat/nanotrasen
 	back = /obj/item/storage/backpack/security
-	id = /obj/item/card/id/advanced/centcom
-	id_trim = /datum/id_trim/centcom/corpse/assault
+	id = /obj/item/card/id/green
 
 /obj/effect/mob_spawn/corpse/human/nanotrasenelitesoldier
 	name = "\improper Nanotrasen Elite Assault Officer Corpse"
@@ -343,8 +341,7 @@
 	gloves = /obj/item/clothing/gloves/combat
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	back = /obj/item/mod/control/pre_equipped/responsory/security
-	id = /obj/item/card/id/advanced/centcom
-	id_trim = /datum/id_trim/centcom/ert/security
+	id = /obj/item/card/id/green
 
 /obj/effect/mob_spawn/corpse/human/cat_butcher
 	name = "The Cat Surgeon"

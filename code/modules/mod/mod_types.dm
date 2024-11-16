@@ -234,15 +234,12 @@
 	applied_cell = /obj/item/stock_parts/power_store/cell/super
 	applied_modules = list(
 		/obj/item/mod/module/storage/syndicate,
-		/obj/item/mod/module/shock_absorber,
-		/obj/item/mod/module/emp_shield,
 		/obj/item/mod/module/magnetic_harness,
 		/obj/item/mod/module/jetpack,
-		/obj/item/mod/module/pathfinder,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/dna_lock,
 		/obj/item/mod/module/hat_stabilizer/syndicate,
-		/obj/item/mod/module/quick_cuff,
+		/obj/item/mod/module/visor/sechud,
 	)
 	default_pins = list(
 		/obj/item/mod/module/armor_booster,
@@ -463,7 +460,7 @@
 		/obj/item/mod/module/emp_shield,
 		/obj/item/mod/module/magnetic_harness,
 		/obj/item/mod/module/flashlight,
-		/obj/item/mod/module/quick_cuff,
+		/obj/item/mod/module/visor/sechud,
 	)
 	/// The insignia type, insignias show what sort of member of the ERT you're dealing with.
 	var/insignia_type = /obj/item/mod/module/insignia

@@ -63,14 +63,14 @@
 
 /datum/armor/mod_theme_frontline
 	melee = 50
-	bullet = 60
-	laser = 40
+	bullet = 40
+	laser = 50
 	energy = 50
-	bomb = 60
+	bomb = 50
 	bio = 100
-	fire = 50
-	acid = 80
-	wound = 25
+	fire = 100
+	acid = 90
+	wound = 10
 
 /obj/item/mod/control/pre_equipped/frontline
 	theme = /datum/mod_theme/frontline
@@ -85,10 +85,10 @@
 		/obj/item/mod/module/storage/syndicate,
 		/obj/item/mod/module/thermal_regulator,
 		/obj/item/mod/module/status_readout/operational,
-		/obj/item/mod/module/auto_doc,
-		/obj/item/mod/module/visor/thermal,
 		/obj/item/mod/module/jetpack,
+		/obj/item/mod/module/visor/sechud,
 		/obj/item/mod/module/magboot/advanced,
+		/obj/item/mod/module/dna_lock,
 	)
 	default_pins = list(
 		/obj/item/mod/module/visor/thermal,

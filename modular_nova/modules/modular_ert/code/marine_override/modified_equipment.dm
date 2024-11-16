@@ -12,17 +12,13 @@
 	r_hand = null
 
 /datum/outfit/centcom/ert/marine/security //generic and/or heavy
-	suit_store = /obj/item/gun/ballistic/automatic/ar/modular/m44a/shotgun
-	belt = /obj/item/storage/belt/military/assault/full/m44a
 	back = /obj/item/mod/control/pre_equipped/marine
 	backpack_contents = list(
 		/obj/item/storage/box/survival/engineer/marine = 1,
-		/obj/item/melee/baton/security/loaded = 1,
-		/obj/item/storage/box/handcuffs = 1,
-		/obj/item/ammo_box/advanced/s12gauge/buckshot/marine = 2,
 	)
 	l_hand = null
 	r_hand = null
+	id = /obj/item/card/id/blue
 
 /datum/outfit/centcom/ert/marine/medic //medic
 	suit_store = /obj/item/gun/ballistic/automatic/ar/modular/m44a/scoped

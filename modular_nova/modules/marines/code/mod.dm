@@ -68,29 +68,24 @@
 
 /datum/armor/mod_theme_marines
 	melee = 50
-	bullet = 50
+	bullet = 40
 	laser = 50
 	energy = 50
 	bomb = 50
 	bio = 100
 	fire = 100
-	acid = 50
-	wound = 20
+	acid = 90
+	wound = 10
 
 /obj/item/mod/control/pre_equipped/marine
 	theme = /datum/mod_theme/marines
 	applied_cell = /obj/item/stock_parts/power_store/cell/bluespace
 	applied_modules = list(
 		/obj/item/mod/module/storage/large_capacity,
-		/obj/item/mod/module/emp_shield,
 		/obj/item/mod/module/magnetic_harness,
 		/obj/item/mod/module/holster,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/jetpack,
-		/obj/item/mod/module/noslip,
-		/obj/item/mod/module/power_kick,
-		/obj/item/mod/module/megaphone,
-		/obj/item/mod/module/springlock/contractor,
 		/obj/item/mod/module/dna_lock, //in lieu of req_access
 		/obj/item/mod/module/visor/sechud, //for identifying teammates also in suits
 	)

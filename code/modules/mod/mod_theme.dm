@@ -1252,15 +1252,15 @@
 	)
 
 /datum/armor/mod_theme_syndicate
-	melee = 15
-	bullet = 20
-	laser = 15
-	energy = 15
-	bomb = 35
+	melee = 50
+	bullet = 40
+	laser = 50
+	energy = 50
+	bomb = 50
 	bio = 100
-	fire = 50
+	fire = 100
 	acid = 90
-	wound = 25
+	wound = 10
 
 /datum/mod_theme/elite
 	name = "elite"

@@ -6,10 +6,7 @@
 	gloves = /obj/item/clothing/gloves/combat
 	back = /obj/item/storage/backpack/fireproof
 	ears = /obj/item/radio/headset/syndicate/alt
-	l_pocket = /obj/item/modular_computer/pda/nukeops
-	r_pocket = /obj/item/pen/edagger
-	id = /obj/item/card/id/advanced/chameleon
-	belt = /obj/item/gun/ballistic/automatic/pistol/clandestine
+	id = /obj/item/card/id/red
 
 	skillchips = list(/obj/item/skillchip/disk_verifier)
 	box = /obj/item/storage/box/survival/syndie
@@ -20,7 +17,6 @@
 	/// The type of uplink to be given on equip.
 	var/uplink_type = /obj/item/uplink/nuclear
 
-	id_trim = /datum/id_trim/chameleon/operative
 
 /datum/outfit/syndicate/plasmaman
 	name = "Syndicate Operative - Basic (Plasmaman)"
@@ -134,7 +130,6 @@
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	head = /obj/item/clothing/head/helmet/swat
 	neck = /obj/item/clothing/neck/large_scarf/syndie
-	glasses = /obj/item/clothing/glasses/cold
 	faction = "the Gorlex Marauders"
 
 /datum/outfit/syndicate/reinforcement/cybersun
