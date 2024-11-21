@@ -60,10 +60,10 @@ SUBSYSTEM_DEF(jukeboxes)
 
 /datum/controller/subsystem/jukeboxes/proc/reload_songs()
 	songs = list()
-	var/list/tracks = flist("[global.config.directory]/jukebox_music/sounds/")
+	var/list/tracks = flist("tff_modular/master_files/content/jukebox_music/")
 	for(var/S in tracks)
 		var/datum/track/T = new()
-		T.song_path = file("[global.config.directory]/jukebox_music/sounds/[S]")
+		T.song_path = file("tff_modular/master_files/content/jukebox_music/[S]")
 		var/list/L = splittext(S,"+")
 		if(L.len != 4)
 			continue
