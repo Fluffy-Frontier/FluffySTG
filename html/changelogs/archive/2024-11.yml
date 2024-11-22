@@ -111,3 +111,12 @@
   - bugfix: The escape menu buttons no longer overlap
   Hatterhat:
   - bugfix: Crate Chaos's encrypted cache is now randomly placed again.
+2024-11-22:
+  Stalkeos, 00-Steven:
+  - bugfix: A bitrunner avatar spawning with the exact same name as a name currently
+      on the records no longer updates that record to match when the hacker alias
+      gets applied.
+  - qol: Net avatar ID cards use the net avatar's name instead of being generic.
+  Stalkeros, larentoun:
+  - bugfix: falling into chasms and other ways of destroying your virtual body instead
+      of killing it, WILL now return you to your body
