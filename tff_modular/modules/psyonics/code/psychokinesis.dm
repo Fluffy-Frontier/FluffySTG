@@ -7,7 +7,7 @@
 /// Psyforce - даёт "клешни жизни" для вскрытия дверей
 /// Telekinesis - даёт мутацию телекинеза.
 
-/mob/living/carbon/human/proc/try_add_psychokinesis_school(var/tier, additional_school = 0)
+/mob/living/carbon/human/proc/try_add_psychokinesis_school(tier = 0, additional_school = 0)
 	if(tier >= 0)
 		var/datum/action/new_action = new /datum/action/cooldown/spell/conjure_item/psyonic/psilighter(src.mind || src, tier, additional_school)
 		new_action.Grant(src)
@@ -144,8 +144,8 @@
 /datum/action/cooldown/spell/touch/psyonic/psyonic_tinker
 	name = "Psyonic Tinker"
 	desc = "Restore somethings condition to its normal state."
-	button_icon = 'icons/mob/actions/actions_genetic.dmi'
-	button_icon_state = "mending_touch"
+	button_icon = 'icons/obj/tools.dmi'
+	button_icon_state = "wrench"
 	cooldown_time = 3 SECONDS
 	mana_cost = 40
 	stamina_cost = 50

@@ -7,7 +7,7 @@
 /// Cleansing - лечит токс урон
 /// Revive - пытается оживить труп
 
-/mob/living/carbon/human/proc/try_add_redaction_school(var/tier, additional_school = 0)
+/mob/living/carbon/human/proc/try_add_redaction_school(tier = 0, additional_school = 0)
 	if(tier >= 0)
 		var/datum/action/new_action = new /datum/action/cooldown/spell/pointed/psyonic/psyonic_roentgen(src.mind || src, tier, additional_school)
 		new_action.Grant(src)
@@ -24,8 +24,8 @@
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_roentgen
 	name = "Roentgen"
 	desc = "Try to read target's vital energy and determine their state."
-	button_icon_state = "blind"
-	ranged_mousepointer = 'icons/effects/mouse_pointers/blind_target.dmi'
+	button_icon = 'tff_modular/modules/psyonics/icons/actions.dmi'
+	button_icon_state = "roentgen"
 
 	cooldown_time = 1 SECONDS
 
@@ -74,7 +74,7 @@
 	name = "Psyonic Mending"
 	desc = "You can try to restore patients bloodloss, bones, open wounds and partially oxygen level in blood. Does not heal brute, burn, \
 			and toxic damage. With Psychokinesis as secondary school also can remove small implants. At Epsilon level can remove xenomorph larvae."
-	button_icon = 'icons/mob/actions/actions_genetic.dmi'
+	button_icon = 'tff_modular/modules/psyonics/icons/actions.dmi'
 	button_icon_state = "mending_touch"
 	cooldown_time = 3 SECONDS
 	mana_cost = 25
@@ -117,7 +117,7 @@
 	if(patient.getOxyLoss() >= OXYLOSS_PASSOUT_THRESHOLD-10)
 		patient.adjustOxyLoss(-cast_power*5, forced = TRUE)
 
-	if(patient.implants && secondary_school == "Psychokinesis" && cast_power >= 2)
+	if(patient.implants && secondary_school == "Psychokinesis" && cast_power >= 2) // Невольно удаляет импланты, если есть
 		var/obj/item/implant/imp_2_del = pick(patient.implants)
 		var/atom/drop_loc = imp_2_del.drop_location()
 		imp_2_del.removed(patient)
@@ -128,7 +128,7 @@
 									span_danger("You feel implant inside you starts to move and rips itself out! The resulting wound quickly closes itself though."),
 								)
 
-	if(patient.get_organ_slot("parasite_egg") && cast_power >=4)
+	if(patient.get_organ_slot("parasite_egg") && cast_power >=4) // Удаляем ксеноморфов
 		var/obj/item/organ/internal/body_egg/parasite = patient.get_organ_slot("parasite_egg")
 		parasite.owner.vomit(VOMIT_CATEGORY_BLOOD | MOB_VOMIT_KNOCKDOWN | MOB_VOMIT_HARM)
 		parasite.owner.visible_message(
@@ -144,8 +144,8 @@
 /datum/action/cooldown/spell/touch/psyonic/psyonic_cleansing
 	name = "Psyonic Cleansing"
 	desc = "Filters patient blood out of toxin and removes accumulated radiation."
-	button_icon = 'icons/mob/actions/actions_genetic.dmi'
-	button_icon_state = "mending_touch"
+	button_icon = 'tff_modular/modules/psyonics/icons/actions.dmi'
+	button_icon_state = "cleansing"
 	cooldown_time = 3 SECONDS
 	mana_cost = 35
 	stamina_cost = 40
@@ -182,8 +182,8 @@
 /datum/action/cooldown/spell/touch/psyonic/psyonic_revival
 	name = "Psyonic Revival"
 	desc = "Ability to trick death itself. Call for the bodys soul in the other realm in attempt to restore its vessel condition to an... acceptable levels."
-	button_icon = 'icons/mob/actions/actions_minor_antag.dmi'
-	button_icon_state = "set_drop"
+	button_icon = 'tff_modular/modules/psyonics/icons/actions.dmi'
+	button_icon_state = "revive"
 	cooldown_time = 3 SECONDS
 	mana_cost = 80
 	stamina_cost = 160

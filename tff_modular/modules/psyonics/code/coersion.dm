@@ -10,7 +10,8 @@
 /// P.S. По гипнозу. В оригинале на финиках вообще было порабощение разума.
 /// Psyonic blind - временно ослепляет.
 
-/mob/living/carbon/human/proc/try_add_coercion_school(var/tier, additional_school = 0)
+// Добавить школу внушения
+/mob/living/carbon/human/proc/try_add_coercion_school(tier = 0, additional_school = 0)
 	if(tier >= 0)
 		var/datum/action/new_action = new /datum/action/cooldown/spell/touch/psyonic/psyonic_assay(src.mind || src, tier, additional_school)
 		new_action.Grant(src)
@@ -34,8 +35,8 @@
 /datum/action/cooldown/spell/touch/psyonic/psyonic_assay
 	name = "Psyonic Assay"
 	desc = "Check if the target is a psyonic."
-	button_icon = 'icons/mob/actions/actions_genetic.dmi'
-	button_icon_state = "mending_touch"
+	button_icon = 'icons/obj/medical/organs/organs.dmi'
+	button_icon_state = "brain"
 	cooldown_time = 3 SECONDS
 	mana_cost = 5
 	stamina_cost = 0
@@ -75,8 +76,8 @@
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_focus
 	name = "Psyonic Focus"
 	desc = "Try to restore patients brain to its natural initial condition, fixing brain damage. Has a chance to heal traumas. Can be cast over distance."
-	button_icon_state = "blind"
-	ranged_mousepointer = 'icons/effects/mouse_pointers/blind_target.dmi'
+	button_icon = 'icons/obj/medical/organs/organs.dmi'
+	button_icon_state = "brain-smooth"
 
 	cooldown_time = 1 SECONDS
 
@@ -111,11 +112,11 @@
 	if(!do_after(owner, 5 SECONDS, cast_on, IGNORE_SLOWDOWNS | IGNORE_TARGET_LOC_CHANGE, TRUE))
 		accident_harm(cast_on)
 	else
-		fixs_brainz(cast_on)
+		fix_brainz(cast_on)
 	drain_mana()
 	return TRUE
 
-/datum/action/cooldown/spell/pointed/psyonic/psyonic_focus/proc/fixs_brainz(mob/living/carbon/human/cast_on)
+/datum/action/cooldown/spell/pointed/psyonic/psyonic_focus/proc/fix_brainz(mob/living/carbon/human/cast_on)
 	var/b_damage = cast_on.get_organ_loss(ORGAN_SLOT_BRAIN)
 	if(b_damage > 0)
 		cast_on.adjustOrganLoss(ORGAN_SLOT_BRAIN, -10 * cast_power)
@@ -134,8 +135,8 @@
 /datum/action/cooldown/spell/touch/psyonic/psyonic_mind_read
 	name = "Psyonic Mind Read"
 	desc = "Rudely intrude into targets thoughts."
-	button_icon = 'icons/mob/actions/actions_genetic.dmi'
-	button_icon_state = "mending_touch"
+	button_icon = 'icons/mob/actions/actions_spells.dmi'
+	button_icon_state = "mindread"
 	cooldown_time = 3 SECONDS
 	mana_cost = 40
 	stamina_cost = 40
@@ -197,7 +198,7 @@
 			human_owner.add_mood_event("gates_of_mansus", /datum/mood_event/gates_of_mansus)
 		else if(IS_CULTIST(patient))
 			text_to_show += span_red("Your mind is assaulted with torrents of blood and gore, as you try to dig deeper.") + "<br>"
-		else // Там очень много ролей, а мага, еретика и культиста я думаю и без этой способности найти легко. Тем более мы читаем воспоминания, что более имбово
+		else // Там очень много ролей, в том числе не антажных, а мага, еретика и культиста я думаю и без этой способности найти легко. Тем более мы читаем воспоминания, что более имбово
 			text_to_show += span_notice("You also can feel something hidden within [patient.p_their()] mind, but it's not readable.") + "<br>"
 
 	to_chat(owner, examine_block(span_infoplain(text_to_show)))
@@ -251,8 +252,8 @@
 /datum/action/cooldown/spell/touch/psyonic/psyonic_agony
 	name = "Psyonic Agony"
 	desc = "Deals pain."
-	button_icon = 'icons/mob/actions/actions_genetic.dmi'
-	button_icon_state = "mending_touch"
+	button_icon = 'icons/obj/weapons/baton.dmi'
+	button_icon_state = "stunbaton_active"
 	cooldown_time = 0.5 SECONDS
 	mana_cost = 15
 	stamina_cost = 0
@@ -296,13 +297,11 @@
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_spasm
 	name = "Psyonic Spasm"
 	desc = "Activate neurons in victims mucles, briefly stunning them and forcing to drop everything in their hands. Can be cast over distance. Silent."
-	button_icon_state = "blind"
-	ranged_mousepointer = 'icons/effects/mouse_pointers/blind_target.dmi'
+	button_icon = 'tff_modular/modules/psyonics/icons/actions.dmi'
+	button_icon_state = "spasm"
 	cooldown_time = 1 SECONDS
-
 	mana_cost = 40
 	target_msg = "You muscles spasm!"
-
 	active_msg = "You prepare to stun a target..."
 
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_spasm/New(Target)
@@ -336,8 +335,8 @@
 /datum/action/cooldown/spell/touch/psyonic/psyonic_hypnosis
 	name = "Psyonic Hypnosis"
 	desc = "Implant a looping pattern into victims head."
-	button_icon = 'icons/mob/actions/actions_genetic.dmi'
-	button_icon_state = "mending_touch"
+	button_icon = 'tff_modular/modules/psyonics/icons/actions.dmi'
+	button_icon_state = "hypno"
 	cooldown_time = 10 SECONDS
 
 	mana_cost = 25 // Стоит немного
@@ -390,10 +389,8 @@
 	button_icon_state = "blind"
 	ranged_mousepointer = 'icons/effects/mouse_pointers/blind_target.dmi'
 	cooldown_time = 1 SECONDS
-
 	mana_cost = 60
 	target_msg = "You eyes hurt!"
-
 	active_msg = "You prepare to blind a target..."
 
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_blind/is_valid_target(atom/cast_on)
@@ -422,6 +419,6 @@
 	return TRUE
 
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_blind/proc/blind(mob/living/carbon/human/cast_on)
-	cast_on.adjust_temp_blindness( (10 + cast_power*2) SECONDS)
+	cast_on.adjust_temp_blindness( (10 + cast_power * 2) SECONDS)
 
 #undef IS_HYPNOTIZED

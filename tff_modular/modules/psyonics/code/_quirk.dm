@@ -1,4 +1,6 @@
 #define TRAIT_PSYONIC_USER "psyonicuser"
+#define TRAIT_NO_PSYONICS "no_psyonics"
+#define TRAIT_PRO_PSYONICS "pro_psyonics"
 
 #define LATENT_PSYONIC 0
 #define OPERANT_PSYONIC 1
@@ -25,7 +27,7 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 				Psychokinesis - school of object manipulation; \
 				Energistics - school of elecricity, fire and light; \
 				You can select the school, but it's power will be randomised every round."
-	value = 12 // Отдадите за псионику жопу
+	value = 12 // Отдадите за псионику жопу, чтобы потом вам Рэнди Рандом всегда слал наименьший уровень силы
 	quirk_flags = QUIRK_HIDE_FROM_SCAN|QUIRK_HUMAN_ONLY|QUIRK_PROCESSES // Сканеры не видят псиоников. Только псионик школы принуждения может точно определить, является ли живое существо псиоником
 	gain_text = span_cyan("You mind feels uneasy, but... so powerful.")
 	lose_text = span_warning("You lost something, that kept your connection with other realms.")
@@ -34,11 +36,17 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 	//mail_goodies = list(/obj/item/toy/foamfinger) # ДОБАВИТЬ СЮДА ХИМИКАТЫ
 	veteran_only = TRUE
 	allow_for_donator = TRUE
+	// Текущий уровень маны
 	var/mana_level = 0
+	// Максимально возможный уровень маны
 	var/max_mana = 10
+	// Уровень псионических способностей
 	var/psyonic_level = 0
+	// Строка для описания уровня
 	var/psyonic_level_string = "Latent"
+	// Первичная школа псионики
 	var/school
+	// Вторичная школа псионики
 	var/secondary_school
 
 /datum/quirk/psyonic/add(client/client_source)
@@ -64,11 +72,11 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 			psyonic_level_string = "Theta"
 		if(PARAMOUNT_PSYONIC)
 			psyonic_level_string = "Epsilon"
-	max_mana = (psyonic_level + 1) * 20
+	max_mana = (psyonic_level + 1) * 20 // Минимальный - 20, максимальный - 100
 	RegisterSignal(quirk_holder, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(get_status_tab_item))
 	var/mob/living/carbon/human/whom_to_give = quirk_holder
 	if(school == secondary_school)
-		psyonic_level += 1
+		psyonic_level += 1 // Если вторичка совпадает с первой - добавляем один уровень, но не меняем описание
 	switch(school)
 		if("Redaction")
 			whom_to_give.try_add_redaction_school(psyonic_level, secondary_school)
@@ -76,8 +84,10 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 			whom_to_give.try_add_coercion_school(psyonic_level, secondary_school)
 		if("Psychokinesis")
 			whom_to_give.try_add_psychokinesis_school(psyonic_level, secondary_school)
+		if("Energistics")
+			whom_to_give.try_add_energistics_school(psyonic_level, secondary_school)
 
-	if(secondary_school != school)
+	if(secondary_school != school) // Если школы разные, добавить способность нулевого уровня вторичной школы
 		switch(secondary_school)
 			if("Redaction")
 				whom_to_give.try_add_redaction_school(0, 0)
@@ -85,6 +95,9 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 				whom_to_give.try_add_coercion_school(0, 0)
 			if("Psychokinesis")
 				whom_to_give.try_add_psychokinesis_school(0, 0)
+			if("Energistics")
+				whom_to_give.try_add_energistics_school(0, 0)
+
 	var/fluff_text = span_cyan("Current psionic factors:") + "<br>" + \
 					 "[fluff_1 ? "Current star position is aligned to your soul." : "The stars do not precede luck to you."]" + "<br>" + \
 					 "[fluff_2 ? "Other realms are unusually active this shift." : "Other realms are quiet today."]" + "<br>" + \
@@ -106,9 +119,16 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 	items += "Current psyonic energy: [mana_level]/[max_mana]"
 
 /datum/quirk/psyonic/process(seconds_per_tick)
+	if(HAS_TRAIT(quirk_holder, TRAIT_NO_PSYONICS))
+		return
+
 	var/additional_mana = 1
 	if(quirk_holder.has_status_effect(/datum/status_effect/drugginess)) // Наркота даёт бафф к генерации маны
-		additional_mana = 1.5
+		additional_mana *= 1.5
+
+	if(HAS_TRAIT(quirk_holder, TRAIT_PRO_PSYONICS))
+		additional_mana *= 2
+
 	if(mana_level <= max_mana)
 		mana_level += seconds_per_tick * 0.5 * additional_mana
 	mana_level = clamp(mana_level, 0, max_mana)
