@@ -28,6 +28,7 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 				Energistics - school of elecricity, fire and light; \
 				You can select the school, but it's power will be randomised every round."
 	value = 12 // Отдадите за псионику жопу, чтобы потом вам Рэнди Рандом всегда слал наименьший уровень силы
+	medical_record_text = "Patient is a psyonic"
 	quirk_flags = QUIRK_HIDE_FROM_SCAN|QUIRK_HUMAN_ONLY|QUIRK_PROCESSES // Сканеры не видят псиоников. Только псионик школы принуждения может точно определить, является ли живое существо псиоником
 	gain_text = span_cyan("You mind feels uneasy, but... so powerful.")
 	lose_text = span_warning("You lost something, that kept your connection with other realms.")

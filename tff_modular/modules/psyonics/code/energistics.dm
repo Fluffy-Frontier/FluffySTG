@@ -6,8 +6,6 @@
 /// Elecrocute - добавляет мутацию shock touch
 /// Freeze - заковывает моба в лёд на небольшой промежуток.
 
-
-
 // Добавить школу внушения
 /mob/living/carbon/human/proc/try_add_energistics_school(tier = 0, additional_school = 0)
 	if(tier >= 0)
