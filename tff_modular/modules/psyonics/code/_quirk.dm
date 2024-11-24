@@ -32,9 +32,8 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 	quirk_flags = QUIRK_HIDE_FROM_SCAN|QUIRK_HUMAN_ONLY|QUIRK_PROCESSES // Сканеры не видят псиоников. Только псионик школы принуждения может точно определить, является ли живое существо псиоником
 	gain_text = span_cyan("You mind feels uneasy, but... so powerful.")
 	lose_text = span_warning("You lost something, that kept your connection with other realms.")
-	icon = "bug"
+	icon = "star"
 	mob_trait = TRAIT_PSYONIC_USER
-	//mail_goodies = list(/obj/item/toy/foamfinger) # ДОБАВИТЬ СЮДА ХИМИКАТЫ
 	veteran_only = TRUE
 	allow_for_donator = TRUE
 	// Текущий уровень маны
