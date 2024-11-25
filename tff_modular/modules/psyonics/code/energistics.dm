@@ -142,7 +142,7 @@
 
 // Даёт мутацию Shock Touch
 /datum/action/cooldown/spell/psyonic/psionic_electrocute
-	name = "Shock Touch"
+	name = "Psyonic Shock Touch"
 	desc = "Force yourself to recieve shock touch mutation."
 	cooldown_time = 60 SECONDS
 	mana_cost = 60
