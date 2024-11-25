@@ -1,3 +1,6 @@
+// Тут хранятся некрасивые базовые классы и прочее. Не смотрите сюда.
+
+// Спеллы для призвания предмета
 /datum/action/cooldown/spell/conjure_item/psyonic
 	delete_old = FALSE
 	delete_on_failure = TRUE
@@ -59,7 +62,7 @@
 	drain_mana()
 	return ..()
 
-// Для спеллов типа self
+// Для спеллов которые применяются на себя тыком кнопки a.k.a. выдача генов
 /datum/action/cooldown/spell/psyonic
 	// Сколько маны стоит кастануть спелл
 	var/mana_cost = 10
@@ -115,7 +118,8 @@
 	else
 		return TRUE
 
-/datum/action/cooldown/spell/pointed/psyonic
+// Спеллы для пострелушек
+/datum/action/cooldown/spell/pointed/projectile/psyonic
 	// Сколько маны стоит кастануть спелл
 	var/mana_cost = 10
 	// Некоторые спеллы могут отнимать стамину
@@ -134,6 +138,62 @@
 	spell_requirements = NONE
 	cooldown_reduction_per_rank = 0 SECONDS
 
+/datum/action/cooldown/spell/pointed/projectile/psyonic/New(Target, power, additional_school)
+	. = ..()
+	cast_power = power
+	secondary_school = additional_school
+
+// Проверяем достаточно ли маны
+/datum/action/cooldown/spell/pointed/projectile/psyonic/proc/check_for_mana()
+	var/mob/living/carbon/human/caster = owner
+	var/datum/quirk/psyonic/quirk_holder = caster.get_quirk(/datum/quirk/psyonic)
+	if(quirk_holder && (quirk_holder.mana_level - mana_cost) >= 0)
+		return TRUE
+	else
+		return FALSE
+
+// Сосём ману у псионика
+/datum/action/cooldown/spell/pointed/projectile/psyonic/proc/drain_mana(forced = FALSE)
+	var/mob/living/carbon/human/caster = owner
+	var/datum/quirk/psyonic/quirk_holder = caster.get_quirk(/datum/quirk/psyonic)
+	caster.adjustStaminaLoss(stamina_cost, forced = TRUE)
+	if(quirk_holder && (quirk_holder.mana_level - mana_cost) >= 0)
+		quirk_holder.mana_level -= mana_cost
+		return TRUE
+	else if (forced)
+		quirk_holder.mana_level = 0
+		return TRUE
+	else
+		return FALSE
+
+/datum/action/cooldown/spell/pointed/projectile/psyonic/can_cast_spell(feedback)
+	. = ..()
+	if(!.)
+		return FALSE
+
+	if(!check_for_mana())
+		return FALSE
+	else
+		return TRUE
+
+// Направленные спеллы a.k.a. псионик выбирают цель на дистанции
+/datum/action/cooldown/spell/pointed/psyonic
+	// Сколько маны стоит кастануть спелл
+	var/mana_cost = 10
+	// Некоторые спеллы могут отнимать стамину
+	var/stamina_cost = 0
+	// Что написать жертве
+	var/target_msg
+	// Сила способности
+	var/cast_power = 0
+	// Вторичная школа. Может дать особые эффекты при комбинациях
+	var/secondary_school = 0
+	// Псионические способности (в основном) не блокируются, но выводят особенные сообщения тем, кто это может
+	antimagic_flags = MAGIC_RESISTANCE_MIND
+	school = SCHOOL_UNSET
+	invocation_type = INVOCATION_NONE
+	spell_requirements = NONE
+	cooldown_reduction_per_rank = 0 SECONDS
 
 /datum/action/cooldown/spell/pointed/psyonic/New(Target, power, additional_school)
 	. = ..()
@@ -173,6 +233,7 @@
 	else
 		return TRUE
 
+// Спеллы которыми надо каснуться чего либо
 /datum/action/cooldown/spell/touch/psyonic
 	// Сколько маны стоит кастануть спелл
 	var/mana_cost = 10
@@ -186,11 +247,9 @@
 	var/secondary_school = 0
 	// Псионические способности (в основном) не блокируются, но выводят особенные сообщения тем, кто это может
 	antimagic_flags = MAGIC_RESISTANCE_MIND
-
 	school = SCHOOL_UNSET
 	invocation_type = INVOCATION_NONE
 	spell_requirements = NONE
-
 
 /datum/action/cooldown/spell/touch/psyonic/New(Target, power, additional_school)
 	. = ..()

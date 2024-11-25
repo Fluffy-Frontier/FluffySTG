@@ -18,21 +18,21 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 /datum/quirk/psyonic
 	name = "Psyonic Abilities"
 	desc = "Either you were born like this or gained powers from implants/training or other events - you are a psyonic. \
-				Your mind can access the world that lies beyond our mortal plane. One day voices from within had pierced your skull \
-				like a tide wave turns a sailboat over in open sea, but you withstanded it and received abilities your father haven't \
-				even dreamed of. From now on a special type of energy is stored in your mind, body and soul and you have control over it. \
-				Every psyonic is a follower of a certain school: \
-				Redaction - school of mending and curing bodies and souls; \
-				Coercion - school of trickery and controlling others;\
-				Psychokinesis - school of object manipulation; \
-				Energistics - school of elecricity, fire and light; \
-				You can select the school, but it's power will be randomised every round."
+			Your mind can access the world that lies beyond our mortal plane. One day voices from within had pierced your skull \
+			like a tide wave turns a sailboat over in open sea, but you withstanded it and received abilities your father haven't \
+			even dreamed of. From now on a special type of energy is stored in your mind, body and soul and you have control over it. \
+			Every psyonic is a follower of a certain school: \
+			Redaction - school of mending and curing bodies and souls; \
+			Coercion - school of trickery and controlling others; \
+			Psychokinesis - school of object manipulation; \
+			Energistics - school of elecricity, fire and light; \
+			You can select the school, but it's power will be randomised every round."
 	value = 12 // Отдадите за псионику жопу, чтобы потом вам Рэнди Рандом всегда слал наименьший уровень силы
-	medical_record_text = "Patient is a psyonic"
+	medical_record_text = "Patient possesses connection to an another plain of reality."
 	quirk_flags = QUIRK_HIDE_FROM_SCAN|QUIRK_HUMAN_ONLY|QUIRK_PROCESSES // Сканеры не видят псиоников. Только псионик школы принуждения может точно определить, является ли живое существо псиоником
 	gain_text = span_cyan("You mind feels uneasy, but... so powerful.")
 	lose_text = span_warning("You lost something, that kept your connection with other realms.")
-	icon = "star"
+	icon = "fa-star"
 	mob_trait = TRAIT_PSYONIC_USER
 	veteran_only = TRUE
 	allow_for_donator = TRUE
@@ -104,7 +104,7 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 					 "[fluff_3 ? "Time-bluespace continuum seems to be stable today." : "Time-bluespace continuum is not giving you energy today."]" + "<br>" + \
 					 "[fluff_4 ? "Your mind is clearly open to otherwordly energy." : "Something clouds your connection to otherworld energy."]"
 	to_chat(quirk_holder, examine_block(span_infoplain(jointext(fluff_text, "\n&bull; "))))
-	psyonic_level -= 1
+	psyonic_level -= 1 // Обязаловка, иначе выдаст спеллы которые нельзя кастануть
 
 /datum/quirk/psyonic/remove()
 	UnregisterSignal(quirk_holder, COMSIG_MOB_GET_STATUS_TAB_ITEMS)
@@ -119,14 +119,14 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 	items += "Current psyonic energy: [mana_level]/[max_mana]"
 
 /datum/quirk/psyonic/process(seconds_per_tick)
-	if(HAS_TRAIT(quirk_holder, TRAIT_NO_PSYONICS))
+	if(HAS_TRAIT(quirk_holder, TRAIT_NO_PSYONICS)) // Имплант подавления регена
 		return
 
 	var/additional_mana = 1
 	if(quirk_holder.has_status_effect(/datum/status_effect/drugginess)) // Наркота даёт бафф к генерации маны
 		additional_mana *= 1.5
 
-	if(HAS_TRAIT(quirk_holder, TRAIT_PRO_PSYONICS))
+	if(HAS_TRAIT(quirk_holder, TRAIT_PRO_PSYONICS)) // Если есть имплант для увеличения регена маны
 		additional_mana *= 2
 
 	if(mana_level <= max_mana)

@@ -23,9 +23,10 @@
 		var/datum/action/new_action = new /datum/action/cooldown/spell/psyonic/psionic_electrocute(src.mind || src, tier, additional_school)
 		new_action.Grant(src)
 	if(tier >= 4)
-		var/datum/action/new_action = new /datum/action/cooldown/spell/pointed/psyonic/psyonic_freeze(src.mind || src, tier, additional_school)
+		var/datum/action/new_action = new /datum/action/cooldown/spell/pointed/projectile/psyonic/psyonic_freeze(src.mind || src)
 		new_action.Grant(src)
 
+// Разрядка АПЦ или батареек в обмен на ману
 /datum/action/cooldown/spell/touch/psyonic/psyonic_discharge
 	name = "Psyonic Discharge"
 	desc = "Try to discharge battery and convert electricity into raw psyonic energy."
@@ -34,7 +35,6 @@
 	cooldown_time = 30 SECONDS
 	mana_cost = 0
 	stamina_cost = 15
-
 	hand_path = /obj/item/melee/touch_attack/psyonic_mending
 	draw_message = span_notice("You ready your hand to discharge an energy source.")
 	drop_message = span_notice("You lower your hand.")
@@ -72,6 +72,7 @@
 	else
 		return FALSE
 
+// Создаёт искры в указанном месте
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_spark
 	name = "Psyonic Spark"
 	desc = "Cause some sparks to appear at a place of your choice."
@@ -88,6 +89,8 @@
 
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_spark/cast(turf/cast_on)
 	. = ..()
+	var/mob/living/carbon/human/caster = owner
+	caster.emote_snap()
 	var/datum/effect_system/spark_spread/sparks = new
 	sparks.set_up(5, 1, cast_on)
 	sparks.attach(cast_on)
@@ -95,16 +98,15 @@
 	drain_mana()
 	return TRUE
 
+// Стреляет по направлению куклы псионика фотонной пушкой. Считайте аналог флешки
 /datum/action/cooldown/spell/basic_projectile/psyonic_laser
 	name = "Photon Laser"
 	desc = "Channels psyonic energy into a weak concentrated photon laser."
 	button_icon = 'icons/obj/weapons/guns/projectiles.dmi'
 	button_icon_state = "solarflare"
-
 	cooldown_time = 0 SECONDS
 	spell_requirements = NONE
 	var/mana_cost = 10
-
 	projectile_type = /obj/projectile/energy/photon
 
 /datum/action/cooldown/spell/basic_projectile/psyonic_laser/cast(atom/cast_on)
@@ -116,6 +118,7 @@
 		quirk_holder.mana_level -= mana_cost
 	..()
 
+// Создаёт ЕМП в месте удара руки
 /datum/action/cooldown/spell/touch/psyonic/psyonic_emp
 	name = "Psyonic EMP"
 	desc = "Try to cause a small local EMP."
@@ -137,6 +140,7 @@
 	else
 		return FALSE
 
+// Даёт мутацию Shock Touch
 /datum/action/cooldown/spell/psyonic/psionic_electrocute
 	name = "Shock Touch"
 	desc = "Force yourself to recieve shock touch mutation."
@@ -158,24 +162,25 @@
 	drain_mana()
 	return TRUE
 
-/datum/action/cooldown/spell/pointed/psyonic/psyonic_freeze
+// Стреляет снарядом вотчера, замораживая жертву. Требует почти максимально возможный запас маны
+/datum/action/cooldown/spell/pointed/projectile/psyonic/psyonic_freeze
 	name = "Psyonic Freeze"
-	desc = "Quickly freeze moist around target, encasing them in an ice prison."
+	desc = "Fire freezing shark at a target, encasing them in an ice prison."
 	button_icon = 'icons/effects/freeze.dmi'
 	button_icon_state = "ice_cube"
 	cooldown_time = 1 SECONDS
 	mana_cost = 80
-	active_msg = "You prepare to create freeze prison..."
+	cast_range = 9
+	active_msg = "You prepare to fire ice shard..."
+	deactive_msg = "You relax."
+	projectile_type = /obj/projectile/temp/watcher/ice_wing
 
-/datum/action/cooldown/spell/pointed/psyonic/psyonic_freeze/is_valid_target(atom/cast_on)
+/datum/action/cooldown/spell/pointed/projectile/psyonic/psyonic_freeze/is_valid_target(atom/cast_on)
 	if(!isliving(cast_on))
 		return FALSE
 	return TRUE
 
-/datum/action/cooldown/spell/pointed/psyonic/psyonic_freeze/cast(mob/living/cast_on)
-	. = ..()
-	if(HAS_TRAIT(cast_on, TRAIT_RESISTCOLD))
-		return FALSE
-	cast_on.apply_status_effect(/datum/status_effect/freon/watcher/extended)
+/datum/action/cooldown/spell/pointed/projectile/psyonic/psyonic_freeze/cast(mob/living/cast_on)
 	drain_mana()
+	. = ..()
 	return TRUE

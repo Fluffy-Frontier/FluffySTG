@@ -32,6 +32,7 @@
 		var/datum/action/new_action = new /datum/action/cooldown/spell/pointed/psyonic/psyonic_blind(src.mind || src, tier, additional_school)
 		new_action.Grant(src)
 
+// Спелл для чтения разума другого игрока на наличие псионических способностей
 /datum/action/cooldown/spell/touch/psyonic/psyonic_assay
 	name = "Psyonic Assay"
 	desc = "Check if the target is a psyonic."
@@ -41,7 +42,6 @@
 	mana_cost = 5
 	stamina_cost = 0
 	target_msg = "Your get a headache, but it quickly fades."
-
 	hand_path = /obj/item/melee/touch_attack/psyonic_mending
 	draw_message = span_notice("You ready your hand to cleanse a patient.")
 	drop_message = span_notice("You lower your hand.")
@@ -73,17 +73,15 @@
 		owner.visible_message(span_notice("[owner] backs off from [patient]."),
 							  span_cyan("Target is not a psyonic."))
 
+// Лечим мозги и брейнтравмы.
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_focus
 	name = "Psyonic Focus"
 	desc = "Try to restore patients brain to its natural initial condition, fixing brain damage. Has a chance to heal traumas. Can be cast over distance."
 	button_icon = 'icons/obj/medical/organs/organs.dmi'
 	button_icon_state = "brain-smooth"
-
 	cooldown_time = 1 SECONDS
-
 	mana_cost = 40
 	target_msg = "You feel like someone is messing with your brains."
-
 	active_msg = "You prepare to heal someones mind..."
 
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_focus/New(Target)
@@ -132,6 +130,7 @@
 	cast_on.adjustOrganLoss(ORGAN_SLOT_BRAIN, 15 * cast_power, 101)
 	to_chat(cast_on, span_bolddanger("You head hurts!"))
 
+// Читаем разум. Выдаёт: последние сейлоги, интент, настоящее имя, воспоминания, намёк на работу, намёк на то, что в антаг_датум что то есть.
 /datum/action/cooldown/spell/touch/psyonic/psyonic_mind_read
 	name = "Psyonic Mind Read"
 	desc = "Rudely intrude into targets thoughts."
@@ -249,6 +248,7 @@
 	else
 		return "I cant read [patient.p_their()] memories. Maybe there are none?" + "<br>"
 
+// Stun batong на минималках. Исчезает после одного удара
 /datum/action/cooldown/spell/touch/psyonic/psyonic_agony
 	name = "Psyonic Agony"
 	desc = "Deals pain."
@@ -257,7 +257,6 @@
 	cooldown_time = 0.5 SECONDS
 	mana_cost = 15
 	stamina_cost = 0
-
 	hand_path = /obj/item/melee/touch_attack/psyonic_mending
 	draw_message = span_notice("You ready your hand to deal pain.")
 	drop_message = span_notice("You lower your hand.")
@@ -279,6 +278,7 @@
 	else
 		return FALSE
 
+// Прок удара
 /datum/action/cooldown/spell/touch/psyonic/psyonic_agony/proc/psyonic_attack(mob/living/carbon/human/patient)
 	patient.apply_damage(35, STAMINA) // Стандартный стан батонг
 	addtimer(CALLBACK(src, PROC_REF(apply_stun_effect), patient), 2 SECONDS)
@@ -294,6 +294,7 @@
 	if(!trait_check)
 		patient.Knockdown((cast_power/2) SECONDS)
 
+// Станит на непродолжительный срок(~0.5 сек) и заставляет выкинуть вещи из рук
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_spasm
 	name = "Psyonic Spasm"
 	desc = "Activate neurons in victims mucles, briefly stunning them and forcing to drop everything in their hands. Can be cast over distance. Silent."
@@ -329,9 +330,18 @@
 	drain_mana()
 	return TRUE
 
+// Сам стан
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_spasm/proc/stun(mob/living/carbon/human/cast_on)
 	cast_on.Stun(0.2 SECONDS * cast_power)
 
+/**
+ * Гипнотизирует игрока заданной фразой и даёт брейнтравму с ней
+ *
+ * Условия:
+ * * 30 секунд ожидания
+ * * в агрограбе
+ * * без движения жертвы или псионика
+ */
 /datum/action/cooldown/spell/touch/psyonic/psyonic_hypnosis
 	name = "Psyonic Hypnosis"
 	desc = "Implant a looping pattern into victims head."
@@ -383,6 +393,7 @@
 	addtimer(CALLBACK(patient, TYPE_PROC_REF(/mob/living/carbon, gain_trauma), /datum/brain_trauma/hypnosis, TRAUMA_RESILIENCE_SURGERY, hypnophrase), 1 SECONDS)
 	addtimer(CALLBACK(patient, TYPE_PROC_REF(/mob/living, Stun), 60, TRUE, TRUE), 15)
 
+// Ослепляет цель на дистанции на ~15 секунд. Способность максимального уровня
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_blind
 	name = "Psyonic Blind"
 	desc = "Interfere with the way neuron signals are transmitted in the victims eyes."

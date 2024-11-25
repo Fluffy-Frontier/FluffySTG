@@ -7,6 +7,7 @@
 /// Psyforce - даёт "клешни жизни" для вскрытия дверей
 /// Telekinesis - даёт мутацию телекинеза.
 
+// Добавляет школу психокинетики
 /mob/living/carbon/human/proc/try_add_psychokinesis_school(tier = 0, additional_school = 0)
 	if(tier >= 0)
 		var/datum/action/new_action = new /datum/action/cooldown/spell/conjure_item/psyonic/psilighter(src.mind || src, tier, additional_school)
@@ -26,6 +27,7 @@
 		var/datum/action/new_action = new /datum/action/cooldown/spell/psyonic/psionic_telekinesis(src.mind || src, tier, additional_school)
 		new_action.Grant(src)
 
+// Спавнит зажигалку в руке. Очень полезно
 /datum/action/cooldown/spell/conjure_item/psyonic/psilighter
 	name = "Psi lighter"
 	desc = "Concentrates psyonic energy to create a small flame in your hand."
@@ -36,6 +38,7 @@
 	mana_cost = 5
 	stamina_cost = 0
 
+// Спавнит пси-клинок в руке. Сила зависит от уровня псионика
 /datum/action/cooldown/spell/conjure_item/psyonic/psiblade
 	name = "Psi blade"
 	desc = "Concentrates psyonic energy to create a sharp blade in your hand."
@@ -46,6 +49,7 @@
 	mana_cost = 40
 	stamina_cost = 0
 
+// Спавнит омни инструмент в руке псионика. Аналог абдукторского
 /datum/action/cooldown/spell/conjure_item/psyonic/psitool
 	name = "Psi tool"
 	desc = "Concentrates psyonic energy to create a universal tool."
@@ -64,8 +68,11 @@
 /datum/action/cooldown/spell/conjure_item/psyonic/psiblade/make_item(atom/caster)
 	var/obj/item/made_item = new item_type(caster.loc, cast_power)
 	LAZYADD(item_refs, WEAKREF(made_item))
+	var/mob/living/carbon/human/caster_pawn = owner
+	caster_pawn.emote_snap()
 	return made_item
 
+// Аналог клешней жизни
 /datum/action/cooldown/spell/touch/psyonic/psyonic_force
 	name = "Psyonic Force"
 	desc = "Concentrates psyonic energy to force a door open."
@@ -74,7 +81,6 @@
 	cooldown_time = 3 SECONDS
 	mana_cost = 50
 	stamina_cost = 50
-
 	hand_path = /obj/item/melee/touch_attack/psyonic_mending
 	draw_message = span_notice("You ready your hand to force a door open.")
 	drop_message = span_notice("You lower your hand.")
@@ -121,6 +127,7 @@
 			door_to_force.prying_so_hard = FALSE
 			return
 
+// Даёт мутацию телекинеза
 /datum/action/cooldown/spell/psyonic/psionic_telekinesis
 	name = "Telekinesis"
 	desc = "Force yourself to recieve telekinesis mutation."
@@ -141,6 +148,7 @@
 	to_mutate.dna.add_mutation(/datum/mutation/human/telekinesis, MUT_OTHER)
 	drain_mana()
 
+// Восстанавливает Integrity атома. Позволяет чинить многие нечинимые иными способами вещи
 /datum/action/cooldown/spell/touch/psyonic/psyonic_tinker
 	name = "Psyonic Tinker"
 	desc = "Restore somethings condition to its normal state."
@@ -149,7 +157,6 @@
 	cooldown_time = 3 SECONDS
 	mana_cost = 40
 	stamina_cost = 50
-
 	hand_path = /obj/item/melee/touch_attack/psyonic_mending
 	draw_message = span_notice("You ready your hand to tinker.")
 	drop_message = span_notice("You lower your hand.")

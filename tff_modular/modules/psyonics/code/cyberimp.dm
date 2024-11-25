@@ -1,5 +1,6 @@
 #define ORGAN_SLOT_BRAIN_PSYONIC "brain_psyonic"
 
+// Не позволяет мане регенерироваться
 /obj/item/organ/internal/cyberimp/brain/anti_psyonic
 	name = "Psyonic Amplifier Model N"
 	desc = "This implant will prohibit psyonics from regenereting their energy."
@@ -14,6 +15,7 @@
 	. = ..()
 	REMOVE_TRAIT(organ_owner, TRAIT_NO_PSYONICS, IMPLANT_TRAIT)
 
+// Увеличивает реген маны в 1.5 раза
 /obj/item/organ/internal/cyberimp/brain/pro_psyonic
 	name = "Psyonic Amplifier Model A"
 	desc = "This implant will boost psyonics energy regenerating."

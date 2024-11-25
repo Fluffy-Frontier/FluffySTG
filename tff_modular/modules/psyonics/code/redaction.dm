@@ -7,6 +7,7 @@
 /// Cleansing - лечит токс урон
 /// Revive - пытается оживить труп
 
+// Выдать школу лечения
 /mob/living/carbon/human/proc/try_add_redaction_school(tier = 0, additional_school = 0)
 	if(tier >= 0)
 		var/datum/action/new_action = new /datum/action/cooldown/spell/pointed/psyonic/psyonic_roentgen(src.mind || src, tier, additional_school)
@@ -21,6 +22,7 @@
 		var/datum/action/new_action = new /datum/action/cooldown/spell/touch/psyonic/psyonic_revival(src.mind || src, tier, additional_school)
 		new_action.Grant(src)
 
+// Мед сканер на расстоянии
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_roentgen
 	name = "Roentgen"
 	desc = "Try to read target's vital energy and determine their state."
@@ -70,6 +72,8 @@
 	light_color = LIGHT_COLOR_LIGHT_CYAN
 	light_on = TRUE
 
+// Восстанавливает кровь, окси урон, открытые травмы. Не лечит другие типы урона. Если вторичка - психокинетика, то вынимает импланты.
+// Если уровень Эпсилон - удаляет лярвы ксеноморфов.
 /datum/action/cooldown/spell/touch/psyonic/psyonic_mending
 	name = "Psyonic Mending"
 	desc = "You can try to restore patients bloodloss, bones, open wounds and partially oxygen level in blood. Does not heal brute, burn, \
@@ -80,7 +84,6 @@
 	mana_cost = 25
 	stamina_cost = 25
 	target_msg = "You body numbs a little."
-
 	hand_path = /obj/item/melee/touch_attack/psyonic_mending
 	draw_message = span_notice("You ready your hand to mend a patient.")
 	drop_message = span_notice("You lower your hand.")
@@ -141,6 +144,7 @@
 		if(drop_loc)
 			parasite.forceMove(drop_loc)
 
+// Лечит токс урон.
 /datum/action/cooldown/spell/touch/psyonic/psyonic_cleansing
 	name = "Psyonic Cleansing"
 	desc = "Filters patient blood out of toxin and removes accumulated radiation."
@@ -179,6 +183,14 @@
 	if(patient.getToxLoss() > 0)
 		patient.adjustToxLoss(clamp(-(patient.getToxLoss()/3)*cast_power, -35, 0), forced = TRUE)
 
+/**
+ * Пытается оживить труп
+ *
+ * Логика прока:
+ * 1. Смотрит есть ли причина по которой нельзя дефибнуть, пытается её устранить
+ * 2. Если не удалось устранить - не оживляет
+ * 3. Если удалось устранить причину - проверяет можно ли дефибнуть снова. Если появилась другая - не оживляет. Всё ок - оживляет.
+ */
 /datum/action/cooldown/spell/touch/psyonic/psyonic_revival
 	name = "Psyonic Revival"
 	desc = "Ability to trick death itself. Call for the bodys soul in the other realm in attempt to restore its vessel condition to an... acceptable levels."
@@ -217,11 +229,12 @@
 	else
 		return FALSE
 
-/datum/action/cooldown/spell/touch/psyonic/psyonic_revival/proc/accident_harm(mob/living/carbon/human/patient)
-	patient.apply_damage(25, TOX, BODY_ZONE_CHEST)
-	patient.take_bodypart_damage(25, wound_bonus = 100)
-	patient.take_bodypart_damage(25, wound_bonus = 100, sharpness = SHARP_EDGED)
-	owner.visible_message(span_warning("Something inside of [owner]s body cracks!"),
+// 25 токса + 50 брута + 1 травма + позор роду псионическому
+/datum/action/cooldown/spell/touch/psyonic/psyonic_revival/proc/accident_harm(mob/living/carbon/human/unlucky_guy)
+	unlucky_guy.apply_damage(25, TOX, BODY_ZONE_CHEST)
+	unlucky_guy.take_bodypart_damage(25, wound_bonus = 100)
+	unlucky_guy.take_bodypart_damage(25, wound_bonus = 100, sharpness = SHARP_EDGED)
+	unlucky_guy.visible_message(span_warning("Something inside of [unlucky_guy]s body cracks!"),
 						  span_bolddanger("Your revival energy backfired at you, causing severe injuries!"),
 						  blind_message = span_hear("You hear bones breaking."))
 
