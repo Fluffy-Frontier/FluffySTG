@@ -437,19 +437,3 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/official/ff_contest/pause
 	icon_state = "donks"
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/official/ff_contest/donks, 32)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

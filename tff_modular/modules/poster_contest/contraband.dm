@@ -193,30 +193,3 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/ff_contest/cur
 	icon_state = "worker_and_peasant"
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/ff_contest/worker_and_peasant, 32)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
