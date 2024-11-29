@@ -1,7 +1,7 @@
 /obj/structure/sign/poster/contraband/ff_contest
-	name = ""
-	desc = ""
-	icon_state = ""
+	name = "Fem-sec"
+	desc = "\"What is it? Your masculinity is too fragile to wear these tactical socks?\""
+	icon_state = "fem_sec"
 	icon = 'tff_modular/modules/poster_contest/poster_contest.dmi'
 
 /obj/structure/sign/poster/contraband/ff_contest/cheese_propaganda
