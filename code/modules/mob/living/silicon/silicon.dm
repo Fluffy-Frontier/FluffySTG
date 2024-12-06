@@ -268,7 +268,7 @@
 
 	if (lawcache_zeroth)
 		if (force || (lawcache_zeroth in lawcache_lawcheck))
-			say("[radiomod] 0. [lawcache_zeroth]", forced = forced_log_message)
+			say("[radiomod] 0. [lawcache_zeroth]", forced = forced_log_message, message_mods = list(MODE_SEQUENTIAL = TRUE))
 			sleep(1 SECONDS)
 
 	for (var/index in 1 to length(lawcache_hacked))
@@ -277,7 +277,7 @@
 		if (length(law) <= 0)
 			continue
 		if (force || (law in lawcache_hackedcheck))
-			say("[radiomod] [num]. [law]", forced = forced_log_message)
+			say("[radiomod] [num]. [law]", forced = forced_log_message, message_mods = list(MODE_SEQUENTIAL = TRUE))
 			sleep(1 SECONDS)
 
 	for (var/index in 1 to length(lawcache_ion))
@@ -286,7 +286,7 @@
 		if (length(law) <= 0)
 			return
 		if (force || (law in lawcache_ioncheck))
-			say("[radiomod] [num]. [law]", forced = forced_log_message)
+			say("[radiomod] [num]. [law]", forced = forced_log_message, message_mods = list(MODE_SEQUENTIAL = TRUE))
 			sleep(1 SECONDS)
 
 	var/number = 1
@@ -295,7 +295,7 @@
 		if (length(law) <= 0)
 			continue
 		if (force || (law in lawcache_lawcheck))
-			say("[radiomod] [number]. [law]", forced = forced_log_message)
+			say("[radiomod] [number]. [law]", forced = forced_log_message, message_mods = list(MODE_SEQUENTIAL = TRUE))
 			number++
 			sleep(1 SECONDS)
 
@@ -305,7 +305,7 @@
 		if (length(law) <= 0)
 			continue
 		if (force || (law in lawcache_lawcheck))
-			say("[radiomod] [number]. [law]", forced = forced_log_message)
+			say("[radiomod] [number]. [law]", forced = forced_log_message, message_mods = list(MODE_SEQUENTIAL = TRUE))
 			number++
 			sleep(1 SECONDS)
 
