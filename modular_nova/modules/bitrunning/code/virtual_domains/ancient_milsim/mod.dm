@@ -18,7 +18,7 @@
 		/obj/item/mod/module/visor/meson,
 	)
 	insignia_type = /obj/item/mod/module/insignia/engineer
-	additional_module = /obj/item/mod/module/dispenser/emp
+	additional_modules = /obj/item/mod/module/dispenser/emp
 
 /obj/item/mod/control/pre_equipped/responsory/milsim_trapper
 	theme = /datum/mod_theme/responsory/ancient_milsim
@@ -37,7 +37,7 @@
 		/obj/item/mod/module/visor/thermal,
 	)
 	insignia_type = /obj/item/mod/module/insignia/commander
-	additional_module = /obj/item/mod/module/dispenser/landmine
+	additional_modules = /obj/item/mod/module/dispenser/landmine
 
 /obj/item/mod/control/pre_equipped/responsory/milsim_marksman
 	theme = /datum/mod_theme/responsory/ancient_milsim
@@ -58,7 +58,7 @@
 		/obj/item/mod/module/visor/night,
 	)
 	insignia_type = /obj/item/mod/module/insignia/security
-	additional_module = /obj/item/mod/module/dispenser/throwing_knife
+	additional_modules = /obj/item/mod/module/dispenser/throwing_knife
 
 /obj/item/mod/control/pre_equipped/responsory/milsim_medic
 	theme = /datum/mod_theme/responsory/ancient_milsim
@@ -77,7 +77,7 @@
 		/obj/item/mod/module/visor/medhud,
 	)
 	insignia_type = /obj/item/mod/module/insignia/medic
-	additional_module = /obj/item/mod/module/dispenser/hypospray
+	additional_modules = /obj/item/mod/module/dispenser/hypospray
 
 /obj/item/mod/module/dispenser/emp
 	name = "MOD EMP grenade dispenser module"
