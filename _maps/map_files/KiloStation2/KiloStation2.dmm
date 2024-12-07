@@ -23581,12 +23581,13 @@
 /turf/open/misc/asteroid,
 /area/station/maintenance/aft)
 "hEH" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/closed/wall,
-/area/station/cargo/bitrunning/den)
+/obj/machinery/portable_atmospherics/canister/anesthetic_mix,
+/obj/effect/turf_decal/tile/neutral/half/contrasted,
+/obj/structure/sign/eyechart/directional/north,
+/turf/open/floor/iron/dark,
+/area/station/medical/medbay/central)
 "hEI" = (
 /obj/machinery/pdapainter/medbay,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
@@ -61465,10 +61466,6 @@
 	},
 /turf/open/floor/iron/showroomfloor,
 /area/station/science/ordnance)
-"tNQ" = (
-/obj/effect/turf_decal/tile/neutral/half/contrasted,
-/turf/closed/wall,
-/area/station/cargo/bitrunning/den)
 "tNW" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -68388,6 +68385,7 @@
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 4
 	},
+/obj/item/toy/crayon/spraycan/roboticist,
 /turf/open/floor/iron/dark,
 /area/station/science/robotics/lab)
 "vTx" = (
@@ -69842,7 +69840,6 @@
 /area/station/security/brig)
 "wpn" = (
 /obj/machinery/status_display/ai/directional/west,
-/obj/effect/turf_decal/tile/neutral/half/contrasted,
 /turf/closed/wall,
 /area/station/cargo/bitrunning/den)
 "wpu" = (
@@ -95323,7 +95320,7 @@ bXe
 huR
 bXe
 gsy
-srg
+hEH
 uZT
 gKd
 pMj
@@ -116690,7 +116687,7 @@ kTD
 cQR
 gMA
 qih
-tNQ
+cQR
 dNx
 xhJ
 sRb
@@ -116947,7 +116944,7 @@ cQb
 cQR
 jgI
 oQt
-hEH
+cQR
 oSX
 kdO
 oXm
