@@ -10,6 +10,12 @@
 /// P.S. По гипнозу. В оригинале на финиках вообще было порабощение разума.
 /// Psyonic blind - временно ослепляет.
 
+// Прок для проверки носит ли моб шляпку из фольги. Удивительно, но защищает от некоторых спеллов школы внушения)
+/mob/living/carbon/human/proc/is_wearing_tinfoil_hat()
+	if(istype(head, /obj/item/clothing/head/costume/foilhat))
+		return TRUE
+	return FALSE
+
 // Добавить школу внушения
 /mob/living/carbon/human/proc/try_add_coercion_school(tier = 0, additional_school = 0)
 	if(tier >= 0)
@@ -149,6 +155,11 @@
 /datum/action/cooldown/spell/touch/psyonic/psyonic_mind_read/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/mendicant)
 	if(ishuman(victim))
 		var/mob/living/carbon/human/human_victim = victim
+		if(human_victim.is_wearing_tinfoil_hat())
+			to_chat(human_victim, span_clockred("Your tinfoil hat vibrates, protecting your brain from some kind of invisible rays!"))
+			to_chat(owner, span_clockred("As soon as you touch [human_victim]s head, suddnely pictures of your own mind appear! Looks like the tinfoil hat on their head is interfering."))
+			drain_mana()
+			return TRUE
 		if(human_victim.mind && human_victim.stat != DEAD)
 			if(human_victim.can_block_magic(antimagic_flags))
 				to_chat(human_victim, span_bolddanger("Psionic nearby tries to read your mind!"))
@@ -265,6 +276,12 @@
 /datum/action/cooldown/spell/touch/psyonic/psyonic_agony/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/mendicant)
 	if(ishuman(victim))
 		var/mob/living/carbon/human/human_victim = victim
+		if(human_victim.is_wearing_tinfoil_hat())
+			to_chat(human_victim, span_clockred("Your tinfoil hat vibrates, protecting your brain from some kind of invisible rays!"))
+			to_chat(owner, span_clockred("As soon as you touch [human_victim], your own body hurts as hell! Looks like the tinfoil hat on their head is interfering."))
+			psyonic_attack(owner)
+			drain_mana()
+			return TRUE
 		if(human_victim.can_block_magic(antimagic_flags))
 			to_chat(human_victim, span_notice("Psionic nearby tries to attack you, but fails."))
 			to_chat(owner, span_notice("You can't attack them. They have some kind of protection."))
@@ -321,6 +338,12 @@
 
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_spasm/cast(mob/living/carbon/human/cast_on)
 	. = ..()
+	if(cast_on.is_wearing_tinfoil_hat())
+		to_chat(cast_on, span_clockred("Your tinfoil hat vibrates, protecting your brain from some kind of invisible rays!"))
+		to_chat(owner, span_clockred("As soon as you try to spasm [cast_on], your own body twitches! Looks like the tinfoil hat on their head is interfering."))
+		drain_mana()
+		stun(owner)
+		return TRUE
 	if(cast_on.can_block_magic(antimagic_flags))
 		to_chat(cast_on, span_warning("Your body is assaulted with psyonic energy!"))
 	else
@@ -361,6 +384,12 @@
 /datum/action/cooldown/spell/touch/psyonic/psyonic_hypnosis/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/mendicant)
 	if(ishuman(victim) && mendicant.grab_state == GRAB_AGGRESSIVE && mendicant.pulling == victim)
 		var/mob/living/carbon/human/human_victim = victim
+		if(human_victim.is_wearing_tinfoil_hat())
+			to_chat(human_victim, span_clockred("Your tinfoil hat vibrates, protecting your brain from some kind of invisible rays!"))
+			to_chat(owner, span_clockred("As soon as you touch [human_victim]s head, you feel incredibly sleepy! Looks like the tinfoil hat on their head is interfering."))
+			drain_mana()
+			addtimer(CALLBACK(owner, TYPE_PROC_REF(/mob/living, Stun), 60, TRUE, TRUE), 15)
+			return TRUE
 		if(HAS_MIND_TRAIT(human_victim, TRAIT_UNCONVERTABLE))
 			to_chat(owner, span_warning("Victims mind is too strong for you to penetrate."))
 			return FALSE
@@ -420,6 +449,12 @@
 
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_blind/cast(mob/living/carbon/human/cast_on)
 	. = ..()
+	if(cast_on.is_wearing_tinfoil_hat())
+		to_chat(cast_on, span_clockred("Your tinfoil hat vibrates, protecting your brain from some kind of invisible rays!"))
+		to_chat(owner, span_clockred("As soon as you try to blind [cast_on], your own eyes close on its own! Looks like the tinfoil hat on their head is interfering."))
+		drain_mana()
+		blind(owner)
+		return TRUE
 	if(cast_on.can_block_magic(antimagic_flags))
 		to_chat(cast_on, span_warning("Your eyes are burned with psyonic energy!"))
 	else
