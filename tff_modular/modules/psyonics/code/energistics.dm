@@ -106,7 +106,7 @@
 	button_icon_state = "solarflare"
 	cooldown_time = 0 SECONDS
 	spell_requirements = NONE
-	var/mana_cost = 10
+	mana_cost = 10
 	projectile_type = /obj/projectile/energy/photon
 
 /datum/action/cooldown/spell/basic_projectile/psyonic_laser/cast(atom/cast_on)
