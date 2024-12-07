@@ -856,3 +856,77 @@
       a dehydrator. Perma now has standard cryo pods instead of wallmounted.
   vinylspiders:
   - bugfix: bedsheet pixel offsets should be fixed
+2024-08-27:
+  OrbisAnima:
+  - qol: SEVA suits use the same global list of items allowed than the rest of mining
+      (they can carry crushers now).
+  - qol: The Cafe areas and the Interlink Dorms now properly account for how one would
+      feel being off the clock, making you happy enough to counter most work related
+      worries while inside. (You get a mood buff inside those areas)
+  RatFromTheJungle:
+  - balance: Makes the AFAD slightly more practical, by raising it's healing rate.
+  honkpocket:
+  - bugfix: fixed an oversight on akula lungs which let them avoid the race its gills
+      gimmick
+2024-08-29:
+  Oxotnak:
+  - qol: add tail trails
+  - image: add tail trails sprite
+  delingar:
+  - rscadd: Added donator ballistic googles for delingar
+  sqnztb:
+  - qol: ghost cafe kitchen and botany have been refreshed with more tools
+2024-08-30:
+  Ben10Omintrix:
+  - bugfix: fixes blob spore and slime AI endlessly attacking the dead
+  FeenieRU:
+  - rscadd: Bunny suits
+  - rscadd: Bunny suits restock can be bought in cargo
+  FeudeyTF:
+  - rscadd: Added board for detective's evidences
+  Hatterhat:
+  - rscadd: DeForest is once again stocking medicated sutures and aloe-enhanced regenerative
+      mesh for import through Cargo.
+  Melbert:
+  - bugfix: Juicing and grinding should break less
+  Rhials:
+  - rscadd: Smokey remains have appeared in maintenance. Make sure to walk when near
+      them!
+  Sakamoto4ka:
+  - rscadd: Added salt electrolysis reaction
+  SmArtKar:
+  - bugfix: Stagger animation is no longer horrilbly jittery
+  - bugfix: Projectiles no longer always play turf hit sound
+  - bugfix: Bioscrambler anomalies no longer affect inorganic species
+  - balance: Plexagon Crew Manifest is now a default PDA app for everyone, and is
+      free.
+  - balance: Plexagon Crew Manifest no longer provides Detomatix resistance, but security
+      records and status display control now do.
+  SuperDrish:
+  - admin: "\u0412 \u0441\u043C\u0430\u0439\u0442 \u0434\u043E\u0431\u0430\u0432\u043B\
+      \u0435\u043D\u044B: \u0442\u0440\u0438 \u0433\u0435\u0439 \u0432\u0443\u043B\
+      \u044C\u043F\u044B, \u043E\u0434\u0438\u043D \u043A\u043B\u043E\u0443\u043D\
+      , \u043E\u0434\u043D\u0430 \u043D\u0430\u043A\u043E\u0432\u0430\u043B\u044C\u043D\
+      \u044F \u0438 \u043E\u0434\u043D\u043E \u0432\u043E\u0437\u043D\u0435\u0441\u0435\
+      \u043D\u0438\u0435"
+  Vekter:
+  - bugfix: Fixed an issue causing Quartermaster office access to show in the wrong
+      area on Plexagon Access Management.
+  - bugfix: Fixed an inconsistency in the naming for QM Office access.
+  Xackii:
+  - qol: revolver in roundstart holsters is on the last slot and not on first
+  delingar:
+  - bugfix: blacksec ballistic glasses show correctly now
+  grungussuss:
+  - bugfix: after 4 years, computer sound loop now works properly
+  vinylspiders:
+  - bugfix: the character directory previews are showing up once again
+2024-08-31:
+  vinylspiders:
+  - bugfix: flannel sprite now properly covers body while in the closed state
+  - bugfix: prescription ar glasses no longer require the hud to be active in order
+      to bestow their corrective properties
+  - qol: the anvil hammer sound is now locked behind the "Enable ambience" pref under
+      sounds, meaning it can be disabled by preference
+  - qol: naga constrict timer reduced from 3.25 seconds to 2.2 seconds
+  - bugfix: fixes ling transformation not respecting mob size

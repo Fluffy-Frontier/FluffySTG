@@ -395,7 +395,6 @@
 		. = TRUE
 	if(. && !QDELETED(src)) //transferring volatile reagents can cause a explosion & destory us
 		update_appearance(UPDATE_OVERLAYS)
-	return .
 
 /obj/machinery/chem_master/ui_act(action, params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
@@ -449,9 +448,27 @@
 
 		if("selectContainer")
 			var/obj/item/reagent_containers/target = locate(params["ref"])
+
+			//is this even a valid type path
 			if(!ispath(target))
 				return FALSE
 
+			//are we printing a valid container
+			var/container_found = FALSE
+			for(var/category in printable_containers)
+				//container found in previous iteration
+				if(container_found)
+					break
+
+				//find for matching typepath
+				for(var/obj/item/reagent_containers/container as anything in printable_containers[category])
+					if(target == container)
+						container_found = TRUE
+						break
+			if(!container_found)
+				return FALSE
+
+			//set the container
 			selected_container = target
 			return TRUE
 
@@ -480,11 +497,13 @@
 			if(ispath(selected_container, /obj/item/reagent_containers/cup/vial) || ispath(selected_container, /obj/item/reagent_containers/syringe/smartdart))
 				item_name_default = "[master_reagent.name] [item_name_default]"
 			// NOVA EDIT ADDITION END
-			var/item_name = tgui_input_text(usr,
+			var/item_name = tgui_input_text(
+				usr,
 				"Container name",
 				"Name",
 				item_name_default,
-				MAX_NAME_LEN)
+				max_length = MAX_NAME_LEN,
+			)
 			if(!item_name)
 				return FALSE
 

@@ -1,7 +1,4 @@
 import { sortBy } from 'common/collections';
-
-import { BooleanLike } from '../../common/react';
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
@@ -10,7 +7,10 @@ import {
   LabeledControls,
   LabeledList,
   Section,
-} from '../components';
+} from 'tgui-core/components';
+
+import { BooleanLike } from '../../common/react';
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 type Song = {
@@ -92,7 +92,7 @@ export const Jukebox = () => {
                   value={volume}
                   unit="%"
                   minValue={0}
-                  maxValue={50}
+                  maxValue={100}
                   step={1}
                   stepPixelSize={1}
                   onDrag={(e, value) =>

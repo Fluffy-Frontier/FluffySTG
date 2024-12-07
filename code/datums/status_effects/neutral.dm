@@ -2,8 +2,8 @@
 
 /datum/status_effect/crusher_damage
 	id = "crusher_damage"
-	duration = -1
-	tick_interval = -1
+	duration = STATUS_EFFECT_PERMANENT
+	tick_interval = STATUS_EFFECT_NO_TICK
 	status_type = STATUS_EFFECT_UNIQUE
 	alert_type = null
 	/// How much damage?
@@ -71,7 +71,7 @@
 
 /datum/status_effect/in_love
 	id = "in_love"
-	duration = -1
+	duration = STATUS_EFFECT_PERMANENT
 	status_type = STATUS_EFFECT_UNIQUE
 	alert_type = /atom/movable/screen/alert/status_effect/in_love
 	var/hearts
@@ -119,7 +119,7 @@
 
 /datum/status_effect/bounty/on_apply()
 	to_chat(owner, span_boldnotice("You hear something behind you talking... \"You have been marked for death by [rewarded]. If you die, they will be rewarded.\""))
-	playsound(owner, 'sound/weapons/gun/shotgun/rack.ogg', 75, FALSE)
+	playsound(owner, 'sound/items/weapons/gun/shotgun/rack.ogg', 75, FALSE)
 	return ..()
 
 /datum/status_effect/bounty/tick(seconds_between_ticks)
@@ -130,7 +130,7 @@
 /datum/status_effect/bounty/proc/rewards()
 	if(rewarded && rewarded.mind && rewarded.stat != DEAD)
 		to_chat(owner, span_boldnotice("You hear something behind you talking... \"Bounty claimed.\""))
-		playsound(owner, 'sound/weapons/gun/shotgun/shot.ogg', 75, FALSE)
+		playsound(owner, 'sound/items/weapons/gun/shotgun/shot.ogg', 75, FALSE)
 		to_chat(rewarded, span_greentext("You feel a surge of mana flow into you!"))
 		for(var/datum/action/cooldown/spell/spell in rewarded.actions)
 			spell.reset_spell_cooldown()
@@ -146,8 +146,8 @@
 // heldup is for the person being aimed at
 /datum/status_effect/grouped/heldup
 	id = "heldup"
-	duration = -1
-	tick_interval = -1
+	duration = STATUS_EFFECT_PERMANENT
+	tick_interval = STATUS_EFFECT_NO_TICK
 	status_type = STATUS_EFFECT_MULTIPLE
 	alert_type = /atom/movable/screen/alert/status_effect/heldup
 
@@ -167,8 +167,8 @@
 // holdup is for the person aiming
 /datum/status_effect/holdup
 	id = "holdup"
-	duration = -1
-	tick_interval = -1
+	duration = STATUS_EFFECT_PERMANENT
+	tick_interval = STATUS_EFFECT_NO_TICK
 	status_type = STATUS_EFFECT_UNIQUE
 	alert_type = /atom/movable/screen/alert/status_effect/holdup
 
@@ -187,8 +187,8 @@
 // this status effect is used to negotiate the high-fiving capabilities of all concerned parties
 /datum/status_effect/offering
 	id = "offering"
-	duration = -1
-	tick_interval = -1
+	duration = STATUS_EFFECT_PERMANENT
+	tick_interval = STATUS_EFFECT_NO_TICK
 	status_type = STATUS_EFFECT_UNIQUE
 	alert_type = null
 	/// The people who were offered this item at the start
@@ -349,8 +349,8 @@
 //this effect gives the user an alert they can use to surrender quickly
 /datum/status_effect/grouped/surrender
 	id = "surrender"
-	duration = -1
-	tick_interval = -1
+	duration = STATUS_EFFECT_PERMANENT
+	tick_interval = STATUS_EFFECT_NO_TICK
 	status_type = STATUS_EFFECT_UNIQUE
 	alert_type = /atom/movable/screen/alert/status_effect/surrender
 
@@ -394,7 +394,7 @@
 /datum/status_effect/caltropped
 	id = "caltropped"
 	duration = 1 SECONDS
-	tick_interval = -1
+	tick_interval = STATUS_EFFECT_NO_TICK
 	status_type = STATUS_EFFECT_REFRESH
 	alert_type = null
 
@@ -596,8 +596,8 @@
 /datum/status_effect/gutted
 	id = "gutted"
 	alert_type = null
-	duration = -1
-	tick_interval = -1
+	duration = STATUS_EFFECT_PERMANENT
+	tick_interval = STATUS_EFFECT_NO_TICK
 
 /datum/status_effect/gutted/on_apply()
 	RegisterSignal(owner, COMSIG_MOB_STATCHANGE, PROC_REF(stop_gutting))
@@ -609,3 +609,41 @@
 /datum/status_effect/gutted/proc/stop_gutting()
 	SIGNAL_HANDLER
 	qdel(src)
+
+/atom/movable/screen/alert/status_effect/shower_regen
+	name = "Washing"
+	desc = "A good wash fills me with energy!"
+	icon_state = "shower_regen"
+
+/atom/movable/screen/alert/status_effect/shower_regen/hater
+	name = "Washing"
+	desc = "Waaater... Fuck this WATER!!"
+	icon_state = "shower_regen_catgirl"
+
+/datum/status_effect/shower_regen
+	id = "shower_regen"
+	duration = STATUS_EFFECT_PERMANENT
+	status_type = STATUS_EFFECT_UNIQUE
+	alert_type = /atom/movable/screen/alert/status_effect/shower_regen
+	/// How many heals from washing.
+	var/stamina_heal_per_tick = 4
+
+/datum/status_effect/shower_regen/on_apply()
+	. = ..()
+	if(HAS_TRAIT(owner, TRAIT_WATER_HATER) && !HAS_TRAIT(owner, TRAIT_WATER_ADAPTATION))
+		alert_type = /atom/movable/screen/alert/status_effect/shower_regen/hater
+
+/datum/status_effect/shower_regen/tick(seconds_between_ticks)
+	. = ..()
+	var/water_adaptation = HAS_TRAIT(owner, TRAIT_WATER_ADAPTATION)
+	var/heal_or_deal = HAS_TRAIT(owner, TRAIT_WATER_HATER) && !water_adaptation ? 1 : -1
+	var/healed = 0
+	if(water_adaptation) //very mild healing for those with the water adaptation trait (fish infusion)
+		healed += owner.adjustOxyLoss(-1.5 * seconds_between_ticks, updating_health = FALSE, required_biotype = MOB_ORGANIC)
+		healed += owner.adjustFireLoss(-1 * seconds_between_ticks, updating_health = FALSE, required_bodytype = BODYTYPE_ORGANIC)
+		healed += owner.adjustToxLoss(-1 * seconds_between_ticks, updating_health = FALSE, required_biotype = MOB_ORGANIC)
+		healed += owner.adjustBruteLoss(-1 * seconds_between_ticks, updating_health = FALSE, required_bodytype = BODYTYPE_ORGANIC)
+		heal_or_deal *= 1.5
+	healed += owner.adjustStaminaLoss(stamina_heal_per_tick * heal_or_deal * seconds_between_ticks, updating_stamina = FALSE)
+	if(healed)
+		owner.updatehealth()

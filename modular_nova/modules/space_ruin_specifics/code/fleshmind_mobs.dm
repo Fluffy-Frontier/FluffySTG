@@ -117,9 +117,9 @@
 	if(key)
 		return
 	if(!suffering_malfunction && malfunction_chance && prob(malfunction_chance * delta_time) && stat != DEAD)
-		malfunction()
+		INVOKE_ASYNC(src, PROC_REF(malfunction))
 	if(passive_speak_lines && prob(passive_speak_chance * delta_time))
-		say_passive_speech()
+		INVOKE_ASYNC(src, PROC_REF(say_passive_speech))
 	if(escapes_closets)
 		closet_interaction()
 
@@ -299,7 +299,7 @@
 	attack_verb_continuous = "slices"
 	attack_verb_simple = "slice"
 	armour_penetration = 10
-	attack_sound = 'sound/weapons/bladeslice.ogg'
+	attack_sound = 'sound/items/weapons/bladeslice.ogg'
 	speed = 0
 	speak = list(
 		"Submit for mandatory surgery.",
@@ -510,7 +510,7 @@
 	if(ishuman(target) && COOLDOWN_FINISHED(src, stun_cooldown))
 		var/mob/living/carbon/human/attacked_human = target
 		attacked_human.Knockdown(30)
-		playsound(src, 'sound/weapons/egloves.ogg', 50, TRUE)
+		playsound(src, 'sound/items/weapons/egloves.ogg', 50, TRUE)
 		COOLDOWN_START(src, stun_cooldown, stun_cooldown_time)
 	return ..()
 
@@ -541,7 +541,7 @@
 	speed = 2
 	move_to_delay = 4
 	mob_size = MOB_SIZE_HUMAN
-	attack_sound = 'sound/weapons/circsawhit.ogg'
+	attack_sound = 'sound/items/weapons/circsawhit.ogg'
 	alert_sounds = list(
 		'modular_nova/modules/space_ruin_specifics/sound/hiborg/aggro_01.ogg',
 		'modular_nova/modules/space_ruin_specifics/sound/hiborg/aggro_02.ogg',
@@ -612,7 +612,7 @@
 		return
 	var/mob/living/carbon/human/attacked_human = target_mob
 	attacked_human.Paralyze(10)
-	playsound(src, 'sound/weapons/egloves.ogg', 50, TRUE)
+	playsound(src, 'sound/items/weapons/egloves.ogg', 50, TRUE)
 
 	COOLDOWN_START(src, stun_attack, stun_attack_cooldown)
 
@@ -624,7 +624,7 @@
 			continue
 		if(faction_check(faction, iterating_mob.faction))
 			continue
-		playsound(iterating_mob, 'sound/weapons/whip.ogg', 70, TRUE)
+		playsound(iterating_mob, 'sound/items/weapons/whip.ogg', 70, TRUE)
 		new /obj/effect/temp_visual/kinetic_blast(get_turf(iterating_mob))
 
 		var/atom/throw_target = get_edge_target_turf(iterating_mob, get_dir(src, get_step_away(iterating_mob, src)))
@@ -675,7 +675,7 @@
 	speed = 2
 	attack_verb_continuous = "slashes"
 	attack_verb_simple = "slash"
-	attack_sound = 'sound/weapons/bladeslice.ogg'
+	attack_sound = 'sound/items/weapons/bladeslice.ogg'
 	melee_damage_lower = 25
 	melee_damage_upper = 35
 	malfunction_chance = MALFUNCTION_CHANCE_HIGH
@@ -855,7 +855,7 @@
 	maxHealth = 200
 	speed = 3
 	move_to_delay = 6
-	attack_sound = 'sound/weapons/bladeslice.ogg'
+	attack_sound = 'sound/items/weapons/bladeslice.ogg'
 	retreat_distance = 4
 	minimum_distance = 4
 	projectiletype = /obj/projectile/treader
@@ -916,7 +916,7 @@
 	health = 160
 	maxHealth = 160
 	malfunction_chance = 0
-	attack_sound = 'sound/effects/attackblob.ogg'
+	attack_sound = 'sound/effects/blob/attackblob.ogg'
 	attack_verb_continuous = "warps"
 	attack_verb_simple = "warp"
 	melee_damage_lower = 5
@@ -1252,7 +1252,7 @@
 	melee_damage_upper = 35
 	attack_verb_continuous = "crushes"
 	attack_verb_simple = "crush"
-	attack_sound = 'sound/weapons/smash.ogg'
+	attack_sound = 'sound/items/weapons/smash.ogg'
 	speed = 4 // Slow fucker
 	mob_size = MOB_SIZE_LARGE
 	passive_speak_lines = list(

@@ -6,7 +6,7 @@
 /datum/martial_art/the_sleeping_carp/proc/is_capable(mob/living/carp_user)
 	if(!can_use(carp_user))
 		return FALSE
-	if(carp_user.incapacitated(IGNORE_GRAB)) //NO STUN
+	if(INCAPACITATED_IGNORING(carp_user, INCAPABLE_GRAB)) //NO STUN
 		return FALSE
 	if(!(carp_user.mobility_flags & MOBILITY_USE)) //NO UNABLE TO USE
 		return FALSE
@@ -28,7 +28,7 @@
 		return MARTIAL_ATTACK_SUCCESS
 
 	attacker.do_attack_animation(defender, ATTACK_EFFECT_PUNCH)
-	playsound(defender, 'sound/weapons/punch1.ogg', 25, TRUE, -1)
+	playsound(defender, 'sound/items/weapons/punch1.ogg', 25, TRUE, -1)
 	defender.apply_damage(20, STAMINA)
 	log_combat(attacker, defender, "disarmed (Sleeping Carp)")
 	return MARTIAL_ATTACK_INVALID // normal disarm
@@ -46,7 +46,7 @@
 
 	var/grab_log_description = "grabbed"
 	attacker.do_attack_animation(defender, ATTACK_EFFECT_PUNCH)
-	playsound(defender, 'sound/weapons/punch1.ogg', 25, TRUE, -1)
+	playsound(defender, 'sound/items/weapons/punch1.ogg', 25, TRUE, -1)
 	if(defender.stat != DEAD && !defender.IsUnconscious() && defender.getStaminaLoss() >= 80) //We put our target to sleep.
 		defender.visible_message(
 			span_danger("[attacker] carefully pinch a nerve in [defender]'s neck, knocking them out cold!"),

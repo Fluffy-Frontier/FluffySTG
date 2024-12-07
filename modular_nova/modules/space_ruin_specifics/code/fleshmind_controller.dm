@@ -186,7 +186,7 @@
 						tasks++
 						if(prob(attack_prob))
 							wireweed.do_attack_animation(object, ATTACK_EFFECT_CLAW)
-							playsound(object, 'sound/effects/attackblob.ogg', 50, TRUE)
+							playsound(object, 'sound/effects/blob/attackblob.ogg', 50, TRUE)
 							object.take_damage(wireweed.object_attack_damage, BRUTE, MELEE, 1, get_dir(object, wireweed))
 						break
 				if(could_attack)

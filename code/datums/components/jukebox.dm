@@ -1,3 +1,4 @@
+/* FLUFFY FRONTIER REFACTOR: BAR JUKEBOX (#5115)
 /// Checks if the mob has jukebox muted in their preferences
 #define IS_PREF_MUTED(mob) (!isnull(mob.client) && !mob.client.prefs.read_preference(/datum/preference/toggle/sound_jukebox))
 
@@ -400,7 +401,8 @@
 
 // Default track supplied for testing and also because it's a banger
 /datum/track/default
-	song_path = 'sound/ambience/title3.ogg'
+	song_path = 'sound/music/lobby_music/title3.ogg'
 	song_name = "Tintin on the Moon"
 	song_length = 3 MINUTES + 52 SECONDS
 	song_beat = 1 SECONDS
+*/ // FLUFFY FRONTIER REFACTOR END

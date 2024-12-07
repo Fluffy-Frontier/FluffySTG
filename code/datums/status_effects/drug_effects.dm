@@ -1,6 +1,6 @@
 /datum/status_effect/woozy
 	id = "woozy"
-	tick_interval = -1
+	tick_interval = STATUS_EFFECT_NO_TICK
 	status_type = STATUS_EFFECT_UNIQUE
 	alert_type = /atom/movable/screen/alert/status_effect/woozy
 
@@ -14,7 +14,7 @@
 
 /datum/status_effect/high_blood_pressure
 	id = "high_blood_pressure"
-	tick_interval = -1
+	tick_interval = STATUS_EFFECT_NO_TICK
 	status_type = STATUS_EFFECT_UNIQUE
 	alert_type = /atom/movable/screen/alert/status_effect/high_blood_pressure
 
@@ -40,7 +40,7 @@
 
 /datum/status_effect/seizure
 	id = "seizure"
-	tick_interval = -1
+	tick_interval = STATUS_EFFECT_NO_TICK
 	status_type = STATUS_EFFECT_UNIQUE
 	alert_type = /atom/movable/screen/alert/status_effect/seizure
 
@@ -52,7 +52,7 @@
 	owner.set_jitter_if_lower(100 SECONDS)
 	owner.Paralyze(duration)
 	owner.visible_message(span_warning("[owner] drops to the ground as [owner.p_they()] start seizing up."), \
-	span_warning("[pick("You can't collect your thoughts...", "You suddenly feel extremely dizzy...", "You cant think straight...","You can't move your face properly anymore...")]"))
+	span_warning("[pick("You can't collect your thoughts...", "You suddenly feel extremely dizzy...", "You can't think straight...","You can't move your face properly anymore...")]"))
 	return TRUE
 
 /atom/movable/screen/alert/status_effect/seizure

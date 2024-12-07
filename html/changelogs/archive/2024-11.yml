@@ -1,0 +1,177 @@
+2024-11-02:
+  FeenieRU:
+  - balance: changed charge_delay to 7
+  MajManatee:
+  - bugfix: Hiss Emote+ button works again
+  Neocloudy:
+  - image: Nova retinal projectors have had their sprites adjusted so they hopefully
+      clip through hairstyles, headwear, etc less often!
+  OrbisAnima:
+  - rscadd: 'Bounties removed: Scooter, Skateboard, Soap, Clown Box, Cheesie Honkers,
+      Dead Mice, Potted Plants, Corgi Meat, Action Figures, Paper Bins, Crayons.'
+  - rscdel: 'Bounties added: Nuggies, Cardboard ID''s, Glass Bowl, Clay Crafts, Forged
+      Dagger, Two Wheelchairs, Flood Light, Mannequin and Black Market Uplink.'
+  - rscadd: Adds a new multitool, the 'full override control kit', which aside from
+      working as a regular multitool, allows the user to hack open or unlock APC's
+      and Air Alarms. They do so rather aggresively, so it can break them with enough
+      uses. They can be obtained from the premium section of YouTool or from broad
+      band enabled AKH Frontier Imports.
+  - qol: YouTool vendors premium section now holds the F.O.C.K., as well as a small
+      selection of AKH frontier hand held devices. It is said that some vendors are
+      being used to smuggle Prybars though. Multitools are now being sold at a discount!
+  - balance: Prybars can no longer be made in the Rapid Construction Fabricator, Large
+      Crowbars now instead take their place, removing the heavy taxes on the RCF and
+      making it no longer restricted.
+  SpaghettiTerrible:
+  - bugfix: vibrating egg frequency can now be adjusted
+  sqnztb:
+  - bugfix: blueshift's cargo shuttle buttons are more accessible now.
+  - rscadd: Interdyne has a new trim icon for it's scientists and shaft miners, as
+      well as a new color palette.
+2024-11-03:
+  A.C.M.O.:
+  - rscadd: Added the Primidine Starfruit. The seed pack is available in the supply
+      console imports category.
+  Hardly:
+  - map: Added Interdrobe to the ghost cafe
+  - map: Removed the vine on redsec's vendor in ghost cafe
+  - bugfix: Icebox Interdyne's library is now connected with the powernet
+2024-11-04:
+  Smol42:
+  - map: did a slight NSS Journey / Box Station remap.
+2024-11-07:
+  A.C.M.O.:
+  - rscadd: Added the personal holosign projector. Use it to mark areas as explicitly
+      lewd or private. Right-click to toggle modes.
+  - rscadd: Added a music synthesizer action to Ethereal and Synthetic species.
+  Draggeru:
+  - rscadd: 'Adds four new hairstyles: Mermaid, Thick Ponytail, Elegant Bun, and Royal
+      Curls'
+  Hardly:
+  - balance: Removes the 50% speedup surgery speed bonus from being in a calm environments
+      and numb/dead patients
+  - balance: Calm environment instead now boosts surgery speed by 20%
+  Jinshee:
+  - rscadd: New gecko tail!
+  MajManatee:
+  - rscdel: Runed metal no longer spawns as a "Rare Material"
+  OrbisAnima:
+  - bugfix: fixed an exploit with Twitch.
+  RatFromTheJungle:
+  - image: The mantis blade's sprite is now bigger and more obvious.
+  dwasint:
+  - bugfix: Evoker-type RSD now properly respect if you are trying to put a soul into
+      a body that was previously occupied.
+  norsvenska:
+  - map: cleaned up the ouroboros medical department's floor decals and lights
+  - bugfix: ouroboros surgery shutters are now linked to their buttons
+  - bugfix: you can now climb the staircase to the paramedic dispatch room on ouroboros
+2024-11-09:
+  ZeroInside:
+  - rscadd: Added animation for TheMarkedOne's trophy cape.
+  - bugfix: Fixed an issue with TheMarkedOne's trophy cape sprite, where the front
+      view scarf was 1 pixel higher than needed.
+  sqnztb:
+  - bugfix: metastation arrivals no longer has extra windows.
+2024-11-10:
+  FeenieRU:
+  - rscadd: Waistbags for some vends
+2024-11-12:
+  Iajret:
+  - rscadd: Added new waistbags as backpack selection option in character editor
+2024-11-13:
+  Hardly:
+  - map: 'Ouroboros: Fixes a floating lamp in southern maintenance'
+2024-11-14:
+  OrbisAnima:
+  - qol: Beepsky no longer starts with the check weaponry setting on (so no more evil
+      beepsky by default) (TG default)
+2024-11-17:
+  GoldenAlpharex:
+  - bugfix: Felinids are no longer allergic to wagging their tails.
+  Hardly:
+  - bugfix: 'SerenityStation: Gave HoS the correct ID painter.'
+  - bugfix: 'SerenityStation: Fixed the decals in cargo creeping it''s way into the
+      walls.'
+  - map: Cargo Technicians can now access the drone bay without mining access.
+  - map: 'Snowglobe: Overhauls warden quarters and paramedic dispatch'
+  - map: 'Snowglobe: Moves tool storage to south of medbay while turning the room
+      itself into a cafe'
+  - map: 'Snowglobe: Armory no longer gets contraband in the armory'
+  - map: 'Snowglobe: Plenty of smaller fixes and changes such as pipe additions,'
+  - map: 'Snowglobe: Adds gaming mothroach room'
+  sqnztb:
+  - balance: medical technician kit's bonesaw is significantly less lethal now.
+  - bugfix: doors for the delta style shuttle work again.
+  - map: removed the trapped bluespace cell from wawa's asteroid area.
+  - map: snowglobe cryo - status display swapped to a fire alarm.
+  - map: ouroboros has a slightly more robust powernet
+2024-11-20:
+  FlufflesTheDog:
+  - bugfix: The escape menu buttons no longer overlap
+  Hatterhat:
+  - bugfix: Crate Chaos's encrypted cache is now randomly placed again.
+2024-11-22:
+  Stalkeos, 00-Steven:
+  - bugfix: A bitrunner avatar spawning with the exact same name as a name currently
+      on the records no longer updates that record to match when the hacker alias
+      gets applied.
+  - qol: Net avatar ID cards use the net avatar's name instead of being generic.
+  Stalkeros, larentoun:
+  - bugfix: falling into chasms and other ways of destroying your virtual body instead
+      of killing it, WILL now return you to your body
+2024-11-25:
+  FlufflesTheDog:
+  - bugfix: stomachs no longer drop out of oversized characters on spawn
+  - bugfix: charging implants no longer drop out of synth characters on spawn
+  RatFromTheJungle:
+  - code_imp: Traitors and changelings can no longer self-assign objectives.
+  Thedragmeme:
+  - rscadd: 'Adds 7 new drinks: Starfruit Soda, Starfruit Lubricant(Synth), Starlit
+      Latte, Starbeam Shake, Forgotten Star, Astral Flame, and Space Muse.'
+  - rscadd: 'Adds 14 new dishes: Glazed Ribs, BBQ Meat Platter, Chicken Alfredo(cursed),
+      Starfruit Sushi Roll, Starfruit Sashimi, Starfruit Eggplant Stir Fry, Starfruit
+      Tofu Beef Ramen, Starfruit Noodles, Starfruit Cake(do you see the theme yet),
+      Starfruit Jelly, Starfruit Macaron, Starfruit Cobbler, Starfruit Jelly Toast,
+      Starfruit Pie, Starfruit Compote, Starfruit Creme Brulee, and Starfruit Cupcake'
+  - image: Adds roughly 20 new sprites to the game
+  - qol: Adds a new book to the starfruit seed crate
+  iskawhiskers:
+  - rscadd: 'new sprite accessories: floppy (ears), big legs with pegfeet (taur legs),
+      porcine and porcine + tusks (snout)'
+  - qol: duplicated fuzzball/cetaceous/geniculate antennae to horns
+  - rscadd: 'new clothing: giant scarf (undersuit), designer gloves (hands), designer
+      jacket (suit)'
+  - qol: add security cape to the loadout menu. accessible by all players as it is
+      a neck item with no mechanical benefit
+  sqnztb:
+  - admin: logging enabled by default for all emp sources.
+  - map: snowglobe - fixed the floating pepperspray refiller and added a secway key.
+2024-11-27:
+  Stalkeros, Majkl-J for the original PR:
+  - rscadd: Adds prefloading to bitrunning
+  SuperDrish:
+  - rscadd: Added new ultra duper giga hyper SECRET cool mob - shorg. You totally
+      can not order it in cargo.
+  Zenitheevee:
+  - balance: Pneumatic cannons can now hold only one turret kit if loaded with one.
+2024-11-30:
+  1393F:
+  - bugfix: The photocopier in Interdyne on icemoon is now free.
+  - bugfix: The bone fragments shot out by dying horrorform changelings have the correct
+      embed chance. Same with the expedition tomahawk.
+  - bugfix: Ghosts can no longer disarm window airbags.
+  FlufflesTheDog:
+  - bugfix: OPFOR equipment quantity can now actually be adjusted
+  RashCat:
+  - rscadd: a large amount of posters
+  RatFromTheJungle:
+  - balance: Changeling has gone from 15 > 10 genetic points, had strained muscles
+      heavily cutdown in the speedboost, and finally had it's chem-regen cut in half.
+  - bugfix: Amollin now actually tells you what's in it.
+  - code_imp: Replaced all their desc's with stuff that better fits the station, and
+      removes mention of non-cannon conflicts and military behavior.
+  - balance: Slight rebalance of most of the szot-dynamica guns, or calibers, to be
+      equal to the solfed variants, instead of a flat downgrade.
+  sqnztb:
+  - balance: binyat can now hack breach shields, not meteor shields.

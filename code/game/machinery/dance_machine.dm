@@ -1,3 +1,4 @@
+/* FLUFFY FRONTIER REFACTOR: BAR JUKEBOX (#5115)
 /obj/machinery/jukebox
 	name = "jukebox"
 	desc = "A classic music player."
@@ -50,11 +51,11 @@
 		return UI_CLOSE
 	if(!allowed(user))
 		to_chat(user,span_warning("Error: Access Denied."))
-		user.playsound_local(src, 'sound/misc/compiler-failure.ogg', 25, TRUE)
+		user.playsound_local(src, 'sound/machines/compiler/compiler-failure.ogg', 25, TRUE)
 		return UI_CLOSE
 	if(!length(music_player.songs))
 		to_chat(user,span_warning("Error: No music tracks have been authorized for your station. Petition Central Command to resolve this issue."))
-		user.playsound_local(src, 'sound/misc/compiler-failure.ogg', 25, TRUE)
+		user.playsound_local(src, 'sound/machines/compiler/compiler-failure.ogg', 25, TRUE)
 		return UI_CLOSE
 	return ..()
 
@@ -79,7 +80,7 @@
 					to_chat(usr, span_warning("Error: The device is still resetting from the last activation, \
 						it will be ready again in [DisplayTimeText(COOLDOWN_TIMELEFT(src, jukebox_song_cd))]."))
 					if(COOLDOWN_FINISHED(src, jukebox_error_cd))
-						playsound(src, 'sound/misc/compiler-failure.ogg', 33, TRUE)
+						playsound(src, 'sound/machines/compiler/compiler-failure.ogg', 33, TRUE)
 						COOLDOWN_START(src, jukebox_error_cd, 15 SECONDS)
 					return TRUE
 
@@ -134,7 +135,7 @@
 
 	if(!QDELING(src))
 		COOLDOWN_START(src, jukebox_song_cd, 10 SECONDS)
-		playsound(src,'sound/machines/terminal_off.ogg',50,TRUE)
+		playsound(src,'sound/machines/terminal/terminal_off.ogg',50,TRUE)
 		update_use_power(IDLE_POWER_USE)
 		update_appearance(UPDATE_ICON_STATE)
 	return TRUE
@@ -152,9 +153,9 @@
 	anchored = FALSE
 
 	/// Spotlight effects being played
-	VAR_PRIVATE/list/obj/item/flashlight/spotlight/spotlights = list()
+	//VAR_PRIVATE/list/obj/item/flashlight/spotlight/spotlights = list()
 	/// Sparkle effects being played
-	VAR_PRIVATE/list/obj/effect/overlay/sparkles/sparkles = list()
+	//VAR_PRIVATE/list/obj/effect/overlay/sparkles/sparkles = list()
 
 /obj/machinery/jukebox/disco/indestructible
 	name = "radiant dance machine mark V"
@@ -383,3 +384,4 @@
 /obj/machinery/jukebox/disco/proc/dance4_revert(mob/living/dancer, matrix/starting_matrix)
 	animate(dancer, transform = starting_matrix, time = 5, loop = 0)
 	REMOVE_TRAIT(dancer, TRAIT_DISCO_DANCER, REF(src))
+*/ // FLUFFY FRONTIER REFACTOR END
