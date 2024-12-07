@@ -134,9 +134,6 @@
 	UnregisterSignal(organ_owner, COMSIG_ATOM_BULLET_ACT)
 
 /obj/item/organ/internal/eyes/proc/on_bullet_act(mob/living/carbon/source, obj/projectile/proj, def_zone)
-	UnregisterSignal(organ_owner, COMSIG_ATOM_BULLET_ACT)
-
-/obj/item/organ/internal/eyes/proc/on_bullet_act(datum/source, obj/projectile/proj, def_zone)
 	SIGNAL_HANDLER
 
 	// Once-a-dozen-rounds level of rare
