@@ -120,3 +120,58 @@
   Stalkeros, larentoun:
   - bugfix: falling into chasms and other ways of destroying your virtual body instead
       of killing it, WILL now return you to your body
+2024-11-25:
+  FlufflesTheDog:
+  - bugfix: stomachs no longer drop out of oversized characters on spawn
+  - bugfix: charging implants no longer drop out of synth characters on spawn
+  RatFromTheJungle:
+  - code_imp: Traitors and changelings can no longer self-assign objectives.
+  Thedragmeme:
+  - rscadd: 'Adds 7 new drinks: Starfruit Soda, Starfruit Lubricant(Synth), Starlit
+      Latte, Starbeam Shake, Forgotten Star, Astral Flame, and Space Muse.'
+  - rscadd: 'Adds 14 new dishes: Glazed Ribs, BBQ Meat Platter, Chicken Alfredo(cursed),
+      Starfruit Sushi Roll, Starfruit Sashimi, Starfruit Eggplant Stir Fry, Starfruit
+      Tofu Beef Ramen, Starfruit Noodles, Starfruit Cake(do you see the theme yet),
+      Starfruit Jelly, Starfruit Macaron, Starfruit Cobbler, Starfruit Jelly Toast,
+      Starfruit Pie, Starfruit Compote, Starfruit Creme Brulee, and Starfruit Cupcake'
+  - image: Adds roughly 20 new sprites to the game
+  - qol: Adds a new book to the starfruit seed crate
+  iskawhiskers:
+  - rscadd: 'new sprite accessories: floppy (ears), big legs with pegfeet (taur legs),
+      porcine and porcine + tusks (snout)'
+  - qol: duplicated fuzzball/cetaceous/geniculate antennae to horns
+  - rscadd: 'new clothing: giant scarf (undersuit), designer gloves (hands), designer
+      jacket (suit)'
+  - qol: add security cape to the loadout menu. accessible by all players as it is
+      a neck item with no mechanical benefit
+  sqnztb:
+  - admin: logging enabled by default for all emp sources.
+  - map: snowglobe - fixed the floating pepperspray refiller and added a secway key.
+2024-11-27:
+  Stalkeros, Majkl-J for the original PR:
+  - rscadd: Adds prefloading to bitrunning
+  SuperDrish:
+  - rscadd: Added new ultra duper giga hyper SECRET cool mob - shorg. You totally
+      can not order it in cargo.
+  Zenitheevee:
+  - balance: Pneumatic cannons can now hold only one turret kit if loaded with one.
+2024-11-30:
+  1393F:
+  - bugfix: The photocopier in Interdyne on icemoon is now free.
+  - bugfix: The bone fragments shot out by dying horrorform changelings have the correct
+      embed chance. Same with the expedition tomahawk.
+  - bugfix: Ghosts can no longer disarm window airbags.
+  FlufflesTheDog:
+  - bugfix: OPFOR equipment quantity can now actually be adjusted
+  RashCat:
+  - rscadd: a large amount of posters
+  RatFromTheJungle:
+  - balance: Changeling has gone from 15 > 10 genetic points, had strained muscles
+      heavily cutdown in the speedboost, and finally had it's chem-regen cut in half.
+  - bugfix: Amollin now actually tells you what's in it.
+  - code_imp: Replaced all their desc's with stuff that better fits the station, and
+      removes mention of non-cannon conflicts and military behavior.
+  - balance: Slight rebalance of most of the szot-dynamica guns, or calibers, to be
+      equal to the solfed variants, instead of a flat downgrade.
+  sqnztb:
+  - balance: binyat can now hack breach shields, not meteor shields.
