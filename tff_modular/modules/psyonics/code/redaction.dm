@@ -1,9 +1,10 @@
 #define HALFWAYCRITDEATH ((HEALTH_THRESHOLD_CRIT + HEALTH_THRESHOLD_DEAD) * 0.5)
 
 /// Школа лечения
-/// Имеет 4 спелла в данный момент
+/// Имеет 5 спеллов в данный момент
 /// Roentgen - обычный мед скан, работающий на дистанции
-/// Меnding - лечит кровь, открытые раны и окси урон. Также удаляет импланты/ксеноморфов из тела при определённых условиях
+/// Меnding - лечит кровь, открытые раны и окси урон. Также удаляет импланты/ксеноморфов из тела при определённых условиях.
+/// Ethanol Synthesis - если интент на харма, то "превращает" упитанность в алкоголь на дистанции. Любой другой - наоборот.
 /// Cleansing - лечит токс урон
 /// Revive - пытается оживить труп
 
@@ -15,6 +16,8 @@
 	if(tier >= 1)
 		var/datum/action/new_action = new /datum/action/cooldown/spell/touch/psyonic/psyonic_mending(src.mind || src, tier, additional_school)
 		new_action.Grant(src)
+		var/datum/action/new_action2 = new /datum/action/cooldown/spell/pointed/psyonic/psyonic_drunkness(src.mind || src, tier, additional_school)
+		new_action2.Grant(src)
 	if(tier >= 2)
 		var/datum/action/new_action = new /datum/action/cooldown/spell/touch/psyonic/psyonic_cleansing(src.mind || src, tier, additional_school)
 		new_action.Grant(src)
@@ -143,6 +146,53 @@
 		parasite.Remove(parasite.owner)
 		if(drop_loc)
 			parasite.forceMove(drop_loc)
+
+/datum/action/cooldown/spell/pointed/psyonic/psyonic_drunkness
+	name = "Ethanol Body Synthesis"
+	desc = "Convert fat masses to ethanol in combat mode, vice versa otherwise. Works with time on distance, but not on synthetics."
+	button_icon = 'icons/obj/drinks/bottles.dmi'
+	button_icon_state = "beer"
+	cooldown_time = 1 SECONDS
+	mana_cost = 30
+	stamina_cost = 30
+	active_msg = "You prepare to convert fat tissues..."
+
+/datum/action/cooldown/spell/pointed/psyonic/psyonic_drunkness/is_valid_target(atom/cast_on)
+	if(!ishuman(cast_on) && !issynthetic(cast_on))
+		return FALSE
+
+	return TRUE
+
+/datum/action/cooldown/spell/pointed/psyonic/psyonic_drunkness/cast(mob/living/carbon/human/cast_on)
+	. = ..()
+	cast_on.apply_status_effect(/datum/status_effect/psyonic_fat_conversion, 5 * cast_power SECONDS, !cast_on.combat_mode)
+	drain_mana()
+	return TRUE
+
+/// С каждым тиком конвертируем или жир в алкоголь, или алкоголь в жир
+/datum/status_effect/psyonic_fat_conversion
+	id = "psyonic_fat_conversion"
+	alert_type = null
+	remove_on_fullheal = TRUE
+	var/eth2fat = TRUE
+
+/datum/status_effect/psyonic_fat_conversion/on_creation(mob/living/new_owner, duration = 10 SECONDS, eth2fat = TRUE)
+	src.duration = duration
+	src.eth2fat = eth2fat
+	return ..()
+
+/datum/status_effect/psyonic_fat_conversion/tick(seconds_between_ticks)
+	var/mob/living/carbon/human/human_owner = owner
+	var/fat = human_owner.nutrition
+	var/drunk = human_owner.get_drunk_amount()
+	if(eth2fat && !drunk) // если нет алкашки, то и конвертировать нечего
+		return
+	if(eth2fat) // алкашку в жир
+		human_owner.adjust_drunk_effect(-(drunk/6))
+		human_owner.adjust_nutrition(drunk)
+	if(!eth2fat && fat) // жир в алкашку. За 25 тиков полностью обезжирим человека!
+		human_owner.adjust_drunk_effect(fat/125)
+		human_owner.adjust_nutrition(-(fat/25))
 
 // Лечит токс урон.
 /datum/action/cooldown/spell/touch/psyonic/psyonic_cleansing
