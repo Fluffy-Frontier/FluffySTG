@@ -302,7 +302,7 @@
 	button_icon_state = "spasm"
 	cooldown_time = 1 SECONDS
 	mana_cost = 40
-	target_msg = "You muscles spasm!"
+	target_msg = "Your muscles spasm!"
 	active_msg = "You prepare to stun a target..."
 
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_spasm/New(Target)
