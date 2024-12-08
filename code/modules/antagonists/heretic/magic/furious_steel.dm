@@ -101,7 +101,7 @@
 	icon = 'icons/effects/eldritch.dmi'
 	icon_state = "dio_knife"
 	speed = 2
-	damage = 25
+	damage = 35 // FLUFFY FRONTIER EDIT: ANTAG BUFF #5159; original: 25
 	armour_penetration = 100
 	sharpness = SHARP_EDGED
 	wound_bonus = 15

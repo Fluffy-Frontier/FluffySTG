@@ -31,7 +31,7 @@
 
 	// Before we cast the actual effects, deal AOE damage to anyone adjacent to us
 	for(var/mob/living/nearby_living as anything in get_things_to_cast_on(cast_on, damage_radius))
-		nearby_living.apply_damage(30, BRUTE, wound_bonus = CANT_WOUND)
+		nearby_living.apply_damage(40, BRUTE, wound_bonus = CANT_WOUND) // FLUFFY FRONTIER EDIT: ANTAG BUFF #5159; original: 30
 		nearby_living.apply_status_effect(/datum/status_effect/void_chill, 1)
 
 /datum/action/cooldown/spell/aoe/void_pull/get_things_to_cast_on(atom/center, radius_override = 1)

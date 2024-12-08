@@ -40,8 +40,8 @@
 	)
 
 	var/mob/living/living_owner = owner
-	cast_on.adjustBruteLoss(20)
-	living_owner.adjustBruteLoss(-20)
+	cast_on.adjustBruteLoss(25) // FLUFFY FRONTIER EDIT: ANTAG BUFF #5159; original: 20
+	living_owner.adjustBruteLoss(-25) // FLUFFY FRONTIER EDIT: ANTAG BUFF #5159; original: 20
 
 	if(!cast_on.blood_volume || !living_owner.blood_volume)
 		return TRUE
