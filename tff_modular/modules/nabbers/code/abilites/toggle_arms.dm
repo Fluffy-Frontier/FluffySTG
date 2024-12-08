@@ -1,3 +1,5 @@
+var/datum/martial_art/martial_to_learn = new /datum/martial_art/nabber_grab()
+
 /obj/item/melee/nabber_blade
 	name = "Mantis arm"
 	desc = "A grotesque matn made out of bone and flesh that cleaves through people as a hot knife through butter."
@@ -46,11 +48,17 @@
 	desc = "Pump blood from manipulating arms into mantis arms, becoming a menace in close combat but loosing ability to interact."
 	cooldown_time = 5 SECONDS
 
+	var/obj/item/restraints/handcuffs/stored_handcuffs = null //Переменная для сохранения наручников
+
 	button_icon = 'tff_modular/modules/nabbers/icons/actions.dmi'
 
 /datum/action/cooldown/toggle_arms/New(Target, original)
 	. = ..()
 	button_icon_state = "arms_off"
+
+/datum/action/cooldown/toggle_arms/Destroy()
+	stored_handcuffs = null
+	. = ..()
 
 /datum/action/cooldown/toggle_arms/Activate(atom/target)
 	var/mob/living/carbon/human/nabber = owner
@@ -59,8 +67,9 @@
 		return FALSE
 
 	if(isdead(nabber) || nabber.incapacitated)
-		nabber.balloon_alert(nabber, "Incapacitated!")
-		return FALSE
+		if(!nabber.handcuffed)
+			nabber.balloon_alert(nabber, "Incapacitated!")
+			return FALSE
 
 	if(nabber.num_hands < 2)
 		nabber.balloon_alert(nabber, "Need both hands!")
@@ -89,10 +98,18 @@
 	nabber.visible_message(span_warning("[nabber] starts to pump blood into their mantis arms!"), span_warning("You start pumping blood into your mantis arms and emmitting defensive screech! Stay still!"), span_hear("You hear ramping up screech!"))
 	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
 
-	if(!do_after(nabber, 5 SECONDS, nabber))
+	if(!do_after(nabber, 2 SECONDS, nabber, IGNORE_USER_LOC_CHANGE))
 		StartCooldown()
-		nabber.balloon_alert(nabber, "Stand still!")
 		return FALSE
+
+	//"Сохраняет" наручники надетые на ГБСа в ЕГО ТЕЛО и позволяет пользоваться косами + открепляет его от стула и подобного
+	if(nabber.handcuffed)
+		stored_handcuffs = nabber.handcuffed
+		nabber.handcuffed.forceMove(nabber)
+		nabber.set_handcuffed(null)
+		if(nabber.buckled?.buckle_requires_restraints)
+			nabber.buckled.unbuckle_mob(nabber)
+		nabber.update_handcuffed()
 
 	nabber.balloon_alert(nabber, "Arms rised!")
 	nabber.visible_message(span_warning("[nabber] raised their mantis arms ready for combat!"), span_warning("You raise your mantis arms, ready for combat."), span_hear("You hear terrible a screech!"))
@@ -107,8 +124,9 @@
 
 	nabber.put_in_active_hand(active_hand)
 	nabber.put_in_inactive_hand(inactive_hand)
+	martial_to_learn.teach(nabber)
 
-	RegisterSignal(owner, COMSIG_CARBON_REMOVE_LIMB, PROC_REF(on_lose_hand))
+	RegisterSignal(owner, COMSIG_CARBON_POST_REMOVE_LIMB, PROC_REF(on_lose_hand))
 	button_icon_state = "arms_on"
 	nabber.update_action_buttons()
 
@@ -117,7 +135,10 @@
 
 	nabber.visible_message(span_notice("[nabber] starts to pump blood out their mantis arms!"), span_notice("You start pumping blood out your mantis arms. Stay still!"), span_hear("You hear ramping up screech!"))
 
-	if(force)
+	if(force) //Типикал бьонд код
+		if(stored_handcuffs)
+			stored_handcuffs.forceMove(stored_handcuffs.drop_location())
+			stored_handcuffs = null
 		nabber.Stun(5 SECONDS)
 		for(var/obj/item/held in nabber.held_items)
 			if(istype(held, /obj/item/melee/nabber_blade))
@@ -128,8 +149,7 @@
 
 	nabber.balloon_alert(nabber, "Starting pumping blood out!")
 
-	if(!do_after(nabber, 5 SECONDS, nabber))
-		nabber.balloon_alert(nabber, "Stand still!")
+	if(!do_after(nabber, 2 SECONDS, nabber, IGNORE_USER_LOC_CHANGE))
 		return	FALSE
 
 	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
@@ -137,17 +157,23 @@
 		if(istype(held, /obj/item/melee/nabber_blade))
 			qdel(held)
 
-	UnregisterSignal(owner, COMSIG_CARBON_REMOVE_LIMB)
+	UnregisterSignal(owner, COMSIG_CARBON_POST_REMOVE_LIMB)
+	martial_to_learn.remove(nabber)
 	nabber.balloon_alert(nabber, "Arms down!")
 	button_icon_state = "arms_off"
 	nabber.update_action_buttons()
+
+	// Надевает наручники обратно если они были до перехода в косы
+	if(stored_handcuffs)
+		nabber.equip_to_slot(stored_handcuffs, ITEM_SLOT_HANDCUFFED)
+		stored_handcuffs = null
 
 /datum/action/cooldown/toggle_arms/proc/on_lose_hand()
 	SIGNAL_HANDLER
 	var/mob/living/carbon/human/nabber = owner
 
-	if(!(nabber.num_hands < 2))
-		return	FALSE
+	if(nabber.num_hands >= 2)
+		return FALSE
 
 	nabber.visible_message(span_notice("[nabber] starts to pump blood out their mantis arms!"), span_notice("You start pumping blood out your mantis arms. Stay still!"), span_hear("You hear ramping up screech!"))
 	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
@@ -157,5 +183,12 @@
 		if(istype(held, /obj/item/melee/nabber_blade))
 			qdel(held)
 
+	martial_to_learn.remove(nabber)
 	button_icon_state = "arms_off"
 	nabber.update_action_buttons()
+
+	if(stored_handcuffs)
+		stored_handcuffs.forceMove(stored_handcuffs.drop_location())
+		stored_handcuffs = null
+
+	UnregisterSignal(owner, COMSIG_CARBON_POST_REMOVE_LIMB)
