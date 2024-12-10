@@ -149,14 +149,14 @@
 /datum/armament_entry/company_import/deforest/medpens/halobinin
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/halobinin
 
-// FLUFFY FRONTIER REMOVAL BEGIN: fuck deforest #----
-/*
 /datum/armament_entry/company_import/deforest/medpens/robo_solder
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/robot_liquid_solder
 
 /datum/armament_entry/company_import/deforest/medpens/robo_cleaner
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/robot_system_cleaner
 
+// FLUFFY FRONTIER REMOVAL BEGIN: fuck deforest #----
+/*
 /datum/armament_entry/company_import/deforest/medpens/pentibinin
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/pentibinin
 	contraband = TRUE
@@ -167,10 +167,8 @@
 
 /datum/armament_entry/company_import/deforest/medpens_stim
 	subcategory = "Stimulant Autoinjectors"
-	cost = PAYCHECK_COMMAND * 2
+	cost = PAYCHECK_COMMAND * 20	// FLUFFY FRONTIER EDIT: fuck deforest #----; original: PAYCHECK_COMMAND * 2
 
-// FLUFFY FRONTIER REMOVAL BEGIN: fuck deforest #----
-/*
 /datum/armament_entry/company_import/deforest/medpens_stim/adrenaline
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/adrenaline
 
@@ -190,15 +188,13 @@
 
 /datum/armament_entry/company_import/deforest/medpens_stim/twitch
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/twitch
-	cost = PAYCHECK_COMMAND * 3
+	cost = PAYCHECK_COMMAND * 30	// FLUFFY FRONTIER EDIT: fuck deforest #----; original: PAYCHECK_COMMAND * 3
 	contraband = TRUE
 
 /datum/armament_entry/company_import/deforest/medpens_stim/demoneye
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/demoneye
-	cost = PAYCHECK_COMMAND * 3
+	cost = PAYCHECK_COMMAND * 30	// FLUFFY FRONTIER EDIT: fuck deforest #----; original: PAYCHECK_COMMAND * 3
 	contraband = TRUE
-*/
-// FLUFFY FRONTIER REMOVAL END
 
 // Equipment, from defibs to scanners to surgical tools
 
