@@ -8,9 +8,9 @@
 )
 
 /datum/loadout_item/pocket_items/medkit
-	restricted_roles = list(JOB_GROUP_MEDICAL)
+	restricted_roles = JOB_GROUP_MEDICAL
 
 /datum/loadout_item/pocket_items/deforest_frontiermedkit
-	restricted_roles = list(JOB_GROUP_MEDICAL)
+	restricted_roles = JOB_GROUP_MEDICAL
 
 #undef JOB_GROUP_MEDICAL
