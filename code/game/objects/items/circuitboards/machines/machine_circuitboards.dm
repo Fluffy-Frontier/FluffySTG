@@ -694,7 +694,9 @@
 		/obj/machinery/vending/imported/mothic = "Nomad Fleet Ration Chit Exchange", //NOVA EDIT ADDITION
 		/obj/machinery/vending/imported/tiziran = "Tiziran Imported Delicacies", //NOVA EDIT ADDITION
 		/obj/machinery/vending/imported/yangyu = "Fudobenda", //NOVA EDIT ADDITION
-		/obj/machinery/vending/deforest_medvend = "DeForest Med-Vend", //NOVA EDIT ADDITION
+		//FLUFFY FRONTIER REMOVAL - START: fuck deforest #----
+		// /obj/machinery/vending/deforest_medvend = "DeForest Med-Vend", //NOVA EDIT ADDITION
+		//FLUFFY FRONTIER REMOVAL - END
 		/obj/machinery/vending/access/bunny = "Bunny Outfitting Station", // FLUFFY FRONTIER EDIT ADDITION
 	)
 
