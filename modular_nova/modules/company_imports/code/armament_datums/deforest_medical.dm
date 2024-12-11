@@ -132,6 +132,7 @@
 
 /datum/armament_entry/company_import/deforest/medpens/calopine
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/calopine
+	cost = PAYCHECK_LOWER * 6	// FLUFFY FRONTIER ADDITION: fuck deforest #5219;
 
 // FLUFFY FRONTIER REMOVAL BEGIN: fuck deforest #5219
 /*
@@ -167,13 +168,14 @@
 
 /datum/armament_entry/company_import/deforest/medpens_stim
 	subcategory = "Stimulant Autoinjectors"
-	cost = PAYCHECK_COMMAND * 20	// FLUFFY FRONTIER EDIT: fuck deforest #5219; original: PAYCHECK_COMMAND * 2
+	cost = PAYCHECK_COMMAND * 8	// FLUFFY FRONTIER EDIT: fuck deforest #5219; original: PAYCHECK_COMMAND * 2
 
 /datum/armament_entry/company_import/deforest/medpens_stim/adrenaline
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/adrenaline
 
 /datum/armament_entry/company_import/deforest/medpens_stim/synephrine
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/synephrine
+	cost = PAYCHECK_LOWER * 6	// FLUFFY FRONTIER ADDITION: fuck deforest #5219; (Он слабее калопина...)
 
 /datum/armament_entry/company_import/deforest/medpens_stim/krotozine
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/krotozine
@@ -188,12 +190,12 @@
 
 /datum/armament_entry/company_import/deforest/medpens_stim/twitch
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/twitch
-	cost = PAYCHECK_COMMAND * 30	// FLUFFY FRONTIER EDIT: fuck deforest #5219; original: PAYCHECK_COMMAND * 3
+	cost = PAYCHECK_COMMAND * 12	// FLUFFY FRONTIER EDIT: fuck deforest #5219; original: PAYCHECK_COMMAND * 3
 	contraband = TRUE
 
 /datum/armament_entry/company_import/deforest/medpens_stim/demoneye
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/demoneye
-	cost = PAYCHECK_COMMAND * 30	// FLUFFY FRONTIER EDIT: fuck deforest #5219; original: PAYCHECK_COMMAND * 3
+	cost = PAYCHECK_COMMAND * 12	// FLUFFY FRONTIER EDIT: fuck deforest #5219; original: PAYCHECK_COMMAND * 3
 	contraband = TRUE
 
 // Equipment, from defibs to scanners to surgical tools
