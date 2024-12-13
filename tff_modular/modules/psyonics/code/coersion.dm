@@ -266,7 +266,7 @@
 	button_icon = 'icons/obj/weapons/baton.dmi'
 	button_icon_state = "stunbaton_active"
 	cooldown_time = 0.5 SECONDS
-	mana_cost = 15
+	mana_cost = 40
 	stamina_cost = 0
 	hand_path = /obj/item/melee/touch_attack/psyonic_mending
 	draw_message = span_notice("You ready your hand to deal pain.")

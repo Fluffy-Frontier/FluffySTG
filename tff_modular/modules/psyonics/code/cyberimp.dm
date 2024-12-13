@@ -15,10 +15,10 @@
 	. = ..()
 	REMOVE_TRAIT(organ_owner, TRAIT_NO_PSYONICS, IMPLANT_TRAIT)
 
-// Увеличивает реген маны в 1.5 раза
+// Увеличивает реген маны в 2 раза
 /obj/item/organ/internal/cyberimp/brain/pro_psyonic
 	name = "Psyonic Amplifier Model A"
-	desc = "This implant will boost psyonics energy regenerating."
+	desc = "This implant will boost psyonics energy regeneration."
 	icon_state = "brain_implant_rebooter"
 	slot = ORGAN_SLOT_BRAIN_PSYONIC
 

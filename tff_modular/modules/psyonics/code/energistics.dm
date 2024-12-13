@@ -173,7 +173,7 @@
 	cast_range = 9
 	active_msg = "You prepare to fire ice shard..."
 	deactive_msg = "You relax."
-	projectile_type = /obj/projectile/temp/watcher/ice_wing
+	projectile_type = /obj/projectile/temp/watcher/psyonic_freeze
 
 /datum/action/cooldown/spell/pointed/projectile/psyonic/psyonic_freeze/is_valid_target(atom/cast_on)
 	if(!isliving(cast_on))
@@ -184,3 +184,17 @@
 	drain_mana()
 	. = ..()
 	return TRUE
+
+// Вывел в отдельный тип, потому что в оригинальном ice_wing снаряде видимо баг(?) и он не замораживает, хотя должен.
+/obj/projectile/temp/watcher/psyonic_freeze
+	name = "freezing blast"
+	damage = 0 // Нет дамага, вместо этого замораживает
+
+/obj/projectile/temp/watcher/psyonic_freeze/apply_status(mob/living/target)
+	if(HAS_TRAIT(target, TRAIT_RESISTCOLD)) // Вот тут у ice_wing лишний !
+		return
+	target.apply_status_effect(/datum/status_effect/freon/watcher/psyonic_freeze)
+
+/datum/status_effect/freon/watcher/psyonic_freeze
+	duration = 4 // 4 секунды вместо 8
+	can_melt = TRUE
