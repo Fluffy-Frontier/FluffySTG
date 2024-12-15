@@ -35,7 +35,7 @@
 /datum/armament_entry/company_import/deforest/first_aid/robo_patch
 
 /datum/armament_entry/company_import/deforest/first_aid/bandaid
-	cost = PAYCHECK_CREW * 3.5
+	cost = PAYCHECK_CREW * 3
 
 /datum/armament_entry/company_import/deforest/first_aid/subdermal_splint
 
