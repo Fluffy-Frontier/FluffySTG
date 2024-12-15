@@ -155,13 +155,9 @@
 /datum/armament_entry/company_import/deforest/medpens/robo_cleaner
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/robot_system_cleaner
 
-// FLUFFY FRONTIER REMOVAL BEGIN: fuck deforest #5219
-/*
 /datum/armament_entry/company_import/deforest/medpens/pentibinin
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/pentibinin
 	contraband = TRUE
-*/
-// FLUFFY FRONTIER REMOVAL END
 
 // Autoinjectors for fighting
 
