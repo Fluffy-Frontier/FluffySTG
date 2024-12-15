@@ -102,7 +102,6 @@
 	cost = PAYCHECK_COMMAND * 6
 
 /datum/armament_entry/company_import/deforest/medpens_stim/synalvipitol
-	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/synalvipitol
 	cost = PAYCHECK_COMMAND * 6
 
 /datum/armament_entry/company_import/deforest/medpens_stim/twitch
