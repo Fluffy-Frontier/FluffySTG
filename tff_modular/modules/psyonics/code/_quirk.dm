@@ -7,6 +7,7 @@
 #define MASTER_PSYONIC 2
 #define GRANDMASTER_PSYONIC 3
 #define PARAMOUNT_PSYONIC 4
+#define GREATEST_PSYONIC 5
 
 GLOBAL_LIST_INIT(psyonic_schools, list(
 	"Redaction",
@@ -56,25 +57,29 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 	secondary_school = client_source?.prefs?.read_preference(/datum/preference/choiced/psyonic_school_secondary)
 	if(!secondary_school)
 		secondary_school = pick(GLOB.psyonic_schools)
+	var/mob/living/carbon/human/whom_to_give = quirk_holder
 	var/fluff_1 = rand(0,1)
 	var/fluff_2 = rand(0,1)
 	var/fluff_3 = rand(0,1)
 	var/fluff_4 = rand(0,1)
 	psyonic_level = fluff_1 + fluff_2 + fluff_3 + fluff_4
+	if(HAS_MIND_TRAIT(whom_to_give, TRAIT_MADNESS_IMMUNE)) // A.K.A. Психолог
+		psyonic_level += rand(0,1) // _возможное_ доп очко
 	switch(psyonic_level)
 		if(LATENT_PSYONIC)
 			psyonic_level_string = "Pi"
 		if(OPERANT_PSYONIC)
 			psyonic_level_string = "Omicron"
 		if(MASTER_PSYONIC)
-			psyonic_level_string = "Lambda"
+			psyonic_level_string = "Kappa"
 		if(GRANDMASTER_PSYONIC)
-			psyonic_level_string = "Theta"
+			psyonic_level_string = "Lambda"
 		if(PARAMOUNT_PSYONIC)
+			psyonic_level_string = "Theta"
+		if(GREATEST_PSYONIC) // Дозволен только особо везучим психологам, у которых все предыдущие пять рандомов вышли на 1
 			psyonic_level_string = "Epsilon"
 	max_mana = (psyonic_level + 1) * 20 // Минимальный - 20, максимальный - 100
 	RegisterSignal(quirk_holder, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(get_status_tab_item))
-	var/mob/living/carbon/human/whom_to_give = quirk_holder
 	if(school == secondary_school)
 		psyonic_level += 1 // Если вторичка совпадает с первой - добавляем один уровень, но не меняем описание
 	switch(school)
@@ -120,6 +125,9 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 
 /datum/quirk/psyonic/process(seconds_per_tick)
 	if(HAS_TRAIT(quirk_holder, TRAIT_NO_PSYONICS)) // Имплант подавления регена
+		return
+
+	if(HAS_TRAIT(quirk_holder, TRAIT_MINDSHIELD)) // Womp womp
 		return
 
 	var/additional_mana = 1

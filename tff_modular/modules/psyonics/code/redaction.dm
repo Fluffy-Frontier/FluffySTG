@@ -96,6 +96,9 @@
 /datum/action/cooldown/spell/touch/psyonic/psyonic_mending/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/mendicant)
 	if(ishuman(victim))
 		var/mob/living/carbon/human/human_victim = victim
+		if(issynthetic(human_victim) && secondary_school != "Psychokinesis")
+			to_chat(owner, span_notice("I dont know how to work with synths."))
+			return FALSE
 		if(human_victim.can_block_magic(antimagic_flags))
 			to_chat(human_victim, span_notice("Psionic nearby tries to mend you."))
 		else
@@ -159,9 +162,11 @@
 	active_msg = "You prepare to convert fat tissues..."
 
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_drunkness/is_valid_target(atom/cast_on)
-	if(!ishuman(cast_on) && !issynthetic(cast_on))
+	if(!ishuman(cast_on))
 		return FALSE
-
+	if(issynthetic(cast_on) )
+		to_chat(owner, span_notice("It's a synth. What am I supposed to convert? Oil?"))
+		return FALSE
 	return TRUE
 
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_drunkness/cast(mob/living/carbon/human/cast_on)
@@ -198,7 +203,7 @@
 // Лечит токс урон.
 /datum/action/cooldown/spell/touch/psyonic/psyonic_cleansing
 	name = "Psyonic Cleansing"
-	desc = "Filters patient blood out of toxin and removes accumulated radiation."
+	desc = "Filters patient blood out of toxins and removes accumulated radiation."
 	button_icon = 'tff_modular/modules/psyonics/icons/actions.dmi'
 	button_icon_state = "cleansing"
 	cooldown_time = 3 SECONDS
@@ -214,6 +219,9 @@
 /datum/action/cooldown/spell/touch/psyonic/psyonic_cleansing/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/mendicant)
 	if(ishuman(victim))
 		var/mob/living/carbon/human/human_victim = victim
+		if(issynthetic(human_victim) && secondary_school != "Psychokinesis")
+			to_chat(owner, span_notice("I dont know how to work with synths. Why would I even try to? They dont have toxins."))
+			return FALSE
 		if(human_victim.can_block_magic(antimagic_flags))
 			to_chat(human_victim, span_notice("Psionic nearby tries to cleanse you."))
 		else
@@ -275,6 +283,7 @@
 			return TRUE
 		else if(issynthetic(human_victim) && human_victim.stat == DEAD)
 			to_chat(owner, span_warning("Your psyonic energy does not work very well with synths."))
+			return FALSE
 		else
 			return FALSE
 	else

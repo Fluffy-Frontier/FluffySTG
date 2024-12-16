@@ -3,7 +3,7 @@
 /// Школа внушения. 7 спеллов
 /// Psyonic assay - скан, является ли человек псиоником
 /// Psyonic focus - лечение мозга и псих болезней
-/// Psyonic mind read - продвинутое чтение разума(Как обычная ген. мутация, но + работа + воспоминания). Имба
+/// Psyonic mind read - продвинутое чтение разума(Как обычная ген. мутация, но + работа + воспоминания). Выдаётся только и ТОЛЬКО психологу, если он псионик
 /// Psyonic agony - работает как стан дубинка, исчезает после одного удара
 /// Psyonic spasm - станит на полсекунды, заставляет выронить всё из рук. Работает дистанционно
 /// Psyonic hypnosis - гипнотизирует цель фразой, которую выбрал псионик. ERP IS BAD. DO NOT ERP.
@@ -25,15 +25,16 @@
 		var/datum/action/new_action = new /datum/action/cooldown/spell/pointed/psyonic/psyonic_focus(src.mind || src, tier, additional_school)
 		new_action.Grant(src)
 	if(tier >= 2)
-		var/datum/action/new_action = new /datum/action/cooldown/spell/touch/psyonic/psyonic_mind_read(src.mind || src, tier, additional_school)
-		new_action.Grant(src)
+		if(HAS_MIND_TRAIT(src, TRAIT_MADNESS_IMMUNE)) // A.K.A. станционный психолог
+			var/datum/action/new_action = new /datum/action/cooldown/spell/touch/psyonic/psyonic_mind_read(src.mind || src, tier, additional_school)
+			new_action.Grant(src)
+		var/datum/action/new_action2 = new /datum/action/cooldown/spell/touch/psyonic/psyonic_hypnosis(src.mind || src, tier, additional_school)
+		new_action2.Grant(src)
 	if(tier >= 3)
 		var/datum/action/new_action = new /datum/action/cooldown/spell/touch/psyonic/psyonic_agony(src.mind || src, tier, additional_school)
 		new_action.Grant(src)
 		var/datum/action/new_action2 = new /datum/action/cooldown/spell/pointed/psyonic/psyonic_spasm(src.mind || src, tier, additional_school)
 		new_action2.Grant(src)
-		var/datum/action/new_action3 = new /datum/action/cooldown/spell/touch/psyonic/psyonic_hypnosis(src.mind || src, tier, additional_school)
-		new_action3.Grant(src)
 	if(tier >= 4) // Способность вызывать слепоту на ~15 секунд втихую на расстоянии это боль.
 		var/datum/action/new_action = new /datum/action/cooldown/spell/pointed/psyonic/psyonic_blind(src.mind || src, tier, additional_school)
 		new_action.Grant(src)
@@ -71,6 +72,10 @@
 		return FALSE
 
 /datum/action/cooldown/spell/touch/psyonic/psyonic_assay/proc/read_psyonic_level(mob/living/carbon/human/patient)
+	if(issynthetic(patient) && secondary_school != "Psychokinesis")
+		to_chat(owner, span_notice("I can see... just numbers. No idea how to work with synths."))
+		return FALSE
+
 	if(patient.ispsyonic())
 		var/datum/quirk/psyonic/target_quirk = patient.get_quirk(/datum/quirk/psyonic)
 		owner.visible_message(span_notice("[owner] backs off from [patient]."),
@@ -183,6 +188,10 @@
 			you are stopped by a mental blockage. It seems you've been foiled."))
 		return
 
+	if(issynthetic(patient) && secondary_school != "Psychokinesis")
+		to_chat(owner, span_notice("I dont know how to work with synths. It's just zeros and ones. How am I supposed to get info out of this metal bucket?"))
+		return
+
 	var/text_to_show = ""
 
 	var/list/recent_speech = patient.copy_recent_speech(copy_amount = 10)
@@ -285,6 +294,11 @@
 		if(human_victim.can_block_magic(antimagic_flags))
 			to_chat(human_victim, span_notice("Psionic nearby tries to attack you, but fails."))
 			to_chat(owner, span_notice("You can't attack them. They have some kind of protection."))
+			return FALSE
+		if(issynthetic(human_victim) && secondary_school != "Psychokinesis")
+			human_victim.visible_message(span_danger("[owner] slaps [human_victim] with his hand. Nothing happens. Wow!"),
+									span_warning("You slap [human_victim], but nothing happens. You cannot transfer your energy through metal."),
+									blind_message = span_hear("You hear a slap."))
 			return FALSE
 		else
 			to_chat(human_victim, span_warning("Pain floods your body as soon as [owner] touches you!."))
@@ -390,7 +404,7 @@
 			drain_mana()
 			addtimer(CALLBACK(owner, TYPE_PROC_REF(/mob/living, Stun), 60, TRUE, TRUE), 15)
 			return TRUE
-		if(HAS_MIND_TRAIT(human_victim, TRAIT_UNCONVERTABLE))
+		if(HAS_MIND_TRAIT(human_victim, TRAIT_UNCONVERTABLE)) // Не работает на людей с МЩ
 			to_chat(owner, span_warning("Victims mind is too strong for you to penetrate."))
 			return FALSE
 		if(human_victim.can_block_magic(antimagic_flags))

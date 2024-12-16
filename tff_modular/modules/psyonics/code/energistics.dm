@@ -44,6 +44,9 @@
 	return isatom(cast_on)
 
 /datum/action/cooldown/spell/touch/psyonic/psyonic_discharge/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/mendicant)
+	if(HAS_TRAIT(mendicant, TRAIT_MINDSHIELD)) // Womp womp
+		to_chat(mendicant, span_warning("As soon as you touch [victim], your energy dissipates without a trace. Mindshield implant messes up your concentration."))
+		return FALSE
 	if(istype(victim, /obj/item/stock_parts/power_store) || istype(victim, /obj/machinery/power/apc))
 		owner.visible_message(span_warning("[owner] presses his hands against [victim]."),
 							  span_notice("You press your hands against [victim]."),
