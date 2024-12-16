@@ -638,7 +638,6 @@
 		stam_recovery *= 1.5
 	else if(water_hater)
 		recovery *= 0
-		stam_recovery = 0 // NOVA EDIT ADDITIION - null the stamina damage.
 	recovery *= seconds_between_ticks
 
 	var/healed = 0
@@ -660,35 +659,22 @@
 	desc = "Waaater... Fuck this WATER!!"
 	icon_state = "shower_regen_catgirl"
 
-/atom/movable/screen/alert/status_effect/shower_regen/hater
-	name = "Washing"
-	desc = "Waaater... Fuck this WATER!!"
-	icon_state = "shower_regen_catgirl"
+/datum/status_effect/washing_regen/hot_spring
+	alert_type = /atom/movable/screen/alert/status_effect/washing_regen/hotspring
+	hater_alert = /atom/movable/screen/alert/status_effect/washing_regen/hotspring/hater
+	stamina_heal_per_tick = -4.5
+	heal_per_tick = -0.4
 
-/datum/status_effect/shower_regen
-	id = "shower_regen"
-	duration = STATUS_EFFECT_PERMANENT
-	status_type = STATUS_EFFECT_UNIQUE
-	alert_type = /atom/movable/screen/alert/status_effect/shower_regen
-	/// How many heals from washing.
-	var/stamina_heal_per_tick = 4
-
-/datum/status_effect/shower_regen/on_apply()
+/datum/status_effect/washing_regen/hot_spring/tick(seconds_between_ticks)
 	. = ..()
-	if(HAS_TRAIT(owner, TRAIT_WATER_HATER) && !HAS_TRAIT(owner, TRAIT_WATER_ADAPTATION))
-		alert_type = /atom/movable/screen/alert/status_effect/shower_regen/hater
+	owner.adjust_bodytemperature(10 * seconds_between_ticks, 0, T0C + 45)
 
-/datum/status_effect/shower_regen/tick(seconds_between_ticks)
-	. = ..()
-	var/water_adaptation = HAS_TRAIT(owner, TRAIT_WATER_ADAPTATION)
-	var/heal_or_deal = HAS_TRAIT(owner, TRAIT_WATER_HATER) && !water_adaptation ? 1 : -1
-	var/healed = 0
-	if(water_adaptation) //very mild healing for those with the water adaptation trait (fish infusion)
-		healed += owner.adjustOxyLoss(-1.5 * seconds_between_ticks, updating_health = FALSE, required_biotype = MOB_ORGANIC)
-		healed += owner.adjustFireLoss(-1 * seconds_between_ticks, updating_health = FALSE, required_bodytype = BODYTYPE_ORGANIC)
-		healed += owner.adjustToxLoss(-1 * seconds_between_ticks, updating_health = FALSE, required_biotype = MOB_ORGANIC)
-		healed += owner.adjustBruteLoss(-1 * seconds_between_ticks, updating_health = FALSE, required_bodytype = BODYTYPE_ORGANIC)
-		heal_or_deal *= 1.5
-	healed += owner.adjustStaminaLoss(stamina_heal_per_tick * heal_or_deal * seconds_between_ticks, updating_stamina = FALSE)
-	if(healed)
-		owner.updatehealth()
+/atom/movable/screen/alert/status_effect/washing_regen/hotspring
+	name = "Hotspring"
+	desc = "Hot Springs are so relaxing..."
+	icon_state = "hotspring_regen"
+
+/atom/movable/screen/alert/status_effect/washing_regen/hotspring/hater
+	name = "Hotspring"
+	desc = "Waaater... FUCK THIS HOT WATER!!"
+	icon_state = "hotspring_regen_catgirl"
