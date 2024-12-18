@@ -1,5 +1,31 @@
 // Изменение цен для импортов вот этих вот -> 'modular_nova\modules\company_imports\code\armament_datums\deforest_medical.dm'
 
+/datum/armament_entry/company_import/deforest/first_aid_kit
+
+/datum/armament_entry/deforest/first_aid_kit/civil_defense/comfort
+
+/datum/armament_entry/company_import/deforest/first_aid_kit/civil_defense
+	cost = PAYCHECK_COMMAND * 4
+
+/datum/armament_entry/company_import/deforest/first_aid_kit/frontier
+	cost = PAYCHECK_COMMAND * 4
+
+/datum/armament_entry/company_import/deforest/first_aid_kit/combat_surgeon
+	cost = PAYCHECK_COMMAND * 4
+
+/datum/armament_entry/company_import/deforest/first_aid_kit/robo_repair
+	cost = PAYCHECK_COMMAND * 4
+
+/datum/armament_entry/company_import/deforest/first_aid_kit/robo_repair_super
+
+/datum/armament_entry/company_import/deforest/first_aid_kit/first_responder
+
+/datum/armament_entry/company_import/deforest/first_aid_kit/orange_satchel
+	cost = PAYCHECK_COMMAND * 10.5
+
+/datum/armament_entry/company_import/deforest/first_aid_kit/technician_satchel
+	cost = PAYCHECK_COMMAND * 15.5
+
 
 // Basic first aid supplies like gauze, sutures, mesh, so on
 
@@ -83,7 +109,7 @@
 /datum/armament_entry/company_import/deforest/medpens/robo_cleaner
 
 /datum/armament_entry/company_import/deforest/medpens/pentibinin
-	cost = PAYCHECK_COMMAND * 2.5
+	cost = PAYCHECK_COMMAND * 2
 
 
 // Autoinjectors for fighting
@@ -94,7 +120,7 @@
 /datum/armament_entry/company_import/deforest/medpens_stim/adrenaline
 
 /datum/armament_entry/company_import/deforest/medpens_stim/synephrine
-	cost = PAYCHECK_COMMAND  * 2.5
+	cost = PAYCHECK_COMMAND  * 2
 
 /datum/armament_entry/company_import/deforest/medpens_stim/krotozine
 
