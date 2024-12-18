@@ -790,6 +790,17 @@
   OrbisAnima:
   - balance: Bitrunning - Reverted Domain points to 1x from 2x, and reduced BitRunner
       points to 1.5x from 2x
+  - bugfix: Removed the variable that made Akula not being able to use subspecies
+      or custom lore.
+  - rscadd: Added the new P207 to both cargo sol imports and security vendors, its
+      a completly non lethal pistol that shoots bouncy balls that are more effective
+      against armor than the usual rubber ammunition, comparable to regular ammo.  It's
+      ammo its easy enough to produce that autolathes and sec lathes can print it
+      out from start.
+  - qol: Added two pepperball guns to security vendors along with its ammo, increased
+      how much the ammo box holds to 18 and fixed the issue that prevented it from
+      being printable on the sec lathe.
+  - bugfix: Lower cases the text of ammo boxes to be consistent.
   Stalkeros:
   - rscadd: Syndicate Assault SNPCs, now 'assumedly' Counter-Bitrunners, have been
       provided with appropriate MODsuits and Cybersun-manufactured weaponry.
