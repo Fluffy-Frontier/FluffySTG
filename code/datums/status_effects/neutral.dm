@@ -656,6 +656,10 @@
 	desc = "A good wash fills me with energy!"
 	icon_state = "shower_regen"
 
+/atom/movable/screen/alert/status_effect/washing_regen/hater
+	desc = "Waaater... Fuck this WATER!!"
+	icon_state = "shower_regen_catgirl"
+
 /atom/movable/screen/alert/status_effect/shower_regen/hater
 	name = "Washing"
 	desc = "Waaater... Fuck this WATER!!"
