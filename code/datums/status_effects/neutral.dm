@@ -610,9 +610,6 @@
 	SIGNAL_HANDLER
 	qdel(src)
 
-<<<<<<< HEAD
-/atom/movable/screen/alert/status_effect/shower_regen
-=======
 /datum/status_effect/washing_regen
 	id = "shower_regen"
 	duration = STATUS_EFFECT_PERMANENT
@@ -655,7 +652,6 @@
 		owner.updatehealth()
 
 /atom/movable/screen/alert/status_effect/washing_regen
->>>>>>> c3c1ae504ae (Allows Felinids to shower (#4686))
 	name = "Washing"
 	desc = "A good wash fills me with energy!"
 	icon_state = "shower_regen"
