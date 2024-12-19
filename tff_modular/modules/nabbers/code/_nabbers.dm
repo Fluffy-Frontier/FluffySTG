@@ -25,7 +25,7 @@
 	digitigrade_customization = DIGITIGRADE_NEVER
 	no_equip_flags = ITEM_SLOT_FEET | ITEM_SLOT_OCLOTHING | ITEM_SLOT_SUITSTORE | ITEM_SLOT_EYES | ITEM_SLOT_LEGCUFFED
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	mutanttongue = /obj/item/organ/internal/tongue/nabber
+	mutanttongue = /obj/item/organ/tongue/nabber
 	always_customizable = TRUE
 	hair_alpha = 0
 	facial_hair_alpha = 0
@@ -33,12 +33,12 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	species_cookie = /obj/item/food/grown/cabbage
 	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT - 10)
-	mutantbrain = /obj/item/organ/internal/brain/nabber
-	mutanteyes = /obj/item/organ/internal/eyes/nabber
-	mutantlungs = /obj/item/organ/internal/lungs/nabber
-	mutantheart = /obj/item/organ/internal/heart/nabber
-	mutantliver = /obj/item/organ/internal/liver/nabber
-	mutantears = /obj/item/organ/internal/ears/nabber
+	mutantbrain = /obj/item/organ/brain/nabber
+	mutanteyes = /obj/item/organ/eyes/nabber
+	mutantlungs = /obj/item/organ/lungs/nabber
+	mutantheart = /obj/item/organ/heart/nabber
+	mutantliver = /obj/item/organ/liver/nabber
+	mutantears = /obj/item/organ/ears/nabber
 	mutantappendix = null
 	bodypart_overrides = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/mutant/nabber,
