@@ -3,7 +3,11 @@
  * You can't really use the non-modular version, least you eventually want asinine merge
  * conflicts and/or potentially disastrous issues to arise, so here's your own.
  */
+<<<<<<< HEAD
 #define MODULAR_SAVEFILE_VERSION_MAX 6
+=======
+#define MODULAR_SAVEFILE_VERSION_MAX 8
+>>>>>>> 5bf4ef16d16 (make new skrell appearance (#4683))
 
 #define MODULAR_SAVEFILE_UP_TO_DATE -1
 
@@ -13,6 +17,11 @@
 #define VERSION_UNDERSHIRT_BRA_SPLIT 4
 #define VERSION_CHRONOLOGICAL_AGE 5
 #define VERSION_TG_LOADOUT 6
+<<<<<<< HEAD
+=======
+#define VERSION_INTERNAL_EXTERNAL_ORGANS 7
+#define VERSION_SKRELL_HAIR_NAME_UPDATE 8
+>>>>>>> 5bf4ef16d16 (make new skrell appearance (#4683))
 
 #define INDEX_UNDERWEAR 1
 #define INDEX_BRA 2
@@ -266,6 +275,31 @@
 		if (length(loadout_list)) // We only want to write these changes down if we're certain that there was anything in that.
 			write_preference(GLOB.preference_entries[/datum/preference/loadout], loadout_list)
 
+<<<<<<< HEAD
+=======
+	if(current_version < VERSION_INTERNAL_EXTERNAL_ORGANS)
+		var/list/save_augments = SANITIZE_LIST(save_data["augments"])
+		var/prefix_length = length("/obj/item/organ/internal") // Shouldn't be any external augments, but if there are, it's the same length
+		for(var/augment_name in save_augments)
+			var/augment_path_string = save_augments[augment_name]
+			if(!(findtext(augment_path_string, "/obj/item/organ/internal") || findtext(augment_path_string, "/obj/item/organ/external")))
+				continue // Make sure we don't strip something that isn't there
+			var/augment_path_string_stripped = copytext(save_augments[augment_name], prefix_length + 1)
+			save_augments[augment_name] = "/obj/item/organ[augment_path_string_stripped]"
+		load_augments(save_augments)
+
+	if(current_version < VERSION_SKRELL_HAIR_NAME_UPDATE)
+		var/list/mutant_bodyparts = SANITIZE_LIST(save_data["mutant_bodyparts"])
+
+		if("skrell_hair" in mutant_bodyparts)
+			var/current_skrell_hair = mutant_bodyparts["skrell_hair"][MUTANT_INDEX_NAME]
+
+			if(current_skrell_hair == "Male")
+				write_preference(GLOB.preference_entries[/datum/preference/choiced/mutant_choice/skrell_hair], "Short")
+			else if(current_skrell_hair == "Female")
+				write_preference(GLOB.preference_entries[/datum/preference/choiced/mutant_choice/skrell_hair], "Long")
+
+>>>>>>> 5bf4ef16d16 (make new skrell appearance (#4683))
 
 /datum/preferences/proc/check_migration()
 	if(!tgui_prefs_migration)
@@ -333,3 +367,9 @@
 #undef VERSION_SYNTH_REFACTOR
 #undef VERSION_UNDERSHIRT_BRA_SPLIT
 #undef VERSION_CHRONOLOGICAL_AGE
+<<<<<<< HEAD
+=======
+#undef VERSION_TG_LOADOUT
+#undef VERSION_INTERNAL_EXTERNAL_ORGANS
+#undef VERSION_SKRELL_HAIR_NAME_UPDATE
+>>>>>>> 5bf4ef16d16 (make new skrell appearance (#4683))
