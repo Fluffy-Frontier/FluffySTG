@@ -7,7 +7,7 @@
 	icon = 'icons/obj/weapons/voidwalker_items.dmi'
 	icon_state = "tentacle"
 	inhand_icon_state = "tentacle"
-	force = 25
+	force = 35 // FLUFFY FRONTIER EDIT: ANTAG BUFF #5159; original: 25
 	armour_penetration = 35
 	lefthand_file = 'icons/mob/inhands/antag/voidwalker_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/voidwalker_righthand.dmi'
