@@ -139,7 +139,7 @@
 								)
 
 	if(patient.get_organ_slot("parasite_egg") && cast_power >=4) // Удаляем ксеноморфов
-		var/obj/item/organ/internal/body_egg/parasite = patient.get_organ_slot("parasite_egg")
+		var/obj/item/organ/body_egg/parasite = patient.get_organ_slot("parasite_egg")
 		parasite.owner.vomit(VOMIT_CATEGORY_BLOOD | MOB_VOMIT_KNOCKDOWN | MOB_VOMIT_HARM)
 		parasite.owner.visible_message(
 										span_warning("[patient] twitches, gags and vomits a living creqture with blood! Gross!"),
@@ -308,7 +308,7 @@
 		if (DEFIB_FAIL_NO_HEART)
 			fail_reason = "Patient's heart is missing and you are not Alpha tier to create it out of air."
 		if (DEFIB_FAIL_FAILING_HEART)
-			var/obj/item/organ/internal/heart/target_heart = patient.get_organ_slot(ORGAN_SLOT_HEART)
+			var/obj/item/organ/heart/target_heart = patient.get_organ_slot(ORGAN_SLOT_HEART)
 			if(target_heart)
 				target_heart.operated = TRUE
 				if((target_heart.organ_flags & ORGAN_ORGANIC) || synth_check) // Only fix organic heart
@@ -325,7 +325,7 @@
 			if(HAS_TRAIT(patient, TRAIT_HUSK))
 				fail_reason = "Patient's body is a mere husk, and you can not cure them."
 		if (DEFIB_FAIL_FAILING_BRAIN)
-			var/obj/item/organ/internal/brain/target_brain = patient.get_organ_slot(ORGAN_SLOT_BRAIN)
+			var/obj/item/organ/brain/target_brain = patient.get_organ_slot(ORGAN_SLOT_BRAIN)
 			if(target_brain)
 				if((target_brain.organ_flags & ORGAN_ORGANIC) || synth_check) // Only fix organic heart
 					patient.setOrganLoss(ORGAN_SLOT_BRAIN, 60)
