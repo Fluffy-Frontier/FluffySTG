@@ -47,7 +47,7 @@
 		var/obj/item/bodypart/bodypart = pick(victim.bodyparts)
 		var/datum/wound/slash/flesh/crit_wound = new wound_type()
 		crit_wound.apply_wound(bodypart)
-		victim.apply_damage(20, BURN, wound_bonus = CANT_WOUND)
+		victim.apply_damage(30, BURN, wound_bonus = CANT_WOUND) // FLUFFY FRONTIER EDIT: ANTAG BUFF #5159; original: 20
 
 		new /obj/effect/temp_visual/cleave(get_turf(victim))
 
