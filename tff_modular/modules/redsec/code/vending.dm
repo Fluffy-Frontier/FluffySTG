@@ -26,6 +26,8 @@
 				/obj/item/clothing/suit/toggle/jacket/sec/old = 5,
 				/obj/item/clothing/suit/armor/vest/alt/sec/redsec = 2,
 				/obj/item/storage/backpack/waistbag/redsec = 3,
+				/obj/item/clothing/suit/armor/vest/alt/caftan = 3,
+				/obj/item/clothing/head/berendeyka = 3,
 			),
 		),
 		list(
