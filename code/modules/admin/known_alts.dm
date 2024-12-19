@@ -65,7 +65,7 @@ GLOBAL_DATUM_INIT(known_alts, /datum/known_alts, new)
 
 			if (query_add_known_alt.warn_execute())
 				var/message = "[key_name(usr)] has added a new known alt connection between [ckey1] and [ckey2]."
-				message_admins(message)
+				message_admins(message, TRUE)
 				log_admin_private(message)
 
 				cached_known_alts = null
@@ -115,7 +115,7 @@ GLOBAL_DATUM_INIT(known_alts, /datum/known_alts, new)
 
 			if (query_delete_known_alt.warn_execute())
 				var/message = "[key_name(usr)] has deleted the known alt connection between [result[1]] and [result[2]]."
-				message_admins(message)
+				message_admins(message, TRUE)
 				log_admin_private(message)
 
 				cached_known_alts = null

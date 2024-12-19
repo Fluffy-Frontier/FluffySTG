@@ -44,7 +44,12 @@
 		message = trim_left(copytext_char(message, length(message_mods[RADIO_KEY]) + 2))
 		switch(message_mods[RADIO_EXTENSION])
 			if(MODE_ADMIN)
-				SSadmin_verbs.dynamic_invoke_verb(client, /datum/admin_verb/cmd_admin_say, message)
+					// TFF ADDITION START - Eventmaker
+				if(client.is_eventmaker())
+					SSadmin_verbs.dynamic_invoke_verb(client, /datum/admin_verb/cmd_eventmaker_say, message)
+				else
+					// TFF ADDITION END
+					SSadmin_verbs.dynamic_invoke_verb(client, /datum/admin_verb/cmd_admin_say, message)
 			if(MODE_DEADMIN)
 				SSadmin_verbs.dynamic_invoke_verb(client, /datum/admin_verb/dsay, message)
 			if(MODE_PUPPET)
