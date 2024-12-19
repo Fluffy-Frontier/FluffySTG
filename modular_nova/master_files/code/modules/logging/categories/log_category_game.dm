@@ -2,6 +2,11 @@
 	category = LOG_CATEGORY_GAME_MENTOR
 	master_category = /datum/log_category/game
 
+//TODO: ПЕРЕНЕСТИ ОТСЮДАВОЙ
+/datum/log_category/game_eventmaker
+	category = LOG_CATEGORY_GAME_EVENTMAKER
+	master_category = /datum/log_category/game
+
 /datum/log_category/game_subtle
 	category = LOG_CATEGORY_GAME_SUBTLE
 	master_category = /datum/log_category/game

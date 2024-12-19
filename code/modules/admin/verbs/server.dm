@@ -66,7 +66,7 @@ ADMIN_VERB(restart, R_SERVER, "Reboot World", "Restarts the world immediately.",
 #undef HARDEST_RESTART
 #undef TGS_RESTART
 
-ADMIN_VERB(end_round, R_SERVER, "End Round", "Forcibly ends the round and allows the server to restart normally.", ADMIN_CATEGORY_SERVER)
+ADMIN_VERB(end_round, R_DEBUG, "End Round", "Forcibly ends the round and allows the server to restart normally.", ADMIN_CATEGORY_SERVER) // TFF CHANGE. OROGINAL - ADMIN_VERB(end_round, R_DEBUG, "End Round", "Forcibly ends the round and allows the server to restart normally.", ADMIN_CATEGORY_SERVER)
 	var/confirm = tgui_alert(user, "End the round and  restart the game world?", "End Round", list("Yes", "Cancel"))
 	if(confirm != "Yes")
 		return
@@ -88,7 +88,7 @@ ADMIN_VERB(toggle_ooc_dead, R_ADMIN, "Toggle Dead OOC", "Toggle the OOC channel 
 ADMIN_VERB(toggle_vote_dead, R_ADMIN, "Toggle Dead Vote", "Toggle the vote for dead players on or off.", ADMIN_CATEGORY_SERVER)
 	SSvote.toggle_dead_voting(user)
 
-ADMIN_VERB(start_now, R_SERVER, "Start Now", "Start the round RIGHT NOW.", ADMIN_CATEGORY_SERVER)
+ADMIN_VERB(start_now, R_DEBUG, "Start Now", "Start the round RIGHT NOW.", ADMIN_CATEGORY_SERVER) // TFF CHANGE. ORGINAL - ADMIN_VERB(start_now, R_SERVER, "Start Now", "Start the round RIGHT NOW.", ADMIN_CATEGORY_SERVER)
 	var/static/list/waiting_states = list(GAME_STATE_PREGAME, GAME_STATE_STARTUP)
 	if(!(SSticker.current_state in waiting_states))
 		to_chat(user, span_warning(span_red("The game has already started!")))
@@ -192,7 +192,7 @@ ADMIN_VERB(toggle_respawn, R_SERVER, "Toggle Respawn", "Toggle the ability to re
 	world.update_status()
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Respawn", "[new_state_text]")) // If you are copy-pasting this, ensure the 4th parameter is unique to the new proc!
 
-ADMIN_VERB(delay, R_SERVER, "Delay Pre-Game", "Delay the game start.", ADMIN_CATEGORY_SERVER)
+ADMIN_VERB(delay, R_DEBUG, "Delay Pre-Game", "Delay the game start.", ADMIN_CATEGORY_SERVER) // TFF CHANGE. ORIGINAL - ADMIN_VERB(delay, R_SERVER, "Delay Pre-Game", "Delay the game start.", ADMIN_CATEGORY_SERVER)
 	var/newtime = input(user, "Set a new time in seconds. Set -1 for indefinite delay.", "Set Delay", round(SSticker.GetTimeLeft()/10)) as num|null
 	if(!newtime)
 		return

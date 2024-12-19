@@ -1,7 +1,14 @@
 ////////////////////////////////
-/proc/message_admins(msg)
+/proc/message_admins(msg, not_to_eventmaker) // TFF EDIT. ORIGINAL /proc/message_admins(msg)
 	msg = "<span class=\"admin\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[msg]</span></span>"
-	to_chat(GLOB.admins,
+// TFF CHANGE START - EVENTMAKERS
+	var/list/addressee = GLOB.admins.Copy()
+	if(not_to_eventmaker)
+		for(var/client/admin in GLOB.admins)
+			if(admin.is_eventmaker())
+				addressee -= admin
+// TFF CHANGE END
+	to_chat(addressee, // TFF EDIT. ORIGINAL GLOB.admins,
 		type = MESSAGE_TYPE_ADMINLOG,
 		html = msg,
 		confidential = TRUE)
