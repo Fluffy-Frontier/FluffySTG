@@ -9,7 +9,7 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 	var/client/holder //client of whoever is using this datum
 	var/is_debugger = FALSE
 	var/is_funmin = FALSE
-	var/is_eventmaker_admin = FALSE
+	var/is_eventmaker_admin = FALSE // TFF EDIT - Eventmaker
 
 /datum/secrets_menu/New(user)//user can either be a client or a mob due to byondcode(tm)
 	if (istype(user, /client))
@@ -21,8 +21,8 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 
 	is_debugger = check_rights(R_DEBUG)
 	is_funmin = check_rights(R_FUN)
-	is_eventmaker_admin = holder.is_eventmaker()
-	world.log << is_eventmaker_admin
+	is_eventmaker_admin = holder.is_eventmaker() // TFF EDIT - Eventmaker
+	world.log << is_eventmaker_admin // TFF EDIT - Eventmaker
 
 /datum/secrets_menu/ui_state(mob/user)
 	return GLOB.admin_state
@@ -40,7 +40,7 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 	var/list/data = list()
 	data["is_debugger"] = is_debugger
 	data["is_funmin"] = is_funmin
-	data["is_eventmaker"] = is_eventmaker_admin
+	data["is_eventmaker"] = is_eventmaker_admin // TFF EDIT - Eventmaker
 	return data
 
 #define THUNDERDOME_TEMPLATE_FILE "admin_thunderdome.dmm"
