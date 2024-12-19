@@ -4,6 +4,7 @@
 	icon = 'modular_nova/modules/huds/icons/huds.dmi'
 	icon_state = "glasses_healthhud"
 	worn_icon = 'modular_nova/modules/huds/icons/hudeyes.dmi'
+	species_exception = list() // FF ADDITION
 
 /obj/item/clothing/glasses/hud/health/prescription/Initialize(mapload)
 	clothing_traits += list(TRAIT_NEARSIGHTED_CORRECTED)
@@ -15,6 +16,7 @@
 	icon = 'modular_nova/modules/huds/icons/huds.dmi'
 	icon_state = "glasses_diagnostichud"
 	worn_icon = 'modular_nova/modules/huds/icons/hudeyes.dmi'
+	species_exception = list() // FF ADDITION
 
 /obj/item/clothing/glasses/hud/diagnostic/prescription/Initialize(mapload)
 	clothing_traits += list(TRAIT_NEARSIGHTED_CORRECTED)
@@ -26,6 +28,7 @@
 	icon = 'modular_nova/modules/huds/icons/huds.dmi'
 	icon_state = "glasses_securityhud"
 	worn_icon = 'modular_nova/modules/huds/icons/hudeyes.dmi'
+	species_exception = list() // FF ADDITION
 
 /obj/item/clothing/glasses/hud/security/prescription/Initialize(mapload)
 	clothing_traits += list(TRAIT_NEARSIGHTED_CORRECTED)
@@ -51,6 +54,7 @@
 /obj/item/clothing/glasses/meson/prescription
 	name = "prescription optical meson scanner"
 	desc = "Used by engineering and mining staff to see basic structural and terrain layouts through walls, regardless of lighting conditions. This one has prescription lens fitted in."
+	species_exception = list() // FF ADDITION
 
 /obj/item/clothing/glasses/meson/prescription/Initialize(mapload)
 	clothing_traits += list(TRAIT_NEARSIGHTED_CORRECTED)
