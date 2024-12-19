@@ -1,4 +1,4 @@
-ADMIN_VERB(admin_change_map, R_SERVER, "Change Map", "Set the next map.", ADMIN_CATEGORY_SERVER)
+ADMIN_VERB(admin_change_map, R_DEBUG, "Change Map", "Set the next map.", ADMIN_CATEGORY_SERVER) // TFF EDIT. ORIGINAL - ADMIN_VERB(admin_change_map, R_SERVER, "Change Map", "Set the next map.", ADMIN_CATEGORY_SERVER)
 	var/list/maprotatechoices = list()
 	for (var/map in config.maplist)
 		var/datum/map_config/virtual_map = config.maplist[map]

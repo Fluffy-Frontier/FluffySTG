@@ -57,6 +57,11 @@
 		if(DO_CHANNEL)
 			client.mob.do_verb(entry)
 		// NOVA EDIT ADDITION END
+		// TFF ADDITION START - Eventmaker
+		if(EVENT_CHANNEL)
+			SSadmin_verbs.dynamic_invoke_verb(client, /datum/admin_verb/cmd_eventmaker_say, entry)
+			return TRUE
+		// TFF ADDITION END
 	return FALSE
 
 /**
