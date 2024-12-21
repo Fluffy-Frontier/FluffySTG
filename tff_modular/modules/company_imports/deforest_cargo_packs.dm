@@ -10,9 +10,8 @@
 	cost = CARGO_CRATE_VALUE * 8
 
 /datum/supply_pack/medical/kit_surgical
-	cost = CARGO_CRATE_VALUE * 5
 
 /datum/supply_pack/medical/kit_medical
-	cost = CARGO_CRATE_VALUE * 5
+	cost = CARGO_CRATE_VALUE * 5.5
 
 /datum/supply_pack/medical/deforest_vendor_refill
