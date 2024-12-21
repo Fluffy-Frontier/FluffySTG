@@ -2,7 +2,7 @@
 
 /datum/armament_entry/company_import/deforest/first_aid_kit
 
-/datum/armament_entry/deforest/first_aid_kit/civil_defense/comfort
+/datum/armament_entry/company_import/deforest/first_aid_kit/comfort
 
 /datum/armament_entry/company_import/deforest/first_aid_kit/civil_defense
 	cost = PAYCHECK_COMMAND * 4
@@ -18,6 +18,7 @@
 
 /datum/armament_entry/company_import/deforest/first_aid_kit/robo_repair_super
 
+/*
 /datum/armament_entry/company_import/deforest/first_aid_kit/first_responder
 
 /datum/armament_entry/company_import/deforest/first_aid_kit/orange_satchel
@@ -25,6 +26,7 @@
 
 /datum/armament_entry/company_import/deforest/first_aid_kit/technician_satchel
 	cost = PAYCHECK_COMMAND * 15.5
+*/
 
 
 // Basic first aid supplies like gauze, sutures, mesh, so on
@@ -91,7 +93,6 @@
 
 /*
 /datum/armament_entry/company_import/deforest/medpens/coagulants
-	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/coagulants
 */
 
 /datum/armament_entry/company_import/deforest/medpens/lepoturi
@@ -99,7 +100,6 @@
 
 /*
 /datum/armament_entry/company_import/deforest/medpens/psifinil
-	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/psifinil
 */
 
 /datum/armament_entry/company_import/deforest/medpens/halobinin
