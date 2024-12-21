@@ -8,35 +8,36 @@
 
 #define ORGGAN_ICON_NABBER 'tff_modular/modules/nabbers/icons/organs/nabber_organs.dmi'
 
-/obj/item/organ/internal/tongue/nabber
+/obj/item/organ/tongue/nabber
 	name = "nabber tongue"
 	liked_foodtypes = RAW | GORE | GRAIN
 	disliked_foodtypes = CLOTH | FRIED | TOXIC
 	toxic_foodtypes = DAIRY
+	var/static/list/languages_possible_gas = typecacheof(list(
+		/datum/language/common,
+		/datum/language/nabber,
+	))
 
-/obj/item/organ/internal/ears/nabber
+/obj/item/organ/tongue/nabber/get_possible_languages()
+	RETURN_TYPE(/list)
+	return languages_possible_gas
+
+/obj/item/organ/ears/nabber
 	name = "nabber ears"
 	icon = ORGGAN_ICON_NABBER
 	icon_state = "ears"
 
-/obj/item/organ/internal/heart/nabber
+/obj/item/organ/heart/nabber
 	name = "nabber heart"
 	icon = ORGGAN_ICON_NABBER
 	icon_state = "heart"
 
-/obj/item/organ/internal/brain/nabber
+/obj/item/organ/brain/nabber
 	name = "nabber brain"
 	icon = ORGGAN_ICON_NABBER
 	icon_state = "brain"
 
-/obj/item/organ/internal/eyes/nabber
-	name = "nabber eyes"
-	desc = "Small orange orbs."
-	icon = ORGGAN_ICON_NABBER
-	icon_state = "eyes"
-	flash_protect = FLASH_PROTECTION_SENSITIVE
-
-/obj/item/organ/internal/eyes/robotic/nabber
+/obj/item/organ/eyes/nabber
 	name = "nabber eyes"
 	desc = "Small orange orbs. With pair welding shield linses."
 	icon = ORGGAN_ICON_NABBER
@@ -45,7 +46,7 @@
 	var/datum/action/toggle_welding/shield
 	var/active = FALSE
 
-/obj/item/organ/internal/eyes/robotic/nabber/Insert(mob/living/carbon/eye_recipient, special, movement_flags)
+/obj/item/organ/eyes/nabber/Insert(mob/living/carbon/eye_recipient, special, movement_flags)
 	. = ..()
 	shield = new(eye_recipient)
 	shield.button_icon = ORGGAN_ICON_NABBER
@@ -53,7 +54,7 @@
 	shield.Grant(eye_recipient)
 	shield.eyes = src
 
-/obj/item/organ/internal/eyes/robotic/nabber/proc/toggle_shielding()
+/obj/item/organ/eyes/nabber/proc/toggle_shielding()
 	if(!owner)
 		return
 
@@ -72,13 +73,13 @@
 	owner.update_tint()
 	owner.balloon_alert(owner, "Welder eyelids open!")
 
-/obj/item/organ/internal/eyes/robotic/nabber/Remove(mob/living/carbon/eye_owner, special)
+/obj/item/organ/eyes/nabber/Remove(mob/living/carbon/eye_owner, special)
 	. = ..()
 	shield.Destroy()
 	active = FALSE
 	toggle_shielding()
 
-/obj/item/organ/internal/lungs/nabber
+/obj/item/organ/lungs/nabber
 	name = "nabber lungs"
 	icon = ORGGAN_ICON_NABBER
 	icon_state = "lungs"
@@ -102,7 +103,7 @@
 	heat_level_3_damage = HEAT_GAS_DAMAGE_LEVEL_3
 	heat_damage_type = BURN
 
-/obj/item/organ/internal/liver/nabber
+/obj/item/organ/liver/nabber
 	name = "nabber liver"
 	icon_state = "liver"
 	icon = ORGGAN_ICON_NABBER

@@ -9,6 +9,7 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 	var/client/holder //client of whoever is using this datum
 	var/is_debugger = FALSE
 	var/is_funmin = FALSE
+	var/is_eventmaker_admin = FALSE // TFF EDIT - Eventmaker
 
 /datum/secrets_menu/New(user)//user can either be a client or a mob due to byondcode(tm)
 	if (istype(user, /client))
@@ -20,6 +21,8 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 
 	is_debugger = check_rights(R_DEBUG)
 	is_funmin = check_rights(R_FUN)
+	is_eventmaker_admin = holder.is_eventmaker() // TFF EDIT - Eventmaker
+	world.log << is_eventmaker_admin // TFF EDIT - Eventmaker
 
 /datum/secrets_menu/ui_state(mob/user)
 	return GLOB.admin_state
@@ -37,6 +40,7 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 	var/list/data = list()
 	data["is_debugger"] = is_debugger
 	data["is_funmin"] = is_funmin
+	data["is_eventmaker"] = is_eventmaker_admin // TFF EDIT - Eventmaker
 	return data
 
 #define THUNDERDOME_TEMPLATE_FILE "admin_thunderdome.dmm"
@@ -517,8 +521,8 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 
 				if(H.dna.species.id == SPECIES_HUMAN)
 					if(H.dna.features["tail_human"] == "None" || H.dna.features["ears"] == "None")
-						var/obj/item/organ/internal/ears/cat/ears = new
-						var/obj/item/organ/external/tail/cat/tail = new
+						var/obj/item/organ/ears/cat/ears = new
+						var/obj/item/organ/tail/cat/tail = new
 						ears.Insert(H, movement_flags = DELETE_IF_REPLACED)
 						tail.Insert(H, movement_flags = DELETE_IF_REPLACED)
 					var/list/honorifics = list("[MALE]" = list("kun"), "[FEMALE]" = list("chan","tan"), "[NEUTER]" = list("san"), "[PLURAL]" = list("san")) //John Robust -> Robust-kun

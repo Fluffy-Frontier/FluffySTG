@@ -13,7 +13,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
-	force = 20
+	force = 28 // FLUFFY FRONTIER EDIT: ANTAG BUFF #5159; original: 20
 	throwforce = 10
 	wound_bonus = 5
 	bare_wound_bonus = 15
@@ -219,7 +219,7 @@
 	name = "\improper cursed blade"
 	desc = "A dark blade, cursed to bleed forever. In constant struggle between the eldritch and the dark, it is forced to accept any wielder as its master. \
 		Its eye's cornea drips blood endlessly into the ground, yet its piercing gaze remains on you."
-	force = 25
+	force = 32 // FLUFFY FRONTIER EDIT: ANTAG BUFF #5159; original: 25
 	throwforce = 15
 	block_chance = 35
 	wound_bonus = 25

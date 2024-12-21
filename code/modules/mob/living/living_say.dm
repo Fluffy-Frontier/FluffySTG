@@ -130,7 +130,12 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 		return
 
 	if(message_mods[RADIO_EXTENSION] == MODE_ADMIN)
-		SSadmin_verbs.dynamic_invoke_verb(client, /datum/admin_verb/cmd_admin_say, message)
+		// TFF ADDITION START - Eventmaker
+		if(client.is_eventmaker())
+			SSadmin_verbs.dynamic_invoke_verb(client, /datum/admin_verb/cmd_eventmaker_say, message)
+		else
+			// TFF ADDITION END
+			SSadmin_verbs.dynamic_invoke_verb(client, /datum/admin_verb/cmd_admin_say, message)
 		return
 
 	if(message_mods[RADIO_EXTENSION] == MODE_DEADMIN)
@@ -277,6 +282,18 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 /mob/living/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, list/message_mods = list(), message_range=0)
 	if((SEND_SIGNAL(src, COMSIG_MOVABLE_PRE_HEAR, args) & COMSIG_MOVABLE_CANCEL_HEARING) || !GET_CLIENT(src))
 		return FALSE
+
+// FLUFFY EDIT START Converts scrambled nabber's msg into emote for people
+	if(ispath(message_language, /datum/language/nabber) && speaker != src)
+		var/gbs_translation_check = translate_language(speaker, message_language, raw_message, spans, message_mods)
+		if(raw_message != gbs_translation_check)
+			message_mods[MODE_CUSTOM_SAY_EMOTE] = gbs_translation_check
+			message_mods[MODE_CUSTOM_SAY_ERASE_INPUT] = TRUE
+
+	if(ispath(message_language, /datum/language/nabber) && isnabber(src))
+		message_mods[MODE_CUSTOM_SAY_EMOTE] = null
+		message_mods[MODE_CUSTOM_SAY_ERASE_INPUT] = FALSE
+	// FLUFFY EDIT END
 
 	var/deaf_message
 	var/deaf_type
