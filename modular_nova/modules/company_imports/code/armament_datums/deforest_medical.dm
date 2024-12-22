@@ -136,12 +136,8 @@
 /datum/armament_entry/company_import/deforest/medpens/calopine
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/calopine
 
-// FLUFFY FRONTIER REMOVAL BEGIN: fuck deforest #5219
-/*
 /datum/armament_entry/company_import/deforest/medpens/coagulants
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/coagulants
-*/
-// FLUFFY FRONTIER REMOVAL END
 
 /datum/armament_entry/company_import/deforest/medpens/lepoturi
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/lepoturi
