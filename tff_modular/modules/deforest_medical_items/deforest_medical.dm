@@ -40,8 +40,10 @@
 /datum/armament_entry/company_import/deforest/first_aid/suture
 	cost = PAYCHECK_LOWER * 3
 
+/*
 /datum/armament_entry/company_import/deforest/first_aid/medicated_sutures
 	cost = PAYCHECK_LOWER * 7
+*/
 
 /datum/armament_entry/company_import/deforest/first_aid/red_sun
 	cost = PAYCHECK_LOWER * 2
@@ -52,8 +54,10 @@
 /datum/armament_entry/company_import/deforest/first_aid/mesh
 	cost = PAYCHECK_LOWER * 3
 
+/*
 /datum/armament_entry/company_import/deforest/first_aid/advanced_mesh
 	cost = PAYCHECK_LOWER * 7
+*/
 
 /datum/armament_entry/company_import/deforest/first_aid/sterile_gauze
 	cost = PAYCHECK_LOWER * 2

@@ -59,9 +59,12 @@
 	item_type = /obj/item/stack/medical/suture
 	cost = PAYCHECK_LOWER
 
+// FLUFFY FRONTIER REMOVAL BEGIN: fuck deforest #5219
+/*
 /datum/armament_entry/company_import/deforest/first_aid/medicated_sutures
 	item_type = /obj/item/stack/medical/suture/medicated
 	cost = PAYCHECK_LOWER * 1.6
+*/
 
 /datum/armament_entry/company_import/deforest/first_aid/red_sun
 	item_type = /obj/item/stack/medical/ointment/red_sun
@@ -75,9 +78,12 @@
 	item_type = /obj/item/stack/medical/mesh
 	cost = PAYCHECK_LOWER
 
+// FLUFFY FRONTIER REMOVAL BEGIN: fuck deforest #5219
+/*
 /datum/armament_entry/company_import/deforest/first_aid/advanced_mesh
 	item_type = /obj/item/stack/medical/mesh/advanced
 	cost = PAYCHECK_LOWER * 1.6
+*/
 
 /datum/armament_entry/company_import/deforest/first_aid/sterile_gauze
 	item_type = /obj/item/stack/medical/gauze/sterilized
