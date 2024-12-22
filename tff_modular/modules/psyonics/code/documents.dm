@@ -56,6 +56,8 @@
 	original_owner = WEAKREF(human_owner)
 	if(original_owner && original_owner.resolve())
 		var/mob/living/carbon/human/owner = original_owner.resolve()
+		if(!istype(owner, /mob/living/carbon/human))
+			return
 		if(!owner.ispsyonic())
 			return
 		var/datum/quirk/psyonic/quirk_holder = owner.get_quirk(/datum/quirk/psyonic)
