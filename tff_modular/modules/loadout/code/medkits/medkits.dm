@@ -7,10 +7,12 @@
 	JOB_CHIEF_MEDICAL_OFFICER, \
 )
 
+
 /datum/loadout_item/pocket_items/medkit
 	restricted_roles = JOB_GROUP_MEDICAL
 
-/datum/loadout_item/pocket_items/deforest_frontiermedkit
+/datum/loadout_item/pocket_items/deforest_cheesekit
 	restricted_roles = JOB_GROUP_MEDICAL
+
 
 #undef JOB_GROUP_MEDICAL

@@ -1,10 +1,10 @@
+// Изменение цен для заказов карго вот этих вот -> 'modular_nova\modules\deforest_medical_items\code\cargo_packs.dm'
+
 /datum/supply_pack/medical/civil_defense
-	cost = CARGO_CRATE_VALUE * 12
 
 /datum/supply_pack/medical/civil_defense/comfort
 
 /datum/supply_pack/medical/frontier_first_aid
-	cost = CARGO_CRATE_VALUE * 12
 
 /datum/supply_pack/medical/kit_technician
 	cost = CARGO_CRATE_VALUE * 8
