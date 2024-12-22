@@ -73,6 +73,7 @@
 
 /datum/armament_entry/company_import/deforest/first_aid/super_robofoam
 
+/datum/armament_entry/company_import/deforest/first_aid/mannitol
 
 // Autoinjectors for healing
 
@@ -91,9 +92,8 @@
 /datum/armament_entry/company_import/deforest/medpens/calopine
 	cost = PAYCHECK_LOWER * 6
 
-/*
 /datum/armament_entry/company_import/deforest/medpens/coagulants
-*/
+	cost = PAYCHECK_LOWER * 7
 
 /datum/armament_entry/company_import/deforest/medpens/lepoturi
 	cost = PAYCHECK_LOWER * 7
