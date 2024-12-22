@@ -223,9 +223,12 @@
 	name = "Random Pizza Box"
 	item_path = /obj/item/pizzabox/random
 
+// FLUFFY FRONTIER REMOVAL BEGIN: fuck deforest #5219
+/*
 /datum/loadout_item/pocket_items/medkit
 	name = "First-Aid Kit"
 	item_path = /obj/item/storage/medkit/regular
+*/
 
 /datum/loadout_item/pocket_items/medipen_pouch
 	name = "Empty Colonial Medipen Pouch"
@@ -235,6 +238,8 @@
 	name = "Empty Colonial First Aid Pouch"
 	item_path = /obj/item/storage/pouch/cin_medkit
 
+// FLUFFY FRONTIER REMOVAL BEGIN: fuck deforest #5219
+/*
 /datum/loadout_item/pocket_items/deforest_cheesekit
 	name = "Civil Defense Medical Kit"
 	item_path = /obj/item/storage/medkit/civil_defense/stocked
@@ -246,6 +251,7 @@
 /datum/loadout_item/pocket_items/synthetic_medkit
 	name = "Robotic Repair Equipment Kit"
 	item_path = /obj/item/storage/medkit/robotic_repair/stocked
+*/
 
 /datum/loadout_item/pocket_items/ingredients
 	name = "Wildcard Ingredient Box"
