@@ -49,6 +49,9 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 	var/school
 	// Вторичная школа псионики
 	var/secondary_school
+	/// Два вара скопированные из item_quirk для правильной выдачи лицензии
+	var/list/where_items_spawned
+	var/open_backpack = FALSE
 
 /datum/quirk/psyonic/add(client/client_source)
 	school = client_source?.prefs?.read_preference(/datum/preference/choiced/psyonic_school)
@@ -110,6 +113,24 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 					 "[fluff_4 ? "Your mind is clearly open to otherwordly energy." : "Something clouds your connection to otherworld energy."]"
 	to_chat(quirk_holder, examine_block(span_infoplain(jointext(fluff_text, "\n&bull; "))))
 	psyonic_level -= 1 // Обязаловка, иначе выдаст спеллы которые нельзя кастануть
+
+	var/obj/item/card/psyonic_license/new_license = new(whom_to_give)
+
+	give_item_to_holder(new_license, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK, LOCATION_HANDS = ITEM_SLOT_HANDS), flavour_text = "Make sure not to lose it. You can not remake this on the station.")
+
+/datum/quirk/psyonic/proc/give_item_to_holder(obj/item/quirk_item, list/valid_slots, flavour_text = null, default_location = "at your feet", notify_player = TRUE)
+	if(ispath(quirk_item))
+		quirk_item = new quirk_item(get_turf(quirk_holder))
+
+	var/mob/living/carbon/human/human_holder = quirk_holder
+
+	var/where = human_holder.equip_in_one_of_slots(quirk_item, valid_slots, qdel_on_fail = FALSE, indirect_action = TRUE) || default_location
+
+	if(where == LOCATION_BACKPACK)
+		open_backpack = TRUE
+
+	if(notify_player)
+		LAZYADD(where_items_spawned, span_boldnotice("You have \a [quirk_item] [where]. [flavour_text]"))
 
 /datum/quirk/psyonic/remove()
 	UnregisterSignal(quirk_holder, COMSIG_MOB_GET_STATUS_TAB_ITEMS)
