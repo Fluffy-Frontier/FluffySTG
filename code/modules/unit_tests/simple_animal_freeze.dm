@@ -125,7 +125,6 @@
 		/mob/living/simple_animal/hostile/vox/ranged/space/laser,
 		/mob/living/simple_animal/hostile/zombie/cheesezombie,
 		/mob/living/simple_animal/hostile/zombie/nocorpse,
-<<<<<<< HEAD
 		/mob/living/simple_animal/hostile/fleshmind/slicer,
 		/mob/living/simple_animal/hostile/fleshmind/floater,
 		/mob/living/simple_animal/hostile/fleshmind/globber,
@@ -137,9 +136,7 @@
 		/mob/living/simple_animal/hostile/fleshmind/mechiver,
 		/mob/living/simple_animal/hostile/fleshmind/mauler_monkey,
 		/mob/living/simple_animal/hostile/fleshmind,
-=======
 		/mob/living/simple_animal/hostile/ooze/grapes/xenobio, // update when grapes are updated, must be here to stop errors
->>>>>>> 0edd8dc6343 (Add Neglected Mobs to Gold Slime Spawns (#4699))
 
 		// DO NOT ADD NEW ENTRIES TO THIS LIST
 		// READ THE COMMENT ABOVE
