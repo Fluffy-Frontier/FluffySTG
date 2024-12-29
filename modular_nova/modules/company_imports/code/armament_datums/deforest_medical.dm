@@ -45,6 +45,7 @@
 	item_type = /obj/item/storage/backpack/duffelbag/deforest_paramedic/stocked
 	cost = PAYCHECK_COMMAND * 11.75
 */
+// FLUFFY FRONTIER REMOVAL END
 
 // Basic first aid supplies like gauze, sutures, mesh, so on
 
@@ -65,6 +66,7 @@
 	item_type = /obj/item/stack/medical/suture/medicated
 	cost = PAYCHECK_LOWER * 1.6
 */
+// FLUFFY FRONTIER REMOVAL END
 
 /datum/armament_entry/company_import/deforest/first_aid/red_sun
 	item_type = /obj/item/stack/medical/ointment/red_sun
@@ -84,6 +86,7 @@
 	item_type = /obj/item/stack/medical/mesh/advanced
 	cost = PAYCHECK_LOWER * 1.6
 */
+// FLUFFY FRONTIER REMOVAL END
 
 /datum/armament_entry/company_import/deforest/first_aid/sterile_gauze
 	item_type = /obj/item/stack/medical/gauze/sterilized
