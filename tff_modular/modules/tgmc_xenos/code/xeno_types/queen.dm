@@ -26,7 +26,7 @@
 	organs += new /obj/item/organ/alien/plasmavessel/large/queen
 	organs += new /obj/item/organ/alien/resinspinner
 	organs += new /obj/item/organ/alien/neurotoxin/queen
-	organs += new /obj/item/organ/alien/eggsac
+	organs += new /obj/item/organ/alien/eggsac/tgmc
 	..()
 
 /mob/living/carbon/alien/adult/tgmc/queen/alien_talk(message, shown_name = name)
