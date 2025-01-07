@@ -47,8 +47,13 @@
 	jobtype = /datum/job/blueshield
 	uniform = /obj/item/clothing/under/rank/blueshield
 	suit = /obj/item/clothing/suit/armor/vest/blueshield/jacket
+<<<<<<< HEAD
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	id = /obj/item/card/id/advanced/centcom
+=======
+	gloves = /obj/item/clothing/gloves/tackler/security
+	id = /obj/item/card/id/advanced/centcom/station
+>>>>>>> 8cb3c78e96e (Changes Nanotrasen Consultant and Blueshield's ID trims to be limited while preventing self-service AA (#4602))
 	shoes = /obj/item/clothing/shoes/jackboots
 	ears = /obj/item/radio/headset/headset_bs/alt
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
