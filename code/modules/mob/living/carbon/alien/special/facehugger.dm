@@ -31,6 +31,9 @@
 	var/strength = 5
 
 	var/attached = 0
+	// FLUFFY FRONTIER ADDITION BEGIN - TGMC_XENOS
+	var/embryo_path = /obj/item/organ/body_egg/alien_embryo
+	// FLUFFY FRONTIER ADDITION END
 
 /obj/item/clothing/mask/facehugger/Initialize(mapload)
 	. = ..()
@@ -214,7 +217,10 @@
 
 		var/obj/item/bodypart/chest/LC = target.get_bodypart(BODY_ZONE_CHEST)
 		if((!LC || IS_ORGANIC_LIMB(LC)) && !target.get_organ_by_type(/obj/item/organ/body_egg/alien_embryo))
-			new /obj/item/organ/body_egg/alien_embryo(target)
+			// FLUFFY FRONTIER EDIT BEGIN - TGMC_XENOS
+			// ORIGINAL LINE: new /obj/item/organ/body_egg/alien_embryo(target)
+			new embryo_path(target)
+			// FLUFFY FRONTIER EDIT END
 			target.log_message("was impregnated by a facehugger", LOG_GAME)
 			target.log_message("was impregnated by a facehugger", LOG_VICTIM, log_globally = FALSE)
 			if(target.stat != DEAD && istype(target.buckled, /obj/structure/bed/nest)) //Handles toggling the nest sustenance status effect if the user was already buckled to a nest.
