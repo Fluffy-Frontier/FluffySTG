@@ -235,7 +235,7 @@
 	name = "Empty Colonial First Aid Pouch"
 	item_path = /obj/item/storage/pouch/cin_medkit
 
-// FLUFFY FRONTIER REMOVAL BEGIN: fuck deforest #5219
+// FLUFFY FRONTIER REMOVAL BEGIN: nova vending rebalance #5219
 /*
 /datum/loadout_item/pocket_items/deforest_cheesekit
 	name = "Civil Defense Medical Kit"

@@ -31,7 +31,7 @@
 	item_type = /obj/item/storage/medkit/robotic_repair/preemo/stocked
 	cost = PAYCHECK_COMMAND * 8
 
-// FLUFFY FRONTIER REMOVAL BEGIN: fuck deforest #5219
+// FLUFFY FRONTIER REMOVAL BEGIN: nova vending rebalance #5219
 /*
 /datum/armament_entry/company_import/deforest/first_aid_kit/first_responder
 	item_type = /obj/item/storage/backpack/duffelbag/deforest_surgical/stocked
@@ -60,7 +60,7 @@
 	item_type = /obj/item/stack/medical/suture
 	cost = PAYCHECK_LOWER
 
-// FLUFFY FRONTIER REMOVAL BEGIN: fuck deforest #5219
+// FLUFFY FRONTIER REMOVAL BEGIN: nova vending rebalance #5219
 /*
 /datum/armament_entry/company_import/deforest/first_aid/medicated_sutures
 	item_type = /obj/item/stack/medical/suture/medicated
@@ -80,7 +80,7 @@
 	item_type = /obj/item/stack/medical/mesh
 	cost = PAYCHECK_LOWER
 
-// FLUFFY FRONTIER REMOVAL BEGIN: fuck deforest #5219
+// FLUFFY FRONTIER REMOVAL BEGIN: nova vending rebalance #5219
 /*
 /datum/armament_entry/company_import/deforest/first_aid/advanced_mesh
 	item_type = /obj/item/stack/medical/mesh/advanced
@@ -151,7 +151,7 @@
 /datum/armament_entry/company_import/deforest/medpens/lepoturi
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/lepoturi
 
-// FLUFFY FRONTIER REMOVAL BEGIN: fuck deforest #5219
+// FLUFFY FRONTIER REMOVAL BEGIN: nova vending rebalance #5219
 /*
 /datum/armament_entry/company_import/deforest/medpens/psifinil
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/psifinil
