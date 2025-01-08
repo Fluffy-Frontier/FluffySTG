@@ -2197,3 +2197,29 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/korpstech, 32)
 	attachment_slot = NONE
 	icon = 'modular_nova/master_files/icons/donator/obj/custom.dmi'
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/custom_w.dmi'
+<<<<<<< HEAD
+=======
+
+// Donation reward for jaklz
+/obj/item/clothing/neck/tattered
+	name = "worn corporate cloak"
+	desc = "A worn, battle-torn cloak. Complete with light red trimmings, tears, burns, and even some holes through out it's design, it clearly has seen better days. You can practically smell the despair, a hint of welding fuel, and a bit of a pine smell."
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/neck.dmi'
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	lefthand_file = 'modular_nova/master_files/icons/donator/mob/inhands/donator_left.dmi'
+	righthand_file = 'modular_nova/master_files/icons/donator/mob/inhands/donator_right.dmi'
+	icon_state = "tattered_cloak"
+	inhand_icon_state = "tattered_cloak"
+
+// Donation reward for Sharkoink, shork
+
+/obj/item/clothing/neck/noble_mantle
+	name = "noble mantle"
+	desc = "A noble mantle for a loyal and hearty Dragonshark."
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/neck.dmi'
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	lefthand_file = 'modular_nova/master_files/icons/donator/mob/inhands/donator_left.dmi'
+	righthand_file = 'modular_nova/master_files/icons/donator/mob/inhands/donator_right.dmi'
+	icon_state = "noble_mantle"
+	inhand_icon_state = "noble_mantle"
+>>>>>>> 2e9ef0210fe (Adds donation reward for Sharkoink (#4721))
