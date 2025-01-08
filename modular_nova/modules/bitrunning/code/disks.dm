@@ -70,13 +70,8 @@
 
 /datum/orderable_item/bitrunning_tech/ability_tier0
 	cost_per_order = 350
-<<<<<<< HEAD
-	item_path = /obj/item/bitrunning_disk/ability/tier0
-	desc = "This disk contains a program that lets you cast Minor Illusion, Conjure Presents!, Produce Flame, or Produce Water."
-=======
 	purchase_path = /obj/item/bitrunning_disk/ability/tier0
 	desc = "This disk contains a program that lets you cast Minor Illusion, Summon Cheese, Produce Flame, or Produce Water."
->>>>>>> bf5d94fc612 (Ancient Milsim (very late) Anniversary Update (#4704))
 
 /datum/orderable_item/bitrunning_tech/item_tier0
 	cost_per_order = 350
@@ -118,13 +113,8 @@
 
 /datum/orderable_item/bitrunning_tech/item_tierlewd
 	cost_per_order = 250
-<<<<<<< HEAD
-	item_path = /obj/item/bitrunning_disk/item/tierlewd
-	desc = "This disk contains a program that lets you equip a LustWish vending machine delivery beacon or a quick-booting NIF package."
-=======
 	purchase_path = /obj/item/bitrunning_disk/item/tierlewd
 	desc = "This disk contains a program that lets you equip a LustWish vending machine delivery beacon, a quick-booting NIF package or a set of chameleon clothing."
->>>>>>> bf5d94fc612 (Ancient Milsim (very late) Anniversary Update (#4704))
 
 /obj/item/bitrunning_disk/item/tier1/Initialize(mapload)
 	. = ..()
