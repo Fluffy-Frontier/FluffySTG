@@ -344,12 +344,18 @@
 	var/obj/item/clothing/mask/facehugger/child
 	///Proximity monitor associated with this atom, needed for proximity checks.
 	var/datum/proximity_monitor/proximity_monitor
+	// FLUFFY FRONTIER ADDITION BEGIN - TGMC_XENOS
+	var/child_path = /obj/item/clothing/mask/facehugger
+	// FLUFFY FRONTIER ADDITION END
 
 /obj/structure/alien/egg/Initialize(mapload)
 	. = ..()
 	update_appearance()
 	if(status == GROWING || status == GROWN)
-		child = new(src)
+		// FLUFFY FRONTIER EDIT BEGIN - TGMC_XENOS
+		// ORIGINAL LINE: child = new(src)
+		child = new child_path(src)
+		// FLUFFY FRONTIER EDIT END
 	if(status == GROWING)
 		addtimer(CALLBACK(src, PROC_REF(Grow)), rand(MIN_GROWTH_TIME, MAX_GROWTH_TIME))
 	proximity_monitor = new(src, status == GROWN ? 1 : 0)
