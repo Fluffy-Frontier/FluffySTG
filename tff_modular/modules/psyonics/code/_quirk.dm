@@ -108,7 +108,7 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 					 "[fluff_2 ? "Other realms are unusually active this shift." : "Other realms are quiet today."]" + "<br>" + \
 					 "[fluff_3 ? "Time-bluespace continuum seems to be stable today." : "Time-bluespace continuum is not giving you energy today."]" + "<br>" + \
 					 "[fluff_4 ? "Your mind is clearly open to otherwordly energy." : "Something clouds your connection to otherworld energy."]"
-	to_chat(quirk_holder, examine_block(span_infoplain(jointext(fluff_text, "\n&bull; "))))
+	to_chat(quirk_holder, boxed_message(span_infoplain(jointext(fluff_text, "\n&bull; "))))
 	psyonic_level -= 1 // Обязаловка, иначе выдаст спеллы которые нельзя кастануть
 
 /datum/quirk/psyonic/remove()

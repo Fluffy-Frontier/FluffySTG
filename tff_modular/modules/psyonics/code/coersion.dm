@@ -203,8 +203,8 @@
 	text_to_show += span_notice("You find that their intent is to [patient.combat_mode ? "harm" : "help"]...") + "<br>"
 	text_to_show += span_notice("You uncover that [patient.p_their()] true identity is [patient.mind.name].") + "<br>"
 	if(cast_power >= 3)
-		text_to_show += span_notice("You can vaguely read their memories: ") + examine_block(span_italics(get_memories(patient)))
-	text_to_show += span_notice("You try to read their job: ") + examine_block(span_italics(get_job_fluff(patient)))
+		text_to_show += span_notice("You can vaguely read their memories: ") + boxed_message(span_italics(get_memories(patient)))
+	text_to_show += span_notice("You try to read their job: ") + boxed_message(span_italics(get_job_fluff(patient)))
 	if(patient.mind.enslaved_to || IS_HYPNOTIZED(patient))
 		text_to_show += span_boldnotice("[patient.p_Their()] will is not free.") + "<br>"
 	var/datum/mind/mind_to_read = patient.mind
@@ -220,7 +220,7 @@
 		else // Там очень много ролей, в том числе не антажных, а мага, еретика и культиста я думаю и без этой способности найти легко. Тем более мы читаем воспоминания, что более имбово
 			text_to_show += span_notice("You also can feel something hidden within [patient.p_their()] mind, but it's not readable.") + "<br>"
 
-	to_chat(owner, examine_block(span_infoplain(text_to_show)))
+	to_chat(owner, boxed_message(span_infoplain(text_to_show)))
 
 // Возвращает размытый текст о профессии
 /datum/action/cooldown/spell/touch/psyonic/psyonic_mind_read/proc/get_job_fluff(mob/living/carbon/human/patient)
