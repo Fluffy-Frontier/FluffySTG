@@ -618,7 +618,7 @@
 	playsound(loc, 'modular_nova/modules/space_ruin_specifics/sound/laser.ogg', 75, TRUE)
 	var/obj/projectile/new_projectile = new projectile_type
 	var/turf/our_turf = get_turf(src)
-	new_projectile.preparePixelProjectile(triggered_mob, our_turf)
+	new_projectile.aim_projectile(triggered_mob, our_turf)
 	new_projectile.firer = src
 	new_projectile.fired_from = src
 	new_projectile.ignored_factions = faction_types
