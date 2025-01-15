@@ -148,8 +148,7 @@
 		"implantcase",
 		"implanter",
 		"locator",
-		"c38_trac",
-		"implant_gasspeech",
+		"implant_gasspeech", // FLUFFY FRONTIER ADDITION - Serpentinds Stuff
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_1_POINTS)
 	announce_channels = list(RADIO_CHANNEL_SECURITY, RADIO_CHANNEL_MEDICAL)

@@ -43,16 +43,12 @@
 	icon = ORGGAN_ICON_NABBER
 	icon_state = "eyes"
 	flash_protect = FLASH_PROTECTION_SENSITIVE
-	var/datum/action/toggle_welding/shield
+	actions_types = list(/datum/action/item_action/organ_action/toggle)
 	var/active = FALSE
 
-/obj/item/organ/eyes/nabber/Insert(mob/living/carbon/eye_recipient, special, movement_flags)
-	. = ..()
-	shield = new(eye_recipient)
-	shield.button_icon = ORGGAN_ICON_NABBER
-	shield.button_icon_state = "eyes"
-	shield.Grant(eye_recipient)
-	shield.eyes = src
+/obj/item/organ/eyes/nabber/ui_action_click(mob/user, actiontype)
+	if (istype(actiontype, /datum/action/item_action/organ_action/toggle))
+		toggle_shielding()
 
 /obj/item/organ/eyes/nabber/proc/toggle_shielding()
 	if(!owner)
@@ -73,10 +69,9 @@
 	owner.update_tint()
 	owner.balloon_alert(owner, "Welder eyelids open!")
 
-/obj/item/organ/eyes/nabber/Remove(mob/living/carbon/eye_owner, special)
+/obj/item/organ/eyes/nabber/on_mob_remove(mob/living/carbon/eye_owner, special, movement_flags)
 	. = ..()
-	shield.Destroy()
-	active = FALSE
+	active = TRUE
 	toggle_shielding()
 
 /obj/item/organ/lungs/nabber

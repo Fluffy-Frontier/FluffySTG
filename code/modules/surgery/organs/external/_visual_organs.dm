@@ -87,11 +87,16 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 
 	bodypart_overlay.set_appearance(typed_accessory)
 
-	if(owner) //are we in a person?
+	// if(owner && !(owner.living_flags & STOP_OVERLAY_UPDATE_BODY_PARTS)) //are we a person? // NOVA EDIT REMOVAL
+	// NOVA EDIT ADDITION
+	if(owner && !(owner.living_flags)) //are we a person?
+	#ifdef STOP_OVERLAY_UPDATE_BODY_PARTS // Once #4504 is merged, remove this edit
+	#error A prior conflict has been resolved, please remove this edit
+	#endif
+	// NOVA EDIT ADDITION END
 		owner.update_body_parts()
-	else if(bodypart_owner) //are we in a limb?
-		bodypart_owner.update_icon_dropped()
-	//else if(use_mob_sprite_as_obj_sprite) //are we out in the world, unprotected by flesh?
+	else
+		bodypart_owner?.update_icon_dropped() //are we in a limb?
 
 /obj/item/organ/update_overlays()
 	. = ..()
@@ -217,13 +222,13 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 	///Store our old datum here for if our antennae are healed
 	var/original_sprite_datum
 
-/obj/item/organ/antennae/mob_insert(mob/living/carbon/receiver, special, movement_flags)
+/obj/item/organ/antennae/on_mob_insert(mob/living/carbon/receiver, special, movement_flags)
 	. = ..()
 
 	RegisterSignal(receiver, COMSIG_HUMAN_BURNING, PROC_REF(try_burn_antennae))
 	RegisterSignal(receiver, COMSIG_LIVING_POST_FULLY_HEAL, PROC_REF(heal_antennae))
 
-/obj/item/organ/antennae/mob_remove(mob/living/carbon/organ_owner, special, movement_flags)
+/obj/item/organ/antennae/on_mob_remove(mob/living/carbon/organ_owner, special, movement_flags)
 	. = ..()
 
 	UnregisterSignal(organ_owner, list(COMSIG_HUMAN_BURNING, COMSIG_LIVING_POST_FULLY_HEAL))

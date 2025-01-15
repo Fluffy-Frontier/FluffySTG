@@ -26,7 +26,7 @@
 	/// Ability to allow them to turn their core's GPS on or off.
 	var/datum/action/innate/core_signal/core_signal
 
-/datum/species/jelly/on_species_gain(mob/living/carbon/new_jellyperson, datum/species/old_species, pref_load)
+/datum/species/jelly/on_species_gain(mob/living/carbon/new_jellyperson, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
 	if(ishuman(new_jellyperson))
 		alter_form = new
@@ -181,10 +181,8 @@
 	gps_active = FALSE
 	qdel(GetComponent(/datum/component/gps))
 
-/obj/item/organ/brain/slime/mob_insert(mob/living/carbon/organ_owner, special = FALSE, movement_flags)
+/obj/item/organ/brain/slime/on_mob_insert(mob/living/carbon/organ_owner, special = FALSE, movement_flags)
 	. = ..()
-	if(!.)
-		return
 	colorize()
 	core_ejected = FALSE
 	RegisterSignal(organ_owner, COMSIG_LIVING_DEATH, PROC_REF(on_slime_death))

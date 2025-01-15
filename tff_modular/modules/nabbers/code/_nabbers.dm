@@ -66,7 +66,7 @@
 	species_language_holder = /datum/language_holder/nabber
 	language_prefs_whitelist = list(/datum/language/nabber)
 
-/datum/species/nabber/on_species_gain(mob/living/carbon/human/C, datum/species/old_species, pref_load)
+/datum/species/nabber/on_species_gain(mob/living/carbon/human/C, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
 	arms = new(C)
 	arms.Grant(C)
