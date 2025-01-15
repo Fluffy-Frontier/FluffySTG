@@ -93,3 +93,25 @@
 	attack_verb_continuous = list("hugs", "cuddles against", "protects")
 	attack_verb_simple = list("hug", "cuddle against", "protect")
 	squeak_override = list('modular_nova/modules/emotes/sound/emotes/blush.ogg' = 1)
+
+/obj/item/toy/plush/tff/soulmates/duo
+	name = "Duo plushie"
+	gender = MALE
+	desc = "A cute plush toy, created be image of famous protogen, or not protogen?... however, when you look at him, you can feel responsibility and a desire for new achievements, as well as a little stupidity. Do not let him near the mechs under any circumstances!"
+	icon = 'tff_modular/master_files/icons/donator/obj/toys/plushie.dmi'
+	icon_state = "plush_duo"
+	happy_icon_state = "plush_duo"
+	depressed_icon_state = "plush_duo"
+	missing_one = /obj/item/toy/plush/tff/soulmates/amy
+	squeak_override = list('modular_nova/modules/emotes/sound/emotes/dwoop.ogg' = 1)
+
+/obj/item/toy/plush/tff/soulmates/amy
+	name = "Amy plushie"
+	gender = FEMALE
+	desc = "An adorable plushy that resembles a slimy xenobiologist. A look at it, despite her cuteness, provokes a feeling of danger."
+	icon = 'tff_modular/master_files/icons/donator/obj/toys/plushie.dmi'
+	icon_state = "plush_amy"
+	happy_icon_state = "plush_amy"
+	depressed_icon_state = "plush_amy"
+	missing_one = /obj/item/toy/plush/tff/soulmates/duo
+	squeak_override = list('modular_nova/modules/emotes/sound/voice/slime_squish.ogg' = 1)

@@ -198,3 +198,13 @@
 	item_path = /obj/item/clothing/under/rank/nanotrasen_consultant/trurl
 	restricted_roles = list(JOB_NT_REP)
 	ckeywhitelist = list("UEDHighCommand")
+
+/datum/loadout_item/toys/duo
+	name = "Duo plushie"
+	item_path= /obj/item/toy/plush/tff/soulmates/duo
+	donator_only = TRUE
+
+/datum/loadout_item/toys/amy
+	name = "Amy plushie"
+	item_path= /obj/item/toy/plush/tff/soulmates/amy
+	donator_only = TRUE
