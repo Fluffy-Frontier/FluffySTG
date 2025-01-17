@@ -37,7 +37,7 @@
 	new /obj/effect/particle_effect/sparks(loc)
 	playsound(loc, SFX_PORTAL_ENTER, 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 	blink_mob(user)
-	user.adjust_disgust(15) // FLUFFYFRONTIER BLUESPACE CRYSTAL NERF
+	user.adjust_disgust(15) // FLUFFY FRONTIER ADDITION: BLUESPACE CRYSTAL NERF 5301
 	use(1)
 
 /obj/item/stack/ore/bluespace_crystal/proc/blink_mob(mob/living/L)
@@ -50,8 +50,8 @@
 		new /obj/effect/particle_effect/sparks(T)
 		playsound(loc, SFX_PORTAL_ENTER, 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 		if(isliving(hit_atom))
-			var/mob/living/our_living = hit_atom // FLUFFYFRONTIER BLUESPACE CRYSTAL NERF
-			our_living.adjust_disgust(15) // FLUFFYFRONTIER BLUESPACE CRYSTAL NERF
+			var/mob/living/our_living = hit_atom // FLUFFY FRONTIER ADDITION: BLUESPACE CRYSTAL NERF 5301
+			our_living.adjust_disgust(15) // FLUFFY FRONTIER ADDITION: BLUESPACE CRYSTAL NERF 5301
 			blink_mob(hit_atom)
 		use(1)
 
