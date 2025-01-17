@@ -25,10 +25,12 @@
 
 	minimal_access |= ACCESS_WEAPONS
 
-/datum/id_trim/job/atmospheric_technician/New()
+// FLUFFY FRONTIER EDIT START - REMOVAL
+/* /datum/id_trim/job/atmospheric_technician/New()
 	. = ..()
 
-	minimal_access |= ACCESS_ENGINE_EQUIP
+	minimal_access |= ACCESS_ENGINE_EQUIP */
+// FLUFFY FRONTIER EDIT END
 
 /datum/id_trim/job/chief_medical_officer/New()
 	. = ..()
