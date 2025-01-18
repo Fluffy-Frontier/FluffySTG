@@ -11,6 +11,9 @@
 	var/bursting = FALSE
 	/// How long does it take to advance one stage? Growth time * 5 = how long till we make a Larva!
 	var/growth_time = 60 SECONDS
+	// FLUFFY FRONTIER ADDITION BEGIN - TGMC_XENOS
+	var/larva_path = /mob/living/carbon/alien/larva
+	// FLUFFY FRONTIER ADDITION END
 
 /obj/item/organ/body_egg/alien_embryo/Initialize(mapload)
 	. = ..()
@@ -78,7 +81,7 @@
 		for(var/datum/surgery/operations as anything in owner.surgeries)
 			if(operations.location != BODY_ZONE_CHEST)
 				continue
-			if(!istype(operations.get_surgery_step(), /datum/surgery_step/manipulate_organs/internal))
+			if(!ispath(operations.steps[operations.status], /datum/surgery_step/manipulate_organs/internal))
 				continue
 			attempt_grow(gib_on_success = FALSE)
 			return
@@ -118,7 +121,10 @@
 	owner.add_overlay(overlay)
 
 	var/atom/xeno_loc = get_turf(owner)
-	var/mob/living/carbon/alien/larva/new_xeno = new(xeno_loc)
+	// FLUFFY FRONTIER EDIT BEGIN - TGMC_XENOS
+	// ORIGINAL LINES: var/mob/living/carbon/alien/larva/new_xeno = new(xeno_loc)
+	var/mob/living/carbon/alien/larva/new_xeno = new larva_path(xeno_loc)
+	// FLUFFY FRONTIER EDIT END
 	new_xeno.key = ghost.key
 	SEND_SOUND(new_xeno, sound('sound/mobs/non-humanoids/hiss/hiss5.ogg',0,0,0,100)) //To get the player's attention
 	new_xeno.add_traits(list(TRAIT_HANDS_BLOCKED, TRAIT_IMMOBILIZED, TRAIT_NO_TRANSFORM), type) //so we don't move during the bursting animation

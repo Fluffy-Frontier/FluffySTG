@@ -31,6 +31,9 @@
 	var/strength = 5
 
 	var/attached = 0
+	// FLUFFY FRONTIER ADDITION BEGIN - TGMC_XENOS
+	var/embryo_path = /obj/item/organ/body_egg/alien_embryo
+	// FLUFFY FRONTIER ADDITION END
 
 /obj/item/clothing/mask/facehugger/Initialize(mapload)
 	. = ..()
@@ -75,11 +78,11 @@
 		return
 	switch(stat)
 		if(DEAD,UNCONSCIOUS)
-			. += span_boldannounce("[src] is not moving.")
+			. += span_bolddanger("[src] is not moving.")
 		if(CONSCIOUS)
-			. += span_boldannounce("[src] seems to be active!")
+			. += span_bolddanger("[src] seems to be active!")
 	if (sterile)
-		. += span_boldannounce("It looks like the proboscis has been removed.")
+		. += span_bolddanger("It looks like the proboscis has been removed.")
 
 /obj/item/clothing/mask/facehugger/should_atmos_process(datum/gas_mixture/air, exposed_temperature)
 	return (exposed_temperature > 300)
@@ -214,7 +217,10 @@
 
 		var/obj/item/bodypart/chest/LC = target.get_bodypart(BODY_ZONE_CHEST)
 		if((!LC || IS_ORGANIC_LIMB(LC)) && !target.get_organ_by_type(/obj/item/organ/body_egg/alien_embryo))
-			new /obj/item/organ/body_egg/alien_embryo(target)
+			// FLUFFY FRONTIER EDIT BEGIN - TGMC_XENOS
+			// ORIGINAL LINE: new /obj/item/organ/body_egg/alien_embryo(target)
+			new embryo_path(target)
+			// FLUFFY FRONTIER EDIT END
 			target.log_message("was impregnated by a facehugger", LOG_GAME)
 			target.log_message("was impregnated by a facehugger", LOG_VICTIM, log_globally = FALSE)
 			if(target.stat != DEAD && istype(target.buckled, /obj/structure/bed/nest)) //Handles toggling the nest sustenance status effect if the user was already buckled to a nest.
