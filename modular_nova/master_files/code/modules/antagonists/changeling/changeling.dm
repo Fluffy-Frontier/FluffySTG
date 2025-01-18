@@ -26,8 +26,10 @@
 		"Avian Traits",
 	)
 
-/datum/antagonist/changeling/forge_objectives()
-	return
+// FLUFFY FRONTIER EDIT - REMOVAL
+/* /datum/antagonist/changeling/forge_objectives()
+	return */
+// FLUFFY FRONTIER EDIT END
 
 /datum/changeling_profile
 	/// The bra worn by the profile source
