@@ -16,6 +16,4 @@
 
 /obj/item/ammo_box/magazine/wt550m9/rubber
 	name = "\improper WT-550 Rubber magazine"
-	icon_state = "46x30mmtT-20"
-	base_icon_state = "46x30mmtT"
 	ammo_type = /obj/item/ammo_casing/c46x30mm/rubber
