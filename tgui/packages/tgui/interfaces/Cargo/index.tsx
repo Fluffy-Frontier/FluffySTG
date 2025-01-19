@@ -13,6 +13,7 @@ enum TAB {
   Requests = 'requests',
   Cart = 'cart',
   Help = 'help',
+  CompanyImports = 'company_import_window', // NOVA EDIT ADDITION
 }
 
 export function Cargo(props) {
@@ -26,7 +27,7 @@ export function Cargo(props) {
 }
 
 export function CargoContent(props) {
-  const { data } = useBackend<CargoData>();
+  const { act, data } = useBackend(); /* NOVA EDIT CHANGE - Adds act */
 
   const { cart = [], requests = [], requestonly } = data;
 
@@ -59,6 +60,15 @@ export function CargoContent(props) {
           >
             Requests ({requests.length})
           </Tabs.Tab>
+          {/* NOVA EDIT ADDITION START */}
+          <Tabs.Tab
+            icon="clipboard-list"
+            selected={tab === TAB.CompanyImports}
+            onClick={() => act('company_import_window')}
+          >
+            Company Imports
+          </Tabs.Tab>
+          {/* NOVA EDIT ADDITION END */}
           {!requestonly && (
             <>
               <Tabs.Tab
@@ -85,6 +95,9 @@ export function CargoContent(props) {
         {tab === TAB.Requests && <CargoRequests />}
         {tab === TAB.Cart && <CargoCart />}
         {tab === TAB.Help && <CargoHelp />}
+        {/* NOVA EDIT ADDITION START*/}
+        {tab === TAB.CompanyImports && tab === 'catalog'}
+        {/* NOVA EDIT ADDITION END */}
       </Stack.Item>
     </Stack>
   );
