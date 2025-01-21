@@ -135,20 +135,12 @@
 /* /datum/armament_entry/company_import/sol_defense/longarm/infanterie
 	item_type = /obj/item/gun/ballistic/automatic/sol_rifle
 	cost = PAYCHECK_COMMAND * 14
-<<<<<<< HEAD
-	contraband = TRUE */ // FLUFFY FRONTIER REMOVAL - SOL WEAPONS REBALANCE
-=======
-	restricted = TRUE
->>>>>>> 70bf6d9bcae ([Policy Bounty] Cargo Imports System Rework (#4715))
+	restricted = TRUE */ // FLUFFY FRONTIER REMOVAL - SOL WEAPONS REBALANCE
 
 /* /datum/armament_entry/company_import/sol_defense/longarm/outomaties
 	item_type = /obj/item/gun/ballistic/automatic/sol_rifle/machinegun
 	cost = PAYCHECK_COMMAND * 23
-<<<<<<< HEAD
-	contraband = TRUE */ // FLUFFY FRONTIER REMOVAL - SOL WEAPONS REBALANCE
-=======
-	restricted = TRUE
->>>>>>> 70bf6d9bcae ([Policy Bounty] Cargo Imports System Rework (#4715))
+	restricted = TRUE */ // FLUFFY FRONTIER REMOVAL - SOL WEAPONS REBALANCE
 
 /datum/armament_entry/company_import/sol_defense/longarm/kiboko
 	item_type = /obj/item/gun/ballistic/automatic/sol_grenade_launcher
