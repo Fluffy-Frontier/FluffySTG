@@ -585,6 +585,7 @@
 	},
 /obj/structure/marker_beacon/olive,
 /obj/effect/turf_decal/tile/dark/full,
+/obj/structure/sign/poster/contraband/interdyne_gene_clinics/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "cG" = (
@@ -3331,7 +3332,6 @@
 	},
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/structure/cable,
-/obj/structure/cable,
 /turf/open/floor/iron/recharge_floor,
 /area/ruin/interdyne_planetary_base/main/vault)
 "sO" = (
@@ -4037,7 +4037,7 @@
 "wF" = (
 /obj/effect/mapping_helpers/airlock/access/any/syndicate,
 /obj/machinery/door/airlock/security/old{
-	name = "Deck Officer room";
+	name = "Deck Officer Room";
 	id_tag = "interdyneofficerroom"
 	},
 /turf/open/floor/plating/elevatorshaft,
@@ -5381,7 +5381,7 @@
 /area/ruin/interdyne_planetary_base/main)
 "Fg" = (
 /obj/machinery/door/airlock/highsecurity{
-	name = "Interdyne Armory airlock"
+	name = "Interdyne Armory Airlock"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
 /obj/effect/turf_decal/tile/dark/full,
@@ -6178,7 +6178,6 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
 /obj/structure/tank_dispenser,
 /obj/effect/turf_decal/bot_red,
 /obj/structure/cable,
@@ -6534,16 +6533,13 @@
 	dir = 9
 	},
 /obj/structure/marker_beacon/burgundy,
-/obj/structure/sign/poster/contraband/c20r{
-	pixel_x = -32;
-	pixel_y = 5
-	},
 /obj/item/storage/box/syndie_kit/chameleon/ghostcafe{
 	desc = "It's a box, for storing things.";
 	name = "chameleon kit";
 	pixel_x = -8;
 	pixel_y = 8
 	},
+/obj/structure/sign/poster/contraband/c20r/directional/west,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/interdyne_planetary_base/main)
 "LE" = (
@@ -7894,10 +7890,10 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/door/airlock/security/old{
-	name = "isolation airlock"
-	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
+/obj/machinery/door/airlock/security/old{
+	name = "Isolation Airlock"
+	},
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/main)
 "UK" = (

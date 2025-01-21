@@ -3254,11 +3254,6 @@
 	},
 /obj/effect/turf_decal/stripes/blue,
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
-/obj/structure/sign/poster/contraband/ff_contest/interdine_medication/directional/north{
-	name = "Interdyne medication for everyone!";
-	pixel_y = 0;
-	pixel_x = 30
-	},
 /obj/structure/sink/directional/west,
 /obj/effect/turf_decal/trimline/dark/filled/end{
 	dir = 4
@@ -3266,6 +3261,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 1
 	},
+/obj/structure/sign/poster/contraband/ff_contest/interdine_medication/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research/robotics)
 "ly" = (
@@ -4579,10 +4575,6 @@
 /obj/structure/marker_beacon/burgundy,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/halls)
-"rf" = (
-/obj/structure/lattice,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/space/has_grav/nova/des_two/cargo/hangar)
 "rg" = (
 /obj/effect/turf_decal/stripes/red/corner{
 	dir = 8
@@ -5150,7 +5142,6 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "tp" = (
-/obj/structure/cable,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/east{
 	pixel_x = 4
 	},
@@ -6704,7 +6695,7 @@
 "yN" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/multi_tile/metal{
-	name = "Reinforced airlock"
+	name = "Reinforced Airlock"
 	},
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /obj/effect/turf_decal/delivery/red,
@@ -8564,7 +8555,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/security)
 "Gl" = (
-/obj/structure/cable,
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /obj/machinery/door/airlock/vault{
 	id_tag = "syndie_ds2_vault"
@@ -9690,7 +9680,7 @@
 	name = "Interdyne smart organ storage";
 	light_color = "#adadcd"
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/open/space/basic,
 /area/ruin/space/has_grav/nova/des_two/research/robotics)
 "Kr" = (
 /obj/effect/turf_decal/stripes/red/line,
@@ -10482,7 +10472,6 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 8
 	},
-/obj/structure/chair/stool/bar/directional/south,
 /obj/item/paint_palette,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/chair/stool/directional/west,
@@ -14273,7 +14262,7 @@ SD
 SD
 SD
 SD
-mP
+oC
 oC
 Xr
 Xp
@@ -16549,7 +16538,7 @@ SD
 SD
 SD
 SD
-Zp
+zu
 zu
 aI
 CP
@@ -16973,7 +16962,7 @@ TL
 TL
 TL
 TL
-rf
+Oq
 XK
 uX
 gx
