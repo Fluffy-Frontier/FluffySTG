@@ -2,7 +2,7 @@
 // Cоздаём пушки.
 /obj/item/gun/ballistic/automatic/c20r_interdyne
 	name = "\improper C-20r Special"
-	desc = "A special full-auto version'C-20r',developed with state-of-the-art technology. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstamp."
+	desc = "A special full-auto version'C-20r', developed with state-of-the-art technology. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstamp."
 	fire_sound = 'modular_nova/modules/modular_weapons/sounds/rifle_heavy.ogg'
 	fire_sound_volume = 70
 	icon_state = "c20r"
@@ -98,16 +98,16 @@
 ////// SPAWN BLOCK ///////
 // Изменяем текст и Флавор в спавнер меню, убирая лишнее "биологическое оружие"
 /obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base
-	you_are_text = "You are a Science Technician, employed on a Syndicate research &  resource extraction outpost operated by Interdyne Pharmaceuticals."
+	you_are_text = "You are a Science Technician, employed on a Syndicate research & resource extraction outpost operated by Interdyne Pharmaceuticals."
 	flavour_text = "The Sectorial Command has relayed that Nanotrasen is preparing to conduct mining operations in this sector. They are unaware of Interdyne's allegiance to the Syndicate, and you have been specifically instructed to preserve this cover by any means necessary. Continue your work as best you can while maintaining the facade of neutrality before our common foe."
 /obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base/ice
 	flavour_text = "The Sectorial Command has relayed that Nanotrasen is preparing to conduct mining operations in this sector. They are unaware of Interdyne's allegiance to the Syndicate, and you have been specifically instructed to preserve this cover by any means necessary. Continue your work as best you can while maintaining the facade of neutrality before our common foe."
 /obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base/shaftminer
-	you_are_text = "You are a Shaft Miner, employed on a Syndicate research &  resource extraction outpost operated by Interdyne Pharmaceuticals."
+	you_are_text = "You are a Shaft Miner, employed on a Syndicate research & resource extraction outpost operated by Interdyne Pharmaceuticals."
 /obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base/shaftminer/ice
 	flavour_text = "The Sectorial Command has relayed that Nanotrasen is preparing to conduct mining operations in this sector. They are unaware of Interdyne's allegiance to the Syndicate, and you have been specifically instructed to preserve this cover by any means necessary. Continue your work as best you can while maintaining the facade of neutrality before our common foe."
 /obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base/deck_officer
-	you_are_text = "You are a Deck Officer, employed on a Syndicate research &  resource extraction outpost operated by Interdyne Pharmaceuticals."
+	you_are_text = "You are a Deck Officer, employed on a Syndicate research & resource extraction outpost operated by Interdyne Pharmaceuticals."
 /obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base/deck_officer/ice
 	flavour_text = "The Sectorial Command has relayed that Nanotrasen is preparing to conduct mining operations in this sector. They are unaware of Interdyne's allegiance to the Syndicate, and you have been specifically instructed to preserve this cover by any means necessary. Continue your work as best you can while maintaining the facade of neutrality before our common foe."
 
@@ -118,10 +118,10 @@
 /datum/outfit/interdyne_planetary_base/shaftminer
 	back = /obj/item/storage/backpack/industrial/frontier_colonist
 	backpack_contents = list(
-		/obj/item/storage/box/survival/interdyne=1,
-		/obj/item/storage/box/nif_ghost_box/ghost_role=1,
-		/obj/item/mining_voucher=1,
-		/obj/item/t_scanner/adv_mining_scanner/lesser=1,
+		/obj/item/storage/box/survival/interdyne = 1,
+		/obj/item/storage/box/nif_ghost_box/ghost_role = 1,
+		/obj/item/mining_voucher = 1,
+		/obj/item/t_scanner/adv_mining_scanner/lesser = 1,
 	)
 
 /datum/outfit/interdyne_planetary_base/shaftminer/deckofficer
