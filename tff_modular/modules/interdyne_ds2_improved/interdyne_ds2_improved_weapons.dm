@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/automatic/c20r_interdyne
 	name = "\improper C-20r Special"
-	desc = "A special full-auto version'C-20r', developed with state-of-the-art technology. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstamp."
+	desc = "A special full-auto version of C-20r carabine, designed for planetary combat. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstamp."
 	fire_sound = 'modular_nova/modules/modular_weapons/sounds/rifle_heavy.ogg'
 	fire_sound_volume = 70
 	icon_state = "c20r"
