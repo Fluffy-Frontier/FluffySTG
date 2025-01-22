@@ -1364,6 +1364,7 @@
 	},
 /obj/effect/turf_decal/tile/purple/full,
 /obj/structure/marker_beacon/fuchsia,
+/obj/item/modular_computer/laptop/preset/syndicate/interdyne,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "eq" = (
@@ -1546,7 +1547,7 @@
 "fe" = (
 /obj/effect/turf_decal/tile/purple/full,
 /obj/structure/marker_beacon/fuchsia,
-/obj/machinery/rnd/destructive_analyzer/syndicate,
+/obj/machinery/module_duplicator/ds2,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "ff" = (
@@ -2474,7 +2475,6 @@
 /obj/item/circuitboard/machine/xenoarch_machine/xenoarch_scanner{
 	pixel_y = 3
 	},
-/obj/structure/extinguisher_cabinet/directional/east,
 /obj/effect/turf_decal/tile/purple/full,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
@@ -3633,14 +3633,19 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/light/warm/directional/north,
 /obj/item/storage/toolbox/syndicate,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 1;
+	color = "#adadcd"
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "mP" = (
-/obj/structure/lattice,
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/space/has_grav/nova/des_two/research/robotics)
+/obj/effect/turf_decal/tile/purple/full,
+/obj/machinery/light/warm/directional/north,
+/obj/machinery/atmospherics/components/binary/tank_compressor,
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/space/has_grav/nova/des_two/research)
 "mR" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /obj/machinery/firealarm/directional/south,
@@ -4524,7 +4529,7 @@
 /area/ruin/space/has_grav/nova/des_two/security)
 "qO" = (
 /obj/effect/turf_decal/tile/dark_red/full,
-/obj/machinery/rnd/production/circuit_imprinter/offstation/syndicate,
+/obj/machinery/rnd/destructive_analyzer/ds2,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "qR" = (
@@ -4886,7 +4891,7 @@
 /area/ruin/space/has_grav/nova/des_two/engineering)
 "so" = (
 /obj/effect/turf_decal/tile/dark_red/full,
-/obj/machinery/computer/rdconsole/syndicate{
+/obj/machinery/computer/rdconsole/ds2{
 	dir = 8
 	},
 /turf/open/floor/iron/dark/textured_large,
@@ -5578,7 +5583,7 @@
 /area/ruin/space/has_grav/nova/des_two/service/lounge)
 "uG" = (
 /obj/effect/turf_decal/tile/dark_red/full,
-/obj/machinery/module_duplicator/syndicate,
+/obj/machinery/rnd/production/circuit_imprinter/offstation/ds2,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "uH" = (
@@ -7998,6 +8003,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/dark/full,
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/des_two/engineering)
 "Ec" = (
@@ -10220,7 +10226,7 @@
 "MJ" = (
 /obj/effect/turf_decal/tile/purple/full,
 /obj/structure/marker_beacon/fuchsia,
-/obj/machinery/component_printer/syndicate,
+/obj/machinery/autolathe/hacked/ds2,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "MK" = (
@@ -11045,6 +11051,7 @@
 /obj/structure/closet/l3closet/scientist,
 /obj/effect/turf_decal/tile/purple/full,
 /obj/structure/sign/poster/contraband/blood_geometer/directional/north,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "PL" = (
@@ -12648,7 +12655,7 @@
 /obj/structure/sign/poster/contraband/energy_swords/directional/east,
 /obj/effect/turf_decal/tile/dark_red/full,
 /obj/machinery/light/warm/directional/east,
-/obj/machinery/rnd/production/protolathe/offstation/syndicate,
+/obj/machinery/rnd/production/protolathe/offstation/ds2,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "UU" = (
@@ -12778,7 +12785,7 @@
 /area/ruin/space/has_grav/nova/des_two/security/prison)
 "VN" = (
 /obj/effect/turf_decal/tile/purple/full,
-/obj/machinery/autolathe/hacked/syndicate,
+/obj/machinery/component_printer/ds2,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "VO" = (
@@ -13687,7 +13694,7 @@
 /area/ruin/space/has_grav/nova/des_two/engineering)
 "YZ" = (
 /obj/effect/turf_decal/tile/purple/full,
-/obj/machinery/rnd/server/syndicate,
+/obj/machinery/rnd/server/ds2,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/nova/des_two/research)
 "Zd" = (
@@ -13791,10 +13798,6 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/nova/des_two/bridge)
-"Zp" = (
-/obj/structure/lattice,
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/space/has_grav/nova/des_two/service/lounge)
 "Zq" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -13880,7 +13883,7 @@
 /area/ruin/space/has_grav/nova/des_two/engineering)
 "ZD" = (
 /obj/effect/turf_decal/tile/purple/full,
-/obj/machinery/mecha_part_fabricator/syndicate,
+/obj/machinery/mecha_part_fabricator/ds2,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "ZE" = (
@@ -14318,7 +14321,7 @@ it
 it
 it
 it
-oC
+Xp
 oC
 oC
 Jl
@@ -14374,7 +14377,7 @@ SD
 SD
 SD
 SD
-mP
+oC
 oC
 lE
 zq
@@ -14430,7 +14433,7 @@ it
 it
 it
 it
-oC
+Xp
 oC
 oC
 QJ
@@ -14486,7 +14489,7 @@ SD
 SD
 SD
 SD
-mP
+oC
 oC
 lE
 zq
@@ -14542,7 +14545,7 @@ it
 it
 it
 it
-oC
+Xp
 oC
 lE
 Vt
@@ -15521,7 +15524,7 @@ Qk
 zz
 HV
 HV
-Qk
+mP
 mK
 hs
 qO
@@ -16480,7 +16483,7 @@ it
 it
 it
 it
-zu
+KS
 zu
 Pf
 tl
@@ -16596,7 +16599,7 @@ it
 it
 it
 it
-zu
+KS
 zu
 zu
 qJ
@@ -16654,7 +16657,7 @@ SD
 SD
 SD
 SD
-Zp
+zu
 zu
 zu
 EL
@@ -16712,7 +16715,7 @@ it
 it
 it
 it
-zu
+KS
 zu
 zu
 JC
@@ -16770,7 +16773,7 @@ SD
 SD
 SD
 SD
-Zp
+zu
 zu
 zu
 dP
