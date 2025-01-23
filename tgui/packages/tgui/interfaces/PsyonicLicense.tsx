@@ -1,5 +1,7 @@
+// THIS IS A FLUFFY FRONTIER UI FILE
+import { Icon, Image, LabeledList, Section, Stack } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Icon, Image, LabeledList, Section, Stack } from '../components';
 import { Window } from '../layouts';
 
 type Data = {
