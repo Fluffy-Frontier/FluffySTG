@@ -1,6 +1,5 @@
 // Если сломается - смотрите как реализован интерфейс CommunicationsConsole.jsx
 import { useState } from 'react';
-import { useBackend, useLocalState } from '../backend';
 import {
   Blink,
   Box,
@@ -11,7 +10,9 @@ import {
   Modal,
   Section,
   TextArea,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 import { sanitizeText } from '../sanitize';
 

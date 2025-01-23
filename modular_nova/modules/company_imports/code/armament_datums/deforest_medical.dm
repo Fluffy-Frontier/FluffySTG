@@ -31,6 +31,8 @@
 	item_type = /obj/item/storage/medkit/robotic_repair/preemo/stocked
 	cost = PAYCHECK_COMMAND * 8
 
+// FLUFFY FRONTIER REMOVAL BEGIN: nova vending rebalance #5219
+/*
 /datum/armament_entry/company_import/deforest/first_aid_kit/first_responder
 	item_type = /obj/item/storage/backpack/duffelbag/deforest_surgical/stocked
 	cost = PAYCHECK_COMMAND * 10.5
@@ -42,6 +44,8 @@
 /datum/armament_entry/company_import/deforest/first_aid_kit/technician_satchel
 	item_type = /obj/item/storage/backpack/duffelbag/deforest_paramedic/stocked
 	cost = PAYCHECK_COMMAND * 11.75
+*/
+// FLUFFY FRONTIER REMOVAL END
 
 // Basic first aid supplies like gauze, sutures, mesh, so on
 
@@ -56,9 +60,13 @@
 	item_type = /obj/item/stack/medical/suture
 	cost = PAYCHECK_LOWER
 
+// FLUFFY FRONTIER REMOVAL BEGIN: nova vending rebalance #5219
+/*
 /datum/armament_entry/company_import/deforest/first_aid/medicated_sutures
 	item_type = /obj/item/stack/medical/suture/medicated
 	cost = PAYCHECK_LOWER * 1.6
+*/
+// FLUFFY FRONTIER REMOVAL END
 
 /datum/armament_entry/company_import/deforest/first_aid/red_sun
 	item_type = /obj/item/stack/medical/ointment/red_sun
@@ -72,9 +80,13 @@
 	item_type = /obj/item/stack/medical/mesh
 	cost = PAYCHECK_LOWER
 
+// FLUFFY FRONTIER REMOVAL BEGIN: nova vending rebalance #5219
+/*
 /datum/armament_entry/company_import/deforest/first_aid/advanced_mesh
 	item_type = /obj/item/stack/medical/mesh/advanced
 	cost = PAYCHECK_LOWER * 1.6
+*/
+// FLUFFY FRONTIER REMOVAL END
 
 /datum/armament_entry/company_import/deforest/first_aid/sterile_gauze
 	item_type = /obj/item/stack/medical/gauze/sterilized
@@ -139,8 +151,12 @@
 /datum/armament_entry/company_import/deforest/medpens/lepoturi
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/lepoturi
 
+// FLUFFY FRONTIER REMOVAL BEGIN: nova vending rebalance #5219
+/*
 /datum/armament_entry/company_import/deforest/medpens/psifinil
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/psifinil
+*/
+// FLUFFY FRONTIER REMOVAL END
 
 /datum/armament_entry/company_import/deforest/medpens/halobinin
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/halobinin
@@ -153,7 +169,6 @@
 
 /datum/armament_entry/company_import/deforest/medpens/pentibinin
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/pentibinin
-	contraband = TRUE
 
 // Autoinjectors for fighting
 
@@ -172,21 +187,17 @@
 
 /datum/armament_entry/company_import/deforest/medpens_stim/aranepaine
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/aranepaine
-	contraband = TRUE
 
 /datum/armament_entry/company_import/deforest/medpens_stim/synalvipitol
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/synalvipitol
-	contraband = TRUE
 
 /datum/armament_entry/company_import/deforest/medpens_stim/twitch
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/twitch
 	cost = PAYCHECK_COMMAND * 3
-	contraband = TRUE
 
 /datum/armament_entry/company_import/deforest/medpens_stim/demoneye
 	item_type = /obj/item/reagent_containers/hypospray/medipen/deforest/demoneye
 	cost = PAYCHECK_COMMAND * 3
-	contraband = TRUE
 
 // Equipment, from defibs to scanners to surgical tools
 
