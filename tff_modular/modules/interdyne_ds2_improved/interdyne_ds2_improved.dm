@@ -41,11 +41,6 @@
 	return ..()
 
 ////// PROC BLOCK ///////
-// Делаем функцию по поиску сервера - для дальнейшей слинковки. Ненавижу айсмун.
-#define CONNECT_TO_DYNE_RND_SERVER_ROUNDSTART(server_var, holder) do { \
-	var/datum/techweb/interdyne/station_fallback_web = locate(/datum/techweb/interdyne) in SSresearch.techwebs; \
-	server_var = station_fallback_web; \
-} while (FALSE)
 
 //самое сложное - делаем консоль с раундстарт-линком на Дюносеть. Ненавижу айсмун.
 /obj/item/circuitboard/computer/rdconsole/interdyne
@@ -58,7 +53,8 @@
 
 /obj/machinery/computer/rdconsole/interdyne/post_machine_initialize()
 	. = ..()
-	CONNECT_TO_DYNE_RND_SERVER_ROUNDSTART(stored_research, src)
+	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/interdyne) in SSresearch.techwebs
+	connect_techweb(active_web)
 
 ////// CRAFT BLOCK ///////
 //протолат.
@@ -72,7 +68,8 @@
 
 /obj/machinery/rnd/production/protolathe/offstation/inerdyne/post_machine_initialize()
 	. = ..()
-	CONNECT_TO_DYNE_RND_SERVER_ROUNDSTART(stored_research, src)
+	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/interdyne) in SSresearch.techwebs
+	connect_techweb(active_web)
 	if(stored_research)
 		on_connected_techweb()
 
@@ -96,7 +93,8 @@
 
 /obj/machinery/rnd/production/circuit_imprinter/offstation/interdyne/post_machine_initialize()
 	. = ..()
-	CONNECT_TO_DYNE_RND_SERVER_ROUNDSTART(stored_research, src)
+	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/interdyne) in SSresearch.techwebs
+	connect_techweb(active_web)
 	if(stored_research)
 		on_connected_techweb()
 
@@ -111,7 +109,8 @@
 
 /obj/machinery/mecha_part_fabricator/interdyne/post_machine_initialize()
 	. = ..()
-	CONNECT_TO_DYNE_RND_SERVER_ROUNDSTART(stored_research, src)
+	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/interdyne) in SSresearch.techwebs
+	connect_techweb(active_web)
 	if(stored_research)
 		on_connected_techweb()
 
@@ -126,7 +125,8 @@
 
 /obj/machinery/rnd/destructive_analyzer/interdyne/post_machine_initialize()
 	. = ..()
-	CONNECT_TO_DYNE_RND_SERVER_ROUNDSTART(stored_research, src)
+	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/interdyne) in SSresearch.techwebs
+	connect_techweb(active_web)
 
 // Компонент принтер
 /obj/item/circuitboard/machine/component_printer/interdyne
@@ -139,7 +139,8 @@
 
 /obj/machinery/component_printer/interdyne/post_machine_initialize()
 	. = ..()
-	CONNECT_TO_DYNE_RND_SERVER_ROUNDSTART(techweb, src)
+	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/interdyne) in SSresearch.techwebs
+	connect_techweb(active_web)
 	if(techweb)
 		on_connected_techweb()
 
@@ -188,12 +189,6 @@
 	stored_research = ds2_techweb
 	return ..()
 
-// Делаем функцию по поиску сервера - для дальнейшей слинковки. Ненавижу айсмун.
-#define CONNECT_TO_DS2_RND_SERVER_ROUNDSTART(server_var, holder) do { \
-	var/datum/techweb/ds2/station_fallback_web = locate(/datum/techweb/ds2) in SSresearch.techwebs; \
-	server_var = station_fallback_web; \
-} while (FALSE)
-
 //самое сложное - делаем консоль с раундстарт-линком на Дюносеть. Ненавижу айсмун.
 /obj/item/circuitboard/computer/rdconsole/ds2
 	name = "Cybersun R&D Console"
@@ -205,7 +200,8 @@
 
 /obj/machinery/computer/rdconsole/ds2/post_machine_initialize()
 	. = ..()
-	CONNECT_TO_DS2_RND_SERVER_ROUNDSTART(stored_research, src)
+	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
+	connect_techweb(active_web)
 
 ////// CRAFT BLOCK ///////
 //протолат
@@ -219,7 +215,8 @@
 
 /obj/machinery/rnd/production/protolathe/offstation/ds2/post_machine_initialize()
 	. = ..()
-	CONNECT_TO_DS2_RND_SERVER_ROUNDSTART(stored_research, src)
+	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
+	connect_techweb(active_web)
 	if(stored_research)
 		on_connected_techweb()
 
@@ -243,7 +240,8 @@
 
 /obj/machinery/rnd/production/circuit_imprinter/offstation/ds2/post_machine_initialize()
 	. = ..()
-	CONNECT_TO_DS2_RND_SERVER_ROUNDSTART(stored_research, src)
+	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
+	connect_techweb(active_web)
 	if(stored_research)
 		on_connected_techweb()
 
@@ -258,7 +256,8 @@
 
 /obj/machinery/mecha_part_fabricator/ds2/post_machine_initialize()
 	. = ..()
-	CONNECT_TO_DS2_RND_SERVER_ROUNDSTART(stored_research, src)
+	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
+	connect_techweb(active_web)
 	if(stored_research)
 		on_connected_techweb()
 
@@ -273,7 +272,8 @@
 
 /obj/machinery/rnd/destructive_analyzer/ds2/post_machine_initialize()
 	. = ..()
-	CONNECT_TO_DS2_RND_SERVER_ROUNDSTART(stored_research, src)
+	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
+	connect_techweb(active_web)
 
 // Компонент принтер
 /obj/item/circuitboard/machine/component_printer/ds2
@@ -286,7 +286,8 @@
 
 /obj/machinery/component_printer/ds2/post_machine_initialize()
 	. = ..()
-	CONNECT_TO_DS2_RND_SERVER_ROUNDSTART(techweb, src)
+	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
+	connect_techweb(active_web)
 	if(techweb)
 		on_connected_techweb()
 
