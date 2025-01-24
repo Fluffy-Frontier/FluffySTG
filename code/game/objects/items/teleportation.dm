@@ -358,7 +358,7 @@
 	//How far the emergency teleport checks for a safe position
 	var/parallel_teleport_distance = 3
 	// How much blood lost per teleport (out of base 560 blood)
-	var/bleed_amount = 20
+	var/bleed_amount = 45
 
 /obj/item/syndicate_teleporter/Initialize(mapload)
 	. = ..()
