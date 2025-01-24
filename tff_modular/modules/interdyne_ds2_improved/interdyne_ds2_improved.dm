@@ -74,8 +74,6 @@
 	. = ..()
 	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/interdyne) in SSresearch.techwebs
 	connect_techweb(active_web)
-	if(stored_research)
-		on_connected_techweb()
 
 //Автолат//
 /obj/item/circuitboard/machine/autolathe/interdyne
@@ -99,8 +97,6 @@
 	. = ..()
 	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/interdyne) in SSresearch.techwebs
 	connect_techweb(active_web)
-	if(stored_research)
-		on_connected_techweb()
 
 // меха-фабрикатор
 /obj/item/circuitboard/machine/mechfab/interdyne
@@ -115,8 +111,6 @@
 	. = ..()
 	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/interdyne) in SSresearch.techwebs
 	connect_techweb(active_web)
-	if(stored_research)
-		on_connected_techweb()
 
 // Деструктив-Аналайзер
 /obj/item/circuitboard/machine/destructive_analyzer/interdyne
@@ -145,8 +139,6 @@
 	. = ..()
 	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/interdyne) in SSresearch.techwebs
 	connect_techweb(active_web)
-	if(techweb)
-		on_connected_techweb()
 
 // Дубликатор модулей
 /obj/item/circuitboard/machine/module_duplicator/interdyne
@@ -209,7 +201,7 @@
 
 /obj/machinery/computer/rdconsole/ds2/post_machine_initialize()
 	. = ..()
-	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
+	var/datum/techweb/ds2/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
 	override_default_techweb(active_web)
 
 ////// CRAFT BLOCK ///////
@@ -224,10 +216,8 @@
 
 /obj/machinery/rnd/production/protolathe/offstation/ds2/post_machine_initialize()
 	. = ..()
-	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
+	var/datum/techweb/ds2/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
 	connect_techweb(active_web)
-	if(stored_research)
-		on_connected_techweb()
 
 //Автолат//
 /obj/item/circuitboard/machine/autolathe/ds2
@@ -249,10 +239,8 @@
 
 /obj/machinery/rnd/production/circuit_imprinter/offstation/ds2/post_machine_initialize()
 	. = ..()
-	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
+	var/datum/techweb/ds2/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
 	connect_techweb(active_web)
-	if(stored_research)
-		on_connected_techweb()
 
 // меха-фабрикатор
 /obj/item/circuitboard/machine/mechfab/ds2
@@ -265,10 +253,8 @@
 
 /obj/machinery/mecha_part_fabricator/ds2/post_machine_initialize()
 	. = ..()
-	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
+	var/datum/techweb/ds2/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
 	connect_techweb(active_web)
-	if(stored_research)
-		on_connected_techweb()
 
 // Деструктив-Аналайзер
 /obj/item/circuitboard/machine/destructive_analyzer/ds2
@@ -281,7 +267,7 @@
 
 /obj/machinery/rnd/destructive_analyzer/ds2/post_machine_initialize()
 	. = ..()
-	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
+	var/datum/techweb/ds2/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
 	connect_techweb(active_web)
 
 // Компонент принтер
@@ -295,10 +281,8 @@
 
 /obj/machinery/component_printer/ds2/post_machine_initialize()
 	. = ..()
-	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
+	var/datum/techweb/ds2/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
 	connect_techweb(active_web)
-	if(techweb)
-		on_connected_techweb()
 
 // Дубликатор модулей
 /obj/item/circuitboard/machine/module_duplicator/ds2
