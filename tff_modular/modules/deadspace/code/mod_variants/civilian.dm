@@ -83,6 +83,15 @@
 		),
 	)
 
+/datum/mod_theme/civilian/set_skin(obj/item/mod/control/mod, skin)
+	. = ..()
+	var/list/custom_skins = list("adv", "astro", "emergency")
+	var/is_digi_skin = custom_skins.Find(skin)
+	if(is_digi_skin)
+		for(var/obj/item/clothing/mod_part in mod.get_parts())
+			if(istype(mod_part, /obj/item/clothing/suit) || istype(mod_part, /obj/item/clothing/shoes))
+				mod_part.worn_icon_digi = 'tff_modular/modules/deadspace/icons/mob/clothing/mod_clothing_mutant.dmi'
+
 /datum/mod_theme/cosmohonk/New()
 	variants += list(
 		"clown" = list(
@@ -113,3 +122,10 @@
 			),
 		),
 	)
+
+/datum/mod_theme/cosmohonk/set_skin(obj/item/mod/control/mod, skin)
+	. = ..()
+	if(skin == "clown")
+		for(var/obj/item/clothing/mod_part in mod.get_parts())
+			if(istype(mod_part, /obj/item/clothing/suit) || istype(mod_part, /obj/item/clothing/shoes))
+				mod_part.worn_icon_digi = 'tff_modular/modules/deadspace/icons/mob/clothing/mod_clothing_mutant.dmi'

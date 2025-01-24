@@ -28,3 +28,10 @@
 			),
 		),
 	)
+
+/datum/mod_theme/mining/set_skin(obj/item/mod/control/mod, skin)
+	. = ..()
+	if(skin == "hacker")
+		for(var/obj/item/clothing/mod_part in mod.get_parts())
+			if(istype(mod_part, /obj/item/clothing/suit) || istype(mod_part, /obj/item/clothing/shoes) )
+				mod_part.worn_icon_digi = 'tff_modular/modules/deadspace/icons/mob/clothing/mod_clothing_mutant.dmi'
