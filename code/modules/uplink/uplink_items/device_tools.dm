@@ -66,7 +66,7 @@
 	cost = 1
 	surplus = 20
 
-/* // NOVA EDIT REMOVAL
+// // NOVA EDIT REMOVAL START // FF edit begin - reverted it back
 /datum/uplink_item/device_tools/briefcase_launchpad
 	name = "Briefcase Launchpad"
 	desc = "A briefcase containing a launchpad, a device able to teleport items and people to and from targets up to eight tiles away from the briefcase. \
@@ -83,8 +83,7 @@
 			Comes with 4 charges, recharges randomly. Warranty null and void if exposed to an electromagnetic pulse."
 	item = /obj/item/storage/box/syndie_kit/syndicate_teleporter
 	cost = 8
-*/ //END NOVA EDIT
-
+// // NOVA EDIT REMOVAL START // FF edit end - reverted it back
 /datum/uplink_item/device_tools/camera_app
 	name = "SyndEye Program"
 	desc = "A data disk containing a unique PC app that allows you to watch cameras and track crewmembers."
