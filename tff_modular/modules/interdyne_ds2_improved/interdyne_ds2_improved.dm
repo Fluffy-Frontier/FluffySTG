@@ -50,10 +50,12 @@
 	name = "Interdyne R&D Console"
 	circuit = /obj/item/circuitboard/computer/rdconsole/interdyne
 
-/obj/machinery/computer/rdconsole/interdyne/proc/override_default_techweb(datum/techweb/new_techweb)
+/obj/machinery/computer/rdconsole/proc/override_default_techweb(datum/techweb/new_techweb)
 	if(stored_research)
+		stored_research.consoles_accessing -= src
 		log_research("[src] disconnected from techweb [stored_research] when connected to [new_techweb].")
 	stored_research = new_techweb
+	stored_research.consoles_accessing += src
 
 /obj/machinery/computer/rdconsole/interdyne/post_machine_initialize()
 	. = ..()
@@ -194,10 +196,6 @@
 	name = "Cybersun R&D Console"
 	circuit = /obj/item/circuitboard/computer/rdconsole/ds2
 
-/obj/machinery/computer/rdconsole/ds2/proc/override_default_techweb(datum/techweb/new_techweb)
-	if(stored_research)
-		log_research("[src] disconnected from techweb [stored_research] when connected to [new_techweb].")
-	stored_research = new_techweb
 
 /obj/machinery/computer/rdconsole/ds2/post_machine_initialize()
 	. = ..()
