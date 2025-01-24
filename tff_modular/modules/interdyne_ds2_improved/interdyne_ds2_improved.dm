@@ -41,7 +41,6 @@
 	return ..()
 
 ////// PROC BLOCK ///////
-
 //самое сложное - делаем консоль с раундстарт-линком на Дюносеть. Ненавижу айсмун.
 /obj/item/circuitboard/computer/rdconsole/interdyne
 	name = "Interdyne R&D Console"
@@ -51,10 +50,15 @@
 	name = "Interdyne R&D Console"
 	circuit = /obj/item/circuitboard/computer/rdconsole/interdyne
 
+/obj/machinery/computer/rdconsole/interdyne/proc/override_default_techweb(datum/techweb/new_techweb)
+	if(stored_research)
+		log_research("[src] disconnected from techweb [stored_research] when connected to [new_techweb].")
+	stored_research = new_techweb
+
 /obj/machinery/computer/rdconsole/interdyne/post_machine_initialize()
 	. = ..()
 	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/interdyne) in SSresearch.techwebs
-	connect_techweb(active_web)
+	override_default_techweb(active_web)
 
 ////// CRAFT BLOCK ///////
 //протолат.
@@ -198,10 +202,15 @@
 	name = "Cybersun R&D Console"
 	circuit = /obj/item/circuitboard/computer/rdconsole/ds2
 
+/obj/machinery/computer/rdconsole/ds2/proc/override_default_techweb(datum/techweb/new_techweb)
+	if(stored_research)
+		log_research("[src] disconnected from techweb [stored_research] when connected to [new_techweb].")
+	stored_research = new_techweb
+
 /obj/machinery/computer/rdconsole/ds2/post_machine_initialize()
 	. = ..()
 	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/ds2) in SSresearch.techwebs
-	connect_techweb(active_web)
+	override_default_techweb(active_web)
 
 ////// CRAFT BLOCK ///////
 //протолат
