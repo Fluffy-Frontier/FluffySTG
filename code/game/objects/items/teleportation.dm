@@ -358,7 +358,7 @@
 	//How far the emergency teleport checks for a safe position
 	var/parallel_teleport_distance = 3
 	// How much blood lost per teleport (out of base 560 blood)
-	var/bleed_amount = 45
+	var/bleed_amount = 20
 
 /obj/item/syndicate_teleporter/Initialize(mapload)
 	. = ..()
@@ -380,7 +380,7 @@
 	return TRUE
 
 /obj/item/syndicate_teleporter/process(seconds_per_tick, times_fired)
-	if(SPT_PROB(3, seconds_per_tick) && charges < max_charges)
+	if(SPT_PROB(10, seconds_per_tick) && charges < max_charges)
 		charges++
 		if(ishuman(loc))
 			var/mob/living/carbon/human/holder = loc
