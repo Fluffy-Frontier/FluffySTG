@@ -1,4 +1,6 @@
-// // NOVA EDIT REMOVAL START // FF edit begin - reverted it back
+//// реверт удалений из \code\modules\uplink\uplink_items\device_tools.dm
+
+ // NOVA EDIT REMOVAL START // FF edit begin - reverted it back
 /datum/uplink_item/device_tools/briefcase_launchpad
 	name = "Briefcase Launchpad"
 	desc = "A briefcase containing a launchpad, a device able to teleport items and people to and from targets up to eight tiles away from the briefcase. \

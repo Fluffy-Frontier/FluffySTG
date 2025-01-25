@@ -1,4 +1,6 @@
-// // NOVA EDIT REMOVAL START // FF edit begin - reverted it back
+
+// реверт удалений из d:\gut\FluffySTG1\code\modules\uplink\uplink_items\explosive.dm
+//  // NOVA EDIT REMOVAL START // FF edit begin - reverted it back
 /datum/uplink_item/explosives/detomatix
 	name = "Detomatix disk"
 	desc = "When inserted into a tablet, this cartridge gives you four opportunities to \
