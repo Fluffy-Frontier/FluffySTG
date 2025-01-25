@@ -106,3 +106,25 @@
 	cost = 5
 	item = /obj/item/grenade/spawnergrenade/cat
 	surplus = 30
+
+/datum/uplink_item/dangerous/aps_traitor
+	name = "Stechkin APS Machine Pistol"
+	desc = "An ancient Soviet machine pistol, refurbished for the modern age. Uses 9mm auto rounds in 15-round magazines and is compatible \
+			with suppressors. The gun fires in three round bursts."
+	item = /obj/item/gun/ballistic/automatic/pistol/aps
+	cost = 10
+
+/datum/uplink_item/dangerous/smgc20r_traitor
+	name = "C-20r Submachine Gun"
+	desc = "A fully-loaded Scarborough Arms bullpup submachine gun. The C-20r fires .45 rounds with a \
+			24-round magazine and is compatible with suppressors."
+	item = /obj/item/gun/ballistic/automatic/c20r/unrestricted
+	cost = 12
+
+/datum/uplink_item/dangerous/shotgun_traitor
+	name = "Bulldog Shotgun"
+	desc = "A fully-loaded semi-automatic drum-fed shotgun. Compatible with all 12g rounds. Designed for close \
+			quarter anti-personnel engagements."
+	item = /obj/item/gun/ballistic/shotgun/bulldog/unrestricted
+	cost = 12
+	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
