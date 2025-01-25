@@ -66,7 +66,7 @@
 	cost = 1
 	surplus = 20
 
-/* // NOVA EDIT REMOVAL
+// // NOVA EDIT REMOVAL START // FF edit begin - reverted it back
 /datum/uplink_item/device_tools/briefcase_launchpad
 	name = "Briefcase Launchpad"
 	desc = "A briefcase containing a launchpad, a device able to teleport items and people to and from targets up to eight tiles away from the briefcase. \
@@ -82,8 +82,9 @@
 			however if that fails, you may need to be stitched back together. \
 			Comes with 4 charges, recharges randomly. Warranty null and void if exposed to an electromagnetic pulse."
 	item = /obj/item/storage/box/syndie_kit/syndicate_teleporter
+	limited_stock = 1
 	cost = 8
-*/ //END NOVA EDIT
+// // NOVA EDIT REMOVAL END // FF edit End - reverted it back
 
 /datum/uplink_item/device_tools/camera_app
 	name = "SyndEye Program"
@@ -177,7 +178,7 @@
 	cost = 3
 	purchasable_from = ~UPLINK_ALL_SYNDIE_OPS
 
-/* NOVA EDIT REMOVAL - It's laggy and doesn't really add much roleplay value
+// // NOVA EDIT REMOVAL START // FF edit begin - reverted it back
 /datum/uplink_item/device_tools/suspiciousphone
 	name = "Protocol CRAB-17 Phone"
 	desc = "The Protocol CRAB-17 Phone, a phone borrowed from an unknown third party, it can be used to crash the space market, funneling the losses of the crew to your bank account.\
@@ -186,7 +187,7 @@
 	restricted = TRUE
 	cost = 7
 	limited_stock = 1
-*/ // NOVA EDIT REMOVAL END
+// // NOVA EDIT REMOVAL END // FF edit End - reverted it back
 
 /datum/uplink_item/device_tools/binary
 	name = "Binary Translator Key"
