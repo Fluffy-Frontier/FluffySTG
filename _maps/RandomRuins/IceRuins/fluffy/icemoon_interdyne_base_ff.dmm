@@ -1828,10 +1828,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/end{
 	dir = 4
 	},
-/obj/item/radio/intercom/directional/north{
-	name = "Interdyne intercom";
-	frequency = 1487
-	},
+/obj/item/radio/intercom/interdyne/directional/north,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "jT" = (
@@ -2162,10 +2159,7 @@
 	dir = 6
 	},
 /obj/effect/turf_decal/weather/snow,
-/obj/item/radio/intercom/directional/south{
-	frequency = 1487;
-	name = "Interdyne intercom"
-	},
+/obj/item/radio/intercom/interdyne/directional/south,
 /turf/open/floor/engine/hull/reinforced/icemoon,
 /area/ruin/interdyne_planetary_base/cargo)
 "mr" = (
@@ -2839,10 +2833,6 @@
 /obj/structure/flora/bush/fullgrass/style_random,
 /obj/structure/flora/tree/jungle/small/style_random,
 /obj/structure/marker_beacon/teal,
-/obj/item/radio/intercom/directional/east{
-	frequency = 1487;
-	name = "Interdyne intercom"
-	},
 /turf/open/floor/grass,
 /area/ruin/interdyne_planetary_base/main)
 "pp" = (
@@ -3637,6 +3627,7 @@
 /area/ruin/interdyne_planetary_base/science)
 "ux" = (
 /obj/effect/turf_decal/tile/dark/full,
+/obj/item/radio/intercom/interdyne/directional/north,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/interdyne_planetary_base/main/vault)
 "uA" = (
@@ -4028,10 +4019,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 4
 	},
-/obj/item/radio/intercom/directional/east{
-	frequency = 1487;
-	name = "Interdyne intercom"
-	},
+/obj/item/radio/intercom/interdyne/directional/east,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv)
 "wF" = (
@@ -4407,10 +4395,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/obj/item/radio/intercom/directional/east{
-	frequency = 1487;
-	name = "Interdyne intercom"
-	},
+/obj/item/radio/intercom/interdyne/directional/east,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
 "yP" = (
@@ -6589,10 +6574,7 @@
 	color = "#adadcd";
 	light_color = "#adadcd"
 	},
-/obj/item/radio/intercom/directional/north{
-	name = "Interdyne intercom";
-	frequency = 1487
-	},
+/obj/item/radio/intercom/interdyne/directional/north,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "LR" = (
@@ -6790,10 +6772,6 @@
 	id = "interdynernd";
 	name = "Interdyne Storm Shutters RnD";
 	pixel_x = 24
-	},
-/obj/item/radio/intercom/directional/east{
-	frequency = 1487;
-	name = "Interdyne intercom"
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
@@ -7126,10 +7104,7 @@
 	},
 /obj/structure/hedge,
 /obj/item/decoration/new_year/garland,
-/obj/item/radio/intercom/directional/north{
-	name = "Interdyne intercom";
-	frequency = 1487
-	},
+/obj/item/radio/intercom/interdyne/directional/north,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "Pw" = (
@@ -7596,10 +7571,7 @@
 	name = "Interdyne smart organ storage";
 	light_color = "#adadcd"
 	},
-/obj/item/radio/intercom/directional/east{
-	frequency = 1487;
-	name = "Interdyne intercom"
-	},
+/obj/item/radio/intercom/interdyne/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "Tl" = (
@@ -7618,6 +7590,7 @@
 /obj/structure/chair/sofa/corp/left{
 	dir = 8
 	},
+/obj/item/radio/intercom/interdyne/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "Tm" = (
@@ -7666,9 +7639,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
-/obj/item/radio/intercom/syndicate/directional/east{
-	frequency = 1487
-	},
+/obj/item/radio/intercom/interdyne/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "Tw" = (
@@ -8289,10 +8260,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/item/radio/intercom/directional/east{
-	frequency = 1487;
-	name = "Interdyne intercom"
-	},
+/obj/item/radio/intercom/interdyne/directional/east,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
 "WK" = (
@@ -10895,7 +10863,7 @@ yQ
 ph
 El
 pk
-WK
+yM
 gs
 yB
 gh

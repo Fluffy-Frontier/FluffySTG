@@ -520,10 +520,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/radio/intercom/directional/east{
-	frequency = 1487;
-	name = "Interdyne intercom"
-	},
+/obj/item/radio/intercom/interdyne/directional/east,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv)
 "cS" = (
@@ -822,10 +819,7 @@
 	name = "Interdyne smart organ storage";
 	light_color = "#adadcd"
 	},
-/obj/item/radio/intercom/directional/east{
-	frequency = 1487;
-	name = "Interdyne intercom"
-	},
+/obj/item/radio/intercom/interdyne/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "eA" = (
@@ -919,20 +913,14 @@
 /obj/effect/turf_decal/trimline/dark/filled/end{
 	dir = 4
 	},
-/obj/item/radio/intercom/directional/north{
-	name = "Interdyne intercom";
-	frequency = 1487
-	},
+/obj/item/radio/intercom/interdyne/directional/north,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "fj" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/obj/item/radio/intercom/directional/east{
-	frequency = 1487;
-	name = "Interdyne intercom"
-	},
+/obj/item/radio/intercom/interdyne/directional/east,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
 "fm" = (
@@ -3635,10 +3623,7 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/sand/plating/volcanic,
-/obj/item/radio/intercom/directional/south{
-	frequency = 1487;
-	name = "Interdyne intercom"
-	},
+/obj/item/radio/intercom/interdyne/directional/south,
 /turf/open/floor/engine/hull/reinforced/lavaland,
 /area/ruin/interdyne_planetary_base/cargo)
 "vJ" = (
@@ -4394,6 +4379,7 @@
 /area/ruin/interdyne_planetary_base/science)
 "Ao" = (
 /obj/effect/turf_decal/tile/dark/full,
+/obj/item/radio/intercom/interdyne/directional/north,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/interdyne_planetary_base/main/vault)
 "Ap" = (
@@ -5730,6 +5716,13 @@
 	},
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
+"IZ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/item/radio/intercom/interdyne/directional/east,
+/turf/open/floor/wood/large,
+/area/ruin/interdyne_planetary_base/main)
 "Jh" = (
 /obj/item/serviette_pack,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
@@ -6210,10 +6203,7 @@
 	},
 /obj/structure/hedge,
 /obj/item/decoration/new_year/garland,
-/obj/item/radio/intercom/directional/north{
-	name = "Interdyne intercom";
-	frequency = 1487
-	},
+/obj/item/radio/intercom/interdyne/directional/north,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "LX" = (
@@ -6309,10 +6299,7 @@
 	color = "#adadcd";
 	light_color = "#adadcd"
 	},
-/obj/item/radio/intercom/directional/north{
-	name = "Interdyne intercom";
-	frequency = 1487
-	},
+/obj/item/radio/intercom/interdyne/directional/north,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "Mr" = (
@@ -6415,10 +6402,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
-/obj/item/radio/intercom/directional/east{
-	frequency = 1487;
-	name = "Interdyne intercom"
-	},
+/obj/item/radio/intercom/interdyne/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "Nf" = (
@@ -7663,10 +7647,7 @@
 /obj/structure/chair/sofa/corp/left{
 	dir = 8
 	},
-/obj/item/radio/intercom/directional/east{
-	frequency = 1487;
-	name = "Interdyne intercom"
-	},
+/obj/item/radio/intercom/interdyne/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "TT" = (
@@ -8162,10 +8143,7 @@
 /obj/structure/flora/bush/fullgrass/style_random,
 /obj/structure/flora/tree/jungle/small/style_random,
 /obj/structure/marker_beacon/teal,
-/obj/item/radio/intercom/directional/east{
-	frequency = 1487;
-	name = "Interdyne intercom"
-	},
+/obj/item/radio/intercom/interdyne/directional/east,
 /turf/open/floor/grass,
 /area/ruin/interdyne_planetary_base/main)
 "WW" = (
@@ -10781,7 +10759,7 @@ MJ
 bS
 pk
 El
-El
+IZ
 El
 gV
 fK
