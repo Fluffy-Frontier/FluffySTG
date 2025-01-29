@@ -10,6 +10,13 @@
 	worn_icon = 'modular_nova/modules/deforest_medical_items/icons/worn/worn.dmi'
 	worn_icon_teshari = 'modular_nova/modules/deforest_medical_items/icons/worn/worn_teshari.dmi'
 
+/obj/item/storage/medkit/tac_security/Initialize(mapload)
+	. = ..()
+	atom_storage.max_specific_storage = WEIGHT_CLASS_NORMAL //holds the same equipment as a medibelt
+	atom_storage.max_slots = 6
+	atom_storage.max_total_storage = 12
+	atom_storage.set_holdable(list_of_everything_medkits_can_hold)
+
 /obj/item/storage/medkit/tac_security/PopulateContents()
 	if(empty)
 		return
