@@ -1863,12 +1863,6 @@
 	dir = 9
 	},
 /obj/structure/marker_beacon/burgundy,
-/obj/item/storage/box/syndie_kit/chameleon/ghostcafe{
-	desc = "It's a box, for storing things.";
-	name = "chameleon kit";
-	pixel_x = -8;
-	pixel_y = 8
-	},
 /obj/structure/sign/poster/contraband/c20r/directional/west,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/interdyne_planetary_base/main)
@@ -2368,14 +2362,10 @@
 	dir = 8
 	},
 /obj/structure/marker_beacon/burgundy,
-/obj/item/storage/toolbox/guncase/interdyne/vks017{
-	pixel_x = 5;
-	pixel_y = 6
+/obj/item/storage/toolbox/guncase/interdyne/wt550{
+	pixel_y = 7
 	},
-/obj/item/storage/toolbox/guncase/interdyne/vks017{
-	pixel_x = 5;
-	pixel_y = -6
-	},
+/obj/item/storage/toolbox/guncase/interdyne/wt550,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/interdyne_planetary_base/main)
 "nB" = (
@@ -3648,12 +3638,9 @@
 	req_access = list("syndicate_leader")
 	},
 /obj/structure/marker_beacon/burgundy,
-/obj/item/modular_computer/pda/syndicate,
+/obj/item/modular_computer/pda/assistant,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/interdyne_planetary_base/main/vault)
-"vR" = (
-/turf/open/floor/wood/large,
-/area/ruin/interdyne_planetary_base/main)
 "vS" = (
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /obj/effect/turf_decal/trimline/dark/filled/corner{
@@ -4425,12 +4412,12 @@
 /turf/open/floor/carpet/red,
 /area/ruin/interdyne_planetary_base/serv)
 "AN" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
 "AQ" = (
@@ -5856,14 +5843,10 @@
 	dir = 8
 	},
 /obj/structure/marker_beacon/burgundy,
-/obj/item/storage/toolbox/guncase/interdyne/c20r{
-	pixel_x = 5;
-	pixel_y = -6
+/obj/item/storage/toolbox/guncase/nova/carwo_large_case/sindano/evil{
+	pixel_y = 7
 	},
-/obj/item/storage/toolbox/guncase/interdyne/c20r{
-	pixel_x = 5;
-	pixel_y = 6
-	},
+/obj/item/storage/toolbox/guncase/nova/carwo_large_case/sindano/evil,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/interdyne_planetary_base/main)
 "JV" = (
@@ -9981,7 +9964,7 @@ hk
 qR
 ec
 AN
-vR
+El
 El
 vF
 kg
@@ -10039,7 +10022,7 @@ bp
 Sg
 Pl
 Om
-bS
+Fs
 Jn
 Jn
 CM
@@ -10098,7 +10081,7 @@ kP
 Pl
 PP
 vm
-Fs
+pq
 CM
 eb
 Xo
