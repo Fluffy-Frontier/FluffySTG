@@ -1,9 +1,16 @@
 /obj/item/gun/ballistic/automatic/wt550/evil
-	desc = "Light-weight and fully automatic. Uses 4.6x30mm rounds."
+	name = "\improper C-20A carabine"
+	desc = "A lightweight, fully automatic variant of C-20r SMG designed for planetary combat. Uses 4.6x30mm rounds."
 	pin = /obj/item/firing_pin/implant/pindicate
+	fire_sound = 'modular_nova/modules/modular_weapons/sounds/rifle_heavy.ogg'
+	fire_sound_volume = 70
+	icon_state = "c20r"
+	inhand_icon_state = "c20r"
 	recoil = 0.2
 
 /obj/item/gun/ballistic/shotgun/riot/sol/evil/special
+	name = "\improper Krait Shotgun"
+	desc = "A simplified variant of the SolFed Renoster Shotgun designed by Gorlex Marauders. While cheaper in production, it does come with worse ergonimics and greater recoil."
 	recoil = 1
 
 // делаем ящик
