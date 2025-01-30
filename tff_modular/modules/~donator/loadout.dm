@@ -202,9 +202,9 @@
 /datum/loadout_item/toys/duo
 	name = "Duo plushie"
 	item_path= /obj/item/toy/plush/tff/soulmates/duo
-	donator_only = TRUE
+	ckeywhitelist = list("SnakeKongar")
 
 /datum/loadout_item/toys/amy
 	name = "Amy plushie"
 	item_path= /obj/item/toy/plush/tff/soulmates/amy
-	donator_only = TRUE
+	ckeywhitelist = list("PadreTheTroll")
