@@ -1732,3 +1732,90 @@
 2025-01-24:
   FeenieRU:
   - bugfix: radial menu for police cap
+2025-01-26:
+  mogeoko:
+  - rscadd: New deadspace mods variants are now available
+2025-01-27:
+  FeenieRU:
+  - balance: objective cats, dogs and foxes now bulky and won't fit in bag, and it's
+      easier for traitors to find them
+  Mezzmerr:
+  - rscdel: After receiving letters of complaint regarding "arson" and "collateral
+      damage," the manufacturers of .460 Ceres incendiary rounds have opted to remove
+      the massive fire trail the round leaves in flight.
+  - rscadd: Added "Psychiatric Hold Prisoner" as an alternate job title for Prisoner.
+2025-01-28:
+  FeenieRU:
+  - qol: now you can choose your character in Charlie Station spawner.
+  Mezzmerr:
+  - rscadd: Replaced the Bogseo gunset in the Blueshield's gun beacon with a gunset
+      for the NT20, a new, slightly nerfed variant of the C20-r.
+  - rscadd: Added .460 Ceres SMG magazines to the Security lathe.
+  Myphicbowser:
+  - rscadd: Rogues; Descendants of the Mysterious Abductors are now employed by Nanotrasen,
+      sure they have three fingers and most are missing vocal cords, but they can
+      still work!
+  OrbisAnima:
+  - balance: Xenoarch rewards were slightly adjusted, legion cores that appear in
+      it are now pre stabilized so they have an actual impact on the game.
+  RatFromTheJungle:
+  - rscadd: Added advanced (taser+disabler) taser's to the security vendor (3) and
+      company imports.
+  - balance: heavily toned back tasers(electrodes), and removed a modular-confusion
+      effect that they had, for some reason.
+  Zergspower:
+  - qol: added custom hat offsets for the majority of borg models
+  - bugfix: fixes borg hats on some models floating
+2025-01-29:
+  FeenieRU:
+  - bugfix: NT20 kit was added to Blueshield beacon
+  FlufflesTheDog:
+  - bugfix: Subdermal splints, rapid coagulant applicators, and robot repair sprays
+      should now work again
+  - bugfix: Department batons are no longer invisible
+  Hatterhat:
+  - bugfix: 9mm magazines (e.g. the Makarov) are no longer invisible.
+  - balance: .35 Sol Short extended magazines are now small-sized, and thus fit in
+      boxes or belts with less finagling.
+  - balance: The Makarov guncase from the uplink is now normal-sized, and thus fits
+      in backpacks.
+  MrSunabouzu:
+  - qol: cin surplus undersuit now comes with sensors.
+  OrbisAnima:
+  - qol: Removed Bounce from the P207 rounds (Kinetic Balls gun). Increased Magazine
+      size by 50% for the P207.
+  Stalkeros, Moldb for the sprites:
+  - image: Removes two pixels from the akula snout.
+  Trelus:
+  - rscadd: Added the 'Zashch' self-loading pistol, as well as an entry for purchasing
+      it from cargo's NRI supply company import
+  - rscadd: Added the Zashch pistol magazine, as well as an entry for purchasing it
+      from cargo's NRI supply company import
+  Zergspower:
+  - balance: blob point generation returned to baseline of 2
+2025-01-30:
+  FeenieRU:
+  - bugfix: Fixed Stihar's PadreTheTroll's plushes ckey whitelist
+  - balance: returned contraband and restricted status to some guns like antimaterial
+      rifle
+  FlufflesTheDog:
+  - bugfix: Synths can use the IRN Imports tab on their internal computers
+  - bugfix: Requests through company imports have a name associated with them
+  Myphicbowser:
+  - rscadd: Added Engineering and Cyborg Skillchips
+  - rscadd: Added Medbay with a basic Chemistry Setup
+  - rscadd: Added a pre-built Cyborg Body
+  - qol: Removed cut AI wire from all doors
+  OrbisAnima:
+  - qol: Turns off by default the Soulcatcher and talking of the Hoshi and the Hyeseong.
+      They are still usable, just not out of the box, the user has to manually turn
+      them on.
+  OrionTheFox:
+  - qol: Atmospherics/Station Alerts Consoles can now be set to only display station
+      (+mining station) areas. Station-mapped ones are set to this by default. Use
+      a multitool on the circuitboard to toggle between z-level or station-area tracking!
+  - bugfix: 'In turn, Atmospherics Alert Consoles now actually show the whole of multi-z
+      stations instead of ignoring other z-levels /:cl:'
+  vinylspiders:
+  - bugfix: fixes sound preferences not being respected.
+  - bugfix: radio headset volume slider is now functional
