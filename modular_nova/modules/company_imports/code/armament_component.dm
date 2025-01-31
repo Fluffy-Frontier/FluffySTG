@@ -147,9 +147,6 @@
 		ui = new(user, src, "CargoImportConsole")
 		ui.open()
 
-/datum/component/armament/company_imports/ui_status(mob/user, datum/ui_state/state)
-	return parent.ui_status(user, state)
-
 /datum/component/armament/company_imports/select_armament(mob/user, datum/armament_entry/company_import/armament_entry)
 	var/datum/bank_account/buyer = SSeconomy.get_dep_account(ACCOUNT_CAR)
 	var/obj/item/modular_computer/possible_downloader
@@ -227,7 +224,7 @@
 	if(issilicon(user))
 		name = user.real_name
 	else
-		name = the_person.get_authentification_name()
+		the_person.get_authentification_name()
 
 	var/reason = ""
 

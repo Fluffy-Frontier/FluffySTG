@@ -253,9 +253,3 @@
 			<br> \
 			<i>- KB</i><br> \
 			Director of Xenoarchaeological Studies"}
-
-/obj/item/organ/monster_core/regenerative_core/legion/preserved
-
-/obj/item/organ/monster_core/regenerative_core/legion/preserved/Initialize(mapload)
-	. = ..()
-	src.preserve()

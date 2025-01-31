@@ -2,6 +2,5 @@
 	design_ids += list(
 		"kineticballs",
 		"pepperballs",
-		"mag_c20r",
 	)
 	return ..()

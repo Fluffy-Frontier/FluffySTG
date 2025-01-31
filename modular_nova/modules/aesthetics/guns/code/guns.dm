@@ -522,7 +522,6 @@
 
 /obj/projectile/bullet/incendiary/c45
 	name = ".460 incendiary bullet"
-	leaves_fire_trail = FALSE
 
 /obj/projectile/bullet/c46x30mm
 	name = "8mm Usurpator bullet"
