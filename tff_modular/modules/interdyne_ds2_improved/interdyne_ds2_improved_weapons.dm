@@ -37,6 +37,13 @@
 	name = "\improper Krait Shotgun"
 	desc = "A simplified variant of the SolFed Renoster Shotgun designed by Gorlex Marauders. While cheaper in production, it does come with worse ergonimics and greater recoil."
 	recoil = 1
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/shot/riot/evil_special
+
+/obj/item/ammo_box/magazine/internal/shot/riot/evil_special
+	ammo_type = /obj/item/ammo_casing/shotgun/hunter
+
+/obj/item/gun/ballistic/shotgun/riot/sol/evil/special/give_manufacturer_examine()
+	AddElement(/datum/element/manufacturer_examine, COMPANY_REMOVED)
 
 // делаем ящик
 /obj/item/storage/toolbox/guncase/interdyne
