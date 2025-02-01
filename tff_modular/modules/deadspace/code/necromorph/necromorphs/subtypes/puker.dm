@@ -89,7 +89,7 @@
 	icon_state = "acid_large"
 
 	damage = 10
-	speed = 0.8
+	speed = 1.4
 
 /obj/projectile/bullet/biobomb/puker_longshot/on_hit(atom/target, blocked, pierce_hit)
 	. = ..()
@@ -131,7 +131,7 @@
 	icon_state = "acid_large"
 
 	damage = 6
-	speed = 0.8
+	speed = 1.4
 
 /obj/projectile/bullet/biobomb/puker_snapshot/on_hit(atom/target, blocked, pierce_hit)
 	. = ..()

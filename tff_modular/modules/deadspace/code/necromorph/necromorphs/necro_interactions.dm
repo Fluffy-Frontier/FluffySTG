@@ -8,17 +8,6 @@
 /obj/structure/necromorph/attack_necromorph(mob/living/carbon/human/necromorph/user, list/modifiers)
 	return //necros should not damage it except in specific instances
 
-//Placeholder for necromorph wall growths, uncomment when in
-/*/obj/structure/necromorph/wall/attack_necromorph(mob/living/carbon/human/necromorph/user, list/modifiers, dealt_damage)
-	if(user.combat_mode)
-		dealt_damage = rand(user.melee_damage_lower, user.melee_damage_upper)
-		user.do_attack_animation(src, "smash")
-		user.play_necro_sound(SOUND_ATTACK, VOLUME_MID, 1, 3)
-		attack_generic(user, dealt_damage, BRUTE, MELEE, TRUE)
-		return //Necro walls can be attacked by necros
-	else
-		return */
-
 //Ladders
 /obj/structure/ladder/attack_necromorph(mob/living/carbon/human/necromorph/user, list/modifiers)
 	return use(user)

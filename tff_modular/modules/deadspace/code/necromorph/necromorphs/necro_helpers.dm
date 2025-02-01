@@ -21,12 +21,6 @@
 
 	return TRUE
 
-/mob/living/carbon/human/necromorph/proc/generate_name()
-	//We don't have a nicknumber yet, assign one to stick with us
-	if(!nicknumber)
-		nicknumber = rand(1, 999)
-	fully_replace_character_name(real_name, nicknumber)//initial(class.display_name [nicknumber])
-
 /mob/living/carbon/human/necromorph/proc/play_necro_sound(audio_type, volume, vary, extra_range)
 	CRASH("play_necro_sound() wasn't overriden")
 

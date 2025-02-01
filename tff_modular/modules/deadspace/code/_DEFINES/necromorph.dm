@@ -1,3 +1,8 @@
+#define isnecromorph(A) (is_species(A, /datum/species/necromorph))
+
+// Anything aboe this layer is not "on" a turf for the purposes of washing
+#define NECROMORPH_CORRUPTION_LAYER 2.56
+
 // Subsystems Fire
 #define FIRE_PRIORITY_CORRUPTION 34
 
@@ -44,3 +49,14 @@
 #define SPECIES_NECROMORPH_EXPLODER_ENHANCED_LEFT "enhanced_left_exploder"
 #define SPECIES_NECROMORPH_EXPLODER_RIGHT "right_exploder"
 #define SPECIES_NECROMORPH_EXPLODER_LEFT "left_exploder"
+
+#define SHAKE_ANIMATION_OFFSET 4
+
+///The percentage of damage at which a bodypart can start to be dismembered.
+#define LIMB_DISMEMBERMENT_PERCENT 0.9
+
+/atom/proc/shake_animation()
+		var/direction = prob(50) ? -1 : 1
+		animate(src, pixel_x = pixel_x + SHAKE_ANIMATION_OFFSET * direction, time = 1, easing = QUAD_EASING | EASE_OUT, flags = ANIMATION_PARALLEL)
+		animate(pixel_x = pixel_x - (SHAKE_ANIMATION_OFFSET * 2 * direction), time = 1)
+		animate(pixel_x = pixel_x + SHAKE_ANIMATION_OFFSET * direction, time = 1, easing = ELASTIC_EASING)

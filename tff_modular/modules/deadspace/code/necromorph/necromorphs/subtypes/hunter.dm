@@ -92,7 +92,7 @@
 	)
 
 /datum/action/cooldown/necro/regenerate/hunter
-	cooldown_time = 30 SECONDS
+	cooldown_time = 15 SECONDS
 	duration = 8.6 SECONDS
 	lasting_damage_heal = 20
 	heal_amount = 30

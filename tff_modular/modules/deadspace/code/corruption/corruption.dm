@@ -285,9 +285,6 @@
 			damage_amount *= 2
 	. = ..()
 
-/obj/structure/corruption/can_see_marker()
-	return RANGE_TURFS(1, src)
-
 #undef INTEGRITY_PER_SECOND
 
 #undef GROW

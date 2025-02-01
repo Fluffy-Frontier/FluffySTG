@@ -26,7 +26,7 @@ GLOBAL_LIST_INIT(wallrun_types_typecache, typecacheof(list(
 		return COMPONENT_INCOMPATIBLE
 	if(istype(owner, /mob/living/carbon/human/necromorph/leaper))
 		RegisterSignal(owner, COMSIG_STARTED_CHARGE, PROC_REF(on_charge_started))
-	RegisterSignal(owner, list(COMSIG_MOVABLE_BUMP, COMSIG_LEAPER_MOUNT), PROC_REF(on_bump))
+	RegisterSignal(owner, COMSIG_MOVABLE_BUMP, PROC_REF(on_bump))
 
 /datum/component/wallrun/proc/on_charge_started(mob/living/source)
 	if(mount_point)

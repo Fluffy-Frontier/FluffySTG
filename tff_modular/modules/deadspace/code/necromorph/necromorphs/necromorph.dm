@@ -8,7 +8,7 @@
 	if(!marker_master)
 		return INITIALIZE_HINT_QDEL
 
-	//fully_replace_character_name(real_name, "[name] [rand(1, 999)]") // DO I NEED THIS?
+	fully_replace_character_name(real_name, "[initial(class.display_name)] [rand(1, 999)]")
 
 	marker = marker_master
 	marker_master.add_necro(src)

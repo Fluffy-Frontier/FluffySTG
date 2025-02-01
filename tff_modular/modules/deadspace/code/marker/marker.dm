@@ -100,10 +100,6 @@
 	print_command_report(., "CEC Corporation Report", announce=FALSE)
 	priority_announce("Thanks to the tireless efforts of our security and intelligence divisions, there are currently no credible threats to [station_name()]. All station construction projects have been authorized. Have a secure shift!", "Security Report", "", SSstation.announcer.get_rand_report_sound())
 
-
-/obj/structure/marker/can_see_marker()
-	return RANGE_TURFS(12, src)
-
 /mob/dead/observer/verb/join_horde()
 	set category = "Necromorph"
 	set name = "Join the Horde"

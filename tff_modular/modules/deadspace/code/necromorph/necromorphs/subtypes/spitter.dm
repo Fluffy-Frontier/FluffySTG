@@ -85,7 +85,7 @@
 	icon_state = "acid_large"
 
 	damage = 7
-	speed = 0.8
+	speed = 1.4
 
 /obj/projectile/bullet/biobomb/spitter_longshot/on_hit(atom/target, blocked, pierce_hit)
 	. = ..()
@@ -94,7 +94,7 @@
 			var/mob/living/M = target
 			M.adjust_timed_status_effect(9 SECONDS, /datum/status_effect/bioacid, 180 SECONDS)
 
-#define SPITTER_SNAPSHOT_AUTOTARGET_RANGE 3
+#define SPITTER_SNAPSHOT_AUTOTARGET_RANGE 4
 
 /datum/action/cooldown/necro/shoot/spitter_snapshot
 	name = "Snapshot"
@@ -127,7 +127,7 @@
 	icon_state = "acid_large"
 
 	damage = 4
-	speed = 0.8
+	speed = 1.4
 
 /obj/projectile/bullet/biobomb/spitter_snapshot/on_hit(atom/target, blocked, pierce_hit)
 	. = ..()

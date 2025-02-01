@@ -69,7 +69,7 @@
 /datum/action/cooldown/necro/active/gallop/proc/StopCrash()
 	var/mob/living/carbon/human/necromorph/holder = owner
 	shake_camera(holder, 20, 1)
-	holder.Knockdown(10)
+	holder.Stun(10)
 	holder.take_overall_damage(5)
 	//Stops the gallop
 	CooldownEnd()

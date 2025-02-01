@@ -43,7 +43,7 @@
 	name = "acid bolt"
 	icon = 'tff_modular/modules/deadspace/icons/obj/projectiles.dmi'
 	icon_state = "acid_large"
-	speed = 1
+	speed = 1.5
 	impact_effect_type = /obj/effect/temp_visual/biombomb_impact
 	//The immediate damage from a direct hit, bioacid gives more damage over time.
 	damage = 10 // ORIGINAL 5

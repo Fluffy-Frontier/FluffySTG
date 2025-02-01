@@ -26,6 +26,11 @@
 	animate(source, transform = source.transform.Scale(1.18), pixel_y = source.pixel_y + 24, time = charge_time, flags = ANIMATION_PARALLEL)
 	source.pass_flags |= PASSTABLE
 
+/datum/action/cooldown/necro/charge/leaper/on_move(atom/source, atom/new_loc)
+	for(var/mob/living/L in range(1, src))
+		if(L != src)
+			return on_bump(src, L)
+
 /datum/action/cooldown/necro/charge/leaper/charge_end(datum/move_loop/source)
 	var/matrix/new_matrix = matrix(owner.transform)
 	//Scale it back to normal
@@ -40,6 +45,6 @@
 	if(target)
 		GLOB.move_manager.stop_looping(source)
 		if(GLOB.wallrun_types_typecache[target.type])
-			SEND_SIGNAL(source, COMSIG_LEAPER_MOUNT, target)
+			SEND_SIGNAL(source, COMSIG_MOVABLE_BUMP, target)
 		else if(ismob(target) || target.uses_integrity)
 			hit_target(source, target)

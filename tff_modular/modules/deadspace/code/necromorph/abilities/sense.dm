@@ -22,7 +22,7 @@
 			continue
 		if(found.z != owner.z)
 			continue
-		if(ishuman(found))
+		if(iscarbon(found))
 			closest_human = min(closest_human, GET_TRUE_DIST(found, owner))
 		if(!IN_GIVEN_RANGE(found, owner, 5))
 			continue

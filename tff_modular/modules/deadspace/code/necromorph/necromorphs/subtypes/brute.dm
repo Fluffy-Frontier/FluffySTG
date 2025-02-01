@@ -80,7 +80,7 @@
 		forced_curl_next = world.time + CURL_FORCED_DURATION
 		addtimer(CALLBACK(src, PROC_REF(end_forced_curl)), CURL_FORCED_DURATION)
 	curling = TRUE
-	ADD_TRAIT(src, TRAIT_RESTRAINED, src)
+	REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, src)
 
 	var/matrix/new_tranform = matrix()
 	new_tranform.Scale(0.9)
@@ -97,7 +97,7 @@
 	curling = FALSE
 	animate(src, transform = matrix(), time = CURL_ANIMATION_TIME)
 	sleep(CURL_ANIMATION_TIME)
-	REMOVE_TRAIT(src, TRAIT_RESTRAINED, src) // TRAIT_HANDS_BLOCKED ?
+	REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, src) // TRAIT_HANDS_BLOCKED ?
 
 /mob/living/carbon/human/necromorph/brute/proc/end_forced_curl()
 	forced_curl = FALSE
@@ -190,7 +190,7 @@
 /datum/action/cooldown/necro/shoot/brute
 	name = "Bio-bomb"
 	desc = "A moderate-strength projectile for longrange shooting."
-	cooldown_time = 12 SECONDS
+	cooldown_time = 10 SECONDS
 	windup_time = WINDUP_TIME
 	projectiletype = /obj/projectile/bullet/biobomb/brute
 
@@ -225,8 +225,8 @@
 	icon = 'tff_modular/modules/deadspace/icons/obj/projectiles.dmi'
 	icon_state = "acid_large"
 
-	damage = 15 //ORIGINAL: 10
-	speed = 0.8
+	damage = 15
+	speed = 1.25
 
 /obj/projectile/bullet/biobomb/brute/on_hit(atom/target, blocked, pierce_hit)
 	. = ..()

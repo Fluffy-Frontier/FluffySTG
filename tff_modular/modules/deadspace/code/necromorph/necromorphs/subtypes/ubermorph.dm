@@ -97,14 +97,14 @@
 
 /datum/action/cooldown/necro/charge/ubermorph/Activate(atom/target)
 	..()
-	owner.face_atom(get_turf(target))
+	/*owner.face_atom(get_turf(target))
 	animate(
 		owner,
 		pixel_x = owner.pixel_x + (target_atom.x - owner.x) * 24,
 		pixel_y = owner.pixel_y + (target_atom.y - owner.y) * 24,
 		time = charge_delay,
 		easing = BACK_EASING
-	)
+	)*/
 	return TRUE
 
 /datum/action/cooldown/necro/charge/ubermorph/do_charge()
