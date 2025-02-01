@@ -5242,7 +5242,8 @@
 "sF" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
-	dir = 8
+	dir = 8;
+	pixel_y = 2
 	},
 /obj/effect/turf_decal/tile/dark/full,
 /obj/effect/turf_decal/siding/wideplating_new/dark{
@@ -8499,8 +8500,7 @@
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/machinery/reagentgrinder{
 	pixel_x = 4;
-	pixel_y = 11;
-	layer = 2.91
+	pixel_y = 6
 	},
 /obj/item/reagent_containers/cup/glass/shaker{
 	pixel_x = -6;
@@ -9467,7 +9467,6 @@
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green{
 	pixel_y = 14;
-	layer = 3.1;
 	pixel_x = 7
 	},
 /obj/item/book/bible/syndicate{
@@ -10103,8 +10102,7 @@
 	},
 /obj/structure/flora/bush/large{
 	pixel_x = -16;
-	pixel_y = -3;
-	layer = 5.02
+	pixel_y = -3
 	},
 /obj/structure/flora/bush/jungle/a{
 	pixel_x = -3;
@@ -10229,9 +10227,7 @@
 /obj/machinery/light/dim/directional/east,
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
-	dir = 8;
-	pixel_y = 4;
-	layer = 2.91
+	dir = 8
 	},
 /obj/effect/turf_decal/tile/dark/full,
 /obj/effect/turf_decal/siding/wideplating_new/dark{
@@ -10867,8 +10863,7 @@
 "Ls" = (
 /obj/item/food/roast_dinner_lizzy,
 /obj/item/flashlight/lamp/green{
-	pixel_y = 22;
-	layer = 3.1;
+	pixel_y = -6;
 	pixel_x = 0
 	},
 /obj/structure/table/wood/fancy/red,
@@ -14639,13 +14634,11 @@
 	},
 /obj/item/computer_disk{
 	pixel_y = -3;
-	pixel_x = -11;
-	layer = 3.01
+	pixel_x = -11
 	},
 /obj/item/computer_disk{
 	pixel_y = 1;
-	pixel_x = -12;
-	layer = 3.02
+	pixel_x = -12
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/nova/des_two/service/lounge)
