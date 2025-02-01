@@ -3,7 +3,7 @@
 	maxHealth = 90
 	class = /datum/necro_class/spitter
 	necro_species = /datum/species/necromorph/spitter
-	armor_type = /datum/armor/dsnecro_spitter
+	necro_armor = /datum/armor/dsnecro_spitter
 
 /mob/living/carbon/human/necromorph/spitter/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
@@ -27,7 +27,7 @@
 	biomass_spent_required = 0
 	melee_damage_lower = 10
 	melee_damage_upper = 13
-	armor_type = /datum/armor/dsnecro_spitter
+	necro_armor = /datum/armor/dsnecro_spitter
 	actions = list(
 		/datum/action/cooldown/necro/shoot/spitter_snapshot,
 		/datum/action/cooldown/necro/shoot/spitter_longshot,
@@ -49,7 +49,6 @@
 
 /datum/species/necromorph/spitter
 	name = "Spitter"
-	id = SPECIES_NECROMORPH_SPITTER
 	bodypart_overrides = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/necromorph/spitter,
 		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/necromorph/spitter,

@@ -24,7 +24,7 @@
 /obj/effect/decal/cleanable/blood/writing
 	icon_state = "tracks"
 	desc = "It looks like a writing in blood."
-	icon = 'tff_modular/modules/deadspace/icons/effects/blood.dmi'
+	icon = 'icons/effects/blood.dmi'
 	gender = NEUTER
 	random_icon_states = list("writing1","writing2","writing3","writing4","writing5")
 	should_dry = FALSE

@@ -3,7 +3,7 @@
 	maxHealth = 215
 	class = /datum/necro_class/slasher/enhanced
 	necro_species = /datum/species/necromorph/slasher/enhanced
-	armor_type = /datum/armor/dsnecro_e_slasher
+	necro_armor = /datum/armor/dsnecro_e_slasher
 	pixel_x = -8
 	base_pixel_x = -8
 	mob_size = MOB_SIZE_LARGE
@@ -30,7 +30,7 @@
 	biomass_spent_required = 680
 	melee_damage_lower = 18
 	melee_damage_upper = 22
-	armor_type = /datum/armor/dsnecro_e_slasher
+	necro_armor = /datum/armor/dsnecro_e_slasher
 	actions = list(
 		/datum/action/cooldown/necro/charge/slasher/enhanced,
 		/datum/action/cooldown/necro/dodge/enhanced,
@@ -42,7 +42,6 @@
 
 /datum/species/necromorph/slasher/enhanced
 	name = "Enhanced Slasher"
-	id = SPECIES_NECROMORPH_SLASHER_ENHANCED
 	bodypart_overrides = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/necromorph/slasher/enhanced,
 		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/necromorph/slasher/enhanced,

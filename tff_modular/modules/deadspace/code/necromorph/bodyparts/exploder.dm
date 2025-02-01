@@ -1,6 +1,7 @@
 /obj/item/bodypart/chest/necromorph/exploder
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_EXPLODER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi'
 	icon_state = "chest"
 	max_damage = 200
@@ -12,6 +13,7 @@
 /obj/item/bodypart/head/necromorph/exploder
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_EXPLODER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi'
 	icon_state = "head"
 	max_damage = 25
@@ -25,6 +27,7 @@
 /obj/item/bodypart/arm/left/necromorph/exploder
 	name = "yellow pustule"
 	limb_id = SPECIES_NECROMORPH_EXPLODER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi'
 	icon_state = "l_arm"
 	interaction_flags_item = INTERACT_ITEM_ATTACK_HAND_PICKUP //We want to be able to pick up and throw the pustle
@@ -68,6 +71,7 @@
 /obj/item/bodypart/arm/right/necromorph/exploder
 	name = "right arm"
 	limb_id = SPECIES_NECROMORPH_EXPLODER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi'
 	icon_state = "r_arm"
 	attack_verb_continuous = list("kicks", "stomps")
@@ -85,7 +89,8 @@
 	limb_id = SPECIES_NECROMORPH_EXPLODER
 	can_be_disabled = TRUE //We do however, want humans to be able to immobilize the exploder
 	disabling_threshold_percentage = 2 //CHANGE BACK TO 1?
-	icon_static = "tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi" //Since the leg is part of the chest sprite, we don't want a sprite ontop of the sprite
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi'
+	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi' //Since the leg is part of the chest sprite, we don't want a sprite ontop of the sprite
 	icon_state = "r_leg"
 	max_damage = 40 //Bit stronger due to it being two limbs fused together
 	wound_resistance = -5
@@ -114,7 +119,8 @@
 	limb_id = SPECIES_NECROMORPH_EXPLODER
 	bodypart_flags = BODYPART_PSEUDOPART //This will prevent the limb from having standard functions
 	can_be_disabled = FALSE
-	icon_static = "tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi"
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi'
+	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi'
 	icon_state = "l_leg"
 	max_damage = 20
 	n_biomass = 0 //Just a nub, not worth anything

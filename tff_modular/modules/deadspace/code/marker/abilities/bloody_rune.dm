@@ -17,7 +17,6 @@
 	new /obj/effect/decal/cleanable/necro_rune(target_turf, null, RUNE_COLOR_MEDIUMRED, TRUE)
 	return TRUE
 
-//Initialized in make_datum_references_lists
 GLOBAL_LIST_EMPTY(necro_runes)
 
 /obj/effect/decal/cleanable/necro_rune

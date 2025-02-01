@@ -1,5 +1,5 @@
 /datum/necro_class
-	var/display_name = ""
+	var/display_name = "preview"
 	var/desc = ""
 	var/ui_icon = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 
@@ -32,7 +32,7 @@
 	var/necro_flags = NONE
 
 	// *** Defense *** //
-	var/datum/armor/armor_type = NONE
+	var/datum/armor/necro_armor = /datum/armor/roach_internal_armor
 
 	///the 'abilities' available to a necromorph.
 	var/list/datum/action/cooldown/necro/actions = list()

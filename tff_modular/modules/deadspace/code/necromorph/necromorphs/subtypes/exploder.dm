@@ -3,7 +3,7 @@
 	maxHealth = 100
 	class = /datum/necro_class/exploder
 	necro_species = /datum/species/necromorph/exploder
-	armor_type = /datum/armor/dsnecro_exploder
+	necro_armor = /datum/armor/dsnecro_exploder
 	bodyparts = list(
 		/obj/item/bodypart/chest/necromorph/exploder,
 		/obj/item/bodypart/head/necromorph/exploder,
@@ -38,7 +38,7 @@
 	biomass_spent_required = 0
 	melee_damage_lower = 4
 	melee_damage_upper = 8
-	armor_type = /datum/armor/dsnecro_exploder
+	necro_armor = /datum/armor/dsnecro_exploder
 	actions = list(
 		/datum/action/cooldown/necro/shout,
 		/datum/action/cooldown/necro/explode,
@@ -60,7 +60,6 @@
 
 /datum/species/necromorph/exploder
 	name = "Exploder"
-	id = SPECIES_NECROMORPH_EXPLODER
 	bodypart_overrides = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/necromorph/exploder,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/necromorph/exploder,

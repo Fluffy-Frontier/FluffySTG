@@ -3,7 +3,7 @@
 	maxHealth = 210
 	class = /datum/necro_class/twitcher/enhanced
 	necro_species = /datum/species/necromorph/twitcher/enhanced
-	armor_type = /datum/armor/dsnecro_e_twitcher
+	necro_armor = /datum/armor/dsnecro_e_twitcher
 	pixel_x = -8
 	base_pixel_x = -8
 	dodge_pool_chance = 40
@@ -23,13 +23,12 @@
 	biomass_spent_required = 1200
 	melee_damage_lower = 18
 	melee_damage_upper = 22
-	armor_type = /datum/armor/dsnecro_e_twitcher
+	necro_armor = /datum/armor/dsnecro_e_twitcher
 	minimap_icon = "otwitcher"
 	implemented = TRUE
 
 /datum/species/necromorph/twitcher/enhanced
 	name = "Oracle Twitcher"
-	id = SPECIES_NECROMORPH_TWITCHER_ORACLE
 	bodypart_overrides = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/necromorph/twitcher/enhanced,
 		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/necromorph/twitcher/enhanced,

@@ -9,6 +9,7 @@
 	limb_id = SPECIES_NECROMORPH
 	should_draw_greyscale = FALSE
 	//bodypart_flags = ()
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 	icon_state = "chest"
 	interaction_flags_item = NONE //So you don't pick it up
@@ -29,6 +30,7 @@
 	bodyshape = parent_type::bodyshape | BODYSHAPE_CUSTOM
 	limb_id = SPECIES_NECROMORPH
 	should_draw_greyscale = FALSE
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 	icon_state = "head"
 	interaction_flags_item = NONE
@@ -62,6 +64,7 @@
 	bodyshape = parent_type::bodyshape | BODYSHAPE_CUSTOM
 	limb_id = SPECIES_NECROMORPH
 	should_draw_greyscale = FALSE
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 	icon_state = "l_arm"
 	interaction_flags_item = NONE
@@ -94,6 +97,7 @@
 	bodyshape = parent_type::bodyshape | BODYSHAPE_CUSTOM
 	limb_id = SPECIES_NECROMORPH
 	should_draw_greyscale = FALSE
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 	icon_state = "r_arm"
 	interaction_flags_item = NONE
@@ -126,6 +130,7 @@
 	bodyshape = parent_type::bodyshape | BODYSHAPE_CUSTOM
 	limb_id = SPECIES_NECROMORPH
 	should_draw_greyscale = FALSE
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 	icon_state = "l_leg"
 	interaction_flags_item = NONE
@@ -158,6 +163,7 @@
 	bodyshape = parent_type::bodyshape | BODYSHAPE_CUSTOM
 	limb_id = SPECIES_NECROMORPH
 	should_draw_greyscale = FALSE
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 	icon_state = "r_leg"
 	interaction_flags_item = NONE

@@ -1,9 +1,9 @@
 /mob/living/carbon/human/necromorph/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
 
-	//AddComponent(/datum/component/seethrough_mob) //commented out until we can get this working on humans
 	var/mob/living/carbon/human/necromorph/necro_owner = src
-	necro_owner.physiology.armor = necro_owner.physiology.armor.add_other_armor(armor_type)
+	necro_owner.physiology.armor = necro_owner.physiology.armor.add_other_armor(src.necro_armor)
+	necro_owner.physiology.burn_mod = 1.2
 
 	if(!marker_master)
 		return INITIALIZE_HINT_QDEL
@@ -35,7 +35,7 @@
 	return
 
 //This had to be moved from species due to code improvements
-/mob/living/carbon/human/necromorph/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, wound_bonus, bare_wound_bonus, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = NONE, attack_direction = null, attacking_item, wound_clothing)
+/mob/living/carbon/human/necromorph/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = NONE, attack_direction = null, attacking_item, wound_clothing)
 	if(dodge_shield > 0)
 		// Calculate amount of the damage that was blocked by the shield
 		var/dodged_damage = min(dodge_shield, damage, damage * (100 - blocked) / 100)

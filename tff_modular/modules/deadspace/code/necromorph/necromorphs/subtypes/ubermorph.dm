@@ -3,7 +3,7 @@
 	maxHealth = INFINITY
 	class = /datum/necro_class/ubermorph
 	necro_species = /datum/species/necromorph/ubermorph
-	armor_type = /datum/armor/dsnecro_ubermorph
+	necro_armor = /datum/armor/dsnecro_ubermorph
 
 /mob/living/carbon/human/necromorph/ubermorph/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
@@ -26,7 +26,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 25
 	implemented = TRUE
-	armor_type = /datum/armor/dsnecro_ubermorph
+	necro_armor = /datum/armor/dsnecro_ubermorph
 	actions = list(
 		/datum/action/cooldown/necro/charge/ubermorph,
 		/datum/action/cooldown/necro/sense,
@@ -48,7 +48,6 @@
 
 /datum/species/necromorph/ubermorph
 	name = "Ubermorph"
-	id = SPECIES_NECROMORPH_UBERMORPH
 	bodypart_overrides = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/necromorph/ubermorph,
 		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/necromorph/ubermorph,

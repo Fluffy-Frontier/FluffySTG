@@ -1,6 +1,7 @@
 /obj/item/bodypart/chest/necromorph/leaper
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_LEAPER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	icon_state = "chest"
 	max_damage = 200
@@ -12,6 +13,7 @@
 /obj/item/bodypart/head/necromorph/leaper
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_LEAPER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	icon_state = "head"
 	max_damage = 30
@@ -26,6 +28,7 @@
 /obj/item/bodypart/arm/left/necromorph/leaper
 	name = "left arm"
 	limb_id = SPECIES_NECROMORPH_LEAPER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	icon_state = "l_arm"
 	attack_verb_continuous = list("kicks", "stomps")
@@ -39,6 +42,7 @@
 /obj/item/bodypart/arm/right/necromorph/leaper
 	name = "right arm"
 	limb_id = SPECIES_NECROMORPH_LEAPER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	icon_state = "r_arm"
 	attack_verb_continuous = list("claws", "stomps")
@@ -55,6 +59,7 @@
 	name = "right tail"
 	desc = "A long stringy piece of flesh held haphazardly together with tendons and bone, it looks very sharp at the tip."
 	limb_id = SPECIES_NECROMORPH_LEAPER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	icon_state = "r_leg" //Bodyparts are picky about dmi state names not lining up with the body_zone
 	body_zone = BODY_ZONE_R_LEG
@@ -82,6 +87,7 @@
 	name = "left tail"
 	desc = "A long stringy piece of flesh held haphazardly together with tendons and bone, it looks very sharp at the tip."
 	limb_id = SPECIES_NECROMORPH_LEAPER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	icon_state = "l_leg" //Bodyparts are picky about dmi state names not lining up with the body_zone
 	body_zone = BODY_ZONE_L_LEG

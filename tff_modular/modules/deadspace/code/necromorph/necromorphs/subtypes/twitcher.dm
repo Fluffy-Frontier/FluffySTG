@@ -3,7 +3,7 @@
 	maxHealth = 175
 	class = /datum/necro_class/twitcher
 	necro_species = /datum/species/necromorph/twitcher
-	armor_type = /datum/armor/dsnecro_twitcher
+	necro_armor = /datum/armor/dsnecro_twitcher
 	pixel_x = -8
 	base_pixel_x = -8
 	///Pool for passive dodging of projectiles, gained passively over time and lost by dodging
@@ -47,7 +47,7 @@
 	biomass_spent_required = 850
 	melee_damage_lower = 10
 	melee_damage_upper = 16
-	armor_type = /datum/armor/dsnecro_twitcher
+	necro_armor = /datum/armor/dsnecro_twitcher
 	actions = list(
 		/datum/action/cooldown/necro/shout,
 		/datum/action/cooldown/necro/charge,
@@ -69,7 +69,6 @@
 
 /datum/species/necromorph/twitcher
 	name = "Twitcher"
-	id = SPECIES_NECROMORPH_TWITCHER
 	bodypart_overrides = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/necromorph/twitcher,
 		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/necromorph/twitcher,

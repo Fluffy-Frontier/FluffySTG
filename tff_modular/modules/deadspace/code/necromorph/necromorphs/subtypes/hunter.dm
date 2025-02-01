@@ -8,7 +8,7 @@
 	maxHealth = 275
 	class = /datum/necro_class/hunter
 	necro_species = /datum/species/necromorph/hunter
-	armor_type = /datum/armor/dsnecro_hunter
+	necro_armor = /datum/armor/dsnecro_hunter
 
 /mob/living/carbon/human/necromorph/hunter/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
@@ -52,7 +52,7 @@
 	biomass_spent_required = 1200
 	melee_damage_lower = 18
 	melee_damage_upper = 22
-	armor_type = /datum/armor/dsnecro_hunter
+	necro_armor = /datum/armor/dsnecro_hunter
 	actions = list(
 		/datum/action/cooldown/necro/swing/hunter,
 		// /datum/action/cooldown/necro/taunt/hunter,
@@ -74,7 +74,6 @@
 
 /datum/species/necromorph/hunter
 	name = "Hunter"
-	id = SPECIES_NECROMORPH_HUNTER
 	bodypart_overrides = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/necromorph/hunter,
 		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/necromorph/hunter,

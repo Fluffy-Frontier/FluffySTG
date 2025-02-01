@@ -3,15 +3,12 @@
 	name = "Necromorph"
 	id = SPECIES_NECROMORPH
 	//There is no way to become it. Period.
-	changesource_flags = NONE
+	changesource_flags = MIRROR_BADMIN
 	//For blood please go to necro_defines
 	sexes = FALSE
 	hair_alpha = 0
 	facial_hair_alpha = 0
-
 	max_bodypart_count = 6
-	// BODYPARTS burnmod = 1.2
-
 	examine_limb_id = SPECIES_NECROMORPH
 	meat = /obj/item/food/meat/slab/human/mutant/necro
 	//Heat and cold does not traditionally affect necros, but fire can still hurt them
@@ -94,10 +91,7 @@
 
 /datum/species/necromorph/check_roundstart_eligible()
 	return FALSE
-/* MAKE IT NORMAL PLS
-/datum/species/necromorph/proc/random_name(gender,unique,lastname)
-	return "[name] [rand(1, 999)]"
-*/
+
 //Does animations for regenerating a limb
 /datum/species/necromorph/proc/regenerate_limb(mob/living/carbon/human/necromorph/H, limb, duration)
 	var/image/LR = image(initial(H.class.ui_icon), H, "[limb]_regen")

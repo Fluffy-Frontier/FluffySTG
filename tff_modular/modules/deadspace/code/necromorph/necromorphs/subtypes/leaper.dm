@@ -3,7 +3,7 @@
 	maxHealth = 110
 	class = /datum/necro_class/leaper
 	necro_species = /datum/species/necromorph/leaper
-	armor_type = /datum/armor/dsnecro_leaper
+	necro_armor = /datum/armor/dsnecro_leaper
 	pixel_x = -16
 	pixel_y = -18
 	base_pixel_x = -16
@@ -35,7 +35,7 @@
 	biomass_spent_required = 0
 	melee_damage_lower = 10
 	melee_damage_upper = 16
-	armor_type = /datum/armor/dsnecro_leaper
+	necro_armor = /datum/armor/dsnecro_leaper
 	actions = list(
 		/datum/action/cooldown/necro/charge/leaper,
 		/datum/action/cooldown/necro/swing/leaper,
@@ -57,7 +57,6 @@
 
 /datum/species/necromorph/leaper
 	name = "Leaper"
-	id = SPECIES_NECROMORPH_LEAPER
 	bodypart_overrides = list(
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/necromorph/leaper,
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/necromorph/leaper,

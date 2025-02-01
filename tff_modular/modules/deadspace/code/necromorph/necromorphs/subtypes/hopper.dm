@@ -3,7 +3,7 @@
 	maxHealth = 65
 	class = /datum/necro_class/leaper/hopper
 	necro_species = /datum/species/necromorph/leaper/hopper
-	armor_type = /datum/armor/dsnecro_hopper
+	necro_armor = /datum/armor/dsnecro_hopper
 	pass_flags = PASSTABLE | PASSFLAPS
 	pixel_x = 0
 	pixel_y = 0
@@ -38,7 +38,7 @@
 	melee_damage_lower = 6
 	melee_damage_upper = 10
 	//Hoppers have really low health, but for balance purposes can tank bullets quite well.
-	armor_type = /datum/armor/dsnecro_hopper
+	necro_armor = /datum/armor/dsnecro_hopper
 	actions = list(
 		/datum/action/cooldown/necro/hide,
 		/datum/action/cooldown/necro/charge/leaper,
@@ -50,7 +50,6 @@
 
 /datum/species/necromorph/leaper/hopper
 	name = "Hopper"
-	id = SPECIES_NECROMORPH_LEAPER_HOPPER
 	bodypart_overrides = list(
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/necromorph/leaper/hopper,
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/necromorph/leaper/hopper,

@@ -1,6 +1,7 @@
 /obj/item/bodypart/chest/necromorph/slasher
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_SLASHER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/slasher/fleshy.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/slasher/fleshy.dmi'
 	icon_state = "chest"
 	max_damage = 200
@@ -12,6 +13,7 @@
 /obj/item/bodypart/head/necromorph/slasher
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_SLASHER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/slasher/fleshy.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/slasher/fleshy.dmi'
 	icon_state = "head"
 	max_damage = 30
@@ -25,6 +27,7 @@
 /obj/item/bodypart/arm/left/necromorph/slasher
 	name = "left blade"
 	limb_id = SPECIES_NECROMORPH_SLASHER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/slasher/fleshy.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/slasher/fleshy.dmi'
 	icon_state = "l_arm"
 	attack_verb_continuous = list("slashes", "stabs")
@@ -40,6 +43,7 @@
 /obj/item/bodypart/arm/right/necromorph/slasher
 	name = "right blade"
 	limb_id = SPECIES_NECROMORPH_SLASHER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/slasher/fleshy.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/slasher/fleshy.dmi'
 	icon_state = "l_arm"
 	attack_verb_continuous = list("slashes", "stabs")
@@ -54,6 +58,7 @@
 /obj/item/bodypart/leg/left/necromorph/slasher
 	name = "left leg"
 	limb_id = SPECIES_NECROMORPH_SLASHER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/slasher/fleshy.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/slasher/fleshy.dmi'
 	icon_state = "l_leg"
 	attack_verb_continuous = list("kicks", "stomps")
@@ -67,6 +72,7 @@
 /obj/item/bodypart/leg/right/necromorph/slasher
 	name = "right leg"
 	limb_id = SPECIES_NECROMORPH_SLASHER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/slasher/fleshy.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/slasher/fleshy.dmi'
 	icon_state = "r_leg"
 	attack_verb_continuous = list("kicks", "stomps")

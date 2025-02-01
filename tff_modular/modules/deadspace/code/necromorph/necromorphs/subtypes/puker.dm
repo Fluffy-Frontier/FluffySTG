@@ -3,7 +3,7 @@
 	maxHealth = 125
 	class = /datum/necro_class/puker
 	necro_species = /datum/species/necromorph/puker
-	armor_type = /datum/armor/dsnecro_puker
+	necro_armor = /datum/armor/dsnecro_puker
 
 /mob/living/carbon/human/necromorph/puker/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
@@ -28,7 +28,7 @@
 	biomass_spent_required = 680
 	melee_damage_lower = 7
 	melee_damage_upper = 10
-	armor_type = /datum/armor/dsnecro_puker
+	necro_armor = /datum/armor/dsnecro_puker
 	actions = list(
 		/datum/action/cooldown/necro/shoot/puker_snapshot,
 		/datum/action/cooldown/necro/shoot/puker_longshot,
@@ -51,7 +51,6 @@
 
 /datum/species/necromorph/puker
 	name = "Puker"
-	id = SPECIES_NECROMORPH_PUKER
 	bodypart_overrides = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/necromorph/puker,
 		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/necromorph/puker,

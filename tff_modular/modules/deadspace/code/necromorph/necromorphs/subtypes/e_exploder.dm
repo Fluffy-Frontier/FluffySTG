@@ -3,7 +3,7 @@
 	maxHealth = 200
 	class = /datum/necro_class/exploder/enhanced
 	necro_species = /datum/species/necromorph/exploder/enhanced
-	armor_type = /datum/armor/dsnecro_e_exploder
+	necro_armor = /datum/armor/dsnecro_e_exploder
 	bodyparts = list(
 		/obj/item/bodypart/chest/necromorph/exploder/enhanced,
 		/obj/item/bodypart/head/necromorph/exploder/enhanced,
@@ -31,7 +31,7 @@
 	melee_damage_upper = 16
 	biomass_cost = 165
 	biomass_spent_required = 850
-	armor_type = /datum/armor/dsnecro_e_exploder
+	necro_armor = /datum/armor/dsnecro_e_exploder
 	actions = list(
 		/datum/action/cooldown/necro/shout,
 		/datum/action/cooldown/necro/explode,
@@ -43,7 +43,6 @@
 
 /datum/species/necromorph/exploder/enhanced
 	name = "Enhanced Exploder"
-	id = SPECIES_NECROMORPH_EXPLODER_ENHANCED
 	bodypart_overrides = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/necromorph/exploder/enhanced,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/necromorph/exploder/enhanced,

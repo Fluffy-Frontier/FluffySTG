@@ -14,7 +14,7 @@
 	melee_damage_lower = 5
 	health = 5
 	maxHealth = 5
-	armor_type = null
+	var/datum/armor/necro_armor = /datum/armor/roach_internal_armor
 	//TRUE for now
 	rotate_on_lying = TRUE
 	mob_size = MOB_SIZE_HUMAN

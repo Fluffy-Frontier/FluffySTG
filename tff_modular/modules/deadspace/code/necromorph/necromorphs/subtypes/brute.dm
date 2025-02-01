@@ -11,7 +11,7 @@
 	base_pixel_x = -16
 	status_flags = CANSTUN|CANUNCONSCIOUS
 	mob_size = MOB_SIZE_LARGE
-	armor_type = /datum/armor/dsnecro_brute
+	necro_armor = /datum/armor/dsnecro_brute
 	var/armor_front = 30
 	var/armor_flank = 20
 	/// Multiplier for armor when curling
@@ -135,7 +135,7 @@
 	biomass_spent_required = 950
 	melee_damage_lower = 24
 	melee_damage_upper = 28
-	armor_type = /datum/armor/dsnecro_brute
+	necro_armor = /datum/armor/dsnecro_brute
 
 	actions = list(
 		/datum/action/cooldown/necro/slam,
@@ -165,7 +165,6 @@
 
 /datum/species/necromorph/brute
 	name = "Brute"
-	id = SPECIES_NECROMORPH_BRUTE
 	stunmod = 0.15
 	bodypart_overrides = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/necromorph/brute,

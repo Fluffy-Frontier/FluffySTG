@@ -3,7 +3,7 @@
 	maxHealth = 100
 	class = /datum/necro_class/slasher
 	necro_species = /datum/species/necromorph/slasher
-	armor_type = /datum/armor/dsnecro_slasher
+	necro_armor = /datum/armor/dsnecro_slasher
 	pixel_x = -8
 	base_pixel_x = -8
 
@@ -25,7 +25,7 @@
 	biomass_spent_required = 0
 	melee_damage_lower = 10
 	melee_damage_upper = 16
-	armor_type = /datum/armor/dsnecro_slasher
+	necro_armor = /datum/armor/dsnecro_slasher
 	actions = list(
 		/datum/action/cooldown/necro/charge/slasher,
 		/datum/action/cooldown/necro/dodge,
@@ -46,7 +46,6 @@
 
 /datum/species/necromorph/slasher
 	name = "Slasher"
-	id = SPECIES_NECROMORPH_SLASHER
 	bodypart_overrides = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/necromorph/slasher,
 		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/necromorph/slasher,
