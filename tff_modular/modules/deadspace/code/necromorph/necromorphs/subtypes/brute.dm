@@ -165,6 +165,7 @@
 
 /datum/species/necromorph/brute
 	name = "Brute"
+	id = SPECIES_NECROMORPH_BRUTE
 	stunmod = 0.15
 	bodypart_overrides = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/necromorph/brute,

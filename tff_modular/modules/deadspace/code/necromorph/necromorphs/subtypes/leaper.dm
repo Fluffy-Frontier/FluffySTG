@@ -57,6 +57,7 @@
 
 /datum/species/necromorph/leaper
 	name = "Leaper"
+	id = SPECIES_NECROMORPH_LEAPER
 	bodypart_overrides = list(
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/necromorph/leaper,
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/necromorph/leaper,

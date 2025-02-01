@@ -1,7 +1,6 @@
 /obj/item/bodypart/chest/necromorph/hunter
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_HUNTER
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	icon_state = "chest"
 	max_damage = 400
@@ -13,7 +12,6 @@
 /obj/item/bodypart/head/necromorph/hunter
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_HUNTER
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	icon_state = "head"
 	max_damage = 50
@@ -27,7 +25,6 @@
 /obj/item/bodypart/arm/left/necromorph/hunter
 	name = "left blade"
 	limb_id = SPECIES_NECROMORPH_HUNTER
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	icon_state = "l_arm"
 	attack_verb_continuous = list("slashes", "stabs")
@@ -43,7 +40,6 @@
 /obj/item/bodypart/arm/right/necromorph/hunter
 	name = "right blade"
 	limb_id = SPECIES_NECROMORPH_HUNTER
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	icon_state = "r_arm"
 	attack_verb_continuous = list("slashes", "stabs")
@@ -59,7 +55,6 @@
 /obj/item/bodypart/leg/left/necromorph/hunter
 	name = "left leg"
 	limb_id = SPECIES_NECROMORPH_HUNTER
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	icon_state = "l_leg"
 	attack_verb_continuous = list("kicks", "stomps")
@@ -80,7 +75,6 @@
 /obj/item/bodypart/leg/right/necromorph/hunter
 	name = "right leg"
 	limb_id = SPECIES_NECROMORPH_HUNTER
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	icon_state = "r_leg"
 	attack_verb_continuous = list("kicks", "stomps")

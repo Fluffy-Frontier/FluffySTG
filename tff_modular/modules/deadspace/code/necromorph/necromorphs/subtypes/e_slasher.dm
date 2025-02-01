@@ -42,6 +42,7 @@
 
 /datum/species/necromorph/slasher/enhanced
 	name = "Enhanced Slasher"
+	id = SPECIES_NECROMORPH_SLASHER_ENHANCED
 	bodypart_overrides = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/necromorph/slasher/enhanced,
 		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/necromorph/slasher/enhanced,

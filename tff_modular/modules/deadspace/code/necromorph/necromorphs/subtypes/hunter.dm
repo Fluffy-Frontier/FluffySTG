@@ -74,6 +74,7 @@
 
 /datum/species/necromorph/hunter
 	name = "Hunter"
+	id = SPECIES_NECROMORPH_HUNTER
 	bodypart_overrides = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/necromorph/hunter,
 		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/necromorph/hunter,

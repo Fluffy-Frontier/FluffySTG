@@ -49,6 +49,7 @@
 
 /datum/species/necromorph/spitter
 	name = "Spitter"
+	id = SPECIES_NECROMORPH_SPITTER
 	bodypart_overrides = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/necromorph/spitter,
 		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/necromorph/spitter,

@@ -43,6 +43,7 @@
 
 /datum/species/necromorph/exploder/enhanced
 	name = "Enhanced Exploder"
+	id = SPECIES_NECROMORPH_EXPLODER_ENHANCED
 	bodypart_overrides = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/necromorph/exploder/enhanced,
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/necromorph/exploder/enhanced,

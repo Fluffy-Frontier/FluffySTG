@@ -29,6 +29,7 @@
 
 /datum/species/necromorph/twitcher/enhanced
 	name = "Oracle Twitcher"
+	id = SPECIES_NECROMORPH_TWITCHER_ORACLE
 	bodypart_overrides = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/necromorph/twitcher/enhanced,
 		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/necromorph/twitcher/enhanced,

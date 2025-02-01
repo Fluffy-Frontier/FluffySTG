@@ -1,7 +1,6 @@
 /obj/item/bodypart/chest/necromorph/leaper/enhanced
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_LEAPER_ENHANCED
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_enhanced.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_enhanced.dmi'
 	icon_state = "chest"
 	max_damage = 200
@@ -11,7 +10,6 @@
 /obj/item/bodypart/head/necromorph/leaper/enhanced
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_LEAPER_ENHANCED
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_enhanced.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_enhanced.dmi'
 	icon_state = "head"
 	max_damage = 45
@@ -21,7 +19,6 @@
 //Leapers use arms to walk
 /obj/item/bodypart/arm/left/necromorph/leaper/enhanced
 	limb_id = SPECIES_NECROMORPH_LEAPER_ENHANCED
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_enhanced.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_enhanced.dmi'
 	icon_state = "l_arm"
 	attack_verb_continuous = list("kicks", "stomps")
@@ -32,7 +29,6 @@
 
 /obj/item/bodypart/arm/right/necromorph/leaper/enhanced
 	limb_id = SPECIES_NECROMORPH_LEAPER_ENHANCED
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_enhanced.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_enhanced.dmi'
 	icon_state = "r_arm"
 	attack_verb_continuous = list("kicks", "stomps")
@@ -44,7 +40,6 @@
 /obj/item/bodypart/leg/right/necromorph/leaper/enhanced
 	desc = "A long calloused string of flesh held securely together with tendons and exposed bone, it looks very sharp at the tip."
 	limb_id = SPECIES_NECROMORPH_LEAPER_ENHANCED
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_enhanced.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_enhanced.dmi'
 	icon_state = "r_leg"
 	max_damage = 40
@@ -56,7 +51,6 @@
 /obj/item/bodypart/leg/left/necromorph/leaper/enhanced
 	desc = "A long calloused string of flesh held securely together with tendons and exposed bone, it looks very sharp at the tip."
 	limb_id = SPECIES_NECROMORPH_LEAPER_ENHANCED
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_enhanced.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_enhanced.dmi'
 	icon_state = "l_leg"
 	max_damage = 40
