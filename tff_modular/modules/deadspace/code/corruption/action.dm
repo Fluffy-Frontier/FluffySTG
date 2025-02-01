@@ -35,12 +35,6 @@
 			unset_click_ability(clicker, refund_cooldown = TRUE)
 		clicker.next_click = world.time + click_cd_override
 		return FALSE
-	if(LAZYACCESS(modifiers, MIDDLE_CLICK))
-		if(template.dir == 8)
-			template.dir = 1
-		else
-			template.dir *= 2
-		clicker.balloon_alert(clicker, "new direction - [dir2text(template.dir)]")
 	if(!IsAvailable(feedback = TRUE))
 		return FALSE
 	if(!target)

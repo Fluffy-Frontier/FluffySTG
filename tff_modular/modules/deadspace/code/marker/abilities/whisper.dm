@@ -13,10 +13,10 @@
 	return ..()
 
 /datum/action/cooldown/necro/psy/whisper/Activate(mob/living/target)
-	var/mob/camera/marker_signal/caller = owner
-	var/message = tgui_input_text(caller, "Write a message to send to [target.name]", "Whisper")
+	var/mob/camera/marker_signal/signal = owner
+	var/message = tgui_input_text(signal, "Write a message to send to [target.name]", "Whisper")
 	if(!message)
 		return TRUE
 	.=..()
 	to_chat(target, "<span class='necromorph'>[message]</span>")
-	caller.marker.hive_mind_message(caller, "[caller] -> [target] <span class='necromorph'>[message]</span>")
+	signal.marker.hive_mind_message(signal, "[signal] -> [target] <span class='necromorph'>[message]</span>")

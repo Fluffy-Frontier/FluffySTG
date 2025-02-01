@@ -31,7 +31,7 @@
 	if(istype(target, /atom/movable/screen/plane_master/marker_static))
 		if(!click_through_static)
 			return FALSE
-		var/new_target = parse_caught_click_modifiers(modifiers, get_turf(caller), caller.client)
+		var/new_target = parse_caught_click_modifiers(modifiers, get_turf(signal), signal.client)
 		params = list2params(modifiers)
 		if(!new_target)
 			return FALSE
@@ -49,6 +49,6 @@
 	return TRUE
 
 /datum/action/cooldown/necro/psy/Activate(atom/target)
-	var/mob/camera/marker_signal/caller = owner
-	caller.change_psy_energy(-cost)
+	var/mob/camera/marker_signal/signal = owner
+	signal.change_psy_energy(-cost)
 	..()
