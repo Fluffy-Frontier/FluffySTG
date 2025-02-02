@@ -85,7 +85,7 @@
 			continue
 		T = get_step(turf_loc, REVERSE_DIR(direction))
 		if(T?.density)
-			src.dir = direction
+			template.dir = direction
 			return
 		return "You need a wall behind you to place a cyst."
 	return
