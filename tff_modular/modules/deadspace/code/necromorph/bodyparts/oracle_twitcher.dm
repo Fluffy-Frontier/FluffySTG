@@ -2,7 +2,6 @@
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_TWITCHER_ORACLE
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher_oracle.dmi'
-	icon_state = "chest"
 	n_biomass = 36
 	wound_resistance = 10
 
@@ -10,7 +9,6 @@
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_TWITCHER_ORACLE
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher_oracle.dmi'
-	icon_state = "head"
 	max_damage = 45
 	n_biomass = 26
 	wound_resistance = 2
@@ -21,7 +19,6 @@
 	name = "left arm"
 	limb_id = SPECIES_NECROMORPH_TWITCHER_ORACLE
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher_oracle.dmi'
-	icon_state = "l_arm"
 	max_damage = 45
 	n_biomass = 16
 	wound_resistance = -1
@@ -32,7 +29,6 @@
 	name = "right arm"
 	limb_id = SPECIES_NECROMORPH_TWITCHER_ORACLE
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher_oracle.dmi'
-	icon_state = "l_arm"
 	max_damage = 45
 	n_biomass = 16
 	wound_resistance = -1
@@ -43,7 +39,6 @@
 	name = "left leg"
 	limb_id = SPECIES_NECROMORPH_TWITCHER_ORACLE
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher_oracle.dmi'
-	icon_state = "l_leg"
 	max_damage = 55
 	n_biomass = 16
 	wound_resistance = -1
@@ -53,7 +48,6 @@
 	name = "right leg"
 	limb_id = SPECIES_NECROMORPH_TWITCHER_ORACLE
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher_oracle.dmi'
-	icon_state = "r_leg"
 	max_damage = 55
 	n_biomass = 16
 	wound_resistance = -1

@@ -2,7 +2,6 @@
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_EXPLODER
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi'
-	icon_state = "chest"
 	max_damage = 200
 	px_x = 0
 	px_y = 0
@@ -13,7 +12,6 @@
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_EXPLODER
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi'
-	icon_state = "head"
 	max_damage = 25
 	px_x = 0
 	px_y = -8
@@ -26,7 +24,6 @@
 	name = "yellow pustule"
 	limb_id = SPECIES_NECROMORPH_EXPLODER
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi'
-	icon_state = "l_arm"
 	interaction_flags_item = INTERACT_ITEM_ATTACK_HAND_PICKUP //We want to be able to pick up and throw the pustle
 	w_class = WEIGHT_CLASS_BULKY //But we don't want to store it
 	attack_verb_continuous = list("kicks", "stomps")
@@ -69,7 +66,6 @@
 	name = "right arm"
 	limb_id = SPECIES_NECROMORPH_EXPLODER
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi'
-	icon_state = "r_arm"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 30
@@ -86,7 +82,6 @@
 	can_be_disabled = TRUE //We do however, want humans to be able to immobilize the exploder
 	disabling_threshold_percentage = 2
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi' //Since the leg is part of the chest sprite, we don't want a sprite ontop of the sprite
-	icon_state = "r_leg"
 	max_damage = 40 //Bit stronger due to it being two limbs fused together
 	wound_resistance = -5
 	n_biomass = 0 //Handled in chest due to sprite funnies
@@ -115,7 +110,6 @@
 	bodypart_flags = BODYPART_PSEUDOPART //This will prevent the limb from having standard functions
 	can_be_disabled = FALSE
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi'
-	icon_state = "l_leg"
 	max_damage = 20
 	n_biomass = 0 //Just a nub, not worth anything
 	special_footstep_sounds = list(list(

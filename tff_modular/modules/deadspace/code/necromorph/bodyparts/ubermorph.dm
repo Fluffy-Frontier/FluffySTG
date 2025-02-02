@@ -2,7 +2,6 @@
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_UBERMORPH
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/ubermorph.dmi'
-	icon_state = "chest"
 	max_damage = 800
 	px_x = 0
 	px_y = 0
@@ -12,7 +11,6 @@
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_UBERMORPH
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/ubermorph.dmi'
-	icon_state = "head"
 	max_damage = 60
 	px_x = 0
 	px_y = -8
@@ -24,7 +22,6 @@
 	name = "left blade"
 	limb_id = SPECIES_NECROMORPH_UBERMORPH
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/ubermorph.dmi'
-	icon_state = "l_arm"
 	attack_verb_continuous = list("slashes", "stabs")
 	attack_verb_simple = list("slash", "stab")
 	max_damage = 90
@@ -38,7 +35,6 @@
 	name = "right blade"
 	limb_id = SPECIES_NECROMORPH_UBERMORPH
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/ubermorph.dmi'
-	icon_state = "r_arm"
 	attack_verb_continuous = list("slashes", "stabs")
 	attack_verb_simple = list("slash", "stab")
 	max_damage = 90
@@ -51,7 +47,6 @@
 	name = "left leg"
 	limb_id = SPECIES_NECROMORPH_UBERMORPH
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/ubermorph.dmi'
-	icon_state = "l_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 90
@@ -70,7 +65,6 @@
 	name = "right leg"
 	limb_id = SPECIES_NECROMORPH_UBERMORPH
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/ubermorph.dmi'
-	icon_state = "r_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 90

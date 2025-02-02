@@ -2,7 +2,6 @@
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_LEAPER_HOPPER
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
-	icon_state = "chest"
 	max_damage = 100
 	px_x = 0
 	px_y = 0
@@ -13,7 +12,6 @@
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_LEAPER_HOPPER
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
-	icon_state = "head"
 	max_damage = 15
 	px_x = 0
 	px_y = -8
@@ -25,7 +23,6 @@
 	name = "left arm"
 	limb_id = SPECIES_NECROMORPH_LEAPER_HOPPER
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
-	icon_state = "l_leg"
 	body_part = LEG_LEFT
 	max_damage = 15
 	px_x = -2
@@ -38,7 +35,6 @@
 	name = "right arm"
 	limb_id = SPECIES_NECROMORPH_LEAPER_HOPPER
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
-	icon_state = "r_leg"
 	max_damage = 15
 	px_x = 2
 	px_y = 12
@@ -51,7 +47,6 @@
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
 	bodypart_flags = BODYPART_PSEUDOPART
 	limb_id = SPECIES_NECROMORPH_LEAPER_HOPPER
-	icon_state = "r_arm"
 	max_damage = 10
 	wound_resistance = -10
 	n_biomass = 1
@@ -69,7 +64,6 @@
 	bodypart_flags = BODYPART_PSEUDOPART
 	limb_id = SPECIES_NECROMORPH_LEAPER_HOPPER
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
-	icon_state = "l_arm"
 	max_damage = 10
 	n_biomass = 1
 	speed_modifier = 1

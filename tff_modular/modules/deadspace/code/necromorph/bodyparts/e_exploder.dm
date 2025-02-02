@@ -2,7 +2,6 @@
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_EXPLODER_ENHANCED
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder_enhanced.dmi'
-	icon_state = "chest"
 	max_damage = 200
 	px_x = 0
 	px_y = 0
@@ -13,7 +12,6 @@
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_EXPLODER_ENHANCED
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder_enhanced.dmi'
-	icon_state = "head"
 	max_damage = 35
 	px_x = 0
 	px_y = -8
@@ -24,7 +22,6 @@
 	name = "red pustule"
 	limb_id = SPECIES_NECROMORPH_EXPLODER_ENHANCED
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder_enhanced.dmi'
-	icon_state = "l_arm"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 60
@@ -37,7 +34,6 @@
 	name = "right arm"
 	limb_id = SPECIES_NECROMORPH_EXPLODER_ENHANCED
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder_enhanced.dmi'
-	icon_state = "r_arm"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 55
@@ -50,7 +46,6 @@
 	name = "fused legs"
 	desc = "Two legs fused together to form a thick, meaty stalk."
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder_enhanced.dmi'
-	icon_state = "r_leg"
 	plaintext_zone = "fused legs"
 	limb_id = SPECIES_NECROMORPH_EXPLODER_ENHANCED
 	can_be_disabled = TRUE
@@ -69,7 +64,6 @@
 	name = "nub"
 	desc = "The fleshy remains of a leg that was fused together. This is useless."
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder_enhanced.dmi'
-	icon_state = "l_leg"
 	plaintext_zone = "leg nub"
 	limb_id = SPECIES_NECROMORPH_EXPLODER_ENHANCED
 	can_be_disabled = FALSE
