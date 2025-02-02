@@ -19,7 +19,6 @@
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/structure/necromorph/LateInitialize()
-	..()
 	update_signals(null, loc)
 
 /obj/structure/necromorph/Destroy()

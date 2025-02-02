@@ -80,13 +80,12 @@
 	if(.)
 		return .
 	for(var/direction in GLOB.cardinals)
-		if(direction & ~REVERSE_DIR(template.dir))
-			continue
 		var/turf/T = get_step(turf_loc, direction)
 		if(T?.density)
 			continue
-		T = get_step(turf_loc, REVERSE_DIR(template.dir))
+		T = get_step(turf_loc, REVERSE_DIR(direction))
 		if(T?.density)
+			src.dir = direction
 			return
 		return "You need a wall behind you to place a cyst."
 	return

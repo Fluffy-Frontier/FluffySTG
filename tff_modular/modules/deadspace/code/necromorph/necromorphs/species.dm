@@ -9,7 +9,6 @@
 	hair_alpha = 0
 	facial_hair_alpha = 0
 	max_bodypart_count = 6
-	examine_limb_id = SPECIES_NECROMORPH
 	meat = /obj/item/food/meat/slab/human/mutant/necro
 	//Heat and cold does not traditionally affect necros, but fire can still hurt them
 	bodytemp_heat_damage_limit = INFINITY

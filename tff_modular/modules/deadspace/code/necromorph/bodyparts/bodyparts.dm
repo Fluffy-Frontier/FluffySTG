@@ -9,7 +9,7 @@
 	limb_id = SPECIES_NECROMORPH
 	should_draw_greyscale = FALSE
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
-	icon_state = "necromorph_chest"
+	icon_state = ""
 	interaction_flags_item = NONE //So you don't pick it up
 	w_class = WEIGHT_CLASS_GIGANTIC //So you can't put them in bags
 	dmg_overlay_type = null
@@ -29,7 +29,7 @@
 	limb_id = SPECIES_NECROMORPH
 	should_draw_greyscale = FALSE
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
-	icon_state = "necromorph_head"
+	icon_state = ""
 	interaction_flags_item = NONE
 	w_class = WEIGHT_CLASS_GIGANTIC
 	head_flags = null
@@ -43,13 +43,13 @@
 	show_organs_on_examine = TRUE
 
 /obj/item/bodypart/head/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
-	if((wounding_type & WOUND_SLASH) && brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_EDGE)
+	if((wounding_type == WOUND_SLASH) && brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_EDGE)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
 	else if(burn_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
 		return dismember(BURN, wounding_type = wounding_type)
 
-	else if((wounding_type * WOUND_PIERCE) && (brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
+	else if((wounding_type == WOUND_PIERCE) && (brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
 		return dismember(BRUTE, wounding_type = wounding_type)
 
 	else if(brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
@@ -62,7 +62,7 @@
 	limb_id = SPECIES_NECROMORPH
 	should_draw_greyscale = FALSE
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
-	icon_state = "necromorph_l_arm"
+	icon_state = ""
 	interaction_flags_item = NONE
 	w_class = WEIGHT_CLASS_GIGANTIC
 	dmg_overlay_type = null
@@ -75,13 +75,13 @@
 	wound_resistance = 0
 
 /obj/item/bodypart/arm/left/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
-	if((wounding_type & WOUND_SLASH) && brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_EDGE)
+	if((wounding_type == WOUND_SLASH) && brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_EDGE)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
 	else if(burn_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
 		return dismember(BURN, wounding_type = wounding_type)
 
-	else if((wounding_type * WOUND_PIERCE) && (brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
+	else if((wounding_type == WOUND_PIERCE) && (brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
 		return dismember(BRUTE, wounding_type = wounding_type)
 
 	else if(brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
@@ -94,7 +94,7 @@
 	limb_id = SPECIES_NECROMORPH
 	should_draw_greyscale = FALSE
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
-	icon_state = "necromorph_r_arm"
+	icon_state = ""
 	interaction_flags_item = NONE
 	w_class = WEIGHT_CLASS_GIGANTIC
 	dmg_overlay_type = null
@@ -107,13 +107,13 @@
 	wound_resistance = 0
 
 /obj/item/bodypart/arm/right/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
-	if((wounding_type & WOUND_SLASH) && brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_EDGE)
+	if((wounding_type == WOUND_SLASH) && brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_EDGE)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
 	else if(burn_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
 		return dismember(BURN, wounding_type = wounding_type)
 
-	else if((wounding_type * WOUND_PIERCE) && (brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
+	else if((wounding_type == WOUND_PIERCE) && (brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
 		return dismember(BRUTE, wounding_type = wounding_type)
 
 	else if(brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
@@ -126,7 +126,7 @@
 	limb_id = SPECIES_NECROMORPH
 	should_draw_greyscale = FALSE
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
-	icon_state = "necromorph_l_leg"
+	icon_state = ""
 	interaction_flags_item = NONE
 	w_class = WEIGHT_CLASS_GIGANTIC
 	dmg_overlay_type = null
@@ -139,13 +139,13 @@
 	wound_resistance = 0
 
 /obj/item/bodypart/leg/left/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
-	if((wounding_type & WOUND_SLASH) && brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_EDGE)
+	if((wounding_type == WOUND_SLASH) && brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_EDGE)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
 	else if(burn_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
 		return dismember(BURN, wounding_type = wounding_type)
 
-	else if((wounding_type * WOUND_PIERCE) && (brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
+	else if((wounding_type == WOUND_PIERCE) && (brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
 		return dismember(BRUTE, wounding_type = wounding_type)
 
 	else if(brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
@@ -158,7 +158,7 @@
 	limb_id = SPECIES_NECROMORPH
 	should_draw_greyscale = FALSE
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
-	icon_state = "necromorph_r_leg"
+	icon_state = ""
 	interaction_flags_item = NONE
 	w_class = WEIGHT_CLASS_GIGANTIC
 	dmg_overlay_type = null
@@ -171,13 +171,13 @@
 	wound_resistance = 0
 
 /obj/item/bodypart/leg/right/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
-	if((wounding_type & WOUND_SLASH) && brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_EDGE)
+	if((wounding_type == WOUND_SLASH) && brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_EDGE)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
 	else if(burn_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
 		return dismember(BURN, wounding_type = wounding_type)
 
-	else if((wounding_type * WOUND_PIERCE) && (brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
+	else if((wounding_type == WOUND_PIERCE) && (brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
 		return dismember(BRUTE, wounding_type = wounding_type)
 
 	else if(brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
@@ -186,6 +186,3 @@
 #undef DROPLIMB_THRESHOLD_EDGE
 #undef DROPLIMB_THRESHOLD_TEAROFF
 #undef DROPLIMB_THRESHOLD_DESTROY
-
-
-//BODYPART_UNREMOVABLE

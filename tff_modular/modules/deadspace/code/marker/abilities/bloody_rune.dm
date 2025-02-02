@@ -17,8 +17,6 @@
 	new /obj/effect/decal/cleanable/necro_rune(target_turf, null, RUNE_COLOR_MEDIUMRED, TRUE)
 	return TRUE
 
-GLOBAL_LIST_EMPTY(necro_runes)
-
 /obj/effect/decal/cleanable/necro_rune
 	name = "rune"
 	desc = "Graffiti. Damn kids."
@@ -26,16 +24,12 @@ GLOBAL_LIST_EMPTY(necro_runes)
 	icon_state = "rune-1"
 	gender = NEUTER
 	mergeable_decal = FALSE
-	var/used_overlays = ""
 
 /obj/effect/decal/cleanable/necro_rune/Initialize(mapload, colour, fade_in)
 	. = ..()
 	icon_state = "rune-[rand(1, 5)]"
 	if(colour)
 		color = colour
-	for(var/i = 1 to 2)
-		used_overlays += "[rand(1, 10)]"
-		add_overlay(GLOB.necro_runes[i])
 	if(fade_in)
 		alpha = 0
 		animate(src, alpha = 255, time = 1 SECONDS, flags = ANIMATION_PARALLEL)
@@ -43,7 +37,3 @@ GLOBAL_LIST_EMPTY(necro_runes)
 /obj/effect/decal/cleanable/necro_rune/NeverShouldHaveComeHere(turf/T)
 	return T.density || isgroundlessturf(T)
 
-/obj/effect/decal/cleanable/necro_rune/update_overlays()
-	. = ..()
-	. += GLOB.necro_runes[used_overlays[1]]
-	. += GLOB.necro_runes[used_overlays[2]]
