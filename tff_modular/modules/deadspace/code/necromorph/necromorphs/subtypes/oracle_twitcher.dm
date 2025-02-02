@@ -21,8 +21,8 @@
 	tier = 2
 	biomass_cost = 210
 	biomass_spent_required = 1200
-	melee_damage_lower = 18
-	melee_damage_upper = 22
+	melee_damage_lower = 22
+	melee_damage_upper = 26
 	necro_armor = /datum/armor/dsnecro_e_twitcher
 	minimap_icon = "otwitcher"
 	implemented = TRUE

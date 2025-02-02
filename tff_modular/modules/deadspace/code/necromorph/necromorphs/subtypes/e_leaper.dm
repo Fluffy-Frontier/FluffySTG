@@ -29,8 +29,8 @@
 	nest_allowed = FALSE
 	biomass_cost = 140
 	biomass_spent_required = 680
-	melee_damage_lower = 18
-	melee_damage_upper = 22
+	melee_damage_lower = 22
+	melee_damage_upper = 26
 	necro_armor = /datum/armor/dsnecro_leaper
 	actions = list(
 		/datum/action/cooldown/necro/charge/leaper/enhanced,

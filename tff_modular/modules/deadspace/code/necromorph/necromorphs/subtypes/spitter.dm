@@ -25,8 +25,8 @@
 	tier = 1
 	biomass_cost = 45
 	biomass_spent_required = 0
-	melee_damage_lower = 10
-	melee_damage_upper = 13
+	melee_damage_lower = 14
+	melee_damage_upper = 17
 	necro_armor = /datum/armor/dsnecro_spitter
 	actions = list(
 		/datum/action/cooldown/necro/shoot/spitter_snapshot,

@@ -36,8 +36,8 @@
 	tier = 1
 	biomass_cost = 75
 	biomass_spent_required = 0
-	melee_damage_lower = 4
-	melee_damage_upper = 8
+	melee_damage_lower = 8
+	melee_damage_upper = 12
 	necro_armor = /datum/armor/dsnecro_exploder
 	actions = list(
 		/datum/action/cooldown/necro/shout,

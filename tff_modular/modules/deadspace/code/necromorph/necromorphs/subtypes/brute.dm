@@ -133,8 +133,8 @@
 	tier = 3
 	biomass_cost = 360
 	biomass_spent_required = 950
-	melee_damage_lower = 24
-	melee_damage_upper = 28
+	melee_damage_lower = 28
+	melee_damage_upper = 32
 	necro_armor = /datum/armor/dsnecro_brute
 
 	actions = list(

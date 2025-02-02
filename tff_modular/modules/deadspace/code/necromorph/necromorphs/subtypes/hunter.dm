@@ -50,8 +50,8 @@
 	tier = 3
 	biomass_cost = 400
 	biomass_spent_required = 1200
-	melee_damage_lower = 18
-	melee_damage_upper = 22
+	melee_damage_lower = 22
+	melee_damage_upper = 26
 	necro_armor = /datum/armor/dsnecro_hunter
 	actions = list(
 		/datum/action/cooldown/necro/swing/hunter,

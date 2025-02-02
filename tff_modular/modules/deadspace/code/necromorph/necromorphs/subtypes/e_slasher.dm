@@ -28,8 +28,8 @@
 	tier = 2
 	biomass_cost = 125
 	biomass_spent_required = 680
-	melee_damage_lower = 18
-	melee_damage_upper = 22
+	melee_damage_lower = 24
+	melee_damage_upper = 26
 	necro_armor = /datum/armor/dsnecro_e_slasher
 	actions = list(
 		/datum/action/cooldown/necro/charge/slasher/enhanced,

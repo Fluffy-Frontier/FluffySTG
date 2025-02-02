@@ -26,8 +26,8 @@
 	tier = 2
 	biomass_cost = 125
 	biomass_spent_required = 680
-	melee_damage_lower = 7
-	melee_damage_upper = 10
+	melee_damage_lower = 11
+	melee_damage_upper = 14
 	necro_armor = /datum/armor/dsnecro_puker
 	actions = list(
 		/datum/action/cooldown/necro/shoot/puker_snapshot,

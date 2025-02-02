@@ -27,8 +27,8 @@
 	ui_icon = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder_enhanced.dmi'
 	necromorph_type_path = /mob/living/carbon/human/necromorph/exploder/enhanced
 	tier = 2
-	melee_damage_lower = 10
-	melee_damage_upper = 16
+	melee_damage_lower = 14
+	melee_damage_upper = 20
 	biomass_cost = 165
 	biomass_spent_required = 850
 	necro_armor = /datum/armor/dsnecro_e_exploder

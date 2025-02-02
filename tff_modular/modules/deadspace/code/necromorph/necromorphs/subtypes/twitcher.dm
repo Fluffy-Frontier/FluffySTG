@@ -45,8 +45,8 @@
 	tier = 1 //For the sake of sanity checks the normal twitcher is technically a T1
 	biomass_cost = 150
 	biomass_spent_required = 850
-	melee_damage_lower = 10
-	melee_damage_upper = 16
+	melee_damage_lower = 14
+	melee_damage_upper = 20
 	necro_armor = /datum/armor/dsnecro_twitcher
 	actions = list(
 		/datum/action/cooldown/necro/shout,

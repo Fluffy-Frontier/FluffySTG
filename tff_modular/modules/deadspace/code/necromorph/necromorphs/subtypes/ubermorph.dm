@@ -23,8 +23,8 @@
 	tier = 4
 	biomass_cost = 800
 	biomass_spent_required = 2000
-	melee_damage_lower = 10
-	melee_damage_upper = 25
+	melee_damage_lower = 14
+	melee_damage_upper = 29
 	implemented = TRUE
 	necro_armor = /datum/armor/dsnecro_ubermorph
 	actions = list(
