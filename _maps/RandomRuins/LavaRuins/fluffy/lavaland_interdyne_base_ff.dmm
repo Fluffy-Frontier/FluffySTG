@@ -37,22 +37,13 @@
 /turf/open/floor/engine/hull/reinforced/lavaland,
 /area/lavaland/surface/outdoors)
 "aq" = (
-/obj/structure/table/wood,
-/obj/item/paper_bin{
-	pixel_x = 6;
-	pixel_y = 2
-	},
-/obj/item/pen{
-	pixel_y = 3;
-	pixel_x = 7
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 10
 	},
-/obj/structure/marker_beacon/bronze,
+/obj/structure/dresser,
 /turf/open/floor/carpet/red,
 /area/ruin/interdyne_planetary_base/main/vault)
 "as" = (
@@ -819,6 +810,7 @@
 /obj/effect/turf_decal/box/white/corners{
 	dir = 8
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/science)
 "eb" = (
@@ -2242,8 +2234,8 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "kH" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/turf_decal/tile/dark_red,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/iron/dark/textured_corner,
 /area/ruin/interdyne_planetary_base/main/vault)
 "kI" = (
@@ -2970,19 +2962,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
-"or" = (
-/obj/effect/turf_decal/trimline/dark/filled/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
-	dir = 1
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 1
-	},
-/turf/open/floor/iron/dark/smooth_large,
-/area/ruin/interdyne_planetary_base/main/vault)
 "ot" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 4
@@ -4247,14 +4226,10 @@
 /area/ruin/interdyne_planetary_base/science)
 "vs" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/item/modular_computer/pda/assistant{
-	pixel_x = 6;
-	pixel_y = 0
-	},
-/obj/structure/bed/double,
-/obj/item/bedsheet/syndie/double{
-	pixel_x = -2;
-	pixel_y = 0
+/obj/structure/sign/poster/contraband/ff_contest/snuff_the_mascots/directional/north,
+/obj/machinery/suit_storage_unit/syndicate/chameleon{
+	color = "#adadcd";
+	light_color = "#adadcd"
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/interdyne_planetary_base/main/vault)
@@ -4716,6 +4691,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/box/white/corners,
+/obj/machinery/light/directional/south,
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/science)
 "xI" = (
@@ -5577,6 +5553,15 @@
 	},
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/trimline/dark/filled/line,
+/obj/item/paper_bin{
+	pixel_x = -6;
+	pixel_y = -2
+	},
+/obj/structure/marker_beacon/bronze,
+/obj/item/pen{
+	pixel_y = -1;
+	pixel_x = -5
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/interdyne_planetary_base/main/vault)
 "BY" = (
@@ -5930,6 +5915,7 @@
 /obj/effect/turf_decal/box/white/corners{
 	dir = 4
 	},
+/obj/structure/marker_beacon/bronze,
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/science)
 "DJ" = (
@@ -6351,10 +6337,6 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
-"FP" = (
-/obj/machinery/light/directional/west,
-/turf/open/floor/engine,
-/area/ruin/interdyne_planetary_base/science)
 "FQ" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/vending/wardrobe/syndie_wardrobe/interdyne{
@@ -6744,6 +6726,7 @@
 	},
 /obj/structure/window/reinforced/survival_pod/spawner/directional/south,
 /obj/effect/turf_decal/tile/dark/full,
+/obj/structure/marker_beacon/bronze,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "HF" = (
@@ -6976,13 +6959,6 @@
 /obj/structure/flora/bush/sparsegrass/style_random,
 /turf/open/floor/grass,
 /area/ruin/interdyne_planetary_base/serv)
-"IX" = (
-/obj/effect/turf_decal/tile/dark_red/half{
-	dir = 8
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/engine,
-/area/ruin/interdyne_planetary_base/science)
 "IZ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -7067,21 +7043,6 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
-"JF" = (
-/obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
-	dir = 1
-	},
-/obj/structure/sign/poster/contraband/ff_contest/snuff_the_mascots/directional/north,
-/obj/effect/turf_decal/trimline/dark/filled/line{
-	dir = 9
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
-	},
-/obj/structure/dresser,
-/obj/structure/marker_beacon/bronze,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/interdyne_planetary_base/main/vault)
 "JG" = (
 /obj/effect/turf_decal/tile/dark_red{
 	dir = 4
@@ -9554,15 +9515,20 @@
 	specialfunctions = 4;
 	normaldoorcontrol = 1
 	},
-/obj/machinery/suit_storage_unit/syndicate/chameleon{
-	color = "#adadcd";
-	light_color = "#adadcd"
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 6
+	},
+/obj/structure/bed/double,
+/obj/item/bedsheet/syndie/double{
+	pixel_x = -2;
+	pixel_y = 0
+	},
+/obj/item/modular_computer/pda/assistant{
+	pixel_x = 6;
+	pixel_y = 0
 	},
 /turf/open/floor/carpet/red,
 /area/ruin/interdyne_planetary_base/main/vault)
@@ -9688,6 +9654,7 @@
 /obj/effect/turf_decal/box/white/corners{
 	dir = 1
 	},
+/obj/structure/marker_beacon/bronze,
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/science)
 "VY" = (
@@ -11046,7 +11013,7 @@ mi
 HD
 VU
 Qt
-FP
+IR
 Qt
 IR
 dW
@@ -11459,7 +11426,7 @@ Gw
 qE
 DD
 uJ
-IX
+uJ
 bH
 uJ
 xH
@@ -12043,8 +12010,8 @@ xD
 Lq
 yA
 CM
+CM
 HN
-or
 kH
 sA
 Jn
@@ -12279,7 +12246,7 @@ gI
 xc
 Cb
 CM
-JF
+CM
 Ke
 oS
 km
@@ -12520,7 +12487,7 @@ PB
 Ao
 nH
 kg
-Ii
+pq
 Ii
 Ii
 Ii
