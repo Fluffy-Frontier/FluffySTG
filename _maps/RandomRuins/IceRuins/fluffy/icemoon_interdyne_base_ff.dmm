@@ -140,29 +140,6 @@
 /obj/structure/sign/poster/contraband/gorlex_recruitment/directional/north,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
-"az" = (
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 1
-	},
-/obj/structure/cable,
-/obj/machinery/button/door/directional/north{
-	name = "Interdyne Gate";
-	id = "interdynegate";
-	icon_state = "tram";
-	base_icon_state = "tram";
-	light_color = "#22CCFF";
-	pixel_x = -31;
-	pixel_y = 32;
-	req_access = list("syndicate")
-	},
-/obj/effect/turf_decal/trimline/dark/filled/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
-	dir = 1
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/interdyne_planetary_base/cargo)
 "aA" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -2668,16 +2645,6 @@
 /area/ruin/interdyne_planetary_base/serv)
 "mv" = (
 /obj/effect/turf_decal/sand/plating/volcanic,
-/obj/machinery/button/door/directional/south{
-	base_icon_state = "tram";
-	name = "Interdyne Gate";
-	icon_state = "tram";
-	id = "interdynegateout";
-	light_color = "#22CCFF";
-	req_access = list("syndicate");
-	pixel_x = -31;
-	pixel_y = -20
-	},
 /obj/structure/railing/corner{
 	dir = 4
 	},
@@ -2960,29 +2927,12 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "nU" = (
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 1
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
 	},
-/obj/structure/cable,
-/obj/machinery/button/door/directional/north{
-	name = "Interdyne Gate";
-	id = "interdynegateout";
-	icon_state = "tram";
-	base_icon_state = "tram";
-	light_color = "#22CCFF";
-	pixel_x = -31;
-	pixel_y = 32;
-	req_access = list("syndicate")
-	},
-/obj/effect/turf_decal/trimline/dark/filled/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
-	dir = 1
-	},
-/obj/effect/turf_decal/caution/stand_clear/red,
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/interdyne_planetary_base/cargo)
+/obj/structure/flora/bush/sparsegrass/style_random,
+/turf/open/floor/grass,
+/area/ruin/interdyne_planetary_base/main)
 "nZ" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/tile/dark/full,
@@ -4292,6 +4242,16 @@
 /area/ruin/interdyne_planetary_base/serv)
 "ue" = (
 /obj/effect/turf_decal/sand/plating/volcanic,
+/obj/machinery/button/door/directional/south{
+	base_icon_state = "tram";
+	name = "Interdyne Gate";
+	icon_state = "tram";
+	id = "interdynegateout";
+	light_color = "#22CCFF";
+	req_access = list("syndicate");
+	pixel_x = 0;
+	pixel_y = -20
+	},
 /turf/open/floor/plating/reinforced/lavaland,
 /area/ruin/interdyne_planetary_base/cargo)
 "uh" = (
@@ -5955,6 +5915,16 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/north,
+/obj/machinery/button/door/directional/north{
+	name = "Interdyne Gate";
+	id = "interdynegateout";
+	icon_state = "tram";
+	base_icon_state = "tram";
+	light_color = "#22CCFF";
+	pixel_x = 0;
+	pixel_y = 32;
+	req_access = list("syndicate")
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "Df" = (
@@ -7309,6 +7279,16 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/dark/full,
+/obj/machinery/button/door/directional/south{
+	base_icon_state = "tram";
+	name = "Interdyne Gate";
+	icon_state = "tram";
+	id = "interdynegate";
+	light_color = "#22CCFF";
+	req_access = list("syndicate");
+	pixel_x = 0;
+	pixel_y = -21
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "JP" = (
@@ -8459,23 +8439,6 @@
 	},
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/interdyne_planetary_base)
-"Po" = (
-/obj/effect/turf_decal/stripes/red/line,
-/obj/structure/cable,
-/obj/machinery/button/door/directional/south{
-	base_icon_state = "tram";
-	name = "Interdyne Gate";
-	icon_state = "tram";
-	id = "interdynegate";
-	light_color = "#22CCFF";
-	req_access = list("syndicate");
-	pixel_x = -31;
-	pixel_y = -20
-	},
-/obj/effect/turf_decal/trimline/dark/filled/line,
-/obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/interdyne_planetary_base/cargo)
 "Pq" = (
 /obj/effect/turf_decal/tile/dark_red,
 /obj/effect/turf_decal/stripes/red/line{
@@ -10137,6 +10100,16 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/north,
+/obj/machinery/button/door/directional/north{
+	name = "Interdyne Gate";
+	id = "interdynegate";
+	icon_state = "tram";
+	base_icon_state = "tram";
+	light_color = "#22CCFF";
+	pixel_x = 0;
+	pixel_y = 32;
+	req_access = list("syndicate")
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "Xz" = (
@@ -11810,7 +11783,7 @@ nc
 oc
 BN
 Dn
-WK
+nU
 dL
 pI
 WK
@@ -12264,10 +12237,10 @@ ma
 uM
 mv
 pp
-nU
-Po
+JD
+YS
 tk
-az
+jG
 xB
 bN
 Vs

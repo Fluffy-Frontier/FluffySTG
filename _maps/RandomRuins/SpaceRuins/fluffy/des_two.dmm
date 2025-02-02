@@ -3151,16 +3151,11 @@
 "kz" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/turf_decal/trimline/dark/filled/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
-	dir = 4
-	},
 /obj/structure/cable,
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 1
 	},
+/obj/effect/turf_decal/trimline/dark/filled/corner,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/security/prison)
 "kB" = (
@@ -3869,7 +3864,7 @@
 /obj/machinery/vending/sustenance,
 /obj/structure/marker_beacon/bronze,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/nova/des_two)
+/area/ruin/space/has_grav/nova/des_two/security/prison)
 "mN" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 6
@@ -3883,7 +3878,7 @@
 	},
 /obj/item/kirbyplants/random/fullysynthetic,
 /turf/open/floor/iron/dark/textured_large,
-/area/ruin/space/has_grav/nova/des_two)
+/area/ruin/space/has_grav/nova/des_two/security/prison)
 "mP" = (
 /obj/effect/turf_decal/tile/purple/full,
 /obj/machinery/light/warm/directional/north,
@@ -6580,7 +6575,7 @@
 /obj/item/food/energybar,
 /obj/item/reagent_containers/condiment/rice,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/nova/des_two)
+/area/ruin/space/has_grav/nova/des_two/security/prison)
 "vS" = (
 /obj/effect/turf_decal/siding/dark/end,
 /obj/machinery/light/warm/directional/south,
@@ -9387,9 +9382,6 @@
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
-	dir = 1
-	},
 /obj/structure/cable,
 /obj/effect/turf_decal/stripes/red/line,
 /obj/effect/mapping_helpers/apc/syndicate_access,
@@ -9405,6 +9397,7 @@
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 4
 	},
+/obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "Fj" = (
@@ -9863,7 +9856,7 @@
 	dir = 4
 	},
 /turf/open/floor/iron/dark/textured_large,
-/area/ruin/space/has_grav/nova/des_two)
+/area/ruin/space/has_grav/nova/des_two/security/prison)
 "Gt" = (
 /obj/item/circuitboard/machine/ltsrbt,
 /obj/item/radio/headset/syndicate/alt,
@@ -10796,19 +10789,6 @@
 "Ji" = (
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/space/has_grav/nova/des_two/bridge)
-"Jj" = (
-/obj/effect/turf_decal/trimline/dark/filled/corner,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/cable,
-/obj/effect/turf_decal/trimline/dark/filled/line{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
-	dir = 8
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/space/has_grav/nova/des_two/security/prison)
 "Jk" = (
 /obj/effect/turf_decal/siding/wideplating_new/light/end{
 	dir = 1
@@ -11096,7 +11076,7 @@
 	dir = 8
 	},
 /turf/open/floor/iron/dark/textured_large,
-/area/ruin/space/has_grav/nova/des_two)
+/area/ruin/space/has_grav/nova/des_two/security/prison)
 "Km" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/security/lawyer)
@@ -15011,7 +14991,7 @@
 	},
 /obj/structure/table/wood,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/nova/des_two)
+/area/ruin/space/has_grav/nova/des_two/security/prison)
 "WQ" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/south,
@@ -16110,7 +16090,7 @@ tI
 tI
 tI
 tI
-ri
+Li
 it
 it
 it
@@ -16167,7 +16147,7 @@ UW
 UW
 UW
 OK
-gk
+tI
 ri
 it
 it
@@ -16224,7 +16204,7 @@ kB
 Eh
 Eh
 By
-gk
+tI
 gk
 gk
 gk
@@ -16623,7 +16603,7 @@ VO
 VO
 Gy
 qu
-gk
+tI
 gk
 At
 eq
@@ -16674,13 +16654,13 @@ xy
 Ii
 rr
 Cg
-Jj
+Ii
 kz
 Qa
 Qa
 fn
 qs
-gk
+tI
 gk
 gk
 gk
@@ -16737,7 +16717,7 @@ TP
 SZ
 FN
 Rp
-gk
+tI
 fa
 eq
 eq
@@ -16794,7 +16774,7 @@ bN
 Ca
 Mh
 Gb
-gk
+tI
 aw
 eq
 eq
@@ -16851,7 +16831,7 @@ Wf
 Dr
 Hq
 tQ
-gk
+tI
 aw
 eq
 eq
@@ -16908,7 +16888,7 @@ OT
 jV
 FU
 rG
-gk
+tI
 aw
 eq
 dw
@@ -16965,7 +16945,7 @@ aH
 aH
 tI
 tI
-gk
+tI
 vu
 eq
 yM
