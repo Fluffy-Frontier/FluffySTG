@@ -1418,6 +1418,10 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
+"fN" = (
+/obj/effect/baseturf_helper/reinforced_plating,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/main/vault)
 "fO" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -2510,6 +2514,10 @@
 	},
 /turf/open/misc/ice/icemoon,
 /area/icemoon/underground/explored)
+"lC" = (
+/obj/effect/baseturf_helper/reinforced_plating/ceiling,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/cargo)
 "lD" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/indigo,
@@ -3382,6 +3390,10 @@
 	},
 /turf/open/misc/ice/icemoon,
 /area/icemoon/underground/explored)
+"pz" = (
+/obj/effect/baseturf_helper/reinforced_plating/ceiling,
+/turf/closed/wall/r_wall/syndicate,
+/area/ruin/interdyne_planetary_base/med)
 "pF" = (
 /obj/structure/chair/comfy/black{
 	dir = 4
@@ -5108,7 +5120,6 @@
 	color = "#7d7d7d";
 	alpha = 180
 	},
-/obj/effect/baseturf_helper/reinforced_plating,
 /turf/open/floor/iron/dark/small,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
 "yd" = (
@@ -5374,6 +5385,10 @@
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/serv)
+"zK" = (
+/obj/effect/baseturf_helper/reinforced_plating/ceiling,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/main)
 "zT" = (
 /obj/structure/punching_bag,
 /obj/effect/turf_decal/siding/wood{
@@ -6937,6 +6952,10 @@
 	name = "Slime Euthanization Chamber"
 	},
 /turf/open/floor/circuit/telecomms,
+/area/ruin/interdyne_planetary_base/science)
+"Hv" = (
+/obj/effect/baseturf_helper/reinforced_plating/ceiling,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/science)
 "Hy" = (
 /obj/effect/turf_decal/stripes/red/corner{
@@ -8664,6 +8683,10 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
+"Qu" = (
+/obj/effect/baseturf_helper/reinforced_plating,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/main)
 "Qx" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/effect/turf_decal/stripes/blue,
@@ -8671,6 +8694,10 @@
 /obj/structure/closet/crate/secure/freezer/interdyne/blood,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
+"QI" = (
+/obj/effect/baseturf_helper/reinforced_plating/ceiling,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/serv)
 "QK" = (
 /obj/effect/turf_decal/stripes/blue,
 /obj/effect/turf_decal/trimline/dark/filled/line,
@@ -9410,6 +9437,10 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
+"Ub" = (
+/obj/effect/baseturf_helper/reinforced_plating/ceiling,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/main/vault)
 "Ue" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 4
@@ -11174,11 +11205,11 @@ BA
 my
 BA
 BA
-FQ
+zK
 wa
 EV
 ln
-td
+QI
 td
 td
 RM
@@ -11292,7 +11323,7 @@ BA
 my
 BA
 BA
-FQ
+Qu
 Xo
 dZ
 Ta
@@ -11743,7 +11774,7 @@ ab
 ab
 ab
 bZ
-kf
+Hv
 kf
 oP
 ta
@@ -11918,7 +11949,7 @@ ab
 ab
 ab
 ab
-BF
+lC
 BF
 BF
 Am
@@ -12287,8 +12318,8 @@ dP
 CN
 ZU
 KV
-ZU
-ZU
+fN
+Ub
 Zl
 gF
 DQ
@@ -12746,7 +12777,7 @@ ab
 ab
 ab
 ab
-Mn
+pz
 yQ
 aE
 Yk

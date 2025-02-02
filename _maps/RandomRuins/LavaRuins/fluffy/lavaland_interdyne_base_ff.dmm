@@ -3624,7 +3624,6 @@
 /obj/structure/flora/bush/fullgrass/style_random,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/flora/tree/jungle/small/style_random,
-/obj/effect/baseturf_helper/reinforced_plating/ceiling,
 /obj/structure/marker_beacon/fuchsia,
 /turf/open/floor/grass,
 /area/ruin/interdyne_planetary_base/main)
@@ -3995,7 +3994,6 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
-/obj/effect/baseturf_helper/reinforced_plating/ceiling,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/dorms)
@@ -5314,6 +5312,10 @@
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/interdyne_planetary_base/main)
+"Az" = (
+/obj/effect/baseturf_helper/reinforced_plating,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/main/vault)
 "AB" = (
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 1
@@ -7905,6 +7907,10 @@
 "NR" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
 /turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/interdyne_planetary_base/main)
+"NS" = (
+/obj/effect/baseturf_helper/reinforced_plating,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/main)
 "NU" = (
 /obj/effect/turf_decal/tile/dark/full,
@@ -11103,7 +11109,7 @@ IR
 Qt
 IR
 IR
-pq
+NS
 hK
 bI
 If
@@ -12216,7 +12222,7 @@ Qy
 Qy
 CM
 Iw
-CM
+Az
 CM
 Jn
 fp
