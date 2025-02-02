@@ -40,7 +40,7 @@
 		testable_species -= slime_type
 
 	// The rest of the species
-	for (var/datum/species/species_type as anything in testable_species)
+	for (var/datum/species/species_type as anything in testable_species - typesof(/datum/species/necromorph)) // FLUFFY FRONTIER ADDITION - DS13
 		test_screenshot("[species_type]", get_flat_icon_for_all_directions(make_dummy(species_type, /datum/outfit/job/assistant/consistent)))
 
 /datum/unit_test/screenshot_humanoids/proc/make_dummy(species, job_outfit)
