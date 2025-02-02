@@ -2237,6 +2237,10 @@
 /obj/item/radio/intercom/interdyne/directional/east,
 /obj/structure/flora/bush/flowers_yw/style_random,
 /obj/structure/flora/bush/sparsegrass/style_random,
+/obj/structure/flora/tree/jungle/style_random{
+	pixel_x = -45;
+	pixel_y = 64
+	},
 /turf/open/floor/grass,
 /area/ruin/interdyne_planetary_base/main)
 "jZ" = (
@@ -3255,9 +3259,6 @@
 /obj/structure/flora/bush/flowers_yw/style_random,
 /obj/structure/flora/bush/sparsegrass/style_random,
 /obj/structure/flora/bush/jungle/b/style_random,
-/obj/structure/flora/tree/jungle/style_random{
-	layer = 3
-	},
 /turf/open/floor/grass,
 /area/ruin/interdyne_planetary_base/main)
 "oW" = (
@@ -3453,8 +3454,7 @@
 	},
 /obj/item/reagent_containers/cup/rag{
 	pixel_x = -5;
-	pixel_y = 12;
-	layer = 5
+	pixel_y = 12
 	},
 /obj/item/reagent_containers/spray/cleaner{
 	pixel_x = 9;
@@ -4458,8 +4458,7 @@
 	anchored = 1;
 	pixel_x = 9;
 	locked = 0;
-	req_access = list("syndicate");
-	layer = 5
+	req_access = list("syndicate")
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
@@ -6275,9 +6274,7 @@
 /obj/effect/turf_decal/stripes/red/corner{
 	dir = 1
 	},
-/obj/structure/sign/poster/contraband/gorlex_recruitment/directional/north{
-	layer = 3
-	},
+/obj/structure/sign/poster/contraband/gorlex_recruitment/directional/north,
 /obj/structure/rack/shelf,
 /obj/item/clothing/mask/gas/syndicate{
 	pixel_x = 0;
@@ -6557,8 +6554,7 @@
 	},
 /obj/item/food/roast_dinner{
 	pixel_x = -4;
-	pixel_y = 7;
-	layer = 5
+	pixel_y = 4
 	},
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv)
@@ -7713,8 +7709,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /obj/item/clothing/gloves/latex/nitrile/expeditionary_corps{
 	pixel_x = -1;
-	pixel_y = 1;
-	layer = 4
+	pixel_y = 1
 	},
 /obj/item/clothing/gloves/latex/nitrile/expeditionary_corps{
 	pixel_x = 6;
