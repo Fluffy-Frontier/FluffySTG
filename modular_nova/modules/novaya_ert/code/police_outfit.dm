@@ -76,8 +76,6 @@
 	icon_state = "police_vest"
 	icon = 'modular_nova/modules/novaya_ert/icons/armor.dmi'
 	worn_icon = 'modular_nova/modules/novaya_ert/icons/wornarmor.dmi'
-<<<<<<< HEAD
-=======
 
 /obj/item/clothing/suit/armor/vest/nri_police/Initialize(mapload)
 	. = ..()
@@ -136,4 +134,3 @@
 	armor_type = /datum/armor/cosmetic_sec
 	strip_delay = 60
 	dog_fashion = null
->>>>>>> bb0641ec261 (Colonial Stun Guns and Tasers (#4809))
