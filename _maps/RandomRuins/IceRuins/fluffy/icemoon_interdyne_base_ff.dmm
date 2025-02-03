@@ -782,7 +782,8 @@
 "cY" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/vending/syndichem{
-	onstation = 0
+	onstation = 0;
+	all_products_free = 1
 	},
 /obj/structure/marker_beacon/bronze,
 /obj/machinery/camera/xray/directional/north{
@@ -1275,9 +1276,12 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "eY" = (
-/obj/machinery/vending/coffee,
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 1
+	},
+/obj/machinery/vending/sovietsoda{
+	onstation = 0;
+	all_products_free = 1
 	},
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
@@ -1317,7 +1321,8 @@
 /obj/effect/mapping_helpers/apc/syndicate_access,
 /obj/structure/cable,
 /obj/machinery/vending/clothing{
-	onstation = 0
+	onstation = 0;
+	all_products_free = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
@@ -1442,7 +1447,8 @@
 "fS" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/vending/dinnerware{
-	onstation = 0
+	onstation = 0;
+	all_products_free = 1
 	},
 /obj/structure/marker_beacon/indigo,
 /turf/open/floor/iron/dark/textured_large,
@@ -1457,8 +1463,8 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 1
 	},
-/obj/structure/closet/emcloset,
 /obj/structure/marker_beacon/bronze,
+/obj/machinery/suit_storage_unit/interdyne/nerfed,
 /turf/open/floor/iron/dark/textured_corner{
 	dir = 8
 	},
@@ -1484,7 +1490,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/turf/open/floor/plating/reinforced/lavaland,
+/turf/open/floor/plating/reinforced/icemoon,
 /area/ruin/interdyne_planetary_base/cargo)
 "gk" = (
 /obj/structure/marker_beacon/burgundy,
@@ -1611,7 +1617,8 @@
 "gL" = (
 /obj/machinery/vending/dorms{
 	onstation = 0;
-	extended_inventory = 1
+	extended_inventory = 1;
+	all_products_free = 1
 	},
 /obj/machinery/light/directional/south{
 	color = "#0012FF"
@@ -1820,7 +1827,8 @@
 /obj/structure/marker_beacon/olive,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /obj/machinery/vending/autodrobe{
-	onstation = 0
+	onstation = 0;
+	all_products_free = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
@@ -2623,7 +2631,7 @@
 /area/ruin/interdyne_planetary_base)
 "mn" = (
 /obj/effect/turf_decal/sand/plating/volcanic,
-/turf/open/floor/plating/reinforced/lavaland,
+/turf/open/floor/plating/reinforced/icemoon,
 /area/icemoon/underground/explored)
 "mp" = (
 /obj/structure/table/wood/fancy/black,
@@ -2648,7 +2656,7 @@
 /obj/structure/railing/corner{
 	dir = 4
 	},
-/turf/open/floor/plating/reinforced/lavaland,
+/turf/open/floor/plating/reinforced/icemoon,
 /area/ruin/interdyne_planetary_base/cargo)
 "my" = (
 /obj/structure/window/reinforced/survival_pod/spawner/directional/south{
@@ -2872,8 +2880,8 @@
 	},
 /obj/structure/window/reinforced/survival_pod/spawner/directional/east,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/west,
-/turf/open/misc/asteroid/basalt/lava_land_surface,
-/area/ruin/interdyne_planetary_base/med)
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "nJ" = (
 /obj/structure/railing/corner{
 	dir = 4
@@ -3230,7 +3238,8 @@
 	onstation = 0;
 	extended_inventory = 1;
 	color = "#adadcd";
-	light_color = "#adadcd"
+	light_color = "#adadcd";
+	all_products_free = 1
 	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 5
@@ -3467,7 +3476,8 @@
 	contraband = list(/obj/item/storage/box/gum/happiness=3, /obj/item/storage/box/hug/medical=3, /obj/item/mmi/syndie/interdyne=3);
 	extended_inventory = 1;
 	color = "#adadcd";
-	light_color = "#adadcd"
+	light_color = "#adadcd";
+	all_products_free = 1
 	},
 /obj/effect/turf_decal/stripes/red/corner{
 	dir = 4
@@ -3628,7 +3638,7 @@
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/turf/open/floor/plating/reinforced/lavaland,
+/turf/open/floor/plating/reinforced/icemoon,
 /area/ruin/interdyne_planetary_base/cargo)
 "qY" = (
 /obj/structure/table/wood/fancy/black,
@@ -3869,7 +3879,8 @@
 	dir = 4
 	},
 /obj/machinery/vending/cigarette/syndicate{
-	onstation = 0
+	onstation = 0;
+	all_products_free = 1
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -4252,7 +4263,7 @@
 	pixel_x = 0;
 	pixel_y = -20
 	},
-/turf/open/floor/plating/reinforced/lavaland,
+/turf/open/floor/plating/reinforced/icemoon,
 /area/ruin/interdyne_planetary_base/cargo)
 "uh" = (
 /obj/effect/turf_decal/siding/wood{
@@ -5340,10 +5351,6 @@
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/serv)
-"zK" = (
-/obj/effect/baseturf_helper/reinforced_plating/ceiling,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/interdyne_planetary_base/main)
 "zT" = (
 /obj/structure/punching_bag,
 /obj/effect/turf_decal/siding/wood{
@@ -5398,7 +5405,8 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/vending/wardrobe/syndie_wardrobe/interdyne{
 	extended_inventory = 1;
-	onstation = 0
+	onstation = 0;
+	all_products_free = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
@@ -6083,6 +6091,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 1
 	},
+/obj/machinery/suit_storage_unit/interdyne/nerfed,
 /turf/open/floor/iron/dark/textured_half,
 /area/ruin/interdyne_planetary_base/main)
 "DT" = (
@@ -6166,7 +6175,10 @@
 /area/ruin/interdyne_planetary_base/main)
 "En" = (
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	all_products_free = 1;
+	onstation = 0
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "Eq" = (
@@ -6826,7 +6838,8 @@
 	onstation = 0;
 	extended_inventory = 1;
 	name = "SusDrobe";
-	desc = "A suspicious wardrobe with suspicious wares. Nothing to look at here."
+	desc = "A suspicious wardrobe with suspicious wares. Nothing to look at here.";
+	all_products_free = 1
 	},
 /obj/effect/turf_decal/stripes/red/box,
 /obj/structure/marker_beacon/burgundy,
@@ -6988,7 +7001,7 @@
 	},
 /obj/effect/turf_decal/sand/plating/volcanic,
 /obj/item/radio/intercom/interdyne/directional/south,
-/turf/open/floor/engine/hull/reinforced/lavaland,
+/turf/open/floor/plating/reinforced/icemoon,
 /area/ruin/interdyne_planetary_base/cargo)
 "HN" = (
 /obj/structure/transport/linear/tram/corner/southeast{
@@ -7183,7 +7196,8 @@
 "IP" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/vending/boozeomat/syndicate{
-	onstation = 0
+	onstation = 0;
+	all_products_free = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
@@ -7546,7 +7560,7 @@
 "KV" = (
 /obj/machinery/door/airlock/security/old{
 	name = "Deck Officer Quarters";
-	id = "interdyneofficerroom"
+	id_tag = "interdyneofficerroom"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -8044,7 +8058,7 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/sand/plating/volcanic,
-/turf/open/floor/engine/hull/reinforced/lavaland,
+/turf/open/floor/plating/reinforced/icemoon,
 /area/ruin/interdyne_planetary_base/cargo)
 "Nv" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -8626,10 +8640,6 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
-"Qu" = (
-/obj/effect/baseturf_helper/reinforced_plating,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/interdyne_planetary_base/main)
 "Qx" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/effect/turf_decal/stripes/blue,
@@ -9638,7 +9648,8 @@
 /obj/machinery/vending/hydronutrients{
 	onstation = 0;
 	extended_inventory = 1;
-	products = list(/obj/item/gun/energy/floragun = 3, /obj/item/geneshears = 3, /obj/item/hatchet = 3, /obj/item/cultivator = 3, /obj/item/plant_analyzer = 3, /obj/item/reagent_containers/cup/bottle/nutrient/ez = 5, /obj/item/reagent_containers/cup/bottle/nutrient/l4z = 5, /obj/item/reagent_containers/cup/bottle/nutrient/rh = 3, /obj/item/reagent_containers/spray/pestspray = 2, /obj/item/reagent_containers/syringe = 5, /obj/item/secateurs = 3, /obj/item/shovel/spade = 3, /obj/item/storage/bag/plants = 3)
+	products = list(/obj/item/gun/energy/floragun = 3, /obj/item/geneshears = 3, /obj/item/hatchet = 3, /obj/item/cultivator = 3, /obj/item/plant_analyzer = 3, /obj/item/reagent_containers/cup/bottle/nutrient/ez = 5, /obj/item/reagent_containers/cup/bottle/nutrient/l4z = 5, /obj/item/reagent_containers/cup/bottle/nutrient/rh = 3, /obj/item/reagent_containers/spray/pestspray = 2, /obj/item/reagent_containers/syringe = 5, /obj/item/secateurs = 3, /obj/item/shovel/spade = 3, /obj/item/storage/bag/plants = 3);
+	all_products_free = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
@@ -10404,9 +10415,9 @@
 "YM" = (
 /obj/machinery/vending/hydroseeds{
 	onstation = 0;
-	extended_inventory = 1
+	extended_inventory = 1;
+	all_products_free = 1
 	},
-/obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/olive,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
@@ -11138,7 +11149,7 @@ BA
 my
 BA
 BA
-zK
+FQ
 wa
 EV
 ln
@@ -11256,7 +11267,7 @@ BA
 my
 BA
 BA
-Qu
+FQ
 Xo
 dZ
 Ta
