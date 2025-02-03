@@ -1,5 +1,3 @@
-
-
 /obj/item/storage/pouch/cin_medipens
 	var/static/list/pouch_holdables = list(
 		/obj/item/reagent_containers/hypospray/medipen,
