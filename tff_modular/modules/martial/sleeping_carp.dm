@@ -1,5 +1,5 @@
 /datum/martial_art/the_sleeping_carp/can_deflect(mob/living/carp_user)
-	if(!carp_user.throw_mode)
+	if(!carp_user.combat_mode)
 		return FALSE
 	return is_capable(carp_user);
 
