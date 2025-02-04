@@ -1,5 +1,5 @@
 /obj/machinery/vending/autodrobe
-	product_categories = list(
+	product_categories_ff = list(
 		list(
 			"name" = "Other",
 			"icon" = "star",

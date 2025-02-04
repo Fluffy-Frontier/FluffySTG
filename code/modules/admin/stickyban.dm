@@ -50,7 +50,7 @@
 			SSstickyban.cache[ckey] = ban
 
 			log_admin_private("[key_name(usr)] has stickybanned [ckey].\nReason: [ban["message"]]")
-			message_admins(span_adminnotice("[key_name_admin(usr)] has stickybanned [ckey].\nReason: [ban["message"]]"))
+			message_admins(span_adminnotice("[key_name_admin(usr)] has stickybanned [ckey].\nReason: [ban["message"]]"), TRUE)
 
 		if ("remove")
 			if (!data["ckey"])
@@ -79,7 +79,7 @@
 
 
 			log_admin_private("[key_name(usr)] removed [ckey]'s stickyban")
-			message_admins(span_adminnotice("[key_name_admin(usr)] removed [ckey]'s stickyban"))
+			message_admins(span_adminnotice("[key_name_admin(usr)] removed [ckey]'s stickyban"), TRUE)
 
 		if ("remove_alt")
 			if (!data["ckey"])
@@ -127,7 +127,7 @@
 				qdel(query_remove_stickyban_alt)
 
 			log_admin_private("[key_name(usr)] has disassociated [alt] from [ckey]'s sticky ban")
-			message_admins(span_adminnotice("[key_name_admin(usr)] has disassociated [alt] from [ckey]'s sticky ban"))
+			message_admins(span_adminnotice("[key_name_admin(usr)] has disassociated [alt] from [ckey]'s sticky ban"), TRUE)
 
 		if ("edit")
 			if (!data["ckey"])
@@ -161,7 +161,7 @@
 				qdel(query_edit_stickyban)
 
 			log_admin_private("[key_name(usr)] has edited [ckey]'s sticky ban reason from [oldreason] to [reason]")
-			message_admins(span_adminnotice("[key_name_admin(usr)] has edited [ckey]'s sticky ban reason from [oldreason] to [reason]"))
+			message_admins(span_adminnotice("[key_name_admin(usr)] has edited [ckey]'s sticky ban reason from [oldreason] to [reason]"), TRUE)
 
 		if ("exempt")
 			if (!data["ckey"])
@@ -211,7 +211,7 @@
 				qdel(query_exempt_stickyban_alt)
 
 			log_admin_private("[key_name(usr)] has exempted [alt] from [ckey]'s sticky ban")
-			message_admins(span_adminnotice("[key_name_admin(usr)] has exempted [alt] from [ckey]'s sticky ban"))
+			message_admins(span_adminnotice("[key_name_admin(usr)] has exempted [alt] from [ckey]'s sticky ban"), TRUE)
 
 		if ("unexempt")
 			if (!data["ckey"])
@@ -261,7 +261,7 @@
 				qdel(query_unexempt_stickyban_alt)
 
 			log_admin_private("[key_name(usr)] has unexempted [alt] from [ckey]'s sticky ban")
-			message_admins(span_adminnotice("[key_name_admin(usr)] has unexempted [alt] from [ckey]'s sticky ban"))
+			message_admins(span_adminnotice("[key_name_admin(usr)] has unexempted [alt] from [ckey]'s sticky ban"), TRUE)
 
 		if ("timeout")
 			if (!data["ckey"])
@@ -288,7 +288,7 @@
 				cachedban["timeout"] = TRUE
 
 			log_admin_private("[key_name(usr)] has put [ckey]'s sticky ban on timeout.")
-			message_admins(span_adminnotice("[key_name_admin(usr)] has put [ckey]'s sticky ban on timeout."))
+			message_admins(span_adminnotice("[key_name_admin(usr)] has put [ckey]'s sticky ban on timeout."), TRUE)
 
 		if ("untimeout")
 			if (!data["ckey"])
@@ -316,7 +316,7 @@
 			world.SetConfig("ban",ckey,list2stickyban(ban))
 
 			log_admin_private("[key_name(usr)] has taken [ckey]'s sticky ban off of timeout.")
-			message_admins(span_adminnotice("[key_name_admin(usr)] has taken [ckey]'s sticky ban off of timeout."))
+			message_admins(span_adminnotice("[key_name_admin(usr)] has taken [ckey]'s sticky ban off of timeout."), TRUE)
 
 
 		if ("revert")
@@ -335,7 +335,7 @@
 			world.SetConfig("ban",ckey,null)
 
 			log_admin_private("[key_name(usr)] has reverted [ckey]'s sticky ban to its state at round start.")
-			message_admins(span_adminnotice("[key_name_admin(usr)] has reverted [ckey]'s sticky ban to its state at round start."))
+			message_admins(span_adminnotice("[key_name_admin(usr)] has reverted [ckey]'s sticky ban to its state at round start."), TRUE)
 			//revert is mostly used when shit goes rouge, so we have to set it to null
 			// and wait a byond tick before assigning it to ensure byond clears its shit.
 			sleep(world.tick_lag)
@@ -348,15 +348,15 @@
 		return
 	var/timeout
 	if (SSdbcore.Connect())
-		timeout = "<a href='?_src_=holder;[HrefToken()];stickyban=[(ban["timeout"] ? "untimeout" : "timeout")]&ckey=[ckey]'>\[[(ban["timeout"] ? "untimeout" : "timeout" )]\]</a>"
+		timeout = "<a href='byond://?_src_=holder;[HrefToken()];stickyban=[(ban["timeout"] ? "untimeout" : "timeout")]&ckey=[ckey]'>\[[(ban["timeout"] ? "untimeout" : "timeout" )]\]</a>"
 	else
-		timeout = "<a href='?_src_=holder;[HrefToken()];stickyban=revert&ckey=[ckey]'>\[revert\]</a>"
+		timeout = "<a href='byond://?_src_=holder;[HrefToken()];stickyban=revert&ckey=[ckey]'>\[revert\]</a>"
 	. = list({"
-		<a href='?_src_=holder;[HrefToken()];stickyban=remove&ckey=[ckey]'>\[-\]</a>
+		<a href='byond://?_src_=holder;[HrefToken()];stickyban=remove&ckey=[ckey]'>\[-\]</a>
 		[timeout]
 		<b>[ckey]</b>
 		<br />"
-		[ban["message"]] <b><a href='?_src_=holder;[HrefToken()];stickyban=edit&ckey=[ckey]'>\[Edit\]</a></b><br />
+		[ban["message"]] <b><a href='byond://?_src_=holder;[HrefToken()];stickyban=edit&ckey=[ckey]'>\[Edit\]</a></b><br />
 	"})
 	if (ban["admin"])
 		. += "[ban["admin"]]<br />"
@@ -366,12 +366,12 @@
 	for (var/key in ban["keys"])
 		if (ckey(key) == ckey)
 			continue
-		. += "<li><a href='?_src_=holder;[HrefToken()];stickyban=remove_alt&ckey=[ckey]&alt=[ckey(key)]'>\[-\]</a>[key]<a href='?_src_=holder;[HrefToken()];stickyban=exempt&ckey=[ckey]&alt=[ckey(key)]'>\[E\]</a></li>"
+		. += "<li><a href='byond://?_src_=holder;[HrefToken()];stickyban=remove_alt&ckey=[ckey]&alt=[ckey(key)]'>\[-\]</a>[key]<a href='byond://?_src_=holder;[HrefToken()];stickyban=exempt&ckey=[ckey]&alt=[ckey(key)]'>\[E\]</a></li>"
 
 	for (var/key in ban["whitelist"])
 		if (ckey(key) == ckey)
 			continue
-		. += "<li><a href='?_src_=holder;[HrefToken()];stickyban=remove_alt&ckey=[ckey]&alt=[ckey(key)]'>\[-\]</a>[key]<a href='?_src_=holder;[HrefToken()];stickyban=unexempt&ckey=[ckey]&alt=[ckey(key)]'>\[UE\]</a></li>"
+		. += "<li><a href='byond://?_src_=holder;[HrefToken()];stickyban=remove_alt&ckey=[ckey]&alt=[ckey(key)]'>\[-\]</a>[key]<a href='byond://?_src_=holder;[HrefToken()];stickyban=unexempt&ckey=[ckey]&alt=[ckey(key)]'>\[UE\]</a></li>"
 
 	. += "</ol>\n"
 
@@ -390,7 +390,7 @@
 		<title>Sticky Bans</title>
 	</head>
 	<body>
-		<h2>All Sticky Bans:</h2> <a href='?_src_=holder;[HrefToken()];stickyban=add'>\[+\]</a><br>
+		<h2>All Sticky Bans:</h2> <a href='byond://?_src_=holder;[HrefToken()];stickyban=add'>\[+\]</a><br>
 		[banhtml.Join("")]
 	</body>
 	"}

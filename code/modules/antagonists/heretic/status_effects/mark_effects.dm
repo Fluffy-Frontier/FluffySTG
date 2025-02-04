@@ -79,7 +79,7 @@
 /datum/status_effect/eldritch/ash/on_effect()
 	if(iscarbon(owner))
 		var/mob/living/carbon/carbon_owner = owner
-		carbon_owner.adjustStaminaLoss(6 * repetitions) // first one = 30 stam
+		carbon_owner.adjustStaminaLoss(17 * repetitions) // first one = 85 stam; FLUFFY FRONTIER EDIT: ANTAG BUFF #5159; original: 6
 		carbon_owner.adjustFireLoss(3 * repetitions) // first one = 15 burn
 		for(var/mob/living/carbon/victim in shuffle(range(1, carbon_owner)))
 			if(IS_HERETIC(victim) || victim == carbon_owner)
@@ -235,11 +235,15 @@
 
 /datum/status_effect/eldritch/lock/on_apply()
 	. = ..()
-	ADD_TRAIT(owner, TRAIT_ALWAYS_NO_ACCESS, STATUS_EFFECT_TRAIT)
+	RegisterSignal(owner, COMSIG_MOB_TRIED_ACCESS, PROC_REF(attempt_access))
 
 /datum/status_effect/eldritch/lock/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_ALWAYS_NO_ACCESS, STATUS_EFFECT_TRAIT)
+	UnregisterSignal(owner, COMSIG_MOB_TRIED_ACCESS)
 	return ..()
+
+/datum/status_effect/eldritch/lock/proc/attempt_access(datum/source, obj/door_attempt)
+	SIGNAL_HANDLER
+	return ACCESS_DISALLOWED
 
 // MARK OF MOON
 
@@ -250,6 +254,8 @@
 
 /datum/status_effect/eldritch/moon/on_apply()
 	. = ..()
+	if(owner.can_block_magic(MAGIC_RESISTANCE_MIND))
+		return FALSE
 	ADD_TRAIT(owner, TRAIT_PACIFISM, id)
 	owner.emote(pick("giggle", "laugh"))
 	owner.balloon_alert(owner, "you feel unable to hurt a soul!")

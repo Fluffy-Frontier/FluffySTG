@@ -344,12 +344,18 @@
 	var/obj/item/clothing/mask/facehugger/child
 	///Proximity monitor associated with this atom, needed for proximity checks.
 	var/datum/proximity_monitor/proximity_monitor
+	// FLUFFY FRONTIER ADDITION BEGIN - TGMC_XENOS
+	var/child_path = /obj/item/clothing/mask/facehugger
+	// FLUFFY FRONTIER ADDITION END
 
 /obj/structure/alien/egg/Initialize(mapload)
 	. = ..()
 	update_appearance()
 	if(status == GROWING || status == GROWN)
-		child = new(src)
+		// FLUFFY FRONTIER EDIT BEGIN - TGMC_XENOS
+		// ORIGINAL LINE: child = new(src)
+		child = new child_path(src)
+		// FLUFFY FRONTIER EDIT END
 	if(status == GROWING)
 		addtimer(CALLBACK(src, PROC_REF(Grow)), rand(MIN_GROWTH_TIME, MAX_GROWTH_TIME))
 	proximity_monitor = new(src, status == GROWN ? 1 : 0)
@@ -385,7 +391,7 @@
 	. = ..()
 	if(.)
 		return
-	if(user.get_organ_by_type(/obj/item/organ/internal/alien/plasmavessel))
+	if(user.get_organ_by_type(/obj/item/organ/alien/plasmavessel))
 		switch(status)
 			if(BURSTING)
 				to_chat(user, span_notice("The child is hatching out."))
@@ -457,7 +463,7 @@
 			return
 
 		var/mob/living/carbon/C = AM
-		if(C.stat == CONSCIOUS && C.get_organ_by_type(/obj/item/organ/internal/body_egg/alien_embryo))
+		if(C.stat == CONSCIOUS && C.get_organ_by_type(/obj/item/organ/body_egg/alien_embryo))
 			return
 
 		Burst(kill=FALSE)

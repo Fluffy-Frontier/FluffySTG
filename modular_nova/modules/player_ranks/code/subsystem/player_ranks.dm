@@ -203,7 +203,6 @@ SUBSYSTEM_DEF(player_ranks)
 
 	load_player_rank_sql(veteran_controller)
 
-
 /**
  * Handles populating the player rank from the database.
  *

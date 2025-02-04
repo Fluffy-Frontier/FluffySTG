@@ -235,6 +235,8 @@
 	name = "Empty Colonial First Aid Pouch"
 	item_path = /obj/item/storage/pouch/cin_medkit
 
+// FLUFFY FRONTIER REMOVAL BEGIN: nova vending rebalance #5219
+/*
 /datum/loadout_item/pocket_items/deforest_cheesekit
 	name = "Civil Defense Medical Kit"
 	item_path = /obj/item/storage/medkit/civil_defense/stocked
@@ -242,6 +244,8 @@
 /datum/loadout_item/pocket_items/deforest_frontiermedkit
 	name = "Frontier Medical Kit"
 	item_path = /obj/item/storage/medkit/frontier/stocked
+*/
+// FLUFFY FRONTIER REMOVAL END
 
 /datum/loadout_item/pocket_items/synthetic_medkit
 	name = "Robotic Repair Equipment Kit"

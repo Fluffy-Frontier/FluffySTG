@@ -1,0 +1,1821 @@
+2025-01-03:
+  Kocma-san:
+  - rscadd: "TGM\u0421 xenos are available again"
+  - rscadd: TGMC Alien Infestation button in Trigger Events menu
+  RatFromTheJungle:
+  - qol: made previously required experiments into discounts for a majority of the
+      tech-web, pretty much everything but alien tech, surgeries (to keep the coroners
+      job safe,) fishing, and illegal tech.
+2025-01-08:
+  1393F:
+  - map: Snowglobe station has the right amount of HFR corner boxes in the HFR room
+      now
+  CoiledLamb, JohnFulpWillard, Ebin-Halcyon, axietheaxolotl, sergeirocks100:
+  - image: The coroner's scrubs and jumpsuit now have digitigrade sprites.
+  Hardly:
+  - balance: Nanotrasen Consultants and Blueshields now use limited ID trims
+  - balance: Blueshields and Nanotrasen Consultants can no longer change their own
+      access
+  Kocma-san:
+  - bugfix: TGMC xenos queen now creates the correct eggs. From which the right facehuggers
+      hatch. And which creates the right embryos in the victims' bodies.
+  OrbisAnima:
+  - qol: Detectives get all the Security Huds on the loadout.
+  OrionTheFox:
+  - image: restores the intended icons for the Hospital Gown/Hardlight Gown
+  RatFromTheJungle:
+  - qol: made the interlink shuttle universally faster, which should make it eat up
+      less time going down, or up!
+  vinylspiders:
+  - bugfix: hash can now be created again by grinding dried cannabis leaves in a grinder
+      or with a mortar and pestle
+2025-01-11:
+  OrbisAnima:
+  - code_imp: Hopefully fixes opendream issues
+2025-01-15:
+  00-Steven:
+  - bugfix: Photocopying no longer removes the stamp overlays from the original paper,
+      and actually copies them to the copy.
+  - spellcheck: Give alert 'examiante' > 'examine'.
+  - bugfix: Custom emotes done via the custom emote keybind default to both audible
+      and visible again.
+  - bugfix: Stamps no longer render below the paper sometimes.
+  - bugfix: Stamps no longer inherit the color of the paper they're on.
+  - bugfix: Produce, bitrunning, and mining order consoles no longer have broken icons
+      when swapping tabs.
+  - bugfix: Items in produce, bitrunning, and mining order consoles with especially
+      long names no longer make the information tooltip and item order buttons wonky.
+  - qol: The information tooltip button for items in produce, bitrunning, and mining
+      order consoles no longer moves with the item name, and instead sits next to
+      the item order buttons.
+  - bugfix: Clearing paper, like by splashing it with ethanol, actually resets its
+      icon state to the cleared version.
+  - bugfix: Lesser quiver actually has less slots as intended.
+  00-Steven, SmArtKar:
+  - bugfix: Paper on clipboards uses its own colour rather than that of the clipboard.
+  13spacemen:
+  - rscdel: Time Dilation no longer shows in the hub text
+  Absolucy:
+  - bugfix: Light Step now properly prevents your hands and clothes from getting covered
+      in blood when stepping in it.
+  - bugfix: Abductor doohickeys (i.e abductor device circuit boards, mental interface
+      device, silencer, science tool, and omnitool) now properly unlock alien tech
+      via the experimentor.
+  - bugfix: ACTUALLY allow dot radio prefixes to also work with the tgui-say radio
+      prefix display.
+  - bugfix: Fixed double-encoded messages with AI shuttle call reasons.
+  - refactor: Cleaned up code relating to heretic ascension announcements and traits.
+  - bugfix: Fixed graphics getting screwed up when reconnecting with BYOND 515 after
+      playing on BYOND 516.
+  - bugfix: Made the broadcast camera's sprite more consistent, it hopefully shouldn't
+      reset to the inactive sprite while recording in some weird scenarios now.
+  - rscadd: Added a notice for clients on BYOND 516 that 516 is still in beta, and
+      UI elements may not be fully compatible yet.
+  - qol: Rust heretic healing (leeching walk, rust ascension) now, so server lag shouldn't
+      fuck you over nearly as much if you're relying on the healing.
+  - code_imp: Very slightly improved the performance of code related to adding and
+      removing traits.
+  - bugfix: Fixed a runtime error related to the balloon alert from folding a paper
+      plane.
+  Absolucy, Flleeppyy:
+  - sound: Added a new, unique sound for polling!
+  Absolucy, S34NW:
+  - bugfix: Chat settings properly save on BYOND 516 now. Settings still won't carry
+      over from 515 tho, 515 and 516 settings will be separate.
+  Absolucy, ShadowLarkens, S34N:
+  - bugfix: Fixed chat rapidly flickering in BYOND 516.
+  Acantharctia:
+  - balance: Numb quirk now stops you from screaming and seeing the damage overlay
+      when damaged. Better keep a close eye on your health.
+  ArcaneMusic:
+  - rscadd: Adds a canned disease that can show randomly in space occasionally, causing
+      the target to begin to providing chemicals resulting in the target to avoid
+      needing to be affected by gravity.
+  Arturlang:
+  - bugfix: The unique AI station trait will no longer be able to choose lawsets set
+      as default in the config.
+  Auris456852:
+  - bugfix: Makes a sliced baklava pie keep its complexity after slicing
+  Autisem:
+  - refactor: Nanotrasen has introducted new upgrades into the aging station shield
+      statalites, they require a but longer to toggle on however
+  AyIong:
+  - bugfix: Admin/Debug UI's (Especially the Game Panel) now work properly on Byond
+      516, instead of showing raw HTML
+  - qol: Now you can hide `Initialized some shit within 0s` messages, by unchecking
+      `Debug Log` checkbox into the chat tabs settings
+  - qol: AdminPMs, admin tickets, vote results and started vote notification are now
+      much more visible in the chat.
+  - qol: Boxed messages in chat (like examine), has been restyled.
+  - admin: Ticket actions buttons in chat got a little bigger
+  - bugfix: Highlighted PMs, vote results and examine will not have weird black title
+  - bugfix: Fixed scrollbar colors and background position in TGUI on Byond 516
+  Ben10Omintrix:
+  - refactor: projectile dampeners have been refactored. please report any bugs
+  - bugfix: repairbots no longer get flashed by their own welder
+  - bugfix: repairbots no longer break glass tables they step on
+  - bugfix: repairbots can no longer flush their own welders
+  - bugfix: fixes some runtimes when emagged repairbots try to deconstruct things
+  - bugfix: fixes sentient repairbots not being able to see or remove their material
+      counts
+  - bugfix: fixes the chipped quirk displaying the skill chip's typepath rather than
+      its name
+  - bugfix: fixes chipped quirk's itchy effect not working
+  - bugfix: the chipped quirk's itchy effect now goes away when the skillchip is removed
+  - bugfix: fixes monkey AI not being able to attack
+  - bugfix: raptors no longer break their trough upon interacting with it
+  - balance: removed the troublesome trait from raptors, they now wont go out to attack
+      their colleagues.
+  - rscadd: you can now give pet collars to ur raptors to rename them
+  - refactor: floorbots have been refactored, please report any bugs
+  - rscadd: adds repairbots to the game!
+  - bugfix: radial pet commanding emotes will now not appear if the command is impossible
+      to execute
+  - rscadd: adds flora-turtles. obtainable through cargo or by fishing from the hydroponics
+      tray
+  - qol: u can now directly feed animals from ur hands, like raptors or cats, by clicking
+      on them with their preferred food.
+  - balance: u can now heal ur raptors mid or post battles by hand feeding them ores
+  - bugfix: repairbots now gain their destructive abilities when hacked by an AI
+  - bugfix: repairbot crafting recipes have been updated
+  - qol: holding shift and hovering over your pet will display a list of commands
+      you can click from
+  - bugfix: fixes the fishing pet command not working
+  - bugfix: corgi's population will no longer exponentially grow
+  Boviro:
+  - qol: Atmos MODsuits can now hold extinguishers on their suit slot
+  BurgerBB:
+  - qol: Reworks the Druggy visual effect to cause less eye strain.
+  CRITAWAKETS:
+  - rscadd: Added in the modulo operator to the circuit arithmetic component.
+  Cruix:
+  - rscadd: Shuttle navigation computers now show the location of airlocks, turrets,
+      and the shuttle control consoles on the ship outline while placing a custom
+      landing location.
+  DATA-xPUNGED:
+  - map: removed the sec record computer from the Icemoon Listening Post.
+  Darkened-Earth:
+  - bugfix: Alarm ranchers have wrangled up a rogue fire alarm in Meta class station
+      custom offices and relocated it to a safe habitat
+  - bugfix: NanoTrasen has shown a xenobiology containment engineer for Delta class
+      stations a very important lesson between inlets and outlets
+  Dawnseer:
+  - bugfix: Turns Cap (White) into a white cap in loadout
+  - bugfix: fixed some erronous spriting on the zippo
+  - rscadd: Unleashed a great evil upon hoplines, in the form of a paperwork implant.
+  Deadgebert:
+  - balance: Synthflesh required for unhusking now between 60u and 100u depending
+      on purity.
+  Dmeto:
+  - map: 'removes a unused disposal pipe from Cargo, fixes mining dock intercom.
+
+      map:adds access helper to disposals south airlock.'
+  EOBGames:
+  - rscadd: 'A new series of shipping containers have been added: keep an eye out
+      for them at your local cargo terminus.'
+  - rscadd: DONK CO. HAS UNVEILED A NEW RANGE OF READY-DONK PRODUCTS! GET THEM AT
+      CARGO TODAY!
+  - image: 'READY-DONK: NEW LOOK, SAME GREAT TASTE'
+  EnterTheJake:
+  - bugfix: FIxes insulated modsuits not granting full insulation.
+  - image: Heretic's Moon Blade has received a new sprite.
+  - rscadd: New internal sleeper module for the Clarke.
+  - balance: Clarke Integrity has been bumped from 200 to 250 HP, melee armor bumped
+      from 20 to 40.
+  - balance: Exo mining module can now be used to scan vents and begin the wave defense
+      event.
+  - balance: The Clarke Ore Storage Module can now collect boulders and internally
+      smelt them.
+  - balance: Mech Pka is now bundled within the Clarke tech node, it now does more
+      damage and comes with the AOE upgrade preinstalled.
+  - balance: Exo mining drills are now a utility module rather than a weapon.
+  - balance: Applied Bluespace Research and Controlled Plasma tech nodes are no longer
+      hardlocked behind surveys, they instead favor from a discount if they are completed.
+  - bugfix: Fixes Exo Mech modules not granting life support to housed patients.
+  - bugfix: fixes atmos goggles not showing the temperature of turfs.
+  - bugfix: temporary blocks such as blade heretic orbiting knives properly stop body
+      throws.
+  FeenieRU:
+  - rscadd: Two more alt-skins for security cap
+  Fikou:
+  - bugfix: xeno princesses no longer lose their unique identifier
+  - admin: you no longer get auto deadminned on localhost
+  - admin: default prefs are now to be deadminned as antag/head/sec/silicon
+  - bugfix: Fixed chaplain divine archer outfit rolled down sprite
+  FlufflesTheDog:
+  - bugfix: welding sparks no longer break on transitioning to a different floor
+  - qol: vending machines deconstructed during a vendor uprising are no bolted to
+      the ground
+  - spellcheck: paywall firing pins no longer set the gun description to the pin's
+      description on removal
+  - bugfix: Dimensional shifter relics work more reliably.
+  Gaxeer:
+  - bugfix: AI controlled monkeys can again activate items in active hand
+  - bugfix: modular computer laptops can now be interacted with RMB, instead of picked
+      up
+  - qol: modular computer laptops can now be interacted with RMB when open, or opened
+      with RMB when closed. Also screentips for  this added
+  Ghommie:
+  - bugfix: The Aquarium ui won't show the user contents rather than that of the aquarium
+      itself
+  - rscadd: Added fishing bluespace capsules to the game, which can be used to spawn
+      a variety of fishing spots, from freshwater to tiziran sea to hot springs, and
+      also lava and plasma if emagged.
+  - rscadd: 'Added two new fish: the zagoskian moonfish and the sacabambaspis. Moonfish
+      will now periodically lay moonfish eggs.'
+  - map: The 'crashed pod' lavaland ruin now has a hot spring, and the cursed hotspring
+      on icemoon now has a plastic chair and a fishing toolbox.
+  - rscadd: Icemoon lavaloops (now named plasmaloops) fish now look different.
+  - bugfix: Fixed pixel position of fish overlays for aquariums.
+  - bugfix: Fixed fishing lures.
+  - refactor: refactored aquariums heavily. Please report any fishy bug.
+  - rscadd: Added portable/handheld fish tanks to the game. They can be crafted with
+      an aquarium kit and 5 sheets of plastic. While portable, they cannot store fish
+      that are too big or if there're too many already. This restriction can be removed
+      by using the new "bluespace fish tank kit" techweb item.
+  - map: Replaced the lawyer's stationary pet aquarium with a fish tank, so you can
+      carry McGill around.
+  - balance: Reduced the iron cost of stationary aquariums a little.
+  - balance: Tendril chests and mystery boxes can now be fished multiple times with
+      a 30 minutes cooldown.
+  - balance: other previously fishing loot available in limited amount, such as adamantine
+      and runite from plasma rivers, regenerate over time.
+  - bugfix: You can no longer deploy survival/fishing capsules by the holodeck and
+      permanently brick it.
+  - balance: brought fishing difficulty of all fishing spots a bit closer to their
+      original value following a small oopsie that made them unexpectingly easier
+      for more than two months.
+  - bugfix: FIsh flops again.
+  - bugfix: Bombing someone during organ manipulation no longer summons new organs.
+  - bugfix: Aquariums are now potential fishing spots.
+  - rscadd: Using the gibber on people with fish tails now yield some fish tail fillets.
+  - bugfix: Fixes ink spit not respecting its 21 seconds cooldown.
+  - bugfix: Player-controlled lobstrosities, space dragons, space carps and penguins
+      can fish again.
+  - balance: Nerfed slipperiness from fish infusion. It no longer knockdowns but it
+      staggers and slides the user one or two tiles away.
+  - balance: Added a slight natural weakness to fire/heat to the fish infusion, which,
+      taking the minor general damage resistance resistance when wet, is pretty mild.
+  - balance: hot temperature projectiles from the temperature gun (and watchers I
+      think) also dry living creatures hit by them.
+  - rscadd: Added a new score that keeps track of all different fish that you've caught
+      between shifts.
+  - server: Added a new schema table to store the aforementioned entries and the ckeys
+      associated to them, with an additional timestamp column.
+  - bugfix: You can now use fish feed cans on aquariums while the control panel is
+      open.
+  - bugfix: Fixed a couple nits with the water visuals not appearing on objects with
+      a very low layer (rendered just above the floor), as well as atmos pipes looking
+      a bit funky on untiled turfs beside catwalks and platings when beside connected,
+      under-floored pipes.
+  - balance: Aquarium kits can now be printed from cargo, service, science protolathes
+      as well as the autolathe. They no longer have to be ordered from cargo.
+  - balance: Revamped the "Growth/Reproduction" setting for aquarium to "Safe Mode",
+      which also disables the food, temperature and water requiremenets of aquariums,
+      making it useful for purely decorative aquariums.
+  - balance: Replaced the "Aggressive" fish trait with "Territorial". No more angelfish
+      shanking the goldfish and guppy in prefilled aquariums with less than 5 fishes.
+  - qol: Added screentips to aquariums.
+  - bugfix: Aquarium safe mode is now safe.
+  - bugfix: Fish are no longer still hungry after being fed.
+  - bugfix: Actually fixed alt-clicking aquariums.
+  - bugfix: Fixed feeding fish only increasing their size but not the weight.
+  - bugfix: Fixing some errors when removing brains with skillchips in them.
+  - bugfix: Fixing remote/ghost alt-click functioning on aquariums
+  - bugfix: Added missing plasma tetra to freshwater fishing spots.
+  - balance: plasma tetra is now smaller and qualifies as baitfish.
+  - bugfix: You should be once again able to fish moonfish and other fish used in
+      lizard cuisine from tiziran water turfs.
+  - bugfix: Fixed the displayed stats when examining fishing rods twice.
+  - bugfix: Fixed aquariums auto-feeding.
+  - rscadd: Added fish mounts to the game. They can be crafted with 3 sheets of wood.
+      Otherwise there's one at the bar that stores the fish between rounds.
+  GoblinBackwards:
+  - bugfix: fixed the fire effect not appearing on burning gasses
+  Hardly:
+  - bugfix: Ghosts can no longer emit spooky analyzing sounds when scanning
+  - bugfix: Fixes watchers not attacking their targets in melee range
+  Hatterhat:
+  - bugfix: Crate Chaos's encrypted cache is now randomly placed again.
+  - bugfix: .357 Heartseeker homes in on people if you click on them, instead of not
+      homing in at all.
+  - qol: You can now pull singular trophies off kinetic crushers with RMB.
+  - qol: Kinetic crushers now have screentips informing people that they can remove
+      trophies via empty hand (RMB) or crowbar (LMB).
+  - bugfix: Proto-kinetic crushers no longer cause a runtime every time you hit a
+      mob that doesn't have a mark.
+  - bugfix: Equipment pieces with upgradable armor (e.g. explorer suits) now properly
+      list what they use to upgrade.
+  - bugfix: Mobs without targetable limbs no longer have extraneous spaces appear
+      in their hit-by-projectile messages.
+  Iajret:
+  - rscadd: Several ckey locked cosmetic item are now unlocked for every donator
+  Isratosh:
+  - balance: Time-gated traitor uplink gear is returned to being hard reputation locked
+      with a static price.
+  Jackal-boop:
+  - balance: syndicate GMO researchers have increased the effectiveness of their 'hot
+      potato'
+  JagOfTroy:
+  - bugfix: 'Fixed Automatic Announcement System bug with the Research Node Announcement
+      message not updating properly. It will now properly save and announce whatever
+      input the user desires!
+
+      :cl:'
+  Jewelry-x:
+  - bugfix: changeling memories of victims no longer include `<B>` and `<br>`
+  JohnFulpWillard:
+  - bugfix: Smartfridges on grid mode (like botany's) will no longer instantly spit
+      out all the items it has when you try to set how many it should spit out.
+  JoshAdamPowell:
+  - map: In the new year's budget the syndicate have decided that chemists need beakers
+      to do their job properly.
+  KazooBard:
+  - qol: Selecting which spells to cast with hotkeys, and using them in general is
+      faster.
+  KikoWen0:
+  - map: Nebula Arrivals stairs are now easier to navigate
+  - map: Fixed unconnected wire in dormitories on Nebula
+  - map: Fixed engineers having free pass to cargo department on Nebula
+  KingkumaArt:
+  - bugfix: Etherials no longer lose overcharge really slowly.
+  - bugfix: Etherial Wine/Telepole no longer overcharges etherials with one sip.
+  Kocma-san:
+  - admin: moves all admin requests in admin stuff section. Now they have type Prayers
+  - rscadd: added a "print" button to the request manager
+  - rscadd: admin fax can now send exotic items
+  - rscadd: added "Auto-print Faxes" button to the request manager, which allows you
+      to enable automatic printing of requests on the admin fax
+  - bugfix: fixed a bug where pressing the print button would cause the receive animation
+      to appear on all admin faxes.
+  - bugfix: fix radio sound output when receiving a message
+  - sound: the sound of receiving your own messages over the radio is no longer played
+  Kylerace:
+  - bugfix: holodeck is slightly less likely to explode the server
+  LT3:
+  - bugfix: Tram spoilers correctly provide welder or multitool hints depending on
+      their damage
+  - bugfix: Malfunctioning tram controller flashes orange and can be preemptively
+      fixed before it crashes
+  - bugfix: Fixed lead acid cell having extremely high max charge
+  - bugfix: Map vote will no longer sometimes ignore the winning choice and pick a
+      cached, ineligible map
+  - bugfix: You can no longer hug yourself to overcome fear of the dark
+  - bugfix: Fixed unconstructed solar panels on Nebulastation port aft solars
+  - qol: Entertainment and newscaster broadcasts can be toggled in chat tabs
+  - bugfix: Premade/vending machine flatpacks now display what board is inside
+  LemonInTheDark:
+  - bugfix: Boulders will no longer randomly run free from smelting pipelines! We
+      have enslaved them once more.
+  LordHookie:
+  - bugfix: Ammo manufacturers have corrected their labelling habits, and many objects
+      which referred to ammo types that have not existed for several years no longer
+      do so.
+  - bugfix: The Syndicate Medical Space Suit is no longer labelled a 'green space
+      suit' despite being a noticeably non-green color.
+  - bugfix: Syndicate Medical and Engineering space helmets now display themselves
+      as such.
+  - balance: The .460 Ceres AP round has had its armor piercing and damage reduced.
+  Majkl-J:
+  - qol: mech fabricator output direction can now be changed with a drag pull
+  - bugfix: Aloe cream no longer catches fire seconds after finishing baking
+  - bugfix: Overcharged SMESes no longer spam runtime when timers chug up
+  - bugfix: Ruins will now correctly spawn their tied ruins in
+  - bugfix: The map_logging test now runs proper
+  - code_imp: The stacked_lights test now screams with area names too.
+  - bugfix: Fauna can no longer push necropolis gates
+  Melbert:
+  - bugfix: Fixed play local sound for admins
+  - bugfix: Fixes some atmos and record related log messages
+  - bugfix: Monkeys no longer ignore basic rules such as "you can't escape a passive
+      grab if you're cuffed or in crit"
+  - bugfix: Mulebot wire hacking is less fourth wall breaking
+  - bugfix: Maybe fixes some organ manipulation bugs
+  - balance: Morphine's sedative power has been halved. It now takes ~10 units to
+      guarantee sleep, up from ~5.
+  - balance: Morphine now causes mild disgust.
+  - balance: Morphine is now twice as addictive, causing addiction if you down over
+      ~30 units without pause.
+  - bugfix: Stuff like the SM exploding will no longer output to your OOC tab
+  - bugfix: Frozen slimes can't latch on to you (but they can still attack you technically)
+  - balance: Having a broken arm affects your accuracy with ranged weapons fired with
+      that arm. Utilizing a painkiller will nullify this effect, however.
+  - balance: Painkillers will prevent your punches from being cancelled due to having
+      a broken arm. You'll still take damage, though.
+  - balance: Being drunk now affects your accuracy with ranged weapon. The bartender
+      is immune to this effect via their skillchip.
+  - code_imp: A lot of code involving left and right hand handling has been cleaned
+      up, easier to read. Report any oddities, like left and rights being flipped
+  - bugfix: You should be afflicted by the "Curse of Mundanity" far, far less
+  - rscdel: Some crowbars on Wawa, Nebula, and Birdboat are significantly less heavy
+  - balance: Lava no longer burns mobs thrown over it
+  - rscadd: Adds Syndol to the chemical kit, an addictive hallucinogen that applies
+      bonus effects when security officers, assistants, or clowns are exposed.
+  - balance: Carpenter hammer force 20 -> 17
+  - balance: Carpenter hammer throwforce 20 -> 14
+  - balance: Carpenter hammer demo mod 1.25 -> 1.15
+  - bugfix: Words in other languages will be randomized far less often (depending
+      on how commonly they are used). This bug was 10 years old.
+  - qol: Treatment message now better reflects what you're doing ("suturing", "applying",
+      etc)
+  - bugfix: Gauze is now stickier (and will actually apply to bodyparts)
+  - bugfix: Metalgen works as a lockpick; igniting a crate metalgen'd into plasma
+      will properly drop its contents.
+  - code_imp: Hiding stuff in food should generally work more consistently now.
+  - bugfix: Fixes players not doing the "searching for item" do-after for items hidden
+      in food.
+  - balance: Tasers are now more realistic
+  - rscdel: Electrodes are no longer in the hallucination projectile pool
+  - qol: Navigate verb better indicates areas on a separate level. Selecting an area
+      on a different level will direct you to the nearest staircase (as with "Nearest
+      Way Up/Down")
+  - qol: Navigating to a staircase or ladder will shorten the cooldown of navigate
+      and clear your existing path for you upon finding it
+  - bugfix: Meshes should work better
+  - bugfix: Medical item usage is correctly blackbox logged
+  - bugfix: Double balloon alerts from medical item usage
+  - bugfix: Poultice works on dead people
+  - qol: Hovering over clickable screen elements will now update your mouse cursor
+      to indicate they're clickable
+  - qol: Hovering over small wall mounts (light switches, buttons, fire alarms) will
+      now update to mouse cursor indicating you're hovering them
+  - rscadd: Nitroglycerin now heals heart damage.
+  - qol: Cauterizing bleeding wounds now plays the cautery sfx.
+  - qol: Bleeding wounds will now go away the moment they're fully healed, rather
+      than a second or two later.
+  - qol: Suture / Mesh treatment is now uniform! meaning healing bruises with a suture
+      is now the same thing as healing cuts with a suture. This has very little difference
+      in practice, but it should generally result in a lot smoother experience.
+  - qol: 'Suture / Mesh usage has been reworked slightly, and now offers two modes
+      of use:'
+  - qol: LEFT CLICKING will heal in AUTO MODE, which will AUTOMATICALLY switch between
+      damaged bodyparts, prioritizing your targeted limb. You cannot change target
+      mid-heal; changing target simply changes your priority for your NEXT heal.
+  - qol: RIGHT CLICKING will heal in MANUAL MODE, which functions like it does currently
+      - allowing you to change your target before you finish your heal and giving
+      you a 1 second "assessment" step to change your target when you're done healing
+      a limb. Manual mode is 10% faster than Auto mode.
+  - qol: When dragging an item (like, with your mouse cursor. not physically), your
+      cursor updates when hovering humans or cyborgs to indicate you're hovering over
+      a human or cyborg.
+  - bugfix: Gibs get bulk cleaned if you clean the turf again
+  - refactor: Changed how things determine "I can be bulk cleaned if I clean the turf
+      underneath me", let me know if you notice anything not getting bulk cleaned
+      or weird things getting bulk cleaned
+  - refactor: A ton of things now use the more correct method of applying damage to
+      you. Which means they will correctly factor in damage modifiers and are less
+      likely to break your sprite. Some examples include embedded objects jostling
+      around, chiropractice, and tackling a wall. Report any oddities, such as extreme
+      damage or bodyparts being wrongly affected.
+  - bugfix: Having acid splashed on your face may now disfigure you and make you bald,
+      as it once did three years ago.
+  - bugfix: Itchy heretic trauma now better checks if the bodypart is covered or not
+      before determining if you should itch.
+  - bugfix: '"Repair Puncture" logs no longer mistakenly report you are "Incising
+      burned flesh"'
+  - bugfix: Lobby button sprites
+  MelokGleb:
+  - qol: changes Chronic Illness quirk name, description and icon to match it's dangerousness
+  Mifutus:
+  - bugfix: fixed the pulse rifle not spawning when won
+  - code_imp: 'added get_turf to the pulserifle  when the odds are beat.
+
+      :cl:'
+  - rscadd: Added new moth customizations available in the character creation under
+      the name "Dipped"
+  - image: 'added icons for the moth wings, antennae and markings
+
+      :cl:'
+  Mothblocks:
+  - qol: IV drips now create a beam from their spout to your body, and will visually
+      pull you closer.
+  Namelessfairy and SmArtKar:
+  - bugfix: The Extradimensional Blade no longer infinitely scales damage
+  - bugfix: The nullblade correctly does increased damage when sharpened
+  NecromancerAnne (code), SmArtKar (sprites):
+  - balance: Makarovs and Toy Pistols come in weapon cases. Complete with spare ammo.
+  - balance: Basic ammo for either weapon comes in weapon cases of three extra magazines
+      at an affordable price.
+  - balance: Donksoft Toy Pistols from the uplink are much stronger than their standard
+      counterparts, but now priced at 6 TC.
+  - balance: Makarovs and Toy pistols have a magazine capacity of 12 rounds.
+  - balance: Gun/Ammo cases from the traitor uplink can be destroyed by activating
+      the disposal bomb. Press Alt-Right-Click on the case to start the timer.
+  NecromancerAnne (code), orcacora (sprites):
+  - rscadd: Adds NT BR-38 Battle Rifles. A hybrid weapon. Find it in your local armory
+      and cargo catalogue today. (Keep away from EMPs)
+  NeonNik2245:
+  - qol: Chemistry bag now can carry hypovials
+  OrionTheFox:
+  - code_imp: The Greytide event will now play bolt audio and update the icon when
+      toggling door bolts.
+  - qol: added an examine note to lighters showing their fuel
+  - bugfix: fixed the "tactical combat/engineering uniform" allowing toggling with
+      no alt sprite
+  - image: resprited the (Analog) Wall Clock
+  - image: resprited the worn sprites of all Fannypacks
+  - image: resprited the Blood Cult Archives/Altar (the two summoning tables)
+  - image: updated the cartridge coffeemaker + coffeepot sprites, and added bluespace
+      pot overlays to coffeemakers
+  - qol: the coffeemakers can now be interacted with while unpowered! No longer will
+      your coffeepot be stuck inside the machine because it's unplugged! (Still need
+      power to brew)
+  - bugfix: fixed the Icebox Phonebooth air alarm being on the outside, thus triggering
+      because the planet is, indeed, cold. It is now inside and all-access so that
+      callers can turn it off when they decide the phone's more important than their
+      health and safety.
+  - bugfix: fixed the outdated N-Spect description falsely claiming it can scan people.
+      It can't. Nanotrasen denies all claims it ever broke sapient right to privacy
+      by giving crew full-body scanners in a handheld format.
+  Paxilmaniac:
+  - bugfix: fixes crafting menu-made rice dough being unusable for bread
+  - bugfix: Fixes resin sprayers not working if the target is more than one tile away
+      from you
+  Rhials:
+  - balance: When dominating a mech as a Malfunctioning AI, the core you shunted from
+      will disable your Doomsday Counterdown when destroyed. Make sure to protect
+      that core!
+  - rscadd: Nukie uplinks now offer an OG-style nuke pinpointer in their Badassery
+      shop section.
+  Runi-c:
+  - balance: medical doctors can buy Reagent Dartgun from traitor uplink
+  SmArtKar:
+  - image: Changing clipboard skins now changes the inhands sprite as well
+  - admin: Implemented final type filtering for spawn commands - putting * at the
+      end of a spawn string will signify that there should be no subtypes offered!
+  - bugfix: Fixed a missing arg in fish release code causing runtimes
+  - bugfix: Fixed damage overlays hiding themselves or flickering when you get wounded.
+  - refactor: Firestacks, burning/acid/decaying effects and (brought back after being
+      temporarily removed) slimed status effects now use a new "shared" particles
+      system, which should considerably improve client performance when encountering
+      a lot of burning/slimed entities.
+  - bugfix: Fixed limping status effect harddels
+  - bugfix: Organ manipulation can be completed once again and doesn't cause you to
+      be un-melee-able in some cases.
+  - bugfix: Fixed a rare runtime in jetpack component code
+  - bugfix: Fixed all hoverboards having holyboard space slowdown effect
+  - bugfix: Fixed parsnip sabre not receiving a jousting component
+  - bugfix: Fixed a random zero in nuke ops uplink UI
+  - refactor: Converted most common particle sources to use our new pooling system.
+  - bugfix: Fixed projectile parrying
+  - bugfix: Fixed full augmentation scan experiment being uncompletable
+  - sound: Reduced volume of fire sounds
+  - bugfix: Fixed a (non-player facing) runtime in organ manipulation surgery
+  - qol: Projectiles now visually impact their targets instead of disappearing about
+      a tile short of it.
+  - bugfix: Fixed multiple minor issues with projectile behavior
+  - refactor: Completely rewrote almost all of our projectile code - if anything broke
+      or started looking/behaving oddly, make an issue report!
+  - bugfix: Fixed a runtime caused by logging out while your runechat message was
+      appearing.
+  - code_imp: Converted pills and patches into interact_with_atom
+  - code_imp: Cleaned up organ code
+  - bugfix: Fixed cats not begging people for food
+  - bugfix: Fixed a runtime in cranial fissure remove code
+  - bugfix: Fixed a non-player facing runtime in portable atmos machinery code.
+  - rscdel: Removed N-Spect scanner's and scanner gate's ability to scan people for
+      contraband.
+  - bugfix: Fixed atrocinator module footstep spam when you're moving on a tram
+  - bugfix: Fixed lunar parade soundloop
+  - bugfix: Fixed tethers being able to move immovable objects (and delete gravgens)
+  - bugfix: Fixed Nebula's robotics fabricators being obstructed roundstart
+  - bugfix: Fixed meteors freezing in place if they continiously miss the station
+      on a looping z level
+  - bugfix: Fixed a mixup in ripley plate sprites
+  - bugfix: Fixed flipped fishing hooks
+  - qol: Mining drills are now active by default
+  - bugfix: Fixes mining drill displaying drilling messages while inactive
+  - bugfix: Reconnected Wawa's sci to atmos distro
+  - bugfix: Fixed fishing turfs not lazyloading
+  - bugfix: You cannot have more than one MODtether (excluding manual connections)
+  - qol: Tethers are easier to cut (require less pixelhunting)
+  - bugfix: Ensures that if your brain is removed you die
+  - image: Muzzle flash now is attached to your sprite, meaning you won't run over
+      it if you fire while moving
+  - bugfix: Fixed some issues with defib paddle retraction.
+  - bugfix: Fixed plasmamen envirosuits being unrepairable
+  - bugfix: Fixed colossus committing suicide on a regular basis
+  - bugfix: Berets no longer make you go bald above your earline.
+  - qol: Reagent grinders display number of material sheets they hold instead of defaulting
+      to 1
+  - bugfix: Fixed incorrect coverage descriptions
+  - bugfix: Blind people no longer make eye contact with their hands
+  - bugfix: Blindfolds and other sorts of opaque eye coverage now prevent eye contact
+      from occuring
+  - bugfix: You can no longer stick a butter on a stick on a stick
+  - code_imp: Projectile impacts no longer fetch mobs' armor values thrice
+  - bugfix: Fixed cargo ticket and pet adventure drone loot pools not working
+  - balance: Armor now decreases the chances of getting your eye blown out by a rogue
+      bullet
+  - qol: AI laws and tape recorders no longer cause radio blips
+  - bugfix: Fixed floodlights not being affected by spraycan painting
+  - balance: Mech-mounted RCD no longer has wallhacks
+  - balance: Reinforced walls now take double the time to get deconstructed when using
+      an RCD
+  - balance: Removed organ "refreshing" from legion cores, magic wands and regenerative
+      crossbreeds so they no longer get rid of your implants
+  - admin: Admins can now return the shuttle back to the station without ending the
+      round
+  - bugfix: Fixed a Honkerblast 5000 runtime
+  - map: Added a Condi-Master to Birdshot's bar
+  - bugfix: Fixed forcing open airlocks only working once and then never again
+  - rscadd: 'Changed how colorful reagent and crayon powder work: douse your victims
+      to color their clothing, bodyparts and even internal organs!'
+  - rscadd: You can wash your eyes when washing your face at a sink
+  - bugfix: You can color robotic limbs with left click (again)
+  - bugfix: Fixed a zero g pushoff runtime
+  - image: Scarves have received a minor update to their sprites
+  - image: Added unique sprites for Endotherm wintercoats
+  - bugfix: Fixed rolling table being able to carry an infinite amount of dwarves
+  - bugfix: Fixed an edge case with meteor moveloop code
+  - balance: You can no longer check if budget insuls work via examine tags
+  - bugfix: Fixed mech KA AOE dealing full damage in pressurized environments
+  - bugfix: Fixed c38 not misfiring when chambered in c357
+  - bugfix: Fixed moth wing stabilization working in zero-g as long as you keep moving
+  - bugfix: Mice no longer can spawn in unsafe atmos from garbage spawners
+  - bugfix: Fixes primed stingbangs being invisible
+  - bugfix: Removed rogue sand decals from Island Brawl domain walls
+  - bugfix: Fixed Hilbert's rigged analyzer not being able to scan the hotel orb
+  - bugfix: Fixed moths only being able to fly if they spawn in zero gravity
+  - refactor: Rewrote some of HUD code so they're no longer colored in their owner's
+      color
+  - bugfix: Space dragons no longer turn invisible when toggling seethrough mode
+  - qol: Iron material tiles can now be used to tile lattice to make plating
+  - rscadd: Rave and plasma stabilizer MODules now utilize theme-specific visors
+  - qol: Resist button now has visible feedback.
+  - qol: Readjusted UI layout.
+  - image: Completely redrawn Midnight and Midnight-derived UIs!
+  - qol: Jetpacks should ACTUALLY feel better now
+  - bugfix: Fixed all parried projectiles only going up or down
+  - rscadd: Added new (purely visual) animations to sharp and pointy items.
+  - rscadd: Certain items, like knives and swords, now have a secondary stabbing attack.
+  - balance: Spears are now pointy and no longer act as oversized knives.
+  - balance: Structure damage is now affected by attacking item's AP.
+  - bugfix: You will now see the same attack verb in chat as everyone else.
+  - bugfix: Fixed showers not passively washing objects
+  - bugfix: Fixed HUD implant message being reversed
+  - bugfix: Fixed shoes slot being semi-transparent when you have digitigrade legs
+  - bugfix: Fixed an airlock unlocking runtime
+  - spellcheck: Bioscrambler no longer informs you about "your armor softening the
+      blow!"
+  - image: Returned plasmafire and clockwork UI's transparency, slightly adjusted
+      active hand slot overlays
+  - bugfix: Fixed a board GPS imprintion runtime
+  - bugfix: Fixed podperson hair not updating
+  - bugfix: Chemmaster no longer rounds reagent amounts when trying to transfer a
+      custom amount
+  - bugfix: Made wendigo's bullet hell lag less, at cost of its visuals.
+  - bugfix: Fixed "Leave Body" escape menu tab runtiming
+  - bugfix: Fixed projectile homing
+  - image: Wintercoat hoods now show a bit of your hair!
+  - bugfix: Fixed chair, echair, wheelchair and vehicle overlays on painted objects
+  - bugfix: Fixed atrocinator not yeeting you up
+  - bugfix: Blood no longer gets colored with the item its attached to
+  - rscadd: Toolboxes can be used on any object to pull out and use a tool from it
+      as long as your offhand is free.
+  - qol: Jetpacks are significantly smoother and nicer to use now - and not affected
+      by lag anymore!
+  - code_imp: Cleaned up spacemove/jetpack code a bit and moved some common code to
+      helpers.
+  - refactor: Wings are now... jetpacks. They behave exactly the same and this should
+      reduce the amount of copypaste code in spacemove significantly.
+  - qol: Shifted the escape menu stat panel down a bit
+  - bugfix: Fixed smoker addictions not refreshing
+  - bugfix: Toolboxes can now be placed onto tables/into crates
+  - bugfix: Fixed toolboxes automatically using the first item in them
+  - bugfix: Fixed a qdel loop in hypnosis brain trauma
+  - bugfix: Fixed a runtime in detomatix logging
+  SmArtKar, AnturK:
+  - admin: Fixes admin observe showing all antags as revs upon enabling Real Name
+      Display
+  SmArtKar, Kapu:
+  - bugfix: Atmospheric tanks no longer fetch icons every tick
+  - code_imp: Implemented caching for icon sizes which should significantly improve
+      mob health performance due to HUDs constantly fetching icons
+  SmArtKar, LemonInTheDark:
+  - rscadd: Changed how spraycans color items - "old" mode is still availible via
+      right click.
+  - refactor: Refactored how some items and effects color things so that they look
+      prettier.
+  Sothanforax:
+  - sound: Added sounds for the escape menu opening/closing/being open
+  Sparex:
+  - map: Added lifting benches/workout benches to the fitness room for IceboxStation.dmm
+  Stalkeros:
+  - rscadd: Three new Ancient MilSim DLC loadouts have been added. Go try them all!
+  - qol: Ancient MilSim DLC loadouts now show the general rundown of their abilities
+      in the crate name, consequently the spawner beacon too.
+  - balance: In general, it should be easier for bitrunners to defend themselves in
+      Ancient MilSim, thanks to numerous scattered barricades and landmines.
+  - balance: In general, it should also be easier for SNPCs to defend themselves in
+      Ancient MilSim, too, thanks to the fully automatic mounted machine gun.
+  - balance: Similarly vague item/spell reshuffle has been done for bitrunning disks
+      and abilities.
+  - bugfix: Scream For Me can now actually be used.
+  - qol: If you are to select a random name as a Syndicate Assault ghost role, -Cybersun
+      Counter-Bitrunner-, you'll get a random bitrunning alias instead of your own.
+  - balance: Cybersun Counter-Bitrunners can become immune to spells, on demand.
+  - code_imp: General code cleanup of several Ancient MilSim-related things.
+  SyncIt21:
+  - bugfix: Labour stacker machine gives points for sheets again
+  - bugfix: inducers can be inserted into storage objects again
+  - bugfix: plumbing pill press advertises the correct maximum volume of your selected
+      product instead of always 50u on the UI
+  - code_imp: plumbing pill press validates selected container to prevent href exploits
+  - code_imp: plumbing pill press validates input volume to see if it's a number
+  - bugfix: fixes grown foods(like pineapples) getting deleted sometimes inside crates
+      and stuff
+  - bugfix: chainsaw is not invisible when turned off in hand
+  - bugfix: chainsaw won't play ping sound when turned on
+  - bugfix: mounted chainsaw has a new animated sprite when turned on & won't go invisible
+      in hand
+  - bugfix: Changing gather mode on storage items won't drop it's stored items
+  - code_imp: improved code for machinery
+  - bugfix: rolling tables can be rolled up again
+  - bugfix: skull cookies are visible again
+  - code_imp: slightly improved code for borg inducer
+  - spellcheck: fixes examines & screentips for borg inducer
+  - bugfix: crowbars can be recycled in lathes only when the panel is closed
+  - bugfix: fixed runtime when sealing mecha cabin with air tank installed
+  - code_imp: condensed code for reagent grinder
+  - bugfix: reagent grinder won't break when 2 or more people are simultaneously interacting
+      with it
+  - bugfix: ejecting contents & examining the reagent grinder as an AI via the radial
+      menu does not require it to be powered or anchored
+  - bugfix: examine block for reagent grinder as an AI is properly formatted
+  - bugfix: Big manipulator respects storage limits of storages when dropping stuff
+      into them
+  - code_imp: improved code for RPED
+  - refactor: RPED attack chain has been refactored. Reports bugs on github
+  - code_imp: improved code for leaning
+  - bugfix: Fixes shattering element dropping stuff on blocked turfs
+  - refactor: improved attack chain code for rapid pipe dispenser
+  - code_imp: organized lists & global vars for rapid pipe dispenser into their own
+      respective files & improved a bunch of code
+  - bugfix: personal ordered crates can be unlocked & relocked as many times again
+      after the 1st attempt
+  - bugfix: breaking out of a closet won't spam chat or shake like it's having a seizure
+  - balance: turbine now has higher max rpm & increased power output
+  - code_imp: further improved code for turbine
+  - bugfix: Turbine converts energy to power correctly & shows correct reading with
+      multitool
+  - refactor: turbine code has been overall improved. report bugs on github
+  - code_imp: removes unused var from reagent code
+  - code_imp: plumbing reaction chamber won't waste extra ticks for the pipeline when
+      sending out catalysts
+  - bugfix: greyscale modify menu has better validation for player entered colours
+  - code_imp: improved code for mecha rcd
+  - bugfix: mecha rcd will cancel its action when the mech is rotated or moves during
+      the action
+  TealSeer:
+  - bugfix: Using a bonesetter to correct a dislocated limb should no longer cause
+      you to hit the patient with it too.
+  - qol: Atmos devices like valves and pumps can now be renamed with a pen.
+  - qol: The time until the server reboots is now visible in the status tab.
+  - admin: Added a cancel reboot verb to the server tab.
+  TheBoondock:
+  - sound: added ignition and roaring fire sound to plasma/tritium fire
+  TheRealSpriteMan1337:
+  - spellcheck: Fixed some of the typos in computers' build & repair tips, adjusted
+      wording
+  - spellcheck: Fixes some usages of its, clarifies wording on the syndie medbot,
+      changes span_warning to notice.
+  Time-Green:
+  - bugfix: No more "is blacking out!"
+  - bugfix: Brain transplants work again
+  - balance: Bioscramblers are no longer immortal
+  - balance: Anomalies give 20 extra seconds to defuse! Or 20 extra seconds for them
+      to reach havoc...
+  - balance: Material anomalies only teleport 1-4 times before detonating
+  UnokiAs:
+  - rscadd: Make spears able to break open lockers in melee.
+  ValuedEmployee:
+  - bugfix: Only players with Felinid tongues get to meow and purr for real this time,
+      and other carbons cannot
+  - bugfix: Mimes can no longer meow out loud and have their own mime message
+  - bugfix: Stopped delay on meow and purr emotes where they had to be used twice
+      to work the first time they're used
+  - rscdel: Removed redundant text warning for players that can't use the meow or
+      purr emotes
+  - rscadd: New purr and meow emotes for players with felinid tongues
+  Vekter:
+  - map: Removes extra privacy shutters in the HoS' office on NebulaStation
+  Wallem:
+  - image: Updates slime potion sprites, adds some new colors and rearranges some
+      others.
+  - rscadd: Rare collectors radios have been reported around Nanotrasen stations!
+  WebcomicArtist:
+  - bugfix: Durand shield now uses proper amount of power upon taking damage
+  - bugfix: Mech plasma generator now produces the correct amount of charge, previously
+      bugged to be 10% of intended.
+  Xackii:
+  - qol: heretic living heart now points to the target with an arrow.
+  - bugfix: pinpointer no longer breaks if scanned target disappears from our reality.
+  Xander3359:
+  - bugfix: fix furious steel and blade ascension being jank
+  - rscadd: Bileworm crusher trophy now gives you AOE mining
+  - balance: The pk crusher no longer has click delay after shooting the projectile
+  - balance: The pk crusher gives mining XP when it mines rocks
+  - balance: the pk crusher charges faster when you mine rocks based on your skill
+      as a miner
+  - code_imp: cleaned up some of the kinetic crusher code
+  Y0SH1M4S73R:
+  - bugfix: The "Move Up" and "Move Down" verbs properly respect multi-z connectivity
+      when operating a remote camera.
+  Zenitheevee:
+  - bugfix: turrets will turn off instead of yelling endlessly when empty (stoping
+      it from infilooping)
+  aaaa1023:
+  - bugfix: Birdshot Atmospherics now has an Air alarm
+  - bugfix: Birdshot Atmospherics pumping room APC is now connected to the main grid
+  - bugfix: Birdshot Port Primary Hallway APC is now connected to the main grid
+  araeotu:
+  - rscadd: slime processor now have usb port and circuit component
+  - code_imp: the process code of processor now separate from interact
+  carlarctg:
+  - bugfix: '[no gbp] renmoves bartender skillchip from chipped quirk'
+  - rscadd: You can now wear a hat on any modsuit, even w/o the stabilizing module.
+      But it may easily fall off...
+  - rscadd: Added the Atrocinator, Hat Stabilizer, and Tanning modules to the black
+      market.
+  - rscadd: Added the loose hat component to bio/bomb/rad hoods and space helmets.
+  - rscadd: Adds the Perceptomatrix Helm, a hallucination anomaly core item
+  - rscadd: Adds a new biotype, MOB_AQUATIC, indicating the mob is water-themed somehow.
+      Given to carp, lobstrosities, frogs, axolotls, penguins, fire sharks.
+  - rscadd: Aquatic mobs can be hooked by fishing rods, even without a jawed fishing
+      hook installed.
+  - rscadd: The carp and fish infusion sets now give the infusee the aquatic biotype.
+      Added support for infusions adding a biotype.
+  - rscadd: You can check for a fish's pulse with a stethoscope, which will tell you
+      its status even without fishing skill.
+  - qol: Refined fish health status checks to be more precise.
+  - rscadd: Added 'Fishy' Reagent, a version of strange reagent that only works for
+      fish or aquatic biotype mobs. It's made with omnizine, saltwater, and carpotoxin
+      or tetrodotoxin.
+  - rscadd: Added a lifish chemical reaction that creates fish.
+  - qol: carpenter hammer fits on belt slot
+  - code_imp: renames belt_icon_state to inside_belt_icon_state for intelligibiility
+  - qol: Improved fish lure descriptions to be easier to grok
+  - balance: Increased Rusted Harvester health from 35 to 45.
+  - balance: Increased haunted longsword's demolition mod by 20%.
+  - bugfix: Rusted harvesters won't get narsie telling them to bring her their victims.
+  - bugfix: Heretic summons aren't affected by void chill anymore.
+  - rscadd: Centcom's janitorial department has gotten tired of scooping up discarded
+      scarves from the floor and has instead assigned MODlink scryers to some stations'
+      crew in an attempt to spice up the disposal team's jobs.
+  - qol: Added some tips of the round.
+  - bugfix: Reverts change that altered pyrokinesis recipe to require firebreath instead
+      of fiery sweat
+  - rscdel: Replaces UZI domain reward with ballistic chameleon gun
+  - rscadd: Also added a separate possible reward for an uzi bitrunning disk.
+  - bugfix: actually adds the perceptomatrix to the techweb
+  - spellcheck: Fixes a typo in legionnaire abilities
+  - rscadd: Adds rift fishing to the game. Includes new wacky fish!
+  - rscadd: Drained and undrained influences can be fished in, the latter only by
+      heretics. Fishing in an undrained influence shows a bobber floating over nothing
+      to other people, so don't be stupid!
+  - rscadd: influences cannot be bombed for fish.
+  - rscadd: Heretics can now infuse their fishing rod, and fish for knowledge.
+  - rscadd: Kissing while you have the ink infusion ability off cooldown gives you
+      an ink kiss
+  - rscadd: Adds suicides to fish. Like, a lot of suicides. Almost all of them very
+      unique. I'm too lazy to make a video, but they've been thoroughly tested.
+  - bugfix: Recovered crew no longer show up on roundend report
+  - rscadd: Surgery trays now have a small chance to become medical toolboxes. Autopsy
+      trays can become coroner toolboxes.
+  - rscadd: Added a 1 in 1.000.000 chance for a toolbox to have four latches.
+  distributivgesetz:
+  - bugfix: The labor shuttle can no longer be cheesed by piggybacking a prisoner
+      who has completed their sentence.
+  - code_imp: Fixed rare cases where moving an object somewhere could silently fail,
+      but still run unintended code. Report any weird issues on Github
+  fevryk:
+  - rscadd: Added new weapon carpenter hammer to black market uplink
+  - rscadd: Added killsound feature
+  githubuser4141:
+  - bugfix: fixes splinter cell pistols causing mechs to suddenly have all their flags
+      deleted
+  grungussuss:
+  - server: drone area restrictions are now config
+  - balance: drones now take less time to become "un-shy" of something after it's
+      been touched.
+  - sound: the glove pickup sound will no longer play for modsuits undeploying
+  - admin: admins can now control the volume that some admin triggered sounds are
+      played at
+  - rscdel: The northstar arcship has been removed. :(
+  - qol: some hats now "compress" your hair to fit it the headwear better
+  - sound: the "curse you" sfx has been replaced
+  - bugfix: mobs can no longer hear their own breathing while deaf
+  - sound: changelings now have a sound for absorbing
+  - bugfix: xenos take more damage to husk
+  - sound: changed the welding hat toggle sfx
+  - bugfix: entertainment screens now properly show their tooltip for muting sound
+  - bugfix: a bug regarding orderable items has been fixed
+  - bugfix: fixed regal rat attack logic
+  - code_imp: removed an extra proc override in digitigrade legs preference logic
+      code
+  - bugfix: fixed *me emote being called when using the *help emote
+  - image: added hat masking for berets
+  - bugfix: you will no longer slip off your mount when traversing slippery surfaces
+  - rscadd: pointing now has interactions with the amount of limbs/organs you have
+  - balance: you can now point while restrained
+  - sound: pointing with your head makes a sound
+  - bugfix: fixed being unable to remove bar seating holograms
+  - bugfix: fixed being unable to place rpeds on tables
+  - sound: added sounds for locking/unlocking closets
+  - bugfix: '*me emote works again'
+  - bugfix: fixed an error with slipping
+  - bugfix: picking stuff up actually respects the vary settings of an item
+  - bugfix: fixed items not falling from a lattice after being deconstructed/destroyed
+  - bugfix: fixed access on birdshot engi mulebot delivery window
+  - rscadd: computers and airlocks are now leanable
+  - refactor: changed how density/collision of some objects is changed, report any
+      oddities!
+  - balance: computers can now be used as cover, firing a projectile over them is
+      now possible, while they may block projectiles if you are not adjacent to them
+      when firing.
+  - bugfix: computer laptops will not block projectiles
+  - rscdel: screenshake from explosions will no longer happen when it's really far
+      and not on a station area (turf)
+  grungussuss and Sothanforax:
+  - rscadd: hiss emote
+  - sound: hissssssing sounds
+  imedial:
+  - bugfix: Map vote now cares about current player count
+  jlsnow301:
+  - bugfix: TGUI panel light mode should no longer be gross gray
+  larentoun:
+  - bugfix: Printed Moth X-Ray eyes are now correctly named, instead of being just
+      "robotic eyes"
+  - bugfix: 'Mafia: Psych''s reveal ability now correctly has a single use'
+  - bugfix: 'Mafia: Fugitive''s vest ability now correctly should have two uses'
+  - bugfix: Printed advanced robotic right leg now has correct name, instead of being
+      "heavy"
+  lovegreenstuff:
+  - bugfix: synthmeat is no longer an nft
+  - rscadd: catalyst function for plumbing reaction chambers
+  mc-oofert:
+  - bugfix: You may no longer use a climbing hook to phase through catwalks and such.
+      On the other hand, improved climbing hook aim and you may climb onto lattices
+      or catwalks
+  - balance: makes reputation locked gear instead be very very expensive and get cheaper
+      as you get to that rep
+  - bugfix: fixed some wiring on wawastation, added an additional distro/scrubbers
+      connection to sciences network
+  - rscdel: removed quiet succumb which is pointless now that the bug got fixed
+  - bugfix: fixed the museum password puzzle (to the cafeteria), and the scrubbers
+      and vents there now look correctly (also fixed a rare visual bug)
+  - bugfix: it is now harder to bypass indestructible windows and grilles (those are
+      placed there for a reason, you know!)
+  - qol: alerts that do stuff when clicked glow gold
+  - bugfix: damage done by thrown objects to objects respects their demolition modifier
+  - bugfix: manufacturing sort-routers can no longer crawl
+  - balance: A mutation in gatfruit seeds has led to a drastic alteration in the observable
+      traits of the plant, which now fires hardened peas that deal less damage, but
+      poison the target. Additionally, its poison can be, with some botanical engineering,
+      replaced with whatever you wish.
+  - balance: burglars finesse spell range increased from 4 to 6 and it may loot any
+      back storage object, caretakers refuge cooldown is only applied when exiting
+      refuge, labyrinth handbook accepts any crayon instead of a white crayon
+  - qol: you may click an id with the knock heretic id card to make it consume it
+  - rscadd: janitor modsuit space cleaner mister module
+  - bugfix: manufacturing assembling machine crafts junk shells and lizard boots properly,
+      may no longer craft anchored objects (broken check), and sends its crafted stuff
+      at once
+  - qol: you can adjust diagonal walls to be not diagonal walls with a wrench
+  - balance: changeling last resort works as a monkey or animal
+  - rscadd: forensics spoofing kit for traitors/whoever with an uplink
+  - bugfix: The Men in Grey may no longer access birdshots engineering via a certain
+      maintenance airlock
+  - bugfix: holodeck no longer explodes if the server lags while its loading a new
+      sim
+  - image: girders and reinforced girders smooth now (except cult girders, bronze
+      girders, and whatever other special type)
+  - bugfix: multitile airlock assemblies from a broken multitile airlock are the same
+      direction
+  mcbalaam:
+  - bugfix: The mail sorter no longer runtimes processing assistant mail
+  - qol: Now all antagonists are visible to an admin in the orbit menu!
+  - rscadd: Added the mail sorting unit - working with mail has never been simpler!
+  - rscadd: Added two flatpack pre-defined subtypes for the flatpacker and the mail
+      sorter.
+  mikederkan:
+  - bugfix: fixes a minor spelling/grammatical error in the Funeral Supply and Religious
+      Supplies crates.
+  necromanceranne:
+  - code_imp: The cost for Core Equipment for nuclear operatives will always be equal
+      to the cost of the contained items if purchased directly from the uplink.
+  - bugfix: Improves the descriptions for some uplink entries.
+  - image: Kitchen and eating utensils now have suit storage sprites.
+  - bugfix: Civilian bounty pads refuse to send holographic items. Nanotrasen have
+      received far too many holographic fish for their liking. Officer Mathews is
+      still weeping in a corner after all the clownfish in his aquarium turned to
+      dust before his very eyes...
+  - code_imp: Cleans up the bounty pad code just a smidge.
+  - bugfix: Correctly applies resistance and EMP proofing to the broadcasting camera
+      so that it doesn't cause weird things to happen.
+  - balance: 'After months of rigorous training montages, handwork and dedication.
+      Nanotrasen can proudly say that their staff is now more capable of performing
+      various judo techniques to disable and incapacitate any would-be troublemakers.
+      They have proclaimed the Spinward ''safer than ever''. Unfortunately for Nanotrasen
+      and the Spinward as a whole,, most of these same techniques have been incorporated
+      into the Tunnel Arts through the use of Khan spies. (See: Extremely bored assistants
+      who are getting tired of suplexing the clown). Is this the end for the Spinward
+      Sector? Will anyone be able to stop Maint Khan''s advance?'
+  - balance: Being grabbed can be harder to break out of depending on how vulnerable
+      you are; being prone, staggered and wounded, or just being a pushover (the quirk)
+      makes it easier to keep hold of you. Particularly if more than one of these
+      is true. Though if you're a fishman, you probably can't get grabbed at all.
+  - balance: Your arm power now contributes to the stamina damage someone is dealt
+      when they attempt and fail to break out of your grab.
+  - balance: Bartenders while drunk are great at grappling.
+  - bugfix: The values used for determining at what point you must resist if you have
+      taken damage and are staggered are now correctly set to 40, not incorrectly
+      to 80.
+  - image: Cleans up some redundant pixels on the bowman sprites.
+  - code_imp: Various mob attack procs are treated as unarmed attacks as a baseline
+      assumption, rather than melee attacks.
+  - balance: A new maint-kata has taken shape in the periphery of Spinward control.
+      Borrowing techniques from an ancient Martian martial artist, as well as an entire
+      franchise of extremely muscular acrobats and performance artists, talented assistants
+      have discovered that a swift application of a flimsy chair to the back of the
+      head can end fights more promptly than just bashing the opponent's head in with
+      their foot. That, and it looks awesome.
+  - balance: Chairs start to break apart when you hit someone with them or block an
+      attack with them.
+  - balance: Breaking a chair against a target while attacking from behind or while
+      they're staggered will cause them to get knocked down. Chairs made of more sturdy
+      materials can even cause them to become vulnerable to shove stuns.
+  - bugfix: Tackling resulting in a neutral outcome does not force you to the floor.
+  - bugfix: Getting up is now properly influenced by spinal implants.
+  norsvenska:
+  - spellcheck: You are no longer faced with a typo after either not writing on paper,
+      or attempting to stamp a paper that's been stamped too many times.
+  - spellcheck: Station commission plaques (the gold ones that have the date they
+      were added) have been updated, adding Nebula's, fixing Wawa's, and decommissioning
+      Northstar's.
+  - spellcheck: The Lance and Raven shuttle airlocks are now properly labelled emergency
+      airlocks, rather than emegency airlocks.
+  - spellcheck: The radio jammer now releases disruptor waves, rather than distruptor
+      waves.
+  oranges:
+  - rscadd: Teleporting a leaning person will now make them fall over
+  paganiy:
+  - rscadd: 'Add a new item to the chef traitor''s uplink: Molt''Obeso sauce. A sauce
+      that makes people want to eat too much.'
+  rintherat:
+  - bugfix: Fixes alert level changing during a Delta+ scenario
+  san7890:
+  - bugfix: The message you get when attempting to escape an SM delamination by hiding
+      in a disposals pipe should now make more sense.
+  sqnztb:
+  - map: metastation's security mail chute no longer has an extra erroneous pipe.
+  thegrb93:
+  - bugfix: Fix broken cyborg inducer
+  - bugfix: Borg lights not turning off when flashed or empd
+  - bugfix: Air alarms stuck in warning state when area alarms are cleared
+  thimothymtorres:
+  - bugfix: Fix wrong status effect for watery tile
+  timothymtorres:
+  - bugfix: Fix coffee maker smoke particles not deleting
+  - map: Fix missing CE Office Shutter Buttons on Icebox. Also removes a duplicate
+      keycard auth device.
+  - rscadd: The revenant defile spell now affects showers by removing all water recyclers
+      and reagents that gets replaced with blood.
+  - rscadd: Showering in clean water (+70%) results in positive mood/regen/stamina
+      effects. It will wash off the mob.
+  - rscadd: Showering in dirty water results in negative mood effects and disgust.
+      It will NOT wash off the mob.
+  - rscadd: Showering with radioactive reagents (+20%) results in the preventing the
+      shower from washing off the radiation.
+  - rscadd: Showering in blood (+70%) results in severe negative mood effects and
+      disgust.  (unless you are morbid, evil, or undead then it's considered positive)
+      It will cover the mob in blood.
+  - rscadd: Water effects that interact with a mob from touch or vapor (showering/spray
+      bottles/etc.) will now heal sleep, unconsciousness, confusion, drowsiness, jitters,
+      dizziness, and drunkenness.
+  - bugfix: Fix bloody showers not covering objects in blood.
+  - bugfix: Tossing or spraying a container full of blood now covers objects/mobs
+      in blood
+  - bugfix: Fix wrong status effect for watery tile
+  - image: Add new alert icons for bloody/dirty showers
+  - code_imp: Refactored some expose_obj reagent code to support method types.
+  - code_imp: Improved mood typecasting for owner to allow checking of mob biotypes.
+  - bugfix: Fix weather effects ignoring certain areas like space.
+  - bugfix: Fix coffee maker items teleporting to AI/Cyborg locations
+  - code_imp: Change some status effects to use SECONDS define.
+  - bugfix: Fix fireplace particles runtimes.
+  - bugfix: Fix radio jammer screentips
+  - refactor: Sound has been heavily optimized and will now ignore low volume sounds
+      from far away.
+  - admin: Add debugging sound earmuffs to admin equipment inside the debug box. Wear
+      them to determine a sounds max range, distance, volume, and sound name. Highly
+      recommended to walk otherwise you will get spammed with footstep sounds.
+  - sound: Add fishtank looping sounds to cryo cells when in use. Sound is from https://freesound.org/people/DudeAwesome/sounds/386023/
+  - bugfix: Fix drink labels for alcohol bottles
+  - bugfix: Fix holoparasite using gas ability while not summoned
+  - spellcheck: Update teleporter machine desc to be accurate
+  - rscadd: Add medical human organ crate emergency medical holodeck simulation
+  - spellcheck: Fix holodeck emag message claiming to increase power
+  - bugfix: Fix kidnapping pod returning a player to unsafe location where air is
+      bad
+  - sound: Add water sound to sinks
+  - bugfix: Fix gravity not updating for mobs when teleporting, wormhole jaunters,
+      wizard spells, tile creation/destruction, mech entry/ejection and other methods.
+  - sound: Add dice rolling sound
+  - code_imp: Add better logging for ruins
+  - rscadd: Add power efficiency when stasis bed stock parts are upgraded
+  - bugfix: Fix vent clog event triggering on non-station areas
+  - bugfix: Fix gravity for areas in space near station (solars, nearspace, bomb testing,
+      etc.)
+  - bugfix: Fix holodeck computer using wrong power settings and not updating properly
+  - code_imp: Improve looping sounds to allow nested and non-associative lists
+  - bugfix: Fix custom map loading ignoring JSON values that were ignored previously.
+      (minetype, planetary, etc.)
+  timothymtorres, MrMelbert:
+  - bugfix: Fix lustrous brain trauma not removing during polymorph
+  timothymtorres, SmArtKar:
+  - bugfix: Fix chewable bubblegum not metabolizing due to microdose
+  tontyGH:
+  - bugfix: Haunted 8-balls are now usable again (FINALLY)
+  - bugfix: Haunted 8-ball UI now correctly displays your selected answer
+  - qol: Made the haunted 8-ball UI look a pinch better. Just a smidge.
+  - code_imp: Haunted 8-balls no longer use a duplicate answer list
+  - code_imp: made /proc/getviewsize() pure
+  - refactor: mob/eye/ai_eye has been restructured, now inheriting from a generic
+      mob/eye/camera type
+  - refactor: advanced cameras and their subtypes are now mob/eye/camera/remote subtypes
+  - code_imp: the cameranet no longer expects the user to be an AI eye
+  - code_imp: remote camera eyes have had their initialization streamlined
+  - code_imp: remote cameras handle assigning and unassigning users by themselves
+      now
+  - code_imp: remote cameras now use weakrefs instead of hard referencing owners and
+      origins
+  - code_imp: also the sentient disease is_define was removed (we don't have those
+      anymore)
+  - bugfix: AI eyes no longer assign real names to themselves, fixing their orbit
+      name
+  - bugfix: /datum/gas_machine_connector will abstract_move() if their parent also
+      abstract_move()s, preventing a runtime
+  - bugfix: Pubby's whiteship no longer breaks when it tries to dock
+  - bugfix: /datum/component/PostTransfer() procs that didn't have their new_parent
+      arguments have now been fixed
+  - bugfix: This means that turning into a Domain gondola shouldn't RR people anymore
+  - bugfix: Underlining your messages in loud mode shouldn't break anymore
+  - bugfix: runetext fades in correctly in bulk. signers rejoice
+  wallem:
+  - image: Updates slot machine sprites
+  zxaber:
+  - bugfix: Firelocks opened by a mech will correctly close when the mech moves out
+      of range.
+  - bugfix: Mechs with crowbar-like tools can now hold adjacent firelocks open correctly.
+2025-01-18:
+  Axidyuwu:
+  - balance: bluespace crystals now stack disgust on use
+  Kocma-san:
+  - rscdel: removed spawn of DeForest vendor at the station
+  - rscdel: prybar removed from the YouTool vendor
+  - rscdel: psifinil medpen, medicated suture and advanced regenerative mesh removed
+      from imports
+  - rscdel: "frontier medical kit \u0438 civil defense medical kit removed from the\
+      \ lodout"
+  - rscadd: added Advanced Mesh and Sutures Cratefor 800 to cargo orders, containing
+      3 each of medicated suture and advanced regenerative mesh
+  - balance: increased the price of medical kits from imports (robotic repair equipment
+      kit, combat surgeon medical kit, frontier medical kit, civil defense medical
+      kit up to 400)
+  - balance: all combat stimulants became more expensive (adrenaline and krotozine
+      up to 400; aranepaine, synalvipitol, twitch, demoneye up to 600).
+  - balance: 'increased price of all medipens to 125 (except: coagulant-s, lipital
+      and lepoturi to 175; calopine to 150; pentibinin to 200).'
+  - balance: all other medical supplies from imports became more expensive (sutures
+      and meshes up to 75; box of bandages up to 150; everything else up to 50).
+  - balance: Heavy Duty Medical Kit Crate - Technician/Medical prices have been raised
+      to 1600/1100
+  - balance: medical technician kit, satchel medical kit and first responder surgical
+      kit have been removed from imports (they are still available in cargo orders)
+  - balance: First aid kits from the Goodies tab became more expensive (All specialized
+      for damage from 200 to 300; Regular from 150 to 200).
+  Stalkeros:
+  - balance: The long-forgotten Mounted Machine Gun (MMG) has been made less insanely
+      good
+  - balance: MMG ammo boxes no longer have 150 rounds of obliterating ammo but a third
+      of both the capacity and firepower
+  - bugfix: fixed the MMG tossing the firer around when firing
+  - bugfix: fixed the MMG's cooling going into the negative numbers
+  - qol: Pour water or spray it over the MMG to cool it down faster!
+2025-01-19:
+  A.C.M.O.:
+  - rscadd: Added the Voice Actor Quirk to Character Preferences.
+  DBGit42:
+  - rscadd: Added Sensitive Hearing positive quirk
+  - bugfix: Teshari hearing no longer breaks if you lose your ears while it's active
+  Stalkeros:
+  - qol: Ghosts are now capable of communicating with bitrunners by clicking the bitrunning
+      server, assuming that it wasn't locked from messaging by the runners.
+  - balance: Bitrunning domain anchors are now limited in use per domain, locked behind
+      the scanner tier, allowing for one initially, up to four at maximum parts tier.
+  - qol: Syndicate Assault bitrunning domain has been reflavored into a 'Cybersun'
+      Resource Acquisition domain.
+  - map: Syndicate Assault map has received a rather major touch-up, fixing up some
+      of the more glaring game design issues. Like the lack of caffeine.
+  Zenitheevee:
+  - rscadd: Added Backpack, Duffelbag, Messenger bag and Satchel tarkon variants
+  - bugfix: Tarkon Industries uniforms no longer vanish when worn casually
+  - qol: Tarkon employees are a bit more preference friendly with backpacks
+  - qol: Voxes and Plasmemes get tanks and gear at spawn
+  - image: added sprites for tarkon backpacks and casual uniform use
+2025-01-20:
+  00-Steven:
+  - bugfix: Rave visor music actually works after the first deactivation.
+  - spellcheck: Exporting a human tongue no longer calls it a 'tounge'.
+  - bugfix: Only red glowstick fluid gives permanent unnaturally red eyes on overdose.
+  - bugfix: Aquarium/fish tank admiring works again.
+  - bugfix: Inverted aquarium/fish tank panel opening tooltip to be the right way.
+  - qol: You can actually admire an in-hand fish tank by clicking on it.
+  - qol: Aquarium/fish tank admiring tooltips are more consistent.
+  - bugfix: Sign language no longer throws a runtime error when repeatedly muted and
+      unmuted.
+  - bugfix: Sign language no longer fails to hide the action when you get it while
+      mute, stop being mute, and start being mute again.
+  - balance: Ethereal hunger rate has been adjusted to be 1/8th of its previous rate,
+      now taking roughly 16-17~ minutes to go down from full to normal or normal to
+      none. Ethereal defines have been standardized to help keep this sane.
+  - refactor: Ethereal APC and power store draining/charging methods have been refactored.
+      Please report any issues.
+  - bugfix: Ethereal APC and power store draining/charging no longer arbitrarily caps
+      out at slightly below or above the max/min.
+  - bugfix: Ethereal APC draining/charging no longer runtimes when there is no cell
+      or it gets removed mid-charge.
+  - bugfix: Ethereals can no longer continue charging their stomach even if it gets
+      surgically removed from them mid-charge.
+  - bugfix: Ethereal power store draining actually updated the charge level overlay.
+  - qol: Ethereal APC and power store draining displays a balloon alert when it can't
+      continue for whatever reason.
+  - bugfix: Pre-filled test tube racks actually update to look filled.
+  - bugfix: Pre-filled test tube racks are actually fully filled, instead of missing
+      a tube.
+  - rscadd: Organ harvesting players is now more rewarding. Increased export value
+      of initial player organs.
+  - bugfix: Examining edible items with too high of a perceived food quality no longer
+      runtimes and actually displays a food quality message.
+  - bugfix: Fixed bluespace fishing rods having a lower chance to work than intended
+      by pulling from both the old AND random source.
+  - bugfix: Bluespace fishing rods actually use the random source instead of the original
+      source for dispensing the reward. Fixes them not working on open organ manipulation
+      surgeries, and several random sources not working properly.
+  Absolucy:
+  - bugfix: Fixed an icon smoothing error caused by shuttles during recursive map
+      loading, i.e the nukie shuttles with their base.
+  - qol: Small and tiny mobs no longer trigger squeaking objects when walking over
+      them.
+  Aniantan:
+  - bugfix: Xenobio autoinjectors, such as mending solution from industrial purple
+      crossbreed, cannot be deepfried and thus filled with custom reagents using saltshaker
+      anymore.
+  AyIong:
+  - qol: Sidebar has lost its bulging white lines. And top right buttons now flat
+  - qol: SmartFridge got another redesign, and you can dispense all amount of product
+      in one click (RMB on product)
+  - qol: Stack crafting UI got images
+  - qol: Search in stack crafting UI will not take control from you, feel free to
+      craft on walk
+  Ben10Omintrix:
+  - bugfix: goliaths can now be tamed
+  - bugfix: fixes turtles rerolling strange seed chems
+  - bugfix: Fixes the watcher trophy not working on basic mobs
+  - qol: virtual pet holograms now automatically follow you when released rather than
+      having to give it the command post summon
+  Bisar Metek:
+  - code_imp: Fixed up the return value of checkbox-input for tgui to behave consistently.
+  Chowder-McArthor:
+  - qol: Strange geysers now say in their name what they produce.
+  Darkened-Earth:
+  - bugfix: NanoTrasen telecomms technicians operating on Tram class stations have
+      been reminded not to charge their power tools directly from their TCOMMS SMES
+  Dmeto:
+  - map: Metastation Science lobby camera moved away form Experimental Destructive
+      Scanner(It was geting eaten on scan)
+  - bugfix: Lavaland base hydroponics scrubber attached to its network with missing
+      pipes
+  - map: ' Redundent disconnected scrubber in cargo office removed on Metastation
+
+      map : Cable remove from under wall of Qm office on Metastation'
+  EEASAS:
+  - qol: Gives cargo their APLU Big Bess on Ice Box Station
+  - map: Extended and revamped cargo's warehouse on Ice Box Station
+  EnterTheJake:
+  - image: Codex Cicatrix has received a new sprite
+  Exester509:
+  - balance: The tesla cannon now fires hitscan lightning bolts with buffed damage
+      to non-insulated targets.
+  - balance: Flux anomalies now have a limit of 5 per round, instead of 8.
+  Gaxeer:
+  - qol: tokens and channel names in radio headset examine are now color coded and
+      display in list format
+  - qol: broadcast frequency in examine is also color coded
+  - code_imp: add new `span_class` macro
+  Ghommie:
+  - bugfix: Examining a trophy fish no longer shows the current day instead of when
+      it was actually caught and put on the mount.
+  - rscadd: You can now try to fish random products out of vending machines with a
+      fishing rod and a few bucks.
+  - bugfix: Fixing the 1000 cr holochip loot from exploration drones.
+  Hatterhat:
+  - spellcheck: A handful of machine boards should no longer have two (Machine Board)s
+      showing up in their name.
+  - spellcheck: Boulder machinery boards are now labeled as boards from autolathes/circuit
+      imprinters.
+  - spellcheck: Removed an errant typo on the recharger's readout while recharging
+      the BR-38.
+  - qol: Examining a gun or magazine now shows the ammo capacity in bold.
+  - spellcheck: Standardized pistol magazine descriptions, fixing Makarov magazines
+      having a placeholder description.
+  - rscadd: Magazines with defined ammo bands can now have their color changed with
+      a pen, in case you're reloading spent magazines or speedloaders with different
+      ammunition and want to change magazine colors to be appropriate.
+  - qol: C-20r magazines and Stechkin APS magazines now have ammo band support.
+  - qol: Standardized some descriptions for AP, HP, and incendiary magazines.
+  Iamgoofball:
+  - qol: Deconverting a revolutionary now throws a balloon alert alongside the chat
+      text.
+  - sound: Adds an off-by-default config option to optionally disable TTS audio on
+      whispered speech.
+  Jacquerel:
+  - bugfix: The hand teleporter (and several other items) will now allow you to teleport
+      to and from valid locations and forbid you from teleporting to or from places
+      you can't teleport to or from, instead of the other way around.
+  - rscadd: Space Carp now have a more distinctive accent when speaking Common.
+  - bugfix: Due to improved counselling procedures, Ethereals are less likely to develop
+      crippling phobias following a near-death experience.
+  - bugfix: Due to psychiatric budget cuts, Ethereals are more likely to develop other
+      forms of mental instability following a near-death experience.
+  - rscadd: Eggs (and all other edible food) left in a hot place will fry.
+  - spellcheck: Foam Force's brand management team require us to remove an erroneous
+      underscore which was in violation of their logo usage terms and conditions.
+  JohnFulpWillard:
+  - bugfix: Fixed the ability to scroll for Ore silo's logging, personal crafting's
+      material section, telecomms monitors, and traitor uplinks for clients on 516.
+  - bugfix: The Curator's broadcast camera is now held up in the hand you're holding
+      it with.
+  JoshAdamPowell:
+  - admin: 'All admins will now see what is in a classified command report
+
+      :cl:'
+  LT3:
+  - qol: Wearable HUDs can be toggled on and off
+  MTandi:
+  - qol: Added UI for plant analyzer
+  - rscdel: Plant analyzer no longer spams scan data into the chat (except, it still
+      works for pod people as before)
+  - rscadd: Heretics can now get clues about objects around unused influences in their
+      dreams, with a 5 minute cooldown
+  - bugfix: Fixed plant analyzer UI crashing on plants that have a reagent gene on
+      their graft
+  - bugfix: Plants with reagent traits in the graft now properly say the name of the
+      grafted reagent
+  - image: yet another medkit resprite
+  - bugfix: Mawed crucible doesn't try to gain charges when they're at maximum
+  Majkl-J:
+  - bugfix: The apiary now correctly checks for podpeople, allowing subtypes of the
+      species to also interact with is.
+  - code_imp: Beebox file single letter vars have been told to buzz off.
+  - image: New souless minecart sprite
+  - image: Rail sprites are now more consistent with their shading, and thinner
+  - bugfix: The minecart closed icon no longer shows the crate lock overlay
+  Melbert:
+  - bugfix: Big smoke puff from cigarettes happen
+  - bugfix: Tram now smashes certain objects it should be smashing again
+  - rscadd: You can light matches on the heel of your boots - Just don't do it too
+      hard.
+  - rscadd: Adds Carptongue language, spoken by Space Carps.
+  - rscdel: Space Carps no longer speak or understand Common. Special carps like Cayenne
+      and Lia can still understand common.
+  - rscadd: Space Dragons can speak Draconic and Carptongue.
+  - rscdel: Space Dragons no longer speak Common. They can still understand it.
+  - rscadd: Ash Drakes and Ice Whelps now speak Draconic.
+  - rscdel: Ash Drakes and Ice Whelps no longer speak Common. They can still understand
+      it.
+  - rscadd: Fire Sharks now speak Carptongue.
+  - rscdel: Fire Sharks no longer speak Common. They can still understand it.
+  - rscadd: Fish and Carp Infusion now grant Carptongue, letting you speak to (and
+      understand) Space Carps.
+  - rscadd: Sleeping Carp grants you Carptongue, but as most human tongues can't speak
+      it, you'll only be able to understand Space Carps unless you steal a fish tongue.
+  - bugfix: Fixes Omelettes and Carbonara not making you speak French or Italian,
+      buuut...
+  - qol: Omelettes and Carbonara will now only make you speak French or Italian if
+      they were prepared with love (via chef's kiss)
+  - rscadd: '[Icebox] Reworked Tech Storage'
+  - rscadd: '[Icebox] Reworked Public Mining'
+  - qol: You can now look down ladders, both via the look down verb/hotkey and by
+      just looking with your eyes
+  NamelessFairy:
+  - bugfix: The RCD can print Hydroponics airlocks
+  OrionTheFox:
+  - qol: Atmospherics/Station Alerts Consoles can now be set to only display station
+      (+mining station) areas. Station-mapped ones are set to this by default. Use
+      a multitool on the circuitboard to toggle between z-level or station-area tracking!
+  - bugfix: In turn, Atmospherics Alert Consoles now actually show the whole of multi-z
+      stations instead of ignoring other z-levels
+  Paxilmaniac:
+  - code_imp: modlink scryers use the nt frequency define rather than just plain text
+      doing it themselves
+  - bugfix: fixes plasma stabilizer module not showing a visor on modsuits
+  - bugfix: makes the plasma stabilizer module actually visible
+  - bugfix: makes rave module grey by default as it was meant to be
+  Pepsilawn:
+  - bugfix: accidentally duplicated disposal pipes on all main maps have been rooted
+      out
+  Profakos:
+  - balance: Rewards from departmental orders use a logarithmic scale, resulting in
+      less rewards for high tier crates. The cooldown time is also logarithmic  now,
+      which has slightly decreased cooldown values on cheaper crates.
+  Rhials:
+  - bugfix: Overwatch agent bodycameras (SHOULD) properly install if an agent has
+      already died.
+  SmArtKar:
+  - bugfix: Station traits no longer use clown and mime's human names (they're not
+      human)
+  - bugfix: Fixed division by zero runtimes caused by black eyes
+  - spellcheck: Removed outdated examine line from spraycans
+  - bugfix: Custom vendors now sanitize their inputs
+  - bugfix: Fixed a division by zero in custom vendor code
+  - bugfix: Fixed chameleon cards not updating sechud icons
+  - image: Fixed human AI's and medieval punpun's ID trims
+  - bugfix: Fixed wawa's xenobio reagent grinders being inaccessible
+  - refactor: Completely rewrote all item and projectile embedding code
+  - bugfix: Instant summons now actually drags people who had the summoned item embedded
+      into them
+  - bugfix: Items embedded into limbs no longer get shoved into limbs deep enough
+      for them to never be found again upon delimbing.
+  - bugfix: You can see scar descriptions upon detailed examination of targets
+  - bugfix: Hotspots from ash heretic spells should not longer stack inside of walls
+  - balance: Significatly tuned down SaturnX's visual filter's strength
+  - rscadd: Spessmen now blink.
+  - rscadd: Added a new Fluoride Stare quirk, keep those eyeballs wet, lest they crack!
+  - image: Eyes now display their color on their organ sprite, instead of always being
+      displayed as blue.
+  - bugfix: You can no longer get stuck in stacked lockers
+  - bugfix: Cult blood rites should not longer create "empty" blood or be unable to
+      suck up more than one blood pool at a time.
+  - code_imp: Blood trails are now considered a subtype of blood pools
+  - bugfix: Fixed items not embedding
+  - bugfix: Fixed camouflage implant missing icon
+  - bugfix: Sticky tape should be sticky again.
+  - bugfix: Added a barboat seat projector to Wawa's bar
+  - bugfix: Folders and paper biscuits no longer share their color with their contents
+  - spellcheck: Improved mindbreaker toxin description
+  - spellcheck: Fixed a typo in battle rifle crate's description
+  - image: Cult's blood barrage has received new sprites
+  - admin: Added a localhost-only "Start Now" lobby button
+  - bugfix: Fixed a runtime in requests console error logging
+  - bugfix: Fixed glowsticks not glowing
+  - bugfix: Fixed active turfs on the new Turreted Outpost ruin.
+  - rscadd: You can chug glowstick fluid to get glowing eyes
+  - admin: Admins can now filter observable mobs by ckey
+  - qol: Improved mind lockbox handling
+  - map: Updated the Turreted Outpost space ruin
+  - bugfix: Added command access requirement to the door between EVA and bridge on
+      Nebula's escape shuttle
+  - bugfix: Brought back ethereal heart's shine overlay
+  - bugfix: Fixed a missing "barricade deconstructed" balloon alert when crowbaring
+      a barricade
+  StrangeWeirdKitten:
+  - bugfix: Things that drop in random places are no longer statistically weighted
+      to drop in security.
+  SyncIt21:
+  - code_imp: improved ui data code for plumbing reaction chamber
+  - code_imp: removes a redundant var from anomaly effects
+  - bugfix: Fixes runtimes for some anomaly effects
+  - bugfix: dropping all the mobs' contents in some special admin cases won't gib
+      the player
+  - bugfix: converting reagents now yields more accurate ph values
+  - code_imp: code for converting reagents now performs better
+  TealSeer:
+  - qol: you can now examine the jukebox to see what song is currently playing
+  - map: fixed the lightswitch in Ice Box shared engineering storage being covered
+      by the APC.
+  WebcomicArtist:
+  - qol: '"Destroy Blackbox" objective now tells you how to destroy something invulnerable
+      to conventional means of destruction.'
+  Y0SH1M4S73R:
+  - qol: Xenomorphs that have had their organs removed, or replaced with organs they
+      shouldn't normally have, keep those organs (or lack thereof) when evolving.
+  - bugfix: Xenomorphs that somehow get skillchips or brain traumas will keep them
+      when evolving.
+  - rscadd: Adds circuit wirenet components, allowing data to be transmitted and received
+      over cable networks.
+  - qol: When attached to a machine, mech, modsuit, or borg, assembly circuit shells
+      will use power from those instead of the circuit's own cell.
+  - bugfix: Corpses at the pilot seat of mechs can no longer toggle the lights, safeties,
+      cabin sealing, strafing, overclocking, or durand shields, nor can they rename
+      the mech or configure its equipment.
+  - bugfix: Replaced floor tiles on shuttles no longer get left behind when the shuttle
+      moves.
+  Zytolg:
+  - map: Who turned down Birdshots Thermostat?
+  carlarctg:
+  - bugfix: ink kisses now delete the spawned projectile
+  - code_imp: Adds a new area flag, LOCAL_TELEPORT, given to virtual domains and deathmatch
+      arenas.
+  - code_imp: Re-added Void Phase to Heretic Scribes in Deathmatch's Ragnarok map.
+  - image: Standarizes ammo band colors into defines, makes them brighter, and widens
+      battle rifle bands
+  - balance: Reduces chrystarfish fall chance by half
+  - bugfix: Fixed a bug that caused predator fish to give the aquarium pet message
+      when out of it and vice versa
+  - bugfix: Fixed flumpulus message having no span
+  - rscadd: Dolphish now chomp you if you try to pet them
+  gleypi:
+  - spellcheck: fixed the tong clacking message
+  grungussuss:
+  - sound: added sounds for buckling to shuttle seats and medical beds
+  - sound: added some sounds to clown car
+  - code_imp: improved vehicle code a bit
+  high-speedspin-cycle:
+  - bugfix: Layer manifold and pipe volumes are now consistent with other pipes
+  - bugfix: Culture bottles now properly copy their cure from the inserted beaker
+  - bugfix: Fixed PKA cooldown mods becoming permanent
+  - balance: Overdose thresholds now positively scale with high purity
+  - qol: The experimental deconstructive scanner can now scan multiple items.
+  hyperjll:
+  - bugfix: A single enthusiastic chemist hell-bent on selling chemicals to his co-workers
+      single-handedly solved a programming issue with our custom vendors. They'll
+      begin displaying custom names (such as those provided by labels) once more.
+  - qol: The Syndie Lipstick's desc in the uplink now actually tells the potential
+      buyer what it does (and how to use it)
+  - spellcheck: We at the Syndicate hereby apologize for our lackluster spellcheck
+      work. (reinforecment -> reinforcement  -- found within the contractor reinforcement
+      listing.)
+  jlsnow301:
+  - admin: Fixed a bug with the Admin PDA incorrectly displaying that the message
+      text wasn't filled out yet.
+  - bugfix: Slight improvements and bug fixes to the APC controller console
+  - rscadd: TGUI icons are updated to latest FontAwesome version, v6.7.2.
+  - bugfix: Fixed icon spacing in the late join menu.
+  kapu and grungussuss:
+  - bugfix: fixed ambience sounds getting cut off mid play
+  - sound: addes fades for maintenance ambiences
+  - refactor: changed the way maintenance sounds are
+  lukevale:
+  - bugfix: Fixes the extra pixals the flooring decal line trim, and the striped version
+      has where it's not ment to.
+  mc-oofert:
+  - bugfix: on wawastation, fixed the placement of the BCI machine, the maint room
+      south of sci break room can be opened by scientists, robotics gets the ripley
+      boards and 150 iron instead of 50 iron, botany gets 4 more trays
+  - bugfix: MMIs in an odysseus get the medhud, odysseus medical beamgun works properly
+  - bugfix: deathmatch - chasms will no longer do anything when blown up, cuban pete
+      loadout macrobomb fixed, AFK lobbies will close after 5 minutes, fixed changing
+      maps incorrectly taking one more observer than it should
+  necromanceranne:
+  - bugfix: Burst fire weapons cannot be permanently broken by pacifists attempting
+      to fire them.
+  - qol: You can now put hats on your wig. I guess that means you can put a wig on
+      your wig? Wigstacking?
+  - spellcheck: The 'Wig' in the loadout is now correctly named 'Natural Wig'.
+  - balance: The compact combat shotgun is now found in the warden's locker.
+  norsvenska:
+  - bugfix: The bar and restaurant portals are now distinguishable at a glance.
+  paganiy:
+  - rscadd: nuar glasses for detective in their detdrobe
+  timothymtorres:
+  - rscadd: Rat kings across the station tremble in fear since mousetraps have been
+      added to the cargo crate via service category.
+  - bugfix: Fix pAIs interacting with machinery via alt/ctrl clicking.
+  - sound: Add snow pickup and drop sounds to material
+  - bugfix: Fix emag not working on secure briefcases and safes
+  - image: Tweak secure briefcases sprite to have glowing red/green pixels for lock.
+      Added broken black pixels to signal briefcase/safe are emagged.
+  - bugfix: Fix airlock authentication card not getting stored in containers
+  - sound: Add hair clipper sound to hair razor item
+  tontyGH:
+  - bugfix: Malf modules correctly use action cooldown (affects camera repair and
+      detonate RCDs)
+  - code_imp: Minor (extremely minor) AI code maintenance
+  - code_imp: AIs selecting holograms mid-round now select from the same list as prefs,
+      which should make things easier to keep consistent
+  - refactor: Nearsighted has been reworked to track severity applied from each source,
+      as well as allow "non-correctable" nearsightedness (for things like scarred
+      eyes).
+  - qol: The above being possible now means that you can select the Nearsighted and
+      Scarred eye quirks together
+  - bugfix: Any bug that would occur from becoming nearsighted with a scarred eye
+      should be fixed now
+  - code_imp: status_effect/grouped merging code has been improved (i hope)
+  warbluke:
+  - bugfix: Fake Nuclear Disks and Obviously Fake Nuclear Disks no longer teleport
+      when changing Z-level outside of station.
+  - bugfix: Changed BATTERY to CELL in the mob define file since an ethereal stomach
+      organ works like a power cell despite being called a battery.
+  zoomachina:
+  - rscadd: brain in a jar, a rare coroner mail goodie
+  - qol: soul-less brains that can be revived (like those from recovered crew) now
+      have an examine tip
+  - spellcheck: succesful -> successful
+2025-01-22:
+  Axidyuwu:
+  - rscdel: Removed recipe for regal condor from emaged cargo
+  Iajret:
+  - bugfix: Bouncer is listed as service job instead of having no department.
+  LordHookie:
+  - bugfix: Donk Soft 'sidearms' now use the Donk. Co label instead of missing one
+      or being scarborough
+  Mezzmerr:
+  - qol: The hand labeler and its corresponding paper roll can now be printed from
+      the Security protolathe.
+  OrbisAnima:
+  - rscadd: Company Imports has been refactored! There is no contraband (yet!) and
+      the only restricted items are weapons you need a permit for (Using SolFed criteria).
+      Users with a valid weapon permits as well as Cargo authorized consoles have
+      not to worry about such restrictions.
+  - rscadd: Setting a cargo console to broadband will remove the restricted items
+      limitations on cargo imports, additionally, emagged consoles will not automatically
+      pay taxes with each transaction (around 28%)
+  - qol: Security forces (And anyone with a Weapon Permit!) can rejoice as they will
+      be able to order machine guns from their PDA, as well as any restricted item
+      from the Cargo Imports.
+  - qol: All items on the Company imports are at least visible, and will inform the
+      user if they cannot buy them.
+  - rscadd: Adds Flora Turtles to the Pet Carrier Quirk List.
+  Zergspower:
+  - rscadd: Added new deadlier spiders to encounter
+2025-01-23:
+  AyIong:
+  - qol: 'Vending machines got new design with 2 layouts: List and Grid (List by default)'
+  Ghommie:
+  - bugfix: Chasms are once again incompatible with explosive fishing.
+  Iajret:
+  - bugfix: fixes changeling antag having no objectives
+  Jacquerel:
+  - refactor: NPC zombies found in ruins now use the basic mob framework. Please make
+      an issue report if they exhibit any unusual behaviour.
+  LordHookie:
+  - rscadd: Bitrunners have made major breakthroughs in code insertion, allowing runners
+      to learn Sanguine Strike, Blink, Soul Tap and Summon Item as Tier 2 spells,
+      and Chuuni Invocations as a Tier 3 spell.
+  - rscadd: Lewd bitrunning disks now have a luxury pod creator in them.
+  - rscadd: Tactical Toolboxes and Combat Knives are now available in Tier 1 gear
+      disks.
+  - rscadd: Katanas, Hoshis, Syndicate Contacts, Telescopic Shields and WT-550s are
+      now available in Tier 2 gear disks.
+  - rscadd: Synthetic healing supplies are now available to bitrunners through a Tier
+      0 disk.
+  - balance: E-Shields and Scream For Me have been replaced by the Telescopic Shield
+      and Sanguine Strike in their respective disks.
+  Melbert:
+  - bugfix: Heads with brains no longer look debrained
+  NamelessFairy:
+  - bugfix: Admin fired stray syndicate cargo pods will not rebel against admin whims
+      and launch themselves when cancelled.
+  - admin: Admins have new categories to fill syndicate cargo pods with.
+  Pickle-Coding:
+  - bugfix: Fixes HFR moderator leaking not leaking properly when a part is cracked.
+  RengaN02:
+  - bugfix: Fixed Engine Diagnostic surgery
+  Rhials:
+  - rscadd: You can now ctrl-click IDs to set your Honorific, which will change your
+      display name to reflect your TITLE as a WORKING MAN on SPACE STATION 13.
+  SmArtKar:
+  - bugfix: Clipboards should no longer retain pens that got removed via Instant Recall
+  - image: Made the unholy water flask darker
+  - image: Resprited default and mirage grenades
+  StrangeWeirdKitten:
+  - balance: Reduces armor slots to 1 for all station built mechs except the phazon.
+  - balance: melee mech armor has been increased to 20 from 15.
+  - balance: mech bullet and laser armor has both been increased to 15 from 10.
+  - balance: You can no longer stack the repair droid on mechs.
+  SyncIt21:
+  - bugfix: fishing rod auto reel won't rip of intercoms or other anchored/immovable
+      objects
+  - bugfix: pockets update their icons correctly when removing items that have storage
+      (e.g. box of bandages) from them
+  Vekter:
+  - balance: The roundstart report will now display a more broad, less specific message
+      about threat levels when between 0 and 80 threat.
+  Y0SH1M4S73R:
+  - refactor: Wires and assemblies have been refactored to have directionality to
+      them. This mostly makes it so that assemblies can only be attached to wires
+      it would make sense for them to be attached to.
+  - qol: Pressure plates can now also accept igniters, condensers, flashes, assembly
+      shells, and door controllers.
+  - rscadd: Undertile circuit shells. They only work when placed under floor tiles,
+      but support USB cables and use APC power instead of cell power.
+  - rscadd: Wallmounted circuit shells. Large shells that support USB cables and use
+      APC power instead of cell power.
+  - rscadd: Wire bundle component. Adds a number of wires to the circuit proportional
+      to the capacity of the shell, allowing you to use assemblies in circuit logic.
+  Zergspower:
+  - qol: Gives Non AI Cyborgs a camera toggle
+  kuricityy:
+  - bugfix: Blob's can no longer place their core in ruins on Icebox.
+  mc-oofert:
+  - refactor: mimics (bolt of animation, malf ai Machine Override, etc) are basicmobs
+  - bugfix: crate mimics may now be opened
+  necromanceranne:
+  - balance: Batons now respect the armor worn by targets. Analog batons respect MELEE
+      armor. Cell-type batons respect ENERGY armor.
+  - balance: Various batons have differing amounts of armour penetration based on
+      what type of baton it is.
+  - balance: Heads of staff have color graded batons to denote penetration power.
+      Bronze (Quartermaster), Silver (Chief Engineer, Chief Medical Officer, Head
+      of Personnel, Research Director), Gold (Captain). Contractor batons are equivalent
+      to Gold.
+  - balance: Cell-type batons gain armor penetration based on their cell's quality.
+      The better it is, the more it penetrates.
+  - bugfix: The Big Bess cargo hauler no longer magically becomes (visually) a standard
+      Ripley exosuit.
+  the-og-gear:
+  - bugfix: Deluxe Donk Pockets (and their no-carb and vegan variants) are no longer
+      craftable without collecting the recipe.
+2025-01-24:
+  FeenieRU:
+  - bugfix: radial menu for police cap
+2025-01-26:
+  mogeoko:
+  - rscadd: New deadspace mods variants are now available
+2025-01-27:
+  FeenieRU:
+  - balance: objective cats, dogs and foxes now bulky and won't fit in bag, and it's
+      easier for traitors to find them
+  Mezzmerr:
+  - rscdel: After receiving letters of complaint regarding "arson" and "collateral
+      damage," the manufacturers of .460 Ceres incendiary rounds have opted to remove
+      the massive fire trail the round leaves in flight.
+  - rscadd: Added "Psychiatric Hold Prisoner" as an alternate job title for Prisoner.
+2025-01-28:
+  FeenieRU:
+  - qol: now you can choose your character in Charlie Station spawner.
+  Mezzmerr:
+  - rscadd: Replaced the Bogseo gunset in the Blueshield's gun beacon with a gunset
+      for the NT20, a new, slightly nerfed variant of the C20-r.
+  - rscadd: Added .460 Ceres SMG magazines to the Security lathe.
+  Myphicbowser:
+  - rscadd: Rogues; Descendants of the Mysterious Abductors are now employed by Nanotrasen,
+      sure they have three fingers and most are missing vocal cords, but they can
+      still work!
+  OrbisAnima:
+  - balance: Xenoarch rewards were slightly adjusted, legion cores that appear in
+      it are now pre stabilized so they have an actual impact on the game.
+  RatFromTheJungle:
+  - rscadd: Added advanced (taser+disabler) taser's to the security vendor (3) and
+      company imports.
+  - balance: heavily toned back tasers(electrodes), and removed a modular-confusion
+      effect that they had, for some reason.
+  Zergspower:
+  - qol: added custom hat offsets for the majority of borg models
+  - bugfix: fixes borg hats on some models floating
+2025-01-29:
+  FeenieRU:
+  - bugfix: NT20 kit was added to Blueshield beacon
+  FlufflesTheDog:
+  - bugfix: Subdermal splints, rapid coagulant applicators, and robot repair sprays
+      should now work again
+  - bugfix: Department batons are no longer invisible
+  Hatterhat:
+  - bugfix: 9mm magazines (e.g. the Makarov) are no longer invisible.
+  - balance: .35 Sol Short extended magazines are now small-sized, and thus fit in
+      boxes or belts with less finagling.
+  - balance: The Makarov guncase from the uplink is now normal-sized, and thus fits
+      in backpacks.
+  MrSunabouzu:
+  - qol: cin surplus undersuit now comes with sensors.
+  OrbisAnima:
+  - qol: Removed Bounce from the P207 rounds (Kinetic Balls gun). Increased Magazine
+      size by 50% for the P207.
+  Stalkeros, Moldb for the sprites:
+  - image: Removes two pixels from the akula snout.
+  Trelus:
+  - rscadd: Added the 'Zashch' self-loading pistol, as well as an entry for purchasing
+      it from cargo's NRI supply company import
+  - rscadd: Added the Zashch pistol magazine, as well as an entry for purchasing it
+      from cargo's NRI supply company import
+  Zergspower:
+  - balance: blob point generation returned to baseline of 2
+2025-01-30:
+  FeenieRU:
+  - bugfix: Fixed Stihar's PadreTheTroll's plushes ckey whitelist
+  - balance: returned contraband and restricted status to some guns like antimaterial
+      rifle
+  FlufflesTheDog:
+  - bugfix: Synths can use the IRN Imports tab on their internal computers
+  - bugfix: Requests through company imports have a name associated with them
+  Myphicbowser:
+  - rscadd: Added Engineering and Cyborg Skillchips
+  - rscadd: Added Medbay with a basic Chemistry Setup
+  - rscadd: Added a pre-built Cyborg Body
+  - qol: Removed cut AI wire from all doors
+  OrbisAnima:
+  - qol: Turns off by default the Soulcatcher and talking of the Hoshi and the Hyeseong.
+      They are still usable, just not out of the box, the user has to manually turn
+      them on.
+  OrionTheFox:
+  - qol: Atmospherics/Station Alerts Consoles can now be set to only display station
+      (+mining station) areas. Station-mapped ones are set to this by default. Use
+      a multitool on the circuitboard to toggle between z-level or station-area tracking!
+  - bugfix: 'In turn, Atmospherics Alert Consoles now actually show the whole of multi-z
+      stations instead of ignoring other z-levels /:cl:'
+  vinylspiders:
+  - bugfix: fixes sound preferences not being respected.
+  - bugfix: radio headset volume slider is now functional

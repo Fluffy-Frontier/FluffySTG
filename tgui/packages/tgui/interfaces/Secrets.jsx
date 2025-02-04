@@ -1,7 +1,4 @@
-import { toFixed } from 'common/math';
 import { useState } from 'react';
-
-import { useBackend } from '../backend';
 import {
   Button,
   Flex,
@@ -10,7 +7,10 @@ import {
   RoundGauge,
   Section,
   Stack,
-} from '../components';
+} from 'tgui-core/components';
+import { toFixed } from 'tgui-core/math';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 const TAB2NAME = [
@@ -425,13 +425,13 @@ const FunTab = (props) => {
             />
           </Stack.Item>
           <Stack.Item>
-            <NoticeBox
-              mb={-0.5}
+            <Button
+              icon="house"
+              lineHeight={lineHeightNormal}
               width={buttonWidthNormal}
-              height={lineHeightNormal}
-            >
-              Your admin button here, coder!
-            </NoticeBox>
+              content="Send Shuttle Back"
+              onClick={() => act('send_shuttle_back')}
+            />
           </Stack.Item>
         </Stack>
       </Stack.Item>
@@ -632,7 +632,7 @@ const FunForYouTab = (props) => {
 
 export const Secrets = (props) => {
   const { act, data } = useBackend();
-  const { is_debugger, is_funmin } = data;
+  const { is_debugger, is_funmin, is_eventmaker } = data;
   const [tabIndex, setTabIndex] = useState(2);
   const TabComponent = TAB2NAME[tabIndex - 1].component();
 
@@ -644,20 +644,22 @@ export const Secrets = (props) => {
             <Section
               title="Secrets"
               buttons={
-                <>
-                  <Button
-                    color="blue"
-                    icon="address-card"
-                    content="Admin Log"
-                    onClick={() => act('admin_log')}
-                  />
-                  <Button
-                    color="blue"
-                    icon="eye"
-                    content="Show Admins"
-                    onClick={() => act('show_admins')}
-                  />
-                </>
+                !is_eventmaker && (
+                  <>
+                    <Button
+                      color="blue"
+                      icon="address-card"
+                      content="Admin Log"
+                      onClick={() => act('admin_log')}
+                    />
+                    <Button
+                      color="blue"
+                      icon="eye"
+                      content="Show Admins"
+                      onClick={() => act('show_admins')}
+                    />
+                  </>
+                )
               }
             >
               <Flex mx={-0.5} align="stretch" justify="center">

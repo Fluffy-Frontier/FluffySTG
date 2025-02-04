@@ -130,7 +130,12 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 		return
 
 	if(message_mods[RADIO_EXTENSION] == MODE_ADMIN)
-		SSadmin_verbs.dynamic_invoke_verb(client, /datum/admin_verb/cmd_admin_say, message)
+		// TFF ADDITION START - Eventmaker
+		if(client.is_eventmaker())
+			SSadmin_verbs.dynamic_invoke_verb(client, /datum/admin_verb/cmd_eventmaker_say, message)
+		else
+			// TFF ADDITION END
+			SSadmin_verbs.dynamic_invoke_verb(client, /datum/admin_verb/cmd_admin_say, message)
 		return
 
 	if(message_mods[RADIO_EXTENSION] == MODE_DEADMIN)
@@ -278,6 +283,18 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 	if((SEND_SIGNAL(src, COMSIG_MOVABLE_PRE_HEAR, args) & COMSIG_MOVABLE_CANCEL_HEARING) || !GET_CLIENT(src))
 		return FALSE
 
+// FLUFFY EDIT START Converts scrambled nabber's msg into emote for people
+	if(ispath(message_language, /datum/language/nabber) && speaker != src)
+		var/gbs_translation_check = translate_language(speaker, message_language, raw_message, spans, message_mods)
+		if(raw_message != gbs_translation_check)
+			message_mods[MODE_CUSTOM_SAY_EMOTE] = gbs_translation_check
+			message_mods[MODE_CUSTOM_SAY_ERASE_INPUT] = TRUE
+
+	if(ispath(message_language, /datum/language/nabber) && isnabber(src))
+		message_mods[MODE_CUSTOM_SAY_EMOTE] = null
+		message_mods[MODE_CUSTOM_SAY_ERASE_INPUT] = FALSE
+	// FLUFFY EDIT END
+
 	var/deaf_message
 	var/deaf_type
 
@@ -325,7 +342,8 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 		if(deaf_message)
 			deaf_type = MSG_VISUAL
 			message = deaf_message
-			return show_message(message, MSG_VISUAL, deaf_message, deaf_type, avoid_highlight)
+			show_message(message, MSG_VISUAL, deaf_message, deaf_type, avoid_highlight)
+			return FALSE
 
 
 	// we need to send this signal before compose_message() is used since other signals need to modify
@@ -445,8 +463,8 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 			filter += tts_filter.Join(",")
 
 		var/voice_to_use = get_tts_voice(filter, special_filter)
-
-		INVOKE_ASYNC(SStts, TYPE_PROC_REF(/datum/controller/subsystem/tts, queue_tts_message), src, html_decode(tts_message_to_use), message_language, voice_to_use, filter.Join(","), listened, message_range = message_range, pitch = pitch, special_filters = special_filter.Join("|"))
+		if (!CONFIG_GET(flag/tts_no_whisper) || (CONFIG_GET(flag/tts_no_whisper) && !message_mods[WHISPER_MODE]))
+			INVOKE_ASYNC(SStts, TYPE_PROC_REF(/datum/controller/subsystem/tts, queue_tts_message), src, html_decode(tts_message_to_use), message_language, voice_to_use, filter.Join(","), listened, message_range = message_range, pitch = pitch, special_filters = special_filter.Join("|"))
 
 	var/image/say_popup = image('icons/mob/effects/talk.dmi', src, "[bubble_type][talk_icon_state]", FLY_LAYER)
 	SET_PLANE_EXPLICIT(say_popup, ABOVE_GAME_PLANE, src)

@@ -5,7 +5,7 @@
 	if(!type)
 		return
 	var/target_ckey = ckey(target_key)
-	if(!target_key && (type == "note" || type == "message" || type == "watchlist entry"))
+	if(!target_key && (type == "note" || type == "message" || type == "watchlist entry" || type == "eventmaker note")) // TFF EDIT - Eventmaker
 		var/new_key = input(usr,"Who would you like to create a [type] for?","Enter a key or ckey",null) as null|text
 		if(!new_key)
 			return
@@ -94,15 +94,15 @@
 		INSERT INTO [format_table_name("messages")] (type, targetckey, adminckey, text, timestamp, server, server_ip, server_port, round_id, secret, expire_timestamp, severity, playtime)
 		VALUES (:type, :target_ckey, :admin_ckey, :text, [timestamp? ":timestamp" : "Now()"], :server, INET_ATON(:internet_address), :port, :round_id, :secret, :expiry, :note_severity, (SELECT `minutes` FROM [format_table_name("role_time")] WHERE `ckey` = :target_ckey AND `job` = 'Living'))
 	"}, parameters)
-	var/pm = "[key_name(usr)] has created a [type][(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""]: [text]"
-	var/header = "[key_name_admin(usr)] has created a [type][(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""]"
+	var/pm = "[key_name(usr)] has created a [secret ? "secret " : ""][type][(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""]: [text]"
+	var/header = "[key_name_admin(usr)] has created a [secret ? "secret " : ""][type][(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""]"
 	if(!query_create_message.warn_execute())
 		qdel(query_create_message)
 		return
 	qdel(query_create_message)
 	if(logged)
 		log_admin_private(pm)
-		message_admins("[header]:<br>[text]")
+		message_admins("[header]:<br>[text]", TRUE)
 		admin_ticket_log(target_ckey, "<font color='blue'>[header]</font><br>[text]")
 		if(browse)
 			browse_messages("[type]")
@@ -146,7 +146,7 @@
 		var/m1 = "[user_key_name] has deleted a [type][(type == "note" || type == "message" || type == "watchlist entry") ? " for" : " made by"] [target_key]: [text]"
 		var/m2 = "[user_name_admin] has deleted a [type][(type == "note" || type == "message" || type == "watchlist entry") ? " for" : " made by"] [target_key]:<br>[text]"
 		log_admin_private(m1)
-		message_admins(m2)
+		message_admins(m2, TRUE)
 		if(browse)
 			browse_messages("[type]")
 		else
@@ -195,7 +195,7 @@
 			return
 		qdel(query_edit_message)
 		log_admin_private("[kn] has edited a [type] [(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""] made by [admin_key] from [old_text] to [new_text]")
-		message_admins("[kna] has edited a [type] [(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""] made by [admin_key] from<br>[old_text]<br>to<br>[new_text]")
+		message_admins("[kna] has edited a [type] [(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""] made by [admin_key] from<br>[old_text]<br>to<br>[new_text]", TRUE)
 		if(browse)
 			browse_messages("[type]")
 		else
@@ -266,7 +266,7 @@
 			return
 		qdel(query_edit_message_expiry)
 		log_admin_private("[kn] has edited the expiration time of a [type] [(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""] made by [admin_key] from [(old_expiry ? old_expiry : "no expiration date")] to [new_expiry]")
-		message_admins("[kna] has edited the expiration time of a [type] [(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""] made by [admin_key] from [(old_expiry ? old_expiry : "no expiration date")] to [new_expiry]")
+		message_admins("[kna] has edited the expiration time of a [type] [(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""] made by [admin_key] from [(old_expiry ? old_expiry : "no expiration date")] to [new_expiry]", TRUE)
 		if(browse)
 			browse_messages("[type]")
 		else
@@ -320,7 +320,7 @@
 			return
 		qdel(query_edit_note_severity)
 		log_admin_private("[kn] has edited the severity of a [type] for [target_key] made by [admin_key] from [old_severity] to [new_severity]")
-		message_admins("[kna] has edited the severity time of a [type] for [target_key] made by [admin_key] from [old_severity] to [new_severity]")
+		message_admins("[kna] has edited the severity time of a [type] for [target_key] made by [admin_key] from [old_severity] to [new_severity]", TRUE)
 		browse_messages(target_ckey = ckey(target_key), agegate = TRUE)
 	qdel(query_find_edit_note_severity)
 
@@ -364,7 +364,7 @@
 			return
 		qdel(query_message_secret)
 		log_admin_private("[kn] has toggled [target_key]'s [type] made by [admin_key] to [secret ? "not secret" : "secret"]")
-		message_admins("[kna] has toggled [target_key]'s [type] made by [admin_key] to [secret ? "not secret" : "secret"]")
+		message_admins("[kna] has toggled [target_key]'s [type] made by [admin_key] to [secret ? "not secret" : "secret"]", TRUE)
 		browse_messages(target_ckey = ckey(target_key), agegate = TRUE)
 	qdel(query_find_message_secret)
 
@@ -378,10 +378,11 @@
 
 	var/list/output = list()
 	var/ruler = "<hr style='background:#000000; border:0; height:3px'>"
-	var/list/navbar = list("<a href='?_src_=holder;[HrefToken()];nonalpha=1'>All</a><a href='?_src_=holder;[HrefToken()];nonalpha=2'>#</a>")
+	var/list/navbar = list("<a href='byond://?_src_=holder;[HrefToken()];nonalpha=1'>All</a><a href='byond://?_src_=holder;[HrefToken()];nonalpha=2'>#</a>")
 	for(var/letter in GLOB.alphabet)
-		navbar += "<a href='?_src_=holder;[HrefToken()];showmessages=[letter]'>[letter]</a>"
-	navbar += "<a href='?_src_=holder;[HrefToken()];showmemo=1'>Memos</a><a href='?_src_=holder;[HrefToken()];showwatch=1'>Watchlist</a>"
+		navbar += "<a href='byond://?_src_=holder;[HrefToken()];showmessages=[letter]'>[letter]</a>"
+	if(!usr?.client.is_eventmaker()) // TFF ADDITION - Eventmaker
+		navbar += "<a href='byond://?_src_=holder;[HrefToken()];showmemo=1'>Memos</a><a href='byond://?_src_=holder;[HrefToken()];showwatch=1'>Watchlist</a>"
 	navbar += "<br><form method='GET' name='search' action='?'>\
 	<input type='hidden' name='_src_' value='holder'>\
 	[HrefTokenFormField()]\
@@ -392,14 +393,14 @@
 	if(type == "memo" || type == "watchlist entry")
 		if(type == "memo")
 			output += "<h2><center>Admin memos</h2>"
-			output += "<a href='?_src_=holder;[HrefToken()];addmemo=1'>Add memo</a></center>"
+			output += "<a href='byond://?_src_=holder;[HrefToken()];addmemo=1'>Add memo</a></center>"
 		else if(type == "watchlist entry")
 			output += "<h2><center>Watchlist entries</h2>"
-			output += "<a href='?_src_=holder;[HrefToken()];addwatchempty=1'>Add watchlist entry</a>"
+			output += "<a href='byond://?_src_=holder;[HrefToken()];addwatchempty=1'>Add watchlist entry</a>"
 			if(filter)
-				output += "<a href='?_src_=holder;[HrefToken()];showwatch=1'>Unfilter clients</a></center>"
+				output += "<a href='byond://?_src_=holder;[HrefToken()];showwatch=1'>Unfilter clients</a></center>"
 			else
-				output += "<a href='?_src_=holder;[HrefToken()];showwatchfilter=1'>Filter offline clients</a></center>"
+				output += "<a href='byond://?_src_=holder;[HrefToken()];showwatchfilter=1'>Filter offline clients</a></center>"
 		output += ruler
 		var/datum/db_query/query_get_type_messages = SSdbcore.NewQuery(/* NOVA EDIT CHANGE - MULTISERVER */{"
 			SELECT
@@ -438,6 +439,10 @@
 			var/playtime = query_get_type_messages.item[11]
 			var/round_id = query_get_type_messages.item[12] // NOVA EDIT CHANGE END - MULTISERVER
 			output += "<b>"
+			// TFF ADDITION START - Eventmaker
+			if(type != "eventmaker note" && usr?.client.is_eventmaker())
+				continue
+			// TFF ADDITION END
 			if(type == "watchlist entry")
 				output += "[t_key] | "
 			output += "[timestamp] | [server] | Round [round_id] | [admin_key]"
@@ -446,11 +451,11 @@
 			if(expire_timestamp)
 				output += " | Expires [expire_timestamp]"
 			output += "</b>"
-			output += " <a href='?_src_=holder;[HrefToken()];editmessageexpiryempty=[id]'>Change Expiry Time</a>"
-			output += " <a href='?_src_=holder;[HrefToken()];deletemessageempty=[id]'>Delete</a>"
-			output += " <a href='?_src_=holder;[HrefToken()];editmessageempty=[id]'>Edit</a>"
+			output += " <a href='byond://?_src_=holder;[HrefToken()];editmessageexpiryempty=[id]'>Change Expiry Time</a>"
+			output += " <a href='byond://?_src_=holder;[HrefToken()];deletemessageempty=[id]'>Delete</a>"
+			output += " <a href='byond://?_src_=holder;[HrefToken()];editmessageempty=[id]'>Edit</a>"
 			if(editor_key)
-				output += " <font size='2'>Last edit by [editor_key] <a href='?_src_=holder;[HrefToken()];messageedits=[id]'>(Click here to see edit log)</a></font>"
+				output += " <font size='2'>Last edit by [editor_key] <a href='byond://?_src_=holder;[HrefToken()];messageedits=[id]'>(Click here to see edit log)</a></font>"
 			output += "<br>[text]<hr style='background:#000000; border:0; height:1px'>"
 		qdel(query_get_type_messages)
 	if(target_ckey)
@@ -482,6 +487,10 @@
 		var/list/messagedata = list()
 		var/list/watchdata = list()
 		var/list/notedata = list()
+		// TFF ADDITION START - Eventmaker
+		var/list/rating = 5 // Изначальный рейтинг пользователя, далее его.. понижают нотесы с тяжестью.
+		var/list/eventnotedata = list() // Храним в себе нотесы ивентеров
+		// TFF ADDITION END
 		var/skipped = 0
 		while(query_get_messages.NextRow())
 			if(QDELETED(usr))
@@ -519,6 +528,15 @@
 					alphatext = "filter: alpha(opacity=[alpha]); opacity: [alpha/100];"
 			var/list/data = list("<div style='margin:0px;[alphatext]'><p class='severity'>")
 			if(severity)
+				// TFF ADDITION START - Eventmaker
+				switch(severity)
+					if("high")
+						rating -= 0.4
+					if("medium")
+						rating -= 0.2
+					if("minor")
+						rating -= 0.1
+				// TFF ADDITION END
 				data += "<img src='[SSassets.transport.get_asset_url("[severity]_button.png")]' height='24' width='24'></img> "
 			data += "<b>[timestamp] | [server] | Round [round_id] | [admin_key][secret ? " | <i>- Secret</i>" : ""] | [get_exp_format(text2num(playtime))] Living Playtime"
 			if(expire_timestamp)
@@ -527,21 +545,21 @@
 			if(!linkless)
 				if(type == "note")
 					if(severity)
-						data += "<a href='?_src_=holder;[HrefToken()];editmessageseverity=[id]'>[severity == "none" ? "No" : "[capitalize(severity)]"] Severity</a>"
+						data += "<a href='byond://?_src_=holder;[HrefToken()];editmessageseverity=[id]'>[severity == "none" ? "No" : "[capitalize(severity)]"] Severity</a>"
 					else
-						data += "<a href='?_src_=holder;[HrefToken()];editmessageseverity=[id]'>N/A Severity</a>"
-				data += " <a href='?_src_=holder;[HrefToken()];editmessageexpiry=[id]'>Change Expiry Time</a>"
-				data += " <a href='?_src_=holder;[HrefToken()];deletemessage=[id]'>Delete</a>"
+						data += "<a href='byond://?_src_=holder;[HrefToken()];editmessageseverity=[id]'>N/A Severity</a>"
+				data += " <a href='byond://?_src_=holder;[HrefToken()];editmessageexpiry=[id]'>Change Expiry Time</a>"
+				data += " <a href='byond://?_src_=holder;[HrefToken()];deletemessage=[id]'>Delete</a>"
 				if(type == "note")
-					data += " <a href='?_src_=holder;[HrefToken()];secretmessage=[id]'>[secret ? "<b>Secret</b>" : "Not secret"]</a>"
+					data += " <a href='byond://?_src_=holder;[HrefToken()];secretmessage=[id]'>[secret ? "<b>Secret</b>" : "Not secret"]</a>"
 				if(type == "message sent")
 					data += " <font size='2'>Message has been sent</font>"
 					if(editor_key)
 						data += "|"
 				else
-					data += " <a href='?_src_=holder;[HrefToken()];editmessage=[id]'>Edit</a>"
+					data += " <a href='byond://?_src_=holder;[HrefToken()];editmessage=[id]'>Edit</a>"
 				if(editor_key)
-					data += " <font size='2'>Last edit by [editor_key] <a href='?_src_=holder;[HrefToken()];messageedits=[id]'>(Click here to see edit log)</a></font>"
+					data += " <font size='2'>Last edit by [editor_key] <a href='byond://?_src_=holder;[HrefToken()];messageedits=[id]'>(Click here to see edit log)</a></font>"
 			data += "</div></center>"
 			data += "<p style='[alphatext]'>[text]</p><hr style='background:#000000; border:0; height:1px; [alphatext]'>"
 			switch(type)
@@ -553,6 +571,10 @@
 					watchdata += data
 				if("note")
 					notedata += data
+				// TFF ADDITION START - Eventmaker
+				if("eventmaker note")
+					eventnotedata += data
+				// TFF ADDITION END
 		qdel(query_get_messages)
 		if(!target_key)
 			var/datum/db_query/query_get_message_key = SSdbcore.NewQuery({"
@@ -565,34 +587,43 @@
 				target_key = query_get_message_key.item[1]
 			qdel(query_get_message_key)
 		output += "<h2><center>[target_key]</center></h2><center>"
+		output += "<h3>Player Rating: <font color ='[rating > 4 ? COLOR_GREEN : rating > 2 ? COLOR_ORANGE : COLOR_RED]'>[rating > -1 ? rating : 0]</font></h3>" // TFF ADDITION - Eventmaker
 		if(!linkless)
-			output += "<a href='?_src_=holder;[HrefToken()];addnote=[target_key]'>Add note</a>"
-			output += " <a href='?_src_=holder;[HrefToken()];addmessage=[target_key]'>Add message</a>"
-			output += " <a href='?_src_=holder;[HrefToken()];addwatch=[target_key]'>Add to watchlist</a>"
-			output += " <a href='?_src_=holder;[HrefToken()];showmessageckey=[target_ckey]'>Refresh page</a></center>"
+			if(!usr?.client.is_eventmaker()) // TFF ADDITION - Eventmaker
+				output += "<a href='byond://?_src_=holder;[HrefToken()];addnote=[target_key]'>Add note</a>"
+				output += " <a href='byond://?_src_=holder;[HrefToken()];addmessage=[target_key]'>Add message</a>"
+				output += " <a href='byond://?_src_=holder;[HrefToken()];addwatch=[target_key]'>Add to watchlist</a>"
+			output += " <a href='byond://?_src_=holder;[HrefToken()];addeventnote=[target_key]'>Add event note</a>" // TFF ADDITION - Eventmaker
+			output += " <a href='byond://?_src_=holder;[HrefToken()];showmessageckey=[target_ckey]'>Refresh page</a></center>"
 		else
-			output += " <a href='?_src_=holder;[HrefToken()];showmessageckeylinkless=[target_ckey]'>Refresh page</a></center>"
+			output += " <a href='byond://?_src_=holder;[HrefToken()];showmessageckeylinkless=[target_ckey]'>Refresh page</a></center>"
 		output += ruler
-		if(messagedata)
+		if(messagedata && !usr?.client.is_eventmaker())// TFF ADDITION - Eventmaker
 			output += "<h2>Messages</h2>"
 			output += messagedata
-		if(watchdata)
+		if(watchdata && !usr?.client.is_eventmaker())// TFF ADDITION - Eventmaker
 			output += "<h2>Watchlist</h2>"
 			output += watchdata
-		if(notedata)
+		if(notedata && !usr?.client.is_eventmaker())// TFF ADDITION - Eventmaker
 			output += "<h2>Notes</h2>"
 			output += notedata
 			if(!linkless)
 				if (agegate)
 					if (skipped) //the first skipped message is still shown so that we can put this link over it.
-						output += "<center><a href='?_src_=holder;[HrefToken()];showmessageckey=[target_ckey];showall=1' style='position: relative; top: -3em;'>Show [skipped] hidden messages</a></center>"
+						output += "<center><a href='byond://?_src_=holder;[HrefToken()];showmessageckey=[target_ckey];showall=1' style='position: relative; top: -3em;'>Show [skipped] hidden messages</a></center>"
 					else
-						output += "<center><a href='?_src_=holder;[HrefToken()];showmessageckey=[target_ckey];showall=1'>Show All</a></center>"
+						output += "<center><a href='byond://?_src_=holder;[HrefToken()];showmessageckey=[target_ckey];showall=1'>Show All</a></center>"
 				else
-					output += "<center><a href='?_src_=holder;[HrefToken()];showmessageckey=[target_ckey]'>Hide Old</a></center>"
+					output += "<center><a href='byond://?_src_=holder;[HrefToken()];showmessageckey=[target_ckey]'>Hide Old</a></center>"
+		// TFF ADDITION START - Eventmaker
+		if(eventnotedata)
+			output += "<h2>Event Notes</h2>"
+			output += eventnotedata
+		// TFF ADDITION END
 	if(index)
 		var/search
-		output += "<center><a href='?_src_=holder;[HrefToken()];addmessageempty=1'>Add message</a><a href='?_src_=holder;[HrefToken()];addwatchempty=1'>Add watchlist entry</a><a href='?_src_=holder;[HrefToken()];addnoteempty=1'>Add note</a></center>"
+		if(!usr?.client.is_eventmaker()) // TFF ADDITION - Eventmaker
+			output += "<center><a href='byond://?_src_=holder;[HrefToken()];addmessageempty=1'>Add message</a><a href='byond://?_src_=holder;[HrefToken()];addwatchempty=1'>Add watchlist entry</a><a href='byond://?_src_=holder;[HrefToken()];addnoteempty=1'>Add note</a></center>"
 		output += ruler
 		switch(index)
 			if(1)
@@ -622,10 +653,10 @@
 			var/index_key = query_list_messages.item[2]
 			if(!index_key)
 				index_key = index_ckey
-			output += "<a href='?_src_=holder;[HrefToken()];showmessageckey=[index_ckey]'>[index_key]</a><br>"
+			output += "<a href='byond://?_src_=holder;[HrefToken()];showmessageckey=[index_ckey]'>[index_key]</a><br>"
 		qdel(query_list_messages)
-	else if(!type && !target_ckey && !index)
-		output += "<center><a href='?_src_=holder;[HrefToken()];addmessageempty=1'>Add message</a><a href='?_src_=holder;[HrefToken()];addwatchempty=1'>Add watchlist entry</a><a href='?_src_=holder;[HrefToken()];addnoteempty=1'>Add note</a></center>"
+	else if(!type && !target_ckey && !index && !usr?.client.is_eventmaker()) // TFF EDIT - Eventmaker
+		output += "<center><a href='byond://?_src_=holder;[HrefToken()];addmessageempty=1'>Add message</a><a href='byond://?_src_=holder;[HrefToken()];addwatchempty=1'>Add watchlist entry</a><a href='byond://?_src_=holder;[HrefToken()];addnoteempty=1'>Add note</a></center>"
 		output += ruler
 	var/datum/browser/browser = new(usr, "Note panel", "Manage player notes", 1000, 500)
 	notes_assets.send(usr.client)
@@ -693,7 +724,7 @@
 	var/list/text = list()
 	for(var/datum/admin_message/message in get_message_output("message", display_to.ckey))
 		text += "<font color='[COLOR_RED]' size='3'><b>Admin message left by [span_prefix("[message.admin_key]")] on [message.timestamp]</b></font>"
-		text += "<br><font color='[COLOR_RED]'>[message.text] <A href='?messageread=[message.id]'>(Click here to verify you have read this message)</A></font><br>"
+		text += "<br><font color='[COLOR_RED]'>[message.text] <A href='byond://?messageread=[message.id]'>(Click here to verify you have read this message)</A></font><br>"
 	if(length(text))
 		to_chat(display_to, text.Join())
 
@@ -710,14 +741,14 @@
 	for(var/datum/admin_message/message in get_message_output("memo", display_to.ckey))
 		text += "[span_memo("Memo by <span class='prefix'>[message.admin_key]")] on [message.timestamp]"
 		if(message.editor_key)
-			text += "<br>[span_memoedit("Last edit by [message.editor_key] <A href='?_src_=holder;[HrefToken()];messageedits=[message.id]'>(Click here to see edit log)</A>")]"
+			text += "<br>[span_memoedit("Last edit by [message.editor_key] <A href='byond://?_src_=holder;[HrefToken()];messageedits=[message.id]'>(Click here to see edit log)</A>")]"
 		text += "<br>[message.text]</span><br>"
 	if(length(text))
 		to_chat(display_to, text.Join())
 
 /proc/scream_about_watchlists(client/read_from)
 	for(var/datum/admin_message/message in get_message_output("watchlist entry", read_from.ckey))
-		message_admins("<font color='[COLOR_RED]'><B>Notice: </B></font><font color='[COLOR_ADMIN_PINK]'>[key_name_admin(read_from.ckey)] has been on the watchlist since [message.timestamp] and has just connected - Reason: [message.text]</font>")
+		message_admins("<font color='[COLOR_RED]'><B>Notice: </B></font><font color='[COLOR_ADMIN_PINK]'>[key_name_admin(read_from.ckey)] has been on the watchlist since [message.timestamp] and has just connected - Reason: [message.text]</font>", TRUE)
 		send2tgs_adminless_only("Watchlist", "[key_name(read_from.ckey)] is on the watchlist and has just connected - Reason: [message.text]")
 
 #define NOTESFILE "data/player_notes.sav"

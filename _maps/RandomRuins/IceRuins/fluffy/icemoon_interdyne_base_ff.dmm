@@ -618,7 +618,8 @@
 "cY" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/vending/syndichem{
-	onstation = 0
+	onstation = 0;
+	all_products_free = 1
 	},
 /obj/structure/marker_beacon/bronze,
 /obj/machinery/camera/xray/directional/north{
@@ -3172,7 +3173,8 @@
 /obj/machinery/vending/hydronutrients{
 	onstation = 0;
 	extended_inventory = 1;
-	products = list(/obj/item/gun/energy/floragun = 3, /obj/item/geneshears = 3, /obj/item/hatchet = 3, /obj/item/cultivator = 3, /obj/item/plant_analyzer = 3, /obj/item/reagent_containers/cup/bottle/nutrient/ez = 5, /obj/item/reagent_containers/cup/bottle/nutrient/l4z = 5, /obj/item/reagent_containers/cup/bottle/nutrient/rh = 3, /obj/item/reagent_containers/spray/pestspray = 2, /obj/item/reagent_containers/syringe = 5, /obj/item/secateurs = 3, /obj/item/shovel/spade = 3, /obj/item/storage/bag/plants = 3)
+	products = list(/obj/item/gun/energy/floragun = 3, /obj/item/geneshears = 3, /obj/item/hatchet = 3, /obj/item/cultivator = 3, /obj/item/plant_analyzer = 3, /obj/item/reagent_containers/cup/bottle/nutrient/ez = 5, /obj/item/reagent_containers/cup/bottle/nutrient/l4z = 5, /obj/item/reagent_containers/cup/bottle/nutrient/rh = 3, /obj/item/reagent_containers/spray/pestspray = 2, /obj/item/reagent_containers/syringe = 5, /obj/item/secateurs = 3, /obj/item/shovel/spade = 3, /obj/item/storage/bag/plants = 3);
+	all_products_free = 1
 	},
 /obj/effect/turf_decal/tile/dark/full,
 /turf/open/floor/iron/dark/textured_large,
@@ -3721,7 +3723,10 @@
 	dir = 4
 	},
 /obj/structure/marker_beacon/violet,
-/obj/effect/spawner/random/vending/snackvend,
+/obj/machinery/vending/hotdog{
+	all_products_free = 1;
+	onstation = 0
+	},
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
 "vt" = (
@@ -3780,7 +3785,8 @@
 	onstation = 0;
 	extended_inventory = 1;
 	color = "#adadcd";
-	light_color = "#adadcd"
+	light_color = "#adadcd";
+	all_products_free = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
@@ -4418,7 +4424,8 @@
 /area/ruin/interdyne_planetary_base/med)
 "zu" = (
 /obj/machinery/vending/clothing{
-	onstation = 0
+	onstation = 0;
+	all_products_free = 1
 	},
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/olive,
@@ -4512,7 +4519,8 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/vending/wardrobe/syndie_wardrobe/interdyne{
 	extended_inventory = 1;
-	onstation = 0
+	onstation = 0;
+	all_products_free = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
@@ -4843,7 +4851,8 @@
 "CC" = (
 /obj/machinery/vending/dorms{
 	onstation = 0;
-	extended_inventory = 1
+	extended_inventory = 1;
+	all_products_free = 1
 	},
 /obj/machinery/light/directional/south{
 	color = "#0012FF"
@@ -5297,7 +5306,8 @@
 /area/ruin/interdyne_planetary_base/serv)
 "ES" = (
 /obj/machinery/vending/dinnerware{
-	onstation = 0
+	onstation = 0;
+	all_products_free = 1
 	},
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/indigo,
@@ -5305,7 +5315,8 @@
 /area/ruin/interdyne_planetary_base/serv)
 "EU" = (
 /obj/machinery/vending/autodrobe{
-	onstation = 0
+	onstation = 0;
+	all_products_free = 1
 	},
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
@@ -6265,7 +6276,8 @@
 	contraband = list(/obj/item/storage/box/gum/happiness=3, /obj/item/storage/box/hug/medical=3, /obj/item/mmi/syndie/interdyne=3);
 	extended_inventory = 1;
 	color = "#adadcd";
-	light_color = "#adadcd"
+	light_color = "#adadcd";
+	all_products_free = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
@@ -6856,7 +6868,8 @@
 	dir = 4
 	},
 /obj/machinery/vending/cigarette/syndicate{
-	onstation = 0
+	onstation = 0;
+	all_products_free = 1
 	},
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
@@ -7917,7 +7930,8 @@
 	onstation = 0;
 	extended_inventory = 1;
 	name = "SusDrobe";
-	desc = "A suspicious wardrobe with suspicious wares. Nothing to look at here."
+	desc = "A suspicious wardrobe with suspicious wares. Nothing to look at here.";
+	all_products_free = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
@@ -8594,7 +8608,8 @@
 "YM" = (
 /obj/machinery/vending/hydroseeds{
 	onstation = 0;
-	extended_inventory = 1
+	extended_inventory = 1;
+	all_products_free = 1
 	},
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/olive,

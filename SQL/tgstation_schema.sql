@@ -307,7 +307,7 @@ DROP TABLE IF EXISTS `messages`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `messages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `type` enum('memo','message','message sent','note','watchlist entry') NOT NULL,
+  `type` enum('memo','message','message sent','note','watchlist entry', 'eventmaker note') NOT NULL,
   `targetckey` varchar(32) NOT NULL,
   `adminckey` varchar(32) NOT NULL,
   `text` varchar(2048) NOT NULL,
@@ -597,6 +597,16 @@ CREATE TABLE `achievement_metadata` (
 	`achievement_name` VARCHAR(64) NULL DEFAULT NULL,
 	`achievement_description` VARCHAR(512) NULL DEFAULT NULL,
 	PRIMARY KEY (`achievement_key`)
+) ENGINE=InnoDB;
+
+-- Table structure for table 'x_progress'
+
+DROP TABLE IF EXISTS `fish_progress`;
+CREATE TABLE `fish_progress` (
+  `ckey` VARCHAR(32) NOT NULL,
+  `progress_entry` VARCHAR(32) NOT NULL,
+  `datetime` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ckey`,`progress_entry`)
 ) ENGINE=InnoDB;
 
 --

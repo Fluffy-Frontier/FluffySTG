@@ -1,9 +1,11 @@
 /obj/machinery/vending/clothing
-	product_categories = list(
+	product_categories_ff = list(
 		list(
 			"name" = "Special",
 			"icon" = "star",
 			"products" = list(
+				/obj/item/storage/backpack/waistbag = 3,
+				/obj/item/storage/backpack/waistbag/camo = 3,
 				/obj/item/clothing/neck/bunny/bunnytie = 3,
 				/obj/item/clothing/under/costume/playbunny = 3,
 				/obj/item/clothing/under/costume/playbunny/british = 3,

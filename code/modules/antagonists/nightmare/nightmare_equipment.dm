@@ -6,7 +6,8 @@
 	icon = 'icons/obj/weapons/changeling_items.dmi'
 	icon_state = "arm_blade"
 	inhand_icon_state = "arm_blade"
-	force = 25
+	icon_angle = 180
+	force = 30 // FLUFFY FRONTIER EDIT: ANTAG BUFF #5159; original: 25
 	armour_penetration = 35
 	lefthand_file = 'icons/mob/inhands/antag/changeling_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'

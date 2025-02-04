@@ -23581,12 +23581,13 @@
 /turf/open/misc/asteroid,
 /area/station/maintenance/aft)
 "hEH" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/closed/wall,
-/area/station/cargo/bitrunning/den)
+/obj/machinery/portable_atmospherics/canister/anesthetic_mix,
+/obj/effect/turf_decal/tile/neutral/half/contrasted,
+/obj/structure/sign/eyechart/directional/north,
+/turf/open/floor/iron/dark,
+/area/station/medical/medbay/central)
 "hEI" = (
 /obj/machinery/pdapainter/medbay,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
@@ -24873,7 +24874,7 @@
 /area/station/hallway/primary/central)
 "hXL" = (
 /obj/effect/turf_decal/bot,
-/obj/machinery/computer/station_alert,
+/obj/machinery/computer/station_alert/station_only,
 /obj/machinery/requests_console/directional/east{
 	department = "Atmospherics";
 	name = "Atmospherics Requests Console"
@@ -32222,7 +32223,7 @@
 /turf/open/floor/iron/showroomfloor,
 /area/station/security/brig)
 "kql" = (
-/obj/machinery/computer/station_alert{
+/obj/machinery/computer/station_alert/station_only{
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/yellow/half/contrasted{
@@ -47817,7 +47818,7 @@
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/command/storage/satellite)
 "pwo" = (
-/obj/machinery/computer/station_alert,
+/obj/machinery/computer/station_alert/station_only,
 /obj/effect/turf_decal/bot,
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -48479,11 +48480,11 @@
 /obj/structure/closet/crate/freezer{
 	name = "organ storage"
 	},
-/obj/item/organ/external/tail/cat,
-/obj/item/organ/external/tail/cat,
-/obj/item/organ/internal/ears/cat,
-/obj/item/organ/internal/ears/cat,
-/obj/item/organ/internal/heart,
+/obj/item/organ/tail/cat,
+/obj/item/organ/tail/cat,
+/obj/item/organ/ears/cat,
+/obj/item/organ/ears/cat,
+/obj/item/organ/heart,
 /obj/structure/sign/poster/contraband/random/directional/east,
 /obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
 	dir = 8
@@ -48714,7 +48715,7 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/vomit/old,
 /obj/structure/sign/poster/contraband/random/directional/north,
-/mob/living/simple_animal/hostile/retaliate/goose/vomit,
+/mob/living/basic/goose/vomit,
 /obj/effect/mapping_helpers/burnt_floor,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard)
@@ -51690,7 +51691,6 @@
 /turf/open/floor/iron/dark,
 /area/station/engineering/supermatter/room)
 "qOv" = (
-/obj/structure/disposalpipe/segment,
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor,
@@ -58234,7 +58234,6 @@
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
-/obj/structure/disposalpipe/segment,
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
 "sNe" = (
@@ -58892,7 +58891,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/solars/starboard/aft)
 "sWj" = (
-/obj/machinery/computer/station_alert{
+/obj/machinery/computer/station_alert/station_only{
 	dir = 8
 	},
 /obj/effect/turf_decal/bot,
@@ -60659,7 +60658,7 @@
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos)
 "tzH" = (
-/obj/machinery/computer/station_alert,
+/obj/machinery/computer/station_alert/station_only,
 /obj/effect/turf_decal/bot,
 /obj/machinery/light/directional/north,
 /obj/machinery/newscaster/directional/north,
@@ -61465,10 +61464,6 @@
 	},
 /turf/open/floor/iron/showroomfloor,
 /area/station/science/ordnance)
-"tNQ" = (
-/obj/effect/turf_decal/tile/neutral/half/contrasted,
-/turf/closed/wall,
-/area/station/cargo/bitrunning/den)
 "tNW" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -68388,6 +68383,7 @@
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 4
 	},
+/obj/item/toy/crayon/spraycan/roboticist,
 /turf/open/floor/iron/dark,
 /area/station/science/robotics/lab)
 "vTx" = (
@@ -69842,7 +69838,6 @@
 /area/station/security/brig)
 "wpn" = (
 /obj/machinery/status_display/ai/directional/west,
-/obj/effect/turf_decal/tile/neutral/half/contrasted,
 /turf/closed/wall,
 /area/station/cargo/bitrunning/den)
 "wpu" = (
@@ -75028,7 +75023,7 @@
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
 	},
-/obj/machinery/computer/station_alert{
+/obj/machinery/computer/station_alert/station_only{
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
@@ -95323,7 +95318,7 @@ bXe
 huR
 bXe
 gsy
-srg
+hEH
 uZT
 gKd
 pMj
@@ -116690,7 +116685,7 @@ kTD
 cQR
 gMA
 qih
-tNQ
+cQR
 dNx
 xhJ
 sRb
@@ -116947,7 +116942,7 @@ cQb
 cQR
 jgI
 oQt
-hEH
+cQR
 oSX
 kdO
 oXm
