@@ -48,6 +48,8 @@ type CartEntry = {
   object: string;
   orderer: string;
   paid: BooleanLike;
+  orderer_rank: string;
+  dep_name: string;
 };
 
 type Request = {
@@ -56,4 +58,5 @@ type Request = {
   object: string;
   orderer: string;
   reason: string;
+  orderer_rank: string;
 };

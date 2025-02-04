@@ -116,8 +116,14 @@ function CheckoutItems(props) {
           </Table.Cell>
 
           <Table.Cell collapsing color="average">
-            {!!entry.paid && <b>[Private x {entry.paid}]</b>}
-            {!!entry.dep_order && <b>[Department x {entry.dep_order}]</b>}
+            {!!entry.paid && (
+              <b>
+                [Paid by {entry.orderer} ({entry.orderer_rank}) x {entry.paid}]
+              </b>
+            )}
+            {!!entry.dep_order && (
+              <b>[Departmental order by {entry.dep_name}]</b>
+            )}
           </Table.Cell>
 
           <Table.Cell collapsing color="gold" textAlign="right">

@@ -134,6 +134,8 @@
 			"id" = order.id,
 			"amount" = 1,
 			"orderer" = order.orderer,
+			"orderer_rank" = order.orderer_rank,
+			"dep_name" = order.dep_name,
 			"paid" = !isnull(order.paying_account) ? 1 : 0, //number of orders purchased privatly
 			"dep_order" = order.department_destination ? 1 : 0, //number of orders purchased by a department
 			"can_be_cancelled" = order.can_be_cancelled,
@@ -151,6 +153,7 @@
 			"object" = pack.name,
 			"cost" = pack.get_cost(),
 			"orderer" = order.orderer,
+			"orderer_rank" = order.orderer_rank,
 			"reason" = order.reason,
 			"id" = order.id,
 		))
@@ -280,11 +283,13 @@
 		message_cooldown = world.time + 30 SECONDS
 	. = TRUE
 
+GLOBAL_LIST_EMPTY(cancelled_orders)
+
 /**
  * removes an item from the checkout cart
  * * id - the id of the cart item to remove
  */
-/obj/machinery/computer/cargo/proc/remove_item(id)
+/obj/machinery/computer/cargo/proc/remove_item(id, mob/user, reason = "Test reason please ignore")
 	for(var/datum/supply_order/order in SSshuttle.shopping_list)
 		if(order.id != id)
 			continue
@@ -294,6 +299,24 @@
 		if(order.applied_coupon)
 			say("Coupon refunded.")
 			order.applied_coupon.forceMove(get_turf(src))
+		if(order.paying_account)
+			order.paying_account.bank_card_talk(span_warning("Your order \"[order.pack.name]\" (#[id]) was cancelled. Contact cargo for more information."))
+		if(!isnull(reason))
+			var/canceller
+			var/canceller_rank
+
+			if(ishuman(user))
+				var/mob/living/carbon/human/human = user
+				canceller = human.get_authentification_name(hand_first = TRUE)
+				canceller_rank = human.get_assignment(hand_first = TRUE)
+			else if(HAS_SILICON_ACCESS(user))
+				canceller = user.real_name
+				canceller_rank = "Silicon"
+			var/paying_account = null
+			if(order.paying_account)
+				paying_account = order.paying_account
+			var/datum/deleted_order/deleted_order = new(order.pack.name, id, order.orderer, order.orderer_rank, order.paying_account.account_holder, reason, canceller, canceller_rank)
+			GLOB.cancelled_orders += deleted_order
 		SSshuttle.shopping_list -= order
 		qdel(order)
 		return TRUE
@@ -335,6 +358,16 @@
 					var/requisition_text = "<h2>[station_name()] Supply Requisition</h2>"
 					requisition_text += "<hr/>"
 					requisition_text += "Time of Order: [station_time_timestamp()]<br/><br/>"
+					var/orderer_name
+					var/orderer_rank
+					if(ishuman(ui.user))
+						var/mob/living/carbon/human/human = ui.user
+						orderer_name = human.get_authentification_name(hand_first = TRUE)
+						orderer_rank = human.get_assignment(hand_first = TRUE)
+					else if(HAS_SILICON_ACCESS(ui.user))
+						orderer_name = ui.user.real_name
+						orderer_rank = "Silicon"
+					requisition_text += "Shuttle requested by [orderer_name] ([orderer_rank])<br/><br/>"
 					for(var/datum/supply_order/order as anything in SSshuttle.shopping_list)
 						requisition_text += "<b>[order.pack.name]</b></br>"
 						requisition_text += "- Order ID: [order.id]</br>"
@@ -389,7 +422,7 @@
 			for(var/datum/supply_order/order in SSshuttle.shopping_list)
 				if(order.pack.name != order_name)
 					continue
-				if(remove_item(order.id))
+				if(remove_item(order.id, ui.user))
 					return TRUE
 
 			return TRUE
@@ -417,7 +450,7 @@
 			for(var/datum/supply_order/cancelled_order in shopping_cart)
 				if(cancelled_order.department_destination || !cancelled_order.can_be_cancelled)
 					continue //don't cancel other department's orders or orders that can't be cancelled
-				remove_item(cancelled_order.id) //remove & properly refund any coupons attached with this order
+				remove_item(cancelled_order.id, ui.user, reason = "Mass Remove") //remove & properly refund any coupons attached with this order
 		if("approve")
 			var/id = text2num(params["id"])
 			for(var/datum/supply_order/SO in SSshuttle.request_list)
@@ -451,3 +484,55 @@
 
 	var/datum/signal/status_signal = new(list("command" = command))
 	frequency.post_signal(src, status_signal)
+
+/obj/machinery/computer/cargo/ui_close(mob/user)
+	. = ..()
+	if(length(GLOB.cancelled_orders))
+		var/obj/item/paper/requisition/cancelleds = new(get_turf(src))
+		cancelleds.name = "cancelled orders - [station_time_timestamp()]"
+		var/paper_text = "<h2>Cancelled Orders</h2>"
+		paper_text += "<hr/>"
+		paper_text += "As of: [station_time_timestamp()]<br/><br/>"
+		for(var/datum/deleted_order/entry in GLOB.cancelled_orders)
+			paper_text += "<b>[entry.name]</b></br>"
+			paper_text += "- Order ID: [entry.id]</br>"
+			paper_text += "- Ordered by: [entry.orderer] ([entry.orderer_rank])</br>"
+			if(entry.paid_by)
+				paper_text += "- Paid Privately by: [entry.paid_by]<br/>"
+			paper_text += "- Cancelled by: [entry.canceller] ([entry.canceller_rank])</br>"
+			if(entry.cancel_reason)
+				paper_text += "- With a reason: [entry.cancel_reason]</br>"
+			paper_text += "</br></br>"
+
+		cancelleds.add_raw_text(paper_text)
+		cancelleds.color = "#c9b43e"
+		cancelleds.update_appearance()
+
+/datum/deleted_order
+	var/name
+	var/id
+	var/orderer
+	var/orderer_rank
+	var/paid_by
+	var/cancel_reason
+	var/canceller
+	var/canceller_rank
+
+/datum/deleted_order/New(
+	name,
+	id,
+	orderer,
+	orderer_rank,
+	paid_by,
+	cancel_reason,
+	canceller,
+	canceller_rank,
+)
+	src.name = name
+	src.id = id
+	src.orderer = orderer
+	src.orderer_rank = orderer_rank
+	src.paid_by = paid_by
+	src.cancel_reason = cancel_reason
+	src.canceller = canceller
+	src.canceller_rank = canceller_rank

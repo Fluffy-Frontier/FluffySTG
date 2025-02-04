@@ -139,6 +139,8 @@
 			"id" = order.id,
 			"amount" = 1,
 			"orderer" = order.orderer,
+			"orderer_rank" = order.orderer_rank,
+			"dep_name" = order.dep_name,
 			"paid" = !isnull(order.paying_account) ? 1 : 0, //number of orders purchased privatly
 			"dep_order" = order.department_destination ? 1 : 0, //number of orders purchased by a department
 			"can_be_cancelled" = order.can_be_cancelled,
@@ -155,6 +157,7 @@
 			"object" = pack.name,
 			"cost" = pack.get_cost(),
 			"orderer" = order.orderer,
+			"orderer_rank" = order.orderer_rank,
 			"reason" = order.reason,
 			"id" = order.id
 		))
@@ -217,7 +220,7 @@
 			var/ckey = usr.ckey
 			if(ishuman(usr))
 				var/mob/living/carbon/human/H = usr
-				name = H.get_authentification_name()
+				name = H.get_authentification_name(hand_first = TRUE)
 				rank = H.get_assignment(hand_first = TRUE)
 			else if(issilicon(usr))
 				name = usr.real_name

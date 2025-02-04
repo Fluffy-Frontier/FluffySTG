@@ -481,9 +481,16 @@ const CargoCart = (props) => {
                 )}
               </Table.Cell>
               <Table.Cell collapsing textAlign="right" inline ml="50px">
-                {entry.paid > 0 && <b>[Paid Privately x {entry.paid}]</b>}
+                {entry.paid > 0 && (
+                  <b>
+                    [Paid by {entry.orderer} ({entry.orderer_rank}) x{' '}
+                    {entry.paid}]
+                  </b>
+                )}
                 {formatMoney(entry.cost)} {entry.cost_type}
-                {entry.dep_order > 0 && <b>[Department x {entry.dep_order}]</b>}
+                {entry.dep_order > 0 && (
+                  <b>[Departmental order by {entry.dep_name}]</b>
+                )}
               </Table.Cell>
               <Table.Cell inline mt="20px" />
             </Table.Row>

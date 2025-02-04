@@ -23,8 +23,8 @@
 
 //gets name from ID or ID inside PDA or PDA itself
 //Useful when player do something with computers
-/mob/living/carbon/human/proc/get_authentification_name(if_no_id = "Unknown")
-	var/obj/item/card/id/id = get_idcard(FALSE)
+/mob/living/carbon/human/proc/get_authentification_name(if_no_id = "Unknown", hand_first = FALSE)
+	var/obj/item/card/id/id = get_idcard(hand_first)
 	if(HAS_TRAIT(src, TRAIT_UNKNOWN))
 		return if_no_id
 	if(id)
