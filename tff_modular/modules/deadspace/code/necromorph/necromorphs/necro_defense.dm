@@ -1,5 +1,7 @@
 //The primary attack, which goes directly into attack_necromorph
 /mob/living/carbon/human/necromorph/UnarmedAttack(atom/A, proximity_flag, list/modifiers)
+	if(typesof(A, /turf/closed/wall))
+		return ..()
 	A.attack_necromorph(src, modifiers)
 	changeNext_move(CLICK_CD_MELEE)
 	return

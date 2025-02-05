@@ -16,6 +16,7 @@ GLOBAL_LIST_EMPTY(necromorph_markers)
 	density = TRUE
 	flags_1 = ON_BORDER_1
 	plane = ABOVE_GAME_PLANE
+	anchored = TRUE
 	var/active = FALSE
 	///Whether we should use necroqueue when spawning necromorphs
 	var/use_necroqueue = TRUE

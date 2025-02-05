@@ -15,6 +15,7 @@
 	health = 5
 	maxHealth = 5
 	var/datum/armor/necro_armor = /datum/armor/roach_internal_armor
+	lighting_cutoff = LIGHTING_CUTOFF_MEDIUM
 	//TRUE for now
 	rotate_on_lying = TRUE
 	mob_size = MOB_SIZE_HUMAN

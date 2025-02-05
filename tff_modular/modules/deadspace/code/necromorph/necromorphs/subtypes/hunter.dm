@@ -108,6 +108,13 @@
 	desc = "A shortrange charge with a swing at the end, pulling in all enemies it hits."
 	visual_type = /obj/effect/temp_visual/swing/hunter
 
+/datum/action/cooldown/necro/swing/hunter/PreActivate(atom/target)
+	var/mob/living/carbon/human/necromorph/necromorph = owner
+	if(necromorph.num_hands < 1)
+		necromorph.balloon_alert(necromorph, "you need at least 1 hand")
+		return FALSE
+	return ..()
+
 /datum/action/cooldown/necro/swing/hunter/windup()
 	var/mob/living/carbon/human/necromorph/necromorph = owner
 	necromorph.play_necro_sound(SOUND_ATTACK, VOLUME_MID, 1, 2)

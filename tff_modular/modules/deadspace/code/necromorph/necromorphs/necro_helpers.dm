@@ -120,3 +120,13 @@ ADMIN_VERB_AND_CONTEXT_MENU(brethren_message, R_NONE, "Brethren Message", "Send 
 	marker.hive_mind_message(src, msg)
 
 	return TRUE
+
+ADMIN_VERB_AND_CONTEXT_MENU(kick_marker, R_NONE, "Kick marker", "Kick marker signal", ADMIN_CATEGORY_DEBUG)
+	user.kick_marker()
+
+/client/proc/kick_marker()
+	if(!length(GLOB.necromorph_markers))
+		return
+	var/obj/structure/marker/mark = pick(GLOB.necromorph_markers)
+	if(mark.camera_mob)
+		mark.camera_mob.downgrade()

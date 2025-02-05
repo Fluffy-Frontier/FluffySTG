@@ -155,8 +155,9 @@
 
 /datum/action/cooldown/necro/charge/proc/on_bump(atom/movable/source, atom/target)
 	SIGNAL_HANDLER
-	if(ismob(target) || target.uses_integrity)
-		hit_target(source, target)
+	if(target)
+		if(ismob(target) || target.uses_integrity)
+			hit_target(source, target)
 	GLOB.move_manager.stop_looping(owner)
 
 /datum/action/cooldown/necro/charge/proc/hit_target(mob/living/carbon/human/necromorph/source, mob/living/target)

@@ -30,6 +30,18 @@
 //begin buttons
 	var/atom/movable/screen/using
 
+	using = new /atom/movable/screen/language_menu(null, src)
+	using.icon = ui_style
+	static_inventory += using
+
+	using = new /atom/movable/screen/navigate(null, src)
+	using.icon = ui_style
+	static_inventory += using
+
+	using = new /atom/movable/screen/area_creator(null, src)
+	using.icon = ui_style
+	static_inventory += using
+
 	action_intent = new /atom/movable/screen/combattoggle/flashy(null, src)
 	action_intent.icon = ui_style
 	action_intent.screen_loc = ui_combat_toggle
@@ -94,6 +106,15 @@
 
 	combo_display = new /atom/movable/screen/combo(null, src)
 	infodisplay += combo_display
+
+	healths = new /atom/movable/screen/healths(null, src)
+	infodisplay += healths
+
+	healthdoll = new /atom/movable/screen/healthdoll/human(null, src)
+	infodisplay += healthdoll
+
+	stamina = new /atom/movable/screen/stamina(null, src)
+	infodisplay += stamina
 
 /datum/hud/necromorph/Destroy()
 	//They are actually deleted in QDEL_LIST(infodisplay)

@@ -15,6 +15,7 @@ GLOBAL_LIST_EMPTY(markers_signals)
 	movement_type = PHASING|FLYING
 	hud_type = /datum/hud/marker_signal
 	interaction_range = null
+	lighting_cutoff = LIGHTING_CUTOFF_MEDIUM
 	var/psy_energy = 0
 	var/psy_energy_maximum = 900
 	var/psy_energy_generation = 1.5
@@ -123,9 +124,7 @@ GLOBAL_LIST_EMPTY(markers_signals)
 /mob/camera/marker_signal/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change)
 	..()
 	if(client)
-		//marker.markernet.visibility(src)
 		update_marker_detect_hud()
-		//update_static(old_loc)
 	return TRUE
 
 /mob/camera/marker_signal/proc/setLoc(destination, force_update = FALSE)
@@ -288,6 +287,9 @@ GLOBAL_LIST_EMPTY(markers_signals)
 /mob/camera/marker_signal/verb/possess_necromorph(mob/living/carbon/human/necromorph/necro in world)
 	set name = "Possess Necromorph"
 	set category = "Object"
+	if(istype(src, /mob/camera/marker_signal/marker))
+		var/mob/camera/marker_signal/marker/mark = src
+		mark.downgrade()
 	if(necro.stat == DEAD)
 		to_chat(src, span_notice("This vessel was damaged beyond use!"))
 		return

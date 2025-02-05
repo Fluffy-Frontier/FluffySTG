@@ -65,7 +65,7 @@
 /datum/action/cooldown/necro/swing/proc/on_move()
 	SIGNAL_HANDLER
 	if(!actively_moving)
-		return COMSIG_KB_MOB_BLOCKMOVEMENT_DOWN // ELSE client/user user.movement_locked = TRUE BUG?
+		return COMSIG_KB_MOB_BLOCKMOVEMENT_DOWN
 
 /datum/action/cooldown/necro/swing/proc/loop_end()
 	SIGNAL_HANDLER
