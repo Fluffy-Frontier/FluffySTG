@@ -9,10 +9,6 @@
 	if(isgroundlessturf(target_turf) || target_turf.density)
 		to_chat(owner, span_warning("There is no space to write on!"))
 		return
-	//Using for loop because of compiler optiization
-	for(var/obj/effect/decal/cleanable/blood/writing/writing in range(3, target_turf))
-		to_chat(owner, span_warning("Another bloody scrawl is too close!"))
-		return
 	var/text = tgui_input_text(owner, "Write a message", "Bloody Scrawl")
 	if(!text)
 		return TRUE

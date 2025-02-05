@@ -130,3 +130,41 @@ ADMIN_VERB_AND_CONTEXT_MENU(kick_marker, R_NONE, "Kick marker", "Kick marker sig
 	var/obj/structure/marker/mark = pick(GLOB.necromorph_markers)
 	if(mark.camera_mob)
 		mark.camera_mob.downgrade()
+
+ADMIN_VERB_AND_CONTEXT_MENU(spawn_corruption_structure, R_NONE, "Spawn corruption structure", "Spawn corruption structure", ADMIN_CATEGORY_DEBUG)
+	user.spawn_corruption_structure()
+
+/client/proc/spawn_corruption_structure()
+	set category = "Debug"
+	set desc = "Spawn corruption structure"
+	set name = "Spawn Corruption Structure"
+
+	if(!check_rights(R_SPAWN))
+		return
+
+	if(!length(GLOB.necromorph_markers))
+		to_chat(mob, span_warning("There are no markers present!"))
+		return
+
+	var/list/list_to_pick = list()
+	for(var/obj/structure/necromorph/struct as anything in subtypesof(/obj/structure/necromorph))
+		list_to_pick[initial(struct.name)] = struct
+
+	var/type_to_spawn = list_to_pick[tgui_input_list(usr, "Pick a structure to spawn", "Spawning", list_to_pick)]
+	if(!type_to_spawn)
+		return
+
+	if(!length(GLOB.necromorph_markers))
+		to_chat(mob, span_warning("There are no markers present!"))
+		return
+
+	var/obj/structure/marker/marker = tgui_input_list(usr, "Pick a marker", "Marker", GLOB.necromorph_markers)
+
+	if(QDELETED(marker))
+		return
+
+	var/obj/structure/necromorph/necro = new type_to_spawn(get_turf(usr), marker)
+	necro.flags_1 |= ADMIN_SPAWNED_1
+
+	log_admin("[key_name(usr)] spawned [type_to_spawn] at [AREACOORD(usr)]")
+	SSblackbox.record_feedback("tally", "corruption_spawn", 1, "Spawn Corruption Structure") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

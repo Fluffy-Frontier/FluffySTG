@@ -8,6 +8,7 @@
 	var/obj/structure/necromorph/place_structure = /obj/structure/necromorph
 	var/can_place_in_sight = FALSE
 	var/marker_only = FALSE
+	var/placement_range = 1
 
 /datum/action/cooldown/necro/corruption/New(Target, original, cooldown)
 	..()
@@ -85,7 +86,7 @@
 		return "Turf isn't corrupted!"
 	if(locate(/obj/structure/necromorph) in turf_loc)
 		return "There is another necromorph structure on this turf!"
-	if(locate(/obj/structure/necromorph) in range(1, turf_loc))
+	if(locate(/obj/structure/necromorph) in range(placement_range, turf_loc))
 		return "Too close to another necromorph structure!"
 	//Remove this loop if it causes too much lag when hovering over a pile of items
 	for(var/atom/movable/movable as anything in turf_loc)

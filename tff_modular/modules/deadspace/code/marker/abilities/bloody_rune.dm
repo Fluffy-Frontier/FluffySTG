@@ -9,10 +9,6 @@
 	if(isgroundlessturf(target_turf) || target_turf.density)
 		to_chat(owner, span_warning("There is no space to place a rune!"))
 		return
-	//Using for loop because of compiler optiization
-	for(var/obj/effect/decal/cleanable/necro_rune/rune in range(3, target_turf))
-		to_chat(owner, span_warning("Another bloody rune is too close!"))
-		return
 	..()
 	new /obj/effect/decal/cleanable/necro_rune(target_turf, null, RUNE_COLOR_MEDIUMRED, TRUE)
 	return TRUE
