@@ -115,19 +115,21 @@
 
 	var/list/amount_by_name = list()
 	var/cart_list = list()
+	var/entry_name
 	for(var/datum/supply_order/order in SSshuttle.shopping_list)
-		if(cart_list[order.pack.name])
-			amount_by_name[order.pack.name] += 1
-			cart_list[order.pack.name][1]["amount"]++
-			cart_list[order.pack.name][1]["cost"] += order.get_final_cost()
+		entry_name = "[order.pack.name] [order.paying_account?.account_holder]"
+		if(cart_list[entry_name])
+			amount_by_name[entry_name] += 1
+			cart_list[entry_name][1]["amount"]++
+			cart_list[entry_name][1]["cost"] += order.get_final_cost()
 			if(order.department_destination)
-				cart_list[order.pack.name][1]["dep_order"]++
+				cart_list[entry_name][1]["dep_order"]++
 			if(!isnull(order.paying_account))
-				cart_list[order.pack.name][1]["paid"]++
+				cart_list[entry_name][1]["paid"]++
 			continue
 
-		amount_by_name[order.pack.name] += 1
-		cart_list[order.pack.name] = list(list(
+		amount_by_name[entry_name] += 1
+		cart_list[entry_name] = list(list(
 			"cost_type" = order.cost_type,
 			"object" = order.pack.name,
 			"cost" = order.get_final_cost(),
@@ -140,6 +142,8 @@
 			"dep_order" = order.department_destination ? 1 : 0, //number of orders purchased by a department
 			"can_be_cancelled" = order.can_be_cancelled,
 		))
+		if(istype(order.paying_account, /datum/bank_account/department))
+			cart_list[entry_name][1]["orderer"] = order.paying_account.account_holder
 	data["cart"] = list()
 	for(var/item_id in cart_list)
 		data["cart"] += cart_list[item_id]
@@ -148,7 +152,7 @@
 	data["requests"] = list()
 	for(var/datum/supply_order/order in SSshuttle.request_list)
 		var/datum/supply_pack/pack = order.pack
-		amount_by_name[pack.name] += 1
+		amount_by_name[entry_name] += 1
 		data["requests"] += list(list(
 			"object" = pack.name,
 			"cost" = pack.get_cost(),
@@ -312,11 +316,8 @@ GLOBAL_LIST_EMPTY(cancelled_orders)
 			else if(HAS_SILICON_ACCESS(user))
 				canceller = user.real_name
 				canceller_rank = "Silicon"
-			var/paying_account = null
-			if(order.paying_account)
-				paying_account = order.paying_account
-			var/datum/deleted_order/deleted_order = new(order.pack.name, id, order.orderer, order.orderer_rank, order.paying_account.account_holder, reason, canceller, canceller_rank)
-			GLOB.cancelled_orders += deleted_order
+			var/datum/deleted_order/deleted_order = new(order.pack.name, id, order.orderer, order.orderer_rank, order.paying_account?.account_holder, reason, canceller, canceller_rank)
+			GLOB.cancelled_orders[canceller] += list(deleted_order)
 		SSshuttle.shopping_list -= order
 		qdel(order)
 		return TRUE
@@ -418,11 +419,12 @@ GLOBAL_LIST_EMPTY(cancelled_orders)
 			return add_item(ui.user, supply_pack_id)
 		if("remove")
 			var/order_name = params["order_name"]
+			var/cancel_reason = tgui_input_text(ui.user, "Enter order cancelation reason", "Reason", max_length = MAX_MESSAGE_LEN)
 			//try removing at least one item with the specified name. An order may not be removed if it was from the department
 			for(var/datum/supply_order/order in SSshuttle.shopping_list)
 				if(order.pack.name != order_name)
 					continue
-				if(remove_item(order.id, ui.user))
+				if(remove_item(order.id, ui.user, cancel_reason))
 					return TRUE
 
 			return TRUE
@@ -487,13 +489,19 @@ GLOBAL_LIST_EMPTY(cancelled_orders)
 
 /obj/machinery/computer/cargo/ui_close(mob/user)
 	. = ..()
-	if(length(GLOB.cancelled_orders))
+	var/name
+	if(ishuman(user))
+		var/mob/living/carbon/human/human = user
+		name = human.get_authentification_name(hand_first = TRUE)
+	else if(HAS_SILICON_ACCESS(user))
+		name = user.real_name
+	if(GLOB.cancelled_orders[name])
 		var/obj/item/paper/requisition/cancelleds = new(get_turf(src))
 		cancelleds.name = "cancelled orders - [station_time_timestamp()]"
 		var/paper_text = "<h2>Cancelled Orders</h2>"
 		paper_text += "<hr/>"
 		paper_text += "As of: [station_time_timestamp()]<br/><br/>"
-		for(var/datum/deleted_order/entry in GLOB.cancelled_orders)
+		for(var/datum/deleted_order/entry in GLOB.cancelled_orders[name])
 			paper_text += "<b>[entry.name]</b></br>"
 			paper_text += "- Order ID: [entry.id]</br>"
 			paper_text += "- Ordered by: [entry.orderer] ([entry.orderer_rank])</br>"
@@ -507,6 +515,7 @@ GLOBAL_LIST_EMPTY(cancelled_orders)
 		cancelleds.add_raw_text(paper_text)
 		cancelleds.color = "#c9b43e"
 		cancelleds.update_appearance()
+		GLOB.cancelled_orders[name].Cut()
 
 /datum/deleted_order
 	var/name

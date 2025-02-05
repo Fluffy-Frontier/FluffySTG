@@ -7,6 +7,7 @@ import {
   Section,
   Stack,
   Table,
+  Tooltip,
 } from 'tgui-core/components';
 import { formatMoney } from 'tgui-core/format';
 
@@ -118,12 +119,22 @@ function CheckoutItems(props) {
 
           <Table.Cell collapsing color="average">
             {!!entry.paid && (
-              <b>
-                [Paid by {entry.orderer} ({entry.orderer_rank}) x {entry.paid}]
-              </b>
+              <Tooltip
+                position="bottom"
+                content={
+                  'Paid by ' + entry.orderer + ' (' + entry.orderer_rank + ')'
+                }
+              >
+                <b>[Paid Privately x {entry.paid}]</b>
+              </Tooltip>
             )}
             {!!entry.dep_order && (
-              <b>[Departmental order by {entry.dep_name}]</b>
+              <Tooltip
+                position="bottom"
+                content={'Ordered by ' + entry.dep_name}
+              >
+                <b>[Departmental order]</b>
+              </Tooltip>
             )}
           </Table.Cell>
 
