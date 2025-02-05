@@ -1,7 +1,7 @@
 /obj/item/bodypart/chest/necromorph/leaper/hopper
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_LEAPER_HOPPER
-	//icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
+	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
 	max_damage = 100
 	px_x = 0
 	px_y = 0
@@ -11,7 +11,7 @@
 /obj/item/bodypart/head/necromorph/leaper/hopper
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_LEAPER_HOPPER
-	//icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
+	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
 	max_damage = 15
 	px_x = 0
 	px_y = -8
@@ -22,7 +22,7 @@
 /obj/item/bodypart/leg/left/necromorph/leaper/hopper
 	name = "left arm"
 	limb_id = SPECIES_NECROMORPH_LEAPER_HOPPER
-	//icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
+	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
 	body_part = LEG_LEFT
 	max_damage = 15
 	px_x = -2
@@ -34,7 +34,7 @@
 /obj/item/bodypart/leg/right/necromorph/leaper/hopper
 	name = "right arm"
 	limb_id = SPECIES_NECROMORPH_LEAPER_HOPPER
-	//icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
+	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
 	max_damage = 15
 	px_x = 2
 	px_y = 12
@@ -44,7 +44,7 @@
 
 /obj/item/bodypart/arm/right/necromorph/leaper/hopper
 	name = "tail"
-	//icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
+	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
 	bodypart_flags = BODYPART_PSEUDOPART
 	limb_id = SPECIES_NECROMORPH_LEAPER_HOPPER
 	max_damage = 10
@@ -63,7 +63,7 @@
 	desc = "A tail that appears to not have grown correctly, it appears useless."
 	bodypart_flags = BODYPART_PSEUDOPART
 	limb_id = SPECIES_NECROMORPH_LEAPER_HOPPER
-	//icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
+	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
 	max_damage = 10
 	n_biomass = 1
 	speed_modifier = 1
