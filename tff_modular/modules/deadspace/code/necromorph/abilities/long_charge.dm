@@ -1,4 +1,4 @@
-//#define CHARGE_SPEED min((tiles_moved - tiles_before_charge) * speed_per_tile, maximum_speed)
+#define CHARGE_SPEED min((tiles_moved - tiles_before_charge) * speed_per_tile, maximum_speed)
 #define CHARGE_STOP -1
 #define LIVING_CRUSH_DAMAGE 20
 
