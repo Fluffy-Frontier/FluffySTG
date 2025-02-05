@@ -20137,7 +20137,7 @@
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "bSE" = (
-/obj/machinery/computer/station_alert{
+/obj/machinery/computer/station_alert/station_only{
 	dir = 8
 	},
 /obj/machinery/light/directional/east,
@@ -23440,7 +23440,7 @@
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/main)
 "cjU" = (
-/obj/machinery/computer/station_alert{
+/obj/machinery/computer/station_alert/station_only{
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/thinplating{
@@ -28173,7 +28173,7 @@
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/ce)
 "cSM" = (
-/obj/machinery/computer/station_alert,
+/obj/machinery/computer/station_alert/station_only,
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/engine_smes)
@@ -35426,7 +35426,7 @@
 /area/station/commons/dorms)
 "hno" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/machinery/computer/station_alert{
+/obj/machinery/computer/station_alert/station_only{
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/west,
@@ -48436,7 +48436,7 @@
 /area/station/commons/vacant_room/office)
 "piw" = (
 /obj/structure/cable,
-/obj/machinery/computer/station_alert{
+/obj/machinery/computer/station_alert/station_only{
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/yellow,
