@@ -7,6 +7,6 @@
 	activate_keybind = COMSIG_KB_NECROMORPH_ABILITY_STEPSTRIKE_DOWN
 	charge_delay = 0
 	charge_time = 3 SECONDS
-	charge_speed = 1
-	speed_per_step = 0.5
+	charge_speed = 0.5
+	speed_per_step = 0.7
 	max_steps_buildup = 15

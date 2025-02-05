@@ -80,7 +80,9 @@
 		forced_curl_next = world.time + CURL_FORCED_DURATION
 		addtimer(CALLBACK(src, PROC_REF(end_forced_curl)), CURL_FORCED_DURATION)
 	curling = TRUE
-	REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, src)
+	ADD_TRAIT(src, TRAIT_INCAPACITATED, src)
+	ADD_TRAIT(src, TRAIT_IMMOBILIZED, src)
+	ADD_TRAIT(src, TRAIT_HANDS_BLOCKED, src)
 
 	var/matrix/new_tranform = matrix()
 	new_tranform.Scale(0.9)
@@ -97,7 +99,9 @@
 	curling = FALSE
 	animate(src, transform = matrix(), time = CURL_ANIMATION_TIME)
 	sleep(CURL_ANIMATION_TIME)
-	REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, src) // TRAIT_HANDS_BLOCKED ?
+	REMOVE_TRAIT(src, TRAIT_INCAPACITATED, src)
+	REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, src)
+	REMOVE_TRAIT(src, TRAIT_HANDS_BLOCKED, src)
 
 /mob/living/carbon/human/necromorph/brute/proc/end_forced_curl()
 	forced_curl = FALSE

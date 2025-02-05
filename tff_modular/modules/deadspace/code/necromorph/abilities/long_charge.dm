@@ -1,4 +1,4 @@
-#define CHARGE_SPEED min((tiles_moved - tiles_before_charge) * speed_per_tile, maximum_speed)
+//#define CHARGE_SPEED min((tiles_moved - tiles_before_charge) * speed_per_tile, maximum_speed)
 #define CHARGE_STOP -1
 #define LIVING_CRUSH_DAMAGE 20
 
@@ -28,6 +28,10 @@
 	..()
 
 /datum/action/cooldown/necro/long_charge/Activate(atom/target)
+	var/mob/living/carbon/human/necromorph/brute/brute = owner
+	if(brute.health > 250)
+		to_chat(owner, span_notice("You aren't damaged enough to use this skill"))
+		return FALSE
 	if(active)
 		stop_charge()
 		to_chat(owner, span_notice("You stop charging when moving."))
@@ -91,8 +95,7 @@
 
 /datum/action/cooldown/necro/long_charge/proc/relalculate_speed()
 	if(active)
-		owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/necro_charge, TRUE, CHARGE_SPEED)
-
+		owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/necro_charge)
 //To be overridden by child types
 /datum/action/cooldown/necro/long_charge/proc/on_moved_action()
 	return
