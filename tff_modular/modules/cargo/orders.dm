@@ -1,7 +1,20 @@
 /datum/supply_order
 	var/dep_name = ""
 
-/datum/supply_order/New()
+/datum/supply_order/New(
+	datum/supply_pack/pack,
+	orderer,
+	orderer_rank,
+	orderer_ckey,
+	reason,
+	paying_account,
+	department_destination,
+	coupon,
+	charge_on_purchase = TRUE,
+	manifest_can_fail = TRUE,
+	cost_type = "cr",
+	can_be_cancelled = TRUE,
+)
 	. = ..()
 	if(department_destination)
 		src.dep_name = check_department(department_destination)
