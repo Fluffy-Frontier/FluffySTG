@@ -349,6 +349,9 @@
   - balance: liquid spill slip has been reduced from 6 seconds to 1 second, and the
       knockdown when you get 'washed away. has also been nerfed from 6 seconds to
       1 second'
+  - balance: The nanotrasen-news-network is happy to report gorillas are going through
+      an intergalactic phase of muscle atrophy, and no longer stunlock crew, or elsewise
+      against walls!
   SmArtKar:
   - bugfix: Fixed an issue with persisting brimbeams
   - bugfix: Head IDs now keep the large pointer effect when slotted into a PDA or
@@ -444,5 +447,7 @@
       menu
   - bugfix: due to a number of complaints of fish explosions, chrystarfish will no
       longer be chosen as the random starting fish for the  fish mount.
+  - bugfix: fixes a bug that would cause the occupations page to grow larger each
+      time you clicked an alt title dropdown
   zoomachina:
   - bugfix: showers wash things under them when they're turned on again
