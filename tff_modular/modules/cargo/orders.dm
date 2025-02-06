@@ -13,6 +13,8 @@
 			return department.department_name
 	return "Unknown Department"
 
+GLOBAL_LIST_EMPTY(cancelled_orders)
+
 /datum/deleted_order
 	var/name
 	var/id

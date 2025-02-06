@@ -339,8 +339,6 @@
 		message_cooldown = world.time + 30 SECONDS
 	. = TRUE
 
-GLOBAL_LIST_EMPTY(cancelled_orders)
-
 /**
  * removes an item from the checkout cart
  * * id - the id of the cart item to remove
