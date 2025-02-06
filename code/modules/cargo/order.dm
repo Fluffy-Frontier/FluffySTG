@@ -60,7 +60,6 @@
 	var/manifest_can_fail = TRUE
 	///Boolean on whether the manifest can be cancelled through cargo consoles.
 	var/can_be_cancelled = TRUE
-	var/dep_name = ""
 
 /datum/supply_order/New(
 	datum/supply_pack/pack,
@@ -90,19 +89,9 @@
 	src.manifest_can_fail = manifest_can_fail
 	src.can_be_cancelled = can_be_cancelled
 
-	if(department_destination)
-		src.dep_name = check_department(department_destination)
-
 /datum/supply_order/Destroy(force)
 	QDEL_NULL(applied_coupon)
 	return ..()
-
-/datum/supply_order/proc/check_department(area_destination)
-	for(var/datum/job_department/department in SSjob.joinable_departments)
-		var/list/destinations = department.department_delivery_areas
-		if(area_destination in destinations)
-			return department.department_name
-	return "Unknown Department"
 
 //returns the total cost of this order. Its not the total price paid by cargo but the total value of this order
 /datum/supply_order/proc/get_final_cost()
