@@ -354,22 +354,21 @@
 			say("Coupon refunded.")
 			order.applied_coupon.forceMove(get_turf(src))
 
+		var/canceller
+		var/canceller_rank
 
-		if(!isnull(reason))
-			var/canceller
-			var/canceller_rank
+		if(ishuman(user))
+			var/mob/living/carbon/human/human = user
+			canceller = human.get_authentification_name(hand_first = TRUE)
+			canceller_rank = human.get_assignment(hand_first = TRUE)
+		else if(HAS_SILICON_ACCESS(user))
+			canceller = user.real_name
+			canceller_rank = "Silicon"
+		var/datum/deleted_order/deleted_order = new(order.pack.name, id, order.orderer, order.orderer_rank, order.paying_account?.account_holder, reason, canceller, canceller_rank)
+		GLOB.cancelled_orders[canceller] += list(deleted_order)
+		if(order.paying_account)
+			notify_buyer(user, order.orderer, "Your order \"[order.pack.name]\" (#[id]) was cancelled by [canceller] ([canceller_rank]) [reason ? "with a reason: [reason]." : "without a reason provided."]")
 
-			if(ishuman(user))
-				var/mob/living/carbon/human/human = user
-				canceller = human.get_authentification_name(hand_first = TRUE)
-				canceller_rank = human.get_assignment(hand_first = TRUE)
-			else if(HAS_SILICON_ACCESS(user))
-				canceller = user.real_name
-				canceller_rank = "Silicon"
-			var/datum/deleted_order/deleted_order = new(order.pack.name, id, order.orderer, order.orderer_rank, order.paying_account?.account_holder, reason, canceller, canceller_rank)
-			GLOB.cancelled_orders[canceller] += list(deleted_order)
-			if(order.paying_account)
-				notify_buyer(user, order.orderer, "Your order \"[order.pack.name]\" (#[id]) was cancelled by [canceller] ([canceller_rank]) [reason ? "with a reason: [reason]." : "without a reason provided."]")
 		SSshuttle.shopping_list -= order
 		qdel(order)
 		return TRUE
