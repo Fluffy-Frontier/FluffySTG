@@ -46,3 +46,32 @@
 			signal.send_to_receivers()
 			sender.log_message("(PDA: Cargo Server) sent \"[message]\" to [signal.format_target()]", LOG_PDA)
 			break
+
+/datum/deleted_order
+	var/name
+	var/id
+	var/orderer
+	var/orderer_rank
+	var/paid_by
+	var/cancel_reason
+	var/canceller
+	var/canceller_rank
+
+/datum/deleted_order/New(
+	name,
+	id,
+	orderer,
+	orderer_rank,
+	paid_by,
+	cancel_reason,
+	canceller,
+	canceller_rank,
+)
+	src.name = name
+	src.id = id
+	src.orderer = orderer
+	src.orderer_rank = orderer_rank
+	src.paid_by = paid_by
+	src.cancel_reason = cancel_reason
+	src.canceller = canceller
+	src.canceller_rank = canceller_rank
