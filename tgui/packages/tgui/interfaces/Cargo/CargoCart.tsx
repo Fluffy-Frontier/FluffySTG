@@ -88,7 +88,8 @@ function CheckoutItems(props) {
               <>
                 <Button
                   icon="minus"
-                  onClick={() => act('remove', { order_name: entry.object })}
+                  disabled={entry.dep_order}
+                  onClick={() => act('remove', { order_name: entry.id })}
                 />
                 <RestrictedInput
                   width={5}
@@ -104,7 +105,11 @@ function CheckoutItems(props) {
                 />
                 <Button
                   icon="plus"
-                  disabled={amount_by_name[entry.object] >= max_order}
+                  disabled={
+                    amount_by_name[entry.object] >= max_order ||
+                    entry.paid ||
+                    entry.dep_order
+                  }
                   onClick={() =>
                     act('add_by_name', { order_name: entry.object })
                   }

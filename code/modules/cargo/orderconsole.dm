@@ -117,7 +117,7 @@
 	var/cart_list = list()
 	var/entry_name
 	for(var/datum/supply_order/order in SSshuttle.shopping_list)
-		entry_name = "[order.pack.name] [order.paying_account?.account_holder]"
+		entry_name = "[order.pack.name] [order.paying_account?.account_holder] [order.dep_name]"
 		if(cart_list[entry_name])
 			amount_by_name[entry_name] += 1
 			cart_list[entry_name][1]["amount"]++
@@ -345,7 +345,7 @@ GLOBAL_LIST_EMPTY(cancelled_orders)
  * removes an item from the checkout cart
  * * id - the id of the cart item to remove
  */
-/obj/machinery/computer/cargo/proc/remove_item(id, mob/user, reason = "Test reason please ignore")
+/obj/machinery/computer/cargo/proc/remove_item(id, mob/user, reason)
 	for(var/datum/supply_order/order in SSshuttle.shopping_list)
 		if(order.id != id)
 			continue
@@ -355,8 +355,8 @@ GLOBAL_LIST_EMPTY(cancelled_orders)
 		if(order.applied_coupon)
 			say("Coupon refunded.")
 			order.applied_coupon.forceMove(get_turf(src))
-		if(order.paying_account)
-			order.paying_account.bank_card_talk(span_warning("Your order \"[order.pack.name]\" (#[id]) was cancelled. Contact cargo for more information."))
+
+
 		if(!isnull(reason))
 			var/canceller
 			var/canceller_rank
@@ -370,6 +370,8 @@ GLOBAL_LIST_EMPTY(cancelled_orders)
 				canceller_rank = "Silicon"
 			var/datum/deleted_order/deleted_order = new(order.pack.name, id, order.orderer, order.orderer_rank, order.paying_account?.account_holder, reason, canceller, canceller_rank)
 			GLOB.cancelled_orders[canceller] += list(deleted_order)
+			if(order.paying_account)
+				notify_buyer(user, order.orderer, "Your order \"[order.pack.name]\" (#[id]) was cancelled by [canceller] ([canceller_rank]) [reason ? "with a reason: [reason]." : "without a reason provided."]")
 		SSshuttle.shopping_list -= order
 		qdel(order)
 		return TRUE
@@ -472,9 +474,11 @@ GLOBAL_LIST_EMPTY(cancelled_orders)
 		if("remove")
 			var/order_name = params["order_name"]
 			var/cancel_reason = tgui_input_text(ui.user, "Enter order cancelation reason", "Reason", max_length = MAX_MESSAGE_LEN)
+			if(isnull(cancel_reason))
+				return
 			//try removing at least one item with the specified name. An order may not be removed if it was from the department
 			for(var/datum/supply_order/order in SSshuttle.shopping_list)
-				if(order.pack.name != order_name)
+				if(order.id != order_name)
 					continue
 				if(remove_item(order.id, ui.user, cancel_reason))
 					return TRUE
@@ -511,6 +515,8 @@ GLOBAL_LIST_EMPTY(cancelled_orders)
 				if(SO.id == id)
 					SSshuttle.request_list -= SO
 					SSshuttle.shopping_list += SO
+					if(SO.orderer)
+						notify_buyer(ui.user, SO.orderer, "Your request for \"[SO.pack.name]\" (#[id]) was approved")
 					. = TRUE
 					break
 		if("deny")
@@ -518,6 +524,8 @@ GLOBAL_LIST_EMPTY(cancelled_orders)
 			for(var/datum/supply_order/SO in SSshuttle.request_list)
 				if(SO.id == id)
 					SSshuttle.request_list -= SO
+					if(SO.orderer)
+						notify_buyer(ui.user, SO.orderer, "Your request for \"[SO.pack.name]\" (#[id]) was denied")
 					. = TRUE
 					break
 		if("denyall")
@@ -567,7 +575,22 @@ GLOBAL_LIST_EMPTY(cancelled_orders)
 		cancelleds.add_raw_text(paper_text)
 		cancelleds.color = "#c9b43e"
 		cancelleds.update_appearance()
-		GLOB.cancelled_orders[name].Cut()
+		GLOB.cancelled_orders[name] = null
+
+/obj/machinery/computer/cargo/proc/notify_buyer(mob/sender, target_name, message)
+	for(var/messenger_ref in GLOB.pda_messengers)
+		var/datum/computer_file/program/messenger/messenger = GLOB.pda_messengers[messenger_ref]
+		if(messenger.computer.saved_identification == target_name)
+			var/datum/signal/subspace/messaging/tablet_message/signal = new(src, list(
+				"fakename" = "Order Notification",
+				"fakejob" = "Cargo Server",
+				"message" = message,
+				"targets" = list(messenger),
+				"automated" = TRUE,
+			))
+			signal.send_to_receivers()
+			sender.log_message("(PDA: Cargo Server) sent \"[message]\" to [signal.format_target()]", LOG_PDA)
+			break
 
 /datum/deleted_order
 	var/name
