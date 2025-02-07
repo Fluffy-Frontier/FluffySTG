@@ -10,7 +10,7 @@
 		/datum/map_template/ruin/space/nova/blackmarket,
 		/datum/map_template/ruin/space/nova/escapefromtarkon,
 		/datum/map_template/ruin/space/nova/cargodiselost,
-		/datum/map_template/ruin/space/nova/blackmarket,)
+		/datum/map_template/ruin/space/nova/des_two,)
 
 /datum/map_template/ruin/icemoon/underground/interdyne
 	name = "Interdyne Pharmaceuticals Frontier Base 8817238"
@@ -25,7 +25,7 @@
 		/datum/map_template/ruin/space/nova/blackmarket,
 		/datum/map_template/ruin/space/nova/escapefromtarkon,
 		/datum/map_template/ruin/space/nova/cargodiselost,
-		/datum/map_template/ruin/space/nova/blackmarket,)
+		/datum/map_template/ruin/space/nova/des_two,)
 
 /turf/open/floor/plating/reinforced/lavaland
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
