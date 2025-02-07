@@ -6,6 +6,11 @@
 	suffix = "lavaland_interdyne_base_ff.dmm"
 	allow_duplicates = FALSE
 	always_place = FALSE
+	never_spawn_with = list(
+		/datum/map_template/ruin/space/nova/blackmarket,
+		/datum/map_template/ruin/space/nova/escapefromtarkon,
+		/datum/map_template/ruin/space/nova/cargodiselost,
+		/datum/map_template/ruin/space/nova/blackmarket,)
 
 /datum/map_template/ruin/icemoon/underground/interdyne
 	name = "Interdyne Pharmaceuticals Frontier Base 8817238"
@@ -15,6 +20,12 @@
 	suffix = "icemoon_interdyne_base_ff.dmm"
 	allow_duplicates = FALSE
 	always_place = FALSE
+	never_spawn_with = list(
+		/datum/map_template/ruin/lavaland/nova/interdyne_base,
+		/datum/map_template/ruin/space/nova/blackmarket,
+		/datum/map_template/ruin/space/nova/escapefromtarkon,
+		/datum/map_template/ruin/space/nova/cargodiselost,
+		/datum/map_template/ruin/space/nova/blackmarket,)
 
 /turf/open/floor/plating/reinforced/lavaland
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
