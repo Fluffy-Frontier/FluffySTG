@@ -7,15 +7,30 @@
 	maxHealth = 400
 	health = 400
 	icon_state = "alienpraetorian"
+	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 25
 	melee_damage_upper = 30
 	next_evolution = /mob/living/carbon/alien/adult/tgmc/queen
 
+	default_organ_types_by_slot = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain/alien,
+		ORGAN_SLOT_XENO_HIVENODE = /obj/item/organ/alien/hivenode,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/alien,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/alien,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver/alien,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/alien,
+		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/large,
+		ORGAN_SLOT_XENO_RESINSPINNER = /obj/item/organ/alien/resinspinner,
+		ORGAN_SLOT_XENO_ACIDGLAND = /obj/item/organ/alien/acid,
+		ORGAN_SLOT_XENO_NEUROTOXINGLAND = /obj/item/organ/alien/neurotoxin/spitter,
+	)
+
 /mob/living/carbon/alien/adult/tgmc/praetorian/Initialize(mapload)
 	. = ..()
 	var/static/list/innate_actions = list(
-		/datum/action/cooldown/alien/nova/heal_aura/juiced,
-		/datum/action/cooldown/spell/aoe/repulse/xeno/nova_tailsweep/hard_throwing,
+		/datum/action/cooldown/alien/tgmc/heal_aura/juiced,
+		/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/hard_throwing,
 	)
 	grant_actions_by_list(innate_actions)
 
@@ -23,13 +38,7 @@
 
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_big)
 
-/mob/living/carbon/alien/adult/tgmc/praetorian/create_internal_organs()
-	organs += new /obj/item/organ/alien/plasmavessel/large
-	organs += new /obj/item/organ/alien/neurotoxin/spitter
-	organs += new /obj/item/organ/alien/resinspinner
-	..()
-
-/datum/action/cooldown/alien/nova/heal_aura/juiced
+/datum/action/cooldown/alien/tgmc/heal_aura/juiced
 	name = "Strong Healing Aura"
 	desc = "Friendly xenomorphs in a longer range around yourself will receive passive healing."
 	button_icon_state = "healaura_juiced"
@@ -39,7 +48,7 @@
 	aura_healing_amount = 10
 	aura_healing_color = COLOR_RED_LIGHT
 
-/datum/action/cooldown/spell/aoe/repulse/xeno/nova_tailsweep/hard_throwing
+/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/hard_throwing
 	name = "Flinging Tail Sweep"
 	desc = "Throw back attackers with a sweep of your tail that is much stronger than other aliens."
 

@@ -7,27 +7,36 @@
 	maxHealth = 500
 	health = 500
 	icon_state = "alienqueen"
+	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 30
 	melee_damage_upper = 35
+
+	default_organ_types_by_slot = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain/alien,
+		ORGAN_SLOT_XENO_HIVENODE = /obj/item/organ/alien/hivenode,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/alien,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/alien,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver/alien,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/alien,
+		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/large/queen,
+		ORGAN_SLOT_XENO_RESINSPINNER = /obj/item/organ/alien/resinspinner,
+		ORGAN_SLOT_XENO_ACIDGLAND = /obj/item/organ/alien/acid,
+		ORGAN_SLOT_XENO_NEUROTOXINGLAND = /obj/item/organ/alien/neurotoxin/queen,
+		ORGAN_SLOT_XENO_EGGSAC = /obj/item/organ/alien/eggsac/tgmc,
+	)
 
 /mob/living/carbon/alien/adult/tgmc/queen/Initialize(mapload)
 	. = ..()
 	var/static/list/innate_actions = list(
-		/datum/action/cooldown/spell/aoe/repulse/xeno/nova_tailsweep/hard_throwing,
-		/datum/action/cooldown/alien/nova/queen_screech,
+		/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/hard_throwing,
+		/datum/action/cooldown/alien/tgmc/queen_screech,
 	)
 	grant_actions_by_list(innate_actions)
 
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_big)
-
-/mob/living/carbon/alien/adult/tgmc/queen/create_internal_organs()
-	organs += new /obj/item/organ/alien/plasmavessel/large/queen
-	organs += new /obj/item/organ/alien/resinspinner
-	organs += new /obj/item/organ/alien/neurotoxin/queen
-	organs += new /obj/item/organ/alien/eggsac/tgmc
-	..()
 
 /mob/living/carbon/alien/adult/tgmc/queen/alien_talk(message, shown_name = name)
 	..(message, shown_name, TRUE)
@@ -58,13 +67,13 @@
 
 	return ..()
 
-/datum/action/cooldown/alien/nova/queen_screech
+/datum/action/cooldown/alien/tgmc/queen_screech
 	name = "Deafening Screech"
 	desc = "Let out a screech so deafeningly loud that anything with the ability to hear around you will likely be incapacitated for a short time."
 	button_icon_state = "screech"
 	cooldown_time = 5 MINUTES
 
-/datum/action/cooldown/alien/nova/queen_screech/Activate()
+/datum/action/cooldown/alien/tgmc/queen_screech/Activate()
 	. = ..()
 	var/mob/living/carbon/alien/adult/tgmc/queenie = owner
 	playsound(queenie, 'tff_modular/modules/tgmc_xenos/sound/alien_queen_screech.ogg', 100, FALSE, 8, 0.9)
