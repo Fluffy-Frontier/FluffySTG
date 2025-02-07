@@ -28,11 +28,6 @@
 	. = ..()
 	GRANT_ACTION(/datum/action/cooldown/alien/tgmc/heal_aura)
 
-/mob/living/carbon/alien/adult/tgmc/drone/create_internal_organs()
-	organs += new /obj/item/organ/alien/plasmavessel
-	organs += new /obj/item/organ/alien/resinspinner
-	..()
-
 /datum/action/cooldown/alien/tgmc/heal_aura
 	name = "Healing Aura"
 	desc = "Friendly xenomorphs in a short range around yourself will receive passive healing."
