@@ -22,7 +22,8 @@
 	suffix = "icemoon_underground_interdyne_base1.dmm"
 	allow_duplicates = FALSE
 	never_spawn_with = list(/datum/map_template/ruin/lavaland/nova/interdyne_base)
-	unpickable = TRUE //FF REMOVAL - INTERDYNE-REMAP. ORIGINAL always_place = TRUE
+	//unpickable = TRUE //FF REMOVAL - INTERDYNE-REMAP. ORIGINAL always_place = TRUE
+	always_place = FALSE //FF ADDITIONAL - RANDOM GHOSTROLE
 
 /datum/map_template/ruin/icemoon/underground/nova/magic_hotsprings
 	name = "Magic Hotsprings"
