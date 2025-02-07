@@ -67,7 +67,7 @@
 	icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
 	icon_state = "throw_tail_anim"
 
-/datum/action/cooldown/alien/acid/nova/spread
+/datum/action/cooldown/alien/acid/tgmc/spread
 	name = "Spit Neurotoxin Spread"
 	desc = "Spits a spread neurotoxin at someone, exhausting them."
 	plasma_cost = 50
@@ -78,7 +78,7 @@
 
 /obj/item/ammo_casing/xenospit //This is probably really bad, however I couldn't find any other nice way to do this
 	name = "big glob of neurotoxin"
-	projectile_type = /obj/projectile/neurotoxin/nova/spitter_spread
+	projectile_type = /obj/projectile/neurotoxin/tgmc/spitter_spread
 	pellets = 3
 	variance = 20
 
@@ -94,7 +94,7 @@
 	icon_state = "neurotoxin"
 	damage = 25
 
-/datum/action/cooldown/alien/acid/nova/spread/lethal
+/datum/action/cooldown/alien/acid/tgmc/spread/lethal
 	name = "Spit Acid Spread"
 	desc = "Spits a spread of acid at someone, burning them."
 	acid_projectile = null
@@ -105,11 +105,11 @@
 
 /obj/item/ammo_casing/xenospit/spread/lethal
 	name = "big glob of acid"
-	projectile_type = /obj/projectile/neurotoxin/nova/acid/spitter_spread
+	projectile_type = /obj/projectile/neurotoxin/tgmc/acid/spitter_spread
 	pellets = 4
 	variance = 30
 
-/obj/projectile/neurotoxin/nova/acid/spitter_spread
+/obj/projectile/neurotoxin/tgmc/acid/spitter_spread
 	name = "acid spit"
 	icon_state = "toxin"
 	damage = 15
@@ -121,7 +121,7 @@
 	zone = BODY_ZONE_PRECISE_MOUTH
 	slot = ORGAN_SLOT_XENO_NEUROTOXINGLAND
 	actions_types = list(
-		/datum/action/cooldown/alien/acid/nova/spread,
-		/datum/action/cooldown/alien/acid/nova/spread/lethal,
+		/datum/action/cooldown/alien/acid/tgmc/spread,
+		/datum/action/cooldown/alien/acid/tgmc/spread/lethal,
 		/datum/action/cooldown/alien/acid/corrosion,
 	)

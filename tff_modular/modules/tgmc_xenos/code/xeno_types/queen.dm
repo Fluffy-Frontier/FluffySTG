@@ -47,8 +47,8 @@
 	zone = BODY_ZONE_PRECISE_MOUTH
 	slot = ORGAN_SLOT_XENO_NEUROTOXINGLAND
 	actions_types = list(
-		/datum/action/cooldown/alien/acid/nova,
-		/datum/action/cooldown/alien/acid/nova/lethal,
+		/datum/action/cooldown/alien/acid/tgmc,
+		/datum/action/cooldown/alien/acid/tgmc/lethal,
 		/datum/action/cooldown/alien/acid/corrosion,
 	)
 
