@@ -9,6 +9,17 @@
 	maptext_height = 64
 	maptext_width = 64
 	pressure_resistance = 200
+
+	default_organ_types_by_slot = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain/alien,
+		ORGAN_SLOT_XENO_HIVENODE = /obj/item/organ/alien/hivenode,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/alien,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/alien,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver/alien,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/alien,
+	)
+
 	/// What icon file update_held_items will look for when making inhands for xenos
 	var/alt_inhands_file = 'tff_modular/modules/tgmc_xenos/icons/big_xenos.dmi'
 	/// Setting this will give a xeno generic_evolve set to evolve them into this type
@@ -23,17 +34,8 @@
 	var/on_fire_pixel_x = 16
 	/// Pixel Y shifting of the on fire overlay
 	var/on_fire_pixel_y = 16
-
-	default_organ_types_by_slot = list(
-		ORGAN_SLOT_BRAIN = /obj/item/organ/brain/alien,
-		ORGAN_SLOT_XENO_HIVENODE = /obj/item/organ/alien/hivenode,
-		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/alien,
-		ORGAN_SLOT_EYES = /obj/item/organ/eyes/alien,
-		ORGAN_SLOT_LIVER = /obj/item/organ/liver/alien,
-		ORGAN_SLOT_EARS = /obj/item/organ/ears,
-		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/alien,
-		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel,
-	)
+	/// Все дополнительные органы, что должны находиться в телах ксеносов
+	var/list/additional_organ_types_by_slot
 
 /mob/living/carbon/alien/adult/tgmc/Initialize(mapload)
 	. = ..()
@@ -46,6 +48,11 @@
 
 	ADD_TRAIT(src, TRAIT_XENO_HEAL_AURA, TRAIT_XENO_INNATE)
 	real_name = "alien [caste]"
+
+/mob/living/carbon/alien/adult/tgmc/create_internal_organs()
+	if(additional_organ_types_by_slot)
+		default_organ_types_by_slot += additional_organ_types_by_slot
+	return ..()
 
 /// Called when a larva or xeno evolves, adds a configurable timer on evolving again to the xeno
 /mob/living/carbon/alien/adult/tgmc/proc/has_just_evolved()
