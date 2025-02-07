@@ -13,7 +13,6 @@
 
 	additional_organ_types_by_slot = list(
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel,
-		ORGAN_SLOT_XENO_ACIDGLAND = /obj/item/organ/alien/acid,
 		ORGAN_SLOT_XENO_NEUROTOXINGLAND = /obj/item/organ/alien/neurotoxin/spitter,
 	)
 

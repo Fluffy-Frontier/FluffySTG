@@ -21,6 +21,8 @@
 
 /mob/living/carbon/alien/adult/tgmc/queen/Initialize(mapload)
 	. = ..()
+	AddComponent(/datum/component/seethrough_mob)	// Люркеров у нас нету (слава богу), но выдать такую штуку кому-то хочется... Будет у королевы, как на обычном ТГ
+
 	var/static/list/innate_actions = list(
 		/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/hard_throwing,
 		/datum/action/cooldown/alien/tgmc/queen_screech,
@@ -88,3 +90,6 @@
 
 /mob/living/carbon/alien/adult/tgmc/proc/remove_shriekwave()
 	remove_overlay(HALO_LAYER)
+
+/mob/living/carbon/alien/adult/tgmc/queen/findQueen()
+	return	// Королева и так знает свое местоположение

@@ -39,7 +39,6 @@
 
 /mob/living/carbon/alien/adult/tgmc/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/seethrough_mob)
 
 	if(next_evolution)
 		GRANT_ACTION(/datum/action/cooldown/alien/tgmc/generic_evolve)
