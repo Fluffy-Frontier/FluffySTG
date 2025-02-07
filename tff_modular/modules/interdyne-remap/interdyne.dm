@@ -5,7 +5,7 @@
 	prefix = "_maps/RandomRuins/LavaRuins/fluffy/"
 	suffix = "lavaland_interdyne_base_ff.dmm"
 	allow_duplicates = FALSE
-	always_place = TRUE
+	always_place = FALSE
 
 /datum/map_template/ruin/icemoon/underground/interdyne
 	name = "Interdyne Pharmaceuticals Frontier Base 8817238"
@@ -14,7 +14,7 @@
 	prefix = "_maps/RandomRuins/IceRuins/fluffy/"
 	suffix = "icemoon_interdyne_base_ff.dmm"
 	allow_duplicates = FALSE
-	always_place = TRUE
+	always_place = FALSE
 
 /turf/open/floor/plating/reinforced/lavaland
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS

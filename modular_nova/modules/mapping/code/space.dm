@@ -22,7 +22,7 @@
 	suffix = "des_two.dmm"
 	name = "Space-Ruin DS-2"
 	description = "If DS-1 was so good..."
-	always_place = TRUE
+	always_place = FALSE // FLUFFY FRONTIER EDITED: TRUE
 
 /datum/map_template/ruin/space/nova/derelictferry
 	id = "derelictferry"
@@ -173,7 +173,7 @@
 	suffix = "port_tarkon.dmm"
 	name = "Space-Ruin Port Tarkon"
 	description = "An ambitious goal, A step forward, A trial run for the Tarkon drill, ment to implant mining stations within meteors. Decades of disaster have, however, left this one... Unattended for far too long."
-	always_place = TRUE
+	always_place = FALSE // FLUFFY FRONTIER EDITED: TRUE
 
 /obj/modular_map_root/port_tarkon
 	config_file = "strings/modular_maps/nova/PortTarkon.toml"
