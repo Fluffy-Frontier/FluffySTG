@@ -179,6 +179,7 @@
 	acid = 25
 	wound = 5
 
+// FLUFFY FRONTIER ADDITION: SolFed Black Market
 /datum/mod_theme/solfed
 	name = "solfed"
 	desc = "A Solar Federation armored suit, offering quicker speed at the cost of modules capacity."
@@ -235,6 +236,7 @@
 	fire = 75
 	acid = 75
 	wound = 20
+// FLUFFY FRONTIER ADDITION END
 
 /datum/mod_theme/civilian
 	name = "civilian"
