@@ -86,7 +86,7 @@
 
 /datum/map_template/ruin/space/nova/blackmarket
 	id = "blackmarket"
-	suffix = "blackmarket.dmm"
+	suffix = "blackmarket_solfed.dmm"
 	name = "Space-Ruin Shady Market"
 	description = "Whaddya buyin'?"
 
