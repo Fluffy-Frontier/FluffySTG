@@ -8,9 +8,6 @@
 //from (/obj/structure/corruption/Destroy): (corruption)
 #define COMSIG_TURF_NECRO_UNCORRUPTED "turf_necro_uncorrupted"
 
-/// Shown to all mobs not just the user
-#define DO_PUBLIC (1<<5) //ffdefines/code/flags.dm
-
 /// As of now only used when placing marker structures
 /mob
 	var/datum/mouse_move_intercept //code/modules/mob/mob_defines.dm

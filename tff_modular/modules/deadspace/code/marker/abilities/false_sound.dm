@@ -22,8 +22,6 @@
 		signal.change_psy_energy(cost) //Refund the cost if nothing is picked
 		return TRUE
 	var/volume = VOLUME_MID
-	if (picked_sound == SOUND_SHOUT || picked_sound == SOUND_SHOUT_LONG || picked_sound == SOUND_DEATH)
-		volume = VOLUME_HIGH
 	playsound(target, pick(GLOB.necromorph_sounds[category][picked_sound]), volume, 1, 2)
 	return TRUE
 

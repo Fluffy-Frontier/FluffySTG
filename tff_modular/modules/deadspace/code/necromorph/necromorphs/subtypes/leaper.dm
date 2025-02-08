@@ -20,7 +20,7 @@
 /mob/living/carbon/human/necromorph/leaper/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
 	AddComponent(/datum/component/wallrun)
-	AddElement(/datum/element/wall_tearer, tear_time = 10 SECONDS)
+	AddElement(/datum/element/wall_tearer, allow_reinforced = FALSE, tear_time = 10 SECONDS)
 
 /mob/living/carbon/human/necromorph/leaper/play_necro_sound(audio_type, volume, vary, extra_range)
 	playsound(src, pick(GLOB.leaper_sounds[audio_type]), volume, vary, extra_range)

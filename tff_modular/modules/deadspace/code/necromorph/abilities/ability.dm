@@ -24,6 +24,12 @@
 		UnregisterSignal(removed_from, activate_keybind)
 	return ..()
 
+/datum/action/cooldown/necro/PreActivate(atom/target)
+	var/mob/living/carbon/human/necromorph/charger = owner
+	if(charger.stat == DEAD)
+		return FALSE
+	return ..()
+
 /datum/action/cooldown/necro/proc/TriggerOnKeybindSignal(mob/source)
 	SIGNAL_HANDLER
 	Trigger()

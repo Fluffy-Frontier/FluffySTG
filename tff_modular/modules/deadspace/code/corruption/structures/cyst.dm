@@ -44,7 +44,7 @@
 		'tff_modular/modules/deadspace/sound/effects/creatures/necromorph/cyst/cyst_fire_2.ogg',
 		'tff_modular/modules/deadspace/sound/effects/creatures/necromorph/cyst/cyst_fire_3.ogg',
 		'tff_modular/modules/deadspace/sound/effects/creatures/necromorph/cyst/cyst_fire_4.ogg',
-	), VOLUME_HIGH, TRUE)
+	), VOLUME_MID, TRUE)
 	P.starting = startloc
 	P.firer = src
 	P.fired_from = src

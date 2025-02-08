@@ -156,7 +156,7 @@
 	var/obj/effect/temp_visual/expanding_circle/EC
 
 /datum/action/cooldown/necro/taunt/hunter/Activate()
-	owner:play_necro_sound(SOUND_SHOUT_LONG, VOLUME_HIGH, 1, 3)
+	owner:play_necro_sound(SOUND_SHOUT_LONG, VOLUME_MID, 1, 3)
 	. = ..()
 	EC = new /obj/effect/temp_visual/expanding_circle(owner.loc, 1.5 SECONDS, 1.5,"#ff0000")
 	EC.pixel_y += 40	//Offset it so it appears to be at our mob's head

@@ -24,7 +24,7 @@
 	var/initial_x = user.pixel_x
 	var/initial_y = user.pixel_y
 	var/shake_dir
-	user.play_necro_sound(SOUND_SHOUT_LONG, VOLUME_HIGH, TRUE, 3)
+	user.play_necro_sound(SOUND_SHOUT_LONG, VOLUME_MID, TRUE, 3)
 	//Lots of shaking with increasing frequency and violence
 
 	shake_dir = pick(-1, 1)

@@ -180,7 +180,7 @@
 	if(hasPower())
 		//Powered airlocks take longer to open, and are loud.
 		time_to_open = 5 SECONDS
-		playsound(src, 'sound/machines/airlock/airlock_alien_prying.ogg', VOLUME_HIGH, TRUE)
+		playsound(src, 'sound/machines/airlock/airlock_alien_prying.ogg', VOLUME_MID, TRUE)
 
 	if(!do_after(user, time_to_open, src))
 		return FALSE
