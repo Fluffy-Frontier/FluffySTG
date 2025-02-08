@@ -12,7 +12,7 @@
 	melee_damage_upper = 30
 	next_evolution = /mob/living/carbon/alien/adult/tgmc/warrior
 
-	default_organ_types_by_slot = list(
+	additional_organ_types_by_slot = list(
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/small,
 	)
 
