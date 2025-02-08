@@ -85,6 +85,9 @@
 /datum/mod_theme/apocryphal
 	hardlight_theme = ALERT_AMBER
 
+/datum/mod_theme/solfed
+	hardlight_theme = ALERT_AMBER
+
 /datum/mod_theme/corporate
 	hardlight_theme = EXTRASHIELD_GREEN
 
