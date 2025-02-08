@@ -1,6 +1,3 @@
-#define GROWING 1
-#define DECAYING 2
-
 /obj/structure/necromorph/node
 	name = "growth"
 	icon = 'tff_modular/modules/deadspace/icons/effects/corruption.dmi'
@@ -25,13 +22,10 @@
 	if(new_loc)
 		if(istype(new_loc) && new_loc.necro_corrupted)
 			RegisterSignal(new_loc, COMSIG_TURF_NECRO_UNCORRUPTED, PROC_REF(on_turf_uncorrupted))
-			state = GROWING
+			state = GROWING_STRUCTURE
 			START_PROCESSING(SSnecrocorruption, src)
 		else
 			qdel(src)
 
 /obj/structure/necromorph/node/on_turf_uncorrupted(turf/source)
 	qdel(src)
-
-#undef GROWING
-#undef DECAYING

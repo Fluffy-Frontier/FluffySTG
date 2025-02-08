@@ -1,6 +1,3 @@
-#define GROWING 1
-#define DECAYING 2
-
 /obj/structure/necromorph
 	name = "necromorph sturcture"
 	desc = "There is something scary in it."
@@ -36,27 +33,27 @@
 	if(new_loc)
 		if(istype(new_loc) && new_loc.necro_corrupted)
 			RegisterSignal(new_loc, COMSIG_TURF_NECRO_UNCORRUPTED, PROC_REF(on_turf_uncorrupted))
-			state = GROWING
+			state = GROWING_STRUCTURE
 			START_PROCESSING(SSnecrocorruption, src)
 		else
 			RegisterSignal(new_loc, COMSIG_TURF_NECRO_CORRUPTED, PROC_REF(on_turf_corrupted))
-			state = DECAYING
+			state = DECAYING_STRUCTURE
 			START_PROCESSING(SSnecrocorruption, src)
 
 /obj/structure/necromorph/proc/on_turf_uncorrupted(turf/source)
 	SIGNAL_HANDLER
-	state = DECAYING
+	state = DECAYING_STRUCTURE
 	START_PROCESSING(SSnecrocorruption, src)
 
 /obj/structure/necromorph/proc/on_turf_corrupted(turf/source)
 	SIGNAL_HANDLER
-	state = GROWING
+	state = GROWING_STRUCTURE
 	START_PROCESSING(SSnecrocorruption, src)
 
 /obj/structure/necromorph/process(delta_time)
-	if(state == GROWING)
+	if(state == GROWING_STRUCTURE)
 		repair_damage(3*delta_time)
-	else if(state == DECAYING)
+	else if(state == DECAYING_STRUCTURE)
 		take_damage(3*delta_time)
 	else
 		. = PROCESS_KILL
@@ -64,8 +61,8 @@
 
 /obj/structure/necromorph/proc/on_integrity_change(atom/source, old_integrity, new_integrity)
 	SIGNAL_HANDLER
-	if((old_integrity >= new_integrity) && state != DECAYING)
-		state = GROWING
+	if((old_integrity >= new_integrity) && state != DECAYING_STRUCTURE)
+		state = GROWING_STRUCTURE
 		START_PROCESSING(SSnecrocorruption, src)
 	else if(new_integrity >= max_integrity)
 		state = null
@@ -95,6 +92,3 @@
 	//Necromorph structures shouldn't block corruption
 	if(istype(mover, /obj/structure/corruption))
 		return TRUE
-
-#undef GROWING
-#undef DECAYING
