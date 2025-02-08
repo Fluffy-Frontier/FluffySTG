@@ -46,6 +46,7 @@
 		/obj/item/mod/module/flashlight,
 	)
 
+// FLUFFY FRONTIER ADDITION: SolFed Black Market
 /obj/item/mod/control/pre_equipped/solfed
 	theme = /datum/mod_theme/solfed
 	applied_cell = /obj/item/stock_parts/power_store/cell/hyper
@@ -60,6 +61,7 @@
 		/obj/item/mod/module/jetpack,
 		/obj/item/mod/module/flashlight,
 	)
+// FLUFFY FRONTIER ADDITION END
 
 /obj/item/mod/control/pre_equipped/civilian
 	theme = /datum/mod_theme/civilian
