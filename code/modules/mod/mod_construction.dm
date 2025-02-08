@@ -92,8 +92,10 @@
 	desc = "[desc] [used_theme.desc]"
 	icon_state = "[used_theme.default_skin]-plating"
 
+// FLUFFY FRONTIER ADDITION: SolFed Black Market
 /obj/item/mod/construction/plating/solfed
 	theme = /datum/mod_theme/solfed
+// FLUFFY FRONTIER ADDITION END
 
 /obj/item/mod/construction/plating/civilian
 	theme = /datum/mod_theme/civilian
