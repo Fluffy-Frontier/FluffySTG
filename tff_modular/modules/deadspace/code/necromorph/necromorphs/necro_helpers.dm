@@ -25,8 +25,6 @@
 	CRASH("play_necro_sound() wasn't overriden")
 
 /mob/living/carbon/human/necromorph/proc/evacuate()
-	//set name = "Evacuate"
-	//set category = "Necromorph"
 
 	if(controlling)
 		controlling.abstract_move(get_turf(src))
@@ -52,19 +50,10 @@
 		var/datum/hud/necromorph/hud = hud_used
 		hud.update_shieldbar(src)
 
-ADMIN_VERB_AND_CONTEXT_MENU(spawn_necromorph, R_NONE, "Spawn a necromorph", "Spawn a necromorph.", ADMIN_CATEGORY_DEBUG)
-	user.spawn_necromorph()
-
-/client/proc/spawn_necromorph()
-	set category = "Debug"
-	set desc = "Spawn a necromorph"
-	set name = "Spawn Necromorph"
-
-	if(!check_rights(R_SPAWN))
-		return
+ADMIN_VERB_AND_CONTEXT_MENU(spawn_necromorph, R_ADMIN, "Spawn a necromorph", "Spawn a necromorph.", ADMIN_CATEGORY_DEBUG)
 
 	if(!length(GLOB.necromorph_markers))
-		to_chat(mob, span_warning("There are no markers present!"))
+		to_chat(user, span_warning("There are no markers present!"))
 		return
 
 	var/list/list_to_pick = list()
@@ -77,7 +66,7 @@ ADMIN_VERB_AND_CONTEXT_MENU(spawn_necromorph, R_NONE, "Spawn a necromorph", "Spa
 		return
 
 	if(!length(GLOB.necromorph_markers))
-		to_chat(mob, span_warning("There are no markers present!"))
+		to_chat(user, span_warning("There are no markers present!"))
 		return
 
 	var/obj/structure/marker/marker = tgui_input_list(usr, "Pick a marker", "Marker", GLOB.necromorph_markers)
@@ -92,15 +81,7 @@ ADMIN_VERB_AND_CONTEXT_MENU(spawn_necromorph, R_NONE, "Spawn a necromorph", "Spa
 	SSblackbox.record_feedback("tally", "necro_spawn", 1, "Spawn Necromorph") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
-ADMIN_VERB_AND_CONTEXT_MENU(brethren_message, R_NONE, "Brethren Message", "Send a message to the entire necromorph hive as a brethren moon.", ADMIN_CATEGORY_DEBUG, msg as text)
-	user.brethren_message(msg)
-
-///Send a message to a marker's entire hivemind as a Brethren Moon.
-///Basically the equivelent of answering a prayer or directly messaging as admin, just for the necro hivemind
-/client/proc/brethren_message(msg as text)
-	set category = "Admin.Fun"
-	set desc = "Send a message to the entire necromorph hive as a brethren moon."
-	set name = "Brethren Message"
+ADMIN_VERB_AND_CONTEXT_MENU(brethren_message, R_ADMIN, "Brethren Message", "Send a message to the entire necromorph hive as a brethren moon.", ADMIN_CATEGORY_DEBUG, msg as text)
 
 	if(!msg) //If we have no message we don't want to continue
 		return
@@ -121,29 +102,18 @@ ADMIN_VERB_AND_CONTEXT_MENU(brethren_message, R_NONE, "Brethren Message", "Send 
 
 	return TRUE
 
-ADMIN_VERB_AND_CONTEXT_MENU(kick_marker, R_NONE, "Kick marker", "Kick marker signal", ADMIN_CATEGORY_DEBUG)
-	user.kick_marker()
+ADMIN_VERB_AND_CONTEXT_MENU(kick_marker, R_ADMIN, "Kick marker", "Kick marker signal", ADMIN_CATEGORY_DEBUG)
 
-/client/proc/kick_marker()
 	if(!length(GLOB.necromorph_markers))
 		return
 	var/obj/structure/marker/mark = pick(GLOB.necromorph_markers)
 	if(mark.camera_mob)
 		mark.camera_mob.downgrade()
 
-ADMIN_VERB_AND_CONTEXT_MENU(spawn_corruption_structure, R_NONE, "Spawn corruption structure", "Spawn corruption structure", ADMIN_CATEGORY_DEBUG)
-	user.spawn_corruption_structure()
-
-/client/proc/spawn_corruption_structure()
-	set category = "Debug"
-	set desc = "Spawn corruption structure"
-	set name = "Spawn Corruption Structure"
-
-	if(!check_rights(R_SPAWN))
-		return
+ADMIN_VERB_AND_CONTEXT_MENU(spawn_corruption_structure, R_ADMIN, "Spawn corruption structure", "Spawn corruption structure", ADMIN_CATEGORY_DEBUG)
 
 	if(!length(GLOB.necromorph_markers))
-		to_chat(mob, span_warning("There are no markers present!"))
+		to_chat(user, span_warning("There are no markers present!"))
 		return
 
 	var/list/list_to_pick = list()
@@ -155,7 +125,7 @@ ADMIN_VERB_AND_CONTEXT_MENU(spawn_corruption_structure, R_NONE, "Spawn corruptio
 		return
 
 	if(!length(GLOB.necromorph_markers))
-		to_chat(mob, span_warning("There are no markers present!"))
+		to_chat(user, span_warning("There are no markers present!"))
 		return
 
 	var/obj/structure/marker/marker = tgui_input_list(usr, "Pick a marker", "Marker", GLOB.necromorph_markers)
