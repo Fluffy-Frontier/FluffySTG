@@ -2308,9 +2308,7 @@
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/nova/blackmarket)
 "zU" = (
-/obj/structure/girder/reinforced{
-	layer = 2.6
-	},
+/obj/structure/girder/reinforced,
 /obj/item/stack/sheet/plasteel{
 	amount = 2;
 	pixel_x = 8;
@@ -2345,8 +2343,7 @@
 	},
 /obj/item/ph_booklet{
 	pixel_x = -10;
-	pixel_y = -6;
-	layer = 2.89
+	pixel_y = -6
 	},
 /obj/structure/grille/broken,
 /obj/item/stack/sheet/spaceship{
@@ -2796,8 +2793,7 @@
 /area/ruin/space/has_grav/nova/blackmarket)
 "En" = (
 /obj/structure/railing{
-	dir = 6;
-	layer = 4.11
+	dir = 6
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/button/indestructible{
@@ -2904,17 +2900,6 @@
 /turf/open/floor/iron/shuttle/exploration/uside,
 /area/ruin/space/has_grav/nova/blackmarket)
 "Fh" = (
-/obj/structure/fluff/paper/corner{
-	dir = 1;
-	layer = 2
-	},
-/obj/machinery/door/airlock/maintenance_hatch{
-	name = "Command Center"
-	},
-/obj/structure/fluff/paper/corner{
-	dir = 8;
-	layer = 2.002
-	},
 /obj/effect/turf_decal/trimline/dark/filled/corner,
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 8
@@ -2926,6 +2911,9 @@
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Command Center"
+	},
 /turf/open/floor/iron/shuttle/exploration/doubleside{
 	dir = 4
 	},
@@ -4839,8 +4827,7 @@
 /area/ruin/space/has_grav/nova/blackmarket)
 "Yn" = (
 /obj/structure/railing{
-	dir = 10;
-	layer = 4.11
+	dir = 10
 	},
 /obj/structure/chair/office{
 	dir = 1
@@ -4848,9 +4835,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 10
 	},
-/obj/structure/fluff/paper/stack{
-	layer = 2
-	},
+/obj/structure/fluff/paper/stack,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/carpet/black,
@@ -4950,9 +4935,7 @@
 /area/ruin/space/has_grav/nova/blackmarket)
 "Zo" = (
 /obj/structure/fluff/paper/corner,
-/obj/structure/fluff/paper/stack{
-	layer = 2
-	},
+/obj/structure/fluff/paper/stack,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/shuttle/exploration/adjinvcorner{
