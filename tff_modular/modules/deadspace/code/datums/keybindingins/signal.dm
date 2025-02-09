@@ -5,7 +5,7 @@
 	return ismarkereye(user.mob)
 
 /datum/keybinding/marker_signal/rotate_necromorph_structure
-	hotkey_keys = list("R", "Southwest")
+	hotkey_keys = list("Unbound")
 	name = "rotate_necromorph_structure"
 	full_name = "Rotate structure"
 	description = "Rotates necromorph structure while in placing mode."
