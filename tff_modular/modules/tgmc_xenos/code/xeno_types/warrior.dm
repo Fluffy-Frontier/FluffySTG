@@ -7,15 +7,20 @@
 	maxHealth = 400
 	health = 400
 	icon_state = "alienwarrior"
+	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 30
 	melee_damage_upper = 35
+
+	additional_organ_types_by_slot = list(
+		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel
+	)
 
 /mob/living/carbon/alien/adult/tgmc/warrior/Initialize(mapload)
 	. = ..()
 	var/static/list/innate_actions = list(
-		/datum/action/cooldown/spell/aoe/repulse/xeno/nova_tailsweep,
+		/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep,
 		/datum/action/cooldown/mob_cooldown/charge/basic_charge/defender,
-		/datum/action/cooldown/alien/nova/warrior_agility,
+		/datum/action/cooldown/alien/tgmc/warrior_agility,
 	)
 	grant_actions_by_list(innate_actions)
 
@@ -23,11 +28,7 @@
 
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_big)
 
-/mob/living/carbon/alien/adult/tgmc/warrior/create_internal_organs()
-	organs += new /obj/item/organ/alien/plasmavessel
-	..()
-
-/datum/action/cooldown/alien/nova/warrior_agility
+/datum/action/cooldown/alien/tgmc/warrior_agility
 	name = "Agility Mode"
 	desc = "Drop onto all fours, increasing your speed at the cost of damage and being unable to use most abilities."
 	button_icon_state = "the_speed_is_alot"
@@ -36,7 +37,7 @@
 	/// Is the warrior currently running around on all fours?
 	var/being_agile = FALSE
 
-/datum/action/cooldown/alien/nova/warrior_agility/Activate()
+/datum/action/cooldown/alien/tgmc/warrior_agility/Activate()
 	. = ..()
 	if(!being_agile)
 		begin_agility()
@@ -46,7 +47,7 @@
 		return TRUE
 
 /// Handles the visual indication and code activation of the warrior agility ability (say that five times fast)
-/datum/action/cooldown/alien/nova/warrior_agility/proc/begin_agility()
+/datum/action/cooldown/alien/tgmc/warrior_agility/proc/begin_agility()
 	var/mob/living/carbon/alien/adult/tgmc/agility_target = owner
 	agility_target.balloon_alert(agility_target, "agility active")
 	to_chat(agility_target, span_danger("We drop onto all fours, allowing us to move at much greater speed at expense of being able to use most abilities."))
@@ -61,7 +62,7 @@
 	agility_target.melee_damage_upper = 20
 
 /// Handles the visual indicators and code side of deactivating the agility ability
-/datum/action/cooldown/alien/nova/warrior_agility/proc/end_agility()
+/datum/action/cooldown/alien/tgmc/warrior_agility/proc/end_agility()
 	var/mob/living/carbon/alien/adult/tgmc/agility_target = owner
 	agility_target.balloon_alert(agility_target, "agility ended")
 	playsound(agility_target, 'tff_modular/modules/tgmc_xenos/sound/alien_roar2.ogg', 100, TRUE, 8, 0.9) //Warrior runs up on all fours, stands upright, screams at you
