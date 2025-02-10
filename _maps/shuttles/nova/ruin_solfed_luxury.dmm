@@ -154,20 +154,14 @@
 	dir = 1;
 	pixel_y = 0
 	},
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south{
+	pixel_y = -4
+	},
 /turf/template_noop,
 /area/shuttle/serenity2/midship)
 "eB" = (
-/obj/structure/decorative{
-	anchored = 1;
-	density = 1;
-	name = "shuttle hull";
-	desc = "A light-weight titanium wall used in shuttles.";
-	icon = 'modular_nova/modules/advanced_shuttles/icons/evac_shuttle.dmi';
-	icon_state = "9,23";
-	dir = 2
-	},
 /turf/closed/wall/mineral/titanium/shuttle_wall/window/evac{
-	icon_state = "8,23"
+	icon_state = "9,23"
 	},
 /area/shuttle/serenity2/cockpit)
 "eJ" = (
@@ -333,9 +327,6 @@
 	pixel_x = 10;
 	pixel_y = 10
 	},
-/obj/structure/window/reinforced/survival_pod/spawner/directional/south{
-	pixel_y = -4
-	},
 /turf/closed/wall/mineral/titanium/shuttle_wall/evac{
 	icon_state = "5,13";
 	dir = 8
@@ -352,6 +343,9 @@
 	icon_state = "0,0";
 	dir = 1;
 	pixel_y = 0
+	},
+/obj/structure/window/reinforced/survival_pod/spawner/directional/south{
+	pixel_y = -4
 	},
 /turf/template_noop,
 /area/shuttle/serenity2/midship)
@@ -446,9 +440,6 @@
 /area/shuttle/serenity2/midship)
 "np" = (
 /obj/structure/lattice,
-/obj/structure/window/reinforced/tinted/frosted/spawner/directional/east{
-	layer = 2.8
-	},
 /obj/structure/decorative{
 	anchored = 1;
 	density = 1;
@@ -689,6 +680,9 @@
 	dir = 2;
 	pixel_y = 0
 	},
+/obj/structure/window/reinforced/survival_pod/spawner/directional/north{
+	pixel_y = 4
+	},
 /turf/template_noop,
 /area/shuttle/serenity2/midship)
 "rG" = (
@@ -764,10 +758,6 @@
 /turf/template_noop,
 /area/shuttle/serenity2/midship)
 "tQ" = (
-/obj/structure/window/reinforced/survival_pod/spawner/directional/north{
-	pixel_x = -32;
-	pixel_y = 4
-	},
 /turf/closed/wall/mineral/titanium/shuttle_wall/arrivals{
 	icon_state = "1,0"
 	},
@@ -952,22 +942,11 @@
 /turf/template_noop,
 /area/shuttle/serenity2/midship)
 "zu" = (
-/obj/structure/window/reinforced/survival_pod/spawner/directional/north{
-	pixel_x = 32;
-	pixel_y = 4
-	},
 /turf/closed/wall/mineral/titanium/shuttle_wall/arrivals{
 	icon_state = "11,0"
 	},
 /area/shuttle/serenity2/midship)
 "zv" = (
-/obj/structure/window/reinforced/survival_pod/spawner/directional/south{
-	pixel_x = 32;
-	pixel_y = -4
-	},
-/obj/structure/window/reinforced/survival_pod/spawner/directional/north{
-	pixel_y = 4
-	},
 /turf/closed/wall/mineral/titanium/shuttle_wall/arrivals{
 	icon_state = "1,0";
 	dir = 1
@@ -1100,9 +1079,6 @@
 /area/shuttle/serenity2/midship)
 "Dq" = (
 /obj/structure/lattice,
-/obj/structure/window/reinforced/tinted/frosted/spawner/directional/west{
-	layer = 2.8
-	},
 /obj/structure/decorative{
 	anchored = 1;
 	density = 1;
@@ -1325,10 +1301,6 @@
 /turf/template_noop,
 /area/shuttle/serenity2/midship)
 "Hd" = (
-/obj/structure/window/reinforced/survival_pod/spawner/directional/south{
-	pixel_x = -32;
-	pixel_y = -4
-	},
 /turf/closed/wall/mineral/titanium/shuttle_wall/arrivals{
 	icon_state = "11,0";
 	dir = 1
@@ -1529,34 +1501,24 @@
 	},
 /area/shuttle/serenity2/cockpit)
 "Pq" = (
-/obj/structure/decorative{
-	anchored = 1;
-	density = 1;
-	name = "shuttle hull";
-	desc = "A light-weight titanium wall used in shuttles.";
-	icon = 'modular_nova/modules/advanced_shuttles/icons/evac_shuttle.dmi';
-	icon_state = "7,23";
-	dir = 2
-	},
 /turf/closed/wall/mineral/titanium/shuttle_wall/window/evac{
-	icon_state = "8,23"
+	icon_state = "7,23"
 	},
 /area/shuttle/serenity2/cockpit)
 "Qc" = (
+/obj/structure/decorative{
+	anchored = 1;
+	name = "solfed decal";
+	icon = 'icons/obj/signs.dmi';
+	icon_state = "backing";
+	pixel_x = 6
+	},
 /obj/structure/decorative{
 	anchored = 1;
 	name = "decal backing";
 	icon = 'modular_nova/modules/advanced_shuttles/icons/exploration_floor.dmi';
 	icon_state = "decal2";
 	pixel_x = 6
-	},
-/obj/structure/decorative{
-	anchored = 1;
-	name = "solfed decal";
-	icon = 'icons/obj/signs.dmi';
-	icon_state = "backing";
-	pixel_x = 6;
-	layer = 2.89
 	},
 /obj/structure/decorative{
 	anchored = 1;
@@ -1580,6 +1542,9 @@
 	icon_state = "12,0";
 	dir = 2;
 	pixel_y = 0
+	},
+/obj/structure/window/reinforced/survival_pod/spawner/directional/north{
+	pixel_y = 4
 	},
 /turf/template_noop,
 /area/shuttle/serenity2/midship)
@@ -2009,16 +1974,14 @@
 	icon = 'icons/turf/decals.dmi';
 	icon_state = "siding_plain";
 	dir = 1;
-	color = "#b9b3b3";
-	layer = 3.3
+	color = "#b9b3b3"
 	},
 /obj/structure/decorative/fluff{
 	anchored = 1;
 	icon = 'icons/turf/decals.dmi';
 	icon_state = "siding_plain";
 	dir = 2;
-	color = "#b9b3b3";
-	layer = 3.3
+	color = "#b9b3b3"
 	},
 /obj/structure/decorative/fluff{
 	anchored = 1;
@@ -2036,7 +1999,6 @@
 	icon_state = "siding_plain_corner";
 	dir = 1;
 	color = "#b9b3b3";
-	layer = 3.4;
 	pixel_x = 27;
 	pixel_y = 0
 	},
@@ -2046,7 +2008,6 @@
 	icon_state = "siding_plain_corner";
 	dir = 4;
 	color = "#b9b3b3";
-	layer = 3.4;
 	pixel_x = -27;
 	pixel_y = 0
 	},
@@ -2056,7 +2017,6 @@
 	icon_state = "siding_plain_corner";
 	dir = 2;
 	color = "#b9b3b3";
-	layer = 3.4;
 	pixel_x = -27;
 	pixel_y = 0
 	},
@@ -2066,12 +2026,13 @@
 	icon_state = "siding_plain_corner";
 	dir = 8;
 	color = "#b9b3b3";
-	layer = 3.4;
 	pixel_x = 27;
 	pixel_y = 0
 	},
-/obj/effect/spawner/structure/window/reinforced/shuttle,
-/turf/open/floor/plating,
+/turf/closed/wall/mineral/titanium/shuttle_wall/window/evac{
+	icon_state = "1,12";
+	dir = 2
+	},
 /area/shuttle/serenity2/midship)
 "Yn" = (
 /obj/structure/lattice,
