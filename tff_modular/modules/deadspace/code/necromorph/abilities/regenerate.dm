@@ -2,7 +2,6 @@
 	name = "Regenerate"
 	desc = "Regrows a missing limb and restores some of your health."
 	cooldown_time = 10 SECONDS
-	activate_keybind = COMSIG_KB_NECROMORPH_ABILITY_REGENERATE_DOWN
 	var/duration = 5 SECONDS
 
 	/// How many limbs can be regenerated per use

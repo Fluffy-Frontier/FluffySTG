@@ -71,11 +71,11 @@
 	skipcatch = TRUE
 	.=..()
 
-/mob/living/carbon/human/necromorph/adjustToxLoss(amount, updating_health = TRUE, forced = FALSE, required_biotype = ALL)
+/mob/living/carbon/human/necromorph/can_adjust_tox_loss(amount, forced, required_biotype)
 	return FALSE
 
-/mob/living/carbon/human/necromorph/setStaminaLoss(amount, updating_stamina = TRUE, forced = FALSE, required_biotype = ALL)
-	return FALSE
+/mob/living/carbon/human/necromorph/can_adjust_stamina_loss(amount, forced, required_biotype)
+	return 0
 
-/mob/living/carbon/human/necromorph/soundbang_act(intensity = 1, stun_pwr = 20, damage_pwr = 5, deafen_pwr = 15)
+/mob/living/carbon/human/necromorph/soundbang_act(intensity, stun_pwr, damage_pwr, deafen_pwr)
 	return 0

@@ -5,7 +5,6 @@
 
 /datum/action/cooldown/necro
 	background_icon_state = "bg_demon"
-	var/activate_keybind = null
 
 /datum/action/cooldown/necro/New(Target, original, cooldown)
 	. = ..()
@@ -16,13 +15,6 @@
 	.=..()
 	if(!owner)
 		return
-	if(!isnull(activate_keybind))
-		RegisterSignal(granted_to, activate_keybind, TYPE_PROC_REF(/datum/action/cooldown/necro, TriggerOnKeybindSignal))
-
-/datum/action/cooldown/necro/Remove(mob/removed_from)
-	if(!isnull(activate_keybind))
-		UnregisterSignal(removed_from, activate_keybind)
-	return ..()
 
 /datum/action/cooldown/necro/PreActivate(atom/target)
 	var/mob/living/carbon/human/necromorph/charger = owner

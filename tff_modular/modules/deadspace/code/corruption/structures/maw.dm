@@ -168,7 +168,7 @@
 	if(issilicon(M))
 		to_chat(user, span_warning("[src] refuses to consume [M]!"))
 		return FALSE
-	if(!do_after(user, M, 5 SECONDS, IGNORE_HELD_ITEM|DO_PUBLIC, TRUE, CALLBACK(src, PROC_REF(buckle_mob_check), M)))
+	if(!do_after(user, 5 SECONDS, M, IGNORE_HELD_ITEM|DO_PUBLIC, TRUE, CALLBACK(src, PROC_REF(buckle_mob_check), M)))
 		return
 	return ..()
 
@@ -183,7 +183,7 @@
 	if(buckled_mob.buckled != src || !user.CanReach(buckled_mob))
 		return
 	var/time_to_unbuckle = (buckled_mob == user) ? 8 SECONDS : 6 SECONDS
-	if(!do_after(user, buckled_mob, time_to_unbuckle, IGNORE_HELD_ITEM|DO_PUBLIC, TRUE, CALLBACK(src, PROC_REF(still_buckled), buckled_mob)))
+	if(!do_after(user, time_to_unbuckle, buckled_mob, IGNORE_HELD_ITEM|DO_PUBLIC, TRUE, CALLBACK(src, PROC_REF(still_buckled), buckled_mob)))
 		return
 	return ..()
 
@@ -193,7 +193,7 @@
 /obj/structure/necromorph/maw/relaymove(mob/living/user, direction)
 	if(SEND_SIGNAL(src, COMSIG_ATOM_RELAYMOVE, user, direction) & COMSIG_BLOCK_RELAYMOVE)
 		return
-	if(!do_after(user, src, 2 SECONDS, IGNORE_HELD_ITEM|DO_PUBLIC) || (user.buckled != src))
+	if(!do_after(user, 2 SECONDS, src, IGNORE_HELD_ITEM|DO_PUBLIC) || (user.buckled != src))
 		return
 	unbuckle_mob(user, TRUE)
 

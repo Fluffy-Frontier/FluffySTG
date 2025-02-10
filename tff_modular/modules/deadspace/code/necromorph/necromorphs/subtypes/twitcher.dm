@@ -17,7 +17,7 @@
 
 /mob/living/carbon/human/necromorph/twitcher/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
-	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_twitcher)
+	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_faster)
 
 /mob/living/carbon/human/necromorph/twitcher/bullet_act(obj/projectile/bullet, def_zone, piercing_hit = FALSE)
 	if(stat == DEAD)

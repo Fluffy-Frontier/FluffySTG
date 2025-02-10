@@ -6,9 +6,10 @@
 
 /datum/action/cooldown/necro/psy/rune/Activate(atom/target)
 	var/turf/target_turf = get_turf(target)
-	if(isgroundlessturf(target_turf) || target_turf.density)
-		to_chat(owner, span_warning("There is no space to place a rune!"))
-		return
+	if(target_turf)
+		if(isgroundlessturf(target_turf) || target_turf.density)
+			to_chat(owner, span_warning("There is no space to place a rune!"))
+			return
 	..()
 	new /obj/effect/decal/cleanable/necro_rune(target_turf, null, RUNE_COLOR_MEDIUMRED, TRUE)
 	return TRUE
@@ -20,6 +21,7 @@
 	icon_state = "rune-1"
 	gender = NEUTER
 	mergeable_decal = FALSE
+	color = "#8C000F"
 
 /obj/effect/decal/cleanable/necro_rune/Initialize(mapload, colour, fade_in)
 	. = ..()

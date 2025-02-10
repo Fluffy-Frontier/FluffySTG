@@ -2,7 +2,6 @@
 	name = "Sense"
 	desc = "Reveals nearby living creatures around you to yourself."
 	cooldown_time = 7 SECONDS
-	activate_keybind = COMSIG_KB_NECROMORPH_ABILITY_SENSE_DOWN
 	var/duration = 5 SECONDS
 	var/list/image/trackers = null
 

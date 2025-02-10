@@ -6,9 +6,10 @@
 
 /datum/action/cooldown/necro/psy/scrawl/Activate(atom/target)
 	var/turf/target_turf = get_turf(target)
-	if(isgroundlessturf(target_turf) || target_turf.density)
-		to_chat(owner, span_warning("There is no space to write on!"))
-		return
+	if(target_turf)
+		if(isgroundlessturf(target_turf) || target_turf.density)
+			to_chat(owner, span_warning("There is no space to write on!"))
+			return
 	var/text = tgui_input_text(owner, "Write a message", "Bloody Scrawl")
 	if(!text)
 		return TRUE
@@ -22,10 +23,10 @@
 	desc = "It looks like a writing in blood."
 	icon = 'icons/effects/blood.dmi'
 	gender = NEUTER
-	random_icon_states = list("writing1","writing2","writing3","writing4","writing5")
+	random_icon_states = list("gibbl1","gibbl2","gibbl3","gibbl4")
 	should_dry = FALSE
 	color = COLOR_BLOOD_WRITING
-	transform = matrix(2, 0, 0, 0, 2, 0)
+	transform = matrix(1, 0, 0, 0, 2, 0)
 	var/message
 	var/creator
 

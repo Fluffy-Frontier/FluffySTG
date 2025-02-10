@@ -16,7 +16,6 @@
 
 /datum/action/cooldown/necro/taunt
 	name = "Taunt"
-	activate_keybind = COMSIG_KB_NECROMORPH_ABILITY_TAUNT_DOWN
 	var/status
 	cooldown_time = 20 SECONDS
 	var/duration = 5 MINUTES

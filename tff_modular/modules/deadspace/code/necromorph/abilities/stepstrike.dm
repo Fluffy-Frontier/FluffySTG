@@ -4,7 +4,6 @@
 	desc = "Extremely quickly charge at a target."
 	cooldown_time = 5 SECONDS
 	click_to_activate = TRUE
-	activate_keybind = COMSIG_KB_NECROMORPH_ABILITY_STEPSTRIKE_DOWN
 	charge_delay = 0
 	charge_time = 3 SECONDS
 	charge_speed = 0.5

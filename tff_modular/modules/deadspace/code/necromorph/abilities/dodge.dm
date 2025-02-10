@@ -4,7 +4,6 @@
 	desc = "Allows you to dodge bullets."
 	cooldown_time = 2 SECONDS
 	click_to_activate = TRUE
-	activate_keybind = COMSIG_KB_NECROMORPH_ABILITY_DODGE_DOWN
 
 /datum/action/cooldown/necro/dodge/Activate(atom/target)
 	. = TRUE

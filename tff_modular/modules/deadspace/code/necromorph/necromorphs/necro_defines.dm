@@ -19,7 +19,6 @@
 	//TRUE for now
 	rotate_on_lying = TRUE
 	mob_size = MOB_SIZE_HUMAN
-	see_in_dark = 8
 	appearance_flags = KEEP_TOGETHER|TILE_BOUND|PIXEL_SCALE|LONG_GLIDE
 	hud_type = /datum/hud/necromorph
 	faction = list(FACTION_NECROMORPH)

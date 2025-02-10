@@ -9,7 +9,7 @@
 
 /mob/living/carbon/human/necromorph/slasher/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
-	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_slasher)
+	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_bit_slower)
 
 /mob/living/carbon/human/necromorph/slasher/play_necro_sound(audio_type, volume, vary, extra_range)
 	playsound(src, pick(GLOB.slasher_sounds[audio_type]), volume, vary, extra_range)

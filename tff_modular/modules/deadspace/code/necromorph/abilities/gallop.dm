@@ -5,7 +5,6 @@
 	desc = "Gives a huge burst of speed, while making you vulnerable to crashing into objects."
 	cooldown_time = 12 SECONDS
 	duration_time = 7 SECONDS
-	activate_keybind = COMSIG_KB_NECROMORPH_ABILITY_GALLOP_DOWN
 	var/crash_count = 0
 
 //Worse version of leaper gallop, since hoppers practically move at the speed of sound when galloping

@@ -71,7 +71,6 @@
 	cooldown_time = 3.5 SECONDS
 	windup_time = 0.5 SECONDS
 	projectiletype = /obj/projectile/bullet/biobomb/spitter_longshot
-	activate_keybind = COMSIG_KB_NECROMORPH_ABILITY_LONGSHOT_DOWN
 
 /datum/action/cooldown/necro/shoot/spitter_longshot/pre_fire(atom/target)
 	ADD_TRAIT(owner, TRAIT_IMMOBILIZED, src)
@@ -102,7 +101,6 @@
 	cooldown_time = 3 SECONDS
 	windup_time = 0 SECONDS
 	projectiletype = /obj/projectile/bullet/biobomb/spitter_snapshot
-	activate_keybind = COMSIG_KB_NECROMORPH_ABILITY_SNAPSHOT_DOWN
 
 /datum/action/cooldown/necro/shoot/spitter_snapshot/New(Target, original, cooldown)
 	desc = "A moderate-strength projectile. Auto-aims at targets within [SPITTER_SNAPSHOT_AUTOTARGET_RANGE] range."

@@ -11,6 +11,7 @@
 
 	necro_spawn_atoms += src
 
+	AddComponent(/datum/component/seethrough, SEE_THROUGH_MAP_MARKER)
 	START_PROCESSING(SSobj, src)
 
 /obj/structure/marker/Destroy()
@@ -54,13 +55,13 @@
 	src.log_talk(message, LOG_SAY)
 
 	for(var/mob/ghost as anything in GLOB.dead_mob_list)
-		to_chat(ghost, "[FOLLOW_LINK(ghost, sender)] [message]")
+		to_chat(ghost, "[FOLLOW_LINK(ghost, sender)] [message]", MESSAGE_TYPE_LOCALCHAT)
 
 	for(var/mob/camera/marker_signal/signal as anything in marker_signals)
-		to_chat(signal, message)
+		to_chat(signal, "[FOLLOW_LINK(signal, sender)] [message]", MESSAGE_TYPE_LOCALCHAT)
 
 	for(var/mob/living/carbon/human/necromorph/necro as anything in necromorphs)
-		to_chat(necro, message)
+		to_chat(necro, message, MESSAGE_TYPE_LOCALCHAT)
 
 /obj/structure/marker/proc/add_necro(mob/living/carbon/human/necromorph/necro)
 	// If the necro is part of another hivemind, they should be removed from that one first

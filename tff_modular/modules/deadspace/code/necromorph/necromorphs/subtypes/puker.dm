@@ -7,7 +7,7 @@
 
 /mob/living/carbon/human/necromorph/puker/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
-	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_puker)
+	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_bit_slower)
 	death_sound = pick(
 		'tff_modular/modules/deadspace/sound/effects/creatures/necromorph/puker/puker_death_1.ogg',
 		'tff_modular/modules/deadspace/sound/effects/creatures/necromorph/puker/puker_death_2.ogg',
@@ -75,7 +75,6 @@
 	cooldown_time = 3.5 SECONDS
 	windup_time = 0.5 SECONDS
 	projectiletype = /obj/projectile/bullet/biobomb/puker_longshot
-	activate_keybind = COMSIG_KB_NECROMORPH_ABILITY_LONGSHOT_DOWN
 
 /datum/action/cooldown/necro/shoot/puker_longshot/pre_fire(atom/target)
 	ADD_TRAIT(owner, TRAIT_IMMOBILIZED, src)
@@ -106,7 +105,6 @@
 	cooldown_time = 2.5 SECONDS
 	windup_time = 0 SECONDS
 	projectiletype = /obj/projectile/bullet/biobomb/puker_snapshot
-	activate_keybind = COMSIG_KB_NECROMORPH_ABILITY_SNAPSHOT_DOWN
 
 /datum/action/cooldown/necro/shoot/puker_snapshot/New(Target, original, cooldown)
 	desc = "A moderate-strength projectile that auto-aims at targets within [PUKER_SNAPSHOT_AUTOTARGET_RANGE] range."

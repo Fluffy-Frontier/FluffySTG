@@ -25,7 +25,7 @@ GLOBAL_LIST_EMPTY(markers_signals)
 	var/obj/structure/marker/marker
 	var/static_visibility_range = 16
 	//CSS class used by this signal in the chat
-	var/necrochat_class = "necrosignal"
+	var/necrochat_class = "blob"
 
 /mob/camera/marker_signal/Initialize(mapload, obj/structure/marker/master)
 	visibleChunks = list()
@@ -81,7 +81,7 @@ GLOBAL_LIST_EMPTY(markers_signals)
 	. = ..()
 	if(!. || !client)
 		return FALSE
-	name = "[pick(GLOB.ing_verbs)] [initial(name)]"
+	name = "[pick(GLOB.ing_verbs)] [initial(name)] [rand(0, 999)]"
 
 /mob/camera/marker_signal/process(delta_time)
 	change_psy_energy(psy_energy_generation*delta_time)
@@ -375,7 +375,7 @@ GLOBAL_LIST_EMPTY(markers_signals)
 	pixel_y = -7
 	psy_energy_maximum = 4500
 	psy_energy_generation = 3
-	necrochat_class = "necromarker"
+	necrochat_class = "blobannounce"
 	///Used when spawning necromorphs
 	var/image/necro_preview
 	///Necro class of a necromorph we are going to spawn

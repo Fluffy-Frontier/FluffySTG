@@ -5,7 +5,6 @@
 	desc = "Allows you to charge at a chosen position."
 	cooldown_time = 10 SECONDS
 	click_to_activate = TRUE
-	activate_keybind = COMSIG_KB_NECROMORPH_ABILITY_CHARGE_DOWN
 	/// Delay before the charge actually occurs
 	var/charge_delay = 2 SECONDS
 	/// The maximum amount of time we can charge

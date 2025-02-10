@@ -1,3 +1,6 @@
+/client
+	var/necro_whisper_muted = FALSE
+
 /mob/living/carbon/human/necromorph/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null, filterproof = null, message_range, datum/saymode/saymode, list/message_mods = list())
 	if(!message || stat)
 		return
@@ -15,7 +18,7 @@
 
 	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
 
-	message = "<span class='necromorph'>[name]([client.key]): [message]</span>"
+	message = "<span class='blob'>[name]: [message]</span>"
 
 	marker.hive_mind_message(src, message)
 
@@ -82,7 +85,9 @@ ADMIN_VERB_AND_CONTEXT_MENU(spawn_necromorph, R_ADMIN, "Spawn a necromorph", "Sp
 
 
 ADMIN_VERB_AND_CONTEXT_MENU(brethren_message, R_ADMIN, "Brethren Message", "Send a message to the entire necromorph hive as a brethren moon.", ADMIN_CATEGORY_DEBUG, msg as text)
+	user.brethren_message(msg)
 
+/client/proc/brethren_message(msg as text)
 	if(!msg) //If we have no message we don't want to continue
 		return
 
@@ -96,8 +101,9 @@ ADMIN_VERB_AND_CONTEXT_MENU(brethren_message, R_ADMIN, "Brethren Message", "Send
 
 	msg = trim(copytext_char(sanitize(msg), 1, MAX_MESSAGE_LEN))
 
-	msg = "<span class='brethrenmoon'>Brethren Moons : [msg]</span>"
+	msg = "<span class='blobannounce'>Brethren Moons : [msg]</span>"
 
+	usr.log_talk(msg, LOG_OOC, tag = "Brethren Moons")
 	marker.hive_mind_message(src, msg)
 
 	return TRUE

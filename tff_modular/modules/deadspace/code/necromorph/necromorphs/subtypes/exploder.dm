@@ -15,7 +15,7 @@
 
 /mob/living/carbon/human/necromorph/exploder/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
-	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_exploder)
+	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_slower)
 	death_sound = pick(
 		'tff_modular/modules/deadspace/sound/effects/creatures/necromorph/exploder/exploder_death_1.ogg',
 		'tff_modular/modules/deadspace/sound/effects/creatures/necromorph/exploder/exploder_death_2.ogg',

@@ -12,7 +12,7 @@
 
 /mob/living/carbon/human/necromorph/hunter/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
-	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_hunter)
+	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_slower)
 
 /mob/living/carbon/human/necromorph/hunter/play_necro_sound(audio_type, volume, vary, extra_range)
 	playsound(src, pick(GLOB.hunter_sounds[audio_type]), volume, vary, extra_range)

@@ -11,7 +11,6 @@
 	desc = "The brute's signature move."
 	click_to_activate = TRUE
 	cooldown_time = 8 SECONDS
-	activate_keybind = COMSIG_KB_NECROMORPH_ABILITY_SLAM_DOWN
 
 /datum/action/cooldown/necro/slam/PreActivate(atom/target)
 	target = get_step(owner, get_dir(owner, target))

@@ -3,7 +3,6 @@
 	desc = "An arm swing pulling in all enemies it hits"
 	click_to_activate = TRUE
 	cooldown_time = 8 SECONDS
-	activate_keybind = COMSIG_KB_NECROMORPH_ABILITY_HUNTERSWING_DOWN
 	var/swing_time = 1 SECONDS
 	var/move_time = 2 SECONDS
 	var/angle = 150

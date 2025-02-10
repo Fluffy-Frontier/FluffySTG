@@ -3,7 +3,6 @@
 	desc = "Stab your victim with your tails."
 	click_to_activate = TRUE
 	cooldown_time = 10 SECONDS
-	activate_keybind = COMSIG_KB_NECROMORPH_ABILITY_TAILSTAB_DOWN
 	swing_time = 0.7 SECONDS //ORIGINAL 1.2
 	move_time = 0.5 SECONDS
 	angle = 40
@@ -18,7 +17,6 @@
 	name = "Enhanced Tail Stab"
 	desc = "Stab your victim with your tails, this does more damage and has a wider angle then the usual tail stab."
 	cooldown_time = 9 SECONDS
-	activate_keybind = COMSIG_KB_NECROMORPH_ABILITY_TAILSTAB_DOWN
 	angle = 55
 	visual_type = /obj/effect/temp_visual/swing/leaper/enhanced
 	damage = 50 //Same as enhanced leap

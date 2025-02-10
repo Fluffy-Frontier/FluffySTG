@@ -1,5 +1,5 @@
 /datum/keybinding/marker_signal
-	category = CATEGORY_MISC
+	category = CATEGORY_NECRO
 
 /datum/keybinding/marker_signal/can_use(client/user)
 	return ismarkereye(user.mob)

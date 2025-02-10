@@ -189,6 +189,11 @@ ADMIN_VERB(drop_everything, R_ADMIN, "Drop Everything", ADMIN_VERB_NO_DESCRIPTIO
 		if(MUTE_INTERNET_REQUEST)
 			mute_string = "internet sound requests"
 			feedback_string = "Internet Sound Requests"
+		//FLUFFY FRONTIER ADDITION START - DS13
+		if(MUTE_SIGNAL_WHISPER)
+			mute_string = "Signal whispering"
+			feedback_string = "Whisper"
+		//FLUFFY FRONTIER ADDITION END
 		if(MUTE_ALL)
 			mute_string = "everything"
 			feedback_string = "Everything"

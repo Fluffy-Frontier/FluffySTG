@@ -8,7 +8,6 @@
 	desc = "Shout to disorientate your enemies."
 	cooldown_time = 8 SECONDS
 	click_to_activate = FALSE
-	activate_keybind = COMSIG_KB_NECROMORPH_ABILITY_SHOUT_DOWN
 
 /datum/action/cooldown/necro/shout/Activate(atom/target)
 	StartCooldown()
@@ -35,7 +34,6 @@
 	desc = "Scream to disorientate your enemies."
 	cooldown_time = 8 SECONDS
 	click_to_activate = FALSE
-	activate_keybind = COMSIG_KB_NECROMORPH_ABILITY_SCREAM_DOWN
 
 /datum/action/cooldown/necro/scream/Activate(atom/target)
 	StartCooldown()

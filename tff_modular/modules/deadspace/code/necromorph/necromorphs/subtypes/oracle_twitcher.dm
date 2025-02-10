@@ -11,7 +11,7 @@
 
 /mob/living/carbon/human/necromorph/twitcher/enhanced/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
-	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_e_twitcher) //Pretty close to the speed of a human
+	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_much_faster) //Pretty close to the speed of a human
 
 /datum/necro_class/twitcher/enhanced
 	display_name = "Oracle Twitcher"

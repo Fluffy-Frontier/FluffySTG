@@ -5,6 +5,9 @@
 	cost = 30
 
 /datum/action/cooldown/necro/psy/whisper/PreActivate(mob/living/target)
+	if(owner.client.prefs.muted & MUTE_SIGNAL_WHISPER)
+		to_chat(owner, span_danger("You cannot send Signal Whisper messages (muted)."), confidential = TRUE)
+		return
 	if(!istype(target))
 		return FALSE
 	if(!target.client)
@@ -18,5 +21,6 @@
 	if(!message)
 		return TRUE
 	.=..()
-	to_chat(target, "<span class='necromorph'>[message]</span>")
-	signal.marker.hive_mind_message(signal, "[signal] -> [target] <span class='necromorph'>[message]</span>")
+	log_directed_talk(owner, target, message, LOG_SAY, tag = "signal whisper")
+	to_chat(target, "<span class='hypnophrase'>[message]</span>")
+	signal.marker.hive_mind_message(signal, "[signal] -> [target] <span class='hypnophrase'>[message]</span>")
