@@ -189,7 +189,7 @@
 /obj/structure/fans/tiny/forcefield,
 /obj/machinery/door/poddoor{
 	id = "blackmarket_shuttlebay_poddoors";
-	name = "dusty blast door"
+	name = "Dusty Blast Door"
 	},
 /turf/open/floor/plating/reinforced,
 /area/ruin/space/has_grav/nova/blackmarket)
@@ -248,10 +248,7 @@
 "cz" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/spawner/directional/east,
-/obj/structure/barricade/wooden{
-	layer = 4.31;
-	pixel_x = -16
-	},
+/obj/structure/barricade/wooden,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/blackmarket)
 "cU" = (
@@ -269,28 +266,7 @@
 	icon = 'icons/turf/decals.dmi';
 	icon_state = "siding_wideplating_new_corner";
 	color = "#45464a";
-	pixel_x = -32;
-	pixel_y = 32;
-	layer = 3.5
-	},
-/obj/structure/decorative{
-	anchored = 1;
-	name = "wall segment";
-	icon = 'icons/turf/decals.dmi';
-	icon_state = "siding_wideplating_new_corner";
-	color = "#45464a";
 	dir = 4
-	},
-/obj/structure/decorative{
-	anchored = 1;
-	name = "wall segment";
-	icon = 'icons/turf/decals.dmi';
-	icon_state = "siding_wideplating_new_corner";
-	color = "#45464a";
-	dir = 4;
-	pixel_x = 32;
-	pixel_y = 32;
-	layer = 3.5
 	},
 /turf/closed/wall,
 /area/ruin/space/has_grav/nova/blackmarket)
@@ -341,17 +317,16 @@
 /obj/effect/turf_decal/siding/wideplating/corner{
 	dir = 4
 	},
-/obj/structure/filingcabinet{
-	pixel_x = -10
+/obj/structure/fluff/paper{
+	dir = 6
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/filingcabinet/chestdrawer{
 	pixel_x = 6
 	},
-/obj/structure/fluff/paper{
-	dir = 6;
-	layer = 2
+/obj/structure/filingcabinet{
+	pixel_x = -10
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/shuttle/exploration/corner{
 	dir = 1
 	},
@@ -410,17 +385,6 @@
 /turf/open/floor/iron/shuttle/exploration/side,
 /area/ruin/space/has_grav/nova/blackmarket)
 "dC" = (
-/obj/structure/decorative{
-	anchored = 1;
-	name = "wall segment";
-	icon = 'icons/turf/decals.dmi';
-	icon_state = "siding_wideplating_new_corner";
-	color = "#45464a";
-	dir = 1;
-	pixel_x = 32;
-	pixel_y = -32;
-	layer = 3.5
-	},
 /obj/structure/decorative{
 	anchored = 1;
 	name = "wall segment";
@@ -572,19 +536,6 @@
 /turf/open/floor/iron/shuttle/exploration/corner{
 	dir = 8
 	},
-/area/ruin/space/has_grav/nova/blackmarket)
-"fr" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/spawner/directional/east,
-/obj/structure/barricade/wooden{
-	layer = 4.31;
-	pixel_x = -16
-	},
-/obj/structure/barricade/wooden/crude{
-	layer = 4.31;
-	pixel_x = -7
-	},
-/turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/blackmarket)
 "fB" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -886,7 +837,7 @@
 /area/ruin/space/has_grav/nova/blackmarket)
 "iW" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	name = "exterior airlock";
+	name = "Exterior Airlock";
 	id_tag = "bunker_entrancebolt_1"
 	},
 /obj/effect/turf_decal/trimline/dark/filled/corner,
@@ -915,33 +866,11 @@
 	pixel_y = -1
 	},
 /obj/structure/fluff/paper{
-	dir = 4;
-	layer = 2
+	dir = 4
 	},
 /turf/open/floor/iron/shuttle/exploration/invertcorner_side{
 	dir = 8
 	},
-/area/ruin/space/has_grav/nova/blackmarket)
-"jo" = (
-/obj/structure/decorative{
-	anchored = 1;
-	name = "wall segment";
-	icon = 'icons/turf/decals.dmi';
-	icon_state = "siding_wideplating_new_corner";
-	color = "#45464a"
-	},
-/obj/structure/decorative{
-	anchored = 1;
-	name = "wall segment";
-	icon = 'icons/turf/decals.dmi';
-	icon_state = "siding_wideplating_new_corner";
-	color = "#45464a";
-	dir = 1;
-	pixel_x = 32;
-	pixel_y = -32;
-	layer = 3.5
-	},
-/turf/closed/wall,
 /area/ruin/space/has_grav/nova/blackmarket)
 "jp" = (
 /obj/machinery/atmospherics/components/binary/pump/on/general/hidden/layer4,
@@ -993,7 +922,6 @@
 "jH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/misc/asteroid,
@@ -1069,12 +997,6 @@
 /area/ruin/space)
 "lk" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/grille/broken{
-	layer = 2.69
-	},
-/obj/structure/girder/reinforced{
-	layer = 2.6
-	},
 /obj/item/stack/sheet/plasteel{
 	amount = 2;
 	pixel_x = -7;
@@ -1083,15 +1005,17 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/girder/reinforced,
+/obj/structure/grille/broken,
 /turf/open/misc/asteroid,
 /area/ruin/space/has_grav/nova/blackmarket)
 "lo" = (
-/obj/machinery/door/window/brigdoor/right/directional/west,
 /obj/structure/closet/shuttle/engivent{
 	pixel_y = 27
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/door/window/brigdoor/left/directional/west,
 /turf/open/floor/iron/shuttle/exploration/uside,
 /area/ruin/space/has_grav/nova/blackmarket)
 "lP" = (
@@ -1136,17 +1060,20 @@
 "mh" = (
 /obj/item/computer_disk{
 	pixel_y = -7;
-	pixel_x = -13
+	pixel_x = -13;
+	name = "old movie disk"
 	},
 /obj/item/computer_disk{
 	pixel_y = -3;
 	pixel_x = -11;
-	layer = 3.01
+	icon_state = "datadisk9";
+	name = "old movie disk";
+	desc = "Removable disk used to store data. There's something written on it with a pen: <b>Future's Edge</b>."
 	},
 /obj/item/computer_disk{
 	pixel_y = 1;
 	pixel_x = -12;
-	layer = 3.02
+	name = "old movie disk"
 	},
 /obj/effect/turf_decal/trimline/dark_green/filled/corner{
 	dir = 8
@@ -1199,8 +1126,7 @@
 /area/ruin/space/has_grav/nova/blackmarket)
 "mX" = (
 /obj/structure/fluff/paper/corner{
-	dir = 1;
-	layer = 2
+	dir = 1
 	},
 /obj/machinery/light/small/red/dim/directional/west,
 /obj/structure/broken_flooring/plating/directional/west,
@@ -1211,8 +1137,7 @@
 	icon = 'icons/turf/decals.dmi';
 	icon_state = "siding_wideplating_new_corner";
 	color = "#45464a";
-	dir = 1;
-	layer = 4.26
+	dir = 1
 	},
 /obj/effect/decal/cleanable/cobweb{
 	pixel_y = 0
@@ -1287,10 +1212,6 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/space/has_grav/nova/blackmarket)
 "nw" = (
-/obj/structure/flora/rock/style_4{
-	pixel_y = 21;
-	layer = 2.7
-	},
 /obj/structure/table/reinforced{
 	color = "#f7f0e2"
 	},
@@ -1345,14 +1266,11 @@
 /area/ruin/space/has_grav/nova/blackmarket)
 "oe" = (
 /obj/structure/grille,
-/obj/structure/window/reinforced/spawner/directional/east,
-/obj/structure/barricade/wooden{
-	layer = 4.31;
-	pixel_x = -16
-	},
 /obj/machinery/light/small/dim/directional/west{
 	pixel_x = 16
 	},
+/obj/structure/barricade/wooden/crude,
+/obj/structure/window/reinforced/spawner/directional/east,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/blackmarket)
 "of" = (
@@ -1407,12 +1325,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/wood/tile,
-/area/ruin/space/has_grav/nova/blackmarket)
-"pa" = (
-/obj/structure/window/reinforced/survival_pod/spawner/directional/west{
-	pixel_x = -4
-	},
-/turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/nova/blackmarket)
 "ph" = (
 /obj/structure/bed/maint,
@@ -1606,16 +1518,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/blackmarket)
 "rE" = (
-/obj/structure/decorative{
-	anchored = 1;
-	name = "wall segment";
-	icon = 'icons/turf/decals.dmi';
-	icon_state = "siding_wideplating_new_corner";
-	color = "#45464a";
-	pixel_x = -32;
-	pixel_y = 32;
-	layer = 3.5
-	},
 /obj/structure/decorative{
 	anchored = 1;
 	name = "wall segment";
@@ -1852,11 +1754,9 @@
 /area/ruin/space/has_grav/nova/blackmarket)
 "uO" = (
 /obj/structure/fluff/paper{
-	dir = 9;
-	layer = 2
+	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/filingcabinet/chestdrawer/wheeled,
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 9
 	},
@@ -1866,6 +1766,7 @@
 /obj/effect/turf_decal/siding/dark_red/corner{
 	dir = 4
 	},
+/obj/structure/filingcabinet/chestdrawer/wheeled,
 /turf/open/floor/iron/shuttle/exploration/corner,
 /area/ruin/space/has_grav/nova/blackmarket)
 "uQ" = (
@@ -1916,9 +1817,7 @@
 /area/ruin/space/has_grav/nova/blackmarket)
 "vd" = (
 /obj/machinery/light/small/dim/directional/south,
-/obj/structure/fluff/paper{
-	layer = 2
-	},
+/obj/structure/fluff/paper,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/shuttle/exploration/side{
 	dir = 1
@@ -1947,8 +1846,7 @@
 	dir = 4
 	},
 /obj/structure/fluff/paper/corner{
-	dir = 4;
-	layer = 2
+	dir = 4
 	},
 /obj/effect/turf_decal/siding/dark_red/corner{
 	dir = 1
@@ -2277,7 +2175,9 @@
 /turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/nova/blackmarket)
 "yp" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	name = "Shuttle Bay"
+	},
 /obj/effect/turf_decal/siding/dark_red/corner{
 	dir = 4
 	},
@@ -2332,7 +2232,7 @@
 /area/ruin/space/has_grav/nova/blackmarket)
 "zt" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	name = "exterior airlock";
+	name = "Exterior Airlock";
 	id_tag = "bunker_entrancebolt_1"
 	},
 /obj/structure/fans/tiny,
@@ -2408,9 +2308,7 @@
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/nova/blackmarket)
 "zU" = (
-/obj/structure/girder/reinforced{
-	layer = 2.6
-	},
+/obj/structure/girder/reinforced,
 /obj/item/stack/sheet/plasteel{
 	amount = 2;
 	pixel_x = 8;
@@ -2445,8 +2343,7 @@
 	},
 /obj/item/ph_booklet{
 	pixel_x = -10;
-	pixel_y = -6;
-	layer = 2.89
+	pixel_y = -6
 	},
 /obj/structure/grille/broken,
 /obj/item/stack/sheet/spaceship{
@@ -2584,7 +2481,7 @@
 /obj/structure/fans/tiny/forcefield,
 /obj/machinery/door/poddoor{
 	id = "blackmarket_shuttlebay_poddoors";
-	name = "dusty blast door"
+	name = "Dusty Blast Door"
 	},
 /obj/structure/marker_beacon/teal{
 	pixel_x = 16;
@@ -2671,8 +2568,7 @@
 "BX" = (
 /obj/machinery/light/small/directional/west,
 /obj/structure/fluff/paper/corner{
-	dir = 4;
-	layer = 2
+	dir = 4
 	},
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 8
@@ -2784,8 +2680,7 @@
 /area/ruin/space/has_grav/nova/blackmarket)
 "DD" = (
 /obj/structure/flora/rock/style_4{
-	pixel_y = 15;
-	layer = 4.31
+	pixel_y = 15
 	},
 /obj/structure/decorative{
 	icon = 'icons/obj/weapons/turrets.dmi';
@@ -2793,8 +2688,7 @@
 	anchored = 1;
 	name = "ancient turret";
 	pixel_y = 4;
-	dir = 10;
-	layer = 4.31
+	dir = 10
 	},
 /obj/effect/decal/fakelattice/passthru,
 /obj/structure/decorative{
@@ -2803,8 +2697,7 @@
 	anchored = 1;
 	name = "ancient turret";
 	pixel_y = 4;
-	dir = 10;
-	layer = 4.31
+	dir = 10
 	},
 /turf/open/misc/asteroid/airless,
 /area/ruin/space)
@@ -2884,8 +2777,7 @@
 /area/ruin/space)
 "Ec" = (
 /obj/structure/fluff/paper/stack{
-	dir = 8;
-	layer = 2
+	dir = 8
 	},
 /turf/open/floor/iron/shuttle/exploration/side,
 /area/ruin/space/has_grav/nova/blackmarket)
@@ -2901,14 +2793,14 @@
 /area/ruin/space/has_grav/nova/blackmarket)
 "En" = (
 /obj/structure/railing{
-	dir = 6;
-	layer = 4.11
+	dir = 6
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/button/indestructible{
 	pixel_y = 5;
 	name = "Nuclear Strike Confirmation Button";
-	desc = "A button for one of the ancient nuclear silos. By the looks of it, it's been out of order for a long, long time, and has never been pressed once."
+	desc = "A button for one of the ancient nuclear silos. By the looks of it, it's been out of order for a long, long time, and has never been pressed once.";
+	pixel_x = 2
 	},
 /obj/item/stock_parts/subspace/amplifier{
 	pixel_x = 10;
@@ -2919,7 +2811,7 @@
 	dir = 6
 	},
 /obj/item/stamp/solfed{
-	pixel_x = -9;
+	pixel_x = -8;
 	pixel_y = 11
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -3008,17 +2900,6 @@
 /turf/open/floor/iron/shuttle/exploration/uside,
 /area/ruin/space/has_grav/nova/blackmarket)
 "Fh" = (
-/obj/structure/fluff/paper/corner{
-	dir = 1;
-	layer = 2
-	},
-/obj/machinery/door/airlock/maintenance_hatch{
-	name = "Command Center"
-	},
-/obj/structure/fluff/paper/corner{
-	dir = 8;
-	layer = 2.002
-	},
 /obj/effect/turf_decal/trimline/dark/filled/corner,
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 8
@@ -3030,6 +2911,9 @@
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Command Center"
+	},
 /turf/open/floor/iron/shuttle/exploration/doubleside{
 	dir = 4
 	},
@@ -3269,12 +3153,6 @@
 /obj/item/clothing/glasses/science,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/blackmarket)
-"Gn" = (
-/obj/structure/window/reinforced/survival_pod/spawner/directional/east{
-	pixel_x = 4
-	},
-/turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/nova/blackmarket)
 "Gs" = (
 /obj/vehicle/sealed/mecha/ripley/mk2,
 /obj/effect/turf_decal/delivery,
@@ -3417,6 +3295,15 @@
 	pixel_x = 8;
 	pixel_y = 7
 	},
+/obj/structure/broken_flooring/side{
+	dir = 8;
+	color = "#54565e"
+	},
+/obj/item/binoculars{
+	pixel_x = 4;
+	pixel_y = 9
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /obj/item/storage/fancy/cigarettes{
 	pixel_y = 9;
 	pixel_x = -7
@@ -3425,16 +3312,6 @@
 	pixel_y = -2;
 	pixel_x = -4
 	},
-/obj/structure/broken_flooring/side{
-	dir = 8;
-	color = "#54565e"
-	},
-/obj/item/binoculars{
-	pixel_x = 4;
-	pixel_y = 9;
-	layer = 2.99
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/blackmarket)
 "HL" = (
@@ -3668,16 +3545,6 @@
 	color = "#45464a";
 	dir = 8
 	},
-/obj/structure/decorative{
-	anchored = 1;
-	name = "wall segment";
-	icon = 'icons/turf/decals.dmi';
-	icon_state = "siding_wideplating_new_corner";
-	color = "#45464a";
-	pixel_x = -32;
-	pixel_y = 32;
-	layer = 3.5
-	},
 /turf/closed/wall,
 /area/ruin/space/has_grav/nova/blackmarket)
 "Kq" = (
@@ -3713,9 +3580,6 @@
 /turf/open/floor/iron/shuttle/exploration/blanktile,
 /area/ruin/space/has_grav/nova/blackmarket)
 "KN" = (
-/obj/machinery/door/window/brigdoor/right{
-	dir = 4
-	},
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 4
 	},
@@ -3725,6 +3589,7 @@
 /obj/effect/turf_decal/trimline/dark/line,
 /obj/effect/turf_decal/siding/dark_blue/corner,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/window/brigdoor/right/directional/east,
 /turf/open/floor/iron/shuttle/exploration/corner{
 	dir = 1
 	},
@@ -3752,8 +3617,7 @@
 	anchored = 1;
 	name = "ancient turret";
 	pixel_y = 4;
-	dir = 6;
-	layer = 4.31
+	dir = 6
 	},
 /obj/effect/decal/fakelattice/passthru,
 /turf/open/misc/asteroid/airless,
@@ -3852,16 +3716,15 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/space/has_grav/nova/blackmarket)
 "Md" = (
-/obj/structure/grille,
-/obj/structure/barricade/wooden,
 /obj/structure/fluff/paper{
-	dir = 5;
-	layer = 2
+	dir = 5
 	},
 /obj/item/stack/sheet/spaceship{
 	pixel_x = 6;
 	pixel_y = 13
 	},
+/obj/structure/barricade/wooden,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/blackmarket)
 "Mh" = (
@@ -3918,16 +3781,15 @@
 /turf/open/misc/asteroid/airless,
 /area/ruin/space)
 "Mv" = (
-/obj/machinery/door/window/brigdoor/right/directional/east,
 /obj/structure/fluff/paper/stack{
-	dir = 1;
-	layer = 2
+	dir = 1
 	},
 /obj/structure/closet/shuttle/engivent{
 	pixel_y = 27
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/door/window/brigdoor/right/directional/east,
 /turf/open/floor/iron/shuttle/exploration/uside,
 /area/ruin/space/has_grav/nova/blackmarket)
 "Mx" = (
@@ -4001,8 +3863,7 @@
 "MT" = (
 /obj/structure/table,
 /obj/structure/fluff/paper/corner{
-	dir = 8;
-	layer = 2
+	dir = 8
 	},
 /obj/machinery/light/small/dim/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4010,7 +3871,10 @@
 	pixel_x = -9;
 	pixel_y = 7
 	},
-/obj/effect/spawner/random/weapon/black_market_trader,
+/obj/item/pen/fourcolor{
+	pixel_y = -2;
+	pixel_x = -8
+	},
 /turf/open/floor/iron/shuttle/exploration/side{
 	dir = 1
 	},
@@ -4164,8 +4028,7 @@
 "PB" = (
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/fluff/paper/stack{
-	dir = 10;
-	layer = 2
+	dir = 10
 	},
 /turf/open/floor/iron/shuttle/exploration/invertcorner_side_flipped{
 	dir = 4
@@ -4206,10 +4069,8 @@
 	dir = 1
 	},
 /obj/structure/fluff/paper{
-	dir = 10;
-	layer = 2
+	dir = 10
 	},
-/obj/structure/table,
 /obj/item/wallframe/noticeboard{
 	pixel_y = -23
 	},
@@ -4218,10 +4079,7 @@
 	pixel_x = 5;
 	pixel_y = 8
 	},
-/obj/item/pen/fourcolor{
-	pixel_y = -2;
-	pixel_x = -8
-	},
+/obj/structure/table,
 /turf/open/floor/iron/shuttle/exploration/corner{
 	dir = 4
 	},
@@ -4391,9 +4249,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
-/obj/structure/closet/secure_closet/personal/cabinet{
-	layer = 2.91
-	},
+/obj/structure/closet/secure_closet/personal/cabinet,
 /turf/open/floor/carpet/green,
 /area/ruin/space/has_grav/nova/blackmarket)
 "SA" = (
@@ -4464,25 +4320,11 @@
 	icon = 'icons/turf/decals.dmi';
 	icon_state = "siding_wideplating_new_corner";
 	color = "#45464a";
-	dir = 8;
-	pixel_x = -32;
-	pixel_y = -32;
-	layer = 3.5
-	},
-/obj/structure/decorative{
-	anchored = 1;
-	name = "wall segment";
-	icon = 'icons/turf/decals.dmi';
-	icon_state = "siding_wideplating_new_corner";
-	color = "#45464a";
 	dir = 4
 	},
 /turf/closed/wall,
 /area/ruin/space/has_grav/nova/blackmarket)
 "Tu" = (
-/obj/machinery/door/window/brigdoor/left{
-	dir = 4
-	},
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 4
 	},
@@ -4503,6 +4345,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/door/window/brigdoor/left/directional/east,
 /turf/open/floor/iron/shuttle/exploration/corner{
 	dir = 8
 	},
@@ -4533,8 +4376,7 @@
 	anchored = 1;
 	name = "ancient turret";
 	pixel_y = 4;
-	dir = 9;
-	layer = 4.31
+	dir = 9
 	},
 /obj/effect/decal/fakelattice/passthru,
 /turf/open/misc/asteroid/airless,
@@ -4935,7 +4777,7 @@
 /area/ruin/space/has_grav/nova/blackmarket)
 "XY" = (
 /obj/machinery/door/airlock/maintenance_hatch{
-	name = "Bathroom"
+	name = "Restroom"
 	},
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 1
@@ -4985,8 +4827,7 @@
 /area/ruin/space/has_grav/nova/blackmarket)
 "Yn" = (
 /obj/structure/railing{
-	dir = 10;
-	layer = 4.11
+	dir = 10
 	},
 /obj/structure/chair/office{
 	dir = 1
@@ -4994,9 +4835,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 10
 	},
-/obj/structure/fluff/paper/stack{
-	layer = 2
-	},
+/obj/structure/fluff/paper/stack,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/carpet/black,
@@ -5043,12 +4882,12 @@
 /obj/effect/turf_decal/siding/blue{
 	dir = 6
 	},
-/obj/machinery/door/window/brigdoor/left/directional/south,
 /obj/effect/turf_decal/trimline/blue/line{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/door/window/brigdoor/left/directional/south,
 /turf/open/floor/iron/white/textured,
 /area/ruin/space/has_grav/nova/blackmarket)
 "YR" = (
@@ -5095,12 +4934,8 @@
 	},
 /area/ruin/space/has_grav/nova/blackmarket)
 "Zo" = (
-/obj/structure/fluff/paper/corner{
-	layer = 2
-	},
-/obj/structure/fluff/paper/stack{
-	layer = 2
-	},
+/obj/structure/fluff/paper/corner,
+/obj/structure/fluff/paper/stack,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/shuttle/exploration/adjinvcorner{
@@ -5131,6 +4966,7 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/spawner/random/weapon/black_market_trader,
 /turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/nova/blackmarket)
 "Zx" = (
@@ -5531,10 +5367,10 @@ Ab
 Ab
 Ab
 Ab
-fr
+cz
 oe
 cz
-fr
+cz
 Ab
 tX
 Ab
@@ -6097,7 +5933,7 @@ TB
 cd
 ZT
 Ab
-jo
+NU
 HX
 VH
 vX
@@ -6214,7 +6050,7 @@ Ab
 Bh
 da
 GL
-jo
+NU
 Fc
 ZD
 Jp
@@ -6560,7 +6396,7 @@ MA
 SF
 tX
 mI
-Gn
+mI
 mI
 mI
 mI
@@ -6582,7 +6418,7 @@ nw
 jH
 IQ
 mI
-Gn
+mI
 mI
 tX
 tX
@@ -7160,7 +6996,7 @@ MA
 SF
 tX
 mI
-pa
+mI
 mI
 IQ
 IQ
@@ -7182,7 +7018,7 @@ IQ
 IQ
 IQ
 mI
-pa
+mI
 mI
 tX
 MA
