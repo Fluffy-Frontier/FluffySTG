@@ -16,87 +16,70 @@
 /datum/loadout_item/suit/teshari_furcoat
 	name = "Tenka Fabric Coat"
 	item_path= /obj/item/clothing/suit/teshari/furcoat
-	donator_only = TRUE
 
 /datum/loadout_item/suit/teshari_labcoat
 	name = "Lab Coat"
 	item_path= /obj/item/clothing/suit/teshari/labcoat
-	donator_only = TRUE
 
 /datum/loadout_item/suit/teshari_graycoat
 	name = "Grey Coat"
 	item_path= /obj/item/clothing/suit/teshari/graycoat
-	donator_only = TRUE
 
 /datum/loadout_item/suit/teshari_jacket
 	name = "Black Jacket FZ"
 	item_path= /obj/item/clothing/suit/teshari/jacket
-	donator_only = TRUE
 
 /datum/loadout_item/suit/teshari_jacket/noblue
 	name = "Black Jacket FZ"
 	item_path = /obj/item/clothing/suit/teshari/jacket/noblue
-	donator_only = TRUE
 
 /datum/loadout_item/suit/teshari_russian_jacket
 	name = "Russian Raptor Coat"
 	item_path= /obj/item/clothing/suit/teshari/russian_jacket
-	donator_only = TRUE
 
 /datum/loadout_item/suit/teshari_aqua_cloak // тут действительно в виде suit.
 	name = "Short Shirt FZ"
 	item_path= /obj/item/clothing/suit/teshari/aqua_cloak // тут действительно в виде suit.
-	donator_only = TRUE
 
 /datum/loadout_item/under/miscellaneous/teshari_consultant
 	name = "Crocs Suit"
 	item_path= /obj/item/clothing/under/teshari/consultant
-	donator_only = TRUE
 
 /datum/loadout_item/under/miscellaneous/teshari_consultant/female
 	name = "Crocs Skirt"
 	item_path= /obj/item/clothing/under/teshari/consultant/female
-	donator_only = TRUE
 
 /datum/loadout_item/under/miscellaneous/teshari_nt_combineso
 	name = "Combeniso NT"
 	item_path= /obj/item/clothing/under/teshari/nt_combineso
-	donator_only = TRUE
 
 /datum/loadout_item/under/miscellaneous/teshari_meme
 	name = "Shirt and Shorts"
 	item_path= /obj/item/clothing/under/teshari/meme
-	donator_only = TRUE
 
 /datum/loadout_item/under/miscellaneous/teshari_elite_suit
 	name = "Elite Feathered"
 	item_path= /obj/item/clothing/under/teshari/elite_suit
-	donator_only = TRUE
 
 /datum/loadout_item/under/miscellaneous/teshari_elite_suit/plus
 	name = "Elite Feathered+"
 	item_path= /obj/item/clothing/under/teshari/elite_suit/plus
-	donator_only = TRUE
 
 /datum/loadout_item/under/miscellaneous/teshari_waistcoat
 	name = "Delicate Suit"
 	item_path= /obj/item/clothing/under/teshari/waistcoat
-	donator_only = TRUE
 
 /datum/loadout_item/under/miscellaneous/teshari_mechsuit
 	name = "Rivka"
 	item_path= /obj/item/clothing/under/teshari/mechsuit
-	donator_only = TRUE
 
 /datum/loadout_item/neck/teshari_tenkacoat
 	name = "Small cloak"
 	item_path= /obj/item/clothing/neck/cloak/teshari/tenkacoat
-	donator_only = TRUE
 
 /datum/loadout_item/toys/oktavia
 	name = "Oktavia"
 	item_path= /obj/item/toy/plush/oktavia
-	donator_only = TRUE
 
 /datum/loadout_item/toys/maru
 	name = "Maru Plushie"
