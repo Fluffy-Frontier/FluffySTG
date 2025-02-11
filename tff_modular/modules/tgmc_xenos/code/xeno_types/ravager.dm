@@ -9,23 +9,24 @@
 	maxHealth = 350
 	health = 350
 	icon_state = "alienravager"
+	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 30
 	melee_damage_upper = 35
+
+	additional_organ_types_by_slot = list(
+		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel
+	)
 
 /mob/living/carbon/alien/adult/tgmc/ravager/Initialize(mapload)
 	. = ..()
 	var/static/list/innate_actions = list(
-		/datum/action/cooldown/spell/aoe/repulse/xeno/nova_tailsweep/slicing,
-		/datum/action/cooldown/alien/nova/literally_too_angry_to_die,
+		/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/slicing,
+		/datum/action/cooldown/alien/tgmc/literally_too_angry_to_die,
 		/datum/action/cooldown/mob_cooldown/charge/triple_charge/ravager,
 	)
 	grant_actions_by_list(innate_actions)
 
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
-
-/mob/living/carbon/alien/adult/tgmc/ravager/create_internal_organs()
-	organs += new /obj/item/organ/alien/plasmavessel
-	..()
 
 /datum/action/cooldown/mob_cooldown/charge/triple_charge/ravager
 	name = "Triple Charge Attack"
@@ -47,7 +48,7 @@
 	. = ..()
 	return TRUE
 
-/datum/action/cooldown/spell/aoe/repulse/xeno/nova_tailsweep/slicing
+/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/slicing
 	name = "Slicing Tail Sweep"
 	desc = "Throw back attackers with a swipe of your tail, slicing them with its sharpened tip."
 
@@ -67,7 +68,7 @@
 	icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
 	icon_state = "slice_tail_anim"
 
-/datum/action/cooldown/alien/nova/literally_too_angry_to_die
+/datum/action/cooldown/alien/tgmc/literally_too_angry_to_die
 	name = "Endure"
 	desc = "Imbue your body with unimaginable amounts of rage (and plasma) to allow yourself to ignore all pain for a short time."
 	button_icon_state = "literally_too_angry"
@@ -77,7 +78,7 @@
 	/// How long the endure ability should last when activated
 	var/endure_duration = 20 SECONDS
 
-/datum/action/cooldown/alien/nova/literally_too_angry_to_die/Activate()
+/datum/action/cooldown/alien/tgmc/literally_too_angry_to_die/Activate()
 	. = ..()
 	if(endure_active)
 		owner.balloon_alert(owner, "already enduring")
@@ -93,7 +94,7 @@
 	endure_active = TRUE
 	return TRUE
 
-/datum/action/cooldown/alien/nova/literally_too_angry_to_die/proc/endure_deactivate()
+/datum/action/cooldown/alien/tgmc/literally_too_angry_to_die/proc/endure_deactivate()
 	endure_active = FALSE
 	owner.balloon_alert(owner, "endure ended")
 	owner.remove_filter(RAVAGER_OUTLINE_EFFECT)

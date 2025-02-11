@@ -21,7 +21,6 @@
 	desc = "A strange box containing wood working tools and an instruction paper to turn stun batons into something else."
 	icon = 'icons/obj/storage/box.dmi'
 	icon_state = "alienbox"
-	custom_price = PAYCHECK_COMMAND * 4.5
 
 /datum/crafting_recipe/berdish
 	name = "Berdish"

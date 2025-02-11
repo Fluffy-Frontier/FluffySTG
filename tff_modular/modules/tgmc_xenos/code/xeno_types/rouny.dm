@@ -11,11 +11,15 @@
 	health = 150
 	icon_state = "alienrunner"
 	/// Holds the evade ability to be granted to the runner later
-	var/datum/action/cooldown/alien/nova/evade/evade_ability
+	var/datum/action/cooldown/alien/tgmc/evade/evade_ability
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 	next_evolution = /mob/living/carbon/alien/adult/tgmc/ravager
 	on_fire_pixel_y = 0
+
+	additional_organ_types_by_slot = list(
+		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/small/tiny,
+	)
 
 /mob/living/carbon/alien/adult/tgmc/runner/Initialize(mapload)
 	. = ..()
@@ -25,11 +29,7 @@
 
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_quick)
 
-/mob/living/carbon/alien/adult/tgmc/runner/create_internal_organs()
-	organs += new /obj/item/organ/alien/plasmavessel/small/tiny
-	..()
-
-/datum/action/cooldown/alien/nova/evade
+/datum/action/cooldown/alien/tgmc/evade
 	name = "Evade"
 	desc = "Allows you to evade any projectile that would hit you for a few seconds."
 	button_icon_state = "evade"
@@ -40,7 +40,7 @@
 	/// How long evasion should last
 	var/evasion_duration = 10 SECONDS
 
-/datum/action/cooldown/alien/nova/evade/Activate()
+/datum/action/cooldown/alien/tgmc/evade/Activate()
 	. = ..()
 	if(evade_active) //Can't evade while we're already evading.
 		owner.balloon_alert(owner, "already evading")
@@ -58,17 +58,17 @@
 	return TRUE
 
 /// Handles deactivation of the xeno evasion ability, mainly unregistering the signal and giving a balloon alert
-/datum/action/cooldown/alien/nova/evade/proc/evasion_deactivate()
+/datum/action/cooldown/alien/tgmc/evade/proc/evasion_deactivate()
 	evade_active = FALSE
 	owner.balloon_alert(owner, "evasion ended")
 	UnregisterSignal(owner, COMSIG_PROJECTILE_ON_HIT)
 
-/datum/action/cooldown/alien/nova/evade/proc/give_back_ventcrawl()
+/datum/action/cooldown/alien/tgmc/evade/proc/give_back_ventcrawl()
 	ADD_TRAIT(owner, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 	to_chat(owner, span_notice("We are rested enough to crawl through vents again."))
 
 /// Handles if either BULLET_ACT_HIT or BULLET_ACT_FORCE_PIERCE happens to something using the xeno evade ability
-/datum/action/cooldown/alien/nova/evade/proc/on_projectile_hit()
+/datum/action/cooldown/alien/tgmc/evade/proc/on_projectile_hit()
 	if(owner.build_incapacitated(INCAPABLE_GRAB) || !isturf(owner.loc) || !evade_active)
 		return BULLET_ACT_HIT
 
