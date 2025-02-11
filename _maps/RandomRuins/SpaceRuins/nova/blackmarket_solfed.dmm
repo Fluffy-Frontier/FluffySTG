@@ -115,9 +115,6 @@
 /obj/structure/window/reinforced/tinted/frosted/spawner/directional/north{
 	pixel_y = 7
 	},
-/obj/structure/transport/linear/tram/corner/northeast{
-	pixel_y = 38
-	},
 /obj/structure/fluff/metalpole/anchor{
 	dir = 1;
 	pixel_y = -39
@@ -164,9 +161,6 @@
 	},
 /obj/structure/window/reinforced/tinted/frosted/spawner/directional/north{
 	pixel_y = 7
-	},
-/obj/structure/transport/linear/tram/corner/northeast{
-	pixel_y = 38
 	},
 /obj/structure/fluff/metalpole/anchor{
 	dir = 1;
@@ -1018,6 +1012,16 @@
 /obj/machinery/door/window/brigdoor/left/directional/west,
 /turf/open/floor/iron/shuttle/exploration/uside,
 /area/ruin/space/has_grav/nova/blackmarket)
+"lM" = (
+/obj/structure/decorative{
+	icon = 'icons/obj/tram/tram_structure.dmi';
+	icon_state = "subfloor-corner-nw";
+	anchored = 1;
+	name = "bridge supports";
+	pixel_y = 6
+	},
+/turf/template_noop,
+/area/ruin/space)
 "lP" = (
 /obj/structure/flora/rock/icy/style_3{
 	pixel_y = -2;
@@ -1398,6 +1402,16 @@
 	},
 /turf/open/misc/asteroid,
 /area/ruin/space/has_grav/nova/blackmarket)
+"pW" = (
+/obj/structure/decorative{
+	icon = 'icons/obj/tram/tram_structure.dmi';
+	icon_state = "subfloor-corner-ne";
+	anchored = 1;
+	name = "bridge supports";
+	pixel_y = 6
+	},
+/turf/template_noop,
+/area/ruin/space)
 "qt" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 9
@@ -1451,13 +1465,6 @@
 	},
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /turf/open/floor/iron/shuttle/exploration/doubleside,
-/area/ruin/space/has_grav/nova/blackmarket)
-"qN" = (
-/obj/structure/transport/linear/tram/corner/southeast{
-	pixel_x = 32;
-	pixel_y = -6
-	},
-/turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/nova/blackmarket)
 "rm" = (
 /obj/structure/broken_flooring/pile/directional{
@@ -1610,9 +1617,6 @@
 	},
 /obj/structure/window/reinforced/tinted/frosted/spawner/directional/north{
 	pixel_y = 7
-	},
-/obj/structure/transport/linear/tram/corner/northwest{
-	pixel_y = 38
 	},
 /obj/structure/fluff/metalpole/anchor{
 	dir = 1;
@@ -2518,9 +2522,6 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/transport/linear/tram/corner/northwest{
-	pixel_y = 38
-	},
 /obj/structure/fluff/metalpole/anchor{
 	pixel_y = 39
 	},
@@ -2592,6 +2593,16 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/blackmarket)
+"Cd" = (
+/obj/structure/decorative{
+	icon = 'icons/obj/tram/tram_structure.dmi';
+	icon_state = "subfloor-corner-se";
+	anchored = 1;
+	name = "bridge supports";
+	pixel_y = -6
+	},
+/turf/template_noop,
+/area/ruin/space)
 "Ce" = (
 /obj/structure/table,
 /obj/effect/turf_decal/trimline/dark_green/filled/line{
@@ -2650,13 +2661,6 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/carpet/black,
-/area/ruin/space/has_grav/nova/blackmarket)
-"Dr" = (
-/obj/structure/transport/linear/tram/corner/southwest{
-	pixel_x = -32;
-	pixel_y = -6
-	},
-/turf/closed/wall,
 /area/ruin/space/has_grav/nova/blackmarket)
 "Dv" = (
 /obj/item/kirbyplants/synthetic{
@@ -3602,13 +3606,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/blackmarket)
-"Lc" = (
-/obj/structure/transport/linear/tram/corner/southeast{
-	pixel_x = 32;
-	pixel_y = -6
-	},
-/turf/closed/wall,
-/area/ruin/space/has_grav/nova/blackmarket)
 "Lu" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/decorative{
@@ -3758,13 +3755,6 @@
 	dir = 4
 	},
 /turf/open/floor/iron/dark/smooth_large,
-/area/ruin/space/has_grav/nova/blackmarket)
-"Mm" = (
-/obj/structure/transport/linear/tram/corner/southwest{
-	pixel_x = -32;
-	pixel_y = -6
-	},
-/turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/nova/blackmarket)
 "Mr" = (
 /obj/structure/grille,
@@ -4840,6 +4830,16 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/nova/blackmarket)
+"Yx" = (
+/obj/structure/decorative{
+	icon = 'icons/obj/tram/tram_structure.dmi';
+	icon_state = "subfloor-corner-sw";
+	anchored = 1;
+	name = "bridge supports";
+	pixel_y = -6
+	},
+/turf/template_noop,
+/area/ruin/space)
 "Yy" = (
 /obj/effect/turf_decal/trimline/blue/filled/warning{
 	dir = 8
@@ -5689,7 +5689,7 @@ MA
 tX
 Ab
 gO
-Lc
+Ab
 tX
 tX
 Ab
@@ -5727,9 +5727,9 @@ MA
 MA
 MA
 MA
-Jh
+pW
 bL
-Jh
+Cd
 MA
 tX
 tX
@@ -5737,7 +5737,7 @@ tX
 mI
 mI
 tw
-qN
+mI
 mI
 mI
 tX
@@ -5767,17 +5767,17 @@ tX
 MA
 MA
 MA
-Jh
+lM
 Bq
-Jh
+Yx
 MA
 MA
 MA
 MA
 Ge
-Jh
+pW
 bm
-Jh
+Cd
 SF
 tX
 tX
@@ -5809,13 +5809,13 @@ uf
 tX
 Ab
 Sa
-Dr
+Ab
 MA
 MA
 MA
 MA
 MA
-Jh
+lM
 sC
 Jh
 MA
@@ -5857,7 +5857,7 @@ tX
 mI
 mI
 Gx
-Jh
+Yx
 MA
 MA
 MA
@@ -5897,7 +5897,7 @@ Ab
 Ab
 Ht
 WW
-Mm
+mI
 MA
 MA
 MA
