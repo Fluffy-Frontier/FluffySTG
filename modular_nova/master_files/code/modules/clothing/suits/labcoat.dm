@@ -15,21 +15,10 @@
 	worn_icon_teshari = 'modular_nova/master_files/icons/mob/clothing/suits/labcoat_teshari.dmi'
 	icon_state = null //Keeps this from showing up under the chameleon hat
 
-/obj/item/clothing/suit/toggle/labcoat/nova/fancy
-	name = "Greyscale Fancy Labcoat"
-	desc = "Throughout the test of determination, many have sought after such a fancy labcoat, one that was filled with many colors and wears."
-	icon_state = "fancy_labcoat"
-	greyscale_config = /datum/greyscale_config/fancy_labcoat
-	greyscale_config_worn = /datum/greyscale_config/fancy_labcoat/worn
-	greyscale_config_worn_teshari = /datum/greyscale_config/fancy_labcoat/worn/teshari
-	greyscale_colors = "#EEEEEE#4A77A1"
-	gets_cropped_on_taurs = FALSE
-	flags_1 = IS_PLAYER_COLORABLE_1
-
-/obj/item/clothing/suit/toggle/labcoat/nova/fancy/rd
+/obj/item/clothing/suit/toggle/labcoat/nova/rd
 	name = "research directors labcoat"
 	desc = "A Nanotrasen standard labcoat for certified Research Directors. It has an extra plastic-latex lining on the outside for more protection from chemical and viral hazards."
-	greyscale_colors = "#B347A1#EEEEEE"
+	icon_state = "labcoat_rd"
 	gets_cropped_on_taurs = FALSE
 	body_parts_covered = CHEST|ARMS|LEGS
 	armor_type = /datum/armor/nova_rd
@@ -40,10 +29,10 @@
 	fire = 80
 	acid = 70
 
-/obj/item/clothing/suit/toggle/labcoat/nova/fancy/regular
+/obj/item/clothing/suit/toggle/labcoat/nova/regular
 	name = "researcher's labcoat"
 	desc = "A Nanotrasen standard labcoat for researchers in the scientific field."
-	greyscale_colors = "#EEEEEE#B347A1"
+	icon_state = "labcoat_regular"
 	gets_cropped_on_taurs = FALSE
 
 /obj/item/clothing/suit/toggle/labcoat/nova/lalunevest
@@ -52,25 +41,25 @@
 	icon_state = "labcoat_lalunevest"
 	gets_cropped_on_taurs = FALSE
 
-/obj/item/clothing/suit/toggle/labcoat/nova/fancy/pharmacist
+/obj/item/clothing/suit/toggle/labcoat/nova/pharmacist
 	name = "pharmacist's labcoat"
 	desc = "A standard labcoat for chemistry which protects the wearer from acid spills."
-	greyscale_colors = "#EEEEEE#E6935C"
+	icon_state = "labcoat_pharm"
 	gets_cropped_on_taurs = FALSE
 
-/obj/item/clothing/suit/toggle/labcoat/nova/fancy/geneticist
+/obj/item/clothing/suit/toggle/labcoat/nova/geneticist
 	name = "geneticist's labcoat"
 	desc = "A standard labcoat for geneticist."
-	greyscale_colors = "#EEEEEE#7497C0"
+	icon_state = "labcoat_gene"
 	gets_cropped_on_taurs = FALSE
 
-/obj/item/clothing/suit/toggle/labcoat/nova/fancy/roboticist
+/obj/item/clothing/suit/toggle/labcoat/nova/roboticist
 	name = "roboticist's labcoat"
 	desc = "A standard labcoat for roboticist."
-	greyscale_colors = "#2F2E31#A52F29"
+	icon_state = "labcoat_robot"
 	gets_cropped_on_taurs = FALSE
 
-/obj/item/clothing/suit/toggle/labcoat/nova/fancy/pharmacist/Initialize(mapload)
+/obj/item/clothing/suit/toggle/labcoat/nova/pharmacist/Initialize(mapload)
 	. = ..()
 	allowed += /obj/item/storage/bag/chemistry
 

@@ -27,8 +27,8 @@
 				/obj/item/clothing/suit/toggle/jacket/sec/old = 5,
 				/obj/item/clothing/suit/armor/vest/alt/sec/redsec = 2,
 				/obj/item/storage/backpack/waistbag/redsec = 3,
-				/obj/item/clothing/suit/armor/vest/alt/caftan = 6,
-				/obj/item/clothing/head/berendeyka = 6,
+				/obj/item/clothing/suit/armor/vest/alt/caftan = 3,
+				/obj/item/clothing/head/berendeyka = 3,
 			),
 		),
 		list(
@@ -60,10 +60,6 @@
 				/obj/item/clothing/head/costume/ushanka/sec = 10,
 				/obj/item/clothing/gloves/color/black/security = 10,
 				/obj/item/storage/backpack/waistbag/bluesec = 3,
-				/obj/item/clothing/under/rank/security/peacekeeper/miniskirt = 10,
-				/obj/item/clothing/under/rank/security/peacekeeper/trousers/shorts = 10,
-				/obj/item/clothing/under/rank/security/peacekeeper/trousers = 10,
-				/obj/item/clothing/under/rank/security/peacekeeper/dress = 10,
 			),
 		),
 	)
@@ -77,7 +73,7 @@
 					/obj/item/clothing/glasses/hud/security/sunglasses/peacekeeper = 3,
 					/obj/item/clothing/glasses/hud/security/sunglasses/peacekeeper/armadyne = 3,
 					/obj/item/storage/box/holobadge = 1,
-					/obj/item/berdish_kit = 6,
+					/obj/item/berdish_kit = 3,
 	)
 	light_color = "#abadcc"
 	vend_reply = "Beat these scumbags!"

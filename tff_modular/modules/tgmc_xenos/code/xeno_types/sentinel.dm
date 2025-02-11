@@ -11,25 +11,24 @@
 	melee_damage_upper = 15
 	next_evolution = /mob/living/carbon/alien/adult/tgmc/spitter
 
-	additional_organ_types_by_slot = list(
-		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel,
-		ORGAN_SLOT_XENO_ACIDGLAND = /obj/item/organ/alien/acid,
-		ORGAN_SLOT_XENO_NEUROTOXINGLAND = /obj/item/organ/alien/neurotoxin/sentinel,
-	)
-
 /mob/living/carbon/alien/adult/tgmc/sentinel/Initialize(mapload)
 	. = ..()
 
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_slow)
 
-/datum/action/cooldown/alien/acid/tgmc
+/mob/living/carbon/alien/adult/tgmc/sentinel/create_internal_organs()
+	organs += new /obj/item/organ/alien/plasmavessel/small
+	organs += new /obj/item/organ/alien/neurotoxin/sentinel
+	..()
+
+/datum/action/cooldown/alien/acid/nova
 	name = "Spit Neurotoxin"
 	desc = "Spits neurotoxin at someone, exhausting them."
 	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
 	button_icon_state = "neurospit_0"
 	plasma_cost = 40
 	/// A singular projectile? Use this one and leave acid_casing null
-	var/acid_projectile = /obj/projectile/neurotoxin/tgmc
+	var/acid_projectile = /obj/projectile/neurotoxin/nova
 	/// You want it to be more like a shotgun style attack? Use this one and make acid_projectile null
 	var/acid_casing
 	/// Used in to_chat messages to the owner
@@ -41,10 +40,10 @@
 	shared_cooldown = MOB_SHARED_COOLDOWN_3
 	cooldown_time = 5 SECONDS
 
-/datum/action/cooldown/alien/acid/tgmc/IsAvailable(feedback = FALSE)
+/datum/action/cooldown/alien/acid/nova/IsAvailable(feedback = FALSE)
 	return ..() && isturf(owner.loc)
 
-/datum/action/cooldown/alien/acid/tgmc/set_click_ability(mob/on_who)
+/datum/action/cooldown/alien/acid/nova/set_click_ability(mob/on_who)
 	. = ..()
 	if(!.)
 		return
@@ -55,7 +54,7 @@
 	build_all_button_icons()
 	on_who.update_icons()
 
-/datum/action/cooldown/alien/acid/tgmc/unset_click_ability(mob/on_who, refund_cooldown = TRUE)
+/datum/action/cooldown/alien/acid/nova/unset_click_ability(mob/on_who, refund_cooldown = TRUE)
 	. = ..()
 	if(!.)
 		return
@@ -67,7 +66,7 @@
 	build_all_button_icons()
 	on_who.update_icons()
 
-/datum/action/cooldown/alien/acid/tgmc/InterceptClickOn(mob/living/clicker, params, atom/target)
+/datum/action/cooldown/alien/acid/nova/InterceptClickOn(mob/living/clicker, params, atom/target)
 	. = ..()
 	if(!.)
 		unset_click_ability(clicker, refund_cooldown = FALSE)
@@ -102,10 +101,10 @@
 
 	CRASH("Neither acid_projectile or acid_casing are set on [clicker]'s spit attack!")
 
-/datum/action/cooldown/alien/acid/tgmc/Activate(atom/target)
+/datum/action/cooldown/alien/acid/nova/Activate(atom/target)
 	return TRUE
 
-/obj/projectile/neurotoxin/tgmc
+/obj/projectile/neurotoxin/nova
 	name = "neurotoxin spit"
 	icon_state = "neurotoxin"
 	damage = 30
@@ -118,15 +117,15 @@
 		damage = 0
 	return ..()
 
-/datum/action/cooldown/alien/acid/tgmc/lethal
+/datum/action/cooldown/alien/acid/nova/lethal
 	name = "Spit Acid"
 	desc = "Spits neurotoxin at someone, burning them."
-	acid_projectile = /obj/projectile/neurotoxin/tgmc/acid
+	acid_projectile = /obj/projectile/neurotoxin/nova/acid
 	button_icon_state = "acidspit_0"
 	projectile_name = "acid"
 	button_base_icon = "acidspit"
 
-/obj/projectile/neurotoxin/tgmc/acid
+/obj/projectile/neurotoxin/nova/acid
 	name = "acid spit"
 	icon_state = "toxin"
 	damage = 20
@@ -139,6 +138,6 @@
 	zone = BODY_ZONE_PRECISE_MOUTH
 	slot = ORGAN_SLOT_XENO_NEUROTOXINGLAND
 	actions_types = list(
-		/datum/action/cooldown/alien/acid/tgmc,
-		/datum/action/cooldown/alien/acid/tgmc/lethal,
+		/datum/action/cooldown/alien/acid/nova,
+		/datum/action/cooldown/alien/acid/nova/lethal,
 	)

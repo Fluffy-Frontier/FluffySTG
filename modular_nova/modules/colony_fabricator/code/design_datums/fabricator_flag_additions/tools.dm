@@ -155,7 +155,3 @@
 /datum/design/secateurs/New()
 	. = ..()
 	build_type |= COLONY_FABRICATOR
-
-/datum/design/telesci_gps/New()
-	. = ..()
-	build_type |= COLONY_FABRICATOR
