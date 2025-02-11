@@ -1,17 +1,3 @@
-/obj/item/storage/pouch/cin_medipens
-	var/static/list/pouch_holdables = list(
-		/obj/item/reagent_containers/hypospray/medipen,
-		/obj/item/pen,
-		/obj/item/flashlight/pen,
-	)
-
-/obj/item/storage/pouch/cin_medipens/Initialize(mapload)
-	. = ..()
-	atom_storage.max_specific_storage = WEIGHT_CLASS_TINY
-	atom_storage.max_total_storage = 4
-	atom_storage.max_slots = 4
-	atom_storage.set_holdable(pouch_holdables)
-
 /obj/item/storage/pouch/cin_medkit
 	var/static/list/pouch_holdables = list(
 		/obj/item/healthanalyzer,
