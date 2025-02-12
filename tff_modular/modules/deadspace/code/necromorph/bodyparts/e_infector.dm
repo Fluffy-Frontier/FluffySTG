@@ -1,7 +1,9 @@
 /obj/item/bodypart/chest/necromorph/infector/enhanced
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_INFECTOR_ENHANCED
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/infector_enhanced.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/infector_enhanced.dmi'
+	icon_state = "enhanced_infector_chest"
 	max_damage = 200
 	px_x = 0
 	px_y = 0
@@ -10,7 +12,9 @@
 /obj/item/bodypart/head/necromorph/infector/enhanced
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_INFECTOR_ENHANCED
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/infector_enhanced.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/infector_enhanced.dmi'
+	icon_state = "enhanced_infector_head"
 	max_damage = 200
 	px_x = 0
 	px_y = -8
@@ -19,7 +23,9 @@
 /obj/item/bodypart/arm/left/necromorph/infector/enhanced
 	name = "left arm"
 	limb_id = SPECIES_NECROMORPH_INFECTOR_ENHANCED
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/infector_enhanced.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/infector_enhanced.dmi'
+	icon_state = "enhanced_infector_l_arm"
 	attack_verb_continuous = list("slashes", "stabs")
 	attack_verb_simple = list("slash", "stab")
 	max_damage = 50
@@ -30,7 +36,9 @@
 /obj/item/bodypart/arm/right/necromorph/infector/enhanced
 	name = "right arm"
 	limb_id = SPECIES_NECROMORPH_INFECTOR_ENHANCED
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/infector_enhanced.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/infector_enhanced.dmi'
+	icon_state = "enhanced_infector_r_arm"
 	attack_verb_continuous = list("slashes", "stabs")
 	attack_verb_simple = list("slash", "stab")
 	max_damage = 50
@@ -41,7 +49,9 @@
 /obj/item/bodypart/leg/left/necromorph/infector/enhanced
 	name = "left leg"
 	limb_id = SPECIES_NECROMORPH_INFECTOR_ENHANCED
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/infector_enhanced.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/infector_enhanced.dmi'
+	icon_state = "enhanced_infector_l_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 50
@@ -52,7 +62,9 @@
 /obj/item/bodypart/leg/right/necromorph/infector/enhanced
 	name = "right leg"
 	limb_id = SPECIES_NECROMORPH_INFECTOR_ENHANCED
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/infector_enhanced.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/infector_enhanced.dmi'
+	icon_state = "enhanced_infector_r_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 50

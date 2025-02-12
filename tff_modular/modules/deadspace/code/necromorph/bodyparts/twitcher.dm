@@ -1,7 +1,9 @@
 /obj/item/bodypart/chest/necromorph/twitcher
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_TWITCHER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher.dmi'
+	icon_state = "twitcher_chest"
 	max_damage = 200
 	px_x = 0
 	px_y = 0
@@ -11,7 +13,9 @@
 /obj/item/bodypart/head/necromorph/twitcher
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_TWITCHER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher.dmi'
+	icon_state = "twitcher_head"
 	max_damage = 35
 	px_x = 0
 	px_y = -8
@@ -22,7 +26,9 @@
 /obj/item/bodypart/arm/left/necromorph/twitcher
 	name = "left arm"
 	limb_id = SPECIES_NECROMORPH_TWITCHER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher.dmi'
+	icon_state = "twitcher_l_arm"
 	attack_verb_continuous = list("slashes", "stabs")
 	attack_verb_simple = list("slash", "stab")
 	max_damage = 35
@@ -36,7 +42,9 @@
 /obj/item/bodypart/arm/right/necromorph/twitcher
 	name = "right arm"
 	limb_id = SPECIES_NECROMORPH_TWITCHER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher.dmi'
+	icon_state = "twitcher_r_arm"
 	attack_verb_continuous = list("slashes", "stabs")
 	attack_verb_simple = list("slash", "stab")
 	max_damage = 35
@@ -50,7 +58,9 @@
 /obj/item/bodypart/leg/left/necromorph/twitcher
 	name = "left leg"
 	limb_id = SPECIES_NECROMORPH_TWITCHER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher.dmi'
+	icon_state = "twitcher_l_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 40
@@ -62,7 +72,9 @@
 /obj/item/bodypart/leg/right/necromorph/twitcher
 	name = "right leg"
 	limb_id = SPECIES_NECROMORPH_TWITCHER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher.dmi'
+	icon_state = "twitcher_r_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 40

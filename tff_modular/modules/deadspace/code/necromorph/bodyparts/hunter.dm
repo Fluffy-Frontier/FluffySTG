@@ -1,7 +1,9 @@
 /obj/item/bodypart/chest/necromorph/hunter
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_HUNTER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
+	icon_state = "hunter_chest"
 	max_damage = 400
 	px_x = 0
 	px_y = 0
@@ -11,7 +13,9 @@
 /obj/item/bodypart/head/necromorph/hunter
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_HUNTER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
+	icon_state = "hunter_head"
 	max_damage = 50
 	px_x = 0
 	px_y = -8
@@ -23,7 +27,9 @@
 /obj/item/bodypart/arm/left/necromorph/hunter
 	name = "left blade"
 	limb_id = SPECIES_NECROMORPH_HUNTER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
+	icon_state = "hunter_l_arm"
 	attack_verb_continuous = list("slashes", "stabs")
 	attack_verb_simple = list("slash", "stab")
 	max_damage = 60
@@ -37,7 +43,9 @@
 /obj/item/bodypart/arm/right/necromorph/hunter
 	name = "right blade"
 	limb_id = SPECIES_NECROMORPH_HUNTER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
+	icon_state = "hunter_r_arm"
 	attack_verb_continuous = list("slashes", "stabs")
 	attack_verb_simple = list("slash", "stab")
 	max_damage = 60
@@ -51,7 +59,9 @@
 /obj/item/bodypart/leg/left/necromorph/hunter
 	name = "left leg"
 	limb_id = SPECIES_NECROMORPH_HUNTER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
+	icon_state = "hunter_l_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 60
@@ -70,7 +80,9 @@
 /obj/item/bodypart/leg/right/necromorph/hunter
 	name = "right leg"
 	limb_id = SPECIES_NECROMORPH_HUNTER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
+	icon_state = "hunter_r_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 60

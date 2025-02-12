@@ -1,7 +1,9 @@
 /obj/item/bodypart/chest/necromorph/brute
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_BRUTE
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/brute.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/brute.dmi'
+	icon_state = "brute_chest"
 	max_damage = 400
 	px_x = 0
 	px_y = 0
@@ -12,7 +14,9 @@
 /obj/item/bodypart/head/necromorph/brute
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_BRUTE
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/brute.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/brute.dmi'
+	icon_state = "brute_head"
 	max_damage = 100
 	px_x = 0
 	px_y = -8
@@ -23,7 +27,9 @@
 /obj/item/bodypart/arm/left/necromorph/brute
 	name = "left arm"
 	limb_id = SPECIES_NECROMORPH_BRUTE
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/brute.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/brute.dmi'
+	icon_state = "brute_l_arm"
 	attack_verb_continuous = list("slashes", "stabs")
 	attack_verb_simple = list("slash", "stab")
 	max_damage = 150
@@ -36,7 +42,9 @@
 /obj/item/bodypart/arm/right/necromorph/brute
 	name = "right arm"
 	limb_id = SPECIES_NECROMORPH_BRUTE
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/brute.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/brute.dmi'
+	icon_state = "brute_r_arm"
 	attack_verb_continuous = list("slashes", "stabs")
 	attack_verb_simple = list("slash", "stab")
 	max_damage = 150
@@ -49,7 +57,9 @@
 /obj/item/bodypart/leg/left/necromorph/brute
 	name = "left leg"
 	limb_id = SPECIES_NECROMORPH_BRUTE
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/brute.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/brute.dmi'
+	icon_state = "brute_l_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 150
@@ -70,7 +80,9 @@
 /obj/item/bodypart/leg/right/necromorph/brute
 	name = "right leg"
 	limb_id = SPECIES_NECROMORPH_BRUTE
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/brute.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/brute.dmi'
+	icon_state = "brute_r_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 150

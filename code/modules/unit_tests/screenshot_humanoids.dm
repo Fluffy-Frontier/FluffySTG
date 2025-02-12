@@ -39,11 +39,16 @@
 		test_screenshot("[slime_type]", get_flat_icon_for_all_directions(slime))
 		testable_species -= slime_type
 
+
+	for(var/datum/species/necromorph as anything in typesof(/datum/species/necromorph))
+		var/mob/living/carbon/human/necro = allocate(/mob/living/carbon/human/dummy/consistent)
+		necro.set_species(/datum/species/necromorph)
+		necro.equipOutfit(/datum/outfit)
+		test_screenshot("[necromorph]", get_flat_icon_for_all_directions(necro))
+		testable_species -= necromorph
+
 	// The rest of the species
-	// FLUFFY FRONTIER EDIT BEGIN - DS13
-	//ORIGINAL: for (var/datum/species/species_type as anything in testable_species)
-	for (var/datum/species/species_type as anything in testable_species - typesof(/datum/species/necromorph))
-	//FLUFFY FRONTIER EDIT END
+	for (var/datum/species/species_type as anything in testable_species)
 		test_screenshot("[species_type]", get_flat_icon_for_all_directions(make_dummy(species_type, /datum/outfit/job/assistant/consistent)))
 
 /datum/unit_test/screenshot_humanoids/proc/make_dummy(species, job_outfit)

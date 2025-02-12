@@ -258,7 +258,7 @@ GLOBAL_LIST_EMPTY(markers_signals)
 		to_chat(src, span_notice("You are now in the necroqueue. When a necromorph vessel is available, you will be automatically placed in control of it. You can still manually posess necromorphs."))
 		marker.necroqueue += src
 
-/mob/camera/marker_signal/verb/jump_to_maker()
+/mob/camera/marker_signal/verb/jump_to_marker()
 	set name = "Jump to Marker"
 	set category = "Necromorph"
 

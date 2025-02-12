@@ -1,7 +1,9 @@
 /obj/item/bodypart/chest/necromorph/slasher/enhanced
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_SLASHER_ENHANCED
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/slasher_enhanced.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/slasher_enhanced.dmi'
+	icon_state = "enhanced_slasher_chest"
 	max_damage = 300
 	px_x = 0
 	px_y = 0
@@ -11,7 +13,9 @@
 /obj/item/bodypart/head/necromorph/slasher/enhanced
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_SLASHER_ENHANCED
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/slasher_enhanced.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/slasher_enhanced.dmi'
+	icon_state = "enhanced_slasher_head"
 	max_damage = 200
 	px_x = 0
 	px_y = -8
@@ -21,7 +25,9 @@
 /obj/item/bodypart/arm/left/necromorph/slasher/enhanced
 	name = "left blade"
 	limb_id = SPECIES_NECROMORPH_SLASHER_ENHANCED
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/slasher_enhanced.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/slasher_enhanced.dmi'
+	icon_state = "enhanced_slasher_l_arm"
 	attack_verb_continuous = list("slashes", "stabs")
 	attack_verb_simple = list("slash", "stab")
 	max_damage = 80
@@ -33,7 +39,9 @@
 /obj/item/bodypart/arm/right/necromorph/slasher/enhanced
 	name = "right blade"
 	limb_id = SPECIES_NECROMORPH_SLASHER_ENHANCED
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/slasher_enhanced.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/slasher_enhanced.dmi'
+	icon_state = "enhanced_slasher_r_arm"
 	attack_verb_continuous = list("slashes", "stabs")
 	attack_verb_simple = list("slash", "stab")
 	max_damage = 80
@@ -45,7 +53,9 @@
 /obj/item/bodypart/leg/left/necromorph/slasher/enhanced
 	name = "left leg"
 	limb_id = SPECIES_NECROMORPH_SLASHER_ENHANCED
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/slasher_enhanced.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/slasher_enhanced.dmi'
+	icon_state = "enhanced_slasher_l_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 80
@@ -57,7 +67,9 @@
 /obj/item/bodypart/leg/right/necromorph/slasher/enhanced
 	name = "right leg"
 	limb_id = SPECIES_NECROMORPH_SLASHER_ENHANCED
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/slasher_enhanced.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/slasher_enhanced.dmi'
+	icon_state = "enhanced_slasher_r_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 80

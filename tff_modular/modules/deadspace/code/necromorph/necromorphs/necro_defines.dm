@@ -26,10 +26,11 @@
 	type_of_meat = /obj/item/food/meat/slab/human/mutant/necro
 	mob_biotypes = MOB_ORGANIC|MOB_UNDEAD|MOB_HUMANOID
 	mobility_flags = MOBILITY_MOVE|MOBILITY_STAND|MOBILITY_PULL|MOBILITY_REST|MOBILITY_LIEDOWN|MOBILITY_UI
-	base_pixel_x = -8
+	layer = LARGE_MOB_LAYER
+	base_pixel_x = -16
 	base_pixel_y = 0
-	pixel_x = -8
-	alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
+	//pixel_x = -8
+	//alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	var/nicknumber = 0
 
 	/// "Shield" that appears after dodging. Absorbs incom

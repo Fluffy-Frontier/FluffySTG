@@ -8,8 +8,9 @@
 	bodyshape = parent_type::bodyshape | BODYSHAPE_CUSTOM
 	limb_id = SPECIES_NECROMORPH
 	should_draw_greyscale = FALSE
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
-	icon_state = ""
+	icon_state = "necromorph_chest"
 	interaction_flags_item = NONE //So you don't pick it up
 	w_class = WEIGHT_CLASS_GIGANTIC //So you can't put them in bags
 	dmg_overlay_type = null
@@ -28,8 +29,9 @@
 	bodyshape = parent_type::bodyshape | BODYSHAPE_CUSTOM
 	limb_id = SPECIES_NECROMORPH
 	should_draw_greyscale = FALSE
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
-	icon_state = ""
+	icon_state = "necromorph_head"
 	interaction_flags_item = NONE
 	w_class = WEIGHT_CLASS_GIGANTIC
 	head_flags = null
@@ -61,8 +63,9 @@
 	bodyshape = parent_type::bodyshape | BODYSHAPE_CUSTOM
 	limb_id = SPECIES_NECROMORPH
 	should_draw_greyscale = FALSE
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
-	icon_state = ""
+	icon_state = "necromorph_l_arm"
 	interaction_flags_item = NONE
 	w_class = WEIGHT_CLASS_GIGANTIC
 	dmg_overlay_type = null
@@ -93,8 +96,9 @@
 	bodyshape = parent_type::bodyshape | BODYSHAPE_CUSTOM
 	limb_id = SPECIES_NECROMORPH
 	should_draw_greyscale = FALSE
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
-	icon_state = ""
+	icon_state = "necromorph_r_arm"
 	interaction_flags_item = NONE
 	w_class = WEIGHT_CLASS_GIGANTIC
 	dmg_overlay_type = null
@@ -125,8 +129,9 @@
 	bodyshape = parent_type::bodyshape | BODYSHAPE_CUSTOM
 	limb_id = SPECIES_NECROMORPH
 	should_draw_greyscale = FALSE
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
-	icon_state = ""
+	icon_state = "necromorph_l_leg"
 	interaction_flags_item = NONE
 	w_class = WEIGHT_CLASS_GIGANTIC
 	dmg_overlay_type = null
@@ -157,8 +162,9 @@
 	bodyshape = parent_type::bodyshape | BODYSHAPE_CUSTOM
 	limb_id = SPECIES_NECROMORPH
 	should_draw_greyscale = FALSE
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
-	icon_state = ""
+	icon_state = "necromorph_r_leg"
 	interaction_flags_item = NONE
 	w_class = WEIGHT_CLASS_GIGANTIC
 	dmg_overlay_type = null

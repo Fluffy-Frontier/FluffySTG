@@ -55,13 +55,13 @@
 	src.log_talk(message, LOG_SAY)
 
 	for(var/mob/ghost as anything in GLOB.dead_mob_list)
-		to_chat(ghost, "[FOLLOW_LINK(ghost, sender)] [message]", MESSAGE_TYPE_LOCALCHAT)
+		to_chat(ghost, "[FOLLOW_LINK(ghost, sender)] [message]", MESSAGE_TYPE_RADIO)
 
 	for(var/mob/camera/marker_signal/signal as anything in marker_signals)
-		to_chat(signal, "[FOLLOW_LINK(signal, sender)] [message]", MESSAGE_TYPE_LOCALCHAT)
+		to_chat(signal, "[FOLLOW_LINK(signal, sender)] [message]", MESSAGE_TYPE_RADIO)
 
 	for(var/mob/living/carbon/human/necromorph/necro as anything in necromorphs)
-		to_chat(necro, message, MESSAGE_TYPE_LOCALCHAT)
+		to_chat(necro, message, MESSAGE_TYPE_RADIO)
 
 /obj/structure/marker/proc/add_necro(mob/living/carbon/human/necromorph/necro)
 	// If the necro is part of another hivemind, they should be removed from that one first
@@ -108,6 +108,9 @@
 	if(!length(GLOB.necromorph_markers))
 		to_chat(src, span_notice("There are no markers to join!"))
 	else
+		if(!check_respawn_delay())
+			return
+
 		var/obj/structure/marker/marker = tgui_input_list(src, "Pick a marker to join", "Join Horde", GLOB.necromorph_markers)
 		if(QDELETED(marker))
 			return

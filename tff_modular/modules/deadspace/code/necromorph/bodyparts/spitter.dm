@@ -1,7 +1,9 @@
 /obj/item/bodypart/chest/necromorph/spitter
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_SPITTER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/spitter.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/spitter.dmi'
+	icon_state = "spitter_chest"
 	max_damage = 200
 	px_x = 0
 	px_y = 0
@@ -11,7 +13,9 @@
 /obj/item/bodypart/head/necromorph/spitter
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_SPITTER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/spitter.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/spitter.dmi'
+	icon_state = "spitter_head"
 	max_damage = 30
 	px_x = 0
 	px_y = -8
@@ -21,7 +25,9 @@
 /obj/item/bodypart/arm/left/necromorph/spitter
 	name = "left blade"
 	limb_id = SPECIES_NECROMORPH_SPITTER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/spitter.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/spitter.dmi'
+	icon_state = "spitter_l_arm"
 	attack_verb_continuous = list("slashes", "stabs")
 	attack_verb_simple = list("slash", "stab")
 	max_damage = 22
@@ -33,7 +39,9 @@
 /obj/item/bodypart/arm/right/necromorph/spitter
 	name = "right blade"
 	limb_id = SPECIES_NECROMORPH_SPITTER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/spitter.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/spitter.dmi'
+	icon_state = "spitter_r_arm"
 	attack_verb_continuous = list("slashes", "stabs")
 	attack_verb_simple = list("slash", "stab")
 	max_damage = 22
@@ -45,7 +53,9 @@
 /obj/item/bodypart/leg/left/necromorph/spitter
 	name = "left leg"
 	limb_id = SPECIES_NECROMORPH_SPITTER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/spitter.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/spitter.dmi'
+	icon_state = "spitter_l_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 28
@@ -57,7 +67,9 @@
 /obj/item/bodypart/leg/right/necromorph/spitter
 	name = "right leg"
 	limb_id = SPECIES_NECROMORPH_SPITTER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/spitter.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/spitter.dmi'
+	icon_state = "spitter_r_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 28

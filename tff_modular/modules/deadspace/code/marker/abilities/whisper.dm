@@ -20,7 +20,8 @@
 	var/message = tgui_input_text(signal, "Write a message to send to [target.name]", "Whisper")
 	if(!message)
 		return TRUE
+	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
 	.=..()
 	log_directed_talk(owner, target, message, LOG_SAY, tag = "signal whisper")
-	to_chat(target, "<span class='hypnophrase'>[message]</span>")
+	to_chat(target, "<span class='hypnophrase'>[message]</span>", MESSAGE_TYPE_RADIO)
 	signal.marker.hive_mind_message(signal, "[signal] -> [target] <span class='hypnophrase'>[message]</span>")

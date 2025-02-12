@@ -1,7 +1,9 @@
 /obj/item/bodypart/chest/necromorph/leaper
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_LEAPER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
+	icon_state = "leaper_chest"
 	max_damage = 200
 	n_biomass = 10
 	wound_resistance = 5
@@ -11,7 +13,9 @@
 /obj/item/bodypart/head/necromorph/leaper
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_LEAPER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
+	icon_state = "leaper_head"
 	max_damage = 30
 	n_biomass = 3
 	wound_resistance = 0
@@ -24,7 +28,9 @@
 /obj/item/bodypart/arm/left/necromorph/leaper
 	name = "left arm"
 	limb_id = SPECIES_NECROMORPH_LEAPER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
+	icon_state = "leaper_l_arm"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 35
@@ -36,7 +42,9 @@
 /obj/item/bodypart/arm/right/necromorph/leaper
 	name = "right arm"
 	limb_id = SPECIES_NECROMORPH_LEAPER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
+	icon_state = "leaper_r_arm"
 	attack_verb_continuous = list("claws", "stomps")
 	attack_verb_simple = list("claws", "stomp")
 	max_damage = 35
@@ -51,7 +59,9 @@
 	name = "right tail"
 	desc = "A long stringy piece of flesh held haphazardly together with tendons and bone, it looks very sharp at the tip."
 	limb_id = SPECIES_NECROMORPH_LEAPER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
+	icon_state = "leaper_r_leg"
 	body_zone = BODY_ZONE_R_LEG
 	plaintext_zone = "right tail"
 	attack_verb_continuous = list("stabs", "slices")
@@ -77,7 +87,9 @@
 	name = "left tail"
 	desc = "A long stringy piece of flesh held haphazardly together with tendons and bone, it looks very sharp at the tip."
 	limb_id = SPECIES_NECROMORPH_LEAPER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
+	icon_state = "leaper_l_leg"
 	body_zone = BODY_ZONE_L_LEG
 	plaintext_zone = "left tail"
 	attack_verb_continuous = list("stabs", "slices")
