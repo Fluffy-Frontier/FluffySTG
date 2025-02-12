@@ -5,11 +5,21 @@
 	icon = 'tff_modular/modules/tgmc_xenos/icons/big_xenos.dmi'
 	rotate_on_lying = FALSE
 	base_pixel_x = -16 //All of the xeno sprites are 64x64, and we want them to be level with the tile they are on, much like oversized quirk users
-	mob_size = MOB_SIZE_LARGE
 	layer = LARGE_MOB_LAYER //above most mobs, but below speechbubbles
 	maptext_height = 64
 	maptext_width = 64
 	pressure_resistance = 200
+
+	default_organ_types_by_slot = list(
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain/alien,
+		ORGAN_SLOT_XENO_HIVENODE = /obj/item/organ/alien/hivenode,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/alien,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/alien,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver/alien,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/alien,
+	)
+
 	/// What icon file update_held_items will look for when making inhands for xenos
 	var/alt_inhands_file = 'tff_modular/modules/tgmc_xenos/icons/big_xenos.dmi'
 	/// Setting this will give a xeno generic_evolve set to evolve them into this type
@@ -24,20 +34,24 @@
 	var/on_fire_pixel_x = 16
 	/// Pixel Y shifting of the on fire overlay
 	var/on_fire_pixel_y = 16
-
+	/// Все дополнительные органы, что должны находиться в телах ксеносов
+	var/list/additional_organ_types_by_slot
 
 /mob/living/carbon/alien/adult/tgmc/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/seethrough_mob)
 
-	GRANT_ACTION(/datum/action/cooldown/alien/nova/sleepytime)
 	if(next_evolution)
-		GRANT_ACTION(/datum/action/cooldown/alien/nova/generic_evolve)
+		GRANT_ACTION(/datum/action/cooldown/alien/tgmc/generic_evolve)
 
 	pixel_x = -16
 
 	ADD_TRAIT(src, TRAIT_XENO_HEAL_AURA, TRAIT_XENO_INNATE)
 	real_name = "alien [caste]"
+
+/mob/living/carbon/alien/adult/tgmc/create_internal_organs()
+	if(additional_organ_types_by_slot)
+		default_organ_types_by_slot += additional_organ_types_by_slot
+	return ..()
 
 /// Called when a larva or xeno evolves, adds a configurable timer on evolving again to the xeno
 /mob/living/carbon/alien/adult/tgmc/proc/has_just_evolved()
@@ -52,12 +66,12 @@
 		return
 	has_evolved_recently = FALSE
 
-/datum/action/cooldown/alien/nova
+/datum/action/cooldown/alien/tgmc
 	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
 	/// Some xeno abilities block other abilities from being used, this allows them to get around that in cases where it is needed
 	var/can_be_used_always = FALSE
 
-/datum/action/cooldown/alien/nova/IsAvailable(feedback = FALSE)
+/datum/action/cooldown/alien/tgmc/IsAvailable(feedback = FALSE)
 	. = ..()
 	if(!.)
 		return FALSE
@@ -69,36 +83,21 @@
 	if(!istype(owner_alien) || owner_alien.unable_to_use_abilities)
 		return FALSE
 
-/datum/action/cooldown/alien/nova/sleepytime //I don't think this has a mechanical advantage but they have cool resting sprites so...
-	name = "Rest"
-	desc = "Sometimes even murder aliens need to have a little lie down."
-	button_icon_state = "sleepytime"
-
-/datum/action/cooldown/alien/nova/sleepytime/Activate()
-	var/mob/living/carbon/sleepytime_mob = owner
-	if(!isalien(owner))
-		return FALSE
-	if(!sleepytime_mob.resting)
-		sleepytime_mob.set_resting(new_resting = TRUE, silent = FALSE, instant = TRUE)
-		return TRUE
-	sleepytime_mob.set_resting(new_resting = FALSE, silent = FALSE, instant = FALSE)
-	return TRUE
-
-/datum/action/cooldown/alien/nova/generic_evolve
+/datum/action/cooldown/alien/tgmc/generic_evolve
 	name = "Evolve"
 	desc = "Allows us to evolve to a higher caste of our type, if there is not one already."
 	button_icon_state = "evolution"
 	/// What type this ability will turn the owner into upon completion
 	var/type_to_evolve_into
 
-/datum/action/cooldown/alien/nova/generic_evolve/Grant(mob/grant_to)
+/datum/action/cooldown/alien/tgmc/generic_evolve/Grant(mob/grant_to)
 	. = ..()
 	if(!isalien(owner))
 		return
 	var/mob/living/carbon/alien/target_alien = owner
 	plasma_cost = target_alien.get_max_plasma() //This ability should always require that a xeno be at their max plasma capacity to use
 
-/datum/action/cooldown/alien/nova/generic_evolve/Activate()
+/datum/action/cooldown/alien/tgmc/generic_evolve/Activate()
 	var/mob/living/carbon/alien/adult/tgmc/evolver = owner
 
 	if(!istype(evolver))
