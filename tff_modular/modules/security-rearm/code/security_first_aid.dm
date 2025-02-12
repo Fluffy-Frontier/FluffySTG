@@ -29,6 +29,14 @@
 	desc = "Standard-issue maintenance kit issued to NanoTrasen synthetic security operatives. Stored in a pocket pouch for ease of access."
 	icon_state = "tac_security_synth"
 
+/obj/item/storage/pouch/medical/tac_security/synth/Initialize(mapload)
+	. = ..()
+	var/static/list/synth_med_pouch_holdables = med_pouch_holdables + list(
+		/obj/item/stack/cable_coil,
+		/obj/item/weldingtool,
+	)
+	atom_storage.set_holdable(synth_med_pouch_holdables)
+
 /obj/item/storage/pouch/medical/tac_security/synth/loaded/Initialize(mapload)
 	. = ..()
 	var/static/items_inside = list(
