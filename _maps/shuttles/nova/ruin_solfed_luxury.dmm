@@ -72,7 +72,13 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
-/turf/open/floor/iron/shuttle/exploration/corner,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/railing{
+	color = "#683d21";
+	dir = 1
+	},
+/obj/structure/frame/machine/secured,
+/turf/open/floor/iron/shuttle/exploration/hazard,
 /area/shuttle/serenity2/midship)
 "cW" = (
 /obj/machinery/power/shuttle_engine/heater{
@@ -92,7 +98,7 @@
 /turf/closed/wall/mineral/titanium/shuttle_wall/evac{
 	icon_state = "4,7"
 	},
-/area/shuttle/serenity2/restroom)
+/area/shuttle/serenity2/midship)
 "dO" = (
 /obj/machinery/door/airlock/hatch{
 	name = "External Airlock";
@@ -120,15 +126,15 @@
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/paper_bin/carbon{
 	pixel_x = 5;
-	pixel_y = 2
+	pixel_y = 4
 	},
 /obj/item/stamp/granted{
 	pixel_x = -7;
-	pixel_y = 7
+	pixel_y = 8
 	},
 /obj/item/stamp/denied{
 	pixel_x = -7;
-	pixel_y = 2
+	pixel_y = 0
 	},
 /obj/structure/marker_beacon/cerulean{
 	light_power = 2
@@ -138,7 +144,7 @@
 	},
 /obj/item/pen/fourcolor{
 	pixel_x = 5;
-	pixel_y = 2
+	pixel_y = 4
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/serenity2/cockpit)
@@ -222,8 +228,14 @@
 /obj/machinery/light/floor{
 	brightness = 4.5
 	},
-/obj/machinery/light_switch/directional/south{
-	pixel_y = -24
+/obj/item/paper/paperslip/corporate{
+	default_raw_text = "See you soon. Get it? See you soon - cuz those are night vision goggles with meson and medical HUD integrated into 'em... Eh, whateva'.";
+	pixel_x = 1;
+	pixel_y = 2
+	},
+/obj/item/clothing/glasses/hud/health/night/meson{
+	pixel_x = 0;
+	pixel_y = 6
 	},
 /turf/open/floor/iron/shuttle/evac{
 	icon_state = "6,13";
@@ -409,16 +421,12 @@
 	},
 /area/shuttle/serenity2/midship)
 "lt" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/fake_stairs/directional/north{
+	color = "#5d6267"
 	},
-/obj/effect/turf_decal/siding/dark/end{
-	dir = 1
-	},
-/obj/structure/frame/machine/secured,
-/turf/open/floor/iron/shuttle/evac{
-	icon_state = "5,9";
-	dir = 1
+/turf/open/floor/iron/shuttle/cargo{
+	dir = 4
 	},
 /area/shuttle/serenity2/midship)
 "lN" = (
@@ -432,7 +440,7 @@
 	icon_state = "7,24";
 	dir = 1
 	},
-/area/shuttle/serenity2/restroom)
+/area/shuttle/serenity2/midship)
 "mI" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -566,29 +574,24 @@
 	},
 /area/shuttle/serenity2/cockpit)
 "oC" = (
-/obj/effect/turf_decal/siding/dark{
+/obj/structure/frame/machine/secured,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/dark{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/dark/corner{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/dark/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/dark/corner{
-	dir = 8
+/obj/machinery/button/door/directional/east{
+	name = "Shutters Control";
+	pixel_y = -7;
+	id = "lux_bedroom_shutters2"
 	},
-/obj/effect/turf_decal/siding/dark/corner,
-/obj/machinery/door/airlock/bathroom{
-	color = "#e9dfec";
-	name = "Restroom";
-	id_tag = "lux_toilets_airlock"
+/obj/structure/railing{
+	color = "#683d21";
+	dir = 1
 	},
-/turf/open/floor/iron/dark/smooth_large,
-/area/shuttle/serenity2/restroom)
+/turf/open/floor/iron/shuttle/exploration/hazard,
+/area/shuttle/serenity2/midship)
 "oP" = (
 /obj/item/kirbyplants/organic/plant21,
 /obj/effect/turf_decal/siding/wood/end{
@@ -666,6 +669,13 @@
 	pixel_y = 7
 	},
 /obj/structure/frame/machine/secured,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/obj/structure/railing{
+	color = "#683d21";
+	dir = 1
+	},
 /turf/open/floor/iron/shuttle/exploration/hazard,
 /area/shuttle/serenity2/midship)
 "rl" = (
@@ -699,29 +709,10 @@
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/shuttle/serenity2/midship)
 "sI" = (
-/obj/effect/turf_decal/siding/white/end{
-	dir = 1
+/turf/open/floor/iron/shuttle/exploration/uside{
+	dir = 8
 	},
-/obj/structure/sink/directional/west,
-/obj/structure/mirror/directional/east,
-/obj/machinery/button/door/directional/west{
-	name = "Bolts Control";
-	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	pixel_x = -25;
-	pixel_y = 9;
-	id = "lux_toilets_airlock"
-	},
-/obj/machinery/light/floor{
-	pixel_x = 0;
-	pixel_y = -16
-	},
-/obj/machinery/light_switch/directional/south{
-	pixel_x = -25;
-	pixel_y = 0
-	},
-/turf/open/floor/plastic,
-/area/shuttle/serenity2/restroom)
+/area/shuttle/serenity2/midship)
 "tl" = (
 /obj/structure/lattice,
 /obj/structure/decorative{
@@ -800,6 +791,11 @@
 	pixel_y = -8;
 	pixel_x = -2
 	},
+/obj/item/radio/entertainment/speakers/physical{
+	pixel_x = 26;
+	pixel_y = 16
+	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/iron/white/smooth_corner,
 /area/shuttle/serenity2/kitchen)
 "wl" = (
@@ -808,6 +804,17 @@
 	},
 /turf/closed/wall/mineral/titanium/shuttle_wall/window/evac{
 	icon_state = "11,6"
+	},
+/area/shuttle/serenity2/midship)
+"wS" = (
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	color = "#e9dfec";
+	id = "lux_bedroom_shutters2"
+	},
+/turf/closed/wall/mineral/titanium/shuttle_wall/window/evac{
+	icon_state = "1,12";
+	dir = 2
 	},
 /area/shuttle/serenity2/midship)
 "xd" = (
@@ -868,9 +875,33 @@
 /area/shuttle/serenity2/cockpit)
 "yd" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron/shuttle/exploration/corner{
-	dir = 1
+/obj/structure/decorative/fluff{
+	anchored = 1;
+	icon = 'icons/turf/decals.dmi';
+	icon_state = "siding_plain";
+	dir = 2;
+	color = "#b9b3b3"
 	},
+/obj/structure/decorative/fluff{
+	anchored = 1;
+	icon = 'icons/turf/decals.dmi';
+	icon_state = "siding_plain_corner";
+	dir = 2;
+	color = "#b9b3b3";
+	pixel_x = -27;
+	pixel_y = 0
+	},
+/obj/structure/decorative/fluff{
+	anchored = 1;
+	icon = 'icons/turf/decals.dmi';
+	icon_state = "siding_plain_corner";
+	dir = 8;
+	color = "#b9b3b3";
+	pixel_x = 27;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/shuttle/exploration/airlock,
+/turf/open/floor/iron/shuttle/exploration/doubleside,
 /area/shuttle/serenity2/midship)
 "yg" = (
 /obj/structure/decorative{
@@ -1041,7 +1072,7 @@
 	},
 /area/shuttle/serenity2/cockpit)
 "Bv" = (
-/turf/open/floor/iron/shuttle/exploration/invertcorner_side_flipped{
+/turf/open/floor/iron/shuttle/exploration/doubleinvertcorner_side{
 	dir = 1
 	},
 /area/shuttle/serenity2/midship)
@@ -1091,25 +1122,33 @@
 /turf/template_noop,
 /area/shuttle/serenity2/cockpit)
 "DQ" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 8
+/obj/structure/decorative/fluff{
+	anchored = 1;
+	icon = 'icons/turf/decals.dmi';
+	icon_state = "siding_plain";
+	dir = 2;
+	color = "#b9b3b3"
 	},
-/obj/effect/turf_decal/siding/dark/end,
-/obj/structure/marker_beacon/bronze,
-/obj/structure/frame/machine/secured,
-/obj/item/circuitboard/machine/ammo_workbench{
-	pixel_x = 0;
+/obj/structure/decorative/fluff{
+	anchored = 1;
+	icon = 'icons/turf/decals.dmi';
+	icon_state = "siding_plain_corner";
+	dir = 8;
+	color = "#b9b3b3";
+	pixel_x = 27;
 	pixel_y = 0
 	},
-/obj/item/disk/ammo_workbench/advanced{
-	pixel_x = 0;
-	pixel_y = 0;
-	desc = "A modern datadisk filled with advanced munition fabrication data for the ammunition workbench, including lethal ammotypes if not previously enabled. No parties are liable for any incidents that occur if safeties were circumvented beforehand."
+/obj/structure/decorative/fluff{
+	anchored = 1;
+	icon = 'icons/turf/decals.dmi';
+	icon_state = "siding_plain_corner";
+	dir = 2;
+	color = "#b9b3b3";
+	pixel_x = -27;
+	pixel_y = 0
 	},
-/turf/open/floor/iron/shuttle/evac{
-	icon_state = "5,9";
-	dir = 2
-	},
+/obj/effect/turf_decal/shuttle/exploration/airlock,
+/turf/open/floor/iron/shuttle/exploration/doubleside,
 /area/shuttle/serenity2/midship)
 "Ek" = (
 /obj/machinery/atmospherics/components/unary/passive_vent/layer2{
@@ -1203,12 +1242,19 @@
 /turf/template_noop,
 /area/shuttle/serenity2/midship)
 "FM" = (
-/obj/effect/turf_decal/siding/white/end,
-/obj/structure/toilet{
-	dir = 1
+/obj/structure/frame/machine/secured,
+/obj/item/circuitboard/machine/ammo_workbench{
+	pixel_x = 0;
+	pixel_y = 0
 	},
-/turf/open/floor/plastic,
-/area/shuttle/serenity2/restroom)
+/obj/item/disk/ammo_workbench/advanced{
+	pixel_x = 0;
+	pixel_y = 0;
+	desc = "A modern datadisk filled with advanced munition fabrication data for the ammunition workbench, including lethal ammotypes if not previously enabled. No parties are liable for any incidents that occur if safeties were circumvented beforehand."
+	},
+/obj/structure/marker_beacon/bronze,
+/turf/open/floor/iron/shuttle/exploration/hazard,
+/area/shuttle/serenity2/midship)
 "FX" = (
 /obj/structure/lattice{
 	alpha = 0;
@@ -1310,7 +1356,7 @@
 /turf/closed/wall/mineral/titanium/shuttle_wall/arrivals{
 	icon_state = "9,1"
 	},
-/area/shuttle/serenity2/restroom)
+/area/shuttle/serenity2/midship)
 "Jr" = (
 /turf/closed/wall/mineral/titanium/shuttle_wall/evac{
 	icon_state = "7,13"
@@ -1374,7 +1420,6 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 5
 	},
-/obj/machinery/light/directional/north,
 /obj/machinery/smartfridge/food,
 /turf/open/floor/iron/white/smooth_corner{
 	dir = 8
@@ -1386,10 +1431,17 @@
 	},
 /area/shuttle/serenity2/cockpit)
 "Ln" = (
-/turf/closed/wall/mineral/titanium/shuttle_wall/arrivals{
-	light_color = "#f1f1f1"
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
 	},
-/area/shuttle/serenity2/restroom)
+/obj/structure/railing{
+	color = "#683d21";
+	dir = 1
+	},
+/obj/structure/frame/machine/secured,
+/turf/open/floor/iron/shuttle/exploration/hazard,
+/area/shuttle/serenity2/midship)
 "LG" = (
 /obj/structure/fluff/metalpole/anchor{
 	dir = 4;
@@ -1669,7 +1721,7 @@
 /turf/closed/wall/mineral/titanium/shuttle_wall/evac{
 	icon_state = "2,6"
 	},
-/area/shuttle/serenity2/restroom)
+/area/shuttle/serenity2/midship)
 "Sw" = (
 /obj/effect/turf_decal/siding/wideplating_new/light/end{
 	dir = 8
@@ -1723,7 +1775,8 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/item/radio/intercom/command/directional/west{
 	pixel_x = -32;
-	pixel_y = 0
+	pixel_y = 0;
+	name = "FSC 'Serenity II' Command Frequency Intercom"
 	},
 /turf/open/floor/iron/dark/smooth_edge{
 	dir = 8
@@ -1901,7 +1954,7 @@
 	pixel_y = 0
 	},
 /turf/template_noop,
-/area/shuttle/serenity2/restroom)
+/area/shuttle/serenity2/midship)
 "VL" = (
 /turf/closed/wall/mineral/titanium/shuttle_wall/evac{
 	icon_state = "11,11"
@@ -1911,7 +1964,7 @@
 /turf/closed/wall/mineral/titanium/shuttle_wall/arrivals{
 	dir = 4
 	},
-/area/shuttle/serenity2/restroom)
+/area/shuttle/serenity2/midship)
 "VR" = (
 /obj/structure/fluff/metalpole{
 	dir = 8;
@@ -1925,11 +1978,11 @@
 "VS" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/siding/dark{
-	dir = 1
+/obj/structure/fake_stairs/directional/north{
+	color = "#5d6267"
 	},
-/turf/open/floor/iron/shuttle/exploration/corner{
-	dir = 8
+/turf/open/floor/iron/shuttle/cargo{
+	dir = 4
 	},
 /area/shuttle/serenity2/midship)
 "Wz" = (
@@ -2244,7 +2297,7 @@ Dl
 Vg
 gY
 Ln
-Ln
+Bv
 dH
 VJ
 Ex
@@ -2286,7 +2339,7 @@ Dj
 df
 lp
 mw
-VO
+wS
 VO
 Sg
 Fh
