@@ -235,8 +235,15 @@
 	name = "Empty Colonial First Aid Pouch"
 	item_path = /obj/item/storage/pouch/cin_medkit
 
+<<<<<<< HEAD
 // FLUFFY FRONTIER REMOVAL BEGIN: nova vending rebalance #5219
 /*
+=======
+/datum/loadout_item/pocket_items/general_pouch
+	name = "Empty Colonial General Purpose Pouch"
+	item_path = /obj/item/storage/pouch/cin_general
+
+>>>>>>> 07575196286 (Doubles the amount of pens for the colonial medipen pouch; adds a colonial general purpose pouch and an accessory webbing vest (#4886))
 /datum/loadout_item/pocket_items/deforest_cheesekit
 	name = "Civil Defense Medical Kit"
 	item_path = /obj/item/storage/medkit/civil_defense/stocked

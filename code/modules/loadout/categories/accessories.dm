@@ -86,8 +86,16 @@
 	item_path = /obj/item/clothing/accessory/pocketprotector/full
 	additional_displayed_text = list("Contains pens")
 
+<<<<<<< HEAD
 // FLUFFY FRONTIER EDIT START. REMOVAL
 /* /datum/loadout_item/accessory/pride
+=======
+/datum/loadout_item/accessory/colonial_webbing
+	name = "Slim Colonial Webbing"
+	item_path = /obj/item/clothing/accessory/colonial_webbing
+
+/datum/loadout_item/accessory/pride
+>>>>>>> 07575196286 (Doubles the amount of pens for the colonial medipen pouch; adds a colonial general purpose pouch and an accessory webbing vest (#4886))
 	name = "Pride Pin"
 	item_path = /obj/item/clothing/accessory/pride
 	can_be_reskinned = TRUE */
