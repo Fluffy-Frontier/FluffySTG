@@ -7,9 +7,3 @@
 	progression_minimum = 30 MINUTES
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 	cant_discount = TRUE
-/datum/uplink_item/stealthy_weapons/AdvTaser
-	name = "Hybrid Taser"
-	desc = "A dual-mode taser designed to fire both short-range high-power electrodes and long-range disabler beams, directly from the warehouse"
-	item = /obj/item/gun/energy/e_gun/advtaser
-	cost = 4
-	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
