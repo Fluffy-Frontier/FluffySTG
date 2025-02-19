@@ -7,6 +7,3 @@
 	progression_minimum = 30 MINUTES
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 	cant_discount = TRUE
-
-/datum/uplink_item/stealthy_weapons/martialarts
-	cost = 13
