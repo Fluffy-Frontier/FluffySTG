@@ -10,6 +10,7 @@
 
 /datum/uplink_item/stealthy_weapons/martialarts
 cost = 17
+
 /datum/uplink_item/stealthy_weapons/arm_mounted_taser
 	name = "Arm mounted taser"
 	desc = "A dual-mode taser designed to fire both short-range high-power electrodes and long-range disabler beams, ripped from a cyborg, fitted for human use"
