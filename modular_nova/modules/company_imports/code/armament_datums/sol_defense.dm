@@ -101,9 +101,11 @@
 	item_type = /obj/item/gun/ballistic/automatic/pistol/type207
 	cost = PAYCHECK_COMMAND * 4
 
+/* FLUFFY FRONTIER REMOVAL
 /datum/armament_entry/company_import/sol_defense/sidearm/skild
 	item_type = /obj/item/gun/ballistic/automatic/pistol/trappiste
 	cost = PAYCHECK_COMMAND * 6
+*/
 
 /datum/armament_entry/company_import/sol_defense/sidearm/takbok
 	item_type = /obj/item/gun/ballistic/revolver/takbok
