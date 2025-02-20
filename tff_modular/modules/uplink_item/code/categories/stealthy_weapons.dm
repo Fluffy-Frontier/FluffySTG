@@ -9,7 +9,7 @@
 	cant_discount = TRUE
 
 /datum/uplink_item/stealthy_weapons/martialarts
-cost = 17
+	cost = 17
 
 /datum/uplink_item/stealthy_weapons/arm_mounted_taser
 	name = "Arm mounted taser"
