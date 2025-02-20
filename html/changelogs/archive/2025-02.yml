@@ -452,8 +452,137 @@
   zoomachina:
   - bugfix: showers wash things under them when they're turned on again
 2025-02-07:
+  Archemagus:
+  - bugfix: Reminded asteroid with engines shuttle to pickup its walls when departing
   FeenieRU:
   - map: Fixed automapper for Icebox NTRep office.
+  OrbisAnima:
+  - rscdel: Removed Vending Machines Crit table, they just do the old deal a lot of
+      damage on you when they crush you
   RatFromTheJungle:
   - bugfix: the ablative trench-coat no longer turns into purple and black squares
       when you have bendy-legs
+  Trelus:
+  - rscadd: Adds the Type 213 Submachine Gun to the Sol defence import list
+  - rscadd: Adds the Type 213 Submachine Gun magazine to the Sol defence import list
+  - bugfix: Changed the Type 207 magazine to use a better, consistent palette in line
+      with the gun it comes from and the new Type 213
+2025-02-09:
+  FeenieRU:
+  - rscadd: More teshari cloth from Zanozka.
+  OrbisAnima:
+  - qol: Adds GPS to the RCF and to Cargo Imports
+  RealWinterFrost:
+  - image: Added and Removed relevant sprites to allow for recolorable fancy labcoats
+  Stalkeros:
+  - balance: BR-38 magazine capacity increased from 15 to 28
+  - balance: BR-38 magazines are now small-sized
+  - balance: BR-38 degradation threshold increased from 10 to 18
+  - balance: BR-38 degradation chance decreased from 10 to 5
+  Zergspower:
+  - balance: Claw crusher bonus damage has been bumped to 200, normal detonation has
+      been basically removed.
+  - bugfix: fixes crusher marking spam
+  - rscadd: New organ that forms when injected with a specific reagent from the Carrier
+      Spider
+  - rscadd: Carrier Spider - bite your foes, make them be your host
+  - balance: tweaks to the Pit, Voltaic, Webslinger spider
+2025-02-10:
+  FeenieRU:
+  - qol: Amount of caftans and berendeyka increased to 6.
+  - qol: Added skirts and battle dress from loadout to sec vends.
+  - bugfix: Fixed price for Chudo-yudo kit.
+  FlufflesTheDog:
+  - bugfix: prison cryo pods work again
+  - bugfix: The cargo imports window is (hopefully) less network intensive
+  Kocma-san:
+  - bugfix: tgmc alien drones will now be able to build their alien stuff out of rubber.
+  - code_imp: any mention of novasector has been removed from all paths related to
+      tgmc xenos.
+  - balance: all tgmc xenos, except the queen, can no longer become invisible.
+  Stalkeros:
+  - balance: Stun gun's damage lowered back to 25
+  - bugfix: Stun gun now actually deals the intended stamina damage.
+2025-02-12:
+  Bannhammger:
+  - balance: Limited purchase of detomatrix to 1 per agent
+  - rscadd: C20r and respective ammo to traitor and nuke uplink
+  - rscadd: Bulldog and respective ammo to traitor and nuke uplink
+  - rscadd: 'APS-Stechkin and respective ammo to traitor and nuke uplink
+
+      balance:Lowered  price for Makarov pistol to 5 TC
+
+      balance:Lowered price of .357 revolver to 10 TC
+
+      balance:Lowered ammo price for .357 to 2 TC
+
+      balance:Lowered ammo price for Makarov APto 2 TC
+
+      balance:Lowered ammo price for Makarov HP to 2 TC
+
+      balance:Lowered ammo price for Makarov incendiary to 2 TC'
+  FeenieRU:
+  - balance: Guepe Pistol got a spread.
+  - balance: Slonce Plasma Projector got slightly more spread and fire delay.
+  - balance: Miecz Submachine Gun got slightly more spread.
+  - balance: Medipen pouch fits only medipens. Medkit pouch fits only medicine.
+2025-02-13:
+  SuperDrish:
+  - rscadd: "\u041F\u043E\u0441\u043B\u0435 \u043D\u0435\u0434\u0430\u0432\u043D\u0435\
+      \u0433\u043E \u0441\u043E\u0431\u044B\u0442\u0438\u044F \u043D\u0430 \u0441\u0442\
+      \u0430\u043D\u0446\u0438\u0438 [\u0420\u0415\u0414\u0410\u041A\u0422\u0418\u0420\
+      \u041E\u0412\u0410\u041D\u041E], \u0440\u0443\u043A\u043E\u0432\u043E\u0434\u0441\
+      \u0442\u0432\u043E \u0440\u0430\u0437\u0440\u0435\u0448\u0438\u043B\u043E \u043F\
+      \u0440\u0438\u0451\u043C \u043D\u0430 \u0440\u0430\u0431\u043E\u0442\u0443 \u0432\
+      \ \u0441\u0435\u043A\u0442\u043E\u0440 \u0444\u0440\u043E\u043D\u0442\u0438\u0440\
+      \u0430 \u0438\u043D\u0434\u0438\u0432\u0438\u0434\u043E\u0432 \u0441 \u043F\u0441\
+      \u0438\u043E\u043D\u0438\u0447\u0435\u0441\u043A\u0438\u043C\u0438 \u0441\u043F\
+      \u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u044F\u043C\u0438."
+2025-02-16:
+  Essiuun:
+  - rscadd: anime eye markings and the code for it in character creation
+  Kocma-san:
+  - image: added icons for marines MOD suit for characters with digitigrade legs.
+  - code_imp: added feature to override icon paths for modsuites with digitigrade
+      legs.
+  OrbisAnima:
+  - rscadd: Added 6 new variants to the paper sacks skins sprited by JR.
+  - bugfix: Fishing can now be done on the Ghost Cafe without removing loot from the
+      station's loot tables. This will allow mappers to add fishing to the cafe without
+      affecting the ongoing round.
+  - qol: A big number of melee mobs now have a distinct telegraph not unlike that
+      of mining mobs, making it slightly easier to dodge their attacks, and possible,
+      if difficult,  to fight in CQC without getting a scratch.
+  - balance: Carps health was doubled and their damage went from a constant 20 to
+      15-23, Sharks improved in the same direction.
+  RatFromTheJungle:
+  - balance: rebalanced the oversized quirk, making them both move faster, and /not/
+      hit their head on airlocks!
+  RealWinterFrost:
+  - bugfix: fixed improper coloring on the RD's new fancy labcoat!
+2025-02-17:
+  1393F:
+  - balance: Colossus, Wendigo, and demonic-frost miner no longer dust people
+  FlufflesTheDog:
+  - bugfix: skillsofts are no longer smartfridges in disguise
+  RatFromTheJungle:
+  - balance: All of the colony power generation methods got a fair buff.
+  - balance: The colony 'generator,' spits out super-heated-steam and rads now. It
+      also runs on radiation, that too.
+  - balance: The colony small-battery holds slightly more charge then a normal megacell
+      now.
+  - code_imp: gateway doesn't require CC access to activate.
+  Stalkeros; Junglerat and Extramrdo for description assistance.:
+  - rscadd: Added new utility NIFsofts, now available either through the techweb,
+      or job-relevant vending machines.
+  - qol: NIFsoft HUDs no longer need glasses to function.
+  - bugfix: fixes the lack of ZCM company element on the ZCM suits and cap.
+2025-02-19:
+  FeenieRU:
+  - qol: Now your pAI can control your MOD suit.
+  RealWinterFrost:
+  - rscadd: Added more variants for "Giant Scarf" in player loadouts menu
+  - rscadd: Added giant scarf variants to "Clothesmate"
+2025-02-20:
+  FeenieRU:
+  - balance: Shotgun shell's variance decreased.
