@@ -55,7 +55,7 @@
 	limited_stock = 1
 	cost = 4
 	item = /obj/item/ammo_box/magazine/m12g/meteor
-
+	purchasable_from = ~UPLINK_ALL_SYNDIE_OPS
 
 /datum/uplink_item/ammo/shotgun/slug_traitor
 	name = "12g Slug Drum"
