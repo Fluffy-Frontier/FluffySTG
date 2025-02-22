@@ -1,5 +1,5 @@
 /obj/machinery/vending/wardrobe/cargo_wardrobe
-	products_ff = list(
+	contraband_ff = list(
 		/obj/item/storage/backpack/waistbag/cargo = 3,
 		/obj/item/clothing/under/rank/cargo/cargo_bunnysuit = 3,
 		/obj/item/clothing/under/rank/cargo/miner/bunnysuit = 3,

@@ -1,5 +1,5 @@
 /obj/machinery/vending/wardrobe/curator_wardrobe
-	products_ff = list(
+	contraband_ff = list(
 		/obj/item/clothing/under/rank/civilian/curator_bunnysuit_red = 3,
 		/obj/item/clothing/under/rank/civilian/curator_bunnysuit_green = 3,
 		/obj/item/clothing/under/rank/civilian/curator_bunnysuit_teal = 3,

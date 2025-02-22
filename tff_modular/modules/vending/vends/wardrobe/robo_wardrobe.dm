@@ -1,5 +1,5 @@
 /obj/machinery/vending/wardrobe/robo_wardrobe
-	products_ff = list(
+	contraband_ff = list(
 		/obj/item/clothing/under/rank/rnd/scientist/roboticist_bunnysuit = 3,
 		/obj/item/clothing/suit/toggle/labcoat/doctor_tailcoat/science/robotics = 3,
 		/obj/item/clothing/neck/bunny/bunnytie/roboticist = 3,

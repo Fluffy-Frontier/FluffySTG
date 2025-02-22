@@ -1,5 +1,5 @@
 /obj/machinery/vending/wardrobe/medi_wardrobe
-	products_ff = list(
+	contraband_ff = list(
 		/obj/item/storage/backpack/waistbag/med = 3,
 		/obj/item/clothing/under/rank/medical/doctor_bunnysuit = 3,
 		/obj/item/clothing/under/rank/medical/paramedic_bunnysuit = 3,

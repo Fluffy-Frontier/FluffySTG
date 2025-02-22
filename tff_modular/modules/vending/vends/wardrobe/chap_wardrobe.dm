@@ -1,5 +1,5 @@
 /obj/machinery/vending/wardrobe/chap_wardrobe
-	products_ff = list(
+	contraband_ff = list(
 		/obj/item/clothing/under/rank/civilian/chaplain_bunnysuit = 3,
 		/obj/item/clothing/suit/jacket/tailcoat/chaplain = 3,
 		/obj/item/clothing/neck/bunny_pendant = 3,

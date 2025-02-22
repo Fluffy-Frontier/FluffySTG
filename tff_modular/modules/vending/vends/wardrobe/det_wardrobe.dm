@@ -1,5 +1,5 @@
 /obj/machinery/vending/wardrobe/det_wardrobe
-	products_ff = list(
+	contraband_ff = list(
 		/obj/item/clothing/under/rank/security/detective_bunnysuit = 3,
 		/obj/item/clothing/under/rank/security/detective_bunnysuit/noir = 3,
 		/obj/item/clothing/suit/jacket/det_suit/tailcoat = 3,

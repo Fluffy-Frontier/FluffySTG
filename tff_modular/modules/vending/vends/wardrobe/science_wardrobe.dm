@@ -1,5 +1,5 @@
 /obj/machinery/vending/wardrobe/science_wardrobe
-	products_ff = list(
+	contraband_ff = list(
 		/obj/item/storage/backpack/waistbag/sci = 3,
 		/obj/item/clothing/under/rank/rnd/scientist/bunnysuit = 3,
 		/obj/item/clothing/under/rank/rnd/geneticist/bunnysuit = 3,

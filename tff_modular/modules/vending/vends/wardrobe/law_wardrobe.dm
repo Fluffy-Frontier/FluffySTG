@@ -1,5 +1,5 @@
 /obj/machinery/vending/wardrobe/law_wardrobe
-	products_ff = list(
+	contraband_ff = list(
 		/obj/item/clothing/under/rank/civilian/lawyer_bunnysuit_black = 3,
 		/obj/item/clothing/under/rank/civilian/lawyer_bunnysuit_blue = 3,
 		/obj/item/clothing/under/rank/civilian/lawyer_bunnysuit_red = 3,
