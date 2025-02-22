@@ -1,5 +1,11 @@
 /obj/machinery/vending/wardrobe/sec_wardrobe
-    contraband_ff = list(
+	products_ff = list(
+		/obj/item/clothing/shoes/fancy_heels/red = 3,
+		/obj/item/clothing/shoes/fancy_heels/blue = 3,
+		/obj/item/clothing/shoes/fancy_heels/black = 3,
+		/obj/item/clothing/shoes/fancy_heels/orange = 3,
+	)
+	contraband_ff = list(
 		/obj/item/clothing/under/rank/security/security_bunnysuit = 3,
 		/obj/item/clothing/under/rank/security/security_assistant_bunnysuit = 3,
 		/obj/item/clothing/under/rank/security/warden_bunnysuit = 3,
@@ -18,8 +24,4 @@
 		/obj/item/clothing/head/playbunnyears/warden = 3,
 		/obj/item/clothing/head/playbunnyears/brig_phys = 3,
 		/obj/item/clothing/head/playbunnyears/prisoner = 3,
-		/obj/item/clothing/shoes/fancy_heels/red = 3,
-		/obj/item/clothing/shoes/fancy_heels/blue = 3,
-		/obj/item/clothing/shoes/fancy_heels/black = 3,
-		/obj/item/clothing/shoes/fancy_heels/orange = 3,
     )
