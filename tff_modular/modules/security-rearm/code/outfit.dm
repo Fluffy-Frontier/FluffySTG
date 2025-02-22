@@ -27,11 +27,17 @@
 /datum/outfit/job/hos/synthetic
 	r_pocket = /obj/item/storage/pouch/medical/tac_security/synth/loaded
 
+/datum/job/hos
+	synthetic_outfit = /datum/outfit/job/hos/synthetic
+
 /datum/outfit/job/warden
 	r_pocket = /obj/item/storage/pouch/medical/tac_security/loaded
 
 /datum/outfit/job/warden/synthetic
 	r_pocket = /obj/item/storage/pouch/medical/tac_security/synth/loaded
+
+/datum/job/warden
+	synthetic_outfit = /datum/outfit/job/warden/synthetic
 
 /datum/species/synthetic
 	outfit_override_registry = list(
