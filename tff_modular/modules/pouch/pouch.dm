@@ -29,7 +29,6 @@
 	atom_storage.set_holdable(pouch_holdables, pouch_unholdables)
 
 /obj/item/storage/pouch/cin_general
-	w_class = WEIGHT_CLASS_NORMAL
 	var/static/list/pouch_holdables = list(
 
 	)
