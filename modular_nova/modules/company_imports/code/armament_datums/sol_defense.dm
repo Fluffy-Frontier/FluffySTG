@@ -145,10 +145,10 @@
 	cost = PAYCHECK_COMMAND * 10
 	restricted = TRUE
 
-/* /datum/armament_entry/company_import/sol_defense/longarm/infanterie
+/datum/armament_entry/company_import/sol_defense/longarm/infanterie
 	item_type = /obj/item/gun/ballistic/automatic/sol_rifle
 	cost = PAYCHECK_COMMAND * 14
-	restricted = TRUE */ // FLUFFY FRONTIER REMOVAL - SOL WEAPONS REBALANCE
+	restricted = TRUE
 
 /* /datum/armament_entry/company_import/sol_defense/longarm/outomaties
 	item_type = /obj/item/gun/ballistic/automatic/sol_rifle/machinegun
