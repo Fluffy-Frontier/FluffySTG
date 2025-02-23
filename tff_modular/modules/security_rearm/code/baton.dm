@@ -2,15 +2,15 @@
 	name = "gendarme baton"
 	desc = "A long axe for beating criminal scum."
 	desc_controls = "Left click to stun, right click to harm. It seems to bring huge snakes."
-	icon = 'tff_modular/modules/security-rearm/icons/obj/berdish.dmi'
-	worn_icon = 'tff_modular/modules/security-rearm/icons/mob/berdish_back.dmi'
+	icon = 'tff_modular/modules/security_rearm/icons/obj/berdish.dmi'
+	worn_icon = 'tff_modular/modules/security_rearm/icons/mob/berdish_back.dmi'
 	icon_state = "berdish"
 	base_icon_state = "berdish"
 	inhand_icon_state = "berdish"
 	worn_icon_state = "berdish"
 	icon_angle = -90
-	lefthand_file = 'tff_modular/modules/security-rearm/icons/mob/berdish_lefthand.dmi'
-	righthand_file = 'tff_modular/modules/security-rearm/icons/mob/berdish_righthand.dmi'
+	lefthand_file = 'tff_modular/modules/security_rearm/icons/mob/berdish_lefthand.dmi'
+	righthand_file = 'tff_modular/modules/security_rearm/icons/mob/berdish_righthand.dmi'
 	SET_BASE_PIXEL(-8, 0)
 
 /obj/item/melee/baton/security/berdish/loaded //this one starts with a cell pre-installed.
