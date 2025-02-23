@@ -68,8 +68,3 @@
 /obj/item/clothing/shoes/jackboots/heel/tactical
 	name = "tactical high-heeled jackboots"
 	clothing_traits = list(TRAIT_NO_SLIP_WATER)
-
-/obj/item/clothing/gloves/combat/white
-	icon_state = "white"
-	greyscale_colors = "#FFFFFF"
-	icon = 'icons/obj/clothing/gloves.dmi'
