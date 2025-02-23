@@ -142,3 +142,6 @@
 	. = ..()
 	atom_storage.max_specific_storage = WEIGHT_CLASS_NORMAL
 	atom_storage.set_holdable(pouch_holdables, pouch_unholdables)
+
+/obj/item/clothing/accessory/colonial_webbing
+	w_class = WEIGHT_CLASS_NORMAL
