@@ -4,13 +4,36 @@
 	w_class = WEIGHT_CLASS_BULKY
 	icon = 'tff_modular/modules/security-rearm/icons/pouches.dmi'
 	icon_state = "tac_security"
+	var/static/list/pouch_holdables = list(
+		/obj/item/healthanalyzer,
+		/obj/item/dnainjector,
+		/obj/item/reagent_containers/dropper,
+		/obj/item/reagent_containers/pill,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/reagent_containers/medigel,
+		/obj/item/reagent_containers/spray,
+		/obj/item/reagent_containers/hypospray,
+		/obj/item/storage/pill_bottle,
+		/obj/item/storage/box/bandages,
+		/obj/item/stack/medical,
+		/obj/item/flashlight/pen,
+		/obj/item/reagent_containers/blood,
+		/obj/item/stack/sticky_tape,
+	)
+	var/static/list/pouch_unholdables = list(
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/reagent_containers/cup,
+		/obj/item/storage/wallet,
+	)
+
+
 
 /obj/item/storage/pouch/medical/tac_security/Initialize(mapload)
 	. = ..()
 	atom_storage.max_specific_storage = WEIGHT_CLASS_SMALL
 	atom_storage.max_slots = 6
 	atom_storage.max_total_storage = 12
-	atom_storage.set_holdable(med_pouch_holdables)
+	atom_storage.set_holdable(pouch_holdables, pouch_unholdables)
 
 /obj/item/storage/pouch/medical/tac_security/loaded/Initialize(mapload)
 	. = ..()
