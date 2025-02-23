@@ -112,9 +112,9 @@
 	item_type = /obj/item/gun/ballistic/revolver/shotgun_revolver
 	cost = PAYCHECK_COMMAND * 6
 
-/* /datum/armament_entry/company_import/nri_surplus/firearm/zashch
+/datum/armament_entry/company_import/nri_surplus/firearm/zashch
 	item_type = /obj/item/gun/ballistic/automatic/pistol/zashch
-	cost = PAYCHECK_COMMAND * 6 */ // FLUFFY FRONTIER REMOVAL - NRI WEAPONS REBALANCE
+	cost = PAYCHECK_COMMAND * 6
 
 /datum/armament_entry/company_import/nri_surplus/firearm/plasma_thrower
 	item_type = /obj/item/gun/ballistic/automatic/pistol/plasma_thrower
