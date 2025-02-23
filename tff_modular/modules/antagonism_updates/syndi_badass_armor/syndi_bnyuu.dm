@@ -10,5 +10,5 @@
 		/obj/item/clothing/neck/bunny/bunnytie/syndicate = 1,
 		/obj/item/clothing/head/playbunnyears/syndicate = 1,
 		/obj/item/clothing/shoes/fancy_heels/syndi = 1,
-		/obj/item/clothing/gloves/combat/white = 1,
+		/obj/item/clothing/gloves/combat = 1,
 	), src)
