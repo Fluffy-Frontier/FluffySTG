@@ -38,6 +38,7 @@
 			/obj/item/ammo_box/c9mm,
 			/obj/item/ammo_box/c10mm,
 			/obj/item/ammo_box/a40mm,
+			/obj/item/storage/wallet,
 		))
 
 /obj/item/storage/toolbox/guncase/nova/pistol/trappiste_small_case/takbok/Initialize(mapload)
@@ -79,4 +80,5 @@
 			/obj/item/ammo_box/c9mm,
 			/obj/item/ammo_box/c10mm,
 			/obj/item/ammo_box/a40mm,
+			/obj/item/storage/wallet,
 		))
