@@ -43,13 +43,9 @@
 
 /datum/armament_entry/company_import/deforest/first_aid_kit/technician_satchel
 	item_type = /obj/item/storage/backpack/duffelbag/deforest_paramedic/stocked
-<<<<<<< HEAD
-	cost = PAYCHECK_COMMAND * 11.75
+	cost = PAYCHECK_COMMAND * 16
 */
 // FLUFFY FRONTIER REMOVAL END
-=======
-	cost = PAYCHECK_COMMAND * 16
->>>>>>> 703a3758735 ([Various] Small fixes and backlog clearing (#4946))
 
 // Basic first aid supplies like gauze, sutures, mesh, so on
 
