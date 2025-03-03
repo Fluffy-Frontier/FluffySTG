@@ -42,3 +42,9 @@
 	cost = 12
 	progression_minimum = 50 MINUTES
 	purchasable_from = ~UPLINK_ALL_SYNDIE_OPS
+
+/datum/uplink_item/suits/modsuit
+	cost = 8
+
+/datum/uplink_item/dangerous/guardian
+	cost = 14
