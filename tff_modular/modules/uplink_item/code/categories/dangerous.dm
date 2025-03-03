@@ -5,7 +5,7 @@
 		Chambered in 9mm. Perfect for frequent skirmishes with security, as well as ensuring you have enough firepower to outlast the competition. \
 		While not included in the kit, the pistol is compatible with suppressors, which can be purchased seperately."
 	item = /obj/item/storage/toolbox/guncase/traitor
-	cost = 5
+	cost = 4
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/dangerous/aps_traitor
