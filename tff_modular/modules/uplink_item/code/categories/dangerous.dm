@@ -5,7 +5,7 @@
 		Chambered in 9mm. Perfect for frequent skirmishes with security, as well as ensuring you have enough firepower to outlast the competition. \
 		While not included in the kit, the pistol is compatible with suppressors, which can be purchased seperately."
 	item = /obj/item/storage/toolbox/guncase/traitor
-	cost = 5
+	cost = 4
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/dangerous/aps_traitor
@@ -42,3 +42,21 @@
 	cost = 12
 	progression_minimum = 50 MINUTES
 	purchasable_from = ~UPLINK_ALL_SYNDIE_OPS
+
+/datum/uplink_item/suits/modsuit
+	cost = 8
+
+/datum/uplink_item/dangerous/guardian
+	cost = 14
+
+/datum/uplink_item/role_restricted/mail_counterfeit_kit
+	name = "GLA Brand Mail Counterfeit Kit"
+	desc = "A box containing five devices capable of counterfeiting NT's mail. Can be used to store items within as an easy means of smuggling contraband. \
+			Additionally, you may choose to \"arm\" the item inside, causing the item to be used the moment the mail is opened as if the person had just used it in hand. \
+			The most common usage of this feature is with grenades, as it forces the grenade to prime. Bonus points if the grenade is set to instantly detonate. \
+			Comes with an integrated micro-computer for configuration purposes."
+	item = /obj/item/storage/box/syndie_kit/mail_counterfeit
+	cost = 2
+	uplink_item_flags = SYNDIE_TRIPS_CONTRABAND
+	restricted_roles = list(JOB_CARGO_TECHNICIAN, JOB_QUARTERMASTER)
+	surplus = 5
