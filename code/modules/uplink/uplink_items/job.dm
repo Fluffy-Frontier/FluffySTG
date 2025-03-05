@@ -16,6 +16,7 @@
 	limited_stock = 1 //please don't spam deadchat
 	surplus = 5
 
+/* NOVA EDIT REMOVAL START - DISABLED
 /datum/uplink_item/role_restricted/mail_counterfeit_kit
 	name = "GLA Brand Mail Counterfeit Kit"
 	desc = "A box containing five devices capable of counterfeiting NT's mail. Can be used to store items within as an easy means of smuggling contraband. \
@@ -27,6 +28,7 @@
 	uplink_item_flags = SYNDIE_TRIPS_CONTRABAND
 	restricted_roles = list(JOB_CARGO_TECHNICIAN, JOB_QUARTERMASTER)
 	surplus = 5
+*/ // NOVA EDIT REMOVAL END
 
 /datum/uplink_item/role_restricted/bureaucratic_error
 	name = "Organic Capital Disturbance Virus"
@@ -192,7 +194,7 @@
 
 /datum/uplink_item/role_restricted/advanced_plastic_surgery
 	name = "Advanced Plastic Surgery Program"
-	desc = "A bootleg copy of an collector item, this disk contains the procedure to perform advanced plastic surgery, allowing you to model someone's face and voice based on a picture taken by a camera on your offhand. \
+	desc = "A bootleg copy of a collector item, this disk contains the procedure to perform advanced plastic surgery, allowing you to model someone's face and voice based on a picture taken by a camera on your offhand. \
 	All changes are superficial and does not change ones genetic makeup. \
 	Insert into an Operating Console to enable the procedure."
 	item = /obj/item/disk/surgery/advanced_plastic_surgery

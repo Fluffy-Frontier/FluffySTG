@@ -1,0 +1,84 @@
+/obj/item/storage/toolbox/guncase/nova/pistol/Initialize(mapload)
+	. = ..()
+	atom_storage.max_specific_storage = WEIGHT_CLASS_NORMAL
+	atom_storage.set_holdable(
+		list(
+			/obj/item/ammo_box,
+			/obj/item/ammo_casing/shotgun,
+			/obj/item/assembly/flash/handheld,
+			/obj/item/clothing/glasses,
+			/obj/item/clothing/gloves,
+			/obj/item/flashlight/seclite,
+			/obj/item/food/donut,
+			/obj/item/grenade,
+			/obj/item/gun,
+			/obj/item/holosign_creator/security,
+			/obj/item/knife/combat,
+			/obj/item/melee/baton,
+			/obj/item/radio,
+			/obj/item/reagent_containers/spray/pepper,
+			/obj/item/restraints/handcuffs,
+			/obj/item/restraints/legcuffs/bola,
+			/obj/item/clothing/sextoy, // Для попочки Яжрета
+			/obj/item/clothing/mask/leatherwhip,
+			/obj/item/spanking_pad,
+		),
+		list(
+			/obj/item/ammo_box/advanced,
+			/obj/item/ammo_box/c35sol,
+			/obj/item/ammo_box/c40sol,
+			/obj/item/ammo_box/c585trappiste,
+			/obj/item/ammo_box/c27_54cesarzowa,
+			/obj/item/ammo_box/c310_cargo_box,
+			/obj/item/ammo_box/c980grenade,
+			/obj/item/ammo_box/rocket,
+			/obj/item/ammo_box/foambox,
+			/obj/item/ammo_box/c46x30mm,
+			/obj/item/ammo_box/n762,
+			/obj/item/ammo_box/c9mm,
+			/obj/item/ammo_box/c10mm,
+			/obj/item/ammo_box/a40mm,
+			/obj/item/storage/wallet,
+		))
+
+/obj/item/storage/toolbox/guncase/nova/pistol/trappiste_small_case/takbok/Initialize(mapload)
+	. = ..()
+	atom_storage.max_specific_storage = WEIGHT_CLASS_NORMAL
+	atom_storage.set_holdable(
+		list(
+			/obj/item/ammo_box,
+			/obj/item/ammo_casing/shotgun,
+			/obj/item/assembly/flash/handheld,
+			/obj/item/clothing/glasses,
+			/obj/item/clothing/gloves,
+			/obj/item/flashlight/seclite,
+			/obj/item/food/donut,
+			/obj/item/grenade,
+			/obj/item/gun,
+			/obj/item/holosign_creator/security,
+			/obj/item/knife/combat,
+			/obj/item/melee/baton,
+			/obj/item/radio,
+			/obj/item/reagent_containers/spray/pepper,
+			/obj/item/restraints/handcuffs,
+			/obj/item/restraints/legcuffs/bola,
+			/obj/item/clothing/sextoy,
+			/obj/item/clothing/mask/leatherwhip,
+			/obj/item/spanking_pad,
+		),
+		list(
+			/obj/item/ammo_box/advanced,
+			/obj/item/ammo_box/c35sol,
+			/obj/item/ammo_box/c40sol,
+			/obj/item/ammo_box/c27_54cesarzowa,
+			/obj/item/ammo_box/c310_cargo_box,
+			/obj/item/ammo_box/c980grenade,
+			/obj/item/ammo_box/rocket,
+			/obj/item/ammo_box/foambox,
+			/obj/item/ammo_box/c46x30mm,
+			/obj/item/ammo_box/n762,
+			/obj/item/ammo_box/c9mm,
+			/obj/item/ammo_box/c10mm,
+			/obj/item/ammo_box/a40mm,
+			/obj/item/storage/wallet,
+		))

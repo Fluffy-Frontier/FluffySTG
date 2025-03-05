@@ -1,0 +1,824 @@
+2025-02-01:
+  Absolucy:
+  - qol: Removed the arbitrary limit of 10 maximum highlights.
+  - qol: Restyled the Who, Adminwho, and Show Server Revision verbs to be prettier.
+  - bugfix: Being on fire or wet should no longer last much longer than intended while
+      the server is under load.
+  - refactor: Refactored how quirks handle starting/stopping processing.
+  - bugfix: Certain status effects, such as stuns and attempting to extinguish fires
+      via stop, drop & roll, shouldn't last much longer than intended while the server
+      is under load.
+  - admin: Added a new function in Lua scripting, SS13.check_tick, to avoid causing
+      too much lag during loops and such.
+  - balance: Simultaneously having traits that both make you easier and harder to
+      wound will now act like you have neither, resulting in you taking the normal
+      amount of wound damage.
+  Aniantan:
+  - spellcheck: Fixed two typos in banded snake's description
+  ArcaneMusic:
+  - rscadd: You can now purchase pet mice as a cargo goodie.
+  - qol: Pet carriers now have contextual screentips.
+  - bugfix: The biopod pet carrier now doesn't randomly turn invisible.
+  AyIong:
+  - bugfix: Premium and contraband products in vending machines, now really has no
+      discount
+  - bugfix: You can rename supply pod beacon with a any writing tool.
+  Bannhammger:
+  - balance: Returns ability of a bulldog to fire in burst of 2.
+  EEASAS:
+  - map: modularizes the comms agent ruin on icebox
+  Exester509:
+  - bugfix: The Stargazer, a cosmic heretic's ascension, can be properly commanded
+      once more.
+  - code_imp: Basic mob pets can now target objects, or objects and walls by using
+      two new targeting strategies.
+  FeenieRU:
+  - balance: charge_delay of hoshi increased to 15
+  - balance: Now small gun cases won't fit non-security items or ammo BOXES.
+  - balance: Zashch was removed from Cargo Imports.
+  FlufflesTheDog:
+  - bugfix: PDA ringtones can be changed in-game
+  Gaxeer:
+  - refactor: replace bubble sort with timsort for cameralist, move global procs to
+      `cameranet` datum
+  Ghommie:
+  - bugfix: Fixed single-use spectral instruments losing their powers before skeletonizing
+      anyone.
+  - rscadd: A very rare spooky suffix for mythril items and the wizard RPG event.
+  Jacquerel:
+  - refactor: Geese have been moved to the basic mob subsystem, please report any
+      unusual behaviour.
+  - refactor: The Cytology Vatbeast now uses the basic mob framework, please report
+      any unusual behaviour.
+  - bugfix: You can once again teleport dangerously with the hand teleporter
+  - balance: Phobias are now somewhat less debilitating, although their effects get
+      worse the longer you are near a fear trigger.
+  - balance: Carphobes are now afraid of all fish.
+  - rscdel: Remove the Heretic phobia, as it is now basically unused.
+  - balance: Dark Wizards now teleport when attacked, but are more likely to turn
+      on their allies
+  JohnFulpWillard:
+  - qol: The wiki books for users on 516 no longer opens the page on an external website
+      on your browser.
+  - balance: AIs can now examine through their eye.
+  - bugfix: Dullahans can also examine through their head again.
+  Kashargul:
+  - bugfix: list input scrolls into view again when using the array keys for navigation
+  - bugfix: Using letter keys while focussing the list focusses the search bar again
+  KingkumaArt:
+  - qol: Ethereals can now live off wine again.
+  Likteer:
+  - rscdel: Removed vending products shortage station trait
+  MTandi:
+  - bugfix: mouse corpse can be used to summon codex citatrix
+  - image: New medbot sprites
+  - image: New stacked medibot borg skin sprite
+  MX0739:
+  - bugfix: Fixed Justice mech's dash ability
+  - bugfix: objects with throw_range 0 now properly parried with baseball bats
+  Maximal08:
+  - rscadd: TRAIT_NOSOFTCRIT now blocks falling into a regenerative coma.
+  Melbert:
+  - qol: '"Who" and "Adminwho" are typed as "Info" and not "OOC" (so they no longer
+      go to "OOC" tabs)'
+  - qol: '"Tip of the Round" and "Show Server Revision" are also typed as "Info",
+      rather than "OOC" and untyped respectively'
+  - bugfix: Regen meshes stop when they've done all they can again
+  MichiRecRoom:
+  - qol: pAIs can now withdraw their candidacy at any time.
+  - refactor: Datumized pAI card screen images
+  - bugfix: Word phobias should always apply now, rather than occasionally being missed.
+  OrionTheFox:
+  - rscadd: Added Directional Firelock Frames, making the tile-edge firelocks properly
+      repairable/deconstructable.
+  - bugfix: fixed firelock construction not properly updating icons
+  Profakos:
+  - bugfix: IEDs can now also be crafted using pipes you have ripped up from the ground.
+  Seefaaa:
+  - admin: added Space Dragon role to the banning panel
+  SmArtKar:
+  - bugfix: Head IDs now keep the large pointer effect when slotted into a PDA or
+      displayed as the front ID in a wallet
+  - bugfix: Fixed evidence bag not reverting to tiny size after dumping its contents
+      out
+  - bugfix: Springlock MODule now only activates when you have at least a single sealed
+      piece
+  - bugfix: Springlock MODule no longer damages bodyparts not covered by your MODsuit
+  - qol: Action palette no longer disappears while you have floating actions
+  - qol: Snapping tethers now also removes their beacons
+  - qol: You can now cut tethers that you're attached to while in motion
+  - qol: Tethers now snap when you retract your gloves or disable your MODsuit
+  - bugfix: Fixed tether stacking issues
+  - qol: Fishing minigame should be smoother now
+  - bugfix: Fixed infinitely stacking examine lines on advanced fishing rods
+  - image: Resprited fishing UI
+  - image: Blue doughballs now have their own fishing rod overlay
+  - image: Resprited mansus rift fishing portal overlay
+  - bugfix: Fixed crafting menu not changing the cursor when hovered over
+  StrangeWeirdKitten:
+  - qol: Quirk menu now has a search bar
+  - bugfix: Fixes uncapped xenobio slime multiplication which can easily result in
+      hundreds of slimes.
+  SyncIt21:
+  - bugfix: hydrophonics circuit component actually sets output level when reagents
+      are changed in the tray
+  - refactor: refactors how code listens for reagent changes. Report bugs on github
+  - bugfix: chemical reactions can now go all the way to their min required temp/ph
+  - code_imp: improved code for debug chem master.
+  - bugfix: quirks work again
+  - bugfix: fixes balloon alert runtimes with assembly holder
+  - bugfix: adding/transferring reagent amounts less than 0.01 now won't return false
+      results
+  - code_imp: removed excessive rounding of reagent volumes thus slightly improving
+      performance
+  TiviPlus:
+  - bugfix: fixed a case that could make untoggling fullscreen make your window small
+  - code_imp: Cleaned up some fullscreen and status bar toggle code to function better
+  - bugfix: fixed timestamps being timezone sensitive
+  - admin: due to this bug some logs may have been timestamped incorrectly
+  carlarctg:
+  - rscadd: Added two new fish to heretic rift fishing.
+  - rscadd: You can now fish up arms, heads, and other items lost to heretic rifts!
+  - admin: objectify() now works with instances of objects. Mark a player, then an
+      object, and use those marks to call that global proc and you can turn people
+      into pre-existing items.
+  - rscadd: Psychic resistance now prevents the instadeath from trying to telekinetically
+      grasp at a opened rift.
+  dj-34:
+  - bugfix: Fixed shuttle parallax when a mob is standing still.
+  grungussuss:
+  - sound: headsets now have sounds
+  jlsnow301:
+  - bugfix: 'Fixed some bugs in the malf ai screen: one bluescreen, an extra colon,
+      modules view'
+  - bugfix: TGUI Say window has been tweaked slightly to look and run cleanly.
+  - bugfix: The character preferences menu has been greatly refactored, hopefully
+      opening faster.
+  mc-oofert:
+  - rscadd: outpost 31, the icebox ruin. Also its associated mobs, and megafauna,
+      and loot. Im not spoiling anything, find it yourself.
+  necromanceranne:
+  - rscadd: Cargo can order lethal shotgun shells from the Imports tab, at a premium.
+  - balance: The black market source for buckshot can get normal types of buckshot,
+      but some of it can be a bit dodgy.
+  - balance: Buckshot is now more wound focused over damage. Slugs are now more armor
+      penetration focused over damage.
+  - balance: The bulldog shotgun remains otherwise unchanged damage wise, but does
+      gain the above extra bonuses.
+  valzargaming:
+  - bugfix: Typo in path for cavesound3.ogg
+  vinylspiders:
+  - bugfix: changes made in quirks menu will now reflect properly upon tabbing away
+      and then back again to the quirks tab, without having to close the entire preferences
+      menu
+  - bugfix: due to a number of complaints of fish explosions, chrystarfish will no
+      longer be chosen as the random starting fish for the  fish mount.
+2025-02-02:
+  Axidyuwu:
+  - balance: buffs baton damage back to TG parameters
+  MrSunabouzu:
+  - rscadd: Privacy shutters added to snowglobe's detective office.
+  RatFromTheJungle:
+  - balance: "Buffs to both the 'skild' (now D\xE9fenestreur) and Takbok (now D\xE9\
+      fonce) (ammo count, less recoil, better firerate)"
+  - image: minor resprites to the wespe and eland, bigger resprite to the skild and
+      takbok
+  - spellcheck: lore and desc changes soon
+2025-02-04:
+  Axidyuwu:
+  - balance: Traitors cannot take secondary objectives anymore
+2025-02-05:
+  1393F:
+  - rscadd: Adds the RB-MK2 reactor, made by BurgerLUA on Bubberstation.
+  FeenieRU:
+  - rscadd: Berdish - new stun-baton that can be made from chudo-yudo kit and stun-baton
+  - balance: Bulldog fire_delay was upgraded from 4 to 1.
+  Hardly:
+  - bugfix: 'Ghost Cafe: Fixed the Nanotrasen logo on the lobby'
+  - qol: 'Ghost Cafe: Added hydroponics kits and service plumbing on a crate'
+  - qol: 'Ghost Cafe: All hydroponics trays are now fully upgraded'
+  - qol: 'Ghost Cafe: Space Cleaners added to custodial room'
+  - qol: 'Ghost Cafe: Torches added around the caves, no more need for flashlights!'
+  Hatterhat:
+  - balance: Scarborough Arms, tired of receiving complaints from field operatives
+      about barely-functional burst selectors on their Bulldog shotguns, has instated
+      a voluntary refurbishing program to replace the burst fire mechanisms with ones
+      that can actually, quote, "put holes in people without waiting a goddamn century
+      between each half of the burst".
+  LordHookie:
+  - bugfix: The item and import descriptions of Trappiste rounds and weapons have
+      been updated to match their statistics.
+  - bugfix: Trappiste ammo boxes carry a number of rounds that fit their magazines
+      again.
+  - spellcheck: Sol Pistol examine texts have been cleared of erroneous commas and
+      "it's"es.
+  - rscadd: Re-added the regal condor.
+  - balance: The Regal Condor's cargo recipe price has been increased. Watch for holes
+      in your budget, Quartermaster.
+  OrionTheFox:
+  - bugfix: fixed screen emissives of the (Blue)SecDrobe
+  Stalkeros:
+  - rscadd: Adds BR-38 to Company Imports, sold by Sol Defense-whatever, for 800 credits
+      a piece; mags sold separately for 50 credits a piece
+  - balance: BR-38 crate's price reduces from 20k to a more sensible 2,4k, now includes
+      3 guns and 6 mags as advertised.
+  - balance: BR-38 ammo crate's price reduced to 1k, now actually includes the ammunition
+      worth that amount, somewhat.
+  - rscadd: "Civilian-grade stun guns and tasers have been offloaded to the \"Surplus\"\
+      \ (Izlishek) Military Surplus company; look out for M\xEDrotv\u016Frces and\
+      \ Kop\u0159ivas in your next order catalogue."
+  - rscadd: Zvirdnyan Colonial Militia-issued equipment has been made abundantly clear
+      about its origin - with all the colonial militia equipment bearing its marking.
+  Stalkeros, Moldb for the sprites:
+  - rscadd: Three new clothing pieces for the then-Rimworld Colonial Militia item
+      set.
+  Zenitheevee:
+  - rscadd: Added new ore vents that reset
+  - rscadd: Added new ore boxes that grab boulders and keeps them
+  - rscadd: 3 ruins for the new vents
+2025-02-06:
+  00-Steven:
+  - refactor: Bitrunning item/ability loading has been refactored. Please report any
+      issues.
+  - rscadd: Added Bitrunning gimmick loadout disks. These disks contain full sets
+      of equipment for all your digital cosplay needs, each including questionably
+      helpful equipment. Currently includes Sports (Boxer, Skater, Archer, Fisher,
+      Gamer) and Dungeon Crawling (Alchemist, Rogue, Healer, Wizard).
+  - rscadd: Taking a lead acid battery into the netpod with you now gives your bit
+      avatar shock touch.
+  Absolucy:
+  - bugfix: Being on fire or wet should no longer last much longer than intended while
+      the server is under load.
+  - refactor: Refactored how quirks handle starting/stopping processing.
+  - bugfix: Certain status effects, such as stuns and attempting to extinguish fires
+      via stop, drop & roll, shouldn't last much longer than intended while the server
+      is under load.
+  - bugfix: Random messages should no longer be dropped and not appear in chat.
+  Aniantan:
+  - spellcheck: Fixed two typos in banded snake's description
+  ArcaneMusic:
+  - rscadd: You can now purchase pet mice as a cargo goodie.
+  - qol: Pet carriers now have contextual screentips.
+  - bugfix: The biopod pet carrier now doesn't randomly turn invisible.
+  - rscadd: Stations in your sector may start with the GMM spotlight, a massive economic
+      broadcast spotlight that will follow the wealthiest crewmate on board until
+      the next paycheck
+  Arceniu:
+  - spellcheck: Replaced the words "Singularity Generation Disk" with "Supermatter
+      Crystal Shard" on a paper found by the old station ruin, to match the contents
+      of the inventory room.
+  Axidyuwu:
+  - balance: buffs baton damage back to TG parameters
+  AyIong:
+  - qol: 'You can choose in preferences what layout use into the Smartfridge or Vending
+      machines: Grid or List. Default TGUI Layout preference. In the future there
+      may be more interfaces where there will be 2 layout options. Also Vending UI
+      now use Grid layout by default.'
+  - bugfix: Premium and contraband products in vending machines, now really has no
+      discount
+  - bugfix: You can rename supply pod beacon with a any writing tool.
+  - qol: Supply console got little redesign, and ability to see what can be inside
+      a order.
+  - code_imp: Supply console and express supply console, now use a unified method
+      of acquiring data
+  Ben10Omintrix:
+  - bugfix: fixes megafauna instantly attacking people adjacent to them
+  BobDABuilder9001:
+  - balance: solars now make 2.5kw each instead of 1.5kw
+  EEASAS:
+  - map: modularizes the comms agent ruin on icebox
+  Exester509:
+  - map: The Syndicate Lavaland base has been generally improved, with more defenses
+      and comms equipment.
+  FlufflesTheDog:
+  - bugfix: PDA ringtones can be changed in-game
+  Gaxeer:
+  - refactor: replace bubble sort with timsort for cameralist, move global procs to
+      `cameranet` datum
+  GwynCodes:
+  - spellcheck: removed the word "autist" from a forced say effect.
+  Holoo-1:
+  - bugfix: fixed shadows on 516
+  Jacquerel:
+  - refactor: Geese have been moved to the basic mob subsystem, please report any
+      unusual behaviour.
+  - bugfix: You can once again teleport dangerously with the hand teleporter
+  - rscadd: Adds a new random lawset where anything that can speak counts as human.
+  JohnFulpWillard:
+  - qol: The wiki books for users on 516 no longer opens the page on an external website
+      on your browser.
+  Kashargul:
+  - bugfix: list input scrolls into view again when using the array keys for navigation
+  - bugfix: Using letter keys while focussing the list focusses the search bar again
+  MTandi:
+  - bugfix: mouse corpse can be used to summon codex citatrix
+  - bugfix: Fixed medbot emag VFX
+  - image: New medbot sprites
+  - image: New stacked medibot borg skin sprite
+  - qol: Added forensic scanner UI
+  - qol: Made forensic scanner report format cleaner
+  MX0739:
+  - bugfix: Fixed Justice mech's dash ability
+  Majkl-J:
+  - bugfix: PENLITE defib mounts now actually charge the cell
+  Maximal08:
+  - rscadd: TRAIT_NOSOFTCRIT now blocks falling into a regenerative coma.
+  Melbert:
+  - qol: Using items on cyborgs now use balloon alerts instead of chat messages.
+  - bugfix: You can flash cyborgs again
+  - refactor: Refactored item interaction on cyborgs.
+  - qol: Map vote tallies explains how they work if you hover them
+  - qol: '"Who" and "Adminwho" are typed as "Info" and not "OOC" (so they no longer
+      go to "OOC" tabs)'
+  - qol: '"Tip of the Round" and "Show Server Revision" are also typed as "Info",
+      rather than "OOC" and untyped respectively'
+  - bugfix: Regen meshes stop when they've done all they can again
+  MichiRecRoom:
+  - refactor: Datumized pAI card screen images
+  MrSunabouzu:
+  - rscadd: Privacy shutters added to snowglobe's detective office.
+  OrionTheFox:
+  - image: resprited Extinguisher Cabinets (did you know there's craftable Extinguishers?
+      "Improvised cooling spray"? I didn't. Now I do though, and so do you!)
+  - rscadd: Added Directional Firelock Frames, making the tile-edge firelocks properly
+      repairable/deconstructable.
+  - bugfix: fixed firelock construction not properly updating icons
+  Profakos:
+  - bugfix: IEDs can now also be crafted using pipes you have ripped up from the ground.
+  RatFromTheJungle:
+  - balance: liquid spill slip has been reduced from 6 seconds to 1 second, and the
+      knockdown when you get 'washed away. has also been nerfed from 6 seconds to
+      1 second'
+  - balance: The nanotrasen-news-network is happy to report gorillas are going through
+      an intergalactic phase of muscle atrophy, and no longer stunlock crew, or elsewise
+      against walls!
+  SmArtKar:
+  - bugfix: Fixed an issue with persisting brimbeams
+  - bugfix: Head IDs now keep the large pointer effect when slotted into a PDA or
+      displayed as the front ID in a wallet
+  - bugfix: Fixed another two missing areas on icebox
+  - bugfix: Fixed evidence bag not reverting to tiny size after dumping its contents
+      out
+  - bugfix: Fixed a missing area in the corner of icebox morgue
+  - bugfix: Springlock MODule now only activates when you have at least a single sealed
+      piece
+  - bugfix: Springlock MODule no longer damages bodyparts not covered by your MODsuit
+  - rscadd: You can wear voidwalker's skull on your head now
+  - bugfix: Void curse no longer colors stars in your skin color
+  - qol: Fishing minigame should be smoother now
+  - bugfix: Fixed infinitely stacking examine lines on advanced fishing rods
+  - image: Resprited fishing UI
+  - image: Blue doughballs now have their own fishing rod overlay
+  - image: Resprited mansus rift fishing portal overlay
+  - image: Premium Internals Boxes station trait now has unique box sprites
+  - bugfix: Fixed crafting menu not changing the cursor when hovered over
+  - bugfix: Fixed issues with window tinting/coloration
+  - bugfix: Large fish should not render behind their wall mounts now
+  - rscadd: Added fishing bags, found in fun vendors or made from carpskin.
+  - balance: Added the generator aquarium upgrade to service and science lathes.
+  - image: Resprited reels and bobber
+  - bugfix: Fixed partially missing fishing UI
+  - bugfix: Fixed glowsticks not working
+  Stalkeros:
+  - balance: Crank taser's price has been decreased to 200 credits (from 250)
+  - balance: Stun gun's price has been decreased to 150 credits (from 250)
+  - balance: Cargo-ordered stun guns now arrive with a cell.
+  - balance: Stun gun's stamina damage has been increased to 35, with its attack cooldown
+      halved.
+  - balance: Stun gun now actually applies the intended confusion effects as opposed
+      to knocking people down.
+  - balance: Crank taser's cranking speed has been doubled.
+  - bugfix: Fixes the lack of the crank taser's firing sound.
+  StrangeWeirdKitten:
+  - qol: Quirk menu now has a search bar
+  SyncIt21:
+  - bugfix: hydrophonics circuit component actually sets output level when reagents
+      are changed in the tray
+  - refactor: refactors how code listens for reagent changes. Report bugs on github
+  - bugfix: Herignis has a decent heating effect on mobs reagents
+  - bugfix: quirks work again
+  - bugfix: fixes balloon alert runtimes with assembly holder
+  - bugfix: adding/transferring reagent amounts less than 0.01 now won't return false
+      results
+  - code_imp: removed excessive rounding of reagent volumes thus slightly improving
+      performance
+  TiviPlus:
+  - bugfix: fixed a case that could make untoggling fullscreen make your window small
+  - code_imp: Cleaned up some fullscreen and status bar toggle code to function better
+  - bugfix: fixed timestamps being timezone sensitive
+  - admin: due to this bug some logs may have been timestamped incorrectly
+  Zenitheevee:
+  - bugfix: adds Ignored Factions to pellet cloud component variable transfer
+  dj-34:
+  - bugfix: Fixed shuttle parallax when a mob is standing still.
+  grungussuss:
+  - sound: headsets now have sounds
+  jlsnow301:
+  - bugfix: Character pref dropdowns should have their display names fixed
+  necromanceranne:
+  - rscdel: Mobile hollow bioscramblers no longer spawn from the anomaly research
+      ruin, sparing everyone from the inevitable unannounced arrival of a permanent
+      hollow bioscrambler aboard the station. You maybe still encounter immobile bioscramblers
+      in the ruin, however.
+  - bugfix: You can no longer circumvent your honorbound oath by starting a surgery
+      on someone.
+  - bugfix: Allows MOD holsters to once again activate while the modsuit is inactive
+      and undeployed.
+  - balance: The force of most standard varieties of toolboxes has increased from
+      12 to 13 force.
+  - code_imp: Removed some magic numbers from the calculations for ancient toolboxes
+      damage scaling.
+  - rscadd: Cargo can order lethal shotgun shells from the Imports tab, at a premium.
+  - balance: The black market source for buckshot can get normal types of buckshot,
+      but some of it can be a bit dodgy.
+  - balance: Buckshot is now more wound focused over damage. Slugs are now more armor
+      penetration focused over damage.
+  - balance: The bulldog shotgun remains otherwise unchanged damage wise, but does
+      gain the above extra bonuses.
+  siliconOpossum:
+  - bugfix: Lathes interfaces are no longer unscrollable on 516
+  vinylspiders:
+  - bugfix: fixed PAIs not being able to send or reply to messages using their digital
+      messenger app.
+  - bugfix: fixed PAIs not being able to turn off the GPS tracking using their gpa
+      app.
+  - bugfix: changes made in quirks menu will now reflect properly upon tabbing away
+      and then back again to the quirks tab, without having to close the entire preferences
+      menu
+  - bugfix: due to a number of complaints of fish explosions, chrystarfish will no
+      longer be chosen as the random starting fish for the  fish mount.
+  - bugfix: fixes a bug that would cause the occupations page to grow larger each
+      time you clicked an alt title dropdown
+  zoomachina:
+  - bugfix: showers wash things under them when they're turned on again
+2025-02-07:
+  Archemagus:
+  - bugfix: Reminded asteroid with engines shuttle to pickup its walls when departing
+  FeenieRU:
+  - map: Fixed automapper for Icebox NTRep office.
+  OrbisAnima:
+  - rscdel: Removed Vending Machines Crit table, they just do the old deal a lot of
+      damage on you when they crush you
+  RatFromTheJungle:
+  - bugfix: the ablative trench-coat no longer turns into purple and black squares
+      when you have bendy-legs
+  Trelus:
+  - rscadd: Adds the Type 213 Submachine Gun to the Sol defence import list
+  - rscadd: Adds the Type 213 Submachine Gun magazine to the Sol defence import list
+  - bugfix: Changed the Type 207 magazine to use a better, consistent palette in line
+      with the gun it comes from and the new Type 213
+2025-02-09:
+  FeenieRU:
+  - rscadd: More teshari cloth from Zanozka.
+  OrbisAnima:
+  - qol: Adds GPS to the RCF and to Cargo Imports
+  RealWinterFrost:
+  - image: Added and Removed relevant sprites to allow for recolorable fancy labcoats
+  Stalkeros:
+  - balance: BR-38 magazine capacity increased from 15 to 28
+  - balance: BR-38 magazines are now small-sized
+  - balance: BR-38 degradation threshold increased from 10 to 18
+  - balance: BR-38 degradation chance decreased from 10 to 5
+  Zergspower:
+  - balance: Claw crusher bonus damage has been bumped to 200, normal detonation has
+      been basically removed.
+  - bugfix: fixes crusher marking spam
+  - rscadd: New organ that forms when injected with a specific reagent from the Carrier
+      Spider
+  - rscadd: Carrier Spider - bite your foes, make them be your host
+  - balance: tweaks to the Pit, Voltaic, Webslinger spider
+2025-02-10:
+  FeenieRU:
+  - qol: Amount of caftans and berendeyka increased to 6.
+  - qol: Added skirts and battle dress from loadout to sec vends.
+  - bugfix: Fixed price for Chudo-yudo kit.
+  FlufflesTheDog:
+  - bugfix: prison cryo pods work again
+  - bugfix: The cargo imports window is (hopefully) less network intensive
+  Kocma-san:
+  - bugfix: tgmc alien drones will now be able to build their alien stuff out of rubber.
+  - code_imp: any mention of novasector has been removed from all paths related to
+      tgmc xenos.
+  - balance: all tgmc xenos, except the queen, can no longer become invisible.
+  Stalkeros:
+  - balance: Stun gun's damage lowered back to 25
+  - bugfix: Stun gun now actually deals the intended stamina damage.
+2025-02-12:
+  Bannhammger:
+  - balance: Limited purchase of detomatrix to 1 per agent
+  - rscadd: C20r and respective ammo to traitor and nuke uplink
+  - rscadd: Bulldog and respective ammo to traitor and nuke uplink
+  - rscadd: 'APS-Stechkin and respective ammo to traitor and nuke uplink
+
+      balance:Lowered  price for Makarov pistol to 5 TC
+
+      balance:Lowered price of .357 revolver to 10 TC
+
+      balance:Lowered ammo price for .357 to 2 TC
+
+      balance:Lowered ammo price for Makarov APto 2 TC
+
+      balance:Lowered ammo price for Makarov HP to 2 TC
+
+      balance:Lowered ammo price for Makarov incendiary to 2 TC'
+  FeenieRU:
+  - balance: Guepe Pistol got a spread.
+  - balance: Slonce Plasma Projector got slightly more spread and fire delay.
+  - balance: Miecz Submachine Gun got slightly more spread.
+  - balance: Medipen pouch fits only medipens. Medkit pouch fits only medicine.
+2025-02-13:
+  SuperDrish:
+  - rscadd: "\u041F\u043E\u0441\u043B\u0435 \u043D\u0435\u0434\u0430\u0432\u043D\u0435\
+      \u0433\u043E \u0441\u043E\u0431\u044B\u0442\u0438\u044F \u043D\u0430 \u0441\u0442\
+      \u0430\u043D\u0446\u0438\u0438 [\u0420\u0415\u0414\u0410\u041A\u0422\u0418\u0420\
+      \u041E\u0412\u0410\u041D\u041E], \u0440\u0443\u043A\u043E\u0432\u043E\u0434\u0441\
+      \u0442\u0432\u043E \u0440\u0430\u0437\u0440\u0435\u0448\u0438\u043B\u043E \u043F\
+      \u0440\u0438\u0451\u043C \u043D\u0430 \u0440\u0430\u0431\u043E\u0442\u0443 \u0432\
+      \ \u0441\u0435\u043A\u0442\u043E\u0440 \u0444\u0440\u043E\u043D\u0442\u0438\u0440\
+      \u0430 \u0438\u043D\u0434\u0438\u0432\u0438\u0434\u043E\u0432 \u0441 \u043F\u0441\
+      \u0438\u043E\u043D\u0438\u0447\u0435\u0441\u043A\u0438\u043C\u0438 \u0441\u043F\
+      \u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u044F\u043C\u0438."
+2025-02-16:
+  Essiuun:
+  - rscadd: anime eye markings and the code for it in character creation
+  Kocma-san:
+  - image: added icons for marines MOD suit for characters with digitigrade legs.
+  - code_imp: added feature to override icon paths for modsuites with digitigrade
+      legs.
+  OrbisAnima:
+  - rscadd: Added 6 new variants to the paper sacks skins sprited by JR.
+  - bugfix: Fishing can now be done on the Ghost Cafe without removing loot from the
+      station's loot tables. This will allow mappers to add fishing to the cafe without
+      affecting the ongoing round.
+  - qol: A big number of melee mobs now have a distinct telegraph not unlike that
+      of mining mobs, making it slightly easier to dodge their attacks, and possible,
+      if difficult,  to fight in CQC without getting a scratch.
+  - balance: Carps health was doubled and their damage went from a constant 20 to
+      15-23, Sharks improved in the same direction.
+  RatFromTheJungle:
+  - balance: rebalanced the oversized quirk, making them both move faster, and /not/
+      hit their head on airlocks!
+  RealWinterFrost:
+  - bugfix: fixed improper coloring on the RD's new fancy labcoat!
+2025-02-17:
+  1393F:
+  - balance: Colossus, Wendigo, and demonic-frost miner no longer dust people
+  FlufflesTheDog:
+  - bugfix: skillsofts are no longer smartfridges in disguise
+  RatFromTheJungle:
+  - balance: All of the colony power generation methods got a fair buff.
+  - balance: The colony 'generator,' spits out super-heated-steam and rads now. It
+      also runs on radiation, that too.
+  - balance: The colony small-battery holds slightly more charge then a normal megacell
+      now.
+  - code_imp: gateway doesn't require CC access to activate.
+  Stalkeros; Junglerat and Extramrdo for description assistance.:
+  - rscadd: Added new utility NIFsofts, now available either through the techweb,
+      or job-relevant vending machines.
+  - qol: NIFsoft HUDs no longer need glasses to function.
+  - bugfix: fixes the lack of ZCM company element on the ZCM suits and cap.
+2025-02-19:
+  FeenieRU:
+  - qol: Now your pAI can control your MOD suit.
+  RealWinterFrost:
+  - rscadd: Added more variants for "Giant Scarf" in player loadouts menu
+  - rscadd: Added giant scarf variants to "Clothesmate"
+2025-02-20:
+  Absolucy:
+  - bugfix: Void Cloaks now properly hide blades and such in the suit storage from
+      the wearer's sprite.
+  - bugfix: Fixed some mistakes I made while fixing the void cloak.
+  Bannhammger:
+  - rscadd: added Taser to initial contractor loadout
+  - balance: 'Guepe replaced by P207 in secbeacon
+
+      balance:Disabler replaced by AdvTaser in secbeacon'
+  Ben10Omintrix:
+  - bugfix: fixes virtual pet app changing PDA's colors when open
+  FeenieRU:
+  - balance: Shotgun shell's variance decreased.
+  - bugfix: "\u0418\u0437-\u0437\u0430 \u043D\u0435\u0434\u043E\u0431\u0440\u043E\u0441\
+      \u043E\u0432\u0435\u0441\u0442\u043D\u043E\u0433\u043E \u043F\u043E\u0441\u0442\
+      \u0430\u0432\u0449\u0438\u043A\u0430 \u0447\u0443\u0442\u044C \u043D\u0435 \u043F\
+      \u0440\u043E\u0438\u0437\u043E\u0448\u043B\u0430 \u0437\u0430\u043C\u0435\u043D\
+      \u0430 \u0432\u0441\u0435\u0445 \u0413\u0443\u044D\u043F\u044D \u0432 \u044F\
+      \u0449\u0438\u043A\u0430\u0445 \u043D\u0430 \u043A\u0438\u043D\u0435\u0442\u0438\
+      \u0447\u0435\u0441\u043A\u0438\u0435 \u043F\u0438\u0441\u0442\u043E\u043B\u0435\
+      \u0442\u044B. \u0414\u0435\u043C\u0438\u043B\u0438\u0442\u0430\u0440\u0438\u0437\
+      \u0430\u0446\u0438\u044F \u043E\u0442\u043C\u0435\u043D\u0435\u043D\u0430."
+  Gaxeer:
+  - bugfix: fix image display in `NT IRN` PDA app for preview and contents
+  Holoo-1:
+  - bugfix: fixed camera consoles, spyglasses etc. client crush on 516
+  - bugfix: fixed state laws window on 516
+  Jacquerel:
+  - bugfix: AI-controlled ventcrawling mobs (botanical spiderlings and legioned monkeys)
+      can once more do so without killing themselves shortly afterwards.
+  JohnFulpWillard:
+  - bugfix: Autolathes no longer have a scrollbar that sends you off the screen.
+  - bugfix: Exosuit fabricators' queue list & Techfab/Autolathe's left side (with
+      the sections of printables) now have a scrollbar when the full list doesn't
+      fit on the UI for 516 users. Techfab/Autolathe also now does this for the list
+      of items too, instead of always having one.
+  Likteer:
+  - qol: Added the resin mister module to the roundstart atmos MODsuit.
+  MTandi:
+  - qol: Tile context menu tweaks (Loot panel)
+  Melbert:
+  - rscadd: Adds two fantasy affixes
+  OrbisAnima:
+  - rscadd: Introducing from Donk Co new line of Genetic Pet Treats the Treat Breather,
+      capable of adapting the DNA of your animal companion to the cold and dangers
+      of the void of space. Now Available in Cargo Imports and to Certified Pet Owners.
+      May contain Space Carp and Soy Traces! (Credits to ABoxFaux for sprites and
+      original code!)
+  - qol: Made a new config in the Game Preferences Sound Menu to toggle eating and
+      drinking sounds.
+  RatFromTheJungle:
+  - balance: Solfeds rifle are notably less clunky, and notably more aggressive for
+      their permit-needing status.
+  - image: new sprites for half of the solfed-longarms.
+  - balance: Shotguns across the board should be doing more damage, and the solfedshotguns
+      (for the test) shoot, and rack notably faster.
+  - rscdel: Stardust is dead, it's now a taser-in-a-shell, unlike the fake-taser stunslugs.
+  Rengan:
+  - bugfix: When you cast examine to the disguised detective, its assignment will
+      now display correctly.
+  Runi-c:
+  - balance: slips now make you eligible for being shove stunned
+  SmArtKar:
+  - bugfix: Fixed wooden rifle stock being uncraftable
+  - bugfix: Tactical medkits should no longer create invisible medbots
+  - image: Implemented the missing bezerk medbot skin
+  - rscadd: Hydrogen Peroxide and Eldritch Essence now can rust turfs, with latter
+      producing heretic instead of normal rust.
+  - spellcheck: Fixed a misspelled comment and a reference to non-existent Eldritch
+      water (as opposed to Eldritch Essence)
+  - bugfix: Fixed exceptionally dark armrests on chairs
+  - bugfix: Fixed incorrect power consumption on reagent grinders
+  - bugfix: Fixed missing HTML encodes in comms console code
+  - bugfix: Examining walls no longer allows you to see items mounted on its other
+      side
+  - bugfix: Fixed dress and gown rendering below gloves and shoes
+  - balance: Removed an oversight which allowed you to farm fishing achievements
+  - bugfix: Fixed wrong area/wall in Icemoon Underground
+  - map: Added cooling loops and cold tiles to all kitchen freezers that were missing
+      them
+  - bugfix: Fixed plant analyzers not being placeable on tables/in backpacks
+  - bugfix: Fixed stunprod's missing inhands sprite
+  Stalkeros:
+  - qol: The Colonial Supply Core now arrives as a /tg/ flatpack, no longer needing
+      a shitload of resources to be deployed but only a multitool.
+  - balance: The Colonial Supply Core's intended efficiency maluses are now properly
+      applied.
+  TealSeer:
+  - bugfix: Fixed the crystallizer missing pipe connectors
+  Thunder12345:
+  - map: Removed a mounted machine gun from the Meta Central bitrunning domain, expect
+      85% less instant wipes.
+  Time-Green:
+  - rscdel: Reverts sneeze projectiles
+  TiviPlus:
+  - code_imp: updated hslify to correctly detect all hexcodes
+  - bugfix: fixed some admin links not working on 516
+  - server: An issue where more than 16 admin flags could not exist in the DB has
+      been corrected
+  Wallem:
+  - qol: Integrated Circuit nodes are now colored depending on their type.
+  Y0SH1M4S73R:
+  - bugfix: Joining a minigame or taking certain ghost roles, while you have a mind
+      without a body, will no longer DNR you, just in case you can be resurrected
+      by some means.
+  - bugfix: If your old body is permanently destroyed while you are playing a minigame
+      or as certain ghost roles, you will still return to your character's original
+      mind, just in case you can be resurrected by some means.
+  - bugfix: The basketball minigame now gives its players and referee temporary bodies.
+  grungussuss:
+  - sound: gauze now makes sounds when applied
+  loganuk:
+  - qol: Pyro Slime Objective Text Edit
+  necromanceranne:
+  - code_imp: Removes a variable in the riddable creature component that shouldn't
+      be doing what it is doing.
+  - balance: Hunter boxing now directly heals you instead of injecting you with healing
+      chems on a successful crit.
+  - balance: Your combos no longer cause you to screw up your next combo by changing
+      your attack speed for exactly one punch.
+  - code_imp: Fixes up a bit of odd rounding that occurs in the experience gain totals
+      and uses division instead of multipliers where it makes sense.
+  - bugfix: The traitor guncase properly checks for condition changes before letting
+      a player activate the time bomb.
+  - refactor: Gun maintenance is now consolidated into a single item, the gun maintenance
+      kit, rather than multiple different item interactions. It is handled on the
+      maintenance kit itself, and not in gun code.
+  - qol: You can order maintenance kits from cargo, and get some out of the security
+      equipment vendor. Helpful if someone spilled acid onto your disabler. You can
+      also make a makeshift one from maintenance trash.
+  timothymtorres:
+  - code_imp: Add error message logs to screenshot CI test failure when screenshots
+      do not exist.
+  vinylspiders:
+  - qol: alien eggs (xeno embryos, headslugs, etc) will now show up on the advanced
+      medical scanner
+2025-02-21:
+  OrbisAnima:
+  - rscadd: Allows Material fishing rods be made on the forge.
+  RatFromTheJungle:
+  - balance: Sec now starts off with two MR-2543 kits in their armory, with their
+      third sindano being lost in a stock cycling method that's yet to be disclosed.
+  - balance: The sindano, guepe, and a miniegun kits have started appearing in syndicate-markets
+      galaxy wide.
+  - code_imp: Removes the one-size-fits-all chestical sprite from the suit made of
+      rubber, also drastically lowers it's strip-time.
+  TheSS13Melon:
+  - rscdel: Removes the counterfeit mail item along with the tram remote from uplink
+      and OPFOR.
+2025-02-22:
+  FeenieRU:
+  - code_imp: Changed bunnysuit location from usual to contraband page
+2025-02-23:
+  Bannhammger:
+  - balance: borer chem regen increased to 1.5 from 1
+  - balance: borer maturity treshold lowered to 15
+  - balance: "\u0443\u0434\u0430\u043B\u0435\u043D\u044B \u0434\u0443\u0431\u043B\u0438\
+      \u043A\u0430\u0442\u044B \u0438\u0437 \u0430\u043F\u043B\u0438\u043D\u043A\u043E\
+      \u0432, \u042620\u0420 \u043F\u0440\u0438\u0432\u044F\u0437\u0430\u043D \u043A\
+      \ \u043F\u0440\u043E\u0433\u0440\u0435\u0441\u0441\u0438\u0438 30 \u043C\u0438\
+      \u043D\u0443\u0442, \u0411\u0443\u043B\u044C\u0434\u043E\u0433 \u043F\u0440\u0438\
+      \u0432\u044F\u0437\u0430\u043D \u043A \u043F\u0440\u043E\u0433\u0440\u0435\u0441\
+      \u0441\u0438\u0438 45 \u043C\u0438\u043D\u0443\u0442"
+  FeenieRU:
+  - balance: "\u0417\u0430\u0449\u0438\u0442\u043D\u0438\u043A \u0432\u0435\u0440\u043D\
+      \u0443\u043B\u0441\u044F \u0432 \u043F\u043E\u0441\u0442\u0430\u0432\u043A\u0438\
+      \ \u0438 \u0441\u043D\u0430\u0440\u044F\u0436\u0435\u043D\u0438\u0435 \u0421\
+      \u0411 \u0432 \u043A\u0430\u0447\u0435\u0441\u0442\u0432\u0435 \u0442\u0430\u043A\
+      \u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E \u043E\u0440\u0443\u0436\
+      \u0438\u044F, \u0447\u0442\u043E \u043D\u0435 \u0434\u0430\u0451\u0442 \u0435\
+      \u0433\u043E \u0441\u0432\u043E\u0431\u043E\u0434\u043D\u043E \u0437\u0430\u043A\
+      \u0430\u0437\u044B\u0432\u0430\u0442\u044C \u0438 \u043F\u0440\u0438\u043C\u0435\
+      \u043D\u044F\u0442\u044C \u0432 \u0417\u0435\u043B\u0451\u043D\u044B\u0439 \u041A\
+      \u043E\u0434."
+  - balance: "\u041F\u043E\u0441\u043B\u0435 \u043D\u0435\u0441\u0447\u0430\u0441\u0442\
+      \u043D\u043E\u0433\u043E \u0441\u043B\u0443\u0447\u0430\u044F \u0441 \u043F\u043E\
+      \u043A\u0443\u0448\u0435\u043D\u0438\u0435\u043C \u043D\u0430 \u043B\u0435\u0439\
+      \u0442\u0435\u043D\u0430\u043D\u0442\u0430 \u0426\u041A \u0441\u043E \u0441\u0442\
+      \u043E\u0440\u043E\u043D\u044B \u0438\u043D\u0436\u0435\u043D\u0435\u0440\u0430\
+      \ \u0441 \u043F\u0440\u0438\u043C\u0435\u043D\u0435\u043D\u0438\u0435\u043C\
+      \ \u043A\u0440\u0443\u043F\u043D\u043E\u043A\u0430\u043B\u0438\u0431\u0435\u0440\
+      \u043D\u043E\u0433\u043E \u0440\u0435\u0432\u043E\u043B\u044C\u0432\u0435\u0440\
+      \u0430 \u0421\u043A\u0438\u043B\u044C\u0434, \u041D\u0430\u043D\u043E\u0422\u0440\
+      \u0435\u0439\u0437\u0435\u043D \u043F\u0440\u0438\u043D\u044F\u043B \u0440\u0435\
+      \u0448\u0435\u043D\u0438\u0435 \u043D\u0430\u043B\u043E\u0436\u0438\u0442\u044C\
+      \ \u0432\u0435\u0442\u043E \u043D\u0430 \u043F\u043E\u0441\u0442\u0430\u0432\
+      \u043A\u0443 \u043E\u0431\u0440\u0430\u0437\u0446\u043E\u0432 \u0432\u043E\u043E\
+      \u0440\u0443\u0436\u0435\u043D\u0438\u044F \u0434\u0430\u043D\u043D\u043E\u0433\
+      \u043E \u043A\u0430\u043B\u0438\u0431\u0440\u0430 (D\xE9fonce \u0438 D\xE9fenestreur)\u043D\
+      \u0430 \u0442\u0435\u0440\u0440\u0438\u0442\u043E\u0440\u0438\u0438 \u043D\u0430\
+      \u0443\u0447\u043D\u044B\u0445 \u0441\u0442\u0430\u043D\u0446\u0438\u0439 \u0432\
+      \u043E \u0438\u0437\u0431\u0435\u0436\u0430\u043D\u0438\u0438 \u0434\u0430\u043B\
+      \u044C\u043D\u0435\u0439\u0448\u0438\u0445 \u043F\u043E\u043A\u0443\u0448\u0435\
+      \u043D\u0438\u0439 \u043D\u0430 \u0432\u044B\u0441\u043E\u043A\u043E\u043F\u043E\
+      \u0441\u0442\u0430\u0432\u043B\u0435\u043D\u043D\u044B\u0445 \u043B\u0438\u0446\
+      \ \u0438\u0437-\u0437\u0430 \u043D\u0435\u0432\u043E\u0437\u043C\u043E\u0436\
+      \u043D\u043E\u0441\u0442\u0438 \u0440\u0435\u0433\u0443\u043B\u0438\u0440\u043E\
+      \u0432\u0430\u0442\u044C \u043E\u0431\u043E\u0440\u043E\u0442 \u0432\u044B\u0441\
+      \u043E\u043A\u043E\u043B\u0435\u0442\u0430\u043B\u044C\u043D\u043E\u0433\u043E\
+      \ \u043E\u0440\u0443\u0436\u0438\u044F, \u0447\u0442\u043E \u0441\u0447\u0438\
+      \u0442\u0430\u0435\u0442\u0441\u044F \u0442\u0430\u0431\u0435\u043B\u044C\u043D\
+      \u044B\u043C."
+  Hardly:
+  - rscadd: Adds tailored jacket to the clothesmate.
+  Iajret:
+  - bugfix: fixed Nova's verbs in TGUI Say for 516 byond
+  Jedi-Toothpaste:
+  - rscadd: Adds crusher retool kits to loadout
+2025-02-24:
+  FeenieRU:
+  - balance: "\u041C\u0430\u0433\u0430\u0437\u0438\u043D\u044B \u043A \u0417\u0430\
+      \u0449\u0438\u0442\u043D\u0438\u043A\u0443 \u043D\u0430\u043A\u043E\u043D\u0435\
+      \u0446 \u0442\u043E\u0436\u0435 \u0434\u043E\u0441\u0442\u0443\u043F\u043D\u044B\
+      \ \u0432 \u043A\u0430\u0440\u0433\u043E."
+  - balance: "\u0428\u0442\u0443\u0440\u043C\u043E\u0432\u0430\u044F \u0432\u0438\u043D\
+      \u0442\u043E\u0432\u043A\u0430 \u0421\u043E\u043B\u0430 \u0432\u043E\u0437\u0432\
+      \u0440\u0430\u0449\u0435\u043D\u0430 \u043A\u0430\u043A \u0432\u0430\u0440\u0438\
+      \u0430\u043D\u0442 \u0442\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u043E\
+      \u0433\u043E \u043E\u0440\u0443\u0436\u0438\u044F \u0438 \u0432\u043E\u0441\u0441\
+      \u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u0430 \u043A \u0437\u0430\u043A\
+      \u0430\u0437\u0443 \u0447\u0435\u0440\u0435\u0437 \u043A\u0430\u0440\u0433\u043E\
+      ."
+  FeenieRU, Swing:
+  - map: Added duo-variants of hermits templates.
+  OrbisAnima:
+  - qol: Chipped no longer gives you random Brain Damage. Chip Connector no longer
+      REMOVES YOUR BRAIN upon EMP. How these things passed down the R&D phase is beyond
+      us.
+  - bugfix: fixed Wild plants experiments giving 25 minutes worth of science points
+      instead of a full discount for the scythes technology as it supposed to.
+2025-02-28:
+  Iajret:
+  - balance: un-nerfed blueshield and nt rep, fixed bit-den access on NSS Journey
+      and access for atmo mods
+  RatFromTheJungle:
+  - balance: The 'hazard' modsuit is now spaceproof, retaining it's shockproofness,
+      but losing the ability to fit it in your backpack, as it goes on the beltslot
+      now!
