@@ -1,5 +1,3 @@
-/* FLUFFY FRONTIER REFACTOR: BAR JUKEBOX (#5115)
-
 // Reasons for appling STATUS_MUTE to a mob's sound status
 /// The mob is deaf
 #define MUTE_DEAF (1<<0)
@@ -97,10 +95,10 @@
 	var/static/list/config_songs
 	if(isnull(config_songs))
 		config_songs = list()
-		var/list/tracks = flist("[global.config.directory]/jukebox_music/sounds/")
+		var/list/tracks = flist("tff_modular/master_files/content/jukebox_music/") // FLUFFY FRONTIER EDIT (#5490), old: var/list/tracks = flist("[global.config.directory]/jukebox_music/sounds/")
 		for(var/track_file in tracks)
 			var/datum/track/new_track = new()
-			new_track.song_path = file("[global.config.directory]/jukebox_music/sounds/[track_file]")
+			new_track.song_path = file("tff_modular/master_files/content/jukebox_music/[track_file]") // FLUFFY FRONTIER EDIT (#5490), old: new_track.song_path = file("[global.config.directory]/jukebox_music/sounds/[track_file]")
 			var/list/track_data = splittext(track_file, "+")
 			if(length(track_data) != 3)
 				continue
@@ -401,4 +399,3 @@
 	song_name = "Tintin on the Moon"
 	song_length = 3 MINUTES + 52 SECONDS
 	song_beat = 1 SECONDS
-*/ // FLUFFY FRONTIER REFACTOR END
