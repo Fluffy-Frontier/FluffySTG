@@ -9,7 +9,7 @@
 	if(!security_kits)
 		security_kits = list()
 		var/list/possible_weapons = list(
-			/obj/item/gun/ballistic/automatic/pistol/type207 = /obj/item/storage/toolbox/guncase/nova/pistol/trappiste_small_case/wespe_sec,
+			/obj/item/gun/ballistic/automatic/type213 = /obj/item/storage/toolbox/guncase/nova/pistol/trappiste_small_case/type213,
 			/obj/item/gun/energy/e_gun/advtaser = /obj/item/gun/energy/e_gun/advtaser,
 			/obj/item/gun/energy/disabler/smg = /obj/item/gun/energy/disabler/smg
 		)

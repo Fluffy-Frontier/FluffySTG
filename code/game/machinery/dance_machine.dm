@@ -1,4 +1,3 @@
-/* FLUFFY FRONTIER REFACTOR: BAR JUKEBOX (#5115)
 /obj/machinery/jukebox
 	name = "jukebox"
 	desc = "A classic music player."
@@ -158,9 +157,9 @@
 	anchored = FALSE
 
 	/// Spotlight effects being played
-	//VAR_PRIVATE/list/obj/item/flashlight/spotlight/spotlights = list()
+	VAR_PRIVATE/list/obj/item/flashlight/spotlight/spotlights = list()
 	/// Sparkle effects being played
-	//VAR_PRIVATE/list/obj/effect/overlay/sparkles/sparkles = list()
+	VAR_PRIVATE/list/obj/effect/overlay/sparkles/sparkles = list()
 
 /obj/machinery/jukebox/disco/indestructible
 	name = "radiant dance machine mark V"
@@ -389,4 +388,3 @@
 /obj/machinery/jukebox/disco/proc/dance4_revert(mob/living/dancer, matrix/starting_matrix)
 	animate(dancer, transform = starting_matrix, time = 5, loop = 0)
 	REMOVE_TRAIT(dancer, TRAIT_DISCO_DANCER, REF(src))
-*/ // FLUFFY FRONTIER REFACTOR END

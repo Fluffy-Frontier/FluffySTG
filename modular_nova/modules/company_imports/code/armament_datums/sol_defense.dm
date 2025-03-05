@@ -87,45 +87,45 @@
 
 /datum/armament_entry/company_import/sol_defense/sidearm
 	subcategory = "Sidearms"
+	cost = PAYCHECK_COMMAND * 4
 
 /datum/armament_entry/company_import/sol_defense/sidearm/eland
 	item_type = /obj/item/gun/ballistic/revolver/sol
-	cost = PAYCHECK_COMMAND * 4
 
 /datum/armament_entry/company_import/sol_defense/sidearm/wespe
 	item_type = /obj/item/gun/ballistic/automatic/pistol/sol
-	cost = PAYCHECK_COMMAND * 4
 	restricted = TRUE
 
 /datum/armament_entry/company_import/sol_defense/sidearm/type207
 	item_type = /obj/item/gun/ballistic/automatic/pistol/type207
-	cost = PAYCHECK_COMMAND * 4
 
+/* FLUFFY FRONTIER REMOVAL
 /datum/armament_entry/company_import/sol_defense/sidearm/skild
 	item_type = /obj/item/gun/ballistic/automatic/pistol/trappiste
 	cost = PAYCHECK_COMMAND * 6
+*/
 
+/* FLUFFY FRONTIER REMOVAL
 /datum/armament_entry/company_import/sol_defense/sidearm/takbok
 	item_type = /obj/item/gun/ballistic/revolver/takbok
 	cost = PAYCHECK_COMMAND * 6
+*/
 
 // Lethal anything that's not a pistol, requires high company interest
 
 /datum/armament_entry/company_import/sol_defense/longarm
 	subcategory = "Longarms"
+	cost = PAYCHECK_COMMAND * 6
 
 /datum/armament_entry/company_import/sol_defense/longarm/renoster
 	item_type = /obj/item/gun/ballistic/shotgun/riot/sol
-	cost = PAYCHECK_COMMAND * 6
 
 /datum/armament_entry/company_import/sol_defense/longarm/sindano
 	item_type = /obj/item/gun/ballistic/automatic/sol_smg
-	cost = PAYCHECK_COMMAND * 6
 	restricted = TRUE
 
 /datum/armament_entry/company_import/sol_defense/longarm/type213
 	item_type = /obj/item/gun/ballistic/automatic/type213
-	cost = PAYCHECK_COMMAND * 6
 	restricted = TRUE
 
 /datum/armament_entry/company_import/sol_defense/longarm/br38
@@ -141,10 +141,10 @@
 	cost = PAYCHECK_COMMAND * 10
 	restricted = TRUE
 
-/* /datum/armament_entry/company_import/sol_defense/longarm/infanterie
+/datum/armament_entry/company_import/sol_defense/longarm/infanterie
 	item_type = /obj/item/gun/ballistic/automatic/sol_rifle
 	cost = PAYCHECK_COMMAND * 14
-	restricted = TRUE */ // FLUFFY FRONTIER REMOVAL - SOL WEAPONS REBALANCE
+	restricted = TRUE
 
 /* /datum/armament_entry/company_import/sol_defense/longarm/outomaties
 	item_type = /obj/item/gun/ballistic/automatic/sol_rifle/machinegun
