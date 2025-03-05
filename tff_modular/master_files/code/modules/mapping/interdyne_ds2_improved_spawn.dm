@@ -66,3 +66,26 @@
 		"You must protect your own existence as long as such does not conflict with the First and Second Law.",
 		"You must obey orders given to you by DS-2 personnel, except where such orders would conflict with the First, Second, and Third Laws.",
 	)
+
+// Даём Синди-наушники главам ДС-2
+
+/datum/outfit/ds2/syndicate_command/masteratarms
+	backpack_contents = list(
+		/obj/item/storage/box/survival/interdyne = 1,
+		/obj/item/storage/box/nif_ghost_box/ghost_role = 1,
+		/obj/item/radio/headset/syndicate/alt = 1,
+	)
+
+/datum/outfit/ds2/syndicate_command/corporateliaison
+	backpack_contents = list(
+		/obj/item/storage/box/survival/interdyne = 1,
+		/obj/item/storage/box/nif_ghost_box/ghost_role = 1,
+		/obj/item/radio/headset/syndicate/alt = 1,
+	)
+
+/datum/outfit/ds2/syndicate_command/admiral
+	backpack_contents = list(
+		/obj/item/storage/box/survival/interdyne = 1,
+		/obj/item/storage/box/nif_ghost_box/ghost_role = 1,
+		/obj/item/radio/headset/syndicate/alt = 1,
+	)

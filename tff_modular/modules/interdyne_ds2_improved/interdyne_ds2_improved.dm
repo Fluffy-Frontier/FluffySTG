@@ -7,10 +7,6 @@
 
 ////// RND BLOCK ///////
 // создаём и регистрируем РНД-сеть
-/datum/controller/subsystem/research/Initialize()
-	. = ..()
-	new /datum/techweb/interdyne
-
 /datum/techweb/interdyne
 	id = "INTERDYNE"
 	organization = "Interdyne Pharmaceutics"
@@ -137,11 +133,11 @@
 	name = "Interdyne Component Printer"
 	circuit = /obj/item/circuitboard/machine/component_printer/interdyne
 
-/obj/machinery/component_printer/interdyne/post_machine_initialize()
+/*/obj/machinery/component_printer/interdyne/post_machine_initialize()
 	. = ..()
 	var/datum/techweb/interdyne/active_web = locate(/datum/techweb/interdyne) in SSresearch.techwebs
 	connect_techweb(active_web)
-
+*/
 // Дубликатор модулей
 /obj/item/circuitboard/machine/module_duplicator/interdyne
 	name = "Interdyne Module Duplicator board"
@@ -154,10 +150,6 @@
 /////////// DS-2 BLOCK ///////////
 ////// RND BLOCK ///////
 // создаём и регистрируем РНД-сеть
-/datum/controller/subsystem/research/Initialize()
-	. = ..()
-	new /datum/techweb/ds2
-
 /datum/techweb/ds2
 	id = "CYBERSUN"
 	organization = "Cybersun Industries"
