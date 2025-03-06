@@ -308,7 +308,8 @@
 	pixel_x = 0;
 	pixel_y = 29;
 	credits_account = "IP";
-	name = "Outpost Balance Display"
+	name = "Outpost Balance Display";
+	default_logo = "synd"
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/vault)
@@ -7091,7 +7092,8 @@
 	pixel_x = 0;
 	pixel_y = 29;
 	credits_account = "IP";
-	name = "Outpost Balance Display"
+	name = "Outpost Balance Display";
+	default_logo = "synd"
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
@@ -8604,6 +8606,7 @@
 	dir = 1
 	},
 /obj/structure/marker_beacon/bronze,
+/obj/item/card/id/departmental_budget/interdyne,
 /turf/open/floor/carpet/red,
 /area/ruin/interdyne_planetary_base/main/vault)
 "QF" = (

@@ -6209,7 +6209,8 @@
 	pixel_x = 0;
 	pixel_y = 29;
 	credits_account = "IP";
-	name = "Outpost Balance Display"
+	name = "Outpost Balance Display";
+	default_logo = "synd"
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
@@ -8357,6 +8358,7 @@
 	},
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/trimline/dark/filled/line,
+/obj/item/card/id/departmental_budget/interdyne,
 /turf/open/floor/carpet/red,
 /area/ruin/interdyne_planetary_base/main/vault)
 "OD" = (
@@ -10592,7 +10594,8 @@
 	pixel_x = 0;
 	pixel_y = 29;
 	credits_account = "IP";
-	name = "Outpost Balance Display"
+	name = "Outpost Balance Display";
+	default_logo = "synd"
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/vault)

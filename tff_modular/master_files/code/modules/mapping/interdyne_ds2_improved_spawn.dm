@@ -68,7 +68,6 @@
 	)
 
 // Даём Синди-наушники главам ДС-2
-
 /datum/outfit/ds2/syndicate_command/masteratarms
 	backpack_contents = list(
 		/obj/item/storage/box/survival/interdyne = 1,
