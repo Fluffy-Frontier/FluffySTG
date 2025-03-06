@@ -3381,8 +3381,7 @@
 	},
 /obj/item/ammo_casing/c357/heartseeker{
 	pixel_x = -6;
-	pixel_y = 10;
-	layer = 3.01
+	pixel_y = 10
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/nova/des_two/service/lounge)
@@ -13601,13 +13600,10 @@
 	dir = 4
 	},
 /obj/structure/table/wood,
-/obj/item/ammo_casing/c357/heartseeker{
-	layer = 3.01
-	},
+/obj/item/ammo_casing/c357/heartseeker,
 /obj/item/ammo_casing/c357/match{
 	pixel_x = -10;
-	pixel_y = 8;
-	layer = 3.01
+	pixel_y = 8
 	},
 /obj/item/ammo_casing/shotgun/buckshot{
 	pixel_x = 4;
