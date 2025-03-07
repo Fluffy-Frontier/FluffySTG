@@ -75,10 +75,24 @@
 	queenie.create_shriekwave()
 	shake_camera(owner, 2, 2)
 
-	for(var/mob/living/carbon/human/screech_target in get_hearers_in_view(7, get_turf(queenie)))
-		screech_target.soundbang_act(intensity = 5, stun_pwr = 50, damage_pwr = 10, deafen_pwr = 30) //Only being deaf will save you from the screech
-		shake_camera(screech_target, 4, 3)
-		to_chat(screech_target, span_doyourjobidiot("[queenie] lets out a deafening screech!"))
+	owner.visible_message(span_doyourjobidiot("[queenie] lets out a deafening screech!"), self_message = span_revenbignotice("You emits an ear-splitting guttural roar!"))
+
+	for(var/mob/living/carbon/screech_target in get_hearers_in_range(9, get_turf(queenie)))
+
+		if(isalien(screech_target))
+			shake_camera(screech_target, 10, 1)
+			continue
+		else
+			shake_camera(screech_target, 30, 1)
+
+		var/distance_to_target = get_dist(queenie, screech_target)
+		if(distance_to_target <= 4)
+			to_chat(src, SPAN_DANGER("An ear-splitting guttural roar shakes the ground beneath your feet!"))
+			screech_target.AdjustStun(40)
+			screech_target.AdjustKnockdown(20)
+		else if(distance_to_target >= 5 && distance_to_target < 7)
+			to_chat(src, SPAN_DANGER("The roar shakes your body to the core, freezing you in place!"))
+			screech_target.AdjustStun(20)
 
 	return TRUE
 
