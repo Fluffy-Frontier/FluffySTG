@@ -7,27 +7,31 @@
 	maxHealth = 500
 	health = 500
 	icon_state = "alienqueen"
+	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 30
 	melee_damage_upper = 35
 
+	additional_organ_types_by_slot = list(
+		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/large/queen,
+		ORGAN_SLOT_XENO_RESINSPINNER = /obj/item/organ/alien/resinspinner,
+		ORGAN_SLOT_XENO_ACIDGLAND = /obj/item/organ/alien/acid,
+		ORGAN_SLOT_XENO_NEUROTOXINGLAND = /obj/item/organ/alien/neurotoxin/queen,
+		ORGAN_SLOT_XENO_EGGSAC = /obj/item/organ/alien/eggsac/tgmc,
+	)
+
 /mob/living/carbon/alien/adult/tgmc/queen/Initialize(mapload)
 	. = ..()
+	AddComponent(/datum/component/seethrough_mob)	// Люркеров у нас нету (слава богу), но выдать такую штуку кому-то хочется... Будет у королевы, как на обычном ТГ
+
 	var/static/list/innate_actions = list(
-		/datum/action/cooldown/spell/aoe/repulse/xeno/nova_tailsweep/hard_throwing,
-		/datum/action/cooldown/alien/nova/queen_screech,
+		/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/hard_throwing,
+		/datum/action/cooldown/alien/tgmc/queen_screech,
 	)
 	grant_actions_by_list(innate_actions)
 
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_big)
-
-/mob/living/carbon/alien/adult/tgmc/queen/create_internal_organs()
-	organs += new /obj/item/organ/alien/plasmavessel/large/queen
-	organs += new /obj/item/organ/alien/resinspinner
-	organs += new /obj/item/organ/alien/neurotoxin/queen
-	organs += new /obj/item/organ/alien/eggsac/tgmc
-	..()
 
 /mob/living/carbon/alien/adult/tgmc/queen/alien_talk(message, shown_name = name)
 	..(message, shown_name, TRUE)
@@ -38,8 +42,8 @@
 	zone = BODY_ZONE_PRECISE_MOUTH
 	slot = ORGAN_SLOT_XENO_NEUROTOXINGLAND
 	actions_types = list(
-		/datum/action/cooldown/alien/acid/nova,
-		/datum/action/cooldown/alien/acid/nova/lethal,
+		/datum/action/cooldown/alien/acid/tgmc,
+		/datum/action/cooldown/alien/acid/tgmc/lethal,
 		/datum/action/cooldown/alien/acid/corrosion,
 	)
 
@@ -58,13 +62,13 @@
 
 	return ..()
 
-/datum/action/cooldown/alien/nova/queen_screech
+/datum/action/cooldown/alien/tgmc/queen_screech
 	name = "Deafening Screech"
 	desc = "Let out a screech so deafeningly loud that anything with the ability to hear around you will likely be incapacitated for a short time."
 	button_icon_state = "screech"
 	cooldown_time = 5 MINUTES
 
-/datum/action/cooldown/alien/nova/queen_screech/Activate()
+/datum/action/cooldown/alien/tgmc/queen_screech/Activate()
 	. = ..()
 	var/mob/living/carbon/alien/adult/tgmc/queenie = owner
 	playsound(queenie, 'tff_modular/modules/tgmc_xenos/sound/alien_queen_screech.ogg', 100, FALSE, 8, 0.9)
@@ -86,3 +90,6 @@
 
 /mob/living/carbon/alien/adult/tgmc/proc/remove_shriekwave()
 	remove_overlay(HALO_LAYER)
+
+/mob/living/carbon/alien/adult/tgmc/queen/findQueen()
+	return	// Королева и так знает свое местоположение

@@ -130,6 +130,7 @@
 /datum/techweb_node/consoles/New()
 	design_ids += list(
 		"time_clock_frame",
+		"nif_service_tools",
 	)
 	return ..()
 
@@ -162,6 +163,11 @@
 	return ..()
 
 ////////////////////////Medical////////////////////////
+/datum/techweb_node/surgery/New()
+	design_ids += list(
+		"nif_surgery_tools",
+	)
+	return ..()
 
 /datum/techweb_node/gene_engineering/New()
 	design_ids += list(
@@ -209,6 +215,8 @@
 /datum/techweb_node/sec_equip/New()
 	design_ids += list(
 		"nifsoft_remover",
+		"nif_detective_tools",
+
 	)
 	return ..()
 
@@ -245,6 +253,12 @@
 
 /////////////////////////engineering tech/////////////////////////
 
+/datum/techweb_node/parts_upg/New()
+	design_ids += list(
+		"nif_general_tools",
+	)
+	return ..()
+
 /datum/techweb_node/fusion/New()
 	design_ids += list(
 		"engine_goggles_prescription",
@@ -266,6 +280,7 @@
 /datum/techweb_node/mining/New()
 	design_ids += list(
 		"mesons_prescription",
+		"bsc_nt",
 	)
 	return ..()
 
