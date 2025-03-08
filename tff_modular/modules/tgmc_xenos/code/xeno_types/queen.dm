@@ -87,11 +87,11 @@
 
 		var/distance_to_target = get_dist(queenie, screech_target)
 		if(distance_to_target <= 4)
-			to_chat(src, SPAN_DANGER("An ear-splitting guttural roar shakes the ground beneath your feet!"))
+			to_chat(src, span_danger("An ear-splitting guttural roar shakes the ground beneath your feet!"))
 			screech_target.AdjustStun(40)
 			screech_target.AdjustKnockdown(20)
 		else if(distance_to_target >= 5 && distance_to_target < 7)
-			to_chat(src, SPAN_DANGER("The roar shakes your body to the core, freezing you in place!"))
+			to_chat(src, span_danger("The roar shakes your body to the core, freezing you in place!"))
 			screech_target.AdjustStun(20)
 
 	return TRUE
