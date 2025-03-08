@@ -8,5 +8,5 @@
 
 //This just is a roundabout way for the master signal to add to the survivor list mid-round
 /datum/action/cooldown/necro/psy/sense/Activate(atom/target)
-	var/mob/eye/marker_signal/caller = owner
-	caller.marker.sense_survivors()
+	var/mob/eye/marker_signal/called = owner
+	called.marker.sense_survivors()
