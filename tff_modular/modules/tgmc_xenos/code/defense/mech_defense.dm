@@ -8,5 +8,5 @@
 
 	log_message("Attack by alien. Attacker - [user].", LOG_MECHA, color="red")
 	playsound(loc, 'sound/items/weapons/slash.ogg', 100, TRUE)
-	var/damage = round(rand(user.melee_damage_lower, user.melee_damage_upper) * mech_damage_multiplier)
+	var/damage = round(rand(user.melee_damage_lower, user.melee_damage_upper) * user.mech_damage_multiplier)
 	attack_generic(user, damage, BRUTE, MELEE, 0)
