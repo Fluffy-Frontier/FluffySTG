@@ -1,6 +1,11 @@
+/// TGMC_XENOS (old nova sector xenos)
+
 // Яйцеклад королевы
 /obj/item/organ/alien/eggsac/tgmc
 	actions_types = list(/datum/action/cooldown/alien/make_structure/lay_egg/tgmc)
+
+/datum/action/cooldown/alien/make_structure/lay_egg/tgmc
+	made_structure_type = /obj/structure/alien/egg/tgmc
 
 // Плевалка нейротоксина сентинела
 /obj/item/organ/alien/neurotoxin/sentinel

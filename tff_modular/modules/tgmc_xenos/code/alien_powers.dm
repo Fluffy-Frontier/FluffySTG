@@ -1,4 +1,4 @@
-//
+/// TGMC_XENOS (old nova sector xenos)
 
 #define RAVAGER_OUTLINE_EFFECT "ravager_endure_outline"
 #define EVASION_VENTCRAWL_INABILTY_CD_PERCENTAGE 0.8

@@ -1,3 +1,5 @@
+/// TGMC_XENOS (old nova sector xenos)
+
 /obj/projectile/neurotoxin/tgmc
 	name = "neurotoxin spit"
 	icon_state = "neurotoxin"
