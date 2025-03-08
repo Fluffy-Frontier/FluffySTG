@@ -12,6 +12,7 @@
 	necro_spawn_atoms += src
 
 	AddComponent(/datum/component/seethrough, SEE_THROUGH_MAP_MARKER)
+	soundloop = new(src, FALSE)
 	START_PROCESSING(SSobj, src)
 
 /obj/structure/marker/Destroy()
@@ -20,10 +21,12 @@
 		remove_biomass_source(source)
 	necro_spawn_atoms = null
 	GLOB.necromorph_markers -= src
-	for(var/mob/camera/marker_signal/signal as anything in marker_signals)
+	for(var/mob/eye/marker_signal/signal as anything in marker_signals)
 		signal.show_message(span_userdanger("You feel like your connection with the Marker breaks!"))
 		qdel(signal)
 	marker_signals = null
+	QDEL_LIST(unwhole)
+	QDEL_NULL(soundloop)
 	return ..()
 
 /obj/structure/marker/update_icon_state()
@@ -45,7 +48,7 @@
 
 /obj/structure/marker/proc/change_signal_biomass(amount)
 	signal_biomass = max(0, signal_biomass+amount)
-	for(var/mob/camera/marker_signal/signal as anything in marker_signals)
+	for(var/mob/eye/marker_signal/signal as anything in marker_signals)
 		signal.update_biomass_hud()
 
 /obj/structure/marker/proc/hive_mind_message(mob/sender, message)
@@ -57,7 +60,7 @@
 	for(var/mob/ghost as anything in GLOB.dead_mob_list)
 		to_chat(ghost, "[FOLLOW_LINK(ghost, sender)] [message]", MESSAGE_TYPE_RADIO)
 
-	for(var/mob/camera/marker_signal/signal as anything in marker_signals)
+	for(var/mob/eye/marker_signal/signal as anything in marker_signals)
 		to_chat(signal, "[FOLLOW_LINK(signal, sender)] [message]", MESSAGE_TYPE_RADIO)
 
 	for(var/mob/living/carbon/human/necromorph/necro as anything in necromorphs)
@@ -76,6 +79,11 @@
 	necromorphs -= necro
 	necro.marker = null
 
+/obj/structure/marker/proc/sense_survivors()
+	for(var/mob/living/survivors as anything in GLOB.player_list) //We look for any mob with a client
+		if(survivors.stat != DEAD && !isnecromorph(survivors) && is_station_level(survivors.loc?.z))
+			unwhole |= survivors //Using |= prevents duplicates in the list, but is a little slower
+
 /obj/structure/marker/proc/activate(announce = TRUE)
 	if(active)
 		return
@@ -83,14 +91,17 @@
 	change_marker_biomass(250) //Marker given a biomass injection, enough for a small team and some growing
 	change_signal_biomass(50) //Signals given biomass injection for general spreading
 	add_biomass_source(/datum/biomass_source/baseline, src) //Base income for marker
-	for(var/mob/camera/marker_signal/eye as anything in marker_signals)
-		for(var/datum/action/cooldown/necro/corruption/ability as anything in subtypesof(/datum/action/cooldown/necro/corruption))
-			if(initial(ability.marker_only) && !istype(eye, /mob/camera/marker_signal/marker))
-				continue
-			ability = new ability(eye)
-			ability.Grant(eye)
+	sense_survivors() //Checks for survivors for sense
+	for(var/mob/eye/marker_signal/eye as anything in marker_signals)
+		var/datum/action/cooldown/necro/corruption/ability = new /datum/action/cooldown/necro/corruption(eye)
+		ability.Grant(eye)
 	new /datum/corruption_node/atom/marker(src, src)
 	update_icon(UPDATE_ICON_STATE)
+	light_power = 1
+	light_range = 4
+	light_color = "#EC3232"
+	update_light()
+	soundloop.start()
 	if(announce)
 		announce_activation()
 
@@ -114,7 +125,7 @@
 		var/obj/structure/marker/marker = tgui_input_list(src, "Pick a marker to join", "Join Horde", GLOB.necromorph_markers)
 		if(QDELETED(marker))
 			return
-		var/mob/camera/marker_signal/eye = new(get_turf(marker), marker)
+		var/mob/eye/marker_signal/eye = new(get_turf(marker), marker)
 		eye.ckey = src.ckey
 
 /obj/structure/marker/ui_interact(mob/user, datum/tgui/ui)
@@ -175,14 +186,13 @@
 			var/class = text2path(params["class"])
 			if(!class || !(class in necro_classes))
 				return
-			camera_mob.detach_necro_preview()
-			camera_mob.attach_necro_preview(necro_classes[class])
+			camera_mob.spawning_necromorph = necro_classes[class].type
 		if("set_signal_biomass_percent")
 			var/percent = text2num(params["percentage"])
 			if(isnull(percent))
 				percent = 0.1
 			signal_biomass_percent = CLAMP01(percent)
-			for(var/mob/camera/marker_signal/signal as anything in marker_signals)
+			for(var/mob/eye/marker_signal/signal as anything in marker_signals)
 				signal.update_biomass_hud()
 		if("change_signal_biomass")
 			var/add_signal_biomass = text2num(params["biomass"])

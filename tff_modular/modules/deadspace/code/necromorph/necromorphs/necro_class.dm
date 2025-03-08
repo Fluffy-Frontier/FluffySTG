@@ -37,9 +37,6 @@
 	///the 'abilities' available to a necromorph.
 	var/list/datum/action/cooldown/necro/actions = list()
 
-	///The iconstate for the necromorph on the minimap
-	var/minimap_icon = "xenominion"
-
 	///If there is necromorph cant be spawned by a marker
 	///-1 = unlimited
 	var/spawn_limit = -1

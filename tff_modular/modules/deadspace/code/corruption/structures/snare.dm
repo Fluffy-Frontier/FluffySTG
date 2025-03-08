@@ -5,17 +5,12 @@
 	icon = 'tff_modular/modules/deadspace/icons/effects/corruption.dmi'
 	icon_state = "snare"
 	max_integrity = 50
+	can_place_in_sight = TRUE
+	cost = 40
 
 /obj/structure/necromorph/snare/Initialize(mapload)
 	.=..()
 	AddComponent(/datum/component/slippery/necro, 5 SECONDS, NO_SLIP_WHEN_WALKING|SLIDE|GALOSHES_DONT_HELP)
-
-/datum/action/cooldown/necro/corruption/snare
-	name = "Snare"
-	button_icon_state = "snare"
-	place_structure = /obj/structure/necromorph/snare
-	can_place_in_sight = TRUE
-	cost = 40
 
 //This can stay empty, since we don't really need to change anything in the parent
 /datum/component/slippery/necro

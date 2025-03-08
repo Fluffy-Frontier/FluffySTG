@@ -41,11 +41,10 @@
 	necro_armor = /datum/armor/dsnecro_hopper
 	actions = list(
 		/datum/action/cooldown/necro/hide,
-		/datum/action/cooldown/necro/charge/leaper,
+		/datum/action/cooldown/mob_cooldown/charge/necro/leaper,
 		/datum/action/cooldown/necro/active/gallop/hopper,
 		/datum/action/cooldown/necro/shout,
 	)
-	minimap_icon = "hopper"
 	implemented = TRUE
 
 /datum/species/necromorph/leaper/hopper

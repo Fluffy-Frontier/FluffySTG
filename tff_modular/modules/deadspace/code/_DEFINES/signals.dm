@@ -1,4 +1,4 @@
-#define ismarkereye(A) (istype(A, /mob/camera/marker_signal)) //youknow
+#define ismarkereye(A) (istype(A, /mob/eye/marker_signal)) //youknow
 
 
 //from base of (/atom/proc/set_density): (old_density, new_density)

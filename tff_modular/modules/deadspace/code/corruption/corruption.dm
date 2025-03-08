@@ -210,7 +210,7 @@
 
 /obj/structure/corruption/proc/on_nearby_turf_change(turf/source, path, list/new_baseturfs, flags, list/post_change_callbacks)
 	if(isopenspaceturf(source))
-		if(ispath(/turf/open/openspace))
+		if(ispath(path, /turf/open/openspace) || ispath(path, /turf/open/space/openspace))
 			return
 		UnregisterSignal(GET_TURF_BELOW(source), list(COMSIG_TURF_CHANGE, COMSIG_TURF_NECRO_CORRUPTED, COMSIG_TURF_NECRO_UNCORRUPTED))
 
@@ -231,10 +231,14 @@
 /obj/structure/corruption/proc/on_nearby_turf_corrupted(turf/source)
 	dirs_to_spread &= ~get_dir(loc, source)
 	update_spread_state()
+	UnregisterSignal(source, COMSIG_TURF_NECRO_CORRUPTED)
+	RegisterSignal(source, COMSIG_TURF_NECRO_UNCORRUPTED, PROC_REF(on_nearby_turf_uncorrupted))
 
 /obj/structure/corruption/proc/on_nearby_turf_uncorrupted(turf/source)
 	dirs_to_spread |= get_dir(loc, source)
 	update_spread_state()
+	UnregisterSignal(source, COMSIG_TURF_NECRO_UNCORRUPTED)
+	RegisterSignal(source, COMSIG_TURF_NECRO_CORRUPTED, PROC_REF(on_nearby_turf_corrupted))
 
 /obj/structure/corruption/proc/on_master_delete()
 	master.corruption -= src

@@ -9,6 +9,7 @@
 	class = /datum/necro_class/hunter
 	necro_species = /datum/species/necromorph/hunter
 	necro_armor = /datum/armor/dsnecro_hunter
+	tutorial_text = "<b>Last Breath:</b> right before you die, you regenerate once for free. Don't expect this to save you forever, if you keep getting shot while healing, it's game over for you."
 
 /mob/living/carbon/human/necromorph/hunter/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
@@ -58,8 +59,8 @@
 		// /datum/action/cooldown/necro/taunt/hunter,
 		/datum/action/cooldown/necro/regenerate/hunter,
 		/datum/action/cooldown/necro/shout,
+		/datum/action/innate/sense,
 	)
-	minimap_icon = "hunter"
 	implemented = TRUE
 
 /datum/armor/dsnecro_hunter

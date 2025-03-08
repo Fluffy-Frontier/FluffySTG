@@ -14,6 +14,7 @@
 	var/dodge_pool_chance = 55
 	///Amount dodge_pool decreases
 	var/dodge_pool_usage = 12
+	tutorial_text = "<b>Shake it!:</b> at the start of the battle you'll be dodging most bullets and the better you are at it, the sooner you'll start catching them. Outside of battle, things will go back to normal. However, you <b>can not dodge melee attacks</b>."
 
 /mob/living/carbon/human/necromorph/twitcher/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
@@ -50,10 +51,9 @@
 	necro_armor = /datum/armor/dsnecro_twitcher
 	actions = list(
 		/datum/action/cooldown/necro/shout,
-		/datum/action/cooldown/necro/charge,
-		/datum/action/cooldown/necro/charge/twitcher,
+		/datum/action/cooldown/mob_cooldown/charge/necro,
+		/datum/action/cooldown/mob_cooldown/charge/necro/twitcher,
 	)
-	minimap_icon = "twitcher"
 	implemented = TRUE
 	nest_allowed = FALSE
 

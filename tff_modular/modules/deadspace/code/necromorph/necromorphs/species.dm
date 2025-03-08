@@ -99,3 +99,12 @@
 	LR.layer = H.layer - 0.1 //Slightly below the layer of the mob, so that the healthy limb will draw over it
 	H.flick_overlay(LR, GLOB.clients, duration)
 
+//The natural healing of the necromorph
+/datum/species/necromorph/spec_life(mob/living/carbon/human/necromorph/necro, delta_time, times_fired)
+	if(necro.stat == DEAD) //Dead necros don't heal
+		return
+	var/turf/my_turf = get_turf(necro)
+	if(my_turf.necro_corrupted) //Not standing on corruption? No heals
+		necro.heal_overall_damage(0.2 * delta_time, 0 * delta_time, BODYTYPE_ORGANIC)
+	return ..()
+

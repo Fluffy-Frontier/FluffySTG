@@ -6,6 +6,7 @@
 	necro_armor = /datum/armor/dsnecro_slasher
 	pixel_x = -8
 	base_pixel_x = -8
+	tutorial_text = "<b>Raise Your Shields:</b> you can take a step in the direction of the mouse click, giving you a <b>maximum</b> of 20 defense points."
 
 /mob/living/carbon/human/necromorph/slasher/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
@@ -27,11 +28,10 @@
 	melee_damage_upper = 20
 	necro_armor = /datum/armor/dsnecro_slasher
 	actions = list(
-		/datum/action/cooldown/necro/charge/slasher,
+		/datum/action/cooldown/mob_cooldown/charge/necro/slasher,
 		/datum/action/cooldown/necro/dodge,
 		/datum/action/cooldown/necro/shout,
 	)
-	minimap_icon = "slasher"
 	implemented = TRUE
 
 /datum/armor/dsnecro_slasher
@@ -64,12 +64,11 @@
 		'tff_modular/modules/deadspace/sound/effects/creatures/necromorph/slasher/slasher_shout_4.ogg',
 	)
 
-/datum/action/cooldown/necro/charge/slasher
+/datum/action/cooldown/mob_cooldown/charge/necro/slasher
 	cooldown_time = 12 SECONDS
 	charge_delay = 1 SECONDS
-	charge_time = 4 SECONDS
 
-/datum/action/cooldown/necro/charge/slasher/do_charge_indicator(atom/charge_target)
+/datum/action/cooldown/mob_cooldown/charge/necro/slasher/do_charge_indicator(atom/charge_target)
 	var/mob/living/carbon/human/necromorph/source = owner
 	var/matrix/new_matrix = matrix(source.transform)
 	var/shake_dir = pick(-1, 1)

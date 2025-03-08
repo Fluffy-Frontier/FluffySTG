@@ -7,7 +7,7 @@
 	marker_flags = SIGNAL_ABILITY_PRE_ACTIVATION
 
 /datum/action/cooldown/necro/psy/false_sound/Activate(turf/target)
-	var/mob/camera/marker_signal/signal = owner
+	var/mob/eye/marker_signal/called = owner
 	target = get_turf(target)
 	if(!target)
 		return
@@ -15,11 +15,11 @@
 	//Add more necromorphs here, perhaps we should make it a define to make sure it's updated
 	var/list/category = tgui_input_list(owner, "Pick a necromorph type", "False Sound", GLOB.necromorph_sounds)
 	if(!category)
-		signal.change_psy_energy(cost) //Refund the cost if nothing is picked
+		called.change_psy_energy(cost) //Refund the cost if nothing is picked
 		return TRUE
 	var/list/picked_sound = tgui_input_list(owner, "Pick sound type to play", "False Sound", GLOB.necromorph_sounds[category])
 	if(!picked_sound)
-		signal.change_psy_energy(cost) //Refund the cost if nothing is picked
+		called.change_psy_energy(cost) //Refund the cost if nothing is picked
 		return TRUE
 	var/volume = VOLUME_MID
 	playsound(target, pick(GLOB.necromorph_sounds[category][picked_sound]), volume, 1, 2)

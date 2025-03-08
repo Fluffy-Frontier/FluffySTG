@@ -45,16 +45,16 @@
 	show_organs_on_examine = TRUE
 
 /obj/item/bodypart/head/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
-	if((wounding_type == WOUND_SLASH) && brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_EDGE)
+	if((wounding_type == WOUND_SLASH) && brute_dam >= max_damage * DROPLIMB_THRESHOLD_EDGE)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
-	else if(burn_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
+	else if(burn_dam >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
 		return dismember(BURN, wounding_type = wounding_type)
 
-	else if((wounding_type == WOUND_PIERCE) && (brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
+	else if((wounding_type == WOUND_PIERCE) && (brute_dam >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
 		return dismember(BRUTE, wounding_type = wounding_type)
 
-	else if(brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
+	else if(brute_dam >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
 /obj/item/bodypart/arm/left/necromorph
@@ -78,16 +78,16 @@
 	wound_resistance = 0
 
 /obj/item/bodypart/arm/left/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
-	if((wounding_type == WOUND_SLASH) && brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_EDGE)
+	if((wounding_type == WOUND_SLASH) && brute_dam >= max_damage * DROPLIMB_THRESHOLD_EDGE)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
-	else if(burn_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
+	else if(burn_dam >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
 		return dismember(BURN, wounding_type = wounding_type)
 
-	else if((wounding_type == WOUND_PIERCE) && (brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
+	else if((wounding_type == WOUND_PIERCE) && (brute_dam >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
 		return dismember(BRUTE, wounding_type = wounding_type)
 
-	else if(brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
+	else if(brute_dam >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
 /obj/item/bodypart/arm/right/necromorph
@@ -111,16 +111,16 @@
 	wound_resistance = 0
 
 /obj/item/bodypart/arm/right/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
-	if((wounding_type == WOUND_SLASH) && brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_EDGE)
+	if((wounding_type == WOUND_SLASH) && brute_dam>= max_damage * DROPLIMB_THRESHOLD_EDGE)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
-	else if(burn_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
+	else if(burn_dam >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
 		return dismember(BURN, wounding_type = wounding_type)
 
-	else if((wounding_type == WOUND_PIERCE) && (brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
+	else if((wounding_type == WOUND_PIERCE) && (brute_dam >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
 		return dismember(BRUTE, wounding_type = wounding_type)
 
-	else if(brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
+	else if(brute_dam >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
 /obj/item/bodypart/leg/left/necromorph
@@ -144,16 +144,16 @@
 	wound_resistance = 0
 
 /obj/item/bodypart/leg/left/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
-	if((wounding_type == WOUND_SLASH) && brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_EDGE)
+	if((wounding_type == WOUND_SLASH) && brute_dam >= max_damage * DROPLIMB_THRESHOLD_EDGE)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
-	else if(burn_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
+	else if(burn_dam >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
 		return dismember(BURN, wounding_type = wounding_type)
 
-	else if((wounding_type == WOUND_PIERCE) && (brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
+	else if((wounding_type == WOUND_PIERCE) && (brute_dam >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
 		return dismember(BRUTE, wounding_type = wounding_type)
 
-	else if(brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
+	else if(brute_dam >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
 /obj/item/bodypart/leg/right/necromorph
@@ -177,16 +177,16 @@
 	wound_resistance = 0
 
 /obj/item/bodypart/leg/right/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
-	if((wounding_type == WOUND_SLASH) && brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_EDGE)
+	if((wounding_type == WOUND_SLASH) && brute_dam >= max_damage * DROPLIMB_THRESHOLD_EDGE)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
-	else if(burn_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
+	else if(burn_dam >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
 		return dismember(BURN, wounding_type = wounding_type)
 
-	else if((wounding_type == WOUND_PIERCE) && (brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
+	else if((wounding_type == WOUND_PIERCE) && (brute_dam >= max_damage * DROPLIMB_THRESHOLD_TEAROFF))
 		return dismember(BRUTE, wounding_type = wounding_type)
 
-	else if(brute_dam + wounding_dmg >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
+	else if(brute_dam >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
 #undef DROPLIMB_THRESHOLD_EDGE

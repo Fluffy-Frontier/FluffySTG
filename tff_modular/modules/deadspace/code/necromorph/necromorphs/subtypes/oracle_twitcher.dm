@@ -24,7 +24,6 @@
 	melee_damage_lower = 22
 	melee_damage_upper = 26
 	necro_armor = /datum/armor/dsnecro_e_twitcher
-	minimap_icon = "otwitcher"
 	implemented = TRUE
 
 /datum/species/necromorph/twitcher/enhanced

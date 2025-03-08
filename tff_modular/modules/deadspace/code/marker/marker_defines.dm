@@ -17,13 +17,17 @@ GLOBAL_LIST_EMPTY(necromorph_markers)
 	flags_1 = ON_BORDER_1
 	plane = ABOVE_GAME_PLANE
 	anchored = TRUE
+	///The loopingsound for when marker activates
+	var/datum/looping_sound/marker/soundloop
 	var/active = FALSE
 	///Whether we should use necroqueue when spawning necromorphs
 	var/use_necroqueue = TRUE
 	var/list/necroqueue = list()
-	var/mob/camera/marker_signal/marker/camera_mob
+	var/mob/eye/marker_signal/marker/camera_mob
 	var/list/marker_signals = list()
 	var/list/necromorphs = list()
+	///checks mobs with clients when marker activates and adds them to a list, used for sense
+	var/list/unwhole = list()
 	/// Biomass stored
 	var/marker_biomass = 0
 	/// Biomass signals can use
@@ -42,3 +46,13 @@ GLOBAL_LIST_EMPTY(necromorph_markers)
 	var/list/nodes = list()
 	/// A list of atoms that let us spawn necromorphs 6 tiles away from them
 	var/list/necro_spawn_atoms = list()
+
+
+/datum/looping_sound/marker
+	mid_sounds = 'tff_modular/modules/deadspace/sound/effects/markerthrob.ogg'
+	mid_length = 9.5 SECONDS
+	volume = 50
+	ignore_walls = FALSE
+	extra_range = 20
+	falloff_exponent = 5
+	falloff_distance = 8

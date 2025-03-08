@@ -20,6 +20,12 @@
 	marker?.remove_necro(src)
 	return ..()
 
+/mob/living/carbon/human/necromorph/mind_initialize()
+	. = ..()
+	var/datum/antagonist/necromorph/necromorph = mind.has_antag_datum(/datum/antagonist/necromorph)
+	if(!necromorph)
+		mind.add_antag_datum(/datum/antagonist/necromorph)
+
 /mob/living/carbon/human/necromorph/update_damage_overlays()
 	return
 
@@ -61,15 +67,6 @@
 /mob/living/carbon/human/necromorph/set_stat(new_stat)
 	.=..()
 	update_sight()
-
-/mob/living/carbon/human/necromorph/update_sight()
-	. = ..()
-	switch(stat)
-		if(CONSCIOUS)
-			see_in_dark = conscious_see_in_dark
-		if(UNCONSCIOUS)
-			see_in_dark = unconscious_see_in_dark
-	//Otherwise we are dead and see_in_dark was handled in parent call
 
 /mob/living/carbon/human/necromorph/death(gibbed)
 	. = ..()

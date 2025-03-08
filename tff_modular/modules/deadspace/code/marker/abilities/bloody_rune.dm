@@ -32,6 +32,10 @@
 		alpha = 0
 		animate(src, alpha = 255, time = 1 SECONDS, flags = ANIMATION_PARALLEL)
 
+//If we don't do this the rune will try to get DNA, bad things happen when this is done
+/obj/effect/decal/cleanable/necro_rune/add_blood_DNA(list/blood_dna)
+	return FALSE
+
 /obj/effect/decal/cleanable/necro_rune/NeverShouldHaveComeHere(turf/T)
 	return T.density || isgroundlessturf(T)
 

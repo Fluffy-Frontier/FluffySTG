@@ -32,12 +32,11 @@
 	melee_damage_upper = 26
 	necro_armor = /datum/armor/dsnecro_e_slasher
 	actions = list(
-		/datum/action/cooldown/necro/charge/slasher/enhanced,
+		/datum/action/cooldown/mob_cooldown/charge/necro/slasher/enhanced,
 		/datum/action/cooldown/necro/dodge/enhanced,
 		/datum/action/cooldown/necro/shout,
 		/datum/action/cooldown/necro/scream,
 	)
-	minimap_icon = "e_slasher"
 	implemented = TRUE
 
 /datum/species/necromorph/slasher/enhanced
@@ -69,10 +68,9 @@
 		'tff_modular/modules/deadspace/sound/effects/creatures/necromorph/slasher_enhanced/eslasher_shout_long_5.ogg',
 	)
 
-/datum/action/cooldown/necro/charge/slasher/enhanced
+/datum/action/cooldown/mob_cooldown/charge/necro/slasher/enhanced
 	cooldown_time = 20 SECONDS
 	charge_delay = 0.75 SECONDS
-	charge_time = 4 SECONDS
 
 /datum/action/cooldown/necro/dodge/enhanced
 	cooldown_time = 6 SECONDS

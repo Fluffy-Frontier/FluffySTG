@@ -6,22 +6,22 @@
 	cost = 10
 
 /datum/action/cooldown/necro/psy/absorb/PreActivate(turf/target)
-	var/mob/camera/marker_signal/signal = owner
+	var/mob/eye/marker_signal/called = owner
 	target = get_turf(target)
 	if(!target)
 		return FALSE
 	if(target.necro_corrupted)
 		return ..()
-	if(IN_GIVEN_RANGE(target, signal.marker, 5) && can_see(target, signal.marker, 5))
+	if(IN_GIVEN_RANGE(target, called.marker, 5) && can_see(target, called.marker, 5))
 		return ..()
 	for(var/turf/neraby as anything in RANGE_TURFS(2, target))
 		if(neraby.necro_corrupted)
 			return ..()
-	to_chat(signal, span_warning("Biomass may only be claimed when the target is <b>near the marker, or corruption</b>"))
+	to_chat(called, span_warning("Biomass may only be claimed when the target is <b>near the marker, or corruption</b>"))
 	return FALSE
 
 /datum/action/cooldown/necro/psy/absorb/Activate(turf/target)
-	var/mob/camera/marker_signal/signal = owner
+	var/mob/eye/marker_signal/called = owner
 	target = get_turf(target)
 	var/absorbed_biomass = 0
 	var/list/absorbed_atoms = list()
@@ -43,15 +43,15 @@
 	FOR_DVIEW_END
 
 	if(!absorbed_biomass)
-		to_chat(signal, span_warning("No things containing asborbable biomass found."))
+		to_chat(called, span_warning("No things containing asborbable biomass found."))
 		return TRUE
 	..()
 	for(var/obj/item/item as anything in absorbed_atoms)
 		new /obj/effect/temp_visual/decoy/absorb(get_turf(item), item, target)
 		qdel(item)
-	signal.marker.change_marker_biomass(absorbed_biomass * 0.4)
-	signal.marker.change_signal_biomass(absorbed_biomass * 0.6)
-	to_chat(signal, span_notice("Gained total of [absorbed_biomass] biomass from absorbing [length(absorbed_atoms)] thing\s!"))
+	called.marker.change_marker_biomass(absorbed_biomass * 0.4)
+	called.marker.change_signal_biomass(absorbed_biomass * 0.6)
+	to_chat(called, span_notice("Gained total of [absorbed_biomass] biomass from absorbing [length(absorbed_atoms)] thing\s!"))
 	return TRUE
 
 /obj/effect/temp_visual/decoy/absorb

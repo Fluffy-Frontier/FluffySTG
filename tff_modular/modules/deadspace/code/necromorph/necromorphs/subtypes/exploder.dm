@@ -13,6 +13,8 @@
 		/obj/item/bodypart/leg/right/necromorph/exploder,
 	)
 
+	tutorial_text = "<b>Explosive Joke:</b> you can explode when you <b>bump into</b> something during a dash..... Be careful, please."
+
 /mob/living/carbon/human/necromorph/exploder/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
 	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_slower)
@@ -42,9 +44,8 @@
 	actions = list(
 		/datum/action/cooldown/necro/shout,
 		/datum/action/cooldown/necro/explode,
-		/datum/action/cooldown/necro/charge/exploder,
+		/datum/action/cooldown/mob_cooldown/charge/necro/exploder,
 	)
-	minimap_icon = "exploder"
 	implemented = TRUE
 	nest_allowed = TRUE
 

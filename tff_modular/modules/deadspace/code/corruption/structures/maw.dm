@@ -6,7 +6,7 @@
 	desc = "A disgusting mass of throbbing flesh and gnashing teeth, it looks like something out of a nightmare."
 	desc_controls = "Drag a body onto the maw to begin biomass consumption. Will grab the living if they step on it."
 	icon = 'tff_modular/modules/deadspace/icons/effects/corruption.dmi'
-	icon_state = "maw"
+	icon_state = "maw_new"
 	density = FALSE
 	max_integrity = 30
 	can_buckle = TRUE
@@ -14,6 +14,8 @@
 	buckle_lying = 270
 	// Biomass that will be slowly given to the marker
 	var/processing_biomass = 0
+	cost = 40
+	marker_only = TRUE
 
 /obj/structure/necromorph/maw/Initialize(mapload, obj/structure/marker/marker)
 	.=..()
@@ -27,7 +29,7 @@
 
 /obj/structure/necromorph/maw/update_icon_state()
 	..()
-	icon_state = length(buckled_mobs) ? "maw_active" : "maw"
+	icon_state = length(buckled_mobs) ? "maw_new_active" : "maw_new"
 
 ///The signal handler that starts the process of grabbing
 /obj/structure/necromorph/maw/proc/maw_grabbing(datum/source, atom/movable/AM)
@@ -204,13 +206,5 @@
 /obj/structure/necromorph/maw/post_unbuckle_mob(mob/living/M)
 	if(!length(buckled_mobs))
 		update_icon(UPDATE_ICON_STATE)
-
-/datum/action/cooldown/necro/corruption/maw
-	name = "maw"
-	desc = "It acts as a corpose disposal, slowly devouring any corpses put inside. Gives 20% extra biomass for humans, can devour normal mobs, and can recycle necromorphs."
-	button_icon_state = "maw"
-	place_structure = /obj/structure/necromorph/maw
-	cost = 40
-	marker_only = TRUE
 
 #undef MAW_DAMAGE_PER_SECOND

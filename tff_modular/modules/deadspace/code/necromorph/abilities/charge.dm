@@ -1,25 +1,15 @@
-#define CHARGE_SPEED(charger) (min(charger.valid_steps_taken, charger.max_steps_buildup) * charger.speed_per_step)
-
-/datum/action/cooldown/necro/charge
+/datum/action/cooldown/mob_cooldown/charge/necro
 	name = "Charge"
 	desc = "Allows you to charge at a chosen position."
 	cooldown_time = 10 SECONDS
 	click_to_activate = TRUE
-	/// Delay before the charge actually occurs
-	var/charge_delay = 2 SECONDS
-	/// The maximum amount of time we can charge
-	var/charge_time = 10 SECONDS
-	/// The sleep time before moving in deciseconds while charging
-	var/charge_speed = 4
-	/// If the current move is being triggered by us or not
-	var/actively_moving = FALSE
-	var/valid_steps_taken = 0
-	var/speed_per_step = 0.15
-	var/max_steps_buildup = 14
-
+	charge_delay = 2 SECONDS
+	charge_speed = 1
+	charge_distance = 14
+	charge_damage = 0
 	var/atom/target_atom
 
-/datum/action/cooldown/necro/charge/PreActivate(atom/target)
+/datum/action/cooldown/mob_cooldown/charge/necro/PreActivate(atom/target)
 	var/mob/living/carbon/human/necromorph/charger = owner
 	var/turf/T = get_turf(target)
 	if(!T)
@@ -37,18 +27,10 @@
 
 	target_atom = target
 
-	if(isturf(target))
-		RegisterSignal(target, COMSIG_ATOM_ENTERED, PROC_REF(on_target_loc_entered))
-	else
-		var/static/list/loc_connections = list(
-			COMSIG_ATOM_ENTERED = PROC_REF(on_target_loc_entered),
-		)
-		AddComponent(/datum/component/connect_loc_behalf, target, loc_connections)
-
 	return ..()
 
-/datum/action/cooldown/necro/charge/Activate(atom/target)
-	var/mob/living/carbon/human/necromorph/exploder/user = owner
+/datum/action/cooldown/mob_cooldown/charge/necro/Activate(atom/target)
+	var/mob/living/carbon/human/necromorph/user = owner
 	var/initial_transform = matrix(user.transform)
 	var/initial_x = user.pixel_x
 	var/initial_y = user.pixel_y
@@ -69,12 +51,9 @@
 	)
 	PLAY_SHAKING_ANIMATION(user, 7, 5, shake_dir, initial_x, initial_y, initial_transform)
 	PLAY_SHAKING_ANIMATION(user, 10, 6, shake_dir, initial_x, initial_y, initial_transform)
-	// Start pre-cooldown so that the ability can't come up while the charge is happening
-	StartCooldown(charge_time+charge_delay+1)
-	addtimer(CALLBACK(src, PROC_REF(do_charge)), charge_delay)
-	return TRUE
-
-/datum/action/cooldown/necro/charge/proc/do_charge()
+	return ..()
+/*
+/datum/action/cooldown/mob_cooldown/charge/necro/proc/do_charge()
 	var/mob/living/carbon/human/necromorph/charger = owner
 
 	actively_moving = FALSE
@@ -96,79 +75,33 @@
 	RegisterSignal(charger, COMSIG_LIVING_UPDATED_RESTING, PROC_REF(update_resting))
 
 	SEND_SIGNAL(charger, COMSIG_STARTED_CHARGE)
+*/
 
-/datum/action/cooldown/necro/charge/proc/on_target_loc_entered(atom/loc, atom/movable/arrived, atom/old_loc, list/atom/old_locs)
-	SIGNAL_HANDLER
-	if(arrived != owner)
-		return
-	on_bump(owner, target_atom)
-
-/datum/action/cooldown/necro/charge/proc/pre_move(datum)
-	SIGNAL_HANDLER
-	actively_moving = TRUE
-
-/datum/action/cooldown/necro/charge/proc/post_move(datum)
-	SIGNAL_HANDLER
-	actively_moving = FALSE
-
-/datum/action/cooldown/necro/charge/proc/charge_end(datum/move_loop/source)
-	SIGNAL_HANDLER
-	var/mob/living/carbon/human/necromorph/charger = source.moving
-	UnregisterSignal(charger, list(COMSIG_MOVABLE_BUMP, COMSIG_MOVABLE_PRE_MOVE, COMSIG_MOVABLE_MOVED, COMSIG_MOB_STATCHANGE, COMSIG_LIVING_UPDATED_RESTING))
-	charger.charging = FALSE
-	charger.remove_movespeed_modifier(/datum/movespeed_modifier/necro_charge)
-	StartCooldown()
-	SEND_SIGNAL(owner, COMSIG_FINISHED_CHARGE)
-
-	qdel(GetComponent(/datum/component/connect_loc_behalf))
-	target_atom = null
-	charger.pixel_x = 0
-	charger.pixel_y = 0
-
-/datum/action/cooldown/necro/charge/proc/stat_changed(mob/source, new_stat, old_stat)
-	SIGNAL_HANDLER
-	if(new_stat > CONSCIOUS)
-		GLOB.move_manager.stop_looping(owner)
-
-/datum/action/cooldown/necro/charge/proc/do_charge_indicator(atom/charge_target)
+/datum/action/cooldown/mob_cooldown/charge/necro/do_charge_indicator(atom/charge_target)
 	return
 
-/datum/action/cooldown/necro/charge/proc/on_move(atom/source, atom/new_loc)
-	SIGNAL_HANDLER
+/datum/action/cooldown/mob_cooldown/charge/necro/on_move(atom/source, atom/new_loc)
 	if(!actively_moving)
 		return COMPONENT_MOVABLE_BLOCK_PRE_MOVE
 
-/datum/action/cooldown/necro/charge/proc/on_moved(atom/source)
-	SIGNAL_HANDLER
-	var/mob/living/carbon/human/necromorph/charger = source
-	if(++valid_steps_taken <= max_steps_buildup)
-		charger.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/necro_charge, TRUE, -CHARGE_SPEED(src))
-
-	if(valid_steps_taken >= 15) //Sanity check so necros don't charge until they hit something if they miss a target
-		GLOB.move_manager.stop_looping(owner)
-
+/datum/action/cooldown/mob_cooldown/charge/necro/on_moved(atom/source)
 	//Light shake with each step
 	shake_camera(source, 1.5, 0.5)
 
-	return
-
-/datum/action/cooldown/necro/charge/proc/on_bump(atom/movable/source, atom/target)
-	SIGNAL_HANDLER
+/datum/action/cooldown/mob_cooldown/charge/necro/on_bump(atom/movable/source, atom/target)
 	if(target)
 		if(ismob(target) || target.uses_integrity)
 			hit_target(source, target)
-	GLOB.move_manager.stop_looping(owner)
 
-/datum/action/cooldown/necro/charge/proc/hit_target(mob/living/carbon/human/necromorph/source, mob/living/target)
+/datum/action/cooldown/mob_cooldown/charge/necro/hit_target(mob/living/carbon/human/necromorph/source, mob/living/target, damage_dealt)
 	target.attack_necromorph(source)
-	if(isliving(target))
-		if(ishuman(target))
-			var/mob/living/carbon/human/human_target = target
-			if(human_target.check_block(source, 0, "the [source.name]", attack_type = LEAP_ATTACK))
-				source.Stun(6)
-				shake_camera(source, 4, 3)
-				shake_camera(target, 2, 1)
-				return
+	if(iscarbon(target))
+		var/mob/living/carbon/human/human_target = target
+		if(human_target.check_block(source, 0, "the [source.name]", attack_type = LEAP_ATTACK))
+			source.Stun(6)
+			shake_camera(source, 4, 3)
+			shake_camera(target, 2, 1)
+			return
 		shake_camera(target, 4, 3)
 		shake_camera(source, 2, 3)
 		target.visible_message(
@@ -177,14 +110,8 @@
 			)
 		target.Knockdown(6)
 		target.drop_all_held_items()
+		GLOB.move_manager.stop_looping(source)
 	else
 		source.visible_message(span_danger("[source] smashes into [target]!"))
 		shake_camera(source, 4, 3)
 		source.Stun(6)
-
-/datum/action/cooldown/necro/charge/proc/update_resting(atom/movable/source, resting)
-	SIGNAL_HANDLER
-	if(resting)
-		GLOB.move_manager.stop_looping(source)
-
-#undef CHARGE_SPEED

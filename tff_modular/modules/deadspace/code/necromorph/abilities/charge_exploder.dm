@@ -1,13 +1,13 @@
-/datum/action/cooldown/necro/charge/exploder
+/datum/action/cooldown/mob_cooldown/charge/necro/exploder
 	cooldown_time = 10 SECONDS
 	charge_delay = 1.8 SECONDS
-	charge_time = 10 SECONDS
-	charge_speed = 3
+	charge_speed = 1.5
 
 //Totally not ripped from exploder explode
-/datum/action/cooldown/necro/charge/exploder/Activate(atom/target)
+/datum/action/cooldown/mob_cooldown/charge/necro/exploder/Activate(atom/target)
 	var/mob/living/carbon/human/necromorph/exploder/user = owner
-	if(!can_explode())
+	var/obj/item/bodypart/arm/left/pustle = user.get_bodypart(BODY_ZONE_L_ARM)
+	if(!pustle)
 		to_chat(user, span_warning("You have no pustule, KILL!"))
 	var/initial_transform = matrix(user.transform)
 	var/initial_x = user.pixel_x
@@ -25,14 +25,14 @@
 	PLAY_SHAKING_ANIMATION(user, 14, 8, shake_dir, initial_x, initial_y, initial_transform)
 	. = ..()
 
-/datum/action/cooldown/necro/charge/exploder/hit_target(mob/living/carbon/human/necromorph/source, mob/living/target)
+/datum/action/cooldown/mob_cooldown/charge/necro/exploder/hit_target(mob/living/carbon/human/necromorph/source, mob/living/target)
 	if(isliving(target))
-		if(!can_explode())
-			..() //You can still charge with no pustule, it will just be a normal attack instead
-			return
+		var/mob/living/carbon/human/necromorph/exploder/user = owner
+		var/obj/item/bodypart/arm/left/pustle = user.get_bodypart(BODY_ZONE_L_ARM)
+		if(!pustle)
+			return ..() //You can still charge with no pustule, it will just be a normal attack instead
 		GLOB.move_manager.stop_looping(source)
-		var/obj/item/bodypart/PU = source.get_bodypart(BODY_ZONE_L_ARM)
-		qdel(PU) //Sanity check to prevent double explosion
+		qdel(pustle) //Sanity check to prevent double explosion
 		if(is_enhanced(source))
 			explosion(get_turf(source), 0, 3, 4, 5, 7, TRUE, FALSE, FALSE, TRUE, explosion_cause = src) //Big explosion with alot of fire
 		else if(!is_enhanced(source))

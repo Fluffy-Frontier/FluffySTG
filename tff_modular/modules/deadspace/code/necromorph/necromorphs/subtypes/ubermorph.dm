@@ -4,6 +4,7 @@
 	class = /datum/necro_class/ubermorph
 	necro_species = /datum/species/necromorph/ubermorph
 	necro_armor = /datum/armor/dsnecro_ubermorph
+	tutorial_text = "<b>Immortality:</b> you can not be killed. Lead everyone into battle."
 
 /mob/living/carbon/human/necromorph/ubermorph/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
@@ -28,12 +29,11 @@
 	implemented = TRUE
 	necro_armor = /datum/armor/dsnecro_ubermorph
 	actions = list(
-		/datum/action/cooldown/necro/charge/ubermorph,
-		///datum/action/cooldown/necro/sense,
+		/datum/action/cooldown/mob_cooldown/charge/necro/ubermorph,
+		/datum/action/innate/sense,
 		/datum/action/cooldown/necro/regenerate/ubermorph,
 		// /datum/action/cooldown/necro/frenzy_shout/ubermorph,
 	)
-	minimap_icon = "ubermorph"
 	spawn_limit = 1
 
 /datum/armor/dsnecro_ubermorph
@@ -91,11 +91,11 @@
 	EC = new /obj/effect/temp_visual/expanding_circle(owner.loc, 1.5 SECONDS, 1.5,"#ff0000")
 	EC.pixel_y += 40	//Offset it so it appears to be at our mob's head
 
-/datum/action/cooldown/necro/charge/ubermorph
+/datum/action/cooldown/mob_cooldown/charge/necro/ubermorph
 	name = "Lunge"
 	desc = "A shortrange charge which causes heavy internal damage to one victim. Often fatal."
 
-/datum/action/cooldown/necro/charge/ubermorph/Activate(atom/target)
+/datum/action/cooldown/mob_cooldown/charge/necro/ubermorph/Activate(atom/target)
 	..()
 	/*owner.face_atom(get_turf(target))
 	animate(
@@ -107,6 +107,6 @@
 	)*/
 	return TRUE
 
-/datum/action/cooldown/necro/charge/ubermorph/do_charge()
+/datum/action/cooldown/mob_cooldown/charge/necro/ubermorph/do_charge()
 	animate(owner, pixel_x = owner.base_pixel_x, pixel_y = owner.base_pixel_y, time = 0.5 SECONDS, easing = BACK_EASING)
 	return ..()

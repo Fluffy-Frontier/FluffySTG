@@ -11,7 +11,7 @@
 	name += " | Cost: [cost] psy"
 
 /// Intercepts client owner clicks to activate the ability
-/datum/action/cooldown/necro/psy/InterceptClickOn(mob/camera/marker_signal/clicker, params, atom/target)
+/datum/action/cooldown/necro/psy/InterceptClickOn(mob/eye/marker_signal/clicker, params, atom/target)
 	var/list/modifiers = params2list(params)
 
 	if(LAZYACCESS(modifiers, RIGHT_CLICK))
@@ -31,7 +31,7 @@
 	if(istype(target, /atom/movable/screen/plane_master/marker_static))
 		if(!click_through_static)
 			return FALSE
-		var/new_target = parse_caught_click_modifiers(modifiers, get_turf(signal), signal.client)
+		var/new_target = parse_caught_click_modifiers(modifiers, get_turf(called), called.client)
 		params = list2params(modifiers)
 		if(!new_target)
 			return FALSE
@@ -49,6 +49,6 @@
 	return TRUE
 
 /datum/action/cooldown/necro/psy/Activate(atom/target)
-	var/mob/camera/marker_signal/signal = owner
-	signal.change_psy_energy(-cost)
+	var/mob/eye/marker_signal/called = owner
+	called.change_psy_energy(-cost)
 	..()

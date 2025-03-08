@@ -53,6 +53,14 @@
 		var/datum/hud/necromorph/hud = hud_used
 		hud.update_shieldbar(src)
 
+/mob/living/carbon/human/necromorph/verb/show_tutorial()
+	set name = "Show Info"
+	set desc = "Display any information about current necromorph"
+	set category = "Necromorph"
+
+	to_chat(usr, tutorial_text)
+
+
 ADMIN_VERB_AND_CONTEXT_MENU(spawn_necromorph, R_ADMIN, "Spawn a necromorph", "Spawn a necromorph.", ADMIN_CATEGORY_DEBUG)
 
 	if(!length(GLOB.necromorph_markers))

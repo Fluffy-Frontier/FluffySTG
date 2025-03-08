@@ -4,14 +4,9 @@
 	icon_state = "growth"
 	corruption_node_type = /datum/corruption_node/propagator
 	max_integrity = 200
+	cost = 9
+	marker_only = TRUE
 
 /datum/corruption_node/propagator
 	remaining_weed_amount = 300
 	control_range = 12
-
-/datum/action/cooldown/necro/corruption/propagator
-	name = "Propagator"
-	button_icon_state = "propagator"
-	place_structure = /obj/structure/necromorph/node/propagator
-	cost = 9
-	marker_only = TRUE

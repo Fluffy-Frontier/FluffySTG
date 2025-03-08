@@ -57,7 +57,7 @@
 	for(var/limb_type in regenerating_limbs)
 		species.regenerate_limb(owner, limb_type, duration_time)
 
-	owner.shake_animation(30)
+	owner.shake_animation()
 
 	ADD_TRAIT(owner, TRAIT_INCAPACITATED, src)
 	ADD_TRAIT(owner, TRAIT_IMMOBILIZED, src)
@@ -73,7 +73,7 @@
 	last_shake += delta_time
 	if(last_shake >= shake_interval)
 		last_shake = 0
-		owner.shake_animation(30)
+		owner.shake_animation()
 
 	var/remaining_heal = owner.heal_bodypart_damage(brute = heal_per_second * delta_time)
 	if(remaining_heal)

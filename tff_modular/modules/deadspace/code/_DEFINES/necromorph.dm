@@ -37,14 +37,6 @@
 
 
 //Graphical variants
-#define SPECIES_NECROMORPH_BRUTE_FLESH "brutef"
-#define SPECIES_NECROMORPH_SLASHER_DESICCATED "slasher_ancient"
-#define SPECIES_NECROMORPH_SLASHER_CARRION "slasher_carrion"
-#define	SPECIES_NECROMORPH_LURKER_MALO "lurker_malo"
-
-#define SPECIES_NECROMORPH_PUKER_FLAYED "puker_flayed"
-#define SPECIES_NECROMORPH_PUKER_CLASSIC "puker"
-
 #define SPECIES_NECROMORPH_EXPLODER_ENHANCED_RIGHT "enhanced_right_exploder"
 #define SPECIES_NECROMORPH_EXPLODER_ENHANCED_LEFT "enhanced_left_exploder"
 #define SPECIES_NECROMORPH_EXPLODER_RIGHT "right_exploder"
@@ -54,6 +46,27 @@
 
 ///The percentage of damage at which a bodypart can start to be dismembered.
 #define LIMB_DISMEMBERMENT_PERCENT 0.9
+
+//Safety check flags
+#define EXECUTION_CANCEL -1	//The whole move has gone wrong, abort
+#define EXECUTION_RETRY 0	//Its not right yet but will probably fix itself, delay and keep trying
+#define EXECUTION_CONTINUE 1	//Its fine, keep going
+#define EXECUTION_SUCCESS 2 //We have achieved victory conditions. Try to skip to the end
+#define EXECUTION_SAFETY var/result = safety_check();\
+if (result == EXECUTION_CANCEL && can_interrupt){\
+	interrupt();\
+	return}
+
+#define ORGAN_SLOT_PROBOSCIS "proboscis"
+
+#define EXECUTION_DAMAGE_VULNERABILITY 1.5
+
+//Execution status vars
+#define STATUS_NOT_STARTED 0
+#define STATUS_STARTING 1
+#define STATUS_PRE_FINISH 2
+#define STATUS_POST_FINISH 3
+#define STATUS_ENDED 4
 
 /atom/proc/shake_animation()
 		var/direction = prob(50) ? -1 : 1

@@ -33,12 +33,11 @@
 	melee_damage_upper = 26
 	necro_armor = /datum/armor/dsnecro_leaper
 	actions = list(
-		/datum/action/cooldown/necro/charge/leaper/enhanced,
+		/datum/action/cooldown/mob_cooldown/charge/necro/leaper/enhanced,
 		/datum/action/cooldown/necro/swing/leaper/enhanced,
 		/datum/action/cooldown/necro/active/gallop,
 		/datum/action/cooldown/necro/shout,
 	)
-	minimap_icon = "e_leaper"
 	implemented = TRUE
 
 /datum/species/necromorph/leaper/enhanced

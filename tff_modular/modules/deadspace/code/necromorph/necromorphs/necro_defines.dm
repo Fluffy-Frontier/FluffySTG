@@ -50,6 +50,12 @@
 	/// whether the necromorph has been selected by the marker as a leader.
 	var/marker_chosen_lead
 
+	/// is the necromorph using sense?
+	var/searching = FALSE
+
+	///The mob the necromorph is targeting with sense
+	var/sense_target = null
+
 	/// Notification spam controls
 	var/recent_notice = 0
 	var/notice_delay = 2 SECONDS
@@ -73,7 +79,9 @@
 
 	var/attack_effect = ATTACK_EFFECT_SLASH
 	/// Signal controlling this necromorph at the moment
-	var/mob/camera/marker_signal/controlling
+	var/mob/eye/marker_signal/controlling
+
+	var/tutorial_text = ""
 
 
 /datum/reagent/blood/necromorph

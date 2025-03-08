@@ -1,3 +1,4 @@
+/* OFF UNTIL NORMAL SPRITES
 #define CYST_SHOOT_ANGLE 90
 
 /obj/structure/necromorph/cyst
@@ -23,7 +24,7 @@
 	return ..()
 
 /obj/structure/necromorph/cyst/proc/on_entered(atom/source, mob/living/carbon/human/arrived)
-	if(!ready || isnecromorph(arrived) || isprojectile(arrived))
+	if(!ready || isnecromorph(arrived) || isprojectile(arrived) || !arrived.stat == CONSCIOUS)
 		return
 	var/angle = SIMPLIFY_DEGREES(get_angle(src, arrived) - dir2angle(src.dir))
 	if(angle > CYST_SHOOT_ANGLE*0.5)
@@ -85,9 +86,10 @@
 			continue
 		T = get_step(turf_loc, REVERSE_DIR(direction))
 		if(T?.density)
-			template.dir = direction
+			place_structure.dir = direction
 			return
 		return "You need a wall behind you to place a cyst."
 	return
 
 #undef CYST_SHOOT_ANGLE
+*/

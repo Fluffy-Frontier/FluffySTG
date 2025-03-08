@@ -17,6 +17,10 @@
 		/obj/item/bodypart/leg/right/necromorph/leaper,
 	)
 
+	tutorial_text = "<b>Parkourist:</b> Brethrens Moons have gifted you with the ability to run on the walls! Trying to pass through <b>a wall, door or window</b> - you cling to them, as a result you become a bit more transparent and you are no longer affected by obstacles on the floor (liquids, tables, etc).\n\
+	<b>Leaping:</b> you can jump on someone or just on walls to hang on to them. A great way to move from wall to wall without gravity.\n\
+	<b>Wall Eater:</b> allows you to chew through any <b>NOT reinforced walls</b> if you press the <b>LMB</b> on them. It will take time to completely destroy, but hey, it's totally worth it!"
+
 /mob/living/carbon/human/necromorph/leaper/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
 	AddComponent(/datum/component/wallrun)
@@ -38,12 +42,11 @@
 	melee_damage_upper = 20
 	necro_armor = /datum/armor/dsnecro_leaper
 	actions = list(
-		/datum/action/cooldown/necro/charge/leaper,
+		/datum/action/cooldown/mob_cooldown/charge/necro/leaper,
 		/datum/action/cooldown/necro/swing/leaper,
 		/datum/action/cooldown/necro/active/gallop,
 		/datum/action/cooldown/necro/shout,
 	)
-	minimap_icon = "leaper"
 	implemented = TRUE
 
 /datum/armor/dsnecro_leaper

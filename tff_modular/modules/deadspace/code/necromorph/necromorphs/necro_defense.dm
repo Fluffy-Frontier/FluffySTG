@@ -7,7 +7,7 @@
 	return
 
 //The proc and backup rolled up in one.
-/atom/proc/attack_necromorph(mob/living/carbon/human/necromorph/user, list/modifiers, dealt_damage)
+/atom/proc/attack_necromorph(mob/living/carbon/human/necromorph/user, list/modifiers, dealt_damage, zone_attacked)
 	if(!uses_integrity || (!user.melee_damage_upper && !dealt_damage)) //No damage
 		return FALSE
 	dealt_damage = dealt_damage || rand(user.melee_damage_lower, user.melee_damage_upper)
@@ -15,12 +15,13 @@
 	user.play_necro_sound(SOUND_ATTACK, VOLUME_MID, 1, 3)
 	attack_generic(user, dealt_damage, BRUTE, MELEE, TRUE, user.armour_penetration)
 
-/mob/living/attack_necromorph(mob/living/carbon/human/necromorph/user, list/modifiers, dealt_damage)
+/mob/living/attack_necromorph(mob/living/carbon/human/necromorph/user, list/modifiers, dealt_damage, zone_attacked)
 	dealt_damage = dealt_damage || rand(user.melee_damage_lower, user.melee_damage_upper)
 	user.do_attack_animation(src, user.attack_effect)
 	playsound(loc, 'sound/items/weapons/slash.ogg', 50, TRUE, -1)
 	user.play_necro_sound(SOUND_ATTACK, VOLUME_MID, 1, 3)
-	var/zone_attacked = ran_zone(user.zone_selected)
+	if(!zone_attacked)
+		zone_attacked = ran_zone(user.zone_selected)
 	var/armor_block = run_armor_check(zone_attacked, MELEE)
 	visible_message(span_danger("[user.name] attacked [src]!"), \
 	span_userdanger("[user.name] attacked you!"), span_hear("You hear a attacked of the flesh!"), COMBAT_MESSAGE_RANGE, user)
@@ -28,7 +29,7 @@
 	apply_damage(dealt_damage, BRUTE, zone_attacked, armor_block)
 	log_combat(user, src, "attacked")
 
-/mob/living/carbon/human/attack_necromorph(mob/living/carbon/human/necromorph/user, list/modifiers, dealt_damage)
+/mob/living/carbon/human/attack_necromorph(mob/living/carbon/human/necromorph/user, list/modifiers, dealt_damage, zone_attacked)
 	if(check_block(user, 0, "the [user.name]"))
 		visible_message(span_danger("[user] tries to hit [src]!"), \
 						span_danger("[user] tries to hit you!"), span_hear("You hear a swoosh!"), null, user)
@@ -48,10 +49,10 @@
 		span_userdanger("[user] lunges at you!"), span_hear("You hear a swoosh!"), null, user)
 		to_chat(user, span_danger("You lunge at [src]!"))
 		return FALSE
-	var/obj/item/bodypart/affecting = get_bodypart(ran_zone(user.zone_selected))
-	if(!affecting)
-		affecting = get_bodypart(BODY_ZONE_CHEST)
-	var/armor_block = run_armor_check(affecting, MELEE)
+	if(!zone_attacked)
+		zone_attacked = ran_zone(user.zone_selected, 80)
+	zone_attacked = get_bodypart(zone_attacked)
+	var/armor_block = run_armor_check(zone_attacked, MELEE)
 	playsound(loc, 'sound/items/weapons/slice.ogg', 25, TRUE, -1)
 	visible_message(span_danger("[user.name] attacked [src]!"), \
 	span_userdanger("[user.name] attacked you!"), span_hear("You hear a attacked of the flesh!"), COMBAT_MESSAGE_RANGE, user)
@@ -59,7 +60,7 @@
 	log_combat(user, src, "attacked")
 	if(!dismembering_strike(user, user.zone_selected)) //Dismemberment successful
 		return TRUE
-	apply_damage(dealt_damage, BRUTE, affecting, armor_block)
+	apply_damage(dealt_damage, BRUTE, zone_attacked, armor_block)
 
 /mob/living/carbon/human/necromorph/get_eye_protection()
 	return ..() + 2

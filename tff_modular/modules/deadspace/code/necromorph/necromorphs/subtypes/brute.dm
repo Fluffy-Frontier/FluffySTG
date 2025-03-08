@@ -23,6 +23,11 @@
 	/// Time when we can be forced to curl again
 	var/forced_curl_next = 0
 
+	tutorial_text = "<b>Armor/Curl:</b> you have increased protection on your front, don't let enemies get around you from behind.\n\
+	<b>Slam Dunk:</b> your SLAM skill allows you to destroy almost any obstacle including <b>reinforced walls</b>.\n\
+	<b>Toxin Spit:</b> although slower, your projectiles are much stronger than other necromorph spits. Sadly, if you want to maximize the effect you have to wait <b>30 seconds</b> to cast a new poison on the same target.\n\
+	<b>The Love of</b> Trains: your forward dash allows you to hit the target severely or damage an obstacle."
+
 /mob/living/carbon/human/necromorph/brute/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
 	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_brute)
@@ -143,11 +148,10 @@
 
 	actions = list(
 		/datum/action/cooldown/necro/slam,
-		/datum/action/cooldown/necro/long_charge/brute,
+		/datum/action/cooldown/mob_cooldown/charge/necro/long_charge,
 		/datum/action/cooldown/necro/shoot/brute,
 		/datum/action/cooldown/necro/curl,
 	)
-	minimap_icon = "brute"
 	implemented = TRUE
 	var/armor_front = 30
 	var/armor_flank = 20

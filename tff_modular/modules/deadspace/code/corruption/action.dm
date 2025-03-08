@@ -1,33 +1,22 @@
 /datum/action/cooldown/necro/corruption
 	name = "Generic corruption placement ability"
 	button_icon = 'tff_modular/modules/deadspace/icons/hud/action_corruption.dmi'
+	button_icon_state = "propagator"
 	cooldown_time = 0.1 SECONDS
 	click_to_activate = TRUE
 	var/cost = 0
-	var/image/template
-	var/obj/structure/necromorph/place_structure = /obj/structure/necromorph
+	var/obj/structure/necromorph/place_structure
 	var/can_place_in_sight = FALSE
-	var/marker_only = FALSE
 	var/placement_range = 1
-
-/datum/action/cooldown/necro/corruption/New(Target, original, cooldown)
-	..()
-	name += " | Cost: [cost] bio"
-	template = new /image/necromorph_subtype(initial(place_structure.icon), null, initial(place_structure.icon_state))
-	template.pixel_x = initial(place_structure.base_pixel_x)
-	template.pixel_y = initial(place_structure.base_pixel_y)
 
 /datum/action/cooldown/necro/corruption/set_click_ability(mob/on_who)
 	.=..()
 	owner.mouse_move_intercept = src
-	owner.client.images += template
 
 /datum/action/cooldown/necro/corruption/unset_click_ability(mob/on_who, refund_cooldown)
 	.=..()
 	owner.mouse_move_intercept = null
 	//Gotta check if client is still there because unset is also called in Logout()
-	owner.client?.images -= template
-	template.loc = null
 
 /datum/action/cooldown/necro/corruption/InterceptClickOn(mob/living/clicker, params, atom/target)
 	var/list/modifiers = params2list(params)
@@ -51,30 +40,52 @@
 
 	return TRUE
 
+/datum/action/cooldown/necro/corruption/PreActivate(atom/target)
+	var/list/list_to_pick = list()
+	for(var/obj/structure/necromorph/struct as anything in subtypesof(/obj/structure/necromorph))
+		if(initial(struct.marker_only) && !ismarkereye(owner))
+			continue
+		list_to_pick["[initial(struct.name)] - [initial(struct.cost)]"] = struct
+
+	place_structure = list_to_pick[tgui_input_list(owner, "Pick a structure to spawn", "Spawning", list_to_pick)]
+	if(!place_structure)
+		return
+
+	if(!length(GLOB.necromorph_markers))
+		to_chat(owner, span_warning("There are no markers present!"))
+		return
+
+	return ..()
+
 /datum/action/cooldown/necro/corruption/Activate(atom/target)
-	var/mob/camera/marker_signal/signal = owner
-	var/current_biomass = istype(signal, /mob/camera/marker_signal/marker) ? signal.marker.marker_biomass : signal.marker.signal_biomass
-	if(current_biomass < cost)
-		to_chat(signal, span_warning("Not enough biomass!"))
+	var/current_biomass = 0
+	var/obj/structure/marker/mark = null
+	if(typesof(owner, /mob/living/carbon/human/necromorph/infector))
+		var/mob/living/carbon/human/necromorph/infector/necro = owner
+		current_biomass = necro.marker.signal_biomass
+		mark = necro.marker
+	else
+		var/mob/eye/marker_signal/signal = owner
+		mark = signal.marker
+		current_biomass = istype(signal, /mob/eye/marker_signal/marker) ? mark.marker_biomass : mark.signal_biomass
+	if(current_biomass < place_structure.cost)
+		to_chat(owner, span_warning("Not enough biomass!"))
 		return TRUE
 	var/turf/target_turf = get_turf(target)
 	var/result_message = can_place(target_turf)
 	if(result_message)
-		to_chat(signal, span_warning(result_message))
+		to_chat(owner, span_warning(result_message))
 		return TRUE
-	if(istype(signal, /mob/camera/marker_signal/marker))
-		signal.marker.change_marker_biomass(-cost)
+	if(istype(owner, /mob/eye/marker_signal/marker))
+		mark.change_marker_biomass(-cost)
 	else
-		signal.marker.change_signal_biomass(-cost)
-	var/obj/structure/necromorph/structure = new place_structure(target_turf, signal.marker)
-	structure.dir = template.dir
-	..()
-	return TRUE
+		mark.change_signal_biomass(-cost)
+	var/obj/structure/necromorph/structure = new place_structure(target_turf, mark)
+	if(!structure)
+		return
+	place_structure = null
+	return ..()
 
-/datum/action/cooldown/necro/corruption/proc/mouse_movement_intercepted(atom/intercepted)
-	var/turf/turf_loc = get_turf(intercepted)
-	template.loc = turf_loc
-	template.color = can_place(turf_loc) ? COLOR_RED : COLOR_GREEN
 
 //Returns a string on fail. Otherwise - null
 /datum/action/cooldown/necro/corruption/proc/can_place(turf/turf_loc)

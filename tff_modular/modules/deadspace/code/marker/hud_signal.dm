@@ -5,9 +5,8 @@
 	var/atom/movable/screen/meter/foreground/bio/foreground_bio
 	var/atom/movable/screen/meter/psy/psy_energy
 	var/atom/movable/screen/meter/biomass/biomass
-	//var/atom/movable/screen/plane_master/marker_static/cameranet_static
 
-/datum/hud/marker_signal/New(mob/camera/marker_signal/owner)
+/datum/hud/marker_signal/New(mob/eye/marker_signal/owner)
 	background_psy = new
 	background_psy.plane = HUD_PLANE
 	foreground_psy = new
@@ -35,14 +34,6 @@
 	infodisplay += biomass
 	infodisplay += foreground_bio
 	..()
-
-/datum/hud/marker_signal/show_hud(version, mob/viewmob)
-	if(!..())
-		return FALSE
-	//var/mob/screenmob = viewmob || mymob
-	//var/view = screenmob.client.view || world.view
-	//cameranet_static.update_o(view)
-	//screenmob.client.screen += cameranet_static
 
 /atom/movable/screen/meter/psy
 	icon_state  = "health_grayscale"

@@ -35,9 +35,8 @@
 	actions = list(
 		/datum/action/cooldown/necro/shout,
 		/datum/action/cooldown/necro/explode,
-		/datum/action/cooldown/necro/charge/exploder,
+		/datum/action/cooldown/mob_cooldown/charge/necro/exploder,
 	)
-	minimap_icon = "e_exploder"
 	implemented = TRUE
 	nest_allowed = FALSE
 
