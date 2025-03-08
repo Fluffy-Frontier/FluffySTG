@@ -1,6 +1,3 @@
-/obj/item/organ/alien/eggsac/tgmc
-	actions_types = list(/datum/action/cooldown/alien/make_structure/lay_egg/tgmc)
-
 /datum/action/cooldown/alien/make_structure/lay_egg/tgmc
 	made_structure_type = /obj/structure/alien/egg/tgmc
 

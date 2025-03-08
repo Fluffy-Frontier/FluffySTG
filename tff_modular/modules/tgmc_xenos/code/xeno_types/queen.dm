@@ -36,17 +36,6 @@
 /mob/living/carbon/alien/adult/tgmc/queen/alien_talk(message, shown_name = name)
 	..(message, shown_name, TRUE)
 
-/obj/item/organ/alien/neurotoxin/queen
-	name = "neurotoxin gland"
-	icon_state = "neurotox"
-	zone = BODY_ZONE_PRECISE_MOUTH
-	slot = ORGAN_SLOT_XENO_NEUROTOXINGLAND
-	actions_types = list(
-		/datum/action/cooldown/alien/acid/tgmc,
-		/datum/action/cooldown/alien/acid/tgmc/lethal,
-		/datum/action/cooldown/alien/acid/corrosion,
-	)
-
 /mob/living/carbon/alien/adult/tgmc/queen/death(gibbed)
 	if(stat == DEAD)
 		return

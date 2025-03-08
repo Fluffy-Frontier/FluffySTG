@@ -1,0 +1,26 @@
+/obj/projectile/neurotoxin/tgmc
+	name = "neurotoxin spit"
+	icon_state = "neurotoxin"
+	damage = 30
+	paralyze = 0
+	damage_type = STAMINA
+	armor_flag = BIO
+
+/obj/projectile/neurotoxin/tgmc/acid
+	name = "acid spit"
+	icon_state = "toxin"
+	damage = 20
+	paralyze = 0
+	damage_type = BURN
+	armor_flag = ACID
+
+/obj/projectile/neurotoxin/tgmc/spitter_spread //Slightly nerfed because its a shotgun spread of these
+	name = "neurotoxin spit"
+	icon_state = "neurotoxin"
+	damage = 25
+
+/obj/projectile/neurotoxin/tgmc/acid/spitter_spread
+	name = "acid spit"
+	icon_state = "toxin"
+	damage = 15
+	damage_type = BURN
