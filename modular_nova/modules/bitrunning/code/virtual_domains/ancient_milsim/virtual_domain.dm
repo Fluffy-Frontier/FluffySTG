@@ -1,3 +1,4 @@
+/*
 /// Modular Map Loader doesnt like subfolders
 /datum/lazy_template/virtual_domain/ancient_milsim
 	name = "Ancient Military Simulator"
@@ -17,3 +18,4 @@
 		/obj/item/stack/spacecash/c100 = 12,
 		/obj/item/bitrunning_disk/item/ancient_milsim = 3,
 	)
+*/
