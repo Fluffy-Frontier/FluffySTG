@@ -19,7 +19,7 @@
 	return TRUE
 
 /obj/effect/decal/cleanable/blood/writing
-	icon_state = "tracks"
+	icon_state = "writing1"
 	desc = "It looks like a writing in blood."
 	icon = 'tff_modular/modules/deadspace/icons/effects/blood.dmi'
 	gender = NEUTER

@@ -1,13 +1,8 @@
-import { Icon, Section, Stack } from 'tgui-core/components';
-import { BooleanLike } from 'tgui-core/react';
+import { Section, Stack } from 'tgui-core/components';
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
-import {
-  Objective,
-  ObjectivePrintout,
-  ReplaceObjectivesButton,
-} from './common/Objectives';
+import { Objective, ObjectivePrintout } from './common/Objectives';
 
 const ninja_emphasis = {
   color: 'red',
