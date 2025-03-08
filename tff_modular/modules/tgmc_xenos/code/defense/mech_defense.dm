@@ -1,9 +1,9 @@
 /// TGMC_XENOS (old nova sector xenos)
 
 // Переопределяем прока атаки у меха, ведь мехи по сути неубиваемые для ксеносов
-/obj/vehicle/sealed/mecha/attack_alien(mob/living/user, list/modifiers)
+/obj/vehicle/sealed/mecha/attack_alien(mob/living/carbon/alien/adult/tgmc/user, list/modifiers)
 	// Если это обычный ксенос - выполняется обычный прок, если нет - наш
-	if(!istype(user, /mob/living/carbon/alien/adult/tgmc))
+	if(!istype(user))
 		return ..()
 
 	log_message("Attack by alien. Attacker - [user].", LOG_MECHA, color="red")

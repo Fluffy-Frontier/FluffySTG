@@ -26,7 +26,7 @@
 
 	return
 
-
+// Наш способ эволюционировать. Там прошлый кодер говорит, что стоит сделать отдельные для каждой эволюции... Но я не уверен, что это действительно нужно. Его способ достаточно крутой
 /datum/action/cooldown/alien/larva_evolve/tgmc/Activate(atom/target)
 	var/static/list/caste_options
 	if(!caste_options)
