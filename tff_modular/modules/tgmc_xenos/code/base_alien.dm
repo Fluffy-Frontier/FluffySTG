@@ -37,6 +37,9 @@
 	/// Все дополнительные органы, что должны находиться в телах ксеносов
 	var/list/additional_organ_types_by_slot
 
+	/// Изменяем урон по мехам
+	var/mech_damage_multiplier = 1.5
+
 /mob/living/carbon/alien/adult/tgmc/Initialize(mapload)
 	. = ..()
 

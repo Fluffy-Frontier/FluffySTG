@@ -1,5 +1,15 @@
 /// TGMC_XENOS (old nova sector xenos)
 
+// Подтип фейсхаггера, просто чтобы мы могли сделать то, что могли
+/obj/item/clothing/mask/facehugger/tgmc
+	embryo_path = /obj/item/organ/body_egg/alien_embryo/tgmc
+
+// То же самое, но для эмбриона ларвочки
+/obj/item/organ/body_egg/alien_embryo/tgmc
+	larva_path = /mob/living/carbon/alien/larva/tgmc
+
+
+// Наша собственная ларвочка. Крутая!
 /mob/living/carbon/alien/larva/tgmc
 
 /mob/living/carbon/alien/larva/tgmc/Initialize(mapload)
@@ -16,7 +26,7 @@
 
 	return
 
-
+// Наш способ эволюционировать. Там прошлый кодер говорит, что стоит сделать отдельные для каждой эволюции... Но я не уверен, что это действительно нужно. Его способ достаточно крутой
 /datum/action/cooldown/alien/larva_evolve/tgmc/Activate(atom/target)
 	var/static/list/caste_options
 	if(!caste_options)

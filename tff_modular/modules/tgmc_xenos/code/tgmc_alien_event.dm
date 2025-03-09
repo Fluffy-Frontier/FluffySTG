@@ -1,3 +1,5 @@
+/// TGMC_XENOS (old nova sector xenos)
+
 /datum/round_event_control/alien_infestation/tgmc
 	name = "TGMC Alien Infestation"
 	typepath = /datum/round_event/ghost_role/alien_infestation/tgmc
@@ -7,6 +9,7 @@
 /datum/round_event/ghost_role/alien_infestation/tgmc
 	role_name = "alien larva (TGMC)"
 
+// По суути просто полностью скопированный прок, хотя по хорошему бы это переделать
 /datum/round_event/ghost_role/alien_infestation/tgmc/spawn_role()
 	var/list/vents = list()
 	for(var/obj/machinery/atmospherics/components/unary/vent_pump/temp_vent as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/atmospherics/components/unary/vent_pump))
