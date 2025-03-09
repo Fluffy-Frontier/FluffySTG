@@ -14,7 +14,7 @@
 /obj/projectile/neurotoxin/tgmc/acid
 	name = "acid spit"
 	icon_state = "toxin"
-	damage = 15
+	damage = 20
 	paralyze = 0
 	damage_type = BURN
 	armor_flag = ACID
