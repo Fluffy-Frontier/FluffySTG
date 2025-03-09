@@ -99,7 +99,15 @@
 	button_base_icon = "acidspit"
 
 
-// Версия плевка, котоырй работает как дробовик
+// Королевские версии плевков нейротоксина
+/datum/action/cooldown/alien/acid/tgmc/queen
+	acid_projectile = /obj/projectile/neurotoxin/tgmc/queen
+
+/datum/action/cooldown/alien/acid/tgmc/lethal/queen
+	acid_projectile = /obj/projectile/neurotoxin/tgmc/acid/queen
+
+
+// Версия плевка нейротоксина, который работает как дробовик
 /datum/action/cooldown/alien/acid/tgmc/spread
 	name = "Spit Neurotoxin Spread"
 	desc = "Spits a spread neurotoxin at someone, exhausting them."
@@ -139,6 +147,24 @@
 	projectile_type = /obj/projectile/neurotoxin/tgmc/acid/spitter_spread
 	pellets = 4
 	variance = 30
+
+
+// Плевок кислоты
+/datum/action/cooldown/alien/acid/corrosion/tgmc
+	name = "Corrosive Acid (150)"
+	desc = "Drench an object in acid, destroying it over time."
+	button_icon_state = "alien_acid"
+	plasma_cost = 150
+	corrosion_acid_power = 100
+	corrosion_acid_volume = 500
+
+/datum/action/cooldown/alien/acid/corrosion/tgmc/strong
+	name = "Corrosive Acid (200)"
+	desc = "Drench an object in acid, destroying it over time."
+	button_icon_state = "alien_acid"
+	plasma_cost = 200
+	corrosion_acid_power = 400
+	corrosion_acid_volume = 1000
 
 
 // Взмах хвоста дефендера + является базовым для взмахов хвоста королевы и равагера
