@@ -456,7 +456,8 @@
 	onstation = 0;
 	extended_inventory = 1;
 	pixel_x = -6;
-	pixel_y = 0
+	pixel_y = 0;
+	all_products_free = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
@@ -1453,7 +1454,8 @@
 /obj/machinery/vending/hydronutrients{
 	onstation = 0;
 	extended_inventory = 1;
-	products = list(/obj/item/gun/energy/floragun = 3, /obj/item/geneshears = 3, /obj/item/hatchet = 3, /obj/item/cultivator = 3, /obj/item/plant_analyzer = 3, /obj/item/reagent_containers/cup/bottle/nutrient/ez = 5, /obj/item/reagent_containers/cup/bottle/nutrient/l4z = 5, /obj/item/reagent_containers/cup/bottle/nutrient/rh = 3, /obj/item/reagent_containers/spray/pestspray = 2, /obj/item/reagent_containers/syringe = 5, /obj/item/secateurs = 3, /obj/item/shovel/spade = 3, /obj/item/storage/bag/plants = 3)
+	products = list(/obj/item/gun/energy/floragun = 3, /obj/item/geneshears = 3, /obj/item/hatchet = 3, /obj/item/cultivator = 3, /obj/item/plant_analyzer = 3, /obj/item/reagent_containers/cup/bottle/nutrient/ez = 5, /obj/item/reagent_containers/cup/bottle/nutrient/l4z = 5, /obj/item/reagent_containers/cup/bottle/nutrient/rh = 3, /obj/item/reagent_containers/spray/pestspray = 2, /obj/item/reagent_containers/syringe = 5, /obj/item/secateurs = 3, /obj/item/shovel/spade = 3, /obj/item/storage/bag/plants = 3);
+	all_products_free = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
@@ -1462,7 +1464,8 @@
 	onstation = 0;
 	extended_inventory = 1;
 	name = "SusDrobe";
-	desc = "A suspicious wardrobe with suspicious wares. Nothing to look at here."
+	desc = "A suspicious wardrobe with suspicious wares. Nothing to look at here.";
+	all_products_free = 1
 	},
 /obj/structure/marker_beacon/burgundy,
 /obj/effect/turf_decal/stripes/red/box,
@@ -6257,7 +6260,8 @@
 "En" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/vending/dinnerware{
-	onstation = 0
+	onstation = 0;
+	all_products_free = 1
 	},
 /obj/structure/marker_beacon/indigo,
 /turf/open/floor/iron/dark/textured_large,
@@ -7550,7 +7554,8 @@
 /obj/structure/sign/warning/no_smoking/circle/directional/north,
 /obj/machinery/vending/wardrobe/syndie_wardrobe/interdyne{
 	extended_inventory = 1;
-	onstation = 0
+	onstation = 0;
+	all_products_free = 1
 	},
 /obj/effect/turf_decal/stripes/blue/box,
 /obj/structure/marker_beacon/lime,
