@@ -32,7 +32,6 @@
 /datum/necro_class/leaper
 	display_name = "Leaper"
 	desc = "A long range ambusher, the leaper can leap or gallop onto a victim, knock them down, and then tear them apart with its bladed tails and claws. Best at hit and run tactics."
-	ui_icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	necromorph_type_path = /mob/living/carbon/human/necromorph/leaper
 	tier = 1
 	nest_allowed = TRUE

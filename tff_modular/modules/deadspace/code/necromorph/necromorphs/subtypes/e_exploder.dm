@@ -24,7 +24,6 @@
 /datum/necro_class/exploder/enhanced
 	display_name = "Enhanced Exploder"
 	desc = "An expendable suicide bomber, the exploder's sole purpose is to go out in a blaze of glory, and hopefully take a few people with it."
-	ui_icon = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder_enhanced.dmi'
 	necromorph_type_path = /mob/living/carbon/human/necromorph/exploder/enhanced
 	tier = 2
 	melee_damage_lower = 14

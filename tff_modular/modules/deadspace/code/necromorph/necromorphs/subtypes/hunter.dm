@@ -45,7 +45,6 @@
 	display_name = "Hunter"
 	desc = "A rapidly regenerating vanguard, designed to lead the charge, suffer a glorious death, then get back up and do it again. \
 	Avoid fire though."
-	ui_icon = 'tff_modular/modules/deadspace/icons/necromorphs/hunter.dmi'
 	necromorph_type_path = /mob/living/carbon/human/necromorph/hunter
 	nest_allowed = FALSE
 	tier = 3

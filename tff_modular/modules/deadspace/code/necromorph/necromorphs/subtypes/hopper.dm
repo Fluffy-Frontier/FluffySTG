@@ -29,7 +29,6 @@
 /datum/necro_class/leaper/hopper
 	display_name = "Hopper"
 	desc = "A small ambush and flanking necromorph. Used as scouts and spies, these little monsters can easily hide under objects and scurry into vents. Fares very poorly against armored targets. Will be AI controlled when not being used by a signal."
-	ui_icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper_hopper.dmi'
 	necromorph_type_path = /mob/living/carbon/human/necromorph/leaper/hopper
 	tier = 0
 	nest_allowed = FALSE

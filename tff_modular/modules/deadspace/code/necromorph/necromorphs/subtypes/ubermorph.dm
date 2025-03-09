@@ -18,7 +18,6 @@
 /datum/necro_class/ubermorph
 	display_name = "Ubermorph"
 	desc = "A juvenile hivemind. Constantly regenerating, a nigh-immortal leader of the necromorph army. "
-	ui_icon = 'tff_modular/modules/deadspace/icons/necromorphs/ubermorph.dmi'
 	necromorph_type_path = /mob/living/carbon/human/necromorph/ubermorph
 	nest_allowed = FALSE
 	tier = 4

@@ -21,7 +21,6 @@
 /datum/necro_class/puker
 	display_name = "Puker"
 	desc = "A flexible ranged necromorph who fights by dousing enemies in acid, and is effective at long ranges. Good for crowd control and direct firefights, but suffers greatly in melee combat."
-	ui_icon = 'tff_modular/modules/deadspace/icons/necromorphs/puker/puker.dmi'
 	necromorph_type_path = /mob/living/carbon/human/necromorph/puker
 	nest_allowed = TRUE
 	tier = 2

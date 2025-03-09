@@ -142,11 +142,6 @@
 		return FALSE
 	return TRUE
 
-/obj/structure/marker/ui_assets(mob/user)
-	return list(
-		get_asset_datum(/datum/asset/spritesheet/necromorphs)
-	)
-
 /obj/structure/marker/ui_data(mob/user)
 	. = list()
 	.["biomass"] = marker_biomass
@@ -159,11 +154,6 @@
 /obj/structure/marker/ui_static_data(mob/user)
 	. = list()
 	.["necromorphs"] = list()
-	.["sprites"] = list()
-	var/datum/asset/spritesheet/necromorphs/sheet = get_asset_datum(/datum/asset/spritesheet/necromorphs)
-	for(var/sprite in sheet.sprites)
-		var/list/data = sheet.sprites[sprite]
-		.["sprites"][sprite] = data[1]
 	for(var/datum/necro_class/class as anything in necro_classes)
 		class = necro_classes[class]
 		.["necromorphs"] += list(list(

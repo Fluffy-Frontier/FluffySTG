@@ -41,7 +41,6 @@
 /datum/necro_class/twitcher
 	display_name = "Twitcher"
 	desc = "An elite soldier displaced in time, blinks around randomly and is difficult to hit. Charges extremely quickly"
-	ui_icon = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher.dmi'
 	necromorph_type_path = /mob/living/carbon/human/necromorph/twitcher
 	tier = 1 //For the sake of sanity checks the normal twitcher is technically a T1
 	biomass_cost = 150

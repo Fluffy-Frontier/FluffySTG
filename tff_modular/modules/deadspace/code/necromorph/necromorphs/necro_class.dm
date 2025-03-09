@@ -1,7 +1,6 @@
 /datum/necro_class
 	var/display_name = "preview"
 	var/desc = ""
-	var/ui_icon = 'tff_modular/modules/deadspace/icons/necromorphs/base_necromorph.dmi'
 
 	var/tier = 0
 

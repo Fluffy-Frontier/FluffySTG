@@ -33,7 +33,6 @@
 /datum/necro_class/exploder
 	display_name = "Exploder"
 	desc = "An expendable suicide bomber, the exploder's sole purpose is to go out in a blaze of glory, and hopefully take a few people with it."
-	ui_icon = 'tff_modular/modules/deadspace/icons/necromorphs/exploder/exploder.dmi'
 	necromorph_type_path = /mob/living/carbon/human/necromorph/exploder
 	tier = 1
 	biomass_cost = 75

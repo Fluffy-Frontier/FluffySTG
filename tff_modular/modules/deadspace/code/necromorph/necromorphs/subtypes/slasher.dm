@@ -18,7 +18,6 @@
 /datum/necro_class/slasher
 	display_name = "Slasher"
 	desc = "The frontline soldier of the necromorph horde. While slow, the slasher's charge and dodge help it close the distance."
-	ui_icon = 'tff_modular/modules/deadspace/icons/necromorphs/slasher/fleshy.dmi'
 	necromorph_type_path = /mob/living/carbon/human/necromorph/slasher
 	nest_allowed = TRUE
 	tier = 1

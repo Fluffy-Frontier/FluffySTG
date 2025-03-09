@@ -16,7 +16,6 @@
 /datum/necro_class/twitcher/enhanced
 	display_name = "Oracle Twitcher"
 	desc = "Extremely rare twitcher variant achieved by infecting an oracle operative."
-	ui_icon = 'tff_modular/modules/deadspace/icons/necromorphs/twitcher_oracle.dmi'
 	necromorph_type_path = /mob/living/carbon/human/necromorph/twitcher/enhanced
 	tier = 2
 	biomass_cost = 210

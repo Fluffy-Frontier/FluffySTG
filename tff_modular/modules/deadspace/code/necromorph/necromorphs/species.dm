@@ -94,7 +94,8 @@
 
 //Does animations for regenerating a limb
 /datum/species/necromorph/proc/regenerate_limb(mob/living/carbon/human/necromorph/H, limb, duration)
-	var/image/LR = image(initial(H.class.ui_icon), H, "[limb]_regen")
+	var/obj/item/bodypart/part = H.get_bodypart(limb)
+	var/image/LR = image(initial(part.icon), H, "[limb]_regen")
 	LR.plane = H.plane
 	LR.layer = H.layer - 0.1 //Slightly below the layer of the mob, so that the healthy limb will draw over it
 	H.flick_overlay(LR, GLOB.clients, duration)

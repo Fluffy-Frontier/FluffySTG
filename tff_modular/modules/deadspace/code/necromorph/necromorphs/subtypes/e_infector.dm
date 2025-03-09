@@ -14,7 +14,6 @@
 /datum/necro_class/infector/enhanced
 	display_name = "Infector Enhanced"
 	desc = "A high value, fragile support, the Infector works as a builder and healer"
-	ui_icon = 'tff_modular/modules/deadspace/icons/necromorphs/infector_enhanced.dmi'
 	necromorph_type_path = /mob/living/carbon/human/necromorph/infector/enhanced
 	biomass_cost = 450
 	biomass_spent_required = 750

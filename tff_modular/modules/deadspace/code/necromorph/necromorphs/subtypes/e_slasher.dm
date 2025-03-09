@@ -22,7 +22,6 @@
 /datum/necro_class/slasher/enhanced
 	display_name = "Enhanced Slasher"
 	desc = "The frontline soldier of the necromorph horde. Slow when not charging, but its blade arms make for powerful melee attacks"
-	ui_icon = 'tff_modular/modules/deadspace/icons/necromorphs/slasher_enhanced.dmi'
 	necromorph_type_path = /mob/living/carbon/human/necromorph/slasher/enhanced
 	nest_allowed = FALSE
 	tier = 2

@@ -23,7 +23,6 @@
 /datum/necro_class/leaper/enhanced
 	display_name = "Enhanced Leaper"
 	desc = "A long range ambusher, the leaper can leap on unsuspecting victims from afar, knock them down, and tear them apart with its bladed tail. Not good for prolonged combat though."
-	ui_icon = 'tff_modular/modules/deadspace/icons/necromorphs/leaper.dmi'
 	necromorph_type_path = /mob/living/carbon/human/necromorph/leaper/enhanced
 	tier = 2
 	nest_allowed = FALSE

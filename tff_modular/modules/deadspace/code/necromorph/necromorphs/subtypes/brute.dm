@@ -137,7 +137,6 @@
 	display_name = "Brute"
 	desc = "A powerful linebreaker and assault specialist, the brute can smash through almost any obstacle, and its tough \
 	frontal armor makes it perfect for assaulting entrenched positions.\nVery vulnerable to flanking attacks"
-	ui_icon = 'tff_modular/modules/deadspace/icons/necromorphs/brute.dmi'
 	necromorph_type_path = /mob/living/carbon/human/necromorph/brute
 	tier = 3
 	biomass_cost = 360
