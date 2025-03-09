@@ -195,13 +195,14 @@
 	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
 	sharpness = SHARP_EDGED
 	block_chance = 0
-	item_flags = DROPDEL | ABSTRACT | HAND_ITEM | EXAMINE_SKIP
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	color = COLOR_BRIGHT_BLUE
 
 /obj/item/melee/psyonic_blade/New(loc, power)
 	. = ..()
-	force = 10 + power*1.5
-	block_chance = power*5
+	ADD_TRAIT(src, TRAIT_EXAMINE_SKIP, INNATE_TRAIT)
+	force = 10 + power * 1.5
+	block_chance = power * 5
 
 /obj/item/psyonic_fire
 	name = "small psyonic fire"
@@ -223,8 +224,13 @@
 	light_system = OVERLAY_LIGHT
 	toolspeed = 2
 	tool_behaviour = TOOL_WELDER
-	item_flags = DROPDEL | ABSTRACT | HAND_ITEM | EXAMINE_SKIP
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	heat = HIGH_TEMPERATURE_REQUIRED - 100
+
+/obj/item/psyonic_fire/Initialize(mapload)
+	. = ..()
+
+	ADD_TRAIT(src, TRAIT_EXAMINE_SKIP, INNATE_TRAIT)
 
 // Копирка с абдукторского
 /obj/item/psyonic_omnitool
@@ -240,9 +246,9 @@
 	color = COLOR_BRIGHT_BLUE
 	usesound = 'sound/items/pshoom/pshoom.ogg'
 	var/list/tool_list = list()
-	item_flags = DROPDEL | ABSTRACT | HAND_ITEM | EXAMINE_SKIP
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 
-/obj/item/psyonic_omnitool/New(loc)
+/obj/item/psyonic_omnitool/Initialize(mapload)
 	. = ..()
 	tool_list = list(
 			"Crowbar" = image(icon = 'icons/obj/tools.dmi', icon_state = "crowbar"),
@@ -251,6 +257,7 @@
 			"Wirecutters" = image(icon = 'icons/obj/tools.dmi', icon_state = "cutters_map"),
 			"Wrench" = image(icon = 'icons/obj/tools.dmi', icon_state = "wrench"),
 		)
+	ADD_TRAIT(src, TRAIT_EXAMINE_SKIP, INNATE_TRAIT)
 
 /obj/item/psyonic_omnitool/get_all_tool_behaviours()
 	return list(
