@@ -27,6 +27,11 @@ mkdir -p $1/modular_nova
 find modular_nova/ -name \*.dmi -exec cp --parents {} $1 \;
 # NOVA EDIT ADDITION END
 
+# FLUFFY FRONTIER EDIT ADDITION START
+mkdir -p $1/tff_modular
+find tff_modular/ -name \*.dmi -exec cp --parents {} $1 \;
+# FLUFFY FRONTIER EDIT ADDITION END
+
 cp tgstation.dmb tgstation.rsc $1/
 cp -r _maps/* $1/_maps/
 cp -r icons/* $1/icons/
