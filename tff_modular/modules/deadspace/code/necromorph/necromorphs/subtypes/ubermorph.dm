@@ -29,7 +29,7 @@
 	necro_armor = /datum/armor/dsnecro_ubermorph
 	actions = list(
 		/datum/action/cooldown/mob_cooldown/charge/necro/ubermorph,
-		/datum/action/innate/sense,
+		//datum/action/innate/sense,
 		/datum/action/cooldown/necro/regenerate/ubermorph,
 		// /datum/action/cooldown/necro/frenzy_shout/ubermorph,
 	)

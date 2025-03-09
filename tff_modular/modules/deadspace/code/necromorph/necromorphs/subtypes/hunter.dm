@@ -58,7 +58,7 @@
 		// /datum/action/cooldown/necro/taunt/hunter,
 		/datum/action/cooldown/necro/regenerate/hunter,
 		/datum/action/cooldown/necro/shout,
-		/datum/action/innate/sense,
+		//datum/action/innate/sense,
 	)
 	implemented = TRUE
 

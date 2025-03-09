@@ -1,3 +1,4 @@
+/*
 /datum/action/innate/sense
 	name = "Sense the Unwhole"
 	desc = "They cannot stop what is coming. Use to sense those who are not Whole."
@@ -136,3 +137,4 @@
 	var/matrix/final = matrix(transform)
 	final.Turn(difference)
 	animate(src, transform = final, time = 5, loop = 0)
+*/

@@ -24,7 +24,7 @@
 		/datum/action/cooldown/mob_cooldown/charge/necro/execution/infector,
 		/datum/action/cooldown/necro/infector_proboscis/enhanced,
 		/datum/action/cooldown/necro/shout,
-		/datum/action/innate/sense,
+		//datum/action/innate/sense,
 	)
 	implemented = TRUE
 
