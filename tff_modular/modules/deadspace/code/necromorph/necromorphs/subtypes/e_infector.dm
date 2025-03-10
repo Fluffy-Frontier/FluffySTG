@@ -1,3 +1,4 @@
+/*
 /mob/living/carbon/human/necromorph/infector/enhanced
 	health = 185
 	maxHealth = 185
@@ -56,3 +57,4 @@
 		'tff_modular/modules/deadspace/sound/effects/creatures/necromorph/infector/infector_shout_long_2.ogg',
 		'tff_modular/modules/deadspace/sound/effects/creatures/necromorph/infector/infector_shout_long_3.ogg',
 	)
+*/

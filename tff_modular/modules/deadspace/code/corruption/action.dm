@@ -60,14 +60,14 @@
 /datum/action/cooldown/necro/corruption/Activate(atom/target)
 	var/current_biomass = 0
 	var/obj/structure/marker/mark = null
-	if(typesof(owner, /mob/living/carbon/human/necromorph/infector))
-		var/mob/living/carbon/human/necromorph/infector/necro = owner
-		current_biomass = necro.marker.signal_biomass
-		mark = necro.marker
-	else
-		var/mob/eye/marker_signal/signal = owner
-		mark = signal.marker
-		current_biomass = istype(signal, /mob/eye/marker_signal/marker) ? mark.marker_biomass : mark.signal_biomass
+	//if(typesof(owner, /mob/living/carbon/human/necromorph/infector))
+	//	var/mob/living/carbon/human/necromorph/infector/necro = owner
+	//	current_biomass = necro.marker.signal_biomass
+	//	mark = necro.marker
+	//else
+	//	var/mob/eye/marker_signal/signal = owner
+	//	mark = signal.marker
+	//	current_biomass = istype(signal, /mob/eye/marker_signal/marker) ? mark.marker_biomass : mark.signal_biomass
 	if(current_biomass < place_structure.cost)
 		to_chat(owner, span_warning("Not enough biomass!"))
 		return TRUE

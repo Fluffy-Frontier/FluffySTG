@@ -7,6 +7,6 @@
 	if(get_dist(location, owner) > 1)
 		to_chat(owner, span_notice("Selected target is too far away from you!"))
 		return
-	var/mob/living/carbon/human/necromorph/infector/necro = owner
-	to_chat(owner, span_danger("Current signal biomass: [necro.marker.signal_biomass]!"), MESSAGE_TYPE_LOCALCHAT)
+	//var/mob/living/carbon/human/necromorph/infector/necro = owner
+	//to_chat(owner, span_danger("Current signal biomass: [necro.marker.signal_biomass]!"), MESSAGE_TYPE_LOCALCHAT)
 	return ..()

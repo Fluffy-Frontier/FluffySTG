@@ -1,3 +1,4 @@
+/*
 /mob/living/carbon/human/necromorph/infector
 	health = 90
 	maxHealth = 90
@@ -141,3 +142,4 @@
 
 	//Alright we're done, return true
 	return TRUE
+*/
