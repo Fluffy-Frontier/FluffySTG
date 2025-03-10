@@ -468,6 +468,7 @@
 
 /// Handles the controller(thus AI) dying
 /datum/fleshmind_controller/proc/controller_death()
+	SSshuttle.clearHostileEnvironment(src)
 	switch(death_behaviour)
 		if(CONTROLLER_DEATH_DO_NOTHING)
 			qdel(src)
