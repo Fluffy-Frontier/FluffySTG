@@ -1,5 +1,6 @@
 /// TGMC_XENOS (old nova sector xenos)
 
+// Переопредление прока из 'code\modules\mob\living\carbon\human\human_defense.dm'
 /mob/living/carbon/human/attack_alien(mob/living/carbon/alien/adult/user, list/modifiers)
 	. = ..()
 	if(!.)
