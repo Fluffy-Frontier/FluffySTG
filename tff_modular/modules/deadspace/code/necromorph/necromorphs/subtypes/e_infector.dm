@@ -1,4 +1,3 @@
-/*
 /mob/living/carbon/human/necromorph/infector/enhanced
 	health = 185
 	maxHealth = 185
@@ -25,7 +24,7 @@
 		/datum/action/cooldown/mob_cooldown/charge/necro/execution/infector,
 		/datum/action/cooldown/necro/infector_proboscis/enhanced,
 		/datum/action/cooldown/necro/shout,
-		//datum/action/innate/sense,
+		/datum/action/innate/sense,
 	)
 	implemented = TRUE
 
@@ -57,4 +56,3 @@
 		'tff_modular/modules/deadspace/sound/effects/creatures/necromorph/infector/infector_shout_long_2.ogg',
 		'tff_modular/modules/deadspace/sound/effects/creatures/necromorph/infector/infector_shout_long_3.ogg',
 	)
-*/

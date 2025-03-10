@@ -17,18 +17,18 @@
 
 /datum/action/cooldown/necro/infector_proboscis/Activate(atom/target)
 	. = TRUE
-	//var/mob/living/carbon/human/necromorph/infector/holder = owner
-	//if(!isliving(target))
-	//	return
-	//var/mob/living/human = target
-	//if(human.stat != DEAD)
-	//	holder.UnarmedAttack(target)
-	//	holder.inject_necrotoxin(target, necrotoxin_amount)
-	//else
-	//	holder.UnarmedAttack(target)
-	//	holder.play_necro_sound(SOUND_ATTACK, VOLUME_MID, 1, 3)
-	//	if(do_after(holder, 5 SECONDS))
-	//		human.start_necromorph_conversion()
+	var/mob/living/carbon/human/necromorph/infector/holder = owner
+	if(!isliving(target))
+		return
+	var/mob/living/human = target
+	if(human.stat != DEAD)
+		holder.UnarmedAttack(target)
+		holder.inject_necrotoxin(target, necrotoxin_amount)
+	else
+		holder.UnarmedAttack(target)
+		holder.play_necro_sound(SOUND_ATTACK, VOLUME_MID, 1, 3)
+		if(do_after(holder, 5 SECONDS))
+			human.start_necromorph_conversion()
 	return ..()
 
 /datum/action/cooldown/necro/infector_proboscis/enhanced

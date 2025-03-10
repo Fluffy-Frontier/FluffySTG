@@ -1,4 +1,3 @@
-/*
 /mob/living/carbon/human/necromorph/infector
 	health = 90
 	maxHealth = 90
@@ -28,7 +27,7 @@
 		/datum/action/cooldown/mob_cooldown/charge/necro/execution/infector,
 		/datum/action/cooldown/necro/infector_proboscis,
 		/datum/action/cooldown/necro/shout,
-		//datum/action/innate/sense,
+		/datum/action/innate/sense,
 		/datum/action/cooldown/necro/corruption/infector,
 	)
 	implemented = TRUE
@@ -142,4 +141,3 @@
 
 	//Alright we're done, return true
 	return TRUE
-*/

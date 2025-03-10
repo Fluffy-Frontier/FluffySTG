@@ -78,12 +78,12 @@
 		return
 	necromorphs -= necro
 	necro.marker = null
-/*
+
 /obj/structure/marker/proc/sense_survivors()
 	for(var/mob/living/survivors as anything in GLOB.player_list) //We look for any mob with a client
 		if(survivors.stat != DEAD && !isnecromorph(survivors) && is_station_level(survivors.loc?.z))
 			unwhole |= survivors //Using |= prevents duplicates in the list, but is a little slower
-*/
+
 /obj/structure/marker/proc/activate(announce = TRUE)
 	if(active)
 		return
@@ -91,7 +91,7 @@
 	change_marker_biomass(250) //Marker given a biomass injection, enough for a small team and some growing
 	change_signal_biomass(50) //Signals given biomass injection for general spreading
 	add_biomass_source(/datum/biomass_source/baseline, src) //Base income for marker
-	//sense_survivors() //Checks for survivors for sense
+	sense_survivors() //Checks for survivors for sense
 	for(var/mob/eye/marker_signal/eye as anything in marker_signals)
 		var/datum/action/cooldown/necro/corruption/ability = new /datum/action/cooldown/necro/corruption(eye)
 		ability.Grant(eye)

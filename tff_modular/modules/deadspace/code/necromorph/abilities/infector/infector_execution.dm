@@ -60,8 +60,8 @@
 		if (H == victim || H == user)
 			continue
 
-		//if (istype(H.dna.species, /datum/species/necromorph/infector))
-		//	return EXECUTION_CANCEL
+		if (istype(H.dna.species, /datum/species/necromorph/infector))
+			return EXECUTION_CANCEL
 
 
 /datum/component/execution/infector/safety_check()
