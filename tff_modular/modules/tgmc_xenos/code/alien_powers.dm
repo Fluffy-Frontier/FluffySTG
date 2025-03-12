@@ -4,6 +4,75 @@
 #define EVASION_VENTCRAWL_INABILTY_CD_PERCENTAGE 0.8
 #define RUNNER_BLUR_EFFECT "runner_evasion"
 
+// Способность эволюционировать
+/datum/action/cooldown/alien/tgmc
+	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
+	/// Some xeno abilities block other abilities from being used, this allows them to get around that in cases where it is needed
+	var/can_be_used_always = FALSE
+
+/datum/action/cooldown/alien/tgmc/IsAvailable(feedback = FALSE)
+	. = ..()
+	if(!.)
+		return FALSE
+
+	if(can_be_used_always)
+		return TRUE
+
+	var/mob/living/carbon/alien/adult/tgmc/owner_alien = owner
+	if(!istype(owner_alien) || owner_alien.unable_to_use_abilities)
+		return FALSE
+
+/datum/action/cooldown/alien/tgmc/generic_evolve
+	name = "Evolve"
+	desc = "Allows us to evolve to a higher caste of our type, if there is not one already."
+	button_icon_state = "evolution"
+	/// What type this ability will turn the owner into upon completion
+	var/type_to_evolve_into
+
+/datum/action/cooldown/alien/tgmc/generic_evolve/Grant(mob/grant_to)
+	. = ..()
+	if(!isalien(owner))
+		return
+	var/mob/living/carbon/alien/target_alien = owner
+	plasma_cost = target_alien.get_max_plasma() //This ability should always require that a xeno be at their max plasma capacity to use
+
+/datum/action/cooldown/alien/tgmc/generic_evolve/Activate()
+	var/mob/living/carbon/alien/adult/tgmc/evolver = owner
+
+	if(!istype(evolver))
+		to_chat(owner, span_warning("You aren't an alien, you can't evolve!"))
+		return FALSE
+
+	type_to_evolve_into = evolver.next_evolution
+	if(!type_to_evolve_into)
+		to_chat(evolver, span_bolddanger("Something is wrong... We can't evolve into anything? (This is broken report it on GitHub)"))
+		CRASH("Couldn't find an evolution for [owner] ([owner.type]).")
+
+	if(!isturf(evolver.loc))
+		return FALSE
+
+	if(get_alien_type(type_to_evolve_into))
+		evolver.balloon_alert(evolver, "too many of our evolution already")
+		return FALSE
+
+	var/obj/item/organ/alien/hivenode/node = evolver.get_organ_by_type(/obj/item/organ/alien/hivenode)
+	if(!node)
+		to_chat(evolver, span_bolddanger("We can't sense our node's connection to the hive... We can't evolve!"))
+		return FALSE
+
+	if(node.recent_queen_death)
+		to_chat(evolver, span_bolddanger("The death of our queen... We can't seem to gather the mental energy required to evolve..."))
+		return FALSE
+
+	if(evolver.has_evolved_recently)
+		evolver.balloon_alert(evolver, "can evolve in 1.5 minutes") //Make that 1.5 variable later, but it keeps fucking up for me :(
+		return FALSE
+
+	var/new_beno = new type_to_evolve_into(evolver.loc)
+	evolver.alien_evolve(new_beno)
+	return TRUE
+
+
 // Наши личные нейротоксичные гланды, большую часть мехаана которых по хорошему бы на ТГ перенести, ведь у этих куда большая возможность настройки без боли
 /datum/action/cooldown/alien/acid/tgmc
 	name = "Spit Neurotoxin"
@@ -171,14 +240,11 @@
 /datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep
 	name = "Crushing Tail Sweep"
 	desc = "Throw back attackers with a sweep of your tail, likely breaking some bones in the process."
-
+	check_flags = AB_CHECK_CONSCIOUS | AB_CHECK_INCAPACITATED | AB_CHECK_LYING
 	cooldown_time = 60 SECONDS
-
 	aoe_radius = 1
-
 	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
 	button_icon_state = "crush_tail"
-
 	sparkle_path = /obj/effect/temp_visual/dir_setting/tailsweep/defender
 
 	/// The sound that the tail sweep will make upon hitting something
@@ -420,6 +486,7 @@
 /datum/action/cooldown/mob_cooldown/charge/basic_charge/defender
 	name = "Charge Attack"
 	desc = "Allows you to charge at a position, trampling anything in your path."
+	check_flags = AB_CHECK_CONSCIOUS | AB_CHECK_INCAPACITATED | AB_CHECK_LYING
 	cooldown_time = 15 SECONDS
 	charge_delay = 0.3 SECONDS
 	charge_distance = 5
@@ -464,7 +531,6 @@
 			occupant.Stun(mech_occupant_stun_duration)
 
 		source.visible_message(span_danger("[source] smashes into [target]!"), span_userdanger("You smashes into [target]"), ignored_mobs = occupants)
-
 		target_mecha.take_damage(mech_damage, BRUTE)
 		give_drawback(source, take_damage = TRUE)
 		return TRUE
@@ -502,6 +568,7 @@
 /datum/action/cooldown/mob_cooldown/charge/triple_charge/ravager
 	name = "Triple Charge Attack"
 	desc = "Allows you to charge thrice at a location, trampling any in your path."
+	check_flags = AB_CHECK_CONSCIOUS | AB_CHECK_INCAPACITATED | AB_CHECK_LYING
 	cooldown_time = 30 SECONDS
 	charge_delay = 0.3 SECONDS
 	charge_distance = 7
@@ -513,7 +580,7 @@
 	unset_after_click = TRUE
 
 	// Количество урона по меху при ударе
-	var/mech_damage = 15
+	var/mech_damage = 10
 	// Острый ли удар при столкновении
 	var/impact_sharpness = TRUE
 
@@ -533,6 +600,7 @@
 		victim.visible_message(span_danger("[source] slams into [target]!"), span_userdanger("[source] tramples you into the ground!"))
 		victim.apply_damage(damage_dealt, BRUTE, wound_bonus = CANT_WOUND, sharpness = impact_sharpness)
 	else if(ismecha(target))
+		GLOB.move_manager.stop_looping(source)
 		var/obj/vehicle/sealed/mecha/victim = target
 		source.visible_message(span_danger("[source] smashes into [target]!"), span_danger("You smashes into [target]!"))
 		victim.take_damage(mech_damage, BRUTE)

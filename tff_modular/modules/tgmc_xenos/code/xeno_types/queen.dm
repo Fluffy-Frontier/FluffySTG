@@ -77,7 +77,10 @@
 		var/distance_to_target = get_dist(queenie, screech_target)
 		if(distance_to_target <= 4)
 			to_chat(src, span_danger("An ear-splitting guttural roar shakes the ground beneath your feet!"))
-			screech_target.AdjustKnockdown(40)
+			if(istype(screech_target.loc, /obj/vehicle/sealed/mecha))
+				screech_target.AdjustStun(40)
+			else
+				screech_target.AdjustKnockdown(40)
 		else if(distance_to_target >= 5 && distance_to_target < 7)
 			to_chat(src, span_danger("The roar shakes your body to the core, freezing you in place!"))
 			screech_target.AdjustStun(20)

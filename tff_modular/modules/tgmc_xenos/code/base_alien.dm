@@ -42,14 +42,13 @@
 
 /mob/living/carbon/alien/adult/tgmc/Initialize(mapload)
 	. = ..()
+	real_name = "alien [caste]"
+	pixel_x = -16
 
 	if(next_evolution)
 		GRANT_ACTION(/datum/action/cooldown/alien/tgmc/generic_evolve)
 
-	pixel_x = -16
-
 	ADD_TRAIT(src, TRAIT_XENO_HEAL_AURA, TRAIT_XENO_INNATE)
-	real_name = "alien [caste]"
 
 /mob/living/carbon/alien/adult/tgmc/create_internal_organs()
 	if(additional_organ_types_by_slot)
@@ -69,72 +68,15 @@
 		return
 	has_evolved_recently = FALSE
 
-/datum/action/cooldown/alien/tgmc
-	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
-	/// Some xeno abilities block other abilities from being used, this allows them to get around that in cases where it is needed
-	var/can_be_used_always = FALSE
-
-/datum/action/cooldown/alien/tgmc/IsAvailable(feedback = FALSE)
-	. = ..()
-	if(!.)
+/mob/living/carbon/alien/adult/tgmc/Move(atom/newloc, direct = 0)
+	if(body_position == LYING_DOWN) // Лежим - значит отдыхаем. Никакого передвижения во время отдыха
 		return FALSE
+	return ..()
 
-	if(can_be_used_always)
-		return TRUE
-
-	var/mob/living/carbon/alien/adult/tgmc/owner_alien = owner
-	if(!istype(owner_alien) || owner_alien.unable_to_use_abilities)
+/mob/living/carbon/alien/adult/tgmc/UnarmedAttack(atom/attack_target, proximity_flag, list/modifiers)
+	if(body_position == LYING_DOWN) // Лежим - значит отдыхаем. Никакой войны во время отдыха
 		return FALSE
-
-/datum/action/cooldown/alien/tgmc/generic_evolve
-	name = "Evolve"
-	desc = "Allows us to evolve to a higher caste of our type, if there is not one already."
-	button_icon_state = "evolution"
-	/// What type this ability will turn the owner into upon completion
-	var/type_to_evolve_into
-
-/datum/action/cooldown/alien/tgmc/generic_evolve/Grant(mob/grant_to)
-	. = ..()
-	if(!isalien(owner))
-		return
-	var/mob/living/carbon/alien/target_alien = owner
-	plasma_cost = target_alien.get_max_plasma() //This ability should always require that a xeno be at their max plasma capacity to use
-
-/datum/action/cooldown/alien/tgmc/generic_evolve/Activate()
-	var/mob/living/carbon/alien/adult/tgmc/evolver = owner
-
-	if(!istype(evolver))
-		to_chat(owner, span_warning("You aren't an alien, you can't evolve!"))
-		return FALSE
-
-	type_to_evolve_into = evolver.next_evolution
-	if(!type_to_evolve_into)
-		to_chat(evolver, span_bolddanger("Something is wrong... We can't evolve into anything? (This is broken report it on GitHub)"))
-		CRASH("Couldn't find an evolution for [owner] ([owner.type]).")
-
-	if(!isturf(evolver.loc))
-		return FALSE
-
-	if(get_alien_type(type_to_evolve_into))
-		evolver.balloon_alert(evolver, "too many of our evolution already")
-		return FALSE
-
-	var/obj/item/organ/alien/hivenode/node = evolver.get_organ_by_type(/obj/item/organ/alien/hivenode)
-	if(!node)
-		to_chat(evolver, span_bolddanger("We can't sense our node's connection to the hive... We can't evolve!"))
-		return FALSE
-
-	if(node.recent_queen_death)
-		to_chat(evolver, span_bolddanger("The death of our queen... We can't seem to gather the mental energy required to evolve..."))
-		return FALSE
-
-	if(evolver.has_evolved_recently)
-		evolver.balloon_alert(evolver, "can evolve in 1.5 minutes") //Make that 1.5 variable later, but it keeps fucking up for me :(
-		return FALSE
-
-	var/new_beno = new type_to_evolve_into(evolver.loc)
-	evolver.alien_evolve(new_beno)
-	return TRUE
+	return ..()
 
 /datum/movespeed_modifier/alien_quick
 	multiplicative_slowdown = -0.5
@@ -207,7 +149,8 @@
 
 	return GLOB.fire_appearances[fire_icon]
 
-/mob/living/carbon/alien/adult/tgmc/findQueen() //Yes we really do need to do this whole thing to let the queen finder work
+//Yes we really do need to do this whole thing to let the queen finder work
+/mob/living/carbon/alien/adult/tgmc/findQueen()
 	if(hud_used)
 		hud_used.alien_queen_finder.cut_overlays()
 		var/mob/queen = get_alien_type(/mob/living/carbon/alien/adult/tgmc/queen)
