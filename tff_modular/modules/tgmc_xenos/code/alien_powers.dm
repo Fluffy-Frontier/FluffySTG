@@ -492,7 +492,7 @@
 	if(stop_moving)
 		GLOB.move_manager.stop_looping(source)
 
-	if(took_damage)
+	if(take_damage)
 		source.apply_damage(recoil_damage, BRUTE)
 
 	source.Stun(recoil_duration, ignore_canstun = TRUE)
@@ -535,7 +535,7 @@
 	else if(ismecha(target))
 		var/obj/vehicle/sealed/mecha/victim = target
 		source.visible_message(span_danger("[source] smashes into [target]!"), span_danger("You smashes into [target]!"))
-		victim.take_damage(mech_damage, BRTUE)
+		victim.take_damage(mech_damage, BRUTE)
 	playsound(get_turf(target), 'sound/effects/meteorimpact.ogg', 100, TRUE)
 	shake_camera(target, 4, 3)
 	shake_camera(source, 2, 3)
