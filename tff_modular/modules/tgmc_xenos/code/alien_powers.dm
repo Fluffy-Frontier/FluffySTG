@@ -429,13 +429,73 @@
 	button_icon_state = "defender_charge"
 	unset_after_click = TRUE
 
-/datum/action/cooldown/mob_cooldown/charge/basic_charge/defender/do_charge_indicator(atom/charger, atom/charge_target)
-	. = ..()
-	playsound(charger, 'tff_modular/modules/tgmc_xenos/sound/alien_roar1.ogg', 100, TRUE, 8, 0.9)
+	recoil_duration = 0.6 SECONDS
+	knockdown_duration = 0.6 SECONDS
+
+	//Количество урона, которое наносится владельцу при столкновении с мехом
+	var/recoil_damage = 40
+	// Время стана операторов меха
+	var/mech_occupant_stun_duration = 1.2 SECONDS
+	// Острый ли удар при столкновении
+	var/impact_sharpness = FALSE
+	// Количество урона по живности при ударе
+	var/living_damage = 20
+	// Количество урона по меху при ударе
+	var/mech_damage = 40
 
 /datum/action/cooldown/mob_cooldown/charge/basic_charge/defender/Activate(atom/target_atom)
 	. = ..()
 	return TRUE
+
+/datum/action/cooldown/mob_cooldown/charge/basic_charge/defender/do_charge_indicator(atom/charger, atom/charge_target)
+	. = ..()
+	playsound(charger, 'tff_modular/modules/tgmc_xenos/sound/alien_roar1.ogg', 100, TRUE, 8, 0.9)
+
+// Не убивайте за этот код. У меня полностью ломается голова, когда я прикасаюсь к этому коду. Он работает и меня это устраивает
+/datum/action/cooldown/mob_cooldown/charge/basic_charge/defender/hit_target(atom/movable/source, atom/target, damage_dealt)
+	if(ismecha(target))
+		var/obj/vehicle/sealed/mecha/target_mecha = target
+		var/list/mob/occupants = target_mecha.return_occupants()
+
+		for(var/mob/living/occupant in occupants)
+			to_chat(occupant, span_userdanger("[source] smashes into you!"), MESSAGE_TYPE_LOCALCHAT)
+			if(!isliving(occupant))
+				continue
+			occupant.Stun(mech_occupant_stun_duration)
+
+		source.visible_message(span_danger("[source] smashes into [target]!"), span_userdanger("You smashes into [target]"), ignored_mobs = occupants)
+
+		target_mecha.take_damage(mech_damage, BRUTE)
+		give_drawback(source, take_damage = TRUE)
+		return TRUE
+
+	if(isliving(target))
+		var/mob/living/living_target = target
+		if(ishuman(living_target))
+			var/mob/living/carbon/human/human_target = living_target
+			if(human_target.check_block(source, 0, "\the [source]", attack_type = LEAP_ATTACK))
+				source.visible_message(span_danger("[source] smashes into [target]!"), span_userdanger("You smashes into [target]"))
+				give_drawback(source, FALSE)
+
+			living_target.visible_message(span_danger("[source] tramples [living_target] into the ground!"), span_userdanger("[source] tramples you into the ground!"))
+			living_target.apply_damage(living_damage, BRUTE, sharpness = impact_sharpness)
+			living_target.Knockdown(knockdown_duration)
+			return
+
+	source.visible_message(span_danger("[source] smashes into [target]!"), span_userdanger("You smashes into [target]"))
+	give_drawback(source)
+
+/datum/action/cooldown/mob_cooldown/charge/basic_charge/defender/proc/give_drawback(mob/living/source, take_damage = FALSE, stop_moving = TRUE)
+	if(!istype(source))
+		return FALSE
+
+	if(stop_moving)
+		GLOB.move_manager.stop_looping(source)
+
+	if(took_damage)
+		source.apply_damage(recoil_damage, BRUTE)
+
+	source.Stun(recoil_duration, ignore_canstun = TRUE)
 
 
 // Тройной чардж равагера
@@ -452,12 +512,33 @@
 	button_icon_state = "ravager_charge"
 	unset_after_click = TRUE
 
-/datum/action/cooldown/mob_cooldown/charge/triple_charge/ravager/do_charge_indicator(atom/charger, atom/charge_target)
-	playsound(charger, 'tff_modular/modules/tgmc_xenos/sound/alien_roar2.ogg', 100, TRUE, 8, 0.9)
+	// Количество урона по меху при ударе
+	var/mech_damage = 15
+	// Острый ли удар при столкновении
+	var/impact_sharpness = TRUE
 
 /datum/action/cooldown/mob_cooldown/charge/triple_charge/ravager/Activate(atom/target_atom)
 	. = ..()
 	return TRUE
+
+/datum/action/cooldown/mob_cooldown/charge/triple_charge/ravager/do_charge_indicator(atom/charger, atom/charge_target)
+	playsound(charger, 'tff_modular/modules/tgmc_xenos/sound/alien_roar2.ogg', 100, TRUE, 8, 0.9)
+
+/datum/action/cooldown/mob_cooldown/charge/triple_charge/ravager/can_hit_target(atom/movable/source, atom/target)
+	return isliving(target) || ismecha(target)
+
+/datum/action/cooldown/mob_cooldown/charge/triple_charge/ravager/hit_target(atom/movable/source, atom/target, damage_dealt)
+	if(isliving(target))
+		var/mob/living/victim = target
+		victim.visible_message(span_danger("[source] slams into [target]!"), span_userdanger("[source] tramples you into the ground!"))
+		victim.apply_damage(damage_dealt, BRUTE, wound_bonus = CANT_WOUND, sharpness = impact_sharpness)
+	else if(ismecha(target))
+		var/obj/vehicle/sealed/mecha/victim = target
+		source.visible_message(span_danger("[source] smashes into [target]!"), span_danger("You smashes into [target]!"))
+		victim.take_damage(mech_damage, BRTUE)
+	playsound(get_turf(target), 'sound/effects/meteorimpact.ogg', 100, TRUE)
+	shake_camera(target, 4, 3)
+	shake_camera(source, 2, 3)
 
 
 /// Способность вариора делать *что-то*
