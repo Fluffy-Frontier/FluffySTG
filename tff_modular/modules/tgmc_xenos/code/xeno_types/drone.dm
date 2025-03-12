@@ -17,6 +17,8 @@
 		ORGAN_SLOT_XENO_ACIDGLAND = /obj/item/organ/alien/acid,
 	)
 
+	hud_offset_y = -16
+
 /mob/living/carbon/alien/adult/tgmc/drone/Initialize(mapload)
 	. = ..()
 	GRANT_ACTION(/datum/action/cooldown/alien/tgmc/heal_aura)

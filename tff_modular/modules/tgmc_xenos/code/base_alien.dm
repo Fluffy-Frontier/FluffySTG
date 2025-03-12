@@ -37,8 +37,15 @@
 	/// Все дополнительные органы, что должны находиться в телах ксеносов
 	var/list/additional_organ_types_by_slot
 
-	/// Изменяем урон по мехам
-	var/mech_damage_multiplier = 1.5
+	// Оффсет для худ-ов, чтобы они лучше соответствовали размерам ксеноса
+	var/hud_offset_x = 32
+	var/hud_offset_y = 0
+
+	// /// Изменяем урон по мехам
+	// var/mech_damage_multiplier = 1.5
+
+/mob/living/carbon/alien/adult/tgmc/set_hud_image_state(hud_type, hud_state, x_offset = 0, y_offset = 0)
+	return ..(hud_type, hud_state, hud_offset_x, hud_offset_y)
 
 /mob/living/carbon/alien/adult/tgmc/Initialize(mapload)
 	. = ..()

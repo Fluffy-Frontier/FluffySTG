@@ -18,6 +18,8 @@
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/small/tiny,
 	)
 
+	hud_offset_y = -32
+
 /mob/living/carbon/alien/adult/tgmc/runner/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/tackler, stamina_cost = 0, base_knockdown = 2, range = 10, speed = 2, skill_mod = 7, min_distance = 0)

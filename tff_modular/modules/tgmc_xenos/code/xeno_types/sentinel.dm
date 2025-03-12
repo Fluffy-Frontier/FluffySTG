@@ -17,6 +17,8 @@
 		ORGAN_SLOT_XENO_NEUROTOXINGLAND = /obj/item/organ/alien/neurotoxin/tgmc,
 	)
 
+	hud_offset_y = -16
+
 /mob/living/carbon/alien/adult/tgmc/sentinel/Initialize(mapload)
 	. = ..()
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_slow)

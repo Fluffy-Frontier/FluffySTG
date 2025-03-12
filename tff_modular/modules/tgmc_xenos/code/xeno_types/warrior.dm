@@ -15,6 +15,8 @@
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel
 	)
 
+	hud_offset_y = -16
+
 /mob/living/carbon/alien/adult/tgmc/warrior/Initialize(mapload)
 	. = ..()
 	var/static/list/innate_actions = list(
