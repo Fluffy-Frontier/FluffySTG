@@ -75,7 +75,7 @@
 		if(!check_rights(R_ADMIN))
 			alert(usr, "Observing is currently disabled!", "Observe")
 			return FALSE
-		if(alert(usr, "Observing is currently disabled,\n do you want to use your permissions to circumvent it?", "Observe", "Yes", "No") != "Yes")
+		if(alert(usr, "Observing is currently disabled, do you want\nto use your permissions to circumvent it?", "Observe", "Yes", "No") != "Yes")
 			return FALSE
 	// FLUFFT FRONTIER ADDITION END
 
