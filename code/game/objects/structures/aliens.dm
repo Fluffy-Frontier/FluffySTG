@@ -245,10 +245,7 @@
 	qdel(src)
 
 /obj/structure/alien/weeds/should_atmos_process(datum/gas_mixture/air, exposed_temperature)
-	// FLUFFY FRONTIER EDIT START - TGMC_XENOS
-	// ORIGINAL LINE: return exposed_temperature > 300
-	return exposed_temperature > 345	// Подимаем температуру, при которой начинает наноситься урон до ~75 градусов. Иначе на какой-нибудь серенити просто атмос улицы будет убивать резину
-	// FLUFFY FRONTIER EDIT END
+	return exposed_temperature > 300
 
 /obj/structure/alien/weeds/atmos_expose(datum/gas_mixture/air, exposed_temperature)
 	take_damage(5, BURN, 0, 0)
