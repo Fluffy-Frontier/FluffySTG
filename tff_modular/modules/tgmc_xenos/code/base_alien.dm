@@ -44,9 +44,6 @@
 	// /// Изменяем урон по мехам
 	// var/mech_damage_multiplier = 1.5
 
-/mob/living/carbon/alien/adult/tgmc/set_hud_image_state(hud_type, hud_state, x_offset = 0, y_offset = 0)
-	return ..(hud_type, hud_state, hud_offset_x, hud_offset_y)
-
 /mob/living/carbon/alien/adult/tgmc/Initialize(mapload)
 	. = ..()
 	real_name = "alien [caste]"
@@ -179,3 +176,6 @@
 				finder_icon = "finder_far"
 		var/image/finder_eye = image('icons/hud/screen_alien.dmi', finder_icon, dir = Qdir)
 		hud_used.alien_queen_finder.add_overlay(finder_eye)
+
+/mob/living/carbon/alien/adult/tgmc/set_hud_image_state(hud_type, hud_state, x_offset = 0, y_offset = 0)
+	return ..(hud_type, hud_state, hud_offset_x, hud_offset_y)
