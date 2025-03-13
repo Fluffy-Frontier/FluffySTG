@@ -10,6 +10,15 @@
 	maptext_width = 64
 	pressure_resistance = 200
 
+	bodyparts = list(
+		/obj/item/bodypart/chest/alien/tgmc,
+		/obj/item/bodypart/head/alien/tgmc,
+		/obj/item/bodypart/arm/left/alien/tgmc,
+		/obj/item/bodypart/arm/right/alien/tgmc,
+		/obj/item/bodypart/leg/right/alien/tgmc,
+		/obj/item/bodypart/leg/left/alien/tgmc,
+	)
+
 	default_organ_types_by_slot = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain/alien,
 		ORGAN_SLOT_XENO_HIVENODE = /obj/item/organ/alien/hivenode,
