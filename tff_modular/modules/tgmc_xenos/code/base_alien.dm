@@ -50,9 +50,6 @@
 	var/hud_offset_x = 32
 	var/hud_offset_y = 0
 
-	// /// Изменяем урон по мехам
-	// var/mech_damage_multiplier = 1.5
-
 /mob/living/carbon/alien/adult/tgmc/Initialize(mapload)
 	. = ..()
 	real_name = "alien [caste]"
