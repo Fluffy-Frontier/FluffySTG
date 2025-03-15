@@ -259,6 +259,12 @@
 	var/impact_sharpness = FALSE
 	/// What type of damage should the tail sweep do
 	var/impact_damage_type = BRUTE
+	// Урон по мехам
+	var/mecha_damage = 20
+	// Время стана оператора меха
+	var/mecha_occupant_stun_duration
+	// Можем ли откнуить мех ударом хвоста
+	var/mecha_throwing = TRUE
 
 /datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/IsAvailable(feedback = FALSE)
 	. = ..()
@@ -270,7 +276,7 @@
 		return FALSE
 
 /datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/cast_on_thing_in_aoe(atom/movable/victim, atom/caster)
-	if(!isliving(victim))
+	if(!isliving(victim) && !ismecha(victim))
 		return
 
 	if(isalien(victim))
@@ -278,22 +284,40 @@
 
 	var/turf/throwtarget = get_edge_target_turf(caster, get_dir(caster, get_step_away(victim, caster)))
 	var/dist_from_caster = get_dist(victim, caster)
-	var/mob/living/victim_living = victim
+	if(isliving(victim))
+		var/mob/living/victim_living = victim
+		if(dist_from_caster <= 0)
+			victim_living.Knockdown(knockdown_time)
+			if(sparkle_path)
+				new sparkle_path(get_turf(victim_living), get_dir(caster, victim_living))
+		else
+			victim_living.Knockdown(knockdown_time * 2) //They are on the same turf as us, or... somewhere else, I'm not sure how but they are getting smacked down
 
-	if(dist_from_caster <= 0)
-		victim_living.Knockdown(knockdown_time)
-		if(sparkle_path)
-			new sparkle_path(get_turf(victim_living), get_dir(caster, victim_living))
+		victim_living.apply_damage(impact_damage, impact_damage_type, BODY_ZONE_CHEST, wound_bonus = impact_wound_bonus, sharpness = impact_sharpness)
+		shake_camera(victim_living, 4, 3)
+		playsound(victim_living, impact_sound, 100, TRUE, 8, 0.9)
+		victim.visible_message(span_danger("[caster]'s tail slams into [victim], throwing them back!"), span_userdanger("[caster]'s tail slams into you, throwing you back!"))
 
-	else
-		victim_living.Knockdown(knockdown_time * 2) //They are on the same turf as us, or... somewhere else, I'm not sure how but they are getting smacked down
+		victim_living.safe_throw_at(throwtarget, ((clamp((max_throw - (clamp(dist_from_caster - 2, 0, dist_from_caster))), 3, max_throw))), 1, caster, force = repulse_force)
 
-	victim_living.apply_damage(impact_damage, impact_damage_type, BODY_ZONE_CHEST, wound_bonus = impact_wound_bonus, sharpness = impact_sharpness)
-	shake_camera(victim_living, 4, 3)
-	playsound(victim_living, impact_sound, 100, TRUE, 8, 0.9)
-	to_chat(victim_living, span_userdanger("[caster]'s tail slams into you, throwing you back!"))
+	else if(ismecha(victim))
+		var/obj/vehicle/sealed/mecha/victim_mecha = victim
+		var/list/mob/occupants = victim_mecha.return_occupants()
 
-	victim_living.safe_throw_at(throwtarget, ((clamp((max_throw - (clamp(dist_from_caster - 2, 0, dist_from_caster))), 3, max_throw))), 1, caster, force = repulse_force)
+		for(var/mob/living/occupant in occupants)
+			if(!isliving(occupant))
+				continue
+			if(!isnull(mecha_occupant_stun_duration))
+				occupant.Stun(mecha_occupant_stun_duration)
+			shake_camera(occupant, 4, 3)
+			playsound(occupant, impact_sound, 100, TRUE, 8, 0.9)
+
+		victim_mecha.take_damage(mecha_damage, impact_damage_type)
+		victim_mecha.visible_message(span_danger("[caster]'s tail slams into [victim], throwing them back!"), span_userdanger("[caster]'s tail slams into you, throwing you back!"))
+
+		if(mecha_throwing)
+			if((victim_mecha.max_integrity < 400) && (dist_from_caster <= 1))
+				victim_mecha.safe_throw_at(throwtarget, 1, 1, caster, spin = FALSE, force = repulse_force)
 
 /obj/effect/temp_visual/dir_setting/tailsweep/defender
 	icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
@@ -316,6 +340,8 @@
 	impact_damage = 20
 	impact_wound_bonus = 10
 
+	mecha_occupant_stun_duration = 1.2 SECONDS
+
 /obj/effect/temp_visual/dir_setting/tailsweep/praetorian
 	icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
 	icon_state = "throw_tail_anim"
@@ -337,6 +363,10 @@
 	impact_sound = 'modular_nova/master_files/sound/weapons/bloodyslice.ogg'
 	impact_damage = 40
 	impact_sharpness = SHARP_EDGED
+
+	mecha_damage = 10
+	mecha_occupant_stun_duration = null
+	mecha_throwing = FALSE
 
 /obj/effect/temp_visual/dir_setting/tailsweep/ravager
 	icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
@@ -510,13 +540,13 @@
 	//Количество урона, которое наносится владельцу при столкновении с мехом
 	var/recoil_damage = 40
 	// Время стана операторов меха
-	var/mech_occupant_stun_duration = 1.2 SECONDS
+	var/mecha_occupant_stun_duration = 1.2 SECONDS
 	// Острый ли удар при столкновении
 	var/impact_sharpness = FALSE
 	// Количество урона по живности при ударе
 	var/living_damage = 20
 	// Количество урона по меху при ударе
-	var/mech_damage = 40
+	var/mecha_damage = 40
 
 /datum/action/cooldown/mob_cooldown/charge/basic_charge/defender/Activate(atom/target_atom)
 	. = ..()
@@ -536,10 +566,10 @@
 			to_chat(occupant, span_userdanger("[source] smashes into you!"), MESSAGE_TYPE_LOCALCHAT)
 			if(!isliving(occupant))
 				continue
-			occupant.Stun(mech_occupant_stun_duration)
+			occupant.Stun(mecha_occupant_stun_duration)
 
 		source.visible_message(span_danger("[source] smashes into [target]!"), span_userdanger("You smashes into [target]"), ignored_mobs = occupants)
-		target_mecha.take_damage(mech_damage, BRUTE)
+		target_mecha.take_damage(mecha_damage, BRUTE)
 		give_drawback(source, take_damage = TRUE)
 		return TRUE
 
@@ -588,7 +618,7 @@
 	unset_after_click = TRUE
 
 	// Количество урона по меху при ударе
-	var/mech_damage = 10
+	var/mecha_damage = 10
 	// Острый ли удар при столкновении
 	var/impact_sharpness = TRUE
 
@@ -611,7 +641,7 @@
 		GLOB.move_manager.stop_looping(source)
 		var/obj/vehicle/sealed/mecha/victim = target
 		source.visible_message(span_danger("[source] smashes into [target]!"), span_danger("You smashes into [target]!"))
-		victim.take_damage(mech_damage, BRUTE)
+		victim.take_damage(mecha_damage, BRUTE)
 	playsound(get_turf(target), 'sound/effects/meteorimpact.ogg', 100, TRUE)
 	shake_camera(target, 4, 3)
 	shake_camera(source, 2, 3)
