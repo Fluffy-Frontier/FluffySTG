@@ -4,10 +4,7 @@
 	button_icon_state = "propagator"
 	cooldown_time = 0.1 SECONDS
 	click_to_activate = TRUE
-	var/cost = 0
 	var/obj/structure/necromorph/place_structure
-	var/can_place_in_sight = FALSE
-	var/placement_range = 1
 
 /datum/action/cooldown/necro/corruption/set_click_ability(mob/on_who)
 	.=..()
@@ -43,7 +40,7 @@
 /datum/action/cooldown/necro/corruption/PreActivate(atom/target)
 	var/list/list_to_pick = list()
 	for(var/obj/structure/necromorph/struct as anything in subtypesof(/obj/structure/necromorph))
-		if(initial(struct.marker_only) && !ismarkereye(owner))
+		if(struct.marker_only && !ismarkermark(owner))
 			continue
 		list_to_pick["[initial(struct.name)] - [initial(struct.cost)]"] = struct
 
@@ -67,19 +64,19 @@
 	else
 		var/mob/eye/marker_signal/signal = owner
 		mark = signal.marker
-		current_biomass = istype(signal, /mob/eye/marker_signal/marker) ? mark.marker_biomass : mark.signal_biomass
+		current_biomass = ismarkermark(owner) ? mark.marker_biomass : mark.signal_biomass
 	if(current_biomass < place_structure.cost)
 		to_chat(owner, span_warning("Not enough biomass!"))
 		return TRUE
 	var/turf/target_turf = get_turf(target)
-	var/result_message = can_place(target_turf)
+	var/result_message = can_place(target_turf, place_structure)
 	if(result_message)
 		to_chat(owner, span_warning(result_message))
 		return TRUE
 	if(istype(owner, /mob/eye/marker_signal/marker))
-		mark.change_marker_biomass(-cost)
+		mark.change_marker_biomass(-place_structure.cost)
 	else
-		mark.change_signal_biomass(-cost)
+		mark.change_signal_biomass(-place_structure.cost)
 	var/obj/structure/necromorph/structure = new place_structure(target_turf, mark)
 	if(!structure)
 		return
@@ -89,6 +86,8 @@
 
 //Returns a string on fail. Otherwise - null
 /datum/action/cooldown/necro/corruption/proc/can_place(turf/turf_loc)
+	if(!place_structure)
+		return "No structure selected!"
 	if(!turf_loc)
 		return "No turf selected!"
 	if(turf_loc.density)
@@ -97,13 +96,13 @@
 		return "Turf isn't corrupted!"
 	if(locate(/obj/structure/necromorph) in turf_loc)
 		return "There is another necromorph structure on this turf!"
-	if(locate(/obj/structure/necromorph) in range(placement_range, turf_loc))
+	if(locate(/obj/structure/necromorph) in range(place_structure.placement_range, turf_loc))
 		return "Too close to another necromorph structure!"
 	//Remove this loop if it causes too much lag when hovering over a pile of items
 	for(var/atom/movable/movable as anything in turf_loc)
 		if(movable.density)
 			return "Turf is obstructed!"
-	if(!can_place_in_sight)
+	if(!place_structure.can_place_in_sight)
 		for(var/mob/living/living in viewers(world.view, turf_loc))
 			if((!isnecromorph(living) && living.ckey) && (living.stat < UNCONSCIOUS) && !living.is_blind())
 				return "Turf is in sight of a sentient creature!"

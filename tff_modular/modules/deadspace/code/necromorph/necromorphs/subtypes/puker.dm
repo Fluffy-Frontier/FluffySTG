@@ -4,7 +4,7 @@
 	class = /datum/necro_class/puker
 	necro_species = /datum/species/necromorph/puker
 	necro_armor = /datum/armor/dsnecro_puker
-	tutorial_text = "<b>Poison:</b> all of your ranged attacks put a <b>temporary</b> poison on your opponent. Stacks <b>can not be maintained forever</b>, for maximum benefit you must wait for the effect to end: <b>6 seconds</b> for Snapshot and <b>9 seconds</b> for Longshot."
+	tutorial_text = "<b>Poison:</b> your projectiles as well as vomit can damage mechs badly. All of your ranged attacks put a <b>temporary</b> poison on your opponent. Stacks <b>can not be maintained forever</b>, for maximum benefit you must wait for the effect to end: <b>6 seconds</b> for Snapshot and <b>9 seconds</b> for Longshot."
 
 /mob/living/carbon/human/necromorph/puker/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
@@ -34,7 +34,7 @@
 		/datum/action/cooldown/necro/shoot/puker_longshot,
 		/datum/action/cooldown/necro/shout,
 		/datum/action/cooldown/necro/scream,
-		// /datum/action/cooldown/necro/spray,
+		/datum/action/cooldown/necro/vomit,
 	)
 	implemented = TRUE
 

@@ -3,7 +3,7 @@
 	category = CATEGORY_NECRO
 
 /datum/keybinding/marker_signal/can_use(client/user)
-	return ismarkereye(user.mob)
+	return ismarkersignal(user.mob)
 
 /datum/keybinding/marker_signal/rotate_necromorph_structure
 	hotkey_keys = list("")

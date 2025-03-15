@@ -10,7 +10,7 @@
 	pixel_x = -16
 	base_pixel_x = -16
 	status_flags = CANSTUN|CANUNCONSCIOUS
-	mob_size = MOB_SIZE_LARGE
+	mob_size = MOB_SIZE_HUGE
 	necro_armor = /datum/armor/dsnecro_brute
 	var/armor_front = 30
 	var/armor_flank = 20

@@ -1,5 +1,5 @@
-#define ismarkereye(A) (istype(A, /mob/eye/marker_signal)) //youknow
-
+#define ismarkersignal(A) (istype(A, /mob/eye/marker_signal)) //youknow
+#define ismarkermark(A) (istype(A, /mob/eye/marker_signal/marker))
 
 //from base of (/atom/proc/set_density): (old_density, new_density)
 #define COMSIG_ATOM_SET_DENSITY "atom_set_density"

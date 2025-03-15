@@ -6,6 +6,7 @@
 /mob/living/carbon/human/necromorph/hunter
 	health = 275
 	maxHealth = 275
+	mob_size = MOB_SIZE_HUGE
 	class = /datum/necro_class/hunter
 	necro_species = /datum/species/necromorph/hunter
 	necro_armor = /datum/armor/dsnecro_hunter
@@ -58,7 +59,6 @@
 		// /datum/action/cooldown/necro/taunt/hunter,
 		/datum/action/cooldown/necro/regenerate/hunter,
 		/datum/action/cooldown/necro/shout,
-		/datum/action/innate/sense,
 	)
 	implemented = TRUE
 

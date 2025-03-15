@@ -185,9 +185,6 @@ GLOBAL_LIST_EMPTY(markers_signals)
 /mob/eye/marker_signal/verb/possess_necromorph(mob/living/carbon/human/necromorph/necro in world)
 	set name = "Possess Necromorph"
 	set category = "Object"
-	if(istype(src, /mob/eye/marker_signal/marker))
-		var/mob/eye/marker_signal/marker/mark = src
-		mark.downgrade()
 	if(necro.stat == DEAD)
 		to_chat(src, span_notice("This vessel was damaged beyond use!"))
 		return
@@ -199,6 +196,9 @@ GLOBAL_LIST_EMPTY(markers_signals)
 	client.click_intercept_time = world.time + 1
 	mind.transfer_to(necro, TRUE)
 	abstract_move(null)
+	if(istype(src, /mob/eye/marker_signal/marker))
+		var/mob/eye/marker_signal/marker/mark = src
+		mark.downgrade()
 
 /mob/eye/marker_signal/proc/change_psy_energy(amount)
 	psy_energy = clamp(psy_energy+amount, 0, psy_energy_maximum)

@@ -25,7 +25,6 @@
 		signal.show_message(span_userdanger("You feel like your connection with the Marker breaks!"))
 		qdel(signal)
 	marker_signals = null
-	QDEL_LIST(unwhole)
 	QDEL_NULL(soundloop)
 	return ..()
 
@@ -61,7 +60,7 @@
 		to_chat(ghost, "[FOLLOW_LINK(ghost, sender)] [message]", MESSAGE_TYPE_RADIO)
 
 	for(var/mob/eye/marker_signal/signal as anything in marker_signals)
-		to_chat(signal, "[FOLLOW_LINK(signal, sender)] [message]", MESSAGE_TYPE_RADIO)
+		to_chat(signal, "[SIG_EYEJMPLNK(signal, sender)] [message]", MESSAGE_TYPE_RADIO)
 
 	for(var/mob/living/carbon/human/necromorph/necro as anything in necromorphs)
 		to_chat(necro, message, MESSAGE_TYPE_RADIO)
@@ -79,19 +78,13 @@
 	necromorphs -= necro
 	necro.marker = null
 
-/obj/structure/marker/proc/sense_survivors()
-	for(var/mob/living/survivors as anything in GLOB.player_list) //We look for any mob with a client
-		if(survivors.stat != DEAD && !isnecromorph(survivors) && is_station_level(survivors.loc?.z))
-			unwhole |= survivors //Using |= prevents duplicates in the list, but is a little slower
-
-/obj/structure/marker/proc/activate(announce = TRUE)
+/obj/structure/marker/proc/activate(announce = FALSE)
 	if(active)
 		return
 	active = TRUE
 	change_marker_biomass(250) //Marker given a biomass injection, enough for a small team and some growing
 	change_signal_biomass(50) //Signals given biomass injection for general spreading
 	add_biomass_source(/datum/biomass_source/baseline, src) //Base income for marker
-	sense_survivors() //Checks for survivors for sense
 	for(var/mob/eye/marker_signal/eye as anything in marker_signals)
 		var/datum/action/cooldown/necro/corruption/ability = new /datum/action/cooldown/necro/corruption(eye)
 		ability.Grant(eye)
@@ -138,7 +131,7 @@
 	return GLOB.always_state
 
 /obj/structure/marker/can_interact(mob/user)
-	if(!ismarkereye(user))
+	if(!ismarkersignal(user) || !ismarkermark(user))
 		return FALSE
 	return TRUE
 

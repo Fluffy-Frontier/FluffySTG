@@ -17,7 +17,7 @@
 
 /datum/action/cooldown/necro/psy/whisper/Activate(mob/living/target)
 	var/mob/eye/marker_signal/called = owner
-	var/message = tgui_input_text(called, "Write a message to send to [target.name]", "Whisper")
+	var/message = autopunct_bare(capitalize(tgui_input_text(owner, "What do you wish to whisper to [target]?", "[src]", max_length = MAX_MESSAGE_LEN)))
 	if(!message)
 		return TRUE
 	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))

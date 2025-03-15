@@ -69,8 +69,11 @@
 	update_sight()
 
 /mob/living/carbon/human/necromorph/death(gibbed)
-	. = ..()
 	marker?.remove_necro(src)
+	if(controlling)
+		controlling.forceMove(loc)
+		mind.transfer_to(controlling, TRUE)
+	. = ..()
 
 /mob/living/carbon/human/necromorph/create_dna()
 	dna = new /datum/dna(src)

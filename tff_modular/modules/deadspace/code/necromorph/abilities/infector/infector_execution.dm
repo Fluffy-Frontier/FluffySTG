@@ -147,7 +147,7 @@
 		host.victim.losebreath++
 
 		//Do the actual damage.
-		host.victim.attack_necromorph(host.user, zone_attacked = BODY_ZONE_HEAD, dealt_damage = 40)
+		host.victim.attack_necromorph(host.user, zone_attacked = BODY_ZONE_HEAD, dealt_damage = 30)
 		host.user.play_necro_sound(SOUND_ATTACK, VOLUME_MID, TRUE, 3)
 
 		//The victim and their camera shake wildly as they struggle

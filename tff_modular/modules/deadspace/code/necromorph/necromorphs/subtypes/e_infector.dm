@@ -16,7 +16,7 @@
 	desc = "A high value, fragile support, the Infector works as a builder and healer"
 	necromorph_type_path = /mob/living/carbon/human/necromorph/infector/enhanced
 	biomass_cost = 450
-	biomass_spent_required = 750
+	biomass_spent_required = 1000
 	melee_damage_lower = 10
 	melee_damage_upper = 16
 	necro_armor = /datum/armor/dsnecro_e_infector
@@ -24,7 +24,6 @@
 		/datum/action/cooldown/mob_cooldown/charge/necro/execution/infector,
 		/datum/action/cooldown/necro/infector_proboscis/enhanced,
 		/datum/action/cooldown/necro/shout,
-		/datum/action/innate/sense,
 	)
 	implemented = TRUE
 

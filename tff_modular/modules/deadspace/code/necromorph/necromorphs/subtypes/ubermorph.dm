@@ -1,6 +1,7 @@
 /mob/living/carbon/human/necromorph/ubermorph
 	health = INFINITY
 	maxHealth = INFINITY
+	mob_size = MOB_SIZE_HUGE
 	class = /datum/necro_class/ubermorph
 	necro_species = /datum/species/necromorph/ubermorph
 	necro_armor = /datum/armor/dsnecro_ubermorph
@@ -29,7 +30,6 @@
 	necro_armor = /datum/armor/dsnecro_ubermorph
 	actions = list(
 		/datum/action/cooldown/mob_cooldown/charge/necro/ubermorph,
-		/datum/action/innate/sense,
 		/datum/action/cooldown/necro/regenerate/ubermorph,
 		// /datum/action/cooldown/necro/frenzy_shout/ubermorph,
 	)

@@ -41,13 +41,15 @@
 	compatibility += enh_bonus
 	var/list/options = get_necromorph_conversion_possibilities(compatibility)
 	var/newtype = pick_weight(options)
-	var/obj/structure/marker/marker = pick(GLOB.necromorph_markers)
-	var/mob/living/carbon/human/necromorph/necro = new newtype(loc, marker)
-	marker.add_necro(necro)
-	if(choice == "Yes")
-		necro.controlling = src
-		mind.transfer_to(necro, TRUE)
-		abstract_move(null)
+	var/obj/structure/marker/mark = pick(GLOB.necromorph_markers)
+	var/mob/eye/marker_signal/signal = new /mob/eye/marker_signal(loc, mark)
+	if(!isnull(newtype))
+		var/mob/living/carbon/human/necromorph/necro = new newtype(loc, mark)
+		mark.add_necro(necro)
+		if(choice == "Yes")
+			signal.ckey = ckey
+			necro.controlling = signal
+			signal.possess_necromorph(necro)
 	gib()
 
 
@@ -75,14 +77,15 @@
 	//We do gib visual fx without actually destroying the mob
 	//spawn_gibs()
 	var/newtype = pick_weight(options)
-	var/obj/structure/marker/marker = pick(GLOB.necromorph_markers)
+	var/obj/structure/marker/mark = pick(GLOB.necromorph_markers)
+	var/mob/eye/marker_signal/signal = new /mob/eye/marker_signal(loc, mark)
 	if(!isnull(newtype))
-		var/mob/living/carbon/human/necromorph/necro = new newtype(loc, marker)
-		marker.add_necro(necro)
+		var/mob/living/carbon/human/necromorph/necro = new newtype(loc, mark)
+		mark.add_necro(necro)
 		if(choice == "Yes")
-			necro.controlling = src
-			mind.transfer_to(necro, TRUE)
-			abstract_move(null)
+			signal.ckey = ckey
+			necro.controlling = signal
+			signal.possess_necromorph(necro)
 	gib()
 
 

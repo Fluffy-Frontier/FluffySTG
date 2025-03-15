@@ -2,7 +2,7 @@
 /datum/action/cooldown/necro/curl
 	name = "Toggle Curl"
 	desc = "Use curl to take less damage but be completely immobilized."
-	cooldown_time = 0
+	cooldown_time = 0 SECONDS
 
 /datum/action/cooldown/necro/curl/Activate(atom/target)
 	var/mob/living/carbon/human/necromorph/brute/brute = target

@@ -9,7 +9,7 @@
 	obj_flags = CAN_BE_HIT
 	/// If we are growing or decaying
 	var/state = null
-	var/can_place_in_sight = TRUE
+	var/can_place_in_sight = FALSE
 	var/cost = 2
 	var/placement_range = 3
 	var/marker_only = FALSE

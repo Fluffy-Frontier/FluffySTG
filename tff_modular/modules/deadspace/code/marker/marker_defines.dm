@@ -26,8 +26,6 @@ GLOBAL_LIST_EMPTY(necromorph_markers)
 	var/mob/eye/marker_signal/marker/camera_mob
 	var/list/marker_signals = list()
 	var/list/necromorphs = list()
-	///checks mobs with clients when marker activates and adds them to a list, used for sense
-	var/list/unwhole = list()
 	/// Biomass stored
 	var/marker_biomass = 0
 	/// Biomass signals can use
