@@ -507,7 +507,11 @@
 	burn *= wound_damage_multiplier
 
 	if(bodytype & (BODYTYPE_ALIEN|BODYTYPE_LARVA_PLACEHOLDER)) //aliens take double burn //nothing can burn with so much snowflake code around
-		burn *= 2
+		// FLUFFY FRONTIER EDIT START - TGMC_XENOS
+		// ORIGINAL LINE: burn *= 2
+		if(!istype(owner, /mob/living/carbon/alien/adult/tgmc))
+			burn *= 2
+		// FLUFFY FRONTIER EDIT END
 
 	/*
 	// START WOUND HANDLING
