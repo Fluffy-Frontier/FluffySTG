@@ -72,7 +72,7 @@
 
 	// FLUFFT FRONTIER ADDITION START - toggle_observing
 	if(!GLOB.observing_allowed)
-		if(!check_rights(R_ADMIN))
+		if(!check_rights(R_ADMIN, FALSE))
 			alert(usr, "Observing is currently disabled!", "Observe")
 			return FALSE
 		if(alert(usr, "Observing is currently disabled, do you want\nto use your permissions to circumvent it?", "Observe", "Yes", "No") != "Yes")
