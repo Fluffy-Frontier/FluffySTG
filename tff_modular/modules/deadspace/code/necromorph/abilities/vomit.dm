@@ -21,14 +21,12 @@
 	puker.play_necro_sound(puker, SOUND_ATTACK, VOLUME_MID, 1, 3)
 	puker.shake_animation(30)
 
-	var/starting_dir = puker.dir
-
-
-	puker.visible_message(span_warning("[src] dry heaves!"))
+	puker.visible_message(span_warning("[puker] dry heaves!"))
 	puker.Stun(1 SECONDS)
 
-	playsound(src, 'sound/effects/splat.ogg', 50, TRUE)
+	playsound(puker, 'sound/effects/splat.ogg', 50, TRUE)
 
+	var/starting_dir = puker.dir
 	var/turf/location = get_turf(puker)
 	for(var/i = 0 to range)
 		if(location)
