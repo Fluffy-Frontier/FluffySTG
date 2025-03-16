@@ -4,7 +4,7 @@
 	cooldown_time = 10 SECONDS
 	click_to_activate = TRUE
 	charge_delay = 2 SECONDS
-	charge_speed = 1
+	charge_speed = 0.1 SECONDS
 	charge_distance = 14
 	charge_damage = 0
 	var/atom/target_atom

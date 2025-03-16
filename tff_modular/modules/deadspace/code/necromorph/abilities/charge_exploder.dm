@@ -1,7 +1,7 @@
 /datum/action/cooldown/mob_cooldown/charge/necro/exploder
 	cooldown_time = 10 SECONDS
 	charge_delay = 1.8 SECONDS
-	charge_speed = 1.5
+	charge_speed = 0.15 SECONDS
 
 //Totally not ripped from exploder explode
 /datum/action/cooldown/mob_cooldown/charge/necro/exploder/Activate(atom/target)

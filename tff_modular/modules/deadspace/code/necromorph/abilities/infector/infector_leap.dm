@@ -10,9 +10,9 @@
 	var/wings = necro.num_hands
 
 	if(wings == 2)
-		charge_speed = 1
+		charge_speed = 0.2 SECONDS
 	else if (wings == 1)
-		charge_speed = 2
+		charge_speed = 0.4 SECONDS
 	else if (wings < 1)
 		to_chat(necro, span_danger("You need at least one wing to leap!"))
 		return
