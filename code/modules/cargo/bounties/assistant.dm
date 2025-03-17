@@ -1,12 +1,9 @@
-/* NOVA EDIT REMOVAL START - Removes bounties that are luck or destruction based
 /datum/bounty/item/assistant/strange_object
 	name = "Strange Object"
 	description = "Nanotrasen has taken an interest in strange objects. Find one in maintenance, and ship it off to CentCom right away."
 	reward = CARGO_CRATE_VALUE * 2.4
 	wanted_types = list(/obj/item/relic = TRUE)
-*/ // NOVA EDIT REMOVAL END 
 
-/* NOVA EDIT REMOVAL START - Removes bounties, these are just boring.
 /datum/bounty/item/assistant/scooter
 	name = "Scooter"
 	description = "Nanotrasen has determined walking to be wasteful. Ship a scooter to CentCom to speed operations up."
@@ -22,7 +19,6 @@
 		/obj/vehicle/ridden/scooter/skateboard = TRUE,
 		/obj/item/melee/skateboard = TRUE,
 	)
-*/ // NOVA EDIT REMOVAL END 
 
 /datum/bounty/item/assistant/stunprod
 	name = "Stunprod"
@@ -30,14 +26,12 @@
 	reward = CARGO_CRATE_VALUE * 2.6
 	wanted_types = list(/obj/item/melee/baton/security/cattleprod = TRUE)
 
-/* NOVA EDIT REMOVAL START - Removes bounties that are luck or destruction based
 /datum/bounty/item/assistant/soap
 	name = "Soap"
 	description = "Soap has gone missing from CentCom's bathrooms and nobody knows who took it. Replace it and be the hero CentCom needs."
 	reward = CARGO_CRATE_VALUE * 4
 	required_count = 3
 	wanted_types = list(/obj/item/soap = TRUE)
-*/ // NOVA EDIT REMOVAL END 
 
 /datum/bounty/item/assistant/spear
 	name = "Spears"
@@ -59,7 +53,6 @@
 	reward = CARGO_CRATE_VALUE * 4
 	wanted_types = list(/obj/structure/statue = TRUE)
 
-/* NOVA EDIT REMOVAL START - Removes bounties that are luck or destruction based
 /datum/bounty/item/assistant/clown_box
 	name = "Clown Box"
 	description = "The universe needs laughter. Stamp cardboard with a clown stamp and ship it out."
@@ -72,7 +65,6 @@
 	reward = CARGO_CRATE_VALUE * 2.4
 	required_count = 3
 	wanted_types = list(/obj/item/food/cheesiehonkers = TRUE)
-*/ // NOVA EDIT REMOVAL END 
 
 /datum/bounty/item/assistant/baseball_bat
 	name = "Baseball Bat"
@@ -107,14 +99,12 @@
 	reward = CARGO_CRATE_VALUE * 3
 	wanted_types = list(/obj/item/stack/sheet/animalhide/monkey = TRUE)
 
-/* NOVA EDIT REMOVAL START - Removes bounties that are luck or destruction based
 /datum/bounty/item/assistant/dead_mice
 	name = "Dead Mice"
 	description = "Station 14 ran out of freeze-dried mice. Ship some fresh ones so their janitor doesn't go on strike."
 	reward = CARGO_CRATE_VALUE * 10
 	required_count = 5
 	wanted_types = list(/obj/item/food/deadmouse = TRUE)
-*/ // NOVA EDIT REMOVAL END 
 
 /datum/bounty/item/assistant/comfy_chair
 	name = "Comfy Chairs"
@@ -139,14 +129,12 @@
 	wanted_types = list(/obj/item/food/grown/poppy = TRUE)
 	include_subtypes = FALSE
 
-/* NOVA EDIT REMOVAL START - Removes bounties that are luck or destruction based
 /datum/bounty/item/assistant/potted_plants
 	name = "Potted Plants"
 	description = "Central Command is looking to commission a new BirdBoat-class station. You've been ordered to supply the potted plants."
 	reward = CARGO_CRATE_VALUE * 4
 	required_count = 8
 	wanted_types = list(/obj/item/kirbyplants = TRUE)
-*/ // NOVA EDIT REMOVAL END 
 
 /datum/bounty/item/assistant/monkey_cubes
 	name = "Monkey Cubes"
@@ -162,7 +150,6 @@
 	required_count = 3
 	wanted_types = list(/obj/item/grenade/iedcasing = TRUE)
 
-/* NOVA EDIT REMOVAL START - Removes bounties that are luck or destruction based
 /datum/bounty/item/assistant/corgimeat
 	name = "Raw Corgi Meat"
 	description = "The Syndicate recently stole all of CentCom's corgi meat. Ship out a replacement immediately."
@@ -189,7 +176,6 @@
 	reward = CARGO_CRATE_VALUE * 4
 	required_count = 8
 	wanted_types = list(/obj/item/toy/crayon = TRUE)
-*/ // NOVA EDIT REMOVAL END 
 
 /datum/bounty/item/assistant/pens
 	name = "Pens"
