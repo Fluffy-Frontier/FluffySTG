@@ -748,3 +748,38 @@
       , \u0435\u0441\u043B\u0438 \u0442\u044B \u0443\u0436\u0435 \u043F\u043E\u0434\
       \ \u044D\u0444\u0444\u0435\u043A\u0442\u043E\u043C \u044D\u0442\u043E\u0433\u043E\
       \ \u0437\u0435\u043B\u044C\u044F."
+2025-03-17:
+  Hardly:
+  - code_imp: Smelling salts now checks for target's gender
+  - code_imp: '*esigh now has the same overlay as *sigh'
+  - rscdel: Half-Life screaming sounds
+  - sound: Changed *sneeze and *cough to TG's
+  - code_imp: Moth and Insect screaming sounds are merged
+  Hatterhat:
+  - rscadd: .38 Haywire and .357 Haywire+ electromagnetic pulse bullets are now in
+      circulation. These create small (or not so small) electromagnetic pulses on
+      impact, in return for dealing much less direct damage. .38 Haywire can be fabricated
+      with an ammo workbench with appropriate designs, or from techfabs with Exotic
+      Ammunition. .357 Haywire+ can be bought from the uplink or fabricated with the
+      ammo workbench with appropriate designs.
+  MrSunabouzu:
+  - rscadd: Added Ice cream cart and Food Cart to Snowglobe. And a round start viro
+      chem bag.
+  RatFromTheJungle:
+  - rscadd: Added the rest of sec's vendor items to the loadout, saving them cha-ching
+      on dress-up.
+  RealWinterFrost:
+  - rscadd: Adds functional syndicate medals for DS-2
+  - rscadd: Adds a large amount of accessories to the loadouts menu
+  - rscadd: Adds new GAGS ribbons to loadouts menu
+  - rscadd: Adds new GAGS neckpins to loadouts
+  - code_imp: Added Syndicate neckpin to Syndidrobe
+  - image: Adds a large amount of medals with GAGs support for Nova Sector
+  - map: Adds a lockbox with "SYNDICATE_LEADER_ACCESS" to DS-2 Admiral's locker, containing
+      medals specifically tailored for DS-2/Syndicate
+  - map: moves DS-2 cargo boards to a table in the vault
+  - map: adds an autodrobe to ds-2 dormitories
+  - bugfix: Fixes the blueshift AI transit tube properly be able to step back in.
+  SuperDrish:
+  - rscadd: AI Uplink Brain is now available at your local RnD
+  - bugfix: AI Uplink Brain now works properly with self-actualizator
