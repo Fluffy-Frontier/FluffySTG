@@ -260,11 +260,11 @@
 	/// What type of damage should the tail sweep do
 	var/impact_damage_type = BRUTE
 	// Урон по мехам
-	var/mecha_damage = 20
+	var/vehicle_damage = 20
 	// Время стана оператора меха
 	var/mecha_occupant_stun_duration
-	// Можем ли откнуить мех ударом хвоста
-	var/mecha_throwing = TRUE
+	// Можем ли откинуть мех ударом хвоста
+	var/vehicle_throwing = TRUE
 
 /datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/IsAvailable(feedback = FALSE)
 	. = ..()
@@ -312,10 +312,10 @@
 			shake_camera(occupant, 4, 3)
 			playsound(occupant, impact_sound, 100, TRUE, 8, 0.9)
 
-		victim_mecha.take_damage(mecha_damage, impact_damage_type)
+		victim_mecha.take_damage(vehicle_damage, impact_damage_type)
 		victim_mecha.visible_message(span_danger("[caster]'s tail slams into [victim], throwing them back!"), span_userdanger("[caster]'s tail slams into you, throwing you back!"))
 
-		if(mecha_throwing)
+		if(vehicle_throwing)
 			if((victim_mecha.max_integrity < 400) && (dist_from_caster <= 1))
 				victim_mecha.safe_throw_at(throwtarget, 1, 1, caster, spin = FALSE, force = repulse_force)
 
@@ -364,9 +364,9 @@
 	impact_damage = 40
 	impact_sharpness = SHARP_EDGED
 
-	mecha_damage = 10
+	vehicle_damage = 10
 	mecha_occupant_stun_duration = null
-	mecha_throwing = FALSE
+	vehicle_throwing = FALSE
 
 /obj/effect/temp_visual/dir_setting/tailsweep/ravager
 	icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
@@ -379,7 +379,7 @@
 	desc = "Friendly xenomorphs in a short range around yourself will receive passive healing."
 	button_icon_state = "healaura"
 	plasma_cost = 100
-	cooldown_time = 90 SECONDS
+	cooldown_time = 60 SECONDS
 	/// Is the healing aura currently active or not
 	var/aura_active = FALSE
 	/// How long the healing aura should last
@@ -427,7 +427,6 @@
 	desc = "Friendly xenomorphs in a longer range around yourself will receive passive healing."
 	button_icon_state = "healaura_juiced"
 	plasma_cost = 100
-	cooldown_time = 90 SECONDS
 	aura_range = 7
 	aura_healing_amount = 10
 	aura_healing_color = COLOR_RED_LIGHT
@@ -520,86 +519,135 @@
 	return BULLET_ACT_FORCE_PIERCE
 
 
-// Одиночный чардж дефендера и вариора
-/datum/action/cooldown/mob_cooldown/charge/basic_charge/defender
+// Чардж крашера
+/datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge
 	name = "Charge Attack"
 	desc = "Allows you to charge at a position, trampling anything in your path."
 	check_flags = AB_CHECK_CONSCIOUS | AB_CHECK_INCAPACITATED | AB_CHECK_LYING
 	cooldown_time = 15 SECONDS
 	charge_delay = 0.3 SECONDS
-	charge_distance = 5
+	charge_distance = 7
 	destroy_objects = FALSE
-	charge_damage = 50
 	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
-	button_icon_state = "defender_charge"
+	button_icon_state = "crusher_charge"
 	unset_after_click = TRUE
 
-	recoil_duration = 0.6 SECONDS
-	knockdown_duration = 0.6 SECONDS
+	var/living_damage = 40
+	var/living_knockdown_time = 5 SECONDS
+	var/living_daze_amount = 3 SECONDS
+	var/sharpness = FALSE
 
-	//Количество урона, которое наносится владельцу при столкновении с мехом
-	var/recoil_damage = 40
-	// Время стана операторов меха
-	var/mecha_occupant_stun_duration = 1.2 SECONDS
-	// Острый ли удар при столкновении
-	var/impact_sharpness = FALSE
-	// Количество урона по живности при ударе
-	var/living_damage = 20
-	// Количество урона по меху при ударе
-	var/mecha_damage = 40
+	var/obj_damage = 50
+	var/mecha_damage = 50
+	var/mecha_occupants_stun_time = 5 SECONDS
+	var/throw_mecha = TRUE
 
-/datum/action/cooldown/mob_cooldown/charge/basic_charge/defender/Activate(atom/target_atom)
-	. = ..()
-	return TRUE
+	var/crush_walls = TRUE
 
-/datum/action/cooldown/mob_cooldown/charge/basic_charge/defender/do_charge_indicator(atom/charger, atom/charge_target)
+/datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/do_charge_indicator(atom/charger, atom/charge_target)
 	. = ..()
 	playsound(charger, 'tff_modular/modules/tgmc_xenos/sound/alien_roar1.ogg', 100, TRUE, 8, 0.9)
 
-// Не убивайте за этот код. У меня полностью ломается голова, когда я прикасаюсь к этому коду. Он работает и меня это устраивает
-/datum/action/cooldown/mob_cooldown/charge/basic_charge/defender/hit_target(atom/movable/source, atom/target, damage_dealt)
-	if(ismecha(target))
-		var/obj/vehicle/sealed/mecha/target_mecha = target
-		var/list/mob/occupants = target_mecha.return_occupants()
+/datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/hit_target(atom/movable/source, atom/target, damage_dealt)
+	var/mob/living/carbon/alien/adult/tgmc/charger = owner
 
-		for(var/mob/living/occupant in occupants)
-			to_chat(occupant, span_userdanger("[source] smashes into you!"), MESSAGE_TYPE_LOCALCHAT)
-			if(!isliving(occupant))
-				continue
-			occupant.Stun(mecha_occupant_stun_duration)
-
-		source.visible_message(span_danger("[source] smashes into [target]!"), span_userdanger("You smashes into [target]"), ignored_mobs = occupants)
-		target_mecha.take_damage(mecha_damage, BRUTE)
-		give_drawback(source, take_damage = TRUE)
-		return TRUE
-
+	// Столокновение с существами
 	if(isliving(target))
-		var/mob/living/living_target = target
-		if(ishuman(living_target))
-			var/mob/living/carbon/human/human_target = living_target
-			if(human_target.check_block(source, 0, "\the [source]", attack_type = LEAP_ATTACK))
-				source.visible_message(span_danger("[source] smashes into [target]!"), span_userdanger("You smashes into [target]"))
-				give_drawback(source, FALSE)
+		var/mob/living/target_living = target
+		if(target_living.buckled)
+			target_living.buckled.unbuckle_mob(target_living)
 
-			living_target.visible_message(span_danger("[source] tramples [living_target] into the ground!"), span_userdanger("[source] tramples you into the ground!"))
-			living_target.apply_damage(living_damage, BRUTE, sharpness = impact_sharpness)
-			living_target.Knockdown(knockdown_duration)
+		log_combat(charger, target_living, "xeno charged")
+		var/damage = living_damage
+		target_living.apply_damage(damage, BRUTE, BODY_ZONE_CHEST, sharpness = sharpness)
+
+		if(target_living.density && (target_living.mob_size >= charger.mob_size))
+			charger.visible_message(span_danger("[charger] rams into [target] and skids to a halt!"), span_alertalien("We ram into [target] and skid to a halt!"))
+			do_stop()
 			return
 
-	source.visible_message(span_danger("[source] smashes into [target]!"), span_userdanger("You smashes into [target]"))
-	give_drawback(source)
+		var/fling_dir = pick((charger.dir & (NORTH|SOUTH)) ? list(WEST, EAST, charger.dir|WEST, charger.dir|EAST) : list(NORTH, SOUTH, charger.dir|NORTH, charger.dir|SOUTH))
+		var/fling_dist = rand(1, 3)
+		var/turf/destination = target_living.loc
+		var/turf/temp
 
-/datum/action/cooldown/mob_cooldown/charge/basic_charge/defender/proc/give_drawback(mob/living/source, take_damage = FALSE, stop_moving = TRUE)
-	if(!istype(source))
-		return FALSE
+		for(var/i in 1 to fling_dist)
+			temp = get_step(destination, fling_dir)
+			if(!temp)
+				break
+			destination = temp
 
-	if(stop_moving)
-		GLOB.move_manager.stop_looping(source)
+		if(destination != target_living.loc)
+			target_living.throw_at(destination, fling_dist, 1, charger, TRUE)
 
-	if(take_damage)
-		source.apply_damage(recoil_damage, BRUTE)
+		target_living.Knockdown(living_knockdown_time, daze_amount = living_daze_amount)
+		charger.visible_message(span_danger("[charger] rams [target]!"), span_alertalien("We ram [target]!"))
+		return
 
-	source.Stun(recoil_duration, ignore_canstun = TRUE)
+	// Столокновение с объектами
+	if(isobj(target))
+		var/obj/target_obj = target
+		if(istype(target_obj, /obj/structure/alien))
+			return
+
+		var/damage = obj_damage
+		if(ismecha(target))
+			damage = mecha_damage
+		else if(istype(target, /obj/machinery/door/airlock))
+			var/obj/machinery/door/airlock/target_airlock = target
+			damage = ceil(target_airlock.normal_integrity / 3)
+		else if(istype(target, /obj/structure/window))
+			damage = 70
+
+		target_obj.take_damage(damage, BRUTE)
+		if(QDELETED(target_obj))
+			charger.visible_message(span_danger("[charger] crushes [target]!"), span_alertalien("We crush [target]!"))
+			return
+
+		if(ismecha(target))
+			var/obj/vehicle/sealed/mecha/target_mecha = target
+
+			for(var/mob/living/occupant in target_mecha.occupants)
+				occupant.Stun(mecha_occupants_stun_time)
+
+			charger.visible_message(span_danger("[charger] rams into [target] and skids to a halt!"), span_alertalien("We ram into [target] and skid to a halt!"))
+			do_stop()
+
+			var/turf/throwtarget = get_edge_target_turf(source, get_dir(source, get_step_away(target, source)))
+			var/dist_from_source = get_dist(target, source)
+			if(throw_mecha && (target.max_integrity < 400) && (dist_from_source <= 1))
+				target_mecha.safe_throw_at(throwtarget, 1, 1, source, spin = FALSE, force = MOVE_FORCE_EXTREMELY_STRONG)
+
+			return
+
+		if(target_obj.anchored)
+			charger.visible_message(span_danger("[charger] rams into [target] and skids to a halt!"), span_alertalien("We ram into [target] and skid to a halt!"))
+			do_stop()
+
+		charger.visible_message("[span_warning("[charger] knocks [target] aside.")]!", span_alertalien("We knock [target] aside."))
+		return
+
+	// Столокновение с турфами
+	if(isturf(target))
+		if(crush_walls)
+			if(!isclosedturf(target) || isindestructiblewall(target) || istype(target, /turf/closed/wall/r_wall))
+				return
+
+			target.AddComponent(/datum/component/torn_wall)
+			if(!QDELETED(target))
+				target.AddComponent(/datum/component/torn_wall)
+
+			if(QDELETED(target))
+				charger.visible_message(span_danger("[charger] plows straight through [target]!"), span_alertalien("We plow straight through [target]!"))
+				return
+
+			charger.visible_message(span_danger("[charger] rams into [target] and skids to a halt!"), span_alertalien("We ram into [target] and skid to a halt!"))
+			do_stop()
+			return
+
+// Останавливает движение чарджера
+/datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/proc/do_stop()
+	GLOB.move_manager.stop_looping(owner)
 
 
 // Тройной чардж равагера
@@ -612,13 +660,13 @@
 	charge_distance = 7
 	charge_past = 3
 	destroy_objects = FALSE
-	charge_damage = 25
+	charge_damage = 40
 	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
 	button_icon_state = "ravager_charge"
 	unset_after_click = TRUE
 
 	// Количество урона по меху при ударе
-	var/mecha_damage = 10
+	var/vehicle_damage = 30
 	// Острый ли удар при столкновении
 	var/impact_sharpness = TRUE
 
@@ -636,68 +684,35 @@
 	if(isliving(target))
 		var/mob/living/victim = target
 		victim.visible_message(span_danger("[source] slams into [target]!"), span_userdanger("[source] tramples you into the ground!"))
-		victim.apply_damage(damage_dealt, BRUTE, wound_bonus = CANT_WOUND, sharpness = impact_sharpness)
+		victim.apply_damage(charge_damage, BRUTE, sharpness = impact_sharpness)
 	else if(ismecha(target))
 		GLOB.move_manager.stop_looping(source)
 		var/obj/vehicle/sealed/mecha/victim = target
 		source.visible_message(span_danger("[source] smashes into [target]!"), span_danger("You smashes into [target]!"))
-		victim.take_damage(mecha_damage, BRUTE)
+		victim.take_damage(vehicle_damage, BRUTE)
 	playsound(get_turf(target), 'sound/effects/meteorimpact.ogg', 100, TRUE)
 	shake_camera(target, 4, 3)
 	shake_camera(source, 2, 3)
 
 
-/// Способность вариора делать *что-то*
-/datum/action/cooldown/alien/tgmc/warrior_agility
-	name = "Agility Mode"
-	desc = "Drop onto all fours, increasing your speed at the cost of damage and being unable to use most abilities."
-	button_icon_state = "the_speed_is_alot"
-	cooldown_time = 1 SECONDS
-	can_be_used_always = TRUE
-	/// Is the warrior currently running around on all fours?
-	var/being_agile = FALSE
+// Способность дефендера становиться настоящей крепостью
+// /datum/action/cooldown/alien/fortify
+// 	name = "Fortify"
+// 	desc = "Plant yourself for a large defensive boost."
+// 	cooldown_time = 1 SECONDS
+// 	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
+// 	button_icon_state = "fortify"
 
-/datum/action/cooldown/alien/tgmc/warrior_agility/Activate()
-	. = ..()
-	if(!being_agile)
-		begin_agility()
-		return TRUE
-	if(being_agile)
-		end_agility()
-		return TRUE
+// 	var/is_fortify = FALSE
 
-/// Handles the visual indication and code activation of the warrior agility ability (say that five times fast)
-/datum/action/cooldown/alien/tgmc/warrior_agility/proc/begin_agility()
-	var/mob/living/carbon/alien/adult/tgmc/agility_target = owner
-	agility_target.balloon_alert(agility_target, "agility active")
-	to_chat(agility_target, span_danger("We drop onto all fours, allowing us to move at much greater speed at expense of being able to use most abilities."))
-	playsound(agility_target, 'tff_modular/modules/tgmc_xenos/sound/alien_hiss.ogg', 100, TRUE, 8, 0.9)
-	agility_target.icon_state = "alien[agility_target.caste]_mobility"
+// /datum/action/cooldown/alien/fortify/Activate(atom/target)
+// 	. = ..()
+// 	if(is_fortify)
+// 		set_fortify(FALSE)
 
-	being_agile = TRUE
-	agility_target.add_movespeed_modifier(/datum/movespeed_modifier/warrior_agility)
-	agility_target.unable_to_use_abilities = TRUE
-
-	agility_target.melee_damage_lower = 15
-	agility_target.melee_damage_upper = 20
-
-/// Handles the visual indicators and code side of deactivating the agility ability
-/datum/action/cooldown/alien/tgmc/warrior_agility/proc/end_agility()
-	var/mob/living/carbon/alien/adult/tgmc/agility_target = owner
-	agility_target.balloon_alert(agility_target, "agility ended")
-	playsound(agility_target, 'tff_modular/modules/tgmc_xenos/sound/alien_roar2.ogg', 100, TRUE, 8, 0.9) //Warrior runs up on all fours, stands upright, screams at you
-	agility_target.icon_state = "alien[agility_target.caste]"
-
-	being_agile = FALSE
-	agility_target.remove_movespeed_modifier(/datum/movespeed_modifier/warrior_agility)
-	agility_target.unable_to_use_abilities = FALSE
-
-	agility_target.melee_damage_lower = initial(agility_target.melee_damage_lower)
-	agility_target.melee_damage_upper = initial(agility_target.melee_damage_upper)
-
-/datum/movespeed_modifier/warrior_agility
-	multiplicative_slowdown = -2
-
+// /datum/action/cooldown/alien/fortify/proc/set_fortify(on)
+// 	if(on)
+// 		ADD_TRAIT(xeno_owner, TRAIT_IMMOBILE, FORTIFY_TRAIT)
 
 #undef RAVAGER_OUTLINE_EFFECT
 #undef EVASION_VENTCRAWL_INABILTY_CD_PERCENTAGE

@@ -50,6 +50,10 @@
 	var/hud_offset_x = 32
 	var/hud_offset_y = 0
 
+	// Урон по тяжелым транспортным штукам (типа мехов)
+	var/melee_vehicle_damage
+	var/resist_heavy_hits = FALSE
+
 /mob/living/carbon/alien/adult/tgmc/Initialize(mapload)
 	. = ..()
 	real_name = "alien [caste]"
@@ -59,6 +63,11 @@
 		GRANT_ACTION(/datum/action/cooldown/alien/tgmc/generic_evolve)
 
 	ADD_TRAIT(src, TRAIT_XENO_HEAL_AURA, TRAIT_XENO_INNATE)
+	RegisterSignal(src, COMSIG_LIVING_UPDATED_RESTING, PROC_REF(on_rest))
+
+/mob/living/carbon/alien/adult/tgmc/Destroy()
+	. = ..()
+	UnregisterSignal(src, COMSIG_LIVING_UPDATED_RESTING)
 
 /mob/living/carbon/alien/adult/tgmc/create_internal_organs()
 	if(additional_organ_types_by_slot)
@@ -77,11 +86,6 @@
 	if(!has_evolved_recently)
 		return
 	has_evolved_recently = FALSE
-
-/mob/living/carbon/alien/adult/tgmc/Move(atom/newloc, direct = 0)
-	if(body_position == LYING_DOWN) // Лежим - значит отдыхаем. Никакого передвижения во время отдыха
-		return FALSE
-	return ..()
 
 /mob/living/carbon/alien/adult/tgmc/UnarmedAttack(atom/attack_target, proximity_flag, list/modifiers)
 	if(body_position == LYING_DOWN) // Лежим - значит отдыхаем. Никакой войны во время отдыха
@@ -185,3 +189,14 @@
 
 /mob/living/carbon/alien/adult/tgmc/set_hud_image_state(hud_type, hud_state, x_offset = 0, y_offset = 0)
 	return ..(hud_type, hud_state, hud_offset_x, hud_offset_y)
+
+/mob/living/carbon/alien/adult/tgmc/proc/on_rest()
+	SIGNAL_HANDLER
+
+	if(resting)
+		add_movespeed_modifier(/datum/movespeed_modifier/alien_rest)
+	else
+		remove_movespeed_modifier(/datum/movespeed_modifier/alien_rest)
+
+/datum/movespeed_modifier/alien_rest
+	multiplicative_slowdown = 5

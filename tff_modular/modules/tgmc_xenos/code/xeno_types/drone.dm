@@ -19,6 +19,8 @@
 
 	hud_offset_y = -16
 
+	melee_vehicle_damage = 20
+
 /mob/living/carbon/alien/adult/tgmc/drone/Initialize(mapload)
 	. = ..()
 	GRANT_ACTION(/datum/action/cooldown/alien/tgmc/heal_aura)

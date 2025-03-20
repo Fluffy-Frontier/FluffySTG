@@ -19,6 +19,8 @@
 
 	hud_offset_y = -16
 
+	melee_vehicle_damage = 15
+
 /mob/living/carbon/alien/adult/tgmc/sentinel/Initialize(mapload)
 	. = ..()
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_slow)

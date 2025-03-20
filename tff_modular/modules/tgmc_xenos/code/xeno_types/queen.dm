@@ -19,6 +19,9 @@
 		ORGAN_SLOT_XENO_EGGSAC = /obj/item/organ/alien/eggsac/tgmc,
 	)
 
+	melee_vehicle_damage = 35
+	resist_heavy_hits = TRUE
+
 /mob/living/carbon/alien/adult/tgmc/queen/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/seethrough_mob)	// Люркеров у нас нету (слава богу), но выдать такую штуку кому-то хочется... Будет у королевы, как на обычном ТГ

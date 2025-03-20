@@ -15,6 +15,9 @@
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel
 	)
 
+	melee_vehicle_damage = 35
+	resist_heavy_hits = TRUE
+
 /mob/living/carbon/alien/adult/tgmc/ravager/Initialize(mapload)
 	. = ..()
 	var/static/list/innate_actions = list(

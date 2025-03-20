@@ -509,7 +509,7 @@
 	if(bodytype & (BODYTYPE_ALIEN|BODYTYPE_LARVA_PLACEHOLDER)) //aliens take double burn //nothing can burn with so much snowflake code around
 		// FLUFFY FRONTIER EDIT START - TGMC_XENOS
 		// ORIGINAL LINE: burn *= 2
-		if(!istype(owner, /mob/living/carbon/alien/adult/tgmc))
+		if(!istgmcalien(owner)) // Записка для мейнтейнра - если будет мердж конфликт в этом месте, то просто убирай полностью весь этот FLUFFY FRONTIER EDIT. Ничего не сломается
 			burn *= 2
 		// FLUFFY FRONTIER EDIT END
 

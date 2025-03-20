@@ -20,6 +20,8 @@
 
 	hud_offset_y = -32
 
+	melee_vehicle_damage = 20
+
 /mob/living/carbon/alien/adult/tgmc/runner/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/tackler, stamina_cost = 0, base_knockdown = 2, range = 10, speed = 2, skill_mod = 7, min_distance = 0)

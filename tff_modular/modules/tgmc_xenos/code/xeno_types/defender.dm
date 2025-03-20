@@ -16,11 +16,13 @@
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/small,
 	)
 
+	melee_vehicle_damage = 30
+	armor_type = /datum/armor/mod_theme_administrative
+
 /mob/living/carbon/alien/adult/tgmc/defender/Initialize(mapload)
 	. = ..()
 	var/static/list/innate_actions = list(
 		/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep,
-		/datum/action/cooldown/mob_cooldown/charge/basic_charge/defender,
 	)
 	grant_actions_by_list(innate_actions)
 
