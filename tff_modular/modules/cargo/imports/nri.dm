@@ -19,3 +19,10 @@
 /datum/armament_entry/company_import/nri_surplus/firearm_ammo/amr_magazine
 	contraband = TRUE
 
+/datum/armament_entry/company_import/nri_surplus/misc/voskhod_refit_kit
+	contraband = TRUE
+	restricted = TRUE
+
+/datum/armament_entry/company_import/nri_surplus/misc/voskhod_autodoc_refill
+	contraband = TRUE
+	restricted = TRUE

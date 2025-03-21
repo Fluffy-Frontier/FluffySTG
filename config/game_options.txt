@@ -595,5 +595,9 @@ MAX_POSITIVE_QUIRKS 6
 # If higher than 1, it'll lean toward common spawns even more.
 RANDOM_LOOT_WEIGHT_MODIFIER 1
 
+## Custom shuttle spam prevention. Changine these numbers allows you to change the maxsize and amount of custom shuttles.
+MAX_SHUTTLE_COUNT 6
+MAX_SHUTTLE_SIZE 300
+
 ## FF CONFIGS
 ROUNDSTART_RACES nabber

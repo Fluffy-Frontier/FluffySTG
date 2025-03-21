@@ -16,11 +16,13 @@
 	if(!anchored)
 		to_chat(user,span_warning("This device must be anchored by a wrench!"))
 		return UI_CLOSE
-	if(!allowed(user) && !isobserver(user))
+	if(!allowed(user))
 		to_chat(user,span_warning("Error: Access Denied."))
+		user.playsound_local(src, 'sound/machines/compiler/compiler-failure.ogg', 25, TRUE)
 		return UI_CLOSE
-	if(!SSjukeboxes.songs.len && !isobserver(user))
+	if(!length(music_player.songs))
 		to_chat(user,span_warning("Error: No music tracks have been authorized for your station. Petition Central Command to resolve this issue."))
+		user.playsound_local(src, 'sound/machines/compiler/compiler-failure.ogg', 25, TRUE)
 		return UI_CLOSE
 	return ..()
 

@@ -36,12 +36,14 @@
 	name = "Syndicate Tome"
 	desc = "Using rare artifacts acquired at great cost, the Syndicate has reverse engineered \
 			the seemingly magical books of a certain cult. Though lacking the esoteric abilities \
-			of the originals, these inferior copies are still quite useful, being able to provide \
-			both weal and woe on the battlefield, even if they do occasionally bite off a finger."
+			of the originals, these inferior copies are still quite useful. \
+			Often used by agents to protect themselves against foes who rely on magic while it's held. \
+			Though, it can be used to heal and harm other people with decent effectiveness much like a regular bible. \
+			Can also be used in-hand to 'claim' it, granting you priest-like abilities -- no training required!"
 	item = /obj/item/book/bible/syndicate
 	cost = 5
 
-/* // NOVA EDIT REMOVAL START
+// /* // NOVA EDIT REMOVAL START // FLUFFY FRONTIER REMOVAL - Brings back tram remote
 /datum/uplink_item/device_tools/tram_remote
 	name = "Tram Remote Control"
 	desc = "When linked to a tram's on board computer systems, this device allows the user to manipulate the controls remotely. \
@@ -49,8 +51,7 @@
 		Perfect for running someone over in the name of a tram malfunction!"
 	item = /obj/item/assembly/control/transport/remote
 	cost = 2
-*/ // NOVA EDIT REMOVAL END
-
+// */ // NOVA EDIT REMOVAL END // FLUFFY FRONTIER REMOVAL
 /datum/uplink_item/device_tools/thermal
 	name = "Thermal Imaging Glasses"
 	desc = "These goggles can be turned to resemble common eyewear found throughout the station. \

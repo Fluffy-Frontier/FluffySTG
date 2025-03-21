@@ -451,7 +451,7 @@ GLOBAL_LIST_EMPTY(cortical_borers)
 	maturity_age++
 
 	//20:40, 15:30, 10:20, 5:10
-	var/maturity_threshold = 20
+	var/maturity_threshold = 15 // FLUFFY FRONTIER EDIT: Original value 20
 	if(GLOB.successful_egg_number >= GLOB.objective_egg_borer_number)
 		maturity_threshold -= 2
 	if(length(GLOB.willing_hosts) >= GLOB.objective_willing_hosts)
