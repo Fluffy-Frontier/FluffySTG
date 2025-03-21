@@ -70,6 +70,15 @@
 		ready = PLAYER_NOT_READY
 		return FALSE
 
+	// FLUFFT FRONTIER ADDITION START - toggle_observing
+	if(!GLOB.observing_allowed)
+		if(!check_rights(R_ADMIN, FALSE))
+			alert(usr, "Observing is currently disabled!", "Observe")
+			return FALSE
+		if(alert(usr, "Observing is currently disabled, do you want\nto use your permissions to circumvent it?", "Observe", "Yes", "No") != "Yes")
+			return FALSE
+	// FLUFFT FRONTIER ADDITION END
+
 	var/less_input_message
 	if(SSlag_switch.measures[DISABLE_DEAD_KEYLOOP])
 		less_input_message = " - Notice: Observer freelook is currently disabled."
