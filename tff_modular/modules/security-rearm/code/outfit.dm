@@ -9,39 +9,41 @@
 //Сами аутфиты
 /datum/outfit/job/security
 	suit_store = null
+	l_pocket = /obj/item/storage/pouch/medical/tac_security/loaded
 	backpack_contents = list(
 		/obj/item/evidencebag = 1,
 		/obj/item/choice_beacon/sec_officer = 1,
+		/obj/item/restraints/handcuffs = 1,
 		)
-	r_pocket = /obj/item/storage/pouch/medical/tac_security/loaded
-
-/datum/outfit/job/security/synthetic
-	r_pocket = /obj/item/storage/pouch/medical/tac_security/synth/loaded
-
-/datum/job/security_officer
-	synthetic_outfit = /datum/outfit/job/security/synthetic
-
-/datum/outfit/job/hos
-	r_pocket = /obj/item/storage/pouch/medical/tac_security/loaded
-
-/datum/outfit/job/hos/synthetic
-	r_pocket = /obj/item/storage/pouch/medical/tac_security/synth/loaded
-
-/datum/job/hos
-	synthetic_outfit = /datum/outfit/job/hos/synthetic
 
 /datum/outfit/job/warden
-	r_pocket = /obj/item/storage/pouch/medical/tac_security/loaded
+	l_pocket = /obj/item/storage/pouch/medical/tac_security/loaded
+	backpack_contents = list(
+		/obj/item/evidencebag = 1,
+		/obj/item/restraints/handcuffs = 1,
+		)
 
-/datum/outfit/job/warden/synthetic
-	r_pocket = /obj/item/storage/pouch/medical/tac_security/synth/loaded
+/datum/outfit/job/hos
+	l_pocket = /obj/item/storage/pouch/medical/tac_security/loaded
+	backpack_contents = list(
+		/obj/item/evidencebag = 1,
+		/obj/item/melee/baton/security/loaded/hos = 1,
+		/obj/item/restraints/handcuffs = 1,
+		)
+
+/datum/outfit/synthetic
+	name = "Synthetic Crewmember Outfit"
+
+/datum/outfit/synthetic/security
+	name = "Synthetic Security Outfit"
+
+	l_pocket = /obj/item/storage/pouch/medical/tac_security/synth/loaded
+
+/datum/job/security_officer
+	synthetic_outfit = /datum/outfit/synthetic/security
+
+/datum/job/head_of_security
+	synthetic_outfit = /datum/outfit/synthetic/security
 
 /datum/job/warden
-	synthetic_outfit = /datum/outfit/job/warden/synthetic
-
-/datum/species/synthetic
-	outfit_override_registry = list(
-		/datum/outfit/job/security = /datum/outfit/job/security/synthetic,
-		/datum/outfit/job/warden = /datum/outfit/job/warden/synthetic,
-		/datum/outfit/job/hos = /datum/outfit/job/hos/synthetic,
-	)
+	synthetic_outfit = /datum/outfit/synthetic/security
