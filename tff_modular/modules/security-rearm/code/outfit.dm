@@ -12,29 +12,47 @@
 	backpack_contents = list(
 		/obj/item/evidencebag = 1,
 		/obj/item/choice_beacon/sec_officer = 1,
+		/obj/item/storage/pouch/medical/tac_security/loaded = 1,
 		)
-	r_pocket = /obj/item/storage/pouch/medical/tac_security/loaded
 
 /datum/outfit/job/security/synthetic
-	r_pocket = /obj/item/storage/pouch/medical/tac_security/synth/loaded
+	backpack_contents = list(
+		/obj/item/evidencebag = 1,
+		/obj/item/choice_beacon/sec_officer = 1,
+		/obj/item/storage/pouch/medical/tac_security/synth/loaded = 1,
+		)
 
 /datum/job/security_officer
 	synthetic_outfit = /datum/outfit/job/security/synthetic
 
 /datum/outfit/job/hos
-	r_pocket = /obj/item/storage/pouch/medical/tac_security/loaded
+	backpack_contents = list(
+		/obj/item/evidencebag = 1,
+		/obj/item/melee/baton/security/loaded/hos = 1,
+		/obj/item/storage/pouch/medical/tac_security/loaded = 1,
+		)
 
 /datum/outfit/job/hos/synthetic
-	r_pocket = /obj/item/storage/pouch/medical/tac_security/synth/loaded
+	backpack_contents = list(
+		/obj/item/evidencebag = 1,
+		/obj/item/melee/baton/security/loaded/hos = 1,
+		/obj/item/storage/pouch/medical/tac_security/synth/loaded = 1,
+		)
 
-/datum/job/hos
+/datum/job/head_of_security
 	synthetic_outfit = /datum/outfit/job/hos/synthetic
 
 /datum/outfit/job/warden
-	r_pocket = /obj/item/storage/pouch/medical/tac_security/loaded
+	backpack_contents = list(
+		/obj/item/evidencebag = 1,
+		/obj/item/storage/pouch/medical/tac_security/loaded = 1,
+		)
 
 /datum/outfit/job/warden/synthetic
-	r_pocket = /obj/item/storage/pouch/medical/tac_security/synth/loaded
+	backpack_contents = list(
+		/obj/item/evidencebag = 1,
+		/obj/item/storage/pouch/medical/tac_security/synth/loaded = 1,
+		)
 
 /datum/job/warden
 	synthetic_outfit = /datum/outfit/job/warden/synthetic

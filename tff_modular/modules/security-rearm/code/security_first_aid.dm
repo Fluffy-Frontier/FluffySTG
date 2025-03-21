@@ -1,7 +1,6 @@
 /obj/item/storage/pouch/medical/tac_security
 	name = "security emergency medkit"
 	desc = "Standard-issue medical kit issued to NanoTrasen security operatives. Contains first-aid supplies meant to keep an officer alive until proper medical staff can take over. Stored in a pocket pouch for ease of access."
-	w_class = WEIGHT_CLASS_BULKY
 	icon = 'tff_modular/modules/security-rearm/icons/pouches.dmi'
 	icon_state = "tac_security"
 
