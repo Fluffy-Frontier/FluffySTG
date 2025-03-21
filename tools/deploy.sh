@@ -33,8 +33,11 @@ find modular_nova/modules/GAGS/nsfw/json_configs -name \*.json -exec cp --parent
 # NOVA EDIT ADDITION END
 
 # FLUFFY FRONTIER EDIT ADDITION START
-mkdir -p $1/tff_modular
+mkdir -p \
+		$1/tff_modular
+
 find tff_modular/ -name \*.dmi -exec cp --parents {} $1 \;
+find tff_modular/modules/greyscale/json_configs -name \*.json -exec cp --parents {} $1 \;
 # FLUFFY FRONTIER EDIT ADDITION END
 
 cp tgstation.dmb tgstation.rsc $1/
