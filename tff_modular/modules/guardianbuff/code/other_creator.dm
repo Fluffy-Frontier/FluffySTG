@@ -6,7 +6,6 @@
         /mob/living/basic/guardian/ranged,
         /mob/living/basic/guardian/standard,
         /mob/living/basic/guardian/support,
-        /mob/living/basic/guardian/gaseous,
         /mob/living/basic/guardian/explosive,
         /mob/living/basic/guardian/assassin,
     )

@@ -91,7 +91,7 @@
 		/datum/gas/water_vapor = 1, //you need incredibly little water vapor for the effects to kick in
 		/datum/gas/nitrous_oxide = 15,
 		/datum/gas/carbon_dioxide = 50,
-		/datum/gas/plasma = 4, //THE FLUFFY FRONTIER CHANGE. ORIGINAL: 3
+		/datum/gas/plasma = 3,
 		/datum/gas/bz = 10,
 	)
 
