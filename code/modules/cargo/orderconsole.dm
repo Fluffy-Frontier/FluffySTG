@@ -105,29 +105,35 @@
 
 	var/list/amount_by_name = list()
 	var/cart_list = list()
+	var/entry_name
 	for(var/datum/supply_order/order in SSshuttle.shopping_list)
-		if(cart_list[order.pack.name])
-			amount_by_name[order.pack.name] += 1
-			cart_list[order.pack.name][1]["amount"]++
-			cart_list[order.pack.name][1]["cost"] += order.get_final_cost()
+		entry_name = "[order.pack.name] [order.paying_account?.account_holder] [order.dep_name]"
+		if(cart_list[entry_name])
+			amount_by_name[entry_name] += 1
+			cart_list[entry_name][1]["amount"]++
+			cart_list[entry_name][1]["cost"] += order.get_final_cost()
 			if(order.department_destination)
-				cart_list[order.pack.name][1]["dep_order"]++
+				cart_list[entry_name][1]["dep_order"]++
 			if(!isnull(order.paying_account))
-				cart_list[order.pack.name][1]["paid"]++
+				cart_list[entry_name][1]["paid"]++
 			continue
 
-		amount_by_name[order.pack.name] += 1
-		cart_list[order.pack.name] = list(list(
+		amount_by_name[entry_name] += 1
+		cart_list[entry_name] = list(list(
 			"cost_type" = order.cost_type,
 			"object" = order.pack.name,
 			"cost" = order.get_final_cost(),
 			"id" = order.id,
 			"amount" = 1,
 			"orderer" = order.orderer,
+			"orderer_rank" = order.orderer_rank,
+			"dep_name" = order.dep_name,
 			"paid" = !isnull(order.paying_account) ? 1 : 0, //number of orders purchased privatly
 			"dep_order" = order.department_destination ? 1 : 0, //number of orders purchased by a department
 			"can_be_cancelled" = order.can_be_cancelled,
 		))
+		if(istype(order.paying_account, /datum/bank_account/department))
+			cart_list[entry_name][1]["orderer"] = order.paying_account.account_holder
 	data["cart"] = list()
 	for(var/item_id in cart_list)
 		data["cart"] += cart_list[item_id]
@@ -136,11 +142,12 @@
 	data["requests"] = list()
 	for(var/datum/supply_order/order in SSshuttle.request_list)
 		var/datum/supply_pack/pack = order.pack
-		amount_by_name[pack.name] += 1
+		amount_by_name[entry_name] += 1
 		data["requests"] += list(list(
 			"object" = pack.name,
 			"cost" = pack.get_cost(),
 			"orderer" = order.orderer,
+			"orderer_rank" = order.orderer_rank,
 			"reason" = order.reason,
 			"id" = order.id,
 		))
@@ -309,7 +316,7 @@
  * removes an item from the checkout cart
  * * id - the id of the cart item to remove
  */
-/obj/machinery/computer/cargo/proc/remove_item(id)
+/obj/machinery/computer/cargo/proc/remove_item(id, mob/user, reason)
 	for(var/datum/supply_order/order in SSshuttle.shopping_list)
 		if(order.id != id)
 			continue
@@ -319,6 +326,22 @@
 		if(order.applied_coupon)
 			say("Coupon refunded.")
 			order.applied_coupon.forceMove(get_turf(src))
+
+		var/canceller
+		var/canceller_rank
+
+		if(ishuman(user))
+			var/mob/living/carbon/human/human = user
+			canceller = human.get_authentification_name(hand_first = TRUE)
+			canceller_rank = human.get_assignment(hand_first = TRUE)
+		else if(HAS_SILICON_ACCESS(user))
+			canceller = user.real_name
+			canceller_rank = "Silicon"
+		var/datum/deleted_order/deleted_order = new(order.pack.name, id, order.orderer, order.orderer_rank, order.paying_account?.account_holder, reason, canceller, canceller_rank)
+		GLOB.cancelled_orders[canceller] += list(deleted_order)
+		if(order.paying_account)
+			notify_buyer(user, order.orderer, "Your order \"[order.pack.name]\" (#[id]) was cancelled by [canceller] ([canceller_rank]) [reason ? "with a reason: [reason]." : "without a reason provided."]")
+
 		SSshuttle.shopping_list -= order
 		qdel(order)
 		return TRUE
@@ -360,6 +383,16 @@
 					var/requisition_text = "<h2>[station_name()] Supply Requisition</h2>"
 					requisition_text += "<hr/>"
 					requisition_text += "Time of Order: [station_time_timestamp()]<br/><br/>"
+					var/orderer_name
+					var/orderer_rank
+					if(ishuman(ui.user))
+						var/mob/living/carbon/human/human = ui.user
+						orderer_name = human.get_authentification_name(hand_first = TRUE)
+						orderer_rank = human.get_assignment(hand_first = TRUE)
+					else if(HAS_SILICON_ACCESS(ui.user))
+						orderer_name = ui.user.real_name
+						orderer_rank = "Silicon"
+					requisition_text += "Shuttle requested by [orderer_name] ([orderer_rank])<br/><br/>"
 					for(var/datum/supply_order/order as anything in SSshuttle.shopping_list)
 						requisition_text += "<b>[order.pack.name]</b></br>"
 						requisition_text += "- Order ID: [order.id]</br>"
@@ -410,11 +443,14 @@
 			return add_item(ui.user, supply_pack_id)
 		if("remove")
 			var/order_name = params["order_name"]
+			var/cancel_reason = tgui_input_text(ui.user, "Enter order cancelation reason", "Reason", max_length = MAX_MESSAGE_LEN)
+			if(isnull(cancel_reason))
+				return
 			//try removing at least one item with the specified name. An order may not be removed if it was from the department
 			for(var/datum/supply_order/order in SSshuttle.shopping_list)
-				if(order.pack.name != order_name)
+				if(order.id != order_name)
 					continue
-				if(remove_item(order.id))
+				if(remove_item(order.id, ui.user, cancel_reason))
 					return TRUE
 
 			return TRUE
@@ -442,13 +478,15 @@
 			for(var/datum/supply_order/cancelled_order in shopping_cart)
 				if(cancelled_order.department_destination || !cancelled_order.can_be_cancelled)
 					continue //don't cancel other department's orders or orders that can't be cancelled
-				remove_item(cancelled_order.id) //remove & properly refund any coupons attached with this order
+				remove_item(cancelled_order.id, ui.user, reason = "Mass Remove") //remove & properly refund any coupons attached with this order
 		if("approve")
 			var/id = text2num(params["id"])
 			for(var/datum/supply_order/SO in SSshuttle.request_list)
 				if(SO.id == id)
 					SSshuttle.request_list -= SO
 					SSshuttle.shopping_list += SO
+					if(SO.orderer)
+						notify_buyer(ui.user, SO.orderer, "Your request for \"[SO.pack.name]\" (#[id]) was approved")
 					. = TRUE
 					break
 		if("deny")
@@ -456,6 +494,8 @@
 			for(var/datum/supply_order/SO in SSshuttle.request_list)
 				if(SO.id == id)
 					SSshuttle.request_list -= SO
+					if(SO.orderer)
+						notify_buyer(ui.user, SO.orderer, "Your request for \"[SO.pack.name]\" (#[id]) was denied")
 					. = TRUE
 					break
 		if("denyall")
