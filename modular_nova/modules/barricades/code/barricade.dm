@@ -35,6 +35,8 @@
 	AddElement(/datum/element/climbable)
 	RegisterSignal(src, COMSIG_ATOM_INTEGRITY_CHANGED, PROC_REF(run_integrity))
 
+	qdel(src)
+
 /obj/structure/deployable_barricade/proc/run_integrity()
 	SIGNAL_HANDLER
 	update_appearance()
@@ -828,8 +830,10 @@
 	. = ..()
 	atom_storage.max_total_storage = 21
 
+/*
 /obj/item/storage/barricade/PopulateContents()
 	for(var/i = 0, i < 3, i++)
 		new /obj/item/quickdeploy/barricade/plasteel(src)
 	for(var/i = 0, i < 9, i ++)
 		new /obj/item/quickdeploy/barricade(src)
+*/

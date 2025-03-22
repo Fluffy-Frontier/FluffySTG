@@ -83,7 +83,7 @@
 	new /obj/item/extinguisher(src)
 	new /obj/item/clothing/head/utility/hardhat/red(src)
 	new /obj/item/crowbar/large/emergency(src)
-	new /obj/item/storage/inflatable(src) //NOVA EDIT ADDITION - INFLATABLES
+	// new /obj/item/storage/inflatable(src) //NOVA EDIT ADDITION - INFLATABLES
 
 /obj/structure/closet/firecloset/full/PopulateContents()
 	new /obj/item/clothing/suit/utility/fire/firefighter(src)
