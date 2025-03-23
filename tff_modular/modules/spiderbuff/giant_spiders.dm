@@ -1,6 +1,3 @@
-/mob/living/basic/spider/giant
-	armour_penetration = 25
-
 /mob/living/basic/spider/giant/ambush
 	obj_damage = 60
 	armour_penetration = 25
