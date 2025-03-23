@@ -1,6 +1,6 @@
 /mob/living/carbon/human/necromorph/tripod
-	health = 195
-	maxHealth = 195
+	health = 475
+	maxHealth = 475
 	class = /datum/necro_class/tripod
 	necro_species = /datum/species/necromorph/tripod
 	necro_armor = /datum/armor/dsnecro_tripod
@@ -26,15 +26,14 @@
 	necromorph_type_path = /mob/living/carbon/human/necromorph/tripod
 	tier = 2
 	nest_allowed = FALSE
-	biomass_cost = 140
-	biomass_spent_required = 680
+	biomass_cost = 360
+	biomass_spent_required = 1350
 	melee_damage_lower = 22
 	melee_damage_upper = 26
 	armour_penetration = 25
 	necro_armor = /datum/armor/dsnecro_tripod
 	actions = list(
 	)
-	implemented = TRUE
 
 /datum/species/necromorph/tripod
 	name = "Tripod"

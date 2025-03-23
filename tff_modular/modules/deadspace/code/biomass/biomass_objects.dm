@@ -4,7 +4,7 @@
 /obj/item/bodypart/chest
 	n_biomass = 15
 
-/obj/item/bodypart/hand
+/obj/item/bodypart/arm
 	n_biomass = 4
 
 /obj/item/bodypart/leg
