@@ -839,6 +839,13 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"TRAIT_SLIME_HYDROPHOBIA" = TRAIT_SLIME_HYDROPHOBIA
 	),
 	// NOVA EDIT ADDITION END
+	// FLUFFY FRONTIER ADDITION START
+	/obj/item/toy/plush/lizard_plushie = list(
+		"TRAIT_XENO_ABILITY_GIVEN" = TRAIT_XENO_ABILITY_GIVEN,
+		"TRAIT_XENO_HEAL_AURA" = TRAIT_XENO_HEAL_AURA,
+		"TRAIT_XENO_INNATE" = TRAIT_XENO_INNATE,
+	),
+	// FLUFFY FRONTIER ADDITION END
 ))
 
 /// value -> trait name, list of ALL traits that exist in the game, used for any type of accessing.
