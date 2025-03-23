@@ -707,3 +707,44 @@
   - bugfix: Fix hauntinum reagent to work when it is exposed to item objects.
   verybigpebble:
   - sound: gave the miecz a new firing sound, after complaints of ear damage.
+2025-03-13:
+  Bannhammger:
+  - rscadd: ' Syndicate themed maid suit to uplink badassery 8TC'
+2025-03-15:
+  Enny_Daiz:
+  - rscadd: Interdyne Pharmaceutics rejoins the Syndicate, as specified in the new
+      flavour text for corresponding off-station roles.
+  - rscadd: Both Interdyne outpost and DS-2 now feature independent research & development
+      networks, completely separated from the station, allowing their scientists to
+      actually have stuff to do. Syndicate-flavoured research nodes will be added
+      to said networks in future updates.
+  - map: 'Remapped the Interdyne outpost: shield generator replaced with an armory
+      section and Deck Officer''s quarters; moved some workstations around for convenient
+      access; added a prison cell next to personnel spawners; default machinegun turrets
+      replaced with heavy turrets.'
+  - map: 'Global rework of DS-2: now looks more like a starship rather than an alagmation
+      of poor design choices; once more has a functional medblock; armory restocked
+      with C-20A carabines instead of Sindano submachine guns; added LTSRBT circuts
+      to a secure storage for the crew''s use.'
+  Kocma-san:
+  - code_imp: Move `code\__DEFINES\~ff_defines\___HELPERS` to `code\___HELPERS\~~ff_helpers`
+  SSensum13:
+  - balance: "Brew of the crucible soul (\u0435\u0440\u0435\u0442\u0438\u0447\u0435\
+      \u0441\u043A\u043E\u0435 \u0437\u0435\u043B\u044C\u0435 \u0434\u043B\u044F \u043F\
+      \u0440\u043E\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u044F \u0441\u043A\u0432\
+      \u043E\u0437\u044C \u0441\u0442\u0435\u043D\u044B) \u0442\u0435\u043F\u0435\u0440\
+      \u044C \u043F\u043E \u043E\u043A\u043E\u043D\u0447\u0430\u043D\u0438\u044E \u044D\
+      \u0444\u0444\u0435\u043A\u0442\u0430 \u043D\u0430\u043A\u043B\u0430\u0434\u044B\
+      \u0432\u0430\u0435\u0442 \u044D\u0444\u0444\u0435\u043A\u0442 \"\u0432\u043E\
+      \u0437\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u044F\" \u043D\u0430 5 \u043C\
+      \u0438\u043D\u0443\u0442, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u043D\u0435\
+      \ \u043F\u043E\u0437\u0432\u043E\u043B\u044F\u0435\u0442 \u0435\u0433\u043E\
+      \ \u0443\u043F\u043E\u0442\u0440\u0435\u0431\u043B\u044F\u0442\u044C."
+  - balance: "Brew of the crucible soul (\u0435\u0440\u0435\u0442\u0438\u0447\u0435\
+      \u0441\u043A\u043E\u0435 \u0437\u0435\u043B\u044C\u0435 \u0434\u043B\u044F \u043F\
+      \u0440\u043E\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u044F \u0441\u043A\u0432\
+      \u043E\u0437\u044C \u0441\u0442\u0435\u043D\u044B) \u0442\u0435\u043F\u0435\u0440\
+      \u044C \u043D\u0435\u043B\u044C\u0437\u044F \u0432\u044B\u043F\u0438\u0442\u044C\
+      , \u0435\u0441\u043B\u0438 \u0442\u044B \u0443\u0436\u0435 \u043F\u043E\u0434\
+      \ \u044D\u0444\u0444\u0435\u043A\u0442\u043E\u043C \u044D\u0442\u043E\u0433\u043E\
+      \ \u0437\u0435\u043B\u044C\u044F."
