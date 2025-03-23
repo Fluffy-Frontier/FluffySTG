@@ -42,13 +42,12 @@
 	var/list/options = get_necromorph_conversion_possibilities(compatibility)
 	var/newtype = pick_weight(options)
 	var/obj/structure/marker/mark = pick(GLOB.necromorph_markers)
-	var/mob/eye/marker_signal/signal = new /mob/eye/marker_signal(loc, mark)
 	if(!isnull(newtype))
 		var/mob/living/carbon/human/necromorph/necro = new newtype(loc, mark)
 		mark.add_necro(necro)
 		if(choice == "Yes")
+			var/mob/eye/marker_signal/signal = new /mob/eye/marker_signal(loc, mark)
 			signal.ckey = ckey
-			necro.controlling = signal
 			signal.possess_necromorph(necro)
 	gib()
 
@@ -78,13 +77,13 @@
 	//spawn_gibs()
 	var/newtype = pick_weight(options)
 	var/obj/structure/marker/mark = pick(GLOB.necromorph_markers)
-	var/mob/eye/marker_signal/signal = new /mob/eye/marker_signal(loc, mark)
 	if(!isnull(newtype))
 		var/mob/living/carbon/human/necromorph/necro = new newtype(loc, mark)
+		necro.previous_owner = "There are still traces of his past on him. He looks just like [real_name]"
 		mark.add_necro(necro)
 		if(choice == "Yes")
+			var/mob/eye/marker_signal/signal = new /mob/eye/marker_signal(loc, mark)
 			signal.ckey = ckey
-			necro.controlling = signal
 			signal.possess_necromorph(necro)
 	gib()
 
@@ -145,6 +144,9 @@
 /mob/living/proc/is_necromorph_conversion_valid()
 	.= TRUE
 	if (stat != DEAD && stat != UNCONSCIOUS)
+		return FALSE
+
+	if(istype(src, /mob/living/carbon/human/necromorph))
 		return FALSE
 
 	if (QDELETED(src))

@@ -14,11 +14,23 @@
 	marker_master.add_necro(src)
 	var/datum/necro_class/temp = marker_master.necro_classes[class]
 	temp.load_data(src)
+	RegisterSignal(src, COMSIG_CARBON_CUFF_ATTEMPTED, PROC_REF(prevent_cuff))
 
 /mob/living/carbon/human/necromorph/Destroy()
+	UnregisterSignal(src, COMSIG_CARBON_CUFF_ATTEMPTED)
 	evacuate()
 	marker?.remove_necro(src)
 	return ..()
+
+/mob/living/carbon/human/necromorph/examine(mob/user)
+	. = ..()
+	if(previous_owner)
+		. += previous_owner
+
+/mob/living/carbon/human/necromorph/Logout()
+
+	controlling = null
+	. = ..()
 
 /mob/living/carbon/human/necromorph/mind_initialize()
 	. = ..()
@@ -95,3 +107,13 @@
 /// Check if the necromorph should die
 /mob/living/carbon/human/necromorph/proc/handle_death_check()
 	return (health <= 0 && !HAS_TRAIT(src, TRAIT_NODEATH))
+
+/mob/living/carbon/human/necromorph/proc/prevent_cuff(datum/source, mob/attemptee)
+	SIGNAL_HANDLER
+	return COMSIG_CARBON_CUFF_PREVENT
+
+/mob/living/carbon/human/necromorph/toggle_throw_mode()
+	return
+
+/mob/living/carbon/human/necromorph/throw_item(atom/target)
+	return

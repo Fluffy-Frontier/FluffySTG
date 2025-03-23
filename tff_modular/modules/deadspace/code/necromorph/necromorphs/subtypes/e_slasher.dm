@@ -29,6 +29,7 @@
 	biomass_spent_required = 680
 	melee_damage_lower = 24
 	melee_damage_upper = 26
+	armour_penetration = 22
 	necro_armor = /datum/armor/dsnecro_e_slasher
 	actions = list(
 		/datum/action/cooldown/mob_cooldown/charge/necro/slasher/enhanced,
@@ -53,8 +54,8 @@
 /datum/armor/dsnecro_e_slasher
 	melee = 40
 	bullet = 60
-	laser = 0
-	energy = 0
+	laser = 15
+	energy = 15
 	bomb = 15
 	bio = 75
 	fire = 15

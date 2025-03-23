@@ -196,7 +196,7 @@
 	if (isnecromorph(user) && notify_necromorphs)
 		var/obj/structure/marker/mark = user.marker
 		if(istype(mark))
-			mark.hive_mind_message(user, span_warning( "[user] is performing [execution_name] on [victim]"))
+			mark.hive_mind_message(user, span_alert( "[user] is performing [execution_name] on [victim]"))
 
 	//Lets setup handling for future interruption
 	can_interrupt = TRUE

@@ -39,8 +39,8 @@
 /datum/armor/dsnecro_spitter
 	melee = 40
 	bullet = 45
-	laser = 0
-	energy = 0
+	laser = 10
+	energy = 10
 	bomb = 0
 	bio = 65
 	fire = 0

@@ -51,8 +51,8 @@
 /datum/armor/dsnecro_leaper
 	melee = 50
 	bullet = 35
-	laser = 0
-	energy = 0
+	laser = 10
+	energy = 10
 	bomb = 0
 	bio = 50
 	fire = 0

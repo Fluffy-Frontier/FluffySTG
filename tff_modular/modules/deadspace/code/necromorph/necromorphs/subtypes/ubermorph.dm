@@ -26,6 +26,7 @@
 	biomass_spent_required = 2000
 	melee_damage_lower = 14
 	melee_damage_upper = 29
+	armour_penetration = 40
 	implemented = TRUE
 	necro_armor = /datum/armor/dsnecro_ubermorph
 	actions = list(
@@ -38,8 +39,8 @@
 /datum/armor/dsnecro_ubermorph
 	melee = 75
 	bullet = 75
-	laser = 10
-	energy = 15
+	laser = 20
+	energy = 30
 	bomb = 25
 	bio = 10
 	fire = 80

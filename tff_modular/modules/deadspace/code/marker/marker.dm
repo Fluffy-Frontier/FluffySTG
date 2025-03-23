@@ -23,8 +23,13 @@
 	GLOB.necromorph_markers -= src
 	for(var/mob/eye/marker_signal/signal as anything in marker_signals)
 		signal.show_message(span_userdanger("You feel like your connection with the Marker breaks!"))
+		signal.ghostize()
 		qdel(signal)
+	for(var/mob/living/carbon/human/necromorph/necro as anything in necromorphs)
+		necro.show_message(span_userdanger("Your body turns to dust!"))
+		necro.dust()
 	marker_signals = null
+	necromorphs = null
 	QDEL_NULL(soundloop)
 	return ..()
 
@@ -106,8 +111,8 @@
 	priority_announce("Thanks to the tireless efforts of our security and intelligence divisions, there are currently no credible threats to [station_name()]. All station construction projects have been authorized. Have a secure shift!", "Security Report", "", SSstation.announcer.get_rand_report_sound())
 
 /mob/dead/observer/verb/join_horde()
-	set category = "Necromorph"
 	set name = "Join the Horde"
+	set category = "Ghost"
 
 	if(!length(GLOB.necromorph_markers))
 		to_chat(src, span_notice("There are no markers to join!"))
@@ -169,7 +174,12 @@
 			var/class = text2path(params["class"])
 			if(!class || !(class in necro_classes))
 				return
-			camera_mob.spawning_necromorph = necro_classes[class].type
+			if(camera_mob.spawning_necromorph)
+				camera_mob.spawning_necromorph = null
+				to_chat(camera_mob, span_notice("Necromorph selection has been canceled"))
+			else
+				camera_mob.spawning_necromorph = necro_classes[class].type
+				to_chat(camera_mob, span_notice("Selected necromorph: [necro_classes[class].display_name]"))
 		if("set_signal_biomass_percent")
 			var/percent = text2num(params["percentage"])
 			if(isnull(percent))

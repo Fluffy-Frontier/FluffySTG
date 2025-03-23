@@ -18,7 +18,9 @@
 
 	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
 
-	message = "<span class='blob'>[name]: [message]</span>"
+	message = span_blob("[name] ([controlling.name]): [message]")
+
+	log_talk(message, LOG_SAY, forced_by = forced, custom_say_emote = message_mods[MODE_CUSTOM_SAY_EMOTE])
 
 	marker.hive_mind_message(src, message)
 

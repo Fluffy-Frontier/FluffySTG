@@ -3,6 +3,7 @@
 	maxHealth = 185
 	class = /datum/necro_class/infector/enhanced
 	necro_species = /datum/species/necromorph/infector/enhanced
+	necro_armor = /datum/armor/dsnecro_e_infector
 
 /mob/living/carbon/human/necromorph/infector/enhanced/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
@@ -24,14 +25,15 @@
 		/datum/action/cooldown/mob_cooldown/charge/necro/execution/infector,
 		/datum/action/cooldown/necro/infector_proboscis/enhanced,
 		/datum/action/cooldown/necro/shout,
+		/datum/action/cooldown/necro/corruption/infector,
 	)
 	implemented = TRUE
 
 /datum/armor/dsnecro_e_infector
 	melee = 55
 	bullet = 65
-	laser = 0
-	energy = 0
+	laser = 15
+	energy = 15
 	bomb = 15
 	bio = 75
 	fire = 15

@@ -59,8 +59,8 @@
 /datum/armor/dsnecro_twitcher
 	melee = 45
 	bullet = 55
-	laser = 0
-	energy = 0
+	laser = 10
+	energy = 10
 	bomb = 0
 	bio = 50
 	fire = 0

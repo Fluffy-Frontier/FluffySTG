@@ -69,6 +69,10 @@ GLOBAL_LIST_EMPTY(markers_signals)
 		return FALSE
 	name = "[pick(GLOB.ing_verbs)] [initial(name)] [rand(0, 999)]"
 
+/mob/eye/marker_signal/Logout()
+	. = ..()
+	qdel(src)
+
 /mob/eye/marker_signal/verb/show_tutorial()
 	set name = "Show Info"
 	set desc = "Display any information that you can use"
@@ -84,6 +88,13 @@ GLOBAL_LIST_EMPTY(markers_signals)
 	if(!signal)
 		mind.add_antag_datum(/datum/antagonist/necromorph)
 
+/mob/eye/marker_signal/Topic(href, list/href_list)
+	..()
+	if(href_list["jump_to_eye"])
+		var/mob/eye/marker_signal/signally = locate(href_list["eye_ref"]) in marker.marker_signals
+		if(signally)
+			abstract_move(get_turf(signally))
+
 /mob/eye/marker_signal/process(delta_time)
 	change_psy_energy(psy_energy_generation*delta_time)
 
@@ -97,6 +108,7 @@ GLOBAL_LIST_EMPTY(markers_signals)
 
 	if(istype(A, /mob/living/carbon/human/necromorph))
 		possess_necromorph(A)
+		return
 
 	// Otherwise just jump to the turf
 	if(A.loc)
@@ -139,6 +151,10 @@ GLOBAL_LIST_EMPTY(markers_signals)
 /mob/eye/marker_signal/verb/leave_horde()
 	set name = "Leave the Horde"
 	set category = "Necromorph"
+	marker.hive_mind_message(marker, span_notice("[name] has quitted the game!"))
+	var/datum/antagonist/necromorph/necromorph = mind.has_antag_datum(/datum/antagonist/necromorph)
+	if(necromorph)
+		mind.remove_antag_datum(/datum/antagonist/necromorph)
 	ghostize(FALSE)
 	qdel(src)
 
@@ -182,15 +198,15 @@ GLOBAL_LIST_EMPTY(markers_signals)
 	if(location)
 		forceMove(get_turf(location))
 
-/mob/eye/marker_signal/verb/possess_necromorph(mob/living/carbon/human/necromorph/necro in world)
-	set name = "Possess Necromorph"
-	set category = "Object"
+/mob/eye/marker_signal/proc/possess_necromorph(mob/living/carbon/human/necromorph/necro in world)
 	if(necro.stat == DEAD)
 		to_chat(src, span_notice("This vessel was damaged beyond use!"))
 		return
 	if(necro.controlling)
 		to_chat(src, span_notice("This vessel is already possessed!"))
 		return
+
+	marker.hive_mind_message(marker, "[name] possessed [initial(necro.name)][istype(src, /mob/eye/marker_signal/marker) ? " and released Master signal's role" : ""]!")
 	necro.controlling = src
 	//To prevent self attack when possesing through a double click
 	client.click_intercept_time = world.time + 1
@@ -229,7 +245,9 @@ GLOBAL_LIST_EMPTY(markers_signals)
 
 	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
 
-	message = "<span class='[src.necrochat_class]'>[name]: [message]</span>"
+	message = "<span class='[necrochat_class]'>[name]: [message]</span>"
+
+	log_talk(message, LOG_SAY, forced_by = forced, custom_say_emote = message_mods[MODE_CUSTOM_SAY_EMOTE])
 
 	marker.hive_mind_message(src, message)
 
@@ -257,11 +275,28 @@ GLOBAL_LIST_EMPTY(markers_signals)
 		to_chat(src, span_notice("There is a player controlling the marker already!"))
 		return
 	var/mob/eye/marker_signal/marker/camera = new /mob/eye/marker_signal/marker(get_turf(src), marker)
+	marker.hive_mind_message(marker, span_blobannounce("[name] became the Master signal"))
 	marker.camera_mob = camera
 	camera.fully_replace_character_name(camera.name)
 	camera.ckey = src.ckey
 	camera.change_psy_energy(psy_energy)
 	qdel(src)
+
+/mob/eye/marker_signal/verb/jump_to_signals()
+	set name = "Jump to active signals"
+	set category = "Necromorph"
+
+	var/list/signals = list()
+
+	for(var/mob/eye/marker_signal/signal as anything in marker.marker_signals)
+		if(signal == src)
+			continue
+		signals += "[SIG_EYEJMPLNK(signal, src)] [signal.name]"
+
+	if(!length(signals))
+		to_chat(src, span_notice("You are all alone..."))
+	else
+		to_chat(src, boxed_message(signals.Join("\n")))
 
 /mob/eye/marker_signal/marker
 	name = "Marker"
@@ -295,6 +330,9 @@ GLOBAL_LIST_EMPTY(markers_signals)
 /mob/eye/marker_signal/marker/verb/downgrade()
 	set name = "Downgrade to normal signal"
 	set category = "Necromorph"
+
+	if(marker)
+		marker.hive_mind_message(marker, span_blobannounce("[name] released Master signal's role"))
 
 	var/mob/eye/marker_signal/signal = new /mob/eye/marker_signal(get_turf(src), marker)
 	signal.fully_replace_character_name(signal.name)

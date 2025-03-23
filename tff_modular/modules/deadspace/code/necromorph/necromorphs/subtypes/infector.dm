@@ -3,6 +3,7 @@
 	maxHealth = 90
 	class = /datum/necro_class/infector
 	necro_species = /datum/species/necromorph/infector
+	necro_armor = /datum/armor/dsnecro_infector
 	var/mob/eye/signal/biomass_source
 	var/current_biomass = 0
 	tutorial_text = "<b>Sting:</b>  your sting attack has increased damage, and if you use it on a dead corpse, you can convert it to the necromorph side.\n\
@@ -36,8 +37,8 @@
 /datum/armor/dsnecro_infector
 	melee = 25
 	bullet = 40
-	laser = 0
-	energy = 0
+	laser = 10
+	energy = 10
 	bomb = 15
 	bio = 75
 	fire = 15

@@ -61,8 +61,8 @@
 /datum/armor/dsnecro_hopper
 	melee = 25
 	bullet = 30
-	laser = 0
-	energy = 0
+	laser = 10
+	energy = 10
 	bomb = 15
 	bio = 50
 	fire = 0

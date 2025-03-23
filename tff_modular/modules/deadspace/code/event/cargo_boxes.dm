@@ -1,4 +1,4 @@
-/datum/supply_pack/engineering/necro_cutters
+/datum/supply_pack/imports/necro_cutters
 	name = "Experimental cutting tools"
 	desc = "Contains X SH-B1 plasma saws and X experimental plasma cutters."
 	cost = CARGO_CRATE_VALUE * 20

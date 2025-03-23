@@ -1,5 +1,5 @@
 /mob/living/carbon/human/necromorph/slasher
-	health = 180
+	health = 100
 	maxHealth = 100
 	class = /datum/necro_class/slasher
 	necro_species = /datum/species/necromorph/slasher
@@ -25,6 +25,7 @@
 	biomass_spent_required = 0
 	melee_damage_lower = 14
 	melee_damage_upper = 20
+	armour_penetration = 15
 	necro_armor = /datum/armor/dsnecro_slasher
 	actions = list(
 		/datum/action/cooldown/mob_cooldown/charge/necro/slasher,
@@ -36,8 +37,8 @@
 /datum/armor/dsnecro_slasher
 	melee = 40
 	bullet = 45
-	laser = 0
-	energy = 0
+	laser = 10
+	energy = 10
 	bomb = 0
 	bio = 50
 	fire = 0

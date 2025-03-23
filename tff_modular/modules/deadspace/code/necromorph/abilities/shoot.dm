@@ -60,6 +60,10 @@
 	duration = 4 SECONDS //The different necro acid projectiles increase this duration
 	tick_interval = 2 SECONDS
 	alert_type = /atom/movable/screen/alert/status_effect/bioacid
+	var/armour_pen = 0
+
+/datum/status_effect/bioacid/enhanced
+	armour_pen = 25
 
 /datum/status_effect/bioacid/on_creation(mob/living/new_owner)
 	RegisterSignal(new_owner, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(on_clean))
@@ -79,8 +83,8 @@
 
 /datum/status_effect/bioacid/tick()
 	linked_alert.icon_state = "bioacid"
-	var/armor = owner.run_armor_check(attack_flag = ACID, silent = TRUE)
-	owner.apply_damage(4, BURN, blocked = armor, spread_damage = TRUE) //ORIGINAL DAMAGE: 2 MORE?
+	var/armor = owner.run_armor_check(attack_flag = ACID, silent = TRUE, armour_penetration = armour_pen)
+	owner.apply_damage(4, BURN, blocked = armor, spread_damage = TRUE)
 
 /datum/status_effect/bioacid/get_examine_text()
 	return span_warning("[owner.p_they(TRUE)] [owner.p_are()] covered in sizzling acid!")

@@ -49,7 +49,7 @@ GLOBAL_LIST_EMPTY(necromorph_markers)
 /datum/looping_sound/marker
 	mid_sounds = 'tff_modular/modules/deadspace/sound/effects/markerthrob.ogg'
 	mid_length = 9.5 SECONDS
-	volume = 50
+	volume = 35
 	ignore_walls = FALSE
 	extra_range = 20
 	falloff_exponent = 5

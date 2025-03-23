@@ -19,11 +19,12 @@
 	animate(holder, transform = new_matrix, pixel_x = holder.pixel_x + 6*shake_dir, time = 1)
 	animate(transform = matrix(), pixel_x = holder.pixel_x-6*shake_dir, time = 11, easing = ELASTIC_EASING)
 	new /obj/effect/temp_visual/expanding_circle(holder.loc, 3 SECONDS, 2) //Visual effect
-	for(var/mob/M in range(8, src))
-		var/distance = get_dist(src, M)
-		var/intensity = 5 - (distance * 0.3)
-		var/duration = (7 - (distance * 0.5)) SECONDS
-		shake_camera(M, duration, intensity)
+
+	for(var/mob/living/M in get_hearers_in_view(8, holder))
+		if(iscarbon(M))
+			var/mob/living/carbon/C = M
+			if(!istype(M, /mob/living/carbon/human/necromorph))
+				C.set_confusion_if_lower(8 SECONDS)
 
 /*
 	Scream
@@ -46,11 +47,12 @@
 	animate(holder, transform = new_matrix, pixel_x = holder.pixel_x + 6*shake_dir, time = 1)
 	animate(transform = matrix(), pixel_x = holder.pixel_x-6*shake_dir, time = 11, easing = ELASTIC_EASING)
 	new /obj/effect/temp_visual/expanding_circle(holder.loc, 2, 3 SECONDS)	//Visual effect
-	for(var/mob/M in range(8, src))
-		var/distance = get_dist(src, M)
-		var/intensity = 5 - (distance * 0.3)
-		var/duration = (7 - (distance * 0.5)) SECONDS
-		shake_camera(M, duration, intensity)
+	for(var/mob/living/M in get_hearers_in_view(8, holder))
+		if(iscarbon(M))
+			var/mob/living/carbon/C = M
+			if(!istype(M, /mob/living/carbon/human/necromorph))
+				C.set_confusion_if_lower(8 SECONDS)
+				C.set_eye_blur_if_lower(8 SECONDS)
 	remove_stun(holder)
 
 /datum/action/cooldown/necro/scream/proc/remove_stun()

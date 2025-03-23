@@ -20,7 +20,7 @@
 	var/melee_damage_lower = 10
 	var/melee_damage_upper = 10
 
-	var/armour_penetration = 0
+	var/armour_penetration = 10
 
 	///see_in_dark value while consicious
 	var/conscious_see_in_dark = 8
@@ -50,9 +50,7 @@
 	for(var/datum/action/cooldown/necro/action_datum as anything in actions)
 		action_datum = new action_datum(necro)
 		action_datum.Grant(necro)
-/* DO I NEED IT?
-	necro.armor_type = armor_type
-*/
+
 	necro.melee_damage_upper = melee_damage_upper
 
 	necro.melee_damage_lower = melee_damage_lower

@@ -32,7 +32,6 @@
 	. = ..()
 	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_brute)
 
-
 /mob/living/carbon/human/necromorph/brute/play_necro_sound(audio_type, volume, vary, extra_range)
 	playsound(src, pick(GLOB.brute_sounds[audio_type]), volume, vary, extra_range)
 
@@ -143,6 +142,7 @@
 	biomass_spent_required = 950
 	melee_damage_lower = 28
 	melee_damage_upper = 32
+	armour_penetration = 20
 	necro_armor = /datum/armor/dsnecro_brute
 
 	actions = list(
@@ -163,8 +163,8 @@
 /datum/armor/dsnecro_brute
 	melee = 55
 	bullet = 80
-	laser = 0
-	energy = 0
+	laser = 15
+	energy = 15
 	bomb = 45
 	bio = 50
 	fire = 10
@@ -240,7 +240,7 @@
 	if(. == BULLET_ACT_HIT)
 		if(isliving(target))
 			var/mob/living/M = target
-			M.adjust_timed_status_effect(30 SECONDS, /datum/status_effect/bioacid, 180 SECONDS)
+			M.adjust_timed_status_effect(30 SECONDS, /datum/status_effect/bioacid/enhanced, 180 SECONDS)
 
 #undef CURL_ANIMATION_TIME
 #undef CURL_FORCED_DURATION

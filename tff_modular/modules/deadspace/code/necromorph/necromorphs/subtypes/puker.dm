@@ -4,7 +4,7 @@
 	class = /datum/necro_class/puker
 	necro_species = /datum/species/necromorph/puker
 	necro_armor = /datum/armor/dsnecro_puker
-	tutorial_text = "<b>Poison:</b> your projectiles as well as vomit can damage mechs badly. All of your ranged attacks put a <b>temporary</b> poison on your opponent. Stacks <b>can not be maintained forever</b>, for maximum benefit you must wait for the effect to end: <b>6 seconds</b> for Snapshot and <b>9 seconds</b> for Longshot."
+	tutorial_text = "<b>Poison:</b> Your vomit leaves puddles that effectively slow enemy advancement and eat through their armor. All of your ranged attacks put a <b>temporary</b> poison on your opponent. Stacks <b>can not be maintained forever</b>, for maximum benefit you must wait for the effect to end: <b>6 seconds</b> for Snapshot and <b>9 seconds</b> for Longshot."
 
 /mob/living/carbon/human/necromorph/puker/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
@@ -41,8 +41,8 @@
 /datum/armor/dsnecro_puker
 	melee = 50
 	bullet = 50
-	laser = 0
-	energy = 0
+	laser = 15
+	energy = 15
 	bomb = 5
 	bio = 75
 	fire = 10

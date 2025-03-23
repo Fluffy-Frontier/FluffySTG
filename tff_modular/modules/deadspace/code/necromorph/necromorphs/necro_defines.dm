@@ -83,6 +83,7 @@
 
 	var/tutorial_text = ""
 
+	var/previous_owner = null
 
 /datum/reagent/blood/necromorph
 	name = "X"
@@ -109,6 +110,7 @@
 	default_priority = 50
 
 	icon_state = "xeno"
+	secret = TRUE
 
 ///Checks if the necro is enhanced, and if so do a different interaction in the ability.
 ///Can be used in pretty much anything to do special stuff without needing new procs, sky is the limit.

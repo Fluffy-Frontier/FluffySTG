@@ -55,8 +55,8 @@
 /datum/armor/dsnecro_e_exploder
 	melee = 40
 	bullet = 40
-	laser = 0
-	energy = 0
+	laser = 15
+	energy = 15
 	bomb = 10
 	bio = 70
 	fire = 25

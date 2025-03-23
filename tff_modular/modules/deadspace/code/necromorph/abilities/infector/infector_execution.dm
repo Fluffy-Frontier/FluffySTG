@@ -139,7 +139,7 @@
 		//Okay now lets check the victim's health. We know they still have a head
 		var/obj/item/bodypart/head/heady = host.victim.get_bodypart(BODY_ZONE_HEAD)
 		var/total_damage = heady.brute_dam + heady.burn_dam
-		if (total_damage > heady.max_damage)
+		if (total_damage >= heady.max_damage)
 			done = TRUE
 			continue
 
@@ -147,7 +147,7 @@
 		host.victim.losebreath++
 
 		//Do the actual damage.
-		host.victim.attack_necromorph(host.user, zone_attacked = BODY_ZONE_HEAD, dealt_damage = 30)
+		host.victim.attack_necromorph(host.user, zone_attacked = BODY_ZONE_HEAD, dealt_damage = 30, sharpness = NONE)
 		host.user.play_necro_sound(SOUND_ATTACK, VOLUME_MID, TRUE, 3)
 
 		//The victim and their camera shake wildly as they struggle
