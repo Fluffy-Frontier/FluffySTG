@@ -70,12 +70,6 @@ GLOBAL_LIST_EMPTY(markers_signals)
 		return FALSE
 	name = "[pick(GLOB.ing_verbs)] [initial(name)] [rand(0, 999)]"
 
-/mob/eye/marker_signal/Logout()
-	if(!body)
-		ghostize()
-		. = ..()
-		qdel(src)
-
 /mob/eye/marker_signal/verb/show_tutorial()
 	set name = "Show Info"
 	set desc = "Display any information that you can use"
@@ -214,8 +208,7 @@ GLOBAL_LIST_EMPTY(markers_signals)
 	necro.controlling = src
 	//To prevent self attack when possesing through a double click
 	client.click_intercept_time = world.time + 1
-	//mind.transfer_to(necro, TRUE)
-	necro.ckey = ckey
+	mind.transfer_to(necro, TRUE)
 	abstract_move(null)
 	if(istype(src, /mob/eye/marker_signal/marker))
 		var/mob/eye/marker_signal/marker/mark = src

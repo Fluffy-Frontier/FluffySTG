@@ -27,10 +27,6 @@
 	if(previous_owner)
 		. += previous_owner
 
-/mob/living/carbon/human/necromorph/Logout()
-	controlling = null
-	. = ..()
-
 /mob/living/carbon/human/necromorph/mind_initialize()
 	. = ..()
 	var/datum/antagonist/necromorph/necromorph = mind.has_antag_datum(/datum/antagonist/necromorph)
