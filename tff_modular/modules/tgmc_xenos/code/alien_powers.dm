@@ -696,23 +696,61 @@
 
 
 // Способность дефендера становиться настоящей крепостью
-// /datum/action/cooldown/alien/fortify
-// 	name = "Fortify"
-// 	desc = "Plant yourself for a large defensive boost."
-// 	cooldown_time = 1 SECONDS
-// 	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
-// 	button_icon_state = "fortify"
+/datum/action/cooldown/alien/fortify
+	name = "Fortify"
+	desc = "Plant yourself for a large defensive boost."
+	cooldown_time = 2 SECONDS
+	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
+	button_icon_state = "fortify"
+	check_flags = AB_CHECK_CONSCIOUS | AB_CHECK_INCAPACITATED
 
-// 	var/is_fortify = FALSE
+	var/mob/living/carbon/alien/adult/tgmc/xeno_owner
+	var/datum/armor/fortify_armor_type = /datum/armor/fortify_armor
 
-// /datum/action/cooldown/alien/fortify/Activate(atom/target)
-// 	. = ..()
-// 	if(is_fortify)
-// 		set_fortify(FALSE)
+/datum/armor/fortify_armor
+	bomb = 30
+	bullet = 50
+	laser = 50
+	fire = 50
+	melee = 30
 
-// /datum/action/cooldown/alien/fortify/proc/set_fortify(on)
-// 	if(on)
-// 		ADD_TRAIT(xeno_owner, TRAIT_IMMOBILE, FORTIFY_TRAIT)
+/datum/action/cooldown/alien/fortify/Destroy()
+	set_fortify(FALSE)
+	return ..()
+
+/datum/action/cooldown/alien/fortify/Grant(mob/granted_to)
+	. = ..()
+	xeno_owner = owner
+
+/datum/action/cooldown/alien/fortify/Activate(atom/target)
+	. = ..()
+	if(xeno_owner.fortify)
+		set_fortify(FALSE)
+		return
+
+	set_fortify(TRUE)
+
+/datum/action/cooldown/alien/fortify/proc/set_fortify(on)
+	if(xeno_owner.fortify == on)
+		return
+	if(xeno_owner.body_position == LYING_DOWN)
+		xeno_owner.get_up(TRUE)
+
+	if(on)
+		ADD_TRAIT(xeno_owner, TRAIT_IMMOBILIZED, TRAIT_XENO_FORTIFY)
+		to_chat(xeno_owner, span_alertalien("We tuck ourselves into a defensive stance."))
+		xeno_owner.set_armor(xeno_owner.get_armor().add_other_armor(fortify_armor_type))
+	else
+		REMOVE_TRAIT(xeno_owner, TRAIT_IMMOBILIZED, TRAIT_XENO_FORTIFY)
+		to_chat(xeno_owner, span_alertalien("We resume our normal stance."))
+		xeno_owner.set_armor(xeno_owner.get_armor().subtract_other_armor(fortify_armor_type))
+
+	xeno_owner.anchored = on
+	xeno_owner.fortify = on
+	xeno_owner.resist_heavy_hits = on
+	playsound(xeno_owner, 'sound/effects/stonedoor_openclose.ogg', 30, TRUE)
+	xeno_owner.update_icons()
+
 
 #undef RAVAGER_OUTLINE_EFFECT
 #undef EVASION_VENTCRAWL_INABILTY_CD_PERCENTAGE

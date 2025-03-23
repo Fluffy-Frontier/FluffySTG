@@ -10,6 +10,7 @@
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 30
 	melee_damage_upper = 35
+	move_resist = MOVE_FORCE_STRONG
 
 	additional_organ_types_by_slot = list(
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/large/queen,
@@ -58,7 +59,7 @@
 	name = "Deafening Screech"
 	desc = "Let out a screech so deafeningly loud that anything with the ability to hear around you will likely be incapacitated for a short time."
 	button_icon_state = "screech"
-	cooldown_time = 5 MINUTES
+	cooldown_time = 3 MINUTES
 
 /datum/action/cooldown/alien/tgmc/queen_screech/Activate()
 	. = ..()

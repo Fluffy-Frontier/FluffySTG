@@ -10,6 +10,8 @@
 	maptext_width = 64
 	pressure_resistance = 200
 
+	armor_type = /datum/armor/tgmc_alien
+
 	bodyparts = list(
 		/obj/item/bodypart/chest/alien/tgmc,
 		/obj/item/bodypart/head/alien/tgmc,
@@ -54,15 +56,21 @@
 	var/melee_vehicle_damage
 	var/resist_heavy_hits = FALSE
 
+	// Включен ли в данный момент фортифай
+	var/fortify = FALSE
+
 /mob/living/carbon/alien/adult/tgmc/Initialize(mapload)
 	. = ..()
 	real_name = "alien [caste]"
 	pixel_x = -16
 
+	set_armor(armor_type)
+
 	if(next_evolution)
 		GRANT_ACTION(/datum/action/cooldown/alien/tgmc/generic_evolve)
 
 	ADD_TRAIT(src, TRAIT_XENO_HEAL_AURA, TRAIT_XENO_INNATE)
+	AddElement(/datum/element/resin_walker, /datum/movespeed_modifier/resin_speedup)
 	RegisterSignal(src, COMSIG_LIVING_UPDATED_RESTING, PROC_REF(on_rest))
 
 /mob/living/carbon/alien/adult/tgmc/Destroy()
@@ -90,7 +98,27 @@
 /mob/living/carbon/alien/adult/tgmc/UnarmedAttack(atom/attack_target, proximity_flag, list/modifiers)
 	if(body_position == LYING_DOWN) // Лежим - значит отдыхаем. Никакой войны во время отдыха
 		return FALSE
+	if(fortify)
+		return FALSE
 	return ..()
+
+/mob/living/carbon/alien/adult/tgmc/getarmor(def_zone, type)
+	return get_armor_rating(type)
+
+/datum/armor/tgmc_alien
+	acid = 0
+	bio = 0
+	bomb = 0
+	bullet = 0
+	consume = 0
+	energy = 0
+	laser = 0
+	fire = 0
+	melee = 0
+	wound = 0
+
+/datum/movespeed_modifier/resin_speedup
+	multiplicative_slowdown = -0.5
 
 /datum/movespeed_modifier/alien_quick
 	multiplicative_slowdown = -0.5
@@ -194,9 +222,17 @@
 	SIGNAL_HANDLER
 
 	if(resting)
-		add_movespeed_modifier(/datum/movespeed_modifier/alien_rest)
+		// add_movespeed_modifier(/datum/movespeed_modifier/alien_rest)
+		ADD_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
 	else
-		remove_movespeed_modifier(/datum/movespeed_modifier/alien_rest)
+		// remove_movespeed_modifier(/datum/movespeed_modifier/alien_rest)
+		REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
+
+/mob/living/carbon/alien/adult/tgmc/set_resting(new_resting, silent = TRUE, instant = FALSE)
+	if(fortify)
+		balloon_alert(src, "Cannot while fortified")
+		return FALSE
+	return ..()
 
 /datum/movespeed_modifier/alien_rest
 	multiplicative_slowdown = 5
