@@ -25,6 +25,7 @@ GLOBAL_LIST_EMPTY(markers_signals)
 	var/obj/structure/marker/marker
 	//CSS class used by this signal in the chat
 	var/necrochat_class = "blob"
+	var/body = null
 
 /mob/eye/marker_signal/Initialize(mapload, obj/structure/marker/master)
 	abilities = list()
@@ -70,8 +71,10 @@ GLOBAL_LIST_EMPTY(markers_signals)
 	name = "[pick(GLOB.ing_verbs)] [initial(name)] [rand(0, 999)]"
 
 /mob/eye/marker_signal/Logout()
-	. = ..()
-	qdel(src)
+	if(!body)
+		ghostize()
+		. = ..()
+		qdel(src)
 
 /mob/eye/marker_signal/verb/show_tutorial()
 	set name = "Show Info"
@@ -207,10 +210,12 @@ GLOBAL_LIST_EMPTY(markers_signals)
 		return
 
 	marker.hive_mind_message(marker, "[name] possessed [initial(necro.name)][istype(src, /mob/eye/marker_signal/marker) ? " and released Master signal's role" : ""]!")
+	body = necro
 	necro.controlling = src
 	//To prevent self attack when possesing through a double click
 	client.click_intercept_time = world.time + 1
-	mind.transfer_to(necro, TRUE)
+	//mind.transfer_to(necro, TRUE)
+	necro.ckey = ckey
 	abstract_move(null)
 	if(istype(src, /mob/eye/marker_signal/marker))
 		var/mob/eye/marker_signal/marker/mark = src
@@ -291,7 +296,7 @@ GLOBAL_LIST_EMPTY(markers_signals)
 	for(var/mob/eye/marker_signal/signal as anything in marker.marker_signals)
 		if(signal == src)
 			continue
-		signals += "[SIG_EYEJMPLNK(signal, src)] [signal.name]"
+		signals += "[SIG_EYEJMPLNK(src, signal)] [signal.name]"
 
 	if(!length(signals))
 		to_chat(src, span_notice("You are all alone..."))

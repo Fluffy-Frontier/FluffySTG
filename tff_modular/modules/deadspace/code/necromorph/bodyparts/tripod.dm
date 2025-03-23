@@ -1,8 +1,8 @@
 /obj/item/bodypart/chest/necromorph/tripod
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_TRIPOD
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/tripod/tripod.dmi'
-	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/tripod/tripod.dmi'
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/tripod.dmi'
+	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/tripod.dmi'
 	icon_state = "tripod_chest"
 	max_damage = 400
 	px_x = 0
@@ -14,8 +14,8 @@
 /obj/item/bodypart/head/necromorph/tripod
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_TRIPOD
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/tripod/tripod.dmi'
-	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/tripod/tripod.dmi'
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/tripod.dmi'
+	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/tripod.dmi'
 	icon_state = "tripod_head"
 	max_damage = 100
 	px_x = 0
@@ -27,8 +27,8 @@
 /obj/item/bodypart/arm/left/necromorph/tripod
 	name = "left arm"
 	limb_id = SPECIES_NECROMORPH_TRIPOD
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/tripod/tripod.dmi'
-	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/tripod/tripod.dmi'
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/tripod.dmi'
+	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/tripod.dmi'
 	icon_state = "tripod_l_arm"
 	attack_verb_continuous = list("slashes", "stabs")
 	attack_verb_simple = list("slash", "stab")
@@ -42,8 +42,8 @@
 /obj/item/bodypart/arm/right/necromorph/tripod
 	name = "right arm"
 	limb_id = SPECIES_NECROMORPH_TRIPOD
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/tripod/tripod.dmi'
-	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/tripod/tripod.dmi'
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/tripod.dmi'
+	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/tripod.dmi'
 	icon_state = "tripod_r_arm"
 	attack_verb_continuous = list("slashes", "stabs")
 	attack_verb_simple = list("slash", "stab")
@@ -57,8 +57,8 @@
 /obj/item/bodypart/leg/left/necromorph/tripod
 	name = "left leg"
 	limb_id = SPECIES_NECROMORPH_TRIPOD
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/tripod/tripod.dmi'
-	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/tripod/tripod.dmi'
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/tripod.dmi'
+	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/tripod.dmi'
 	icon_state = "tripod_l_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
@@ -80,8 +80,8 @@
 /obj/item/bodypart/leg/right/necromorph/tripod
 	name = "right leg"
 	limb_id = SPECIES_NECROMORPH_TRIPOD
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/tripod/tripod.dmi'
-	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/tripod/tripod.dmi'
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/tripod.dmi'
+	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/tripod.dmi'
 	icon_state = "tripod_r_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")

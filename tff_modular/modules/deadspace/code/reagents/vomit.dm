@@ -1,13 +1,21 @@
 /obj/effect/decal/cleanable/vomit/necro
 	name = "necro vomit"
 	decal_reagent = /datum/reagent/toxin/necro_vomit
+	icon_state = "vomit_1-old"
+	random_icon_states = list("vomit_1-old", "vomit_2-old", "vomit_3-old", "vomit_4-old")
 	var/safepasses = 2
+	var/deletion_time = 15 SECONDS
+
+/obj/effect/decal/cleanable/vomit/necro/Initialize(mapload, list/datum/disease/diseases)
+	. = ..()
+	QDEL_IN(src, deletion_time)
 
 /obj/effect/decal/cleanable/vomit/necro/on_entered(datum/source, atom/movable/arrived, atom/old_loc, list/atom/old_locs)
 	if(iscarbon(arrived) && !isnecromorph(arrived))
 		var/mob/living/carbon/human = arrived
 		human.reagents.add_reagent(decal_reagent, 2)
 		safepasses--
+		new /obj/effect/thing_acid(get_turf(src))
 		if(safepasses <= 0 && !QDELETED(src))
 			qdel(src)
 

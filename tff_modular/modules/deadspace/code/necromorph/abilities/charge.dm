@@ -52,30 +52,6 @@
 	PLAY_SHAKING_ANIMATION(user, 7, 5, shake_dir, initial_x, initial_y, initial_transform)
 	PLAY_SHAKING_ANIMATION(user, 10, 6, shake_dir, initial_x, initial_y, initial_transform)
 	return ..()
-/*
-/datum/action/cooldown/mob_cooldown/charge/necro/proc/do_charge()
-	var/mob/living/carbon/human/necromorph/charger = owner
-
-	actively_moving = FALSE
-	charger.charging = TRUE
-	RegisterSignal(charger, COMSIG_MOVABLE_BUMP, PROC_REF(on_bump))
-	RegisterSignal(charger, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(on_move))
-	RegisterSignal(charger, COMSIG_MOVABLE_MOVED, PROC_REF(on_moved))
-	charger.setDir(get_dir(charger, target_atom))
-	do_charge_indicator(target_atom)
-
-	var/datum/move_loop/new_loop = GLOB.move_manager.move_towards(charger, target_atom, priority = MOVEMENT_ABOVE_SPACE_PRIORITY)
-	if(!new_loop)
-		UnregisterSignal(charger, list(COMSIG_MOVABLE_BUMP, COMSIG_MOVABLE_PRE_MOVE, COMSIG_MOVABLE_MOVED))
-		return
-	RegisterSignal(new_loop, COMSIG_MOVELOOP_PREPROCESS_CHECK, PROC_REF(pre_move))
-	RegisterSignal(new_loop, COMSIG_MOVELOOP_POSTPROCESS, PROC_REF(post_move))
-	RegisterSignal(new_loop, COMSIG_MOVELOOP_STOP, PROC_REF(charge_end))
-	RegisterSignal(charger, COMSIG_MOB_STATCHANGE, PROC_REF(stat_changed))
-	RegisterSignal(charger, COMSIG_LIVING_UPDATED_RESTING, PROC_REF(update_resting))
-
-	SEND_SIGNAL(charger, COMSIG_STARTED_CHARGE)
-*/
 
 /datum/action/cooldown/mob_cooldown/charge/necro/do_charge_indicator(atom/charge_target)
 	return

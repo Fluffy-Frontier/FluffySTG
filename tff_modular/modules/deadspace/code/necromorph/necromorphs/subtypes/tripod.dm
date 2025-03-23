@@ -4,6 +4,8 @@
 	class = /datum/necro_class/tripod
 	necro_species = /datum/species/necromorph/tripod
 	necro_armor = /datum/armor/dsnecro_tripod
+	bound_height = 96
+	bound_width = 96
 	pixel_x = -16
 	pixel_y = -18
 	base_pixel_x = -16

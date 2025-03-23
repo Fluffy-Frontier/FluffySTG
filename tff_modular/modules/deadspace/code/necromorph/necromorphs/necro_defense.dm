@@ -28,7 +28,7 @@
 	user.play_necro_sound(SOUND_ATTACK, VOLUME_MID, 1, 3)
 	if(!zone_attacked)
 		zone_attacked = ran_zone(user.zone_selected)
-	var/armor_block = run_armor_check(zone_attacked, MELEE)
+	var/armor_block = run_armor_check(zone_attacked, MELEE, armour_penetration = user.armour_penetration)
 	visible_message(span_danger("[user.name] attacked [src]!"), \
 	span_userdanger("[user.name] attacked you!"), span_hear("You hear a attacked of the flesh!"), COMBAT_MESSAGE_RANGE, user)
 	to_chat(user, span_danger("You attacked [src]!"))
@@ -60,7 +60,7 @@
 	if(!zone_attacked)
 		zone_attacked = ran_zone(user.zone_selected, 80)
 	zone_attacked = get_bodypart(zone_attacked)
-	var/armor_block = run_armor_check(zone_attacked, MELEE)
+	var/armor_block = run_armor_check(zone_attacked, MELEE, armour_penetration = user.armour_penetration)
 	playsound(loc, 'sound/items/weapons/slice.ogg', 25, TRUE, -1)
 	visible_message(span_danger("[user.name] attacked [src]!"), \
 	span_userdanger("[user.name] attacked you!"), span_hear("You hear a attacked of the flesh!"), COMBAT_MESSAGE_RANGE, user)

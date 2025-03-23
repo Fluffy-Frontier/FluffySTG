@@ -65,7 +65,7 @@
 		to_chat(ghost, "[FOLLOW_LINK(ghost, sender)] [message]", MESSAGE_TYPE_RADIO)
 
 	for(var/mob/eye/marker_signal/signal as anything in marker_signals)
-		to_chat(signal, "[SIG_EYEJMPLNK(signal, sender)] [message]", MESSAGE_TYPE_RADIO)
+		to_chat(signal, "[SIG_EYEJMPLNK(sender, signal)] [message]", MESSAGE_TYPE_RADIO)
 
 	for(var/mob/living/carbon/human/necromorph/necro as anything in necromorphs)
 		to_chat(necro, message, MESSAGE_TYPE_RADIO)

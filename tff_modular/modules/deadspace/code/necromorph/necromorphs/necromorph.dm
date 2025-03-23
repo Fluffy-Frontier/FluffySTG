@@ -28,7 +28,6 @@
 		. += previous_owner
 
 /mob/living/carbon/human/necromorph/Logout()
-
 	controlling = null
 	. = ..()
 
@@ -84,8 +83,9 @@
 	marker?.remove_necro(src)
 	if(controlling)
 		controlling.forceMove(loc)
+		controlling.body = null
 		mind.transfer_to(controlling, TRUE)
-	. = ..()
+	return ..()
 
 /mob/living/carbon/human/necromorph/create_dna()
 	dna = new /datum/dna(src)

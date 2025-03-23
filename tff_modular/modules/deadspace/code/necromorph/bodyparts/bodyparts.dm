@@ -57,6 +57,10 @@
 	else if(brute_dam >= max_damage * DROPLIMB_THRESHOLD_DESTROY)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
+/obj/item/bodypart/head/necromorph/dismember(dam_type, silent, wounding_type)
+	owner.set_confusion_if_lower(5 SECONDS)
+	return ..()
+
 /obj/item/bodypart/arm/left/necromorph
 	name = "left arm"
 	bodytype = BODYTYPE_NECROMORPH|BODYTYPE_ORGANIC

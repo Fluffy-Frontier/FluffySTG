@@ -140,7 +140,7 @@
 		return
 
 	L.Knockdown(knockdown_time)
-	L.apply_damage(damage, BRUTE, owner.zone_selected)
+	L.attack_necromorph(owner, dealt_damage = damage, zone_attacked = owner.zone_selected)
 	playsound(L, hitsound, VOLUME_MID, TRUE)
 	return TRUE
 
