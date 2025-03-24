@@ -30,14 +30,10 @@
 	maxHealth = 90
 
 /mob/living/basic/spider/giant/nurse/Initialize(mapload)
+	..()
 	AddComponent(/datum/component/healing_touch,\
 		heal_brute = 17.5,\
 		heal_burn = 17.5,\
-		heal_time = 2 SECONDS,\
-		interaction_key = DOAFTER_SOURCE_SPIDER,\
-		valid_targets_typecache = typecacheof(list(/mob/living/basic/spider/giant)),\
-		action_text = "%SOURCE% begins wrapping the wounds of %TARGET%.",\
-		complete_text = "%SOURCE% wraps the wounds of %TARGET%.",\
 	)
 
 /mob/living/basic/spider/giant/tangle
