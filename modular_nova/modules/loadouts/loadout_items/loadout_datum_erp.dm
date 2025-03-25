@@ -1,4 +1,4 @@
-/datum/loadout_category/erp
+/* /datum/loadout_category/erp
 	category_name = "Erotic"
 	category_ui_icon = FA_ICON_HEART
 	erp_category = TRUE
@@ -270,3 +270,4 @@
 /datum/loadout_item/erp/incubus_draft
 	name = "Incubus Draft Bottle"
 	item_path = /obj/item/reagent_containers/cup/bottle/incubus_draft
+ */
