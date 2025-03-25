@@ -1,3 +1,4 @@
+// FLUFFY FRONTIER EDIT START -  REMOVAL
 /* /datum/loadout_category/erp
 	category_name = "Erotic"
 	category_ui_icon = FA_ICON_HEART
@@ -270,4 +271,4 @@
 /datum/loadout_item/erp/incubus_draft
 	name = "Incubus Draft Bottle"
 	item_path = /obj/item/reagent_containers/cup/bottle/incubus_draft
- */
+ */ // FLUFFY FRONTIER EDIT END
