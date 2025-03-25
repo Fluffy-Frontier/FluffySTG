@@ -246,7 +246,7 @@ export const sendAct = (action: string, payload: object = {}) => {
     return;
   }
 
-  let MAX_PACKET_SIZE = 200;
+  let MAX_PACKET_SIZE = 300;
   let stringified_payload = JSON.stringify(payload);
   if(stringified_payload.length > MAX_PACKET_SIZE) {
     let chunks: string[] = [];

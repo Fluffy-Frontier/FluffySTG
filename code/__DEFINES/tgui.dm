@@ -23,7 +23,7 @@
 #define TGUI_WINDOW_LOADING 1
 /// Window is free and ready to receive data
 #define TGUI_WINDOW_READY 2
-/// 20 chunks 1024 chars each (+ some info)
+/// 20 chunks 300 chars each (+ some info)
 #define MAX_MESSAGE_CHUNKS 20
 
 /// Get a window id based on the provided pool index
