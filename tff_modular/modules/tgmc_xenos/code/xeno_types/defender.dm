@@ -13,7 +13,7 @@
 	next_evolution = /mob/living/carbon/alien/adult/tgmc/crusher
 
 	additional_organ_types_by_slot = list(
-		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/small,
+		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc/small,
 	)
 
 	melee_vehicle_damage = 30

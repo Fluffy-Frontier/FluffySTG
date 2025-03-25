@@ -61,12 +61,6 @@
 			var/heal_amt = heal_rate
 			if(!isalien(owner))
 				heal_amt *= 0.2
-			// FLUFFY FRONTIER ADDITION START - TGMC_XENOC
-			if(!owner.resting)
-				heal_amt *= 0.75
-			else
-				heal_amt *= 1.25
-			// FLUFFY FRONTIER ADDITION END
 			owner.adjustPlasma(0.5 * plasma_rate * delta_time_capped)
 			owner.adjustBruteLoss(-heal_amt * delta_time_capped)
 			owner.adjustFireLoss(-heal_amt * delta_time_capped)

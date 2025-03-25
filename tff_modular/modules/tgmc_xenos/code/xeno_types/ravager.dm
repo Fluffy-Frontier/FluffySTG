@@ -13,7 +13,7 @@
 	move_resist = MOVE_FORCE_STRONG
 
 	additional_organ_types_by_slot = list(
-		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel
+		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc
 	)
 
 	melee_vehicle_damage = 35

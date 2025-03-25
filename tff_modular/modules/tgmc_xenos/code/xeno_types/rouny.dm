@@ -15,7 +15,7 @@
 	on_fire_pixel_y = 0
 
 	additional_organ_types_by_slot = list(
-		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/small/tiny,
+		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc/small/tiny,
 	)
 
 	hud_offset_y = -32

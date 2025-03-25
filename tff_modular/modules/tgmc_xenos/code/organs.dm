@@ -1,5 +1,73 @@
 /// TGMC_XENOS (old nova sector xenos)
 
+// Сосуды плазмы
+/obj/item/organ/alien/plasmavessel/tgmc
+	name = "plasma vessel"
+	icon_state = "plasma"
+	w_class = WEIGHT_CLASS_NORMAL
+	zone = BODY_ZONE_CHEST
+	slot = ORGAN_SLOT_XENO_PLASMAVESSEL
+	actions_types = list(
+		/datum/action/cooldown/alien/make_structure/plant_weeds,
+		/datum/action/cooldown/alien/transfer,
+	)
+
+	stored_plasma = 100
+	max_plasma = 250
+	heal_rate = 2.5
+	plasma_rate = 5
+
+	var/resting_mult = 2
+
+/obj/item/organ/alien/plasmavessel/tgmc/on_life(seconds_per_tick, times_fired)
+	var/delta_time = DELTA_WORLD_TIME(SSmobs)
+	//Instantly healing to max health in a single tick would be silly. If it takes 8 seconds to fire, then something's fucked.
+	var/delta_time_capped = min(delta_time, 8)
+	//If there are alien weeds on the ground then heal if needed or give some plasma
+	if(locate(/obj/structure/alien/weeds) in owner.loc)
+		if(owner.health >= owner.maxHealth)
+			owner.adjustPlasma(plasma_rate * delta_time)
+		else
+			var/heal_amt = heal_rate
+			if(!isalien(owner))
+				heal_amt *= 0.2
+			if(owner.resting)
+				heal_amt *= resting_mult
+
+			owner.adjustPlasma(0.5 * plasma_rate * delta_time_capped)
+			owner.adjustBruteLoss(-heal_amt * delta_time_capped)
+			owner.adjustFireLoss(-heal_amt * delta_time_capped)
+			owner.adjustOxyLoss(-heal_amt * delta_time_capped)
+	else
+		owner.adjustPlasma(0.1 * plasma_rate * delta_time)
+
+/obj/item/organ/alien/plasmavessel/tgmc/large
+	name = "large plasma vessel"
+	icon_state = "plasma_large"
+	w_class = WEIGHT_CLASS_BULKY
+	stored_plasma = 200
+	max_plasma = 500
+	plasma_rate = 7.5
+
+/obj/item/organ/alien/plasmavessel/tgmc/large/queen
+	plasma_rate = 10
+
+/obj/item/organ/alien/plasmavessel/tgmc/small
+	name = "small plasma vessel"
+	icon_state = "plasma_small"
+	w_class = WEIGHT_CLASS_SMALL
+	stored_plasma = 100
+	max_plasma = 150
+	plasma_rate = 2.5
+
+/obj/item/organ/alien/plasmavessel/tgmc/small/tiny
+	name = "tiny plasma vessel"
+	icon_state = "plasma_tiny"
+	w_class = WEIGHT_CLASS_TINY
+	max_plasma = 100
+	actions_types = list(/datum/action/cooldown/alien/transfer)
+
+
 // Яйцеклад королевы
 /obj/item/organ/alien/eggsac/tgmc
 	actions_types = list(/datum/action/cooldown/alien/make_structure/lay_egg/tgmc)
