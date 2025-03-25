@@ -101,7 +101,6 @@
 	flash_color(mod.wearer, flash_color = "#FF0000", flash_time = 10 SECONDS)
 	set_off = FALSE
 
-/* FLUFFY FRONTIER REFACTOR: BAR JUKEBOX (#5115)
 ///Rave Visor - Gives you a rainbow visor and plays jukebox music to you.
 /obj/item/mod/module/visor/rave
 	name = "MOD rave visor module"
@@ -136,8 +135,8 @@
 	return ..()
 
 /obj/item/mod/module/visor/rave/on_activation()
-	rave_screen = mod.wearer.add_client_colour(/datum/client_colour/rave)
-	rave_screen.update_colour(rainbow_order[rave_number])
+	rave_screen = mod.wearer.add_client_colour(/datum/client_colour/rave, REF(src))
+	rave_screen.update_color(rainbow_order[rave_number])
 	music_player.start_music(mod.wearer)
 
 /obj/item/mod/module/visor/rave/on_deactivation(display_message = TRUE, deleting = FALSE)
@@ -162,7 +161,7 @@
 	if(rave_number > length(rainbow_order))
 		rave_number = 1
 	mod.wearer.update_clothing(mod.slot_flags)
-	rave_screen.update_colour(rainbow_order[rave_number])
+	rave_screen.update_color(rainbow_order[rave_number])
 
 /obj/item/mod/module/visor/rave/get_configuration()
 	. = ..()
@@ -180,7 +179,6 @@
 				return
 
 			music_player.selection = new_song
-*/ // FLUFFY FRONTIER REFACTOR END
 
 ///Tanner - Tans you with spraytan.
 /obj/item/mod/module/tanner
