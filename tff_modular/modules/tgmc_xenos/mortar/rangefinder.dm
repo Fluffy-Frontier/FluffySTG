@@ -14,7 +14,7 @@
 
 /obj/item/binoculars/rangefinder/examine(mob/user)
 	. = ..()
-	. += span_notice(span_bold("The rangefinder reads: LONGITUDE [last_x], LATITUDE [last_y]."))
+	. += span_boldnotice("The rangefinder reads: LONGITUDE [last_x], LATITUDE [last_y].")
 
 /obj/item/binoculars/rangefinder/on_wield(obj/item/source, mob/user)
 	. = ..()
@@ -56,7 +56,7 @@
 	var/turf/TU = get_turf(A)
 	last_x = obfuscate_x(TU.x)
 	last_y = obfuscate_y(TU.y)
-	to_chat(user, span_notice("COORDINATES: LONGITUDE [last_x]. LATITUDE [last_y]."))
+	to_chat(user, span_boldnotice("COORDINATES: LONGITUDE [last_x]. LATITUDE [last_y]."))
 	if(debug)
 		var/turf/current_turf = get_turf(src)
 		to_chat(user, span_notice("([deobfuscate_x(last_x)]:[deobfuscate_y(last_y)])	{([current_turf.x]:[current_turf.y])"))
