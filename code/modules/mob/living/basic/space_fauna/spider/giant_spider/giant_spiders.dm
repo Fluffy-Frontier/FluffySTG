@@ -182,9 +182,10 @@
 	var/datum/atom_hud/datahud = GLOB.huds[health_hud]
 	datahud.show_to(src)
 
+	//THE FLUFFY FRONTIER CHANGES: Heal_brute and Heal_burn. ORIGINAL: 10
 	AddComponent(/datum/component/healing_touch,\
-		heal_brute = 10,\
-		heal_burn = 10,\
+		heal_brute = 17.5,\
+		heal_burn = 17.5,\
 		heal_time = 2.5 SECONDS,\
 		interaction_key = DOAFTER_SOURCE_SPIDER,\
 		valid_targets_typecache = typecacheof(list(/mob/living/basic/spider/giant)),\

@@ -29,13 +29,6 @@
 	health = 90
 	maxHealth = 90
 
-/mob/living/basic/spider/giant/nurse/Initialize(mapload)
-	..()
-	AddComponent(/datum/component/healing_touch,\
-		heal_brute = 17.5,\
-		heal_burn = 17.5,\
-	)
-
 /mob/living/basic/spider/giant/tangle
 	health = 200
 	maxHealth = 200
