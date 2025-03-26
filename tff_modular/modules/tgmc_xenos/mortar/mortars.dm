@@ -193,7 +193,7 @@
 			span_userdanger("YOU HEAR SOMETHING VERY CLOSE COMING DOWN <u>[relative_dir ? uppertext(("TO YOUR " + dir2text(relative_dir))) : uppertext("right above you")]</u>!"), MSG_AUDIBLE \
 		)
 	sleep(2.5 SECONDS)
-	shell.alpha(0)
+	shell.alpha = 0
 	shell.forceMove(target)
 	shell.detonate(target)
 	firing = FALSE
