@@ -134,7 +134,7 @@
 			target_turf = deviation_turf
 
 		user.visible_message(span_notice("[user] starts loading \a [mortar_shell.name] into [src]."), span_notice("You start loading \a [mortar_shell.name] into [src]."))
-		playsound(loc, 'tff_modular/modules/tgmc_xenos/mortar/sound/gun_mortar_reload.ogg', 50, 1)
+		playsound(loc, 'tff_modular/modules/tgmc_xenos/mortar/sound/gun_mortar_reload.ogg', 75, 1)
 		busy = TRUE
 		var/success = do_after(user, 1.5 SECONDS, src)
 		busy = FALSE
@@ -142,7 +142,7 @@
 			user.visible_message(span_notice("[user] loads \a [mortar_shell.name] into [src]."), span_notice("You load \a [mortar_shell.name] into [src]."))
 			visible_message("[icon2html(src, viewers(src))] [span_danger("The [name] fires!")]")
 			user.transferItemToLoc(mortar_shell, src)
-			playsound(loc, 'tff_modular/modules/tgmc_xenos/mortar/sound/gun_mortar_fire.ogg', 50, 1)
+			playsound(loc, 'tff_modular/modules/tgmc_xenos/mortar/sound/gun_mortar_fire.ogg', 125, 1)
 			busy = FALSE
 			firing = TRUE
 			flick(icon_state + "_fire", src)
@@ -166,12 +166,11 @@
 		if(do_after(user, 4 SECONDS, src))
 			user.visible_message(span_notice("[user] undeploys [src]."), span_notice("You undeploy [src]."))
 			playsound(loc, 'sound/items/Deconstruct.ogg', 25, 1)
-			var/obj/item/mortar_kit/mortar = new /obj/item/mortar_kit(loc)
-			mortar.name = src.name
+			new /obj/item/mortar_kit(loc)
 			qdel(src)
 
 /obj/structure/mortar/proc/handle_shell(turf/target, obj/item/mortar_shell/shell)
-	playsound(target, 'tff_modular/modules/tgmc_xenos/mortar/sound/gun_mortar_travel.ogg', 50, 1)
+	playsound(target, 'tff_modular/modules/tgmc_xenos/mortar/sound/gun_mortar_travel.ogg', 75, 1)
 	var/relative_dir
 	for(var/mob/mob in range(15, target))
 		if(get_turf(mob) == target)
@@ -182,7 +181,7 @@
 			span_danger("A SHELL IS COMING DOWN <u>[relative_dir ? uppertext(("TO YOUR " + dir2text(relative_dir))) : uppertext("right above you")]</u>!"), MSG_VISUAL, \
 			span_danger("YOU HEAR SOMETHING COMING DOWN <u>[relative_dir ? uppertext(("TO YOUR " + dir2text(relative_dir))) : uppertext("right above you")]</u>!"), MSG_AUDIBLE \
 		)
-	sleep(2.5 SECONDS)
+	sleep(2 SECONDS)
 
 	for(var/mob/mob in range(10, target))
 		if(get_turf(mob) == target)
@@ -193,11 +192,9 @@
 			span_userdanger("A SHELL IS ABOUT TO IMPACT <u>[relative_dir ? uppertext(("TO YOUR " + dir2text(relative_dir))) : uppertext("right above you")]</u>!"), MSG_VISUAL, \
 			span_userdanger("YOU HEAR SOMETHING VERY CLOSE COMING DOWN <u>[relative_dir ? uppertext(("TO YOUR " + dir2text(relative_dir))) : uppertext("right above you")]</u>!"), MSG_AUDIBLE \
 		)
-	sleep(2 SECONDS)
+	sleep(2.5 SECONDS)
 	shell.detonate(target)
-	qdel(shell)
 	firing = FALSE
-
 
 /obj/structure/mortar/proc/can_fire_at(mob/user, test_targ_x = targ_x, test_targ_y = targ_y, test_dial_x, test_dial_y)
 	var/dialing = test_dial_x || test_dial_y
@@ -241,7 +238,6 @@
 		var/obj/structure/mortar/mortar = new /obj/structure/mortar(deploy_turf)
 		user.visible_message(span_notice("[user] deploys [src]."), span_notice("You deploy [src]."))
 		playsound(deploy_turf, 'tff_modular/modules/tgmc_xenos/mortar/sound/gun_mortar_unpack.ogg', 25, 1)
-		mortar.name = src.name
 		mortar.setDir(user.dir)
 		qdel(src)
 
@@ -256,12 +252,10 @@
 	new /obj/item/mortar_kit(src)
 	new /obj/item/mortar_shell/he(src)
 	new /obj/item/mortar_shell/he(src)
-	new /obj/item/mortar_shell/he(src)
-	new /obj/item/mortar_shell/he(src)
 	new /obj/item/mortar_shell/frag(src)
 	new /obj/item/mortar_shell/frag(src)
-	new /obj/item/mortar_shell/frag(src)
-	new /obj/item/mortar_shell/frag(src)
+	new /obj/item/mortar_shell/incendiary(src)
+	new /obj/item/mortar_shell/incendiary(src)
 	new /obj/item/binoculars/rangefinder(src)
 	new /obj/item/binoculars/rangefinder(src)
 
@@ -269,18 +263,32 @@
 	name = "\improper M402 mortar ammo crate"
 	desc = "A crate containing live mortar shells with various payloads. DO NOT DROP. KEEP AWAY FROM FIRE SOURCES."
 
-/obj/structure/closet/crate/secure/weapon/mortar_kit/PopulateContents()
+/obj/structure/closet/crate/secure/weapon/mortar_ammo/PopulateContents()
 	. = ..()
 	new /obj/item/mortar_shell/he(src)
 	new /obj/item/mortar_shell/he(src)
 	new /obj/item/mortar_shell/he(src)
 	new /obj/item/mortar_shell/he(src)
-	new /obj/item/mortar_shell/he(src)
-	new /obj/item/mortar_shell/he(src)
 	new /obj/item/mortar_shell/frag(src)
 	new /obj/item/mortar_shell/frag(src)
 	new /obj/item/mortar_shell/frag(src)
 	new /obj/item/mortar_shell/frag(src)
-	new /obj/item/mortar_shell/frag(src)
-	new /obj/item/mortar_shell/frag(src)
+	new /obj/item/mortar_shell/incendiary(src)
+	new /obj/item/mortar_shell/incendiary(src)
+	new /obj/item/mortar_shell/incendiary(src)
+	new /obj/item/mortar_shell/incendiary(src)
 
+/obj/structure/closet/crate/secure/weapon/mortar_special_ammo
+	name = "\improper M402 mortar special ammo crate"
+	desc = "A crate containing live mortar shells with various payloads. DO NOT DROP. KEEP AWAY FROM FIRE SOURCES."
+
+/obj/structure/closet/crate/secure/weapon/mmortar_special_ammo/PopulateContents()
+	. = ..()
+	new /obj/item/mortar_shell/smoke(src)
+	new /obj/item/mortar_shell/smoke(src)
+	new /obj/item/mortar_shell/smoke(src)
+	new /obj/item/mortar_shell/smoke(src)
+	new /obj/item/mortar_shell/flashbang(src)
+	new /obj/item/mortar_shell/flashbang(src)
+	new /obj/item/mortar_shell/flashbang(src)
+	new /obj/item/mortar_shell/flashbang(src)

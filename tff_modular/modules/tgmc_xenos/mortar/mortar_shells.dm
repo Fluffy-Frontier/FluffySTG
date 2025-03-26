@@ -26,7 +26,14 @@
 	icon_state = "mortar_ammo_he"
 
 /obj/item/mortar_shell/he/explosion_effect(turf/T)
-	explosion(T, 0, 3, 5, 7, explosion_cause = sender)
+	explosion(T, 0, 0, 5, 7)
+
+
+/obj/item/mortar_shell/he/high
+	desc = "An 80mm mortar shell, loaded with a super high explosive charge."
+
+/obj/item/mortar_shell/he/high/explosion_effect(turf/T)
+	explosion(T, 0, 3, 5, 7)
 
 
 /obj/item/mortar_shell/frag
@@ -42,21 +49,53 @@
 
 /obj/item/mortar_shell/frag/explosion_effect(turf/T)
 	AddComponent(/datum/component/pellet_cloud, projectile_type = shrapnel_type, magnitude = shrapnel_radius)
-	sleep(2)
-	explosion(T, 0, 1, 3, 4, explosion_cause = sender)
+	sleep(4)
+	explosion(T, 0, 0, 5, 2)
 
 
-// /obj/item/mortar_shell/incendiary
-// 	name = "\improper 80mm incendiary mortar shell"
-// 	desc = "An 80mm mortar shell, loaded with a Type B napalm charge. Perfect for long-range area denial."
-// 	icon_state = "mortar_ammo_inc"
-// 	var/radius = 5
-// 	var/flame_level = BURN_TIME_TIER_5 + 5 //Type B standard, 50 base + 5 from chemfire code.
-// 	var/burn_level = BURN_LEVEL_TIER_2
-// 	var/flameshape = FLAMESHAPE_DEFAULT
-// 	var/fire_type = FIRE_VARIANT_TYPE_B //Armor Shredding Greenfire
+/obj/item/mortar_shell/incendiary
+	name = "\improper 80mm incendiary mortar shell"
+	desc = "An 80mm mortar shell, loaded with a Type B napalm charge. Perfect for long-range area denial."
+	icon_state = "mortar_ammo_inc"
+	var/range = 5
+	var/fire_type = /datum/effect_system/fluid_spread/smoke/fire
 
-// /obj/item/mortar_shell/incendiary/detonate(turf/T)
-// 	explosion(T, 0, 2, 4, 7, explosion_cause = sender)
-// 	flame_radius(cause_data, radius, T, flame_level, burn_level, flameshape, null, fire_type)
-// 	playsound(T, 'tff_modular/modules/tgmc_xenos/mortar/sound/gun_flamethrower2.ogg', 35, 1, 4)
+/obj/item/mortar_shell/incendiary/explosion_effect(turf/T)
+	explosion(T, 0, 0, 4, 2)
+	var/datum/effect_system/fluid_spread/smoke/fire/smoke = new fire_type(T)
+	smoke.set_up(range, holder = T, location = T)
+	smoke.start()
+	playsound(T, 'tff_modular/modules/tgmc_xenos/mortar/sound/gun_flamethrower2.ogg', 35, 1, 4)
+
+
+/obj/item/mortar_shell/flashbang
+	name = "\improper 80mm flashbang mortar shell"
+	desc = "An 80mm mortar shell, loaded with a large clasterbang grenade."
+	icon_state = "mortar_ammo_flashbang"
+
+	var/range = 4
+
+/obj/item/mortar_shell/flashbang/explosion_effect(turf/T)
+	explosion(T, 0, 0, 1, 0)
+	var/obj/item/grenade/clusterbuster/flashbang = new /obj/item/grenade/clusterbuster/mortar(T)
+	sleep(0.5 SECONDS)
+	flashbang.detonate(sender)
+
+/obj/item/grenade/clusterbuster/mortar
+	min_spawned = 6
+	max_spawned = 12
+
+
+/obj/item/mortar_shell/smoke
+	name = "\improper 80mm smoke mortar shell"
+	desc = "An 80mm mortar shell, loaded with smoke dispersal agents. Can be fired at marines more-or-less safely. Way slimmer than your typical 80mm."
+	icon_state = "mortar_ammo_smoke"
+
+	var/range = 5
+
+/obj/item/mortar_shell/smoke/explosion_effect(turf/T)
+	explosion(T, 0, 0, 1, 0)
+	playsound(src, 'sound/effects/smoke.ogg', 50, TRUE, -3)
+	var/datum/effect_system/fluid_spread/smoke/bad/smoke = new(T)
+	smoke.set_up(range, holder = src, location = src)
+	smoke.start()
