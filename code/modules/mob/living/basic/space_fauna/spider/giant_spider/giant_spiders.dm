@@ -181,8 +181,19 @@
 	. = ..()
 	var/datum/atom_hud/datahud = GLOB.huds[health_hud]
 	datahud.show_to(src)
-
-	//THE FLUFFY FRONTIER CHANGES: Heal_brute and Heal_burn. ORIGINAL: 10
+	// // FLUFFY FRONTIER EDIT START: SPIDERS NURSE HEALING ABILITY BUFF.
+	// ORIGINAL LINES:
+		/*
+	AddComponent(/datum/component/healing_touch,\
+		heal_brute = 10,\
+		heal_burn = 10,\
+		heal_time = 2.5 SECONDS,\
+		interaction_key = DOAFTER_SOURCE_SPIDER,\
+		valid_targets_typecache = typecacheof(list(/mob/living/basic/spider/giant)),\
+		action_text = "%SOURCE% begins wrapping the wounds of %TARGET%.",\
+		complete_text = "%SOURCE% wraps the wounds of %TARGET%.",\
+	)
+		*/
 	AddComponent(/datum/component/healing_touch,\
 		heal_brute = 17.5,\
 		heal_burn = 17.5,\
@@ -192,7 +203,7 @@
 		action_text = "%SOURCE% begins wrapping the wounds of %TARGET%.",\
 		complete_text = "%SOURCE% wraps the wounds of %TARGET%.",\
 	)
-
+	// // FLUFFY FRONTIER EDIT END
 	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/average_web)
 
 /**
@@ -234,7 +245,9 @@
 	. = ..()
 
 	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/average_web)
-
+	// // FLUFFY FRONTIER EDIT START: SPIDERS TANGLE SELF-HEALING ABILITY BUFF.
+	// ORIGINAL LINES:
+/*
 	AddComponent(/datum/component/healing_touch,\
 		heal_brute = 15,\
 		heal_burn = 15,\
@@ -246,7 +259,19 @@
 		action_text = "%SOURCE% begins mending themselves...",\
 		complete_text = "%SOURCE%'s wounds mend together.",\
 	)
-
+*/
+	AddComponent(/datum/component/healing_touch,\
+		heal_brute = 50,\
+		heal_burn = 50,\
+		heal_time = 6 SECONDS,\
+		self_targeting = HEALING_TOUCH_SELF_ONLY,\
+		interaction_key = DOAFTER_SOURCE_SPIDER,\
+		valid_targets_typecache = typecacheof(list(/mob/living/basic/spider/growing/young/tangle, /mob/living/basic/spider/giant/tangle)),\
+		extra_checks = CALLBACK(src, PROC_REF(can_mend)),\
+		action_text = "%SOURCE% begins mending themselves...",\
+		complete_text = "%SOURCE%'s wounds mend together.",\
+	)
+	//// // FLUFFY FRONTIER EDIT END.
 /// Prevent you from healing other tangle spiders, or healing when on fire
 /mob/living/basic/spider/giant/tangle/proc/can_mend(mob/living/source, mob/living/target)
 	if (on_fire)

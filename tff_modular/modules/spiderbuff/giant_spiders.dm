@@ -37,21 +37,6 @@
 	player_speed_modifier = -4
 	poison_type = /datum/reagent/toxin/chloralhydrate
 
-/mob/living/basic/spider/giant/tangle/Initialize(mapload)
-	. = ..()
-
-	AddComponent(/datum/component/healing_touch,\
-		heal_brute = 50,\
-		heal_burn = 50,\
-		heal_time = 6 SECONDS,\
-		self_targeting = HEALING_TOUCH_SELF_ONLY,\
-		interaction_key = DOAFTER_SOURCE_SPIDER,\
-		valid_targets_typecache = typecacheof(list(/mob/living/basic/spider/growing/young/tangle, /mob/living/basic/spider/giant/tangle)),\
-		extra_checks = CALLBACK(src, PROC_REF(can_mend)),\
-		action_text = "%SOURCE% begins mending themselves...",\
-		complete_text = "%SOURCE%'s wounds mend together.",\
-	)
-
 /mob/living/basic/spider/giant/tank
 	melee_damage_lower = 15
 	melee_damage_upper = 20
