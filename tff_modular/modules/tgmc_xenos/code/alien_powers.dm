@@ -543,10 +543,15 @@
 	var/throw_mecha = TRUE
 
 	var/crush_walls = TRUE
+	var/crush_reinforced_walls = TRUE
 
 /datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/do_charge_indicator(atom/charger, atom/charge_target)
 	. = ..()
 	playsound(charger, 'tff_modular/modules/tgmc_xenos/sound/alien_roar1.ogg', 100, TRUE, 8, 0.9)
+
+/datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/on_moved(atom/source)
+	SIGNAL_HANDLER
+	playsound(source, 'sound/effects/meteorimpact.ogg', 100, TRUE, 2, TRUE)
 
 /datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/hit_target(atom/movable/source, atom/target, damage_dealt)
 	var/mob/living/carbon/alien/adult/tgmc/charger = owner
@@ -597,7 +602,7 @@
 			var/obj/machinery/door/airlock/target_airlock = target
 			damage = ceil(target_airlock.normal_integrity / 3)
 		else if(istype(target, /obj/structure/window))
-			damage = 70
+			damage = 1000 // Нужно сломать за 1 раз
 
 		target_obj.take_damage(damage, BRUTE)
 		if(QDELETED(target_obj))
@@ -630,11 +635,13 @@
 	// Столокновение с турфами
 	if(isturf(target))
 		if(crush_walls)
-			if(!isclosedturf(target) || isindestructiblewall(target) || istype(target, /turf/closed/wall/r_wall))
+			if(!isclosedturf(target) || isindestructiblewall(target))
+				return
+			if(!crush_reinforced_walls && istype(target, /turf/closed/wall/r_wall))
 				return
 
 			target.AddComponent(/datum/component/torn_wall)
-			if(!QDELETED(target))
+			if(!QDELETED(target) && !istype(target, /turf/closed/wall/r_wall))
 				target.AddComponent(/datum/component/torn_wall)
 
 			if(QDELETED(target))
