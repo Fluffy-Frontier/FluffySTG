@@ -13,6 +13,8 @@
 	var/burning = FALSE
 
 /obj/item/mortar_shell/proc/detonate(turf/T)
+	if(isnull(T))
+		T = get_turf(src)
 	explosion_effect(T)
 	qdel(src)
 
@@ -78,8 +80,7 @@
 /obj/item/mortar_shell/flashbang/explosion_effect(turf/T)
 	explosion(T, 0, 0, 1, 0)
 	var/obj/item/grenade/clusterbuster/flashbang = new /obj/item/grenade/clusterbuster/mortar(T)
-	sleep(0.5 SECONDS)
-	flashbang.detonate(sender)
+	flashbang.arm_grenade(sender, 1 SECONDS)
 
 /obj/item/grenade/clusterbuster/mortar
 	min_spawned = 6
@@ -95,7 +96,7 @@
 
 /obj/item/mortar_shell/smoke/explosion_effect(turf/T)
 	explosion(T, 0, 0, 1, 0)
-	playsound(src, 'sound/effects/smoke.ogg', 50, TRUE, -3)
 	var/datum/effect_system/fluid_spread/smoke/bad/smoke = new(T)
-	smoke.set_up(range, holder = src, location = src)
+	smoke.set_up(range, holder = T, location = T)
 	smoke.start()
+	playsound(src, 'sound/effects/smoke.ogg', 50, TRUE, -3)

@@ -134,7 +134,7 @@
 			target_turf = deviation_turf
 
 		user.visible_message(span_notice("[user] starts loading \a [mortar_shell.name] into [src]."), span_notice("You start loading \a [mortar_shell.name] into [src]."))
-		playsound(loc, 'tff_modular/modules/tgmc_xenos/mortar/sound/gun_mortar_reload.ogg', 75, 1)
+		playsound(loc, 'tff_modular/modules/tgmc_xenos/mortar/sound/gun_mortar_reload.ogg', 100, 1)
 		busy = TRUE
 		var/success = do_after(user, 1.5 SECONDS, src)
 		busy = FALSE
@@ -142,7 +142,7 @@
 			user.visible_message(span_notice("[user] loads \a [mortar_shell.name] into [src]."), span_notice("You load \a [mortar_shell.name] into [src]."))
 			visible_message("[icon2html(src, viewers(src))] [span_danger("The [name] fires!")]")
 			user.transferItemToLoc(mortar_shell, src)
-			playsound(loc, 'tff_modular/modules/tgmc_xenos/mortar/sound/gun_mortar_fire.ogg', 125, 1)
+			playsound(loc, 'tff_modular/modules/tgmc_xenos/mortar/sound/gun_mortar_fire.ogg', 200, 1)
 			busy = FALSE
 			firing = TRUE
 			flick(icon_state + "_fire", src)
@@ -170,7 +170,7 @@
 			qdel(src)
 
 /obj/structure/mortar/proc/handle_shell(turf/target, obj/item/mortar_shell/shell)
-	playsound(target, 'tff_modular/modules/tgmc_xenos/mortar/sound/gun_mortar_travel.ogg', 75, 1)
+	playsound(target, 'tff_modular/modules/tgmc_xenos/mortar/sound/gun_mortar_travel.ogg', 125, 1)
 	var/relative_dir
 	for(var/mob/mob in range(15, target))
 		if(get_turf(mob) == target)
@@ -193,6 +193,8 @@
 			span_userdanger("YOU HEAR SOMETHING VERY CLOSE COMING DOWN <u>[relative_dir ? uppertext(("TO YOUR " + dir2text(relative_dir))) : uppertext("right above you")]</u>!"), MSG_AUDIBLE \
 		)
 	sleep(2.5 SECONDS)
+	shell.alpha(0)
+	shell.forceMove(target)
 	shell.detonate(target)
 	firing = FALSE
 
@@ -282,7 +284,7 @@
 	name = "\improper M402 mortar special ammo crate"
 	desc = "A crate containing live mortar shells with various payloads. DO NOT DROP. KEEP AWAY FROM FIRE SOURCES."
 
-/obj/structure/closet/crate/secure/weapon/mmortar_special_ammo/PopulateContents()
+/obj/structure/closet/crate/secure/weapon/mortar_special_ammo/PopulateContents()
 	. = ..()
 	new /obj/item/mortar_shell/smoke(src)
 	new /obj/item/mortar_shell/smoke(src)
