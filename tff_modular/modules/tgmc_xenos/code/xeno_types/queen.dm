@@ -82,12 +82,12 @@
 		if(distance_to_target <= 4)
 			to_chat(src, span_danger("An ear-splitting guttural roar shakes the ground beneath your feet!"))
 			if(istype(screech_target.loc, /obj/vehicle/sealed/mecha))
-				screech_target.AdjustStun(40)
+				screech_target.AdjustStun(60)
 			else
-				screech_target.AdjustKnockdown(40)
+				screech_target.AdjustKnockdown(60, 60)
 		else if(distance_to_target >= 5 && distance_to_target < 7)
 			to_chat(src, span_danger("The roar shakes your body to the core, freezing you in place!"))
-			screech_target.AdjustStun(20)
+			screech_target.AdjustStun(30)
 
 	return TRUE
 

@@ -538,7 +538,7 @@
 	var/sharpness = FALSE
 
 	var/obj_damage = 50
-	var/mecha_damage = 50
+	var/mecha_damage = 75
 	var/mecha_occupants_stun_time = 5 SECONDS
 	var/throw_mecha = TRUE
 
@@ -667,7 +667,7 @@
 	charge_distance = 7
 	charge_past = 3
 	destroy_objects = FALSE
-	charge_damage = 40
+	charge_damage = 25
 	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
 	button_icon_state = "ravager_charge"
 	unset_after_click = TRUE
