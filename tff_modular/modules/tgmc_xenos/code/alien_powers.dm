@@ -715,11 +715,11 @@
 	var/datum/armor/fortify_armor_type = /datum/armor/fortify_armor
 
 /datum/armor/fortify_armor
-	bomb = 30
-	bullet = 50
-	laser = 50
-	fire = 50
-	melee = 30
+	bomb = 40
+	bullet = 75
+	laser = 75
+	fire = 75
+	melee = 50
 
 /datum/action/cooldown/alien/fortify/Destroy()
 	set_fortify(FALSE)
@@ -740,8 +740,8 @@
 /datum/action/cooldown/alien/fortify/proc/set_fortify(on)
 	if(xeno_owner.fortify == on)
 		return
-	if(xeno_owner.body_position == LYING_DOWN)
-		xeno_owner.get_up(TRUE)
+	if(on && xeno_owner.body_position == LYING_DOWN)
+		xeno_owner.set_resting(FALSE, instant = TRUE)
 
 	if(on)
 		ADD_TRAIT(xeno_owner, TRAIT_IMMOBILIZED, TRAIT_XENO_FORTIFY)

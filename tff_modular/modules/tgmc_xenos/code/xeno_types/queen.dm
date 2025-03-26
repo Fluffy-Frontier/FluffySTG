@@ -4,8 +4,8 @@
 	name = "alien queen"
 	desc = "A hulking beast of an alien, for some reason this one seems more important than the others, you should probably quit staring at it and do something."
 	caste = "queen"
-	maxHealth = 500
-	health = 500
+	maxHealth = 750
+	health = 750
 	icon_state = "alienqueen"
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 30
