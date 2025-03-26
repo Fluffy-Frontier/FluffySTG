@@ -182,8 +182,7 @@
 	var/datum/atom_hud/datahud = GLOB.huds[health_hud]
 	datahud.show_to(src)
 	// // FLUFFY FRONTIER EDIT START: SPIDERS NURSE HEALING ABILITY BUFF.
-	// ORIGINAL LINES:
-		/*
+	/* ORIGINAL:
 	AddComponent(/datum/component/healing_touch,\
 		heal_brute = 10,\
 		heal_burn = 10,\
@@ -193,7 +192,7 @@
 		action_text = "%SOURCE% begins wrapping the wounds of %TARGET%.",\
 		complete_text = "%SOURCE% wraps the wounds of %TARGET%.",\
 	)
-		*/
+	*/
 	AddComponent(/datum/component/healing_touch,\
 		heal_brute = 17.5,\
 		heal_burn = 17.5,\
@@ -246,8 +245,7 @@
 
 	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/average_web)
 	// // FLUFFY FRONTIER EDIT START: SPIDERS TANGLE SELF-HEALING ABILITY BUFF.
-	// ORIGINAL LINES:
-/*
+	/*	ORIGINAL:
 	AddComponent(/datum/component/healing_touch,\
 		heal_brute = 15,\
 		heal_burn = 15,\
@@ -259,7 +257,7 @@
 		action_text = "%SOURCE% begins mending themselves...",\
 		complete_text = "%SOURCE%'s wounds mend together.",\
 	)
-*/
+	*/
 	AddComponent(/datum/component/healing_touch,\
 		heal_brute = 50,\
 		heal_burn = 50,\
