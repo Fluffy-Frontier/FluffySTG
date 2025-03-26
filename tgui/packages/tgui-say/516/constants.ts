@@ -39,3 +39,27 @@ export const RADIO_PREFIXES = {
   ':l ': 'SolFed',
   // NOVA EDIT ADDITION END
 } as const;
+
+// TFF EDIT ADDITION START
+export const RUS_PREFIXES = {
+  ':ф ': ':a ',
+  ':и ': ':b ',
+  ':с ': ':c ',
+  ':у ': ':e ',
+  ':п ': ':g ',
+  ':ь ': ':m ',
+  ':т ': ':n ',
+  ':щ ': ':o ',
+  ':з ': ':p ',
+  ':ы ': ':s ',
+  ':е ': ':t ',
+  ':г ': ':u ',
+  ':м ': ':v ',
+  ':н ': ':y ',
+  ':ц ': ':w ',
+  ':л ': ':k ',
+  ':й ': ':q ',
+  ':ш ': ':i ',
+  ':д ': ':l ',
+} as const;
+// TFF EDIT ADDITION END

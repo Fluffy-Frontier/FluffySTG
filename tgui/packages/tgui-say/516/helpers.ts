@@ -1,5 +1,5 @@
 import { Channel } from '../ChannelIterator';
-import { RADIO_PREFIXES, WindowSize } from './constants';
+import { RADIO_PREFIXES, RUS_PREFIXES, WindowSize } from './constants'; // TFF EDIT
 
 /**
  * Once byond signals this via keystroke, it
@@ -45,7 +45,7 @@ function setWindowVisibility(visible: boolean): void {
   });
 }
 
-const CHANNEL_REGEX = /^[:.]\w\s/;
+const CHANNEL_REGEX = /^[:.][A-z0-9ЁёА-я]\s/; // TFF. ORIGINAL - /^[:.]\w\s/
 
 /** Tests for a channel prefix, returning it or none */
 export function getPrefix(
@@ -55,14 +55,18 @@ export function getPrefix(
     return;
   }
 
-  let adjusted = value
-    .slice(0, 3)
-    ?.toLowerCase()
-    ?.replace('.', ':') as keyof typeof RADIO_PREFIXES;
+  // TFF EDIT START. ORIGINAL:
+  /* let adjusted = value
+  .slice(0, 3)
+  ?.toLowerCase()
+  ?.replace('.', ':') as keyof typeof RADIO_PREFIXES;*/
 
+  let adjusted = value.slice(0)?.toLowerCase().replace('.', ':');
+  adjusted = RUS_PREFIXES[adjusted] ?? adjusted;
+  // TFF EDIT END
   if (!RADIO_PREFIXES[adjusted]) {
     return;
   }
 
-  return adjusted;
+  return adjusted as keyof typeof RADIO_PREFIXES; // TFF EDIT. ORIGINAL - return adjusted
 }

@@ -143,7 +143,7 @@ export function TguiSay() {
   function handleInput(event: FormEvent<HTMLTextAreaElement>): void {
     const iterator = channelIterator.current;
     let newValue = event.currentTarget.value;
-
+    console.log(event.currentTarget.value);
     let newPrefix = getPrefix(newValue) || currentPrefix;
     // Handles switching prefixes
     if (newPrefix && newPrefix !== currentPrefix) {
