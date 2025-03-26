@@ -550,7 +550,6 @@
 	playsound(charger, 'tff_modular/modules/tgmc_xenos/sound/alien_roar1.ogg', 100, TRUE, 8, 0.9)
 
 /datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/on_moved(atom/source)
-	SIGNAL_HANDLER
 	playsound(source, 'sound/effects/meteorimpact.ogg', 100, TRUE, 2, TRUE)
 
 /datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/hit_target(atom/movable/source, atom/target, damage_dealt)
