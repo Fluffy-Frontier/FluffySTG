@@ -521,10 +521,10 @@
 
 // Чардж крашера
 /datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge
-	name = "Charge Attack"
+	name = "Charge Attack (125)"
 	desc = "Allows you to charge at a position, trampling anything in your path."
 	check_flags = AB_CHECK_CONSCIOUS | AB_CHECK_INCAPACITATED | AB_CHECK_LYING
-	cooldown_time = 15 SECONDS
+	cooldown_time = 2 SECONDS
 	charge_delay = 0.3 SECONDS
 	charge_distance = 7
 	destroy_objects = FALSE
@@ -545,12 +545,31 @@
 	var/crush_walls = TRUE
 	var/crush_reinforced_walls = TRUE
 
+	var/plasma_cost = 125
+
+/datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/Activate(atom/target_atom)
+	var/mob/living/carbon/carbon_owner = owner
+	carbon_owner.adjustPlasma(-plasma_cost)
+	return ..()
+
+/datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/IsAvailable(feedback)
+	. = ..()
+	if(!.)
+		return FALSE
+	if(!istgmcalien(owner))
+		return FALSE
+	var/mob/living/carbon/carbon_owner = owner
+	if(carbon_owner.getPlasma() < plasma_cost)
+		return FALSE
+
+	return TRUE
+
 /datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/do_charge_indicator(atom/charger, atom/charge_target)
 	. = ..()
-	playsound(charger, 'tff_modular/modules/tgmc_xenos/sound/alien_roar1.ogg', 100, TRUE, 8, 0.9)
+	playsound(charger, 'tff_modular/modules/tgmc_xenos/sound/alien_roar1.ogg', 75, TRUE, 8, 0.9)
 
 /datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/on_moved(atom/source)
-	playsound(source, 'sound/effects/meteorimpact.ogg', 100, TRUE, 2, TRUE)
+	playsound(source, 'tff_modular/modules/tgmc_xenos/sound/alien_footstep_charge1.ogg', 100, TRUE, 2, TRUE)
 
 /datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/hit_target(atom/movable/source, atom/target, damage_dealt)
 	var/mob/living/carbon/alien/adult/tgmc/charger = owner
@@ -599,7 +618,7 @@
 			damage = mecha_damage
 		else if(istype(target, /obj/machinery/door/airlock))
 			var/obj/machinery/door/airlock/target_airlock = target
-			damage = ceil(target_airlock.normal_integrity / 3)
+			damage = ceil(target_airlock.normal_integrity / 2)
 		else if(istype(target, /obj/structure/window))
 			damage = 1000 // Нужно сломать за 1 раз
 
@@ -627,6 +646,7 @@
 		if(target_obj.anchored)
 			charger.visible_message(span_danger("[charger] rams into [target] and skids to a halt!"), span_alertalien("We ram into [target] and skid to a halt!"))
 			do_stop()
+			return
 
 		charger.visible_message("[span_warning("[charger] knocks [target] aside.")]!", span_alertalien("We knock [target] aside."))
 		return
