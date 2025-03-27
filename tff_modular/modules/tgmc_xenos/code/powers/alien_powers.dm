@@ -656,51 +656,6 @@
 	GLOB.move_manager.stop_looping(owner)
 
 
-// Тройной чардж равагера
-/datum/action/cooldown/mob_cooldown/charge/triple_charge/ravager
-	name = "Triple Charge Attack"
-	desc = "Allows you to charge thrice at a location, trampling any in your path."
-	check_flags = AB_CHECK_CONSCIOUS | AB_CHECK_INCAPACITATED | AB_CHECK_LYING
-	cooldown_time = 30 SECONDS
-	charge_delay = 0.3 SECONDS
-	charge_distance = 7
-	charge_past = 3
-	destroy_objects = FALSE
-	charge_damage = 25
-	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
-	button_icon_state = "ravager_charge"
-	unset_after_click = TRUE
-
-	// Количество урона по меху при ударе
-	var/vehicle_damage = 30
-	// Острый ли удар при столкновении
-	var/impact_sharpness = TRUE
-
-/datum/action/cooldown/mob_cooldown/charge/triple_charge/ravager/Activate(atom/target_atom)
-	. = ..()
-	return TRUE
-
-/datum/action/cooldown/mob_cooldown/charge/triple_charge/ravager/do_charge_indicator(atom/charger, atom/charge_target)
-	playsound(charger, 'tff_modular/modules/tgmc_xenos/sound/alien_roar2.ogg', 100, TRUE, 8, 0.9)
-
-/datum/action/cooldown/mob_cooldown/charge/triple_charge/ravager/can_hit_target(atom/movable/source, atom/target)
-	return isliving(target) || ismecha(target)
-
-/datum/action/cooldown/mob_cooldown/charge/triple_charge/ravager/hit_target(atom/movable/source, atom/target, damage_dealt)
-	if(isliving(target))
-		var/mob/living/victim = target
-		victim.visible_message(span_danger("[source] slams into [target]!"), span_userdanger("[source] tramples you into the ground!"))
-		victim.apply_damage(charge_damage, BRUTE, sharpness = impact_sharpness)
-	else if(ismecha(target))
-		GLOB.move_manager.stop_looping(source)
-		var/obj/vehicle/sealed/mecha/victim = target
-		source.visible_message(span_danger("[source] smashes into [target]!"), span_danger("You smashes into [target]!"))
-		victim.take_damage(vehicle_damage, BRUTE)
-	playsound(get_turf(target), 'sound/effects/meteorimpact.ogg', 100, TRUE)
-	shake_camera(target, 4, 3)
-	shake_camera(source, 2, 3)
-
-
 // Способность дефендера становиться настоящей крепостью
 /datum/action/cooldown/alien/fortify
 	name = "Fortify"

@@ -23,7 +23,6 @@
 	var/static/list/innate_actions = list(
 		/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/slicing,
 		/datum/action/cooldown/alien/tgmc/literally_too_angry_to_die,
-		/datum/action/cooldown/mob_cooldown/charge/triple_charge/ravager,
 	)
 	grant_actions_by_list(innate_actions)
 
