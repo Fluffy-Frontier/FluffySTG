@@ -15,6 +15,9 @@
 	light_color = LIGHT_COLOR_FIRE
 
 /obj/effect/particle_effect/fluid/smoke/fire/Initialize(mapload, datum/fluid_group/group, ...)
+	if(isspaceturf(get_turf(src)))
+		qdel(src)
+		return
 	. = ..()
 	RegisterSignal(loc, COMSIG_ATOM_ENTERED, PROC_REF(movable_entered))
 	addtimer(CALLBACK(src, PROC_REF(lower_fire)), lifetime / 3)

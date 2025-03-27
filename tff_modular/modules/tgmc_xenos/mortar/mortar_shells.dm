@@ -19,7 +19,7 @@
 	qdel(src)
 
 /obj/item/mortar_shell/proc/explosion_effect(turf/T)
-	forceMove(T)
+	return
 
 
 /obj/item/mortar_shell/he
@@ -43,16 +43,29 @@
 	desc = "An 80mm mortar shell, loaded with a fragmentation charge."
 	icon_state = "mortar_ammo_frag"
 
-	// dealing with creating a [/datum/component/pellet_cloud] on detonate
-	/// if set, will spew out projectiles of this type
-	var/shrapnel_type = /obj/item/shrapnel
-	/// the higher this number, the more projectiles are created as shrapnel
-	var/shrapnel_radius = 20
+	var/obj/item/grenade/grenade_type = /obj/item/grenade/mortar_thing
 
 /obj/item/mortar_shell/frag/explosion_effect(turf/T)
-	AddComponent(/datum/component/pellet_cloud, projectile_type = shrapnel_type, magnitude = shrapnel_radius)
-	sleep(4)
 	explosion(T, 0, 0, 5, 2)
+	sleep(4)
+	var/obj/item/grenade/grenade = new grenade_type(T)
+	grenade.detonate(sender)
+
+/obj/item/grenade/mortar_thing
+	name = "ERROR"
+	desc = "You should not have to see this. Tell your nearest maintainer about it!"
+
+	shrapnel_type = /obj/projectile/bullet/shrapnel/mortar
+	shrapnel_radius = 4
+
+/obj/item/grenade/mortar_thing/detonate(mob/living/lanced_by)
+	. = ..()
+	qdel(src)
+
+/obj/projectile/bullet/shrapnel/mortar
+	damage = 25
+	ricochet_chance = 20
+	wound_bonus = 50
 
 
 /obj/item/mortar_shell/incendiary
@@ -76,10 +89,11 @@
 	icon_state = "mortar_ammo_flashbang"
 
 	var/range = 4
+	var/grenade_type = /obj/item/grenade/clusterbuster/mortar
 
 /obj/item/mortar_shell/flashbang/explosion_effect(turf/T)
 	explosion(T, 0, 0, 1, 0)
-	var/obj/item/grenade/clusterbuster/flashbang = new /obj/item/grenade/clusterbuster/mortar(T)
+	var/obj/item/grenade/flashbang = new grenade_type(T)
 	flashbang.arm_grenade(sender, 1 SECONDS)
 
 /obj/item/grenade/clusterbuster/mortar
