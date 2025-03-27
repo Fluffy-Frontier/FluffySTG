@@ -10,7 +10,9 @@
  code\modules\mob\living\carbon\human\human_defense.dm: `/mob/living/carbon/human/attack_alien`
  TO:
  tff_modular\modules\tgmc_xenos\code\defense\human_defense.dm
-- Hi!!! Hello!!!
+- OVERRIDE: code\game\objects\structures\aliens.dm: `/obj/structure/alien/weeds/should_atmos_process`
+ IN:
+ tff_modular\modules\tgmc_xenos\code\structures\alien_structures.dm
 
 Additions:
 
@@ -41,4 +43,5 @@ IN: code/__HELPERS/~ff_helpers/is_helpers.dm
 ## Credits
 
 TGMC & CM - Where the sprites, sound, and ideas for caste abilities came from
+
 Original developer of these xenos (apparently it's @Paxilmaniac) - Porting the xenos from TGMC and adopting their stuff to work with our code
