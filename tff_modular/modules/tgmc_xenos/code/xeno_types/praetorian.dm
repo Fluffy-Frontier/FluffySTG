@@ -10,7 +10,6 @@
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 25
 	melee_damage_upper = 30
-	move_resist = MOVE_FORCE_STRONG
 	next_evolution = /mob/living/carbon/alien/adult/tgmc/queen
 
 	additional_organ_types_by_slot = list(

@@ -10,7 +10,6 @@
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 30
 	melee_damage_upper = 35
-	move_resist = MOVE_FORCE_STRONG
 
 	additional_organ_types_by_slot = list(
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc/large/queen,
@@ -81,10 +80,7 @@
 		var/distance_to_target = get_dist(queenie, screech_target)
 		if(distance_to_target <= 4)
 			to_chat(src, span_danger("An ear-splitting guttural roar shakes the ground beneath your feet!"))
-			if(istype(screech_target.loc, /obj/vehicle/sealed/mecha))
-				screech_target.AdjustStun(60)
-			else
-				screech_target.AdjustKnockdown(60, 60)
+			screech_target.AdjustParalyzed(60)
 		else if(distance_to_target >= 5 && distance_to_target < 7)
 			to_chat(src, span_danger("The roar shakes your body to the core, freezing you in place!"))
 			screech_target.AdjustStun(30)

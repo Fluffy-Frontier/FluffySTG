@@ -4,7 +4,7 @@
 /datum/element/resin_walker
 	element_flags = ELEMENT_BESPOKE
 	argument_hash_start_idx = 2
-	/// Move speed modifier to apply when not stood on webs
+
 	var/datum/movespeed_modifier/on_resin_modifier
 
 /datum/element/resin_walker/Attach(datum/target, datum/movespeed_modifier/on_resin_modifier)
@@ -19,7 +19,6 @@
 	. = ..()
 	UnregisterSignal(source, COMSIG_MOVABLE_MOVED)
 
-/// When we move, check if we're still on a web
 /datum/element/resin_walker/proc/on_moved(mob/living/source)
 	SIGNAL_HANDLER
 

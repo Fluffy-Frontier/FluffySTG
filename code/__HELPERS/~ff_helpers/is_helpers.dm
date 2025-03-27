@@ -9,7 +9,7 @@
 
 #define istgmcalienravager(A) (istype(A, /mob/living/carbon/alien/adult/tgmc/ravager))
 
-#define istgmcaliencrusher(A) (istype(A, /mob/living/carbon/alien/adult/tgmc/warrior))
+#define istgmcaliencrusher(A) (istype(A, /mob/living/carbon/alien/adult/tgmc/crusher))
 
 #define istgmcalienspitter(A) (istype(A, /mob/living/carbon/alien/adult/tgmc/spitter))
 

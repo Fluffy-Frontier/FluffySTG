@@ -26,6 +26,18 @@ IN: code/__DEFINES/~ff_defines/_globalvars/traits/declarations.dm
 - TRAIT_XENO_HEAL_AURA
 - TRAIT_XENO_FORTIFY
 
+## Helpers
+
+IN: code/__HELPERS/~ff_helpers/is_helpers.dm
+
+- istgmcalien
+- istgmcalienqueen
+- istgmcalienpraetorian
+- istgmcalienravager
+- istgmcaliencrusher
+- istgmcalienspitter
+- istgmcalientier2
+
 ## Credits
 
 TGMC & CM - Where the sprites, sound, and ideas for caste abilities came from
