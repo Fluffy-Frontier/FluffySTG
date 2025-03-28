@@ -78,15 +78,15 @@
 		if(premium[item] < MINIMUM_CLOTHING_STOCK && allow_increase(item))
 			premium[item] = MINIMUM_CLOTHING_STOCK
 
-	QDEL_NULL(products_nova)
-	QDEL_NULL(product_categories_nova)
-	QDEL_NULL(premium_nova)
-	QDEL_NULL(contraband_nova)
+	products_nova?.Cut()
+	product_categories_nova?.Cut()
+	premium_nova?.Cut()
+	contraband_nova?.Cut()
 	// FLUFFY FRONTIER EDIT START
-	QDEL_NULL(products_ff)
-	QDEL_NULL(product_categories_ff)
-	QDEL_NULL(premium_ff)
-	QDEL_NULL(contraband_ff)
+	products_ff?.Cut()
+	product_categories_ff?.Cut()
+	premium_ff?.Cut()
+	contraband_ff?.Cut()
 	// FLUFFY FRONTIER EDIT END
 	return ..()
 
