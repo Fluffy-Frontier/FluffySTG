@@ -37,8 +37,9 @@ $_channel_map: (
   'Whis': hsl(238, 55%, 67%),
   'Do': hsl(137, 64%, 60%),
   // NOVA EDIT ADDITION END
-  // TFF EDIT - Eventmaker
+  // TFF EDIT ADDITION START- Eventmaker
   'Event': hsl(92, 80%, 37%),
+  // TFF EDIT ADDITION END
 );
 
 $channel_keys: map.keys($_channel_map) !default;

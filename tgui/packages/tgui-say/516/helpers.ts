@@ -45,7 +45,7 @@ function setWindowVisibility(visible: boolean): void {
   });
 }
 
-const CHANNEL_REGEX = /^[:.][A-z0-9ЁёА-я]\s/; // TFF. ORIGINAL - /^[:.]\w\s/
+const CHANNEL_REGEX = /^[:.][A-z0-9ЁёА-я]\s/; // TFF EDIT. ORIGINAL - /^[:.]\w\s/
 
 /** Tests for a channel prefix, returning it or none */
 export function getPrefix(
@@ -59,8 +59,8 @@ export function getPrefix(
   /* let adjusted = value
   .slice(0, 3)
   ?.toLowerCase()
-  ?.replace('.', ':') as keyof typeof RADIO_PREFIXES;*/
-
+  ?.replace('.', ':') as keyof typeof RADIO_PREFIXES;
+  */
   let adjusted = value.slice(0)?.toLowerCase().replace('.', ':');
   adjusted = RUS_PREFIXES[adjusted] ?? adjusted;
   // TFF EDIT END
