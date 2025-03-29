@@ -26,7 +26,7 @@
 
 /mob/living/carbon/human/necromorph/fodder/play_necro_sound(audio_type, volume, vary, extra_range)
 	playsound(src, pick(GLOB.slasher_sounds[audio_type]), volume, vary, extra_range)
-*/
+
 /datum/necro_class/fodder
 	display_name = "fodder"
 	desc = "A small ambush and flanking necromorph. Used as scouts and spies, these little monsters can easily hide under objects and scurry into vents. Fares very poorly against armored targets. Will be AI controlled when not being used by a signal."
@@ -40,7 +40,7 @@
 	necro_armor = /datum/armor/dsnecro_fodder
 	actions = list(
 	)
-/*
+
 /datum/species/necromorph/fodder
 	name = "Fodder"
 	id = SPECIES_NECROMORPH_FODDER
