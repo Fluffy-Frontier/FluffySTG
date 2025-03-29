@@ -20,7 +20,7 @@
 	var/melee_damage_lower = 10
 	var/melee_damage_upper = 10
 
-	var/armour_penetration = 10
+	var/armour_penetration = 20
 
 	///see_in_dark value while consicious
 	var/conscious_see_in_dark = 8

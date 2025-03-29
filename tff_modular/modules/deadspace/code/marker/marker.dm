@@ -33,6 +33,10 @@
 	QDEL_NULL(soundloop)
 	return ..()
 
+/obj/structure/marker/emp_act(severity)
+	. = ..()
+	activate()
+
 /obj/structure/marker/update_icon_state()
 	icon_state = (active ? "marker_giant_active_anim" : "marker_giant_dormant")
 	return ..()

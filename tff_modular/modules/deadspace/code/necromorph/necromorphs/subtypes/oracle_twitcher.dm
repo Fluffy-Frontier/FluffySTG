@@ -22,6 +22,7 @@
 	biomass_spent_required = 1200
 	melee_damage_lower = 22
 	melee_damage_upper = 26
+	armour_penetration = 40
 	necro_armor = /datum/armor/dsnecro_e_twitcher
 	implemented = TRUE
 
@@ -36,6 +37,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/necromorph/twitcher/enhanced,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/necromorph/twitcher/enhanced,
 	)
+	mutanteyes = /obj/item/organ/eyes/necro/enhanced
 
 /datum/armor/dsnecro_e_twitcher
 	melee = 50

@@ -50,6 +50,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/necromorph/infector/enhanced,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/necromorph/infector/enhanced,
 	)
+	mutanteyes = /obj/item/organ/eyes/necro/enhanced
 
 /datum/species/necromorph/infector/enhanced/get_scream_sound(mob/living/carbon/human/necromorph/infector)
 	return pick(

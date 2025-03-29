@@ -30,6 +30,8 @@
 	//If not null, this overrides the range of the execution while active
 	var/range = null
 
+	var/matrix/default_transform = null //RETURN TO NULL
+
 /datum/execution_stage/New(var/datum/component/execution/host)
 	src.host = host
 	.=..()
@@ -39,7 +41,10 @@
 	.=..()
 
 /datum/execution_stage/proc/enter()
-	return TRUE
+	host.user.Immobilize(duration)
+	host.victim.Immobilize(duration)
+	if(do_after(host.user, duration))
+		return TRUE
 
 
 //Here, do safety checks to see if everything is in order for being able to advance to the next stage. Return true/false appropriately

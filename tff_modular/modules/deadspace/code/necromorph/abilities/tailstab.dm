@@ -5,7 +5,7 @@
 	cooldown_time = 10 SECONDS
 	swing_time = 0.7 SECONDS //ORIGINAL 1.2
 	move_time = 0.5 SECONDS
-	angle = 40
+	angle = 65
 	range = 1
 	visual_type = /obj/effect/temp_visual/swing/leaper
 	hitsound = 'sound/items/weapons/guillotine.ogg' //I really like the sound of this one
@@ -17,7 +17,7 @@
 	name = "Enhanced Tail Stab"
 	desc = "Stab your victim with your tails, this does more damage and has a wider angle then the usual tail stab."
 	cooldown_time = 9 SECONDS
-	angle = 55
+	angle = 80
 	visual_type = /obj/effect/temp_visual/swing/leaper/enhanced
 	damage = 50 //Same as enhanced leap
 	knockdown_time = 5 //In deciseconds. Very short knockdown, very dangerous to fight e-leapers alone

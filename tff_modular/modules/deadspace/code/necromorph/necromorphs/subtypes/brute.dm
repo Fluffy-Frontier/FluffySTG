@@ -142,7 +142,7 @@
 	biomass_spent_required = 950
 	melee_damage_lower = 28
 	melee_damage_upper = 32
-	armour_penetration = 20
+	armour_penetration = 40
 	necro_armor = /datum/armor/dsnecro_brute
 
 	actions = list(
@@ -183,6 +183,7 @@
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/necromorph/brute,
 	)
 	death_sound = 'tff_modular/modules/deadspace/sound/effects/creatures/necromorph/brute/brute_death.ogg'
+	mutanteyes = /obj/item/organ/eyes/necro/enhanced
 
 /datum/species/necromorph/brute/get_scream_sound(mob/living/carbon/human/necromorph/brute)
 	return pick(

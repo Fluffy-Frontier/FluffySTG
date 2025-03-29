@@ -20,6 +20,16 @@
 	px_y = -8
 	wound_resistance = 5
 
+/obj/item/bodypart/head/necromorph/infector/receive_damage(brute, burn, blocked, updating_health, forced, required_bodytype, wound_bonus, bare_wound_bonus, sharpness, attack_direction, damage_source, wound_clothing)
+	var/obj/item/organ/tongue/necro/proboscis/tongue = owner.get_organ_slot(ORGAN_SLOT_TONGUE)
+	if(tongue)
+		if(tongue.extended && prob(burn_dam + brute_dam))
+			var/atom/drop_loc = drop_location()
+			if(tongue.bodypart_remove(src))
+				if(drop_loc) //can be null if being deleted
+					tongue.forceMove(get_turf(drop_loc))
+	return ..()
+
 /obj/item/bodypart/arm/left/necromorph/infector
 	name = "left arm"
 	limb_id = SPECIES_NECROMORPH_INFECTOR

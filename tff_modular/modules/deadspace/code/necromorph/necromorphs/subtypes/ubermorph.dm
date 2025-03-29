@@ -26,7 +26,7 @@
 	biomass_spent_required = 2000
 	melee_damage_lower = 14
 	melee_damage_upper = 29
-	armour_penetration = 40
+	armour_penetration = 60
 	implemented = TRUE
 	necro_armor = /datum/armor/dsnecro_ubermorph
 	actions = list(
@@ -57,6 +57,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/necromorph/ubermorph,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/necromorph/ubermorph,
 	)
+	mutanteyes = /obj/item/organ/eyes/necro/enhanced
 
 /datum/species/necromorph/ubermorph/get_scream_sound(mob/living/carbon/human/necromorph/ubermorph)
 	return pick(

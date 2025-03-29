@@ -91,34 +91,31 @@
 	Stages
 */
 /datum/execution_stage/wingwrap
-	duration = 5 SECONDS
+	duration = 3 SECONDS
 
 /datum/execution_stage/wingwrap/enter()
-
-	//The user cannot move or take any action
-	host.user.Immobilize(duration)
-	host.victim.Immobilize(duration)
+	. = ..()
 
 	host.victim.losebreath += 4
 	host.user.visible_message(span_danger("[host.user] wraps their wings around [host.victim]'s head!"))
 	var/mob/living/carbon/human/necromorph/necro = host.user
 	necro.play_necro_sound(SOUND_ATTACK, VOLUME_MID, TRUE, 3)
-	sleep(duration)
-	return ..()
 
 /datum/execution_stage/infector_headstab
-	duration = 1.5 SECONDS
+	duration = 0.5 SECONDS
 
 /datum/execution_stage/infector_headstab/enter()
+	host.user.Immobilize(1+(duration*0.1))
+	host.victim.Immobilize(1+(duration*0.1))
 	.=..()
 	//If we've already won, skip this and just return
 	if (host.success)
 		duration = 0 SECONDS //Setting duration to 0 will prevent any waiting after this proc
 		return
 
-	var/obj/item/organ/proboscis/proby = host.user.get_organ_slot(ORGAN_SLOT_PROBOSCIS)
+	var/obj/item/organ/tongue/necro/proboscis/proby = host.user.get_organ_slot(ORGAN_SLOT_TONGUE)
 	if (proby)
-		proby.retracted = FALSE
+		proby.hide()
 
 	var/done = FALSE
 	while (!done)
@@ -165,11 +162,9 @@
 			continue
 
 		//Make sure the user stays stunned during this process
-		host.user.Immobilize(1+(duration*0.1))
-		host.victim.Immobilize(1+(duration*0.1))
-		sleep(duration)
 
 /datum/execution_stage/finisher/skullbore/enter()
+	. = ..()
 	if(host.safety_check() == EXECUTION_CANCEL)
 		return
 
@@ -194,17 +189,14 @@
 
 	//Lets just be sure because braindeath doesnt seem to kill instantly
 	host.victim.death()
-	.=..()
 
 /datum/execution_stage/convert
-	duration = 6 SECONDS
+	duration = 3 SECONDS
 
 /datum/execution_stage/convert/enter()
+	. = ..()
 	//We are done
-	sleep(duration)
 	host.victim.start_necromorph_conversion(duration * 0.1)
-
-	.=..()
 
 /datum/execution_stage/convert/exit()
 	host.user.forceMove(get_turf(host.user))

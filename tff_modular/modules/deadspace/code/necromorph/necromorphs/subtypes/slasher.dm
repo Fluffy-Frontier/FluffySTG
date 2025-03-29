@@ -25,7 +25,7 @@
 	biomass_spent_required = 0
 	melee_damage_lower = 14
 	melee_damage_upper = 20
-	armour_penetration = 15
+	armour_penetration = 25
 	necro_armor = /datum/armor/dsnecro_slasher
 	actions = list(
 		/datum/action/cooldown/mob_cooldown/charge/necro/slasher,

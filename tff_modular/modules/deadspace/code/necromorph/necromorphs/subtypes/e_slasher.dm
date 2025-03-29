@@ -29,7 +29,7 @@
 	biomass_spent_required = 680
 	melee_damage_lower = 24
 	melee_damage_upper = 26
-	armour_penetration = 22
+	armour_penetration = 30
 	necro_armor = /datum/armor/dsnecro_e_slasher
 	actions = list(
 		/datum/action/cooldown/mob_cooldown/charge/necro/slasher/enhanced,
@@ -50,6 +50,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/necromorph/slasher/enhanced,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/necromorph/slasher/enhanced,
 	)
+	mutanteyes = /obj/item/organ/eyes/necro/enhanced
 
 /datum/armor/dsnecro_e_slasher
 	melee = 40

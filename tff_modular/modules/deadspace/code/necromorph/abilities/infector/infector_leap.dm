@@ -7,6 +7,11 @@
 /datum/action/cooldown/mob_cooldown/charge/necro/execution/infector/Activate(atom/target)
 	//The infector can't flap if its missing too many wings. Specifically, it must have at least one, though there are penalties for not having both
 	var/mob/living/carbon/human/necromorph/necro = owner
+
+	var/obj/item/organ/tongue/necro/proboscis/tongue = necro.get_organ_slot(ORGAN_SLOT_TONGUE)
+	if(tongue)
+		tongue.extend()
+
 	var/wings = necro.num_hands
 
 	if(wings == 2)
@@ -14,18 +19,8 @@
 	else if (wings == 1)
 		charge_speed = 0.4 SECONDS
 	else if (wings < 1)
-		to_chat(necro, span_danger("You need at least one wing to leap!"))
+		to_chat(necro, span_danger("You need at least one wing to leap!"), MESSAGE_TYPE_LOCALCHAT)
 		return
-	/*
-	//Do a chargeup animation. Pulls back and down, and then launches forwards
-	//The time is equal to the windup time of the attack, plus 0.5 seconds to prevent a brief stop and ensure launching is a fluid motion
-	var/vector2/pixel_offset = get_new_vector(0, -6)
-	var/vector2/cached_pixels = get_new_vector(src.pixel_x, src.pixel_y)
-	animate(src, pixel_x = src.pixel_x + pixel_offset.x, pixel_y = src.pixel_y + pixel_offset.y, time = 0.2 SECONDS, easing = EASE_OUT|CUBIC_EASING, flags = ANIMATION_PARALLEL)
-	animate(pixel_x = cached_pixels.x, pixel_y = cached_pixels.y, easing = EASE_IN|CUBIC_EASING, time = 0.2 SECONDS)
-	release_vector(pixel_offset)
-	release_vector(cached_pixels)
-*/
 	//Long shout when targeting mobs
 	necro.play_necro_sound(SOUND_SHOUT_LONG, VOLUME_MID, TRUE, 3)
 
@@ -86,9 +81,9 @@
 
 	var/mob/living/carbon/human/necromorph/necro = owner
 
-	var/obj/item/organ/proboscis/proboscis  = necro.get_organ_slot(ORGAN_SLOT_PROBOSCIS)
+	var/obj/item/organ/tongue/necro/proboscis/proboscis  = necro.get_organ_slot(ORGAN_SLOT_TONGUE)
 	if (!proboscis)
-		to_chat(necro, span_danger("You need your proboscis to perform this move!"))
+		to_chat(necro, span_danger("You need your proboscis to perform this move!"), MESSAGE_TYPE_LOCALCHAT)
 		return
 	var/datum/component/execution/infector/execute = necro.GetComponent(/datum/component/execution/infector)
 	necro.perform_execution(execute, human, necro)

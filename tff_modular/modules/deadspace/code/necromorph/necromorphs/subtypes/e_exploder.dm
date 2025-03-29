@@ -50,6 +50,7 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/necromorph/exploder/enhanced,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/necromorph/exploder/enhanced,
 	)
+	mutanteyes = /obj/item/organ/eyes/necro/enhanced
 
 
 /datum/armor/dsnecro_e_exploder

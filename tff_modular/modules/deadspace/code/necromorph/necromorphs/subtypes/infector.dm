@@ -55,9 +55,8 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/necromorph/infector,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/necromorph/infector,
 	)
-	mutant_organs = list(
-		/obj/item/organ/proboscis,
-	)
+	mutanttongue = /obj/item/organ/tongue/necro/proboscis
+
 
 /datum/species/necromorph/infector/get_scream_sound(mob/living/carbon/human/necromorph/infector)
 	return pick(

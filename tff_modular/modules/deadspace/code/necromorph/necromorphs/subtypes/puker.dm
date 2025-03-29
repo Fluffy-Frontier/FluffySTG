@@ -59,6 +59,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/necromorph/puker,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/necromorph/puker,
 	)
+	mutanteyes = /obj/item/organ/eyes/necro/enhanced
 
 /datum/species/necromorph/puker/get_scream_sound(mob/living/carbon/human/necromorph/puker)
 	return pick(

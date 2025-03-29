@@ -30,6 +30,7 @@
 	biomass_spent_required = 680
 	melee_damage_lower = 22
 	melee_damage_upper = 26
+	armour_penetration = 28
 	necro_armor = /datum/armor/dsnecro_leaper
 	actions = list(
 		/datum/action/cooldown/mob_cooldown/charge/necro/leaper/enhanced,
@@ -50,6 +51,7 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/necromorph/leaper/enhanced,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/necromorph/leaper/enhanced,
 	)
+	mutanteyes = /obj/item/organ/eyes/necro/enhanced
 
 /datum/armor/dsnecro_e_leaper
 	melee = 65

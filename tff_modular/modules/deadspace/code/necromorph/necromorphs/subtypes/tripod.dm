@@ -4,12 +4,9 @@
 	class = /datum/necro_class/tripod
 	necro_species = /datum/species/necromorph/tripod
 	necro_armor = /datum/armor/dsnecro_tripod
-	bound_height = 96
-	bound_width = 96
-	pixel_x = -16
-	pixel_y = -18
-	base_pixel_x = -16
-	base_pixel_y = -18
+	mob_size = MOB_SIZE_HUGE
+	pixel_x = -48
+	base_pixel_x = -48
 	bodyparts = list(
 		/obj/item/bodypart/chest/necromorph/tripod,
 		/obj/item/bodypart/head/necromorph/tripod,
@@ -19,8 +16,18 @@
 		/obj/item/bodypart/leg/right/necromorph/tripod,
 	)
 
+/mob/living/carbon/human/necromorph/tripod/Initialize(mapload, obj/structure/marker/marker_master)
+	. = ..()
+	AddComponent(/datum/component/execution/tripod)
+
 /mob/living/carbon/human/necromorph/tripod/play_necro_sound(audio_type, volume, vary, extra_range)
-	playsound(src, pick(GLOB.leaper_sounds[audio_type]), volume, vary, extra_range)
+	playsound(src, pick(GLOB.tripod_sounds[audio_type]), volume, vary, extra_range)
+
+/mob/living/carbon/human/necromorph/tripod/resolve_right_click_attack(atom/target, list/modifiers)
+	if(isliving(target))
+		var/datum/component/execution/tripod/execute = GetComponent(/datum/component/execution/tripod)
+		perform_execution(execute, target, src)
+	return ..()
 
 /datum/necro_class/tripod
 	display_name = "Tripod"
@@ -35,7 +42,10 @@
 	armour_penetration = 25
 	necro_armor = /datum/armor/dsnecro_tripod
 	actions = list(
+		/datum/action/cooldown/necro/swing/tripod,
+		/datum/action/cooldown/mob_cooldown/lava_swoop/high_leap,
 	)
+	implemented = TRUE
 
 /datum/species/necromorph/tripod
 	name = "Tripod"
@@ -48,6 +58,8 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/necromorph/tripod,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/necromorph/tripod,
 	)
+	mutanteyes = /obj/item/organ/eyes/necro/enhanced
+	mutanttongue = /obj/item/organ/tongue/necro/tripod
 
 /datum/armor/dsnecro_tripod
 	melee = 65

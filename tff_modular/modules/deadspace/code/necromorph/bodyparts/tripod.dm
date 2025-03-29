@@ -24,6 +24,16 @@
 	n_biomass = 15 //pea brain, not much n_biomass
 	burn_modifier = 0.75
 
+/obj/item/bodypart/head/necromorph/tripod/receive_damage(brute, burn, blocked, updating_health, forced, required_bodytype, wound_bonus, bare_wound_bonus, sharpness, attack_direction, damage_source, wound_clothing)
+	var/obj/item/organ/tongue/necro/tripod/tongue = owner.get_organ_slot(ORGAN_SLOT_TONGUE)
+	if(tongue)
+		if(tongue.extended && prob(burn_dam + brute_dam))
+			var/atom/drop_loc = drop_location()
+			if(tongue.bodypart_remove(src))
+				if(drop_loc) //can be null if being deleted
+					tongue.forceMove(get_turf(drop_loc))
+	return ..()
+
 /obj/item/bodypart/arm/left/necromorph/tripod
 	name = "left arm"
 	limb_id = SPECIES_NECROMORPH_TRIPOD
@@ -39,6 +49,9 @@
 	n_biomass = 21
 	burn_modifier = 0.75
 
+/obj/item/bodypart/arm/left/necromorph/tripod/dismember(dam_type, silent, wounding_type)
+	owner.add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_much_slower)
+
 /obj/item/bodypart/arm/right/necromorph/tripod
 	name = "right arm"
 	limb_id = SPECIES_NECROMORPH_TRIPOD
@@ -53,6 +66,9 @@
 	wound_resistance = 5
 	n_biomass = 21
 	burn_modifier = 0.75
+
+/obj/item/bodypart/arm/right/necromorph/tripod/dismember(dam_type, silent, wounding_type)
+	owner.add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_slower)
 
 /obj/item/bodypart/leg/left/necromorph/tripod
 	name = "left leg"
@@ -77,6 +93,9 @@
 		'tff_modular/modules/deadspace/sound/effects/footstep/brute_step_6.ogg'
 	), VOLUME_MID, 0)
 
+/obj/item/bodypart/leg/left/necromorph/tripod/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
+	return FALSE
+
 /obj/item/bodypart/leg/right/necromorph/tripod
 	name = "right leg"
 	limb_id = SPECIES_NECROMORPH_TRIPOD
@@ -99,3 +118,6 @@
 		'tff_modular/modules/deadspace/sound/effects/footstep/brute_step_5.ogg',
 		'tff_modular/modules/deadspace/sound/effects/footstep/brute_step_6.ogg'
 	), VOLUME_MID, 0)
+
+/obj/item/bodypart/leg/right/necromorph/tripod/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
+	return FALSE

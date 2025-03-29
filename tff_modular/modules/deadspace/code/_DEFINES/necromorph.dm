@@ -34,6 +34,7 @@
 #define SPECIES_NECROMORPH_LEAPER_HOPPER "hopper"
 #define	SPECIES_NECROMORPH_LURKER "lurker"
 #define SPECIES_NECROMORPH_TRIPOD "tripod"
+#define SPECIES_NECROMORPH_FODDER "fodder"
 #define SPECIES_NECROMORPH_UBERMORPH "ubermorph"
 
 
@@ -57,8 +58,6 @@
 if (result == EXECUTION_CANCEL && can_interrupt){\
 	interrupt();\
 	return}
-
-#define ORGAN_SLOT_PROBOSCIS "proboscis"
 
 #define EXECUTION_DAMAGE_VULNERABILITY 1.5
 

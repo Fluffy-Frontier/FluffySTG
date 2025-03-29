@@ -77,11 +77,11 @@
 	say_mod = "roars"
 	species_language_holder = /datum/language_holder/necro_talk
 
-	mutanttongue = /obj/item/organ/tongue
-	mutanteyes = /obj/item/organ/eyes
-	mutantbrain = null
-	mutantheart = null
-	mutantlungs = null
+	mutanttongue = /obj/item/organ/tongue/necro
+	mutanteyes = /obj/item/organ/eyes/necro
+	mutantbrain = /obj/item/organ/brain/necro
+	mutantheart = /obj/item/organ/heart/necro
+	mutantlungs = /obj/item/organ/lungs/necro
 
 	//Necros are mostly just biomass, little to no guts
 
