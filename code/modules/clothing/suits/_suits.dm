@@ -24,19 +24,9 @@
 		return
 
 	if(damaged_clothes)
-		//NOVA EDIT CHANGE BEGIN
-		//. += mutable_appearance('icons/effects/item_damage.dmi', "damaged[blood_overlay_type]") //ORIGINAL
-		var/damagefile2use = (mutant_styles & STYLE_TAUR_ALL) ? 'modular_nova/master_files/icons/mob/64x32_item_damage.dmi' : 'icons/effects/item_damage.dmi'
-		. += mutable_appearance(damagefile2use, "damaged[blood_overlay_type]")
-		//NOVA EDIT CHANGE END
-	if(GET_ATOM_BLOOD_DNA_LENGTH(src))
-		//NOVA EDIT CHANGE BEGIN
-		//. += mutable_appearance('icons/effects/blood.dmi', "[blood_overlay_type]blood") //ORIGINAL
-		var/bloodfile2use = (mutant_styles & STYLE_TAUR_ALL) ? 'modular_nova/master_files/icons/mob/64x32_blood.dmi' : 'icons/effects/blood.dmi'
-		. += mutable_appearance(bloodfile2use, "[blood_overlay_type]blood")
-		//NOVA EDIT CHANGE END
+		. += mutable_appearance('icons/effects/item_damage.dmi', "damaged[blood_overlay_type]")
 
-	// NOVA EDIT TAUR-FULLBODY SUITS START
+	// NOVA EDIT ADDITION START - TAUR-FULLBODY SUITS
 	if(mutant_styles & STYLE_TAUR_ALL)
 		if (worn_icon_taur_snake)
 			worn_x_offset = -16
@@ -46,7 +36,8 @@
 			worn_x_offset = -16
 	else
 		worn_x_offset = 0
-	// NOVA EDIT END
+
+	// NOVA EDIT ADDITION END
 	var/mob/living/carbon/human/wearer = loc
 	if(!ishuman(wearer) || !wearer.w_uniform)
 		return
