@@ -44,7 +44,6 @@
 		negative = FALSE
 	else if(target.x == initial_x) //if their x is the same, pick a direction
 		negative = prob(50)
-	var/obj/effect/temp_visual/tripod_flight/flight_vis = new /obj/effect/temp_visual/tripod_flight(owner.loc, negative)
 	negative = !negative //invert it for the swoop down later
 
 	var/oldtransform = owner.transform
@@ -78,7 +77,6 @@
 	else
 		if(ISINRANGE(owner.x, initial_x - 5, initial_x - 1))
 			negative = TRUE
-	new /obj/effect/temp_visual/tripod_flight/end(owner.loc, negative)
 	new /obj/effect/temp_visual/dragon_swoop(owner.loc)
 	animate(owner, alpha = 255, transform = oldtransform, descentTime)
 	SLEEP_CHECK_DEATH(descentTime, owner)
@@ -118,47 +116,10 @@
 
 			L.Stun(2 SECONDS)
 			L.attack_necromorph(owner, dealt_damage = LEAP_CONE_DAMAGE)
-			shake_camera(src,10,3)
+			L.shake_camera(src,10,3)
 
 /obj/effect/temp_visual/expanding_circle/tripod
 	color = "#EE0000"
-
-/obj/effect/temp_visual/tripod_flight
-	icon = 'tff_modular/modules/deadspace/icons/necromorphs/tripod.dmi'
-	icon_state = "preview"
-	layer = ABOVE_ALL_MOB_LAYER
-	pixel_x = -48
-	randomdir = FALSE
-
-/obj/effect/temp_visual/dragon_flight/Initialize(mapload, negative)
-	. = ..()
-	INVOKE_ASYNC(src, PROC_REF(flight), negative)
-
-/obj/effect/temp_visual/tripod_flight/proc/flight(negative)
-	if(negative)
-		animate(src, pixel_x = -270*0.1, pixel_z = 270*0.15, time = 3, easing = BOUNCE_EASING)
-	else
-		animate(src, pixel_x = 270*0.1, pixel_z = 270*0.15, time = 3, easing = BOUNCE_EASING)
-	sleep(0.3 SECONDS)
-	icon_state = "preview"
-	if(negative)
-		animate(src, pixel_x = -270, pixel_z = 270, time = 7)
-	else
-		animate(src, pixel_x = 270, pixel_z = 270, time = 7)
-
-/obj/effect/temp_visual/tripod_flight/end
-	pixel_x = 270
-	pixel_z = 270
-	duration = 10
-
-/obj/effect/temp_visual/tripod_flight/end/flight(negative)
-	if(negative)
-		pixel_x = -270
-		animate(src, pixel_x = -16, pixel_z = 0, time = 5)
-	else
-		animate(src, pixel_x = -16, pixel_z = 0, time = 5)
-
-
 
 #undef LEAP_SHOCKWAVE_DAMAGE
 #undef LEAP_CONE_DAMAGE

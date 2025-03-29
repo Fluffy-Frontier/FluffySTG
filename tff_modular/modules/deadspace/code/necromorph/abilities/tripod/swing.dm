@@ -22,6 +22,7 @@
 	actively_moving = FALSE
 	swing_target = target
 	windup()
+	swing()
 	return TRUE
 
 

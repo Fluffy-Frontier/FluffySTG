@@ -1,3 +1,4 @@
+/* PLACEHOLDER
 /obj/item/bodypart/chest/necromorph/fodder
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_HUMAN
@@ -102,3 +103,4 @@
 	px_y = 12
 	wound_resistance = -5
 	n_biomass = 20
+*/
