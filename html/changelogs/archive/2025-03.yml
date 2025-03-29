@@ -1325,6 +1325,9 @@
   - bugfix: Special vendor dispensing behaviours get applied to thrown items.
   - bugfix: Special vendor dispensing behaviours actually get applied to returned
       items where applicable.
+  81fm:
+  - bugfix: fixed polymorph belt changing spritesize when scanning a mob/picking up
+      a polymorph belt that has scanned a mob
   Absolucy:
   - qol: Players with the Prosopagnosia quirk will now see the ID name (if there is
       one) examining someone, instead of ALWAYS Unknown, altho it'll have a question
@@ -1347,6 +1350,19 @@
   AyIong:
   - bugfix: Fixed small character preview, color matrix preview, mech preview, and
       other previews with uses ByondUI map
+  Bannhammger:
+  - rscadd: Armorless tactical maid suit to the loadout
+  - rscadd: Freedom implant now allows you to escape taser electrode
+  - balance: owners of TRAIT_BATON_RESISTANCE gain less stamina damage while getting
+      tased
+  - balance: 'owners of  TRAIT_SHOCKIMMUNE gain nostamina damage while getting tased
+
+      balance :owners of  TRAIT_SHOCKIMMUNE of  TRAIT_BATON_RESISTANCE gain no slowdown
+      as they are tased.'
+  - rscdel: Customs committee has banned all personal enterprise resource planning
+      tools. You can only gain them from proprietary ERP vendor
+  BasilTamaya:
+  - qol: Makes crushers wearable on reagent armor
   Bisar:
   - balance: Door remotes now match the access of their owner (except for the Captain,
       whose remote access is unchanged). Door remotes, however, respect the high security
@@ -1355,11 +1371,18 @@
   Capsandi:
   - bugfix: "live donk Fr\xE9chette rounds and m12gsl bulldog magazine sprites look\
       \ less like ERRORs."
+  Chestlet:
+  - rscdel: New principles from a recently published psychology paper were applied
+      to our reeducation programs resulting in a significant reduction of malice in
+      employees. (Disabled Fundamentally Evil)
   Cyberboss:
   - config: Added `TTS_HTTP_TIMEOUT_SECONDS` for setting the maximum duration TTS
       HTTP requests can run for before being aborted.
   FlufflesTheDog:
   - qol: Drones can use silicon emotes
+  - bugfix: Interlink external blast doors have been secured from remote intrusions.
+  - bugfix: hat offsets on some quad borgs
+  - rscadd: Cone collars, available using plastic and/or at the medbay autolathe
   Ghommie:
   - balance: Makes fishing rods with higher (or lower) bait speed a smidge easier
       to control during the minigame
@@ -1373,8 +1396,41 @@
       such a plasteel and plasmaglass.
   Goat:
   - bugfix: Clown biodome on lavaland uses lavaland turf now for the bananium ore.
+  HalcyonicWolf:
+  - image: added/modified several protective clothing sprites for Vox Primalis
+  Hatterhat:
+  - spellcheck: 'examine_more()s on a bunch of Nova guns have been somewhat tweaked
+      to be stylistically consistent (read: italicised).'
+  - balance: The Sol marksman rifle burst now fires scarily fast in return for long
+      delays between bursts, and now has a functional fire selector.
+  - balance: The plasma marksman pistol probably inflicts more wounds now.
+  - bugfix: Plasma globs are no longer torturously slow. (They're just regular slow.)
+  - rscadd: Mil-spec shell boxes can now be found on the black market. Rarely. And
+      at a horrific markup.
+  - balance: Slugs are now back to doing 50 brute.
+  - balance: Mil-spec buckshot travels faster, has less damage/wound-bonus falloff
+      over distance, and has a smidge of AP.
+  - balance: Mil-spec slugs deal more damage and travel faster.
+  - balance: Reloading shotguns from ammo handfuls now only inflicts a 0.4s click-delay
+      cooldown. Ammo boxes still have full 0.8s click delay penalty, however.
+  - balance: Magnum buckshot's wound bonus moved mainly to bare wound bonus instead
+      of regular wound bonus.
+  - bugfix: /tg/station's new flechettes and DonkCo flechettes are no longer invisible,
+      and have been adjusted to be more in line with other shotgun shells.
+  - bugfix: Slim colonial webbings no longer require a uniform to cover the chest
+      to attach.
+  - bugfix: Cargo uniforms with alt styles that cover the chest now should... cover
+      the chest when using those alt styles, as appropriate.
   Holoo-1:
   - bugfix: fixed AI multicam room on multiz maps not showing anything
+  Iajret:
+  - bugfix: amber, violet, orange and some other alert levels are now rendered properly
+      in PDAs
+  - bugfix: fixed ear sprite getting removed when you change you ears in augs+ or
+      through surgery
+  - rscadd: "russian radio prefixes are now fully handled in tgui-say. Enjoy your\
+      \ :\u0442 and :\u0433"
+  - bugfix: fixed missing eventologist style for tgui-say
   Jacquerel:
   - rscadd: You can pick up desk bells by dragging them onto yourself. This is now
       how you attach them to wheelchairs, instead of dragging it onto the wheelchair.
@@ -1393,6 +1449,12 @@
   JohnFulpWillard:
   - qol: Smartfridges and Vending machines no longer have a setting to change the
       list/grid mode, it instead updates automatically as you swap the mode in-game.
+  Knouli:
+  - bugfix: Anti-chew embittering agents have been applied to all fox-sweaters in
+      an effort to curtail spontaneous vulpine de-sweaterficiation syndrome.
+  - bugfix: Domestic servants wearing red uniforms have no time to bleed out in dark
+      maintenance tunnels - their uniforms have been modified with standard issue
+      suit sensors to combat inefficiency.
   LemonInTheDark:
   - bugfix: Fixed our pathfinding logic getting deeply confused by border objects
   - admin: Added clientside displayed pathfinding debug tools, give em a go
@@ -1430,8 +1492,20 @@
   - qol: Bookshelf randomization will now exclude adult books unless marked as adult
   MelokGleb:
   - spellcheck: fixed a typo in actor role conditions
+  MrSunabouzu:
+  - rscadd: Cabin, Bridge, Library added to ghost cafe condos.
+  - rscadd: Added shipyard and quiet room back to Snowglobe.
   Neuroplasty:
   - spellcheck: Fixed a typo for the Chemical Separator
+  Odairu:
+  - qol: AIs can open doors without looking
+  OrbisAnima:
+  - qol: Black Belts / Thigh Satchels can now be used to hold any kind of small item
+      or smaller, up to 7, a recolorable generalist belt in essence.
+  - qol: Empathic personel got so used to the high population of, for a better word,
+      fundamentally evil crewmembers, that they had become jaded to their presence
+      and no longer get a mood impact upon encountering one. They still get the shakes
+      though.
   OrionTheFox:
   - bugfix: fixed some tiny sprite flickering on two atmos wallmounts
   - rscadd: Added greyscale Fedoras, available in the Clothesmate!
@@ -1441,8 +1515,34 @@
   - image: To pair with this, the Beige suit has been just slightly tweaked and the
       Curator's "Treasure Hunter Jacket" entirely recolored to better match their
       fedoras.
+  - bugfix: fixed Bouncers/Service Guards not being sorted with Service in the Orbit
+      menu
+  - image: removed the sprite override on Extinguisher Cabinets, now using the upstream
+      resprite. Remember to refill your extinguishers and put them back in their cabinet
+      when you're done fighting fires!
   RandomDudeFromTheRim:
   - bugfix: fixed an extremely hypothetical, yet possible respawn exploit
+  RatFromTheJungle:
+  - qol: guncases (large) are now a backpack slot item in the loadout!
+  - rscadd: subtler makes a sound, that you can also turn off
+  - rscadd: Security officers can spawn with a whistle, for whistling, in their mask
+      slot.
+  - rscadd: 'Added a new quirk, and a ''dorms module'' item with it: Venomous bite,
+      and the venom-milker!'
+  - rscadd: Sweater-foxes are now available for pet-owners, and as the name implies,
+      they're foxes in... well, sweaters!
+  - rscadd: New animated bears, for lizards but fits with alot of other snouts (tongue-flick!)
+  RealWinterFrost:
+  - bugfix: How to fix the size collar with one line of code! Coders hate them! Find
+      out now!
+  - map: added blueshift dorm rooms to interlink
+  - map: expands interlink caves
+  - map: added more employees to ert bay on interlink
+  - map: added room variety to interlink
+  - map: added sauna to interlink
+  - map: added hotspring to interlink
+  Saukykouko:
+  - rscadd: Added medical jumpsuit/skirt to loadout.
   SmArtKar:
   - rscadd: Nyctophobia and Claustrophobia quirks now have proper terror effects instead
       of making you walk/suffocate. Immersion!
@@ -1489,6 +1589,8 @@
   - refactor: storage initialization has been refactored. Please report bugs on github
   TealSeer:
   - bugfix: fixed the ship ambience volume slider not working properly
+  Yobrocharlie:
+  - rscadd: Adds a new gateway destination.
   combustor:
   - bugfix: Fixes the det's shutters on icebox
   distributivgesetz:
@@ -1496,10 +1598,16 @@
   imedial:
   - qol: AI shells can track people now too
   - bugfix: bloodless species no longer have a free bonechiller
+  jjpark-kb:
+  - rscadd: reagent fertilizer (ez, left, and robust) now heal plant biotype persons
+  - balance: naga tails (legs) are less prone to wounds
   jlsnow301:
   - bugfix: Fixed scrolling the experiscanner UI
   - bugfix: The air alarm has been refactored and had some slight UI improvements.
       Please report any issues to the github!
+  lessthnthree, unit0016:
+  - rscadd: The infinidorms have been rewritten and rethemed significantly, coming
+      with a handful of new rooms in the process.
   mcbalaam:
   - refactor: Reworked the Big Manipulators UI
   - refactor: Minor Big Manipulator code refactoring
@@ -1508,11 +1616,23 @@
   norsvenska:
   - bugfix: Wawastation's port bow solar array now has a cable under all panels by
       default.
+  sqnztb:
+  - rscadd: Are you recovering from surgery and need to impose some self control so
+      you don't gnaw on your stitches? Well now you can. The Elizabethan collar is
+      now available in the loadout.
   subject217:
   - spellcheck: fixed a typo and a grammar error
   timothymtorres:
   - code_imp: Change some hardcoded ice/snow temperature variables that were set to
       180 to use `ICEBOX_MIN_TEMPERATURE` instead.
+  unit0016:
+  - bugfix: Ballet Heels and Latex Socks now use the proper icon state for non-digis.
+  - spellcheck: All in-game references to 'broken_lock' should be gone.
+  - bugfix: It is no longer possible to dilute the fishing pool via the ghost cafe
+      condos. Please stop trying. You're worrying us.
+  vinylspiders:
+  - bugfix: fixes the examine panel character preview being tiny
+  - bugfix: fixes the character directory view preview being tiny
   zxaber:
   - qol: Cyborg PDAs' home screens now have Robotact at the top of the screen.
   - bugfix: Sheets of materials with NODROP can no longer be given to repair bots.
