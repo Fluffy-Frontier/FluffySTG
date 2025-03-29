@@ -183,7 +183,9 @@
 
 /datum/customer_data/french/get_overlays(mob/living/basic/robot_customer/customer)
 	if(customer.ai_controller.blackboard[BB_CUSTOMER_LEAVING])
-		return mutable_appearance(customer.icon, "french_flag", appearance_flags = RESET_COLOR|KEEP_APART)
+		var/mutable_appearance/flag = mutable_appearance(customer.icon, "french_flag")
+		flag.appearance_flags = RESET_COLOR
+		return flag
 
 
 
@@ -229,7 +231,9 @@
 /datum/customer_data/japanese/get_overlays(mob/living/basic/robot_customer/customer)
 	//leaving and eaten
 	if(type == /datum/customer_data/japanese && customer.ai_controller.blackboard[BB_CUSTOMER_LEAVING] && customer.ai_controller.blackboard[BB_CUSTOMER_EATING])
-		return mutable_appearance('icons/effects/effects.dmi', "love_hearts", appearance_flags = RESET_COLOR|KEEP_APART)
+		var/mutable_appearance/you_won_my_heart = mutable_appearance('icons/effects/effects.dmi', "love_hearts")
+		you_won_my_heart.appearance_flags = RESET_COLOR
+		return you_won_my_heart
 
 /datum/customer_data/japanese/salaryman
 	clothing_sets = list("japanese_salary")
@@ -313,15 +317,26 @@
 	var/list/underlays = list()
 
 	var/datum/sprite_accessory/moth_wings/wings = get_wings(customer)
-	underlays += mutable_appearance(icon = 'icons/mob/human/species/moth/moth_wings.dmi', icon_state = "m_moth_wings_[wings.icon_state]_BEHIND", appearance_flags = RESET_COLOR|KEEP_APART)
+
+	var/mutable_appearance/wings_behind = mutable_appearance(icon = 'icons/mob/human/species/moth/moth_wings.dmi', icon_state = "m_moth_wings_[wings.icon_state]_BEHIND")
+	wings_behind.appearance_flags = RESET_COLOR
+	underlays += wings_behind
+
 	return underlays
 
 /datum/customer_data/moth/get_overlays(mob/living/basic/robot_customer/customer)
 	var/list/overlays = list()
 
 	var/datum/sprite_accessory/moth_wings/wings = get_wings(customer)
-	overlays += mutable_appearance(icon = 'icons/mob/human/species/moth/moth_wings.dmi', icon_state = "m_moth_wings_[wings.icon_state]_FRONT", appearance_flags = RESET_COLOR|KEEP_APART)
-	overlays += mutable_appearance(icon = customer.icon, icon_state = "mothbot_jetpack", appearance_flags = RESET_COLOR|KEEP_APART)
+
+	var/mutable_appearance/wings_front = mutable_appearance(icon = 'icons/mob/human/species/moth/moth_wings.dmi', icon_state = "m_moth_wings_[wings.icon_state]_FRONT")
+	wings_front.appearance_flags = RESET_COLOR
+	overlays += wings_front
+
+	var/mutable_appearance/jetpack = mutable_appearance(icon = customer.icon, icon_state = "mothbot_jetpack")
+	jetpack.appearance_flags = RESET_COLOR
+	overlays += jetpack
+
 	return overlays
 
 /datum/customer_data/mexican

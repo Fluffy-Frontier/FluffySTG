@@ -89,11 +89,6 @@
 		cell = null
 	return ..()
 
-/obj/machinery/space_heater/Exited(atom/movable/gone, direction)
-	. = ..()
-	if(gone == cell)
-		cell = null
-
 /obj/machinery/space_heater/examine(mob/user)
 	. = ..()
 	. += "\The [src] is [on ? "on" : "off"], and the hatch is [panel_open ? "open" : "closed"]."
@@ -293,6 +288,7 @@
 		if("eject")
 			if(panel_open && cell)
 				usr.put_in_hands(cell)
+				cell = null
 				. = TRUE
 
 /obj/machinery/space_heater/proc/toggle_power(user)

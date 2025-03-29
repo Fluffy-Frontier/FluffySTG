@@ -129,9 +129,6 @@
 /datum/examine_panel/ui_static_data(mob/user)
 	var/list/data = list()
 
-	if(SSplayer_ranks.is_veteran(holder.client, admin_bypass = FALSE))
-		data["veteran_status"] = TRUE
-
 	data["opt_in_colors"] = GLOB.antag_opt_in_colors
 
 	return data

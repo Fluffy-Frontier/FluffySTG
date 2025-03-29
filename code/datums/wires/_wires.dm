@@ -88,7 +88,6 @@
 	LAZYCLEARLIST(assemblies)
 	return ..()
 
-/// Adds a number of wires which do absolutely nothing.
 /datum/wires/proc/add_duds(duds)
 	while(duds)
 		var/dud = WIRE_DUD_PREFIX + "[--duds]"
@@ -103,35 +102,30 @@
 	qdel(src)
 
 /datum/wires/proc/randomize()
-	var/static/list/default_possible_colors = list(
-		"blue",
-		"brown",
-		"crimson",
-		"cyan",
-		"gold",
-		"green",
-		"grey",
-		"lime",
-		"magenta",
-		"orange",
-		"pink",
-		"purple",
-		"red",
-		"silver",
-		"violet",
-		"white",
-		"yellow",
+	var/static/list/possible_colors = list(
+	"blue",
+	"brown",
+	"crimson",
+	"cyan",
+	"gold",
+	"green",
+	"grey",
+	"lime",
+	"magenta",
+	"orange",
+	"pink",
+	"purple",
+	"red",
+	"silver",
+	"violet",
+	"white",
+	"yellow",
 	)
 
-	if(length(wires) > length(default_possible_colors))
-		stack_trace("Wire type [type] has more wires than possible colors, consider adding more colors or removing wires.")
-
-	var/list/possible_colors = default_possible_colors.Copy()
+	var/list/my_possible_colors = possible_colors.Copy()
 
 	for(var/wire in shuffle(wires))
-		if(!length(possible_colors))
-			possible_colors = default_possible_colors.Copy()
-		colors[pick_n_take(possible_colors)] = wire
+		colors[pick_n_take(my_possible_colors)] = wire
 
 /datum/wires/proc/shuffle_wires()
 	colors.Cut()

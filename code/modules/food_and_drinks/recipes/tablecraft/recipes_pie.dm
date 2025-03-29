@@ -11,7 +11,6 @@
 		/obj/item/food/grown/banana = 1
 	)
 	result = /obj/item/food/pie/cream
-	added_foodtypes = SUGAR
 	category = CAT_PIE
 
 /datum/crafting_recipe/food/meatpie
@@ -50,7 +49,6 @@
 		/obj/item/food/grown/cherries = 1
 	)
 	result = /obj/item/food/pie/cherrypie
-	added_foodtypes = SUGAR
 	category = CAT_PIE
 
 /datum/crafting_recipe/food/berryclafoutis
@@ -60,7 +58,6 @@
 		/obj/item/food/grown/berries = 1
 	)
 	result = /obj/item/food/pie/berryclafoutis
-	added_foodtypes = SUGAR
 	category = CAT_PIE
 
 /datum/crafting_recipe/food/bearypie
@@ -71,7 +68,6 @@
 		/obj/item/food/meat/steak/bear = 1
 	)
 	result = /obj/item/food/pie/bearypie
-	added_foodtypes = SUGAR
 	category = CAT_PIE
 
 /datum/crafting_recipe/food/amanitapie
@@ -81,7 +77,6 @@
 		/obj/item/food/grown/mushroom/amanita = 1
 	)
 	result = /obj/item/food/pie/amanita_pie
-	added_foodtypes = TOXIC|GROSS
 	category = CAT_PIE
 
 /datum/crafting_recipe/food/plumppie
@@ -100,7 +95,6 @@
 		/obj/item/food/grown/apple = 1
 	)
 	result = /obj/item/food/pie/applepie
-	added_foodtypes = SUGAR
 	category = CAT_PIE
 
 /datum/crafting_recipe/food/pumpkinpie
@@ -112,7 +106,6 @@
 		/obj/item/food/grown/pumpkin = 1
 	)
 	result = /obj/item/food/pie/pumpkinpie
-	added_foodtypes = SUGAR
 	category = CAT_PIE
 
 /datum/crafting_recipe/food/goldenappletart
@@ -124,7 +117,6 @@
 		/obj/item/food/grown/apple/gold = 1
 	)
 	result = /obj/item/food/pie/appletart
-	added_foodtypes = SUGAR
 	category = CAT_PIE
 
 /datum/crafting_recipe/food/grapetart
@@ -136,7 +128,6 @@
 		/obj/item/food/grown/grapes = 3
 	)
 	result = /obj/item/food/pie/grapetart
-	added_foodtypes = SUGAR
 	category = CAT_PIE
 
 /datum/crafting_recipe/food/mimetart
@@ -149,7 +140,6 @@
 	)
 	result = /obj/item/food/pie/mimetart
 	category = CAT_PIE
-	added_foodtypes = SUGAR
 	crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_MUST_BE_LEARNED
 
 /datum/crafting_recipe/food/berrytart
@@ -162,7 +152,6 @@
 	)
 	result = /obj/item/food/pie/berrytart
 	category = CAT_PIE
-	added_foodtypes = SUGAR
 	crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_MUST_BE_LEARNED
 
 /datum/crafting_recipe/food/cocolavatart
@@ -176,8 +165,6 @@
 	)
 	result = /obj/item/food/pie/cocolavatart
 	category = CAT_PIE
-	added_foodtypes = SUGAR
-	removed_foodtypes = JUNKFOOD
 	crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_MUST_BE_LEARNED
 
 /datum/crafting_recipe/food/blumpkinpie
@@ -189,7 +176,6 @@
 		/obj/item/food/grown/pumpkin/blumpkin = 1
 	)
 	result = /obj/item/food/pie/blumpkinpie
-	added_foodtypes = SUGAR
 	category = CAT_PIE
 
 /datum/crafting_recipe/food/dulcedebatata
@@ -200,7 +186,6 @@
 		/obj/item/food/grown/potato/sweet = 2
 	)
 	result = /obj/item/food/pie/dulcedebatata
-	added_foodtypes = SUGAR
 	category = CAT_PIE
 
 /datum/crafting_recipe/food/frostypie
@@ -210,7 +195,6 @@
 		/obj/item/food/grown/bluecherries = 1
 	)
 	result = /obj/item/food/pie/frostypie
-	added_foodtypes = FRUIT|SUGAR
 	category = CAT_PIE
 
 /datum/crafting_recipe/food/baklava
@@ -221,7 +205,6 @@
 		/obj/item/seeds/wheat/oat = 4
 	)
 	result = /obj/item/food/pie/baklava
-	added_foodtypes = SUGAR
 	category = CAT_PIE
 
 /datum/crafting_recipe/food/frenchsilkpie
@@ -232,8 +215,6 @@
 		/obj/item/food/chocolatebar = 2,
 	)
 	result = /obj/item/food/pie/frenchsilkpie
-	removed_foodtypes = JUNKFOOD
-	added_foodtypes = SUGAR
 	category = CAT_PIE
 
 /datum/crafting_recipe/food/shepherds_pie
@@ -263,5 +244,4 @@
 		/obj/item/stock_parts/power_store/cell = 2,
 	)
 	result = /obj/item/food/pie/bacid_pie
-	added_foodtypes = TOXIC
 	category = CAT_PIE

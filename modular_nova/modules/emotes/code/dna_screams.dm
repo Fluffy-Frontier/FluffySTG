@@ -1,3 +1,15 @@
+/datum/species/get_scream_sound(mob/living/carbon/human/species)
+	if(species.physique == FEMALE)
+		return pick(
+			'modular_nova/modules/emotes/sound/voice/scream_f1.ogg',
+			'modular_nova/modules/emotes/sound/voice/scream_f2.ogg',
+		)
+	else
+		return pick(
+			'modular_nova/modules/emotes/sound/voice/scream_m1.ogg',
+			'modular_nova/modules/emotes/sound/voice/scream_m2.ogg',
+		)
+
 /datum/species/synthetic/get_scream_sound(mob/living/carbon/human/synthetic)
 	return 'modular_nova/modules/emotes/sound/voice/scream_silicon.ogg'
 
@@ -16,13 +28,13 @@
 	return 'modular_nova/modules/emotes/sound/voice/scream_skeleton.ogg'
 
 /datum/species/fly/get_scream_sound(mob/living/carbon/human/fly)
-	return 'sound/mobs/humanoids/moth/scream_moth.ogg'
+	return 'modular_nova/modules/emotes/sound/voice/scream_moth.ogg'
 
 /datum/species/moth/get_scream_sound(mob/living/carbon/human/moth)
-	return 'sound/mobs/humanoids/moth/scream_moth.ogg'
+	return 'modular_nova/modules/emotes/sound/voice/scream_moth.ogg'
 
 /datum/species/insect/get_scream_sound(mob/living/carbon/human/insect)
-	return 'sound/mobs/humanoids/moth/scream_moth.ogg'
+	return 'modular_nova/modules/emotes/sound/voice/scream_moth.ogg'
 
 /datum/species/jelly/get_scream_sound(mob/living/carbon/human/jelly)
 	return 'modular_nova/modules/emotes/sound/emotes/jelly_scream.ogg'

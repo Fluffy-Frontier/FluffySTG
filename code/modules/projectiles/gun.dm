@@ -32,8 +32,7 @@
 	var/can_suppress = FALSE
 	var/suppressed_sound = 'sound/items/weapons/gun/general/heavy_shot_suppressed.ogg'
 	var/suppressed_volume = 60
-	/// whether a gun can be unsuppressed. for ballistics, also determines if it generates a suppressor overlay
-	var/can_unsuppress = TRUE
+	var/can_unsuppress = TRUE /// whether a gun can be unsuppressed. for ballistics, also determines if it generates a suppressor overlay
 	var/recoil = 0 //boom boom shake the room
 	var/clumsy_check = TRUE
 	var/obj/item/ammo_casing/chambered = null
@@ -46,8 +45,7 @@
 	/// Delay between bursts (if burst-firing) or individual shots (if weapon is single-fire).
 	var/fire_delay = 0
 	var/firing_burst = 0 //Prevent the weapon from firing again while already firing
-	/// firing cooldown, true if this gun shouldn't be allowed to manually fire
-	var/fire_cd = 0
+	var/semicd = 0 //cooldown handler
 	var/weapon_weight = WEAPON_LIGHT
 	var/dual_wield_spread = 24 //additional spread when dual wielding
 	///Can we hold up our target with this? Default to yes
@@ -289,14 +287,13 @@
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/item/gun/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(user.combat_mode && isliving(interacting_with))
+		return ITEM_INTERACT_SKIP_TO_ATTACK // Gun bash / bayonet attack
 	if(try_fire_gun(interacting_with, user, list2params(modifiers)))
 		return ITEM_INTERACT_SUCCESS
 	return NONE
 
 /obj/item/gun/interact_with_atom_secondary(atom/interacting_with, mob/living/user, list/modifiers)
-	if(user.combat_mode && isliving(interacting_with))
-		return ITEM_INTERACT_SKIP_TO_ATTACK // Gun bash / bayonet attack
-
 	if(!can_hold_up || !isliving(interacting_with))
 		return interact_with_atom(interacting_with, user, modifiers)
 
@@ -339,7 +336,7 @@
 	if(flag) //It's adjacent, is the user, or is on the user's person
 		if(target in user.contents) //can't shoot stuff inside us.
 			return
-		if(!ismob(target)) //melee attack
+		if(!ismob(target) || user.combat_mode) //melee attack
 			return
 		if(target == user && user.zone_selected != BODY_ZONE_PRECISE_MOUTH) //so we can't shoot ourselves (unless mouth selected)
 			return
@@ -473,7 +470,7 @@
 
 	add_fingerprint(user)
 
-	if(fire_cd)
+	if(semicd)
 		return
 
 	//Vary by at least this much
@@ -490,10 +487,8 @@
 
 	if(burst_size > 1)
 		firing_burst = TRUE
-		fire_cd = TRUE
 		for(var/i = 1 to burst_size)
 			addtimer(CALLBACK(src, PROC_REF(process_burst), user, target, message, params, zone_override, total_random_spread, burst_spread_mult, i), modified_burst_delay * (i - 1))
-			addtimer(CALLBACK(src, PROC_REF(reset_fire_cd)), modified_fire_delay) // for the case of fire delay longer than burst
 	else
 		if(chambered)
 			if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
@@ -517,8 +512,8 @@
 		if (!QDELETED(src))
 			process_chamber()
 			update_appearance()
-			fire_cd = TRUE
-			addtimer(CALLBACK(src, PROC_REF(reset_fire_cd)), modified_fire_delay)
+			semicd = TRUE
+			addtimer(CALLBACK(src, PROC_REF(reset_semicd)), modified_fire_delay)
 
 	if(user)
 		user.update_held_items()
@@ -526,8 +521,8 @@
 
 	return TRUE
 
-/obj/item/gun/proc/reset_fire_cd()
-	fire_cd = FALSE
+/obj/item/gun/proc/reset_semicd()
+	semicd = FALSE
 
 /obj/item/gun/screwdriver_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -587,7 +582,7 @@
 	if(!ishuman(user) || !ishuman(target))
 		return
 
-	if(fire_cd)
+	if(semicd)
 		return
 
 	if(user == target)
@@ -597,7 +592,7 @@
 		target.visible_message(span_warning("[user] points [src] at [target]'s head, ready to pull the trigger..."), \
 			span_userdanger("[user] points [src] at your head, ready to pull the trigger..."))
 
-	fire_cd = TRUE
+	semicd = TRUE
 
 	if(!bypass_timer && (!do_after(user, 12 SECONDS, target) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
 		if(user)
@@ -605,10 +600,10 @@
 				user.visible_message(span_notice("[user] decided not to shoot."))
 			else if(target?.Adjacent(user))
 				target.visible_message(span_notice("[user] has decided to spare [target]"), span_notice("[user] has decided to spare your life!"))
-		fire_cd = FALSE
+		semicd = FALSE
 		return
 
-	fire_cd = FALSE
+	semicd = FALSE
 
 	target.visible_message(span_warning("[user] pulls the trigger!"), span_userdanger("[(user == target) ? "You pull" : "[user] pulls"] the trigger!"))
 

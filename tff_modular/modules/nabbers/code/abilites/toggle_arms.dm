@@ -158,7 +158,7 @@ var/datum/martial_art/martial_to_learn = new /datum/martial_art/nabber_grab()
 			qdel(held)
 
 	UnregisterSignal(owner, COMSIG_CARBON_POST_REMOVE_LIMB)
-	martial_to_learn.unlearn(nabber)
+	martial_to_learn.remove(nabber)
 	nabber.balloon_alert(nabber, "Arms down!")
 	button_icon_state = "arms_off"
 	nabber.update_action_buttons()
@@ -183,7 +183,7 @@ var/datum/martial_art/martial_to_learn = new /datum/martial_art/nabber_grab()
 		if(istype(held, /obj/item/melee/nabber_blade))
 			qdel(held)
 
-	martial_to_learn.unlearn(nabber)
+	martial_to_learn.remove(nabber)
 	button_icon_state = "arms_off"
 	nabber.update_action_buttons()
 

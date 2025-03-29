@@ -2329,7 +2329,8 @@
 
 	var/mob/living/carbon/human/exposed_human = exposed_mob
 	exposed_human.set_facial_haircolor(pick(potential_colors), update = FALSE)
-	exposed_human.set_haircolor(pick(potential_colors)) //this will call update_body_parts()
+	exposed_human.set_haircolor(pick(potential_colors), update = TRUE)
+	exposed_human.update_body_parts()
 
 /datum/reagent/barbers_aid
 	name = "Barber's Aid"
@@ -2385,11 +2386,13 @@
 		if(!head || (head.head_flags & HEAD_HAIR))
 			return
 		head.head_flags |= HEAD_HAIR
+		var/message
 		if(HAS_TRAIT(affected_mob, TRAIT_BALD))
-			to_chat(affected_mob, span_warning("You feel your scalp mutate, but you are still hopelessly bald."))
+			message = span_warning("You feel your scalp mutate, but you are still hopelessly bald.")
 		else
-			to_chat(affected_mob, span_notice("Your scalp mutates, a full head of hair sprouting from it."))
-			human_mob.update_body_parts()
+			message = span_notice("Your scalp mutates, a full head of hair sprouting from it.")
+		to_chat(affected_mob, message)
+		human_mob.update_body_parts()
 
 /datum/reagent/baldium
 	name = "Baldium"
@@ -2661,9 +2664,10 @@
 
 /datum/reagent/bz_metabolites/on_mob_life(mob/living/carbon/target, seconds_per_tick, times_fired)
 	. = ..()
-	target.adjust_hallucinations(5 SECONDS * REM * seconds_per_tick)
-	var/datum/antagonist/changeling/changeling = IS_CHANGELING(target)
-	changeling?.adjust_chemicals(-4 * REM * seconds_per_tick) // NOVA EDIT CHANGE - BZ-BUFF-VS-LING - ORIGINAL: changeling?.adjust_chemicals(-2 * REM * seconds_per_tick)
+	if(target.mind)
+		var/datum/antagonist/changeling/changeling = IS_CHANGELING(target)
+		if(changeling)
+			changeling.adjust_chemicals(-4 * REM * seconds_per_tick) //NOVA EDIT - BZ-BUFF-VS-LING - ORIGINAL: changeling.adjust_chemicals(-2 * REM * seconds_per_tick)
 
 /datum/reagent/pax/peaceborg
 	name = "Synthpax"
@@ -3299,7 +3303,6 @@
 	if (eyes && !IS_ROBOTIC_ORGAN(eyes))
 		eyes.eye_color_left = color
 		eyes.eye_color_right = color
-		affected_human.update_body()
 
 /datum/reagent/luminescent_fluid/red
 	name = "Red Luminiscent Fluid"

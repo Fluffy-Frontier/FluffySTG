@@ -47,7 +47,6 @@
 	embed_chance = 70
 	ignore_throwspeed_threshold = TRUE
 	fall_chance = 1
-	stealthy_embed = TRUE
 
 /obj/projectile/bullet/shrapnel/short_range
 	range = 5
@@ -133,3 +132,4 @@
 	name = "\improper AP shrapnel shard"
 	custom_materials = list(/datum/material/iron= SMALL_MATERIAL_AMOUNT * 0.5)
 	weak_against_armour = TRUE
+

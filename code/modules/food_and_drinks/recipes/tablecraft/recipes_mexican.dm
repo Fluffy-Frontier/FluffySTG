@@ -49,7 +49,6 @@
 		/obj/item/food/tortilla = 1
 	)
 	result = /obj/item/food/nachos
-	added_foodtypes = FRIED
 	category = CAT_MEXICAN
 
 /datum/crafting_recipe/food/cheesynachos
@@ -60,7 +59,6 @@
 		/obj/item/food/tortilla = 1
 	)
 	result = /obj/item/food/cheesynachos
-	added_foodtypes = FRIED
 	category = CAT_MEXICAN
 
 /datum/crafting_recipe/food/cubannachos
@@ -71,7 +69,6 @@
 		/obj/item/food/tortilla = 1
 	)
 	result = /obj/item/food/cubannachos
-	added_foodtypes = FRIED
 	category = CAT_MEXICAN
 
 /datum/crafting_recipe/food/taco
@@ -127,7 +124,6 @@
 		/obj/item/reagent_containers/cup/bowl = 1,
 	)
 	result = /obj/item/food/chipsandsalsa
-	removed_foodtypes = JUNKFOOD
 	category = CAT_MEXICAN
 
 /datum/crafting_recipe/food/classic_chimichanga
@@ -139,7 +135,6 @@
 		/obj/item/food/grown/onion = 1,
 	)
 	result = /obj/item/food/classic_chimichanga
-	added_foodtypes = FRIED
 	category = CAT_MEXICAN
 
 /datum/crafting_recipe/food/vegetarian_chimichanga
@@ -151,7 +146,6 @@
 		/obj/item/food/grown/chili = 1,
 	)
 	result = /obj/item/food/vegetarian_chimichanga
-	added_foodtypes = FRIED
 	category = CAT_MEXICAN
 
 /datum/crafting_recipe/food/classic_hard_shell_taco
@@ -184,7 +178,6 @@
 		/obj/item/food/grown/onion = 1,
 	)
 	result = /obj/item/food/refried_beans
-	added_foodtypes = FRIED
 	category = CAT_MEXICAN
 
 /datum/crafting_recipe/food/spanish_rice
@@ -197,7 +190,6 @@
 		/datum/reagent/consumable/blackpepper = 1,
 	)
 	result = /obj/item/food/spanish_rice
-	removed_foodtypes = BREAKFAST
 	category = CAT_MEXICAN
 
 /datum/crafting_recipe/food/pineapple_salsa

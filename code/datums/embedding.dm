@@ -35,10 +35,6 @@
 	var/pain_stam_pct = 0
 	/// Traits which make target immune to us embedding into them, any trait from the list works
 	var/list/immune_traits = list(TRAIT_PIERCEIMMUNE)
-	/// The embed doesn't show up on examine, only on health analyzers.
-	/// (Note: This means you can't rip it out)
-	/// It will also hide its name (and downplay its severity) when referring to in messages.
-	var/stealthy_embed = FALSE
 
 	/// Thing that we're attached to
 	VAR_FINAL/obj/item/parent
@@ -89,7 +85,6 @@
 	brother.jostle_pain_mult = jostle_pain_mult
 	brother.pain_stam_pct = pain_stam_pct
 	brother.immune_traits = immune_traits.Copy()
-	brother.stealthy_embed = stealthy_embed
 	return brother
 
 ///Someone inspected our embeddable item
@@ -227,13 +222,12 @@
 
 	var/damage = parent.throwforce
 	if (!is_harmless(consider_stamina = TRUE))
-		if(!stealthy_embed)
-			owner.throw_alert(ALERT_EMBEDDED_OBJECT, /atom/movable/screen/alert/embeddedobject)
-			owner.add_mood_event("embedded", /datum/mood_event/embedded)
+		owner.throw_alert(ALERT_EMBEDDED_OBJECT, /atom/movable/screen/alert/embeddedobject)
 		if (!is_harmless())
 			playsound(owner,'sound/items/weapons/bladeslice.ogg', 40)
 			if (owner_limb.can_bleed())
 				parent.add_mob_blood(owner) // it embedded itself in you, of course it's bloody!
+		owner.add_mood_event("embedded", /datum/mood_event/embedded)
 		damage += parent.w_class * impact_pain_mult
 
 	SEND_SIGNAL(parent, COMSIG_ITEM_EMBEDDED, victim, target_limb)
@@ -403,10 +397,7 @@
 		damagetype = STAMINA,
 	)
 
-	if(stealthy_embed)
-		to_chat(owner, span_danger("Something in your [owner_limb.plaintext_zone] jostles and stings!"))
-	else
-		to_chat(owner, span_userdanger("[parent] embedded in your [owner_limb.plaintext_zone] jostles and stings!"))
+	to_chat(owner, span_userdanger("[parent] embedded in your [owner_limb.plaintext_zone] jostles and stings!"))
 	jostle_effects()
 
 /// Effects which should occur when the owner moves, sometimes
@@ -474,10 +465,8 @@
 		damage = pain_stam_pct * damage,
 		damagetype = STAMINA,
 	)
-	if(stealthy_embed)
-		to_chat(owner, span_danger("Something in your [owner_limb.plaintext_zone] [pain_stam_pct < 1 ? "hurts!" : "weighs you down."]"))
-	else
-		to_chat(owner, span_userdanger("[parent] embedded in your [owner_limb.plaintext_zone] [pain_stam_pct < 1 ? "hurts!" : "weighs you down."]"))
+
+	to_chat(owner, span_userdanger("[parent] embedded in your [owner_limb.plaintext_zone] [pain_stam_pct < 1 ? "hurts!" : "weighs you down."]"))
 
 /// Called every process, return TRUE in order to abort further processing - if it falls out, etc
 /datum/embedding/proc/process_effect(seconds_per_tick)
@@ -524,8 +513,8 @@
 /// Called when then item randomly falls out of a carbon. This handles the damage and descriptors, then calls remove_embedding()
 /datum/embedding/proc/fall_out()
 	if(is_harmless())
-		owner.visible_message(span_warning("[parent] falls off of [owner.name]'s [owner_limb.plaintext_zone]!"),
-			span_warning("[parent] falls off of your [owner_limb.plaintext_zone]!"))
+		owner.visible_message(span_danger("[parent] falls off of [owner.name]'s [owner_limb.plaintext_zone]!"),
+			span_userdanger("[parent] falls off of your [owner_limb.plaintext_zone]!"))
 		remove_embedding()
 		return
 

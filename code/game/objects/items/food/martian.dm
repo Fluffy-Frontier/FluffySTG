@@ -108,7 +108,7 @@
 		/datum/reagent/consumable/capsaicin = 2
 	)
 	tastes = list("chilli heat" = 1, "umami" = 1)
-	foodtypes = VEGETABLES|SEAFOOD
+	foodtypes = SEAFOOD | VEGETABLES
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_2
 
@@ -123,7 +123,7 @@
 		/datum/reagent/consumable/nutriment = 2
 	)
 	tastes = list("meat" = 1, "breadcrumbs" = 1)
-	foodtypes = MEAT|FRIED|GRAIN
+	foodtypes = MEAT | GRAIN
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_2
 
@@ -194,7 +194,7 @@
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 3
 	)
-	foodtypes = GRAIN
+	foodtypes = GRAIN | VEGETABLES
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 // Fried Rice
@@ -272,7 +272,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 10,
 	)
 	tastes = list("rice" = 1, "cheese" = 1, "meatball" = 1, "olives" = 1, "herbs" = 1)
-	foodtypes = MEAT | GRAIN | VEGETABLES | DAIRY | FRUIT
+	foodtypes = MEAT | GRAIN | VEGETABLES | DAIRY
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -341,7 +341,7 @@
 		/datum/reagent/consumable/nutriment = 8,
 	)
 	tastes = list("fried noodles" = 1, "meat" = 1, "breadcrumbs" = 1, "veggies" = 1)
-	foodtypes = MEAT|VEGETABLES|GRAIN|FRIED
+	foodtypes = MEAT | VEGETABLES | GRAIN
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -392,7 +392,7 @@
 		/datum/reagent/medicine/omnizine = 5,
 	)
 	tastes = list("masterful curry" = 1, "rice" = 1)
-	foodtypes = MEAT|VEGETABLES|GRAIN|FRUIT|SUGAR
+	foodtypes = GRAIN | MEAT | VEGETABLES
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_5 //Extensive and secretly guarded. Was previously 2 and I thought it was pathetic.
 
@@ -422,7 +422,7 @@
 		/datum/reagent/consumable/nutriment/protein = 6,
 	)
 	tastes = list("bun" = 1, "fried pork" = 2, "egg" = 1, "cheese" = 1, "ketchup" = 1)
-	foodtypes =  MEAT|GRAIN|DAIRY|FRIED
+	foodtypes = MEAT | GRAIN | DAIRY | VEGETABLES
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -438,7 +438,7 @@
 		/datum/reagent/consumable/capsaicin = 1,
 	)
 	tastes = list("meat" = 1, "bacon" = 1, "kimchi" = 1, "salad" = 1, "rice bread" = 1)
-	foodtypes = MEAT|VEGETABLES|GRAIN|FRIED
+	foodtypes = MEAT | GRAIN | VEGETABLES
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -469,7 +469,7 @@
 		/datum/reagent/consumable/capsaicin = 1,
 	)
 	tastes = list("egg" = 1, "meat" = 1, "kimchi" = 1, "mozzarella" = 1)
-	foodtypes = MEAT|VEGETABLES|GRAIN|DAIRY|FRIED
+	foodtypes = MEAT | DAIRY | VEGETABLES | GRAIN
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -484,7 +484,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 4,
 	)
 	tastes = list("egg" = 1, "toast" = 1, "pork" = 1, "pineapple" = 1, "cheese" = 1)
-	foodtypes = MEAT|GRAIN|FRUIT|DAIRY|FRIED|PINEAPPLE|BREAKFAST
+	foodtypes = MEAT | DAIRY | VEGETABLES | GRAIN | PINEAPPLE | BREAKFAST
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -545,7 +545,7 @@
 		/datum/reagent/consumable/nutriment/fat/oil = 2,
 	)
 	tastes = list("taco meat" = 1, "batter" = 1, "corn" = 1, "cheese" = 1)
-	foodtypes = MEAT|GRAIN|FRIED|VEGETABLES|DAIRY|SEAFOOD
+	foodtypes = MEAT | GRAIN | FRIED | VEGETABLES | DAIRY
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_4 //Batter AND Cargo ingredients.
 
@@ -559,7 +559,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 6,
 	)
 	tastes = list("batter" = 1, "cabbage" = 1, "onion" = 1, "worcestershire sauce" = 1)
-	foodtypes = GRAIN|FRIED|VEGETABLES|SEAFOOD
+	foodtypes = SEAFOOD | GRAIN | FRIED | VEGETABLES
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_4 //Cargo stuff and batter.
 
@@ -595,7 +595,7 @@
 		/datum/reagent/consumable/worcestershire = 2,
 	)
 	tastes = list("sausage" = 1, "spicy sauce" = 1, "fries" = 1)
-	foodtypes = MEAT|VEGETABLES|FRIED
+	foodtypes = MEAT | VEGETABLES
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_4 //Cargo ingredients and a few steps.
 
@@ -610,7 +610,7 @@
 		/datum/reagent/consumable/peanut_butter = 1,
 	)
 	tastes = list("blood" = 1, "nuts" = 1, "herbs" = 1)
-	foodtypes = MEAT|FRIED|NUTS|GRAIN
+	foodtypes = MEAT | NUTS | GRAIN
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -654,7 +654,7 @@
 		/datum/reagent/consumable/nutriment = 10,
 	)
 	tastes = list("bread" = 1, "egg" = 1, "meat" = 1, "onion" = 1)
-	foodtypes = MEAT|VEGETABLES|GRAIN|BREAKFAST
+	foodtypes = GRAIN | MEAT | VEGETABLES | FRIED | BREAKFAST
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_4
 
@@ -685,7 +685,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 8,
 	)
 	tastes = list("bread" = 1, "spicy fries" = 1, "mayonnaise" = 1, "curry" = 1, "meat" = 1)
-	foodtypes = MEAT|VEGETABLES|GRAIN|FRIED
+	foodtypes = MEAT | GRAIN | VEGETABLES | FRIED
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_4
 
@@ -699,7 +699,7 @@
 		/datum/reagent/consumable/nutriment/protein = 8,
 	)
 	tastes = list("rice" = 1, "burger" = 1, "gravy" = 1, "egg" = 1)
-	foodtypes = MEAT|VEGETABLES|GRAIN|FRIED
+	foodtypes = MEAT | GRAIN | VEGETABLES
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_2
 
@@ -730,7 +730,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 6,
 	)
 	tastes = list("sausage" = 1, "pineapple" = 1, "onion" = 1, "teriyaki" = 1)
-	foodtypes = MEAT|VEGETABLES|GRAIN|FRUIT|PINEAPPLE
+	foodtypes = MEAT | VEGETABLES | FRUIT | PINEAPPLE
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_4
 	custom_price = PAYCHECK_CREW * 1.2
@@ -761,7 +761,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 2,
 		/datum/reagent/consumable/char = 2)
 	tastes = list("octopus" = 1)
-	foodtypes = SEAFOOD
+	foodtypes = SEAFOOD | FRIED
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -775,7 +775,7 @@
 		/datum/reagent/consumable/nutriment/protein = 6,
 	)
 	tastes = list("steak" = 1, "potato" = 1)
-	foodtypes = MEAT|VEGETABLES|GRAIN|DAIRY|FRIED
+	foodtypes = MEAT | VEGETABLES | FRIED
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -791,7 +791,7 @@
 		/datum/reagent/consumable/garlic = 1,
 	)
 	tastes = list("ham" = 1, "garlic rice" = 1, "egg" = 1)
-	foodtypes = MEAT|GRAIN|FRIED|BREAKFAST|VEGETABLES
+	foodtypes = MEAT | GRAIN | VEGETABLES | BREAKFAST
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -837,7 +837,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 2,
 	)
 	tastes = list("chicken" = 1, "coconut" = 1, "curry" = 1)
-	foodtypes = MEAT|GRAIN|FRUIT
+	foodtypes = MEAT | VEGETABLES | FRUIT
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -897,13 +897,13 @@
 		/datum/reagent/consumable/nutriment/protein = 8,
 	)
 	tastes = list("curry" = 1, "meat" = 1, "breadcrumbs" = 1, "rice" = 1)
-	foodtypes = MEAT|GRAIN|FRIED
+	foodtypes = MEAT | VEGETABLES | GRAIN
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/salad/beef_bowl
 	name = "beef bowl"
-	desc = "A tasty mix of stewed beef, onion and dashi, served over rice. Typical toppings include pickled ginger, chilli powder, and fried eggs."
+	desc = "A tasty mix of stewed beef and onion, served over rice. Typical toppings include pickled ginger, chilli powder, and fried eggs."
 	icon = 'icons/obj/food/martian.dmi'
 	icon_state = "beef_bowl"
 	food_reagents = list(
@@ -912,7 +912,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 2,
 	)
 	tastes = list("beef" = 25, "onion" = 25, "chili heat" = 15, "rice" = 34, "soul" = 1) //I pour my soul into this bowl
-	foodtypes = MEAT|VEGETABLES|GRAIN|SEAFOOD
+	foodtypes = MEAT | VEGETABLES | GRAIN
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -929,7 +929,7 @@
 		/datum/reagent/consumable/salt = 2,
 	)
 	tastes = list("seafood" = 1, "rice" = 1, "garlic" = 1, "ginger" = 1, "numbing heat" = 1, "salt" = 1)
-	foodtypes = VEGETABLES|GRAIN|SEAFOOD
+	foodtypes = SEAFOOD | VEGETABLES | GRAIN
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_4 //A few Cargo ingredients
 
@@ -944,7 +944,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 2,
 	)
 	tastes = list("seafood" = 1, "rice" = 1, "egg" = 1, "onion" = 1)
-	foodtypes = MEAT|VEGETABLES|GRAIN|SEAFOOD
+	foodtypes = SEAFOOD | MEAT | VEGETABLES | GRAIN
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -959,7 +959,7 @@
 		/datum/reagent/toxin/slimejelly = 4,
 	)
 	tastes = list("grit" = 1, "slime" = 1, "gristle" = 1, "rice" = 1, "Mystery Food X" = 1)
-	foodtypes = VEGETABLES|GRAIN|FRUIT|SEAFOOD|GROSS|TOXIC
+	foodtypes = GROSS | GRAIN | TOXIC
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -977,7 +977,7 @@
 		/datum/reagent/consumable/garlic = 1,
 	)
 	tastes = list("yoghurt" = 1, "garlic" = 1, "lemon" = 1, "egg" = 1, "chilli heat" = 1)
-	foodtypes = MEAT|VEGETABLES|DAIRY|FRIED|BREAKFAST
+	foodtypes = DAIRY | VEGETABLES | MEAT | BREAKFAST
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -993,7 +993,7 @@
 		/datum/reagent/consumable/orangejuice = 4,
 	)
 	tastes = list("meat" = 1, "crepes" = 1, "orange" = 1)
-	foodtypes = MEAT|GRAIN|FRUIT|SUGAR|ORANGES
+	foodtypes = MEAT | DAIRY | VEGETABLES | FRUIT
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -1008,7 +1008,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 15
 	)
 	tastes = list("winter spices" = 2, "ambrosia vulgaris" = 2, "cake" = 5)
-	foodtypes = VEGETABLES|GRAIN|DAIRY|SUGAR
+	foodtypes = GRAIN | SUGAR | DAIRY
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/cake/spekkoek/make_processable()
@@ -1020,7 +1020,7 @@
 	icon = 'icons/obj/food/martian.dmi'
 	icon_state = "spekkoek_slice"
 	tastes = list("winter spices" = 2, "ambrosia vulgaris" = 2, "cake" = 5)
-	foodtypes = VEGETABLES|GRAIN|DAIRY|SUGAR
+	foodtypes = GRAIN | SUGAR | DAIRY
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/salad/pineapple_foster
@@ -1036,7 +1036,7 @@
 		/datum/reagent/consumable/milk = 4
 	)
 	tastes = list("pineapple" = 1, "vanilla" = 1, "caramel" = 1, "ice cream" = 1)
-	foodtypes = GRAIN|FRUIT|DAIRY|SUGAR|PINEAPPLE
+	foodtypes = FRUIT | DAIRY | PINEAPPLE
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -1051,7 +1051,7 @@
 		/datum/reagent/consumable/sugar = 4,
 	)
 	tastes = list("custard" = 1, "vanilla" = 1, "sweet pastry" = 1)
-	foodtypes = GRAIN|FRUIT|DAIRY
+	foodtypes = DAIRY | GRAIN
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -1080,7 +1080,7 @@
 		/datum/reagent/consumable/sugar = 1,
 	)
 	tastes = list("banana" = 1, "batter" = 1)
-	foodtypes = GRAIN|FRUIT|FRIED|SEAFOOD
+	foodtypes = GRAIN | FRUIT | FRIED
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3 //Fried goodness, oil scawy.
 
@@ -1095,7 +1095,7 @@
 		/datum/reagent/consumable/sugar = 1,
 	)
 	tastes = list("pineapple" = 1, "batter" = 1)
-	foodtypes = GRAIN|FRUIT|FRIED|PINEAPPLE|SEAFOOD
+	foodtypes = GRAIN | FRUIT | FRIED | PINEAPPLE
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -1143,7 +1143,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 2,
 	)
 	tastes = list("cold pineapple" = 1, "chocolate" = 1)
-	foodtypes = SUGAR|FRUIT|PINEAPPLE
+	foodtypes = SUGAR | PINEAPPLE
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/popsicle/sea_salt
@@ -1172,7 +1172,7 @@
 		/datum/reagent/consumable/berryjuice = 4
 	)
 	tastes = list("berry" = 1, "tofu" = 1)
-	foodtypes = FRUIT|SUGAR|VEGETABLES
+	foodtypes = FRUIT | VEGETABLES
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/popsicle/topsicle/banana
@@ -1195,7 +1195,6 @@
 		/datum/reagent/consumable/sugar = 6,
 		/datum/reagent/consumable/pineapplejuice = 4
 	)
-	foodtypes = FRUIT|SUGAR|VEGETABLES|PINEAPPLE
 	tastes = list("pineapple" = 1, "tofu" = 1)
 
 // Ballpark Food
@@ -1210,7 +1209,7 @@
 		/datum/reagent/consumable/nutriment = 6
 	)
 	tastes = list("sausage" = 1, "relish" = 1, "onion" = 1, "fruity salsa" = 1)
-	foodtypes = MEAT|VEGETABLES|GRAIN|FRUIT|PINEAPPLE|SEAFOOD
+	foodtypes = FRUIT | MEAT | PINEAPPLE | VEGETABLES | GRAIN
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_4 //Uses Sambal
 	custom_price = PAYCHECK_CREW * 2
@@ -1226,7 +1225,7 @@
 		/datum/reagent/consumable/capsaicin = 1,
 	)
 	tastes = list("frickles" = 1)
-	foodtypes = VEGETABLES|GRAIN|FRIED|SEAFOOD
+	foodtypes = VEGETABLES | GRAIN
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_3 //batter and cargo stuff.
 

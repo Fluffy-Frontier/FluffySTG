@@ -2,10 +2,9 @@
 /obj/item/organ/eyes/voidwalker
 	name = "blackened orbs"
 	desc = "These orbs will withstand the light of the sun, yet still see within the darkest voids."
-	icon_state = "eyes_voidwalker"
 	eye_icon_state = null
 	blink_animation = FALSE
-	iris_overlay = null
+	iris_overlays = FALSE
 	pepperspray_protect = TRUE
 	flash_protect = FLASH_PROTECTION_WELDER
 	color_cutoffs = list(20, 10, 40)

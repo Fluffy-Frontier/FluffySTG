@@ -204,15 +204,31 @@ const ViewCharacter = (props) => {
                   title="OOC Notes"
                   preserveWhitespace
                 >
-                  {!!overlay.veteran_status && (
+                  {overlay.ideal_antag_optin_status && (
                     <Stack.Item>
+                      Current Antag Opt-In Status:{' '}
                       <span
                         style={{
-                          color: 'gold',
                           fontWeight: 'bold',
+                          color:
+                            overlay.opt_in_colors[
+                              overlay.current_antag_optin_status
+                            ],
                         }}
                       >
-                        Player is a Veteran.
+                        {overlay.current_antag_optin_status}
+                      </span>
+                      {'\n'}
+                      Antag Opt-In Status {'(Preferences)'}:{' '}
+                      <span
+                        style={{
+                          color:
+                            overlay.opt_in_colors[
+                              overlay.ideal_antag_optin_status
+                            ],
+                        }}
+                      >
+                        {overlay.ideal_antag_optin_status}
                       </span>
                       {'\n\n'}
                     </Stack.Item>

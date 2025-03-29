@@ -56,7 +56,6 @@
 	)
 	result = /obj/item/food/kiri_curry
 	category = CAT_TESHARI
-	added_foodtypes = FRUIT|SUGAR
 
 /datum/crafting_recipe/food/sirisai_flatbread
 	name = "Sirisai Flatbread"
@@ -113,7 +112,6 @@
 	)
 	result = /obj/item/food/caramel_jelly_toast
 	category = CAT_TESHARI
-	added_foodtypes = FRUIT|SUGAR
 
 /datum/crafting_recipe/food/kiri_jellypuff
 	name = "Kiri Jellypuff"
@@ -125,7 +123,6 @@
 	)
 	result = /obj/item/food/kiri_jellypuff
 	category = CAT_TESHARI
-	added_foodtypes = FRUIT|SUGAR
 
 /datum/crafting_recipe/food/bluefeather_crisps_and_dip
 	name = "Bluefeather Crisps and Dip"

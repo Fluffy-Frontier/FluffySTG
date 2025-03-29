@@ -599,11 +599,8 @@
 	repeating = TRUE
 	sanitization = 0.75
 	flesh_regeneration = 3
-	pickup_sound = SFX_REGEN_MESH_PICKUP
-	drop_sound = SFX_REGEN_MESH_DROP
-	heal_begin_sound = SFX_REGEN_MESH_BEGIN
-	heal_continuous_sound = SFX_REGEN_MESH_CONTINUOUS
-	heal_end_sound = SFX_REGEN_MESH_END
+	pickup_sound = SFX_CLOTH_PICKUP
+	drop_sound = SFX_CLOTH_DROP
 
 	var/is_open = TRUE ///This var determines if the sterile packaging of the mesh has been opened.
 	grind_results = list(/datum/reagent/medicine/spaceacillin = 2)

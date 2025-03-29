@@ -47,8 +47,7 @@
 			name = "Natural " + name
 		if(data["boozepwr"])
 			boozepwr = data["boozepwr"]
-	if(boozepwr) // anything other than 0
-		LAZYSET(addiction_types, /datum/addiction/alcohol, 0.05 * boozepwr)
+	addiction_types = list(/datum/addiction/alcohol = 0.05 * boozepwr)
 	return ..()
 
 /datum/reagent/consumable/ethanol/on_mob_life(mob/living/carbon/drinker, seconds_per_tick, times_fired)

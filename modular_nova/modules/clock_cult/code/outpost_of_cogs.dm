@@ -110,7 +110,8 @@
 
 
 /datum/outfit/blood_cultist/post_equip(mob/living/carbon/human/equipped, visualsOnly)
-	equipped.set_eye_color(BLOODCULT_EYE)
+	equipped.eye_color_left = BLOODCULT_EYE
+	equipped.eye_color_right = BLOODCULT_EYE
 	equipped.update_body()
 
 	var/obj/item/clothing/suit/hooded/hooded = equipped.wear_suit

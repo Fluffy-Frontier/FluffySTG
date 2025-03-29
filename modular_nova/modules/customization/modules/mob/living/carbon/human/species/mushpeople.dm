@@ -1,6 +1,5 @@
 /datum/species/mush/get_default_mutant_bodyparts()
 	return list(
-		"ears" = list("None", FALSE),
 		"caps" = list("Round", FALSE), // we don't want cap-less mushpeople
 	)
 

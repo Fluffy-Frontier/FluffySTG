@@ -248,7 +248,7 @@
 		"status" = status,
 		"interface" = list(
 			"name" = interface,
-			"layout" = user.client.prefs.read_preference(src_object.layout_prefs_used),
+			"layout" = user.client.prefs.read_preference(/datum/preference/choiced/tgui_layout),
 		),
 		"refreshing" = refreshing,
 		"window" = list(

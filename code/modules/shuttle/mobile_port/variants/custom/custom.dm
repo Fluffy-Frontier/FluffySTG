@@ -1,7 +1,6 @@
 /obj/docking_port/mobile/custom
 	name = "custom shuttle"
 	shuttle_id = "custom"
-	launch_status = UNLAUNCHED
 	var/datum/weakref/master_blueprint
 	var/area/default_area
 	var/datum/weakref/control_console

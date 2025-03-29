@@ -128,7 +128,7 @@
 		/datum/reagent/consumable/sugar = 1,
 	)
 	tastes = list("chocolate" = 3, "oranges" = 1)
-	foodtypes = JUNKFOOD|FRUIT|SUGAR|ORANGES
+	foodtypes = JUNKFOOD | SUGAR | ORANGES
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_2
@@ -143,7 +143,7 @@
 		/datum/reagent/consumable/coco = 1,
 	)
 	tastes = list("chocolate" = 1)
-	foodtypes = JUNKFOOD|SUGAR
+	foodtypes = DAIRY | JUNKFOOD | SUGAR
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_TINY
 
@@ -176,7 +176,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 3,
 	)
 	tastes = list("chocolate" = 1, "peanuts" = 1)
-	foodtypes = SUGAR|JUNKFOOD|NUTS
+	foodtypes = DAIRY | SUGAR | JUNKFOOD | NUTS
 	crafting_complexity = FOOD_COMPLEXITY_1
 
 /obj/item/food/bonbon/peanut_butter_cup
@@ -188,7 +188,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 3,
 	)
 	tastes = list("chocolate" = 1, "peanut butter" = 1)
-	foodtypes = SUGAR|JUNKFOOD|NUTS
+	foodtypes = DAIRY | SUGAR | JUNKFOOD | NUTS
 	crafting_complexity = FOOD_COMPLEXITY_1
 
 // Gum
@@ -347,7 +347,7 @@
 		/datum/reagent/medicine/omnizine = 2,
 	) //lollipop, but vitamins = toxins
 	tastes = list("cobwebs" = 1, "sugar" = 2)
-	foodtypes = JUNKFOOD|SUGAR|MEAT|BUGS
+	foodtypes = JUNKFOOD | SUGAR | BUGS
 	food_flags = FOOD_FINGER_FOOD
 	slot_flags = ITEM_SLOT_MASK
 	crafting_complexity = FOOD_COMPLEXITY_1

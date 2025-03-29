@@ -59,10 +59,7 @@
 		return
 
 	carbon_target.adjustOxyLoss(amount = 60, updating_health = TRUE)
-	if(carbon_target.gender == MALE)
-		playsound(src, 'sound/mobs/humanoids/human/sniff/male_sniff.ogg', 50, FALSE)
-	else
-		playsound(src, 'sound/mobs/humanoids/human/sniff/female_sniff.ogg', 50, FALSE)
+	playsound(src, 'modular_nova/modules/emotes/sound/emotes/female/female_sniff.ogg', 50, FALSE)
 	carbon_target.set_heartattack(FALSE)
 
 	if(defib_result == DEFIB_POSSIBLE)

@@ -7,7 +7,7 @@
 		/datum/reagent/consumable/nutriment = 50,
 		/datum/reagent/consumable/nutriment/vitamin = 25
 	)
-	foodtypes = MEAT | GRAIN | VEGETABLES
+	foodtypes = MEAT | GRAIN
 	crafting_complexity = FOOD_COMPLEXITY_4
 
 /obj/item/food/snacks/store/bread/haggis/make_processable()
@@ -81,5 +81,5 @@
 		/datum/reagent/consumable/sugar = 6
 	)
 	tastes = list("sugary dough" = 1)
-	foodtypes = GRAIN | JUNKFOOD | DAIRY | SUGAR
+	foodtypes = GRAIN | JUNKFOOD | SUGAR
 	crafting_complexity = FOOD_COMPLEXITY_2

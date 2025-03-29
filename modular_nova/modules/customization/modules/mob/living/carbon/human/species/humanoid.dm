@@ -15,7 +15,6 @@
 
 /datum/species/humanoid/get_default_mutant_bodyparts()
 	return list(
-		"ears" = list("None", FALSE),
 		"tail" = list("None", FALSE),
 		"snout" = list("None", FALSE),
 		"ears" = list("None", FALSE),

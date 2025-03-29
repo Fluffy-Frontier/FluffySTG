@@ -549,6 +549,8 @@
 	new_profile.undershirt_color = target.undershirt_color
 	new_profile.socks_color = target.socks_color
 	new_profile.bra_color = target.bra_color
+	new_profile.eye_color_left = target.eye_color_left
+	new_profile.eye_color_right = target.eye_color_right
 	new_profile.emissive_eyes = target.emissive_eyes
 	new_profile.scream_type = target.selected_scream?.type || /datum/scream_type/none
 	new_profile.laugh_type = target.selected_laugh?.type || /datum/laugh_type/none
@@ -1045,6 +1047,8 @@
 	new_profile.socks_color = socks_color
 	new_profile.bra = bra
 	new_profile.bra_color = bra_color
+	new_profile.eye_color_left = eye_color_left
+	new_profile.eye_color_right = eye_color_right
 	new_profile.emissive_eyes = emissive_eyes
 
 	new_profile.worn_icon_digi_list = worn_icon_digi_list.Copy()

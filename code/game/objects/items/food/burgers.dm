@@ -48,7 +48,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 5,
 	)
 	tastes = list("bun" = 2, "long pig" = 4)
-	foodtypes = MEAT | GRAIN
+	foodtypes = MEAT | GRAIN | GORE
 	venue_value = FOOD_PRICE_CHEAP
 	crafting_complexity = FOOD_COMPLEXITY_2
 
@@ -70,7 +70,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 6,
 	)
 	tastes = list("bun" = 4, "corgi meat" = 2)
-	foodtypes = GRAIN | MEAT
+	foodtypes = GRAIN | MEAT | GORE
 	venue_value = FOOD_PRICE_EXOTIC
 	crafting_complexity = FOOD_COMPLEXITY_2
 
@@ -98,7 +98,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 4,
 	)
 	tastes = list("bun" = 4, "fish" = 4)
-	foodtypes = GRAIN | SEAFOOD | DAIRY
+	foodtypes = GRAIN | SEAFOOD
 	venue_value = FOOD_PRICE_EXOTIC
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -176,7 +176,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 6,
 	)
 	tastes = list("bun" = 2, "a bad joke" = 4)
-	foodtypes = GRAIN
+	foodtypes = GRAIN | FRUIT
 	venue_value = FOOD_PRICE_NORMAL
 	crafting_complexity = FOOD_COMPLEXITY_2
 
@@ -395,7 +395,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 10,
 	)
 	tastes = list("bun" = 4, "magic" = 2)
-	foodtypes = GRAIN
+	foodtypes = GRAIN | MEAT
 	venue_value = FOOD_PRICE_NORMAL
 	crafting_complexity = FOOD_COMPLEXITY_2
 
@@ -452,7 +452,7 @@
 	bite_consumption = 7
 	max_volume = 100
 	tastes = list("bun" = 4, "type two diabetes" = 10)
-	foodtypes = GRAIN | MEAT | DAIRY | VEGETABLES
+	foodtypes = GRAIN | MEAT | DAIRY
 	venue_value = FOOD_PRICE_EXOTIC
 	crafting_complexity = FOOD_COMPLEXITY_5
 
@@ -474,7 +474,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 6,
 	)
 	tastes = list("extreme heat" = 4, "bun" = 2)
-	foodtypes = GRAIN | MEAT | VEGETABLES
+	foodtypes = GRAIN | MEAT
 	venue_value = FOOD_PRICE_NORMAL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -488,7 +488,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 2,
 	)
 	tastes = list("dead rat" = 4, "bun" = 2)
-	foodtypes = GRAIN | MEAT | GORE | RAW
+	foodtypes = GRAIN | MEAT | GORE
 	venue_value = FOOD_PRICE_CHEAP
 	crafting_complexity = FOOD_COMPLEXITY_2
 
@@ -589,7 +589,7 @@
 		/datum/reagent/consumable/bbqsauce = 1,
 		)
 	tastes = list("bun" = 2, "pork patty" = 4)
-	foodtypes = GRAIN | MEAT | SUGAR | VEGETABLES
+	foodtypes = GRAIN | MEAT
 	venue_value = FOOD_PRICE_NORMAL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -604,14 +604,12 @@
 		/datum/reagent/consumable/nutriment/vitamin = 1,
 	)
 	tastes = list("muffin" = 2, "bacon" = 3)
-	foodtypes = GRAIN | MEAT | BREAKFAST | FRIED
+	foodtypes = GRAIN | MEAT | BREAKFAST
 	venue_value = FOOD_PRICE_NORMAL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/burger/chicken
-	name = "chicken sandwich"
-	//Apparently the proud people of Americlapstan object to this thing being called a burger.
-	//Apparently McDonald's just calls it a burger in Europe as to not scare and confuse us.
+	name = "chicken sandwich" //Apparently the proud people of Americlapstan object to this thing being called a burger. Apparently McDonald's just calls it a burger in Europe as to not scare and confuse us.
 	desc = "A delicious chicken sandwich, it is said the proceeds from this treat helps criminalize disarming people on the space frontier."
 	icon_state = "chickenburger"
 	food_reagents = list(
@@ -622,7 +620,7 @@
 		/datum/reagent/consumable/nutriment/fat/oil = 2,
 	)
 	tastes = list("bun" = 2, "chicken" = 4, "God's covenant" = 1)
-	foodtypes = GRAIN | MEAT
+	foodtypes = GRAIN | MEAT | FRIED
 	venue_value = FOOD_PRICE_NORMAL
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -657,7 +655,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 6,
 	)
 	tastes = list("bun" = 2, "beef patty" = 4, "cheese" = 2, "beef soaked in chili" = 3, "a smoking flare" = 2)
-	foodtypes = GRAIN | MEAT | DAIRY | VEGETABLES
+	foodtypes = GRAIN | MEAT | DAIRY
 	crafting_complexity = FOOD_COMPLEXITY_4
 
 /obj/item/food/burger/crazy/Initialize(mapload)
@@ -688,6 +686,6 @@
 		/datum/reagent/consumable/nutriment/vitamin = 6,
 	)
 	tastes = list("juicy meat" = 4, "BBQ sauce" = 3, "onions" = 2, "bun" = 2)
-	foodtypes = MEAT|VEGETABLES|GRAIN
+	foodtypes = GRAIN | MEAT | VEGETABLES
 	venue_value = FOOD_PRICE_NORMAL
 	crafting_complexity = FOOD_COMPLEXITY_3

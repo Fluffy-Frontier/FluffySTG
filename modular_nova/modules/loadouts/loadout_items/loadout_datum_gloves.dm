@@ -102,8 +102,8 @@
 	item_path = /obj/item/clothing/gloves/bracer/wraps
 
 /datum/loadout_item/gloves/latex
-	name = "Long Gloves"
-	item_path = /obj/item/clothing/gloves/long_gloves
+	name = "Latex Gloves"
+	item_path = /obj/item/clothing/gloves/latex_gloves
 	erp_item = TRUE
 
 /*

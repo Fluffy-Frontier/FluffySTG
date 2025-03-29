@@ -40,7 +40,6 @@
 		/obj/item/food/sausage = 2,
 	)
 	result = /obj/item/food/bread/sausage
-	removed_foodtypes = BREAKFAST
 	category = CAT_BREAD
 
 /datum/crafting_recipe/food/banananutbread
@@ -52,7 +51,6 @@
 		/obj/item/food/grown/banana = 1
 	)
 	result = /obj/item/food/bread/banana
-	removed_foodtypes = BREAKFAST
 	category = CAT_BREAD
 
 /datum/crafting_recipe/food/tofubread
@@ -103,7 +101,6 @@
 		/obj/item/food/butterslice = 1
 	)
 	result = /obj/item/food/butterbiscuit
-	added_foodtypes = BREAKFAST
 	category = CAT_BREAD
 
 /datum/crafting_recipe/food/butterdog
@@ -120,7 +117,7 @@
 	time = 40
 	reqs = list(/datum/reagent/consumable/salt = 1,
 		/datum/reagent/consumable/blackpepper = 1,
-		/obj/item/food/doughslice = 2,
+		/obj/item/food/pastrybase = 2
 	)
 	result = /obj/item/food/baguette
 	category = CAT_BREAD
@@ -177,7 +174,6 @@
 		/obj/item/food/breadslice/plain = 1
 	)
 	result = /obj/item/food/jelliedtoast/slime
-	added_foodtypes = TOXIC | BREAKFAST
 	category = CAT_BREAD
 
 /datum/crafting_recipe/food/jelliedyoast
@@ -187,7 +183,6 @@
 		/obj/item/food/breadslice/plain = 1
 	)
 	result = /obj/item/food/jelliedtoast/cherry
-	added_foodtypes = FRUIT | SUGAR | BREAKFAST
 	category = CAT_BREAD
 
 /datum/crafting_recipe/food/butteredtoast
@@ -197,7 +192,6 @@
 		/obj/item/food/butterslice = 1
 	)
 	result = /obj/item/food/butteredtoast
-	added_foodtypes = BREAKFAST
 	category = CAT_BREAD
 
 /datum/crafting_recipe/food/twobread
@@ -216,8 +210,6 @@
 		/obj/item/food/grown/mushroom/amanita = 1
 		)
 	result = /obj/item/food/breadslice/moldy
-	removed_foodtypes = VEGETABLES|GRAIN
-	added_foodtypes = GROSS
 	category = CAT_BREAD
 
 /datum/crafting_recipe/food/breadcat
@@ -241,5 +233,4 @@
 		/datum/reagent/consumable/milk = 5
 	)
 	result = /obj/item/food/raw_frenchtoast
-	added_foodtypes = BREAKFAST
 	category = CAT_BREAD

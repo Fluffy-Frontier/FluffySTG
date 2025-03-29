@@ -32,7 +32,6 @@
 		/obj/item/food/meatball = 1
 	)
 	result = /obj/item/food/salad/validsalad
-	added_foodtypes = FRIED
 	category = CAT_SALAD
 
 /datum/crafting_recipe/food/melonfruitbowl

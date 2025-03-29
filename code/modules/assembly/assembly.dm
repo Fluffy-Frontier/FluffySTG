@@ -54,10 +54,9 @@
 		connected = null
 	if(!holder)
 		return FALSE
-	var/atom/was_holder = holder
+	forceMove(holder.drop_location())
+	SEND_SIGNAL(src, COMSIG_ASSEMBLY_DETACHED, holder)
 	holder = null
-	forceMove(was_holder.drop_location())
-	SEND_SIGNAL(src, COMSIG_ASSEMBLY_DETACHED, was_holder)
 	return TRUE
 
 /**

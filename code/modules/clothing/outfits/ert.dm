@@ -46,7 +46,6 @@
 		/obj/item/melee/baton/security/loaded = 1,
 	)
 	belt = /obj/item/storage/belt/security/full
-	ears = /obj/item/radio/headset/headset_cent/alt/leader
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	l_pocket = /obj/item/switchblade
 	additional_radio = /obj/item/encryptionkey/heads/captain
@@ -172,10 +171,10 @@
 	if(visuals_only)
 		return
 
-	var/obj/item/card/id/W = H.wear_id
 	var/obj/item/modular_computer/pda/heads/pda = H.r_store
-	pda.imprint_id(H.real_name, "CentCom Official", W)
+	pda.imprint_id(H.real_name, "CentCom Official")
 
+	var/obj/item/card/id/W = H.wear_id
 	W.registered_name = H.real_name
 	W.update_label()
 	W.update_icon()
@@ -261,7 +260,6 @@
 		/obj/item/melee/baton/security/loaded = 1,
 		/obj/item/storage/box/lights/mixed = 1,
 	)
-	ears = /obj/item/radio/headset/headset_cent/alt/leader
 	r_hand = /obj/item/reagent_containers/spray/chemsprayer/janitor
 
 /datum/outfit/centcom/ert/clown
@@ -472,7 +470,6 @@
 	name = "Death Commando Officer"
 
 	back = /obj/item/mod/control/pre_equipped/apocryphal/officer
-	ears = /obj/item/radio/headset/headset_cent/alt/leader
 
 /datum/outfit/centcom/death_commando/officer/post_equip(mob/living/carbon/human/squaddie, visuals_only = FALSE)
 	. = ..()
@@ -493,7 +490,6 @@
 	suit_store = /obj/item/gun/ballistic/automatic/wt550
 	back = /obj/item/shield/riot
 	belt = /obj/item/storage/belt/military/assault/full
-	ears = /obj/item/radio/headset/headset_cent/alt/leader
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
 	l_pocket = /obj/item/knife/combat
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
@@ -507,7 +503,6 @@
 
 	id = /obj/item/card/id/advanced/centcom/ert/security
 	suit = /obj/item/clothing/suit/armor/vest/marine/security
-	ears = /obj/item/radio/headset/headset_cent/alt
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	head = /obj/item/clothing/head/helmet/marine/security
 	additional_radio = /obj/item/encryptionkey/heads/hos
@@ -529,7 +524,6 @@
 		/obj/item/storage/medkit/advanced = 1,
 	)
 	belt = /obj/item/storage/belt/medical/paramedic
-	ears = /obj/item/radio/headset/headset_cent/alt
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 	additional_radio = /obj/item/encryptionkey/heads/cmo
 
@@ -545,7 +539,6 @@
 	back = /obj/item/deployable_turret_folded
 	uniform = /obj/item/clothing/under/rank/centcom/military/eng
 	belt = /obj/item/storage/belt/utility/full/powertools/rcd
-	ears = /obj/item/radio/headset/headset_cent/alt
 	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses
 	additional_radio = /obj/item/encryptionkey/heads/ce
 
@@ -568,9 +561,9 @@
 	r_pocket = /obj/item/reagent_containers/hypospray/medipen/salacid
 	ears = /obj/item/radio/headset
 	backpack_contents = list(
-		/obj/item/storage/medkit/emergency = 1,
-		/obj/item/crowbar = 1,
-		/obj/item/restraints/handcuffs = 1,
+			/obj/item/storage/medkit/emergency = 1,
+			/obj/item/crowbar = 1,
+			/obj/item/restraints/handcuffs = 1,
 	)
 
 /datum/outfit/centcom/militia/general
@@ -597,7 +590,6 @@
 		/obj/item/stack/medical/poultice = 1, //These stacks contain 15 by default. Great for getting corpses to defib range without surgery.
 	)
 	belt = /obj/item/storage/belt/medical/ert
-	ears = /obj/item/radio/headset/headset_cent/alt
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 	additional_radio = /obj/item/encryptionkey/heads/cmo
 	mask = /obj/item/clothing/mask/surgical

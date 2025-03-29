@@ -95,7 +95,6 @@
 	)
 	result = /obj/item/food/canned/chap
 	category = CAT_MEAT
-	removed_foodtypes = RAW
 
 /datum/crafting_recipe/food/grinder/chili_powder
 	reqs = list(/obj/item/food/dried_chili = 1)

@@ -34,9 +34,7 @@ GLOBAL_LIST_EMPTY(customizable_races)
 
 /// Returns a list of the default mutant bodyparts, and whether or not they can be randomized or not
 /datum/species/proc/get_default_mutant_bodyparts()
-	return list(
-		"ears" = list("None", FALSE),
-	)
+	return list()
 
 /datum/species/proc/handle_mutant_bodyparts(mob/living/carbon/human/source, forced_colour)
 	return

@@ -2,7 +2,7 @@
 /// Mostly just does something spooky when it is removed
 /datum/element/corrupted_organ
 
-/datum/element/corrupted_organ/Attach(obj/item/organ/target, add_color = TRUE)
+/datum/element/corrupted_organ/Attach(obj/item/organ/target)
 	. = ..()
 	if (!istype(target) || (target.organ_flags & ORGAN_EXTERNAL))
 		return ELEMENT_INCOMPATIBLE
@@ -10,8 +10,7 @@
 	RegisterSignal(target, COMSIG_ORGAN_SURGICALLY_REMOVED, PROC_REF(on_removed))
 
 	var/atom/atom_parent = target
-	if(add_color)
-		atom_parent.add_atom_colour(COLOR_VOID_PURPLE, FIXED_COLOUR_PRIORITY)
+	atom_parent.color = COLOR_VOID_PURPLE
 
 	atom_parent.add_filter(name = "ray", priority = 1, params = list(
 		type = "rays",

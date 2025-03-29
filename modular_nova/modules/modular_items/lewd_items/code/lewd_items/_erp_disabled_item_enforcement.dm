@@ -58,7 +58,7 @@
 	if(CONFIG_GET(flag/disable_lewd_items))
 		return INITIALIZE_HINT_QDEL
 
-/obj/item/storage/belt/thigh_satchel/Initialize(mapload)
+/obj/item/storage/belt/erpbelt/Initialize(mapload)
 	. = ..()
 	if(CONFIG_GET(flag/disable_lewd_items))
 		return INITIALIZE_HINT_QDEL
@@ -68,7 +68,7 @@
 	if(CONFIG_GET(flag/disable_lewd_items))
 		return INITIALIZE_HINT_QDEL
 
-/obj/item/clothing/shoes/ballet_heels/domina_heels/Initialize(mapload)
+/obj/item/clothing/shoes/latex_heels/domina_heels/Initialize(mapload)
 	. = ..()
 	if(CONFIG_GET(flag/disable_lewd_items))
 		return INITIALIZE_HINT_QDEL
@@ -88,12 +88,17 @@
 	if(CONFIG_GET(flag/disable_lewd_items))
 		return INITIALIZE_HINT_QDEL
 
-/obj/item/clothing/ears/dorms_headphones/Initialize(mapload)
+/obj/item/clothing/ears/kinky_headphones/Initialize(mapload)
 	. = ..()
 	if(CONFIG_GET(flag/disable_lewd_items))
 		return INITIALIZE_HINT_QDEL
 
-/obj/item/clothing/glasses/blindfold/dorms/Initialize(mapload)
+/obj/item/clothing/glasses/blindfold/kinky/Initialize(mapload)
+	. = ..()
+	if(CONFIG_GET(flag/disable_lewd_items))
+		return INITIALIZE_HINT_QDEL
+
+/obj/item/clothing/neck/kink_collar/Initialize(mapload)
 	. = ..()
 	if(CONFIG_GET(flag/disable_lewd_items))
 		return INITIALIZE_HINT_QDEL
@@ -123,7 +128,7 @@
 	if(CONFIG_GET(flag/disable_lewd_items))
 		return INITIALIZE_HINT_QDEL
 
-/obj/item/clothing/under/tearaway_garments/Initialize(mapload)
+/obj/item/clothing/under/stripper_outfit/Initialize(mapload)
 	. = ..()
 	if(CONFIG_GET(flag/disable_lewd_items))
 		return INITIALIZE_HINT_QDEL

@@ -8,7 +8,7 @@
 	bite_consumption = 5
 	food_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
 	tastes = list("donut" = 1)
-	foodtypes = GRAIN|DAIRY|JUNKFOOD|SUGAR|FRIED|BREAKFAST
+	foodtypes = JUNKFOOD | GRAIN | SUGAR | BREAKFAST
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_2
@@ -61,7 +61,6 @@
 	tastes = list("donut" = 3, "chaos" = 1)
 	is_decorated = TRUE
 	crafting_complexity = FOOD_COMPLEXITY_3
-	foodtypes = GRAIN|DAIRY|JUNKFOOD|FRIED|BREAKFAST
 
 /obj/item/food/donut/chaos/Initialize(mapload)
 	. = ..()
@@ -89,7 +88,7 @@
 		/datum/reagent/consumable/ketchup = 3,
 	)
 	tastes = list("meat" = 1)
-	foodtypes = GRAIN|DAIRY|JUNKFOOD|FRIED|BREAKFAST|MEAT|GORE
+	foodtypes = JUNKFOOD | MEAT | GORE | FRIED | BREAKFAST
 	is_decorated = TRUE
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -103,7 +102,6 @@
 		/datum/reagent/consumable/berryjuice = 3,
 		/datum/reagent/consumable/sprinkles = 1, //Extra sprinkles to reward frosting
 	)
-	foodtypes = parent_type::foodtypes|FRUIT
 	decorated_icon = "donut_homer"
 
 /obj/item/food/donut/trumpet
@@ -129,7 +127,6 @@
 		/datum/reagent/consumable/applejuice = 3,
 		/datum/reagent/consumable/sprinkles = 1,
 	)
-	foodtypes = parent_type::foodtypes|FRUIT
 	tastes = list("donut" = 3, "green apples" = 1)
 	is_decorated = TRUE
 
@@ -170,7 +167,6 @@
 		/datum/reagent/consumable/blumpkinjuice = 3,
 		/datum/reagent/consumable/sprinkles = 1,
 	)
-	foodtypes = parent_type::foodtypes|VEGETABLES
 	tastes = list("donut" = 2, "blumpkin" = 1)
 	is_decorated = TRUE
 	crafting_complexity = FOOD_COMPLEXITY_3
@@ -228,7 +224,7 @@
 	)
 	extra_reagent = /datum/reagent/consumable/berryjuice
 	tastes = list("jelly" = 1, "donut" = 3)
-	foodtypes = parent_type::foodtypes|FRUIT
+	foodtypes = JUNKFOOD | GRAIN | FRIED | FRUIT | SUGAR | BREAKFAST
 
 // Jelly donuts don't have holes, but look the same on the outside
 /obj/item/food/donut/jelly/in_box_sprite()
@@ -317,7 +313,6 @@
 		/datum/reagent/consumable/sprinkles = 1,
 		/datum/reagent/consumable/nutriment/vitamin = 1,
 	)
-	foodtypes = parent_type::foodtypes|VEGETABLES
 	tastes = list("jelly" = 1, "donut" = 2, "blumpkin" = 1)
 	is_decorated = TRUE
 	crafting_complexity = FOOD_COMPLEXITY_3
@@ -369,7 +364,7 @@
 	name = "jelly donut"
 	desc = "You jelly?"
 	extra_reagent = /datum/reagent/toxin/slimejelly
-	foodtypes = GRAIN|DAIRY|JUNKFOOD|SUGAR|FRIED|BREAKFAST|TOXIC
+	foodtypes = JUNKFOOD | GRAIN | FRIED | TOXIC | SUGAR | BREAKFAST
 
 /obj/item/food/donut/jelly/slimejelly/plain
 	icon_state = "jelly"
@@ -385,7 +380,6 @@
 		/datum/reagent/consumable/sprinkles = 1,
 		/datum/reagent/consumable/nutriment/vitamin = 1,
 	) //Extra sprinkles to reward frosting
-	foodtypes = parent_type::foodtypes|FRUIT
 
 /obj/item/food/donut/jelly/slimejelly/trumpet
 	name = "spaceman's jelly donut"
@@ -414,7 +408,6 @@
 	)
 	tastes = list("jelly" = 1, "donut" = 3, "green apples" = 1)
 	is_decorated = TRUE
-	foodtypes = parent_type::foodtypes|FRUIT
 
 /obj/item/food/donut/jelly/slimejelly/caramel
 	name = "caramel jelly donut"
@@ -459,7 +452,6 @@
 	tastes = list("jelly" = 1, "donut" = 2, "blumpkin" = 1)
 	is_decorated = TRUE
 	crafting_complexity = FOOD_COMPLEXITY_3
-	foodtypes = parent_type::foodtypes|VEGETABLES
 
 /obj/item/food/donut/jelly/slimejelly/bungo
 	name = "bungo jelly donut"
