@@ -12,9 +12,15 @@
 	melee_damage_upper = 20
 
 	additional_organ_types_by_slot = list(
-		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel,
-		ORGAN_SLOT_XENO_NEUROTOXINGLAND = /obj/item/organ/alien/neurotoxin/spitter,
+		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc,
+		ORGAN_SLOT_XENO_ACIDGLAND = /obj/item/organ/alien/acid/tgmc/large,
+		ORGAN_SLOT_XENO_NEUROTOXINGLAND = /obj/item/organ/alien/neurotoxin/tgmc/large,
 	)
+
+	hud_offset_y = -16
+
+	melee_vehicle_damage = 20
+	resist_heavy_hits = TRUE
 
 /mob/living/carbon/alien/adult/tgmc/spitter/Initialize(mapload)
 	. = ..()
