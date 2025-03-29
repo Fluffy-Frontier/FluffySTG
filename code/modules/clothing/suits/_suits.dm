@@ -58,6 +58,14 @@
 	if(displayed.above_suit)
 		. += undershirt.modify_accessory_overlay() // NOVA EDIT CHANGE - ORIGINAL: . += undershirt.accessory_overlay
 
+/obj/item/clothing/suit/separate_worn_overlays(mutable_appearance/standing, mutable_appearance/draw_target, isinhands = FALSE, icon_file, mutant_styles) // NOVA EDIT CHANGE - ORIGINAL: separate_worn_overlays(mutable_appearance/standing, mutable_appearance/draw_target, isinhands = FALSE, icon_file)
+	. = ..()
+	if(isinhands)
+		return
+	if(GET_ATOM_BLOOD_DNA_LENGTH(src))
+		var/bloodfile2use = (mutant_styles & STYLE_TAUR_ALL) ? 'modular_nova/master_files/icons/mob/64x32_blood.dmi' : 'icons/effects/blood.dmi' // NOVA EDIT ADDITION
+		. += mutable_appearance(bloodfile2use, "[blood_overlay_type]blood") // NOVA_EDIT_CHANGE - ORIGINAL: . += mutable_appearance('icons/effects/blood.dmi', "[blood_overlay_type]blood")
+
 /obj/item/clothing/suit/update_clothes_damaged_state(damaged_state = CLOTHING_DAMAGED)
 	..()
 	if(ismob(loc))
