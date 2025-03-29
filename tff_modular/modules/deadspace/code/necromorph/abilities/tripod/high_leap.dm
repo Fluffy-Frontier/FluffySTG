@@ -52,7 +52,6 @@
 	for(var/i in 1 to 3)
 		sleep(0.1 SECONDS)
 		if(QDELETED(owner) || owner.stat == DEAD) //we got hit and died, rip us
-			qdel(flight_vis)
 			if(owner.stat == DEAD)
 				swooping = FALSE
 				animate(owner, alpha = 255, transform = oldtransform, time = 0, flags = ANIMATION_END_NOW) //reset immediately
@@ -116,7 +115,7 @@
 
 			L.Stun(2 SECONDS)
 			L.attack_necromorph(owner, dealt_damage = LEAP_CONE_DAMAGE)
-			L.shake_camera(src,10,3)
+			shake_camera(L,10,3)
 
 /obj/effect/temp_visual/expanding_circle/tripod
 	color = "#EE0000"
