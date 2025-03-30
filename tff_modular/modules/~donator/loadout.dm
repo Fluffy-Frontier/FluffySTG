@@ -191,3 +191,7 @@
 	name = "Amy plushie"
 	item_path= /obj/item/toy/plush/tff/soulmates/amy
 	ckeywhitelist = list("PadreTheTroll")
+
+/datum/loadout_item/toys/mironov
+	name = "Anatoly plushie"
+	item_path = /obj/item/toy/plush/mironov
