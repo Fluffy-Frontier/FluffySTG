@@ -24,20 +24,17 @@
 
 /mob/living/carbon/alien/adult/tgmc/queen/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/seethrough_mob)	// Люркеров у нас нету (слава богу), но выдать такую штуку кому-то хочется... Будет у королевы, как на обычном ТГ
-
 	var/static/list/innate_actions = list(
 		/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/hard_throwing,
 		/datum/action/cooldown/alien/tgmc/queen_screech,
 	)
 	grant_actions_by_list(innate_actions)
 
+	add_movespeed_modifier(/datum/movespeed_modifier/alien_big)
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 
-	add_movespeed_modifier(/datum/movespeed_modifier/alien_big)
-
 /mob/living/carbon/alien/adult/tgmc/queen/alien_talk(message, shown_name = name)
-	..(message, shown_name, TRUE)
+	return ..(message, shown_name, TRUE)
 
 /mob/living/carbon/alien/adult/tgmc/queen/death(gibbed)
 	if(stat == DEAD)

@@ -24,7 +24,5 @@
 
 /mob/living/carbon/alien/adult/tgmc/spitter/Initialize(mapload)
 	. = ..()
-
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_heavy)
-
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)

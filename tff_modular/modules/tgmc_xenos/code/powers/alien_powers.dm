@@ -1,10 +1,5 @@
 /// TGMC_XENOS (old nova sector xenos)
 
-#define RAVAGER_OUTLINE_EFFECT "ravager_endure_outline"
-#define EVASION_VENTCRAWL_INABILTY_CD_PERCENTAGE 0.8
-#define RUNNER_BLUR_EFFECT "runner_evasion"
-
-// Способность эволюционировать
 /datum/action/cooldown/alien/tgmc
 	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
 	/// Some xeno abilities block other abilities from being used, this allows them to get around that in cases where it is needed
@@ -22,6 +17,8 @@
 	if(!istype(owner_alien) || owner_alien.unable_to_use_abilities)
 		return FALSE
 
+
+// Способность эволюционировать
 /datum/action/cooldown/alien/tgmc/generic_evolve
 	name = "Evolve"
 	desc = "Allows us to evolve to a higher caste of our type, if there is not one already."
@@ -236,143 +233,6 @@
 	corrosion_acid_volume = 1000
 
 
-// Взмах хвоста дефендера + является базовым для взмахов хвоста королевы и равагера
-/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep
-	name = "Crushing Tail Sweep"
-	desc = "Throw back attackers with a sweep of your tail, likely breaking some bones in the process."
-	check_flags = AB_CHECK_CONSCIOUS | AB_CHECK_INCAPACITATED | AB_CHECK_LYING
-	cooldown_time = 60 SECONDS
-	aoe_radius = 1
-	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
-	button_icon_state = "crush_tail"
-	sparkle_path = /obj/effect/temp_visual/dir_setting/tailsweep/defender
-
-	/// The sound that the tail sweep will make upon hitting something
-	var/impact_sound = 'sound/effects/clang.ogg'
-	/// How long mobs hit by the tailsweep should be knocked down for
-	var/knockdown_time = 4 SECONDS
-	/// How much damage tail sweep impacts should do to a mob
-	var/impact_damage = 30
-	/// What wound bonus should the tai sweep impact have
-	var/impact_wound_bonus = 20
-	/// What type of sharpness should this tail sweep have
-	var/impact_sharpness = FALSE
-	/// What type of damage should the tail sweep do
-	var/impact_damage_type = BRUTE
-	// Урон по мехам
-	var/vehicle_damage = 20
-	// Время стана оператора меха
-	var/mecha_occupant_stun_duration
-	// Можем ли откинуть мех ударом хвоста
-	var/vehicle_throwing = TRUE
-
-/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/IsAvailable(feedback = FALSE)
-	. = ..()
-	if(!.)
-		return FALSE
-
-	var/mob/living/carbon/alien/adult/tgmc/owner_alien = owner
-	if(!istype(owner_alien) || owner_alien.unable_to_use_abilities)
-		return FALSE
-
-/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/cast_on_thing_in_aoe(atom/movable/victim, atom/caster)
-	if(!isliving(victim) && !ismecha(victim))
-		return
-
-	if(isalien(victim))
-		return
-
-	var/turf/throwtarget = get_edge_target_turf(caster, get_dir(caster, get_step_away(victim, caster)))
-	var/dist_from_caster = get_dist(victim, caster)
-	if(isliving(victim))
-		var/mob/living/victim_living = victim
-		if(dist_from_caster <= 0)
-			victim_living.Knockdown(knockdown_time)
-			if(sparkle_path)
-				new sparkle_path(get_turf(victim_living), get_dir(caster, victim_living))
-		else
-			victim_living.Knockdown(knockdown_time * 2) //They are on the same turf as us, or... somewhere else, I'm not sure how but they are getting smacked down
-
-		victim_living.apply_damage(impact_damage, impact_damage_type, BODY_ZONE_CHEST, wound_bonus = impact_wound_bonus, sharpness = impact_sharpness)
-		shake_camera(victim_living, 4, 3)
-		playsound(victim_living, impact_sound, 100, TRUE, 8, 0.9)
-		victim.visible_message(span_danger("[caster]'s tail slams into [victim], throwing them back!"), span_userdanger("[caster]'s tail slams into you, throwing you back!"))
-
-		victim_living.safe_throw_at(throwtarget, ((clamp((max_throw - (clamp(dist_from_caster - 2, 0, dist_from_caster))), 3, max_throw))), 1, caster, force = repulse_force)
-
-	else if(ismecha(victim))
-		var/obj/vehicle/sealed/mecha/victim_mecha = victim
-		var/list/mob/occupants = victim_mecha.return_occupants()
-
-		for(var/mob/living/occupant in occupants)
-			if(!isliving(occupant))
-				continue
-			if(!isnull(mecha_occupant_stun_duration))
-				occupant.Stun(mecha_occupant_stun_duration)
-			shake_camera(occupant, 4, 3)
-			playsound(occupant, impact_sound, 100, TRUE, 8, 0.9)
-
-		victim_mecha.take_damage(vehicle_damage, impact_damage_type)
-		victim_mecha.visible_message(span_danger("[caster]'s tail slams into [victim], throwing them back!"), span_userdanger("[caster]'s tail slams into you, throwing you back!"))
-
-		if(vehicle_throwing)
-			if((victim_mecha.max_integrity < 400) && (dist_from_caster <= 1))
-				victim_mecha.safe_throw_at(throwtarget, 1, 1, caster, spin = FALSE, force = repulse_force)
-
-/obj/effect/temp_visual/dir_setting/tailsweep/defender
-	icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
-	icon_state = "crush_tail_anim"
-
-
-// Взмах хвоста преторианца
-/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/hard_throwing
-	name = "Flinging Tail Sweep"
-	desc = "Throw back attackers with a sweep of your tail that is much stronger than other aliens."
-
-	aoe_radius = 2
-	repulse_force = MOVE_FORCE_OVERPOWERING //Fuck everyone who gets hit by this tail in particular
-
-	button_icon_state = "throw_tail"
-
-	sparkle_path = /obj/effect/temp_visual/dir_setting/tailsweep/praetorian
-
-	impact_sound = 'sound/items/weapons/slap.ogg'
-	impact_damage = 20
-	impact_wound_bonus = 10
-
-	mecha_occupant_stun_duration = 1.2 SECONDS
-
-/obj/effect/temp_visual/dir_setting/tailsweep/praetorian
-	icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
-	icon_state = "throw_tail_anim"
-
-
-// Взмах хвоста равагера
-/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/slicing
-	name = "Slicing Tail Sweep"
-	desc = "Throw back attackers with a swipe of your tail, slicing them with its sharpened tip."
-
-	aoe_radius = 2
-
-	button_icon_state = "slice_tail"
-
-	sparkle_path = /obj/effect/temp_visual/dir_setting/tailsweep/ravager
-
-	sound = 'tff_modular/modules/tgmc_xenos/sound/alien_tail_swipe.ogg' //The defender's tail sound isn't changed because its big and heavy, this isn't
-
-	impact_sound = 'modular_nova/master_files/sound/weapons/bloodyslice.ogg'
-	impact_damage = 40
-	impact_sharpness = SHARP_EDGED
-
-	vehicle_damage = 10
-	mecha_occupant_stun_duration = null
-	vehicle_throwing = FALSE
-
-/obj/effect/temp_visual/dir_setting/tailsweep/ravager
-	icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
-	icon_state = "slice_tail_anim"
-
-
 // Хил-аура дрона
 /datum/action/cooldown/alien/tgmc/heal_aura
 	name = "Healing Aura"
@@ -433,6 +293,8 @@
 
 
 // Все сказано в названии подтипа. Только равагер имеет такое
+#define RAVAGER_OUTLINE_EFFECT "ravager_endure_outline"
+
 /datum/action/cooldown/alien/tgmc/literally_too_angry_to_die
 	name = "Endure"
 	desc = "Imbue your body with unimaginable amounts of rage (and plasma) to allow yourself to ignore all pain for a short time."
@@ -467,8 +329,13 @@
 	REMOVE_TRAIT(owner, TRAIT_NOSOFTCRIT, TRAIT_XENO_ABILITY_GIVEN)
 	REMOVE_TRAIT(owner, TRAIT_NOHARDCRIT, TRAIT_XENO_ABILITY_GIVEN)
 
+#undef RAVAGER_OUTLINE_EFFECT
+
 
 // Забавный код для руни
+#define EVASION_VENTCRAWL_INABILTY_CD_PERCENTAGE 0.8
+#define RUNNER_BLUR_EFFECT "runner_evasion"
+
 /datum/action/cooldown/alien/tgmc/evade
 	name = "Evade"
 	desc = "Allows you to evade any projectile that would hit you for a few seconds."
@@ -518,162 +385,8 @@
 	addtimer(CALLBACK(owner, TYPE_PROC_REF(/datum, remove_filter), RUNNER_BLUR_EFFECT), 0.5 SECONDS)
 	return BULLET_ACT_FORCE_PIERCE
 
-
-// Чардж крашера
-/datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge
-	name = "Charge Attack (125)"
-	desc = "Allows you to charge at a position, trampling anything in your path."
-	check_flags = AB_CHECK_CONSCIOUS | AB_CHECK_INCAPACITATED | AB_CHECK_LYING
-	cooldown_time = 2 SECONDS
-	charge_delay = 0.3 SECONDS
-	charge_distance = 7
-	destroy_objects = FALSE
-	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
-	button_icon_state = "crusher_charge"
-	unset_after_click = TRUE
-
-	var/living_damage = 40
-	var/living_knockdown_time = 5 SECONDS
-	var/living_daze_amount = 3 SECONDS
-	var/sharpness = FALSE
-
-	var/obj_damage = 50
-	var/mecha_damage = 75
-	var/mecha_occupants_stun_time = 5 SECONDS
-	var/throw_mecha = TRUE
-
-	var/crush_walls = TRUE
-	var/crush_reinforced_walls = TRUE
-
-	var/plasma_cost = 125
-
-/datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/Activate(atom/target_atom)
-	var/mob/living/carbon/carbon_owner = owner
-	carbon_owner.adjustPlasma(-plasma_cost)
-	return ..()
-
-/datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/IsAvailable(feedback)
-	. = ..()
-	if(!.)
-		return FALSE
-	if(!istgmcalien(owner))
-		return FALSE
-	var/mob/living/carbon/carbon_owner = owner
-	if(carbon_owner.getPlasma() < plasma_cost)
-		return FALSE
-
-	return TRUE
-
-/datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/do_charge_indicator(atom/charger, atom/charge_target)
-	. = ..()
-	playsound(charger, 'tff_modular/modules/tgmc_xenos/sound/alien_roar1.ogg', 75, TRUE, 8, 0.9)
-
-/datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/on_moved(atom/source)
-	playsound(source, 'tff_modular/modules/tgmc_xenos/sound/alien_footstep_charge1.ogg', 100, TRUE, 2, TRUE)
-
-/datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/hit_target(atom/movable/source, atom/target, damage_dealt)
-	var/mob/living/carbon/alien/adult/tgmc/charger = owner
-
-	// Столокновение с существами
-	if(isliving(target))
-		var/mob/living/target_living = target
-		if(target_living.buckled)
-			target_living.buckled.unbuckle_mob(target_living)
-
-		log_combat(charger, target_living, "xeno charged")
-		var/damage = living_damage
-		target_living.apply_damage(damage, BRUTE, BODY_ZONE_CHEST, sharpness = sharpness)
-
-		if(target_living.density && (target_living.mob_size >= charger.mob_size))
-			charger.visible_message(span_danger("[charger] rams into [target] and skids to a halt!"), span_alertalien("We ram into [target] and skid to a halt!"))
-			do_stop()
-			return
-
-		var/fling_dir = pick((charger.dir & (NORTH|SOUTH)) ? list(WEST, EAST, charger.dir|WEST, charger.dir|EAST) : list(NORTH, SOUTH, charger.dir|NORTH, charger.dir|SOUTH))
-		var/fling_dist = rand(1, 3)
-		var/turf/destination = target_living.loc
-		var/turf/temp
-
-		for(var/i in 1 to fling_dist)
-			temp = get_step(destination, fling_dir)
-			if(!temp)
-				break
-			destination = temp
-
-		if(destination != target_living.loc)
-			target_living.throw_at(destination, fling_dist, 1, charger, TRUE)
-
-		target_living.Knockdown(living_knockdown_time, daze_amount = living_daze_amount)
-		charger.visible_message(span_danger("[charger] rams [target]!"), span_alertalien("We ram [target]!"))
-		return
-
-	// Столокновение с объектами
-	if(isobj(target))
-		var/obj/target_obj = target
-		if(istype(target_obj, /obj/structure/alien))
-			return
-
-		var/damage = obj_damage
-		if(ismecha(target))
-			damage = mecha_damage
-		else if(istype(target, /obj/machinery/door/airlock))
-			var/obj/machinery/door/airlock/target_airlock = target
-			damage = ceil(target_airlock.normal_integrity / 2)
-		else if(istype(target, /obj/structure/window))
-			damage = 1000 // Нужно сломать за 1 раз
-
-		target_obj.take_damage(damage, BRUTE)
-		if(QDELETED(target_obj))
-			charger.visible_message(span_danger("[charger] crushes [target]!"), span_alertalien("We crush [target]!"))
-			return
-
-		if(ismecha(target))
-			var/obj/vehicle/sealed/mecha/target_mecha = target
-
-			for(var/mob/living/occupant in target_mecha.occupants)
-				occupant.Stun(mecha_occupants_stun_time)
-
-			charger.visible_message(span_danger("[charger] rams into [target] and skids to a halt!"), span_alertalien("We ram into [target] and skid to a halt!"))
-			do_stop()
-
-			var/turf/throwtarget = get_edge_target_turf(source, get_dir(source, get_step_away(target, source)))
-			var/dist_from_source = get_dist(target, source)
-			if(throw_mecha && (target.max_integrity < 400) && (dist_from_source <= 1))
-				target_mecha.safe_throw_at(throwtarget, 1, 1, source, spin = FALSE, force = MOVE_FORCE_EXTREMELY_STRONG)
-
-			return
-
-		if(target_obj.anchored)
-			charger.visible_message(span_danger("[charger] rams into [target] and skids to a halt!"), span_alertalien("We ram into [target] and skid to a halt!"))
-			do_stop()
-			return
-
-		charger.visible_message("[span_warning("[charger] knocks [target] aside.")]!", span_alertalien("We knock [target] aside."))
-		return
-
-	// Столокновение с турфами
-	if(isturf(target))
-		if(crush_walls)
-			if(!isclosedturf(target) || isindestructiblewall(target))
-				return
-			if(!crush_reinforced_walls && istype(target, /turf/closed/wall/r_wall))
-				return
-
-			target.AddComponent(/datum/component/torn_wall)
-			if(!QDELETED(target) && !istype(target, /turf/closed/wall/r_wall))
-				target.AddComponent(/datum/component/torn_wall)
-
-			if(QDELETED(target))
-				charger.visible_message(span_danger("[charger] plows straight through [target]!"), span_alertalien("We plow straight through [target]!"))
-				return
-
-			charger.visible_message(span_danger("[charger] rams into [target] and skids to a halt!"), span_alertalien("We ram into [target] and skid to a halt!"))
-			do_stop()
-			return
-
-// Останавливает движение чарджера
-/datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/proc/do_stop()
-	GLOB.move_manager.stop_looping(owner)
+#undef EVASION_VENTCRAWL_INABILTY_CD_PERCENTAGE
+#undef RUNNER_BLUR_EFFECT
 
 
 // Способность дефендера становиться настоящей крепостью
@@ -731,8 +444,3 @@
 	xeno_owner.resist_heavy_hits = on
 	playsound(xeno_owner, 'sound/effects/stonedoor_openclose.ogg', 30, TRUE)
 	xeno_owner.update_icons()
-
-
-#undef RAVAGER_OUTLINE_EFFECT
-#undef EVASION_VENTCRAWL_INABILTY_CD_PERCENTAGE
-#undef RUNNER_BLUR_EFFECT

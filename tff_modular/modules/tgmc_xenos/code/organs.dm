@@ -14,10 +14,10 @@
 
 	stored_plasma = 100
 	max_plasma = 250
-	heal_rate = 2.5
+	heal_rate = 1
 	plasma_rate = 5
 
-	var/resting_mult = 3
+	var/resting_mult = 8
 
 /obj/item/organ/alien/plasmavessel/tgmc/on_life(seconds_per_tick, times_fired)
 	var/delta_time = DELTA_WORLD_TIME(SSmobs)

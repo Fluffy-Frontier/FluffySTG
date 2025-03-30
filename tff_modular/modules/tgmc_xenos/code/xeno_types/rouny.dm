@@ -7,8 +7,6 @@
 	maxHealth = 150
 	health = 150
 	icon_state = "alienrunner"
-	/// Holds the evade ability to be granted to the runner later
-	var/datum/action/cooldown/alien/tgmc/evade/evade_ability
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 	next_evolution = /mob/living/carbon/alien/adult/tgmc/ravager
@@ -22,13 +20,16 @@
 
 	melee_vehicle_damage = 20
 
+	/// Holds the evade ability to be granted to the runner later
+	var/datum/action/cooldown/alien/tgmc/evade/evade_ability
+
 /mob/living/carbon/alien/adult/tgmc/runner/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/tackler, stamina_cost = 0, base_knockdown = 2, range = 10, speed = 2, skill_mod = 7, min_distance = 0)
 	evade_ability = new(src)
 	evade_ability.Grant(src)
 
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_quick)
+	AddComponent(/datum/component/tackler, stamina_cost = 0, base_knockdown = 2, range = 10, speed = 2, skill_mod = 7, min_distance = 0)
 
 /mob/living/carbon/alien/adult/tgmc/runner/bullet_act(obj/projectile/hitting_projectile, def_zone, piercing_hit = FALSE)
 	if(evade_ability)

@@ -23,4 +23,9 @@
 
 /mob/living/carbon/alien/adult/tgmc/sentinel/Initialize(mapload)
 	. = ..()
+	var/static/list/innate_actions = list(
+		/datum/action/cooldown/mob_cooldown/sneak/alien,
+	)
+	grant_actions_by_list(innate_actions)
+
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_slow)

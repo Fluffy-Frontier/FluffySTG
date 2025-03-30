@@ -236,3 +236,8 @@
 
 /datum/movespeed_modifier/alien_rest
 	multiplicative_slowdown = 5
+
+/mob/living/carbon/alien/adult/tgmc/adjustPlasma(amount)
+	. = ..()
+	for(var/datum/action/cooldown/ability in actions)
+		ability.build_all_button_icons()

@@ -23,4 +23,7 @@
 
 /mob/living/carbon/alien/adult/tgmc/drone/Initialize(mapload)
 	. = ..()
-	GRANT_ACTION(/datum/action/cooldown/alien/tgmc/heal_aura)
+	var/static/list/innate_actions = list(
+		/datum/action/cooldown/alien/tgmc/heal_aura,
+	)
+	grant_actions_by_list(innate_actions)
