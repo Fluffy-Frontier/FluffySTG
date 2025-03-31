@@ -15,13 +15,14 @@
 	light_color = LIGHT_COLOR_FIRE
 
 	var/static/loc_connections2 = list(
-		COMSIG_ATOM_ENTERED = PROC_REF(movable_entered)
+		COMSIG_ATOM_ENTERED = PROC_REF(movable_entered),
+		COMSIG_ATOM_ATTACKBY = PROC_REF(alien_extinguish)
 	)
 
 /obj/effect/particle_effect/fluid/smoke/fire/Initialize(mapload, datum/fluid_group/group, ...)
 	. = ..()
 	AddElement(/datum/element/connect_loc, loc_connections2)
-	addtimer(CALLBACK(src, PROC_REF(lower_fire)), lifetime / 3)
+	addtimer(CALLBACK(src, PROC_REF(lower_fire)), initial(lifetime) / 3)
 	set_light_range(LIGHT_RANGE_FIRE + 1)
 	update_light()
 
@@ -64,8 +65,7 @@
 		if("fire_big")
 			icon_state = "fire_medium"
 			set_light_range(LIGHT_RANGE_FIRE)
-
-			addtimer(CALLBACK(src, PROC_REF(lower_fire)), lifetime / 3)
+			addtimer(CALLBACK(src, PROC_REF(lower_fire)), initial(lifetime) / 3)
 		if("fire_medium")
 			icon_state = "fire_small"
 			set_light_range(LIGHT_RANGE_FIRE)
@@ -78,3 +78,13 @@
 		return
 
 	target_atom.fire_act(5000, 1000)
+
+/obj/effect/particle_effect/fluid/smoke/fire/extinguish()
+	. = ..()
+	lifetime -= initial(lifetime) / 2
+
+/obj/effect/particle_effect/fluid/smoke/fire/proc/alien_extinguish(mob/living/carbon/alien/adult/user)
+	lifetime -= initial(lifetime) / 3
+	var/obj/item/bodypart/arm/current_arm = user.get_active_hand()
+	user.apply_damage(5, BURN, current_arm.body_zone)
+
