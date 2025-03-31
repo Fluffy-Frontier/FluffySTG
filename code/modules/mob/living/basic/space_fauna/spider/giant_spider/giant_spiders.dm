@@ -205,6 +205,7 @@
 	)
 
 	// FLUFFY FRONTIER EDIT END
+
 	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/average_web)
 
 /**
@@ -274,6 +275,7 @@
 	)
 
 	// FLUFFY FRONTIER EDIT END.
+
 /// Prevent you from healing other tangle spiders, or healing when on fire
 /mob/living/basic/spider/giant/tangle/proc/can_mend(mob/living/source, mob/living/target)
 	if (on_fire)
