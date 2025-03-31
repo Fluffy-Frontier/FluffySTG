@@ -181,6 +181,7 @@
 	. = ..()
 	var/datum/atom_hud/datahud = GLOB.huds[health_hud]
 	datahud.show_to(src)
+
 	// FLUFFY FRONTIER EDIT START: SPIDERS NURSE HEALING ABILITY BUFF.
 	/* ORIGINAL:
 	AddComponent(/datum/component/healing_touch,\
@@ -202,6 +203,7 @@
 		action_text = "%SOURCE% begins wrapping the wounds of %TARGET%.",\
 		complete_text = "%SOURCE% wraps the wounds of %TARGET%.",\
 	)
+
 	// FLUFFY FRONTIER EDIT END
 	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/average_web)
 
@@ -244,6 +246,7 @@
 	. = ..()
 
 	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/average_web)
+
 	// FLUFFY FRONTIER EDIT START: SPIDERS TANGLE SELF-HEALING ABILITY BUFF.
 	/*	ORIGINAL:
 	AddComponent(/datum/component/healing_touch,\
@@ -269,6 +272,7 @@
 		action_text = "%SOURCE% begins mending themselves...",\
 		complete_text = "%SOURCE%'s wounds mend together.",\
 	)
+
 	// FLUFFY FRONTIER EDIT END.
 /// Prevent you from healing other tangle spiders, or healing when on fire
 /mob/living/basic/spider/giant/tangle/proc/can_mend(mob/living/source, mob/living/target)
