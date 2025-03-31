@@ -3,10 +3,10 @@
 /mob/living/carbon/alien/adult/tgmc/runner
 	name = "alien runner"
 	desc = "A short alien with sleek red chitin, clearly abiding by the 'red ones go faster' theorem and almost always running on all fours."
+	icon_state = "alienrunner"
 	caste = "runner"
 	maxHealth = 150
 	health = 150
-	icon_state = "alienrunner"
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 	next_evolution = /mob/living/carbon/alien/adult/tgmc/ravager
@@ -16,6 +16,8 @@
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc/small/tiny,
 	)
 
+	maptext_height = 32
+	maptext_width = 32
 	hud_offset_y = -32
 
 	melee_vehicle_damage = 20

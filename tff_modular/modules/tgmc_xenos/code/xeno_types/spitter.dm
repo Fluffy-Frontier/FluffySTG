@@ -3,10 +3,10 @@
 /mob/living/carbon/alien/adult/tgmc/spitter
 	name = "alien spitter"
 	desc = "A fairly heavy looking alien with prominent acid glands, it's mouth dripping with... some kind of toxin or acid."
+	icon_state = "alienspitter"
 	caste = "spitter"
 	maxHealth = 300
 	health = 300
-	icon_state = "alienspitter"
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 15
 	melee_damage_upper = 20

@@ -3,10 +3,10 @@
 /mob/living/carbon/alien/adult/tgmc/crusher
 	name = "alien crusher"
 	desc = "A huge alien with an enormous armored crest."
+	icon_state = "aliencrusher"
 	caste = "crusher"
 	maxHealth = 700
 	health = 700
-	icon_state = "aliencrusher"
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 30
 	melee_damage_upper = 35

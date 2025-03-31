@@ -3,10 +3,10 @@
 /mob/living/carbon/alien/adult/tgmc/defender
 	name = "alien defender"
 	desc = "A heavy looking alien with a wrecking ball-like tail that'd probably hurt to get hit by."
+	icon_state = "aliendefender"
 	caste = "defender"
 	maxHealth = 300
 	health = 300
-	icon_state = "aliendefender"
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 25
 	melee_damage_upper = 30

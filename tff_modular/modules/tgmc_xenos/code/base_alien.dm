@@ -70,6 +70,7 @@
 		GRANT_ACTION(/datum/action/cooldown/alien/tgmc/generic_evolve)
 
 	ADD_TRAIT(src, TRAIT_XENO_HEAL_AURA, TRAIT_XENO_INNATE)
+	ADD_TRAIT(src, TRAIT_PIERCEIMMUNE, TRAIT_XENO_INNATE)
 	AddElement(/datum/element/resin_walker, /datum/movespeed_modifier/resin_speedup)
 	RegisterSignal(src, COMSIG_LIVING_UPDATED_RESTING, PROC_REF(on_rest))
 
