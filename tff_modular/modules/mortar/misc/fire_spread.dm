@@ -80,4 +80,4 @@
 
 /obj/effect/particle_effect/fluid/smoke/fire/extinguish()
 	. = ..()
-	lifetime -= initial(lifetime) / 2
+	qdel(src)

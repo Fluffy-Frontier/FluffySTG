@@ -28,7 +28,7 @@
 	icon_state = "mortar_ammo_he"
 
 /obj/item/mortar_shell/he/explosion_effect(turf/T)
-	explosion(T, 0, 3, 5, 7)
+	explosion(T, 0, 1, 5, 6)
 
 
 /obj/item/mortar_shell/frag
