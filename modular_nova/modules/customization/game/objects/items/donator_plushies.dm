@@ -368,7 +368,7 @@
 /obj/item/toy/plush/nova/donator/zapp/attack_self(mob/user)
 	. = ..()
 	var/turf/src_turf = get_turf(src)
-	playsound(src_turf, 'sound/items/drink.ogg', 50, TRUE)
+	playsound(src_turf, 'tff_modular/modules/sec-antag-balance-patch-super-cool/slurp.ogg', 50, TRUE)
 	var/skill_level = user.mind.get_skill_level(/datum/skill/gaming)
 	if(user.ckey == "cameronlancaster")
 		skill_level = (max(6, skill_level))

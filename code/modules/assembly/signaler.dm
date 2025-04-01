@@ -29,7 +29,7 @@
 
 /obj/item/assembly/signaler/suicide_act(mob/living/carbon/user)
 	user.visible_message(span_suicide("[user] eats \the [src]! If it is signaled, [user.p_they()] will die!"))
-	playsound(src, 'sound/items/eatfood.ogg', 50, TRUE)
+	playsound(src, 'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg', 50, TRUE)
 	moveToNullspace()
 	suicider = user.mind
 	suicide_mob = REF(user)

@@ -31,7 +31,7 @@
 		return
 	COOLDOWN_START(src, refill_cooldown, 30 SECONDS)
 	current_mass++
-	playsound(src, 'sound/items/eatfood.ogg', 100, TRUE)
+	playsound(src, 'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg', 100, TRUE)
 	update_appearance(UPDATE_ICON_STATE)
 
 /obj/structure/destructible/eldritch_crucible/atom_deconstruct(disassembled = TRUE)
@@ -228,7 +228,7 @@
 		return
 
 	current_mass++
-	playsound(src, 'sound/items/eatfood.ogg', 100, TRUE)
+	playsound(src, 'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg', 100, TRUE)
 	visible_message(span_notice("[src] devours [consumed] and fills itself with a little bit of liquid!"))
 
 	if(feeder)

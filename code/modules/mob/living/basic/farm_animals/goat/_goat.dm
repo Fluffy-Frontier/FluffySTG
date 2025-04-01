@@ -73,7 +73,7 @@
 		return
 
 	living_target.adjustBruteLoss(20)
-	playsound(src, 'sound/items/eatfood.ogg', rand(30, 50), TRUE)
+	playsound(src, 'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg', rand(30, 50), TRUE)
 	var/obj/item/bodypart/edible_bodypart
 
 	if(ishuman(living_target))
@@ -136,4 +136,4 @@
 
 	if(eaten && prob(10))
 		say("Nom") // bon appetit
-		playsound(src, 'sound/items/eatfood.ogg', rand(30, 50), TRUE)
+		playsound(src, 'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg', rand(30, 50), TRUE)

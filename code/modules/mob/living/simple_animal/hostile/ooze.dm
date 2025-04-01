@@ -244,7 +244,7 @@
 	vored_mob = target
 	vored_mob.forceMove(owner) ///AAAAAAAAAAAAAAAAAAAAAAHHH!!!
 	RegisterSignal(vored_mob, COMSIG_QDELETING, PROC_REF(stop_consuming))
-	playsound(owner,'sound/items/eatfood.ogg', rand(30,50), TRUE)
+	playsound(owner,'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg', rand(30,50), TRUE)
 	owner.visible_message(span_warning("[owner] [devour_verb]s [target]!"), span_notice("You [devour_verb] [target]."))
 	START_PROCESSING(SSprocessing, src)
 	build_all_button_icons(UPDATE_BUTTON_NAME|UPDATE_BUTTON_ICON)

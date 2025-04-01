@@ -481,7 +481,7 @@
 		return
 	to_chat(user, span_notice("[GLOB.deity] loves organic slurry."))
 	adjust_favor(favor_earned, user)
-	playsound(get_turf(offering), 'sound/items/drink.ogg', 50, TRUE)
+	playsound(get_turf(offering), 'tff_modular/modules/sec-antag-balance-patch-super-cool/slurp.ogg', 50, TRUE)
 	offering.reagents.clear_reagents()
 	return TRUE
 

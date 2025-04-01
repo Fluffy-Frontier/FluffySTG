@@ -25,7 +25,7 @@ Consuming extracts:
 			nutriment_eaten += N.volume
 			to_chat(user, span_notice("[src] opens up and swallows [O] whole!"))
 			qdel(O)
-			playsound(src, 'sound/items/eatfood.ogg', 20, TRUE)
+			playsound(src, 'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg', 20, TRUE)
 		else
 			to_chat(user, span_warning("[src] burbles unhappily at the offering."))
 		if(nutriment_eaten >= nutriment_required)
@@ -74,7 +74,7 @@ Consuming extracts:
 
 		if(!istype(H) || !HAS_TRAIT(H, TRAIT_AGEUSIA))
 			to_chat(M, span_notice("Tastes like [taste]."))
-		playsound(get_turf(M), 'sound/items/eatfood.ogg', 20, TRUE)
+		playsound(get_turf(M), 'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg', 20, TRUE)
 		if(nutrition)
 			M.reagents.add_reagent(/datum/reagent/consumable/nutriment,nutrition)
 		do_effect(M, user)

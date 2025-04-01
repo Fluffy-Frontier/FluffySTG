@@ -486,7 +486,7 @@ Behavior that's still missing from this component that original food items had t
 		return FALSE
 	if(eater.satiety > -200)
 		eater.satiety -= junkiness
-	playsound_if_pref(eater.loc,'sound/items/eatfood.ogg', rand(10,50), TRUE, pref_to_check = /datum/preference/toggle/sound_eating) // NOVA EDIT CHANGE - Original: playsound(eater.loc,'sound/items/eatfood.ogg', rand(10,50), TRUE)
+	playsound_if_pref(eater.loc,'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg', rand(10,50), TRUE, pref_to_check = /datum/preference/toggle/sound_eating) // NOVA EDIT CHANGE - Original: playsound(eater.loc,'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg', rand(10,50), TRUE)
 	if(!owner.reagents.total_volume)
 		return
 	var/sig_return = SEND_SIGNAL(parent, COMSIG_FOOD_EATEN, eater, feeder, bitecount, bite_consumption)
@@ -737,7 +737,7 @@ Behavior that's still missing from this component that original food items had t
 	if(foodtypes & edible_flags)
 		food.reagents.trans_to(eater, food.reagents.total_volume, transferred_by = eater)
 		eater.visible_message(span_warning("[eater] eats [food]!"), span_notice("You eat [food]."))
-		playsound(get_turf(eater),'sound/items/eatfood.ogg', rand(30,50), TRUE)
+		playsound(get_turf(eater),'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg', rand(30,50), TRUE)
 		qdel(food)
 		return COMPONENT_ATOM_EATEN
 

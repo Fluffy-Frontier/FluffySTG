@@ -117,7 +117,7 @@
 	if((hunger <= HUNGER_THRESHOLD_TRY_EATING) || prob(80))
 		return
 
-	playsound(cursed_item, 'sound/items/eatfood.ogg', 20, TRUE)
+	playsound(cursed_item, 'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg', 20, TRUE)
 	hunger = 0
 
 	//check hungry enough to eat something!

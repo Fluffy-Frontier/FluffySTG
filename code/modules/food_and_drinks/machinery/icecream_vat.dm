@@ -154,7 +154,7 @@
 
 	if(added_reagents)
 		balloon_alert(user, "refilling reagents")
-		playsound(src, 'sound/items/drink.ogg', 25, TRUE)
+		playsound(src, 'tff_modular/modules/sec-antag-balance-patch-super-cool/slurp.ogg', 25, TRUE)
 	else
 		balloon_alert(user, "no reagents to transfer!")
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN

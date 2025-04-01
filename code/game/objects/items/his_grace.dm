@@ -190,7 +190,7 @@
 	meal.visible_message(span_warning("[src] swings open and devours [meal]!"), "<span class='his_grace big bold'>[src] consumes you!</span>")
 	meal.adjustBruteLoss(200)
 	playsound(meal, 'sound/effects/desecration/desecration-02.ogg', 75, TRUE)
-	playsound(src, 'sound/items/eatfood.ogg', 100, TRUE)
+	playsound(src, 'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg', 100, TRUE)
 	meal.forceMove(src)
 	force_bonus += HIS_GRACE_FORCE_BONUS
 	prev_bloodthirst = bloodthirst

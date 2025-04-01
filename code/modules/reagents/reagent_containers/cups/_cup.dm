@@ -22,7 +22,7 @@
 	///What kind of chem transfer method does this cup use. Defaults to INGEST
 	var/reagent_consumption_method = INGEST
 	///What sound does our consumption play on consuming from the container?
-	var/consumption_sound = 'sound/items/drink.ogg'
+	var/consumption_sound = 'tff_modular/modules/sec-antag-balance-patch-super-cool/slurp.ogg'
 
 /obj/item/reagent_containers/cup/examine(mob/user)
 	. = ..()

@@ -187,7 +187,7 @@
 	card.moveToNullspace()
 	access |= card.access
 	if(!isnull(user))
-		playsound(drop_location(), 'sound/items/eatfood.ogg', rand(10,30), TRUE)
+		playsound(drop_location(), 'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg', rand(10,30), TRUE)
 		balloon_alert(user, "consumed card")
 
 /obj/item/card/id/advanced/heretic/interact_with_atom(atom/target, mob/living/user, list/modifiers)

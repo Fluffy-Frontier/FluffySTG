@@ -15,7 +15,7 @@
 	to_chat(human_user, span_danger("Power courses through you! You can now shift your form at will."))
 	var/datum/action/cooldown/spell/shapeshift/polar_bear/transformation_spell = new(user.mind || user)
 	transformation_spell.Grant(user)
-	playsound(human_user.loc, 'sound/items/drink.ogg', rand(10,50), TRUE)
+	playsound(human_user.loc, 'tff_modular/modules/sec-antag-balance-patch-super-cool/slurp.ogg', rand(10,50), TRUE)
 	qdel(src)
 
 // Wendigo skull

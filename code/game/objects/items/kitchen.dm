@@ -48,7 +48,7 @@
 
 /obj/item/kitchen/fork/suicide_act(mob/living/carbon/user)
 	user.visible_message(span_suicide("[user] stabs \the [src] into [user.p_their()] chest! It looks like [user.p_theyre()] trying to take a bite out of [user.p_them()]self!"))
-	playsound(src, 'sound/items/eatfood.ogg', 50, TRUE)
+	playsound(src, 'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg', 50, TRUE)
 	return BRUTELOSS
 
 /obj/item/kitchen/fork/attack(mob/living/carbon/M, mob/living/carbon/user)
@@ -267,7 +267,7 @@
 			span_notice("You scoop a spoonful into [target_mob]'s mouth.")
 		)
 
-	playsound(target_mob, 'sound/items/drink.ogg', rand(10,50), vary = TRUE)
+	playsound(target_mob, 'tff_modular/modules/sec-antag-balance-patch-super-cool/slurp.ogg', rand(10,50), vary = TRUE)
 	reagents.trans_to(target_mob, spoon_sip_size, methods = INGEST)
 	return TRUE
 

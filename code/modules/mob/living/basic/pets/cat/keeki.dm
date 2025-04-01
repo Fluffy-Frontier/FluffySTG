@@ -16,7 +16,7 @@
 	response_harm_continuous = "takes a bite out of"
 	response_harm_simple = "take a bite out of"
 	ai_controller = /datum/ai_controller/basic_controller/cat/cake
-	attacked_sound = 'sound/items/eatfood.ogg'
+	attacked_sound = 'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg'
 	death_message = "loses her false life and collapses!"
 	death_sound = SFX_BODYFALL
 	held_state = "cak"

@@ -95,7 +95,7 @@
 	/obj/item/food/meat/slab = 2)
 	response_harm_continuous = "takes a bite out of"
 	response_harm_simple = "take a bite out of"
-	attacked_sound = 'sound/items/eatfood.ogg'
+	attacked_sound = 'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg'
 	held_state = "breaddog"
 	worn_slot_flags = ITEM_SLOT_HEAD
 

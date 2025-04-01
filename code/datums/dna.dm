@@ -596,7 +596,7 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 	else
 		CRASH("set_species called with an invalid mrace [mrace]")
 
-	death_sound = new_race.death_sound
+	death_sound = 'tff_modular/modules/sec-antag-balance-patch-super-cool/carbon.ogg'
 
 	var/datum/species/old_species = dna.species
 	dna.species = new_race

@@ -39,7 +39,7 @@
 		open_soda()
 		sleep(1 SECONDS)
 	H.visible_message(span_suicide("[H] takes a big sip from [src]! It looks like [H.p_theyre()] trying to commit suicide!"))
-	playsound(H,'sound/items/drink.ogg', 80, TRUE)
+	playsound(H,'tff_modular/modules/sec-antag-balance-patch-super-cool/slurp.ogg', 80, TRUE)
 	reagents.trans_to(H, src.reagents.total_volume, transferred_by = H) //a big sip
 	sleep(0.5 SECONDS)
 	H.say(pick(
@@ -52,7 +52,7 @@
 	if(H.age >= 30)
 		H.Stun(50)
 		sleep(5 SECONDS)
-		playsound(H,'sound/items/drink.ogg', 80, TRUE)
+		playsound(H,'tff_modular/modules/sec-antag-balance-patch-super-cool/slurp.ogg', 80, TRUE)
 		H.say(pick(
 			"Another day, another dollar.",
 			"I wonder if I should hold?",

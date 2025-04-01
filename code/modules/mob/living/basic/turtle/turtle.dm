@@ -215,7 +215,7 @@
 
 	used_item.reagents.trans_to(reagents, 5)
 	balloon_alert(user, "drinks happily")
-	playsound(src, 'sound/items/drink.ogg', vol = 25, vary = TRUE)
+	playsound(src, 'tff_modular/modules/sec-antag-balance-patch-super-cool/slurp.ogg', vol = 25, vary = TRUE)
 	return ITEM_INTERACT_SUCCESS
 
 /mob/living/basic/turtle/proc/pre_eat_food(datum/source, obj/item/seeds/potential_food)

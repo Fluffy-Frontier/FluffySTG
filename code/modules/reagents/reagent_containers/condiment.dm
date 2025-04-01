@@ -65,7 +65,7 @@
 
 	SEND_SIGNAL(M, COMSIG_GLASS_DRANK, src, user) // NOVA EDIT ADDITION - Hemophages can't casually drink what's not going to regenerate their blood
 	reagents.trans_to(M, 10, transferred_by = user, methods = INGEST)
-	playsound(M.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
+	playsound(M.loc,'tff_modular/modules/sec-antag-balance-patch-super-cool/slurp.ogg', rand(10,50), TRUE)
 	return TRUE
 
 /obj/item/reagent_containers/condiment/interact_with_atom(atom/target, mob/living/user, list/modifiers)

@@ -196,7 +196,7 @@
 			to_chat(user, span_danger("You feel like you could walk straight through lava now."))
 			ADD_TRAIT(user, TRAIT_LAVA_IMMUNE, type)
 
-	playsound(user,'sound/items/drink.ogg', 30, TRUE)
+	playsound(user,'tff_modular/modules/sec-antag-balance-patch-super-cool/slurp.ogg', 30, TRUE)
 	qdel(src)
 
 // Lava staff

@@ -146,7 +146,7 @@
 	else
 		to_chat(hemophage, span_notice("You pull greedy gulps of precious lifeblood from [victim]'s veins![is_target_human_with_client ? " That tasted particularly good!" : ""]"))
 
-	playsound(hemophage, 'sound/items/drink.ogg', 30, TRUE, -2)
+	playsound(hemophage, 'tff_modular/modules/sec-antag-balance-patch-super-cool/slurp.ogg', 30, TRUE, -2)
 
 	// just let the hemophage know they're capped out on blood if they're trying to go for an exsanguinate and wondering why it isn't working
 	if(drained_blood != HEMOPHAGE_DRAIN_AMOUNT && hemophage.blood_volume >= (BLOOD_VOLUME_MAXIMUM - HEMOPHAGE_DRAIN_AMOUNT))

@@ -178,7 +178,7 @@
 		if(user.get_item_by_slot(ITEM_SLOT_MASK) == src)
 			user.apply_status_effect(/datum/status_effect/choke, src)
 			user.visible_message(span_danger("[user] accidentally swallows [src]!"))
-			playsound(user, 'sound/items/eatfood.ogg', 100, TRUE)
+			playsound(user, 'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg', 100, TRUE)
 
 /obj/item/knife/combat/survival
 	name = "survival knife"

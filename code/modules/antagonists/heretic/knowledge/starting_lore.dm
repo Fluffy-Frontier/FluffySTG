@@ -362,7 +362,7 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 	user.playsound_local(get_turf(user), 'sound/music/antag/heretic/heretic_gain_intense.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 	for(var/i in 1 to reward)
 		user.emote("scream")
-		playsound(loc, 'sound/items/eatfood.ogg', 100, TRUE)
+		playsound(loc, 'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg', 100, TRUE)
 		heretic_datum.knowledge_points++
 		to_chat(user, span_danger("You feel something invisible tearing away at your very essence!"))
 		user.do_jitter_animation()

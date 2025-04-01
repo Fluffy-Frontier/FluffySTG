@@ -56,11 +56,11 @@
 
 /obj/machinery/power/supermatter_crystal/proc/processing_sound()
 	if(internal_energy)
-		soundloop.volume = clamp((50 + (internal_energy / 50)), 50, 100)
+		soundloop.volume = clamp((50 + (internal_energy / 50)), 5, 30)
 	if(damage >= 300)
-		soundloop.mid_sounds = list('sound/machines/sm/loops/delamming.ogg' = 1)
+		soundloop.mid_sounds = list('tff_modular/modules/sec-antag-balance-patch-super-cool/smambience.ogg' = 1)
 	else
-		soundloop.mid_sounds = list('sound/machines/sm/loops/calm.ogg' = 1)
+		soundloop.mid_sounds = list('tff_modular/modules/sec-antag-balance-patch-super-cool/smambience.ogg' = 1)
 
 	//We play delam/neutral sounds at a rate determined by power and damage
 	if(last_accent_sound >= world.time || !prob(20))

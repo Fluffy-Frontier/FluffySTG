@@ -87,6 +87,9 @@
 /area/station/medical/pharmacy
 	name = "\improper Pharmacy"
 	icon_state = "pharmacy"
+	ambientsounds = list(
+		'tff_modular/modules/sec-antag-balance-patch-super-cool/chemistry.ogg',
+	)
 
 /area/station/medical/chem_storage
 	name = "\improper Chemical Storage"

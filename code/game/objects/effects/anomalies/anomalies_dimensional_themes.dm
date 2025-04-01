@@ -262,14 +262,14 @@
 	icon = 'icons/obj/food/meat.dmi'
 	icon_state = "meat"
 	material = /datum/material/meat
-	sound = 'sound/items/eatfood.ogg'
+	sound = 'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg'
 
 /datum/dimension_theme/pizza
 	name = "Pizza"
 	icon = 'icons/obj/food/pizza.dmi'
 	icon_state = "pizzamargherita"
 	material = /datum/material/pizza
-	sound = 'sound/items/eatfood.ogg'
+	sound = 'tff_modular/modules/sec-antag-balance-patch-super-cool/yum.ogg'
 
 /datum/dimension_theme/natural
 	name = "Natural"
