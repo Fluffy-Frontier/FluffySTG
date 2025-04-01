@@ -107,3 +107,43 @@
 	smoke.set_up(range, holder = T, location = T)
 	smoke.start()
 	playsound(src, 'sound/effects/smoke.ogg', 50, TRUE, -3)
+
+
+/obj/item/mortar_shell/rubber
+	name = "\improper 80mm incapacitator mortar shell"
+	desc = "An 80mm mortar shell, loaded with a decent-sized piece of rubber. It's probably the non-lethal version?"
+	icon_state = "mortar_ammo_rubber"
+
+/obj/item/mortar_shell/rubber/explosion_effect(turf/T)
+	var/obj/projectile/bullet/chunk = new /obj/projectile/bullet/incapacitator_mortar_shell(T)
+	var/atom/target = get_edge_target_turf(T, pick(GLOB.alldirs))
+	chunk.fire(get_angle(T, target), target)
+
+/obj/projectile/bullet/incapacitator_mortar_shell
+	name = "rubber mortar head"
+	desc = "A decent-sized piece of rubber. It looks very painful."
+	icon = 'tff_modular/modules/mortar/icons/items.dmi'
+	icon_state = "rubber_chunk"
+	damage = 40
+	stamina = 200
+
+	wound_bonus = -40
+	bare_wound_bonus = -20
+
+	ricochet_auto_aim_angle = 30
+	ricochet_auto_aim_range = 5
+	ricochets_max = 6
+	ricochet_incidence_leeway = 50
+	ricochet_chance = 130
+	ricochet_decay_damage = 0.8
+
+	shrapnel_type = null
+	sharpness = NONE
+
+	speed = 0.75
+
+/obj/projectile/bullet/incapacitator_mortar_shell/on_hit(atom/target, blocked, pierce_hit)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/target_mob = target
+		target_mob.Unconscious(15 SECONDS)

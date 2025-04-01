@@ -9,6 +9,8 @@
 
 	var/last_x = "UNKNOWN"
 	var/last_y = "UNKNOWN"
+	var/next_time_use = 0
+	var/use_cooldown = 3 SECONDS
 
 	var/debug = FALSE
 
@@ -29,16 +31,25 @@
 	if(user.stat != CONSCIOUS)
 		to_chat(user, span_warning("You cannot use [src] while incapacitated."))
 		return FALSE
+	if(world.time < next_time_use)
+		to_chat(user, span_warning("[src]'s laser battery is recharging."))
+		return FALSE
 	var/atom/target_atom
 	if(istype(interacting_with, /atom/movable/screen/fullscreen/cursor_catcher))
 		var/atom/movable/screen/fullscreen/cursor_catcher/cursor_catcher = interacting_with
 		target_atom = cursor_catcher.given_turf
 	else
 		target_atom = interacting_with
+
 	if(user.z != target_atom.z)
 		to_chat(user, span_warning("You cannot get a direct laser from where you are."))
 		return FALSE
+	if(!is_in_sight(user, target_atom))
+		to_chat(user, span_warning("There is something in the way of the laser!"))
+		return FALSE
+
 	acquire_target(target_atom, user)
+	next_time_use = world.time + use_cooldown
 	return TRUE
 
 /obj/item/binoculars/rangefinder/proc/acquire_target(atom/targeted_atom, mob/user)

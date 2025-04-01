@@ -294,3 +294,7 @@
 	new /obj/item/mortar_shell/flashbang(src)
 	new /obj/item/mortar_shell/flashbang(src)
 	new /obj/item/mortar_shell/flashbang(src)
+	new /obj/item/mortar_shell/rubber(src)
+	new /obj/item/mortar_shell/rubber(src)
+	new /obj/item/mortar_shell/rubber(src)
+	new /obj/item/mortar_shell/rubber(src)
