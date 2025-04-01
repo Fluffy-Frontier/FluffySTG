@@ -1,4 +1,13 @@
-/datum/round_event_control/radiation_storm
+/datum/station_trait/random_event_weight_modifier/samosbor
+	name = "Red Gluon fluctuation"
+	report_message = "A reality seems to be a bit unstable at your region of space."
+	trait_type = STATION_TRAIT_NEGATIVE
+	weight = 2
+	event_control_path = /datum/round_event_control/samosbor
+	weight_multiplier = 1.5
+	max_occurrences_modifier = 2
+
+/datum/round_event_control/samosbor
 	name = "Самосбор"
 	typepath = /datum/round_event/samosbor
 	max_occurrences = 1
@@ -56,7 +65,7 @@
 	if(!ishuman(living) || HAS_TRAIT(living, TRAIT_GODMODE))
 		if(living.maxHealth > 100)
 			return
-		else if(!istype(/mob/living/basic/mold/centaur))
+		else if(!istype(living, /mob/living/basic/mold/centaur))
 			if(prob(10))
 				var/turf/where_spawn = get_turf(living)
 				if(where_spawn)
