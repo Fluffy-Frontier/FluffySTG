@@ -33,7 +33,7 @@
 	name = "samosbor"
 	desc = "Межпространственная дыра облучает станцию чем-то красным. Кажется, Нар-Си плачет."
 
-	telegraph_duration = 20 SECONDS
+	telegraph_duration = 30 SECONDS
 	telegraph_message = span_boldbig(span_danger("Вы чувствуете зажигательный ритм."))
 
 	weather_message = span_userdanger("Станцию накрывает красная дымка!")
