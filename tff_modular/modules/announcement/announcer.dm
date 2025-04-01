@@ -26,7 +26,7 @@
 		ANNOUNCER_METEORS = 'tff_modular/modules/announcement/sounds/meteors.ogg', //
 		ANNOUNCER_OUTBREAK5 = 'tff_modular/modules/announcement/sounds/second_warn.ogg', //
 		ANNOUNCER_OUTBREAK6 = 'tff_modular/modules/announcement/sounds/funny_alarm.ogg', //
-		ANNOUNCER_OUTBREAK7 = 'tff_modular/modules/announcement/sounds/first_warn.ogg', //
+		ANNOUNCER_OUTBREAK7 = 'tff_modular/modules/announcement/sounds/funny_alarm.ogg', //
 		ANNOUNCER_POWEROFF = 'tff_modular/modules/announcement/sounds/poweroff.ogg', //
 		ANNOUNCER_POWERON = 'modular_nova/modules/alerts/sound/alerts/poweron.ogg', // -
 		ANNOUNCER_RADIATION = 'tff_modular/modules/announcement/sounds/radiation.ogg', //
@@ -54,7 +54,7 @@
 		ANNOUNCER_BRANDINTELLIGENCE = 'tff_modular/modules/announcement/sounds/assblastusa.ogg', //
 		ANNOUNCER_SPOOKY = 'modular_nova/modules/alerts/sound/misc/admin_horror_music.ogg', // -
 		ANNOUNCER_ERTYES = 'tff_modular/modules/announcement/sounds/yesert.ogg', //
-		ANNOUNCER_MUTANTS = 'tff_modular/modules/announcement/sounds/funny_alarm.ogg', // +-
+		ANNOUNCER_MUTANTS = 'tff_modular/modules/announcement/sounds/first_warn.ogg', //
 		ANNOUNCER_NRI_RAIDERS = 'tff_modular/modules/announcement/sounds/pirate.ogg', //
 		ANNOUNCER_DEPARTMENTAL = 'tff_modular/modules/announcement/sounds/funny_alarm.ogg', //
 		ANNOUNCER_SHUTTLE = 'tff_modular/modules/announcement/sounds/funny_alarm.ogg', //
