@@ -23,6 +23,7 @@
 		// FLUFFY FRONTIER ADDITION START
 		#include "map_files\NSSJourney\NSSJourney.dmm"
 		#include "map_files\KiloStation2\KiloStation2.dmm"
+		#include "map_files\Dzerzhinsky\Dzerzhinsky.dmm"
 		// FLUFFY FRONTIER ADDITION END
 
 		#ifdef CIBUILDING
