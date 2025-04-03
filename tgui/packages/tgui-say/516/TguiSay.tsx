@@ -205,10 +205,6 @@ export function TguiSay() {
   }
 
   function handleOpen(data: ByondOpen): void {
-    setTimeout(() => {
-      innerRef.current?.focus();
-    }, 0);
-
     const { channel } = data;
     const iterator = channelIterator.current;
     // Catches the case where the modal is already open
@@ -218,6 +214,11 @@ export function TguiSay() {
 
     setButtonContent(iterator.current());
     windowOpen(iterator.current());
+
+    const input = innerRef.current;
+    setTimeout(() => {
+      input?.focus();
+    }, 1);
   }
 
   function handleProps(data: ByondProps): void {
