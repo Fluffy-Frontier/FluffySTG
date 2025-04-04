@@ -89,12 +89,14 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	if(snapped)
 		. += span_bold("Looks like the cable on the phone is broken.")
 
-#define TRANSMITTER_UNAVAILABLE(T) (\
-	T.get_calling_phone() \
-	|| !T.attached_to \
-	|| T.attached_to.loc != T \
-	|| !T.enabled\
-)
+/obj/structure/transmitter/proc/get_status()
+	if(!attached_to)
+		return PHONE_UNAVAILABLE
+	if(!enabled)
+		return PHONE_UNAVAILABLE
+	if(get_calling_phone() || attached_to.loc != src || snapped)
+		return PHONE_BUSY
+	return PHONE_AVAILABLE
 
 /obj/structure/transmitter/proc/get_transmitters()
 	var/list/phone_list = list()
@@ -102,10 +104,9 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	for(var/possible_phone in GLOB.phone_transmitters)
 		var/obj/structure/transmitter/target_phone = possible_phone
 		var/current_dnd = FALSE
-		switch(target_phone.do_not_disturb)
-			if(PHONE_DND_ON, PHONE_DND_FORCED)
-				current_dnd = TRUE
-		if(TRANSMITTER_UNAVAILABLE(target_phone) || current_dnd) // Phone not available
+		if((target_phone.do_not_disturb == PHONE_DND_ON) || (target_phone.do_not_disturb == PHONE_DND_FORCED))
+			current_dnd = TRUE
+		if(!target_phone.get_status() || current_dnd) // Phone not available
 			continue
 		var/net_link = FALSE
 		for(var/network in networks_transmit)
@@ -128,7 +129,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 
 /obj/structure/transmitter/ui_status(mob/user, datum/ui_state/state)
 	. = ..()
-	if(TRANSMITTER_UNAVAILABLE(src))
+	if(!get_status() || (get_status() == PHONE_BUSY))
 		return UI_CLOSE
 
 /obj/structure/transmitter/ui_interact(mob/user, datum/tgui/ui)
@@ -142,7 +143,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	if(.)
 		return
 
-	if(TRANSMITTER_UNAVAILABLE(src))
+	if(!get_status() || (get_status() == PHONE_BUSY))
 		return
 
 	if(!ishuman(usr))
@@ -220,6 +221,12 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	attached_to.attempt_pickup(user)
 	update_icon()
 
+/obj/structure/transmitter/attackby(obj/item/W, mob/user)
+	if(W == attached_to)
+		recall_phone()
+	else
+		. = ..()
+
 /obj/structure/transmitter/proc/call_phone(mob/living/carbon/human/user, calling_phone_id)
 	var/list/transmitters = get_transmitters()
 	transmitters -= phone_id
@@ -233,26 +240,28 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 		transmitters -= T
 		CRASH("Qdelled/improper atom inside transmitters list! (istype returned: [istype(T)], QDELETED returned: [QDELETED(T)])")
 
-	if(TRANSMITTER_UNAVAILABLE(T))
+	if(!T.get_status())
 		return
 
-	outbound_call = T
-	outbound_call.inbound_call = src
-	T.last_caller = src.phone_id
-	T.update_icon()
-
+	outring_loop.start()
 	to_chat(user, span_purple("[icon2html(src, user)] Dialing [calling_phone_id].."))
 	playsound(get_turf(user), get_sound_file("rtb_handset"), 100)
-	timeout_timer_id = addtimer(CALLBACK(src, PROC_REF(reset_call), TRUE), timeout_duration, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
-	outring_loop.start()
 
-	START_PROCESSING(SSobj, src)
-	START_PROCESSING(SSobj, T)
+	outbound_call = T
 
 	attached_to.attempt_pickup(user)
+	START_PROCESSING(SSobj, src)
 
-#undef TRANSMITTER_UNAVAILABLE
+	if(T.get_status() == PHONE_BUSY)
+		timeout_timer_id = addtimer(CALLBACK(src, PROC_REF(reset_call), FALSE, TRUE), 4 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
+		return
 
+	outbound_call.inbound_call = src
+	outbound_call.last_caller = src.phone_id
+	outbound_call.update_icon()
+	START_PROCESSING(SSobj, outbound_call)
+
+	timeout_timer_id = addtimer(CALLBACK(src, PROC_REF(reset_call), TRUE), timeout_duration, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
 
 /obj/structure/transmitter/proc/toggle_dnd(mob/living/carbon/human/user)
 	switch(do_not_disturb)
@@ -266,7 +275,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 			return FALSE
 	return TRUE
 
-/obj/structure/transmitter/proc/reset_call(timeout = FALSE)
+/obj/structure/transmitter/proc/reset_call(timeout = FALSE, is_busy = FALSE)
 	var/obj/structure/transmitter/T = get_calling_phone()
 	if(T)
 		SEND_SIGNAL(src, COMSIG_TRANSMITTER_HANG_UP)
@@ -280,7 +289,9 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 			if(timeout)
 				to_chat(M, span_purple("[icon2html(src, M)] Your call to [T.phone_id] has reached voicemail, nobody picked up the phone."))
 				busy_loop.start()
-				outring_loop.stop()
+			else if(is_busy)
+				to_chat(M, span_purple("[icon2html(src, M)] The station you are trying to reach is currently busy, please hang on and try again later."))
+				busy_loop.start()
 			else
 				to_chat(M, span_purple("[icon2html(src, M)] You have hung up on [T.phone_id]."))
 
@@ -371,22 +382,19 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	if(!P || !attached_to)
 		return
 
-	P.handle_hear(message, L, speaking)
-	attached_to.handle_hear(message, L, speaking)
+	P.handle_hear(message, L, speaking, src)
+	attached_to.handle_hear(message, L, speaking, src)
 	playsound(P, get_sound_file("talk_phone"), 5)
 	log_say("TELEPHONE: [key_name(speaking)] on Phone '[phone_id]' to '[T.phone_id]' said '[message]'")
-
-/obj/structure/transmitter/attackby(obj/item/W, mob/user)
-	if(W == attached_to)
-		recall_phone()
-	else
-		. = ..()
 
 /obj/structure/transmitter/proc/handle_snap()
 	SIGNAL_HANDLER
 
 	reset_call()
 	snapped = TRUE
+
+/obj/structure/transmitter/GetVoice()
+	return "[phone_id]"
 
 /obj/structure/transmitter/proc/get_sound_file(group_name)
 	var/sound_file
@@ -458,33 +466,21 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 
 	attached_to.handle_speak(speech_args[SPEECH_MESSAGE], speech_args[SPEECH_LANGUAGE], source)
 
-/obj/item/tube_phone/proc/handle_hear(message, datum/language/L, mob/speaking)
-	if(!attached_to)
-		return
-
-	var/obj/structure/transmitter/T = attached_to.get_calling_phone()
-
-	if(!T)
-		return
-
-	if(!ismob(loc))
-		return
-
+/obj/item/tube_phone/proc/handle_hear(raw_message, datum/language/L, mob/speaking, obj/structure/transmitter/source)
 	var/spans = "purple"
 	if(raised)
 		spans += " big"
-	else
-		spans += " italics"
 
-	var/atom/movable/virtualspeaker/virt = new(null, src, src)
-	message = translate_language(speaking, L, message)
-	var/composed_message = compose_message(virt, L, message)
-	composed_message = "<span class='[spans]'>[composed_message]</span>"
-
-	for(var/mob/hearer in get_turf(src))
+	for(var/mob/hearer in get_hearers_in_LOS(1))
 		if(HAS_TRAIT(hearer, TRAIT_DEAF))
 			continue
-		hearer.show_message(composed_message, MSG_AUDIBLE)
+		var/dist = get_dist(src, hearer)
+		var/message = hearer.translate_language(speaking, L, raw_message)
+		if(dist > 0 && !HAS_TRAIT(src, TRAIT_GOOD_HEARING) && !isobserver(src))
+			message = stars(message)
+		message = compose_message(source, L, message)
+		message = "<span class='[spans]'>[message]</span>"
+		hearer.show_message(message, MSG_AUDIBLE)
 
 /obj/item/tube_phone/attack_hand(mob/user)
 	if(attached_to && get_dist(user, attached_to) > attached_to.range)
