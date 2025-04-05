@@ -66,5 +66,5 @@ Ammo casing
 
 /obj/effect/temp_visual/dir_setting/firing_effect/energy
 	icon = 'icons/effects/effects.dmi'
-	icon_state = "firing_effect_energy"
+	icon_state = "firing_effect_blue"
 	duration = 3
