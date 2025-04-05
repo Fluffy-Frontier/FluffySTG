@@ -112,10 +112,6 @@ Magazines
 	name = "magazine SCL-shotgun incapacitate"
 	ammo_type = /obj/item/ammo_casing/shotgun/incapacitate
 
-/obj/item/ammo_box/magazine/ds12g/improvised
-	name = "magazine SCL-shotgun improvised"
-	ammo_type = /obj/item/ammo_casing/shotgun/improvised
-
 /obj/item/ammo_box/magazine/ds12g/dart
 	name = "magazine SCL-shotgun dart"
 	ammo_type = /obj/item/ammo_casing/shotgun/dart
