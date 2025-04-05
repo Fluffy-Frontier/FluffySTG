@@ -7,7 +7,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	icon = 'tff_modular/modules/colonial_marines/telephone/icons/phone.dmi'
 	icon_state = "wall_phone"
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND
-	anchored = 0
+	anchored = 1
 	var/phone_category = "Uncategorised"
 	var/phone_color = "white"
 	var/phone_id = "Telephone"
@@ -22,13 +22,14 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 
 	var/phone_type = /obj/item/tube_phone
 
-	var/range = 7
+	var/range = 6
 
 	var/enabled = TRUE
 	/// Whether or not the phone is receiving calls or not. Varies between on/off or forcibly on/off.
 	var/do_not_disturb = PHONE_DND_OFF
 	/// The Phone_ID of the last person to call this telephone.
 	var/last_caller
+	var/datum/call_history/history
 
 	var/timeout_timer_id
 	var/timeout_duration = 30 SECONDS
@@ -47,6 +48,8 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	base_icon_state = icon_state
 
 	attached_to = new phone_type(src)
+
+	history = new(src)
 
 	outring_loop = new(attached_to)
 	busy_loop = new(attached_to)
@@ -68,7 +71,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 		attached_to = null
 
 	GLOB.phone_transmitters -= src
-	reset_call()
+	reset_call(silent = TRUE)
 	UnregisterSignal(src, COMSIG_ATOM_TETHER_SNAPPED)
 	return ..()
 
@@ -90,11 +93,13 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 		. += span_bold("Looks like the cable on the phone is broken.")
 
 /obj/structure/transmitter/proc/get_status()
-	if(!attached_to)
-		return PHONE_UNAVAILABLE
 	if(!enabled)
 		return PHONE_UNAVAILABLE
-	if(get_calling_phone() || attached_to.loc != src || snapped)
+	if(!attached_to || snapped)
+		return PHONE_UNAVAILABLE
+	if(get_calling_phone() || attached_to.loc != src)
+		return PHONE_BUSY
+	if((do_not_disturb == PHONE_DND_ON) || (do_not_disturb == PHONE_DND_FORCED))
 		return PHONE_BUSY
 	return PHONE_AVAILABLE
 
@@ -104,9 +109,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	for(var/possible_phone in GLOB.phone_transmitters)
 		var/obj/structure/transmitter/target_phone = possible_phone
 		var/current_dnd = FALSE
-		if((target_phone.do_not_disturb == PHONE_DND_ON) || (target_phone.do_not_disturb == PHONE_DND_FORCED))
-			current_dnd = TRUE
-		if(!target_phone.get_status() || current_dnd) // Phone not available
+		if(!target_phone.get_status() ) // Phone not available
 			continue
 		var/net_link = FALSE
 		for(var/network in networks_transmit)
@@ -153,7 +156,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 
 	switch(action)
 		if("call_phone")
-			call_phone(user, params["phone_id"])
+			make_call(user, params["phone_id"])
 			. = TRUE
 			SStgui.close_uis(src)
 		if("toggle_dnd")
@@ -206,18 +209,21 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 
 	var/obj/structure/transmitter/T = get_calling_phone()
 
-	if(T.attached_to && ismob(T.attached_to.loc))
-		var/mob/M = T.attached_to.loc
-		to_chat(M, span_purple("[icon2html(src, M)] [phone_id] has picked up."))
-		playsound(T.attached_to.loc, 'tff_modular/modules/colonial_marines/telephone/sound/remote_pickup.ogg', 20)
-		if(T.timeout_timer_id)
-			deltimer(T.timeout_timer_id)
-			T.timeout_timer_id = null
+	if(T.attached_to)
+		if(ismob(T.attached_to.loc))
+			var/mob/M = T.attached_to.loc
+			to_chat(M, span_purple("[icon2html(src, M)] [phone_id] has picked up."))
+		playsound(T.attached_to, 'tff_modular/modules/colonial_marines/telephone/sound/remote_pickup.ogg', 20)
+
+	if(T.timeout_timer_id)
+		deltimer(T.timeout_timer_id)
+		T.timeout_timer_id = null
+
+	T.outring_loop.stop()
 
 	to_chat(user, span_purple("[icon2html(src, user)] Picked up a call from [T.phone_id]."))
 	playsound(get_turf(user), get_sound_file("rtb_handset"), 100)
 
-	T.outring_loop.stop()
 	attached_to.attempt_pickup(user)
 	update_icon()
 
@@ -227,73 +233,78 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	else
 		. = ..()
 
-/obj/structure/transmitter/proc/call_phone(mob/living/carbon/human/user, calling_phone_id)
+/obj/structure/transmitter/proc/make_call(mob/living/carbon/human/user, calling_phone_id)
 	var/list/transmitters = get_transmitters()
 	transmitters -= phone_id
-
 	if(!length(transmitters) || !(calling_phone_id in transmitters))
 		to_chat(user, span_purple("[icon2html(src, user)] No transmitters could be located to call!"))
 		return
 
-	var/obj/structure/transmitter/T = transmitters[calling_phone_id]
-	if(!istype(T) || QDELETED(T))
-		transmitters -= T
-		CRASH("Qdelled/improper atom inside transmitters list! (istype returned: [istype(T)], QDELETED returned: [QDELETED(T)])")
+	var/obj/structure/transmitter/calling = transmitters[calling_phone_id]
 
-	if(!T.get_status())
-		return
+	if(!istype(calling) || QDELETED(calling))
+		transmitters -= calling
+		CRASH("Qdelled/improper atom inside transmitters list! (istype returned: [istype(calling)], QDELETED returned: [QDELETED(calling)])")
 
 	outring_loop.start()
 	to_chat(user, span_purple("[icon2html(src, user)] Dialing [calling_phone_id].."))
-	playsound(get_turf(user), get_sound_file("rtb_handset"), 100)
-
-	outbound_call = T
 
 	attached_to.attempt_pickup(user)
+	playsound(get_turf(user), get_sound_file("rtb_handset"), 100)
+
+	var/calling_status = calling.get_status()
+	switch(calling_status)
+		if(PHONE_UNAVAILABLE, PHONE_BUSY)
+			timeout_timer_id = addtimer(CALLBACK(src, PROC_REF(reset_call), PHONE_REASON_BUSY), 3 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
+		if(PHONE_AVAILABLE)
+			timeout_timer_id = addtimer(CALLBACK(src, PROC_REF(try_connect), user, calling), 3 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
+
+	history.add_outbound_call(calling.phone_id)
+
 	START_PROCESSING(SSobj, src)
 
-	if(T.get_status() == PHONE_BUSY)
-		timeout_timer_id = addtimer(CALLBACK(src, PROC_REF(reset_call), FALSE, TRUE), 4 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
-		return
+/obj/structure/transmitter/proc/try_connect(mob/living/carbon/human/user, obj/structure/transmitter/calling)
+	var/calling_status = calling.get_status()
+	switch(calling_status)
+		if(PHONE_UNAVAILABLE, PHONE_BUSY)
+			reset_call(PHONE_REASON_BUSY)
+			return
 
-	outbound_call.inbound_call = src
-	outbound_call.last_caller = src.phone_id
-	outbound_call.update_icon()
-	START_PROCESSING(SSobj, outbound_call)
+	outbound_call = calling
+	calling.inbound_call = src
 
-	timeout_timer_id = addtimer(CALLBACK(src, PROC_REF(reset_call), TRUE), timeout_duration, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
+	calling.history.add_inbound_call(phone_id)
 
-/obj/structure/transmitter/proc/toggle_dnd(mob/living/carbon/human/user)
-	switch(do_not_disturb)
-		if(PHONE_DND_ON)
-			do_not_disturb = PHONE_DND_OFF
-			to_chat(user, span_notice("Do Not Disturb has been disabled. You can now receive calls."))
-		if(PHONE_DND_OFF)
-			do_not_disturb = PHONE_DND_ON
-			to_chat(user, span_warning("Do Not Disturb has been enabled. No calls will be received."))
-		else
-			return FALSE
-	return TRUE
+	timeout_timer_id = addtimer(CALLBACK(src, PROC_REF(reset_call), PHONE_REASON_TIMEOUT), timeout_duration, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
 
-/obj/structure/transmitter/proc/reset_call(timeout = FALSE, is_busy = FALSE)
-	var/obj/structure/transmitter/T = get_calling_phone()
-	if(T)
-		SEND_SIGNAL(src, COMSIG_TRANSMITTER_HANG_UP)
-		if(T.attached_to && ismob(T.attached_to.loc))
-			var/mob/M = T.attached_to.loc
-			to_chat(M, span_purple("[icon2html(src, M)] [phone_id] has hung up on you."))
-			T.hangup_loop.start()
+	calling.update_icon()
+	START_PROCESSING(SSobj, calling)
 
-		if(attached_to && ismob(attached_to.loc))
+/obj/structure/transmitter/proc/reset_call(reason = PHONE_REASON_NO, silent = FALSE)
+	var/obj/structure/transmitter/active_call = get_calling_phone()
+
+	if(!silent)
+		if(active_call)
+			if(active_call.attached_to && ismob(active_call.attached_to.loc))
+				var/mob/M = active_call.attached_to.loc
+				to_chat(M, span_purple("[icon2html(src, M)] [phone_id] has hung up on you."))
+				active_call.hangup_loop.start()
+
+			if(attached_to && ismob(attached_to.loc))
+				var/mob/M = attached_to.loc
+				switch(reason)
+					if(PHONE_REASON_TIMEOUT)
+						to_chat(M, span_purple("[icon2html(src, M)] Your call to [active_call.phone_id] has reached voicemail, nobody picked up the phone."))
+						busy_loop.start()
+					if(PHONE_REASON_NO)
+						to_chat(M, span_purple("[icon2html(src, M)] You have hung up on [active_call.phone_id]."))
+
+		if((reason == PHONE_REASON_BUSY))
 			var/mob/M = attached_to.loc
-			if(timeout)
-				to_chat(M, span_purple("[icon2html(src, M)] Your call to [T.phone_id] has reached voicemail, nobody picked up the phone."))
-				busy_loop.start()
-			else if(is_busy)
-				to_chat(M, span_purple("[icon2html(src, M)] The station you are trying to reach is currently busy, please hang on and try again later."))
-				busy_loop.start()
-			else
-				to_chat(M, span_purple("[icon2html(src, M)] You have hung up on [T.phone_id]."))
+			to_chat(M, span_purple("[icon2html(src, M)] The station you are trying to reach is currently busy, please hang on and try again later."))
+			busy_loop.start()
+
+	outring_loop.stop()
 
 	if(outbound_call)
 		outbound_call.inbound_call = null
@@ -307,17 +318,22 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 		deltimer(timeout_timer_id)
 		timeout_timer_id = null
 
-	if(T)
-		if(T.timeout_timer_id)
-			deltimer(T.timeout_timer_id)
-			T.timeout_timer_id = null
-
-		T.update_icon()
-		STOP_PROCESSING(SSobj, T)
-
-	outring_loop.stop()
-
+	if(active_call)
+		active_call.update_icon()
+		STOP_PROCESSING(SSobj, active_call)
 	STOP_PROCESSING(SSobj, src)
+
+/obj/structure/transmitter/proc/toggle_dnd(mob/living/carbon/human/user)
+	switch(do_not_disturb)
+		if(PHONE_DND_ON)
+			do_not_disturb = PHONE_DND_OFF
+			to_chat(user, span_notice("Do Not Disturb has been disabled. You can now receive calls."))
+		if(PHONE_DND_OFF)
+			do_not_disturb = PHONE_DND_ON
+			to_chat(user, span_warning("Do Not Disturb has been enabled. No calls will be received."))
+		else
+			return FALSE
+	return TRUE
 
 /obj/structure/transmitter/process()
 	if(inbound_call)
@@ -349,15 +365,13 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 		return
 
 /obj/structure/transmitter/proc/recall_phone()
-	if(ismob(attached_to.loc))
-		var/mob/M = attached_to.loc
-		playsound(get_turf(M), get_sound_file("rtb_handset"), 100, FALSE, 7)
-		hangup_loop.stop()
-
 	attached_to.forceMove(src)
 	reset_call()
+
+	playsound(src, get_sound_file("rtb_handset"), 100, FALSE, 7)
 	busy_loop.stop()
 	outring_loop.stop()
+	hangup_loop.stop()
 
 	update_icon()
 
@@ -436,7 +450,6 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	var/obj/structure/transmitter/attached_to
 
 	var/raised = FALSE
-	var/anonymize = FALSE
 
 /obj/item/tube_phone/Initialize(mapload)
 	. = ..()
@@ -471,7 +484,16 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	if(raised)
 		spans += " big"
 
-	for(var/mob/hearer in get_hearers_in_LOS(1))
+	var/list/hearers = list()
+
+	if(source == attached_to)
+		if(loc != speaking)
+			return
+		hearers += speaking
+	else
+		hearers = get_hearers_in_view(1, src)
+
+	for(var/mob/hearer in hearers)
 		if(HAS_TRAIT(hearer, TRAIT_DEAF))
 			continue
 		var/dist = get_dist(src, hearer)
@@ -565,6 +587,20 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 		icon = "wire", \
 		icon_file = 'tff_modular/modules/colonial_marines/telephone/icons/phone.dmi', \
 	)
+
+// ############
+// Call History
+// ############
+
+/datum/call_history
+	var/list/inbound_calls = list()
+	var/list/outbound_calls = list()
+
+/datum/call_history/proc/add_inbound_call(transmitter_id)
+	inbound_calls += list("time" = world.time, "id" = transmitter_id)
+
+/datum/call_history/proc/add_outbound_call(transmitter_id)
+	outbound_calls += list("time" = world.time, "id" = transmitter_id)
 
 // ####################
 // Transmitter subtypes

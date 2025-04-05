@@ -130,3 +130,4 @@
 /obj/effect/ebeam/custom_tether
 	name = "cable"
 	mouse_opacity = MOUSE_OPACITY_ICON
+	layer = GIB_LAYER
