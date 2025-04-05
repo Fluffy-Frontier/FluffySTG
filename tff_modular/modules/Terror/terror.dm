@@ -37,6 +37,16 @@
 	. = ..()
 
 	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/below_average_web)
+	AddComponent(/datum/component/healing_touch,\
+		heal_brute = 150,\
+		heal_burn = 150,\
+		heal_time = 20 SECONDS,\
+		interaction_key = DOAFTER_SOURCE_SPIDER,\
+		valid_targets_typecache = typecacheof(list(/mob/living/basic/spider/giant)),\
+		action_text = "%SOURCE% begins wrapping the wounds of %TARGET%.",\
+		complete_text = "%SOURCE% wraps the wounds of %TARGET%.",\
+	)
+
 
 /mob/living/basic/spider/giant/terror/melee_attack(mob/living/target, list/modifiers, ignore_cooldown)
 	. = ..()
@@ -49,13 +59,3 @@
 	if (!. || !ismecha(target))
 		return
 	target.take_damage(obj_damage, BRUTE, MELEE)
-
-	AddComponent(/datum/component/healing_touch,\
-		heal_brute = 150,\
-		heal_burn = 150,\
-		heal_time = 20 SECONDS,\
-		interaction_key = DOAFTER_SOURCE_SPIDER,\
-		valid_targets_typecache = typecacheof(list(/mob/living/basic/spider/giant)),\
-		action_text = "%SOURCE% begins wrapping the wounds of %TARGET%.",\
-		complete_text = "%SOURCE% wraps the wounds of %TARGET%.",\
-	)
