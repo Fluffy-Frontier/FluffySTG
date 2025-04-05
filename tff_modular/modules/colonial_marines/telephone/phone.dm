@@ -108,7 +108,6 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 
 	for(var/possible_phone in GLOB.phone_transmitters)
 		var/obj/structure/transmitter/target_phone = possible_phone
-		var/current_dnd = FALSE
 		if(!target_phone.get_status() ) // Phone not available
 			continue
 		var/net_link = FALSE
@@ -610,3 +609,79 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	name = "rotary telephone"
 	icon_state = "rotary_phone"
 	desc = "The finger plate is a little stiff."
+
+
+/obj/structure/transmitter/rotary/prefab/bridge
+	name = "Bridge Telephone"
+	phone_id = "Bridge"
+	phone_category = "Command"
+
+/obj/structure/transmitter/rotary/prefab/captain
+	name = "Captain's Telephone"
+	phone_id = "Captain's Office"
+	phone_category = "Command"
+
+/obj/structure/transmitter/rotary/prefab/cmo
+	name = "Chief Medical Officer's telephone"
+	phone_id = "Chief Medical Officer's Office"
+	phone_category = "Command"
+
+/obj/structure/transmitter/rotary/prefab/hos
+	name = "Head of Security's telephone"
+	phone_id = "Head of Security's Office"
+	phone_category = "Command"
+
+/obj/structure/transmitter/rotary/prefab/hop
+	name = "Head of Personnel's telephone"
+	phone_id = "Head of Personnel's Office"
+	phone_category = "Command"
+
+/obj/structure/transmitter/rotary/prefab/ce
+	name = "Chief Engineer's telephone"
+	phone_id = "Chief Engineer's Office"
+	phone_category = "Command"
+
+/obj/structure/transmitter/rotary/prefab/rd
+	name = "Research Director's telephone"
+	phone_id = "Research Director's Office"
+	phone_category = "Command"
+
+/obj/structure/transmitter/rotary/prefab/qm
+	name = "Quartermaster's telephone"
+	phone_id = "Quartermaster's Office"
+	phone_category = "Command"
+
+/obj/structure/transmitter/rotary/prefab/detective
+	name = "Detective's Office telephone"
+	phone_id = "Detective's Office"
+	phone_category = "Offices"
+
+/obj/structure/transmitter/rotary/prefab/law
+	name = "Law Office telephone"
+	phone_id = "Law Office"
+	phone_category = "Offices"
+
+/obj/structure/transmitter/rotary/prefab/cargo
+	name = "Cargo Office telephone"
+	phone_id = "Cargo Office"
+	phone_category = "Offices"
+
+/obj/structure/transmitter/rotary/prefab/psychology
+	name = "Psychology Office telephone"
+	phone_id = "Psychology Office"
+	phone_category = "Offices"
+
+/obj/structure/transmitter/rotary/prefab/security
+	name = "Security Office telephone"
+	phone_id = "Security Office"
+	phone_category = "Civilian services"
+
+/obj/structure/transmitter/rotary/prefab/medical
+	name = "Medical Lobby telephone"
+	phone_id = "Medical Lobby"
+	phone_category = "Civilian services"
+
+/obj/structure/transmitter/rotary/prefab/engineering
+	name = "Engineering Lobby telephone"
+	phone_id = "Engineering Lobby"
+	phone_category = "Civilian services"
