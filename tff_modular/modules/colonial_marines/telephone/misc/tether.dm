@@ -51,6 +51,9 @@
 /datum/component/transmitter_tether/proc/check_tether(atom/source, new_loc)
 	SIGNAL_HANDLER
 
+	if(QDELETED(src))
+		return
+
 	if(check_snap())
 		return
 
@@ -107,6 +110,9 @@
 
 /datum/component/transmitter_tether/proc/check_snap()
 	SIGNAL_HANDLER
+
+	if(QDELETED(src))
+		return
 
 	var/atom/atom_target = parent
 	// Something broke us out, snap the tether

@@ -14,6 +14,7 @@ type PhoneData = {
 type TransmittersData = {
   phone_category: string;
   phone_color: string;
+  phone_name: string;
   phone_id: string;
   phone_icon: string;
 };
@@ -93,7 +94,7 @@ const GeneralPanel = (props) => {
               {transmitters.map((val) => {
                 if (
                   val.phone_category !== currentCategory ||
-                  !val.phone_id.toLowerCase().match(currentSearch)
+                  !val.phone_name.toLowerCase().match(currentSearch)
                 ) {
                   return;
                 }
@@ -111,7 +112,7 @@ const GeneralPanel = (props) => {
                     color={val.phone_color}
                     icon={val.phone_icon}
                   >
-                    {val.phone_id}
+                    {val.phone_name}
                   </Tabs.Tab>
                 );
               })}

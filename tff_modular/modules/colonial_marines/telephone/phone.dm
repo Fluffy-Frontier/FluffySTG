@@ -1,5 +1,7 @@
 GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 
+#define PHONE_FACTION_SYNDICATE "syndicate"
+#define PHONE_FACTION_STATION "station"
 
 /obj/structure/transmitter
 	name = "telephone receiver"
@@ -10,7 +12,8 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	anchored = 1
 	var/phone_category = "Uncategorised"
 	var/phone_color = "white"
-	var/phone_id = "Telephone"
+	var/phone_id
+	var/phone_name = "Telephone"
 	var/phone_icon
 
 	var/obj/item/tube_phone/attached_to
@@ -34,8 +37,8 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	var/timeout_timer_id
 	var/timeout_duration = 30 SECONDS
 
-	var/list/networks_receive = list(FACTION_NEUTRAL)
-	var/list/networks_transmit = list(FACTION_NEUTRAL)
+	var/list/networks_receive = list(PHONE_FACTION_STATION)
+	var/list/networks_transmit = list(PHONE_FACTION_STATION)
 
 	var/datum/looping_sound/telephone/busy/busy_loop
 	var/datum/looping_sound/telephone/hangup/hangup_loop
@@ -43,9 +46,14 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 
 	var/snapped = FALSE
 
-/obj/structure/transmitter/Initialize(mapload, ...)
+	var/only_income = FALSE
+	var/only_outcome = FALSE
+
+/obj/structure/transmitter/Initialize(mapload)
 	. = ..()
 	base_icon_state = icon_state
+	if(!phone_id)
+		phone_id = assign_random_name()
 
 	attached_to = new phone_type(src)
 
@@ -110,6 +118,8 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 		var/obj/structure/transmitter/target_phone = possible_phone
 		if(!target_phone.get_status() ) // Phone not available
 			continue
+		if(target_phone.only_outcome)
+			continue
 		var/net_link = FALSE
 		for(var/network in networks_transmit)
 			if(network in target_phone.networks_receive)
@@ -119,12 +129,6 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 			continue
 
 		var/id = target_phone.phone_id
-		var/num_id = 1
-		while(id in phone_list)
-			id = "[target_phone.phone_id] [num_id]"
-			num_id++
-
-		target_phone.phone_id = id
 		phone_list[id] = target_phone
 
 	return phone_list
@@ -137,7 +141,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 /obj/structure/transmitter/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "PhoneMenu", phone_id)
+		ui = new(user, src, "PhoneMenu", phone_name)
 		ui.open()
 
 /obj/structure/transmitter/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
@@ -182,6 +186,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 			"phone_category" = T.phone_category,
 			"phone_color" = T.phone_color,
 			"phone_id" = T.phone_id,
+			"phone_name" = T.phone_name,
 			"phone_icon" = T.phone_icon
 		))
 
@@ -201,17 +206,22 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 
 /obj/structure/transmitter/interact(mob/user)
 	. = ..()
-	if(!get_calling_phone())
+	if(!get_calling_phone() && !only_income)
 		SEND_SIGNAL(src, COMSIG_ATOM_UI_INTERACT, user)
 		ui_interact(user)
 		return
 
 	var/obj/structure/transmitter/T = get_calling_phone()
 
+	if(!T)
+		if(only_income)
+			return
+		CRASH("Something wrong in /obj/structure/transmitter/interact. get_calling_phone() returned null, but it should have returned the transmitter")
+
 	if(T.attached_to)
 		if(ismob(T.attached_to.loc))
 			var/mob/M = T.attached_to.loc
-			to_chat(M, span_purple("[icon2html(src, M)] [phone_id] has picked up."))
+			to_chat(M, span_purple("[icon2html(src, M)] [phone_name] has picked up."))
 		playsound(T.attached_to, 'tff_modular/modules/colonial_marines/telephone/sound/remote_pickup.ogg', 20)
 
 	if(T.timeout_timer_id)
@@ -220,7 +230,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 
 	T.outring_loop.stop()
 
-	to_chat(user, span_purple("[icon2html(src, user)] Picked up a call from [T.phone_id]."))
+	to_chat(user, span_purple("[icon2html(src, user)] Picked up a call from [T.phone_name]."))
 	playsound(get_turf(user), get_sound_file("rtb_handset"), 100)
 
 	attached_to.attempt_pickup(user)
@@ -246,7 +256,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 		CRASH("Qdelled/improper atom inside transmitters list! (istype returned: [istype(calling)], QDELETED returned: [QDELETED(calling)])")
 
 	outring_loop.start()
-	to_chat(user, span_purple("[icon2html(src, user)] Dialing [calling_phone_id].."))
+	to_chat(user, span_purple("[icon2html(src, user)] Dialing [calling.phone_name].."))
 
 	attached_to.attempt_pickup(user)
 	playsound(get_turf(user), get_sound_file("rtb_handset"), 100)
@@ -286,22 +296,24 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 		if(active_call)
 			if(active_call.attached_to && ismob(active_call.attached_to.loc))
 				var/mob/M = active_call.attached_to.loc
-				to_chat(M, span_purple("[icon2html(src, M)] [phone_id] has hung up on you."))
+				to_chat(M, span_purple("[icon2html(src, M)] [phone_name] has hung up on you."))
 				active_call.hangup_loop.start()
 
 			if(attached_to && ismob(attached_to.loc))
 				var/mob/M = attached_to.loc
 				switch(reason)
 					if(PHONE_REASON_TIMEOUT)
-						to_chat(M, span_purple("[icon2html(src, M)] Your call to [active_call.phone_id] has reached voicemail, nobody picked up the phone."))
-						busy_loop.start()
+						to_chat(M, span_purple("[icon2html(src, M)] Your call to [active_call.phone_name] has reached voicemail, nobody picked up the phone."))
 					if(PHONE_REASON_NO)
-						to_chat(M, span_purple("[icon2html(src, M)] You have hung up on [active_call.phone_id]."))
+						to_chat(M, span_purple("[icon2html(src, M)] You have hung up on [active_call.phone_name]."))
 
-		if((reason == PHONE_REASON_BUSY))
+		if((reason == PHONE_REASON_BUSY) && attached_to && ismob(attached_to.loc))
 			var/mob/M = attached_to.loc
 			to_chat(M, span_purple("[icon2html(src, M)] The station you are trying to reach is currently busy, please hang on and try again later."))
-			busy_loop.start()
+
+		switch(reason)
+			if(PHONE_REASON_TIMEOUT, PHONE_REASON_BUSY)
+				busy_loop.start()
 
 	outring_loop.stop()
 
@@ -398,7 +410,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	P.handle_hear(message, L, speaking, src)
 	attached_to.handle_hear(message, L, speaking, src)
 	playsound(P, get_sound_file("talk_phone"), 5)
-	log_say("TELEPHONE: [key_name(speaking)] on Phone '[phone_id]' to '[T.phone_id]' said '[message]'")
+	log_say("TELEPHONE: [key_name(speaking)] on Phone '[phone_name]' to '[T.phone_name]' said '[message]'")
 
 /obj/structure/transmitter/proc/handle_snap()
 	SIGNAL_HANDLER
@@ -407,7 +419,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	snapped = TRUE
 
 /obj/structure/transmitter/GetVoice()
-	return "[phone_id]"
+	return "[phone_name]"
 
 /obj/structure/transmitter/proc/get_sound_file(group_name)
 	var/sound_file
@@ -462,7 +474,8 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 /obj/item/tube_phone/proc/attach_to(obj/structure/transmitter/to_attach)
 	if(!istype(to_attach))
 		return
-	remove_attached()
+	if(attached_to)
+		remove_attached()
 	attached_to = to_attach
 
 /obj/item/tube_phone/proc/remove_attached()
@@ -555,7 +568,6 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 
 /obj/item/tube_phone/proc/reset_tether()
 	if(!attached_to)
-		SEND_SIGNAL(attached_to, COMSIG_TRANSMITTER_NEED_DELETE_TETHER)
 		return
 	if(loc == attached_to)
 		SEND_SIGNAL(attached_to, COMSIG_TRANSMITTER_NEED_DELETE_TETHER)
@@ -578,6 +590,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	if(tether_from == tether_to)
 		return
 
+	SEND_SIGNAL(attached_to, COMSIG_TRANSMITTER_NEED_DELETE_TETHER)
 	tether_from.AddComponent( \
 		/datum/component/transmitter_tether, \
 		tether_to, \
@@ -610,78 +623,100 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	icon_state = "rotary_phone"
 	desc = "The finger plate is a little stiff."
 
+/obj/structure/transmitter/only_outcome
+	only_outcome = TRUE
+
+/obj/structure/transmitter/only_income
+	only_income = TRUE
+
+/obj/structure/transmitter/syndicate
+	networks_receive = list(PHONE_FACTION_SYNDICATE)
+	networks_transmit = list(PHONE_FACTION_SYNDICATE)
+
+/obj/structure/transmitter/syndicate/rotary
+	name = "rotary telephone"
+	icon_state = "rotary_phone"
+	desc = "The finger plate is a little stiff."
+
 
 /obj/structure/transmitter/rotary/prefab/bridge
 	name = "Bridge Telephone"
-	phone_id = "Bridge"
+	phone_name = "Bridge"
 	phone_category = "Command"
 
 /obj/structure/transmitter/rotary/prefab/captain
 	name = "Captain's Telephone"
-	phone_id = "Captain's Office"
+	phone_name = "Captain's Office"
 	phone_category = "Command"
 
 /obj/structure/transmitter/rotary/prefab/cmo
 	name = "Chief Medical Officer's telephone"
-	phone_id = "Chief Medical Officer's Office"
+	phone_name = "Chief Medical Officer's Office"
 	phone_category = "Command"
 
 /obj/structure/transmitter/rotary/prefab/hos
 	name = "Head of Security's telephone"
-	phone_id = "Head of Security's Office"
+	phone_name = "Head of Security's Office"
 	phone_category = "Command"
 
 /obj/structure/transmitter/rotary/prefab/hop
 	name = "Head of Personnel's telephone"
-	phone_id = "Head of Personnel's Office"
+	phone_name = "Head of Personnel's Office"
 	phone_category = "Command"
 
 /obj/structure/transmitter/rotary/prefab/ce
 	name = "Chief Engineer's telephone"
-	phone_id = "Chief Engineer's Office"
+	phone_name = "Chief Engineer's Office"
 	phone_category = "Command"
 
 /obj/structure/transmitter/rotary/prefab/rd
 	name = "Research Director's telephone"
-	phone_id = "Research Director's Office"
+	phone_name = "Research Director's Office"
 	phone_category = "Command"
 
 /obj/structure/transmitter/rotary/prefab/qm
 	name = "Quartermaster's telephone"
-	phone_id = "Quartermaster's Office"
+	phone_name = "Quartermaster's Office"
 	phone_category = "Command"
 
 /obj/structure/transmitter/rotary/prefab/detective
 	name = "Detective's Office telephone"
-	phone_id = "Detective's Office"
+	phone_name = "Detective's Office"
 	phone_category = "Offices"
 
 /obj/structure/transmitter/rotary/prefab/law
 	name = "Law Office telephone"
-	phone_id = "Law Office"
+	phone_name = "Law Office"
 	phone_category = "Offices"
 
 /obj/structure/transmitter/rotary/prefab/cargo
 	name = "Cargo Office telephone"
-	phone_id = "Cargo Office"
+	phone_name = "Cargo Office"
 	phone_category = "Offices"
 
 /obj/structure/transmitter/rotary/prefab/psychology
 	name = "Psychology Office telephone"
-	phone_id = "Psychology Office"
+	phone_name = "Psychology Office"
 	phone_category = "Offices"
 
 /obj/structure/transmitter/rotary/prefab/security
 	name = "Security Office telephone"
-	phone_id = "Security Office"
-	phone_category = "Civilian services"
+	phone_name = "Security Office"
+	phone_category = "Civilian"
+	do_not_disturb = PHONE_DND_FORBIDDEN
 
 /obj/structure/transmitter/rotary/prefab/medical
 	name = "Medical Lobby telephone"
-	phone_id = "Medical Lobby"
-	phone_category = "Civilian services"
+	phone_name = "Medical Lobby"
+	phone_category = "Civilian"
+	do_not_disturb = PHONE_DND_FORBIDDEN
 
 /obj/structure/transmitter/rotary/prefab/engineering
 	name = "Engineering Lobby telephone"
-	phone_id = "Engineering Lobby"
-	phone_category = "Civilian services"
+	phone_name = "Engineering Lobby"
+	phone_category = "Civilian"
+	do_not_disturb = PHONE_DND_FORBIDDEN
+
+
+#undef PHONE_FACTION_SYNDICATE
+#undef PHONE_FACTION_STATION

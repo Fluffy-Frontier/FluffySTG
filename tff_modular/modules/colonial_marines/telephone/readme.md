@@ -30,7 +30,7 @@ IN `tff_modular/modules/colonial_marines/telephone/_phone_defines.dm`:
 
 ### Included files that are not contained in this module
 
-- N/A
+- `tgui/packages/tgui/interfaces/PhoneMenu.tsx`
 
 ### Credits
 
