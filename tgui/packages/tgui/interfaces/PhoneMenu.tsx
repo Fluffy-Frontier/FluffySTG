@@ -4,8 +4,21 @@ import { Button, Input, Section, Stack, Tabs } from 'tgui-core/components';
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
+type PhoneData = {
+  availability: number;
+  last_caller: string;
+  available_transmitters: string[];
+  transmitters: TransmittersData[];
+};
+
+type TransmittersData = {
+  phone_category: string;
+  phone_color: string;
+  phone_id: string;
+  phone_icon: string;
+};
+
 export const PhoneMenu = (props) => {
-  const { act, data } = useBackend();
   return (
     <Window width={500} height={400}>
       <Window.Content>
@@ -16,26 +29,26 @@ export const PhoneMenu = (props) => {
 };
 
 const GeneralPanel = (props) => {
-  const { act, data } = useBackend();
+  const { act, data } = useBackend<PhoneData>();
   const { availability, last_caller } = data;
   const available_transmitters = Object.keys(data.available_transmitters);
   const transmitters = data.transmitters.filter((val1) =>
     available_transmitters.includes(val1.phone_id),
   );
 
-  const categories = [];
+  const categories: string[] = [];
   for (let i = 0; i < transmitters.length; i++) {
-    let data = transmitters[i];
-    if (categories.includes(data.phone_category)) continue;
+    let transmitter_data = transmitters[i];
+    if (categories.includes(transmitter_data.phone_category)) continue;
 
-    categories.push(data.phone_category);
+    categories.push(transmitter_data.phone_category);
   }
 
   const [currentSearch, setSearch] = useState('');
   const [selectedPhone, setSelectedPhone] = useState(null);
   const [currentCategory, setCategory] = useState(categories[0]);
 
-  let dnd_tooltip = 'Do Not Disturb is DISABLED';
+  let dnd_tooltip = 'WEHDo Not Disturb is DISABLED';
   let dnd_locked = 'No';
   let dnd_icon = 'volume-high';
   if (availability === 1) {
@@ -96,11 +109,6 @@ const GeneralPanel = (props) => {
                     }}
                     key={val.phone_id}
                     color={val.phone_color}
-                    onFocus={() =>
-                      document.activeElement
-                        ? document.activeElement.blur()
-                        : false
-                    }
                     icon={val.phone_icon}
                   >
                     {val.phone_id}
