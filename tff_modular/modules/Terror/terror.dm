@@ -33,7 +33,7 @@
 		/datum/action/cooldown/spell/wall_spider,
 		/datum/action/cooldown/mob_cooldown/charge/basic_charge,
 	)
-/mob/living/basic/spider/giant/pit/Initialize(mapload)
+/mob/living/basic/spider/giant/terror/Initialize(mapload)
 	. = ..()
 
 	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/below_average_web)
