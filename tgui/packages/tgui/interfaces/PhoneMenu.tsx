@@ -36,6 +36,15 @@ const GeneralPanel = (props) => {
   const transmitters = data.transmitters.filter((val1) =>
     available_transmitters.includes(val1.phone_id),
   );
+  transmitters.sort((a, b) => {
+    if (a.phone_name < b.phone_name) {
+      return -1;
+    }
+    if (a.phone_name > b.phone_name) {
+      return 1;
+    }
+    return 0;
+  });
 
   const categories: string[] = [];
   for (let i = 0; i < transmitters.length; i++) {
@@ -44,24 +53,37 @@ const GeneralPanel = (props) => {
 
     categories.push(transmitter_data.phone_category);
   }
+  categories.sort();
 
   const [currentSearch, setSearch] = useState('');
   const [selectedPhone, setSelectedPhone] = useState(null);
   const [currentCategory, setCategory] = useState(categories[0]);
 
-  let dnd_tooltip = 'WEHDo Not Disturb is DISABLED';
+  let dnd_tooltip = 'Do Not Disturb is DISABLED';
   let dnd_locked = 'No';
   let dnd_icon = 'volume-high';
-  if (availability === 1) {
-    dnd_tooltip = 'Do Not Disturb is ENABLED';
-    dnd_icon = 'volume-xmark';
-  } else if (availability >= 2) {
-    dnd_tooltip = 'Do Not Disturb is ENABLED (LOCKED)';
-    dnd_locked = 'Yes';
-    dnd_icon = 'volume-xmark';
-  } else if (availability < 0) {
-    dnd_tooltip = 'Do Not Disturb is DISABLED (LOCKED)';
-    dnd_locked = 'Yes';
+  let dnd_color = 'green';
+  switch (availability) {
+    case 1:
+      dnd_tooltip = 'Do Not Disturb is ENABLED';
+      dnd_icon = 'volume-xmark';
+      dnd_color = 'red';
+      break;
+    case 2:
+      dnd_tooltip = 'Do Not Disturb is ENABLED (Only Public Phones)';
+      dnd_color = 'blue';
+      break;
+    case 3:
+      dnd_tooltip = 'Do Not Disturb is ENABLED (LOCKED)';
+      dnd_locked = 'Yes';
+      dnd_icon = 'volume-xmark';
+      dnd_color = 'red';
+      break;
+    case -1:
+      dnd_tooltip = 'Do Not Disturb is DISABLED (LOCKED)';
+      dnd_locked = 'Yes';
+      dnd_color = 'green';
+      break;
   }
 
   return (
@@ -134,7 +156,7 @@ const GeneralPanel = (props) => {
         {!!last_caller && <Stack.Item>Last Caller: {last_caller}</Stack.Item>}
         <Stack.Item>
           <Button
-            color="red"
+            color={dnd_color}
             tooltip={dnd_tooltip}
             disabled={dnd_locked === 'Yes'}
             icon={dnd_icon}

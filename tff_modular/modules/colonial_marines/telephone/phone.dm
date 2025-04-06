@@ -2,6 +2,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 
 #define PHONE_FACTION_SYNDICATE "syndicate"
 #define PHONE_FACTION_STATION "station"
+#define PHONE_FACTION_STATION_PRIVATE "station_private"
 
 /obj/structure/transmitter
 	name = "telephone receiver"
@@ -98,9 +99,9 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 /obj/structure/transmitter/examine(mob/user)
 	. = ..()
 	if(snapped)
-		. += span_bold("Looks like the cable on the phone is broken.")
+		. += span_bold("Looks like the cable on the phone is broken. Probably can be fixed with a couple of wires.")
 
-/obj/structure/transmitter/proc/get_status()
+/obj/structure/transmitter/proc/get_status(public = FALSE)
 	if(!enabled)
 		return PHONE_UNAVAILABLE
 	if(!attached_to || snapped)
@@ -108,6 +109,8 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	if(get_calling_phone() || attached_to.loc != src)
 		return PHONE_BUSY
 	if((do_not_disturb == PHONE_DND_ON) || (do_not_disturb == PHONE_DND_FORCED))
+		return PHONE_BUSY
+	if(public && (do_not_disturb == PHONE_DND_ON_PUBLIC))
 		return PHONE_BUSY
 	return PHONE_AVAILABLE
 
@@ -135,7 +138,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 
 /obj/structure/transmitter/ui_status(mob/user, datum/ui_state/state)
 	. = ..()
-	if(!get_status() || (get_status() == PHONE_BUSY))
+	if(!get_status() || get_calling_phone() || (attached_to.loc != src))
 		return UI_CLOSE
 
 /obj/structure/transmitter/ui_interact(mob/user, datum/tgui/ui)
@@ -149,7 +152,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	if(.)
 		return
 
-	if(!get_status() || (get_status() == PHONE_BUSY))
+	if(get_status() == PHONE_UNAVAILABLE)
 		return
 
 	if(!ishuman(usr))
@@ -236,11 +239,13 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	attached_to.attempt_pickup(user)
 	update_icon()
 
-/obj/structure/transmitter/attackby(obj/item/W, mob/user)
-	if(W == attached_to)
+/obj/structure/transmitter/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if(tool == attached_to)
 		recall_phone()
-	else
-		. = ..()
+		return ITEM_INTERACT_SUCCESS
+	if(istype(tool, /obj/item/stack/cable_coil))
+		return fix_cable(user, tool) ? ITEM_INTERACT_SUCCESS : ITEM_INTERACT_BLOCKING
+	return ..()
 
 /obj/structure/transmitter/proc/make_call(mob/living/carbon/human/user, calling_phone_id)
 	var/list/transmitters = get_transmitters()
@@ -261,7 +266,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	attached_to.attempt_pickup(user)
 	playsound(get_turf(user), get_sound_file("rtb_handset"), 100)
 
-	var/calling_status = calling.get_status()
+	var/calling_status = calling.get_status(only_outcome || only_income)
 	switch(calling_status)
 		if(PHONE_UNAVAILABLE, PHONE_BUSY)
 			timeout_timer_id = addtimer(CALLBACK(src, PROC_REF(reset_call), PHONE_REASON_BUSY), 3 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
@@ -339,9 +344,12 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 		if(PHONE_DND_ON)
 			do_not_disturb = PHONE_DND_OFF
 			to_chat(user, span_notice("Do Not Disturb has been disabled. You can now receive calls."))
-		if(PHONE_DND_OFF)
+		if(PHONE_DND_ON_PUBLIC)
 			do_not_disturb = PHONE_DND_ON
 			to_chat(user, span_warning("Do Not Disturb has been enabled. No calls will be received."))
+		if(PHONE_DND_OFF)
+			do_not_disturb = PHONE_DND_ON_PUBLIC
+			to_chat(user, span_warning("Do Not Disturb has been partially enabled. No calls [span_bold("from public phones")] will be received."))
 		else
 			return FALSE
 	return TRUE
@@ -418,6 +426,24 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	reset_call()
 	snapped = TRUE
 
+/obj/structure/transmitter/proc/fix_cable(mob/living/user, obj/item/stack/cable_coil/cable, time = 2 SECONDS)
+	PRIVATE_PROC(TRUE)
+
+	if(!snapped)
+		return FALSE
+	if(attached_to.loc != src)
+		balloon_alert(user, "the phone handset should be here!")
+		return FALSE
+	if(!cable.tool_start_check(user, amount = 5))
+		return FALSE
+	if(time > 0)
+		balloon_alert(user, "fixing cable...")
+	if(!cable.use_tool(src, user, time, volume = 50, amount = 5) || !snapped)
+		return FALSE
+
+	snapped = FALSE
+	return TRUE
+
 /obj/structure/transmitter/GetVoice()
 	return "[phone_name]"
 
@@ -443,6 +469,8 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 				'tff_modular/modules/colonial_marines/telephone/sound/talk_phone7.ogg',
 			)
 	return sound_file
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/transmitter, (-32))
 
 // ###########
 // Phone item
@@ -479,6 +507,7 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	attached_to = to_attach
 
 /obj/item/tube_phone/proc/remove_attached()
+	attached_to.attached_to = null
 	attached_to = null
 	reset_tether()
 
@@ -515,11 +544,6 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 		message = compose_message(source, L, message)
 		message = "<span class='[spans]'>[message]</span>"
 		hearer.show_message(message, MSG_AUDIBLE)
-
-/obj/item/tube_phone/attack_hand(mob/user)
-	if(attached_to && get_dist(user, attached_to) > attached_to.range)
-		return FALSE
-	return ..()
 
 /obj/item/tube_phone/attack_self(mob/user)
 	. = ..()
@@ -624,10 +648,16 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	desc = "The finger plate is a little stiff."
 
 /obj/structure/transmitter/only_outcome
+	phone_name = "Public Phone"
+	do_not_disturb = PHONE_DND_FORCED
 	only_outcome = TRUE
 
 /obj/structure/transmitter/only_income
+	phone_name = "Public Phone"
 	only_income = TRUE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/transmitter/only_outcome, (-32))
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/transmitter/only_income, (-32))
 
 /obj/structure/transmitter/syndicate
 	networks_receive = list(PHONE_FACTION_SYNDICATE)
@@ -643,41 +673,75 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	name = "Bridge Telephone"
 	phone_name = "Bridge"
 	phone_category = "Command"
+	phone_color = "yellow"
+	do_not_disturb = PHONE_DND_FORBIDDEN
+	networks_receive = list(PHONE_FACTION_STATION_PRIVATE)
+	networks_transmit = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
+
+/obj/structure/transmitter/rotary/prefab/briefing_room
+	name = "Briefing Room Telephone"
+	phone_name = "Briefing Room"
+	phone_category = "Command"
+	phone_color = "yellow"
+	do_not_disturb = PHONE_DND_FORBIDDEN
+	networks_receive = list(PHONE_FACTION_STATION_PRIVATE)
+	networks_transmit = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
 
 /obj/structure/transmitter/rotary/prefab/captain
 	name = "Captain's Telephone"
 	phone_name = "Captain's Office"
 	phone_category = "Command"
+	phone_color = "yellow"
+	networks_receive = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
+	networks_transmit = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
 
 /obj/structure/transmitter/rotary/prefab/cmo
 	name = "Chief Medical Officer's telephone"
 	phone_name = "Chief Medical Officer's Office"
 	phone_category = "Command"
+	phone_color = "blue"
+	networks_receive = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
+	networks_transmit = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
 
 /obj/structure/transmitter/rotary/prefab/hos
 	name = "Head of Security's telephone"
 	phone_name = "Head of Security's Office"
 	phone_category = "Command"
+	phone_color = "red"
+	networks_receive = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
+	networks_transmit = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
 
 /obj/structure/transmitter/rotary/prefab/hop
 	name = "Head of Personnel's telephone"
 	phone_name = "Head of Personnel's Office"
 	phone_category = "Command"
+	phone_color = "green"
+	networks_receive = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
+	networks_transmit = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
 
 /obj/structure/transmitter/rotary/prefab/ce
 	name = "Chief Engineer's telephone"
 	phone_name = "Chief Engineer's Office"
 	phone_category = "Command"
+	phone_color = "orange"
+	networks_receive = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
+	networks_transmit = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
 
 /obj/structure/transmitter/rotary/prefab/rd
 	name = "Research Director's telephone"
 	phone_name = "Research Director's Office"
 	phone_category = "Command"
+	phone_color = "violet"
+	networks_receive = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
+	networks_transmit = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
 
 /obj/structure/transmitter/rotary/prefab/qm
 	name = "Quartermaster's telephone"
 	phone_name = "Quartermaster's Office"
 	phone_category = "Command"
+	phone_color = "brown"
+	networks_receive = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
+	networks_transmit = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
 
 /obj/structure/transmitter/rotary/prefab/detective
 	name = "Detective's Office telephone"
@@ -699,23 +763,44 @@ GLOBAL_LIST_EMPTY_TYPED(phone_transmitters, /obj/structure/transmitter)
 	phone_name = "Psychology Office"
 	phone_category = "Offices"
 
+/obj/structure/transmitter/rotary/prefab/hydro
+	name = "Hydroponics telephone"
+	phone_name = "Hydroponics"
+	phone_category = "Offices"
+
+/obj/structure/transmitter/rotary/prefab/robotics
+	name = "Robotics Lab telephone"
+	phone_name = "Robotics Lab"
+	phone_category = "Offices"
+
+/obj/structure/transmitter/rotary/prefab/rnd
+	name = "Research Division telephone"
+	phone_name = "Research Division"
+	phone_category = "Offices"
+
 /obj/structure/transmitter/rotary/prefab/security
 	name = "Security Office telephone"
 	phone_name = "Security Office"
 	phone_category = "Civilian"
+	phone_color = "red"
 	do_not_disturb = PHONE_DND_FORBIDDEN
+	networks_transmit = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
 
 /obj/structure/transmitter/rotary/prefab/medical
 	name = "Medical Lobby telephone"
 	phone_name = "Medical Lobby"
 	phone_category = "Civilian"
+	phone_color = "blue"
 	do_not_disturb = PHONE_DND_FORBIDDEN
+	networks_transmit = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
 
 /obj/structure/transmitter/rotary/prefab/engineering
 	name = "Engineering Lobby telephone"
 	phone_name = "Engineering Lobby"
 	phone_category = "Civilian"
+	phone_color = "orange"
 	do_not_disturb = PHONE_DND_FORBIDDEN
+	networks_transmit = list(PHONE_FACTION_STATION, PHONE_FACTION_STATION_PRIVATE)
 
 
 #undef PHONE_FACTION_SYNDICATE
