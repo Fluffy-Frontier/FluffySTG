@@ -10,6 +10,17 @@
 	maptext_width = 64
 	pressure_resistance = 200
 
+	armor_type = /datum/armor/tgmc_alien
+
+	bodyparts = list(
+		/obj/item/bodypart/chest/alien/tgmc,
+		/obj/item/bodypart/head/alien/tgmc,
+		/obj/item/bodypart/arm/left/alien/tgmc,
+		/obj/item/bodypart/arm/right/alien/tgmc,
+		/obj/item/bodypart/leg/right/alien/tgmc,
+		/obj/item/bodypart/leg/left/alien/tgmc,
+	)
+
 	default_organ_types_by_slot = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain/alien,
 		ORGAN_SLOT_XENO_HIVENODE = /obj/item/organ/alien/hivenode,
@@ -37,16 +48,35 @@
 	/// Все дополнительные органы, что должны находиться в телах ксеносов
 	var/list/additional_organ_types_by_slot
 
+	// Оффсет для худ-ов, чтобы они лучше соответствовали размерам ксеноса
+	var/hud_offset_x = 32
+	var/hud_offset_y = 0
+
+	// Урон по тяжелым транспортным штукам (типа мехов)
+	var/melee_vehicle_damage
+	var/resist_heavy_hits = FALSE
+
+	// Включен ли в данный момент фортифай
+	var/fortify = FALSE
+
 /mob/living/carbon/alien/adult/tgmc/Initialize(mapload)
 	. = ..()
+	real_name = "alien [caste]"
+	pixel_x = -16
+
+	set_armor(armor_type)
 
 	if(next_evolution)
 		GRANT_ACTION(/datum/action/cooldown/alien/tgmc/generic_evolve)
 
-	pixel_x = -16
-
 	ADD_TRAIT(src, TRAIT_XENO_HEAL_AURA, TRAIT_XENO_INNATE)
-	real_name = "alien [caste]"
+	ADD_TRAIT(src, TRAIT_PIERCEIMMUNE, TRAIT_XENO_INNATE)
+	AddElement(/datum/element/resin_walker, /datum/movespeed_modifier/resin_speedup)
+	RegisterSignal(src, COMSIG_LIVING_UPDATED_RESTING, PROC_REF(on_rest))
+
+/mob/living/carbon/alien/adult/tgmc/Destroy()
+	. = ..()
+	UnregisterSignal(src, COMSIG_LIVING_UPDATED_RESTING)
 
 /mob/living/carbon/alien/adult/tgmc/create_internal_organs()
 	if(additional_organ_types_by_slot)
@@ -66,72 +96,30 @@
 		return
 	has_evolved_recently = FALSE
 
-/datum/action/cooldown/alien/tgmc
-	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
-	/// Some xeno abilities block other abilities from being used, this allows them to get around that in cases where it is needed
-	var/can_be_used_always = FALSE
-
-/datum/action/cooldown/alien/tgmc/IsAvailable(feedback = FALSE)
-	. = ..()
-	if(!.)
+/mob/living/carbon/alien/adult/tgmc/UnarmedAttack(atom/attack_target, proximity_flag, list/modifiers)
+	if(body_position == LYING_DOWN) // Лежим - значит отдыхаем. Никакой войны во время отдыха
 		return FALSE
-
-	if(can_be_used_always)
-		return TRUE
-
-	var/mob/living/carbon/alien/adult/tgmc/owner_alien = owner
-	if(!istype(owner_alien) || owner_alien.unable_to_use_abilities)
+	if(fortify)
 		return FALSE
+	return ..()
 
-/datum/action/cooldown/alien/tgmc/generic_evolve
-	name = "Evolve"
-	desc = "Allows us to evolve to a higher caste of our type, if there is not one already."
-	button_icon_state = "evolution"
-	/// What type this ability will turn the owner into upon completion
-	var/type_to_evolve_into
+/mob/living/carbon/alien/adult/tgmc/getarmor(def_zone, type)
+	return get_armor_rating(type)
 
-/datum/action/cooldown/alien/tgmc/generic_evolve/Grant(mob/grant_to)
-	. = ..()
-	if(!isalien(owner))
-		return
-	var/mob/living/carbon/alien/target_alien = owner
-	plasma_cost = target_alien.get_max_plasma() //This ability should always require that a xeno be at their max plasma capacity to use
+/datum/armor/tgmc_alien
+	acid = 0
+	bio = 0
+	bomb = 0
+	bullet = 0
+	consume = 0
+	energy = 0
+	laser = 0
+	fire = 0
+	melee = 0
+	wound = 0
 
-/datum/action/cooldown/alien/tgmc/generic_evolve/Activate()
-	var/mob/living/carbon/alien/adult/tgmc/evolver = owner
-
-	if(!istype(evolver))
-		to_chat(owner, span_warning("You aren't an alien, you can't evolve!"))
-		return FALSE
-
-	type_to_evolve_into = evolver.next_evolution
-	if(!type_to_evolve_into)
-		to_chat(evolver, span_bolddanger("Something is wrong... We can't evolve into anything? (This is broken report it on GitHub)"))
-		CRASH("Couldn't find an evolution for [owner] ([owner.type]).")
-
-	if(!isturf(evolver.loc))
-		return FALSE
-
-	if(get_alien_type(type_to_evolve_into))
-		evolver.balloon_alert(evolver, "too many of our evolution already")
-		return FALSE
-
-	var/obj/item/organ/alien/hivenode/node = evolver.get_organ_by_type(/obj/item/organ/alien/hivenode)
-	if(!node)
-		to_chat(evolver, span_bolddanger("We can't sense our node's connection to the hive... We can't evolve!"))
-		return FALSE
-
-	if(node.recent_queen_death)
-		to_chat(evolver, span_bolddanger("The death of our queen... We can't seem to gather the mental energy required to evolve..."))
-		return FALSE
-
-	if(evolver.has_evolved_recently)
-		evolver.balloon_alert(evolver, "can evolve in 1.5 minutes") //Make that 1.5 variable later, but it keeps fucking up for me :(
-		return FALSE
-
-	var/new_beno = new type_to_evolve_into(evolver.loc)
-	evolver.alien_evolve(new_beno)
-	return TRUE
+/datum/movespeed_modifier/resin_speedup
+	multiplicative_slowdown = -0.5
 
 /datum/movespeed_modifier/alien_quick
 	multiplicative_slowdown = -0.5
@@ -204,7 +192,8 @@
 
 	return GLOB.fire_appearances[fire_icon]
 
-/mob/living/carbon/alien/adult/tgmc/findQueen() //Yes we really do need to do this whole thing to let the queen finder work
+//Yes we really do need to do this whole thing to let the queen finder work
+/mob/living/carbon/alien/adult/tgmc/findQueen()
 	if(hud_used)
 		hud_used.alien_queen_finder.cut_overlays()
 		var/mob/queen = get_alien_type(/mob/living/carbon/alien/adult/tgmc/queen)
@@ -226,3 +215,30 @@
 				finder_icon = "finder_far"
 		var/image/finder_eye = image('icons/hud/screen_alien.dmi', finder_icon, dir = Qdir)
 		hud_used.alien_queen_finder.add_overlay(finder_eye)
+
+/mob/living/carbon/alien/adult/tgmc/set_hud_image_state(hud_type, hud_state, x_offset = 0, y_offset = 0)
+	return ..(hud_type, hud_state, hud_offset_x, hud_offset_y)
+
+/mob/living/carbon/alien/adult/tgmc/proc/on_rest()
+	SIGNAL_HANDLER
+
+	if(resting)
+		// add_movespeed_modifier(/datum/movespeed_modifier/alien_rest)
+		ADD_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
+	else
+		// remove_movespeed_modifier(/datum/movespeed_modifier/alien_rest)
+		REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
+
+/mob/living/carbon/alien/adult/tgmc/set_resting(new_resting, silent = TRUE, instant = FALSE)
+	if(fortify)
+		balloon_alert(src, "Cannot while fortified")
+		return FALSE
+	return ..()
+
+/datum/movespeed_modifier/alien_rest
+	multiplicative_slowdown = 5
+
+/mob/living/carbon/alien/adult/tgmc/adjustPlasma(amount)
+	. = ..()
+	for(var/datum/action/cooldown/ability in actions)
+		ability.build_all_button_icons()
