@@ -38,12 +38,25 @@
 	name = "Synthetic Security Outfit"
 
 	l_pocket = /obj/item/storage/pouch/medical/tac_security/synth/loaded
+	uniform = /obj/item/clothing/under/rank/security/officer
+	ears = /obj/item/radio/headset/headset_sec/alt
+
+/datum/outfit/synthetic/security/warden
+	name = "Synthetic Security Warden Outfit"
+
+	uniform = /obj/item/clothing/under/rank/security/warden
+
+/datum/outfit/synthetic/security/hos
+	name = "Synthetic Security HoS Outfit"
+
+	uniform = /obj/item/clothing/under/rank/security/head_of_security
+	ears = /obj/item/radio/headset/heads/hos/alt
 
 /datum/job/security_officer
 	synthetic_outfit = /datum/outfit/synthetic/security
 
 /datum/job/head_of_security
-	synthetic_outfit = /datum/outfit/synthetic/security
+	synthetic_outfit = /datum/outfit/synthetic/security/hos
 
 /datum/job/warden
-	synthetic_outfit = /datum/outfit/synthetic/security
+	synthetic_outfit = /datum/outfit/synthetic/security/warden
