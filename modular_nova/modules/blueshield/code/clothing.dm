@@ -70,7 +70,7 @@
 	greyscale_colors = "#3A4E7D#DEB63D"
 	//alternate_worn_icon_digi = 'modular_nova/icons/mob/head_muzzled.dmi'
 	icon_state = "beret_badge_police"
-	armor_type = /datum/armor/head_helmet/blueshield
+	armor_type = /datum/armor/cosmetic_sec
 	supports_variations_flags = CLOTHING_SNOUTED_VARIATION_NO_NEW_ICON
 
 /datum/armor/head_helmet/blueshield
