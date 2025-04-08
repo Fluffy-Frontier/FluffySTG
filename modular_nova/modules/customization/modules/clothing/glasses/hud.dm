@@ -21,7 +21,8 @@
 	name = "security HUD eyepatch"
 	desc = "Lost your eye beating an innocent clown? Thankfully your corporate overlords have made something to make up for this. May not do well against flashes."
 	clothing_traits = list(TRAIT_SECURITY_HUD)
-	glass_colour_type = /datum/client_colour/glass_colour/blue
+	glass_colour_type = /datum/client_colour/glass_colour/red
+	icon_state = "security_eyepatch"
 
 	unique_reskin = list(
 		"Eyepatch" = list(
