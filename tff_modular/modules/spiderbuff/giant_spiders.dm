@@ -106,3 +106,9 @@
 		/datum/action/cooldown/spell/pointed/projectile/web_restraints,
 		)
 	pass_flags = PASSMOB
+
+/mob/living/basic/spider/giant/viper
+	pass_flags = PASSMOB
+	innate_actions = list(
+		/datum/action/cooldown/mob_cooldown/command_spiders/communication_spiders,
+		)
