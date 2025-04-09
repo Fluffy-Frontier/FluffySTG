@@ -224,11 +224,6 @@
 	assignment = "Exowarrior"
 	name = "\improper Codex"
 	desc = "At a glance, it looks like a simple dogtag. In reality, it is a lot like an ID card - it stores accesses, gene information, blood type, history of service, etc."
-	icon_state = "whistle"
-	worn_icon_state = "whistle"
-	inhand_icon_state = "card-id"
-	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	trim = /datum/id_trim/clam
 
 /obj/item/card/id/clam/command
