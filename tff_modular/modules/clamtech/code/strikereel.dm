@@ -88,38 +88,10 @@
 		owner.update_sight()
 	build_all_button_icons()
 
+//Thus we finish the saga of free clam termals after forced removal. No more bugs hopefully.
 
-//We override the standart unbuckling procedure so that our pilot LOSES thermals on exit and DOES NOT retain them
-/obj/vehicle/sealed/mecha/clam/strikereel/container_resist_act(mob/living/user)
-	if(isAI(user))
-		var/mob/living/silicon/ai/AI = user
-		if(!AI.linked_core)
-			to_chat(AI, span_userdanger("Inactive core destroyed. Unable to return."))
-			if(!AI.can_shunt || !AI.hacked_apcs.len)
-				to_chat(AI, span_warning("[AI.can_shunt ? "No hacked APCs available." : "No shunting capabilities."]"))
-				return
-			var/confirm = tgui_alert(AI, "Shunt to a random APC? You won't have anywhere else to go!", "Confirm Emergency Shunt", list("Yes", "No"))
-			if(confirm == "Yes")
-				/// Mechs with open cockpits can have the pilot shot by projectiles, or EMPs may destroy the AI inside
-				/// Alternatively, destroying the mech will shunt the AI if they can shunt, or a deadeye wizard can hit
-				/// them with a teleportation bolt
-				REMOVE_TRAIT(AI, TRAIT_THERMAL_VISION, TRAIT_MECHA)
-				AI.update_sight()
-				defense_mode = FALSE
-				if (AI.stat == DEAD || AI.loc != src)
-					return
-				mob_exit(AI, forced = TRUE)
-			return
-	to_chat(user, span_notice("You begin the ejection procedure. Equipment is disabled during this process. Hold still to finish ejecting."))
-	is_currently_ejecting = TRUE
-	if(do_after(user, has_gravity() ? exit_delay : 0 , target = src))
-		to_chat(user, span_notice("You exit the mech."))
-		REMOVE_TRAIT(user, TRAIT_THERMAL_VISION, TRAIT_MECHA)
-		user.update_sight()
-		defense_mode = FALSE
-		if(cabin_sealed)
-			set_cabin_seal(user, FALSE)
-		mob_exit(user, silent = TRUE)
-	else
-		to_chat(user, span_notice("You stop exiting the mech. Weapons are enabled again."))
-	is_currently_ejecting = FALSE
+/obj/vehicle/sealed/mecha/clam/strikereel/mob_exit(mob/M, silent = FALSE, randomstep = FALSE, forced = FALSE)
+	REMOVE_TRAIT(M, TRAIT_THERMAL_VISION, TRAIT_MECHA)
+	M.update_sight()
+	defense_mode = FALSE
+	..()
