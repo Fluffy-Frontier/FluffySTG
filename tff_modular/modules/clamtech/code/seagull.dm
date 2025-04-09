@@ -141,7 +141,7 @@
 	var/turf/launch_turf = get_turf(chassis)
 	new /obj/effect/hotspot(launch_turf)
 	launch_turf.hotspot_expose(700, 50, 1)
-	new /obj/effect/jumpjet_landingzone(launch_turf, chassis)
+	new /obj/effect/skyfall_landingzone(launch_turf, chassis)
 	chassis.resistance_flags |= INDESTRUCTIBLE //not while jumping at least
 	chassis.mecha_flags |= QUIET_STEPS|QUIET_TURNS|CANNOT_INTERACT
 	chassis.phasing = "flying"
@@ -236,38 +236,6 @@
 /datum/action/vehicle/sealed/mecha/jumpjet/proc/reset_button_icon()
 	button_icon_state = "mech_savannah"
 	build_all_button_icons()
-
-///a simple indicator of where the skyfall is going to land.
-/obj/effect/jumpjet_landingzone
-	name = "Landing Zone Indicator"
-	desc = "A holographic projection designating the landing zone of something. It's probably best to stand back."
-	icon = 'icons/mob/telegraphing/telegraph_96x96.dmi'
-	icon_state = "target_largebox"
-	layer = BELOW_MOB_LAYER
-	pixel_x = -32
-	pixel_y = -32
-	alpha = 0
-	///reference to mecha following
-	var/obj/vehicle/sealed/mecha/mecha
-
-/obj/effect/jumpjet_landingzone/Initialize(mapload, obj/vehicle/sealed/mecha/mecha)
-	. = ..()
-	if(!mecha)
-		stack_trace("Skyfall landing zone created without mecha")
-		return INITIALIZE_HINT_QDEL
-	src.mecha = mecha
-	animate(src, alpha = 255, TOTAL_JUMPJET_LEAP_TIME/2, easing = CIRCULAR_EASING|EASE_OUT)
-	RegisterSignal(mecha, COMSIG_MOVABLE_MOVED, PROC_REF(follow))
-	QDEL_IN(src, TOTAL_JUMPJET_LEAP_TIME) //when the animations land
-
-/obj/effect/jumpjet_landingzone/Destroy(force)
-	mecha = null
-	return ..()
-
-///called when the mecha moves
-/obj/effect/jumpjet_landingzone/proc/follow(datum/source_mecha)
-	SIGNAL_HANDLER
-	forceMove(get_turf(source_mecha))
 
 #undef JUMPJET_SINGLE_CHARGE_TIME
 #undef JUMPJET_CHARGELEVEL_LAUNCH
