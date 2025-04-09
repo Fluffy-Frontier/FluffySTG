@@ -147,7 +147,7 @@
 
 //Mech base type. Regulates custom FX and some basic balancing decisions.
 /obj/vehicle/sealed/mecha/clam
-	icon = 'tff_modular/modules/clamtech/icon/clam.dmi'
+	icon = 'tff_modular/modules/clamtech/icons/clam.dmi'
 	stepsound = 'tff_modular/modules/clamtech/sounds/clam_footstep1.ogg'
 	brute_attack_sound = 'tff_modular/modules/clamtech/sounds/dezgra_melee.ogg'
 	exit_delay = 10
@@ -161,12 +161,12 @@
 	bumpsmash = FALSE
 
 /obj/structure/mecha_wreckage/clam
-	icon = 'tff_modular/modules/clamtech/icon/clam.dmi'
+	icon = 'tff_modular/modules/clamtech/icons/clam.dmi'
 	welder_salvage = list(/obj/item/stack/sheet/mineral/plastitanium, /obj/item/stack/sheet/mineral/diamond, /obj/item/stack/sheet/iron, /obj/item/stack/rods)
 
 //Custom KelpWulp HUD. Weird-looking!
 /atom/movable/screen/fullscreen/ivanov_display/clam
-	icon = 'tff_modular/modules/clamtech/icon/hud.dmi'
+	icon = 'tff_modular/modules/clamtech/icons/hud.dmi'
 	icon_state = "lurm"
 	alpha = 180
 
