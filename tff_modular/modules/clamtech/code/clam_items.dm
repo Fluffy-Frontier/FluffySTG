@@ -204,6 +204,7 @@
 	outfit = /datum/outfit/pirate/clam
 	var/fluff_spawn = /obj/effect/particle_effect/fluid/smoke/quick
 	show_flavor = TRUE
+	you_are_text = "a Clam warrior"
 	flavour_text = "You are a warrior, that fights in an exosuit. An exo-warrior. The station has to be captured, so that your crusade can continue."
 	important_text = "You are extra-destructive. Make sure you hit the targets that pose a threat - randomly firing at crew is not your goal here."
 
@@ -212,6 +213,7 @@
 	rank = "Pentaglyph Commander"
 	desc = "A sturdy sleeper pod. Now's not the time to sleep! All points, form on me!"
 	outfit = /datum/outfit/pirate/clam/captain
+	you_are_text = "a Clam commander"
 	flavour_text = "You are a commander of a small strike team of exosuits. Take command of the station and bring it under Clam's control."
 
 //Misc stuff - clothes, maybe?
