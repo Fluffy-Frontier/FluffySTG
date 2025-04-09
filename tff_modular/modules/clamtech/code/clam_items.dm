@@ -148,6 +148,7 @@
 //Mech base type. Regulates custom FX and some basic balancing decisions.
 /obj/vehicle/sealed/mecha/clam
 	icon = 'tff_modular/modules/clamtech/icons/clam.dmi'
+	icon_state = "default"
 	stepsound = 'tff_modular/modules/clamtech/sounds/clam_footstep1.ogg'
 	brute_attack_sound = 'tff_modular/modules/clamtech/sounds/dezgra_melee.ogg'
 	exit_delay = 10
@@ -221,7 +222,6 @@
 	assignment = "Exowarrior"
 	name = "\improper Codex"
 	desc = "At a glance, it looks like a simple dogtag. In reality, it is a lot like an ID card - it stores accesses, gene information, blood type, history of service, etc."
-	icon = 'icons/mob/clothing/neck.dmi'
 	icon_state = "whistle"
 	worn_icon_state = "whistle"
 	inhand_icon_state = "card-id"
