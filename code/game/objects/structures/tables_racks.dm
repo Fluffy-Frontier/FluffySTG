@@ -60,6 +60,14 @@
 
 	ADD_TRAIT(src, TRAIT_COMBAT_MODE_SKIP_INTERACTION, INNATE_TRAIT)
 
+	if(can_flip && is_flipped)
+		flip_table(dir)
+		return
+
+	make_climbable()
+	AddElement(/datum/element/give_turf_traits, turf_traits)
+	AddElement(/datum/element/footstep_override, priority = STEP_SOUND_TABLE_PRIORITY)
+
 /// Applies additional properties based on the frame used to construct this table.
 /obj/structure/table/proc/apply_frame_properties(obj/structure/table_frame/frame_used)
 	frame = frame_used.type
@@ -74,6 +82,76 @@
 /obj/structure/table/proc/make_climbable()
 	AddElement(/datum/element/climbable)
 	AddElement(/datum/element/elevation, pixel_shift = 12)
+
+//proc that adds elements present in normal tables
+/obj/structure/table/proc/unflip_table()
+	playsound(src, 'sound/items/trayhit/trayhit2.ogg', 100)
+	make_climbable()
+	AddElement(/datum/element/give_turf_traits, turf_traits)
+	AddElement(/datum/element/footstep_override, priority = STEP_SOUND_TABLE_PRIORITY)
+	//resets vars from table being flipped
+	layer = TABLE_LAYER
+	smoothing_flags |= SMOOTH_BITMASK
+	pass_flags_self |= PASSTABLE
+	if(use_matrices_instead)
+		animate(src, transform = before_flipped_matrix, time = 0)
+	else
+		icon = initial(icon)
+	icon_state = initial(icon_state)
+	smoothing_groups = on_init_smoothed_vars[1]
+	canSmoothWith = on_init_smoothed_vars[2]
+	update_appearance()
+	is_flipped = FALSE
+
+//proc that removes elements present in now-flipped tables
+/obj/structure/table/proc/flip_table(new_dir = SOUTH)
+	playsound(src, 'sound/items/trayhit/trayhit1.ogg', 100)
+	RemoveElement(/datum/element/climbable)
+	RemoveElement(/datum/element/footstep_override, priority = STEP_SOUND_TABLE_PRIORITY)
+	RemoveElement(/datum/element/give_turf_traits, turf_traits)
+	RemoveElement(/datum/element/elevation, pixel_shift = 12)
+
+	//change icons
+	layer = LOW_ITEM_LAYER
+	if(new_dir & EAST) // Dirs need to be part of the 4 main cardinal directions so proc/CanAllowThrough isn't fucky wucky
+		new_dir = EAST
+	else if(new_dir & WEST)
+		new_dir = WEST
+	dir = new_dir
+	if(new_dir == SOUTH)
+		layer = ABOVE_MOB_LAYER
+
+	var/turf/throw_target = get_step(src, src.dir)
+	if(!isnull(throw_target))
+		for(var/atom/movable/movable_entity in src.loc)
+			if(is_able_to_throw(src, movable_entity))
+				movable_entity.safe_throw_at(throw_target, range = 1, speed = 1, force = MOVE_FORCE_NORMAL, gentle = TRUE)
+
+	smoothing_flags &= ~SMOOTH_BITMASK
+	smoothing_groups = null
+	canSmoothWith = null
+	pass_flags_self &= ~PASSTABLE
+
+	if(use_matrices_instead)
+		icon_state = initial(icon_state)
+		before_flipped_matrix = transform
+		var/matrix/transform_matrix = matrix(1, 0, 0, 0, 0.350, 9) // "flips" the table
+		//there's probably a nicer way to do this but whatever. rotates the table according to the dir
+		if(dir == EAST)
+			transform_matrix.Turn(90)
+		if(dir == SOUTH)
+			transform_matrix.Turn(180)
+		if(dir == WEST)
+			transform_matrix.Turn(270)
+		animate(src, transform = transform_matrix, time = 0)
+	else
+		icon = 'icons/obj/flipped_tables.dmi'
+		icon_state = base_icon_state
+
+	update_appearance()
+	QUEUE_SMOOTH_NEIGHBORS(src)
+
+	is_flipped = TRUE
 
 /obj/structure/table/add_context(atom/source, list/context, obj/item/held_item, mob/living/user)
 	. = ..()
