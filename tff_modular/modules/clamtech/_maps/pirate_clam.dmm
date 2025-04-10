@@ -1,0 +1,101 @@
+"ai" = (/obj/machinery/porta_turret/syndicate/energy/heavy{faction = list("pirate"); dir = 4; lethal_projectile_sound = 'tff_modular/modules/clamtech/sounds/clam_laser.ogg'; lethal_projectile = /obj/projectile/beam/laser/heavylaser/clam; name = "ER laser turret"},/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/shuttle/pirate)
+"aD" = (/obj/effect/decal/fakelattice,/obj/effect/decal/fakelattice,/turf/open/floor/engine/hull/reinforced,/area/shuttle/pirate)
+"aI" = (/obj/machinery/door/poddoor{id = "invasionbay"},/obj/structure/fans/tiny/forcefield{dir = 1},/turf/open/floor/iron/shuttle/exploration/equipmentrail1{dir = 4},/area/shuttle/pirate)
+"aP" = (/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4},/obj/effect/turf_decal/trimline/yellow/arrow_cw{dir = 10; alpha = 255},/obj/structure/cable,/turf/open/floor/iron/shuttle/exploration/uside{dir = 1},/area/shuttle/pirate)
+"aW" = (/obj/effect/decal/fakelattice,/turf/open/floor/engine/hull/reinforced,/area/shuttle/pirate)
+"bw" = (/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4},/obj/structure/cable,/obj/machinery/holopad/secure,/turf/open/floor/iron/shuttle/exploration/doubleside{dir = 4},/area/shuttle/pirate)
+"cc" = (/obj/machinery/mech_bay_recharge_port,/obj/machinery/light/directional/west,/turf/open/floor/iron/shuttle/exploration/corner,/area/shuttle/pirate)
+"ce" = (/obj/structure/rack/shelf,/obj/machinery/light/dim/directional/north,/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/clam,/obj/item/mecha_parts/mecha_equipment/weapon/energy/ion/clam,/obj/item/mecha_parts/mecha_equipment/weapon/energy/ion/clam,/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot/clam,/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/clam/rapid,/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/clam,/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/clam,/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp/clam,/obj/structure/railing{dir = 4},/turf/open/floor/iron/shuttle/exploration/corner{dir = 8},/area/shuttle/pirate)
+"cI" = (/obj/machinery/mech_bay_recharge_port{dir = 8},/obj/structure/railing,/turf/open/floor/iron/shuttle/exploration/corner{dir = 1},/area/shuttle/pirate)
+"cR" = (/obj/machinery/computer/mech_bay_power_console{dir = 8},/turf/open/floor/iron/shuttle/exploration/corner{dir = 1},/area/shuttle/pirate)
+"de" = (/obj/machinery/porta_turret/syndicate/energy/heavy{faction = list("pirate"); dir = 8; lethal_projectile_sound = 'tff_modular/modules/clamtech/sounds/clam_laser.ogg'; lethal_projectile = /obj/projectile/beam/laser/heavylaser/clam; name = "ER laser turret"},/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/shuttle/pirate)
+"dD" = (/obj/machinery/computer/shuttle/pirate,/turf/open/floor/iron/shuttle/exploration/side,/area/shuttle/pirate)
+"eu" = (/turf/open/floor/iron/colony/bolts,/area/shuttle/pirate)
+"iN" = (/obj/machinery/door/poddoor{id = "invasionbay"},/obj/structure/fans/tiny/forcefield{dir = 1},/turf/open/floor/iron/shuttle/exploration/equipmentrail3{dir = 8},/area/shuttle/pirate)
+"jn" = (/obj/effect/turf_decal/caution/stand_clear{dir = 4},/turf/open/floor/iron/shuttle/exploration/textured_flat,/area/shuttle/pirate)
+"jt" = (/obj/effect/turf_decal/trimline/yellow/arrow_cw{dir = 8; alpha = 255},/obj/effect/turf_decal/board_number/five,/turf/open/floor/iron/shuttle/exploration/corner,/area/shuttle/pirate)
+"jO" = (/obj/machinery/turretid{icon_state = "control_kill"; lethal = 1; locked = 0; pixel_y = -24; req_access = list("syndicate")},/obj/machinery/light/dim/directional/east,/obj/machinery/computer/piratepad_control{dir = 8},/turf/open/floor/iron/shuttle/exploration/corner{dir = 1},/area/shuttle/pirate)
+"kH" = (/obj/vehicle/sealed/mecha/clam/seagull/loaded,/obj/effect/mob_spawn/ghost_role/human/clam,/turf/open/floor/iron/shuttle/exploration/hazard,/area/shuttle/pirate)
+"mf" = (/obj/machinery/button/door/directional/west{req_access = list("syndicate"); name = "Open landing bays"; id = "invasionbay"},/turf/open/floor/iron/colony/bolts,/area/shuttle/pirate)
+"nb" = (/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4},/obj/effect/mapping_helpers/airlock/cutaiwire,/obj/machinery/door/airlock/highsecurity,/obj/effect/mapping_helpers/airlock/access/any/syndicate/general,/turf/open/floor/iron/shuttle/exploration/flat,/area/shuttle/pirate)
+"ny" = (/obj/structure/chair/comfy/shuttle{dir = 1},/obj/machinery/atmospherics/components/unary/vent_pump/on,/turf/open/floor/iron/shuttle/exploration/side{dir = 1},/area/shuttle/pirate)
+"oc" = (/obj/machinery/button/door/directional/south{id = "clambridgebolt"; name = "Toggle shutters"},/obj/machinery/computer/camera_advanced/shuttle_docker/syndicate/pirate{dir = 4; x_offset = 3; y_offset = -5},/obj/machinery/light/dim/directional/west,/turf/open/floor/iron/shuttle/exploration/corner{dir = 4},/area/shuttle/pirate)
+"op" = (/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4},/obj/structure/cable,/turf/open/floor/iron/shuttle/exploration/uside,/area/shuttle/pirate)
+"qm" = (/turf/open/floor/engine/hull/reinforced,/area/shuttle/pirate)
+"qn" = (/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/iron/shuttle/exploration/textured_flat,/area/shuttle/pirate)
+"re" = (/obj/vehicle/sealed/mecha/clam/strikereel/loaded,/obj/effect/mob_spawn/ghost_role/human/clam,/turf/open/floor/iron/shuttle/exploration/hazard,/area/shuttle/pirate)
+"rv" = (/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4},/obj/effect/turf_decal/trimline/yellow/line{dir = 10; alpha = 255},/obj/effect/turf_decal/trimline/yellow/corner{dir = 1; alpha = 255},/obj/effect/turf_decal/trimline/yellow/line{dir = 8; alpha = 255},/obj/structure/cable,/turf/open/floor/iron/shuttle/exploration/doubleside{dir = 4},/area/shuttle/pirate)
+"rG" = (/obj/machinery/computer/mech_bay_power_console{dir = 4},/turf/open/floor/iron/shuttle/exploration/corner,/area/shuttle/pirate)
+"sr" = (/turf/open/floor/iron/colony,/area/shuttle/pirate)
+"sD" = (/obj/structure/cable,/obj/structure/rack,/obj/item/storage/toolbox/mechanical{pixel_y = 4},/obj/item/clothing/head/utility/welding,/obj/machinery/power/terminal{dir = 4},/obj/machinery/light/dim/directional/north,/obj/item/multitool,/turf/open/floor/iron/shuttle/exploration/corner,/area/shuttle/pirate)
+"un" = (/obj/machinery/power/shuttle_engine/propulsion,/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/shuttle/pirate)
+"uq" = (/obj/effect/turf_decal/board_number/one,/turf/open/floor/iron/shuttle/exploration/corner{dir = 8},/area/shuttle/pirate)
+"wr" = (/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4},/obj/effect/mapping_helpers/airlock/cutaiwire,/obj/machinery/door/airlock/hatch,/obj/structure/cable,/obj/effect/mapping_helpers/airlock/access/any/syndicate/general,/turf/open/floor/iron/shuttle/exploration/flat,/area/shuttle/pirate)
+"wz" = (/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,/obj/machinery/door/poddoor/shutters/preopen{id = "clambridgebolt"; dir = 4},/turf/open/floor/plating,/area/shuttle/pirate)
+"wX" = (/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4},/obj/item/storage/toolbox/mechanical{pixel_y = 11; pixel_x = 0},/obj/structure/cable,/obj/machinery/light/red/directional/south,/obj/machinery/power/port_gen/pacman/pre_loaded{power_gen = 100000},/turf/open/floor/iron/shuttle/exploration/uside{dir = 8},/area/shuttle/pirate)
+"xl" = (/obj/machinery/mech_bay_recharge_port{dir = 8},/obj/machinery/light/directional/east,/turf/open/floor/iron/shuttle/exploration/corner{dir = 8},/area/shuttle/pirate)
+"xN" = (/obj/effect/turf_decal/trimline/yellow/line{alpha = 255; pixel_x = 1; pixel_y = -6},/obj/effect/turf_decal/trimline/yellow/mid_joiner{alpha = 255; pixel_x = -15; pixel_y = -6},/obj/effect/turf_decal/trimline/yellow/mid_joiner{alpha = 255; pixel_x = 1; pixel_y = -6},/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4},/obj/structure/cable,/turf/open/floor/iron/shuttle/exploration/doubleside{dir = 4},/area/shuttle/pirate)
+"yd" = (/obj/structure/rack/shelf,/obj/item/storage/medkit/combat_surgeon/stocked{pixel_x = 0; pixel_y = -4},/obj/item/storage/medkit/brute{pixel_x = 0; pixel_y = 5},/obj/item/storage/medkit/advanced{pixel_x = 0; pixel_y = 13},/obj/structure/railing{dir = 4},/turf/open/floor/iron/shuttle/exploration/corner,/area/shuttle/pirate)
+"yR" = (/obj/machinery/door/poddoor{id = "invasionbay"},/obj/structure/fans/tiny/forcefield{dir = 1},/turf/open/floor/iron/shuttle/exploration/equipmentrail2{dir = 8},/area/shuttle/pirate)
+"zD" = (/obj/machinery/atmospherics/components/unary/vent_pump/on{dir = 8},/obj/effect/turf_decal/trimline/yellow/corner{dir = 8; alpha = 255},/obj/effect/turf_decal/board_number/four{dir = 1},/turf/open/floor/iron/shuttle/exploration/corner{dir = 4},/area/shuttle/pirate)
+"zX" = (/obj/machinery/power/shuttle_engine/propulsion,/turf/open/floor/engine/hull/reinforced,/area/shuttle/pirate)
+"Ae" = (/obj/machinery/power/smes/ship{capacity = 1e+010; charge = 1e+010},/obj/structure/cable,/turf/open/floor/iron/shuttle/exploration/corner{dir = 8},/area/shuttle/pirate)
+"Aj" = (/obj/effect/turf_decal/stripes/line{dir = 1},/obj/structure/chair/plastic,/turf/open/floor/iron/shuttle/exploration/textured_flat,/area/shuttle/pirate)
+"As" = (/obj/structure/cable,/obj/effect/mapping_helpers/apc/cut_AI_wire,/obj/machinery/power/apc/auto_name/directional/east{aidisabled = 1; syndicate_access = 1},/obj/machinery/shuttle_scrambler,/turf/open/floor/iron/shuttle/exploration/corner{dir = 1},/area/shuttle/pirate)
+"Bv" = (/obj/machinery/power/shuttle_engine/heater,/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/shuttle/pirate)
+"Cd" = (/turf/open/floor/iron/shuttle/exploration/corner{dir = 4},/area/shuttle/pirate)
+"CR" = (/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4},/obj/effect/turf_decal/trimline/yellow/arrow_cw{dir = 8; alpha = 255},/obj/structure/cable,/turf/open/floor/iron/shuttle/exploration/doubleside{dir = 4},/area/shuttle/pirate)
+"Es" = (/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,/obj/machinery/door/poddoor/shutters/preopen{id = "clambridgebolt"; dir = 1},/turf/open/floor/plating,/area/shuttle/pirate)
+"Fg" = (/obj/structure/fans/tiny/forcefield{dir = 1},/obj/machinery/door/airlock/highsecurity,/obj/effect/mapping_helpers/airlock/access/any/syndicate/general,/obj/effect/mapping_helpers/airlock/cutaiwire,/obj/effect/mapping_helpers/airlock/locked,/obj/docking_port/stationary{height = 19; shuttle_id = "pirate_home"; name = "Deep Space"; width = 13; dwidth = 11},/obj/docking_port/mobile/pirate{launch_status = 0; movement_force = list("KNOCKDOWN"=0,"THROW"=0); name = "Pirate Ship"; port_direction = 2},/turf/open/floor/iron/shuttle/exploration/flat,/area/shuttle/pirate)
+"Fm" = (/obj/machinery/door/poddoor{id = "invasionbay"},/obj/structure/fans/tiny/forcefield{dir = 1},/turf/open/floor/iron/shuttle/exploration/equipmentrail2{dir = 4},/area/shuttle/pirate)
+"GE" = (/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4},/obj/structure/cable,/turf/open/floor/iron/shuttle/exploration/uside{dir = 1},/area/shuttle/pirate)
+"HL" = (/obj/machinery/computer/mech_bay_power_console{dir = 4},/turf/open/floor/iron/shuttle/exploration/corner{dir = 4},/area/shuttle/pirate)
+"Iw" = (/turf/open/floor/engine/airless,/area/shuttle/pirate)
+"IK" = (/obj/effect/turf_decal/caution/stand_clear{dir = 8},/obj/structure/chair/plastic{dir = 8},/turf/open/floor/iron/shuttle/exploration/textured_flat,/area/shuttle/pirate)
+"Kh" = (/obj/machinery/mech_bay_recharge_port{dir = 8},/obj/machinery/light/dim/directional/east,/turf/open/floor/iron/shuttle/exploration/corner{dir = 1},/area/shuttle/pirate)
+"Ki" = (/obj/machinery/button/door/directional/east{req_access = list("syndicate"); name = "Open landing bays"; id = "invasionbay"},/turf/open/floor/iron/colony/bolts,/area/shuttle/pirate)
+"Kn" = (/turf/open/floor/iron/colony/texture,/area/shuttle/pirate)
+"Kt" = (/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4},/obj/effect/mapping_helpers/airlock/cutaiwire,/obj/machinery/door/airlock/highsecurity,/obj/structure/cable,/obj/effect/mapping_helpers/airlock/access/any/syndicate/general,/turf/open/floor/iron/shuttle/exploration/flat,/area/shuttle/pirate)
+"Lh" = (/obj/effect/turf_decal/stripes/line,/obj/structure/railing,/obj/machinery/light/floor,/turf/open/floor/iron/shuttle/exploration/textured_flat,/area/shuttle/pirate)
+"Ly" = (/obj/machinery/airalarm/directional/south,/obj/effect/mapping_helpers/airalarm/all_access,/obj/machinery/piratepad,/turf/open/floor/iron/shuttle/exploration/corner{dir = 4},/area/shuttle/pirate)
+"Ma" = (/obj/vehicle/sealed/mecha/clam/reefbreaker/loaded,/obj/effect/mob_spawn/ghost_role/human/clam{dir = 1},/turf/open/floor/iron/shuttle/exploration/hazard,/area/shuttle/pirate)
+"Ms" = (/obj/machinery/door/poddoor{id = "invasionbay"},/obj/structure/fans/tiny/forcefield{dir = 1},/turf/open/floor/iron/shuttle/exploration/equipmentrail3{dir = 4},/area/shuttle/pirate)
+"Mu" = (/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4},/obj/effect/turf_decal/trimline/yellow/corner{dir = 1; alpha = 255},/obj/effect/turf_decal/trimline/yellow/line{dir = 8; alpha = 255},/obj/effect/turf_decal/trimline/yellow/line{dir = 10; alpha = 255},/obj/structure/cable,/turf/open/floor/iron/shuttle/exploration/doubleside{dir = 4},/area/shuttle/pirate)
+"Nh" = (/obj/effect/turf_decal/board_number/two,/obj/item/storage/toolbox/mechanical{pixel_y = 13; pixel_x = 4},/turf/open/floor/iron/shuttle/exploration/corner,/area/shuttle/pirate)
+"NP" = (/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{dir = 4},/obj/structure/cable,/obj/effect/turf_decal/board_number/three{dir = 1},/turf/open/floor/iron/shuttle/exploration/corner{dir = 1},/area/shuttle/pirate)
+"NT" = (/obj/effect/turf_decal/stripes/line,/obj/structure/railing,/turf/open/floor/iron/shuttle/exploration/textured_flat,/area/shuttle/pirate)
+"OX" = (/obj/machinery/atmospherics/components/unary/vent_pump/on{dir = 4},/obj/structure/sign/poster/contraband/soviet_propaganda/directional/south,/turf/open/floor/iron/shuttle/exploration/corner{dir = 1},/area/shuttle/pirate)
+"Pn" = (/obj/machinery/atmospherics/components/unary/vent_pump/on{dir = 4},/turf/open/floor/iron/shuttle/exploration/textured_flat,/area/shuttle/pirate)
+"PN" = (/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,/obj/machinery/door/poddoor/shutters/preopen{id = "clambridgebolt"; dir = 8},/turf/open/floor/plating,/area/shuttle/pirate)
+"Qj" = (/obj/item/reagent_containers/cup/glass/waterbottle{pixel_x = -5; pixel_y = 5},/obj/item/reagent_containers/cup/glass/waterbottle{pixel_x = -9; pixel_y = 8},/obj/item/toy/cards/deck{pixel_x = 6; pixel_y = 12},/obj/machinery/recharger,/obj/structure/table,/turf/open/floor/iron/shuttle/exploration/textured_flat,/area/shuttle/pirate)
+"Qn" = (/obj/effect/turf_decal/stripes/line{dir = 1},/obj/machinery/light/floor,/obj/machinery/button/door/directional/north{name = "Open landing bays"; id = "invasionbay"; req_access = list("syndicate")},/turf/open/floor/iron/shuttle/exploration/textured_flat,/area/shuttle/pirate)
+"Rt" = (/turf/template_noop,/area/template_noop)
+"RP" = (/obj/structure/railing,/obj/vehicle/sealed/mecha/clam/kelpwulp/loaded,/obj/effect/mob_spawn/ghost_role/human/clam{dir = 1},/turf/open/floor/iron/shuttle/exploration/hazard,/area/shuttle/pirate)
+"RV" = (/obj/machinery/mech_bay_recharge_port{active_power_usage = 10; recharge_power = 1000; idle_power_usage = 10},/obj/structure/railing,/turf/open/floor/iron/shuttle/exploration/corner{dir = 4},/area/shuttle/pirate)
+"RZ" = (/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/shuttle/pirate)
+"Sg" = (/obj/machinery/atmospherics/components/tank/air,/turf/open/floor/iron/shuttle/exploration/uside{dir = 4},/area/shuttle/pirate)
+"Sl" = (/obj/structure/railing,/obj/vehicle/sealed/mecha/clam/tideshark/loaded,/obj/effect/mob_spawn/ghost_role/human/clam/captain{dir = 1},/turf/open/floor/iron/shuttle/exploration/hazard,/area/shuttle/pirate)
+"Vt" = (/obj/machinery/door/poddoor{id = "invasionbay"},/obj/structure/fans/tiny/forcefield{dir = 1},/turf/open/floor/iron/shuttle/exploration/equipmentrail1{dir = 8},/area/shuttle/pirate)
+"YK" = (/obj/machinery/computer/mech_bay_power_console{dir = 8},/turf/open/floor/iron/shuttle/exploration/corner{dir = 8},/area/shuttle/pirate)
+
+(1,1,1) = {"
+RtRtRtRtRtEsEsEsRtRtRtRtRt
+RtRtRtRtPNEsdDEswzRtRtRtRt
+RtRtRtRtRZocnyjORZRtRtRtRt
+RtRtRtdeRZRZnbRZRZaiRtRtRt
+RtRtRtRZydceopsDAeRZRtRtRt
+RtRtRtFgCdOXGELyAsRZRtRtRt
+RtRtRtdeRZRZKtRZRZaiRtRtRt
+RtRtRtMsQnqnopAjQnVtRtRtRt
+RtRtRtFmjnPnbwQjIKyRRtRtRt
+RtRtRtaILhNTxNNTLhiNRtRtRt
+RtRtKiRZrGuqCRNhYKRZmfRtRt
+RtRteuRZRVSlMuRPcIRZeuRtRt
+RteusrRZcckHrvrexlRZsreuRt
+RteusrRZHLNPaPzDcRRZsreuRt
+eusrsrRZRZwrRZjtYKRZsrsreu
+eusrsrRZSgwXBvMaKhRZsrsreu
+qmKnKnRZBvBvunBvBvRZKnKnqm
+IwqmqmdezXzXaDzXzXaiqmqmIw
+RtIwIwRtaWaWRtaWaWRtIwIwRt
+"}
