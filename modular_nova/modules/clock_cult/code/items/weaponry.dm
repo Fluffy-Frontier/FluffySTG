@@ -71,14 +71,15 @@
 	base_icon_state = "ratvarian_hammer"
 	icon_state = "ratvarian_hammer0"
 	throwforce = 25
-	armour_penetration = 6
+	armour_penetration = 10 // THE FLUFFY FRONTIER CHANGE, ORIGINAL: 6
 	attack_verb_simple = list("bash", "hammer", "attack", "smash")
 	attack_verb_continuous = list("bashes", "hammers", "attacks", "smashes")
 	clockwork_desc = "Enemies hit by this will be flung back while you are on bronze tiles."
 	sharpness = 0
 	hitsound = 'sound/items/weapons/smash.ogg'
-
-
+//THE FLUFFY FRONTIER EDIT START: SOLO CLOCKWORK HAMMER BUFF
+// ORIGINAL LINES:
+/*
 /obj/item/clockwork/weapon/brass_battlehammer/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/two_handed, \
@@ -86,8 +87,15 @@
 		icon_wielded = "[base_icon_state]1", \
 		force_wielded = 28, \
 	)
-
-
+*/
+/obj/item/clockwork/weapon/brass_battlehammer/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/two_handed, \
+		force_unwielded = 15, \
+		icon_wielded = "[base_icon_state]1", \
+		force_wielded = 30, \
+	)
+// THE FLUFFY FRONTIER EDIT END
 /obj/item/clockwork/weapon/brass_battlehammer/hit_effect(mob/living/target, mob/living/user, thrown = FALSE)
 	if(!thrown && !HAS_TRAIT(src, TRAIT_WIELDED))
 		return

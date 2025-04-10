@@ -1,4 +1,4 @@
-#define BRASS_TOOLSPEED_MOD 0.5
+#define BRASS_TOOLSPEED_MOD 0.15 // THE FLUFFY FRONTIER CHANGE, ORIGINAL: 0.5
 
 /obj/item/wirecutters/brass
 	name = "brass wirecutters"
