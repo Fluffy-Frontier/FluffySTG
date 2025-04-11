@@ -25,6 +25,7 @@
 	. = ..()
 	AddElement(/datum/element/ai_retaliate)
 	AddElement(/datum/element/ai_flee_while_injured)
+	ADD_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT) // THE FLUFFY FRONTIER ADDITION: YOUNG SPIDERS NOW CAN VENTCRAWL.
 
 /// Used by all young spiders if they ever appear.
 /datum/ai_controller/basic_controller/young_spider
