@@ -1,7 +1,10 @@
 /datum/action/cooldown/heal_aura_spider
 	name = "Healing Aura"
 	desc = "Friendly spiders in a short range around yourself will receive passive healing."
-	button_icon_state = "healaura"
+	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
+	button_icon_state = "healaura_juiced"
+	background_icon_state = "bg_alien"
+	overlay_icon_state = "bg_alien_border"
 	cooldown_time = 120 SECONDS
 	/// Is the healing aura currently active or not
 	var/aura_active = FALSE
@@ -14,7 +17,7 @@
 	/// How much brute/burn individually the healing aura should heal each time it fires
 	var/aura_healing_amount = 5
 	/// What color should the + particles caused by the healing aura be
-	var/aura_healing_color = COLOR_BLUE_LIGHT
+	var/aura_healing_color = COLOR_BUBBLEGUM_RED
 	/// The healing aura component itself that the ability uses
 	var/datum/component/aura_healing/aura_healing_component
 
