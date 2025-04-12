@@ -19,7 +19,6 @@ Additions:
 - code\game\objects\structures\aliens.dm: `/obj/structure/alien/egg` && `/obj/structure/alien/egg/Initialize()`
 - code\modules\mob\living\carbon\alien\special\alien_embryo.dm: `/obj/item/organ/body_egg/alien_embryo` && `/obj/item/organ/body_egg/alien_embryo/proc/on_poll_concluded()`
 - code\modules\mob\living\carbon\alien\special\facehugger.dm: `/obj/item/clothing/mask/facehugger` && `/obj/item/clothing/mask/facehugger/proc/Impregnate()`
-- code/modules/mob/living/living_defense.dm: `/mob/living/attack_alien()`
 - code/modules/vehicles/mecha/_mecha.dm: `/obj/vehicle/sealed/mecha/proc/melee_attack_effect()`
 
 ## Defines

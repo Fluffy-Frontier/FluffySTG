@@ -532,11 +532,6 @@
 			return FALSE
 		if(check_block(user, user.melee_damage_upper, "[user]'s slash", UNARMED_ATTACK, 0, BRUTE))
 			return FALSE
-		// FLUFFY FRONTIER ADIITION START - TGMC_XENOS
-		if(stat == DEAD)
-			to_chat(user, span_warning("[src] is dead, why would we want to touch it?"))
-			return FALSE
-		// FLUFFY FRONTIER ADIITION END
 		user.do_attack_animation(src)
 		return TRUE
 
