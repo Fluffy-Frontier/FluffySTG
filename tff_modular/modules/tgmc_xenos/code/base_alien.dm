@@ -64,14 +64,9 @@
 	if(next_evolution)
 		GRANT_ACTION(/datum/action/cooldown/alien/tgmc/generic_evolve)
 
-	ADD_TRAIT(src, TRAIT_XENO_HEAL_AURA, TRAIT_XENO_INNATE)
-	ADD_TRAIT(src, TRAIT_PIERCEIMMUNE, TRAIT_XENO_INNATE)
+	add_traits(list(TRAIT_XENO_HEAL_AURA, TRAIT_PIERCEIMMUNE), TRAIT_XENO_INNATE)
 	AddElement(/datum/element/resin_walker, /datum/movespeed_modifier/resin_speedup)
-	RegisterSignal(src, COMSIG_LIVING_UPDATED_RESTING, PROC_REF(on_rest))
-
-/mob/living/carbon/alien/adult/tgmc/Destroy()
-	. = ..()
-	UnregisterSignal(src, COMSIG_LIVING_UPDATED_RESTING)
+	AddComponent(/datum/component/seethrough_mob)
 
 /mob/living/carbon/alien/adult/tgmc/create_internal_organs()
 	if(additional_organ_types_by_slot)
@@ -113,8 +108,8 @@
 	return get_armor_rating(type)
 
 /datum/armor/tgmc_alien
-	acid = 0
-	bio = 0
+	acid = 100
+	bio = 100
 	bomb = 0
 	bullet = 0
 	consume = 0
@@ -122,7 +117,7 @@
 	laser = 0
 	fire = 0
 	melee = 0
-	wound = 0
+	wound = 100
 
 /datum/movespeed_modifier/resin_speedup
 	multiplicative_slowdown = -0.5
@@ -225,24 +220,16 @@
 /mob/living/carbon/alien/adult/tgmc/set_hud_image_state(hud_type, hud_state, x_offset = 0, y_offset = 0)
 	return ..(hud_type, hud_state, hud_offset_x, hud_offset_y)
 
-/mob/living/carbon/alien/adult/tgmc/proc/on_rest()
-	SIGNAL_HANDLER
-
-	if(resting)
-		// add_movespeed_modifier(/datum/movespeed_modifier/alien_rest)
-		ADD_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
-	else
-		// remove_movespeed_modifier(/datum/movespeed_modifier/alien_rest)
-		REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
-
 /mob/living/carbon/alien/adult/tgmc/set_resting(new_resting, silent = TRUE, instant = FALSE)
 	if(fortify)
 		balloon_alert(src, "Cannot while fortified")
 		return FALSE
-	return ..()
-
-/datum/movespeed_modifier/alien_rest
-	multiplicative_slowdown = 5
+	. = ..()
+	if(!isnull(.))
+		if(new_resting)
+			ADD_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
+		else
+			REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
 
 /mob/living/carbon/alien/adult/tgmc/adjustPlasma(amount)
 	. = ..()
