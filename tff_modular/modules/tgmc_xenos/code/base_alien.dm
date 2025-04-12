@@ -41,15 +41,11 @@
 	var/evolution_cooldown_time = 90 SECONDS
 	/// Determines if a xeno is unable to use abilities
 	var/unable_to_use_abilities = FALSE
-	/// Pixel X shifting of the on fire overlay
-	var/on_fire_pixel_x = 16
-	/// Pixel Y shifting of the on fire overlay
-	var/on_fire_pixel_y = 16
 	/// Все дополнительные органы, что должны находиться в телах ксеносов
 	var/list/additional_organ_types_by_slot
 
 	// Оффсет для худ-ов, чтобы они лучше соответствовали размерам ксеноса
-	var/hud_offset_x = 32
+	var/hud_offset_x = 16
 	var/hud_offset_y = 0
 
 	// Урон по тяжелым транспортным штукам (типа мехов)
