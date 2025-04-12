@@ -58,7 +58,6 @@
 /mob/living/carbon/alien/adult/tgmc/Initialize(mapload)
 	. = ..()
 	real_name = "alien [caste]"
-	pixel_x = -16
 
 	set_armor(armor_type)
 
