@@ -4,7 +4,7 @@
 	name = "rare bugged alien"
 	icon = 'tff_modular/modules/tgmc_xenos/icons/big_xenos.dmi'
 	rotate_on_lying = FALSE
-	base_pixel_x = -16 //All of the xeno sprites are 64x64, and we want them to be level with the tile they are on, much like oversized quirk users
+	icon_w = 16
 	layer = LARGE_MOB_LAYER //above most mobs, but below speechbubbles
 	maptext_height = 64
 	maptext_width = 64
