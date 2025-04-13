@@ -13,13 +13,13 @@
 /mob/living/carbon/human/Move(NewLoc, direct)
 	. = ..()
 
-	if(loc != NewLoc)
-		return
-
+	var/turf/our_turf = NewLoc
 	if(!istype(NewLoc, /turf/open) || istype(NewLoc, /turf/open/space))
 		return
 
-	var/turf/our_turf = NewLoc
+	if(loc != NewLoc)
+		return
+
 	if(!our_turf.contents || length(our_turf.contents) <= 1)
 		return
 
@@ -38,6 +38,16 @@
 
 	if(number_of_items >= MIN_ITEMS_PER_TURF && prob(number_of_items*MAX_ITEMS_PER_TURF_PROB_MULTIPLYER/less_probability))
 		slip(1 SECONDS, lube_flags = NO_SLIP_WHEN_WALKING)
+		for(var/obj/structure/table/check_4_table in our_turf.contents)
+			var/objs_nearby = orange(1, our_turf)
+			for(var/obj/item/to_kick in our_turf.contents)
+				if(prob(75))
+					continue
+				if(to_kick.anchored)
+					continue
+				to_kick.throw_at(get_turf(pick(objs_nearby)), 1, 1)
+			break
+
 
 #undef ITEM_BASE_DEGREE
 #undef MAX_ITEMS_PER_TURF_PROB_MULTIPLYER
