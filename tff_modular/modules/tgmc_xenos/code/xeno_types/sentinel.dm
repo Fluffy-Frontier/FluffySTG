@@ -9,6 +9,7 @@
 	health = 200
 	melee_damage_lower = 10
 	melee_damage_upper = 15
+	alien_speed = 0.5
 	next_evolution = /mob/living/carbon/alien/adult/tgmc/spitter
 
 	additional_organ_types_by_slot = list(
@@ -27,5 +28,3 @@
 		/datum/action/cooldown/mob_cooldown/sneak/alien,
 	)
 	grant_actions_by_list(innate_actions)
-
-	add_movespeed_modifier(/datum/movespeed_modifier/alien_slow)

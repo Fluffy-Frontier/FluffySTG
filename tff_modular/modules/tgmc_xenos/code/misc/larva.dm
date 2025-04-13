@@ -4,6 +4,14 @@
 /obj/item/clothing/mask/facehugger/tgmc
 	embryo_path = /obj/item/organ/body_egg/alien_embryo/tgmc
 
+/obj/item/clothing/mask/facehugger/tgmc/proc/ProximityLeap(range = 1)
+	for(var/mob/M in range(range, src))
+		if(!CanHug(M))
+			continue
+		Leap(M)
+		return TRUE
+	return FALSE
+
 // То же самое, но для эмбриона ларвочки
 /obj/item/organ/body_egg/alien_embryo/tgmc
 	larva_path = /mob/living/carbon/alien/larva/tgmc

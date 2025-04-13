@@ -27,3 +27,7 @@
 		source.add_movespeed_modifier(on_resin_modifier)
 	else
 		source.remove_movespeed_modifier(on_resin_modifier)
+
+
+/datum/movespeed_modifier/resin_speedup
+	multiplicative_slowdown = -0.5

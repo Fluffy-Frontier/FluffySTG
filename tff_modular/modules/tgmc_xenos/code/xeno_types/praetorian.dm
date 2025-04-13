@@ -10,6 +10,7 @@
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 25
 	melee_damage_upper = 30
+	alien_speed = 2
 	next_evolution = /mob/living/carbon/alien/adult/tgmc/queen
 
 	additional_organ_types_by_slot = list(
@@ -30,5 +31,4 @@
 	)
 	grant_actions_by_list(innate_actions)
 
-	add_movespeed_modifier(/datum/movespeed_modifier/alien_big)
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)

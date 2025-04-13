@@ -10,6 +10,7 @@
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 30
 	melee_damage_upper = 35
+	alien_speed = 2
 
 	additional_organ_types_by_slot = list(
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc/large/queen,
@@ -30,7 +31,6 @@
 	)
 	grant_actions_by_list(innate_actions)
 
-	add_movespeed_modifier(/datum/movespeed_modifier/alien_big)
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 
 /mob/living/carbon/alien/adult/tgmc/queen/alien_talk(message, shown_name = name)

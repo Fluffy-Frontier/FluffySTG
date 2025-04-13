@@ -120,24 +120,11 @@
 	melee = 0
 	wound = 100
 
-/datum/movespeed_modifier/resin_speedup
-	multiplicative_slowdown = -0.5
-
-/datum/movespeed_modifier/alien_quick
-	multiplicative_slowdown = -0.5
-
-/datum/movespeed_modifier/alien_slow
-	multiplicative_slowdown = 0.5
-
-/datum/movespeed_modifier/alien_heavy
-	multiplicative_slowdown = 1
-
-/datum/movespeed_modifier/alien_big
-	multiplicative_slowdown = 2
-
 /mob/living/carbon/alien/adult/tgmc/update_held_items()
-	..()
+	. = ..()
 	remove_overlay(HANDS_LAYER)
+	// Временное(ложь) решение, из-за сложностей с получением иконок для всех ксенов, а так же неопределенностью, связанной с icon_w, pixel_w и т.п
+	/*
 	var/list/hands = list()
 
 	var/obj/item/l_hand = get_item_for_held_index(1)
@@ -147,7 +134,7 @@
 			itm_state = l_hand.icon_state
 		var/mutable_appearance/l_hand_item = mutable_appearance(alt_inhands_file, "[itm_state][caste]_l", -HANDS_LAYER)
 		if(l_hand.blocks_emissive)
-			l_hand_item.overlays += emissive_blocker(l_hand_item.icon, l_hand_item.icon_state, alpha = l_hand_item.alpha)
+			l_hand_item.overlays += emissive_blocker(l_hand_item.icon, l_hand_item.icon_state, src, alpha = l_hand_item.alpha)
 		hands += l_hand_item
 
 	var/obj/item/r_hand = get_item_for_held_index(2)
@@ -157,11 +144,12 @@
 			itm_state = r_hand.icon_state
 		var/mutable_appearance/r_hand_item = mutable_appearance(alt_inhands_file, "[itm_state][caste]_r", -HANDS_LAYER)
 		if(r_hand.blocks_emissive)
-			r_hand_item.overlays += emissive_blocker(r_hand_item.icon, r_hand_item.icon_state, alpha = r_hand_item.alpha)
+			r_hand_item.overlays += emissive_blocker(r_hand_item.icon, r_hand_item.icon_state, src, alpha = r_hand_item.alpha)
 		hands += r_hand_item
 
 	overlays_standing[HANDS_LAYER] = hands
 	apply_overlay(HANDS_LAYER)
+	*/
 
 /mob/living/carbon/alien/adult/tgmc/get_fire_overlay(stacks, on_fire)
 	var/fire_icon = "generic_fire"
