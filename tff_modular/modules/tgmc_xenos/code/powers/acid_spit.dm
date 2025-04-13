@@ -19,6 +19,7 @@
 	var/spit_sound = 'tff_modular/modules/tgmc_xenos/sound/alien_spitacid.ogg'
 	shared_cooldown = MOB_SHARED_COOLDOWN_3
 	cooldown_time = 3 SECONDS
+	var/too_much_clicks = 0	// Костыль, чтобы выключать способность не сразу, а только в экстренных ситуациях
 
 /datum/action/cooldown/alien/acid/tgmc/IsAvailable(feedback = FALSE)
 	return ..() && isturf(owner.loc)
@@ -49,8 +50,15 @@
 /datum/action/cooldown/alien/acid/tgmc/InterceptClickOn(mob/living/clicker, params, atom/target)
 	. = ..()
 	if(!.)
+		if(too_much_clicks >= 2)
+			unset_click_ability(clicker, refund_cooldown = FALSE)
+			too_much_clicks = 0
+		else
+			too_much_clicks += 1
+		clicker.balloon_alert(clicker, "Not ready!")
 		return FALSE
 
+	too_much_clicks = 0
 	var/turf/user_turf = clicker.loc
 	var/turf/target_turf = get_step(clicker, target.dir)
 	if(!isturf(target_turf))
