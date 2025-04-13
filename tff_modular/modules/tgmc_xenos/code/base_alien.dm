@@ -73,19 +73,6 @@
 		default_organ_types_by_slot += additional_organ_types_by_slot
 	return ..()
 
-/// Called when a larva or xeno evolves, adds a configurable timer on evolving again to the xeno
-/mob/living/carbon/alien/adult/tgmc/proc/has_just_evolved()
-	if(has_evolved_recently)
-		return
-	has_evolved_recently = TRUE
-	addtimer(CALLBACK(src, PROC_REF(can_evolve_once_again)), evolution_cooldown_time)
-
-/// Allows xenos to evolve again if they are currently unable to
-/mob/living/carbon/alien/adult/tgmc/proc/can_evolve_once_again()
-	if(!has_evolved_recently)
-		return
-	has_evolved_recently = FALSE
-
 /mob/living/carbon/alien/adult/tgmc/UnarmedAttack(atom/attack_target, proximity_flag, list/modifiers)
 	if(body_position == LYING_DOWN) // Лежим - значит отдыхаем. Никакой войны во время отдыха
 		return FALSE
@@ -103,6 +90,20 @@
 		to_chat(src, span_warning("[target] is dead, why would we want to touch it?"))
 		return FALSE
 	return ..()
+
+/mob/living/carbon/alien/adult/tgmc/set_hud_image_state(hud_type, hud_state, x_offset = 0, y_offset = 0)
+	return ..(hud_type, hud_state, hud_offset_x, hud_offset_y)
+
+/mob/living/carbon/alien/adult/tgmc/set_resting(new_resting, silent = TRUE, instant = FALSE)
+	if(fortify)
+		balloon_alert(src, "Cannot while fortified")
+		return FALSE
+	. = ..()
+	if(!isnull(.))
+		if(new_resting)
+			ADD_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
+		else
+			REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
 
 /mob/living/carbon/alien/adult/tgmc/getarmor(def_zone, type)
 	return get_armor_rating(type)
@@ -162,23 +163,6 @@
 	overlays_standing[HANDS_LAYER] = hands
 	apply_overlay(HANDS_LAYER)
 
-/mob/living/carbon/proc/get_max_plasma()
-	var/obj/item/organ/alien/plasmavessel/vessel = get_organ_by_type(/obj/item/organ/alien/plasmavessel)
-	if(!vessel)
-		return -1
-	return vessel.max_plasma
-
-/mob/living/carbon/alien/adult/tgmc/alien_evolve(mob/living/carbon/alien/new_xeno, is_it_a_larva)
-	var/mob/living/carbon/alien/adult/tgmc/xeno_to_transfer_to = new_xeno
-
-	xeno_to_transfer_to.setDir(dir)
-	if(!islarva(xeno_to_transfer_to))
-		xeno_to_transfer_to.has_just_evolved()
-	if(mind)
-		mind.name = xeno_to_transfer_to.real_name
-		mind.transfer_to(xeno_to_transfer_to)
-	qdel(src)
-
 /mob/living/carbon/alien/adult/tgmc/get_fire_overlay(stacks, on_fire)
 	var/fire_icon = "generic_fire"
 
@@ -217,19 +201,35 @@
 		var/image/finder_eye = image('icons/hud/screen_alien.dmi', finder_icon, dir = Qdir)
 		hud_used.alien_queen_finder.add_overlay(finder_eye)
 
-/mob/living/carbon/alien/adult/tgmc/set_hud_image_state(hud_type, hud_state, x_offset = 0, y_offset = 0)
-	return ..(hud_type, hud_state, hud_offset_x, hud_offset_y)
+/mob/living/carbon/alien/adult/tgmc/alien_evolve(mob/living/carbon/alien/new_xeno, is_it_a_larva)
+	var/mob/living/carbon/alien/adult/tgmc/xeno_to_transfer_to = new_xeno
 
-/mob/living/carbon/alien/adult/tgmc/set_resting(new_resting, silent = TRUE, instant = FALSE)
-	if(fortify)
-		balloon_alert(src, "Cannot while fortified")
-		return FALSE
-	. = ..()
-	if(!isnull(.))
-		if(new_resting)
-			ADD_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
-		else
-			REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
+	xeno_to_transfer_to.setDir(dir)
+	if(!islarva(xeno_to_transfer_to))
+		xeno_to_transfer_to.has_just_evolved()
+	if(mind)
+		mind.name = xeno_to_transfer_to.real_name
+		mind.transfer_to(xeno_to_transfer_to)
+	qdel(src)
+
+/// Called when a larva or xeno evolves, adds a configurable timer on evolving again to the xeno
+/mob/living/carbon/alien/adult/tgmc/proc/has_just_evolved()
+	if(has_evolved_recently)
+		return
+	has_evolved_recently = TRUE
+	addtimer(CALLBACK(src, PROC_REF(can_evolve_once_again)), evolution_cooldown_time)
+
+/// Allows xenos to evolve again if they are currently unable to
+/mob/living/carbon/alien/adult/tgmc/proc/can_evolve_once_again()
+	if(!has_evolved_recently)
+		return
+	has_evolved_recently = FALSE
+
+/mob/living/carbon/proc/get_max_plasma()
+	var/obj/item/organ/alien/plasmavessel/vessel = get_organ_by_type(/obj/item/organ/alien/plasmavessel)
+	if(!vessel)
+		return -1
+	return vessel.max_plasma
 
 /mob/living/carbon/alien/adult/tgmc/adjustPlasma(amount)
 	. = ..()
