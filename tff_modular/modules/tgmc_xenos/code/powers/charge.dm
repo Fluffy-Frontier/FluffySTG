@@ -131,7 +131,7 @@
 					var/datum/action/vehicle/sealed/mecha/mech_defense_mode/action = LAZYACCESSASSOC(target_mecha.occupant_actions, occupant, /datum/action/vehicle/sealed/mecha/mech_defense_mode)
 					if(isnull(action))
 						continue
-					action.Trigger(forced_state = TRUE)
+					action.Trigger(TRIGGER_FORCE_AVAILABLE, forced_state = TRUE)
 					break
 
 			return
