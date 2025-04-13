@@ -21,8 +21,6 @@
 	maptext_width = 32
 	hud_offset_y = -16
 
-	melee_vehicle_damage = 20
-
 /mob/living/carbon/alien/adult/tgmc/drone/Initialize(mapload)
 	. = ..()
 	var/static/list/innate_actions = list(

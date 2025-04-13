@@ -49,7 +49,7 @@
 	var/hud_offset_y = 0
 
 	// Урон по тяжелым транспортным штукам (типа мехов)
-	var/melee_vehicle_damage
+	var/mecha_armor_penetration = 15
 	var/resist_heavy_hits = FALSE
 
 	// Включен ли в данный момент фортифай

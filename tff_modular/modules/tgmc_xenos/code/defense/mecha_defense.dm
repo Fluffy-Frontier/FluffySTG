@@ -8,8 +8,8 @@
 
 	log_message("Attack by alien. Attacker - [user].", LOG_MECHA, color="red")
 	playsound(loc, 'sound/items/weapons/slash.ogg', 100, TRUE)
-	var/damage = user.melee_vehicle_damage
-	attack_generic(user, damage, BRUTE, MELEE, 0)
+	var/damage = rand(user.melee_damage_lower, user.melee_damage_upper)
+	attack_generic(user, damage, BRUTE, MELEE, 0, armor_penetration = user.mecha_armor_penetration)
 
 // Так как плевки не могут наносить урон мехам из-за их брони к кислоте, то мы просто будем переопределять armor_flag этих самых плевков с кислоты на лазер
 /obj/vehicle/sealed/mecha/bullet_act(obj/projectile/source, def_zone, mode)

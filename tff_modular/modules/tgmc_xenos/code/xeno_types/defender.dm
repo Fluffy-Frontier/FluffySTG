@@ -16,8 +16,6 @@
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc/small,
 	)
 
-	melee_vehicle_damage = 30
-
 /mob/living/carbon/alien/adult/tgmc/defender/Initialize(mapload)
 	. = ..()
 	var/static/list/innate_actions = list(

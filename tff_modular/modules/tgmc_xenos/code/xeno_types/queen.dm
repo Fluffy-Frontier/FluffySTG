@@ -19,7 +19,7 @@
 		ORGAN_SLOT_XENO_EGGSAC = /obj/item/organ/alien/eggsac/tgmc,
 	)
 
-	melee_vehicle_damage = 35
+	mecha_armor_penetration = 40
 	resist_heavy_hits = TRUE
 
 /mob/living/carbon/alien/adult/tgmc/queen/Initialize(mapload)
@@ -77,10 +77,10 @@
 		var/distance_to_target = get_dist(queenie, screech_target)
 		if(distance_to_target <= 4)
 			to_chat(src, span_danger("An ear-splitting guttural roar shakes the ground beneath your feet!"))
-			screech_target.AdjustParalyzed(60)
+			screech_target.AdjustParalyzed(80)
 		else if(distance_to_target >= 5 && distance_to_target < 7)
 			to_chat(src, span_danger("The roar shakes your body to the core, freezing you in place!"))
-			screech_target.AdjustStun(30)
+			screech_target.AdjustStun(40)
 
 	return TRUE
 

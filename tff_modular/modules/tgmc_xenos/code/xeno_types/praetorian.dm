@@ -19,7 +19,7 @@
 		ORGAN_SLOT_XENO_NEUROTOXINGLAND = /obj/item/organ/alien/neurotoxin/tgmc/large,
 	)
 
-	melee_vehicle_damage = 30
+	mecha_armor_penetration = 30
 	resist_heavy_hits = TRUE
 
 /mob/living/carbon/alien/adult/tgmc/praetorian/Initialize(mapload)

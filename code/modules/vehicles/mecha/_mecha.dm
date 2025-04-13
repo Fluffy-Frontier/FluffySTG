@@ -922,11 +922,11 @@
 	if(heavy)
 		// FLUFFY FRONTIER ADDITION START - TGMC_XENOS
 		if(istgmcalien(victim))
-			var/mob/living/carbon/alien/adult/tgmc/tgmc_alien
+			var/mob/living/carbon/alien/adult/tgmc/tgmc_alien = victim
 			if(tgmc_alien.resist_heavy_hits)
-				if(health_percentage(victim) >= 35)
+				if(health_percentage(tgmc_alien) >= 35)
 					return
-				if(!prob(50))
+				if(!prob(50))	// 50% что при ударе по ослабленному ксеносу - он упадет в бессознательное состояние
 					return
 		// FLUFFY FRONTIER ADDITION END
 		victim.Unconscious(2 SECONDS)

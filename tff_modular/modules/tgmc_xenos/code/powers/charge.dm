@@ -96,6 +96,9 @@
 		var/damage = obj_damage
 		if(ismecha(target))
 			damage = mecha_damage
+			var/obj/vehicle/sealed/mecha/target_mecha = target
+			if(target_mecha.defense_mode)
+				damage /= 2
 		else if(istype(target, /obj/machinery/door/airlock))
 			var/obj/machinery/door/airlock/target_airlock = target
 			damage = ceil(target_airlock.normal_integrity / 2)
@@ -121,6 +124,16 @@
 			if(throw_mecha && (target.max_integrity < 400) && (dist_from_source <= 1))
 				target_mecha.safe_throw_at(throwtarget, 1, 1, source, spin = FALSE, force = MOVE_FORCE_EXTREMELY_STRONG)
 
+			if(target_mecha.defense_mode)
+				target_mecha.use_energy(damage * (STANDARD_CELL_CHARGE / 50))
+				for(var/O in target_mecha.occupants)
+					var/mob/living/occupant = O
+					var/datum/action/vehicle/sealed/mecha/mech_defense_mode/action = LAZYACCESSASSOC(target_mecha.occupant_actions, occupant, /datum/action/vehicle/sealed/mecha/mech_defense_mode)
+					if(isnull(action))
+						continue
+					action.Trigger(forced_state = TRUE)
+					break
+
 			return
 
 		if(crushed_obj.anchored)
@@ -133,7 +146,7 @@
 
 	// Столокновение с турфами
 	else if(isturf(target))
-		var/turf/crushed_turf
+		var/turf/crushed_turf = target
 		if(crush_walls)
 			if(!isclosedturf(crushed_turf) || isindestructiblewall(crushed_turf))
 				return

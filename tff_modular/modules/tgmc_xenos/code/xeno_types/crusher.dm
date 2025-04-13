@@ -17,7 +17,7 @@
 
 	hud_offset_y = -16
 
-	melee_vehicle_damage = 40
+	mecha_armor_penetration = 35
 	resist_heavy_hits = TRUE
 
 /mob/living/carbon/alien/adult/tgmc/crusher/Initialize(mapload)

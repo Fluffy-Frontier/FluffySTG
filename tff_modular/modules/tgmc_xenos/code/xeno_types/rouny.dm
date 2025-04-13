@@ -19,8 +19,6 @@
 	maptext_width = 32
 	hud_offset_y = -32
 
-	melee_vehicle_damage = 20
-
 	/// Holds the evade ability to be granted to the runner later
 	var/datum/action/cooldown/alien/tgmc/evade/evade_ability
 
@@ -30,7 +28,7 @@
 	evade_ability.Grant(src)
 
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_quick)
-	AddComponent(/datum/component/tackler, stamina_cost = 0, base_knockdown = 2, range = 10, speed = 2, skill_mod = 7, min_distance = 0)
+	AddComponent(/datum/component/tackler, stamina_cost = 0, base_knockdown = 2, range = 10, speed = 2, skill_mod = 4, min_distance = 0)
 
 /mob/living/carbon/alien/adult/tgmc/runner/bullet_act(obj/projectile/hitting_projectile, def_zone, piercing_hit = FALSE)
 	if(evade_ability)
