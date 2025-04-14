@@ -9,7 +9,7 @@
 	/// Is the healing aura currently active or not
 	var/aura_active = FALSE
 	/// How long the healing aura should last
-	var/aura_duration = 12.5
+	var/aura_duration = 125
 	/// We need to see our target to heal.
 	var/requires_visibility = TRUE
 	/// How far away the healing aura should reach
