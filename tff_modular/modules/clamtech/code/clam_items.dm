@@ -6,9 +6,9 @@
 	speed = 1.4
 
 /obj/projectile/bullet/lmg/clam/rapid
-	damage = 12
+	damage = 10
 	armour_penetration = 10
-	speed = 1.6
+	speed = 2.2
 
 /obj/projectile/bullet/scattershot/clam
 	damage = 28
@@ -119,7 +119,7 @@
 	projectile_delay = 5
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/clam
-	equip_cooldown = 5
+	equip_cooldown = 8
 	name = "\improper Rapid Cycle Laser"
 	desc = "A weapon for combat exosuits. Shoots basic lasers... three times as fast."
 	energy_drain = 20
@@ -195,7 +195,6 @@
 	id = /obj/item/card/id/clam/command
 
 /obj/effect/mob_spawn/ghost_role/human/clam
-	// /pirate
 	name = "exowarrior sleeper"
 	desc = "A sturdy sleeper pod. Now's not the time to sleep! TO BATTLE!"
 	prompt_name = "a Clam exowarrior"
@@ -204,8 +203,8 @@
 	outfit = /datum/outfit/pirate/clam
 	var/fluff_spawn = /obj/effect/particle_effect/fluid/smoke/quick
 	show_flavor = TRUE
-	you_are_text = "a Clam warrior"
-	flavour_text = "You are a warrior, that fights in an exosuit. An exo-warrior. The station has to be captured, so that your crusade can continue."
+	you_are_text = "You are a Clam warrior"
+	flavour_text = "You are a warrior that fights in an exosuit. An exo-warrior, if you wish. The station has to be captured, so that your crusade can continue."
 	important_text = "You are extra-destructive. Make sure you hit the targets that pose a threat - randomly firing at crew is not your goal here."
 
 /obj/effect/mob_spawn/ghost_role/human/clam/captain

@@ -84,6 +84,7 @@
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(spawn_clam), threat, the_clam), RESPONSE_MAX_TIME)
 	GLOB.communications_controller.send_message(threat, unique = TRUE)
 
+//Sorry, still figuring out how to handle procs - they are global FOR NOW
 /proc/clams_answered(datum/comm_message/threat, datum/clam/the_clam, payoff, initial_send_time)
 	if(world.time > initial_send_time + RESPONSE_MAX_TIME)
 		priority_announce(the_clam.response_too_late, sender_override = "Mercenaries update", color_override = "grey")
@@ -125,7 +126,7 @@
 		for(var/obj/effect/mob_spawn/ghost_role/human/spawner in area_turf) //Could possibly fix NRI pirates "No spawning automatically" issue. Dunno.
 			if(candidates.len > 0)
 				var/mob/our_candidate = candidates[1]
-				var/mob/spawned_mob = spawner.create_from_ghost(our_candidate)
+				var/mob/spawned_mob = spawner.create_from_ghost(our_candidate, use_loadout = FALSE)
 				candidates -= our_candidate
 				notify_ghosts(
 					"The [the_clam.ship_name] has an object of interest: [spawned_mob]!",

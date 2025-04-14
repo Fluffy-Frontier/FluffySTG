@@ -1,4 +1,4 @@
-//A pirate gang themed around powerful unique mechs
+//A major antag themed around powerful unique mechs
 /datum/clam
 	var/name = "Clam"
 	var/ship_template_id = "clam"
@@ -25,7 +25,8 @@
 	. = ..()
 	ship_name = pick_n_take(list("Rising Star", "Hidden Cope", "Strana Roboty", "Memory of Tookaido", "Blood of Caribbski", "Sea League Dropship 'Fearmonger'"))
 
-/obj/effect/mob_spawn/ghost_role/human/clam/create(mob/mob_possessor, newname)
+//Outfit equip thingies
+/obj/effect/mob_spawn/ghost_role/human/clam/create(mob/mob_possessor, newname, is_pref_loaded, use_loadout = FALSE)
 	if(fluff_spawn)
 		new fluff_spawn(drop_location())
 	return ..()
@@ -67,7 +68,6 @@
 		spawned_human.update_suit_sensors()
 
 //antag and team
-
 /datum/antagonist/clam
 	name = "\improper Clam Exowarrior"
 	job_rank = ROLE_SPACE_PIRATE
