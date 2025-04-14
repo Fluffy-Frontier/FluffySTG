@@ -10,7 +10,7 @@
 	max_temperature = 15000
 	wreckage = /obj/structure/mecha_wreckage/clam/reefbreaker
 	mech_type = EXOSUIT_MODULE_REEFBREAKER
-	force = 20
+	force = 20 //No breaking walls
 	max_equip_by_category = list(
 		MECHA_L_ARM = 1,
 		MECHA_R_ARM = 1,

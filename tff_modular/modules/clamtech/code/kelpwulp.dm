@@ -65,7 +65,7 @@
 /**
  * ## reset_button_icon
  *
- * called after an addtimer when the cooldown is finished with the skyfall, resets the icon
+ * called after an addtimer when the cooldown is finished, resets the icon
  */
 /datum/action/vehicle/sealed/mecha/lurm_strike/proc/reset_button_icon()
 	button_icon_state = "mech_ivanov"
@@ -76,7 +76,7 @@
 	button_icon_state = "mech_ivanov"
 	///cooldown time between strike uses
 	var/strike_cooldown_time = 20 SECONDS
-	///how many rockets can we send with ivanov strike
+	///how many rockets can we send with lurm strike
 	var/rockets_left = 0
 	var/aiming_missile = FALSE
 
@@ -100,7 +100,7 @@
 /**
  * ## start_missile_targeting
  *
- * Called by the ivanov strike datum action, hooks signals into clicking to call drop_missile
+ * Called by the lurm strike datum action, hooks signals into clicking to call drop_missile
  * Plus other flavor like the overlay
  */
 /datum/action/vehicle/sealed/mecha/lurm_strike/proc/start_missile_targeting()
@@ -117,7 +117,7 @@
 /**
  * ## end_missile_targeting
  *
- * Called by the ivanov strike datum action or other actions that would end targeting
+ * Called by the lurm strike datum action or other actions that would end targeting
  * Unhooks signals into clicking to call drop_missile plus other flavor like the overlay
  */
 // Yarr, pirate me some code to customize!
@@ -158,7 +158,7 @@
 		end_missile_targeting()
 	SEND_SOUND(owner, 'tff_modular/modules/clamtech/sounds/lurm_away.ogg')
 	S_TIMER_COOLDOWN_START(chassis, COOLDOWN_MECHA_MISSILE_STRIKE, strike_cooldown_time)
-	owner.overlay_fullscreen("lurm", /atom/movable/screen/fullscreen/ivanov_display/clam, rockets_left)
+	owner.overlay_fullscreen("lurm", /atom/movable/screen/fullscreen/ivanov_display/clam, rockets_left) //Lets us make a on screen counter for missiles left.
 	podspawn(list(
 		"target" = target_turf,
 		"style" = /datum/pod_style/missile/syndicate,

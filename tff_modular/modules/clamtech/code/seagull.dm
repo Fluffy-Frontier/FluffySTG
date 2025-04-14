@@ -72,7 +72,7 @@
 //LOTS of stolen code from Ivanov mecha
 //Mostly for customisation
 
-///Savannah Skyfall
+///Remaking Savannah Skyfall
 /datum/action/vehicle/sealed/mecha/jumpjet
 	name = "Activate jumpjets"
 	button_icon_state = "mech_savannah"
@@ -98,31 +98,26 @@
 	INVOKE_ASYNC(src, PROC_REF(jumpjet_charge_loop))
 
 /**
- * ## skyfall_charge_loop
+ * ## jumpjet_charge_loop
  *
- * The actual skyfall loop itself. Repeatedly calls itself after a do_after, so any interruptions will call abort_skyfall and end the loop
- * the other way the loop ends is if charge level (var it's ticking up) gets to SKYFALL_CHARGELEVEL_LAUNCH, in which case it ends the loop and does the ability.
+ * The actual skyfall (MUH JUMPJET) loop itself. DOES NOT repeatedly call itself after any do_after, so no interruptions
+ * the other way the loop ends is if charge level (var it's ticking up) gets to JUMPJET_CHARGELEVEL_LAUNCH, in which case it ends the loop and does the ability.
  */
 /datum/action/vehicle/sealed/mecha/jumpjet/proc/jumpjet_charge_loop() //HEY! WE HAVE AN UNSTOPPABLE JUMP HERE! ITS INTENDED!
-	/*if(!do_after(owner, JUMPJET_SINGLE_CHARGE_TIME, target = chassis))
-		abort_jumpjet()
-		return*/
+	//There was some code with do_after that would abort the jump upon movement, but I removed it :D
+	//There may be some bughs because of that. I found none.
 	jumpjet_charge_level++
 	switch(jumpjet_charge_level)
 		if(1)
-			chassis.visible_message(span_warning("[chassis] shakes, its' legs releasing a trail of fire!"))
-			playsound(chassis, 'sound/items/tools/rped.ogg', 50, TRUE)
+			chassis.visible_message(span_warning("[chassis] shakes, its' legs releasing a thin trail of fire!"))
+			playsound(chassis, 'sound/vehicles/mecha/skyfall_power_up.ogg', 50, TRUE)
 		if(2)
-			//chassis.visible_message(span_warning("[chassis] begins to shake, the sounds of electricity growing louder."))
 			chassis.Shake(1, 1, JUMPJET_SINGLE_CHARGE_TIME-0.2) // -1 gives space between the animates, so they don't interrupt eachother
 		if(3)
-			//chassis.visible_message(span_warning("[chassis] assumes a pose as it rattles violently."))
 			chassis.Shake(2, 2, JUMPJET_SINGLE_CHARGE_TIME-0.2) // -1 gives space between the animates, so they don't interrupt eachother
 			chassis.spark_system.start()
 			chassis.update_appearance(UPDATE_ICON_STATE)
 		if(4)
-			//chassis.visible_message(span_warning("[chassis] sparks and shutters as it finalizes preparation."))
-			playsound(chassis, 'sound/vehicles/mecha/skyfall_power_up.ogg', 50, TRUE)
 			chassis.Shake(3, 3, JUMPJET_SINGLE_CHARGE_TIME-0.2) // -1 gives space between the animates, so they don't interrupt eachother
 			chassis.spark_system.start()
 		if(JUMPJET_CHARGELEVEL_LAUNCH)
@@ -155,7 +150,7 @@
 /**
  * ## begin_landing
  *
- * Called by skyfall_charge_loop after some time if it reaches full charge level.
+ * Called by jumpjet_charge_loop after some (2 secs, see callback) time if it reaches full charge level.
  * it's just the animations of the mecha coming down + another timer for the final landing effect
  */
 /datum/action/vehicle/sealed/mecha/jumpjet/proc/begin_landing()
@@ -166,7 +161,7 @@
 /**
  * ## land
  *
- * Called by skyfall_charge_loop after some time if it reaches full charge level.
+ * Called by jumpjet_charge_loop after some time if it reaches full charge level.
  * it's just the animations of the mecha coming down + another timer for the final landing effect
  */
 /datum/action/vehicle/sealed/mecha/jumpjet/proc/land()
@@ -211,15 +206,15 @@
 				continue
 			to_chat(crushed_victim, span_userdanger("[chassis] crashes down on you from above!"))
 			if(crushed_victim.stat != CONSCIOUS)
-				crushed_victim.investigate_log("has been gibbed by a falling Savannah Ivanov mech.", INVESTIGATE_DEATHS)
+				crushed_victim.investigate_log("has been gibbed by a falling Seagull mech.", INVESTIGATE_DEATHS)
 				crushed_victim.gib(DROP_ALL_REMAINS)
 				continue
 			crushed_victim.adjustBruteLoss(80)
 
 /**
- * ## abort_skyfall
+ * ## abort_jumpjet
  *
- * Called by skyfall_charge_loop if the charging is interrupted.
+ * Called by jumpjet_charge_loop if the charging is interrupted.
  * Applies cooldown and resets charge level
  */
 /datum/action/vehicle/sealed/mecha/jumpjet/proc/abort_jumpjet()
@@ -231,7 +226,7 @@
 /**
  * ## reset_button_icon
  *
- * called after an addtimer when the cooldown is finished with the skyfall, resets the icon
+ * called after an addtimer when the cooldown is finished with the jumpjet, resets the icon
  */
 /datum/action/vehicle/sealed/mecha/jumpjet/proc/reset_button_icon()
 	button_icon_state = "mech_savannah"

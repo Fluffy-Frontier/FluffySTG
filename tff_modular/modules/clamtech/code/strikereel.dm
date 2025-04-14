@@ -64,8 +64,7 @@
 	desc = "Tried to alpha strike, suffered an alpha stroke."
 
 //LOTS of stolen code from Marauder mecha
-//Mostly for customisation
-
+//This action handles the toggleable thermal vision
 /datum/action/vehicle/sealed/mecha/mech_sensors
 	name = "Advanced sensors"
 	button_icon_state = "mech_zoom_off"
@@ -89,7 +88,6 @@
 	build_all_button_icons()
 
 //Thus we finish the saga of free clam termals after forced removal. No more bugs hopefully.
-
 /obj/vehicle/sealed/mecha/clam/strikereel/mob_exit(mob/M, silent = FALSE, randomstep = FALSE, forced = FALSE)
 	REMOVE_TRAIT(M, TRAIT_THERMAL_VISION, TRAIT_MECHA)
 	M.update_sight()

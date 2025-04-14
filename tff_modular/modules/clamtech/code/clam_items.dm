@@ -3,12 +3,12 @@
 /obj/projectile/bullet/lmg/clam
 	damage = 25
 	armour_penetration = 25
-	speed = 1.4
+	speed = 1.5
 
 /obj/projectile/bullet/lmg/clam/rapid
 	damage = 10
 	armour_penetration = 10
-	speed = 2.2
+	speed = 1.2
 
 /obj/projectile/bullet/scattershot/clam
 	damage = 28
@@ -24,7 +24,7 @@
 	random_crits_enabled = FALSE //CLAMTECH - TOTALLY FAIR AND BALANCED - so no gibbing!
 
 /obj/projectile/bullet/rocket/clam/do_boom(atom/target, blocked=0)
-	explosion(target, heavy_impact_range = 0, light_impact_range = 2, flame_range = 1, flash_range = 3, explosion_cause = src)
+	explosion(target, heavy_impact_range = 1, light_impact_range = 2, flame_range = 1, flash_range = 3, explosion_cause = src)
 
 /obj/projectile/bullet/rocket/clam/fire
 	name = "\improper TB missile"
@@ -136,14 +136,13 @@
 	mech_flags = EXOSUIT_MODULE_CLAM
 
 //MELEE!! Or, rather, the clamp. Beware, it really IS powerfull.
-
 /obj/item/mecha_parts/mecha_equipment/hydraulic_clamp/clam
 	name = "hydraulic hand"
 	desc = "Equipment for combat exosuits. Allows cargo pickups under enemy fire! Fast."
 	equip_cooldown = 10
 	clamp_damage = 30
 	clampsound = 'tff_modular/modules/clamtech/sounds/dezgra_melee.ogg'
-	mech_flags = EXOSUIT_MODULE_CLAM
+	mech_flags = EXOSUIT_MODULE_STRIKEREEL //Others dun have the ejector module and should NOT recieve this clamp
 
 //Mech base type. Regulates custom FX and some basic balancing decisions.
 /obj/vehicle/sealed/mecha/clam

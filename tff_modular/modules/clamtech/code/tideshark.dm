@@ -19,6 +19,7 @@
 		MECHA_ARMOR = 1,
 	)
 	bumpsmash = TRUE
+	pivot_step = TRUE //So that piloting it is ALSO not fucking insufferable with a MASSIVE movedelay
 
 //Maybe we'll want to rebalance them later.
 /datum/armor/mecha_tideshark

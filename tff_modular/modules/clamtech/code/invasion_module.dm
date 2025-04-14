@@ -28,7 +28,8 @@
 	return ..()
 
 /datum/dynamic_ruleset/midround/clam/execute()
-	send_clam_threat()
+	var/datum/clam/ch_clam = new
+	ch_clam.send_clam_threat()
 	return ..()
 
 //Event control panel
@@ -61,10 +62,11 @@
 	//go check pirate_event.dmm, I stole it all there
 
 /datum/round_event/clam/start()
-	send_clam_threat()
+	var/datum/clam/ch_clam = new()
+	ch_clam.send_clam_threat()
 
-/proc/send_clam_threat()
-	var/datum/clam/the_clam = /datum/clam //Possibly very stupid, but so am I
+/datum/clam/proc/send_clam_threat() //Possibly very stupid, but so am I
+	var/datum/clam/the_clam = new
 	///That happened once. Dunno why.
 	if(!the_clam)
 		message_admins("Error attempting to run the clam invasion event. SOMEHOW it couldn't use the given clam variable.")
@@ -80,12 +82,11 @@
 	var/datum/comm_message/threat = new /datum/comm_message(the_clam.threat_title, built_threat_content, list("Take the cash and go save us!","Is this some kind of joke?"))
 	//we do that^ and then send message
 	priority_announce("Incoming subspace communication. Secure channel opened at all communication consoles.", "Incoming Message", SSstation.announcer.get_rand_report_sound())
-	threat.answer_callback = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(clams_answered), threat, the_clam, payoff, world.time)
-	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(spawn_clam), threat, the_clam), RESPONSE_MAX_TIME)
+	threat.answer_callback = CALLBACK(GLOBAL_PROC, PROC_REF(clams_answered), threat, the_clam, payoff, world.time)
+	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(spawn_clam), threat, the_clam), RESPONSE_MAX_TIME)
 	GLOB.communications_controller.send_message(threat, unique = TRUE)
 
-//Sorry, still figuring out how to handle procs - they are global FOR NOW
-/proc/clams_answered(datum/comm_message/threat, datum/clam/the_clam, payoff, initial_send_time)
+/datum/clam/proc/clams_answered(datum/comm_message/threat, datum/clam/the_clam, payoff, initial_send_time)
 	if(world.time > initial_send_time + RESPONSE_MAX_TIME)
 		priority_announce(the_clam.response_too_late, sender_override = "Mercenaries update", color_override = "grey")
 		return
@@ -103,7 +104,7 @@
 		else
 			priority_announce(the_clam.response_not_enough, sender_override = "Mercenaries update", color_override = "grey")
 
-/proc/spawn_clam(datum/comm_message/threat, datum/clam/the_clam)
+/datum/clam/proc/spawn_clam(datum/comm_message/threat, datum/clam/the_clam)
 	if(the_clam.paid_off)
 		return
 
@@ -121,7 +122,6 @@
 
 	if(!ship.load(T))
 		CRASH("Loading clam ship failed!")
-
 	for(var/turf/area_turf as anything in ship.get_affected_turfs(T))
 		for(var/obj/effect/mob_spawn/ghost_role/human/spawner in area_turf) //Could possibly fix NRI pirates "No spawning automatically" issue. Dunno.
 			if(candidates.len > 0)
