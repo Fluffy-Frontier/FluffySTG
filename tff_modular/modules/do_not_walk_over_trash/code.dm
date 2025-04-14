@@ -1,5 +1,5 @@
 // Чем больше значение, тем меньше предметов должно быть на полу для превышения порога
-#define ITEM_BASE_DEGREE 1.5
+#define ITEM_BASE_DEGREE 1.25
 // На сколько умножается общий вес вещей в рандоме
 #define MAX_ITEMS_PER_TURF_PROB_MULTIPLYER 4
 // Вес вещей, после которого нет смысла дальше сканировать клетку
@@ -29,6 +29,8 @@
 
 	var/number_of_items = 0
 	for(var/obj/item/our_item in our_turf.contents)
+		if(our_item.w_class <= 1)
+			continue
 		if(our_item.w_class)
 			number_of_items += (ITEM_BASE_DEGREE**our_item.w_class)
 		else
