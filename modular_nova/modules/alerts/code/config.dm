@@ -44,10 +44,10 @@
 	config_entry_value = "The Sol Federation has placed this system under Gamma Alert status. This galactic system is facing a ZK-Class Reality Failure Scenario. Security Personnel is authorized full access to lethal equipment to enforce Martial Law. Failure to follow emergency procedures is punishable by death. This is not a drill."
 
 /datum/config_entry/string/alert_epsilon_upto
-	config_entry_value = "Nanotrasen Central Command has declared the station under full CentCom authority. All CentCom personnel and representatives now hold absolute control of the station and its assets. Crew cooperation is compulsory. Have a Secure Day!"
+	config_entry_value = "Nanotrasen Central Command has declared the station under full CentCom authority. Only CentCom personnel and representatives hold control of the station and its assets. Crew cooperation is compulsory."
 
 /datum/config_entry/string/alert_epsilon_downto
-	config_entry_value = "The Sol Federation has released Military Command and action over the station. Central Command is now in full command authority of the station, comply with all instructions from Nanotrasen Central Command staff, Crew cooperation is compulsory! Have a Secure Day!"
+	config_entry_value = "The Sol Federation has released this galactic sector from its full command, Martial law should no longer be enforced. Nanotrasen Central Command has declared the station under full CentCom authority. Only CentCom personnel and representatives hold control of the station and its assets. Crew cooperation is compulsory."
 
 /datum/config_entry/string/alert_federal
-	config_entry_value = "The Sol Federation has placed this galactic sector under its full command. All star systems within this sector are now under Military Law. Comply with all official SolFed instructions."
+	config_entry_value = "The Sol Federation has placed this galactic sector under its full command. All star systems within this sector are now under Martial Law. Comply with all official SolFed instructions."
