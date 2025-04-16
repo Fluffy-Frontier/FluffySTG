@@ -114,7 +114,7 @@
 		/obj/item/riding_saddle/leather = 3,
 		/obj/item/riding_saddle/leather/blue = 2,
 		/obj/item/clothing/glasses/hud/security/sunglasses/peacekeeper = 3, // FLUFFY FRONTIER ADDITION
-		/obj/item/clothing/glasses/hud/security/sunglasses/peacekeeper/armadyne = 3, // FLUFFY FRONTIER ADDITION
+		/obj/item/clothing/glasses/hud/security/sunglasses/armadyne = 3, // FLUFFY FRONTIER ADDITION
 		/obj/item/berdish_kit = 6, // FLUFFY FRONTIER ADDITION
 		)
 	payment_department = ACCOUNT_SEC
