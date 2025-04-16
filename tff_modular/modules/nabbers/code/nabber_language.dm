@@ -11,15 +11,15 @@
 	icon_state = "animal"
 	secret = TRUE
 
-/datum/language/nabber/scramble(input)
+/datum/language/nabber/scramble_sentence(input, list/mutual_languages)
 
-	var/scrambled_text = "[pick("ритмично", "коротко", "быстро", "громко", "мелодично", "монотонно", "резко", "характерно")] \
+	var/sentence = "[pick("ритмично", "коротко", "быстро", "громко", "мелодично", "монотонно", "резко", "характерно")] \
 						 [pick("жужжит", "щёлкает", "верещит", "стрекочет")] \
 						 [pick("пару раз" , "несколько раз", "три раза")]."
 
-	add_to_cache(input, scrambled_text)
+	write_word_cache(input, sentence)
 
-	return scrambled_text
+	return sentence
 
 /datum/language_holder/nabber
 	understood_languages = list(
