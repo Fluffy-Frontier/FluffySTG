@@ -82,8 +82,8 @@
 	var/datum/comm_message/threat = new /datum/comm_message(the_clam.threat_title, built_threat_content, list("Take the cash and go save us!","Is this some kind of joke?"))
 	//we do that^ and then send message
 	priority_announce("Incoming subspace communication. Secure channel opened at all communication consoles.", "Incoming Message", SSstation.announcer.get_rand_report_sound())
-	threat.answer_callback = CALLBACK(GLOBAL_PROC, PROC_REF(clams_answered), threat, the_clam, payoff, world.time)
-	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(spawn_clam), threat, the_clam), RESPONSE_MAX_TIME)
+	threat.answer_callback = CALLBACK(the_clam, PROC_REF(clams_answered), threat, the_clam, payoff, world.time)
+	addtimer(CALLBACK(the_clam, PROC_REF(spawn_clam), threat, the_clam), RESPONSE_MAX_TIME)
 	GLOB.communications_controller.send_message(threat, unique = TRUE)
 
 /datum/clam/proc/clams_answered(datum/comm_message/threat, datum/clam/the_clam, payoff, initial_send_time)
