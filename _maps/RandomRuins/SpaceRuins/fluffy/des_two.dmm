@@ -368,7 +368,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/door/airlock/security/old{
+/obj/machinery/door/airlock/security{
 	name = "Master At Arms' Office";
 	id_tag = "smasteratarms"
 	},
@@ -1526,7 +1526,7 @@
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock/security/old/glass{
+/obj/machinery/door/airlock/security/glass{
 	name = "Security Checkpoint"
 	},
 /obj/structure/cable,
@@ -2113,7 +2113,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2
 	},
-/obj/machinery/door/airlock/security/old{
+/obj/machinery/door/airlock/security{
 	name = "Security"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
@@ -2834,7 +2834,7 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/security/old{
+/obj/machinery/door/airlock/security{
 	hackProof = 1;
 	name = "Long-Term Brig"
 	},
@@ -4656,7 +4656,7 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/security/old{
+/obj/machinery/door/airlock/security{
 	hackProof = 1;
 	name = "Long-Term Brig"
 	},
@@ -4901,7 +4901,7 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/security/old{
+/obj/machinery/door/airlock/security{
 	hackProof = 1;
 	name = "Long-Term Brig"
 	},
@@ -6876,7 +6876,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/door/airlock/security/old{
+/obj/machinery/door/airlock/security{
 	name = "Armory"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
@@ -10942,7 +10942,7 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/door/airlock/security/old{
+/obj/machinery/door/airlock/security{
 	name = "Security"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
@@ -12548,7 +12548,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock/security/old/glass{
+/obj/machinery/door/airlock/security/glass{
 	name = "Security Checkpoint"
 	},
 /obj/structure/cable,
@@ -13764,7 +13764,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock/security/old/glass{
+/obj/machinery/door/airlock/security/glass{
 	name = "Security Checkpoint"
 	},
 /obj/structure/cable,
@@ -15700,7 +15700,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/door/airlock/security/old{
+/obj/machinery/door/airlock/security{
 	name = "Security"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
