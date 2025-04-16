@@ -14,16 +14,9 @@
 	end_message = span_warning("Less snowflakes fall from the sky...")
 	end_duration = 100
 
-	cooling_lower = 1
-	cooling_upper = 3
-
-	var/harmfull = FALSE
-
-/datum/weather/snow_storm/ff_snowfall/weather_act(mob/living/living)
-	if(!harmfull)
-		return
-	return ..()
+	weather_temperature = BODYTEMP_COLD_DAMAGE_LIMIT + 1
+	weather_flags = (WEATHER_MOBS | WEATHER_BAROMETER | WEATHER_TEMPERATURE_BYPASS_CLOTHING)
 
 /datum/weather/snow_storm/ff_snowfall/forever
 	probability = 0
-	perpetual = TRUE
+	weather_flags = parent_type::weather_flags | WEATHER_ENDLESS

@@ -149,7 +149,7 @@
 	shared_cooldown = NONE
 
 /datum/action/cooldown/mob_cooldown/replace_guardian/Activate(atom/target)
-	StartCooldown(5 MINUTES)
+	StartCooldown(1 MINUTES) // THE FLUFFY FRONTIER CHANGES, ORIGINAL: 5 MINUTES
 
 	var/mob/living/living_owner = owner
 	var/list/guardians = living_owner.get_all_linked_holoparasites()
