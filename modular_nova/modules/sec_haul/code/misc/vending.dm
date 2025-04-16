@@ -60,6 +60,9 @@
 				/obj/item/storage/backpack/satchel/sec = 4,
 				/obj/item/storage/backpack/duffelbag/sec = 4,
 				/obj/item/storage/backpack/messenger/sec = 4,
+				/obj/item/storage/backpack/waistbag/redsec = 4, // FLUFFY FRONTIER ADDITION
+				/obj/item/clothing/suit/armor/vest/alt/caftan = 6, // FLUFFY FRONTIER ADDITION
+				/obj/item/clothing/head/berendeyka = 6, // FLUFFY FRONTIER ADDITION
 			),
 		),
 
@@ -99,6 +102,7 @@
 				/obj/item/storage/backpack/satchel/sec/blue = 4,
 				/obj/item/storage/backpack/duffelbag/sec/blue = 4,
 				/obj/item/storage/backpack/messenger/sec/blue = 4,
+				/obj/item/storage/backpack/waistbag/bluesec = 4, // FLUFFY FRONTIER ADDITION
 			),
 		),
 	)
@@ -109,5 +113,8 @@
 		/obj/item/clothing/head/beret/sec/navyofficer = 3,
 		/obj/item/riding_saddle/leather = 3,
 		/obj/item/riding_saddle/leather/blue = 2,
+		/obj/item/clothing/glasses/hud/security/sunglasses/peacekeeper = 3, // FLUFFY FRONTIER ADDITION
+		/obj/item/clothing/glasses/hud/security/sunglasses/peacekeeper/armadyne = 3, // FLUFFY FRONTIER ADDITION
+		/obj/item/berdish_kit = 6, // FLUFFY FRONTIER ADDITION
 		)
 	payment_department = ACCOUNT_SEC
