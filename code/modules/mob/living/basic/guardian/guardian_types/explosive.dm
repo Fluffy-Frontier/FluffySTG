@@ -38,7 +38,7 @@
 	background_icon = 'icons/hud/guardian.dmi'
 	background_icon_state = "base"
 	/// After this amount of time passses, bomb deactivates.
-	var/decay_time = 1 MINUTES
+	var/decay_time = 2 MINUTES // THE FLUFFY FRONTIER CHANGES, ORIGINAL: 1 MINUTES
 	/// Static list of signals that activate the bomb.
 	var/static/list/boom_signals = list(COMSIG_ATOM_ATTACKBY, COMSIG_ATOM_BUMPED, COMSIG_ATOM_ATTACK_HAND)
 
