@@ -61,7 +61,7 @@
 	dir = get_dir(get_turf(src), get_turf(target))
 
 	// Apply 15 damage (- 1 for each tile away they are), or 7.5, whichever is larger
-	target.apply_damage(max(BASE_DAMAGE - (get_dist(src, target) * DAMAGE_FALLOFF), MINIMUM_DAMAGE) * seconds_per_tick, BURN)
+	target.apply_damage(max(BASE_DAMAGE) * seconds_per_tick, BURN)
 
 	new /obj/effect/temp_visual/ratvar/ocular_warden(get_turf(target))
 	new /obj/effect/temp_visual/ratvar/ocular_warden(get_turf(src))
