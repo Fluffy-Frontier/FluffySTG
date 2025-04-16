@@ -9,7 +9,7 @@
 #define TOTAL_JUMPJET_LEAP_TIME (3 SECONDS)
 
 /obj/vehicle/sealed/mecha/clam/seagull
-	desc = "Fast, INSANELY FAST clam mecha. Don't let it get behind you - its' payload is deadly!"
+	desc = "A jump-capable exosuit. The desire to not stand under it is almost instinctive."
 	name = "\improper Seagull"
 	icon_state = "seagull"
 	base_icon_state = "seagull"
