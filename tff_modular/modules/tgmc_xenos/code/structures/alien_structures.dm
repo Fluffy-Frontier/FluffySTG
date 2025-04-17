@@ -14,7 +14,6 @@
 	if(child)
 		var/obj/item/clothing/mask/facehugger/tgmc/child_hugger = child
 		child_hugger.forceMove(get_turf(src))
-		// TECHNICALLY you could put non-facehuggers in the child var
 		if(istype(child_hugger, child_path))
 			if(kill)
 				child_hugger.Die()

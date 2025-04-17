@@ -4,28 +4,21 @@
 	if(!user.combat_mode)
 		if(user == src)
 			return
+
+		playsound(loc, 'sound/items/weapons/thudswoosh.ogg', 50, TRUE, -1)
 		if(on_fire && fire_stacks > 0)
 			adjust_fire_stacks(-2)
-			user.visible_message(span_danger("[user] tries to put out the fire on [src]!"), span_warning("You try to put out the fire on [src]!"), vision_distance = 5)
-			if(fire_stacks <= 0)
+
+			if(fire_stacks > 0)
+				user.visible_message(span_danger("[user] tries to put out the fire on [src]!"), span_warning("You try to put out the fire on [src]!"), vision_distance = 5)
+			else
 				user.visible_message(span_danger("[user] has successfully extinguished the fire on [src]!"), span_notice("You extinguished the fire on [src]!"), vision_distance = 5)
-		else
-			set_resting(FALSE)
-			visible_message(span_notice("[user.name] nuzzles [src] trying to wake [p_them()] up!"))
-		playsound(loc, 'sound/items/weapons/thudswoosh.ogg', 50, TRUE, -1)
-		AdjustStun(-6 SECONDS)
-		AdjustKnockdown(-6 SECONDS)
-		AdjustImmobilized(-6 SECONDS)
-		AdjustParalyzed(-6 SECONDS)
-		AdjustUnconscious(-6 SECONDS)
-		AdjustSleeping(-10 SECONDS)
-	else if(health > 0)
-		user.do_attack_animation(src, ATTACK_EFFECT_BITE)
-		playsound(loc, 'sound/items/weapons/bite.ogg', 50, TRUE, -1)
-		visible_message(span_danger("[user.name] bites [src]!"), \
-						span_userdanger("[user.name] bites you!"), span_hear("You hear a chomp!"), COMBAT_MESSAGE_RANGE, user)
-		to_chat(user, span_danger("You bite [src]!"))
-		adjustBruteLoss(1)
-		log_combat(user, src, "attacked")
-	else
-		to_chat(user, span_warning("[name] is too injured for that."))
+
+			AdjustStun(-6 SECONDS)
+			AdjustKnockdown(-6 SECONDS)
+			AdjustImmobilized(-6 SECONDS)
+			AdjustParalyzed(-6 SECONDS)
+			AdjustUnconscious(-6 SECONDS)
+			AdjustSleeping(-10 SECONDS)
+			return
+	return ..()

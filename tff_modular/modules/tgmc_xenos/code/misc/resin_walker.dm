@@ -7,7 +7,7 @@
 
 	var/datum/movespeed_modifier/on_resin_modifier
 
-/datum/element/resin_walker/Attach(datum/target, datum/movespeed_modifier/on_resin_modifier)
+/datum/element/resin_walker/Attach(datum/target, datum/movespeed_modifier/on_resin_modifier = /datum/movespeed_modifier/resin_speedup)
 	. = ..()
 	if (!isliving(target))
 		return ELEMENT_INCOMPATIBLE

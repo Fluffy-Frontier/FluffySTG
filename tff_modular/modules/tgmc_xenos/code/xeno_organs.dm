@@ -1,5 +1,11 @@
 /// TGMC_XENOS (old nova sector xenos)
 
+// Глазки ксенусей. Нужно для того, чтобы они не получали шармы
+/obj/item/organ/eyes/alien/tgmc
+
+/obj/item/organ/eyes/alien/tgmc/apply_scar(side)
+	return	// Нам не нужны слепые ксеносы из-за глупого способа нанесения шрамов на глаза
+
 // Сосуды плазмы
 /obj/item/organ/alien/plasmavessel/tgmc
 	name = "plasma vessel"
@@ -33,13 +39,20 @@
 				heal_amt *= 0.2
 			if(owner.resting)
 				heal_amt *= resting_mult
+			heal_amt *= delta_time_capped
 
 			owner.adjustPlasma(0.5 * plasma_rate * delta_time_capped)
-			owner.adjustBruteLoss(-heal_amt * delta_time_capped)
-			owner.adjustFireLoss(-heal_amt * delta_time_capped)
-			owner.adjustOxyLoss(-heal_amt * delta_time_capped)
+			owner.adjustBruteLoss(-heal_amt)
+			owner.adjustFireLoss(-heal_amt)
+			owner.adjustOxyLoss(-heal_amt)
+			heal_owner_organs(heal_amt / 20)
 	else
 		owner.adjustPlasma(0.1 * plasma_rate * delta_time)
+
+/obj/item/organ/alien/plasmavessel/tgmc/proc/heal_owner_organs(heal_amount)
+	var/list/slots_to_heal = list(ORGAN_SLOT_BRAIN, ORGAN_SLOT_EYES, ORGAN_SLOT_LIVER, ORGAN_SLOT_EARS, ORGAN_SLOT_STOMACH)
+	for(var/slot in slots_to_heal)
+		owner.adjustOrganLoss(slot, -heal_amount)
 
 /obj/item/organ/alien/plasmavessel/tgmc/large
 	name = "large plasma vessel"

@@ -4,11 +4,12 @@
 	name = "rare bugged alien"
 	icon = 'tff_modular/modules/tgmc_xenos/icons/big_xenos.dmi'
 	rotate_on_lying = FALSE
-	icon_w = 16
+	base_pixel_w = -16
 	layer = LARGE_MOB_LAYER //above most mobs, but below speechbubbles
 	maptext_height = 64
 	maptext_width = 64
 	pressure_resistance = 200
+	satiety = MAX_SATIETY	// Костыльная необходимость для того, чтобы органы лечились с
 
 	armor_type = /datum/armor/tgmc_alien
 
@@ -25,7 +26,7 @@
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain/alien,
 		ORGAN_SLOT_XENO_HIVENODE = /obj/item/organ/alien/hivenode,
 		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/alien,
-		ORGAN_SLOT_EYES = /obj/item/organ/eyes/alien,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/alien/tgmc,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver/alien,
 		ORGAN_SLOT_EARS = /obj/item/organ/ears,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/alien,
@@ -45,11 +46,15 @@
 	var/list/additional_organ_types_by_slot
 
 	// Оффсет для худ-ов, чтобы они лучше соответствовали размерам ксеноса
-	var/hud_offset_x = 16
+	var/hud_offset_x = 32
 	var/hud_offset_y = 0
+	// Оффсет для огня
+	var/fire_offset_x = 16
+	var/fire_offset_y = 0
 
 	// Урон по тяжелым транспортным штукам (типа мехов)
 	var/mecha_armor_penetration = 15
+	// Способность выдержать тяжелые удары мехов и не потерять сознание
 	var/resist_heavy_hits = FALSE
 
 	// Включен ли в данный момент фортифай
@@ -59,6 +64,7 @@
 	. = ..()
 	real_name = "alien [caste]"
 
+	update_offsets()	// Необходимо, чтобы base_pixel_w применился
 	set_armor(armor_type)
 
 	if(next_evolution)
@@ -67,6 +73,12 @@
 	add_traits(list(TRAIT_XENO_HEAL_AURA, TRAIT_PIERCEIMMUNE), TRAIT_XENO_INNATE)
 	AddElement(/datum/element/resin_walker, /datum/movespeed_modifier/resin_speedup)
 	AddComponent(/datum/component/seethrough_mob)
+
+	RegisterSignal(src, COMSIG_LIVING_SET_BODY_POSITION, PROC_REF(body_position_changed))
+
+/mob/living/carbon/alien/adult/tgmc/Destroy()
+	. = ..()
+	UnregisterSignal(src, COMSIG_LIVING_SET_BODY_POSITION)
 
 /mob/living/carbon/alien/adult/tgmc/create_internal_organs()
 	if(additional_organ_types_by_slot)
@@ -91,19 +103,19 @@
 		return FALSE
 	return ..()
 
-/mob/living/carbon/alien/adult/tgmc/set_hud_image_state(hud_type, hud_state, x_offset = 0, y_offset = 0)
-	return ..(hud_type, hud_state, hud_offset_x, hud_offset_y)
-
 /mob/living/carbon/alien/adult/tgmc/set_resting(new_resting, silent = TRUE, instant = FALSE)
 	if(fortify)
 		balloon_alert(src, "Cannot while fortified")
 		return FALSE
-	. = ..()
-	if(!isnull(.))
-		if(new_resting)
-			ADD_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
-		else
-			REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
+	return ..()
+
+/mob/living/carbon/alien/adult/tgmc/proc/body_position_changed(datum/source, new_value, old_value)
+	SIGNAL_HANDLER
+
+	if(new_value == LYING_DOWN)
+		add_traits(list(TRAIT_IMMOBILIZED), LYING_DOWN_TRAIT)
+	else
+		remove_traits(list(TRAIT_IMMOBILIZED), LYING_DOWN_TRAIT)
 
 /mob/living/carbon/alien/adult/tgmc/getarmor(def_zone, type)
 	return get_armor_rating(type)
@@ -161,9 +173,20 @@
 			-HIGHEST_LAYER,
 			appearance_flags = RESET_COLOR,
 		)
+		var/matrix/M = matrix(fire_offset_x, fire_offset_y, MATRIX_TRANSLATE)
+		new_fire_overlay.transform = M
 		GLOB.fire_appearances[fire_icon] = new_fire_overlay
 
 	return GLOB.fire_appearances[fire_icon]
+
+/mob/living/carbon/alien/adult/tgmc/add_shared_particles(particle_type, custom_key, particle_flags, pool_size)
+	. = ..()
+	var/obj/particle_holder = .
+	particle_holder.pixel_x = fire_offset_x
+	particle_holder.pixel_y = fire_offset_y
+
+/mob/living/carbon/alien/adult/tgmc/set_hud_image_state(hud_type, hud_state, x_offset, y_offset)
+	return ..(hud_type, hud_state, hud_offset_x, hud_offset_y)
 
 //Yes we really do need to do this whole thing to let the queen finder work
 /mob/living/carbon/alien/adult/tgmc/findQueen()
