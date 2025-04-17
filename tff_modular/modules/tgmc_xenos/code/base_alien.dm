@@ -9,7 +9,6 @@
 	maptext_height = 64
 	maptext_width = 64
 	pressure_resistance = 200
-	satiety = MAX_SATIETY	// Костыльная необходимость для того, чтобы органы лечились с
 
 	armor_type = /datum/armor/tgmc_alien
 
