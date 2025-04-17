@@ -141,3 +141,12 @@
 	poison_type = /datum/reagent/toxin/leadacetate
 	poison_per_bite = 6.5
 	pass_flags = PASSMOB
+
+//Web changes:
+/obj/structure/spider/stickyweb/sealed/reflector/run_atom_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
+	switch(damage_type)
+		if(BURN)
+			damage_amount *= 1.25
+		if(BRUTE)
+			damage_amount *= 1
+	return ..()

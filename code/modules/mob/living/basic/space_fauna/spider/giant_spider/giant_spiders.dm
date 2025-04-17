@@ -203,7 +203,6 @@
 		action_text = "%SOURCE% begins wrapping the wounds of %TARGET%.",\
 		complete_text = "%SOURCE% wraps the wounds of %TARGET%.",\
 	)
-
 	// FLUFFY FRONTIER EDIT END
 
 	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/average_web)
@@ -273,7 +272,6 @@
 		action_text = "%SOURCE% begins mending themselves...",\
 		complete_text = "%SOURCE%'s wounds mend together.",\
 	)
-
 	// FLUFFY FRONTIER EDIT END.
 
 /// Prevent you from healing other tangle spiders, or healing when on fire
