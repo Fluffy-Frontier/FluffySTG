@@ -50,6 +50,9 @@ function setupApp() {
     return;
   }
 
+  globalThis.ByondKeyUp = 'keyUpTGUI';
+  globalThis.ByondKeyDown = 'keyDownTGUI';
+
   setGlobalStore(store);
 
   setupGlobalEvents();
