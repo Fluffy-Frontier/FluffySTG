@@ -18,58 +18,6 @@
 		return FALSE
 
 
-// Способность эволюционировать
-/datum/action/cooldown/alien/tgmc/generic_evolve
-	name = "Evolve"
-	desc = "Allows us to evolve to a higher caste of our type, if there is not one already."
-	button_icon_state = "evolution"
-	/// What type this ability will turn the owner into upon completion
-	var/type_to_evolve_into
-
-/datum/action/cooldown/alien/tgmc/generic_evolve/Grant(mob/grant_to)
-	. = ..()
-	if(!isalien(owner))
-		return
-	var/mob/living/carbon/alien/target_alien = owner
-	plasma_cost = target_alien.get_max_plasma() //This ability should always require that a xeno be at their max plasma capacity to use
-
-/datum/action/cooldown/alien/tgmc/generic_evolve/Activate()
-	var/mob/living/carbon/alien/adult/tgmc/evolver = owner
-
-	if(!istype(evolver))
-		to_chat(owner, span_warning("You aren't an alien, you can't evolve!"))
-		return FALSE
-
-	type_to_evolve_into = evolver.next_evolution
-	if(!type_to_evolve_into)
-		to_chat(evolver, span_bolddanger("Something is wrong... We can't evolve into anything? (This is broken report it on GitHub)"))
-		CRASH("Couldn't find an evolution for [owner] ([owner.type]).")
-
-	if(!isturf(evolver.loc))
-		return FALSE
-
-	if(get_alien_type(type_to_evolve_into))
-		evolver.balloon_alert(evolver, "too many of our evolution already")
-		return FALSE
-
-	var/obj/item/organ/alien/hivenode/node = evolver.get_organ_by_type(/obj/item/organ/alien/hivenode)
-	if(!node)
-		to_chat(evolver, span_bolddanger("We can't sense our node's connection to the hive... We can't evolve!"))
-		return FALSE
-
-	if(node.recent_queen_death)
-		to_chat(evolver, span_bolddanger("The death of our queen... We can't seem to gather the mental energy required to evolve..."))
-		return FALSE
-
-	if(evolver.has_evolved_recently)
-		evolver.balloon_alert(evolver, "can evolve in 1.5 minutes") //Make that 1.5 variable later, but it keeps fucking up for me :(
-		return FALSE
-
-	var/new_beno = new type_to_evolve_into(evolver.loc)
-	evolver.alien_evolve(new_beno)
-	return TRUE
-
-
 // Хил-аура дрона
 /datum/action/cooldown/alien/tgmc/heal_aura
 	name = "Healing Aura"
@@ -195,7 +143,7 @@
 	to_chat(owner, span_danger("We take evasive action, making us impossible to hit with projectiles for the next [evasion_duration / 10] seconds."))
 	addtimer(CALLBACK(src, PROC_REF(evasion_deactivate)), evasion_duration)
 	evade_active = TRUE
-	RegisterSignal(owner, COMSIG_PROJECTILE_ON_HIT, PROC_REF(on_projectile_hit))
+	RegisterSignal(owner, COMSIG_ATOM_PRE_BULLET_ACT, PROC_REF(on_projectile_hit))
 	REMOVE_TRAIT(owner, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 	addtimer(CALLBACK(src, PROC_REF(give_back_ventcrawl)), (cooldown_time * EVASION_VENTCRAWL_INABILTY_CD_PERCENTAGE)) //They cannot ventcrawl until the defined percent of the cooldown has passed
 	to_chat(owner, span_warning("We will be unable to crawl through vents for the next [(cooldown_time * EVASION_VENTCRAWL_INABILTY_CD_PERCENTAGE) / 10] seconds."))
@@ -205,7 +153,7 @@
 /datum/action/cooldown/alien/tgmc/evade/proc/evasion_deactivate()
 	evade_active = FALSE
 	owner.balloon_alert(owner, "evasion ended")
-	UnregisterSignal(owner, COMSIG_PROJECTILE_ON_HIT)
+	UnregisterSignal(owner, COMSIG_ATOM_PRE_BULLET_ACT)
 
 /datum/action/cooldown/alien/tgmc/evade/proc/give_back_ventcrawl()
 	ADD_TRAIT(owner, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
@@ -213,14 +161,16 @@
 
 /// Handles if either BULLET_ACT_HIT or BULLET_ACT_FORCE_PIERCE happens to something using the xeno evade ability
 /datum/action/cooldown/alien/tgmc/evade/proc/on_projectile_hit()
+	SIGNAL_HANDLER
+
 	if(owner.build_incapacitated(INCAPABLE_GRAB) || !isturf(owner.loc) || !evade_active)
-		return BULLET_ACT_HIT
+		return
 
 	owner.visible_message(span_danger("[owner] effortlessly dodges the projectile!"), span_userdanger("You dodge the projectile!"))
 	playsound(get_turf(owner), pick('sound/items/weapons/bulletflyby.ogg', 'sound/items/weapons/bulletflyby2.ogg', 'sound/items/weapons/bulletflyby3.ogg'), 75, TRUE)
 	owner.add_filter(RUNNER_BLUR_EFFECT, 2, gauss_blur_filter(5))
 	addtimer(CALLBACK(owner, TYPE_PROC_REF(/datum, remove_filter), RUNNER_BLUR_EFFECT), 0.5 SECONDS)
-	return BULLET_ACT_FORCE_PIERCE
+	return COMPONENT_BULLET_PIERCED
 
 #undef EVASION_VENTCRAWL_INABILTY_CD_PERCENTAGE
 #undef RUNNER_BLUR_EFFECT
@@ -230,10 +180,11 @@
 /datum/action/cooldown/alien/fortify
 	name = "Fortify"
 	desc = "Plant yourself for a large defensive boost."
+	check_flags = AB_CHECK_CONSCIOUS | AB_CHECK_INCAPACITATED
 	cooldown_time = 2 SECONDS
 	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
 	button_icon_state = "fortify"
-	check_flags = AB_CHECK_CONSCIOUS | AB_CHECK_INCAPACITATED
+	active_overlay_icon_state = "ab_goldborder"
 
 	var/mob/living/carbon/alien/adult/tgmc/xeno_owner
 	var/datum/armor/fortify_armor_type = /datum/armor/fortify_armor
@@ -261,6 +212,9 @@
 
 	set_fortify(TRUE)
 
+/datum/action/cooldown/alien/fortify/is_action_active(atom/movable/screen/movable/action_button/current_button)
+	return (xeno_owner && xeno_owner.fortify)
+
 /datum/action/cooldown/alien/fortify/proc/set_fortify(on)
 	if(xeno_owner.fortify == on)
 		return
@@ -268,11 +222,11 @@
 		xeno_owner.set_resting(FALSE, instant = TRUE)
 
 	if(on)
-		ADD_TRAIT(xeno_owner, TRAIT_IMMOBILIZED, TRAIT_XENO_FORTIFY)
+		ADD_TRAIT(xeno_owner, TRAIT_IMMOBILIZED, XENO_FORTIFY_TRAIT)
 		to_chat(xeno_owner, span_alertalien("We tuck ourselves into a defensive stance."))
 		xeno_owner.set_armor(xeno_owner.get_armor().add_other_armor(fortify_armor_type))
 	else
-		REMOVE_TRAIT(xeno_owner, TRAIT_IMMOBILIZED, TRAIT_XENO_FORTIFY)
+		REMOVE_TRAIT(xeno_owner, TRAIT_IMMOBILIZED, XENO_FORTIFY_TRAIT)
 		to_chat(xeno_owner, span_alertalien("We resume our normal stance."))
 		xeno_owner.set_armor(xeno_owner.get_armor().subtract_other_armor(fortify_armor_type))
 
@@ -280,4 +234,5 @@
 	xeno_owner.fortify = on
 	xeno_owner.resist_heavy_hits = on
 	playsound(xeno_owner, 'sound/effects/stonedoor_openclose.ogg', 30, TRUE)
+	build_all_button_icons(UPDATE_BUTTON_OVERLAY)
 	xeno_owner.update_icons()

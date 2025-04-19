@@ -27,6 +27,19 @@
 
 	var/plasma_cost = 125
 
+/datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/Grant(mob/granted_to)
+	. = ..()
+	RegisterSignal(granted_to, COMSIG_XENO_PLASMA_ADJUSTED, PROC_REF(on_owner_plasma_change))
+
+/datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/Remove(mob/removed_from)
+	. = ..()
+	UnregisterSignal(removed_from, COMSIG_XENO_PLASMA_ADJUSTED)
+
+/datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/proc/on_owner_plasma_change()
+	SIGNAL_HANDLER
+
+	build_all_button_icons()
+
 /datum/action/cooldown/mob_cooldown/charge/basic_charge/xeno_charge/Activate(atom/target_atom)
 	var/mob/living/carbon/carbon_owner = owner
 	carbon_owner.adjustPlasma(-plasma_cost)

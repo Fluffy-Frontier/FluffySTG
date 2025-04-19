@@ -10,7 +10,7 @@
 	maptext_width = 64
 	pressure_resistance = 200
 
-	armor_type = /datum/armor/tgmc_alien
+	armor_type = /datum/armor/tgmc_xeno
 
 	bodyparts = list(
 		/obj/item/bodypart/chest/alien/tgmc,
@@ -73,15 +73,10 @@
 	AddElement(/datum/element/resin_walker, /datum/movespeed_modifier/resin_speedup)
 	AddComponent(/datum/component/seethrough_mob)
 
-	RegisterSignal(src, COMSIG_LIVING_SET_BODY_POSITION, PROC_REF(body_position_changed))
-
-/mob/living/carbon/alien/adult/tgmc/Destroy()
-	. = ..()
-	UnregisterSignal(src, COMSIG_LIVING_SET_BODY_POSITION)
-
 /mob/living/carbon/alien/adult/tgmc/create_internal_organs()
 	if(additional_organ_types_by_slot)
-		default_organ_types_by_slot += additional_organ_types_by_slot
+		for(var/slot in additional_organ_types_by_slot)
+			default_organ_types_by_slot[slot] = additional_organ_types_by_slot[slot]
 	return ..()
 
 /mob/living/carbon/alien/adult/tgmc/UnarmedAttack(atom/attack_target, proximity_flag, list/modifiers)
@@ -108,18 +103,18 @@
 		return FALSE
 	return ..()
 
-/mob/living/carbon/alien/adult/tgmc/proc/body_position_changed(datum/source, new_value, old_value)
-	SIGNAL_HANDLER
+/mob/living/carbon/alien/adult/tgmc/on_lying_down(new_lying_angle)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
 
-	if(new_value == LYING_DOWN)
-		add_traits(list(TRAIT_IMMOBILIZED), LYING_DOWN_TRAIT)
-	else
-		remove_traits(list(TRAIT_IMMOBILIZED), LYING_DOWN_TRAIT)
+/mob/living/carbon/alien/adult/tgmc/on_standing_up()
+	. = ..()
+	REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
 
 /mob/living/carbon/alien/adult/tgmc/getarmor(def_zone, type)
 	return get_armor_rating(type)
 
-/datum/armor/tgmc_alien
+/datum/armor/tgmc_xeno
 	acid = 100
 	bio = 100
 	bomb = 0
@@ -211,30 +206,6 @@
 		var/image/finder_eye = image('icons/hud/screen_alien.dmi', finder_icon, dir = Qdir)
 		hud_used.alien_queen_finder.add_overlay(finder_eye)
 
-/mob/living/carbon/alien/adult/tgmc/alien_evolve(mob/living/carbon/alien/new_xeno, is_it_a_larva)
-	var/mob/living/carbon/alien/adult/tgmc/xeno_to_transfer_to = new_xeno
-
-	xeno_to_transfer_to.setDir(dir)
-	if(!islarva(xeno_to_transfer_to))
-		xeno_to_transfer_to.has_just_evolved()
-	if(mind)
-		mind.name = xeno_to_transfer_to.real_name
-		mind.transfer_to(xeno_to_transfer_to)
-	qdel(src)
-
-/// Called when a larva or xeno evolves, adds a configurable timer on evolving again to the xeno
-/mob/living/carbon/alien/adult/tgmc/proc/has_just_evolved()
-	if(has_evolved_recently)
-		return
-	has_evolved_recently = TRUE
-	addtimer(CALLBACK(src, PROC_REF(can_evolve_once_again)), evolution_cooldown_time)
-
-/// Allows xenos to evolve again if they are currently unable to
-/mob/living/carbon/alien/adult/tgmc/proc/can_evolve_once_again()
-	if(!has_evolved_recently)
-		return
-	has_evolved_recently = FALSE
-
 /mob/living/carbon/proc/get_max_plasma()
 	var/obj/item/organ/alien/plasmavessel/vessel = get_organ_by_type(/obj/item/organ/alien/plasmavessel)
 	if(!vessel)
@@ -243,5 +214,4 @@
 
 /mob/living/carbon/alien/adult/tgmc/adjustPlasma(amount)
 	. = ..()
-	for(var/datum/action/cooldown/ability in actions)
-		ability.build_all_button_icons()
+	SEND_SIGNAL(src, COMSIG_XENO_PLASMA_ADJUSTED, amount)

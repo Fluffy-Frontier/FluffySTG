@@ -6,7 +6,11 @@
 	desc = "Spits neurotoxin at someone, exhausting them."
 	button_icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi'
 	button_icon_state = "neurospit_0"
+	shared_cooldown = MOB_SHARED_COOLDOWN_3
+	cooldown_time = 3 SECONDS
 	plasma_cost = 40
+	ranged_mousepointer = 'icons/effects/mouse_pointers/weapon_pointer.dmi'
+
 	/// A singular projectile? Use this one and leave acid_casing null
 	var/acid_projectile = /obj/projectile/neurotoxin/tgmc
 	/// You want it to be more like a shotgun style attack? Use this one and make acid_projectile null
@@ -17,9 +21,9 @@
 	var/button_base_icon = "neurospit"
 	/// The sound that should be played when the xeno actually spits
 	var/spit_sound = 'tff_modular/modules/tgmc_xenos/sound/alien_spitacid.ogg'
-	shared_cooldown = MOB_SHARED_COOLDOWN_3
-	cooldown_time = 3 SECONDS
-	var/too_much_clicks = 0	// Костыль, чтобы выключать способность не сразу, а только в экстренных ситуациях
+
+	// Костыль, чтобы выключать способность не сразу, а только при многократных нажатиях
+	var/too_much_clicks = 0
 
 /datum/action/cooldown/alien/acid/tgmc/IsAvailable(feedback = FALSE)
 	return ..() && isturf(owner.loc)

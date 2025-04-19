@@ -80,6 +80,9 @@
 	max_plasma = 100
 	actions_types = list(/datum/action/cooldown/alien/transfer)
 
+/obj/item/organ/alien/plasmavessel/tgmc/no_weeds
+	actions_types = list(/datum/action/cooldown/alien/transfer)
+
 
 // Яйцеклад королевы
 /obj/item/organ/alien/eggsac/tgmc

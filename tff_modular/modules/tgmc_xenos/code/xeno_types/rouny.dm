@@ -29,10 +29,3 @@
 	evade_ability.Grant(src)
 
 	AddComponent(/datum/component/tackler, stamina_cost = 0, base_knockdown = 2, range = 10, speed = 2, skill_mod = 4, min_distance = 0)
-
-/mob/living/carbon/alien/adult/tgmc/runner/bullet_act(obj/projectile/hitting_projectile, def_zone, piercing_hit = FALSE)
-	if(evade_ability)
-		var/evade_result = evade_ability.on_projectile_hit()
-		if(!(evade_result == BULLET_ACT_HIT))
-			return evade_result
-	return ..()

@@ -20,7 +20,7 @@
 		ORGAN_SLOT_XENO_EGGSAC = /obj/item/organ/alien/eggsac/tgmc,
 	)
 
-	mecha_armor_penetration = 40
+	mecha_armor_penetration = 45
 	resist_heavy_hits = TRUE
 
 /mob/living/carbon/alien/adult/tgmc/queen/Initialize(mapload)

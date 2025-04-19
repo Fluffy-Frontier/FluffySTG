@@ -30,6 +30,19 @@
 	// Время стана оператора меха
 	var/mecha_occupant_stun_duration
 
+/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/Grant(mob/granted_to)
+	. = ..()
+	RegisterSignal(granted_to, COMSIG_XENO_PLASMA_ADJUSTED, PROC_REF(on_owner_plasma_change))
+
+/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/Remove(mob/removed_from)
+	UnregisterSignal(removed_from, COMSIG_XENO_PLASMA_ADJUSTED)
+	return ..()
+
+/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/proc/on_owner_plasma_change()
+	SIGNAL_HANDLER
+
+	build_all_button_icons()
+
 /datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/IsAvailable(feedback = FALSE)
 	. = ..()
 	if(!.)
