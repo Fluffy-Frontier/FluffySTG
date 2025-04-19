@@ -1,10 +1,5 @@
 /// TGMC_XENOS (old nova sector xenos)
 
-// Если хуман мертв, то ксенос не сможешь его перетаскивать
-/mob/living/carbon/human/can_be_pulled(user, force)
-	return ..() && !(isalien(user) && (stat == DEAD))
-
-
 // Переопредление прока из 'code\modules\mob\living\carbon\human\human_defense.dm'
 /mob/living/carbon/human/attack_alien(mob/living/carbon/alien/adult/user, list/modifiers)
 	. = ..()

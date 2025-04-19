@@ -214,4 +214,5 @@
 
 /mob/living/carbon/alien/adult/tgmc/adjustPlasma(amount)
 	. = ..()
-	SEND_SIGNAL(src, COMSIG_XENO_PLASMA_ADJUSTED, amount)
+	if(.)
+		SEND_SIGNAL(src, COMSIG_XENO_PLASMA_ADJUSTED, amount)

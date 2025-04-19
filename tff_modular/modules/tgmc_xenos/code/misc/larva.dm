@@ -1,6 +1,6 @@
 /// TGMC_XENOS (old nova sector xenos)
 
-// Подтип фейсхаггера, просто чтобы мы могли сделать то, что могли
+// Подтип фейсхаггера
 /obj/item/clothing/mask/facehugger/tgmc
 	embryo_path = /obj/item/organ/body_egg/alien_embryo/tgmc
 
@@ -22,19 +22,13 @@
 
 /mob/living/carbon/alien/larva/tgmc/Initialize(mapload)
 	. = ..()
-
 	for(var/datum/action/cooldown/alien/larva_evolve/action in actions)
 		if(istype(action))
 			action.Remove(src)
 
-	var/static/list/innate_actions = list(
-		/datum/action/cooldown/alien/larva_evolve/tgmc,
-	)
-	grant_actions_by_list(innate_actions)
+	GRANT_ACTION(/datum/action/cooldown/alien/larva_evolve/tgmc)
 
-	return
-
-// Наш способ эволюционировать. Там прошлый кодер говорит, что стоит сделать отдельные для каждой эволюции... Но я не уверен, что это действительно нужно. Его способ достаточно крутой
+// Способность, которая позволяет эволюционировать ларве в большого ксеноса
 /datum/action/cooldown/alien/larva_evolve/tgmc/Activate(atom/target)
 	var/static/list/caste_options
 	if(!caste_options)
