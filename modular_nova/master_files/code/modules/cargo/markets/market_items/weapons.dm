@@ -41,7 +41,7 @@
 	price_min = CARGO_CRATE_VALUE * 15
 	price_max = CARGO_CRATE_VALUE * 25
 	stock_max = 1
-	availability_prob = 25 //Original value - 5, now obtainable on TFF properly
+	availability_prob = 25 //TFF edit:original chance of appearing - 5
 
 /datum/market_item/weapon/hollowpoint9mm
 	name = "9mm HP Magazine"
@@ -50,7 +50,7 @@
 	price_min = CARGO_CRATE_VALUE * 0.5
 	price_max = CARGO_CRATE_VALUE * 0.7
 	stock_max = 3
-	availability_prob = 35 //original value - 15. now obtainable on TFF properly
+	availability_prob = 35 //TFF edit:original chance of appearing - 15
 
 /datum/market_item/weapon/sord
 	name = "SORD"
