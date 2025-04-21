@@ -51,6 +51,13 @@
 	armour_penetration = 25
 	damage_coeff = list(BRUTE = 0.7, BURN = 0.7, TOX = 0.7, STAMINA = 0, OXY = 0.7)
 
+/datum/action/cooldown/mob_cooldown/charge/basic_charge/guardian
+	destroy_objects = TRUE
+	charge_damage = 35
+
+/datum/action/cooldown/mob_cooldown/explosive_booby_trap
+	decay_time = 2 MINUTES
+
 /mob/living/basic/guardian/assassin
 	armour_penetration = 20
 	melee_damage_lower = 25
@@ -59,3 +66,5 @@
 	bare_wound_bonus = 50
 	stealth_cooldown_time = 5 SECONDS
 
+/datum/action/cooldown/mob_cooldown/guardian_bluespace_beacon
+	cooldown_time = 2.5 MINUTES

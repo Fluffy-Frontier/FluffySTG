@@ -30,10 +30,10 @@
 	background_icon_state = "base"
 	charge_delay = 0
 	recoil_duration = 0
-	charge_damage = 35 // THE FLUFFY FRONTIER CHANGES, ORIGINAL: 20
+	charge_damage = 20
 	charge_distance = 10
 	unset_after_click = FALSE
-	destroy_objects = TRUE // THE FLUFFY FRONTIER CHANGES, ORIGINAL: FALSE
+	destroy_objects = FALSE
 
 /datum/action/cooldown/mob_cooldown/charge/basic_charge/guardian/PreActivate(atom/target)
 	if (!isguardian(owner))

@@ -58,7 +58,7 @@
 	button_icon_state = "the_freezer"
 	background_icon = 'icons/hud/guardian.dmi'
 	background_icon_state = "base"
-	cooldown_time = 2.5 MINUTES // THE FLUFFY FRONTIER CHANGES, ORIGINAL: 5 MINUTES
+	cooldown_time = 5 MINUTES
 	melee_cooldown_time = 0
 	cooldown_rounding = 1
 	click_to_activate = FALSE
