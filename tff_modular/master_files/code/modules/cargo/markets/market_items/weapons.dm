@@ -1,4 +1,4 @@
-/datum/market_item/weapons/trappiste_small_case
+/datum/market_item/weapon/trappiste_small_case
 	name = "Défenestreur gun kit"
 	desc = "That took way too much effort, no discount."
 	item = 	/obj/item/storage/toolbox/guncase/nova/pistol/trappiste_small_case
