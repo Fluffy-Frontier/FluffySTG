@@ -41,7 +41,7 @@
 	price_min = CARGO_CRATE_VALUE * 15
 	price_max = CARGO_CRATE_VALUE * 25
 	stock_max = 1
-	availability_prob = 25 //TFF edit:original chance of appearing - 5
+	availability_prob = 25 //Fluffy Frontier edit: increasing chance of appearing from 5 to 25
 
 /datum/market_item/weapon/hollowpoint9mm
 	name = "9mm HP Magazine"
@@ -50,8 +50,7 @@
 	price_min = CARGO_CRATE_VALUE * 0.5
 	price_max = CARGO_CRATE_VALUE * 0.7
 	stock_max = 3
-	availability_prob = 35 //TFF edit:original chance of appearing - 15
-
+	availability_prob = 35 //Fluffy Frontier edit: increasing chance of appearing from 25 to 35
 /datum/market_item/weapon/sord
 	name = "SORD"
 	desc = "This thing is so unspeakably shitty that the only thing more foolish than trying to sell it, is to buy it."
