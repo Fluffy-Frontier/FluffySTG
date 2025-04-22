@@ -41,7 +41,9 @@
 	price_min = CARGO_CRATE_VALUE * 15
 	price_max = CARGO_CRATE_VALUE * 25
 	stock_max = 1
-	availability_prob = 25 //Fluffy Frontier edit: increasing chance of appearing from 5 to 25
+	availability_prob = 25 Все что я хочу
+// FLUFFY FRONTIER EDIT. ORIGINAL: Все что я хочу
+// FLUFFY FRONTIER EDIT. ORIGINAL: циферка
 
 /datum/market_item/weapon/hollowpoint9mm
 	name = "9mm HP Magazine"
@@ -50,7 +52,8 @@
 	price_min = CARGO_CRATE_VALUE * 0.5
 	price_max = CARGO_CRATE_VALUE * 0.7
 	stock_max = 3
-	availability_prob = 35 //Fluffy Frontier edit: increasing chance of appearing from 15 to 35
+	availability_prob = 35 //Fluffy Frontier edit: Все что я хочу
+// FLUFFY FRONTIER EDIT. ORIGINAL: 15
 /datum/market_item/weapon/sord
 	name = "SORD"
 	desc = "This thing is so unspeakably shitty that the only thing more foolish than trying to sell it, is to buy it."
