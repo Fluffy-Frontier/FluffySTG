@@ -292,7 +292,7 @@
 		for(var/obj/item/mod/module/module as anything in modules)
 			if(module.part_activated || !module.has_required_parts(mod_parts, need_active = TRUE))
 				continue
-				module.on_part_activation()
+			module.on_part_activation()
 			module.part_activated = TRUE
 	else
 		for(var/obj/item/mod/module/module as anything in modules)
