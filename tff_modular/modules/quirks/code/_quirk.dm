@@ -13,3 +13,9 @@
 
 /datum/quirk/system_shock
 	hidden_quirk = TRUE
+
+/datum/quirk/genetic_mutation
+	hidden_quirk = TRUE
+
+/datum/quirk/sensitive_hearing
+	hidden_quirk = TRUE
