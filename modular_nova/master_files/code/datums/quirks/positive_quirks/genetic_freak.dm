@@ -5,11 +5,20 @@ GLOBAL_LIST_INIT(genetic_mutation_choice, list(
 	"Anti-Glowy" = /datum/mutation/human/glow/anti,
 	"Strength" = /datum/mutation/human/strong,
 	"Stimmed" = /datum/mutation/human/stimmed,
+	/**
 	"Chameleon" = /datum/mutation/human/chameleon,
+	*/ //FLUFFY FRONTIER GENETIC MUTATION QUIRK REBALANCE REMOVAL
 	"Geladikinesis" = /datum/mutation/human/geladikinesis,
 	"Cindikinesis" = /datum/mutation/human/cindikinesis,
 	"Transcendent Olfaction" = /datum/mutation/human/olfaction,
+	/**
 	"Elastic Arms" = /datum/mutation/human/elastic_arms,
+	*/ // FLUFFY FRONTIER GENETIC MUTATION QUIRK REBALANCE REMOVAL
+	// FLUFFY FRONTIER GENETIC MUTATION QUIRK REBALANCE ADD START
+	"Rock Eater" = /datum/mutation/human/rock_eater,
+	"Farsight" = /datum/mutation/human/farsight,
+	"Mending Touch" = /datum/mutation/human/lay_on_hands,
+	// FLUFFY FRONTIER GENETIC MUTATION QUIRK REBALANCE ADD END
 	"Webbing" = /datum/mutation/human/webbing,
 ))
 
