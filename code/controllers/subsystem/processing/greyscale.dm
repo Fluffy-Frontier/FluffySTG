@@ -41,9 +41,12 @@ PROCESSING_SUBSYSTEM_DEF(greyscale)
 	for(var/greyscale_type as anything in configurations)
 		CHECK_TICK
 		var/datum/greyscale_config/config = configurations[greyscale_type]
+		warning("Greyscale SS. Start [config] verify")
 		config.CrossVerify()
+		warning("Greyscale SS. Done [config] verify")
 #ifdef USE_RUSTG_ICONFORGE_GAGS
 		job_ids += rustg_iconforge_load_gags_config_async(greyscale_type, config.raw_json_string, config.string_icon_file)
+		warning("Greyscale SS. Done rustg part of [config] verify")
 
 	UNTIL(jobs_completed(job_ids))
 #endif
