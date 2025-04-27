@@ -42,13 +42,13 @@ PROCESSING_SUBSYSTEM_DEF(greyscale)
 		CHECK_TICK
 		var/datum/greyscale_config/config = configurations[greyscale_type]
 		config.CrossVerify()
-	warning("Greyscale SS pass config verification part!")
 #ifdef USE_RUSTG_ICONFORGE_GAGS
 		job_ids += rustg_iconforge_load_gags_config_async(greyscale_type, config.raw_json_string, config.string_icon_file)
 
 	UNTIL(jobs_completed(job_ids))
 #endif
 
+	warning("Greyscale SS pass config verification part!")
 	return SS_INIT_SUCCESS
 
 #ifdef USE_RUSTG_ICONFORGE_GAGS
