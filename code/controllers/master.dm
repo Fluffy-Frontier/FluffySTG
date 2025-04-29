@@ -434,7 +434,6 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 		for (var/datum/controller/subsystem/subsystem in stage_sorted_subsystems[current_init_stage])
 			subsystem.init_order = evaluated_order
 			evaluated_order++
-			notice("Starting initializing [subsystem.name]!")
 			init_subsystem(subsystem)
 
 			CHECK_TICK
