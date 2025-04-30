@@ -3346,6 +3346,7 @@
 	name = "Kitchen Service Hall"
 	},
 /obj/effect/mapping_helpers/airlock/access/any/service/kitchen,
+/obj/structure/plasticflaps/kitchen,
 /turf/open/floor/iron/showroomfloor,
 /area/station/hallway/secondary/service)
 "aAh" = (
@@ -31669,6 +31670,14 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/yellow/visible,
 /turf/open/floor/iron,
 /area/station/science/ordnance)
+"eZB" = (
+/obj/machinery/button/door/directional/west{
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	id = "xenobiocold"
+	},
+/turf/open/floor/iron/white,
+/area/station/science/xenobiology)
 "faF" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/structure/railing{
@@ -50677,7 +50686,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock/security/old/glass{
+/obj/machinery/door/airlock/security/glass{
 	name = "Correction Officer Lounge"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/security/brig,
@@ -51564,11 +51573,13 @@
 /area/station/commons/vacant_room)
 "rjh" = (
 /obj/machinery/door/airlock/research{
-	name = "Xenobiology Lab"
+	name = "Xenobiology Lab";
+	id_tag = "xenobiocold"
 	},
 /obj/effect/mapping_helpers/airlock/access/any/science/xenobio,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
+/obj/structure/plasticflaps/kitchen,
 /turf/open/floor/iron/white,
 /area/station/science/xenobiology)
 "rjn" = (
@@ -61666,6 +61677,7 @@
 	name = "Kitchen Cold Room"
 	},
 /obj/effect/mapping_helpers/airlock/access/any/service/kitchen,
+/obj/structure/plasticflaps/kitchen,
 /turf/open/floor/iron/showroomfloor,
 /area/station/service/kitchen)
 "xvf" = (
@@ -106624,7 +106636,7 @@ wUr
 ccP
 bMi
 mQw
-bMi
+eZB
 bMi
 bMi
 bMi
