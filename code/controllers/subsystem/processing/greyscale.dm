@@ -17,7 +17,6 @@ PROCESSING_SUBSYSTEM_DEF(greyscale)
 #endif
 
 /datum/controller/subsystem/processing/greyscale/Initialize()
-	warning("Starting initialize Greyscale SS!")
 	for(var/datum/greyscale_layer/fake_type as anything in subtypesof(/datum/greyscale_layer))
 		layer_types[initial(fake_type.layer_type)] = fake_type
 
@@ -25,14 +24,12 @@ PROCESSING_SUBSYSTEM_DEF(greyscale)
 		var/datum/greyscale_config/config = new greyscale_type()
 		configurations["[greyscale_type]"] = config
 
-	warning("Greyscale SS pass first config part!")
 	// We do this after all the types have been loaded into the listing so reference layers don't care about init order
 	for(var/greyscale_type in configurations)
 		CHECK_TICK
 		var/datum/greyscale_config/config = configurations[greyscale_type]
 		config.Refresh()
 
-	warning("Greyscale SS pass second config part!")
 #ifdef USE_RUSTG_ICONFORGE_GAGS
 	var/list/job_ids = list()
 #endif
@@ -41,17 +38,13 @@ PROCESSING_SUBSYSTEM_DEF(greyscale)
 	for(var/greyscale_type as anything in configurations)
 		CHECK_TICK
 		var/datum/greyscale_config/config = configurations[greyscale_type]
-		warning("Greyscale SS. Start [config] verify")
 		config.CrossVerify()
-		warning("Greyscale SS. Complete [config] verify")
 #ifdef USE_RUSTG_ICONFORGE_GAGS
 		job_ids += rustg_iconforge_load_gags_config_async(greyscale_type, config.raw_json_string, config.string_icon_file)
-		warning("Greyscale SS. Done rustg part of [config] verify")
 
 	UNTIL(jobs_completed(job_ids))
 #endif
 
-	warning("Greyscale SS pass config verification part!")
 	return SS_INIT_SUCCESS
 
 #ifdef USE_RUSTG_ICONFORGE_GAGS
