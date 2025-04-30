@@ -4,6 +4,7 @@
 
 #ifndef LOWMEMORYMODE
 	#ifdef ALL_MAPS
+		/* // FLUFFY FRONTIER EDIT START. REMOVAL
 		#include "map_files\Birdshot\birdshot.dmm"
 		#include "map_files\debug\multiz.dmm"
 		#include "map_files\debug\runtimestation.dmm"
@@ -14,6 +15,7 @@
 		#include "map_files\tramstation\tramstation.dmm"
 		#include "map_files\NebulaStation\NebulaStation.dmm"
 		#include "map_files\wawastation\wawastation.dmm"
+		*/ // FLUFFY FRONTIER EDIT END
 		// NOVA EDIT ADDITION START - Compiling our modular maps too!
 		#include "map_files\VoidRaptor\VoidRaptor.dmm"
 		#include "map_files\NSVBlueshift\Blueshift.dmm"
