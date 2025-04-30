@@ -15,7 +15,8 @@
 		#include "map_files\tramstation\tramstation.dmm"
 		#include "map_files\NebulaStation\NebulaStation.dmm"
 		#include "map_files\wawastation\wawastation.dmm"
-		*/ // FLUFFY FRONTIER EDIT END
+		*/
+		// FLUFFY FRONTIER EDIT END
 		// NOVA EDIT ADDITION START - Compiling our modular maps too!
 		#include "map_files\VoidRaptor\VoidRaptor.dmm"
 		#include "map_files\NSVBlueshift\Blueshift.dmm"
