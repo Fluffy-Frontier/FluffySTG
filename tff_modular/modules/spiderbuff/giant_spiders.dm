@@ -142,7 +142,22 @@
 	poison_per_bite = 6.5
 	pass_flags = PASSMOB
 
+/mob/living/basic/spider/giant/baron
+	pass_flags = PASSTABLE
+
+/mob/living/basic/spider/growing/young/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
+
 //Web changes:
+/obj/structure/spider/run_atom_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
+	switch(damage_type)
+		if(BURN)
+			damage_amount *= 1.25
+		if(BRUTE)
+			damage_amount *= 0.45
+	return ..()
+
 /obj/structure/spider/stickyweb/sealed/reflector/run_atom_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
 	switch(damage_type)
 		if(BURN)

@@ -16,9 +16,6 @@
 	if(damage_type == BURN)//the stickiness of the web mutes all attack sounds except fire damage type
 		playsound(loc, 'sound/items/tools/welder.ogg', 100, TRUE)
 
-// FLUFFY FRONTIER SPIDER WEB BUFF CHANGES:
-// ORIGINAL:
-/*
 /obj/structure/spider/run_atom_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
 	if(damage_flag == MELEE)
 		switch(damage_type)
@@ -27,16 +24,6 @@
 			if(BRUTE)
 				damage_amount *= 0.25
 	return ..()
-*/
-/obj/structure/spider/run_atom_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
-	switch(damage_type)
-		if(BURN)
-			damage_amount *= 1.25
-		if(BRUTE)
-			damage_amount *= 0.45
-	return ..()
-
-// FLUFFY FRONTIER CHANGES END.
 
 /obj/structure/spider/should_atmos_process(datum/gas_mixture/air, exposed_temperature)
 	return exposed_temperature > 350

@@ -282,7 +282,6 @@
 	ai_controller = /datum/ai_controller/basic_controller/baron
 	move_resist = MOVE_FORCE_EXTREMELY_STRONG
 	pull_force = MOVE_FORCE_EXTREMELY_STRONG
-	pass_flags = PASSTABLE // THE FLUFFY FRONTIER CHANGES, REMOVING PASSMOB FLAG FROM BARON.
 
 	innate_actions = list(
 		/datum/action/cooldown/mob_cooldown/command_spiders,
