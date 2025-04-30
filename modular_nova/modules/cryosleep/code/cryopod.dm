@@ -521,7 +521,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 	else
 		visible_message(span_infoplain("[user] starts putting [target] into the cryo pod."))
 
-	to_chat(target, span_warning("<b>If you remain in the pod for [time_till_despawn] seconds, your character will be permanently removed from the round.</b>"))
+	to_chat(target, span_warning("<b>If you remain in the pod for [time_till_despawn /10] seconds, your character will be permanently removed from the round.</b>"))
 
 	log_admin("[key_name(target)] entered a stasis pod.")
 	message_admins("[key_name_admin(target)] entered a stasis pod. [ADMIN_JMP(src)]")
@@ -585,7 +585,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/cryopod/prison, 18)
 	/// For figuring out where the local cryopod computer is. Must be set for cryo computer announcements.
 	var/area/computer_area
 
-/obj/effect/mob_spawn/ghost_role/create(mob/mob_possessor, newname, use_loadout)
+/obj/effect/mob_spawn/ghost_role/create(mob/mob_possessor, newname, use_loadout = FALSE)
 	var/mob/living/spawned_mob = ..()
 	var/obj/machinery/computer/cryopod/control_computer = find_control_computer()
 

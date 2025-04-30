@@ -30,7 +30,7 @@
 /datum/action/cooldown/spell/touch/psyonic/psyonic_discharge
 	name = "Psyonic Discharge"
 	desc = "Try to discharge battery and convert electricity into raw psyonic energy."
-	button_icon = 'modular_nova/modules/aesthetics/cells/cell.dmi'
+	button_icon = 'modular_nova/modules/aesthetics/cells/icons/cell.dmi'
 	button_icon_state = "icell"
 	cooldown_time = 30 SECONDS
 	mana_cost = 0
