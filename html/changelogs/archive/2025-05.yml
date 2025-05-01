@@ -19,6 +19,12 @@
   - qol: The Sleeping status effect now shows the duration if it isn't infinite.
   - qol: Sleeping and lying down now reduces your hunger rate by half.
   - rscadd: Added an otter snout and a waggable otter tail.
+  - rscadd: Added a new science techweb node, Auto-Injecting Medipen Syringes.
+  - rscadd: Added a universal medipen and a low-pressure universal medipen to medical
+      protolathes.
+  - rscadd: Added empty medipens to medical lathe for Epinephrine, Atropine, Oxandrolone,
+      Salicylic Acid, Salbutamol, and Pentetic Acid.
+  - bugfix: Fixed a bug that caused the Medipen Refiller to only refill up to 10u.
   Bannhammger:
   - balance: now you can't print trully illegal shotgun ammo in ammobench!
   Bisar:
@@ -166,6 +172,8 @@
   - bugfix: fixed Interdyne biosuits being stocked in Virology, instead of Interdyne
   - image: removed some (hopefully) unused Gloves icons! Please report any errors!
   - rscadd: Evening and Designer Gloves are now greyscale!
+  - rscadd: Chaps are now Greyscale, and can now also be used as an accessory! Ctrl-Shift-Click
+      to switch between Accessory and Uniform!
   Pepsilawn:
   - bugfix: Tramstation, fixes a mop that happened to be grabbable while being 2 tiles
       above its location in an entirely different room
@@ -196,6 +204,9 @@
   SyncIt21:
   - code_imp: cleans up teleportation code. `check_teleport_valid` is now a pure function
       with no side effects
+  TimErmolt:
+  - bugfix: Raptoral cybernetic heads now have the correct eyes sprite, and also retain
+      the eye color selected in character setup.
   TiviPlus:
   - bugfix: Look up/down now track with the thing you're inside instead of staying
       in one spot
