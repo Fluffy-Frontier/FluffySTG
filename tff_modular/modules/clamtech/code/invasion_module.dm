@@ -12,10 +12,10 @@
 /datum/dynamic_ruleset/midround/clam
 	name = "Clam Invasion"
 	midround_ruleset_style = MIDROUND_RULESET_STYLE_HEAVY
-	ruleset_category = parent_type::ruleset_category |  RULESET_CATEGORY_NO_WITTING_CREW_ANTAGONISTS
+	ruleset_category = parent_type::ruleset_category | RULESET_CATEGORY_NO_WITTING_CREW_ANTAGONISTS
 	antag_flag = "Space Pirates"
 	required_type = /mob/dead/observer
-	required_enemies = list(2,2,1,1,1,1,1,0,0,0)
+	required_enemies = list(6,6,6,6,6,6,6,6,6,6)
 	required_candidates = 0
 	weight = 1
 	cost = 20 //Painful. Also meant to hog attention? Feel free to change
