@@ -50,7 +50,7 @@
 #define BLOB_RESOURCE_MAX_HP 60
 #define BLOB_RESOURCE_HP_REGEN 15
 #define BLOB_RESOURCE_MIN_DISTANCE 4 // Minimum distance between resource blobs
-#define BLOB_RESOURCE_GATHER_DELAY (3.75 SECONDS) // Gather points when pulsed outside this interval, // FLUFFY FRONTIER EDIT - ORIGINAL: #define BLOB_RESOURCE_GATHER_DELAY (3.75 SECONDS)
+#define BLOB_RESOURCE_GATHER_DELAY (3.75 SECONDS) // Gather points when pulsed outside this interval, // FLUFFY FRONTIER EDIT - ORIGINAL: #define BLOB_RESOURCE_GATHER_DELAY (4 SECONDS)
 #define BLOB_RESOURCE_GATHER_ADDED_DELAY (0.25 SECONDS) // Every additional resource blob adds this amount to the gather delay
 #define BLOB_RESOURCE_GATHER_AMOUNT 1.5 // The amount of points added to the overmind // FLUFFY FRONTIER EDIT - ORIGINAL: #define BLOB_RESOURCE_GATHER_AMOUNT 1
 
