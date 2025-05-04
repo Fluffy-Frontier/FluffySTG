@@ -42,7 +42,7 @@
 
 /datum/quirk/genetic_mutation/is_species_appropriate(datum/species/mob_species)
 	var/datum/species_traits = GLOB.species_prototypes[mob_species].inherent_traits
-	if(TRAIT_GENELESS in species_traits) // Нет нужды в еде - нет нужды в квирке голода
+	if(TRAIT_GENELESS in species_traits)
 		return FALSE
 	return ..()
 
