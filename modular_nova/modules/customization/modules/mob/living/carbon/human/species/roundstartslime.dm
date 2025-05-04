@@ -342,9 +342,11 @@
 			return
 		if(slime.stat != CONSCIOUS)
 			return
-		slime.heal_overall_damage(brute = 1.5 * seconds_per_tick, burn = 1.5 * seconds_per_tick, required_bodytype = BODYTYPE_ORGANIC)
-		slime.adjustOxyLoss(-1 * seconds_per_tick)
-
+		/// FLUFFY FRONTIER CHANGE
+		// slime.heal_overall_damage(brute = 1.5 * seconds_per_tick, burn = 1.5 * seconds_per_tick, required_bodytype = BODYTYPE_ORGANIC)
+		// slime.adjustOxyLoss(-1 * seconds_per_tick)
+		slime.blood_volume -= 1 * seconds_per_tick // Всегда стремится к норме в 560
+		slime.reagents.add_reagent(/datum/reagent/consumable/sugar, 1 * seconds_per_tick) // Взамен даёт сахар
 
 /**
 * SLIME CLEANING ABILITY -
