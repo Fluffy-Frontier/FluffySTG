@@ -1,7 +1,7 @@
 // Класс Ассасина. Самый безобидный в бою класс из всех. Даже саппорт более опасен.
 
 // Стелс. Стелс позволяет перейти в режим полуневидимости и скрыть свою личность.
-/datum/action/cooldown/spell/bbstealth
+/datum/action/cooldown/bbstealth
 	name = "camouflage skin"
 	desc = "Blend into the environment."
 	button_icon = 'icons/mob/actions/actions_minor_antag.dmi'
@@ -13,13 +13,12 @@
 	cooldown_time = 0.5 SECONDS
 	melee_cooldown_time = 0 SECONDS
 	click_to_activate = FALSE
-	spell_requirements = NONE
 	/// The alpha we go to when sneaking.
 	var/sneak_alpha = 75
 	/// How long it takes to become transparent
 	var/animation_time = 0.5 SECONDS
 
-/datum/action/cooldown/spell/bbstealth/Remove(mob/living/remove_from)
+/datum/action/cooldown/bbstealth/Remove(mob/living/remove_from)
 	if(HAS_TRAIT(remove_from, TRAIT_SNEAK))
 		remove_from.alpha = initial(remove_from.alpha)
 		REMOVE_TRAIT(remove_from, TRAIT_SNEAK, ACTION_TRAIT)
@@ -27,7 +26,7 @@
 
 	return ..()
 
-/datum/action/cooldown/spell/bbstealth/Activate(atom/target)
+/datum/action/cooldown/bbstealth/Activate(atom/target)
 	if(HAS_TRAIT(owner, TRAIT_SNEAK))
 		animate(owner, alpha = initial(owner.alpha), time = animation_time)
 		owner.balloon_alert(owner, "you reveal yourself")
@@ -44,7 +43,7 @@
 
 // Зрение Ассасина. Дает ХУДы всех очков, ночное зрение, иксрей, зрение через стены и темноту. Глаза ассасина при активации становятся красными, что можно обнаружить при экзамайне.
 // Считать это дебаффом не стоит - можно просто очками закрыть.
-/datum/action/cooldown/spell/bbvision
+/datum/action/cooldown/bbvision
 	name = "assassin vision"
 	desc = "Gives you xray, night vision and all HUDs, but at the same time, your eyes start to glow strangely and anyone can see it!"
 	button_icon = 'icons/mob/actions/actions_cult.dmi'
@@ -56,9 +55,8 @@
 	cooldown_time = 0.5 SECONDS
 	melee_cooldown_time = 0 SECONDS
 	click_to_activate = FALSE
-	spell_requirements = NONE
 
-/datum/action/cooldown/spell/bbvision/Remove(mob/living/remove_from)
+/datum/action/cooldown/bbvision/Remove(mob/living/remove_from)
 	if(HAS_TRAIT(remove_from, TRAIT_BLOODSHOT_EYES))
 		REMOVE_TRAIT(remove_from, TRAIT_TRUE_NIGHT_VISION, ACTION_TRAIT)
 		REMOVE_TRAIT(remove_from, TRAIT_HEAR_THROUGH_DARKNESS, ACTION_TRAIT)
@@ -72,7 +70,7 @@
 		REMOVE_TRAIT(remove_from, TRAIT_TRUE_NIGHT_VISION, ACTION_TRAIT)
 	return ..()
 
-/datum/action/cooldown/spell/bbvision/Activate(atom/target)
+/datum/action/cooldown/bbvision/Activate(atom/target)
 	if(HAS_TRAIT(owner, TRAIT_BLOODSHOT_EYES))
 		owner.balloon_alert(owner, "Assassin vision removed")
 		REMOVE_TRAIT(owner, TRAIT_TRUE_NIGHT_VISION, ACTION_TRAIT)
@@ -110,6 +108,7 @@
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
 	overlay_icon_state = "bg_fugu_border"
 	cooldown_time = 20 SECONDS
+	smoke_type = /obj/effect/particle_effect/fluid/smoke/bloody
 
 /obj/effect/particle_effect/fluid/smoke/bloody
 	color = "#9C3636"

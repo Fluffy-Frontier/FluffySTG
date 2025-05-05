@@ -59,7 +59,6 @@
 	enchanted.armour_penetration = original_armour_penetration
 
 /datum/action/cooldown/spell/sanguine_strike/bbweaponcharge/on_dropped(obj/item/enchanted, mob/dropper)
-	SIGNAL_HANDLER
 	to_chat(dropper, span_notice("[enchanted] seems to lose its black aura."))
 	end_enchantment(enchanted)
 

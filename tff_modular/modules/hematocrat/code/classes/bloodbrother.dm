@@ -91,6 +91,10 @@
 
 /datum/action/cooldown/spell/touch/flesh_restoration/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)
 	var/mob/living/restor_target = victim
+
+	if(!istype(restor_target))
+		return FALSE
+
 	restor_target.adjustBruteLoss(-40)
 	restor_target.adjustFireLoss(-40)
 	restor_target.adjustToxLoss(-30)
