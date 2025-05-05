@@ -76,11 +76,11 @@
 
 		if("Assassin")
 			ADD_TRAIT(owner, TRAIT_HEMATOCRAT, ACTION_TRAIT)
-			var/datum/action/cooldown/spell/bbstealth/stealth = new
+			var/datum/action/cooldown/bbstealth/stealth = new
 			var/datum/action/cooldown/spell/smoke/lesser/bbsmoke/smoke = new
 			var/datum/action/cooldown/spell/pointed/burglar_finesse/bbsteal/steal = new
 			var/datum/action/cooldown/spell/pointed/bbhack/hack = new
-			var/datum/action/cooldown/spell/bbvision/vision = new
+			var/datum/action/cooldown/bbvision/vision = new
 			var/datum/action/cooldown/mob_cooldown/dash/bbdash/dash = new
 			dash.Grant(owner)
 			vision.Grant(owner)
