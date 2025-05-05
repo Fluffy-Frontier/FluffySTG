@@ -96,6 +96,9 @@
 #define ROLE_SYNDICATE_ASSAULTBORG "Syndicate Assault Cyborg"
 
 #define ROLE_RECOVERED_CREW "Recovered Crew"
+// FLUFFY FRONTIER ADDITION
+#define ROLE_HEMATOCRAT "Hematocrat"
+// FLUFFY FRONTIER ADDITION END
 
 //Spawner roles
 #define ROLE_ANCIENT_CREW "Ancient Crew"

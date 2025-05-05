@@ -4,3 +4,5 @@
 #define TRAIT_XENO_ABILITY_GIVEN "xeno_ability_given"
 /// Determines if something can receive healing from a xeno
 #define TRAIT_XENO_HEAL_AURA "trait_xeno_heal_aura"
+
+#define TRAIT_HEMATOCRAT "trait_hematocrat"
