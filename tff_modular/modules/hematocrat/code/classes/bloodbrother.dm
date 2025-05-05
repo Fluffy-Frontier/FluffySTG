@@ -64,7 +64,7 @@
 /obj/effect/temp_visual/dir_setting/blood_in
 	name = "blood_in"
 	icon = 'icons/effects/cult.dmi'
-	icon_state = "bloodinin"
+	icon_state = "bloodin"
 	duration = 1.3 SECONDS
 
 /obj/effect/temp_visual/dir_setting/blood_in/out
@@ -73,15 +73,21 @@
 
 /datum/action/cooldown/spell/touch/flesh_restoration
 	name = "flesh Restoration"
-	desc = "You can restore someone brute and burn damage!"
-	button_icon_state = "greyscale"
+	desc = "Restores target brute, burn and toxin damage in short time."
+	button_icon_state = "zapper"
+	background_icon = 'icons/mob/actions/backgrounds.dmi'
+	background_icon_state = "bg_fugu"
+	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
+	overlay_icon_state = "bg_fugu_border"
 	cooldown_time = 180 SECONDS
 	hand_path = /obj/item/melee/touch_attack/flesh_restoration
 	can_cast_on_self = TRUE
+	spell_requirements = NONE
 
 /obj/item/melee/touch_attack/flesh_restoration
-	icon_state = "greyscale"
-	greyscale_colors = "#444444"
+	name = "flesh restoration"
+	desc = "Feels warm"
+	icon_state = "zapper"
 
 /datum/action/cooldown/spell/touch/flesh_restoration/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)
 	var/mob/living/restor_target = victim
