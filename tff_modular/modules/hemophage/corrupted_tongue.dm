@@ -1,102 +1,9 @@
-/// Maximum an Hemophage will drain, they will drain less if they hit their cap.
+// Модульно так модульно :)
+
 #define HEMOPHAGE_DRAIN_AMOUNT 50
-/// The multiplier for blood received by Hemophages out of humans with ckeys.
 #define BLOOD_DRAIN_MULTIPLIER_CKEY 1.15
 
-/datum/component/organ_corruption/tongue
-	corruptable_organ_type = /obj/item/organ/tongue
-	corrupted_icon_state = "tongue"
-	/// The item action given to the tongue once it was corrupted.
-	var/tongue_action_type = /datum/action/cooldown/hemophage/drain_victim
-
-
-/datum/component/organ_corruption/tongue/corrupt_organ(obj/item/organ/corruption_target)
-	. = ..()
-
-	if(!.)
-		return
-
-	var/obj/item/organ/tongue/corrupted_tongue = corruption_target
-	corrupted_tongue.liked_foodtypes = BLOODY
-	corrupted_tongue.disliked_foodtypes = NONE
-
-	var/datum/action/tongue_action = corruption_target.add_item_action(tongue_action_type)
-
-	if(corruption_target.owner)
-		tongue_action.Grant(corruption_target.owner)
-
-
-/datum/action/cooldown/hemophage/drain_victim
-	name = "Drain Victim"
-	desc = "Leech blood from any carbon victim you are passively grabbing."
-
-
-/datum/action/cooldown/hemophage/drain_victim/Activate(atom/target)
-	if(!iscarbon(owner))
-		return
-
-	var/mob/living/carbon/hemophage = owner
-
-	if(!has_valid_target(hemophage))
-		return
-
-	// By now, we know that they're pulling a carbon.
-	drain_victim(hemophage, hemophage.pulling)
-
-
-/**
- * Handles the first checks to see if the target is eligible to be drained.
- *
- * Arguments:
- * * hemophage - The person that's trying to drain something or someone else.
- *
- * Returns `TRUE` if the target is eligible to be drained, `FALSE` if not.
- */
-/datum/action/cooldown/hemophage/drain_victim/proc/has_valid_target(mob/living/carbon/hemophage)
-	if(!hemophage.pulling || !iscarbon(hemophage.pulling) || isalien(hemophage.pulling))
-		hemophage.balloon_alert(hemophage, "not pulling any valid target!")
-		return FALSE
-
-	var/mob/living/carbon/victim = hemophage.pulling
-	if(hemophage.blood_volume >= BLOOD_VOLUME_MAXIMUM)
-		hemophage.balloon_alert(hemophage, "already full!")
-		return FALSE
-
-	if(victim.stat == DEAD)
-		hemophage.balloon_alert(hemophage, "needs a living victim!")
-		return FALSE
-
-	if(!victim.blood_volume || (victim.dna && ((HAS_TRAIT(victim, TRAIT_NOBLOOD)) || victim.dna.species.exotic_blood)))
-		hemophage.balloon_alert(hemophage, "[victim] doesn't have blood!")
-		return FALSE
-
-	if(victim.can_block_magic(MAGIC_RESISTANCE_HOLY, charge_cost = 0))
-		victim.show_message(span_warning("[hemophage] tries to bite you, but stops before touching you!"))
-		to_chat(hemophage, span_warning("[victim] is blessed! You stop just in time to avoid catching fire."))
-		return FALSE
-
-	if(victim.has_reagent(/datum/reagent/consumable/garlic))
-		victim.show_message(span_warning("[hemophage] tries to bite you, but recoils in disgust!"))
-		to_chat(hemophage, span_warning("[victim] reeks of garlic! You can't bring yourself to drain such tainted blood."))
-		return FALSE
-
-	if(ismonkey(victim) && (hemophage.blood_volume >= BLOOD_VOLUME_NORMAL))
-		hemophage.balloon_alert(hemophage, "their inferior blood cannot sate you any further!")
-		return FALSE
-
-	return TRUE
-
-
-/**
- * The proc that actually handles draining the victim. Assumes that all the
- * pre-requesite checks were made, and as such will not make any more checks
- * outside of a `do_after` of three seconds.
- *
- * Arguments:
- * * hemophage - The feeder.
- * * victim - The one that's being drained.
- */
-/datum/action/cooldown/hemophage/drain_victim/proc/drain_victim(mob/living/carbon/hemophage, mob/living/carbon/victim)
+/datum/action/cooldown/hemophage/drain_victim/drain_victim(mob/living/carbon/hemophage, mob/living/carbon/victim)
 	var/blood_volume_difference = BLOOD_VOLUME_MAXIMUM - hemophage.blood_volume //How much capacity we have left to absorb blood
 	// We start by checking that the victim is a human and they have a client, so we can give them the
 	// beneficial status effect for drinking higher-quality blood.
@@ -167,6 +74,11 @@
 		to_chat(hemophage, span_boldwarning("A final sputter of blood trickles from [victim]'s collapsing veins as your terrible hunger drains them almost completely dry."))
 	else if ((victim.blood_volume + HEMOPHAGE_DRAIN_AMOUNT) <= BLOOD_VOLUME_SURVIVE)
 		to_chat(hemophage, span_warning("A sense of hesitation gnaws: you know for certain that taking much more blood from [victim] WILL kill them. <b>...but another part of you sees only opportunity.</b>"))
+
+	/// FLUFFY FRONTIER CHANGE
+	// Жертва будет уязвима к урону в течение 5 минут
+	if(!victim.has_status_effect(/datum/status_effect/vulnerable_to_damage))
+		victim.apply_status_effect(/datum/status_effect/vulnerable_to_damage)
 
 #undef HEMOPHAGE_DRAIN_AMOUNT
 #undef BLOOD_DRAIN_MULTIPLIER_CKEY
