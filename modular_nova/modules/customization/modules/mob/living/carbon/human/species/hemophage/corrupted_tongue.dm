@@ -168,5 +168,6 @@
 	else if ((victim.blood_volume + HEMOPHAGE_DRAIN_AMOUNT) <= BLOOD_VOLUME_SURVIVE)
 		to_chat(hemophage, span_warning("A sense of hesitation gnaws: you know for certain that taking much more blood from [victim] WILL kill them. <b>...but another part of you sees only opportunity.</b>"))
 
+
 #undef HEMOPHAGE_DRAIN_AMOUNT
 #undef BLOOD_DRAIN_MULTIPLIER_CKEY
