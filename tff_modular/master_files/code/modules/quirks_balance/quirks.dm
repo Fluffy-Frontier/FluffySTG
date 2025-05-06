@@ -1,4 +1,4 @@
-/// БЛЭКЛИСТЫ ДЛЯ РАСЫ
+/// БЛЭКЛИСТЫ ДЛЯ РАС
 
 /datum/quirk/item_quirk/food_allergic/is_species_appropriate(datum/species/mob_species)
 	var/datum/species_traits = GLOB.species_prototypes[mob_species].inherent_traits

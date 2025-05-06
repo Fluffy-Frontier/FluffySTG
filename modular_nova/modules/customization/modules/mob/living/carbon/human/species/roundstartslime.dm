@@ -349,9 +349,6 @@
 		// if(slime.health < slime.maxHealth)
 		// 	new /obj/effect/temp_visual/heal(get_turf(slime), COLOR_EFFECT_HEAL_RED)
 
-		slime.blood_volume -= 1 * seconds_per_tick // Всегда стремится к норме в 560
-		slime.reagents.add_reagent(/datum/reagent/consumable/sugar, 1 * seconds_per_tick) // Взамен даёт сахар
-
 /**
 * SLIME CLEANING ABILITY -
 * When toggled, slimes clean themselves and their equipment.
