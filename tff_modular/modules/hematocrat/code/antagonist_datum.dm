@@ -20,16 +20,15 @@
 	owner.special_role = special_role
 
 /datum/antagonist/hematocrat/on_removal()
-	. = ..()
 	owner.special_role = null
 	return ..()
 
 /datum/antagonist/hematocrat/Destroy()
-	. = ..()
 	QDEL_NULL(class)
 	QDEL_NULL(heart)
 	QDEL_NULL(flesh)
 	QDEL_NULL(harvest)
+	return ..()
 
 /datum/antagonist/hematocrat/apply_innate_effects(mob/living/mob_override)
 	. = ..()
@@ -88,8 +87,8 @@
 	convert.Remove(the_mob)
 
 /datum/antagonist/hematocrat/leader/Destroy()
-	. = ..()
 	QDEL_NULL(convert)
+	return ..()
 
 // Команда
 /datum/team/hematocrats
