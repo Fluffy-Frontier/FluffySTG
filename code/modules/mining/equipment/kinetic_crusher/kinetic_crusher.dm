@@ -50,8 +50,10 @@
 	var/backstab_bonus = 30
 	/// Used by retool kits when changing the crusher's appearance
 	var/current_inhand_icon_state = "crusher"
+	/// The file in which our projectile icon resides
+	var/projectile_icon = 'icons/obj/weapons/guns/projectiles.dmi'
 	/// Used by retool kits when changing the crusher's projectile sprite
-	var/projectile_icon = "pulse1"
+	var/projectile_icon_state = "pulse1"
 	/// Wielded damage we deal, aka our "real" damage
 	var/force_wielded = 20
 
