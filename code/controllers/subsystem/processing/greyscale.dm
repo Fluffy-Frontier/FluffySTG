@@ -2,7 +2,7 @@
 /// IconForge is 250x times faster but requires storing the icons in tmp/ and may result in higher asset transport.
 /// Note that the builtin GAGS editor still uses the 'legacy' generation to allow for debugging.
 /// IconForge also does not support the color matrix layer type or the 'or' blend_mode, however both are currently unused.
-#define USE_RUSTG_ICONFORGE_GAGS
+// #define USE_RUSTG_ICONFORGE_GAGS
 
 PROCESSING_SUBSYSTEM_DEF(greyscale)
 	name = "Greyscale"
@@ -107,4 +107,4 @@ PROCESSING_SUBSYSTEM_DEF(greyscale)
 	for(var/color in 2 to length(split_colors))
 		. += "#[split_colors[color]]"
 
-#undef USE_RUSTG_ICONFORGE_GAGS
+// #undef USE_RUSTG_ICONFORGE_GAGS
