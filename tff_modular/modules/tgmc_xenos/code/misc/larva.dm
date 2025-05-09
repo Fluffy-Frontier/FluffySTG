@@ -1,22 +1,34 @@
 /// TGMC_XENOS (old nova sector xenos)
 
+// Подтип фейсхаггера
+/obj/item/clothing/mask/facehugger/tgmc
+	embryo_path = /obj/item/organ/body_egg/alien_embryo/tgmc
+
+/obj/item/clothing/mask/facehugger/tgmc/proc/ProximityLeap(range = 1)
+	for(var/mob/M in range(range, src))
+		if(!CanHug(M))
+			continue
+		Leap(M)
+		return TRUE
+	return FALSE
+
+// То же самое, но для эмбриона ларвочки
+/obj/item/organ/body_egg/alien_embryo/tgmc
+	larva_path = /mob/living/carbon/alien/larva/tgmc
+
+
+// Наша собственная ларвочка. Крутая!
 /mob/living/carbon/alien/larva/tgmc
 
 /mob/living/carbon/alien/larva/tgmc/Initialize(mapload)
 	. = ..()
-
 	for(var/datum/action/cooldown/alien/larva_evolve/action in actions)
 		if(istype(action))
 			action.Remove(src)
 
-	var/static/list/innate_actions = list(
-		/datum/action/cooldown/alien/larva_evolve/tgmc,
-	)
-	grant_actions_by_list(innate_actions)
+	GRANT_ACTION(/datum/action/cooldown/alien/larva_evolve/tgmc)
 
-	return
-
-
+// Способность, которая позволяет эволюционировать ларве в большого ксеноса
 /datum/action/cooldown/alien/larva_evolve/tgmc/Activate(atom/target)
 	var/static/list/caste_options
 	if(!caste_options)
