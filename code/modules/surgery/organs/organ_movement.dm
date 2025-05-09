@@ -183,6 +183,10 @@
 	SEND_SIGNAL(organ_owner, COMSIG_CARBON_LOSE_ORGAN, src, special)
 	ADD_TRAIT(src, TRAIT_USED_ORGAN, ORGAN_TRAIT)
 
+// FLUFFY FRONTIER ADDITION - Now the organs whose owners were minded are marked with a special trait.
+	if(organ_owner?.mind)
+		ADD_TRAIT(src, TRAIT_MINDED_ORGAN, ORGAN_TRAIT)
+// FLUFFY FRONTIER ADDITION END
 	organ_owner.synchronize_bodytypes()
 	organ_owner.synchronize_bodyshapes()
 	if(!special)
