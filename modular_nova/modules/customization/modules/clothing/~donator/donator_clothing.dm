@@ -704,9 +704,7 @@
 
 /obj/item/storage/belt/sabre/darksabre/Initialize(mapload)
 	. = ..()
-	atom_storage.set_holdable(list(
-		/obj/item/toy/darksabre
-		))
+	atom_storage.set_holdable(/obj/item/toy/darksabre)
 
 /obj/item/storage/belt/sabre/darksabre/PopulateContents()
 	new /obj/item/toy/darksabre(src)
@@ -1058,7 +1056,7 @@
 // Donation reward for Raxraus
 /obj/item/clothing/shoes/combat/rax
 	name = "tactical boots"
-	desc = "Tactical and sleek. This model seems to resemble Armadyne's."
+	desc = "Tactical and sleek. This model seems to resemble an armament manufacturer retired long ago."
 	icon = 'modular_nova/master_files/icons/obj/clothing/shoes.dmi'
 	worn_icon = 'modular_nova/master_files/icons/mob/clothing/feet.dmi'
 	worn_icon_digi = 'modular_nova/master_files/icons/mob/clothing/feet_digi.dmi'

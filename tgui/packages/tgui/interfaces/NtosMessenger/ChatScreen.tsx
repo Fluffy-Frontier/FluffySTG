@@ -161,7 +161,7 @@ export class ChatScreen extends Component<ChatScreenProps, ChatScreenState> {
     setTimeout(() => this.setState({ canSend: true }), SEND_COOLDOWN_MS);
   }
 
-  handleMessageInput(_: any, val: string) {
+  handleMessageInput(val: string) {
     this.setState({ message: val });
   }
   // NOVA EDIT ADDITION START
@@ -314,7 +314,6 @@ export class ChatScreen extends Component<ChatScreenProps, ChatScreenState> {
                   pt={1}
                   onClick={() => act('PDA_clearPhoto')}
                   tooltip="Remove attachment"
-                  tooltipPosition="auto-end"
                 >
                   <Image src={selectedPhoto} />
                 </Button>
@@ -322,16 +321,16 @@ export class ChatScreen extends Component<ChatScreenProps, ChatScreenState> {
             )}
             <Stack.Item>
               <Stack fill align="center">
-                <Stack.Item grow={1}>
+                <Stack.Item grow>
                   <Input
                     placeholder={`Send message to ${recipient.name}...`}
                     fluid
                     autoFocus
-                    width="100%"
                     value={message}
                     maxLength={1024}
-                    onInput={this.handleMessageInput}
+                    onChange={this.handleMessageInput}
                     onEnter={this.handleSendMessage}
+                    selfClear
                   />
                 </Stack.Item>
                 {buttons}

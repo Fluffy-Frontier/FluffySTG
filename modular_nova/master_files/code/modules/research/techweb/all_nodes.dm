@@ -14,6 +14,7 @@
 		"cybernetic_heart_anomalock", //FLUFFY FRONTIER Combat Heart balance
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_2_POINTS)
+	announce_channels = list(RADIO_CHANNEL_SCIENCE, RADIO_CHANNEL_MEDICAL)
 
 /datum/techweb_node/borg_shapeshifter
 	id = TECHWEB_NODE_BORG_SHAPESHIFTER
@@ -163,22 +164,10 @@
 	)
 	return ..()
 
-/datum/techweb_node/gene_engineering/New()
+/datum/techweb_node/medbay_equip_adv/New()
 	design_ids += list(
 		"self_actualization_device",
 	)
-	return ..()
-
-/datum/techweb_node/xenobiology/New()
-	// QOL - Makes cytology experiment a discount rather than required experiment
-	required_experiments -= list(/datum/experiment/scanning/random/cytology)
-	discount_experiments += list(/datum/experiment/scanning/random/cytology)
-	return ..()
-
-/datum/techweb_node/selection/New()
-	// QOL - Makes wild harvest experiment a discount rather than required experiment
-	required_experiments -= list(/datum/experiment/scanning/random/plants/wild)
-	discount_experiments += list(/datum/experiment/scanning/random/plants/wild)
 	return ..()
 
 /datum/techweb_node/cyber/cyber_organs/New()
