@@ -706,7 +706,7 @@
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/under/syndicate/combat,
 /obj/item/clothing/head/helmet/swat/ds,
-/obj/item/clothing/suit/armor/vest/alt/sec/redsec,
+/obj/item/clothing/suit/armor/vest/alt/sec,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/interdyne_planetary_base/main)
 "dw" = (
@@ -1429,7 +1429,7 @@
 	dir = 9
 	},
 /obj/structure/closet/syndicate,
-/obj/item/clothing/suit/armor/vest/alt/sec/redsec,
+/obj/item/clothing/suit/armor/vest/alt/sec,
 /obj/item/clothing/head/helmet/swat/ds,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/under/syndicate/combat,
@@ -5116,7 +5116,7 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/head/helmet/swat/ds,
 /obj/item/clothing/mask/gas/sechailer/swat,
-/obj/item/clothing/suit/armor/vest/alt/sec/redsec,
+/obj/item/clothing/suit/armor/vest/alt/sec,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
@@ -6188,7 +6188,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/door/airlock/security/old{
+/obj/machinery/door/airlock/security{
 	name = "Isolation Airlock"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
@@ -6852,7 +6852,7 @@
 /turf/open/floor/grass,
 /area/ruin/interdyne_planetary_base/main)
 "Iw" = (
-/obj/machinery/door/airlock/security/old{
+/obj/machinery/door/airlock/security{
 	name = "Deck Officer Quarters";
 	id_tag = "interdyneofficerroom"
 	},
@@ -9438,7 +9438,6 @@
 	name = "Interdyne ammunitions workbench";
 	color = "#adadcd"
 	},
-/obj/item/disk/ammo_workbench/advanced,
 /obj/machinery/camera/xray/directional/north{
 	color = "#adadcd";
 	name = "Inderdyne security camera";

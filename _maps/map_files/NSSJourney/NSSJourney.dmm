@@ -396,7 +396,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/qm)
 "aeb" = (
@@ -3346,6 +3346,7 @@
 	name = "Kitchen Service Hall"
 	},
 /obj/effect/mapping_helpers/airlock/access/any/service/kitchen,
+/obj/structure/plasticflaps/kitchen,
 /turf/open/floor/iron/showroomfloor,
 /area/station/hallway/secondary/service)
 "aAh" = (
@@ -6052,7 +6053,7 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/port)
 "aNV" = (
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/railing,
 /turf/open/floor/wood,
@@ -6680,7 +6681,7 @@
 /turf/open/floor/iron,
 /area/station/commons/locker)
 "aQX" = (
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /turf/open/floor/iron/dark/smooth_large{
 	icon_state = "textured_dark_large"
 	},
@@ -8668,7 +8669,7 @@
 /turf/open/floor/iron/freezer,
 /area/station/commons/toilet/locker)
 "aZu" = (
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /turf/open/floor/wood,
 /area/station/command/meeting_room)
 "aZv" = (
@@ -10974,7 +10975,7 @@
 /turf/open/floor/iron,
 /area/station/cargo/sorting)
 "bju" = (
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/iron,
 /area/station/cargo/office)
@@ -14596,7 +14597,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/hop)
@@ -15521,6 +15522,7 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
 /obj/effect/mapping_helpers/airlock/access/any/science/rd,
+/obj/structure/plasticflaps/kitchen,
 /turf/open/floor/iron/dark,
 /area/station/science/server)
 "bAC" = (
@@ -22161,7 +22163,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
 "ccI" = (
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /turf/open/floor/iron/dark/textured,
 /area/station/science/breakroom)
 "ccM" = (
@@ -27995,7 +27997,7 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
 "cPk" = (
-/obj/machinery/photocopier{
+/obj/machinery/photocopier/prebuilt{
 	pixel_y = 3
 	},
 /turf/open/floor/iron/dark,
@@ -29487,7 +29489,7 @@
 	},
 /area/station/commons/dorms)
 "dHo" = (
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/break_room)
 "dHq" = (
@@ -31548,7 +31550,7 @@
 /turf/open/floor/iron/dark,
 /area/station/security/execution)
 "eTT" = (
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /turf/open/floor/wood/tile,
 /area/station/security/detectives_office)
 "eUy" = (
@@ -31669,6 +31671,14 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/yellow/visible,
 /turf/open/floor/iron,
 /area/station/science/ordnance)
+"eZB" = (
+/obj/machinery/button/door/directional/west{
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	id = "xenobiocold"
+	},
+/turf/open/floor/iron/white,
+/area/station/science/xenobiology)
 "faF" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/structure/railing{
@@ -34798,6 +34808,7 @@
 "gWy" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/structure/cable,
+/obj/structure/plasticflaps/kitchen,
 /turf/open/floor/iron/dark,
 /area/station/tcommsat/computer)
 "gWT" = (
@@ -47869,6 +47880,8 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable,
+/obj/structure/rack,
+/obj/effect/spawner/random/techstorage/custom_shuttle,
 /turf/open/floor/iron,
 /area/station/engineering/storage/tech)
 "oTh" = (
@@ -49693,7 +49706,7 @@
 "qcm" = (
 /obj/machinery/cryopod,
 /obj/machinery/light/directional/north,
-/obj/machinery/time_clock/directional/north,
+/obj/machinery/modular_computer/preset/time_clock/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/common/cryopods)
 "qcN" = (
@@ -50677,7 +50690,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock/security/old/glass{
+/obj/machinery/door/airlock/security/glass{
 	name = "Correction Officer Lounge"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/security/brig,
@@ -50756,7 +50769,7 @@
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "qIj" = (
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /turf/open/floor/carpet/green,
 /area/station/command/heads_quarters/nt_rep)
 "qIl" = (
@@ -51564,11 +51577,13 @@
 /area/station/commons/vacant_room)
 "rjh" = (
 /obj/machinery/door/airlock/research{
-	name = "Xenobiology Lab"
+	name = "Xenobiology Lab";
+	id_tag = "xenobiocold"
 	},
 /obj/effect/mapping_helpers/airlock/access/any/science/xenobio,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
+/obj/structure/plasticflaps/kitchen,
 /turf/open/floor/iron/white,
 /area/station/science/xenobiology)
 "rjn" = (
@@ -58917,7 +58932,7 @@
 "vHL" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable,
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /turf/open/floor/wood/large,
 /area/station/service/lawoffice)
 "vHR" = (
@@ -61028,7 +61043,7 @@
 	pixel_y = -32
 	},
 /obj/machinery/light/directional/south,
-/obj/machinery/photocopier{
+/obj/machinery/photocopier/prebuilt{
 	pixel_y = 3
 	},
 /turf/open/floor/iron/dark/small,
@@ -61666,6 +61681,7 @@
 	name = "Kitchen Cold Room"
 	},
 /obj/effect/mapping_helpers/airlock/access/any/service/kitchen,
+/obj/structure/plasticflaps/kitchen,
 /turf/open/floor/iron/showroomfloor,
 /area/station/service/kitchen)
 "xvf" = (
@@ -106624,7 +106640,7 @@ wUr
 ccP
 bMi
 mQw
-bMi
+eZB
 bMi
 bMi
 bMi

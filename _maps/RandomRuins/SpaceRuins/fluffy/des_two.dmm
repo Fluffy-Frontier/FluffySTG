@@ -90,8 +90,8 @@
 /obj/item/holosign_creator/atmos{
 	pixel_y = -8
 	},
-/obj/item/clothing/suit/toggle/jacket/engi,
-/obj/item/clothing/suit/toggle/jacket/engi,
+/obj/item/clothing/suit/toggle/jacket/nova/engi,
+/obj/item/clothing/suit/toggle/jacket/nova/engi,
 /obj/item/clothing/suit/hooded/wintercoat/engineering,
 /obj/machinery/light_switch/directional/west,
 /turf/open/floor/iron/dark/side{
@@ -368,7 +368,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/door/airlock/security/old{
+/obj/machinery/door/airlock/security{
 	name = "Master At Arms' Office";
 	id_tag = "smasteratarms"
 	},
@@ -1394,7 +1394,7 @@
 	},
 /area/ruin/space/has_grav/nova/des_two/engineering)
 "ee" = (
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /turf/open/floor/wood/tile,
 /area/ruin/space/has_grav/nova/des_two/service/lounge)
 "ef" = (
@@ -1526,7 +1526,7 @@
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock/security/old/glass{
+/obj/machinery/door/airlock/security/glass{
 	name = "Security Checkpoint"
 	},
 /obj/structure/cable,
@@ -2113,7 +2113,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2
 	},
-/obj/machinery/door/airlock/security/old{
+/obj/machinery/door/airlock/security{
 	name = "Security"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
@@ -2834,7 +2834,7 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/security/old{
+/obj/machinery/door/airlock/security{
 	hackProof = 1;
 	name = "Long-Term Brig"
 	},
@@ -4656,7 +4656,7 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/security/old{
+/obj/machinery/door/airlock/security{
 	hackProof = 1;
 	name = "Long-Term Brig"
 	},
@@ -4901,7 +4901,7 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/security/old{
+/obj/machinery/door/airlock/security{
 	hackProof = 1;
 	name = "Long-Term Brig"
 	},
@@ -4973,7 +4973,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/machinery/vending/wardrobe/sec_wardrobe/red,
+/obj/machinery/vending/security,
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/nova/des_two/service/dorms)
 "qC" = (
@@ -5838,7 +5838,7 @@
 /area/ruin/space/has_grav/nova/des_two/cargo/hangar)
 "tw" = (
 /obj/effect/turf_decal/trimline/dark/filled/line,
-/obj/machinery/vending/wardrobe/sec_wardrobe/red,
+/obj/machinery/vending/security,
 /obj/structure/marker_beacon/burgundy,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/security)
@@ -6876,7 +6876,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/door/airlock/security/old{
+/obj/machinery/door/airlock/security{
 	name = "Armory"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
@@ -10942,7 +10942,7 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/door/airlock/security/old{
+/obj/machinery/door/airlock/security{
 	name = "Security"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
@@ -12548,7 +12548,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock/security/old/glass{
+/obj/machinery/door/airlock/security/glass{
 	name = "Security Checkpoint"
 	},
 /obj/structure/cable,
@@ -12625,8 +12625,8 @@
 	desc = "An armband, worn by the FOB's operatives to display which department they're assigned to.";
 	name = "researcher armband"
 	},
-/obj/item/clothing/suit/toggle/jacket/sci,
-/obj/item/clothing/suit/toggle/jacket/sci,
+/obj/item/clothing/suit/toggle/jacket/nova/sci,
+/obj/item/clothing/suit/toggle/jacket/nova/sci,
 /obj/item/clothing/suit/hooded/wintercoat/science,
 /obj/effect/turf_decal/tile/purple/full,
 /obj/machinery/firealarm/directional/north,
@@ -13764,7 +13764,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock/security/old/glass{
+/obj/machinery/door/airlock/security/glass{
 	name = "Security Checkpoint"
 	},
 /obj/structure/cable,
@@ -15035,12 +15035,12 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/medbay)
 "Wk" = (
-/obj/item/disk/ammo_workbench/advanced,
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
 /obj/machinery/light_switch/directional/east,
 /obj/machinery/ammo_workbench,
+/obj/item/ammo_workbench_module/lethal_super,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/nova/des_two/security/armory)
 "Wm" = (
@@ -15700,7 +15700,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/door/airlock/security/old{
+/obj/machinery/door/airlock/security{
 	name = "Security"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,

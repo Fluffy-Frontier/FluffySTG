@@ -22,14 +22,33 @@
 	/// Is the lock busted?
 	var/broken_lock = FALSE
 
+/datum/storage/collar
+	max_slots = 1
+	max_specific_storage = WEIGHT_CLASS_SMALL
+	do_rustle = FALSE
+	attack_hand_interact = FALSE
+
+/datum/storage/collar/New(atom/parent, max_slots, max_specific_storage, max_total_storage, list/holdables)
+	. = ..()
+	if(length(holdables))
+		set_holdable(holdables)
+		return
+
+	set_holdable(list(
+		/obj/item/food/cookie,
+	))
+
+/datum/storage/collar/key/New(atom/parent, max_slots, max_specific_storage, max_total_storage, list/holdables)
+	holdables = list(
+		/obj/item/food/cookie,
+		/obj/item/key/collar,
+	)
+	return ..()
+
 /obj/item/clothing/neck/collar/Initialize(mapload)
 	. = ..()
 	// First; create our internal matching key
-	create_storage(storage_type = /datum/storage/pockets/small)
-	atom_storage.set_holdable(list(
-		/obj/item/key/collar,
-	))
-
+	create_storage(storage_type = /datum/storage/collar/key)
 	if(!key_path)
 		return
 	var/obj/item/key/collar/key = new key_path(src)
@@ -57,7 +76,7 @@
 		to_chat(user, span_warning("[to_lock ? "The collar locks with a resounding click!" : "The collar unlocks with a small clunk."]"))
 		locked = to_lock
 		return
-	to_chat(user, span_warning("It looks like the lock is broken_lock - now it's just an ordinary old collar."))
+	to_chat(user, span_warning("It looks like the lock is busted - now it's just an ordinary old collar."))
 	locked = FALSE
 
 /obj/item/clothing/neck/collar/tool_act(mob/living/user, obj/item/tool, list/modifiers)
@@ -73,7 +92,7 @@
 /obj/item/clothing/neck/collar/screwdriver_act(mob/living/user, obj/item/tool)
 	. = ..()
 	if(broken_lock)
-		to_chat(user, span_warning("The lock is already broken_lock!"))
+		to_chat(user, span_warning("The lock is already broken!"))
 		return
 	to_chat(user, span_warning("You jam your screwdriver into the lock, searching to exploit the tension..."))
 	if(!do_after(user, 3 SECONDS, user))
