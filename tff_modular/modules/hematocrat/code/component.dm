@@ -40,26 +40,25 @@
 	if (!HAS_TRAIT(we_ate_heart, TRAIT_USED_ORGAN))
 		to_chat(eater, span_warning("This heart is utterly lifeless, you won't receive any boons from consuming it!"))
 		return
+	if (!HAS_TRAIT(we_ate_heart, TRAIT_MINDED_ORGAN))
+		to_chat(eater, span_warning("This heart is utterly lifeless, you won't receive any boons from consuming it!"))
+		return FALSE
+
 	bites_taken = 0
 
 	last_heart_we_ate = WEAKREF(we_ate_heart)
 	bites_taken++
 	if(bites_taken < (we_ate_heart.reagents.total_volume/2))
 		return
-	if(prob(50))
-		perfect_heart(eater)
-		return
-	not_perfect_heart(eater)
+	perfect_heart(eater)
 
 /datum/component/heart_eater_hematocrat/proc/perfect_heart(mob/living/carbon/human/eater)
 	healing_heart(eater)
 	to_chat(eater, span_warning("This heart is perfect. You feel a surge of vital energy."))
 
-///Not Perfect heart give random mutation.
 /datum/component/heart_eater_hematocrat/proc/not_perfect_heart(mob/living/carbon/human/eater)
 	to_chat(eater, span_warning("This heart is not perfect. You feel nothing."))
 
-///Heart eater give also strong healing from hearts.
 /datum/component/heart_eater_hematocrat/proc/healing_heart(mob/living/carbon/human/eater)
 	eater.adjustBruteLoss(-30)
 	eater.adjustFireLoss(-30)

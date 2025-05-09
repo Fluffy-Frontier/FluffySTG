@@ -4,5 +4,7 @@
 #define TRAIT_XENO_ABILITY_GIVEN "xeno_ability_given"
 /// Determines if something can receive healing from a xeno
 #define TRAIT_XENO_HEAL_AURA "trait_xeno_heal_aura"
-
+/// The owner of the trait is a hematocrat
 #define TRAIT_HEMATOCRAT "trait_hematocrat"
+/// trait for organ that has minded owner
+#define TRAIT_MINDED_ORGAN "trait_minded_organ"

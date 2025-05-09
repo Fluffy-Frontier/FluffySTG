@@ -52,28 +52,28 @@
 	cooldown_time = 0.5 SECONDS
 	melee_cooldown_time = 0 SECONDS
 	click_to_activate = FALSE
+	var/static/list/vision_traits = list(TRAIT_TRUE_NIGHT_VISION, TRAIT_NIGHT_VISION, TRAIT_HEAR_THROUGH_DARKNESS, TRAIT_BLOODSHOT_EYES, TRAIT_UNNATURAL_RED_GLOWY_EYES, TRAIT_XRAY_VISION, TRAIT_XRAY_HEARING, TRAIT_SECURITY_HUD, TRAIT_MEDICAL_HUD, TRAIT_DIAGNOSTIC_HUD)
 
 /datum/action/cooldown/bbvision/Remove(mob/living/remove_from)
 	if(HAS_TRAIT(remove_from, TRAIT_BLOODSHOT_EYES))
-		remove_from.remove_traits(list(TRAIT_TRUE_NIGHT_VISION, TRAIT_NIGHT_VISION, TRAIT_HEAR_THROUGH_DARKNESS, TRAIT_BLOODSHOT_EYES, TRAIT_UNNATURAL_RED_GLOWY_EYES, TRAIT_XRAY_VISION, TRAIT_XRAY_HEARING, TRAIT_SECURITY_HUD, TRAIT_MEDICAL_HUD, TRAIT_DIAGNOSTIC_HUD), ACTION_TRAIT)
+		remove_from.remove_traits(vision_traits, ACTION_TRAIT)
 		remove_from.update_sight() // При получении трейтов на зрение, игра не обнаруживает их сразу, поэтому нужно обновить состояние зрения чтобы зрение появлилось.
 	return ..()
 
 /datum/action/cooldown/bbvision/Activate(atom/target)
 	if(HAS_TRAIT(owner, TRAIT_BLOODSHOT_EYES))
 		owner.balloon_alert(owner, "Assassin vision removed")
-		owner.remove_traits(list(TRAIT_TRUE_NIGHT_VISION, TRAIT_NIGHT_VISION, TRAIT_HEAR_THROUGH_DARKNESS, TRAIT_BLOODSHOT_EYES, TRAIT_UNNATURAL_RED_GLOWY_EYES, TRAIT_XRAY_VISION, TRAIT_XRAY_HEARING, TRAIT_SECURITY_HUD, TRAIT_MEDICAL_HUD, TRAIT_DIAGNOSTIC_HUD), ACTION_TRAIT)
-		owner.update_sight()
+		owner.remove_traits(vision_traits, ACTION_TRAIT)
 
 	else
 		owner.balloon_alert(owner, "Assassin vision activated")
-		owner.add_traits(list(TRAIT_TRUE_NIGHT_VISION, TRAIT_NIGHT_VISION, TRAIT_HEAR_THROUGH_DARKNESS, TRAIT_BLOODSHOT_EYES, TRAIT_UNNATURAL_RED_GLOWY_EYES, TRAIT_XRAY_VISION, TRAIT_XRAY_HEARING, TRAIT_SECURITY_HUD, TRAIT_MEDICAL_HUD, TRAIT_DIAGNOSTIC_HUD), ACTION_TRAIT)
-		owner.update_sight()
+		owner.add_traits(vision_traits, ACTION_TRAIT)
 
+	owner.update_sight()
 	return TRUE
 
 // Дым. Создает красное облако дыма на уровне облака священника.
-/datum/action/cooldown/spell/smoke/lesser/bbsmoke
+/datum/action/cooldown/spell/smoke/bbsmoke
 	name = "boil the blood"
 	desc = "Creates a red cloud in a radius around."
 	background_icon = 'icons/mob/actions/backgrounds.dmi'
