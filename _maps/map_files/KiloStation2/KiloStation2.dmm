@@ -7491,7 +7491,7 @@
 /turf/open/floor/iron/dark,
 /area/station/service/chapel/monastery)
 "cvm" = (
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/requests_console/directional/south{
 	department = "Law Office";
@@ -11522,7 +11522,7 @@
 	},
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/north,
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
@@ -11616,7 +11616,7 @@
 /area/station/service/hydroponics)
 "dPn" = (
 /obj/structure/cable,
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /obj/effect/turf_decal/tile/neutral/opposingcorners,
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 1
@@ -13154,7 +13154,7 @@
 /obj/machinery/light_switch/directional/south{
 	pixel_x = 26
 	},
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /obj/effect/turf_decal/tile/red,
 /turf/open/floor/iron,
 /area/station/security/office)
@@ -26866,8 +26866,7 @@
 /area/station/engineering/atmos)
 "iAX" = (
 /obj/structure/table,
-/obj/item/storage/toolbox/electrical,
-/obj/item/multitool,
+/obj/effect/spawner/random/techstorage/custom_shuttle,
 /turf/open/floor/engine,
 /area/station/engineering/storage/tech)
 "iBc" = (
@@ -33616,7 +33615,7 @@
 /area/station/maintenance/starboard)
 "kOb" = (
 /obj/machinery/light/small/directional/west,
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /obj/effect/turf_decal/bot_white,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb,
@@ -39089,8 +39088,8 @@
 /area/station/security/prison/garden)
 "myS" = (
 /obj/effect/turf_decal/box,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/structure/cable,
+/obj/structure/plasticflaps/kitchen,
 /turf/open/floor/engine,
 /area/station/tcommsat/computer)
 "myU" = (
@@ -41193,7 +41192,7 @@
 /turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
 "niy" = (
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /obj/effect/turf_decal/box/white,
 /obj/machinery/newscaster/directional/west,
 /obj/effect/turf_decal/tile/neutral/anticorner/contrasted,
@@ -41317,7 +41316,6 @@
 /obj/machinery/door/airlock/engineering/glass{
 	name = "Server Room"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -42320,7 +42318,7 @@
 /turf/open/floor/iron/showroomfloor,
 /area/station/science/ordnance)
 "nDS" = (
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 1
@@ -45920,7 +45918,7 @@
 /obj/structure/sign/painting/library{
 	pixel_x = 32
 	},
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /obj/item/radio/intercom/directional/south,
 /obj/effect/turf_decal/box/white,
 /obj/effect/turf_decal/tile/neutral/opposingcorners,
@@ -53375,6 +53373,7 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/dark/visible,
 /obj/effect/mapping_helpers/airlock/access/all/science/rd,
+/obj/structure/plasticflaps/kitchen,
 /turf/open/floor/iron/dark,
 /area/station/science/server)
 "roI" = (
@@ -56096,6 +56095,8 @@
 	pixel_y = 6
 	},
 /obj/item/stock_parts/power_store/cell/high,
+/obj/item/storage/toolbox/electrical,
+/obj/item/multitool,
 /turf/open/floor/engine,
 /area/station/engineering/storage/tech)
 "seW" = (
@@ -56434,7 +56435,7 @@
 /turf/open/floor/grass,
 /area/station/service/hydroponics/garden)
 "sli" = (
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /obj/machinery/button/door/directional/north{
 	id = "nt_rep_priv_2";
 	name = "Privacy Shutters Control"
@@ -64553,7 +64554,6 @@
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance/office)
 "uMf" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
 /obj/effect/turf_decal/stripes/line{
@@ -65570,7 +65570,7 @@
 	dir = 1
 	},
 /obj/machinery/camera/directional/east,
-/obj/machinery/time_clock/directional/east,
+/obj/machinery/modular_computer/preset/time_clock/directional/east,
 /obj/item/kirbyplants/random,
 /turf/open/floor/iron/dark,
 /area/station/common/cryopods)
@@ -72442,7 +72442,7 @@
 "xiA" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
 	dir = 1
@@ -74865,7 +74865,7 @@
 /area/station/science/ordnance/bomb)
 "xVH" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /obj/item/newspaper{
 	pixel_x = 4;
 	pixel_y = 4
