@@ -4,6 +4,13 @@
 	w_class = WEIGHT_CLASS_BULKY
 	icon = 'tff_modular/modules/security_rearm/icons/pouches.dmi'
 	icon_state = "tac_security"
+	storage_type = /datum/storage/pouch/medical/tac_sec
+
+/datum/storage/pouch/medical/tac_sec
+	max_specific_storage = WEIGHT_CLASS_SMALL
+	max_slots = 6
+	max_total_storage = 12
+
 	var/static/list/pouch_holdables = list(
 		/obj/item/healthanalyzer,
 		/obj/item/dnainjector,
@@ -26,14 +33,9 @@
 		/obj/item/storage/wallet,
 	)
 
-
-
-/obj/item/storage/pouch/medical/tac_security/Initialize(mapload)
+/datum/storage/pouch/medical/tac_sec/New()
 	. = ..()
-	atom_storage.max_specific_storage = WEIGHT_CLASS_SMALL
-	atom_storage.max_slots = 6
-	atom_storage.max_total_storage = 12
-	atom_storage.set_holdable(pouch_holdables, pouch_unholdables)
+	set_holdable(pouch_holdables, pouch_unholdables)
 
 /obj/item/storage/pouch/medical/tac_security/loaded/Initialize(mapload)
 	. = ..()
@@ -51,20 +53,22 @@
 	name = "security maintenance kit"
 	desc = "Standard-issue maintenance kit issued to NanoTrasen synthetic security operatives. Stored in a pocket pouch for ease of access."
 	icon_state = "tac_security_synth"
+	storage_type = /datum/storage/pouch/medical/tac_sec/synth
 
-/obj/item/storage/pouch/medical/tac_security/synth/Initialize(mapload)
-	. = ..()
-	var/static/list/synth_med_pouch_holdables = med_pouch_holdables + list(
+/datum/storage/pouch/medical/tac_sec/synth
+	var/static/list/synth_pouch_holdables = list(
 		/obj/item/stack/cable_coil,
 		/obj/item/weldingtool,
 	)
-	atom_storage.set_holdable(synth_med_pouch_holdables)
+/datum/storage/pouch/medical/tac_sec/synth/New()
+	. = ..()
+	set_holdable(pouch_holdables + synth_pouch_holdables, pouch_unholdables)
 
 /obj/item/storage/pouch/medical/tac_security/synth/loaded/Initialize(mapload)
 	. = ..()
 	var/static/items_inside = list(
 		/obj/item/stack/medical/gauze = 1,
-		/obj/item/stack/medical/synth_repair = 2,
+		/obj/item/stack/medical/synth_repair = 1,
 		/obj/item/stack/medical/wound_recovery/robofoam = 1,
 		/obj/item/reagent_containers/hypospray/medipen/deforest/robot_system_cleaner = 1,
 		/obj/item/reagent_containers/hypospray/medipen/deforest/coagulants = 1,
