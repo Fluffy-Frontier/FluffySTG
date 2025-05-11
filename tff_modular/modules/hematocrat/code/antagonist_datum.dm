@@ -6,7 +6,7 @@
 	job_rank = ROLE_HEMATOCRAT
 	hijack_speed = 1
 	show_to_ghosts = TRUE
-	// ui_name = "AntagInfoHematocrat" // скоро будет добавлено.
+	ui_name = "AntagInfoHematocrat" // скоро будет добавлено.
 	var/special_role = ROLE_HEMATOCRAT
 	var/datum/team/hematocrats/hematocrat_team
 	hud_icon = 'tff_modular/modules/hematocrat/icons/hematocrathud.dmi'
@@ -14,6 +14,7 @@
 	var/datum/action/cooldown/spell/conjure/heart/heart = new
 	var/datum/action/cooldown/spell/summon_flesh/flesh = new
 	var/datum/action/cooldown/spell/touch/flesh_harvest/harvest = new
+	var/datum/action/cooldown/spell/touch/flesh_transform/transform = new
 
 /datum/antagonist/hematocrat/on_gain()
 	. = ..()
@@ -28,6 +29,7 @@
 	QDEL_NULL(heart)
 	QDEL_NULL(flesh)
 	QDEL_NULL(harvest)
+	QDEL_NULL(transform)
 	return ..()
 
 /datum/antagonist/hematocrat/apply_innate_effects(mob/living/mob_override)
@@ -41,6 +43,7 @@
 	heart.Grant(the_mob)
 	flesh.Grant(the_mob)
 	harvest.Grant(the_mob)
+	transform.Grant(the_mob)
 
 /datum/antagonist/hematocrat/remove_innate_effects(mob/living/mob_override)
 	. = ..()
@@ -53,6 +56,7 @@
 	heart.Remove(the_mob)
 	flesh.Remove(the_mob)
 	harvest.Remove(the_mob)
+	transform.Remove(the_mob)
 
 /datum/antagonist/hematocrat/get_team()
 	return hematocrat_team

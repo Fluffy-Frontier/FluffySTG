@@ -74,7 +74,8 @@
 /datum/action/cooldown/spell/touch/flesh_restoration
 	name = "flesh Restoration"
 	desc = "Restores target brute, burn and toxin damage in short time."
-	button_icon_state = "zapper"
+	button_icon = 'icons/mob/actions/actions_changeling.dmi'
+	button_icon_state = "fleshmend"
 	background_icon = 'icons/mob/actions/backgrounds.dmi'
 	background_icon_state = "bg_fugu"
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
@@ -83,6 +84,7 @@
 	hand_path = /obj/item/melee/touch_attack/flesh_restoration
 	can_cast_on_self = TRUE
 	spell_requirements = NONE
+	invocation_type = NONE
 
 /obj/item/melee/touch_attack/flesh_restoration
 	name = "flesh restoration"

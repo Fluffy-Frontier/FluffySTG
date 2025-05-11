@@ -14,7 +14,7 @@
 	melee_cooldown_time = 0 SECONDS
 	click_to_activate = FALSE
 	/// The alpha we go to when sneaking.
-	var/sneak_alpha = 75
+	var/sneak_alpha = 50
 	/// How long it takes to become transparent
 	var/animation_time = 0.5 SECONDS
 
@@ -82,6 +82,7 @@
 	overlay_icon_state = "bg_fugu_border"
 	cooldown_time = 20 SECONDS
 	smoke_type = /datum/effect_system/fluid_spread/smoke/bloody
+	smoke_amt = 2
 
 
 /datum/effect_system/fluid_spread/smoke/bloody

@@ -243,20 +243,96 @@
 	icon_state = "disintegrate"
 	inhand_icon_state = "disintegrate"
 
-// В разработке.
-/*
 /datum/action/cooldown/spell/touch/flesh_transform
 	name = "Flesh Transform"
-	desc = "A touch spell that allows you to transform targets heart into random one."
+	desc = "A touch spell that allows you to transform targets heart into random one. If the target is dead and not a hematocrat, you can revive target using this spell."
 	background_icon = 'icons/mob/actions/backgrounds.dmi'
 	background_icon_state = "bg_fugu"
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
 	overlay_icon_state = "bg_fugu_border"
-	button_icon = 'icons/mob/actions/actions_ecult.dmi'
+	button_icon = 'icons/mob/actions/actions_changeling.dmi'
+	button_icon_state = "sting_transform"
 	sound = null
-
 	school = SCHOOL_FORBIDDEN
 	cooldown_time = 60 SECONDS
 	invocation_type = INVOCATION_NONE
 	spell_requirements = NONE
-*/
+	hand_path = /obj/item/melee/touch_attack/flesh_transform
+	can_cast_on_self = FALSE
+	// много переменных. ОЧЕНЬ много.
+	var/obj/item/organ/heart/cybernetic/anomalock/anomalock = new
+	var/obj/item/organ/heart/ethereal/ethereal = new
+	var/obj/item/organ/heart/cursed/cursed = new
+	var/obj/item/organ/heart/cybernetic/surplus/surplus = new
+	var/obj/item/organ/heart/freedom/freedom = new
+	var/obj/item/organ/heart/pod/podperson = new
+	var/obj/item/organ/heart/corrupt/corrupted = new
+	var/obj/item/organ/heart/nightmare/nightmare = new
+	var/obj/item/organ/heart/roach/roach = new
+	var/obj/item/organ/heart/gland/access/access = new
+	var/obj/item/organ/heart/gland/heal/heal = new
+	var/obj/item/organ/heart/gland/ventcrawling/ventcrawl = new
+	var/obj/item/organ/heart/demon/demon = new
+	var/obj/item/organ/heart/carp/akula/carpula = new
+
+/datum/action/cooldown/spell/touch/flesh_transform/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)
+	var/mob/living/carbon/human/human_victim = victim
+	if(!do_after(caster, 10 SECONDS, target = human_victim))
+		human_victim.balloon_alert(caster, "interrupted!")
+		return FALSE
+	if(ishuman(victim))
+		switch(rand(1,14))
+			if(1)
+				anomalock.Insert(human_victim)
+				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created something special out of iron and oil, and your creation will give great power to the changed."))
+			if(2)
+				ethereal.Insert(human_victim)
+				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created something unusual, filled with energy, perhaps it will grant strength to the changed."))
+			if(3)
+				cursed.Insert(human_victim)
+				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a curse and a blessing for the changed."))
+			if(4)
+				demon.Insert(human_victim)
+				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created something terrible, unpleasant and evil, filled with blood."))
+			if(5)
+				carpula.Insert(human_victim)
+				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a beautiful water-living heart for an equally beautiful changed one."))
+			if(6)
+				ventcrawl.Insert(human_victim)
+				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a heart that allows an changed person to reduce the size of his body to such a state that he can pass into ventilation."))
+			if(7)
+				surplus.Insert(human_victim)
+				to_chat(caster, span_warning("You, the ruler of flesh and blood, have failed in creating something good out of iron and oil. You're better at dealing with the flesh. The changed person will not feel very well."))
+			if(8)
+				freedom.Insert(human_victim)
+				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created the heart of a determined being that will not give up even at death's door."))
+			if(9)
+				podperson.Insert(human_victim)
+				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created the heart that absorbs light, but is it useful..?"))
+			if(10)
+				corrupted.Insert(human_victim)
+				to_chat(caster, span_warning("You, the ruler of flesh and blood, have failed, and what you have created will only do harm."))
+			if(11)
+				nightmare.Insert(human_victim)
+				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a heart as dark as night, it is filled with malice and hatred for prosperity and life, and it will surely manifest itself in the changed."))
+			if(12)
+				roach.Insert(human_victim)
+				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a strong and tenacious heart, perhaps it will give its properties to the changed one."))
+			if(13)
+				access.Insert(human_victim)
+				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a heart that holds the key to all doors. Even you don't know what the key is."))
+			if(14)
+				heal.Insert(human_victim)
+				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a heart that gives life to the changed and restores his body."))
+
+		if(!HAS_TRAIT(human_victim, TRAIT_HEMATOCRAT) && human_victim.stat == DEAD)
+			human_victim.revive(HEAL_DAMAGE)
+			human_victim.visible_message(span_warning("[human_victim] appears to wake from the dead!"), span_notice("You have regenerated."))
+	return TRUE
+
+/obj/item/melee/touch_attack/flesh_transform
+	name = "\improper Flesh Transform"
+	desc = "Let's go practice medicine."
+	icon = 'icons/obj/weapons/hand.dmi'
+	icon_state = "disintegrate"
+	inhand_icon_state = "disintegrate"
