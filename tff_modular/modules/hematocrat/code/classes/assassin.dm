@@ -81,7 +81,11 @@
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
 	overlay_icon_state = "bg_fugu_border"
 	cooldown_time = 20 SECONDS
-	smoke_type = /obj/effect/particle_effect/fluid/smoke/bloody
+	smoke_type = /datum/effect_system/fluid_spread/smoke/bloody
+
+
+/datum/effect_system/fluid_spread/smoke/bloody
+	effect_type = /obj/effect/particle_effect/fluid/smoke/bloody
 
 /obj/effect/particle_effect/fluid/smoke/bloody
 	color = "#9C3636"
