@@ -6,8 +6,8 @@
 	background_icon_state = "bg_fugu"
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
 	overlay_icon_state = "bg_fugu_border"
-	button_icon = 'icons/mob/actions/actions_ecult.dmi'
-	button_icon_state = "stargazer_menu"
+	button_icon = 'icons/mob/actions/actions_changeling.dmi'
+	button_icon_state = "changelingsting"
 	item_type = /obj/item/tumorinjector
 	delete_old = FALSE
 	delete_on_failure = FALSE
@@ -277,6 +277,7 @@
 
 /datum/action/cooldown/spell/touch/flesh_transform/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)
 	var/mob/living/carbon/human/human_victim = victim
+	playsound(victim, 'sound/items/weapons/slice.ogg', 50, TRUE)
 	if(!do_after(caster, 10 SECONDS, target = human_victim))
 		human_victim.balloon_alert(caster, "interrupted!")
 		return FALSE
@@ -325,6 +326,7 @@
 				heal.Insert(human_victim)
 				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a heart that gives life to the changed and restores his body."))
 
+		playsound(victim, 'sound/mobs/non-humanoids/alien/alien_organ_cut.ogg', 50, TRUE)
 		if(!HAS_TRAIT(human_victim, TRAIT_HEMATOCRAT) && human_victim.stat == DEAD)
 			human_victim.revive(HEAL_DAMAGE)
 			human_victim.visible_message(span_warning("[human_victim] appears to wake from the dead!"), span_notice("You have regenerated."))

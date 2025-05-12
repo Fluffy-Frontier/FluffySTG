@@ -14,7 +14,7 @@
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
 	overlay_icon_state = "bg_fugu_border"
 
-	sound = 'sound/effects/magic/charge.ogg'
+	sound = 'sound/items/unsheath.ogg'
 	school = SCHOOL_SANGUINE
 	cooldown_time = 12.5 SECONDS
 
@@ -71,6 +71,7 @@
 	background_icon = 'icons/mob/actions/backgrounds.dmi'
 	background_icon_state = "bg_fugu"
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
+	sound = 'sound/items/unsheath.ogg'
 	overlay_icon_state = "bg_fugu_border"
 	cooldown_time = 120 SECONDS
 	spell_requirements = NONE
@@ -99,6 +100,7 @@
 	projectile_type = /obj/projectile/magic/aoe/soulslash
 	cooldown_time = 60 SECONDS
 	spell_requirements = NONE
+	invocation_type = INVOCATION_NONE
 	max_targets = 6
 
 /obj/projectile/magic/aoe/soulslash
