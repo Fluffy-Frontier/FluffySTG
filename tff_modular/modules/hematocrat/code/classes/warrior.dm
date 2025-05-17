@@ -87,7 +87,7 @@
 	return TRUE
 
 /datum/action/cooldown/slash
-	name = "Raging Slashes"
+	name = "the fury of the warrior"
 	desc = "Attack everyone in 3x3 radius."
 	button_icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi'
 	button_icon_state = "slash_icon"
