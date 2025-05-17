@@ -14,7 +14,7 @@
 	melee_cooldown_time = 0 SECONDS
 	click_to_activate = FALSE
 	/// The alpha we go to when sneaking.
-	var/sneak_alpha = 15
+	var/sneak_alpha = 25
 	/// How long it takes to become transparent
 	var/animation_time = 0.5 SECONDS
 
