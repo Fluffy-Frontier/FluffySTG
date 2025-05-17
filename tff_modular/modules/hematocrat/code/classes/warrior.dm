@@ -104,9 +104,9 @@
 	for(var/mob/living/something_living in range(1, get_turf(owner)))
 		if(something_living.stat >= UNCONSCIOUS)
 			continue
-		if(something_living.getStaminaLoss() >= 100)
-			continue
 		if(something_living == owner)
+			continue
+		if(HAS_TRAIT(something_living, TRAIT_HEMATOCRAT))
 			continue
 		if(prob(40))
 			something_living.Stun(2 SECONDS)
@@ -123,5 +123,13 @@
 	icon = 'tff_modular/modules/hematocrat/icons/attack_effect.dmi'
 	icon_state = "hem_attack"
 	duration = 0.5 SECONDS
+	pixel_x = -32
+	pixel_y = -32
+
+/obj/effect/temp_visual/het_attack
+	name = "hem attack"
+	icon = 'icons/effects/160x160.dmi'
+	icon_state = "dagger_slash"
+	duration = 1 SECONDS
 	pixel_x = -32
 	pixel_y = -32

@@ -338,3 +338,68 @@
 	icon = 'icons/obj/weapons/hand.dmi'
 	icon_state = "disintegrate"
 	inhand_icon_state = "disintegrate"
+
+/datum/action/aggressive_intentions
+	name = "Agressive Intentions"
+	desc = "Creates a red circle above your head, showing your nature. It has no effects."
+	var/activated = FALSE
+	button_icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi'
+	button_icon_state = "aggressive"
+	background_icon = 'icons/mob/actions/backgrounds.dmi'
+	background_icon_state = "bg_fugu"
+	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
+	overlay_icon_state = "bg_fugu_border"
+
+/datum/action/aggressive_intentions/Trigger(trigger_flags)
+	var/mob/living/carbon/human = owner
+	if(activated)
+		deactivate()
+		return FALSE
+
+	human.apply_status_effect(/datum/status_effect/aggressive_intentions)
+	activated = TRUE
+
+/datum/action/aggressive_intentions/proc/deactivate()
+	var/mob/living/carbon/human = owner
+	human.remove_status_effect(/datum/status_effect/aggressive_intentions)
+	activated = FALSE
+
+/datum/status_effect/aggressive_intentions
+	id = "aggressive_intentions"
+	alert_type = null
+	duration = INFINITY
+	status_type = STATUS_EFFECT_REPLACE
+	///overlay used to indicate that someone is marked
+	var/mutable_appearance/aggressive_overlay
+	/// icon file for the overlay
+	var/effect_icon = 'tff_modular/modules/hematocrat/icons/smol_effects.dmi'
+	/// icon state for the overlay
+	var/effect_icon_state = "aggressive_ring"
+	/// Storage for the spell caster
+	var/datum/weakref/spell_caster
+
+/datum/status_effect/aggressive_intentions/on_creation(mob/living/new_owner, mob/living/new_spell_caster)
+	aggressive_overlay = mutable_appearance(effect_icon, effect_icon_state, BELOW_MOB_LAYER)
+	if(new_spell_caster)
+		spell_caster = WEAKREF(new_spell_caster)
+	return ..()
+
+/datum/status_effect/aggressive_intentions/Destroy()
+	QDEL_NULL(aggressive_overlay)
+	return ..()
+
+/datum/status_effect/aggressive_intentions/on_apply()
+	RegisterSignal(owner, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(update_owner_overlay))
+	owner.update_appearance(UPDATE_OVERLAYS)
+	return TRUE
+
+/// Updates the overlay of the owner
+/datum/status_effect/aggressive_intentions/proc/update_owner_overlay(atom/source, list/overlays)
+	SIGNAL_HANDLER
+
+	overlays += aggressive_overlay
+
+/datum/status_effect/aggressive_intentions/on_remove()
+	UnregisterSignal(owner, COMSIG_ATOM_UPDATE_OVERLAYS)
+	owner.update_appearance(UPDATE_OVERLAYS)
+	return ..()

@@ -15,6 +15,7 @@
 	var/datum/action/cooldown/spell/summon_flesh/flesh = new
 	var/datum/action/cooldown/spell/touch/flesh_harvest/harvest = new
 	var/datum/action/cooldown/spell/touch/flesh_transform/transform = new
+	var/datum/action/aggressive_intentions/intentions = new
 
 /datum/antagonist/hematocrat/on_gain()
 	. = ..()
@@ -44,6 +45,7 @@
 	flesh.Grant(the_mob)
 	harvest.Grant(the_mob)
 	transform.Grant(the_mob)
+	intentions.Grant(the_mob)
 
 /datum/antagonist/hematocrat/remove_innate_effects(mob/living/mob_override)
 	. = ..()
@@ -57,6 +59,7 @@
 	flesh.Remove(the_mob)
 	harvest.Remove(the_mob)
 	transform.Remove(the_mob)
+	intentions.Remove(the_mob)
 
 /datum/antagonist/hematocrat/get_team()
 	return hematocrat_team

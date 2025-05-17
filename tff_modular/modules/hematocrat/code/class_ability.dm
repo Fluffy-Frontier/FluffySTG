@@ -3,8 +3,8 @@
 /datum/action/cooldown/choose_class
 	name = "choose class"
 	desc = "A skill that allows you to choose your class. After selecting a class, it cannot be changed."
-	button_icon = 'icons/mob/actions/actions_spells.dmi'
-	button_icon_state = "transformslime"
+	button_icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi'
+	button_icon_state = "class"
 	background_icon = 'icons/mob/actions/backgrounds.dmi'
 	background_icon_state = "bg_fugu"
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
