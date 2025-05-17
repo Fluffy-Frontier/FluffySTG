@@ -101,3 +101,32 @@
 	restor_target.adjustFireLoss(-40)
 	restor_target.adjustToxLoss(-30)
 	return TRUE
+
+// Кровавые лезвия. Призывает несколько кровавых лезвий.
+
+/datum/action/cooldown/spell/aoe/magic_missile/bbmissle
+	name = "bloody slash"
+	desc = "You creates several, slow moving, bloody projectiles at nearby targets."
+	button_icon = 'icons/mob/actions/actions_spells.dmi'
+	button_icon_state = "scream_for_me"
+	background_icon = 'icons/mob/actions/backgrounds.dmi'
+	background_icon_state = "bg_fugu"
+	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
+	overlay_icon_state = "bg_fugu_border"
+	projectile_type = /obj/projectile/magic/aoe/soulslash
+	cooldown_time = 60 SECONDS
+	spell_requirements = NONE
+	invocation_type = INVOCATION_NONE
+	max_targets = 6
+
+/obj/projectile/magic/aoe/soulslash
+	name = "bloody slash"
+	icon_state = "soulslash"
+	range = 100
+	speed = 0.35
+	trigger_range = 0
+	can_only_hit_target = TRUE
+	paralyze = 1.5 SECONDS
+	damage = 0
+	hitsound = 'sound/effects/magic/mm_hit.ogg'
+	trail = FALSE

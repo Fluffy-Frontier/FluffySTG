@@ -68,8 +68,8 @@
 			ADD_TRAIT(owner, TRAIT_HEMATOCRAT, ACTION_TRAIT)
 			var/datum/action/cooldown/spell/sanguine_strike/bbweaponcharge/strike = new
 			var/datum/action/cooldown/spell/stimpack/bbescape/escape = new
-			var/datum/action/cooldown/spell/aoe/magic_missile/bbmissle/missle = new
-			missle.Grant(owner)
+			var/datum/action/cooldown/slash/slashing = new
+			slashing.Grant(owner)
 			escape.Grant(owner)
 			strike.Grant(owner)
 			ADD_TRAIT(owner, TRAIT_IGNORESLOWDOWN, ACTION_TRAIT)
@@ -94,9 +94,11 @@
 			var/datum/action/cooldown/bbaura/aura = new
 			var/datum/action/cooldown/spell/jaunt/ethereal_jaunt/bbjaunt/jaunt = new
 			var/datum/action/cooldown/spell/touch/flesh_restoration/restor = new
+			var/datum/action/cooldown/spell/aoe/magic_missile/bbmissle/missles = new
 			restor.Grant(owner)
 			aura.Grant(owner)
 			jaunt.Grant(owner)
+			missles.Grant(owner)
 
 		else
 			CRASH("Class choose was made invalid / incorrect class choosen type. Got: [brother_class]")

@@ -86,31 +86,42 @@
 	cast_on.reagents.add_reagent(/datum/reagent/medicine/stimulants, -1)
 	return TRUE
 
-
-// Кровавые лезвия. Призывает несколько кровавых лезвий.
-/datum/action/cooldown/spell/aoe/magic_missile/bbmissle
-	name = "bloody slash"
-	desc = "You creates several, slow moving, bloody projectiles at nearby targets."
-	button_icon = 'icons/mob/actions/actions_spells.dmi'
-	button_icon_state = "scream_for_me"
+/datum/action/cooldown/slash
+	name = "Raging Slashes"
+	desc = "Attack everyone in 3x3 radius."
+	button_icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi'
+	button_icon_state = "slash_icon"
 	background_icon = 'icons/mob/actions/backgrounds.dmi'
 	background_icon_state = "bg_fugu"
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
 	overlay_icon_state = "bg_fugu_border"
-	projectile_type = /obj/projectile/magic/aoe/soulslash
-	cooldown_time = 60 SECONDS
-	spell_requirements = NONE
-	invocation_type = INVOCATION_NONE
-	max_targets = 6
+	cooldown_time = 160 SECONDS
+	melee_cooldown_time = 0 SECONDS
+	click_to_activate = FALSE
 
-/obj/projectile/magic/aoe/soulslash
-	name = "bloody slash"
-	icon_state = "soulslash"
-	range = 100
-	speed = 0.35
-	trigger_range = 0
-	can_only_hit_target = TRUE
-	paralyze = 1.5 SECONDS
-	damage = 0
-	hitsound = 'sound/effects/magic/mm_hit.ogg'
-	trail = FALSE
+/datum/action/cooldown/slash/Activate(atom/target)
+	new /obj/effect/temp_visual/hem_attack(get_turf(owner))
+	for(var/mob/living/something_living in range(1, get_turf(owner)))
+		if(something_living.stat >= UNCONSCIOUS)
+			continue
+		if(something_living.getStaminaLoss() >= 100)
+			continue
+		if(something_living == owner)
+			continue
+		if(prob(40))
+			something_living.Stun(2 SECONDS)
+			something_living.Paralyze(1.5 SECONDS)
+		if(prob(10))
+			var/obj/item/bodypart/cut_bodypart = something_living.get_bodypart(pick(BODY_ZONE_R_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_ARM, BODY_ZONE_L_LEG))
+			cut_bodypart?.dismember(BRUTE)
+		something_living.apply_damage(35, BRUTE)
+	playsound(owner, 'sound/vehicles/mecha/mech_stealth_attack.ogg', 75, FALSE)
+	StartCooldown()
+
+/obj/effect/temp_visual/hem_attack
+	name = "hem attack"
+	icon = 'tff_modular/modules/hematocrat/icons/attack_effect.dmi'
+	icon_state = "hem_attack"
+	duration = 0.5 SECONDS
+	pixel_x = -32
+	pixel_y = -32
