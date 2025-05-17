@@ -278,9 +278,6 @@
 /datum/action/cooldown/spell/touch/flesh_transform/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)
 	var/mob/living/carbon/human/human_victim = victim
 	playsound(human_victim, 'sound/items/weapons/slice.ogg', 50, TRUE)
-	if(HAS_TRAIT(human_victim, TRAIT_TRANSFORM_VICTIM))
-		to_chat(caster, span_warning("You can't change his body again!"))
-		return FALSE
 	if(!do_after(caster, 10 SECONDS, target = human_victim))
 		human_victim.balloon_alert(caster, "interrupted!")
 		return FALSE
