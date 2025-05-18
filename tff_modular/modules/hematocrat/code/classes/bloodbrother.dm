@@ -25,7 +25,19 @@
 	owner.balloon_alert(owner, "healing aura started")
 	to_chat(owner, span_danger("We begin to transfer the recovery cells to our hematocrats around us, healing every hematocrat in range and yourself."))
 	aura_active = TRUE
-	aura_healing_component = owner.AddComponent(/datum/component/aura_healing, range = aura_range, requires_visibility = FALSE, brute_heal = 1.5, burn_heal = 1.5, toxin_heal = 1, suffocation_heal = 2, wound_clotting = 0.3, blood_heal = 0.3, limit_to_trait = TRAIT_HEMATOCRAT, healing_color = aura_healing_color)
+	aura_healing_component = owner.AddComponent( \
+	/datum/component/aura_healing, \
+	range = aura_range, \
+	requires_visibility = FALSE, \
+	brute_heal = 1.5, \
+	burn_heal = 1.5, \
+	toxin_heal = 1, \
+	suffocation_heal = 2,  \
+	wound_clotting = 0.3, \
+	blood_heal = 0.3, \
+	limit_to_trait = TRAIT_HEMATOCRAT, \
+	healing_color = aura_healing_color \
+	)
 	return TRUE
 
 /datum/action/cooldown/bbaura/proc/aura_deactivate()
@@ -56,6 +68,7 @@
 	jaunt_duration = 3 SECONDS
 	jaunt_in_time = 3 SECONDS
 	jaunt_type = /obj/effect/dummy/phased_mob/spell_jaunt/red
+	jaunt_in_type = /obj/effect/temp_visual/dir_setting/blood_in
 	jaunt_out_type = /obj/effect/temp_visual/dir_setting/blood_in/out
 
 /datum/action/cooldown/spell/jaunt/ethereal_jaunt/bbjaunt/do_steam_effects()
@@ -81,15 +94,10 @@
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
 	overlay_icon_state = "bg_fugu_border"
 	cooldown_time = 180 SECONDS
-	hand_path = /obj/item/melee/touch_attack/flesh_restoration
+	hand_path = /obj/item/melee/touch_attack/flesh_hand
 	can_cast_on_self = TRUE
 	spell_requirements = NONE
 	invocation_type = NONE
-
-/obj/item/melee/touch_attack/flesh_restoration
-	name = "flesh restoration"
-	desc = "Feels warm"
-	icon_state = "zapper"
 
 /datum/action/cooldown/spell/touch/flesh_restoration/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)
 	var/mob/living/restor_target = victim

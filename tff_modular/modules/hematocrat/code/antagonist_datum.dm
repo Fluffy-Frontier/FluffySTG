@@ -16,6 +16,7 @@
 	var/datum/action/cooldown/spell/touch/flesh_harvest/harvest = new
 	var/datum/action/cooldown/spell/touch/flesh_transform/transform = new
 	var/datum/action/aggressive_intentions/intentions = new
+	var/datum/action/cooldown/spell/touch/blood_mark/mark = new
 
 /datum/antagonist/hematocrat/on_gain()
 	. = ..()
@@ -39,13 +40,13 @@
 	add_team_hud(the_mob, hematocrat_team)
 	handle_clown_mutation(the_mob, "Your training has allowed you to overcome your clownish nature, allowing you to wield weapons without harming yourself.")
 	the_mob.faction |= FACTION_HEMATOCRAT
-	the_mob.AddComponent(/datum/component/heart_eater_hematocrat)
 	class.Grant(the_mob)
 	heart.Grant(the_mob)
 	flesh.Grant(the_mob)
 	harvest.Grant(the_mob)
 	transform.Grant(the_mob)
 	intentions.Grant(the_mob)
+	mark.Grant(the_mob)
 
 /datum/antagonist/hematocrat/remove_innate_effects(mob/living/mob_override)
 	. = ..()
@@ -53,13 +54,13 @@
 	the_mob.faction -= FACTION_HEMATOCRAT
 	handle_clown_mutation(the_mob, removing = FALSE)
 	REMOVE_TRAIT(the_mob, TRAIT_HEMATOCRAT, ACTION_TRAIT)
-	the_mob.RemoveComponentSource(type, /datum/component/heart_eater_hematocrat)
 	class.Remove(the_mob)
 	heart.Remove(the_mob)
 	flesh.Remove(the_mob)
 	harvest.Remove(the_mob)
 	transform.Remove(the_mob)
 	intentions.Remove(the_mob)
+	mark.Remove(the_mob)
 
 /datum/antagonist/hematocrat/get_team()
 	return hematocrat_team
