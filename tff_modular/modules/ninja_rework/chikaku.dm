@@ -149,7 +149,7 @@
 	target.apply_damage(damage = 20, bare_wound_bonus = 10)
 	var/atom/throw_target = get_edge_target_turf(target, user.dir)
 	target.throw_at(throw_target, 2, 2, user)
-	target.paralyze(1 SECONDS)
+	target.Paralyze(0.5 SECONDS)
 
 /obj/item/chikaku/proc/execution(mob/living/target, mob/user)
 	user.do_attack_animation(target, ATTACK_EFFECT_SLASH)
@@ -172,7 +172,7 @@
 	current_charges = 5
 	max_charges = 5
 	beam_length = 1 SECONDS
-	recharge_rate = null
+	charge_rate = null
 	recharge_sound = null
 
 /datum/action/innate/dash/chikaku/GiveAction(mob/viewer) //this action should be invisible, as its handled by right-click
