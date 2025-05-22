@@ -322,16 +322,16 @@
 /datum/config_entry/string/banappeals
 
 /datum/config_entry/string/wikiurl
-	default = "https://wiki.novasector13.com/index.php" //NOVA EDIT CHANGE - Original: default = "http://tgstation13.org/wiki"
+	default = "https://wiki.fluffy-frontier.ru/Main_Page" //NOVA EDIT CHANGE - Original: default = "http://tgstation13.org/wiki"
 
 /datum/config_entry/string/forumurl
 	default = "http://tgstation13.org/phpBB/index.php"
 
 /datum/config_entry/string/rulesurl
-	default = "http://tgstation13.org/wiki/Rules"
+	default = "https://fluffy-frontier.ru/rules"
 
 /datum/config_entry/string/githuburl
-	default = "https://www.github.com/tgstation/tgstation"
+	default = "https://github.com/Fluffy-Frontier/FluffySTG"
 
 /datum/config_entry/string/discordbotcommandprefix
 	default = "?"
