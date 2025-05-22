@@ -21,28 +21,28 @@
 		classes = list()
 
 		classes_list(
-		class_name = "Warrior",
-		class_image = image(icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi', icon_state = "warrior"),
-		class_info = span_info("Warrior is a strong class aimed at combat. This class is considered the strongest because of its ability to turn any station items into powerful weapons. The class ignores slowdowns. \
-							It can launch bloody projectiles at a victim, paralyzing them. He can also produce a special version of adrenaline, which accelerates and protects against stun."),
-		classes = classes,
+			class_name = "Warrior",
+			class_image = image(icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi', icon_state = "warrior"),
+			class_info = span_info("Warrior is a strong class aimed at combat. This class is considered the strongest because of its ability to turn any station items into powerful weapons. The class ignores slowdowns. \
+							Warrior also can attack nearby enemies and cutting off their limbs. His adrenaline gives him stun protection and accelerates its movement."),
+			classes = classes,
 		)
 
 		classes_list(
-		class_name = "Assassin",
-		class_image  = image(icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi', icon_state = "assassin"),
-		class_info = span_info("The assassin is bad at fighting due to his lack of combat skills, but he is an excellent burglar and thief. \
-								He is able to steal items from an enemy's backpack from a distance, hack machinery and airlocks, create a cloud of smoke, \
-								become partially invisible, has HUDs, night vision, and X-ray."),
-		classes = classes,
+			class_name = "Assassin",
+			class_image  = image(icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi', icon_state = "assassin"),
+			class_info = span_info("The assassin is bad at fighting due to his lack of combat skills, but he is an excellent burglar and thief. \
+									He is able to steal items from an enemy's backpack from a distance, hack machinery and airlocks, create a cloud of smoke, \
+									become partially invisible, has HUDs, night vision, and X-ray."),
+			classes = classes,
 		)
 
 		classes_list(
-		class_name = "Blood Brother",
-		class_image  = image(icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi', icon_state = "healer"),
-		class_info = span_info("Blood Brother is a weak class in combat, but strong in support. He is able to heal the wounds of his \
-								hematocrats within a radius of 7 tiles, teleport and heal targets with hand."),
-		classes = classes,
+			class_name = "Blood Brother",
+			class_image  = image(icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi', icon_state = "healer"),
+			class_info = span_info("Blood Brother is a weak class in combat, but strong in support. He is able to heal the wounds of his \
+									hematocrat-brothers within a radius of 7 tiles, teleport, heal targets with hand."),
+			classes = classes,
 		)
 
 	var/brother_class = show_radial_menu(owner, owner, classes, radius = 38, require_near = TRUE, tooltips = TRUE)

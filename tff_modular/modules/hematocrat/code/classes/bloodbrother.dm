@@ -26,17 +26,17 @@
 	to_chat(owner, span_danger("We begin to transfer the recovery cells to our hematocrats around us, healing every hematocrat in range and yourself."))
 	aura_active = TRUE
 	aura_healing_component = owner.AddComponent( \
-	/datum/component/aura_healing, \
-	range = aura_range, \
-	requires_visibility = FALSE, \
-	brute_heal = 1.5, \
-	burn_heal = 1.5, \
-	toxin_heal = 1, \
-	suffocation_heal = 2,  \
-	wound_clotting = 0.3, \
-	blood_heal = 0.3, \
-	limit_to_trait = TRAIT_HEMATOCRAT, \
-	healing_color = aura_healing_color \
+		/datum/component/aura_healing, \
+		range = aura_range, \
+		requires_visibility = FALSE, \
+		brute_heal = 1.5, \
+		burn_heal = 1.5, \
+		toxin_heal = 1, \
+		suffocation_heal = 2, \
+		wound_clotting = 0.3, \
+		blood_heal = 0.3, \
+		limit_to_trait = TRAIT_HEMATOCRAT, \
+		healing_color = aura_healing_color, \
 	)
 	return TRUE
 
