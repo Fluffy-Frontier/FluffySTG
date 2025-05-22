@@ -63,42 +63,38 @@
 	classes[class_name] = class_option
 
 /datum/action/cooldown/choose_class/proc/give_new_class(brother_class)
+	var/mob/living/carbon/living_owner = owner
 	switch(brother_class)
 		if("Warrior")
 			ADD_TRAIT(owner, TRAIT_HEMATOCRAT, ACTION_TRAIT)
-			var/datum/action/cooldown/spell/sanguine_strike/bbweaponcharge/strike = new
-			var/datum/action/cooldown/spell/stimpack/bbescape/escape = new
-			var/datum/action/cooldown/slash/slashing = new
-			slashing.Grant(owner)
-			escape.Grant(owner)
-			strike.Grant(owner)
+			var/static/list/warrior_actions = list(
+				/datum/action/cooldown/spell/sanguine_strike/weaponcharge,
+				/datum/action/cooldown/hematocrat_adrenaline,
+				/datum/action/cooldown/slash,
+			)
+			living_owner.grant_actions_by_list(warrior_actions)
 			ADD_TRAIT(owner, TRAIT_IGNORESLOWDOWN, ACTION_TRAIT)
 
 		if("Assassin")
 			ADD_TRAIT(owner, TRAIT_HEMATOCRAT, ACTION_TRAIT)
-			var/datum/action/cooldown/bbstealth/stealth = new
-			var/datum/action/cooldown/spell/smoke/bbsmoke/smoke = new
-			var/datum/action/cooldown/spell/pointed/burglar_finesse/bbsteal/steal = new
-			var/datum/action/cooldown/spell/pointed/bbhack/hack = new
-			var/datum/action/cooldown/bbvision/vision = new
-			var/datum/action/cooldown/mob_cooldown/dash/bbdash/dash = new
-			dash.Grant(owner)
-			vision.Grant(owner)
-			stealth.Grant(owner)
-			smoke.Grant(owner)
-			hack.Grant(owner)
-			steal.Grant(owner)
+			var/static/list/assassin_actions = list(
+				/datum/action/cooldown/bbstealth,
+				/datum/action/cooldown/spell/smoke/bbsmoke,
+				/datum/action/cooldown/spell/pointed/burglar_finesse/bbsteal,
+				/datum/action/cooldown/spell/pointed/bbhack,
+				/datum/action/cooldown/bbvision,
+				/datum/action/cooldown/mob_cooldown/dash/bbdash,
+			)
+			living_owner.grant_actions_by_list(assassin_actions)
 
 		if("Blood Brother")
 			ADD_TRAIT(owner, TRAIT_HEMATOCRAT, ACTION_TRAIT)
-			var/datum/action/cooldown/bbaura/aura = new
-			var/datum/action/cooldown/spell/jaunt/ethereal_jaunt/bbjaunt/jaunt = new
-			var/datum/action/cooldown/spell/touch/flesh_restoration/restor = new
-			var/datum/action/cooldown/spell/aoe/magic_missile/bbmissle/missles = new
-			restor.Grant(owner)
-			aura.Grant(owner)
-			jaunt.Grant(owner)
-			missles.Grant(owner)
+			var/static/list/healer_actions = list(
+				/datum/action/cooldown/hematocrat_aura,
+				/datum/action/cooldown/spell/jaunt/ethereal_jaunt/red_jaunt,
+				/datum/action/cooldown/spell/touch/flesh_restoration,
+			)
+			living_owner.grant_actions_by_list(healer_actions)
 
 		else
 			CRASH("Class choose was made invalid / incorrect class choosen type. Got: [brother_class]")

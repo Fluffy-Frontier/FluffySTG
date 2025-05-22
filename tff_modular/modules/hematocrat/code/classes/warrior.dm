@@ -5,7 +5,7 @@
 // Т.е. если мы возьмем предмет с уроном 10, то игра выберет умножение, потому что в таком случае урон будет ниже, чем при добавлении 25.
 // Если мы возьмем предмет с уроном 26, то игра выберет прибавление, потому что в таком случае урон будет ниже, чем при умножении на 2.5
 // Не работает на оружие, у которого урон уже 30 или более. Сделано чтобы братья не абузили контрабанду триторов.
-/datum/action/cooldown/spell/sanguine_strike/bbweaponcharge
+/datum/action/cooldown/spell/sanguine_strike/weaponcharge
 	name = "faith strike"
 	desc = "Enchants your next weapon strike to deal more damage and refill blood."
 	button_icon_state = "exsanguinating_strike"
@@ -22,7 +22,7 @@
 	spell_requirements = NONE
 	var/original_armour_penetration = 0
 
-/datum/action/cooldown/spell/sanguine_strike/can_cast_spell(feedback)
+/datum/action/cooldown/spell/sanguine_strike/weaponcharge/can_cast_spell(feedback)
 	var/obj/item/to_enchant = owner.get_active_held_item() || owner.get_inactive_held_item()
 	if(!to_enchant)
 		if(feedback)
@@ -34,7 +34,7 @@
 		return FALSE
 	return ..()
 
-/datum/action/cooldown/spell/sanguine_strike/bbweaponcharge/apply_enchantment(obj/item/enchanted)
+/datum/action/cooldown/spell/sanguine_strike/weaponcharge/apply_enchantment(obj/item/enchanted)
 	original_armour_penetration = enchanted.armour_penetration
 	original_force = enchanted.force
 	enchanted.add_filter("warrior_strike", 2, list("type" = "outline", "color" = "#030303", "size" = 2))
@@ -50,7 +50,7 @@
 	RegisterSignal(enchanted, COMSIG_ITEM_AFTERATTACK, PROC_REF(on_enchanted_afterattack))
 	RegisterSignal(enchanted, COMSIG_ITEM_DROPPED, PROC_REF(on_dropped))
 
-/datum/action/cooldown/spell/sanguine_strike/bbweaponcharge/end_enchantment(obj/item/enchanted)
+/datum/action/cooldown/spell/sanguine_strike/weaponcharge/end_enchantment(obj/item/enchanted)
 	UnregisterSignal(enchanted, list(COMSIG_ITEM_AFTERATTACK, COMSIG_ITEM_DROPPED))
 	StartCooldown()
 	enchanted.remove_filter("warrior_strike")
@@ -58,12 +58,12 @@
 	original_force = 0
 	enchanted.armour_penetration = original_armour_penetration
 
-/datum/action/cooldown/spell/sanguine_strike/bbweaponcharge/on_dropped(obj/item/enchanted, mob/dropper)
+/datum/action/cooldown/spell/sanguine_strike/weaponcharge/on_dropped(obj/item/enchanted, mob/dropper)
 	to_chat(dropper, span_notice("[enchanted] seems to lose its black aura."))
 	end_enchantment(enchanted)
 
 // Адреналин. Имеет 120 секунд КД. Вводит стимуляторы и добавляет эффекты станиммуна на 15 секунд.
-/datum/action/cooldown/spell/stimpack/bbescape
+/datum/action/cooldown/hematocrat_adrenaline
 	name = "adrenaline filling"
 	desc = "This ability creates unique type of adrenaline straight in your blood. Gives stun immunity for 15 seconds. Won't work on species with no reagent reactions!"
 	button_icon = 'icons/mob/actions/actions_spells.dmi'
@@ -71,19 +71,17 @@
 	background_icon = 'icons/mob/actions/backgrounds.dmi'
 	background_icon_state = "bg_fugu"
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
-	sound = 'sound/items/unsheath.ogg'
 	overlay_icon_state = "bg_fugu_border"
 	cooldown_time = 120 SECONDS
-	spell_requirements = NONE
-	invocation_type = INVOCATION_NONE
 
-/datum/action/cooldown/spell/stimpack/bbescape/cast(mob/living/cast_on)
+/datum/action/cooldown/hematocrat_adrenaline/Activate(atom/target)
 	. = ..()
-	cast_on.balloon_alert(cast_on, "speeding up")
-	cast_on.SetKnockdown(0)
-	cast_on.setStaminaLoss(0)
-	cast_on.set_resting(FALSE)
-	cast_on.reagents.add_reagent(/datum/reagent/medicine/stimulants, -1)
+	var/mob/living/carbon/living_owner = owner
+	living_owner.balloon_alert(owner, "speeding up")
+	living_owner.SetKnockdown(0)
+	living_owner.setStaminaLoss(0)
+	living_owner.set_resting(FALSE)
+	living_owner.reagents.add_reagent(/datum/reagent/medicine/stimulants, 2)
 	return TRUE
 
 /datum/action/cooldown/slash
@@ -123,13 +121,5 @@
 	icon = 'tff_modular/modules/hematocrat/icons/attack_effect.dmi'
 	icon_state = "hem_attack"
 	duration = 0.5 SECONDS
-	pixel_x = -32
-	pixel_y = -32
-
-/obj/effect/temp_visual/het_attack
-	name = "hem attack"
-	icon = 'icons/effects/160x160.dmi'
-	icon_state = "dagger_slash"
-	duration = 1 SECONDS
 	pixel_x = -32
 	pixel_y = -32

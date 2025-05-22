@@ -32,6 +32,8 @@
 	QDEL_NULL(flesh)
 	QDEL_NULL(harvest)
 	QDEL_NULL(transform)
+	QDEL_NULL(intentions)
+	QDEL_NULL(mark)
 	return ..()
 
 /datum/antagonist/hematocrat/apply_innate_effects(mob/living/mob_override)
@@ -82,7 +84,7 @@
 // Тоже самое что и обычный, но может имплантировать опухоли для выдачи антага. Выдается только опфором/админабузом
 /datum/antagonist/hematocrat/leader
 	name = "\improper Hematocrat Leader"
-	var/datum/action/cooldown/spell/conjure_item/bbtumor/convert = new
+	var/datum/action/cooldown/spell/conjure_item/tumor/convert = new
 
 /datum/antagonist/hematocrat/leader/apply_innate_effects(mob/living/mob_override)
 	. = ..()

@@ -1,5 +1,5 @@
 // Инвалидная, но рабочая система конверта. Создает опухоль, которую можно вставить в жертву, превращая ее в антагониста. Работает не более двух раз.
-/datum/action/cooldown/spell/conjure_item/bbtumor
+/datum/action/cooldown/spell/conjure_item/tumor
 	name = "create tumor"
 	desc = "Creates a tumor, needed to convert living being to your side! Have only two uses and it need times to convert a target."
 	background_icon = 'icons/mob/actions/backgrounds.dmi'
@@ -16,16 +16,16 @@
 	spell_requirements = NONE
 	var/uses = 2
 
-/datum/action/cooldown/spell/conjure_item/bbtumor/can_cast_spell(feedback)
+/datum/action/cooldown/spell/conjure_item/tumor/can_cast_spell(feedback)
 	. = ..()
 	if(uses == 0)
 		to_chat(owner, span_warning("You have no tumors anymore! Ability removed."))
 		qdel(src)
 		return FALSE
 
-/datum/action/cooldown/spell/conjure_item/bbtumor/cast(atom/cast_on)
+/datum/action/cooldown/spell/conjure_item/tumor/cast(atom/cast_on)
 	. = ..()
-	--uses
+	uses -= 1
 
 // Антаг-выдавалка для наших жертв.
 /obj/item/tumorinjector
