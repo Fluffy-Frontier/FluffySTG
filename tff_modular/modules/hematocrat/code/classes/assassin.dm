@@ -95,7 +95,6 @@
 	smoke_type = /datum/effect_system/fluid_spread/smoke/bloody
 	smoke_amt = 2
 
-
 /datum/effect_system/fluid_spread/smoke/bloody
 	effect_type = /obj/effect/particle_effect/fluid/smoke/bloody
 

@@ -84,6 +84,7 @@
 	living_owner.reagents.add_reagent(/datum/reagent/medicine/stimulants, 2)
 	return TRUE
 
+// АОЕ атака. Активация навыка наносит по 35 урона всем в радиусе 3x3, имеет шанс отрезать конечность или застанить.
 /datum/action/cooldown/slash
 	name = "the fury of the warrior"
 	desc = "Attack everyone in 3x3 radius."
@@ -116,6 +117,7 @@
 	playsound(owner, 'sound/vehicles/mecha/mech_stealth_attack.ogg', 75, FALSE)
 	StartCooldown()
 
+// Визуальный эффект от АОЕ атаки.
 /obj/effect/temp_visual/hem_attack
 	name = "hem attack"
 	icon = 'tff_modular/modules/hematocrat/icons/attack_effect.dmi'

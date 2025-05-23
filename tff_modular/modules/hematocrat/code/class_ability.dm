@@ -98,3 +98,5 @@
 
 		else
 			CRASH("Class choose was made invalid / incorrect class choosen type. Got: [brother_class]")
+
+	qdel(src)
