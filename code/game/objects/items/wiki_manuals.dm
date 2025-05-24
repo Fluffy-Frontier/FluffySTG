@@ -64,7 +64,7 @@
 	icon_state ="bookEngineering2"
 	starting_author = "Engineering Encyclopedia"
 	starting_title = "Engineering Textbook"
-	page_link = "Guide_to_engineering" // На вики ссылка почему-то на английском-значит пока не трогайте
+	page_link = "Guide_to_engineering"
 
 /obj/item/book/manual/wiki/security_space_law
 	name = "Space Law"
@@ -90,7 +90,7 @@
 	icon_state = "book7"
 	starting_author = "University of Bluespace"
 	starting_title = "Teleportation Science - Bluespace for dummies!"
-	page_link = "Guide_to_telescience" // На вики ссылка почему-то на английском-значит пока не трогайте
+	page_link = "Guide_to_telescience"
 
 /obj/item/book/manual/wiki/engineering_hacking
 	name = "Hacking"
@@ -104,7 +104,7 @@
 	icon_state ="bookDetective"
 	starting_author = "Nanotrasen"
 	starting_title = "The Film Noir: Proper Procedures for Investigations"
-	page_link = "Detective" // На вики ссылка почему-то на английском-значит пока не трогайте
+	page_link = "Detective"
 
 /obj/item/book/manual/wiki/barman_recipes
 	name = "Barman Recipes: Mixing Drinks and Changing Lives"
@@ -132,7 +132,7 @@
 	icon_state = "rdbook"
 	starting_author = "Dr. H.P. Kritz"
 	starting_title = "Mentoring your Experiments"
-	page_link = "Experimentor" // Как и руководство детектива, никто пока не сделал
+	page_link = "Experimentor"
 
 /obj/item/book/manual/wiki/cooking_to_serve_man
 	name = "To Serve Man"
@@ -219,7 +219,7 @@
 	icon_state ="cytologybook"
 	starting_author = "Kryson"
 	starting_title = "Unethically Grown Organics"
-	page_link = "Guide_to_cytology" // На вики ссылка почему-то на английском-значит пока не трогайте
+	page_link = "Guide_to_cytology"
 
 /obj/item/book/manual/wiki/tgc
 	name = "Tactical Game Cards - Player's Handbook"
