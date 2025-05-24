@@ -355,7 +355,7 @@
 		"DO NOT FEAR. WE SHALL NOT HARM YOU.",
 		"WE WISH TO LEARN MORE ABOUT YOU. PLEASE TRANSMIT DATA.",
 		"THIS PROBE IS NON-HOSTILE. DO NOT ATTACK.",
-        "ALL YOUR WEAPONS MUST BE PUT ASIDE. WE CANNOT REACH COMPROMISE THROUGH VIOLENCE.",
+		"ALL YOUR WEAPONS MUST BE PUT ASIDE. WE CANNOT REACH COMPROMISE THROUGH VIOLENCE.",
 	)
 	move_to_delay = 8
 	health = 1
@@ -489,7 +489,7 @@
 		"Connectivity is in your best interest.",
 		"Think of it like a corporation...",
 		"Stop, I won't let you hurt them!",
-        "Don't you recognize me..?",
+		"Don't you recognize me..?",
 	)
 	passive_speak_lines = list(
 		"The flesh is the law, abide by the flesh.",
