@@ -234,12 +234,7 @@
 		return
 	var/obj/projectile/destabilizer/destabilizer = new(proj_turf)
 	SEND_SIGNAL(src, COMSIG_CRUSHER_FIRED_BLAST, target, user, destabilizer)
-<<<<<<< HEAD
 	destabilizer.icon_state = projectile_icon
-=======
-	destabilizer.icon = projectile_icon
-	destabilizer.icon_state = projectile_icon_state
->>>>>>> 8f8c7e5820e (Merge branch 'master' into sql)
 	for(var/obj/item/crusher_trophy/attached_trophy as anything in trophies)
 		attached_trophy.on_projectile_fire(destabilizer, user)
 	destabilizer.aim_projectile(target, user, modifiers)
