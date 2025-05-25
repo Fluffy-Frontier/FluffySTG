@@ -1,6 +1,7 @@
 // SHADEKIN //
 //#define BODYPART_ICON_SHADEKIN
 //--------
+#define BODYPART_ICON_SHADEKIN 'tff_modular/modules/shadekin/icons/human_parts_greyscale.dmi'
 
 /obj/item/bodypart/head/shadekin
 	icon_greyscale = BODYPART_ICON_SHADEKIN
@@ -60,3 +61,5 @@
 	footstep_type = FOOTSTEP_MOB_CLAW
 	brute_modifier = 1.2
 	burn_modifier = 1.2
+
+#undef BODYPART_ICON_SHADEKIN
