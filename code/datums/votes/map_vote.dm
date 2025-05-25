@@ -52,8 +52,10 @@
 
 	return VOTE_AVAILABLE
 
+/* // FLUFFY FRONTIER CHANGE START. REMOVAL - Fair Map Vote
 /datum/vote/map_vote/get_result_text(list/all_winners, real_winner, list/non_voters)
 	return null
+*/ // FLUFFY FRONTIER CHANGE END.
 
 /datum/vote/map_vote/get_vote_result(list/non_voters)
 	// Even if we have default no vote off,
