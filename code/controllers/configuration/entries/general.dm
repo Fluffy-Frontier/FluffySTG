@@ -325,8 +325,7 @@
 	default = "https://wiki.fluffy-frontier.ru/" // FLUFFY EDIT CHANGE - Original: defalut: = "https://wiki.novasector13.com/index.php" //NOVA EDIT CHANGE - Original: default = "http://tgstation13.org/wiki"
 
 /datum/config_entry/string/forumurl
-	default = "http://tgstation13.org/phpBB/index.php" // FLUFFY EDIT CHANGE - Original: defalut: = "http://tgstation13.org/phpBB/index.php"
-
+	default = "http://tgstation13.org/phpBB/index.php"
 /datum/config_entry/string/rulesurl
 	default = "https://fluffy-frontier.ru/rules" // FLUFFY EDIT CHANGE - Original: defalut: = "http://tgstation13.org/wiki/Rules"
 
