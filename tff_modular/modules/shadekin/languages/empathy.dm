@@ -10,14 +10,17 @@
 	syllables = list("mar", "mwrrr", "maaAr", "'aarrr", "wrurrl", "mmar")
 
 /datum/language_holder/shadekin
-	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
-								/datum/language/marish = list(LANGUAGE_ATOM),
-								/datum/language/marish/empathy = list(LANGUAGE_ATOM),
-								)
-	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
-							/datum/language/marish = list(LANGUAGE_ATOM),
-							/datum/language/marish/empathy = list(LANGUAGE_ATOM),
-							)
+	understood_languages = list(
+		/datum/language/common = list(LANGUAGE_ATOM),
+		/datum/language/marish = list(LANGUAGE_ATOM),
+		/datum/language/marish/empathy = list(LANGUAGE_ATOM),
+	)
+	spoken_languages = list(
+		/datum/language/common = list(LANGUAGE_ATOM),
+		/datum/language/marish = list(LANGUAGE_ATOM),
+		/datum/language/marish/empathy = list(LANGUAGE_ATOM),
+	)
+
 /obj/item/organ/tongue/shadekin
 	name = "shadekin tongue"
 	desc = "A mysterious tongue."
