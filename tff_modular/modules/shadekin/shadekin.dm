@@ -140,7 +140,7 @@
 /datum/status_effect/shadekin_regeneration/proc/heal_owner()
 	owner.heal_overall_damage(brute = 0.5, burn = 0.5, required_bodytype = BODYTYPE_ORGANIC)
 	if(owner.health < owner.maxHealth)
-			new /obj/effect/temp_visual/heal(get_turf(owner), COLOR_EFFECT_HEAL_RED)
+		new /obj/effect/temp_visual/heal(get_turf(owner), COLOR_EFFECT_HEAL_RED)
 
 /atom/movable/screen/alert/status_effect/shadekin_regeneration
 	name = "Dark Regeneration"
