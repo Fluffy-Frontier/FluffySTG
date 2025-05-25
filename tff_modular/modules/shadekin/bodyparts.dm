@@ -1,6 +1,4 @@
 // SHADEKIN //
-//#define BODYPART_ICON_SHADEKIN
-//--------
 #define BODYPART_ICON_SHADEKIN 'tff_modular/modules/shadekin/icons/human_parts_greyscale.dmi'
 
 /obj/item/bodypart/head/shadekin
