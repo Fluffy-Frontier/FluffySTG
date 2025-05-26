@@ -5,7 +5,7 @@
 #define OVERMIND_STARTING_REROLLS 1 // Free strain rerolls at the start
 #define OVERMIND_STARTING_MIN_PLACE_TIME (1 MINUTES) // Minimum time before the core can be placed
 #define OVERMIND_STARTING_AUTO_PLACE_TIME (6 MINUTES) // After this time, randomly place the core somewhere viable
-#define OVERMIND_WIN_CONDITION_AMOUNT 550 // Blob structures required to win, // FLUFFY FRONTIER EDIT - ORIGINAL: #define OVERMIND_WIN_CONDITION_AMOUNT 400
+#define OVERMIND_WIN_CONDITION_AMOUNT 500 // Blob structures required to win, // FLUFFY FRONTIER EDIT - ORIGINAL: #define OVERMIND_WIN_CONDITION_AMOUNT 400
 #define OVERMIND_ANNOUNCEMENT_MIN_SIZE 75 // Once the blob has this many structures, announce their presence
 #define OVERMIND_ANNOUNCEMENT_MAX_TIME (10 MINUTES) // If the blob hasn't reached the minimum size before this time, announce their presence
 #define OVERMIND_MAX_CAMERA_STRAY "3x3" // How far the overmind camera is allowed to stray from blob tiles. 3x3 is 1 tile away, 5x5 2 tiles etc
@@ -95,7 +95,7 @@
 #define BLOBMOB_SPORE_DMG_LOWER 2
 #define BLOBMOB_SPORE_DMG_UPPER 4
 #define BLOBMOB_BLOBBERNAUT_RESOURCE_COST 40 // Purchase price for making a blobbernaut
-#define BLOBMOB_BLOBBERNAUT_HEALTH 200 // Base blobbernaut health
+#define BLOBMOB_BLOBBERNAUT_HEALTH 400 // Base blobbernaut health // FLUFFY FRONTIER EDIT - #define BLOBMOB_BLOBBERNAUT_HEALTH ORIGINAL: 200
 #define BLOBMOB_BLOBBERNAUT_DMG_SOLO_LOWER 20 // Damage without active overmind (core dead or xenobio mob)
 #define BLOBMOB_BLOBBERNAUT_DMG_SOLO_UPPER 20
 #define BLOBMOB_BLOBBERNAUT_DMG_LOWER 4 // Damage dealt with active overmind (most damage comes from strain chems)
