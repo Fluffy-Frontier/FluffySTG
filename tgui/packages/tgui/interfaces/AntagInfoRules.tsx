@@ -160,6 +160,7 @@ export const Rules = (props) => {
           <Stack.Item bold>Special Rules:</Stack.Item>
           <Stack.Item>
             {
+              // Link bellow is modified. Original: <a href="https://wiki.novasector13.com/index.php/Antagonist_Policy#Clockcult_(OPFOR)">
               <a href="https://wiki.fluffy-frontier.ru/Заводной_культ(OPFOR)">
                 Special Rules and Metaprotections!
               </a>
