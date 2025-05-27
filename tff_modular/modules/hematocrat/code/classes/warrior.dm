@@ -127,6 +127,7 @@
 	pixel_y = -32
 
 /datum/action/cooldown/spell/pointed/projectile/hematocrat/warrior
+	name = "double blood spit"
 	projectile_type = /obj/projectile/bloodspit/warrior
 	projectile_amount = 2
 	projectiles_per_fire = 2

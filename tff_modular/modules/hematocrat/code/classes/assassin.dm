@@ -186,6 +186,7 @@
 	playsound(cast_on, 'sound/machines/terminal/terminal_processing.ogg', 15, TRUE)
 
 /datum/action/cooldown/spell/pointed/projectile/hematocrat/assassin
+	name = "Heavy blood spit"
 	projectile_type = /obj/projectile/bloodspit/assassin
 	projectile_amount = 1
 	projectiles_per_fire = 1
