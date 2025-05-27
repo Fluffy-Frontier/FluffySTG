@@ -184,3 +184,11 @@
 	cast_on.add_hiddenprint(owner)
 
 	playsound(cast_on, 'sound/machines/terminal/terminal_processing.ogg', 15, TRUE)
+
+/datum/action/cooldown/spell/pointed/projectile/hematocrat/assassin
+	projectile_type = /obj/projectile/bloodspit/assassin
+	projectile_amount = 1
+	projectiles_per_fire = 1
+
+/obj/projectile/bloodspit/assassin
+	damage = 40

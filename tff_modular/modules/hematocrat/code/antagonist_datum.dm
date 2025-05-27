@@ -16,7 +16,6 @@
 	var/datum/action/cooldown/spell/touch/flesh_harvest/harvest = new
 	var/datum/action/cooldown/spell/touch/flesh_transform/transform = new
 	var/datum/action/aggressive_intentions/intentions = new
-	var/datum/action/cooldown/spell/touch/blood_mark/mark = new
 
 /datum/antagonist/hematocrat/on_gain()
 	. = ..()
@@ -33,7 +32,6 @@
 	QDEL_NULL(harvest)
 	QDEL_NULL(transform)
 	QDEL_NULL(intentions)
-	QDEL_NULL(mark)
 	return ..()
 
 /datum/antagonist/hematocrat/apply_innate_effects(mob/living/mob_override)
@@ -48,7 +46,6 @@
 	harvest.Grant(the_mob)
 	transform.Grant(the_mob)
 	intentions.Grant(the_mob)
-	mark.Grant(the_mob)
 
 /datum/antagonist/hematocrat/remove_innate_effects(mob/living/mob_override)
 	. = ..()
@@ -62,7 +59,6 @@
 	harvest.Remove(the_mob)
 	transform.Remove(the_mob)
 	intentions.Remove(the_mob)
-	mark.Remove(the_mob)
 
 /datum/antagonist/hematocrat/get_team()
 	return hematocrat_team

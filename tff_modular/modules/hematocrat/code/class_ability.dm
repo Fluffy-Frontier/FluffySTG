@@ -41,7 +41,7 @@
 			class_name = "Blood Brother",
 			class_image  = image(icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi', icon_state = "healer"),
 			class_info = span_info("Blood Brother is a weak class in combat, but strong in support. He is able to heal the wounds of his \
-				hematocrat-brothers within a radius of 7 tiles, teleport, heal targets with hand."),
+				hematocrat-brothers within a radius of 7 tiles, teleport."),
 			classes = classes,
 		)
 
@@ -71,6 +71,7 @@
 				/datum/action/cooldown/spell/sanguine_strike/weaponcharge,
 				/datum/action/cooldown/hematocrat_adrenaline,
 				/datum/action/cooldown/slash,
+				/datum/action/cooldown/spell/pointed/projectile/hematocrat/warrior,
 			)
 			living_owner.grant_actions_by_list(warrior_actions)
 			ADD_TRAIT(owner, TRAIT_IGNORESLOWDOWN, ACTION_TRAIT)
@@ -84,6 +85,7 @@
 				/datum/action/cooldown/spell/pointed/bbhack,
 				/datum/action/cooldown/bbvision,
 				/datum/action/cooldown/mob_cooldown/dash/bbdash,
+				/datum/action/cooldown/spell/pointed/projectile/hematocrat/assassin,
 			)
 			living_owner.grant_actions_by_list(assassin_actions)
 
@@ -92,7 +94,7 @@
 			var/static/list/healer_actions = list(
 				/datum/action/cooldown/hematocrat_aura,
 				/datum/action/cooldown/spell/jaunt/ethereal_jaunt/red_jaunt,
-				/datum/action/cooldown/spell/touch/flesh_restoration,
+				/datum/action/cooldown/spell/pointed/projectile/hematocrat,
 			)
 			living_owner.grant_actions_by_list(healer_actions)
 

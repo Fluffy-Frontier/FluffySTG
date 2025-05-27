@@ -125,3 +125,11 @@
 	duration = 0.5 SECONDS
 	pixel_x = -32
 	pixel_y = -32
+
+/datum/action/cooldown/spell/pointed/projectile/hematocrat/warrior
+	projectile_type = /obj/projectile/bloodspit/warrior
+	projectile_amount = 2
+	projectiles_per_fire = 2
+
+/obj/projectile/bloodspit/warrior
+	damage = 12

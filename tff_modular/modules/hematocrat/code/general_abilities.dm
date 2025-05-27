@@ -75,7 +75,7 @@
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
 	overlay_icon_state = "bg_fugu_border"
 	school = SCHOOL_CONJURATION
-	cooldown_time = 80 SECONDS
+	cooldown_time = 60 SECONDS
 	invocation_type = INVOCATION_NONE
 	spell_requirements = NONE
 	var/static/list/summon_type = list(
@@ -390,6 +390,17 @@
 	owner.update_appearance(UPDATE_OVERLAYS)
 	return ..()
 
+/obj/item/melee/touch_attack/flesh_hand
+	name = "your hand"
+	desc = "What are you waiting for?"
+	icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi'
+	icon_state = "hand"
+	lefthand_file = 'tff_modular/modules/hematocrat/icons/righthanditems.dmi'
+	righthand_file = 'tff_modular/modules/hematocrat/icons/lefthanditems.dmi'
+	inhand_icon_state = "hand"
+
+// Временно убрано. Через время будет изменено/заменено.
+/*
 /datum/action/cooldown/spell/touch/blood_mark
 	name = "blood mark"
 	desc = "Places bloody mark on you and your target. Bloody marks heals you, but deal damages to targets for a 300 seconds."
@@ -498,12 +509,4 @@
 	desc = "There's a mark on your skin! It glows strangely..."
 	icon = 'tff_modular/modules/hematocrat/icons/smol_effects.dmi'
 	icon_state = "mark"
-
-/obj/item/melee/touch_attack/flesh_hand
-	name = "your hand"
-	desc = "What are you waiting for?"
-	icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi'
-	icon_state = "hand"
-	lefthand_file = 'tff_modular/modules/hematocrat/icons/righthanditems.dmi'
-	righthand_file = 'tff_modular/modules/hematocrat/icons/lefthanditems.dmi'
-	inhand_icon_state = "hand"
+*/

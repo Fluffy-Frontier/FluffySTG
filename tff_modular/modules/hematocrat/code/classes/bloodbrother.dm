@@ -3,7 +3,7 @@
 // Аура - лечебная аура с расстоянием 7 тайлов. Лечит в тик: брут и берн по 1.5 единицы, 1 единицу токсина, 2 единицы удушения, 0.3 единицы ран, 0.3 единицы крови.
 /datum/action/cooldown/hematocrat_aura
 	name = "hematocrat aura"
-	desc = "Hematocrats and you in a range of 7 tiles will get passive healing that removes that types of damage: brute, burn, toxin, suffocation, wounds. Works better when there's a two brothers with auras!"
+	desc = "Hematocrats and you in a range of 7 tiles will get passive healing that removes that types of damage: brute, burn, toxin, suffocation, wounds, stamina. Works better when there's a two brothers with auras!"
 	background_icon = 'icons/mob/actions/backgrounds.dmi'
 	background_icon_state = "bg_fugu"
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
@@ -31,9 +31,10 @@
 		requires_visibility = FALSE, \
 		brute_heal = 1.5, \
 		burn_heal = 1.5, \
-		toxin_heal = 1, \
-		suffocation_heal = 2, \
-		wound_clotting = 0.3, \
+		toxin_heal = 3, \
+		suffocation_heal = 5, \
+		stamina_heal = 2, \
+		wound_clotting = 0.4, \
 		blood_heal = 0.3, \
 		limit_to_trait = TRAIT_HEMATOCRAT, \
 		healing_color = aura_healing_color, \
@@ -65,8 +66,8 @@
 	spell_requirements = NONE
 
 	exit_jaunt_sound = null
-	jaunt_duration = 3 SECONDS
-	jaunt_in_time = 3 SECONDS
+	jaunt_duration = 4 SECONDS
+	jaunt_in_time = 1 SECONDS
 	jaunt_type = /obj/effect/dummy/phased_mob/spell_jaunt/red
 	jaunt_in_type = /obj/effect/temp_visual/dir_setting/blood_in
 	jaunt_out_type = /obj/effect/temp_visual/dir_setting/blood_in/out
@@ -84,28 +85,45 @@
 	icon = 'icons/effects/cult.dmi'
 	icon_state = "bloodout"
 
-/datum/action/cooldown/spell/touch/flesh_restoration
-	name = "flesh Restoration"
-	desc = "Restores target brute, burn and toxin damage in short time."
-	button_icon = 'icons/mob/actions/actions_changeling.dmi'
-	button_icon_state = "fleshmend"
+/datum/action/cooldown/spell/pointed/projectile/hematocrat
+	name = "blood spit"
+	desc = "Spit a infected blood at target, with having chance of infecting someone."
+	button_icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi'
+	button_icon_state = "limb"
 	background_icon = 'icons/mob/actions/backgrounds.dmi'
 	background_icon_state = "bg_fugu"
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
 	overlay_icon_state = "bg_fugu_border"
-	cooldown_time = 180 SECONDS
-	hand_path = /obj/item/melee/touch_attack/flesh_hand
-	can_cast_on_self = TRUE
+	school = SCHOOL_EVOCATION
+	cooldown_time = 25 SECONDS
+	sound = 'sound/effects/meatslap.ogg'
+	invocation_type = INVOCATION_NONE
 	spell_requirements = NONE
-	invocation_type = NONE
+	active_msg = "You prepare to spit your blood!"
+	deactive_msg = "You closed your mouth... For now."
+	cast_range = 8
+	projectile_type = /obj/projectile/bloodspit
+	projectiles_per_fire = 1
+	projectile_amount = 2
 
-/datum/action/cooldown/spell/touch/flesh_restoration/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)
-	var/mob/living/restor_target = victim
+/obj/projectile/bloodspit
+	name = "blood spit"
+	icon_state = "vileworm"
+	damage = 15
+	armour_penetration = 100
+	damage_type = BRUTE
 
-	if(!istype(restor_target))
-		return FALSE
+/obj/projectile/bloodspit/on_hit(atom/target, blocked, pierce_hit)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/carbon/human/creature = target
+		if(HAS_TRAIT(creature, TRAIT_HEMATOCRAT))
+			return FALSE
 
-	restor_target.adjustBruteLoss(-40)
-	restor_target.adjustFireLoss(-40)
-	restor_target.adjustToxLoss(-30)
-	return TRUE
+		creature.adjust_disgust(2, 2)
+		if(prob(30))
+			creature.drop_all_held_items()
+			creature.emote("cough")
+			creature.adjust_disgust(4, 4)
+			creature.ForceContractDisease(new /datum/disease/piuc(), FALSE, TRUE)
+			creature.adjustBruteLoss(5)
