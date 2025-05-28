@@ -330,7 +330,7 @@
 	default = "https://fluffy-frontier.ru/rules" // FLUFFY EDIT CHANGE - Original: defalut: = "http://tgstation13.org/wiki/Rules"
 
 /datum/config_entry/string/githuburl
-	default = "https://github.com/Fluffy-Frontier/FluffySTG" // FLUFFY EDIT CHANGE - Original: defalut: = "https://www.github.com/tgstation/tgstation"
+	defalut = "https://www.github.com/tgstation/tgstation
 
 /datum/config_entry/string/discordbotcommandprefix
 	default = "?"
