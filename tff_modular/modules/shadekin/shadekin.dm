@@ -24,8 +24,7 @@
 		TRAIT_SLICK_SKIN,
 		TRAIT_MUTANT_COLORS,
 		TRAIT_NIGHT_VISION,
-		TRAIT_NOBREATH
-
+		TRAIT_NOBREATH,
 	)
 	species_language_holder = /datum/language_holder/shadekin
 
