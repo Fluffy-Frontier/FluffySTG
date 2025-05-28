@@ -1,3 +1,4 @@
+// Fluffy frontier UI
 import { Section, Stack } from 'tgui-core/components';
 import { BooleanLike } from 'tgui-core/react';
 
@@ -36,8 +37,7 @@ export const AntagInfoHematocrat = (props) => {
             </Stack.Item>
             <Section fill>
               You are able to remove and replace the organs of victims, use
-              skills depending on the class and summon creatures. When you eat
-              the heart of a sentient being, you regenerate your flesh.
+              skills depending on the class and summon creatures.
             </Section>
             <Stack.Item>
               <ObjectivePrintout
