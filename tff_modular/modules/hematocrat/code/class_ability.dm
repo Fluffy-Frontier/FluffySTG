@@ -84,7 +84,7 @@
 				/datum/action/cooldown/spell/pointed/burglar_finesse/bbsteal,
 				/datum/action/cooldown/spell/pointed/bbhack,
 				/datum/action/cooldown/bbvision,
-				/datum/action/cooldown/mob_cooldown/dash/bbdash,
+				/datum/action/cooldown/mob_cooldown/hematocrat_dash,
 				/datum/action/cooldown/spell/pointed/projectile/hematocrat/assassin,
 			)
 			living_owner.grant_actions_by_list(assassin_actions)
