@@ -81,7 +81,7 @@
 	var/static/list/summon_type = list(
 		"flesh blob" = /mob/living/basic/fleshblob/hematocrat_team,
 		"living limb" = /mob/living/basic/living_limb_flesh/hematocrat_team,
-		)
+	)
 
 /datum/action/cooldown/spell/summon_flesh/is_valid_target(atom/cast_on)
 	return isturf(cast_on.loc)
@@ -252,21 +252,6 @@
 	spell_requirements = NONE
 	hand_path = /obj/item/melee/touch_attack/flesh_hand
 	can_cast_on_self = FALSE
-	// много переменных. ОЧЕНЬ много.
-	var/obj/item/organ/heart/cybernetic/anomalock/anomalock = new
-	var/obj/item/organ/heart/ethereal/ethereal = new
-	var/obj/item/organ/heart/cursed/cursed = new
-	var/obj/item/organ/heart/cybernetic/surplus/surplus = new
-	var/obj/item/organ/heart/freedom/freedom = new
-	var/obj/item/organ/heart/pod/podperson = new
-	var/obj/item/organ/heart/corrupt/corrupted = new
-	var/obj/item/organ/heart/nightmare/nightmare = new
-	var/obj/item/organ/heart/roach/roach = new
-	var/obj/item/organ/heart/gland/access/access = new
-	var/obj/item/organ/heart/gland/heal/heal = new
-	var/obj/item/organ/heart/gland/ventcrawling/ventcrawl = new
-	var/obj/item/organ/heart/demon/demon = new
-	var/obj/item/organ/heart/carp/akula/carpula = new
 
 /datum/action/cooldown/spell/touch/flesh_transform/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)
 	var/mob/living/carbon/human/human_victim = victim
@@ -277,45 +262,59 @@
 	if(ishuman(human_victim))
 		switch(rand(1,14))
 			if(1)
+				var/obj/item/organ/heart/cybernetic/anomalock/anomalock = new
 				anomalock.Insert(human_victim)
 				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created something special out of iron and oil, and your creation will give great power to the changed."))
 			if(2)
+				var/obj/item/organ/heart/ethereal/ethereal = new
 				ethereal.Insert(human_victim)
 				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created something unusual, filled with energy, perhaps it will grant strength to the changed."))
 			if(3)
+				var/obj/item/organ/heart/cursed/cursed = new
 				cursed.Insert(human_victim)
 				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a curse and a blessing for the changed."))
 			if(4)
+				var/obj/item/organ/heart/demon/demon = new
 				demon.Insert(human_victim)
 				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created something terrible, unpleasant and evil, filled with blood."))
 			if(5)
+				var/obj/item/organ/heart/carp/akula/carpula = new
 				carpula.Insert(human_victim)
 				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a beautiful water-living heart for an equally beautiful changed one."))
 			if(6)
+				var/obj/item/organ/heart/gland/ventcrawling/ventcrawl = new
 				ventcrawl.Insert(human_victim)
 				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a heart that allows an changed person to reduce the size of his body to such a state that he can pass into ventilation."))
 			if(7)
+				var/obj/item/organ/heart/cybernetic/surplus/surplus = new
 				surplus.Insert(human_victim)
 				to_chat(caster, span_warning("You, the ruler of flesh and blood, have failed in creating something good out of iron and oil. You're better at dealing with the flesh. The changed person will not feel very well."))
 			if(8)
+				var/obj/item/organ/heart/freedom/freedom = new
 				freedom.Insert(human_victim)
 				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created the heart of a determined being that will not give up even at death's door."))
 			if(9)
+				var/obj/item/organ/heart/pod/podperson = new
 				podperson.Insert(human_victim)
 				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created the heart that absorbs light, but is it useful..?"))
 			if(10)
+				var/obj/item/organ/heart/corrupt/corrupted = new
 				corrupted.Insert(human_victim)
 				to_chat(caster, span_warning("You, the ruler of flesh and blood, have failed, and what you have created will only do harm."))
 			if(11)
+				var/obj/item/organ/heart/nightmare/nightmare = new
 				nightmare.Insert(human_victim)
 				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a heart as dark as night, it is filled with malice and hatred for prosperity and life, and it will surely manifest itself in the changed."))
 			if(12)
+				var/obj/item/organ/heart/roach/roach = new
 				roach.Insert(human_victim)
 				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a strong and tenacious heart, perhaps it will give its properties to the changed one."))
 			if(13)
+				var/obj/item/organ/heart/gland/access/access = new
 				access.Insert(human_victim)
 				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a heart that holds the key to all doors. Even you don't know what the key is."))
 			if(14)
+				var/obj/item/organ/heart/gland/heal/heal = new
 				heal.Insert(human_victim)
 				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a heart that gives life to the changed and restores his body."))
 

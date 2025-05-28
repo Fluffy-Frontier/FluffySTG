@@ -4,12 +4,12 @@
 	antag_hud_name = "hematocrat"
 	antagpanel_category = "Hematocrats"
 	job_rank = ROLE_HEMATOCRAT
+	var/special_role = ROLE_HEMATOCRAT
 	hijack_speed = 1
 	show_to_ghosts = TRUE
-	ui_name = "AntagInfoHematocrat" // скоро будет добавлено.
-	var/special_role = ROLE_HEMATOCRAT
-	var/datum/team/hematocrats/hematocrat_team
+	ui_name = "AntagInfoHematocrat"
 	hud_icon = 'tff_modular/modules/hematocrat/icons/hematocrathud.dmi'
+	var/datum/team/hematocrats/hematocrat_team
 	var/datum/action/cooldown/choose_class/class = new
 	var/datum/action/cooldown/spell/conjure/heart/heart = new
 	var/datum/action/cooldown/spell/summon_flesh/flesh = new

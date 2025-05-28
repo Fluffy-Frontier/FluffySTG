@@ -62,8 +62,8 @@
 		TRAIT_XRAY_HEARING,
 		TRAIT_SECURITY_HUD,
 		TRAIT_MEDICAL_HUD,
-		TRAIT_DIAGNOSTIC_HUD
-		)
+		TRAIT_DIAGNOSTIC_HUD,
+	)
 
 /datum/action/cooldown/bbvision/Remove(mob/living/remove_from)
 	if(HAS_TRAIT(remove_from, TRAIT_BLOODSHOT_EYES))
