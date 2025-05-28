@@ -199,7 +199,7 @@
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
 	overlay_icon_state = "bg_fugu_border"
 	spell_requirements = NONE
-	cooldown_time = 5 SECONDS
+	cooldown_time = 1 SECONDS
 	ranged_mousepointer = 'icons/effects/mouse_pointers/supplypod_target.dmi'
 	var/hack_range = 7
 
