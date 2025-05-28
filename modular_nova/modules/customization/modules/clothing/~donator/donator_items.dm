@@ -38,7 +38,7 @@
 
 /obj/item/hairbrush/switchblade/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/update_icon_updates_onmob, ITEM_SLOT_HANDS)
+	AddElement(/datum/element/update_icon_updates_onmob)
 
 ///This is called when you transform it
 /obj/item/hairbrush/switchblade/attack_self(mob/user, modifiers)
@@ -91,9 +91,8 @@
 
 /obj/item/donator/transponder/Destroy()
 	if(sparks)
-		qdel(sparks)
-	sparks = null
-	. = ..()
+		QDEL_NULL(sparks)
+	return ..()
 
 /obj/item/donator/transponder/attack_self(mob/user)
 	if(QDELETED(src) || (next_activate > world.time))
