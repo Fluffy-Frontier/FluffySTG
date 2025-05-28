@@ -326,7 +326,7 @@
 
 /datum/config_entry/string/forumurl
 	default = "http://tgstation13.org/phpBB/index.php"
-	
+
 /datum/config_entry/string/rulesurl
 	default = "http://tgstation13.org/wiki/Rules"
 
