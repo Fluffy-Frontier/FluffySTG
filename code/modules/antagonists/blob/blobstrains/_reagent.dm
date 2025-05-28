@@ -7,7 +7,7 @@
 
 
 /datum/blobstrain/reagent/attack_living(mob/living/L)
-	var/mob_protection = L.getarmor(null, BIO) * 0.005 // FLUFFY FRONTIER EDIT - ORIGINAL: var/mob_protection = L.getarmor(null, BIO) * 0.01. - это должно уменьшить сопротивление МОДов к ядам блоба.
+	var/mob_protection = L.getarmor(null, BIO) * 0.01
 	reagent.expose_mob(L, VAPOR, BLOB_REAGENTATK_VOL, TRUE, mob_protection, overmind)
 	send_message(L)
 
@@ -16,7 +16,7 @@
 		return
 
 	var/mob/living/living_attacking = attacking
-	var/mob_protection = living_attacking.getarmor(null, BIO) * 0.005 // FLUFFY FRONTIER EDIT - ORIGINAL: var/mob_protection = living_attacking.getarmor(null, BIO) * 0.01. - это должно уменьшить сопротивление МОДов к ядам блоббернаута.
+	var/mob_protection = living_attacking.getarmor(null, BIO) * 0.01
 	reagent.expose_mob(living_attacking, VAPOR, BLOBMOB_BLOBBERNAUT_REAGENTATK_VOL+blobbernaut_reagentatk_bonus, FALSE, mob_protection, overmind)//this will do between 10 and 20 damage(reduced by mob protection), depending on chemical, plus 4 from base brute damage.
 
 /datum/blobstrain/reagent/on_sporedeath(mob/living/basic/spore)
