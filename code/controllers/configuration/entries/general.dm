@@ -327,7 +327,7 @@
 /datum/config_entry/string/forumurl
 	default = "http://tgstation13.org/phpBB/index.php"
 /datum/config_entry/string/rulesurl
-	default = "https://fluffy-frontier.ru/rules" // FLUFFY EDIT CHANGE - Original: defalut: = "http://tgstation13.org/wiki/Rules"
+	default = "http://tgstation13.org/wiki/Rules"
 
 /datum/config_entry/string/githuburl
 	defalut = "https://www.github.com/tgstation/tgstation
