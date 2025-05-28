@@ -75,7 +75,7 @@
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
 	overlay_icon_state = "bg_fugu_border"
 	school = SCHOOL_CONJURATION
-	cooldown_time = 60 SECONDS
+	cooldown_time = 80 SECONDS
 	invocation_type = INVOCATION_NONE
 	spell_requirements = NONE
 	var/static/list/summon_type = list(
@@ -100,6 +100,8 @@
 	return TRUE
 
 // Создает сердце. Сердце требуется для захвата территорий или отвлечения СБэу. Смешное и очень больно бьет!
+// Временно убрано.
+/*
 /datum/action/cooldown/spell/conjure/heart
 	name = "summon heart"
 	desc = "This ability creates a dangerous flesh heart, that attacks near creatures and deal huge damage!"
@@ -116,6 +118,7 @@
 	summon_type = list(/mob/living/basic/meteor_heart/hematocrat_team)
 	summon_radius = 1
 	summon_amount = 1
+*/
 
 // Извлечение. Абилка еретика на извлечение органов, но без хила органов/существ.
 /datum/action/cooldown/spell/touch/flesh_harvest

@@ -1,7 +1,7 @@
 /datum/disease/piuc
 	name = "P.I.U.C"
 	form = "Infection"
-	max_stages = 4
+	max_stages = 3
 	spread_text = "Blood"
 	spread_flags = DISEASE_SPREAD_BLOOD
 	bypasses_immunity = TRUE
@@ -26,12 +26,7 @@
 		if(3)
 			if(SPT_PROB(2.5, seconds_per_tick))
 				to_chat(affected_mob, span_danger("You feel something moving in your throat."))
-			if(SPT_PROB(0.5, seconds_per_tick))
-				affected_mob.visible_message(span_danger("[affected_mob] coughs up a parasite!"), \
-													span_userdanger("You cough up a parasite!"))
-				new /mob/living/basic/living_limb_flesh/hematocrat_team(affected_mob.loc)
-		if(4)
-			if(SPT_PROB(1.5, seconds_per_tick))
+			if(SPT_PROB(0.75, seconds_per_tick))
 				affected_mob.visible_message(span_danger("[affected_mob] coughs up a parasite!"), \
 													span_userdanger("You cough up a parasite!"))
 				new /mob/living/basic/living_limb_flesh/hematocrat_team(affected_mob.loc)

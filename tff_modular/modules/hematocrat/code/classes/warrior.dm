@@ -107,7 +107,7 @@
 			continue
 		if(HAS_TRAIT(something_living, TRAIT_HEMATOCRAT))
 			continue
-		if(prob(40))
+		if(prob(30))
 			something_living.Stun(2 SECONDS)
 			something_living.Paralyze(1.5 SECONDS)
 		if(prob(10))

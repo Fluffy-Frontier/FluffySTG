@@ -66,7 +66,7 @@
 	spell_requirements = NONE
 
 	exit_jaunt_sound = null
-	jaunt_duration = 4 SECONDS
+	jaunt_duration = 3 SECONDS
 	jaunt_in_time = 1 SECONDS
 	jaunt_type = /obj/effect/dummy/phased_mob/spell_jaunt/red
 	jaunt_in_type = /obj/effect/temp_visual/dir_setting/blood_in
@@ -121,7 +121,7 @@
 			return FALSE
 
 		creature.adjust_disgust(2, 2)
-		if(prob(30))
+		if(prob(15))
 			creature.drop_all_held_items()
 			creature.emote("cough")
 			creature.adjust_disgust(4, 4)
