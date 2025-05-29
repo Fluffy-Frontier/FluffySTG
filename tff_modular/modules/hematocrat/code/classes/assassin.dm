@@ -14,9 +14,9 @@
 	melee_cooldown_time = 0 SECONDS
 	click_to_activate = FALSE
 	/// The alpha we go to when sneaking.
-	var/sneak_alpha = 25
+	var/sneak_alpha = 30
 	/// How long it takes to become transparent
-	var/animation_time = 0.5 SECONDS
+	var/animation_time = 2 SECONDS
 
 /datum/action/cooldown/bbstealth/Remove(mob/living/remove_from)
 	if(HAS_TRAIT(remove_from, TRAIT_SNEAK))

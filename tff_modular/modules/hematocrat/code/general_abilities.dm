@@ -64,10 +64,10 @@
 	qdel(src)
 	return TRUE
 
-// Призыв плоти. Создает выбранное существо. Дружелюбно к гематократам.
-/datum/action/cooldown/spell/summon_flesh
-	name = "summon flesh"
-	desc = "This ability creates a choosen creature, which made of flesh."
+// Призывы.
+/datum/action/cooldown/spell/conjure/summon_fleshblob
+	name = "summon blobflesh"
+	desc = "This ability creates a big, cube-like creature, which made of flesh."
 	button_icon = 'icons/mob/actions/actions_cult.dmi'
 	button_icon_state = "spirit_unsealed"
 	background_icon = 'icons/mob/actions/backgrounds.dmi'
@@ -75,36 +75,16 @@
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
 	overlay_icon_state = "bg_fugu_border"
 	school = SCHOOL_CONJURATION
-	cooldown_time = 80 SECONDS
+	cooldown_time = 60 SECONDS
 	invocation_type = INVOCATION_NONE
 	spell_requirements = NONE
-	var/static/list/summon_type = list(
-		"flesh blob" = /mob/living/basic/fleshblob/hematocrat_team,
-		"living limb" = /mob/living/basic/living_limb_flesh/hematocrat_team,
-	)
+	summon_type = list(/mob/living/basic/fleshblob/hematocrat_team)
+	summon_amount = 1
+	summon_radius = 1
 
-/datum/action/cooldown/spell/summon_flesh/is_valid_target(atom/cast_on)
-	return isturf(cast_on.loc)
-
-/datum/action/cooldown/spell/summon_flesh/cast(atom/cast_on)
-	. = ..()
-	var/choice = tgui_input_list(owner, "Select a flesh to create", "Flesh Creation", summon_type)
-	if(isnull(choice) || QDELETED(src) || QDELETED(owner) || !IsAvailable(feedback = TRUE))
-		return FALSE
-
-	var/mob/living/basic/choice_path = summon_type[choice]
-	if(!ispath(choice_path))
-		return FALSE
-
-	new choice_path(owner.loc)
-	return TRUE
-
-// Создает сердце. Сердце требуется для захвата территорий или отвлечения СБэу. Смешное и очень больно бьет!
-// Временно убрано.
-/*
-/datum/action/cooldown/spell/conjure/heart
-	name = "summon heart"
-	desc = "This ability creates a dangerous flesh heart, that attacks near creatures and deal huge damage!"
+/datum/action/cooldown/spell/conjure/summon_living_flesh
+	name = "summon living flesh"
+	desc = "This ability creates a limb-like creature, which made of flesh."
 	button_icon = 'icons/mob/actions/actions_cult.dmi'
 	button_icon_state = "spirit_sealed"
 	background_icon = 'icons/mob/actions/backgrounds.dmi'
@@ -112,13 +92,12 @@
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
 	overlay_icon_state = "bg_fugu_border"
 	school = SCHOOL_CONJURATION
-	cooldown_time = 180 SECONDS
+	cooldown_time = 60 SECONDS
 	invocation_type = INVOCATION_NONE
 	spell_requirements = NONE
-	summon_type = list(/mob/living/basic/meteor_heart/hematocrat_team)
-	summon_radius = 1
+	summon_type = list(/mob/living/basic/living_limb_flesh/hematocrat_team)
 	summon_amount = 1
-*/
+	summon_radius = 1
 
 // Извлечение. Абилка еретика на извлечение органов, но без хила органов/существ.
 /datum/action/cooldown/spell/touch/flesh_harvest
@@ -132,7 +111,7 @@
 	button_icon_state = "mad_touch"
 	sound = null
 	school = SCHOOL_FORBIDDEN
-	cooldown_time = 60 SECONDS
+	cooldown_time = 30 SECONDS
 	invocation_type = INVOCATION_NONE
 	spell_requirements = NONE
 
@@ -250,7 +229,7 @@
 	button_icon_state = "sting_transform"
 	sound = null
 	school = SCHOOL_FORBIDDEN
-	cooldown_time = 60 SECONDS
+	cooldown_time = 20 SECONDS
 	invocation_type = INVOCATION_NONE
 	spell_requirements = NONE
 	hand_path = /obj/item/melee/touch_attack/flesh_hand
@@ -258,8 +237,10 @@
 
 /datum/action/cooldown/spell/touch/flesh_transform/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)
 	var/mob/living/carbon/human/human_victim = victim
+	if(HAS_TRAIT(human_victim, TRAIT_HEMATOCRAT))
+		return FALSE
 	playsound(human_victim, 'sound/items/weapons/slice.ogg', 50, TRUE)
-	if(!do_after(caster, 10 SECONDS, target = human_victim))
+	if(!do_after(caster, 7 SECONDS, target = human_victim))
 		human_victim.balloon_alert(caster, "interrupted!")
 		return FALSE
 	if(ishuman(human_victim))
@@ -316,14 +297,10 @@
 				var/obj/item/organ/heart/gland/access/access = new
 				access.Insert(human_victim)
 				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a heart that holds the key to all doors. Even you don't know what the key is."))
-			if(14)
-				var/obj/item/organ/heart/gland/heal/heal = new
-				heal.Insert(human_victim)
-				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a heart that gives life to the changed and restores his body."))
 
 		playsound(victim, 'sound/mobs/non-humanoids/alien/alien_organ_cut.ogg', 50, TRUE)
-		if(!HAS_TRAIT(human_victim, TRAIT_HEMATOCRAT) && human_victim.stat == DEAD)
-			human_victim.revive(HEAL_DAMAGE)
+		if(human_victim.stat == DEAD)
+			human_victim.revive(HEAL_ALL_DAMAGE)
 			human_victim.visible_message(span_warning("[human_victim] appears to wake from the dead!"), span_notice("You have regenerated."))
 	return TRUE
 

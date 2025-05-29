@@ -34,7 +34,7 @@
 		toxin_heal = 3, \
 		suffocation_heal = 5, \
 		stamina_heal = 2, \
-		wound_clotting = 0.4, \
+		wound_clotting = 0.2, \
 		blood_heal = 0.3, \
 		limit_to_trait = TRAIT_HEMATOCRAT, \
 		healing_color = aura_healing_color, \

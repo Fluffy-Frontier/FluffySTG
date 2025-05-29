@@ -9,10 +9,11 @@
 	cures = list(/datum/reagent/medicine/ephedrine)
 	agent = "infected blood"
 	viable_mobtypes = list(/mob/living/carbon/human)
+	disease_flags = CAN_CARRY|CAN_RESIST|CURABLE
+	cure_chance = 3
 	desc = "If left untreated subject will regurgitate parasites."
-	severity = DISEASE_SEVERITY_MEDIUM
-	infectable_biotypes = MOB_ORGANIC|MOB_UNDEAD
-	cure_chance = 0.1
+	severity = DISEASE_SEVERITY_HARMFUL
+	infectable_biotypes = MOB_ORGANIC
 
 /datum/disease/piuc/stage_act(seconds_per_tick, times_fired)
 	. = ..()

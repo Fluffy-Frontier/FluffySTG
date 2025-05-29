@@ -11,7 +11,8 @@
 	hud_icon = 'tff_modular/modules/hematocrat/icons/hematocrathud.dmi'
 	var/datum/team/hematocrats/hematocrat_team
 	var/datum/action/cooldown/choose_class/class = new
-	var/datum/action/cooldown/spell/summon_flesh/flesh = new
+	var/datum/action/cooldown/spell/conjure/summon_fleshblob/flesh_blob = new
+	var/datum/action/cooldown/spell/conjure/summon_living_flesh/flesh_limb = new
 	var/datum/action/cooldown/spell/touch/flesh_harvest/harvest = new
 	var/datum/action/cooldown/spell/touch/flesh_transform/transform = new
 	var/datum/action/aggressive_intentions/intentions = new
@@ -26,7 +27,8 @@
 
 /datum/antagonist/hematocrat/Destroy()
 	QDEL_NULL(class)
-	QDEL_NULL(flesh)
+	QDEL_NULL(flesh_limb)
+	QDEL_NULL(flesh_blob)
 	QDEL_NULL(harvest)
 	QDEL_NULL(transform)
 	QDEL_NULL(intentions)
@@ -39,7 +41,8 @@
 	handle_clown_mutation(the_mob, "Your training has allowed you to overcome your clownish nature, allowing you to wield weapons without harming yourself.")
 	the_mob.faction |= FACTION_HEMATOCRAT
 	class.Grant(the_mob)
-	flesh.Grant(the_mob)
+	flesh_limb.Grant(the_mob)
+	flesh_blob.Grant(the_mob)
 	harvest.Grant(the_mob)
 	transform.Grant(the_mob)
 	intentions.Grant(the_mob)
@@ -51,7 +54,8 @@
 	handle_clown_mutation(the_mob, removing = FALSE)
 	REMOVE_TRAIT(the_mob, TRAIT_HEMATOCRAT, ACTION_TRAIT)
 	class.Remove(the_mob)
-	flesh.Remove(the_mob)
+	flesh_limb.Remove(the_mob)
+	flesh_blob.Remove(the_mob)
 	harvest.Remove(the_mob)
 	transform.Remove(the_mob)
 	intentions.Remove(the_mob)
