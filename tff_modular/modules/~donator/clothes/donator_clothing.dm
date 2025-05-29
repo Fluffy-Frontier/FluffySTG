@@ -363,7 +363,7 @@
 
 /obj/item/clothing/neck/mousecloak/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/toggle_clothes, "siamant_sectac_w_t")
+	AddComponent(/datum/component/toggle_icon, "over shoulder")
 
 // Uniform sprite copied from SS1984 Paradise Station
 
