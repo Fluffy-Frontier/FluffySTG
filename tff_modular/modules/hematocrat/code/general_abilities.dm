@@ -297,6 +297,8 @@
 				var/obj/item/organ/heart/gland/access/access = new
 				access.Insert(human_victim)
 				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a heart that holds the key to all doors. Even you don't know what the key is."))
+			if(14)
+				var/obj/item/organ/heart/gland/heal/heal = new
 				heal.Insert(human_victim)
 				to_chat(caster, span_warning("You, the ruler of flesh and blood, have created a heart that gives life to the changed and restores his body."))
 
