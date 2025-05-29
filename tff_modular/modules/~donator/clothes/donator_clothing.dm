@@ -303,7 +303,8 @@
 	desc = "This jacket is equipped with electronic components, lighting, heating and other additional mechanisms from the hi-tech world. Inside you can find a tag that says it is Charles Ray property."
 	icon = 'tff_modular/master_files/icons/donator/obj/clothing/suit.dmi'
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/suit.dmi'
-	icon_state = "fjacket"
+	icon_state = "/obj/item/clothing/suit/jacket/leather/futuristic"
+	post_init_icon_state = "fjacket"
 	worn_icon_state = "fjacket"
 	greyscale_config = /datum/greyscale_config/fjacket
 	greyscale_config_worn = /datum/greyscale_config/fjacket/worn
