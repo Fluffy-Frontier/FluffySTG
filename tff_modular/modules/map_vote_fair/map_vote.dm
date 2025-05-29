@@ -8,6 +8,6 @@
 	if(!istype(winning_map))
 		CRASH("[type] wasn't passed a valid winning map choice. (Got: [winning_option || "null"] - [winning_map || "null"])")
 
-	SSmap_vote.next_map_config = winning_map
+	SSmap_vote.set_next_map(winning_map)
 	SSmap_vote.already_voted = TRUE
 
