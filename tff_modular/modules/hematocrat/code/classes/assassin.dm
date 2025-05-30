@@ -2,7 +2,7 @@
 
 // Стелс. Стелс позволяет перейти в режим полуневидимости и скрыть свою личность.
 /datum/action/cooldown/bbstealth
-	name = "camouflage skin"
+	name = "Camouflage Skin"
 	desc = "Blend into the environment."
 	button_icon = 'icons/mob/actions/actions_minor_antag.dmi'
 	button_icon_state = "ninja_cloak"
@@ -41,7 +41,7 @@
 // Зрение Ассасина. Дает ХУДы всех очков, ночное зрение, иксрей, зрение через стены и темноту. Глаза ассасина при активации становятся красными, что можно обнаружить при экзамайне.
 // Считать это дебаффом не стоит - можно просто очками закрыть.
 /datum/action/cooldown/bbvision
-	name = "assassin vision"
+	name = "Assassin Vision"
 	desc = "Gives you xray, night vision and all HUDs, but at the same time, your eyes start to glow strangely and anyone can see it!"
 	button_icon = 'icons/mob/actions/actions_cult.dmi'
 	button_icon_state = "horror"
@@ -85,7 +85,7 @@
 
 // Дым. Создает красное облако дыма на уровне облака священника.
 /datum/action/cooldown/spell/smoke/bbsmoke
-	name = "boil the blood"
+	name = "Boil the blood"
 	desc = "Creates a red cloud in a radius around."
 	background_icon = 'icons/mob/actions/backgrounds.dmi'
 	background_icon_state = "bg_fugu"
@@ -103,7 +103,7 @@
 
 // Кража - способность позволяет красть вещи из рюкзака на расстоянии 7 тайлов.
 /datum/action/cooldown/spell/pointed/burglar_finesse/bbsteal
-	name = "thief Steal"
+	name = "Thief steal"
 	desc = "Steal a random item from the victim's backpack."
 	background_icon = 'icons/mob/actions/backgrounds.dmi'
 	background_icon_state = "bg_fugu"
@@ -188,7 +188,7 @@
 
 // Взлом - позволяет взломать какой-либо механизм на расстоянии 7 тайлов. Не работает на боргов/мехов.
 /datum/action/cooldown/spell/pointed/bbhack
-	name = "machinery manipulatin"
+	name = "Machinery manipulatin"
 	desc = "Click on any machine, excepting cyborgs, to hack them. Has a 7 tiles range. Creates a blood-red line between the machinery and the caster."
 	active_msg = null
 	deactive_msg = null

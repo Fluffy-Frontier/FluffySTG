@@ -2,7 +2,7 @@
 
 // Аура - лечебная аура с расстоянием 7 тайлов. Лечит в тик: брут и берн по 1.5 единицы, 1 единицу токсина, 2 единицы удушения, 0.3 единицы ран, 0.3 единицы крови.
 /datum/action/cooldown/hematocrat_aura
-	name = "hematocrat aura"
+	name = "Hematocrat aura"
 	desc = "Hematocrats and you in a range of 7 tiles will get passive healing that removes that types of damage: brute, burn, toxin, suffocation, wounds, stamina. Works better when there's a two brothers with auras!"
 	background_icon = 'icons/mob/actions/backgrounds.dmi'
 	background_icon_state = "bg_fugu"
@@ -50,7 +50,7 @@
 
 // Кровавый джаунт. Навык просто позволяет телепортироваться на некоторое расстояние.
 /datum/action/cooldown/spell/jaunt/ethereal_jaunt/red_jaunt
-	name = "blood passage"
+	name = "Blood Passage"
 	desc = "A short range ability that allows you to pass unimpeded through walls."
 	button_icon = 'icons/mob/actions/actions_cult.dmi'
 	button_icon_state = "tele"
@@ -86,7 +86,7 @@
 	icon_state = "bloodout"
 
 /datum/action/cooldown/spell/pointed/projectile/hematocrat
-	name = "blood spit"
+	name = "Blood spit"
 	desc = "Spit a infected blood at target, with having chance of infecting someone."
 	button_icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi'
 	button_icon_state = "limb"

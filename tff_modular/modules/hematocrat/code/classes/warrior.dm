@@ -6,7 +6,7 @@
 // Если мы возьмем предмет с уроном 26, то игра выберет прибавление, потому что в таком случае урон будет ниже, чем при умножении на 2.5
 // Не работает на оружие, у которого урон уже 30 или более. Сделано чтобы братья не абузили контрабанду триторов.
 /datum/action/cooldown/spell/sanguine_strike/weaponcharge
-	name = "faith strike"
+	name = "Faith Strike"
 	desc = "Enchants your next weapon strike to deal more damage and refill blood."
 	button_icon_state = "exsanguinating_strike"
 	background_icon = 'icons/mob/actions/backgrounds.dmi'
@@ -64,7 +64,7 @@
 
 // Адреналин. Имеет 120 секунд КД. Вводит стимуляторы и добавляет эффекты станиммуна на 15 секунд.
 /datum/action/cooldown/hematocrat_adrenaline
-	name = "adrenaline filling"
+	name = "Adrenaline filling"
 	desc = "This ability creates unique type of adrenaline straight in your blood. Gives stun immunity for 15 seconds. Won't work on species with no reagent reactions!"
 	button_icon = 'icons/mob/actions/actions_spells.dmi'
 	button_icon_state = "splattercasting"
@@ -86,8 +86,8 @@
 
 // АОЕ атака. Активация навыка наносит по 35 урона всем в радиусе 3x3, имеет шанс отрезать конечность или застанить.
 /datum/action/cooldown/slash
-	name = "the fury of the warrior"
-	desc = "Attack everyone in 3x3 radius."
+	name = "The Fury Of The Warrior"
+	desc = "Attack everyone in 3x3 radius with a chance of stunning target or dismember its bodyparts"
 	button_icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi'
 	button_icon_state = "slash_icon"
 	background_icon = 'icons/mob/actions/backgrounds.dmi'
@@ -107,7 +107,7 @@
 			continue
 		if(HAS_TRAIT(something_living, TRAIT_HEMATOCRAT))
 			continue
-		if(prob(30))
+		if(prob(35))
 			something_living.Stun(2 SECONDS)
 			something_living.Paralyze(1.5 SECONDS)
 		if(prob(10))

@@ -1,7 +1,7 @@
 // Способность для выбора классов
 
 /datum/action/cooldown/choose_class
-	name = "choose class"
+	name = "Choose class"
 	desc = "A skill that allows you to choose your class. After selecting a class, it cannot be changed."
 	button_icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi'
 	button_icon_state = "class"
@@ -12,9 +12,6 @@
 	cooldown_time = 10 MINUTES
 
 /datum/action/cooldown/choose_class/Activate(atom/target)
-	if(HAS_TRAIT(owner, TRAIT_HEMATOCRAT))
-		to_chat(owner, span_notice("Why do you need even more power? Greed is punishable."))
-		return FALSE
 
 	var/static/list/classes
 	if(!classes)
@@ -66,7 +63,6 @@
 	var/mob/living/carbon/living_owner = owner
 	switch(brother_class)
 		if("Warrior")
-			ADD_TRAIT(owner, TRAIT_HEMATOCRAT, ACTION_TRAIT)
 			var/static/list/warrior_actions = list(
 				/datum/action/cooldown/spell/sanguine_strike/weaponcharge,
 				/datum/action/cooldown/hematocrat_adrenaline,
@@ -77,7 +73,6 @@
 			ADD_TRAIT(owner, TRAIT_IGNORESLOWDOWN, ACTION_TRAIT)
 
 		if("Assassin")
-			ADD_TRAIT(owner, TRAIT_HEMATOCRAT, ACTION_TRAIT)
 			var/static/list/assassin_actions = list(
 				/datum/action/cooldown/bbstealth,
 				/datum/action/cooldown/spell/smoke/bbsmoke,
@@ -90,7 +85,6 @@
 			living_owner.grant_actions_by_list(assassin_actions)
 
 		if("Blood Brother")
-			ADD_TRAIT(owner, TRAIT_HEMATOCRAT, ACTION_TRAIT)
 			var/static/list/healer_actions = list(
 				/datum/action/cooldown/hematocrat_aura,
 				/datum/action/cooldown/spell/jaunt/ethereal_jaunt/red_jaunt,

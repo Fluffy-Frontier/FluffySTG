@@ -39,6 +39,7 @@
 	var/mob/living/the_mob = owner.current || mob_override
 	add_team_hud(the_mob, hematocrat_team)
 	handle_clown_mutation(the_mob, "Your training has allowed you to overcome your clownish nature, allowing you to wield weapons without harming yourself.")
+	ADD_TRAIT(the_mob, TRAIT_HEMATOCRAT, JOB_TRAIT)
 	the_mob.faction |= FACTION_HEMATOCRAT
 	class.Grant(the_mob)
 	flesh_limb.Grant(the_mob)
@@ -52,7 +53,7 @@
 	var/mob/living/the_mob = owner.current || mob_override
 	the_mob.faction -= FACTION_HEMATOCRAT
 	handle_clown_mutation(the_mob, removing = FALSE)
-	REMOVE_TRAIT(the_mob, TRAIT_HEMATOCRAT, ACTION_TRAIT)
+	REMOVE_TRAIT(the_mob, TRAIT_HEMATOCRAT, JOB_TRAIT)
 	class.Remove(the_mob)
 	flesh_limb.Remove(the_mob)
 	flesh_blob.Remove(the_mob)
