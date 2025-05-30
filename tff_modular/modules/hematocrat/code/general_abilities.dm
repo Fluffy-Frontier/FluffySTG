@@ -242,7 +242,7 @@
 		human_victim.balloon_alert(caster, "interrupted!")
 		return FALSE
 	if(ishuman(human_victim))
-		switch(rand(1,12))
+		switch(rand(1,10))
 			if(1)
 				var/obj/item/organ/heart/roach/roach_h = new
 				var/obj/item/organ/stomach/roach/roach_s = new
@@ -283,7 +283,7 @@
 				carpula_h.Insert(human_victim)
 				carpula_l.Insert(human_victim)
 				to_chat(caster, span_warning("You have created a beautiful water-living heart and lungs for an equally beautiful changed one. Oh, wait, he can't breath..."))
-			if(7)
+			if(6)
 				// если кому-то это дропнет, будет проблематично вытащить даже со скиллами антага.
 				var/obj/item/organ/heart/cybernetic/surplus/surplus_h = new
 				var/obj/item/organ/lungs/cybernetic/surplus/surplus_lu = new
@@ -292,7 +292,7 @@
 				surplus_li.Insert(human_victim)
 				surplus_h.Insert(human_victim)
 				to_chat(caster, span_warning("You have failed in creating something good out of iron and oil. You're better at dealing with the flesh. The changed person will not feel very well."))
-			if(8)
+			if(7)
 				var/obj/item/organ/tail/fish/fish_t = new
 				var/obj/item/organ/lungs/fish/fish_l = new
 				var/obj/item/organ/stomach/fish/fish_s = new
@@ -300,7 +300,7 @@
 				fish_l.Insert(human_victim)
 				fish_s.Insert(human_victim)
 				to_chat(caster, span_warning("You have created fish organs, It seems like you accidentally added a lot of fish nature..."))
-			if(10)
+			if(8)
 				var/obj/item/organ/heart/corrupt/corrupted_h = new
 				var/obj/item/organ/lungs/corrupt/corrupted_l = new
 				var/obj/item/organ/tongue/corrupt/corrupted_t = new
@@ -310,11 +310,11 @@
 				corrupted_t.Insert(human_victim)
 				corrupted_ap.Insert(human_victim)
 				to_chat(caster, span_warning("You have failed, and what you have created will only do harm."))
-			if(11)
+			if(9)
 				var/obj/item/organ/heart/nightmare/nightmare = new
 				nightmare.Insert(human_victim)
 				to_chat(caster, span_warning("You have created a heart as dark as night, it is filled with malice and hatred for prosperity and life, and it will surely manifest itself in the changed."))
-			if(12)
+			if(10)
 				var/obj/item/organ/heart/roach/roach_h = new
 				var/obj/item/organ/stomach/roach/roach_s = new
 				var/obj/item/organ/liver/roach/roach_l = new
