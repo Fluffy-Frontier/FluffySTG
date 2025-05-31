@@ -18,9 +18,10 @@
 	severity = DISEASE_SEVERITY_MEDIUM
 	infectable_biotypes = MOB_ORGANIC
 
-/datum/disease/piuc/New()
+/datum/disease/piuc/infect(mob/living/infectee, make_copy = TRUE)
 	. = ..()
-	affected_mob.faction |= FACTION_HEMATOCRAT_DISEASE // если много народу на станции будут болеть, то паразиты не будут атаковать :D
+
+	infectee.faction |= FACTION_HEMATOCRAT_DISEASE
 
 /datum/disease/piuc/stage_act(seconds_per_tick, times_fired)
 	. = ..()
@@ -60,6 +61,6 @@
 				affected_mob.adjustFireLoss(-30)
 				affected_mob.adjustStaminaLoss(-30)
 
-/datum/disease/piuc/cure(add_resistance)
-	. = ..()
+/datum/disease/piuc/remove_disease()
 	affected_mob.faction -= FACTION_HEMATOCRAT_DISEASE
+	return ..()
