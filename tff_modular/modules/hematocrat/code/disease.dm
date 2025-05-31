@@ -20,7 +20,7 @@
 
 /datum/disease/piuc/New()
 	. = ..()
-	affected_mob |= FACTION_HEMATOCRAT_DISEASE // если много народу на станции будут болеть, то паразиты не будут атаковать :D
+	affected_mob.faction |= FACTION_HEMATOCRAT_DISEASE // если много народу на станции будут болеть, то паразиты не будут атаковать :D
 
 /datum/disease/piuc/stage_act(seconds_per_tick, times_fired)
 	. = ..()
