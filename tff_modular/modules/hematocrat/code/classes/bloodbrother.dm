@@ -121,9 +121,14 @@
 			return FALSE
 
 		creature.adjust_disgust(2, 2)
-		if(prob(15))
+		if(prob(17.5))
 			creature.drop_all_held_items()
-			creature.emote("cough")
-			creature.adjust_disgust(4, 4)
+			creature.vomit(vomit_flags = (MOB_VOMIT_MESSAGE | MOB_VOMIT_HARM), vomit_type = /obj/effect/decal/cleanable/vomit/purple, lost_nutrition = 30, distance = 2)
 			creature.ForceContractDisease(new /datum/disease/piuc(), FALSE, TRUE)
 			creature.adjustBruteLoss(5)
+		if(prob(20))
+			creature.adjustToxLoss(rand(1,15))
+		if(prob(30))
+			creature.AdjustStun(0.3 SECONDS)
+		if(prob(40))
+			creature.adjust_disgust(6, 10)

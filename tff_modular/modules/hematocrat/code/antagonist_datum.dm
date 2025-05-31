@@ -41,6 +41,7 @@
 	handle_clown_mutation(the_mob, "Your training has allowed you to overcome your clownish nature, allowing you to wield weapons without harming yourself.")
 	ADD_TRAIT(the_mob, TRAIT_HEMATOCRAT, JOB_TRAIT)
 	the_mob.faction |= FACTION_HEMATOCRAT
+	the_mob.faction |= FACTION_HEMATOCRAT_DISEASE
 	class.Grant(the_mob)
 	flesh_limb.Grant(the_mob)
 	flesh_blob.Grant(the_mob)
@@ -52,6 +53,7 @@
 	. = ..()
 	var/mob/living/the_mob = owner.current || mob_override
 	the_mob.faction -= FACTION_HEMATOCRAT
+	the_mob.faction -= FACTION_HEMATOCRAT_DISEASE
 	handle_clown_mutation(the_mob, removing = FALSE)
 	REMOVE_TRAIT(the_mob, TRAIT_HEMATOCRAT, JOB_TRAIT)
 	class.Remove(the_mob)

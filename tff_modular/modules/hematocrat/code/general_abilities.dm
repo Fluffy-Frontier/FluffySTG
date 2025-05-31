@@ -248,81 +248,88 @@
 				var/obj/item/organ/stomach/roach/roach_s = new
 				var/obj/item/organ/liver/roach/roach_l = new
 				var/obj/item/organ/appendix/roach/roach_ap = new
-				roach_h.Insert(human_victim)
-				roach_s.Insert(human_victim)
-				roach_l.Insert(human_victim)
-				roach_ap.Insert(human_victim)
+				roach_h.replace_into(human_victim)
+				roach_s.replace_into(human_victim)
+				roach_l.replace_into(human_victim)
+				roach_ap.replace_into(human_victim)
 				to_chat(caster, span_warning("You have created a strong and tenacious organs, perhaps it will give its properties to changed one."))
 			if(2)
 				var/obj/item/organ/eyes/night_vision/rat/rat_e = new
 				var/obj/item/organ/heart/rat/rat_h = new
 				var/obj/item/organ/stomach/rat/rat_s = new
 				var/obj/item/organ/tongue/rat/rat_t = new
-				rat_e.Insert(human_victim)
-				rat_h.Insert(human_victim)
-				rat_s.Insert(human_victim)
-				rat_t.Insert(human_victim)
+				rat_e.replace_into(human_victim)
+				rat_h.replace_into(human_victim)
+				rat_s.replace_into(human_victim)
+				rat_t.replace_into(human_victim)
 				to_chat(caster, span_warning("You have created the organs of a small, silly creature that loves to bite wires. We all hope the changed one doesn't become the same."))
 			if(3)
 				var/obj/item/organ/tongue/inky/oink = new
-				oink.Insert(human_victim)
+				oink.replace_into(human_victim)
 				to_chat(caster, span_warning("You have created inky-like tongue for the changed."))
 			if(4)
 				var/obj/item/organ/eyes/night_vision/goliath/goliath_e = new
 				var/obj/item/organ/heart/goliath/goliath_h = new
 				var/obj/item/organ/lungs/lavaland/goliath/goliath_l = new
-				goliath_e.Insert(human_victim)
-				goliath_h.Insert(human_victim)
-				goliath_l.Insert(human_victim)
+				goliath_e.replace_into(human_victim)
+				goliath_h.replace_into(human_victim)
+				goliath_l.replace_into(human_victim)
 				to_chat(caster, span_warning("You have created something terrible, unpleasant and evil, filled with blood."))
 			if(5)
 				var/obj/item/organ/heart/carp/carpula_h = new
 				var/obj/item/organ/lungs/carp/carpula_l = new
 				var/obj/item/organ/tongue/carp/carpula_t = new
-				carpula_t.Insert(human_victim)
-				carpula_h.Insert(human_victim)
-				carpula_l.Insert(human_victim)
+				carpula_t.replace_into(human_victim)
+				carpula_h.replace_into(human_victim)
+				carpula_l.replace_into(human_victim)
 				to_chat(caster, span_warning("You have created a beautiful water-living heart and lungs for an equally beautiful changed one. Oh, wait, he can't breath..."))
 			if(6)
 				// если кому-то это дропнет, будет проблематично вытащить даже со скиллами антага.
 				var/obj/item/organ/heart/cybernetic/surplus/surplus_h = new
 				var/obj/item/organ/lungs/cybernetic/surplus/surplus_lu = new
 				var/obj/item/organ/liver/cybernetic/surplus/surplus_li = new
-				surplus_lu.Insert(human_victim)
-				surplus_li.Insert(human_victim)
-				surplus_h.Insert(human_victim)
+				surplus_lu.replace_into(human_victim)
+				surplus_li.replace_into(human_victim)
+				surplus_h.replace_into(human_victim)
 				to_chat(caster, span_warning("You have failed in creating something good out of iron and oil. You're better at dealing with the flesh. The changed person will not feel very well."))
 			if(7)
 				var/obj/item/organ/tail/fish/fish_t = new
 				var/obj/item/organ/lungs/fish/fish_l = new
 				var/obj/item/organ/stomach/fish/fish_s = new
-				fish_t.Insert(human_victim)
-				fish_l.Insert(human_victim)
-				fish_s.Insert(human_victim)
+				fish_t.replace_into(human_victim)
+				fish_l.replace_into(human_victim)
+				fish_s.replace_into(human_victim)
 				to_chat(caster, span_warning("You have created fish organs, It seems like you accidentally added a lot of fish nature..."))
 			if(8)
+				// кому-то очень не повезет...
 				var/obj/item/organ/heart/corrupt/corrupted_h = new
-				var/obj/item/organ/lungs/corrupt/corrupted_l = new
+				var/obj/item/organ/lungs/corrupt/corrupted_lu = new
 				var/obj/item/organ/tongue/corrupt/corrupted_t = new
 				var/obj/item/organ/appendix/corrupt/corrupted_ap = new
-				corrupted_h.Insert(human_victim)
-				corrupted_l.Insert(human_victim)
-				corrupted_t.Insert(human_victim)
-				corrupted_ap.Insert(human_victim)
+				var/obj/item/organ/stomach/corrupt/corrupted_s = new
+				var/obj/item/organ/eyes/corrupt/corrupted_e = new
+				var/obj/item/organ/liver/corrupt/corrupted_li = new
+				corrupted_h.replace_into(human_victim)
+				corrupted_lu.replace_into(human_victim)
+				corrupted_li.replace_into(human_victim)
+				corrupted_t.replace_into(human_victim)
+				corrupted_ap.replace_into(human_victim)
+				corrupted_e.replace_into(human_victim)
+				corrupted_s.replace_into(human_victim)
 				to_chat(caster, span_warning("You have failed, and what you have created will only do harm."))
 			if(9)
 				var/obj/item/organ/heart/nightmare/nightmare = new
-				nightmare.Insert(human_victim)
+				nightmare.replace_into(human_victim)
 				to_chat(caster, span_warning("You have created a heart as dark as night, it is filled with malice and hatred for prosperity and life, and it will surely manifest itself in the changed."))
 			if(10)
 				var/obj/item/organ/heart/roach/roach_h = new
 				var/obj/item/organ/stomach/roach/roach_s = new
 				var/obj/item/organ/liver/roach/roach_l = new
 				var/obj/item/organ/appendix/roach/roach_ap = new
-				roach_h.Insert(human_victim)
-				roach_s.Insert(human_victim)
-				roach_l.Insert(human_victim)
-				roach_ap.Insert(human_victim)
+				roach_h.replace_into(human_victim)
+				roach_s.replace_into(human_victim)
+				roach_l.replace_into(human_victim)
+				roach_ap.replace_into(human_victim)
 				to_chat(caster, span_warning("You have created a strong and tenacious organs, perhaps it will give its properties to changed one."))
 
 	playsound(victim, 'sound/mobs/non-humanoids/alien/alien_organ_cut.ogg', 50, TRUE)
