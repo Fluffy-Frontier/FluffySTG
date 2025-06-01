@@ -133,4 +133,4 @@
 	projectiles_per_fire = 2
 
 /obj/projectile/bloodspit/warrior
-	damage = 12
+	damage = 24

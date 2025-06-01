@@ -109,9 +109,9 @@
 /obj/projectile/bloodspit
 	name = "blood spit"
 	icon_state = "vileworm"
-	damage = 15
+	damage = 30
 	armour_penetration = 100
-	damage_type = BRUTE
+	damage_type = STAMINA
 
 /obj/projectile/bloodspit/on_hit(atom/target, blocked, pierce_hit)
 	. = ..()

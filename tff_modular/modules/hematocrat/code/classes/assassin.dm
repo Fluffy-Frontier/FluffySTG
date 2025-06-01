@@ -181,4 +181,4 @@
 	projectiles_per_fire = 1
 
 /obj/projectile/bloodspit/assassin
-	damage = 40
+	damage = 60
