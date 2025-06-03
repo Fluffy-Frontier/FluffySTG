@@ -236,7 +236,7 @@
 	if(issilicon(user))
 		name = user.real_name
 	else
-		name = the_person.get_authentification_name()
+		name = the_person.get_authentification_name(hand_first = TRUE)
 
 	var/reason = ""
 
