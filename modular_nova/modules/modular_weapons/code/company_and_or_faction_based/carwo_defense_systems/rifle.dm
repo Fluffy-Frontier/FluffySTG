@@ -39,8 +39,8 @@
 	actions_types = list()
 
 	spread = 2
-	projectile_wound_bonus = 7
-	projectile_damage_multiplier = 0.6
+	projectile_wound_bonus = 7 // fluffy frontier changes - nerf MMR - original: 10
+	projectile_damage_multiplier = 0.6 // fluffy frontier changes - nerf MMR - original: 0.75
 
 	lore_blurb = "The MMR-2543 is the current standard service rifle for all branches of the Sol Federation Armed Forces.<br><br>\
 		Initially created for use by the Sagittarian Triumvirate’s military, its adoption by SolFed came a few years later. \
@@ -89,7 +89,7 @@
 
 	spawn_magazine_type = /obj/item/ammo_box/magazine/c40sol_rifle
 
-	fire_delay = 1 SECONDS
+	fire_delay = 1 SECONDS // fluffy frontier changes - nerf MMR - original: 1.6 SECONDS
 	burst_delay = 0.1 SECONDS
 
 	actions_types = list(/datum/action/item_action/toggle_firemode)
@@ -99,7 +99,7 @@
 
 	burst_size = 3
 	spread = 5.5
-	projectile_damage_multiplier = 0.8
+	projectile_damage_multiplier = 0.8 // fluffy frontier changes - nerf MMR - original: 1
 	projectile_wound_bonus = 3
 
 	model_specific_lore = "This variant is the Infantry model, and is the primary rifle \
