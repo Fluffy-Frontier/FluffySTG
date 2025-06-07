@@ -86,8 +86,8 @@
 		if("Blood Brother")
 			var/static/list/healer_actions = list(
 				/datum/action/cooldown/hematocrat_aura,
-				/datum/action/cooldown/spell/jaunt/ethereal_jaunt/red_jaunt,
 				/datum/action/cooldown/spell/pointed/projectile/hematocrat,
+				/datum/action/cooldown/spell/pointed/projectile/spell_cards/blood_spit,
 			)
 			living_owner.grant_actions_by_list(healer_actions)
 

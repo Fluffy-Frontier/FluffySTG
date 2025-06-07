@@ -48,43 +48,6 @@
 	QDEL_NULL(aura_healing_component)
 	owner.balloon_alert(owner, "healing aura removed")
 
-// Кровавый джаунт. Навык просто позволяет телепортироваться на некоторое расстояние.
-/datum/action/cooldown/spell/jaunt/ethereal_jaunt/red_jaunt
-	name = "Blood Passage"
-	desc = "A short range ability that allows you to pass unimpeded through walls."
-	button_icon = 'icons/mob/actions/actions_cult.dmi'
-	button_icon_state = "tele"
-	background_icon = 'icons/mob/actions/backgrounds.dmi'
-	background_icon_state = "bg_fugu"
-	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
-	overlay_icon_state = "bg_fugu_border"
-	sound = null
-
-	school = SCHOOL_FORBIDDEN
-	cooldown_time = 30 SECONDS
-	invocation_type = INVOCATION_NONE
-	spell_requirements = NONE
-
-	exit_jaunt_sound = null
-	jaunt_duration = 3 SECONDS
-	jaunt_in_time = 1 SECONDS
-	jaunt_type = /obj/effect/dummy/phased_mob/spell_jaunt/red
-	jaunt_in_type = /obj/effect/temp_visual/dir_setting/blood_in
-	jaunt_out_type = /obj/effect/temp_visual/dir_setting/blood_in/out
-
-/datum/action/cooldown/spell/jaunt/ethereal_jaunt/red_jaunt/do_steam_effects()
-	return
-
-/obj/effect/temp_visual/dir_setting/blood_in
-	name = "blood_in"
-	icon = 'icons/effects/cult.dmi'
-	icon_state = "bloodin"
-	duration = 1.3 SECONDS
-
-/obj/effect/temp_visual/dir_setting/blood_in/out
-	icon = 'icons/effects/cult.dmi'
-	icon_state = "bloodout"
-
 /datum/action/cooldown/spell/pointed/projectile/hematocrat
 	name = "Blood spit"
 	desc = "Spit a infected blood at target, with having chance of infecting someone."
@@ -109,7 +72,7 @@
 /obj/projectile/bloodspit
 	name = "blood spit"
 	icon_state = "vileworm"
-	damage = 30
+	damage = 40
 	armour_penetration = 100
 	damage_type = STAMINA
 
@@ -121,7 +84,7 @@
 			return FALSE
 
 		creature.adjust_disgust(2, 2)
-		if(prob(17.5))
+		if(prob(20))
 			creature.drop_all_held_items()
 			creature.vomit(vomit_flags = (MOB_VOMIT_MESSAGE | MOB_VOMIT_HARM), vomit_type = /obj/effect/decal/cleanable/vomit/purple, lost_nutrition = 30, distance = 2)
 			creature.ForceContractDisease(new /datum/disease/piuc(), FALSE, TRUE)
@@ -132,3 +95,27 @@
 			creature.AdjustStun(0.3 SECONDS)
 		if(prob(40))
 			creature.adjust_disgust(6, 10)
+
+/datum/action/cooldown/spell/pointed/projectile/spell_cards/blood_spit
+	name = "Powerful Blood spit"
+	desc = "Spit several homing spits at a time."
+	background_icon = 'icons/mob/actions/backgrounds.dmi'
+	background_icon_state = "bg_fugu"
+	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
+	overlay_icon_state = "bg_fugu_border"
+	projectile_type = /obj/projectile/bloodspit
+	projectile_amount = 1
+	projectiles_per_fire = 5
+	projectile_initial_spread_amount = 25
+	projectile_location_spread_amount = 10
+	projectile_pixel_homing_spread = 25
+	projectile_turnrate = 5
+	invocation_type = NONE
+	spell_requirements = NONE
+
+/obj/projectile/bloodspit/spell_cards
+	name = "blood spit"
+	icon_state = "vileworm"
+	damage = 15
+	armour_penetration = 100
+	damage_type = STAMINA
