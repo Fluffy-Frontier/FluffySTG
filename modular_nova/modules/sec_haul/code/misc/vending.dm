@@ -63,9 +63,18 @@
 				/obj/item/storage/backpack/satchel/sec = 4,
 				/obj/item/storage/backpack/duffelbag/sec = 4,
 				/obj/item/storage/backpack/messenger/sec = 4,
-				/obj/item/storage/backpack/waistbag/redsec = 4, // FLUFFY FRONTIER ADDITION
-				/obj/item/clothing/suit/armor/vest/alt/caftan = 6, // FLUFFY FRONTIER ADDITION
-				/obj/item/clothing/head/berendeyka = 6, // FLUFFY FRONTIER ADDITION
+				// fluffy frontier addition - add more clothing to SecDrobe
+				/obj/item/storage/backpack/waistbag/redsec = 4,
+				/obj/item/clothing/suit/armor/vest/alt/caftan = 6,
+				/obj/item/clothing/head/berendeyka = 6,
+				/obj/item/clothing/under/rank/security/armadyne = 6,
+				/obj/item/clothing/under/rank/security/armadyne/tactical = 6,
+				/obj/item/clothing/head/beret/sec/armadyne = 6,
+				/obj/item/clothing/suit/armor/vest/armadyne = 6,
+				/obj/item/clothing/suit/armor/vest/armadyne/armor = 6,
+				/obj/item/clothing/gloves/color/black/security/armadyne = 6,
+				/obj/item/clothing/shoes/jackboots/armadyne = 6,
+				// fluffy frontier addition end
 			),
 		),
 
