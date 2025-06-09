@@ -71,6 +71,14 @@ SUBSYSTEM_DEF(statpanels)
 			"Actual Round Timer: [time2text(real_round_time, "hh:mm:ss", 0)]"
 		)
 		// NOVA EDIT CHANGE END
+		// FLUFFY FRONTIER ADDITION START - shift_intensity
+		if(!isnull(GLOB.shift_intensity_level))
+			global_data += list(
+				" ",
+				"Shift Intensity: [GLOB.shift_intensity_level]",
+				" ",
+			)
+		// FLUFFY FRONTIER ADDITION END
 
 		if(SSshuttle.emergency)
 			var/ETA = SSshuttle.emergency.getModeStr()
