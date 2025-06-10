@@ -5,7 +5,7 @@
 		ROUND_MID_SHIFT_STRING,
 		ROUND_HARD_SHIFT_STRING,
 	)
-	var/list/roundstart_rulesets = list(
+	var/static/list/roundstart_rulesets = list(
 		/datum/dynamic_ruleset/roundstart/nuclear,
 		/datum/dynamic_ruleset/roundstart/revs,
 		/datum/dynamic_ruleset/roundstart/bloodcult,
@@ -45,8 +45,8 @@
 
 /datum/vote/shift_intensity/finalize_vote(winning_option)
 	if(SSticker.current_state != GAME_STATE_PREGAME)
-		message_admins("Shift type vote ended after the round started. No changes to the round type. Current type: []")
-		log_admin("Shift type vote ended after the round started. No changes to the round type. Current type: []")
+		message_admins("Shift type vote ended after the round started. No changes to the round type. Current type: [winning_option]")
+		log_admin("Shift type vote ended after the round started. No changes to the round type. Current type: [winning_option]")
 		return
 
 	// Боже, прости меня за это, но меня заставляют. Нужно будет заменить на отдельные конфиги для каждого типа раунда
