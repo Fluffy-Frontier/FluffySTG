@@ -25,9 +25,6 @@
 	if(SSticker.current_state != GAME_STATE_PREGAME)
 		return "It's too late for that, the round is already starting."
 
-	if(forced)
-		return VOTE_AVAILABLE
-
 	return VOTE_AVAILABLE
 
 /datum/vote/shift_intensity/initiate_vote(initiator, duration)
