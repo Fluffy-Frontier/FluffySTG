@@ -66,6 +66,17 @@
 	worn_icon_state = "armadyne_gloves"
 	cut_type = null
 
+// FLUFFY FRONTIER ADDITION - NON-COMBAT ARMADYNE GLOVES
+/obj/item/clothing/gloves/color/black/security/armadyne
+	name = "armadyne gloves"
+	desc = "Tactical and sleek. Worn by Armadyne representatives."
+	icon = 'modular_nova/master_files/icons/obj/clothing/gloves.dmi'
+	worn_icon = 'modular_nova/master_files/icons/mob/clothing/hands.dmi'
+	icon_state = "armadyne_gloves"
+	worn_icon_state = "armadyne_gloves"
+	cut_type = null
+// FLUFFY FRONTIER ADDITION END
+
 /obj/item/clothing/shoes/jackboots/armadyne
 	name = "armadyne combat boots"
 	desc = "Tactical and sleek. Worn by Armadyne representatives."
