@@ -66,7 +66,7 @@
 	worn_icon_state = "armadyne_gloves"
 	cut_type = null
 
-// fluffy frontier addition - non-combat armadyne gloves
+// FLUFFY FRONTIER ADDITION - NON-COMBAT ARMADYNE GLOVES
 /obj/item/clothing/gloves/color/black/security/armadyne
 	name = "armadyne gloves"
 	desc = "Tactical and sleek. Worn by Armadyne representatives."
@@ -75,7 +75,7 @@
 	icon_state = "armadyne_gloves"
 	worn_icon_state = "armadyne_gloves"
 	cut_type = null
-// fluffy frontier addition end
+// FLUFFY FRONTIER ADDITION END
 
 /obj/item/clothing/shoes/jackboots/armadyne
 	name = "armadyne combat boots"
