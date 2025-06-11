@@ -43,7 +43,7 @@
 /datum/vote/shift_intensity/finalize_vote(winning_option)
 	if(SSticker.current_state != GAME_STATE_PREGAME)
 		message_admins("Shift type vote ended after the round started. No changes to the round type. Current type: [GLOB.shift_intensity_level]")
-		log_admin("Shift type vote ended after the round started. No changes to the round type. Current type: [winning_option]")
+		log_admin("Shift type vote ended after the round started. No changes to the round type. Current type: [GLOB.shift_intensity_level]")
 		return
 
 	// Боже, прости меня за это, но меня заставляют. Нужно будет заменить на отдельные конфиги для каждого типа раунда
