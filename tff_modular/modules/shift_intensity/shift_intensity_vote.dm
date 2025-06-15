@@ -39,7 +39,6 @@
 		return ROUND_MID_SHIFT_STRING
 	return ..()
 
-
 /datum/vote/shift_intensity/finalize_vote(winning_option)
 	if(SSticker.current_state != GAME_STATE_PREGAME)
 		message_admins("Shift type vote ended after the round started. No changes to the round type.")
