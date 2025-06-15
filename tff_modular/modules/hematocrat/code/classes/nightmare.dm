@@ -2,7 +2,7 @@
 
 // Зрение Зверя. Дает термальное зрение, ночное зрение, Глаза Зверя при активации становятся красными, что можно обнаружить при экзамайне.
 /datum/action/cooldown/hematocrat/beast_vision
-	name = "The Feelings Of The Beast"
+	name = "The Feelings Of The Terror"
 	desc = "Gives you thermal and night vision, also you can hear throught walls, but at the same time, your eyes start to glow strangely and anyone can see it."
 	button_icon = 'icons/mob/actions/actions_cult.dmi'
 	button_icon_state = "horror"
@@ -44,6 +44,8 @@
 	name = "Dodging"
 	desc = "Allow you to dodge attacks with a some chance, but you lose the ability to aim properly with ranged weapon!"
 	cooldown_time = 5 SECONDS
+	button_icon = 'icons/mob/actions/actions_spells.dmi'
+	button_icon_state = "lace"
 	var/active = FALSE
 	var/min_spread_bonus = 15
 	var/max_spread_bonus = 40
@@ -53,6 +55,7 @@
 	var/mob/living/carbon/dodger = removed_from
 	if(active)
 		UnregisterSignal(dodger, list(COMSIG_ATOM_PRE_BULLET_ACT, COMSIG_ATOM_ATTACKBY, COMSIG_MOB_FIRED_GUN))
+		dodger.remove_filter("dodger")
 
 /datum/action/cooldown/hematocrat/dodging/Activate(atom/target)
 	. = ..()
@@ -67,7 +70,7 @@
 	RegisterSignal(dodger, COMSIG_ATOM_PRE_BULLET_ACT, PROC_REF(on_bullet))
 	RegisterSignal(dodger, COMSIG_ATOM_ATTACKBY, PROC_REF(on_melee))
 	RegisterSignal(dodger, COMSIG_MOB_FIRED_GUN, PROC_REF(on_fire))
-	dodger.add_filter("dodger", 2, list("type" = "outline", "color" = "#ff0000", "size" = 1))
+	dodger.add_filter("dodger", 2, list("type" = "blur", "size" = 1.5))
 
 /datum/action/cooldown/hematocrat/dodging/proc/on_melee(mob/living/dodger, obj/item/attack_weapon, mob/attacker, list/modifiers)
 	SIGNAL_HANDLER
@@ -116,7 +119,7 @@
 			candidate.add_mood_event("absorbed emotions", /datum/mood_event/absorbed_emotions)
 			to_chat(absorber, span_warning("You have absorbed [candidate] emotions!"))
 			to_chat(candidate, span_danger("You feel empty..."))
-			var/beam = absorber.Beam(candidate, icon = 'tff_modular/modules/hematocrat/icons/smol_effects.dmi', icon_state = "terror", time = 3 SECONDS)
+			absorber.Beam(candidate, icon = 'tff_modular/modules/hematocrat/icons/smol_effects.dmi', icon_state = "terror", time = 3 SECONDS)
 			if(heal_amount > 5)
 				absorber.adjustBruteLoss(-heal_amount)
 				absorber.adjustFireLoss(-heal_amount)
@@ -127,7 +130,7 @@
 	heal_amount = 5
 
 /datum/action/cooldown/hematocrat/terror
-	name = "Grant Terror"
+	name = "Terror"
 	desc = "Fill everyone in a 4x4 radius with poison, which spoils their mood and leads to panic, disrupting their eyesight."
 	cooldown_time = 120 SECONDS
 	var/list/to_terror = list()
@@ -148,7 +151,8 @@
 			candidate.mob_mood.remove_temp_moods()
 			candidate.mob_mood.set_sanity(SANITY_CRAZY)
 			candidate.reagents.add_reagent(/datum/reagent/drug/hallucinogen, 10)
-			var/beam = terror.Beam(candidate, icon = 'tff_modular/modules/hematocrat/icons/smol_effects.dmi', icon_state = "terror", time = 2 SECONDS)
+
+	new /obj/effect/temp_visual/terror_hit(terror.loc)
 
 /datum/mood_event/absorbed_emotions
 	description = "I feel empty... And I like it"
@@ -202,7 +206,12 @@
 	var/atom/movable/plane_master_controller/game_plane_master_controller = psychonaut.hud_used.plane_master_controllers[PLANE_MASTERS_GAME]
 	game_plane_master_controller.remove_filter("terror")
 
-/datum/action/cooldown/hematocrat/paranoia
-	name = "Paranoia"
-	desc = "Put Paranoia on the enemy, forcing him to see strange hallucinations that will not allow him to identify who the enemy is."
-
+/obj/effect/temp_visual/terror_hit
+	name = "\improper Terror"
+	icon = 'tff_modular/modules/hematocrat/icons/96x160.dmi'
+	icon_state = "terror"
+	layer = ABOVE_ALL_MOB_LAYER
+	plane = ABOVE_GAME_PLANE
+	pixel_y = -32
+	pixel_x = -32
+	duration = 10

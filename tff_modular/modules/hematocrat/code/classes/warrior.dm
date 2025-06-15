@@ -101,8 +101,7 @@
 // Броня. Дает сопротивление к стамин урону 50% и сопротивление к ранам.
 /datum/action/cooldown/hematocrat/armor
 	name = "Armor up"
-	desc = "This ability makes your skin a little bit harder, protecting you from wounds and energy weapons aimed at stunning \
-		It does not provide protection from bullets or harmful lasers!"
+	desc = "This ability makes your skin a little bit harder, protecting you partially from wounds and slowdowns!"
 	button_icon = 'icons/mob/actions/actions_spells.dmi'
 	button_icon_state = "splattercasting"
 	cooldown_time = 5 SECONDS
@@ -112,7 +111,7 @@
 	. = ..()
 	if(active)
 		var/mob/living/carbon/human/living_owner = removed_from
-		living_owner.remove_traits(list(TRAIT_HARDLY_WOUNDED, TRAIT_PIERCEIMMUNE))
+		living_owner.remove_traits(list(TRAIT_HARDLY_WOUNDED, TRAIT_IGNORESLOWDOWN))
 
 /datum/action/cooldown/hematocrat/armor/Activate(atom/target)
 	. = ..()
@@ -121,7 +120,7 @@
 		return FALSE
 	var/mob/living/carbon/human/living_owner = owner
 	living_owner.balloon_alert(living_owner, "Armor up")
-	living_owner.add_traits(list(TRAIT_HARDLY_WOUNDED, TRAIT_PIERCEIMMUNE), ACTION_TRAIT)
+	living_owner.add_traits(list(TRAIT_HARDLY_WOUNDED, TRAIT_IGNORESLOWDOWN), ACTION_TRAIT)
 	active = TRUE
 	return TRUE
 
@@ -130,56 +129,32 @@
 		return FALSE
 	active = FALSE
 	var/mob/living/carbon/living_owner = owner
-	living_owner.balloon_alert(living_owner, "armor up")
-	living_owner.remove_traits(list(TRAIT_HARDLY_WOUNDED, TRAIT_PIERCEIMMUNE), ACTION_TRAIT)
+	living_owner.balloon_alert(living_owner, "armor down")
+	living_owner.remove_traits(list(TRAIT_HARDLY_WOUNDED, TRAIT_IGNORESLOWDOWN), ACTION_TRAIT)
 
-// АОЕ атака. Активация навыка наносит по 35 урона всем в радиусе 3x3, имеет шанс отрезать конечность или застанить.
-/datum/action/cooldown/hematocrat/slash
-	name = "The Fury Of The Warrior"
-	desc = "Attack everyone in 3x3 radius with a chance of stunning target or dismember its bodyparts"
-	button_icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi'
-	button_icon_state = "slash_icon"
-	background_icon = 'icons/mob/actions/backgrounds.dmi'
-	background_icon_state = "bg_fugu"
-	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
-	overlay_icon_state = "bg_fugu_border"
-	cooldown_time = 160 SECONDS
-	melee_cooldown_time = 0 SECONDS
-	click_to_activate = FALSE
+/datum/action/cooldown/hematocrat/smasher
+	name = "Smasher"
+	desc = "Your fists become thicker and stronger, making it a dangerous weapon."
+	cooldown_time = 1 SECONDS
+	var/active = FALSE
 
-/datum/action/cooldown/hematocrat/slash/Activate(atom/target)
-	new /obj/effect/temp_visual/hem_attack(get_turf(owner))
-	for(var/mob/living/something_living in range(1, get_turf(owner)))
-		if(something_living.stat >= UNCONSCIOUS)
-			continue
-		if(something_living == owner)
-			continue
-		if(HAS_TRAIT(something_living, TRAIT_HEMATOCRAT))
-			continue
-		if(prob(35))
-			something_living.Stun(2 SECONDS)
-			something_living.Paralyze(1.5 SECONDS)
-		if(prob(10))
-			var/obj/item/bodypart/cut_bodypart = something_living.get_bodypart(pick(BODY_ZONE_R_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_ARM, BODY_ZONE_L_LEG))
-			cut_bodypart?.dismember(BRUTE)
-		something_living.apply_damage(35, BRUTE)
-	playsound(owner, 'sound/vehicles/mecha/mech_stealth_attack.ogg', 75, FALSE)
-	StartCooldown()
+/datum/action/cooldown/hematocrat/smasher/Activate(atom/target)
+	. = ..()
+	var/mob/living/carbon/living_owner = owner
+	if(active)
+		UnregisterSignal(living_owner, COMSIG_LIVING_UNARMED_ATTACK)
+		active = FALSE
+		return FALSE
+	RegisterSignal(living_owner, COMSIG_LIVING_UNARMED_ATTACK, PROC_REF(attack_hand))
+	active = TRUE
 
-// Визуальный эффект от АОЕ атаки.
-/obj/effect/temp_visual/hem_attack
-	name = "hem attack"
-	icon = 'tff_modular/modules/hematocrat/icons/attack_effect.dmi'
-	icon_state = "hem_attack"
-	duration = 0.5 SECONDS
-	pixel_x = -32
-	pixel_y = -32
-
-/datum/action/cooldown/spell/pointed/projectile/hematocrat/warrior
-	name = "double blood spit"
-	projectile_type = /obj/projectile/bloodspit/warrior
-	projectile_amount = 2
-	projectiles_per_fire = 2
-
-/obj/projectile/bloodspit/warrior
-	damage = 24
+/datum/action/cooldown/hematocrat/smasher/proc/attack_hand(mob/living/source, atom/target, proximity, modifiers)
+	SIGNAL_HANDLER
+	if(!isliving(target))
+		return FALSE
+	var/mob/living/carbon/human/attacker = source
+	var/mob/living/carbon/human/who_attack = target
+	var/atom/throw_target = get_edge_target_turf(who_attack, attacker.dir)
+	who_attack.throw_at(throw_target, 1, 20, attacker)
+	who_attack.apply_damage(15, attacker.get_attack_type())
+	attacker.add_traits(list(TRAIT_CHUNKYFINGERS, TRAIT_FIST_MINING), ACTION_TRAIT)

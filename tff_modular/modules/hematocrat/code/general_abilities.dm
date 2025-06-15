@@ -1,3 +1,4 @@
+// родители для сспеллов/абилок классов
 /datum/action/cooldown/hematocrat
 	name = "hematocrat ability"
 	desc = null
@@ -80,6 +81,7 @@
 	qdel(src)
 	return TRUE
 
+/*
 // Призывы.
 /datum/action/cooldown/spell/conjure/summon_fleshblob
 	name = "Summon Blobflesh"
@@ -114,6 +116,8 @@
 	summon_type = list(/mob/living/basic/living_limb_flesh/hematocrat_team)
 	summon_amount = 1
 	summon_radius = 1
+
+*/
 
 // Извлечение. Абилка еретика на извлечение органов, но без хила органов/существ.
 /datum/action/cooldown/spell/touch/flesh_harvest
@@ -428,115 +432,3 @@
 	lefthand_file = 'tff_modular/modules/hematocrat/icons/lefthanditems.dmi'
 	righthand_file = 'tff_modular/modules/hematocrat/icons/righthanditems.dmi'
 	inhand_icon_state = "hand"
-
-// Временно убрано. Через время будет изменено/заменено.
-/*
-/datum/action/cooldown/spell/touch/blood_mark
-	name = "blood mark"
-	desc = "Places bloody mark on you and your target. Bloody marks heals you, but deal damages to targets for a 300 seconds."
-	button_icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi'
-	button_icon_state = "hand"
-	background_icon = 'icons/mob/actions/backgrounds.dmi'
-	background_icon_state = "bg_fugu"
-	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
-	overlay_icon_state = "bg_fugu_border"
-	cooldown_time = 180 SECONDS
-	hand_path = /obj/item/melee/touch_attack/flesh_hand
-	can_cast_on_self = FALSE
-	spell_requirements = NONE
-	invocation_type = NONE
-	sound = 'sound/effects/wounds/sizzle1.ogg'
-
-/datum/action/cooldown/spell/touch/blood_mark/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)
-	var/mob/living/carbon/marked = victim
-	var/mob/living/carbon/marker = caster
-
-	if(!istype(marked))
-		to_chat(caster, span_warning("Victim must be a human-like creature!"))
-		return FALSE
-
-	if(marked.stat == DEAD)
-		to_chat(caster, span_warning("Victim must be alive!"))
-		return FALSE
-
-	if(!marked.mind)
-		to_chat(caster, span_warning("Victim must be a minded creature!"))
-		return FALSE
-
-	if(HAS_TRAIT(marked, TRAIT_HEMATOCRAT))
-		to_chat(caster, span_warning("Victim must be a human-like creature!"))
-		return FALSE
-
-	if(!HAS_TRAIT(marker, TRAIT_HEMATOCRAT))
-		to_chat(caster, span_warning("You must choose class first!"))
-		return FALSE
-
-	if(!do_after(marker, 10 SECONDS, target = marked))
-		marked.balloon_alert(marker, "interrupted!")
-
-	marked.apply_status_effect(/datum/status_effect/blood_mark)
-	marker.apply_status_effect(/datum/status_effect/blood_mark)
-	marked.adjustBruteLoss(-30)
-	marker.adjustBruteLoss(30)
-	return TRUE
-
-/datum/status_effect/blood_mark
-	id = "blood_mark"
-	status_type = STATUS_EFFECT_UNIQUE
-	duration = 300 SECONDS
-	tick_interval = 2.5 SECONDS
-	alert_type = /atom/movable/screen/alert/status_effect/blood_mark
-	///overlay used to indicate that someone is marked
-	var/mutable_appearance/mark_overlay
-	/// icon file for the overlay
-	var/effect_icon = 'tff_modular/modules/hematocrat/icons/smol_effects.dmi'
-	/// icon state for the overlay
-	var/effect_icon_state = "mark"
-	/// Storage for the spell caster
-	var/datum/weakref/spell_caster
-
-/datum/status_effect/blood_mark/on_creation(mob/living/new_owner, mob/living/new_spell_caster)
-	mark_overlay = mutable_appearance(effect_icon, effect_icon_state, ABOVE_ALL_MOB_LAYER)
-	if(new_spell_caster)
-		spell_caster = WEAKREF(new_spell_caster)
-	return ..()
-
-/datum/status_effect/blood_mark/Destroy()
-	QDEL_NULL(mark_overlay)
-	return ..()
-
-/datum/status_effect/blood_mark/on_apply()
-	RegisterSignal(owner, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(update_owner_overlay))
-	owner.update_appearance(UPDATE_OVERLAYS)
-	return TRUE
-
-/// Updates the overlay of the owner
-/datum/status_effect/blood_mark/proc/update_owner_overlay(atom/source, list/overlays)
-	SIGNAL_HANDLER
-
-	overlays += mark_overlay
-
-/datum/status_effect/blood_mark/on_remove()
-	UnregisterSignal(owner, COMSIG_ATOM_UPDATE_OVERLAYS)
-	owner.update_appearance(UPDATE_OVERLAYS)
-	return ..()
-
-/datum/status_effect/blood_mark/tick(seconds_between_ticks)
-	if(owner.stat == DEAD)
-		owner.remove_status_effect(/datum/status_effect/blood_mark)
-
-	if(HAS_TRAIT(owner, TRAIT_HEMATOCRAT))
-		owner.adjustBruteLoss(-1)
-		owner.adjustFireLoss(-1)
-		owner.adjustStaminaLoss(-3)
-		return FALSE
-
-	owner.adjustBruteLoss(0.3)
-	owner.adjustStaminaLoss(0.2)
-
-/atom/movable/screen/alert/status_effect/blood_mark
-	name = "the nutrient vessel"
-	desc = "There's a mark on your skin! It glows strangely..."
-	icon = 'tff_modular/modules/hematocrat/icons/smol_effects.dmi'
-	icon_state = "mark"
-*/

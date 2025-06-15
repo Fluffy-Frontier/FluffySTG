@@ -56,6 +56,17 @@
 	harvest.Remove(the_mob)
 	transform.Remove(the_mob)
 	intentions.Remove(the_mob)
+	remove_class_abilities(the_mob)
+
+/datum/antagonist/hematocrat/proc/remove_class_abilities(mob/living/carbon/the_mob)
+	var/mob/living/antagonist = the_mob
+	if(!isliving(antagonist))
+		return
+
+	for(var/datum/action/cooldown/ability in antagonist.actions)
+		qdel(ability)
+	for(var/datum/action/cooldown/spell/spell_ability in antagonist.actions)
+		qdel(spell_ability)
 
 /datum/antagonist/hematocrat/get_team()
 	return hematocrat_team

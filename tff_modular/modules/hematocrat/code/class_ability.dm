@@ -21,7 +21,7 @@
 		classes = list()
 
 		classes_list(
-			class_name = "Warrior",
+			class_name = "Bone Breaker",
 			class_image = image(icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi', icon_state = "warrior"),
 			class_info = span_info("Warrior is a strong class aimed at combat. This class is considered the strongest because of its ability to turn any station items into powerful weapons. The class ignores slowdowns. \
 				Warrior also can attack nearby enemies and cutting off their limbs. His adrenaline gives him stun protection and accelerates its movement."),
@@ -38,7 +38,7 @@
 		)
 
 		classes_list(
-			class_name = "The King of Flies",
+			class_name = "Doctor",
 			class_image  = image(icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi', icon_state = "doctor"),
 			class_info = span_info("Doctor is a weak class in combat, but strong in support. He is able to heal the wounds of his \
 				hematocrat-brothers within a radius of 7 tiles, teleport."),
@@ -65,10 +65,10 @@
 /datum/action/cooldown/choose_class/proc/give_new_class(brother_class)
 	var/mob/living/carbon/living_owner = owner
 	switch(brother_class)
-		if("Warrior")
+		if("Bone Breaker")
 			var/static/list/warrior_actions = list(
 				/datum/action/cooldown/hematocrat/armor,
-				/datum/action/cooldown/hematocrat/slash,
+				/datum/action/cooldown/hematocrat/smasher,
 			)
 			living_owner.grant_actions_by_list(warrior_actions)
 			ADD_TRAIT(owner, TRAIT_IGNORESLOWDOWN, ACTION_TRAIT)
@@ -82,11 +82,10 @@
 			)
 			living_owner.grant_actions_by_list(nightmare_actions)
 
-		if("The King of Flies")
+		if("Doctor")
 			var/static/list/healer_actions = list(
-				/datum/action/cooldown/hematocrat_aura,
-				/datum/action/cooldown/spell/pointed/projectile/hematocrat,
-				/datum/action/cooldown/spell/pointed/projectile/spell_cards/blood_spit,
+				/datum/action/cooldown/hematocrat/aura,
+				/datum/action/cooldown/hematocrat/slash,
 			)
 			living_owner.grant_actions_by_list(healer_actions)
 
