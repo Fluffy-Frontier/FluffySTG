@@ -12,6 +12,9 @@
 	cooldown_time = 10 MINUTES
 
 /datum/action/cooldown/choose_class/Activate(atom/target)
+	if(HAS_TRAIT(owner, TRAIT_HEMATOCRAT_CLASS_CHOOSEN))
+		qdel(src)
+		return FALSE
 
 	var/static/list/classes
 	if(!classes)
@@ -26,8 +29,8 @@
 		)
 
 		classes_list(
-			class_name = "Assassin",
-			class_image  = image(icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi', icon_state = "assassin"),
+			class_name = "Nightmare",
+			class_image  = image(icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi', icon_state = "nightmare"),
 			class_info = span_info("The assassin is bad at fighting due to his lack of combat skills, but he is an excellent burglar and thief. \
 				He is able to steal items from an enemy's backpack from a distance, hack machinery and airlocks, create a cloud of smoke, \
 				become partially invisible, has HUDs, night vision, and X-ray."),
@@ -35,9 +38,9 @@
 		)
 
 		classes_list(
-			class_name = "Blood Brother",
-			class_image  = image(icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi', icon_state = "healer"),
-			class_info = span_info("Blood Brother is a weak class in combat, but strong in support. He is able to heal the wounds of his \
+			class_name = "The King of Flies",
+			class_image  = image(icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi', icon_state = "doctor"),
+			class_info = span_info("Doctor is a weak class in combat, but strong in support. He is able to heal the wounds of his \
 				hematocrat-brothers within a radius of 7 tiles, teleport."),
 			classes = classes,
 		)
@@ -64,26 +67,22 @@
 	switch(brother_class)
 		if("Warrior")
 			var/static/list/warrior_actions = list(
-				/datum/action/cooldown/spell/sanguine_strike/weaponcharge,
-				/datum/action/cooldown/hematocrat_adrenaline,
-				/datum/action/cooldown/slash,
-				/datum/action/cooldown/spell/pointed/projectile/hematocrat/warrior,
+				/datum/action/cooldown/hematocrat/armor,
+				/datum/action/cooldown/hematocrat/slash,
 			)
 			living_owner.grant_actions_by_list(warrior_actions)
 			ADD_TRAIT(owner, TRAIT_IGNORESLOWDOWN, ACTION_TRAIT)
 
-		if("Assassin")
-			var/static/list/assassin_actions = list(
-				/datum/action/cooldown/bbstealth,
-				/datum/action/cooldown/spell/smoke/bbsmoke,
-				/datum/action/cooldown/spell/pointed/burglar_finesse/bbsteal,
-				/datum/action/cooldown/spell/pointed/bbhack,
-				/datum/action/cooldown/bbvision,
-				/datum/action/cooldown/spell/pointed/projectile/hematocrat/assassin,
+		if("Nightmare")
+			var/static/list/nightmare_actions = list(
+				/datum/action/cooldown/hematocrat/dodging,
+				/datum/action/cooldown/hematocrat/beast_vision,
+				/datum/action/cooldown/hematocrat/absorb_emotions,
+				/datum/action/cooldown/hematocrat/terror,
 			)
-			living_owner.grant_actions_by_list(assassin_actions)
+			living_owner.grant_actions_by_list(nightmare_actions)
 
-		if("Blood Brother")
+		if("The King of Flies")
 			var/static/list/healer_actions = list(
 				/datum/action/cooldown/hematocrat_aura,
 				/datum/action/cooldown/spell/pointed/projectile/hematocrat,

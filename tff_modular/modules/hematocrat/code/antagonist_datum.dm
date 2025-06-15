@@ -27,8 +27,6 @@
 
 /datum/antagonist/hematocrat/Destroy()
 	QDEL_NULL(class)
-	QDEL_NULL(flesh_limb)
-	QDEL_NULL(flesh_blob)
 	QDEL_NULL(harvest)
 	QDEL_NULL(transform)
 	QDEL_NULL(intentions)
@@ -43,8 +41,6 @@
 	the_mob.faction |= FACTION_HEMATOCRAT
 	the_mob.faction |= FACTION_HEMATOCRAT_DISEASE
 	class.Grant(the_mob)
-	flesh_limb.Grant(the_mob)
-	flesh_blob.Grant(the_mob)
 	harvest.Grant(the_mob)
 	transform.Grant(the_mob)
 	intentions.Grant(the_mob)
@@ -57,8 +53,6 @@
 	handle_clown_mutation(the_mob, removing = FALSE)
 	REMOVE_TRAIT(the_mob, TRAIT_HEMATOCRAT, JOB_TRAIT)
 	class.Remove(the_mob)
-	flesh_limb.Remove(the_mob)
-	flesh_blob.Remove(the_mob)
 	harvest.Remove(the_mob)
 	transform.Remove(the_mob)
 	intentions.Remove(the_mob)

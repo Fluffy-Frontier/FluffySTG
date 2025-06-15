@@ -6,3 +6,5 @@
 #define TRAIT_XENO_HEAL_AURA "trait_xeno_heal_aura"
 /// The owner of the trait is a hematocrat
 #define TRAIT_HEMATOCRAT "trait_hematocrat"
+/// The owner is hematocrat and choosed class
+#define TRAIT_HEMATOCRAT_CLASS_CHOOSEN "trait_hematocrat_class_choosen"

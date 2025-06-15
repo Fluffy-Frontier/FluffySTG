@@ -1,3 +1,19 @@
+/datum/action/cooldown/hematocrat
+	name = "hematocrat ability"
+	desc = null
+	background_icon = 'icons/mob/actions/backgrounds.dmi'
+	background_icon_state = "bg_fugu"
+	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
+	overlay_icon_state = "bg_fugu_border"
+
+/datum/action/cooldown/spell/hematocrat
+	name = "hematocrat spell"
+	desc = null
+	background_icon = 'icons/mob/actions/backgrounds.dmi'
+	background_icon_state = "bg_fugu"
+	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
+	overlay_icon_state = "bg_fugu_border"
+
 // Инвалидная, но рабочая система конверта. Создает опухоль, которую можно вставить в жертву, превращая ее в антагониста. Работает не более двух раз.
 /datum/action/cooldown/spell/conjure_item/tumor
 	name = "Create Tumor"

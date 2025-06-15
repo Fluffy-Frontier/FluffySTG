@@ -58,13 +58,13 @@
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
 	overlay_icon_state = "bg_fugu_border"
 	school = SCHOOL_EVOCATION
-	cooldown_time = 25 SECONDS
+	cooldown_time = 10 SECONDS
 	sound = 'sound/effects/meatslap.ogg'
 	invocation_type = INVOCATION_NONE
 	spell_requirements = NONE
 	active_msg = "You prepare to spit your blood!"
 	deactive_msg = "You closed your mouth... For now."
-	cast_range = 8
+	cast_range = 9
 	projectile_type = /obj/projectile/bloodspit
 	projectiles_per_fire = 1
 	projectile_amount = 2
@@ -103,6 +103,7 @@
 	background_icon_state = "bg_fugu"
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
 	overlay_icon_state = "bg_fugu_border"
+	cooldown_time = 20 SECONDS
 	projectile_type = /obj/projectile/bloodspit
 	projectile_amount = 1
 	projectiles_per_fire = 5
