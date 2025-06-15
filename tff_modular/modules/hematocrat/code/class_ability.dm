@@ -71,7 +71,6 @@
 				/datum/action/cooldown/hematocrat/smasher,
 			)
 			living_owner.grant_actions_by_list(warrior_actions)
-			ADD_TRAIT(owner, TRAIT_IGNORESLOWDOWN, ACTION_TRAIT)
 
 		if("Nightmare")
 			var/static/list/nightmare_actions = list(

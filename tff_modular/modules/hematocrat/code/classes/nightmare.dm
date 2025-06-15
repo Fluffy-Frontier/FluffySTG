@@ -134,7 +134,6 @@
 	desc = "Fill everyone in a 4x4 radius with poison, which spoils their mood and leads to panic, disrupting their eyesight."
 	cooldown_time = 120 SECONDS
 	var/list/to_terror = list()
-	var/terror_time = 20 SECONDS
 	button_icon = 'tff_modular/modules/hematocrat/icons/smol_effects.dmi'
 	button_icon_state = "terror"
 

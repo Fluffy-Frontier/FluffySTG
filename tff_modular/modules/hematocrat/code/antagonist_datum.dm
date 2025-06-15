@@ -11,8 +11,6 @@
 	hud_icon = 'tff_modular/modules/hematocrat/icons/hematocrathud.dmi'
 	var/datum/team/hematocrats/hematocrat_team
 	var/datum/action/cooldown/choose_class/class = new
-	var/datum/action/cooldown/spell/conjure/summon_fleshblob/flesh_blob = new
-	var/datum/action/cooldown/spell/conjure/summon_living_flesh/flesh_limb = new
 	var/datum/action/cooldown/spell/touch/flesh_harvest/harvest = new
 	var/datum/action/cooldown/spell/touch/flesh_transform/transform = new
 	var/datum/action/aggressive_intentions/intentions = new

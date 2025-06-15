@@ -41,14 +41,6 @@
 	QDEL_NULL(aura_damage_component)
 	owner.balloon_alert(owner, "damage aura removed")
 
-/datum/action/cooldown/hematocrat/sixteenth_sense
-	name = "The sixteenth sense"
-	desc = "Allows you to hear the dead."
-	cooldown_time = 1 SECONDS
-
-/datum/action/cooldown/hematocrat/sixteenth_sense/Activate(atom/target)
-	. = ..()
-
 // АОЕ атака. Активация навыка наносит по 35 урона всем в радиусе 3x3, имеет шанс отрезать конечность или застанить.
 /datum/action/cooldown/hematocrat/slash
 	name = "The Fury Of The Doctor"
@@ -71,7 +63,7 @@
 		if(prob(35))
 			something_living.Stun(2 SECONDS)
 			something_living.Paralyze(1.5 SECONDS)
-		if(prob(10))
+		if(prob(15))
 			var/obj/item/bodypart/cut_bodypart = something_living.get_bodypart(pick(BODY_ZONE_R_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_ARM, BODY_ZONE_L_LEG))
 			cut_bodypart?.dismember(BRUTE)
 		something_living.apply_damage(35, BRUTE)
