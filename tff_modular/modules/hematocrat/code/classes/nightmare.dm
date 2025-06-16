@@ -102,34 +102,31 @@
 	cooldown_time = 30 SECONDS
 	button_icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi'
 	button_icon_state = "absorb"
-	var/list/to_absorb = list()
-	var/heal_amount = 5
 
 /datum/action/cooldown/hematocrat/absorb_emotions/Activate(atom/target)
 	. = ..()
+	var/heal_amount = 0
 	var/mob/living/carbon/absorber = owner
 	for (var/mob/living/carbon/candidate in view(2, absorber))
 		if(HAS_TRAIT(candidate, TRAIT_HEMATOCRAT))
 			continue
-		to_absorb[candidate] = TRUE
 		heal_amount += 5
-
-	for (var/mob/living/carbon/candidate as anything in to_absorb)
 		if(candidate.mob_mood.mood_level < MOOD_LEVEL_NEUTRAL)
 			candidate.mob_mood.remove_temp_moods()
 			candidate.mob_mood.set_sanity(SANITY_NEUTRAL)
 			candidate.add_mood_event("absorbed emotions", /datum/mood_event/absorbed_emotions)
-			to_chat(absorber, span_warning("You have absorbed [candidate] emotions!"))
 			to_chat(candidate, span_danger("You feel empty..."))
+			to_chat(absorber, span_warning("You have absorbed [candidate] emotions!"))
 			absorber.Beam(candidate, icon = 'tff_modular/modules/hematocrat/icons/smol_effects.dmi', icon_state = "terror", time = 3 SECONDS)
-			if(heal_amount > 5)
-				absorber.adjustBruteLoss(-heal_amount)
-				absorber.adjustFireLoss(-heal_amount)
-				absorber.adjustToxLoss(-heal_amount)
-				absorber.adjustOxyLoss(-heal_amount)
-				absorber.add_mood_event("Fed up with emotions", /datum/mood_event/fed_up_with_emotions)
 
-	heal_amount = 5
+	if(heal_amount >= 5)
+		absorber.adjustBruteLoss(-heal_amount)
+		absorber.adjustFireLoss(-heal_amount)
+		absorber.adjustToxLoss(-heal_amount)
+		absorber.adjustOxyLoss(-heal_amount)
+		absorber.add_mood_event("Fed up with emotions", /datum/mood_event/fed_up_with_emotions)
+
+	heal_amount = 0
 
 // Накладывает на игроков в радиусе яд, который заставляет их экран плавно темнеть, накладывает муддебафф, убирает временные муды.
 /datum/action/cooldown/hematocrat/terror
