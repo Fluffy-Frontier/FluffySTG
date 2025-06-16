@@ -178,7 +178,7 @@
 	taste_description = "something awful"
 	ph = 11
 	overdose_threshold = 30
-	chemical_flags = list(REAGENT_IGNORE_STASIS)
+	chemical_flags = REAGENT_IGNORE_STASIS
 
 /datum/reagent/drug/hallucinogen/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, times_fired)
 	. = ..()
