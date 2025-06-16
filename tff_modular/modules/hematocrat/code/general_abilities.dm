@@ -81,44 +81,6 @@
 	qdel(src)
 	return TRUE
 
-/*
-// Призывы.
-/datum/action/cooldown/spell/conjure/summon_fleshblob
-	name = "Summon Blobflesh"
-	desc = "This ability creates a big, cube-like creature, which made of flesh."
-	button_icon = 'icons/mob/actions/actions_cult.dmi'
-	button_icon_state = "spirit_unsealed"
-	background_icon = 'icons/mob/actions/backgrounds.dmi'
-	background_icon_state = "bg_fugu"
-	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
-	overlay_icon_state = "bg_fugu_border"
-	school = SCHOOL_CONJURATION
-	cooldown_time = 60 SECONDS
-	invocation_type = INVOCATION_NONE
-	spell_requirements = NONE
-	summon_type = list(/mob/living/basic/fleshblob/hematocrat_team)
-	summon_amount = 1
-	summon_radius = 1
-
-/datum/action/cooldown/spell/conjure/summon_living_flesh
-	name = "Summon Living Flesh"
-	desc = "This ability creates a limb-like creature, which made of flesh."
-	button_icon = 'icons/mob/actions/actions_cult.dmi'
-	button_icon_state = "spirit_sealed"
-	background_icon = 'icons/mob/actions/backgrounds.dmi'
-	background_icon_state = "bg_fugu"
-	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
-	overlay_icon_state = "bg_fugu_border"
-	school = SCHOOL_CONJURATION
-	cooldown_time = 60 SECONDS
-	invocation_type = INVOCATION_NONE
-	spell_requirements = NONE
-	summon_type = list(/mob/living/basic/living_limb_flesh/hematocrat_team)
-	summon_amount = 1
-	summon_radius = 1
-
-*/
-
 // Извлечение. Абилка еретика на извлечение органов, но без хила органов/существ.
 /datum/action/cooldown/spell/touch/flesh_harvest
 	name = "Flesh Harvest"
@@ -257,10 +219,18 @@
 
 /datum/action/cooldown/spell/touch/flesh_transform/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)
 	var/mob/living/carbon/human/human_victim = victim
+
 	playsound(human_victim, 'sound/items/weapons/slice.ogg', 50, TRUE)
 	if(!do_after(caster, 7 SECONDS, target = human_victim))
 		human_victim.balloon_alert(caster, "interrupted!")
 		return FALSE
+
+	if(human_victim.stat == DEAD && !HAS_TRAIT(human_victim, TRAIT_HEMATOCRAT))
+		human_victim.revive(HEAL_ADMIN)
+		human_victim.visible_message(span_warning("[human_victim] appears to wake from the dead!"), span_notice("You have regenerated."))
+		playsound(victim, 'sound/mobs/non-humanoids/alien/alien_organ_cut.ogg', 50, TRUE)
+		return FALSE
+
 	if(ishuman(human_victim))
 		switch(rand(1,10))
 			if(1)
@@ -353,9 +323,6 @@
 				to_chat(caster, span_warning("You have created a strong and tenacious organs, perhaps it will give its properties to changed one."))
 
 	playsound(victim, 'sound/mobs/non-humanoids/alien/alien_organ_cut.ogg', 50, TRUE)
-	if(human_victim.stat == DEAD && !HAS_TRAIT(human_victim, TRAIT_HEMATOCRAT))
-		human_victim.revive(HEAL_ADMIN)
-		human_victim.visible_message(span_warning("[human_victim] appears to wake from the dead!"), span_notice("You have regenerated."))
 
 	return TRUE
 

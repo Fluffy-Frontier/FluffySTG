@@ -55,10 +55,24 @@
 
 /datum/action/cooldown/hematocrat/smasher/proc/attack_hand(mob/living/source, atom/target, proximity, modifiers)
 	SIGNAL_HANDLER
-	if(!isliving(target))
-		return FALSE
+
 	var/mob/living/carbon/human/attacker = source
 	var/mob/living/carbon/human/who_attack = target
+
+	if(!isliving(who_attack))
+		return
+
+	if(!attacker.combat_mode || !proximity)
+		return NONE
+	if(!attacker.can_unarmed_attack())
+		return COMPONENT_SKIP_ATTACK
+
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		var/atom/throw_target = get_edge_target_turf(who_attack, attacker.dir)
+		who_attack.throw_at(throw_target, 1, 20, attacker)
+		return
+
+	attacker.do_attack_animation(who_attack, ATTACK_EFFECT_SMASH)
 	var/atom/throw_target = get_edge_target_turf(who_attack, attacker.dir)
 	who_attack.throw_at(throw_target, 1, 20, attacker)
 	who_attack.apply_damage(15, attacker.get_attack_type())
