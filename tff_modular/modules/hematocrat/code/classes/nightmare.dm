@@ -186,6 +186,9 @@
 	var/mob/living/carbon/carbon_mob = affected_mob
 	carbon_mob.add_mood_event("terrored", /datum/mood_event/filled_emotions)
 
+	if(!carbon_mob.hud_used)
+		return
+
 	var/atom/movable/plane_master_controller/game_plane_master_controller = carbon_mob.hud_used.plane_master_controllers[PLANE_MASTERS_GAME]
 
 	// фильтры для затемнения
@@ -210,6 +213,9 @@
 	. = ..()
 	var/mob/living/carbon/carbon_mob = affected_mob
 	carbon_mob.clear_mood_event("terrored")
+	if(!carbon_mob.hud_used)
+		return
+
 	var/atom/movable/plane_master_controller/game_plane_master_controller = carbon_mob.hud_used.plane_master_controllers[PLANE_MASTERS_GAME]
 	game_plane_master_controller.remove_filter("terror")
 
