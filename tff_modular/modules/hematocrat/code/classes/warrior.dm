@@ -46,9 +46,11 @@
 	var/mob/living/carbon/living_owner = owner
 	if(active)
 		UnregisterSignal(living_owner, COMSIG_LIVING_UNARMED_ATTACK)
+		living_owner.remove_traits(list(TRAIT_CHUNKYFINGERS, TRAIT_FIST_MINING), ACTION_TRAIT)
 		active = FALSE
 		return FALSE
 	RegisterSignal(living_owner, COMSIG_LIVING_UNARMED_ATTACK, PROC_REF(attack_hand))
+	living_owner.add_traits(list(TRAIT_CHUNKYFINGERS, TRAIT_FIST_MINING), ACTION_TRAIT)
 	active = TRUE
 
 /datum/action/cooldown/hematocrat/smasher/proc/attack_hand(mob/living/source, atom/target, proximity, modifiers)
@@ -60,4 +62,3 @@
 	var/atom/throw_target = get_edge_target_turf(who_attack, attacker.dir)
 	who_attack.throw_at(throw_target, 1, 20, attacker)
 	who_attack.apply_damage(15, attacker.get_attack_type())
-	attacker.add_traits(list(TRAIT_CHUNKYFINGERS, TRAIT_FIST_MINING), ACTION_TRAIT)
