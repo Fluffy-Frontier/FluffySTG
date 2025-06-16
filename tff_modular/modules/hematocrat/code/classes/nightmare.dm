@@ -1,6 +1,6 @@
-// Класс Кошмара. Устрашает и накладывает негативные эффекты.
+// Класс Кошмара. Накладывает негативные эффекты. Планируется как дебаффер
 
-// Зрение Зверя. Дает термальное зрение, ночное зрение, Глаза Зверя при активации становятся красными, что можно обнаружить при экзамайне.
+// Зрение ужаса. Дает термальное зрение, ночное зрение, Глаза при активации становятся красными, что можно обнаружить при экзамайне.
 /datum/action/cooldown/hematocrat/beast_vision
 	name = "The Feelings Of The Terror"
 	desc = "Gives you thermal and night vision, also you can hear throught walls, but at the same time, your eyes start to glow strangely and anyone can see it."
@@ -40,6 +40,7 @@
 	owner.update_sight()
 	return TRUE
 
+// Уклонение. Дает уклонение от мили атак (50% шанс) и от дальних (35% шанс), но игрок теряет возможность нормально стрелять.
 /datum/action/cooldown/hematocrat/dodging
 	name = "Dodging"
 	desc = "Allow you to dodge attacks with a some chance, but you lose the ability to aim properly with ranged weapon!"
@@ -94,6 +95,7 @@
 		playsound(dodger, SFX_BULLET_MISS, 75, TRUE)
 		return COMPONENT_BULLET_PIERCED
 
+// Если у игроков в радиусе уровень настроения ниже нейтрального, удаляет им все временные муды и лечится, получая мудбафф.
 /datum/action/cooldown/hematocrat/absorb_emotions
 	name = "Absorb Emotions"
 	desc = "Absorbs the negative emotions of people within a 4x4 radius and heals by it."
@@ -129,6 +131,7 @@
 
 	heal_amount = 5
 
+// Накладывает на игроков в радиусе яд, который заставляет их экран плавно темнеть, накладывает муддебафф, убирает временные муды.
 /datum/action/cooldown/hematocrat/terror
 	name = "Terror"
 	desc = "Fill everyone in a 4x4 radius with poison, which spoils their mood and leads to panic, disrupting their eyesight."
@@ -169,13 +172,13 @@
 
 /datum/reagent/drug/hallucinogen
 	name = "Hallucinogen"
-	description = "A strong hallucinogenic drug.."
+	description = "A strong hallucinogenic drug."
 	color = "#e70000"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	taste_description = "something awful"
 	ph = 11
 	overdose_threshold = 30
-	chemical_flags = list(REAGENT_IGNORE_STASIS, REAGENT_INVISIBLE)
+	chemical_flags = list(REAGENT_IGNORE_STASIS)
 
 /datum/reagent/drug/hallucinogen/on_mob_metabolize(mob/living/psychonaut)
 	. = ..()
@@ -184,6 +187,7 @@
 
 	var/atom/movable/plane_master_controller/game_plane_master_controller = human.hud_used.plane_master_controllers[PLANE_MASTERS_GAME]
 
+	// фильтры для затемнения
 	var/list/col_filter_identity = list(1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1, 0,0,0,0)
 	var/list/col_filter_darken = list(0.3,0,0,0, 0,0.3,0,0, 0,0,0.3,0, 0,0,0,1, -0.2,-0.2,-0.2,0)
 	var/list/col_filter_black = list(0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, -0.5,-0.5,-0.5,0)
@@ -191,6 +195,7 @@
 
 	game_plane_master_controller.add_filter("terror", 10, color_matrix_filter(col_filter_identity, FILTER_COLOR_HSL))
 
+	// циклично затемняет и осветляет экран
 	for(var/filter in game_plane_master_controller.get_filters("terror"))
 		animate(filter, color = col_filter_identity, time = 2 SECONDS, loop = -1, flags = ANIMATION_PARALLEL)
 		animate(color = col_filter_partial, time = 3 SECONDS)

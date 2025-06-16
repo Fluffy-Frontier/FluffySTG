@@ -1,6 +1,6 @@
-// Класс воина.
+// Класс воина. Играется от голых рук и отбрасываний. Планируется как танк.
 
-// Броня. Дает сопротивление к стамин урону 50% и сопротивление к ранам.
+// Броня. Дает сопротивление к ранам и замедлениям.
 /datum/action/cooldown/hematocrat/armor
 	name = "Armor up"
 	desc = "This ability makes your skin a little bit harder, protecting you partially from wounds and slowdowns!"
@@ -34,6 +34,7 @@
 	living_owner.balloon_alert(living_owner, "armor down")
 	living_owner.remove_traits(list(TRAIT_HARDLY_WOUNDED, TRAIT_IGNORESLOWDOWN), ACTION_TRAIT)
 
+// Смэшер. Дает бафф к урону кулаков +15, дает отталкивание на 1 тайл, но забирает возможность пользоваться некоторыми батонами и всем дальним оружием.
 /datum/action/cooldown/hematocrat/smasher
 	name = "Smasher"
 	desc = "Your fists become thicker and stronger, making it a dangerous weapon."
