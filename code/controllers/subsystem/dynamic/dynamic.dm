@@ -467,6 +467,13 @@ SUBSYSTEM_DEF(dynamic)
 /datum/controller/subsystem/dynamic/proc/pre_setup()
 	if(CONFIG_GET(flag/dynamic_config_enabled))
 		var/json_file = file("[global.config.directory]/dynamic.json")
+		// FLUFFY FRONTIER ADDITION START - shift_intensity
+		switch(GLOB.shift_intensity_level)
+			if(ROUND_LIGHT_SHIFT)
+				json_file = file("[global.config.directory]/tff/dynamic_light.json")
+			if(ROUND_HARD_SHIFT)
+				json_file = file("[global.config.directory]/tff/dynamic_hard.json")
+		// FLUFFY FRONTIER ADDITION END
 		if(fexists(json_file))
 			configuration = json_decode(file2text(json_file))
 			if(configuration["Dynamic"])

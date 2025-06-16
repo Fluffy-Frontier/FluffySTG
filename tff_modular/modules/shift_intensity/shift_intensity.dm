@@ -18,6 +18,8 @@ SUBSYSTEM_DEF(shift_intensity)
 
 	start_time = CONFIG_GET(number/shift_intensity_vote_starttime)
 	minimum_players = CONFIG_GET(number/shift_intensity_vote_minimum_players)
+	log_game("SSshift_intensity was enabled in config. Vote will start [start_time/10] seconds before the start of the round.")
+	message_admins("SSshift_intensity was enabled in config. Vote will start [start_time/10] seconds before the start of the round.")
 	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/shift_intensity/Recover()
@@ -34,3 +36,17 @@ SUBSYSTEM_DEF(shift_intensity)
 			return
 		SSvote.initiate_vote(/datum/vote/shift_intensity, "server", forced = TRUE)
 
+/datum/controller/subsystem/shift_intensity/proc/enable_round_settings(var/round_type)
+	switch(round_type)
+		if(ROUND_LIGHT_SHIFT)
+			GLOB.shift_intensity_level = ROUND_LIGHT_SHIFT
+		if(ROUND_MID_SHIFT)
+			GLOB.shift_intensity_level = ROUND_MID_SHIFT
+		if(ROUND_HARD_SHIFT)
+			SSevents.intensity_low_players = 35
+			SSevents.intensity_mid_players = 40
+			SSevents.intensity_high_players = 60
+			GLOB.dynamic_no_stacking = FALSE
+			GLOB.shift_intensity_level = ROUND_HARD_SHIFT
+		else
+			return FALSE
