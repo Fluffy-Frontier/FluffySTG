@@ -186,7 +186,7 @@
 		var/terror_message = pick("You feel terrible.","You feel anxiety.","You saw someone.","Someone is nearby.","Your heart beats quickly.")
 		to_chat(affected_mob, span_notice("[terror_message]"))
 
-/datum/reagent/drug/hallucinogen/on_mob_metabolize(mob/living/affected_mob)
+/datum/reagent/drug/hallucinogen/on_mob_metabolize(mob/living/carbon/affected_mob)
 	. = ..()
 
 	affected_mob.add_mood_event("terrored", /datum/mood_event/filled_emotions)
@@ -214,7 +214,7 @@
 		animate(color = col_filter_partial, time = 3 SECONDS)
 		animate(color = col_filter_identity, time = 4 SECONDS)
 
-/datum/reagent/drug/hallucinogen/on_mob_end_metabolize(mob/living/affected_mob)
+/datum/reagent/drug/hallucinogen/on_mob_end_metabolize(mob/living/carbon/affected_mob)
 	. = ..()
 	affected_mob.clear_mood_event("terrored")
 	if(!affected_mob.hud_used)
