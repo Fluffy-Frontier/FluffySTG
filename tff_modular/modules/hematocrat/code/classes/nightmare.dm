@@ -180,12 +180,13 @@
 	overdose_threshold = 30
 	chemical_flags = list(REAGENT_IGNORE_STASIS)
 
-/datum/reagent/drug/hallucinogen/on_mob_metabolize(mob/living/psychonaut)
+/datum/reagent/drug/hallucinogen/on_mob_metabolize(mob/living/affected_mob)
 	. = ..()
-	var/mob/living/carbon/human = psychonaut
-	human.add_mood_event("terrored", /datum/mood_event/filled_emotions)
 
-	var/atom/movable/plane_master_controller/game_plane_master_controller = human.hud_used.plane_master_controllers[PLANE_MASTERS_GAME]
+	var/mob/living/carbon/carbon_mob = affected_mob
+	carbon_mob.add_mood_event("terrored", /datum/mood_event/filled_emotions)
+
+	var/atom/movable/plane_master_controller/game_plane_master_controller = carbon_mob.hud_used.plane_master_controllers[PLANE_MASTERS_GAME]
 
 	// фильтры для затемнения
 	var/list/col_filter_identity = list(1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1, 0,0,0,0)
@@ -205,11 +206,11 @@
 		animate(color = col_filter_partial, time = 3 SECONDS)
 		animate(color = col_filter_identity, time = 4 SECONDS)
 
-/datum/reagent/drug/hallucinogen/on_mob_end_metabolize(mob/living/psychonaut)
+/datum/reagent/drug/hallucinogen/on_mob_end_metabolize(mob/living/affected_mob)
 	. = ..()
-	var/mob/living/carbon/human = psychonaut
-	human.clear_mood_event("terrored")
-	var/atom/movable/plane_master_controller/game_plane_master_controller = human.hud_used.plane_master_controllers[PLANE_MASTERS_GAME]
+	var/mob/living/carbon/carbon_mob = affected_mob
+	carbon_mob.clear_mood_event("terrored")
+	var/atom/movable/plane_master_controller/game_plane_master_controller = carbon_mob.hud_used.plane_master_controllers[PLANE_MASTERS_GAME]
 	game_plane_master_controller.remove_filter("terror")
 
 /obj/effect/temp_visual/terror_hit
