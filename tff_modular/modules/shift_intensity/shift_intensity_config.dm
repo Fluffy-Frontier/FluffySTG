@@ -1,7 +1,7 @@
-// Определяет, работает ли SSshiftcolor или нет
+/// Определяет, работает ли [SSshift_intensity] или нет
 /datum/config_entry/flag/shift_intensity
 
-// Определяет, может ли голосование за shiftcolor быть начато кем-либо или нет
+/// Определяет, может ли голосование за [SSshift_intensity] быть начато кем-либо или нет
 /datum/config_entry/flag/allow_shift_intensity_vote
 
 // Время (в децисекундах) до начала раунда, после которого SSshiftcolorvote будет пытаться запустить голосование
