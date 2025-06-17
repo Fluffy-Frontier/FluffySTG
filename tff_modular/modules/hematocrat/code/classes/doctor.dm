@@ -1,6 +1,6 @@
 // Класс Доктора. Планируется как дамагер. Пока что недоделан, но играть можно.
 
-// Аура - дамажущая аура с расстоянием 5 тайлов. Наносит урон: 3 токсинам, 2 стамины и 0.2 крови.
+// Аура - дамажущая аура с расстоянием 4 тайлов. Наносит урон: 3 токсинам, 2 стамины и 0.2 крови.
 /datum/action/cooldown/hematocrat/aura
 	name = "The plague aura."
 	desc = "We start spreading the harmful cells into the air, harming everyone within 4x4 range!"
@@ -14,6 +14,13 @@
 	var/aura_active = FALSE
 	var/aura_range = 4
 	var/datum/component/damage_aura/aura_damage_component
+
+/datum/action/cooldown/hematocrat/aura/Remove(mob/removed_from)
+	. = ..()
+	if(!aura_active)
+		return
+	QDEL_NULL(aura_damage_component)
+	removed_from.balloon_alert(removed_from, "damage aura removed")
 
 /datum/action/cooldown/hematocrat/aura/Activate()
 
@@ -66,13 +73,15 @@
 		if(prob(15))
 			var/obj/item/bodypart/cut_bodypart = something_living.get_bodypart(pick(BODY_ZONE_R_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_ARM, BODY_ZONE_L_LEG))
 			cut_bodypart?.dismember(BRUTE)
+		if(prob(20))
+			something_living.apply_status_effect(/datum/status_effect/stacking/saw_bleed/bloodletting, 15)
 		something_living.apply_damage(35, BRUTE)
 	playsound(owner, 'sound/vehicles/mecha/mech_stealth_attack.ogg', 75, FALSE)
 	StartCooldown()
 
 /datum/action/cooldown/hematocrat/plague_secret
 	name = "The secret of plague immortality."
-	desc = "Gives you immunity to toxins, speeds up the use of medical items, and you can see other people's wounds, you are immune to overdoses. If someone attacks you in close combat, they have a chance to get infected with a virus. But it makes you speechless."
+	desc = "Gives you immunity to toxins, speeds up the use of medical items, and you can see other people's wounds, you are immune to overdoses. When attacked, with a some chance, you stack to enemies within a 4x4 radius bleeding effect. But it makes you speechless."
 	cooldown_time = 1 SECONDS
 	button_icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi'
 	button_icon_state = "doctor"
@@ -90,16 +99,30 @@
 	. = ..()
 	if(active)
 		removed_from.remove_traits(plague_immunity, ACTION_TRAIT)
+		removed_from.balloon_alert(removed_from, "damage aura removed")
+		UnregisterSignal(removed_from, list(COMSIG_ATOM_ATTACKBY, COMSIG_ATOM_PRE_BULLET_ACT))
 
 /datum/action/cooldown/hematocrat/plague_secret/Activate(atom/target)
 	. = ..()
 	var/mob/living/carbon/living_owner = owner
 	if(active)
 		living_owner.remove_traits(plague_immunity, ACTION_TRAIT)
+		living_owner.balloon_alert(living_owner, "damage aura removed")
 		active = FALSE
+		UnregisterSignal(living_owner, list(COMSIG_ATOM_ATTACKBY, COMSIG_ATOM_PRE_BULLET_ACT))
 		return FALSE
 	living_owner.add_traits(plague_immunity, ACTION_TRAIT)
+	living_owner.balloon_alert(living_owner, "damage aura started")
+	RegisterSignal(living_owner, list(COMSIG_ATOM_ATTACKBY, COMSIG_ATOM_PRE_BULLET_ACT), PROC_REF(when_attacked))
 	active = TRUE
+
+/datum/action/cooldown/hematocrat/plague_secret/proc/when_attacked(mob/living/plague_user, obj/item/attack_weapon, obj/projectile/hitting_projectile, mob/attacker, list/modifiers)
+	SIGNAL_HANDLER
+	if(prob(60))
+		for(var/mob/living/carbon/human/mobs in view(2, get_turf(plague_user)))
+			if(HAS_TRAIT(mobs, TRAIT_HEMATOCRAT))
+				continue
+			mobs.apply_status_effect(/datum/status_effect/stacking/saw_bleed/bloodletting, 6)
 
 // Визуальный эффект от АОЕ атаки.
 /obj/effect/temp_visual/hem_attack

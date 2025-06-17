@@ -56,6 +56,7 @@
 	var/mob/living/carbon/dodger = removed_from
 	if(active)
 		UnregisterSignal(dodger, list(COMSIG_ATOM_PRE_BULLET_ACT, COMSIG_ATOM_ATTACKBY, COMSIG_MOB_FIRED_GUN))
+		dodger.balloon_alert(dodger, "dodging removed")
 		dodger.remove_filter("dodger")
 
 /datum/action/cooldown/hematocrat/dodging/Activate(atom/target)
@@ -64,6 +65,7 @@
 	if(active)
 		UnregisterSignal(dodger, list(COMSIG_ATOM_PRE_BULLET_ACT, COMSIG_ATOM_ATTACKBY, COMSIG_MOB_FIRED_GUN))
 		dodger.remove_filter("dodger")
+		dodger.balloon_alert(dodger, "dodging removed")
 		active = FALSE
 		return FALSE
 
@@ -72,6 +74,7 @@
 	RegisterSignal(dodger, COMSIG_ATOM_ATTACKBY, PROC_REF(on_melee))
 	RegisterSignal(dodger, COMSIG_MOB_FIRED_GUN, PROC_REF(on_fire))
 	dodger.add_filter("dodger", 2, list("type" = "blur", "size" = 1.5))
+	dodger.balloon_alert(dodger, "dodging activated")
 
 /datum/action/cooldown/hematocrat/dodging/proc/on_melee(mob/living/dodger, obj/item/attack_weapon, mob/attacker, list/modifiers)
 	SIGNAL_HANDLER
@@ -150,12 +153,13 @@
 			candidate.mob_mood.remove_temp_moods()
 			candidate.mob_mood.set_sanity(SANITY_CRAZY)
 			candidate.reagents.add_reagent(/datum/reagent/drug/hallucinogen, 10)
+			to_chat(candidate, span_warning("Your skin is covered with something!"))
 
 	new /obj/effect/temp_visual/terror_hit(terror.loc)
 
 /datum/mood_event/absorbed_emotions
-	description = "I feel empty... And I like it"
-	mood_change = 10
+	description = "My head is free of thoughts. And I like it."
+	mood_change = 20
 	timeout = 1 MINUTES
 
 /datum/mood_event/filled_emotions
@@ -164,7 +168,7 @@
 
 /datum/mood_event/fed_up_with_emotions
 	description = "I Fed up with emotions."
-	mood_change = 15
+	mood_change = 30
 	timeout = 3 MINUTES
 
 /datum/reagent/drug/hallucinogen
@@ -209,7 +213,7 @@
 		animate(color = col_filter_black, time = 2 SECONDS)
 		animate(color = col_filter_darken, time = 2 SECONDS)
 		animate(color = col_filter_partial, time = 3 SECONDS)
-		animate(color = col_filter_identity, time = 4 SECONDS)
+		animate(color = col_filter_identity, time = 3 SECONDS)
 
 /datum/reagent/drug/hallucinogen/on_mob_end_metabolize(mob/living/carbon/affected_mob)
 	. = ..()

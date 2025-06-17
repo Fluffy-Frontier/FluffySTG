@@ -226,10 +226,10 @@
 		return FALSE
 
 	if(human_victim.stat == DEAD && !HAS_TRAIT(human_victim, TRAIT_HEMATOCRAT))
-		human_victim.revive(HEAL_ADMIN)
+		human_victim.revive(ADMIN_HEAL_ALL)
 		human_victim.visible_message(span_warning("[human_victim] appears to wake from the dead!"), span_notice("You have regenerated."))
 		playsound(victim, 'sound/mobs/non-humanoids/alien/alien_organ_cut.ogg', 50, TRUE)
-		return FALSE
+		return
 
 	if(ishuman(human_victim))
 		switch(rand(1,10))

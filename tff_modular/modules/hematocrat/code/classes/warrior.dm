@@ -50,6 +50,7 @@
 	if(active)
 		UnregisterSignal(removed_from, COMSIG_LIVING_UNARMED_ATTACK)
 		removed_from.remove_traits(smasher_traits, ACTION_TRAIT)
+		removed_from.balloon_alert(removed_from, "smasher down")
 
 /datum/action/cooldown/hematocrat/smasher/Activate(atom/target)
 	. = ..()
@@ -57,9 +58,12 @@
 	if(active)
 		UnregisterSignal(living_owner, COMSIG_LIVING_UNARMED_ATTACK)
 		living_owner.remove_traits(smasher_traits, ACTION_TRAIT)
+		living_owner.balloon_alert(living_owner, "smasher down")
 		active = FALSE
 		return FALSE
+
 	RegisterSignal(living_owner, COMSIG_LIVING_UNARMED_ATTACK, PROC_REF(attack_hand))
+	living_owner.balloon_alert(living_owner, "smasher up")
 	living_owner.add_traits(smasher_traits, ACTION_TRAIT)
 	active = TRUE
 
