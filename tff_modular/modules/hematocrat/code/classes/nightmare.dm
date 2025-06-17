@@ -179,9 +179,9 @@
 
 /datum/reagent/drug/hallucinogen/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, times_fired)
 	. = ..()
-	if(SPT_PROB(1, seconds_per_tick))
-		var/terror_message = pick("You feel terrible.","You feel anxiety.","You saw someone.","Someone is nearby.","Your heart beats quickly.")
-		to_chat(affected_mob, span_notice("[terror_message]"))
+	if(SPT_PROB(5, seconds_per_tick))
+		var/terror_message = pick("You feel terrible.","You feel anxiety.","You saw someone.","Someone is nearby.","Your heart beats quickly.","Do you know what a nightmare really is?","You're alone. Now you're alone.","WHAT HAPPENED TO YOU?")
+		to_chat(affected_mob, span_bad("[terror_message]"))
 
 /datum/reagent/drug/hallucinogen/on_mob_metabolize(mob/living/carbon/affected_mob)
 	. = ..()

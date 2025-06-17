@@ -61,10 +61,8 @@
 	if(!isliving(antagonist))
 		return
 
-	for(var/datum/action/cooldown/ability in antagonist.actions)
+	for(var/datum/action/cooldown/hematocrat/ability in antagonist.actions)
 		qdel(ability)
-	for(var/datum/action/cooldown/spell/spell_ability in antagonist.actions)
-		qdel(spell_ability)
 
 /datum/antagonist/hematocrat/get_team()
 	return hematocrat_team

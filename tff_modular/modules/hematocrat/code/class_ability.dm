@@ -85,6 +85,7 @@
 			var/static/list/healer_actions = list(
 				/datum/action/cooldown/hematocrat/aura,
 				/datum/action/cooldown/hematocrat/slash,
+				/datum/action/cooldown/hematocrat/plague_secret,
 			)
 			living_owner.grant_actions_by_list(healer_actions)
 

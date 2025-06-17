@@ -3,7 +3,7 @@
 // Аура - дамажущая аура с расстоянием 5 тайлов. Наносит урон: 3 токсинам, 2 стамины и 0.2 крови.
 /datum/action/cooldown/hematocrat/aura
 	name = "The plague aura."
-	desc = "We start spreading the harmful cells into the air, harming everyone within 5x5 range!"
+	desc = "We start spreading the harmful cells into the air, harming everyone within 4x4 range!"
 	background_icon = 'icons/mob/actions/backgrounds.dmi'
 	background_icon_state = "bg_fugu"
 	overlay_icon = 'icons/mob/actions/backgrounds.dmi'
@@ -12,7 +12,7 @@
 	button_icon_state = "berserk_mode"
 	cooldown_time = 1 SECONDS
 	var/aura_active = FALSE
-	var/aura_range = 5
+	var/aura_range = 4
 	var/datum/component/damage_aura/aura_damage_component
 
 /datum/action/cooldown/hematocrat/aura/Activate()
@@ -69,6 +69,35 @@
 		something_living.apply_damage(35, BRUTE)
 	playsound(owner, 'sound/vehicles/mecha/mech_stealth_attack.ogg', 75, FALSE)
 	StartCooldown()
+
+/datum/action/cooldown/hematocrat/plague_secret
+	name = "The secret of plague immortality."
+	desc = "Gives you immunity to toxins, speeds up the use of medical items, and you can see other people's wounds, you are immune to overdoses. If someone attacks you in close combat, they have a chance to get infected with a virus. But it makes you speechless."
+	cooldown_time = 1 SECONDS
+	var/active = FALSE
+	var/static/list/plague_immunity = list(
+		TRAIT_MUTE,
+		TRAIT_TOXINLOVER,
+		TRAIT_FASTMED,
+		TRAIT_MEDICAL_HUD,
+		TRAIT_OVERDOSEIMMUNE,
+		TRAIT_VIRUSIMMUNE,
+	)
+
+/datum/action/cooldown/hematocrat/plague_secret/Remove(mob/removed_from)
+	. = ..()
+	if(active)
+		removed_from.remove_traits(plague_immunity, ACTION_TRAIT)
+
+/datum/action/cooldown/hematocrat/plague_secret/Activate(atom/target)
+	. = ..()
+	var/mob/living/carbon/living_owner = owner
+	if(active)
+		living_owner.remove_traits(plague_immunity, ACTION_TRAIT)
+		active = FALSE
+		return FALSE
+	living_owner.add_traits(plague_immunity, ACTION_TRAIT)
+	active = TRUE
 
 // Визуальный эффект от АОЕ атаки.
 /obj/effect/temp_visual/hem_attack

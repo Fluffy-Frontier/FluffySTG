@@ -14,7 +14,7 @@
 	. = ..()
 	if(active)
 		var/mob/living/carbon/human/living_owner = removed_from
-		living_owner.remove_traits(list(armor_traits))
+		living_owner.remove_traits(armor_traits, ACTION_TRAIT)
 
 /datum/action/cooldown/hematocrat/armor/Activate(atom/target)
 	. = ..()
@@ -23,7 +23,7 @@
 		return FALSE
 	var/mob/living/carbon/human/living_owner = owner
 	living_owner.balloon_alert(living_owner, "Armor up")
-	living_owner.add_traits(list(armor_traits), ACTION_TRAIT)
+	living_owner.add_traits(armor_traits, ACTION_TRAIT)
 	active = TRUE
 	return TRUE
 
@@ -33,7 +33,7 @@
 	active = FALSE
 	var/mob/living/carbon/living_owner = owner
 	living_owner.balloon_alert(living_owner, "armor down")
-	living_owner.remove_traits(list(armor_traits), ACTION_TRAIT)
+	living_owner.remove_traits(armor_traits, ACTION_TRAIT)
 
 // Смэшер. Дает бафф к урону кулаков +15, дает отталкивание на 1 тайл, но забирает возможность пользоваться некоторыми батонами и всем дальним оружием.
 /datum/action/cooldown/hematocrat/smasher
@@ -47,18 +47,18 @@
 	. = ..()
 	if(active)
 		UnregisterSignal(removed_from, COMSIG_LIVING_UNARMED_ATTACK)
-		removed_from.remove_traits(list(smasher_traits), ACTION_TRAIT)
+		removed_from.remove_traits(smasher_traits, ACTION_TRAIT)
 
 /datum/action/cooldown/hematocrat/smasher/Activate(atom/target)
 	. = ..()
 	var/mob/living/carbon/living_owner = owner
 	if(active)
 		UnregisterSignal(living_owner, COMSIG_LIVING_UNARMED_ATTACK)
-		living_owner.remove_traits(list(smasher_traits), ACTION_TRAIT)
+		living_owner.remove_traits(smasher_traits, ACTION_TRAIT)
 		active = FALSE
 		return FALSE
 	RegisterSignal(living_owner, COMSIG_LIVING_UNARMED_ATTACK, PROC_REF(attack_hand))
-	living_owner.add_traits(list(smasher_traits), ACTION_TRAIT)
+	living_owner.add_traits(smasher_traits, ACTION_TRAIT)
 	active = TRUE
 
 /datum/action/cooldown/hematocrat/smasher/proc/attack_hand(mob/living/source, atom/target, proximity, modifiers)
