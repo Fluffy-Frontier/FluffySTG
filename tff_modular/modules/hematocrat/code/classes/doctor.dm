@@ -46,7 +46,7 @@
 	name = "The Fury Of The Doctor"
 	desc = "Attack everyone in 3x3 radius with a chance of stunning target or dismember its bodyparts"
 	button_icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi'
-	button_icon_state = "slash_icon"
+	button_icon_state = "slash_attack"
 	cooldown_time = 160 SECONDS
 	melee_cooldown_time = 0 SECONDS
 	click_to_activate = FALSE
@@ -74,6 +74,8 @@
 	name = "The secret of plague immortality."
 	desc = "Gives you immunity to toxins, speeds up the use of medical items, and you can see other people's wounds, you are immune to overdoses. If someone attacks you in close combat, they have a chance to get infected with a virus. But it makes you speechless."
 	cooldown_time = 1 SECONDS
+	button_icon = 'tff_modular/modules/hematocrat/icons/hematocraticons.dmi'
+	button_icon_state = "doctor"
 	var/active = FALSE
 	var/static/list/plague_immunity = list(
 		TRAIT_MUTE,

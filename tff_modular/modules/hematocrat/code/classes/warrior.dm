@@ -40,6 +40,8 @@
 	name = "Smasher"
 	desc = "Your fists become thicker and stronger, making it a dangerous weapon."
 	cooldown_time = 1 SECONDS
+	button_icon = 'icons/obj/clothing/gloves.dmi'
+	button_icon_state = "boxing"
 	var/active = FALSE
 	var/static/list/smasher_traits = list(TRAIT_CHUNKYFINGERS, TRAIT_FIST_MINING)
 
