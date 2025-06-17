@@ -33,6 +33,8 @@ SUBSYSTEM_DEF(shift_intensity)
 	if(SSticker.GetTimeLeft() <= start_time)
 		can_fire = FALSE
 		if(GLOB.clients.len < minimum_players)
+			log_game("The vote for shift intensity was cancelled due to insufficient number of players.")
+			message_admins("The vote for shift intensity was cancelled due to insufficient number of players.")
 			return
 		SSvote.initiate_vote(/datum/vote/shift_intensity, "server", forced = TRUE)
 
