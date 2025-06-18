@@ -28,7 +28,7 @@ IN: code/__DEFINES/~ff_defines/_globalvars/traits/declarations.dm
 - TRAIT_XENO_INNATE
 - TRAIT_XENO_ABILITY_GIVEN
 - TRAIT_XENO_HEAL_AURA
-- XENO_FORTIFY_TRAIT
+- TRAIT_XENO_FORTIFY
 
 ## Helpers
 

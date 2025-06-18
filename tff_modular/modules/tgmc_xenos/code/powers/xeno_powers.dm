@@ -221,11 +221,11 @@
 		xeno_owner.set_resting(FALSE, instant = TRUE)
 
 	if(on)
-		ADD_TRAIT(xeno_owner, TRAIT_IMMOBILIZED, XENO_FORTIFY_TRAIT)
+		ADD_TRAIT(xeno_owner, TRAIT_IMMOBILIZED, TRAIT_XENO_FORTIFY)
 		to_chat(xeno_owner, span_alertalien("We tuck ourselves into a defensive stance."))
 		xeno_owner.set_armor(xeno_owner.get_armor().add_other_armor(fortify_armor_type))
 	else
-		REMOVE_TRAIT(xeno_owner, TRAIT_IMMOBILIZED, XENO_FORTIFY_TRAIT)
+		REMOVE_TRAIT(xeno_owner, TRAIT_IMMOBILIZED, TRAIT_XENO_FORTIFY)
 		to_chat(xeno_owner, span_alertalien("We resume our normal stance."))
 		xeno_owner.set_armor(xeno_owner.get_armor().subtract_other_armor(fortify_armor_type))
 
