@@ -33,7 +33,7 @@
 	var/static/list/caste_options
 	if(!caste_options)
 		caste_options = list()
-.
+
 		make_xeno_caste_entry(
 			caste_name = "Runner",
 			caste_image = image(icon = 'tff_modular/modules/tgmc_xenos/icons/xeno_actions.dmi', icon_state = "preview_runner"),
