@@ -1,10 +1,11 @@
 /// TGMC_XENOS (old nova sector xenos)
 
-// Глазки ксенусей. Нужно для того, чтобы они не получали шармы
+// Глазки ксенусей
 /obj/item/organ/eyes/alien/tgmc
 
 /obj/item/organ/eyes/alien/tgmc/apply_scar(side)
-	return	// Нам не нужны слепые ксеносы из-за глупого способа нанесения шрамов на глаза
+	// Нам не нужны слепые ксеносы из-за шрамов на глазах
+	return
 
 // Сосуды плазмы
 /obj/item/organ/alien/plasmavessel/tgmc

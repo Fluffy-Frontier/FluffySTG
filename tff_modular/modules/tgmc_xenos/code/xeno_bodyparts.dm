@@ -1,6 +1,5 @@
 /// TGMC_XENOS (old nova sector xenos)
 
-// Множитель берн урона чуть поменьше. Чисто для этих ксеносов
 /obj/item/bodypart/head/alien/tgmc
 	burn_modifier = 1.5
 

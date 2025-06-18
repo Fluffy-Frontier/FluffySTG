@@ -55,7 +55,7 @@
 		burn_heal = aura_healing_amount, \
 		limit_to_trait = TRAIT_XENO_HEAL_AURA, \
 		healing_color = aura_healing_color, \
-		)
+	)
 	return TRUE
 
 /datum/action/cooldown/alien/tgmc/heal_aura/proc/aura_deactivate()
@@ -117,7 +117,6 @@
 #undef RAVAGER_OUTLINE_EFFECT
 
 
-// Забавный код для руни
 #define EVASION_VENTCRAWL_INABILTY_CD_PERCENTAGE 0.8
 #define RUNNER_BLUR_EFFECT "runner_evasion"
 

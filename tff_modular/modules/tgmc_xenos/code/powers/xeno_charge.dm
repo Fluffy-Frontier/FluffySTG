@@ -114,9 +114,10 @@
 				damage /= 2
 		else if(istype(target, /obj/machinery/door/airlock))
 			var/obj/machinery/door/airlock/target_airlock = target
-			damage = ceil(target_airlock.normal_integrity / 2)
-		else if(istype(target, /obj/structure/window))
 			damage = 1000 // Нужно сломать за 1 раз
+			do_stop()
+		else if(istype(target, /obj/structure/window))
+			damage = 1000 // Так же нужно сломать за 1 раз
 
 		crushed_obj.take_damage(damage, BRUTE)
 		if(QDELETED(crushed_obj))

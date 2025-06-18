@@ -3,13 +3,13 @@
 /obj/projectile/neurotoxin/tgmc
 	name = "neurotoxin spit"
 	icon_state = "neurotoxin"
-	damage = 80
+	damage = 70
 	paralyze = 0
 	damage_type = STAMINA
 	armor_flag = BIO
 
 /obj/projectile/neurotoxin/tgmc/queen
-	damage = 140
+	damage = 100
 
 /obj/projectile/neurotoxin/tgmc/acid
 	name = "acid spit"
