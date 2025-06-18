@@ -113,7 +113,6 @@
 			if(target_mecha.defense_mode)
 				damage /= 2
 		else if(istype(target, /obj/machinery/door/airlock))
-			var/obj/machinery/door/airlock/target_airlock = target
 			damage = 1000 // Нужно сломать за 1 раз
 			do_stop()
 		else if(istype(target, /obj/structure/window))
