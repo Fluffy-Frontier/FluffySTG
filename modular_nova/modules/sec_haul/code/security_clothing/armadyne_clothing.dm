@@ -15,10 +15,11 @@
 /obj/item/clothing/head/beret/sec/armadyne
 	name = "armadyne corporate beret"
 	desc = "A comfy yet robust beret worn by Armadyne corporate."
+	icon_state = "/obj/item/clothing/head/beret/sec/armadyne"
+	post_init_icon_state = "beret_badge_fancy_diagonal"
 	greyscale_config = /datum/greyscale_config/beret_badge_fancy
 	greyscale_config_worn = /datum/greyscale_config/beret_badge_fancy/worn
 	greyscale_colors = "#3F3C40#5B2423#491716"
-	icon_state = "beret_badge_fancy_diagonal"
 	supports_variations_flags = CLOTHING_SNOUTED_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/suit/armor/hos/trenchcoat/armadyne
@@ -64,6 +65,17 @@
 	icon_state = "armadyne_gloves"
 	worn_icon_state = "armadyne_gloves"
 	cut_type = null
+
+// FLUFFY FRONTIER ADDITION - NON-COMBAT ARMADYNE GLOVES
+/obj/item/clothing/gloves/color/black/security/armadyne
+	name = "armadyne gloves"
+	desc = "Tactical and sleek. Worn by Armadyne representatives."
+	icon = 'modular_nova/master_files/icons/obj/clothing/gloves.dmi'
+	worn_icon = 'modular_nova/master_files/icons/mob/clothing/hands.dmi'
+	icon_state = "armadyne_gloves"
+	worn_icon_state = "armadyne_gloves"
+	cut_type = null
+// FLUFFY FRONTIER ADDITION END
 
 /obj/item/clothing/shoes/jackboots/armadyne
 	name = "armadyne combat boots"

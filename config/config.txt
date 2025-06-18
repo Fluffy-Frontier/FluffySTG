@@ -198,13 +198,13 @@ IPINTEL_REJECT_BAD
 # FORUMURL http://tgstation13.org/phpBB/index.php
 
 ## Wiki address
-# WIKIURL http://tgstation13.org/wiki
+# WIKIURL https://wiki.fluffy-frontier.ru/Main_Page
 
 ## Rules address
-# RULESURL http://tgstation13.org/wiki/Rules
+# RULESURL https://fluffy-frontier.ru/rules
 
 ## Github address
-# GITHUBURL https://www.github.com/tgstation/tgstation
+# GITHUBURL https://github.com/Fluffy-Frontier/FluffySTG
 
 ## Discord bot command prefix, if the discord bot is used
 # DISCORDBOTCOMMANDPREFIX ?
@@ -658,3 +658,7 @@ TGUI_MAX_CHUNK_COUNT 32
 
 ## Uncomment and replace with the URL where users can verify their byond accounts
 #FORUM_LINK_URI
+
+## While this is uncommented, server initialization will include some asset generation usually useful for development.
+## It increases initialization time significantly so you'll want to disable this in live environments.
+GENERATE_ASSETS_IN_INIT

@@ -34,9 +34,9 @@
 	path = /obj/item/organ/cyberimp/arm/civilian_lighter/left_arm
 
 /datum/augment_item/implant/l_arm/razor_claws
-    name = "Left Razor Claws (Knife + Wirecutters)"
-    cost = 4
-    path = /obj/item/organ/cyberimp/arm/razor_claws/left_arm
+	name = "Left Razor Claws (Knife + Wirecutters)"
+	cost = 4
+	path = /obj/item/organ/cyberimp/arm/razor_claws/left_arm
 
 /datum/augment_item/implant/l_arm/adjuster
 	name = "Left Adjuster Implant (Screwdriver + Wrench)"
@@ -97,9 +97,9 @@
 	path = /obj/item/organ/cyberimp/arm/civilian_lighter/right_arm
 
 /datum/augment_item/implant/r_arm/razor_claws
-    name = "Right Razor Claws (Knife + Wirecutters)"
-    cost = 4
-    path = /obj/item/organ/cyberimp/arm/razor_claws/right_arm
+	name = "Right Razor Claws (Knife + Wirecutters)"
+	cost = 4
+	path = /obj/item/organ/cyberimp/arm/razor_claws/right_arm
 
 /datum/augment_item/implant/r_arm/adjuster
 	name = "Right Adjuster Implant (Screwdriver + Wrench)"
@@ -158,3 +158,8 @@
 	name = "Breathing Tube"
 	cost = 2
 	path = /obj/item/organ/cyberimp/mouth/breathing_tube
+
+/datum/augment_item/implant/mouth/breathing_tube/hidden
+	name = "Integrated Breathing Tube (Hidden)"
+	cost = 2
+	path = /obj/item/organ/cyberimp/mouth/breathing_tube/hidden

@@ -2,7 +2,8 @@
 	name = "halo holo-projector"
 	desc =  "Prototype version of a Holo-Projector that creates projection above your head."
 	icon = 'tff_modular/modules/loadout/icons/obj/clothing/neck.dmi'
-	icon_state = "wakamo"
+	icon_state = "/obj/item/clothing/suit/hooded/cloak/wakamo"
+	post_init_icon_state = "wakamo"
 	worn_icon = 'tff_modular/modules/loadout/icons/mob/clothing/neck.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/wakamo
 	body_parts_covered = HEAD|NECK

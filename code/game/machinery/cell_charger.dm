@@ -9,7 +9,7 @@
 	var/obj/item/stock_parts/power_store/cell/charging = null
 	var/charge_rate = STANDARD_CELL_RATE //NOVA EDIT CHANGE - ORIGINAL: 0.25 * STANDARD_CELL_RATE
 
-/* NOVA EDIT REMOVAL - AESTHETICS - OVERWRITTEN IN modular_nova/modules/aesthetics/cells/cell.dm
+/* NOVA EDIT REMOVAL - AESTHETICS - OVERWRITTEN IN modular_nova/modules/aesthetics/cells/icons/cell.dm
 /obj/machinery/cell_charger/update_overlays()
 	. = ..()
 
@@ -43,7 +43,7 @@ NOVA EDIT END */
 		update_appearance()
 	return ITEM_INTERACT_SUCCESS
 
-/obj/machinery/cell_charger/attackby(obj/item/W, mob/user, params)
+/obj/machinery/cell_charger/attackby(obj/item/W, mob/user, list/modifiers)
 	if(istype(W, /obj/item/stock_parts/power_store/cell) && !panel_open)
 		if(machine_stat & BROKEN)
 			to_chat(user, span_warning("[src] is broken!"))

@@ -1394,7 +1394,7 @@
 	},
 /area/ruin/space/has_grav/nova/des_two/engineering)
 "ee" = (
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /turf/open/floor/wood/tile,
 /area/ruin/space/has_grav/nova/des_two/service/lounge)
 "ef" = (
@@ -1624,7 +1624,7 @@
 /obj/effect/turf_decal/siding/wideplating_new/dark{
 	dir = 9
 	},
-/obj/item/reagent_containers/cup/rag{
+/obj/item/rag{
 	pixel_x = -2;
 	pixel_y = 4
 	},
@@ -15035,12 +15035,12 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/medbay)
 "Wk" = (
-/obj/item/disk/ammo_workbench/advanced,
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
 /obj/machinery/light_switch/directional/east,
 /obj/machinery/ammo_workbench,
+/obj/item/ammo_workbench_module/lethal_super,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/nova/des_two/security/armory)
 "Wm" = (
