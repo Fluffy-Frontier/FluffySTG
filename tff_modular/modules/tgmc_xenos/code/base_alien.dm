@@ -63,7 +63,7 @@
 	. = ..()
 	real_name = "alien [caste]"
 
-	update_offsets()	// Необходимо, чтобы base_pixel_w применился
+	update_offsets() // Необходимо, чтобы base_pixel_w применился
 	set_armor(armor_type)
 
 	if(next_evolution)
@@ -125,37 +125,6 @@
 	fire = 0
 	melee = 0
 	wound = 100
-
-/mob/living/carbon/alien/adult/tgmc/update_held_items()
-	. = ..()
-	remove_overlay(HANDS_LAYER)
-	// Временное(ложь) решение, из-за сложностей с получением иконок для всех ксенов, а так же неопределенностью, связанной с icon_w, pixel_w и т.п
-	/*
-	var/list/hands = list()
-
-	var/obj/item/l_hand = get_item_for_held_index(1)
-	if(l_hand)
-		var/itm_state = l_hand.inhand_icon_state
-		if(!itm_state)
-			itm_state = l_hand.icon_state
-		var/mutable_appearance/l_hand_item = mutable_appearance(alt_inhands_file, "[itm_state][caste]_l", -HANDS_LAYER)
-		if(l_hand.blocks_emissive)
-			l_hand_item.overlays += emissive_blocker(l_hand_item.icon, l_hand_item.icon_state, src, alpha = l_hand_item.alpha)
-		hands += l_hand_item
-
-	var/obj/item/r_hand = get_item_for_held_index(2)
-	if(r_hand)
-		var/itm_state = r_hand.inhand_icon_state
-		if(!itm_state)
-			itm_state = r_hand.icon_state
-		var/mutable_appearance/r_hand_item = mutable_appearance(alt_inhands_file, "[itm_state][caste]_r", -HANDS_LAYER)
-		if(r_hand.blocks_emissive)
-			r_hand_item.overlays += emissive_blocker(r_hand_item.icon, r_hand_item.icon_state, src, alpha = r_hand_item.alpha)
-		hands += r_hand_item
-
-	overlays_standing[HANDS_LAYER] = hands
-	apply_overlay(HANDS_LAYER)
-	*/
 
 /mob/living/carbon/alien/adult/tgmc/get_fire_overlay(stacks, on_fire)
 	var/fire_icon = "generic_fire"
