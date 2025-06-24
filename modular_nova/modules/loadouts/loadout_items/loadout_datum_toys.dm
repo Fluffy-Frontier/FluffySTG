@@ -297,6 +297,7 @@
 	name = "Friendly Janiborg Plush"
 	item_path = /obj/item/toy/plush/nova/donator/plush_janiborg
 
+/* // FLUFFY FRONTIER REMOVAL START
 //Staff plushies here
 
 /datum/loadout_item/toys/plush/plush_melon
@@ -315,6 +316,7 @@
 	name = "Skaag Plushie"
 	item_path = /obj/item/toy/plush/nova/skaag
 
+*/ // FLUFFY FRONTIER REMOVAL END
 /*
 *	CARDS
 */

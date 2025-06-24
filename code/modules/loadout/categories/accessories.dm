@@ -83,9 +83,9 @@
 	name = "Pocket Protector (Filled)"
 	item_path = /obj/item/clothing/accessory/pocketprotector/full
 
-/* FLUFFY FRONTIER EDIT START. REMOVAL
+/* // FLUFFY FRONTIER REMOVAL START
 /datum/loadout_item/accessory/pride
 	name = "Pride Pin"
 	item_path = /obj/item/clothing/accessory/pride
 	can_be_reskinned = TRUE
-FLUFFY FRONTIER EDIT END */
+*/ // FLUFFY FRONTIER REMOVAL END
