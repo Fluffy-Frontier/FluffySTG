@@ -268,7 +268,7 @@
 		/datum/quirk/softspoken,
 		/datum/quirk/tin_man,
 		/datum/quirk/touchy,
-		/datum/quirk/narcolepsy,
+		/datum/quirk/item_quirk/narcolepsy,
 		/datum/quirk/fragile,
 		/datum/quirk/alexithymia,
 		// Нейтральные
