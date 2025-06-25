@@ -5,6 +5,7 @@
 	worn_icon_state = "armadyne_shirt"
 	icon = 'modular_nova/master_files/icons/obj/clothing/under/centcom.dmi'	//This can probably be moved to centcom.dm when the suits are sorted
 	worn_icon = 'modular_nova/master_files/icons/mob/clothing/under/centcom.dmi'
+	worn_icon_digi = 'modular_nova/master_files/icons/mob/clothing/under/centcom_digi.dmi'
 
 /obj/item/clothing/under/rank/security/armadyne/tactical
 	name = "armadyne tactical uniform"
@@ -66,7 +67,6 @@
 	worn_icon_state = "armadyne_gloves"
 	cut_type = null
 
-// FLUFFY FRONTIER ADDITION - NON-COMBAT ARMADYNE GLOVES
 /obj/item/clothing/gloves/color/black/security/armadyne
 	name = "armadyne gloves"
 	desc = "Tactical and sleek. Worn by Armadyne representatives."
@@ -75,7 +75,6 @@
 	icon_state = "armadyne_gloves"
 	worn_icon_state = "armadyne_gloves"
 	cut_type = null
-// FLUFFY FRONTIER ADDITION END
 
 /obj/item/clothing/shoes/jackboots/armadyne
 	name = "armadyne combat boots"
