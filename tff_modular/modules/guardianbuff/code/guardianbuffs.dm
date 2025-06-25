@@ -63,7 +63,7 @@
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 	wound_bonus = 20
-	bare_wound_bonus = 50
+	exposed_wound_bonus = 50
 	stealth_cooldown_time = 5 SECONDS
 
 /datum/action/cooldown/mob_cooldown/guardian_bluespace_beacon
