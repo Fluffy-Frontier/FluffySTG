@@ -42,7 +42,7 @@
 	dir = 1
 	},
 /obj/structure/reagent_dispensers/fueltank,
-/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/blood/oil,
 /obj/effect/turf_decal/bot_red,
 /obj/structure/sign/warning/fire/directional/north,
 /obj/structure/sign/warning/no_smoking/circle/directional/west,
@@ -13266,7 +13266,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/blood/oil/slippery,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/medbay)
 "Qs" = (
@@ -14318,7 +14318,7 @@
 	dir = 8
 	},
 /obj/structure/bed/dogbed,
-/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/blood/oil,
 /mob/living/basic/pet/syndifox,
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
