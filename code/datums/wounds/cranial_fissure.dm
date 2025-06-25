@@ -7,7 +7,7 @@
 	wound_series = WOUND_SERIES_CRANIAL_FISSURE
 
 	threshold_minimum = 150
-	weight = 0 //FLUFFY FRONTIER EDIT. ORIGINAL //weight = 10
+	weight = 10
 
 	viable_zones = list(BODY_ZONE_HEAD)
 
