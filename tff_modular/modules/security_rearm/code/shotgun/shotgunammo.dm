@@ -19,7 +19,7 @@
 	damage_falloff_tile = -0.2
 	stamina_falloff_tile = -0.3
 	wound_bonus = 0
-	bare_wound_bonus = 0
+	exposed_wound_bonus = 0
 	stutter = 3 SECONDS
 	jitter = 5 SECONDS
 	eyeblur = 1 SECONDS
