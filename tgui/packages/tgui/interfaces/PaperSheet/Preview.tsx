@@ -497,7 +497,7 @@ export class PreviewView extends Component<PreviewViewProps> {
     input.defaultValue = fieldData.raw_text;
     input.disabled = true;
 
-    return `[${input.outerHTML}]`;
+    return `${input.outerHTML}`;
   };
 
   render() {

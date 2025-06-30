@@ -631,6 +631,12 @@
 			return TRUE
 		if("add_text")
 			var/paper_input = params["text"]
+
+			if(findtext_char(paper_input, regex(@"\%.+\%")))
+				paper_input = replacetext_char(paper_input, "%sig%", "[user.real_name]")
+				paper_input = replacetext_char(paper_input, "%time%", "[time2text(world.timeofday, "hh:mm", NO_TIMEZONE)]")
+				paper_input = replacetext_char(paper_input, "%date%", "[time2text(world.timeofday, "DD/MM", NO_TIMEZONE)]/[CURRENT_STATION_YEAR]")
+
 			var/this_input_length = length_char(paper_input)
 
 			if(this_input_length == 0)
@@ -667,6 +673,29 @@
 
 			// Safe to assume there are writing implement details as user.can_write(...) fails with an invalid writing implement.
 			var/writing_implement_data = holding.get_writing_implement_details()
+
+			// FLUFF START
+			var/regex/reg = regex(@"\%\|(.+?)(?:\{(\d+)\})?\|\%|(\[_+\])", "g")
+			var/current_field_id = input_field_count
+			var/list/new_field_to_add = list()
+			while(reg.Find_char(paper_input))
+				message_admins("[reg.match] - [reg.group[1]] - [reg.group[2]] - [reg.index] - [reg.next]")
+				if(!isnull(reg.group[1]))
+					add_field_input(
+						"[current_field_id]",
+						reg.group[1],
+						writing_implement_data["font"],
+						writing_implement_data["color"],
+						writing_implement_data["use_bold"],
+						user.real_name
+					)
+					new_field_to_add += list(list(reg.match, max(length(reg.group[1]) + 1, text2num(reg.group[2]))))
+				current_field_id += 1
+
+			for(var/field in new_field_to_add)
+				var/field_text = "\[[jointext(new/list(field[2]), "_")]\]" // Creates a string like `[___]`, where `_` is repeats field[2] times
+				paper_input = replacetext_char(paper_input, field[1], field_text)
+			// FLUFF END
 
 			playsound(src, SFX_WRITING_PEN, 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE, SOUND_FALLOFF_EXPONENT + 3, ignore_walls = FALSE)
 
