@@ -59,8 +59,8 @@ export function getPrefix(
     return;
   }
 
-  // TFF EDIT START. ORIGINAL:
-  /* let adjusted = value
+  /* // TFF EDIT START. ORIGINAL:
+  const adjusted = value
   .slice(0, 3)
   ?.toLowerCase()
   ?.replace('.', ':') as keyof typeof RADIO_PREFIXES;
