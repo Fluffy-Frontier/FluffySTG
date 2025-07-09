@@ -112,7 +112,7 @@
 
 /datum/action/cooldown/spell/scream/cast(atom/cast_on)
 	. = ..()
-	for(var/mob/living/M in get_hearers_in_view(4, user))
+	for(var/mob/living/M in get_hearers_in_view(4, owner))
 		if(iscarbon(M))
 			var/mob/living/carbon/C = M
 			var/obj/item/organ/ears/ears = C.get_organ_slot(ORGAN_SLOT_EARS)
