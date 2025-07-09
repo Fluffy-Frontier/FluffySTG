@@ -1,4 +1,4 @@
-import { Channel } from './ChannelIterator';
+import type { Channel } from './ChannelIterator';
 import { RADIO_PREFIXES, RUS_PREFIXES, WindowSize } from './constants'; // TFF EDIT
 
 /**
