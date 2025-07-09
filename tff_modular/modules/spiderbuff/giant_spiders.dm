@@ -176,7 +176,7 @@
 /mob/living/basic/spider/giant/hunter/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/fast_web)
-	AddElement(/datum/element/lifesteal, flat_heal = 30)
+	AddElement(/datum/element/lifesteal, flat_heal = 20)
 	RegisterSignal(src, COMSIG_LIVING_LIFE, PROC_REF(damaging))
 
 /mob/living/basic/spider/giant/hunter/proc/damaging(mob/living/source, seconds_per_tick, times_fired)
