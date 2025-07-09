@@ -222,7 +222,6 @@
 	sight = SEE_SELF|SEE_MOBS|SEE_TURFS
 	menu_description = "Spider that able to see enemies through walls, has ability to travel in vents. Has low amount of health and damage, but on attack, it's injects mutetoxin and deals stamina damage"
 	regeneration_per_tick = -2
-	innate_actions = list(/datum/action/cooldown/spell/scream)
 
 /mob/living/basic/spider/giant/scout/Initialize(mapload)
 	. = ..()
@@ -544,8 +543,8 @@
 	icon_state = "midwife"
 	icon_living = "midwife"
 	icon_dead = "midwife_dead"
-	maxHealth = 300
-	health = 300
+	maxHealth = 350
+	health = 350
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 	armour_penetration = 30
@@ -568,7 +567,6 @@
 		/datum/action/cooldown/mob_cooldown/lay_web/web_spikes,
 		/datum/action/cooldown/mob_cooldown/set_spider_directive,
 		/datum/action/cooldown/mob_cooldown/wrap,
-		/datum/action/cooldown/spell/scream,
 	)
 
 /mob/living/basic/spider/giant/midwife/Initialize(mapload)

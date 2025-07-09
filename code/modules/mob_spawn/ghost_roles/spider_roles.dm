@@ -164,11 +164,20 @@
 	color = rgb(148, 0, 211)
 	you_are_text = "You are an enriched spider."
 	cluster_type = /obj/structure/spider/eggcluster/enriched
+	// FLUFFY FRONTIER CHANGES - ORIGINAL CODE:
+	/*
 	potentialspawns = list(
 		/mob/living/basic/spider/growing/spiderling/tarantula,
 		/mob/living/basic/spider/growing/spiderling/breacher,
 		/mob/living/basic/spider/growing/spiderling/midwife,
 	)
+	*/
+
+	potentialspawns = list(
+		/mob/living/basic/spider/growing/spiderling/tarantula,
+		/mob/living/basic/spider/growing/spiderling/breacher,
+	)
+	// FLUFFY FRONTIER CHANGES END
 	flash_window = TRUE
 
 /obj/effect/mob_spawn/ghost_role/spider/bloody
