@@ -43,30 +43,6 @@
 	QDEL_NULL(aura_healing_component)
 	owner.balloon_alert(owner, "healing aura ended")
 
-// Вскрытие, позволяет вскрыть вентиляцию.
-/datum/action/cooldown/mob_cooldown/ventjack
-	name = "Ventjack"
-	desc = "Allows you to open welded vents by clicking on it."
-	cooldown_time = 1 SECONDS
-	click_to_activate = TRUE
-	background_icon_state = "bg_alien"
-	overlay_icon_state = "bg_alien_border"
-
-/datum/action/cooldown/mob_cooldown/ventjack/Activate(atom/target)
-	var/obj/machinery/atmospherics/components/unary/vent_pump/vent = target
-	if(!isvent(vent))
-		owner.balloon_alert(owner, "must be a vent!")
-		return
-	if(!vent.welded)
-		owner.balloon_alert(owner, "must be welded!")
-		return
-	if(!do_after(owner, 1 SECONDS, target = vent))
-		owner.balloon_alert(owner, "interrupted!")
-		return
-	vent.welded = FALSE
-	vent.update_appearance(UPDATE_ICON)
-	return
-
 /obj/projectile/toxin
 	damage = 15
 	damage_type = TOX
@@ -134,7 +110,8 @@
 	sound = 'sound/effects/screech.ogg'
 	spell_requirements = NONE
 
-/datum/action/cooldown/spell/scream/cast(mob/user) //queen ability we steal from lings, allow us to scream with EMP and confusion.
+/datum/action/cooldown/spell/scream/cast(atom/cast_on)
+	. = ..()
 	for(var/mob/living/M in get_hearers_in_view(4, user))
 		if(iscarbon(M))
 			var/mob/living/carbon/C = M
