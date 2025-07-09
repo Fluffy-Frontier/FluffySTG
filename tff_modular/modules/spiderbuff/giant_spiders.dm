@@ -233,7 +233,7 @@
 	if(!isliving(target))
 		return
 	var/mob/living/mob = target
-	mob.apply_damage(20, STAMINA)
+	mob.apply_damage(15, STAMINA)
 
 /**
  * ### Nurse Spider
@@ -549,6 +549,7 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 25
 	armour_penetration = 30
+	regeneration_per_tick = -2
 	speed = 3
 	obj_damage = 80
 	player_speed_modifier = -3.1
