@@ -1,3 +1,5 @@
+#define isvent(A) (istype(A, /obj/machinery/atmospherics/components/unary/vent_pump))
+
 /mob/living/basic/spider/giant/baron
 	pass_flags = PASSTABLE
 
@@ -53,18 +55,13 @@
 	/// MED HUD for every spidy!
 	var/health_hud = DATA_HUD_MEDICAL_ADVANCED
 
-/mob/living/basic/spider/giant/Initialize(mapload)
+/mob/living/basic/spider/giant/Initialize(mapload, message)
 	. = ..()
 	grant_actions_by_list(innate_actions)
 	var/datum/atom_hud/datahud = GLOB.huds[health_hud]
 	datahud.show_to(src)
-
-/mob/living/basic/spider/giant/Login(message)
-	. = ..()
-	if(!. || !client)
-		return FALSE
 	log_talk(message, LOG_SAY, tag = "Spider telepathy")
-	var/rendered = span_hierophant("<b>\[Spider Telepathy\] [name]</b> has just grew up! Now she can benefit the hive.")
+	var/rendered = span_hierophant("<b>\[Spider Telepathy\] [name]</b> has grow up in [get_area(src)]!")
 	relay_to_list_and_observers(rendered, GLOB.spider_telepathy_mobs, src, MESSAGE_TYPE_RADIO)
 
 /**
@@ -90,7 +87,7 @@
 	speed = 4
 	player_speed_modifier = -3.1
 	web_speed = 0.25
-	menu_description = "medium-speed spider with small damage and medium health, but with good regeneration. When on the web, causes insane damage."
+	menu_description = "medium-speed spider with small damage and medium health, but with good regeneration. When on the web, causes insane damage. Has ability to become invisible."
 	innate_actions = list(/datum/action/cooldown/mob_cooldown/invisibility)
 	regeneration_per_tick = -2.5
 
@@ -120,8 +117,8 @@
 	icon_living = "guard"
 	icon_dead = "guard_dead"
 	gender = FEMALE
-	maxHealth = 250
-	health = 250
+	maxHealth = 200
+	health = 200
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 	armour_penetration = 25
@@ -131,20 +128,12 @@
 	damage_coeff = list(BRUTE = 1, BURN = 1, STAMINA = 1, TOX = 1, OXY = 1)
 	player_speed_modifier = -4
 	menu_description = "Tanky and strong able to shed a carcass for protection."
-	innate_actions = list(/datum/action/cooldown/mob_cooldown/web_effigy)
+	innate_actions = list(/datum/action/cooldown/mob_cooldown/web_effigy, /datum/action/cooldown/spell/guard_rage)
 	regeneration_per_tick = -2
 
 /mob/living/basic/spider/giant/guard/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/average_web)
-
-/mob/living/basic/spider/giant/guard/melee_attack(atom/target, list/modifiers, ignore_cooldown)
-	. = ..()
-	if (!. || !isliving(target))
-		return
-	var/mob/living/carbon/human = target
-	if(prob(15))
-		human.AdjustKnockdown(1 SECONDS)
 
 /**
  * ### Hunter Spider
@@ -176,7 +165,6 @@
 /mob/living/basic/spider/giant/hunter/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/fast_web)
-	AddElement(/datum/element/lifesteal, flat_heal = 20)
 	RegisterSignal(src, COMSIG_LIVING_LIFE, PROC_REF(damaging))
 
 /mob/living/basic/spider/giant/hunter/proc/damaging(mob/living/source, seconds_per_tick, times_fired)
@@ -187,13 +175,14 @@
 
 	source.adjustBruteLoss(damage_per_tick)
 
-/mob/living/basic/spider/giant/hunter/melee_attack(atom/target, list/modifiers, ignore_cooldown)
+/mob/living/basic/spider/giant/hunter/melee_attack(mob/living/basic/spider/giant/source, atom/target, list/modifiers, ignore_cooldown)
 	. = ..()
-	if (!. || !isliving(target) || target == src)
+	if (!. || !isliving(target) || target == src || iscyborg(target))
 		return
 	var/mob/living/carbon/who_attack = target
 	if(isliving(who_attack))
 		who_attack.blood_volume -= 15
+	source.adjustBruteLoss(-20)
 	return TRUE
 
 /mob/living/basic/spider/giant/hunter/away_caves
@@ -209,7 +198,7 @@
 	icon_dead = "scout_dead"
 	maxHealth = 100
 	health = 100
-	obj_damage = 80
+	obj_damage = 50
 	melee_damage_lower = 5
 	melee_damage_upper = 5
 	armour_penetration = 25
@@ -390,10 +379,11 @@
 	wound_bonus = 25
 	exposed_wound_bonus = 50
 	sharpness = SHARP_EDGED
-	obj_damage = 80
-	web_speed = 0.25
+	obj_damage = 100
+	web_speed = 0.5
 	limb_destroyer = 50
 	speed = 5
+	web_type = /datum/action/cooldown/mob_cooldown/lay_web/strong
 	player_speed_modifier = -4
 	sight = SEE_TURFS
 	menu_description = "Has the ability to destroy walls and limbs, has additional damage against synthetic humans and cyborgs."
@@ -411,7 +401,14 @@
 	. = ..()
 	var/mob/living/human = target
 	if(issynthetic(human) || isandroid(human) || iscyborg(human) || isbot(human))
-		human.apply_damage(15, BRUTE)
+		human.apply_damage(20, BRUTE)
+	var/obj/machinery/atmospherics/components/unary/vent_pump/pump = human
+	if(isvent(pump))
+		if(!do_after(src, 1.5 SECONDS, pump))
+			return
+		playsound(pump, 'sound/effects/bang.ogg', 70)
+		pump.welded = FALSE
+		pump.update_appearance(UPDATE_ICON)
 
 /**
  * ### Tarantula
@@ -431,6 +428,7 @@
 	wound_bonus = -15
 	melee_damage_lower = 35
 	melee_damage_upper = 40
+	melee_attack_cooldown = 8.5
 	armour_penetration = 35
 	obj_damage = 150
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, STAMINA = 0, OXY = 1)
@@ -496,7 +494,7 @@
 	player_speed_modifier = -2.5
 	gold_core_spawnable = NO_SPAWN
 	regeneration_per_tick = -2
-	menu_description = "Assassin spider variant with an unmatched speed and very deadly poison, but has very low amount of health and damage."
+	menu_description = "Assassin spider variant with an very deadly poison and projectile attack, but has very low amount of health and damage."
 	innate_actions = list(
 		/datum/action/cooldown/mob_cooldown/defensive_mode,
 	)
@@ -543,11 +541,11 @@
 	icon_state = "midwife"
 	icon_living = "midwife"
 	icon_dead = "midwife_dead"
-	maxHealth = 350
-	health = 350
+	maxHealth = 300
+	health = 300
 	melee_damage_lower = 20
 	melee_damage_upper = 25
-	armour_penetration = 30
+	armour_penetration = 25
 	regeneration_per_tick = -2
 	speed = 3
 	obj_damage = 80
@@ -557,7 +555,6 @@
 	web_type = /datum/action/cooldown/mob_cooldown/lay_web/sealer
 	menu_description = "Royal spider variant specializing in reproduction and leadership, deals medium damage."
 	innate_actions = list(
-		/datum/action/cooldown/mob_cooldown/command_spiders,
 		/datum/action/cooldown/mob_cooldown/lay_eggs,
 		/datum/action/cooldown/mob_cooldown/lay_eggs/abnormal,
 		/datum/action/cooldown/mob_cooldown/lay_eggs/enriched,
@@ -719,3 +716,5 @@
 	AddElement(/datum/element/pet_bonus, "chitter")
 	AddElement(/datum/element/ai_retaliate)
 	ADD_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
+
+#undef isvent

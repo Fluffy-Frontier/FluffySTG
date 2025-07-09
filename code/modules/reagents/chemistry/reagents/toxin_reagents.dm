@@ -1304,7 +1304,7 @@
 	name = "Viper Spider Toxin"
 	toxpwr = 5
 	description = "An extremely toxic chemical produced by the rare viper spider. Brings their prey to the brink of death and causes hallucinations."
-	health_required = 10
+	health_required = 0 // FLUFFY FRONTIER CHANGES - ORIGINAL: 10
 	liver_damage_multiplier = 0
 
 /datum/reagent/toxin/viperspider/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, times_fired)

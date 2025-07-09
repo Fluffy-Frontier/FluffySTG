@@ -41,6 +41,7 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_SPIDER_WEB
 	canSmoothWith = SMOOTH_GROUP_SPIDER_WEB + SMOOTH_GROUP_WALLS
+	max_integrity = 10 // FLUFFY FRONTIER ADDITION
 	///Whether or not the web is from the genetics power
 	var/genetic = FALSE
 	///Whether or not the web is a sealed web
@@ -155,6 +156,7 @@
 	icon_state = "webwall-0"
 	smoothing_groups = SMOOTH_GROUP_SPIDER_WEB_WALL
 	canSmoothWith = SMOOTH_GROUP_SPIDER_WEB_WALL
+	max_integrity = 15 // FLUFFY FRONTIER ADDITION
 	plane = GAME_PLANE
 	layer = OBJ_LAYER
 	sealed = TRUE

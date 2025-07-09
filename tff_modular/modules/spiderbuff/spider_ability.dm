@@ -62,35 +62,31 @@
 	name = "Invisibility"
 	desc = "Makes you invisible for 7 seconds"
 	button_icon = 'icons/mob/actions/actions_animal.dmi'
-	button_icon_state = "sniper_zoom"
+	button_icon_state = "web_sneak"
 	background_icon_state = "bg_alien"
 	overlay_icon_state = "bg_alien_border"
 	cooldown_time = 25 SECONDS
 	melee_cooldown_time = 0 SECONDS
 	click_to_activate = FALSE
+	var/duration = 7 SECONDS
+	var/inv_alpha = 1
+	var/animation_time = 0.5
 
 /datum/action/cooldown/mob_cooldown/invisibility/Activate()
 	. = ..()
-	var/mob/living/basic/affecting = owner
-	affecting.apply_status_effect(/datum/status_effect/invisibility)
+	var/mob/living/basic/spider/affecting = owner
+	animate(affecting, alpha = inv_alpha, time = animation_time)
+	affecting.balloon_alert(affecting, "you blend into the environment")
+	ADD_TRAIT(affecting, TRAIT_SNEAK, ACTION_TRAIT)
+	addtimer(CALLBACK(src, PROC_REF(deactivate), affecting), duration)
 
-/datum/status_effect/invisibility
-	id = "Invisible"
-	duration = 7 SECONDS
-	alert_type = null
-	remove_on_fullheal = TRUE
-	var/inv_alpha = 1
-	var/animation_time = 0.5 SECONDS
+/datum/action/cooldown/mob_cooldown/invisibility/proc/deactivate(mob/living/basic/spider/affecting)
+	if(QDELETED(affecting) || !HAS_TRAIT_FROM(affecting, TRAIT_SNEAK, ACTION_TRAIT))
+		return
 
-/datum/status_effect/invisibility/on_apply()
-	animate(owner, alpha = inv_alpha, time = animation_time)
-	owner.balloon_alert(owner, "you blend into the environment")
-	ADD_TRAIT(owner, TRAIT_SNEAK, ACTION_TRAIT)
-
-/datum/status_effect/invisibility/on_remove()
+	REMOVE_TRAIT(affecting, TRAIT_SNEAK, ACTION_TRAIT)
+	affecting.balloon_alert(affecting, "you reveal yourself")
 	animate(owner, alpha = initial(owner.alpha), time = animation_time)
-	owner.balloon_alert(owner, "you reveal yourself")
-	REMOVE_TRAIT(owner, TRAIT_SNEAK, ACTION_TRAIT)
 
 /datum/action/cooldown/mob_cooldown/charge/basic_charge/spider
 	name = "Tarantula Charge"
@@ -99,44 +95,81 @@
 	charge_delay = 1 SECONDS
 	charge_distance = 6
 
-/datum/action/cooldown/spell/scream
-	name = "Spider's Scream"
-	desc = "Spider emits a loud scream, that confuses and deafens humans, may overload cyborgs sensors."
-	button_icon = 'icons/mob/actions/actions_spells.dmi'
-	button_icon_state = "emp"
-	background_icon_state = "bg_alien"
-	overlay_icon_state = "bg_alien_border"
-	cooldown_time = 25 SECONDS
-	sound = 'sound/effects/screech.ogg'
-	spell_requirements = NONE
-
-/datum/action/cooldown/spell/scream/cast(atom/cast_on)
-	. = ..()
-	for(var/mob/living/M in get_hearers_in_view(4, owner))
-		if(iscarbon(M))
-			var/mob/living/carbon/C = M
-			var/obj/item/organ/ears/ears = C.get_organ_slot(ORGAN_SLOT_EARS)
-			if(ears)
-				ears.adjustEarDamage(0, 30)
-			C.adjust_confusion(25 SECONDS)
-			C.set_jitter_if_lower(100 SECONDS)
-
-		if(issilicon(M))
-			SEND_SOUND(M, sound('sound/items/weapons/flash.ogg'))
-			M.Paralyze(rand(100,200))
-	return TRUE
-
 /datum/component/member_of_hive
 
 /datum/component/member_of_hive/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_MOB_TRY_SPEECH, PROC_REF(on_try_speech))
+	RegisterSignal(parent, COMSIG_LIVING_DEATH, PROC_REF(on_death))
+
+/datum/component/member_of_hive/proc/on_death(mob/living/spider, gibbed, message)
+	SIGNAL_HANDLER
+	spider.log_talk(message, LOG_SAY, tag = "Spider telepathy")
+	var/rendered = span_hierophant("<b>\[Spider Telepathy\] [spider.name]</b> has died in [get_area(spider)]!")
+	relay_to_list_and_observers(rendered, GLOB.spider_telepathy_mobs, src, MESSAGE_TYPE_RADIO)
 
 /datum/component/member_of_hive/proc/on_try_speech(mob/living/spider, message, ignore_spam, forced)
 	SIGNAL_HANDLER
-	spider.log_talk(message, LOG_SAY, tag = "blob hivemind telepathy")
+	spider.log_talk(message, LOG_SAY, tag = "Spider telepathy")
 	var/spanned_message = spider.say_quote(message)
 	var/rendered = span_hierophant("<b>\[Spider Telepathy\] [spider.name]</b> [spanned_message]")
 	relay_to_list_and_observers(rendered, GLOB.spider_telepathy_mobs, spider, MESSAGE_TYPE_RADIO)
 	return COMPONENT_CANNOT_SPEAK
+
+/datum/action/cooldown/spell/guard_rage
+	name = "Rage Mode"
+	desc = "Prevents you from regenerating and you begin to take passive damage, but increases damage by 5 and descreases melee attack cooldown. 10 Seconds duration."
+	button_icon = 'tff_modular/modules/spiderbuff/icons/icons.dmi'
+	button_icon_state = "Eye"
+	background_icon_state = "bg_alien"
+	overlay_icon_state = "bg_alien_border"
+	cooldown_time = 30 SECONDS
+	melee_cooldown_time = 0 SECONDS
+	click_to_activate = FALSE
+	spell_requirements = NONE
+	var/duration = 10 SECONDS
+
+/datum/action/cooldown/spell/guard_rage/Activate(atom/target)
+	. = ..()
+	var/mob/living/basic/spider/affecting = owner
+	affecting.regeneration_per_tick += 4
+	affecting.melee_damage_lower += 5
+	affecting.melee_damage_upper += 5
+	affecting.melee_attack_cooldown -= 1
+	addtimer(CALLBACK(src, PROC_REF(deactivate), affecting), duration)
+	ADD_TRAIT(affecting, TRAIT_EVIL, ACTION_TRAIT)
+
+/datum/action/cooldown/spell/guard_rage/proc/deactivate(mob/living/basic/spider/affecting)
+	if(QDELETED(affecting) || !HAS_TRAIT_FROM(affecting, TRAIT_EVIL, ACTION_TRAIT))
+		return
+
+	REMOVE_TRAIT(affecting, TRAIT_EVIL, ACTION_TRAIT)
+	affecting.regeneration_per_tick -= 4
+	affecting.melee_damage_lower -= 5
+	affecting.melee_damage_upper -= 5
+	affecting.melee_attack_cooldown += 1
+
+/datum/action/cooldown/mob_cooldown/lay_web/strong
+
+/datum/action/cooldown/mob_cooldown/lay_web/strong/plant_web(turf/target_turf, obj/structure/spider/stickyweb/existing_web)
+	if (existing_web)
+		qdel(existing_web)
+		new /obj/structure/spider/stickyweb/sealed/strong(target_turf)
+		return
+	new /obj/structure/spider/stickyweb/strong(target_turf)
+
+
+/obj/structure/spider/stickyweb/strong
+	max_integrity = 20
+
+/obj/structure/spider/stickyweb/strong/Initialize(mapload)
+	. = ..()
+	add_filter("brown_web", 10, list("type" = "outline", "color" = "#c7974eff", "size" = 0.1))
+
+/obj/structure/spider/stickyweb/sealed/strong
+	max_integrity = 20
+
+/obj/structure/spider/stickyweb/sealed/strong/Initialize(mapload)
+	. = ..()
+	add_filter("brown_web", 10, list("type" = "outline", "color" = "#c7974eff", "size" = 0.1))
 
 #undef isvent
