@@ -76,6 +76,10 @@ GLOBAL_LIST_EMPTY(current_observers_list)
 /// All living mobs which can hear blob telepathy
 GLOBAL_LIST_EMPTY(blob_telepathy_mobs)
 
+/// FLUFFY FRONTIER ADDITION - All living mobs which can hear spiders telepathy
+GLOBAL_LIST_EMPTY(spider_telepathy_mobs)
+/// FLUFFY FRONTIER ADDITION END
+
 /// All "living" (because revenants are in between mortal planes or whatever) mobs that can hear revenants
 GLOBAL_LIST_EMPTY(revenant_relay_mobs)
 

@@ -1,3 +1,6 @@
+#define isvent(A) (istype(A, /obj/machinery/atmospherics/components/unary/vent_pump))
+
+// Лечебная Аура, используется нурсами
 /datum/action/cooldown/heal_aura_spider
 	name = "Healing Aura"
 	desc = "Friendly spiders in a short range around yourself will receive passive healing."
@@ -39,3 +42,124 @@
 	aura_active = FALSE
 	QDEL_NULL(aura_healing_component)
 	owner.balloon_alert(owner, "healing aura ended")
+
+// Вскрытие, позволяет вскрыть вентиляцию.
+/datum/action/cooldown/mob_cooldown/ventjack
+	name = "Ventjack"
+	desc = "Allows you to open welded vents by clicking on it."
+	cooldown_time = 1 SECONDS
+	click_to_activate = TRUE
+	background_icon_state = "bg_alien"
+	overlay_icon_state = "bg_alien_border"
+
+/datum/action/cooldown/mob_cooldown/ventjack/Activate(atom/target)
+	var/obj/machinery/atmospherics/components/unary/vent_pump/vent = target
+	if(!isvent(vent))
+		owner.balloon_alert(owner, "must be a vent!")
+		return
+	if(!vent.welded)
+		owner.balloon_alert(owner, "must be welded!")
+		return
+	if(!do_after(owner, 1 SECONDS, target = vent))
+		owner.balloon_alert(owner, "interrupted!")
+		return
+	vent.welded = FALSE
+	vent.update_appearance(UPDATE_ICON)
+	return
+
+/obj/projectile/toxin
+	damage = 15
+	damage_type = TOX
+	hit_prone_targets = TRUE
+	ignore_range_hit_prone_targets = TRUE
+	dismemberment = 0
+	armour_penetration = 100
+	icon_state = "neurotoxin"
+
+/obj/projectile/toxin/viper
+	damage = 20
+
+/obj/projectile/toxin/midwife
+	damage = 25
+
+/datum/action/cooldown/mob_cooldown/invisibility
+	name = "Invisibility"
+	desc = "Makes you invisible for 7 seconds"
+	button_icon = 'icons/mob/actions/actions_animal.dmi'
+	button_icon_state = "sniper_zoom"
+	background_icon_state = "bg_alien"
+	overlay_icon_state = "bg_alien_border"
+	cooldown_time = 25 SECONDS
+	melee_cooldown_time = 0 SECONDS
+	click_to_activate = FALSE
+
+/datum/action/cooldown/mob_cooldown/invisibility/Activate()
+	. = ..()
+	var/mob/living/basic/affecting = owner
+	affecting.apply_status_effect(/datum/status_effect/invisibility)
+
+/datum/status_effect/invisibility
+	id = "Invisible"
+	duration = 7 SECONDS
+	alert_type = null
+	remove_on_fullheal = TRUE
+	var/inv_alpha = 1
+	var/animation_time = 0.5 SECONDS
+
+/datum/status_effect/invisibility/on_apply()
+	animate(owner, alpha = inv_alpha, time = animation_time)
+	owner.balloon_alert(owner, "you blend into the environment")
+	ADD_TRAIT(owner, TRAIT_SNEAK, ACTION_TRAIT)
+
+/datum/status_effect/invisibility/on_remove()
+	animate(owner, alpha = initial(owner.alpha), time = animation_time)
+	owner.balloon_alert(owner, "you reveal yourself")
+	REMOVE_TRAIT(owner, TRAIT_SNEAK, ACTION_TRAIT)
+
+/datum/action/cooldown/mob_cooldown/charge/basic_charge/spider
+	name = "Tarantula Charge"
+	shake_duration = 0.5
+	knockdown_duration = 1 SECONDS
+	charge_delay = 1 SECONDS
+	charge_distance = 6
+
+/datum/action/cooldown/spell/scream
+	name = "Spider's Scream"
+	desc = "Spider emits a loud scream, that confuses and deafens humans, may overload cyborgs sensors."
+	button_icon = 'icons/mob/actions/actions_spells.dmi'
+	button_icon_state = "emp"
+	background_icon_state = "bg_alien"
+	overlay_icon_state = "bg_alien_border"
+	cooldown_time = 25 SECONDS
+	sound = 'sound/effects/screech.ogg'
+	spell_requirements = NONE
+
+/datum/action/cooldown/spell/scream/cast(mob/user) //queen ability we steal from lings, allow us to scream with EMP and confusion.
+	for(var/mob/living/M in get_hearers_in_view(4, user))
+		if(iscarbon(M))
+			var/mob/living/carbon/C = M
+			var/obj/item/organ/ears/ears = C.get_organ_slot(ORGAN_SLOT_EARS)
+			if(ears)
+				ears.adjustEarDamage(0, 30)
+			C.adjust_confusion(25 SECONDS)
+			C.set_jitter_if_lower(100 SECONDS)
+
+		if(issilicon(M))
+			SEND_SOUND(M, sound('sound/items/weapons/flash.ogg'))
+			M.Paralyze(rand(100,200))
+	return TRUE
+
+/datum/component/member_of_hive
+
+/datum/component/member_of_hive/RegisterWithParent()
+	RegisterSignal(parent, COMSIG_MOB_TRY_SPEECH, PROC_REF(on_try_speech))
+
+/datum/component/member_of_hive/proc/on_try_speech(mob/living/spider, message, ignore_spam, forced)
+	SIGNAL_HANDLER
+	spider.log_talk(message, LOG_SAY, tag = "blob hivemind telepathy")
+	var/spanned_message = spider.say_quote(message)
+	var/rendered = span_hierophant("<b>\[Spider Telepathy\] [spider.name]</b> [spanned_message]")
+	relay_to_list_and_observers(rendered, GLOB.spider_telepathy_mobs, spider, MESSAGE_TYPE_RADIO)
+	return COMPONENT_CANNOT_SPEAK
+
+#undef isvent
