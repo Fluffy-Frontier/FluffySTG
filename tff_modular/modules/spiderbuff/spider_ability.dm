@@ -1,5 +1,3 @@
-#define isvent(A) (istype(A, /obj/machinery/atmospherics/components/unary/vent_pump))
-
 // Лечебная Аура, используется нурсами
 /datum/action/cooldown/heal_aura_spider
 	name = "Healing Aura"
@@ -172,4 +170,3 @@
 	. = ..()
 	add_filter("brown_web", 10, list("type" = "outline", "color" = "#c7974eff", "size" = 0.1))
 
-#undef isvent
