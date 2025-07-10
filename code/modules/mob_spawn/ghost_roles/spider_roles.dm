@@ -167,7 +167,7 @@
 	potentialspawns = list(
 		/mob/living/basic/spider/growing/spiderling/tarantula,
 		/mob/living/basic/spider/growing/spiderling/breacher,
-		/mob/living/basic/spider/growing/spiderling/midwife,
+		// /mob/living/basic/spider/growing/spiderling/midwife, // FLUFFY FRONTIER REMOVAL
 	)
 	flash_window = TRUE
 

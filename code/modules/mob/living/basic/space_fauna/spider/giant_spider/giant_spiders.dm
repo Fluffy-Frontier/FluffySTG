@@ -1,3 +1,6 @@
+// FLUFFY FRONTIER GLOBAL REWORK. See 'tff_modular/modules/spiderbuff/giant_spiders.dm' for new code
+// ORIGINAL CODE:
+/*
 /**
  * # Giant Spider
  *
@@ -611,3 +614,5 @@
 	AddElement(/datum/element/pet_bonus, "chitter")
 	AddElement(/datum/element/ai_retaliate)
 	ADD_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
+*/
+// ORIGINAL CODE END

@@ -17,7 +17,7 @@
 	damage_coeff = list(BRUTE = 1, BURN = 1.25, TOX = 1, STAMINA = 1, OXY = 1)
 	basic_mob_flags = FLAMMABLE_MOB
 	status_flags = NONE
-	unsuitable_cold_damage = 4
+	unsuitable_cold_damage = 3 // FLUFFY FRONTIER CHANGES - ORIGINAL: 4
 	unsuitable_heat_damage = 4
 	combat_mode = TRUE
 	faction = list(FACTION_SPIDER)
@@ -53,6 +53,12 @@
 	var/menu_description = "Tanky and strong for the defense of the nest and other spiders."
 	/// If true then you shouldn't be told that you're a spider antagonist as soon as you are placed into this mob
 	var/apply_spider_antag = TRUE
+	// FLUFFY FRONTIER ADDITION
+	/// Do we have passive regeneration?
+	var/has_regeneration = TRUE
+	/// How much we heal? (lower = bigger)
+	var/regeneration_per_tick = -1
+	// FLUFFY FRONTIER ADDITION END
 
 /datum/emote/spider
 	mob_type_allowed_typecache = /mob/living/basic/spider
@@ -68,14 +74,20 @@
 
 /mob/living/basic/spider/Initialize(mapload)
 	. = ..()
-	add_traits(list(TRAIT_WEB_SURFER, TRAIT_FENCE_CLIMBER), INNATE_TRAIT)
+	add_traits(list(TRAIT_WEB_SURFER, TRAIT_FENCE_CLIMBER, TRAIT_MUTE), INNATE_TRAIT) // FLUFFY FRONTIER CHANGES, ORIGINAL: add_traits(list(TRAIT_WEB_SURFER, TRAIT_FENCE_CLIMBER), INNATE_TRAIT)
 	AddElement(/datum/element/footstep, FOOTSTEP_MOB_CLAW)
 	AddElement(/datum/element/nerfed_pulling, GLOB.typecache_general_bad_things_to_easily_move)
 	AddElement(/datum/element/prevent_attacking_of_types, GLOB.typecache_general_bad_hostile_attack_targets, "this tastes awful!")
 	AddElement(/datum/element/cliff_walking)
 	AddComponent(/datum/component/health_scaling_effects, min_health_slowdown = 1.5)
 	AddElement(/datum/element/basic_allergenic_attack, allergen = BUGS, allergen_chance = 20, histamine_add = 5)
+	// FLUFFY FRONTIER ADDITION
+	AddComponent(/datum/component/member_of_hive)
+	if(has_regeneration)
+		RegisterSignal(src, COMSIG_LIVING_LIFE, PROC_REF(on_life))
 
+	GLOB.spider_telepathy_mobs |= src
+	// FLUFFY FRONTIER ADDITION END
 	if(poison_per_bite)
 		AddElement(/datum/element/venomous, poison_type, poison_per_bite, injection_flags = bite_injection_flags)
 
@@ -83,6 +95,21 @@
 	webbing.webbing_time *= web_speed
 	webbing.Grant(src)
 	ai_controller?.set_blackboard_key(BB_SPIDER_WEB_ACTION, webbing)
+
+// FLUFFY FRONTIER ADDITION
+/mob/living/basic/spider/proc/on_life(mob/living/source, seconds_per_tick, times_fired)
+	SIGNAL_HANDLER
+	source.adjustBruteLoss(regeneration_per_tick)
+
+/mob/living/basic/spider/get_status_tab_items()
+	. = ..()
+	if(has_regeneration)
+		. += "Regeneration Per Tick: [regeneration_per_tick]"
+	if(poison_per_bite)
+		. += "poison: [poison_per_bite] of [poison_type]"
+	. += "Damage: from [melee_damage_lower] to [melee_damage_upper]"
+
+// FLUFFY FRONTIER ADDITION END
 
 /mob/living/basic/spider/Login()
 	. = ..()
