@@ -41,8 +41,8 @@
 	var/list/restricted_species
 	/// Whether the item is restricted to supporters
 	var/donator_only
-	/// Whether the item is restricted to veterans.
-	var/veteran_only
+	/// Whether the item is restricted to Nova stars.
+	var/nova_stars_only
 	/// Whether the item requires a specific season in order to be available
 	var/required_season = null
 	/// Is the loadout item a mechanical item? If so, it will be blocked by 'allow_mechanical_loadout_items' under some circumstances
@@ -157,7 +157,7 @@
 	formatted_item["blacklisted_roles"] = blacklisted_roles
 	formatted_item["restricted_species"] = restricted_species
 	formatted_item["donator_only"] = donator_only
-	formatted_item["veteran_only"] = veteran_only
+	formatted_item["nova_stars_only"] = nova_stars_only
 
 	return formatted_item
 

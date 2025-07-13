@@ -57,8 +57,12 @@ export type Species = {
 
   enabled_features: string[];
 
+<<<<<<< HEAD
   veteran_only: boolean; // NOVA EDIT - Veteran quirks
   allow_for_donator: boolean; // THE FLUFFY FRONTIER - For donators
+=======
+  nova_stars_only: boolean; // NOVA EDIT - Nova star quirks
+>>>>>>> ec6d0b39b1a (Veteran -> Nova star (#5663))
 
   perks: {
     positive: Perk[];
@@ -87,7 +91,7 @@ export type Job = {
   description: string;
   department: string;
   // NOVA EDIT
-  veteran?: boolean;
+  nova_star?: boolean;
   alt_titles?: string[];
   // NOVA EDIT END
 };
@@ -99,7 +103,7 @@ export type Quirk = {
   value: number;
   customizable: boolean;
   customization_options?: string[];
-  veteran_only: boolean; // NOVA EDIT ADDITION - Veteran quirks
+  nova_stars_only: boolean; // NOVA EDIT ADDITION - Nova star quirks
   erp_quirk: boolean; // NOVA EDIT ADDITION - Purple ERP quirks
   allow_for_donator: boolean; // THE FLUFFY FRONTIER - For donators
 };
@@ -198,7 +202,7 @@ export type PreferencesMenuData = {
   preview_options: string[]; // NOVA EDIT ADDITION
   preview_selection: string; // NOVA EDIT ADDITION
 
-  is_veteran: BooleanLike; // NOVA EDIT - Veteran status
+  is_nova_star: BooleanLike; // NOVA EDIT - Star status
   erp_pref: BooleanLike; // NOVA EDIT ADDITION
 
   character_preferences: {

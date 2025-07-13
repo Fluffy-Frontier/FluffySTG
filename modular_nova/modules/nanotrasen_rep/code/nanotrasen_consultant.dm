@@ -37,8 +37,13 @@
 		/obj/item/reagent_containers/cup/glass/bottle/champagne = 10
 	)
 
+<<<<<<< HEAD
 	veteran_only = TRUE
 	job_flags = STATION_JOB_FLAGS | JOB_BOLD_SELECT_TEXT | JOB_CANNOT_OPEN_SLOTS | JOB_ANTAG_PROTECTED
+=======
+	nova_stars_only = TRUE
+	job_flags = STATION_JOB_FLAGS | JOB_BOLD_SELECT_TEXT | JOB_CANNOT_OPEN_SLOTS
+>>>>>>> ec6d0b39b1a (Veteran -> Nova star (#5663))
 
 /datum/outfit/job/nanotrasen_consultant
 	name = "Nanotrasen Consultant"

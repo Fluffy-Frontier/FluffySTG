@@ -39,8 +39,13 @@
 		/obj/item/clothing/head/collectable/captain = 4,
 	)
 
+<<<<<<< HEAD
 	veteran_only = TRUE
 	job_flags = STATION_JOB_FLAGS | JOB_CANNOT_OPEN_SLOTS | JOB_ANTAG_PROTECTED
+=======
+	nova_stars_only = TRUE
+	job_flags = STATION_JOB_FLAGS | JOB_CANNOT_OPEN_SLOTS
+>>>>>>> ec6d0b39b1a (Veteran -> Nova star (#5663))
 
 /datum/outfit/job/blueshield
 	name = "Blueshield"
