@@ -1,5 +1,3 @@
-#define IS_DEVIL(mob) (mob?.mind?.has_antag_datum (/datum/antagonist/devil))
-
 /obj/item/devil
 	var/devil_desc = ""
 	var/only_for_devil = TRUE
