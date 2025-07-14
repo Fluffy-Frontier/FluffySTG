@@ -1,91 +1,61 @@
-#define IS_DEVIL(mob) (mob?.mind?.has_antag_datum (/datum/antagonist/devil))
-
-// Свиток
-/obj/item/devil_contract
-	name = "Contract"
-	icon = 'icons/obj/scrolls.dmi'
-	icon_state = "scroll-ancient"
-	var/datum/contract_datum/negative/negative = null
-	var/datum/contract_datum/positive/positive = null
-	// Список позитивных эффектов
-	var/static/list/positive_effects = list(
-		"Gold Contract" = /datum/contract_datum/positive/gold,
-	)
-	// Список негативных эффектов
-	var/static/list/negative_effects = list(
-		"Rage Of Zeus" = /datum/contract_datum/negative/rage_of_zeus,
-	)
-
-/obj/item/devil_contract/attack_self(mob/user, modifiers)
-	. = ..()
-	if(IS_DEVIL(user))
-		to_chat(user, span_cult_italic("You must create a masterpiece."))
-		create_positive(user)
-	else
-		if(!negative || !positive)
-			to_chat(user, span_cult_italic("It's empty here. Talk to the owner of this scroll."))
-			return
-		sign_contract(user)
-
-// Выбор эффектов
-/obj/item/devil_contract/proc/create_positive(mob/user)
-	var/contract_effect_positive = tgui_input_list(user, "Choose A Positive Effect", "Contract", positive_effects)
-	if(!contract_effect_positive)
-		return
-	positive = positive_effects[contract_effect_positive]
-	create_negative(user)
-
-/obj/item/devil_contract/proc/create_negative(mob/user)
-	var/contract_effect_negative = tgui_input_list(user, "Choose A Negative Effect", "Contract", negative_effects)
-	if(!contract_effect_negative)
-		return
-	negative = negative_effects[contract_effect_negative]
-
-/obj/item/devil_contract/proc/sign_contract(mob/user)
-	if(IS_DEVIL(user))
-		to_chat(user, span_cult_italic("How."))
-		return
-	if(tgui_alert(user, "Are you sure you want sign contract?", "Contract", list("Yes", "No")) == "Yes")
-		if(QDELETED(src))
-			return
-		if(!negative || !positive)
-			to_chat(user, span_cult_italic("It's empty here. Talk to the owner of this scroll."))
-			return
-		negative.devil_sign()
-		positive.devil_sign()
-		to_chat(user, span_cult_italic("The contract has been signed. Enjoy Yourself."))
-
-		negative = null
-		positive = null
-
-// Датум контракта
-/datum/contract_datum
-
-// Прок для подписывания
-/datum/contract_datum/proc/devil_sign(mob/user)
-	return
-
-// Тестовые датумы
-/datum/contract_datum/positive/gold/devil_sign(mob/user)
-	var/obj/item/coin/gold/big_coin = new (user.loc)
-	big_coin.value *= 200
-	big_coin.name = "Devil's Coin"
-
-/datum/contract_datum/negative/rage_of_zeus/devil_sign(mob/user)
-	RegisterSignal(user, COMSIG_LIVING_LIFE, PROC_REF(zeus_rage))
-
-/datum/contract_datum/negative/rage_of_zeus/proc/zeus_rage(mob/user, seconds_per_tick, times_fired)
-	if(SPT_PROB(5, seconds_per_tick))
-		lightningbolt(user)
-
-// Антаг
+// Антаг датум
 /datum/antagonist/devil
-	name = "\improper Devil"
-	roundend_category = "Devils"
+	name = "\improper The Soul Merchant"
+	roundend_category = "The Soul Merchants"
 	show_in_roundend = TRUE
 	show_in_antagpanel = TRUE
 	show_to_ghosts = TRUE
-	antagpanel_category = "Devils"
+	antagpanel_category = "Hell"
 	// how much souls we collected?
+	var/list/souls_owned = list()
 	var/souls = 0
 
+/datum/antagonist/devil/on_gain()
+	. = ..()
+	give_items()
+
+/datum/antagonist/devil/proc/add_soul(datum/antagonist/devil/soul_merchant, mob/living/soul)
+	if(soul in souls_owned)
+		return
+	to_chat(soul_merchant, span_cult_italic("The contract has been signed by [soul]."))
+	LAZYADD(souls_owned, soul)
+	souls += 1
+	log_admin("[soul.name] signed the devil's contract at [soul.loc]")
+
+/datum/antagonist/devil/proc/give_items()
+	var/mob/living/carbon/devil = owner.current
+	if(!istype(devil))
+		return
+	. += devil_item_give(/obj/item/devil/pitchfork, devil)
+	give_scroll(devil)
+
+/proc/devil_item_give(obj/item/item_path, mob/living/carbon/human/mob)
+	var/obj/item = new item_path(mob)
+	var/where = mob.equip_conspicuous_item(item)
+	if(!where)
+		to_chat(mob, span_userdanger("Unfortunately, you weren't able to get [item]. This is very bad and you should adminhelp immediately (press F1)."))
+		return FALSE
+
+	to_chat(mob, span_danger("You have [item] in your [where]."))
+	if(where == "backpack")
+		mob.back.atom_storage?.show_contents(mob)
+	var/datum/action/cooldown/spell/summonitem/devil/ayy_summon = new(mob.mind || mob)
+	ayy_summon.mark_item(item)
+	ayy_summon.Grant(mob)
+	return TRUE
+
+/datum/antagonist/devil/proc/give_scroll(mob/living/carbon/human/mob)
+	var/obj/item/devil/contract/item = new (mob)
+	var/where = mob.equip_conspicuous_item(item)
+	if(!where)
+		to_chat(mob, span_userdanger("Unfortunately, you weren't able to get [item]. This is very bad and you should adminhelp immediately (press F1)."))
+		return FALSE
+
+	to_chat(mob, span_danger("You have [item] in your [where]."))
+	if(where == "backpack")
+		mob.back.atom_storage?.show_contents(mob)
+	var/datum/action/cooldown/spell/summonitem/devil/ayy_summon = new(mob.mind || mob)
+	ayy_summon.mark_item(item)
+	ayy_summon.Grant(mob)
+	item.current_owner = mob
+	return TRUE

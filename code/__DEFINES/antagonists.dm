@@ -290,6 +290,10 @@ GLOBAL_LIST_INIT(ai_employers, list(
 
 /// Checks if the given mob is a spy!
 #define IS_SPY(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/spy))
+/// FLUFFY FRONTIER ADDITION
+/// Cheks if the given mob is a devil
+#define IS_DEVIL(mob) (mob?.mind?.has_antag_datum (/datum/antagonist/devil))
+/// FLUFFY FRONTIER ADDITION END
 
 /// List of human antagonist types which don't spawn directly on the space station
 GLOBAL_LIST_INIT(human_invader_antagonists, list(

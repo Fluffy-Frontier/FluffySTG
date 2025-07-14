@@ -151,6 +151,14 @@
 		processing = FALSE
 		return
 
+	// FLUFFY FRONTIER ADDITION
+	if(HAS_TRAIT(occupant, TRAIT_RACE_SELF_ACTUALIZATOR_BLOCKED))
+		say("A CRITICAL ERROR HAS BEEN DETECTED. ASK THE &D!(#V) FOR MORE INFORMATION. Aborting operation")
+		playsound(loc, 'sound/machines/chime.ogg', 30, FALSE)
+		open_machine()
+		return
+	// FLUFFY FRONTIER ADDITION END
+
 	if(COOLDOWN_FINISHED(src, sad_processing_time))
 		eject_new_you()
 		return
