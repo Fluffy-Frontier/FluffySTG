@@ -27,7 +27,8 @@
 /datum/contract_datum/positive/taro_card/devil_sign(mob/living/carbon/human/user)
 	. = ..()
 	to_chat(user, span_cult_bold_italic("Enjoy your new friend."))
-	devil_item_give(/obj/item/guardian_creator/wizard, user)
+	devil_item_give(/obj/item/guardian_creator/wizard, user, FALSE)
+
 /datum/contract_datum/positive/captain/devil_sign(mob/living/carbon/human/user)
 	. = ..()
 	to_chat(user, span_cult_bold_italic("Welcome to abord, captain."))
@@ -97,7 +98,7 @@
 
 /datum/contract_datum/negative/spider_egg/proc/spawn_spiders(mob/user, seconds_per_tick, times_fired)
 	SIGNAL_HANDLER
-	if(SPT_PROB(4, seconds_per_tick))
+	if(SPT_PROB(0.5, seconds_per_tick))
 		to_chat(user, span_warning("You feel something moving in your throat."))
 		new /mob/living/basic/spider/growing/spiderling/guard (user.loc)
 		var/mob/living/carbon/human = user

@@ -29,7 +29,7 @@
 	. += devil_item_give(/obj/item/devil/pitchfork, devil)
 	give_scroll(devil)
 
-/proc/devil_item_give(obj/item/item_path, mob/living/carbon/human/mob)
+/proc/devil_item_give(obj/item/item_path, mob/living/carbon/human/mob, give_summon_spell = TRUE)
 	var/obj/item = new item_path(mob)
 	var/where = mob.equip_conspicuous_item(item)
 	if(!where)

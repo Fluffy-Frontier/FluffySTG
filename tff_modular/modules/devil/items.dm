@@ -4,13 +4,18 @@
 	var/devil_desc = ""
 	var/only_for_devil = TRUE
 
+/obj/item/devil/Initialize(mapload)
+	. = ..()
+	RegisterSignal(src, COMSIG_ITEM_EQUIPPED, PROC_REF(on_take))
+
 /obj/item/devil/examine(mob/user)
 	. = ..()
 	if(IS_DEVIL(user))
 		. += span_cult(devil_desc)
 
-/obj/item/devil/on_equipped(mob/user, slot, initial)
-	. = ..()
+/obj/item/devil/proc/on_take(mob/user, slot)
+	SIGNAL_HANDLER
+
 	if(!IS_DEVIL(user) && only_for_devil)
 		var/mob/living/carbon/human = user
 		human.drop_all_held_items()
