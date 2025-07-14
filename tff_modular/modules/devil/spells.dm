@@ -55,4 +55,5 @@
 
 // Абилки дьявола.
 /datum/action/cooldown/spell/summonitem/devil
+	name = "Devil Summon"
 	invocation_type = NONE
