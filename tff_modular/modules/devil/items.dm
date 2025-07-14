@@ -33,9 +33,9 @@
 	var/datum/contract_datum/positive/positive_second = null
 	// Список позитивных эффектов
 	var/static/list/positive_effects = list(
-		"Gold Contract" = new /datum/contract_datum/positive/gold,
+		"Greedy" = new /datum/contract_datum/positive/gold,
 		"Taro Cards" = new /datum/contract_datum/positive/taro_card,
-		"Summon Weapon" = new /datum/contract_datum/positive/weapon,
+		"Desert Eagle" = new /datum/contract_datum/positive/weapon,
 		"Immortality" = new /datum/contract_datum/positive/immortality,
 		"Authority" = new /datum/contract_datum/positive/captain,
 		"None" = /datum/contract_datum/nothing,
