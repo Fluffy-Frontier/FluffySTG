@@ -16,7 +16,7 @@ var/datum/martial_art/martial_to_learn = new /datum/martial_art/nabber_grab()
 	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
 	sharpness = SHARP_EDGED
 	wound_bonus = 15
-	bare_wound_bonus = 25
+	exposed_wound_bonus = 25
 
 /obj/item/melee/nabber_blade/alt
 	icon_state = "mantis_arm_l"

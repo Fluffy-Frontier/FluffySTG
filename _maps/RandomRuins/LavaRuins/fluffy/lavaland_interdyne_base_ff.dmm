@@ -416,7 +416,7 @@
 /area/ruin/interdyne_planetary_base/cargo)
 "bQ" = (
 /obj/structure/flora/rock/pile/style_random,
-/obj/effect/decal/cleanable/blood/trails,
+/obj/effect/decal/cleanable/blood/trail_holder,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "bS" = (
@@ -456,7 +456,7 @@
 /area/ruin/interdyne_planetary_base/cargo)
 "cf" = (
 /obj/item/binoculars,
-/obj/effect/decal/cleanable/blood/trails,
+/obj/effect/decal/cleanable/blood/trail_holder,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "cg" = (
@@ -3642,7 +3642,7 @@
 "rO" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/reagent_dispensers/fueltank,
-/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/blood/oil,
 /obj/effect/turf_decal/bot_red,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/interdyne_planetary_base/main)
@@ -7600,7 +7600,7 @@
 	pixel_x = 6;
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/cup/rag{
+/obj/item/rag{
 	pixel_x = -4;
 	pixel_y = 3
 	},
@@ -8105,7 +8105,7 @@
 	pixel_x = -4;
 	pixel_y = 1
 	},
-/obj/item/reagent_containers/cup/rag{
+/obj/item/rag{
 	pixel_x = -5;
 	pixel_y = 12
 	},
@@ -10418,7 +10418,7 @@
 	pixel_x = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/xenoblood,
+/obj/effect/decal/cleanable/blood/xeno,
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "Zg" = (

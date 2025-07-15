@@ -83,13 +83,9 @@
 	name = "Pocket Protector (Filled)"
 	item_path = /obj/item/clothing/accessory/pocketprotector/full
 
-/datum/loadout_item/accessory/colonial_webbing
-	name = "Slim Colonial Webbing"
-	item_path = /obj/item/clothing/accessory/colonial_webbing
-
-// FLUFFY FRONTIER EDIT START. REMOVAL
-/* /datum/loadout_item/accessory/pride
+/* // FLUFFY FRONTIER REMOVAL START
+/datum/loadout_item/accessory/pride
 	name = "Pride Pin"
 	item_path = /obj/item/clothing/accessory/pride
-	can_be_reskinned = TRUE */
-// FLUFFY FRONTIER EDIT END
+	can_be_reskinned = TRUE
+*/ // FLUFFY FRONTIER REMOVAL END
