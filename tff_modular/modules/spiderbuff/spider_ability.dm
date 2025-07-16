@@ -1,3 +1,4 @@
+// Лечебная Аура, используется нурсами
 /datum/action/cooldown/heal_aura_spider
 	name = "Healing Aura"
 	desc = "Friendly spiders in a short range around yourself will receive passive healing."
@@ -39,3 +40,132 @@
 	aura_active = FALSE
 	QDEL_NULL(aura_healing_component)
 	owner.balloon_alert(owner, "healing aura ended")
+
+/obj/projectile/toxin
+	damage = 15
+	damage_type = TOX
+	hit_prone_targets = TRUE
+	ignore_range_hit_prone_targets = TRUE
+	dismemberment = 0
+	armour_penetration = 100
+	icon_state = "neurotoxin"
+
+/obj/projectile/toxin/viper
+	damage = 20
+
+/obj/projectile/toxin/midwife
+	damage = 25
+
+/datum/action/cooldown/mob_cooldown/invisibility
+	name = "Invisibility"
+	desc = "Makes you invisible for 7 seconds"
+	button_icon = 'icons/mob/actions/actions_animal.dmi'
+	button_icon_state = "web_sneak"
+	background_icon_state = "bg_alien"
+	overlay_icon_state = "bg_alien_border"
+	cooldown_time = 25 SECONDS
+	melee_cooldown_time = 0 SECONDS
+	click_to_activate = FALSE
+	var/duration = 7 SECONDS
+	var/inv_alpha = 1
+	var/animation_time = 0.5
+
+/datum/action/cooldown/mob_cooldown/invisibility/Activate()
+	. = ..()
+	var/mob/living/basic/spider/affecting = owner
+	animate(affecting, alpha = inv_alpha, time = animation_time)
+	affecting.balloon_alert(affecting, "you blend into the environment")
+	ADD_TRAIT(affecting, TRAIT_SNEAK, ACTION_TRAIT)
+	addtimer(CALLBACK(src, PROC_REF(deactivate), affecting), duration)
+
+/datum/action/cooldown/mob_cooldown/invisibility/proc/deactivate(mob/living/basic/spider/affecting)
+	if(QDELETED(affecting) || !HAS_TRAIT_FROM(affecting, TRAIT_SNEAK, ACTION_TRAIT))
+		return
+
+	REMOVE_TRAIT(affecting, TRAIT_SNEAK, ACTION_TRAIT)
+	affecting.balloon_alert(affecting, "you reveal yourself")
+	animate(owner, alpha = initial(owner.alpha), time = animation_time)
+
+/datum/action/cooldown/mob_cooldown/charge/basic_charge/spider
+	name = "Tarantula Charge"
+	shake_duration = 0.5
+	knockdown_duration = 1 SECONDS
+	charge_delay = 1 SECONDS
+	charge_distance = 6
+
+/datum/component/member_of_hive
+
+/datum/component/member_of_hive/RegisterWithParent()
+	RegisterSignal(parent, COMSIG_MOB_TRY_SPEECH, PROC_REF(on_try_speech))
+	RegisterSignal(parent, COMSIG_LIVING_DEATH, PROC_REF(on_death))
+
+/datum/component/member_of_hive/proc/on_death(mob/living/spider, gibbed, message)
+	SIGNAL_HANDLER
+	spider.log_talk(message, LOG_SAY, tag = "Spider telepathy")
+	var/rendered = span_hierophant("<b>\[Spider Telepathy\] [spider.name]</b> has died in [get_area(spider)]!")
+	relay_to_list_and_observers(rendered, GLOB.spider_telepathy_mobs, src, MESSAGE_TYPE_RADIO)
+
+/datum/component/member_of_hive/proc/on_try_speech(mob/living/spider, message, ignore_spam, forced)
+	SIGNAL_HANDLER
+	spider.log_talk(message, LOG_SAY, tag = "Spider telepathy")
+	var/spanned_message = spider.say_quote(message)
+	var/rendered = span_hierophant("<b>\[Spider Telepathy\] [spider.name]</b> [spanned_message]")
+	relay_to_list_and_observers(rendered, GLOB.spider_telepathy_mobs, spider, MESSAGE_TYPE_RADIO)
+	return COMPONENT_CANNOT_SPEAK
+
+/datum/action/cooldown/guard_rage
+	name = "Rage Mode"
+	desc = "Prevents you from regenerating and you begin to take passive damage, but increases damage by 5 and descreases melee attack cooldown. 10 Seconds duration."
+	button_icon = 'tff_modular/modules/spiderbuff/icons/icons.dmi'
+	button_icon_state = "Eye"
+	background_icon_state = "bg_alien"
+	overlay_icon_state = "bg_alien_border"
+	cooldown_time = 30 SECONDS
+	melee_cooldown_time = 0 SECONDS
+	click_to_activate = FALSE
+	var/duration = 10 SECONDS
+
+/datum/action/cooldown/guard_rage/Activate()
+	. = ..()
+	var/mob/living/basic/spider/affecting = owner
+	affecting.regeneration_per_tick += 4
+	affecting.melee_damage_lower += 5
+	affecting.melee_damage_upper += 5
+	affecting.melee_attack_cooldown -= 1
+	addtimer(CALLBACK(src, PROC_REF(deactivate), affecting), duration)
+	ADD_TRAIT(affecting, TRAIT_EVIL, ACTION_TRAIT)
+
+/datum/action/cooldown/guard_rage/proc/deactivate(mob/living/basic/spider/affecting)
+	if(QDELETED(affecting) || !HAS_TRAIT_FROM(affecting, TRAIT_EVIL, ACTION_TRAIT))
+		return
+
+	REMOVE_TRAIT(affecting, TRAIT_EVIL, ACTION_TRAIT)
+	affecting.regeneration_per_tick -= 4
+	affecting.melee_damage_lower -= 5
+	affecting.melee_damage_upper -= 5
+	affecting.melee_attack_cooldown += 1
+
+/datum/action/cooldown/mob_cooldown/lay_web/strong
+
+/datum/action/cooldown/mob_cooldown/lay_web/strong/plant_web(turf/target_turf, obj/structure/spider/stickyweb/existing_web)
+	if (existing_web)
+		qdel(existing_web)
+		new /obj/structure/spider/stickyweb/sealed/strong(target_turf)
+		return
+	new /obj/structure/spider/stickyweb/strong(target_turf)
+
+
+/obj/structure/spider/stickyweb/strong
+	max_integrity = 20
+
+/obj/structure/spider/stickyweb/strong/Initialize(mapload)
+	. = ..()
+	add_filter("brown_web", 10, list("type" = "outline", "color" = "#c7974eff", "size" = 0.1))
+
+/obj/structure/spider/stickyweb/sealed/strong
+	max_integrity = 20
+
+/obj/structure/spider/stickyweb/sealed/strong/Initialize(mapload)
+	. = ..()
+	add_filter("brown_web", 10, list("type" = "outline", "color" = "#c7974eff", "size" = 0.1))
+
