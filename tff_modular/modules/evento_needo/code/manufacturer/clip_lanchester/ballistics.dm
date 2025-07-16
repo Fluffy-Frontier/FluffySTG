@@ -424,6 +424,7 @@
 	inhand_icon_state = "rottweiler"
 	worn_icon_state = "rottweiler"
 	mag_display_ammo = TRUE
+	mag_display = FALSE //TEMP
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/hmg/hmg.ogg'
 	fire_delay = 0.3 SECONDS //chunky machine gun
 

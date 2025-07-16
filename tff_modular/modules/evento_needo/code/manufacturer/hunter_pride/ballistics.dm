@@ -267,9 +267,6 @@
 /obj/item/ammo_box/magazine/illestren_a850r/empty
 	start_empty = TRUE
 
-/obj/item/gun/ballistic/rifle/illestren/empty //i had to name it empty instead of no_mag because else it wouldnt work with guncases. sorry!
-	start_empty = TRUE
-
 /obj/item/gun/ballistic/rifle/illestren/sawoff(forced = FALSE)
 	. = ..()
 	if(.)

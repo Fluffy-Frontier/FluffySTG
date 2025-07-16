@@ -145,9 +145,6 @@
 	inhand_icon_state = "viper23"
 	spread = 5
 
-/obj/item/gun/ballistic/revolver/viper/indie/no_mag
-	start_empty = TRUE
-
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake
 	name = "MP-84 \"Rattlesnake\""
 	desc = "A machine pistol, once used by Syndicate infiltrators and special forces during the ICW. Still used by specialists in former Syndicate factions. Chambered in 9x18mm."
