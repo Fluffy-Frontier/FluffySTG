@@ -28,7 +28,7 @@
 	var/health_hud = DATA_HUD_MEDICAL_ADVANCED
 	// FLUFFY FRONTIER ADDITION END
 
-/mob/living/basic/spider/giant/Initialize(mapload)
+/mob/living/basic/spider/giant/Initialize(mapload, message)// FLUFFY FRONTIER CHANGES - ORIGINAL: /mob/living/basic/spider/giant/Initialize(mapload)
 	. = ..()
 	grant_actions_by_list(innate_actions)
 	// FLUFFY FRONTIER ADDITION
