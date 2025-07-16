@@ -28,7 +28,7 @@
 	name = "Model 17 magazine (.22lr)"
 	desc = "A 10-round magazine for the Model 17 \"Micro Target\". These rounds do okay damage with awful performance against armor."
 	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "m17_mag"
+	icon_state = "m17_mag-full"
 	base_icon_state = "m17_mag"
 	ammo_type = /obj/item/ammo_casing/c22lr
 	caliber = CALIBER_22LR
@@ -246,8 +246,8 @@
 	name = "Model 15 magazine (5.56x42mm CLIP)"
 	desc = "A 20-round magazine for the Model 15 \"Super Sporter\". These rounds do average damage and perform moderately against armor."
 	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "p16_mag-1"
-	base_icon_state = "p16_mag"
+	icon_state = "cm15_mag"
+	base_icon_state = "cm15_mag"
 	ammo_type = /obj/item/ammo_casing/a556_42
 	caliber = CALIBER_556X42MM
 	max_ammo = 20

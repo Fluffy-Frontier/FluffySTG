@@ -499,12 +499,6 @@
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, fire_delay)
 
-/obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended
-	accepted_magazine_type = /obj/item/ammo_box/magazine/m556_42_hydra/extended
-
-/obj/item/gun/ballistic/automatic/assault/hydra/lmg/casket_mag
-	accepted_magazine_type = /obj/item/ammo_box/magazine/m556_42_hydra/casket
-
 /obj/item/gun/ballistic/automatic/assault/hydra/dmr
 	name = "SBR-80 \"Hydra\""
 	desc = "Scarborough Arms' premier modular assault rifle platform. This example is configured as a marksman rifle, with an extended barrel and medium-zoom scope. Its lightweight cartridge is compensated for with a 2-round burst action. Chambered in 5.56mm CLIP."
