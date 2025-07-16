@@ -90,7 +90,7 @@
 /mob/living/basic/spider/giant/hunter/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/fast_web)
-	RegisterSignal(src, COMSIG_LIVING_LIFE, PROC_REF(damaging))
+	RegisterSignal(src, COMSIG_LIVING_LIFE, PROC_REF(damaging), override = TRUE)
 
 /mob/living/basic/spider/giant/hunter/proc/damaging(mob/living/source, seconds_per_tick, times_fired)
 	SIGNAL_HANDLER
