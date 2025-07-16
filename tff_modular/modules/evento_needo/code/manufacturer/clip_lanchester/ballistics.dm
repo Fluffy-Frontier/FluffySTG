@@ -211,6 +211,7 @@
 	worn_icon = 'tff_modular/modules/evento_needo/icons/inteq/onmob.dmi'
 	icon_state = "f4_inteq"
 	inhand_icon_state = "f4_inteq"
+	worn_icon_state = "f4_inteq"
 
 /obj/item/gun/ballistic/automatic/marksman/f90
 	name = "CM-F90"
@@ -222,6 +223,7 @@
 
 	icon_state = "f90"
 	inhand_icon_state = "f90"
+	worn_icon_state = "f90"
 
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/sniper/cmf90.ogg'
 	accepted_magazine_type = /obj/item/ammo_box/magazine/f90
@@ -326,7 +328,7 @@
 	desc = "A slightly curved, 20-round magazine for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
 	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
 	base_icon_state = "skm_mag"
-	icon_state = "skm_mag-0"
+	icon_state = "skm_mag"
 	ammo_type = /obj/item/ammo_casing/a762_40
 	caliber = CALIBER_762X40MM
 	max_ammo = 20

@@ -371,7 +371,7 @@
 	desc = "A large 10-round box magazine for Boomslang sniper rifles. These rounds deal amazing damage and can pierce protective equipment, excluding armored vehicles."
 	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
 	base_icon_state = "boomslang"
-	icon_state = "boomslang-10"
+	icon_state = "boomslang"
 	ammo_type = /obj/item/ammo_casing/a75clip
 	caliber = CALIBER_75X64MM
 	max_ammo = 10
@@ -385,7 +385,7 @@
 	desc = "A 5-round box magazine for Boomslang sniper rifles. These rounds deal amazing damage and can pierce protective equipment, excluding armored vehicles."
 	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
 	base_icon_state = "boomslang_short"
-	icon_state = "boomslang_short-5"
+	icon_state = "boomslang_short"
 	ammo_type = /obj/item/ammo_casing/a75clip
 	caliber = CALIBER_75X64MM
 	max_ammo = 5
@@ -551,7 +551,7 @@
 /obj/item/ammo_box/magazine/m556_42_hydra/extended
 	name = "extended Hydra assault rifle magazine (5.56x42mm CLIP)"
 	desc = "A bulkier, 60-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
-	icon_state = "hydra_extended_mag-1"
+	icon_state = "hydra_extended_mag"
 	base_icon_state = "hydra_extended_mag"
 	max_ammo = 60
 
@@ -561,7 +561,7 @@
 /obj/item/ammo_box/magazine/m556_42_hydra/casket
 	name = "casket Hydra assault rifle magazine (5.56x42mm CLIP)"
 	desc = "A very long and bulky 100-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
-	icon_state = "hydra_casket_mag-1"
+	icon_state = "hydra_casket_mag"
 	base_icon_state = "hydra_casket_mag"
 	max_ammo = 100
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
@@ -611,7 +611,7 @@
 	name = "shotgun box magazine (12g buckshot)"
 	desc = "A single-stack, 8-round box magazine for the Bulldog shotgun and it's derivatives."
 	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "bulldog_mag-1"
+	icon_state = "bulldog_mag"
 	base_icon_state = "bulldog_mag"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	caliber = CALIBER_SHOTGUN

@@ -11,6 +11,7 @@
 	icon_state = "m17"
 	inhand_icon_state = "so_generic"
 	worn_icon_state = null
+	show_bolt_icon = FALSE
 	mag_display = FALSE
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m17
 
