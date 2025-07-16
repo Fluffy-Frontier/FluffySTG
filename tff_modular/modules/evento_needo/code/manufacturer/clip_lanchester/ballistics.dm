@@ -9,6 +9,8 @@
 
 	icon_state = "cm23"
 	inhand_icon_state = "clip_generic"
+	worn_icon_state = "cm1"
+	mag_display = FALSE
 	w_class = WEIGHT_CLASS_NORMAL
 	accepted_magazine_type = /obj/item/ammo_box/magazine/cm23
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/pistol/cm23.ogg'
@@ -49,6 +51,8 @@
 	worn_icon = 'tff_modular/modules/evento_needo/icons/clip_lanchester/onmob.dmi'
 	icon_state = "cm70"
 	inhand_icon_state = "clip_generic"
+	worn_icon_state = "cm1"
+	mag_display = FALSE
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m9mm_cm70
 	burst_size = 3
 	burst_delay = 0.25 SECONDS
@@ -85,6 +89,8 @@
 
 	icon_state = "cm357"
 	inhand_icon_state = "clip_generic"
+	worn_icon_state = "cm1"
+	mag_display = FALSE
 	w_class = WEIGHT_CLASS_NORMAL
 	accepted_magazine_type = /obj/item/ammo_box/magazine/cm357
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/pistol/deagle.ogg'
@@ -126,6 +132,7 @@
 
 	icon_state = "cm5"
 	inhand_icon_state = "cm5"
+	worn_icon_state = "cm5"
 	accepted_magazine_type = /obj/item/ammo_box/magazine/cm5_9mm
 	bolt_type = BOLT_TYPE_STANDARD
 	weapon_weight = WEAPON_LIGHT
@@ -133,7 +140,7 @@
 	spread = 3
 
 /obj/item/gun/ballistic/automatic/smg/cm5/rubber
-	magazine = /obj/item/ammo_box/magazine/cm5_9mm/rubber
+	accepted_magazine_type = /obj/item/ammo_box/magazine/cm5_9mm/rubber
 
 /obj/item/ammo_box/magazine/cm5_9mm
 	name = "CM-5 magazine (9x18mm)"
@@ -168,6 +175,7 @@
 
 	icon_state = "f4"
 	inhand_icon_state = "f4"
+	worn_icon_state = "f4"
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	bolt_type = BOLT_TYPE_STANDARD
@@ -256,6 +264,7 @@
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/rifle/cm82.ogg'
 	icon_state = "cm82"
 	inhand_icon_state = "cm82"
+	worn_icon_state = "cm82"
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	bolt_type = BOLT_TYPE_STANDARD
@@ -302,6 +311,7 @@
 	accepted_magazine_type = /obj/item/ammo_box/magazine/skm_762_40
 	icon_state = "cm24"
 	inhand_icon_state = "cm24"
+	worn_icon_state = "cm24"
 
 	fire_delay = 0.5 SECONDS
 	burst_size = 1
@@ -314,6 +324,7 @@
 /obj/item/ammo_box/magazine/skm_762_40
 	name = "assault rifle magazine (7.62x40mm CLIP)"
 	desc = "A slightly curved, 20-round magazine for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
+	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
 	base_icon_state = "skm_mag"
 	icon_state = "skm_mag-0"
 	ammo_type = /obj/item/ammo_casing/a762_40
@@ -355,6 +366,7 @@
 
 	icon_state = "cm40"
 	inhand_icon_state = "cm40"
+	worn_icon_state = "cm40"
 
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/hmg/cm40.ogg'
 	rack_sound = 'tff_modular/modules/evento_needo/sounds/hmg/cm40_cocked.ogg'
@@ -410,6 +422,7 @@
 
 	icon_state = "rottweiler"
 	inhand_icon_state = "rottweiler"
+	worn_icon_state = "rottweiler"
 	mag_display_ammo = TRUE
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/hmg/hmg.ogg'
 	fire_delay = 0.3 SECONDS //chunky machine gun
@@ -457,6 +470,7 @@
 
 	icon_state = "cm15"
 	inhand_icon_state = "cm15"
+	worn_icon_state = "cm15"
 
 	weapon_weight = WEAPON_MEDIUM
 	accepted_magazine_type = /obj/item/ammo_box/magazine/cm15_12g

@@ -19,6 +19,7 @@
 
 	icon_state = "dshotgun"
 	inhand_icon_state = "dshotgun"
+	worn_icon_state = "dshotgun"
 
 	rack_sound = 'tff_modular/modules/evento_needo/sounds/shotgun/dbshotgun_break.ogg'
 	bolt_drop_sound = 'tff_modular/modules/evento_needo/sounds/shotgun/dbshotgun_close.ogg'
@@ -99,6 +100,7 @@
 	base_icon_state = "dshotgun_srm"
 	icon_state = "dshotgun_srm"
 	inhand_icon_state = "dshotgun_srm"
+	worn_icon_state = "dshotgun_srm"
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
 	unique_reskin = null
@@ -122,6 +124,7 @@
 
 	icon_state = "brimstone"
 	inhand_icon_state = "brimstone"
+	worn_icon_state = "brimstone"
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
 
@@ -152,6 +155,7 @@
 	worn_icon = 'tff_modular/modules/evento_needo/icons/hunterspride/onmob.dmi'
 	icon_state = "hellfire"
 	inhand_icon_state = "hellfire"
+	worn_icon_state = "hellfire"
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	sawn_desc = "Come with me if you want to live."
 	can_be_sawn_off = TRUE
@@ -172,6 +176,7 @@
 	base_icon_state = "conflagration"
 	icon_state = "conflagration"
 	inhand_icon_state = "conflagration"
+	worn_icon_state = "conflagration"
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/shotgun/shot.ogg'
 	desc = "A lightweight lever-action shotgun with a 5 round ammunition capacity. The lever action allows it to be cycled quickly and acurrately. In theory, you could ever operate it one-handed. Chambered in 12g."
 	sawn_desc = "A lever action shotgun that's been sawed down for portability. The recoil makes it mostly useless outside of point-blank range, but it hits hard for its size and, more importantly, can be flipped around stylishly."
@@ -204,6 +209,7 @@
 	base_icon_state = "huntsman"
 	icon_state = "huntsman"
 	inhand_icon_state = "huntsman"
+	worn_icon_state = "huntsman"
 	unique_reskin = null
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/shot/twobore
 	w_class = WEIGHT_CLASS_BULKY
@@ -230,6 +236,7 @@
 	desc = "A sturdy and conventional bolt-action rifle. One of Hunter's Pride's most successful firearms, the Illestren is popular among colonists, pirates, snipers, and countless others. Chambered in 8x50mmR."
 	icon_state = "illestren"
 	inhand_icon_state = "illestren"
+	worn_icon_state = "illestren"
 	icon = 'tff_modular/modules/evento_needo/icons/hunterspride/48x32.dmi'
 	lefthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/lefthand.dmi'
 	righthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/righthand.dmi'
@@ -243,6 +250,7 @@
 	accepted_magazine_type = /obj/item/ammo_box/magazine/illestren_a850r
 	eject_sound_vary = FALSE
 	can_be_sawn_off = TRUE
+	mag_display = FALSE
 
 /obj/item/ammo_box/magazine/illestren_a850r //this is a magazine codewise do nothing breaks
 	name = "en bloc clip (8x50mmR)"
@@ -260,7 +268,7 @@
 	start_empty = TRUE
 
 /obj/item/gun/ballistic/rifle/illestren/empty //i had to name it empty instead of no_mag because else it wouldnt work with guncases. sorry!
-	magazine = null
+	start_empty = TRUE
 
 /obj/item/gun/ballistic/rifle/illestren/sawoff(forced = FALSE)
 	. = ..()
@@ -300,6 +308,7 @@
 	base_icon_state = "flamingarrow"
 	icon_state = "flamingarrow"
 	inhand_icon_state = "flamingarrow"
+	worn_icon_state = "flamingarrow"
 	icon = 'tff_modular/modules/evento_needo/icons/hunterspride/48x32.dmi'
 	lefthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/lefthand.dmi'
 	righthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/righthand.dmi'
@@ -412,6 +421,7 @@
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/rifle/vickland.ogg'
 	icon_state = "vickland"
 	inhand_icon_state = "vickland"
+	worn_icon_state = "vickland"
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	internal_magazine = TRUE
@@ -438,6 +448,7 @@
 	worn_icon = 'tff_modular/modules/evento_needo/icons/hunterspride/onmob.dmi'
 	icon_state = "scout"
 	inhand_icon_state = "scout"
+	worn_icon_state = "scout"
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/boltaction/smile
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/rifle/scout.ogg'
 

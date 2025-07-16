@@ -8,6 +8,7 @@
 	worn_icon = 'tff_modular/modules/evento_needo/icons/scarborough/onmob.dmi'
 	icon_state = "ringneck"
 	inhand_icon_state = "sa_generic"
+	worn_icon_state = null
 
 	w_class = WEIGHT_CLASS_SMALL
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m10mm_ringneck
@@ -65,6 +66,7 @@
 	worn_icon = 'tff_modular/modules/evento_needo/icons/scarborough/onmob.dmi'
 	icon_state = "asp"
 	inhand_icon_state = "sa_generic"
+	worn_icon_state = null
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m57_39_asp
 
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/pistol/asp.ogg'
@@ -116,6 +118,7 @@
 
 	icon_state = "viper"
 	inhand_icon_state = "sa_generic"
+	worn_icon_state = null
 
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/revolver/viper.ogg'
 	rack_sound = 'tff_modular/modules/evento_needo/sounds/revolver/viper_prime.ogg'
@@ -143,7 +146,7 @@
 	spread = 5
 
 /obj/item/gun/ballistic/revolver/viper/indie/no_mag
-	magazine = TRUE
+	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake
 	name = "MP-84 \"Rattlesnake\""
@@ -156,6 +159,7 @@
 
 	icon_state = "rattlesnake"
 	inhand_icon_state = "rattlesnake"
+	worn_icon_state = null
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m9mm_rattlesnake
 
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/pistol/rattlesnake.ogg'
@@ -205,6 +209,7 @@
 
 	icon_state = "himehabu"
 	inhand_icon_state = "sa_generic"
+	worn_icon_state = null
 
 	icon = 'tff_modular/modules/evento_needo/icons/scarborough/48x32.dmi'
 	lefthand_file = 'tff_modular/modules/evento_needo/icons/scarborough/lefthand.dmi'
@@ -253,6 +258,7 @@
 	worn_icon = 'tff_modular/modules/evento_needo/icons/scarborough/onmob.dmi'
 	icon_state = "cobra"
 	inhand_icon_state = "cobra"
+	worn_icon_state = "cobra"
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m45_cobra
 
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/smg/cobra.ogg'
@@ -267,6 +273,7 @@
 	desc = "An older model of submachine gun manufactured by Scarborough Arms and marketed to mercenaries, law enforcement, and independent militia. Only became popular after the end of the ICW. Chambered in .45."
 	icon_state = "cobra20"
 	inhand_icon_state = "cobra20"
+	worn_icon_state = "cobra20"
 
 /obj/item/ammo_box/magazine/m45_cobra
 	name = "Cobra magazine (.45)"
@@ -294,6 +301,7 @@
 	worn_icon = 'tff_modular/modules/evento_needo/icons/scarborough/onmob.dmi'
 	icon_state = "sidewinder"
 	inhand_icon_state = "sidewinder"
+	worn_icon_state = "sidewinder"
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m57_39_sidewinder
 
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/smg/sidewinder.ogg'
@@ -339,6 +347,8 @@
 
 	icon_state = "boomslang"
 	inhand_icon_state = "boomslang"
+	worn_icon_state = "boomslang"
+	special_mags = TRUE
 
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/sniper/cmf90.ogg'
 	accepted_magazine_type = /obj/item/ammo_box/magazine/boomslang
@@ -357,6 +367,7 @@
 
 	icon_state = "boomslang90"
 	inhand_icon_state = "boomslang90"
+	worn_icon_state = "boomslang90"
 
 /obj/item/ammo_box/magazine/boomslang
 	name = "\improper Boomslang Magazine (7.5x64mm CLIP)"
@@ -397,6 +408,7 @@
 
 	icon_state = "taipan"
 	inhand_icon_state = "taipan"
+	worn_icon_state = "taipan"
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/sniper/shot.ogg'
 	fire_sound_volume = 90
 	vary_fire_sound = FALSE
@@ -428,6 +440,8 @@
 	worn_icon = 'tff_modular/modules/evento_needo/icons/scarborough/onmob.dmi'
 	icon_state = "hydra"
 	inhand_icon_state = "hydra"
+	worn_icon_state = "hydra"
+	mag_display = FALSE //TEMP
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m556_42_hydra
 	load_sound = 'tff_modular/modules/evento_needo/sounds/rifle/m16_reload.ogg'
 	load_empty_sound = 'tff_modular/modules/evento_needo/sounds/rifle/m16_reload.ogg'
@@ -476,6 +490,7 @@
 
 	icon_state = "hydra_lmg"
 	inhand_icon_state = "hydra_lmg"
+	worn_icon_state = "hydra_lmg"
 
 	burst_delay = 0.2 SECONDS
 	burst_size = 1
@@ -499,6 +514,7 @@
 
 	icon_state = "hydra_dmr"
 	inhand_icon_state = "hydra_dmr"
+	worn_icon_state = "hydra_dmr"
 
 	burst_size = 1
 	fire_delay = 0.3 SECONDS
@@ -566,8 +582,10 @@
 	worn_icon = 'tff_modular/modules/evento_needo/icons/scarborough/onmob.dmi'
 	icon_state = "bulldog"
 	inhand_icon_state = "bulldog"
+	worn_icon_state = "bulldog"
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
+	special_mags = TRUE
 
 	weapon_weight = WEAPON_MEDIUM
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m12g_bulldog
@@ -589,6 +607,7 @@
 	recoil = 1
 
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/drum
+	mag_display = FALSE
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m12g_bulldog/drum
 
 /obj/item/ammo_box/magazine/m12g_bulldog
@@ -615,7 +634,7 @@
 /obj/item/ammo_box/magazine/m12g_bulldog/drum
 	name = "shotgun drum magazine (12g buckshot)"
 	desc = "A bulky 12-round drum designed for the Bulldog shotgun and it's derivatives."
-	icon_state = "bulldog_drum-1"
+	icon_state = "bulldog_drum"
 	base_icon_state = "bulldog_drum"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	max_ammo = 12
@@ -643,81 +662,3 @@
 /obj/item/ammo_box/magazine/m12g_bulldog/drum/meteor
 	name = "shotgun drum magazine (12g meteor slugs)"
 	ammo_type = /obj/item/ammo_casing/shotgun/meteorslug
-
-/obj/item/gun/ballistic/rocketlauncher/mako
-	name = "RR-86 \"Mako\""
-	desc = "A large, four-tube rocket launcher, the Mako fires (relatively) small rockets filled with incendiary compound, designed to cause fires and deny enemy movement. Capable of causing significant damage to exosuits on impact, as well."
-
-	icon = 'tff_modular/modules/evento_needo/icons/scarborough/48x32.dmi'
-	lefthand_file = 'tff_modular/modules/evento_needo/icons/scarborough/lefthand.dmi'
-	righthand_file = 'tff_modular/modules/evento_needo/icons/scarborough/righthand.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/scarborough/onmob.dmi'
-
-	icon_state = "mako"
-	inhand_icon_state = "mako"
-	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/mako
-	fire_sound = 'tff_modular/modules/evento_needo/sounds/general/rocket_launch.ogg'
-	load_sound = 'tff_modular/modules/evento_needo/sounds/general/rocket_load.ogg'
-	w_class = WEIGHT_CLASS_BULKY
-	burst_size = 1
-	fire_delay = 0.4 SECONDS
-	casing_ejector = FALSE
-	weapon_weight = WEAPON_HEAVY
-	bolt_type = BOLT_TYPE_NO_BOLT
-	internal_magazine = TRUE
-	cartridge_wording = "rocket"
-	empty_indicator = TRUE
-	tac_reloads = FALSE
-
-/obj/item/ammo_box/magazine/internal/mako
-	name = "mako internal magazine"
-	ammo_type = /obj/item/ammo_casing/caseless/rocket/a70mm
-	caliber = CALIBER_84MM
-	max_ammo = 4
-
-/obj/item/ammo_casing/caseless/rocket/a70mm
-	name = "\improper M-KO-9HE"
-	desc = "A 70mm High Explosive rocket. Fire at mech and pray."
-	icon_state = "srm-8"
-	caliber = CALIBER_84MM
-	projectile_type = /obj/projectile/bullet/a84mm_he
-
-/obj/item/ammo_casing/caseless/rocket/a70mm/hedp
-	name = "\improper M-KO-9HEDP"
-	desc = "A 70mm High Explosive Dual Purpose rocket. Pointy end toward armor."
-	caliber = CALIBER_84MM
-	icon_state = "missile"
-	projectile_type = /obj/projectile/bullet/a84mm
-
-/obj/projectile/bullet/a84mm
-	name ="\improper HEDP rocket"
-	desc = "USE A WEEL GUN"
-	icon_state= "missile"
-	damage = 80
-	var/anti_armour_damage = 120
-	armour_penetration = 100
-	dismemberment = 30
-
-/obj/projectile/bullet/a84mm/on_hit(atom/target, blocked = FALSE)
-	..()
-	explosion(target, 0, 1, 2, 1, 0, flame_range = 4)
-
-	if(ismecha(target))
-		var/obj/vehicle/sealed/mecha/M = target
-		M.take_damage(anti_armour_damage)
-	if(issilicon(target))
-		var/mob/living/silicon/S = target
-		S.take_overall_damage(anti_armour_damage*0.75, anti_armour_damage*0.25)
-	return BULLET_ACT_HIT
-
-/obj/projectile/bullet/a84mm_he
-	name ="\improper HE missile"
-	desc = "Boom."
-	icon_state = "missile"
-	damage = 30
-	ricochets_max = 0 //it's a MISSILE
-
-/obj/projectile/bullet/a84mm_he/on_hit(atom/target, blocked=0)
-	..()
-	explosion(target, 0, 1, 2, 4)
-	return BULLET_ACT_HIT

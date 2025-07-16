@@ -8,6 +8,7 @@
 
 	icon_state = "mauler"
 	inhand_icon_state = "hp_generic"
+	worn_icon_state = null
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m9mm_mauler
 	fire_delay = 0.9 SECONDS
 
@@ -53,6 +54,7 @@
 
 	icon_state = "spitter"
 	inhand_icon_state = "spitter"
+	worn_icon_state = null
 	accepted_magazine_type = /obj/item/ammo_box/magazine/spitter_9mm
 	bolt_type = BOLT_TYPE_OPEN
 	weapon_weight = WEAPON_LIGHT
@@ -99,6 +101,7 @@
 
 	icon_state = "pounder"
 	inhand_icon_state = "pounder"
+	worn_icon_state = "pounder"
 	accepted_magazine_type = /obj/item/ammo_box/magazine/c22lr_pounder_pan
 	burst_size = 4
 	burst_delay = 0.2 SECONDS
@@ -140,10 +143,10 @@
 
 	icon_state = "shredder"
 	inhand_icon_state = "shredder"
+	worn_icon_state = "shredder"
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m12_shredder
 	spread = 15
 	recoil = 3
-	mag_display_ammo = TRUE
 	fire_delay = 1 SECONDS
 	burst_delay = 5
 	bolt_type = BOLT_TYPE_STANDARD

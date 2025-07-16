@@ -10,6 +10,8 @@
 	worn_icon = 'tff_modular/modules/evento_needo/icons/serene_outdoors/onmob.dmi'
 	icon_state = "m17"
 	inhand_icon_state = "so_generic"
+	worn_icon_state = null
+	mag_display = FALSE
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m17
 
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/pistol/himehabu.ogg'
@@ -47,6 +49,8 @@
 	worn_icon = 'tff_modular/modules/evento_needo/icons/serene_outdoors/onmob.dmi'
 	icon_state = "m20"
 	inhand_icon_state = "so_generic"
+	mag_display = FALSE
+	worn_icon_state = null
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m20_auto_elite
 
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/pistol/cm23.ogg'
@@ -104,6 +108,8 @@
 	worn_icon = 'tff_modular/modules/evento_needo/icons/serene_outdoors/onmob.dmi'
 	icon_state = "m12"
 	inhand_icon_state = "m12"
+	worn_icon_state = "m12"
+	show_bolt_icon = FALSE
 
 	weapon_weight = WEAPON_MEDIUM
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m12_sporter
@@ -144,6 +150,7 @@
 
 	icon_state = "larker"
 	inhand_icon_state = "larker"
+	worn_icon_state = "larker"
 
 /* woodsman */
 
@@ -157,6 +164,9 @@
 	worn_icon = 'tff_modular/modules/evento_needo/icons/serene_outdoors/onmob.dmi'
 	icon_state = "woodsman"
 	inhand_icon_state = "woodsman"
+	worn_icon_state = "woodsman"
+	show_bolt_icon = FALSE
+	mag_display = FALSE
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m23
 
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/rifle/ssg669c.ogg'
@@ -216,6 +226,8 @@
 	worn_icon = 'tff_modular/modules/evento_needo/icons/serene_outdoors/onmob.dmi'
 	icon_state = "m15"
 	inhand_icon_state = "m15"
+	worn_icon_state = "m15"
+	show_bolt_icon = FALSE
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m15
 
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/rifle/m16.ogg'
@@ -258,6 +270,8 @@
 	worn_icon = 'tff_modular/modules/evento_needo/icons/serene_outdoors/onmob.dmi'
 	icon_state = "buckmaster"
 	inhand_icon_state = "buckmaster"
+	worn_icon_state = "buckmaster"
+	show_bolt_icon = FALSE
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
 
