@@ -128,7 +128,7 @@
 
 /datum/action/cooldown/guard_rage/Activate()
 	. = ..()
-	var/mob/living/basic/spider/affecting = cast_on
+	var/mob/living/basic/spider/affecting = owner
 	affecting.regeneration_per_tick += 4
 	affecting.melee_damage_lower += 5
 	affecting.melee_damage_upper += 5
