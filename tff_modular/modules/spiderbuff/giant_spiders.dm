@@ -66,7 +66,7 @@
 	speed = 4
 	damage_coeff = list(BRUTE = 1, BURN = 1, STAMINA = 1, TOX = 1, OXY = 1)
 	menu_description = "Tanky and strong able to shed a carcass for protection. Has rage ability to become a little bit stronger."
-	innate_actions = list(/datum/action/cooldown/mob_cooldown/web_effigy, /datum/action/cooldown/spell/guard_rage)
+	innate_actions = list(/datum/action/cooldown/mob_cooldown/web_effigy, /datum/action/cooldown/guard_rage)
 	regeneration_per_tick = -2
 
 /**

@@ -113,7 +113,7 @@
 	relay_to_list_and_observers(rendered, GLOB.spider_telepathy_mobs, spider, MESSAGE_TYPE_RADIO)
 	return COMPONENT_CANNOT_SPEAK
 
-/datum/action/cooldown/spell/guard_rage
+/datum/action/cooldown/guard_rage
 	name = "Rage Mode"
 	desc = "Prevents you from regenerating and you begin to take passive damage, but increases damage by 5 and descreases melee attack cooldown. 10 Seconds duration."
 	button_icon = 'tff_modular/modules/spiderbuff/icons/icons.dmi'
@@ -126,9 +126,9 @@
 	spell_requirements = NONE
 	var/duration = 10 SECONDS
 
-/datum/action/cooldown/spell/guard_rage/Activate(atom/target)
+/datum/action/cooldown/guard_rage/Activate()
 	. = ..()
-	var/mob/living/basic/spider/affecting = owner
+	var/mob/living/basic/spider/affecting = cast_on
 	affecting.regeneration_per_tick += 4
 	affecting.melee_damage_lower += 5
 	affecting.melee_damage_upper += 5
@@ -136,7 +136,7 @@
 	addtimer(CALLBACK(src, PROC_REF(deactivate), affecting), duration)
 	ADD_TRAIT(affecting, TRAIT_EVIL, ACTION_TRAIT)
 
-/datum/action/cooldown/spell/guard_rage/proc/deactivate(mob/living/basic/spider/affecting)
+/datum/action/cooldown/guard_rage/proc/deactivate(mob/living/basic/spider/affecting)
 	if(QDELETED(affecting) || !HAS_TRAIT_FROM(affecting, TRAIT_EVIL, ACTION_TRAIT))
 		return
 
