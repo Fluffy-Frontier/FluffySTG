@@ -1,6 +1,3 @@
-// FLUFFY FRONTIER GLOBAL REWORK. See 'tff_modular/modules/spiderbuff/giant_spiders.dm' for new code
-// ORIGINAL CODE:
-/*
 /**
  * # Giant Spider
  *
@@ -26,10 +23,22 @@
 	max_grab = GRAB_AGGRESSIVE
 	/// Actions to grant on Initialize
 	var/list/innate_actions = null
+	// FLUFFY FRONTIER ADDITION
+	/// MED HUD for every spidy!
+	var/health_hud = DATA_HUD_MEDICAL_ADVANCED
+	// FLUFFY FRONTIER ADDITION END
 
 /mob/living/basic/spider/giant/Initialize(mapload)
 	. = ..()
 	grant_actions_by_list(innate_actions)
+	// FLUFFY FRONTIER ADDITION
+	// spiders can use telepathy
+	var/datum/atom_hud/datahud = GLOB.huds[health_hud]
+	datahud.show_to(src)
+	log_talk(message, LOG_SAY, tag = "Spider telepathy")
+	var/rendered = span_hierophant("<b>\[Spider Telepathy\] [name]</b> has grow up in [get_area(src)]!")
+	relay_to_list_and_observers(rendered, GLOB.spider_telepathy_mobs, src, MESSAGE_TYPE_RADIO)
+	// FLUFFY FRONTIER ADDITION END
 
 /**
  * ### Ambush Spider
@@ -53,13 +62,13 @@
 	speed = 5
 	player_speed_modifier = -3.1
 	menu_description = "Slow spider, with a strong disarming pull and above average health and damage."
-	innate_actions = list(/datum/action/cooldown/mob_cooldown/sneak/spider)
+	innate_actions = list(/datum/action/cooldown/mob_cooldown/invisibility) // FLUFFY FRONTIER CHANGES - ORIGINAL: innate_actions = list(/datum/action/cooldown/mob_cooldown/sneak/spider)
 
 /mob/living/basic/spider/giant/ambush/Initialize(mapload)
 	. = ..()
 	ADD_TRAIT(src, TRAIT_STRONG_GRABBER, INNATE_TRAIT)
 
-	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/slow_web)
+	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/average_web) // FLUFFY FRONTIER CHANGES - ORIGINAL: AddElement(/datum/element/web_walker, /datum/movespeed_modifier/slow_web)
 
 /**
  * ### Guard Spider
@@ -172,8 +181,12 @@
 	web_speed = 0.25
 	web_type = /datum/action/cooldown/mob_cooldown/lay_web/sealer
 	menu_description = "Avarage speed spider able to heal other spiders and itself together with a fast web laying capability, has low damage and health."
+	// FLUFFY FRONTIER REMOVAL:
+	/*
 	///The health HUD applied to the mob.
 	var/health_hud = DATA_HUD_MEDICAL_ADVANCED
+	*/
+	// FLUFFY FRONTIER REMOVAL END
 
 ///Used in the caves away mission.
 /mob/living/basic/spider/giant/nurse/away_caves
@@ -182,13 +195,17 @@
 
 /mob/living/basic/spider/giant/nurse/Initialize(mapload)
 	. = ..()
+	// FLUFFY FRONTIER REMOVAL:
+	/*
 	var/datum/atom_hud/datahud = GLOB.huds[health_hud]
 	datahud.show_to(src)
+	*/
+	// FLUFFY FRONTIER REMOVAL END
 
 	AddComponent(/datum/component/healing_touch,\
-		heal_brute = 17.5, /* FLUFFY FRONTIER EDIT - SPIDERBUFF. ORIGINAL - heal_brute = 10 */ \
-		heal_burn = 17.5, /* FLUFFY FRONTIER EDIT - SPIDERBUFF. ORIGINAL - heal_burn = 10 */ \
-		heal_time = 2.5 SECONDS,\
+		heal_brute = 30, /* FLUFFY FRONTIER EDIT - SPIDERBUFF. ORIGINAL - heal_brute = 10 */ \
+		heal_burn = 30, /* FLUFFY FRONTIER EDIT - SPIDERBUFF. ORIGINAL - heal_burn = 10 */ \
+		heal_time = 2 SECONDS, /* FLUFFY FRONTIER EDIT - SPIDERBUFF. ORIGINAL - heal_time = 2 SECONDS */ \
 		interaction_key = DOAFTER_SOURCE_SPIDER,\
 		valid_targets_typecache = typecacheof(list(/mob/living/basic/spider/giant)),\
 		action_text = "%SOURCE% begins wrapping the wounds of %TARGET%.",\
@@ -237,6 +254,8 @@
 
 	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/average_web)
 
+	// FLUFFY FRONTIER REMOVAL:
+	/*
 	AddComponent(/datum/component/healing_touch,\
 		heal_brute = 50, /* FLUFFY FRONTIER EDIT - SPIDERBUFF. ORIGINAL: heal_brute = 15 */ \
 		heal_burn = 50, /* FLUFFY FRONTIER EDIT - SPIDERBUFF. ORIGINAL: heal_burn = 15 */ \
@@ -248,6 +267,8 @@
 		action_text = "%SOURCE% begins mending themselves...",\
 		complete_text = "%SOURCE%'s wounds mend together.",\
 	)
+	// FLUFFY FRONTIER REMOVAL END
+	*/
 
 /// Prevent you from healing other tangle spiders, or healing when on fire
 /mob/living/basic/spider/giant/tangle/proc/can_mend(mob/living/source, mob/living/target)
@@ -287,6 +308,8 @@
 
 	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/below_average_web)
 
+	// FLUFFY FRONTIER REMOVAL:
+	/*
 	AddComponent(/datum/component/healing_touch,\
 		heal_brute = 50,\
 		heal_burn = 50,\
@@ -305,6 +328,8 @@
 		balloon_alert(src, "on fire!")
 		return FALSE
 	return TRUE
+	// FLUFFY FRONTIER REMOVAL END
+	*/
 
 /**
  * ### Spider Breacher
@@ -345,7 +370,7 @@
 	spiders_warning.Grant(src)
 
 	AddElement(/datum/element/wall_tearer)
-	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/below_average_web)
+	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/average_web) // FLUFFY FRONTIER CHANGES - ORIGINAL: AddElement(/datum/element/web_walker, /datum/movespeed_modifier/below_average_web)
 
 /**
  * ### Tarantula
@@ -374,19 +399,19 @@
 	web_type = /datum/action/cooldown/mob_cooldown/lay_web/sealer
 	menu_description = "Tank spider variant with an enormous amount of health and damage, but is very slow when not on webbing. It also has a charge ability to close distance with a target after a small windup."
 	innate_actions = list(
-		/datum/action/cooldown/mob_cooldown/charge/basic_charge,
+		/datum/action/cooldown/mob_cooldown/charge/basic_charge/spider, // FLUFFY FRONTIER CHANGES - ORIGINAL: /datum/action/cooldown/mob_cooldown/charge/basic_charge,
 		/datum/action/cooldown/mob_cooldown/lay_web/solid_web,
 		/datum/action/cooldown/mob_cooldown/lay_web/web_passage,
 	)
 	/// Charging ability, kept seperate from innate_actions due to implementation details
-	var/datum/action/cooldown/mob_cooldown/charge/basic_charge/charge
+	var/datum/action/cooldown/mob_cooldown/charge/basic_charge/spider/charge // FLUFFY FRONTIER CHANGES - ORIGINAL: var/datum/action/cooldown/mob_cooldown/charge/basic_charge/charge
 
 /mob/living/basic/spider/giant/tarantula/Initialize(mapload)
 	. = ..()
 	charge = new /datum/action/cooldown/mob_cooldown/charge/basic_charge()
 	charge.Grant(src)
 
-	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/slow_web)
+	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/below_average_web) // FLUFFY FRONTIER CHANGES - ORIGINAL: AddElement(/datum/element/web_walker, /datum/movespeed_modifier/slow_web)
 
 /mob/living/basic/spider/giant/tarantula/Destroy()
 	QDEL_NULL(charge)
