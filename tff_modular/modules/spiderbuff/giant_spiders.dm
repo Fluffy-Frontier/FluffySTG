@@ -189,8 +189,6 @@
 
 /mob/living/basic/spider/giant/tangle/Initialize(mapload)
 	. = ..()
-
-	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/average_web)
 	ADD_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 
 	AddElement(/datum/element/wall_tearer, allow_reinforced = FALSE)
