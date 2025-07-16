@@ -123,7 +123,6 @@
 	cooldown_time = 30 SECONDS
 	melee_cooldown_time = 0 SECONDS
 	click_to_activate = FALSE
-	spell_requirements = NONE
 	var/duration = 10 SECONDS
 
 /datum/action/cooldown/guard_rage/Activate()
