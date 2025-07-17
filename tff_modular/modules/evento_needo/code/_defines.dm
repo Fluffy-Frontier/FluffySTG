@@ -1,0 +1,20 @@
+//vibes based bullet speed
+
+#define BULLET_SPEED_SHOTGUN 1
+#define BULLET_SPEED_HANDGUN 1.2
+#define BULLET_SPEED_REVOLVER 1
+#define BULLET_SPEED_PDW 1.3
+#define BULLET_SPEED_RIFLE 1.1
+#define BULLET_SPEED_SNIPER 1.4
+
+//calibers
+#define CALIBER_712X82MM "7.12x82mm"
+#define CALIBER_22LR "22lr"
+#define CALIBER_44ROUMAIN ".44 Roumain"
+#define CALIBER_762X40MM "7.62x40mm"
+#define CALIBER_57X39MM "5.7x39mm"
+#define CALIBER_75X64MM "7.5x64mm"
+#define CALIBER_A300 "a300"
+#define CALIBER_8X50MM "8x50mm"
+#define CALIBER_556X42MM "5.56x42mm"
+#define CALIBER_308 "308"
