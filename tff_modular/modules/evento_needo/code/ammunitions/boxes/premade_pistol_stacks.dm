@@ -96,8 +96,6 @@
 	max_ammo = 30
 	caliber = CALIBER_22LR
 
-/obj/item/storage/box/ammo/c22lr
-
 /obj/item/ammo_box/magazine/c22lr_box/ap
 	name = "box of .22 LR AP ammo"
 	desc = "A box of standard .22 LR AP ammo, designed to penetrate through armor at the cost of total damage."

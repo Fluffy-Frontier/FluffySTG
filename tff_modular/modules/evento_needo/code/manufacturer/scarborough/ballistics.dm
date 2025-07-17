@@ -134,9 +134,6 @@
 
 	semi_auto = TRUE //double action
 
-/obj/item/gun/ballistic/revolver/viper/no_mag
-	magazine = null
-
 /obj/item/gun/ballistic/revolver/viper/indie
 	name = "Viper-23"
 	desc = "A powerful bull-barrel revolver. Very popular among mercenaries and the occasional well-to-do spacer or pirate for its flashy appearance and powerful cartridge. Chambered in .357 Magnum."
@@ -558,7 +555,6 @@
 	icon_state = "hydra_casket_mag"
 	base_icon_state = "hydra_casket_mag"
 	max_ammo = 100
-	multiple_sprites = AMMO_BOX_FULL_EMPTY
 	w_class = WEIGHT_CLASS_NORMAL
 
 //########### MISC ###########//

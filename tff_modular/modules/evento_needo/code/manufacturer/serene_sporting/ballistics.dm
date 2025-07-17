@@ -28,7 +28,7 @@
 	name = "Model 17 magazine (.22lr)"
 	desc = "A 10-round magazine for the Model 17 \"Micro Target\". These rounds do okay damage with awful performance against armor."
 	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "m17_mag-full"
+	icon_state = "m17_mag"
 	base_icon_state = "m17_mag"
 	ammo_type = /obj/item/ammo_casing/c22lr
 	caliber = CALIBER_22LR

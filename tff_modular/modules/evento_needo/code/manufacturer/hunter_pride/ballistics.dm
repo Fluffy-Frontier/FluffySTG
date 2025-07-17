@@ -371,6 +371,7 @@
 	base_icon_state = "absolution"
 	icon_state = "absolution"
 	inhand_icon_state = "absolution"
+	worn_icon_state = "absolution"
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/revolver/shot.ogg'
 	desc = "A large lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 8 round ammunition capacity. More powerful than the Flaming Arrow, the Absolution is a popular pick for hunting larger fauna like bears and goliaths, especially when a bolt action's slower rate of fire would be a liability. Chambered in .357."
 	sawn_desc = "A large lever-action rifle, sawn down for portability. It looks much cooler, but you should probably be using a revolver..."
@@ -397,6 +398,7 @@
 	icon_state = "absolution_factory"
 	base_icon_state = "absolution_factory"
 	inhand_icon_state = "absolution_factory"
+	worn_icon_state = "absolution_factory"
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/absolution/factory/sawoff(forced = FALSE)
 	. = ..()

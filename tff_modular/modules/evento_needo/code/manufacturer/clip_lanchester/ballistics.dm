@@ -140,7 +140,7 @@
 	spread = 3
 
 /obj/item/gun/ballistic/automatic/smg/cm5/rubber
-	accepted_magazine_type = /obj/item/ammo_box/magazine/cm5_9mm/rubber
+	spawn_magazine_type = /obj/item/ammo_box/magazine/cm5_9mm/rubber
 
 /obj/item/ammo_box/magazine/cm5_9mm
 	name = "CM-5 magazine (9x18mm)"
@@ -404,6 +404,7 @@
 	base_icon_state = "cm40_mag"
 	icon_state = "cm40_mag"
 	ammo_type = /obj/item/ammo_casing/a762_40
+	caliber = CALIBER_762X40MM
 	max_ammo = 80
 	w_class = WEIGHT_CLASS_NORMAL
 
@@ -451,6 +452,7 @@
 	base_icon_state = "rottweiler_mag"
 	icon_state = "rottweiler_mag-1"
 	ammo_type = /obj/item/ammo_casing/a308
+	caliber = CALIBER_308
 	max_ammo = 50
 	w_class = WEIGHT_CLASS_NORMAL
 

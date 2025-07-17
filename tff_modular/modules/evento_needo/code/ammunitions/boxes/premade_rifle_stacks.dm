@@ -114,3 +114,4 @@
 	icon_state = "generic-ammo"
 	ammo_type = /obj/item/ammo_casing/a308/ap
 	caliber = CALIBER_308
+	max_ammo = 90
