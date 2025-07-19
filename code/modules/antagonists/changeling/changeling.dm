@@ -219,7 +219,8 @@
 	return ..()
 
 /datum/antagonist/changeling/farewell()
-	to_chat(owner.current, span_userdanger("You grow weak and lose your powers! You are no longer a changeling and are stuck in your current form!"))
+	if(owner.current)
+		to_chat(owner.current, span_userdanger("You grow weak and lose your powers! You are no longer a changeling and are stuck in your current form!"))
 
 /*
  * Instantiate the cellular emporium for the changeling.
@@ -552,7 +553,7 @@
 	new_profile.emissive_eyes = target.emissive_eyes
 	new_profile.scream_type = target.selected_scream?.type || /datum/scream_type/none
 	new_profile.laugh_type = target.selected_laugh?.type || /datum/laugh_type/none
-	new_profile.target_height = target.get_mob_height()
+	new_profile.target_height = target.mob_height
 	new_profile.target_mob_size = target.mob_size
 	//NOVA EDIT ADDITION END
 

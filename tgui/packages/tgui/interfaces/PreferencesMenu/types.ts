@@ -107,6 +107,7 @@ export type Language = {
   description: string;
   name: string;
   icon: string;
+  speaking: boolean;
 };
 
 export type Marking = {

@@ -330,7 +330,7 @@
 	pixel_x = 6;
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/cup/rag{
+/obj/item/rag{
 	pixel_x = -4;
 	pixel_y = 3
 	},
@@ -1292,7 +1292,7 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/blood/trails,
+/obj/effect/decal/cleanable/blood/trail_holder,
 /turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "fd" = (
@@ -3194,7 +3194,6 @@
 	name = "Interdyne ammunitions workbench";
 	color = "#adadcd"
 	},
-/obj/item/disk/ammo_workbench/advanced,
 /obj/machinery/camera/xray/directional/north{
 	color = "#adadcd";
 	name = "Inderdyne security camera";
@@ -3455,7 +3454,7 @@
 	pixel_x = -4;
 	pixel_y = 1
 	},
-/obj/item/reagent_containers/cup/rag{
+/obj/item/rag{
 	pixel_x = -5;
 	pixel_y = 12
 	},
@@ -5309,7 +5308,7 @@
 /area/ruin/interdyne_planetary_base/main)
 "yM" = (
 /obj/structure/flora/tree/pine/style_random,
-/obj/effect/decal/cleanable/blood/trails,
+/obj/effect/decal/cleanable/blood/trail_holder,
 /turf/open/misc/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "yP" = (
@@ -6836,7 +6835,7 @@
 "GI" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/reagent_dispensers/fueltank,
-/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/blood/oil,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/interdyne_planetary_base/main)
 "GJ" = (
@@ -7680,7 +7679,7 @@
 	pixel_x = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/xenoblood,
+/obj/effect/decal/cleanable/blood/xeno,
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "Le" = (

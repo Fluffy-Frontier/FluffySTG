@@ -227,7 +227,7 @@
 	return ..()
 
 // ЧС квирков
-/mob/living/carbon/human/add_quirk(datum/quirk/quirktype, client/override_client)
+/mob/living/carbon/human/add_quirk(datum/quirk/quirktype, client/override_client, add_unique = TRUE)
 	var/bad_nabber_quirks = list(
 		// негативные
 		/datum/quirk/oversized,
@@ -268,7 +268,7 @@
 		/datum/quirk/softspoken,
 		/datum/quirk/tin_man,
 		/datum/quirk/touchy,
-		/datum/quirk/narcolepsy,
+		/datum/quirk/item_quirk/narcolepsy,
 		/datum/quirk/fragile,
 		/datum/quirk/alexithymia,
 		// Нейтральные
