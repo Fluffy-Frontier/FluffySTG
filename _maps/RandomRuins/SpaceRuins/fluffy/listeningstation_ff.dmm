@@ -218,13 +218,11 @@
 /turf/closed/mineral/random,
 /area/ruin/space)
 "lk" = (
-/obj/item/radio/intercom/directional/east{
-	freerange = 1
-	},
 /obj/machinery/computer/camera_advanced{
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/red/opposingcorners,
+/obj/item/radio/intercom/syndicate/freerange/directional/east,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/listeningstation)
 "lu" = (
@@ -296,6 +294,7 @@
 	},
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/listeningstation)
 "qN" = (
@@ -505,6 +504,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/listeningstation)
 "AV" = (
@@ -720,6 +720,12 @@
 /obj/effect/turf_decal/tile/red/opposingcorners,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/listeningstation)
+"Ms" = (
+/obj/item/radio/intercom/syndicate/freerange{
+	pixel_x = -31
+	},
+/turf/closed/mineral/random,
+/area/ruin/space)
 "Mt" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/stripes/line,
@@ -1316,7 +1322,7 @@ AV
 (14,1,1) = {"
 AV
 AV
-vI
+Ms
 vI
 vI
 JB

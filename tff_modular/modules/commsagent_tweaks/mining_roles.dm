@@ -12,3 +12,14 @@
 	quirks_enabled = TRUE
 	random_appearance = FALSE
 	//No 85% chance to spawn a simplemob (which is just unneeded for a rare ruin) - so instead of butchering the original sleeper, we change this one
+
+/obj/item/radio/headset/syndicate/alt/synd_and_dyne
+	keyslot2 = /obj/item/encryptionkey/headset_syndicate/interdyne
+
+/datum/outfit/lavaland_syndicate/comms
+	uniform = /obj/item/clothing/under/syndicate
+	ears = /obj/item/radio/headset/syndicate/alt/synd_and_dyne
+
+/datum/outfit/lavaland_syndicate/comms/space
+	mask = /obj/item/clothing/mask/chameleon
+	ears = /obj/item/radio/headset/syndicate/alt/synd_and_dyne
