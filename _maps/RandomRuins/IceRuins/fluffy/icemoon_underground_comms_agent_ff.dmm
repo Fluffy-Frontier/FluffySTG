@@ -18,6 +18,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/item/hatchet/wooden,
 /turf/open/floor/carpet,
 /area/ruin/comms_agent)
 "bt" = (
@@ -31,13 +32,17 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/wood,
 /area/ruin/comms_agent)
+"ck" = (
+/obj/machinery/hydroponics/soil,
+/turf/open/misc/asteroid,
+/area/ruin/comms_agent)
 "cI" = (
 /obj/structure/water_source/puddle,
 /obj/item/reagent_containers/cup/glass/waterbottle/large/empty{
 	pixel_x = 5;
 	pixel_y = -6
 	},
-/turf/open/misc/asteroid/snow/standard_air,
+/turf/open/misc/asteroid,
 /area/ruin/comms_agent)
 "di" = (
 /obj/effect/turf_decal/siding/wood{
@@ -82,6 +87,7 @@
 	pixel_y = -7;
 	pixel_x = -1
 	},
+/obj/item/geiger_counter,
 /turf/open/floor/plating,
 /area/ruin/comms_agent/maint)
 "ge" = (
@@ -106,7 +112,7 @@
 /turf/open/floor/wood/parquet,
 /area/ruin/comms_agent)
 "he" = (
-/turf/open/misc/asteroid/snow/standard_air,
+/turf/open/misc/asteroid,
 /area/ruin/comms_agent)
 "hl" = (
 /obj/effect/mapping_helpers/broken_floor,
@@ -438,6 +444,10 @@
 /obj/machinery/biogenerator,
 /turf/open/misc/asteroid/snow/standard_air,
 /area/ruin/comms_agent)
+"zY" = (
+/obj/structure/reagent_dispensers/beerkeg,
+/turf/open/misc/asteroid/snow/icemoon,
+/area/icemoon/underground/explored)
 "Ac" = (
 /obj/effect/turf_decal/siding/wideplating/light{
 	dir = 8
@@ -560,7 +570,7 @@
 /obj/item/seeds/coffee/robusta,
 /obj/item/seeds/wheat,
 /obj/effect/spawner/random/food_or_drink/seed,
-/turf/open/misc/asteroid/snow/standard_air,
+/turf/open/misc/asteroid,
 /area/ruin/comms_agent)
 "GQ" = (
 /obj/structure/table,
@@ -712,7 +722,7 @@
 	pixel_x = 7;
 	pixel_y = 4
 	},
-/turf/open/misc/asteroid/snow/standard_air,
+/turf/open/misc/asteroid,
 /area/ruin/comms_agent)
 "LP" = (
 /turf/closed/wall/r_wall,
@@ -779,6 +789,7 @@
 /obj/item/storage/medkit/regular,
 /obj/item/reagent_containers/syringe,
 /obj/structure/closet/secure_closet/freezer/empty/open,
+/obj/item/storage/toolbox/medical/full,
 /turf/open/floor/iron/white,
 /area/ruin/comms_agent)
 "NL" = (
@@ -2763,7 +2774,7 @@ YA
 nP
 bk
 nP
-xi
+ck
 LI
 PX
 ka
@@ -2809,7 +2820,7 @@ OB
 sB
 OM
 OM
-OM
+zY
 jc
 MH
 MH
