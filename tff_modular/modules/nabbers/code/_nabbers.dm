@@ -324,7 +324,7 @@
 		/datum/quirk/hard_soles, // Встроен
 		/datum/quirk/linguist,
 		/datum/quirk/sharpclaws,
-		/datum/quirk/water_breathing,
+		/datum/quirk/item_quirk/breather/water_breather,
 		/datum/quirk/no_appendix, // Нет аппендикса
 		/datum/quirk/shapeshifter,
 	)
