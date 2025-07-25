@@ -169,8 +169,10 @@
 	. = ..()
 	if(tool.use_tool(src, user, 5 SECONDS))
 		setDir(turn(dir, -90))
+		if(linked_magnet)
+			linked_magnet.setDir(turn(dir, -90))
 		update_dir_bounds()
-		return
+		return ITEM_INTERACT_BLOCKING
 
 /obj/machinery/magnet_chassis/proc/update_dir_bounds()
 	if(dir & (EAST|WEST))
