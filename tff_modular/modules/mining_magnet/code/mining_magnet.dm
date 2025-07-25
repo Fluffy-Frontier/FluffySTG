@@ -32,7 +32,7 @@
 		. += span_alert("The magnetizer must be loaded with a solid plasma to use.")
 
 /obj/item/magnetizer/attackby(obj/item/W, mob/user)
-	if(!istype(W, /obj/item/stack/sheet/mineral/plasma) && !loaded)
+	if(istype(W, /obj/item/stack/sheet/mineral/plasma) && !loaded)
 		loaded = TRUE
 		to_chat(user, span_notice("You charge the magnetizer with the solid plasma."))
 		W.use(1)
