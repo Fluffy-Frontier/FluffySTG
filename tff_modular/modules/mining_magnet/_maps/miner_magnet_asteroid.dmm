@@ -9,8 +9,8 @@
 /turf/open/floor/engine,
 /area/mine/magnet_mine/power)
 "ab" = (
-/obj/structure/sign/poster/official/work_for_a_future,
 /obj/effect/turf_decal/stripes/box,
+/obj/machinery/autolathe,
 /turf/open/floor/engine,
 /area/mine/magnet_mine/refinery)
 "aD" = (
@@ -49,7 +49,6 @@
 /obj/effect/turf_decal/tile/brown/anticorner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/iron/textured_corner{
 	dir = 8
@@ -211,8 +210,10 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/tank/air/layer4{
-	dir = 8
+/obj/machinery/mineral/ore_redemption{
+	dir = 4;
+	input_dir = 8;
+	output_dir = 1
 	},
 /turf/open/floor/engine,
 /area/mine/magnet_mine/power)
@@ -312,6 +313,7 @@
 	},
 /obj/structure/table,
 /obj/machinery/camera/autoname/directional/north,
+/obj/item/magnet_parts/construction,
 /turf/open/floor/iron/textured_corner,
 /area/mine/magnet_mine/control)
 "ib" = (
@@ -387,7 +389,6 @@
 /turf/open/floor/iron/large,
 /area/mine/magnet_mine/quarters)
 "jj" = (
-/obj/structure/sign/poster/official/work_for_a_future,
 /turf/open/floor/engine,
 /area/mine/magnet_mine/refinery)
 "jB" = (
@@ -455,12 +456,6 @@
 	dir = 1
 	},
 /area/mine/magnet_mine/control)
-"kH" = (
-/obj/effect/mob_spawn/ghost_role/human/interdyne_planetary_base/shaftminer/ice{
-	name = "11111111"
-	},
-/turf/open/floor/iron/large,
-/area/mine/magnet_mine/quarters)
 "kN" = (
 /obj/effect/turf_decal/tile/yellow/anticorner{
 	dir = 8
@@ -726,6 +721,7 @@
 /obj/effect/turf_decal/tile/brown/anticorner,
 /obj/structure/extinguisher_cabinet/directional/south,
 /obj/machinery/firealarm/directional/east,
+/obj/item/kirbyplants/random,
 /turf/open/floor/iron/textured_corner{
 	dir = 1
 	},
@@ -758,9 +754,9 @@
 /turf/open/floor/plating/airless,
 /area/mine/magnet_mine/solar)
 "rD" = (
-/obj/structure/sign/poster/official/work_for_a_future,
-/turf/open/space/basic,
-/area/space)
+/obj/effect/landmark/magnet_shield,
+/turf/open/floor/engine/airless,
+/area/mine/magnet_mine/asteroid)
 "rY" = (
 /obj/structure/table,
 /obj/machinery/recharger,
@@ -789,6 +785,10 @@
 "sy" = (
 /turf/open/space/basic,
 /area/space)
+"sB" = (
+/obj/effect/landmark/magnet_center,
+/turf/open/space/basic,
+/area/space/nearstation)
 "sN" = (
 /obj/effect/turf_decal/tile/brown/half,
 /turf/open/floor/iron/textured_half,
@@ -814,9 +814,6 @@
 /area/mine/magnet_mine/power)
 "tt" = (
 /obj/effect/turf_decal/tile/brown/anticorner,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 1
-	},
 /turf/open/floor/iron/textured_corner{
 	dir = 1
 	},
@@ -1132,9 +1129,8 @@
 /obj/effect/turf_decal/tile/yellow/half{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/binary/pump/on/scrubbers/visible/layer2{
-	dir = 1
-	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/textured_half,
 /area/mine/magnet_mine/power)
 "zH" = (
@@ -1163,10 +1159,10 @@
 /turf/open/floor/iron/solarpanel/airless,
 /area/mine/magnet_mine/solar)
 "zO" = (
-/obj/structure/tank_dispenser/oxygen,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/iron/dark/textured_large,
 /area/mine/magnet_mine/outpost)
 "zQ" = (
@@ -1233,8 +1229,9 @@
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/components/unary/airlock_pump{
+	dir = 4
+	},
 /turf/open/floor/iron/textured_edge{
 	dir = 8
 	},
@@ -1263,6 +1260,9 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
+/obj/machinery/atmospherics/components/tank/air/layer4{
+	dir = 4
+	},
 /turf/open/floor/iron/textured_corner,
 /area/mine/magnet_mine/power)
 "Bz" = (
@@ -1283,7 +1283,7 @@
 /obj/effect/turf_decal/tile/yellow/half{
 	dir = 8
 	},
-/obj/structure/sign/poster/official/work_for_a_future,
+/obj/machinery/computer/order_console/mining,
 /turf/open/floor/iron/textured_half{
 	dir = 8
 	},
@@ -1349,15 +1349,10 @@
 /turf/open/floor/iron/textured_large,
 /area/mine/magnet_mine/outpost)
 "Dh" = (
-/obj/effect/turf_decal/tile/yellow/half{
-	dir = 4
-	},
-/obj/machinery/atmospherics/components/binary/pump/on/supply/visible/layer4{
-	dir = 8
-	},
-/turf/open/floor/iron/textured_half{
-	dir = 8
-	},
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/textured_large,
 /area/mine/magnet_mine/power)
 "DJ" = (
 /obj/machinery/shower/directional/west,
@@ -1368,7 +1363,6 @@
 "Ek" = (
 /obj/structure/table,
 /obj/effect/turf_decal/tile/yellow/anticorner,
-/obj/structure/sign/poster/official/work_for_a_future,
 /turf/open/floor/iron/textured_corner{
 	dir = 1
 	},
@@ -1415,6 +1409,10 @@
 	dir = 4
 	},
 /area/mine/magnet_mine/outpost)
+"FO" = (
+/obj/effect/spawner/random/structure/shipping_container/station_appropriate,
+/turf/open/floor/engine,
+/area/mine/magnet_mine/refinery)
 "FU" = (
 /obj/effect/turf_decal/tile/brown,
 /turf/open/floor/iron/textured_corner,
@@ -1456,6 +1454,11 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
+/obj/structure/chair/stool{
+	dir = 4;
+	pixel_x = -7;
+	pixel_y = 0
+	},
 /turf/open/floor/iron/textured_corner{
 	dir = 4
 	},
@@ -1550,6 +1553,7 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet/directional/east,
+/obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/iron/textured_corner{
 	dir = 8
 	},
@@ -1650,7 +1654,9 @@
 	},
 /area/mine/magnet_mine/power)
 "KN" = (
-/obj/structure/sign/poster/official/work_for_a_future,
+/obj/structure/chair/office{
+	dir = 4
+	},
 /turf/open/floor/iron/textured_large,
 /area/mine/magnet_mine/control)
 "KO" = (
@@ -1892,6 +1898,7 @@
 	},
 /obj/machinery/light/directional/north,
 /obj/structure/table,
+/obj/item/magnetizer,
 /turf/open/floor/iron/textured_half,
 /area/mine/magnet_mine/control)
 "QM" = (
@@ -1946,7 +1953,9 @@
 /obj/effect/turf_decal/tile/brown/half{
 	dir = 4
 	},
-/obj/structure/sign/poster/official/work_for_a_future,
+/obj/machinery/computer/magnet{
+	dir = 8
+	},
 /turf/open/floor/iron/textured_half{
 	dir = 1
 	},
@@ -1977,10 +1986,6 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/mine/magnet_mine/outpost)
-"Sw" = (
-/obj/structure/sign/poster/official/work_for_a_future,
-/turf/open/floor/iron/textured_large,
-/area/mine/magnet_mine/manufacturing)
 "Sz" = (
 /obj/effect/turf_decal/tile/yellow/half,
 /obj/structure/cable,
@@ -1995,14 +2000,22 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
-/obj/structure/sign/poster/official/work_for_a_future,
+/obj/machinery/mineral/ore_redemption{
+	dir = 4;
+	input_dir = 4;
+	output_dir = 1
+	},
 /turf/open/floor/engine,
 /area/mine/magnet_mine/power)
 "SL" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/structure/sign/poster/official/work_for_a_future,
+/obj/machinery/mineral/ore_redemption{
+	dir = 4;
+	input_dir = 4;
+	output_dir = 1
+	},
 /turf/open/floor/engine,
 /area/mine/magnet_mine/power)
 "SM" = (
@@ -2055,7 +2068,11 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
-/obj/structure/sign/poster/official/work_for_a_future,
+/obj/machinery/mineral/ore_redemption{
+	dir = 4;
+	input_dir = 8;
+	output_dir = 1
+	},
 /turf/open/floor/engine,
 /area/mine/magnet_mine/power)
 "Tv" = (
@@ -2148,6 +2165,14 @@
 "Ut" = (
 /turf/closed/wall,
 /area/mine/magnet_mine/control)
+"Uw" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/components/binary/pump/on/scrubbers/visible/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/binary/pump/on/supply/visible/layer4,
+/turf/open/floor/iron/textured_large,
+/area/mine/magnet_mine/power)
 "Ux" = (
 /obj/effect/turf_decal/tile/dark_green/half,
 /obj/effect/turf_decal/tile/dark_green{
@@ -2263,7 +2288,12 @@
 /area/mine/magnet_mine/outpost)
 "WA" = (
 /obj/structure/lattice/catwalk,
-/obj/structure/sign/poster/official/work_for_a_future,
+/obj/machinery/magnet_chassis{
+	dir = 4
+	},
+/obj/machinery/mining_magnet{
+	dir = 4
+	},
 /turf/open/space/basic,
 /area/mine/magnet_mine/control)
 "WH" = (
@@ -2320,10 +2350,10 @@
 /area/mine/magnet_mine/outpost)
 "XZ" = (
 /obj/machinery/light/directional/east,
-/obj/structure/sign/poster/official/work_for_a_future,
 /obj/effect/turf_decal/tile/yellow/half{
 	dir = 4
 	},
+/obj/structure/table,
 /turf/open/floor/iron/textured_half{
 	dir = 8
 	},
@@ -2353,6 +2383,9 @@
 	dir = 1
 	},
 /area/mine/magnet_mine/control)
+"YD" = (
+/turf/open/space/basic,
+/area/space/nearstation)
 "Zp" = (
 /obj/structure/closet/radiation,
 /turf/open/floor/iron/dark/textured_large,
@@ -3277,7 +3310,7 @@ gP
 gP
 gP
 sy
-ZY
+xw
 ZY
 UQ
 UQ
@@ -3348,7 +3381,7 @@ eI
 ib
 Pj
 oc
-Sw
+oc
 mX
 uL
 ZY
@@ -3395,7 +3428,7 @@ pO
 Pk
 Pj
 oc
-Sw
+oc
 wf
 uL
 ZY
@@ -3423,7 +3456,7 @@ xw
 BU
 KE
 VK
-kH
+Ce
 VK
 Ce
 Mz
@@ -3442,7 +3475,7 @@ eI
 IF
 oc
 oc
-Sw
+oc
 mX
 uL
 ZY
@@ -3720,7 +3753,7 @@ eI
 ZY
 PL
 jj
-jj
+FO
 Wd
 LN
 oI
@@ -3799,8 +3832,8 @@ ru
 gv
 MQ
 zs
-tg
-tg
+Uw
+Dh
 tg
 tg
 tg
@@ -3846,7 +3879,7 @@ ho
 ZY
 zh
 Az
-Dh
+Bf
 Bf
 Bf
 xs
@@ -3893,8 +3926,8 @@ ho
 ZY
 zh
 zh
+Qr
 fZ
-zh
 Qr
 Tn
 UJ
@@ -4116,20 +4149,20 @@ gP
 gP
 gP
 gP
-gP
-gP
 sy
-sy
-sy
-sy
+QM
+QM
+QM
+QM
+QM
 sy
 ZY
 ZY
 Ut
 GB
 pN
-RG
 Gz
+RG
 Gz
 qO
 Ut
@@ -4139,7 +4172,7 @@ cj
 Ut
 Ut
 ZY
-sy
+QM
 sy
 sy
 sy
@@ -4163,11 +4196,11 @@ gP
 gP
 gP
 gP
-gP
-gP
 sy
+QM
 sy
-sy
+Tg
+Tg
 sy
 sy
 sy
@@ -4185,9 +4218,9 @@ Ut
 WS
 Ut
 Tg
+Tg
+QM
 sy
-sy
-gP
 gP
 gP
 gP
@@ -4210,9 +4243,9 @@ gP
 gP
 gP
 gP
-gP
-gP
 sy
+QM
+Tg
 Tg
 Tg
 Tg
@@ -4222,7 +4255,7 @@ Tg
 Tg
 Ut
 CX
-WA
+CX
 WA
 CX
 Ut
@@ -4233,8 +4266,8 @@ Mu
 Ut
 Tg
 sy
-gP
-gP
+QM
+sy
 gP
 gP
 gP
@@ -4257,9 +4290,9 @@ gP
 gP
 gP
 gP
-gP
-gP
 sy
+QM
+Tg
 Tg
 uN
 uN
@@ -4279,9 +4312,9 @@ uN
 uN
 uN
 Tg
+Tg
+QM
 sy
-gP
-gP
 gP
 gP
 gP
@@ -4304,8 +4337,8 @@ gP
 gP
 gP
 gP
-gP
-gP
+sy
+QM
 sy
 Tg
 uN
@@ -4327,8 +4360,8 @@ rD
 uN
 Tg
 sy
-gP
-gP
+QM
+sy
 gP
 gP
 gP
@@ -4351,31 +4384,31 @@ gP
 gP
 gP
 gP
-gP
-gP
+sy
+sy
 sy
 Tg
 uN
 rD
-sy
-sy
-sy
-sy
-sy
-sy
-rD
-sy
-sy
-sy
-sy
-sy
-sy
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
 rD
 uN
 Tg
 sy
-gP
-gP
+sy
+sy
 gP
 gP
 gP
@@ -4398,31 +4431,31 @@ gP
 gP
 gP
 gP
-gP
-gP
+sy
+QM
 sy
 Tg
 uN
 rD
-sy
-sy
-sy
-sy
-sy
-sy
-rD
-sy
-sy
-sy
-sy
-sy
-sy
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
 rD
 uN
 Tg
 sy
-gP
-gP
+QM
+sy
 gP
 gP
 gP
@@ -4445,31 +4478,31 @@ gP
 gP
 gP
 gP
-gP
-gP
 sy
+QM
+Tg
 Tg
 uN
 rD
-sy
-sy
-sy
-sy
-sy
-sy
-rD
-sy
-sy
-sy
-sy
-sy
-sy
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
 rD
 uN
 Tg
+Tg
+QM
 sy
-gP
-gP
 gP
 gP
 gP
@@ -4492,31 +4525,31 @@ gP
 gP
 gP
 gP
-gP
-gP
+sy
+QM
 sy
 Tg
 uN
 rD
-sy
-sy
-sy
-sy
-sy
-sy
-rD
-sy
-sy
-sy
-sy
-sy
-sy
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
 rD
 uN
 Tg
 sy
-gP
-gP
+QM
+sy
 gP
 gP
 gP
@@ -4539,31 +4572,31 @@ gP
 gP
 gP
 gP
-gP
-gP
 sy
+QM
+Tg
 Tg
 uN
 rD
-sy
-sy
-sy
-sy
-sy
-sy
-rD
-sy
-sy
-sy
-sy
-sy
-sy
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
 rD
 uN
 Tg
+Tg
+QM
 sy
-gP
-gP
 gP
 gP
 gP
@@ -4586,31 +4619,31 @@ gP
 gP
 gP
 gP
-gP
-gP
+sy
+QM
 sy
 Tg
 uN
 rD
-sy
-sy
-sy
-sy
-sy
-sy
-rD
-sy
-sy
-sy
-sy
-sy
-sy
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
 rD
 uN
 Tg
 sy
-gP
-gP
+QM
+sy
 gP
 gP
 gP
@@ -4633,31 +4666,31 @@ gP
 gP
 gP
 gP
-gP
-gP
+sy
+sy
 sy
 Tg
 uN
 rD
-rD
-rD
-rD
-rD
-rD
-rD
-rD
-rD
-rD
-rD
-rD
-rD
-rD
+YD
+YD
+YD
+YD
+YD
+YD
+sB
+YD
+YD
+YD
+YD
+YD
+YD
 rD
 uN
 Tg
 sy
-gP
-gP
+sy
+sy
 gP
 gP
 gP
@@ -4680,31 +4713,31 @@ gP
 gP
 gP
 gP
-gP
-gP
+sy
+QM
 sy
 Tg
 uN
 rD
-sy
-sy
-sy
-sy
-sy
-sy
-rD
-sy
-sy
-sy
-sy
-sy
-sy
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
 rD
 uN
 Tg
 sy
-gP
-gP
+QM
+sy
 gP
 gP
 gP
@@ -4727,31 +4760,31 @@ gP
 gP
 gP
 gP
-gP
-gP
 sy
+QM
+Tg
 Tg
 uN
 rD
-sy
-sy
-sy
-sy
-sy
-sy
-rD
-sy
-sy
-sy
-sy
-sy
-sy
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
 rD
 uN
 Tg
+Tg
+QM
 sy
-gP
-gP
 gP
 gP
 gP
@@ -4774,31 +4807,31 @@ gP
 gP
 gP
 gP
-gP
-gP
+sy
+QM
 sy
 Tg
 uN
 rD
-sy
-sy
-sy
-sy
-sy
-sy
-rD
-sy
-sy
-sy
-sy
-sy
-sy
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
 rD
 uN
 Tg
 sy
-gP
-gP
+QM
+sy
 gP
 gP
 gP
@@ -4821,31 +4854,31 @@ gP
 gP
 gP
 gP
-gP
-gP
 sy
+QM
+Tg
 Tg
 uN
 rD
-sy
-sy
-sy
-sy
-sy
-sy
-rD
-sy
-sy
-sy
-sy
-sy
-sy
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
 rD
 uN
 Tg
+Tg
+QM
 sy
-gP
-gP
 gP
 gP
 gP
@@ -4868,31 +4901,31 @@ gP
 gP
 gP
 gP
-gP
-gP
+sy
+QM
 sy
 Tg
 uN
 rD
-sy
-sy
-sy
-sy
-sy
-sy
-rD
-sy
-sy
-sy
-sy
-sy
-sy
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
 rD
 uN
 Tg
 sy
-gP
-gP
+QM
+sy
 gP
 gP
 gP
@@ -4915,31 +4948,31 @@ gP
 gP
 gP
 gP
-gP
-gP
+sy
+sy
 sy
 Tg
 uN
 rD
-sy
-sy
-sy
-sy
-sy
-sy
-rD
-sy
-sy
-sy
-sy
-sy
-sy
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
+YD
 rD
 uN
 Tg
 sy
-gP
-gP
+sy
+sy
 gP
 gP
 gP
@@ -4962,8 +4995,8 @@ gP
 gP
 gP
 gP
-gP
-gP
+sy
+QM
 sy
 Tg
 uN
@@ -4985,8 +5018,8 @@ rD
 uN
 Tg
 sy
-gP
-gP
+QM
+sy
 gP
 gP
 gP
@@ -5009,9 +5042,9 @@ gP
 gP
 gP
 gP
-gP
-gP
 sy
+QM
+Tg
 Tg
 uN
 uN
@@ -5031,9 +5064,9 @@ uN
 uN
 uN
 Tg
+Tg
+QM
 sy
-gP
-gP
 gP
 gP
 gP
@@ -5056,9 +5089,8 @@ gP
 gP
 gP
 gP
-gP
-gP
 sy
+QM
 Tg
 Tg
 Tg
@@ -5078,9 +5110,10 @@ Tg
 Tg
 Tg
 Tg
+Tg
+Tg
+QM
 sy
-gP
-gP
 gP
 gP
 gP
@@ -5103,31 +5136,125 @@ gP
 gP
 gP
 gP
+sy
+QM
+sy
+Tg
+Tg
+sy
+sy
+sy
+Tg
+sy
+Tg
+sy
+sy
+sy
+Tg
+sy
+Tg
+sy
+sy
+sy
+Tg
+Tg
+sy
+QM
+sy
 gP
 gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+"}
+(60,1,1) = {"
+gP
+gP
+gP
+gP
+gP
+gP
+gP
 sy
+QM
+QM
+QM
+QM
+QM
 sy
+QM
+QM
+QM
+QM
+QM
 sy
+QM
+QM
+QM
+QM
+QM
 sy
-sy
-sy
-sy
-sy
-sy
-sy
-sy
-sy
-sy
-sy
-sy
-sy
-sy
-sy
-sy
-sy
+QM
+QM
+QM
+QM
+QM
 sy
 gP
 gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+"}
+(61,1,1) = {"
+gP
+gP
+gP
+gP
+gP
+gP
+gP
+sy
+sy
+sy
+sy
+sy
+sy
+sy
+sy
+sy
+sy
+sy
+sy
+sy
+sy
+sy
+sy
+sy
+sy
+sy
+sy
+sy
+sy
+sy
+sy
+sy
 gP
 gP
 gP
