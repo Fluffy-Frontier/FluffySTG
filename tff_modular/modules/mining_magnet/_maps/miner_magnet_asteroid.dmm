@@ -207,16 +207,11 @@
 	},
 /area/mine/magnet_mine/comms)
 "fZ" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/machinery/mineral/ore_redemption{
-	dir = 4;
-	input_dir = 8;
-	output_dir = 1
+/obj/effect/turf_decal/loading_area{
+	dir = 4
 	},
 /turf/open/floor/engine,
-/area/mine/magnet_mine/power)
+/area/mine/magnet_mine/refinery)
 "gb" = (
 /obj/effect/turf_decal/tile/brown/full,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -389,6 +384,8 @@
 /turf/open/floor/iron/large,
 /area/mine/magnet_mine/quarters)
 "jj" = (
+/obj/effect/turf_decal/delivery,
+/obj/structure/closet/crate,
 /turf/open/floor/engine,
 /area/mine/magnet_mine/refinery)
 "jB" = (
@@ -1130,7 +1127,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible/layer4,
 /turf/open/floor/iron/textured_half,
 /area/mine/magnet_mine/power)
 "zH" = (
@@ -1409,10 +1406,6 @@
 	dir = 4
 	},
 /area/mine/magnet_mine/outpost)
-"FO" = (
-/obj/effect/spawner/random/structure/shipping_container/station_appropriate,
-/turf/open/floor/engine,
-/area/mine/magnet_mine/refinery)
 "FU" = (
 /obj/effect/turf_decal/tile/brown,
 /turf/open/floor/iron/textured_corner,
@@ -1444,6 +1437,14 @@
 	dir = 4
 	},
 /obj/structure/table,
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = 2;
+	pixel_y = 7
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = 2;
+	pixel_y = 2
+	},
 /turf/open/floor/iron/textured_corner{
 	dir = 8
 	},
@@ -1644,11 +1645,11 @@
 	},
 /area/mine/magnet_mine/quarters)
 "KL" = (
+/obj/structure/cable,
+/obj/machinery/power/terminal,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
 	},
-/obj/structure/cable,
-/obj/machinery/power/terminal,
 /turf/open/floor/iron/textured_corner{
 	dir = 1
 	},
@@ -1690,10 +1691,10 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/mine/magnet_mine/dock)
 "Lo" = (
+/obj/machinery/airalarm/directional/west,
 /obj/effect/turf_decal/tile/yellow/anticorner{
 	dir = 1
 	},
-/obj/machinery/airalarm/directional/west,
 /turf/open/floor/iron/textured_corner,
 /area/mine/magnet_mine/power)
 "LF" = (
@@ -2000,24 +2001,17 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
-/obj/machinery/mineral/ore_redemption{
-	dir = 4;
-	input_dir = 4;
-	output_dir = 1
-	},
+/obj/structure/closet/crate,
 /turf/open/floor/engine,
 /area/mine/magnet_mine/power)
 "SL" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
 /obj/machinery/mineral/ore_redemption{
 	dir = 4;
-	input_dir = 4;
-	output_dir = 1
+	input_dir = 8;
+	output_dir = 4
 	},
 /turf/open/floor/engine,
-/area/mine/magnet_mine/power)
+/area/mine/magnet_mine/refinery)
 "SM" = (
 /obj/effect/turf_decal/tile/brown/half/contrasted,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -2068,11 +2062,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
-/obj/machinery/mineral/ore_redemption{
-	dir = 4;
-	input_dir = 8;
-	output_dir = 1
-	},
+/obj/structure/closet/crate,
 /turf/open/floor/engine,
 /area/mine/magnet_mine/power)
 "Tv" = (
@@ -3739,7 +3729,7 @@ vr
 zh
 zh
 ii
-SL
+ii
 ii
 SE
 Lo
@@ -3751,9 +3741,9 @@ OI
 PT
 eI
 ZY
+ZY
 PL
-jj
-FO
+fZ
 Wd
 LN
 oI
@@ -3798,9 +3788,9 @@ rc
 XM
 eI
 ZY
+ZY
 PL
-jj
-jj
+SL
 VB
 LN
 ab
@@ -3845,8 +3835,8 @@ Io
 eI
 eI
 ZY
+ZY
 PL
-jj
 jj
 Wd
 LN
@@ -3892,7 +3882,7 @@ Gr
 eI
 ZY
 ZY
-PL
+ZY
 PL
 PL
 Ka
@@ -3927,7 +3917,7 @@ ZY
 zh
 zh
 Qr
-fZ
+Qr
 Qr
 Tn
 UJ

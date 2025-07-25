@@ -99,7 +99,7 @@
 	icon_state = "dbox"
 	var/constructed_magnet = /obj/machinery/mining_magnet
 
-/obj/item/magnet_parts/construction/small
+/obj/item/magnet_parts/small
 	name = "small mineral magnet parts"
 	constructed_magnet = /obj/machinery/mining_magnet/small
 
@@ -134,8 +134,6 @@
 	..()
 
 /obj/machinery/magnet_chassis/attackby(obj/item/I, mob/user)
-	..()
-
 	if(istype(I, /obj/item/magnet_parts))
 		if(linked_magnet)
 			to_chat(user, span_alert("There's already a magnet installed."))
@@ -165,6 +163,7 @@
 			to_chat(user, span_notice("You manage repair some damage on [src] with [I]"))
 			repair_damage(40)
 			return
+	..()
 
 /obj/machinery/magnet_chassis/wrench_act(mob/living/user, obj/item/tool)
 	. = ..()
@@ -207,9 +206,8 @@
 	var/rarity_mod = 0
 	var/max_range = 30
 	var/last_encounter
-	var/autosetup = TRUE
+	var/autosetup = FALSE
 
-	var/image/active_overlay = null
 	var/sound_activate = 'tff_modular/modules/mining_magnet/sound/ArtifactAnc1.ogg'
 	var/sound_destroyed = 'tff_modular/modules/mining_magnet/sound/Machinery_Break_1.ogg'
 
@@ -217,19 +215,18 @@
 	var/obj/magnet_target_marker/target = null
 	var/list/wall_bits = list()
 
-	// reworked to nolonger use areas
 /obj/machinery/mining_magnet/proc/get_magnetic_center()
-		return target?.magnetic_center // the target marker has the center
+	return target?.magnetic_center // the target marker has the center
 
 /obj/machinery/mining_magnet/proc/get_scan_range() // reworked
-	if (target)
+	if(target)
 		return target.scan_range
 	return 6 // 6 if there's no center marker
 
 /obj/machinery/mining_magnet/proc/check_for_unacceptable_content()
-	if (target)
+	if(target)
 		return target.check_for_unacceptable_content()
-	return 1 // fail if there's no center marker
+	return TRUE // fail if there's no center marker
 
 /obj/machinery/mining_magnet/proc/get_encounter(var/rarity_mod)
 	return SSmagnet_mining.select_encounter(rarity_mod)
@@ -242,30 +239,24 @@
 
 /obj/machinery/mining_magnet/Initialize(mapload)
 	. = ..()
-	active_overlay = image(src.icon, "active")
+	if(mapload)
+		autosetup = TRUE
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/machinery/mining_magnet/post_machine_initialize()
 	. = ..()
-	for (var/obj/machinery/magnet_chassis/MC in range(1,src))
+	for(var/obj/machinery/magnet_chassis/MC in range(1, src))
 		linked_chassis = MC
 		MC.linked_magnet = src
 		break
+
 	// mining magnets can automatically set up immediately at roundstart as a treat
-	if (!target && autosetup)
-		var/obj/closest
-		var/closestDistance = 300
-
-	// find the closest marker. there should be one per magnet
-
-	// Magnet center is used first
+	if(!target && autosetup)
 		for(var/obj/magnet_target_marker/marker in SSmagnet_mining.magnet_markers)
-			if (istype(marker,marker_type))
-				if(IN_GIVEN_RANGE(marker, src, closestDistance)) // same as the magnetizer limit i think
-					closest = marker
-				src.target = closest
-				if (istype(target))
-					target.construct()
+			if(IN_GIVEN_RANGE(marker, src, max_range))
+				target = marker
+				target.construct()
+				break
 
 /obj/machinery/mining_magnet/process()
 	if(!target)
@@ -283,11 +274,8 @@
 	visible_message("<b>[src] breaks apart!</b>")
 	new /obj/effect/gibspawner/robot(loc)
 	playsound(loc, sound_destroyed, 50, 2)
-	overlays = list()
 	linked_chassis?.linked_magnet = null
 	linked_chassis = null
-	active_overlay = null
-	sound_activate = null
 	qdel(target)
 	for(var/obj/O in wall_bits)
 		qdel(O)
