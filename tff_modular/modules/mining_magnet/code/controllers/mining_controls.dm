@@ -41,6 +41,7 @@ SUBSYSTEM_DEF(magnet_mining)
 				qdel(MC)
 				continue
 		mining_encounters_all += MC
+	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/magnet_mining/proc/select_encounter(var/rarity_mod)
 	if(!isnum(rarity_mod))
