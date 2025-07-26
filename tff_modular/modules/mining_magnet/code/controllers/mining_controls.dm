@@ -18,8 +18,6 @@ SUBSYSTEM_DEF(magnet_mining)
 	var/list/magnet_chassis = list()
 
 /datum/controller/subsystem/magnet_mining/Initialize()
-	..()
-
 	erase_protected += typecacheof(list(/obj/effect/landmark/magnet_center, /obj/narsie, /obj/singularity, /obj/effect/dummy, /obj/effect/wisp, /obj/effect/forcefield/mining))
 	GLOB.nova_plasteel_recipes += new/datum/stack_recipe("mineral magnet chassis", /obj/machinery/magnet_chassis, 25, time = 20 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_CHECK_DIRECTION, category = CAT_STRUCTURE)
 	for(var/X in subtypesof(/datum/mining_encounter))
