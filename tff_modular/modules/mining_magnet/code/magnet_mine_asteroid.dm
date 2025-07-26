@@ -11,7 +11,7 @@
 // Очень модульно добавляем шаттлу возможность прибыть на астеройд
 /obj/machinery/computer/shuttle/mining/New()
 	. = ..()
-	possible_destinations = "[possible_destinations];lavaland_mining_asteroid"
+	possible_destinations += ";lavaland_mining_asteroid"
 
 // Зоны астеройда
 /area/mine/magnet_mine
