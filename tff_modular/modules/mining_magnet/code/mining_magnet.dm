@@ -634,11 +634,11 @@
 
 /obj/magnet_target_marker/Initialize(mapload)
 	SSmagnet_mining.magnet_markers += src
-	..()
+	. = ..()
 
 /obj/magnet_target_marker/Destroy(force)
 	SSmagnet_mining.magnet_markers -= src
-	..()
+	. = ..()
 
 /obj/magnet_target_marker/proc/construct(var/mob/user)
 	// Сперва смотрим на внешние края и проверяем, что они в рамках z уровня
