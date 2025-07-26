@@ -179,7 +179,6 @@ export const MineralMagnet = () => {
         </Section>
         {viewEncounters && (
           <Modal
-            full
             ml={1} // For some reason modals only seem properly centered with this
             width="230px"
             height="200px"
@@ -223,7 +222,7 @@ export const MineralMagnet = () => {
           </Modal>
         )}
         {!!isLinked || (
-          <Modal full ml={1} width="270px" height="200px">
+          <Modal ml={1} width="270px" height="200px">
             <Section title="Choose Linked Magnet" scrollable fill>
               <Button
                 textAlign="center"
