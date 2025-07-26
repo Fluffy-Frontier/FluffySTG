@@ -131,7 +131,7 @@
 	if(linked_magnet)
 		qdel(linked_magnet)
 	linked_magnet = null
-	..()
+	. = ..()
 
 /obj/machinery/magnet_chassis/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/magnet_parts))
