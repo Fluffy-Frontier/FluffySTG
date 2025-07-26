@@ -4,7 +4,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/plating,
+/turf/open/floor/wood,
 /area/ruin/comms_agent)
 "bk" = (
 /turf/open/floor/iron,
@@ -327,6 +327,7 @@
 	pixel_x = 6;
 	pixel_y = 4
 	},
+/obj/item/storage/fancy/cigarettes/cigpack_syndicate,
 /turf/open/floor/wood,
 /area/ruin/comms_agent)
 "ud" = (
@@ -357,7 +358,6 @@
 /turf/open/floor/wood,
 /area/ruin/comms_agent)
 "uY" = (
-/obj/effect/mapping_helpers/broken_floor,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/wood/tile,
@@ -430,7 +430,7 @@
 /turf/open/floor/carpet,
 /area/ruin/comms_agent)
 "zi" = (
-/turf/open/floor/plating,
+/turf/open/floor/wood,
 /area/ruin/comms_agent)
 "zG" = (
 /obj/effect/turf_decal/siding/wood{
@@ -636,6 +636,7 @@
 /obj/item/ammo_box/magazine/m9mm,
 /obj/item/ammo_box/magazine/m9mm,
 /obj/item/clothing/head/costume/ushanka,
+/obj/item/folder/red,
 /turf/open/floor/wood/tile,
 /area/ruin/comms_agent)
 "JY" = (
@@ -655,10 +656,6 @@
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plating,
 /area/ruin/comms_agent/maint)
-"KB" = (
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/wood/parquet,
-/area/ruin/comms_agent)
 "KG" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/stone,
@@ -754,7 +751,6 @@
 /turf/open/floor/plating,
 /area/ruin/comms_agent/maint)
 "Mz" = (
-/obj/effect/mapping_helpers/broken_floor,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
@@ -863,6 +859,7 @@
 	pixel_y = 4
 	},
 /obj/item/crowbar/red,
+/obj/item/folder/red,
 /turf/open/floor/wood,
 /area/ruin/comms_agent)
 "QU" = (
@@ -873,19 +870,6 @@
 /obj/machinery/atmospherics/pipe/layer_manifold/general/visible,
 /turf/open/floor/plating,
 /area/ruin/comms_agent/maint)
-"Sc" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/plating,
-/area/ruin/comms_agent)
-"Tp" = (
-/obj/effect/mapping_helpers/broken_floor,
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/plating,
-/area/ruin/comms_agent)
 "TH" = (
 /obj/structure/flora/tree/dead/style_random,
 /turf/open/misc/asteroid/snow/icemoon,
@@ -2317,7 +2301,7 @@ Ml
 mr
 QT
 jB
-Sc
+kL
 Jh
 XU
 kp
@@ -2373,8 +2357,8 @@ KG
 Ng
 mr
 kL
-Sc
-Tp
+kL
+kL
 Gq
 kp
 kp
@@ -2713,7 +2697,7 @@ nP
 mM
 xz
 yR
-KB
+YA
 nP
 bk
 nP

@@ -81,6 +81,10 @@
 	},
 /obj/structure/table,
 /obj/effect/turf_decal/tile/red/diagonal_centre,
+/obj/item/storage/fancy/cigarettes/cigpack_syndicate{
+	pixel_x = 6;
+	pixel_y = 4
+	},
 /turf/open/floor/iron/dark/diagonal,
 /area/ruin/space/has_grav/listeningstation)
 "ch" = (
@@ -104,6 +108,7 @@
 	},
 /obj/effect/turf_decal/tile/red/diagonal_centre,
 /obj/structure/table,
+/obj/item/folder/red,
 /turf/open/floor/iron/dark/diagonal,
 /area/ruin/space/has_grav/listeningstation)
 "cq" = (
@@ -193,6 +198,7 @@
 "gJ" = (
 /obj/structure/table/wood,
 /obj/item/seeds/potato,
+/obj/item/ammo_box/magazine/m9mm,
 /obj/item/ammo_box/magazine/m9mm,
 /turf/open/floor/iron/grimy,
 /area/ruin/space/has_grav/listeningstation)
@@ -628,11 +634,16 @@
 /obj/item/flashlight{
 	pixel_y = -12
 	},
-/obj/item/storage/toolbox/syndicate,
 /obj/effect/turf_decal/tile/red/opposingcorners,
 /obj/structure/table,
 /obj/effect/mapping_helpers/airalarm/syndicate_access,
 /obj/machinery/airalarm/directional/west,
+/obj/machinery/fax{
+	syndicate_network = 1;
+	allow_exotic_faxes = 1;
+	fax_name = "Listening Post";
+	desc = "Bluespace technologies on the application of bureaucracy. This one is send-only"
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/listeningstation)
 "DC" = (
@@ -846,6 +857,7 @@
 	pixel_y = 16
 	},
 /obj/structure/table/reinforced,
+/obj/item/folder/red,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/listeningstation)
 "MY" = (
@@ -958,10 +970,11 @@
 /turf/open/floor/iron/dark/diagonal,
 /area/ruin/space/has_grav/listeningstation)
 "SK" = (
-/obj/item/paper/fluff/ruins/listeningstation/briefing,
 /obj/machinery/newscaster/directional/east,
 /obj/effect/turf_decal/tile/red/opposingcorners,
 /obj/structure/table,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/paper/fluff/ruins/listeningstation/briefing,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/listeningstation)
 "TK" = (
