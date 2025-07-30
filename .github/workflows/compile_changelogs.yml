@@ -70,4 +70,4 @@ jobs:
         if: steps.value_holder.outputs.ACTIONS_ENABLED
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ steps.app-token-generation.outputs.token || secrets.GITHUB_TOKEN }}
+          github_token: ${{ steps.app-token-generation.outputs.token || secrets.SKYRATBOT_TOKEN || secrets.GITHUB_TOKEN }}
