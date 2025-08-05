@@ -83,6 +83,7 @@
 /datum/techweb_node/construction/New()
 	design_ids += list(
 		"polarizer",
+		"airbag",
 	)
 	return ..()
 
