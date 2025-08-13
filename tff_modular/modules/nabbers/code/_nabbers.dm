@@ -273,7 +273,6 @@
 		/datum/quirk/alexithymia,
 		// Нейтральные
 		/datum/quirk/item_quirk/bald,
-		/datum/quirk/item_quirk/borg_ready,
 		/datum/quirk/deviant_tastes,
 		/datum/quirk/foreigner,
 		/datum/quirk/gamer,
