@@ -11299,7 +11299,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
-/obj/structure/cable,
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/main)
 "bkN" = (
@@ -23714,7 +23713,6 @@
 /area/station/engineering/main)
 "cny" = (
 /obj/effect/landmark/start/station_engineer,
-/obj/structure/cable,
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/main)
 "cnA" = (
@@ -46173,6 +46171,7 @@
 /obj/item/clothing/accessory/badge/holo/warden,
 /obj/effect/turf_decal/trimline/dark_blue/filled/line,
 /obj/machinery/recharger,
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/station/security/warden)
 "nUe" = (
@@ -48629,6 +48628,16 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/station/security/execution)
+"puC" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/smooth_large,
+/area/station/engineering/main)
 "puJ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -93696,8 +93705,8 @@ cfb
 cfb
 cfb
 clR
-kja
-ckH
+puC
+cgR
 cMm
 cMm
 cDt
@@ -93953,7 +93962,7 @@ aeS
 ahx
 cjk
 cmF
-kja
+puC
 bkM
 cqP
 cMm
