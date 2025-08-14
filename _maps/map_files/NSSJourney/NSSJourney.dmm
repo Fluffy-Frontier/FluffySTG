@@ -11299,6 +11299,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/main)
 "bkN" = (
@@ -23713,6 +23714,7 @@
 /area/station/engineering/main)
 "cny" = (
 /obj/effect/landmark/start/station_engineer,
+/obj/structure/cable,
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/main)
 "cnA" = (
@@ -47847,16 +47849,6 @@
 	dir = 5
 	},
 /area/station/service/chapel)
-"oVX" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/turf/open/floor/iron/smooth_large,
-/area/station/engineering/main)
 "oWg" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -48634,16 +48626,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/station/security/execution)
-"puC" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/structure/cable,
-/turf/open/floor/iron/smooth_large,
-/area/station/engineering/main)
 "puJ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -93717,8 +93699,8 @@ cfb
 cfb
 cfb
 clR
-oVX
-cgR
+kja
+ckH
 cMm
 cMm
 cDt
@@ -93974,7 +93956,7 @@ aeS
 ahx
 cjk
 cmF
-puC
+kja
 bkM
 cqP
 cMm
