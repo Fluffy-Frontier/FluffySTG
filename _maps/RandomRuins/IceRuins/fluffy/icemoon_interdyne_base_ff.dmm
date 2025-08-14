@@ -167,6 +167,12 @@
 	},
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
+"aD" = (
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/main)
 "aE" = (
 /obj/structure/window/reinforced/survival_pod/spawner/directional/east{
 	pixel_x = 4
@@ -3265,12 +3271,14 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "oY" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/bridge_pipe/general/hidden{
+	dir = 4
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/interdyne_planetary_base/main)
@@ -6425,7 +6433,6 @@
 /area/ruin/interdyne_planetary_base/serv)
 "ES" = (
 /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general,
 /obj/structure/cable,
 /turf/open/floor/plating/reinforced,
 /area/ruin/interdyne_planetary_base/main)
@@ -8752,6 +8759,12 @@
 /obj/structure/closet/crate/secure/freezer/interdyne/blood,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
+"QE" = (
+/obj/machinery/atmospherics/pipe/bridge_pipe/general/hidden{
+	dir = 4
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/interdyne_planetary_base/main)
 "QI" = (
 /obj/effect/baseturf_helper/reinforced_plating/ceiling,
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
@@ -9546,8 +9559,8 @@
 "Um" = (
 /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/simple/general/visible{
-	dir = 8
+/obj/machinery/atmospherics/pipe/bridge_pipe/general/visible{
+	dir = 4
 	},
 /turf/open/floor/plating/reinforced,
 /area/ruin/interdyne_planetary_base/main)
@@ -11997,7 +12010,7 @@ dL
 Zl
 FQ
 FQ
-FQ
+QE
 FQ
 FQ
 FQ
@@ -12360,7 +12373,7 @@ nb
 nr
 xo
 sm
-ES
+aD
 FQ
 AF
 OV
