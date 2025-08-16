@@ -967,7 +967,9 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/south{
 	pixel_y = -4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
+/obj/machinery/atmospherics/pipe/bridge_pipe/general/hidden{
+	dir = 4
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "ey" = (
@@ -1092,10 +1094,11 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "fj" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
-/obj/structure/window/reinforced/plasma/spawner/directional/south,
-/turf/open/floor/catwalk_floor/iron_dark,
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/yellow/hidden,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/main)
 "fm" = (
 /obj/structure/chair/comfy/black{
@@ -1176,15 +1179,16 @@
 	pixel_x = -30;
 	pixel_y = 12
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "fF" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/floor/wood/large,
-/area/ruin/interdyne_planetary_base/serv)
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/bridge_pipe/general/visible{
+	dir = 4
+	},
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/main)
 "fG" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -1231,6 +1235,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
+/obj/structure/window/reinforced/plasma/spawner/directional/south,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/interdyne_planetary_base/main)
 "fR" = (
@@ -1338,7 +1343,6 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "gB" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/atmospherics/miner/nitrogen,
 /turf/open/floor/engine/n2,
@@ -1944,6 +1948,11 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
+"jm" = (
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/obj/structure/cable,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/main)
 "jn" = (
 /obj/structure/table/wood/fancy/black,
 /obj/item/choice_beacon/music,
@@ -2430,6 +2439,7 @@
 /obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/yellow/hidden,
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/main)
 "lr" = (
@@ -2636,8 +2646,8 @@
 /area/lavaland/surface/outdoors)
 "mr" = (
 /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general,
 /obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible,
 /turf/open/floor/plating/reinforced,
 /area/ruin/interdyne_planetary_base/main)
 "ms" = (
@@ -3280,6 +3290,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/trinary/filter/flipped,
+/obj/structure/window/reinforced/plasma/spawner/directional/west,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "pK" = (
@@ -5284,12 +5295,14 @@
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "Aw" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/bridge_pipe/general/hidden{
+	dir = 4
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/interdyne_planetary_base/main)
@@ -5357,6 +5370,9 @@
 /obj/effect/turf_decal/tile/dark/full,
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/interdyne_planetary_base/main)
@@ -5518,6 +5534,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "BM" = (
@@ -6215,9 +6232,6 @@
 	},
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 4
-	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "Fi" = (
@@ -6279,9 +6293,11 @@
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
 	},
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv)
@@ -9043,6 +9059,9 @@
 /area/ruin/interdyne_planetary_base/main)
 "Sy" = (
 /obj/effect/baseturf_helper/reinforced_plating,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/interdyne_planetary_base/science)
 "Sz" = (
@@ -9184,14 +9203,12 @@
 	color = "#A46106";
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "Tk" = (
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/carpet/red,
 /area/ruin/interdyne_planetary_base/serv)
 "Tl" = (
@@ -9354,9 +9371,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/interdyne_planetary_base/cargo)
 "Ug" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 1
 	},
@@ -9840,9 +9854,11 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/east{
 	pixel_x = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
 /obj/machinery/portable_atmospherics/scrubber,
 /obj/structure/window/reinforced/plasma/spawner/directional/west,
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 1
+	},
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/interdyne_planetary_base/main)
 "WG" = (
@@ -10090,10 +10106,8 @@
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/binary/volume_pump{
-	dir = 1
-	},
 /obj/structure/window/reinforced/plasma/spawner/directional/west,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/dark/hidden,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/interdyne_planetary_base/main)
 "Xv" = (
@@ -11938,8 +11952,8 @@ pq
 sh
 fP
 fj
-Ug
 lq
+Ug
 pq
 LW
 YZ
@@ -12175,7 +12189,7 @@ Xm
 DO
 BY
 ru
-mr
+jm
 pq
 TF
 Zg
@@ -12293,7 +12307,7 @@ Fk
 ny
 BY
 Aw
-mr
+fF
 pq
 nB
 Jz
@@ -12889,7 +12903,7 @@ eg
 Br
 Yb
 YE
-fF
+Yb
 eg
 Si
 eO
