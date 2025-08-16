@@ -1,4 +1,4 @@
-import { Channel } from './ChannelIterator';
+import type { Channel } from './ChannelIterator';
 import { RADIO_PREFIXES, RUS_PREFIXES, WindowSize } from './constants'; // TFF EDIT
 
 /**
@@ -59,8 +59,8 @@ export function getPrefix(
     return;
   }
 
-  // TFF EDIT START. ORIGINAL:
-  /* let adjusted = value
+  /* // TFF EDIT START. ORIGINAL:
+  const adjusted = value
   .slice(0, 3)
   ?.toLowerCase()
   ?.replace('.', ':') as keyof typeof RADIO_PREFIXES;
