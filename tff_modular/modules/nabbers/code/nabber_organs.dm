@@ -46,6 +46,10 @@
 	actions_types = list(/datum/action/item_action/organ_action/toggle)
 	var/active = FALSE
 
+/obj/item/organ/eyes/nabber/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NO_EYELIDS, INNATE_TRAIT)
+
 /obj/item/organ/eyes/nabber/ui_action_click(mob/user, actiontype)
 	if (istype(actiontype, /datum/action/item_action/organ_action/toggle))
 		toggle_shielding()
