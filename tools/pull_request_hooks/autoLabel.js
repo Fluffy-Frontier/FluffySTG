@@ -2,8 +2,8 @@ import * as autoLabelConfig from "./autoLabelConfig.js";
 
 function keyword_to_cl_label() {
   const keyword_to_cl_label = {};
-  for (let label in autoLabelConfig.changelog_labels) {
-    for (let keyword of autoLabelConfig.changelog_labels[label].keywords) {
+  for (const label in autoLabelConfig.changelog_labels) {
+    for (const keyword of autoLabelConfig.changelog_labels[label].keywords) {
       keyword_to_cl_label[keyword] = label;
     }
   }
@@ -23,7 +23,7 @@ function check_body_for_labels(body) {
   const keywords = keyword_to_cl_label();
 
   let found_cl = false;
-  for (let line of body.split("\n")) {
+  for (const line of body.split("\n")) {
     if (line.startsWith(":cl:")) {
       found_cl = true;
       continue;
@@ -53,9 +53,9 @@ function check_body_for_labels(body) {
 function check_title_for_labels(title) {
   const labels_to_add = [];
   const title_lower = title.toLowerCase();
-  for (let label in autoLabelConfig.title_labels) {
+  for (const label in autoLabelConfig.title_labels) {
     let found = false;
-    for (let keyword of autoLabelConfig.title_labels[label].keywords) {
+    for (const keyword of autoLabelConfig.title_labels[label].keywords) {
       if (title_lower.includes(keyword)) {
         found = true;
         break;
@@ -69,42 +69,22 @@ function check_title_for_labels(title) {
 }
 
 function check_diff_line_for_element(diff, element) {
-  const tag_re = new RegExp(`diff --git a/${element}/`); // NOVA EDIT CHANGE - original: const tag_re = new RegExp(`^diff --git a/${element}/`);
+  const tag_re = new RegExp(`^diff --git a/${element}/`);
   return tag_re.test(diff);
 }
 
-// NOVA SECTOR EDIT ADDITION START
-async function get_pull_request_diff(github, context) {
-  const diff = await github.rest.pulls.get({
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    pull_number: context.payload.pull_request.number,
-    mediaType: {
-      format: "diff",
-    },
-  });
-  return diff;
-}
-// NOVA SECTOR EDIT ADDITION END
-
 // Checks the file diff for labels to add or remove
-// NOVA SECTOR EDIT - original: async function check_diff_for_labels(diff_url) {
-async function check_diff_for_labels(github, context) {
+async function check_diff_for_labels(diff_url) {
   const labels_to_add = [];
   const labels_to_remove = [];
   try {
-    /* NOVA SECTOR EDIT START
     const diff = await fetch(diff_url);
     if (diff.ok) {
       const diff_txt = await diff.text();
-    */ // NOVA SECTOR EDIT END
-    const diff = await get_pull_request_diff(github, context);
-    if (diff.status === 200) {
-      const { data: diff_txt } = diff;
-      for (let label in autoLabelConfig.file_labels) {
+      for (const label in autoLabelConfig.file_labels) {
         let found = false;
         const { filepaths, add_only } = autoLabelConfig.file_labels[label];
-        for (let filepath of filepaths) {
+        for (const filepath of filepaths) {
           if (check_diff_line_for_element(diff_txt, filepath)) {
             found = true;
             break;
@@ -117,13 +97,57 @@ async function check_diff_for_labels(github, context) {
         }
       }
     } else {
-      console.error(`Failed to fetch diff: ${diff.status}`); // NOVA SECTOR EDIT - original: console.error(`Failed to fetch diff: ${diff.status} ${diff.statusText}`);
+      console.error(`Failed to fetch diff: ${diff.status} ${diff.statusText}`);
     }
   } catch (e) {
     console.error(e);
   }
   return { labels_to_add, labels_to_remove };
 }
+
+// NOVA EDIT ADDITION START
+async function check_diff_files_for_labels(github, context) {
+  const labels_to_add = [];
+  const labels_to_remove = [];
+  try {
+    const response = await github.rest.pulls.listFiles({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      pull_number: context.payload.pull_request.number,
+    });
+    if (response.status === 200) {
+      if (!response.data) {
+        throw new Error("Response does not contain any data!");
+      }
+      const changed_files = response.data.map(
+        (data_entry) => data_entry.filename
+      );
+      for (let label in autoLabelConfig.file_labels) {
+        let found = false;
+        const { filepaths, add_only } = autoLabelConfig.file_labels[label];
+        for (let filepath of filepaths) {
+          for (let filename of changed_files) {
+            if (filename.includes(filepath)) {
+              found = true;
+              break;
+            }
+          }
+        }
+        if (found) {
+          labels_to_add.push(label);
+        } else if (!add_only) {
+          labels_to_remove.push(label);
+        }
+      }
+    } else {
+      console.error(`Failed to get file list: ${diff.status}`);
+    }
+  } catch (e) {
+    console.error(e);
+  }
+  return { labels_to_add, labels_to_remove };
+}
+// NOVA EDIT ADDITION END
 
 export async function get_updated_label_set({ github, context }) {
   const { action, pull_request } = context.payload;
@@ -135,30 +159,30 @@ export async function get_updated_label_set({ github, context }) {
     title = "",
   } = pull_request;
 
-  let updated_labels = new Set();
-  for (let label of labels) {
+  const updated_labels = new Set();
+  for (const label of labels) {
     updated_labels.add(label.name);
   }
 
   // diff is always checked
   if (diff_url) {
-    const diff_tags = await check_diff_for_labels(github, context); // NOVA SECTOR EDIT - o original: const diff_tags = await check_diff_for_labels(github, context);
-    for (let label of diff_tags.labels_to_add) {
+    const diff_tags = await check_diff_files_for_labels(github, context); // NOVA EDIT CHANGE - ORIGINAL: const diff_tags = await check_diff_for_labels(diff_url);
+    for (const label of diff_tags.labels_to_add) {
       updated_labels.add(label);
     }
-    for (let label of diff_tags.labels_to_remove) {
+    for (const label of diff_tags.labels_to_remove) {
       updated_labels.delete(label);
     }
   }
   // body and title are only checked on open, not on sync
   if (action === "opened") {
     if (title) {
-      for (let label of check_title_for_labels(title)) {
+      for (const label of check_title_for_labels(title)) {
         updated_labels.add(label);
       }
     }
     if (body) {
-      for (let label of check_body_for_labels(body)) {
+      for (const label of check_body_for_labels(body)) {
         updated_labels.add(label);
       }
     }
