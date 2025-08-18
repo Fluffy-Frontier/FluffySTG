@@ -92,6 +92,9 @@
 /// Whenever we need to get the soul of the mob inside of the soulcatcher.
 #define COMSIG_SOULCATCHER_SCAN_BODY "soulcatcher_scan_body"
 
+/// When a soulcatcher room's joinability is updated by opening the room, closing the room, allowing ghosts, etc: from base of datum/component/soulcatcher/proc/update_joinability()
+#define COMSIG_SOULCATCHER_UPDATE_JOINABILITY "soulcatcher_update_joinability"
+
 // CORRUPTION SIGNALS
 
 /// From /obj/structure/fleshmind/structure/proc/activate_ability() (src)

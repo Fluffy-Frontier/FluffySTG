@@ -190,7 +190,6 @@
 /datum/antagonist/brother/admin_add(datum/mind/new_owner,mob/admin)
 	var/datum/team/brother_team/team = new
 	team.add_member(new_owner)
-	new_owner.add_antag_datum(/datum/antagonist/brother, team)
 	message_admins("[key_name_admin(admin)] made [key_name_admin(new_owner)] into a blood brother.")
 	log_admin("[key_name(admin)] made [key_name(new_owner)] into a blood brother.")
 
@@ -222,6 +221,8 @@
 		add_custom_objectives() // FLUFFY FRONTIER ADDITION - Custom Objectives
 	if (!new_member.has_antag_datum(/datum/antagonist/brother))
 		add_brother(new_member.current)
+	else
+		set_brothers_left(brothers_left - 1)
 
 /datum/team/brother_team/remove_member(datum/mind/member)
 	if (!(member in members))
