@@ -85,8 +85,6 @@
 	default = 2
 	integer = FALSE
 	min_val = 0
-<<<<<<< HEAD
-=======
 
 /// Defines whether or not the whitelist (if configured using USEWHITELIST) uses the SQL system.
 /datum/config_entry/flag/sql_whitelist
@@ -113,4 +111,3 @@
 		var/obj/item/organ/eyes/eyes = blinker.get_organ_slot(ORGAN_SLOT_EYES)
 		eyes?.blink()
 		CHECK_TICK
->>>>>>> 143e7cab978 (Adds the ability to disable blinking in server config (#5902))
