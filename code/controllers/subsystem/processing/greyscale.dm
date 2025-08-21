@@ -40,7 +40,9 @@ PROCESSING_SUBSYSTEM_DEF(greyscale)
 		var/datum/greyscale_config/config = configurations[greyscale_type]
 		config.CrossVerify()
 #ifdef USE_RUSTG_ICONFORGE_GAGS
+		warning("Executing load_gags_config_async... Args: \[[greyscale_type];; [config.raw_json_string];; [config.string_icon_file]\]")
 		job_ids += rustg_iconforge_load_gags_config_async(greyscale_type, config.raw_json_string, config.string_icon_file)
+		warning("Success!")
 
 	UNTIL(jobs_completed(job_ids))
 #endif
@@ -80,6 +82,7 @@ PROCESSING_SUBSYSTEM_DEF(greyscale)
 		return cached_file
 	var/output_path = "tmp/gags/icons/gags-[uid].dmi"
 	var/iconforge_output = rustg_iconforge_gags(type, colors, output_path)
+	warning("SECOND TEST. iconforge_output: [iconforge_output]. Args: \[[type];; [colors];; [output_path]\]")
 	// Handle errors from IconForge
 	if(iconforge_output != "OK")
 		CRASH(iconforge_output)
