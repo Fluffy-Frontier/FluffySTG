@@ -1,5 +1,3 @@
-var/datum/martial_art/martial_to_learn = new /datum/martial_art/nabber_grab()
-
 /obj/item/melee/nabber_blade
 	name = "Mantis arm"
 	desc = "A grotesque matn made out of bone and flesh that cleaves through people as a hot knife through butter."
@@ -24,9 +22,10 @@ var/datum/martial_art/martial_to_learn = new /datum/martial_art/nabber_grab()
 /obj/item/melee/nabber_blade/Initialize(mapload,silent,synthetic)
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
-	AddComponent(/datum/component/butchering, \
-	speed = 10 SECONDS, \
-	effectiveness = 80, \
+	AddComponent( \
+		/datum/component/butchering, \
+		speed = 10 SECONDS, \
+		effectiveness = 80, \
 	)
 
 /obj/item/melee/nabber_blade/afterattack(atom/target, mob/user, proximity)
@@ -47,18 +46,27 @@ var/datum/martial_art/martial_to_learn = new /datum/martial_art/nabber_grab()
 	name = "Toggle mantis arms"
 	desc = "Pump blood from manipulating arms into mantis arms, becoming a menace in close combat but loosing ability to interact."
 	cooldown_time = 5 SECONDS
+	button_icon = 'tff_modular/modules/nabbers/icons/actions.dmi'
 
 	var/obj/item/restraints/handcuffs/stored_handcuffs = null //Переменная для сохранения наручников
-
-	button_icon = 'tff_modular/modules/nabbers/icons/actions.dmi'
+	var/datum/martial_art/nabber_grab/martial_to_learn
 
 /datum/action/cooldown/toggle_arms/New(Target, original)
 	. = ..()
 	button_icon_state = "arms_off"
+	martial_to_learn = new(src)
 
 /datum/action/cooldown/toggle_arms/Destroy()
-	stored_handcuffs = null
-	. = ..()
+	if(owner)
+		if(stored_handcuffs)
+			stored_handcuffs.forceMove(stored_handcuffs.drop_location())
+			stored_handcuffs = null
+		for(var/obj/item/held in owner.held_items)
+			if(istype(held, /obj/item/melee/nabber_blade))
+				qdel(held)
+		UnregisterSignal(owner, COMSIG_CARBON_POST_REMOVE_LIMB)
+	QDEL_NULL(martial_to_learn)
+	return ..()
 
 /datum/action/cooldown/toggle_arms/Activate(atom/target)
 	var/mob/living/carbon/human/nabber = owner
@@ -73,16 +81,15 @@ var/datum/martial_art/martial_to_learn = new /datum/martial_art/nabber_grab()
 
 	if(nabber.num_hands < 2)
 		nabber.balloon_alert(nabber, "Need both hands!")
-		return	FALSE
+		return FALSE
 
-	var/obj/item/held = nabber.get_active_held_item()
-	var/obj/item/inactive = nabber.get_inactive_held_item()
+	var/obj/item/item_in_hands = nabber.get_active_held_item() || nabber.get_inactive_held_item()
 
-	if(((held || inactive) && !nabber.drop_all_held_items()) && !(istype((inactive || held), /obj/item/melee/nabber_blade)))
+	if((item_in_hands && !nabber.drop_all_held_items()) && !(istype(item_in_hands, /obj/item/melee/nabber_blade)))
 		nabber.balloon_alert(nabber, "Hands occupied!")
-		return	FALSE
+		return FALSE
 
-	else if(istype((inactive || held), /obj/item/melee/nabber_blade))
+	else if(istype(item_in_hands, /obj/item/melee/nabber_blade))
 		StartCooldown()
 		down_arms()
 		return TRUE
@@ -145,12 +152,12 @@ var/datum/martial_art/martial_to_learn = new /datum/martial_art/nabber_grab()
 				qdel(held)
 		button_icon_state = "arms_on"
 		nabber.update_action_buttons()
-		return	FALSE
+		return FALSE
 
 	nabber.balloon_alert(nabber, "Starting pumping blood out!")
 
 	if(!do_after(nabber, 2 SECONDS, nabber, IGNORE_USER_LOC_CHANGE))
-		return	FALSE
+		return FALSE
 
 	playsound(nabber, 'tff_modular/modules/nabbers/sounds/nabberscream.ogg', 70)
 	for(var/obj/item/held in nabber.held_items)

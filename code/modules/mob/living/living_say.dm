@@ -283,7 +283,7 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 	if((SEND_SIGNAL(src, COMSIG_MOVABLE_PRE_HEAR, args) & COMSIG_MOVABLE_CANCEL_HEARING) || !GET_CLIENT(src))
 		return FALSE
 
-// FLUFFY EDIT START Converts scrambled nabber's msg into emote for people
+	// FLUFFY FRONTIER EDIT START Converts scrambled nabber's msg into emote for people
 	if(ispath(message_language, /datum/language/nabber) && speaker != src)
 		var/gbs_translation_check = translate_language(speaker, message_language, raw_message, spans, message_mods)
 		if(raw_message != gbs_translation_check)
@@ -293,7 +293,7 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 	if(ispath(message_language, /datum/language/nabber) && isnabber(src))
 		message_mods[MODE_CUSTOM_SAY_EMOTE] = null
 		message_mods[MODE_CUSTOM_SAY_ERASE_INPUT] = FALSE
-	// FLUFFY EDIT END
+	// FLUFFY FRONTIER EDIT END
 
 	var/deaf_message
 	var/deaf_type

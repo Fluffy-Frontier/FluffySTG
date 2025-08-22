@@ -34,7 +34,7 @@
 		attached_part = src,
 		feature_key = OFFSET_GLASSES,
 		offset_y = list("north" = 10, "south" = 10, "east" = 10, "west" = 10),
-		offset_x = list("north" = 1, "south" = 1, "east" = 1, "west" = -1)
+		offset_x = list("north" = 1, "south" = 1, "east" = 1, "west" = -1),
 	)
 	return ..()
 
