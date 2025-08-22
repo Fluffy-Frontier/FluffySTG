@@ -17,6 +17,7 @@ PROCESSING_SUBSYSTEM_DEF(greyscale)
 #endif
 
 /datum/controller/subsystem/processing/greyscale/Initialize()
+	warning("STARTING")
 	for(var/datum/greyscale_layer/greyscale_layer as anything in subtypesof(/datum/greyscale_layer))
 		layer_types[initial(greyscale_layer.layer_type)] = greyscale_layer
 
@@ -34,7 +35,7 @@ PROCESSING_SUBSYSTEM_DEF(greyscale)
 	var/list/job_ids = list()
 #endif
 
-	warning("STARTING")
+	warning("USE_RUSTG_ICONFORGE_GAGS is currently: [USE_RUSTG_ICONFORGE_GAGS]")
 	// This final verification step is for things that need other greyscale configurations to be finished loading
 	for(var/greyscale_type as anything in configurations)
 		CHECK_TICK
