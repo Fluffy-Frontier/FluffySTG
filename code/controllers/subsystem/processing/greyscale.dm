@@ -35,7 +35,6 @@ PROCESSING_SUBSYSTEM_DEF(greyscale)
 	var/list/job_ids = list()
 #endif
 
-	warning("USE_RUSTG_ICONFORGE_GAGS is currently: [USE_RUSTG_ICONFORGE_GAGS]")
 	// This final verification step is for things that need other greyscale configurations to be finished loading
 	for(var/greyscale_type as anything in configurations)
 		CHECK_TICK
