@@ -34,6 +34,7 @@ PROCESSING_SUBSYSTEM_DEF(greyscale)
 	var/list/job_ids = list()
 #endif
 
+	warning("STARTING")
 	// This final verification step is for things that need other greyscale configurations to be finished loading
 	for(var/greyscale_type as anything in configurations)
 		CHECK_TICK
