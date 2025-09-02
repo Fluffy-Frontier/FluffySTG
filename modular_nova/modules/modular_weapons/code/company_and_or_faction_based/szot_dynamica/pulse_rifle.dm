@@ -25,7 +25,8 @@
 	burst_size = 3
 	fire_delay = 2
 
-	spread = 1
+	projectile_damage_multiplier = 0.8 //FLUFFY FRONTIER EDIT. ZAIBAS NERF. ORIGINAL: 1
+	spread = 3 //FLUFFY FRONTIER EDIT. ZAIBAS NERF. ORIGINAL: 1
 	recoil = 0.5
 
 	w_class = WEIGHT_CLASS_BULKY
