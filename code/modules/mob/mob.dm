@@ -26,7 +26,7 @@
 /mob/Destroy()
 	if(client)
 		stack_trace("Mob with client has been deleted.")
-	else if(ckey)
+	else if(ckey && !IS_FAKE_KEY(ckey)) // FUCK YOU AGHOST CODE FUCK YOU
 		stack_trace("Mob without client but with associated ckey, [ckey], has been deleted.")
 
 	persistent_client?.set_mob(null)
@@ -833,12 +833,24 @@
 	if(!check_respawn_delay())
 		return
 
-	//NOVA EDIT ADDITION
+	//NOVA EDIT ADDITION START
 	if(ckey)
 		if(is_banned_from(ckey, BAN_RESPAWN))
 			to_chat(usr, "<span class='boldnotice'>You are respawn banned, you can't respawn!</span>")
 			return
-	//NOVA EDIT END
+
+	//DNR TRAIT
+	if(!istype(src, /mob/dead/observer)) //Quick check to make sure they Ghosted first (so we can use stay_dead())
+		to_chat(usr, span_boldnotice("You must be Ghosted to use this!"))
+		return
+	var/mob/dead/observer/user_ghost = src //We already know they're a ghost from the above
+	//Check if the ghost is tied to a body; if so, after confirming they want to abandon it, set the body DNR
+	//(Respawn already detaches them from the body permanently... just doesn't actually make the body itself unrevivable)
+	if(user_ghost.can_reenter_corpse)
+		if(tgui_alert(usr, "Are you sure you want to Respawn? Your old body will become unrevivable!", "Respawn", list("Yes", "No")) != "Yes")
+			return
+		user_ghost.stay_dead()
+	//NOVA EDIT ADDITION END
 
 	usr.log_message("used the respawn button.", LOG_GAME)
 
@@ -1115,7 +1127,7 @@
 	if (Adjacent(A))
 		return TRUE
 	var/datum/dna/mob_dna = has_dna()
-	if(mob_dna?.check_mutation(/datum/mutation/human/telekinesis) && tkMaxRangeCheck(src, A))
+	if(mob_dna?.check_mutation(/datum/mutation/telekinesis) && tkMaxRangeCheck(src, A))
 		return TRUE
 	var/obj/item/item_in_hand = get_active_held_item()
 	if(istype(item_in_hand, /obj/item/machine_remote))
@@ -1591,11 +1603,6 @@
 	. = stat
 	stat = new_stat
 	SEND_SIGNAL(src, COMSIG_MOB_STATCHANGE, new_stat, .)
-
-/// Proc used for custom metabolization of reagents, if any
-/mob/proc/reagent_check(datum/reagent/chem, seconds_per_tick, times_fired)
-	SHOULD_CALL_PARENT(TRUE)
-	return SEND_SIGNAL(src, COMSIG_MOB_REAGENT_CHECK, chem, seconds_per_tick, times_fired)
 
 /mob/vv_edit_var(var_name, var_value)
 	switch(var_name)

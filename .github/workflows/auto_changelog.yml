@@ -14,7 +14,7 @@ jobs:
     if: github.event.pull_request.merged == true
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Generate App Token
         id: app-token-generation
@@ -33,4 +33,4 @@ jobs:
           script: |
             const { processAutoChangelog } = await import('${{ github.workspace }}/tools/pull_request_hooks/autoChangelog.js')
             await processAutoChangelog({ github, context })
-          github-token: ${{ steps.app-token-generation.outputs.token || secrets.GITHUB_TOKEN }}
+          github-token: ${{ steps.app-token-generation.outputs.token || secrets.SKYRATBOT_TOKEN || secrets.GITHUB_TOKEN }}

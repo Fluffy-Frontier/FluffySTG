@@ -23,7 +23,7 @@
 /mob/dead/new_player/Initialize(mapload)
 	if(client && SSticker.state == GAME_STATE_STARTUP)
 		var/atom/movable/screen/splash/fade_out = new(null, null, client, TRUE)
-		fade_out.Fade(TRUE)
+		fade_out.fade(TRUE)
 
 	if(length(GLOB.newplayer_start))
 		forceMove(pick(GLOB.newplayer_start))
@@ -70,14 +70,14 @@
 		ready = PLAYER_NOT_READY
 		return FALSE
 
-	// FLUFFT FRONTIER ADDITION START - toggle_observing
+	// FLUFFY FRONTIER ADDITION START - toggle_observing
 	if(!GLOB.observing_allowed)
 		if(!check_rights(R_ADMIN, FALSE))
 			alert(usr, "Observing is currently disabled!", "Observe")
 			return FALSE
 		if(alert(usr, "Observing is currently disabled, do you want\nto use your permissions to circumvent it?", "Observe", "Yes", "No") != "Yes")
 			return FALSE
-	// FLUFFT FRONTIER ADDITION END
+	// FLUFFY FRONTIER ADDITION END
 
 	var/less_input_message
 	if(SSlag_switch.measures[DISABLE_DEAD_KEYLOOP])
@@ -299,11 +299,6 @@
 			if (item.restricted_roles && length(item.restricted_roles) && !(job.title in item.restricted_roles))
 				continue
 			item.post_equip_item(humanc.client?.prefs, humanc)
-		if(iskobold(humanc))
-			humanc.dna.add_mutation(/datum/mutation/human/race, MUT_NORMAL)
-			humanc.dna.activate_mutation(/datum/mutation/human/race) // awful hack but adding mutations breaks char previews
-			humanc.dna.add_mutation(/datum/mutation/human/clever, MUT_NORMAL)
-			humanc.dna.activate_mutation(/datum/mutation/human/clever)
 	// NOVA EDIT ADDITION END
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
