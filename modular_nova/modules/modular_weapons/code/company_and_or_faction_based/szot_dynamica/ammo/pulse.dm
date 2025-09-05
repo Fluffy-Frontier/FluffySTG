@@ -43,8 +43,8 @@
 	. = ..()
 	AddElement(/datum/element/item_scaling, 0.45, 1)
 	remaining_uses = max_uses
-	//if(projectile_type) // FLUFFY EDIT: BUGFIX?. ВНИМАНИЕ: БАГ, Возможно где-то здесь добавляются лишние 15 снарядов при спавне оружия. Так же снаряды могут врезаться в стрелка, если тот бежит вслед за ними.
-	//	loaded_projectile = new projectile_type(src)
+	if(projectile_type)
+		loaded_projectile = new projectile_type(src)
 
 /obj/item/ammo_casing/pulse/ready_proj(atom/target, mob/living/user, quiet, zone_override, atom/fired_from)
 	if(remaining_uses <= 0)
