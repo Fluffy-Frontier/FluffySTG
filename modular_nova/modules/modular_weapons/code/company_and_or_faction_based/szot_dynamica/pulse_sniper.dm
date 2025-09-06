@@ -23,10 +23,10 @@
 	rack_sound = 'modular_nova/modules/modular_weapons/sounds/pulse_pull.ogg'
 	bolt_drop_sound = 'modular_nova/modules/modular_weapons/sounds/pulse_push.ogg'
 
-	spread = 2.5
+	spread = 3 //FLUFFY FRONTIER EDIT. ZAIBAS NERF. ORIGINAL: 2.5
 	recoil = 1
-	projectile_damage_multiplier = 2
-	projectile_speed_multiplier = 2.5
+	projectile_damage_multiplier = 1.5 //FLUFFY FRONTIER EDIT. ZAIBAS NERF. ORIGINAL: 2
+	projectile_speed_multiplier = 2 //FLUFFY FRONTIER EDIT. ZAIBAS NERF. ORIGINAL: 2.5
 
 	weapon_weight = WEAPON_HEAVY
 	internal_magazine = TRUE

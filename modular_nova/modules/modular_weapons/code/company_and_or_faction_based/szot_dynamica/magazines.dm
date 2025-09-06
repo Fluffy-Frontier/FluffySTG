@@ -150,7 +150,7 @@
 	icon_state = "zaibas_mag"
 	ammo_type = /obj/item/ammo_casing/pulse
 	caliber = "pulse"
-	max_ammo = 3
+	max_ammo = 2 //FLUFFY FRONTIER EDIT. ZAIBAS NERF. ORIGINAL: 3.
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 	///Purely flavor short designation that appears in the magazines' notes.
 	var/magazine_designation = "'SD-3C'"
