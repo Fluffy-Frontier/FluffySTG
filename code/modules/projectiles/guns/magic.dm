@@ -18,8 +18,7 @@
 	var/charge_timer = 0
 	/// Whether this wand/staff recharges on its own over time.
 	/// (This is not related to the spell "Charge" whatsoever!)
-	var/can_charge = TRUE
-	var/ammo_type
+	ammo_type
 	var/no_den_usage
 	clumsy_check = 0
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL // Has no trigger at all, uses magic instead
@@ -102,7 +101,8 @@
 	. = ..()
 	charges = max_charges
 	if(ammo_type)
-		chambered = new ammo_type(src)
+		var/ammo = pick(ammo_type)
+		chambered = new ammo(src)
 	if(can_charge)
 		START_PROCESSING(SSobj, src)
 	RegisterSignal(src, COMSIG_ITEM_RECHARGED, PROC_REF(instant_recharge))

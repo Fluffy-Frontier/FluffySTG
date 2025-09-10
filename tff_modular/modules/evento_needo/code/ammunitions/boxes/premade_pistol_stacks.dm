@@ -21,12 +21,6 @@
 	icon_state = "10mmbox-hp"
 	ammo_type = /obj/item/ammo_casing/c10mm/hp
 
-/obj/item/ammo_box/magazine/c10mm_box/rubber
-	name = "box of rubber 10x22mm ammo"
-	desc = "A box of 10x22mm rubbershot ammo, designed to disable targets without causing serious damage."
-	icon_state = "10mmbox-rubbershot"
-	ammo_type = /obj/item/ammo_casing/c10mm/rubber
-
 // 9x18mm (Commander + SABR)
 
 /obj/item/ammo_box/magazine/c9mm_box
@@ -78,12 +72,6 @@
 	desc = "A box of .45 hollow point ammo, designed to cause massive tissue damage at the cost of armor penetration."
 	icon_state = "45box-hp"
 	ammo_type = /obj/item/ammo_casing/c45/hp
-
-/obj/item/ammo_box/magazine/c45_box/rubber
-	name = "box of rubbershot .45 ammo"
-	desc = "A box of .45 rubbershot ammo, designed to disable targets without causing serious damage."
-	icon_state = "45box-rubbershot"
-	ammo_type = /obj/item/ammo_casing/c45/rubber
 
 // .22 LR (Himehabu, Pounder)
 

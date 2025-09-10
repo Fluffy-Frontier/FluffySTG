@@ -131,3 +131,29 @@
 	desc = "A 7.62x40mm CLIP rubber bullet casing."
 	icon_state = "rifle-brass-rubber"
 	projectile_type = /obj/projectile/bullet/a762_40/rubber
+
+//.299
+
+/obj/item/ammo_casing/caseless/c299
+	name = ".299 Eoehoma caseless bullet casing"
+	desc = "A .299 Eoehoma caseless bullet casing."
+	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo_bullets.dmi'
+	icon_state = "caseless"
+	caliber = CALIBER_299
+	projectile_type = /obj/projectile/bullet/c299
+
+
+// 8x58mm Caseless (SSG-669C)
+
+/obj/item/ammo_casing/caseless/a858
+	name = "8x58mm caseless round"
+	desc = "A 8x58mm caseless round."
+	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo_bullets.dmi'
+	icon_state = "caseless"
+	caliber = CALIBER_A858
+	projectile_type = /obj/projectile/bullet/a858
+
+/obj/item/ammo_casing/caseless/a858/trac
+	name = "8x58mm tracker round"
+	desc = "A 8x58mm caseless tracker round."
+	projectile_type = /obj/projectile/bullet/a858/trac

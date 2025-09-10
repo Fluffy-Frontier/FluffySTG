@@ -123,3 +123,11 @@
 	damage = 15
 	stamina = 40
 	armour_penetration = 10
+
+// .299 Eoehoma Caseless (E-40)
+
+/obj/projectile/bullet/c299
+	name = ".299 Eoehoma caseless bullet"
+	damage = 20
+	armour_penetration = 10
+	speed = BULLET_SPEED_RIFLE

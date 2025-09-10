@@ -435,6 +435,141 @@
 	if(updating_health)
 		updatehealth()
 
+
+/mob/living/carbon/human/proc/adjustSanityLoss(amount, forced = FALSE)
+	if((HAS_TRAIT(src, TRAIT_GODMODE)) || stat == DEAD)
+		return FALSE
+	if(!forced && amount < 0)
+		return FALSE
+	sanityloss = clamp(sanityloss + amount, 0, maxSanity)
+	if(HAS_TRAIT(src, TRAIT_SANITYIMMUNE))
+		sanityloss = 0
+	if(sanityhealth > maxSanity)
+		sanityhealth = maxSanity
+	sanityhealth = clamp((maxSanity - sanityloss), 0, maxSanity)
+	if(amount > 0)
+		playsound(loc, 'tff_modular/modules/evento_needo/sounds/Tegusounds/sanity_damage.ogg', min(amount, 50), TRUE, -1)
+	else if(amount < 0)
+		var/turf/T = get_turf(src)
+		new /obj/effect/temp_visual/sparkles/sanity_heal(T)
+	if(sanity_lost && sanityhealth >= maxSanity)
+		QDEL_NULL(ai_controller)
+		sanity_lost = FALSE
+		grab_ghost(force = TRUE)
+		remove_status_effect(/datum/status_effect/panicked_type)
+		visible_message(span_boldnotice("[src] comes back to [p_their(TRUE)] senses!"), \
+						span_boldnotice("You are back to normal!"))
+	else if(!sanity_lost && sanityhealth <= 0)
+		sanity_lost = TRUE
+		apply_status_effect(/datum/status_effect/panicked)
+		SanityLossEffect()
+	update_sanity_hud()
+	med_hud_set_sanity()
+	if(sanityloss > 0)
+		received_sanity_loss()
+	return amount
+
+/mob/living/carbon/human/proc/SanityLossEffect()
+	if((HAS_TRAIT(src, TRAIT_GODMODE)) || HAS_TRAIT(src, TRAIT_SANITYIMMUNE) || stat >= HARD_CRIT)
+		return
+	var/attribute = get_major_clothing_class()
+	if(attribute == CLOTHING_BASIC)
+		attribute = pick(CLOTHING_ARMORED, CLOTHING_ENGINEERING, CLOTHING_SCIENCE, CLOTHING_SERVICE)
+	QDEL_NULL(ai_controller) // In case there was one already
+	SEND_SIGNAL(src, COMSIG_HUMAN_INSANE, attribute)
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_HUMAN_INSANE, src, attribute)
+	playsound(loc, 'tff_modular/modules/evento_needo/sounds/Tegusounds/sanity_lost.ogg', 75, TRUE, -1)
+	var/warning_text = "[src] shakes for a moment..."
+	var/datum/status_effect/panicked_type/status_effect_type
+	switch(attribute)
+		if(CLOTHING_ENGINEERING)
+			ai_controller = /datum/ai_controller/insane/murder
+			warning_text = "[src] screams for a moment, murderous intent shining in [p_their()] eyes."
+			status_effect_type = /datum/status_effect/panicked_type/murder
+		if(CLOTHING_SCIENCE)
+			ai_controller = /datum/ai_controller/insane/suicide
+			warning_text = "[src] stops moving entirely, [p_they()] lost all hope..."
+			status_effect_type = /datum/status_effect/panicked_type/suicide
+		if(CLOTHING_SERVICE)
+			ai_controller = /datum/ai_controller/insane/wander
+			warning_text = "[src] twitches for a moment, [p_their()] eyes looking for a way out."
+			status_effect_type = /datum/status_effect/panicked_type/wander
+		if(CLOTHING_ARMORED)
+			ai_controller = /datum/ai_controller/insane/release
+			warning_text = "[src] laughs for a moment, as [p_they()] start[p_s()] approaching nearby containment zones."
+			status_effect_type = /datum/status_effect/panicked_type/release
+	apply_status_effect(status_effect_type)
+	visible_message(span_bolddanger("[warning_text]"), \
+					span_userdanger("You've been overwhelmed by what is going on in this place... There's no hope!"))
+	var/turf/T = get_turf(src)
+	if(mind)
+		if(mind.name && mind.active)
+			deadchat_broadcast(" has went insane(<i>[initial(status_effect_type.icon)]</i>) at <b>[get_area_name(T)]</b>.", "<b>[mind.name]</b>", follow_target = src, turf_target = T, message_type=DEADCHAT_DEATHRATTLE)
+	ghostize(1)
+	InitializeAIController()
+	SpreadPanic(FALSE)
+	return TRUE
+
+
+/mob/living/carbon/human/proc/SpreadPanic(death = TRUE)
+	var/list/result_text_list = list(
+		1 = list("Damn it all, someone died", "Comrade down! Comrade down!", "And they're gone forever..."),
+		2 = list("[real_name] is really dead...", "I can't let them kill me too.", "Is [real_name] really dead? Is it my turn?"),
+		3 = list("My god...", "If even [real_name]'s dead, then...", "I won't last... Even [real_name]'s died now..."),
+		4 = list("It's over for me.", "I can't believe [real_name] died... How...", "WE'RE ALL GOING TO DIE!!!!")
+		)
+	if(!death) // Insane text
+		result_text_list = list(
+			1 = list("We've got someone panicking!", "Someone's just hit the maximum mental corruption level!", "I don't want to hear those screams of pain anymore..."),
+			2 = list("Even the seniors can go insane just the same...", "Please don’t give up on your mind.", "Oh [real_name]... Please come back to your senses..."),
+			3 = list("The high rankers go crazy, too...", "Just how long will I endure this madness?", "[real_name]... They hit the maximum mental corruption level... Oh God..."),
+			4 = list("Madness rules this place...", "[real_name]... [real_name]... Not you... You were supposed to protect us...", "WE WILL ALL BE DRIVEN MAD AND DIE JUST LIKE THEM!!")
+			)
+	for(var/mob/living/carbon/human/H in view(7, src))
+		if(H == src) // Don't affect yourself
+			continue
+		if(H.stat == DEAD)
+			continue
+		if(HAS_TRAIT(H, TRAIT_COMBATFEAR_IMMUNE))
+			continue
+		if(!faction_check_atom(H)) // If you killed an enemy, you won't go insane
+			continue
+		var/sanity_result = round(get_clothing_class_level(get_major_clothing_class()) - H.get_clothing_class_level(H.get_major_clothing_class())) + death // Going insane doesn't deal as much damage
+		var/sanity_damage = 0
+		var/result_text = pick(result_text_list[clamp(sanity_result, 1, 4)])
+		switch(sanity_result)
+			if(-INFINITY to 0)
+				continue
+			if(1)
+				sanity_damage = H.maxSanity*0.1
+				H.apply_status_effect(/datum/status_effect/panicked_lvl_1)
+				if(H.sanity_lost)
+					continue
+				to_chat(H, "<span class='warning'>[result_text]</span>")
+			if(2)
+				sanity_damage = H.maxSanity*0.3
+				H.apply_status_effect(/datum/status_effect/panicked_lvl_2)
+				if(H.sanity_lost)
+					continue
+				to_chat(H, "<span class='danger'>[result_text]</span>")
+			if(3)
+				sanity_damage = H.maxSanity*0.6
+				H.apply_status_effect(/datum/status_effect/panicked_lvl_3)
+				if(H.sanity_lost)
+					continue
+				to_chat(H, "<span class='userdanger'>[result_text]</span>")
+			if(4 to INFINITY)
+				sanity_damage = H.maxSanity*0.95
+				H.apply_status_effect(/datum/status_effect/panicked_lvl_4)
+				if(H.sanity_lost)
+					continue
+				to_chat(H, "<span class='userdanger'><b>[result_text]</b></span>")
+		H.adjustSanityLoss(sanity_damage)
+	return
+
+/mob/living/carbon/human/proc/received_sanity_loss()
+	addtimer(CALLBACK(src, PROC_REF(adjustSanityLoss), -20, TRUE, TRUE), 20 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE)
+
 /mob/living/proc/adjustOrganLoss(slot, amount, maximum, required_organ_flag)
 	return
 

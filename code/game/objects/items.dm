@@ -254,6 +254,14 @@
 	/// Do we apply a click cooldown when resisting this object if it is restraining them?
 	var/resist_cooldown = CLICK_CD_BREAKOUT
 
+	///No item attack animation, only person tilt.
+	var/run_item_attack_animation = TRUE
+
+	/// Whether it sweeps in an arc or not.
+	var/swingstyle = WEAPONSWING_NONE
+	/// What Color its swing animation is
+	var/swingcolor
+
 /obj/item/Initialize(mapload)
 	if(attack_verb_continuous)
 		attack_verb_continuous = string_list(attack_verb_continuous)
@@ -290,6 +298,8 @@
 
 	setup_reskinning()
 
+	if(swingstyle > WEAPONSWING_NONE)
+		GetSwingColor()
 
 /obj/item/Destroy(force)
 	// This var exists as a weird proxy "owner" ref
@@ -1515,6 +1525,17 @@
 	if(SEND_SIGNAL(src, COMSIG_ITEM_OFFER_TAKEN, offerer, taker) & COMPONENT_OFFER_INTERRUPT)
 		return TRUE
 
+///Intended for interactions with guns, like racking
+/obj/item/proc/unique_action(mob/living/user)
+	if(SEND_SIGNAL(src, COMSIG_ITEM_UNIQUE_ACTION, user))
+		return TRUE
+
+///Called before unique action, if any other associated items should do a unique action or override it.
+/obj/item/proc/pre_unique_action(mob/living/user)
+	if(SEND_SIGNAL(src,COMSIG_CLICK_UNIQUE_ACTION,user) & OVERRIDE_UNIQUE_ACTION)
+		return TRUE
+	return FALSE //return true if the proc should end here
+
 /// NOVA EDIT ADDITION START
 /obj/item/reskin_obj(mob/M)
 	if(!uses_advanced_reskins)
@@ -2151,3 +2172,14 @@
 		target_limb = victim.get_bodypart(target_limb) || victim.bodyparts[1]
 
 	return get_embed()?.embed_into(victim, target_limb)
+
+/**
+ * * Sets the Swing Color of an item, typically by calling GetAverageColor.
+*/
+/obj/item/proc/GetSwingColor()
+	// If we had a default and got washed or something, then we return to that.
+	if(initial(swingcolor) && !color)
+		swingcolor = initial(swingcolor)
+		return
+	// Otherwise we find what our current icon's average is.
+	//swingcolor = GetAverageColor(src)

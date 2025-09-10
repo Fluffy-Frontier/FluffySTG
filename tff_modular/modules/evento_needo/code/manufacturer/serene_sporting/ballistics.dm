@@ -1,3 +1,6 @@
+#define SERENE_ATTACHMENTS list(/obj/item/attachment/rail_light, /obj/item/attachment/bayonet,/obj/item/attachment/scope,/obj/item/attachment/long_scope, /obj/item/attachment/sling, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
+#define SERENE_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_RAIL = 1, ATTACHMENT_SLOT_SCOPE = 1)
+
 /* Micro Target */
 
 /obj/item/gun/ballistic/automatic/pistol/m17
@@ -22,21 +25,26 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 	spread = 15
+	spread_unwielded = 35
 	recoil = -2
+	recoil_unwielded = -2
 
-/obj/item/ammo_box/magazine/m17
-	name = "Model 17 magazine (.22lr)"
-	desc = "A 10-round magazine for the Model 17 \"Micro Target\". These rounds do okay damage with awful performance against armor."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "m17_mag"
-	base_icon_state = "m17_mag"
-	ammo_type = /obj/item/ammo_casing/c22lr
-	caliber = CALIBER_22LR
-	max_ammo = 10
-	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	wield_slowdown = PISTOL_SLOWDOWN
 
-/obj/item/ammo_box/magazine/m17/empty
-	start_empty = TRUE
+	valid_attachments = list(
+		/obj/item/attachment/m17_barrel,
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 30,
+			"y" = 23,
+		),
+	)
+
+	default_attachments = list(/obj/item/attachment/m17_barrel)
 
 /* Auto Elite */
 
@@ -63,39 +71,19 @@
 	eject_sound = 'tff_modular/modules/evento_needo/sounds/pistol/deagle_unload.ogg'
 	eject_empty_sound = 'tff_modular/modules/evento_needo/sounds/pistol/deagle_unload.ogg'
 
+	recoil_unwielded = 4
 	recoil = 1
 
-/obj/item/ammo_box/magazine/m20_auto_elite
-	name = "Model 20 magazine (.44 Roumain)"
-	desc = "A nine-round magazine designed for the Model 20 pistol. These rounds do good damage, and fare better against armor."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "cm23_mag-1"
-	base_icon_state = "cm23_mag"
-	ammo_type = /obj/item/ammo_casing/a44roum
-	caliber = CALIBER_44ROUMAIN
-	max_ammo = 9
-
-/obj/item/ammo_box/magazine/m20_auto_elite/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
-
-/obj/item/ammo_box/magazine/m20_auto_elite/empty
-	start_empty = TRUE
-
-/obj/item/gun/ballistic/automatic/pistol/m20_auto_elite/inteq
-	name = "PO-20 Pinscher"
-	desc = "A large handgun chambered .44 Roumain and manufactured by Serene Outdoors. Modified to Inteq Risk Management Group's standards and issued as a heavy sidearm for officers."
-
-	icon = 'tff_modular/modules/evento_needo/icons/inteq/48x32.dmi'
-	lefthand_file = 'tff_modular/modules/evento_needo/icons/serene_outdoors/lefthand.dmi'
-	righthand_file = 'tff_modular/modules/evento_needo/icons/serene_outdoors/righthand.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/serene_outdoors/onmob.dmi'
-	icon_state = "m20_inteq"
-	inhand_icon_state = "inteq_generic"
-	accepted_magazine_type = /obj/item/ammo_box/magazine/m20_auto_elite
-
-/obj/item/ammo_box/magazine/m20_auto_elite/inteq/empty
-	start_empty = TRUE
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 33,
+			"y" = 22,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 17,
+		)
+	)
 
 /* Sporter */
 
@@ -116,42 +104,52 @@
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m12_sporter
 
 	fire_delay =  0.4 SECONDS
+	burst_size = 1
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
-	bolt_type = BOLT_TYPE_LOCKING
 	burst_fire_selection = FALSE
+	bolt_type = BOLT_TYPE_LOCKING
+
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/gauss/claris.ogg'
 
 	spread = 0
+	spread_unwielded = 15
 	recoil = 0
+	recoil_unwielded = 2
+	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
+	wield_delay = 1 SECONDS
 
-/obj/item/ammo_box/magazine/m12_sporter
-	name = "Model 12 magazine (.22lr)"
-	desc = "A 25-round magazine for the Model 12 \"Sporter\". These rounds do okay damage with awful performance against armor."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "m12_mag-1"
-	base_icon_state = "m12_mag"
-	ammo_type = /obj/item/ammo_casing/c22lr
-	caliber = CALIBER_22LR
-	max_ammo = 25
+	valid_attachments = SERENE_ATTACHMENTS
+	slot_available = SERENE_ATTACH_SLOTS
 
-/obj/item/ammo_box/magazine/m12_sporter/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
-
-/obj/item/ammo_box/magazine/m12_sporter/empty
-	start_empty = TRUE
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 44,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 17,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 28,
+			"y" = 17,
+		)
+	)
 
 /obj/item/gun/ballistic/automatic/m12_sporter/mod
 	name = "Model 13 \"Larker\""
 	desc = "A common after-market modification of the Model 12 \"Sporter\" rifle, keyed to fire a three round burst."
 	burst_size = 3
 	burst_delay = 0.6
-	burst_fire_selection = TRUE
 
 	icon_state = "larker"
 	inhand_icon_state = "larker"
 	worn_icon_state = "larker"
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "triptych")
+	default_firemode = FIREMODE_BURST
 
 /* woodsman */
 
@@ -171,7 +169,6 @@
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m23
 
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/rifle/ssg669c.ogg'
-
 	bolt_type = BOLT_TYPE_LOCKING
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
@@ -179,41 +176,31 @@
 	slot_flags = ITEM_SLOT_BACK
 
 	spread = -4
+	spread_unwielded = 20
 	recoil = 1.25
+	recoil_unwielded = 6
 	fire_delay = 0.5 SECONDS
-	burst_size = 1
+	wield_delay = 1.15 SECONDS //a little longer and less wieldy than other DMRs
+	zoom_out_amt = 2
 
-/obj/item/gun/ballistic/automatic/marksman/woodsman/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/scope, range_modifier = 1.5)
+	can_be_sawn_off = FALSE
 
-/obj/item/ammo_box/magazine/m23
-	name = "Model 23 magazine (8x50mmR)"
-	desc = "A 5-round magazine for the Model 23 \"Woodsman\". These rounds do high damage, with excellent armor penetration."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "woodsman_mag-1"
-	base_icon_state = "woodsman_mag"
-	ammo_type = /obj/item/ammo_casing/a8_50r
-	caliber = CALIBER_8X50MM
-	max_ammo = 5
+	valid_attachments = SERENE_ATTACHMENTS
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+		)
 
-/obj/item/ammo_box/magazine/m23/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
-
-/obj/item/ammo_box/magazine/m23/empty
-	start_empty = TRUE
-
-/obj/item/ammo_box/magazine/m23/extended
-	name = "Model 23 Extended Magazine (8x50mmR)"
-	desc = "A 10-round magazine for the Model 23 \"Woodsman\". These rounds do high damage, with excellent armor penetration."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "woodsman_extended-1"
-	base_icon_state = "woodsman_extended"
-	max_ammo = 10
-
-/obj/item/ammo_box/magazine/m23/extended/empty
-	start_empty = TRUE
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 32,
+			"y" = 18,
+		)
+	)
 
 /* super soaker */
 
@@ -240,24 +227,29 @@
 	slot_flags = ITEM_SLOT_BACK
 
 	spread = 0
+	spread_unwielded = 20
 	recoil = 0.5
+	recoil_unwielded = 3
+	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
+	wield_delay = 1 SECONDS
 
-/obj/item/ammo_box/magazine/m15
-	name = "Model 15 magazine (5.56x42mm CLIP)"
-	desc = "A 20-round magazine for the Model 15 \"Super Sporter\". These rounds do average damage and perform moderately against armor."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "cm15_mag"
-	base_icon_state = "cm15_mag"
-	ammo_type = /obj/item/ammo_casing/a556_42
-	caliber = CALIBER_556X42MM
-	max_ammo = 20
+	valid_attachments = SERENE_ATTACHMENTS
+	slot_available = SERENE_ATTACH_SLOTS
 
-/obj/item/ammo_box/magazine/m15/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
-
-/obj/item/ammo_box/magazine/m15/empty
-	start_empty = TRUE
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 47,
+			"y" = 21,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 13,
+			"y" = 23,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 24,
+			"y" = 19,
+		)
+	)
 
 /* cuckmaster */
 
@@ -280,13 +272,31 @@
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/shot/buckmaster
 	w_class = WEIGHT_CLASS_BULKY
 	bolt_type = BOLT_TYPE_LOCKING
+
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/shotgun/bulldog.ogg'
+
 	spread = 3
+	spread_unwielded = 15
 	recoil = 1
+	recoil_unwielded = 4
+	wield_slowdown = SHOTGUN_SLOWDOWN
+	wield_delay = 0.65 SECONDS
 
 	casing_ejector = TRUE
 
-/obj/item/ammo_box/magazine/internal/shot/buckmaster
-	name = "Buckmaster internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	max_ammo = 6
+	valid_attachments = SERENE_ATTACHMENTS
+	slot_available = SERENE_ATTACH_SLOTS
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 45,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 35,
+			"y" = 17,
+		)
+	)
+
+#undef SERENE_ATTACHMENTS
+#undef SERENE_ATTACH_SLOTS

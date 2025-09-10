@@ -29,6 +29,7 @@
 	///An active alert
 	var/datum/weakref/our_alert_ref
 	var/footprint_sprite = FOOTPRINT_SPRITE_SHOES
+	class_value = 5
 
 /datum/armor/clothing_shoes
 	bio = 50

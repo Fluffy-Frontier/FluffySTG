@@ -1,3 +1,6 @@
+#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/scope, /obj/item/attachment/gun, /obj/item/attachment/sling, /obj/item/attachment/ammo_counter)
+#define SCARBOROUGH_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
+
 //########### PISTOLS ###########//
 /obj/item/gun/ballistic/automatic/pistol/ringneck
 	name = "PC-76 \"Ringneck\""
@@ -13,6 +16,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m10mm_ringneck
 
+
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/pistol/shot.ogg'
 	dry_fire_sound = 'tff_modular/modules/evento_needo/sounds/pistol/dry_fire.ogg'
 	suppressed_sound = 'tff_modular/modules/evento_needo/sounds/pistol/shot_suppressed.ogg'
@@ -26,7 +30,27 @@
 	lock_back_sound = 'tff_modular/modules/evento_needo/sounds/pistol/lock_small.ogg'
 	bolt_drop_sound = 'tff_modular/modules/evento_needo/sounds/pistol/drop_small.ogg'
 
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	slot_available = SCARBOROUGH_ATTACH_SLOTS
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 27,
+			"y" = 23,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 16,
+			"y" = 25,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 21,
+			"y" = 19,
+		)
+	)
+
+
 	spread = 6 //becuase its compact, spread is slightly worse
+	spread_unwielded = 9
+	recoil_unwielded = 2
 
 /obj/item/gun/ballistic/automatic/pistol/ringneck/indie
 	name = "Ringneck-76"
@@ -38,23 +62,8 @@
 	w_class = WEIGHT_CLASS_NORMAL
 
 	spread = 5 //this one is normal sized, thus in theory its better, in theory at least
-
-/obj/item/ammo_box/magazine/m10mm_ringneck
-	name = "Ringneck pistol magazine (10x22mm)"
-	desc = "An 8-round magazine for the Ringneck pistol. These rounds do moderate damage, but struggle against armor."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "ringneck_mag"
-	base_icon_state = "ringneck_mag"
-	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = CALIBER_10MM
-	max_ammo = 8
-
-/obj/item/ammo_box/magazine/m10mm_ringneck/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
-
-/obj/item/ammo_box/magazine/m10mm_ringneck/empty
-	start_empty = TRUE
+	spread_unwielded = 7
+	recoil_unwielded = 3
 
 /obj/item/gun/ballistic/automatic/pistol/asp
 	name = "BC-81 \"Asp\""
@@ -80,32 +89,22 @@
 	lock_back_sound = 'tff_modular/modules/evento_needo/sounds/pistol/lock_small.ogg'
 	bolt_drop_sound = 'tff_modular/modules/evento_needo/sounds/pistol/drop_small.ogg'
 
-
-/obj/item/ammo_box/magazine/m57_39_asp
-	name = "Asp magazine (5.7x39mm)"
-	desc = "A 12-round, double-stack magazine for the Asp pistol. These rounds do okay damage with average performance against armor."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "asp_mag-12"
-	base_icon_state = "asp_mag"
-	ammo_type = /obj/item/ammo_casing/c57x39mm
-	caliber = CALIBER_57X39MM
-	max_ammo = 12
-
-/obj/item/ammo_box/magazine/m57_39_asp/update_icon_state()
-	. = ..()
-	if(ammo_count() == 12)
-		icon_state = "[base_icon_state]-12"
-	else if(ammo_count() >= 10)
-		icon_state = "[base_icon_state]-10"
-	else if(ammo_count() >= 5)
-		icon_state = "[base_icon_state]-5"
-	else if(ammo_count() >= 1)
-		icon_state = "[base_icon_state]-1"
-	else
-		icon_state = "[base_icon_state]-0"
-
-/obj/item/ammo_box/magazine/m57_39_asp/empty
-	start_empty = TRUE
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	slot_available = SCARBOROUGH_ATTACH_SLOTS
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 32,
+			"y" = 23,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 15,
+			"y" = 26,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 23,
+			"y" = 19,
+		)
+	)
 
 /obj/item/gun/ballistic/revolver/viper
 	name = "R-23 \"Viper\""
@@ -131,6 +130,7 @@
 
 	spread = 3
 	recoil = 1
+	recoil_unwielded = 2
 
 	semi_auto = TRUE //double action
 
@@ -141,6 +141,11 @@
 	icon_state = "viper23"
 	inhand_icon_state = "viper23"
 	spread = 5
+	spread_unwielded = 10
+
+/obj/item/gun/ballistic/revolver/viper/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/ammo_hud_shiptest/revolver)
 
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake
 	name = "MP-84 \"Rattlesnake\""
@@ -169,9 +174,28 @@
 	lock_back_sound = 'tff_modular/modules/evento_needo/sounds/pistol/lock_small.ogg'
 	bolt_drop_sound = 'tff_modular/modules/evento_needo/sounds/pistol/drop_small.ogg'
 
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	slot_available = SCARBOROUGH_ATTACH_SLOTS
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 40,
+			"y" = 26,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 14,
+			"y" = 29,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 22,
+			"y" = 21,
+		)
+	)
+
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
 	fire_delay = 0.4 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	default_firemode = FIREMODE_SEMIAUTO
 
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake/inteq
 	name = "MP-84m Kingsnake"
@@ -179,23 +203,6 @@
 
 	icon_state = "rattlesnake_inteq"
 	inhand_icon_state = "rattlesnake_inteq"
-
-/obj/item/ammo_box/magazine/m9mm_rattlesnake
-	name = "Rattlesnake magazine (9x18mm)"
-	desc = "A long, 18-round double-stack magazine designed for the Rattlesnake machine pistol. These rounds do okay damage, but struggle against armor."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "rattlesnake_mag_18"
-	base_icon_state = "rattlesnake_mag"
-	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = CALIBER_9MM
-	max_ammo = 18
-
-/obj/item/ammo_box/magazine/m9mm_rattlesnake/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]_[ammo_count() == 1 ? 1 : round(ammo_count(),3)]"
-
-/obj/item/ammo_box/magazine/m9mm_rattlesnake/empty
-	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/himehabu
 	name = "PC-81 \"Himehabu\""
@@ -224,24 +231,31 @@
 	lock_back_sound = 'tff_modular/modules/evento_needo/sounds/pistol/lock_small.ogg'
 	bolt_drop_sound = 'tff_modular/modules/evento_needo/sounds/pistol/drop_small.ogg'
 
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_SCOPE = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 28,
+			"y" = 22,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 12,
+			"y" = 25,
+		)
+	)
+
 	recoil = -2
-
-/obj/item/ammo_box/magazine/m22lr_himehabu
-	name = "pistol magazine (.22 LR)"
-	desc = "A single-stack handgun magazine designed to chamber .22 LR. It's rather tiny, all things considered."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "himehabu_mag"
-	base_icon_state = "himehabu_mag"
-	ammo_type = /obj/item/ammo_casing/c22lr
-	caliber = CALIBER_22LR
-	max_ammo = 10
-	w_class = WEIGHT_CLASS_SMALL
-	multiple_sprites = AMMO_BOX_PER_BULLET
-
-/obj/item/ammo_box/magazine/m22lr_himehabu/empty
-	start_empty = TRUE
+	recoil_unwielded = -2
+	spread_unwielded = 0
+	wield_slowdown = 0
 
 //########### SMGS ###########//
+
 
 /obj/item/gun/ballistic/automatic/smg/cobra
 	name = "C-20r \"Cobra\""
@@ -262,29 +276,28 @@
 	eject_sound = 'tff_modular/modules/evento_needo/sounds/smg/cm5_unload.ogg'
 	eject_empty_sound = 'tff_modular/modules/evento_needo/sounds/smg/cm5_unload.ogg'
 
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 27,
+			"y" = 23,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 28,
+			"y" = 16,
+		)
+	)
+
 /obj/item/gun/ballistic/automatic/smg/cobra/indie
 	name = "Cobra-20"
 	desc = "An older model of submachine gun manufactured by Scarborough Arms and marketed to mercenaries, law enforcement, and independent militia. Only became popular after the end of the ICW. Chambered in .45."
 	icon_state = "cobra20"
 	inhand_icon_state = "cobra20"
 	worn_icon_state = "cobra20"
-
-/obj/item/ammo_box/magazine/m45_cobra
-	name = "Cobra magazine (.45)"
-	desc = "A 24-round magazine for the Cobra submachine gun. These rounds do moderate damage, but struggle against armor."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "cobra_mag-24"
-	base_icon_state = "cobra_mag"
-	ammo_type = /obj/item/ammo_casing/c45
-	caliber = CALIBER_45
-	max_ammo = 24
-
-/obj/item/ammo_box/magazine/m45_cobra/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[round(ammo_count(),2)]"
-
-/obj/item/ammo_box/magazine/m45_cobra/empty
-	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/smg/sidewinder
 	name = "CDW-81 \"Sidewinder\""
@@ -309,25 +322,43 @@
 
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
+
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	unique_attachments = list(
+		/obj/item/attachment/foldable_stock/sidewinder
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_STOCK = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 44,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 35,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_STOCK = list(
+			"x" = 17,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 21,
+			"y" = 24,
+		)
+	)
+
 	spread = 7
+	spread_unwielded = 10
+
 	recoil = 0
+	recoil_unwielded = 4
 
-/obj/item/ammo_box/magazine/m57_39_sidewinder
-	name = "Sidewinder magazine (5.7x39mm)"
-	desc = "A 30-round magazine for the Sidewinder submachine gun. These rounds do okay damage with average performance against armor."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "sidewinder_mag-1"
-	base_icon_state = "sidewinder_mag"
-	ammo_type = /obj/item/ammo_casing/c57x39mm
-	caliber = CALIBER_57X39MM
-	max_ammo = 30
-
-/obj/item/ammo_box/magazine/m57_39_sidewinder/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
-
-/obj/item/ammo_box/magazine/m57_39_sidewinder/empty
-	start_empty = TRUE
+	default_attachments = list(/obj/item/attachment/foldable_stock/sidewinder)
 
 //########### MARKSMAN ###########//
 /obj/item/gun/ballistic/automatic/marksman/boomslang
@@ -351,9 +382,31 @@
 	fire_delay = 1 SECONDS
 
 	slot_flags = ITEM_SLOT_BACK
-
 	spread = -5
+	spread_unwielded = 35
 	recoil = 2
+	recoil_unwielded = 10
+	wield_slowdown = SNIPER_SLOWDOWN
+	wield_delay = 1.3 SECONDS
+
+	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
+	zoom_out_amt = 5
+
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 28,
+			"y" = 10,
+		)
+	)
 
 /obj/item/gun/ballistic/automatic/marksman/boomslang/indie
 	name = "Boomslang-90"
@@ -363,33 +416,8 @@
 	inhand_icon_state = "boomslang90"
 	worn_icon_state = "boomslang90"
 
-/obj/item/ammo_box/magazine/boomslang
-	name = "\improper Boomslang Magazine (7.5x64mm CLIP)"
-	desc = "A large 10-round box magazine for Boomslang sniper rifles. These rounds deal amazing damage and can pierce protective equipment, excluding armored vehicles."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	base_icon_state = "boomslang"
-	icon_state = "boomslang"
-	ammo_type = /obj/item/ammo_casing/a75clip
-	caliber = CALIBER_75X64MM
-	max_ammo = 10
-	multiple_sprites = AMMO_BOX_PER_BULLET
-
-/obj/item/ammo_box/magazine/boomslang/empty
-	start_empty = TRUE
-
-/obj/item/ammo_box/magazine/boomslang/short
-	name = "\improper Boomslang Magazine (7.5x64mm CLIP)"
-	desc = "A 5-round box magazine for Boomslang sniper rifles. These rounds deal amazing damage and can pierce protective equipment, excluding armored vehicles."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	base_icon_state = "boomslang_short"
-	icon_state = "boomslang_short"
-	ammo_type = /obj/item/ammo_casing/a75clip
-	caliber = CALIBER_75X64MM
-	max_ammo = 5
-	multiple_sprites = AMMO_BOX_PER_BULLET
-
-/obj/item/ammo_box/magazine/boomslang/short/empty
-	start_empty = TRUE
+	zoom_amt = 6
+	zoom_out_amt = 2
 
 /obj/item/gun/ballistic/automatic/marksman/taipan
 	name = "AMR-83 \"Taipan\""
@@ -412,16 +440,21 @@
 	weapon_weight = WEAPON_HEAVY
 	accepted_magazine_type = /obj/item/ammo_box/magazine/sniper_rounds
 	w_class = WEIGHT_CLASS_BULKY
+	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
+	zoom_out_amt = 5
 	slot_flags = ITEM_SLOT_BACK
 	actions_types = list()
 	burst_size = 1
 	fire_delay = 1 SECONDS
 	spread = -5
+	spread_unwielded = 40
 	recoil = 5
+	recoil_unwielded = 50
 
-/obj/item/gun/ballistic/automatic/marksman/taipan/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/scope, range_modifier = 1.5)
+	wield_delay = 1.3 SECONDS
+
+	valid_attachments = list()
+	slot_available = list()
 
 //########### RIFLES ###########//
 /obj/item/gun/ballistic/automatic/assault/hydra
@@ -435,27 +468,46 @@
 	icon_state = "hydra"
 	inhand_icon_state = "hydra"
 	worn_icon_state = "hydra"
-	mag_display = FALSE //TEMP
+	mag_display = FALSE //TEMP SARGASSUM
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m556_42_hydra
+	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto")
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	//gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_OTHER)
+	default_firemode = FIREMODE_SEMIAUTO
+
 	load_sound = 'tff_modular/modules/evento_needo/sounds/rifle/m16_reload.ogg'
 	load_empty_sound = 'tff_modular/modules/evento_needo/sounds/rifle/m16_reload.ogg'
 	eject_sound = 'tff_modular/modules/evento_needo/sounds/rifle/m16_unload.ogg'
 	eject_empty_sound = 'tff_modular/modules/evento_needo/sounds/rifle/m16_unload.ogg'
 
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/rifle/hydra.ogg'
-
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 
 	burst_size = 2
-	burst_delay = 0.2 SECONDS
-	fire_delay = 0.4 SECONDS
+	burst_delay = 0.1 SECONDS
+	fire_delay = 0.18 SECONDS
 	spread = 1
+	spread_unwielded = 8
+	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
 
-/obj/item/gun/ballistic/automatic/assault/hydra/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, fire_delay)
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	slot_available = SCARBOROUGH_ATTACH_SLOTS
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 42,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 21,
+			"y" = 24,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 30,
+			"y" = 15,
+		)
+	)
 
 //we hard code "hydra", why? because if not, i would need to duplicate the extended/short magazine sprites like 3 fucking times for every variant with a different icon state. this eases the spriting burden
 /obj/item/gun/ballistic/automatic/assault/hydra/update_overlays()
@@ -486,15 +538,41 @@
 	inhand_icon_state = "hydra_lmg"
 	worn_icon_state = "hydra_lmg"
 
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+
 	burst_delay = 0.2 SECONDS
 	burst_size = 1
 	fire_delay = 0.2 SECONDS
 	spread = 7
+	spread_unwielded = 25
 	recoil = 0.7
+	recoil_unwielded = 4
+	wield_slowdown = SAW_SLOWDOWN
+	wield_delay = 0.9 SECONDS //ditto
 
-/obj/item/gun/ballistic/automatic/assault/hydra/lmg/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, fire_delay)
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	slot_available = SCARBOROUGH_ATTACH_SLOTS
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 21,
+			"y" = 24,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 30,
+			"y" = 15,
+		)
+	)
+
+/obj/item/gun/ballistic/automatic/assault/hydra/lmg/extended
+	spawnwithmagazine = /obj/item/ammo_box/magazine/m556_42_hydra/extended
+
+/obj/item/gun/ballistic/automatic/assault/hydra/lmg/casket_mag
+	spawnwithmagazine = /obj/item/ammo_box/magazine/m556_42_hydra/casket
 
 /obj/item/gun/ballistic/automatic/assault/hydra/dmr
 	name = "SBR-80 \"Hydra\""
@@ -504,58 +582,24 @@
 	inhand_icon_state = "hydra_dmr"
 	worn_icon_state = "hydra_dmr"
 
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	default_firemode = FIREMODE_SEMIAUTO
+
 	burst_size = 1
 	fire_delay = 0.3 SECONDS
 	spread = 0
+	spread_unwielded = 12
+	wield_slowdown = DMR_SLOWDOWN //dmrrrr
+	wield_delay = 0.85 SECONDS //above
+	zoomable = TRUE
+	zoom_amt = 6
+	zoom_out_amt = 2
 
-/obj/item/ammo_box/magazine/m556_42_hydra
-	name = "Hydra assault rifle magazine (5.56x42mm CLIP)"
-	desc = "A simple, 30-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "hydra_mag-30"
-	base_icon_state = "hydra_mag"
-	ammo_type = /obj/item/ammo_casing/a556_42
-	caliber = CALIBER_556X42MM
-	max_ammo = 30
+/obj/item/gun/ballistic/automatic/assault/hydra/underbarrel_gl
+	name = "SMR-80 \"Hydra\""
+	desc = "Scarborough Arms' premier modular assault rifle platform. This is the basic configuration, optimized for light weight and handiness. A very well-regarded, if expensive and rare, assault rifle. This one has an underslung grenade launcher attached. Chambered in 5.56x42mm CLIP."
 
-/obj/item/ammo_box/magazine/m556_42_hydra/update_icon_state()
-	. = ..()
-	if(max_ammo > 30)
-		icon_state = "[base_icon_state]-[!!ammo_count()]"
-	else
-		icon_state = "[base_icon_state]-[ammo_count() == 1 ? 1 : round(ammo_count(),5)]"
-
-/obj/item/ammo_box/magazine/m556_42_hydra/empty
-	start_empty = TRUE
-
-/obj/item/ammo_box/magazine/m556_42_hydra/small
-	name = "Short Hydra assault rifle magazine (5.56x42mm CLIP)"
-	desc = "A short, 20-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles; intended for the DMR variant. These rounds do moderate damage with good armor penetration."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "hydra_small_mag-20"
-	base_icon_state = "hydra_small_mag"
-	max_ammo = 20
-
-/obj/item/ammo_box/magazine/m556_42_hydra/small/empty
-	start_empty = TRUE
-
-/obj/item/ammo_box/magazine/m556_42_hydra/extended
-	name = "extended Hydra assault rifle magazine (5.56x42mm CLIP)"
-	desc = "A bulkier, 60-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
-	icon_state = "hydra_extended_mag"
-	base_icon_state = "hydra_extended_mag"
-	max_ammo = 60
-
-/obj/item/ammo_box/magazine/m556_42_hydra/extended/empty
-	start_empty = TRUE
-
-/obj/item/ammo_box/magazine/m556_42_hydra/casket
-	name = "casket Hydra assault rifle magazine (5.56x42mm CLIP)"
-	desc = "A very long and bulky 100-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
-	icon_state = "hydra_casket_mag"
-	base_icon_state = "hydra_casket_mag"
-	max_ammo = 100
-	w_class = WEIGHT_CLASS_NORMAL
+	default_attachments = list(/obj/item/attachment/gun/ballistic/launcher)
 
 //########### MISC ###########//
 // Bulldog shotgun //
@@ -572,12 +616,12 @@
 	worn_icon_state = "bulldog"
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
-	special_mags = TRUE
 
 	weapon_weight = WEAPON_MEDIUM
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m12g_bulldog
 	fire_delay = 0.4 SECONDS // this NEEDS the old delay.
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/shotgun/bulldog.ogg'
+//	empty_indicator = TRUE
 	empty_alarm = TRUE
 	internal_magazine = FALSE
 	casing_ejector = TRUE
@@ -591,61 +635,31 @@
 	rack_sound = 'tff_modular/modules/evento_needo/sounds/rifle/ar_cock.ogg'
 
 	spread = 3
+	spread_unwielded = 15
 	recoil = 1
+	recoil_unwielded = 4
+	wield_slowdown = HEAVY_SHOTGUN_SLOWDOWN
+	wield_delay = 0.65 SECONDS
+
+	valid_attachments = SCARBOROUGH_ATTACHMENTS
+	slot_available = SCARBOROUGH_ATTACH_SLOTS
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 44,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 25,
+			"y" = 24,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 30,
+			"y" = 18,
+		)
+	)
 
 /obj/item/gun/ballistic/shotgun/automatic/bulldog/drum
-	mag_display = FALSE
-	accepted_magazine_type = /obj/item/ammo_box/magazine/m12g_bulldog/drum
+	spawnwithmagazine = /obj/item/ammo_box/magazine/m12g_bulldog/drum
 
-/obj/item/ammo_box/magazine/m12g_bulldog
-	name = "shotgun box magazine (12g buckshot)"
-	desc = "A single-stack, 8-round box magazine for the Bulldog shotgun and it's derivatives."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "bulldog_mag"
-	base_icon_state = "bulldog_mag"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	caliber = CALIBER_SHOTGUN
-	max_ammo = 8
-
-/obj/item/ammo_box/magazine/m12g_bulldog/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
-
-/obj/item/ammo_box/magazine/m12g_bulldog/slug
-	name = "shotgun box magazine (12g Slugs)"
-	ammo_type = /obj/item/ammo_casing/shotgun
-
-/obj/item/ammo_box/magazine/m12g_bulldog/empty
-	start_empty = TRUE
-
-/obj/item/ammo_box/magazine/m12g_bulldog/drum
-	name = "shotgun drum magazine (12g buckshot)"
-	desc = "A bulky 12-round drum designed for the Bulldog shotgun and it's derivatives."
-	icon_state = "bulldog_drum"
-	base_icon_state = "bulldog_drum"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	max_ammo = 12
-	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/ammo_box/magazine/m12g_bulldog/drum/empty
-	start_empty = TRUE
-
-/obj/item/ammo_box/magazine/m12g_bulldog/drum/stun
-	name = "shotgun drum magazine (12g taser slugs)"
-	ammo_type = /obj/item/ammo_casing/shotgun/stunslug
-
-/obj/item/ammo_box/magazine/m12g_bulldog/drum/slug
-	name = "shotgun drum magazine (12g slugs)"
-	ammo_type = /obj/item/ammo_casing/shotgun
-
-/obj/item/ammo_box/magazine/m12g_bulldog/drum/dragon
-	name = "shotgun drum magazine (12g dragon's breath)"
-	ammo_type = /obj/item/ammo_casing/shotgun/dragonsbreath
-
-/obj/item/ammo_box/magazine/m12g_bulldog/drum/bioterror
-	name = "shotgun drum magazine (12g bioterror)"
-	ammo_type = /obj/item/ammo_casing/shotgun/dart/bioterror
-
-/obj/item/ammo_box/magazine/m12g_bulldog/drum/meteor
-	name = "shotgun drum magazine (12g meteor slugs)"
-	ammo_type = /obj/item/ammo_casing/shotgun/meteorslug
+#undef SCARBOROUGH_ATTACHMENTS
+#undef SCARBOROUGH_ATTACH_SLOTS

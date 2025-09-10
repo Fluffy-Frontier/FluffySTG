@@ -101,6 +101,9 @@
 ///from base of mob/living/death(): (gibbed)
 #define COMSIG_LIVING_DEATH "living_death"
 
+///from base of mob/living/carbon/human/SanityLossEffect(): (attribute)
+#define COMSIG_HUMAN_INSANE "human_insane"
+
 ///from base of mob/living/gib(): (drop_bitflags)
 ///Note that it is fired regardless of whether the mob was dead beforehand or not.
 #define COMSIG_LIVING_GIBBED "living_gibbed"

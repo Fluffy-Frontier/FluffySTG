@@ -1,4 +1,262 @@
 ///Hunters Pride Weapons
+
+///Revolvers
+
+/obj/item/gun/ballistic/revolver/montagne
+	name = "\improper HP Montagne"
+	desc = "An ornate break-open revolver issued to high-ranking members of the Saint-Roumain Militia. Chambered in .44."
+	icon = 'tff_modular/modules/evento_needo/icons/hunterspride/48x32.dmi'
+	lefthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/lefthand.dmi'
+	righthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/righthand.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/hunterspride/onmob.dmi'
+
+	icon_state = "montagne"
+	inhand_icon_state = "hp_generic"
+	spread_unwielded = 15
+	recoil = 0
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
+
+/obj/item/gun/ballistic/revolver/montagne/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/ammo_hud_shiptest/revolver)
+
+/obj/item/gun/ballistic/revolver/ashhand
+	name = "HP Ashhand"
+	desc = "A massive, long-barreled revolver often used by the Saint-Roumain Militia as protection against big game. Can only be reloaded one cartridge at a time due to its reinforced frame. Uses .45-70 ammo."
+	icon = 'tff_modular/modules/evento_needo/icons/hunterspride/48x32.dmi'
+	lefthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/lefthand.dmi'
+	righthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/righthand.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/hunterspride/onmob.dmi'
+
+	icon_state = "ashhand"
+	inhand_icon_state = "ashhand"
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
+	fire_sound = 'tff_modular/modules/evento_needo/sounds/revolver/shot_hunting.ogg'
+	rack_sound = 'tff_modular/modules/evento_needo/sounds/revolver/viper_prime.ogg'
+	fire_delay = 0.6 SECONDS
+	wield_slowdown = HEAVY_REVOLVER_SLOWDOWN
+	spread_unwielded = 20
+	spread = 6
+	recoil = 2
+	recoil_unwielded = 4
+
+/obj/item/gun/ballistic/revolver/ashhand/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/ammo_hud_shiptest/revolver)
+
+/obj/item/gun/ballistic/revolver/firebrand
+	name = "\improper HP Firebrand"
+	desc = "An archaic precursor to revolver-type firearms, this gun was rendered completely obsolete millennia ago. While fast to fire, it is extremely inaccurate. Uses .357 ammo."
+	icon_state = "pepperbox"
+	inhand_icon_state = "hp_generic_fresh"
+	icon = 'tff_modular/modules/evento_needo/icons/hunterspride/48x32.dmi'
+	lefthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/lefthand.dmi'
+	righthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/righthand.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/hunterspride/onmob.dmi'
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/cylinder/pepperbox
+	spread = 20
+	spread_unwielded = 50
+	fire_delay = 0 SECONDS
+	semi_auto = TRUE
+
+/obj/item/gun/ballistic/revolver/shadow
+	name = "\improper HP Shadow"
+	desc = "A mid-size revolver. Despite the antiquated design, it is cheap, reliable, and stylish, making it a favorite among fast-drawing spacers and the officers of various militaries, as well as small-time police units. Chambered in .44."
+	fire_sound = 'tff_modular/modules/evento_needo/sounds/revolver/cattleman.ogg'
+	icon = 'tff_modular/modules/evento_needo/icons/hunterspride/48x32.dmi'
+	lefthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/lefthand.dmi'
+	righthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/righthand.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/hunterspride/onmob.dmi'
+	icon_state = "shadow"
+	inhand_icon_state = "shadow"
+	worn_icon_state = "shadow"
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
+	obj_flags = UNIQUE_RENAME
+
+	unique_reskin = list(\
+		"Shadow" = "shadow",
+		"Cattleman" = "shadow_cattleman",
+		"General" = "shadow_general",
+		"Sheriff" = "shadow_sheriff",
+		"Cobra" = "shadow_cobra",
+		"Hired Gun" = "shadow_hiredgun",
+		"Buntline" = "shadow_buntline",
+		"Cavalry" = "shadow_cavalry",
+		"Lanchester Special" = "shadow_lanchester"
+		)
+	unique_reskin_changes_inhand = TRUE
+
+	recoil = 0
+	spread_unwielded = 10
+
+/obj/item/gun/ballistic/revolver/shadow/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/ammo_hud_shiptest/revolver)
+
+/obj/item/gun/ballistic/revolver/detective/shiptest
+	name = "\improper HP Detective Special"
+	desc = "A small law enforcement firearm. Originally commissioned by Nanotrasen for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
+	fire_sound = 'tff_modular/modules/evento_needo/sounds/revolver/shot_light.ogg'
+	icon_state = "detective"
+	inhand_icon_state = "hp_generic"
+	icon = 'tff_modular/modules/evento_needo/icons/hunterspride/48x32.dmi'
+	lefthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/lefthand.dmi'
+	righthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/righthand.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/hunterspride/onmob.dmi'
+	accepted_magazine_type = list(
+		/obj/item/ammo_box/magazine/internal/cylinder/rev38,
+	)
+	obj_flags = UNIQUE_RENAME
+	semi_auto = TRUE //double action
+	unique_reskin = list("Default" = "detective",
+		"Stainless Steel" = "detective_stainless",
+		"Gold Trim" = "detective_gold",
+		"Leopard Spots" = "detective_leopard",
+		"The Peacemaker" = "detective_peacemaker",
+		"Black Panther" = "detective_panther"
+		)
+	w_class = WEIGHT_CLASS_SMALL
+
+	recoil = 0
+	fire_delay = 0.2 SECONDS
+
+/obj/item/gun/ballistic/revolver/detective/shiptest/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/ammo_hud_shiptest/revolver) //note that the hud at the moment only supports 6 round revolvers, 7 or 5 isn't supported rn
+
+//...why...?
+/obj/item/gun/ballistic/revolver/detective/shiptest/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, burst_firing = FALSE, spread_override = 0, iteration = 0)
+	if(magazine.caliber != initial(magazine.caliber))
+		if(prob(100 - (magazine.ammo_count() * 5)))	//minimum probability of 70, maximum of 95
+			playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
+			to_chat(user, span_userdanger("[src] blows up in your face!"))
+			user.take_bodypart_damage(0,20)
+			explosion(src, 0, 0, 1, 1)
+			user.dropItemToGround(src)
+			return 0
+	..()
+
+/obj/item/gun/ballistic/revolver/detective/shiptest/screwdriver_act(mob/living/user, obj/item/I)
+	if(..())
+		return TRUE
+	if(magazine.caliber == "38")
+		to_chat(user, span_notice("You begin to reinforce the barrel of [src]..."))
+		if(magazine.ammo_count())
+			afterattack(user, user)	//you know the drill
+			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
+			return TRUE
+		if(I.use_tool(src, user, 30))
+			if(magazine.ammo_count())
+				to_chat(user, span_warning("You can't modify it!"))
+				return TRUE
+			magazine.caliber = ".357"
+			fire_sound = 'tff_modular/modules/evento_needo/sounds/revolver/shot.ogg'
+			desc = "The barrel and chamber assembly seems to have been modified."
+			to_chat(user, span_notice("You reinforce the barrel of [src]. Now it will fire .357 rounds."))
+	else
+		to_chat(user, span_notice("You begin to revert the modifications to [src]..."))
+		if(magazine.ammo_count())
+			afterattack(user, user)	//and again
+			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
+			return TRUE
+		if(I.use_tool(src, user, 30))
+			if(magazine.ammo_count())
+				to_chat(user, span_warning("You can't modify it!"))
+				return
+			magazine.caliber = ".38"
+			fire_sound = 'tff_modular/modules/evento_needo/sounds/revolver/shot.ogg'
+			desc = initial(desc)
+			to_chat(user, span_notice("You remove the modifications on [src]. Now it will fire .38 rounds."))
+	return TRUE
+
+///pistols
+
+/obj/item/gun/ballistic/automatic/pistol/candor
+	name = "\improper Candor"
+	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. Chambered in .45."
+	icon_state = "candor"
+	inhand_icon_state = "hp_generic"
+	icon = 'tff_modular/modules/evento_needo/icons/hunterspride/48x32.dmi'
+	lefthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/lefthand.dmi'
+	righthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/righthand.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/hunterspride/onmob.dmi'
+	accepted_magazine_type = /obj/item/ammo_box/magazine/m45
+	fire_sound = 'tff_modular/modules/evento_needo/sounds/pistol/candor.ogg'
+	rack_sound = 'tff_modular/modules/evento_needo/sounds/pistol/candor_cocked.ogg'
+	lock_back_sound = 'tff_modular/modules/evento_needo/sounds/pistol/slide_lock.ogg'
+	bolt_drop_sound = 'tff_modular/modules/evento_needo/sounds/pistol/candor_cocked.ogg'
+	load_sound = 'tff_modular/modules/evento_needo/sounds/pistol/candor_reload.ogg'
+	load_empty_sound = 'tff_modular/modules/evento_needo/sounds/pistol/candor_reload.ogg'
+	eject_sound = 'tff_modular/modules/evento_needo/sounds/pistol/candor_unload.ogg'
+	eject_empty_sound = 'tff_modular/modules/evento_needo/sounds/pistol/candor_unload.ogg'
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 31,
+			"y" = 23,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 21,
+			"y" = 18,
+		)
+	)
+
+/obj/item/gun/ballistic/automatic/pistol/candor/factory //also give this to the srm, their candors should probably look factory fresh from how well taken care of they are
+	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of 'Hunter's Pride Arms and Ammunition'. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .45."
+	inhand_icon_state = "hp_generic_fresh"
+
+/obj/item/gun/ballistic/automatic/pistol/candor/factory/update_overlays()
+	. = ..()
+	. += "[initial(icon_state)]_factory"
+
+/obj/item/gun/ballistic/automatic/pistol/candor/phenex
+	name = "\improper HP Phenex"
+	desc = "A uniquely modified version of the Candor, famously created by Hunter's Pride. Named after the daemonic Phoenix of legend that the Ashen Huntsman had once slain, this hell-kissed weapon is more visually intimidating than its original counterpart, but mechanically acts the same. Chambered in .45."
+	icon_state = "phenex"
+	inhand_icon_state = "hp_phenex"
+
+/// SMG ///
+
+/obj/item/gun/ballistic/automatic/smg/firestorm //weapon designed by Apogee-dev
+	name = "HP Firestorm"
+	desc = "An unconventional submachinegun, rarely issued to Saint-Roumain Militia mercenary hunters for outstanding situations where normal hunting weapons fall short. Chambered in .44 Roumain."
+	icon = 'tff_modular/modules/evento_needo/icons/hunterspride/48x32.dmi'
+	lefthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/lefthand.dmi'
+	righthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/righthand.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/hunterspride/onmob.dmi'
+
+	icon_state = "firestorm"
+	inhand_icon_state = "firestorm"
+	accepted_magazine_type = /obj/item/ammo_box/magazine/c44_firestorm_mag
+	burst_size = 1
+	actions_types = list()
+	fire_delay = 0.22 SECONDS
+	bolt_type = BOLT_TYPE_OPEN
+	rack_sound = 'tff_modular/modules/evento_needo/sounds/smg/uzi_cocked.ogg'
+	fire_sound = 'tff_modular/modules/evento_needo/sounds/smg/firestorm.ogg'
+	wield_slowdown = SMG_SLOWDOWN
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 47,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 34,
+			"y" = 13,
+		)
+	)
+
 ///Shotguns
 
 /////////////////////////////
@@ -27,6 +285,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
 	force = 10
+	flags_1 = CONDUCTS_ELECTRICITY
 	slot_flags = ITEM_SLOT_BACK
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/shot/dual
 
@@ -39,6 +298,30 @@
 
 	burst_delay = 0.05 SECONDS
 	burst_size = 2
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	default_firemode = FIREMODE_SEMIAUTO
+	unique_attachments = list(/obj/item/attachment/scope)
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_SCOPE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 24,
+			"y" = 21,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 40,
+			"y" = 17,
+		)
+	)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/shiptest/drop_bolt(mob/user = null)
 	playsound(src, bolt_drop_sound, bolt_drop_sound_volume, FALSE)
@@ -68,14 +351,28 @@
 	else
 		icon_state = "[base_icon_state || initial(icon_state)][sawn_off ? "_sawn" : ""][bolt_locked ? "_open" : ""]"
 
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/shiptest/click_alt(mob/user)
+	. = ..()
+	if(unique_reskin && !current_skin && (!bolt_locked))
+		reskin_obj(user)
+
 /obj/item/gun/ballistic/shotgun/doublebarrel/shiptest/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		weapon_weight = WEAPON_MEDIUM
+		wield_slowdown = wield_slowdown-0.1
+		wield_delay = 0.3 SECONDS //OP? maybe
 
 		spread = 8
+		spread_unwielded = 15
 		recoil = 3 //or not
+		recoil_unwielded = 5
 		inhand_icon_state = "dshotgun_sawn"
+		worn_icon_state = inhand_icon_state
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/shiptest/empty
+	spawnwithmagazine = /obj/item/ammo_box/magazine/internal/shot/dual/empty
 
 // sawn off beforehand
 /obj/item/gun/ballistic/shotgun/doublebarrel/shiptest/presawn
@@ -89,9 +386,18 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
 
+	wield_slowdown = 0.15
+	wield_delay = 0.3 SECONDS //OP? maybe
+
 	spread = 8
-	recoil = 3
+	spread_unwielded = 15
+	recoil = 3 //or not
+	recoil_unwielded = 5
 	inhand_icon_state = "dshotgun_sawn"
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/shot/dual/lethal/empty
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/shiptest/empty
+	spawnwithmagazine = /obj/item/ammo_box/magazine/internal/shot/dual/lethal/empty
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/shiptest/roumain
 	name = "HP antique double-barreled shotgun"
@@ -128,21 +434,45 @@
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
 
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/shot/lethal
 	fire_delay = 0.05 SECONDS //slamfire
 	rack_delay = 0.2 SECONDS
 
 	can_be_sawn_off = TRUE
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 40,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 36,
+			"y" = 17,
+		)
+	)
+
 
 /obj/item/gun/ballistic/shotgun/brimstone/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		weapon_weight = WEAPON_MEDIUM
+		wield_slowdown = wield_slowdown-0.1
+		wield_delay = 0.3 SECONDS //OP? maybe
 
 		spread = 18
+		spread_unwielded = 25
 		recoil = 5 //your punishment for sawing off an short shotgun
-
+		recoil_unwielded = 8
 		inhand_icon_state = "illestren_factory_sawn" // i couldnt care about making another sprite, looks close enough
+		worn_icon_state = inhand_icon_state
+
+/obj/item/gun/ballistic/shotgun/brimstone/empty
+	spawnwithmagazine = /obj/item/ammo_box/magazine/internal/shot/lethal/empty
 
 // HELLFIRE //
 
@@ -156,20 +486,44 @@
 	icon_state = "hellfire"
 	inhand_icon_state = "hellfire"
 	worn_icon_state = "hellfire"
+	inhand_x_dimension = 32
+	inhand_y_dimension = 32
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	sawn_desc = "Come with me if you want to live."
 	can_be_sawn_off = TRUE
 	rack_sound = 'tff_modular/modules/evento_needo/sounds/shotgun/rack_alt.ogg'
 	fire_delay = 0.1 SECONDS
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 45,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 33,
+			"y" = 13,
+		)
+	)
 
 /obj/item/gun/ballistic/shotgun/hellfire/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
+		var/obj/item/ammo_box/magazine/internal/tube = magazine
+		tube.max_ammo = 5 //this makes it so much worse
+
 		weapon_weight = WEAPON_MEDIUM
+		wield_slowdown = wield_slowdown-0.1
+		wield_delay = 0.3 SECONDS //OP? maybe
 
 		spread = 8
-		recoil = 3
-		inhand_icon_state = "dshotgun_sawn"
+		spread_unwielded = 15
+		recoil = 3 //or not
+		recoil_unwielded = 5
+		inhand_icon_state = "dshotgun_sawn" // ditto
+		worn_icon_state = inhand_icon_state
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/conflagration
 	name = "HP Conflagration"
@@ -182,19 +536,39 @@
 	sawn_desc = "A lever action shotgun that's been sawed down for portability. The recoil makes it mostly useless outside of point-blank range, but it hits hard for its size and, more importantly, can be flipped around stylishly."
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/shot/winchester/conflagration
 
-/obj/item/ammo_box/magazine/internal/shot/winchester/conflagration
-	name = "conflagration internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	caliber = CALIBER_SHOTGUN
-	max_ammo = 5
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 47,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 26,
+			"y" = 22,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 34,
+			"y" = 16,
+		)
+	)
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/conflagration/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
+		var/obj/item/ammo_box/magazine/internal/tube = magazine
+		tube.max_ammo = 5
+
 		inhand_icon_state = "beacon_factory_sawn"
+		worn_icon_state = inhand_icon_state
 		weapon_weight = WEAPON_MEDIUM
+
+		wield_slowdown = wield_slowdown-0.1
+		wield_delay = 0.2 SECONDS
+
 		spread = 4
+		spread_unwielded = 12
+
 		recoil = 0
+		recoil_unwielded = 3
 
 //Elephant Gun
 /obj/item/gun/ballistic/shotgun/doublebarrel/shiptest/twobore
@@ -224,10 +598,8 @@
 	fire_sound_volume = 80
 	rack_sound_volume = 50
 
-/obj/item/ammo_box/magazine/internal/shot/twobore
-	name = "two-bore shotgun internal magazine"
-	max_ammo = 2
-	caliber = CALIBER_SHOTGUN
+	gun_firemodes = list(FIREMODE_SEMIAUTO) //no dual burst for you
+	default_firemode = FIREMODE_SEMIAUTO
 
 /// Rifles
 
@@ -248,31 +620,43 @@
 
 	internal_magazine = FALSE
 	accepted_magazine_type = /obj/item/ammo_box/magazine/illestren_a850r
+
+	unique_attachments = list(
+		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope,
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 18,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 37,
+			"y" = 15,
+		)
+	)
+
 	eject_sound_vary = FALSE
 	can_be_sawn_off = TRUE
 	mag_display = FALSE
-
-/obj/item/ammo_box/magazine/illestren_a850r //this is a magazine codewise do nothing breaks
-	name = "en bloc clip (8x50mmR)"
-	desc = "A 5-round en bloc clip for the Illestren Hunting Rifle. These rounds do good damage with significant armor penetration."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "enbloc_858"
-	ammo_type = /obj/item/ammo_casing/a8_50r
-	caliber = CALIBER_8X50MM
-	max_ammo = 5
-	multiple_sprites = AMMO_BOX_PER_BULLET
-	w_class = WEIGHT_CLASS_TINY
-	custom_materials = list(/datum/material/iron = 500)
-
-/obj/item/ammo_box/magazine/illestren_a850r/empty
-	start_empty = TRUE
 
 /obj/item/gun/ballistic/rifle/illestren/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
 		spread = 19
+		spread_unwielded = 30
 		inhand_icon_state = "illestren_sawn"
-		worn_icon = inhand_icon_state
+		worn_icon_state = inhand_icon_state
 		weapon_weight = WEAPON_MEDIUM //you can fire it onehanded, makes it worse than worse than useless onehanded, but you can
 
 /obj/item/gun/ballistic/rifle/illestren/blow_up(mob/user)
@@ -290,7 +674,7 @@
 	. = ..()
 	if(.)
 		inhand_icon_state = "illestren_factory_sawn"
-		worn_icon = inhand_icon_state
+		worn_icon_state = inhand_icon_state
 
 /obj/item/gun/ballistic/rifle/illestren/sawn
 	desc = "An Illestren rifle sawn down to a ridiculously small size. There was probably a reason it wasn't made this short to begin with, but it still packs a punch."
@@ -318,14 +702,40 @@
 	bolt_wording = "lever"
 	cartridge_wording = "bullet"
 	can_be_sawn_off = TRUE
-	spread = -5
-	recoil = 0
 
-/obj/item/ammo_box/magazine/internal/shot/winchester
-	name = "winchester internal magazine"
-	ammo_type = /obj/item/ammo_casing/c38
-	caliber = CALIBER_38
-	max_ammo = 12
+	wield_slowdown = RIFLE_SLOWDOWN
+	wield_delay = 0.65 SECONDS
+
+	unique_attachments = list(
+		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope,
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+	spread = -5
+	spread_unwielded = 7
+
+	recoil = 0
+	recoil_unwielded = 2
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 45,
+			"y" = 16,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 15,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 25,
+			"y" = 13,
+		)
+	)
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/update_icon_state()
 	. = ..()
@@ -334,13 +744,34 @@
 	else
 		icon_state = "[base_icon_state || initial(icon_state)][sawn_off ? "_sawn" : ""]"
 
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/rack(mob/user = null)
+	. = ..()
+	if(!wielded)
+		SpinAnimation(7,1)
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+	. = ..()
+	fire_delay = src::fire_delay
+
 /obj/item/gun/ballistic/shotgun/flamingarrow/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
+		var/obj/item/ammo_box/magazine/internal/tube = magazine
+		tube.max_ammo = 7
+
 		inhand_icon_state = "flamingarrow_sawn"
+		worn_icon_state = inhand_icon_state
 		weapon_weight = WEAPON_MEDIUM
+
+		wield_slowdown = wield_slowdown-0.1
+		wield_delay = 0.2 SECONDS //THE COWBOY RIFLE
+
 		spread = 4
+		spread_unwielded = 12
+
 		recoil = 0
+		recoil_unwielded = 3
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/factory
 	desc = "A sturdy and lightweight lever-action rifle with hand-stamped Hunter's Pride marks on the receiver. This example has been kept in excellent shape and may as well be fresh out of the workshop. Chambered in .38."
@@ -352,6 +783,7 @@
 	. = ..()
 	if(.)
 		inhand_icon_state = "flamingarrow_factory_sawn"
+		worn_icon_state = inhand_icon_state
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/bolt
 	name = "HP Flaming Bolt"
@@ -364,7 +796,7 @@
 	. = ..()
 	if(.)
 		inhand_icon_state = "flamingbolt_sawn"
-		worn_icon = inhand_icon_state
+		worn_icon_state = inhand_icon_state
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/absolution
 	name = "HP Absolution"
@@ -377,21 +809,39 @@
 	sawn_desc = "A large lever-action rifle, sawn down for portability. It looks much cooler, but you should probably be using a revolver..."
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/shot/winchester/absolution
 
-/obj/item/ammo_box/magazine/internal/shot/winchester/absolution
-	name = "absolution internal magazine"
-	ammo_type = /obj/item/ammo_casing/c357
-	caliber = CALIBER_357
-	max_ammo = 8
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 18,
+			"y" = 21,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 33,
+			"y" = 15,
+		)
+	)
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/absolution/sawoff(forced = FALSE)
 	. = ..()
 	if(.)
+		var/obj/item/ammo_box/magazine/internal/tube = magazine
+		tube.max_ammo = 8
 
 		inhand_icon_state = "illestren_sawn"
-		worn_icon = inhand_icon_state
+		worn_icon_state = inhand_icon_state
 		weapon_weight = WEAPON_MEDIUM
+
+		wield_slowdown = wield_slowdown-0.1
+		wield_delay = 0.2 SECONDS
+
 		spread = 4
+		spread_unwielded = 12
+
 		recoil = 0
+		recoil_unwielded = 3
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/absolution/factory
 	desc = "A large lever-action rifle with hand-stamped Hunter's Pride marks on the receiver and an 8 round ammunition capacity. More powerful than the Flaming Arrow, the Absolution is a popular pick for hunting larger fauna like bears and goliaths, especially when a bolt action's slower rate of fire would be a liability. This example has been kept in excellent shape and may as well be fresh out of the workshop. Chambered in .357."
@@ -404,7 +854,7 @@
 	. = ..()
 	if(.)
 		inhand_icon_state = "absolution_factory_sawn"
-		worn_icon = inhand_icon_state
+		worn_icon_state = inhand_icon_state
 
 /// snipers
 
@@ -430,13 +880,31 @@
 	rack_sound = 'tff_modular/modules/evento_needo/sounds/rifle/ar_cock.ogg'
 
 	fire_delay = 0.4 SECONDS
-	recoil = 0
 
-/obj/item/ammo_box/magazine/internal/vickland
-	name = "Vickland battle rifle internal magazine"
-	ammo_type = /obj/item/ammo_casing/a8_50r
-	caliber = CALIBER_8X50MM
-	max_ammo = 8
+	spread_unwielded = 25
+	recoil = 0
+	recoil_unwielded = 4
+	wield_slowdown = DMR_SLOWDOWN
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 17,
+			"y" = 21,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 38,
+			"y" = 14,
+		)
+	)
 
 /obj/item/gun/ballistic/rifle/scout
 	name = "HP Scout"
@@ -456,13 +924,20 @@
 
 	can_be_sawn_off = FALSE
 
-/obj/item/gun/ballistic/rifle/scout/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/scope, range_modifier = 1.5)
+	zoomable = TRUE
+	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
+	zoom_out_amt = 5
 
-/obj/item/ammo_box/magazine/internal/boltaction/smile
-	name = "smile internal magazine"
-	ammo_type = /obj/item/ammo_casing/a300
-	caliber = CALIBER_A300
-	max_ammo = 5
-	multiload = TRUE
+	recoil = 1
+	recoil_unwielded = 8
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 32,
+			"y" = 14,
+		)
+	)

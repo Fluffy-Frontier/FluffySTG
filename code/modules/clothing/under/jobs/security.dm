@@ -16,6 +16,7 @@
 	strip_delay = 50
 	sensor_mode = SENSOR_COORDS
 	random_sensor = FALSE
+	class = CLOTHING_ARMORED
 
 /datum/armor/clothing_under/rank_security
 	melee = 10

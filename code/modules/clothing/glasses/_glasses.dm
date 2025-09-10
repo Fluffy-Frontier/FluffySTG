@@ -26,6 +26,7 @@
 	var/glass_colour_type
 	/// Whether or not vision coloring is forcing
 	var/forced_glass_color = FALSE
+	class_value = 10
 
 /obj/item/clothing/glasses/Initialize(mapload)
 	. = ..()

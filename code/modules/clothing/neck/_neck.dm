@@ -6,6 +6,7 @@
 	interaction_flags_click = NEED_DEXTERITY
 	strip_delay = 40
 	equip_delay_other = 40
+	class_value = 5
 
 /obj/item/clothing/neck/worn_overlays(mutable_appearance/standing, isinhands = FALSE)
 	. = ..()

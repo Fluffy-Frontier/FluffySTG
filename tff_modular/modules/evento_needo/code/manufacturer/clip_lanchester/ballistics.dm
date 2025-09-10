@@ -1,3 +1,7 @@
+#define CLIP_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/scope, /obj/item/attachment/long_scope, /obj/item/attachment/sling, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
+#define CLIP_ATTACHMENT_POINTS list(ATTACHMENT_SLOT_MUZZLE = 1,ATTACHMENT_SLOT_RAIL = 1,ATTACHMENT_SLOT_SCOPE=1)
+
+
 //########### PISTOLS ###########//
 /obj/item/gun/ballistic/automatic/pistol/cm23
 	name = "\improper CM-23"
@@ -22,25 +26,28 @@
 	eject_sound = 'tff_modular/modules/evento_needo/sounds/pistol/candor_unload.ogg'
 	eject_empty_sound = 'tff_modular/modules/evento_needo/sounds/pistol/candor_unload.ogg'
 
-/obj/item/gun/ballistic/automatic/pistol/cm23/no_mag
-	spawnwithmagazine = FALSE
+	default_attachments = list(/obj/item/attachment/laser_sight)
 
-/obj/item/ammo_box/magazine/cm23
-	name = "CM-23 pistol magazine (10x22mm)"
-	desc = "An 10-round magazine magazine designed for the CM-23 pistol. These rounds do moderate damage, but struggle against armor."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "cm23_mag-1"
-	base_icon_state = "cm23_mag"
-	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = CALIBER_10MM
-	max_ammo = 10
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
 
-/obj/item/ammo_box/magazine/cm23/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 29,
+			"y" = 20,
+		)
+	)
 
-/obj/item/ammo_box/magazine/cm23/empty
-	start_empty = TRUE
+	recoil_unwielded = 3
+
+/obj/item/gun/ballistic/automatic/pistol/cm23/empty
+	spawn_magazine_type = /obj/item/ammo_box/magazine/cm23/empty
 
 /obj/item/gun/ballistic/automatic/pistol/cm70
 	name = "CM-70 machine pistol"
@@ -57,27 +64,32 @@
 	burst_size = 3
 	burst_delay = 0.25 SECONDS
 	fire_delay = 0.4 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	default_firemode = FIREMODE_SEMIAUTO
+
+	fire_select_icon_state_prefix = "clip_"
+	adjust_fire_select_icon_state_on_safety = TRUE
 
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/pistol/cm70.ogg'
 
 	spread = 8
+	spread_unwielded = 20
 
-/obj/item/ammo_box/magazine/m9mm_cm70
-	name = "CM-70 machine pistol magazine (9x18mm)"
-	desc = "A 18-round magazine designed for the CM-70 machine pistol. These rounds do okay damage, but struggle against armor."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "cm70_mag_18"
-	base_icon_state = "cm70_mag"
-	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = CALIBER_9MM
-	max_ammo = 18
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
 
-/obj/item/ammo_box/magazine/m9mm_cm70/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]_[ammo_count() == 1 ? 1 : round(ammo_count(),3)]"
-
-/obj/item/ammo_box/magazine/m9mm_cm70/empty
-	start_empty = TRUE
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 23,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 31,
+			"y" = 21,
+		)
+	)
 
 /obj/item/gun/ballistic/automatic/pistol/cm357
 	name = "\improper CM-357"
@@ -102,24 +114,19 @@
 	eject_sound = 'tff_modular/modules/evento_needo/sounds/pistol/candor_unload.ogg'
 	eject_empty_sound = 'tff_modular/modules/evento_needo/sounds/pistol/candor_unload.ogg'
 
+	recoil_unwielded = 4
 	recoil = 1
 
-/obj/item/ammo_box/magazine/cm357
-	name = "CM-357 pistol magazine (.357)"
-	desc = "A 7-round magazine designed for the CM-357 pistol. These rounds do good damage, but struggle against armor."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "cm23_mag"
-	base_icon_state = "cm23_mag"
-	ammo_type = /obj/item/ammo_casing/c357
-	caliber = CALIBER_357
-	max_ammo = 7
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1
+	)
 
-/obj/item/ammo_box/magazine/cm357/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
-
-/obj/item/ammo_box/magazine/cm357/empty
-	start_empty = TRUE
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 23,
+			"y" = 16,
+		)
+	)
 
 //########### SMGS ###########//
 /obj/item/gun/ballistic/automatic/smg/cm5
@@ -137,31 +144,123 @@
 	bolt_type = BOLT_TYPE_STANDARD
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/smg/cm5.ogg'
+
 	spread = 3
+	spread_unwielded = 7
+
+	valid_attachments = CLIP_ATTACHMENTS
+	slot_available = CLIP_ATTACHMENT_POINTS
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 38,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 27,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 12,
+			"y" = 23,
+		)
+	)
+
+	fire_select_icon_state_prefix = "clip_"
+	adjust_fire_select_icon_state_on_safety = TRUE
 
 /obj/item/gun/ballistic/automatic/smg/cm5/rubber
 	spawn_magazine_type = /obj/item/ammo_box/magazine/cm5_9mm/rubber
 
-/obj/item/ammo_box/magazine/cm5_9mm
-	name = "CM-5 magazine (9x18mm)"
-	desc = "A 30-round magazine for the CM-5 submachine gun. These rounds do okay damage, but struggle against armor."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "cm5_mag"
-	base_icon_state = "cm5_mag"
-	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = CALIBER_9MM
-	max_ammo = 30
+/obj/item/gun/ballistic/automatic/smg/cm5/compact
+	name = "\improper CM-5c"
+	desc = "A modification of the CM-5 featuring a dramatically shortened barrel and removed stock. Designed for CLIP-GOLD covert enforcement agents to maximize portability without sacrificing firepower, though accuracy at range is abysmal at best. Chambered in 9mm."
+	icon_state = "cm5c"
+	inhand_icon_state = "cm5c"
 
-/obj/item/ammo_box/magazine/cm5_9mm/update_icon_state()
+	w_class = WEIGHT_CLASS_NORMAL
+	spread = 10
+	spread_unwielded = 20
+
+	fire_delay = 0.1 SECONDS
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 30,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 22,
+			"y" = 17,
+		)
+	)
+
+
+	recoil = 1
+	recoil_unwielded = 2
+	wield_delay = 0.2 SECONDS
+	wield_slowdown = 0.15
+
+	var/obj/item/storage/briefcase/current_case
+
+/obj/item/gun/ballistic/automatic/smg/cm5/compact/empty
+	spawn_magazine_type = /obj/item/ammo_box/magazine/cm5_9mm/empty
+
+/obj/item/gun/ballistic/automatic/smg/cm5/compact/attackby(obj/item/attacking_item, mob/user, params)
 	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
+	if(current_case)
+		return
+	if(!istype(attacking_item, /obj/item/storage/briefcase))
+		return
+	if(attacking_item.contents.len != 0)
+		return
+	to_chat(user, span_notice("...? You rig [src] to fire from within [attacking_item]."))
+	current_case = attacking_item
+	attacking_item.forceMove(src)
+	icon = attacking_item.icon
+	base_icon_state = attacking_item.icon_state
+	inhand_icon_state = attacking_item.inhand_icon_state
+	name = attacking_item.name
+	lefthand_file = attacking_item.lefthand_file
+	righthand_file = attacking_item.righthand_file
+	pickup_sound = attacking_item.pickup_sound
+	drop_sound = attacking_item.drop_sound
+	w_class = WEIGHT_CLASS_BULKY
 
-/obj/item/ammo_box/magazine/cm5_9mm/empty
-	start_empty = TRUE
+//how are you even supposed to hold it like this...?
+	spread += 10
+	spread_unwielded +=10
 
-/obj/item/ammo_box/magazine/cm5_9mm/rubber
-	desc = "A 30-round magazine for the CM-5 submachine gun. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
-	ammo_type = /obj/item/ammo_casing/c9mm/rubber
+	cut_overlays()
+	update_appearance()
+
+/obj/item/gun/ballistic/automatic/smg/cm5/compact/click_alt(mob/user)
+	if(!current_case)
+		return ..()
+	user.put_in_hands(current_case)
+	icon = src::icon
+	base_icon_state = src::icon_state
+	inhand_icon_state = src::inhand_icon_state
+	name = src::name
+	lefthand_file = src::lefthand_file
+	righthand_file = src::righthand_file
+	pickup_sound = src::pickup_sound
+	drop_sound = src::drop_sound
+	w_class = WEIGHT_CLASS_NORMAL
+
+	spread = src::spread
+	spread_unwielded = src::spread_unwielded
+	to_chat(user, span_notice("You remove the [current_case] from [src]"))
+	current_case = null
+
+	cut_overlays()
+	update_appearance()
+
 
 //########### MARKSMAN ###########//
 /obj/item/gun/ballistic/automatic/marksman/f4
@@ -185,22 +284,28 @@
 	actions_types = list()
 	spread = -4
 
-/obj/item/ammo_box/magazine/f4_308
-	name = "\improper F4 Magazine (.308)"
-	desc = "A standard 10-round magazine for F4 platform DMRs. These rounds do good damage with significant armor penetration."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "gal_mag"
-	base_icon_state = "gal_mag"
-	ammo_type = /obj/item/ammo_casing/a308
-	caliber = CALIBER_308
-	max_ammo = 10
+	valid_attachments = CLIP_ATTACHMENTS
+	slot_available = CLIP_ATTACHMENT_POINTS
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 35,
+			"y" = 16,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 18,
+			"y" = 22,
+		)
+	)
 
-/obj/item/ammo_box/magazine/f4_308/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
+	default_attachments = list(/obj/item/attachment/scope)
 
-/obj/item/ammo_box/magazine/f4_308/empty
-	start_empty = TRUE
+	wield_slowdown = DMR_SLOWDOWN
+	fire_select_icon_state_prefix = "clip_"
+	adjust_fire_select_icon_state_on_safety = TRUE
 
 /obj/item/gun/ballistic/automatic/marksman/f4/inteq
 	name = "\improper SsG-04"
@@ -231,28 +336,25 @@
 	fire_delay = 0.5 SECONDS
 	burst_size = 1
 	spread = -5
+	spread_unwielded = 35
 	recoil = 2
+	recoil_unwielded = 10
+	wield_slowdown = SNIPER_SLOWDOWN
+	wield_delay = 1.3 SECONDS
 
-/obj/item/gun/ballistic/automatic/marksman/f90/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/scope, range_modifier = 1.5)
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1
+	)
 
-/obj/item/ammo_box/magazine/f90
-	name = "\improper CM-F90 Magazine (6.5x57mm CLIP)"
-	desc = "A large 5-round box magazine for the CM-F90 sniper rifles. These rounds deal amazing damage and bypass half of their protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	base_icon_state = "f90_mag"
-	icon_state = "f90_mag-1"
-	ammo_type = /obj/item/ammo_casing/a75clip
-	caliber = CALIBER_75X64MM
-	max_ammo = 5
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 16,
+		),
+	)
 
-/obj/item/ammo_box/magazine/f90/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
-
-/obj/item/ammo_box/magazine/f90/empty
-	start_empty = TRUE
+	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
+	zoom_out_amt = 5
 
 //########### RIFLES ###########//
 /obj/item/gun/ballistic/automatic/assault/cm82
@@ -272,34 +374,35 @@
 	bolt_type = BOLT_TYPE_STANDARD
 	accepted_magazine_type = /obj/item/ammo_box/magazine/p16
 	spread = 2
+	wield_delay = 0.5 SECONDS
 	fire_delay = 0.3 SECONDS
 	burst_size = 1
+
+	valid_attachments = CLIP_ATTACHMENTS
+	slot_available = CLIP_ATTACHMENT_POINTS
 
 	load_sound = 'tff_modular/modules/evento_needo/sounds/rifle/cm82_reload.ogg'
 	load_empty_sound = 'tff_modular/modules/evento_needo/sounds/rifle/cm82_reload.ogg'
 	eject_sound = 'tff_modular/modules/evento_needo/sounds/rifle/cm82_unload.ogg'
 	eject_empty_sound = 'tff_modular/modules/evento_needo/sounds/rifle/cm82_unload.ogg'
 
-/obj/item/gun/ballistic/automatic/assault/cm82/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, fire_delay)
+	fire_select_icon_state_prefix = "clip_"
+	adjust_fire_select_icon_state_on_safety = TRUE
 
-/obj/item/ammo_box/magazine/p16 //repath to /obj/item/ammo_box/magazine/generic_556 sometime
-	name = "assault rifle magazine (5.56x42mm CLIP)"
-	desc = "A simple, 30-round magazine for 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "p16_mag"
-	base_icon_state = "p16_mag"
-	ammo_type = /obj/item/ammo_casing/a556_42
-	caliber = CALIBER_556X42MM
-	max_ammo = 30
-
-/obj/item/ammo_box/magazine/p16/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
-
-/obj/item/ammo_box/magazine/p16/empty
-	start_empty = TRUE
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 47,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 29,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 15,
+			"y" = 24,
+		)
+	)
 
 /obj/item/gun/ballistic/automatic/assault/skm/cm24
 	name = "\improper CM-24"
@@ -318,45 +421,8 @@
 	fire_delay = 0.5 SECONDS
 	burst_size = 1
 	special_mags = TRUE
-
-/obj/item/gun/ballistic/automatic/assault/skm/cm24/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, fire_delay)
-
-/obj/item/ammo_box/magazine/skm_762_40
-	name = "assault rifle magazine (7.62x40mm CLIP)"
-	desc = "A slightly curved, 20-round magazine for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	base_icon_state = "skm_mag"
-	icon_state = "skm_mag"
-	ammo_type = /obj/item/ammo_casing/a762_40
-	caliber = CALIBER_762X40MM
-	max_ammo = 20
-
-/obj/item/ammo_box/magazine/skm_762_40/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
-
-/obj/item/ammo_box/magazine/skm_762_40/empty
-	start_empty = TRUE
-
-/obj/item/ammo_box/magazine/skm_762_40/extended
-	name = "extended assault rifle magazine (7.62x40mm CLIP)"
-	desc = "A very curved, 40-round magazine for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
-	base_icon_state = "skm_extended_mag"
-	icon_state = "skm_extended_mag"
-	max_ammo = 40
-
-/obj/item/ammo_box/magazine/skm_762_40/extended/empty
-	start_empty = TRUE
-
-/obj/item/ammo_box/magazine/skm_762_40/drum
-	name = "assault rifle drum (7.62x40mm CLIP)"
-	desc = "A 75-round drum for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
-	base_icon_state = "skm_drum"
-	icon_state = "skm_drum"
-	max_ammo = 75
-	w_class = WEIGHT_CLASS_NORMAL
+	fire_select_icon_state_prefix = "clip_"
+	adjust_fire_select_icon_state_on_safety = TRUE
 
 /obj/item/gun/ballistic/automatic/hmg/cm40
 	name = "\improper CM-40"
@@ -391,29 +457,40 @@
 	accepted_magazine_type = /obj/item/ammo_box/magazine/cm40_762_40_box
 
 	spread = 10
-	recoil = 1
+	spread_unwielded = 35
 
-/obj/item/gun/ballistic/automatic/hmg/cm40/Initialize(mapload)
+	recoil = 1
+	recoil_unwielded = 7 //same as skm
+
+	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
+	wield_delay = 0.9 SECONDS //faster than normal lmgs, slower than stock skm
+
+	has_bipod = TRUE
+
+	//you get the rail slot back when the bipod is an attachment
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 48,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 12,
+			"y" = 25,
+		)
+	)
+
+	deploy_recoil_bonus = -2
+	deploy_spread_bonus = -6
+
+/obj/item/gun/ballistic/automatic/hmg/cm40/Initialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, fire_delay)
-
-/obj/item/ammo_box/magazine/cm40_762_40_box
-	name = "CM-40 box magazine (7.62x40mm CLIP)"
-	desc = "An 80 round box magazine for CM-40 light machine gun. These rounds do good damage with good armor penetration."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	base_icon_state = "cm40_mag"
-	icon_state = "cm40_mag"
-	ammo_type = /obj/item/ammo_casing/a762_40
-	caliber = CALIBER_762X40MM
-	max_ammo = 80
-	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/ammo_box/magazine/cm40_762_40_box/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
-
-/obj/item/ammo_box/magazine/cm40_762_40_box/empty
-	start_empty = TRUE
 
 /obj/item/gun/ballistic/automatic/hmg/rottweiler
 	name = "\improper KM-05 Rottweiler"
@@ -427,8 +504,14 @@
 	inhand_icon_state = "rottweiler"
 	worn_icon_state = "rottweiler"
 	mag_display_ammo = TRUE
-	mag_display = FALSE //TEMP
+	mag_display = FALSE //TEMP SARGASSUM FIX IT BRUH
+
+
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/hmg/hmg.ogg'
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
 	fire_delay = 0.3 SECONDS //chunky machine gun
 
 	weapon_weight = WEAPON_MEDIUM
@@ -439,29 +522,36 @@
 	accepted_magazine_type = /obj/item/ammo_box/magazine/rottweiler_308_box
 
 	spread = 12
-	recoil = 2
+	spread_unwielded = 35
+
+	recoil = 3 //it's firing .308
+	recoil_unwielded = 8
+
+	has_bipod = TRUE
+
+	deploy_recoil_bonus = -3
+	deploy_spread_bonus = -10 //2 degree spread when deployed, making it VERY accurate for an lmg
+
+	valid_attachments = CLIP_ATTACHMENTS
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 49,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 19,
+			"y" = 21,
+		)
+	)
 
 /obj/item/gun/ballistic/automatic/hmg/rottweiler/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, fire_delay)
-
-/obj/item/ammo_box/magazine/rottweiler_308_box
-	name = "Rottweiler box magazine (.308)"
-	desc = "A 50 round box magazine for Rottweiler machine gun. These rounds do good damage with significant armor penetration."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	base_icon_state = "rottweiler_mag"
-	icon_state = "rottweiler_mag-1"
-	ammo_type = /obj/item/ammo_casing/a308
-	caliber = CALIBER_308
-	max_ammo = 50
-	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/ammo_box/magazine/rottweiler_308_box/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
-
-/obj/item/ammo_box/magazine/rottweiler_308_box/empty
-	start_empty = TRUE
 
 //########### MISC ###########//
 
@@ -477,12 +567,18 @@
 	inhand_icon_state = "cm15"
 	worn_icon_state = "cm15"
 
+	fire_select_icon_state_prefix = "clip_"
+	adjust_fire_select_icon_state_on_safety = TRUE
+
+
 	weapon_weight = WEAPON_MEDIUM
 	accepted_magazine_type = /obj/item/ammo_box/magazine/cm15_12g
 
 	empty_indicator = FALSE
 	semi_auto = TRUE
 	internal_magazine = FALSE
+	casing_ejector = TRUE
+	tac_reloads = TRUE
 	casing_ejector = TRUE
 	tac_reloads = TRUE
 	inhand_x_dimension = 32
@@ -496,27 +592,24 @@
 	rack_sound = 'tff_modular/modules/evento_needo/sounds/rifle/ar_cock.ogg'
 
 	spread = 3
+	spread_unwielded = 15
 	recoil = 1
+	recoil_unwielded = 4
+	wield_slowdown = HEAVY_SHOTGUN_SLOWDOWN
+	wield_delay = 0.65 SECONDS
 	fire_delay = 0.4 SECONDS
 
-/obj/item/ammo_box/magazine/cm15_12g
-	name = "CM-15 magazine (12g buckshot)"
-	desc = "An almost straight, 8-round magazine designed for the CM-15 shotgun."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "cm15_mag-1"
-	base_icon_state = "cm15_mag"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	caliber = CALIBER_SHOTGUN
-	max_ammo = 8
-
-/obj/item/ammo_box/magazine/cm15_12g/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
-
-/obj/item/ammo_box/magazine/cm15_12g/empty
-	start_empty = TRUE
-
-/obj/item/ammo_box/magazine/cm15_12g/incendiary
-	name = "CM-15 magazine (12g incendiary)"
-	desc = "An almost straight, 8-round magazine designed for the CM-15 shotgun. This one was loaded with incendiary slugs. Be careful!"
-	ammo_type = /obj/item/ammo_casing/shotgun/incendiary
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 34,
+			"y" = 15,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 44,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 21,
+			"y" = 25,
+		)
+	)

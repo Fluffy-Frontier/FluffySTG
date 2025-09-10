@@ -424,11 +424,11 @@
 
 // /obj/vehicle/sealed/car/vim signals
 
-///from /datum/action/vehicle/sealed/noise/chime/Trigger(): ()
+///from /datum/action/vehicle/sealed/noise/chime/Trigger(trigger_flags, atom/target): ()
 #define COMSIG_VIM_CHIME_USED "vim_chime_used"
-///from /datum/action/vehicle/sealed/noise/buzz/Trigger(): ()
+///from /datum/action/vehicle/sealed/noise/buzz/Trigger(trigger_flags, atom/target): ()
 #define COMSIG_VIM_BUZZ_USED "vim_buzz_used"
-///from /datum/action/vehicle/sealed/headlights/vim/Trigger(): (headlights_on)
+///from /datum/action/vehicle/sealed/headlights/vim/Trigger(trigger_flags, atom/target): (headlights_on)
 #define COMSIG_VIM_HEADLIGHTS_TOGGLED "vim_headlights_toggled"
 
 ///from /datum/computer_file/program/messenger/proc/receive_message

@@ -1,0 +1,921 @@
+#define STATUS_EFFECT_FREEZING /datum/status_effect/freezing
+#define STATUS_EFFECT_FOGBOUND /datum/status_effect/fogbound
+#define SEASONS_SLAM_COOLDOWN (20 SECONDS)
+
+/mob/living/simple_animal/hostile/abnormality/seasons
+	name = "God of the Seasons"
+	desc = "By jove, what is that?!?"
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/64x96.dmi'
+	icon_state = "" //probably better to start off invisible than the wrong state for a decisecond or i'll get a stream of "bug reports"
+	icon_living = ""
+	pixel_x = -16
+	base_pixel_x = -16
+	speak_emote = list("intones")
+	attack_verb_continuous = "attacks"
+	attack_verb_simple = "attack"
+	attack_sound = 'sound/mobs/non-humanoids/venus_trap/venus_trap_hurt.ogg'
+	ranged = TRUE
+	projectiletype = /obj/projectile/season_projectile
+	projectilesound = 'sound/mobs/non-humanoids/venus_trap/venus_trap_hurt.ogg'
+	can_breach = TRUE
+	fear_level = ALEPH_LEVEL
+	fear_level = ALEPH_LEVEL
+	health = 4000
+	maxHealth = 4000
+	obj_damage = 600
+	damage_coeff = list(BURN = 1.1, BRAIN = -1, BRUTE = 1.1, TOX = 1.1)
+	melee_damage_type = BRUTE
+	melee_damage_lower = 35
+	melee_damage_upper = 45
+	speed = 3
+	move_to_delay = 4
+	can_breach = TRUE
+	ego_list = list(
+		/datum/ego_datum/weapon/seasons,
+		/datum/ego_datum/armor/seasons,
+	)
+
+	gift_type =  /datum/ego_gifts/seasons
+//Should be unique for each season, for now let's use Spring
+	observation_prompt = "I'm standing outside a forest I both have never seen before, yet know well. <br>There is no City, no civilization on the horizon, I am utterly alone. <br>\
+		Dauntlessly, I press into the forest, seeing no other path forward, and encounter a cute-looking, pink forest spirit. <br>\
+		The spirits of the forest are playful, but it's best not to offend them by forgetting to make an offering"
+
+
+	//Var Lists
+	var/list/season_stats = list(
+		"spring" = list(/datum/weather/thunderstorm, BRUTE, "Spring God", "Spring Deity, \"Caprice\" Panz","A bashful spirit cloaked in flower pedals.","A mischievous deity."),
+		"summer" = list(/datum/weather/heatwave, BRUTE, "Summer God", "Summer Deity, \"Great Heat\" T'cau", "A hot-headed spirit.","He looks angry."),
+		"fall" = list(/datum/weather/fog, BRUTE, "Autumn God", "Fall Deity, \"Hegemon\" Ber","A calm and collected spirit cloaked in leaves.","A powerful tree spirit."),
+		"winter" = list(/datum/weather/freezing_wind, BRUTE, "Winter God", "Winter Deity, \"Quietus\" Fuyuryou","A regal-looking snow spirit.","This winter brings bitter cold.")
+	)
+
+	var/list/breaching_stats = list(
+		"spring" = list('sound/mobs/non-humanoids/venus_trap/venus_trap_hurt.ogg', 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/seasons/spring_change.ogg', /obj/projectile/season_projectile/spring, /obj/effect/season_effect/spring, /obj/effect/season_effect/breath/spring, /obj/effect/season_warn/spring, /obj/effect/season_warn/spring),
+		"summer" = list('tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/seasons/summer_attack.ogg', 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/seasons/summer_change.ogg', /obj/projectile/season_projectile/summer, /obj/effect/season_effect/summer, /obj/effect/season_effect/breath/summer, /obj/effect/season_warn/summer, /obj/effect/season_warn/summer),
+		"fall" = list('tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/seasons/fall_attack.ogg', 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/seasons/fall_change.ogg', /obj/projectile/season_projectile/fall, /obj/effect/season_effect/fall, /obj/effect/season_effect/breath/fall, /obj/effect/season_warn/fall, /obj/effect/season_warn/fall),
+		"winter" = list('tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/seasons/winter_attack.ogg', 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/seasons/winter_change.ogg', /obj/projectile/season_projectile/winter, /obj/effect/season_effect/winter, /obj/effect/season_effect/breath/winter, /obj/effect/season_warn/winter, /obj/effect/season_warn/winterspikes)
+	)
+
+	var/list/modular_work_chance = list( //You can work anything on it! Just not all at once.
+		"spring" = list(
+			ABNORMALITY_WORK_INSTINCT = list(5, 10, 15, 35, 40),
+			ABNORMALITY_WORK_INSIGHT = list(5, 10, 15, 50, 55),
+			ABNORMALITY_WORK_ATTACHMENT = 0,
+			ABNORMALITY_WORK_REPRESSION = 0,
+			),
+
+		"summer" = list(
+			ABNORMALITY_WORK_INSTINCT = list(5, 10, 15, 50, 55),
+			ABNORMALITY_WORK_INSIGHT = 0,
+			ABNORMALITY_WORK_ATTACHMENT = list(5, 10, 15, 35, 40),
+			ABNORMALITY_WORK_REPRESSION = 0,
+			),
+
+		"fall" = list(
+			ABNORMALITY_WORK_INSTINCT = 0,
+			ABNORMALITY_WORK_INSIGHT = 0,
+			ABNORMALITY_WORK_ATTACHMENT = list(5, 10, 15, 50, 55),
+			ABNORMALITY_WORK_REPRESSION = list(5, 10, 15, 35, 40),
+			),
+
+		"winter" = list(
+			ABNORMALITY_WORK_INSTINCT = 0,
+			ABNORMALITY_WORK_INSIGHT = list(5, 10, 15, 35, 40),
+			ABNORMALITY_WORK_ATTACHMENT = 0,
+			ABNORMALITY_WORK_REPRESSION = list(5, 10, 15, 50, 55),
+			)
+		)
+
+	var/list/modular_damage_coeff = list(
+		"spring" = list(BURN = 0.8, BRAIN = 0.2, BRUTE = 1, TOX = 1.5),
+		"summer" = list(BURN = 0.1, BRAIN = 0.6, BRUTE = 0.6, TOX = 1), //Summer is tanky
+		"fall" = list(BURN = 0.8, BRAIN = 1, BRUTE = 0.2, TOX = 1.5),
+		"winter" = list(BURN = 1.5, BRAIN = 1, BRUTE = 0.8, TOX = 0.2)
+		)
+
+	// Work Vars
+	var/current_season = "winter"
+	var/downgraded
+	var/safe
+	var/work_timer
+	// Breach Vars
+	var/can_act = TRUE
+	var/slam_damage = 200
+	var/slam_cooldown
+	var/slam_cooldown_time = 20 SECONDS
+	var/cone_attack_damage = 90
+	var/cone_attack_cooldown
+	var/cone_attack_cooldown_time = 10 SECONDS
+	var/pulse_cooldown
+	var/pulse_cooldown_time = 4 SECONDS
+	var/pulse_damage = 15
+	// Turf Tracker
+	var/list/spawned_turfs = list()
+
+	// PLAYABLES ATTACKS
+	attack_action_types = list(
+		/datum/action/cooldown/seasons_slam,
+		/datum/action/innate/abnormality_attack/toggle/seasons_cone_toggle,
+	)
+
+	update_qliphoth = 0
+
+/datum/action/cooldown/seasons_slam
+	name = "Slam"
+	button_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/actions_abnormality.dmi'
+	button_icon_state = "generic_slam"
+	check_flags = AB_CHECK_CONSCIOUS
+	transparent_when_unavailable = TRUE
+	cooldown_time = SEASONS_SLAM_COOLDOWN //20 seconds
+
+/datum/action/cooldown/seasons_slam/Trigger(trigger_flags, atom/target)
+	if(!..())
+		return FALSE
+	if(!istype(owner, /mob/living/simple_animal/hostile/abnormality/seasons))
+		return FALSE
+	var/mob/living/simple_animal/hostile/abnormality/seasons/seasons = owner
+	if(seasons.IsContained()) // No more using cooldowns while contained
+		return FALSE
+	StartCooldown()
+	seasons.Slam()
+	return TRUE
+
+/datum/action/innate/abnormality_attack/toggle/seasons_cone_toggle
+	name = "Toggle Breath"
+	button_icon_state = "generic_toggle0"
+	chosen_attack_num = 2
+	chosen_message = span_colossus("You won't use your breath anymore.")
+	button_icon_toggle_activated = "generic_toggle1"
+	toggle_attack_num = 1
+	toggle_message = span_colossus("You will now breath a cone of elemental energy.")
+	button_icon_toggle_deactivated = "generic_toggle0"
+
+
+//Spawning
+/mob/living/simple_animal/hostile/abnormality/seasons/Initialize()
+	. = ..()
+	RegisterSignal(SSdcs, COMSIG_GLOB_SEASON_CHANGE, PROC_REF(Transform))
+	addtimer(CALLBACK(src, PROC_REF(TryTransform)), 1)
+
+/mob/living/simple_animal/hostile/abnormality/seasons/proc/TryTransform()
+	dir = SOUTH
+	Transform()
+
+/mob/living/simple_animal/hostile/abnormality/seasons/PostSpawn()
+	. = ..()
+	work_timer = addtimer(CALLBACK(src, PROC_REF(WorkCheck)), 9 MINUTES, TIMER_OVERRIDE & TIMER_UNIQUE & TIMER_STOPPABLE)
+	if((locate(/obj/effect/season_turf) in range(1, src)))
+		return
+	if(datum_reference != null) // Can't downgrade if GotS is not even contained.
+		Downgrade()
+
+//Work Stuff
+/mob/living/simple_animal/hostile/abnormality/seasons/PostWorkEffect(mob/living/carbon/human/user)
+	if(user.sanity_lost)
+		qliphoth_change(-1)
+	if(downgraded)
+		qliphoth_change(-1)
+
+/mob/living/simple_animal/hostile/abnormality/seasons/try_working(mob/living/carbon/human/user)
+	if(CheckWeather())
+		to_chat(user, span_warning("The abnormality seems to be ignoring you!"))
+		return FALSE
+	if(downgraded)
+		neutral_chance = 65
+		negative_chance = 23
+	else
+		neutral_chance = 40
+		negative_chance = 40
+	return ..()
+
+/mob/living/simple_animal/hostile/abnormality/seasons/FailureEffect(mob/living/carbon/human/user)
+	if(downgraded)
+		return
+	qliphoth_change(-1)
+	return
+
+/mob/living/simple_animal/hostile/abnormality/seasons/SuccessEffect(mob/living/carbon/human/user)
+	if(!safe)
+		to_chat(user, span_nicegreen("The abnormality seems to be satisfied, at least for now..."))
+		safe = TRUE
+
+/mob/living/simple_animal/hostile/abnormality/seasons/NeutralEffect(mob/living/carbon/human/user, work_type, pe)
+	if(!safe)
+		if(prob(25))
+			to_chat(user, span_nicegreen("The abnormality seems to be satisfied, at least for now..."))
+			safe = TRUE
+			return
+		to_chat(user, span_warning("The abnormality seems to be indifferent to this attempt at work, perhaps you should try again?"))
+
+//Transformations
+/mob/living/simple_animal/hostile/abnormality/seasons/proc/Transform()
+	current_season = SSlobotomy_events.current_season
+	ChangeResistances(modular_damage_coeff[current_season])
+	melee_damage_type = season_stats[current_season][2]
+	icon_state = current_season
+	name = season_stats[current_season][4]
+	desc = season_stats[current_season][6]
+	attack_sound = breaching_stats[current_season][1]
+	projectilesound = breaching_stats[current_season][1]
+	playsound(get_turf(src), "[breaching_stats[current_season][2]]", 30, 0, 8)
+	projectiletype = breaching_stats[current_season][3]
+	if(downgraded)
+		icon_state = "[current_season]_mini"
+		name = season_stats[current_season][3]
+		desc = season_stats[current_season][5]
+	if(current_season == "winter")
+		cone_attack_damage = 75
+		slam_damage = 125
+		pulse_damage = 10
+	else
+		cone_attack_damage = initial(cone_attack_damage)
+		slam_damage = initial(slam_damage)
+		pulse_damage = initial(pulse_damage)
+	update_icon()
+
+/mob/living/simple_animal/hostile/abnormality/seasons/proc/Downgrade()
+	downgraded = TRUE
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/64x64.dmi'
+	Transform()
+	can_breach = FALSE
+	fear_level = WAW_LEVEL
+	datum_reference.qliphoth_meter_max = 5
+	qliphoth_change(4)
+	ADD_TRAIT(src, TRAIT_MOVE_FLYING, INNATE_TRAIT)
+	update_icon()
+
+/mob/living/simple_animal/hostile/abnormality/seasons/proc/Upgrade()
+	downgraded = FALSE
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/64x96.dmi'
+	Transform()
+	can_breach = TRUE
+	fear_level = ALEPH_LEVEL
+	datum_reference.qliphoth_meter_max = 1
+	qliphoth_change(1)
+	REMOVE_TRAIT(src, TRAIT_MOVE_FLYING, INNATE_TRAIT)
+	update_icon()
+	for(var/turf/open/O in range(1, src))
+		new /obj/effect/season_turf(O)
+
+//Breach Stuff
+/mob/living/simple_animal/hostile/abnormality/seasons/proc/WorkCheck()
+	if(!CheckWeather() && !safe)
+		StartWeather()
+		work_timer = addtimer(CALLBACK(src, PROC_REF(WorkCheck)), 30 SECONDS, TIMER_OVERRIDE & TIMER_UNIQUE & TIMER_STOPPABLE)
+		return
+	work_timer = addtimer(CALLBACK(src, PROC_REF(WorkCheck)), 9 MINUTES, TIMER_OVERRIDE & TIMER_UNIQUE & TIMER_STOPPABLE)
+	if(safe)
+		if(CheckWeather())
+			SSweather.end_weather(season_stats[current_season][1])
+		safe = FALSE
+		return
+	if(downgraded)
+		qliphoth_change(-5)
+		return
+	qliphoth_change(-1)
+
+/mob/living/simple_animal/hostile/abnormality/seasons/ZeroQliphoth(mob/living/carbon/human/user)
+	. = ..()
+	if(downgraded)
+		addtimer(CALLBACK(src, PROC_REF(Upgrade)), 10 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(EndWeather)), 60 SECONDS)
+	if(!CheckWeather())
+		StartWeather()
+
+/mob/living/simple_animal/hostile/abnormality/seasons/death(gibbed)
+	density = FALSE
+	animate(src, alpha = 0, time = 10 SECONDS)
+	QDEL_IN(src, 10 SECONDS)
+	..()
+
+/mob/living/simple_animal/hostile/abnormality/seasons/Destroy()
+	EndWeather()
+	for(var/obj/effect/season_turf/newturf in spawned_turfs)
+		newturf.DoDelete()
+	return ..()
+
+/mob/living/simple_animal/hostile/abnormality/seasons/BreachEffect(mob/living/carbon/human/user, breach_type)
+	if(downgraded)
+		Upgrade()
+		ZeroQliphoth()
+		return
+	. = ..()
+	if(breach_type != BREACH_MINING)
+		var/turf/T = get_turf(pick(GLOB.start_landmarks_list))
+		forceMove(T)
+
+//Weather controlling
+/mob/living/simple_animal/hostile/abnormality/seasons/proc/CheckWeather()
+	for(var/W in SSweather.processing)
+		var/datum/weather/V = W
+		if(V.type in SSlobotomy_events.seasons_weather_list)
+			return TRUE
+	return FALSE
+
+/mob/living/simple_animal/hostile/abnormality/seasons/proc/StartWeather()
+	SSweather.run_weather(season_stats[current_season][1])
+
+/mob/living/simple_animal/hostile/abnormality/seasons/proc/EndWeather()
+	SSweather.end_weather(season_stats[current_season][1])
+
+//Combat
+/mob/living/simple_animal/hostile/abnormality/seasons/AttackingTarget(atom/attacked_target)
+	if(!can_act)
+		return FALSE
+	if(!client)
+		if((cone_attack_cooldown <= world.time) && prob(35))
+			return ConeAttack(attacked_target)
+		if((slam_cooldown <= world.time) && prob(35))
+			return Slam()
+	if(ishuman(attacked_target))
+		if(Finisher(attacked_target))
+			return
+	return ..()
+
+/mob/living/simple_animal/hostile/abnormality/seasons/OpenFire()
+	if(!can_act)
+		return
+
+	if(client)
+		switch(chosen_attack)
+			if(1)
+				if(cone_attack_cooldown <= world.time)
+					ConeAttack(target)
+		return ..()
+
+	if(cone_attack_cooldown <= world.time)
+		ConeAttack(target)
+		return
+	if((slam_cooldown <= world.time))
+		Slam()
+		return
+	..()
+
+/mob/living/simple_animal/hostile/abnormality/seasons/Life()
+	. = ..()
+	if(downgraded)
+		return
+	if(src.IsContained())
+		return
+	if((pulse_cooldown <= world.time) && prob(35))
+		return Pulse()
+
+/mob/living/simple_animal/hostile/abnormality/seasons/Move()
+	if(!can_act)
+		return FALSE
+	for(var/turf/open/O in range(1, src))
+		if(!isturf(O) || isspaceturf(O))
+			continue
+		if(locate(/obj/effect/season_turf) in O)
+			continue
+		var/obj/effect/season_turf/newturf = new(O)
+		spawned_turfs += newturf
+	..()
+
+
+/mob/living/simple_animal/hostile/abnormality/seasons/proc/ConeAttack(atom/at = target)
+	cone_attack_cooldown = world.time + cone_attack_cooldown_time
+	can_act = FALSE
+	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/seasons/breath_attack.ogg', 40, FALSE, 5)
+	SLEEP_CHECK_DEATH(1 SECONDS, src)
+	var/list/turfs = list()
+	turfs = LineTarget(-40, 15, at)
+	FireLine(turfs)
+	turfs = LineTarget(-20, 15, at)
+	FireLine(turfs)
+	turfs = LineTarget(0, 15, at)
+	FireLine(turfs)
+	turfs = LineTarget(20, 15, at)
+	FireLine(turfs)
+	turfs = LineTarget(40, 15, at)
+	FireLine(turfs)
+	SLEEP_CHECK_DEATH(1 SECONDS, src)
+	can_act = TRUE
+
+/mob/living/simple_animal/hostile/abnormality/seasons/proc/LineTarget(offset, range, atom/at = target)
+	set waitfor = FALSE
+	if(!at)
+		return
+	var/turf/T = get_ranged_target_turf_direct(src, at, range, offset)
+	return (get_line(src, T) - get_turf(src))
+
+/mob/living/simple_animal/hostile/abnormality/seasons/proc/FireLine(list/turfs)
+	set waitfor = FALSE
+	var/attacktype = breaching_stats[current_season][5]
+	var/list/hit_list = list()
+	for(var/turf/T in turfs)
+		if(istype(T, /turf/closed))
+			break
+		var/obj/effect/season_effect/the_attack = new attacktype(T)
+		if (istype(the_attack, /obj/effect/season_effect))
+			the_attack.source = src
+		for(var/mob/living/L in T.contents)
+			if(L in hit_list || istype(L, type))
+				continue
+			hit_list += L
+			L.apply_damage(cone_attack_damage, melee_damage_type)
+			to_chat(L, span_userdanger("You have been hit by [src]'s breath attack!"))
+			if(ishuman(L))
+				Finisher(L)
+		SLEEP_CHECK_DEATH(1, src)
+
+/mob/living/simple_animal/hostile/abnormality/seasons/proc/Slam()//AOE attack
+	slam_cooldown = world.time + slam_cooldown_time
+	var/attacktype = breaching_stats[current_season][4]
+	var/warningtype = breaching_stats[current_season][7]
+	can_act = FALSE
+	for(var/turf/L in view(7, src))
+		if((get_dist(src, L) % 2 != 1))
+			continue
+		new warningtype(L)
+	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/seasons/aoe_warning.ogg', 75, FALSE, 12)
+	SLEEP_CHECK_DEATH(10, src)
+	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/seasons/aoe_attack.ogg', 80, FALSE, 12)
+	for(var/turf/T in view(7, src))
+		if((get_dist(src, T) % 2 != 1))
+			continue
+		var/obj/effect/season_effect/the_attack = new attacktype(T)
+		if (istype(the_attack, /obj/effect/season_effect))
+			the_attack.source = src
+		for(var/mob/living/L in T)
+			if(faction_check_atom(L))
+				continue
+			L.apply_damage(slam_damage, melee_damage_type)
+			if(ishuman(L))
+				Finisher(L)
+	SLEEP_CHECK_DEATH(3, src)
+	can_act = TRUE
+
+/mob/living/simple_animal/hostile/abnormality/seasons/proc/Pulse()//Periodic weak AOE attack
+	pulse_cooldown = world.time + pulse_cooldown_time
+	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/seasons/pulse.ogg', 30, FALSE, 3)
+	var/turf/orgin = get_turf(src)
+	var/list/all_turfs = RANGE_TURFS(5, orgin)
+	for(var/i = 0 to 5)
+		for(var/turf/T in all_turfs)
+			if(get_dist(orgin, T) != i)
+				continue
+			if(T.density)
+				continue
+			addtimer(CALLBACK(src, PROC_REF(PulseWarn), T), (3 * (i+1)) + 0.1 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(PulseHit), T), (3 * (i+1)) + 0.5 SECONDS)
+
+/mob/living/simple_animal/hostile/abnormality/seasons/proc/PulseWarn(turf/T)
+	var/attacktype = breaching_stats[current_season][6]
+	new attacktype(T)
+
+/mob/living/simple_animal/hostile/abnormality/seasons/proc/PulseHit(turf/T)
+	if(!locate(/obj/effect/season_turf) in T)
+		var/obj/effect/season_turf/newturf = new(T)
+		spawned_turfs += newturf
+	for(var/mob/living/L in T)
+		if(faction_check_atom(L))
+			continue
+		L.apply_damage(pulse_damage, melee_damage_type)
+
+/mob/living/simple_animal/hostile/abnormality/seasons/proc/Finisher(mob/living/carbon/human/H) //return TRUE to prevent attacking, as attacking causes runtimes if the target is gibbed.
+	if(current_season == "spring" && H.sanity_lost)
+		H.gib() //eventually we'll add some sort of effect
+		return TRUE
+	if(H.stat >= HARD_CRIT || H.health < 0)
+		switch(current_season)
+			if("summer")
+				H.adjustBruteLoss(H.maxHealth)
+				H.Drain()
+				H.adjust_fire_stacks(30)
+				H.ignite_mob()
+			if("fall")
+				H.adjustBruteLoss(H.maxHealth)
+				H.Drain()
+			if("winter") //turn them into an ice cube
+				if(HAS_TRAIT(H, TRAIT_HUSK))
+					return FALSE
+				var/cube = icon('icons/effects/freeze.dmi', "ice_cube")
+				H.add_overlay(cube)
+				H.adjustBruteLoss(H.maxHealth)
+				H.Drain()
+		return TRUE
+	return FALSE
+
+//Weather and such
+/datum/weather/thunderstorm //Spring weather, might want to add thunder strikes or make it a bit more dangerous overall.
+	name = "thunderstorm"
+	immunity_type = "rain"
+	desc = "Extreme thunderstorms "
+	telegraph_message = span_warning("It has begun to rain.")
+	telegraph_duration = 300
+	telegraph_overlay = "light_rain"
+	weather_message = span_userdanger("<i>The rain starts coming down hard!</i>")
+	weather_overlay = "rain_storm"
+	weather_duration_lower = 1500
+	weather_duration_upper = 3000
+	weather_duration = INFINITY //should make it last forever
+	end_duration = 100
+	end_message = span_boldannounce("The rain starts to let up.")
+	end_overlay = "light_rain"
+	area_type = /area
+	target_trait = ZTRAIT_STATION
+
+/datum/weather/thunderstorm/weather_act_mob(mob/living/living)
+	if(!ishuman(living))
+		return
+	if(prob(1))
+		var/turf/open/OT = get_turf(living)
+		if(isopenturf(OT))
+			OT.MakeSlippery(TURF_WET_WATER, min_wet_time = 10 SECONDS, wet_time_to_add = 5 SECONDS)
+	if(prob(1))
+		new /obj/effect/thunderbolt/seasons(get_turf(living)) //Thunder!
+
+/datum/weather/heatwave //Summer weather, sets you on fire rarely.
+	name = "heatwaves"
+	immunity_type = "heatwave"
+	desc = "Extreme heatwaves caused by an abnormality."
+	telegraph_message = span_warning("The temperature suddenly skyrockets!")
+	telegraph_duration = 300
+	telegraph_overlay = "light_ash"
+	weather_message = span_userdanger("<i>It's too hot!</i>")
+	weather_overlay = "heavy_ash"
+	weather_duration_lower = 1500
+	weather_duration_upper = 3000
+	weather_duration = INFINITY //should make it last forever
+	end_duration = 100
+	end_message = span_boldannounce("The temperature starts to return to normal.")
+	end_overlay = "light_ash"
+	area_type = /area
+	target_trait = ZTRAIT_STATION
+
+/datum/weather/heatwave/weather_act_mob(mob/living/living)
+	if(!ishuman(living))
+		return
+	if(prob(3))
+		living.adjust_fire_stacks(rand(0.1, 1))
+		living.ignite_mob()
+		to_chat(living, span_warning("You are burning alive!"))
+	if(prob(1))
+		SpawnFire(living)
+
+/datum/weather/heatwave/proc/SpawnFire(mob/living/carbon/human/L) //Randomly spawn burning tiles near players
+	set waitfor = FALSE
+	for(var/turf/open/T in view(3, L))
+		if(prob(10))
+			if(prob(66))
+				sleep(rand(1,5))
+			new /obj/effect/turf_fire(T)
+
+/datum/weather/fog //Fall weather, causes nearsightedness.
+	name = "fog"
+	immunity_type = "fog"
+	desc = "An extreme surplus of humidity caused by an abnormality."
+	telegraph_message = span_warning("The air is becoming damp.")
+	telegraph_duration = 300
+	telegraph_overlay = "light_fog"
+	weather_message = span_userdanger("<i>You can't see anything with all this fog in the way!</i>")
+	weather_overlay = "heavy_fog"
+	weather_duration_lower = 1500
+	weather_duration_upper = 3000
+	weather_duration = INFINITY //should make it last forever
+	end_duration = 100
+	end_message = span_boldannounce("The fog seems to be going away.")
+	end_overlay = "light_pollen"
+	area_type = /area
+	target_trait = ZTRAIT_STATION
+
+/datum/weather/fog/weather_act_mob(mob/living/living)
+	if(!ishuman(living))
+		return
+	if(prob(1))
+		for(var/turf/open/T in view(3, living))
+			if(prob(25))
+				//var/datum/effect_system/smoke_spread/S = new
+				//S.set_up(3, T)
+				//S.start()
+				return
+	if(living.has_status_effect(STATUS_EFFECT_FOGBOUND))
+		return
+	living.apply_status_effect(STATUS_EFFECT_FOGBOUND)
+
+/datum/weather/fog/end()
+	..()
+	for(var/mob/living/carbon/human/L in GLOB.player_list)
+		L.remove_status_effect(STATUS_EFFECT_FOGBOUND)
+
+/datum/weather/freezing_wind //Winter weather, causes slowdown.
+	name = "freezing wind"
+	immunity_type = "freezing"
+	desc = "An extreme snowstorm caused by an abnormality."
+	telegraph_message = span_warning("The temperature suddenly drops!")
+	telegraph_duration = 300
+	telegraph_overlay = "snowfall_calm"
+	weather_message = span_userdanger("<i>It's so cold!</i>")
+	weather_overlay = "snowfall_blizzard"
+	weather_duration_lower = 1500
+	weather_duration_upper = 3000
+	weather_duration = INFINITY //should make it last forever
+	end_duration = 100
+	end_message = span_boldannounce("The snow starts to let up.")
+	end_overlay = "snowfall_calm"
+	area_type = /area
+	target_trait = ZTRAIT_STATION
+
+/datum/weather/freezing_wind/weather_act_mob(mob/living/living)
+	if(!ishuman(living))
+		return
+	if(living.has_status_effect(STATUS_EFFECT_FREEZING))
+		return
+	var/randomslowdown = rand(0.5,1)
+	living.apply_status_effect(STATUS_EFFECT_FREEZING)
+	living.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/freezing, multiplicative_slowdown = randomslowdown)
+	to_chat(living, span_warning("The freezing wind chills your bones!"))
+
+/datum/weather/freezing_wind/end()
+	..()
+	for(var/mob/living/carbon/human/L in GLOB.player_list)
+		L.remove_status_effect(STATUS_EFFECT_FREEZING)
+		L.remove_movespeed_modifier(/datum/movespeed_modifier/freezing)
+
+//Status effects.
+/datum/status_effect/freezing
+	id = "freezing"
+	status_type = STATUS_EFFECT_UNIQUE
+	duration = 30 SECONDS
+	alert_type = /atom/movable/screen/alert/status_effect/freezing
+
+/atom/movable/screen/alert/status_effect/freezing
+	name = "Freezing"
+	desc = "It's so cold!"
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/status_sprites.dmi'
+	icon_state = "freezing"
+
+/datum/status_effect/fogbound
+	id = "fogbound"
+	status_type = STATUS_EFFECT_UNIQUE
+	duration = 30 SECONDS
+	alert_type = /atom/movable/screen/alert/status_effect/fogbound
+
+/datum/status_effect/fogbound/on_apply()
+	owner.become_nearsighted(TRAUMA_TRAIT)
+	return ..()
+
+/datum/status_effect/fogbound/on_remove()
+	owner.cure_nearsighted(TRAUMA_TRAIT)
+	return ..()
+
+/atom/movable/screen/alert/status_effect/fogbound
+	name = "Fogbound"
+	desc = "You can hardly see anything!"
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/status_sprites.dmi'
+	icon_state = "foggy"
+
+#undef STATUS_EFFECT_FREEZING
+#undef STATUS_EFFECT_FOGBOUND
+
+/datum/movespeed_modifier/freezing
+	multiplicative_slowdown = 0
+	variable = TRUE
+
+//Misc. Objects
+/obj/effect/season_turf //Modular turf that spawnes under the abnormality with Upgrade().
+	name = "grass"
+	desc = "A thick layer of foilage that never seems to die down."
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "floor"
+	layer = MID_TURF_LAYER
+	anchored = TRUE
+	var/list/season_list = list(
+		"spring" = list("razorgrass", "A thick layer of razor sharp foilage that never seems to die down."),
+		"summer" = list("volcanic rock","Some incredibly hot igneus rock."),
+		"fall" = list("swampy grass","A thick marsh, deep enough that you need to wear boots."),
+		"winter" = list("snow","A patch of snow."),
+	)
+	var/current_season
+	var/area_affected
+	var/damaging
+	var/list/viable_landmarks = list(
+		/obj/effect/landmark/event_spawn
+		)
+
+/obj/effect/season_turf/Initialize()
+	. = ..()
+	RegisterSignal(SSdcs, COMSIG_GLOB_SEASON_CHANGE, PROC_REF(Transform))
+	Transform()
+
+/obj/effect/season_turf/proc/Transform()
+	current_season = SSlobotomy_events.current_season
+	icon = 'icons/turf/floors.dmi'
+	name = season_list[current_season][1]
+	desc = season_list[current_season][2]
+	for(var/X in GLOB.generic_event_spawns) // It would make sense to check xeno spawns in an area, but that actually loops through every turf in the world.
+		var/turf/T = X
+		if(get_dist(T, src) < 4)
+			area_affected = TRUE
+			break
+	if(!area_affected)
+		for(var/Y in GLOB.generic_event_spawns)
+			var/turf/F = Y
+			if(get_dist(F, src) < 2)
+				area_affected = TRUE
+				break
+	switch(current_season)
+		if("spring")
+			if(area_affected)
+				icon_state = "fairygrass[rand(0,3)]"
+				return
+			icon_state = "grass[rand(0,3)]"
+		if("summer")
+			if(area_affected)
+				icon_state = "lava"
+				return
+			icon_state = "basalt[rand(0,3)]"
+		if("fall")
+			if(area_affected)
+				icon_state = "junglegrass"
+				return
+			icon_state = "wasteland[rand(8,11)]"
+		if("winter")
+			icon = 'icons/turf/snow.dmi'
+			if(area_affected)
+				icon_state = "ice"
+				name = "ice"
+				desc = "A patch of slippery ice."
+				return
+			icon_state = "snow[rand(0,6)]"
+
+//obj/effect/season_turf/Crossed(atom/movable/AM)
+//	. = ..()
+//	if(!ishuman(AM))
+//		return
+//	var/mob/living/carbon/human/H = AM
+//	BumpEffect(H)
+
+/obj/effect/season_turf/proc/BumpEffect(mob/living/carbon/human/H)
+	if(!area_affected)
+		return
+	switch(current_season)
+		if("spring")
+			to_chat(H, span_warning("You are stung by nettles as you pass through!"))
+			DoDamage()
+		if("summer")
+			to_chat(H, span_warning("You stumbled into a pool of lava!"))
+			DoDamage()
+		if("fall")
+			to_chat(H, span_warning("You sink into the marsh!"))
+			animate(H, alpha = 255,pixel_x = 0, pixel_z = -3, time = 0.5 SECONDS)
+			H.pixel_z = -3
+			H.Immobilize(0.5 SECONDS)
+			animate(H, alpha = 255,pixel_x = 0, pixel_z = 3, time = 0.5 SECONDS)
+			H.pixel_z = 0
+		if("winter")
+			if(prob(25))
+				to_chat(H, span_warning("You slip on the ice!"))
+				H.slip(0, null, SLIDE_ICE, 0, FALSE) //might need to replace this as stuns are pretty annoying...
+				H.Immobilize(0.5 SECONDS)
+				return
+			to_chat(H, notice("You manage to keep your balance on the slippery ice."))
+
+/obj/effect/season_turf/proc/DoDamage()
+	var/dealt_damage = FALSE
+	for(var/mob/living/L in get_turf(src))
+		if(ishuman(L))
+			var/mob/living/carbon/human/H = L
+			if(current_season == "summer")
+				H.apply_damage(9, FIRE)
+				dealt_damage = TRUE
+			else if(current_season == "spring")
+				H.apply_damage(10, BRUTE, null, H.run_armor_check(null, BRUTE), spread_damage = FALSE)
+	if(!dealt_damage)
+		damaging = FALSE
+		return
+	addtimer(CALLBACK(src, PROC_REF(DoDamage)), 4)
+
+/obj/effect/season_turf/proc/DoDelete()
+	var/randomtimer = rand(3,15)
+	animate(src, alpha = 150, time = randomtimer SECONDS)
+	QDEL_IN(src, randomtimer SECONDS)
+
+//Effects
+/obj/effect/season_warn //warning for attacks
+	icon = 'icons/effects/weather_effects.dmi'
+	name = "weather warning"
+	desc = "Looks like the terrain is being shifted by an abnormality."
+	layer = LYING_MOB_LAYER
+	alpha = 100
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
+/obj/effect/season_warn/Initialize()
+	. = ..()
+	QDEL_IN(src, 10)
+
+/obj/effect/season_warn/summer
+	icon_state = "ash_storm"
+
+/obj/effect/season_warn/fall
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "oldsmoothdarkdirt"
+
+/obj/effect/season_warn/winter
+	icon_state = "snow_storm"
+	alpha = 255
+
+/obj/effect/season_warn/winterspikes
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/effects.dmi'
+	icon_state = "winter_warn"
+
+/obj/effect/season_warn/spring
+	icon = 'icons/mob/spacevines.dmi'
+	icon_state = "Hvy1"
+
+/obj/effect/season_warn/vines/Initialize()
+	. = ..()
+	icon_state = pick("Hvy1", "Hvy2", "Hvy3")
+
+/obj/effect/season_effect //effect subtype that handles spawning season_turfs
+	name = "weather warning"
+	desc = "Watch out!"
+	layer = ABOVE_ALL_MOB_LAYER
+	var/mob/living/simple_animal/hostile/abnormality/seasons/source
+
+/obj/effect/season_effect/Initialize()
+	. = ..()
+	addtimer(CALLBACK(src, PROC_REF(pop)), 0.5 SECONDS)
+
+/obj/effect/season_effect/proc/pop()
+	if(!source)
+		QDEL_IN(src, 0.5 SECONDS)
+		return
+	if(!locate(/obj/effect/season_turf) in get_turf(src))
+		var/obj/effect/season_turf/newturf = new(get_turf(src))
+		source.spawned_turfs += newturf
+	if(prob(5))
+		var/list/spawn_area = range(1, get_turf(src))
+		for(var/turf/open/O in spawn_area)
+			if(!isturf(O) || isspaceturf(O))
+				continue
+			var/obj/effect/season_turf/G = (locate(/obj/effect/season_turf) in O)
+			if(G)
+				qdel(G)
+			var/obj/effect/season_turf/anewturf = new(O)
+			source.spawned_turfs += anewturf
+	QDEL_IN(src, 0.5 SECONDS)
+
+/obj/effect/season_effect/summer
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/effects.dmi'
+	icon_state = "summer_attack"
+
+/obj/effect/season_effect/fall
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/effects.dmi'
+	icon_state = "universe_aflame"
+	alpha = 230
+
+/obj/effect/season_effect/winter
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/effects.dmi'
+	icon_state = "winter_attack"
+
+/obj/effect/season_effect/spring
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/tegu_effects.dmi'
+	icon_state = "vinespike"
+
+/obj/effect/season_effect/breath //subtype of season_effect that spawns turf way less often, for "breath" attacks that cover a lot of ground. also looks different.
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
+/obj/effect/season_effect/breath/pop()
+	if(prob(75))
+		..()
+		return
+	QDEL_IN(src, 0.5 SECONDS)
+
+/obj/effect/season_effect/breath/summer
+	icon = 'icons/effects/fire.dmi'
+	icon_state = "1" //yeah its weird
+
+/obj/effect/season_effect/breath/summer/Initialize()
+	. = ..()
+	icon_state = pick("1", "2", "3")
+
+/obj/effect/season_effect/breath/fall
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/effects.dmi'
+	icon_state = "universe_aflame"
+	alpha = 100
+
+/obj/effect/season_effect/breath/winter
+	icon = 'icons/effects/weather_effects.dmi'
+	icon_state = "light_fog"
+
+/obj/effect/season_effect/breath/winter/Initialize()
+	. = ..()
+	color = pick("#a2d2df", "#20c3d0")
+
+/obj/effect/season_effect/breath/spring
+	icon = 'icons/mob/spacevines.dmi'
+	icon_state = "Light1"
+
+/obj/effect/season_effect/breath/spring/Initialize()
+	. = ..()
+	icon_state = pick("Light1", "Light1", "Light3")
+
+/obj/effect/thunderbolt/seasons
+
+/obj/effect/thunderbolt/seasons/Convert(mob/living/carbon/human/H) //haha, it doesn't actually convert.
+	return
+
+#undef SEASONS_SLAM_COOLDOWN

@@ -860,6 +860,12 @@
 	screen_loc = ui_living_healthdoll
 	vis_flags = VIS_INHERIT_ID | VIS_INHERIT_PLANE
 
+/atom/movable/screen/sanityhealth
+	name = "sanity"
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/screen_gen.dmi'
+	icon_state = "sanity0"
+	screen_loc = ui_sanityhealth
+
 /atom/movable/screen/mood
 	name = "mood"
 	icon_state = "mood5"

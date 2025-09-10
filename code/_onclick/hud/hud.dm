@@ -114,6 +114,7 @@ GLOBAL_LIST_INIT(available_erp_ui_styles, list(
 	var/atom/movable/screen/healths
 	var/atom/movable/screen/stamina
 	var/atom/movable/screen/healthdoll/healthdoll
+	var/atom/movable/screen/sanityhealth
 	var/atom/movable/screen/spacesuit
 	var/atom/movable/screen/hunger/hunger
 
@@ -266,6 +267,7 @@ GLOBAL_LIST_INIT(available_erp_ui_styles, list(
 	healths = null
 	stamina = null
 	healthdoll = null
+	sanityhealth = null
 	spacesuit = null
 	hunger = null
 	alien_plasma_display = null

@@ -105,6 +105,30 @@
 /// generally called before temporary non-parallel animate()s on the atom (animation_duration)
 #define COMSIG_ATOM_TEMPORARY_ANIMATION_START "atom_temp_animate_start"
 
+/// send when enabling/diabling an autofire component for guns
+#define COMSIG_GUN_DISABLE_AUTOFIRE "disable_autofire"
+#define COMSIG_GUN_ENABLE_AUTOFIRE "enable_autofire"
+#define COMSIG_GUN_SET_AUTOFIRE_SPEED "set_autofire_speed"
+// Abnormality Work Signals
+#define COMSIG_WORK_STARTED "work_started" // Work Start/Attempt
+#define COMSIG_GLOB_WORK_STARTED "!work_started" // Same, but global
+#define COMSIG_WORK_COMPLETED "work_completed" // Work Complete
+#define COMSIG_GLOB_WORK_COMPLETED "!work_completed" // Ditto
+#define COMSIG_MELTDOWN_FINISHED "meltdown_finished"
+#define COMSIG_GLOB_MELTDOWN_FINISHED "!meltdown_finished"
+#define COMSIG_JOB_TIMER_TICKED "job_timer_ticked"
+
+// General Abnormality Signals
+
+///Whenever FearEffect() is called on a human
+#define COMSIG_FEAR_EFFECT "fear_effect"
+///Whenever the season is changed through god of the seasons or its E.G.O.
+#define COMSIG_GLOB_SEASON_CHANGE "!change_season"
+
+// Ordeal signals
+// When the ordeal ends; (/datum/ordeal)
+#define COMSIG_GLOB_ORDEAL_END "!ordeal_end"
+
 /// called on [/obj/item/lazarus_injector/afterattack] : (injector, user)
 #define COMSIG_ATOM_ON_LAZARUS_INJECTOR "atom_on_lazarus_injector"
 	#define LAZARUS_INJECTOR_USED (1<<0) //Early return.

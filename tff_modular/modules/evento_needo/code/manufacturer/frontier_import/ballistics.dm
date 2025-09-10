@@ -10,10 +10,16 @@
 	inhand_icon_state = "hp_generic"
 	worn_icon_state = null
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m9mm_mauler
-	fire_delay = 0.9 SECONDS
+	fire_delay = 0.3 SECONDS
 
-	spread = 20
+
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
+
+	spread = 15
 	recoil = 0.4
+	spread_unwielded = 20
+	recoil_unwielded = 3
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/pistol/mauler.ogg'
 
 	rack_sound = 'tff_modular/modules/evento_needo/sounds/pistol/candor_cocked.ogg'
@@ -26,23 +32,24 @@
 	eject_sound = 'tff_modular/modules/evento_needo/sounds/pistol/candor_unload.ogg'
 	eject_empty_sound = 'tff_modular/modules/evento_needo/sounds/pistol/candor_unload.ogg'
 
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 44,
+			"y" = 21,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 20,
+			"y" = 19,
+		)
+	)
+
 /obj/item/gun/ballistic/automatic/pistol/mauler/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, fire_delay)
-
-/obj/item/ammo_box/magazine/m9mm_mauler
-	name = "mauler machine pistol magazine (9x18mm)"
-	desc = "A 12-round magazine designed for the Mauler machine pistol."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "mauler_mag-1"
-	base_icon_state = "mauler_mag"
-	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = CALIBER_9MM
-	max_ammo = 12
-
-/obj/item/ammo_box/magazine/m9mm_mauler/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
 
 /obj/item/gun/ballistic/automatic/pistol/spitter
 	name = "\improper Spitter"
@@ -58,8 +65,13 @@
 	accepted_magazine_type = /obj/item/ammo_box/magazine/spitter_9mm
 	bolt_type = BOLT_TYPE_OPEN
 	weapon_weight = WEAPON_LIGHT
-	fire_delay = 0.7 SECONDS
-	spread = 20
+	fire_delay = 0.2 SECONDS
+	spread = 25
+
+	spread_unwielded = 35
+	dual_wield_spread = 35
+	wield_slowdown = SMG_SLOWDOWN
+	wield_delay = 0.1 SECONDS
 
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/smg/spitter.ogg'
 	rack_sound = 'tff_modular/modules/evento_needo/sounds/smg/spitter_cocked.ogg'
@@ -72,23 +84,30 @@
 	eject_sound = 'tff_modular/modules/evento_needo/sounds/smg/spitter_unload.ogg'
 	eject_empty_sound = 'tff_modular/modules/evento_needo/sounds/smg/spitter_unload.ogg'
 
-/obj/item/gun/ballistic/automatic/pistol/spitter/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, fire_delay)
+	valid_attachments = list(
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/foldable_stock/spitter
+	)
 
-/obj/item/ammo_box/magazine/spitter_9mm
-	name = "spitter pistol magazine (9x18mm)"
-	desc = "A thin 30-round magazine for the Spitter submachine gun."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "spitter_mag-1"
-	base_icon_state = "spitter_mag"
-	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = CALIBER_9MM
-	max_ammo = 30
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_STOCK = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 32,
+			"y" = 23,
+		),
+		ATTACHMENT_SLOT_STOCK = list(
+			"x" = -5,
+			"y" = 18,
+		)
+	)
 
-/obj/item/ammo_box/magazine/spitter_9mm/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
+	default_attachments = list(/obj/item/attachment/foldable_stock/spitter)
+
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
 
 /obj/item/gun/ballistic/automatic/smg/pounder
 	name = "Pounder"
@@ -106,6 +125,7 @@
 	burst_size = 4
 	burst_delay = 0.2 SECONDS
 	spread = 20
+	spread_unwielded = 50
 
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/smg/pounder.ogg'
 	rack_sound = 'tff_modular/modules/evento_needo/sounds/smg/pounder_cocked.ogg'
@@ -118,20 +138,27 @@
 	eject_sound = 'tff_modular/modules/evento_needo/sounds/smg/pounder_unload.ogg'
 	eject_empty_sound = 'tff_modular/modules/evento_needo/sounds/smg/pounder_unload.ogg'
 
-/obj/item/ammo_box/magazine/c22lr_pounder_pan
-	name = "pan magazine (.22 LR)"
-	desc = "A 50-round pan magazine for the Pounder submachine gun."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "firestorm_pan"
-	base_icon_state = "firestorm_pan"
-	ammo_type = /obj/item/ammo_casing/c22lr
-	caliber = CALIBER_22LR
-	max_ammo = 50
-	w_class = WEIGHT_CLASS_NORMAL
+	gun_firemodes = list(FIREMODE_FULLAUTO)
+	default_firemode = FIREMODE_FULLAUTO
 
-/obj/item/ammo_box/magazine/c22lr_pounder_pan/update_icon_state()
-	. = ..()
-	icon_state = "firestorm_pan"
+	wield_slowdown = SMG_SLOWDOWN
+
+	refused_attachments = list(/obj/item/attachment/gun)
+
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 46,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 40,
+			"y" = 17,
+		)
+	)
 
 /obj/item/gun/ballistic/automatic/hmg/shredder
 	name = "\improper Shredder"
@@ -147,6 +174,7 @@
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m12_shredder
 	spread = 15
 	recoil = 3
+	recoil_unwielded = 7
 	fire_delay = 1 SECONDS
 	burst_delay = 5
 	bolt_type = BOLT_TYPE_STANDARD
@@ -161,26 +189,8 @@
 	eject_sound = 'tff_modular/modules/evento_needo/sounds/hmg/shredder_unload.ogg'
 	eject_empty_sound = 'tff_modular/modules/evento_needo/sounds/hmg/shredder_unload.ogg'
 
-/obj/item/ammo_box/magazine/m12_shredder
-	name = "belt box (12g)"
-	desc = "A 40-round belt box for the Shredder heavy machine gun."
-	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "shredder_mag-1"
-	base_icon_state = "shredder_mag"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	caliber = CALIBER_SHOTGUN
-	max_ammo = 40
-	w_class = WEIGHT_CLASS_NORMAL
+	has_bipod = FALSE
 
-/obj/item/ammo_box/magazine/m12_shredder/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
+	refused_attachments = list(/obj/item/attachment)
 
-/obj/item/ammo_box/magazine/m12_shredder/slug
-	name = "belt box (12g slug)"
-	desc = "A 40-round belt box for the Shredder heavy machine gun."
-	icon_state = "shredder_mag_slug-1"
-	base_icon_state = "shredder_mag_slug"
-	ammo_type = /obj/item/ammo_casing/shotgun
-	max_ammo = 40
-	w_class = WEIGHT_CLASS_NORMAL
+	slot_available = list()

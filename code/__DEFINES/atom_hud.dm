@@ -56,6 +56,8 @@
 /// If they have the DNR trait
 #define DNR_HUD "27"
 // NOVA EDIT ADDITION END
+// sanity HUD
+#define SANITY_HUD	"28"
 
 //by default everything in the hud_list of an atom is an image
 //a value in hud_list with one of these will change that behavior

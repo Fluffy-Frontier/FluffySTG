@@ -272,6 +272,9 @@
 	light_color = LIGHT_COLOR_FIRE
 	duration = 10
 
+/obj/effect/temp_visual/fire/fast
+	duration = 5
+
 /obj/effect/temp_visual/revenant
 	name = "spooky lights"
 	icon_state = "purplesparkles"

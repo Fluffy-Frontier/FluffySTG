@@ -1,0 +1,456 @@
+#define STATUS_EFFECT_PROTECTION /datum/status_effect/protection
+GLOBAL_LIST_EMPTY(army)
+/mob/living/simple_animal/hostile/abnormality/army
+	name = "Army in Black"
+	desc = "The color of the human heart is pink, and by wearing the same color, we can blend in with people's minds."
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/64x64.dmi'
+	icon_state = "armyinpink"
+	icon_living = "armyinpink"
+	icon_dead = "armyinpink_heart"
+	pixel_x = -16
+	base_pixel_x = -16
+
+	//*--Suppression info--*
+	maxHealth = 450
+	health = 450
+	damage_coeff = list(BURN = 1.2, BRAIN = 0.6, BRUTE = 1.0, TOX = 0.8)//the same as hostile mobs, ez records
+	speed = 1//unused
+	generic_canpass = FALSE
+	del_on_death = TRUE
+	//melee stats(unused)
+	attack_sound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/armyinblack/pink_heal.ogg'
+	attack_verb_continuous = "shoots"
+	attack_verb_simple = "shoot"
+
+	//*--Containment info--*
+	fear_level = ALEPH_LEVEL
+	can_breach = TRUE
+	//E.G.O list
+	ego_list = list(
+		/datum/ego_datum/weapon/pink,
+		/datum/ego_datum/armor/pink,
+	)
+	gift_type =  /datum/ego_gifts/pink
+
+	grouped_abnos = list(
+		/mob/living/simple_animal/hostile/abnormality/quiet_day = 1.5,
+		///mob/living/simple_animal/hostile/abnormality/khz = 1.5,
+		/mob/living/simple_animal/hostile/abnormality/mhz = 1.5,
+	)
+	observation_prompt = "\"We're here to help sir, to keep the hearts of humans a clean pink, we're willing to dirty our own. We won't overlook a single speck of black.\" <br>\
+		The soldier in pink makes a salute. <br>You..."
+
+
+	//Unique variables
+	var/death_counter = 0
+	var/protection_duration = 120 SECONDS
+	var/protected_targets = list()
+	var/summoned_army = list()//hostile unit list
+	var/boom_radius = 20
+	var/boom_damage = 70
+	var/adds_max = 1
+
+/***Simple mob procs***/
+//checks for deaths
+/mob/living/simple_animal/hostile/abnormality/army/Initialize()
+	. = ..()
+	RegisterSignal(SSdcs, COMSIG_GLOB_MOB_DEATH, PROC_REF(OnMobDeath))
+	adds_max = clamp((LAZYLEN(GLOB.player_list)/ 2),2, 5)//between 2 and 5 mooks on breach, one for every 2 people.
+
+//stops the previous snippet from destroying the server
+/mob/living/simple_animal/hostile/abnormality/army/Destroy()
+	UnregisterSignal(SSdcs, COMSIG_GLOB_MOB_DEATH)
+	return ..()
+
+/mob/living/simple_animal/hostile/abnormality/army/Life()
+	..()
+	if(LAZYLEN(protected_targets))
+		for(var/mob/living/carbon/human/H in protected_targets)
+			if(!H.has_status_effect(STATUS_EFFECT_PROTECTION))
+				protected_targets -= H
+	return
+
+//no more nuzzling
+/mob/living/simple_animal/hostile/abnormality/army/AttackingTarget()
+	return FALSE
+
+/mob/living/simple_animal/hostile/abnormality/army/Move()
+	return FALSE
+
+/***Work procs***/
+//protect work grants you a buff in exchange for reducing its counter
+/mob/living/simple_animal/hostile/abnormality/army/try_working(mob/living/carbon/human/user)
+	. = ..()
+	if(!.)
+		return
+	if(datum_reference?.qliphoth_meter > 1)
+		if(user in protected_targets)
+			return FALSE
+		qliphoth_change(-1)
+		if(user.get_clothing_class_level(user.get_major_clothing_class()) < 4)
+			user.SanityLossEffect()
+			return FALSE
+		protected_targets += user
+		user.apply_status_effect(STATUS_EFFECT_PROTECTION)
+		to_chat(user, span_nicegreen("You feel like you're in good company."))
+		playsound(get_turf(user), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/armyinblack/pink_heal.ogg', 50, 0, 2)
+	return FALSE
+
+//counter goes down when people die, repression/protection work is performed, or raised when an abnormality is suppressed.
+/mob/living/simple_animal/hostile/abnormality/army/PostWorkEffect(mob/living/carbon/human/user)
+	if(user.get_major_clothing_class() == CLOTHING_ARMORED)
+		qliphoth_change(-1)
+	return
+
+/mob/living/simple_animal/hostile/abnormality/army/FailureEffect(mob/living/carbon/human/user)
+	qliphoth_change(-1)
+	return
+
+//death counter from MoSB, it works exactly the same.
+/mob/living/simple_animal/hostile/abnormality/army/proc/OnMobDeath(datum/source, mob/living/died, gibbed)
+	SIGNAL_HANDLER
+	if(!IsContained())//Stops if it's breaching
+		return FALSE
+	if(died.z != z)//check for z-level congruency
+		return FALSE
+	if(isabnormalitymob(died))//counter restored if another abnormality dies
+		qliphoth_change(1)
+		return TRUE
+	if(!died.mind)//if it's not a player
+		return FALSE
+	if(!ishuman(died))//all simple mobs, ordeals, other npcs except for humans
+		return FALSE
+	death_counter += 1
+	if(death_counter >= 2)
+		death_counter = 0
+		qliphoth_change(-1)
+	return TRUE
+
+//*--Combat Mechanics--*
+/mob/living/simple_animal/hostile/abnormality/army/BreachEffect(mob/living/carbon/human/user, breach_type)
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_ABNORMALITY_BREACH, src)
+	if(breach_type == BREACH_MINING)
+		for(var/i in 1 to 3)
+			var/mob/living/simple_animal/hostile/army_enemy/E = new(get_turf(src))
+			RegisterSignal(E, COMSIG_QDELETING, PROC_REF(ArmyDeath))
+	else
+		FearEffect()
+		Blackify()
+		SpawnAdds()//set its alpha to 0 and make it non-dense
+	for(var/mob/living/L in protected_targets)
+		L.remove_status_effect(STATUS_EFFECT_PROTECTION)
+	density = FALSE
+	alpha = 0
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	return TRUE
+
+/mob/living/simple_animal/hostile/abnormality/army/proc/SpawnAdds()
+	var/list/spawns = shuffle(GLOB.generic_event_spawns)
+	for(var/i = 1 to adds_max)//# of iterations is equal to adds_max
+		for(var/turf/T in spawns)//this picks the first few shuffled xeno spawns. Maybe change it to a different type of loop
+			var/mob/living/simple_animal/hostile/army_enemy/E = new(get_turf(T))
+			summoned_army += E//the actual army list
+			RegisterSignal(E, COMSIG_QDELETING, PROC_REF(ArmyDeath))
+			spawns -= T
+			break
+
+/mob/living/simple_animal/hostile/abnormality/army/proc/ArmyDeath(mob/E)//return to containment when all armies are dead
+	UnregisterSignal(E, COMSIG_QDELETING)
+	summoned_army -= E
+	if(LAZYLEN(summoned_army) <=1)
+		qdel(src)//suppress the abnormality
+		return
+
+//convert all protection buffs into hostile units
+/mob/living/simple_animal/hostile/abnormality/army/proc/Blackify()
+	for(var/mob/living/carbon/A in protected_targets)
+		var/datum/status_effect/protection/P = A.has_status_effect(/datum/status_effect/protection)
+		P.boom = FALSE
+		A.remove_status_effect(STATUS_EFFECT_PROTECTION)
+		var/mob/living/simple_animal/hostile/army_enemy/B = new(get_turf(A))
+		protected_targets -= A
+		summoned_army += B
+
+//hostile breach mob
+/mob/living/simple_animal/hostile/army_enemy
+	name = "Army In Black"
+	desc = "Yes.. we, the Army in Black.. blend into the human heart.. and drive away good thoughts.."
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/64x64.dmi'
+	icon_state = "armyinblack"
+	icon_living = "armyinblack"
+	icon_dead = "armyinblack_heart"
+	pixel_x = -16
+	base_pixel_x = -16
+	faction = list("hostile")
+	attack_verb_continuous = "attacks"
+	attack_verb_simple = "attack"
+	attack_sound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/armyinblack/pink_heal.ogg'
+	/*Core stats*/
+	health = 900
+	maxHealth = 900
+	obj_damage = 50
+	damage_coeff = list(BURN = 1.2, BRAIN = 0.6, BRUTE = 1.0, TOX = 0.8)
+	ranged = TRUE
+	minimum_distance = 2
+	speed = 2
+	move_to_delay = 20//TODO: make this determined by how far away it spawned from the beacon
+	stat_attack = HARD_CRIT
+	del_on_death = FALSE
+	density = FALSE
+	var/list/fear_affected = list()
+	var/shot_cooldown
+	var/shot_cooldown_time = 5 SECONDS
+	var/boom_damage = 70
+	var/targetted_beacon
+	var/list/moving_path
+
+//movement and AI
+/mob/living/simple_animal/hostile/army_enemy/AttackingTarget()
+	return
+
+/mob/living/simple_animal/hostile/army_enemy/proc/GoToBeacon()
+	if(QDELETED(src))
+		return
+	Goto(get_turf(targetted_beacon))//this causes a runtime when the unit is deleted due to invoking asynchronous move_to! Please help!
+	return
+
+/mob/living/simple_animal/hostile/army_enemy/Life()
+	. = ..()
+	if(!.)
+		return
+	if(targetted_beacon)
+		GoToBeacon()
+	FearEffect()
+	return
+
+/mob/living/simple_animal/hostile/army_enemy/Initialize()
+	. = ..()
+	addtimer(CALLBACK(src, PROC_REF(Explode)), 120 SECONDS)
+	var/list/depts = shuffle(GLOB.start_landmarks_list)
+	var/list/depts_far = list()
+	if(!LAZYLEN(depts))
+		return
+	for(var/atom/T in depts)
+		T = get_turf(T)
+		if(!(get_area(T) in (get_areas_in_range(20, get_area(src)))))//if they're not within 20 tiles of T, pick the next one.
+			depts_far += T
+			continue
+		if(locate(/obj/effect/pink_beacon) in T)
+			continue
+		var/obj/effect/pink_beacon/P = new(T)//beacon
+		targetted_beacon = P
+		P.targetted_army = src
+		INVOKE_ASYNC(src, PROC_REF(set_varspeed), -1)
+		break
+	if(!targetted_beacon)//if none of the above are picked, grab one that's further away
+		for(var/turf/T in depts_far)
+			if(locate(/obj/effect/pink_beacon) in T)
+				continue
+			var/obj/effect/pink_beacon/P = new(T)//beacon
+			targetted_beacon = P
+			P.targetted_army = src
+			INVOKE_ASYNC(src, PROC_REF(set_varspeed), -1)
+			break
+
+/mob/living/simple_animal/hostile/army_enemy/death()
+	animate(src, alpha = 0, time = 10 SECONDS)
+	QDEL_IN(src, 10 SECONDS)
+	..()
+
+/mob/living/simple_animal/hostile/army_enemy/proc/FearEffect()
+	for(var/mob/living/carbon/human/H in view(7, src))
+		if(H in fear_affected)
+			continue
+		if(HAS_TRAIT(H, TRAIT_COMBATFEAR_IMMUNE))
+			continue
+		H.adjustSanityLoss(H.maxSanity*0.3)
+		fear_affected += H
+		if(H.sanity_lost)
+			continue
+		to_chat(H, span_warning("Oh dear."))
+	return
+
+//explosion definition
+/mob/living/simple_animal/hostile/army_enemy/proc/Explode()
+	if(QDELETED(src))
+		return
+	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/armyinblack/black_explosion.ogg', 125, 0, 8)
+	visible_message(span_danger("[src] suddenly explodes!"))
+	for(var/mob/living/simple_animal/hostile/abnormality/P in view(20, src))
+		if(!P.datum_reference)//Prevents a runtime if the abno lacks datums, such as those spawned by contract
+			continue
+		P.qliphoth_change(-1)
+	for(var/mob/living/carbon/human/H in view(20, src))
+		H.apply_damage(boom_damage, BRUTE)
+	new /obj/effect/temp_visual/black_explosion(get_turf(src))
+	qdel(src)
+
+//aoe attacks
+/mob/living/simple_animal/hostile/army_enemy/ListTargets()//Move Move Move! This prevents it from aggroing anything
+	return FALSE
+
+/mob/living/simple_animal/hostile/army_enemy/attackby(obj/item/W, mob/user, params)
+	. = ..()
+	OpenFire(user)
+
+/mob/living/simple_animal/hostile/army_enemy/attack_hand(mob/living/carbon/human/M)
+	. = ..()
+	OpenFire()
+	return
+
+/mob/living/simple_animal/hostile/army_enemy/attack_animal(mob/living/simple_animal/M)
+	. = ..()
+	OpenFire()
+	return
+
+/mob/living/simple_animal/hostile/army_enemy/bullet_act()//it retaliates, but you can still out-range it
+	. = ..()
+	OpenFire()
+	return
+
+/mob/living/simple_animal/hostile/army_enemy/OpenFire()
+	if(shot_cooldown <= world.time)
+		BlackAoe()
+
+/mob/living/simple_animal/hostile/army_enemy/proc/BlackAoe()
+	if(stat == DEAD)
+		return
+	for(var/turf/T in view(4, src))
+		new /obj/effect/temp_visual/army_hearts(get_turf(T))
+	for(var/mob/living/L in view(4, src))
+		if(faction_check_atom(L))
+			continue
+		L.apply_damage(50, BRUTE)
+	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/armyinblack/black_attack.ogg', 100, 0, 8)
+	shot_cooldown = world.time + shot_cooldown_time
+
+// Status Effect
+/datum/status_effect/protection
+	id = "protection"
+	status_type = STATUS_EFFECT_UNIQUE
+	duration = 2 MINUTES
+	alert_type = null
+	tick_interval = 30
+	var/boom = TRUE
+	var/obj/army_bud
+
+/datum/status_effect/protection/on_creation(mob/living/new_owner, ...)
+	army_bud = new /obj/effect/army_friend
+	return ..()
+
+/datum/status_effect/protection/on_apply()
+	. = ..()
+	if(!ishuman(owner))
+		return
+	var/mob/living/carbon/human/status_holder = owner
+	status_holder.physiology.burn_mod *= 0.8
+	status_holder.physiology.brain_mod *= 0.8
+	status_holder.physiology.brute_mod *= 0.8
+	status_holder.physiology.tox_mod *= 0.8
+	status_holder.add_overlay(mutable_appearance('tff_modular/modules/evento_needo/icons/Teguicons/tegu_effects10x10.dmi', "pink", -MUTATIONS_LAYER))
+	status_holder.vis_contents += army_bud
+
+/datum/status_effect/protection/on_remove()
+	. = ..()
+	if(boom)
+		playsound(get_turf(owner), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/armyinblack/pink_explosion.ogg', 125, 0, 8)
+		new /obj/effect/temp_visual/pink_explosion(get_turf(owner))
+		for(var/mob/living/carbon/human/affected_human in view(7, owner))
+			affected_human.adjustBruteLoss(-20)
+			affected_human.adjustSanityLoss(20)
+	if(!ishuman(owner))
+		return
+	var/mob/living/carbon/human/status_holder = owner
+	status_holder.physiology.burn_mod /= 0.8
+	status_holder.physiology.brain_mod /= 0.8
+	status_holder.physiology.brute_mod /= 0.8
+	status_holder.physiology.tox_mod /= 0.8
+	status_holder.cut_overlay(mutable_appearance('tff_modular/modules/evento_needo/icons/Teguicons/tegu_effects10x10.dmi', "pink", -MUTATIONS_LAYER))
+	status_holder.vis_contents -= army_bud
+	to_chat(status_holder, span_notice("The pink soldier assigned to you returns to its containment cell."))
+
+/datum/status_effect/protection/tick()
+	if(owner.health < 0)
+		qdel(src)
+	for(var/turf/T in view(3, owner))
+		new /obj/effect/temp_visual/friend_hearts(get_turf(T))
+		for(var/mob/living/carbon/human/H in T.contents)
+			H.adjustBruteLoss(-6)
+			H.adjustSanityLoss(-6)
+	playsound(get_turf(owner), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/armyinblack/pink_heal.ogg', 50, 0, 2)
+
+/obj/effect/pink_beacon
+	name = "pink beacon"
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/64x64.dmi'
+	icon_state = "armyinblack_heart"
+	alpha = 0
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	var/targetted_army
+
+/obj/effect/pink_beacon/Initialize()
+	. = ..()
+	QDEL_IN(src, 130 SECONDS)
+
+///obj/effect/pink_beacon/Crossed(atom/movable/AM)//this atom eventually qdeletes itself, no need to worry about cleanup
+//	. = ..()
+//	var/mob/living/simple_animal/hostile/army_enemy/E = targetted_army
+//	if(AM == E)
+//		E.Explode()
+//		qdel(src)
+
+/obj/effect/temp_visual/pink_explosion
+	name = "pink explosion"
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/96x96.dmi'
+	icon_state = "black_explosion"
+	duration = 3 SECONDS
+	color = COLOR_PINK
+	pixel_x = -32
+	pixel_y = 0
+
+/obj/effect/temp_visual/pink_explosion/Initialize()
+	. = ..()
+	animate(src, transform = matrix()*1.8, alpha = 0, time = duration)
+
+/obj/effect/temp_visual/black_explosion
+	name = "black explosion"
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/96x96.dmi'
+	icon_state = "black_explosion"
+	duration = 6 SECONDS
+	pixel_x = -32
+	pixel_y = 0
+
+/obj/effect/temp_visual/black_explosion/Initialize()
+	. = ..()
+	animate(src, transform = matrix()*1.8, alpha = 0, time = duration)
+
+/obj/effect/temp_visual/army_hearts
+	name = "black haze"
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/32x32.dmi'
+	icon_state = "army_hearts"
+	duration = 10
+
+/obj/effect/temp_visual/army_hearts/Initialize()
+	. = ..()
+	animate(src, alpha = 0, time = duration)
+
+/obj/effect/temp_visual/friend_hearts
+	name = "warmth"
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/32x32.dmi'
+	icon_state = "friend_hearts"
+	duration = 10
+
+/obj/effect/temp_visual/friend_hearts/Initialize()
+	. = ..()
+	animate(src, alpha = 0, time = duration)
+
+/obj/effect/army_friend
+	name = "Army in Pink"
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/64x64.dmi'
+	icon_state = "armyinpink"
+	mouse_opacity = 0
+	pixel_x = -16
+	pixel_y = 16
+	alpha = 200
+	vis_flags = VIS_INHERIT_DIR
+
+#undef STATUS_EFFECT_PROTECTION

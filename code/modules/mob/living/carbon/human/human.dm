@@ -761,6 +761,25 @@
 	if(!(living_flags & STOP_OVERLAY_UPDATE_BODY_PARTS))
 		hud_used.healthdoll?.update_appearance()
 
+
+/mob/living/carbon/human/proc/update_sanity_hud()
+	if(!client || !hud_used)
+		return
+	else
+		if(hud_used.sanityhealth)
+			if(sanityhealth >= maxSanity)
+				hud_used.sanityhealth.icon_state = "sanity0"
+			else if(sanityhealth > maxSanity*0.8)
+				hud_used.sanityhealth.icon_state = "sanity1"
+			else if(sanityhealth > maxSanity*0.6)
+				hud_used.sanityhealth.icon_state = "sanity2"
+			else if(sanityhealth > maxSanity*0.4)
+				hud_used.sanityhealth.icon_state = "sanity3"
+			else if(sanityhealth > maxSanity*0.2)
+				hud_used.sanityhealth.icon_state = "sanity4"
+			else
+				hud_used.sanityhealth.icon_state = "sanity5"
+
 /mob/living/carbon/human/fully_heal(heal_flags = HEAL_ALL)
 	if(heal_flags & HEAL_NEGATIVE_MUTATIONS)
 		for(var/datum/mutation/human/existing_mutation in dna.mutations)

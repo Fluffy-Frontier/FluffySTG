@@ -25,6 +25,7 @@
 	var/cut_type = null
 	/// Used for handling bloody gloves leaving behind bloodstains on objects. Will be decremented whenever a bloodstain is left behind, and be incremented when the gloves become bloody.
 	var/transfer_blood = 0
+	class_value = 15
 
 /obj/item/clothing/gloves/apply_fantasy_bonuses(bonus)
 	. = ..()
