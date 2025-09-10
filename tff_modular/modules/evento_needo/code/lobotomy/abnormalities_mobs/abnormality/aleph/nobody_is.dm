@@ -787,7 +787,7 @@
 
 	if(iscarbon(the_target))
 		var/mob/living/carbon/carbon_target = the_target
-		carbon_target.dna.transfer_identity(copycat, transfer_SE = TRUE)
+		carbon_target.dna.copy_dna(copycat.dna, COPY_DNA_SE)
 
 		if(ishuman(the_target))
 			var/mob/living/carbon/human/human_target = the_target
