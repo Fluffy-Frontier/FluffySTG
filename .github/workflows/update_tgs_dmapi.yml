@@ -14,7 +14,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Clone
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Branch
         run: |
@@ -59,4 +59,4 @@ jobs:
           pr_body: "This pull request updates the TGS DMAPI to the latest version. Please note any changes that may be breaking or unimplemented in your codebase by checking what changes are in the definitions file: code/__DEFINES/tgs.dm before merging.\n\n${{ steps.dmapi-update.outputs.release-notes }}"
           pr_label: "Tools"
           pr_allow_empty: false
-          github_token: ${{ steps.app-token-generation.outputs.token || secrets.GITHUB_TOKEN }}
+          github_token: ${{ steps.app-token-generation.outputs.token || secrets.SKYRATBOT_TOKEN || secrets.GITHUB_TOKEN }}

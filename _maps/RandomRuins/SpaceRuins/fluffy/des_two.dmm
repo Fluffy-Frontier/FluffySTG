@@ -90,8 +90,8 @@
 /obj/item/holosign_creator/atmos{
 	pixel_y = -8
 	},
-/obj/item/clothing/suit/toggle/jacket/nova/engi,
-/obj/item/clothing/suit/toggle/jacket/nova/engi,
+/obj/item/clothing/suit/toggle/jacket/nova/colorable_bomber/engi,
+/obj/item/clothing/suit/toggle/jacket/nova/colorable_bomber/engi,
 /obj/item/clothing/suit/hooded/wintercoat/engineering,
 /obj/machinery/light_switch/directional/west,
 /turf/open/floor/iron/dark/side{
@@ -1690,7 +1690,7 @@
 "fe" = (
 /obj/effect/turf_decal/tile/purple/full,
 /obj/structure/marker_beacon/fuchsia,
-/obj/machinery/computer/scan_consolenew{
+/obj/machinery/computer/dna_console{
 	dir = 8;
 	name = "Interdyne DNA Console"
 	},
@@ -12625,8 +12625,8 @@
 	desc = "An armband, worn by the FOB's operatives to display which department they're assigned to.";
 	name = "researcher armband"
 	},
-/obj/item/clothing/suit/toggle/jacket/nova/sci,
-/obj/item/clothing/suit/toggle/jacket/nova/sci,
+/obj/item/clothing/suit/toggle/jacket/nova/colorable_bomber/sci,
+/obj/item/clothing/suit/toggle/jacket/nova/colorable_bomber/sci,
 /obj/item/clothing/suit/hooded/wintercoat/science,
 /obj/effect/turf_decal/tile/purple/full,
 /obj/machinery/firealarm/directional/north,
