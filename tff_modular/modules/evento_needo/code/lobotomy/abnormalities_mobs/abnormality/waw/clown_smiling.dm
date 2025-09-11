@@ -76,7 +76,7 @@
 		|A Show’s End|: Once you reach 0 HP, you will explode which deal great RED damage to nearby humans, inflict 30 'Bleed' and leave behind a few trails of lube, which can slip humans who cross them.</b>")
 
 //A clown isn't a clown without his shoes
-/mob/living/simple_animal/hostile/abnormality/clown/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/clown/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	update_icon()
 	pixel_y = 0
@@ -132,7 +132,7 @@
 				finishing = FALSE
 				return
 			playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/clownsmiling/final_stab.ogg', 50, 1)
-			TH.gib()
+			TH.gib(DROP_BRAIN)
 			for(var/mob/living/carbon/human/H in ohearers(7, get_turf(src)))
 				H.apply_damage(finishing_big_damage, BRUTE)
 

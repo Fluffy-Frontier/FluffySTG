@@ -44,4 +44,4 @@
 			to_chat(user, "You narrowly dodge the card-guillotine coming for your neck, that was close, let's try something else.")
 	else
 		to_chat(user, "You are granted an audience with the red queen. <br>Today, you were able to to satisfy her unpredictable whims")
-	return
+	return ..()

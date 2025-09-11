@@ -37,16 +37,17 @@
 	qliphoth_change(3)
 
 /mob/living/simple_animal/hostile/abnormality/dingledangle/PostWorkEffect(mob/living/carbon/human/user, work_type, pe, work_time, canceled)
+	. = ..()
 	//if your prudence is low, give a short hallucination, apply the buff, and lower counter.
 	if(user.get_clothing_class_level(CLOTHING_SCIENCE) < 3) // below level 3
 		var/list/hallucination_args = list(pick(generic_hallucinations), "mass hallucination")
 		user._cause_hallucination(hallucination_args)
 		user.apply_status_effect(STATUS_EFFECT_DANGLE)
 		qliphoth_change(-1)
-		return ..()
+		return
 
 	if(user.get_clothing_class_level(CLOTHING_ENGINEERING) >= 4) // fort 4 or higher
-		return ..()
+		return
 
 	//I mean it does this in wonderlabs
 	//But here's the twist: You get a better ego.
@@ -54,12 +55,12 @@
 		var/location = get_turf(user)
 		new /obj/item/clothing/suit/armor/ego_gear/he/lutemis(location)
 	if(user?.stat != DEAD) //dusting sets you dead before the animation, we don't want to dust user twice after failing work
-		user.dust()
+		user.gib(DROP_BRAIN)
 
 /mob/living/simple_animal/hostile/abnormality/dingledangle/FailureEffect(mob/living/carbon/human/user)
 	if(prob(50))
 		//Yeah dust them too. No ego this time tho
-		user.dust()
+		user.gib(DROP_BRAIN)
 
 /atom/movable/screen/alert/status_effect/dangle
 	name = "That Woozy Feeling"

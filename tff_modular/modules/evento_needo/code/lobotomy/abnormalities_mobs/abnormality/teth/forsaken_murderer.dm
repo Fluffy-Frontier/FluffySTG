@@ -187,7 +187,7 @@
  * If your abnormality doesnt Breach then the proc you want is ZeroQliphoth.
  * Other abnormality procs can be found in the _abnormality.dm file.
  */
-/mob/living/simple_animal/hostile/abnormality/forsaken_murderer/BreachEffect(mob/living/carbon/human/user, breach_type) //causes breach?
+/mob/living/simple_animal/hostile/abnormality/forsaken_murderer/BreachEffect(mob/living/carbon/human/user) //causes breach?
 	. = ..()
 	update_icon()
 	//Flick replaces the icon_state with the one defined until all the frames in the animation are done.

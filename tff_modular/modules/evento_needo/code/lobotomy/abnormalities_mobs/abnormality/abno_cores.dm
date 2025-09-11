@@ -55,6 +55,7 @@
 	layer = ABOVE_ALL_MOB_LAYER
 	var/cooldown
 	var/cooldown_time = 30 MINUTES
+	var/obj/structure/abno_core/core
 
 /obj/machinery/abno_core_extractor/attack_hand(mob/living/user, list/modifiers)
 	if(cooldown > world.time)
@@ -62,7 +63,7 @@
 		return
 	GrabAnimation()
 	sleep(4 SECONDS)
-	var/obj/structure/abno_core/core = new(get_turf(src))
+	new core(get_turf(src))
 	cooldown = world.time + cooldown_time
 
 /obj/machinery/abno_core_extractor/proc/GrabAnimation()

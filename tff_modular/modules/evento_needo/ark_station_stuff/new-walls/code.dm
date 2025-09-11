@@ -82,10 +82,6 @@
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/new-walls/walls/sandstone_wall.dmi'
 	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
 
-/turf/closed/riveted/boss/indestructible/shiptest
-	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/new-walls/walls/boss_wall.dmi'
-	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
-
 /turf/closed/wall/mineral/stone/shiptest
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/new-walls/walls/iron_wall.dmi'
 	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS

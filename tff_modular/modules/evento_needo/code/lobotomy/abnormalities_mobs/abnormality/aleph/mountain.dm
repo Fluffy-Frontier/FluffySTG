@@ -120,7 +120,7 @@
 			if(!targett.Adjacent(L) || QDELETED(L)) // They can still be saved if you move them away
 				finishing = FALSE
 				return
-			L.gib()
+			L.gib(DROP_BRAIN)
 			adjustBruteLoss(-maxHealth*0.1)
 			finishing = FALSE
 			icon_state = icon_living
@@ -338,7 +338,7 @@
 	if(agent_hurt)
 		qliphoth_change(-1)
 		agent_hurt = FALSE
-	return
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/mountain/try_working(mob/living/carbon/human/user)
 	if(user.health != user.maxHealth)
@@ -347,7 +347,7 @@
 
 /* Abnormality breach */
 
-/mob/living/simple_animal/hostile/abnormality/mountain/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/mountain/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	GiveTarget(user)
 	icon_living = "mosb_breach"

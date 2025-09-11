@@ -3,16 +3,16 @@
 	desc = "A constantly dripping bath of blood"
 	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/48x64.dmi'
 	icon_state = "bloodbath"
-	maxHealth = 1000
-	health = 1000
+	maxHealth = 2000
+	health = 2000
 	rapid_melee = 1
 	melee_queue_distance = 2
 	move_to_delay = 3
 	attack_sound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/ichthys/slap.ogg'
 	attack_verb_continuous = "mauls"
 	attack_verb_simple = "maul"
-	melee_damage_lower = 10
-	melee_damage_upper = 18
+	melee_damage_lower = 20
+	melee_damage_upper = 38
 	melee_damage_type = BRUTE
 	damage_coeff = list(BURN = 1.6, BRAIN = 1, BRUTE = 1.4, TOX = 1.5)
 	ranged = TRUE
@@ -48,7 +48,7 @@
 		sleep(0.5 SECONDS)
 		if(QDELETED(user))
 			return
-		user.dust()
+		user.gib(DROP_BRAIN)
 		visible_message(span_warning("[src] drags [user] into itself!"))
 		playsound(get_turf(src),'sound/effects/wounds/blood2.ogg')
 		playsound(get_turf(src),'sound/effects/footstep/water1.ogg')
@@ -61,13 +61,7 @@
 			icon_state = "bloodbath"
 		return
 
-/mob/living/simple_animal/hostile/abnormality/bloodbath/BreachEffect(mob/living/carbon/human/user, breach_type)
-	if(breach_type != BREACH_MINING && breach_type != BREACH_PINK)
-		return
-	if(breach_type == BREACH_PINK)
-		maxHealth = 4000
-		melee_damage_lower = 20
-		melee_damage_upper = 40
+/mob/living/simple_animal/hostile/abnormality/bloodbath/BreachEffect(mob/living/carbon/human/user)
 	..()
 	icon_state = "bloodbath_DF"
 	pixel_x = -8

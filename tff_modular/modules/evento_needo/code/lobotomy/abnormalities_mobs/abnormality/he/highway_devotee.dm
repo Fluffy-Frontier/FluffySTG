@@ -64,11 +64,12 @@
 	qliphoth_change(-2)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/highway_devotee/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/highway_devotee/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
-	if(breach_type != BREACH_MINING)
-		var/turf/T = get_turf(pick(GLOB.generic_event_spawns))
-		forceMove(T)
+	var/turf/T = get_turf(pick(GLOB.generic_event_spawns))
+	forceMove(T)
+	var/area/A = get_area(T)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
 	addtimer(CALLBACK(src, PROC_REF(KillYourself)), 3 MINUTES)
 	dir = pick(list(NORTH, SOUTH, WEST, EAST))
 	for(var/turf/open/U in range(2, src))

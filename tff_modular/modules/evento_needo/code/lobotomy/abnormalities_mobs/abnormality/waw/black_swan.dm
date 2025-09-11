@@ -125,7 +125,7 @@
 			BrotherOverlays()
 	return ..()
 
-/mob/living/simple_animal/hostile/abnormality/black_swan/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/black_swan/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	cut_overlays()
 	update_icon()
@@ -135,8 +135,10 @@
 	if(!LAZYLEN(teleport_potential))
 		return FALSE
 	var/turf/teleport_target = pick(teleport_potential)
-	if(breach_type != BREACH_MINING)
+	if(prob(30))
 		forceMove(teleport_target)
+		var/area/A = get_area(teleport_target)
+		show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
 	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/blackswan/sis_transformation.ogg', 30, 0, 4)
 	return
 

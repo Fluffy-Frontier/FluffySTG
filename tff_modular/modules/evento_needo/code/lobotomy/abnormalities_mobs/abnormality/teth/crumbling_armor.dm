@@ -55,6 +55,7 @@
 	return FALSE
 
 /mob/living/simple_animal/hostile/abnormality/crumbling_armor/PostWorkEffect(mob/living/carbon/human/user)
+	. = ..()
 	if (user.get_clothing_class_level(CLOTHING_ENGINEERING) < 2)
 		var/obj/item/bodypart/head/head = user.get_bodypart("head")
 		//Thanks Red Queen
@@ -133,7 +134,7 @@
 		return
 	meltdown_cooldown = world.time + meltdown_cooldown_time
 	MeltdownEffect()
-	return
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/crumbling_armor/proc/MeltdownEffect(mob/living/carbon/human/user)
 	var/list/potentialmarked = list()

@@ -105,7 +105,7 @@
 			ReleaseWorker()
 		total_damage = 0
 
-/mob/living/simple_animal/hostile/abnormality/we_can_change_anything/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/we_can_change_anything/BreachEffect(mob/living/carbon/human/user)
 	can_breach = TRUE
 	var/mob/living/carbon/human/H = locate() in view(3, src)
 	if(!H)
@@ -169,7 +169,7 @@
 		for(var/mob/living/carbon/human/victim in get_turf(src))
 			victim.apply_damage(grind_damage, BRUTE)
 			if(victim.health <= 0)
-				victim.gib()
+				victim.gib(DROP_BRAIN)
 		stoplag(1)
 	unbuckle_all_mobs()
 	grinding = FALSE

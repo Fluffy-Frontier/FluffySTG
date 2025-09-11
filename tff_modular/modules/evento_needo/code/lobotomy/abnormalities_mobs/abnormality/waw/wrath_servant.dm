@@ -171,10 +171,10 @@
 			break
 
 /mob/living/simple_animal/hostile/abnormality/wrath_servant/attack_hand(mob/living/carbon/human/M)
-	if(!stunned || !IsContained())
-		return
 	. = ..()
 	if(!.)
+		return
+	if(!stunned || !IsContained())
 		return
 	to_chat(M, span_warning("You start pulling the staff from the [src]!"))
 	if(!do_after(M, 2 SECONDS, src) || !stunned)
@@ -316,7 +316,7 @@
 	BreachEffect()
 	return
 
-/mob/living/simple_animal/hostile/abnormality/wrath_servant/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/wrath_servant/BreachEffect(mob/living/carbon/human/user)
 	. = TRUE
 	if(!(HAS_TRAIT(src, TRAIT_GODMODE)))
 		return FALSE

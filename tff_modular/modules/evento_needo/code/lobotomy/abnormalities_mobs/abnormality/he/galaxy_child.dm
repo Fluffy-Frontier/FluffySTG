@@ -65,9 +65,8 @@
 		friend.adjustBruteLoss(-(healing_per_second * delta_time))
 		friend.adjustSanityLoss(-(healing_per_second * delta_time))
 
-/mob/living/simple_animal/hostile/abnormality/galaxy_child/PostWorkEffect(mob/living/carbon/human/user, work_type, pe, work_time, canceled)
-	if(canceled)
-		return
+/mob/living/simple_animal/hostile/abnormality/galaxy_child/PostWorkEffect(mob/living/carbon/human/user)
+	. = ..()
 
 	if(!datum_reference.qliphoth_meter) // This sets galaxy_child to a state similar to just spawning in
 		qliphoth_change(1)
@@ -100,6 +99,7 @@
 /mob/living/simple_animal/hostile/abnormality/galaxy_child/ZeroQliphoth(mob/living/carbon/human/user)
 	break_gifts()
 	TurfTransform(/turf/open/floor/fakespace)
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/galaxy_child/proc/give_pebble(mob/living/carbon/human/new_friend)
 	if(!istype(new_friend))

@@ -283,6 +283,7 @@
 	return
 
 /mob/living/simple_animal/hostile/abnormality/blue_shepherd/PostWorkEffect(mob/living/carbon/human/user)
+	. = ..()
 	var/mob/living/simple_animal/hostile/abnormality/red_buddy/buddy_abno = buddy?.current
 	if(buddy_abno?.suffering >= 40)
 		user.Apply_Gift(new gift_type) //you get a free gift if you somehow made the dog suffer that much
@@ -300,7 +301,7 @@
 		Lying(buddy_abno, user)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/blue_shepherd/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/blue_shepherd/BreachEffect(mob/living/carbon/human/user)
 
 	var/sighted = FALSE
 	for(var/mob/living/carbon/human/L in view(4, src))

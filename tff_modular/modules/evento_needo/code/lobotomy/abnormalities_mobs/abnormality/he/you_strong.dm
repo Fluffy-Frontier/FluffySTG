@@ -136,9 +136,8 @@
 	SLEEP_CHECK_DEATH(6, src)
 	icon_state = "you_strong_pause"
 
-/mob/living/simple_animal/hostile/abnormality/you_strong/BreachEffect(mob/living/carbon/human/user, breach_type)
-	if(breach_type == BREACH_MINING)
-		breaching = TRUE
+/mob/living/simple_animal/hostile/abnormality/you_strong/BreachEffect(mob/living/carbon/human/user)
+	breaching = TRUE
 	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/you_strong/proc/SummonAdds()

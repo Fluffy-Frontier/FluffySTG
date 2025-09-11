@@ -106,7 +106,7 @@
 		return FALSE
 	return ..()
 
-/mob/living/simple_animal/hostile/abnormality/greed_king/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/greed_king/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/64x48.dmi'
 	//Center it on a hallway
@@ -132,7 +132,7 @@
 	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
 	can_act = TRUE
 	if(!client)
-		addtimer(CALLBACK(src, PROC_REF(startTeleport)), 5 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(startTeleport)), 25 SECONDS)
 
 /mob/living/simple_animal/hostile/abnormality/greed_king/proc/charge_check()
 	//targeting
@@ -145,12 +145,11 @@
 	if(LAZYLEN(possible_targets))
 		target = pick(possible_targets)
 		//Start charge
-		var/dir_to_target = get_cardinal_dir(get_turf(src), get_turf(target))
-		if(dir_to_target)
-			can_act = FALSE
-			addtimer(CALLBACK(src, PROC_REF(charge), dir_to_target, 0, initial_charge_damage), 2 SECONDS)
-			return
-	return
+	var/dir_to_target = get_cardinal_dir(get_turf(src), target ? get_turf(target) : get_turf(get_edge_target_turf(src, rand(1, 8))))
+	if(dir_to_target)
+		can_act = FALSE
+		addtimer(CALLBACK(src, PROC_REF(charge), dir_to_target, 0, initial_charge_damage), 2 SECONDS)
+		return
 
 
 /mob/living/simple_animal/hostile/abnormality/greed_king/OpenFire() // This exists so players can manually charge during playable abnormalities.
@@ -208,7 +207,7 @@
 				else
 					L.adjustFireLoss(80)
 				if(L.stat >= HARD_CRIT)
-					L.gib()
+					L.gib(DROP_BRAIN)
 				playsound(L, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/kog/GreedHit1.ogg', 20, 1)
 				playsound(L, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/kog/GreedHit2.ogg', 50, 1)
 				for(var/obj/vehicle/V in new_hits)
@@ -224,7 +223,7 @@
 				new /obj/effect/temp_visual/kinetic_blast(get_turf(L))
 				L.adjustFireLoss(80)
 				if(L.stat >= HARD_CRIT)
-					L.gib()
+					L.gib(DROP_BRAIN)
 				playsound(L, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/kog/GreedHit1.ogg', 20, 1)
 				playsound(L, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/kog/GreedHit2.ogg', 50, 1)
 

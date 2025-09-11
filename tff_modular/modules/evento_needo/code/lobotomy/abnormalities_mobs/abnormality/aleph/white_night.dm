@@ -201,7 +201,7 @@ GLOBAL_LIST_EMPTY(apostles)
 	qliphoth_change(-1)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/white_night/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/white_night/BreachEffect(mob/living/carbon/human/user)
 	holy_revival_cooldown = world.time + holy_revival_cooldown_base
 	. = ..()
 	for(var/mob/M in GLOB.player_list)
@@ -210,9 +210,11 @@ GLOBAL_LIST_EMPTY(apostles)
 		flash_color(M, flash_color = COLOR_RED, flash_time = 100)
 	sound_to_playing_players('tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/whitenight/apostle_bell.ogg')
 	add_filter("apostle", 1, rays_filter(size = 64, color = "#FFFF00", offset = 6, density = 16, threshold = 0.05))
-	if(LAZYLEN(GLOB.start_landmarks_list))
-		var/turf/T = get_turf(pick(GLOB.start_landmarks_list))
+	if(LAZYLEN(GLOB.generic_event_spawns))
+		var/turf/T = get_turf(pick(GLOB.generic_event_spawns))
 		forceMove(T)
+		var/area/A = get_area(T)
+		show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
 	SpawnApostles()
 	particles = new /particles/white_night()
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(sound_to_playing_players), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/whitenight/rapture2.ogg', 50), 10 SECONDS)
@@ -549,6 +551,6 @@ GLOBAL_LIST_EMPTY(apostles)
 				if(ishuman(L))
 					var/mob/living/carbon/human/H = L
 					if(H.sanity_lost)
-						H.gib() // lmao
+						H.gib(DROP_BRAIN) // lmao
 		sleep(2)
 	QDEL_NULL(B)

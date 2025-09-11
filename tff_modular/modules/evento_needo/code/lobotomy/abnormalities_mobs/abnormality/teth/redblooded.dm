@@ -132,7 +132,7 @@
 			Reload()
 	return ..()
 
-/mob/living/simple_animal/hostile/abnormality/redblooded/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/redblooded/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	icon_state = "american_aggro"
 	GiveTarget(user)

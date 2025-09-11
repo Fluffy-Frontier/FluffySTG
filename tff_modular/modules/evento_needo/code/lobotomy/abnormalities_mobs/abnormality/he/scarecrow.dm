@@ -29,7 +29,7 @@
 	)
 	gift_type =  /datum/ego_gifts/harvest
 	grouped_abnos = list(
-		/mob/living/simple_animal/hostile/abnormality/road_home = 2,
+		///mob/living/simple_animal/hostile/abnormality/road_home = 2,
 		///mob/living/simple_animal/hostile/abnormality/woodsman = 2,
 		/mob/living/simple_animal/hostile/abnormality/scaredy_cat = 2,
 		// Ozma = 2,
@@ -190,7 +190,7 @@
 			qliphoth_change(-1)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/scarecrow/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/scarecrow/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	icon_living = "scarecrow_breach"
 	icon_state = icon_living

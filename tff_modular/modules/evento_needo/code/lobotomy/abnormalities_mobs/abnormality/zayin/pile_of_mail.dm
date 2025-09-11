@@ -100,7 +100,7 @@
 			MAIL.throw_at(user, 4, 1, src, spin = FALSE, gentle = TRUE, quickstart = FALSE)
 			letterssave += MAIL
 			sleep(1 SECONDS)
-		user.gib()
+		user.gib(DROP_BRAIN)
 		sleep(5 SECONDS)
 		for(var/obj/item/mailpaper/MAIL in letterssave)
 			qdel(MAIL)
@@ -116,7 +116,7 @@
 	return
 
 // Pink Midnight
-/mob/living/simple_animal/hostile/abnormality/mailpile/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/mailpile/BreachEffect(mob/living/carbon/human/user)
 	SendDeathThreat()
 	return ..()
 
@@ -466,7 +466,7 @@
 		potential_items += subtypesof(/obj/item/food/pizza)
 		potential_items -= /obj/item/food/pizza/arnold
 		potential_items -= /obj/item/food/pizza/margherita/robo
-		potential_items += subtypesof(/obj/item/reagent_containers/food/drinks/soda_cans)
+		potential_items += subtypesof(/obj/item/reagent_containers/cup/soda_cans)
 		potential_items += subtypesof(/obj/item/toy)
 		potential_items -= /obj/item/toy/talking
 		potential_items -= /obj/item/toy/cards/cardhand
@@ -481,7 +481,7 @@
 /obj/item/coupon_lc13/attack_self(mob/user)
 	var/obj/structure/closet/supplypod/centcompod/pod = new()
 	pod.explosionSize = list(0,0,0,0)
-	for(var/i = 1 to (istype(item_type, /obj/item/reagent_containers/food/drinks/soda_cans) ? 6 : 1))
+	for(var/i = 1 to (istype(item_type, /obj/item/reagent_containers/cup/soda_cans) ? 6 : 1))
 		new item_type(pod)
 	new /obj/effect/pod_landingzone(get_turf(user), pod)
 	to_chat(user, span_notice("Your [initial(item_type?.name)] is on it's way!"))

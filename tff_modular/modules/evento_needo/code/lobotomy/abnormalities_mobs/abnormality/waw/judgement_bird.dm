@@ -133,7 +133,7 @@
 	qliphoth_change(-1)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/judgement_bird/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/judgement_bird/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	judgement_damage = 65
 

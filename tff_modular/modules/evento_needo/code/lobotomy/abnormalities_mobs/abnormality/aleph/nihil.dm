@@ -200,9 +200,9 @@
 				continue
 			teleport_potential += get_turf(L)
 	if(!LAZYLEN(teleport_potential))
-		if(!LAZYLEN(GLOB.start_landmarks_list))
+		if(!LAZYLEN(GLOB.generic_event_spawns))
 			return
-		var/turf/P = get_turf(pick(GLOB.start_landmarks_list))
+		var/turf/P = get_turf(pick(GLOB.generic_event_spawns))
 		teleport_potential += P
 	can_act = FALSE
 	LoseTarget()
@@ -437,6 +437,7 @@
 
 //Breach
 /mob/living/simple_animal/hostile/abnormality/nihil/ZeroQliphoth(mob/living/carbon/human/user)
+	. = ..()
 	var/counter = 0
 	for(var/mob/living/simple_animal/hostile/abnormality/A in GLOB.abnormality_mob_list)
 		if(!GirlCheck(A))
@@ -472,7 +473,7 @@
 	attack_count += 1
 	Debuff(attack_count, event_start)
 
-/mob/living/simple_animal/hostile/abnormality/nihil/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/nihil/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	event_enabled = TRUE //We're not admin spawned
 	death_ready = FALSE
@@ -487,7 +488,7 @@
 		portal = new(T)
 		break
 	if(!portal)
-		var/turf/T = get_turf(pick(GLOB.start_landmarks_list))
+		var/turf/T = get_turf(pick(GLOB.generic_event_spawns))
 		portal = new(T)
 	AIStatus = AI_OFF
 	forceMove(portal)

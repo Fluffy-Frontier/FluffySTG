@@ -92,6 +92,7 @@
 
 //Work
 /mob/living/simple_animal/hostile/abnormality/norinori/PostWorkEffect(mob/living/carbon/human/user)
+	. = ..()
 	if(user.get_major_clothing_class() == CLOTHING_SERVICE && !(HAS_TRAIT(user, TRAIT_GODMODE)))
 		KillCheck(user, TRUE)
 	if(!IsContained())
@@ -138,7 +139,7 @@
 	playsound(user, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/helper/attack.ogg', 100, FALSE, 4)
 	attack_sound = initial(attack_sound)
 	if(user.stat == DEAD)
-		user.gib() //update it with cool effects
+		user.gib(DROP_BRAIN) //update it with cool effects
 	SLEEP_CHECK_DEATH(10, src)
 	if(IsContained()) //fixes a bug with invisibility on breach
 		icon_state = initial(icon_state)
@@ -150,7 +151,7 @@
 	return
 
 //Breach
-/mob/living/simple_animal/hostile/abnormality/norinori/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/norinori/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	icon_state = icon_aggro
 	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/48x48.dmi'

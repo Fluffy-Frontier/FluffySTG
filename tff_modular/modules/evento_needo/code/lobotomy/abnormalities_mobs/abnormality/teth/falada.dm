@@ -50,12 +50,11 @@
 	if(user)
 		say("O, Anidori, if only your mother knew the fate to befall you, how her heart would break in two.")
 	qliphoth_change(1)
-	return
+	return ..()
 
-/mob/living/simple_animal/hostile/abnormality/falada/BreachEffect(mob/living/carbon/human/user, breach_type)
-	if(breach_type == BREACH_MINING)
-		pissed()
-		qdel(src)
+/mob/living/simple_animal/hostile/abnormality/falada/BreachEffect(mob/living/carbon/human/user)
+	pissed()
+	qdel(src)
 
 /mob/living/simple_animal/hostile/abnormality/falada/try_working(mob/living/carbon/human/user)
 	liked = pick(

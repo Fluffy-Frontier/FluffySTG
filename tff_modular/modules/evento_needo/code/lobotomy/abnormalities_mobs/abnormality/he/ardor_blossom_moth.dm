@@ -49,6 +49,7 @@
 		qliphoth_change(1)
 
 /mob/living/simple_animal/hostile/abnormality/ardor_moth/PostWorkEffect(mob/living/carbon/human/user)
+	. = ..()
 	if(!stoked && user.get_major_clothing_class() == CLOTHING_SERVICE)
 		if(prob(30))
 			qliphoth_change(-2)

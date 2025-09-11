@@ -43,7 +43,7 @@
 	var/list/counter2 = list()
 	var/slam_cooldown = 10 SECONDS
 	var/slam_cooldown_time
-
+	work_types = null
 
 /mob/living/simple_animal/hostile/abnormality/my_sweet_home/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change)
 	. = ..()

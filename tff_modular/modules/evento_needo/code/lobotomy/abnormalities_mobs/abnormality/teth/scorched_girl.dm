@@ -125,7 +125,7 @@
 		H.apply_damage(boom_damage, BRUTE)
 		H.apply_damage(boom_damage * 0.5, FIRE)
 		if(H.health < 0)
-			H.gib()
+			H.gib(DROP_BRAIN)
 	for(var/obj/structure/obstacle in view(2, src))
 		obstacle.take_damage(boom_damage, BRUTE)
 	new /obj/effect/temp_visual/explosion(get_turf(src))
@@ -146,7 +146,7 @@
 		qliphoth_change(-1)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/scorched_girl/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/scorched_girl/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	boom_cooldown = world.time + 5 SECONDS // So it doesn't instantly explode
 	update_icon()

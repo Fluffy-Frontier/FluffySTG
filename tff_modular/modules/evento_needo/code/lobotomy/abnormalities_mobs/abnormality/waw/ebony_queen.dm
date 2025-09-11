@@ -112,10 +112,9 @@
 	EQ.thornBurst()
 	return TRUE
 
-/mob/living/simple_animal/hostile/abnormality/ebony_queen/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/ebony_queen/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
-	if(breach_type != BREACH_MINING)
-		addtimer(CALLBACK(src, PROC_REF(TryTeleport)), 5)
+	addtimer(CALLBACK(src, PROC_REF(TryTeleport)), 5)
 
 /mob/living/simple_animal/hostile/abnormality/ebony_queen/Move()
 	if(!can_act)
@@ -163,6 +162,8 @@
 	density = FALSE
 	SLEEP_CHECK_DEATH(4, src)
 	forceMove(teleport_target)
+	var/area/A = get_area(teleport_target)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
 	SLEEP_CHECK_DEATH(1, src)
 	animate(src, alpha = 255, time = 5, easing = EASE_IN)
 	SLEEP_CHECK_DEATH(1, src)

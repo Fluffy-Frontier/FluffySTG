@@ -387,7 +387,7 @@
 			O.Remove(body)
 			QDEL_NULL(O)
 			break
-	body.gib()
+	body.gib(DROP_BRAIN)
 	if(combat_map)
 		GainRamping(10)
 
@@ -552,7 +552,7 @@
 	if(datum_reference.qliphoth_meter == 1)
 		to_chat(user, span_userdanger("The Woodsman swings his axe down!"))
 		qliphoth_change(-1)
-		user.gib()
+		user.gib(DROP_BRAIN)
 
 /mob/living/simple_animal/hostile/abnormality/woodsman/user_buckle_mob(mob/living/M, mob/user, check_loc)
 	if(!IsContained() || user == src || !ishuman(M) || (HAS_TRAIT(M, TRAIT_GODMODE)))
@@ -564,7 +564,7 @@
 	if(istype(O))
 		O.Remove(M)
 		QDEL_NULL(O)
-	M.gib()
+	M.gib(DROP_BRAIN)
 	if(datum_reference.qliphoth_meter == 1)
 		to_chat(user, span_nicegreen("Rests it on the ground."))
 		qliphoth_change(1)
@@ -573,7 +573,7 @@
 		to_chat(user, span_userdanger("Stands up!"))
 		qliphoth_change(-2)
 
-/mob/living/simple_animal/hostile/abnormality/woodsman/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/woodsman/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	layer = LARGE_MOB_LAYER
 	icon_state = icon_living

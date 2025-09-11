@@ -219,7 +219,7 @@
 			if(!ishuman(L))
 				dash_damage = dash_damage / 2
 			if(L.stat >= HARD_CRIT)
-				L.gib()
+				L.gib(DROP_BRAIN)
 				continue
 			//been_hit += L
 			been_hit[L] = world.time
@@ -255,7 +255,7 @@
 		qliphoth_change(-1)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/helper/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/helper/BreachEffect(mob/living/carbon/human/user)
 	..()
 	update_icon()
 	GiveTarget(user)

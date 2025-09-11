@@ -87,9 +87,8 @@ Defeating the murderer also surpresses the abnormality.
 	MeltdownEffect()
 	return
 
-/mob/living/simple_animal/hostile/abnormality/screenwriter/BreachEffect(mob/living/carbon/human/user, breach_type)
-	if(breach_type == BREACH_MINING)
-		MeltdownEffect()
+/mob/living/simple_animal/hostile/abnormality/screenwriter/BreachEffect(mob/living/carbon/human/user)
+	MeltdownEffect()
 
 /mob/living/simple_animal/hostile/abnormality/screenwriter/proc/MeltdownEffect()
 	var/turf/actor_location = get_turf(pick(GLOB.start_landmarks_list)) //Spawn the murderer

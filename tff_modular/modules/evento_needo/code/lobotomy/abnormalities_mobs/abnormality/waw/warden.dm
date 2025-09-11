@@ -76,7 +76,7 @@
 			SLEEP_CHECK_DEATH(5, src)
 
 			//Takes your skin and leaves your bone. You are now a flesh servant under her skirt in GBJ
-			H.dust()
+			H.gib(DROP_BRAIN)
 
 			// it gets faster.
 
@@ -108,7 +108,7 @@
 		qliphoth_change(-1)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/warden/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/warden/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	GiveTarget(user)
 

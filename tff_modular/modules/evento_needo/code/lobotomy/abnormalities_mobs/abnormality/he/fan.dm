@@ -47,7 +47,7 @@
 		user.throw_at(src, 10, 10, user, spin = TRUE, gentle = FALSE, quickstart = TRUE)
 		SLEEP_CHECK_DEATH(3, src)
 		playsound(loc, 'sound/machines/juicer.ogg', 100, TRUE)
-		user.gib()
+		user.gib(DROP_BRAIN)
 
 	else if(user in warning)
 		danger+=user
@@ -69,7 +69,7 @@
 		return FALSE
 	if(prob(40))
 		safework = TRUE
-	return ..()
+	return
 
 //Breach
 /mob/living/simple_animal/hostile/abnormality/fan/ZeroQliphoth(mob/living/carbon/human/user)

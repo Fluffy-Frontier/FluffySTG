@@ -270,7 +270,7 @@
 	..()
 	Retaliate(user)
 
-/mob/living/simple_animal/hostile/abnormality/punishing_bird/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/punishing_bird/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	icon_state = initial(icon_state)
 	icon_living = initial(icon_living)
@@ -317,7 +317,7 @@
 /mob/living/simple_animal/hostile/abnormality/punishing_bird/PostWorkEffect(mob/living/carbon/human/user)
 	if(user.get_major_clothing_class() == CLOTHING_ARMORED)
 		qliphoth_change(-1)
-	return
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/punishing_bird/SuccessEffect(mob/living/carbon/human/user)
 	qliphoth_change(1)

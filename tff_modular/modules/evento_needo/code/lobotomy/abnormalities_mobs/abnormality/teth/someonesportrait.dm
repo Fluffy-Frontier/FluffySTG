@@ -5,6 +5,7 @@
 	base_pixel_y = 64
 	density = FALSE
 	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/tegumobs.dmi'
+	icon_state = "someones_portrait"
 	fear_level = TETH_LEVEL
 	damage_coeff = list(BURN = 1, BRAIN = 1, BRUTE = 1, TOX = 1)
 
@@ -27,6 +28,7 @@
 	if(user.get_major_clothing_class() != CLOTHING_ENGINEERING || user.get_major_clothing_class() != CLOTHING_SCIENCE)
 		PanicUser(user)
 	DestroyLights()
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/someones_portrait/FailureEffect(mob/living/carbon/human/user)
 	if (!(user.sanity_lost))

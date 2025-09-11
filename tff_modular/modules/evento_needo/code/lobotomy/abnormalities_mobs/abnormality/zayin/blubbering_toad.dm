@@ -94,9 +94,9 @@
 		H.adjustSanityLoss(-pulse_healing)
 
 //Attack or approach it directly and it attacks you!
-/mob/living/simple_animal/hostile/abnormality/blubbering_toad/BreachEffect(mob/living/user, breach_type = BREACH_NORMAL)
+/mob/living/simple_animal/hostile/abnormality/blubbering_toad/BreachEffect(mob/living/user)
 	angry = TRUE
-	if(breach_type == BREACH_MINING)//nerfed to a ZAYIN statline since this is something you'll typically fight roundstart
+	if(prob(30))//nerfed to a ZAYIN statline since this is something you'll typically fight roundstart
 		name = "Weakened [name]"
 		maxHealth = 400
 		melee_damage_lower = 4
@@ -219,7 +219,7 @@
 	if(H.sanity_lost) //prevents hitting the same guy in an infinite loop
 		melee_damage_type = BRUTE
 	if(H.health < 0)
-		H.gib()
+		H.gib(DROP_BRAIN)
 		if(!persistant)
 			addtimer(CALLBACK(src, PROC_REF(ReturnCell)), 10 SECONDS)
 			return

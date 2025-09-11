@@ -37,7 +37,7 @@
 	var/teleport_cooldown_time = 30 SECONDS
 	//attack
 	var/mob/living/set_target
-	var/pulse_range = 11 //fairly large area - enough to breach several abnormalities
+	var/pulse_range = 7 //fairly large area - enough to breach several abnormalities
 	var/fog_damage = 3
 	var/ash_damage = 20
 
@@ -99,7 +99,7 @@
 	. = ..()
 	if(HAS_TRAIT(src, TRAIT_GODMODE))
 		return
-	SpawnFog() //Periodically spews out damaging fog while breaching
+	addtimer(CALLBACK(src, PROC_REF(SpawnFog)), 5 SECONDS) //Periodically spews out damaging fog while breaching
 
 /mob/living/simple_animal/hostile/abnormality/pale_horse/proc/SpawnFog()
 	var/turf/target_turf = get_turf(src)
@@ -111,7 +111,6 @@
 			if(faction_check_atom(H))
 				continue
 			H.apply_damage(fog_damage, BRUTE)
-
 
 /mob/living/simple_animal/hostile/abnormality/pale_horse/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change) //more damaging fog when moving
 	. = ..()

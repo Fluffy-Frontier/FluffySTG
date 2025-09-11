@@ -44,13 +44,13 @@
 		looking_players |=H
 
 /* Work effects */
-/mob/living/simple_animal/hostile/abnormality/rubber_duck/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/rubber_duck/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 
 	icon_state = "duck"
 	QDEL_IN(src, 5 MINUTES)	//Softlock prevention
 
-	var/turf/T = get_turf(pick(GLOB.start_landmarks_list))
+	var/turf/T = get_turf(pick(GLOB.generic_event_spawns))
 	var/list/tables = list()
 	for(var/i=1, i<=3, i++)
 		for(var/obj/structure/table/tablecheck in range(7, T))
@@ -58,10 +58,14 @@
 		if(length(tables))
 			T = get_turf(pick(tables))
 			forceMove(T)
+			var/area/A = get_area(T)
+			show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
 			return
 	var/list/all_turfs = RANGE_TURFS(5, src)
 	T = get_turf(pick(all_turfs))
 	forceMove(T)
+	var/area/A = get_area(T)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
 
 /mob/living/simple_animal/hostile/abnormality/rubber_duck/Initialize()
 	. = ..()

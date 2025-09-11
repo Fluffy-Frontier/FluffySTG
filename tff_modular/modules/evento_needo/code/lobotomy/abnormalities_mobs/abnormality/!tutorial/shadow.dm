@@ -17,7 +17,7 @@
 	can_spawn = FALSE // Normally doesn't appear
 	update_qliphoth = -1
 
-/mob/living/simple_animal/hostile/abnormality/shadow/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/shadow/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	GiveTarget(user)
 	addtimer(CALLBACK(src, PROC_REF(die)), 60 SECONDS)

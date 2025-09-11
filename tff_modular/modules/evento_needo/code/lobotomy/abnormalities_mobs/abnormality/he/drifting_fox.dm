@@ -78,12 +78,12 @@
 		pet -= user
 	if(user.get_clothing_class_level(CLOTHING_SERVICE) < 3)
 		qliphoth_change(-1)
-	return
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/drifting_fox/FailureEffect(mob/living/carbon/human/user)
 	qliphoth_change(-1)
 
-/mob/living/simple_animal/hostile/abnormality/drifting_fox/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/drifting_fox/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	icon_living = "fox_breach"
 	icon_state = icon_living

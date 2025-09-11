@@ -159,9 +159,8 @@
 		P.TriggerPrank()
 	return
 
-/mob/living/simple_animal/hostile/abnormality/laetitia/BreachEffect(mob/living/carbon/human/user, breach_type)
-	if(breach_type == BREACH_MINING)
-		breaching = TRUE
+/mob/living/simple_animal/hostile/abnormality/laetitia/BreachEffect(mob/living/carbon/human/user)
+	breaching = TRUE
 	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/laetitia/proc/SummonAdds()//Mining breach summon

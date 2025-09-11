@@ -206,7 +206,7 @@
 		. += shown_value
 
 // Breach
-/mob/living/simple_animal/hostile/abnormality/nosferatu/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/nosferatu/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	var/list/units_to_add = list(
 		/mob/living/simple_animal/hostile/nosferatu_mob = 8

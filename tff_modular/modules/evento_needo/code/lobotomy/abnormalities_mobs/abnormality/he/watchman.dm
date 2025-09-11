@@ -89,9 +89,9 @@
 	var/list/hallucination_args = list(pick(generic_hallucinations), "mass hallucination")
 
 	user._cause_hallucination(hallucination_args)	//You're gonna be hallucinating for a while
+	return ..()
 
-
-/mob/living/simple_animal/hostile/abnormality/watchman/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/watchman/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	set_light(30)	//Makes everything around it really dark, That's all it does lol
 

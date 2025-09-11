@@ -662,9 +662,7 @@
 	friendly = FALSE
 	return ..()
 
-/mob/living/simple_animal/hostile/abnormality/hatred_queen/BreachEffect(mob/living/carbon/human/user, breach_type)
-	if(breach_type == BREACH_MINING)
-		friendly = FALSE
+/mob/living/simple_animal/hostile/abnormality/hatred_queen/BreachEffect(mob/living/carbon/human/user)
 	death_counter = 0
 	if(friendly)
 		friendly = TRUE

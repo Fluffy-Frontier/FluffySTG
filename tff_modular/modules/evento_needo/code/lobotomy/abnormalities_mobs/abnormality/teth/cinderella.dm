@@ -60,6 +60,7 @@
 	if(user.get_major_clothing_class() == CLOTHING_ARMORED)
 		freshness = clamp(freshness - 1, 0, 10)
 	update_icon_state()
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/cinderella/update_icon_state()
 	if(!freshness)
@@ -71,6 +72,7 @@
 
 //Breach code. Warning: Compliated
 /mob/living/simple_animal/hostile/abnormality/cinderella/ZeroQliphoth(mob/living/carbon/human/user)
+	. = ..()
 	if(already_breached)
 		return
 	if(freshness < 10)

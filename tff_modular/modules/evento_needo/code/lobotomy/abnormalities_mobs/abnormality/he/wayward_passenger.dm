@@ -139,7 +139,7 @@
 
 //*** Breach mechanics ***
 
-/mob/living/simple_animal/hostile/abnormality/wayward/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/wayward/BreachEffect(mob/living/carbon/human/user)
 	icon_state = "wayward_breach"
 	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/thunderbird/tbird_zombify.ogg', 45, FALSE, 5)//this is the sound effect used for Tomerry in the lovetown reception
 	. = ..()
@@ -160,9 +160,9 @@
 				continue
 			teleport_potential += get_turf(L)
 		if(!LAZYLEN(teleport_potential))
-			if(!LAZYLEN(GLOB.start_landmarks_list))
+			if(!LAZYLEN(GLOB.generic_event_spawns))
 				return
-			var/turf/P = get_turf(pick(GLOB.start_landmarks_list))
+			var/turf/P = get_turf(pick(GLOB.generic_event_spawns))
 			if(P in view(8, src))//nope, try again!
 				return FALSE
 			teleport_potential += P//there is an edge case here where a dept center within LoS can be picked if there are no other players. This is fine

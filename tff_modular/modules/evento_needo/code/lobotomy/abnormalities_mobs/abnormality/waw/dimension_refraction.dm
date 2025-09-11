@@ -29,14 +29,14 @@
 		I calmly observe the chamber's surroundings and make adjustments when I notice the surface of the cup's liquid begin to bubble."
 
 
-	var/cooldown_time = 3
+	var/cooldown_time = 1.5 SECONDS
 	var/aoe_damage = 12
 
 /mob/living/simple_animal/hostile/abnormality/dimensional_refraction/proc/Melter()
-	for(var/mob/living/L in view(1, src))
+	for(var/mob/living/L in view(2, src))
 		if(faction_check_atom(L))
 			continue
-		L.apply_damage(aoe_damage, BRUTE)
+		L.apply_damage(L.get_major_clothing_class_value() < 2 ? aoe_damage : aoe_damage * 2, BRUTE)
 		new /obj/effect/temp_visual/dir_setting/bloodsplatter(get_turf(L), pick(GLOB.alldirs))
 	addtimer(CALLBACK(src, PROC_REF(Melter)), cooldown_time)
 
@@ -52,7 +52,7 @@
 	return FALSE
 
 /* Qliphoth/Breach effects */
-/mob/living/simple_animal/hostile/abnormality/dimensional_refraction/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/dimensional_refraction/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	alpha = 30
 	addtimer(CALLBACK(src, PROC_REF(Melter)), cooldown_time)

@@ -52,7 +52,7 @@
 	var/mob/living/breaching_minion
 	//Normal breach
 	if(!IsCombatMap())
-		var/turf/W = get_turf(pick(GLOB.start_landmarks_list))
+		var/turf/W = get_turf(pick(GLOB.generic_event_spawns))
 		breaching_minion = SpawnMinion(get_turf(W))
 		qliphoth_change(2)
 
@@ -68,7 +68,7 @@
 	return
 
 //Side Gamemodes stuff, should only ever be called outside of the main gamemode
-/mob/living/simple_animal/hostile/abnormality/better_memories/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/better_memories/BreachEffect(mob/living/carbon/human/user)
 	if(!IsCombatMap())
 		return FALSE
 	ZeroQliphoth()
@@ -302,10 +302,10 @@
 		return target_turf
 
 	//Return Department Center instead.
-	if(!LAZYLEN(GLOB.start_landmarks_list))
+	if(!LAZYLEN(GLOB.generic_event_spawns))
 		return
 	var/list/potential_centers = list()
-	for(var/pos_targ in GLOB.start_landmarks_list)
+	for(var/pos_targ in GLOB.generic_event_spawns)
 		var/possible_center_distance = get_dist(src, get_turf(pos_targ))
 		if(possible_center_distance > 4 && possible_center_distance < 46)
 			potential_centers += pos_targ

@@ -33,6 +33,7 @@
 	COOLDOWN_DECLARE(speak_damage_aura)
 	update_qliphoth = -1
 	action_cooldown = 10 SECONDS
+	work_types = null
 
 /mob/living/simple_animal/hostile/abnormality/bottle/examine(mob/user)
 	. = ..()
@@ -102,7 +103,7 @@
 	return ..()
 
 // Pink Midnight Breach
-/mob/living/simple_animal/hostile/abnormality/bottle/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/bottle/BreachEffect(mob/living/carbon/human/user)
 	ADD_TRAIT(src, TRAIT_MOVE_FLYING, INNATE_TRAIT)
 	COOLDOWN_START(src, speak_damage_aura, speak_cooldown_time)
 	icon_state = "bottle_breach"

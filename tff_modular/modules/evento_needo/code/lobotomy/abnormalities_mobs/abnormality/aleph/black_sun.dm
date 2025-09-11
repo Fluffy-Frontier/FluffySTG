@@ -66,6 +66,8 @@
 
 
 /mob/living/simple_animal/hostile/abnormality/black_sun/ZeroQliphoth()
+	. = ..()
+
 	qliphoth_change(3)
 
 	to_chat(GLOB.clients,"<span class='colossus'>THE BLACK SUN HAS RISEN.</span>")
@@ -77,7 +79,7 @@
 		L.physiology.tox_mod += removestats
 	stage = 0
 	for(var/i = 0 to 2)
-		var/X = get_turf(pick(GLOB.start_landmarks_list))
+		var/X = get_turf(pick(GLOB.generic_event_spawns))
 		var/turf/T = get_turf(X)
 		new /mob/living/simple_animal/hostile/sun_pillar(T)
 
@@ -105,6 +107,7 @@
 		L.physiology.brain_mod += stage
 		L.physiology.tox_mod += stage
 	stage = 0
+	return ..()
 
 //Weather effect
 /datum/weather/bloody_water
@@ -202,7 +205,7 @@
 		H.apply_damage(60, BRUTE)
 		H.apply_damage(30, BRUTE)
 		if(H.sanity_lost)
-			H.gib()
+			H.gib(DROP_BRAIN)
 
 //Kills the insane it does a fuckload of white damage, deal black too.
 /mob/living/simple_animal/hostile/sun_pillar/proc/Aoe()

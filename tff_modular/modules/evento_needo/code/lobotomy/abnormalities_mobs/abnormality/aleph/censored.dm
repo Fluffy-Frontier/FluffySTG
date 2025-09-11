@@ -142,7 +142,7 @@
 	var/mob/living/simple_animal/hostile/mini_censored/C = new(get_turf(src))
 	if(!QDELETED(H))
 		C.desc = "What the hell is this? It shouldn't exist... On the second thought, it reminds you of [H.real_name]..."
-		H.gib()
+		H.gib(DROP_BRAIN)
 	ChangeResistances(list(BURN = 0.6, BRAIN = 0.8, BRUTE = 0.4, TOX = 1))
 	adjustBruteLoss(-(maxHealth*0.1))
 	can_act = TRUE
@@ -217,7 +217,7 @@
 		qliphoth_change(-1)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/censored/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/censored/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	icon_living = "censored_breach"
 	icon_state = icon_living

@@ -180,10 +180,9 @@
 	RecoverHammer()
 
 // Pink Midnight
-/mob/living/simple_animal/hostile/abnormality/hammer_light/BreachEffect(mob/living/carbon/human/user, breach_type = BREACH_NORMAL)
+/mob/living/simple_animal/hostile/abnormality/hammer_light/BreachEffect(mob/living/carbon/human/user)
+	. = ..()
 	if(!hammer_present)
-		return FALSE
-	if(breach_type != BREACH_PINK)
 		return FALSE
 	hammer_present = FALSE
 	sealed = FALSE
@@ -203,7 +202,6 @@
 				continue
 			V.forceMove(destination)
 	addtimer(CALLBACK(src, PROC_REF(UserDeath)), usable_cooldown_time)
-	return TRUE
 
 // Item version
 /obj/item/ego_weapon/hammer_light
@@ -298,7 +296,7 @@
 		return ..()
 	target = null
 	var/dist = 100
-	for(var/mob/living/simple_animal/hostile/H in GLOB.alive_mob_list)
+	for(var/mob/living/simple_animal/hostile/H in GLOB.simple_animals)
 		if(H.z != user.z)
 			continue
 		if(H.stat == DEAD)

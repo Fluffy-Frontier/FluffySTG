@@ -94,6 +94,7 @@
 		playsound(get_turf(blessed), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/despairknight/gift.ogg', 50, 0, 2)
 
 /mob/living/simple_animal/hostile/abnormality/despair_knight/ZeroQliphoth(mob/living/carbon/human/user)
+	. = ..()
 	switch(swords)
 		if(0)
 			add_overlay(mutable_appearance('tff_modular/modules/evento_needo/icons/Teguicons/48x48.dmi', "despair_sword1", -ABOVE_MOB_LAYER))
@@ -203,6 +204,8 @@
 
 /mob/living/simple_animal/hostile/abnormality/despair_knight/proc/FinishTeleport(turf/teleport_target)
 	animate(src, alpha = 255, time = 5)
+	var/area/A = get_area(teleport_target)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
 	new /obj/effect/temp_visual/guardian/phase/out(teleport_target)
 	forceMove(teleport_target)
 
@@ -222,7 +225,7 @@
 		balloon_alert(user, "not smart enough")
 	return
 
-/mob/living/simple_animal/hostile/abnormality/despair_knight/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/despair_knight/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	icon_living = "despair_breach"
 	icon_state = icon_living

@@ -167,7 +167,7 @@
 	qdel(chosenorgan)
 
 // Breach
-/mob/living/simple_animal/hostile/abnormality/sphinx/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/sphinx/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	AddElement(/datum/element/knockback, 3, FALSE, TRUE)
 	GiveTarget(user)
@@ -413,5 +413,5 @@
 		new /obj/effect/temp_visual/smash_effect(T)
 		for(var/mob/living/L in caster.HurtInTurf(T, list(), damage, BRUTE, null, TRUE, FALSE, TRUE, hurt_hidden = TRUE, hurt_structure = TRUE))
 			if(L.health < 0)
-				L.gib()
+				L.gib(DROP_BRAIN)
 	qdel(src)

@@ -128,10 +128,8 @@
 //Breach Code
 //Porccubus can't actually move so it's more of a "bring your friend to beat it to death it isn't going anywhere" type of thing.
 //it does have a dash that makes it able to jump around, but it can't properly "roam" per say.
-/mob/living/simple_animal/hostile/abnormality/porccubus/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/porccubus/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
-	if(breach_type == BREACH_MINING)
-		noteleport = TRUE
 	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/porccubus/head_explode_laugh.ogg', 50, FALSE, 4)
 	icon_living = "porrcubus"
 	icon_state = icon_living

@@ -49,6 +49,7 @@
 	return
 
 /mob/living/simple_animal/hostile/abnormality/naked_nest/ZeroQliphoth(mob/living/carbon/human/user)
+	. = ..()
 	if(HAS_TRAIT(src, TRAIT_GODMODE))
 		if(origin_cooldown <= world.time) //To prevent serpent flood there is a delay on how many serpents are brave enough to leave the safety of their nest.
 			var/turf/T = get_turf(pick(GLOB.start_landmarks_list))
@@ -59,7 +60,6 @@
 		return
 	if(serpentsnested <= 2)
 		serpentsnested = serpentsnested + 1
-	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/naked_nest/death(gibbed)
 	for(var/atom/movable/AM in src)

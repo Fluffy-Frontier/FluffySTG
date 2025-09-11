@@ -110,6 +110,8 @@
 	var/list/job_things = list()
 	var/datum/callback/job_callback
 	var/list/current_jobs = list()
+	var/datum/callback/post_work_effect
+	var/calm_down_time = 3 MINUTES
 
 /mob/living/simple_animal/hostile/abnormality/Login()
 	. = ..()
@@ -120,6 +122,8 @@
 /mob/living/simple_animal/hostile/abnormality/Initialize(mapload)
 	SHOULD_CALL_PARENT(TRUE)
 	datum_reference = new(src)
+	datum_reference.qliphoth_meter_max = rand(1, 3)
+	datum_reference.qliphoth_meter = datum_reference.qliphoth_meter_max
 	SSlobotomy_corp.NewAbnormality(datum_reference)
 	for(var/action_type in attack_action_types)
 		var/datum/action/innate/abnormality_attack/attack_action = new action_type()
@@ -130,9 +134,8 @@
 	toggle_ai(AI_OFF)
 	ADD_TRAIT(src, TRAIT_GODMODE, ADMIN_TRAIT)
 
-	//RegisterSignal(src, COMSIG_MOB_APPLY_DAMAGE, PROC_REF(on_damaged))
 	RegisterSignal(src, COMSIG_LIVING_DEATH, PROC_REF(try_giving_ego))
-	if(fear_level > HE_LEVEL)
+	if(fear_level > WAW_LEVEL)
 		ego_on_death = TRUE
 
 	if(!gift_chance)
@@ -150,12 +153,26 @@
 
 	if(secret_chance && (prob(10)))
 		InitializeSecretIcon()
+
+	post_work_effect = CALLBACK(PROC_REF(PostWorkEffect))
 	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/Destroy()
-	//UnregisterSignal(src, list(COMSIG_MOB_APPLY_DAMAGE, COMSIG_LIVING_DEATH))
+	UnregisterSignal(src, list(COMSIG_LIVING_DEATH))
 	job_callback = null
+	qdel(post_work_effect)
 	return ..()
+
+/mob/living/simple_animal/hostile/abnormality/attacked_by(obj/item/I, mob/living/user)
+	. = ..()
+	if(IsContained())
+		qliphoth_change(-1)
+
+/mob/living/simple_animal/hostile/abnormality/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+	. = ..()
+	if(IsContained())
+		qliphoth_change(-1)
+
 
 /mob/living/simple_animal/hostile/abnormality/handle_automated_movement()
 	if(!AIStatus)
@@ -333,6 +350,31 @@
 	to_chat(user, span_nicegreen("[gift_message]"))
 	return TRUE
 
+/mob/living/simple_animal/hostile/abnormality/proc/try_giving_ego(mob/living/carbon/human/user, success)
+	SIGNAL_HANDLER
+	if(fear_level <= TETH_LEVEL)
+		if(prob(40))
+			spawn_ego(user)
+	else if(fear_level == WAW_LEVEL)
+		if(prob(20))
+			spawn_ego(user)
+	if(ego_on_death)
+		if(prob(50))
+			spawn_ego(src)
+	else if(prob(20))
+		spawn_ego(user)
+
+/mob/living/simple_animal/hostile/abnormality/proc/spawn_ego(mob/living/creature)
+	var/turf/T = get_turf(creature)
+	to_chat(creature, "spawned ego")
+	if(T)
+		var/new_ego = pick(ego_list)
+		var/datum/ego_datum/ego = new new_ego(src)
+		var/obj/item/ego_item = ego.item_path
+		if(ego_item)
+			ego_item = new ego_item(T)
+		qdel(ego)
+	return
 
 /mob/living/simple_animal/hostile/abnormality/attack_hand(mob/living/carbon/human/user, list/modifiers)
 	. = try_working(user)
@@ -353,9 +395,14 @@
 	currently_working = TRUE
 	if(!LAZYLEN(work_types)) //Кастомные работы начинаются тут
 		if(do_after(user, fear_level * 5 SECONDS, src))
-			return TRUE
+			SuccessEffect(user)
+			. = TRUE
 		else
-			return FALSE
+			FailureEffect(user)
+			. = FALSE
+		currently_working = FALSE
+		post_work_effect?.Invoke(user)
+		return .
 	var/selected_work = tgui_input_list(user, "Select work type", "Choice", work_types, null, 10 SECONDS)
 	if(!selected_work)
 		currently_working = FALSE
@@ -399,16 +446,14 @@
 	SHOULD_CALL_PARENT(TRUE)
 
 	LAZYREMOVE(current_jobs, current_jobs[1])
-	to_chat(user, "JOB FINISHED")
 	//Работы выполнены
 	if(!LAZYLEN(current_jobs))
-		to_chat(user, "WORK FINISHED")
 		currently_working = FALSE
 		if(!isnull(job_timer))
 			deltimer(job_timer)
 		SEND_SIGNAL(user, COMSIG_WORK_COMPLETED, datum_reference)
 		SEND_GLOBAL_SIGNAL(COMSIG_GLOB_WORK_COMPLETED, datum_reference)
-		//PostWorkEffect(user)
+		post_work_effect.Invoke(user)
 		try_giving_ego(user)
 		if(action_cooldown)
 			next_action_time = world.time + action_cooldown
@@ -421,7 +466,6 @@
 			FailureEffect(user)
 
 	else
-		to_chat(user, "JOB CONTINUED")
 		job_time_step = 0
 		if(!isnull(job_timer))
 			deltimer(job_timer)
@@ -486,25 +530,6 @@
 	GiftUser(user, gift_chance)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/proc/try_giving_ego(mob/living/carbon/human/user, success)
-	SIGNAL_HANDLER
-	if(fear_level <= TETH_LEVEL)
-		if(prob(40))
-			spawn_ego(user)
-	else if(fear_level == WAW_LEVEL)
-		if(prob(20))
-			spawn_ego(user)
-	else if(ego_on_death)
-		if(prob(50))
-			spawn_ego(src)
-
-/mob/living/simple_animal/hostile/abnormality/proc/spawn_ego(mob/living/creature)
-	var/turf/T = get_turf(creature)
-	if(T)
-		var/obj/item/ego = pick(ego_list)
-		if(ego)
-			ego = new(T)
-	return
 
 /mob/living/simple_animal/hostile/abnormality/proc/qliphoth_change(num)
 	datum_reference.qliphoth_meter += num
@@ -515,14 +540,20 @@
 	OnQliphothChange(num)
 	return
 
+/mob/living/simple_animal/hostile/abnormality/proc/CalmDown()
+	qliphoth_change(datum_reference.qliphoth_meter_max)
+	if(istype(datum_reference))
+		deadchat_broadcast(" угомонился.", "<b>[src.name]</b>", src, get_turf(src))
+
 // Effects when qliphoth reaches 0
 /mob/living/simple_animal/hostile/abnormality/proc/ZeroQliphoth(mob/living/carbon/human/user)
+	addtimer(CALLBACK(src, PROC_REF(CalmDown)), calm_down_time * fear_level)
 	if(can_breach)
 		BreachEffect(user)
 	return
 
 // Special breach effect for abnormalities with can_breach set to TRUE
-/mob/living/simple_animal/hostile/abnormality/proc/BreachEffect(mob/living/carbon/human/user, breach_type = BREACH_NORMAL)
+/mob/living/simple_animal/hostile/abnormality/proc/BreachEffect(mob/living/carbon/human/user)
 	if(!can_breach)
 		// If a custom breach is called and the mob has no way of handling it, just ignore it.
 		// Should follow normal behaviour with ..()
@@ -532,7 +563,7 @@
 	REMOVE_TRAIT(src, TRAIT_GODMODE, ADMIN_TRAIT)
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_ABNORMALITY_BREACH, src)
 	if(istype(datum_reference))
-		deadchat_broadcast(" has enraged.", "<b>[src.name]</b>", src, get_turf(src))
+		deadchat_broadcast(" впал в ярость.", "<b>[src.name]</b>", src, get_turf(src))
 	FearEffect()
 	return TRUE
 
@@ -655,5 +686,5 @@ ADMIN_VERB_AND_CONTEXT_MENU(make_angry, R_ADMIN, "Make angry", "Включает
 		return
 	log_admin("[key_name(user)] взбесил  [abno.name]")
 	message_admins("[key_name_admin(user)] взбесил  [abno.name]")
-	abno.qliphoth_change(-999)
+	abno.qliphoth_change(-abno.datum_reference.qliphoth_meter_max)
 	BLACKBOX_LOG_ADMIN_VERB("Make Angry")

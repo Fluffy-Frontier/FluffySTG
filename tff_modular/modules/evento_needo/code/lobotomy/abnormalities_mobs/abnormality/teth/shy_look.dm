@@ -108,12 +108,13 @@
 	if(previous_mood == 2)
 		user.adjustSanityLoss(-0.2*user.maxSanity)
 	ChangeMood() //Prevents spamming work on the same mood
-	return
+	return ..()
 
-/mob/living/simple_animal/hostile/abnormality/shy_look/BreachEffect(mob/living/carbon/human/user, breach_type)
-	if(breach_type == BREACH_MINING)
+/mob/living/simple_animal/hostile/abnormality/shy_look/BreachEffect(mob/living/carbon/human/user)
+	if(prob(50))
 		special_breach = TRUE
 	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/32x32.dmi'
 	icon_state = "bill"
 	base_pixel_x = 0
 	pixel_x = 0
+	return ..()

@@ -27,8 +27,6 @@
 	abno_path = new_type
 	name = initial(abno_path.name)
 	desc = initial(abno_path.desc)
-	qliphoth_meter_max = rand(1, 3)
-	qliphoth_meter = qliphoth_meter_max
 	RespawnAbno()
 	FillEgoList()
 

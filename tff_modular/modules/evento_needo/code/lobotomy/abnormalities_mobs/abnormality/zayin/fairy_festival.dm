@@ -93,17 +93,20 @@
 	return
 
 //not called by anything anymore, left here if somebody wants to readd it later for any reason.
-/mob/living/simple_animal/hostile/abnormality/fairy_festival/proc/FairyGib(datum/source, datum/abnormality/datum_sent, mob/living/carbon/human/user, work_type)
+/mob/living/simple_animal/hostile/abnormality/fairy_festival/proc/FairyGib(datum/source)
 	SIGNAL_HANDLER
-	if(((user in protected_people) && datum_sent != datum_reference) && HAS_TRAIT(user, TRAIT_GODMODE))
+	var/mob/living/carbon/human/user = source
+	if(!user)
+		return
+	if((user in protected_people) && HAS_TRAIT(user, TRAIT_GODMODE))
 		to_chat(user, span_userdanger("With a beat of their wings, the fairies pounce on you and ravenously consume your body!"))
 		playsound(get_turf(user), 'sound/effects/magic/demon_consume.ogg', 75, 0)
 		UnregisterSignal(user, COMSIG_DO_AFTER_BEGAN)
 		protected_people.Remove(user)
-		user.gib()
+		user.gib(DROP_BRAIN)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/fairy_festival/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/fairy_festival/BreachEffect(mob/living/carbon/human/user)
 	if(prob(50))
 		summon_cooldown_time = 20 SECONDS
 		summon_maximum = 15
@@ -129,7 +132,7 @@
 	if(istype(attacked_target, /mob/living/simple_animal/hostile/fairy_mass))
 		var/mob/living/L = attacked_target
 		if(L.health > 0)//fairies have to be alive; scarred meat isn't tasty
-			L.gib()
+			L.gib(DROP_BRAIN)
 			ProcessKill()
 			playsound(get_turf(src), "tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/fairyfestival/fairyqueen_growl.ogg", 100, FALSE)
 			return
@@ -140,7 +143,7 @@
 			playsound(get_turf(src), "tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/fairyfestival/fairyqueen_growl.ogg", 100, FALSE)
 			if(ishuman(L))
 				ProcessKill()
-			L.gib()
+			L.gib(DROP_BRAIN)
 
 //Cannibalism
 /mob/living/simple_animal/hostile/abnormality/fairy_festival/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
@@ -221,7 +224,7 @@
 			var/mob/living/simple_animal/hostile/mini_fairy/MF = new(get_turf(L))
 			MF.faction = src.faction
 			playsound(get_turf(src), 'sound/effects/magic/demon_consume.ogg', 75, 0)
-			L.gib()
+			L.gib(DROP_BRAIN)
 			summon_backup()
 
 /mob/living/simple_animal/hostile/mini_fairy/summon_backup(distance = 6)
@@ -262,4 +265,4 @@
 		var/mob/living/L = attacked_target
 		if(L.health < 0 || L.stat == DEAD)
 			playsound(get_turf(src), 'sound/effects/magic/demon_consume.ogg', 75, 0)
-			L.gib()
+			L.gib(DROP_BRAIN)

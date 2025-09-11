@@ -101,13 +101,13 @@
 /mob/living/simple_animal/hostile/abnormality/oracle/proc/NotifyEscape(mob/living/carbon/human/user, mob/living/simple_animal/hostile/abnormality/abno)
 	if(QDELETED(abno) || abno.stat == DEAD)
 		return
-	for(var/mob/living/carbon/human/H in GLOB.clients)
+	for(var/mob/living/carbon/human/H in GLOB.alive_player_list)
 		if(H.IsSleeping())
 			continue //You need to be sleeping to get notified
 		to_chat(H, "<span class='notice'>Oh.... [abno]... It has breached containment...</span>")
 
 //ER stuff
-/mob/living/simple_animal/hostile/abnormality/oracle/BreachEffect(mob/living/carbon/human/user, breach_type)//finish this shit
+/mob/living/simple_animal/hostile/abnormality/oracle/BreachEffect(mob/living/carbon/human/user)//finish this shit
 	var/chosenfake = pick(fakeordeals)
 	for(var/mob/living/L in view(48, src))
 		if(L.z != z)

@@ -33,7 +33,7 @@
 	grouped_abnos = list(
 		/mob/living/simple_animal/hostile/abnormality/scarecrow = 2,
 		///mob/living/simple_animal/hostile/abnormality/woodsman = 2,
-		/mob/living/simple_animal/hostile/abnormality/road_home = 2,
+		///mob/living/simple_animal/hostile/abnormality/road_home = 2,
 		// Ozma = 2,
 		///mob/living/simple_animal/hostile/abnormality/pinocchio = 1.5,
 	)
@@ -45,7 +45,7 @@
 	var/list/prefered_abno_list = list(
 		///mob/living/simple_animal/hostile/abnormality/woodsman,
 		/mob/living/simple_animal/hostile/abnormality/scarecrow,
-		/mob/living/simple_animal/hostile/abnormality/road_home,
+		///mob/living/simple_animal/hostile/abnormality/road_home,
 	)
 	/// Types of abnormalities that we will ignore when they are breaching
 	var/list/ignore_abno_list = list(
@@ -87,7 +87,7 @@
 	return
 
 
-/mob/living/simple_animal/hostile/abnormality/scaredy_cat/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/scaredy_cat/BreachEffect(mob/living/carbon/human/user)
 	protect_cooldown = world.time + protect_cooldown_time //to avoid him teleporting twice for no reason on breach
 	if(priority_friend) //if an oz abno escape they take absolute priority
 		ProtectFriend(priority_friend)

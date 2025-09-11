@@ -75,8 +75,7 @@
 /mob/living/simple_animal/hostile/abnormality/bald/proc/do_bald(mob/living/carbon/human/victim)
 	if(!HAS_TRAIT(victim, TRAIT_BALD))
 		ADD_TRAIT(victim, TRAIT_BALD, "ABNORMALITY_BALD")
-		victim.hairstyle = "Bald"
-		victim.update_hair()
+		victim.set_hairstyle("Bald")
 		victim.playsound_local(victim, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/bald/bald_special.ogg', 50, FALSE)
 		victim.add_overlay(icon('tff_modular/modules/evento_needo/icons/Teguicons/tegu_effects.dmi', "bald_blast"))
 		addtimer(CALLBACK(victim, TYPE_PROC_REF(/atom, cut_overlay), \
@@ -125,8 +124,7 @@
 	if(!HAS_TRAIT(victim, TRAIT_BALD))
 		to_chat(victim, span_notice("You feel awesome!"))
 		ADD_TRAIT(victim, TRAIT_BALD, "ABNORMALITY_BALD")
-		victim.hairstyle = "Bald"
-		victim.update_hair()
+		victim.set_hairstyle("Bald")
 	return
 
 //status effect - BALD IS AWESOME

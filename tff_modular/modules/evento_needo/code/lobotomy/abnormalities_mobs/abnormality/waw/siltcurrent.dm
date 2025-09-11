@@ -58,7 +58,7 @@
 	//Stuff relating to the dive attack
 	var/diving = FALSE
 	var/dive_cooldown
-	var/dive_cooldown_time = 15 SECONDS
+	var/dive_cooldown_time = 7.5 SECONDS
 	var/dive_damage = 100
 	//The amount of flotsams that should spawn in the hallways when it breaches
 	var/tube_spawn_amount = 6
@@ -79,11 +79,6 @@
 	toggle_attack_num = 1
 	toggle_message = span_colossus("You will now dive while you attack.")
 	button_icon_toggle_deactivated = "_WAW"
-
-/mob/living/simple_animal/hostile/abnormality/siltcurrent/Life()
-	. = ..()
-	if(!.) // Dead
-		return FALSE
 
 //Checks if it's stunned or doing the dive attack to prevent it from attacking or moving while in those 2 states since it would be silly.
 /mob/living/simple_animal/hostile/abnormality/siltcurrent/Move()
@@ -174,7 +169,7 @@
 						to_chat(L, span_userdanger("[src] mauls you!"))
 						HurtInTurf(T, list(), dive_damage, BRUTE)
 						if(L.health < 0 || L.stat == DEAD)
-							L.gib()
+							L.gib(DROP_BRAIN)
 		SLEEP_CHECK_DEATH(0.5 SECONDS, src)
 		diving = FALSE
 
@@ -295,3 +290,7 @@
 	layer = 1.9//Prevents it from blocking bitter flora
 	anchored = TRUE
 	alpha = 100
+
+/obj/effect/obsessing_water_effect/Initialize(mapload)
+	QDEL_IN(src, 5 SECONDS)
+	return ..()

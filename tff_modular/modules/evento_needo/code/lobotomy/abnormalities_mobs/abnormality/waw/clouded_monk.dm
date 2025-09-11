@@ -32,7 +32,7 @@
 	gift_message = "But if you were to consume them, perhaps, you would display more sarira than Buddha himself..."
 	observation_prompt = "Are you a monk?"
 	secret_chance = TRUE
-	secret_name = "Дед"
+	secret_name = "Бегущий за Пенсией"
 
 	var/datum/looping_sound/cloudedmonk_ambience/soundloop
 	var/charging = FALSE
@@ -98,7 +98,7 @@
 	user.adjustSanityLoss(-30) // It's healing
 	to_chat(user, span_nicegreen("[src] guides you through a session of meditation."))
 
-/mob/living/simple_animal/hostile/abnormality/clouded_monk/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/clouded_monk/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	soundloop.start()
 	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/clouded_monk/howl.ogg', 50, 1)
@@ -240,7 +240,7 @@
 					var/mob/living/carbon/human/H = A
 					H.apply_damage(charge_damage, BRUTE)
 					if(H.health < 0)
-						H.gib()
+						H.gib(DROP_BRAIN)
 						adjustBruteLoss(-heal_amount)
 						if(!eaten)
 							playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/clouded_monk/eat.ogg', 75, 1)

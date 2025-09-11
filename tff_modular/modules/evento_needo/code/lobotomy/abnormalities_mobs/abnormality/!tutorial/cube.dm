@@ -16,7 +16,7 @@
 	var/pulse_damage = 6
 	update_qliphoth = -1
 
-/mob/living/simple_animal/hostile/abnormality/cube/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/cube/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	GiveTarget(user)
 	addtimer(CALLBACK(src, PROC_REF(die)), 60 SECONDS)

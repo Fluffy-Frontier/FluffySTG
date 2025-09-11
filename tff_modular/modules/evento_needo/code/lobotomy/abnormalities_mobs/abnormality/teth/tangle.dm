@@ -57,6 +57,7 @@
 		if((instinct_count==3) || (instinct_count == 6))
 			qliphoth_change(-1)
 			icon_state = "tangleawake"
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/tangle/BreachEffect()
 	..()
@@ -100,15 +101,18 @@
 
 /obj/structure/spreading/tangle_hair/expand()
 	addtimer(CALLBACK(src, PROC_REF(expand)), 5 SECONDS)
-//	if(connected_abno.hair_list.len>=150)
-// 		return
+	if(connected_abno.hair_list.len>=150)
+		return
 	..()
 
-///obj/structure/spreading/tangle_hair/Crossed(atom/movable/AM)
-//	. = ..()
-//	if(ishuman(AM))
-//		var/mob/living/carbon/human/H = AM
-//		H.apply_damage(1, BRUTE, null, H.run_armor_check(null, BRUTE), spread_damage = TRUE)
-//		if(prob(10))
-//			H.Immobilize(5)
-//			to_chat(H, span_warning("You get caught in the hair!"))
+/obj/structure/spreading/tangle_hair/Initialize(mapload)
+	AddElement(/datum/element/connect_loc, list(COMSIG_ATOM_ENTERED = PROC_REF(on_crossed)))
+	return ..()
+
+/obj/structure/spreading/tangle_hair/proc/on_crossed(datum/source, atom/movable/arrived)
+	if(ishuman(arrived))
+		var/mob/living/carbon/human/H = arrived
+		H.apply_damage(1, BRUTE, null, H.run_armor_check(null, BRUTE), spread_damage = TRUE)
+		if(prob(10))
+			H.Immobilize(5)
+			to_chat(H, span_warning("You get caught in the hair!"))

@@ -186,7 +186,7 @@
 			new /obj/effect/temp_visual/cleave(get_turf(L))
 			playsound(L, "tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/dreamingcurrent/bite.ogg", 50, TRUE)
 			if(L.health < 0)
-				L.gib()
+				L.gib(DROP_BRAIN)
 
 /mob/living/simple_animal/hostile/abnormality/dreaming_current/PostWorkEffect(mob/living/carbon/human/user)
 	if(user.sanity_lost)
@@ -197,7 +197,7 @@
 	qliphoth_change(-1)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/dreaming_current/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/dreaming_current/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	ADD_TRAIT(src, TRAIT_MOVE_FLYING, ROUNDSTART_TRAIT) // Floating
 	if(!secret_abnormality)

@@ -134,7 +134,7 @@
 * Moves to the department, lists herself as true_breached, and spawns minions.
 * Root code is called so that she is taken out of godmode. Then update_icon() is called.
 */
-/mob/living/simple_animal/hostile/abnormality/general_b/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/general_b/BreachEffect(mob/living/carbon/human/user)
 	aim_check()
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(show_global_blurb), 5 SECONDS, "My queen? I hear your cries...", 25))
 	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/48x96.dmi'

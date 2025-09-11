@@ -150,13 +150,14 @@
 //		if(H.sanity_lost)
 //			H.death()//karma panic goes here
 
-/mob/living/simple_animal/hostile/abnormality/my_form_empties/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/my_form_empties/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
-	var/turf/T = get_turf(pick(GLOB.start_landmarks_list))
+	var/turf/T = get_turf(pick(GLOB.generic_event_spawns))
 	icon_state = icon_living
 	soundloop.start()
-	if(breach_type != BREACH_MINING)
-		forceMove(T)
+	forceMove(T)
+	var/area/A = get_area(T)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
 	for(var/i = 1, i <= minion_amount ,i++)
 		var/karma_vis = new /obj/effect/karma_halo
 		var/picked = pick(pick(possible_minion_list))
@@ -173,7 +174,7 @@
 /mob/living/simple_animal/hostile/abnormality/my_form_empties/proc/OnMobDeath(datum/source, mob/living/died, gibbed)
 	if(!(died in current_minions))
 		return
-	died.gib()
+	died.gib(DROP_BRAIN)
 	current_minions -= died
 
 /mob/living/simple_animal/hostile/abnormality/my_form_empties/try_working(mob/living/carbon/human/user)
@@ -279,7 +280,7 @@
 /datum/status_effect/stacking/karma/threshold_cross_effect()
 	var/mob/living/user = owner
 	if(isliving(user) && user.maxHealth <= 2000)//Nice try! You can't kill DF with this
-		user.gib()
+		user.gib(DROP_BRAIN)
 
 /datum/status_effect/stacking/karma/on_apply()
 	. = ..()

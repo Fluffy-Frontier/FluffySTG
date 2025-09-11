@@ -101,7 +101,7 @@
 /mob/living/simple_animal/hostile/abnormality/fairy_gentleman/SuccessEffect(mob/living/carbon/human/user)
 	if(pe >= 11) // Almost perfect work
 		var/turf/dispense_turf = get_step(src, pick(1,2,4,5,6,8,9,10))
-		new/obj/item/reagent_containers/food/drinks/fairywine(dispense_turf)
+		new/obj/item/reagent_containers/cup/fairywine(dispense_turf)
 		visible_message(span_notice("[src] gives out some fairy wine."))
 		say(pick(give_drink))
 	return
@@ -122,7 +122,7 @@
 	return
 
 //Breach Mechanics
-/mob/living/simple_animal/hostile/abnormality/fairy_gentleman/BreachEffect(mob/living/carbon/human/user, breach_type) //he flies
+/mob/living/simple_animal/hostile/abnormality/fairy_gentleman/BreachEffect(mob/living/carbon/human/user) //he flies
 	. = ..()
 	AddElement(/datum/element/knockback, 1, FALSE, TRUE)
 	say(pick(angry))

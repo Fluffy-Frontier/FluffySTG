@@ -39,11 +39,13 @@ GLOBAL_LIST_EMPTY(meat_list)
 /mob/living/simple_animal/hostile/abnormality/last_shot/Move()
 	return FALSE
 
-/mob/living/simple_animal/hostile/abnormality/last_shot/BreachEffect(mob/living/carbon/human/user, breach_type)
-	if(breach_type == BREACH_MINING)
+/mob/living/simple_animal/hostile/abnormality/last_shot/BreachEffect(mob/living/carbon/human/user)
+	if(prob(50))
 		return ..()
-	var/turf/T = get_turf(pick(GLOB.start_landmarks_list))
+	var/turf/T = get_turf(pick(GLOB.generic_event_spawns))
 	forceMove(T)
+	var/area/A = get_area(T)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
 	..()
 
 /mob/living/simple_animal/hostile/abnormality/last_shot/CanAttack(atom/the_target)

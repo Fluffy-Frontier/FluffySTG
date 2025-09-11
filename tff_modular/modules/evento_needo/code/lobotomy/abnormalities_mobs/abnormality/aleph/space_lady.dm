@@ -107,8 +107,10 @@
 
 /mob/living/simple_animal/hostile/abnormality/space_lady/proc/Teleport()
 	icon_state = "space_teleport"
-	var/turf/T = get_turf(pick(GLOB.start_landmarks_list))
+	var/turf/T = get_turf(pick(GLOB.generic_event_spawns))
 	forceMove(T)
+	var/area/A = get_area(T)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
 
 //Inverts Sanity, kills the insane
 /mob/living/simple_animal/hostile/abnormality/space_lady/proc/NegativeField()
@@ -207,7 +209,7 @@
 		qliphoth_change(-1)
 	if(user.get_clothing_class_level(user.get_major_clothing_class()) < 4)
 		qliphoth_change(-1)
-	return
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/space_lady/try_working(mob/living/carbon/human/user)
 	. = ..()
@@ -232,10 +234,9 @@
 	qliphoth_change(-1)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/space_lady/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/space_lady/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
-	if(breach_type != BREACH_MINING)
-		Teleport()
+	Teleport()
 
 
 //Bullets

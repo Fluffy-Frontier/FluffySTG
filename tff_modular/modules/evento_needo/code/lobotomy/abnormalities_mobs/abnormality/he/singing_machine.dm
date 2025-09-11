@@ -28,7 +28,7 @@ Finally, an abnormality that DOESN'T have to do any fancy movement shit. It's a 
 	buckle_lying = TRUE
 	observation_prompt = "You know that people die every time this machine sings. <br>\
 		Or perhaps this machine sings when people die. <br>Though it has spilled blood of countless people, the song put you in a rapturous mood."
-
+	can_breach = TRUE
 
 	var/cleanliness = "clean"
 	var/statChecked = 0
@@ -81,7 +81,7 @@ Finally, an abnormality that DOESN'T have to do any fancy movement shit. It's a 
 		user.apply_status_effect(STATUS_EFFECT_MUSIC) // Time to addict them.
 		SEND_SOUND(user, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/singingmachine/addiction.ogg')
 		addtimer(CALLBACK(src, PROC_REF(removeAddict), user), 5 MINUTES)
-	return
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/singing_machine/SuccessEffect(mob/living/carbon/human/user)
 	if(datum_reference.qliphoth_meter == 0) // You did it! You survived a work at 0 qliphoth!
@@ -114,11 +114,7 @@ Finally, an abnormality that DOESN'T have to do any fancy movement shit. It's a 
 	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/singingmachine/open.ogg', 200, 0, playRange)
 	grindNoise = new(list(src), TRUE)
 	playStatus = 1
-	return
-
-/mob/living/simple_animal/hostile/abnormality/singing_machine/BreachEffect(mob/living/carbon/human/user, breach_type)
-	if(breach_type == BREACH_MINING)
-		ZeroQliphoth()
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/singing_machine/proc/removeAddict(mob/living/carbon/human/addict)
 	if(addict)
@@ -132,7 +128,7 @@ Finally, an abnormality that DOESN'T have to do any fancy movement shit. It's a 
 	playStatus = 0 // This exists solely because I needed to call it via a callback.
 
 /mob/living/simple_animal/hostile/abnormality/singing_machine/proc/eatBody(mob/living/carbon/human/user)
-	user.gib()
+	user.gib(DROP_BRAIN)
 	stopPlaying()
 	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/singingmachine/swallow.ogg', 80, 0, 3)
 	cleanliness = "bloody"

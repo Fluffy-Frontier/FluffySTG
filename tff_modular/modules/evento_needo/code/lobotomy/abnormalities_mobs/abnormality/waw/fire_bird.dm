@@ -78,7 +78,7 @@
 			light_power = 0
 			update_light()
 //Breach
-/mob/living/simple_animal/hostile/abnormality/fire_bird/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/fire_bird/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	loot = list(/obj/item/ego_weapon/ranged/feather)
 	icon_state = icon_living

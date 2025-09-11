@@ -45,6 +45,7 @@
 		SummonGuys()
 
 /mob/living/simple_animal/hostile/abnormality/spider/PostWorkEffect(mob/living/carbon/human/user)
+	. = ..()
 	// If you do insight or have low prudence, fuck you and die for stepping on a spider
 	if(user.get_major_clothing_class() == CLOTHING_SCIENCE )
 		balloon_alert(user, "too smart for me")
@@ -67,12 +68,11 @@
 
 	icon_state = "spider_closed"
 
-/mob/living/simple_animal/hostile/abnormality/spider/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/spider/BreachEffect(mob/living/carbon/human/user)
 	icon_state = "spider_active"
 	summon_maximum = 12
 	SummonGuys()
-	if(breach_type == BREACH_MINING)
-		summon_maximum = 6
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/spider/proc/SummonGuys(summon_type)
 	summon_cooldown = world.time + summon_cooldown_time

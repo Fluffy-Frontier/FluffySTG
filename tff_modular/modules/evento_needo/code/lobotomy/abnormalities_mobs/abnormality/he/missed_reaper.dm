@@ -43,6 +43,7 @@
 
 // Work Stuff
 /mob/living/simple_animal/hostile/abnormality/missed_reaper/PostWorkEffect(mob/living/carbon/human/user)
+	. = ..()
 	DestroyLights()
 	if(user.get_clothing_class_level(CLOTHING_ARMORED) >= 4)
 		qliphoth_change(-1)
@@ -51,7 +52,6 @@
 		return
 	if(user.sanity_lost)
 		KillUser(user)
-	return
 
 /mob/living/simple_animal/hostile/abnormality/missed_reaper/FailureEffect(mob/living/carbon/human/user)
 	qliphoth_change(-1)

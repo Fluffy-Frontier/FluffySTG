@@ -152,9 +152,9 @@
 /mob/living/simple_animal/hostile/abnormality/fragment/PostWorkEffect(mob/living/carbon/human/user)
 	if(user.sanity_lost)
 		qliphoth_change(-1)
-	return
+	return ..()
 
-/mob/living/simple_animal/hostile/abnormality/fragment/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/fragment/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	update_icon()
 	GiveTarget(user)

@@ -131,6 +131,7 @@
 
 //Too weak and it kills you
 /mob/living/simple_animal/hostile/abnormality/jangsan/PostWorkEffect(mob/living/carbon/human/user)
+	. == ..()
 	KillCheck(user)
 	if(user.stat == DEAD)
 		qliphoth_change(-1)
@@ -158,12 +159,11 @@
 	return TRUE
 
 //Breach
-/mob/living/simple_animal/hostile/abnormality/jangsan/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/jangsan/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	if(!datum_reference.abno_radio)
 		AbnoRadio()
-	if(breach_type != BREACH_MINING)
-		addtimer(CALLBACK(src, PROC_REF(TryTeleport)), 5)
+	addtimer(CALLBACK(src, PROC_REF(TryTeleport)), 5)
 
 /mob/living/simple_animal/hostile/abnormality/jangsan/proc/TryTeleport() //stolen from knight of despair
 	dir = 2

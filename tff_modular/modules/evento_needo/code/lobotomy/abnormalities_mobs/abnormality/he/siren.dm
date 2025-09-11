@@ -83,7 +83,7 @@
 	if(datum_reference.qliphoth_meter >= 5) //If we're at max qliphoth, die!
 		to_chat(user, span_danger("The last thing you remember is your heart stopping."))
 		//playsound(loc, 'sound/effectsmagic/clockwork/ratvar_attack.ogg', 50, TRUE, channel = CHANNEL_SIREN)
-		user.dust()
+		user.gib(DROP_BRAIN)
 		return
 	H.age = rand(17 , 85) //minimum age is 17, max is 85. We do a funny and change the user's age to something random.
 	if (H.age > currentage)
@@ -122,7 +122,7 @@
 	if(user.get_major_clothing_class() == CLOTHING_SCIENCE)
 		turnBackTime(user)
 	qliphoth_change(5)
-	return
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/siren/proc/warning() //A bunch of messages for various occasions
 	if(datum_reference.qliphoth_meter > 0)

@@ -85,7 +85,7 @@
 	var/turf/T = get_turf(user)
 	user.visible_message(span_danger("Mushrooms rapidly grow all over [user]'s body, forming a giant mass!"))
 	user.emote("scream")
-	user.gib()
+	user.gib(DROP_BRAIN)
 	var /mob/living/simple_animal/hostile/little_prince_1/S = new(T)
 	RegisterSignal(S, COMSIG_LIVING_DEATH, PROC_REF(PrinceDeath))
 	return
@@ -106,6 +106,7 @@
 
 //work stuff
 /mob/living/simple_animal/hostile/abnormality/little_prince/PostWorkEffect(mob/living/carbon/human/user)
+	. = ..()
 	user_check = FALSE
 
 	//checks how many times they worked on prince

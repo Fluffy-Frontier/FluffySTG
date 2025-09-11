@@ -116,10 +116,8 @@
 	M.layer = initial(M.layer)
 	M.pixel_x -= 14
 
-/mob/living/simple_animal/hostile/abnormality/quiet_day/try_working(mob/living/carbon/human/user)
+/mob/living/simple_animal/hostile/abnormality/quiet_day/attack_hand(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
-	if(!.)
-		return
 	if(!user.combat_mode || !currently_talking)
 		TalkStart(user)
 	else
@@ -133,9 +131,9 @@
 	flick("quiet_fadein", src)
 	icon_state = "quiet_ghost"
 	currently_talking = TRUE
-	var/story = rand(1, 4)
-	switch(story)
-		if(ABNORMALITY_WORK_INSTINCT)
+	switch(user.get_major_clothing_class())
+		if(CLOTHING_BASIC)
+		if(CLOTHING_ENGINEERING)
 			for(var/line in war_story)
 				say(line)
 				SLEEP_CHECK_DEATH(5 SECONDS, src)
@@ -143,7 +141,7 @@
 					ResetIcon()
 					return
 
-		if(ABNORMALITY_WORK_INSIGHT)
+		if(CLOTHING_SCIENCE)
 			for(var/line in parable)
 				say(line)
 				SLEEP_CHECK_DEATH(5 SECONDS, src)
@@ -151,7 +149,7 @@
 					ResetIcon()
 					return
 
-		if(ABNORMALITY_WORK_ATTACHMENT)
+		if(CLOTHING_SERVICE)
 			for(var/line in wife)
 				say(line)
 				SLEEP_CHECK_DEATH(5 SECONDS, src)
@@ -159,7 +157,7 @@
 					ResetIcon()
 					return
 
-		if(ABNORMALITY_WORK_REPRESSION)
+		if(CLOTHING_ARMORED)
 			var/list/dementia_clone = dementia.Copy()
 			for(var/i in 1 to 7)
 				say(length(dementia_clone) > 1 ? pick_n_take(dementia_clone) : pick(dementia_clone)) // if the list has 1 object, dont remove it
@@ -182,11 +180,10 @@
 	say("Ah, I suppose we can continue this another time.")
 	return FALSE
 
-/mob/living/simple_animal/hostile/abnormality/quiet_day/BreachEffect(mob/living/carbon/human/user, breach_type)
-	if(breach_type == BREACH_PINK || breach_type == BREACH_MINING)
-		AbnoRadio()
-		Ramble()
-		can_breach = TRUE
+/mob/living/simple_animal/hostile/abnormality/quiet_day/BreachEffect(mob/living/carbon/human/user)
+	AbnoRadio()
+	Ramble()
+	can_breach = TRUE
 	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/quiet_day/Move()

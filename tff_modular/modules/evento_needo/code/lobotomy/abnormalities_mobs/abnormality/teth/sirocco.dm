@@ -79,13 +79,13 @@
 	return
 
 /* Qliphoth/Breach effects */
-/mob/living/simple_animal/hostile/abnormality/sirocco/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/sirocco/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	addtimer(CALLBACK(src, PROC_REF(Grabber)), cooldown_time)
 	addtimer(CALLBACK(src, PROC_REF(EndStorm)), breached_time)
 	addtimer(CALLBACK(src, PROC_REF(RefreshList)), list_refresh_time)
 	icon_state = breach_icon
-	if(breach_type == BREACH_PINK)
+	if(prob(30))
 		move_to_delay = 2
 		ChangeResistances(list(BURN = 0, BRAIN = 0.4, BRUTE = 0.4, TOX = 0.4))
 

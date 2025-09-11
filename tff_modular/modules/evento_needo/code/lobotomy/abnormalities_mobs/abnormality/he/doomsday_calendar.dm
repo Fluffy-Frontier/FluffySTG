@@ -155,11 +155,12 @@
 	other_works_maximum = (4 + round(player_count / 6))
 
 //***Breach Mechanics***//
-/mob/living/simple_animal/hostile/abnormality/doomsday_calendar/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/doomsday_calendar/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
-	if(breach_type != BREACH_MINING)
-		var/turf/T = get_turf(pick(GLOB.start_landmarks_list))
-		forceMove(T)
+	var/turf/T = get_turf(pick(GLOB.generic_event_spawns))
+	forceMove(T)
+	var/area/A = get_area(T)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
 	icon_state = "doomsday_active"
 	AnnounceBreach()
 	SpawnAdds()
@@ -284,7 +285,7 @@
 		if(istype(M ,/mob/living/simple_animal/hostile/doomsday_doll))
 			spawned_dolls -= M
 		to_chat(user, span_nicegreen("[src] is sated by your offering!"))
-		M.gib()
+		M.gib(DROP_BRAIN)
 		is_fed = TRUE
 		adjustBruteLoss(100)
 		pulse_damage -= 1

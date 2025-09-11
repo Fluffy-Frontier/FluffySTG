@@ -171,7 +171,7 @@
 	return
 
 //***Breach Mechanics***//
-/mob/living/simple_animal/hostile/abnormality/rose_sign/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/rose_sign/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	for(var/obj/structure/rose_work/R in work_roses)//Destroy any roses left in the containment cell. How terrible!
 		work_roses -= R

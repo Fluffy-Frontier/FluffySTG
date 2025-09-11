@@ -237,7 +237,7 @@
 	return
 
 /*---Breach effects---*/
-/mob/living/simple_animal/hostile/abnormality/thunder_bird/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/thunder_bird/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	name = "Thunderbird"
 	icon_living = "thunderbird_breach"
@@ -298,7 +298,7 @@
 		C.desc = "What appears to be [H.real_name], only charred and screaming incoherently..."
 		C.gender = H.gender
 		C.faction = master.faction
-		H.gib()
+		H.gib(DROP_BRAIN)
 	can_act = TRUE
 
 //Smaller Scorched Girl bomb
@@ -415,7 +415,7 @@
 		C.desc = "What appears to be [H.real_name], only charred and screaming incoherently..."
 		C.gender = H.gender
 		C.faction = src.faction
-		H.gib()
+		H.gib(DROP_BRAIN)
 	can_act = TRUE
 
 //The perch

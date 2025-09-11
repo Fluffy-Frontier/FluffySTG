@@ -97,7 +97,7 @@
 					continue
 				L.apply_damage(jump_damage, BRUTE)
 				if(L.health < 0)
-					L.gib()
+					L.gib(DROP_BRAIN)
 			for(var/obj/vehicle/sealed/mecha/V in T)
 				V.take_damage(jump_damage, BRUTE)
 		SLEEP_CHECK_DEATH(0.5 SECONDS, src)
@@ -244,7 +244,7 @@
 		qliphoth_change(-1)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/headless_ichthys/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/headless_ichthys/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	update_icon()
 	GiveTarget(user)

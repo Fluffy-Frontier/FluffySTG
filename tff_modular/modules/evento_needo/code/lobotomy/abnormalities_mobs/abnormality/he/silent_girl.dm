@@ -37,7 +37,7 @@
 /mob/living/simple_animal/hostile/abnormality/silent_girl/PostWorkEffect(mob/living/carbon/human/user)
 	if(user.get_clothing_class_level(CLOTHING_SCIENCE) < 3)
 		GuiltEffect(user)
-	return
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/silent_girl/try_working(mob/living/carbon/human/user)
 	if (user.has_status_effect(STATUS_EFFECT_SG_GUILTY))
@@ -70,7 +70,7 @@
 	manual_emote("giggles.")
 	sound_to_playing_players(sound('sound/mobs/humanoids/human/laugh/womanlaugh.ogg'))
 	qliphoth_change(3, user)
-	return
+	return ..()
 
 /datum/status_effect/sg_guilty
 	id = "sg_guilt"

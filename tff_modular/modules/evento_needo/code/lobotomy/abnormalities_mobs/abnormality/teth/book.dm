@@ -49,6 +49,7 @@
 				if(wordcount < 3)
 					wordcount ++
 				icon_state = "book_[wordcount]"
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/book/proc/Approach(mob/living/carbon/human/user)
 	if(user.sanity_lost || user.stat >= SOFT_CRIT)
@@ -65,7 +66,6 @@
 
 //Special breach-related stuff, pretty much copied off a contract signed
 /mob/living/simple_animal/hostile/abnormality/book/Initialize()
-	. = ..()
 	//We'll use the global_friendly_animal_types list. It's empty by default, so we need to populate it.
 	if(!GLOB.friendly_animal_types.len)
 		for(var/T in typesof(/mob/living/simple_animal))
@@ -82,6 +82,7 @@
 			continue
 		if((initial(abno.fear_level)) <= TETH_LEVEL)
 			nasties += abno
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/book/Life()
 	. = ..()
@@ -152,6 +153,6 @@
 	if(breaching)
 		summon_count += 1
 
-/mob/living/simple_animal/hostile/abnormality/book/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/book/BreachEffect(mob/living/carbon/human/user)
 	breaching = TRUE
 	summon_amount = 2

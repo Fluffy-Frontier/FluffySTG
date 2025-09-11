@@ -71,7 +71,7 @@
 		say("I rid you of your pain, mere human.")
 		//Double Check
 		SpawnFairies(fairy_spawn_number * 2, H, ignore_cap = TRUE)
-		H.gib()
+		H.gib(DROP_BRAIN)
 		return
 
 	if(attacked_target == nemesis)	//Deals pale damage to Oberon, fuck you.
@@ -226,7 +226,7 @@
 
 
 //Breach, work, 'n' stuff
-/mob/living/simple_animal/hostile/abnormality/titania/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/titania/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	ChooseNemesis()
 	addtimer(CALLBACK(src, PROC_REF(FairyLoop)), 10 SECONDS)	//10 seconds from now you start spawning fairies
@@ -240,7 +240,7 @@
 	if(!(user in worked))
 		qliphoth_change(-1)
 		worked+=user
-	return
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/titania/FailureEffect(mob/living/carbon/human/user)
 	qliphoth_change(-1)

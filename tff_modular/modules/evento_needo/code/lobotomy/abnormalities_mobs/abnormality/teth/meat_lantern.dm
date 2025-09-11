@@ -121,20 +121,21 @@
 /mob/living/simple_animal/hostile/abnormality/meat_lantern/PostWorkEffect(mob/living/carbon/human/user, work_type, pe, work_time, canceled)
 	if (user.get_clothing_class_level(CLOTHING_SERVICE) >= 3)
 		qliphoth_change(-1)
-	return
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/meat_lantern/FailureEffect(mob/living/carbon/human/user)
 	qliphoth_change(-1)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/meat_lantern/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/meat_lantern/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	update_icon()
 	density = FALSE
 	med_hud_set_health() //hides medhud
 	med_hud_set_status()
-	if(breach_type != BREACH_MINING)
-		forceMove(pick(GLOB.generic_event_spawns))
+	if(prob(30))
+		var/turf/T = get_turf(pick(GLOB.generic_event_spawns))
+		forceMove(T)
 	chop_cooldown = world.time + chop_cooldown_time
 	return
 

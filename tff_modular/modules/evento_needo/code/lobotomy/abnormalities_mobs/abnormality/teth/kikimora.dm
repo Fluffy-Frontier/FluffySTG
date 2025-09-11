@@ -18,6 +18,7 @@
 	/datum/ego_datum/armor/kikimora,
 	)
 	gift_type = null
+
 	//envy due to being a curse
 /mob/living/simple_animal/hostile/abnormality/kikimora/ZeroQliphoth(mob/living/carbon/human/user)
 	. = ..()
@@ -66,7 +67,7 @@
 /datum/status_effect/kikimora
 	id = "kikimora"
 	status_type = STATUS_EFFECT_UNIQUE
-	duration = -1
+	duration = 10 MINUTES
 	alert_type = null
 	on_remove_on_mob_delete = TRUE
 	var/words_per_say = 1

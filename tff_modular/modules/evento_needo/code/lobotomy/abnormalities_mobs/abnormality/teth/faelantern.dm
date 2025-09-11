@@ -77,9 +77,9 @@
 	qliphoth_change(-1)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/faelantern/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/faelantern/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
-	if(breach_type == BREACH_MINING)
+	if(prob(30))
 		fairy_enabled = TRUE
 		fairy_health = health
 		can_act = TRUE

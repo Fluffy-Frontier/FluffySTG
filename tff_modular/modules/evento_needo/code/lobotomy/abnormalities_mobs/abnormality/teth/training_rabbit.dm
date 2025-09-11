@@ -26,7 +26,7 @@
 		Looking closely, you find..."
 
 
-/mob/living/simple_animal/hostile/abnormality/training_rabbit/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/training_rabbit/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	GiveTarget(user)
 	if(!client)

@@ -2,8 +2,8 @@
 	name = "One Sin and Hundreds of Good Deeds"
 	desc = "A giant skull that is attached to a cross, it wears a crown of thorns."
 	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/tegumobs.dmi'
-	icon_state = "onesin_halo_normal"
-	icon_living = "onesin_halo_normal"
+	icon_state = "onesin"
+	icon_living = "onesin"
 	maxHealth = 777
 	health = 777
 	damage_coeff = list(BURN = 1.5, BRAIN = 1, BRUTE = 1, TOX = 2)
@@ -102,7 +102,7 @@
 			heal_factor = 0.25
 		H.adjustSanityLoss(-H.maxSanity * heal_factor)
 
-/mob/living/simple_animal/hostile/abnormality/onesin/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/onesin/BreachEffect(mob/living/carbon/human/user)
 	can_breach = TRUE
 	update_icon()
 	return ..()

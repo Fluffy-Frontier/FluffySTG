@@ -64,7 +64,7 @@
 	//All iterations share this list between eachother.
 	var/static/list/vine_list = list()
 
-/mob/living/simple_animal/hostile/abnormality/snow_whites_apple/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/snow_whites_apple/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	update_icon()
 

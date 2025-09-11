@@ -47,12 +47,11 @@
 		qliphoth_change(-1)
 
 /mob/living/simple_animal/hostile/abnormality/mhz/ZeroQliphoth(mob/living/carbon/human/user)
+	. = ..()
 	var/rose_available
 	for(var/mob/living/simple_animal/hostile/abnormality/staining_rose/J in GLOB.mob_list)
 		rose_available = TRUE
 		break
-
-	addtimer(CALLBACK (src, PROC_REF(qliphoth_change), 4), reset_time)
 
 	if(!rose_available)
 		SSweather.run_weather(/datum/weather/mhz)

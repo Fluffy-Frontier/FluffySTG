@@ -39,7 +39,7 @@
 		user.ai_controller = /datum/ai_controller/insane/wander/penitence
 		user.InitializeAIController()
 		user.apply_status_effect(/datum/status_effect/panicked_type/wander/penitence)
-
+	return ..()
 
 //Status Effect
 /datum/status_effect/penitence

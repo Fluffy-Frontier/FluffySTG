@@ -164,7 +164,7 @@
 		qliphoth_change(-1)
 		break
 
-/mob/living/simple_animal/hostile/abnormality/yin/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/yin/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	icon_state = icon_breach
 	SSlobotomy_events.yin_downed = FALSE

@@ -18,7 +18,7 @@
 	icon_state = "purplewater3"
 
 /turf/open/water/deep/blood
-	icon_state = "bloodwater1"
+	icon_state = "bloodredwater1"
 
 /turf/open/water/deep/saltwater
 	desc = "Smells of the ocean. Darkness obscures what world might be down there."

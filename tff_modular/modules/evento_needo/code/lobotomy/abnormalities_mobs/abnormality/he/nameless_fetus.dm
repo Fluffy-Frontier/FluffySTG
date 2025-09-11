@@ -28,11 +28,12 @@
 			criesleft+=3		//Get a max of 3 cries per person.
 	check_players()
 	check_range()
+	return ..()
 
 	//Are they nearby?
 /mob/living/simple_animal/hostile/abnormality/fetus/proc/check_range()
 	if(calling && Adjacent(calling))
-		calling.gib()
+		calling.gib(DROP_BRAIN)
 		calling = null
 
 		for(var/mob/living/carbon/human/H in GLOB.player_list)
@@ -58,14 +59,14 @@
 
 	//Find a living player, they're the new target.
 	var/list/checking = list()
-	for(var/mob/living/carbon/human/H in GLOB.player_list)
+	for(var/mob/living/carbon/human/H in GLOB.alive_player_list)
 		if(H.z == z && H.stat != DEAD)
 			checking +=H
 	if(LAZYLEN(checking))
 		calling = pick(checking)
 
 		//and make a global announce
-		for(var/mob/living/carbon/human/H in GLOB.player_list)
+		for(var/mob/living/carbon/human/H in GLOB.alive_player_list)
 			to_chat(H, span_userdanger("The fetus calls out for [calling.real_name]."))
 
 		notify_ghosts("The fetus calls out for [calling.real_name].", source = src, header="Something Interesting!") // bless this mess

@@ -29,6 +29,8 @@
 	if(source.stat > CONSCIOUS)
 		to_chat(source, "OVERDAMAGE")
 		bad_job_effect()
+		QDEL_LIST(current_jobs)
+		job_tick_effect(source)
 		deltimer(job_timer)
 		UnregisterSignal(src, COMSIG_JOB_TIMER_TICKED)
 		UnregisterSignal(source, COMSIG_MOB_APPLY_DAMAGE)
@@ -39,6 +41,9 @@
 		UnregisterSignal(src, COMSIG_JOB_TIMER_TICKED)
 		UnregisterSignal(source, COMSIG_MOB_APPLY_DAMAGE)
 		//SEND_SIGNAL(src, COMSIG_JOB_STOP)
+
+
+
 
 //Обычные do_afters со случайными приколами. Суть работы - заставить игрока поверить в то, что он провалил её.
 /mob/living/simple_animal/hostile/abnormality/proc/random_do_afters(mob/living/carbon/human/user)
@@ -97,10 +102,12 @@
 	var/code = tgui_input_list(user, "Выбери правильный ответ", "Выбор кода", possible_answers, null, 10 SECONDS)
 	if(!code || code != job_things["remind_code"])
 		bad_job_effect()
+		QDEL_NULL(job_things["remind_code"])
+		job_tick_effect(user)
 	else
 		good_job_effect()
-	QDEL_NULL(job_things["remind_code"])
-	job_tick_effect(user)
+		QDEL_NULL(job_things["remind_code"])
+		job_tick_effect(user)
 
 
 //kother

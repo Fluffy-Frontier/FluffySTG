@@ -53,11 +53,11 @@
 	var/obj/item/dropped_can
 	switch(work_type)
 		if(ABNORMALITY_WORK_INSTINCT)
-			dropped_can = /obj/item/reagent_containers/food/drinks/soda_cans/wellcheers_red
+			dropped_can = /obj/item/reagent_containers/cup/soda_cans/wellcheers_red
 		if(ABNORMALITY_WORK_INSIGHT)
-			dropped_can = /obj/item/reagent_containers/food/drinks/soda_cans/wellcheers_white
+			dropped_can = /obj/item/reagent_containers/cup/soda_cans/wellcheers_white
 		else
-			dropped_can = /obj/item/reagent_containers/food/drinks/soda_cans/wellcheers_purple
+			dropped_can = /obj/item/reagent_containers/cup/soda_cans/wellcheers_purple
 	if(!dropped_can)
 		return
 	var/turf/dispense_turf = get_step(src, pick(NORTH, SOUTH, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST))
@@ -98,9 +98,8 @@
 		else
 			ChangeResistances(list(BURN = 1, BRAIN = 1, BRUTE = 1, TOX = 1, BRUTE = 1))
 
-/mob/living/simple_animal/hostile/abnormality/wellcheers/BreachEffect(mob/living/carbon/human/user, breach_type)
-	if(breach_type == BREACH_PINK)
-		can_breach = TRUE
+/mob/living/simple_animal/hostile/abnormality/wellcheers/BreachEffect(mob/living/carbon/human/user)
+	can_breach = TRUE
 	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/wellcheers/AttackingTarget()
@@ -110,21 +109,21 @@
 	return FALSE
 
 // Soda cans
-/obj/item/reagent_containers/food/drinks/soda_cans/wellcheers_red
+/obj/item/reagent_containers/cup/soda_cans/wellcheers_red
 	name = "can of cherry 'Wellcheers' soda"
 	desc = "A can of cherry-flavored soda."
 	icon_state = "wellcheers_red"
 	inhand_icon_state = "cola"
 	list_reagents = list(/datum/reagent/consumable/wellcheers_red = 10)
 
-/obj/item/reagent_containers/food/drinks/soda_cans/wellcheers_white
+/obj/item/reagent_containers/cup/soda_cans/wellcheers_white
 	name = "can of 'Wellcheers' soda"
 	desc = "A can of regular soda."
 	icon_state = "wellcheers_white"
 	inhand_icon_state = "monkey_energy"
 	list_reagents = list(/datum/reagent/consumable/wellcheers_white = 10)
 
-/obj/item/reagent_containers/food/drinks/soda_cans/wellcheers_purple
+/obj/item/reagent_containers/cup/soda_cans/wellcheers_purple
 	name = "can of grape 'Wellcheers' soda"
 	desc = "A can of grape-flavored soda."
 	icon_state = "wellcheers_purple"

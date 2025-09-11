@@ -100,7 +100,7 @@ GLOBAL_LIST_EMPTY(army)
 /mob/living/simple_animal/hostile/abnormality/army/PostWorkEffect(mob/living/carbon/human/user)
 	if(user.get_major_clothing_class() == CLOTHING_ARMORED)
 		qliphoth_change(-1)
-	return
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/army/FailureEffect(mob/living/carbon/human/user)
 	qliphoth_change(-1)
@@ -127,16 +127,14 @@ GLOBAL_LIST_EMPTY(army)
 	return TRUE
 
 //*--Combat Mechanics--*
-/mob/living/simple_animal/hostile/abnormality/army/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/army/BreachEffect(mob/living/carbon/human/user)
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_ABNORMALITY_BREACH, src)
-	if(breach_type == BREACH_MINING)
-		for(var/i in 1 to 3)
-			var/mob/living/simple_animal/hostile/army_enemy/E = new(get_turf(src))
-			RegisterSignal(E, COMSIG_QDELETING, PROC_REF(ArmyDeath))
-	else
-		FearEffect()
-		Blackify()
-		SpawnAdds()//set its alpha to 0 and make it non-dense
+	for(var/i in 1 to 3)
+		var/mob/living/simple_animal/hostile/army_enemy/E = new(get_turf(src))
+		RegisterSignal(E, COMSIG_QDELETING, PROC_REF(ArmyDeath))
+	FearEffect()
+	Blackify()
+	SpawnAdds()//set its alpha to 0 and make it non-dense
 	for(var/mob/living/L in protected_targets)
 		L.remove_status_effect(STATUS_EFFECT_PROTECTION)
 	density = FALSE
@@ -226,7 +224,7 @@ GLOBAL_LIST_EMPTY(army)
 /mob/living/simple_animal/hostile/army_enemy/Initialize()
 	. = ..()
 	addtimer(CALLBACK(src, PROC_REF(Explode)), 120 SECONDS)
-	var/list/depts = shuffle(GLOB.start_landmarks_list)
+	var/list/depts = shuffle(GLOB.generic_event_spawns)
 	var/list/depts_far = list()
 	if(!LAZYLEN(depts))
 		return

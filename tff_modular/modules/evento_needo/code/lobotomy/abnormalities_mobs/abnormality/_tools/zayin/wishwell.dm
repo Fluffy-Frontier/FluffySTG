@@ -78,8 +78,8 @@
 	)
 
 	var/list/zayinitem = list(
-		/obj/item/reagent_containers/food/drinks/soda_cans/wellcheers_red,
-		/obj/item/reagent_containers/food/drinks/soda_cans/wellcheers_white,
+		/obj/item/reagent_containers/cup/soda_cans/wellcheers_red,
+		/obj/item/reagent_containers/cup/soda_cans/wellcheers_white,
 		/obj/item/food/bread/bongbread,
 		/obj/item/clothing/neck/tie/horrible,
 		/obj/item/clothing/mask/cigarette/cigar/havana,

@@ -84,13 +84,12 @@
 	qliphoth_change(-1)
 
 //breach mechanics
-/mob/living/simple_animal/hostile/abnormality/hurting_teddy/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/hurting_teddy/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	bearfriended = null //like staining rose, it's cleanup. Lets another chump work on it if you don't feel like repressing.
 	GiveTarget(user)
 
 /mob/living/simple_animal/hostile/abnormality/hurting_teddy/death(gibbed)
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/abno_cores/teth.dmi'
 	density = FALSE
 	animate(src, alpha = 0, time = 10 SECONDS)
 	QDEL_IN(src, 10 SECONDS)

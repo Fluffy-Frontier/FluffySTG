@@ -8,6 +8,7 @@
 	icon_living = "sleeping_idle"
 	icon_dead = "sleeping_dead"
 	var/icon_active = "sleeping_active"
+	layer = BELOW_MOB_LAYER
 	can_buckle = TRUE
 	buckle_lying = 90
 	maxHealth = 450
@@ -133,6 +134,9 @@
 		duration += 5
 	status_holder.adjustBruteLoss(-heal_amount)
 	status_holder.adjustSanityLoss(-heal_amount)
+	var/datum/status_effect/incapacitating/sleeping/S = status_holder.IsSleeping()
+	if(!S && prob(30))
+		status_holder.AdjustSleeping(3 SECONDS)
 
 //pink midnight code
 
@@ -152,25 +156,3 @@
 	. -= buckled_mobs
 
 #undef STATUS_EFFECT_RESTED
-
-/datum/reagent/abnormality/sleeping
-	name = "Puffy clouds"
-	description = "Looks like condensed clouds."
-	color = "#759ad1"
-
-/datum/reagent/abnormality/sleeping/on_mob_metabolize(mob/living/L)
-	if(!iscarbon(L))
-		return
-	var/mob/living/carbon/human/C = L
-	to_chat(C, span_warning("You feel tired..."))
-	C.adjust_eye_blur(5)
-	C.adjustSanityLoss(-4)
-	addtimer(CALLBACK (C, TYPE_PROC_REF(/mob/living, AdjustSleeping), 20), 2 SECONDS)
-	return ..()
-
-/datum/reagent/abnormality/sleeping/on_mob_life(mob/living/L)
-	if(!iscarbon(L))
-		return
-	var/mob/living/carbon/C = L
-	addtimer(CALLBACK (C, TYPE_PROC_REF(/mob/living, AdjustSleeping), 20), 2 SECONDS)
-	return ..()

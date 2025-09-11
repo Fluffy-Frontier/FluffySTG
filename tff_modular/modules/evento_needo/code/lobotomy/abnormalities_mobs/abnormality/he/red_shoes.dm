@@ -86,11 +86,11 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/red_shoes/Initialize()
-	. = ..()
 	if(locate(/obj/structure/redshoes_cushion) in get_turf(src))
 		icon_state = "redshoes"
 		update_icon()
 	soundloop = new(list(src), FALSE)
+	. = ..()
 
 /mob/living/simple_animal/hostile/abnormality/red_shoes/PostSpawn()
 	if(locate(/obj/structure/redshoes_cushion) in get_turf(src))
@@ -116,6 +116,7 @@
 		Apply_Desire(user)
 		user.adjustSanityLoss(500)
 		user.visible_message(span_userdanger("[user] ignores [p_their()] orders and continually glances at The Red Shoes. Now [p_theyre()] reaching out their hand to take the shoes."), span_userdanger("What lovely shoes..."))
+	return ..()
 
 //***Breach Mechanics***//
 /mob/living/simple_animal/hostile/abnormality/red_shoes/ZeroQliphoth(mob/living/carbon/human/user)//silent girl with extra steps
@@ -175,7 +176,7 @@
 		user.SanityLossEffect()
 
 //BreachEffect and combat
-/mob/living/simple_animal/hostile/abnormality/red_shoes/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/red_shoes/BreachEffect(mob/living/carbon/human/user)
 	soundloop.stop()
 	for(var/mob/living/carbon/human/H in GLOB.mob_living_list)//stops possessing people, prevents runtimes. Panicked players are ghosted so use mob_living_list
 		UnPossess(H)

@@ -176,6 +176,7 @@
 		qliphoth_change(-1)
 	if(downgraded)
 		qliphoth_change(-1)
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/seasons/try_working(mob/living/carbon/human/user)
 	if(CheckWeather())
@@ -295,15 +296,16 @@
 		newturf.DoDelete()
 	return ..()
 
-/mob/living/simple_animal/hostile/abnormality/seasons/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/seasons/BreachEffect(mob/living/carbon/human/user)
 	if(downgraded)
 		Upgrade()
 		ZeroQliphoth()
 		return
 	. = ..()
-	if(breach_type != BREACH_MINING)
-		var/turf/T = get_turf(pick(GLOB.start_landmarks_list))
-		forceMove(T)
+	var/turf/T = get_turf(pick(GLOB.generic_event_spawns))
+	forceMove(T)
+	var/area/A = get_area(T)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
 
 //Weather controlling
 /mob/living/simple_animal/hostile/abnormality/seasons/proc/CheckWeather()
@@ -476,7 +478,7 @@
 
 /mob/living/simple_animal/hostile/abnormality/seasons/proc/Finisher(mob/living/carbon/human/H) //return TRUE to prevent attacking, as attacking causes runtimes if the target is gibbed.
 	if(current_season == "spring" && H.sanity_lost)
-		H.gib() //eventually we'll add some sort of effect
+		H.gib(DROP_BRAIN) //eventually we'll add some sort of effect
 		return TRUE
 	if(H.stat >= HARD_CRIT || H.health < 0)
 		switch(current_season)

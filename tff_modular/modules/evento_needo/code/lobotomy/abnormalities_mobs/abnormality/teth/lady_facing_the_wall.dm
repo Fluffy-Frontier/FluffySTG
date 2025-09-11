@@ -56,4 +56,4 @@
 		flick("ladyfacingthewall_active", src)
 		user.adjustSanityLoss(user.maxSanity)
 		user.apply_status_effect(/datum/status_effect/panicked_lvl_4)
-	return
+	return ..()

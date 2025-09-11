@@ -20,7 +20,7 @@
 	if(prob(50))
 		qliphoth_change(-1)
 
-/mob/living/simple_animal/hostile/abnormality/bill/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/bill/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	GiveTarget(user)
 	addtimer(CALLBACK(src, PROC_REF(die)), 60 SECONDS)

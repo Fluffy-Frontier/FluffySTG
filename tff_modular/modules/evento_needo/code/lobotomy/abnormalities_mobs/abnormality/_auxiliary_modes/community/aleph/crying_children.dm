@@ -180,7 +180,7 @@
 		L.apply_damage(75, FIRE)
 		new /obj/effect/temp_visual/fire/fast(get_turf(L))
 
-/mob/living/simple_animal/hostile/abnormality/crying_children/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/crying_children/BreachEffect(mob/living/carbon/human/user)
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(show_global_blurb), 20, "No one�s going to cry on my behalf even if I�m sad.", 25))
 	..()
 	desc = "A towering angel statue, setting everything on it's path ablaze"

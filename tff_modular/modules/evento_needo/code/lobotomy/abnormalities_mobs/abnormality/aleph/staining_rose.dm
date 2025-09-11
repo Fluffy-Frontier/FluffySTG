@@ -39,6 +39,7 @@
 	addtimer(CALLBACK(src, PROC_REF(meltdown_check)), meltdown_cooldown_time)
 
 /mob/living/simple_animal/hostile/abnormality/staining_rose/PostWorkEffect(mob/living/carbon/human/user)
+	. = ..()
 	safe = TRUE
 	if (chosen == null)
 		chosen = user
@@ -81,6 +82,7 @@
 
 //Death and Meltdown
 /mob/living/simple_animal/hostile/abnormality/staining_rose/ZeroQliphoth(mob/living/carbon/human/user)
+	. = ..()
 	SSweather.run_weather(/datum/weather/petals)
 	chosen = null 	//You breached, now pick a new person to work on you
 	icon_state = "rose"

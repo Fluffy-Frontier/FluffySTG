@@ -75,8 +75,8 @@
 		/obj/item/ego_weapon/ranged/sodashotty,
 		/obj/item/ego_weapon/ranged/sodarifle,
 		/obj/item/clothing/suit/armor/ego_gear/zayin/soda,
-		///obj/item/reagent_containers/food/drinks/soda_cans/wellcheers_red,
-		///obj/item/reagent_containers/food/drinks/soda_cans/wellcheers_white,
+		///obj/item/reagent_containers/cup/soda_cans/wellcheers_red,
+		///obj/item/reagent_containers/cup/soda_cans/wellcheers_white,
 	)
 
 /mob/living/simple_animal/hostile/abnormality/shrimp_exec/SuccessEffect(mob/living/carbon/human/user)
@@ -95,7 +95,7 @@
 	qliphoth_change(1)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/shrimp_exec/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/shrimp_exec/BreachEffect(mob/living/carbon/human/user)
 	pissed()
 	addtimer(CALLBACK(src, PROC_REF(pissed)), 20 SECONDS)
 
@@ -117,7 +117,7 @@
 			say(pick(attachment))
 
 /mob/living/simple_animal/hostile/abnormality/shrimp_exec/proc/pissed()
-	var/turf/W = get_turf(pick(GLOB.start_landmarks_list))
+	var/turf/W = get_turf(pick(GLOB.generic_event_spawns))
 	for(var/turf/T in orange(1, W))
 		var/obj/structure/closet/supplypod/extractionpod/pod = new()
 		pod.explosionSize = list(0,0,0,0)

@@ -56,7 +56,7 @@
 			INVOKE_ASYNC(src, PROC_REF(TryJump))
 		return
 
-/mob/living/simple_animal/hostile/abnormality/babayaga/BreachEffect(mob/living/carbon/human/user, breach_type)//copied my code from crumbling armor
+/mob/living/simple_animal/hostile/abnormality/babayaga/BreachEffect(mob/living/carbon/human/user)//copied my code from crumbling armor
 	. = ..()
 	icon_state = icon_aggro
 	pixel_x = -16
@@ -85,7 +85,7 @@
 	var/list/potentialmarked = list()
 	var/list/marked = list()
 	var/mob/living/carbon/human/Y
-	for(var/mob/living/carbon/human/L in GLOB.player_list)
+	for(var/mob/living/carbon/human/L in GLOB.alive_player_list)
 		if(faction_check_atom(L, FALSE) || L.stat >= HARD_CRIT || L.sanity_lost || z != L.z) // Dead or in hard crit, insane, or on a different Z level.
 			continue
 		potentialmarked += L
@@ -139,7 +139,7 @@
 		else
 			L.apply_damage(600 - ((dist > 2 ? dist : 0 )* 75), BRUTE) //0-600 damage scaling on distance, we don't want it oneshotting mobs
 		if(L.health < 0)
-			L.gib()
+			L.gib(DROP_BRAIN)
 	SLEEP_CHECK_DEATH(5, src)
 	SpawnMobs()
 

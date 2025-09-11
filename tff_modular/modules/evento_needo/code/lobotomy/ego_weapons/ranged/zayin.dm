@@ -149,8 +149,8 @@
 
 /obj/item/ego_weapon/ranged/bucket/proc/SpawnItem(mob/user)
 	var/list/lootoptions = list(
-		///obj/item/reagent_containers/food/drinks/soda_cans/wellcheers_red,
-		///obj/item/reagent_containers/food/drinks/soda_cans/wellcheers_white,
+		///obj/item/reagent_containers/cup/soda_cans/wellcheers_red,
+		///obj/item/reagent_containers/cup/soda_cans/wellcheers_white,
 		/obj/item/food/salad/lifestew,
 		/obj/item/food/breadslice/plain,
 		/obj/item/food/mint,

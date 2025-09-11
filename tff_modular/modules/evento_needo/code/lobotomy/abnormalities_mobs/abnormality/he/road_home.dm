@@ -66,7 +66,7 @@
 	qliphoth_change(-1)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/road_home/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/road_home/BreachEffect(mob/living/carbon/human/user)
 	flip_cooldown = world.time + flip_cooldown_time //we set it before she breach just so she doesn't affect everyone the moment she spawns
 	. = ..()
 	toggle_ai(AI_OFF) //Road home doesn't need to attack or patrol so the AI is unecessary
@@ -306,7 +306,7 @@
 	for(var/mob/living/L in orgin.contents)//Listen, if you're still standing in the one turf this thing is falling from, you deserve to die.
 		L.apply_damage(1000, BRUTE)
 		if(L.health < 0)
-			L.gib()
+			L.gib(DROP_BRAIN)
 
 	for(var/turf/open/T in view(4, src))
 		new /obj/effect/temp_visual/small_smoke/halfsecond(T)

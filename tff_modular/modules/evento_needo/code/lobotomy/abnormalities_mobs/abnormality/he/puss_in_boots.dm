@@ -138,6 +138,7 @@
 
 /mob/living/simple_animal/hostile/abnormality/puss_in_boots/PostWorkEffect(mob/living/carbon/human/user)
 	ignored = FALSE
+	return ..()
 
 //Breach
 /mob/living/simple_animal/hostile/abnormality/puss_in_boots/Life()
@@ -159,7 +160,7 @@
 		return FALSE
 	..()
 
-/mob/living/simple_animal/hostile/abnormality/puss_in_boots/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/puss_in_boots/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	desc = "He's got a sword!"
 	if(friendly)
@@ -271,7 +272,7 @@
 	var/mob/living/carbon/human/H = target
 	new /obj/effect/temp_visual/human_horizontal_bisect(get_turf(H))
 	H.set_lying_angle(360) //gunk code I know, but it is the simplest way to override gib_animation() without touching other code. Also looks smoother.
-	H.gib()
+	H.gib(DROP_BRAIN)
 
 /mob/living/simple_animal/hostile/abnormality/puss_in_boots/OpenFire()
 	if(!can_act)

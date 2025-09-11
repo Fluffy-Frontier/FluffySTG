@@ -89,11 +89,11 @@
 	if(!heart)
 		revive(HEAL_ALL)//fully heal and spawn a heart
 		//say("Please cooperate! Please Cooperrr... Csdk..ppra...@#@%!%^#$")
-		if(!LAZYLEN(GLOB.start_landmarks_list))
+		if(!LAZYLEN(GLOB.generic_event_spawns))
 			heart = TRUE
 		else
 			ChangeResistances(list(BURN = 0.3, BRAIN = 0.2, BRUTE = 0.2, TOX = 0.2)) //In regular gamemodes you are now esentially forced to suppress the heart
-			var/X = get_turf(pick(GLOB.start_landmarks_list))
+			var/X = get_turf(pick(GLOB.generic_event_spawns))
 			var/mob/living/simple_animal/hostile/kqe_heart/H = new(get_turf(X))
 			heart = H
 			H.abno_host = src
@@ -116,6 +116,7 @@
 
 /*** Work Procs ***/
 /mob/living/simple_animal/hostile/abnormality/kqe/PostWorkEffect(mob/living/carbon/human/user)
+	. = ..()
 	work_count++
 	if(work_count < 3)
 		work_penalty = FALSE
@@ -123,7 +124,6 @@
 	manual_emote("turns its terminal on.")
 	to_chat(user, span_notice("A terminal on the chest of the abnormality flashes to life! You should write something on it."))
 	question = TRUE
-	return
 
 /mob/living/simple_animal/hostile/abnormality/kqe/try_working(mob/living/carbon/human/user)
 	if(work_penalty)
@@ -180,7 +180,7 @@
 	return
 
 /*** Breach Procs ***/
-/mob/living/simple_animal/hostile/abnormality/kqe/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/kqe/BreachEffect(mob/living/carbon/human/user)
 	if(!(HAS_TRAIT(src, TRAIT_GODMODE))) // Already breaching
 		return FALSE
 	return ..()

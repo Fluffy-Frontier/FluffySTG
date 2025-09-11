@@ -145,14 +145,15 @@
 		return FALSE
 	return TRUE
 
-/mob/living/simple_animal/hostile/abnormality/snow_queen/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/snow_queen/BreachEffect(mob/living/carbon/human/user)
 	//If your in the arena dont breach, if your not in godmode dont breach.
-	if(breach_type == BREACH_PINK)
-		faction += "pink_midnight"
+	faction += "pink_midnight"
 	//Call root code but with normal breach
 	. = ..(null, BREACH_NORMAL)
-	var/turf/T = get_turf(pick(GLOB.start_landmarks_list))
+	var/turf/T = get_turf(pick(GLOB.generic_event_spawns))
 	forceMove(T)
+	var/area/A = get_area(T)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
 	update_icon()
 
 /mob/living/simple_animal/hostile/abnormality/snow_queen/ZeroQliphoth(mob/living/carbon/human/user)

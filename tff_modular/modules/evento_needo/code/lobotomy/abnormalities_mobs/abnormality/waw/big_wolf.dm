@@ -105,7 +105,7 @@
 	qliphoth_change(-1)
 	EatWorker(user)
 
-/mob/living/simple_animal/hostile/abnormality/big_wolf/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/big_wolf/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	update_icon()
 

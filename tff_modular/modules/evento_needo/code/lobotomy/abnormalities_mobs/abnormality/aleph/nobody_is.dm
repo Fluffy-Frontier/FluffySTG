@@ -132,7 +132,7 @@
 
 /mob/living/simple_animal/hostile/abnormality/nobody_is/proc/ChangeReflection()
 	var/list/potentialmarked = list()
-	for(var/mob/living/carbon/human/L in GLOB.player_list)
+	for(var/mob/living/carbon/human/L in GLOB.alive_player_list)
 		if(L.stat >= HARD_CRIT || L.sanity_lost || z != L.z) // Dead or in hard crit, insane, or on a different Z level.
 			continue
 		if(L.get_clothing_class_level(L.get_major_clothing_class()) <= 4)	//We don't grab people who can barely even work on us
@@ -185,6 +185,7 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/nobody_is/PostWorkEffect(mob/living/carbon/human/user)
+	. = ..()
 	if(!solo_punish)
 		if(Finisher(user)) //Checks if they are the chosen, and disguises as them if they are.
 			return
@@ -196,8 +197,8 @@
 		return
 	qliphoth_change(-1)
 
-/mob/living/simple_animal/hostile/abnormality/nobody_is/BreachEffect(mob/living/carbon/human/user, breach_type)
-	if(!(HAS_TRAIT(src, TRAIT_GODMODE)) && breach_type != BREACH_MINING) // Already breaching
+/mob/living/simple_animal/hostile/abnormality/nobody_is/BreachEffect(mob/living/carbon/human/user)
+	if(!(HAS_TRAIT(src, TRAIT_GODMODE))) // Already breaching
 		return
 	if(reflect_timer)
 		deltimer(reflect_timer)
@@ -206,8 +207,6 @@
 		return
 	CheckMirrorIcon() //Clear overlays
 	next_stage()
-	if(breach_type == BREACH_MINING) // Keeps it from teleporting off when uncovered
-		return
 	// Teleport us somewhere where nobody will see us at first
 	var/list/priority_list = list()
 	for(var/turf/T in GLOB.generic_event_spawns)
@@ -387,7 +386,7 @@
 		headicon = null
 		datum_reference.connected_structures = list()
 	if(oberon_mode)
-		for(var/mob/living/carbon/human/M in GLOB.player_list)
+		for(var/mob/living/carbon/human/M in GLOB.alive_player_list)
 			if(M.stat != DEAD && M.client)
 				M.Apply_Gift(new /datum/ego_gifts/oberon)
 		if(fairy_aura)
@@ -471,9 +470,9 @@
 				if(ishuman(L))
 					var/mob/living/carbon/H = L
 					if(!Finisher(H))
-						H.gib()
+						H.gib(DROP_BRAIN)
 				else
-					L.gib()
+					L.gib(DROP_BRAIN)
 			else if(!grab_victim)
 				for(var/mob/living/carbon/human/H in T.contents)
 					if(faction_check_atom(H, FALSE) || H.z != z)
@@ -518,7 +517,7 @@
 		return
 	if(grab_victim.health < 0)
 		if(!Finisher(grab_victim))
-			grab_victim.gib()
+			grab_victim.gib(DROP_BRAIN)
 		ReleaseGrab()
 		return
 	grab_victim.apply_damage(strangle_damage, BRUTE)
@@ -673,7 +672,7 @@
 	SLEEP_CHECK_DEATH(2, src)
 	if(target)
 		LoseTarget(target)
-	M.gib()
+	M.gib(DROP_BRAIN)
 	attack_verb_continuous = "strikes"
 	attack_verb_simple = "strike"
 	attack_sound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/nothingthere/attack.ogg'

@@ -156,7 +156,7 @@
 	qliphoth_change(-1)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/melting_love/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/melting_love/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/96x96.dmi'
 	icon_living = "melting_breach"
@@ -172,6 +172,7 @@
 
 /* Gift */
 /mob/living/simple_animal/hostile/abnormality/melting_love/PostWorkEffect(mob/living/carbon/human/user)
+	. = ..()
 	if(HAS_TRAIT(user, TRAIT_GODMODE))
 		return
 	if(!gifted_human && istype(user) && user.get_major_clothing_class() != CLOTHING_ARMORED && user.stat != DEAD && (HAS_TRAIT(src, TRAIT_GODMODE)))

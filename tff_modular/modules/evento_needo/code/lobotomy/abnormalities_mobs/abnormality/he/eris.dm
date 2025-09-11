@@ -121,7 +121,7 @@
 	for(var/obj/item/organ/O in poorfuck.get_organ_slot(BODY_ZONE_HEAD, TRUE))
 		O.Remove(poorfuck)
 		O.forceMove(get_turf(poorfuck))
-	poorfuck.dust()
+	poorfuck.gib(DROP_BRAIN)
 	new /obj/effect/gibspawner/generic/silent(get_turf(poorfuck))
 
 	//Lose sanity
@@ -160,7 +160,7 @@
 	for(var/obj/item/organ/O in user.get_organ_slot(BODY_ZONE_HEAD, TRUE))
 		O.Remove(user)
 		O.forceMove(get_turf(user))
-	user.dust()
+	user.gib(DROP_BRAIN)
 
 	SLEEP_CHECK_DEATH(20, src)
 	manual_emote("wipes her mouth with a hankerchief")
@@ -201,12 +201,13 @@
 	if(user.get_major_clothing_class() == CLOTHING_SERVICE)
 		if(prob(20))
 			Dine(user)
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/eris/FailureEffect(mob/living/carbon/human/user)
 	qliphoth_change(-3)
 	return
 
-/mob/living/simple_animal/hostile/abnormality/eris/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/eris/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	update_icon()
 	GiveTarget(user)

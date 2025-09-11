@@ -270,7 +270,7 @@
 		qliphoth_change(-1)
 	if(user.get_clothing_class_level(CLOTHING_ARMORED) < 3)
 		qliphoth_change(-1)
-	return
+	return ..()
 
 /datum/status_effect/spirit_gun_target
 	id = "butterfly_target"

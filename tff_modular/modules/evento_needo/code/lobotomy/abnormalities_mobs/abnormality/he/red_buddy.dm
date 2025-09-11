@@ -108,7 +108,7 @@
 	if(lying)
 		user.Apply_Gift(new gift_type)
 		lying = FALSE
-	return
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/red_buddy/try_working(mob/living/carbon/human/user)
 	. = ..()

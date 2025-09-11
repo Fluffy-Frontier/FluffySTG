@@ -100,7 +100,7 @@
 		lying = TRUE
 
 //Breach
-/mob/living/simple_animal/hostile/abnormality/pinocchio/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/pinocchio/BreachEffect(mob/living/carbon/human/user)
 	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/pinocchio/activate.ogg', 40, 0, 1)
 	density = FALSE
 	animate(src, alpha = 0,pixel_x = 0, pixel_z = 16, time = 4 SECONDS)

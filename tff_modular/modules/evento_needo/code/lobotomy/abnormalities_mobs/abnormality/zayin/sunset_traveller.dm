@@ -68,18 +68,16 @@
 
 // Pink Midnight
 
-/mob/living/simple_animal/hostile/abnormality/sunset_traveller/BreachEffect(mob/living/carbon/human/user, breach_type)
-	if(breach_type == BREACH_PINK)
-		can_breach = TRUE
-		for(var/mob/living/simple_animal/hostile/ordeal/pink_midnight/pm in GLOB.ordeal_list)
-			for(var/turf/target_turf in view(4, pm))
-				if(prob(10))
-					forceMove(target_turf)
-					break
-			break
-		. = ..()
-		HealAlt()
-		return
+/mob/living/simple_animal/hostile/abnormality/sunset_traveller/BreachEffect(mob/living/carbon/human/user)
+	can_breach = TRUE
+	for(var/mob/living/simple_animal/hostile/ordeal/pink_midnight/pm in GLOB.ordeal_list)
+		for(var/turf/target_turf in view(4, pm))
+			if(prob(10))
+				forceMove(target_turf)
+				break
+		break
+	. = ..()
+	HealAlt()
 	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/sunset_traveller/Move()
@@ -87,10 +85,6 @@
 
 /mob/living/simple_animal/hostile/abnormality/sunset_traveller/CanAttack(atom/the_target)
 	return FALSE
-
-/mob/living/simple_animal/hostile/abnormality/sunset_traveller/apply_damage(damage, damagetype, def_zone, blocked, forced, spread_damage, wound_bonus, exposed_wound_bonus, sharpness, attack_direction, attacking_item, wound_clothing)
-	damage = 0
-	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/sunset_traveller/proc/HealAlt()
 	set waitfor = FALSE

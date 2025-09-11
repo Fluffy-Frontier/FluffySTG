@@ -83,7 +83,7 @@
 		return FALSE
 	..()
 
-/mob/living/simple_animal/hostile/abnormality/schadenfreude/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/schadenfreude/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	icon_living = "schadenfreude_breach"
 	icon_state = icon_living

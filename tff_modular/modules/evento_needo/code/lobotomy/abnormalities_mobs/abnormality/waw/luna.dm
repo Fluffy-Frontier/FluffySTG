@@ -9,7 +9,7 @@
 	health = 4000
 	damage_coeff = list(BURN = 1.2, BRAIN = 0, BRUTE = 1, TOX = 2)
 	fear_level = WAW_LEVEL
-
+	can_breach = TRUE
 	pixel_x = -32
 	base_pixel_x = -32
 	ego_list = list(
@@ -44,9 +44,12 @@
 	..()
 
 /mob/living/simple_animal/hostile/abnormality/luna/ZeroQliphoth(mob/living/carbon/human/user)
+	. = ..()
 	icon_state = "dellaluna_breach"
 	//Normal breach
-	var/turf/W = get_turf(pick(GLOB.start_landmarks_list))
+	var/turf/W = get_turf(pick(GLOB.generic_event_spawns))
+	var/area/A = get_area(W)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
 	var/mob/living/simple_animal/hostile/luna/spawningmonster = new(get_turf(W))
 	breached_monster = spawningmonster
 	addtimer(CALLBACK(src, PROC_REF(BreachEnd), user), breach_length)
@@ -91,12 +94,6 @@
 	killspawn = FALSE
 	performance = FALSE
 	to_chat(user, span_nicegreen("The performance is completed."))
-
-
-//Side Gamemodes stuff, should only ever be called outside of the main gamemode
-/mob/living/simple_animal/hostile/abnormality/luna/BreachEffect(mob/living/carbon/human/user, breach_type)
-	ZeroQliphoth()
-	return FALSE
 
 /* Monster Half */
 /mob/living/simple_animal/hostile/luna

@@ -73,7 +73,7 @@
 	toggle_message = span_colossus("You will now eviscerate someone.")
 	button_icon_toggle_deactivated = "worldslash"
 
-/mob/living/simple_animal/hostile/abnormality/sukuna/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/sukuna/BreachEffect(mob/living/carbon/human/user)
 	sound_to_playing_players(sound('tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/maloventkitchen.ogg'))
 	for(var/mob/M in GLOB.mob_living_list)
 		if(isnewplayer(M))

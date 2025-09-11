@@ -68,7 +68,7 @@
 	if(ContractedUser(user, user.get_major_clothing_class()) && .)
 		if(user in total_havers)
 			say("Yes, yes... I remember the contract.")
-	if(!(user in total_havers))
+	if(user in total_havers)
 		return
 	//SARGASSUM CLOTHJING STUFF
 	NewContract(user, user.get_major_clothing_class())
@@ -134,10 +134,11 @@
 
 //Meltdown
 /mob/living/simple_animal/hostile/abnormality/contract/ZeroQliphoth(mob/living/carbon/human/user)
+	. = ..()
 	Summon()
 	qliphoth_change(2)
 
-/mob/living/simple_animal/hostile/abnormality/contract/BreachEffect(mob/living/carbon/human/user, breach_type)//causes a runtime
+/mob/living/simple_animal/hostile/abnormality/contract/BreachEffect(mob/living/carbon/human/user)//causes a runtime
 	breaching = TRUE
 
 /mob/living/simple_animal/hostile/abnormality/contract/proc/Summon(mob/living/carbon/human/user)

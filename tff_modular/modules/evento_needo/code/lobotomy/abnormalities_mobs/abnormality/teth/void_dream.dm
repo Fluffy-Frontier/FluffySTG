@@ -127,9 +127,9 @@
 	if(user.get_clothing_class_level(CLOTHING_SERVICE) < 2)
 		user.Sleeping(30 SECONDS) //Not a big fan of killing you, take a little nap.
 		playsound(get_turf(user), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/voiddream/skill.ogg', 50, TRUE)
-	return
+	return ..()
 
-/mob/living/simple_animal/hostile/abnormality/voiddream/BreachEffect(mob/living/carbon/human/user, breach_type)
+/mob/living/simple_animal/hostile/abnormality/voiddream/BreachEffect(mob/living/carbon/human/user)
 	. = ..()
 	ability_cooldown = world.time + 4 SECONDS
 	addtimer(CALLBACK(src, PROC_REF(DelPassive)), rand((3 MINUTES), (5 MINUTES)))

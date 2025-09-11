@@ -70,45 +70,43 @@
 			break
 
 // Pink Midnight stuff
-/mob/living/simple_animal/hostile/abnormality/fallen_amurdad/BreachEffect(mob/living/carbon/human/user, breach_type)
-	if(breach_type == BREACH_PINK)
-		var/turf/DC = get_turf(pick(GLOB.start_landmarks_list))
-		var/list/potential_area = spiral_range_turfs(15, DC)
-		var/list/remove_list = list()
-		for(var/turf/T in potential_area)
-			if(T.density)
+/mob/living/simple_animal/hostile/abnormality/fallen_amurdad/BreachEffect(mob/living/carbon/human/user)
+	. = ..()
+	var/turf/DC = get_turf(pick(GLOB.start_landmarks_list))
+	var/list/potential_area = spiral_range_turfs(15, DC)
+	var/list/remove_list = list()
+	for(var/turf/T in potential_area)
+		if(T.density)
+			remove_list += T
+			continue
+		if(T.z != z)
+			remove_list += T
+			continue
+		if(istype(T, /turf/open/floor/plating))
+			remove_list += T
+			continue
+		if(istype(T, /turf/open/floor/circuit))
+			remove_list += T
+			continue
+		for(var/obj/O in T)
+			if(O.density)
 				remove_list += T
-				continue
-			if(T.z != z)
-				remove_list += T
-				continue
-			if(istype(T, /turf/open/floor/plating))
-				remove_list += T
-				continue
-			if(istype(T, /turf/open/floor/circuit))
-				remove_list += T
-				continue
-			for(var/obj/O in T)
-				if(O.density)
-					remove_list += T
-					break
-
-		potential_area -= remove_list
-		var/bombs = 0
-		while((bombs < max_bombs) && potential_area.len > 0)
-			var/turf/open/T = pick(potential_area)
-			var/list/seen_area = view(3, T)
-			var/loop = FALSE
-			for(var/obj/structure/amurdad_bomb/AB in seen_area)
-				potential_area -= seen_area
-				loop = TRUE
 				break
-			if(loop)
-				continue
-			new /obj/structure/amurdad_bomb(T)
-			bombs++
-		return TRUE
-	return ..()
+	potential_area -= remove_list
+	var/bombs = 0
+	while((bombs < max_bombs) && potential_area.len > 0)
+		var/turf/open/T = pick(potential_area)
+		var/list/seen_area = view(3, T)
+		var/loop = FALSE
+		for(var/obj/structure/amurdad_bomb/AB in seen_area)
+			potential_area -= seen_area
+			loop = TRUE
+			break
+		if(loop)
+			continue
+		new /obj/structure/amurdad_bomb(T)
+		bombs++
+	return TRUE
 
 //Magic bullshit amurdad soil
 /obj/machinery/hydroponics/soil/amurdad

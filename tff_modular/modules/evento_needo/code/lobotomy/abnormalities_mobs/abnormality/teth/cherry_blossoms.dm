@@ -34,6 +34,7 @@
 /mob/living/simple_animal/hostile/abnormality/cherry_blossoms/PostWorkEffect(mob/living/carbon/human/user)
 	if(user.sanity_lost)
 		qliphoth_change(-1)
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/cherry_blossoms/SuccessEffect(mob/living/carbon/human/user)
 	if(prob(70))
@@ -45,6 +46,7 @@
 	INVOKE_ASYNC(src, PROC_REF(mark_for_death))
 	icon_state = "graveofcherryblossoms_0"
 	qliphoth_change(3)
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/cherry_blossoms/proc/mark_for_death()
 	var/list/potentialmarked = list()
