@@ -3,7 +3,7 @@
 	default_choices = list(
 		ROUND_LIGHT_SHIFT_STRING,
 		ROUND_MID_SHIFT_STRING,
-		ROUND_HARD_SHIFT_STRING,
+		ROUND_HEAVY_SHIFT_STRING,
 	)
 
 /datum/vote/shift_intensity/toggle_votable()
@@ -15,9 +15,9 @@
 /datum/vote/shift_intensity/can_be_initiated(forced)
 	. = ..()
 	if(. != VOTE_AVAILABLE)
-		return .
+		return
 
-	if(SSticker.current_state != GAME_STATE_PREGAME)
+	if(!forced && SSticker.current_state != GAME_STATE_PREGAME)
 		return "It's too late for that, the round is already starting."
 
 	return VOTE_AVAILABLE
@@ -42,13 +42,20 @@
 
 	switch(winning_option)
 		if(ROUND_LIGHT_SHIFT_STRING)
-			SSshift_intensity.enable_round_settings(ROUND_LIGHT_SHIFT)
+			SSdynamic.set_tier(/datum/dynamic_tier/greenshift)
 		if(ROUND_MID_SHIFT_STRING)
-			SSshift_intensity.enable_round_settings(ROUND_MID_SHIFT)
-		if(ROUND_HARD_SHIFT_STRING)
-			SSshift_intensity.enable_round_settings(ROUND_HARD_SHIFT)
+			if(prob(50))
+				SSdynamic.set_tier(/datum/dynamic_tier/low)
+			else
+				SSdynamic.set_tier(/datum/dynamic_tier/lowmedium)
+		if(ROUND_HEAVY_SHIFT_STRING)
+			SSdynamic.set_tier(/datum/dynamic_tier/mediumhigh)
+		if(ROUND_TOTALLY_HELL_SHIFT_STRING)
+			SSdynamic.set_tier(/datum/dynamic_tier/high)
 		else
 			CRASH("[type] wasn't passed a valid winning choice. (Got: [winning_option || "null"])")
+
+	GLOB.shift_intensity_level = winning_option
 
 	message_admins("Shift type vote ended. The type of round will be: [winning_option].")
 	log_admin("Shift type vote ended. The type of round will be: [winning_option].")
