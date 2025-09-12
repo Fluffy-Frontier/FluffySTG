@@ -155,6 +155,8 @@
 #define SPECIES_FELINE_PRIMITIVE "primitive_felinid"
 #define SPECIES_ABDUCTORWEAK "abductorweak"
 #define SPECIES_KOBOLD "kobold"
+#define SPECIES_RAMATAE "ramatan"
+#define SPECIES_INSECTOID "insectoid"
 
 #define SPECIES_MUTANT "mutant"
 #define SPECIES_MUTANT_INFECTIOUS "infectious_mutant"
@@ -163,3 +165,4 @@
 
 // Leaving this here because it's used for bodyparts, like SPECIES_X are, but since taurs aren't a species... Named it LIMBS instead.
 #define LIMBS_TAUR "taur"
+#define LIMBS_HARPY "harpy"

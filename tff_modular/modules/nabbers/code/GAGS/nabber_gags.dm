@@ -2,8 +2,8 @@
 #define BASE_CLOTH_Y_1 1
 
 /obj/item
-	var/datum/greyscale_config/greyscale_config_worn_nabber_fallback
 	var/icon/worn_icon_nabber
+	var/datum/greyscale_config/greyscale_config_worn_nabber_fallback
 
 /datum/species/nabber/get_custom_worn_icon(item_slot, obj/item/item)
 	return item.worn_icon_nabber
@@ -18,10 +18,7 @@
 	. = ..()
 	if(.)
 		return
-
-	. = generate_custom_worn_icon_fallback(item_slot, item, human_owner)
-	if(.)
-		return
+	return generate_custom_worn_icon_fallback(item_slot, item, human_owner)
 
 /obj/item/clothing/under
 	species_clothing_color_coords = list(list(BASE_CLOTH_X_1, BASE_CLOTH_Y_1))
@@ -56,24 +53,24 @@
 /datum/greyscale_config/nabber
 	name = "Nabber clothing"
 	icon_file = 'tff_modular/modules/nabbers/icons/nabber_fallbacks.dmi'
-	json_config = 'modular_nova/modules/GAGS/json_configs/nabber_fallbacks/uniform.json'
+	json_config = 'tff_modular/modules/greyscale/json_configs/nabber_fallbacks/uniform.json'
 
 /datum/greyscale_config/nabber/cloak
 	name = "Nabber Poncho"
-	json_config = 'modular_nova/modules/GAGS/json_configs/nabber_fallbacks/neck.json'
+	json_config = 'tff_modular/modules/greyscale/json_configs/nabber_fallbacks/neck.json'
 
 /datum/greyscale_config/nabber/tie
 	name = "Nabber Tie"
-	json_config = 'modular_nova/modules/GAGS/json_configs/nabber_fallbacks/neck.json'
+	json_config = 'tff_modular/modules/greyscale/json_configs/nabber_fallbacks/neck.json'
 
 /datum/greyscale_config/nabber/scarf
 	name = "Nabber Scarf"
-	json_config = 'modular_nova/modules/GAGS/json_configs/nabber_fallbacks/neck.json'
+	json_config = 'tff_modular/modules/greyscale/json_configs/nabber_fallbacks/neck.json'
 
 /datum/greyscale_config/nabber/gloves
 	name = "Nabber Gloves"
-	json_config = 'modular_nova/modules/GAGS/json_configs/nabber_fallbacks/gloves.json'
+	json_config = 'tff_modular/modules/greyscale/json_configs/nabber_fallbacks/gloves.json'
 
 /datum/greyscale_config/nabber/belt
 	name = "Nabber Belt"
-	json_config = 'modular_nova/modules/GAGS/json_configs/nabber_fallbacks/belt.json'
+	json_config = 'tff_modular/modules/greyscale/json_configs/nabber_fallbacks/belt.json'
