@@ -54,6 +54,29 @@
 #define BLOOD_TYPE_H2O "H2O"
 #define BLOOD_TYPE_SNAIL "S"
 
+// Blood exposure behavior flag defines
+/// Add our DNA to turfs/mobs/items, does not correlate with adding decals/overlays
+/// mob/turf/item flags will add DNA when triggered even if this flag is false
+#define BLOOD_ADD_DNA (1<<0)
+/// Cover the entire mob in *visible* blood
+#define BLOOD_COVER_MOBS (1<<1)
+/// Create blood splashes and trails on floors, does not affect gibs creation
+#define BLOOD_COVER_TURFS (1<<2)
+/// Cover items in ourselves
+#define BLOOD_COVER_ITEMS (1<<3)
+/// Usually you want all COVER flags together or none at all
+#define BLOOD_COVER_ALL (BLOOD_COVER_MOBS | BLOOD_COVER_TURFS | BLOOD_COVER_ITEMS)
+/// Transfer blood immunities and viruses to exposed mobs
+#define BLOOD_TRANSFER_VIRAL_DATA (1<<4)
+
+// Bleed check results
+/// We cannot bleed (here, or in general) at all
+#define BLEED_NONE 0
+/// We cannot make a splatter, but we can add our DNA
+#define BLEED_ADD_DNA 1
+/// We can bleed just fine
+#define BLEED_SPLATTER 2
+
 //Sizes of mobs, used by mob/living/var/mob_size
 #define MOB_SIZE_TINY 0
 #define MOB_SIZE_SMALL 1
@@ -125,6 +148,8 @@
 #define BODYTYPE_PLANT (1<<6)
 //This limb is shadowy and will regen if shadowheal is active
 #define BODYTYPE_SHADOW (1<<7)
+//This limb is a ghost limb and can phase through walls.
+#define BODYTYPE_GHOST (1<<8)
 // NOVA EDIT ADDITION START
 ///The limb fits a modular custom shape
 #define BODYSHAPE_CUSTOM (1<<9)
@@ -155,11 +180,14 @@
 #define SPECIES_DULLAHAN "dullahan"
 #define SPECIES_ETHEREAL "ethereal"
 #define SPECIES_ETHEREAL_LUSTROUS "lustrous"
+#define SPECIES_GHOST "ghost"
+#define SPECIES_GOLEM "golem"
 #define SPECIES_FELINE "felinid"
 #define SPECIES_FLYPERSON "fly"
 #define SPECIES_HUMAN "human"
 #define SPECIES_JELLYPERSON "jelly"
 #define SPECIES_SLIMEPERSON "slime"
+#define SPECIES_SPIRIT "spirit"
 #define SPECIES_LUMINESCENT "luminescent"
 #define SPECIES_STARGAZER "stargazer"
 #define SPECIES_LIZARD "lizard"
@@ -692,23 +720,25 @@ GLOBAL_LIST_INIT(human_heights_to_offsets, list(
 /// Total number of layers for mob overlays
 /// KEEP THIS UP-TO-DATE OR SHIT WILL BREAK
 /// Also consider updating layers_to_offset
-#define TOTAL_LAYERS 42 // NOVA EDIT CHANGE - ORIGINAL: 36
+#define TOTAL_LAYERS 44 // NOVA EDIT CHANGE - ORIGINAL: #define TOTAL_LAYERS 38
 /// Mutations layer - Tk headglows, cold resistance glow, etc
-#define MUTATIONS_LAYER 42 // NOVA EDIT CHANGE - ORIGINAL: 36
+#define MUTATIONS_LAYER 43 // NOVA EDIT CHANGE - ORIGINAL: #define MUTATIONS_LAYER 37
 /// Mutantrace features (tail when looking south) that must appear behind the body parts
-#define BODY_BEHIND_LAYER 41 // NOVA EDIT CHANGE - ORIGINAL: 35
+#define BODY_BEHIND_LAYER 42 // NOVA EDIT CHANGE - ORIGINAL: #define BODY_BEHIND_LAYER 36
 /// Layer for bodyparts that should appear behind every other bodypart - Mostly, legs when facing WEST or EAST
-#define BODYPARTS_LOW_LAYER 40 // NOVA EDIT CHANGE - ORIGINAL: 34
+#define BODYPARTS_LOW_LAYER 41 // NOVA EDIT CHANGE - ORIGINAL: #define BODYPARTS_LOW_LAYER 35
 /// Layer for most bodyparts, appears above BODYPARTS_LOW_LAYER and below BODYPARTS_HIGH_LAYER
-#define BODYPARTS_LAYER 39 // NOVA EDIT CHANGE - ORIGINAL: 33
+#define BODYPARTS_LAYER 40 // NOVA EDIT CHANGE - ORIGINAL: #define BODYPARTS_LAYER 34
 /// Mutantrace features (snout, body markings) that must appear above the body parts
-#define BODY_ADJ_LAYER 38 // NOVA EDIT CHANGE - ORIGINAL: 32
-/// Underwear, undershirts, socks, eyes, lips(makeup)
-#define BODY_LAYER 37 // NOVA EDIT CHANGE - ORIGINAL: 31
+#define BODY_ADJ_LAYER 39 // NOVA EDIT CHANGE - ORIGINAL: #define BODY_ADJ_LAYER 33
+/// Underwear, undershirts, socks
+#define BODY_LAYER 38 // NOVA EDIT CHANGE - ORIGINAL: #define BODY_LAYER 32
+/// Eyes and eyelids
+#define EYES_LAYER 37 // NOVA EDIT CHANGE - ORIGINAL: #define EYES_LAYER 31
 /// Mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
-#define FRONT_MUTATIONS_LAYER 36 // NOVA EDIT CHANGE - ORIGINAL: 30
+#define FRONT_MUTATIONS_LAYER 36 // NOVA EDIT CHANGE - ORIGINAL: #define FRONT_MUTATIONS_LAYER 30
 /// Damage indicators (cuts and burns)
-#define DAMAGE_LAYER 35 // NOVA EDIT CHANGE - ORIGINAL: 29
+#define DAMAGE_LAYER 35 // NOVA EDIT CHANGE - ORIGINAL: #define DAMAGE_LAYER 29
 // NOVA EDIT ADDITION START
 /// This layer is used for things that shouldn't be over clothes, but should be over mutations
 #define BODY_FRONT_UNDER_CLOTHES 34
@@ -814,7 +844,8 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 	// to show how many filters are added at a glance
 	// BACK_LAYER (backpacks are big)
 	// BODYPARTS_HIGH_LAYER (arms)
-	// BODY_LAYER (body markings (full body), underwear (full body), eyes)
+	// BODY_LAYER (body markings (full body), underwear (full body))
+	// EYES_LAYER,
 	// BODY_ADJ_LAYER (external organs like wings)
 	// BODY_BEHIND_LAYER (external organs like wings)
 	// BODY_FRONT_LAYER (external organs like wings)
@@ -947,7 +978,7 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 #define HEAL_LIMBS (1<<6)
 /// Heals all organs from failing.
 #define HEAL_ORGANS (1<<7)
-/// A "super" heal organs, this refreshes all organs entirely, deleting old and replacing them with new.
+/// replaces any organ with ORGAN_HAZARDOUS in organ_flags with species defaults
 #define HEAL_REFRESH_ORGANS (1<<8)
 /// Removes all wounds.
 #define HEAL_WOUNDS (1<<9)

@@ -161,7 +161,7 @@
 	var/mob/living/carbon/human/to_mutate = cast_on
 	if(!to_mutate.can_mutate())
 		return FALSE
-	to_mutate.dna.add_mutation(/datum/mutation/human/shock, MUT_OTHER)
+	to_mutate.dna.add_mutation(/datum/mutation/shock, MUTATION_SOURCE_ACTIVATED)
 	drain_mana()
 	return TRUE
 
