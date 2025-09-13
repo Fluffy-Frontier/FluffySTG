@@ -1,3 +1,5 @@
+#define LAST_ATTEMPT_DEADLINE 120 SECONDS
+
 SUBSYSTEM_DEF(shift_intensity)
 	name = "Shift Intensity Vote"
 	flags = SS_BACKGROUND
@@ -25,16 +27,28 @@ SUBSYSTEM_DEF(shift_intensity)
 
 /datum/controller/subsystem/shift_intensity/Recover()
 	start_time = SSshift_intensity.start_time
+	minimum_players = SSshift_intensity.minimum_players
 
 /datum/controller/subsystem/shift_intensity/fire()
 	if(SSticker.current_state > GAME_STATE_PREGAME)
 		can_fire = FALSE
 		return
 
-	if(SSticker.GetTimeLeft() <= start_time)
+	if(istype(SSvote.current_vote, /datum/vote/shift_intensity))
 		can_fire = FALSE
-		if(GLOB.clients.len < minimum_players)
+		return
+
+	if(SSticker.GetTimeLeft() <= start_time)
+		if(SSticker.totalPlayers < minimum_players)
+			if(SSticker.GetTimeLeft() > LAST_ATTEMPT_DEADLINE) // Будет пытаться начать воут вплоть до 120 секунд доя старта раунда и потом отключится, если все еще не набрались люди
+				return
+
+			can_fire = FALSE
 			log_game("The vote for shift intensity was cancelled due to insufficient number of players.")
 			message_admins("The vote for shift intensity was cancelled due to insufficient number of players.")
 			return
+
+		can_fire = FALSE
 		SSvote.initiate_vote(/datum/vote/shift_intensity, "server", forced = TRUE)
+
+#undef LAST_ATTEMPT_DEADLINE
