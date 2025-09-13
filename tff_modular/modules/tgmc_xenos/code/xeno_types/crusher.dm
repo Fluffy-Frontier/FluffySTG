@@ -13,7 +13,7 @@
 	alien_speed = 1.5
 
 	additional_organ_types_by_slot = list(
-		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc
+		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc,
 	)
 
 	hud_offset_y = -16

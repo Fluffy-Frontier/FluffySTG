@@ -4,8 +4,8 @@
 /obj/item/organ/eyes/alien/tgmc
 
 /obj/item/organ/eyes/alien/tgmc/apply_scar(side)
-	// Нам не нужны слепые ксеносы из-за шрамов на глазах
-	return
+	return // Нам не нужны слепые ксеносы из-за шрамов на глазах
+
 
 // Сосуды плазмы
 /obj/item/organ/alien/plasmavessel/tgmc

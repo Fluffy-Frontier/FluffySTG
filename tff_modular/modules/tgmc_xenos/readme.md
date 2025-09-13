@@ -7,32 +7,38 @@
 ## TG File Changes
 
 - MOVED:
- code\modules\mob\living\carbon\human\human_defense.dm: `/mob/living/carbon/human/attack_alien`
- TO:
- tff_modular\modules\tgmc_xenos\code\defense\human_defense.dm
+  code\modules\mob\living\carbon\human\human_defense.dm: `/mob/living/carbon/human/attack_alien`
+  TO:
+  tff_modular\modules\tgmc_xenos\code\defense\human_defense.dm
 - OVERRIDE: code\game\objects\structures\aliens.dm: `/obj/structure/alien/weeds/should_atmos_process`
- IN:
- tff_modular\modules\tgmc_xenos\code\structures\alien_structures.dm
+  IN:
+  tff_modular\modules\tgmc_xenos\code\structures\alien_structures.dm
 
 Additions:
 
 - code\game\objects\structures\aliens.dm: `/obj/structure/alien/egg` && `/obj/structure/alien/egg/Initialize()`
 - code\modules\mob\living\carbon\alien\special\alien_embryo.dm: `/obj/item/organ/body_egg/alien_embryo` && `/obj/item/organ/body_egg/alien_embryo/proc/on_poll_concluded()`
 - code\modules\mob\living\carbon\alien\special\facehugger.dm: `/obj/item/clothing/mask/facehugger` && `/obj/item/clothing/mask/facehugger/proc/Impregnate()`
-- code/modules/vehicles/mecha/_mecha.dm: `/obj/vehicle/sealed/mecha/proc/melee_attack_effect()`
+- code/modules/vehicles/mecha/\_mecha.dm: `/obj/vehicle/sealed/mecha/proc/melee_attack_effect()`
 
 ## Defines
 
-IN: code/__DEFINES/~ff_defines/_globalvars/traits/declarations.dm
+IN: code/\_\_DEFINES/~ff_defines/\_globalvars/traits/declarations.dm
 
-- TRAIT_XENO_INNATE
-- TRAIT_XENO_ABILITY_GIVEN
-- TRAIT_XENO_HEAL_AURA
-- TRAIT_XENO_FORTIFY
+Traits:
+
+- `TRAIT_XENO_INNATE`
+- `TRAIT_XENO_ABILITY_GIVEN`
+- `TRAIT_XENO_HEAL_AURA`
+- `TRAIT_XENO_FORTIFY`
+
+Global Vars:
+
+- `xeno_rounymode`
 
 ## Helpers
 
-IN: code/__HELPERS/~ff_helpers/is_helpers.dm
+IN: code/\_\_HELPERS/~ff_helpers/is_helpers.dm
 
 - istgmcalien
 - istgmcalienqueen
@@ -46,4 +52,4 @@ IN: code/__HELPERS/~ff_helpers/is_helpers.dm
 
 TGMC & CM - Where the sprites, sound, and ideas for caste abilities came from
 
-Original developer of these xenos (apparently it's @Paxilmaniac) - Porting the xenos from TGMC and adopting their stuff to work with our code
+Original developer of these xenos (apparently it's @Paxilmaniac) - Porting the xenos from TGMC and adopting their stuff to work with tg-skyrat code
