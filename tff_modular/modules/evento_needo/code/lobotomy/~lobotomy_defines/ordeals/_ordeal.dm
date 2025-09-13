@@ -27,8 +27,6 @@
 	var/can_run = TRUE
 	/// World.time when ordeal started
 	var/start_time
-	/// Achivement for Surviving the Ordeal
-	var/ordeal_achievement
 
 /datum/ordeal/New()
 	..()
@@ -40,7 +38,7 @@
 	start_time = ROUND_TIME()
 	SSlobotomy_corp.current_ordeals += src
 	priority_announce(announce_text, name) // We want this to be silent, so play a silent sound since null uses defaults
-	for(var/mob/player in GLOB.player_list)
+	for(var/mob/player in GLOB.alive_player_list)
 		if(player.client)
 			var/client/watcher = player.client
 			ShowOrdealBlurb(watcher, 25, 40, color)
@@ -50,7 +48,7 @@
 
 // Ends the event
 /datum/ordeal/proc/End()
-	priority_announce("The Ordeal has ended. Facility has been rewarded with [reward_percent*100]% PE.", name)
+	priority_announce("The Ordeal has ended.", name)
 	SSlobotomy_corp.current_ordeals -= src
 
 	for(var/mob/living/carbon/human/person as anything in SSabnormality_queue.active_suppression_agents)
@@ -58,10 +56,8 @@
 			SSabnormality_queue.active_suppression_agents -= person
 			continue
 
-	//Gives a medal to survivors.
-	RewardSurvivors()
 	if(end_sound)
-		for(var/mob/player in GLOB.player_list)
+		for(var/mob/player in GLOB.alive_player_list)
 			if(player.client)
 				var/client/watcher = player.client
 				ShowOrdealBlurb(watcher, 25, 40, color, ending = TRUE)
@@ -118,21 +114,6 @@
 	T.maptext = "<span style=\"[style1]\">[name]</span><br><span style=\"[style2]\">[flavor_name]</span><br><span style=\"[style3]\">[display_text]</span>"
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(fade_blurb), C, T, fade_time), duration) //fade_blurb qdels the object
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(fade_blurb), C, BG, fade_time), duration)
-
-/datum/ordeal/proc/RewardSurvivors()
-	if(!SSachievements.achievements_enabled || !ordeal_achievement)
-		return
-	for(var/client/C in GLOB.clients)
-		if(C)
-			RewardIndividual(C)
-
-/datum/ordeal/proc/RewardIndividual(client/player_client)
-	if(!ishuman(player_client.mob))
-		return FALSE
-	var/mob/living/carbon/human/human_mob = player_client.mob
-	if(human_mob.stat == DEAD)
-		return FALSE
-	player_client.give_award(ordeal_achievement, human_mob)
 
 //Black background for blurb
 /obj/effect/overlay/ordeal

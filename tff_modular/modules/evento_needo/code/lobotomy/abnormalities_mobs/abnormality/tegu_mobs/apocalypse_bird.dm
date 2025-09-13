@@ -191,7 +191,7 @@
 	visible_message(span_danger("[src] suddenly disappears!"))
 	forceMove(T)
 	var/area/A = get_area(T)
-	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black")
 	visible_message(span_danger("[src] suddenly appears in front of you!"))
 	//SLEEP_CHECK_DEATH(2 SECONDS, src)
 	teleport_cooldown = world.time + teleport_cooldown_time

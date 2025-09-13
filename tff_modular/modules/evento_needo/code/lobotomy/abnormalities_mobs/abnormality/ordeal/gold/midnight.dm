@@ -7,8 +7,8 @@
 	icon_living = "al_fine"
 	icon_dead = "al_fine_dead"
 	faction = list("gold_ordeal")
-	maxHealth = 4000 //it's a boss, more or less
-	health = 4000
+	maxHealth = 3000 //it's a boss, more or less
+	health = 3000
 	death_sound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/limbus_death.ogg'
 	damage_coeff = list(BURN = 0.2, BRAIN = 0.2, BRUTE = 0.2, TOX = 0.2)
 	/// Range of the damage
@@ -21,6 +21,10 @@
 	var/current_movement_num = -1
 	/// List of effects currently spawned
 	var/list/performers = list()
+
+/mob/living/simple_animal/hostile/ordeal/tso_corrosion/Initialize(mapload)
+	show_global_blurb(5 SECONDS, "Выступление начинается в [get_area_name(src)]", 3 SECONDS)
+	return ..()
 
 /mob/living/simple_animal/hostile/ordeal/tso_corrosion/Move()
 	return FALSE
@@ -106,6 +110,8 @@
 	for(var/obj/effect/silent_orchestra_singer/O in performers)
 		O.fade_out()
 	performers.Cut()
+	animate(src, alpha = 0, time = 2 SECONDS)
+	QDEL_IN(src, 2 SECONDS)
 
 /mob/living/simple_animal/hostile/ordeal/tso_corrosion/proc/spawn_performer(distance = 1, direction = EAST)
 	var/turf/T = get_turf(src)

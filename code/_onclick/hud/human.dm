@@ -273,7 +273,6 @@
 	infodisplay += healthdoll
 
 	sanityhealth = new /atom/movable/screen/sanityhealth(null, src)
-	sanityhealth.hud = src
 	infodisplay += sanityhealth
 
 	stamina = new /atom/movable/screen/stamina(null, src)

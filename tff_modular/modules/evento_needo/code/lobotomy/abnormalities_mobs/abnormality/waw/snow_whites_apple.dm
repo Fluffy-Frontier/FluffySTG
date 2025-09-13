@@ -196,7 +196,7 @@
 	new /obj/effect/temp_visual/guardian/phase/out(teleport_target)
 	forceMove(teleport_target)
 	var/area/A = get_area(teleport_target)
-	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black")
 	//Effects after teleporting
 	SpreadPlants()
 	oldGrowth()

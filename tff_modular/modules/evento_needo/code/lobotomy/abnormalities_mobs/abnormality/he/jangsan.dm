@@ -131,7 +131,7 @@
 
 //Too weak and it kills you
 /mob/living/simple_animal/hostile/abnormality/jangsan/PostWorkEffect(mob/living/carbon/human/user)
-	. == ..()
+	. = ..()
 	KillCheck(user)
 	if(user.stat == DEAD)
 		qliphoth_change(-1)
@@ -183,7 +183,7 @@
 	new /obj/effect/temp_visual/guardian/phase/out(teleport_target)
 	forceMove(teleport_target)
 	var/area/A = get_area(teleport_target)
-	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black")
 	bite_cooldown = world.time + bite_cooldown_time //Don't kill someone the moment you teleport
 	chase_cooldown = world.time + chase_cooldown_time
 	Lure()

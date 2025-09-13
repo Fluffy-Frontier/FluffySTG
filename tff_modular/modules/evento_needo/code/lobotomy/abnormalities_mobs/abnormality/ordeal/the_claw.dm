@@ -1,8 +1,8 @@
 /mob/living/simple_animal/hostile/megafauna/claw
 	name = "Claw"
 	desc = "A strange humanoid creature with several gadgets attached to it."
-	health = 8000
-	maxHealth = 8000
+	health = 6000
+	maxHealth = 6000
 	damage_coeff = list(BURN = 0.4, BRAIN = 0.4, BRUTE = 0.4, TOX = 0.4)
 	attack_verb_continuous = "slices"
 	attack_verb_simple = "slice"
@@ -207,7 +207,7 @@
 		if(!L.stat)
 			return TargetSerumW(L)
 	var/list/mob/living/carbon/human/death_candidates = list()
-	for(var/mob/living/carbon/human/maybe_victim in GLOB.player_list)
+	for(var/mob/living/carbon/human/maybe_victim in GLOB.alive_player_list)
 		if(faction_check_atom(maybe_victim))
 			continue
 		if((maybe_victim.stat != DEAD) && maybe_victim.z == z)
@@ -348,7 +348,7 @@
 		return
 	triserum_cooldown = world.time + triserum_cooldown_time
 	var/list/mob/living/carbon/human/death_candidates = list()
-	for(var/mob/living/carbon/human/maybe_victim in GLOB.player_list)
+	for(var/mob/living/carbon/human/maybe_victim in GLOB.alive_player_list)
 		if(faction_check_atom(maybe_victim))
 			continue
 		if((maybe_victim.stat != DEAD) && maybe_victim.z == z)

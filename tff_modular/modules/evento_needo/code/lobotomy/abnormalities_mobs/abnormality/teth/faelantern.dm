@@ -136,7 +136,7 @@
 	SLEEP_CHECK_DEATH(4, src)
 	forceMove(teletarget)
 	var/area/A = get_area(teletarget)
-	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black")
 	fairy_enabled = TRUE
 	fairy_health = health//This needs to be updated when breachdig() is called a second time
 	can_act = TRUE

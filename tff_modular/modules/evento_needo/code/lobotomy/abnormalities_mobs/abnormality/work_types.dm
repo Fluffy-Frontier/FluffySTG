@@ -111,10 +111,101 @@
 
 
 //kother
-//pets
+
+
+
+//Обнимашки
+/mob/living/simple_animal/hostile/abnormality/proc/ask_hugs(mob/living/carbon/human/user)
+	var/hugs_needed = fear_level * rand(2, 3)
+	var/time
+	if(fear_level < HE_LEVEL)
+		time = 20 SECONDS
+	else
+		time = 15 SECONDS
+	user.show_aso_blurb("Обними это [hugs_needed] раз за [time / 10] секунд")
+	job_things["hugs_amount"] = 0
+	RegisterSignal(src, COMSIG_CARBON_HELPED, PROC_REF(on_hug))
+	addtimer(CALLBACK(src, PROC_REF(check_hugs), user, hugs_needed), time)
+
+/mob/living/simple_animal/hostile/abnormality/proc/on_hug(datum/source, mob/living/hugged)
+	SIGNAL_HANDLER
+	job_things["hugs_amount"]++
+
+/mob/living/simple_animal/hostile/abnormality/proc/check_hugs(mob/living/carbon/human/user, hugs_needed)
+	UnregisterSignal(src, COMSIG_CARBON_HELPED)
+	if(job_things["hugs_amount"] < hugs_needed / 2)
+		bad_job_effect()
+	else if (job_things["hugs_amount"] > hugs_needed && job_things["hugs_amount"] < hugs_needed) //чето между
+		neutral_job_effect()
+	else
+		good_job_effect()
+	LAZYREMOVE(job_things, job_things["hugs_amount"])
+	job_tick_effect(user)
 
 //coop
+/mob/living/simple_animal/hostile/abnormality/proc/bring_friends(mob/living/carbon/human/user)
+	var/friends_needed = rand(1, fear_level)
+	var/time = fear_level > WAW_LEVEL ? 30 SECONDS : 60 SECONDS
+	user.show_aso_blurb("Приведи к этому [friends_needed] раз за [time / 10] секунд")
+	RegisterSignal(src, COMSIG_CARBON_HELPED, PROC_REF(on_hug))
+	addtimer(CALLBACK(src, PROC_REF(check_friends), user, friends_needed), time)
+
+/mob/living/simple_animal/hostile/abnormality/proc/check_friends(mob/living/carbon/human/user, friends_needed)
+	var/total_friends = 0
+	for(var/mob/living/friend in oview(5, src))
+		total_friends++
+	if(total_friends == friends_needed)
+		good_job_effect()
+	else if(total_friends > friends_needed / 2 && total_friends != friends_needed) // та самая половина землекопа
+		neutral_job_effect()
+	else
+		bad_job_effect()
+	job_tick_effect(user)
+
 //fav toy
+
+
+
+
+
+
+
+/mob/living/simple_animal/hostile/abnormality/proc/ask_money(mob/living/carbon/human/user)
+	var/amount
+	switch(fear_level)
+		if(ALEPH_LEVEL)
+			amount = rand(600, 1200)
+		if(HE_LEVEL)
+			amount = rand(500, 800)
+		if(WAW_LEVEL)
+			amount = rand(350, 500)
+		if(TETH_LEVEL)
+			amount = rand(100, 250)
+		if(ZAYIN_LEVEL)
+			amount = rand(10, 50)
+	user.show_aso_blurb("Оно снимет [amount] кредитов с твоего кошелька через 1 минуту.")
+	addtimer(CALLBACK(src, PROC_REF(check_money), user, amount), 1 MINUTES)
+
+/mob/living/simple_animal/hostile/abnormality/proc/check_money(mob/living/carbon/human/user, amount)
+	var/datum/bank_account/account = user.get_bank_account()
+	if(account && account.has_money(amount))
+		account.adjust_money(-amount)
+		good_job_effect()
+	else
+		bad_job_effect()
+	job_tick_effect(user)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //Логические задачи

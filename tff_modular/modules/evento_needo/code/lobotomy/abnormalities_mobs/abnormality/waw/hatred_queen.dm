@@ -552,7 +552,7 @@
 	density = FALSE
 	forceMove(teleport_target)
 	var/area/A = get_area(teleport_target)
-	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black")
 	var/obj/effect/qoh_sygil/S = new(teleport_target)
 	S.icon_state = "qoh2"
 	addtimer(CALLBACK(S, TYPE_PROC_REF(/obj/effect/qoh_sygil, fade_out)), 2 SECONDS)

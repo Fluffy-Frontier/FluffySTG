@@ -51,9 +51,9 @@
 	..()
 	var/list/potential_locs = GLOB.generic_event_spawns.Copy()
 	if(GLOB.player_list.len >= 15)
-		spawn_amount += round(GLOB.player_list.len / 15)
+		spawn_amount += round(GLOB.alive_player_list.len / 15)
 	for(var/i = 1 to spawn_amount)
-		var/turf/T = pick(potential_locs)
+		var/turf/T = get_turf(pick(potential_locs))
 		var/mob/living/simple_animal/hostile/ordeal/amber_midnight/M = new(T)
 		ordeal_mobs += M
 		M.ordeal_reference = src

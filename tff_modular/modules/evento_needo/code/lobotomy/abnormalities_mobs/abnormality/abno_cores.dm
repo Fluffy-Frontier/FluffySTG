@@ -13,6 +13,15 @@
 	var/fear_level
 	var/ego_list = list()
 
+/obj/structure/abno_core/attack_hand(mob/living/carbon/human/user, list/modifiers)
+	user.show_aso_blurb("Выпустив аномалию ты не сможешь передвинуть её. Ты уверен в своем решении?", 3 SECONDS)
+	sleep(3 SECONDS)
+	var/choice = tgui_input_list(user, "Выпустить аномалию?", "Выбор", list("Выпустить", "Не сейчас."), timeout = 10 SECONDS)
+	if(choice == "Выпустить")
+		Extract()
+	else
+		return ..()
+
 /obj/structure/abno_core/proc/Release()
 	if(!contained_abno)//Is this core properly generated?
 		return
@@ -34,8 +43,9 @@
 	playsound(src,'tff_modular/modules/evento_needo/sounds/Tegusounds/abno_extract.ogg', 50, 5)
 	sleep(3 SECONDS)
 	SSabnormality_queue.PostSpawn()
-	log_admin("[key_name(usr)] has spawned [contained_abno].")
-	message_admins("[key_name(usr)] has spawned [contained_abno].")
+	Release()
+	log_admin("[key_name(usr)] заспавнил [contained_abno].")
+	message_admins("[key_name(usr)] заспавнил [contained_abno].")
 
 	SSblackbox.record_feedback("nested tally", "core_spawn_abnormality", 1, list("Initiated Spawn Abnormality", "[SSabnormality_queue.queued_abnormality]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -54,16 +64,15 @@
 	density = FALSE
 	layer = ABOVE_ALL_MOB_LAYER
 	var/cooldown
-	var/cooldown_time = 30 MINUTES
-	var/obj/structure/abno_core/core
+	var/cooldown_time = 17 MINUTES
 
 /obj/machinery/abno_core_extractor/attack_hand(mob/living/user, list/modifiers)
 	if(cooldown > world.time)
-		to_chat(user, span_warning("Machine isn't ready yet."))
+		to_chat(user, span_warning("Машина еще не готова."))
 		return
 	GrabAnimation()
 	sleep(4 SECONDS)
-	new core(get_turf(src))
+	new /obj/structure/abno_core(get_turf(src))
 	cooldown = world.time + cooldown_time
 
 /obj/machinery/abno_core_extractor/proc/GrabAnimation()

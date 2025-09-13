@@ -79,16 +79,16 @@
 				spawn_performer(1, WEST)
 			if(2)
 				next_movement_time = world.time + 14.5 SECONDS
-				ChangeResistances(list(BRUTE = 1, BRUTE = 0))
+				ChangeResistances(list(BRUTE = 1, BURN = 0))
 				spawn_performer(2, WEST)
 			if(3)
 				next_movement_time = world.time + 11.5 SECONDS
-				ChangeResistances(list(BRUTE = 1, BRUTE = 0))
+				ChangeResistances(list(BRUTE = 1, BURN = 0))
 				symphony_damage = 18
 				spawn_performer(1, EAST)
 			if(4)
 				next_movement_time = world.time + 23 SECONDS
-				ChangeResistances(list(BRUTE = 1, BRUTE = 0))
+				ChangeResistances(list(BRUTE = 1, BURN = 0))
 				symphony_damage = 12
 				spawn_performer(2, EAST)
 			if(5)
@@ -129,7 +129,7 @@
 	var/turf/T = get_turf(pick(GLOB.generic_event_spawns))
 	forceMove(T)
 	var/area/A = get_area(T)
-	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black")
 	DamagePulse()
 	return
 

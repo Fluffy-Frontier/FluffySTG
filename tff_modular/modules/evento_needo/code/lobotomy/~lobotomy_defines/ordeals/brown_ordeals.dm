@@ -37,8 +37,7 @@
 	for(var/i = 1 to (spawn_places + place_player_mod))
 		if(!LAZYLEN(spawn_turfs)) //if list empty, recopy xeno spawns
 			spawn_turfs = GLOB.generic_event_spawns.Copy()
-		var/X = pick_n_take(spawn_turfs)
-		var/turf/T = get_turf(X)
+		var/turf/T = get_turf(pick_n_take(spawn_turfs))
 		var/list/deployment_area = list()
 		if((spawn_amount + spawn_player_mod) > 1)
 			deployment_area = DeploymentZone(T) //deployable areas for groups

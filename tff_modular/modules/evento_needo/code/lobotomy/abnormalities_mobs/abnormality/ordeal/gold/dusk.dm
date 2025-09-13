@@ -255,12 +255,13 @@
 		C.faction = src.faction
 		C.master = src
 		spawned_mobs += C
-		H.gib()
+		H.gib(DROP_BRAIN)
 
 /mob/living/simple_animal/hostile/ordeal/thunderbird_corrosion/death(gibbed)
 	for(var/mob/living/A in spawned_mobs)
-		A.gib()
-	..()
+		A.gib(DROP_BRAIN)
+	animate(src, alpha = 0, time = 2 SECONDS)
+	QDEL_IN(src, 2 SECONDS)
 
 /mob/living/simple_animal/hostile/ordeal/KHz_corrosion
 	name = "680 Ham Actor"
@@ -283,6 +284,7 @@
 	move_to_delay = 4
 	speak = list("Kilo India Lima Lima", "Delta India Echo", "Golf Echo Tango Oscar Uniform Tango", "Oscar Mike", "Charlie Mike")
 	speak_emote = list("emits", "groans")
+	speak_chance = 15
 	ranged = TRUE
 	var/can_act = TRUE
 	var/effect_cooldown
@@ -319,7 +321,6 @@
 	if(!.) // we're dead, lets not speak
 		return
 	if(effect_cooldown <= world.time)
-		//whisper("[pick(speak)]")
 		playsound(get_turf(src), "[pick(damage_sounds)]", 25, FALSE)
 
 /mob/living/simple_animal/hostile/ordeal/KHz_corrosion/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null, message_mods, message_range, saymode)

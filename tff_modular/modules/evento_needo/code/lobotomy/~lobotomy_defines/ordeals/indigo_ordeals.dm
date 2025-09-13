@@ -66,7 +66,7 @@
 	special_chance = meaningful_threats > 0 ? min(100, special_chance + (special_chance_per_agent * meaningful_threats)) : special_chance
 	var/list/available_locs = GLOB.generic_event_spawns.Copy()
 	for(var/i = 1 to floor(pack_amount + pack_player_mod))
-		var/turf/T = pick(available_locs)
+		var/turf/T = get_turf(pick(available_locs))
 		if(length(available_locs) > 1)
 			available_locs -= T
 

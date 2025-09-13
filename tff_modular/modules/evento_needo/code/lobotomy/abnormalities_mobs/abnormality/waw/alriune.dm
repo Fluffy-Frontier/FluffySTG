@@ -104,7 +104,7 @@
 	SLEEP_CHECK_DEATH(15, src)
 	forceMove(T)
 	var/area/A = get_area(T)
-	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black")
 	animate(src, alpha = 255, time = 15)
 	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/alriune/curtain_in.ogg', 50, TRUE, 12)
 

@@ -975,8 +975,8 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 					continue
 				if(damage)
 					var/dealt_damage = damage
-					if(break_not_destroy && (O.atom_integrity - damage <= 0))
-						dealt_damage = O.atom_integrity - 1
+					if(break_not_destroy && (O.get_integrity() - damage <= 0))
+						dealt_damage = O.get_integrity() - 1
 					O.take_damage(dealt_damage, damage_type)
 				. += O
 	return

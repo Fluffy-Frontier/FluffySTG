@@ -12,8 +12,8 @@
 	faction = list("green_ordeal")
 	gender = NEUTER
 	mob_biotypes = MOB_ROBOTIC
-	maxHealth = 40000
-	health = 40000
+	maxHealth = 30000
+	health = 30000
 	damage_coeff = list(BURN = 0.5, BRAIN = 0.8, BRUTE = 1.2, TOX = 1)
 	death_sound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/green/midnight_dead.ogg'
 
@@ -27,7 +27,7 @@
 	var/list/hit_line = list()
 	/// Amount of black damage per damage tick dealt to all living enemies
 	var/laser_damage = 65
-	var/max_lasers = 6
+	var/max_lasers = 3
 	/// Amount of damage ticks laser will do
 	var/max_laser_repeats = 40
 	var/firing = FALSE

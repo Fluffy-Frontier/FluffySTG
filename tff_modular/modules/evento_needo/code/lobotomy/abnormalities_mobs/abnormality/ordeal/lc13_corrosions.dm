@@ -151,7 +151,7 @@
 			been_hit = HurtInTurf(TF, been_hit, hello_damage, BURN, null, TRUE, FALSE, TRUE, TRUE)
 	for(var/mob/living/L in been_hit)
 		if(L.health < 0)
-			L.gib()
+			L.gib(DROP_BRAIN)
 	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/nothingthere/hello_bam.ogg', 100, 0, 7)
 	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/nothingthere/hello_clash.ogg', 75, 0, 3)
 	icon_state = icon_living
@@ -182,8 +182,8 @@
 	icon_living = "wriggling_beast"
 	icon_dead = "dead_generic"
 	faction = list("gold_ordeal")
-	maxHealth = 2500
-	health = 2500
+	maxHealth = 2000
+	health = 2000
 	melee_damage_lower = 30
 	melee_damage_upper = 35
 	melee_damage_type = BRUTE
@@ -333,8 +333,8 @@
 	icon_state = "slithering_beast"
 	icon_living = "slithering_beast"
 	icon_dead = "dead_generic"
-	maxHealth = 4000
-	health = 4000
+	maxHealth = 3000
+	health = 3000
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 	damage_coeff = list(BURN = 0.8, BRAIN = 0.8, BRUTE = 0, TOX = 1.3)
@@ -421,7 +421,7 @@
 		return
 	var/mob/living/carbon/human/H = attacked_target
 	if(H.health < 0 && gibbing)
-		H.gib()
+		H.gib(DROP_BRAIN)
 		playsound(src, "tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/clouded_monk/eat.ogg", 75, 1)
 		adjustBruteLoss(-heal_amount)
 	return
@@ -496,7 +496,7 @@
 			continue
 		var/mob/living/carbon/human/H = L
 		if(H.health < 0 && gibbing)
-			H.gib()
+			H.gib(DROP_BRAIN)
 			playsound(src, "tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/clouded_monk/eat.ogg", 75, 1)
 			adjustBruteLoss(-heal_amount)
 			times_ran = dash_num //stop the charge, we got them!

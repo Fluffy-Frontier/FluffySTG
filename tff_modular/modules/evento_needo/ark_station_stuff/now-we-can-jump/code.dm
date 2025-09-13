@@ -1,10 +1,27 @@
 #define JUMP_MESSAGE_NOSE "broke his nose"
 #define JUMP_MESSAGE_HIT "hit self slightly"
 
+/datum/keybinding/human/jump
+	hotkey_keys = list("AltE")
+	name = "jump"
+	full_name = "jump"
+	keybind_signal = COMSIG_KB_HUMAN_JUMP
+
+/datum/keybinding/human/jump/down(client/user, turf/target)
+	. = ..()
+	if(.)
+		return
+	var/mob/living/carbon/human/H = user.mob
+	H.try_jump(target, H)
+	return TRUE
+
+
 /atom/proc/try_jump(atom/target, mob/living/carbon/human/user)
 	if(!isliving(user) || !ishuman(user) || !user.has_gravity() || !user.Adjacent(user) || !(user.stat == CONSCIOUS) || user.body_position == LYING_DOWN || user.buckled) // ТЫ ЕБЛАН?
 		return
-
+	if(user.has_movespeed_modifier(/datum/movespeed_modifier/jump_slowdown))
+		to_chat(user, "I'm not ready to jump yet!")
+		return
 	var/jump_message = prob(40) ? JUMP_MESSAGE_NOSE : JUMP_MESSAGE_HIT
 
 	if(QDELETED(src) || QDELETED(user)) // ТЫ НЕ СУЩЕСТВУЕШЬ, ЕБЛИЩЕ.
@@ -25,9 +42,6 @@
 				user.adjustBruteLoss(30)
 				user.AdjustUnconscious(10 SECONDS)
 				user.emote("scream")
-				user.overlay_fullscreen("flash_void", /atom/movable/screen/fullscreen/flash/black)
-				sleep(6 SECONDS)
-				user.clear_fullscreen("flash_void", rand(15, 60))
 				return
 			else // Повезло просто удариться.
 				user.adjustStaminaLoss(20)
@@ -62,7 +76,15 @@
 	user.visible_message("<span class='danger'>[user] jumps.</span>", \
 					"<span class='warning'> I jump at the [loc]!</span>")
 	user.adjustStaminaLoss(rand(30,50))
+	if(prob(60))
+		user.Knockdown(1 SECONDS)
 	user.throw_at(target, 3, 1, user, spin = (HAS_TRAIT(user, TRAIT_CLUMSY) ? TRUE : FALSE))
+	user.add_movespeed_modifier(/datum/movespeed_modifier/jump_slowdown)
+	addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living/carbon/human, remove_movespeed_modifier), /datum/movespeed_modifier/jump_slowdown), 1 SECONDS)
+
+/datum/movespeed_modifier/jump_slowdown
+	multiplicative_slowdown = 1.5
+
 
 #undef JUMP_MESSAGE_NOSE
 #undef JUMP_MESSAGE_HIT

@@ -28,3 +28,14 @@
 		ordeal_reference.OnMobDeath(src)
 		ordeal_reference = null
 	return ..()
+
+/mob/living/simple_animal/hostile/ordeal/apply_damage(damage, damagetype, def_zone, blocked, forced, spread_damage, wound_bonus, exposed_wound_bonus, sharpness, attack_direction, attacking_item, wound_clothing)
+	if(is_ego_weapon(attacking_item))
+		damage *= 1.5
+	return ..()
+
+/mob/living/simple_animal/hostile/ordeal/bullet_act(obj/projectile/proj)
+	if(istype(proj, /obj/projectile/ego_bullet))
+		proj.damage *= 1.5
+	return ..()
+

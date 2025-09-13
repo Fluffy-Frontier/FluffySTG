@@ -5,4 +5,4 @@
 	hitsound_wall = "ricochet"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect
 	wound_bonus = -100
-	speed = 0.4
+	speed = 1.1

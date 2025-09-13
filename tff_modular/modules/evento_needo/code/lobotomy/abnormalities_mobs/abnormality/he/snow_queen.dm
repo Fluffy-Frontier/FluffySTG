@@ -153,7 +153,7 @@
 	var/turf/T = get_turf(pick(GLOB.generic_event_spawns))
 	forceMove(T)
 	var/area/A = get_area(T)
-	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black")
 	update_icon()
 
 /mob/living/simple_animal/hostile/abnormality/snow_queen/ZeroQliphoth(mob/living/carbon/human/user)

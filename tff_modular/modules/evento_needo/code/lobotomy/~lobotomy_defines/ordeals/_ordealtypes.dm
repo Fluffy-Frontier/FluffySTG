@@ -86,7 +86,7 @@
 	var/grunt_player_mod = round(living_player_count() * grunt_player_multiplicator)
 	var/list/available_locs = GLOB.generic_event_spawns.Copy()
 	for(var/i = 1 to round(boss_amount + boss_player_mod))
-		var/turf/T = pick(available_locs)
+		var/turf/T = get_turf(pick(available_locs))
 		if(available_locs.len > 1)
 			available_locs -= T
 		for(var/Y in boss_type)
@@ -113,7 +113,7 @@
 	for(var/i = 1 to spawntypes.len)
 		if(!LAZYLEN(spawntypes))
 			break
-		var/turf/T = pick(available_locs)
+		var/turf/T = get_turf(pick(available_locs))
 		if(available_locs.len > 1)
 			available_locs -= T
 		var/chosen_type = pick_n_take(spawntypes)
@@ -146,19 +146,8 @@
 
 /datum/ordeal/boss/Run()
 	..()
-	var/turf/T
-	if(bossspawnloc)
-		for(var/turf/D in GLOB.generic_event_spawns)
-			if(istype(get_area(D), bossspawnloc))
-				T = D
-				break
-		if(!T)
-			var/X = get_turf(pick(GLOB.generic_event_spawns))
-			T = get_turf(X)
-			log_game("Failed to spawn [src] in [bossspawnloc]")
-	else
-		var/X = get_turf(pick(GLOB.generic_event_spawns))
-		T = get_turf(X)
+	var/turf/T = get_turf(pick(GLOB.generic_event_spawns))
 	var/mob/living/simple_animal/hostile/ordeal/C = new bosstype(T)
+	priority_announce("Обнаружен массивный сгусток энергии в [get_area_name(T)], разберитесь с этим немедленно.", "M.O.G. Announce", 'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/radio.ogg')
 	ordeal_mobs += C
 	C.ordeal_reference = src

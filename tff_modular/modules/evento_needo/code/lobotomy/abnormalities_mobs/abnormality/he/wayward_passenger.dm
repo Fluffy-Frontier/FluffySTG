@@ -177,7 +177,7 @@
 	var/obj/effect/portal/abno_warp/P1 = new(get_turf(src))
 	forceMove(teleport_target)
 	var/area/A = get_area(teleport_target)
-	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black")
 	var/obj/effect/portal/abno_warp/P2 = new(teleport_target)
 	P1.link_portal(P2)
 	P2.link_portal(P1)

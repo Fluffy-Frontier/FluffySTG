@@ -223,8 +223,6 @@
 
 //Calculate a base to return to, usually is a department.
 /datum/component/ai_leadership/proc/FindForwardBase()
-	var/mob/living/L = parent
-	var/turf/second_choice
 	if(!GLOB.generic_event_spawns.len)
 		return FALSE
 	return get_turf(pick(GLOB.generic_event_spawns))

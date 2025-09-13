@@ -157,7 +157,7 @@
 	soundloop.start()
 	forceMove(T)
 	var/area/A = get_area(T)
-	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black")
 	for(var/i = 1, i <= minion_amount ,i++)
 		var/karma_vis = new /obj/effect/karma_halo
 		var/picked = pick(pick(possible_minion_list))

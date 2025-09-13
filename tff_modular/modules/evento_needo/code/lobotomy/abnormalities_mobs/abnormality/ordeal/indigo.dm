@@ -86,7 +86,7 @@
 		span_danger("[src] devours [L]!"),
 		span_userdanger("You feast on [L], restoring your health!"))
 	adjustBruteLoss(-(maxHealth/2))
-	L.gib()
+	L.gib(DROP_BRAIN)
 	return TRUE
 
 
@@ -98,8 +98,8 @@
 	icon_living = "matriarch"
 	icon_dead = "matriarch_dead"
 	faction = list("indigo_ordeal")
-	maxHealth = 5000
-	health = 5000
+	maxHealth = 3000
+	health = 3000
 	stat_attack = DEAD
 	pixel_x = -16
 	base_pixel_x = -16
@@ -187,7 +187,7 @@
 	var/list/low_priority_turfs = list() // Oh, you're wounded, how nice.
 	var/list/medium_priority_turfs = list() // You're about to die and you are close? Splendid.
 	var/list/high_priority_turfs = list() // IS THAT A DEAD BODY?
-	for(var/mob/living/carbon/human/H in GLOB.human_list)
+	for(var/mob/living/carbon/human/H in GLOB.alive_player_list)
 		if(H.z != z) // Not on our level
 			continue
 		if(get_dist(src, H) < 4) // Way too close
@@ -240,7 +240,7 @@
 		span_danger("[src] devours [L]!"),
 		span_userdanger("You feast on [L], restoring your health!"))
 	adjustBruteLoss(-(maxHealth*0.3))
-	L.gib()
+	L.gib(DROP_BRAIN)
 	//Increase the Vore counter by 1
 	belly += 1
 	pulse_damage += 2

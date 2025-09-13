@@ -291,7 +291,7 @@
 
 	//current_meltdown_type = meltdown_type
 	//var/player_count = 0
-	//for(var/mob/player in GLOB.player_list)
+	//for(var/mob/player in GLOB.alive_player_list)
 	//	if(isliving(player) && (player.mind?.assigned_role in GLOB.security_positions))
 	//		player_count += 1.5
 	//player_count = round(player_count) + (player_count > round(player_count) ? 1 : 0) // Trying to round up
@@ -446,7 +446,7 @@
 
 /mob/living/simple_animal/hostile/megafauna/arbiter/proc/SpawnSpikes()
 	spikes_cooldown = world.time + spikes_cooldown_time
-	for(var/mob/living/carbon/human/H in GLOB.player_list)
+	for(var/mob/living/carbon/human/H in GLOB.alive_player_list)
 		if(!H.client)
 			continue
 		if(H.stat)

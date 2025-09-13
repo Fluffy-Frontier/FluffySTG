@@ -138,7 +138,7 @@
 	if(prob(30))
 		forceMove(teleport_target)
 		var/area/A = get_area(teleport_target)
-		show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
+		show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black")
 	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/blackswan/sis_transformation.ogg', 30, 0, 4)
 	return
 

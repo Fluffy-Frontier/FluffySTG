@@ -20,7 +20,7 @@
 	for(var/i = 1 to mobs_amount)
 		if(!potential_types.len)
 			break
-		var/turf/T = pick(available_locs)
+		var/turf/T = get_turf(pick(available_locs))
 		if(available_locs.len > 1)
 			available_locs -= T
 		var/chosen_type = pick(potential_types)

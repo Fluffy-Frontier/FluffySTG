@@ -49,7 +49,7 @@
 	//Normal breach
 	var/turf/W = get_turf(pick(GLOB.generic_event_spawns))
 	var/area/A = get_area(W)
-	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black")
 	var/mob/living/simple_animal/hostile/luna/spawningmonster = new(get_turf(W))
 	breached_monster = spawningmonster
 	addtimer(CALLBACK(src, PROC_REF(BreachEnd), user), breach_length)

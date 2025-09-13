@@ -31,7 +31,7 @@
 	var/list/available_locs = GLOB.generic_event_spawns.Copy()
 
 	for(var/i = 1 to round(boss_amount + boss_player_mod)) // Run the usual simplecommander code
-		var/turf/T = pick(available_locs)
+		var/turf/T = get_turf(pick(available_locs))
 		if(available_locs.len > 1)
 			available_locs -= T
 		for(var/Y in boss_type)
@@ -41,7 +41,7 @@
 		spawngrunts(T, grunt_type, (grunt_amount + grunt_player_mod))
 
 	for(var/i = 1 to round(roamer_amount + boss_player_mod)) // we spawn groups of roamers using boss slots as a base
-		var/turf/T = pick(available_locs)
+		var/turf/T = get_turf(pick(available_locs))
 		if(available_locs.len > 1)
 			available_locs -= T
 		for(var/Y in roamer_type)
@@ -75,7 +75,7 @@
 	var/grunt_player_mod = round(living_player_count() * grunt_player_multiplicator)
 	var/list/available_locs = GLOB.generic_event_spawns.Copy()
 	for(var/i = 1 to round(roamer_amount + boss_player_mod)) // we spawn single roamers using boss slots as a base
-		var/turf/T = pick(available_locs)
+		var/turf/T = get_turf(pick(available_locs))
 		if(available_locs.len > 1)
 			available_locs -= T
 		spawngrunts(T, roamer_type, (roamer_amount + grunt_player_mod))
@@ -100,19 +100,7 @@
 
 /datum/ordeal/gold_dawn/gold_dusk/Run()
 	..()
-	var/turf/T
-	if(bossspawnloc)
-		for(var/turf/D in GLOB.generic_event_spawns)
-			if(istype(get_area(D), bossspawnloc))
-				T = D
-				break
-		if(!T)
-			var/X = get_turf(pick(GLOB.generic_event_spawns))
-			T = get_turf(X)
-			log_game("Failed to spawn [src] in [bossspawnloc]")
-	else
-		var/X = get_turf(pick(GLOB.generic_event_spawns))
-		T = get_turf(X)
+	var/turf/T = get_turf(pick(GLOB.generic_event_spawns))
 	spawngrunts(T, grunt_type, roamer_amount)
 	var/mob/living/simple_animal/hostile/ordeal/C = new bigbosstype(T)
 	ordeal_mobs += C
@@ -155,7 +143,7 @@
 	var/list/available_locs = GLOB.generic_event_spawns.Copy()
 
 	for(var/i = 1 to round(boss_amount + boss_player_mod))
-		var/turf/T = pick(available_locs)
+		var/turf/T = get_turf(pick(available_locs))
 		if(available_locs.len > 1)
 			available_locs -= T
 		var/mob/living/simple_animal/hostile/ordeal/A = new boss_type(T)
@@ -163,7 +151,7 @@
 		A.ordeal_reference = src
 		spawngrunts(T, grunt_type, (grunt_amount + grunt_player_mod))
 
-		T = pick(available_locs)
+		T = get_turf(pick(available_locs))
 		if(available_locs.len > 1)
 			available_locs -= T
 		var/mob/living/simple_animal/hostile/ordeal/B = new boss_2(T)
@@ -171,7 +159,7 @@
 		B.ordeal_reference = src
 		spawngrunts(T, group_2_grunts, (grunt_amount + grunt_player_mod))
 
-		T = pick(available_locs)
+		T = get_turf(pick(available_locs))
 		if(available_locs.len > 1)
 			available_locs -= T
 		var/mob/living/simple_animal/hostile/ordeal/C = new boss_3(T)
@@ -180,7 +168,7 @@
 		spawngrunts(T, group_3_grunts, (grunt_amount + grunt_player_mod))
 
 	for(var/i = 1 to round(roamer_amount + boss_player_mod)) // we spawn groups of roamers using boss slots as a base
-		var/turf/T = pick(available_locs)
+		var/turf/T = get_turf(pick(available_locs))
 		if(available_locs.len > 1)
 			available_locs -= T
 		for(var/Y in roamer_type)

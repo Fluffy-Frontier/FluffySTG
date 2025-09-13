@@ -59,13 +59,13 @@
 			T = get_turf(pick(tables))
 			forceMove(T)
 			var/area/A = get_area(T)
-			show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
+			show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black")
 			return
 	var/list/all_turfs = RANGE_TURFS(5, src)
 	T = get_turf(pick(all_turfs))
 	forceMove(T)
 	var/area/A = get_area(T)
-	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black")
 
 /mob/living/simple_animal/hostile/abnormality/rubber_duck/Initialize()
 	. = ..()

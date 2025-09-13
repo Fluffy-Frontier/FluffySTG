@@ -16,8 +16,7 @@
 	var/abno_amount = length(SSlobotomy_corp.all_abnormality_datums)
 	var/spawn_amount = clamp((abno_amount * 0.5), 1, 7)
 	for(var/y = 1 to spawn_amount) // They get spawned and then instantly teleport
-		var/X = get_turf(pick(GLOB.generic_event_spawns))
-		var/turf/T = get_turf(X)
+		var/turf/T = get_turf(pick(GLOB.generic_event_spawns))
 		var/mob/living/simple_animal/hostile/ordeal/crimson_clown/M = new(T)
 		ordeal_mobs += M
 		M.ordeal_reference = src

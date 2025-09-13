@@ -461,7 +461,7 @@
 	//SLEEP_CHECK_DEATH(1 SECONDS, src)
 	forceMove(get_turf(location))
 	var/area/A = get_area(location)
-	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black", "left", around_player)
+	show_global_blurb(6 SECONDS, "Аномальная активность обнаружена в [A.name]", 2 SECONDS, "white", "black")
 	animate(src, alpha = 255, time = 5)
 	new /obj/effect/temp_visual/guardian/phase/out(location)
 	can_act = TRUE

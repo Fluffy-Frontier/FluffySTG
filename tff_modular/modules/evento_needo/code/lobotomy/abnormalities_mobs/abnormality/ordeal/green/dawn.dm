@@ -70,7 +70,7 @@
 				finishing = FALSE
 				return
 			playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/green/final_stab.ogg', 50, 1)
-			TH.gib()
+			TH.gib(DROP_BRAIN)
 			finishing = FALSE
 
 /mob/living/simple_animal/hostile/ordeal/green_bot/spawn_dust()
@@ -122,8 +122,8 @@
 	desc = "A slim robot with two spears."
 	icon_state = "green_bot_c"
 	icon_living = "green_bot_c"
-	rapid_melee = 3
-	move_to_delay = 4
+	rapid_melee = 5
+	move_to_delay = 7
 	melee_damage_lower = 9
 	melee_damage_upper = 13
 

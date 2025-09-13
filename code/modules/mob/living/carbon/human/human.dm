@@ -766,19 +766,32 @@
 	if(!client || !hud_used)
 		return
 	else
+		var/severity = 0
 		if(hud_used.sanityhealth)
 			if(sanityhealth >= maxSanity)
 				hud_used.sanityhealth.icon_state = "sanity0"
+				severity = 0
 			else if(sanityhealth > maxSanity*0.8)
 				hud_used.sanityhealth.icon_state = "sanity1"
+				severity = 1
 			else if(sanityhealth > maxSanity*0.6)
 				hud_used.sanityhealth.icon_state = "sanity2"
+				severity = 2
 			else if(sanityhealth > maxSanity*0.4)
 				hud_used.sanityhealth.icon_state = "sanity3"
+				severity = 4
 			else if(sanityhealth > maxSanity*0.2)
 				hud_used.sanityhealth.icon_state = "sanity4"
+				severity = 6
 			else
 				hud_used.sanityhealth.icon_state = "sanity5"
+				severity = 7
+		if(severity > 0)
+			overlay_fullscreen("oxy", /atom/movable/screen/fullscreen/oxy, severity)
+		else
+			if(!oxyloss)
+				clear_fullscreen("oxy")
+
 
 /mob/living/carbon/human/fully_heal(heal_flags = HEAL_ALL)
 	if(heal_flags & HEAL_NEGATIVE_MUTATIONS)
