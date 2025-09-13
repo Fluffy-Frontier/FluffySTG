@@ -1,6 +1,6 @@
 // Action signals
 
-///from base of datum/action/proc/Trigger(): (datum/action)
+///from base of datum/action/proc/Trigger(trigger_flags, atom/target): (datum/action)
 #define COMSIG_ACTION_TRIGGER "action_trigger"
 	// Return to block the trigger from occurring
 	#define COMPONENT_ACTION_BLOCK_TRIGGER (1<<0)
@@ -52,5 +52,5 @@
 /// From /datum/action/cooldown/mob_cooldown/capture_photo/Activate():
 #define COMSIG_ACTION_PHOTO_CAPTURED "action_photo_captured"
 
-/// From /datum/action/vehicle/ridden/wheelchair/bell/Trigger():
+/// From /datum/action/vehicle/ridden/wheelchair/bell/Trigger(trigger_flags, atom/target):
 #define COMSIG_WHEELCHAIR_BELL_RANG "wheelchair_bell_rang"

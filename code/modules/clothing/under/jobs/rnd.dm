@@ -2,6 +2,7 @@
 	icon = 'icons/obj/clothing/under/rnd.dmi'
 	worn_icon = 'icons/mob/clothing/under/rnd.dmi'
 	armor_type = /datum/armor/clothing_under/science
+	class = CLOTHING_SCIENCE
 
 /datum/armor/clothing_under/science
 	bio = 50

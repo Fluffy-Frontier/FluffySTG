@@ -34,6 +34,11 @@
 	var/toxloss = 0
 	///Burn damage caused by being way too hot, too cold or burnt.
 	var/fireloss = 0
+	/// Boolean for sanity points loss effects
+	var/sanity_lost = FALSE
+	var/sanityhealth = 100 // Sanity health. Humans go insane when it reaches 0
+	var/sanityloss = 0
+	var/maxSanity = 100
 
 	/// The movement intent of the mob (run/wal)
 	var/move_intent = MOVE_INTENT_RUN
@@ -241,3 +246,8 @@
 	/// First element is the current martial art - any other elements are "saved" for if they unlearn the first one
 	/// Reference handling is done by the martial arts themselves
 	var/list/datum/martial_art/martial_arts
+
+	var/datum/dialog/my_dialog
+
+	var/major_clothing_class
+	var/list/clothing_classes = list()

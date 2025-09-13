@@ -37,7 +37,7 @@
 	. += "\n"
 	. += "[src] is currently in <b>[ammo_type[select]:select_name]</b> mode."
 
-/obj/item/gun/energy/blueshield/proc/eject_cell(mob/user)
+/obj/item/gun/energy/blueshield/eject_cell(mob/user)
 	if(has_empty_cell())
 		return
 	cell.update_appearance()

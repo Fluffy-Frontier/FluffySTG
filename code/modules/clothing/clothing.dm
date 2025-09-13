@@ -56,6 +56,10 @@
 	// such that you never actually cared about checking if something is *edible*.
 	var/obj/item/food/clothing/moth_snack
 
+	//Класс одежды, зависит от департамента
+	var/class = CLOTHING_BASIC
+	var/class_value = 0
+
 /obj/item/clothing/Initialize(mapload)
 	if(clothing_flags & VOICEBOX_TOGGLABLE)
 		actions_types += list(/datum/action/item_action/toggle_voice_box)
@@ -249,6 +253,8 @@
 				if(user.vars[variable] == user_vars_to_edit[variable]) //Is it still what we set it to? (if not we best not change it)
 					user.vars[variable] = user_vars_remembered[variable]
 		user_vars_remembered = initial(user_vars_remembered) // Effectively this sets it to null.
+	if(class)
+		user.remove_clothing_class(src)
 
 /obj/item/clothing/equipped(mob/living/user, slot)
 	. = ..()
@@ -267,6 +273,8 @@
 				if(variable in user.vars)
 					LAZYSET(user_vars_remembered, variable, user.vars[variable])
 					user.vv_edit_var(variable, user_vars_to_edit[variable])
+		if(class)
+			user.add_clothing_class(src)
 
 // If the item is a piece of clothing and is being worn, make sure it updates on the player
 /obj/item/clothing/update_greyscale()

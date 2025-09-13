@@ -892,3 +892,91 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	else
 		. = invoked_callback.Invoke()
 	usr = temp
+
+/**
+ * Used to apply damage to all targets in a turf.
+ * Allows for damage of vehicles and structures as options.
+ * vars:
+ * * target (optional) The targetted turf. If none is set it looks for all in the source's turf.
+ * * hit_list (optional) A list of things that have been hit. Will not be hit multiple times.
+ * * damage (required) How much damage is being dealt.
+ * * damage_type (required) What type of damage is being dealt. Defaults to BRUTE.
+ * * def_zone (optional) What body part we're hitting.
+ * * check_faction (optional) Whether or not we care about the faction of the units in the area. If TRUE, we don't harm allies.
+ * * exact_faction_match (optional) Pointless to set if check_faction isn't set. Do we care about the factions being an exact match?
+ * * hurt_mechs (optional) If this damage effect hurts mechs.
+ * * mech_damage (optional) If you want a different amount of damage dealt to mechs
+ * * hurt_hidden (optional) If this damage hits people hiding in lockers or boxes.
+ * * hurt_structure (optional) If this damage applies to structures as well.
+ * * break_not_destroy (optional) If this is TRUE, then the damage will not DESTROY structures, only break them.
+ * * attack_direction (optional) Is the direction of the attack relative to the mecha that gets hit by this attack, for directional armor.
+ *
+ * returns:
+ * * hit_list - A list containing all things hit by this proc.
+ */
+/mob/proc/HurtInTurf(turf/target, list/hit_list = list(), damage = 0, damage_type = BRUTE, def_zone = null, check_faction = FALSE, exact_faction_match = FALSE, hurt_mechs = FALSE, mech_damage = 0, hurt_hidden = FALSE, hurt_structure = FALSE, break_not_destroy = FALSE, attack_direction = null)
+	// Types that should never be hit by HurtInTurf
+	var/static/list/exclude = typecacheof(list(/obj/structure/disposalpipe, /obj/structure/lattice, /obj/machinery/cryopod, /obj/structure/sign, /obj/machinery/button, /obj/machinery/light, /obj/structure/extinguisher_cabinet, /obj/structure/fans/tiny, /obj/machinery/requests_console))
+	var/static/list/hiding_places = typecacheof(list(/obj/structure/closet, /obj/structure/bodycontainer, /obj/machinery/disposal, /obj/machinery/cryopod, /obj/machinery/sleeper, /obj/machinery/fat_sucker))
+	. = list()
+	. += hit_list
+	target = isturf(target) ? target : get_turf(src)
+	for(var/mob/living/L in target)
+		if(L == src)
+			continue
+		if(L in .)
+			continue
+		if(is_type_in_typecache(L, exclude))
+			continue
+		if(check_faction)
+			if(faction_check_atom(L, exact_faction_match))
+				continue
+		if(damage)
+			L.apply_damage(damage, damage_type, def_zone, L.run_armor_check(def_zone, damage_type), FALSE, TRUE)
+		. += L
+	if(hurt_mechs || hurt_hidden || hurt_structure)
+		for(var/obj/O in target)
+			if(hurt_mechs && ismecha(O))
+				var/obj/vehicle/sealed/mecha/M = O
+				if(M.resistance_flags & INDESTRUCTIBLE)
+					continue
+				if(is_type_in_typecache(M, exclude))
+					continue
+				if(M in .)
+					continue
+				if(check_faction && M.occupants && M.occupants.len > 0)
+					if(faction_check_atom(M.occupants[1], exact_faction_match))
+						continue
+				var/mechDamage = mech_damage ? mech_damage : damage
+				if(mechDamage)
+					M.take_damage(mechDamage, damage_type, attack_dir = attack_direction)
+				. += M
+				continue
+			if(hurt_hidden && is_type_in_typecache(O, hiding_places))
+				for(var/mob/living/L in O)
+					if(L == src)
+						continue
+					if(L in .)
+						continue
+					if(is_type_in_typecache(L, exclude))
+						continue
+					if(check_faction)
+						if(faction_check_atom(L, exact_faction_match))
+							continue
+					if(damage)
+						L.apply_damage(damage, damage_type, def_zone, L.run_armor_check(def_zone, damage_type), FALSE, TRUE)
+					. += L
+			if(hurt_structure && (isstructure(O) || ismachinery(O)))
+				if(O.resistance_flags & INDESTRUCTIBLE)
+					continue
+				if(is_type_in_typecache(O, exclude))
+					continue
+				if(O in .)
+					continue
+				if(damage)
+					var/dealt_damage = damage
+					if(break_not_destroy && (O.atom_integrity - damage <= 0))
+						dealt_damage = O.atom_integrity - 1
+					O.take_damage(dealt_damage, damage_type)
+				. += O
+	return

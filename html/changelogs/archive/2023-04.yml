@@ -255,7 +255,7 @@
   - bugfix: fixed that you can remove capacitor and scanmod from mech without proper
       maintenance steps. Now you can't
   - bugfix: The prey pod ruin no longer has two corpses, only one.
-  - code_imp: The xeno_spawn landmark is now the generic_maintenance_landmark landmark.
+  - code_imp: The generic_event_spawns landmark is now the generic_maintenance_landmark landmark.
   - bugfix: Certain midrounds will now check for atmos safety before spawning.
   - bugfix: West sided version of red alert fire alarm is now looks normally.
   - bugfix: thermo machines can be ctrl dragged again
