@@ -613,6 +613,7 @@ SUBSYSTEM_DEF(dynamic)
 	if(num_dead + num_alive <= 0)
 		return 0
 
+	/* // FLUFFY FRONTIER EDIT START - dynamic changes - ORIGINAL:
 	chance += 100 - (200 * (num_dead / (num_alive + num_dead)))
 	if(num_antags < 0)
 		chance += 50
@@ -620,6 +621,10 @@ SUBSYSTEM_DEF(dynamic)
 	// Reduced chance before lights start
 	if(!COOLDOWN_FINISHED(src, light_ruleset_start))
 		chance *= 0.2
+	*/
+	// У нас мало людей с включенными префами на антагонизм, поэтому каждый подобный человек на вес золота и ваниальная формула не подходит
+	chance = min((failed_latejoins * 25 + 75), 100) // 75 Базовый шанс, добивается до 100 если попытка провалена
+	// FLUFFY FRONTIER EDIR END
 
 	return chance
 
