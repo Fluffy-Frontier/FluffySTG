@@ -7,7 +7,7 @@
 	icon_state = "tingtang_shank"
 	inhand_icon_state = "tingtang_shank"
 	force = 27
-	attack_speed = 1
+	attack_speed = 6
 	damtype = BRUTE //Almost everyone and their mother in this god forsaken district does something with sanity.
 
 	attack_verb_continuous = list("slices", "gashes", "stabs")
@@ -28,7 +28,7 @@
 	icon_state = "tingtang_cleaver"
 	inhand_icon_state = "tingtang_cleaver"
 	force = 40
-	attack_speed = 5.5
+	attack_speed = 6.5
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/blade5.ogg'
 
 /obj/item/ego_weapon/city/ting_tang/pipe
@@ -37,7 +37,7 @@
 	icon_state = "tingtang_pipe"
 	inhand_icon_state = "tingtang_pipe"
 	force = 54
-	attack_speed = 2
+	attack_speed = 7
 	attack_verb_continuous = list("smacks", "bludgeons", "beats")
 	attack_verb_simple = list("smack", "bludgeon", "beat")
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/baton1.ogg'
@@ -49,7 +49,7 @@
 	inhand_icon_state = "tingtang_knife"
 	force = 37
 	swingstyle = WEAPONSWING_LARGESWEEP
-	attack_speed = 1
+	attack_speed = 6
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/knife1.ogg'
 
 //Los Mariachis - Grade 7 with poise crits, white version of Kurokumo.
@@ -126,7 +126,7 @@
 	icon_state = "dualmaracas"
 	inhand_icon_state = "dualmaracas"
 	force = 19		//Double the maracas twice the attack speed.
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 
 //Pre-nerf Aida, the real prize of J-corp. Grade 5
 /obj/item/ego_weapon/city/mariachi/dual/boss

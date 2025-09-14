@@ -6,7 +6,7 @@
 	special = "Deal double damage to mobs of the backstreets. This weapon also stuns target humans, if the user and the target human are alone."
 	force = 35
 	reach = 2
-	attack_speed = 1
+	attack_speed = 6
 	stuntime = 5
 	damtype = BRUTE
 	attack_verb_continuous = list("whacks", "slashes")

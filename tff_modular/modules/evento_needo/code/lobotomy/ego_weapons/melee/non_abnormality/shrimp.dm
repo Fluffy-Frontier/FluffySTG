@@ -7,7 +7,7 @@
 	icon_state = "sodaminigun"
 	inhand_icon_state = "sodaminigun"
 	force = 31
-	attack_speed = 5.8
+	attack_speed = 7
 	projectile_path = /obj/projectile/ego_bullet/ego_soda
 	weapon_weight = WEAPON_HEAVY
 	drag_slowdown = 3

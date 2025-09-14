@@ -76,10 +76,11 @@
 	user.visible_message("<span class='danger'>[user] jumps.</span>", \
 					"<span class='warning'> I jump at the [loc]!</span>")
 	user.adjustStaminaLoss(rand(30,50))
+	user.throw_at(target, 3, 1, user, spin = (HAS_TRAIT(user, TRAIT_CLUMSY) ? TRUE : FALSE))
 	if(prob(60))
 		user.Knockdown(1 SECONDS)
-	user.throw_at(target, 3, 1, user, spin = (HAS_TRAIT(user, TRAIT_CLUMSY) ? TRUE : FALSE))
-	user.add_movespeed_modifier(/datum/movespeed_modifier/jump_slowdown)
+	else
+		user.add_movespeed_modifier(/datum/movespeed_modifier/jump_slowdown)
 	addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living/carbon/human, remove_movespeed_modifier), /datum/movespeed_modifier/jump_slowdown), 1 SECONDS)
 
 /datum/movespeed_modifier/jump_slowdown

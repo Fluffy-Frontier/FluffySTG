@@ -8,7 +8,7 @@
 	special = "Use in hand to buff your defense, and those of everyone around you."
 	icon_state = "zwei"
 	force = 55
-	attack_speed = 2
+	attack_speed = 7
 	damtype = BRUTE
 	swingstyle = WEAPONSWING_LARGESWEEP
 
@@ -47,7 +47,7 @@
 	desc = "A shortsword used by some zwei personnel."
 	icon_state = "zwei_mini"
 	force = 32
-	attack_speed = 1
+	attack_speed = 6
 
 //Noreqs for the ERT
 /obj/item/ego_weapon/city/zweihander/noreq
@@ -64,7 +64,7 @@
 	icon_state = "zwei_baton"
 	inhand_icon_state = "zwei_baton"
 	force = 40
-	attack_speed = 2
+	attack_speed = 7
 	damtype = BRUTE
 
 	attack_verb_continuous = list("bashes", "crushes")
@@ -90,7 +90,7 @@
 	inhand_icon_state = "zweiwest"
 	force = 50
 	reach = 2
-	attack_speed = 2
+	attack_speed = 7
 	damtype = BRUTE
 	swingstyle = WEAPONSWING_LARGESWEEP
 	var/defense_buff = 0.8

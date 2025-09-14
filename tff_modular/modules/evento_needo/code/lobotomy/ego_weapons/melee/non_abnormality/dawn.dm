@@ -50,7 +50,7 @@
 	icon_state = "yuna"
 	inhand_icon_state = "yuna"
 	force = 40		//Bigger range, less force
-	attack_speed = 5.5
+	attack_speed = 6.5
 	aoe_range = 5
 	swingstyle = WEAPONSWING_SMALLSWEEP
 
@@ -61,7 +61,7 @@
 	icon_state = "salvador"
 	inhand_icon_state = "salvador"
 	force = 50		//Bigger range, less force
-	attack_speed = 2
+	attack_speed = 7
 	aoe_range = 7
 	hitsound = 'sound/items/weapons/bladeslice.ogg'
 	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")

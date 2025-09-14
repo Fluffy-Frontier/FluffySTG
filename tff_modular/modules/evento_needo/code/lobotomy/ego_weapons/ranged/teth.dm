@@ -10,7 +10,7 @@
 	inhand_icon_state = "match"
 	special = "This weapon does AOE damage."
 	force = 23
-	attack_speed = 5.8
+	attack_speed = 7
 	projectile_path = /obj/projectile/ego_bullet/ego_match
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 15
@@ -185,7 +185,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	force = 18
-	attack_speed = 5.3
+	attack_speed = 6.5
 	projectile_path = /obj/projectile/ego_bullet/ego_patriot
 	pellets = 4
 	variance = 25
@@ -275,7 +275,7 @@
 	inhand_icon_state = "adjustment"
 	special = "This gun deals more damage to panicking targets."
 	force = 18
-	attack_speed = 5.3
+	attack_speed = 6.5
 	damtype = BRUTE
 	projectile_path = /obj/projectile/ego_bullet/ego_adjustment
 	weapon_weight = WEAPON_HEAVY

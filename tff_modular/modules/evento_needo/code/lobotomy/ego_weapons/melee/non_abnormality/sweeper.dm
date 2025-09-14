@@ -30,11 +30,11 @@
 	desc = "A hooksword cut off a sweeper captain. When night comes in the backstreets..."
 	icon_state = "sweeper_hooksword"
 	force = 55
-	attack_speed = 5.6
+	attack_speed = 6.5
 
 /obj/item/ego_weapon/city/sweeper/claw
 	name = "sweeper claw"
 	desc = "A claw cut off a sweeper captain. When night comes in the backstreets..."
 	icon_state = "sweeper_claw"
 	force = 24
-	attack_speed = 0.6
+	attack_speed = CLICK_CD_RAPID

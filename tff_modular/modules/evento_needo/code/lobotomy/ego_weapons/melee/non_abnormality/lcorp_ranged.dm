@@ -92,7 +92,7 @@
 	inhand_icon_state = "pistol"
 	special = "This weapon has pinpoint accuracy when dual wielded."
 	projectile_path = /obj/projectile/ego_bullet/lcorp/pistol
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	force = 6
 	fire_delay = 10
 	shotsleft = 7
@@ -113,7 +113,7 @@
 	inhand_icon_state = "automatic"
 	w_class = WEIGHT_CLASS_NORMAL
 	projectile_path = /obj/projectile/ego_bullet/lcorp/automatic
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	force = 6
 	fire_sound = 'sound/items/weapons/gun/pistol/shot.ogg'
 	vary_fire_sound = FALSE
@@ -138,7 +138,7 @@
 	worn_icon_state = "gun"
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	force = 6
 	w_class = WEIGHT_CLASS_NORMAL
 	projectile_path = /obj/projectile/ego_bullet/ego_clerk

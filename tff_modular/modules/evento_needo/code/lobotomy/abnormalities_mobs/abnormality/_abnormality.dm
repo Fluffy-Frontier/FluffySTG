@@ -173,6 +173,15 @@
 	if(IsContained())
 		qliphoth_change(-1)
 
+/mob/living/simple_animal/hostile/abnormality/apply_damage(damage, damagetype, def_zone, blocked, forced, spread_damage, wound_bonus, exposed_wound_bonus, sharpness, attack_direction, attacking_item, wound_clothing)
+	if(is_ego_weapon(attacking_item))
+		damage *= 1.5
+	return ..()
+
+/mob/living/simple_animal/hostile/abnormality/bullet_act(obj/projectile/proj)
+	if(istype(proj, /obj/projectile/ego_bullet))
+		proj.damage *= 1.5
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/handle_automated_movement()
 	if(!AIStatus)
@@ -426,6 +435,7 @@
 	current_jobs += PROC_REF(random_do_afters)
 	if(!LAZYLEN(current_jobs))
 		return
+	shuffle_inplace(current_jobs) //Временное решение из-за малого количества работ
 	job_callback = CALLBACK(src, current_jobs[1], user)
 	job_callback?.Invoke()
 
@@ -498,16 +508,19 @@
 	return
 
 /mob/living/simple_animal/hostile/abnormality/proc/good_job_effect()
+	playsound(loc, 'sound/machines/ping.ogg', 50, TRUE)
 	return
 
 /mob/living/simple_animal/hostile/abnormality/proc/neutral_job_effect()
 	SHOULD_CALL_PARENT(TRUE)
+	playsound(loc, 'sound/machines/creak.ogg', 60, TRUE)
 	if(prob(50))
 		result_points -= fear_level * 3
 	return
 
 /mob/living/simple_animal/hostile/abnormality/proc/bad_job_effect()
 	SHOULD_CALL_PARENT(TRUE)
+	playsound(loc, 'sound/machines/synth/synth_no.ogg', 30, TRUE)
 	result_points -= fear_level * 4
 	return
 

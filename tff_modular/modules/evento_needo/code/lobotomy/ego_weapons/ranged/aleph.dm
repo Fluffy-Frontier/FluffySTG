@@ -11,7 +11,7 @@
 
 	force = 33
 	damtype = BRUTE
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 
 	projectile_path = /obj/projectile/ego_bullet/star
 	weapon_weight = WEAPON_HEAVY

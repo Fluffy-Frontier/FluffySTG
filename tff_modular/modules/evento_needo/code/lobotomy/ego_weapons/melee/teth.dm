@@ -15,7 +15,7 @@
 	force = 33
 	reach = 2		//Has 2 Square Reach.
 	stuntime = 5	//Longer reach, gives you a short stun.
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 	attack_verb_continuous = list("pokes", "jabs", "tears", "lacerates", "gores")
 	attack_verb_simple = list("poke", "jab", "tear", "lacerate", "gore")
@@ -39,7 +39,7 @@
 	desc = "Don't you want your cares to go away?"
 	icon_state = "lutemia"
 	force = 22
-	attack_speed = 1
+	attack_speed = 6
 	damtype = BRUTE
 	attack_verb_continuous = list("pokes", "jabs", "tears", "lacerates", "gores")
 	attack_verb_simple = list("poke", "jab", "tear", "lacerate", "gore")
@@ -61,7 +61,7 @@
 	desc = "It is likely able to hear, touch, smell, as well as see. And most importantly, taste."
 	icon_state = "eyes"
 	force = 35 //Still less DPS, replaces baseball bat
-	attack_speed = 5.6
+	attack_speed = 6.5
 	damtype = BRUTE
 	knockback = KNOCKBACK_LIGHT
 	attack_verb_continuous = list("beats", "smacks")
@@ -74,7 +74,7 @@
 	special = "Use this weapon in hand to dodgeroll."
 	icon_state = "wrist"
 	force = 12
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	swingstyle = WEAPONSWING_LARGESWEEP
 	damtype = BRUTE
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/knife2.ogg'
@@ -98,7 +98,7 @@
 	icon_state = "regret"
 	force = 38				//Lots of damage, way less DPS
 	damtype = BRUTE
-	attack_speed = 2 // Really Slow. This is the slowest teth we have, +0.4 to Eyes 1.6
+	attack_speed = 7 // Really Slow. This is the slowest teth we have, +0.4 to Eyes 1.6
 	attack_verb_continuous = list("smashes", "bludgeons", "crushes")
 	attack_verb_simple = list("smash", "bludgeon", "crush")
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/club3.ogg'
@@ -132,7 +132,7 @@
 		However, the claws are actually quite durable and sharp."
 	icon_state = "cute"
 	force = 13
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	damtype = BRUTE
 	swingstyle = WEAPONSWING_LARGESWEEP
 	hitsound = 'sound/items/weapons/slashmiss.ogg'
@@ -157,7 +157,7 @@
 	special = "Use this weapon in hand to take damage and teleport to a random department."
 	icon_state = "sorrow"
 	force = 32					//Bad DPS, can teleport
-	attack_speed = 5.5
+	attack_speed = 6.5
 	damtype = BRUTE
 	attack_verb_continuous = list("cleaves", "cuts")
 	attack_verb_simple = list("cleave", "cut")
@@ -216,7 +216,7 @@
 	var/icon_on = "hearth_glow"
 	var/icon_off = "hearth"
 	force = 18
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 	attack_verb_continuous = list("swipes", "slashes")
 	attack_verb_simple = list("swipe", "slash")
@@ -274,7 +274,7 @@
 	Automatic mode places traps that trigger when enemies walk over them. Use in hand to switch between modes."
 	icon_state = "lantern"
 	force = 30 //not 8 black damage any more but still less than normal teth tier dps.
-	attack_speed = 5.5
+	attack_speed = 6.5
 	damtype = BRUTE
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/gen1.ogg'
 	var/mode = LANTERN_MODE_REMOTE
@@ -388,7 +388,7 @@
 	desc = "It hits just right! Let's help ourselves to some wine when we come back!"
 	icon_state = "sloshing"
 	force = 38
-	attack_speed = 2
+	attack_speed = 7
 	damtype = BRUTE
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/fairygentleman/ego_sloshing.ogg'
 	attack_verb_continuous = list("smacks", "strikes", "beats")
@@ -425,7 +425,7 @@
 	worn_icon = 'icons/obj/clothing/belt_overlays.dmi'
 	worn_icon_state = "capote"
 	force = 22
-	attack_speed = 1
+	attack_speed = 6
 	damtype = BRUTE
 	attack_verb_continuous = list("pokes", "jabs", "tears", "lacerates", "gores")
 	attack_verb_simple = list("poke", "jab", "tear", "lacerate", "gore")
@@ -444,7 +444,7 @@
 	special = "This weapon gains 1 poise for every attack. 1 poise gives you a 2% chance to crit at 3x damage, stacking linearly. Critical hits reduce poise to 0."
 	icon_state = "fourleaf_clover"
 	force = 12
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	swingstyle = WEAPONSWING_LARGESWEEP
 	damtype = BRUTE
 	attack_verb_continuous = list("slices", "slashes", "stabs")
@@ -478,7 +478,7 @@
 	icon_state = "zauberhorn"
 	force = 10
 	damtype = BRUTE
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	attack_verb_continuous = list("cuts", "slices")
 	attack_verb_simple = list("cuts", "slices")
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/club2.ogg'
@@ -522,7 +522,7 @@
 	desc = "It's very shocking."
 	icon_state = "sanitizer"
 	force = 35
-	attack_speed = 5.6
+	attack_speed = 6.5
 	damtype = BRUTE
 	knockback = KNOCKBACK_LIGHT
 	attack_verb_continuous = list("beats", "smacks")
@@ -540,7 +540,7 @@
 	force = 22
 	reach = 2		//Has 2 Square Reach.
 	stuntime = 6	//Longer reach, gives you a short stun.
-	attack_speed = 5.8// really slow
+	attack_speed = 7// really slow
 	damtype = BRUTE
 	attack_verb_continuous = list("bludgeons", "whacks")
 	attack_verb_simple = list("bludgeon", "whack")
@@ -556,7 +556,7 @@
 	force = 18
 	inhand_x_dimension = 96
 	inhand_y_dimension = 96
-	attack_speed = 2
+	attack_speed = 7
 	attack_verb_continuous = list("stabs", "impales")
 	attack_verb_simple = list("stab", "impale")
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/ego/spear1.ogg'
@@ -572,7 +572,7 @@
 	desc = "Many would speak her name."
 	icon_state = "kikimora"
 	force = 35
-	attack_speed = 5.6
+	attack_speed = 6.5
 	damtype = BRUTE
 	attack_verb_continuous = list("beats", "smacks")
 	attack_verb_simple = list("beat", "smack")
@@ -584,7 +584,7 @@
 	icon_state = "denial"
 	force = 36
 	damtype = BRUTE
-	attack_speed = 5.5
+	attack_speed = 6.5
 	attack_verb_continuous = list("smashes", "bludgeons", "crushes")
 	attack_verb_simple = list("smash", "bludgeon", "crush")
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/club3.ogg'
@@ -615,7 +615,7 @@
 	icon_state = "white_gossypium"
 	force = 25
 	reach = 4 //has 4 square reach
-	attack_speed = 2.2 //a TETH whip should probably be slower than Eris
+	attack_speed = 7.2 //a TETH whip should probably be slower than Eris
 	damtype = BRUTE
 	attack_verb_continuous = list("whips", "lashes", "tears")
 	attack_verb_simple = list("whip", "lash", "tear")

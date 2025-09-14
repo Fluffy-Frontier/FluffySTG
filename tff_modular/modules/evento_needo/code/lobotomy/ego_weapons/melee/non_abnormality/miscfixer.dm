@@ -5,7 +5,7 @@
 	icon_state = "wedge"
 	force = 74
 	reach = 2		//Has 2 Square Reach.
-	attack_speed = 1
+	attack_speed = 6
 	stuntime = 5
 	damtype = BRUTE
 
@@ -30,7 +30,7 @@
 	desc = "A heftier variant of the more common fixer blade."
 	icon_state = "fixer_greatsword"
 	force = 36
-	attack_speed = 2
+	attack_speed = 7
 	damtype = BRUTE
 
 	hitsound = 'sound/items/weapons/genhit3.ogg'
@@ -43,7 +43,7 @@
 	desc = "A poorly balanced hammer used by many fixers."
 	icon_state = "fixer_hammer"
 	force = 32
-	attack_speed = 5.4
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 
 	attack_verb_continuous = list("bashes", "clubs")
@@ -56,7 +56,7 @@
 	icon = 'icons/obj/service/bureaucracy.dmi'
 	icon_state = "pen"
 	force = 0
-	attack_speed = 0.9
+	attack_speed = CLICK_CD_RAPID
 	damtype = BRUTE
 
 	attack_verb_continuous = list("pokes", "jabs", "tears", "lacerates", "gores")

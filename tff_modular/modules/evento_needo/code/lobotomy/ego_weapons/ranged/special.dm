@@ -15,7 +15,7 @@
 	icon_state = "sodashotgun"
 	inhand_icon_state = "sodalong"
 	force = 18
-	attack_speed = 5.3
+	attack_speed = 6.7
 	projectile_path = /obj/projectile/ego_bullet/ego_soda
 	pellets = 3
 	variance = 12

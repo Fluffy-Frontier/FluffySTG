@@ -6,7 +6,7 @@
 	desc = "A polished, well-kept longsword with a cruel but effective edge, belonging to Dong-hwan. The serrations are to catch the wound and push out."
 	icon_state = "donghwan"
 	force = 60
-	attack_speed = 0.8
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 	swingstyle = WEAPONSWING_LARGESWEEP
 

@@ -6,7 +6,7 @@
 	special = "Use this weapon in hand to cut your HP by 20%. Next attack within 5 seconds deals 3x damage. This weapon fits in an EGO belt."
 	icon_state = "jeong_fixer"
 	force = 30
-	attack_speed = 0.7
+	attack_speed = CLICK_CD_RAPID
 	damtype = BRUTE
 	swingstyle = WEAPONSWING_LARGESWEEP
 
@@ -46,4 +46,4 @@
 	desc = "A long blade, lightweight and easy to move with. It would be simple to break up a fight with this."
 	icon_state = "jeong_long"
 	force = 70
-	attack_speed = 5.5
+	attack_speed = 6.5

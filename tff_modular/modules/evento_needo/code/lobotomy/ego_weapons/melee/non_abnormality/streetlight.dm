@@ -5,7 +5,7 @@
 	desc = "A greatsword used by a fixer with big shoes to fill.'Maybe... I should have told her how I felt.'"
 	icon_state = "streetlight_greatsword"
 	force = 36
-	attack_speed = 2
+	attack_speed = 7
 	swingstyle = WEAPONSWING_LARGESWEEP
 	damtype = BRUTE
 
@@ -21,7 +21,7 @@
 	desc = "A yellow and black bat, its metal is warm to the touch. Is it with the warmth of friends, or the hatred of those who've had something taken from them?"
 	icon_state = "streetlight_bat"
 	force = 30
-	attack_speed = 5.5
+	attack_speed = 6.5
 	damtype = BRUTE
 
 	attack_verb_continuous = list("bashes", "crushes")

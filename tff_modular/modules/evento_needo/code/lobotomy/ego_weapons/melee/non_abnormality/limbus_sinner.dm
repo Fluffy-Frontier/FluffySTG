@@ -8,7 +8,7 @@
 	lefthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/limbus_lefthand.dmi'
 	righthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/limbus_righthand.dmi'
 	force = 7
-	attack_speed = 0.3
+	attack_speed = 6
 	damtype = BRUTE
 	hitsound = 'sound/items/weapons/bladeslice.ogg'
 	var/dodgelanding
@@ -33,7 +33,7 @@
 	lefthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/limbus_lefthand.dmi'
 	righthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/limbus_righthand.dmi'
 	force = 33
-	attack_speed = 5.6
+	attack_speed = 6.5
 	damtype = BRUTE
 	swingstyle = WEAPONSWING_LARGESWEEP
 
@@ -62,7 +62,7 @@
 	force = 38
 	reach = 2		//Has 2 Square Reach.
 	stuntime = 5
-	attack_speed = 5.6// really slow
+	attack_speed = 6.5// really slow
 	damtype = BRUTE
 
 	attack_verb_continuous = list("bludgeons", "whacks")
@@ -78,7 +78,7 @@
 	righthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/limbus_righthand.dmi'
 	hitsound = 'sound/items/weapons/bladeslice.ogg'
 	force = 12
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	damtype = BRUTE
 	swingstyle = WEAPONSWING_LARGESWEEP
 
@@ -104,7 +104,7 @@
 	lefthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/limbus_lefthand.dmi'
 	righthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/limbus_righthand.dmi'
 	force = 11
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	damtype = BRUTE
 
 
@@ -117,7 +117,7 @@
 	righthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/limbus_righthand.dmi'
 	force = 22
 	reach = 2		//Has 2 Square Reach.
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 
 	attack_verb_continuous = list("pokes", "jabs", "tears", "lacerates", "gores")
@@ -132,7 +132,7 @@
 	lefthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/limbus_lefthand.dmi'
 	righthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/limbus_righthand.dmi'
 	force = 35
-	attack_speed = 5.6
+	attack_speed = 6.5
 	damtype = BRUTE
 
 	attack_verb_continuous = list("beats", "smacks")
@@ -157,7 +157,7 @@
 	force = 33				//Lots of damage, way less DPS
 	damtype = BRUTE
 
-	attack_speed = 2 // Really Slow
+	attack_speed = 7 // Really Slow
 	attack_verb_continuous = list("smashes", "bludgeons", "crushes")
 	attack_verb_simple = list("smash", "bludgeon", "crush")
 
@@ -214,7 +214,7 @@
 	righthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/limbus_righthand.dmi'
 	force = 22
 	reach = 2		//Has 2 Square Reach.
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 
 	attack_verb_continuous = list("pokes", "jabs", "tears", "lacerates", "gores")
@@ -233,7 +233,7 @@
 	damtype = BRUTE
 	swingstyle = WEAPONSWING_LARGESWEEP
 
-	attack_speed = 0.8
+	attack_speed = CLICK_CD_MELEE
 	attack_verb_continuous = list("cuts", "slices")
 	attack_verb_simple = list("cuts", "slices")
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/ego/sword2.ogg'
@@ -283,7 +283,7 @@
 	force = 38				//Lots of damage, way less DPS
 	damtype = BRUTE
 
-	attack_speed = 2 // Really Slow
+	attack_speed = 7 // Really Slow
 	attack_verb_continuous = list("smashes", "bludgeons", "crushes")
 	attack_verb_simple = list("smash", "bludgeon", "crush")
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/ego/justitia2.ogg'

@@ -90,9 +90,11 @@ SUBSYSTEM_DEF(lobotomy_corp)
 /datum/controller/subsystem/lobotomy_corp/proc/OrdealEvent()
 	if(!next_ordeal)
 		return FALSE
-	//if(ROUND_TIME() < world.time + 30 MINUTES) спим первые 30 минут раунда
+	//if(ROUND_TIME() < world.time + 30 MINUTES) //спим первые 30 минут раунда
 	//	return
 	if(GLOB.alive_player_list.len < 25 || GLOB.dead_player_list.len > (GLOB.alive_player_list.len / 3))
+		return
+	if(current_ordeals.len > 2)
 		return
 	next_ordeal.Run()
 	next_ordeal = null

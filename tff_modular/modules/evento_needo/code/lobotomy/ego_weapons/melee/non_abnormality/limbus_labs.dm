@@ -7,7 +7,7 @@
 	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/limbus_weapons.dmi'
 	fire_sound = 'sound/items/weapons/gun/pistol/shot.ogg'
 	force = 8
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	weapon_weight = WEAPON_LIGHT
 	projectile_path = /obj/projectile/ego_bullet/tendamage
 	shotsleft = 13
@@ -22,7 +22,7 @@
 	inhand_icon_state = "lccb_pistol"
 	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/limbus_weapons.dmi'
 	force = 8
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	fire_sound = 'sound/items/weapons/gun/pistol/shot.ogg'
 	weapon_weight = WEAPON_LIGHT
 	projectile_path = /obj/projectile/ego_bullet/tendamage
@@ -40,7 +40,7 @@
 	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/limbus_weapons.dmi'
 	fire_sound = 'sound/items/weapons/gun/pistol/shot.ogg'
 	force = 8
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	weapon_weight = WEAPON_HEAVY
 	projectile_path = /obj/projectile/ego_bullet/tendamage
 	projectile_damage_multiplier = 6 //60 damage per bullet
@@ -133,7 +133,7 @@
 	icon_state = "lccb_baton"
 	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/limbus_weapons.dmi'
 	force = 54	//You're hitting shit with your baton
-	attack_speed = 2
+	attack_speed = 7
 	damtype = BRUTE
 	attack_verb_continuous = list("bashes", "clubs")
 	attack_verb_simple = list("bashes", "clubs")

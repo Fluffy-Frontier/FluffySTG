@@ -45,7 +45,7 @@
 	icon_state = "wcorp_axe"
 	inhand_icon_state = "wcorp_axe"
 	force = 67
-	attack_speed = 2
+	attack_speed = 7
 	attack_verb_continuous = list("cleaves", "cuts")
 	attack_verb_simple = list("cleave", "cut")
 
@@ -67,7 +67,7 @@
 	inhand_icon_state = "wcorp_spear"
 	force = 60
 	reach = 2
-	attack_speed = 1
+	attack_speed = 6
 	stuntime = 5
 	attack_verb_continuous = list("slashes", "pokes")
 	attack_verb_simple = list("slash", "poke")
@@ -93,7 +93,7 @@
 	icon_state = "wcorp_dagger"
 	inhand_icon_state = "wcorp_dagger"
 	force = 22
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 
 	attack_verb_continuous = list("slices", "stabs")
 	attack_verb_simple = list("slice", "stab")
@@ -128,7 +128,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	force = 34	//Slowing is massive.
-	attack_speed = 1
+	attack_speed = 6
 	swingstyle = WEAPONSWING_LARGESWEEP
 	attack_verb_continuous = list("cleaves", "slashes", "carves")
 	attack_verb_simple = list("cleave", "slash", "carve")
@@ -148,7 +148,7 @@
 	icon_state = "wcorp_hammer"
 	inhand_icon_state = "wcorp_hammer"
 	force = 80
-	attack_speed = 2
+	attack_speed = 7
 	attack_verb_continuous = list("smashes", "crushes", "shatters")
 	attack_verb_simple = list("smash", "crush", "shatter")
 	charge_cost = 8
@@ -208,7 +208,7 @@
 	righthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/lc13_right_64x64.dmi'
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	attack_speed = 5.5
+	attack_speed = 6.5
 
 /obj/item/ego_weapon/city/wcorp/shield/club/attack(mob/living/target, mob/living/user)
 	. = ..()
@@ -226,4 +226,4 @@
 	icon_state = "wcorp_battleaxe"
 	inhand_icon_state = "wcorp_battleaxe"
 	force = 45
-	attack_speed = 5.5
+	attack_speed = 6.5

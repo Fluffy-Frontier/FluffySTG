@@ -30,7 +30,7 @@
 	icon_state = "fullstoppistol"
 	inhand_icon_state = "fullstopsniper"
 	force = 12
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	shotsleft = 17
 	fire_delay = 5
 	reloadtime = 1.3 SECONDS
@@ -55,7 +55,7 @@
 	icon_state = "fullstopdeagle"
 	inhand_icon_state = "fullstopdeagle"
 	force = 17
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'sound/items/weapons/gun/rifle/shot.ogg'
 	projectile_damage_multiplier = 4

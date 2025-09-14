@@ -11,7 +11,7 @@
 	force = 70
 	reach = 2 //Has 2 Square Reach.
 	stuntime = 5
-	attack_speed = 3 // really slow
+	attack_speed = CLICK_CD_MELEE // really slow
 	damtype = BRUTE
 
 	attack_verb_continuous = list("bludgeons", "whacks")
@@ -43,7 +43,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 24
-	attack_speed = 0.5 //this shit goes FAST
+	attack_speed = CLICK_CD_RAPID //this shit goes FAST
 	swingstyle = WEAPONSWING_LARGESWEEP
 	damtype = BRUTE
 	attack_verb_continuous = list("stabs", "slices", "rips", "shanks")

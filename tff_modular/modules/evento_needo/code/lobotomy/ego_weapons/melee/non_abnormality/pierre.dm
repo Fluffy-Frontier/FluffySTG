@@ -6,7 +6,7 @@
 	special = "This weapon heals you on hit."
 	icon_state = "jack"
 	force = 28
-	attack_speed = 2
+	attack_speed = 7
 	swingstyle = WEAPONSWING_LARGESWEEP
 	damtype = BRUTE
 
@@ -27,7 +27,7 @@
 	desc = "A carving knife found in the backstreets of district 23. This one is rusted, and seems to require a bit of skill to wield.."
 	icon_state = "pierre"
 	force = 24
-	attack_speed = 1
+	attack_speed = 6
 	attack_verb_continuous = list("slashes", "slices", "rips", "cuts")
 	attack_verb_simple = list("slash", "slice", "rip", "cut")
 	hitsound = 'sound/items/weapons/bladeslice.ogg'

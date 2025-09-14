@@ -53,7 +53,7 @@
 	special = "This weapon knocks the enemy back on hit."
 	icon_state = "leaflet_wide"
 	force = 44
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 
 /obj/item/ego_weapon/city/leaflet/wide/attack(mob/living/target, mob/living/carbon/human/user)
 	. = ..()

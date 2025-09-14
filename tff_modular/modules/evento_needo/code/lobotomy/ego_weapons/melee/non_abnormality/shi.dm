@@ -39,7 +39,7 @@
 	special = "Use this weapon in hand to immobilize yourself for 1 second, cut your HP by 25%, and deal 2x damage in pale."
 	icon_state = "shiassassin"
 	force = 42
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 	swingstyle = WEAPONSWING_LARGESWEEP
 

@@ -5,7 +5,7 @@
 	desc = "An axe used by the axe gangs of the backstreets."
 	icon_state = "axe_grunt"
 	force = 32
-	attack_speed = 5.4
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 
 	attack_verb_continuous = list("slices", "slashes", "stabs")

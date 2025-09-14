@@ -49,7 +49,7 @@
 	icon_state = "cane_claw"
 	inhand_icon_state = "cane_claw"
 	force = 20
-	attack_speed = 0.3
+	attack_speed = 6
 	attack_verb_continuous = list("cuts", "slices")
 	attack_verb_simple = list("cut", "slice")
 

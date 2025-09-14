@@ -17,7 +17,7 @@
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/knife3.ogg'
 	icon_state = "sodom"
 	force = 18
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	damtype = BRUTE
 	var/attack_speed_buff = 0.2
 
@@ -52,7 +52,7 @@
 	lefthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/lc13_left.dmi'
 	righthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/lc13_right.dmi'
 	force = 30
-	attack_speed = 5.5
+	attack_speed = 6.5
 	damtype = BRUTE
 	attack_verb_continuous = list("bashes", "hammers", "smacks")
 	attack_verb_simple = list("bash", "hammer", "smack")
@@ -94,7 +94,7 @@
 	icon_state = "iria"
 	special = "When attacking while using both iria and eria, deal 0.3 more damage and increase the knockback caused by iria."
 	force = 45
-	attack_speed = 5.5
+	attack_speed = 6.5
 	damtype = BRUTE
 	var/damage_multiplier = 1.3
 	attack_verb_continuous = list("bashes", "hammers", "smacks")
@@ -118,7 +118,7 @@
 	special = "This weapon inflicts burn on hit."
 	icon_state = "sunstrike"
 	force = 42
-	attack_speed = 5.5
+	attack_speed = 6.5
 	reach = 2
 	stuntime = 5
 	damtype = BRUTE

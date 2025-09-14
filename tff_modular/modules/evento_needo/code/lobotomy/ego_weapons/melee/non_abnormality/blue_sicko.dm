@@ -11,7 +11,7 @@
 	force = 60 // 85 DPS w/o Vibration, 128 with.
 	damtype = BRUTE
 
-	attack_speed = 0.7
+	attack_speed = CLICK_CD_RAPID
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/reverb_normal.ogg'
 	attack_verb_continuous = list("slashes", "cuts",)
 	attack_verb_simple = list("slash", "cuts")

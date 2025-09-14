@@ -67,7 +67,7 @@
 	icon_state = "rosespanner_minihammer"
 	inhand_icon_state = "rosespanner_minihammer"
 	force = 44
-	attack_speed = 1
+	attack_speed = 6
 
 	charge_cost = 7	//Takes fucking forever, you can charge it a little faster
 
@@ -78,7 +78,7 @@
 	icon_state = "rosespanner_hammer"
 	inhand_icon_state = "rosespanner_hammer"
 	force = 88	//Slow but rosespanners a detriment, so
-	attack_speed = 2
+	attack_speed = 7
 	charge_cost = 10	//Takes fucking forever, you can charge it a little faster
 
 //Grade 5
@@ -88,7 +88,7 @@
 	icon_state = "rosespanner_spear"
 	inhand_icon_state = "rosespanner_spear"
 	force = 60	//Slow but rosespanners a detriment, so
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 	reach = 2
 	stuntime = 5
 	charge_cost = 14	//slow weapon, you can charge it faster

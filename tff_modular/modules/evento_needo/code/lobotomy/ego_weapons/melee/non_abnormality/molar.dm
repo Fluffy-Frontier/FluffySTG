@@ -27,5 +27,5 @@
 	desc = "A short chainsword used by the Molar Office's leader. Its chain sings with the speed it moves at."
 	icon_state = "olga"
 	force = 37
-	attack_speed = 0.7
+	attack_speed = CLICK_CD_RAPID
 	swingstyle = WEAPONSWING_LARGESWEEP

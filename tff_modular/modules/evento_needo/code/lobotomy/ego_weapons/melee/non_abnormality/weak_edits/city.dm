@@ -40,7 +40,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/nail1.ogg'
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 	reach = 2
 	stuntime = 5
 
@@ -50,7 +50,7 @@
 	icon_state = "indexdagger"
 	inhand_icon_state = "indexdagger"
 	force = 30
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 
 
 //Fockin massive sword
@@ -67,7 +67,7 @@
 	attack_verb_simple = list("cleaves", "cuts")
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/finisher1.ogg'
 	force = 70
-	attack_speed = 2
+	attack_speed = 7
 
 
 //Blade Lineage

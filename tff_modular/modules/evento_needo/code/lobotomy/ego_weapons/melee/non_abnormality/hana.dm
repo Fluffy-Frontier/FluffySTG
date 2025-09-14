@@ -37,7 +37,7 @@
 
 			reach = 1
 			force = 70
-			attack_speed = 5.5
+			attack_speed = 6.5
 			stuntime = 0
 
 		if(3)
@@ -49,7 +49,7 @@
 			attack_verb_simple = list("cuts", "slices")
 
 			force = 50
-			attack_speed = 1
+			attack_speed = 6
 			stuntime = 0
 
 	to_chat(user, span_notice("[message]"))

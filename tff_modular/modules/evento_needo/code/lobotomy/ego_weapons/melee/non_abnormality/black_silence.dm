@@ -206,10 +206,10 @@
 		special_check = TRUE
 		if(weapon == 1)
 			reduction += 0.1
-			attack_speed = 5.2 - (min(reduction, 0.7))
+			attack_speed = CLICK_CD_MELEE - (min(reduction, 0.7))
 		else
 			reduction = 0
-			attack_speed = 5.2
+			attack_speed = CLICK_CD_MELEE
 		attack(target, user)
 
 /obj/item/ego_weapon/black_silence_gloves/zelkova/attack(mob/living/M, mob/living/user)
@@ -218,7 +218,7 @@
 		attack_verb_simple = list("slash", "cut", "slice")
 		hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/black_silence/axe.ogg'
 		special_cooldown = world.time + special_cooldown_time
-		attack_speed = 5.2
+		attack_speed = CLICK_CD_MELEE
 		if(weapon == 2)
 			reduction += 0.1
 			special_cooldown = special_cooldown - (min((reduction*10), 7))
@@ -242,7 +242,7 @@
 	desc = "Shortsword and Gauntlets once belonged to the Black Silence."
 	special = "SHIFT+CLICK to perform 3 consecutive dash attacks on the enemy. Successful attacks reduces the dash cooldown"
 	icon_state = "ranga"
-	attack_speed = 0.3
+	attack_speed = 6
 	force = 25
 	attack_verb_continuous = list("stabs", "maims", "claws", "slices", "pummels", "mutilates")
 	attack_verb_simple = list("stab", "maim", "claw", "slice", "pummel", "mutilate")
@@ -301,7 +301,7 @@
 	attack_verb_simple = list("smash", "smacks", "bashes")
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/black_silence/mace.ogg'
 	force = 80 // parry weapon
-	attack_speed = 1
+	attack_speed = 6
 	var/block = 0
 	var/block_success
 	var/parry_buff = FALSE
@@ -384,7 +384,7 @@
 	attack_verb_simple = list("poke", "jab", "pierce", "gore")
 	force = 90
 	reach = 2
-	attack_speed = 1
+	attack_speed = 6
 	stuntime = 5
 	special_cooldown_time = 50
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/ego/spear1.ogg'
@@ -643,7 +643,7 @@
 	icon_state = "durandal"
 	attack_verb_continuous = list("attacks", "slashes", "cuts", "slices")
 	attack_verb_simple = list("attack", "slash", "cut", "slice")
-	attack_speed = 5.5
+	attack_speed = 6.5
 	force = 80 //this is just for breaking objects
 	special_cooldown_time = 30 SECONDS
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/black_silence/durandal_up.ogg'
@@ -781,7 +781,7 @@
 	icon_state = "wheels"
 	attack_verb_continuous = list("attacks", "smashes", "cleaves", "slashes")
 	attack_verb_simple = list("attack", "smash", "cleave", "slash")
-	attack_speed = 2
+	attack_speed = 7
 	force = 100
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/ego/twilight.ogg'
 	special_cooldown_time = 5 SECONDS

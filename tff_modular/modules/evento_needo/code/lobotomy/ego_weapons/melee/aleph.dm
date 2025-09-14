@@ -98,7 +98,7 @@
 	special = "This weapon has a combo system, but only on a single enemy."
 	icon_state = "da_capo"
 	force = 40 // It attacks very fast
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	swingstyle = WEAPONSWING_LARGESWEEP
 	damtype = BRUTE
 	attack_verb_continuous = list("slashes", "slices", "rips", "cuts")
@@ -243,7 +243,7 @@
 	special = "This weapon instantly kills targets below 10% health"	//To make it more unique, if it's too strong
 	icon_state = "smile"
 	force = 110 //Slightly less damage, has an ability
-	attack_speed = 5.6
+	attack_speed = 6.5
 	damtype = BRUTE
 	attack_verb_continuous = list("slams", "attacks")
 	attack_verb_simple = list("slam", "attack")
@@ -379,7 +379,7 @@
 	force = 40
 	swingstyle = WEAPONSWING_LARGESWEEP
 	damtype = BRUTE
-	attack_speed = 0.8
+	attack_speed = CLICK_CD_MELEE
 	attack_verb_continuous = list("cuts", "slices")
 	attack_verb_simple = list("cuts", "slices")
 	hitsound = 'sound/items/weapons/blade1.ogg'
@@ -409,7 +409,7 @@
 			icon_state = "soulmate_blade"
 			update_icon_state()
 			update_icon()
-			attack_speed = 0.4
+			attack_speed = CLICK_CD_RAPID
 			gunmark_cooldown = world.time + mark_cooldown_time
 			addtimer(CALLBACK(src, PROC_REF(BladeRevert)), 50)
 			return
@@ -458,7 +458,7 @@
 		icon_state = "soulmate"
 		update_icon_state()
 		update_icon()
-		attack_speed = 0.8
+		attack_speed = CLICK_CD_MELEE
 		bladebuff = FALSE
 
 /obj/item/ego_weapon/soulmate/proc/GunRevert()
@@ -643,7 +643,7 @@
 	special = "This weapon requires two hands to use and always blocks ranged attacks."
 	icon_state = "distortion"
 	force = 35 //Twilight but lower in terms of damage
-	attack_speed = 5.8
+	attack_speed = 7
 	damtype = BRUTE
 	knockback = KNOCKBACK_MEDIUM
 	attack_verb_continuous = list("pulverizes", "bashes", "slams", "blockades")
@@ -708,7 +708,7 @@
 	special = "Activate this weapon in your hand to plant 4 trees of desire. Killing them with this weapon restores HP and sanity."
 	icon_state = "farmwatch"
 	force = 84
-	attack_speed = 5.3
+	attack_speed = 6.5
 	damtype = BRUTE
 	attack_verb_continuous = list("slashes", "slices", "rips", "cuts", "reaps")
 	attack_verb_simple = list("slash", "slice", "rip", "cut", "reap")
@@ -762,7 +762,7 @@
 	worn_icon_state = "spicebush"
 	force = 70
 	reach = 2
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 	attack_verb_continuous = list("slashes", "slices", "pokes", "cuts", "stabs")
 	attack_verb_simple = list("slash", "slice", "poke", "cut", "stab")
@@ -800,7 +800,7 @@
 	desc = "I will leave behind a morrow, strong and fertile like fallen petals."
 	icon_state = "spicebush_2"
 	reach = 1
-	attack_speed = 1
+	attack_speed = 6
 	worn_icon = 'icons/obj/clothing/belt_overlays.dmi'
 	worn_icon_state = "spicebush_2"
 	hitsound = 'sound/items/weapons/slap.ogg'
@@ -855,7 +855,7 @@
 	desc = "And really nothing will stop it."
 	icon_state = "willing"
 	force = 105	//Still lower DPS
-	attack_speed = 5.4
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 	knockback = KNOCKBACK_LIGHT
 	attack_verb_continuous = list("bashes", "clubs")
@@ -870,7 +870,7 @@
 	special = "Use this weapon in hand to swap between forms. The whip has higher reach, the hammer deals damage in an area, and the bat knocks back enemies."
 	icon_state = "mockery_whip"
 	force = 35
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	reach = 3
 	damtype = BRUTE
 	attack_verb_continuous = list("lacerates", "disciplines")
@@ -978,7 +978,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	force = 30
-	attack_speed = 0.8
+	attack_speed = CLICK_CD_MELEE
 	reach = 3
 	damtype = BRUTE
 	attack_verb_continuous = list("lacerates", "disciplines")
@@ -1187,7 +1187,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	force = 70
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 	attack_verb_continuous = list("stabs", "jabs", "slaps", "skewers")
 	attack_verb_simple = list("stab", "jab", "slap", "skewer")
@@ -1397,10 +1397,10 @@
 	inhand_y_dimension = 64
 	force = 90
 	damtype = BRUTE
-	wielded_attack_speed = 0.5
+	wielded_attack_speed = CLICK_CD_RAPID
 	wielded_reach = 2
 	wielded_force = 52
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 	attack_verb_continuous = list("slashes", "slices", "rips", "cuts")
 	attack_verb_simple = list("slash", "slice", "rip", "cut")
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/clownsmiling/egoslash.ogg'

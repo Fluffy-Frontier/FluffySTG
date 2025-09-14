@@ -92,7 +92,7 @@
 		This weapon doubles as an N-Corp hammer"
 	icon_state = "kleinhammer"
 	force = 30
-	attack_speed = 5.5
+	attack_speed = 6.5
 	damtype = BRUTE
 
 	attack_verb_continuous = list("marks")
@@ -134,7 +134,7 @@
 	desc = "A metal fist used by Ncorp captains."
 	icon_state = "grosshand"
 	force = 60
-	attack_speed = 1
+	attack_speed = 6
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/fist2.ogg'
 
 //SHE WHO GRIPS
@@ -143,7 +143,7 @@
 	desc = "A steel fist used by Ncorp captains, to bring the light of justice to heretics in need of it."
 	icon_state = "grip"
 	force = 60
-	attack_speed = 1
+	attack_speed = 6
 	damtype = BRUTE
 
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/fist2.ogg'

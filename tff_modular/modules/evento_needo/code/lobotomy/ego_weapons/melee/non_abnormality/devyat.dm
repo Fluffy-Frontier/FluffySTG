@@ -305,7 +305,7 @@
 	inhand_icon_state = "b_polu"
 	force = 42
 	slot_flags = ITEM_SLOT_BACK
-	attack_speed = 5.5
+	attack_speed = 6.5
 	attack_verb_continuous = list("bludgeons", "smacks")
 	attack_verb_simple = list("bludgeon", "smack")
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/ego/devyat_slam.ogg'

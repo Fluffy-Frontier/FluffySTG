@@ -6,7 +6,7 @@
 			This weapon deals double damage on direct attack."
 	icon_state = "lamp"
 	force = 25
-	attack_speed = 5.3
+	attack_speed = 6.5
 	damtype = BRUTE
 	attack_verb_continuous = list("slams", "attacks")
 	attack_verb_simple = list("slam", "attack")
@@ -93,7 +93,7 @@
 	icon_state = "totalitarianism"
 	force = 80
 	swingstyle = WEAPONSWING_LARGESWEEP
-	attack_speed = 3
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 	attack_verb_continuous = list("cleaves", "cuts")
 	attack_verb_simple = list("cleaves", "cuts")
@@ -121,7 +121,7 @@
 	icon_state = "oppression"
 	force = 13
 	swingstyle = WEAPONSWING_LARGESWEEP
-	attack_speed = 0.3
+	attack_speed = 6
 	damtype = BRUTE
 	attack_verb_continuous = list("cleaves", "cuts")
 	attack_verb_simple = list("cleaves", "cuts")
@@ -207,7 +207,7 @@
 	special = "This weapon hits faster than usual."
 	force = 17
 	swingstyle = WEAPONSWING_LARGESWEEP
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	damtype = BRUTE
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/redhood/attack_1.ogg'
 	var/combo = 1
@@ -457,7 +457,7 @@
 		Press Z to do a spinning attack, and click on a distant target to dash towards them in a cardinal direction."
 	icon_state = "wings"
 	force = 10
-	attack_speed = 0.6
+	attack_speed = CLICK_CD_RAPID
 	damtype = BRUTE
 	attack_verb_continuous = list("slashes", "claws")
 	attack_verb_simple = list("slashes", "claws")
@@ -624,7 +624,7 @@
 	special = "This weapon can be combined with its sister blade to create a new weapon."
 	icon_state = "mirth"
 	force = 15
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	damtype = BRUTE
 	attack_verb_continuous = list("cuts", "attacks", "slashes")
 	attack_verb_simple = list("cut", "attack", "slash")
@@ -676,7 +676,7 @@
 	special = "This weapon can be combined with its sister blade to create a new weapon."
 	icon_state = "malice"
 	force = 15
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	damtype = BRUTE
 	attack_verb_continuous = list("cuts", "attacks", "slashes")
 	attack_verb_simple = list("cut", "attack", "slash")
@@ -728,7 +728,7 @@
 	special = "This weapon has a small windup before blocking, and performs a counterattack upon a successful block."
 	icon_state = "swan_closed"
 	force = 17
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	damtype = BRUTE
 	attack_verb_continuous = list("bashs", "whaps", "beats", "prods", "pokes")
 	attack_verb_simple = list("bash", "whap", "beat", "prod", "poke")
@@ -938,7 +938,7 @@
 	special = "This weapon can remove petrification."
 	icon_state = "pharaoh"
 	force = 19
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	swingstyle = WEAPONSWING_LARGESWEEP
 	damtype = BRUTE
 	attack_verb_continuous = list("decimates", "bisects")
@@ -968,7 +968,7 @@
 	desc = "Those who suffer injustice tend to lash out at all those around them."
 	icon_state = "blind_rage"
 	force = 40
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 	special = "This weapon possesses a devastating Red AND Black damage AoE. Be careful!"
 	damtype = BRUTE
 	attack_verb_continuous = list("smashes", "crushes", "flattens")
@@ -1197,8 +1197,8 @@
 	icon_state = "discord"
 	force = 30
 	wielded_force = 27
-	attack_speed = 0.8
-	wielded_attack_speed = 0.8
+	attack_speed = CLICK_CD_MELEE
+	wielded_attack_speed = CLICK_CD_MELEE
 
 	damtype = BRUTE
 
@@ -1212,7 +1212,7 @@
 	Harmony(user)
 	if(!wielded)
 		return
-	user.changeNext_move(CLICK_CD_MELEE*wielded_attack_speed*2.5)
+	user.changeNext_move(CLICK_CD_MELEE*2)
 	for(var/i = 1 to 2)
 		addtimer(CALLBACK(src, PROC_REF(MultiSwing), target, user), CLICK_CD_MELEE * 0.6 * i)
 
@@ -1265,7 +1265,7 @@
 	special = "This weapon can be used to perform a jump attack after a short wind-up."
 	icon_state = "rimeshank"
 	force = 75
-	attack_speed = 2
+	attack_speed = 7
 	damtype = BRUTE
 	attack_verb_continuous = list("slams", "attacks")
 	attack_verb_simple = list("slam", "attack")
@@ -1348,7 +1348,7 @@
 	special = "This weapon hits 4 times for every hit"
 	icon_state = "animalism"
 	force = 12
-	attack_speed = 5.3
+	attack_speed = 6.5
 	damtype = BRUTE
 	attack_verb_continuous = list("slices", "saws", "rips")
 	attack_verb_simple = list("slice", "saw", "rip")
@@ -1377,7 +1377,7 @@
 	special = "Use this weapon in hand to dodgeroll."
 	icon_state = "psychic"
 	force = 13
-	attack_speed = 0.3
+	attack_speed = 6
 	damtype = BRUTE
 	attack_verb_continuous = list("stabs", "attacks", "slashes")
 	attack_verb_simple = list("stab", "attack", "slash")
@@ -1402,7 +1402,7 @@
 	special = "This weapon can be used to dash to a target."
 	icon_state = "grasp"
 	force = 16
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	damtype = BRUTE
 	attack_verb_continuous = list("cuts", "attacks", "slashes")
 	attack_verb_simple = list("cut", "attack", "slash")
@@ -1452,7 +1452,7 @@
 	special = "Preform an additional attack of 75% damage when at half health."
 	icon_state = "cobalt"
 	force = 24
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	swingstyle = WEAPONSWING_LARGESWEEP
 	damtype = BRUTE
 	attack_verb_continuous = list("claws")
@@ -1566,7 +1566,7 @@
 	special = "Upon throwing, this weapon returns to the user. Throwing will activate the charge effect."
 	icon_state = "warring2"
 	force = 28
-	attack_speed = 0.8
+	attack_speed = CLICK_CD_MELEE
 	swingstyle = WEAPONSWING_LARGESWEEP
 	throwforce = 55
 	throw_speed = 1
@@ -1638,7 +1638,7 @@
 	special = "Activate this weapon in hand to take a syringe, empowering it at the cost of taking damage."
 	icon_state = "hyde"
 	force = 25
-	attack_speed = 0.8
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 	attack_verb_continuous = list("punches", "slaps", "scratches")
 	attack_verb_simple = list("punch", "slap", "scratch")
@@ -1773,7 +1773,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	force = 80
-	attack_speed = 2.5
+	attack_speed = 7.5
 	throwforce = 80
 	throw_speed = 1
 	throw_range = 9
@@ -1995,7 +1995,7 @@
 	special = "Use in hand to charge this weapon, up to four times. Deals very little damage when uncharged."
 	icon_state = "windup"
 	force = 10
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	damtype = BRUTE
 	attack_verb_continuous = list("cleaves", "cuts")
 	attack_verb_simple = list("cleaves", "cuts")
@@ -2049,7 +2049,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	force = 54
-	attack_speed = 5.6
+	attack_speed = 6.5
 	swingstyle = WEAPONSWING_LARGESWEEP
 	damtype = BRUTE
 	knockback = KNOCKBACK_MEDIUM
@@ -2066,7 +2066,7 @@
 	desc = "One. Two. The weight of your Karma returns with each rumbling of the earth."
 	icon_state = "sunyata"
 	force = 40
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 	attack_verb_continuous = list("smacks", "slaps", "attacks", "pokes")
 	attack_verb_simple = list("smack", "slap", "attack", "poke")

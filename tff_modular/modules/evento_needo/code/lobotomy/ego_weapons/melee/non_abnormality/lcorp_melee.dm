@@ -72,7 +72,7 @@
 	desc = "A sharp machete issued by L-Corp to those who cannot utilize E.G.O."
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/sword2.ogg'
 	force = 13
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	custom_price = 100
 
 
@@ -87,7 +87,7 @@
 	swingstyle = WEAPONSWING_LARGESWEEP
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/club2.ogg'
 	force = 35 //Still less DPS, replaces baseball bat
-	attack_speed = 5.6
+	attack_speed = 6.5
 	knockback = KNOCKBACK_LIGHT
 	custom_price = 100
 

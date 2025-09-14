@@ -14,7 +14,7 @@
 	desc = "A shortsword of decent quality. Holding it fills you with the ambition of a pure-hearted newbie."
 	icon_state = "yun_sword"
 	force = 19
-	attack_speed = 0.7
+	attack_speed = CLICK_CD_RAPID
 	attack_verb_continuous = list("slices", "slashes", "stabs")
 	attack_verb_simple = list("slice", "slash", "stab")
 	hitsound = 'sound/items/weapons/bladeslice.ogg'

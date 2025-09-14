@@ -114,4 +114,4 @@
 	attack_verb_simple = list("cleaves", "cuts")
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/finisher1.ogg'
 	force = 130
-	attack_speed = 2
+	attack_speed = 7

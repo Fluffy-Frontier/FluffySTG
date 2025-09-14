@@ -84,10 +84,11 @@
 	var/pb_knockback = 0
 
 /obj/item/ego_weapon/ranged/pistol
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	force = 6
 
 /obj/item/ego_weapon/ranged/Initialize()
+	qdel(src) // Временно выключено. Заменю на /obj/item/gun
 	. = ..()
 	build_zooming()
 	if(autofire)

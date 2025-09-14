@@ -4,7 +4,7 @@
 // Immutable vars - You will never need to modify these
 	var/wielded = FALSE
 	//basic stat changes
-	var/wielded_attack_speed = 1
+	var/wielded_attack_speed = CLICK_CD_SLOW
 	var/wielded_force = 1
 	var/wielded_reach = 1
 	//slow down stuff

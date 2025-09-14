@@ -53,7 +53,7 @@
 	desc = "Heavy satchel filled to the brim with letters."
 	icon_state = "mailsatchel"
 	force = 12
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 
 	attack_verb_continuous = list("slams", "bashes", "strikes")
@@ -79,7 +79,7 @@
 	force = 50
 	reach = 2		//Has 2 Square Reach.
 	stuntime = 5	//Longer reach, gives you a short stun.
-	attack_speed = 5.4// slow
+	attack_speed = CLICK_CD_MELEE// slow
 	damtype = BRUTE
 
 	attack_verb_continuous = list("bludgeons", "whacks")
@@ -268,7 +268,7 @@
 	special = "This weapon has a combo system."
 	icon_state = "despair_nihil"
 	force = 40
-	attack_speed = 1
+	attack_speed = 6
 	damtype = BRUTE
 
 	attack_verb_continuous = list("stabs", "attacks", "slashes")
@@ -311,7 +311,7 @@
 	Hermit - an enemy of her realm, becoming friends with her in secret."
 	icon_state = "wrath"
 	force = 80
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 
 	aoe_damage = 30
 	aoe_range = 3

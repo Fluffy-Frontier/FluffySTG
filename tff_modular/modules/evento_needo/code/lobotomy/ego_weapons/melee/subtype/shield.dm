@@ -22,7 +22,7 @@
 
 */
 /obj/item/ego_weapon/shield
-	attack_speed = 3
+	attack_speed = CLICK_CD_MELEE
 	force = 40
 	swingstyle = FALSE
 	var/attacking = FALSE

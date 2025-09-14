@@ -56,7 +56,7 @@
 	inhand_icon_state = "beer"
 	special = "This weapon deals AOE damage."
 	force = 33
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 	projectile_path = /obj/projectile/ego_bullet/skub
 	weapon_weight = WEAPON_HEAVY

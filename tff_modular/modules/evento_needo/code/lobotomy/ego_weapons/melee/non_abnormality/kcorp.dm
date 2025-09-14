@@ -31,7 +31,7 @@
 	force = 62
 	reach = 2
 	stuntime = 5
-	attack_speed = 1
+	attack_speed = 6
 	damtype = BRUTE
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/kcorp1.ogg'
 	attack_verb_continuous = list("whacks", "slashes")
@@ -48,7 +48,7 @@
 	inhand_y_dimension = 64
 	force = 32
 	reach = 2
-	attack_speed = 0.6
+	attack_speed = CLICK_CD_RAPID
 	stuntime = 5
 	damtype = BRUTE
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/kcorp1.ogg'

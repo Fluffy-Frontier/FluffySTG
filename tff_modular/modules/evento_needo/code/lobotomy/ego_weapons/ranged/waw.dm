@@ -5,7 +5,7 @@
 	inhand_icon_state = "correctional"
 	force = 33
 	damtype = BRUTE
-	attack_speed = 5.3
+	attack_speed = 6.5
 	projectile_path = /obj/projectile/ego_bullet/ego_correctional
 	weapon_weight = WEAPON_HEAVY
 	pellets = 8
@@ -378,7 +378,7 @@
 	icon_state = "exuviae"
 	inhand_icon_state = "exuviae"
 	force = 33
-	attack_speed = 5.3
+	attack_speed = 6.5
 	projectile_path = /obj/projectile/ego_bullet/ego_exuviae
 	weapon_weight = WEAPON_HEAVY
 	special = "Upon hit the targets RED vulnerability is increased by 0.2."
@@ -469,7 +469,7 @@
 		Blood can be collected by attacking using this as a melee weapon."
 	force = 36
 	damtype = BRUTE
-	attack_speed = 5.8
+	attack_speed = 7
 	projectile_path = /obj/projectile/ego_bullet/ego_banquet
 	weapon_weight = WEAPON_MEDIUM
 	fire_delay = 13

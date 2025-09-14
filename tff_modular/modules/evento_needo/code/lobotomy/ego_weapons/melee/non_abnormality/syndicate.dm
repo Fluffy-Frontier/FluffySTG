@@ -5,7 +5,7 @@
 	special = "This weapon has a 10% chance to deal double damage. This weapon fits in an EGO belt."
 	icon_state = "nightawl"
 	force = 40
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 
 	attack_verb_continuous = list("pokes", "jabs", "tears", "lacerates", "gores")
@@ -30,7 +30,7 @@
 	icon_state = "kurokumo_sheathed"
 	inhand_icon_state = "kurokumo_sheathed"
 	force = 52
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 	swingstyle = WEAPONSWING_LARGESWEEP
 
@@ -72,7 +72,7 @@
 	icon_state = "blade_lineage"
 	inhand_icon_state = "blade_lineage"
 	force = 46
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 	swingstyle = WEAPONSWING_LARGESWEEP
 

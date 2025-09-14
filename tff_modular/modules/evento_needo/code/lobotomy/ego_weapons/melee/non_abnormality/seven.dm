@@ -138,5 +138,5 @@
 	special = "This weapon does 35% more damage when attacking the same target more than once. This weapon fits in an EGO belt."
 	icon_state = "sevenfencing_dagger"
 	force = 32
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 

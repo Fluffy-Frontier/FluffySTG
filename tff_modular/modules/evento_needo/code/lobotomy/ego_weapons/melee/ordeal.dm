@@ -9,7 +9,7 @@
 	\nEach serum changes the damage type of the weapon."
 	icon_state = "claw"
 	force = 60
-	attack_speed = 0.6
+	attack_speed = CLICK_CD_RAPID
 	damtype = BRUTE
 	slot_flags = null
 	attack_verb_continuous = list("slashes", "eviscerates", "tears")

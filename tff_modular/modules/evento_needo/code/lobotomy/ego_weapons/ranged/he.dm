@@ -143,7 +143,7 @@
 	special = "This weapon fires bouncing, piercing shots. On hitting an insane person, deals 4x damage and stops bouncing."
 	force = 30
 	damtype = BRUTE
-	attack_speed = 5.8
+	attack_speed = 7
 	projectile_path = /obj/projectile/ego_bullet/ego_harmony
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/ego/harmony1.ogg'
 	vary_fire_sound = FALSE
@@ -292,7 +292,7 @@
 	icon_state = "ardor_star"
 	inhand_icon_state = "ardor_star"
 	force = 30
-	attack_speed = 5.8
+	attack_speed = 7
 	projectile_path = /obj/projectile/ego_bullet/ardor_star
 	weapon_weight = WEAPON_HEAVY
 	fire_sound = 'sound/items/weapons/gun/sniper/shot.ogg'

@@ -53,7 +53,7 @@
 	force = 60
 	reach = 2
 	stuntime = 5
-	attack_speed = 1
+	attack_speed = 6
 	swingstyle = WEAPONSWING_THRUST
 
 
@@ -72,7 +72,7 @@
 	icon_state = "liufist"
 	desc = "A gauntlet used by Liu Sections 4,5 and 6. Requires martial arts training to make use of."
 	force = 20
-	attack_speed = 0.7
+	attack_speed = CLICK_CD_RAPID
 	var/chain = 0
 	var/activated
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/fist1.ogg'
@@ -170,7 +170,7 @@
 
 	//Special attacks are slower.
 	if(attack_speed == initial(attack_speed) && activated)
-		attack_speed = 2
+		attack_speed = 7
 	. = ..()
 
 	//Reset Everything

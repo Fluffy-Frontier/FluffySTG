@@ -72,4 +72,4 @@
 	lefthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/lc13_left_64x64.dmi'
 	righthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/lc13_right_64x64.dmi'
 	force = 100
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE

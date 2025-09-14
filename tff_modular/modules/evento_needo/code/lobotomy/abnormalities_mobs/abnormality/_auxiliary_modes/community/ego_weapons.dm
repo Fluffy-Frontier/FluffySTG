@@ -59,7 +59,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	force = 54
-	attack_speed = 5.6
+	attack_speed = 6.5
 	swingstyle = WEAPONSWING_LARGESWEEP
 	damtype = BRUTE
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/seasons/fall_attack.ogg'
@@ -176,7 +176,7 @@
 	worn_icon = 'icons/obj/clothing/belt_overlays.dmi'
 	worn_icon_state = "combust"
 	force = 80 // Quite high with passive buffs, but deals pure damage to yourself
-	attack_speed = 0.8
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 	attack_verb_continuous = list("slashes", "stabs", "scorches")
 	attack_verb_simple = list("slash", "stab", "scorch")
@@ -396,7 +396,7 @@
 	force = 120
 	reach = 2		//Has 2 Square Reach.
 	stuntime = 6	//Longer reach, gives you a short stun.
-	attack_speed = 5.8// really slow
+	attack_speed = 7// really slow
 	damtype = BRUTE
 	attack_verb_continuous = list("stabs", "impales", "skewers", "shishkababs")
 	attack_verb_simple = list("stab", "impale", "skewer")

@@ -3,7 +3,7 @@
 	desc = "Did you pray today?"
 	icon_state = "ratpipe"
 	force = 500
-	attack_speed = 2
+	attack_speed = 7
 	damtype = BRUTE
 	attack_verb_continuous = list("pipes", "smashes", "shatters", "bans")
 	attack_verb_simple = list("pipe", "smash", "shatter", "ban")

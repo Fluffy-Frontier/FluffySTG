@@ -63,7 +63,7 @@
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	force = 30 // It attacks very fast but is rather weak
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	throwforce = 90
 	throw_speed = 1
 	throw_range = 10
@@ -142,7 +142,7 @@
 	inhand_x_dimension = 96
 	inhand_y_dimension = 96
 	force = 140
-	attack_speed = 5.8
+	attack_speed = 7
 	damtype = BRUTE
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/apocalypse/slam.ogg'
 	attack_verb_continuous = list("crushes", "devastates")
@@ -232,7 +232,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	force = 160
-	attack_speed = 5.6
+	attack_speed = 6.5
 	damtype = BRUTE
 	knockback = KNOCKBACK_HEAVY
 	attack_verb_continuous = list("bashes", "clubs")
@@ -246,7 +246,7 @@
 	icon_state = "1"
 	icon = 'icons/effects/magic.dmi'
 	force = 230
-	attack_speed = 0.4
+	attack_speed = CLICK_CD_RAPID
 	damtype = BRUTE
 	attack_verb_continuous = list("cleaves", "dismantles")
 	attack_verb_simple = list("cleave", "dismantle")
@@ -328,7 +328,7 @@
 	inhand_y_dimension = 96
 	force = 70
 	reach = 2		//Has 2 Square Reach.
-	attack_speed = 2.0 // really slow
+	attack_speed = 7 // really slow
 	damtype = BRUTE
 	attack_verb_continuous = list("pierces", "skews")
 	attack_verb_simple = list("pierce", "skew")

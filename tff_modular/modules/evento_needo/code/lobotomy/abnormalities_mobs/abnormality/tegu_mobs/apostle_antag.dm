@@ -5,7 +5,6 @@
 	name = "Apostle Heretic"
 	roundend_category = "apostle heretics"
 	antagpanel_category = "Apostle Heretic"
-	job_rank = "Apostle Heretic"
 	antag_hud_name = "nightmare"
 	var/betrayed = FALSE // For one-sin interaction
 	show_to_ghosts = TRUE

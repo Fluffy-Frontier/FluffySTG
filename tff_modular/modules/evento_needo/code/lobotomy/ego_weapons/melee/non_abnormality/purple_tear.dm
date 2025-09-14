@@ -137,7 +137,7 @@
 	icon_state = "ptslash"
 	inhand_icon_state = "ptslash"
 	force = 45
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	damtype = BRUTE //Iori's quite physical with this stance
 
 	attack_verb_continuous = list("slashes", "rends")
@@ -173,7 +173,7 @@
 	icon_state = "ptpierce"
 	inhand_icon_state = "ptpierce"
 	force = 90
-	attack_speed = 1
+	attack_speed = 6
 	damtype = BRUTE //tbh white does not fit but also i don't think Iori should use pale, thats Blue Sicko's job
 	swingstyle = WEAPONSWING_THRUST
 
@@ -246,7 +246,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	force = 135
-	attack_speed = 5.5
+	attack_speed = 6.5
 	damtype = BRUTE //Blunt stance deals both high damage and stagger damage
 
 	attack_verb_continuous = list("bludgeons", "smacks")
@@ -314,7 +314,7 @@
 	lefthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/lc13_left.dmi'
 	righthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/lc13_right.dmi'
 	force = 90 //I mean its the block stance, you're not really supposed to attack here
-	attack_speed = 5.5
+	attack_speed = 6.5
 	var/block = 0
 	var/block_success
 	var/parry_buff = FALSE

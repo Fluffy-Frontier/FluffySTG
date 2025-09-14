@@ -77,7 +77,7 @@
 	special = "On kill, deal massive damage on next attack."
 	icon_state = "fury"
 	force = 41
-	attack_speed = 5.5
+	attack_speed = 6.5
 	damtype = BRUTE
 	attack_verb_continuous = list("slices", "slashes", "stabs")
 	attack_verb_simple = list("slice", "slash", "stab")
@@ -107,7 +107,7 @@
 	desc = "The paws made form, and given life."
 	icon_state = "bear_paw"
 	force = 17
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	swingstyle = WEAPONSWING_LARGESWEEP
 	damtype = BRUTE
 	attack_verb_continuous = list("punches", "jabs", "slaps")
@@ -138,7 +138,7 @@
 	desc = "An ancient sword surrounded in death, yet it's having it in your grasp that makes you feel the most alive."
 	icon_state = "daredevil"
 	force = 11
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	swingstyle = WEAPONSWING_LARGESWEEP
 	damtype = BRUTE
 	attack_verb_continuous = list("decimates", "bisects")
@@ -164,7 +164,7 @@
 	var/mob/living/carbon/human/myman = user
 	if (isnull(myman.get_item_by_slot(ITEM_SLOT_OCLOTHING)))
 		force = 12
-		attack_speed = 0.33
+		attack_speed = 6
 		projectile_block_duration = 0.33 SECONDS
 		block_duration = 1 SECONDS
 	else
@@ -175,7 +175,7 @@
 		else
 			force = 12
 			block_duration = 1 SECONDS
-		attack_speed = 0.5
+		attack_speed = CLICK_CD_RAPID
 		projectile_block_duration = 0.5 SECONDS
 	..()
 
@@ -242,7 +242,7 @@
 	desc = "With my infinite hatred, I give you this gift."
 	icon_state = "christmas"
 	force = 54	//Still lower DPS
-	attack_speed = 2
+	attack_speed = 7
 	damtype = BRUTE
 	knockback = KNOCKBACK_LIGHT
 	attack_verb_continuous = list("bashes", "clubs")
@@ -491,7 +491,7 @@
 	icon_state = "metal"
 	force = 40
 	swingstyle = WEAPONSWING_LARGESWEEP
-	attack_speed = 5.5
+	attack_speed = 6.5
 	damtype = BRUTE
 	attack_verb_continuous = list("slices", "cleaves", "chops")
 	attack_verb_simple = list("slice", "cleave", "chop")
@@ -502,7 +502,7 @@
 	desc = "It's a small knife forged of black metal."
 	icon_state = "alleyway"
 	force = 17
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	swingstyle = WEAPONSWING_LARGESWEEP
 	damtype = BRUTE
 	attack_verb_continuous = list("slices", "cleaves", "chops")
@@ -534,7 +534,7 @@
 	icon_state = "homing_instinct"
 	damtype = BRUTE
 	force = 0 //Literally does no damage by default
-	attack_speed = 3
+	attack_speed = CLICK_CD_MELEE
 	attack_verb_continuous = list("pierces", "stabs")
 	attack_verb_simple = list("pierce", "stab")
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/spear2.ogg'
@@ -574,7 +574,7 @@
 	desc = "If friends were flowers, I'd pick you!"
 	icon_state = "maneater"
 	force = 30
-	attack_speed = 1
+	attack_speed = 6
 	damtype = BRUTE
 	attack_verb_continuous = list("cuts", "smacks", "bashes")
 	attack_verb_simple = list("cuts", "smacks", "bashes")
@@ -596,7 +596,7 @@
 	special = "This weapon attacks faster when hitting targets below 50% health"
 	icon_state = "revelation"
 	force = 22
-	attack_speed = 5.5
+	attack_speed = 6.5
 	swingstyle = WEAPONSWING_LARGESWEEP
 	damtype = BRUTE
 	attack_verb_continuous = list("slashes", "slices", "rips", "cuts")
@@ -608,9 +608,9 @@
 	if(!CanUseEgo(user))
 		return
 	if(target.health <= (target.maxHealth * 0.5))
-		attack_speed = 1
+		attack_speed = 6
 	else
-		attack_speed = 5.5
+		attack_speed = 6.5
 	..()
 
 /obj/item/ego_weapon/inheritance
@@ -668,7 +668,7 @@
 	special = "This weapon restores health on a successful parry."
 	icon_state = "legerdemain"
 	force = 50
-	attack_speed = 5.8
+	attack_speed = 7
 	damtype = BRUTE
 	attack_verb_continuous = list("bashes", "hammers", "smacks")
 	attack_verb_simple = list("bash", "hammer", "smack")
@@ -716,7 +716,7 @@
 	worn_icon = 'icons/obj/clothing/belt_overlays.dmi'
 	worn_icon_state = "become_strong"
 	force = 15
-	attack_speed = 1
+	attack_speed = 6
 	reach = 2
 	damtype = BRUTE
 	attack_verb_continuous = list("pokes", "jabs")
@@ -795,7 +795,7 @@
 	icon_state = "impending_day"
 	special = "This weapon will attack all non-humans in an AOE after killing a target."
 	force = 55
-	attack_speed = 2
+	attack_speed = 7
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/doomsdaycalendar/Doomsday_Attack.ogg'
 	damtype = BRUTE
 	attack_verb_continuous = list("bashes", "clubs")
@@ -833,7 +833,7 @@
 	special = "This weapon can be used to perform a jump attack after a short wind-up (Middle mouse button click/alt click an enemy)."
 	icon_state = "fluid_sac"
 	force = 55
-	attack_speed = 2
+	attack_speed = 7
 	damtype = BRUTE
 	attack_verb_continuous = list("slams", "attacks")
 	attack_verb_simple = list("slam", "attack")
@@ -1101,7 +1101,7 @@
 	inhand_y_dimension = 64
 	force = 23
 	swingstyle = WEAPONSWING_LARGESWEEP
-	attack_speed = 0.8
+	attack_speed = CLICK_CD_MELEE
 	reach = 1
 	stuntime = 0
 
@@ -1110,7 +1110,7 @@
 	desc = "People lie all the time. Why is that a bad thing?"
 	icon_state = "marionette"
 	force = 40
-	attack_speed = 5.5
+	attack_speed = 6.5
 	damtype = BRUTE
 	attack_verb_continuous = list("slices", "cleaves", "chops")
 	attack_verb_simple = list("slice", "cleave", "chop")
@@ -1123,7 +1123,7 @@
 	special = "This weapon is enhanced by the effects of the corresponding abnormality, O-09-144."
 	icon_state = "divinity"
 	force = 25//has an AOE for the amount of theonite stacks
-	attack_speed = 2
+	attack_speed = 7
 	damtype = BRUTE
 	attack_verb_continuous = list("stabs", "slashes", "attacks")
 	attack_verb_simple = list("stab", "slash", "attack")
@@ -1182,7 +1182,7 @@
 	icon_state = "destiny"
 	force = 11
 	swingstyle = WEAPONSWING_LARGESWEEP
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	damtype = BRUTE
 	attack_verb_continuous = list("stabs", "slashes", "attacks")
 	attack_verb_simple = list("stab", "slash", "attack")
@@ -1237,7 +1237,7 @@
 	special = "This weapon deals atrocious damage."
 	icon_state = "trachea"
 	force = 54
-	attack_speed = 3
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 	attack_verb_continuous = list("shoves", "bashes")
 	attack_verb_simple = list("shove", "bash")
@@ -1256,7 +1256,7 @@
 	special = "The damage of this weapon is significantly lowered depending on the user's temperance attribute."
 	icon_state = "roseate_desire"
 	force = 35
-	attack_speed = 0.8//about 44 dps
+	attack_speed = CLICK_CD_MELEE//about 44 dps
 	damtype = BRUTE
 	attack_verb_continuous = list("whips", "slaps", "flicks")
 	attack_verb_simple = list("whip", "slap", "flick")
@@ -1278,7 +1278,7 @@
 	force = 44
 	reach = 2		//Has 2 Square Reach.
 	stuntime = 5	//Longer reach, gives you a short stun.
-	attack_speed = 5.2
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 	attack_verb_continuous = list("pokes", "jabs", "tears", "lacerates", "gores")
 	attack_verb_simple = list("poke", "jab", "tear", "lacerate", "gore")
@@ -1335,7 +1335,7 @@
 	force = 45
 	reach = 2		//Has 2 Square Reach.
 	stuntime = 5	//Longer reach, gives you a short stun.
-	attack_speed = 5.8// really slow
+	attack_speed = 7// really slow
 	damtype = BRUTE
 	attack_verb_continuous = list("stabs", "impales")
 	attack_verb_simple = list("stab", "impale")
@@ -1364,7 +1364,7 @@
 	force = 39
 	reach = 2		//Has 2 Square Reach.
 	stuntime = 5	//Longer reach, gives you a short stun.
-	attack_speed = 2.0 // really slow
+	attack_speed = 7.0 // really slow
 	damtype = BRUTE
 	attack_verb_continuous = list("burns", "boils")
 	attack_verb_simple = list("burn", "boil")
@@ -1404,7 +1404,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	force = 45	//Low dps - has a ranged attack
-	attack_speed = 2
+	attack_speed = 7
 	damtype = BRUTE
 	attack_verb_continuous = list("burns", "boils")
 	attack_verb_simple = list("burn", "boil")
@@ -1482,7 +1482,7 @@
 	special = "This weapon can fire a projectile that deals damage over time."
 	icon_state = "faelantern"
 	force = 40	//Very low dps. You'll see why later
-	attack_speed = 2
+	attack_speed = 7
 	damtype = BRUTE
 	attack_verb_continuous = list("pokes", "slashes")
 	attack_verb_simple = list("poke", "slash")
@@ -1586,7 +1586,7 @@
 	force = 60
 	inhand_x_dimension = 96
 	inhand_y_dimension = 96
-	attack_speed = 4//Really really slow.
+	attack_speed = 6//Really really slow.
 	attack_verb_continuous = list("stabs", "impales")
 	attack_verb_simple = list("stab", "impale")
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/ego/spear1.ogg'
@@ -1656,7 +1656,7 @@
 	icon_state = "coiling"
 	force = 30
 	reach = 4		//Has 4 Square Reach.
-	attack_speed = 2.1
+	attack_speed = 7.1
 	damtype = BRUTE
 	attack_verb_continuous = list("whips", "lashes", "tears")
 	attack_verb_simple = list("whip", "lash", "tear")
@@ -1670,7 +1670,7 @@
 	special = "This weapon can be paired with a second copy to use both at the same time."
 	force = 18
 	swingstyle = WEAPONSWING_LARGESWEEP
-	attack_speed = 0.7
+	attack_speed = CLICK_CD_RAPID
 	damtype = BRUTE
 	attack_verb_continuous = list("stabs", "slashes", "attacks")
 	attack_verb_simple = list("stab", "slash", "attack")
@@ -1705,7 +1705,7 @@
 	inhand_y_dimension = 64
 	force = 60
 	swingstyle = WEAPONSWING_LARGESWEEP
-	attack_speed = 3
+	attack_speed = CLICK_CD_MELEE
 	damtype = BRUTE
 	attack_verb_continuous = list("bashes", "clubs")
 	attack_verb_simple = list("bashes", "clubs")
@@ -1752,7 +1752,7 @@
 		This weapon has a combo that increases damage and attack speed as you continue attacking."
 	icon_state = "sunshower"
 	force = 26
-	attack_speed = 1
+	attack_speed = 6
 	damtype = BRUTE
 	attack_verb_continuous = list("slices", "cleaves", "chops")
 	attack_verb_simple = list("slice", "cleave", "chop")
@@ -1814,7 +1814,7 @@
 	desc = "This camera captures those dying moments one last time."
 	icon_state = "morii"
 	force = 50
-	attack_speed = 2.5
+	attack_speed = 7.5
 	damtype = BRUTE
 	attack_verb_continuous = list("bonks", "bashes")
 	attack_verb_simple = list("bonk", "bash")
@@ -1828,7 +1828,7 @@
 	icon_state = "uturn"
 	force = 40
 	reach = 4
-	attack_speed = 5.3
+	attack_speed = 6.5
 	damtype = BRUTE
 	attack_verb_continuous = list("slashes", "slices", "rips", "cuts")
 	attack_verb_simple = list("slash", "slice", "rip", "cut")
@@ -1873,7 +1873,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	force = 50
-	attack_speed = 2
+	attack_speed = 7
 	damtype = BRUTE
 	attack_verb_continuous = list("bashes", "clubs")
 	attack_verb_simple = list("bashes", "clubs")
@@ -1914,7 +1914,7 @@
 	desc = "The shelter still retains the memory of that day."
 	icon_state = "isolation"
 	force = 30
-	attack_speed = 1
+	attack_speed = 6
 	damtype = BRUTE
 	attack_verb_continuous = list("cuts", "smacks", "bashes")
 	attack_verb_simple = list("cuts", "smacks", "bashes")
@@ -2012,7 +2012,7 @@
 	desc = "A bear paw with a couple nails jabbed into the ends of the digits. It's hard not to poke yourself when putting it on."
 	icon_state = "hex_nail"
 	force = 17
-	attack_speed = 0.5
+	attack_speed = CLICK_CD_RAPID
 	swingstyle = WEAPONSWING_LARGESWEEP
 	damtype = BRUTE
 	attack_verb_continuous = list("slashes", "stabs", "slaps")
@@ -2029,7 +2029,7 @@
 	desc = "Some old bandages that look like they have been worn for a long time."
 	icon_state = "desert"
 	force = 21
-	attack_speed = 0.7
+	attack_speed = CLICK_CD_RAPID
 	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/fist1.ogg'
 
 	var/chain = 0
@@ -2111,7 +2111,7 @@
 				hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/gen2.ogg'
 			else
 				force *= 0.7
-				attack_speed = 0.3
+				attack_speed = 6
 				hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/dodge2.ogg'
 				user.spin(20, 1)
 			chain=0
@@ -2119,7 +2119,7 @@
 
 	//Special attacks are slower.
 	if(attack_speed == initial(attack_speed) && activated)
-		attack_speed = 2
+		attack_speed = 7
 	. = ..()
 
 	//Reset Everything

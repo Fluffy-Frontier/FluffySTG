@@ -223,4 +223,3 @@
 		//TIME LEFT?
 		SuccessEffect()
 	job_tick_effect(user)
-
