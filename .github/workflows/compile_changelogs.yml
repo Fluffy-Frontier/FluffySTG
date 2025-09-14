@@ -48,8 +48,8 @@ jobs:
       - name: Commit
         if: steps.value_holder.outputs.ACTIONS_ENABLED
         run: |
-          git config --local user.name "novasector-ci[bot]"
-          git config --local user.email "181600888+novasector-ci[bot]@users.noreply.github.com"
+          git config --local user.name "Changelogs"
+          git config --local user.email "action@github.com"
           git pull origin master
           git add html/changelogs
           git commit -m "Automatic changelog compile [ci skip]" -a || true
