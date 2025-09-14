@@ -22,7 +22,7 @@
 	if(!J)
 		to_chat(user, span_userdanger("You follow the instructions and create some sort of liquid."))
 		user.apply_status_effect(STATUS_EFFECT_DR_JEKYLL)
-		playsound(user.loc, 'sound/effects/bubbles/bubbles\.ogg', rand(10,50), TRUE)
+		playsound(user.loc, 'sound/effects/bubbles/bubbles.ogg', rand(10,50), TRUE)
 		return
 	var/datum/status_effect/display/hyde/H = user.has_status_effect(STATUS_EFFECT_HYDE)
 	if(!H)

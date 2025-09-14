@@ -1367,7 +1367,7 @@
 	playsound(target, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/wayward_passenger/ripspace_end.ogg', 100, 0)
 	return ..()
 
-/datum/action/cooldown/rip_space/proc/dash_attack(mob/living/target, mob/living/target)
+/datum/action/cooldown/rip_space/proc/dash_attack(mob/living/target)
 	var/list/potential_TP = list()
 	for(var/turf/T in range(3, target))
 		if(T in range(2, target))

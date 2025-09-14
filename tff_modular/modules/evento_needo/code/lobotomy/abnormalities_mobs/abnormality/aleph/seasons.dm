@@ -413,7 +413,7 @@
 		if (istype(the_attack, /obj/effect/season_effect))
 			the_attack.source = src
 		for(var/mob/living/L in T.contents)
-			if(L in hit_list || istype(L, type))
+			if(hit_list.Find(L) || istype(L, type))
 				continue
 			hit_list += L
 			L.apply_damage(cone_attack_damage, melee_damage_type)

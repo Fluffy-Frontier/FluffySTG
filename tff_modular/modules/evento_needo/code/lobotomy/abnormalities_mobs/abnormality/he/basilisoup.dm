@@ -306,9 +306,7 @@
 /obj/structure/basilisoup_pot/update_overlays()
 	. = ..()
 	switch(soup_level)
-		if(0)
-
-		if(1 to 49)
+		if(0 to 49)
 			. += "soup_1"
 
 		if(50 to 99)
@@ -335,7 +333,7 @@
 		if(squeaky)
 			squeaky.play_squeak()
 		else
-			playsound(src, 'sound/effects/bubbles/bubbles\.ogg', 80, TRUE, -3)
+			playsound(src, 'sound/effects/bubbles/bubbles.ogg', 80, TRUE, -3)
 		qdel(wack)
 		return
 	if(istype(wack, /obj/item/food))
@@ -358,7 +356,7 @@
 		AdjustSoupLevels(rand(1, 3))
 	to_chat(user, span_notice("You put [wack] into the lifetime stew."))
 	qdel(wack)
-	playsound(src, 'sound/effects/bubbles/bubbles\.ogg', 80, TRUE, -3)
+	playsound(src, 'sound/effects/bubbles/bubbles.ogg', 80, TRUE, -3)
 
 
 /obj/structure/basilisoup_pot/proc/dump_soup(obj/item/object, mob/user)

@@ -2,10 +2,10 @@
 	. = ..()
 	if(href_list["temporary_flavor"])
 		show_temp_ftext(usr)
-	if(href_list["dialog_node"])
-		var/datum/dialog_options/choice = locate(href_list["dialog_node"])
-		var/mob/living/npc = locate(href_list["origin"])
-		npc.my_dialog.start_dialog(src, choice)
+	//if(href_list["dialog_node"]) //SARGASSUM EDIT: временно выключенно
+	//	var/datum/dialog_options/choice = locate(href_list["dialog_node"])
+	//	var/mob/living/npc = locate(href_list["origin"])
+	//	npc.my_dialog.start_dialog(src, choice)
 
 /mob/living/proc/show_temp_ftext(mob/user)
 	if(temporary_flavor_text)

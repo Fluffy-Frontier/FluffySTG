@@ -325,7 +325,7 @@
 					gift = pick(strongaleph) //The rarest item of all
 
 	//Gacha now locked in
-	playsound(src, 'sound/effects/bubbles/bubbles\.ogg', 80, TRUE, -3)
+	playsound(src, 'sound/effects/bubbles/bubbles.ogg', 80, TRUE, -3)
 	sleep(4 SECONDS)
 	if(gift)
 		Dispense(gift)

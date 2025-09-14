@@ -304,7 +304,7 @@
 			for(var/mob/living/L in TF)
 				if(special_checks_faction && user.faction_check_atom(L))
 					continue
-				if(L in been_hit || L == user)
+				if(been_hit.Find(L) || L == user)
 					continue
 				user.visible_message(span_boldwarning("[user] blazes through [L]!"))
 				L.apply_damage((special_damage + extra_damage), BRUTE, null, L.run_armor_check(null, BRUTE), spread_damage = TRUE)

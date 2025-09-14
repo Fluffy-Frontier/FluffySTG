@@ -113,7 +113,7 @@
 	var/list/armament_icons = list()
 	for(var/arms in typesof(/obj/item/ego_weapon/black_silence_gloves))
 		var/obj/item/ego_weapon/black_silence_gloves/armstype = arms
-		if(initial(armstype)) // Changes icon based on furioso unlocks
+		if(armstype) // Changes icon based on furioso unlocks
 			display_names[initial(armstype.name)] = armstype
 			if(initial(armstype.name) in unlocked_list)
 				armament_icons += list(initial(armstype.name) = image(icon = initial(armstype.icon), icon_state = initial(armstype.icon_state)))

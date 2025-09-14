@@ -93,7 +93,7 @@
 	var/list/armament_icons = list()
 	for(var/arms in typesof(/obj/item/ego_weapon/city/pt))
 		var/obj/item/ego_weapon/city/pt/armstype = arms
-		if(initial(armstype))
+		if(armstype)
 			if(initial(armstype.name) == "A Purple Tear")
 				continue
 			display_names[initial(armstype.name)] = armstype

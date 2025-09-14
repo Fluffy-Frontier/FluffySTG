@@ -492,9 +492,11 @@
 	var/max_step
 	switch(fear_level)
 		if(ZAYIN_LEVEL)
+			max_step = 2
 		if(TETH_LEVEL)
 			max_step = 2 //CHANGE TO MODULAR TIMERS
 		if(WAW_LEVEL)
+			max_step = 4
 		if(HE_LEVEL)
 			max_step = 4
 		if(ALEPH_LEVEL)

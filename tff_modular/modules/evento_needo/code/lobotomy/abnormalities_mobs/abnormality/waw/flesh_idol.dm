@@ -36,8 +36,8 @@
 	)
 
 /mob/living/simple_animal/hostile/abnormality/flesh_idol/Initialize()
-	. = ..()
 	addtimer(CALLBACK(src, PROC_REF(counter_check)), counter_interval)
+	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/flesh_idol/proc/counter_check()
 	if(IsContained())
@@ -53,7 +53,6 @@
 			H.adjustBruteLoss(-heal_amount) // It heals everyone by 50 or 100 points
 			H.adjustSanityLoss(-heal_amount) // It heals everyone by 50 or 100 points
 			new /obj/effect/temp_visual/healing(get_turf(H))
-	heal_amount = initial(heal_amount)
 
 	var/list/damtypes = list(BRUTE, TOX, BRAIN, BURN)
 	var/damage = pick(damtypes)

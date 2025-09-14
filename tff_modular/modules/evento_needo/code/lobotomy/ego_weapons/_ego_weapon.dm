@@ -154,7 +154,7 @@
 		if(KNOCKBACK_HEAVY)
 			. += span_notice("This weapon has neck-snapping enemy knockback.")
 
-		else if(knockback)
+		else
 			. += span_notice("This weapon has [knockback >= 10 ? "neck-snapping": ""] enemy knockback.")
 
 /obj/item/ego_weapon/proc/CanUseEgo(mob/living/user)

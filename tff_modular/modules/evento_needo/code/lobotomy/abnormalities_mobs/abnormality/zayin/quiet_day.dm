@@ -131,8 +131,8 @@
 	flick("quiet_fadein", src)
 	icon_state = "quiet_ghost"
 	currently_talking = TRUE
-	switch(user.get_major_clothing_class())
-		if(CLOTHING_BASIC)
+	var/class = user.get_major_clothing_class() == CLOTHING_BASIC ? CLOTHING_ENGINEERING : user.get_major_clothing_class()
+	switch(class)
 		if(CLOTHING_ENGINEERING)
 			for(var/line in war_story)
 				say(line)
