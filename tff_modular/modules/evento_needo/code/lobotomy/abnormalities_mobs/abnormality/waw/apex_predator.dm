@@ -20,8 +20,6 @@
 	melee_damage_type = BRUTE
 	stat_attack = HARD_CRIT
 
-	fear_level = 0	//You should never notice it
-
 	attack_sound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/fragment/attack.ogg'
 	attack_verb_continuous = "stabs"
 	attack_verb_simple = "stab"

@@ -7,9 +7,7 @@
 	worn_icon = 'tff_modular/modules/evento_needo/icons/eoehoma/onmob.dmi'
 	icon_state = "e40"
 	inhand_icon_state = "e40"
-	accepted_magazine_type = list(
-		/obj/item/ammo_box/magazine/e40,
-	)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/e40
 	var/obj/item/gun/energy/laser/e40_laser_secondary/secondary
 	fire_select_icon_state_prefix = "e40_"
 
@@ -121,13 +119,9 @@
 		return ..()
 
 /obj/item/gun/ballistic/automatic/assault/e40/on_wield(obj/item/source, mob/user)
-	wielded = TRUE
-	secondary.wielded = TRUE
-	INVOKE_ASYNC(src, PROC_REF(do_wield), user)
-
-/obj/item/gun/ballistic/automatic/assault/e40/do_wield(mob/user)
 	. = ..()
-	secondary.wielded_fully = wielded_fully
+	secondary.wielded = TRUE
+	secondary.wielded_fully = TRUE
 
 /// triggered on unwield of two handed item
 /obj/item/gun/ballistic/automatic/assault/e40/on_unwield(obj/item/source, mob/user)

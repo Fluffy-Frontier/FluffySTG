@@ -7,7 +7,6 @@
 	maxHealth = 14 //hit with baton twice
 	health = 14
 	fear_level = TETH_LEVEL
-	fear_level = 0 //rabbit not scary
 	move_to_delay = 16
 	damage_coeff = list(BURN = 0.5, BRAIN = 1.5, BRUTE = 1, TOX = 1)
 	can_breach = TRUE

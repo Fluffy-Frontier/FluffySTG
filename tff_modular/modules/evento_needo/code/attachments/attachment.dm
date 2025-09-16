@@ -111,13 +111,13 @@
 
 /datum/component/attachment/proc/update_overlays(obj/item/attachment/parent, list/overlays, list/offset)
 	if(!(attach_features_flags & ATTACH_NO_SPRITE))
-		var/overlay_layer = FLOAT_LAYER
-		var/overlay_plane = FLOAT_PLANE
-		if(parent.render_layer)
-			overlay_layer = parent.render_layer
-		if(parent.render_plane)
-			overlay_layer = parent.render_plane
-		overlays += mutable_appearance(parent.icon, "[parent.icon_state]-attached",overlay_layer,overlay_plane)
+		//var/overlay_layer = ABOVE_OBJ_LAYER
+		//var/overlay_plane = ABOVE_HUD_PLANE
+		//if(parent.render_layer)
+		//	overlay_layer = parent.render_layer
+		//if(parent.render_plane)
+		//	overlay_layer = parent.render_plane
+		overlays += mutable_appearance(parent.icon, "[parent.icon_state]-attached")
 
 /datum/component/attachment/proc/try_attach(obj/item/parent, obj/item/holder, mob/user, bypass_checks)
 	SIGNAL_HANDLER

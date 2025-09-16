@@ -266,7 +266,7 @@
 	C.desc = "The core of Pinocchio"
 	C.icon_state = ""//core icon goes here
 	C.contained_abno = /mob/living/simple_animal/hostile/abnormality/pinocchio//release()ing or extract()ing this core will spawn the abnormality, making it a valid core.
-	C.fear_level = 3
+	C.fear_level = WAW_LEVEL
 	C.icon = 'tff_modular/modules/evento_needo/icons/Teguicons/abno_cores/he.dmi'
 	C.ego_list = list(
 		/datum/ego_datum/weapon/marionette,

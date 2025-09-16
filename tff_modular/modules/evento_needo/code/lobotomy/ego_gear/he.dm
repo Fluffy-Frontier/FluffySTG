@@ -7,8 +7,8 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 /*Developer's note - All LC13 armor has 50% of its BURN armor as fire armor by default. */
 
 /obj/item/clothing/suit/armor/ego_gear/he
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/abnormality/he.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/abnormality/he.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/abnormality/he.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/abnormality/he.dmi'
 
 /obj/item/clothing/suit/armor/ego_gear/he/grinder
 	name = "grinder MK4"

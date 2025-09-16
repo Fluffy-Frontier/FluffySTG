@@ -13,7 +13,6 @@
 	attack_sound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/censored/attack.ogg'
 	/* Stats */
 	fear_level = ALEPH_LEVEL
-	fear_level = ALEPH_LEVEL + 3
 	health = 4000
 	maxHealth = 4000
 	damage_coeff = list(BURN = 0.6, BRAIN = 0.8, BRUTE = 0.4, TOX = 1)

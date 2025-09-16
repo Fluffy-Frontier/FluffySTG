@@ -7,7 +7,6 @@
 	maxHealth = 50
 	health = 50
 	fear_level = TETH_LEVEL
-	fear_level = 0
 	move_to_delay = 5
 	melee_damage_lower = 3
 	melee_damage_upper = 5

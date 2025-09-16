@@ -5,9 +5,9 @@
 	When you attack, you enter combat mode; and attacking in combat mode will deal increasing damage to both the user and the target. \
 	It cannot be dropped while in combat mode. Combat mode can be turned off by using it in hand.\
 	Alt click the trunk to lock or unlock it."
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/devyat_armor.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/devyat_armor.dmi'
 	worn_icon_state = "s_polu"
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/devyat_icon.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/devyat_icon.dmi'
 	lefthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/devyat_left.dmi'
 	righthand_file = 'tff_modular/modules/evento_needo/icons/Teguicons/devyat_right.dmi'
 	icon_state = "s_polu"

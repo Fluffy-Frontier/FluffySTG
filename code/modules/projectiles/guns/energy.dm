@@ -99,7 +99,6 @@
 	return cell
 
 /obj/item/gun/energy/Initialize(mapload)
-	. = ..()
 	if(cell_type)
 		cell = new cell_type(src)
 	else
@@ -107,6 +106,7 @@
 	if(!dead_cell)
 		cell.give(cell.maxcharge)
 	update_ammo_types()
+	. = ..()
 	recharge_newshot(TRUE)
 	if(selfcharge)
 		START_PROCESSING(SSobj, src)
@@ -189,15 +189,39 @@
 			recharge_newshot(TRUE)
 		update_appearance()
 
-/obj/item/gun/energy/attackby(obj/item/attacking_item, mob/user, list/modifiers, list/attack_modifiers)
-	if (!internal_magazine)
-		var/obj/item/stock_parts/power_store/cell/cell = attacking_item
-		if (!cell)
-			return insert_cell(user, cell)
+/obj/item/gun/energy/attackby(obj/item/attacking_item, mob/living/user, params)
+	if(istype(attacking_item, /obj/item/stock_parts/power_store/cell))
+		return try_insert_cell(attacking_item, user)
+	. = ..()
+
+/obj/item/gun/energy/proc/try_insert_cell(obj/item/stock_parts/power_store/cell/new_cell, var/mob/user)
+	if(!new_cell)
+		return FALSE
+	if(latch_closed)
+		to_chat(user, "Unlatch the power cell's retainment clip")
+		return FALSE
+	if(!has_empty_cell())
+		if(tac_reloads)
+			if(do_after(user, tactical_reload_delay, src, hidden = TRUE))
+				if(insert_cell(user, new_cell))
+					to_chat(user, span_notice("You perform a tactical reload on \the [src]."))
+					eject_cell(user, cell)
+			else
+				to_chat(user, span_warning("Your reload was interupted!"))
+				return FALSE
 		else
-			if (tac_reloads)
-				eject_cell(user, cell)
-	return ..()
+			to_chat(user, span_warning("Take out the battery first!"))
+			return FALSE
+	user.temporarilyRemoveItemFromInventory(new_cell)
+	if(!user.transferItemToLoc(new_cell, src))
+		qdel(new_cell) // Если что-то пошло не так...
+		return FALSE
+	cell = new_cell
+
+	update_appearance()
+	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD) // Для СкайРатовского ХУДа.
+	balloon_alert(user, "cell inserted")
+	return TRUE
 
 /obj/item/gun/energy/can_shoot()
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
@@ -393,20 +417,18 @@
 	update_appearance()
 
 /obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/power_store/C)
-	if(!latch_closed)
-		if(user.transferItemToLoc(C, src))
-			cell = C
-			to_chat(user, span_notice("You load the [C] into \the [src]."))
-			playsound(src, load_sound, load_sound_volume, load_sound_vary)
-			update_appearance()
-			return TRUE
-		else
-			to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
-			return FALSE
-	else
-		to_chat(user, span_warning("The [src]'s cell retainment clip is latched!"))
+	if(!C)
 		return FALSE
+	user.temporarilyRemoveItemFromInventory(C)
+	if(!user.transferItemToLoc(C, src))
+		qdel(C) // Если что-то пошло не так...
+		return FALSE
+	cell = C
 
+	playsound(src, load_sound, load_sound_volume, load_sound_vary)
+	update_appearance()
+	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD) // Для СкайРатовского ХУДа.
+	balloon_alert(user, "cell inserted")
 
 //special is_type_in_list method to counteract problem with current method
 /obj/item/gun/energy/proc/is_attachment_in_contents_list()
@@ -415,57 +437,62 @@
 			return TRUE
 	return FALSE
 
-/obj/item/gun/energy/click_alt(mob/user)
-	if(..())
-		return
-	if(!internal_magazine && latch_closed)
-		to_chat(user, span_notice("You start to unlatch the [src]'s power cell retainment clip..."))
-		if(do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
-			to_chat(user, span_notice("You unlatch the [src]'s power cell retainment clip " + span_red("OPEN") + "."))
-			playsound(src, 'sound/items/taperecorder/taperecorder_play.ogg', 50, FALSE)
-			tac_reloads = TRUE
-			latch_closed = FALSE
-			update_appearance()
-	else if(!internal_magazine && !latch_closed)
-		// if(!cell && is_attachment_in_contents_list())
-		// 	return ..() //should bring up the attachment menu if attachments are added. If none are added, it just does leaves the latch open
-		to_chat(user, span_warning("You start to latch the [src]'s power cell retainment clip..."))
-		if (do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
-			to_chat(user, span_notice("You latch the [src]'s power cell retainment clip " + span_green("CLOSED") + "."))
-			playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
-			tac_reloads = FALSE
-			latch_closed = TRUE
-			update_appearance()
-	return
+/obj/item/gun/energy/proc/has_empty_cell()
+	if(!cell)
+		return TRUE
+	return FALSE
 
-/obj/item/gun/energy/proc/eject_cell(mob/user, obj/item/stock_parts/power_store/tac_load = null)
+/obj/item/gun/energy/attack_self(mob/living/user)
+	if(latch_closed)
+		unique_action(user)
+	else if(!latch_closed)
+		if(has_empty_cell())
+			balloon_alert(user, "there is no cell!")
+			return FALSE
+		eject_cell(user)
+	return ..()
+
+/obj/item/gun/energy/proc/eject_cell(mob/user)
 	playsound(src, load_sound, load_sound_volume, load_sound_vary)
-	cell.forceMove(drop_location())
-	var/obj/item/stock_parts/power_store/old_cell = cell
-	old_cell.update_appearance()
-	cell = null
 	update_appearance()
+	cell.update_appearance()
 	if(user)
 		to_chat(user, span_notice("You pull the cell out of \the [src]."))
-		if(tac_load && tac_reloads)
-			if(do_after(user, tactical_reload_delay, src, hidden = TRUE))
-				if(insert_cell(user, tac_load))
-					to_chat(user, span_notice("You perform a tactical reload on \the [src]."))
-				else
-					to_chat(user, span_warning("You dropped the old cell, but the new one doesn't fit. How embarassing."))
-			else
-				to_chat(user, span_warning("Your reload was interupted!"))
-				return
+		user.put_in_hands(cell)
+	else
+		cell.forceMove(drop_location())
 
-		user.put_in_hands(old_cell)
-	update_appearance()
+	//cell = null
+
+	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD) // Для СкайРатовского ХУДа.
+
+	balloon_alert(user, "cell ejected")
+
 
 /obj/item/gun/energy/screwdriver_act(mob/living/user, obj/item/I)
-	if(cell && !internal_cell)
-		to_chat(user, span_notice("You begin unscrewing and pulling out the cell..."))
-		if(I.use_tool(src, user, 1 SECONDS, volume=100))
-			to_chat(user, span_notice("You remove the power cell."))
-			eject_cell(user)
+
+	var/choice = isnull(pin) ? FALSE : tgui_input_list(user, "Choose action", "Choice", list("Take pin out", "Cell-slot action"))
+	if(choice == "Cell-slot action" || !choice)
+		if(latch_closed)
+			to_chat(user, span_notice("You start to unlatch the [src]'s power cell retainment clip..."))
+			if(do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
+				to_chat(user, span_notice("You unlatch the [src]'s power cell retainment clip " + span_red("OPEN") + "."))
+				playsound(src, 'sound/items/taperecorder/taperecorder_play.ogg', 50, FALSE)
+				tac_reloads = TRUE
+				latch_closed = FALSE
+				update_appearance()
+			return ITEM_INTERACT_SUCCESS
+		else if(!latch_closed)
+			// if(!cell && is_attachment_in_contents_list())
+			// 	return ..() //should bring up the attachment menu if attachments are added. If none are added, it just does leaves the latch open
+			to_chat(user, span_warning("You start to latch the [src]'s power cell retainment clip..."))
+			if (do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
+				to_chat(user, span_notice("You latch the [src]'s power cell retainment clip " + span_green("CLOSED") + "."))
+				playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
+				tac_reloads = FALSE
+				latch_closed = TRUE
+				update_appearance()
+				return ITEM_INTERACT_SUCCESS
 	return ..()
 
 /obj/item/gun/energy/unique_action(mob/living/user)

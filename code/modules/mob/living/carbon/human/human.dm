@@ -779,13 +779,13 @@
 				severity = 2
 			else if(sanityhealth > maxSanity*0.4)
 				hud_used.sanityhealth.icon_state = "sanity3"
-				severity = 4
+				severity = 3
 			else if(sanityhealth > maxSanity*0.2)
 				hud_used.sanityhealth.icon_state = "sanity4"
-				severity = 6
+				severity = 4
 			else
 				hud_used.sanityhealth.icon_state = "sanity5"
-				severity = 7
+				severity = 5
 		if(severity > 0)
 			overlay_fullscreen("oxy", /atom/movable/screen/fullscreen/oxy, severity)
 		else

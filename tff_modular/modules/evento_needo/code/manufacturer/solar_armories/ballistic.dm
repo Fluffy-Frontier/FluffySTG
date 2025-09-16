@@ -19,9 +19,7 @@
 	worn_icon_state = null
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/gauss/modelh.ogg'
 	load_sound = 'tff_modular/modules/evento_needo/sounds/gauss/pistol_reload.ogg'
-	accepted_magazine_type = list(
-		/obj/item/ammo_box/magazine/modelh,
-	)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/modelh
 
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
@@ -43,9 +41,7 @@
 
 /obj/item/gun/ballistic/automatic/powered/gauss/modelh/suns
 	desc = "A standard-issue pistol exported from the Solarian Confederation. It fires slow flesh-rending ferromagnetic slugs at a high energy cost, however they are ineffective on any armor. It is painted in the colors of SUNS."
-	accepted_magazine_type = list(
-		/obj/item/ammo_box/magazine/modelh,
-	)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/modelh
 	icon_state = "model-h_suns"
 	inhand_icon_state = "model-h_suns"
 
@@ -85,9 +81,7 @@
 /obj/item/gun/ballistic/automatic/powered/gauss/claris
 	name = "Claris"
 	desc = "An antiquated Solarian rifle. Chambered in ferromagnetic pellets, just as the founding Solarians intended."
-	accepted_magazine_type = list(
-		/obj/item/ammo_box/magazine/internal/claris,
-	)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/claris
 	icon = 'tff_modular/modules/evento_needo/icons/solararmories/48x32.dmi'
 	lefthand_file = 'tff_modular/modules/evento_needo/icons/solararmories/lefthand.dmi'
 	righthand_file = 'tff_modular/modules/evento_needo/icons/solararmories/righthand.dmi'

@@ -1,7 +1,7 @@
 /obj/structure/abno_core
 	name = "blank abnormality core"
 	desc = "You shouldn't be seeing this. Please let someone know!"
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/abno_cores/zayin.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/abno_cores/_cores.dmi'
 	icon_state = ""//blank icon states exist for each risk level.
 	anchored = FALSE
 	density = FALSE
@@ -13,37 +13,35 @@
 	var/fear_level
 	var/ego_list = list()
 
+/obj/structure/abno_core/Initialize(mapload)
+	contained_abno = SSabnormality_queue.SpawnAbno()
+
+	if(!contained_abno) //Аномалии кончились
+		qdel(src)
+		return
+	icon_state = initial(SSabnormality_queue.queued_abnormality.fear_level)
+	return ..()
+
 /obj/structure/abno_core/attack_hand(mob/living/carbon/human/user, list/modifiers)
 	user.show_aso_blurb("Выпустив аномалию ты не сможешь передвинуть её. Ты уверен в своем решении?", 3 SECONDS)
 	sleep(3 SECONDS)
 	var/choice = tgui_input_list(user, "Выпустить аномалию?", "Выбор", list("Выпустить", "Не сейчас."), timeout = 10 SECONDS)
 	if(choice == "Выпустить")
-		Extract()
+		Release()
 	else
 		return ..()
 
+//Выпуск аномалии
 /obj/structure/abno_core/proc/Release()
 	if(!contained_abno)//Is this core properly generated?
 		return
-	new contained_abno(get_turf(src))
-	qdel(src)
-	return TRUE
-
-/obj/structure/abno_core/proc/Extract()
-	var/mob/living/simple_animal/hostile/abnormality/A = SSabnormality_queue.SpawnAbno()
-	var/datum/abnormality/abno_ref = A
-	for(abno_ref in SSlobotomy_corp.all_abnormality_datums) //Check if they're already in the facility
-		if(abno_ref.abno_path == A)
-			for(var/mob/living/carbon/human/H in view(1, src))
-				to_chat(H, span_boldwarning("This abnormality is already contained!"))
-			return FALSE//If the abnormality already exists in a cell, the proc returns early here.
 	anchored = TRUE
-	icon_state = ""
 	animate(src, alpha = 1,pixel_x = -16, pixel_z = 32, time = 3 SECONDS)
 	playsound(src,'tff_modular/modules/evento_needo/sounds/Tegusounds/abno_extract.ogg', 50, 5)
 	sleep(3 SECONDS)
 	SSabnormality_queue.PostSpawn()
-	Release()
+	new contained_abno(get_turf(src))
+
 	log_admin("[key_name(usr)] заспавнил [contained_abno].")
 	message_admins("[key_name(usr)] заспавнил [contained_abno].")
 
@@ -59,8 +57,8 @@
 	icon_state = "extraction"
 	pixel_x = -16
 	base_pixel_x = -16
-	pixel_y = 16
-	base_pixel_y = 16
+	//pixel_y = 16
+	//base_pixel_y = 16
 	density = FALSE
 	layer = ABOVE_ALL_MOB_LAYER
 	var/cooldown

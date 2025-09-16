@@ -2,62 +2,62 @@
 
 /datum/armament_entry/company_import/nri_surplus/firearm/akm
 	item_type = /obj/item/gun/ballistic/automatic/akm
-	cost = 3000
+	cost = 1000
 	contraband = TRUE
 
 /datum/armament_entry/company_import/nri_surplus/firearm/akmmodern
 	item_type = /obj/item/gun/ballistic/automatic/akm/modern
-	cost = 4000
+	cost = 1200
 	contraband = TRUE
 
 /datum/armament_entry/company_import/nri_surplus/firearm/akmcivvie
 	item_type = /obj/item/gun/ballistic/automatic/akm/civvie
-	cost = 2000
+	cost = 900
 
 /datum/armament_entry/company_import/nri_surplus/firearm/akmnri
 	item_type = /obj/item/gun/ballistic/automatic/akm/nri
-	cost = 2000
+	cost = 900
 	contraband = TRUE
 
 /datum/armament_entry/company_import/nri_surplus/longarm/bison
 	item_type = /obj/item/gun/ballistic/automatic/bison
-	cost = 4500
+	cost = 1500
 
 /datum/armament_entry/company_import/nri_surplus/longarm/bisonnri
 	item_type = /obj/item/gun/ballistic/automatic/bison/nri
-	cost = 4500
+	cost = 1500
 	contraband = TRUE
 
 /datum/armament_entry/company_import/nri_surplus/longarm/p90
 	item_type = /obj/item/gun/ballistic/automatic/p90
-	cost = 5000
+	cost = 1700
 	contraband = TRUE
 
 //SOL
 
 /datum/armament_entry/company_import/sol_defense/longarm/scar
 	item_type = /obj/item/gun/ballistic/automatic/scar
-	cost = 5000
+	cost = 1700
 	contraband = TRUE
 
 /datum/armament_entry/company_import/sol_defense/longarm/m16
 	item_type = /obj/item/gun/ballistic/automatic/m16
-	cost = 4000
+	cost = 1200
 	contraband = TRUE
 
 /datum/armament_entry/company_import/sol_defense/longarm/m16modern
 	item_type = /obj/item/gun/ballistic/automatic/m16/modern
-	cost = 5000
+	cost = 1700
 	contraband = TRUE
 
 /datum/armament_entry/company_import/sol_defense/longarm/m16modernv2
 	item_type = /obj/item/gun/ballistic/automatic/m16/modern/v2
-	cost = 6000
+	cost = 1800
 	contraband = TRUE
 
 /datum/armament_entry/company_import/sol_defense/longarm/mp5
 	item_type = /obj/item/gun/ballistic/automatic/mp5
-	cost = 4000
+	cost = 1200
 
 //VIT
 
@@ -67,46 +67,46 @@
 
 /datum/armament_entry/company_import/vitezstvi/longarms/ppsh
 	item_type = /obj/item/gun/ballistic/automatic/ppsh
-	cost = 1800
+	cost = 900
 
 /datum/armament_entry/company_import/vitezstvi/longarms/ppshmodern
 	item_type = /obj/item/gun/ballistic/automatic/ppsh/modern
-	cost = 2500
+	cost = 800
 
 /datum/armament_entry/company_import/vitezstvi/longarms/stg
 	item_type = /obj/item/gun/ballistic/automatic/stg
-	cost = 2000
+	cost = 900
 
 /datum/armament_entry/company_import/vitezstvi/longarms/mg34
 	item_type = /obj/item/gun/ballistic/automatic/mg34
-	cost = 2200
+	cost = 1500
 
 /datum/armament_entry/company_import/vitezstvi/longarms/mg42
 	item_type = /obj/item/gun/ballistic/automatic/mg34/mg42
-	cost = 2500
+	cost = 800
 
 /datum/armament_entry/company_import/vitezstvi/longarms/mp40
 	item_type = /obj/item/gun/ballistic/automatic/mp40
-	cost = 1800
+	cost = 900
 
 /datum/armament_entry/company_import/vitezstvi/longarms/mp40modern
 	item_type = /obj/item/gun/ballistic/automatic/mp40/modern
-	cost = 2500
+	cost = 800
 
 /datum/armament_entry/company_import/vitezstvi/longarms/pps
 	item_type = /obj/item/gun/ballistic/automatic/pps
-	cost = 1800
+	cost = 900
 
 /datum/armament_entry/company_import/vitezstvi/longarms/fg42
 	item_type = /obj/item/gun/ballistic/automatic/fg42
-	cost = 1700
+	cost = 900
 
 /datum/armament_entry/company_import/vitezstvi/sidearms
 	subcategory = "Sidearms"
 
 /datum/armament_entry/company_import/vitezstvi/sidearms/luger
 	item_type = /obj/item/gun/ballistic/automatic/pistol/luger
-	cost = 1500
+	cost = 600
 
 
 

@@ -401,7 +401,7 @@
 		return
 	// Teleport us somewhere where nobody will see us at first
 	disguiseloop.stop()
-	fear_level = 0 // So it doesn't inflict fear to those around them
+	fear_level = ZAYIN_LEVEL // So it doesn't inflict fear to those around them
 	move_to_delay = 0.5 // This will make them move at a speed similar to normal players
 	var/list/priority_list = list()
 	for(var/turf/T in GLOB.generic_event_spawns)

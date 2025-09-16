@@ -18,7 +18,6 @@
 	stat_attack = HARD_CRIT
 	can_breach = TRUE
 	fear_level = WAW_LEVEL
-	fear_level = 0
 	move_to_delay = 6
 	ego_list = list(
 		/datum/ego_datum/weapon/diffraction,

@@ -1,9 +1,21 @@
-/datum/keybinding/movement/weapon_wield
+/datum/keybinding/human/weapon_wield
 	hotkey_keys = list("CtrlE")
 	name = "weapon_wield"
 	full_name = "army crawl"
 	description = "wield your weapon like a man"
 	keybind_signal = COMSIG_KB_MOB_WEAPON_WIELD
+
+/datum/keybinding/human/weapon_wield/down(client/user, turf/target)
+	. = ..()
+	if(.)
+		return
+	var/mob/living/carbon/human/H = user.mob
+	var/obj/item/gun/weapon = istype(H.get_active_held_item(), /obj/item/gun) ? H.get_active_held_item() : null
+	if(!weapon)
+		to_chat(H, "No weapon to wield!")
+		return FALSE
+	weapon.do_wield(H)
+	return TRUE
 
 /datum/keybinding/human/secondary_action
 	hotkey_keys = list("ShiftSpace")

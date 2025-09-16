@@ -10,8 +10,8 @@
 	name = "index proxy armor"
 	desc = "Armor worn by index proxies."
 	icon_state = "index_proxy_open"
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lc13_armor.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lc13_armor.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/lc13_armor.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/lc13_armor.dmi'
 	new_armor = list(BURN = 30, BRAIN = 30, BRUTE = 30, TOX = 40)
 
 	alternative_styles = list("index_proxy_open", "index_proxy_closed")

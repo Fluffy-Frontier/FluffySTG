@@ -13,7 +13,7 @@
 
 SUBSYSTEM_DEF(abnormality_queue)
 	name = "Abnormality Queue"
-	flags = SS_KEEP_TIMING | SS_BACKGROUND
+	flags = SS_KEEP_TIMING | SS_BACKGROUND | SS_NO_FIRE
 	runlevels = RUNLEVEL_GAME
 	wait = 10 SECONDS
 
@@ -48,12 +48,16 @@ SUBSYSTEM_DEF(abnormality_queue)
 	var/current_milestone = 1
 
 /datum/controller/subsystem/abnormality_queue/Initialize(timeofday)
-	RegisterSignal(SSdcs, COMSIG_GLOB_ORDEAL_END, PROC_REF(OnOrdealEnd))
+	//RegisterSignal(SSdcs, COMSIG_GLOB_ORDEAL_END, PROC_REF(OnOrdealEnd))
+	for(var/abn in subtypesof(/mob/living/simple_animal/hostile/abnormality))
+		var/mob/living/simple_animal/hostile/abnormality/abno = new abn
+		possible_abnormalities[initial(abno.fear_level)] += abn
+		qdel(abno)
 	return ..()
 
 /datum/controller/subsystem/abnormality_queue/proc/SpawnAbno()
 	previous_abno_spawn = world.time
-	SelectAvailableLevels()
+	return SelectAvailableLevels()
 
 // Abno level selection
 /datum/controller/subsystem/abnormality_queue/proc/SelectAvailableLevels()
@@ -68,8 +72,8 @@ SUBSYSTEM_DEF(abnormality_queue)
 		available_levels = list(ZAYIN_LEVEL, TETH_LEVEL)
 	// Roll the abnos from available levels
 	if(length(possible_abnormalities))
-		PickAbno()
-	return
+		return PickAbno()
+	return FALSE
 
 /datum/controller/subsystem/abnormality_queue/proc/PostSpawn()
 	if(!queued_abnormality)
@@ -77,7 +81,7 @@ SUBSYSTEM_DEF(abnormality_queue)
 
 	if(possible_abnormalities[initial(queued_abnormality.fear_level)][queued_abnormality] <= 0)
 		stack_trace("Queued abnormality had no weight!?")
-	possible_abnormalities[initial(queued_abnormality.fear_level)] -= queued_abnormality
+	spawned_abnormalities[initial(queued_abnormality.fear_level)] += queued_abnormality
 	priority_announce(span_announce("New abnormality has arrived at the facility!"), "M.O.G. ANNOUNCEMENT", sound = 'sound/machines/beep/triple_beep.ogg')
 	queued_abnormality = null
 	spawned_abnos++
@@ -98,9 +102,9 @@ SUBSYSTEM_DEF(abnormality_queue)
 	if(!length(possible_abnormalities))
 		return FALSE
 	var/lev = pick(picking_levels)
-	if(!length(possible_abnormalities[lev] - spawned_abnormalities[lev]))
+	if(!length(possible_abnormalities[lev]))
 		return FALSE
-	var/chosen_abno = pick_weight(possible_abnormalities[lev])
+	var/chosen_abno = pick(possible_abnormalities[lev])
 	if(!chosen_abno)
 		return FALSE
 	spawned_abnormalities[lev] += chosen_abno
@@ -118,7 +122,7 @@ SUBSYSTEM_DEF(abnormality_queue)
 	// Already in there, oops
 	if(level_threat in available_levels)
 		return
-	priority_announce(span_announce("Due to [O.name] finishing early, additional abnormalities will be extracted soon."), "M.O.G. ANNOUNCEMENT")
+	priority_announce("Due to [O.name] finishing early, additional abnormalities will be extracted soon.", "M.O.G. ANNOUNCEMENT")
 	INVOKE_ASYNC(src, PROC_REF(SpawnOrdealAbnos), level_threat)
 
 /datum/controller/subsystem/abnormality_queue/proc/SpawnOrdealAbnos(level_threat = 1)

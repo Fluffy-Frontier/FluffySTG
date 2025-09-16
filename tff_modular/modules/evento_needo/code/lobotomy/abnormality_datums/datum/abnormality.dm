@@ -21,7 +21,7 @@
 	//Check for Neutral abnormalities
 	var/good_hater = FALSE
 
-/datum/abnormality/New(mob/living/simple_animal/hostile/abnormality/new_type = null)
+/datum/abnormality/New(new_type = null)
 	if(!ispath(new_type))
 		CRASH("Abnormality datum was created without a path to the mob.")
 	abno_path = new_type

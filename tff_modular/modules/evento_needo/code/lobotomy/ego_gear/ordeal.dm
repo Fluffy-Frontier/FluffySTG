@@ -2,8 +2,8 @@
 	name = "claw armor"
 	desc = "A simple suit and tie with several injectors attached. The fabric is near indestructable."
 	icon_state = "claw"
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lc13_armor.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/lc13_armor.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/lc13_armor.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/lc13_armor.dmi'
 	new_armor = list(BURN = 90, BRAIN = 100, BRUTE = 90, TOX = 90) // The arbiter's henchman
 	equip_slowdown = 0 // In accordance of arbiter armor
 	hat = /obj/item/clothing/head/ego_hat/claw_head
@@ -19,8 +19,8 @@
 // Ordeal armor for non post midnight midnights. There's not really a stat total besides 240
 
 /obj/item/clothing/suit/armor/ego_gear/ordeal
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/ordeal.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/ordeal.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/ordeal.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/ordeal.dmi'
 
 /obj/item/clothing/suit/armor/ego_gear/ordeal/eternal_feast
 	name = "Endless feast"
@@ -106,7 +106,7 @@
 	button_icon_state = null
 	base_icon_state = null
 	cooldown_time = 120 SECONDS
-	var/selection_icons = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/ordeal.dmi'
+	var/selection_icons = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/ordeal.dmi'
 
 /datum/action/cooldown/spell_action/god_delusion/Activate(target, mob/user)
 	var/list/armament_icons = list(

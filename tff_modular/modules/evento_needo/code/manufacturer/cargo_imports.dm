@@ -133,15 +133,6 @@
 	category = "Eoehoma"
 	company_bitflag = CARGO_COMPANY_EOEHOMA
 
-//BALLISTIC
-
-/datum/armament_entry/company_import/eoehoma/ballistic
-	subcategory = "Ballistic Weaponry"
-
-/datum/armament_entry/company_import/eoehoma/ballistic/e40
-	cost = 900
-	item_type = /obj/item/gun/ballistic/automatic/assault/e40
-
 //LASERS
 
 /datum/armament_entry/company_import/eoehoma/lasers

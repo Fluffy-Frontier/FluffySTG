@@ -1,7 +1,7 @@
 //armor from tool abnormalities
 /obj/item/clothing/suit/armor/ego_gear/tools
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/abnormality/tools.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/abnormality/tools.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/abnormality/tools.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/abnormality/tools.dmi'
 
 //ZAYIN
 /obj/item/clothing/suit/armor/ego_gear/tools/bucket

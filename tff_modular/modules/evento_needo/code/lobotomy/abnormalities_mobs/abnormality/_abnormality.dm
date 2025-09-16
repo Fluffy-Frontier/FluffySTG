@@ -104,7 +104,7 @@
 	var/work_types = list(
 		//CLOTHING_ENGINEERING, //NAMES?
 		CLOTHING_SCIENCE,
-		//CLOTHING_SERVICE,
+		CLOTHING_SERVICE,
 		CLOTHING_ARMORED,
 	)
 	var/list/job_things = list()
@@ -120,7 +120,6 @@
 	manual_emote("awakens...")
 
 /mob/living/simple_animal/hostile/abnormality/Initialize(mapload)
-	SHOULD_CALL_PARENT(TRUE)
 	datum_reference = new(src)
 	datum_reference.qliphoth_meter_max = rand(1, 3)
 	datum_reference.qliphoth_meter = datum_reference.qliphoth_meter_max
@@ -134,7 +133,6 @@
 	toggle_ai(AI_OFF)
 	ADD_TRAIT(src, TRAIT_GODMODE, ADMIN_TRAIT)
 
-	RegisterSignal(src, COMSIG_LIVING_DEATH, PROC_REF(try_giving_ego))
 	if(fear_level > WAW_LEVEL)
 		ego_on_death = TRUE
 
@@ -158,9 +156,14 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/Destroy()
-	UnregisterSignal(src, list(COMSIG_LIVING_DEATH))
 	job_callback = null
-	qdel(post_work_effect)
+	post_work_effect = null
+	return ..()
+
+/mob/living/simple_animal/hostile/abnormality/death(gibbed)
+	if(ego_on_death)
+		if(prob(60))
+			try_giving_ego()
 	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/attacked_by(obj/item/I, mob/living/user)
@@ -362,20 +365,17 @@
 /mob/living/simple_animal/hostile/abnormality/proc/try_giving_ego(mob/living/carbon/human/user, success)
 	SIGNAL_HANDLER
 	if(fear_level <= TETH_LEVEL)
-		if(prob(40))
+		if(prob(45))
 			spawn_ego(user)
 	else if(fear_level == WAW_LEVEL)
-		if(prob(20))
+		if(prob(30))
 			spawn_ego(user)
-	if(ego_on_death)
-		if(prob(50))
-			spawn_ego(src)
-	else if(prob(20))
-		spawn_ego(user)
+	else
+		if(prob(30))
+			spawn_ego()
 
 /mob/living/simple_animal/hostile/abnormality/proc/spawn_ego(mob/living/creature)
-	var/turf/T = get_turf(creature)
-	to_chat(creature, "spawned ego")
+	var/turf/T = isnull(creature) ? get_turf(src) : get_turf(creature)
 	if(T)
 		var/new_ego = pick(ego_list)
 		var/datum/ego_datum/ego = new new_ego(src)
@@ -402,7 +402,7 @@
 		to_chat(user, span_notice("[name] isn't ready for work yet."))
 		return FALSE
 	currently_working = TRUE
-	if(!LAZYLEN(work_types)) //Кастомные работы начинаются тут
+	if(!LAZYLEN(work_types) || prob(40)) //Кастомные работы начинаются тут
 		if(do_after(user, fear_level * 5 SECONDS, src))
 			SuccessEffect(user)
 			. = TRUE
@@ -445,7 +445,6 @@
 		return
 	//Вышло ли время?
 	if(!isnull(job_timer) && out_of_time())
-		to_chat(user, "Out of time")
 		bad_job_effect()
 		job_tick_effect(user)
 		return

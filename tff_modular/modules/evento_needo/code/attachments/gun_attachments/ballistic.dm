@@ -63,9 +63,7 @@
 	name = "PC-22 \"Hognose\""
 	desc = "You shouldn't be seeing this."
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m22lr_himehabu/hognose
-	accepted_magazine_type = list(
-		/obj/item/ammo_box/magazine/m22lr_himehabu/hognose,
-	)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/m22lr_himehabu/hognose
 
 /obj/item/ammo_box/magazine/m22lr_himehabu/hognose
 	name = "Hognose magazine (.22 LR)"

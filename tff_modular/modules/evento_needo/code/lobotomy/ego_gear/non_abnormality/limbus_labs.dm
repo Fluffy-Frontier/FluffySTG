@@ -2,8 +2,8 @@
 	name = "limbus company low-security armor"
 	desc = "It says Limbus Company on the tag. Used by low-security officers."
 	icon_state = "lowsec"
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/limbus_labs.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/limbus_labs.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/limbus_labs.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/limbus_labs.dmi'
 	new_armor = list(BURN = 20, BRAIN = 20, BRUTE = 20, TOX = 0)
 
 /obj/item/clothing/suit/armor/ego_gear/limbus_labs/highsec

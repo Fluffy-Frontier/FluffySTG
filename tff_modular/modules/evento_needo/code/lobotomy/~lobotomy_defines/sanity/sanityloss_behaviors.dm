@@ -1,9 +1,41 @@
+GLOBAL_LIST_INIT(insanity_lines, list(
+	"murder" = list(
+		"I won't die alone...",
+		"You left me behind!",
+		"You are the problem, YOU!!",
+		"I'll destroy everything...",
+		"It will end quickly, so relax. I’ll free you from this prison we call flesh."
+	),
+	"suicide" = list(
+		"It's all my fault. It’s my responsibility...",
+		"I can hear someone. It’s the sound of back home. I just can’t stop hearing it",
+		"There’s no hope left. My mind’s collapsing. Everything’s collapsing...",
+		"We will all sink and perish, devoured by madness...",
+		"There is no hope left...",
+		"It will all end, soon..."
+	),
+	"" = list(
+		"Manager?! Manager! Open the emergency door! PLEASE LET ME OUT!!",
+		"HELP ME!!",
+		"DON'T SEND ME IN THERE! DON’T KILL ME!!",
+		"AHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA!!",
+		"I will never get out of here..."
+	),
+	"" = list(
+		"Let us find peace from them.",
+		"I’m so sorry dear friends, I’ll let you out now.",
+		"We will find our redemption through the Abnormalities.",
+		"Let us reach the paradise beyond death, together with the Abnormalities.",
+		"Let me introduce you to my imaginary friends! They asked me to! They’re screaming to be let out!"
+	),
+	))
+
 /datum/ai_behavior/say_line/insanity_lines
 	var/line_type = "murder"
 
 /datum/ai_behavior/say_line/insanity_lines/New()
 	. = ..()
-	lines = strings("insanity.json", line_type)
+	lines = GLOB.insanity_lines[line_type]
 
 /datum/ai_behavior/say_line/insanity_lines/insanity_suicide
 	line_type = "suicide"

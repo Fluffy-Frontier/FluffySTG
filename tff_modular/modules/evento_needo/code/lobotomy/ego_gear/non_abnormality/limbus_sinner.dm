@@ -1,6 +1,6 @@
 // HE Armor should be kept at ~75 total armor. Or about 80 in this case
 /obj/item/clothing/suit/armor/ego_gear/limbus
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/limbus_suits.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/limbus_suits.dmi'
 	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/limbus_suit.dmi'
 
 /obj/item/clothing/suit/armor/ego_gear/limbus/limbus_coat

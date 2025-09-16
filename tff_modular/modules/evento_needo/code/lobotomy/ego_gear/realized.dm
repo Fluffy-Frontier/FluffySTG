@@ -1,8 +1,8 @@
 /obj/item/clothing/suit/armor/ego_gear/realization // 240 without ability. You have to be an EX level agent to get these.
 	name = "unknown realized ego"
 	desc = "Notify coders immediately!"
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/realization.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/realized.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/realization.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/realized.dmi'
 
 	/// Type of realized ability, if any
 	var/datum/action/spell_action///realized_ability = null

@@ -12,9 +12,8 @@
 	if(.)
 		return
 	var/mob/living/carbon/human/H = user.mob
-	H.try_jump(target, H)
+	H.try_jump(get_edge_target_turf(H, H.dir), H)
 	return TRUE
-
 
 /atom/proc/try_jump(atom/target, mob/living/carbon/human/user)
 	if(!isliving(user) || !ishuman(user) || !user.has_gravity() || !user.Adjacent(user) || !(user.stat == CONSCIOUS) || user.body_position == LYING_DOWN || user.buckled) // ТЫ ЕБЛАН?
@@ -77,7 +76,7 @@
 					"<span class='warning'> I jump at the [loc]!</span>")
 	user.adjustStaminaLoss(rand(30,50))
 	user.throw_at(target, 3, 1, user, spin = (HAS_TRAIT(user, TRAIT_CLUMSY) ? TRUE : FALSE))
-	if(prob(60))
+	if(prob(70))
 		user.Knockdown(1 SECONDS)
 	else
 		user.add_movespeed_modifier(/datum/movespeed_modifier/jump_slowdown)

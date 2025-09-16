@@ -10,7 +10,7 @@
 SUBSYSTEM_DEF(lobotomy_corp)
 	name = "Lobotomy Corporation"
 	flags = SS_KEEP_TIMING | SS_BACKGROUND
-	wait = 15 MINUTES
+	wait = 30 MINUTES
 
 	var/list/all_abnormality_datums = list()
 
@@ -20,12 +20,22 @@ SUBSYSTEM_DEF(lobotomy_corp)
 	var/qliphoth_meltdown_amount = 1
 
 	// Assoc list of ordeals by level
-	var/list/all_ordeals = list()
+	var/list/all_ordeals = list(
+		1 = list(),
+		2 = list(),
+		3 = list(),
+		4 = list(),
+		5 = list(),
+		6 = list(),
+		7 = list(),
+		8 = list(),
+		9 = list(),
+	)
 	// What ordeal level is being rolled for
 	var/next_ordeal_level = 1
 
 	var/current_levels_used = 0
-	var/max_levels_used = 2 //Максимум 3 события одного уровня
+	var/max_levels_used = 1 //Максимум 2 события одного уровня
 	// Datum of the chosen ordeal. It's stored so manager can know what's about to happen
 	var/datum/ordeal/next_ordeal = null
 	/// List of currently running ordeals
@@ -52,7 +62,7 @@ SUBSYSTEM_DEF(lobotomy_corp)
 		if(O.level < 1)
 			qdel(O)
 			continue
-		LAZYADD(all_ordeals[O.level], O)
+		all_ordeals[O.level] += O
 	RollOrdeal()
 	return TRUE
 
@@ -74,12 +84,12 @@ SUBSYSTEM_DEF(lobotomy_corp)
 		if(!LAZYLEN(all_ordeals))
 			flags |= SS_NO_FIRE
 			return FALSE
-		LAZYREMOVE(all_ordeals, all_ordeals[next_ordeal_level])
+		all_ordeals[next_ordeal_level] = null
 		next_ordeal_level--
 		return .()
 	next_ordeal = pick(available_ordeals)
 	all_ordeals[next_ordeal_level] -= next_ordeal
-	if(current_levels_used > max_levels_used || !LAZYLEN(all_ordeals[next_ordeal_level]))
+	if(current_levels_used > max_levels_used || !LAZYLEN(all_ordeals[next_ordeal_level]) || prob(30)) //Уровень повышается если ордеалей больше не осталось, либо если использовано 2 ордели или просто с шансом 30%
 		next_ordeal_level += 1 // Increase difficulty!
 		current_levels_used = 0
 	else
@@ -90,9 +100,7 @@ SUBSYSTEM_DEF(lobotomy_corp)
 /datum/controller/subsystem/lobotomy_corp/proc/OrdealEvent()
 	if(!next_ordeal)
 		return FALSE
-	//if(ROUND_TIME() < world.time + 30 MINUTES) //спим первые 30 минут раунда
-	//	return
-	if(GLOB.alive_player_list.len < 25 || GLOB.dead_player_list.len > (GLOB.alive_player_list.len / 3))
+	if(GLOB.alive_player_list.len < 25 || GLOB.dead_player_list.len > (GLOB.alive_player_list.len / 2))
 		return
 	if(current_ordeals.len > 2)
 		return

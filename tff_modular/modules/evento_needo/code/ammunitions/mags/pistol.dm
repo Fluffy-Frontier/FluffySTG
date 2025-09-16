@@ -182,11 +182,16 @@
 	name = "Ringneck pistol magazine (10x22mm)"
 	desc = "An 8-round magazine for the Ringneck pistol. These rounds do moderate damage, but struggle against armor."
 	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo.dmi'
-	icon_state = "ringneck_mag"
+	icon_state = "ringneck_mag-1"
 	base_icon_state = "ringneck_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = CALIBER_10MM
 	max_ammo = 8
+
+/obj/item/ammo_box/magazine/m10mm_ringneck/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[!!ammo_count()]"
+
 
 /obj/item/ammo_box/magazine/m10mm_ringneck/empty
 	start_empty = TRUE

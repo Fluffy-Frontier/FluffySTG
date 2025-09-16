@@ -90,7 +90,7 @@
 /obj/item/clothing/head/ego_gift/whitelake
 	name = "waltz of the flowers"
 	icon_state = "whitelake"
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/head.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/head.dmi'
 	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/head.dmi'
 
 //WAW Class, you have to sacrifice someone for it

@@ -12,7 +12,6 @@
 	maxHealth = 800
 	health = 800
 	fear_level = WAW_LEVEL //If Naked Nest escaped from the facility it would result in a mass infestation of several civilians. That is bad.
-	fear_level = 1
 
 	ego_list = list(
 		/datum/ego_datum/weapon/exuviae,

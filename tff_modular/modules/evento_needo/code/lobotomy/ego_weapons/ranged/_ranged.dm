@@ -88,13 +88,15 @@
 	force = 6
 
 /obj/item/ego_weapon/ranged/Initialize()
-	qdel(src) // Временно выключено. Заменю на /obj/item/gun
 	. = ..()
-	build_zooming()
-	if(autofire)
-		AddComponent(/datum/component/automatic_fire, autofire)
-
-	update_projectile_examine()
+	qdel(src) // Временно выключено. Заменю на /obj/item/gun
+	return
+	//. = ..()
+	//build_zooming()
+	//if(autofire)
+	//	AddComponent(/datum/component/automatic_fire, autofire)
+//
+	//update_projectile_examine()
 
 /obj/item/ego_weapon/ranged/Destroy()
 	if(azoom)

@@ -54,7 +54,6 @@
 	// Add relevant DR modifiers into blocked value to pass to parent
 	blocked += physiology?.damage_resistance
 	blocked += dna?.species?.damage_modifier
-	adjustSanityLoss(damagetype == BRAIN ? (damage - blocked) * 0.14 : (damage - blocked) * 0.7)
 	return ..()
 
 /mob/living/carbon/human/get_incoming_damage_modifier(

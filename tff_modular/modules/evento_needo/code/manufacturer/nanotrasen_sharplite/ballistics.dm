@@ -9,9 +9,7 @@
 	worn_icon = 'tff_modular/modules/evento_needo/icons/nanotrasen_sharplite/onmob.dmi'
 
 	w_class = WEIGHT_CLASS_NORMAL
-	accepted_magazine_type = list(
-		/obj/item/ammo_box/magazine/co9mm,
-	)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/co9mm
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/pistol/rattlesnake.ogg'
 	load_sound = 'tff_modular/modules/evento_needo/sounds/pistol/mag_insert.ogg'
 	load_empty_sound = 'tff_modular/modules/evento_needo/sounds/pistol/mag_insert.ogg'

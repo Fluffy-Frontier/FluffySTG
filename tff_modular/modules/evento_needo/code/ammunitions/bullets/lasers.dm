@@ -29,27 +29,27 @@
 	armour_penetration = -10
 
 /obj/projectile/beam/laser/sharplite
-	speed = 1
+	speed = 1.1
 
 /obj/projectile/beam/laser/light
 	damage = 15
 
 /obj/projectile/beam/laser/light/sharplite
-	speed = 1
+	speed = 1.1
 
 /obj/projectile/beam/laser/eoehoma
 	icon = 'tff_modular/modules/evento_needo/icons/projectiles.dmi'
 	icon_state = "heavylaser"
 	damage = 35
 	armour_penetration = 0
-	speed = 0.8
+	speed = 1
 
 /obj/projectile/beam/laser/eoehoma/heavy
 	icon_state = "heavylaser"
 	damage = 60
 	knockdown = 50
 	armour_penetration = 20
-	speed = 1
+	speed = 1.1
 
 /obj/projectile/beam/laser/eoehoma/heavy/on_hit(atom/target, blocked = FALSE, pierce_hit)
 	..()
@@ -66,13 +66,11 @@
 	icon_state = "heavylaser"
 	damage = 25
 	armour_penetration = 20
-	speed = 1
 
 /obj/projectile/beam/laser/heavylaser/assault
 	armour_penetration = 20
 
-/obj/projectile/beam/laser/heavylaser/sharplite
-	speed = 0.9
+/obj/projectile/beam/laser/h
 
 /obj/projectile/beam/laser/on_hit(atom/target, blocked = FALSE, pierce_hit)
 	. = ..()
@@ -84,7 +82,7 @@
 
 /obj/projectile/beam/weak/sharplite
 	damage = 15
-	speed = 1
+	speed = 1.1
 
 /obj/projectile/beam/weaker
 	damage = 10
@@ -109,7 +107,7 @@
 /obj/projectile/beam/disabler/weak/negative_ap/sharplite
 	armour_penetration = -30
 	range = 9
-	speed = 1
+	speed = 1.1
 
 /obj/projectile/beam/disabler/weak/negative_ap/low_range
 	range = 6
@@ -118,7 +116,7 @@
 	icon = 'tff_modular/modules/evento_needo/icons/projectiles.dmi'
 	name = "practice laser"
 	damage = 0
-	speed = 1
+	speed = 1.1
 
 /obj/projectile/beam/laser/slug
 	name = "laser slug"
@@ -128,7 +126,7 @@
 	armour_penetration = 40
 
 /obj/projectile/beam/disabler/sharplite
-	speed = 0.25
+	speed = 1.1
 
 /obj/projectile/beam/emitter/hitscan/e50
 	damage = 45

@@ -103,9 +103,7 @@
 	lefthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/lefthand.dmi'
 	righthand_file = 'tff_modular/modules/evento_needo/icons/hunterspride/righthand.dmi'
 	worn_icon = 'tff_modular/modules/evento_needo/icons/hunterspride/onmob.dmi'
-	accepted_magazine_type = list(
-		/obj/item/ammo_box/magazine/internal/cylinder/rev38,
-	)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	obj_flags = UNIQUE_RENAME
 	semi_auto = TRUE //double action
 	unique_reskin = list("Default" = "detective",

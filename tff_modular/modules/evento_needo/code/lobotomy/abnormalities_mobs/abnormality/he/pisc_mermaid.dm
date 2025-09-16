@@ -259,7 +259,7 @@
 	name = "Unrequited Gift"
 	desc = "Love me, please love me. I'll take off my arms, I'll cut down my legs. Just love me back."
 	icon_state = "unrequited_gift"
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/head.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/head.dmi'
 	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/head.dmi'
 	var/success_mod = 1.15
 	var/love_cooldown

@@ -27,22 +27,16 @@
 	if(isnull(source))
 		return
 	if(source.stat > CONSCIOUS)
-		to_chat(source, "OVERDAMAGE")
 		bad_job_effect()
 		QDEL_LIST(current_jobs)
 		job_tick_effect(source)
-		deltimer(job_timer)
 		UnregisterSignal(src, COMSIG_JOB_TIMER_TICKED)
 		UnregisterSignal(source, COMSIG_MOB_APPLY_DAMAGE)
 	else if(out_of_time())
-		to_chat(source, "Survived")
 		good_job_effect()
 		job_tick_effect(source)
 		UnregisterSignal(src, COMSIG_JOB_TIMER_TICKED)
 		UnregisterSignal(source, COMSIG_MOB_APPLY_DAMAGE)
-		//SEND_SIGNAL(src, COMSIG_JOB_STOP)
-
-
 
 
 //Обычные do_afters со случайными приколами. Суть работы - заставить игрока поверить в то, что он провалил её.
@@ -58,12 +52,12 @@
 			user.apply_status_effect(level)
 		else if(prob(20))
 			hallucination_pulse(src, 4, 5 SECONDS, 15 SECONDS)
-		else if(prob(20))
-			var/current_health = maxHealth - user.getOxyLoss() - user.getToxLoss() - user.getFireLoss() - user.getBruteLoss()
-			user.adjustBruteLoss(current_health * 0.90)
-			sleep(2 SECONDS)
-			user.show_aso_blurb("Nailed it")
-			user.adjustBruteLoss(-(current_health * 0.90))
+		//else if(prob(20))
+		//	var/current_health = maxHealth - user.getOxyLoss() - user.getToxLoss() - user.getFireLoss() - user.getBruteLoss()
+		//	user.adjustBruteLoss(current_health * 0.90)
+		//	sleep(2 SECONDS)
+		//	user.show_aso_blurb("Nailed it")
+		//	user.adjustBruteLoss(-(current_health * 0.90))
 		else if(prob(30))
 			//Код Void'a с Арка
 			var/sound/sound = sound('tff_modular/modules/evento_needo/ark_station_stuff/void/trip_blast.wav')
@@ -75,8 +69,6 @@
 			user.clear_fullscreen("screamers", rand(15, 60))
 	good_job_effect()
 	job_tick_effect(user)
-
-
 
 
 //Запоминание кода на время
@@ -122,7 +114,9 @@
 		time = 20 SECONDS
 	else
 		time = 15 SECONDS
-	user.show_aso_blurb("Обними это [hugs_needed] раз за [time / 10] секунд")
+	user.show_aso_blurb("Обними это [hugs_needed] раз за [time / 10] секунд", 3 SECONDS)
+	sleep(3 SECONDS)
+	playsound(get_turf(src), 'sound/machines/beep/beep.ogg')
 	job_things["hugs_amount"] = 0
 	RegisterSignal(src, COMSIG_CARBON_HELPED, PROC_REF(on_hug))
 	addtimer(CALLBACK(src, PROC_REF(check_hugs), user, hugs_needed), time)
@@ -146,7 +140,7 @@
 /mob/living/simple_animal/hostile/abnormality/proc/bring_friends(mob/living/carbon/human/user)
 	var/friends_needed = rand(1, fear_level)
 	var/time = fear_level > WAW_LEVEL ? 30 SECONDS : 60 SECONDS
-	user.show_aso_blurb("Приведи к этому [friends_needed] раз за [time / 10] секунд")
+	user.show_aso_blurb("Приведи сюда [friends_needed] друзей за [time / 10] секунд", 3 SECONDS)
 	RegisterSignal(src, COMSIG_CARBON_HELPED, PROC_REF(on_hug))
 	addtimer(CALLBACK(src, PROC_REF(check_friends), user, friends_needed), time)
 
@@ -183,7 +177,7 @@
 			amount = rand(100, 250)
 		if(ZAYIN_LEVEL)
 			amount = rand(10, 50)
-	user.show_aso_blurb("Оно снимет [amount] кредитов с твоего кошелька через 1 минуту.")
+	user.show_aso_blurb("Оно снимет [amount] кредитов с твоего кошелька через 1 минуту.", 3 SECONDS)
 	addtimer(CALLBACK(src, PROC_REF(check_money), user, amount), 1 MINUTES)
 
 /mob/living/simple_animal/hostile/abnormality/proc/check_money(mob/living/carbon/human/user, amount)

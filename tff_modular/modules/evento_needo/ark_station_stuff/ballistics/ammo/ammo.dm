@@ -29,7 +29,7 @@
 
 /obj/projectile/bullet/a792x57
 	name = "7.92x57 bullet"
-	damage = 7 // 35
+	damage = 23 // 35
 	armour_penetration = 5
 	wound_bonus = 15
 	wound_falloff_tile = 0
@@ -156,7 +156,7 @@
 
 /obj/projectile/bullet/a762x39/rubber
 	name = "5.6mm rubber bullet"
-	damage = 4 // 15
+	damage = 9 // 15
 	armour_penetration = 10
 	stamina = 45
 	ricochets_max = 6

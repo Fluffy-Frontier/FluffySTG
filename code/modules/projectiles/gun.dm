@@ -108,6 +108,8 @@
 	var/wield_delay	= 0.4 SECONDS
 	///Storing value for above
 	var/wield_time = 0
+	/// Reference to the offhand created for the item
+	var/obj/item/offhand/offhand_item = null
 
 
 // BALLISTIC
@@ -272,6 +274,8 @@
 		QDEL_NULL(chambered)
 	if(isatom(suppressed)) //SUPPRESSED IS USED AS BOTH A TRUE/FALSE AND AS A REF, WHAT THE FUCKKKKKKKKKKKKKKKKK
 		QDEL_NULL(suppressed)
+	if(offhand_item)
+		offhand_item = null
 	return ..()
 
 /obj/item/gun/apply_fantasy_bonuses(bonus)
@@ -286,37 +290,38 @@
 	projectile_damage_multiplier = reset_fantasy_variable("projectile_damage_multiplier", projectile_damage_multiplier)
 	return ..()
 
+/obj/item/gun/dropped(mob/user)
+	. = ..()
+	on_unwield(src, user)
+
 /// triggered on wield of two handed item
 /obj/item/gun/proc/on_wield(obj/item/source, mob/user)
-	wielded = TRUE
-	INVOKE_ASYNC(src, PROC_REF(do_wield), user)
-
-/obj/item/gun/proc/do_wield(mob/user)
 	user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wield_slowdown)
-	wield_time = world.time + wield_delay
 	if(azoom)
 		azoom.Grant(user)
-	if(wield_time > 0)
-		if(do_after(
-			user,
-			wield_delay,
-			user,
-			IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE,
-			TRUE,
-			CALLBACK(src, PROC_REF(is_wielded))
-			)
-			)
-			wielded_fully = TRUE
-			return TRUE
+	wielded_fully = TRUE
+	wielded = TRUE
+
+	// Let's reserve the other hand
+	offhand_item = new(user)
+	offhand_item.name = "[name] - offhand"
+	offhand_item.wielded = TRUE
+	user.put_in_inactive_hand(offhand_item)
+
+/obj/item/gun/proc/do_wield(mob/user)
+	if(!wielded)
+		on_wield(src, user)
 	else
-		wielded_fully = TRUE
-		return TRUE
+		on_unwield(src, user)
+	balloon_alert(user, wielded ? "wielded" : "wielded")
+	return TRUE
 
 /// triggered on unwield of two handed item
 /obj/item/gun/proc/on_unwield(obj/item/source, mob/user)
 	wielded = FALSE
 	wielded_fully = FALSE
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/gun)
+	offhand_item = null
 	if(azoom)
 		azoom.Remove(user)
 

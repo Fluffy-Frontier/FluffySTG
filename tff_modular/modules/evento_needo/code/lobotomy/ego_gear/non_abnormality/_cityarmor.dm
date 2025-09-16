@@ -1,6 +1,6 @@
 /obj/item/clothing/suit/armor/ego_gear/city
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lc13_armor.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lc13_armor.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/lc13_armor.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/lc13_armor.dmi'
 
 
 //City armor have extremely high requirements. These people will be able to use them a little earlier.

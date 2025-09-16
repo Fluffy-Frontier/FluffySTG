@@ -27,7 +27,7 @@
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(fade_blurb), C, T, fade_time), duration)
 
 /mob/living/carbon/human/proc/show_aso_blurb(text, duration = 1.5 SECONDS)
-	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(show_blurb), client, duration, text, 1 SECONDS, "red", "black"), 20)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(show_blurb), client, duration, text, 1 SECONDS, "red", "black", "left", around_player), 20)
 
 
 /proc/fade_blurb(client/C, obj/T, fade_time = 5)

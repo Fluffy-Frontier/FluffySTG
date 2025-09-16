@@ -58,8 +58,8 @@
 	name = "heian era robes"
 	desc = "Wearing these makes you want to dismember a white haired sorcerer."
 	icon_state = "uniqueoffice4"
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/custom_fixer.dmi'
-	worn_icon =  'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/custom_fixer.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/custom_fixer.dmi'
+	worn_icon =  'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/custom_fixer.dmi'
 	new_armor = list(BURN = 80, BRAIN = 70, BRUTE = 50, TOX = 80) // 280, ALEPH+
 
 /obj/item/clothing/shoes/sandal/sukuna

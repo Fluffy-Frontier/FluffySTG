@@ -13,7 +13,6 @@
 	attack_verb_simple = "attack"
 	attack_sound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/distortedform/slam.ogg'
 	fear_level = ALEPH_LEVEL
-	fear_level = ALEPH_LEVEL + 1
 	icon_state = "distortedform"
 	icon_living = "distortedform"
 	icon_dead = "distortedform_dead"

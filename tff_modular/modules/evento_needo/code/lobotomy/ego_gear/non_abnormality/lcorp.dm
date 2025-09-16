@@ -8,8 +8,8 @@
 	name = "l-corp armor vest"
 	desc = "Special armor issued by L-Corp to those who cannot utilize E.G.O."
 	icon_state = "armorvest"
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lcorp.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lcorp.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/lcorp.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/lcorp.dmi'
 	flags_inv = NONE
 	new_armor = list(BURN = 20, BRAIN = 0, BRUTE = 0, TOX = 0)
 
@@ -51,8 +51,8 @@ It's not great though.
 */
 /obj/item/clothing/suit/armor/extraction
 	name = "patchwork coat"
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lcorp.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lcorp.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/lcorp.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/lcorp.dmi'
 	desc = "A poorly made patchwork coat made from a bunch of spare cloth, dyed black. Worn by the extraction officer"
 	icon_state = "extraction"
 	var/new_armor = list(BURN = 20, BRAIN = 20, BRUTE = 20, TOX = 20)
@@ -76,8 +76,8 @@ It's not great though.
 
 /obj/item/clothing/suit/armor/records
 	name = "old coat"
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lcorp.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lcorp.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/lcorp.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/lcorp.dmi'
 	desc = "A poorly made patchwork coat made from a bunch of spare cloth, dyed grey. Worn by the records officer"
 	icon_state = "records"
 	var/new_armor = list(BURN = 20, BRAIN = 20, BRUTE = 20, TOX = 20)
@@ -89,8 +89,8 @@ It's not great though.
 
 /obj/item/clothing/suit/armor/training
 	name = "worn coat"
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lcorp.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lcorp.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/lcorp.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/lcorp.dmi'
 	desc = "A coat that has been use for a very long time, by a very experienced officer. This one is orange with an intricate copper pattern on it. Worn by the Training Officer"
 	icon_state = "training"
 	var/new_armor = list(BURN = 20, BRAIN = 20, BRUTE = 20, TOX = 20)
@@ -126,30 +126,30 @@ It's not great though.
 	name = "rookie"
 	desc = "This armor is strong to red, check it's defenses to see!"
 	icon_state = "rookie"
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lcorp.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lcorp.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/lcorp.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/lcorp.dmi'
 	new_armor = list(BURN = 40, BRAIN = -40, BRUTE = 0, TOX = 0)
 
 /obj/item/clothing/suit/armor/ego_gear/fledgling
 	name = "fledgling"
 	desc = "This armor is strong to white, check it's defenses to see!"
 	icon_state = "fledgling"
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lcorp.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lcorp.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/lcorp.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/lcorp.dmi'
 	new_armor = list(BURN = 0, BRAIN = 40, BRUTE = -40, TOX = 0)
 
 /obj/item/clothing/suit/armor/ego_gear/apprentice
 	name = "apprentice"
 	desc = "This armor is strong to black, check it's defenses to see!"
 	icon_state = "apprentice"
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lcorp.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lcorp.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/lcorp.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/lcorp.dmi'
 	new_armor = list(BURN = 0, BRAIN = 0, BRUTE = 40, TOX = -40)
 
 /obj/item/clothing/suit/armor/ego_gear/freshman
 	name = "freshman"
 	desc = "This armor is strong to pale, check it's defenses to see!"
 	icon_state = "freshman"
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lcorp.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/lcorp.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/lcorp.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/lcorp.dmi'
 	new_armor = list(BURN = -40, BRAIN = 0, BRUTE = 0, TOX = 40)

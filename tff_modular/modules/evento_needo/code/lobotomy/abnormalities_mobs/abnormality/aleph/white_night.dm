@@ -23,7 +23,6 @@ GLOBAL_LIST_EMPTY(apostles)
 	death_sound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/whitenight/apostle_death.ogg'
 	can_breach = TRUE
 	fear_level = ALEPH_LEVEL
-	fear_level = ALEPH_LEVEL + 1
 	wander = FALSE
 
 	light_color = COLOR_VERY_SOFT_YELLOW

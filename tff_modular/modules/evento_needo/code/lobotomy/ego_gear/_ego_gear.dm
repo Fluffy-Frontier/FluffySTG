@@ -1,13 +1,14 @@
 /obj/item/clothing/suit/armor/ego_gear
 	name = "ego gear"
 	desc = "You aren't meant to see this."
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/suits.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/suit.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/suits.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/suit.dmi'
 	blood_overlay_type = null
 	flags_inv = HIDEJUMPSUIT
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS|HEAD 	// We protect all because magic
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS|HEAD
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS|HEAD
+	supports_variations_flags = CLOTHING_NO_VARIATION
 	w_class = WEIGHT_CLASS_BULKY								//No more stupid 10 egos in bag
 	allowed = list(/obj/item/gun, /obj/item/ego_weapon, /obj/item/melee)
 	drag_slowdown = 1

@@ -1,17 +1,5 @@
 #define COOLDOWN_EMOTE_FART "emote_fart"
 
-var/static/list/fart_sounds = list(
-			'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/emotes/farts/fart.ogg',
-			'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/emotes/farts/fart1.ogg',
-			'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/emotes/farts/fart2.ogg',
-			'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/emotes/farts/fart3.ogg',
-			'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/emotes/farts/fart4.ogg',
-			'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/emotes/farts/fart5.ogg',
-			'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/emotes/farts/fart6.ogg',
-			'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/emotes/farts/fart7.ogg',
-			'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/emotes/farts/fart8.ogg'
-			)
-
 var/static/list/burp_sounds = list(
 			'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/emotes/burps/belch1.ogg',
 			'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/emotes/burps/belch2.ogg',
@@ -355,23 +343,7 @@ var/static/list/female_yawn = list(
 		return pick(burp_sounds)
 	return
 
-/datum/emote/living/fart
-	key = "fart"
-	key_third_person = "farts"
-	message = "farts out shitcode."
-	message_mime = "acts out a fart."
-	emote_type = EMOTE_VISIBLE | EMOTE_AUDIBLE
-	vary = TRUE
-
-/datum/emote/living/fart/get_sound(mob/living/user)
-	if(iscarbon(user))
-		return pick(fart_sounds)
-	return
-
 /////////////////////////////////////////////////////////////////////////////////////////
-
-
-/////
 /datum/emote/living/carbon/human/salute
 	key = "salute"
 	key_third_person = "salutes"

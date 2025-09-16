@@ -355,7 +355,7 @@
 	spread = 7
 	spread_unwielded = 10
 
-	recoil = 0
+	recoil = 2
 	recoil_unwielded = 4
 
 	default_attachments = list(/obj/item/attachment/foldable_stock/sidewinder)

@@ -1,8 +1,8 @@
 /obj/item/clothing/suit/armor/ego_gear/city/devyat_suit
 	name = "devyat coat"
 	desc = "A warm coat worn by fixers from the devyat association. Increases your running speed by 15%, allowing for quick movement."
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/devyat_icon.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/devyat_armor.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/devyat_icon.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/devyat_armor.dmi'
 	icon_state = "devyat"
 	slowdown = -0.15
 	hat = /obj/item/clothing/head/ego_hat/devyat_goggles
@@ -17,8 +17,8 @@
 
 
 /obj/item/clothing/head/ego_hat/devyat_goggles
-	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/devyat_icon.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/ego_gear/devyat_armor.dmi'
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/clothing/ego_gear/devyat_icon.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/Teguicons/mob/ego_gear/devyat_armor.dmi'
 	name = "devyat goggles"
 	desc = "Simple goggles that the devyat wear during their jobs."
 	icon_state = "9goggles"
