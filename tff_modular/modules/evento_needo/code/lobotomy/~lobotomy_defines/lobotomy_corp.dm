@@ -46,6 +46,7 @@ SUBSYSTEM_DEF(lobotomy_corp)
 
 	/// If TRUE - will not count deaths for auto restart
 	var/auto_restart_in_progress = FALSE
+	var/needed_players = 25
 
 /datum/controller/subsystem/lobotomy_corp/Initialize(timeofday)
 	addtimer(CALLBACK(src, PROC_REF(InitializeOrdeals)), 60 SECONDS)
@@ -100,7 +101,7 @@ SUBSYSTEM_DEF(lobotomy_corp)
 /datum/controller/subsystem/lobotomy_corp/proc/OrdealEvent()
 	if(!next_ordeal)
 		return FALSE
-	if(GLOB.alive_player_list.len < 25 || GLOB.dead_player_list.len > (GLOB.alive_player_list.len / 2))
+	if(GLOB.alive_player_list.len < needed_players || GLOB.dead_player_list.len > (GLOB.alive_player_list.len / 2))
 		return
 	if(current_ordeals.len > 2)
 		return

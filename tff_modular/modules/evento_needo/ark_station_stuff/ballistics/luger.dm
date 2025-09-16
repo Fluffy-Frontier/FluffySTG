@@ -14,3 +14,4 @@
 	rack_sound =  'tff_modular/modules/evento_needo/ark_station_stuff/sound/guns/fire/luger_rack.ogg'
 	fire_sound_volume = 100
 	suppressor_x_offset = 14
+	projectile_damage_multiplier = 1.3

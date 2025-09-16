@@ -12,6 +12,7 @@
 	weapon_weight = WEAPON_HEAVY
 	w_class = WEIGHT_CLASS_BULKY
 	accepted_magazine_type = /obj/item/ammo_box/magazine/scar
+	projectile_damage_multiplier = 0.85
 	can_suppress = FALSE
 	fire_delay = 2.4
 	fire_sound = 'tff_modular/modules/evento_needo/ark_station_stuff/sound/guns/fire/scar_fire.ogg'

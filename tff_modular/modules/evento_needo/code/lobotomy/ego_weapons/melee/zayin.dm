@@ -86,17 +86,6 @@
 	use_sound = "sound/items/eatfood.ogg"
 	ability_cooldown_time = 60 SECONDS
 
-/obj/item/ego_weapon/support/little_alice/Pulse(mob/living/carbon/human/user)
-	var/list/foodoptions = list(/obj/item/food/cookie, /obj/item/food/cookie/sugar/pbird)
-	for(var/mob/living/carbon/human/L in view(5, user))
-		if((!ishuman(L)) || L.stat == DEAD || L == user)
-			continue
-		if(L.nutrition > NUTRITION_LEVEL_WELL_FED)
-			continue
-		to_chat(L, span_warning("[user] gives you a snack!"))
-		var/gift = pick(foodoptions)
-		new gift(get_turf(L))
-
 /obj/item/ego_weapon/support/wingbeat
 	name = "wingbeat"
 	desc = "If an agent can show that they are competent, then they may be able to draw Fairy Festival’s attention.."

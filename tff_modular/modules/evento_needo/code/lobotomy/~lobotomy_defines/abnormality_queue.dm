@@ -75,14 +75,14 @@ SUBSYSTEM_DEF(abnormality_queue)
 		return PickAbno()
 	return FALSE
 
+/datum/controller/subsystem/abnormality_queue/proc/GetAbnoCoreIcon()
+	return initial(queued_abnormality.fear_level)
+
 /datum/controller/subsystem/abnormality_queue/proc/PostSpawn()
 	if(!queued_abnormality)
 		return
-
-	if(possible_abnormalities[initial(queued_abnormality.fear_level)][queued_abnormality] <= 0)
-		stack_trace("Queued abnormality had no weight!?")
 	spawned_abnormalities[initial(queued_abnormality.fear_level)] += queued_abnormality
-	priority_announce(span_announce("New abnormality has arrived at the facility!"), "M.O.G. ANNOUNCEMENT", sound = 'sound/machines/beep/triple_beep.ogg')
+	priority_announce("New abnormality has arrived at the facility!", "M.O.G. ANNOUNCEMENT", sound = 'sound/machines/beep/triple_beep.ogg')
 	queued_abnormality = null
 	spawned_abnos++
 
@@ -107,7 +107,6 @@ SUBSYSTEM_DEF(abnormality_queue)
 	var/chosen_abno = pick(possible_abnormalities[lev])
 	if(!chosen_abno)
 		return FALSE
-	spawned_abnormalities[lev] += chosen_abno
 	queued_abnormality = chosen_abno
 	return queued_abnormality
 

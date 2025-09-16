@@ -194,7 +194,7 @@
 		return try_insert_cell(attacking_item, user)
 	. = ..()
 
-/obj/item/gun/energy/proc/try_insert_cell(obj/item/stock_parts/power_store/cell/new_cell, var/mob/user)
+/obj/item/gun/energy/proc/try_insert_cell(obj/item/stock_parts/power_store/cell/new_cell, mob/user)
 	if(!new_cell)
 		return FALSE
 	if(latch_closed)

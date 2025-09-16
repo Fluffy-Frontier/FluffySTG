@@ -22,9 +22,4 @@
 	if(prob(10))
 		playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/mcrib/evillaugh.ogg', 50, FALSE)
 		user.gib()
-	else
-		playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/mcrib/enjoy.ogg', 50, FALSE)
-		var/turf/dispense_turf = get_step(src, pick(NORTH, SOUTH, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST))
-		var/obj/item/food/mcrib/R = new(dispense_turf)
-		visible_message(span_notice("[src] offers a [R]."))
 	next_action_time = world.time + 20 SECONDS

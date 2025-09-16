@@ -2,7 +2,7 @@
 	name = "blank abnormality core"
 	desc = "You shouldn't be seeing this. Please let someone know!"
 	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/abno_cores/_cores.dmi'
-	icon_state = ""//blank icon states exist for each risk level.
+	icon_state = "1"//blank icon states exist for each risk level.
 	anchored = FALSE
 	density = FALSE
 	resistance_flags = INDESTRUCTIBLE
@@ -19,8 +19,8 @@
 	if(!contained_abno) //Аномалии кончились
 		qdel(src)
 		return
-	icon_state = initial(SSabnormality_queue.queued_abnormality.fear_level)
-	return ..()
+	. = ..()
+	icon_state = SSabnormality_queue.GetAbnoCoreIcon() ? "[SSabnormality_queue.GetAbnoCoreIcon()]" : "[rand(1, 5)]"
 
 /obj/structure/abno_core/attack_hand(mob/living/carbon/human/user, list/modifiers)
 	user.show_aso_blurb("Выпустив аномалию ты не сможешь передвинуть её. Ты уверен в своем решении?", 3 SECONDS)
@@ -63,10 +63,14 @@
 	layer = ABOVE_ALL_MOB_LAYER
 	var/cooldown
 	var/cooldown_time = 17 MINUTES
+	var/needed_players = 20
 
 /obj/machinery/abno_core_extractor/attack_hand(mob/living/user, list/modifiers)
 	if(cooldown > world.time)
 		to_chat(user, span_warning("Машина еще не готова."))
+		return
+	if(GLOB.player_list.len < needed_players)
+		to_chat(user, span_warning("Слишком мало членов экипажа для использования этой машины."))
 		return
 	GrabAnimation()
 	sleep(4 SECONDS)

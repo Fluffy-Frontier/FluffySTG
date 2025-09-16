@@ -27,17 +27,7 @@
 		return
 	to_chat(H, "<span class='warning'>You use mcrib to share snacks!</span>")
 	H.playsound_local(get_turf(H), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/mcrib/mcrib.ogg', 25, 0)
-	SpawnItem(user)
 	ability_cooldown = world.time + ability_cooldown_time
-
-/obj/item/ego_weapon/ranged/pistol/mcrib/proc/SpawnItem(mob/user)
-	var/foodoption = /obj/item/food/mcrib
-	for(var/mob/living/carbon/human/L in view(5, user))
-		if((!ishuman(L)) || L.stat == DEAD || L == user)
-			continue
-		to_chat(L, "<span class='warning'>Is that... authentic Kansas City Barbecue sauce I smell? [user] gives you a snack!</span>")
-		new foodoption(get_turf(L))
-	new foodoption(get_turf(user))
 
 /obj/projectile/ego_bullet/ego_mcrib
 	name = "mcrib"

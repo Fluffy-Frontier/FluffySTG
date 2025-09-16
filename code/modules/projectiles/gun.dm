@@ -275,7 +275,7 @@
 	if(isatom(suppressed)) //SUPPRESSED IS USED AS BOTH A TRUE/FALSE AND AS A REF, WHAT THE FUCKKKKKKKKKKKKKKKKK
 		QDEL_NULL(suppressed)
 	if(offhand_item)
-		offhand_item = null
+		qdel(offhand_item)
 	return ..()
 
 /obj/item/gun/apply_fantasy_bonuses(bonus)
@@ -313,7 +313,7 @@
 		on_wield(src, user)
 	else
 		on_unwield(src, user)
-	balloon_alert(user, wielded ? "wielded" : "wielded")
+	balloon_alert(user, wielded ? "wielded" : "unwielded")
 	return TRUE
 
 /// triggered on unwield of two handed item
@@ -321,7 +321,7 @@
 	wielded = FALSE
 	wielded_fully = FALSE
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/gun)
-	offhand_item = null
+	qdel(offhand_item)
 	if(azoom)
 		azoom.Remove(user)
 
@@ -610,7 +610,7 @@
 		return
 
 	var/obj/item/bodypart/other_hand = user.has_hand_for_held_index(user.get_inactive_hand_index()) //returns non-disabled inactive hands
-	if(weapon_weight == WEAPON_HEAVY && (user.get_inactive_held_item() || !other_hand))
+	if(weapon_weight == WEAPON_HEAVY && ((user.get_inactive_held_item() || !other_hand) && !istype(user.get_inactive_held_item(), /obj/item/offhand)))
 		balloon_alert(user, "use both hands!")
 		return
 	//DUAL (or more!) WIELDING

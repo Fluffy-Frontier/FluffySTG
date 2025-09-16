@@ -364,6 +364,10 @@
 
 /mob/living/simple_animal/hostile/abnormality/proc/try_giving_ego(mob/living/carbon/human/user, success)
 	SIGNAL_HANDLER
+	if(user)
+		to_chat(user, "Ты был вознагражден ЭГО.")
+	else
+		visible_message("ЭГО материализуется под аномалией.")
 	if(fear_level <= TETH_LEVEL)
 		if(prob(45))
 			spawn_ego(user)
