@@ -18,10 +18,10 @@
 
 /obj/projectile/bullet/c27_54cesarzowa
 	name = ".27-54 Cesarzowa piercing bullet"
-	damage = 30
+	damage = 20
 	armour_penetration = 30
-	wound_bonus = 5
-	bare_wound_bonus = 10
+	wound_bonus = -20
+	exposed_wound_bonus = 20 // if we're hitting exposed, the negative should be canceled by the exposure? maybe? probably.
 
 /obj/item/ammo_box/c27_54cesarzowa
 	name = "ammo box (.27-54 Cesarzowa piercing)"
@@ -47,7 +47,6 @@
 
 	icon_state = "27-54cesarzowa_rubber"
 	ammo_categories = AMMO_CLASS_NONE
-	print_cost = 0
 	projectile_type = /obj/projectile/bullet/c27_54cesarzowa/rubber
 
 /obj/projectile/bullet/c27_54cesarzowa/rubber
@@ -56,7 +55,7 @@
 	damage = 10
 	weak_against_armour = TRUE
 	wound_bonus = -30
-	bare_wound_bonus = -10
+	exposed_wound_bonus = -10
 	sharpness = NONE
 
 /obj/item/ammo_box/c27_54cesarzowa/rubber

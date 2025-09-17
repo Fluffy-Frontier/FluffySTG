@@ -110,8 +110,7 @@ const NewscasterChannelCreation = (props) => {
               backgroundColor="black"
               textColor="white"
               maxLength={42}
-              expensive
-              onChange={(value) =>
+              onBlur={(value) =>
                 act('setChannelName', {
                   channeltext: value,
                 })
@@ -128,8 +127,7 @@ const NewscasterChannelCreation = (props) => {
               backgroundColor="black"
               textColor="white"
               maxLength={512}
-              expensive
-              onChange={(value) =>
+              onBlur={(value) =>
                 act('setChannelDesc', {
                   channeldesc: value,
                 })
@@ -221,8 +219,7 @@ const NewscasterCommentCreation = (props) => {
             backgroundColor="black"
             textColor="white"
             maxLength={512}
-            expensive
-            onChange={(value) =>
+            onBlur={(value) =>
               act('setCommentBody', {
                 commenttext: value,
               })
@@ -492,7 +489,7 @@ const NewscasterChannelSelector = (props) => {
   const { act, data } = useBackend();
   const { channels = [], viewing_channel, wanted = [] } = data;
   return (
-    <Section minHeight="100%" width={window.innerWidth - 410 + 'px'}>
+    <Section minHeight="100%" width={`${window.innerWidth - 410}px`}>
       <Tabs vertical>
         {wanted.map((activeWanted) => (
           <Tabs.Tab

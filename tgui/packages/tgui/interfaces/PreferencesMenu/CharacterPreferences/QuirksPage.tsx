@@ -1,4 +1,4 @@
-import { filter } from 'common/collections';
+import { filter } from 'es-toolkit/compat';
 import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import {
@@ -13,10 +13,10 @@ import {
 import { createSearch } from 'tgui-core/string';
 
 import {
-  PreferencesMenuData,
-  Quirk,
+  type PreferencesMenuData,
+  type Quirk,
   RandomSetting,
-  ServerData,
+  type ServerData,
 } from '../types';
 import { useRandomToggleState } from '../useRandomToggleState';
 import { useServerPrefs } from '../useServerPrefs';
@@ -254,7 +254,7 @@ function QuirkPopper(props: QuirkPopperProps) {
                     serverData,
                     randomBodyEnabled,
                   )}
-                  maxHeight="160px" // NOVA EDIT CHANGE - ORIGINAL: 100px
+                  maxHeight="250px" // NOVA EDIT CHANGE - ORIGINAL: 100px
                 />
               </Stack.Item>
             </Stack>
@@ -427,7 +427,6 @@ export function QuirksPage(props) {
               width="200px"
               value={searchQuery}
               onChange={setSearchQuery}
-              expensive
             />
           </Stack.Item>
           <Stack.Item grow className="PreferencesMenu__Quirks__QuirkList">

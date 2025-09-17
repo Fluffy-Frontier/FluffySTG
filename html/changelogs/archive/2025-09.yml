@@ -1,0 +1,98 @@
+2025-09-03:
+  Kocma-san:
+  - bugfix: Fixed a bug with blinking pixels in the chest of GASs
+  - bugfix: Fixed a bug with HUD for GASs
+  - code_imp: Remaining GAGS config files have been moved from the Nova module into
+      ours
+2025-09-07:
+  mogeoko:
+  - balance: Spread, damage, speed and nerfs to Zaibas weaponry.
+2025-09-09:
+  DirectCause:
+  - map: Fixes minor issues with NSS Journey
+2025-09-13:
+  Absolucy:
+  - spellcheck: 'PR announcements should now say "X merged by Y: ..." instead of "X
+      merged Y: ..."'
+  Balls2zawall:
+  - bugfix: Changes the Encryption key for the SolFed EMT's headset to be the proper
+      one
+  - rscadd: Changes the SolFed EMT's loadout to have a health HUD and more tools,
+      as well as giving them a box of epi-pens
+  - rscadd: Creates a SolFed Medical ID trim, to give EMT's access around the station
+  CliffracerX:
+  - rscdel: Points system from ammo benches & reload disks
+  - balance: increased material costs for milspec & flechettes
+  Diltyrr:
+  - rscadd: Inverses the regen algorithm for slime people with the water breathing
+      quirk.
+  - rscadd: Disable the damage from ingesting water for slime people with the water
+      breathing quirk.
+  - rscadd: Removes the Hydrophobia toggle for slime people with the water breathing
+      quirk.
+  - rscadd: Added a way to pick a drone name.
+  Hatterhat:
+  - image: The Miecz has been restored back to its classic bullpup stick-mag form.
+      Those who suggest that the Miecz was, actually, yet another iteration of a 618-year-old
+      rifle design are clearly from people who need to get their brains checked by
+      Medbay for plasma exposure and poisoning.
+  - balance: .27-54 Cesarzowa is back to being more in-line with a pistol-caliber
+      round. Except, you know, still keeping its 30 AP. (That's gotta be worth something.)
+  Iajret:
+  - bugfix: Random characters created from Cargodise Lost spawners should now have
+      proper random names and not 'Freighter Crew'
+  - bugfix: Same holds true for BMD. No longer will you have 'a black market dealer'
+      as random char name
+  Melbert:
+  - bugfix: Fixes some places where dynamic configs were not being read correctly
+  - refactor: Dynamic rewritten entirely, report any strange rounds
+  - config: Dynamic config reworked, it's now a TOML file
+  - refactor: Refactored antag roles somewhat, report any oddities
+  - refactor: Refactored Revolution entirely, report any oddities
+  - rscdel: Deleted most midround events that spawn antags - they use dynamic rulesets
+      now
+  - rscadd: Dynamic rulesets can now be false alarms
+  - rscadd: Adds a random event that gives dynamic the ability to run another ruleset
+      later
+  - admin: Adds a panel for messing around with dynamic
+  - admin: Adds a panel for chance for every dynamic ruleset to be selected
+  - admin: You can spawn revs without using dynamic now
+  - bugfix: Nuke team leaders get their fun title back
+  - config: Adds "roundstart_blue_alert", allowing you to disable roundstart blue
+      alert. Defaults to "on".
+  - bugfix: Multiple high impact rulesets will no longer roll simultaneously unless
+      dynamic picks "high chaos"
+  Neocloudy:
+  - bugfix: '[NOVA] Fixed errors in carbon human breast sprites. See PR #5993 for
+      specific fixes.'
+  RealWinterFrost:
+  - admin: Player panel has a preference for admins for those who wish to use the
+      legacy panel.
+  - admin: Splurt-tg station player panel has been ported for admins
+  Stalkeros for the code, Hollandaise for the sprites, Golden Freddy for the flag design:
+  - rscadd: Heliostatic Coalition flag, replacing all the NRI flags. But what is so-called
+      "NRI"? Have you heard of it? I have no idea! Must have been the wind?
+  - rscdel: Certain fictional country that doesn't exist's flag.
+  TheSS13Melon:
+  - config: Changes weights in ICES, opening up for a wider variety of events.
+  - bugfix: Scrubber clog was incorrectly
+  carpotoxin:
+  - qol: Spacevines that grow on open or space turfs now have odds to create a vine
+      floortile
+  - balance: Tier 3 and tier 4 scythes can now be researched, and security can print
+      them
+2025-09-14:
+  RealWinterFrost:
+  - rscadd: Gave the blueshield a modsuit paintkit
+  - rscadd: Added a new 'deepspace' modsuits to replace the syndicate mod and elite
+      mod on DS-2 (No stats changes)
+  - map: Replaced All modsuits on DS-2 with respective Deepspace Variants
+  - map: Replaced the Snowdyne Syndi-mod with their correct company modsuit.
+  - image: added 4 skins to the Deepspace Modsuit (Deepspace, Synditech, Enforcer,
+      Cybersun)
+  - image: added a blue reskin variant of the security modsuit
+  - image: added 2 skins for the Deepspace_Admiral modsuit (Admiral, Admiral-Cybersun)
+  - image: added 2 skins for the Interdyne Modsuit (Dyne-Doctor, Dyne-Guardian)
+  - image: added 2 skins for the Praetorian Modsuit (Souless, Artificial)
+  - code_imp: Moved datums and objects in files to the nova modsuit master files to
+      keep files organized, and prevent overabundance of files.

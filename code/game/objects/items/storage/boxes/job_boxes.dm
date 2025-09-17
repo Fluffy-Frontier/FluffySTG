@@ -47,7 +47,7 @@
 	if(HAS_TRAIT(SSstation, STATION_TRAIT_RADIOACTIVE_NEBULA))
 		new /obj/item/storage/pill_bottle/potassiodide(src)
 
-	if(give_hook && length(SSmapping.levels_by_trait(ZTRAIT_STATION)) > 1)
+	if(give_hook && length(SSmapping.levels_by_trait(ZTRAIT_STATION)) > 1 && SSmapping.current_map.give_players_hooks)
 		new /obj/item/climbing_hook/emergency(src)
 
 	new /obj/item/oxygen_candle(src) //NOVA EDIT ADDITION
@@ -206,7 +206,7 @@
 	user.visible_message(span_suicide("[user] opens [src] and gets consumed by [p_them()]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	playsound(user, 'sound/misc/scary_horn.ogg', 70, vary = TRUE)
 	forceMove(user.drop_location())
-	var/obj/item/clothing/head/mob_holder/consumed = new(src, user)
+	var/obj/item/mob_holder/consumed = new(src, user)
 	consumed.desc = "It's [user.real_name]! It looks like [user.p_they()] committed suicide!"
 	return OXYLOSS
 

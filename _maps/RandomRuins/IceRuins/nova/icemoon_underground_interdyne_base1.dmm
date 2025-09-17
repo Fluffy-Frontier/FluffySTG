@@ -808,6 +808,8 @@
 /area/ruin/interdyne_planetary_base/cargo)
 "cl" = (
 /obj/structure/railing,
+/obj/structure/ore_box,
+/obj/item/toy/figure/prisoner,
 /turf/open/floor/iron/diagonal,
 /area/ruin/interdyne_planetary_base/cargo)
 "cm" = (
@@ -1192,13 +1194,12 @@
 /area/ruin/interdyne_planetary_base/cargo/ware)
 "dl" = (
 /obj/machinery/light/small/directional/east,
-/obj/effect/turf_decal/box/white,
-/obj/structure/ore_box,
 /obj/machinery/button/door/directional/north{
 	id = "interdynewarehosue";
 	name = "window security button";
 	req_access = list("syndicate")
 	},
+/obj/effect/mob_spawn/ghost_role/robot/interdyne,
 /turf/open/floor/iron/smooth_large,
 /area/ruin/interdyne_planetary_base/cargo/ware)
 "dm" = (
@@ -1430,8 +1431,7 @@
 	},
 /area/ruin/interdyne_planetary_base/cargo/ware)
 "dT" = (
-/obj/structure/ore_box,
-/obj/effect/turf_decal/box/white,
+/obj/effect/mob_spawn/ghost_role/robot/interdyne,
 /turf/open/floor/iron/smooth_edge{
 	dir = 8
 	},
@@ -1532,13 +1532,9 @@
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/interdyne_planetary_base)
 "ek" = (
-/obj/effect/turf_decal/box/white,
-/obj/item/toy/figure/prisoner,
 /obj/structure/ore_box,
-/turf/open/floor/iron/smooth_edge{
-	dir = 8
-	},
-/area/ruin/interdyne_planetary_base/cargo/ware)
+/turf/open/floor/iron/diagonal,
+/area/ruin/interdyne_planetary_base/cargo)
 "el" = (
 /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
 /obj/machinery/door/poddoor{
@@ -1619,7 +1615,7 @@
 /obj/item/reagent_containers/spray/cleaner{
 	pixel_x = 10
 	},
-/obj/item/reagent_containers/cup/rag{
+/obj/item/rag{
 	pixel_x = -4;
 	pixel_y = 3
 	},
@@ -2291,12 +2287,8 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 8
 	},
-/obj/machinery/fax{
-	dir = 1;
-	fax_name = "Interdyne Pharmaceuticals";
-	name = "Interdyne Fax Machine";
-	req_access = list("syndicate");
-	syndicate_network = 1
+/obj/machinery/fax/interdyne{
+	dir = 1
 	},
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/interdyne_planetary_base/med)
@@ -2653,6 +2645,8 @@
 	pixel_x = 6;
 	pixel_y = 6
 	},
+/obj/item/circuitboard/computer/bountypad,
+/obj/item/circuitboard/machine/bountypad,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/vault)
 "hi" = (
@@ -2820,7 +2814,7 @@
 /area/ruin/interdyne_planetary_base/main)
 "hI" = (
 /obj/machinery/light/small/directional/east,
-/obj/machinery/suit_storage_unit/syndicate/chameleon,
+/obj/machinery/suit_storage_unit/interdyne,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/vault)
 "hJ" = (
@@ -4615,7 +4609,7 @@
 /area/ruin/interdyne_planetary_base/eng/disp)
 "mc" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/blood/oil,
 /turf/open/floor/plating/reinforced,
 /area/ruin/interdyne_planetary_base/eng/disp)
 "md" = (
@@ -5392,7 +5386,7 @@
 	pixel_x = 6;
 	pixel_y = 2
 	},
-/obj/item/reagent_containers/cup/rag{
+/obj/item/rag{
 	pixel_x = -4;
 	pixel_y = 3
 	},
@@ -7478,7 +7472,7 @@
 /turf/open/floor/iron/smooth_large,
 /area/ruin/interdyne_planetary_base/main/dorms)
 "Wi" = (
-/obj/machinery/power/micro_reactor,
+/obj/machinery/power/micro_reactor/bapgm,
 /obj/structure/cable,
 /turf/open/floor/iron/submarine,
 /area/ruin/interdyne_planetary_base/eng)
@@ -7502,8 +7496,10 @@
 "WA" = (
 /obj/item/gun/ballistic/rifle/sniper_rifle/syndicate,
 /obj/structure/rack/gunrack,
-/obj/item/ammo_workbench_reboot,
 /obj/item/ammo_workbench_module/lethal_super/evil,
+/obj/item/circuitboard/machine/powerator/interdyne,
+/obj/item/circuitboard/machine/powerator/interdyne,
+/obj/item/circuitboard/machine/powerator/interdyne,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/vault)
 "WQ" = (
@@ -8847,8 +8843,8 @@ aR
 aG
 bh
 by
-bN
-bN
+ek
+ek
 cl
 cE
 cz
@@ -8914,7 +8910,7 @@ cy
 cR
 dl
 dT
-ek
+dT
 ev
 BZ
 eU

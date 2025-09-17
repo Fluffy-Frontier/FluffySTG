@@ -23,7 +23,7 @@
 	damage = 20
 
 	wound_bonus = 5 // Normal bullets are 20
-	bare_wound_bonus = 10
+	exposed_wound_bonus = 10
 
 
 /obj/item/ammo_box/c35sol
@@ -52,7 +52,6 @@
 
 	projectile_type = /obj/projectile/bullet/c35sol/incapacitator
 	harmful = FALSE
-	print_cost = 0
 	ammo_categories = AMMO_CLASS_NONE
 
 
@@ -62,7 +61,7 @@
 	stamina = 30
 
 	wound_bonus = -40
-	bare_wound_bonus = -20
+	exposed_wound_bonus = -20
 
 	weak_against_armour = TRUE
 
@@ -100,7 +99,6 @@
 
 	custom_materials = AMMO_MATS_RIPPER
 	ammo_categories = AMMO_CLASS_PLUS
-	print_cost = 2
 
 /obj/projectile/bullet/c35sol/ripper
 	name = ".35 Sol ripper bullet"
@@ -111,7 +109,7 @@
 	sharpness = SHARP_EDGED
 
 	wound_bonus = 20
-	bare_wound_bonus = 20
+	exposed_wound_bonus = 20
 
 	embed_type = /datum/embedding/c35sol_ripper
 
@@ -145,7 +143,6 @@
 
 	projectile_type = /obj/projectile/bullet/c35sol/flash
 	harmful = FALSE
-	print_cost = 0
 	ammo_categories = AMMO_CLASS_NONE
 
 /obj/projectile/bullet/c35sol/flash
