@@ -1,22 +1,25 @@
 /// TGMC_XENOS (old nova sector xenos)
 
+#define TGMC_ALIEN_BODYPART_BURN_MODIFIER 1.5
+
+
 /obj/item/bodypart/head/alien/tgmc
-	burn_modifier = 1.5
+	burn_modifier = TGMC_ALIEN_BODYPART_BURN_MODIFIER
 
 /obj/item/bodypart/chest/alien/tgmc
-	burn_modifier = 1.5
+	burn_modifier = TGMC_ALIEN_BODYPART_BURN_MODIFIER
 
 /obj/item/bodypart/arm/left/alien/tgmc
-	burn_modifier = 1.5
+	burn_modifier = TGMC_ALIEN_BODYPART_BURN_MODIFIER
 
 /obj/item/bodypart/arm/right/alien/tgmc
-	burn_modifier = 1.5
+	burn_modifier = TGMC_ALIEN_BODYPART_BURN_MODIFIER
 
 /obj/item/bodypart/leg/left/alien/tgmc
-	burn_modifier = 1.5
+	burn_modifier = TGMC_ALIEN_BODYPART_BURN_MODIFIER
 
 /obj/item/bodypart/leg/right/alien/tgmc
-	burn_modifier = 1.5
+	burn_modifier = TGMC_ALIEN_BODYPART_BURN_MODIFIER
 
 
 /mob/living/carbon/alien/adult/tgmc/newBodyPart(zone)
@@ -36,3 +39,6 @@
 			new_bodypart = new /obj/item/bodypart/chest/alien/tgmc()
 	if(new_bodypart)
 		new_bodypart.update_limb(is_creating = TRUE)
+
+
+#undef TGMC_ALIEN_BODYPART_BURN_MODIFIER

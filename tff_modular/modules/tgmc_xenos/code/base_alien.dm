@@ -1,7 +1,5 @@
 /// TGMC_XENOS (old nova sector xenos)
 
-#define ROUNY_ICON_FILE 'tff_modular/modules/tgmc_xenos/icons/rouny.dmi'
-
 /mob/living/carbon/alien/adult/tgmc
 	name = "rare bugged alien"
 	icon = 'tff_modular/modules/tgmc_xenos/icons/big_xenos.dmi'
@@ -81,13 +79,6 @@
 			default_organ_types_by_slot[slot] = additional_organ_types_by_slot[slot]
 	return ..()
 
-/mob/living/carbon/alien/adult/tgmc/update_icon(updates)
-	if(GLOB.xeno_rounymode && icon_exists(ROUNY_ICON_FILE, icon_state))
-		icon = ROUNY_ICON_FILE
-	else if(icon == ROUNY_ICON_FILE)
-		icon = initial(icon)
-	return ..()
-
 /mob/living/carbon/alien/adult/tgmc/UnarmedAttack(atom/attack_target, proximity_flag, list/modifiers)
 	if(body_position == LYING_DOWN) // Лежим - значит отдыхаем. Никакой войны во время отдыха
 		return FALSE
@@ -160,30 +151,6 @@
 /mob/living/carbon/alien/adult/tgmc/set_hud_image_state(hud_type, hud_state, x_offset, y_offset)
 	return ..(hud_type, hud_state, hud_offset_x, hud_offset_y)
 
-//Yes we really do need to do this whole thing to let the queen finder work
-/mob/living/carbon/alien/adult/tgmc/findQueen()
-	if(hud_used)
-		hud_used.alien_queen_finder.cut_overlays()
-		var/mob/queen = get_alien_type(/mob/living/carbon/alien/adult/tgmc/queen)
-		if(!queen)
-			return
-		var/turf/Q = get_turf(queen)
-		var/turf/A = get_turf(src)
-		if(Q.z != A.z) //The queen is on a different Z level, we cannot sense that far.
-			return
-		var/Qdir = get_dir(src, Q)
-		var/Qdist = get_dist(src, Q)
-		var/finder_icon = "finder_center" //Overlay showed when adjacent to or on top of the queen!
-		switch(Qdist)
-			if(2 to 7)
-				finder_icon = "finder_near"
-			if(8 to 20)
-				finder_icon = "finder_med"
-			if(21 to INFINITY)
-				finder_icon = "finder_far"
-		var/image/finder_eye = image('icons/hud/screen_alien.dmi', finder_icon, dir = Qdir)
-		hud_used.alien_queen_finder.add_overlay(finder_eye)
-
 /mob/living/carbon/proc/get_max_plasma()
 	var/obj/item/organ/alien/plasmavessel/vessel = get_organ_by_type(/obj/item/organ/alien/plasmavessel)
 	if(!vessel)
@@ -194,5 +161,3 @@
 	. = ..()
 	if(.)
 		SEND_SIGNAL(src, COMSIG_XENO_PLASMA_ADJUSTED, amount)
-
-#undef ROUNY_ICON_FILE
