@@ -132,8 +132,10 @@
 
 /obj/vehicle/sealed/mecha/ripley/paddy/Initialize(mapload)
 	. = ..()
+	// FLUFFY FRONTIER ADDITION - QDEL ON MAPLOAD
 	if(mapload)
 		return INITIALIZE_HINT_QDEL
+	// FLUFFY FRONTIER ADDITION END
 	weewooloop = new(src, FALSE, FALSE)
 	weewooloop.volume = 100
 
