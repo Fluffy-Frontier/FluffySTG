@@ -134,6 +134,8 @@
 	. = ..()
 	// FLUFFY FRONTIER ADDITION - QDEL ON MAPLOAD
 	if(mapload)
+		if(!is_station_level(src.z))
+			return
 		return INITIALIZE_HINT_QDEL
 	// FLUFFY FRONTIER ADDITION END
 	weewooloop = new(src, FALSE, FALSE)
