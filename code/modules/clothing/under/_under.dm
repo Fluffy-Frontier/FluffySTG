@@ -45,6 +45,8 @@
 	/// This is the overlay on the MOB, not the item itself.
 	var/mutable_appearance/accessory_overlay
 
+	class_value = 20
+
 /datum/armor/clothing_under
 	bio = 10
 	wound = 5

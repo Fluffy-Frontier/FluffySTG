@@ -7,24 +7,8 @@
 	drop_sound = 'sound/items/handling/gun/gun_drop.ogg'
 	sound_vary = TRUE
 
-	/// What type of power cell this uses
-	var/obj/item/stock_parts/power_store/cell
-	var/cell_type = /obj/item/stock_parts/power_store/cell
-	///if the weapon has custom icons for individual ammo types it can switch between. ie disabler beams, taser, laser/lethals, ect.
-	var/modifystate = FALSE
-	var/list/ammo_type = list(/obj/item/ammo_casing/energy)
-	///The state of the select fire switch. Determines from the ammo_type list what kind of shot is fired next.
-	var/select = 1
-	///If the user can select the firemode through attack_self.
-	var/can_select = TRUE
-	///Can it be charged in a recharger?
-	var/can_charge = TRUE
-	///Do we handle overlays with base update_icon()?
-	var/automatic_charge_overlays = TRUE
-	var/charge_sections = 4
+
 	ammo_x_offset = 2
-	///if this gun uses a stateful charge bar for more detail
-	var/shaded_charge = FALSE
 	///If this gun has a "this is loaded with X" overlay alongside chargebars and such
 	var/single_shot_type_overlay = TRUE
 	///Should we give an overlay to empty guns?
@@ -47,6 +31,35 @@
 	var/charge_delay = 8
 	/// The amount restored by the gun to the cell per self charge tick
 	var/self_charge_amount = STANDARD_ENERGY_GUN_SELF_CHARGE_RATE
+
+	var/latch_closed = TRUE
+	var/latch_toggle_delay = 1.0 SECONDS
+
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/gun,
+		/obj/item/attachment/sling,
+	)
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_MUZZLE = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 26,
+			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 21,
+			"y" = 24,
+		)
+	)
 
 /obj/item/gun/energy/fire_sounds()
 	// What frequency the energy gun's sound will make
@@ -86,21 +99,19 @@
 	return cell
 
 /obj/item/gun/energy/Initialize(mapload)
-	. = ..()
 	if(cell_type)
 		cell = new cell_type(src)
 	else
 		cell = new(src)
 	if(!dead_cell)
 		cell.give(cell.maxcharge)
-	if(cell && resistance_flags & INDESTRUCTIBLE)
-		cell.resistance_flags |= INDESTRUCTIBLE
-	cell.resistance_flags |= BOMB_PROOF
 	update_ammo_types()
+	. = ..()
 	recharge_newshot(TRUE)
 	if(selfcharge)
 		START_PROCESSING(SSobj, src)
 	update_appearance()
+	update_overlays()
 	RegisterSignal(src, COMSIG_ITEM_RECHARGED, PROC_REF(instant_recharge))
 	AddElement(/datum/element/update_icon_updates_onmob)
 
@@ -178,10 +189,39 @@
 			recharge_newshot(TRUE)
 		update_appearance()
 
-/obj/item/gun/energy/attack_self(mob/living/user as mob)
-	if(ammo_type.len > 1 && can_select)
-		select_fire(user)
-	return ..()
+/obj/item/gun/energy/attackby(obj/item/attacking_item, mob/living/user, params)
+	if(istype(attacking_item, /obj/item/stock_parts/power_store/cell))
+		return try_insert_cell(attacking_item, user)
+	. = ..()
+
+/obj/item/gun/energy/proc/try_insert_cell(obj/item/stock_parts/power_store/cell/new_cell, mob/user)
+	if(!new_cell)
+		return FALSE
+	if(latch_closed)
+		to_chat(user, "Unlatch the power cell's retainment clip")
+		return FALSE
+	if(!has_empty_cell())
+		if(tac_reloads)
+			if(do_after(user, tactical_reload_delay, src, hidden = TRUE))
+				if(insert_cell(user, new_cell))
+					to_chat(user, span_notice("You perform a tactical reload on \the [src]."))
+					eject_cell(user, cell)
+			else
+				to_chat(user, span_warning("Your reload was interupted!"))
+				return FALSE
+		else
+			to_chat(user, span_warning("Take out the battery first!"))
+			return FALSE
+	user.temporarilyRemoveItemFromInventory(new_cell)
+	if(!user.transferItemToLoc(new_cell, src))
+		qdel(new_cell) // Если что-то пошло не так...
+		return FALSE
+	cell = new_cell
+
+	update_appearance()
+	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD) // Для СкайРатовского ХУДа.
+	balloon_alert(user, "cell inserted")
+	return TRUE
 
 /obj/item/gun/energy/can_shoot()
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
@@ -214,7 +254,12 @@
 /obj/item/gun/energy/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(!chambered && can_shoot())
 		process_chamber() // If the gun was drained and then recharged, load a new shot.
-	return ..()
+	..()
+	if(!latch_closed && prob(65)) //make the cell slide out if it's fired while the retainment clip is unlatched, with a 65% probability
+		to_chat(user, span_warning("The [src]'s cell falls out!"))
+		eject_cell()
+	return
+
 
 /obj/item/gun/energy/process_burst(mob/living/user, atom/target, message = TRUE, params = null, zone_override="", randomized_gun_spread = 0, randomized_bonus_spread = 0, rand_spr = 0, iteration = 0)
 	if(!chambered && can_shoot())
@@ -254,12 +299,11 @@
 		worn_icon_state = temp_icon_to_use
 	return ..()
 
+
 /obj/item/gun/energy/update_overlays()
 	. = ..()
-	// NOVA EDIT START
-	if(!automatic_charge_overlays || !cell)
+	if(!automatic_charge_overlays)
 		return
-	// NOVA EDIT END
 
 	var/overlay_icon_state = "[icon_state]_charge"
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
@@ -273,6 +317,21 @@
 	if(ratio == 0 && display_empty)
 		. += "[icon_state]_empty"
 		return
+
+	if(ismob(loc) && !internal_magazine)
+		var/mutable_appearance/latch_overlay
+		latch_overlay = mutable_appearance('tff_modular/modules/evento_needo/icons/cell_latch.dmi')
+		if(latch_closed)
+			if(cell)
+				latch_overlay.icon_state = "latch-on-full"
+			else
+				latch_overlay.icon_state = "latch-on-empty"
+		else
+			if(cell)
+				latch_overlay.icon_state = "latch-off-full"
+			else
+				latch_overlay.icon_state = "latch-off-empty"
+		. += latch_overlay
 
 	if(shot_type_fluff_overlay)
 		. += "[icon_state]_[initial(shot.select_name)]_extra"
@@ -356,3 +415,87 @@
 	cell.charge = cell.maxcharge
 	recharge_newshot(no_cyborg_drain = TRUE)
 	update_appearance()
+
+/obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/power_store/C)
+	if(!C)
+		return FALSE
+	user.temporarilyRemoveItemFromInventory(C)
+	if(!user.transferItemToLoc(C, src))
+		qdel(C) // Если что-то пошло не так...
+		return FALSE
+	cell = C
+
+	playsound(src, load_sound, load_sound_volume, load_sound_vary)
+	update_appearance()
+	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD) // Для СкайРатовского ХУДа.
+	balloon_alert(user, "cell inserted")
+
+//special is_type_in_list method to counteract problem with current method
+/obj/item/gun/energy/proc/is_attachment_in_contents_list()
+	for(var/content_item in contents)
+		if(istype(content_item, /obj/item/attachment/))
+			return TRUE
+	return FALSE
+
+/obj/item/gun/energy/proc/has_empty_cell()
+	if(!cell)
+		return TRUE
+	return FALSE
+
+/obj/item/gun/energy/attack_self(mob/living/user)
+	if(latch_closed)
+		unique_action(user)
+	else if(!latch_closed)
+		if(has_empty_cell())
+			balloon_alert(user, "there is no cell!")
+			return FALSE
+		eject_cell(user)
+	return ..()
+
+/obj/item/gun/energy/proc/eject_cell(mob/user)
+	playsound(src, load_sound, load_sound_volume, load_sound_vary)
+	update_appearance()
+	cell.update_appearance()
+	if(user)
+		to_chat(user, span_notice("You pull the cell out of \the [src]."))
+		user.put_in_hands(cell)
+	else
+		cell.forceMove(drop_location())
+
+	//cell = null
+
+	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD) // Для СкайРатовского ХУДа.
+
+	balloon_alert(user, "cell ejected")
+
+
+/obj/item/gun/energy/screwdriver_act(mob/living/user, obj/item/I)
+
+	var/choice = isnull(pin) ? FALSE : tgui_input_list(user, "Choose action", "Choice", list("Take pin out", "Cell-slot action"))
+	if(choice == "Cell-slot action" || !choice)
+		if(latch_closed)
+			to_chat(user, span_notice("You start to unlatch the [src]'s power cell retainment clip..."))
+			if(do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
+				to_chat(user, span_notice("You unlatch the [src]'s power cell retainment clip " + span_red("OPEN") + "."))
+				playsound(src, 'sound/items/taperecorder/taperecorder_play.ogg', 50, FALSE)
+				tac_reloads = TRUE
+				latch_closed = FALSE
+				update_appearance()
+			return ITEM_INTERACT_SUCCESS
+		else if(!latch_closed)
+			// if(!cell && is_attachment_in_contents_list())
+			// 	return ..() //should bring up the attachment menu if attachments are added. If none are added, it just does leaves the latch open
+			to_chat(user, span_warning("You start to latch the [src]'s power cell retainment clip..."))
+			if (do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
+				to_chat(user, span_notice("You latch the [src]'s power cell retainment clip " + span_green("CLOSED") + "."))
+				playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
+				tac_reloads = FALSE
+				latch_closed = TRUE
+				update_appearance()
+				return ITEM_INTERACT_SUCCESS
+	return ..()
+
+/obj/item/gun/energy/unique_action(mob/living/user)
+	if(ammo_type.len > 1)
+		select_fire(user)
+		update_appearance()

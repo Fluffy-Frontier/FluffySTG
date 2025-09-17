@@ -1,0 +1,30 @@
+/obj/item/gun/ballistic/automatic/powered/gauss
+	name = "prototype gauss rifle"
+	desc = "An experimental Nanotrasen rifle with a high capacity. Useful for putting down crowds. Chambered in ferromagnetic pellets."
+	icon = 'tff_modular/modules/evento_needo/icons/nanotrasen_sharplite/48x32.dmi'
+	lefthand_file = 'tff_modular/modules/evento_needo/icons/nanotrasen_sharplite/lefthand.dmi'
+	righthand_file = 'tff_modular/modules/evento_needo/icons/nanotrasen_sharplite/righthand.dmi'
+	worn_icon = 'tff_modular/modules/evento_needo/icons/nanotrasen_sharplite/onmob.dmi'
+	icon_state = "gauss"
+	inhand_icon_state = "arg"
+	worn_icon_state = "gun"
+	slot_flags = 0
+	accepted_magazine_type = /obj/item/ammo_box/magazine/gauss
+	fire_sound = 'tff_modular/modules/evento_needo/sounds/gauss/magrifle.ogg'
+	load_sound = 'tff_modular/modules/evento_needo/sounds/gauss/rifle_reload.ogg'
+	burst_size = 1
+	fire_delay = 0.3 SECONDS
+	spread = 0
+	empty_indicator = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	charge_sections = 4
+	ammo_x_offset = 2
+
+	spread = 0
+	spread_unwielded = 25
+	recoil = 0
+	recoil_unwielded = 4
+	wield_slowdown = HEAVY_RIFLE_SLOWDOWN
+	wield_delay = 1 SECONDS
+	fire_select_icon_state_prefix = "pellet_"

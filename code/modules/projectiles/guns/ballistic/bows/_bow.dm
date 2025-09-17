@@ -58,7 +58,6 @@
 	if(chambered || !magazine)
 		return
 	chambered = magazine.get_round()
-	RegisterSignal(chambered, COMSIG_MOVABLE_MOVED, PROC_REF(clear_chambered))
 	update_appearance()
 
 /obj/item/gun/ballistic/bow/clear_chambered(datum/source)

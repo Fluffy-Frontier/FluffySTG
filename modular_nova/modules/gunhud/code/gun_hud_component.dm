@@ -149,6 +149,8 @@
 
 	else if(istype(parent, /obj/item/gun/energy))
 		var/obj/item/gun/energy/pew = parent
+		if(isnull(pew.cell))
+			return
 		hud.icon_state = "eammo_counter"
 		hud.cut_overlays()
 		hud.maptext_x = -12

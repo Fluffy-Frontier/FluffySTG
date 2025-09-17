@@ -50,6 +50,7 @@
 	wound_clothing = TRUE,
 )
 
+
 	// Add relevant DR modifiers into blocked value to pass to parent
 	blocked += physiology?.damage_resistance
 	blocked += dna?.species?.damage_modifier

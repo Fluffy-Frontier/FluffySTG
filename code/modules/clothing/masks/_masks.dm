@@ -19,6 +19,7 @@
 	var/use_radio_beeps_tts = FALSE
 	/// The unique sound effect of dying while wearing this
 	var/unique_death
+	class_value = 15
 
 /obj/item/clothing/mask/attack_self(mob/user)
 	if((clothing_flags & VOICEBOX_TOGGLABLE))

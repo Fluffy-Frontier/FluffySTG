@@ -214,6 +214,8 @@ GLOBAL_LIST_INIT(turfs_pass_meteor, typecacheof(list(
 
 #define isspider(A) (istype(A, /mob/living/basic/spider))
 
+#define isabnormalitymob(A) (istype(A, /mob/living/simple_animal/hostile/abnormality))
+
 //Eye mobs
 #define iseyemob(A) (istype(A, /mob/eye))
 
@@ -348,3 +350,9 @@ GLOBAL_LIST_INIT(book_types, typecacheof(list(
 #define is_multi_tile_object(atom) (atom.bound_width > ICON_SIZE_X || atom.bound_height > ICON_SIZE_Y)
 
 #define is_area_nearby_station(checked_area) (istype(checked_area, /area/space) || istype(checked_area, /area/space/nearstation) || istype(checked_area, /area/station/asteroid))
+
+#define is_ego_weapon(A) (istype(A, /obj/item/ego_weapon) && !istype(A, /obj/item/ego_weapon/ranged/clerk))
+
+#define is_ego_ranged_weapon(A) (istype(A, /obj/item/ego_weapon/ranged) && !istype(A, /obj/item/ego_weapon/ranged/clerk))
+
+#define is_ego_melee_weapon(A) (is_ego_weapon(A) && !is_ego_ranged_weapon(A))

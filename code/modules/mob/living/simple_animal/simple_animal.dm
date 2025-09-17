@@ -159,6 +159,7 @@
 
 	///Is this animal horrible at hunting?
 	var/inept_hunter = FALSE
+	var/datum/physiology/physiology
 
 
 /mob/living/simple_animal/Initialize(mapload)
@@ -582,3 +583,45 @@
 
 /mob/living/simple_animal/compare_sentience_type(compare_type)
 	return sentience_type == compare_type
+
+
+/mob/living/simple_animal/proc/ChangeResistances(list/values)
+	for(var/value in values)
+		switch(value)
+			if(BRUTE)
+				physiology.brute_mod += value
+			if(BURN)
+				physiology.burn_mod += value
+			if(BRAIN)
+				physiology.brain_mod += value
+			if(TOX)
+				physiology.tox_mod += value
+	return
+
+/mob/living/simple_animal/get_incoming_damage_modifier(
+	damage = 0,
+	damagetype = BRUTE,
+	def_zone = null,
+	sharpness = NONE,
+	attack_direction = null,
+	attacking_item,
+)
+	if(isnull(physiology))
+		return ..()
+	var/final_mod = ..()
+
+	switch(damagetype)
+		if(BRUTE)
+			final_mod *= physiology.brute_mod
+		if(BURN)
+			final_mod *= physiology.burn_mod
+		if(TOX)
+			final_mod *= physiology.tox_mod
+		if(OXY)
+			final_mod *= physiology.oxy_mod
+		if(STAMINA)
+			final_mod *= physiology.stamina_mod
+		if(BRAIN)
+			final_mod *= physiology.brain_mod
+
+	return final_mod

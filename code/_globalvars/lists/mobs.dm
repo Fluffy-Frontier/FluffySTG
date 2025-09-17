@@ -60,6 +60,8 @@ GLOBAL_LIST_EMPTY(spidermobs) //all sentient spider mobs
 GLOBAL_LIST_EMPTY(bots_list)
 GLOBAL_LIST_EMPTY(camera_eyes)
 GLOBAL_LIST_EMPTY(suit_sensors_list) //all people with suit sensors on
+GLOBAL_LIST_EMPTY(ordeal_list)				//all ordeal mobs. Allows for searching of a smaller list and thus less overall lag when doing so.
+GLOBAL_LIST_EMPTY(abnormality_mob_list)		//all abnormality mobs
 
 /// All alive mobs with clients.
 GLOBAL_LIST_EMPTY(alive_player_list)

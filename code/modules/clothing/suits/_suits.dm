@@ -18,6 +18,8 @@
 	var/blood_overlay_type = "suit"
 	limb_integrity = 0 // disabled for most exo-suits
 
+	class_value = 15
+
 /obj/item/clothing/suit/worn_overlays(mutable_appearance/standing, isinhands = FALSE, file2use = null, mutant_styles = NONE) // NOVA EDIT CHANGE - TAURS AND TESHIS - ORIGINAL: /obj/item/clothing/suit/worn_overlays(mutable_appearance/standing, isinhands = FALSE)
 	. = ..()
 	if(isinhands)

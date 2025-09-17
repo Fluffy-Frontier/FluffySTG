@@ -10,26 +10,6 @@
 	sound_vary = TRUE
 	unique_reskin_changes_base_icon_state = TRUE
 
-	///sound when inserting magazine
-	var/load_sound = 'sound/items/weapons/gun/general/magazine_insert_full.ogg'
-	///sound when inserting an empty magazine
-	var/load_empty_sound = 'sound/items/weapons/gun/general/magazine_insert_empty.ogg'
-	///volume of loading sound
-	var/load_sound_volume = 40
-	///whether loading sound should vary
-	var/load_sound_vary = TRUE
-	///sound of racking
-	var/rack_sound = 'sound/items/weapons/gun/general/bolt_rack.ogg'
-	///volume of racking
-	var/rack_sound_volume = 60
-	///whether racking sound should vary
-	var/rack_sound_vary = TRUE
-	///sound of when the bolt is locked back manually
-	var/lock_back_sound = 'sound/items/weapons/gun/general/slide_lock_1.ogg'
-	///volume of lock back
-	var/lock_back_sound_volume = 60
-	///whether lock back varies
-	var/lock_back_sound_vary = TRUE
 	///Sound of ejecting a magazine
 	var/eject_sound = 'sound/items/weapons/gun/general/magazine_remove_full.ogg'
 	///sound of ejecting an empty magazine
@@ -38,16 +18,6 @@
 	var/eject_sound_volume = 40
 	///whether eject sound should vary
 	var/eject_sound_vary = TRUE
-	///sound of dropping the bolt or releasing a slide
-	var/bolt_drop_sound = 'sound/items/weapons/gun/general/bolt_drop.ogg'
-	///volume of bolt drop/slide release
-	var/bolt_drop_sound_volume = 60
-	///empty alarm sound (if enabled)
-	var/empty_alarm_sound = 'sound/items/weapons/gun/general/empty_alarm.ogg'
-	///empty alarm volume sound
-	var/empty_alarm_volume = 70
-	///whether empty alarm sound varies
-	var/empty_alarm_vary = TRUE
 	///Whether our gun clicks when it approaches an empty magazine/chamber
 	var/click_on_low_ammo = TRUE
 
@@ -63,8 +33,6 @@
 	var/mag_display_ammo = FALSE
 	///Whether the sprite has a visible indicator for being empty or not.
 	var/empty_indicator = FALSE
-	///Whether the gun alarms when empty or not.
-	var/empty_alarm = FALSE
 	///Whether the gun supports multiple special mag types
 	var/special_mags = FALSE
 	/**
@@ -75,34 +43,17 @@
 	* BOLT_TYPE_NO_BOLT - This is shotguns and revolvers.  clicking will dump out all the bullets in the gun, spent or not.
 	* see combat.dm defines for bolt types: BOLT_TYPE_STANDARD; BOLT_TYPE_LOCKING; BOLT_TYPE_OPEN; BOLT_TYPE_NO_BOLT
 	**/
-	var/bolt_type = BOLT_TYPE_STANDARD
-	///Used for locking bolt and open bolt guns. Set a bit differently for the two but prevents firing when true for both.
-	var/bolt_locked = FALSE
 	var/show_bolt_icon = TRUE ///Hides the bolt icon.
-	///Whether the gun has to be racked each shot or not.
-	var/semi_auto = TRUE
-	///Actual magazine currently contained within the gun
-	var/obj/item/ammo_box/magazine/magazine
 	///whether the gun ejects the chambered casing
 	var/casing_ejector = TRUE
-	///Whether the gun has an internal magazine or a detatchable one. Overridden by BOLT_TYPE_NO_BOLT.
-	var/internal_magazine = FALSE
-	///Phrasing of the bolt in examine and notification messages; ex: bolt, slide, etc.
-	var/bolt_wording = "bolt"
 	///Phrasing of the magazine in examine and notification messages; ex: magazine, box, etx
 	var/magazine_wording = "magazine"
 	///Phrasing of the cartridge in examine and notification messages; ex: bullet, shell, dart, etc.
 	var/cartridge_wording = "bullet"
-	///length between individual racks
-	var/rack_delay = 5
-	///time of the most recent rack, used for cooldown purposes
-	var/recent_rack = 0
 	///Whether the gun can be tacloaded by slapping a fresh magazine directly on it
-	var/tac_reloads = TRUE //Snowflake mechanic no more.
+	tac_reloads = TRUE //Snowflake mechanic no more.
 	///Whether we need to hold the gun in our off-hand to load it. FALSE means we can load it literally anywhere. Important for weapons like bows.
 	var/must_hold_to_load = FALSE
-	///Whether the gun can be sawn off by sawing tools
-	var/can_be_sawn_off = FALSE
 	var/suppressor_x_offset ///pixel offset for the suppressor overlay on the x axis.
 	var/suppressor_y_offset ///pixel offset for the suppressor overlay on the y axis.
 	/// Check if you are able to see if a weapon has a bullet loaded in or not.
@@ -139,6 +90,9 @@
 	var/burst_fire_selection = FALSE
 	/// If it has an icon for a selector switch indicating current firemode.
 	var/selector_switch_icon = FALSE
+
+	///If you can examine a gun to see its current ammo count
+	var/ammo_counter = FALSE
 
 /obj/item/gun/ballistic/Initialize(mapload)
 	. = ..()
@@ -286,22 +240,6 @@
 	update_appearance()
 	update_item_action_buttons()
 
-// Didn't attempt to catch the casing.
-#define CASING_CATCH_NO_ATTEMPT	0
-// Tried to catch, failed because casing was hot and hands were unprotected.
-#define CASING_CATCH_FAILED_SPICY	1
-// Tried to catch, failed because clumsy.
-#define CASING_CATCH_FAILED_CLUMSY	2
-// Tried to catch, failed because hands full.
-#define CASING_CATCH_FAILED_PLACEMENT	3
-// Tried to catch, succeeded. Hands protected or casing was cold (not recently fired).
-#define CASING_CATCH_SUCCESSFUL	4
-// Tried to catch, succeeded. Casing was hot, hands were unprotected, hands burned.
-#define CASING_CATCH_SUCCESSFUL_OUCH	5
-// Offset added to an ejected casing's fire timestamp;
-// if world.time is past the casing's fired timestamp plus this offset, casing is considered cold, and won't burn hands.
-#define CASING_HOT_DELAY (5 SECONDS)
-
 /obj/item/gun/ballistic/handle_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE)
 	if(!semi_auto && from_firing)
 		return
@@ -313,89 +251,12 @@
 		else if(casing_ejector || !from_firing)
 			casing.forceMove(drop_location()) //Eject casing onto ground.
 			if(!QDELETED(casing))
+				casing.bounce_away(TRUE)
 				SEND_SIGNAL(casing, COMSIG_CASING_EJECTED)
-				var/hitting_ground = TRUE
-				if(ishuman(loc))
-					var/mob/living/carbon/human/wielder = loc
-					var/caught_casing = can_catch_casing(casing, wielder, from_firing)
-					switch(caught_casing)
-						if(CASING_CATCH_NO_ATTEMPT)
-							hitting_ground = TRUE
-						if(CASING_CATCH_FAILED_SPICY)
-							hitting_ground = TRUE
-							wielder.visible_message(
-								span_warning("[wielder] reaches out for \the [casing] as it ejects from [src], and catches it... before fumbling it because it's a hot casing. Uncool!"),
-								span_warning("You reach out and catch \the [casing] as it ejects from [src]... before dropping it, because it's a hot casing! Ouch! Uncool!"),
-								span_notice("You hear someone reaching for something before a hiss of pain and the sound of something clattering."),
-							)
-							var/obj/item/bodypart/affecting = wielder.get_inactive_hand()
-							wielder.apply_damage(2, BURN, affecting, wound_bonus = CANT_WOUND)
-						if(CASING_CATCH_FAILED_CLUMSY)
-							hitting_ground = TRUE
-							wielder.visible_message(
-								span_warning("[wielder] reaches out for \the [casing] as it ejects from [src]... before fumbling it in an incredibly unlikely, comical manner! Uncool!"),
-								span_warning("You reach out and catch \the [casing] as it ejects from [src]... before fumbling it in an incredibly unlikely, comical manner! Uncool!"),
-								span_notice("You hear someone reaching for something, shortly followed by an embarassingly loud, comedic clattering."),
-							)
-							if(!(world.time >= casing.shot_timestamp + CASING_HOT_DELAY))
-								var/obj/item/bodypart/affecting = wielder.get_inactive_hand()
-								to_chat(wielder, span_warning("As if to add insult to injury, \the [casing] lands in the perfect way... to burn your [affecting.plaintext_zone]."))
-								wielder.apply_damage(5, BURN, affecting, wound_bonus = CANT_WOUND)
-						if(CASING_CATCH_FAILED_PLACEMENT)
-							hitting_ground = TRUE
-							wielder.visible_message(
-								span_warning("[wielder] reaches out for \the [casing] as it ejects from [src] and fumbles it due to [wielder.p_their()] full hands. Uncool!"),
-								span_warning("You try and reach out for \the [casing] as it ejects from [src], and fumble it because your hands are full. Uncool!"),
-								span_notice("You hear someone reaching for something, before a metallic clattering."),
-							)
-						if(CASING_CATCH_SUCCESSFUL)
-							hitting_ground = FALSE
-							casing.update_appearance()
-							to_chat(wielder, span_notice("You reach out and catch \the [casing] as it ejects from [src]. Awesome."))
-						if(CASING_CATCH_SUCCESSFUL_OUCH)
-							hitting_ground = FALSE
-							casing.update_appearance()
-							var/obj/item/bodypart/affecting = wielder.get_inactive_hand()
-							to_chat(wielder, span_notice("You reach out and catch \the [casing] as it ejects from [src]. Awesome. Your [affecting.plaintext_zone] hurts, though."))
-							wielder.apply_damage(4, BURN, affecting, wound_bonus = CANT_WOUND)
-				if(hitting_ground)
-					casing.bounce_away(TRUE)
 		else if(empty_chamber)
 			clear_chambered()
 	if (chamber_next_round && (magazine?.max_ammo > 1))
 		chamber_round()
-
-/// Used to check if the mob `wielder` can catch an ejected casing.
-/// Returns CASING_CATCH_NO_ATTEMPT if not trying, CASING_CATCH_FAILED if failed, CASING_CATCH_SUCCESSFUL if successful.
-/obj/item/gun/ballistic/proc/can_catch_casing(obj/item/ammo_casing/casing, mob/living/carbon/human/wielder)
-	if(!wielder.throw_mode) // if they're not in throw mode, don't bother
-		return CASING_CATCH_NO_ATTEMPT
-	if(HAS_TRAIT(wielder, TRAIT_CLUMSY)) // feats of dexterity are beyond the jester
-		return CASING_CATCH_FAILED_CLUMSY
-	// following adapted from lightbulbs
-	var/protected_hands = FALSE
-	if(wielder.gloves)
-		var/obj/item/clothing/gloves/electrician_gloves = wielder.gloves
-		if(electrician_gloves.max_heat_protection_temperature && electrician_gloves.max_heat_protection_temperature > 360)
-			protected_hands = TRUE
-	// from left to right: are our hands protected from hot things via gloves? are we or our hands heat resistant? was this casing shot more than 5 seconds ago?
-	if(protected_hands || HAS_TRAIT(wielder, TRAIT_RESISTHEAT) || HAS_TRAIT(wielder, TRAIT_RESISTHEATHANDS) || world.time >= casing.shot_timestamp + CASING_HOT_DELAY)
-		if(wielder.put_in_hands(casing)) // try placement in hand,
-			return CASING_CATCH_SUCCESSFUL // success
-		return CASING_CATCH_FAILED_PLACEMENT // or not.
-	if(HAS_TRAIT(wielder, TRAIT_LIGHTBULB_REMOVER))
-		if(wielder.put_in_hands(casing)) // try placement in hand,
-			return CASING_CATCH_SUCCESSFUL_OUCH // success
-		return CASING_CATCH_FAILED_PLACEMENT // or not.
-	return CASING_CATCH_FAILED_SPICY
-
-#undef CASING_CATCH_NO_ATTEMPT
-#undef CASING_CATCH_FAILED_SPICY
-#undef CASING_CATCH_FAILED_CLUMSY
-#undef CASING_CATCH_FAILED_PLACEMENT
-#undef CASING_CATCH_SUCCESSFUL
-#undef CASING_CATCH_SUCCESSFUL_OUCH
-#undef CASING_HOT_DELAY
 
 ///Used to chamber a new round and eject the old one
 /obj/item/gun/ballistic/proc/chamber_round(spin_cylinder, replace_new_round)
@@ -476,11 +337,15 @@
 	magazine.forceMove(drop_location())
 	var/obj/item/ammo_box/magazine/old_mag = magazine
 	if (tac_load)
-		if (insert_magazine(user, tac_load, FALSE))
-			balloon_alert(user, "[magazine_wording] swapped")
+		if(do_after(user, tactical_reload_delay, src, hidden = TRUE))
+			if (insert_magazine(user, tac_load, FALSE))
+				to_chat(user, span_notice("You perform a tactical reload on \the [src]."))
+			else
+				to_chat(user, span_warning("You dropped the old [magazine_wording], but the new one doesn't fit. How embarassing."))
+				magazine = null
 		else
-			to_chat(user, span_warning("You dropped the old [magazine_wording], but the new one doesn't fit. How embarassing."))
-			magazine = null
+			to_chat(user, span_warning("Your reload was interupted!"))
+			return
 	else
 		magazine = null
 	user.put_in_hands(old_mag)
@@ -488,7 +353,7 @@
 	if (display_message)
 		balloon_alert(user, "[magazine_wording] unloaded")
 	update_appearance()
-
+	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 
 /obj/item/gun/ballistic/can_shoot()
 	return chambered?.loaded_projectile
@@ -554,7 +419,7 @@
 	if (!num_loaded)
 		return FALSE
 
-	handle_box_reload(user, ammo, num_loaded) // NOVA EDIT CHANGE - ORIGINAL: balloon_alert(user, "[num_loaded] [cartridge_wording]\s loaded")
+	balloon_alert(user, "[num_loaded] [cartridge_wording]\s loaded")
 	playsound(src, load_sound, load_sound_volume, load_sound_vary)
 	if (chambered == null && bolt_type == BOLT_TYPE_NO_BOLT)
 		chamber_round()
@@ -675,7 +540,6 @@
 		if (!forced)
 			balloon_alert(user, "it's empty!")
 		return
-	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD) // NOVA EDIT ADDITION - this is normally handled by eject_magazine() but internal magazines are a special case
 
 	if (!forced)
 		balloon_alert(user, "[num_unloaded] [cartridge_wording]\s unloaded")

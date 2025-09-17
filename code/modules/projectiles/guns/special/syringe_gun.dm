@@ -20,7 +20,7 @@
 	clumsy_check = FALSE
 	fire_sound = 'sound/items/syringeproj.ogg'
 	gun_flags = NOT_A_REAL_GUN
-	var/load_sound = 'sound/items/weapons/gun/shotgun/insert_shell.ogg'
+	load_sound = 'sound/items/weapons/gun/shotgun/insert_shell.ogg'
 	var/list/syringes = list()
 	/// The number of syringes it can store.
 	var/max_syringes = 1
