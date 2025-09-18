@@ -3,7 +3,7 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 /datum/antagonist/custom_rev
 	name = "\improper Activist"
 	antagpanel_category = "Activists (custom revolution)"
-	job_rank = ROLE_REV
+	pref_flag = ROLE_REV
 	antag_hud_name = "rev"
 	var/datum/team/custom_rev_team/rev_team
 
@@ -24,9 +24,9 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 		return
 	if(!team_option)
 		return FALSE
-	
+
 	rev_team = teams[team_option]
-		
+
 	new_owner.add_antag_datum(src)
 	message_admins("[key_name_admin(admin)] made [key_name(new_owner)] the member of [rev_team.name].")
 	log_admin("[key_name(admin)] made [key_name(new_owner)] the member of [rev_team.name].")
@@ -79,4 +79,3 @@ GLOBAL_LIST_INIT(custom_rev_teams, list())
 	// Кастомизация фичей
 	var/ignore_mindshield = FALSE
 	var/ignore_deconvert_machine = FALSE
-	

@@ -81,6 +81,11 @@ ALERT_DELTA Destruction of the station is imminent. All crew are instructed to o
 ## The total weight of station goals possible for a round (allows multiple goals)
 STATION_GOAL_BUDGET 1
 
+## If TRUE / 1, station is raised to blue alert at roundstart.
+## If FALSE / 0, station remains at green alert.
+## Roundstart command report and greendshift announcements are unaffected.
+ROUNDSTART_BLUE_ALERT 1
+
 ## GAME MODES ###
 
 ## Uncomment to not send a roundstart intercept report. Gamemodes may override this.
@@ -405,6 +410,7 @@ ROUNDSTART_RACES synth
 ROUNDSTART_RACES vox
 ROUNDSTART_RACES aquatic
 ROUNDSTART_RACES insect
+ROUNDSTART_RACES insectoid
 ROUNDSTART_RACES ghoul
 ROUNDSTART_RACES teshari
 ROUNDSTART_RACES hemophage
@@ -412,10 +418,11 @@ ROUNDSTART_RACES vox_primalis
 ROUNDSTART_RACES abductorweak
 ROUNDSTART_RACES kobold
 
-##-------------------------------------------------------------------------------------------
-
-## FF CONFIGS
+## FLUFFY FRONTIER RACES
 ROUNDSTART_RACES nabber
+ROUNDSTART_RACES shadekin
+
+##-------------------------------------------------------------------------------------------
 
 ## Roundstart no-reset races
 ## Races defined here will not cause existing characters to be reset to human if they currently have a non-roundstart species defined.

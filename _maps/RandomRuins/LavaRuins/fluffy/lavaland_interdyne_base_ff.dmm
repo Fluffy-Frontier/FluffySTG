@@ -139,7 +139,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/med)
 "aR" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -165,7 +165,9 @@
 "aT" = (
 /obj/structure/marker_beacon/teal,
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/turf_decal/arrows/blue,
 /obj/effect/turf_decal/arrows/blue{
 	dir = 1
@@ -506,7 +508,7 @@
 	desc = "An automatic defense turret designed, it's probably not that wise to try approaching it.";
 	name = "Heavy auto-turret"
 	},
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base)
 "cq" = (
 /obj/structure/cable,
@@ -536,7 +538,9 @@
 "cz" = (
 /obj/structure/marker_beacon/teal,
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 4
 	},
@@ -629,7 +633,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "cZ" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base/cargo)
 "da" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -711,13 +715,13 @@
 /area/ruin/interdyne_planetary_base/main)
 "dw" = (
 /obj/machinery/photocopier/gratis,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/serv)
 "dz" = (
 /obj/structure/sign/poster/contraband/ff_contest/interdine_medication{
 	name = "Interdyne medication for everyone!"
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/lavaland/surface/outdoors)
 "dA" = (
 /obj/effect/turf_decal/tile/dark/full,
@@ -867,7 +871,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "eg" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/serv)
 "eh" = (
 /obj/effect/turf_decal/trimline/dark/filled/corner{
@@ -907,7 +911,7 @@
 	name = "Heavy auto-turret";
 	dir = 1
 	},
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base)
 "en" = (
 /obj/effect/turf_decal/trimline/dark/filled/corner{
@@ -954,7 +958,7 @@
 	name = "Heavy auto-turret";
 	dir = 8
 	},
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base)
 "ev" = (
 /obj/structure/marker_beacon/bronze,
@@ -967,7 +971,9 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/south{
 	pixel_y = -4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
+/obj/machinery/atmospherics/pipe/bridge_pipe/general/hidden{
+	dir = 4
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "ey" = (
@@ -993,7 +999,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "eC" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base/science)
 "eH" = (
 /obj/machinery/hydroponics/constructable,
@@ -1038,7 +1044,7 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base/main)
 "eS" = (
 /obj/effect/turf_decal/tile/dark/full,
@@ -1092,10 +1098,11 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "fj" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
-/obj/structure/window/reinforced/plasma/spawner/directional/south,
-/turf/open/floor/catwalk_floor/iron_dark,
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/yellow/hidden,
+/turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/main)
 "fm" = (
 /obj/structure/chair/comfy/black{
@@ -1128,7 +1135,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 8
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/main)
 "ft" = (
 /obj/machinery/smartfridge/extract/preloaded{
@@ -1176,15 +1183,16 @@
 	pixel_x = -30;
 	pixel_y = 12
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "fF" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/floor/wood/large,
-/area/ruin/interdyne_planetary_base/serv)
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/bridge_pipe/general/visible{
+	dir = 4
+	},
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/main)
 "fG" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -1231,6 +1239,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
+/obj/structure/window/reinforced/plasma/spawner/directional/south,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/interdyne_planetary_base/main)
 "fR" = (
@@ -1338,7 +1347,6 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "gB" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/atmospherics/miner/nitrogen,
 /turf/open/floor/engine/n2,
@@ -1596,7 +1604,7 @@
 /obj/effect/turf_decal/stripes/blue/corner{
 	dir = 4
 	},
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base/cargo)
 "hY" = (
 /obj/structure/flora/ash/stem_shroom,
@@ -1654,7 +1662,9 @@
 "io" = (
 /obj/structure/marker_beacon/teal,
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 4
 	},
@@ -1683,7 +1693,7 @@
 	name = "Heavy auto-turret";
 	dir = 5
 	},
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base)
 "it" = (
 /obj/effect/turf_decal/stripes/red/line,
@@ -1944,6 +1954,11 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
+"jm" = (
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/obj/structure/cable,
+/turf/open/floor/plating/reinforced,
+/area/ruin/interdyne_planetary_base/main)
 "jn" = (
 /obj/structure/table/wood/fancy/black,
 /obj/item/choice_beacon/music,
@@ -2085,7 +2100,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "kg" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base/main)
 "kh" = (
 /obj/effect/turf_decal/siding/wood,
@@ -2156,7 +2171,7 @@
 	name = "Heavy auto-turret";
 	dir = 6
 	},
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base)
 "kp" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -2430,6 +2445,7 @@
 /obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/yellow/hidden,
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/main)
 "lr" = (
@@ -2478,8 +2494,12 @@
 /obj/structure/window/reinforced/plasma/spawner/directional/south,
 /obj/structure/window/reinforced/plasma/spawner/directional/west,
 /obj/structure/window/reinforced/plasma/spawner/directional/north,
-/obj/effect/decal/cleanable/glitter/pink,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "ff8080"
+	},
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plating/reinforced,
 /area/ruin/interdyne_planetary_base/main)
@@ -2588,7 +2608,7 @@
 	name = "Heavy auto-turret";
 	dir = 1
 	},
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base)
 "mh" = (
 /obj/structure/table/optable,
@@ -2636,8 +2656,8 @@
 /area/lavaland/surface/outdoors)
 "mr" = (
 /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general,
 /obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible,
 /turf/open/floor/plating/reinforced,
 /area/ruin/interdyne_planetary_base/main)
 "ms" = (
@@ -2773,7 +2793,9 @@
 "ni" = (
 /obj/structure/marker_beacon/teal,
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 4
 	},
@@ -3075,8 +3097,12 @@
 /obj/structure/cable,
 /obj/structure/window/reinforced/plasma/spawner/directional/south,
 /obj/structure/window/reinforced/plasma/spawner/directional/north,
-/obj/effect/decal/cleanable/glitter/pink,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "ff8080"
+	},
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/decal/cleanable/greenglow,
 /obj/machinery/power/rtg/advanced,
 /turf/open/floor/plating/reinforced,
@@ -3225,7 +3251,7 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "pq" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/main)
 "pr" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -3280,6 +3306,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/trinary/filter/flipped,
+/obj/structure/window/reinforced/plasma/spawner/directional/west,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "pK" = (
@@ -3469,7 +3496,9 @@
 /area/ruin/interdyne_planetary_base/science)
 "qR" = (
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/structure/marker_beacon/teal,
 /obj/effect/turf_decal/arrows/blue,
 /obj/effect/turf_decal/arrows/blue{
@@ -3518,7 +3547,9 @@
 "rk" = (
 /obj/structure/fans/tiny/forcefield,
 /obj/structure/marker_beacon/teal,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/turf_decal/arrows/blue,
 /obj/effect/turf_decal/arrows/blue{
 	dir = 1
@@ -3869,7 +3900,9 @@
 "sV" = (
 /obj/structure/fans/tiny/forcefield,
 /obj/structure/marker_beacon/teal,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 8
 	},
@@ -3999,7 +4032,9 @@
 "tY" = (
 /obj/structure/fans/tiny/forcefield,
 /obj/structure/marker_beacon/teal,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 1
@@ -4019,7 +4054,7 @@
 /area/ruin/interdyne_planetary_base/serv)
 "ui" = (
 /obj/structure/sign/poster/contraband/interdyne_gene_clinics,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/lavaland/surface/outdoors)
 "uj" = (
 /obj/effect/turf_decal/tile/dark/full,
@@ -4234,7 +4269,7 @@
 /turf/open/floor/plating/reinforced/lavaland,
 /area/ruin/interdyne_planetary_base/cargo)
 "vm" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/cargo)
 "vn" = (
 /obj/effect/turf_decal/trimline/dark/filled/corner{
@@ -4322,7 +4357,7 @@
 /area/ruin/interdyne_planetary_base/cargo)
 "vN" = (
 /obj/effect/baseturf_helper/reinforced_plating,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/serv)
 "vQ" = (
 /obj/item/radio/intercom/interdyne/directional/east,
@@ -4521,7 +4556,9 @@
 "wV" = (
 /obj/structure/marker_beacon/teal,
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 4
 	},
@@ -4567,7 +4604,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/serv)
 "xh" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -4718,7 +4755,9 @@
 "xM" = (
 /obj/structure/marker_beacon/teal,
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/turf_decal/arrows/blue,
 /obj/effect/turf_decal/arrows/blue{
 	dir = 1
@@ -5284,18 +5323,20 @@
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/med)
 "Aw" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/bridge_pipe/general/hidden{
+	dir = 4
+	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/interdyne_planetary_base/main)
 "Az" = (
 /obj/effect/baseturf_helper/reinforced_plating,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/main/vault)
 "AB" = (
 /obj/structure/railing/corner,
@@ -5358,6 +5399,9 @@
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 8
 	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/interdyne_planetary_base/main)
 "AV" = (
@@ -5378,7 +5422,9 @@
 /area/ruin/interdyne_planetary_base/main)
 "Ba" = (
 /obj/structure/marker_beacon/teal,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/turf_decal/arrows/blue,
 /obj/effect/turf_decal/arrows/blue{
 	dir = 1
@@ -5518,6 +5564,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "BM" = (
@@ -5573,8 +5620,12 @@
 /obj/structure/cable,
 /obj/structure/window/reinforced/plasma/spawner/directional/south,
 /obj/structure/window/reinforced/plasma/spawner/directional/north,
-/obj/effect/decal/cleanable/glitter/pink,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "ff8080"
+	},
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plating/reinforced,
 /area/ruin/interdyne_planetary_base/main)
@@ -5782,7 +5833,7 @@
 /turf/template_noop,
 /area/template_noop)
 "CM" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/main/vault)
 "CR" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -5888,7 +5939,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "Du" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base/main/dorms)
 "DB" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -5935,7 +5986,9 @@
 "DJ" = (
 /obj/structure/marker_beacon/teal,
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 8
 	},
@@ -6215,9 +6268,6 @@
 	},
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 4
-	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "Fi" = (
@@ -6279,9 +6329,11 @@
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
 	},
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv)
@@ -6360,7 +6412,7 @@
 /area/ruin/interdyne_planetary_base/science)
 "FZ" = (
 /obj/machinery/bookbinder,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/serv)
 "Ga" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6487,7 +6539,7 @@
 /area/ruin/interdyne_planetary_base/med)
 "GD" = (
 /obj/effect/baseturf_helper/reinforced_plating,
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base/cargo)
 "GE" = (
 /obj/effect/turf_decal/bot_red,
@@ -6557,8 +6609,12 @@
 /obj/structure/window/reinforced/plasma/spawner/directional/south,
 /obj/structure/window/reinforced/plasma/spawner/directional/east,
 /obj/structure/window/reinforced/plasma/spawner/directional/north,
-/obj/effect/decal/cleanable/glitter/pink,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "ff8080"
+	},
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plating/reinforced,
 /area/ruin/interdyne_planetary_base/main)
@@ -6990,7 +7046,7 @@
 	},
 /area/ruin/interdyne_planetary_base/serv)
 "Jn" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base/main/vault)
 "Jq" = (
 /obj/structure/flora/bush/sparsegrass/style_random,
@@ -7143,7 +7199,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/interdyne_planetary_base/main)
 "JV" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/science)
 "JW" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -7272,7 +7328,7 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base/main)
 "KG" = (
 /obj/structure/chair/sofa/bench/left{
@@ -7457,7 +7513,7 @@
 	color = "#adadcd";
 	onstation = 0
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base)
 "LN" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -7550,7 +7606,7 @@
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
 "Mg" = (
-/obj/machinery/computer/scan_consolenew{
+/obj/machinery/computer/dna_console{
 	dir = 8;
 	name = "Interdyne DNA Console";
 	pixel_x = 4
@@ -7908,7 +7964,7 @@
 /area/ruin/interdyne_planetary_base/main)
 "NS" = (
 /obj/effect/baseturf_helper/reinforced_plating,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/main)
 "NU" = (
 /obj/effect/turf_decal/tile/dark/full,
@@ -7922,7 +7978,7 @@
 	color = "#adadcd";
 	pixel_y = 25
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base)
 "NY" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -7976,7 +8032,9 @@
 "Of" = (
 /obj/structure/marker_beacon/teal,
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/turf_decal/arrows/blue,
 /obj/effect/turf_decal/arrows/blue{
 	dir = 1
@@ -7986,7 +8044,9 @@
 "Oh" = (
 /obj/structure/marker_beacon/teal,
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 8
 	},
@@ -8295,7 +8355,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/serv)
 "Pv" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
 "Px" = (
 /obj/effect/turf_decal/trimline/dark/filled/corner{
@@ -8548,7 +8608,7 @@
 	name = "Heavy auto-turret";
 	dir = 10
 	},
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base)
 "Qo" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -8585,7 +8645,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/interdyne_planetary_base/main)
 "Qx" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base/med)
 "Qy" = (
 /obj/effect/turf_decal/tile/dark/full,
@@ -8796,7 +8856,9 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/structure/marker_beacon/teal,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
@@ -8913,7 +8975,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "Si" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base/serv)
 "Sj" = (
 /obj/effect/turf_decal/trimline/dark/filled/line,
@@ -9043,7 +9105,10 @@
 /area/ruin/interdyne_planetary_base/main)
 "Sy" = (
 /obj/effect/baseturf_helper/reinforced_plating,
-/turf/closed/wall/r_wall/syndicate,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base/science)
 "Sz" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -9144,10 +9209,10 @@
 	name = "Heavy auto-turret";
 	dir = 9
 	},
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base)
 "ST" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/main/dorms)
 "SY" = (
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
@@ -9184,14 +9249,12 @@
 	color = "#A46106";
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "Tk" = (
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/carpet/red,
 /area/ruin/interdyne_planetary_base/serv)
 "Tl" = (
@@ -9354,9 +9417,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/interdyne_planetary_base/cargo)
 "Ug" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 1
 	},
@@ -9384,7 +9444,9 @@
 "Uo" = (
 /obj/structure/marker_beacon/teal,
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 8
 	},
@@ -9531,7 +9593,9 @@
 "UZ" = (
 /obj/structure/marker_beacon/teal,
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 8
 	},
@@ -9689,7 +9753,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "VP" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/med)
 "VU" = (
 /obj/machinery/camera/xray{
@@ -9756,7 +9820,9 @@
 "Wi" = (
 /obj/structure/marker_beacon/teal,
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 4
 	},
@@ -9840,9 +9906,11 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/east{
 	pixel_x = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/hidden,
 /obj/machinery/portable_atmospherics/scrubber,
 /obj/structure/window/reinforced/plasma/spawner/directional/west,
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 1
+	},
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/interdyne_planetary_base/main)
 "WG" = (
@@ -10066,7 +10134,7 @@
 /area/ruin/interdyne_planetary_base/main)
 "Xo" = (
 /obj/structure/cable,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/main/vault)
 "Xp" = (
 /obj/item/reagent_containers/cup/glass/bottle/vodka{
@@ -10090,10 +10158,8 @@
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/binary/volume_pump{
-	dir = 1
-	},
 /obj/structure/window/reinforced/plasma/spawner/directional/west,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/dark/hidden,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/interdyne_planetary_base/main)
 "Xv" = (
@@ -10188,7 +10254,7 @@
 /area/ruin/interdyne_planetary_base/main)
 "XI" = (
 /obj/effect/turf_decal/tile/dark/full,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base/serv)
 "XK" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -10565,7 +10631,9 @@
 "Zz" = (
 /obj/structure/marker_beacon/teal,
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 4
 	},
@@ -10630,7 +10698,7 @@
 	name = "Heavy auto-turret";
 	dir = 4
 	},
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base)
 "ZS" = (
 /obj/machinery/atmospherics/components/binary/volume_pump{
@@ -11938,8 +12006,8 @@ pq
 sh
 fP
 fj
-Ug
 lq
+Ug
 pq
 LW
 YZ
@@ -12175,7 +12243,7 @@ Xm
 DO
 BY
 ru
-mr
+jm
 pq
 TF
 Zg
@@ -12293,7 +12361,7 @@ Fk
 ny
 BY
 Aw
-mr
+fF
 pq
 nB
 Jz
@@ -12889,7 +12957,7 @@ eg
 Br
 Yb
 YE
-fF
+Yb
 eg
 Si
 eO

@@ -23,6 +23,7 @@
 	)
 	body_size_restricted = TRUE
 	digitigrade_customization = DIGITIGRADE_NEVER
+	meat = /obj/item/food/meat/slab/bugmeat
 	no_equip_flags = ITEM_SLOT_FEET | ITEM_SLOT_OCLOTHING | ITEM_SLOT_SUITSTORE | ITEM_SLOT_EYES | ITEM_SLOT_LEGCUFFED
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	mutanttongue = /obj/item/organ/tongue/nabber
@@ -55,7 +56,7 @@
 		LOADOUT_ITEM_HANDS =  NABBER_HANDS_ICON,
 		LOADOUT_ITEM_BELT = NABBER_BELT_ICON,
 		LOADOUT_ITEM_MISC = NABBER_BACK_ICON,
-		LOADOUT_ITEM_EARS = NABBER_EARS_ICON
+		LOADOUT_ITEM_EARS = NABBER_EARS_ICON,
 	)
 	var/datum/action/cooldown/toggle_arms/arms
 	var/datum/action/cooldown/optical_camouflage/camouflage
@@ -141,42 +142,42 @@
 		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 		SPECIES_PERK_ICON = "dna",
 		SPECIES_PERK_NAME = "Serpent body",
-		SPECIES_PERK_DESC = "GAS possess serpent-like bodies and cannot wear most human clothes."
+		SPECIES_PERK_DESC = "GAS possess serpent-like bodies and cannot wear most human clothes.",
 	))
 
 	perk_descriptions += list(list(
 		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 		SPECIES_PERK_ICON = "dna",
 		SPECIES_PERK_NAME = "Robust chitin",
-		SPECIES_PERK_DESC = "GAS possess durable chitinous exoskeletons and can withstand a lot of brute damage."
+		SPECIES_PERK_DESC = "GAS possess durable chitinous exoskeletons and can withstand a lot of brute damage.",
 	))
 
 	perk_descriptions += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 		SPECIES_PERK_ICON = "star-of-life",
 		SPECIES_PERK_NAME = "Extreme heat weakness",
-		SPECIES_PERK_DESC = "GAS is afraid of fire. High temperatures and open flames suffocate them and deal massive damage.."
+		SPECIES_PERK_DESC = "GAS is afraid of fire. High temperatures and open flames suffocate them and deal massive damage..",
 	))
 
 	perk_descriptions += list(list(
 		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 		SPECIES_PERK_ICON = "user-plus",
 		SPECIES_PERK_NAME = "Welder eyelids",
-		SPECIES_PERK_DESC = "GAS can close their second pair of eyelids to protect their eyes from welder flash."
+		SPECIES_PERK_DESC = "GAS can close their second pair of eyelids to protect their eyes from welder flash.",
 	))
 
 	perk_descriptions += list(list(
 		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 		SPECIES_PERK_ICON = "user-plus",
 		SPECIES_PERK_NAME = "Mantis arms",
-		SPECIES_PERK_DESC = "GAS possesses a second pair of arms with massive sharp mantis blades. They can have only one pair active at a time and need to pump blood between them."
+		SPECIES_PERK_DESC = "GAS possesses a second pair of arms with massive sharp mantis blades. They can have only one pair active at a time and need to pump blood between them.",
 	))
 
 	perk_descriptions += list(list(
 		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 		SPECIES_PERK_ICON = "user-plus",
 		SPECIES_PERK_NAME = "Camoufage",
-		SPECIES_PERK_DESC = "GAS can blend in with their surroundings and become transparent to hide from danger."
+		SPECIES_PERK_DESC = "GAS can blend in with their surroundings and become transparent to hide from danger.",
 	))
 
 	return perk_descriptions
@@ -193,7 +194,7 @@
 /mob/living/carbon/human/Destroy()
 	if(isnabber(src) && !QDELETED(legcuffed))
 		QDEL_NULL(legcuffed)
-	. = ..()
+	return ..()
 
 // Отображение для других наличия повреждений у голосового импланта
 /mob/living/carbon/human/examine(mob/user)
@@ -227,7 +228,7 @@
 	return ..()
 
 // ЧС квирков
-/mob/living/carbon/human/add_quirk(datum/quirk/quirktype, client/override_client, add_unique = TRUE)
+/mob/living/carbon/human/add_quirk(datum/quirk/quirktype, client/override_client, add_unique = TRUE, announce = TRUE)
 	var/bad_nabber_quirks = list(
 		// негативные
 		/datum/quirk/oversized,
@@ -273,7 +274,6 @@
 		/datum/quirk/alexithymia,
 		// Нейтральные
 		/datum/quirk/item_quirk/bald,
-		/datum/quirk/item_quirk/borg_ready,
 		/datum/quirk/deviant_tastes,
 		/datum/quirk/foreigner,
 		/datum/quirk/gamer,
@@ -324,10 +324,10 @@
 		/datum/quirk/hard_soles, // Встроен
 		/datum/quirk/linguist,
 		/datum/quirk/sharpclaws,
-		/datum/quirk/water_breathing,
+		/datum/quirk/item_quirk/breather/water_breather,
 		/datum/quirk/no_appendix, // Нет аппендикса
 		/datum/quirk/shapeshifter,
 	)
 	if(isnabber(src) && (quirktype in bad_nabber_quirks))
 		return FALSE
-	. = ..()
+	return ..()

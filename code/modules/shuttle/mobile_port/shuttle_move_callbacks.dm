@@ -337,12 +337,14 @@ All ShuttleMove procs go here
 	var/knockdown = movement_force["KNOCKDOWN"]
 	if(buckled && istype(get_area(src), /area/shuttle/arrival))
 		//if we're on the arrival shuttle, unbuckle so that new player's don't get stuck in there
+		// NOVA EDIT ADDITION START - Ensures that the unbuckling only happens when its leaving hyperspace not entering
+		if (!istype(oldT, /turf/open/space/transit) || istype(buckled, /obj/vehicle/ridden/wheelchair))
+			return
+		// NOVA EDIT ADDITION END
 		buckled.user_unbuckle_mob(src, src)
 		return
 	if(knockdown > 0)
 		if(buckled)
-			// If we're buckled, no stun but we'll still be floored and frozen
-			Knockdown(knockdown)
 			Immobilize(knockdown * 0.5)
 			return
 		Paralyze(knockdown)

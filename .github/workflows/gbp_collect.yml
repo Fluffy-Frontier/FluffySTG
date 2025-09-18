@@ -11,14 +11,14 @@ jobs:
       - name: "Check for ACTION_ENABLER secret and pass true to output if it exists to be checked by later steps"
         id: value_holder
         env:
-          ENABLER_SECRET: ${{ secrets.ACTION_ENABLER }}
+          ENABLER_SECRET: ${{ secrets.GBP_ENABLER }} # FLUFFY FRONTIER EDIT - original:  ENABLER_SECRET: ${{ secrets.ACTION_ENABLER }}
         run: |
           unset SECRET_EXISTS
           if [ -n "$ENABLER_SECRET" ]; then SECRET_EXISTS=true ; fi
           echo "ACTIONS_ENABLED=$SECRET_EXISTS" >> $GITHUB_OUTPUT
       - name: Checkout
         if: steps.value_holder.outputs.ACTIONS_ENABLED
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup git
         if: steps.value_holder.outputs.ACTIONS_ENABLED
         run: |
@@ -26,7 +26,7 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Checkout alternate branch
         if: steps.value_holder.outputs.ACTIONS_ENABLED
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: "gbp-balances" # The branch name
           path: gbp-balances

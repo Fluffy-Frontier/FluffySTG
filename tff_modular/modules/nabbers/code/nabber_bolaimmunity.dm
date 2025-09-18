@@ -41,7 +41,7 @@
 /datum/species/nabber/can_equip(obj/item/I, slot, disable_warning, mob/living/carbon/human/H, bypass_equip_delay_self, ignore_equipped, indirect_action)
 	if(slot == ITEM_SLOT_LEGCUFFED)
 		return FALSE
-	. = ..()
+	return ..()
 
 // Это ужас
 /obj/item/restraints/legcuffs/gas_placeholder/canStrip(mob/stripper, mob/owner)
@@ -50,8 +50,8 @@
 
 /obj/item/restraints/legcuffs/gas_placeholder/proc/touch_ze_bug(mob/stripper, mob/owner)
 	owner.visible_message(
-						  span_purple("[stripper] лапает хвост ГБСа. Кажется зря."),
-						  span_purple("[stripper] лапает мой хвост! Кажется зря."),
-						  blind_message = span_hear("You hear lewd bug noises."),
-						)
+		span_purple("[stripper] лапает хвост ГБСа. Кажется зря."),
+		span_purple("[stripper] лапает мой хвост! Кажется зря."),
+		blind_message = span_hear("You hear lewd bug noises."),
+	)
 	playsound(get_turf(owner), 'modular_nova/modules/modular_items/lewd_items/sounds/vax2.ogg', 50, TRUE)

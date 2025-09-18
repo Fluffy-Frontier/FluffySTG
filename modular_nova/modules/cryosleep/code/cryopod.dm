@@ -360,7 +360,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 		// Handle tater cleanup.
 		if(LAZYLEN(mob_occupant.mind.objectives))
 			mob_occupant.mind.objectives.Cut()
-			mob_occupant.mind.special_role = null
+			mob_occupant.mind.special_roles = null
 		// Handle freeing the high priest role for the next chaplain in line
 		if(mob_occupant.mind.holy_role == HOLY_ROLE_HIGHPRIEST)
 			reset_religion()
@@ -399,7 +399,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 	visible_message(span_notice("[src] hums and hisses as it moves [mob_occupant.real_name] into storage."))
 
 	for(var/obj/item/item_content as anything in mob_occupant)
-		if(!istype(item_content) || HAS_TRAIT(item_content, TRAIT_NODROP))
+		if(!istype(item_content) || HAS_TRAIT(item_content, TRAIT_NODROP) || (item_content.item_flags & ABSTRACT|DROPDEL) || (item_content.flags_1 & HOLOGRAM_1))
 			continue
 		if (issilicon(mob_occupant) && istype(item_content, /obj/item/mmi))
 			continue
@@ -529,7 +529,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 	else
 		visible_message(span_infoplain("[user] starts putting [target] into the cryo pod."))
 
-	to_chat(target, span_warning("<b>If you remain in the pod for [time_till_despawn /10] seconds, your character will be permanently removed from the round.</b>"))
+	to_chat(target, span_warning("<b>If you remain in the pod for [time_till_despawn /10] seconds or ghost, your character will be permanently removed from the round.</b>"))
 
 	log_admin("[key_name(target)] entered a stasis pod.")
 	message_admins("[key_name_admin(target)] entered a stasis pod. [ADMIN_JMP(src)]")
