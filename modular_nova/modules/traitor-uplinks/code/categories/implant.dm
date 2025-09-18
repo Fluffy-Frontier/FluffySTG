@@ -1,6 +1,3 @@
-/datum/uplink_item/implants/stealthimplant
-	cost = 15 // original cost: 8
-
 /datum/uplink_item/implants/thermal_nif
 	name = "Thermal Lens NIFSoft"
 	desc = "A military-grade visual enhancement package that modifies the user's ocular systems to perceive infrared radiation as visible light. \

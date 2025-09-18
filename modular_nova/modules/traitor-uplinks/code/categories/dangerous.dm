@@ -76,9 +76,6 @@
 /datum/uplink_item/suits/modsuit
 	cost = 6
 
-/datum/uplink_item/dangerous/doublesword
-	cost = 28 // original cost: 13
-
 /datum/uplink_item/dangerous/shitzu
 	name = "Shitzu Magfed Shotgun"
 	desc = "Everyone says a dog is a man's best friend, lets change that and make man's best friend a 12 gauge magfed shotgun! Thanks to the beloved contributions from the Gorlex Marauders."
