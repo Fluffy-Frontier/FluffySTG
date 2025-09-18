@@ -75,6 +75,7 @@
 				/obj/item/clothing/gloves/color/black/security/armadyne = 6,
 				/obj/item/clothing/shoes/jackboots/armadyne = 6,
 				// FLUFFY FRONTIER ADDITION END
+				/obj/item/clothing/head/costume/ushanka/sec = 4
 			),
 		),
 
@@ -110,7 +111,7 @@
 				/obj/item/clothing/gloves/color/black/security/blu = 4,
 				/obj/item/clothing/head/security_garrison = 4,
 				/obj/item/clothing/head/hats/warden/police/patrol = 4,
-				/obj/item/clothing/head/costume/ushanka/sec = 4,
+				/obj/item/clothing/head/costume/ushanka/sec/blue = 4,
 				/obj/item/storage/backpack/security/blue = 4,
 				/obj/item/storage/backpack/satchel/sec/blue = 4,
 				/obj/item/storage/backpack/duffelbag/sec/blue = 4,
