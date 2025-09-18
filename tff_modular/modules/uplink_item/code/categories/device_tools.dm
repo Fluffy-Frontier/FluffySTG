@@ -15,3 +15,9 @@
 	restricted = TRUE
 	cost = 7
 	limited_stock = 1
+
+/datum/uplink_item/device_tools/thief_gloves
+	name = "Thief Gloves"
+	desc = "Thief's gloves allow you to steal other people's things silently, but it takes some time..."
+	item = /obj/item/clothing/gloves/color/black/thief
+	cost = 6
