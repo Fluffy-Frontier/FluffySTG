@@ -1,3 +1,4 @@
+/// TGMC_XENOS (old nova sector xenos)
 
 /datum/dynamic_ruleset/midround/from_ghosts/xenomorph/tgmc
 	name = "TGMC Alien Infestation"
