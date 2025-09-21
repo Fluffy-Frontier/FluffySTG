@@ -3337,7 +3337,6 @@
 /area/ruin/interdyne_planetary_base/med)
 "pY" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/monitored{
-	chamber_id = "lavalandsyndieplasma";
 	dir = 8
 	},
 /turf/open/floor/engine/n2,
@@ -9882,7 +9881,6 @@
 /obj/structure/window/reinforced/survival_pod/spawner/directional/south,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/monitored{
-	chamber_id = "interdyneserver";
 	dir = 1;
 	external_pressure_bound = 120;
 	name = "server vent"
@@ -10241,7 +10239,6 @@
 /area/ruin/interdyne_planetary_base)
 "XD" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/monitored{
-	chamber_id = "interdyneo2";
 	dir = 1
 	},
 /turf/open/floor/engine/o2,
