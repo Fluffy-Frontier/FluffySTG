@@ -161,12 +161,7 @@
 		var/obj/projectile/our_projectile = hitby
 
 		if(our_projectile.reflectable)
-		// FLUFFY FRONTIER CHANGES - ORIGINAL CODE:
-		/*
 			final_block_chance = 0 //we handle this via IsReflect(), effectively 75% block
-		// ORIGINAL CODE END
-		*/
-			final_block_chance += 5 //we handle this via IsReflect(), effectively 75% block
 		else
 			final_block_chance -= 25 //We aren't AS good at blocking physical projectiles, like ballistics and thermals
 
