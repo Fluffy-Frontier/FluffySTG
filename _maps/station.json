@@ -1,0 +1,17 @@
+{
+	"version": 1,
+	"map_name": "Station",
+	"map_path": "custom",
+	"map_file": "station.dmm",
+	"shuttles": {
+		"cargo": "cargo_nova",
+		"ferry": "ferry_nova",
+		"whiteship": "whiteship_nova",
+		"emergency": "emergency_nova"
+	},
+	"job_changes": {
+		"Cook": {
+			"additional_cqc_areas": ["/area/station/service/cafeteria"]
+		}
+	}
+}
