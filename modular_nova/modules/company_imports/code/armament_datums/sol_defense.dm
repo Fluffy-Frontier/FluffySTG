@@ -202,9 +202,11 @@
 	item_type = /obj/item/gun/ballistic/shotgun/katyusha/jager
 	cost = PAYCHECK_COMMAND * 16
 
+/* // FLUFFY FRONTIER REMOVAL START - MMR FROM CARGO
 /datum/armament_entry/company_import/sol_defense/longarm/infanterie
 	item_type = /obj/item/gun/ballistic/automatic/sol_rifle
 	cost = PAYCHECK_COMMAND * 14
+*/ // FLUFFY FRONTIER REMOVAL END
 
 /* //
 datum/armament_entry/company_import/sol_defense/longarm/outomaties
