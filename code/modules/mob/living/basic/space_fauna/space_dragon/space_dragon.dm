@@ -26,7 +26,7 @@
 	unsuitable_cold_damage = 0
 	unsuitable_heat_damage = 0
 	unsuitable_atmos_damage = 0
-	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, STAMINA = 0.5, OXY = 1)
+	damage_coeff = list(BRUTE = 0.7, BURN = 0.6, TOX = 1, STAMINA = 0.5, OXY = 1) // FLUFFY FRONTIER CHANGES - ORIGINAL: damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, STAMINA = 0.5, OXY = 1)
 	combat_mode = TRUE
 	speed = 0
 	attack_verb_continuous = "chomps"
