@@ -672,7 +672,7 @@
 
 			// FLUFFY FRONTIER ADDITION START
 			if(findtext_char(paper_input, regex(@"\%.+\%")))
-				paper_input = replacetext_char(paper_input, "%sig%", "[user.real_name]")
+				paper_input = replacetext_char(paper_input, "%sign%", "[user.real_name]")
 				paper_input = replacetext_char(paper_input, "%time%", "[time2text(world.timeofday, "hh:mm", NO_TIMEZONE)]")
 				paper_input = replacetext_char(paper_input, "%date%", "[time2text(world.timeofday, "DD/MM", NO_TIMEZONE)]/[CURRENT_STATION_YEAR]")
 
