@@ -6,7 +6,15 @@
 	text_gain_indication = span_notice("Your lungs and skin feel great.")
 	text_lose_indication = span_warning("Your lungs and skin feel normal again.")
 	locked = TRUE
-	mutation_traits = list(TRAIT_NO_BREATHLESS_DAMAGE, TRAIT_RESISTLOWPRESSURE, TRAIT_RESISTCOLD)
+	conflicts = list(/datum/mutation/adaptation)
+
+/datum/mutation/full_space/on_acquiring(mob/living/carbon/human/acquirer)
+	. = ..()
+	acquirer.add_traits(list(TRAIT_NO_BREATHLESS_DAMAGE, TRAIT_RESISTLOWPRESSURE, TRAIT_RESISTCOLD), MUTATION_SOURCE_DNA_VAULT)
+
+/datum/mutation/full_space/on_losing(mob/living/carbon/human/owner)
+	. = ..()
+	owner.remove_traits(list(TRAIT_NO_BREATHLESS_DAMAGE, TRAIT_RESISTLOWPRESSURE, TRAIT_RESISTCOLD), MUTATION_SOURCE_DNA_VAULT)
 
 /datum/mutation/plasmofire
 	name = "Plasma-Fire Immunity"
@@ -14,10 +22,10 @@
 	text_gain_indication = span_notice("Your lungs feel resistant to airborne contaminant.")
 	text_lose_indication = span_warning("Your lungs feel vulnerable to airborne contaminant again.")
 	locked = TRUE
-	mutation_traits = list(TRAIT_VIRUSIMMUNE, TRAIT_RESISTHEAT, TRAIT_NOFIRE)
 
 /datum/mutation/plasmofire/on_acquiring(mob/living/carbon/human/acquirer)
 	. = ..()
+	acquirer.add_traits(list(TRAIT_VIRUSIMMUNE, TRAIT_RESISTHEAT, TRAIT_NOFIRE), MUTATION_SOURCE_DNA_VAULT)
 	acquirer.physiology.burn_mod *= 0.5
 	var/obj/item/organ/lungs/improved_lungs = acquirer.get_organ_slot(ORGAN_SLOT_LUNGS)
 	if(improved_lungs)
@@ -27,8 +35,9 @@
 
 /datum/mutation/plasmofire/on_losing(mob/living/carbon/human/owner)
 	. = ..()
-	var/obj/item/organ/lungs/improved_lungs = owner.get_organ_slot(ORGAN_SLOT_LUNGS)
+	owner.remove_traits(list(TRAIT_VIRUSIMMUNE, TRAIT_RESISTHEAT, TRAIT_NOFIRE), MUTATION_SOURCE_DNA_VAULT)
 	owner.physiology.burn_mod /= 0.5
+	var/obj/item/organ/lungs/improved_lungs = owner.get_organ_slot(ORGAN_SLOT_LUNGS)
 	UnregisterSignal(owner, COMSIG_CARBON_LOSE_ORGAN)
 	UnregisterSignal(owner, COMSIG_CARBON_GAIN_ORGAN)
 	if(improved_lungs)
@@ -68,7 +77,7 @@
 		to_chat(acquirer, "It looks like you already have regeneration of some type. Take another mutation...")
 		return
 	var/list/limb_list = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-	var/obj/item/bodypart/limb = owner.get_bodypart(limb_list)
+	var/obj/item/bodypart/limb = acquirer.get_bodypart(limb_list)
 	limb.bodypart_effects = list(/datum/status_effect/grouped/bodypart_effect/weak_photosynthesis)
 
 // эффект регенерации на свету. В два раза слабее обычного фотосинтеза
