@@ -1,5 +1,3 @@
-#define GET_BODYPART_COEFFICIENT(X) round(X.len / BODYPARTS_DEFAULT_MAXIMUM , 0.1)
-
 /datum/mutation/full_space
 	name = "Space Adaptation"
 	desc = "A mutation that covers the skin with imperceptible carp scales, and also by creating an organ that produces oxygen inside the body, giving full adaptation to space."
@@ -76,34 +74,22 @@
 		REMOVE_TRAIT(acquirer, TRAIT_USED_DNA_VAULT, DNA_VAULT_TRAIT)
 		to_chat(acquirer, "It looks like you already have regeneration of some type. Take another mutation...")
 		return
-	var/obj/item/bodypart/leg/left/leftl = acquirer.get_bodypart(BODY_ZONE_L_LEG)
-	var/obj/item/bodypart/leg/right/rightl = acquirer.get_bodypart(BODY_ZONE_R_LEG)
-	var/obj/item/bodypart/arm/right/rightr = acquirer.get_bodypart(BODY_ZONE_R_ARM)
-	var/obj/item/bodypart/arm/left/leftr = acquirer.get_bodypart(BODY_ZONE_L_ARM)
-	var/obj/item/bodypart/chest/chest = acquirer.get_bodypart(BODY_ZONE_CHEST)
-	var/obj/item/bodypart/head/head = acquirer.get_bodypart(BODY_ZONE_HEAD)
-	var/list/obj/item/bodypart/bodyparts_of_acquirer = list()
-	LAZYADD(bodyparts_of_acquirer, list(leftl, rightl, rightr, leftr, chest, head))
-	bodyparts_of_acquirer.bodypart_effects = list(/datum/status_effect/grouped/bodypart_effect/weak_photosynthesis)
+	RegisterSignal(acquirer, COMSIG_LIVING_LIFE, PROC_REF(regeneration_on_life))
 
-// эффект регенерации на свету. В два раза слабее обычного фотосинтеза
-/datum/status_effect/grouped/bodypart_effect/weak_photosynthesis
-	processing_speed = STATUS_EFFECT_NORMAL_PROCESS
-	tick_interval = 1 SECONDS
-	id = "photosynthesis"
+/datum/mutation/light_regeneration/on_losing(mob/living/carbon/human/owner)
+	. = ..()
+	UnregisterSignal(acquirer, COMSIG_LIVING_LIFE)
 
-/datum/status_effect/grouped/bodypart_effect/weak_photosynthesis/tick(seconds_between_ticks)
+// Регенерация от света. Должно работать хуже чем регенарция подперсоны, ибо подперсона лечит 0.5 хп на каждую конечность, а тут лечение 0.5 хп распределяется на ВСЕ тело, т.е. около 0.1 на каждую конечность.
+/datum/mutation/light_regeneration/proc/regeneration_on_life(mob/living/source, seconds_per_tick, times_fired)
+	SIGNAL_HANDLER
 	var/light_amount = 0
-	var/bodypart_coefficient = GET_BODYPART_COEFFICIENT(bodyparts)
 	var/turf/turf_loc = owner.loc
 	light_amount = min(1, turf_loc.get_lumcount()) - 0.5
 	if(light_amount > 0.2)
 		var/need_mob_update = FALSE
-		need_mob_update += owner.heal_overall_damage(brute = 0.25 * bodypart_coefficient, \
-			burn = 0.25 * bodypart_coefficient, updating_health = FALSE, required_bodytype = BODYTYPE_PLANT)
-		need_mob_update += owner.adjustToxLoss(-0.25 * bodypart_coefficient, updating_health = FALSE)
-		need_mob_update += owner.adjustOxyLoss(-0.25 * bodypart_coefficient, updating_health = FALSE)
+		need_mob_update += owner.heal_overall_damage(brute = 0.6, burn = 0.6, updating_health = FALSE)
+		need_mob_update += owner.adjustToxLoss(-0.6, updating_health = FALSE)
+		need_mob_update += owner.adjustOxyLoss(-0.6, updating_health = FALSE)
 		if(need_mob_update)
 			owner.updatehealth()
-
-#undef GET_BODYPART_COEFFICIENT
