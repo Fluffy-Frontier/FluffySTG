@@ -1,3 +1,5 @@
+#define GET_BODYPART_COEFFICIENT(X) round(X.len / BODYPARTS_DEFAULT_MAXIMUM , 0.1)
+
 /datum/mutation/full_space
 	name = "Space Adaptation"
 	desc = "A mutation that covers the skin with imperceptible carp scales, and also by creating an organ that produces oxygen inside the body, giving full adaptation to space."
@@ -88,3 +90,5 @@
 		need_mob_update += owner.adjustOxyLoss(-0.25 * bodypart_coefficient, updating_health = FALSE)
 		if(need_mob_update)
 			owner.updatehealth()
+
+#undef GET_BODYPART_COEFFICIENT
