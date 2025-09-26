@@ -10,14 +10,14 @@
 
 /datum/mutation/full_space/on_acquiring(mob/living/carbon/human/acquirer)
 	. = ..()
-	acquirer.add_traits(list(TRAIT_NO_BREATHLESS_DAMAGE, TRAIT_RESISTLOWPRESSURE, TRAIT_RESISTCOLD), MUTATION_SOURCE_DNA_VAULT)
+	acquirer.add_traits(list(TRAIT_NO_BREATHLESS_DAMAGE, TRAIT_RESISTLOWPRESSURE, TRAIT_RESISTCOLD), DNA_VAULT_TRAIT)
 
 /datum/mutation/full_space/on_losing(mob/living/carbon/human/owner)
 	. = ..()
-	owner.remove_traits(list(TRAIT_NO_BREATHLESS_DAMAGE, TRAIT_RESISTLOWPRESSURE, TRAIT_RESISTCOLD), MUTATION_SOURCE_DNA_VAULT)
+	owner.remove_traits(list(TRAIT_NO_BREATHLESS_DAMAGE, TRAIT_RESISTLOWPRESSURE, TRAIT_RESISTCOLD), DNA_VAULT_TRAIT)
 
 /datum/mutation/plasmofire
-	name = "Plasma-Fire Immunity"
+	name = "Plasma-Fire Resistance"
 	desc = "A mutation in the lungs that provides it immunity to plasma's toxic nature and gives protection against fire to skin."
 	text_gain_indication = span_notice("Your lungs feel resistant to airborne contaminant.")
 	text_lose_indication = span_warning("Your lungs feel vulnerable to airborne contaminant again.")
@@ -25,7 +25,7 @@
 
 /datum/mutation/plasmofire/on_acquiring(mob/living/carbon/human/acquirer)
 	. = ..()
-	acquirer.add_traits(list(TRAIT_VIRUSIMMUNE, TRAIT_RESISTHEAT, TRAIT_NOFIRE), MUTATION_SOURCE_DNA_VAULT)
+	acquirer.add_traits(list(TRAIT_VIRUSIMMUNE, TRAIT_RESISTHEAT, TRAIT_NOFIRE), DNA_VAULT_TRAIT)
 	acquirer.physiology.burn_mod *= 0.5
 	var/obj/item/organ/lungs/improved_lungs = acquirer.get_organ_slot(ORGAN_SLOT_LUNGS)
 	if(improved_lungs)
@@ -35,7 +35,7 @@
 
 /datum/mutation/plasmofire/on_losing(mob/living/carbon/human/owner)
 	. = ..()
-	owner.remove_traits(list(TRAIT_VIRUSIMMUNE, TRAIT_RESISTHEAT, TRAIT_NOFIRE), MUTATION_SOURCE_DNA_VAULT)
+	owner.remove_traits(list(TRAIT_VIRUSIMMUNE, TRAIT_RESISTHEAT, TRAIT_NOFIRE), DNA_VAULT_TRAIT)
 	owner.physiology.burn_mod /= 0.5
 	var/obj/item/organ/lungs/improved_lungs = owner.get_organ_slot(ORGAN_SLOT_LUNGS)
 	UnregisterSignal(owner, COMSIG_CARBON_LOSE_ORGAN)
@@ -76,9 +76,15 @@
 		REMOVE_TRAIT(acquirer, TRAIT_USED_DNA_VAULT, DNA_VAULT_TRAIT)
 		to_chat(acquirer, "It looks like you already have regeneration of some type. Take another mutation...")
 		return
-	var/list/limb_list = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-	var/obj/item/bodypart/limb = acquirer.get_bodypart(limb_list)
-	limb.bodypart_effects = list(/datum/status_effect/grouped/bodypart_effect/weak_photosynthesis)
+	var/obj/item/bodypart/leg/left/leftl = acquirer.get_bodypart(BODY_ZONE_L_LEG)
+	var/obj/item/bodypart/leg/right/rightl = acquirer.get_bodypart(BODY_ZONE_R_LEG)
+	var/obj/item/bodypart/arm/right/rightr = acquirer.get_bodypart(BODY_ZONE_R_ARM)
+	var/obj/item/bodypart/arm/left/leftr = acquirer.get_bodypart(BODY_ZONE_L_ARM)
+	var/obj/item/bodypart/chest/chest = acquirer.get_bodypart(BODY_ZONE_CHEST)
+	var/obj/item/bodypart/head/head = acquirer.get_bodypart(BODY_ZONE_HEAD)
+	var/list/obj/item/bodypart/bodyparts_of_acquirer = list()
+	LAZYADD(bodyparts_of_acquirer, list(leftl, rightl, rightr, leftr, chest, head))
+	bodyparts_of_acquirer.bodypart_effects = list(/datum/status_effect/grouped/bodypart_effect/weak_photosynthesis)
 
 // эффект регенерации на свету. В два раза слабее обычного фотосинтеза
 /datum/status_effect/grouped/bodypart_effect/weak_photosynthesis

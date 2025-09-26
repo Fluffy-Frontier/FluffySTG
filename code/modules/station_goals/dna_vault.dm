@@ -192,7 +192,7 @@
 		"Fire Immunity" = /datum/mutation/fire_immunity,
 		"Plasmocile" = /datum/mutation/plasmocile,
 		*/
-		"Plasma-fire Resistance" = /datum/mutation/plasmofire,
+		"Plasma-Fire Resistance" = /datum/mutation/plasmofire,
 		// FLUFFY FRONTIER EDIT END
 		"Quick Recovery" = /datum/mutation/quick_recovery,
 		"Tough" = /datum/mutation/tough,
