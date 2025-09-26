@@ -1285,13 +1285,6 @@
 	dir = 4
 	},
 /area/station/hallway/primary/port)
-"avp" = (
-/obj/structure/lattice,
-/obj/structure/railing{
-	dir = 6
-	},
-/turf/open/space/basic,
-/area/space/nearstation)
 "avH" = (
 /turf/open/floor/wood,
 /area/station/command/meeting_room)
@@ -8520,6 +8513,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/station/service/library)
+"cCv" = (
+/obj/structure/lattice,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "cCA" = (
 /obj/effect/turf_decal/tile/dark{
 	dir = 1
@@ -15757,9 +15757,10 @@
 /turf/open/floor/iron/dark,
 /area/station/command/bridge)
 "eMG" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer4,
-/obj/structure/lattice/catwalk,
+/obj/structure/lattice,
+/obj/structure/railing{
+	dir = 10
+	},
 /turf/open/space/basic,
 /area/space/nearstation)
 "eML" = (
@@ -20632,11 +20633,6 @@
 	},
 /turf/open/floor/iron/smooth,
 /area/station/engineering/atmos)
-"gpZ" = (
-/obj/structure/lattice,
-/obj/structure/railing,
-/turf/open/space/basic,
-/area/space/nearstation)
 "gqd" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer4,
@@ -40902,6 +40898,13 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/service/hydroponics)
+"mxe" = (
+/obj/structure/lattice,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "mxg" = (
 /obj/structure/frame/computer{
 	anchored = 1;
@@ -54876,14 +54879,6 @@
 /obj/machinery/computer/security/telescreen/interrogation/directional/south,
 /turf/open/floor/iron/dark/smooth_edge,
 /area/station/security)
-"qro" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer4,
-/obj/machinery/door/window/right/directional/north{
-	name = "MiniSat Airlock Access"
-	},
-/turf/open/floor/iron,
-/area/station/ai_monitored/aisat/exterior)
 "qrw" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 8
@@ -55973,6 +55968,14 @@
 	},
 /turf/open/floor/iron,
 /area/station/commons/dorms)
+"qHX" = (
+/obj/structure/lattice,
+/obj/structure/railing{
+	dir = 8;
+	pixel_y = 0
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "qIg" = (
 /obj/structure/chair/plastic,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer2,
@@ -57870,12 +57873,13 @@
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
 "rli" = (
-/obj/structure/lattice,
-/obj/structure/railing{
-	dir = 8
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer4,
+/obj/machinery/door/window/right/directional/north{
+	name = "MiniSat Airlock Access"
 	},
-/turf/open/space/basic,
-/area/space/nearstation)
+/turf/open/floor/iron,
+/area/station/ai_monitored/aisat/exterior)
 "rln" = (
 /obj/effect/decal/cleanable/fuel_pool,
 /turf/open/floor/iron/dark,
@@ -58541,8 +58545,7 @@
 "ruY" = (
 /obj/structure/lattice,
 /obj/structure/railing{
-	dir = 8;
-	pixel_y = 0
+	dir = 6
 	},
 /turf/open/space/basic,
 /area/space/nearstation)
@@ -59784,6 +59787,11 @@
 /obj/effect/spawner/random/peel_or_nana,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
+"rQc" = (
+/obj/structure/lattice,
+/obj/structure/railing,
+/turf/open/space/basic,
+/area/space/nearstation)
 "rQi" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/blue/fourcorners,
@@ -60544,7 +60552,7 @@
 "saV" = (
 /obj/structure/lattice,
 /obj/structure/railing{
-	dir = 10
+	dir = 9
 	},
 /turf/open/space/basic,
 /area/space/nearstation)
@@ -68752,13 +68760,6 @@
 /obj/machinery/camera/motion/directional/east,
 /turf/open/floor/iron,
 /area/station/ai_monitored/aisat/exterior)
-"uzo" = (
-/obj/structure/lattice,
-/obj/structure/railing{
-	dir = 4
-	},
-/turf/open/space/basic,
-/area/space/nearstation)
 "uzC" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer2,
@@ -79542,10 +79543,9 @@
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/hop)
 "xUj" = (
-/obj/structure/lattice,
-/obj/structure/railing{
-	dir = 9
-	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer4,
+/obj/structure/lattice/catwalk,
 /turf/open/space/basic,
 /area/space/nearstation)
 "xUt" = (
@@ -92551,7 +92551,7 @@ png
 sgo
 sgo
 sgo
-uzo
+mxe
 utf
 lzy
 oVD
@@ -92805,10 +92805,10 @@ xBY
 xBY
 xBY
 kQv
-eMG
-eMG
-eMG
-eMG
+xUj
+xUj
+xUj
+xUj
 oeM
 fSy
 aeZ
@@ -129821,7 +129821,7 @@ xBY
 eHc
 xBY
 xBY
-avp
+ruY
 qyx
 dTs
 dTs
@@ -130077,7 +130077,7 @@ xBY
 xBY
 eHc
 dTs
-gpZ
+rQc
 qyx
 dTs
 dTs
@@ -130123,7 +130123,7 @@ doK
 doK
 doK
 doK
-qro
+rli
 nLI
 rEC
 nLI
@@ -132647,7 +132647,7 @@ xBY
 xBY
 eHc
 dTs
-gpZ
+rQc
 qyx
 ezV
 dTs
@@ -132905,30 +132905,30 @@ xBY
 eHc
 xBY
 xBY
+eMG
+qyx
+dTs
+dTs
+dTs
+dTs
+dTs
+dTs
+dTs
+dTs
+dTs
+dTs
+dTs
+dTs
+dTs
+dTs
+dTs
+dTs
+dTs
+dTs
+dTs
+dTs
+qyx
 saV
-qyx
-dTs
-dTs
-dTs
-dTs
-dTs
-dTs
-dTs
-dTs
-dTs
-dTs
-dTs
-dTs
-dTs
-dTs
-dTs
-dTs
-dTs
-dTs
-dTs
-dTs
-qyx
-xUj
 xBY
 dTs
 xBY
@@ -133163,7 +133163,7 @@ eHc
 xBY
 xBY
 xBY
-rli
+cCv
 xBY
 xBY
 xBY
@@ -133184,7 +133184,7 @@ xBY
 xBY
 xBY
 xBY
-ruY
+qHX
 xBY
 kQv
 oum
@@ -137319,7 +137319,7 @@ qNm
 qNm
 qNm
 qNm
-qro
+rli
 nai
 nai
 mcE
