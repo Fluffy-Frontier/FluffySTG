@@ -622,11 +622,12 @@ SUBSYSTEM_DEF(dynamic)
 	if(!COOLDOWN_FINISHED(src, light_ruleset_start))
 		chance *= 0.2
 	*/
-	// У нас мало людей с включенными префами на антагонизм, поэтому каждый подобный человек на вес золота и ваниальная формула не подходит
-	chance = failed_latejoins * 30 + 40	// 40 Базовый шанс, по 30 за каждую проваленную попытку закинуть антажку
-	if(num_antags < 0)
-		chance += 60
-	// FLUFFY FRONTIER EDIR END
+	// У нас мало людей с включенными префами на антагов, поэтому каждый подобный человек на вес золота и ваниальная формула не подходит
+	var/num_sec_alive = length(SSjob.get_living_sec())
+	chance = clamp(100 - 40 * (2 * num_antags - num_sec_alive), 0, 100)
+	if(num_antags <= 0)
+		chance = 100
+	// FLUFFY FRONTIER EDIT END
 
 	return chance
 

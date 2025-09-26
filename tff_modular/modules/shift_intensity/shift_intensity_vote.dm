@@ -31,7 +31,7 @@
 /datum/vote/shift_intensity/tiebreaker(list/winners)
 	// Если никто не проголосовал - смена будет *обычная*
 	if(choices_by_ckey.len == 0)
-		return ROUND_MID_SHIFT_STRING
+		return ROUND_LIGHT_SHIFT_STRING
 	return ..()
 
 /datum/vote/shift_intensity/finalize_vote(winning_option)
