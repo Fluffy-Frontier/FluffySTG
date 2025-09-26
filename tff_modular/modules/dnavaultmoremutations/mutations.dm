@@ -78,7 +78,7 @@
 
 /datum/mutation/light_regeneration/on_losing(mob/living/carbon/human/owner)
 	. = ..()
-	UnregisterSignal(acquirer, COMSIG_LIVING_LIFE)
+	UnregisterSignal(owner, COMSIG_LIVING_LIFE)
 
 // Регенерация от света. Должно работать хуже чем регенарция подперсоны, ибо подперсона лечит 0.5 хп на каждую конечность, а тут лечение 0.5 хп распределяется на ВСЕ тело, т.е. около 0.1 на каждую конечность.
 /datum/mutation/light_regeneration/proc/regeneration_on_life(mob/living/source, seconds_per_tick, times_fired)
