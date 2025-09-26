@@ -9088,13 +9088,6 @@
 	dir = 8
 	},
 /area/station/service/chapel/funeral)
-"cKq" = (
-/obj/structure/window/reinforced/spawner/directional/east,
-/obj/machinery/door/window/right/directional/west{
-	name = "MiniSat Airlock Access"
-	},
-/turf/open/floor/iron,
-/area/station/ai_monitored/aisat/exterior)
 "cKK" = (
 /obj/structure/cable/layer3,
 /obj/effect/turf_decal/siding/dark{
@@ -10359,6 +10352,7 @@
 /obj/effect/turf_decal/tile/bar/opposingcorners,
 /obj/structure/table/wood/poker,
 /obj/item/toy/cards/deck,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/iron/sepia,
 /area/station/commons/lounge)
 "dbi" = (
@@ -12157,12 +12151,11 @@
 	},
 /area/station/hallway/primary/port)
 "dCQ" = (
-/obj/structure/chair/wood{
-	dir = 4
-	},
 /obj/effect/turf_decal/tile/bar/opposingcorners,
 /obj/effect/landmark/start/assistant,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/stool/bar/directional/east,
+/obj/structure/chair/stool/bar/directional/east,
 /turf/open/floor/iron/sepia,
 /area/station/commons/lounge)
 "dCT" = (
@@ -19931,13 +19924,11 @@
 /area/station/service/chapel)
 "gec" = (
 /obj/effect/turf_decal/tile/bar/opposingcorners,
-/obj/structure/chair/wood{
-	dir = 4
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/stool/bar/directional/east,
 /turf/open/floor/iron/sepia,
 /area/station/commons/lounge)
 "gej" = (
@@ -21017,7 +21008,6 @@
 /turf/open/floor/iron/dark,
 /area/station/engineering/gravity_generator)
 "gxe" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer2,
 /obj/machinery/light/floor,
 /obj/effect/landmark/start/hangover,
 /turf/open/floor/iron,
@@ -25028,10 +25018,6 @@
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
-/obj/machinery/door/poddoor/preopen{
-	id = "bridgewindows";
-	name = "Bridge View Blast Door"
-	},
 /turf/open/floor/plating,
 /area/station/command/bridge)
 "hMb" = (
@@ -26047,9 +26033,6 @@
 /turf/open/floor/iron/dark,
 /area/station/security/execution/transfer)
 "iaN" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
 /obj/machinery/door/window/right/directional/north{
 	name = "MiniSat Airlock Access"
 	},
@@ -28011,6 +27994,7 @@
 /obj/effect/turf_decal/tile/bar/opposingcorners,
 /obj/machinery/light_switch/directional/east,
 /obj/structure/disposalpipe/segment,
+/obj/structure/chair/stool/bar/directional/north,
 /turf/open/floor/iron/sepia,
 /area/station/commons/lounge)
 "iGw" = (
@@ -28627,9 +28611,8 @@
 /area/station/commons/lounge)
 "iOf" = (
 /obj/effect/turf_decal/tile/bar/opposingcorners,
-/obj/structure/chair/wood{
-	dir = 8
-	},
+/obj/effect/landmark/start/assistant,
+/obj/structure/chair/stool/bar/directional/south,
 /turf/open/floor/iron/sepia,
 /area/station/commons/lounge)
 "iOx" = (
@@ -32882,10 +32865,8 @@
 /area/station/service/bar)
 "kbj" = (
 /obj/effect/turf_decal/tile/bar/opposingcorners,
-/obj/structure/chair/wood{
-	dir = 4
-	},
 /obj/structure/disposalpipe/segment,
+/obj/structure/chair/stool/bar/directional/east,
 /turf/open/floor/iron/sepia,
 /area/station/commons/lounge)
 "kbz" = (
@@ -38090,8 +38071,8 @@
 /area/station/cargo/miningdock)
 "lDD" = (
 /obj/effect/turf_decal/tile/bar/opposingcorners,
-/obj/effect/landmark/start/hangover,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/stool/bar/directional/south,
 /turf/open/floor/iron/sepia,
 /area/station/commons/lounge)
 "lDI" = (
@@ -45745,6 +45726,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer2,
 /obj/structure/disposalpipe/segment,
+/obj/structure/chair/stool/bar/directional/east,
 /turf/open/floor/iron/sepia,
 /area/station/commons/lounge)
 "nUw" = (
@@ -50831,8 +50813,8 @@
 	dir = 9
 	},
 /obj/structure/railing{
-	dir = 9;
-	layer = 3.1
+	dir = 8;
+	pixel_y = 0
 	},
 /turf/open/floor/iron,
 /area/station/cargo/lobby)
@@ -51414,11 +51396,14 @@
 	},
 /area/station/security/prison/visit)
 "pvn" = (
-/obj/effect/turf_decal/tile/bar/opposingcorners,
-/obj/structure/table/wood/poker,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/turf/open/floor/iron/sepia,
-/area/station/commons/lounge)
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable,
+/obj/machinery/door/poddoor/preopen{
+	id = "detectivewindows";
+	name = "Detective Privacy Blast Door"
+	},
+/turf/open/floor/plating,
+/area/station/hallway/primary/aft)
 "pvt" = (
 /obj/effect/turf_decal/trimline/brown/filled/warning{
 	dir = 4
@@ -52681,7 +52666,6 @@
 	},
 /area/station/engineering/atmos/office)
 "pLV" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/door/window/right/directional/south{
 	name = "MiniSat Airlock Access"
 	},
@@ -59123,7 +59107,6 @@
 /turf/open/floor/iron/edge,
 /area/station/science/research)
 "rEq" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer2,
 /obj/machinery/light/floor,
 /turf/open/floor/iron,
 /area/station/ai_monitored/aisat/exterior)
@@ -59413,10 +59396,6 @@
 "rKD" = (
 /obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/window/reinforced/spawner/directional/east,
-/obj/machinery/door/poddoor/preopen{
-	id = "xenobio7";
-	name = "Xenobio Pen 7 Blast Door"
-	},
 /obj/structure/tank_holder,
 /obj/structure/cable,
 /obj/machinery/door/poddoor/preopen{
@@ -71705,11 +71684,13 @@
 /turf/open/floor/plating,
 /area/station/maintenance/fore/greater)
 "vzm" = (
-/obj/machinery/door/window/right/directional/west{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/station/ai_monitored/aisat/exterior)
+/obj/effect/turf_decal/tile/bar/opposingcorners,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer2,
+/obj/structure/disposalpipe/segment,
+/obj/structure/chair/stool/bar/directional/east,
+/turf/open/floor/iron/sepia,
+/area/station/commons/lounge)
 "vzo" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4{
 	dir = 8
@@ -73216,11 +73197,8 @@
 /turf/open/floor/iron/dark/smooth_edge,
 /area/station/security/checkpoint/arrivals)
 "vVT" = (
-/obj/structure/chair/wood{
-	dir = 1;
-	layer = 2.8
-	},
 /obj/effect/turf_decal/tile/bar/opposingcorners,
+/obj/structure/chair/stool/bar/directional/south,
 /turf/open/floor/iron/sepia,
 /area/station/commons/lounge)
 "vVV" = (
@@ -75781,14 +75759,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine/airless,
 /area/station/science/ordnance/freezerchamber)
-"wPp" = (
-/obj/effect/turf_decal/tile/bar/opposingcorners,
-/obj/structure/chair/wood{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/sepia,
-/area/station/commons/lounge)
 "wPs" = (
 /obj/structure/cable,
 /obj/item/electronics/firelock,
@@ -101319,7 +101289,7 @@ apC
 gLr
 eUu
 aja
-gGF
+sKU
 bqj
 dCQ
 vOw
@@ -101835,7 +101805,7 @@ vNl
 wYe
 bqj
 wis
-iOf
+hVH
 pBQ
 bms
 eQk
@@ -102347,7 +102317,7 @@ sVv
 ocT
 eUu
 qsw
-vVT
+gGF
 mqo
 cwY
 ono
@@ -102861,7 +102831,7 @@ gSw
 eUu
 egp
 sKU
-wYe
+iOf
 cCI
 daS
 fQP
@@ -103120,7 +103090,7 @@ gGF
 bqj
 vVT
 cCI
-pvn
+hVH
 ono
 mPt
 wpi
@@ -103376,8 +103346,8 @@ ehf
 fVW
 wYe
 sKU
-iOf
-wPp
+gGF
+bqj
 ono
 pAR
 sYi
@@ -103631,7 +103601,7 @@ eWc
 teb
 jba
 nUu
-fck
+vzm
 fck
 aVt
 nXG
@@ -117760,7 +117730,7 @@ wSq
 vIa
 esd
 lkj
-vNQ
+pvn
 sBE
 qTN
 wJC
@@ -125230,14 +125200,14 @@ dTs
 xBY
 xBY
 xBY
-ezV
+dTs
 xBY
 xBY
 xBY
 xBY
 xBY
 xBY
-ezV
+dTs
 xBY
 xBY
 xBY
@@ -127025,7 +126995,7 @@ xBY
 xBY
 xBY
 xBY
-ezV
+dTs
 xBY
 xBY
 xBY
@@ -128836,13 +128806,13 @@ xBY
 dTs
 oum
 dTs
-stb
+dTs
 nzv
 npd
 gfn
 mFa
 nzv
-stb
+dTs
 dTs
 oum
 dTs
@@ -129092,15 +129062,15 @@ eHc
 eHc
 dTs
 xBY
-dsy
-cKq
+xBY
+dTs
 pLV
 gxe
 ltz
 rEq
 iaN
-vzm
-voi
+dTs
+xBY
 xBY
 xBY
 xBY
@@ -129349,15 +129319,15 @@ eHc
 xBY
 xBY
 xBY
+xBY
 dTs
-qAY
 vEK
 abA
 mRc
 fxj
 gMy
-qAY
 dTs
+xBY
 xBY
 xBY
 xBY
