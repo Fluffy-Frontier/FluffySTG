@@ -185,11 +185,15 @@
 /obj/machinery/dna_vault/proc/upgrade(mob/living/carbon/human/target, upgrade_type)
 	var/datum/weakref/human_weakref = WEAKREF(target)
 	var/static/list/associated_mutation = list(
-		"Breathless" = /datum/mutation/breathless,
+		"Space Adaptation" = /datum/mutation/full_space, // FLUFFY FRONTIER CHANGES - ORIGINAL: "Breathless" = /datum/mutation/breathless,
 		"Dextrous" = /datum/mutation/dextrous,
 		"Quick" = /datum/mutation/quick,
+		/* // FLUFFY FRONTIER EDIT START - ORIGINAL:
 		"Fire Immunity" = /datum/mutation/fire_immunity,
 		"Plasmocile" = /datum/mutation/plasmocile,
+		*/
+		"Plasma-fire Resistance" = /datum/mutation/plasmofire,
+		// FLUFFY FRONTIER EDIT END
 		"Quick Recovery" = /datum/mutation/quick_recovery,
 		"Tough" = /datum/mutation/tough,
 	)
