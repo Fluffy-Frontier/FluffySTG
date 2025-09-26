@@ -128,11 +128,15 @@
 	if((user_weakref in power_lottery) || isdead(user))
 		return
 	possible_powers = list(
-		/datum/mutation/breathless,
+		/datum/mutation/full_space, // FLUFFY FRONTIER CHANGES - ORIGINAL: /datum/mutation/breathless,
 		/datum/mutation/dextrous,
 		/datum/mutation/quick,
+		/* // FLUFFY FRONTIER EDIT START - ORIGINAL:
 		/datum/mutation/fire_immunity,
 		/datum/mutation/plasmocile,
+		*/
+		/datum/mutation/plasmofire,
+		// FLUFFY FRONTIER EDIT END
 		/datum/mutation/quick_recovery,
 		/datum/mutation/tough,
 	)
