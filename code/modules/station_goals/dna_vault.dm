@@ -88,7 +88,10 @@
 
 	var/list/obj/structure/fillers = list()
 
+	var/emagged = FALSE // FLUFFY FRONTIER ADDITION - Responsible for hacking the DNA vault
+
 /obj/machinery/dna_vault/Initialize(mapload)
+	RegisterSignal(src, COMSIG_ATOM_EMAG_ACT, PROC_REF(on_emag)) // FLUFFY FRONTIER ADDITION - add emag act to DNA VAULT
 	//TODO: Replace this,bsa and gravgen with some big machinery datum
 	var/list/occupied = list()
 	for(var/direct in list(EAST,WEST,SOUTHEAST,SOUTHWEST))
@@ -127,19 +130,43 @@
 	var/datum/weakref/user_weakref = WEAKREF(user)
 	if((user_weakref in power_lottery) || isdead(user))
 		return
+	/* // FLUFFY FRONTIER EDIT START - add emagged mutation list - ORIGINAL:
 	possible_powers = list(
-		/datum/mutation/full_space, // FLUFFY FRONTIER CHANGES - ORIGINAL: /datum/mutation/breathless,
+		/datum/mutation/breathless,
 		/datum/mutation/dextrous,
 		/datum/mutation/quick,
-		/* // FLUFFY FRONTIER EDIT START - ORIGINAL:
 		/datum/mutation/fire_immunity,
 		/datum/mutation/plasmocile,
-		*/
-		/datum/mutation/plasmofire,
-		// FLUFFY FRONTIER EDIT END
 		/datum/mutation/quick_recovery,
 		/datum/mutation/tough,
 	)
+	*/
+	if(emagged)
+		possible_powers = list(
+			/datum/mutation/full_space,
+			/datum/mutation/dextrous,
+			/datum/mutation/quick,
+			/datum/mutation/fire_immunity,
+			/datum/mutation/plasmocile,
+			/datum/mutation/quick_recovery,
+			/datum/mutation/tough,
+			/datum/mutation/electricity_saturation,
+			/datum/mutation/body_regeneration,
+			/datum/mutation/toxin_immunity,
+		)
+	else
+		possible_powers = list(
+			/datum/mutation/full_space,
+			/datum/mutation/dextrous,
+			/datum/mutation/quick,
+			/datum/mutation/fire_immunity,
+			/datum/mutation/plasmocile,
+			/datum/mutation/quick_recovery,
+			/datum/mutation/tough,
+			/datum/mutation/body_regeneration,
+			/datum/mutation/toxin_immunity,
+		)
+	// FLUFFY FRONTIER EDIT END
 	var/list/gained_mutation = list()
 	gained_mutation += pick_n_take(possible_powers)
 	gained_mutation += pick_n_take(possible_powers)
@@ -184,25 +211,59 @@
 
 /obj/machinery/dna_vault/proc/upgrade(mob/living/carbon/human/target, upgrade_type)
 	var/datum/weakref/human_weakref = WEAKREF(target)
+	/* // FLUFFY FRONTIER EDIT START - add emagged mutation list - ORIGINAL:
 	var/static/list/associated_mutation = list(
-		"Space Adaptation" = /datum/mutation/full_space, // FLUFFY FRONTIER CHANGES - ORIGINAL: "Breathless" = /datum/mutation/breathless,
+		"Breathless" = /datum/mutation/breathless,
 		"Dextrous" = /datum/mutation/dextrous,
 		"Quick" = /datum/mutation/quick,
-		/* // FLUFFY FRONTIER EDIT START - ORIGINAL:
 		"Fire Immunity" = /datum/mutation/fire_immunity,
 		"Plasmocile" = /datum/mutation/plasmocile,
-		*/
-		"Plasma-Fire Resistance" = /datum/mutation/plasmofire,
-		// FLUFFY FRONTIER EDIT END
 		"Quick Recovery" = /datum/mutation/quick_recovery,
 		"Tough" = /datum/mutation/tough,
 	)
+	*/
+	var/static/list/associated_mutation = list()
+	if(emagged)
+		associated_mutation = list(
+			"Space Adaptation" = /datum/mutation/full_space,
+			"Dextrous" = /datum/mutation/dextrous,
+			"Quick" = /datum/mutation/quick,
+			"Plasma-Fire Resistance" = /datum/mutation/plasmofire,
+			"Quick Recovery" = /datum/mutation/quick_recovery,
+			"Tough" = /datum/mutation/tough,
+			"Electricity Saturation" = /datum/mutation/electricity_saturation,
+			"Hazardous Envirovment Immunity" = /datum/mutation/toxin_immunity,
+			"Regeneration" = /datum/mutation/body_regeneration,
+		)
+	else
+		associated_mutation = list(
+			"Space Adaptation" = /datum/mutation/full_space,
+			"Dextrous" = /datum/mutation/dextrous,
+			"Quick" = /datum/mutation/quick,
+			"Plasma-Fire Resistance" = /datum/mutation/plasmofire,
+			"Quick Recovery" = /datum/mutation/quick_recovery,
+			"Tough" = /datum/mutation/tough,
+			"Hazardous Envirovment Immunity" = /datum/mutation/toxin_immunity,
+			"Regeneration" = /datum/mutation/body_regeneration,
+		)
+	// FLUFFY FRONTIER EDIT END
 	if(!(associated_mutation[upgrade_type] in power_lottery[human_weakref]) || (HAS_TRAIT(target, TRAIT_USED_DNA_VAULT)))
 		return
 	target.dna.add_mutation(associated_mutation[upgrade_type], MUTATION_SOURCE_DNA_VAULT)
 	ADD_TRAIT(target, TRAIT_USED_DNA_VAULT, DNA_VAULT_TRAIT)
 	power_lottery[human_weakref] = list()
 	use_energy(active_power_usage)
+
+/obj/machinery/dna_vault/proc/on_emag(obj/machinery/dna_vault/target, mob/living/carbon/emagger)
+	SIGNAL_HANDLER
+	if(emagged)
+		return
+	minor_announce("THE SECURITY SYSTEM IS BROKEN. THE MUTATION SAFETY PROTOCOL HAS BEEN VIOLATED. CONTACT THE SU-...", \
+		"Dna Vault protection system")
+	var/datum/mutation/picked_mutation_for_silly_boy = pick(/datum/mutation/laser_eyes, /datum/mutation/electricity_saturation)
+	emagger.dna.add_mutation(picked_mutation_for_silly_boy, MUTATION_SOURCE_DNA_VAULT)
+	emagger.balloon_alert(emagger, "Illegal Mutations unlocked. You have been given an illegal mutation!")
+	emagged = TRUE
 
 #undef VAULT_TOXIN
 #undef VAULT_NOBREATH

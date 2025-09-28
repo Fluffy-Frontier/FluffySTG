@@ -23,7 +23,7 @@
 
 /datum/mutation/plasmofire/on_acquiring(mob/living/carbon/human/acquirer)
 	. = ..()
-	acquirer.add_traits(list(TRAIT_VIRUSIMMUNE, TRAIT_RESISTHEAT, TRAIT_NOFIRE), DNA_VAULT_TRAIT)
+	acquirer.add_traits(list(TRAIT_RESISTHEAT, TRAIT_NOFIRE), DNA_VAULT_TRAIT)
 	acquirer.physiology.burn_mod *= 0.5
 	var/obj/item/organ/lungs/improved_lungs = acquirer.get_organ_slot(ORGAN_SLOT_LUNGS)
 	if(improved_lungs)
@@ -33,7 +33,7 @@
 
 /datum/mutation/plasmofire/on_losing(mob/living/carbon/human/owner)
 	. = ..()
-	owner.remove_traits(list(TRAIT_VIRUSIMMUNE, TRAIT_RESISTHEAT, TRAIT_NOFIRE), DNA_VAULT_TRAIT)
+	owner.remove_traits(list(TRAIT_RESISTHEAT, TRAIT_NOFIRE), DNA_VAULT_TRAIT)
 	owner.physiology.burn_mod /= 0.5
 	var/obj/item/organ/lungs/improved_lungs = owner.get_organ_slot(ORGAN_SLOT_LUNGS)
 	UnregisterSignal(owner, COMSIG_CARBON_LOSE_ORGAN)
@@ -61,35 +61,91 @@
 	our_lungs.plas_breath_dam_min = initial(our_lungs.plas_breath_dam_min)
 	our_lungs.plas_breath_dam_max = initial(our_lungs.plas_breath_dam_max)
 
-/datum/mutation/light_regeneration
-	name = "Light Regeneration"
-	desc = "The limbs regenerate a little when they are in the light. The mutation is weaker than the regeneration of the podperson."
-	text_gain_indication = span_notice("Your feel like a plant...")
-	text_lose_indication = span_warning("Your doesn't feel like a plant.")
+/datum/mutation/body_regeneration
+	name = "Regeneration"
+	desc = "The owner of mutation regenerates a little bit."
+	text_gain_indication = span_notice("You feel your skin moving...")
+	text_lose_indication = span_warning("Your doesn't feel anything.")
 	locked = TRUE
 
-/datum/mutation/light_regeneration/on_acquiring(mob/living/carbon/human/acquirer)
+/datum/mutation/body_regeneration/on_acquiring(mob/living/carbon/human/acquirer)
 	. = ..()
-	if(ispodperson(acquirer) || isnightmare(acquirer))
-		REMOVE_TRAIT(acquirer, TRAIT_USED_DNA_VAULT, DNA_VAULT_TRAIT)
-		to_chat(acquirer, "It looks like you already have regeneration of some type. Take another mutation...")
-		return
 	RegisterSignal(acquirer, COMSIG_LIVING_LIFE, PROC_REF(regeneration_on_life))
 
-/datum/mutation/light_regeneration/on_losing(mob/living/carbon/human/owner)
+/datum/mutation/body_regeneration/on_losing(mob/living/carbon/human/owner)
 	. = ..()
 	UnregisterSignal(owner, COMSIG_LIVING_LIFE)
 
-// Регенерация от света. Должно работать хуже чем регенарция подперсоны, ибо подперсона лечит 0.5 хп на каждую конечность, а тут лечение 0.5 хп распределяется на ВСЕ тело, т.е. около 0.1 на каждую конечность.
-/datum/mutation/light_regeneration/proc/regeneration_on_life(mob/living/source, seconds_per_tick, times_fired)
+// Регенерация. Должно работать хуже чем регенарция подперсоны/тени/гемофага, ибо подперсона лечит 0.5 хп на каждую конечность, а тут лечение 0.6 хп распределяется по поврежденным конечностям.
+/datum/mutation/body_regeneration/proc/regeneration_on_life(mob/living/source, seconds_per_tick, times_fired)
 	SIGNAL_HANDLER
-	var/light_amount = 0
-	var/turf/turf_loc = owner.loc
-	light_amount = min(1, turf_loc.get_lumcount()) - 0.5
-	if(light_amount > 0.2)
-		var/need_mob_update = FALSE
-		need_mob_update += owner.heal_overall_damage(brute = 0.6, burn = 0.6, updating_health = FALSE)
-		need_mob_update += owner.adjustToxLoss(-0.6, updating_health = FALSE)
-		need_mob_update += owner.adjustOxyLoss(-0.6, updating_health = FALSE)
-		if(need_mob_update)
-			owner.updatehealth()
+	var/need_mob_update = FALSE
+	need_mob_update += owner.heal_overall_damage(brute = 0.6, burn = 0.6, updating_health = FALSE)
+	need_mob_update += owner.adjustToxLoss(-0.3, updating_health = FALSE)
+	need_mob_update += owner.adjustOxyLoss(-0.3, updating_health = FALSE)
+	if(need_mob_update)
+		owner.updatehealth()
+
+/datum/mutation/toxin_immunity
+	name = "Hazardous Envirovment Immunity"
+	desc = "Envirovment immunity provides immunity to most types of toxins, radiation and viruses."
+	text_gain_indication = "You feel as pure as you've ever felt."
+	text_lose_indication = "You feel a strange weight in your chest."
+	locked = TRUE
+
+/datum/mutation/toxin_immunity/on_acquiring(mob/living/carbon/human/acquirer)
+	. = ..()
+	acquirer.add_traits(list(TRAIT_TOXIMMUNE, TRAIT_RADIMMUNE, TRAIT_RADSTORM_IMMUNE, TRAIT_VIRUSIMMUNE), DNA_VAULT_TRAIT)
+
+/datum/mutation/toxin_immunity/on_losing(mob/living/carbon/human/owner)
+	. = ..()
+	owner.remove_traits(list(TRAIT_TOXIMMUNE, TRAIT_RADIMMUNE, TRAIT_RADSTORM_IMMUNE, TRAIT_VIRUSIMMUNE), DNA_VAULT_TRAIT)
+
+/datum/mutation/electricity_saturation
+	name = "Electricity Saturation"
+	desc = "ILLEGAL MUTATION SINCE 2532. PLEASE CONTACT A GENETICIST. Electricity Saturation gives you ENERGY BOOST and causes you to... CREATE THUNDERS."
+	locked = TRUE
+	var/electricity_detected = FALSE
+
+/datum/mutation/electricity_saturation/on_acquiring(mob/living/carbon/human/acquirer)
+	. = ..()
+	RegisterSignal(acquirer, COMSIG_LIVING_LIFE, PROC_REF(on_superlife))
+
+/datum/mutation/electricity_saturation/on_losing(mob/living/carbon/human/owner)
+	. = ..()
+	UnregisterSignal(owner, COMSIG_LIVING_LIFE)
+	electricity_detected = FALSE
+
+/datum/mutation/electricity_saturation/proc/on_superlife(mob/living/carbon/source, seconds_per_tick, times_fired)
+	SIGNAL_HANDLER
+	var/mob/living/carbon/human/target = source
+	target.adjust_timed_status_effect(1 SECONDS, /datum/status_effect/dizziness)
+	if(SPT_PROB(2, seconds_per_tick))
+		var/static/mutable_appearance/overcharge
+		overcharge = overcharge || mutable_appearance('icons/effects/effects.dmi', "electricity", EFFECTS_LAYER)
+		source.add_overlay(overcharge)
+
+		if(do_after(source, 3 SECONDS, timed_action_flags = (IGNORE_USER_LOC_CHANGE|IGNORE_HELD_ITEM|IGNORE_INCAPACITATED)))
+			playsound(source, 'sound/effects/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
+			source.cut_overlay(overcharge)
+			tesla_zap(source = source, zap_range = 2, power = 7500, cutoff = 1 KILO JOULES, zap_flags = ZAP_OBJ_DAMAGE | ZAP_LOW_POWER_GEN | ZAP_ALLOW_DUPLICATES | ZAP_MOB_DAMAGE)
+			source.visible_message(span_danger("[source] violently discharges energy!"), span_warning("You violently discharge energy!"))
+
+	if(SPT_PROB(2, seconds_per_tick))
+		source.playsound_local(source, 'sound/effects/singlebeat.ogg', 100, 0)
+
+/datum/mutation/glutonny_mutation
+	name = "The Gluttony"
+	desc = "ILLEGAL MUTATION SINCE 2540. PLEASE CONTACT A GENETICIST. The mutation makes you able to eat almost anything."
+	locked = TRUE
+
+/datum/mutation/gluttony_mutation/on_acquiring(mob/living/carbon/human/acquirer)
+	. = ..()
+
+/datum/action/cooldown/spell/pointed/gluttony_eat
+	name = "Gluttony Eat"
+	desc = "Allows you to eat almost anything or anyone."
+	cast_range = 1
+	cooldown_time = 30 SECONDS
+	spell_requirements = NONE
+
