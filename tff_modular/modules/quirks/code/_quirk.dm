@@ -11,5 +11,4 @@
 /datum/quirk/item_quirk/underworld_connections
 	veteran_only = TRUE
 
-/datum/quirk/system_shock
-	hidden_quirk = TRUE
+
