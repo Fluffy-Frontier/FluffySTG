@@ -133,19 +133,3 @@
 
 	if(SPT_PROB(2, seconds_per_tick))
 		source.playsound_local(source, 'sound/effects/singlebeat.ogg', 100, 0)
-
-/datum/mutation/glutonny_mutation
-	name = "The Gluttony"
-	desc = "ILLEGAL MUTATION SINCE 2540. PLEASE CONTACT A GENETICIST. The mutation makes you able to eat almost anything."
-	locked = TRUE
-
-/datum/mutation/gluttony_mutation/on_acquiring(mob/living/carbon/human/acquirer)
-	. = ..()
-
-/datum/action/cooldown/spell/pointed/gluttony_eat
-	name = "Gluttony Eat"
-	desc = "Allows you to eat almost anything or anyone."
-	cast_range = 1
-	cooldown_time = 30 SECONDS
-	spell_requirements = NONE
-
