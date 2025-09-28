@@ -10,5 +10,3 @@
 
 /datum/quirk/item_quirk/underworld_connections
 	veteran_only = TRUE
-
-
