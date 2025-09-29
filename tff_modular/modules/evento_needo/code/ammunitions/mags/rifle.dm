@@ -237,7 +237,6 @@
 	ammo_type = /obj/item/ammo_casing/a300
 	caliber = CALIBER_A300
 	max_ammo = 5
-	multiload = TRUE
 
 /obj/item/ammo_box/magazine/internal/boltaction/solgov
 	name = "SSG-669C internal magazine"
