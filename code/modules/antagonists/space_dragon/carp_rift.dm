@@ -96,6 +96,7 @@
 	bio = 100
 	fire = 100
 	acid = 100
+	bullet = 20 // FLUFFY FRONTIER ADDITION - Carp Rift now have bullet resist
 
 /obj/structure/carp_rift/hulk_damage()
 	return 30
