@@ -4,6 +4,7 @@
 	icon = 'icons/obj/clothing/under/civilian.dmi'
 	worn_icon = 'icons/mob/clothing/under/civilian.dmi'
 	class = CLOTHING_SERVICE
+	abstract_type = /obj/item/clothing/under/rank/civilian
 
 /obj/item/clothing/under/rank/civilian/purple_bartender
 	desc = "It looks like it has lots of flair!"
@@ -114,6 +115,7 @@
 	desc = "Slick threads."
 	icon = 'icons/obj/clothing/under/suits.dmi'
 	worn_icon = 'icons/mob/clothing/under/suits.dmi'
+	abstract_type = /obj/item/clothing/under/rank/civilian/lawyer
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/civilian/lawyer/dye_item(dye_color, dye_key_override)

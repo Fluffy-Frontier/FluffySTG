@@ -315,7 +315,7 @@
 		/datum/quirk/drunkhealing,
 		/datum/quirk/light_step, // Встроен
 		/datum/quirk/item_quirk/musician,
-		/datum/quirk/item_quirk/settler,
+		/datum/quirk/settler,
 		/datum/quirk/item_quirk/signer,
 		/datum/quirk/item_quirk/pet_owner,
 		/datum/quirk/skittish,
