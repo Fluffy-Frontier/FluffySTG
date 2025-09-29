@@ -14,6 +14,10 @@
 	if(!weapon)
 		to_chat(H, "No weapon to wield!")
 		return FALSE
+	var/obj/item/gun/second_weapon = istype(H.get_inactive_held_item(), /obj/item/gun) ? H.get_inactive_held_item() : null
+	if(second_weapon)
+		if(second_weapon.weapon_weight < WEAPON_MEDIUM)
+			second_weapon.equip_to_best_slot(H)
 	weapon.do_wield(H)
 	return TRUE
 

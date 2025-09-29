@@ -11,8 +11,6 @@
 	attach_features_flags = ATTACH_REMOVABLE_HAND|ATTACH_TOGGLE
 	pixel_shift_x = 1
 	pixel_shift_y = 4
-	wield_delay = 0.1 SECONDS
-
 /obj/item/attachment/rail_light/toggle_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
 	set_light_on(toggled)

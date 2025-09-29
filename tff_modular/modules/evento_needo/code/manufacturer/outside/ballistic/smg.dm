@@ -38,8 +38,6 @@
 
 	spread = 8
 	spread_unwielded = 14
-
-	wield_delay = 0.6 SECONDS
 	wield_slowdown = SMG_SLOWDOWN
 
 	unique_attachments = list(
@@ -92,9 +90,6 @@
 
 	recoil = 0
 	recoil_unwielded = 4
-
-	wield_delay = 0.4 SECONDS
-
 	unique_attachments = list(
 		/obj/item/attachment/foldable_stock/inteq
 	)
@@ -121,9 +116,6 @@
 
 	recoil = 0
 	recoil_unwielded = 4
-
-	wield_delay = 0.4 SECONDS
-
 	unique_attachments = list(
 		/obj/item/attachment/foldable_stock
 	)

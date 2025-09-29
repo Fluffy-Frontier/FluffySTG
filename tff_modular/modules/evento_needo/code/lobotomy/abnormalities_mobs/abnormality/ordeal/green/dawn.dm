@@ -70,7 +70,7 @@
 				finishing = FALSE
 				return
 			playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/green/final_stab.ogg', 50, 1)
-			TH.gib(DROP_BRAIN)
+			TH.gib(DROP_ALL_REMAINS)
 			finishing = FALSE
 
 /mob/living/simple_animal/hostile/ordeal/green_bot/spawn_dust()

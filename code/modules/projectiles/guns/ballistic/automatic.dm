@@ -3,7 +3,10 @@
 	can_suppress = TRUE
 	burst_size = 3
 	burst_delay = 2
-	actions_types = list(/datum/action/item_action/toggle_firemode)
+	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
+	aimed_wield_slowdown = RIFLE_AIM_SLOWDOWN
+	//actions_types = list(/datum/action/item_action/toggle_firemode)
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	semi_auto = TRUE
 	fire_sound = 'sound/items/weapons/gun/smg/shot.ogg'
 	fire_sound_volume = 90
@@ -21,14 +24,11 @@
 	actions_types = list()
 	mag_display = TRUE
 	empty_indicator = TRUE
+	fire_delay = 0.2 SECONDS
 	accepted_magazine_type = /obj/item/ammo_box/magazine/smgm9mm
 	pin = null
 	bolt_type = BOLT_TYPE_LOCKING
 	show_bolt_icon = FALSE
-
-/obj/item/gun/ballistic/automatic/proto/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
 
 /obj/item/gun/ballistic/automatic/proto/unrestricted
 	pin = /obj/item/firing_pin
@@ -76,14 +76,12 @@
 	burst_delay = 2
 	can_suppress = FALSE
 	burst_size = 1
+	fire_delay = 0.3 SECONDS
 	actions_types = list()
 	mag_display = TRUE
 	mag_display_ammo = TRUE
 	empty_indicator = TRUE
 
-/obj/item/gun/ballistic/automatic/wt550/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.3 SECONDS)
 
 /obj/item/gun/ballistic/automatic/wt550/add_bayonet_point()
 	AddComponent(/datum/component/bayonet_attachable, offset_x = 25, offset_y = 12)
@@ -207,7 +205,7 @@
 
 /obj/item/gun/ballistic/automatic/tommygun/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, rof)
+	fire_delay = rof
 
 /**
  * Weak tommygun for syndicate chimps. It comes in a 4 TC kit.
@@ -259,6 +257,7 @@
 	rack_sound = 'sound/items/weapons/gun/l6/l6_rack.ogg'
 	suppressed_sound = 'sound/items/weapons/gun/general/heavy_shot_suppressed.ogg'
 	var/cover_open = FALSE
+	fire_delay = 0.2 SECONDS
 
 /obj/item/gun/ballistic/automatic/l6_saw/unrestricted
 	pin = /obj/item/firing_pin
@@ -266,7 +265,6 @@
 /obj/item/gun/ballistic/automatic/l6_saw/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
 
 /obj/item/gun/ballistic/automatic/l6_saw/examine(mob/user)
 	. = ..()

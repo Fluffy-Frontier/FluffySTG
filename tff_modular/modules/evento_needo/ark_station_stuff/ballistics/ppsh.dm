@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/automatic/ppsh // Dont Use in GunCargo
-	name = "\improper SPG-Q-76"
+	name = "\improper SSG-41"
 	desc = "A reproduction of a simple Soviet SMG chambered in 7.62x25 Tokarev rounds. Its heavy wooden stock and leather breech buffer help absorb the bolt’s heavy recoil, making it great for spraying and praying. Uraaaa!"
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_guns40x32.dmi'
 	icon_state = "ppsh"
@@ -28,7 +28,7 @@
 	AddComponent(/datum/component/automatic_fire, fire_delay)
 
 /obj/item/ammo_box/magazine/ppsh
-	name = "SPG-Q-79 magazine (7.62x25mm)"
+	name = "SSG-56 magazine (7.62x25mm)"
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_items.dmi'
 	icon_state = "ppsh"
 	ammo_type = /obj/item/ammo_casing/realistic/a762x25
@@ -37,7 +37,7 @@
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/gun/ballistic/automatic/ppsh/modern
-	name = "\improper SPG-Q-79"
+	name = "\improper SSG-56"
 	desc = "The old rifle of the Old Empire. It was used during the Civil War. The blueprints were transferred to InteQ mercenaries, and they began to use this weapons as a cheap replacement for new products."
 	icon_state = "ppsh_modern"
 	worn_icon_state = "ppsh"

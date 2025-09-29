@@ -21,7 +21,7 @@
 
 /obj/projectile/bullet/a4570
 	name = ".45-70 bullet"
-	damage = 45 //crits in 3-4 taps depending on armor
+	damage = 30
 	speed = BULLET_SPEED_REVOLVER
 
 /obj/projectile/bullet/a4570/match
@@ -36,7 +36,7 @@
 
 /obj/projectile/bullet/a4570/hp
 	name = ".45-70 hollow point bullet"
-	damage = 55
+	damage = 45
 	armour_penetration = -10
 
 /obj/projectile/bullet/a4570/explosive //for extra oof

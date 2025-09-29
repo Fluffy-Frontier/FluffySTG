@@ -38,7 +38,7 @@
 		span_danger("[src] devours [L]!"),
 		span_userdanger("You feast on [L], restoring your health!"))
 	adjustBruteLoss(-(maxHealth/2))
-	L.gib(DROP_BRAIN)
+	L.gib(DROP_ALL_REMAINS)
 	return TRUE
 
 /mob/living/simple_animal/hostile/ordeal/indigo_dawn/invis

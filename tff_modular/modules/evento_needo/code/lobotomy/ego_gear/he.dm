@@ -14,14 +14,14 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	name = "grinder MK4"
 	desc = "A sleek coat covered with bloodstains of an unknown origin."
 	icon_state = "grinder"
-	new_armor = list(BURN = 40, BRAIN = -10, BRUTE = 20, TOX = 20) // 70
+	new_armor = list(BURN = 50, BRAIN = 20, BRUTE = 30, TOX = 30) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/harvest
 	name = "harvest"
 	desc = "The last legacy of the man who sought wisdom. The rake tilled the human brain instead of farmland."
 	icon_state = "harvest"
-	new_armor = list(BURN = 50, BRAIN = 20, BRUTE = -20, TOX = 20) // 70
+	new_armor = list(BURN = 60, BRAIN = 30, BRUTE = 30, TOX = 30) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/fury
@@ -29,7 +29,7 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	desc = "And all she saw was red."
 	icon_state = "fury"
 	//all in on red, minor negatives on all else
-	new_armor = list(BURN = 70, BRAIN = -20, BRUTE = -20, TOX = -20) // 10
+	new_armor = list(BURN = 70, BRAIN = 30, BRUTE = 30, TOX = 30) // 10
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/lutemis
@@ -37,14 +37,14 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	desc = "Let's all dangle down."
 	icon_state = "lutemis"
 	//White armor, weak to red. Red is pretty valuable.
-	new_armor = list(BURN = -20, BRAIN = 60, BRUTE = 20, TOX = 20) // 80, Special armor.
+	new_armor = list(BURN = 30, BRAIN = 75, BRUTE = 30, TOX = 30) // 80, Special armor.
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/paw
 	name = "bear paw"
 	desc = "The equipment is made of a material that may have been fluffy once, but now it just looks shabby."
 	icon_state = "bear_paw"
-	new_armor = list(BURN = 30, BRAIN = 20, BRUTE = 0, TOX = 20) // 70
+	new_armor = list(BURN = 40, BRAIN = 30, BRUTE = 0, TOX = 30) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/wings
@@ -53,7 +53,7 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	I’d be lying in my grave."
 	icon_state = "wings"
 	//Just Kinda meh. A lot of WAWs do black at the time of writing so
-	new_armor = list(BURN = 20, BRAIN = 50, BRUTE = -20, TOX = 20) // 70
+	new_armor = list(BURN = 30, BRAIN = 60, BRUTE = 30, TOX = 30) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/remorse
@@ -61,7 +61,7 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	desc = "While the armor serves to protect the users mind from the influence of others, they can never seem to quiet their own thoughts."
 	icon_state = "remorse"
 	//Resistant to White and Pale but weaker to the physical aspects.
-	new_armor = list(BURN = -10, BRAIN = 50, BRUTE = 10, TOX = 20) // 70
+	new_armor = list(BURN = 20, BRAIN = 60, BRUTE = 20, TOX = 30) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/magicbullet
@@ -70,14 +70,14 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	icon_state = "magic_bullet"
 	// Magic Bullet has WAW-tier requirements and goes with a WAW-tier gun, but is not quite WAW-tier itself. Still, valuable if you're a well-rounded agent doing well-rounded work. - NB
 	// I kept it well-rounded, and lowered the requirements, It's now LIKE a waw with it's good, well-rounded defenses, but it was generally lowered. - Kitsunemitsu/Kirie
-	new_armor = list(BURN = 20, BRAIN = 20, BRUTE = 20, TOX = 20) // 80
+	new_armor = list(BURN = 30, BRAIN = 30, BRUTE = 30, TOX = 30) // 80
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/christmas
 	name = "christmas"
 	desc = "When the rusty sleigh bells are ajingle, Christmas begins."
 	icon_state = "christmas"
-	new_armor = list(BURN = -10, BRAIN = 40, BRUTE = 20, TOX = 20, FIRE = -20) // 70
+	new_armor = list(BURN = 20, BRAIN = 50, BRUTE = 30, TOX = 30, FIRE = 30) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/logging
@@ -85,7 +85,7 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	desc = "Despite it's sturdy construction, the wearer always feel hollow inside."
 	icon_state = "logging"
 	flags_inv = HIDESHOES
-	new_armor = list(BURN = 40, BRAIN = -20, BRUTE = 30, TOX = 20) // 70
+	new_armor = list(BURN = 50, BRAIN = 30, BRUTE = 40, TOX = 30) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/prank
@@ -93,14 +93,14 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	desc = "The little kid who couldn't leave her friends behind came up with a brilliant idea."
 	icon_state = "prank"
 	flags_inv = HIDESHOES
-	new_armor = list(BURN = 30, BRAIN = -20, BRUTE = 40, TOX = 20) // 70
+	new_armor = list(BURN = 40, BRAIN = 30, BRUTE = 50, TOX = 30) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/harmony
 	name = "harmony"
 	desc = "Oh, the sound is so beautiful."
 	icon_state = "harmony"
-	new_armor = list(BURN = 30, BRAIN = 30, BRUTE = 0, TOX = 10)
+	new_armor = list(BURN = 40, BRAIN = 40, BRUTE = 0, TOX = 20)
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/syrinx
@@ -108,21 +108,21 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	desc = "The mouth is for intimidation, and should not move"
 	icon_state = "syrinx"
 	flags_inv = HIDESHOES
-	new_armor = list(BURN = 0, BRAIN = 40, BRUTE = 20, TOX = 10)
+	new_armor = list(BURN = 0, BRAIN = 50, BRUTE = 30, TOX = 20)
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/frostsplinter
 	name = "frost splinter"
 	desc = "Surprisingly cold to the touch."
 	icon_state = "frost_splinter"
-	new_armor = list(BURN = -10, BRAIN = 30, BRUTE = 0, TOX = 50, FIRE = -20)
+	new_armor = list(BURN = 20, BRAIN = 40, BRUTE = 0, TOX = 60, FIRE = 30)
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/sanguine
 	name = "sanguine desire"
 	desc = "Smells funny, and is surprisingly heavy."
 	icon_state = "sanguine"
-	new_armor = list(BURN = 50, BRAIN = -10, BRUTE = 30, TOX = 0)
+	new_armor = list(BURN = 60, BRAIN = 20, BRUTE = 40, TOX = 0)
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/solemnlament
@@ -131,7 +131,7 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	Only a solemn mind is required to express condolences; there is no need for showy accessories."
 	icon_state ="solemnlament"
 	//The design philosophy was to be as faithful to the concept of Funeral of the Dead Butterflies as possible, but conversely be in line with the stat line with every other HE suit without having VAV tier resists.
-	new_armor = list (BURN = -30, BRAIN = 50, BRUTE = 50, TOX = 0) //70
+	new_armor = list (BURN = 40, BRAIN = 60, BRUTE = 60, TOX = 0) //70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/courage
@@ -139,14 +139,14 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	desc = "Their weapons did not hurt me, but when I looked back and you were not there; It felt as if I was on the verge of death."
 	icon_state = "courage"
 	//because SC is essentially physically immortal but a coward, he has good physical resistances and god awful "sanity" resistances
-	new_armor = list (BURN = 40, BRAIN = -20, BRUTE = 0, TOX = 50) //70
+	new_armor = list (BURN = 50, BRAIN = 30, BRUTE = 0, TOX = 60) //70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/brick
 	name = "yellow brick"
 	desc = "The heavy dress weighs you down, smacking against your knees."
 	icon_state = "brick"
-	new_armor = list(BURN = 30, BRAIN = 50, BRUTE = -20, TOX = 10)
+	new_armor = list(BURN = 40, BRAIN = 60, BRUTE = 30, TOX = 20)
 
 
 
@@ -154,14 +154,14 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	name = "pleasure"
 	desc = "Dying happy was my only wish, and you granted it. What more could I ask for?"
 	icon_state = "pleasure"
-	new_armor = list(BURN = -30, BRAIN = 40, BRUTE = 40, TOX = 20) //70
+	new_armor = list(BURN = 40, BRAIN = 50, BRUTE = 50, TOX = 30) //70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/galaxy
 	name = "galaxy"
 	desc = "The pebble dropped into your hand sparkles, sways, tickles, and eventually becomes the universe. "
 	icon_state = "galaxy"
-	new_armor = list(BURN = 0, BRAIN = 20, BRUTE = 40, TOX = 10)
+	new_armor = list(BURN = 0, BRAIN = 30, BRUTE = 50, TOX = 20)
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/unrequited
@@ -169,63 +169,63 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	desc = "You said that you loved them. It made no sense, why not me? I'm the one who was here for you all this time.\
 	I earned this, loving me back is the least you could've done."
 	icon_state = "unrequited"
-	new_armor = list(BURN = -20, BRAIN = 50, BRUTE = 30, TOX = 10)
+	new_armor = list(BURN = 30, BRAIN = 60, BRUTE = 40, TOX = 20)
 		//Fuck
 
 /obj/item/clothing/suit/armor/ego_gear/he/alley
 	name = "alleyway"
 	desc = "Sometimes in the dead of night, you catch a glimpse of someone watching."
 	icon_state = "alleyway"
-	new_armor = list(BURN = 20, BRAIN = -10, BRUTE = 40, TOX = 20)
+	new_armor = list(BURN = 30, BRAIN = 20, BRUTE = 50, TOX = 30)
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/gaze
 	name = "gaze"
 	desc = "As long as this is equipped, ambush won't be a concern."
 	icon_state = "gaze"
-	new_armor = list(BURN = 20, BRAIN = 30, BRUTE = 20, TOX = 0)
+	new_armor = list(BURN = 30, BRAIN = 40, BRUTE = 30, TOX = 0)
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/transmission
 	name = "broken transmission"
 	desc = "A snazzy military officer uniform, tattered with age"
 	icon_state = "transmission"
-	new_armor = list(BURN = 30, BRAIN = 20, BRUTE = 20, TOX = 0)
+	new_armor = list(BURN = 40, BRAIN = 30, BRUTE = 30, TOX = 0)
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/metal
 	name = "bare metal"
 	desc = "the coat itself is made from metal sheets"
 	icon_state = "metal"
-	new_armor = list(BURN = 50, BRAIN = 10, BRUTE = 10, TOX = 0)
+	new_armor = list(BURN = 60, BRAIN = 20, BRUTE = 20, TOX = 0)
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/homing_instinct
 	name = "homing instinct"
 	desc = "A suit that reminds you of home."
 	icon_state = "homing_instinct"
-	new_armor = list(BURN = -20, BRAIN = 30, BRUTE = 50, TOX = 10)
+	new_armor = list(BURN = 30, BRAIN = 40, BRUTE = 60, TOX = 20)
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/maneater
 	name = "man eater"
 	desc = "Here comes our beloved mascot!"
 	icon_state = "maneater"
-	new_armor = list(BURN = 30, BRAIN = 20, BRUTE = 30, TOX = -10) // 70
+	new_armor = list(BURN = 40, BRAIN = 30, BRUTE = 40, TOX = 20) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/inheritance
 	name = "inheritance"
 	desc = "Have I told you the story of a humble farmer's son who I made a king?"
 	icon_state = "inheritance"
-	new_armor = list(BURN = 40, BRAIN = 30, BRUTE = 10, TOX = -10) // 70
+	new_armor = list(BURN = 50, BRAIN = 40, BRUTE = 20, TOX = 20) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/song
 	name = "song of the past"
 	desc = "You feel a sense of déjà vu when looking at this suit jacket."
 	icon_state = "song"
-	new_armor = list(BURN = -30, BRAIN = 40, BRUTE = 30, TOX = 30) // 70
+	new_armor = list(BURN = 40, BRAIN = 50, BRUTE = 40, TOX = 40) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/legerdemain
@@ -234,14 +234,14 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	icon_state = "legerdemain"
 	flags_inv = NONE
 	//Forbidden fruit of knowledge allegory = wisdom; decent white resistance. Regeneration and healing-focused so weak to pale.
-	new_armor = list(BURN = 30, BRAIN = 40, BRUTE = 20, TOX = -20) // 70
+	new_armor = list(BURN = 40, BRAIN = 50, BRUTE = 30, TOX = 30) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/get_strong
 	name = "Get Strong"
 	desc = "It crunches your insides as you move... Do you love the City you live in?"
 	icon_state = "become_strong"
-	new_armor = list(BURN = 50, BRAIN = -20, BRUTE = 10, TOX = 30) // 70
+	new_armor = list(BURN = 60, BRAIN = 30, BRUTE = 20, TOX = 40) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/get_strong/Initialize()
@@ -253,42 +253,42 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	desc = "Even still, I witnessed man and sky and earth tear into thousands of pieces."
 	icon_state = "impending_day"
 	flags_inv = NONE
-	new_armor = list(BURN = 20, BRAIN = -20, BRUTE = 50, TOX = 20, FIRE = 40) // 70
+	new_armor = list(BURN = 30, BRAIN = 30, BRUTE = 60, TOX = 30, FIRE = 50) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/fluid_sac
 	name = "fluid sac"
 	desc = "Its contents are an enigma; it bears resemblance to a flower, or the central nervous system of a human."
 	icon_state = "fluid_sac"
-	new_armor = list(BURN = -10, BRAIN = 30, BRUTE = 50, TOX = 0) // 70
+	new_armor = list(BURN = 20, BRAIN = 40, BRUTE = 60, TOX = 0) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/window
 	name = "window to the world"
 	desc = "What you see is but a fragment of what there is."
 	icon_state = "window"
-	new_armor = list(BURN = -10, BRAIN = 30, BRUTE = 50, TOX = 0) // 70
+	new_armor = list(BURN = 20, BRAIN = 40, BRUTE = 60, TOX = 0) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/jackrabbit
 	name = "jackrabbit"
 	desc = "A lone rabbit hops down a snowy path in a forest it's black antlers matching the dead trees around it."
 	icon_state = "jackrabbit"
-	new_armor = list(BURN = 20, BRAIN = 0, BRUTE = 50, TOX = 0) // 70
+	new_armor = list(BURN = 30, BRAIN = 0, BRUTE = 60, TOX = 0) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/replica
 	name = "replica"
 	desc = "This coat is covered in glowing sensors. It appears to be incomplete, with exposed sinews underneath the plating."
 	icon_state = "replica"
-	new_armor = list(BURN = 20, BRAIN = 20, BRUTE = 30, TOX = 0) // 70
+	new_armor = list(BURN = 30, BRAIN = 30, BRUTE = 40, TOX = 0) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/warp
 	name = "dimension shredder"
 	desc = "I thought WARP trains were supposed to arrive in just ten seconds?"
 	icon_state = "warp"
-	new_armor = list(BURN = 40, BRAIN = 0, BRUTE = 30, TOX = 0) // 70
+	new_armor = list(BURN = 50, BRAIN = 0, BRUTE = 40, TOX = 0) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/grasp
@@ -296,14 +296,14 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	desc = "I'm sorry to ask this but... Can you take me to that room again, please?"
 	icon_state = "grasp"
 	flags_inv = NONE
-	new_armor = list (BURN = -20, BRAIN = 20, BRUTE = 20, TOX = 50) //70
+	new_armor = list (BURN = 30, BRAIN = 30, BRUTE = 30, TOX = 60) //70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/marionette
 	name = "marionette"
 	desc = "There was no choice, I had to lie to become a human..."
 	icon_state = "marionette"
-	new_armor = list (BURN = -20, BRAIN = 50, BRUTE = 30, TOX = 10) //70
+	new_armor = list (BURN = 30, BRAIN = 60, BRUTE = 40, TOX = 20) //70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/roseate
@@ -311,7 +311,7 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	desc = "I'll carry you wherever you wish to go."
 	icon_state = "roseate_desire"
 	flags_inv = NONE
-	new_armor = list(BURN = 0, BRAIN = 40, BRUTE = 30, TOX = 0) // 70
+	new_armor = list(BURN = 0, BRAIN = 50, BRUTE = 40, TOX = 0) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/aedd
@@ -319,7 +319,7 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	desc = "Apply stimulation and pain to the centipede to increase the discharge intensity."
 	icon_state = "aedd"
 	flags_inv = NONE//it's just a coat
-	new_armor = list(BURN = 30, BRAIN = 10, BRUTE = 30, TOX = 0) // 70
+	new_armor = list(BURN = 40, BRAIN = 20, BRUTE = 40, TOX = 0) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/split
@@ -327,77 +327,77 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	desc = "It took the form of an adorable mascot that looked like a cute fox. In fact, it's actually a cat, not a fox... Anyways, that thing is a monster."
 	icon_state = "split"
 	flags_inv = NONE//it's just a coat
-	new_armor = list(BURN = 30, BRAIN = 30, BRUTE = 20, TOX = -10) // 70
+	new_armor = list(BURN = 40, BRAIN = 40, BRUTE = 30, TOX = 20) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/lifestew
 	name = "lifetime stew"
 	desc = "A soup fit for a king - and all from a few stones. It seemed like magic!"
 	icon_state = "lifestew"
-	new_armor = list(BURN = 20, BRAIN = -20, BRUTE = 60, TOX = -20, FIRE = 40) // 40
+	new_armor = list(BURN = 30, BRAIN = 30, BRUTE = 75, TOX = 30, FIRE = 50) // 40
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/coiling
 	name = "coiling"
 	desc = "It's beautiful snake leather."
 	icon_state = "coiling"
-	new_armor = list(BURN = 10, BRAIN = -10, BRUTE = 50, TOX = 20) // 70
+	new_armor = list(BURN = 20, BRAIN = 20, BRUTE = 60, TOX = 30) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/morii
 	name = "morii"
 	desc = "Those who wear this cloth are trapped wishing to return to a time that is lost to them."
 	icon_state = "morii"
-	new_armor = list(BURN = 0, BRAIN = 10, BRUTE = 30, TOX = 30) // 70
+	new_armor = list(BURN = 0, BRAIN = 20, BRUTE = 40, TOX = 40) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/voodoo
 	name = "voodoo doll"
 	desc = "You look like a little doll."
 	icon_state = "voodoo"
-	new_armor = list(BURN = 30, BRAIN = 30, BRUTE = -10, TOX = 20) // 70
+	new_armor = list(BURN = 40, BRAIN = 40, BRUTE = 20, TOX = 30) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/uturn
 	name = "u-turn"
 	desc = "It's simple black, just like all the roads out there."
 	icon_state = "uturn"
-	new_armor = list(BURN = 40, BRAIN = 10, BRUTE = 0, TOX = 20) // 70
+	new_armor = list(BURN = 50, BRAIN = 20, BRUTE = 0, TOX = 30) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/nixie
 	name = "nixie divergence"
 	desc = "A purposeless machine is bound to lose the meaning of its existence, even if it is functional."
 	icon_state = "nixie"
-	new_armor = list(BURN = 40, BRAIN = 20, BRUTE = -20, TOX = 30) // 70
+	new_armor = list(BURN = 50, BRAIN = 30, BRUTE = 30, TOX = 40) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/sunshower
 	name = "sunshower"
 	desc = "Luck follows the truly kind, may it protect those who are worthy."
 	icon_state = "sunshower"
-	new_armor = list(BURN = 30, BRAIN = 20, BRUTE = 40, TOX = -20) // 70
+	new_armor = list(BURN = 40, BRAIN = 30, BRUTE = 50, TOX = 30) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/ardor_star
 	name = "ardor blossom star"
 	desc = "A dress with a bright orange jacket. Warm to the touch."
 	icon_state = "ardor_blossom"
-	new_armor = list(BURN = 50, BRAIN = 0, BRUTE = 10, TOX = 10, FIRE = 40) // 70
+	new_armor = list(BURN = 60, BRAIN = 0, BRUTE = 20, TOX = 20, FIRE = 50) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/telepole
 	name = "telepole"
 	desc = "Alright, I'll sear you down to your guts!"
 	icon_state = "telepole"
-	new_armor = list(BURN = 30, BRAIN = -10, BRUTE = 40, TOX = 10) // 70
+	new_armor = list(BURN = 40, BRAIN = 20, BRUTE = 50, TOX = 20) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/hexnail
 	name = "hex nail"
 	desc = "A fluffy armored coat, which would probably be pretty comfortable if not for the nails poking into it..."
 	icon_state = "hex_nail"
-	new_armor = list(BURN = 0, BRAIN = 20, BRUTE = 30, TOX = 20) // 70
+	new_armor = list(BURN = 0, BRAIN = 30, BRUTE = 40, TOX = 30) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/he/fellbullet
@@ -405,7 +405,7 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	desc = "During a gory war, the devil approached a man with a deal. A shotgun that would blast anyone into fireworks, as if fired at point blank. However, the last shell would land on his beloved."
 	icon_state = "fell_bullet"
 	//no special ability here.
-	new_armor = list(BURN = 40, BRAIN = -10, BRUTE = 20, TOX = 20) // 70
+	new_armor = list(BURN = 50, BRAIN = 20, BRUTE = 30, TOX = 30) // 70
 
 
 
@@ -413,5 +413,5 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	name = "squeaky toy"
 	desc = "A set of armor that appears to be made of rubber; turning."
 	icon_state = "squeak"
-	new_armor = list(BURN = -20, BRAIN = 50, BRUTE = 20, TOX = 20) // 70
+	new_armor = list(BURN = 30, BRAIN = 60, BRUTE = 30, TOX = 30) // 70
 

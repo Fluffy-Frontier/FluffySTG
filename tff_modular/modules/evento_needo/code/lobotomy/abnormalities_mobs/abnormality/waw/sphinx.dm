@@ -413,5 +413,5 @@
 		new /obj/effect/temp_visual/smash_effect(T)
 		for(var/mob/living/L in caster.HurtInTurf(T, list(), damage, BRUTE, null, TRUE, FALSE, TRUE, hurt_hidden = TRUE, hurt_structure = TRUE))
 			if(L.health < 0)
-				L.gib(DROP_BRAIN)
+				L.gib(DROP_ALL_REMAINS)
 	qdel(src)

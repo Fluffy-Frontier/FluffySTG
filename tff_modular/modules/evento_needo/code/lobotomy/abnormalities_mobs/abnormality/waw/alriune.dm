@@ -92,7 +92,8 @@
 
 /mob/living/simple_animal/hostile/abnormality/alriune/proc/TeleportAway()
 	var/list/potential_turfs = list()
-	for(var/turf/T in GLOB.generic_event_spawns)
+	for(var/GES in GLOB.generic_event_spawns)
+		var/turf/T = get_turf(GES)
 		if(get_dist(src, T) < 7)
 			continue
 		potential_turfs += T

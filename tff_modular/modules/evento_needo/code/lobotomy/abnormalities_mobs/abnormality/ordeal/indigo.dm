@@ -86,7 +86,7 @@
 		span_danger("[src] devours [L]!"),
 		span_userdanger("You feast on [L], restoring your health!"))
 	adjustBruteLoss(-(maxHealth/2))
-	L.gib(DROP_BRAIN)
+	L.gib(DROP_ALL_REMAINS)
 	return TRUE
 
 
@@ -240,7 +240,7 @@
 		span_danger("[src] devours [L]!"),
 		span_userdanger("You feast on [L], restoring your health!"))
 	adjustBruteLoss(-(maxHealth*0.3))
-	L.gib(DROP_BRAIN)
+	L.gib(DROP_ALL_REMAINS)
 	//Increase the Vore counter by 1
 	belly += 1
 	pulse_damage += 2

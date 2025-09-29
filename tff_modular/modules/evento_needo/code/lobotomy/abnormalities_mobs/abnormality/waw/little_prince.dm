@@ -85,7 +85,7 @@
 	var/turf/T = get_turf(user)
 	user.visible_message(span_danger("Mushrooms rapidly grow all over [user]'s body, forming a giant mass!"))
 	user.emote("scream")
-	user.gib(DROP_BRAIN)
+	user.gib(DROP_ALL_REMAINS)
 	var /mob/living/simple_animal/hostile/little_prince_1/S = new(T)
 	RegisterSignal(S, COMSIG_LIVING_DEATH, PROC_REF(PrinceDeath))
 	return

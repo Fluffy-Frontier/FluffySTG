@@ -100,7 +100,7 @@
 			MAIL.throw_at(user, 4, 1, src, spin = FALSE, gentle = TRUE, quickstart = FALSE)
 			letterssave += MAIL
 			sleep(1 SECONDS)
-		user.gib(DROP_BRAIN)
+		user.gib(DROP_ALL_REMAINS)
 		sleep(5 SECONDS)
 		for(var/obj/item/mailpaper/MAIL in letterssave)
 			qdel(MAIL)

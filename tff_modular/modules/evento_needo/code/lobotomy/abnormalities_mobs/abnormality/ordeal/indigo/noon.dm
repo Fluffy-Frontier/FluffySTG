@@ -47,7 +47,7 @@
 	else
 		adjustBruteLoss(-(maxHealth/2))
 		GainPersistence(1)
-	L.gib(DROP_BRAIN)
+	L.gib(DROP_ALL_REMAINS)
 
 	return TRUE
 

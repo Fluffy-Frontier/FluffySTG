@@ -55,12 +55,12 @@
 		var/location = get_turf(user)
 		new /obj/item/clothing/suit/armor/ego_gear/he/lutemis(location)
 	if(user?.stat != DEAD) //dusting sets you dead before the animation, we don't want to dust user twice after failing work
-		user.gib(DROP_BRAIN)
+		user.gib(DROP_ALL_REMAINS)
 
 /mob/living/simple_animal/hostile/abnormality/dingledangle/FailureEffect(mob/living/carbon/human/user)
 	if(prob(50))
 		//Yeah dust them too. No ego this time tho
-		user.gib(DROP_BRAIN)
+		user.gib(DROP_ALL_REMAINS)
 
 /atom/movable/screen/alert/status_effect/dangle
 	name = "That Woozy Feeling"

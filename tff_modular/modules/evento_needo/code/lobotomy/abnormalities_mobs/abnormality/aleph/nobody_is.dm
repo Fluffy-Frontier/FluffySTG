@@ -470,9 +470,9 @@
 				if(ishuman(L))
 					var/mob/living/carbon/H = L
 					if(!Finisher(H))
-						H.gib(DROP_BRAIN)
+						H.gib(DROP_ALL_REMAINS)
 				else
-					L.gib(DROP_BRAIN)
+					L.gib(DROP_ALL_REMAINS)
 			else if(!grab_victim)
 				for(var/mob/living/carbon/human/H in T.contents)
 					if(faction_check_atom(H, FALSE) || H.z != z)
@@ -517,7 +517,7 @@
 		return
 	if(grab_victim.health < 0)
 		if(!Finisher(grab_victim))
-			grab_victim.gib(DROP_BRAIN)
+			grab_victim.gib(DROP_ALL_REMAINS)
 		ReleaseGrab()
 		return
 	grab_victim.apply_damage(strangle_damage, BRUTE)
@@ -672,7 +672,7 @@
 	SLEEP_CHECK_DEATH(2, src)
 	if(target)
 		LoseTarget(target)
-	M.gib(DROP_BRAIN)
+	M.gib(DROP_ALL_REMAINS)
 	attack_verb_continuous = "strikes"
 	attack_verb_simple = "strike"
 	attack_sound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/nothingthere/attack.ogg'

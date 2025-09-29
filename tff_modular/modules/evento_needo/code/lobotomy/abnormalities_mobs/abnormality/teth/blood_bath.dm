@@ -48,7 +48,7 @@
 		sleep(0.5 SECONDS)
 		if(QDELETED(user))
 			return
-		user.gib(DROP_BRAIN)
+		user.gib(DROP_ALL_REMAINS)
 		visible_message(span_warning("[src] drags [user] into itself!"))
 		playsound(get_turf(src),'sound/effects/wounds/blood2.ogg')
 		playsound(get_turf(src),'sound/effects/footstep/water1.ogg')

@@ -186,7 +186,7 @@
 			new /obj/effect/temp_visual/cleave(get_turf(L))
 			playsound(L, "tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/dreamingcurrent/bite.ogg", 50, TRUE)
 			if(L.health < 0)
-				L.gib(DROP_BRAIN)
+				L.gib(DROP_ALL_REMAINS)
 
 /mob/living/simple_animal/hostile/abnormality/dreaming_current/PostWorkEffect(mob/living/carbon/human/user)
 	if(user.sanity_lost)

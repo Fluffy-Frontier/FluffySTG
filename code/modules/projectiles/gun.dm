@@ -104,10 +104,6 @@
 	var/wield_slowdown = 0.1
 	///slowdown for aiming whilst wielding
 	var/aimed_wield_slowdown = 0.1
-	///How long between wielding and firing in tenths of seconds
-	var/wield_delay	= 0.4 SECONDS
-	///Storing value for above
-	var/wield_time = 0
 	/// Reference to the offhand created for the item
 	var/obj/item/offhand/offhand_item = null
 
@@ -196,7 +192,9 @@
 	var/list/default_attachments = list()
 
 	///The types of attachments allowed, a list of types. SUBTYPES OF AN ALLOWED TYPE ARE ALSO ALLOWED.
-	var/list/valid_attachments = list()
+	var/list/valid_attachments = list(
+		/obj/item/attachment/ammo_counter,
+	)
 	///The types of attachments that are unique to this gun. Adds it to the base valid_attachments list. So if this gun takes a special stock, add it here.
 	var/list/unique_attachments = list()
 	///The types of attachments that aren't allowed. Removes it from the base valid_attachments list.
@@ -213,7 +211,8 @@
 	///Firemode index, due to code shit this is the currently selected firemode
 	var/firemode_index
 	/// Our firemodes, subtract and add to this list as needed. NOTE that the autofire component is given on init when FIREMODE_FULLAUTO is here.
-	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER, FIREMODE_OTHER_TWO)
+	//full list: FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER, FIREMODE_OTHER_TWO
+	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO)
 	/// A acoc list that determines the names of firemodes. Use if you wanna be weird and set the name of say, FIREMODE_OTHER to "Underbarrel grenade launcher" for example.
 	var/list/gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto", FIREMODE_OTHER = "misc. fire", FIREMODE_OTHER_TWO = "very misc. fire", FIREMODE_UNDERBARREL = "underbarrel weapon")
 	///BASICALLY: the little button you select firing modes from? this is jsut the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
@@ -230,7 +229,7 @@
  *  Zooming
 */
 	///Whether the gun generates a Zoom action on creation
-	var/zoomable = TRUE
+	var/zoomable = FALSE
 	//Zoom toggle
 	var/zoomed = FALSE
 	///Distance in TURFs to move the user's screen forward (the "zoom" effect)
@@ -261,6 +260,7 @@
 			if(refused_attachments.Find(to_remove))
 				attachment_list -= to_remove
 
+	build_firemodes()
 	AddComponent(/datum/component/attachment_holder, slot_available, attachment_list, slot_offsets, default_attachments)
 
 	add_seclight_point()
@@ -309,6 +309,10 @@
 	user.put_in_inactive_hand(offhand_item)
 
 /obj/item/gun/proc/do_wield(mob/user)
+	var/obj/item/bodypart/other_hand = user.has_hand_for_held_index(user.get_inactive_hand_index()) //returns non-disabled inactive hands
+	if((user.get_inactive_held_item() || !other_hand) && !istype(user.get_inactive_held_item(), offhand_item))
+		balloon_alert(user, "you need both hands!")
+		return FALSE
 	if(!wielded)
 		on_wield(src, user)
 	else
@@ -327,15 +331,6 @@
 
 /obj/item/gun/proc/is_wielded()
 	return wielded
-
-/obj/item/gun/proc/simulate_recoil(mob/living/user, recoil_bonus = 0, firing_angle)
-	var/total_recoil = clamp(recoil_bonus, min_recoil , INFINITY)
-	var/actual_angle = firing_angle + rand(-recoil_deviation, recoil_deviation) + 180
-	if(actual_angle > 360)
-		actual_angle -= 360
-	if(total_recoil > 0)
-		recoil_camera(user, total_recoil + 1, (total_recoil * recoil_backtime_multiplier)+1, total_recoil, actual_angle)
-		return TRUE
 
 /// Handles adding [the seclite mount component][/datum/component/seclite_attachable] to the gun.
 /// If the gun shouldn't have a seclight mount, override this with a return.
@@ -434,8 +429,7 @@
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, atom/pbtarget = null, message = TRUE)
 	if(recoil && !tk_firing(user))
-		var/actual_angle = get_angle_with_scatter((user || get_turf(src)), pbtarget, rand(-recoil_deviation, recoil_deviation) + 180)
-		simulate_recoil(user, wielded_fully ? recoil : recoil_unwielded, actual_angle)
+		shake_camera(user, recoil + 1, wielded_fully ? recoil : recoil_unwielded)
 	fire_sounds()
 	if(suppressed || !message)
 		return FALSE
@@ -609,8 +603,7 @@
 	if(check_botched(user, target))
 		return
 
-	var/obj/item/bodypart/other_hand = user.has_hand_for_held_index(user.get_inactive_hand_index()) //returns non-disabled inactive hands
-	if(weapon_weight == WEAPON_HEAVY && ((user.get_inactive_held_item() || !other_hand) && !istype(user.get_inactive_held_item(), /obj/item/offhand)))
+	if(weapon_weight == WEAPON_HEAVY  && !istype(user.get_inactive_held_item(), /obj/item/offhand))
 		balloon_alert(user, "use both hands!")
 		return
 	//DUAL (or more!) WIELDING
@@ -618,9 +611,12 @@
 	var/loop_counter = 0
 	if(user.combat_mode && !HAS_TRAIT(user, TRAIT_NO_GUN_AKIMBO))
 		for(var/obj/item/gun/gun in user.held_items)
-			if(gun == src || gun.weapon_weight >= WEAPON_MEDIUM)
+			if(gun == src || gun.weapon_weight > weapon_weight)
 				continue
 			else if(gun.can_trigger_gun(user, akimbo_usage = TRUE))
+				if(gun.weapon_weight >= WEAPON_MEDIUM)
+					user.adjustStaminaLoss(15 * gun.weapon_weight) //НЕДОЛГО ПЕСЕНКА ИГРАЛА
+					bonus_spread += 20
 				bonus_spread += dual_wield_spread
 				loop_counter++
 				addtimer(CALLBACK(gun, TYPE_PROC_REF(/obj/item/gun, process_fire), target, user, TRUE, params, null, bonus_spread), loop_counter)
@@ -739,7 +735,7 @@
 		modified_burst_delay = ROUND_UP(burst_delay * 0.5)
 		modified_fire_delay = ROUND_UP(fire_delay * 0.5)
 
-	if(burst_size > 1)
+	if(burst_size > 1 && gun_firemodes[firemode_index] == FIREMODE_BURST)
 		firing_burst = TRUE
 		fire_cd = TRUE
 		for(var/i = 1 to burst_size)
@@ -896,6 +892,8 @@
 		if(!GetComponent(/datum/component/automatic_fire))
 			AddComponent(/datum/component/automatic_fire, fire_delay)
 		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
+	if(burst_size > 1 && !(FIREMODE_BURST in gun_firemodes))
+		LAZYADD(gun_firemodes, FIREMODE_BURST)
 	for(var/datum/action/item_action/toggle_firemode/old_firemode in actions)
 		old_firemode.Destroy()
 	var/datum/action/item_action/our_action
@@ -1000,6 +998,7 @@
 		SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AUTOFIRE)
 	else
 		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
+
 //wawa
 	to_chat(user, span_notice("Switched to [gun_firenames[current_firemode]]."))
 	playsound(user, 'tff_modular/modules/evento_needo/sounds/general/selector.ogg', 100, TRUE)

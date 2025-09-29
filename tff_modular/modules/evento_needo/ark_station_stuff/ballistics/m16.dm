@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/automatic/m16
-	name = "\improper XM-2537 rifle"
+	name = "\improper M-61 rifle"
 	desc = "A cheap variation of the weapon used in the Civil War. Produced by the mercenary military industry InteQ."
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_guns40x32.dmi'
 	icon_state = "m16"
@@ -15,6 +15,7 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 2
+	projectile_damage_multiplier = 0.57
 	fire_sound = 'tff_modular/modules/evento_needo/ark_station_stuff/sound/guns/fire/m16_fire.ogg'
 	fire_sound_volume = 50
 	rack_sound = 'tff_modular/modules/evento_needo/ark_station_stuff/sound/guns/interact/sfrifle_cock.ogg'
@@ -23,8 +24,8 @@
 	eject_sound = 'tff_modular/modules/evento_needo/ark_station_stuff/sound/guns/interact/sfrifle_magout.ogg'
 
 /obj/item/ammo_box/magazine/m16
-	name = "\improper XM-2537 magazine"
-	desc = "A double-stack translucent polymer magazine for use with the XM-2537 rifles. Holds 30 rounds of .277 Aestus."
+	name = "\improper M-61 magazine"
+	desc = "A double-stack translucent polymer magazine for use with the M-61 rifles. Holds 30 rounds of .277 Aestus."
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_items.dmi'
 	icon_state = "m16e"
 	ammo_type = /obj/item/ammo_casing/a223
@@ -42,8 +43,8 @@
 
 /// SOLFED
 /obj/item/gun/ballistic/automatic/m16/modern
-	name = "\improper XM-2537-SF rifle"
-	desc = "A newer version of the standard XM-2537. Shoots faster, has better flatness and reliability, and is fully automatic. The plans from the Old Empire were transferred to the Solar Federation after its collapse."
+	name = "\improper M-61 Solar rifle"
+	desc = "A newer version of the standard M-61. Shoots faster, has better flatness and reliability, and is fully automatic. The plans from the Old Empire were transferred to the Solar Federation after its collapse."
 	icon_state = "m16_modern"
 	inhand_icon_state = "m16"
 	worn_icon_state = "m16"
@@ -61,17 +62,18 @@
 
 /// INTEQ SHORT
 /obj/item/gun/ballistic/automatic/m16/modern/v2
-	name = "\improper XM-2537-SH rifle"
-	desc = "An expertly modified, super-compact XM-2537 rifle designed for operating in tight corridors of ships. You're a mercenary, finish your mission!"
+	name = "\improper M-61A1 rifle"
+	desc = "An expertly modified, super-compact M-61 rifle designed for operating in tight corridors of ships. You're a mercenary, finish your mission!"
 	icon_state = "m16_modern2"
 	inhand_icon_state = "m16"
 	worn_icon_state = "m16"
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m16/patriot
 	fire_delay = 0.5
+	projectile_damage_multiplier = 0.28
 
 /obj/item/ammo_box/magazine/m16/patriot
-	name = "\improper XM-2537-SH drum magazine"
-	desc = "A double-stack solid polymer drum made for use with the XM-2537-SH rifle. Holds 50 rounds of .277 ammo."
+	name = "\improper M-61A1 drum magazine"
+	desc = "A double-stack solid polymer drum made for use with the M-61A1 rifle. Holds 50 rounds of .277 ammo."
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_items.dmi'
 	icon_state = "m16"
 	max_ammo = 50

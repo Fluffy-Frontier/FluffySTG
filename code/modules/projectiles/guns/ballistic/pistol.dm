@@ -182,7 +182,7 @@
 	burst_delay = 1
 	projectile_damage_multiplier = 1.25
 	accepted_magazine_type = /obj/item/ammo_box/magazine/r10mm
-	actions_types = list(/datum/action/item_action/toggle_firemode)
+	//actions_types = list(/datum/action/item_action/toggle_firemode)
 	obj_flags = UNIQUE_RENAME // if you did the sidequest, you get the customization
 
 /obj/item/gun/ballistic/automatic/pistol/aps
@@ -195,7 +195,7 @@
 	burst_size = 3
 	burst_delay = 1
 	spread = 10
-	actions_types = list(/datum/action/item_action/toggle_firemode)
+	//actions_types = list(/datum/action/item_action/toggle_firemode)
 	suppressor_x_offset = 6
 
 /obj/item/gun/ballistic/automatic/pistol/stickman

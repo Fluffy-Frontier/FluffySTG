@@ -478,7 +478,7 @@
 
 /mob/living/simple_animal/hostile/abnormality/seasons/proc/Finisher(mob/living/carbon/human/H) //return TRUE to prevent attacking, as attacking causes runtimes if the target is gibbed.
 	if(current_season == "spring" && H.sanity_lost)
-		H.gib(DROP_BRAIN) //eventually we'll add some sort of effect
+		H.gib(DROP_ALL_REMAINS) //eventually we'll add some sort of effect
 		return TRUE
 	if(H.stat >= HARD_CRIT || H.health < 0)
 		switch(current_season)

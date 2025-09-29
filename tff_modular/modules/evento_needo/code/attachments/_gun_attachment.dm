@@ -6,7 +6,6 @@
 	attach_features_flags = ATTACH_REMOVABLE_HAND
 	pixel_shift_x = 1
 	pixel_shift_y = 4
-	wield_delay = 0.1 SECONDS
 	var/weapon_type = /obj/item/gun/ballistic/shotgun/automatic
 	var/obj/item/gun/attached_gun
 	var/allow_hand_interaction = FALSE

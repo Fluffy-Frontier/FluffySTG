@@ -27,11 +27,6 @@
 		Earlier iterations had some performance issues against layers of armor, \
 		but refinements to the magnetic chamber mitigated previous plasma adherence issues, mitigating that issue."
 
-/obj/item/gun/ballistic/automatic/pistol/plasma_thrower/Initialize(mapload)
-	. = ..()
-
-	AddComponent(/datum/component/automatic_fire, autofire_shot_delay = fire_delay)
-
 /obj/item/gun/ballistic/automatic/pistol/plasma_thrower/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_SZOT)
 

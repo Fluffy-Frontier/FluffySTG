@@ -550,6 +550,6 @@ GLOBAL_LIST_EMPTY(apostles)
 				if(ishuman(L))
 					var/mob/living/carbon/human/H = L
 					if(H.sanity_lost)
-						H.gib(DROP_BRAIN) // lmao
+						H.gib(DROP_ALL_REMAINS) // lmao
 		sleep(2)
 	QDEL_NULL(B)

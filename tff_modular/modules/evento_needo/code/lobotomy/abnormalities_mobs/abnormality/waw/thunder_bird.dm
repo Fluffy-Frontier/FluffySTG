@@ -298,7 +298,7 @@
 		C.desc = "What appears to be [H.real_name], only charred and screaming incoherently..."
 		C.gender = H.gender
 		C.faction = master.faction
-		H.gib(DROP_BRAIN)
+		H.gib(DROP_ALL_REMAINS)
 	can_act = TRUE
 
 //Smaller Scorched Girl bomb
@@ -415,7 +415,7 @@
 		C.desc = "What appears to be [H.real_name], only charred and screaming incoherently..."
 		C.gender = H.gender
 		C.faction = src.faction
-		H.gib(DROP_BRAIN)
+		H.gib(DROP_ALL_REMAINS)
 	can_act = TRUE
 
 //The perch

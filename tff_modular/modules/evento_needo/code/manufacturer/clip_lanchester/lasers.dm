@@ -12,8 +12,6 @@
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
-
-	wield_delay = 0.7 SECONDS
 	wield_slowdown = LASER_SMG_SLOWDOWN
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix, /obj/item/ammo_casing/energy/disabler/hitscan)
 

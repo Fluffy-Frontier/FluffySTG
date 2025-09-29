@@ -255,11 +255,11 @@
 		C.faction = src.faction
 		C.master = src
 		spawned_mobs += C
-		H.gib(DROP_BRAIN)
+		H.gib(DROP_ALL_REMAINS)
 
 /mob/living/simple_animal/hostile/ordeal/thunderbird_corrosion/death(gibbed)
 	for(var/mob/living/A in spawned_mobs)
-		A.gib(DROP_BRAIN)
+		A.gib(DROP_ALL_REMAINS)
 	animate(src, alpha = 0, time = 2 SECONDS)
 	QDEL_IN(src, 2 SECONDS)
 

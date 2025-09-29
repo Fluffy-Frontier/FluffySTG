@@ -51,7 +51,7 @@
 	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/jangsan/tigerbite.ogg', 75, 0)
 	user.apply_damage(200, BRUTE, null)
 	if(user.health < 0 || user.stat == DEAD)
-		user.gib(DROP_BRAIN)
+		user.gib(DROP_ALL_REMAINS)
 	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/drownedsisters/proc/FloodRoom() //Qliphoth Went over max

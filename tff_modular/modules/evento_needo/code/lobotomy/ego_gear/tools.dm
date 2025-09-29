@@ -45,54 +45,54 @@
 	name = "adjustment"
 	desc = "Armor that protects the psyche by dulling intellect. Just beware of the side effects."
 	icon_state = "adjustment"
-	new_armor = list(BURN = -10, BRAIN = 40, BRUTE = -10, TOX = -20) // 20
+	new_armor = list(BURN = 10, BRAIN = 40, BRUTE = 10, TOX = 20) // 20
 
 /obj/item/clothing/suit/armor/ego_gear/tools/philia
 	name = "philia"
 	desc = "A suit that wouldn't be out of place if worn on a stage."
 	icon_state = "philia"
-	new_armor = list(BURN = -30, BRAIN = 30, BRUTE = 20, TOX = 0) // 20
+	new_armor = list(BURN = 30, BRAIN = 30, BRUTE = 20, TOX = 0) // 20
 
 /obj/item/clothing/suit/armor/ego_gear/tools/luminosity
 	name = "luminosity"
 	desc = "Armor that truly shines when born by those in need."
 	icon_state = "luminosity"
-	new_armor = list(BURN = 40, BRAIN = -20, BRUTE = -20, TOX = 0) // 20
+	new_armor = list(BURN = 40, BRAIN = 20, BRUTE = 20, TOX = 0) // 20
 
 //HE
 /obj/item/clothing/suit/armor/ego_gear/tools/swindle
 	name = "swindle"
 	desc = "All-natural snake oil! Cleans the skin, removes pimples, impetigo, and other defects!"
 	icon_state = "swindle"
-	new_armor = list(BURN = 60, BRAIN = -20, BRUTE = -20, TOX = 0) // 20
+	new_armor = list(BURN = 60, BRAIN = 20, BRUTE = 20, TOX = 0) // 20
 
 
 /obj/item/clothing/suit/armor/ego_gear/tools/ringing
 	name = "ringing"
 	desc = "An army coat with buttons reminiscent of a keypad. The echoing voices in your head drown out the threats that stand before you."
 	icon_state = "ringing"
-	new_armor = list(BURN = -30, BRAIN = -20, BRUTE = 60, TOX = 0) // 10
+	new_armor = list(BURN = 30, BRAIN = 20, BRUTE = 60, TOX = 0) // 10
 
 
 /obj/item/clothing/suit/armor/ego_gear/tools/divinity
 	name = "divinity"
 	desc = "The burden of sacrifice is yours alone..."
 	icon_state = "divinity"
-	new_armor = list(BURN = -20, BRAIN = -20, BRUTE = -20, TOX = 70) // 10
+	new_armor = list(BURN = 20, BRAIN = 20, BRUTE = 20, TOX = 70) // 10
 
 
 /obj/item/clothing/suit/armor/ego_gear/tools/destiny
 	name = "destiny"
 	desc = "The role of the Moirai was to ensure that every being, mortal and divine, lived out their destiny as it was assigned to them by the laws of the universe."
 	icon_state = "destiny"
-	new_armor = list(BURN = 40, BRAIN = 30, BRUTE = -20, TOX = 20) // 70
+	new_armor = list(BURN = 40, BRAIN = 30, BRUTE = 20, TOX = 20) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/tools/giant_tree_branch
 	name = "giant tree branch"
 	desc = "The tree simply reaped from what it sowed."
 	icon_state = "sap"
-	new_armor = list(BURN = 50, BRAIN = -20, BRUTE = 30, TOX = 10) // 70
+	new_armor = list(BURN = 50, BRAIN = 20, BRUTE = 30, TOX = 10) // 70
 
 
 /obj/item/clothing/suit/armor/ego_gear/tools/isolation

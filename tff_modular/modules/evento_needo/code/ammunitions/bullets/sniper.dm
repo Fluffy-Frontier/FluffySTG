@@ -28,14 +28,14 @@
 
 // .300 Magnum
 
-/obj/projectile/bullet/a300
+/obj/projectile/bullet/c300
 	name = ".300 Magnum bullet"
 	damage = 50
 	stamina = 10
 	armour_penetration = 40
 	speed = BULLET_SPEED_RIFLE
 
-/obj/projectile/bullet/a300/trac
+/obj/projectile/bullet/c300/trac
 	name = ".300 Tracker"
 	damage = 10
 	armour_penetration = 0

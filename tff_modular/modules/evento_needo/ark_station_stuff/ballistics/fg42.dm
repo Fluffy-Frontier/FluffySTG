@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/automatic/fg42
-	name = "\improper LBR-90 rifle"
+	name = "\improper FG-42 rifle"
 	desc = "A long-barreled rifle designed for long range shooting in 7.92x57mm caliber."
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_guns40x32.dmi'
 	icon_state = "fg42"
@@ -31,7 +31,7 @@
 	AddComponent(/datum/component/automatic_fire, fire_delay)
 
 /obj/item/ammo_box/magazine/fg42
-	name = "LBR-90 magazine (7.92x57mm)"
+	name = "FG-42 magazine (7.92x57mm)"
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_items.dmi'
 	icon_state = "fg42"
 	ammo_type = /obj/item/ammo_casing/realistic/a792x57

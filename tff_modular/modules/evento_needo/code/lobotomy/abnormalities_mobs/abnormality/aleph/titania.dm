@@ -71,7 +71,7 @@
 		say("I rid you of your pain, mere human.")
 		//Double Check
 		SpawnFairies(fairy_spawn_number * 2, H, ignore_cap = TRUE)
-		H.gib(DROP_BRAIN)
+		H.gib(DROP_ALL_REMAINS)
 		return
 
 	if(attacked_target == nemesis)	//Deals pale damage to Oberon, fuck you.

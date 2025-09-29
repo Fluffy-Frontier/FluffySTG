@@ -99,5 +99,5 @@
 		var/turf/T = get_turf(H)
 		visible_message(span_danger("[src] bites hard on \the [H] as another bee appears!"))
 		H.emote("scream")
-		H.gib(DROP_BRAIN)
+		H.gib(DROP_ALL_REMAINS)
 		new /mob/living/simple_animal/hostile/worker_bee(T)

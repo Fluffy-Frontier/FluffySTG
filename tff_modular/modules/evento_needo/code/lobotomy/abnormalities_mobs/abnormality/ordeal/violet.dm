@@ -160,7 +160,7 @@
 			var/distance_decrease = get_dist(src, L) * 20
 			L.apply_damage((150 - distance_decrease), BRUTE, null, L.run_armor_check(null, BRUTE))
 			if(L.health < 0)
-				L.gib(DROP_BRAIN)
+				L.gib(DROP_ALL_REMAINS)
 	////SLEEP_CHECK_DEATH(5, src)
 	icon_state = "violet_noon_attack"
 

@@ -387,7 +387,7 @@
 			O.Remove(body)
 			QDEL_NULL(O)
 			break
-	body.gib(DROP_BRAIN)
+	body.gib(DROP_ALL_REMAINS)
 	if(combat_map)
 		GainRamping(10)
 
@@ -552,7 +552,7 @@
 	if(datum_reference.qliphoth_meter == 1)
 		to_chat(user, span_userdanger("The Woodsman swings his axe down!"))
 		qliphoth_change(-1)
-		user.gib(DROP_BRAIN)
+		user.gib(DROP_ALL_REMAINS)
 
 /mob/living/simple_animal/hostile/abnormality/woodsman/user_buckle_mob(mob/living/M, mob/user, check_loc)
 	if(!IsContained() || user == src || !ishuman(M) || (HAS_TRAIT(M, TRAIT_GODMODE)))
@@ -564,7 +564,7 @@
 	if(istype(O))
 		O.Remove(M)
 		QDEL_NULL(O)
-	M.gib(DROP_BRAIN)
+	M.gib(DROP_ALL_REMAINS)
 	if(datum_reference.qliphoth_meter == 1)
 		to_chat(user, span_nicegreen("Rests it on the ground."))
 		qliphoth_change(1)

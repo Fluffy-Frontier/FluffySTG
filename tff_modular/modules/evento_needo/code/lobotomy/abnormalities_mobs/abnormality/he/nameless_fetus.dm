@@ -33,7 +33,7 @@
 	//Are they nearby?
 /mob/living/simple_animal/hostile/abnormality/fetus/proc/check_range()
 	if(calling && Adjacent(calling))
-		calling.gib(DROP_BRAIN)
+		calling.gib(DROP_ALL_REMAINS)
 		calling = null
 
 		for(var/mob/living/carbon/human/H in GLOB.player_list)

@@ -40,10 +40,8 @@
 	desc = "A modified laser gun which can shoot far faster, but each shot is far less damaging."
 	icon_state = "laser_carbine"
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/carbine)
-
-/obj/item/gun/energy/laser/carbine/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS, allow_akimbo = FALSE)
+	fire_delay = 0.15 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 
 /obj/item/gun/energy/laser/carbine/cybersun
 	name = "\improper Cybersun S-120"

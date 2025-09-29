@@ -6,7 +6,6 @@
 	attach_features_flags = ATTACH_REMOVABLE_HAND
 	pixel_shift_x = 10
 	pixel_shift_y = 0
-	wield_delay = 0.1 SECONDS
 	var/obj/item/ammo_box/magazine/internal/shot/alof/mag
 
 /obj/item/attachment/alof/Initialize()

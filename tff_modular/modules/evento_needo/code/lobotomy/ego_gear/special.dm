@@ -6,7 +6,7 @@
 	desc = "Looks like a replica of the crumbling armor abnormality. Boasts high defenses to those who are reckless."
 	icon_state = "crumbling_armor"
 	flags_inv = HIDESHOES|HIDEJUMPSUIT
-	new_armor = list(BURN = 60, BRAIN = 30, BRUTE = 30, TOX = -100) // -10
+	new_armor = list(BURN = 60, BRAIN = 30, BRUTE = 30, TOX = 100) // -10
 
 
 //Nihil Event rewards

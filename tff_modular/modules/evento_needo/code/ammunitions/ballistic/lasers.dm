@@ -1,6 +1,6 @@
 /obj/item/ammo_casing/energy/disabler/hitscan
 	projectile_type = /obj/projectile/beam/hitscan/disabler
-	e_cost = 833
+	e_cost = LASER_SHOTS(18, STANDARD_CELL_CHARGE)
 
 /obj/item/ammo_casing/energy/laser/eoehoma
 	projectile_type = /obj/projectile/beam/laser/eoehoma
@@ -13,40 +13,40 @@
 	projectile_type = /obj/projectile/beam/laser/assault
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/laser/e40_las.ogg'
 	delay = 2
-	e_cost = 666 //30 per upgraded cell
+	e_cost = LASER_SHOTS(21, STANDARD_CELL_CHARGE) //30 per upgraded cell
 
 /obj/item/ammo_casing/energy/laser/assault/sharplite
 	projectile_type = /obj/projectile/beam/laser/assault/sharplite
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/laser/e40_las.ogg'
 	delay = 2
-	e_cost = 666 //30 per upgraded cell
+	e_cost = LASER_SHOTS(21, STANDARD_CELL_CHARGE) //30 per upgraded cell
 
 /obj/item/ammo_casing/energy/laser/eoehoma/e50
 	projectile_type = /obj/projectile/beam/emitter/hitscan/e50
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/laser/heavy_laser.ogg'
-	e_cost = 10000
+	e_cost = LASER_SHOTS(5, STANDARD_CELL_CHARGE)
 	delay = 1 SECONDS
 
 /obj/item/ammo_casing/energy/lasergun
 	projectile_type = /obj/projectile/beam/laser
-	e_cost = 830
+	e_cost = LASER_SHOTS(15, STANDARD_CELL_CHARGE)
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/lasergun/sharplite
 	projectile_type = /obj/projectile/beam/laser/sharplite
-	e_cost = 830
+	e_cost = LASER_SHOTS(15, STANDARD_CELL_CHARGE)
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/lasergun/eoehoma
 	projectile_type = /obj/projectile/beam/laser/eoehoma
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/laser/e40_las.ogg'
-	e_cost = 1428
+	e_cost = LASER_SHOTS(25, STANDARD_CELL_CHARGE)
 	delay = 0.3 SECONDS
 
 /obj/item/ammo_casing/energy/lasergun/eoehoma/heavy
 	projectile_type = /obj/projectile/beam/laser/eoehoma/heavy
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/laser/heavy_laser.ogg'
-	e_cost = 10000
+	e_cost = LASER_SHOTS(5, STANDARD_CELL_CHARGE)
 	select_name = "overcharge"
 	delay = 1 SECONDS
 

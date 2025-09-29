@@ -26,18 +26,18 @@
 
 /obj/projectile/bullet/a8_50r
 	name = "8x50mmR bullet"
-	damage = 37
+	damage = 33
 	armour_penetration = 30
 	speed = BULLET_SPEED_RIFLE
 
 /obj/projectile/bullet/a8_50r/hp
 	name = "8x50mmR hollow point bullet"
-	damage = 50
+	damage = 40
 	armour_penetration = 10
 
 /obj/projectile/bullet/a8_50r/match
 	name = "8x50mmR match bullet"
-	damage = 40
+	damage = 35
 	armour_penetration = 27
 	ricochets_max = 4
 	ricochet_chance = 80

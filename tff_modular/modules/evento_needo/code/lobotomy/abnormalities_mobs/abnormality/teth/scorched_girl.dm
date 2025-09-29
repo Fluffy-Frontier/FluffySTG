@@ -125,7 +125,7 @@
 		H.apply_damage(boom_damage, BRUTE)
 		H.apply_damage(boom_damage * 0.5, FIRE)
 		if(H.health < 0)
-			H.gib(DROP_BRAIN)
+			H.gib(DROP_ALL_REMAINS)
 	for(var/obj/structure/obstacle in view(2, src))
 		obstacle.take_damage(boom_damage, BRUTE)
 	new /obj/effect/temp_visual/explosion(get_turf(src))

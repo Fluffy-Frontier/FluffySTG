@@ -79,7 +79,7 @@
 		ReleaseGrab()
 		return
 	if(grab_victim.health < 0)
-		grab_victim.gib(DROP_BRAIN)
+		grab_victim.gib(DROP_ALL_REMAINS)
 		ReleaseGrab()
 		return
 	do_attack_animation(get_step(src, dir), no_effect = TRUE)

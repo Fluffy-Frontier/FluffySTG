@@ -25,7 +25,7 @@
 	impact_light_color_override = COLOR_CYAN
 
 /obj/projectile/beam/hitscan/disabler/heavy
-	damage = 30
+	damage = 35
 	armour_penetration = -10
 
 /obj/projectile/beam/laser/sharplite
@@ -40,13 +40,13 @@
 /obj/projectile/beam/laser/eoehoma
 	icon = 'tff_modular/modules/evento_needo/icons/projectiles.dmi'
 	icon_state = "heavylaser"
-	damage = 35
+	damage = 30
 	armour_penetration = 0
 	speed = 1
 
 /obj/projectile/beam/laser/eoehoma/heavy
 	icon_state = "heavylaser"
-	damage = 60
+	damage = 50
 	knockdown = 50
 	armour_penetration = 20
 	speed = 1.1
@@ -129,7 +129,7 @@
 	speed = 1.1
 
 /obj/projectile/beam/emitter/hitscan/e50
-	damage = 45
+	damage = 30
 
 
 

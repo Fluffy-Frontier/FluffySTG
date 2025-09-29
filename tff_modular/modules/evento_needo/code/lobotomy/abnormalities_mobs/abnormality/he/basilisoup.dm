@@ -149,7 +149,7 @@
 		var/mob/living/carbon/human/H = attacked_target
 		if(H.nutrition >= NUTRITION_LEVEL_FAT)
 			playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/bigbird/bite.ogg', 50, 1, 2)
-			H.gib(DROP_BRAIN)
+			H.gib(DROP_ALL_REMAINS)
 			adjustBruteLoss(-maxHealth, forced = TRUE) //full heal after a full meal
 
 /mob/living/simple_animal/hostile/abnormality/basilisoup/OpenFire(atom/A)

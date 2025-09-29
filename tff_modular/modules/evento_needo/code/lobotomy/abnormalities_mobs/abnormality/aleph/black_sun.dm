@@ -205,7 +205,7 @@
 		H.apply_damage(60, BRUTE)
 		H.apply_damage(30, BRUTE)
 		if(H.sanity_lost)
-			H.gib(DROP_BRAIN)
+			H.gib(DROP_ALL_REMAINS)
 
 //Kills the insane it does a fuckload of white damage, deal black too.
 /mob/living/simple_animal/hostile/sun_pillar/proc/Aoe()

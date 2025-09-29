@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/automatic/mp5
-	name = "\improper SPG-Q-5"
+	name = "\improper SG-5"
 	desc = "A compact submachine gun of the pilots and tank crew of the Old Empire. After its collapse, the weapon's blueprints were taken by mercenaries from InteQ."
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_guns40x32.dmi'
 	icon_state = "mp5"
@@ -46,8 +46,8 @@
 //
 
 /obj/item/ammo_box/magazine/mp5
-	name = "\improper SPG-Q-5 magazine"
-	desc = "Magazine with .385 caliber cartridges. Suitable for SPG-Q-5."
+	name = "\improper SG-5 magazine"
+	desc = "Magazine with .385 caliber cartridges. Suitable for SG-5."
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_items.dmi'
 	icon_state = "mp5"
 	ammo_type = /obj/item/ammo_casing/c385
@@ -57,7 +57,7 @@
 
 /// InteQ Bizon
 /obj/item/gun/ballistic/automatic/bison
-	name = "\improper SPG-Q-19 Bizon"
+	name = "\improper Bizon"
 	desc = "A compact submachine gun of the pilots and tank crew of the Old Empire. After its collapse, the weapon's blueprints were taken by mercenaries from InteQ."
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_guns.dmi'
 	lefthand_file = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_lefthand.dmi'
@@ -88,7 +88,7 @@
 
 /// NRI Bizon
 /obj/item/gun/ballistic/automatic/bison/nri
-	name = "\improper SPG-NRI-19 Bizon"
+	name = "\improper NRI Bizon"
 	desc = "A compact submachine gun of the pilots and tank crew of the Old Empire. After its collapse, the weapon's blueprints were taken by Military Forces of NRI."
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_guns.dmi'
 	icon_state = "bison"

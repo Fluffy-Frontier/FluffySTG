@@ -76,7 +76,7 @@
 			SLEEP_CHECK_DEATH(5, src)
 
 			//Takes your skin and leaves your bone. You are now a flesh servant under her skirt in GBJ
-			H.gib(DROP_BRAIN)
+			H.gib(DROP_ALL_REMAINS)
 
 			// it gets faster.
 

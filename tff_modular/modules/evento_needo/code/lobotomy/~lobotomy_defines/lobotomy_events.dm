@@ -44,7 +44,6 @@ SUBSYSTEM_DEF(lobotomy_events)
 	var/season_last_change
 
 /datum/controller/subsystem/lobotomy_events/Initialize(start_timeofday)
-	. = ..()
 	RegisterSignal(SSdcs, COMSIG_GLOB_ABNORMALITY_BREACH, PROC_REF(OnAbnoBreach))
 
 /datum/controller/subsystem/lobotomy_events/fire(resumed)

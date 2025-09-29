@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/automatic/pps // Dont Use in GunCargo
-	name = "\improper SPG-Q-43"
+	name = "\improper SSG-43"
 	desc = "A very cheap, barely reliable reproduction of a personal defense weapon based on the original Soviet model. Not nearly as infamous as the Mosin."
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_guns40x32.dmi'
 	icon_state = "pps"

@@ -21,7 +21,7 @@
 	T.screen_loc = screen_location
 
 	C.screen += T
-	animate(T, alpha = 255, time = 10)
+	animate(T, alpha = 255, time = 4)
 	T.maptext = "<span style=\"[style]\">[text]</span>"
 
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(fade_blurb), C, T, fade_time), duration)

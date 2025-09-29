@@ -9,7 +9,6 @@
 	pixel_shift_y = 18
 
 	var/toggled_slowdown = 0.10
-	var/toggled_wield_delay = -0.4 SECONDS
 	var/toggled_recoil_bonus = -2
 	var/toggled_spread_bonus = -5
 
@@ -19,14 +18,12 @@
 	if(toggled)
 		to_chat(user, span_notice("You unfold the stock on the [src]."))
 		gun.w_class += 1
-		gun.wield_delay += toggled_wield_delay
 		gun.wield_slowdown += toggled_slowdown
 		gun.recoil += toggled_recoil_bonus
 		gun.spread += toggled_spread_bonus
 	else
 		to_chat(user, span_notice("You fold the stock on the [src]."))
 		gun.w_class -= 1
-		gun.wield_delay -= toggled_wield_delay
 		gun.wield_slowdown -= toggled_slowdown
 		gun.recoil -= toggled_recoil_bonus
 		gun.spread -= toggled_spread_bonus

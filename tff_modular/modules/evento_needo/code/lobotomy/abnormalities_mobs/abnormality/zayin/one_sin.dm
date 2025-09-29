@@ -66,7 +66,7 @@
 				WN.adjustBruteLoss(curr_health/12)
 			WN.adjustBruteLoss(666666)
 			sleep(5 SECONDS)
-			for(var/mob/M in GLOB.player_list)
+			for(var/mob/M in GLOB.alive_player_list)
 				if(M.client)
 					M.playsound_local(get_turf(M), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/onesin/confession_end.ogg', 50, 0)
 

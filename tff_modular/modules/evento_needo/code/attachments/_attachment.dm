@@ -38,7 +38,6 @@
 	///Modifier applied to the parent
 	var/spread_unwielded_mod = 0
 	///Modifier applied to the parent, deciseconds
-	var/wield_delay = 0
 	///Modifier applied to the parent
 	var/size_mod = 0
 
@@ -136,10 +135,8 @@
 	if(attaching)
 		gun.spread += spread_mod
 		gun.spread_unwielded += spread_unwielded_mod
-		gun.wield_delay += wield_delay
 		gun.w_class += size_mod
 	else
 		gun.spread -= spread_mod
 		gun.spread_unwielded -= spread_unwielded_mod
-		gun.wield_delay -= wield_delay
 		gun.w_class -= size_mod

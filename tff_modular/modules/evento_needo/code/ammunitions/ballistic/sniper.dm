@@ -22,10 +22,10 @@
 	icon = 'tff_modular/modules/evento_needo/icons/ammunition/ammo_bullets.dmi'
 	icon_state = "rifle-steel"
 	caliber = CALIBER_A300
-	projectile_type = /obj/projectile/bullet/a300
+	projectile_type = /obj/projectile/bullet/c300
 
 /obj/item/ammo_casing/a300/trac
 	name = ".300 Magnum Trac bullet casing"
 	desc = "A .300 Magnum Tracker casing."
 	icon_state = "rifle-steel-trac"
-	projectile_type = /obj/projectile/bullet/a300/trac
+	projectile_type = /obj/projectile/bullet/c300/trac

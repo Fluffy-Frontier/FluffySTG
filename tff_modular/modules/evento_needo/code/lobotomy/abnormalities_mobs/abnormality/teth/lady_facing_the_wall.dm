@@ -39,7 +39,7 @@
 	return
 
 /mob/living/simple_animal/hostile/abnormality/wall_gazer/proc/scream()
-	for(var/mob/living/L in range(scream_range, src))
+	for(var/mob/living/L in view(scream_range, src))
 		if(faction_check_atom(L, FALSE))
 			continue
 		if(L.stat == DEAD)

@@ -360,8 +360,6 @@
 	if(.)
 		weapon_weight = WEAPON_MEDIUM
 		wield_slowdown = wield_slowdown-0.1
-		wield_delay = 0.3 SECONDS //OP? maybe
-
 		spread = 8
 		spread_unwielded = 15
 		recoil = 3 //or not
@@ -385,8 +383,6 @@
 	slot_flags = ITEM_SLOT_BELT
 
 	wield_slowdown = 0.15
-	wield_delay = 0.3 SECONDS //OP? maybe
-
 	spread = 8
 	spread_unwielded = 15
 	recoil = 3 //or not
@@ -460,8 +456,6 @@
 	if(.)
 		weapon_weight = WEAPON_MEDIUM
 		wield_slowdown = wield_slowdown-0.1
-		wield_delay = 0.3 SECONDS //OP? maybe
-
 		spread = 18
 		spread_unwielded = 25
 		recoil = 5 //your punishment for sawing off an short shotgun
@@ -514,8 +508,6 @@
 
 		weapon_weight = WEAPON_MEDIUM
 		wield_slowdown = wield_slowdown-0.1
-		wield_delay = 0.3 SECONDS //OP? maybe
-
 		spread = 8
 		spread_unwielded = 15
 		recoil = 3 //or not
@@ -560,8 +552,6 @@
 		weapon_weight = WEAPON_MEDIUM
 
 		wield_slowdown = wield_slowdown-0.1
-		wield_delay = 0.2 SECONDS
-
 		spread = 4
 		spread_unwielded = 12
 
@@ -702,8 +692,6 @@
 	can_be_sawn_off = TRUE
 
 	wield_slowdown = RIFLE_SLOWDOWN
-	wield_delay = 0.65 SECONDS
-
 	unique_attachments = list(
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope,
@@ -763,8 +751,6 @@
 		weapon_weight = WEAPON_MEDIUM
 
 		wield_slowdown = wield_slowdown-0.1
-		wield_delay = 0.2 SECONDS //THE COWBOY RIFLE
-
 		spread = 4
 		spread_unwielded = 12
 
@@ -833,8 +819,6 @@
 		weapon_weight = WEAPON_MEDIUM
 
 		wield_slowdown = wield_slowdown-0.1
-		wield_delay = 0.2 SECONDS
-
 		spread = 4
 		spread_unwielded = 12
 

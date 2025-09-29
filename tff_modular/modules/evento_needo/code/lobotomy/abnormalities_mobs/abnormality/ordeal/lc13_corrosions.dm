@@ -151,7 +151,7 @@
 			been_hit = HurtInTurf(TF, been_hit, hello_damage, BURN, null, TRUE, FALSE, TRUE, TRUE)
 	for(var/mob/living/L in been_hit)
 		if(L.health < 0)
-			L.gib(DROP_BRAIN)
+			L.gib(DROP_ALL_REMAINS)
 	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/nothingthere/hello_bam.ogg', 100, 0, 7)
 	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/nothingthere/hello_clash.ogg', 75, 0, 3)
 	icon_state = icon_living
@@ -421,7 +421,7 @@
 		return
 	var/mob/living/carbon/human/H = attacked_target
 	if(H.health < 0 && gibbing)
-		H.gib(DROP_BRAIN)
+		H.gib(DROP_ALL_REMAINS)
 		playsound(src, "tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/clouded_monk/eat.ogg", 75, 1)
 		adjustBruteLoss(-heal_amount)
 	return
@@ -496,7 +496,7 @@
 			continue
 		var/mob/living/carbon/human/H = L
 		if(H.health < 0 && gibbing)
-			H.gib(DROP_BRAIN)
+			H.gib(DROP_ALL_REMAINS)
 			playsound(src, "tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/clouded_monk/eat.ogg", 75, 1)
 			adjustBruteLoss(-heal_amount)
 			times_ran = dash_num //stop the charge, we got them!

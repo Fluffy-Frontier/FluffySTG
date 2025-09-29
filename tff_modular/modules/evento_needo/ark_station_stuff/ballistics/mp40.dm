@@ -10,7 +10,6 @@
 	worn_icon_state = "mp40"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	accepted_magazine_type = /obj/item/ammo_box/magazine/mp40
-	projectile_damage_multiplier = 1.25
 	weapon_weight = WEAPON_HEAVY
 	can_suppress = FALSE
 	burst_size = 1
@@ -28,7 +27,7 @@
 	AddComponent(/datum/component/automatic_fire, fire_delay)
 
 /obj/item/ammo_box/magazine/mp40
-	name = "SPG-Q-15 magazine (9mmx19)"
+	name = "SSG-56 Modern magazine (9mmx19)"
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_items.dmi'
 	icon_state = "mp40"
 	ammo_type = /obj/item/ammo_casing/c9mm
@@ -37,7 +36,7 @@
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/gun/ballistic/automatic/mp40/modern
-	name = "\improper SPG-Q-15"
+	name = "\improper SSG-56 Modern"
 	desc = "An Old Empire gun that was also used in the Civil War. InteQ mercenaries took the old designs and put this old gun into circulation. Thanks to its short barrel, it was used by pilots and tank crews."
 	icon_state = "mp40_modern"
 	inhand_icon_state = "mp40"

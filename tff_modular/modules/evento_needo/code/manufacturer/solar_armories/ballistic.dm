@@ -141,8 +141,6 @@
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
-
-	wield_delay = 0.7 SECONDS
 	fire_select_icon_state_prefix = "lance_"
 
 /obj/item/gun/ballistic/automatic/powered/gauss/gar/suns
@@ -175,5 +173,3 @@
 	recoil = 1
 	recoil_unwielded = 8
 	wield_slowdown = SNIPER_SLOWDOWN
-	wield_delay = 1.3 SECONDS
-

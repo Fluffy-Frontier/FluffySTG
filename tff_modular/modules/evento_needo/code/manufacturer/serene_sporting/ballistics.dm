@@ -117,8 +117,6 @@
 	recoil = 0
 	recoil_unwielded = 2
 	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
-	wield_delay = 1 SECONDS
-
 	valid_attachments = SERENE_ATTACHMENTS
 	slot_available = SERENE_ATTACH_SLOTS
 
@@ -180,7 +178,6 @@
 	recoil = 1.25
 	recoil_unwielded = 6
 	fire_delay = 0.5 SECONDS
-	wield_delay = 1.15 SECONDS //a little longer and less wieldy than other DMRs
 	zoom_out_amt = 2
 
 	can_be_sawn_off = FALSE
@@ -231,8 +228,6 @@
 	recoil = 0.5
 	recoil_unwielded = 3
 	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
-	wield_delay = 1 SECONDS
-
 	valid_attachments = SERENE_ATTACHMENTS
 	slot_available = SERENE_ATTACH_SLOTS
 
@@ -280,8 +275,6 @@
 	recoil = 1
 	recoil_unwielded = 4
 	wield_slowdown = SHOTGUN_SLOWDOWN
-	wield_delay = 0.65 SECONDS
-
 	casing_ejector = TRUE
 
 	valid_attachments = SERENE_ATTACHMENTS

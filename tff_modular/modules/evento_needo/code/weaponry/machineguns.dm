@@ -215,8 +215,6 @@
 	recoil_unwielded = 4 //same as skm
 
 	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
-	wield_delay = 0.85 SECONDS //faster than normal lmgs, slower than stock skm
-
 	has_bipod = TRUE
 
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended //spawns with the proper extended magazine, for erts

@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/automatic/akm
-	name = "\improper KR-Q-74 carbine"
+	name = "\improper KAR-84 carbine"
 	desc = "Old developments of the InteQ weapons factories. A copy of one of the Old Empire's machine guns. Has a slightly cheaper price tag, and mercenaries don't need more."
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_guns40x32.dmi'
 	icon_state = "akm"
@@ -29,7 +29,7 @@
 /// VARIETIES ///
 /// INTEQ NEW
 /obj/item/gun/ballistic/automatic/akm/modern
-	name = "\improper KR-Q-19 carbine"
+	name = "\improper KAR-19 carbine"
 	desc = "An upgraded version of the KR-Q, InteQ assault rifles. It has a shorter firing delay and better reliability."
 	icon_state = "akm_modern"
 	inhand_icon_state = "akm"
@@ -39,7 +39,7 @@
 
 /// INTEQ CIV
 /obj/item/gun/ballistic/automatic/akm/civvie
-	name = "\improper TR-Q-12 carbine"
+	name = "\improper Sabel carbine"
 	desc = "Civilian version of the KR-Q-12 assault rifles produced by InteQ."
 	icon_state = "akm_civ"
 	inhand_icon_state = "akm_civ"
@@ -49,10 +49,11 @@
 	spread = 5
 	worn_icon_state = "akm_civ"
 	recoil = 0.2
+	projectile_damage_multiplier = 0.97
 
 /// NRI
 /obj/item/gun/ballistic/automatic/akm/nri
-	name = "\improper KR-NRI-19 carbine"
+	name = "\improper IKAR-19 carbine"
 	desc = "The newest version of the 'KR', a former weapon of the Old Empire, after the collapse the plans were given to the NRI."
 	icon_state = "akm_nri"
 	inhand_icon_state = "akm_nri"
@@ -109,7 +110,7 @@
 	max_ammo = 45
 
 /obj/item/ammo_box/magazine/akm/civvie
-	name = "TR-Q-12 magazine"
+	name = "Sabel magazine"
 	desc = "a shortened double-stack magazine able to hold 15 rounds of civilian-grade 5.6mm ammo."
 	icon_state = "akm_civ"
 	max_ammo = 15

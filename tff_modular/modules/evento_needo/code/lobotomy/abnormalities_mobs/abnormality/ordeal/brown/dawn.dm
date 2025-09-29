@@ -72,7 +72,7 @@
 					continue
 				L.apply_damage(jump_damage, BRUTE)
 				if(L.health < 0)
-					L.gib(DROP_BRAIN)
+					L.gib(DROP_ALL_REMAINS)
 					continue
 			for(var/obj/vehicle/sealed/mecha/V in T)
 				V.take_damage(jump_damage, BRUTE)
@@ -129,7 +129,7 @@
 	adjustBruteLoss(-(maxHealth/2))
 	playsound(get_turf(L), 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/brown/flower_kill.ogg', 50, 4)
 	if(!iscarbon(L))
-		L.gib(DROP_BRAIN)
+		L.gib(DROP_ALL_REMAINS)
 		return
 	var/mob/living/carbon/C = L
 	for(var/obj/item/bodypart/part in C.bodyparts)
@@ -138,7 +138,7 @@
 			QDEL_NULL(part)
 			new /obj/effect/gibspawner/generic/silent(get_turf(C))
 		if(length(C.bodyparts) <= 1)
-			C.gib(DROP_BRAIN)
+			C.gib(DROP_ALL_REMAINS)
 			return
 	return
 
@@ -266,7 +266,7 @@
 		return
 	var/mob/living/carbon/human/H = attacked_target
 	if(H.health < 0)
-		H.gib(DROP_BRAIN)
+		H.gib(DROP_ALL_REMAINS)
 		playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/blade4.ogg', 75, 1)
 	return
 
@@ -339,7 +339,7 @@
 			continue
 		var/mob/living/carbon/human/H = L
 		if(H.health < 0)
-			H.gib(DROP_BRAIN)
+			H.gib(DROP_ALL_REMAINS)
 			playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/blade4.ogg', 75, 1)
 	addtimer(CALLBACK(src, PROC_REF(Charge), move_dir, (times_ran + 1)), 1)
 
@@ -557,7 +557,7 @@
 					H.apply_damage(burn_stacks, FIRE)
 				L.apply_damage(charge_damage, BRUTE)
 				if(L.health < 0)
-					L.gib(DROP_BRAIN)
+					L.gib(DROP_ALL_REMAINS)
 					playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/brown/tentacle_explode.ogg', 75, 1)
 				else
 					playsound(src, attack_sound, 125, 1)

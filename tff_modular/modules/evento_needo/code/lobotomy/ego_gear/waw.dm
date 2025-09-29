@@ -341,7 +341,7 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	name = "psychic dagger"
 	desc = "But a mermaid has no tears, and therefore she suffers so much more."
 	icon_state = "psychic"
-	new_armor = list(BURN = -30, BRAIN = 70, BRUTE = 40, TOX = 60) // 140
+	new_armor = list(BURN = 30, BRAIN = 70, BRUTE = 40, TOX = 60) // 140
 
 
 /obj/item/clothing/suit/armor/ego_gear/waw/scene
@@ -362,7 +362,7 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	name = "blind obsession"
 	desc = "Allow me to describe this grand and epic beast!"
 	icon_state = "blind_obsession"
-	new_armor = list(BURN = 60, BRAIN = -10, BRUTE = 50, TOX = 40)//140
+	new_armor = list(BURN = 60, BRAIN = 10, BRUTE = 50, TOX = 40)//140
 
 
 /obj/item/clothing/suit/armor/ego_gear/waw/holiday
@@ -378,7 +378,7 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 	name = "ya sunyata tad rupam"
 	desc = "Karma shall find its way back to you, and rest atop your head."
 	icon_state = "sunyata"
-	new_armor = list(BURN = 50, BRAIN = 50, BRUTE = -10, TOX = 50)//140
+	new_armor = list(BURN = 50, BRAIN = 50, BRUTE = 10, TOX = 50)//140
 
 
 /obj/item/clothing/suit/armor/ego_gear/waw/effervescent

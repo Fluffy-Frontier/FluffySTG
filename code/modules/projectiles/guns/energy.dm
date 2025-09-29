@@ -7,6 +7,9 @@
 	drop_sound = 'sound/items/handling/gun/gun_drop.ogg'
 	sound_vary = TRUE
 
+	wield_slowdown = LASER_SMG_SLOWDOWN
+	aimed_wield_slowdown = LASER_RIFLE_SLOWDOWN
+
 
 	ammo_x_offset = 2
 	///If this gun has a "this is loaded with X" overlay alongside chargebars and such
@@ -205,22 +208,24 @@
 			if(do_after(user, tactical_reload_delay, src, hidden = TRUE))
 				if(insert_cell(user, new_cell))
 					to_chat(user, span_notice("You perform a tactical reload on \the [src]."))
-					eject_cell(user, cell)
 			else
 				to_chat(user, span_warning("Your reload was interupted!"))
 				return FALSE
 		else
 			to_chat(user, span_warning("Take out the battery first!"))
 			return FALSE
-	user.temporarilyRemoveItemFromInventory(new_cell)
-	if(!user.transferItemToLoc(new_cell, src))
-		qdel(new_cell) // Если что-то пошло не так...
-		return FALSE
-	cell = new_cell
+	else
+		if(insert_cell(user, new_cell))
+			to_chat(user, span_notice("You insert battery in \the [src]."))
 
+	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
+
+	if(cell.maxcharge > STANDARD_CELL_CHARGE)
+		shot.e_cost = LASER_SHOTS(25, cell.maxcharge)//Лень пока что * (clamp(1 + cell.maxcharge/500, 0, 1))
+	else
+		shot.e_cost = initial(shot.e_cost)		//LASER_SHOTS(10, STANDARD_CELL_CHARGE)
 	update_appearance()
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD) // Для СкайРатовского ХУДа.
-	balloon_alert(user, "cell inserted")
 	return TRUE
 
 /obj/item/gun/energy/can_shoot()
@@ -318,7 +323,7 @@
 		. += "[icon_state]_empty"
 		return
 
-	if(ismob(loc) && !internal_magazine)
+	if(ismob(loc))
 		var/mutable_appearance/latch_overlay
 		latch_overlay = mutable_appearance('tff_modular/modules/evento_needo/icons/cell_latch.dmi')
 		if(latch_closed)
@@ -419,6 +424,8 @@
 /obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/power_store/C)
 	if(!C)
 		return FALSE
+	if(cell)
+		eject_cell()
 	user.temporarilyRemoveItemFromInventory(C)
 	if(!user.transferItemToLoc(C, src))
 		qdel(C) // Если что-то пошло не так...
@@ -441,6 +448,13 @@
 	if(!cell)
 		return TRUE
 	return FALSE
+
+//ATTACK HAND IGNORING PARENT RETURN VALUE
+/obj/item/gun/energy/attack_hand(mob/user, list/modifiers)
+	if(!internal_magazine && loc == user && user.is_holding(src) && !has_empty_cell())
+		eject_cell(user)
+		return
+	return ..()
 
 /obj/item/gun/energy/attack_self(mob/living/user)
 	if(latch_closed)
@@ -475,7 +489,7 @@
 	if(choice == "Cell-slot action" || !choice)
 		if(latch_closed)
 			to_chat(user, span_notice("You start to unlatch the [src]'s power cell retainment clip..."))
-			if(do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
+			if(do_after(user, latch_toggle_delay, src))
 				to_chat(user, span_notice("You unlatch the [src]'s power cell retainment clip " + span_red("OPEN") + "."))
 				playsound(src, 'sound/items/taperecorder/taperecorder_play.ogg', 50, FALSE)
 				tac_reloads = TRUE
@@ -486,7 +500,7 @@
 			// if(!cell && is_attachment_in_contents_list())
 			// 	return ..() //should bring up the attachment menu if attachments are added. If none are added, it just does leaves the latch open
 			to_chat(user, span_warning("You start to latch the [src]'s power cell retainment clip..."))
-			if (do_after(user, latch_toggle_delay, src, IGNORE_USER_LOC_CHANGE))
+			if (do_after(user, latch_toggle_delay, src))
 				to_chat(user, span_notice("You latch the [src]'s power cell retainment clip " + span_green("CLOSED") + "."))
 				playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
 				tac_reloads = FALSE

@@ -6,8 +6,6 @@
 	attach_features_flags = ATTACH_REMOVABLE_HAND
 	pixel_shift_x = 14
 	pixel_shift_y = 15
-	wield_delay = 0.2 SECONDS
-
 	var/check_size = FALSE
 
 /obj/item/attachment/sling/apply_attachment(obj/item/gun/gun, mob/user)

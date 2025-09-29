@@ -269,7 +269,7 @@
 	appearance = saved_appearance
 	if(disguise_ref)
 		disguise_ref.forceMove(get_turf(src))
-		disguise_ref.gib(DROP_BRAIN)
+		disguise_ref.gib(DROP_ALL_REMAINS)
 		disguise_ref = null
 	fear_level = ALEPH_LEVEL
 	FearEffect()
@@ -332,7 +332,7 @@
 			been_hit = HurtInTurf(TF, been_hit, hello_damage, BRUTE, null, TRUE, FALSE, TRUE, hurt_structure = TRUE)
 	for(var/mob/living/L in been_hit)
 		if(L.health < 0)
-			L.gib(DROP_BRAIN)
+			L.gib(DROP_ALL_REMAINS)
 	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/nothingthere/hello_bam.ogg', 100, 0, 7)
 	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/nothingthere/hello_clash.ogg', 75, 0, 3)
 	icon_state = icon_living
@@ -350,7 +350,7 @@
 		new /obj/effect/temp_visual/nt_goodbye(T)
 		for(var/mob/living/L in HurtInTurf(T, list(), goodbye_damage, BRUTE, null, TRUE, FALSE, TRUE, hurt_hidden = TRUE, hurt_structure = TRUE))
 			if(L.health < 0)
-				L.gib(DROP_BRAIN)
+				L.gib(DROP_ALL_REMAINS)
 	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/nothingthere/goodbye_attack.ogg', 75, 0, 7)
 	SLEEP_CHECK_DEATH(3, src)
 	icon_state = icon_living

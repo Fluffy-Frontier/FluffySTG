@@ -8,8 +8,6 @@
 	icon_state = "e10"
 	inhand_icon_state = "e_generickill4"
 	w_class = WEIGHT_CLASS_SMALL
-
-	wield_delay = 0.2 SECONDS
 	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	spread = 6
@@ -47,8 +45,6 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/e50)
 	weapon_weight = WEAPON_HEAVY
 	w_class = WEIGHT_CLASS_BULKY
-
-	wield_delay = 0.7 SECONDS
 	wield_slowdown = LASER_SNIPER_SLOWDOWN
 	spread_unwielded = 20
 

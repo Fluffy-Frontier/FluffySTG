@@ -106,13 +106,14 @@
 	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
 	can_charge = FALSE
 	var/obj/item/minigunpack/ammo_pack
+	fire_delay = 0.2 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 
 /obj/item/gun/energy/minigun/Initialize(mapload)
 	if(!istype(loc, /obj/item/minigunpack)) //We should spawn inside an ammo pack so let's use that one.
 		return INITIALIZE_HINT_QDEL //No pack, no gun
 	ammo_pack = loc
 	AddElement(/datum/element/update_icon_blocker)
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
 	return ..()
 
 /obj/item/gun/energy/minigun/Destroy()

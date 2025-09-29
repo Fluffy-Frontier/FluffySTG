@@ -514,7 +514,7 @@
 		new /obj/effect/temp_visual/small_smoke/halfsecond(T)
 		for(var/mob/living/carbon/human/H in HurtInTurf(T, list(), 150, BRUTE, null, null, TRUE, FALSE, TRUE, FALSE, TRUE, TRUE))
 			if(H.health <= 0)
-				H.gib(DROP_BRAIN)
+				H.gib(DROP_ALL_REMAINS)
 	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/claw/prepare.ogg', 50, 0, 5)
 	visible_message(span_danger("[src] releases a strange mist!"))
 	// Shake effect
@@ -543,7 +543,7 @@
 		bloodeffect.color = "#b52e19"
 		for(var/mob/living/carbon/human/H in HurtInTurf(T, list(), 150, BRUTE, null, null, TRUE, FALSE, TRUE, FALSE, TRUE, TRUE))
 			if(H.sanity_lost)
-				H.gib(DROP_BRAIN)
+				H.gib(DROP_ALL_REMAINS)
 	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/apocalypse/slam.ogg', 50, 0, 5)
 	visible_message(span_danger("[src] slams at the floor!"))
 	// Shake effect
@@ -625,7 +625,7 @@
 		for(var/mob/living/L in target_list)
 			L.apply_damage(300, BRUTE) //You - you are probably going to die!
 			if(L.health < 0)
-				L.gib(DROP_BRAIN) //maybe someday we'll have a cool acid melting animation for this
+				L.gib(DROP_ALL_REMAINS) //maybe someday we'll have a cool acid melting animation for this
 
 /mob/living/simple_animal/hostile/abnormality/distortedform/proc/DFStack(mob/living/carbon/human/target)
 	if((!isliving(target)) || (!(target in view(src, 10))))
@@ -683,13 +683,13 @@
 			if(L.health < 0)
 				if(ishuman(L))
 					var/mob/living/carbon/human/H = L
-					H.gib(DROP_BRAIN)
+					H.gib(DROP_ALL_REMAINS)
 				else
-					L.gib(DROP_BRAIN)
+					L.gib(DROP_ALL_REMAINS)
 	else
 		target.apply_damage(250, BRUTE) //You - you are probably going to die!
 		if(target.health < 0)
-			target.gib(DROP_BRAIN)
+			target.gib(DROP_ALL_REMAINS)
 	can_act = TRUE
 	transform_cooldown = world.time
 
@@ -724,7 +724,7 @@
 		new /obj/effect/temp_visual/nt_goodbye(T)
 		for(var/mob/living/L in HurtInTurf(T, list(), 500, BRUTE, null, null, TRUE, FALSE, TRUE, TRUE, TRUE, TRUE))
 			if(L.health < 0)
-				L.gib(DROP_BRAIN)
+				L.gib(DROP_ALL_REMAINS)
 	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/nothingthere/goodbye_attack.ogg', 75, FALSE, 7)
 	SLEEP_CHECK_DEATH(3, src)
 	icon_state = "nothing"
@@ -760,7 +760,7 @@
 			been_hit = HurtInTurf(TF, been_hit, 120, BRUTE, null, null, TRUE, FALSE, TRUE, TRUE)
 	for(var/mob/living/L in been_hit)
 		if(L.health < 0)
-			L.gib(DROP_BRAIN)
+			L.gib(DROP_ALL_REMAINS)
 	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/nothingthere/hello_bam.ogg', 100, 0, 7)
 	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/nothingthere/hello_clash.ogg', 75, 0, 3)
 	icon_state = "nothing"
@@ -859,7 +859,7 @@
 	var/mob/living/carbon/human/H = target
 	new /obj/effect/temp_visual/human_horizontal_bisect(get_turf(H))
 	H.set_lying_angle(360) //gunk code I know, but it is the simplest way to override gib_animation() without touching other code. Also looks smoother.
-	H.gib(DROP_BRAIN)
+	H.gib(DROP_ALL_REMAINS)
 
 //Crumbling Armor
 /mob/living/simple_animal/hostile/abnormality/distortedform/proc/ChangeArmor()
@@ -924,7 +924,7 @@
 				new /obj/effect/temp_visual/beam_in(get_turf(L))
 				L.apply_damage(60, BRUTE)
 				if(L.health < 0)
-					L.gib(DROP_BRAIN)
+					L.gib(DROP_ALL_REMAINS)
 			else
 				var/obj/effect/lightbolt/light = new /obj/effect/lightbolt(get_turf(L))//do this for the # of targets + 1
 				light.target = L
@@ -954,7 +954,7 @@
 	for(var/mob/living/carbon/human/H in view(1, src))
 		H.apply_damage(boom_damage, BRUTE)
 		if(H.health < 0)
-			H.gib(DROP_BRAIN)
+			H.gib(DROP_ALL_REMAINS)
 	new /obj/effect/temp_visual/beam_in(get_turf(src))
 	times_hit ++
 	if(times_hit >= 3)
@@ -1110,7 +1110,7 @@
 	for(var/mob/living/L in been_hit)
 		if(L.health < 0)
 			if(!ishuman(L))
-				L.gib(DROP_BRAIN)
+				L.gib(DROP_ALL_REMAINS)
 			else
 				var/mob/living/carbon/human/H = L
 				var/obj/item/bodypart/head/head = H.get_bodypart("head")
@@ -1170,7 +1170,7 @@
 			if(ishuman(L))
 				var/mob/living/carbon/human/H = L
 				if(H.sanity_lost)
-					H.gib(DROP_BRAIN)
+					H.gib(DROP_ALL_REMAINS)
 	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/blubbering_toad/attack.ogg', 50, FALSE, 4)
 	can_act = TRUE
 
@@ -1199,7 +1199,7 @@
 			if(ishuman(L))
 				var/mob/living/carbon/human/H = L
 				if(H.sanity_lost)
-					H.gib(DROP_BRAIN)
+					H.gib(DROP_ALL_REMAINS)
 	SLEEP_CHECK_DEATH(5, src)
 	can_act = TRUE
 	icon_state = "blubbering_red"
@@ -1311,7 +1311,7 @@
 		FX.color = "#b52e19"
 		for(var/mob/living/carbon/human/H in HurtInTurf(T, list(), 350, BRUTE, null, null, TRUE, FALSE, TRUE, FALSE, TRUE, TRUE))
 			if(H.sanity_lost)
-				H.gib(DROP_BRAIN)
+				H.gib(DROP_ALL_REMAINS)
 	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/bloodbath/Bloodbath_EyeOn.ogg', 125, FALSE, 6)
 	icon_state = "bloodbath_slam"
 	SLEEP_CHECK_DEATH(3, src)
@@ -1413,7 +1413,7 @@
 				to_chat(L, span_userdanger("MY EYES!!!"))
 				H.apply_damage(100, BRUTE, null, H.run_armor_check(null, BRUTE), spread_damage = TRUE)
 				if(H.sanity_lost) // They can't deal with being bald
-					H.gib(DROP_BRAIN)
+					H.gib(DROP_ALL_REMAINS)
 	if(!attack_chain)
 		BaldBlast(TRUE)
 		return
@@ -1742,7 +1742,7 @@
 		new /obj/effect/temp_visual/small_smoke/halfsecond(T)
 		for(var/mob/living/carbon/human/H in HurtInTurf(T, list(), 100, BRUTE, null, null, TRUE, FALSE, TRUE, FALSE, TRUE, TRUE))
 			if(H.health <= 0)
-				H.gib(DROP_BRAIN)
+				H.gib(DROP_ALL_REMAINS)
 
 /mob/living/simple_animal/hostile/abnormality/distortedform/proc/MediumJump(turf/target_turf)
 	name = "grant us love"
@@ -1762,7 +1762,7 @@
 		new /obj/effect/temp_visual/small_smoke/halfsecond(T)
 		for(var/mob/living/carbon/human/H in HurtInTurf(T, list(), 150, BRUTE, null, null, TRUE, FALSE, TRUE, FALSE, TRUE, TRUE))
 			if(H.health <= 0)
-				H.gib(DROP_BRAIN)
+				H.gib(DROP_ALL_REMAINS)
 
 /mob/living/simple_animal/hostile/abnormality/distortedform/proc/HeavyJump(turf/target_turf)
 	name = "Baba Yaga"
@@ -1794,7 +1794,7 @@
 		else
 			L.apply_damage(600 - ((dist > 2 ? dist : 0 )* 75), BRUTE) //0-600 damage scaling on distance, we don't want it oneshotting mobs
 		if(L.health < 0)
-			L.gib(DROP_BRAIN)
+			L.gib(DROP_ALL_REMAINS)
 
 
 //Miscellaneous random sprites - does nothing. Very low chance. This where you put the silly meme stuff.

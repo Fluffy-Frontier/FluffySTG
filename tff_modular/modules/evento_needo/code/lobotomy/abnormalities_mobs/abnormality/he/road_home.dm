@@ -306,7 +306,7 @@
 	for(var/mob/living/L in orgin.contents)//Listen, if you're still standing in the one turf this thing is falling from, you deserve to die.
 		L.apply_damage(1000, BRUTE)
 		if(L.health < 0)
-			L.gib(DROP_BRAIN)
+			L.gib(DROP_ALL_REMAINS)
 
 	for(var/turf/open/T in view(4, src))
 		new /obj/effect/temp_visual/small_smoke/halfsecond(T)

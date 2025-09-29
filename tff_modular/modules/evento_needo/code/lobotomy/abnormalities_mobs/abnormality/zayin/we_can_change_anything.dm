@@ -169,7 +169,7 @@
 		for(var/mob/living/carbon/human/victim in get_turf(src))
 			victim.apply_damage(grind_damage, BRUTE)
 			if(victim.health <= 0)
-				victim.gib(DROP_BRAIN)
+				victim.gib(DROP_ALL_REMAINS)
 		stoplag(1)
 	unbuckle_all_mobs()
 	grinding = FALSE

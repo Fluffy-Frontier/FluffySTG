@@ -12,8 +12,6 @@
 	modifystate = TRUE
 
 	fire_delay = 0.16 SECONDS
-
-	wield_delay = 0.7 SECONDS
 	wield_slowdown = LASER_SMG_SLOWDOWN
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix, /obj/item/ammo_casing/energy/disabler/hitscan)
 
@@ -46,8 +44,6 @@
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
-
-	wield_delay = 0.7 SECONDS
 	wield_slowdown = LASER_SMG_SLOWDOWN
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pgf , /obj/item/ammo_casing/energy/disabler/hitscan)
 
@@ -73,8 +69,6 @@
 	inhand_icon_state = "kalixpistol"
 	w_class = WEIGHT_CLASS_NORMAL
 	modifystate = FALSE
-
-	wield_delay = 0.2 SECONDS
 	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	spread = 2
@@ -108,8 +102,6 @@
 	default_firemode = FIREMODE_SEMIAUTO
 
 	fire_delay = 0.2 SECONDS
-
-	wield_delay = 0.7 SECONDS
 	wield_slowdown = LASER_RIFLE_SLOWDOWN
 
 	spread = 0.5
@@ -130,8 +122,6 @@
 	default_firemode = FIREMODE_SEMIAUTO
 
 	fire_delay = 0.2 SECONDS
-
-	wield_delay = 0.7 SECONDS
 	wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
 
 	spread = 0
@@ -186,4 +176,3 @@
 	spread_unwielded = 40
 
 	wield_slowdown = LASER_SNIPER_SLOWDOWN
-	wield_delay = 1.3 SECONDS

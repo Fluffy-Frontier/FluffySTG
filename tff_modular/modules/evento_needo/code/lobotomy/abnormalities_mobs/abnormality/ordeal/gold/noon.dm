@@ -207,7 +207,7 @@
 					var/mob/living/carbon/human/H = L
 					new /obj/effect/temp_visual/human_horizontal_bisect(get_turf(H)) //The other way, someday.
 					H.set_lying_angle(360) //gunk code I know, but it is the simplest way to override gib_animation() without touching other code. Also looks smoother.
-				L.gib(DROP_BRAIN)
+				L.gib(DROP_ALL_REMAINS)
 	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/finisher1.ogg', 100, 0, 5)
 	SLEEP_CHECK_DEATH(3, src)
 	can_act = TRUE
@@ -325,7 +325,7 @@
 				finishing = FALSE
 				return
 			playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/fixer/generic/nail2.ogg', 100, 1)
-			TH.gib(DROP_BRAIN)
+			TH.gib(DROP_ALL_REMAINS)
 			finishing = FALSE
 
 /mob/living/simple_animal/hostile/ordeal/silentgirl_corrosion/attacked_by(obj/item/I, mob/living/user)

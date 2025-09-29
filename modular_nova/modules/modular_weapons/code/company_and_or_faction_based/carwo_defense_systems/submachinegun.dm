@@ -43,10 +43,6 @@
 /obj/item/gun/ballistic/automatic/sol_smg/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_CARWO)
 
-/obj/item/gun/ballistic/automatic/sol_smg/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, fire_delay)
-
 /obj/item/gun/ballistic/automatic/sol_smg/no_mag
 	spawnwithmagazine = FALSE
 

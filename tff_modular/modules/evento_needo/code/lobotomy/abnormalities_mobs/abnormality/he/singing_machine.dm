@@ -128,7 +128,7 @@ Finally, an abnormality that DOESN'T have to do any fancy movement shit. It's a 
 	playStatus = 0 // This exists solely because I needed to call it via a callback.
 
 /mob/living/simple_animal/hostile/abnormality/singing_machine/proc/eatBody(mob/living/carbon/human/user)
-	user.gib(DROP_BRAIN)
+	user.gib(DROP_ALL_REMAINS)
 	stopPlaying()
 	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/singingmachine/swallow.ogg', 80, 0, 3)
 	cleanliness = "bloody"

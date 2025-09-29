@@ -203,7 +203,6 @@
 
 	recoil = 1
 	recoil_unwielded = 2
-	wield_delay = 0.2 SECONDS
 	wield_slowdown = 0.15
 
 	var/obj/item/storage/briefcase/current_case
@@ -340,8 +339,6 @@
 	recoil = 2
 	recoil_unwielded = 10
 	wield_slowdown = SNIPER_SLOWDOWN
-	wield_delay = 1.3 SECONDS
-
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1
 	)
@@ -374,7 +371,6 @@
 	bolt_type = BOLT_TYPE_STANDARD
 	accepted_magazine_type = /obj/item/ammo_box/magazine/p16
 	spread = 2
-	wield_delay = 0.5 SECONDS
 	fire_delay = 0.3 SECONDS
 	burst_size = 1
 
@@ -463,7 +459,6 @@
 	recoil_unwielded = 7 //same as skm
 
 	wield_slowdown = SAW_SLOWDOWN //not as severe as other lmgs, but worse than the normal skm
-	wield_delay = 0.9 SECONDS //faster than normal lmgs, slower than stock skm
 
 	has_bipod = TRUE
 
@@ -487,10 +482,6 @@
 
 	deploy_recoil_bonus = -2
 	deploy_spread_bonus = -6
-
-/obj/item/gun/ballistic/automatic/hmg/cm40/Initialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, fire_delay)
 
 /obj/item/gun/ballistic/automatic/hmg/rottweiler
 	name = "\improper KM-05 Rottweiler"
@@ -549,10 +540,6 @@
 		)
 	)
 
-/obj/item/gun/ballistic/automatic/hmg/rottweiler/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, fire_delay)
-
 //########### MISC ###########//
 
 /obj/item/gun/ballistic/shotgun/cm15
@@ -596,7 +583,6 @@
 	recoil = 1
 	recoil_unwielded = 4
 	wield_slowdown = HEAVY_SHOTGUN_SLOWDOWN
-	wield_delay = 0.65 SECONDS
 	fire_delay = 0.4 SECONDS
 
 	slot_offsets = list(

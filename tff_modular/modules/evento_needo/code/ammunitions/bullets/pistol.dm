@@ -31,33 +31,6 @@
 	ricochet_chance = 130
 	ricochet_decay_damage = 0.8
 
-// 9x18mm (Commander, SABR)
-
-/obj/projectile/bullet/c9mm
-	name = "9x18mm bullet"
-	damage = 20
-	armour_penetration = -20
-	speed = BULLET_SPEED_HANDGUN
-
-/obj/projectile/bullet/c9mm/surplus
-	name = "9x18mm surplus bullet"
-
-/obj/projectile/bullet/c9mm/ap
-	name = "9x18mm armor-piercing bullet"
-	damage = 18
-	armour_penetration = 10
-
-/obj/projectile/bullet/c9mm/hp
-	name = "9x18mm hollow point bullet"
-	damage = 30
-	armour_penetration = -30
-
-/obj/projectile/bullet/c9mm/rubber
-	name = "9x18mm rubber bullet"
-	damage = 5
-	armour_penetration = -40
-	stamina = 30
-
 // 10x22mm (Ringneck)
 
 /obj/projectile/bullet/c10mm

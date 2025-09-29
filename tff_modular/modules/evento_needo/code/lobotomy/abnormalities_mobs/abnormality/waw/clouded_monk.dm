@@ -240,7 +240,7 @@
 					var/mob/living/carbon/human/H = A
 					H.apply_damage(charge_damage, BRUTE)
 					if(H.health < 0)
-						H.gib(DROP_BRAIN)
+						H.gib(DROP_ALL_REMAINS)
 						adjustBruteLoss(-heal_amount)
 						if(!eaten)
 							playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/clouded_monk/eat.ogg', 75, 1)

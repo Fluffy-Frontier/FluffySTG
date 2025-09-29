@@ -307,11 +307,12 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/c3dbullet)
 	can_charge = FALSE
 	use_cyborg_cell = TRUE
+	fire_delay = 0.3 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 
 /obj/item/gun/energy/printer/Initialize(mapload)
 	AddElement(/datum/element/update_icon_blocker)
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.3 SECONDS)
 	AddElement(/datum/element/empprotection, EMP_PROTECT_ALL)
 
 /obj/item/gun/energy/temperature
@@ -368,10 +369,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/tesla_cannon)
 	shaded_charge = TRUE
 	weapon_weight = WEAPON_HEAVY
-
-/obj/item/gun/energy/tesla_cannon/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	fire_delay = 0.1 SECONDS
 
 /obj/item/gun/energy/marksman_revolver
 	name = "marksman revolver"

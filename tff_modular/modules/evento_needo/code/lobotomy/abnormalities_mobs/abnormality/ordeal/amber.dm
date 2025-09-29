@@ -250,7 +250,7 @@
 
 		transform = transform.Scale(size_per_kill, size_per_kill)
 
-	meal.gib(DROP_BRAIN)
+	meal.gib(DROP_ALL_REMAINS)
 
 /* DAWN AMBER ORGAN */
 /obj/item/organ/amber_bug
@@ -308,7 +308,7 @@
 		total_bug_spawned++
 		if(length(total_bug_spawned) > max_spawn || length(amber_list) > 50)
 			if(owner.stat == DEAD)
-				owner.gib(DROP_BRAIN)
+				owner.gib(DROP_ALL_REMAINS)
 			qdel(src)
 			return
 
@@ -339,7 +339,7 @@
 	SpawnBug(bug_spawned)
 	if(feeding_stage >= max_feeding_stage)
 		if(H.stat == DEAD)
-			H.gib(DROP_BRAIN)
+			H.gib(DROP_ALL_REMAINS)
 		qdel(src)
 
 // Amber dusk
@@ -684,7 +684,7 @@
 		var/distance_decrease = get_dist(src, L) * 85
 		L.apply_damage((1000 - distance_decrease), BRUTE, null, L.run_armor_check(null, BRUTE))
 		if(L.health < 0)
-			L.gib(DROP_BRAIN)
+			L.gib(DROP_ALL_REMAINS)
 	////SLEEP_CHECK_DEATH(5, src)
 	burrow_cooldown = world.time + burrow_cooldown_time
 	burrowing = FALSE

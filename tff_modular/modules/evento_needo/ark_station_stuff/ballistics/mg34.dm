@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/automatic/mg34
-	name = "\improper MGQ-62"
+	name = "\improper MG-34"
 	desc = "An Old Empire machine gun that was also used in the Civil War. InteQ mercenaries took the old designs and put this old gun into circulation."
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_guns40x32.dmi'
 	lefthand_file = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_lefthand.dmi'
@@ -69,7 +69,7 @@
 	..()
 
 /obj/item/ammo_box/magazine/mg34
-	name = "MGQ-62 drum (7.92x57mm)"
+	name = "MG-34 drum (7.92x57mm)"
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_items.dmi'
 	icon_state = "mg34_drum"
 	ammo_type = /obj/item/ammo_casing/realistic/a792x57
@@ -78,7 +78,7 @@
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/gun/ballistic/automatic/mg34/packapunch //INFINITY GUNNNNNNNN
-	name = "\improper MGQ-62 UBER"
+	name = "\improper MG-34 UBER"
 	desc = "Here, there, seems like everywhere. Nasty things are happening, now everyone is scared. Old Jeb Brown the Blacksmith, he saw his mother die. A critter took a bite from her and now she's in the sky. "
 	fire_delay = 0.04
 	burst_size = 5
@@ -101,7 +101,7 @@
 #define BARREL_COOLDOWN_RATE 2
 
 /obj/item/gun/ballistic/automatic/mg34/mg42
-	name = "\improper MGQ-64V"
+	name = "\improper MG-42"
 	desc = "An Old Empire machine gun that was also used in the Civil War. InteQ mercenaries took the old designs and put this old gun into circulation. It has a bipod for better stability when deployed."
 	icon_state = "mg42"
 	base_icon_state = "mg42"
@@ -204,7 +204,7 @@
 #undef BARREL_COOLDOWN_RATE
 
 /obj/item/ammo_box/magazine/mg42
-	name = "MGQ-64V drum (7.92x57mm)"
+	name = "MG-42 drum (7.92x57mm)"
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_items.dmi'
 	icon_state = "mg42_drum"
 	ammo_type = /obj/item/ammo_casing/realistic/a792x57

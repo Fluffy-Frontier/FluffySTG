@@ -132,7 +132,7 @@
 				finishing = FALSE
 				return
 			playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/clownsmiling/final_stab.ogg', 50, 1)
-			TH.gib(DROP_BRAIN)
+			TH.gib(DROP_ALL_REMAINS)
 			for(var/mob/living/carbon/human/H in ohearers(7, get_turf(src)))
 				H.apply_damage(finishing_big_damage, BRUTE)
 

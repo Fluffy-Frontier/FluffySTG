@@ -163,7 +163,7 @@
 	burst_delay = 1
 	pin = /obj/item/firing_pin/implant/pindicate
 	fire_sound = 'sound/items/weapons/gun/shotgun/shot_alt.ogg'
-	actions_types = list(/datum/action/item_action/toggle_firemode)
+	//actions_types = list(/datum/action/item_action/toggle_firemode)
 	mag_display = TRUE
 	empty_indicator = TRUE
 	empty_alarm = TRUE

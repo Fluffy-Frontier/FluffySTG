@@ -47,10 +47,8 @@
 	icon_state = "disabler_smg"
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/smg)
 	shaded_charge = 1
-
-/obj/item/gun/energy/disabler/smg/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS, allow_akimbo = FALSE)
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	fire_delay = 0.15 SECONDS
 
 /obj/item/gun/energy/disabler/add_seclight_point()
 	AddComponent(\

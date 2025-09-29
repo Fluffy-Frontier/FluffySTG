@@ -50,8 +50,6 @@
 	)
 
 	spread = 1
-	wield_delay = 0.7 SECONDS
-
 	fire_delay = 0.2 SECONDS
 
 /obj/item/gun/ballistic/automatic/assault/skm/pirate
@@ -90,7 +88,7 @@
 	spread = 8
 	weapon_weight = WEAPON_MEDIUM
 	gun_firenames = list(FIREMODE_SEMIAUTO = "matter semi-auto", FIREMODE_BURST = "matter burst fire", FIREMODE_FULLAUTO = "matter full auto", FIREMODE_OTHER = "hybrid")
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO, FIREMODE_OTHER)
 
 	fire_select_icon_state_prefix = "swisschesse_"
 

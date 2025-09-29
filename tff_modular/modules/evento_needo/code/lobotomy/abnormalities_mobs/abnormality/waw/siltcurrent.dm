@@ -169,7 +169,7 @@
 						to_chat(L, span_userdanger("[src] mauls you!"))
 						HurtInTurf(T, list(), dive_damage, BRUTE)
 						if(L.health < 0 || L.stat == DEAD)
-							L.gib(DROP_BRAIN)
+							L.gib(DROP_ALL_REMAINS)
 		SLEEP_CHECK_DEATH(0.5 SECONDS, src)
 		diving = FALSE
 

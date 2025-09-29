@@ -1,4 +1,4 @@
-#define ABNORMALITY_DELAY 180 SECONDS
+GLOBAL_LIST_EMPTY(abnormality_ego_set)
 
 /*
 * The system was coded as a proof of concept long ago, and might need a good rework.
@@ -52,6 +52,12 @@ SUBSYSTEM_DEF(abnormality_queue)
 	for(var/abn in subtypesof(/mob/living/simple_animal/hostile/abnormality))
 		var/mob/living/simple_animal/hostile/abnormality/abno = new abn
 		possible_abnormalities[initial(abno.fear_level)] += abn
+
+		if(LAZYLEN(abno.ego_list))
+			GLOB.abnormality_ego_set[abno.name] = list(abno.ego_list)
+		if(istype(abno.gift_type))
+			LAZYADD(GLOB.abnormality_ego_set[abno.name], abno.gift_type)
+
 		qdel(abno)
 	return ..()
 
@@ -82,7 +88,6 @@ SUBSYSTEM_DEF(abnormality_queue)
 	if(!queued_abnormality)
 		return
 	spawned_abnormalities[initial(queued_abnormality.fear_level)] += queued_abnormality
-	priority_announce("New abnormality has arrived at the facility!", "M.O.G. ANNOUNCEMENT", sound = 'sound/machines/beep/triple_beep.ogg')
 	queued_abnormality = null
 	spawned_abnos++
 

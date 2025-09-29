@@ -387,8 +387,6 @@
 	recoil = 2
 	recoil_unwielded = 10
 	wield_slowdown = SNIPER_SLOWDOWN
-	wield_delay = 1.3 SECONDS
-
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
 	zoom_out_amt = 5
 
@@ -450,9 +448,6 @@
 	spread_unwielded = 40
 	recoil = 5
 	recoil_unwielded = 50
-
-	wield_delay = 1.3 SECONDS
-
 	valid_attachments = list()
 	slot_available = list()
 
@@ -472,7 +467,7 @@
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m556_42_hydra
 	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst fire", FIREMODE_FULLAUTO = "full auto")
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
-	//gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_OTHER)
+	//gun_firemodes = list(FIREMODE_SEMIAUTO FIREMODE_OTHER)
 	default_firemode = FIREMODE_SEMIAUTO
 
 	load_sound = 'tff_modular/modules/evento_needo/sounds/rifle/m16_reload.ogg'
@@ -549,8 +544,6 @@
 	recoil = 0.7
 	recoil_unwielded = 4
 	wield_slowdown = SAW_SLOWDOWN
-	wield_delay = 0.9 SECONDS //ditto
-
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
 	slot_available = SCARBOROUGH_ATTACH_SLOTS
 	slot_offsets = list(
@@ -582,15 +575,14 @@
 	inhand_icon_state = "hydra_dmr"
 	worn_icon_state = "hydra_dmr"
 
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-	burst_size = 1
+	burst_size = 2
 	fire_delay = 0.3 SECONDS
 	spread = 0
 	spread_unwielded = 12
 	wield_slowdown = DMR_SLOWDOWN //dmrrrr
-	wield_delay = 0.85 SECONDS //above
 	zoomable = TRUE
 	zoom_amt = 6
 	zoom_out_amt = 2
@@ -639,8 +631,6 @@
 	recoil = 1
 	recoil_unwielded = 4
 	wield_slowdown = HEAVY_SHOTGUN_SLOWDOWN
-	wield_delay = 0.65 SECONDS
-
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
 	slot_available = SCARBOROUGH_ATTACH_SLOTS
 	slot_offsets = list(

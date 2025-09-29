@@ -139,7 +139,7 @@
 		else
 			L.apply_damage(600 - ((dist > 2 ? dist : 0 )* 75), BRUTE) //0-600 damage scaling on distance, we don't want it oneshotting mobs
 		if(L.health < 0)
-			L.gib(DROP_BRAIN)
+			L.gib(DROP_ALL_REMAINS)
 	SLEEP_CHECK_DEATH(5, src)
 	SpawnMobs()
 

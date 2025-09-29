@@ -207,7 +207,7 @@
 				else
 					L.adjustFireLoss(80)
 				if(L.stat >= HARD_CRIT)
-					L.gib(DROP_BRAIN)
+					L.gib(DROP_ALL_REMAINS)
 				playsound(L, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/kog/GreedHit1.ogg', 20, 1)
 				playsound(L, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/kog/GreedHit2.ogg', 50, 1)
 				for(var/obj/vehicle/V in new_hits)
@@ -223,7 +223,7 @@
 				new /obj/effect/temp_visual/kinetic_blast(get_turf(L))
 				L.adjustFireLoss(80)
 				if(L.stat >= HARD_CRIT)
-					L.gib(DROP_BRAIN)
+					L.gib(DROP_ALL_REMAINS)
 				playsound(L, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/kog/GreedHit1.ogg', 20, 1)
 				playsound(L, 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/kog/GreedHit2.ogg', 50, 1)
 

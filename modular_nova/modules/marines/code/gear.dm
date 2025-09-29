@@ -18,11 +18,6 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BELT
 
-/obj/item/gun/ballistic/automatic/ar/modular/m44a/Initialize(mapload)
-	. = ..()
-
-	AddComponent(/datum/component/automatic_fire, fire_delay)
-
 /obj/item/gun/ballistic/automatic/ar/modular/m44a/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_NANOTRASEN)
 

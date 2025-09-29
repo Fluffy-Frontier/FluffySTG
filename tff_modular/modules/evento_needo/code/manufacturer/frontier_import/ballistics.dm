@@ -47,10 +47,6 @@
 		)
 	)
 
-/obj/item/gun/ballistic/automatic/pistol/mauler/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, fire_delay)
-
 /obj/item/gun/ballistic/automatic/pistol/spitter
 	name = "\improper Spitter"
 	desc = "An open-bolt submachine gun favored by the Frontiersmen. This design's origins are unclear, but its simple, robust design has been widely copied throughout the Frontier, and it is stereotypically used by pirates and various criminal groups that value low price and ease of concealment. Chambered in 9x18mm."
@@ -71,8 +67,6 @@
 	spread_unwielded = 35
 	dual_wield_spread = 35
 	wield_slowdown = SMG_SLOWDOWN
-	wield_delay = 0.1 SECONDS
-
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/smg/spitter.ogg'
 	rack_sound = 'tff_modular/modules/evento_needo/sounds/smg/spitter_cocked.ogg'
 	rack_sound_vary = FALSE

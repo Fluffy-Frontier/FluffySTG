@@ -174,7 +174,7 @@
 /mob/living/simple_animal/hostile/abnormality/my_form_empties/proc/OnMobDeath(datum/source, mob/living/died, gibbed)
 	if(!(died in current_minions))
 		return
-	died.gib(DROP_BRAIN)
+	died.gib(DROP_ALL_REMAINS)
 	current_minions -= died
 
 /mob/living/simple_animal/hostile/abnormality/my_form_empties/try_working(mob/living/carbon/human/user)
@@ -280,7 +280,7 @@
 /datum/status_effect/stacking/karma/threshold_cross_effect()
 	var/mob/living/user = owner
 	if(isliving(user) && user.maxHealth <= 2000)//Nice try! You can't kill DF with this
-		user.gib(DROP_BRAIN)
+		user.gib(DROP_ALL_REMAINS)
 
 /datum/status_effect/stacking/karma/on_apply()
 	. = ..()

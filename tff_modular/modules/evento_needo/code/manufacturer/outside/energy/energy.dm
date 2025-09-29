@@ -18,8 +18,6 @@
 	default_firemode = FIREMODE_SEMIAUTO
 
 	fire_delay = 0.2 SECONDS
-
-	wield_delay = 0.7 SECONDS
 	wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
 	spread_unwielded = 20
 
@@ -144,8 +142,6 @@
 	worn_icon_state = "gun"
 	ammo_x_offset = 2
 	charge_sections = 6
-
-	wield_delay = 0.2 SECONDS
 	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	spread = 2

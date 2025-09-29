@@ -474,7 +474,7 @@
 			if(!friendly)
 				for(var/obj/structure/obstacle in range(beam_stage-1, TF))
 					obstacle.take_damage(11, BRUTE)
-			for(var/mob/living/L in range(beam_stage-1, TF))
+			for(var/mob/living/L in view(beam_stage-1, TF))
 				if(HAS_TRAIT(L, TRAIT_GODMODE))
 					continue
 				if(L == src) //stop hitting yourself

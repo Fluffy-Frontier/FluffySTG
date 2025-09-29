@@ -285,7 +285,7 @@
 		if(istype(M ,/mob/living/simple_animal/hostile/doomsday_doll))
 			spawned_dolls -= M
 		to_chat(user, span_nicegreen("[src] is sated by your offering!"))
-		M.gib(DROP_BRAIN)
+		M.gib(DROP_ALL_REMAINS)
 		is_fed = TRUE
 		adjustBruteLoss(100)
 		pulse_damage -= 1

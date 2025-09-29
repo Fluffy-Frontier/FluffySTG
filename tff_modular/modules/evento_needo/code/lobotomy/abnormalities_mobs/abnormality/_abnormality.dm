@@ -1,3 +1,5 @@
+#define JOB_ABNORMALITY_PACKING "Упаковать"
+
 /mob/living/simple_animal/hostile/abnormality
 	name = "Abnormality"
 	desc = "An abnormality..? You should report this to the Head!"
@@ -8,7 +10,7 @@
 	combat_mode = TRUE
 	del_on_death = TRUE
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOXIN = 1, STAMINA = 1, OXYGEN = 1)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = null
 	minbodytemp = 0
 	see_in_dark = 7
 	vision_range = 12
@@ -40,7 +42,7 @@
 	/// EGO Gifts
 	var/datum/ego_gifts/gift_type = null
 	var/gift_chance = null
-	var/gift_message = null
+	var/gift_message = "You were gifted."
 	// Increased Abno appearance chance
 	/// Assoc list, you do [path] = [probability_multiplier] for each entry
 	var/list/grouped_abnos = list()
@@ -106,6 +108,7 @@
 		CLOTHING_SCIENCE,
 		CLOTHING_SERVICE,
 		CLOTHING_ARMORED,
+		JOB_ABNORMALITY_PACKING,
 	)
 	var/list/job_things = list()
 	var/datum/callback/job_callback
@@ -113,17 +116,51 @@
 	var/datum/callback/post_work_effect
 	var/calm_down_time = 3 MINUTES
 
+	var/prefered_job = null
+	var/hated_job = null
+
+
 /mob/living/simple_animal/hostile/abnormality/Login()
 	. = ..()
 	if(!. || !client)
 		return FALSE
+	REMOVE_TRAIT(src, TRAIT_GODMODE, ADMIN_TRAIT)
 	manual_emote("awakens...")
+
+/mob/living/simple_animal/hostile/abnormality/Logout()
+	. = ..()
+	if(!.)
+		return FALSE
+	if(breached)
+		return FALSE
+	ADD_TRAIT(src, TRAIT_GODMODE, ADMIN_TRAIT)
 
 /mob/living/simple_animal/hostile/abnormality/Initialize(mapload)
 	datum_reference = new(src)
 	datum_reference.qliphoth_meter_max = rand(1, 3)
 	datum_reference.qliphoth_meter = datum_reference.qliphoth_meter_max
 	SSlobotomy_corp.NewAbnormality(datum_reference)
+
+	switch(max(damage_coeff))
+		if(BRUTE)
+			prefered_job = CLOTHING_ARMORED
+		if(BURN)
+			prefered_job = CLOTHING_ENGINEERING
+		if(BRAIN)
+			prefered_job = CLOTHING_SCIENCE
+		if(TOX)
+			prefered_job = CLOTHING_SERVICE
+
+	switch(min(damage_coeff))
+		if(BRUTE)
+			hated_job = CLOTHING_ARMORED
+		if(BURN)
+			hated_job = CLOTHING_ENGINEERING
+		if(BRAIN)
+			hated_job = CLOTHING_SCIENCE
+		if(TOX)
+			hated_job = CLOTHING_SERVICE
+
 	for(var/action_type in attack_action_types)
 		var/datum/action/innate/abnormality_attack/attack_action = new action_type()
 		attack_action.Grant(src)
@@ -139,15 +176,15 @@
 	if(!gift_chance)
 		switch(fear_level)
 			if(ZAYIN_LEVEL)
-				gift_chance = 10
+				gift_chance = 23
 			if(TETH_LEVEL)
-				gift_chance = 8
+				gift_chance = 17
 			if(WAW_LEVEL)
-				gift_chance = 5
+				gift_chance = 13
 			if(HE_LEVEL)
-				gift_chance = 3
+				gift_chance = 8
 			if(ALEPH_LEVEL)
-				gift_chance = 1
+				gift_chance = 4
 
 	if(secret_chance && (prob(10)))
 		InitializeSecretIcon()
@@ -364,10 +401,6 @@
 
 /mob/living/simple_animal/hostile/abnormality/proc/try_giving_ego(mob/living/carbon/human/user, success)
 	SIGNAL_HANDLER
-	if(user)
-		to_chat(user, "Ты был вознагражден ЭГО.")
-	else
-		visible_message("ЭГО материализуется под аномалией.")
 	if(fear_level <= TETH_LEVEL)
 		if(prob(45))
 			spawn_ego(user)
@@ -382,6 +415,12 @@
 	var/turf/T = isnull(creature) ? get_turf(src) : get_turf(creature)
 	if(T)
 		var/new_ego = pick(ego_list)
+		if(isnull(new_ego) || istype(new_ego, /obj/item/ego_weapon/ranged))
+			return
+		if(creature)
+			to_chat(creature, "Ты был вознагражден ЭГО.")
+		else
+			visible_message("ЭГО материализуется под аномалией.")
 		var/datum/ego_datum/ego = new new_ego(src)
 		var/obj/item/ego_item = ego.item_path
 		if(ego_item)
@@ -406,26 +445,18 @@
 		to_chat(user, span_notice("[name] isn't ready for work yet."))
 		return FALSE
 	currently_working = TRUE
-	if(!LAZYLEN(work_types) || prob(40)) //Кастомные работы начинаются тут
-		if(do_after(user, fear_level * 5 SECONDS, src))
-			SuccessEffect(user)
-			. = TRUE
-		else
-			FailureEffect(user)
-			. = FALSE
-		currently_working = FALSE
-		post_work_effect?.Invoke(user)
-		return .
-	var/selected_work = tgui_input_list(user, "Select work type", "Choice", work_types, null, 10 SECONDS)
-	if(!selected_work)
-		currently_working = FALSE
-		return FALSE
 	result_points = max_points
 	SEND_SIGNAL(user, COMSIG_WORK_STARTED)
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_WORK_STARTED, src)
 	QDEL_LIST(current_jobs)
 	LAZYINITLIST(current_jobs)
+	var/selected_work = tgui_input_list(user, "Select work type", "Choice", LAZYLEN(work_types) && prob(65) ? work_types : list("Начать работу", JOB_ABNORMALITY_PACKING), null, 10 SECONDS)
+	if(!selected_work)
+		currently_working = FALSE
+		return FALSE
 	switch(selected_work)
+		if("Начать работу")
+			current_jobs += PROC_REF(random_do_afters)
 		//if(CLOTHING_ENGINEERING)
 		if(CLOTHING_SCIENCE)
 			current_jobs += PROC_REF(mathematical_job)
@@ -436,7 +467,9 @@
 		if(CLOTHING_ARMORED)
 			current_jobs += PROC_REF(pulse_waves)
 			current_jobs += PROC_REF(ask_money)
-	current_jobs += PROC_REF(random_do_afters)
+		if(JOB_ABNORMALITY_PACKING)
+			current_jobs += PROC_REF(try_packing) //ДОДЕЛАТЬ РАБОТЫ
+
 	if(!LAZYLEN(current_jobs))
 		return
 	shuffle_inplace(current_jobs) //Временное решение из-за малого количества работ
@@ -562,9 +595,11 @@
 	return
 
 /mob/living/simple_animal/hostile/abnormality/proc/CalmDown()
-	qliphoth_change(datum_reference.qliphoth_meter_max)
-	if(istype(datum_reference))
-		deadchat_broadcast(" угомонился.", "<b>[src.name]</b>", src, get_turf(src))
+	breached = FALSE
+	if(!IsContained())
+		qliphoth_change(datum_reference.qliphoth_meter_max)
+		if(istype(datum_reference))
+			deadchat_broadcast(" угомонился.", "<b>[src.name]</b>", src, get_turf(src))
 
 // Effects when qliphoth reaches 0
 /mob/living/simple_animal/hostile/abnormality/proc/ZeroQliphoth(mob/living/carbon/human/user)
@@ -709,3 +744,5 @@ ADMIN_VERB_AND_CONTEXT_MENU(make_angry, R_ADMIN, "Make angry", "Включает
 	message_admins("[key_name_admin(user)] взбесил  [abno.name]")
 	abno.qliphoth_change(-abno.datum_reference.qliphoth_meter_max)
 	BLACKBOX_LOG_ADMIN_VERB("Make Angry")
+
+#undef JOB_ABNORMALITY_PACKING

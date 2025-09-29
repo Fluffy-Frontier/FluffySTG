@@ -10,6 +10,11 @@
 	sound_vary = TRUE
 	unique_reskin_changes_base_icon_state = TRUE
 
+	wield_slowdown = PISTOL_SLOWDOWN
+	aimed_wield_slowdown = HEAVY_REVOLVER_SLOWDOWN
+
+	spread_unwielded = 1
+
 	///Sound of ejecting a magazine
 	var/eject_sound = 'sound/items/weapons/gun/general/magazine_remove_full.ogg'
 	///sound of ejecting an empty magazine
@@ -348,6 +353,9 @@
 			return
 	else
 		magazine = null
+	if(istype(user.get_inactive_held_item(), /obj/item/offhand))
+		do_wield(user)
+		user.swap_hand()
 	user.put_in_hands(old_mag)
 	old_mag.update_appearance()
 	if (display_message)

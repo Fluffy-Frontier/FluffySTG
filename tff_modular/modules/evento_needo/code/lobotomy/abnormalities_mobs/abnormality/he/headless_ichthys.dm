@@ -97,7 +97,7 @@
 					continue
 				L.apply_damage(jump_damage, BRUTE)
 				if(L.health < 0)
-					L.gib(DROP_BRAIN)
+					L.gib(DROP_ALL_REMAINS)
 			for(var/obj/vehicle/sealed/mecha/V in T)
 				V.take_damage(jump_damage, BRUTE)
 		SLEEP_CHECK_DEATH(0.5 SECONDS, src)

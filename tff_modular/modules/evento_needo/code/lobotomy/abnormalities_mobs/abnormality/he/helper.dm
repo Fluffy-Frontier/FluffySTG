@@ -219,7 +219,7 @@
 			if(!ishuman(L))
 				dash_damage = dash_damage / 2
 			if(L.stat >= HARD_CRIT)
-				L.gib(DROP_BRAIN)
+				L.gib(DROP_ALL_REMAINS)
 				continue
 			//been_hit += L
 			been_hit[L] = world.time

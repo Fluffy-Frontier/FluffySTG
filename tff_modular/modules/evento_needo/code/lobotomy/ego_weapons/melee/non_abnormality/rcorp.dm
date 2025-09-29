@@ -114,11 +114,6 @@
 		"R-Corp Berserker Reindeer","R-Corp Medical Reindeer","R-Corp Gunner Rhino","R-Corp Hammer Rhino","R-Corp Scout Raven","R-Corp Support Raven",
 		"R-Corp Roadrunner", "Roadrunner Squad Leader")
 
-/obj/item/gun/energy/e_gun/rabbit/Initialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.16 SECONDS)
-
-
 /obj/item/gun/energy/e_gun/rabbit/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
 	if(user.mind)
 		if(user.mind.assigned_role in banned_roles)
@@ -158,10 +153,6 @@
 	fire_delay = 0
 	drag_slowdown = 3
 	slowdown = 2
-
-/obj/item/gun/energy/e_gun/rabbit/minigun/Initialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.05 SECONDS)
 
 /obj/item/gun/energy/e_gun/rabbit/minigun/tricolor
 	name = "R-Corporation R-3500 Minigun"

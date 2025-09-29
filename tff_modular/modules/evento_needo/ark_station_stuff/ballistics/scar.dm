@@ -12,7 +12,6 @@
 	weapon_weight = WEAPON_HEAVY
 	w_class = WEIGHT_CLASS_BULKY
 	accepted_magazine_type = /obj/item/ammo_box/magazine/scar
-	projectile_damage_multiplier = 0.85
 	can_suppress = FALSE
 	fire_delay = 2.4
 	fire_sound = 'tff_modular/modules/evento_needo/ark_station_stuff/sound/guns/fire/scar_fire.ogg'
@@ -29,7 +28,7 @@
 
 /obj/item/ammo_box/magazine/scar
 	name = "\improper SCAR-L magazine"
-	desc = "A double-stack translucent polymer magazine for use with the XM-2537 rifles. Holds 30 rounds of .277 Aestus."
+	desc = "A double-stack translucent polymer magazine for use with the M-61 rifles. Holds 30 rounds of .277 Aestus."
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_items.dmi'
 	icon_state = "stg"
 	ammo_type = /obj/item/ammo_casing/a223

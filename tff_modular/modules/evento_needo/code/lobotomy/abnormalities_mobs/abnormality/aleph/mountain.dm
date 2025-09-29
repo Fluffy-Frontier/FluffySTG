@@ -120,7 +120,7 @@
 			if(!targett.Adjacent(L) || QDELETED(L)) // They can still be saved if you move them away
 				finishing = FALSE
 				return
-			L.gib(DROP_BRAIN)
+			L.gib(DROP_ALL_REMAINS)
 			adjustBruteLoss(-maxHealth*0.1)
 			finishing = FALSE
 			icon_state = icon_living

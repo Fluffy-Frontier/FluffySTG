@@ -7,6 +7,7 @@
 /datum/armament_entry/company_import/clip_lanchester
 	category = "Clip Lanchester"
 	company_bitflag = CARGO_COMPANY_CLIP_LANCHESTER
+	restricted = TRUE
 
 //BALLISTICS
 
@@ -132,6 +133,7 @@
 /datum/armament_entry/company_import/eoehoma
 	category = "Eoehoma"
 	company_bitflag = CARGO_COMPANY_EOEHOMA
+	restricted = TRUE
 
 //LASERS
 
@@ -163,6 +165,7 @@
 /datum/armament_entry/company_import/etherbor
 	category = "Etherbor"
 	company_bitflag = CARGO_COMPANY_ETHERBOR
+	restricted = TRUE
 
 //LASER
 
@@ -202,6 +205,7 @@
 /datum/armament_entry/company_import/frontier
 	category = "Frontier"
 	company_bitflag = CARGO_COMPANY_FRONTIER_IMPORT
+	restricted = TRUE
 
 /datum/armament_entry/company_import/frontier/ballistic
 	subcategory = "Ballistic Weaponry"
@@ -253,6 +257,7 @@
 /datum/armament_entry/company_import/hunter_pride
 	category = "Hunter Pride"
 	company_bitflag = CARGO_COMPANY_HUNTER_PRIDE
+	restricted = TRUE
 
 //BALLISTICS
 
@@ -345,6 +350,7 @@
 /datum/armament_entry/company_import/outside_imports
 	category = "OUTSIDERS"
 	company_bitflag = CARGO_COMPANY_IMPORTED_WEAPON
+	restricted = TRUE
 
 //BALLISTICS
 
@@ -446,6 +452,7 @@
 /datum/armament_entry/company_import/scarborough
 	category = "Scarborough"
 	company_bitflag = CARGO_COMPANY_SCARBOROUGH
+	restricted = TRUE
 
 //BALLISTICS
 
@@ -574,6 +581,7 @@
 /datum/armament_entry/company_import/serene_sporting
 	category = "Serene Sporting"
 	company_bitflag = CARGO_COMPANY_SERENE_SPORTING
+	restricted = TRUE
 
 //BALLISTICS
 
@@ -644,6 +652,7 @@
 /datum/armament_entry/company_import/solar_armories
 	category = "Solar Armories"
 	company_bitflag = CARGO_COMPANY_SOLAR_ARMORIES
+	restricted = TRUE
 
 //BALLISTIC
 

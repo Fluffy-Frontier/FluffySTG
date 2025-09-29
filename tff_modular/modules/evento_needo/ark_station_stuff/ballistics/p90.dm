@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/automatic/p90
-	name = "\improper SPG-Q-90"
+	name = "\improper FN P-09"
 	desc = "A compact Bullpup submachine gun of the pilots and tank crew of the Old Empire. After its collapse, the weapon's blueprints were taken by mercenaries from InteQ."
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_guns40x32.dmi'
 	icon_state = "p90"
@@ -26,7 +26,7 @@
 	AddComponent(/datum/component/automatic_fire, fire_delay)
 
 /obj/item/ammo_box/magazine/p90
-	name = "\improper SPG-Q-90 magazine"
+	name = "\improper FN P-09 magazine"
 	icon = 'tff_modular/modules/evento_needo/ark_station_stuff/icons/guns/gunsgalore_items.dmi'
 	icon_state = "p90"
 	ammo_type = /obj/item/ammo_casing/c385

@@ -219,7 +219,7 @@
 	if(H.sanity_lost) //prevents hitting the same guy in an infinite loop
 		melee_damage_type = BRUTE
 	if(H.health < 0)
-		H.gib(DROP_BRAIN)
+		H.gib(DROP_ALL_REMAINS)
 		if(!persistant)
 			addtimer(CALLBACK(src, PROC_REF(ReturnCell)), 10 SECONDS)
 			return

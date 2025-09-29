@@ -20,8 +20,6 @@
 	pixel_shift_x = 1
 	pixel_shift_y = 4
 	spread_mod = 1
-	wield_delay = 0.2 SECONDS
-
 /obj/item/attachment/energy_bayonet/on_preattack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
 	if(user.combat_mode && toggled != 0)
 		melee_attack_chain(user, target, params)

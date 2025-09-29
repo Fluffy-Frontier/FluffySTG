@@ -1,7 +1,6 @@
 //selfh
 /mob/living/simple_animal/hostile/abnormality/proc/pulse_waves(mob/living/carbon/human/user)
 	user.show_aso_blurb("ВЫТЕРПИ ЭТО")
-	sleep(3 SECONDS)
 	job_tick_check(user)
 	RegisterSignal(user, COMSIG_MOB_APPLY_DAMAGE, PROC_REF(on_damage_user))
 	RegisterSignal(src, COMSIG_JOB_TIMER_TICKED, PROC_REF(pulse_wave))
@@ -14,7 +13,7 @@
 	for(var/mob/living/carbon/human/user in view(5, src))
 		var/got_one = FALSE
 		if(user)
-			user.apply_damage(fear_level * 4)
+			user.apply_damage(fear_level * 5 + 15)
 			got_one = TRUE
 		if(!got_one)
 			bad_job_effect()
@@ -41,11 +40,11 @@
 
 //Обычные do_afters со случайными приколами. Суть работы - заставить игрока поверить в то, что он провалил её.
 /mob/living/simple_animal/hostile/abnormality/proc/random_do_afters(mob/living/carbon/human/user)
+	user.show_aso_blurb("Просто продолжай свою работу", 2.5 SECONDS)
 	for(var/i in 1 to fear_level)
 		if(!do_after(user, fear_level * 3 SECONDS))
 			bad_job_effect()
-			job_tick_effect(user)
-			return
+			break
 		//место для смешнявок
 		else if(prob(10 * fear_level))
 			var/level = text2path("/datum/status_effect/panicked_lvl_[rand(0, 5)]")
@@ -75,7 +74,7 @@
 /mob/living/simple_animal/hostile/abnormality/proc/remember_the_code(mob/living/carbon/human/user)
 	var/len = 10 ** rand(fear_level, fear_level + 1)
 	user.show_aso_blurb("ЗАПОМНИ КОД")
-	sleep(3 SECONDS)
+	sleep(1.5 SECONDS)
 	var/remind_code = rand(floor(len / 10), floor(len * 10))
 	balloon_alert(user, num2text(remind_code))
 	job_things["remind_code"] = remind_code
@@ -87,9 +86,9 @@
 	if(isnull(answer))
 		job_tick_effect(user)
 		return
-	user.show_aso_blurb("ВСПОМНИ КОД")
-	sleep(3 SECONDS)
-	job_tick_check(user)
+	user.show_aso_blurb("ВСПОМНИ КОД", 2 SECONDS)
+	sleep(2 SECONDS)
+	//?job_tick_check(user)
 	var/list/possible_answers = shuffle(list(answer, rand(answer - floor(answer / 10), answer + floor(answer * 10)), rand(answer - floor(answer / 10), answer + floor(answer * 10))))
 	var/code = tgui_input_list(user, "Выбери правильный ответ", "Выбор кода", possible_answers, null, 10 SECONDS)
 	if(!code || code != job_things["remind_code"])
@@ -209,7 +208,8 @@
 	var/a = rand(1, 300)
 	var/b = rand(100, 400)
 	var/answer = a + b
-	user.show_aso_blurb("РЕШИ ЗАДАЧУ")
+	user.show_aso_blurb("Реши задачу", 2 SECONDS)
+	sleep(2 SECONDS)
 	var/player_answer = tgui_input_list(user, "[a] + [b] = ...", "Choice", list(answer, rand(200, 400), rand(200, 400), rand(200, 400)), null, 10 SECONDS)
 	if(!player_answer || player_answer != answer)
 		bad_job_effect()
@@ -217,3 +217,97 @@
 		//TIME LEFT?
 		SuccessEffect()
 	job_tick_effect(user)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//ОСОБЫЕ ПРОКИ
+
+/mob/living/simple_animal/hostile/abnormality/proc/try_packing(mob/living/carbon/human/user)
+	var/succeeded = TRUE
+	//Пункт приема товара ниже по коду
+	if(fear_level < HE_LEVEL)
+		if(user.get_major_clothing_class() == prefered_job && prob(15))
+			user.show_aso_blurb("Ты ему понравился!")
+		else if(prob(10))
+			user.show_aso_blurb("Сегодня твой везучий день!", 3 SECONDS)
+			playsound(loc, 'sound/machines/ding.ogg', 50, TRUE)
+		//else //if(prob(20))
+		//	user.show_aso_blurb("Реши задачку", 3 SECONDS)
+		//	sleep(3 SECONDS)
+		//	var/x = rand(1, 10 ** fear_level)
+		//	var/y = rand(1, 10 ** fear_level)
+		//	var/answer = x + y
+		//	var/choice = tgui_input_list(user, "[x] + [y] = ...", "Задача", shuffle_inplace(list(answer, rand(1, 10 ** fear_level), rand(1, 10 ** fear_level), rand(1, 10 ** fear_level))), timeout = 18 SECONDS)
+		//	if(choice != answer)
+		//		user.show_aso_blurb("Может это просто не твое...")
+		//		succeeded = FALSE
+		else //if(prob(20))
+			user.show_aso_blurb("Ну разве это не скучно?")
+			for(var/i in 1 to fear_level * 2)
+				if(!do_after(user, 5 SECONDS, src))
+					succeeded = FALSE
+					break
+
+	else //КРУТЫЕ ПАРНИ
+		if(prob(20) && issynthetic(user))
+			user.show_aso_blurb("Подзарядочка!", 3 SECONDS)
+			empulse(user, 2, 5)
+			if(user.stat > CONSCIOUS)
+				succeeded = FALSE
+		if(user.get_major_clothing_class() == hated_job && prob(35))
+			user.show_aso_blurb("Ты [prob(10) ? "просто мерзость" : "отвратителен ему"]")
+			user.apply_damage(15 * fear_level, wound_bonus = 20)
+			succeeded = FALSE
+		else if(prob(20))
+			user.show_aso_blurb("Ты [prob(10) ? "лох" : "неудачник"]!", 3 SECONDS)
+			user.apply_damage(20, BRUTE, wound_bonus = 40)
+			playsound(loc, 'sound/machines/ding.ogg', 50, TRUE)
+			succeeded = FALSE
+		else //if(prob(20))
+			user.show_aso_blurb("Вот это уже реально скучно.")
+			for(var/i in 1 to fear_level * 3)
+				if(!do_after(user, 10 SECONDS, src))
+					succeeded = FALSE
+					break
+		//else //if(prob(20))
+		//	user.show_aso_blurb("Реши задачу", 3 SECONDS)
+		//	sleep(3 SECONDS)
+		//	var/x = rand(1, 10 ** fear_level)
+		//	var/y = rand(1, 10 ** fear_level)
+		//	var/choice = tgui_input_list(user, "[x] + [y] = ...", "Задача", shuffle(list(x + y, rand(1, 10 ** fear_level), rand(1, 10 ** fear_level), rand(1, 10 ** fear_level), rand(1, 10 ** fear_level), rand(1, 10 ** fear_level))), timeout = 12 SECONDS)
+		//	if(choice != (x + y))
+		//		user.show_aso_blurb("Увы")
+		//		user.apply_damage(40, BRUTE, wound_bonus = 20)
+		//		succeeded = FALSE
+
+
+
+	job_tick_effect(user)
+	if(!succeeded) //Возможно оно упакует тебя
+		FailureEffect(user)
+		return
+	new /obj/structure/abno_core(get_turf(src), type)
+	qdel(src)
+
