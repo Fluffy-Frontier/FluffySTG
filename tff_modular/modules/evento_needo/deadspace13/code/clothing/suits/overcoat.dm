@@ -20,22 +20,6 @@
 	strip_delay = 80
 	supports_variations_flags = CLOTHING_NO_VARIATION
 
-/obj/item/clothing/suit/armor/vest/kellion
-	name = "C.E.C. armored vest"
-	desc = "A set of armor issued to security teams assigned to guarding C.E.C. maintenance teams."
-	icon = 'tff_modular/modules/evento_needo/deadspace13/icons/obj/clothing/suits.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/deadspace13/icons/onmob/suit.dmi'
-	icon_state = "kellion_grunt"
-	supports_variations_flags = CLOTHING_NO_VARIATION
-
-/obj/item/clothing/suit/toggle/kellion_jacket
-	name = "light jacket"
-	desc = "A thin, white and green jacket."
-	icon = 'tff_modular/modules/evento_needo/deadspace13/icons/obj/clothing/suits.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/deadspace13/icons/onmob/suit.dmi'
-	icon_state = "kelliontech_jacket"
-	supports_variations_flags = CLOTHING_NO_VARIATION
-
 /obj/item/clothing/suit/toggle/ds_cargo_jacket
 	name = "fur-lined coat"
 	desc = "A snazzy coat with a nice fur lining on the inside and near the neck. The zipper looks like gold."

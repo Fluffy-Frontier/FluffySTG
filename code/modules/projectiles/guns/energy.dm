@@ -44,6 +44,7 @@
 		/obj/item/attachment/bayonet,
 		/obj/item/attachment/gun,
 		/obj/item/attachment/sling,
+		/obj/item/attachment/ammo_counter,
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
@@ -451,7 +452,7 @@
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/gun/energy/attack_hand(mob/user, list/modifiers)
-	if(!internal_magazine && loc == user && user.is_holding(src) && !has_empty_cell())
+	if(!internal_magazine && loc == user && user.is_holding(src) && !has_empty_cell() && !latch_closed)
 		eject_cell(user)
 		return
 	return ..()
@@ -484,7 +485,8 @@
 
 
 /obj/item/gun/energy/screwdriver_act(mob/living/user, obj/item/I)
-
+	if(!user.is_holding(src))
+		return ..()
 	var/choice = isnull(pin) ? FALSE : tgui_input_list(user, "Choose action", "Choice", list("Take pin out", "Cell-slot action"))
 	if(choice == "Cell-slot action" || !choice)
 		if(latch_closed)

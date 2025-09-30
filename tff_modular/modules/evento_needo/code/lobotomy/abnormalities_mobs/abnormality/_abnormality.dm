@@ -740,9 +740,12 @@ ADMIN_VERB_AND_CONTEXT_MENU(make_angry, R_ADMIN, "Make angry", "Включает
 	if(!istype(abno, /mob/living/simple_animal/hostile/abnormality))
 		to_chat(user, span_warning("Работает только на аномалиях LC"))
 		return
-	log_admin("[key_name(user)] взбесил  [abno.name]")
-	message_admins("[key_name_admin(user)] взбесил  [abno.name]")
 	abno.qliphoth_change(-abno.datum_reference.qliphoth_meter_max)
+	if(!abno.IsContained())
+		to_chat(user, span_warning("[abno.name] не имеет механики побега."))
+		return
+	log_admin("[key_name(user)] взбесил [abno.name]")
+	message_admins("[key_name_admin(user)] взбесил [abno.name]")
 	BLACKBOX_LOG_ADMIN_VERB("Make Angry")
 
 #undef JOB_ABNORMALITY_PACKING

@@ -85,7 +85,7 @@
 /datum/component/attachment_holder/proc/handle_alt_click(obj/item/parent, mob/living/user)
 	SIGNAL_HANDLER
 
-	if(user.combat_mode)
+	if(user.combat_mode && user.is_holding(parent))
 		INVOKE_ASYNC(src, PROC_REF(handle_detach), parent, user)
 		return TRUE
 	else

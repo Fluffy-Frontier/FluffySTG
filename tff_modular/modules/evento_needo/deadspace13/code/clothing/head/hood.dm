@@ -3,7 +3,7 @@
 	desc = "It's hood that covers the head. It is made whole with the clergy robe and outfit."
 	icon = 'tff_modular/modules/evento_needo/deadspace13/icons/obj/clothing/hats.dmi'
 	worn_icon = 'tff_modular/modules/evento_needo/deadspace13/icons/onmob/head.dmi'
-	icon_state = "clergy"
+	icon_state = "bio_black"
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS
 

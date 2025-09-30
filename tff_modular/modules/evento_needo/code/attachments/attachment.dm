@@ -123,7 +123,7 @@
 	SIGNAL_HANDLER
 
 	if(!bypass_checks)
-		if(!parent.Adjacent(user) || (length(valid_parent_types) && (holder.type in valid_parent_types)))
+		if(user.is_holding(parent) || !parent.Adjacent(user) || (length(valid_parent_types) && (holder.type in valid_parent_types)))
 			return FALSE
 
 	if(on_attach && !on_attach.Invoke(holder, user))

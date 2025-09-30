@@ -4,6 +4,8 @@
 	icon = 'tff_modular/modules/evento_needo/deadspace13/icons/obj/clothing/hats.dmi'
 	worn_icon = 'tff_modular/modules/evento_needo/deadspace13/icons/onmob/head.dmi'
 	icon_state = "pcsicap"
+	soft_type = ""
+	soft_suffix = "flipped"
 
 /obj/item/clothing/head/hopcap/cec
 	name = "first lieutenant's cap"
@@ -16,10 +18,3 @@
 	icon = 'tff_modular/modules/evento_needo/deadspace13/icons/obj/clothing/hats.dmi'
 	worn_icon = 'tff_modular/modules/evento_needo/deadspace13/icons/onmob/head.dmi'
 	icon_state = "capcap"
-
-/obj/item/clothing/head/soft/retro_command
-	name = "command beret"
-	desc = "an older looking command beret."
-	icon = 'tff_modular/modules/evento_needo/deadspace13/icons/obj/clothing/hats.dmi'
-	worn_icon = 'tff_modular/modules/evento_needo/deadspace13/icons/onmob/head.dmi'
-	icon_state = "retro_command_beret"

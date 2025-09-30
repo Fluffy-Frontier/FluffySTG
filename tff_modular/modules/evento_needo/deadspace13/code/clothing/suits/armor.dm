@@ -10,18 +10,3 @@
 	name = "CEC standard vest"
 	desc = "The Concordance Extraction Corporation's standard issue vest, doesn't offer as much protection as a P.S.C.I officer's vest."
 	icon_state = "cec_vest"
-
-/obj/item/clothing/suit/armor/pcsi/titan_suit
-	name = "titan station security suit"
-	desc = "Standard issue suit, typically given to all of security or law enforcement personnel. These suits are used commonly in day to day operations."
-	icon_state = "titan_suit"
-
-/obj/item/clothing/suit/armor/pcsi/titan_suit/colonel
-	name = "titan station security suit"
-	desc = "Standard issue suit, typically given to colonel ranked security members.."
-	icon_state = "titan_colonel_suit"
-
-/obj/item/clothing/suit/armor/pcsi/hunk
-	name = "HUNK armored vest"
-	desc = "A heavy armored vest in a fetching black. Used to protect the wearer from dangerous, unknown biohazards. It is surprisingly flexible and light, even with the extra webbing and advanced ceramic plates."
-	icon_state = "hunk_armor"

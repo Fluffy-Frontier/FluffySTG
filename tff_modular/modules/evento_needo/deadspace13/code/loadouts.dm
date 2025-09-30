@@ -9,13 +9,7 @@
 	name = "armored gloves"
 	item_path = /obj/item/clothing/gloves/combat/pcsi
 
-/datum/loadout_item/gloves/deadspace/kellion
-	name = "titan work gloves"
-	item_path = /obj/item/clothing/gloves/combat/kellion
 
-/datum/loadout_item/gloves/deadspace/titan_sec
-	name = "armored gloves"
-	item_path = /obj/item/clothing/gloves/combat/pcsi/titan_sec
 
 
 /*
@@ -33,21 +27,9 @@
 	name = "P.C.S.I hood"
 	item_path = /obj/item/clothing/head/helmet/pcsi_hood
 
-/datum/loadout_item/head/deadspace/titan_helm
-	name = "security helmet"
-	item_path = /obj/item/clothing/head/helmet/titan_helm
-
-/datum/loadout_item/head/deadspace/colonel
-	name = "colonel security helmet"
-	item_path = /obj/item/clothing/head/helmet/titan_helm/colonel
-
-/datum/loadout_item/head/deadspace/hunk
-	name = "HUNK helmet"
-	item_path = /obj/item/clothing/head/helmet/hunk
-
 /datum/loadout_item/head/deadspace/cseco
 	name = "PCSI beret"
-	item_path = /obj/item/clothing/head/cseco
+	item_path = /obj/item/clothing/head/helmet/cseco
 
 /datum/loadout_item/head/deadspace/caphat
 	restricted_roles = list(JOB_CAPTAIN)
@@ -56,7 +38,7 @@
 
 /datum/loadout_item/head/deadspace/caphat/retro
 	name = "command beret"
-	item_path = /obj/item/clothing/head/soft/retro_command
+	item_path = /obj/item/clothing/head/helmet/retro_command
 
 /datum/loadout_item/head/deadspace/beret
 	name = "improper P.C.S.I officer's cap"
@@ -87,23 +69,11 @@
 	name = "combat boots"
 	item_path = /obj/item/clothing/shoes/combat/pcsi
 
-/datum/loadout_item/shoes/deadspace/sec/kellion
-	name = "combat boots"
-	item_path = /obj/item/clothing/shoes/combat/kellion
-
-/datum/loadout_item/shoes/deadspace/sec/lead
-	name = "combat boots"
-	item_path = /obj/item/clothing/shoes/combat/kellion/lead
-
 /*
 *
 *					SUITS
 *
 */
-
-/datum/loadout_item/suit/deadspace
-	name = "light jacket"
-	item_path = /obj/item/clothing/suit/toggle/kellion_jacket
 
 /datum/loadout_item/suit/deadspace/sec
 	restricted_roles = list(JOB_SECURITY_OFFICER, JOB_DETECTIVE, JOB_WARDEN, JOB_HEAD_OF_SECURITY)
@@ -114,25 +84,9 @@
 	name = "CEC standard vest"
 	item_path = /obj/item/clothing/suit/armor/pcsi/cec
 
-/datum/loadout_item/suit/deadspace/sec/titan_suit
-	name = "titan station security suit"
-	item_path = /obj/item/clothing/suit/armor/pcsi/titan_suit
-
-/datum/loadout_item/suit/deadspace/sec/colonel
-	name = "titan station security suit"
-	item_path = /obj/item/clothing/suit/armor/pcsi/titan_suit/colonel
-
-/datum/loadout_item/suit/deadspace/sec/hunk
-	name = "HUNK armored vest"
-	item_path = /obj/item/clothing/suit/armor/pcsi/hunk
-
 /datum/loadout_item/suit/deadspace/sec/cseco
 	name = "armored security jacket"
 	item_path = /obj/item/clothing/suit/armor/vest/cseco
-
-/datum/loadout_item/suit/deadspace/sec/kellion
-	name = "C.E.C. armored vest"
-	item_path = /obj/item/clothing/suit/armor/vest/kellion
 
 /datum/loadout_item/suit/deadspace/sec/bio
 	name = "Earthgov black bio suit"
@@ -274,22 +228,11 @@
 	item_path = /obj/item/clothing/under/rank/cargo/ds_flightdeck
 
 //SEC
+
 /datum/loadout_item/under/deadspace/sec
 	restricted_roles = list(JOB_SECURITY_OFFICER, JOB_DETECTIVE, JOB_WARDEN, JOB_HEAD_OF_SECURITY)
-	name = "HUNK armored uniform"
-	item_path = /obj/item/clothing/under/rank/security/hunk
-
-/datum/loadout_item/under/deadspace/sec/psci
 	name = "security officer's jumpsuit"
 	item_path = /obj/item/clothing/under/rank/security/ds_pcsi
-
-/datum/loadout_item/under/deadspace/sec/vintage
-	name = "vintage security uniform"
-	item_path = /obj/item/clothing/under/rank/security/ds_pcsi/ds_vintage
-
-/datum/loadout_item/under/deadspace/sec/titan
-	name = "titan station security uniform"
-	item_path = /obj/item/clothing/under/rank/security/ds_titan
 
 /datum/loadout_item/under/deadspace/sec/cseco
 	name = "chief security officer's jumpsuit"
