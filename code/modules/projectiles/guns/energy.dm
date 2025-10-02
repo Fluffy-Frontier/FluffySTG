@@ -476,6 +476,9 @@
 		qdel(C) // Если что-то пошло не так...
 		return FALSE
 	cell = C
+	var/obj/item/ammo_casing/energy/shot = ammo_type[select] //Necessary to find cost of shot
+	shot.e_cost = initial(shot.e_cost) * cell.maxcharge / STANDARD_CELL_CHARGE
+	battery_damage_multiplier = max(1 + (cell.maxcharge / (STANDARD_CELL_CHARGE * 200)), 1)
 
 	playsound(src, load_sound, load_sound_volume, load_sound_vary)
 	update_appearance()
