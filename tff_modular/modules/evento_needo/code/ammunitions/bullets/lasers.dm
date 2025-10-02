@@ -40,13 +40,14 @@
 /obj/projectile/beam/laser/eoehoma
 	icon = 'tff_modular/modules/evento_needo/icons/projectiles.dmi'
 	icon_state = "heavylaser"
-	damage = 30
+	damage = 25
 	armour_penetration = 0
 	speed = 1
 
 /obj/projectile/beam/laser/eoehoma/heavy
 	icon_state = "heavylaser"
-	damage = 50
+	damage = 30
+	stamina = 40
 	knockdown = 50
 	armour_penetration = 20
 	speed = 1.1
@@ -81,7 +82,7 @@
 		impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser/wall
 
 /obj/projectile/beam/weak/sharplite
-	damage = 15
+	damage = 16
 	speed = 1.1
 
 /obj/projectile/beam/weaker
@@ -101,6 +102,7 @@
 
 
 /obj/projectile/beam/disabler/weak/negative_ap
+	damage = 7
 	armour_penetration = -30
 	range = 9
 
@@ -130,6 +132,7 @@
 
 /obj/projectile/beam/emitter/hitscan/e50
 	damage = 30
+	armour_penetration = 40
 
 
 

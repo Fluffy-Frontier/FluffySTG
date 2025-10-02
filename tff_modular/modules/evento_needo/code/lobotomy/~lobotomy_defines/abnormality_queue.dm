@@ -118,16 +118,17 @@ SUBSYSTEM_DEF(abnormality_queue)
 // Spawns abnos faster if you lack abnos of that level
 /datum/controller/subsystem/abnormality_queue/proc/OnOrdealEnd(datum/source, datum/ordeal/O = null)
 	SIGNAL_HANDLER
-	if(!istype(O))
-		return
-	if(O.level > 3 || O.level < 1)
-		return
-	var/level_threat = O.level + 2 // Dusk will equal to ALEPH here
-	// Already in there, oops
-	if(level_threat in available_levels)
-		return
-	priority_announce("Due to [O.name] finishing early, additional abnormalities will be extracted soon.", "M.O.G. ANNOUNCEMENT")
-	INVOKE_ASYNC(src, PROC_REF(SpawnOrdealAbnos), level_threat)
+	return
+	//if(!istype(O))
+	//	return
+	//if(O.level > 3 || O.level < 1)
+	//	return
+	//var/level_threat = O.level + 2 // Dusk will equal to ALEPH here
+	//// Already in there, oops
+	//if(level_threat in available_levels)
+	//	return
+	//priority_announce("Due to [O.name] finishing early, additional abnormalities will be extracted soon.", "M.O.G. ANNOUNCEMENT")
+	//INVOKE_ASYNC(src, PROC_REF(SpawnOrdealAbnos), level_threat)
 
 /datum/controller/subsystem/abnormality_queue/proc/SpawnOrdealAbnos(level_threat = 1)
 	// Spawn stuff until we reach the desired threat level, or spawn too many things

@@ -41,8 +41,8 @@
 /obj/item/ammo_casing/energy/laser/eoehoma/e50/clip
 	projectile_type = /obj/projectile/beam/emitter/hitscan/clip
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/laser/heavy_laser.ogg'
-	e_cost = 6250
-	delay = 0.6 SECONDS
+	e_cost = LASER_SHOTS(10, STANDARD_CELL_CHARGE)
+	delay = 1.3 SECONDS
 
 /obj/projectile/beam/emitter/hitscan/clip
 	damage = 35

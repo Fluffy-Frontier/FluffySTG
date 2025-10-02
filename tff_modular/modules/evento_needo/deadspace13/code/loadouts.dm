@@ -75,6 +75,10 @@
 *
 */
 
+/datum/loadout_item/suit/deadspace
+	name = "bio suit"
+	item_path = /obj/item/clothing/suit/bio_suit/ds
+
 /datum/loadout_item/suit/deadspace/sec
 	restricted_roles = list(JOB_SECURITY_OFFICER, JOB_DETECTIVE, JOB_WARDEN, JOB_HEAD_OF_SECURITY)
 	name = "P.C.S.I officer's vest"
@@ -105,10 +109,6 @@
 	restricted_roles = list(JOB_CARGO_TECHNICIAN, JOB_QUARTERMASTER, JOB_CUSTOMS_AGENT, JOB_BITRUNNER)
 	name = "fur-lined coat"
 	item_path = /obj/item/clothing/suit/toggle/ds_cargo_jacket
-
-/datum/loadout_item/suit/deadspace/bio
-	name = "bio suit"
-	item_path = /obj/item/clothing/suit/bio_suit/ds
 
 /*
 *

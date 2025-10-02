@@ -382,7 +382,7 @@
 			continue
 		if(H.stat == DEAD)
 			continue
-		if(H.HAS_TRAIT(src, TRAIT_GODMODE))
+		if(HAS_TRAIT(src, TRAIT_GODMODE))
 			continue
 		if(user.faction_check_atom(H, FALSE))
 			continue

@@ -17,7 +17,6 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-	fire_delay = 0.2 SECONDS
 	wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
 	spread_unwielded = 20
 
@@ -179,11 +178,9 @@
 	charge_sections = 3
 	weapon_weight = WEAPON_LIGHT
 
-	fire_delay = 0.13 SECONDS
 	wield_slowdown = LASER_SMG_SLOWDOWN
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
-	default_firemode = FIREMODE_SEMIAUTO
 
 /obj/item/gun/energy/e_gun/iot
 	name = "\improper E-SG 500 Second Edition"
@@ -198,6 +195,5 @@
 	icon_state = "iotshotgun"
 	inhand_icon_state = "shotgun_combat"
 	shaded_charge = TRUE
-	fire_delay = 0.4 SECONDS
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima, /obj/item/ammo_casing/energy/laser/ultima)
 	w_class = WEIGHT_CLASS_BULKY

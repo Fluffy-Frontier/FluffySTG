@@ -304,7 +304,7 @@
 
 
 
-	job_tick_effect(user)
+	//job_tick_effect(user)
 	if(!succeeded) //Возможно оно упакует тебя
 		FailureEffect(user)
 		return

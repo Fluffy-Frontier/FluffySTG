@@ -71,6 +71,7 @@
 
 	/// Just 'slightly' snowflakey way to modify projectile damage for projectiles fired from this gun.
 	var/projectile_damage_multiplier = 1
+	var/battery_damage_multiplier = 1
 
 	/// Even snowflakier way to modify projectile wounding bonus/potential for projectiles fired from this gun.
 	var/projectile_wound_bonus = 0
@@ -265,6 +266,7 @@
 	AddComponent(/datum/component/attachment_holder, slot_available, attachment_list, slot_offsets, default_attachments)
 
 	add_seclight_point()
+	give_gun_safeties()
 	add_bayonet_point()
 	RegisterSignal(src, COMSIG_KB_MOB_WEAPON_WIELD, PROC_REF(on_wield))
 
@@ -377,6 +379,16 @@
 
 /obj/item/gun/examine(mob/user)
 	. = ..()
+	. += span_info("Оружие можно взять в двуручный хват по нажатию CTRL + E. Изменить режим стрельбы, если такое доступно, можно нажав SHIFT + SPACE. Обе комбинации можно изменить в настройках.")
+	if(atom_integrity < max_integrity)
+		. += span_info("Используя сварку можно отремонтировать.")
+	if(GetComponent(/datum/component/gun_safety))
+		. += span_info("Используя кусачки можно спилить предохранитель с оружия.")
+	if(istype(src, /obj/item/gun/energy))
+		. += span_info("У этого оружия можно открыть слот для батареи с помощью отвертки.")
+	if(cell)
+		. += span_info("It has [cell.name] installed")
+	//. += "Если на оружии надет обвес - его можно снять нажав ALT + ЛКМ в боевом режиме."
 	if(!pinless)
 		if(pin)
 			. += "It has \a [pin] installed."
@@ -604,9 +616,9 @@
 	if(check_botched(user, target))
 		return
 
-	if(weapon_weight == WEAPON_HEAVY  && !istype(user.get_inactive_held_item(), /obj/item/offhand))
-		balloon_alert(user, "use both hands!")
-		return
+	//if(weapon_weight == WEAPON_HEAVY  && (!istype(user.get_inactive_held_item(), /obj/item/offhand) && !isnull(user.get_inactive_held_item())))
+	//	balloon_alert(user, "use both hands!")
+	//	return
 	//DUAL (or more!) WIELDING
 	var/bonus_spread = 0
 	var/loop_counter = 0
@@ -806,16 +818,14 @@
 		return
 	if(!user.can_perform_action(src, FORBID_TELEKINESIS_REACH))
 		return
-	if(pin?.pin_removable && user.is_holding(src))
-		user.visible_message(span_warning("[user] attempts to remove [pin] from [src] with [I]."),
-		span_notice("You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)"), null, 3)
-		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, 5, volume = 50))
-			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
-				return
-			user.visible_message(span_notice("[pin] is spliced out of [src] by [user], melting part of the pin in the process."),
-								span_warning("You splice [pin] out of [src] with [I], melting part of the pin in the process."), null, 3)
-			QDEL_NULL(pin)
-			return TRUE
+	if(atom_integrity < max_integrity)
+		user.visible_message(span_warning("[user] attempts to repair [src] with [I]."),
+		span_notice("You attempt to repair [src]."), null, 3)
+		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, volume = 50))
+			user.visible_message(span_notice("[src] was repaired by [user]."),
+								span_warning("You repair [src] with [I]."), null, 3)
+			repair_damage(20)
+			return ITEM_INTERACT_SUCCESS
 
 /obj/item/gun/wirecutter_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -823,16 +833,16 @@
 		return
 	if(!user.can_perform_action(src, FORBID_TELEKINESIS_REACH))
 		return
-	if(pin?.pin_removable && user.is_holding(src))
-		user.visible_message(span_warning("[user] attempts to remove [pin] from [src] with [I]."),
-		span_notice("You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)"), null, 3)
+	if(GetComponent(/datum/component/gun_safety))
+		user.visible_message(span_warning("[user] attempts to remove gun safety from [src] with [I]."),
+		span_notice("You attempt to remove gun safety from [src]."), null, 3)
 		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, volume = 50))
-			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
+			if(!GetComponent(/datum/component/gun_safety)) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
 				return
-			user.visible_message(span_notice("[pin] is ripped out of [src] by [user], mangling the pin in the process."),
-								span_warning("You rip [pin] out of [src] with [I], mangling the pin in the process."), null, 3)
-			QDEL_NULL(pin)
-			return TRUE
+			user.visible_message(span_notice("Gun safety removed out of [src] by [user]."),
+								span_warning("You pry gun safity out with [I]."), null, 3)
+			qdel(GetComponent(/datum/component/gun_safety))
+			return ITEM_INTERACT_SUCCESS
 
 /obj/item/gun/animate_atom_living(mob/living/owner)
 	new /mob/living/basic/mimic/copy/ranged(drop_location(), src, owner)

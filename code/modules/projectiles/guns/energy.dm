@@ -10,7 +10,6 @@
 	wield_slowdown = LASER_SMG_SLOWDOWN
 	aimed_wield_slowdown = LASER_RIFLE_SLOWDOWN
 
-
 	ammo_x_offset = 2
 	///If this gun has a "this is loaded with X" overlay alongside chargebars and such
 	var/single_shot_type_overlay = TRUE
@@ -37,7 +36,6 @@
 
 	var/latch_closed = TRUE
 	var/latch_toggle_delay = 1.0 SECONDS
-
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
@@ -48,7 +46,7 @@
 	)
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
-		ATTACHMENT_SLOT_MUZZLE = 1
+		ATTACHMENT_SLOT_MUZZLE = 1,
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -194,9 +192,53 @@
 		update_appearance()
 
 /obj/item/gun/energy/attackby(obj/item/attacking_item, mob/living/user, params)
+	if(istype(attacking_item, /obj/item/melee/baton/security))
+		return try_charging_with_batton(attacking_item, user)
 	if(istype(attacking_item, /obj/item/stock_parts/power_store/cell))
 		return try_insert_cell(attacking_item, user)
 	. = ..()
+
+/obj/item/gun/energy/proc/try_charging_with_batton(obj/item/melee/baton/security/stunbaton, mob/living/carbon/user)
+	//Если батарея пуста или станбатон выключен - обычный удар по стволу
+	if(has_empty_cell() || !stunbaton.active)
+		stunbaton.attack_atom(src, user)
+		return FALSE
+	//Шанс может быть больше, если в это верить
+	if(loc == user && prob(40))
+		stunbaton.attack(user, user)
+		return FALSE
+	if(prob(25))
+		do_sparks(3, source = src)
+		qdel(cell)
+		to_chat(user, span_warning("Из разъема для батареи разносится отвратительный горелый запах."))
+		stunbaton.attack_atom(src, user)
+		return FALSE
+	//Ну это реально глупо. Кто будет в здравом уме бить электрической дубинкой по энергетическому оружие, чтобы зарядить его.
+	if(cell.charge == cell.maxcharge)
+		//НА ПУТИ К ФИАСКО
+		if(prob(50))
+			if(prob(50))
+				explosion(src, 0, 0, 1, 2, 1, "[user] попытался зарядить [name] с помощью грубой силы.")
+				qdel(cell)
+				return FALSE
+			else
+				do_sparks(3, source = src)
+				cell.use(cell.charge)
+				to_chat(user, span_notice("Батарея издает подозрительный звук."))
+				stunbaton.attack_atom(src, user)
+				return FALSE
+	if(prob(55))
+		do_sparks(3, source = src)
+		electrocute_mob(user, cell, src)
+		cell.use(ammo_type[select].e_cost)
+		stunbaton.attack_atom(src, user)
+		return FALSE
+	else
+		//Если игрок прошел через все испытания он получает ААААААААААВТО. 5 патронов.
+		cell.give(LASER_SHOTS(5, cell.maxcharge))
+		to_chat(user, "Каким то образом батарея выдерживает твое гениальное действие.")
+		stunbaton.attack_atom(src, user)
+	return TRUE
 
 /obj/item/gun/energy/proc/try_insert_cell(obj/item/stock_parts/power_store/cell/new_cell, mob/user)
 	if(!new_cell)
@@ -219,12 +261,6 @@
 		if(insert_cell(user, new_cell))
 			to_chat(user, span_notice("You insert battery in \the [src]."))
 
-	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
-
-	if(cell.maxcharge > STANDARD_CELL_CHARGE)
-		shot.e_cost = LASER_SHOTS(25, cell.maxcharge)//Лень пока что * (clamp(1 + cell.maxcharge/500, 0, 1))
-	else
-		shot.e_cost = initial(shot.e_cost)		//LASER_SHOTS(10, STANDARD_CELL_CHARGE)
 	update_appearance()
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD) // Для СкайРатовского ХУДа.
 	return TRUE
@@ -241,10 +277,14 @@
 			var/mob/living/silicon/robot/robot = loc
 			if(robot.cell)
 				var/obj/item/ammo_casing/energy/shot = ammo_type[select] //Necessary to find cost of shot
+				shot.e_cost = initial(shot.e_cost) * cell.maxcharge / STANDARD_CELL_CHARGE
+				battery_damage_multiplier = max(1 + (cell.maxcharge / (STANDARD_CELL_CHARGE * 200)), 1)
 				if(robot.cell.use(shot.e_cost)) //Take power from the borg...
 					cell.give(shot.e_cost) //... to recharge the shot
 	if(!chambered)
 		var/obj/item/ammo_casing/energy/AC = ammo_type[select]
+		AC.e_cost = initial(AC.e_cost) * cell.maxcharge / STANDARD_CELL_CHARGE //LASER_SHOTS((initial(AC.e_cost) * (clamp(1 + (cell.maxcharge / STANDARD_CELL_CHARGE * 100), 1, 1.5))), cell.maxcharge)		//LASER_SHOTS(10, STANDARD_CELL_CHARGE)
+		battery_damage_multiplier = max(1 + (cell.maxcharge / (STANDARD_CELL_CHARGE * 200)), 1)
 		if(cell.charge >= AC.e_cost) //if there's enough power in the cell cell...
 			chambered = AC //...prepare a new shot based on the current ammo type selected
 			if(!chambered.loaded_projectile)
@@ -253,6 +293,10 @@
 /obj/item/gun/energy/handle_chamber()
 	if(chambered && !chambered.loaded_projectile) //if loaded_projectile is null, i.e the shot has been fired...
 		var/obj/item/ammo_casing/energy/shot = chambered
+
+		//if(cell.maxcharge > STANDARD_CELL_CHARGE)
+		//	shot.e_cost = LASER_SHOTS(25, cell.maxcharge)//Лень пока что * (clamp(1 + cell.maxcharge/500, 0, 1))
+		//else
 		cell.use(shot.e_cost)//... drain the cell cell
 	chambered = null //either way, released the prepared shot
 	recharge_newshot() //try to charge a new shot

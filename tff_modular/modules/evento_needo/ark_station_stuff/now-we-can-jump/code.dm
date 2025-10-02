@@ -75,7 +75,7 @@
 	user.visible_message("<span class='danger'>[user] jumps.</span>", \
 					"<span class='warning'> I jump at the [loc]!</span>")
 	user.adjustStaminaLoss(rand(30,50))
-	user.throw_at(target, 3, 1, user, spin = (HAS_TRAIT(user, TRAIT_CLUMSY) ? TRUE : FALSE))
+	user.throw_at(target, 3, 1, user, spin = (HAS_TRAIT(user, TRAIT_CLUMSY) ? TRUE : FALSE), force = MOVE_FORCE_EXTREMELY_WEAK, gentle = TRUE)
 	if(prob(70))
 		user.Knockdown(1 SECONDS)
 	else

@@ -104,7 +104,7 @@
 	weak_against_armour = FALSE
 
 /obj/projectile/beam/weak
-	damage = 15
+	damage = 10
 
 /obj/projectile/beam/weak/penetrator
 	armour_penetration = 50

@@ -11,7 +11,6 @@
 
 	modifystate = TRUE
 
-	fire_delay = 0.16 SECONDS
 	wield_slowdown = LASER_SMG_SLOWDOWN
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix, /obj/item/ammo_casing/energy/disabler/hitscan)
 
@@ -20,8 +19,8 @@
 /obj/item/ammo_casing/energy/kalix
 	projectile_type = /obj/projectile/beam/hitscan/kalix
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/energy/kalixsmg.ogg'
-	e_cost = 666 //30 shots per cell
-	delay = 1
+	e_cost = LASER_SHOTS(16, STANDARD_CELL_CHARGE) //30 shots per cell
+	delay = 0.55 SECONDS
 
 /obj/projectile/beam/hitscan/kalix
 	name = "concentrated energy"
@@ -33,7 +32,7 @@
 	impact_light_color_override = LIGHT_COLOR_ELECTRIC_CYAN
 	range = 12
 	damage_constant = 0.8
-	damage = 25
+	damage = 14
 	armour_penetration = -10
 
 /obj/item/gun/energy/kalix/pgf
@@ -59,8 +58,8 @@
 /obj/item/ammo_casing/energy/kalix/pgf
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/energy/kalixsmg.ogg'
-	e_cost = 666 //30 shots per cell
-	delay = 1
+	e_cost = LASER_SHOTS(16, STANDARD_CELL_CHARGE)
+	delay = 0.75 SECONDS
 
 /obj/item/gun/energy/kalix/pistol //blue
 	name = "Etherbor SG-8"
@@ -85,9 +84,8 @@
 
 /obj/item/ammo_casing/energy/kalix/pistol
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/energy/kalixpistol.ogg'
-	e_cost = 1250 //10 shots per cell
-	delay = 0
-
+	e_cost = LASER_SHOTS(10, STANDARD_CELL_CHARGE) //10 shots per cell
+	delay = 0.35 SECONDS
 
 /obj/item/gun/energy/kalix/pgf/medium
 	name = "Etherbor BGC-10"
@@ -101,7 +99,6 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-	fire_delay = 0.2 SECONDS
 	wield_slowdown = LASER_RIFLE_SLOWDOWN
 
 	spread = 0.5
@@ -118,10 +115,6 @@
 
 	modifystate = FALSE
 
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
-	default_firemode = FIREMODE_SEMIAUTO
-
-	fire_delay = 0.2 SECONDS
 	wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
 
 	spread = 0
@@ -133,8 +126,8 @@
 	select_name  = "AR"
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/assault
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/energy/kalixrifle.ogg'
-	e_cost = 1000 //20 shots per cell
-	delay = 1
+	e_cost = LASER_SHOTS(20, STANDARD_CELL_CHARGE)
+	delay = 0.65 SECONDS
 
 /obj/projectile/beam/hitscan/kalix/pgf/assault
 	tracer_type = /obj/effect/projectile/tracer/pgf/rifle
@@ -150,7 +143,7 @@
 	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/sniper
 	fire_sound = 'tff_modular/modules/evento_needo/sounds/laser/heavy_laser.ogg'
 	e_cost = 2000 //20 shots per cell
-	delay = 6
+	delay = 1.8 SECONDS
 
 /obj/projectile/beam/hitscan/kalix/pgf/sniper
 	tracer_type = /obj/effect/projectile/tracer/laser/emitter

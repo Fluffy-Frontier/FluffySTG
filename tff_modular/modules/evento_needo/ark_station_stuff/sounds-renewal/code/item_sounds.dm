@@ -71,7 +71,7 @@
 		var/mob/living/L = AM
 		if(!(L.movement_type & MOVETYPES_NOT_TOUCHING_GROUND) || L.buckled)
 			playsound(src, 'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/items/glass_step.ogg', HAS_TRAIT(L, TRAIT_LIGHT_STEP) ? 30 : 50, TRUE)
-
+/*
 /obj/item
 	equip_sound = 'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/items/generic/generic_equip1.ogg'
 	// 	'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/items/generic/generic_equip2.ogg',
@@ -88,7 +88,7 @@
 	// 	'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/items/generic/generic_drop4.ogg',
 	// 	'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/items/generic/generic_drop5.ogg'
 	// ))
-
+*/
 /obj/item/clothing/shoes/jackboots
 	pickup_sound = 'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/items/boots_pickup.ogg'
 	drop_sound = 'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/items/boots_drop.ogg'
@@ -104,12 +104,12 @@
 /obj/item/storage/backpack
 	pickup_sound = 'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/items/backpack_pickup.ogg'
 	drop_sound = 'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/items/backpack_drop.ogg'
-	equip_sound = 'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/items/backpack_equip.ogg'
+	//equip_sound = 'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/items/backpack_equip.ogg'
 
 /obj/item/storage/bag
 	pickup_sound = 'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/items/backpack_pickup.ogg'
 	drop_sound = 'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/items/backpack_drop.ogg'
-	equip_sound = 'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/items/backpack_equip.ogg'
+	//equip_sound = 'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/items/backpack_equip.ogg'
 
 /obj/item/clothing/accessory
 	pickup_sound = 'tff_modular/modules/evento_needo/ark_station_stuff/sounds-renewal/sound/items/accessory_pickup.ogg'

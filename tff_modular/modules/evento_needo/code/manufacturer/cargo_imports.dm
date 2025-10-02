@@ -15,51 +15,51 @@
 	subcategory = "Ballistic Weaponry"
 
 /datum/armament_entry/company_import/clip_lanchester/ballistic/cm23
-	cost = 400
+	cost = 500
 	item_type = /obj/item/gun/ballistic/automatic/pistol/cm23
 
 /datum/armament_entry/company_import/clip_lanchester/ballistic/cm70
-	cost = 400
+	cost = 500
 	item_type = /obj/item/gun/ballistic/automatic/pistol/cm70
 
 /datum/armament_entry/company_import/clip_lanchester/ballistic
-	cost = 400
+	cost = 500
 	item_type = /obj/item/gun/ballistic/automatic/pistol/cm357
 
 /datum/armament_entry/company_import/clip_lanchester/ballistic/cm5
-	cost = 650
+	cost = 850
 	item_type = /obj/item/gun/ballistic/automatic/smg/cm5
 
 /datum/armament_entry/company_import/clip_lanchester/ballistic/cm5/compact
-	cost = 700
+	cost = 800
 	item_type = /obj/item/gun/ballistic/automatic/smg/cm5/compact
 
 /datum/armament_entry/company_import/clip_lanchester/ballistic/f4
-	cost = 800
+	cost = 1200
 	item_type = /obj/item/gun/ballistic/automatic/marksman/f4
 
 /datum/armament_entry/company_import/clip_lanchester/ballistic/f90
-	cost = 800
+	cost = 1200
 	item_type = /obj/item/gun/ballistic/automatic/marksman/f90
 
 /datum/armament_entry/company_import/clip_lanchester/ballistic/cm82
-	cost = 800
+	cost = 1200
 	item_type = /obj/item/gun/ballistic/automatic/assault/cm82
 
 /datum/armament_entry/company_import/clip_lanchester/ballistic/cm24
-	cost = 800
+	cost = 1200
 	item_type = /obj/item/gun/ballistic/automatic/assault/skm/cm24
 
 /datum/armament_entry/company_import/clip_lanchester/ballistic/cm40
-	cost = 1250
+	cost = 1600
 	item_type = /obj/item/gun/ballistic/automatic/hmg/cm40
 
 /datum/armament_entry/company_import/clip_lanchester/ballistic/rottweiler
-	cost = 1250
+	cost = 1850
 	item_type = /obj/item/gun/ballistic/automatic/hmg/rottweiler
 
 /datum/armament_entry/company_import/clip_lanchester/ballistic/cm15
-	cost = 750
+	cost = 1000
 	item_type = /obj/item/gun/ballistic/shotgun/cm15
 
 // LASERS
@@ -68,11 +68,11 @@
 	subcategory = "Laser Weaponry"
 
 /datum/armament_entry/company_import/clip_lanchester/lasers/kalix
-	cost = 750
+	cost = 1200
 	item_type = /obj/item/gun/energy/kalix/clip
 
 /datum/armament_entry/company_import/clip_lanchester/lasers/e50
-	cost = 900
+	cost = 1300
 	item_type = /obj/item/gun/energy/laser/e50/clip
 
 //AMMO
@@ -141,19 +141,19 @@
 	subcategory = "Laser Weaponry"
 
 /datum/armament_entry/company_import/eoehoma/lasers/e10
-	cost = 450
+	cost = 2000
 	item_type = /obj/item/gun/energy/laser/e10
 
 /datum/armament_entry/company_import/eoehoma/lasers/e11
-	cost = 700
+	cost = 1200
 	item_type = /obj/item/gun/energy/e_gun/e11
 
 /datum/armament_entry/company_import/eoehoma/lasers/e50
-	cost = 900
+	cost = 1500
 	item_type = /obj/item/gun/energy/laser/e50
 
 /datum/armament_entry/company_import/eoehoma/lasers/e60
-	cost = 350
+	cost = 500
 	item_type = /obj/item/gun/energy/disabler/e60
 
 /*
@@ -173,27 +173,27 @@
 	subcategory = "Laser Weaponry"
 
 /datum/armament_entry/company_import/etherbor/lasers/kalix
-	cost = 600
+	cost = 1200
 	item_type = /obj/item/gun/energy/kalix
 
 /datum/armament_entry/company_import/etherbor/lasers/pistol
-	cost = 450
+	cost = 650
 	item_type = /obj/item/gun/energy/kalix/pistol
 
 /datum/armament_entry/company_import/etherbor/lasers/pgf
-	cost = 650
+	cost = 1500
 	item_type = /obj/item/gun/energy/kalix/pgf
 
 /datum/armament_entry/company_import/etherbor/lasers/pgfmedium
-	cost = 750
+	cost = 1600
 	item_type = /obj/item/gun/energy/kalix/pgf/medium
 
 /datum/armament_entry/company_import/etherbor/lasers/heavy
-	cost = 950
+	cost = 1800
 	item_type = /obj/item/gun/energy/kalix/pgf/heavy
 
 /datum/armament_entry/company_import/etherbor/lasers/sniper
-	cost = 1000
+	cost = 2000
 	item_type = /obj/item/gun/energy/kalix/pgf/heavy/sniper
 
 /*
@@ -215,11 +215,11 @@
 	item_type = /obj/item/gun/ballistic/automatic/pistol/mauler
 
 /datum/armament_entry/company_import/frontier/ballistic/spitter
-	cost = 450
+	cost = 650
 	item_type = /obj/item/gun/ballistic/automatic/pistol/spitter
 
 /datum/armament_entry/company_import/frontier/ballistic/pounder
-	cost = 650
+	cost = 950
 	item_type = /obj/item/gun/ballistic/automatic/smg/pounder
 
 /datum/armament_entry/company_import/frontier/ballistic/shredder
@@ -297,31 +297,31 @@
 	item_type = /obj/item/gun/ballistic/shotgun/doublebarrel/shiptest
 
 /datum/armament_entry/company_import/hunter_pride/ballistic/brimstone
-	cost = 650
+	cost = 750
 	item_type = /obj/item/gun/ballistic/shotgun/brimstone
 
 /datum/armament_entry/company_import/hunter_pride/ballistic/hellfire
-	cost = 650
+	cost = 750
 	item_type = /obj/item/gun/ballistic/shotgun/hellfire
 
 /datum/armament_entry/company_import/hunter_pride/ballistic/conflagration
-	cost = 700
+	cost = 800
 	item_type = /obj/item/gun/ballistic/shotgun/flamingarrow/conflagration
 
 /datum/armament_entry/company_import/hunter_pride/ballistic/illestren
-	cost = 750
+	cost = 1300
 	item_type = /obj/item/gun/ballistic/rifle/illestren
 
 /datum/armament_entry/company_import/hunter_pride/ballistic/flamingarrow
-	cost = 650
+	cost = 1500
 	item_type = /obj/item/gun/ballistic/shotgun/flamingarrow
 
 /datum/armament_entry/company_import/hunter_pride/ballistic/vickland
-	cost = 900
+	cost = 1500
 	item_type = /obj/item/gun/ballistic/automatic/marksman/vickland
 
 /datum/armament_entry/company_import/hunter_pride/ballistic/scout
-	cost = 750
+	cost = 1500
 	item_type = /obj/item/gun/ballistic/rifle/scout
 
 //AMMO
@@ -366,7 +366,7 @@
 	item_type = /obj/item/gun/ballistic/derringer
 
 /datum/armament_entry/company_import/outside_imports/ballistic/skm
-	cost = 750
+	cost = 1250
 	item_type = /obj/item/gun/ballistic/automatic/assault/skm
 
 /datum/armament_entry/company_import/outside_imports/ballistic/skm/pirate
@@ -378,15 +378,15 @@
 	item_type = /obj/item/gun/ballistic/automatic/assault/skm/inteq
 
 /datum/armament_entry/company_import/outside_imports/ballistic/swiss_cheese
-	cost = 750
+	cost = 1250
 	item_type = /obj/item/gun/ballistic/automatic/assault/swiss_cheese
 
 /datum/armament_entry/company_import/outside_imports/ballistic/vector
-	cost = 600
+	cost = 1100
 	item_type = /obj/item/gun/ballistic/automatic/smg/vector
 
 /datum/armament_entry/company_import/outside_imports/ballistic/skm_carbine
-	cost = 600
+	cost = 1100
 	item_type = /obj/item/gun/ballistic/automatic/smg/skm_carbine
 
 /datum/armament_entry/company_import/outside_imports/ballistic/skm_carbine/inteq
@@ -403,23 +403,23 @@
 	subcategory = "Laser Weaponry"
 
 /datum/armament_entry/company_import/outside_imports/lasers/hades
-	cost = 600
+	cost = 900
 	item_type = /obj/item/gun/energy/e_gun/hades
 
 /datum/armament_entry/company_import/outside_imports/lasers/nuclear
-	cost = 600
+	cost = 900
 	item_type = /obj/item/gun/energy/e_gun/nuclear/shiptest
 
 /datum/armament_entry/company_import/outside_imports/lasers/adv_stopping
-	cost = 800
+	cost = 1000
 	item_type = /obj/item/gun/energy/e_gun/adv_stopping
 
 /datum/armament_entry/company_import/outside_imports/lasers/smg
-	cost = 750
+	cost = 900
 	item_type = /obj/item/gun/energy/e_gun/smg
 
 /datum/armament_entry/company_import/outside_imports/lasers/iot
-	cost = 900
+	cost = 1200
 	item_type = /obj/item/gun/energy/e_gun/iot
 
 //AMMO
@@ -460,7 +460,7 @@
 	subcategory = "Ballistic Weaponry"
 
 /datum/armament_entry/company_import/scarborough/ballistic/ringneck
-	cost = 400
+	cost = 550
 	item_type = /obj/item/gun/ballistic/automatic/pistol/ringneck
 
 /datum/armament_entry/company_import/scarborough/ballistic/ringneck/indie
@@ -468,15 +468,15 @@
 	item_type = /obj/item/gun/ballistic/automatic/pistol/ringneck/indie
 
 /datum/armament_entry/company_import/scarborough/ballistic/asp
-	cost = 450
+	cost = 650
 	item_type = /obj/item/gun/ballistic/automatic/pistol/asp
 
 /datum/armament_entry/company_import/scarborough/ballistic/viper
-	cost = 659
+	cost = 750
 	item_type = /obj/item/gun/ballistic/revolver/viper
 
 /datum/armament_entry/company_import/scarborough/ballistic/rattlesnake
-	cost = 450
+	cost = 650
 	item_type = /obj/item/gun/ballistic/automatic/pistol/rattlesnake
 
 /datum/armament_entry/company_import/scarborough/ballistic/rattlesnake/inteq
@@ -484,11 +484,11 @@
 	item_type = /obj/item/gun/ballistic/automatic/pistol/rattlesnake/inteq
 
 /datum/armament_entry/company_import/scarborough/ballistic/himehabu
-	cost = 450
+	cost = 500
 	item_type = /obj/item/gun/ballistic/automatic/pistol/himehabu
 
 /datum/armament_entry/company_import/scarborough/ballistic/cobra
-	cost = 550
+	cost = 950
 	item_type = /obj/item/gun/ballistic/automatic/smg/cobra
 
 /datum/armament_entry/company_import/scarborough/ballistic/cobra/indie
@@ -496,29 +496,29 @@
 	item_type = /obj/item/gun/ballistic/automatic/smg/cobra/indie
 
 /datum/armament_entry/company_import/scarborough/ballistic/sidewinder
-	cost = 550
+	cost = 700
 	item_type = /obj/item/gun/ballistic/automatic/smg/sidewinder
 
 /datum/armament_entry/company_import/scarborough/ballistic/boomslang
-	cost = 1500
+	cost = 1800
 	item_type = /obj/item/gun/ballistic/automatic/marksman/boomslang
 	contraband = TRUE
 
 /datum/armament_entry/company_import/scarborough/ballistic/taipan
-	cost = 2000
+	cost = 3000
 	item_type = /obj/item/gun/ballistic/automatic/marksman/taipan
 	contraband = TRUE
 
 /datum/armament_entry/company_import/scarborough/ballistic/hydra
-	cost = 900
+	cost = 1300
 	item_type = /obj/item/gun/ballistic/automatic/assault/hydra
 
 /datum/armament_entry/company_import/scarborough/ballistic/hydra/lmg
-	cost = 1200
+	cost = 1500
 	item_type = /obj/item/gun/ballistic/automatic/assault/hydra/lmg
 
 /datum/armament_entry/company_import/scarborough/ballistic/hydra/dmr
-	cost = 1200
+	cost = 1500
 	item_type = /obj/item/gun/ballistic/automatic/assault/hydra/dmr
 
 //AMMO
@@ -597,23 +597,23 @@
 	item_type = /obj/item/gun/ballistic/automatic/pistol/m20_auto_elite
 
 /datum/armament_entry/company_import/serene_sporting/ballistic/m12_sporter
-	cost = 1000
+	cost = 1250
 	item_type = /obj/item/gun/ballistic/automatic/m12_sporter
 
 /datum/armament_entry/company_import/serene_sporting/ballistic/m12_sporter/mod
-	cost = 1300
+	cost = 1550
 	item_type = /obj/item/gun/ballistic/automatic/m12_sporter/mod
 
 /datum/armament_entry/company_import/serene_sporting/ballistic/woodsman
-	cost = 1200
+	cost = 1550
 	item_type = /obj/item/gun/ballistic/automatic/marksman/woodsman
 
 /datum/armament_entry/company_import/serene_sporting/ballistic/m15
-	cost = 900
+	cost = 1200
 	item_type = /obj/item/gun/ballistic/automatic/m15
 
 /datum/armament_entry/company_import/serene_sporting/ballistic/m11
-	cost = 1200
+	cost = 1500
 	item_type = /obj/item/gun/ballistic/shotgun/automatic/m11
 
 //AMMO
@@ -700,7 +700,7 @@
 *
 */
 
-
+/* Временно выключено. Нуждается в доработке для других оружий
 /datum/armament_entry/company_import/attachments
 	category = "Weaponry Attachments"
 	company_bitflag = CARGO_COMPANY_ATTACHMENTS
@@ -743,3 +743,4 @@
 
 /datum/armament_entry/company_import/attachments/stock
 	item_type = /obj/item/attachment/foldable_stock
+*/

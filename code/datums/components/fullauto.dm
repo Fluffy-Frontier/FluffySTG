@@ -297,9 +297,9 @@
 	if(!can_shoot())
 		shoot_with_empty_chamber(shooter)
 		return FALSE
-	if(weapon_weight == WEAPON_HEAVY && !istype(shooter.get_inactive_held_item(), offhand_item))
-		balloon_alert(shooter, "use both hands!")
-		return FALSE
+	//if(weapon_weight == WEAPON_HEAVY && (!istype(shooter.get_inactive_held_item(), offhand_item) && !isnull(shooter.get_inactive_held_item())))
+	//	balloon_alert(shooter, "use both hands!")
+	//	return FALSE
 	return TRUE
 
 
