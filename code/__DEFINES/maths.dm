@@ -264,3 +264,5 @@
 
 #define SI_COEFFICIENT "coefficient"
 #define SI_UNIT "unit"
+
+#define TOUGHER_TIMES(x) ((0.15*x)/(0.15*x + 1))

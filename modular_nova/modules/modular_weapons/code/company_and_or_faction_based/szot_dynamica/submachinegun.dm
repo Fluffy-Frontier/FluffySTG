@@ -50,7 +50,6 @@
 
 /obj/item/gun/ballistic/automatic/napad/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_SZOT)
-	AddComponent(/datum/component/automatic_fire, fire_delay)
 
 /obj/item/gun/ballistic/automatic/napad/no_mag
 	spawnwithmagazine = FALSE

@@ -18,7 +18,7 @@
 /datum/atom_hud/data
 
 /datum/atom_hud/data/human/medical
-	hud_icons = list(STATUS_HUD, HEALTH_HUD, DNR_HUD) // NOVA EDIT ADDITION - DNR_HUD
+	hud_icons = list(STATUS_HUD, HEALTH_HUD, DNR_HUD, SANITY_HUD) // NOVA EDIT ADDITION - DNR_HUD
 
 /datum/atom_hud/data/human/medical/basic
 
@@ -173,6 +173,10 @@ Medical HUD! Basic mode needs suit sensors on.
 //called when a living mob changes health
 /mob/living/proc/med_hud_set_health()
 	set_hud_image_state(HEALTH_HUD, "hud[RoundHealth(src)]")
+
+//called when a mob changes sanity
+/mob/living/carbon/human/proc/med_hud_set_sanity()
+	set_hud_image_state(SANITY_HUD, "hud[RoundSanity(src)]")
 
 // Called when a carbon changes stat, virus or XENO_HOST
 // Returns TRUE if the mob is considered "perfectly healthy", FALSE otherwise

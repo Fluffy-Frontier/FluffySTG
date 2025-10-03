@@ -3,6 +3,7 @@
 	worn_icon = 'icons/mob/clothing/under/medical.dmi'
 	abstract_type = /obj/item/clothing/under/rank/medical
 	armor_type = /datum/armor/clothing_under/rank_medical
+	class = CLOTHING_MEDICAL
 
 /datum/armor/clothing_under/rank_medical
 	bio = 50

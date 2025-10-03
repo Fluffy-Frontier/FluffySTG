@@ -28,6 +28,7 @@
 	var/windup_spindown = 3 SECONDS
 	///Timer for tracking the spindown reset timings
 	var/timerid
+	var/enabled = TRUE
 	///Looping sound while firing.
 	var/datum/looping_sound/autofire_sound_loop
 	COOLDOWN_DECLARE(next_shot_cd)
@@ -39,6 +40,9 @@
 		return COMPONENT_INCOMPATIBLE
 	var/obj/item/gun = parent
 	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(wake_up))
+	RegisterSignal(parent, COMSIG_GUN_DISABLE_AUTOFIRE, PROC_REF(disable_autofire))
+	RegisterSignal(parent, COMSIG_GUN_ENABLE_AUTOFIRE, PROC_REF(enable_autofire))
+	RegisterSignal(parent, COMSIG_GUN_SET_AUTOFIRE_SPEED, PROC_REF(set_autofire_speed))
 	if(autofire_shot_delay)
 		src.autofire_shot_delay = autofire_shot_delay
 	src.allow_akimbo = allow_akimbo
@@ -128,6 +132,8 @@
 	SIGNAL_HANDLER
 	var/list/modifiers = params2list(params) //If they're shift+clicking, for example, let's not have them accidentally shoot.
 
+	if(!enabled)
+		return
 	if(LAZYACCESS(modifiers, SHIFT_CLICK))
 		return
 	if(LAZYACCESS(modifiers, CTRL_CLICK))
@@ -291,10 +297,9 @@
 	if(!can_shoot())
 		shoot_with_empty_chamber(shooter)
 		return FALSE
-	var/obj/item/bodypart/other_hand = shooter.has_hand_for_held_index(shooter.get_inactive_hand_index())
-	if(weapon_weight == WEAPON_HEAVY && (shooter.get_inactive_held_item() || !other_hand))
-		balloon_alert(shooter, "use both hands!")
-		return FALSE
+	//if(weapon_weight == WEAPON_HEAVY && (!istype(shooter.get_inactive_held_item(), offhand_item) && !isnull(shooter.get_inactive_held_item())))
+	//	balloon_alert(shooter, "use both hands!")
+	//	return FALSE
 	return TRUE
 
 
@@ -326,6 +331,15 @@
 				bonus_spread = dual_wield_spread
 				addtimer(CALLBACK(akimbo_gun, TYPE_PROC_REF(/obj/item/gun, process_fire), target, shooter, TRUE, params, null, bonus_spread), 0.1 SECONDS)
 	process_fire(target, shooter, TRUE, params, null, bonus_spread)
+
+/datum/component/automatic_fire/proc/disable_autofire(datum/source)
+	enabled = FALSE
+
+/datum/component/automatic_fire/proc/enable_autofire(datum/source)
+	enabled = TRUE
+
+/datum/component/automatic_fire/proc/set_autofire_speed(datum/source, newspeed)
+	autofire_shot_delay = newspeed
 
 #undef AUTOFIRE_MOUSEUP
 #undef AUTOFIRE_MOUSEDOWN

@@ -55,10 +55,6 @@
 		While more cumbersome than its SolFed contemporary, the Sindano, the additional weight makes it easier to control and keep on-target, \
 		and .27-54 Cesarzowa's hard-tip ammo lends itself well towards defeating lighter personal armor."
 
-/obj/item/gun/ballistic/automatic/miecz/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, fire_delay)
-
 /obj/item/gun/ballistic/automatic/miecz/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_SZOT)
 

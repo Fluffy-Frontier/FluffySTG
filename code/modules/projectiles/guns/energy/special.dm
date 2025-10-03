@@ -307,11 +307,12 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/c3dbullet)
 	can_charge = FALSE
 	use_cyborg_cell = TRUE
+	fire_delay = 0.3 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 
 /obj/item/gun/energy/printer/Initialize(mapload)
 	AddElement(/datum/element/update_icon_blocker)
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.3 SECONDS)
 	AddElement(/datum/element/empprotection, EMP_PROTECT_ALL)
 
 /obj/item/gun/energy/temperature
@@ -386,6 +387,8 @@ it is often confused with the mech weapon of the same name, since it is a bit mo
 	charge_sections = 2
 	display_empty =  FALSE
 	weapon_weight = WEAPON_HEAVY
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	fire_delay = 0.1 SECONDS
 	w_class = WEIGHT_CLASS_BULKY
 	///if our stpck is extended and we are ready to fire.
 	var/ready_to_fire = FALSE

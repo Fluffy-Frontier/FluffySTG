@@ -323,6 +323,13 @@
 	start_showpiece_type = /obj/item/clothing/mask/facehugger/lamarr
 	req_access = list(ACCESS_RD)
 
+/obj/structure/displaycase/labcage/Initialize(mapload)
+	if(prob(50)) //ПРОЩАЙ, ЛАМАР. ПРИВЕТ, АЛЕФ
+		new /obj/machinery/abno_core_extractor(get_turf(src))
+		qdel(src)
+		return
+	return ..()
+
 /obj/structure/displaycase/noalert
 	alert = FALSE
 

@@ -108,3 +108,14 @@
 /// Global signal whenever a camera network broadcast is started/stopped/updated: (camera_net, is_show_active, announcement)
 #define COMSIG_GLOB_NETWORK_BROADCAST_UPDATED "!network_broadcast_updated"
 
+/// a human mob went insane (mob/living/carbon/human, attribute)
+#define COMSIG_GLOB_HUMAN_INSANE "!human_insane"
+/// a lobotomy_corp subsystem meltdown occured
+#define COMSIG_GLOB_MELTDOWN_START "!meltdown_started"
+/// a new abnormality has spawned with their room (/datum/abnormality)
+#define COMSIG_GLOB_ABNORMALITY_SPAWN "!abno_spawned"
+///an abnormality has breached
+#define COMSIG_GLOB_ABNORMALITY_BREACH "!abno_breach"
+// An abnormality cell was swapped with another;
+// First argument is main abno of a swap, second argument is a target abno of a swap: (/datum/abnormality, /datum/abnormality)
+#define COMSIG_GLOB_ABNORMALITY_SWAP "!abno_swap"

@@ -1,0 +1,10 @@
+// Origins
+#define ABNORMALITY_ORIGIN_ORIGINAL "Original"
+#define ABNORMALITY_ORIGIN_LOBOTOMY "Lobotomy Corporation"
+#define ABNORMALITY_ORIGIN_ALTERED "Altered LC"
+#define ABNORMALITY_ORIGIN_ARTBOOK "Artbook"
+#define ABNORMALITY_ORIGIN_WONDERLAB "Wonderlab"
+#define ABNORMALITY_ORIGIN_RUINA "Library of Ruina"
+#define ABNORMALITY_ORIGIN_LIMBUS "Limbus Company"
+#define ABNORMALITY_ORIGIN_JOKE "Joke"
+#define ABNORMALITY_ORIGIN_COMMUNITY "Community"
