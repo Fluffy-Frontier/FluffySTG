@@ -230,7 +230,7 @@
 	if(prob(55))
 		do_sparks(3, source = src)
 		electrocute_mob(user, cell, src)
-		cell.use(ammo_type[select].e_cost)
+		cell.use(LASER_SHOTS(2, cell.maxcharge))
 		stunbaton.attack_atom(src, user)
 		return FALSE
 	else
@@ -482,7 +482,7 @@
 
 	playsound(src, load_sound, load_sound_volume, load_sound_vary)
 	update_appearance()
-	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD) // Для СкайРатовского ХУДа.
+	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	balloon_alert(user, "cell inserted")
 
 //special is_type_in_list method to counteract problem with current method
