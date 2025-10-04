@@ -648,6 +648,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/arrivals)
+"amv" = (
+/mob/living/basic/sloth,
+/turf/open/floor/iron,
+/area/station/cargo/storage)
 "amB" = (
 /obj/effect/turf_decal/trimline/blue/filled/warning{
 	dir = 8
@@ -3027,7 +3031,6 @@
 "aWL" = (
 /obj/structure/bed/dogbed/ian,
 /obj/machinery/airalarm/directional/south,
-/mob/living/basic/pet/dog/corgi/ian,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/hop)
 "aWQ" = (
@@ -5801,9 +5804,7 @@
 /area/station/science/lab)
 "bIz" = (
 /obj/structure/table/reinforced,
-/obj/item/clothing/mask/gas/atmos,
-/obj/item/clothing/mask/gas/atmos,
-/obj/item/clothing/mask/gas/atmos,
+/obj/item/binoculars,
 /turf/open/floor/iron/smooth,
 /area/station/engineering/atmos)
 "bID" = (
@@ -10301,6 +10302,7 @@
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 4
 	},
+/mob/living/basic/pet/dog/markus,
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "cZu" = (
@@ -60520,9 +60522,9 @@
 /obj/item/clothing/gloves/color/black,
 /obj/item/clothing/gloves/color/black,
 /obj/item/clothing/gloves/color/black,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas/atmos,
+/obj/item/clothing/mask/gas/atmos,
+/obj/item/clothing/mask/gas/atmos,
 /turf/open/floor/iron/smooth_corner{
 	dir = 4
 	},
@@ -63548,6 +63550,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer2,
+/obj/effect/landmark/firealarm_sanity,
 /turf/open/floor/iron,
 /area/station/ai_monitored/command/nuke_storage)
 "sMK" = (
@@ -76224,16 +76227,9 @@
 /turf/open/floor/iron,
 /area/station/cargo/lobby)
 "wOs" = (
-/obj/machinery/atmospherics/pipe/smart/simple/supply/visible/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/simple/green/visible/layer4{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/blue/filled/line,
-/obj/item/binoculars,
-/turf/open/floor/iron/smooth_edge,
-/area/station/engineering/atmos)
+/mob/living/basic/pet/dog/corgi/borgi,
+/turf/open/floor/iron,
+/area/station/science/research)
 "wOC" = (
 /turf/closed/wall,
 /area/station/cargo/office)
@@ -80107,6 +80103,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/mob/living/basic/pet/dog/corgi/ian,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/hop)
 "xUj" = (
@@ -104791,7 +104788,7 @@ hKH
 hDW
 hDW
 bvZ
-hDW
+amv
 hDW
 hDW
 pZd
@@ -111975,7 +111972,7 @@ mQU
 iGc
 xIH
 sHX
-oIT
+wOs
 iGc
 anE
 iGc
@@ -122523,7 +122520,7 @@ qbb
 qbb
 qbb
 ldf
-wOs
+aMA
 qlu
 qcN
 stb
