@@ -4,7 +4,7 @@
 /obj/item/pony_armor
 	name = "Cavalryman's Pony Box"
 	desc = "It's a box with a pony painted on it. You can't open it, but what if you give it to a pony?"
-	icon = 'tff_modular/modules/pony_armor/icon/horse_armor.dmi'
+	icon = 'tff_modular/modules/pony_armor/horse_armor.dmi'
 	icon_state = "box_of_horse"
 	force = 0
 	throwforce = 5
@@ -42,7 +42,7 @@
 
 /datum/pony_armor
 	var/icon/ponyicon
-	var/armor_path = 'tff_modular/modules/pony_armor/icon/horse_armor.dmi'
+	var/armor_path = 'tff_modular/modules/pony_armor/horse_armor.dmi'
 	var/armor_name = null
 
 /datum/pony_armor/proc/on_armor_equip(mob/living/basic/pony/who_equip)
