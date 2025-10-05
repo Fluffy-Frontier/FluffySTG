@@ -18,7 +18,7 @@
 		"Adamantium armor" = new /datum/pony_armor/adamantium,
 		"Durethead armor" = new /datum/pony_armor/durethead,
 		"Dragon armor" = new /datum/pony_armor/dragon,
-		"Titanium" = new /datum/pony_armor/titanium,
+		"Titanium armor" = new /datum/pony_armor/titanium,
 	)
 
 /obj/item/pony_armor/attack(mob/living/target_mob, mob/living/user, list/modifiers, list/attack_modifiers)
@@ -72,10 +72,10 @@
 	armor_name = "Adamantium_armor"
 
 /datum/pony_armor/durethead
-	armor_name = "Durethread_armor"
+	armor_name = "Durathread_armor"
 
 /datum/pony_armor/dragon
 	armor_name = "Dragon_armor"
 
 /datum/pony_armor/titanium
-	armor_name = "Titanium"
+	armor_name = "Titanium_armor"
