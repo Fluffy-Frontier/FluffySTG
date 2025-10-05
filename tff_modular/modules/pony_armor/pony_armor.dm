@@ -2,7 +2,7 @@
 	var/has_armor = FALSE
 
 /obj/item/pony_armor
-	name = "The Mysterious Pony Box"
+	name = "Cavalryman's Pony Box"
 	desc = "It's a box with a pony painted on it. You can't open it, but what if you give it to a pony?"
 	icon = 'tff_modular/modules/pony_armor/icon/horse_armor.dmi'
 	icon_state = "box_of_horse"
