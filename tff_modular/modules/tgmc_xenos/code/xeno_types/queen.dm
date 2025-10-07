@@ -5,12 +5,14 @@
 	desc = "A hulking beast of an alien, for some reason this one seems more important than the others, you should probably quit staring at it and do something."
 	icon_state = "alienqueen"
 	caste = "queen"
-	maxHealth = 750
-	health = 750
+	maxHealth = 350
+	health = 350
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 30
 	melee_damage_upper = 35
 	alien_speed = 2
+
+	armor_type = /datum/armor/tgmc_xeno/queen
 
 	additional_organ_types_by_slot = list(
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc/large/queen,
@@ -33,8 +35,16 @@
 
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 
-/mob/living/carbon/alien/adult/tgmc/queen/alien_talk(message, shown_name = name)
-	return ..(message, shown_name, TRUE)
+/datum/armor/tgmc_xeno/queen
+	bomb = 30
+	bullet = 40
+	energy = 65
+	laser = 65
+	fire = 60
+	melee = 60
+
+/mob/living/carbon/alien/adult/tgmc/queen/alien_talk(message, list/spans = list(), list/message_mods = list(), shown_name = name, big_voice = TRUE)
+	..(message, spans, message_mods, shown_name, TRUE)
 
 /mob/living/carbon/alien/adult/tgmc/queen/death(gibbed)
 	if(stat == DEAD)

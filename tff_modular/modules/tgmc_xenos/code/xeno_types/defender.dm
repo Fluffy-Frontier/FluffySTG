@@ -5,13 +5,15 @@
 	desc = "A heavy looking alien with a wrecking ball-like tail that'd probably hurt to get hit by."
 	icon_state = "aliendefender"
 	caste = "defender"
-	maxHealth = 300
-	health = 300
+	maxHealth = 150
+	health = 150
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 25
 	melee_damage_upper = 30
 	alien_speed = 1
 	next_evolution = /mob/living/carbon/alien/adult/tgmc/crusher
+
+	armor_type = /datum/armor/tgmc_xeno/defender
 
 	additional_organ_types_by_slot = list(
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc/small,
@@ -37,3 +39,11 @@
 	if(. == CONSCIOUS && fortify)
 		var/datum/action/cooldown/alien/fortify/fortify_action = locate() in actions
 		fortify_action.set_fortify(FALSE)
+
+/datum/armor/tgmc_xeno/defender
+	bomb = 30
+	bullet = 45
+	energy = 30
+	laser = 30
+	fire = 40
+	melee = 45

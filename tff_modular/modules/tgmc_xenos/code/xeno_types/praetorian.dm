@@ -5,13 +5,15 @@
 	desc = "An alien that looks like the awkward half-way point between a queen and a drone, in fact that's likely what it is."
 	icon_state = "alienpraetorian"
 	caste = "praetorian"
-	maxHealth = 400
-	health = 400
+	maxHealth = 225
+	health = 225
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 25
 	melee_damage_upper = 30
 	alien_speed = 2
 	next_evolution = /mob/living/carbon/alien/adult/tgmc/queen
+
+	armor_type = /datum/armor/tgmc_xeno/praetorian
 
 	additional_organ_types_by_slot = list(
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc/large,
@@ -32,3 +34,11 @@
 	grant_actions_by_list(innate_actions)
 
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
+
+/datum/armor/tgmc_xeno/praetorian
+	bomb = 10
+	bullet = 20
+	energy = 50
+	laser = 50
+	fire = 50
+	melee = 45
