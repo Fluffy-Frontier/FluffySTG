@@ -39,7 +39,7 @@ GLOBAL_LIST_INIT(antag_opt_in_colors, list(
 #define COMMAND_OPT_IN_LEVEL OPT_IN_YES_KILL
 
 /// The default opt in level for preferences and mindless mobs.
-#define OPT_IN_DEFAULT_LEVEL OPT_IN_NOT_TARGET
+#define OPT_IN_DEFAULT_LEVEL OPT_IN_YES_KILL // FLUFFY FRONTIER EDIT - ORIGNIAL: #define OPT_IN_DEFAULT_LEVEL OPT_IN_NOT_TARGET
 
 /// If the player has any non-ghost role antags enabled, they are forced to use a minimum of this.
-#define OPT_IN_ANTAG_ENABLED_LEVEL OPT_IN_YES_TEMP
+#define OPT_IN_ANTAG_ENABLED_LEVEL OPT_IN_YES_KILL // FLUFFY FRONTIER EDIT - ORIGNIAL: #define OPT_IN_ANTAG_ENABLED_LEVEL OPT_IN_YES_TEMP

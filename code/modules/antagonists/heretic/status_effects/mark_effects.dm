@@ -83,7 +83,7 @@
 /datum/status_effect/eldritch/ash/on_effect()
 	if(iscarbon(owner))
 		var/mob/living/carbon/carbon_owner = owner
-		carbon_owner.adjustStaminaLoss(17 * repetitions) // first one = 85 stam; FLUFFY FRONTIER EDIT: ANTAG BUFF #5159; original: 6
+		carbon_owner.adjustStaminaLoss(6 * repetitions)
 		carbon_owner.adjustFireLoss(3 * repetitions) // first one = 15 burn
 		for(var/mob/living/carbon/victim in shuffle(range(1, carbon_owner)))
 			if(IS_HERETIC(victim) || victim == carbon_owner)

@@ -97,8 +97,8 @@
 	icon_state = "paddy"
 	base_icon_state = "paddy"
 	movedelay = 5
-	slow_pressure_step_in = 5
-	fast_pressure_step_in = 3
+	slow_pressure_step_in = 2 // FLUFFY FRONTIER CHANGES - ORIGINAL: 5
+	fast_pressure_step_in = 1.5 // FLUFFY FRONTIER CHANGES - ORIGINAL: 3
 	max_temperature = 20000
 	max_integrity = 250
 	mech_type = EXOSUIT_MODULE_PADDY
@@ -132,6 +132,10 @@
 
 /obj/vehicle/sealed/mecha/ripley/paddy/Initialize(mapload)
 	. = ..()
+	// FLUFFY FRONTIER ADDITION - QDEL ON MAPLOAD
+	if(mapload && is_station_level(src.z))
+		return INITIALIZE_HINT_QDEL
+	// FLUFFY FRONTIER ADDITION END
 	weewooloop = new(src, FALSE, FALSE)
 	weewooloop.volume = 100
 
@@ -183,7 +187,7 @@
 	var/obj/vehicle/sealed/mecha/ripley/paddy/secmech = chassis
 	button_icon_state = "mech_siren_[secmech?.siren ? "on" : "off"]"
 
-/datum/action/vehicle/sealed/mecha/siren/Trigger(trigger_flags, forced_state = FALSE)
+/datum/action/vehicle/sealed/mecha/siren/Trigger(mob/clicker, trigger_flags, forced_state = FALSE)
 	if(!..())
 		return
 	var/obj/vehicle/sealed/mecha/ripley/paddy/secmech = chassis

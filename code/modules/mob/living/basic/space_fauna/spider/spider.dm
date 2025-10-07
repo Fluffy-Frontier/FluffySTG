@@ -21,7 +21,7 @@
 	unsuitable_heat_damage = 4
 	combat_mode = TRUE
 	faction = list(FACTION_SPIDER)
-	pass_flags = PASSTABLE | PASSMOB // FLUFFY FRONTIER ADDITION - SPIDEBUFF. ORIGINAL: pass_flags = PASSTABLE
+	pass_flags = PASSTABLE
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/items/weapons/bite.ogg'
