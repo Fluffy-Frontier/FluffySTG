@@ -46,3 +46,7 @@
 		return FALSE
 	return ..()
 
+/datum/quirk/system_shock/is_species_appropriate(datum/species/mob_species)
+	var/datum/species_traits = GLOB.species_prototypes[mob_species].inherent_traits
+	return (TRAIT_SYNTHETIC in species_traits) // только синт
+
