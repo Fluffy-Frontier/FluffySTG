@@ -1,0 +1,104 @@
+//I literally devised a whole new number system just for this abno - Kirie
+/mob/living/simple_animal/hostile/abnormality/willyouplay
+	name = "Will You Play?"
+	desc = "A small girl holding a teddy bear."
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/32x32.dmi'
+	icon_state = "willyouplay"
+	maxHealth = 600
+	health = 600
+	fear_level = HE_LEVEL
+	ego_list = list(
+		/datum/ego_datum/weapon/voodoo,
+		/datum/ego_datum/armor/voodoo,
+	)
+	gift_type = /datum/ego_gifts/voodoo
+	var/janken = 0			//0 for scissors, 1 for Rock, 2 for paper
+	var/player = 0			//0 for scissors, 1 for Rock, 2 for paper
+	var/last_worked	//You get less if you just worked her.
+	work_types = null
+
+//Randomizes work rate
+/mob/living/simple_animal/hostile/abnormality/willyouplay/try_working(mob/living/carbon/human/user)
+	. = ..()
+	if(!.)
+		return
+	if(prob(70))
+		janken = 0
+	else
+		janken = pick(1,2)
+	if(user == last_worked)
+		say("You again? Fine. We'll play again.")
+	else
+		say("I'll go fer scissors. How 'bout you?")
+
+	var/work_type = tgui_input_list(user, "I will play...", "Choice", list("Scissors", "Rock", "Paper"))
+	if(!work_type)
+		say("Well, maybe next time?")
+		return
+	switch(work_type)
+		if("Scissors")
+			player = 0
+		if("Rock")
+			player = 1
+		if("Paper")
+			player = 2
+
+	player*=3
+	player += janken
+
+	//Goes through every use case.
+	//Ties, When both digits are the same.
+	//Lose, when the player loses
+	//Win, when the player wins
+	switch(player)
+		if(0, 4, 8)
+			if(prob(10))
+				Lose(user, work_type)
+			else
+				Tie(user, work_type)
+		if(2, 5, 6)
+			Lose(user, work_type)
+		if(1, 3, 7)
+			if(prob(10))
+				Lose(user, work_type)
+			else
+				Win(user, work_type)
+
+/mob/living/simple_animal/hostile/abnormality/willyouplay/proc/Tie(mob/living/carbon/human/user, work_type)
+	if(janken == 0)
+		SLEEP_CHECK_DEATH(20, src)
+		say("A draw. Did you think I wouldn't play scissors?")
+		SLEEP_CHECK_DEATH(20, src)
+		say("I don't play with folks who don't trust me.")
+	else
+		say("Hmph, a draw. You got lucky this time.")
+
+//Player wins RPS, loses an arm tho
+/mob/living/simple_animal/hostile/abnormality/willyouplay/proc/Win(mob/living/carbon/human/user, work_type)
+	say("You lose.")
+	user.apply_damage(80, BRUTE)
+
+	//Less than 80 fort and you lose an arm
+	if(user.get_clothing_class_level(CLOTHING_ENGINEERING) <= 3)
+		if(HAS_TRAIT(user, TRAIT_NODISMEMBER))
+			return
+		var/obj/item/bodypart/arm = pick(user.get_bodypart(BODY_ZONE_R_ARM), user.get_bodypart(BODY_ZONE_L_ARM))
+
+		var/did_the_thing = (arm?.dismember()) //not all limbs can be removed, so important to check that we did. the. thing.
+		if(!did_the_thing)
+			return
+
+/mob/living/simple_animal/hostile/abnormality/willyouplay/proc/Lose(mob/living/carbon/human/user, work_type)
+	var/statgain
+	if(user == last_worked)
+		statgain = -2
+
+	if(janken == 0)
+		statgain += 4
+		SLEEP_CHECK_DEATH(20, src)
+		say("You win. Scissors are only useful when cloth's around")
+
+
+	else	//Big Air bonus for picking the funny rare one
+		statgain += 7
+		say("You win, now get outta here.")

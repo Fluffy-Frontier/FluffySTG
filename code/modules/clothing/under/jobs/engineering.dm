@@ -6,6 +6,7 @@
 	abstract_type = /obj/item/clothing/under/rank/engineering
 	armor_type = /datum/armor/clothing_under/rank_engineering
 	resistance_flags = NONE
+	class = CLOTHING_ENGINEERING
 
 /datum/armor/clothing_under/rank_engineering
 	fire = 60

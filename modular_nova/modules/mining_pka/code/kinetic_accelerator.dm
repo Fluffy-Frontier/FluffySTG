@@ -63,10 +63,8 @@
 	inhand_icon_state = "kineticgun"
 	ammo_type = list(/obj/item/ammo_casing/energy/kinetic/repeater)
 	max_mod_capacity = 65
-
-/obj/item/gun/energy/recharge/kinetic_accelerator/variant/repeater/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+	fire_delay = 0.2
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 
 /obj/item/gun/energy/recharge/kinetic_accelerator/variant/shotgun
 	name = "proto-kinetic shotgun"

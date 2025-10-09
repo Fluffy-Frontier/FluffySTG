@@ -15,10 +15,8 @@
 	weapon_weight = WEAPON_HEAVY
 	max_charges = 30
 	ammo_type = /obj/item/ammo_casing/magic/arcane_barrage
-
-/obj/item/gun/magic/wand/arcane_barrage/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+	fire_delay = 0.2 SECONDS
 
 /obj/item/gun/magic/wand/arcane_barrage/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	. = ..()

@@ -1,6 +1,6 @@
 // Action signals
 
-///from base of datum/action/proc/Trigger(): (datum/action)
+///from base of datum/action/proc/Trigger()
 #define COMSIG_ACTION_TRIGGER "action_trigger"
 	// Return to block the trigger from occurring
 	#define COMPONENT_ACTION_BLOCK_TRIGGER (1<<0)

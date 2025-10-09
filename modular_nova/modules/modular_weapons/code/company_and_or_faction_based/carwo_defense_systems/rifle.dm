@@ -55,15 +55,6 @@
 		A computerized sight allows for quick and easy adjustment for engagements at different ranges, \
 		and in a wide range of environments, while a swappable internal heatsink protects the weapon from overheating whilst firing in a vacuum."
 
-/obj/item/gun/ballistic/automatic/sol_rifle/Initialize(mapload)
-	. = ..()
-
-	give_autofire()
-
-/// Separate proc for handling auto fire just because one of these subtypes isn't otomatica
-/obj/item/gun/ballistic/automatic/sol_rifle/proc/give_autofire()
-	AddComponent(/datum/component/automatic_fire, fire_delay)
-
 /obj/item/gun/ballistic/automatic/sol_rifle/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_CARWO)
 
@@ -92,7 +83,9 @@
 	fire_delay = 0.85 SECONDS
 	burst_delay = 0.1 SECONDS
 
-	actions_types = list(/datum/action/item_action/toggle_firemode)
+	//actions_types = list(/datum/action/item_action/toggle_firemode)
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
 
 	suppressor_x_offset = 1
 	suppressor_y_offset = 1
@@ -110,9 +103,6 @@
 	. = ..()
 
 	AddComponent(/datum/component/scope, range_modifier = 2)
-
-/obj/item/gun/ballistic/automatic/sol_rifle/marksman/give_autofire()
-	return
 
 /obj/item/gun/ballistic/automatic/sol_rifle/marksman/no_mag
 	spawnwithmagazine = FALSE

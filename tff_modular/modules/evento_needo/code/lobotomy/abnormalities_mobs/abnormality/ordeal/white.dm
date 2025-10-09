@@ -1,0 +1,739 @@
+// White ordeal mobs, other than Claw
+// Black Fixer
+/mob/living/simple_animal/hostile/ordeal/black_fixer
+	name = "Black Fixer"
+	desc = "A humanoid creature wrapped in bandages."
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/32x64.dmi'
+	icon_state = "fixer_b"
+	icon_living = "fixer_b"
+	faction = list("hostile", "Head")
+	maxHealth = 3000
+	health = 3000
+	melee_damage_type = BRUTE
+	rapid_melee = 2
+	melee_damage_lower = 30
+	melee_damage_upper = 40
+	move_to_delay = 2.6
+	ranged = TRUE
+	attack_verb_continuous = "bashes"
+	attack_verb_simple = "bash"
+	damage_coeff = list(BURN = 1, BRAIN = 0.5, BRUTE = 0.0, TOX = 0.5)
+	move_resist = MOVE_FORCE_OVERPOWERING
+	projectiletype = /obj/projectile/black
+	attack_sound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/weapons/ego/hammer.ogg'
+	del_on_death = TRUE
+
+	var/busy = FALSE
+	var/pulse_cooldown
+	var/pulse_cooldown_time = 20 SECONDS
+	var/pulse_damage = 18 // Dealt consistently across the entire room 5 times
+	/// Default range of triggering meltdowns during pulse attack
+	var/pulse_range = 24
+	/// The actual range of triggering meltdowns. Gets decreased with each attack during pulse attack
+	var/current_pulse_range = 24
+	var/hammer_cooldown
+	var/hammer_cooldown_time = 6 SECONDS
+	var/hammer_damage = 200
+	var/list/been_hit = list()
+
+/mob/living/simple_animal/hostile/ordeal/black_fixer/Initialize()
+	. = ..()
+	pulse_cooldown = world.time + (pulse_cooldown_time * 1.5)
+
+/mob/living/simple_animal/hostile/ordeal/black_fixer/Life()
+	. = ..()
+	if(!.) // Dead
+		return FALSE
+	if(!busy && pulse_cooldown < world.time)
+		PulseAttack()
+
+/mob/living/simple_animal/hostile/ordeal/black_fixer/Move()
+	if(busy)
+		return FALSE
+	return ..()
+
+/mob/living/simple_animal/hostile/ordeal/black_fixer/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
+	if(amount > 10)
+		pulse_cooldown = max(pulse_cooldown, world.time + (pulse_cooldown_time * 0.3))
+		current_pulse_range = max(6, current_pulse_range - min(round(amount * 0.1), 4)) // Being attacked will reduce the range temporarily
+	return ..()
+
+/mob/living/simple_animal/hostile/ordeal/black_fixer/AttackingTarget(atom/attacked_target)
+	if(busy)
+		return
+	..()
+	if(hammer_cooldown < world.time)
+		HammerAttack(attacked_target)
+
+/mob/living/simple_animal/hostile/ordeal/black_fixer/OpenFire()
+	if(busy)
+		return
+	if(prob(50) && (get_dist(src, target) < 10) && (hammer_cooldown < world.time))
+		HammerAttack(target)
+		return
+	return ..()
+
+/mob/living/simple_animal/hostile/ordeal/black_fixer/proc/PulseAttack()
+	icon_state = "fixer_b_attack"
+	busy = TRUE
+	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/black_ability_start.ogg', 100, FALSE, 10)
+	current_pulse_range = pulse_range
+	SLEEP_CHECK_DEATH(6, src)
+	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/black_ability.ogg', 75, FALSE, 15)
+	for(var/i = 1 to 5)
+		new /obj/effect/temp_visual/black_fixer_ability(get_turf(src))
+		for(var/mob/living/L in view(9, src))
+			if(faction_check_atom(L))
+				continue
+			new /obj/effect/temp_visual/revenant(get_turf(L))
+			L.apply_damage(pulse_damage, BRUTE, null, L.run_armor_check(null, BRUTE), spread_damage = TRUE)
+		SLEEP_CHECK_DEATH(5.6, src) // In total we wait for 2.8 seconds
+	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/black_ability_end.ogg', 100, FALSE, 30)
+	for(var/mob/living/simple_animal/hostile/abnormality/A in urange(current_pulse_range, src))
+		if(prob(66))
+			INVOKE_ASYNC(A, TYPE_PROC_REF(A, qliphoth_change), pick(-1, -2))
+	icon_state = icon_living
+	SLEEP_CHECK_DEATH(5, src)
+	pulse_cooldown = world.time + pulse_cooldown_time
+	busy = FALSE
+
+/mob/living/simple_animal/hostile/ordeal/black_fixer/proc/HammerAttack(target)
+	if(hammer_cooldown > world.time)
+		return
+	hammer_cooldown = world.time + hammer_cooldown_time
+	busy = TRUE
+	been_hit = list()
+	visible_message(span_warning("[src] raises their hammer high above the ground!"))
+	var/turf/target_turf = get_ranged_target_turf_direct(src, target, 14, rand(-15,15))
+	var/list/turfs_to_hit = get_line(src, target_turf)
+	for(var/turf/T in turfs_to_hit)
+		if(T.density)
+			break
+		new /obj/effect/temp_visual/cult/sparks(T) // Prepare yourselves
+	SLEEP_CHECK_DEATH(4, src)
+	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/black_swing.ogg', 75, 5)
+	SLEEP_CHECK_DEATH(3, src)
+	playsound(get_turf(src), 'tff_modular/modules/evento_needo/sounds/Tegusounds/abnormalities/mountain/slam.ogg', 100, 20)
+	for(var/turf/T in turfs_to_hit)
+		if(T.density)
+			break
+		for(var/turf/open/TT in RANGE_TURFS(1, T))
+			new /obj/effect/temp_visual/small_smoke/halfsecond(TT)
+			been_hit = HurtInTurf(TT, been_hit, hammer_damage, BRUTE, check_faction = TRUE, hurt_mechs = TRUE, hurt_structure = TRUE)
+		sleep(1)
+	SLEEP_CHECK_DEATH(4, src)
+	busy = FALSE
+
+/obj/projectile/black
+	name = "kunai"
+	icon_state = "blackfixer"
+	hitsound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/black_kunai.ogg'
+	damage = 30
+	damage_type = BRUTE
+
+// White Fixer
+/mob/living/simple_animal/hostile/ordeal/white_fixer
+	name = "White Fixer"
+	desc = "An angelic creature wearing white and golden armor with a cannon-like weapon."
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/32x48.dmi'
+	icon_state = "fixer_w"
+	icon_living = "fixer_w"
+	icon_dead = "fixer_w_dead"
+	faction = list("hostile", "Head")
+	maxHealth = 3000
+	health = 3000
+	move_to_delay = 5
+	ranged_ignores_vision = TRUE
+	ranged = TRUE
+	minimum_distance = 4
+	damage_coeff = list(BURN = 0.5, BRAIN = 0, BRUTE = 0.5, TOX = 1)
+	move_resist = MOVE_FORCE_OVERPOWERING
+	simple_mob_flags = SILENCE_RANGED_MESSAGE
+	del_on_death = TRUE
+
+	var/can_act = TRUE
+	/// When this reaches 480 - begins reflecting damage
+	var/damage_taken = 0
+	var/damage_reflection = FALSE
+	var/beam_cooldown
+	var/beam_cooldown_time = 8 SECONDS
+	/// White damage dealt on direct hit by beam
+	var/beam_direct_damage = 250
+	/// White damage dealt every 0.5 seconds to those standing in the beam's smoke
+	var/beam_overtime_damage = 30
+	var/list/been_hit = list()
+	var/circle_cooldown
+	var/circle_cooldown_time = 30 SECONDS
+	var/circle_radius = 24
+	var/circle_overtime_damage = 70
+
+	var/datum/reusable_visual_pool/RVP = new(1420)
+
+/mob/living/simple_animal/hostile/ordeal/white_fixer/Initialize()
+	. = ..()
+	circle_cooldown = world.time + 10 SECONDS
+
+/mob/living/simple_animal/hostile/ordeal/white_fixer/Destroy()
+	QDEL_NULL(RVP)
+	been_hit.Cut()
+	return ..()
+
+/mob/living/simple_animal/hostile/ordeal/white_fixer/Life()
+	. = ..()
+	if(!.) // Dead
+		return FALSE
+	if(can_act && circle_cooldown < world.time)
+		CircleBeam()
+
+/mob/living/simple_animal/hostile/ordeal/white_fixer/Move()
+	if(!can_act)
+		return FALSE
+	return ..()
+
+/mob/living/simple_animal/hostile/ordeal/white_fixer/AttackingTarget()
+	return
+
+/mob/living/simple_animal/hostile/ordeal/white_fixer/CanAttack(atom/the_target)
+	if(ishuman(the_target))
+		var/mob/living/carbon/human/H = the_target
+		if(H.sanity_lost)
+			return FALSE
+	return ..()
+
+/mob/living/simple_animal/hostile/ordeal/white_fixer/OpenFire()
+	if(!can_act)
+		return
+	if((get_dist(src, target) < 12) && (beam_cooldown < world.time))
+		LongBeam(target)
+		return
+	return ..()
+
+/mob/living/simple_animal/hostile/ordeal/white_fixer/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
+	. = ..()
+	if(. > 0)
+		damage_taken += .
+	if(damage_taken >= 480 && !damage_reflection)
+		StartReflecting()
+
+/mob/living/simple_animal/hostile/ordeal/white_fixer/proc/LongBeam(target)
+	if(beam_cooldown > world.time)
+		return
+	beam_cooldown = world.time + beam_cooldown_time
+	can_act = FALSE
+	icon_state = "fixer_w_beam"
+	visible_message(span_warning("[src] takes their weapon in hands, aiming it at [target]!"))
+	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/white_beam_start.ogg', 75, FALSE, 10)
+	var/turf/target_turf = get_ranged_target_turf_direct(src, target, 24, rand(-20,20))
+	var/list/turfs_to_hit = get_line(src, target_turf)
+	for(var/turf/T in turfs_to_hit)
+		RVP.NewCultSparks(T) // Prepare yourselves
+	SLEEP_CHECK_DEATH(13, src)
+	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/white_beam.ogg', 75, FALSE, 32)
+	been_hit = list()
+	var/i = 1
+	for(var/turf/T in turfs_to_hit)
+		addtimer(CALLBACK(src, PROC_REF(LongBeamTurf), T), i*0.3)
+		i++
+	SLEEP_CHECK_DEATH(5, src)
+	icon_state = icon_living
+	if(!damage_reflection)
+		can_act = TRUE
+
+/mob/living/simple_animal/hostile/ordeal/white_fixer/proc/LongBeamTurf(turf/T)
+	var/list/affected_turfs = list()
+	for(var/turf/TT in RANGE_TURFS(2, T))
+		var/skip = FALSE
+		for(var/obj/effect/reusable_visual/RV in TT)
+			if(RV.name == "mental smoke") // Already affected by smoke
+				skip = TRUE
+				break
+		if(skip)
+			continue
+		affected_turfs += TT
+		var/obj/effect/reusable_visual/RV = RVP.NewSmoke(TT, 5 SECONDS)
+		RV.name = "mental smoke"
+		been_hit = HurtInTurf(TT, been_hit, beam_direct_damage, BRUTE, check_faction = TRUE, hurt_mechs = TRUE)
+
+	for(var/turf/TT in affected_turfs) // Remaining damage effect
+		BeamTurfEffect(TT, beam_overtime_damage)
+
+/mob/living/simple_animal/hostile/ordeal/white_fixer/proc/BeamTurfEffect(turf/T, damage = 10)
+	set waitfor = FALSE
+	for(var/i = 1 to 5)
+		HurtInTurf(T, list(), damage, BRUTE, check_faction = TRUE, hurt_mechs = TRUE)
+		sleep(5)
+
+/mob/living/simple_animal/hostile/ordeal/white_fixer/proc/CircleBeam()
+	if(circle_cooldown > world.time)
+		return
+	can_act = FALSE
+	icon_state = "fixer_w_pray"
+	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/white_circle.ogg', 100, FALSE, 48)
+	SLEEP_CHECK_DEATH(21, src)
+	var/turf/target_c = get_turf(src)
+	var/remainder = pick(TRUE, FALSE) // Responsible for different circle pattern
+	for(var/i = 1 to circle_radius)
+		if(remainder) // Skip one segment so it's not difficult to dodge
+			if(i % 2 != 1)
+				continue
+		else
+			if(i % 2 == 1)
+				continue
+		var/list/turf_list = spiral_range_turfs(i, target_c) - spiral_range_turfs(i-1, target_c)
+		for(var/turf/T in turf_list)
+			RVP.NewSmoke(T, 5 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(BeamTurfEffect), T, circle_overtime_damage))
+		SLEEP_CHECK_DEATH(0.5, src)
+	SLEEP_CHECK_DEATH(5, src)
+	icon_state = icon_living
+	circle_cooldown = world.time + circle_cooldown_time
+	if(!damage_reflection)
+		can_act = TRUE
+
+/mob/living/simple_animal/hostile/ordeal/white_fixer/proc/StartReflecting()
+	can_act = FALSE
+	damage_reflection = TRUE
+	damage_taken = 0
+	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/white_reflect.ogg', 50, TRUE, 7)
+	visible_message("<span class='warning>[src] starts praying!</span>")
+	icon_state = "fixer_w_pray"
+	ChangeResistances(list(BURN = 0, BRAIN = 0, BRUTE = 0, TOX = 0))
+	SLEEP_CHECK_DEATH(10 SECONDS, src)
+	icon_state = icon_living
+	ChangeResistances(list(BURN = 0.5, BRAIN = 0, BRUTE = 0.5, TOX = 1))
+	damage_reflection = FALSE
+	can_act = TRUE
+
+// All damage reflection stuff is down here
+/mob/living/simple_animal/hostile/ordeal/white_fixer/proc/ReflectDamage(mob/living/attacker, attack_type = BRUTE, damage)
+	if(QDELETED(src) || stat == DEAD)
+		return
+	if(damage < 1)
+		return
+	if(!damage_reflection)
+		return
+	for(var/turf/T in RANGE_TURFS(1, src))
+		RVP.NewSparkles(T)
+	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/white_reflect.ogg', min(15 + damage, 100), TRUE, 4)
+	attacker.apply_damage(damage, attack_type, null, attacker.getarmor(null, attack_type))
+	RVP.NewSparkles(get_turf(attacker), color = COLOR_VIOLET)
+
+/mob/living/simple_animal/hostile/ordeal/white_fixer/attack_hand(mob/living/carbon/human/M)
+	. = ..()
+	if(!.)
+		return
+	if(damage_reflection && M.combat_mode)
+		ReflectDamage(M, BRUTE, melee_damage_upper)
+
+/mob/living/simple_animal/hostile/ordeal/white_fixer/attack_paw(mob/living/carbon/human/M)
+	. = ..()
+	if(damage_reflection && M.combat_mode)
+		ReflectDamage(M, BRUTE, 5)
+
+/mob/living/simple_animal/hostile/ordeal/white_fixer/attack_animal(mob/living/simple_animal/M)
+	. = ..()
+	if(!damage_reflection)
+		return
+	if(.)
+		var/damage = rand(M.melee_damage_lower, M.melee_damage_upper)
+		if(damage > 0)
+			ReflectDamage(M, M.melee_damage_type, damage)
+
+/mob/living/simple_animal/hostile/ordeal/white_fixer/bullet_act(obj/projectile/Proj, def_zone, piercing_hit = FALSE)
+	. = ..()
+	if(damage_reflection && Proj.firer)
+		ReflectDamage(Proj.firer, Proj.damage_type, Proj.damage)
+
+/mob/living/simple_animal/hostile/ordeal/white_fixer/attackby(obj/item/I, mob/living/user, params)
+	. = ..()
+	if(!damage_reflection)
+		return
+	var/damage = I.force
+	if(ishuman(user))
+		damage *= 1 + (get_modified_attribute_level(user, JUSTICE_ATTRIBUTE) / 100)
+	ReflectDamage(user, I.damtype, damage)
+
+// Black Fixer
+/mob/living/simple_animal/hostile/ordeal/red_fixer
+	name = "Red Fixer"
+	desc = "A humanoid creature  resembling a robot or a cyborg."
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/tegumobs.dmi'
+	icon_state = "fixer_r"
+	icon_living = "fixer_r"
+	faction = list("hostile", "Head")
+	maxHealth = 3000
+	health = 3000
+	melee_damage_type = BRUTE
+	rapid_melee = 4
+	melee_damage_lower = 15
+	melee_damage_upper = 35
+	move_to_delay = 2.2
+	ranged = TRUE
+	attack_verb_continuous = "slashes"
+	attack_verb_simple = "slash"
+	damage_coeff = list(BURN = 0, BRAIN = 0.5, BRUTE = 1, TOX = 0.5)
+	move_resist = MOVE_FORCE_OVERPOWERING
+	attack_sound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/red_attack.ogg'
+	del_on_death = TRUE
+	wander = TRUE
+
+	var/busy = FALSE
+	var/multislash_cooldown
+	var/multislash_cooldown_time = 4 SECONDS
+	var/multislash_damage = 60
+	var/multislash_range = 6
+	var/beam_cooldown
+	var/beam_cooldown_time = 10 SECONDS
+	/// Red damage dealt on direct hit by the beam
+	var/beam_damage = 300
+
+/mob/living/simple_animal/hostile/ordeal/red_fixer/Initialize()
+	. = ..()
+	beam_cooldown = world.time + beam_cooldown_time
+
+/mob/living/simple_animal/hostile/ordeal/red_fixer/Life()
+	. = ..()
+	if(!.) // Dead
+		return FALSE
+	if(!busy && beam_cooldown + 15 SECONDS < world.time && prob(10)) // Didn't use beam in a long time and there's no target
+		var/turf/T = get_turf(pick(GLOB.generic_event_spawns))
+		LaserBeam(T)
+
+/mob/living/simple_animal/hostile/ordeal/red_fixer/Move()
+	if(busy)
+		return FALSE
+	return ..()
+
+/mob/living/simple_animal/hostile/ordeal/red_fixer/AttackingTarget(atom/attacked_target)
+	if(busy)
+		return
+	..()
+	if(multislash_cooldown < world.time)
+		MultiSlash(attacked_target)
+		return
+	if(prob(50) && beam_cooldown < world.time)
+		LaserBeam(attacked_target)
+		return
+
+/mob/living/simple_animal/hostile/ordeal/red_fixer/OpenFire()
+	if(busy)
+		return
+	if(prob(80) && (beam_cooldown < world.time))
+		LaserBeam(target)
+		return
+	if(prob(50) && (get_dist(src, target) < multislash_range) && (multislash_cooldown < world.time))
+		MultiSlash(target)
+		return
+	return
+
+/mob/living/simple_animal/hostile/ordeal/red_fixer/proc/MultiSlash(target)
+	if(multislash_cooldown > world.time)
+		return
+	multislash_cooldown = world.time + multislash_cooldown_time
+	busy = TRUE
+	var/turf/slash_start = get_turf(src)
+	var/turf/slash_end = get_ranged_target_turf_direct(slash_start, target, multislash_range)
+	var/list/hitline = get_line(slash_start, slash_end)
+	face_atom(target)
+	for(var/turf/T in hitline)
+		new /obj/effect/temp_visual/cult/sparks(T)
+	SLEEP_CHECK_DEATH(4, src)
+	forceMove(slash_end)
+	for(var/turf/T in hitline)
+		for(var/mob/living/L in HurtInTurf(T, list(), multislash_damage, BRUTE, check_faction = TRUE, hurt_mechs = TRUE, hurt_structure = TRUE))
+			to_chat(L, span_userdanger("[src] slashes you at a high speed!"))
+	var/datum/beam/B1 = slash_start.Beam(slash_end, "volt_ray", time=3)
+	B1.visuals.color = COLOR_YELLOW
+	playsound(src, attack_sound, 50, FALSE, 4)
+	SLEEP_CHECK_DEATH(3, src)
+	forceMove(slash_start)
+	for(var/turf/T in hitline)
+		for(var/mob/living/L in HurtInTurf(T, list(), multislash_damage, BRUTE, check_faction = TRUE, hurt_mechs = TRUE, hurt_structure = TRUE))
+			to_chat(L, span_userdanger("[src] slashes you at a high speed!"))
+	var/datum/beam/B2 = slash_start.Beam(slash_end, "volt_ray", time=6)
+	B2.visuals.color = COLOR_RED
+	playsound(src, attack_sound, 75, FALSE, 8)
+	busy = FALSE
+
+/mob/living/simple_animal/hostile/ordeal/red_fixer/proc/LaserBeam(target)
+	if(beam_cooldown > world.time)
+		return
+	busy = TRUE
+	var/turf/beam_start = get_step(src, get_dir(src, target))
+	var/turf/beam_end = get_ranged_target_turf_direct(src, target, 48, rand(-5,5))
+	var/list/hitline = get_line(beam_start, beam_end)
+	for(var/turf/T in hitline)
+		new /obj/effect/temp_visual/cult/sparks(T)
+	face_atom(target)
+	icon_state = "fixer_r_beam"
+	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/red_beam.ogg', 75, FALSE, 32)
+	SLEEP_CHECK_DEATH(1.5 SECONDS, src)
+	var/datum/beam/B = beam_start.Beam(beam_end, "blood_beam", time = 10)
+	var/matrix/M = matrix()
+	M.Scale(3, 1)
+	B.visuals.transform = M
+	var/list/been_hit = list()
+	for(var/turf/T in hitline)
+		for(var/mob/living/L in range(1, T))
+			if(L in been_hit)
+				continue
+			if(faction_check_atom(L))
+				continue
+			to_chat(L, span_userdanger("A red laser passes right through you!"))
+			L.apply_damage(beam_damage, BRUTE, null, L.run_armor_check(null, BRUTE))
+			been_hit |= L
+			new /obj/effect/temp_visual/cult/sparks(get_turf(L))
+	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/red_beam_fire.ogg', 100, FALSE, 32)
+	SLEEP_CHECK_DEATH(1.5 SECONDS, src)
+	beam_cooldown = world.time + beam_cooldown_time
+	busy = FALSE
+	icon_state = icon_living
+
+// Pale Fixer
+/mob/living/simple_animal/hostile/ordeal/pale_fixer
+	name = "Pale Fixer"
+	desc = "A humanoid creature in a business attire and a fedora. They have a sleek pistol in one hand \
+			and a suitcase in the other."
+	icon = 'tff_modular/modules/evento_needo/icons/Teguicons/tegumobs.dmi'
+	icon_state = "fixer_p"
+	icon_living = "fixer_p"
+	faction = list("hostile", "Head")
+	maxHealth = 4000
+	health = 4000
+	melee_damage_type = BRUTE
+	melee_damage_lower = 30
+	melee_damage_upper = 40
+	rapid_melee = 3
+	minimum_distance = 2
+	ranged = TRUE
+	ranged_cooldown_time = 16
+	rapid = 3
+	rapid_fire_delay = 4
+	projectilesound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/pale_pistol.ogg'
+	attack_verb_continuous = "stabs"
+	attack_verb_simple = "stab"
+	damage_coeff = list(BURN = 0.5, BRAIN = 1.0, BRUTE = 0.5, TOX = 0.0)
+	move_resist = MOVE_FORCE_OVERPOWERING
+	projectiletype = /obj/projectile/pale
+	attack_sound = 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/pale_knife.ogg'
+	del_on_death = TRUE
+
+	var/can_act = TRUE
+	var/multislash_cooldown
+	var/multislash_cooldown_time = 5 SECONDS
+	/// Amount of pale damage per slash
+	var/multislash_damage = 15
+	/// Amount of times we slash
+	var/multislash_amount = 10
+	/// How far the attack line goes
+	var/multislash_range = 3
+	/// How wide is the radius of attack throughout the line
+	var/multislash_radius = 1
+	/// Delay between slashs
+	var/multislash_speed = 1
+	var/tentacle_cooldown
+	var/tentacle_cooldown_time = 15 SECONDS
+	/// Pale damage dealt on direct hit by the beam
+	var/tentacle_damage = 200
+	var/tentacle_range = 15
+	var/tentacle_radius = 2
+	var/teleport_cooldown
+	var/teleport_cooldown_time = 10 SECONDS
+
+	var/list/created_objects = list()
+
+/mob/living/simple_animal/hostile/ordeal/pale_fixer/Initialize()
+	. = ..()
+	teleport_cooldown = world.time + teleport_cooldown_time
+
+/mob/living/simple_animal/hostile/ordeal/pale_fixer/Destroy()
+	QDEL_LIST(created_objects)
+	return ..()
+
+/mob/living/simple_animal/hostile/ordeal/pale_fixer/Life()
+	. = ..()
+	if(!.) // Dead
+		return FALSE
+	if(can_act && !client && teleport_cooldown < world.time && ShouldTeleport())
+		TeleportAway()
+
+/mob/living/simple_animal/hostile/ordeal/pale_fixer/Move()
+	if(!can_act)
+		return FALSE
+	return ..()
+
+/mob/living/simple_animal/hostile/ordeal/pale_fixer/AttackingTarget(atom/attacked_target)
+	if(!can_act)
+		return
+	if(prob(60) && multislash_cooldown < world.time)
+		MultiSlash(attacked_target)
+		return
+	if(prob(40) && tentacle_cooldown < world.time)
+		TentacleAttack(attacked_target)
+		return
+	return ..()
+
+/mob/living/simple_animal/hostile/ordeal/pale_fixer/OpenFire()
+	if(!can_act)
+		return
+	if(prob(60) && (get_dist(src, target) <= multislash_range) && (multislash_cooldown < world.time))
+		MultiSlash(target)
+		return
+	if(prob(40) && (get_dist(src, target) <= tentacle_range) && (tentacle_cooldown < world.time))
+		TentacleAttack(target)
+		return
+	return ..()
+
+/mob/living/simple_animal/hostile/ordeal/pale_fixer/Shoot(atom/targeted_atom)
+	if(!client && (locate(/turf/closed) in get_line(src, targeted_atom)))
+		return
+	return ..()
+
+/mob/living/simple_animal/hostile/ordeal/pale_fixer/proc/MultiSlash(target)
+	if(multislash_cooldown > world.time)
+		return
+	multislash_cooldown = world.time + multislash_cooldown_time
+	can_act = FALSE
+	var/turf/slash_start = get_turf(src)
+	var/turf/slash_end = get_ranged_target_turf_direct(slash_start, target, multislash_range)
+	var/dir_to_target = get_dir(slash_start, slash_end)
+	face_atom(target)
+	var/list/hitline = list()
+	for(var/turf/T in get_line(slash_start, slash_end))
+		if(T.density)
+			break
+		for(var/turf/open/TT in RANGE_TURFS(multislash_radius, T))
+			hitline |= TT
+	for(var/turf/open/T in hitline)
+		new /obj/effect/temp_visual/cult/sparks(T)
+	SLEEP_CHECK_DEATH(4, src)
+	for(var/i = 1 to multislash_amount) // This is probably not the best way to do it
+		for(var/turf/open/T in hitline)
+			var/obj/effect/temp_visual/dir_setting/slash/S = new(T, dir_to_target)
+			S.pixel_x = rand(-8, 8)
+			S.pixel_y = rand(-8, 8)
+			animate(S, alpha = 0, time = 1.5)
+			for(var/mob/living/L in HurtInTurf(T, list(), multislash_damage, BRUTE, check_faction = TRUE, hurt_mechs = TRUE, hurt_structure = TRUE))
+				to_chat(L, span_userdanger("[src] stabs you!"))
+				new /obj/effect/temp_visual/dir_setting/bloodsplatter(get_turf(L), dir_to_target)
+		playsound(src, attack_sound, 50, TRUE, 3)
+		SLEEP_CHECK_DEATH(multislash_speed, src)
+	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/pale_knife_end.ogg', 75, FALSE, 7)
+	can_act = TRUE
+
+/mob/living/simple_animal/hostile/ordeal/pale_fixer/proc/TentacleAttack(target)
+	if(tentacle_cooldown >= world.time)
+		return
+	tentacle_cooldown = world.time + tentacle_cooldown_time
+	can_act = FALSE
+	visible_message(span_danger("[src] drops their suitcase on the ground!"))
+	face_atom(target)
+	var/turf/beam_start = get_step(src, dir)
+	var/turf/beam_end
+	var/list/hitline = list()
+	var/walls_in_way = 0
+	for(var/turf/T in get_line(beam_start, get_ranged_target_turf_direct(beam_start, target, tentacle_range)))
+		if(T.density)
+			walls_in_way += 1
+			if(walls_in_way > 2)
+				break
+		beam_end = T
+		for(var/turf/open/TT in RANGE_TURFS(tentacle_radius, T))
+			hitline |= TT
+	if(!beam_end)
+		tentacle_cooldown = world.time + 2 SECONDS
+		can_act = TRUE
+		return
+	var/obj/effect/pale_case/case = new(beam_start)
+	created_objects += case
+	playsound(beam_start, 'sound/items/handling/cardboardbox_drop.ogg', 50, FALSE)
+	SLEEP_CHECK_DEATH(5, src)
+	for(var/turf/T in hitline)
+		new /obj/effect/temp_visual/cult/sparks(T)
+	SLEEP_CHECK_DEATH(10, src)
+	case.icon_state = "pale_case_open"
+	visible_message(span_danger("[case] suddenly opens!"))
+	playsound(beam_start, 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/pale_suitcase.ogg', 75, FALSE, tentacle_range)
+	var/datum/beam/B = beam_start.Beam(beam_end, "bsa_beam", time = 8)
+	var/matrix/M = matrix()
+	M.Scale(tentacle_radius * 3, 1)
+	B.visuals.transform = M
+	var/list/been_hit = list()
+	for(var/turf/T in hitline)
+		var/list/new_hits = HurtInTurf(T, been_hit, tentacle_damage, BRUTE, check_faction = TRUE, hurt_mechs = TRUE, hurt_structure = TRUE) - been_hit
+		been_hit += new_hits
+		for(var/mob/living/L in new_hits)
+			to_chat(L, span_userdanger("A pale beam passes right through you!"))
+			new /obj/effect/temp_visual/dir_setting/bloodsplatter(get_turf(L), pick(GLOB.alldirs))
+	SLEEP_CHECK_DEATH(8, src)
+	created_objects -= case
+	case.FadeOut()
+	SLEEP_CHECK_DEATH(2, src)
+	can_act = TRUE
+
+/mob/living/simple_animal/hostile/ordeal/pale_fixer/proc/ShouldTeleport()
+	if(!target)
+		return TRUE
+	if(isliving(target) && IsTooStrong(target)) // If our target is too strong - we will try to find someone else
+		return TRUE
+	return FALSE
+
+/mob/living/simple_animal/hostile/ordeal/pale_fixer/proc/IsTooStrong(mob/living/target)
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		var/target_armor = H.getarmor(null, BRUTE)
+		if((target_armor >= 60) && (H.health >= H.maxHealth*0.5))
+			return prob(target_armor)
+		return FALSE
+	if(isanimal(target))
+		var/mob/living/simple_animal/SA = target
+		if((SA.damage_coeff.getCoeff(BRUTE) <= 0.3) && (SA.health >= SA.maxHealth*0.2))
+			return TRUE
+		return FALSE
+	return FALSE
+
+/mob/living/simple_animal/hostile/ordeal/pale_fixer/proc/TeleportAway()
+	if(teleport_cooldown >= world.time)
+		return
+	teleport_cooldown = world.time + teleport_cooldown_time
+	var/list/potential_teleports = list()
+	for(var/mob/living/carbon/human/H in GLOB.player_list)
+		if(H.loc.z != src.z)
+			continue
+		if(H.stat == DEAD)
+			continue
+		if(IsTooStrong(H))
+			continue
+		if(get_dist(src, H) < 8)
+			continue
+		var/list/adj_turfs = get_adjacent_open_turfs(H)
+		if(!LAZYLEN(adj_turfs))
+			continue
+		potential_teleports += pick(adj_turfs)
+	if(!LAZYLEN(potential_teleports))
+		return // Nowhere to run!
+	var/turf/target_turf = pick(potential_teleports)
+	can_act = FALSE
+	target = null
+	animate(src, alpha = 0, time = 5)
+	new /obj/effect/temp_visual/guardian/phase(get_turf(src))
+	playsound(src, 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/pale_teleport_in.ogg', 50, FALSE, 4)
+	SLEEP_CHECK_DEATH(5, src)
+	animate(src, alpha = 255, time = 5)
+	new /obj/effect/temp_visual/guardian/phase/out(target_turf)
+	playsound(target_turf, 'tff_modular/modules/evento_needo/sounds/Tegusounds/ordeals/white/pale_teleport_out.ogg', 75, FALSE, 7)
+	forceMove(target_turf)
+	can_act = TRUE
+	for(var/mob/living/carbon/human/H in view(6, target_turf))
+		if(H.stat == DEAD)
+			continue
+		if(IsTooStrong(H))
+			continue
+		GiveTarget(H)
+		break
+
+/obj/projectile/pale
+	name = "pale bullet"
+	icon_state = "palebullet"
+	damage = 16
+	damage_type = BRUTE

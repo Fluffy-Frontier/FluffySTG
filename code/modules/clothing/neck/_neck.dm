@@ -5,6 +5,7 @@
 	body_parts_covered = NECK
 	slot_flags = ITEM_SLOT_NECK
 	interaction_flags_click = NEED_DEXTERITY
+	class_value = 5
 	strip_delay = 4 SECONDS
 	equip_delay_other = 4 SECONDS
 

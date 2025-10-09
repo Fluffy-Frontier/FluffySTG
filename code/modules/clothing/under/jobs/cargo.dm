@@ -1,6 +1,7 @@
 /obj/item/clothing/under/rank/cargo
 	icon = 'icons/obj/clothing/under/cargo.dmi'
 	worn_icon = 'icons/mob/clothing/under/cargo.dmi'
+	class = CLOTHING_UTILITY
 	abstract_type = /obj/item/clothing/under/rank/cargo
 
 /obj/item/clothing/under/rank/cargo/qm

@@ -149,6 +149,8 @@
 
 	else if(istype(parent, /obj/item/gun/energy))
 		var/obj/item/gun/energy/pew = parent
+		if(isnull(pew.cell))
+			return
 		hud.icon_state = "eammo_counter"
 		hud.cut_overlays()
 		hud.maptext_x = -12
@@ -206,7 +208,7 @@
 				oth_t = "t9"
 				oth_h = "h9"
 		hud.set_hud(backing_color, oth_o, oth_t, oth_h, indicator)
-
+/* FUCK OFF
 /obj/item/gun/ballistic/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/ammo_hud)
@@ -214,7 +216,7 @@
 /obj/item/gun/energy/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/ammo_hud)
-
+*/
 /obj/item/weldingtool/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/ammo_hud)

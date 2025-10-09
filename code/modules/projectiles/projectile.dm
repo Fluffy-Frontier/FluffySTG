@@ -274,6 +274,8 @@
 	/// If true directly targeted turfs can be hit
 	var/can_hit_turfs = FALSE
 
+	var/nodamage = FALSE
+
 /obj/projectile/Initialize(mapload)
 	. = ..()
 	maximum_range = range

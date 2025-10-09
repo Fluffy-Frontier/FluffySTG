@@ -9,6 +9,17 @@
 #define CARGO_COMPANY_SOL_DEFENSE (1<<7)
 #define CARGO_COMPANY_MICROSTAR (1<<8)
 #define CARGO_COMPANY_VITEZSTVI_AMMO (1<<9)
+#define CARGO_COMPANY_CLIP_LANCHESTER (1<<10)
+#define CARGO_COMPANY_EOEHOMA (1<<11)
+#define CARGO_COMPANY_ETHERBOR (1<<12)
+#define CARGO_COMPANY_FRONTIER_IMPORT (1<<13)
+#define CARGO_COMPANY_HUNTER_PRIDE (1<<14)
+#define CARGO_COMPANY_NANOTRASEN_SHARPLITE (1<<15)
+#define CARGO_COMPANY_IMPORTED_WEAPON (1<<16)
+#define CARGO_COMPANY_SCARBOROUGH (1<<17)
+#define CARGO_COMPANY_SERENE_SPORTING (1<<18)
+#define CARGO_COMPANY_SOLAR_ARMORIES (1<<19)
+#define CARGO_COMPANY_ATTACHMENTS (1<<20)
 
 // Company names, because the armament category and company name need to be the exact same, so use defines like this
 #define NAKAMURA_ENGINEERING_MODSUITS_NAME "Nakamura Engineering MOD Divison"
