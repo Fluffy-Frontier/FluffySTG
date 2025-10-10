@@ -76,7 +76,7 @@
 			if(HAS_TRAIT(owner, TRAIT_IMMUNODEFICIENCY) && !HAS_TRAIT(owner, TRAIT_VIRUS_RESISTANCE))
 				slowdown *= 0.5 //terrible immune system = doubled parasite growth
 
-		addtimer(CALLBACK(src, PROC_REF(advance_embryo_stage)), growth_time*slowdown)
+		addtimer(CALLBACK(src, PROC_REF(advance_embryo_stage)), growth_time*slowdown, TIMER_UNIQUE) // FLUFFY EDIT ORIGINAL: addtimer(CALLBACK(src, PROC_REF(advance_embryo_stage)), growth_time)
 
 /obj/item/organ/body_egg/alien_embryo/egg_process()
 	if(stage == 6 && prob(50))
@@ -116,14 +116,14 @@
 	if(isnull(ghost))
 		bursting = FALSE
 		stage = 5 // If no ghosts sign up for the Larva, let's regress our growth by one minute, we will try again!
-		addtimer(CALLBACK(src, PROC_REF(advance_embryo_stage)), growth_time)
+		addtimer(CALLBACK(src, PROC_REF(advance_embryo_stage)), growth_time, TIMER_UNIQUE) // FLUFFY EDIT ORIGINAL: addtimer(CALLBACK(src, PROC_REF(advance_embryo_stage)), growth_time)
 		return
 
 	var/mutable_appearance/overlay = mutable_appearance('icons/mob/nonhuman-player/alien.dmi', "burst_lie")
 	owner.add_overlay(overlay)
 
 	var/atom/xeno_loc = get_turf(owner)
-	var/mob/living/carbon/alien/larva/new_xeno = new larva_path(xeno_loc) // FLUFFY FRONTIER EDIT - TGMC XENOS. ORIGINAL: var/mob/living/carbon/alien/larva/new_xeno = new(xeno_loc)
+	var/mob/living/carbon/alien/larva/new_xeno = new larva_path(xeno_loc) // FLUFFY FRONTIER EDIT - TGMC_XENOS. ORIGINAL: var/mob/living/carbon/alien/larva/new_xeno = new(xeno_loc)
 	new_xeno.PossessByPlayer(ghost.key)
 	SEND_SOUND(new_xeno, sound('sound/mobs/non-humanoids/hiss/hiss5.ogg',0,0,0,100)) //To get the player's attention
 	new_xeno.add_traits(list(TRAIT_HANDS_BLOCKED, TRAIT_IMMOBILIZED, TRAIT_NO_TRANSFORM), type) //so we don't move during the bursting animation
