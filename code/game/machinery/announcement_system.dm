@@ -168,7 +168,8 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 /obj/machinery/announcement_system/proc/has_supported_channels(list/channels)
 	if (!LAZYLEN(channels) || (RADIO_CHANNEL_COMMON in channels))
 		// Okay, I am not proud of this, but I don't want CentCom or Syndie AASs to broadcast on Common.
-		return src.type == /obj/machinery/announcement_system
+		// Checking default machine type AND radio type
+		return src.type == /obj/machinery/announcement_system && radio_type == /obj/machinery/announcement_system::radio_type	// FLUFFY FRONTIER tmp fix
 	for(var/channel in channels)
 		if(radio.channels[channel])
 			return TRUE
