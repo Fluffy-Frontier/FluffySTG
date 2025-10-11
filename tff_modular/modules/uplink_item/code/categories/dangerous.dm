@@ -60,3 +60,11 @@
 	uplink_item_flags = SYNDIE_TRIPS_CONTRABAND
 	restricted_roles = list(JOB_CARGO_TECHNICIAN, JOB_QUARTERMASTER)
 	surplus = 5
+
+/datum/uplink_item/role_restricted/sledgehammer
+	name = "Saboteurs Sledgehammer"
+	desc = "highly specialized tool made for destroying machinery and armored personnel"
+	item = /obj/item/melee/traitor_sledgehammer
+	cost = 8
+	uplink_item_flags = SYNDIE_TRIPS_CONTRABAND
+	surplus = 1
