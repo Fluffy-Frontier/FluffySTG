@@ -12,3 +12,12 @@
 
 /datum/market_item/weapon/hollowpoint9mm
 	availability_prob = 35 // FLUFFY FRONTIER EDIT. ORIGINAL: 15
+
+/datum/market_item/weapon/shotgun_modkit
+	name="KOLBEN/NACHTREIHER Shotgun Conversion Kit"
+	desc = "off the shelf conversion kit. no warranty. screwdriwer sold separetly"
+	item = /obj/item/crafting_conversion_kit/riot_sol_super
+	stock = 1
+	price_min = CARGO_CRATE_VALUE * 3
+	price_max = CARGO_CRATE_VALUE * 7
+	availability_prob = 100
