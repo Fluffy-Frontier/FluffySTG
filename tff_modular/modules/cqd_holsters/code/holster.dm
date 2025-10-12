@@ -20,8 +20,8 @@
 /obj/item/clothing/accessory/cqd_holster/attach(obj/item/clothing/under/attach_to, mob/living/attacher)
 	if(attach_to.atom_storage)
 		return FALSE
-	. = ..()
-	
+	return ..()
+
 // Этот прок вызываеться при успешном надевании аксессуара, а также при надевании формы. Его я использую для перехвата разных ситуаций специфичных. Например чтобы скрыть внешний спрайтик для набберов и тешари.
 /obj/item/clothing/accessory/cqd_holster/on_uniform_equipped(obj/item/clothing/under/U, user)
 	/*
@@ -31,17 +31,17 @@
 
 	Ввиду такой ситуёвины я просто создал копии обычных айтем-спрайтов кобуры просто с другим icon_state, дабы сами не пропадали при надевании на того, на ком их спрайт будет изменён/скрыт.
 	*/
-	
+
 	icon_state = initial(icon_state)
 
 	if(isteshari(user))
 		icon_state = initial(icon_state) + "_hidden"
 	if(isnabber(user))
 		icon_state = initial(icon_state) + "_hidden"
-	
+
 	// Вызываем родительский прок после проверок.
-	. = ..()
-	
+	return ..()
+
 /obj/item/clothing/accessory/cqd_holster/detach(obj/item/clothing/under/U)
 	// А это костыльный обход багули, который я подглядел у кармашка для ручек.
 	var/drop_loc = drop_location()

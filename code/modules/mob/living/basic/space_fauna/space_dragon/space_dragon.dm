@@ -18,6 +18,7 @@
 	health_doll_icon = "spacedragon"
 	faction = list(FACTION_CARP)
 	mob_biotypes = MOB_SPECIAL
+	status_flags = CANPUSH
 	flags_1 = PREVENT_CONTENTS_EXPLOSION_1
 	gender = NEUTER
 	maxHealth = 400
@@ -25,7 +26,7 @@
 	unsuitable_cold_damage = 0
 	unsuitable_heat_damage = 0
 	unsuitable_atmos_damage = 0
-	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, STAMINA = 0.5, OXY = 1)
+	damage_coeff = list(BRUTE = 0.7, BURN = 0.6, TOX = 1, STAMINA = 0.5, OXY = 1) // FLUFFY FRONTIER CHANGES - ORIGINAL: damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, STAMINA = 0.5, OXY = 1)
 	combat_mode = TRUE
 	speed = 0
 	attack_verb_continuous = "chomps"
@@ -51,6 +52,10 @@
 	lighting_cutoff_red = 12
 	lighting_cutoff_green = 15
 	lighting_cutoff_blue = 34
+	max_stamina = 200
+	stamina_crit_threshold = BASIC_MOB_NO_STAMCRIT
+	stamina_recovery = 5
+	max_stamina_slowdown = 12
 
 	/// The colour of the space dragon
 	var/chosen_colour

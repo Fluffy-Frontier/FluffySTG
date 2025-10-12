@@ -3,7 +3,7 @@ GLOBAL_LIST_EMPTY(cargo_marks)
 /obj/item/cargo_teleporter
 	name = "cargo teleporter"
 	desc = "An item that can set down a set number of markers, allowing them to teleport items within a tile to the set markers."
-	icon = 'modular_nova/modules/cargo_items/cargo_teleporter.dmi'
+	icon = 'modular_nova/modules/cargo_items/icons/cargo_teleporter.dmi'
 	icon_state = "cargo_tele"
 	///the list of markers spawned by this item
 	var/list/marker_children = list()
@@ -117,7 +117,7 @@ GLOBAL_LIST_EMPTY(cargo_marks)
 /obj/effect/decal/cleanable/cargo_mark
 	name = "cargo mark"
 	desc = "A mark left behind by a cargo teleporter, which allows targeted teleportation. Can be removed by the cargo teleporter."
-	icon = 'modular_nova/modules/cargo_items/cargo_teleporter.dmi'
+	icon = 'modular_nova/modules/cargo_items/icons/cargo_teleporter.dmi'
 	icon_state = "marker"
 	///the reference to the item that spawned the cargo mark
 	var/obj/item/cargo_teleporter/parent_item
@@ -125,9 +125,9 @@ GLOBAL_LIST_EMPTY(cargo_marks)
 	light_range = 3
 	light_color = COLOR_VIVID_YELLOW
 
-/obj/effect/decal/cleanable/cargo_mark/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/cargo_teleporter))
-		to_chat(user, span_notice("You remove [src] using [W]."))
+/obj/effect/decal/cleanable/cargo_mark/attackby(obj/item/attacking_item, mob/user, list/modifiers, list/attack_modifiers)
+	if(istype(attacking_item, /obj/item/cargo_teleporter))
+		to_chat(user, span_notice("You remove [src] using [attacking_item]."))
 		playsound(src, 'sound/machines/click.ogg', 50)
 		qdel(src)
 		return

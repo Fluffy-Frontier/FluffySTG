@@ -32,7 +32,6 @@
 		return TRUE
 	return !sprite_datum.is_hidden(human)
 
-
 /obj/item/organ/snout/on_mob_insert(mob/living/carbon/receiver, special, movement_flags)
 	if(sprite_accessory_flags & SPRITE_ACCESSORY_USE_MUZZLED_SPRITE)
 		external_bodyshapes |= BODYSHAPE_SNOUTED
@@ -227,6 +226,10 @@
 /datum/sprite_accessory/snouts/mammal/otiesmile
 	name = "Otie Smile"
 	icon_state = "otiesmile"
+
+/datum/sprite_accessory/snouts/mammal/otter
+	name = "Otter"
+	icon_state = "otter"
 
 /*/datum/sprite_accessory/snouts/mammal/round
 	name = "Mammal Round"

@@ -8,7 +8,7 @@
 	harmful = FALSE
 	fire_sound = 'sound/items/weapons/taser.ogg'
 	custom_materials = AMMO_MATS_SHOTGUN_TIDE
-	advanced_print_req = TRUE
+	ammo_categories = AMMO_CLASS_NICHE_LTL
 
 /obj/projectile/bullet/pellet/shotgun_buckshot/suppressor
 	name = "electrode"
@@ -19,7 +19,7 @@
 	damage_falloff_tile = -0.2
 	stamina_falloff_tile = -0.3
 	wound_bonus = 0
-	bare_wound_bonus = 0
+	exposed_wound_bonus = 0
 	stutter = 3 SECONDS
 	jitter = 5 SECONDS
 	eyeblur = 1 SECONDS

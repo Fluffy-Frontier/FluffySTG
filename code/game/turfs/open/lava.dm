@@ -58,6 +58,7 @@
 	if(!smoothing_flags)
 		update_appearance()
 	RegisterSignal(src, COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZED_ON, PROC_REF(on_atom_inited))
+	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_LAVA_STOPPED), PROC_REF(drop_contents_into_lava))
 
 /turf/open/lava/Destroy()
 	checked_atoms = null
@@ -210,7 +211,7 @@
 
 /turf/open/lava/TakeTemperature(temp)
 
-/turf/open/lava/attackby(obj/item/C, mob/user, params)
+/turf/open/lava/attackby(obj/item/C, mob/user, list/modifiers)
 	..()
 	if(istype(C, /obj/item/stack/rods/lava))
 		var/obj/item/stack/rods/lava/R = C
@@ -348,6 +349,17 @@
 
 	return FALSE
 
+/**
+ * Called when a lava stopper (Catwalks/boulder platforms) is removed and it's contents need to be subjected to the lava underneath.
+ */
+/turf/open/lava/proc/drop_contents_into_lava()
+	SIGNAL_HANDLER
+	balloon_alert_to_viewers("[pick("splash","pshhhh","hiss","blorble")]!")
+	playsound(src, 'sound/items/match_strike.ogg', 15, TRUE)
+	for(var/atom/movable/each_content as anything in contents)
+		on_atom_inited(src, each_content)
+	return TRUE
+
 /turf/open/lava/can_cross_safely(atom/movable/crossing)
 	return HAS_TRAIT(src, TRAIT_LAVA_STOPPED) || HAS_TRAIT(crossing, immunity_trait ) || HAS_TRAIT(crossing, TRAIT_MOVE_FLYING)
 
@@ -402,7 +414,7 @@
 	. = ..()
 	. += span_info("Some <b>liquid plasma<b> could probably be scooped up with a <b>container</b>.")
 
-/turf/open/lava/plasma/attackby(obj/item/I, mob/user, params)
+/turf/open/lava/plasma/attackby(obj/item/I, mob/user, list/modifiers)
 	if(!I.is_open_container())
 		return ..()
 	if(!I.reagents.add_reagent(/datum/reagent/toxin/plasma, rand(5, 10)))

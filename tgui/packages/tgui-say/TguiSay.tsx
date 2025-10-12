@@ -1,18 +1,11 @@
 import './styles/main.scss';
 
-import {
-  FormEvent,
-  KeyboardEvent,
-  MouseEvent,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { dragStartHandler } from 'tgui/drag';
 import { isEscape, KEY } from 'tgui-core/keys';
-import { BooleanLike, classes } from 'tgui-core/react';
+import { type BooleanLike, classes } from 'tgui-core/react';
 
-import { Channel, ChannelIterator } from './ChannelIterator';
+import { type Channel, ChannelIterator } from './ChannelIterator';
 import { ChatHistory } from './ChatHistory';
 import { LineLength, RADIO_PREFIXES, WindowSize } from './constants';
 import { getPrefix, windowClose, windowOpen, windowSet } from './helpers';
@@ -28,33 +21,28 @@ type ByondProps = {
   scale: BooleanLike;
 };
 
-const ROWS: Record<keyof typeof WindowSize, number> = {
-  Small: 1,
-  Medium: 2,
-  Large: 3,
-  Width: 1, // not used
-} as const;
-
 export function TguiSay() {
   const innerRef = useRef<HTMLTextAreaElement>(null);
   const channelIterator = useRef(new ChannelIterator());
   const chatHistory = useRef(new ChatHistory());
   const messages = useRef(byondMessages);
   const scale = useRef(true);
+  const currentPrefix = useRef<keyof typeof RADIO_PREFIXES | null>(null);
 
   // I initially wanted to make these an object or a reducer, but it's not really worth it.
   // You lose the granulatity and add a lot of boilerplate.
   const [buttonContent, setButtonContent] = useState('');
-  const [currentPrefix, setCurrentPrefix] = useState<
-    keyof typeof RADIO_PREFIXES | null
-  >(null);
-  const [size, setSize] = useState(WindowSize.Small);
-  const [maxLength, setMaxLength] = useState(1024);
   const [lightMode, setLightMode] = useState(false);
+  const [maxLength, setMaxLength] = useState(1024);
+  const [size, setSize] = useState(WindowSize.Small);
   const [value, setValue] = useState('');
 
   const position = useRef([window.screenX, window.screenY]);
   const isDragging = useRef(false);
+
+  function setCurrentPrefix(prefix: keyof typeof RADIO_PREFIXES | null): void {
+    currentPrefix.current = prefix;
+  }
 
   function handleArrowKeys(direction: KEY.Up | KEY.Down): void {
     const chat = chatHistory.current;
@@ -91,16 +79,16 @@ export function TguiSay() {
     // User is on a chat history message
     if (!chat.isAtLatest()) {
       chat.reset();
-      setButtonContent(currentPrefix ?? iterator.current());
+      setButtonContent(currentPrefix.current ?? iterator.current());
 
       // Empty input, resets the channel
-    } else if (currentPrefix && iterator.isSay() && value?.length === 0) {
+    } else if (currentPrefix.current && iterator.isSay() && value?.length === 0) {
       setCurrentPrefix(null);
       setButtonContent(iterator.current());
     }
   }
 
-  function handleButtonClick(event: MouseEvent<HTMLButtonElement>): void {
+  function handleButtonClick(event: React.MouseEvent<HTMLButtonElement>): void {
     isDragging.current = true;
 
     setTimeout(() => {
@@ -137,7 +125,7 @@ export function TguiSay() {
 
   function handleEnter(): void {
     const iterator = channelIterator.current;
-    const prefix = currentPrefix ?? '';
+    const prefix = currentPrefix.current ?? '';
 
     if (value?.length && value.length < maxLength) {
       chatHistory.current.add(value);
@@ -152,15 +140,16 @@ export function TguiSay() {
 
   function handleForceSay(): void {
     const iterator = channelIterator.current;
+    const currentValue = innerRef.current?.value;
 
     // Only force say if we're on a visible channel and have typed something
-    if (!value || iterator.isVisible()) return;
+    if (!currentValue || !iterator.isVisible()) return;
 
-    const prefix = currentPrefix ?? '';
-    const grunt = iterator.isSay() ? prefix + value : value;
+    const prefix = currentPrefix.current ?? '';
+    const grunt = iterator.isSay() ? prefix + currentValue : currentValue;
 
     messages.current.forceSayMsg(grunt, iterator.current());
-    unloadChat();
+    handleClose();
   }
 
   function handleIncrementChannel(): void {
@@ -172,13 +161,13 @@ export function TguiSay() {
     messages.current.channelIncrementMsg(iterator.isVisible());
   }
 
-  function handleInput(event: FormEvent<HTMLTextAreaElement>): void {
+  function handleInput(event: React.FormEvent<HTMLTextAreaElement>): void {
     const iterator = channelIterator.current;
     let newValue = event.currentTarget.value;
 
-    let newPrefix = getPrefix(newValue) || currentPrefix;
+    const newPrefix = getPrefix(newValue) || currentPrefix.current;
     // Handles switching prefixes
-    if (newPrefix && newPrefix !== currentPrefix) {
+    if (newPrefix && newPrefix !== currentPrefix.current) {
       setButtonContent(RADIO_PREFIXES[newPrefix]);
       setCurrentPrefix(newPrefix);
       newValue = newValue.slice(3);
@@ -197,7 +186,9 @@ export function TguiSay() {
     setValue(newValue);
   }
 
-  function handleKeyDown(event: KeyboardEvent<HTMLTextAreaElement>): void {
+  function handleKeyDown(
+    event: React.KeyboardEvent<HTMLTextAreaElement>,
+  ): void {
     if (event.getModifierState('AltGraph')) return;
 
     switch (event.key) {
@@ -230,20 +221,14 @@ export function TguiSay() {
   }
 
   function handleOpen(data: ByondOpen): void {
-    const { channel } = data;
-    const iterator = channelIterator.current;
-    // Catches the case where the modal is already open
-    if (iterator.isSay()) {
-      iterator.set(channel);
-    }
+    channelIterator.current.set(data.channel);
 
-    setButtonContent(iterator.current());
-    windowOpen(iterator.current(), scale.current);
+    setCurrentPrefix(null);
+    setButtonContent(channelIterator.current.current());
 
-    const input = innerRef.current;
-    setTimeout(() => {
-      input?.focus();
-    }, 1);
+    windowOpen(channelIterator.current.current(), scale.current);
+
+    innerRef.current?.focus();
   }
 
   function handleProps(data: ByondProps): void {
@@ -279,14 +264,14 @@ export function TguiSay() {
     }
 
     if (size !== newSize) {
-      setSize(newSize);
       windowSet(newSize, scale.current);
+      setSize(newSize);
     }
   }, [value]);
 
   const theme =
     (lightMode && 'lightMode') ||
-    (currentPrefix && RADIO_PREFIXES[currentPrefix]) ||
+    (currentPrefix.current && RADIO_PREFIXES[currentPrefix.current]) ||
     channelIterator.current.current();
 
   return (
@@ -313,13 +298,16 @@ export function TguiSay() {
         </button>
         <textarea
           autoCorrect="off"
-          className={`textarea textarea-${theme}`}
+          className={classes([
+            'textarea',
+            `textarea-${theme}`,
+            value.length > LineLength.Large && 'textarea-large',
+          ])}
           maxLength={maxLength}
           onInput={handleInput}
           onKeyDown={handleKeyDown}
           ref={innerRef}
           spellCheck={false}
-          rows={ROWS[size] || 1}
           value={value}
         />
       </div>

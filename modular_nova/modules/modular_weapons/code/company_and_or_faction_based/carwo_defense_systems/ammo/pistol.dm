@@ -9,6 +9,7 @@
 	icon_state = "35sol"
 
 	caliber = CALIBER_SOL35SHORT
+	ammo_stack_type = /obj/item/ammo_box/magazine/ammo_stack/c35_sol
 	projectile_type = /obj/projectile/bullet/c35sol
 
 
@@ -20,10 +21,10 @@
 
 /obj/projectile/bullet/c35sol
 	name = ".35 Sol Short bullet"
-	damage = 25
+	damage = 20
 
-	wound_bonus = 10 // Normal bullets are 20
-	bare_wound_bonus = 20
+	wound_bonus = 5 // Normal bullets are 20
+	exposed_wound_bonus = 10
 
 
 /obj/item/ammo_box/c35sol
@@ -52,6 +53,7 @@
 
 	projectile_type = /obj/projectile/bullet/c35sol/incapacitator
 	harmful = FALSE
+	ammo_categories = AMMO_CLASS_NONE
 
 
 /obj/projectile/bullet/c35sol/incapacitator
@@ -60,7 +62,7 @@
 	stamina = 30
 
 	wound_bonus = -40
-	bare_wound_bonus = -20
+	exposed_wound_bonus = -20
 
 	weak_against_armour = TRUE
 
@@ -97,8 +99,7 @@
 	projectile_type = /obj/projectile/bullet/c35sol/ripper
 
 	custom_materials = AMMO_MATS_RIPPER
-	advanced_print_req = TRUE
-
+	ammo_categories = AMMO_CLASS_PLUS
 
 /obj/projectile/bullet/c35sol/ripper
 	name = ".35 Sol ripper bullet"
@@ -109,7 +110,7 @@
 	sharpness = SHARP_EDGED
 
 	wound_bonus = 20
-	bare_wound_bonus = 20
+	exposed_wound_bonus = 20
 
 	embed_type = /datum/embedding/c35sol_ripper
 
@@ -143,6 +144,7 @@
 
 	projectile_type = /obj/projectile/bullet/c35sol/flash
 	harmful = FALSE
+	ammo_categories = AMMO_CLASS_NONE
 
 /obj/projectile/bullet/c35sol/flash
 	name = ".35 Sol Short flash bullet"

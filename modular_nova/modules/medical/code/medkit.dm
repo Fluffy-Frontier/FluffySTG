@@ -174,28 +174,9 @@
 	name = "mechanical medkit"
 	desc = "For those mechanical booboos."
 
-	icon = 'modular_nova/modules/medical/code/medkit.dmi'
+	icon = 'modular_nova/modules/medical/icons/medkit.dmi'
 	icon_state = "medkit_mechanical"
 	inhand_icon_state = "medkit_mechanical"
-	lefthand_file = 'modular_nova/modules/medical/code/medical_lefthand.dmi'
-	righthand_file = 'modular_nova/modules/medical/code/medical_righthand.dmi'
-
-/obj/item/storage/medkit/mechanical/Initialize(mapload)
-	. = ..()
-
-	var/static/list/list_of_everything_mechanical_medkits_can_hold = list_of_everything_medkits_can_hold + list(
-		/obj/item/stack/cable_coil,
-		/obj/item/crowbar,
-		/obj/item/screwdriver,
-		/obj/item/wrench,
-		/obj/item/weldingtool,
-		/obj/item/wirecutters,
-		/obj/item/multitool,
-		/obj/item/plunger,
-		/obj/item/clothing/glasses/welding,
-	)
-
-	atom_storage.set_holdable(
-		can_hold_list = list_of_everything_mechanical_medkits_can_hold,
-		exception_hold_list = /obj/item/clothing/head/utility/welding,
-	)
+	lefthand_file = 'modular_nova/modules/medical/icons/medical_lefthand.dmi'
+	righthand_file = 'modular_nova/modules/medical/icons/medical_righthand.dmi'
+	storage_type = /datum/storage/medkit/robotic_repair

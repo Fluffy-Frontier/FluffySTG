@@ -10,6 +10,7 @@
 	max_idle_programs = 3
 
 	max_capacity = 64
+	flags_1 = parent_type::flags_1 | NO_NEW_GAGS_PREVIEW_1
 
 /obj/item/modular_computer/pda/synth/Initialize(mapload)
 	. = ..()
@@ -93,7 +94,7 @@
 	var/obj/item/card/id/contained_id_item
 	if(istype(id_slot_item, /obj/item/modular_computer/pda))
 		var/obj/item/modular_computer/pda/id_slot_pda = id_slot_item
-		contained_id_item = id_slot_pda.computer_id_slot
+		contained_id_item = id_slot_pda.stored_id
 	else if(istype(id_slot_item, /obj/item/storage/wallet))
 		var/obj/item/storage/wallet/id_slot_wallet = id_slot_item
 		contained_id_item = id_slot_wallet.GetID()
@@ -105,33 +106,33 @@
 	if(!istype(synth))
 		return
 	if(isnull(id_item))
-		if(computer_id_slot)
+		if(stored_id)
 			to_chat(synth, span_notice("Persocom RFID link disconnected."))
-		computer_id_slot = null
+		stored_id = null
 		return
 	if(istype(id_item, /obj/item/card/id))
-		computer_id_slot = id_item
+		stored_id = id_item
 		to_chat(synth, span_notice("Persocom establishing new RFID link with [id_item]."))
 		RegisterSignal(id_item, COMSIG_ITEM_POST_UNEQUIP, PROC_REF(on_id_item_unequipped))
 	else if(istype(id_item, /obj/item/modular_computer))
 		var/obj/item/modular_computer/pda = id_item
-		computer_id_slot = pda.computer_id_slot
+		stored_id = pda.stored_id
 		to_chat(synth, span_notice("Persocom establishing new RFID link with [pda]."))
 		RegisterSignal(pda, COMSIG_ITEM_POST_UNEQUIP, PROC_REF(on_id_item_unequipped))
 		RegisterSignal(pda, COMSIG_MODULAR_COMPUTER_INSERTED_ID, PROC_REF(on_id_item_stored))
-		RegisterSignal(pda.computer_id_slot, COMSIG_MOVABLE_MOVED, PROC_REF(on_id_item_moved))
+		RegisterSignal(pda.stored_id, COMSIG_MOVABLE_MOVED, PROC_REF(on_id_item_moved))
 	else if(istype(id_item, /obj/item/storage/wallet))
 		var/obj/item/storage/wallet/your_wallet = id_item
-		computer_id_slot = your_wallet.GetID()
+		stored_id = your_wallet.GetID()
 		to_chat(synth, span_notice("Persocom establishing new RFID link with [your_wallet]."))
 		RegisterSignal(your_wallet, COMSIG_ITEM_POST_UNEQUIP, PROC_REF(on_id_item_unequipped))
 		RegisterSignal(your_wallet, COMSIG_STORAGE_STORED_ITEM, PROC_REF(on_id_item_stored))
 		RegisterSignal(your_wallet.GetID(), COMSIG_ITEM_UNSTORED, PROC_REF(on_id_item_moved))
 
 	else
-		computer_id_slot = null
+		stored_id = null
 
-/obj/item/modular_computer/pda/synth/RemoveID(mob/user, silent = FALSE)
+/obj/item/modular_computer/pda/synth/remove_id(mob/user, silent = FALSE)
 	return
 
 /obj/item/modular_computer/pda/synth/get_ntnet_status()
@@ -147,9 +148,9 @@
 	var/obj/item/organ/brain/synth/robotbrain = targetmachine.get_organ_slot(ORGAN_SLOT_BRAIN)
 	if(istype(robotbrain))
 		if(user.zone_selected == BODY_ZONE_PRECISE_EYES)
-			balloon_alert(user, "Establishing SSH login with persocom...")
+			balloon_alert(user, "establishing SSH login with persocom...")
 			if(do_after(user, 5 SECONDS))
-				balloon_alert(user, "Connection established!")
+				balloon_alert(user, "connection established")
 				to_chat(targetmachine, span_notice("[user] establishes an SSH connection between [src] and your persocom emulation."))
 				robotbrain.internal_computer.interact(user)
 			return

@@ -66,8 +66,8 @@
 		hemophage.balloon_alert(hemophage, "needs a living victim!")
 		return FALSE
 
-	if(!victim.blood_volume || (victim.dna && ((HAS_TRAIT(victim, TRAIT_NOBLOOD)) || victim.dna.species.exotic_blood)))
-		hemophage.balloon_alert(hemophage, "[victim] doesn't have blood!")
+	if(!victim.blood_volume || (victim.dna && ((HAS_TRAIT(victim, TRAIT_NOBLOOD)) || (victim.get_blood_reagent() != hemophage.get_blood_reagent()))))
+		hemophage.balloon_alert(hemophage, "[victim] doesn't have suitable blood!")
 		return FALSE
 
 	if(victim.can_block_magic(MAGIC_RESISTANCE_HOLY, charge_cost = 0))
@@ -168,6 +168,11 @@
 	else if ((victim.blood_volume + HEMOPHAGE_DRAIN_AMOUNT) <= BLOOD_VOLUME_SURVIVE)
 		to_chat(hemophage, span_warning("A sense of hesitation gnaws: you know for certain that taking much more blood from [victim] WILL kill them. <b>...but another part of you sees only opportunity.</b>"))
 
+	// FLUFFY FRONTIER EDIT ADDITION START
+	// Жертва будет уязвима к урону в течение 5 минут
+	if(!victim.has_status_effect(/datum/status_effect/vulnerable_to_damage))
+		victim.apply_status_effect(/datum/status_effect/vulnerable_to_damage)
+	// FLUFFY FRONTIER EDIT ADDITION END
 
 #undef HEMOPHAGE_DRAIN_AMOUNT
 #undef BLOOD_DRAIN_MULTIPLIER_CKEY

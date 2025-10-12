@@ -30,7 +30,7 @@
 /datum/action/cooldown/spell/touch/psyonic/psyonic_discharge
 	name = "Psyonic Discharge"
 	desc = "Try to discharge battery and convert electricity into raw psyonic energy."
-	button_icon = 'modular_nova/modules/aesthetics/cells/cell.dmi'
+	button_icon = 'modular_nova/modules/aesthetics/cells/icons/cell.dmi'
 	button_icon_state = "icell"
 	cooldown_time = 30 SECONDS
 	mana_cost = 0
@@ -161,7 +161,7 @@
 	var/mob/living/carbon/human/to_mutate = cast_on
 	if(!to_mutate.can_mutate())
 		return FALSE
-	to_mutate.dna.add_mutation(/datum/mutation/human/shock, MUT_OTHER)
+	to_mutate.dna.add_mutation(/datum/mutation/shock, MUTATION_SOURCE_ACTIVATED)
 	drain_mana()
 	return TRUE
 

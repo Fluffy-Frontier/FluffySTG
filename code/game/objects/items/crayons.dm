@@ -528,7 +528,7 @@
 	if(istagger)
 		wait_time *= 0.5
 
-	if(!instant && !do_after(user, wait_time, target = target, max_interact_count = 4))
+	if(!instant && !do_after(user, wait_time, target = target, max_interact_count = 4, extra_checks = CALLBACK(src, PROC_REF(adjacency_check), user, target)))
 		return ITEM_INTERACT_BLOCKING
 
 	if(!use_charges(user, cost))
@@ -584,6 +584,13 @@
 			reagents.expose(draw_turf, methods = TOUCH, volume_modifier = volume_multiplier)
 	check_empty(user)
 	return ITEM_INTERACT_SUCCESS
+
+///Checks if the user is still adjacent to the target (used for do_after extra_checks)
+/obj/item/toy/crayon/proc/adjacency_check(mob/user, atom/target)
+	if(!user.Adjacent(target))
+		user.balloon_alert(user, "moved too far away!")
+		return FALSE
+	return TRUE
 
 /obj/item/toy/crayon/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
 	if (!check_allowed_items(interacting_with))
@@ -725,17 +732,7 @@
 	icon_state = "crayonbox"
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/cardboard = SHEET_MATERIAL_AMOUNT)
-
-/obj/item/storage/crayons/Initialize(mapload)
-	. = ..()
-	atom_storage.set_holdable(
-		can_hold_list = /obj/item/toy/crayon,
-		cant_hold_list = list(
-			/obj/item/toy/crayon/spraycan,
-			/obj/item/toy/crayon/mime,
-			/obj/item/toy/crayon/rainbow,
-		),
-	)
+	storage_type = /datum/storage/crayons
 
 /obj/item/storage/crayons/PopulateContents()
 	new /obj/item/toy/crayon/red(src)
@@ -760,7 +757,7 @@
 	if(flags_1 & HOLOGRAM_1)
 		return
 
-	var/obj/item/stack/sheet/cardboard/cardboard = new /obj/item/stack/sheet/cardboard(user.drop_location())
+	var/obj/item/stack/sheet/cardboard/cardboard = new (user.drop_location())
 	to_chat(user, span_notice("You fold the [src] into cardboard."))
 	user.put_in_active_hand(cardboard)
 	qdel(src)

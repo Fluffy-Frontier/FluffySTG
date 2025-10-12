@@ -145,7 +145,7 @@
 	var/mob/living/carbon/human/to_mutate = cast_on
 	if(!to_mutate.can_mutate())
 		return FALSE
-	to_mutate.dna.add_mutation(/datum/mutation/human/telekinesis, MUT_OTHER)
+	to_mutate.dna.add_mutation(/datum/mutation/telekinesis, MUTATION_SOURCE_ACTIVATED)
 	drain_mana()
 
 // Восстанавливает Integrity атома. Позволяет чинить многие нечинимые иными способами вещи

@@ -51,23 +51,19 @@
 #define ITEM_SLOT_NECK (1<<12)
 /// A character's hand slots
 #define ITEM_SLOT_HANDS (1<<13)
-/// Inside of a character's backpack
-#define ITEM_SLOT_BACKPACK (1<<14)
 /// Suit Storage slot
-#define ITEM_SLOT_SUITSTORE (1<<15)
+#define ITEM_SLOT_SUITSTORE (1<<14)
 /// Left Pocket slot
-#define ITEM_SLOT_LPOCKET (1<<16)
+#define ITEM_SLOT_LPOCKET (1<<15)
 /// Right Pocket slot
-#define ITEM_SLOT_RPOCKET (1<<17)
+#define ITEM_SLOT_RPOCKET (1<<16)
 /// Handcuff slot
-#define ITEM_SLOT_HANDCUFFED (1<<18)
+#define ITEM_SLOT_HANDCUFFED (1<<17)
 /// Legcuff slot (bolas, beartraps)
-#define ITEM_SLOT_LEGCUFFED (1<<19)
-/// Inside of a character's BELT.........
-#define ITEM_SLOT_BELTPACK (1<<20)
+#define ITEM_SLOT_LEGCUFFED (1<<18)
 
 /// Total amount of slots
-#define SLOTS_AMT 20 // Keep this up to date!
+#define SLOTS_AMT 19 // Keep this up to date!
 
 ///Inventory slots that can be blacklisted by a species from being equipped into
 DEFINE_BITFIELD(no_equip_flags, list(
@@ -90,7 +86,7 @@ DEFINE_BITFIELD(no_equip_flags, list(
 	ITEM_SLOT_MASK | ITEM_SLOT_HEAD | ITEM_SLOT_FEET | ITEM_SLOT_ID | ITEM_SLOT_BELT | ITEM_SLOT_BACK | ITEM_SLOT_NECK )
 
 //Bit flags for the flags_inv variable, which determine when a piece of clothing hides another. IE a helmet hiding glasses.
-//Make sure to update check_obscured_slots() if you add more.
+//Make sure to update obscured_slots if you add more.
 #define HIDEGLOVES (1<<0)
 #define HIDESUITSTORAGE (1<<1)
 #define HIDEJUMPSUIT (1<<2) //these first four are only used in exterior suits
@@ -136,9 +132,9 @@ DEFINE_BITFIELD(no_equip_flags, list(
 #define HIDETAUR (1<<19)
 //NOVA EDIT ADDITION END
 //bitflags for clothing coverage - also used for limbs
-#define HEAD (1<<0)
-#define CHEST (1<<1)
-#define GROIN (1<<2)
+#define CHEST (1<<0)
+#define GROIN (1<<1)
+#define HEAD (1<<2)
 #define LEG_LEFT (1<<3)
 #define LEG_RIGHT (1<<4)
 #define LEGS (LEG_LEFT | LEG_RIGHT)
@@ -189,7 +185,6 @@ DEFINE_BITFIELD(no_equip_flags, list(
 /// The sprite works fine for digitigrade legs as-is.
 #define CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON (1<<2)
 /// Auto-generates the leg portion of the sprite with GAGS
-/// Suggested that you set [/obj/item/var/digitigrade_greyscale_config_worn] when using this flag
 #define CLOTHING_DIGITIGRADE_MASK (1<<3)
 // NOVA EDIT ADDITION START
 /// The sprite works fine for snouts.
@@ -232,6 +227,34 @@ DEFINE_BITFIELD(no_equip_flags, list(
 #define AFK_THEFT_MESSAGE 2
 /// The index of the entry in 'afk_thefts' with the time it happened
 #define AFK_THEFT_TIME 3
+
+/// A list of things that any suit storage can hold
+/// Should consist of ubiquitous, non-specialized items
+/// or items that are meant to be "suit storage agnostic" as
+/// a benefit, which of the time of this commit only applies
+/// to the captain's jetpack, here
+GLOBAL_LIST_INIT(any_suit_storage, typecacheof(list(
+	/obj/item/clipboard,
+	/obj/item/flashlight,
+	/obj/item/tank/internals/emergency_oxygen,
+	/obj/item/tank/internals/plasmaman,
+	/obj/item/lighter,
+	/obj/item/pen,
+	/obj/item/modular_computer/pda,
+	/obj/item/toy,
+	/obj/item/radio,
+	/obj/item/storage/bag/books,
+	/obj/item/storage/fancy/cigarettes,
+	/obj/item/tank/jetpack/oxygen/captain,
+	/obj/item/stack/spacecash,
+	/obj/item/storage/wallet,
+	/obj/item/folder,
+	/obj/item/storage/box/matches,
+	/obj/item/cigarette,
+	/obj/item/gun/energy/laser/bluetag,
+	/obj/item/gun/energy/laser/redtag,
+	/obj/item/storage/belt/holster
+)))
 
 //Allowed equipment lists for security vests.
 
@@ -317,9 +340,29 @@ GLOBAL_LIST_INIT(mining_suit_allowed, list(
 	/obj/item/pickaxe,
 	/obj/item/resonator,
 	/obj/item/spear,
-	/obj/item/forging/reagent_weapon, // NOVA EDIT ADDITION
-	/obj/item/gun/ballistic/bow, // NOVA EDIT ADDITION
-	/obj/item/storage/belt/machete, // NOVA EDIT ADDITION
+	/obj/item/gun/ballistic/bow/ashenbow,
+	// NOVA EDIT ADDITION START
+	/obj/item/forging/reagent_weapon,
+	/obj/item/gun/ballistic/bow,
+	/obj/item/storage/belt/machete,
+	// NOVA EDIT ADDITION END
+))
+
+// Allowed list for personal carry firearms and holsters
+
+GLOBAL_LIST_INIT(personal_carry_allowed, list(
+	/obj/item/storage/belt/holster,
+	/obj/item/gun/ballistic/automatic/pistol,
+	/obj/item/gun/ballistic/revolver,
+	/obj/item/gun/energy/disabler/smoothbore,
+))
+
+/// Allowed list for improvised firearms
+
+GLOBAL_LIST_INIT(improvised_firearm_allowed, list(
+	/obj/item/gun/ballistic/rifle/boltaction/pipegun,
+	/obj/item/gun/energy/laser/musket,
+	/obj/item/gun/energy/disabler/smoothbore,
 ))
 
 /// List of all "tools" that can fit into belts or work from toolboxes
@@ -354,21 +397,24 @@ GLOBAL_LIST_INIT(tool_items, list(
 	/obj/item/spess_knife,
 ))
 
-/// String for items placed into the left pocket.
+// Keys for equip_in_one_of_slots, if you add new ones update the assoc lists in equip_in_one_of_slots
+/// Items placed into the left pocket.
 #define LOCATION_LPOCKET "in your left pocket"
-/// String for items placed into the right pocket
+/// Items placed into the right pocket
 #define LOCATION_RPOCKET "in your right pocket"
-/// String for items placed into the backpack.
+/// Items placed into the backpack.
 #define LOCATION_BACKPACK "in your backpack"
-/// String for items placed into the hands.
+/// Items placed into the hands.
 #define LOCATION_HANDS "in your hands"
-/// String for items placed in the glove slot.
+/// Items placed in the glove slot.
 #define LOCATION_GLOVES "on your hands"
-/// String for items placed in the eye/glasses slot.
+/// Items placed in the eye/glasses slot.
 #define LOCATION_EYES "covering your eyes"
-/// String for items placed on the head/hat slot.
+/// Items placed in the mask slot.
+#define LOCATION_MASK "covering your face"
+/// Items placed on the head/hat slot.
 #define LOCATION_HEAD "on your head"
-/// String for items placed in the neck slot.
+/// Items placed in the neck slot.
 #define LOCATION_NECK "around your neck"
-/// String for items placed in the id slot
+/// Items placed in the id slot
 #define LOCATION_ID "in your ID slot"

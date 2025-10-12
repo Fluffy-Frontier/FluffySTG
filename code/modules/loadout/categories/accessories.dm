@@ -18,10 +18,8 @@
 /datum/loadout_item/accessory/get_ui_buttons()
 	if(!can_be_layer_adjusted)
 		return ..()
-
-	var/list/buttons = ..()
-
-	UNTYPED_LIST_ADD(buttons, list(
+	. = ..()
+	UNTYPED_LIST_ADD(., list(
 		"label" = "Layer",
 		"act_key" = "set_layer",
 		"active_key" = INFO_LAYER,
@@ -29,7 +27,7 @@
 		"inactive_text" = "Below Suit",
 	))
 
-	return buttons
+	return .
 
 /datum/loadout_item/accessory/handle_loadout_action(datum/preference_middleware/loadout/manager, mob/user, action, params)
 	if(action == "set_layer")
@@ -84,15 +82,10 @@
 /datum/loadout_item/accessory/full_pocket_protector
 	name = "Pocket Protector (Filled)"
 	item_path = /obj/item/clothing/accessory/pocketprotector/full
-	additional_displayed_text = list("Contains pens")
 
-/datum/loadout_item/accessory/colonial_webbing
-	name = "Slim Colonial Webbing"
-	item_path = /obj/item/clothing/accessory/colonial_webbing
-
-// FLUFFY FRONTIER EDIT START. REMOVAL
-/* /datum/loadout_item/accessory/pride
+/* // FLUFFY FRONTIER REMOVAL START
+/datum/loadout_item/accessory/pride
 	name = "Pride Pin"
 	item_path = /obj/item/clothing/accessory/pride
-	can_be_reskinned = TRUE */
-// FLUFFY FRONTIER EDIT END
+	can_be_reskinned = TRUE
+*/ // FLUFFY FRONTIER REMOVAL END

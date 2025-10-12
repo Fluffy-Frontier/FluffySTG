@@ -116,7 +116,7 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 
 	var/obj/item/card/psyonic_license/new_license = new(whom_to_give)
 
-	give_item_to_holder(new_license, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK, LOCATION_HANDS = ITEM_SLOT_HANDS), flavour_text = "Make sure not to lose it. You can not remake this on the station.")
+	give_item_to_holder(new_license, list(LOCATION_BACKPACK = ITEM_SLOT_BACK, LOCATION_HANDS = ITEM_SLOT_HANDS), flavour_text = "Make sure not to lose it. You can not remake this on the station.")
 
 /datum/quirk/psyonic/proc/give_item_to_holder(obj/item/quirk_item, list/valid_slots, flavour_text = null, default_location = "at your feet", notify_player = TRUE)
 	if(ispath(quirk_item))

@@ -49,10 +49,10 @@
 	name = "NT peacekeeper uniform"
 	desc = "A military-grade uniform with military grade comfort (none at all), often seen on \
 		NTIS's various peacekeeping forces, and usually alongside a blue helmet."
-	icon = 'modular_nova/modules/goofsec/icons/uniforms.dmi'
+	icon = 'modular_nova/modules/goofsec/icons/obj/uniforms.dmi'
 	icon_state = "peacekeeper"
-	worn_icon = 'modular_nova/modules/goofsec/icons/uniforms_worn.dmi'
-	worn_icon_digi = 'modular_nova/modules/goofsec/icons/uniforms_worn_digi.dmi'
+	worn_icon = 'modular_nova/modules/goofsec/icons/mob/uniforms.dmi'
+	worn_icon_digi = 'modular_nova/modules/goofsec/icons/mob/uniforms_digi.dmi'
 	worn_icon_state = "peacekeeper"
 	armor_type = /datum/armor/clothing_under/rank_security
 	inhand_icon_state = null

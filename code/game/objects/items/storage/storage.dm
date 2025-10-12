@@ -1,6 +1,7 @@
 /obj/item/storage
 	name = "storage"
 	icon = 'icons/obj/storage/storage.dmi'
+	abstract_type = /obj/item/storage
 	w_class = WEIGHT_CLASS_NORMAL
 	interaction_flags_click = ALLOW_RESTING | FORBID_TELEKINESIS_REACH
 	action_slots = ALL
@@ -98,6 +99,12 @@
 /// Don't do anything stupid, please
 /obj/item/storage/proc/get_types_to_preload()
 	return
+
+/obj/item/storage/used_in_craft(atom/result, datum/crafting_recipe/current_recipe)
+	. = ..()
+	// If we consumed in crafting, we should dump contents out before qdeling them.
+	if(!is_type_in_list(src, current_recipe.parts))
+		emptyStorage()
 
 /// Removes an item or puts it in mouth from the contents, if any
 /obj/item/storage/proc/quick_remove_item(obj/item/grabbies, mob/user, equip_to_mouth =  FALSE)

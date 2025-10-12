@@ -25,7 +25,7 @@
 		/obj/item/chisel,
 		/obj/item/paint_palette,
 		/obj/item/paint,
-		/obj/item/reagent_containers/cup/rag,
+		/obj/item/rag,
 		/obj/item/reagent_containers/spray/cleaner,
 		/obj/item/soap,
 	))

@@ -20,10 +20,17 @@
 
 /obj/structure/lattice/Initialize(mapload)
 	. = ..()
-	if(length(give_turf_traits))
+	if (length(give_turf_traits))
 		give_turf_traits = string_list(give_turf_traits)
 		AddElement(/datum/element/give_turf_traits, give_turf_traits)
 	AddElement(/datum/element/footstep_override, footstep = FOOTSTEP_CATWALK)
+	// We check for objects in non-nearspace space in both linters and tests, so we can ignore these checks on mapload for performance
+	if (mapload || !isspaceturf(loc))
+		return
+
+	var/area/new_turf_area = get_area(loc)
+	if (istype(new_turf_area, /area/space) && !istype(new_turf_area, /area/space/nearstation))
+		set_turf_to_area(loc, GLOB.areas_by_type[/area/space/nearstation])
 
 /datum/armor/structure_lattice
 	melee = 50
@@ -55,7 +62,7 @@
 /obj/structure/lattice/blob_act(obj/structure/blob/B)
 	return
 
-/obj/structure/lattice/attackby(obj/item/C, mob/user, params)
+/obj/structure/lattice/attackby(obj/item/C, mob/user, list/modifiers, list/attack_modifiers)
 	if(resistance_flags & INDESTRUCTIBLE)
 		return
 	if(C.tool_behaviour == TOOL_WIRECUTTER)
@@ -66,7 +73,8 @@
 		return T.attackby(C, user) //hand this off to the turf instead (for building plating, catwalks, etc)
 
 /obj/structure/lattice/atom_deconstruct(disassembled = TRUE)
-	new build_material(get_turf(src), number_of_mats)
+	if(!isnull(build_material) && number_of_mats >= 1)
+		new build_material(get_turf(src), number_of_mats)
 
 /obj/structure/lattice/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
 	if(the_rcd.mode == RCD_TURF)
@@ -167,7 +175,7 @@
 /obj/structure/lattice/lava/deconstruction_hints(mob/user)
 	return span_notice("The rods look like they could be <b>cut</b>, but the <i>heat treatment will shatter off</i>. There's space for a <i>tile</i>.")
 
-/obj/structure/lattice/lava/attackby(obj/item/attacking_item, mob/user, params)
+/obj/structure/lattice/lava/attackby(obj/item/attacking_item, mob/user, list/modifiers, list/attack_modifiers)
 	. = ..()
 	if(!ismetaltile(attacking_item))
 		return
@@ -182,3 +190,50 @@
 	turf_we_place_on.place_on_top(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
 
 	qdel(src)
+
+/obj/structure/lattice/catwalk/boulder
+	name = "boulder platform"
+	desc = "A boulder, floating on the molten hot deadly lava. More like a BOATlder."
+	icon = 'icons/obj/ore.dmi'
+	icon_state = "boulder_platform"
+	base_icon_state = "boulder_platform"
+	smoothing_flags = NONE
+	smoothing_groups = null
+	canSmoothWith = null
+	build_material = null
+	/// The type of particle to make before the platform collapses.
+	var/warning_particle = /particles/smoke/ash
+
+/obj/structure/lattice/catwalk/boulder/Initialize(mapload)
+	. = ..()
+	fast_emissive_blocker(src)
+	AddElement(/datum/element/elevation, pixel_shift = 8)
+
+/obj/structure/lattice/catwalk/boulder/attackby(obj/item/attacking_item, mob/user, list/modifiers, list/attack_modifiers)
+	if(ismetaltile(attacking_item))
+		balloon_alert(user, "too unstable!")
+		return FALSE
+	return ..()
+
+/obj/structure/lattice/catwalk/boulder/CanAllowThrough(atom/movable/mover, border_dir)
+	if(istype(mover, /obj/structure/ore_box))
+		self_destruct()
+		return TRUE
+	. = ..()
+
+/obj/structure/lattice/catwalk/boulder/proc/pre_self_destruct()
+	if(istype(loc, /turf/open/lava/plasma))
+		add_overlay("plasma_cracks")
+	else
+		add_overlay("lava_cracks")
+	animate(src, alpha = 0, time = 2 SECONDS, pixel_y = -16, easing = QUAD_EASING|EASE_IN)
+	addtimer(CALLBACK(src, PROC_REF(self_destruct)), 2 SECONDS)
+
+/**
+ * Handles platforms deleting themselves with a visual effect and message.
+ */
+/obj/structure/lattice/catwalk/boulder/proc/self_destruct()
+	visible_message(span_notice("\The [src] sinks and dissapears!"))
+	playsound(src, 'sound/effects/gas_hissing.ogg', 20)
+	remove_shared_particles(warning_particle)
+	deconstruct()

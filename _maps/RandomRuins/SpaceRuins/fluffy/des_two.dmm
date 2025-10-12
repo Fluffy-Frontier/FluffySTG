@@ -42,7 +42,7 @@
 	dir = 1
 	},
 /obj/structure/reagent_dispensers/fueltank,
-/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/blood/oil,
 /obj/effect/turf_decal/bot_red,
 /obj/structure/sign/warning/fire/directional/north,
 /obj/structure/sign/warning/no_smoking/circle/directional/west,
@@ -90,8 +90,8 @@
 /obj/item/holosign_creator/atmos{
 	pixel_y = -8
 	},
-/obj/item/clothing/suit/toggle/jacket/nova/engi,
-/obj/item/clothing/suit/toggle/jacket/nova/engi,
+/obj/item/clothing/suit/toggle/jacket/nova/colorable_bomber/engi,
+/obj/item/clothing/suit/toggle/jacket/nova/colorable_bomber/engi,
 /obj/item/clothing/suit/hooded/wintercoat/engineering,
 /obj/machinery/light_switch/directional/west,
 /turf/open/floor/iron/dark/side{
@@ -204,13 +204,13 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/nova/des_two/security)
 "aH" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/engineering)
 "aI" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/service/lounge)
 "aJ" = (
 /obj/machinery/hydroponics/constructable,
@@ -273,7 +273,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/nova/des_two/security/armory)
 "aN" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/space/has_grav/nova/des_two/halls)
 "aO" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -792,7 +792,9 @@
 	dir = 1
 	},
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/structure/marker_beacon/teal,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -1012,7 +1014,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 1
 	},
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/space/has_grav/nova/des_two/security)
 "de" = (
 /obj/effect/turf_decal/trimline/dark/filled/line,
@@ -1034,7 +1036,7 @@
 	dir = 4;
 	faction = list("Syndicate DS-2 Crew","Interdyne Lavaland Personnel","Syndicate")
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/bridge/vault)
 "dg" = (
 /obj/effect/turf_decal/siding/dark/corner{
@@ -1291,7 +1293,7 @@
 	dir = 5;
 	faction = list("Syndicate DS-2 Crew","Interdyne Lavaland Personnel","Syndicate")
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/bridge/vault)
 "dR" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -1394,7 +1396,7 @@
 	},
 /area/ruin/space/has_grav/nova/des_two/engineering)
 "ee" = (
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /turf/open/floor/wood/tile,
 /area/ruin/space/has_grav/nova/des_two/service/lounge)
 "ef" = (
@@ -1624,7 +1626,7 @@
 /obj/effect/turf_decal/siding/wideplating_new/dark{
 	dir = 9
 	},
-/obj/item/reagent_containers/cup/rag{
+/obj/item/rag{
 	pixel_x = -2;
 	pixel_y = 4
 	},
@@ -1690,7 +1692,7 @@
 "fe" = (
 /obj/effect/turf_decal/tile/purple/full,
 /obj/structure/marker_beacon/fuchsia,
-/obj/machinery/computer/scan_consolenew{
+/obj/machinery/computer/dna_console{
 	dir = 8;
 	name = "Interdyne DNA Console"
 	},
@@ -2045,7 +2047,7 @@
 	},
 /area/ruin/space/has_grav/nova/des_two/service/diner)
 "gk" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two)
 "gp" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -3790,7 +3792,7 @@
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/nova/des_two/bridge/cl)
 "mm" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/security/armory)
 "mo" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -4031,7 +4033,7 @@
 	dir = 9;
 	faction = list("Syndicate DS-2 Crew","Interdyne Lavaland Personnel","Syndicate")
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/bridge/vault)
 "nf" = (
 /obj/effect/turf_decal/stripes/line{
@@ -4056,7 +4058,9 @@
 	dir = 1
 	},
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/structure/marker_beacon/teal,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/medbay)
@@ -4249,7 +4253,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/halls)
 "ob" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/medbay)
 "of" = (
 /obj/machinery/vending/drugs{
@@ -4351,7 +4355,7 @@
 	},
 /area/ruin/space/has_grav/nova/des_two/cargo/hangar)
 "oC" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/space/has_grav/nova/des_two/medbay)
 "oG" = (
 /obj/effect/turf_decal/tile/dark/full,
@@ -4699,7 +4703,7 @@
 	credits_account = "DS2";
 	name = "Balance Display"
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/bridge)
 "pU" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -4837,7 +4841,9 @@
 	dir = 1
 	},
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/structure/marker_beacon/teal,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/west{
 	pixel_x = -4
@@ -5130,7 +5136,7 @@
 	},
 /area/ruin/space/has_grav/nova/des_two/service/diner)
 "ri" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/space/has_grav/nova/des_two)
 "rk" = (
 /obj/effect/turf_decal/siding/dark/end{
@@ -5628,7 +5634,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/des_two/cargo/hangar)
 "sZ" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/space/has_grav/nova/des_two/security/armory)
 "ta" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -5649,7 +5655,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/medbay)
 "tb" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/space/has_grav/nova/des_two/cargo/hangar)
 "tc" = (
 /obj/effect/turf_decal/trimline/dark_red/filled/mid_joiner{
@@ -5822,7 +5828,9 @@
 	dir = 1
 	},
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/structure/marker_beacon/teal,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/east{
 	pixel_x = 4
@@ -5920,7 +5928,7 @@
 	},
 /area/ruin/space/has_grav/nova/des_two/service/diner)
 "tI" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/security/prison)
 "tK" = (
 /obj/effect/turf_decal/trimline/dark/filled/line,
@@ -6009,7 +6017,9 @@
 /area/ruin/space/has_grav/nova/des_two/cargo/hangar)
 "tT" = (
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/structure/marker_beacon/teal,
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/nova/des_two/cargo)
@@ -6044,7 +6054,7 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/nova/des_two/cargo)
 "ue" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/space/has_grav/nova/des_two/research)
 "uf" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -6392,7 +6402,7 @@
 /turf/open/floor/iron/submarine_vents,
 /area/ruin/space/has_grav/nova/des_two/engineering)
 "uQ" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/cargo)
 "uR" = (
 /obj/effect/turf_decal/siding/yellow{
@@ -6656,7 +6666,7 @@
 /obj/machinery/porta_turret/syndicate/energy{
 	faction = list("Syndicate DS-2 Crew","Interdyne Lavaland Personnel","Syndicate")
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/bridge/vault)
 "vO" = (
 /obj/structure/cable,
@@ -7866,7 +7876,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "zu" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/space/has_grav/nova/des_two/service/lounge)
 "zy" = (
 /obj/effect/turf_decal/tile/dark/full,
@@ -8145,7 +8155,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/security/prison)
 "Ai" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/space/has_grav/nova/des_two/bridge/vault)
 "Aj" = (
 /obj/item/storage/bag/tray/cafeteria{
@@ -8250,7 +8260,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/bridge/vault)
 "Ar" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/service/dorms/fitness)
 "At" = (
 /obj/structure/window/reinforced/tinted/spawner/directional/north,
@@ -8272,7 +8282,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/engineering)
 "Ay" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/halls)
 "AE" = (
 /obj/machinery/power/shuttle_engine/huge,
@@ -8308,7 +8318,6 @@
 /area/ruin/space/has_grav/nova/des_two/service/lounge)
 "AJ" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/monitored/incinerator_input{
-	chamber_id = "syndicatelava_incinerator";
 	dir = 8
 	},
 /turf/open/floor/engine,
@@ -8610,7 +8619,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/nova/des_two/bridge/admiral)
 "BO" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/service/dorms)
 "BT" = (
 /obj/effect/turf_decal/siding/wideplating_new/dark{
@@ -8720,7 +8729,7 @@
 /area/ruin/space/has_grav/nova/des_two/halls)
 "Cp" = (
 /obj/structure/cable,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/security/armory)
 "Cq" = (
 /obj/effect/turf_decal/tile/dark/full,
@@ -8891,7 +8900,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/security)
 "CR" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/bridge)
 "CS" = (
 /obj/effect/turf_decal/tile/dark/full,
@@ -9279,7 +9288,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/des_two/engineering)
 "Er" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/bridge/vault)
 "Es" = (
 /obj/effect/decal/cleanable/dirt,
@@ -9446,7 +9455,7 @@
 	dir = 6;
 	faction = list("Syndicate DS-2 Crew","Interdyne Lavaland Personnel","Syndicate")
 	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/bridge/vault)
 "EW" = (
 /obj/machinery/door/firedoor,
@@ -9789,7 +9798,7 @@
 /area/ruin/space/has_grav/nova/des_two/halls)
 "FT" = (
 /obj/structure/cable,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/service/dorms)
 "FU" = (
 /obj/effect/turf_decal/bot_white,
@@ -10837,7 +10846,9 @@
 "IO" = (
 /obj/effect/turf_decal/siding/wideplating_new/dark/corner,
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/structure/marker_beacon/teal,
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 4
@@ -10958,7 +10969,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/nova/des_two/security)
 "Ji" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/space/has_grav/nova/des_two/bridge)
 "Jk" = (
 /obj/structure/bed{
@@ -10994,7 +11005,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/cargo/hangar)
 "Jm" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/bridge/cl)
 "Jo" = (
 /obj/machinery/suit_storage_unit/syndicate/chameleon{
@@ -11245,7 +11256,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/security/prison)
 "Km" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/security/lawyer)
 "Ko" = (
 /obj/machinery/smartfridge/organ{
@@ -11474,7 +11485,7 @@
 /turf/open/floor/engine/o2,
 /area/ruin/space/has_grav/nova/des_two/engineering)
 "KS" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/service/lounge)
 "KT" = (
 /obj/effect/turf_decal/siding/wideplating_new/dark{
@@ -11541,7 +11552,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/nova/des_two/bridge/admiral)
 "La" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/security)
 "Lb" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -11575,7 +11586,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/security/prison)
 "Li" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/space/has_grav/nova/des_two/security/prison)
 "Lk" = (
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
@@ -11930,7 +11941,9 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/fans/tiny/forcefield,
-/obj/effect/decal/cleanable/glitter/blue,
+/obj/effect/decal/cleanable/glitter{
+	color = "4040ff"
+	},
 /obj/structure/marker_beacon/teal,
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 8
@@ -11957,7 +11970,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/nova/des_two/bridge/admiral)
 "MC" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/space/has_grav/nova/des_two/cargo)
 "ME" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -12057,7 +12070,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/engineering)
 "MQ" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/bridge/eva)
 "MT" = (
 /obj/machinery/door/firedoor,
@@ -12431,7 +12444,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/security)
 "Oq" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/cargo/hangar)
 "Ou" = (
 /obj/effect/turf_decal/trimline/dark/filled/corner{
@@ -12625,8 +12638,8 @@
 	desc = "An armband, worn by the FOB's operatives to display which department they're assigned to.";
 	name = "researcher armband"
 	},
-/obj/item/clothing/suit/toggle/jacket/nova/sci,
-/obj/item/clothing/suit/toggle/jacket/nova/sci,
+/obj/item/clothing/suit/toggle/jacket/nova/colorable_bomber/sci,
+/obj/item/clothing/suit/toggle/jacket/nova/colorable_bomber/sci,
 /obj/item/clothing/suit/hooded/wintercoat/science,
 /obj/effect/turf_decal/tile/purple/full,
 /obj/machinery/firealarm/directional/north,
@@ -12665,7 +12678,7 @@
 	dir = 8
 	},
 /obj/structure/marker_beacon/olive,
-/obj/machinery/computer/cryopod/interdyne/directional/east,
+/obj/machinery/computer/cryopod/directional/east,
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
@@ -13234,7 +13247,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/halls)
 "Qk" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/research)
 "Ql" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
@@ -13266,7 +13279,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/blood/oil/slippery,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/medbay)
 "Qs" = (
@@ -13911,7 +13924,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/cargo/hangar)
 "Sg" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/space/has_grav/nova/des_two/bridge/eva)
 "Sh" = (
 /obj/structure/table/reinforced/plastitaniumglass,
@@ -14318,7 +14331,7 @@
 	dir = 8
 	},
 /obj/structure/bed/dogbed,
-/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/blood/oil,
 /mob/living/basic/pet/syndifox,
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -14407,7 +14420,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/security)
 "TL" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/service/diner)
 "TM" = (
 /obj/effect/turf_decal/trimline/dark/filled/corner{
@@ -14768,7 +14781,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/security/prison)
 "UY" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/bridge/admiral)
 "Vb" = (
 /obj/structure/table/reinforced/plastitaniumglass,
@@ -15035,20 +15048,20 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/medbay)
 "Wk" = (
-/obj/item/disk/ammo_workbench/advanced,
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
 /obj/machinery/light_switch/directional/east,
 /obj/machinery/ammo_workbench,
+/obj/item/ammo_workbench_module/lethal_super,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/nova/des_two/security/armory)
 "Wm" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/space/has_grav/nova/des_two/service/diner)
 "Wp" = (
 /obj/effect/turf_decal/siding/dark,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/security/prison)
 "Wr" = (
 /obj/machinery/light/dim/directional/east,
@@ -15248,7 +15261,7 @@
 /turf/open/floor/wood/large,
 /area/ruin/space/has_grav/nova/des_two/service/dorms)
 "WX" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal{
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal{
 	name = "Shutters control"
 	},
 /area/ruin/space/has_grav/nova/des_two/bridge/cl)
@@ -15802,7 +15815,7 @@
 	color = "#00ff00";
 	name = "green"
 	},
-/obj/machinery/computer/cryopod/interdyne/directional/east,
+/obj/machinery/computer/cryopod/directional/east,
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 5
 	},
@@ -16090,7 +16103,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 1
 	},
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/space/has_grav/nova/des_two/medbay)
 "ZM" = (
 /obj/effect/turf_decal/tile/dark_red/half/contrasted{
@@ -16132,7 +16145,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/halls)
 "ZP" = (
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/space/has_grav/nova/des_two/security)
 "ZV" = (
 /obj/effect/turf_decal/tile/dark/full,

@@ -1,4 +1,4 @@
-import { Channel } from './ChannelIterator';
+import type { Channel } from './ChannelIterator';
 import { RADIO_PREFIXES, RUS_PREFIXES, WindowSize } from './constants'; // TFF EDIT
 
 /**
@@ -7,9 +7,6 @@ import { RADIO_PREFIXES, RUS_PREFIXES, WindowSize } from './constants'; // TFF E
  */
 export function windowOpen(channel: Channel, scale: boolean): void {
   setWindowVisibility(true, scale);
-  Byond.winset('tgui_say.browser', {
-    focus: true,
-  });
   Byond.sendMessage('open', { channel });
 }
 
@@ -62,8 +59,8 @@ export function getPrefix(
     return;
   }
 
-  // TFF EDIT START. ORIGINAL:
-  /* let adjusted = value
+  /* // TFF EDIT START. ORIGINAL:
+  const adjusted = value
   .slice(0, 3)
   ?.toLowerCase()
   ?.replace('.', ':') as keyof typeof RADIO_PREFIXES;

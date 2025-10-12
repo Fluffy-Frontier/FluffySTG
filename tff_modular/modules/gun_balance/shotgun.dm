@@ -21,3 +21,9 @@
 
 /obj/item/ammo_casing/shotgun/antitide
 	variance = 22
+
+/obj/item/gun/ballistic/shotgun/katyusha
+	weapon_weight = WEAPON_HEAVY
+
+/obj/item/gun/ballistic/shotgun/katyusha/shitzu
+	slot_flags = ITEM_SLOT_BACK
