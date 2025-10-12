@@ -1,6 +1,6 @@
 /datum/antagonist/necromorph
 	name = "\improper Necromorph"
-	job_rank = ROLE_NECROMORPH
+	pref_flag = ROLE_NECROMORPH
 	show_in_antagpanel = TRUE
 	hud_icon = 'tff_modular/modules/custom_huds/icons/hud.dmi'
 	antag_hud_name = "hudunitologist"

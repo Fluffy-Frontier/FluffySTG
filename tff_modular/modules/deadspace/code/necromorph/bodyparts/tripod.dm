@@ -24,7 +24,7 @@
 	n_biomass = 15 //pea brain, not much n_biomass
 	burn_modifier = 0.75
 
-/obj/item/bodypart/head/necromorph/tripod/receive_damage(brute, burn, blocked, updating_health, forced, required_bodytype, wound_bonus, bare_wound_bonus, sharpness, attack_direction, damage_source, wound_clothing)
+/obj/item/bodypart/head/necromorph/tripod/receive_damage(brute, burn, blocked, updating_health, forced, required_bodytype, wound_bonus, exposed_wound_bonus, sharpness, attack_direction, damage_source, wound_clothing)
 	var/obj/item/organ/tongue/necro/tripod/tongue = owner.get_organ_slot(ORGAN_SLOT_TONGUE)
 	if(tongue)
 		if(tongue.extended && prob(burn_dam + brute_dam))
@@ -93,7 +93,7 @@
 		'tff_modular/modules/deadspace/sound/effects/footstep/brute_step_6.ogg'
 	), VOLUME_MID, 0)
 
-/obj/item/bodypart/leg/left/necromorph/tripod/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
+/obj/item/bodypart/leg/left/necromorph/tripod/try_dismember(wounding_type, wounding_dmg, wound_bonus, exposed_wound_bonus)
 	return FALSE
 
 /obj/item/bodypart/leg/right/necromorph/tripod
@@ -119,5 +119,5 @@
 		'tff_modular/modules/deadspace/sound/effects/footstep/brute_step_6.ogg'
 	), VOLUME_MID, 0)
 
-/obj/item/bodypart/leg/right/necromorph/tripod/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
+/obj/item/bodypart/leg/right/necromorph/tripod/try_dismember(wounding_type, wounding_dmg, wound_bonus, exposed_wound_bonus)
 	return FALSE

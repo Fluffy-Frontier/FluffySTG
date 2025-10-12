@@ -44,7 +44,7 @@
 	can_be_disabled = FALSE
 	show_organs_on_examine = TRUE
 
-/obj/item/bodypart/head/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
+/obj/item/bodypart/head/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, exposed_wound_bonus)
 	if((wounding_type == WOUND_SLASH) && brute_dam >= max_damage * DROPLIMB_THRESHOLD_EDGE)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
@@ -81,7 +81,7 @@
 	can_be_disabled = FALSE
 	wound_resistance = 0
 
-/obj/item/bodypart/arm/left/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
+/obj/item/bodypart/arm/left/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, exposed_wound_bonus)
 	if((wounding_type == WOUND_SLASH) && brute_dam >= max_damage * DROPLIMB_THRESHOLD_EDGE)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
@@ -114,7 +114,7 @@
 	can_be_disabled = FALSE
 	wound_resistance = 0
 
-/obj/item/bodypart/arm/right/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
+/obj/item/bodypart/arm/right/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, exposed_wound_bonus)
 	if((wounding_type == WOUND_SLASH) && brute_dam>= max_damage * DROPLIMB_THRESHOLD_EDGE)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
@@ -147,7 +147,7 @@
 	can_be_disabled = FALSE
 	wound_resistance = 0
 
-/obj/item/bodypart/leg/left/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
+/obj/item/bodypart/leg/left/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, exposed_wound_bonus)
 	if((wounding_type == WOUND_SLASH) && brute_dam >= max_damage * DROPLIMB_THRESHOLD_EDGE)
 		return dismember(BRUTE, wounding_type = wounding_type)
 
@@ -180,7 +180,7 @@
 	can_be_disabled = FALSE
 	wound_resistance = 0
 
-/obj/item/bodypart/leg/right/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
+/obj/item/bodypart/leg/right/necromorph/try_dismember(wounding_type, wounding_dmg, wound_bonus, exposed_wound_bonus)
 	if((wounding_type == WOUND_SLASH) && brute_dam >= max_damage * DROPLIMB_THRESHOLD_EDGE)
 		return dismember(BRUTE, wounding_type = wounding_type)
 

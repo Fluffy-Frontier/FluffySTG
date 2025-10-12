@@ -9,8 +9,12 @@
 /obj/effect/decal/cleanable/vomit/necro/Initialize(mapload, list/datum/disease/diseases)
 	. = ..()
 	QDEL_IN(src, deletion_time)
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
+	)
+	AddComponent(/datum/component/connect_loc_behalf, src, loc_connections)
 
-/obj/effect/decal/cleanable/vomit/necro/on_entered(datum/source, atom/movable/arrived, atom/old_loc, list/atom/old_locs)
+/obj/effect/decal/cleanable/vomit/necro/proc/on_entered(datum/source, atom/movable/arrived, atom/old_loc, list/atom/old_locs)
 	if(iscarbon(arrived) && !isnecromorph(arrived))
 		var/mob/living/carbon/human = arrived
 		human.reagents.add_reagent(decal_reagent, 2)

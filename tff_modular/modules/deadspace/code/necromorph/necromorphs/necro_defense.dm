@@ -34,7 +34,7 @@
 	to_chat(user, span_danger("You attacked [src]!"))
 	if(!get_bodypart(BODY_ZONE_HEAD))
 		changeNext_move(CLICK_CD_MELEE_NECRO_RAGE)
-	apply_damage(dealt_damage, BRUTE, zone_attacked, armor_block, wound_bonus = 5, bare_wound_bonus = 15, sharpness = sharpness)
+	apply_damage(dealt_damage, BRUTE, zone_attacked, armor_block, wound_bonus = 5, exposed_wound_bonus = 15, sharpness = sharpness)
 	log_combat(user, src, "attacked")
 
 /mob/living/carbon/human/attack_necromorph(mob/living/carbon/human/necromorph/user, list/modifiers, dealt_damage, zone_attacked, sharpness = SHARP_EDGED)
@@ -70,7 +70,7 @@
 		return TRUE
 	if(!get_bodypart(BODY_ZONE_HEAD))
 		changeNext_move(CLICK_CD_MELEE_NECRO_RAGE)
-	apply_damage(dealt_damage, BRUTE, zone_attacked, armor_block, wound_bonus = 5, bare_wound_bonus = 15, sharpness = sharpness)
+	apply_damage(dealt_damage, BRUTE, zone_attacked, armor_block, wound_bonus = 5, exposed_wound_bonus = 15, sharpness = sharpness)
 
 /mob/living/carbon/human/necromorph/attack_necromorph(mob/living/carbon/human/necromorph/user, list/modifiers, dealt_damage, zone_attacked, sharpness = SHARP_EDGED)
 	return FALSE

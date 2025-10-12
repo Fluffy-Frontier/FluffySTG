@@ -106,7 +106,7 @@
 	), VOLUME_MID, 0)
 
 //Technically this is actually a part of the chest, so we don't want this to come off
-/obj/item/bodypart/leg/right/necromorph/exploder/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
+/obj/item/bodypart/leg/right/necromorph/exploder/try_dismember(wounding_type, wounding_dmg, wound_bonus, exposed_wound_bonus)
 	return FALSE
 
 /obj/item/bodypart/leg/left/necromorph/exploder
@@ -131,5 +131,5 @@
 		'tff_modular/modules/deadspace/sound/effects/footstep/exploder_footstep_7.ogg',
 	), VOLUME_MID, 0)
 
-/obj/item/bodypart/leg/left/necromorph/exploder/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
+/obj/item/bodypart/leg/left/necromorph/exploder/try_dismember(wounding_type, wounding_dmg, wound_bonus, exposed_wound_bonus)
 	return FALSE

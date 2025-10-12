@@ -37,7 +37,7 @@
 		return FALSE
 	return FALSE
 
-/mob/living/carbon/human/necromorph/hunter/apply_damage(damage, damagetype, def_zone, blocked, wound_bonus, bare_wound_bonus, forced, spread_damage, sharpness, attack_direction, attacking_item, wound_clothing)
+/mob/living/carbon/human/necromorph/hunter/apply_damage(damage, damagetype, def_zone, blocked, wound_bonus, exposed_wound_bonus, forced, spread_damage, sharpness, attack_direction, attacking_item, wound_clothing)
 	if(health - damage <= 0)
 		handle_death_check()
 	. = ..()
