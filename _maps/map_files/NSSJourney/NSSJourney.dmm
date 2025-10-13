@@ -5984,10 +5984,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
-"aNe" = (
-/obj/machinery/bluespace_vendor/directional/north,
-/turf/open/floor/iron,
-/area/station/hallway/primary/port)
 "aNf" = (
 /obj/machinery/newscaster/directional/north,
 /turf/open/floor/iron,
@@ -12519,7 +12515,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/delivery,
-/obj/machinery/bluespace_vendor/directional/north,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
 "bpb" = (
@@ -18787,7 +18782,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/bluespace_sender,
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "bMS" = (
@@ -36986,10 +36980,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
 /area/station/hallway/primary/port)
-"ikq" = (
-/obj/machinery/bluespace_vendor/directional/north,
-/turf/open/floor/iron,
-/area/station/hallway/primary/starboard)
 "iky" = (
 /obj/structure/chair/office{
 	dir = 8
@@ -45138,7 +45128,7 @@
 /obj/item/reagent_containers/cup/glass/drinkingglass/shotglass,
 /obj/item/reagent_containers/cup/glass/drinkingglass/shotglass,
 /obj/item/gun/ballistic/revolver/russian,
-/obj/item/ammo_box/a357,
+/obj/item/ammo_box/speedloader/c357,
 /obj/item/reagent_containers/cup/glass/bottle/vodka/badminka,
 /obj/effect/turf_decal/bot_white/left,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
@@ -51462,11 +51452,6 @@
 /obj/item/stock_parts/power_store/cell/high,
 /turf/open/floor/iron,
 /area/station/maintenance/department/electrical)
-"reI" = (
-/obj/machinery/light/directional/north,
-/obj/machinery/bluespace_vendor/directional/north,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central)
 "rfH" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/access/any/engineering/external,
@@ -56915,10 +56900,6 @@
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
 /area/space/nearstation)
-"uyn" = (
-/obj/machinery/bluespace_vendor/directional/south,
-/turf/open/floor/iron,
-/area/station/commons/locker)
 "uyD" = (
 /turf/open/floor/iron/chapel,
 /area/station/service/chapel)
@@ -79975,7 +79956,7 @@ azF
 azF
 azF
 azF
-aNe
+aLE
 avG
 aOl
 aPA
@@ -80240,7 +80221,7 @@ uea
 aQN
 aQN
 aQN
-uyn
+aQN
 aXQ
 aYe
 bfa
@@ -88713,7 +88694,7 @@ ayL
 ayL
 ayL
 ayL
-reI
+aMn
 aaa
 aOE
 aJn
@@ -96949,7 +96930,7 @@ aqU
 rSM
 aJz
 aJC
-ikq
+aYV
 iKz
 aYV
 bfF

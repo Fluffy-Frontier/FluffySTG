@@ -6965,7 +6965,7 @@
 /area/ruin/interdyne_planetary_base/science)
 "IL" = (
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/piratepad/syndiepad{
+/obj/machinery/piratepad/ghostpad/interdyne{
 	pixel_x = 0;
 	pixel_y = 8
 	},
@@ -9401,7 +9401,7 @@
 /turf/open/floor/plating/reinforced/lavaland,
 /area/lavaland/surface/outdoors)
 "Ub" = (
-/obj/machinery/computer/piratepad_control/syndiepad,
+/obj/machinery/computer/piratepad_control/ghostpad/interdyne,
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 5
 	},
