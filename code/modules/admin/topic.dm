@@ -1285,9 +1285,6 @@
 		var/ban_id = href_list["unbanlog"]
 		ban_log(ban_id)
 
-	else if(href_list["beakerpanel"])
-		beaker_panel_act(href_list)
-
 	else if(href_list["reloadpolls"])
 		GLOB.polls.Cut()
 		GLOB.poll_options.Cut()
