@@ -168,8 +168,8 @@
 				height: 3.6vmin;
 				letter-spacing: 1px;
 				cursor: pointer;
-				padding-bottom: 1vmin;
-				margin: 15px 1rem 6px 1rem;
+				margin: 15px 0 6px 0;
+				padding: 0 1rem;
 				overflow: visible;
 			}
 
@@ -252,16 +252,7 @@
 				text-decoration: none;
 				width: 100%;
 				text-align: left;
-				color: rgba(0, 103, 129, 1);
-				text-shadow:
-				1px 0px black,
-				-1px 0px black,
-				0px 1px black,
-				0px -1px black,
-				2px 0px black,
-				-2px 0px black,
-				0px 2px black,
-				0px -2px black;
+				color: rgba(129, 0, 0, 1);
 				font-size: 3vmin;
 				line-height: 2vmin;
 			}
