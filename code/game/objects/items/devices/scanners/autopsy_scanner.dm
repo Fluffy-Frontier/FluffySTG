@@ -218,7 +218,11 @@
 		autopsy_information += "<b>[scanned_reagents.name]:</b> [round(scanned_reagents.volume, 0.1)] unit\s in bloodstream.</br>"
 		autopsy_information += "<i>&rdsh; [scanned_reagents.description]</i></br>"
 	autopsy_information += "<hr>"
-
+	// FLUFFY FRONTIER EDIT ADDITION START
+	if(HAS_TRAIT(scanned, TRAIT_SUICIDED))
+		autopsy_information += "<u>It looks like the subject has commited suicide.</u></br>"
+	autopsy_information += "<hr>"
+	// FLUFFY FRONTIER EDIT ADDITION END
 	autopsy_information += "<u>Disease Data:</u></br>"
 	for(var/datum/disease/diseases as anything in scanned.diseases)
 		autopsy_information += "<b>Disease Name:</b> \"[diseases.name]\"</br>"
