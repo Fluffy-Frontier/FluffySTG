@@ -100,7 +100,8 @@ GLOBAL_DATUM_INIT(language_holder_adjustor, /datum/language_holder_adjustor, new
 		/datum/language/vox = list(LANGUAGE_ATOM),
 		/datum/language/xerxian = list(LANGUAGE_ATOM),
 		/datum/language/yangyu = list(LANGUAGE_ATOM),
-		/datum/language/selestial = list(LANGUAGE_ATOM), // FLUFFY FRONTIER EDIT
+		/datum/language/carptongue = list(LANGUAGE_ATOM),
+		/datum/language/ramatae = list(LANGUAGE_ATOM)
 	)
 	spoken_languages = list(
 		/datum/language/common = list(LANGUAGE_ATOM),
@@ -132,7 +133,8 @@ GLOBAL_DATUM_INIT(language_holder_adjustor, /datum/language_holder_adjustor, new
 		/datum/language/vox = list(LANGUAGE_ATOM),
 		/datum/language/xerxian = list(LANGUAGE_ATOM),
 		/datum/language/yangyu = list(LANGUAGE_ATOM),
-		/datum/language/selestial = list(LANGUAGE_ATOM), // FLUFFY FRONTIER EDIT
+		/datum/language/carptongue = list(LANGUAGE_ATOM),
+		/datum/language/ramatae = list(LANGUAGE_ATOM)
 	)
 
 /datum/language_holder/drone_nova
