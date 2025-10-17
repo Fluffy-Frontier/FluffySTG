@@ -222,7 +222,7 @@
 	// FLUFFY FRONTIER EDIT ADDITION START
 	if(HAS_TRAIT(scanned, TRAIT_SUICIDED))
 		autopsy_information += "<u>It looks like the subject has commited suicide.</u></br>"
-	autopsy_information += "<hr>"
+		autopsy_information += "<hr>"
 	// FLUFFY FRONTIER EDIT ADDITION END
 	autopsy_information += "<u>Disease Data:</u></br>"
 	for(var/datum/disease/diseases as anything in scanned.diseases)
