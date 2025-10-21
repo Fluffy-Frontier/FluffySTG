@@ -754,6 +754,17 @@
 	name = "Pencilskirt + Suit (Worn, Digi)"
 	icon_file = 'modular_nova/master_files/icons/mob/clothing/under/suits_digi.dmi'
 
+// DOUBLE SKIRT DRESS
+/datum/greyscale_config/double_skirt_dress
+	name = "Double Skirt Dress"
+	icon_file = 'modular_nova/modules/GAGS/icons/double_skirt_dress.dmi'
+	json_config = 'modular_nova/modules/GAGS/json_configs/double_skirt_dress/double_skirt_dress.json'
+
+/datum/greyscale_config/double_skirt_dress/worn
+	name = "Double Skirt Dress (Worn)"
+	icon_file = 'modular_nova/modules/GAGS/icons/double_skirt_dress.dmi'
+	json_config = 'modular_nova/modules/GAGS/json_configs/double_skirt_dress/double_skirt_dress_worn.json'
+
 // HOODIES
 /datum/greyscale_config/hoodie
 	name = "Hoodie"
@@ -1038,9 +1049,32 @@
 	name = "'Dagger' Designer Mantle (Worn)"
 	json_config = 'modular_nova/modules/GAGS/json_configs/dagger_mantle/dagger_mantle_worn.json'
 
+// LONG ROBE
+/datum/greyscale_config/long_robe
+	name = "Long robe"
+	icon_file = 'modular_nova/modules/GAGS/icons/suit/suit.dmi'
+	json_config = 'modular_nova/modules/GAGS/json_configs/suits/long_robe/long_robe.json'
+
+/datum/greyscale_config/long_robe/worn
+	name = "Long robe (Worn)"
+	icon_file = 'modular_nova/modules/GAGS/icons/suit/suit.dmi'
+	json_config = 'modular_nova/modules/GAGS/json_configs/suits/long_robe/long_robe_worn.json'
+
+
+// HAORI
+/datum/greyscale_config/haori
+	name = "Haori"
+	icon_file = 'modular_nova/modules/GAGS/icons/suit/suit.dmi'
+	json_config = 'modular_nova/modules/GAGS/json_configs/suits/haori/haori.json'
+
+/datum/greyscale_config/haori/worn
+	name = "Haori (Worn)"
+	json_config = 'modular_nova/modules/GAGS/json_configs/suits/haori/haori_worn.json'
+
 /*
 *	UNDER
 */
+
 
 
 // JUMPSUITS
@@ -1410,6 +1444,15 @@
 	name = "Yukata (Worn, Digi)"
 	icon_file = 'modular_nova/master_files/icons/mob/clothing/under/costume_digi.dmi'
 
+/datum/greyscale_config/hakama
+	name = "Hakama"
+	icon_file = 'modular_nova/modules/GAGS/icons/hakama.dmi'
+	json_config = 'modular_nova/modules/GAGS/json_configs/hakama/hakama.json'
+
+/datum/greyscale_config/hakama/worn
+	name = "Hakama (Worn)"
+	json_config = 'modular_nova/modules/GAGS/json_configs/hakama/hakama_worn.json'
+
 // KILT
 /datum/greyscale_config/kilt
 	name = "Kilt"
@@ -1629,6 +1672,20 @@ TREK
 
 /datum/greyscale_config/boots/christmasboots/worn/digi
 	name = "christmas_boots (Worn, Digi)"
+	icon_file = 'modular_nova/master_files/icons/mob/clothing/feet_digi.dmi'
+
+
+/datum/greyscale_config/sport_boots
+	name = "Sport Boots"
+	icon_file = 'modular_nova/master_files/icons/obj/clothing/shoes.dmi'
+	json_config = 'modular_nova/modules/GAGS/json_configs/shoes/boots/sport_boots.json'
+
+/datum/greyscale_config/sport_boots/worn
+	name = "Sport Boots (Worn)"
+	icon_file = 'modular_nova/master_files/icons/mob/clothing/feet.dmi'
+
+/datum/greyscale_config/sport_boots/worn/digi
+	name = "Sport Boots (Worn, Digi)"
 	icon_file = 'modular_nova/master_files/icons/mob/clothing/feet_digi.dmi'
 
 // Laceups
@@ -2403,3 +2460,78 @@ TREK
 	name = "Playsuit (Worn, Digi)"
 	icon_file = 'modular_nova/master_files/icons/mob/clothing/under/shorts_pants_shirts_digi.dmi'
 
+/*
+This is all our modular PDAs, ITS LARGE!
+*/
+
+/// Ported from VOREstation
+/datum/greyscale_config/tablet/nova
+	name = "Ancient PDA"
+	icon_file = 'modular_nova/master_files/icons/obj/devices/modular_pda.dmi'
+	json_config = 'modular_nova/modules/GAGS/json_configs/modular_pda/ancient/pda_ancient.json'
+
+/// Ported from DopplerStation 13
+/datum/greyscale_config/tablet/nova/ultraslim
+	name = "Ultraslim PDA"
+	json_config = 'modular_nova/modules/GAGS/json_configs/modular_pda/ultraslim/pda_ultraslim.json'
+
+/// Ported from Tau Ceti Station
+/datum/greyscale_config/tablet/nova/ceti
+	name = "Ceti PDA"
+	json_config = 'modular_nova/modules/GAGS/json_configs/modular_pda/ceti/pda_ceti.json'
+
+/// Ported from VOREs tation
+/datum/greyscale_config/tablet/nova/virtual
+	name = "Virtual PDA"
+	json_config = 'modular_nova/modules/GAGS/json_configs/modular_pda/virtual/pda_virtual.json'
+
+/// Ported from Baystation
+/datum/greyscale_config/tablet/nova/robust
+	name = "Robust PDA"
+	json_config = 'modular_nova/modules/GAGS/json_configs/modular_pda/robust/pda_robust.json'
+
+/// Ported from DopplerStation 13
+/datum/greyscale_config/tablet/nova/neko
+	name = "Neko PDA"
+	json_config = 'modular_nova/modules/GAGS/json_configs/modular_pda/neko/pda_neko.json'
+
+/// Ported from /TG/Station
+// This has been sitting in /TG/ Code for who knows how long, its time we make it functional
+/datum/greyscale_config/tablet/nova/outdated
+	name = "Outdated PDA"
+	json_config = 'modular_nova/modules/GAGS/json_configs/modular_pda/old/pda_old.json'
+
+/// Ported from VOREstation
+/datum/greyscale_config/tablet/nova/holodeck
+	name = "Holodeck PDA"
+	json_config = 'modular_nova/modules/GAGS/json_configs/modular_pda/holodeck/pda_holodeck.json'
+
+/// Ported from VOREstation
+/datum/greyscale_config/tablet/nova/hologram
+	name = "Holographic PDA"
+	json_config = 'modular_nova/modules/GAGS/json_configs/modular_pda/hologram/pda_hologram.json'
+
+/// Ported from VOREstation
+/datum/greyscale_config/tablet/nova/tablet
+	name = "Tablet PDA"
+	json_config = 'modular_nova/modules/GAGS/json_configs/modular_pda/tablet/pda_tablet.json'
+
+/// Ported from Dopplerstation
+/datum/greyscale_config/tablet/nova/g3
+	name = "Type G3 PDA"
+	json_config = 'modular_nova/modules/GAGS/json_configs/modular_pda/g3/pda_g3.json'
+
+/// Ported from Dopplerstation
+/datum/greyscale_config/tablet/nova/slimline
+	name = "Slimline PDA"
+	json_config = 'modular_nova/modules/GAGS/json_configs/modular_pda/slim/pda_slim.json'
+
+/// Ported from Dopplerstation
+/datum/greyscale_config/tablet/nova/rugged
+	name = "Rugged PDA"
+	json_config = 'modular_nova/modules/GAGS/json_configs/modular_pda/rugged/pda_rugged.json'
+
+/// Ported from VOREstation
+/datum/greyscale_config/tablet/nova/holosystem
+	name = "Holosystem PDA"
+	json_config = 'modular_nova/modules/GAGS/json_configs/modular_pda/holosystem/pda_holosystem.json'

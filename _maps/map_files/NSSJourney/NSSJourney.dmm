@@ -5984,10 +5984,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
-"aNe" = (
-/obj/machinery/bluespace_vendor/directional/north,
-/turf/open/floor/iron,
-/area/station/hallway/primary/port)
 "aNf" = (
 /obj/machinery/newscaster/directional/north,
 /turf/open/floor/iron,
@@ -12519,7 +12515,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/delivery,
-/obj/machinery/bluespace_vendor/directional/north,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
 "bpb" = (
@@ -18787,7 +18782,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/bluespace_sender,
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "bMS" = (
@@ -19981,7 +19975,7 @@
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "bSE" = (
-/obj/machinery/computer/station_alert/station_only{
+/obj/machinery/computer/station_alert{
 	dir = 8
 	},
 /obj/machinery/light/directional/east,
@@ -23310,7 +23304,7 @@
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/main)
 "cjU" = (
-/obj/machinery/computer/station_alert/station_only{
+/obj/machinery/computer/station_alert{
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/thinplating{
@@ -28069,7 +28063,7 @@
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/ce)
 "cSM" = (
-/obj/machinery/computer/station_alert/station_only,
+/obj/machinery/computer/station_alert,
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/engine_smes)
@@ -29106,7 +29100,7 @@
 	dir = 8
 	},
 /obj/structure/closet/emcloset,
-/obj/effect/landmark/start/hangover/closet,
+/obj/effect/landmark/start/hangover,
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/exit)
 "dwu" = (
@@ -35369,7 +35363,7 @@
 /area/station/commons/dorms)
 "hno" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/machinery/computer/station_alert/station_only{
+/obj/machinery/computer/station_alert{
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/west,
@@ -36986,10 +36980,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
 /area/station/hallway/primary/port)
-"ikq" = (
-/obj/machinery/bluespace_vendor/directional/north,
-/turf/open/floor/iron,
-/area/station/hallway/primary/starboard)
 "iky" = (
 /obj/structure/chair/office{
 	dir = 8
@@ -41340,7 +41330,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
-/obj/effect/landmark/start/hangover/closet,
+/obj/effect/landmark/start/hangover,
 /obj/structure/closet/emcloset,
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/exit)
@@ -45138,7 +45128,7 @@
 /obj/item/reagent_containers/cup/glass/drinkingglass/shotglass,
 /obj/item/reagent_containers/cup/glass/drinkingglass/shotglass,
 /obj/item/gun/ballistic/revolver/russian,
-/obj/item/ammo_box/a357,
+/obj/item/ammo_box/speedloader/c357,
 /obj/item/reagent_containers/cup/glass/bottle/vodka/badminka,
 /obj/effect/turf_decal/bot_white/left,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
@@ -48455,7 +48445,7 @@
 /area/station/commons/vacant_room/office)
 "piw" = (
 /obj/structure/cable,
-/obj/machinery/computer/station_alert/station_only{
+/obj/machinery/computer/station_alert{
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/yellow,
@@ -49299,7 +49289,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
-/obj/effect/landmark/start/hangover/closet,
+/obj/effect/landmark/start/hangover,
 /obj/structure/closet/firecloset,
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/exit)
@@ -51462,11 +51452,6 @@
 /obj/item/stock_parts/power_store/cell/high,
 /turf/open/floor/iron,
 /area/station/maintenance/department/electrical)
-"reI" = (
-/obj/machinery/light/directional/north,
-/obj/machinery/bluespace_vendor/directional/north,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central)
 "rfH" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/access/any/engineering/external,
@@ -53029,7 +53014,7 @@
 /turf/open/floor/iron/checker,
 /area/station/science/lab)
 "sgb" = (
-/obj/machinery/computer/centcom_announcement/nri_raider{
+/obj/machinery/computer/centcom_announcement/hc_police{
 	name = "Judge announcement console";
 	desc = "A console used for making priority Internal Affairs reports.";
 	command_name = "High Court Annoncement";
@@ -56915,10 +56900,6 @@
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
 /area/space/nearstation)
-"uyn" = (
-/obj/machinery/bluespace_vendor/directional/south,
-/turf/open/floor/iron,
-/area/station/commons/locker)
 "uyD" = (
 /turf/open/floor/iron/chapel,
 /area/station/service/chapel)
@@ -79975,7 +79956,7 @@ azF
 azF
 azF
 azF
-aNe
+aLE
 avG
 aOl
 aPA
@@ -80240,7 +80221,7 @@ uea
 aQN
 aQN
 aQN
-uyn
+aQN
 aXQ
 aYe
 bfa
@@ -88713,7 +88694,7 @@ ayL
 ayL
 ayL
 ayL
-reI
+aMn
 aaa
 aOE
 aJn
@@ -96949,7 +96930,7 @@ aqU
 rSM
 aJz
 aJC
-ikq
+aYV
 iKz
 aYV
 bfF
