@@ -64,9 +64,6 @@
 	autopsy_information += "Time of Death - <b>[scanned.station_timestamp_timeofdeath]</b></br>"
 	autopsy_information += "Subject has been dead for <b>[DisplayTimeText(round(world.time - scanned.timeofdeath))]</b>.<hr>"
 
-	// TFF MODULAR HOOK - Анализ причины смерти
-	autopsy_information += generate_cause_of_death_analysis(scanned)
-
 	var/oxy_loss = scanned.getOxyLoss()
 	var/tox_loss = scanned.getToxLoss()
 	var/fire_loss = scanned.getFireLoss()
@@ -122,12 +119,7 @@
 		<td><b>[ceil(tox_loss)] Toxin</b></td>\
 		<td><b>[ceil(oxy_loss)] Suffocation</b></td>\
 		</tr>"
-	dmgreport += "</table>"
-
-	// TFF MODULAR HOOK - Сводка источников урона
-	dmgreport += generate_damage_source_summary(scanned)
-
-	dmgreport += "<hr>"
+	dmgreport += "</table><hr>"
 	autopsy_information += dmgreport
 
 	// Only humanoids list organs, implants, gene stability, species and core-temp
@@ -226,9 +218,6 @@
 		autopsy_information += "<b>[scanned_reagents.name]:</b> [round(scanned_reagents.volume, 0.1)] unit\s in bloodstream.</br>"
 		autopsy_information += "<i>&rdsh; [scanned_reagents.description]</i></br>"
 	autopsy_information += "<hr>"
-
-	// TFF MODULAR HOOK - Информация о самоубийстве
-	autopsy_information += generate_suicide_info(scanned)
 
 	autopsy_information += "<u>Disease Data:</u></br>"
 	for(var/datum/disease/diseases as anything in scanned.diseases)
