@@ -100,6 +100,8 @@
 	icon = 'modular_nova/master_files/icons/donator/obj/custom.dmi'
 	icon_state = "infcloak"
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/custom_w.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	supports_variations_flags = NONE
 
 // Donation reward
@@ -706,6 +708,8 @@
 	icon = 'modular_nova/master_files/icons/donator/obj/custom.dmi'
 	icon_state = "infcloak"
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/custom_w.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 
 // Donation reward for inferno707
 /obj/item/clothing/neck/inferno_collar
@@ -951,11 +955,18 @@
 	icon = 'modular_nova/master_files/icons/donator/obj/clothing/masks.dmi'
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/mask.dmi'
 	icon_state = "yoni"
+	w_class = WEIGHT_CLASS_SMALL
+	tint = 0
+	flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES | PEPPERPROOF
 	visor_flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES | PEPPERPROOF
-	clothing_flags = parent_type::clothing_flags | VOICEBOX_DISABLED
-	flags_inv = NONE
+	clothing_flags = VOICEBOX_DISABLED | MASKINTERNALS | BLOCK_GAS_SMOKE_EFFECT | GAS_FILTERING
 	use_radio_beeps_tts = TRUE
-	voice_filter = /obj/item/clothing/mask/gas/sechailer::voice_filter
+	flags_inv = NONE
+
+/obj/item/clothing/mask/gas/CMCP_mask/Initialize(mapload)
+	. = ..()
+	var/obj/item/clothing/mask/gas/sechailer/sechailer_type = /obj/item/clothing/mask/gas/sechailer
+	voice_filter = initial(sechailer_type.voice_filter)
 
 // Donation reward for Koruu
 /obj/item/clothing/mask/gas/signalis_gaiter
@@ -964,13 +975,20 @@
 	icon = 'modular_nova/master_files/icons/donator/obj/clothing/masks.dmi'
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/mask.dmi'
 	icon_state = "siggaiter"
+	w_class = WEIGHT_CLASS_SMALL
+	tint = 0
 	actions_types = list(/datum/action/item_action/adjust)
+	flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES | PEPPERPROOF
 	visor_flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES | PEPPERPROOF
-	clothing_flags = parent_type::clothing_flags | VOICEBOX_DISABLED
+	clothing_flags = VOICEBOX_DISABLED | MASKINTERNALS | BLOCK_GAS_SMOKE_EFFECT | GAS_FILTERING
+	use_radio_beeps_tts = TRUE
 	flags_inv = NONE
 	interaction_flags_click = NEED_DEXTERITY
-	use_radio_beeps_tts = TRUE
-	voice_filter = /obj/item/clothing/mask/gas/sechailer::voice_filter
+
+/obj/item/clothing/mask/gas/signalis_gaiter/Initialize(mapload)
+	. = ..()
+	var/obj/item/clothing/mask/gas/sechailer/sechailer_type = /obj/item/clothing/mask/gas/sechailer
+	voice_filter = initial(sechailer_type.voice_filter)
 
 /obj/item/clothing/mask/gas/signalis_gaiter/attack_self(mob/user)
 	adjust_visor(user)
@@ -1045,8 +1063,12 @@
 	icon = 'modular_nova/master_files/icons/donator/obj/clothing/masks.dmi'
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/mask.dmi'
 	icon_state = "psychomalice"
+	w_class = WEIGHT_CLASS_SMALL
+	tint = 0
+	flags_inv = HIDEEARS|HIDEEYES|HIDESNOUT|HIDEFACIALHAIR
+	flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES | PEPPERPROOF
 	visor_flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES | PEPPERPROOF
-	clothing_flags = parent_type::clothing_flags | VOICEBOX_DISABLED
+	clothing_flags = VOICEBOX_DISABLED | MASKINTERNALS | BLOCK_GAS_SMOKE_EFFECT | GAS_FILTERING
 	interaction_flags_click = NEED_DEXTERITY
 	/// Whether or not the mask is currently being layered over (or under!) hair. FALSE/null means the mask is layered over the hair (this is how it starts off).
 	var/wear_hair_over
