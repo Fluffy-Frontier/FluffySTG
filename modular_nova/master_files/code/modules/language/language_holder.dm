@@ -97,14 +97,15 @@ GLOBAL_DATUM_INIT(language_holder_adjustor, /datum/language_holder_adjustor, new
 		/datum/language/sylvan = list(LANGUAGE_ATOM),
 		/datum/language/terrum = list(LANGUAGE_ATOM),
 		/datum/language/voltaic = list(LANGUAGE_ATOM),
-		/datum/language/vox = list(LANGUAGE_ATOM),
-		/datum/language/xerxian = list(LANGUAGE_ATOM),
-		/datum/language/yangyu = list(LANGUAGE_ATOM),
-		/datum/language/carptongue = list(LANGUAGE_ATOM),
-		/datum/language/ramatae = list(LANGUAGE_ATOM)
-	)
-	spoken_languages = list(
-		/datum/language/common = list(LANGUAGE_ATOM),
+	/datum/language/vox = list(LANGUAGE_ATOM),
+	/datum/language/xerxian = list(LANGUAGE_ATOM),
+	/datum/language/yangyu = list(LANGUAGE_ATOM),
+	/datum/language/selestial = list(LANGUAGE_ATOM), // FLUFFY FRONTIER EDIT
+	/datum/language/carptongue = list(LANGUAGE_ATOM),
+	/datum/language/ramatae = list(LANGUAGE_ATOM)
+)
+spoken_languages = list(
+	/datum/language/common = list(LANGUAGE_ATOM),
 		/datum/language/uncommon = list(LANGUAGE_ATOM),
 		/datum/language/akulan = list(LANGUAGE_ATOM),
 		/datum/language/beachbum = list(LANGUAGE_ATOM),
@@ -130,12 +131,13 @@ GLOBAL_DATUM_INIT(language_holder_adjustor, /datum/language_holder_adjustor, new
 		/datum/language/sylvan = list(LANGUAGE_ATOM),
 		/datum/language/terrum = list(LANGUAGE_ATOM),
 		/datum/language/voltaic = list(LANGUAGE_ATOM),
-		/datum/language/vox = list(LANGUAGE_ATOM),
-		/datum/language/xerxian = list(LANGUAGE_ATOM),
-		/datum/language/yangyu = list(LANGUAGE_ATOM),
-		/datum/language/carptongue = list(LANGUAGE_ATOM),
-		/datum/language/ramatae = list(LANGUAGE_ATOM)
-	)
+	/datum/language/vox = list(LANGUAGE_ATOM),
+	/datum/language/xerxian = list(LANGUAGE_ATOM),
+	/datum/language/yangyu = list(LANGUAGE_ATOM),
+	/datum/language/selestial = list(LANGUAGE_ATOM), // FLUFFY FRONTIER EDIT
+	/datum/language/carptongue = list(LANGUAGE_ATOM),
+	/datum/language/ramatae = list(LANGUAGE_ATOM)
+)
 
 /datum/language_holder/drone_nova
 	understood_languages = list(/datum/language/drone = list(LANGUAGE_ATOM), /datum/language/common = list(LANGUAGE_ATOM))
