@@ -1,3 +1,4 @@
+// TFF donator plushies
 /obj/item/toy/plush/oktavia
 	name = "\improper Oktavia"
 	desc = "A plush toy of a certain character from the ancient animated series \"BOSS HELL\""
@@ -23,3 +24,4 @@
 	attack_verb_continuous = list("attacks", "bites", "scratches")
 	attack_verb_simple = list("attack", "bite", "scratch")
 	squeak_override = list('modular_nova/modules/emotes/sound/voice/mggaow.ogg' = 1, 'sound/machines/beep/beep.ogg' = 1)
+
