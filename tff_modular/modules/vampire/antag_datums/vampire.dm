@@ -45,8 +45,8 @@
 	create_objectives()
 
 /datum/antagonist/vampire/proc/create_objectives()
-	var/datum/objective/collect_blood = new /datum/objective/collect_blood()
-	collect_blood.vampire = owner
+	var/datum/objective/collect_blood/collecting_blood = new /datum/objective/collect_blood()
+	collecting_blood.vampire = owner
 	var/datum/objective/alive = new /datum/objective/survive()
 	objectives += alive
 	objectives += collect_blood
