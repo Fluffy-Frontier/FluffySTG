@@ -1,77 +1,63 @@
-/datum/loadout_item/toys/special
-	abstract_type = /datum/loadout_item/toys/special
+/datum/loadout_item/toys/plush/staff
+	abstract_type = /datum/loadout_item/toys/plush/staff
+	loadout_flags = parent_type::loadout_flags & ~LOADOUT_FLAG_ALLOW_NAMING
 
-/datum/loadout_item/toys/plush/novelia
+/datum/loadout_item/toys/plush/staff/novelia
 	name = "Novelia Plushie"
 	item_path = /obj/item/toy/plush/tff/novelia
-	can_be_named = FALSE
 
-/datum/loadout_item/toys/plush/nataly
+/datum/loadout_item/toys/plush/staff/nataly
 	name = "Nataly Plushie"
 	item_path = /obj/item/toy/plush/tff/nataly
-	can_be_named = FALSE
 
-/datum/loadout_item/toys/plush/v404
+/datum/loadout_item/toys/plush/staff/v404
 	name = "V404.1 Plushie"
 	item_path = /obj/item/toy/plush/tff/v404
-	can_be_named = FALSE
 
-/datum/loadout_item/toys/plush/xylorh
+/datum/loadout_item/toys/plush/staff/xylorh
 	name = "QK-01 Xylorh Plushie"
 	item_path = /obj/item/toy/plush/tff/xylorh
-	can_be_named = FALSE
 
-/datum/loadout_item/toys/plush/minami
+/datum/loadout_item/toys/plush/staff/minami
 	name = "Minami Plushie"
 	item_path = /obj/item/toy/plush/tff/minami
-	can_be_named = FALSE
 
-/datum/loadout_item/toys/plush/kiba
+/datum/loadout_item/toys/plush/staff/kiba
 	name = "Kiba Plushie"
 	item_path = /obj/item/toy/plush/tff/kiba
-	can_be_named = FALSE
 
-/datum/loadout_item/toys/plush/kaori
+/datum/loadout_item/toys/plush/staff/kaori
 	name = "Kaori Plushie"
 	item_path = /obj/item/toy/plush/tff/kaori
-	can_be_named = FALSE
 
-/datum/loadout_item/toys/plush/kibo
+/datum/loadout_item/toys/plush/staff/kibo
 	name = "Kibo Plushie"
 	item_path = /obj/item/toy/plush/tff/kibo
-	can_be_named = FALSE
 
-/datum/loadout_item/toys/plush/cara
+/datum/loadout_item/toys/plush/staff/cara
 	name = "Cara Plushie"
 	item_path = /obj/item/toy/plush/tff/cara
-	can_be_named = FALSE
 
-/datum/loadout_item/toys/plush/khali
+/datum/loadout_item/toys/plush/staff/khali
 	name = "Khali Plushie"
 	item_path = /obj/item/toy/plush/tff/khali
-	can_be_named = FALSE
 
-/datum/loadout_item/toys/plush/grant
+/datum/loadout_item/toys/plush/staff/grant
 	name = "Grant-ED Plushie"
 	item_path = /obj/item/toy/plush/tff/grant
-	can_be_named = FALSE
 
-/datum/loadout_item/toys/plush/kelry
+/datum/loadout_item/toys/plush/staff/kelry
 	name = "Kelry Plushie"
 	item_path = /obj/item/toy/plush/tff/kelry
-	can_be_named = FALSE
 
-/datum/loadout_item/toys/plush/low
+/datum/loadout_item/toys/plush/staff/low
 	name = "Low Plushie"
 	item_path = /obj/item/toy/plush/tff/low
-	can_be_named = FALSE
 
-/datum/loadout_item/toys/plush/junnia
+/datum/loadout_item/toys/plush/staff/junnia
 	name = "Junnia Plushie"
 	item_path = /obj/item/toy/plush/tff/soulmates/junnia
 
-/datum/loadout_item/toys/plush/howe
+/datum/loadout_item/toys/plush/staff/howe
 	name = "Howe Plushie"
 	item_path = /obj/item/toy/plush/tff/soulmates/howe
-
-
