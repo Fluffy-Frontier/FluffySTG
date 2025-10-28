@@ -49,7 +49,7 @@
 	collecting_blood.vampire = owner
 	var/datum/objective/alive = new /datum/objective/survive()
 	objectives += alive
-	objectives += collect_blood
+	objectives += collecting_blood
 
 /datum/antagonist/vampire/apply_innate_effects(mob/living/mob_override)
 	. = ..()
