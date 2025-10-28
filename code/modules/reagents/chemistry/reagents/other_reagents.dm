@@ -354,6 +354,16 @@
 	if(data["deciseconds_metabolized"] >= (25 SECONDS)) // 10 units
 		affected_mob.adjust_stutter_up_to(4 SECONDS * REM * seconds_per_tick, 20 SECONDS)
 		affected_mob.set_dizzy_if_lower(10 SECONDS)
+		// FLUFFY FRONTIER ADDITION START - holywater now affects vampires
+		if(affected_mob.mind?.has_antag_datum(/datum/antagonist/vampire))
+			var/datum/antagonist/vampire/vamp = affected_mob.mind?.has_antag_datum(/datum/antagonist/vampire)
+			var/mob/living/carbon/human/vamp_living = affected_mob
+			if(prob(60))
+				if(vamp.current_blood_level <= 50)
+					vamp_living.adjust_fire_stacks(2)
+				else
+					vamp.current_blood_level -= 50
+		// FLUFFY FRONTIER ADDITION END
 		if(IS_CULTIST(affected_mob) && SPT_PROB(10, seconds_per_tick))
 			affected_mob.say(pick("Av'te Nar'Sie","Pa'lid Mors","INO INO ORA ANA","SAT ANA!","Daim'niodeis Arc'iai Le'eones","R'ge Na'sie","Diabo us Vo'iscum","Eld' Mon Nobis"), forced = "holy water")
 			if(prob(10))
