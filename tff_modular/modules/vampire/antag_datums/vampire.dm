@@ -46,7 +46,7 @@
 
 /datum/antagonist/vampire/proc/create_objectives()
 	var/datum/objective/collect_blood = new /datum/objective/collect_blood()
-	collect_blood.owner = owner
+	collect_blood.vampire = owner
 	var/datum/objective/alive = new /datum/objective/survive()
 	objectives += alive
 	objectives += collect_blood
@@ -149,9 +149,10 @@
 /datum/objective/collect_blood
 	objective_name = "Collect Blood"
 	explanation_text = "Collect 1000 units of blood."
+	var/mob/living/carbon/human/vampire = null
 
 /datum/objective/collect_blood/check_completion()
-	var/datum/antagonist/vampire/vamp = owner.mind?.has_antag_datum(/datum/antagonist/vampire)
+	var/datum/antagonist/vampire/vamp = vampire.mind?.has_antag_datum(/datum/antagonist/vampire)
 	if(vamp.general_blood_level >= 1000)
 		return TRUE
 	return FALSE

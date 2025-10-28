@@ -161,7 +161,7 @@
 	background_icon = 'tff_modular/modules/vampire/actions.dmi'
 	overlay_icon = 'tff_modular/modules/vampire/actions.dmi'
 	background_icon_state = "bg_vampire"
-	cooldown_time = 30 SECONDS
+	cooldown_time = 45 SECONDS
 	charge_speed = 0.5
 	charge_damage = 40
 	destroy_objects = TRUE
