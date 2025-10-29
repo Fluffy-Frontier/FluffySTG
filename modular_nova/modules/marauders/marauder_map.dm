@@ -94,7 +94,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen/traitor_
 //map
 /datum/lazy_template/midround_traitor
 	key = LAZY_TEMPLATE_KEY_MIDROUND_TRAITOR
-	map_dir = "_maps/fluffy_frontier/lazy_templates"
+	map_dir = "_maps/fluffy_frontier/lazy_templates" ///TFF EDIT:заменено с 	map_dir = "_maps/nova/lazy_templates" на нашу версию карты с правками
 	map_name = "midround_traitor"
 
 //pet
