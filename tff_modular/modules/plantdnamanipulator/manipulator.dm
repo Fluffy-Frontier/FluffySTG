@@ -452,27 +452,6 @@
 		. += "<span class='notice'>Percent is relative to potency, not maximum volume of the plant.</span>"
 	. += "The write-protect tab is set to [src.read_only ? "protected" : "unprotected"]."
 
-// Платы и исследования
-/obj/item/circuitboard/machine/plantgenes
-	name = "Plant DNA Manipulator (Machine Board)"
-	greyscale_colors = CIRCUIT_COLOR_SERVICE
-	build_path = /obj/machinery/plantgenes
-	req_components = list(
-		/datum/stock_part/servo = 1,
-		/datum/stock_part/micro_laser = 1,
-		/obj/item/stack/sheet/glass = 1,
-		/datum/stock_part/scanning_module = 1)
-
-/datum/design/board/plantgenes
-	name = "Plant DNA Manipulator Board"
-	desc = "The circuit board for a plant gene editing machine."
-	id = "plantgene"
-	build_path = /obj/item/circuitboard/machine/plantgenes
-	category = list(
-		RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_BOTANY
-	)
-	departmental_flags = DEPARTMENT_BITFLAG_SERVICE
-
 // Гены растений:
 /datum/plant_gene/trait/repeated_harvest/New(...)
 	seed_blacklist += /obj/item/seeds/seedling
@@ -580,6 +559,27 @@
 /datum/plant_gene/core/weed_chance/apply_stat(obj/item/seeds/S)
 	S.weed_chance = value
 
+// Платы и исследования
+/obj/item/circuitboard/machine/plantgenes
+	name = "Plant DNA Manipulator (Machine Board)"
+	greyscale_colors = CIRCUIT_COLOR_SERVICE
+	build_path = /obj/machinery/plantgenes
+	req_components = list(
+		/datum/stock_part/servo = 1,
+		/datum/stock_part/micro_laser = 1,
+		/obj/item/stack/sheet/glass = 1,
+		/datum/stock_part/scanning_module = 1)
+
+/datum/design/board/plantgenes
+	name = "Plant DNA Manipulator Board"
+	desc = "The circuit board for a plant gene editing machine."
+	id = "plantgene"
+	build_path = /obj/item/circuitboard/machine/plantgenes
+	category = list(
+		RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_BOTANY
+	)
+	departmental_flags = DEPARTMENT_BITFLAG_SERVICE
+
 /datum/design/diskplantgene
 	name = "Plant Data Disk"
 	id = "diskplantgene"
@@ -588,6 +588,18 @@
 	build_path = /obj/item/disk/plantgene
 	category = list(RND_CATEGORY_INITIAL, RND_CATEGORY_BIO_MATERIALS)
 
+/datum/techweb_node/botanygene
+	id = TECHWEB_NODE_BOTANY_ADV
+	display_name = "Experimental Botanical Engineering"
+	description = "Further advancement in plant cultivation techniques and machinery, enabling careful manipulation of plant DNA."
+	prereq_ids = list(TECHWEB_NODE_PARTS_ADV, TECHWEB_NODE_SELECTION)
+	design_ids = list(
+		"diskplantgene",
+		"plantgene",
+	)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_5_POINTS)
+
+// Диски
 /obj/item/storage/box/disks_plantgene
 	name = "plant data disks box"
 	illustration = "disk_kit"
