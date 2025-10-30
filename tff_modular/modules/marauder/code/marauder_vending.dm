@@ -2,7 +2,7 @@
 	name = "\improper Armament Station"
 	desc = "An overwhelming amount of <b>G E A R</b> stored in the the machine."
 	icon_state = "liberationstation"
-	product_slogans = "Liberation Station: Your one-stop shop for all murderous needs!"
+	product_slogans = "Armament Station: Your one-stop shop for all murderous needs!"
 	product_ads = "Float like an astronaut, sting like a bullet!;Express your second amendment today!;Guns don't kill people, but you can!;Who needs responsibilities when you have guns?"
 	vend_reply = "Remember the name: Armament Station!"
 	panel_type = "panel17"
