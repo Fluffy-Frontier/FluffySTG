@@ -23,3 +23,4 @@
 /datum/loadout_item/toys/plush/mironov
 	name = "Anatoly plushie"
 	item_path = /obj/item/toy/plush/mironov
+	
