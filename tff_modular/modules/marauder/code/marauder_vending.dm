@@ -33,7 +33,7 @@
 	premium = list(
 		/obj/item/food/cheesyfries = 5,
 		/obj/item/food/burger/baconburger = 5, //Premium burgers for the premium section
-		)
+	)
 	contraband = list(
 		/obj/item/clothing/under/misc/patriotsuit = 3,
 		/obj/item/bedsheet/patriot = 5,
