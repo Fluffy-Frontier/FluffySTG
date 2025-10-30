@@ -28,7 +28,8 @@
 		/obj/item/ammo_box/foambox/riot = 5,
 		/obj/item/ammo_box/magazine/toy/m762/riot = 5,
 		/obj/item/ammo_box/magazine/c585trappiste_pistol = 5,
-		/obj/item/ammo_box/magazine/recharge/plasma_battery = 5,)
+		/obj/item/ammo_box/magazine/recharge/plasma_battery = 5,
+	)
 	premium = list(
 		/obj/item/food/cheesyfries = 5,
 		/obj/item/food/burger/baconburger = 5, //Premium burgers for the premium section
