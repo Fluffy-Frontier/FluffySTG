@@ -10,6 +10,9 @@
 // NOVA EDIT Addition - Mute LOOC
 #define MUTE_LOOC (1<<6)
 // NOVA EDIT End
+//FLUFFY FRONTIER ADDITION START - DS13
+#define MUTE_SIGNAL_WHISPER (1<<7)
+//FLUFFY FRONTIER ADDITION END
 #define MUTE_ALL ALL
 
 //Some constants for DB_Ban
