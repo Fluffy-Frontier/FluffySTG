@@ -82,6 +82,10 @@
 		"K4T (Dispenser)" = list(SKIN_ICON_STATE = "k4tserve_alt2", SKIN_ICON = CYBORG_ICON_SERVICE_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan" = list(SKIN_ICON_STATE = "dullahanserv", SKIN_ICON = CYBORG_ICON_SERVICE_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan (Taur)" = list(SKIN_ICON_STATE = "dullahantaurserv", SKIN_ICON = CYBORG_ICON_SERVICE_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(7, 15), "west" = list(-7, 15))),
+		// FLUFFY FRONTIER ADDITION - ADD SMALL RAPTORS
+		"Small Raptor" = list(SKIN_ICON_STATE = "smolraptor", SKIN_ICON = 'tff_modular/modules/synthraptors/smolraptor_serv.dmi', SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_WIDE, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(17, -2), "south" = list(16, -1), "east" = list(37, -1), "west" = list(-5, -1))),
+		"Small Raptor (Alt)" = list(SKIN_ICON_STATE = "smolraptor_alt", SKIN_ICON = 'tff_modular/modules/synthraptors/smolraptor_serv.dmi', SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_WIDE, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(17, -2), "south" = list(16, -1), "east" = list(37, -1), "west" = list(-5, -1))),
+		// FLUFFY FRONTIER ADDITION END
 	)
 
 //MINING
@@ -122,6 +126,9 @@
 		"NiKO" = list(SKIN_ICON_STATE = "mmekamine", SKIN_ICON = CYBORG_ICON_MINING_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan" = list(SKIN_ICON_STATE = "dullahanmine", SKIN_ICON = CYBORG_ICON_MINING_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan (Taur)" = list(SKIN_ICON_STATE = "dullahantaurmine", SKIN_ICON = CYBORG_ICON_MINING_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(7, 15), "west" = list(-7, 15))),
+		// FLUFFY FRONTIER ADDITION - ADD SMALL RAPTORS
+		"Small Raptor" = list(SKIN_ICON_STATE = "smolraptor", SKIN_ICON = 'tff_modular/modules/synthraptors/smolraptor_min.dmi', SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_WIDE, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(17, -2), "south" = list(16, -1), "east" = list(37, -1), "west" = list(-5, -1))),
+		// FLUFFY FRONTIER ADDITION END
 	)
 
 //CLOWN
@@ -183,6 +190,9 @@
 		"NiKO" = list(SKIN_ICON_STATE = "mmekaeng", SKIN_ICON = CYBORG_ICON_ENG_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan" = list(SKIN_ICON_STATE = "dullahaneng", SKIN_ICON = CYBORG_ICON_ENG_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan (Taur)" = list(SKIN_ICON_STATE = "dullahantaureng", SKIN_ICON = CYBORG_ICON_ENG_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(7, 15), "west" = list(-7, 15))),
+		// FLUFFY FRONTIER ADDITION - ADD SMALL RAPTORS
+		"Small Raptor" = list(SKIN_ICON_STATE = "smolraptor", SKIN_ICON = 'tff_modular/modules/synthraptors/smolraptor_eng.dmi', SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_WIDE, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(17, -2), "south" = list(16, -1), "east" = list(37, -1), "west" = list(-5, -1))),
+		// FLUFFY FRONTIER ADDITION END
 	)
 
 //JANITOR
@@ -221,6 +231,9 @@
 		"NiKO" = list(SKIN_ICON_STATE = "mmekajani", SKIN_ICON = CYBORG_ICON_JANI_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan" = list(SKIN_ICON_STATE = "dullahanjani", SKIN_ICON = CYBORG_ICON_JANI_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan (Taur)" = list(SKIN_ICON_STATE = "dullahantaurjani", SKIN_ICON = CYBORG_ICON_JANI_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(7, 15), "west" = list(-7, 15))),
+		// FLUFFY FRONTIER ADDITION - ADD SMALL RAPTORS
+		"Small Raptor" = list(SKIN_ICON_STATE = "smolraptor_alt", SKIN_ICON = 'tff_modular/modules/synthraptors/smolraptor_serv.dmi', SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_WIDE, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(17, -2), "south" = list(16, -1), "east" = list(37, -1), "west" = list(-5, -1))),
+		// FLUFFY FRONTIER ADDITION END
 	)
 
 //MEDICAL
@@ -260,6 +273,9 @@
 		"NiKO" = list(SKIN_ICON_STATE = "mmekamed", SKIN_ICON = CYBORG_ICON_MED_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan" = list(SKIN_ICON_STATE = "dullahanmed", SKIN_ICON = CYBORG_ICON_MED_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan (Taur)" = list(SKIN_ICON_STATE = "dullahantaurmed", SKIN_ICON = CYBORG_ICON_MED_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(7, 15), "west" = list(-7, 15))),
+		// FLUFFY FRONTIER ADDITION - ADD SMALL RAPTORS
+		"Small Raptor" = list(SKIN_ICON_STATE = "smolraptor", SKIN_ICON = 'tff_modular/modules/synthraptors/smolraptor_med.dmi', SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_WIDE, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(17, -2), "south" = list(16, -1), "east" = list(37, -1), "west" = list(-5, -1))),
+		// FLUFFY FRONTIER ADDITION END
 	)
 
 //PEACEKEEPER
@@ -289,6 +305,9 @@
 		"NiKO" = list(SKIN_ICON_STATE = "mmekapeace", SKIN_ICON = CYBORG_ICON_PEACEKEEPER_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan" = list(SKIN_ICON_STATE = "dullahanpeace", SKIN_ICON = CYBORG_ICON_PEACEKEEPER_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan (Taur)" = list(SKIN_ICON_STATE = "dullahantaurpeace", SKIN_ICON = CYBORG_ICON_PEACEKEEPER_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(7, 15), "west" = list(-7, 15))),
+		// FLUFFY FRONTIER ADDITION - ADD SMALL RAPTORS
+		"Small Raptor" = list(SKIN_ICON_STATE = "smolraptor", SKIN_ICON = 'tff_modular/modules/synthraptors/smolraptor_pk.dmi', SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_WIDE, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(17, -2), "south" = list(16, -1), "east" = list(37, -1), "west" = list(-5, -1))),
+		// FLUFFY FRONTIER ADDITION END
 	)
 
 //SECURITY
@@ -323,6 +342,9 @@
 		"K4T" = list(SKIN_ICON_STATE = "k4tsec", SKIN_ICON = CYBORG_ICON_SEC_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"NiKA" = list(SKIN_ICON_STATE = "fmekasec", SKIN_ICON = CYBORG_ICON_SEC_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"NiKO" = list(SKIN_ICON_STATE = "mmekasec", SKIN_ICON = CYBORG_ICON_SEC_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
+		// FLUFFY FRONTIER ADDITION - ADD SMALL RAPTORS
+		"Small Raptor" = list(SKIN_ICON_STATE = "smolraptor", SKIN_ICON = 'tff_modular/modules/synthraptors/smolraptor_sec.dmi', SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_WIDE, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(17, -2), "south" = list(16, -1), "east" = list(37, -1), "west" = list(-5, -1))),
+		// FLUFFY FRONTIER ADDITION END
 	)
 
 // CARGO
@@ -375,6 +397,9 @@
 		"NiKO" = list(SKIN_ICON_STATE = "mmekacargo", SKIN_ICON = CYBORG_ICON_CARGO_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan" = list(SKIN_ICON_STATE = "dullahancargo", SKIN_ICON = CYBORG_ICON_CARGO_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan (Taur)" = list(SKIN_ICON_STATE = "dullahantaurcargo", SKIN_ICON = CYBORG_ICON_CARGO_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(7, 15), "west" = list(-7, 15))),
+		// FLUFFY FRONTIER ADDITION - ADD SMALL RAPTORS
+		"Small Raptor" = list(SKIN_ICON_STATE = "smolraptor", SKIN_ICON = 'tff_modular/modules/synthraptors/smolraptor_car.dmi', SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_WIDE, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(17, -2), "south" = list(16, -1), "east" = list(37, -1), "west" = list(-5, -1))),
+		// FLUFFY FRONTIER ADDITION END
 	)
 
 //SYNDICATE
@@ -437,7 +462,9 @@
 		"NiKO" = list(SKIN_ICON_STATE = "mmekasyndi", SKIN_ICON = CYBORG_ICON_SYNDIE_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan" = list(SKIN_ICON_STATE = "dullahansyndi", SKIN_ICON = CYBORG_ICON_SYNDIE_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan (Taur)" = list(SKIN_ICON_STATE = "dullahantaursyndi", SKIN_ICON = CYBORG_ICON_SYNDIE_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(7, 15), "west" = list(-7, 15))),
-
+		// FLUFFY FRONTIER ADDITION - ADD SMALL RAPTORS
+		"Small Raptor" = list(SKIN_ICON_STATE = "smolraptor", SKIN_ICON = 'tff_modular/modules/synthraptors/smolraptor_syndie.dmi', SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_WIDE, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(17, -2), "south" = list(16, -1), "east" = list(37, -1), "west" = list(-5, -1))),
+		// FLUFFY FRONTIER ADDITION END
 	)
 	/// Weakref to the thermal vision action
 	var/datum/weakref/thermal_vision_ref
@@ -499,6 +526,9 @@
 		"NiKO" = list(SKIN_ICON_STATE = "mmekaninja", SKIN_ICON = CYBORG_ICON_NINJA_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan" = list(SKIN_ICON_STATE = "dullahanninja", SKIN_ICON = CYBORG_ICON_NINJA_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan (Taur)" = list(SKIN_ICON_STATE = "dullahantaurninja", SKIN_ICON = CYBORG_ICON_NINJA_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(7, 15), "west" = list(-7, 15))),
+		// FLUFFY FRONTIER ADDITION - ADD SMALL RAPTORS
+		"Small Raptor" = list(SKIN_ICON_STATE = "smolraptor", SKIN_ICON = 'tff_modular/modules/synthraptors/smolraptor_ninja.dmi', SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_WIDE, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(17, -2), "south" = list(16, -1), "east" = list(37, -1), "west" = list(-5, -1))),
+		// FLUFFY FRONTIER ADDITION END
 	)
 
 /obj/item/robot_model/ninja/rebuild_modules()
@@ -584,6 +614,9 @@
 		"NiKO" = list(SKIN_ICON_STATE = "mmekaninja", SKIN_ICON = CYBORG_ICON_NINJA_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan" = list(SKIN_ICON_STATE = "dullahanninja", SKIN_ICON = CYBORG_ICON_NINJA_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		"Dullahan (Taur)" = list(SKIN_ICON_STATE = "dullahantaurninja", SKIN_ICON = CYBORG_ICON_NINJA_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 22), "west" = list(-2, 8))),
+		// FLUFFY FRONTIER ADDITION - ADD SMALL RAPTORS
+		"Small Raptor" = list(SKIN_ICON_STATE = "smolraptor", SKIN_ICON = 'tff_modular/modules/synthraptors/smolraptor_ninja.dmi', SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_WIDE, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(17, -2), "south" = list(16, -1), "east" = list(37, -1), "west" = list(-5, -1))),
+		// FLUFFY FRONTIER ADDITION END
 	)
 	/// Weakref to the thermal vision action
 	var/datum/weakref/thermal_vision_ref
