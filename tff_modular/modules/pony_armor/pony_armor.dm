@@ -1,14 +1,7 @@
 /mob/living/basic/pony
-	var/has_armor = FALSE
-
-/obj/item/pony_armor
-	name = "Cavalryman's Pony Box"
-	desc = "It's a box with a pony painted on it. You can't open it, but what if you give it to a pony?"
-	icon = 'tff_modular/modules/pony_armor/horse_armor.dmi'
-	icon_state = "box_of_horse"
-	force = 0
-	throwforce = 5
-	var/list/avaible_armor = list(
+	// Current armor we have
+	var/datum/pony_armor/current_armor = null
+	var/static/list/avaible_armor = list(
 		"Iron Armor" = new /datum/pony_armor/iron,
 		"Silver armor" = new /datum/pony_armor/silver,
 		"Uranium armor" = new /datum/pony_armor/uranium,
@@ -20,35 +13,43 @@
 		"Dragon armor" = new /datum/pony_armor/dragon,
 		"Titanium armor" = new /datum/pony_armor/titanium,
 	)
+	var/icon/ponyicon
 
-/obj/item/pony_armor/attack(mob/living/target_mob, mob/living/user, list/modifiers, list/attack_modifiers)
+/mob/living/basic/pony/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	. = ..()
+	if(istype(tool, /obj/item/pony_armor))
+		if(current_armor)
+			if(tgui_alert(user, "There is already armor! Do you want to remove it?", "Pony Armory", list("Yes", "No")) == "Yes")
+				remove_armor()
+			else
+				return FALSE
+		var/choice = tgui_input_list(user, "Pick an armor for your pony", "Pony Armory", avaible_armor)
+		if(!choice || QDELETED(user))
+			return
+		var/datum/pony_armor/choosen_armor = avaible_armor[choice]
+		give_armor(choosen_armor)
+		return TRUE
 
-	if(!istype(target_mob, /mob/living/basic/pony))
-		return
+/mob/living/basic/pony/proc/give_armor(datum/pony_armor/choosen_armor)
+	ponyicon = icon(icon = choosen_armor.armor_path, icon_state = choosen_armor.armor_name)
+	current_armor = choosen_armor
+	add_overlay(ponyicon)
 
-	var/mob/living/basic/pony/target = target_mob
+/mob/living/basic/pony/proc/remove_armor()
+	current_armor = null
+	cut_overlay(ponyicon)
 
-	if(target.has_armor)
-		return
-
-	var/choice = tgui_input_list(user, "Pick an armor for your pony", "Pony armory", avaible_armor)
-	if(!choice || QDELETED(user))
-		return
-	var/datum/pony_armor/choosen_armor = avaible_armor[choice]
-	choosen_armor.on_armor_equip(target)
-	target.has_armor = TRUE
-	return
+/obj/item/pony_armor
+	name = "Cavalryman's Pony Box"
+	desc = "It's a box with a pony painted on it. What if you give it to a pony?"
+	icon = 'tff_modular/modules/pony_armor/horse_armor.dmi'
+	icon_state = "box_of_horse"
+	force = 0
+	throwforce = 0
 
 /datum/pony_armor
-	var/icon/ponyicon
 	var/armor_path = 'tff_modular/modules/pony_armor/horse_armor.dmi'
 	var/armor_name = null
-
-/datum/pony_armor/proc/on_armor_equip(mob/living/basic/pony/who_equip)
-	ponyicon = icon(icon = armor_path, icon_state = armor_name)
-	who_equip.add_overlay(ponyicon)
-	return
 
 /datum/pony_armor/iron
 	armor_name = "Iron_armor"
