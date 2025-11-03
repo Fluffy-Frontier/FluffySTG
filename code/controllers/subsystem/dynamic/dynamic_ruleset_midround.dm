@@ -217,6 +217,8 @@
 	/// Text shown in the candidate poll. Optional, if unset uses pref_flag. (Though required if pref_flag is unset)
 	var/candidate_role
 
+	var/transfer_prefs = TRUE // FLUFFY FRONTIER ADDITION - shall we port prefs?
+
 /datum/dynamic_ruleset/midround/from_ghosts/can_be_selected()
 	SHOULD_CALL_PARENT(TRUE)
 	return ..() && (GLOB.ghost_role_flags & GHOSTROLE_MIDROUND_EVENT)
@@ -230,7 +232,7 @@
 	if(isnull(body))
 		return
 	candidate.transfer_to(body, force_key_move = TRUE) // yoinks the candidate's client
-	if(ishuman(body))
+	if(ishuman(body) && transfer_prefs) // FLUFFY FRONTIER EDIT - ORIGINAL: if(ishuman(body))
 		var/mob/living/carbon/human/human_body = body
 		body.client?.prefs.safe_transfer_prefs_to(body)
 		human_body.dna.remove_all_mutations()
@@ -487,6 +489,7 @@
 	min_pop = 15
 	max_antag_cap = 1
 	signup_atom_appearance = /obj/item/light_eater
+	transfer_prefs = FALSE // FLUFFY FRONTIER ADDITION
 
 /datum/dynamic_ruleset/midround/from_ghosts/nightmare/can_be_selected()
 	return ..() && !isnull(find_maintenance_spawn(atmos_sensitive = TRUE, require_darkness = TRUE))
