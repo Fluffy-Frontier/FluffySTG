@@ -131,7 +131,7 @@
 		// FLUFFY FRONTIER ADDITION - ADD SMALL RAPTORS
 		"Small Raptor" = list(SKIN_ICON_STATE = "smolraptor", SKIN_ICON = 'tff_modular/modules/burrersilicon/smolraptor/smolraptor_min.dmi', SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_WIDE, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(17, -2), "south" = list(16, -1), "east" = list(37, -1), "west" = list(-5, -1))),
 		"Cat Borg" = list(SKIN_ICON_STATE = "mining", SKIN_ICON = 'tff_modular/modules/burrersilicon/catborg/catborg_mining.dmi', SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_WIDE, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(17, -2), "south" = list(16, -1), "east" = list(37, -1), "west" = list(-5, -1))),
-		"Kitty Borg" = list(SKIN_ICON_STATE = "mining", SKIN_ICON = 'tff_modular/modules/burrersilicon/kittyborg/Kittyborg_mine.dmi', SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_WIDE, TRAIT_R_UNIQUEPANEL),
+		"Kitty Borg" = list(SKIN_ICON_STATE = "mining", SKIN_ICON = 'tff_modular/modules/burrersilicon/kittyborg/Kittyborg_mine.dmi', SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_WIDE, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(16, -7), "south" = list(16, -8), "east" = list(24, -8), "west" = list(8, -9))),
 		// FLUFFY FRONTIER ADDITION END
 	)
 
