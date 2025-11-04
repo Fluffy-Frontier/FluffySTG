@@ -318,6 +318,7 @@
 		"Dullahan (Taur)" = list(SKIN_ICON_STATE = "dullahantaurpeace", SKIN_ICON = CYBORG_ICON_PEACEKEEPER_TALL, SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(7, 15), "west" = list(-7, 15))),
 		// FLUFFY FRONTIER ADDITION - ADD SMALL RAPTORS
 		"Small Raptor" = list(SKIN_ICON_STATE = "smolraptor", SKIN_ICON = 'tff_modular/modules/burrersilicon/smolraptor/smolraptor_pk.dmi', SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_WIDE, TRAIT_R_UNIQUEPANEL), SKIN_HAT_OFFSET = list("north" = list(17, -2), "south" = list(16, -1), "east" = list(37, -1), "west" = list(-5, -1))),
+		"NiKA-2" = list(SKIN_ICON_STATE = "sfmekasci", SKIN_ICON = 'tff_modular/modules/burrersilicon/tallborg/tallborg.dmi', SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_UNIQUETIP, TRAIT_R_TALL), SKIN_HAT_OFFSET = list("north" = list(1, 15), "south" = list(1, 15), "east" = list(2, 15), "west" = list(-2, 15))),
 		// FLUFFY FRONTIER ADDITION END
 	)
 
