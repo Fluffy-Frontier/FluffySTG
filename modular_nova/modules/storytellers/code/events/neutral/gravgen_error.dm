@@ -69,8 +69,7 @@
 
 	if(!gravity_gen)
 		return // No gravity generator found, cancel the event
-	if(!gravity_gen.on)
-		return
+
 	gravity_gen_ref = WEAKREF(gravity_gen)
 
 	// Select repair methods similar to radiation leak
@@ -115,6 +114,9 @@
 
 
 /datum/round_event/storyteller_gravgen_malfunction/__storyteller_tick(seconds_per_tick)
+	var/obj/machinery/gravity_generator/main/gravity_gen = gravity_gen_ref.resolve()
+	if(!gravity_gen.on)
+		return
 	if(!COOLDOWN_FINISHED(src, gravity_fluctuation_cooldown))
 		return
 	COOLDOWN_START(src, gravity_fluctuation_cooldown,  fluctuation_cooldown)
