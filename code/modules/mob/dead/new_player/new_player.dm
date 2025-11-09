@@ -271,10 +271,10 @@
 			give_madness(humanc, GLOB.curse_of_madness_triggered)
 
 	GLOB.joined_player_list += character.ckey
-
+	/* // MOVA EDIT REMOVEVAL START - Storyteller
 	if(CONFIG_GET(flag/allow_latejoin_antagonists) && !EMERGENCY_PAST_POINT_OF_NO_RETURN && humanc) //Borgs aren't allowed to be antags. Will need to be tweaked if we get true latejoin ais.
 		SSdynamic.on_latejoin(humanc)
-
+	*/ // MOVA EDIT REMOVEVAL END
 	if(humanc)
 		if(job.job_flags & JOB_ASSIGN_QUIRKS)
 			if(CONFIG_GET(flag/roundstart_traits))
