@@ -1,81 +1,9 @@
-#define ROLE_BLACKLIST_SECLIKE list( \
-		JOB_CYBORG, \
-		JOB_AI, \
-		JOB_SECURITY_OFFICER, \
-		JOB_WARDEN, \
-		JOB_DETECTIVE, \
-		JOB_HEAD_OF_SECURITY, \
-		JOB_CAPTAIN, \
-		JOB_CORRECTIONS_OFFICER, \
-		JOB_NT_REP, \
-		JOB_BLUESHIELD, \
-		JOB_ORDERLY, \
-		JOB_BOUNCER, \
-		JOB_CUSTOMS_AGENT, \
-		JOB_ENGINEERING_GUARD, \
-		JOB_SCIENCE_GUARD, \
-	)
-
-#define ROLE_BLACKLIST_HEAD list( \
-		JOB_CAPTAIN, \
-		JOB_HEAD_OF_SECURITY, \
-		JOB_RESEARCH_DIRECTOR, \
-		JOB_CHIEF_ENGINEER, \
-		JOB_CHIEF_MEDICAL_OFFICER, \
-		JOB_HEAD_OF_PERSONNEL, \
-	)
-
-#define ROLE_BLACKLIST_SECHEAD list( \
-		JOB_CAPTAIN, \
-		JOB_HEAD_OF_SECURITY, \
-		JOB_WARDEN, \
-		JOB_DETECTIVE, \
-		JOB_CHIEF_ENGINEER, \
-		JOB_CHIEF_MEDICAL_OFFICER, \
-		JOB_RESEARCH_DIRECTOR, \
-		JOB_HEAD_OF_PERSONNEL, \
-		JOB_CYBORG, \
-		JOB_AI, \
-		JOB_SECURITY_OFFICER, \
-		JOB_WARDEN, \
-		JOB_CORRECTIONS_OFFICER, \
-		JOB_NT_REP, \
-		JOB_BLUESHIELD, \
-		JOB_ORDERLY, \
-		JOB_BOUNCER, \
-		JOB_CUSTOMS_AGENT, \
-		JOB_ENGINEERING_GUARD, \
-		JOB_SCIENCE_GUARD, \
-	)
-
-/datum/round_event_control/antagonist/from_living/midround_traitor
-	id = "storyteller_midround_traitor"
-	name = "Midround Traitor"
-	description = "A crew member is converted to a traitor midround."
-	story_category = STORY_GOAL_ANTAGONIST
-	tags = STORY_TAG_ANTAGONIST | STORY_TAG_MIDROUND | STORY_TAG_ESCALATION | STORY_TAG_TARGETS_INDIVIDUALS | STORY_TAG_AFFECTS_SECURITY
-
-	story_weight = STORY_WEIGHT_MINOR_ANTAGONIST
-	story_prioty = STORY_GOAL_BASE_PRIORITY
-	requierd_threat_level = STORY_GOAL_THREAT_BASIC
-	required_round_progress = STORY_ROUND_PROGRESSION_MID
-
-	antag_datum_type = /datum/antagonist/traitor
-	antag_name = "Traitor"
-	role_flag = ROLE_TRAITOR
-	blacklisted_roles = ROLE_BLACKLIST_SECHEAD
-	max_candidates = 1
-	min_candidates = 1
-	min_players = 15
-
-
-
-/datum/round_event_control/antagonist/from_ghosts/midround_loneop
-	id = "storyteller_midround_loneop"
-	name = "Midround Lone Operative"
+/datum/round_event_control/antagonist/from_ghosts/loneop
+	id = "storyteller_loneop"
+	name = "Lone Operative"
 	description = "A lone operative is spawned to infiltrate the station capture nuclear disk and explode the nuke."
 	story_category = STORY_GOAL_ANTAGONIST
-	tags = STORY_TAG_ANTAGONIST | STORY_TAG_MIDROUND | STORY_TAG_ESCALATION | STORY_TAG_WIDE_IMPACT | STORY_TAG_AFFECTS_WHOLE_STATION
+	tags = STORY_TAG_ANTAGONIST | STORY_TAG_ESCALATION | STORY_TAG_WIDE_IMPACT | STORY_TAG_AFFECTS_WHOLE_STATION | STORY_TAG_MIDROUND
 
 	story_weight = STORY_WEIGHT_MAJOR_ANTAGONIST * 0.8
 	story_prioty = STORY_GOAL_HIGH_PRIORITY
@@ -91,11 +19,10 @@
 	min_players = 20
 	signup_atom_appearance = /obj/item/disk/nuclear
 
-
-/datum/round_event_control/antagonist/from_ghosts/midround_loneop/create_ruleset_body(datum/storyteller_inputs/inputs, datum/storyteller/storyteller)
+/datum/round_event_control/antagonist/from_ghosts/loneop/create_ruleset_body(datum/storyteller_inputs/inputs, datum/storyteller/storyteller)
 	return new /mob/living/carbon/human(find_space_spawn())
 
-/datum/round_event_control/antagonist/from_ghosts/midround_loneop/after_antagonist_spawn(datum/storyteller_inputs/inputs, datum/storyteller/storyteller, list/spawned_antags)
+/datum/round_event_control/antagonist/from_ghosts/loneop/after_antagonist_spawn(datum/storyteller_inputs/inputs, datum/storyteller/storyteller, list/spawned_antags)
 	for(var/mob/living/carbon/human/loneop in spawned_antags)
 		var/datum/antagonist/nukeop/lone/loneop_antag = locate() in loneop.mind.antag_datums
 		if(!loneop_antag)
@@ -107,7 +34,7 @@
 				uplink.uplink_handler.add_telecrystals(20 + security_count * 2)
 				to_chat(loneop_antag, span_notice("Due to the high security on the nuclear disk vault, you have been granted extra telecrystals to help you complete your mission."))
 
-/datum/round_event_control/antagonist/from_ghosts/midround_loneop/get_story_weight(datum/storyteller_inputs/inputs, datum/storyteller/storyteller)
+/datum/round_event_control/antagonist/from_ghosts/loneop/get_story_weight(datum/storyteller_inputs/inputs, datum/storyteller/storyteller)
 	. = ..()
 	if(!.)
 		return 0
@@ -119,7 +46,7 @@
 		weight *= 2
 	return weight
 
-/datum/round_event_control/antagonist/from_ghosts/midround_loneop/is_avaible(datum/storyteller_inputs/inputs, datum/storyteller/storyteller)
+/datum/round_event_control/antagonist/from_ghosts/loneop/is_avaible(datum/storyteller_inputs/inputs, datum/storyteller/storyteller)
 	. = ..()
 	if(!.)
 		return FALSE
@@ -131,7 +58,7 @@
 		return FALSE
 	return TRUE
 
-/datum/round_event_control/antagonist/from_ghosts/midround_loneop/proc/get_disk()
+/datum/round_event_control/antagonist/from_ghosts/loneop/proc/get_disk()
 	var/obj/item/disk/nuclear/real_disk
 	for(var/obj/item/disk/nuclear/disk in SSpoints_of_interest.real_nuclear_disks)
 		if(!disk.fake)
@@ -142,23 +69,26 @@
 		break
 	return real_disk
 
+
 /obj/item/disk/nuclear
 	VAR_PRIVATE/secure_time = 0
 	VAR_PRIVATE/secure = FALSE
+	VAR_PRIVATE/loneop_called = FALSE
 
-/obj/item/disk/nuclear/secured_process(last_move)
+
+/obj/item/disk/nuclear/proc/secured_process(last_move)
 	secure_time++
 	if(secure_time >= 10)
 		secure = TRUE
 
-/obj/item/disk/nuclear/unsecured_process(last_move)
+/obj/item/disk/nuclear/proc/unsecured_process(last_move)
 	if(secure)
 		secure_time = max(0, secure_time - 1)
 		if(secure_time == 0)
 			secure = FALSE
 
 	var/turf/new_turf = get_turf(src)
-	if((last_move < world.time - 250 SECONDS && !secure) || (isspaceturf(new_turf) && prob(20)) && loc == new_turf)
+	if((last_move < world.time - 500 SECONDS && !secure) || (isspaceturf(new_turf) && prob(20)) && loc == new_turf)
 		secure_time = 0
 		var/datum/storyteller/ctl = SSstorytellers?.active
 		if(!ctl)
@@ -166,71 +96,34 @@
 		ask_to_storyteller(ctl)
 
 /obj/item/disk/nuclear/proc/ask_to_storyteller(datum/storyteller/ctl)
-	if(HAS_TRAIT(ctl, STORYTELLER_TRAIT_NO_ANTAGS))
+	if(HAS_TRAIT(ctl, STORYTELLER_TRAIT_NO_ANTAGS) && !loneop_called)
 		return
-	var/datum/round_event_control/antagonist/from_ghosts/midround_loneop/loneop = locate() in SSstorytellers.events_by_id
+	var/datum/round_event_control/antagonist/from_ghosts/loneop/loneop = locate() in SSstorytellers.events_by_id
 	if(ctl.planner.is_event_in_timeline(loneop))
 		return
-	ctl.planner.try_plan_event(loneop, world.time + rand(5 MINUTES, 10 MINUTES))
-	message_admins("The nuclear authentication disk has been left unsecured! And [ctl.name] deploy lone operative.")
+	var/offset = ctl.planner.get_next_event_delay(loneop, ctl)
+	if(ctl.planner.try_plan_event(loneop, offset))
+		loneop_called = TRUE
+		message_admins("The nuclear authentication disk has been left unsecured! And [ctl.name] deploy lone operative.")
+	secure = TRUE
+	secure_time += 2 MINUTES
+
 
 /obj/item/disk/nuclear/proc/is_secure()
 	return secure
 
-/datum/round_event_control/antagonist/from_living/midround_heretic
-	id = "storyteller_midround_heretic"
-	name = "Midround Heretic"
-	description = "A crew member is converted to a heretic midround."
+/datum/round_event_control/antagonist/from_living/revolution
+	id = "storyteller_revolution"
+	name = "Revolution"
+	description = "A joining player becomes a dormant head revolutionary."
 	story_category = STORY_GOAL_ANTAGONIST
-	tags = STORY_TAG_ANTAGONIST | STORY_TAG_MIDROUND | STORY_TAG_ESCALATION | STORY_TAG_AFFECTS_CREW_HEALTH | STORY_TAG_ENTITIES
-
-	story_weight = STORY_WEIGHT_MINOR_ANTAGONIST
-	story_prioty = STORY_GOAL_BASE_PRIORITY
-	requierd_threat_level = STORY_GOAL_THREAT_ELEVATED
-	required_round_progress = STORY_ROUND_PROGRESSION_MID
-
-	antag_datum_type = /datum/antagonist/heretic
-	antag_name = "Heretic"
-	role_flag = ROLE_HERETIC
-	blacklisted_roles = ROLE_BLACKLIST_SECHEAD
-	max_candidates = 2
-	min_candidates = 1
-	min_players = 15
-
-/datum/round_event_control/antagonist/from_living/midround_changeling
-	id = "storyteller_midround_changeling"
-	name = "Midround Changeling"
-	description = "A crew member is converted to a changeling midround."
-	story_category = STORY_GOAL_ANTAGONIST
-	tags = STORY_TAG_ANTAGONIST | STORY_TAG_MIDROUND | STORY_TAG_ESCALATION | STORY_TAG_AFFECTS_CREW_HEALTH | STORY_TAG_ENTITIES
-
-	story_weight = STORY_WEIGHT_MINOR_ANTAGONIST
-	story_prioty = STORY_GOAL_BASE_PRIORITY
-	requierd_threat_level = STORY_GOAL_THREAT_ELEVATED
-	required_round_progress = STORY_ROUND_PROGRESSION_MID
-
-
-	antag_datum_type = /datum/antagonist/changeling
-	antag_name = "Changeling"
-	role_flag = ROLE_CHANGELING
-	blacklisted_roles = ROLE_BLACKLIST_SECHEAD
-	max_candidates = 2
-	min_candidates = 1
-	min_players = 15
-
-/datum/round_event_control/antagonist/from_living/midround_revolution
-	id = "storyteller_midround_revolution"
-	name = "Midround Provocateur"
-	description = "A joining player becomes a dormant head revolutionary midround."
-	story_category = STORY_GOAL_ANTAGONIST
-	tags = STORY_TAG_ANTAGONIST | STORY_TAG_MIDROUND | STORY_TAG_ESCALATION | STORY_TAG_AFFECTS_POLITICS | STORY_TAG_WIDE_IMPACT
+	tags = STORY_TAG_ANTAGONIST | STORY_TAG_ESCALATION | STORY_TAG_AFFECTS_POLITICS | STORY_TAG_WIDE_IMPACT | STORY_TAG_MIDROUND | STORY_TAG_ROUNDSTART
 	enabled = FALSE
 
 	story_weight = STORY_WEIGHT_MAJOR_ANTAGONIST
 	story_prioty = STORY_GOAL_HIGH_PRIORITY
 	requierd_threat_level = STORY_GOAL_THREAT_HIGH
-	required_round_progress = STORY_ROUND_PROGRESSION_MID
-
+	required_round_progress = STORY_ROUND_PROGRESSION_START
 
 	antag_datum_type = /datum/antagonist/rev/head
 	antag_name = "Provocateur"
@@ -240,28 +133,50 @@
 	min_candidates = 1
 	min_players = 30
 
-/datum/round_event_control/antagonist/from_living/midround_revolution/after_antagonist_spawn(datum/storyteller_inputs/inputs, datum/storyteller/storyteller, list/spawned_antags)
+/datum/round_event_control/antagonist/from_living/revolution/after_antagonist_spawn(datum/storyteller_inputs/inputs, datum/storyteller/storyteller, list/spawned_antags)
 	for(var/datum/mind/candidate in spawned_antags)
 		candidate.special_roles += "Dormant Head Revolutionary"
 	addtimer(CALLBACK(src, PROC_REF(reveal_head), spawned_antags), 1 MINUTES)
 
-/datum/round_event_control/antagonist/from_living/midround_revolution/proc/reveal_head(list/spawned_antags)
+/datum/round_event_control/antagonist/from_living/revolution/proc/reveal_head(list/spawned_antags)
+	var/heads_necessary = 2
+	var/head_check = 0
+	for(var/mob/player as anything in get_active_player_list(alive_check = TRUE, afk_check = TRUE))
+		if(player.mind?.assigned_role.job_flags & JOB_HEAD_OF_STAFF)
+			head_check++
+
+	if(head_check < heads_necessary)
+		message_admins("Revolution canceled: Not enough heads of staff.")
+		return
+
 	for(var/datum/mind/candidate in spawned_antags)
-		if(candidate && candidate.assigned_role == ROLE_REV_HEAD)
-			candidate.special_roles -= "Dormant Head Revolutionary"
+		candidate.special_roles -= "Dormant Head Revolutionary"
+		if(!can_be_headrev(candidate))
+			message_admins("Revolution: Ineligible headrev, attempting replacement.")
+			find_another_headrev()
+			return
+		GLOB.revolution_handler ||= new()
+		var/datum/antagonist/rev/head/new_head = new()
+		new_head.give_flash = TRUE
+		new_head.give_hud = TRUE
+		new_head.remove_clumsy = TRUE
+		candidate.add_antag_datum(new_head, GLOB.revolution_handler.revs)
+		GLOB.revolution_handler.start_revolution()
 
+/datum/round_event_control/antagonist/from_living/revolution/proc/find_another_headrev()
+	return
 
-/datum/round_event_control/antagonist/from_living/midround_malf_ai
-	id = "storyteller_midround_malf_ai"
-	name = "Midround Malfunctioning AI"
-	description = "The station AI becomes malfunctioning midround."
+/datum/round_event_control/antagonist/from_living/malf_ai
+	id = "storyteller_malf_ai"
+	name = "Malfunctioning AI"
+	description = "The station AI becomes malfunctioning."
 	story_category = STORY_GOAL_ANTAGONIST
-	tags = STORY_TAG_ANTAGONIST | STORY_TAG_MIDROUND | STORY_TAG_ESCALATION | STORY_TAG_AFFECTS_TECHNOLOGY | STORY_TAG_WIDE_IMPACT
+	tags = STORY_TAG_ANTAGONIST | STORY_TAG_ESCALATION | STORY_TAG_AFFECTS_TECHNOLOGY | STORY_TAG_WIDE_IMPACT | STORY_TAG_MIDROUND | STORY_TAG_ROUNDSTART
 
 	story_weight = STORY_WEIGHT_MAJOR_ANTAGONIST
 	story_prioty = STORY_GOAL_HIGH_PRIORITY
 	requierd_threat_level = STORY_GOAL_THREAT_HIGH
-	required_round_progress = STORY_ROUND_PROGRESSION_MID
+	required_round_progress = STORY_ROUND_PROGRESSION_START
 
 	preferred_roles = list(/datum/job/ai)
 	antag_datum_type = /datum/antagonist/malf_ai
@@ -272,39 +187,18 @@
 
 	min_players = 30
 
-/datum/round_event_control/antagonist/from_living/midround_malf_ai/is_avaible(datum/storyteller_inputs/inputs, datum/storyteller/storyteller)
+/datum/round_event_control/antagonist/from_living/malf_ai/is_avaible(datum/storyteller_inputs/inputs, datum/storyteller/storyteller)
 	. = ..()
 	if(!.)
 		return FALSE
 	return !HAS_TRAIT(SSstation, STATION_TRAIT_HUMAN_AI)
 
-
-/datum/round_event_control/antagonist/from_living/midround_obsessed
-	id = "storyteller_midround_obsessed"
-	name = "Midround Obsessed"
-	description = "A crew member becomes obsessed midround."
+/datum/round_event_control/antagonist/from_living/blob_infection
+	id = "storyteller_blob_infection"
+	name = "Blob Infection"
+	description = "A crew member becomes a blob host."
 	story_category = STORY_GOAL_ANTAGONIST
-	tags = STORY_TAG_ANTAGONIST | STORY_TAG_MIDROUND | STORY_TAG_ESCALATION | STORY_TAG_TARGETS_INDIVIDUALS | STORY_TAG_AFFECTS_CREW_MIND
-
-	story_weight = STORY_WEIGHT_MINOR_ANTAGONIST
-	story_prioty = STORY_GOAL_BASE_PRIORITY
-	requierd_threat_level = STORY_GOAL_THREAT_BASIC
-	required_round_progress = STORY_ROUND_PROGRESSION_MID
-
-	antag_datum_type = /datum/antagonist/obsessed
-	antag_name = "Obsessed"
-	role_flag = ROLE_OBSESSED
-	max_candidates = 1
-	min_candidates = 1
-	min_players = 5
-
-
-/datum/round_event_control/antagonist/from_living/midround_blob_infection
-	id = "storyteller_midround_blob_infection"
-	name = "Midround Blob Infection"
-	description = "A crew member becomes a blob host midround."
-	story_category = STORY_GOAL_ANTAGONIST
-	tags = STORY_TAG_ANTAGONIST | STORY_TAG_MIDROUND | STORY_TAG_ESCALATION | STORY_TAG_AFFECTS_CREW_HEALTH | STORY_TAG_ENTITIES | STORY_TAG_WIDE_IMPACT
+	tags = STORY_TAG_ANTAGONIST | STORY_TAG_ESCALATION | STORY_TAG_AFFECTS_CREW_HEALTH | STORY_TAG_ENTITIES | STORY_TAG_WIDE_IMPACT | STORY_TAG_MIDROUND
 
 	story_weight = STORY_WEIGHT_MAJOR_ANTAGONIST
 	story_prioty = STORY_GOAL_HIGH_PRIORITY
@@ -319,18 +213,17 @@
 	min_candidates = 1
 	min_players = 25
 
-
-/datum/round_event_control/antagonist/from_ghosts/midround_wizard
-	id = "storyteller_midround_wizard"
-	name = "Midround Wizard"
-	description = "A wizard is spawned to invade the station midround."
+/datum/round_event_control/antagonist/from_ghosts/wizard
+	id = "storyteller_wizard"
+	name = "Wizard"
+	description = "A wizard is spawned to invade the station."
 	story_category = STORY_GOAL_ANTAGONIST
-	tags = STORY_TAG_ANTAGONIST | STORY_TAG_MIDROUND | STORY_TAG_ESCALATION | STORY_TAG_WIDE_IMPACT | STORY_TAG_ENTITIES
+	tags = STORY_TAG_ANTAGONIST | STORY_TAG_ESCALATION | STORY_TAG_WIDE_IMPACT | STORY_TAG_ENTITIES | STORY_TAG_MIDROUND
 
 	story_weight = STORY_WEIGHT_MAJOR_ANTAGONIST
 	story_prioty = STORY_GOAL_HIGH_PRIORITY
 	requierd_threat_level = STORY_GOAL_THREAT_HIGH
-	required_round_progress = STORY_ROUND_PROGRESSION_MID
+	required_round_progress = STORY_ROUND_PROGRESSION_START
 
 	antag_datum_type = /datum/antagonist/wizard
 	antag_name = "Wizard"
@@ -341,13 +234,15 @@
 	min_players = 20
 	signup_atom_appearance = /obj/structure/sign/poster/contraband/space_cube
 
+/datum/round_event_control/antagonist/from_ghosts/wizard/create_ruleset_body(datum/storyteller_inputs/inputs, datum/storyteller/storyteller)
+	return new /mob/living/carbon/human
 
-/datum/round_event_control/antagonist/from_ghosts/midround_blob
-	id = "storyteller_midround_blob"
-	name = "Midround Blob"
-	description = "A blob is spawned on the station midround."
+/datum/round_event_control/antagonist/from_ghosts/blob
+	id = "storyteller_blob"
+	name = "Blob"
+	description = "A blob is spawned on the station."
 	story_category = STORY_GOAL_ANTAGONIST
-	tags = STORY_TAG_ANTAGONIST | STORY_TAG_MIDROUND | STORY_TAG_ESCALATION | STORY_TAG_AFFECTS_INFRASTRUCTURE | STORY_TAG_WIDE_IMPACT | STORY_TAG_ENTITIES
+	tags = STORY_TAG_ANTAGONIST | STORY_TAG_ESCALATION | STORY_TAG_AFFECTS_INFRASTRUCTURE | STORY_TAG_WIDE_IMPACT | STORY_TAG_ENTITIES | STORY_TAG_MIDROUND
 
 	story_weight = STORY_WEIGHT_MAJOR_ANTAGONIST
 	story_prioty = STORY_GOAL_HIGH_PRIORITY
@@ -362,23 +257,22 @@
 	min_players = 25
 	signup_atom_appearance = /obj/structure/blob/normal
 
-/datum/round_event_control/antagonist/from_ghosts/midround_blob/create_ruleset_body(datum/storyteller_inputs/inputs, datum/storyteller/storyteller)
+/datum/round_event_control/antagonist/from_ghosts/blob/create_ruleset_body(datum/storyteller_inputs/inputs, datum/storyteller/storyteller)
 	var/turf/spawn_turf = get_blobspawn()
 	return new /mob/eye/blob(spawn_turf, OVERMIND_STARTING_POINTS)
 
-/datum/round_event_control/antagonist/from_ghosts/midround_blob/proc/get_blobspawn()
+/datum/round_event_control/antagonist/from_ghosts/blob/proc/get_blobspawn()
 	if(length(GLOB.blobstart))
 		return pick(GLOB.blobstart)
 	var/obj/effect/landmark/observer_start/default = locate() in GLOB.landmarks_list
 	return get_turf(default)
 
-
-/datum/round_event_control/antagonist/from_ghosts/midround_xenos
-	id = "storyteller_midround_xenos"
-	name = "Midround Xenomorphs"
-	description = "Xenomorphs are spawned to invade the station midround."
+/datum/round_event_control/antagonist/from_ghosts/xenos
+	id = "storyteller_xenos"
+	name = "Xenomorphs"
+	description = "Xenomorphs are spawned to invade the station."
 	story_category = STORY_GOAL_ANTAGONIST
-	tags = STORY_TAG_ANTAGONIST | STORY_TAG_MIDROUND | STORY_TAG_ESCALATION | STORY_TAG_AFFECTS_CREW_HEALTH | STORY_TAG_ENTITIES | STORY_TAG_WIDE_IMPACT
+	tags = STORY_TAG_ANTAGONIST | STORY_TAG_ESCALATION | STORY_TAG_AFFECTS_CREW_HEALTH | STORY_TAG_ENTITIES | STORY_TAG_WIDE_IMPACT | STORY_TAG_MIDROUND
 
 	story_weight = STORY_WEIGHT_MAJOR_ANTAGONIST
 	story_prioty = STORY_GOAL_HIGH_PRIORITY
@@ -393,16 +287,15 @@
 	min_players = 30
 	signup_atom_appearance = /mob/living/carbon/alien/adult/hunter
 
-/datum/round_event_control/antagonist/from_ghosts/midround_xenos/create_ruleset_body(datum/storyteller_inputs/inputs, datum/storyteller/storyteller)
+/datum/round_event_control/antagonist/from_ghosts/xenos/create_ruleset_body(datum/storyteller_inputs/inputs, datum/storyteller/storyteller)
 	return new /mob/living/carbon/alien/larva(find_maintenance_spawn(atmos_sensitive = TRUE, require_darkness = TRUE))
-
 
 /datum/round_event_control/antagonist/from_ghosts/nuke
 	id = "storyteller_nuclear"
 	name = "Nuclear Operatives"
 	description = "A team of nuclear operatives is spawned to assault the station."
-	story_category = STORY_GOAL_ANTAGONIST
-	tags = STORY_TAG_ANTAGONIST | STORY_TAG_MIDROUND | STORY_TAG_ESCALATION | STORY_TAG_WIDE_IMPACT | STORY_TAG_ENTITIES
+	story_category = STORY_GOAL_ANTAGONIST | STORY_GOAL_MAJOR
+	tags = STORY_TAG_ANTAGONIST | STORY_TAG_ESCALATION | STORY_TAG_WIDE_IMPACT | STORY_TAG_ENTITIES | STORY_TAG_MIDROUND
 	enabled = FALSE
 
 	story_weight = STORY_WEIGHT_MAJOR_ANTAGONIST + 3
@@ -415,89 +308,44 @@
 	role_flag = ROLE_OPERATIVE
 	max_candidates = 5
 	min_candidates = 2
-	ghost_candidates = TRUE
-	crew_candidates = FALSE
 	min_players = 25
 	signup_atom_appearance = /obj/machinery/nuclearbomb
 
+/datum/round_event_control/antagonist/from_ghosts/nuke/pre_storyteller_run(datum/storyteller_inputs/inputs, datum/storyteller/storyteller, threat_points)
+	SSmapping.lazy_load_template(LAZY_TEMPLATE_KEY_NUKIEBASE)
+	. = ..()
 
-/datum/round_event_control/antagonist/from_ghosts/midround_nightmare
-	id = "storyteller_midround_nightmare"
-	name = "Midround Nightmare"
-	description = "A nightmare is spawned in maintenance midround."
+/datum/round_event_control/antagonist/from_living/blood_cult
+	id = "storyteller_blood_cult"
+	name = "Blood Cult"
+	description = "A group of crew members form a blood cult, with one leader."
 	story_category = STORY_GOAL_ANTAGONIST
-	tags = STORY_TAG_ANTAGONIST | STORY_TAG_MIDROUND | STORY_TAG_ESCALATION | STORY_TAG_AFFECTS_CREW_MIND | STORY_TAG_ENTITIES
+	tags = STORY_TAG_ANTAGONIST | STORY_TAG_ESCALATION | STORY_TAG_WIDE_IMPACT | STORY_TAG_ENTITIES | STORY_TAG_ROUNDSTART
+	enabled = FALSE
 
-	story_weight = STORY_WEIGHT_MINOR_ANTAGONIST
-	story_prioty = STORY_GOAL_BASE_PRIORITY
-	requierd_threat_level = STORY_GOAL_THREAT_ELEVATED
-	required_round_progress = STORY_ROUND_PROGRESSION_MID
+	story_weight = STORY_WEIGHT_MAJOR_ANTAGONIST
+	story_prioty = STORY_GOAL_HIGH_PRIORITY
+	requierd_threat_level = STORY_GOAL_THREAT_HIGH
+	required_round_progress = STORY_ROUND_PROGRESSION_START
 
-	antag_datum_type = /datum/antagonist/nightmare
-	antag_name = "Nightmare"
-	role_flag = ROLE_NIGHTMARE
-	max_candidates = 1
-	min_candidates = 1
-	min_players = 10
-	signup_atom_appearance = /obj/item/flashlight/lantern
+	blacklisted_roles = list(JOB_HEAD_OF_PERSONNEL, JOB_CHAPLAIN)
+	antag_datum_type = /datum/antagonist/cult
+	antag_name = "Cultist"
+	role_flag = ROLE_CULTIST
+	blacklisted_roles = ROLE_BLACKLIST_SECHEAD
+	max_candidates = 4
+	min_candidates = 2
+	min_players = 30
 
-/datum/round_event_control/antagonist/from_ghosts/midround_nightmare/create_ruleset_body()
-	var/mob/living/carbon/human/candidate = new(find_maintenance_spawn(atmos_sensitive = TRUE, require_darkness = TRUE))
-	candidate.set_species(/datum/species/shadow/nightmare)
-	playsound(candidate, 'sound/effects/magic/ethereal_exit.ogg', 50, TRUE, -1)
-	return candidate
-
-
-/datum/round_event_control/antagonist/from_ghosts/midround_slaughter_demon
-	id = "storyteller_midround_slaughter_demon"
-	name = "Midround Slaughter Demon"
-	description = "A slaughter demon is spawned in space midround."
-	story_category = STORY_GOAL_ANTAGONIST
-	tags = STORY_TAG_ANTAGONIST | STORY_TAG_MIDROUND | STORY_TAG_ESCALATION | STORY_TAG_AFFECTS_CREW_HEALTH | STORY_TAG_ENTITIES
-
-	story_weight = STORY_WEIGHT_MINOR_ANTAGONIST
-	story_prioty = STORY_GOAL_BASE_PRIORITY
-	requierd_threat_level = STORY_GOAL_THREAT_ELEVATED
-	required_round_progress = STORY_ROUND_PROGRESSION_MID
-
-	antag_datum_type = /datum/antagonist/slaughter
-	antag_name = "Slaughter Demon"
-	role_flag = ROLE_ALIEN
-	max_candidates = 1
-	min_candidates = 1
-	min_players = 15
-	signup_atom_appearance = /mob/living/basic/demon/slaughter
-
-/datum/round_event_control/antagonist/from_ghosts/midround_slaughter_demon/create_ruleset_body()
-	var/turf/spawnloc = find_space_spawn()
-	var/mob/living/basic/demon/slaughter/demon = new(spawnloc)
-	new /obj/effect/dummy/phased_mob/blood(spawnloc, demon)
-	return demon
-
-
-/datum/round_event_control/antagonist/from_ghosts/midround_morph
-	id = "storyteller_midround_morph"
-	name = "Midround Morph"
-	description = "A morph is spawned in maintenance midround."
-	story_category = STORY_GOAL_ANTAGONIST
-	tags = STORY_TAG_ANTAGONIST | STORY_TAG_MIDROUND | STORY_TAG_ESCALATION | STORY_TAG_AFFECTS_CREW_HEALTH | STORY_TAG_ENTITIES
-
-	story_weight = STORY_WEIGHT_MINOR_ANTAGONIST
-	story_prioty = STORY_GOAL_BASE_PRIORITY
-	requierd_threat_level = STORY_GOAL_THREAT_ELEVATED
-	required_round_progress = STORY_ROUND_PROGRESSION_MID
-
-	antag_datum_type = /datum/antagonist/morph
-	antag_name = "Morph"
-	role_flag = ROLE_MORPH
-	max_candidates = 1
-	min_candidates = 1
-	min_players = 10
-	signup_atom_appearance = /mob/living/basic/morph
-
-/datum/round_event_control/antagonist/from_ghosts/midround_morph/create_ruleset_body()
-	return new /mob/living/basic/morph(find_maintenance_spawn(atmos_sensitive = TRUE, require_darkness = FALSE))
-
-#undef ROLE_BLACKLIST_SECLIKE
-#undef ROLE_BLACKLIST_HEAD
-#undef ROLE_BLACKLIST_SECHEAD
+/datum/round_event_control/antagonist/from_living/blood_cult/after_antagonist_spawn(datum/storyteller_inputs/inputs, datum/storyteller/storyteller, list/spawned_antags)
+	var/datum/team/cult/main_cult = new /datum/team/cult()
+	main_cult.setup_objectives()
+	var/datum/mind/most_experienced = get_most_experienced(spawned_antags, ROLE_CULTIST)
+	for(var/datum/mind/candidate in spawned_antags)
+		var/datum/antagonist/cult/cultist = locate(/datum/antagonist/cult) in candidate.antag_datums
+		if(!cultist)
+			continue
+		cultist.cult_team = main_cult
+		cultist.give_equipment = TRUE
+		if(candidate == most_experienced)
+			cultist.make_cult_leader()
