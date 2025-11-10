@@ -59,8 +59,8 @@
 		if(integrity_mult >= 0.95) //Guns that are only mildly smudged don't debuff projectiles.
 			integrity_mult = 1
 
-		loaded_projectile.damage *= gun.projectile_damage_multiplier * integrity_mult
-		loaded_projectile.stamina *= gun.projectile_damage_multiplier * integrity_mult
+		loaded_projectile.damage *= gun.projectile_damage_multiplier * integrity_mult + (gun.battery_damage_multiplier - 1) //FLUFFY FRONTIER ADDITION: MODULAR WEAPONRY. ORIGINAL: loaded_projectile.damage *= gun.projectile_damage_multiplier * integrity_mult
+		loaded_projectile.stamina *= gun.projectile_damage_multiplier * integrity_mult + (gun.battery_damage_multiplier - 1) //FLUFFY FRONTIER ADDITION: MODULAR WEAPONRY. ORIGINAL: loaded_projectile.stamina *= gun.projectile_damage_multiplier * integrity_mult
 
 		loaded_projectile.speed *= gun.projectile_speed_multiplier * integrity_mult
 

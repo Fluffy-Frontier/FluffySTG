@@ -497,6 +497,11 @@
 			magazine = null
 	else
 		magazine = null
+	//FLUFFY FRONTIER ADDITION START: MODULAR WEAPONRY
+	if(istype(user.get_inactive_held_item(), /obj/item/offhand))
+		do_wield(user)
+		user.swap_hand()
+	//FLUFFY FRONTIER ADDITION END
 	user.put_in_hands(old_mag)
 	old_mag.update_appearance()
 	if (display_message)

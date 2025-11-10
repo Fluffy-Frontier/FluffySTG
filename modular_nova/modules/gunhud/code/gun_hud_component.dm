@@ -206,7 +206,8 @@
 				oth_t = "t9"
 				oth_h = "h9"
 		hud.set_hud(backing_color, oth_o, oth_t, oth_h, indicator)
-
+//FLUFFY FRONTIER REMOVAL START: MODULAR WEAPONRY
+/*
 /obj/item/gun/ballistic/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/ammo_hud)
@@ -218,3 +219,5 @@
 /obj/item/weldingtool/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/ammo_hud)
+*/
+//FLUFFY FRONTIER REMOVAL END

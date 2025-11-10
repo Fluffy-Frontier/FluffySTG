@@ -794,6 +794,10 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		if(ITEM_SLOT_SUITSTORE)
 			if(HAS_TRAIT(I, TRAIT_NODROP))
 				return FALSE
+			//FLUFFY FRONTIER ADDITION START: MODULAR WEAPONRY
+			if(HAS_TRAIT(I, TRAIT_FORCE_SUIT_STORAGE))
+				return TRUE
+			//FLUFFY FRONTIER ADDITION END
 			if(!H.wear_suit)
 				if(!disable_warning)
 					to_chat(H, span_warning("You need a suit before you can attach this [I.name]!"))

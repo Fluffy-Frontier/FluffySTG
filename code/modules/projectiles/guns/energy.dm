@@ -179,7 +179,8 @@
 		if(!chambered) //if empty chamber we try to charge a new shot
 			recharge_newshot(TRUE)
 		update_appearance()
-
+//FLUFFY FRONTIER REMOVAL START: MODULAR WEAPONRY
+/*
 /obj/item/gun/energy/attack_self(mob/living/user as mob)
 	. = ..()
 	if(.)
@@ -187,6 +188,8 @@
 
 	if(ammo_type.len > 1 && can_select)
 		select_fire(user)
+*/
+//FLUFFY FRONTIER REMOVAL END
 
 /obj/item/gun/energy/can_shoot()
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
@@ -200,10 +203,18 @@
 			var/mob/living/silicon/robot/robot = loc
 			if(robot.cell)
 				var/obj/item/ammo_casing/energy/shot = ammo_type[select] //Necessary to find cost of shot
+				//FLUFFY FRONTIER ADDITION START: MODULAR WEAPONRY
+				shot.e_cost = initial(shot.e_cost) * cell.maxcharge / STANDARD_CELL_CHARGE
+				battery_damage_multiplier = max(1 + (cell.maxcharge / (STANDARD_CELL_CHARGE * 200)), 1)
+				//FLUFFY FRONTIER ADDITION END
 				if(robot.cell.use(shot.e_cost)) //Take power from the borg...
 					cell.give(shot.e_cost) //... to recharge the shot
 	if(!chambered)
 		var/obj/item/ammo_casing/energy/AC = ammo_type[select]
+		//FLUFFY FRONTIER ADDITION START: MODULAR WEAPONRY
+		AC.e_cost = initial(AC.e_cost) * cell.maxcharge / STANDARD_CELL_CHARGE //LASER_SHOTS((initial(AC.e_cost) * (clamp(1 + (cell.maxcharge / STANDARD_CELL_CHARGE * 100), 1, 1.5))), cell.maxcharge)		//LASER_SHOTS(10, STANDARD_CELL_CHARGE)
+		battery_damage_multiplier = max(1 + (cell.maxcharge / (STANDARD_CELL_CHARGE * 200)), 1)
+		//FLUFFY FRONTIER ADDITION END
 		if(cell.charge >= AC.e_cost) //if there's enough power in the cell cell...
 			chambered = AC //...prepare a new shot based on the current ammo type selected
 			if(!chambered.loaded_projectile)
