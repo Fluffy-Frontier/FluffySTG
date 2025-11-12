@@ -8,10 +8,11 @@
 	if(!istype(species))
 		to_chat(src, span_warning("You are not a protean!"))
 		return
-	if(!species.get_modsuit())
+	var/obj/item/mod/control/pre_equipped/protean/suit = species.get_modsuit()
+	if(!istype(suit))
 		to_chat(src, span_warning("ERROR: Missing species modsuit! Report this bug."))
 		return
-	species.get_modsuit().ui_interact(src)
+	suit.ui_interact(src)
 
 /// Heals and replaces damaged limbs/organs. Requires 6 metal sheets and being in suit mode. Takes 30 seconds.
 /mob/living/carbon/proc/protean_heal()
@@ -73,7 +74,7 @@
 				suit.wearer.balloon_alert(suit.wearer, "lock rejected!")
 				return
 
-	species.get_modsuit().toggle_lock()
+	suit.toggle_lock()
 	var/action = suit.modlocked ? "lock" : "unlock"
 	var/target_suffix = (!isprotean(suit.wearer) && loc != suit) ? " onto [suit.wearer]" : ""
 	to_chat(src, span_notice("You <b>[action]</b> the suit[target_suffix]."))
@@ -128,8 +129,9 @@
 	if(istype(has_status_effect(effect), effect))
 		remove_status_effect(effect)
 	else
-		if(species.get_modsuit().active)
-			species.get_modsuit().toggle_activate(usr, TRUE)
+		var/obj/item/mod/control/pre_equipped/protean/power_suit = species.get_modsuit()
+		if(istype(power_suit) && power_suit.active)
+			power_suit.toggle_activate(usr, TRUE)
 		// Preventing low power slowdown being removed by reform cooldown
 		if(has_status_effect(/datum/status_effect/protean_low_power_mode))
 			remove_status_effect(/datum/status_effect/protean_low_power_mode)
