@@ -102,7 +102,7 @@
 	cell = C
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select] //Necessary to find cost of shot
 	shot.e_cost = initial(shot.e_cost) * cell.maxcharge / STANDARD_CELL_CHARGE
-	battery_damage_multiplier = max(1 + (cell.maxcharge / (STANDARD_CELL_CHARGE * 200)), 1)
+	battery_damage_multiplier = cell.maxcharge == STANDARD_CELL_CHARGE ? 1 : max(1 + (cell.maxcharge / (STANDARD_CELL_CHARGE * 200)), 1)
 
 	playsound(src, 'sound/items/weapons/gun/general/magazine_insert_full.ogg', 40, TRUE)
 	update_appearance()
