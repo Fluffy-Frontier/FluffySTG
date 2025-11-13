@@ -13,14 +13,20 @@
 
 /obj/item/attachment/ammo_counter/apply_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
-	if(istype(gun, /obj/item/gun/ballistic))
-		var/obj/item/gun/ballistic/ammo_gun = gun
-		if(!ammo_gun.ammo_counter)
-			ammo_gun.ammo_counter = TRUE
+	if(!gun.ammo_counter)
+		gun.ammo_counter = TRUE
+		var/datum/component/ammo_hud_shiptest/counter/our_counter
+		if(istype(gun, /obj/item/gun/ballistic))
+			var/obj/item/gun/ballistic/ammo_gun = gun
 			ammo_gun.empty_alarm_sound = alarm_sound_path
-			var/datum/component/ammo_hud_shiptest/counter/our_counter = gun.AddComponent(/datum/component/ammo_hud_shiptest/counter)
+			our_counter = gun.AddComponent(/datum/component/ammo_hud_shiptest/counter)
+		else if(istype(gun, /obj/item/gun/energy))
+			our_counter = gun.AddComponent(/datum/component/ammo_hud_shiptest/laser)
+		if(our_counter)
 			our_counter.wake_up(user = user)
 			return TRUE
+		return FALSE
+	else
 		to_chat(user, span_notice("[gun] already has an ammo counter installed!"))
 		return FALSE
 

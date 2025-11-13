@@ -133,7 +133,7 @@
 	if(attach_features_flags & ATTACH_TOGGLE)
 		holder.actions += list(attachment_toggle_action)
 		attachment_toggle_action.gun = holder
-		if(user)
+		if(user && user.is_holding(holder))
 			attachment_toggle_action.Grant(user)
 
 	return TRUE
@@ -153,8 +153,8 @@
 		if(user)
 			attachment_toggle_action.Remove(user)
 
-	if(user.can_put_in_hand(parent))
-		user.put_in_hand(parent)
+	if(user.can_put_in_hand(parent, user.active_hand_index))
+		user.put_in_hand(parent, user.active_hand_index)
 		return TRUE
 	else
 		parent.forceMove(holder.drop_location())

@@ -1,16 +1,14 @@
 /obj/item/gun/ballistic
 
-	///If you can examine a gun to see its current ammo count
-	var/ammo_counter = FALSE
-
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
+		/obj/item/attachment/energy_bayonet,
 		/obj/item/attachment/sling,
 		/obj/item/attachment/ammo_counter,
 		/obj/item/attachment/silencer,
-		///obj/item/attachment/scope,
+		/obj/item/attachment/scope,
 	)
 
 	slot_available = list(

@@ -7,7 +7,8 @@
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
-		///obj/item/attachment/scope,
+		/obj/item/attachment/energy_bayonet,
+		/obj/item/attachment/scope,
 		/obj/item/attachment/sling,
 		/obj/item/attachment/ammo_counter,
 	)
@@ -67,6 +68,10 @@
 			else
 				latch_overlay.icon_state = "latch-off-empty"
 		. += latch_overlay
+
+/obj/item/gun/energy/can_shoot()
+	var/obj/item/ammo_casing/energy/shot = LAZYLEN(ammo_type) ? ammo_type[select] : null
+	return !QDELETED(cell) && shot ? (cell.charge >= shot.e_cost) : FALSE
 
 /obj/item/gun/energy/proc/try_insert_cell(mob/user, obj/item/stock_parts/power_store/cell/new_cell, display_message = TRUE)
 	if(!new_cell)

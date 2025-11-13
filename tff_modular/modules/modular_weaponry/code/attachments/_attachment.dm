@@ -16,6 +16,8 @@
 	///Component that handles most of the logic of attachments
 	var/datum/component/attachment/attachment_comp
 
+	///Only one can be attached if it's unique
+	var/unique = FALSE
 
 	/// the cell in the gun, if any
 	var/obj/item/stock_parts/power_store/cell/gun_cell
