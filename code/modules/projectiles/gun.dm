@@ -212,7 +212,7 @@
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, atom/pbtarget = null, message = TRUE)
 	if(recoil && !tk_firing(user))
-		shake_camera(user, recoil + 1, wielded_fully ? recoil : recoil_unwielded) //FLUFFY FRONTIER EDIT: MODULAR WEAPONRY. ORIGNAL: shake_camera(user, recoil + 1, recoil)
+		shake_camera(user, recoil + 1, wielded_fully ? recoil : recoil_unwielded) //FLUFFY FRONTIER EDIT: MODULAR WEAPONRY. ORIGINAL: shake_camera(user, recoil + 1, recoil)
 	fire_sounds()
 	if(suppressed || !message)
 		return FALSE
@@ -388,14 +388,12 @@
 	if(check_botched(user, target))
 		return
 
-	//FLUFFY FRONTIER EDIT START: MODULAR WEAPONRY
-	/*
+	/* //FLUFFY FRONTIER REMOVAL START: MODULAR WEAPONRY
 	var/obj/item/bodypart/other_hand = user.has_hand_for_held_index(user.get_inactive_hand_index()) //returns non-disabled inactive hands
 	if(weapon_weight == WEAPON_HEAVY && (user.get_inactive_held_item() || !other_hand))
 		balloon_alert(user, "use both hands!")
 		return
-	*/
-	//FLUFFY FRONTIER EDIT: MODULAR WEAPONRY
+	*/ //FLUFFY FRONTIER REMOVAL: MODULAR WEAPONRY
 	//DUAL (or more!) WIELDING
 	var/bonus_spread = 0
 	var/loop_counter = 0

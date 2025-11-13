@@ -1,5 +1,5 @@
 /datum/component/automatic_fire
-	var/enabled = TRUE //FLUFFY FRONTIER ADDITION: MODULAR WEAPONRY
+	var/enabled = TRUE
 
 /datum/component/automatic_fire/proc/disable_autofire(datum/source)
 	enabled = FALSE

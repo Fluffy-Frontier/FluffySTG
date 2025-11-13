@@ -39,11 +39,6 @@
 		return COMPONENT_INCOMPATIBLE
 	var/obj/item/gun = parent
 	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(wake_up))
-	//FLUFFY FRONTIER ADDITION START: MODULAR WEAPONRY
-	RegisterSignal(parent, COMSIG_GUN_DISABLE_AUTOFIRE, PROC_REF(disable_autofire))
-	RegisterSignal(parent, COMSIG_GUN_ENABLE_AUTOFIRE, PROC_REF(enable_autofire))
-	RegisterSignal(parent, COMSIG_GUN_SET_AUTOFIRE_SPEED, PROC_REF(set_autofire_speed))
-	//FLUFFY FRONTIER ADDITION END
 	if(autofire_shot_delay)
 		src.autofire_shot_delay = autofire_shot_delay
 	src.allow_akimbo = allow_akimbo
@@ -133,10 +128,6 @@
 	SIGNAL_HANDLER
 	var/list/modifiers = params2list(params) //If they're shift+clicking, for example, let's not have them accidentally shoot.
 
-	//FLUFFY FRONTIER ADDITION START: MODULAR WEAPONRY
-	if(!enabled)
-		return
-	//FLUFFY FRONTIER ADDITION END
 	if(LAZYACCESS(modifiers, SHIFT_CLICK))
 		return
 	if(LAZYACCESS(modifiers, CTRL_CLICK))

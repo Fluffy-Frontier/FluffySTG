@@ -1,12 +1,27 @@
 /obj/item/gun/energy/disabler
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/ammo_counter,
+	)
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = LIGHT_PISTOL_SLOWDOWN
 
 /obj/item/gun/energy/e_gun/advtaser
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/ammo_counter,
+	)
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = LIGHT_PISTOL_SLOWDOWN
 
 /obj/item/gun/energy/e_gun/dragnet
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/ammo_counter,
+	)
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = HEAVY_PISTOL_SLOWDOWN
 

@@ -1,8 +1,25 @@
+/obj/item/gun/ballistic/automatic/pistol/pepperball
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/ammo_counter,
+	)
+
 /obj/item/gun/ballistic/automatic/pistol/type207
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/ammo_counter,
+	)
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = LIGHT_PISTOL_SLOWDOWN
 
 /obj/item/gun/ballistic/automatic/type213
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/ammo_counter,
+	)
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = HEAVY_PISTOL_SLOWDOWN
 
@@ -141,4 +158,3 @@
 	aimed_wield_slowdown = LIGHT_AIM_SLOWDOWN
 	wield_slowdown = SHOTGUN_SLOWDOWN
 	recoil_unwielded = 0.7
-

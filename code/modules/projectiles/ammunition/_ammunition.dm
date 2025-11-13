@@ -91,12 +91,12 @@
 		if(isgun(our_box.loc))
 			var/obj/item/gun/our_gun = our_box.loc
 			// grab the damage multiplier
-			proj_damage_mult = our_gun.projectile_damage_multiplier + (our_gun.battery_damage_multiplier - 1) //FLUFFY FRONTIER ADDITION: MODULAR WEAPONRY. ORIGINAL: proj_damage_mult = our_gun.projectile_damage_multiplier
+			proj_damage_mult = our_gun.projectile_damage_multiplier + (our_gun.battery_damage_multiplier - 1) //FLUFFY FRONTIER EDIT: MODULAR WEAPONRY. ORIGINAL: proj_damage_mult = our_gun.projectile_damage_multiplier
 	// if not, are we just in a gun e.g. chambered
 	else if(isgun(loc))
 		var/obj/item/gun/our_gun = loc
 		// grab the damage multiplier.
-		proj_damage_mult = our_gun.projectile_damage_multiplier + (our_gun.battery_damage_multiplier - 1) //FLUFFY FRONTIER ADDITION: MODULAR WEAPONRY. ORIGINAL: proj_damage_mult = our_gun.projectile_damage_multiplier
+		proj_damage_mult = our_gun.projectile_damage_multiplier + (our_gun.battery_damage_multiplier - 1) //FLUFFY FRONTIER EDIT: MODULAR WEAPONRY. ORIGINAL: proj_damage_mult = our_gun.projectile_damage_multiplier
 	var/list/readout = list()
 	if(proj_damage_mult <= 0 || (initial_damage <= 0 && initial_stamina <= 0))
 		return "Our legal team has determined the offensive nature of these [span_warning(caliber)] rounds to be esoteric."

@@ -124,12 +124,10 @@
 	if(gun_firemodes.len > 1)
 		. += "You can change the [src]'s firemode by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
 
-/obj/item/gun/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
+/obj/item/gun/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(HAS_TRAIT(user, TRAIT_USER_SCOPED) && !is_wielded())
 		bonus_spread += 10
 	return ..()
-
-
 
 /// triggered on wield of two handed item
 /obj/item/gun/proc/on_wield(obj/item/source, mob/user)

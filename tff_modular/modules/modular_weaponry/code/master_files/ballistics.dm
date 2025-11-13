@@ -31,3 +31,27 @@
 			"y" = 22,
 		)
 	)
+
+/obj/item/gun/ballistic/automatic
+	actions_types = list()
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
+
+
+/obj/item/gun/ballistic/automatic/pistol
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/energy_bayonet,
+		/obj/item/attachment/ammo_counter,
+		/obj/item/attachment/silencer,
+	)
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+
+/obj/item/gun/ballistic/shotgun
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/ammo_counter,
+		/obj/item/attachment/sling,
+	)
