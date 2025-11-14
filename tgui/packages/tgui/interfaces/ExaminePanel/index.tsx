@@ -171,7 +171,10 @@ export function ExaminePanel(props) {
                               fontWeight: 'bold',
                             }}
                           >
-                            Nova Star! ⭐
+                            {/* FLUFFY FORONTIER EDIT START - ORIGINAL: */}
+                            {/*Nova Star! ⭐*/}
+                            Player is a Veteran.
+                            {/* FLUFFY FORONTIER EDIT END */}
                           </span>
                         </Stack.Item>
                       )}

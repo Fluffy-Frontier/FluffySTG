@@ -4,7 +4,7 @@ GLOBAL_PROTECT(nova_star_list)
 
 
 /datum/player_rank_controller/nova_star
-	rank_title = "nova_star"
+	rank_title = "veteran" // rank_title = "nova_star"
 
 
 /datum/player_rank_controller/nova_star/New()

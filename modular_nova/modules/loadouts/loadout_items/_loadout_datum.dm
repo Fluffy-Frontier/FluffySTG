@@ -124,9 +124,9 @@
 			to_chat(target, span_warning("You were unable to get a loadout item ([initial(item_path.name)]) due to not being a donator!"))
 		return FALSE
 
-	if(veteran_only && !SSplayer_ranks.is_veteran(client))
+	if(nova_stars_only && !SSplayer_ranks.is_nova_star(client))
 		if(client)
-			to_chat(target, span_warning("You were unable to get a loadout item ([initial(item_path.name)]) due to not being a Nova star!"))
+			to_chat(target, span_warning("You were unable to get a loadout item ([initial(item_path.name)]) due to not being a veteran!")) // FLUFFY FRONTIER EDIT - ORIGINAL: to_chat(target, span_warning("You were unable to get a loadout item ([initial(item_path.name)]) due to not being a Nova star!"))
 		return FALSE
 
 	if(LAZYLEN(ckeywhitelist) && !(client?.ckey in ckeywhitelist))

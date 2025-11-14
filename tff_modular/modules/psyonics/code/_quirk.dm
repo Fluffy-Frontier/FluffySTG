@@ -35,7 +35,7 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 	lose_text = span_warning("You lost something, that kept your connection with other realms.")
 	icon = "fa-star"
 	mob_trait = TRAIT_PSYONIC_USER
-	veteran_only = TRUE
+	nova_stars_only = TRUE
 	allow_for_donator = TRUE
 	// Текущий уровень маны
 	var/mana_level = 0

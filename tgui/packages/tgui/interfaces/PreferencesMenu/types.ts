@@ -57,12 +57,8 @@ export type Species = {
 
   enabled_features: string[];
 
-<<<<<<< HEAD
-  veteran_only: boolean; // NOVA EDIT - Veteran quirks
-  allow_for_donator: boolean; // THE FLUFFY FRONTIER - For donators
-=======
   nova_stars_only: boolean; // NOVA EDIT - Nova star quirks
->>>>>>> ec6d0b39b1a (Veteran -> Nova star (#5663))
+  allow_for_donator: boolean; // FLUFFY FRONTIER ADDITION - For donators
 
   perks: {
     positive: Perk[];
