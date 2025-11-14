@@ -74,7 +74,7 @@
 		mask = /obj/item/clothing/mask/breath/vox
 		internals_slot = ITEM_SLOT_HANDS
 
-	if(client?.is_nova_star() && client?.prefs.read_preference(/datum/preference/toggle/playtime_reward_cloak))
+	if(client?.is_veteran() && client?.prefs.read_preference(/datum/preference/toggle/playtime_reward_cloak))
 		neck = /obj/item/clothing/neck/cloak/skill_reward/playing
 
 /datum/outfit/tarkon/post_equip(mob/living/carbon/human/tarkon, visualsOnly = FALSE)
