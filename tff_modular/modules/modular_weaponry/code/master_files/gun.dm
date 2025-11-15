@@ -58,7 +58,7 @@
 	/// after initializing, we set the firemode to this
 	var/default_firemode = FIREMODE_SEMIAUTO
 	///Firemode index, due to code shit this is the currently selected firemode
-	var/firemode_index
+	var/firemode_index = 1
 	/// Our firemodes, subtract and add to this list as needed. NOTE that the autofire component is given on init when FIREMODE_FULLAUTO is here.
 	//full list: FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER, FIREMODE_OTHER_TWO
 	var/list/gun_firemodes = list(FIREMODE_SEMIAUTO)
@@ -173,11 +173,13 @@
 
 /obj/item/gun/proc/build_firemodes()
 	if(FIREMODE_FULLAUTO in gun_firemodes)
-		default_firemode = FIREMODE_FULLAUTO
 		if(!GetComponent(/datum/component/automatic_fire))
-			AddComponent(/datum/component/automatic_fire, fire_delay)
+			AddComponent(/datum/component/automatic_fire, fire_delay + 3) // Из-за того, что обычные пушки без автоматики не рассчитаны на автоматический огонь, приходится добавлять КД обычного клика (4). Без этого ствол начинает стрелять слишком быстро
+
+	var/datum/component/automatic_fire/our_fire = GetComponent(/datum/component/automatic_fire)
+	if(our_fire)
+		our_fire.autofire_off(our_fire)
 	if(burst_size > 1 && !(FIREMODE_BURST in gun_firemodes))
-		default_firemode = FIREMODE_BURST
 		LAZYADD(gun_firemodes, FIREMODE_BURST)
 
 	for(var/datum/action/item_action/toggle_firemode/old_firemode in actions)
@@ -186,16 +188,6 @@
 	//if(gun_firemodes.len > 1)
 	//	add_item_action(/datum/action/item_action/toggle_firemode)
 
-	for(var/i=1, i <= gun_firemodes.len+1, i++)
-		if(default_firemode == gun_firemodes[i])
-			firemode_index = i
-			if(gun_firemodes[i] == FIREMODE_FULLAUTO)
-				SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AUTOFIRE)
-			return
-
-	firemode_index = 1
-	CRASH("default_firemode isn't in the gun_firemodes list of [src.type]!! Defaulting to 1!!")
-
 /obj/item/gun/proc/fire_select(mob/living/carbon/human/user)
 	firemode_index++
 	if(firemode_index > gun_firemodes.len)
@@ -203,11 +195,11 @@
 
 	var/current_firemode = gun_firemodes[firemode_index]
 	if(current_firemode == FIREMODE_FULLAUTO)
-		SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AUTOFIRE)
+		GetComponent(/datum/component/automatic_fire)?.wake_up(GetComponent(/datum/component/automatic_fire), user)
 	else
-		SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
+		GetComponent(/datum/component/automatic_fire)?.autofire_off(GetComponent(/datum/component/automatic_fire))
 
-//wawa
+
 	to_chat(user, span_notice("Switched to [gun_firenames[current_firemode]]."))
 	playsound(user, SFX_FIRE_MODE_SWITCH, 100, TRUE)
 	update_appearance()

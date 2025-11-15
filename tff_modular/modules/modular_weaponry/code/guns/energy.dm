@@ -1,35 +1,41 @@
 /obj/item/gun/energy/disabler
+	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
+	wield_slowdown = LIGHT_PISTOL_SLOWDOWN
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/ammo_counter,
 	)
-	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
-	wield_slowdown = LIGHT_PISTOL_SLOWDOWN
 
 /obj/item/gun/energy/e_gun/advtaser
-	valid_attachments = list(
-		/obj/item/attachment/laser_sight,
-		/obj/item/attachment/rail_light,
-		/obj/item/attachment/ammo_counter,
-	)
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = LIGHT_PISTOL_SLOWDOWN
-
-/obj/item/gun/energy/e_gun/dragnet
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/ammo_counter,
 	)
+
+/obj/item/gun/energy/e_gun/dragnet
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = HEAVY_PISTOL_SLOWDOWN
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/ammo_counter,
+	)
 
 /obj/item/gun/energy/disabler/smg
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = HEAVY_PISTOL_SLOWDOWN
 	recoil_unwielded = 0.1
 	spread_unwielded = 8
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/ammo_counter,
+	)
 
 /obj/item/gun/energy/blueshield
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN

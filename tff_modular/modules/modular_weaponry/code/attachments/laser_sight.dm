@@ -11,10 +11,10 @@
 	. = ..()
 
 	if(toggled)
-		gun.spread -= 3
-		gun.spread_unwielded -= 3
+		gun.spread = initial(gun.spread) - 3 >= 0 ? initial(gun.spread) - 3 : 0
+		gun.spread_unwielded = initial(gun.spread_unwielded) - 3 >= 0 ? initial(gun.spread_unwielded) - 3 : 0
 	else
-		gun.spread += 3
-		gun.spread_unwielded += 3
+		gun.spread += initial(gun.spread) - 3 >= 0 ? initial(gun.spread) + 3 : 1
+		gun.spread_unwielded = initial(gun.spread_unwielded) - 3 >= 0 ? initial(gun.spread_unwielded) + 3 : 1
 
 	playsound(user, toggled ? 'sound/items/weapons/magin.ogg' : 'sound/items/weapons/magout.ogg', 40, TRUE)

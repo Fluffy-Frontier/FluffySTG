@@ -1,11 +1,9 @@
-/datum/component/automatic_fire
-	var/enabled = TRUE
-
-/datum/component/automatic_fire/proc/disable_autofire(datum/source)
-	enabled = FALSE
-
-/datum/component/automatic_fire/proc/enable_autofire(datum/source)
-	enabled = TRUE
-
-/datum/component/automatic_fire/proc/set_autofire_speed(datum/source, newspeed)
-	autofire_shot_delay = newspeed
+/datum/component/automatic_fire/wake_up(datum/source, mob/user, slot)
+	if(autofire_stat == AUTOFIRE_STAT_ALERT)
+		return //We've updated the firemode. No need for more.
+	if(autofire_stat == AUTOFIRE_STAT_FIRING)
+		stop_autofiring() //Let's stop shooting to avoid issues.
+		return
+	var/obj/item/gun/weapon = parent
+	if(user.is_holding(weapon) && weapon.gun_firemodes[weapon.firemode_index] == FIREMODE_FULLAUTO)
+		autofire_on(user.client)
