@@ -25,8 +25,6 @@
 
 	//true if the gun is wielded via twohanded component, shouldnt affect anything else
 	var/wielded = FALSE
-	//true if the gun is wielded after delay, should affects accuracy
-	var/wielded_fully = FALSE
 	///Slowdown for wielding
 	var/wield_slowdown = NO_SLOWDOWN
 	///slowdown for aiming whilst wielding
@@ -132,7 +130,6 @@
 /// triggered on wield of two handed item
 /obj/item/gun/proc/on_wield(obj/item/source, mob/user)
 	user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wield_slowdown)
-	wielded_fully = TRUE
 	wielded = TRUE
 
 	// Let's reserve the other hand
@@ -156,7 +153,6 @@
 /// triggered on unwield of two handed item
 /obj/item/gun/proc/on_unwield(obj/item/source, mob/user)
 	wielded = FALSE
-	wielded_fully = FALSE
 	try_stop_zooming(user, GetComponent(/datum/component/scope))
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/gun)
 	qdel(offhand_item)

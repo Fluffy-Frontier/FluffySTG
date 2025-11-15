@@ -212,7 +212,7 @@
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, atom/pbtarget = null, message = TRUE)
 	if(recoil && !tk_firing(user))
-		shake_camera(user, recoil + 1, wielded_fully ? recoil : recoil_unwielded) //FLUFFY FRONTIER EDIT: MODULAR WEAPONRY. ORIGINAL: shake_camera(user, recoil + 1, recoil)
+		shake_camera(user, recoil + 1, wielded ? recoil : recoil_unwielded) //FLUFFY FRONTIER EDIT: MODULAR WEAPONRY. ORIGINAL: shake_camera(user, recoil + 1, recoil)
 	fire_sounds()
 	if(suppressed || !message)
 		return FALSE
@@ -402,11 +402,11 @@
 			if(gun == src || gun.weapon_weight >= WEAPON_MEDIUM)
 				continue
 			else if(gun.can_trigger_gun(user, akimbo_usage = TRUE))
-				//FLUFFY FRONTIER EDIT START: MODULAR WEAPONRY
+				//FLUFFY FRONTIER ADDITION START: MODULAR WEAPONRY
 				if(gun.weapon_weight >= WEAPON_MEDIUM)
-					user.adjustStaminaLoss(15 * gun.weapon_weight) //НЕДОЛГО ПЕСЕНКА ИГРАЛА
+					user.adjustStaminaLoss(15 * gun.weapon_weight)
 					bonus_spread += 20
-				//FLUFFY FRONTIER EDIT: MODULAR WEAPONRY
+				//FLUFFY FRONTIER ADDITION END=
 				bonus_spread += dual_wield_spread
 				loop_counter++
 				addtimer(CALLBACK(gun, TYPE_PROC_REF(/obj/item/gun, process_fire), target, user, TRUE, params, null, bonus_spread), loop_counter)
@@ -517,7 +517,7 @@
 
 	//Vary by at least this much
 	var/randomized_bonus_spread = rand(base_bonus_spread, bonus_spread)
-	var/randomized_gun_spread = rand(0, wielded_fully ? spread : spread_unwielded) //FLUFFY FRONTIER EDIT: MODULAR WEAPONRY. ORIGINAL: var/randomized_gun_spread = spread ? rand(0, spread) : 0
+	var/randomized_gun_spread = rand(0, wielded ? spread : spread_unwielded) //FLUFFY FRONTIER EDIT: MODULAR WEAPONRY. ORIGINAL: var/randomized_gun_spread = spread ? rand(0, spread) : 0
 	var/total_random_spread = max(0, randomized_bonus_spread + randomized_gun_spread)
 	var/burst_spread_mult = rand()
 

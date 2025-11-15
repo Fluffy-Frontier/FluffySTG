@@ -45,7 +45,7 @@
 
 /obj/item/attachment/gun/on_wield(obj/item/gun/gun, mob/user, list/params)
 	if(attached_gun)
-		attached_gun.wielded_fully = TRUE
+		attached_gun.wielded = TRUE
 
 /obj/item/attachment/gun/on_unwield(obj/item/gun/gun, mob/user, list/params)
 	if(attached_gun)

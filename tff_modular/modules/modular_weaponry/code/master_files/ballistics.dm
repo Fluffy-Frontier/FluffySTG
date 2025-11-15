@@ -9,6 +9,7 @@
 		/obj/item/attachment/ammo_counter,
 		/obj/item/attachment/silencer,
 		/obj/item/attachment/scope,
+		/obj/item/attachment/long_scope,
 	)
 
 	slot_available = list(
@@ -20,11 +21,11 @@
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 29,
-			"y" = 16,
+			"y" = 14,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 22,
-			"y" = 16,
+			"x" = 18,
+			"y" = 17,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
 			"x" = 18,
@@ -46,7 +47,27 @@
 		/obj/item/attachment/ammo_counter,
 		/obj/item/attachment/silencer,
 	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 23,
+			"y" = 16,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 16,
+			"y" = 22,
+		)
+	)
+
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
+
+/obj/item/gun/ballistic/revolver
+	valid_attachments = list(
+		/obj/item/attachment/ammo_counter,
+	)
 
 /obj/item/gun/ballistic/shotgun
 	valid_attachments = list(
@@ -54,4 +75,18 @@
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/ammo_counter,
 		/obj/item/attachment/sling,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 29,
+			"y" = 14,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 16,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 18,
+			"y" = 22,
+		)
 	)

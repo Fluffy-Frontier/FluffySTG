@@ -154,20 +154,23 @@
 
 ///Заряд батарейки включенным станбатоном
 /obj/item/gun/energy/proc/try_charging_with_batton(obj/item/melee/baton/security/stunbaton, mob/living/carbon/user)
+	to_chat(user, "[(atom_integrity / max_integrity) * 100]")
+	if((atom_integrity / max_integrity) * 100 < 75)
+		return ITEM_INTERACT_BLOCKING
 	//Если батарея пуста или станбатон выключен - обычный удар по стволу
 	if(has_empty_cell() || !stunbaton.active)
 		stunbaton.attack_atom(src, user)
-		return
+		return ITEM_INTERACT_SUCCESS
 	//Шанс может быть больше, если в это верить
 	if(loc == user && prob(40))
 		stunbaton.attack(user, user)
-		return
+		return ITEM_INTERACT_SUCCESS
 	if(prob(25))
 		do_sparks(3, source = src)
 		qdel(cell)
 		to_chat(user, span_warning("Из разъема для батареи разносится отвратительный горелый запах."))
 		stunbaton.attack_atom(src, user)
-		return
+		return ITEM_INTERACT_SUCCESS
 	//Ну это реально глупо. Кто будет в здравом уме бить электрической дубинкой по энергетическому оружие, чтобы зарядить его.
 	if(cell.charge == cell.maxcharge)
 		//НА ПУТИ К ФИАСКО
@@ -175,19 +178,19 @@
 			if(prob(50))
 				explosion(src, 0, 0, 1, 2, 1, "[user] попытался зарядить [name] с помощью грубой силы.")
 				qdel(cell)
-				return
+				return ITEM_INTERACT_SUCCESS
 			else
 				do_sparks(3, source = src)
 				cell.use(cell.charge)
 				to_chat(user, span_notice("Батарея издает подозрительный звук."))
 				stunbaton.attack_atom(src, user)
-				return
+				return ITEM_INTERACT_SUCCESS
 	if(prob(55))
 		do_sparks(3, source = src)
 		electrocute_mob(user, cell, src)
 		cell.use(LASER_SHOTS(2, cell.maxcharge))
 		stunbaton.attack_atom(src, user)
-		return
+		return ITEM_INTERACT_SUCCESS
 	else
 		//Если игрок прошел через все испытания он получает ААААААААААВТО. 5 патронов.
 		cell.give(LASER_SHOTS(5, cell.maxcharge))

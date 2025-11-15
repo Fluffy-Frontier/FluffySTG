@@ -1,5 +1,4 @@
-// FLUFFY FRONTIER REMOVAL START: MODULAR WEAPONRY
-/*
+/* // FLUFFY FRONTIER REMOVAL START: MODULAR WEAPONRY
 //This is where we add the crank elements to energy weapons, using a mix of both the musket and hot/cold revolvers as base. You see me using LASER_SHOTS because its a defined function to calculate a fraction of the power cell, in this case, I use it to calculate a 25% recharge. Ideally, this system would cancel on shoot, or even have a stamina cost, it will have to wait for a phase two.
 
 #define CRANK_MESSAGE "Outfitted with a manual dyno-crank assembly. Burns an action to top up the cell on the fly, slower than a proper charger, but keeps you shooting when it counts."
@@ -56,5 +55,4 @@
 	. += span_notice(CRANK_MESSAGE)
 
 #undef CRANK_MESSAGE
-*/
-// FLUFFY FRONTIER REMOVAL END
+*/ // FLUFFY FRONTIER REMOVAL END

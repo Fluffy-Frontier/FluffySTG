@@ -179,8 +179,8 @@
 		if(!chambered) //if empty chamber we try to charge a new shot
 			recharge_newshot(TRUE)
 		update_appearance()
-//FLUFFY FRONTIER REMOVAL START: MODULAR WEAPONRY
-/*
+
+/* //FLUFFY FRONTIER REMOVAL START: MODULAR WEAPONRY
 /obj/item/gun/energy/attack_self(mob/living/user as mob)
 	. = ..()
 	if(.)
@@ -188,8 +188,7 @@
 
 	if(ammo_type.len > 1 && can_select)
 		select_fire(user)
-*/
-//FLUFFY FRONTIER REMOVAL END
+*/ //FLUFFY FRONTIER REMOVAL END
 
 /obj/item/gun/energy/can_shoot()
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]

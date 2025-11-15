@@ -47,11 +47,39 @@
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = HEAVY_PISTOL_SLOWDOWN
 	recoil_unwielded = 0.1
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/energy_bayonet,
+		/obj/item/attachment/ammo_counter,
+	)
 
 /obj/item/gun/ballistic/automatic/pistol/plasma_thrower
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = SMG_SLOWDOWN
 	recoil_unwielded = 0.3
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/energy_bayonet,
+		/obj/item/attachment/ammo_counter,
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 21,
+			"y" = 16,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 17,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 16,
+			"y" = 22,
+		)
+	)
 
 /obj/item/gun/energy/e_gun
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
