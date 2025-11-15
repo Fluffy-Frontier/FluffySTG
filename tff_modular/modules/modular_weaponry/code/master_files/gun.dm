@@ -181,7 +181,7 @@
 
 	var/datum/component/automatic_fire/our_fire = GetComponent(/datum/component/automatic_fire)
 	if(our_fire)
-		our_fire.autofire_shot_delay = our_fire.autofire_shot_delay - 4 < 0 : autofire_shot_delay + 4 : our_fire.autofire_shot_delay
+		our_fire.autofire_shot_delay = our_fire.autofire_shot_delay - 4 < 0 ? our_fire.autofire_shot_delay + 4 : our_fire.autofire_shot_delay
 		our_fire.autofire_off(our_fire)
 
 	for(var/datum/action/item_action/toggle_firemode/old_firemode in actions)
