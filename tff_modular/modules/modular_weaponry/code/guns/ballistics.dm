@@ -142,8 +142,8 @@
 			"y" = 17,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 16,
-			"y" = 21,
+			"x" = 14,
+			"y" = 22,
 		)
 	)
 
@@ -277,7 +277,7 @@
 			"y" = 17,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 16,
+			"x" = 14,
 			"y" = 22,
 		)
 	)

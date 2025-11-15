@@ -167,7 +167,8 @@
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = RIFLE_SLOWDOWN
 	recoil_unwielded = 0.3
-	spread_unwielded = 8slot_offsets = list(
+	spread_unwielded = 8
+	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 27,
 			"y" = 16,

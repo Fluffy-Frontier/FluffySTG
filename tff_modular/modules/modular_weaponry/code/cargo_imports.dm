@@ -9,10 +9,6 @@
 /datum/armament_entry/company_import/attachments/bayonet
 	item_type = /obj/item/attachment/bayonet
 
-/datum/armament_entry/company_import/attachments/energy_bayonet
-	cost = 120
-	item_type = /obj/item/attachment/energy_bayonet
-
 /datum/armament_entry/company_import/attachments/laser_sight
 	item_type = /obj/item/attachment/laser_sight
 
@@ -26,6 +22,11 @@
 	item_type = /obj/item/attachment/silencer
 	contraband = TRUE
 /*
+
+/datum/armament_entry/company_import/attachments/energy_bayonet
+	cost = 120
+	item_type = /obj/item/attachment/energy_bayonet
+
 /datum/armament_entry/company_import/attachments/stock
 	item_type = /obj/item/attachment/foldable_stock
 

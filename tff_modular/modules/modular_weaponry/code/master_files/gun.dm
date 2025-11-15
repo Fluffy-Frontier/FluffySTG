@@ -172,6 +172,9 @@
 	return //reserved in case another fire mode is needed, if you need special behavior, put it here then call process_fire, or call process_fire and have the special behavior there
 
 /obj/item/gun/proc/build_firemodes()
+	if(burst_size > 1 && !(FIREMODE_BURST in gun_firemodes))
+		LAZYADD(gun_firemodes, FIREMODE_BURST)
+
 	if(FIREMODE_FULLAUTO in gun_firemodes)
 		if(!GetComponent(/datum/component/automatic_fire))
 			AddComponent(/datum/component/automatic_fire, fire_delay + 2) // Из-за того, что обычные пушки без автоматики не рассчитаны на автоматический огонь, приходится добавлять КД обычного клика (4). Без этого ствол начинает стрелять слишком быстро
@@ -180,8 +183,6 @@
 	if(our_fire)
 		our_fire.autofire_shot_delay = our_fire.autofire_shot_delay - 4 < 0 : autofire_shot_delay + 4 : our_fire.autofire_shot_delay
 		our_fire.autofire_off(our_fire)
-	if(burst_size > 1 && !(FIREMODE_BURST in gun_firemodes))
-		LAZYADD(gun_firemodes, FIREMODE_BURST)
 
 	for(var/datum/action/item_action/toggle_firemode/old_firemode in actions)
 		old_firemode.Destroy()

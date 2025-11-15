@@ -8,7 +8,6 @@
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
 		/obj/item/attachment/energy_bayonet,
-		/obj/item/attachment/sling,
 		/obj/item/attachment/ammo_counter,
 	)
 	slot_available = list(
