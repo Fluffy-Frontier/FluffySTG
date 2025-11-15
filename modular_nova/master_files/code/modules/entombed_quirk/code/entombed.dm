@@ -185,7 +185,7 @@
 		"Corpsman",
 		"Cosmohonk",
 		"Engineering",
-		"Infiltrator",
+		//"Infiltrator", //FLUFFY FRONTIER REMOVAL: Entombed Publification
 		"Interdyne",
 		"Loader",
 		"Medical",
