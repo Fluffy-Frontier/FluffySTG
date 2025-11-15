@@ -8,7 +8,6 @@
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/bayonet,
 		/obj/item/attachment/energy_bayonet,
-		/obj/item/attachment/scope,
 		/obj/item/attachment/sling,
 		/obj/item/attachment/ammo_counter,
 	)
@@ -28,7 +27,7 @@
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
 			"x" = 16,
-			"y" = 22,
+			"y" = 24,
 		)
 	)
 

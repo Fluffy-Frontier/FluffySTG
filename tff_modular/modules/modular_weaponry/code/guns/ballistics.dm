@@ -32,7 +32,7 @@
 /obj/item/gun/ballistic/automatic/pistol/sol
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 24,
+			"x" = 20,
 			"y" = 17,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
@@ -91,6 +91,20 @@
 		/obj/item/attachment/energy_bayonet,
 		/obj/item/attachment/ammo_counter,
 	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 23,
+			"y" = 19,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 16,
+			"y" = 22,
+		)
+	)
 
 /obj/item/gun/ballistic/revolver
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
@@ -101,12 +115,18 @@
 	wield_slowdown = LIGHT_PISTOL_SLOWDOWN
 	spread_unwielded = 8
 	dual_wield_spread = 1
+	valid_attachments = list(
+		/obj/item/attachment/ammo_counter,
+	)
 
 /obj/item/gun/energy/laser/thermal/cryo
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = LIGHT_PISTOL_SLOWDOWN
 	spread_unwielded = 8
 	dual_wield_spread = 1
+	valid_attachments = list(
+		/obj/item/attachment/ammo_counter,
+	)
 
 /obj/item/gun/ballistic/automatic/c20r
 	aimed_wield_slowdown = AIM_SLOWDOWN
@@ -138,12 +158,12 @@
 		/obj/item/attachment/bayonet,
 		/obj/item/attachment/energy_bayonet,
 		/obj/item/attachment/ammo_counter,
-		/obj/item/attachment/scope,
+		/obj/item/attachment/sling,
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 27,
-			"y" = 14,
+			"y" = 15,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 16,
@@ -187,6 +207,7 @@
 		/obj/item/attachment/ammo_counter,
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope,
+		/obj/item/attachment/sling,
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -199,7 +220,7 @@
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
 			"x" = 18,
-			"y" = 21,
+			"y" = 20,
 		)
 	)
 
@@ -215,6 +236,7 @@
 		/obj/item/attachment/ammo_counter,
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope,
+		/obj/item/attachment/sling,
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -227,7 +249,7 @@
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
 			"x" = 18,
-			"y" = 24,
+			"y" = 26,
 		)
 	)
 
@@ -243,6 +265,7 @@
 		/obj/item/attachment/ammo_counter,
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope,
+		/obj/item/attachment/sling,
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -268,9 +291,8 @@
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/energy_bayonet,
 		/obj/item/attachment/ammo_counter,
+		/obj/item/attachment/sling,
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -292,6 +314,13 @@
 	aimed_wield_slowdown = LIGHT_AIM_SLOWDOWN
 	wield_slowdown = SMG_SLOWDOWN
 	recoil_unwielded = 0.1
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/energy_bayonet,
+		/obj/item/attachment/ammo_counter,
+	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 26,
@@ -319,6 +348,7 @@
 		/obj/item/attachment/ammo_counter,
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope,
+		/obj/item/attachment/sling,
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
@@ -330,8 +360,8 @@
 			"y" = 17,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 16,
-			"y" = 22,
+			"x" = 13,
+			"y" = 23,
 		)
 	)
 
@@ -349,6 +379,7 @@
 		/obj/item/attachment/ammo_counter,
 		/obj/item/attachment/scope,
 		/obj/item/attachment/long_scope,
+		/obj/item/attachment/sling,
 	)
 
 //MMR-2543
@@ -362,11 +393,11 @@
 			"y" = 15,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 18,
+			"x" = 19,
 			"y" = 17,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 18,
+			"x" = 24,
 			"y" = 22,
 		)
 	)

@@ -29,21 +29,3 @@
 		. += "[src] has \a <b>[cell]</b> inside its chamber."
 	. += "\n"
 	. += "[src] is currently in <b>[ammo_type[select]:select_name]</b> mode."
-
-/obj/item/gun/energy/blueshield/click_alt(mob/user)
-	select_fire(user)
-	playsound(usr, SFX_REVOLVER_SPIN, 30, FALSE)
-	return CLICK_ACTION_SUCCESS
-
-/obj/item/gun/energy/blueshield/attack_self(mob/living/user)
-	if(has_empty_cell())
-		balloon_alert(user, "there is no cell!")
-		return FALSE
-	eject_cell(user)
-
-/*
-*	(Почти) пустая батарейка.
-*	Её цель - встать на место извлечённой, чтобы не ломать неожиданным null'ом ничего.
-*/
-/obj/item/stock_parts/power_store/cell/zerocell
-	maxcharge = 1

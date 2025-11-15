@@ -42,12 +42,23 @@
 	wield_slowdown = HEAVY_PISTOL_SLOWDOWN
 	recoil_unwielded = 0.1
 	spread_unwielded = 7
+	valid_attachments = list(
+		/obj/item/attachment/ammo_counter,
+	)
 
 /obj/item/gun/energy/modular_laser_rifle/carbine
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = HEAVY_PISTOL_SLOWDOWN
 	recoil_unwielded = 0.2
 	spread_unwielded = 7
+	valid_attachments = list(
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/energy_bayonet,
+		/obj/item/attachment/ammo_counter,
+		/obj/item/attachment/scope,
+	)
 
 /obj/item/gun/ballistic/automatic/pistol/plasma_marksman
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
@@ -60,6 +71,20 @@
 		/obj/item/attachment/energy_bayonet,
 		/obj/item/attachment/ammo_counter,
 	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 19,
+			"y" = 16,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 16,
+			"y" = 22,
+		)
+	)
 
 /obj/item/gun/ballistic/automatic/pistol/plasma_thrower
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
@@ -68,13 +93,11 @@
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
-		/obj/item/attachment/bayonet,
-		/obj/item/attachment/energy_bayonet,
 		/obj/item/attachment/ammo_counter,
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 21,
+			"x" = 19,
 			"y" = 16,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
@@ -104,6 +127,9 @@
 	wield_slowdown = LIGHT_PISTOL_SLOWDOWN
 	recoil_unwielded = 0
 	spread_unwielded = 5
+	valid_attachments = list(
+		/obj/item/attachment/ammo_counter,
+	)
 
 /obj/item/gun/energy/laser
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
@@ -124,7 +150,7 @@
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 27,
-			"y" = 16,
+			"y" = 14,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 19,
@@ -141,7 +167,20 @@
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = RIFLE_SLOWDOWN
 	recoil_unwielded = 0.3
-	spread_unwielded = 8
+	spread_unwielded = 8slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 27,
+			"y" = 16,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 17,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 16,
+			"y" = 22,
+		)
+	)
 
 /obj/item/gun/energy/modular_laser_rifle
 	aimed_wield_slowdown = LIGHT_AIM_SLOWDOWN
