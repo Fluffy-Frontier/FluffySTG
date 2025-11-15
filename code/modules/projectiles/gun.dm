@@ -406,7 +406,7 @@
 				if(gun.weapon_weight >= WEAPON_MEDIUM)
 					user.adjustStaminaLoss(15 * gun.weapon_weight)
 					bonus_spread += 20
-				//FLUFFY FRONTIER ADDITION END=
+				//FLUFFY FRONTIER ADDITION END
 				bonus_spread += dual_wield_spread
 				loop_counter++
 				addtimer(CALLBACK(gun, TYPE_PROC_REF(/obj/item/gun, process_fire), target, user, TRUE, params, null, bonus_spread), loop_counter)

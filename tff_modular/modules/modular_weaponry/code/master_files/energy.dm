@@ -20,14 +20,14 @@
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 27,
-			"y" = 20,
+			"y" = 16,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
-			"x" = 19,
+			"x" = 17,
 			"y" = 18,
 		),
 		ATTACHMENT_SLOT_SCOPE = list(
-			"x" = 18,
+			"x" = 16,
 			"y" = 22,
 		)
 	)

@@ -115,6 +115,21 @@
 	wield_slowdown = RIFLE_SLOWDOWN
 	recoil_unwielded = 0.3
 	spread_unwielded = 8
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 27,
+			"y" = 16,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 16,
+			"y" = 20,
+		)
+	)
+
 
 /obj/item/gun/energy/laser/hellgun
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
@@ -127,6 +142,21 @@
 	wield_slowdown = RIFLE_SLOWDOWN
 	recoil_unwielded = 0.5
 	spread_unwielded = 9
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 32,
+			"y" = 15,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 18,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 18,
+			"y" = 22,
+		)
+	)
+
 
 /obj/item/gun/energy/ionrifle
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
