@@ -43,10 +43,15 @@
 	name = "type I vest"
 	item_type = /obj/item/clothing/suit/armor/vest
 
-/datum/armament_entry/company_import/sol_defense/armor/combat_boots // boots
+/datum/armament_entry/company_import/sol_defense/armor/combat_boots
 	name = "Combat Boots"
 	cost = PAYCHECK_CREW * 4
 	item_type = /obj/item/clothing/shoes/combat
+
+/datum/armament_entry/company_import/sol_defense/armor/tele_shield
+	name = "Telescopic Shield"
+	cost = PAYCHECK_CREW * 4
+	item_type = /obj/item/shield/riot/tele
 
 /datum/armament_entry/company_import/sol_defense/armor_hardened
 	subcategory = "Hardened Armor"
@@ -191,7 +196,7 @@
 	cost = PAYCHECK_COMMAND * 8
 
 /datum/armament_entry/company_import/sol_defense/longarm/elite
-	item_type = /obj/item/gun/ballistic/automatic/sol_rifle/marksman
+	item_type = /obj/item/gun/ballistic/automatic/sol_classic/marksman
 	cost = PAYCHECK_COMMAND * 12
 
 /datum/armament_entry/company_import/sol_defense/longarm/bogseo
@@ -204,7 +209,7 @@
 
 /* // FLUFFY FRONTIER REMOVAL START - MMR FROM CARGO
 /datum/armament_entry/company_import/sol_defense/longarm/infanterie
-	item_type = /obj/item/gun/ballistic/automatic/sol_rifle
+	item_type = /obj/item/gun/ballistic/automatic/sol_classic
 	cost = PAYCHECK_COMMAND * 14
 */ // FLUFFY FRONTIER REMOVAL END
 

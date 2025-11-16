@@ -235,8 +235,6 @@ DEFINE_BITFIELD(smoothing_junction, list(
 #define SMOOTH_GROUP_SHUTTERS S_OBJ(75)
 
 #define SMOOTH_GROUP_WATER S_OBJ(76) ///obj/effect/abstract/liquid_turf
-
-#define SMOOTH_GROUP_WIREWEED S_OBJ(77)
 //NOVA EDIT END
 
 #define SMOOTH_GROUP_GRAV_FIELD S_OBJ(75)
@@ -251,6 +249,8 @@ DEFINE_BITFIELD(smoothing_junction, list(
 #define SMOOTH_GROUP_PLATFORMS_STONE S_OBJ(84) ///obj/structure/platform/sandstone & cult
 #define SMOOTH_GROUP_PLATFORMS_PIZZA S_OBJ(85) ///obj/structure/platform/pizza
 #define SMOOTH_GROUP_PLATFORMS_PAPER S_OBJ(86) ///obj/structure/platform/paper
+
+#define SMOOTH_GROUP_BOULDER_PLATFORM S_OBJ(87) ///obj/structure/lattice/catwalk/boulder
 
 /// Performs the work to set smoothing_groups and canSmoothWith.
 /// An inlined function used in both turf/Initialize and atom/Initialize.

@@ -2,7 +2,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	job_flags = STATION_JOB_FLAGS
-	veteran_only = TRUE // FLUFFY FRONTIER EDIT - original: nova_stars_only = TRUE
+	nova_stars_only = TRUE
 
 	outfit = /datum/outfit/job/bridge_assistant
 	plasmaman_outfit = /datum/outfit/job/bridge_assistant/plasmaman
