@@ -60,3 +60,9 @@
 	uplink_item_flags = SYNDIE_TRIPS_CONTRABAND
 	restricted_roles = list(JOB_CARGO_TECHNICIAN, JOB_QUARTERMASTER)
 	surplus = 5
+
+/datum/uplink_item/device_tools/borer_egg
+	name = "Borer Egg"
+	desc = "Creates a borer egg that can give you various powers!"
+	item = /obj/effect/mob_spawn/ghost_role/borer_egg/traitor
+	cost = 18

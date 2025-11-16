@@ -77,15 +77,6 @@
 	name = "Small cloak"
 	item_path= /obj/item/clothing/neck/cloak/teshari/tenkacoat
 
-/datum/loadout_item/toys/oktavia
-	name = "Oktavia"
-	item_path= /obj/item/toy/plush/oktavia
-
-/datum/loadout_item/toys/maru
-	name = "Maru Plushie"
-	item_path = /obj/item/toy/plush/maru
-	ckeywhitelist = list("mercreaper", "skadi999")
-
 /datum/loadout_item/neck/tendercloak
 	name = "Bayou Old Mantle"
 	item_path = /obj/item/clothing/neck/cloak/tendercloak
@@ -181,17 +172,3 @@
 	item_path = /obj/item/clothing/under/rank/nanotrasen_consultant/trurl
 	restricted_roles = list(JOB_NT_REP)
 	ckeywhitelist = list("UEDHighCommand")
-
-/datum/loadout_item/toys/duo
-	name = "Duo plushie"
-	item_path= /obj/item/toy/plush/tff/soulmates/duo
-	ckeywhitelist = list("SnakeKongar")
-
-/datum/loadout_item/toys/amy
-	name = "Amy plushie"
-	item_path= /obj/item/toy/plush/tff/soulmates/amy
-	ckeywhitelist = list("PadreTheTroll")
-
-/datum/loadout_item/toys/mironov
-	name = "Anatoly plushie"
-	item_path = /obj/item/toy/plush/mironov
