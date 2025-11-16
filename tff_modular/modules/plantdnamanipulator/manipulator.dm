@@ -367,8 +367,8 @@
 
 /obj/machinery/plantgenes/proc/eject_disk(mob/living/carbon/user)
 	if (disk && !operation)
-		if(Adjacent(ejecter))
-			if (!ejecter.put_in_hands(disk))
+		if(Adjacent(user))
+			if (!user.put_in_hands(disk))
 				disk.forceMove(drop_location())
 		else
 			disk.forceMove(drop_location())
@@ -377,8 +377,8 @@
 
 /obj/machinery/plantgenes/proc/eject_seed(mob/living/carbon/user)
 	if (seed && !operation)
-		if(Adjacent(ejecter))
-			if (!ejecter.put_in_hands(seed))
+		if(Adjacent(user))
+			if (!user.put_in_hands(seed))
 				seed.forceMove(drop_location())
 		else
 			seed.forceMove(drop_location())
