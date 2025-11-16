@@ -27,6 +27,8 @@
 		if(!choice || QDELETED(user))
 			return ITEM_INTERACT_FAILURE
 		var/datum/pony_armor/choosen_armor = avaible_armor[choice]
+		if(!do_after(user, 6 SECONDS, src))
+			return ITEM_INTERACT_FAILURE
 		give_armor(choosen_armor)
 		return ITEM_INTERACT_SUCCESS
 
