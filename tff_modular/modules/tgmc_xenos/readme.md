@@ -50,6 +50,6 @@ IN: code/\_\_HELPERS/~ff_helpers/is_helpers.dm
 
 ## Credits
 
-TGMC & CM - Where the sprites, sound, and ideas for caste abilities came from
+TGMC & CM - Where the sprites, sound, and ideas for abilities came from
 
-Original developer of these xenos (apparently it's @Paxilmaniac) - Porting the xenos from TGMC and adopting their stuff to work with tg-skyrat code
+Original developer of these xenos (apparently it's @Paxilmaniac) - Porting the xenos from TGMC and adopting their code to work with tg-skyrat build

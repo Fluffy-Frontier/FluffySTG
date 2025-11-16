@@ -94,12 +94,6 @@
 			return FALSE
 	return ..()
 
-/mob/living/carbon/alien/adult/tgmc/grab(mob/living/target)
-	if(ishuman(target) && target.stat == DEAD)
-		to_chat(src, span_warning("[target] is dead, why would we want to touch it?"))
-		return FALSE
-	return ..()
-
 /mob/living/carbon/alien/adult/tgmc/set_resting(new_resting, silent = TRUE, instant = FALSE)
 	if(fortify)
 		balloon_alert(src, "Cannot while fortified")

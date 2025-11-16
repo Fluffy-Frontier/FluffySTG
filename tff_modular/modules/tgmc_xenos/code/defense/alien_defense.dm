@@ -1,6 +1,6 @@
 /// TGMC_XENOS (old nova sector xenos)
 
-#define TGMC_XENO_FIRESTACK_DAMAGE 4
+#define TGMC_XENO_FIRESTACK_DAMAGE 2
 
 /mob/living/carbon/alien/adult/tgmc/attack_alien(mob/living/carbon/alien/user, list/modifiers)
 	if(!user.combat_mode)
