@@ -261,11 +261,11 @@
 		if(istype(I, /obj/item/seeds))
 			if(!usr.transferItemToLoc(I, src))
 				return
-			eject_seed(user)
+			eject_seed(usr)
 			insert_seed(I)
 			to_chat(usr, "<span class='notice'>You add [I] to the machine.</span>")
 		else
-			eject_seed(user)
+			eject_seed(usr)
 	else if(href_list["eject_disk"] && !operation)
 		var/obj/item/I = usr.get_active_held_item()
 		if(istype(I, /obj/item/disk/plantgene))
