@@ -376,8 +376,7 @@
 		disk = null
 		update_genes()
 
-/obj/machinery/plantgenes/proc/eject_seed(mob/living/user)
-	var/mob/living/carbon/human/ejecter = user
+/obj/machinery/plantgenes/proc/eject_seed(mob/living/carbon/user)
 	if (seed && !operation)
 		if(Adjacent(ejecter))
 			if (!ejecter.put_in_hands(seed))
