@@ -22,13 +22,13 @@
 			if(tgui_alert(user, "There is already armor! Do you want to remove it?", "Pony Armory", list("Yes", "No")) == "Yes")
 				remove_armor()
 			else
-				return FALSE
+				return ITEM_INTERACT_FAILURE
 		var/choice = tgui_input_list(user, "Pick an armor for your pony", "Pony Armory", avaible_armor)
 		if(!choice || QDELETED(user))
-			return
+			return ITEM_INTERACT_FAILURE
 		var/datum/pony_armor/choosen_armor = avaible_armor[choice]
 		give_armor(choosen_armor)
-		return TRUE
+		return ITEM_INTERACT_SUCCESS
 
 /mob/living/basic/pony/proc/give_armor(datum/pony_armor/choosen_armor)
 	ponyicon = icon(icon = choosen_armor.armor_path, icon_state = choosen_armor.armor_name)
