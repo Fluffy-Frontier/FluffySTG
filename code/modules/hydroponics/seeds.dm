@@ -81,7 +81,7 @@
 		icon_harvest = "[species]-harvest"
 
 	if(!nogenes)
-		// FLUFFY FRONTIER ADDITION START
+		// FLUFFY FRONTIER ADDITION START - DNA MANIPULATOR
 		genes += new /datum/plant_gene/core/lifespan(lifespan)
 		genes += new /datum/plant_gene/core/endurance(endurance)
 		genes += new /datum/plant_gene/core/weed_rate(weed_rate)
