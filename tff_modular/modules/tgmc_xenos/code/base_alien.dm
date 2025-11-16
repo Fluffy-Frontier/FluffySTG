@@ -87,9 +87,11 @@
 		return FALSE
 	if(fortify)
 		return FALSE
-	if(ishuman(attack_target) && attack_target.stat == DEAD)
-		to_chat(src, span_warning("[target] is dead, why would we want to touch it?"))
-		return FALSE
+	if(ishuman(attack_target))
+		var/mob/living/carbon/human/target = attack_target
+		if(target.stat == DEAD)
+			to_chat(src, span_warning("[target] is dead, why would we want to touch it?"))
+			return FALSE
 	return ..()
 
 /mob/living/carbon/alien/adult/tgmc/grab(mob/living/target)

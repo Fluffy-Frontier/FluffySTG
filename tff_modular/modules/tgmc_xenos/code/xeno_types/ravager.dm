@@ -30,7 +30,7 @@
 	grant_actions_by_list(innate_actions)
 
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
-	AddComponent(/datum/component/tackler, stamina_cost = 0, base_knockdown = 0, range = 8, speed = 2, skill_mod = 9, min_distance = 0)
+	AddComponent(/datum/component/tackler, stamina_cost = 0, base_knockdown = 0, range = 6, speed = 2, skill_mod = 9, min_distance = 0)
 
 /datum/armor/tgmc_xeno/ravager
 	bomb = 10

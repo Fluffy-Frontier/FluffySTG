@@ -30,7 +30,7 @@
 	evade_ability = new(src)
 	evade_ability.Grant(src)
 
-	AddComponent(/datum/component/tackler, stamina_cost = 0, base_knockdown = 2, range = 10, speed = 2, skill_mod = 4, min_distance = 0)
+	AddComponent(/datum/component/tackler, stamina_cost = 0, base_knockdown = 2, range = 8, speed = 2, skill_mod = 4, min_distance = 0)
 
 /datum/armor/tgmc_xeno/rouny
 	bomb = 0

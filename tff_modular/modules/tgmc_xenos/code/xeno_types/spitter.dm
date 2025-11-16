@@ -24,6 +24,8 @@
 
 	resist_heavy_hits = TRUE
 
+	can_hold_facehugger = TRUE
+
 /mob/living/carbon/alien/adult/tgmc/spitter/Initialize(mapload)
 	. = ..()
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
