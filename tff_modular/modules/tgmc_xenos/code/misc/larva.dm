@@ -8,9 +8,23 @@
 	for(var/mob/victim in range(range, src))
 		if(!CanHug(victim))
 			continue
-		Leap(victim)
-		return TRUE
+		return Leap(victim)
 	return FALSE
+
+/obj/item/clothing/mask/facehugger/tgmc/attempt_pickup(mob/living/user, skip_grav)
+	if(istgmcalien(user))
+		var/mob/living/carbon/alien/adult/tgmc/xeno = user
+		if(!xeno.can_hold_facehugger)
+			return TRUE
+	return ..()
+
+/obj/item/clothing/mask/facehugger/tgmc/can_be_pulled(user, force)
+	. = ..()
+	if(. && istgmcalien(user))
+		var/mob/living/carbon/alien/adult/tgmc/xeno = user
+		if(!xeno.can_hold_facehugger)
+			return TRUE
+
 
 // То же самое, но для эмбриона ларвочки
 /obj/item/organ/body_egg/alien_embryo/tgmc

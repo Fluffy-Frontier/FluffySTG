@@ -15,7 +15,6 @@
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_XENO_PLASMAVESSEL
 	actions_types = list(
-		/datum/action/cooldown/alien/make_structure/plant_weeds,
 		/datum/action/cooldown/alien/transfer,
 	)
 
@@ -59,6 +58,10 @@
 	name = "large plasma vessel"
 	icon_state = "plasma_large"
 	w_class = WEIGHT_CLASS_BULKY
+	actions_types = list(
+		/datum/action/cooldown/alien/make_structure/plant_weeds,
+		/datum/action/cooldown/alien/transfer,
+	)
 	stored_plasma = 200
 	max_plasma = 500
 	plasma_rate = 7.5
@@ -90,6 +93,7 @@
 	actions_types = list(/datum/action/cooldown/alien/make_structure/lay_egg/tgmc)
 
 /datum/action/cooldown/alien/make_structure/lay_egg/tgmc
+	plasma_cost = 150
 	made_structure_type = /obj/structure/alien/egg/tgmc
 
 
