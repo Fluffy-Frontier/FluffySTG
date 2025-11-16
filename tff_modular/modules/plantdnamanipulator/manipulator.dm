@@ -83,9 +83,9 @@
 			return
 		if(!user.transferItemToLoc(I, src))
 			return
-		eject_seed()
+		eject_seed(user)
 		insert_seed(I)
-		to_chat(user, "<span class='notice'>You add [I] to the machine.</span>")
+		to_chat(user, "<span class='notice'>You insert [I] to the machine.</span>")
 		interact(user)
 	else if(istype(I, /obj/item/disk/plantgene))
 		if (operation)
@@ -93,12 +93,12 @@
 			return
 		if(!user.transferItemToLoc(I, src))
 			return
-		eject_disk()
+		eject_disk(user)
 		disk = I
-		to_chat(user, "<span class='notice'>You add [I] to the machine.</span>")
+		to_chat(user, "<span class='notice'>You insert [I] to the machine.</span>")
 		interact(user)
 	else
-		..()
+		return ..()
 
 //? Eventually refactor this into TGUI?
 /obj/machinery/plantgenes/ui_interact(mob/user)
@@ -261,21 +261,21 @@
 		if(istype(I, /obj/item/seeds))
 			if(!usr.transferItemToLoc(I, src))
 				return
-			eject_seed()
+			eject_seed(user)
 			insert_seed(I)
 			to_chat(usr, "<span class='notice'>You add [I] to the machine.</span>")
 		else
-			eject_seed()
+			eject_seed(user)
 	else if(href_list["eject_disk"] && !operation)
 		var/obj/item/I = usr.get_active_held_item()
 		if(istype(I, /obj/item/disk/plantgene))
 			if(!usr.transferItemToLoc(I, src))
 				return
-			eject_disk()
+			eject_disk(usr)
 			disk = I
 			to_chat(usr, "<span class='notice'>You add [I] to the machine.</span>")
 		else
-			eject_disk()
+			eject_disk(usr)
 	else if(href_list["op"] == "insert" && disk && disk.gene && seed)
 		if(!operation) // Wait for confirmation
 			operation = "insert"
@@ -365,20 +365,22 @@
 	update_genes()
 	update_icon()
 
-/obj/machinery/plantgenes/proc/eject_disk()
+/obj/machinery/plantgenes/proc/eject_disk(mob/living/user)
+	var/mob/living/carbon/human/ejecter = user
 	if (disk && !operation)
-		if(Adjacent(usr))
-			if (!usr.put_in_hands(disk))
+		if(Adjacent(ejecter))
+			if (!ejecter.put_in_hands(disk))
 				disk.forceMove(drop_location())
 		else
 			disk.forceMove(drop_location())
 		disk = null
 		update_genes()
 
-/obj/machinery/plantgenes/proc/eject_seed()
+/obj/machinery/plantgenes/proc/eject_seed(mob/living/user)
+	var/mob/living/carbon/human/ejecter = user
 	if (seed && !operation)
-		if(Adjacent(usr))
-			if (!usr.put_in_hands(seed))
+		if(Adjacent(ejecter))
+			if (!ejecter.put_in_hands(seed))
 				seed.forceMove(drop_location())
 		else
 			seed.forceMove(drop_location())
@@ -398,7 +400,7 @@
 			/datum/plant_gene/core/endurance,
 			/datum/plant_gene/core/lifespan,
 			/datum/plant_gene/core/weed_rate,
-			/datum/plant_gene/core/weed_chance
+			/datum/plant_gene/core/weed_chance,
 			)
 		for(var/a in gene_paths)
 			core_genes += seed.get_gene(a)
@@ -433,8 +435,6 @@
 /obj/item/disk/plantgene/Initialize(mapload)
 	. = ..()
 	add_overlay("datadisk_gene")
-	src.pixel_x = rand(-5, 5)
-	src.pixel_y = rand(-5, 5)
 
 /obj/item/disk/plantgene/proc/update_disk_name()
 	if(gene)
@@ -568,7 +568,8 @@
 		/datum/stock_part/servo = 1,
 		/datum/stock_part/micro_laser = 1,
 		/obj/item/stack/sheet/glass = 1,
-		/datum/stock_part/scanning_module = 1)
+		/datum/stock_part/scanning_module = 1,
+	)
 
 /datum/design/board/plantgenes
 	name = "Plant DNA Manipulator Board"
@@ -607,3 +608,17 @@
 /obj/item/storage/box/disks_plantgene/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/disk/plantgene(src)
+
+/obj/item/seeds/Initialize(mapload, nogenes = FALSE)
+	. = ..()
+	if(!nogenes)
+		genes += new /datum/plant_gene/core/lifespan(lifespan)
+		genes += new /datum/plant_gene/core/endurance(endurance)
+		genes += new /datum/plant_gene/core/weed_rate(weed_rate)
+		genes += new /datum/plant_gene/core/weed_chance(weed_chance)
+		if(yield != -1)
+			genes += new /datum/plant_gene/core/yield(yield)
+			genes += new /datum/plant_gene/core/production(production)
+		if(potency != -1)
+			genes += new /datum/plant_gene/core/potency(potency)
+			genes += new /datum/plant_gene/core/instability(instability)
