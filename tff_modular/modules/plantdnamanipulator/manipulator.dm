@@ -365,8 +365,7 @@
 	update_genes()
 	update_icon()
 
-/obj/machinery/plantgenes/proc/eject_disk(mob/living/user)
-	var/mob/living/carbon/human/ejecter = user
+/obj/machinery/plantgenes/proc/eject_disk(mob/living/carbon/user)
 	if (disk && !operation)
 		if(Adjacent(ejecter))
 			if (!ejecter.put_in_hands(disk))
