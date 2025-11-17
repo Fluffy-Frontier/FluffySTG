@@ -15,7 +15,7 @@
 	armor_type = /datum/armor/tgmc_xeno/ravager
 
 	additional_organ_types_by_slot = list(
-		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc/no_weeds
+		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc,
 	)
 
 	mecha_armor_penetration = 35

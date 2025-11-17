@@ -84,9 +84,6 @@
 	max_plasma = 100
 	actions_types = list(/datum/action/cooldown/alien/transfer)
 
-/obj/item/organ/alien/plasmavessel/tgmc/no_weeds
-	actions_types = list(/datum/action/cooldown/alien/transfer)
-
 
 // Яйцеклад королевы
 /obj/item/organ/alien/eggsac/tgmc
@@ -95,6 +92,14 @@
 /datum/action/cooldown/alien/make_structure/lay_egg/tgmc
 	plasma_cost = 150
 	made_structure_type = /obj/structure/alien/egg/tgmc
+
+
+// Ставилка резины
+/obj/item/organ/alien/resinspinner/tgmc
+	actions_types = list(/datum/action/cooldown/alien/make_structure/resin/tgmc)
+
+/datum/action/cooldown/alien/make_structure/resin/tgmc
+	build_duration = 1.5 SECONDS
 
 
 // Плевалка нейротоксина сентинела
