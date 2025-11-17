@@ -5,12 +5,12 @@
 	desc = "A huge alien with an enormous armored crest."
 	icon_state = "aliencrusher"
 	caste = "crusher"
-	maxHealth = 300
-	health = 300
+	maxHealth = 275
+	health = 275
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 30
 	melee_damage_upper = 35
-	alien_speed = 1.5
+	alien_speed = 2
 
 	armor_type = /datum/armor/tgmc_xeno/crusher
 

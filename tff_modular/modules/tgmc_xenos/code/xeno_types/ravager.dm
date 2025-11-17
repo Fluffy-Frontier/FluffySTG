@@ -5,12 +5,12 @@
 	desc = "An alien with angry red chitin, with equally intimidating looking blade-like claws in place of normal hands. That sharp tail looks like it'd probably hurt."
 	icon_state = "alienravager"
 	caste = "ravager"
-	maxHealth = 200
-	health = 200
+	maxHealth = 175
+	health = 175
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 30
 	melee_damage_upper = 35
-	alien_speed = 0.5
+	alien_speed = 1.5
 
 	armor_type = /datum/armor/tgmc_xeno/ravager
 

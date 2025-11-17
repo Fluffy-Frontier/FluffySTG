@@ -10,7 +10,7 @@
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 25
 	melee_damage_upper = 30
-	alien_speed = 2
+	alien_speed = 1.5
 	next_evolution = /mob/living/carbon/alien/adult/tgmc/queen
 
 	armor_type = /datum/armor/tgmc_xeno/praetorian

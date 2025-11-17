@@ -10,7 +10,7 @@
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 30
 	melee_damage_upper = 35
-	alien_speed = 2
+	alien_speed = 3
 
 	armor_type = /datum/armor/tgmc_xeno/queen
 

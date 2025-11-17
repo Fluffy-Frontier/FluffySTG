@@ -5,8 +5,8 @@
 	desc = "A fairly heavy looking alien with prominent acid glands, it's mouth dripping with... some kind of toxin or acid."
 	icon_state = "alienspitter"
 	caste = "spitter"
-	maxHealth = 200
-	health = 200
+	maxHealth = 175
+	health = 175
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 15
 	melee_damage_upper = 20
