@@ -5,10 +5,10 @@
 	bluespace = TRUE
 	explosionSize = list(0,0,1,2)
 
-/obj/machinery/computer/cargo/express/interdyne
+/obj/machinery/computer/cargo/express/ghost/interdyne
 	pod_type = /obj/structure/closet/supplypod/syndicate_cargo
 
-/obj/machinery/computer/cargo/express/interdyne/ui_act(action, params, datum/tgui/ui)
+/obj/machinery/computer/cargo/express/ghost/interdyne/ui_act(action, params, datum/tgui/ui)
 	if(action == "add") // if we're generating a supply order
 		if (!beacon || !using_beacon ) // checks if using a beacon or not.
 			say("Error! Destination is not whitelisted, aborting.")
