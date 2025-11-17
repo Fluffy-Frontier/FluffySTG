@@ -146,7 +146,10 @@
 	particle_holder.pixel_y = fire_offset_y
 
 /mob/living/carbon/alien/adult/tgmc/set_hud_image_state(hud_type, hud_state, x_offset, y_offset)
-	return ..(hud_type, hud_state, hud_offset_x, hud_offset_y)
+	if(hud_type != XENO_HUD)
+		x_offset += hud_offset_x
+		y_offset += hud_offset_y
+	return ..(hud_type, hud_state, x_offset, y_offset)
 
 /mob/living/carbon/proc/get_max_plasma()
 	var/obj/item/organ/alien/plasmavessel/vessel = get_organ_by_type(/obj/item/organ/alien/plasmavessel)

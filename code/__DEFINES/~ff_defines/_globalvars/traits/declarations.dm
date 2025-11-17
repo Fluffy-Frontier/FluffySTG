@@ -1,3 +1,6 @@
+
+// xeno traits
+#define TRAIT_XENO_HUD "xeno_hud"
 /// Trait source for xeno innate abilities
 #define TRAIT_XENO_INNATE "xeno_innate"
 /// Trait source for something added BY a xeno ability
