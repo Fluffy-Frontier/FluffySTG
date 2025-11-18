@@ -144,8 +144,8 @@
 
 /mob/living/carbon/proc/get_max_plasma()
 	var/obj/item/organ/alien/plasmavessel/vessel = get_organ_by_type(/obj/item/organ/alien/plasmavessel)
-	if(!vessel)
-		return -1
+	if(isnull(vessel))
+		return 0
 	return vessel.max_plasma
 
 /mob/living/carbon/alien/adult/tgmc/adjustPlasma(amount)
