@@ -69,7 +69,6 @@
 
 	var/datum/atom_hud/data/xeno/xeno_hud = GLOB.huds[DATA_HUD_XENO]
 	xeno_hud.add_atom_to_hud(src)
-	xeno_hud_set_plasma()
 
 	if(next_evolution)
 		GRANT_ACTION(/datum/action/cooldown/alien/tgmc/generic_evolve)
@@ -110,6 +109,10 @@
 	. = ..()
 	REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
 
+/mob/living/carbon/alien/adult/tgmc/death(gibbed)
+	. = ..()
+	xeno_hud_set_plasma()
+
 /mob/living/carbon/alien/adult/tgmc/getarmor(def_zone, type)
 	return get_armor_rating(type)
 
@@ -146,6 +149,10 @@
 	var/obj/particle_holder = .
 	particle_holder.pixel_x = fire_offset_x
 	particle_holder.pixel_y = fire_offset_y
+
+/mob/living/carbon/alien/adult/tgmc/prepare_data_huds()
+	. = ..()
+	xeno_hud_set_plasma()
 
 /mob/living/carbon/proc/get_max_plasma()
 	var/obj/item/organ/alien/plasmavessel/vessel = get_organ_by_type(/obj/item/organ/alien/plasmavessel)
