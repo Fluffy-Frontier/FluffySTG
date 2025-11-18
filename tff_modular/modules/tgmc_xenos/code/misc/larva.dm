@@ -23,7 +23,7 @@
 	if(. && istgmcalien(user))
 		var/mob/living/carbon/alien/adult/tgmc/xeno = user
 		if(!xeno.can_hold_facehugger)
-			return TRUE
+			return FALSE
 
 
 // То же самое, но для эмбриона ларвочки

@@ -3,6 +3,7 @@
 /mob/living/carbon/alien/adult/tgmc
 	name = "rare bugged alien"
 	icon = 'tff_modular/modules/tgmc_xenos/icons/big_xenos.dmi'
+	hud_possible = list(ANTAG_HUD, XENO_HUD, XENOPLASMA_HUD)
 	rotate_on_lying = FALSE
 	base_pixel_w = -16
 	layer = LARGE_MOB_LAYER //above most mobs, but below speechbubbles
@@ -66,10 +67,14 @@
 	update_offsets() // Необходимо, чтобы base_pixel_w применился
 	set_armor(armor_type)
 
+	var/datum/atom_hud/data/xeno/xeno_hud = GLOB.huds[DATA_HUD_XENO]
+	xeno_hud.add_atom_to_hud(src)
+	xeno_hud_set_plasma()
+
 	if(next_evolution)
 		GRANT_ACTION(/datum/action/cooldown/alien/tgmc/generic_evolve)
 
-	add_traits(list(TRAIT_XENO_HEAL_AURA, TRAIT_PIERCEIMMUNE), TRAIT_XENO_INNATE)
+	add_traits(list(TRAIT_XENO_HEAL_AURA, TRAIT_PIERCEIMMUNE, TRAIT_XENO_HUD), TRAIT_XENO_INNATE)
 	AddElement(/datum/element/resin_walker, /datum/movespeed_modifier/resin_speedup)
 	AddComponent(/datum/component/seethrough_mob)
 

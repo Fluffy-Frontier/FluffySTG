@@ -19,7 +19,7 @@
 				child_hugger.Die()
 			else
 				if(!child_hugger.ProximityLeap(leap_range))
-					return_timer = addtimer(CALLBACK(src, PROC_REF(return_child)), 15 SECONDS, TIMER_UNIQUE|TIMER_DELETE_ME)
+					return_timer = addtimer(CALLBACK(src, PROC_REF(return_child)), 15 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_DELETE_ME)
 	return ..()
 
 /obj/structure/alien/egg/tgmc/proc/return_child(obj/item/clothing/mask/facehugger/hugger)

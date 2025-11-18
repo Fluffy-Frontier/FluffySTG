@@ -58,6 +58,7 @@
 // NOVA EDIT ADDITION END
 // FLUFFY FRONTIER ADDITION START
 #define XENO_HUD "30"
+#define XENOPLASMA_HUD "31"
 // FLUFFY FRONTIER ADDITION END
 
 //by default everything in the hud_list of an atom is an image
