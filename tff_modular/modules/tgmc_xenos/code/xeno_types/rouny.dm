@@ -20,7 +20,6 @@
 
 	maptext_height = 32
 	maptext_width = 32
-	hud_offset_y = -32
 
 	/// Holds the evade ability to be granted to the runner later
 	var/datum/action/cooldown/alien/tgmc/evade/evade_ability

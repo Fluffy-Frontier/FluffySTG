@@ -18,8 +18,6 @@
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc,
 	)
 
-	hud_offset_y = -16
-
 	mecha_armor_penetration = 35
 	resist_heavy_hits = TRUE
 

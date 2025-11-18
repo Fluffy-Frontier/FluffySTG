@@ -20,8 +20,6 @@
 		ORGAN_SLOT_XENO_NEUROTOXINGLAND = /obj/item/organ/alien/neurotoxin/tgmc/large,
 	)
 
-	hud_offset_y = -16
-
 	resist_heavy_hits = TRUE
 
 	can_hold_facehugger = TRUE

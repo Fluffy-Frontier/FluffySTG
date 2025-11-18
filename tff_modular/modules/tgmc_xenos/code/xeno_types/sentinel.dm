@@ -22,7 +22,6 @@
 
 	maptext_height = 32
 	maptext_width = 32
-	hud_offset_y = -16
 
 /mob/living/carbon/alien/adult/tgmc/sentinel/Initialize(mapload)
 	. = ..()
