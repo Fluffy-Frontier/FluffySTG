@@ -66,6 +66,6 @@
 			to_chat(src, custom_boxed_message("purple_box center", span_infoplain(
 				"<font color='purple'>[span_bold("Shift intensity vote is in progress right now")]<br>\
 				Type <b>vote</b> or click <a href='byond://winset?command=vote'>here</a> to place your votes.\n\
-				You have [DisplayTimeText(SSvote.current_vote.time_remaining)] to vote.</font>")))
+				You have [DisplayTimeText(SSvote.current_vote.time_remaining SECONDS)] to vote.</font>")))
 		// FLUFFY FRONTIER ADDITION END
 
