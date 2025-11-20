@@ -15,6 +15,7 @@
 	if(istgmcalien(user))
 		var/mob/living/carbon/alien/adult/tgmc/xeno = user
 		if(!xeno.can_hold_facehugger)
+			to_chat(user, span_alien("Your claws lack the dexterity to hold [src]"))
 			return TRUE
 	return ..()
 
@@ -23,6 +24,7 @@
 	if(. && istgmcalien(user))
 		var/mob/living/carbon/alien/adult/tgmc/xeno = user
 		if(!xeno.can_hold_facehugger)
+			to_chat(user, span_alien("Your claws lack the dexterity to hold [src]"))
 			return FALSE
 
 

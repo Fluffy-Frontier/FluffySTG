@@ -9,4 +9,9 @@
 		icon = initial(icon)
 	return ..()
 
+/proc/toggle_rouny_mode()
+	GLOB.xeno_rounymode = !GLOB.xeno_rounymode
+	for(var/mob/living/carbon/alien/adult/tgmc/xeno in GLOB.alive_mob_list)
+		xeno.update_icon()
+
 #undef ROUNY_ICON_FILE

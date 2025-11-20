@@ -50,7 +50,7 @@
 	var/fire_offset_y = 0
 
 	// АП при атаке по мехам
-	var/mecha_armor_penetration = 15
+	var/mecha_armor_penetration = 10
 	// Способность выдержать тяжелые удары мехов и не потерять сознание
 	var/resist_heavy_hits = FALSE
 
