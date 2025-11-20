@@ -20,6 +20,9 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible,
 /obj/structure/alien/weeds,
+/obj/structure/bed/nest,
+/obj/effect/mob_spawn/corpse/human/damaged,
+/obj/effect/mapping_helpers/mob_buckler,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/cargo)
 "cD" = (
@@ -318,7 +321,6 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/decal/cleanable/glass,
 /obj/structure/cable,
-/obj/effect/mob_spawn/corpse/human/damaged,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/abandoned/bridge)
