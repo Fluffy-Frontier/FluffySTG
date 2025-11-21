@@ -22,13 +22,13 @@
 /obj/structure/alien/weeds,
 /obj/structure/bed/nest,
 /obj/effect/mob_spawn/corpse/human/damaged,
-/obj/effect/mapping_helpers/mob_buckler,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/cargo)
 "cD" = (
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/glass/titanium,
 /obj/structure/alien/weeds,
+/obj/structure/alien/resin/membrane,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/cargo)
 "cM" = (
@@ -53,8 +53,8 @@
 "eD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/binary/valve,
-/obj/effect/decal/cleanable/blood/gibs,
 /obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/cargo)
 "eE" = (
@@ -115,7 +115,6 @@
 /obj/machinery/light/cold/no_nightlight/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/gibs/robot_debris/down,
-/obj/item/bot_assembly/cleanbot,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
 	},
@@ -245,7 +244,7 @@
 	callTime = 250;
 	can_move_docking_ports = 1;
 	dir = 2;
-	shuttle_id = "whiteship";
+	shuttle_id = "xenohijack";
 	launch_status = 0;
 	movement_force = list("KNOCKDOWN"=0,"THROW"=0);
 	name = "Mining Shuttle";
@@ -257,8 +256,8 @@
 "kG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/bot,
-/obj/structure/ore_box,
 /obj/structure/alien/weeds,
+/obj/structure/ore_box,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/cargo)
 "kY" = (
@@ -340,6 +339,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
 /obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/cargo)
 "nN" = (
@@ -442,7 +442,6 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
 /obj/effect/turf_decal/stripes/corner,
-/obj/effect/decal/cleanable/blood/gibs/robot_debris/limb,
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/mapping_helpers/apc/no_charge,
@@ -471,9 +470,9 @@
 "tz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/delivery,
-/obj/structure/closet/crate/secure/weapon,
-/obj/item/gun/energy/laser/retro,
 /obj/structure/alien/weeds,
+/obj/structure/closet/crate/trashcart/filled,
+/obj/item/bikehorn/rubberducky,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/abandoned/cargo)
 "uf" = (
@@ -505,8 +504,7 @@
 /obj/effect/turf_decal/box/corners,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible,
 /obj/structure/alien/weeds,
-/obj/structure/closet/crate/trashcart/filled,
-/obj/item/bikehorn/rubberducky,
+/obj/structure/bed/nest,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/cargo)
 "xh" = (
@@ -581,9 +579,9 @@
 "Am" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/delivery,
-/obj/structure/closet/crate/large,
-/obj/machinery/space_heater,
 /obj/structure/alien/weeds,
+/obj/structure/closet/crate/secure/weapon,
+/obj/item/gun/energy/laser/retro,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/abandoned/cargo)
 "Bk" = (
@@ -1111,6 +1109,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/xeno,
 /obj/structure/alien/weeds,
+/obj/item/clothing/mask/facehugger/impregnated,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/cargo)
 "Xe" = (
@@ -1183,9 +1182,6 @@
 /obj/structure/bed/pod{
 	dir = 1
 	},
-/obj/effect/spawner/random/bedsheet{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
@@ -1193,6 +1189,7 @@
 	},
 /obj/effect/decal/cleanable/glass/titanium,
 /obj/structure/alien/weeds,
+/obj/item/stack/sheet/cloth,
 /turf/open/floor/wood/tile,
 /area/shuttle/abandoned/crew)
 "YV" = (
