@@ -1,0 +1,34 @@
+Модуль ребаланса и изменений всех пушек в игре
+
+Основной вектор взят на более широкое поле взаимодействий как для игрока, так и для ребаланса.
+
+В будущем планируется изменение ТТК и скорости пуль.
+
+
+
+Оригинальный код был взят с:https://github.com/shiptest-ss13/Shiptest
+Лицензия: GNU AGPL v3
+Позаимствовано: обвесы и их спрайты, идеи двуручного хвата (weapon wield)
+
+Изменения ТГ проков:
+
+Изменения Нова проков:
+
+
+
+
+
+
+
+
+
+Изменения ФФ модуляров:
+	blueshield-rearm
+		var/obj/item/stock_parts/power_store/cell/zerocell/no_cell --
+		var/acceptable_cell_type = /obj/item/stock_parts/power_store/cell --
+		proc/Initialize --
+		proc/eject_cell --
+		proc/eject_cell --
+		proc/try_insert_cell --
+		proc/attackby --
+		proc/proc/has_empty_cell --
