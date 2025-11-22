@@ -16,7 +16,7 @@
 		//"Loader",
 		"Medical",
 		"Mining",
-		//"Prototype",
+		"Prototype",
 		//"Security",
 		"Colonist",
 		//"Tarkon",
