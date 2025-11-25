@@ -171,4 +171,4 @@
 	name = "NAV Trurl Officer Uniform"
 	item_path = /obj/item/clothing/under/rank/nanotrasen_consultant/trurl
 	restricted_roles = list(JOB_NT_REP)
-	ckeywhitelist = list("UEDHighCommand")
+	ckeywhitelist = list("UEDHighCommand", "tonya677")
