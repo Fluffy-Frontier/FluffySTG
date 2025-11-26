@@ -5,7 +5,6 @@
 	//So it shows up in the map editor
 	icon = 'icons/effects/mapping_helpers.dmi'
 	icon_state = "mobspawner"
-	abstract_type = /obj/effect/mob_spawn
 	/// Can this spawner be used up?
 	var/infinite_use = FALSE
 	///A forced name of the mob, though can be overridden if a special name is passed as an argument
@@ -57,7 +56,7 @@
 /obj/effect/mob_spawn/proc/special(mob/living/spawned_mob, mob/mob_possessor, use_loadout) // NOVA EDIT CHANGE - ORIGINAL: /obj/effect/mob_spawn/proc/special(mob/living/spawned_mob, mob/mob_possessor)
 	SHOULD_CALL_PARENT(TRUE)
 	if(faction)
-		spawned_mob.set_faction(faction)
+		spawned_mob.faction = faction
 	if(ishuman(spawned_mob))
 		var/mob/living/carbon/human/spawned_human = spawned_mob
 		if(mob_species)
@@ -185,7 +184,7 @@
 
 	/* // NOVA EDIT REMOVAL START: handled below
 	var/species_pref = user.client.prefs.read_preference(/datum/preference/choiced/species) || /datum/species/human
-	if(!prompt_fail && user.started_as_observer && allow_custom_character && (GLOB.species_prototypes[species_pref].get_breath_type() == GAS_O2))
+	if(!prompt_fail && user.started_as_observer && allow_custom_character && (GLOB.species_prototypes[species_pref].inherent_respiration_type & RESPIRATION_OXYGEN))
 		var/static_prompt = "Because you haven't taken a role so far, you may spawn in as \
 			[((allow_custom_character & GHOSTROLE_TAKE_PREFS_SPECIES) || species_pref == /datum/species/human) ? "" : "a human version of"] \
 			your customized character with a random name. Would you like to?"
@@ -216,11 +215,11 @@
 /obj/effect/mob_spawn/ghost_role/proc/can_ghost_take(mob/dead/observer/user)
 	if(is_banned_from(user.ckey, role_ban))
 		to_chat(user, span_warning("You are banned from this role!"))
-		return FALSE
+		return FALL_STOP_INTERCEPTING
 	// NOVA EDIT ADDITION START
 	if(is_banned_from(user.ckey, BAN_GHOST_ROLE_SPAWNER)) // Ghost role bans
 		to_chat(user, span_warning("Error, you are banned from playing ghost roles!"))
-		return FALSE
+		return FALL_STOP_INTERCEPTING
 	// NOVA EDIT ADDITION END
 	if(!allow_spawn(user, silent = FALSE))
 		LAZYREMOVE(ckeys_trying_to_spawn, user_ckey)
@@ -363,9 +362,9 @@
 /obj/effect/mob_spawn/corpse/special(mob/living/spawned_mob, mob/mob_possessor)
 	. = ..()
 	spawned_mob.death(TRUE)
-	spawned_mob.adjust_oxy_loss(oxy_damage)
-	spawned_mob.adjust_brute_loss(brute_damage)
-	spawned_mob.adjust_fire_loss(burn_damage)
+	spawned_mob.adjustOxyLoss(oxy_damage)
+	spawned_mob.adjustBruteLoss(brute_damage)
+	spawned_mob.adjustFireLoss(burn_damage)
 	if (corpse_description)
 		spawned_mob.AddComponent(/datum/component/temporary_description, corpse_description, naive_corpse_description)
 
