@@ -120,9 +120,8 @@ SUBSYSTEM_DEF(round_events)
 /datum/controller/subsystem/round_events/proc/on_player_dead(mob/living/player)
 	if(!active_event)
 		return
-
 	active_event.player_dead(player)
-	ADD_TRAIT(player, TRAIT_DNR, EVENT_TRAITS)
+
 
 
 #undef EVENT_TRAITS

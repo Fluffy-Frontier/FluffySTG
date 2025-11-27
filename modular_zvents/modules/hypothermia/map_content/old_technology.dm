@@ -270,7 +270,7 @@
 	var/on = FALSE
 	var/target_temperature = T20C
 	var/heating_energy = BASE_HEATING_ENERGY
-	var/efficiency = 20e6 / STANDARD_CELL_CHARGE
+	var/efficiency = BASE_HEATING_ENERGY / (STANDARD_CELL_CHARGE * 3)
 
 	var/datum/component/heat_source/heat_comp
 	var/datum/looping_sound/conditioner_running/soundloop
@@ -309,16 +309,11 @@
 	return ..()
 
 /obj/machinery/hypothermia/heater/process(seconds_per_tick)
-	if(!on || !anchored)
-		if(on)
-			turn_off()
-		return
-
 	var/energy_used = heating_energy * seconds_per_tick
 	var/power_source_used = FALSE
 
 
-	if(powered() && use_energy(energy_used / efficiency, channel = AREA_USAGE_EQUIP))
+	if(anchored && powered() && use_energy(energy_used / efficiency, channel = AREA_USAGE_EQUIP))
 		power_source_used = TRUE
 	else if(cell && cell.charge && cell.use(energy_used / efficiency))
 		power_source_used = TRUE
@@ -430,11 +425,12 @@
 
 	if(on && !soundloop.loop_started)
 		soundloop.start()
-	light_power = 1
+	light_power = 2
+	light_color = COLOR_FIRE_LIGHT_RED
 	heat_comp = AddComponent(/datum/component/heat_source, \
-		_heat_output = heating_energy, \
-		_heat_power = efficiency, \
-		_range = 3, \
+		_heat_output = 5, \
+		_heat_power = heating_energy, \
+		_range = 2, \
 		_target_temperature = target_temperature)
 	update_light()
 

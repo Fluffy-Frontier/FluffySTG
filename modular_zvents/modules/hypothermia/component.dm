@@ -13,6 +13,19 @@
 #define THERMAL_PROTECTION_HAND_RIGHT 0.025
 
 
+#define HYPOTHERMIA_COLDLEVEL_SAFE      0
+#define HYPOTHERMIA_COLDLEVEL_LOW       1
+#define HYPOTHERMIA_COLDLEVEL_MODERATE  2
+#define HYPOTHERMIA_COLDLEVEL_HIGH      3
+#define HYPOTHERMIA_COLDLEVEL_LETHAL    4
+
+#define HYPOTHERMIA_TRESHOLD_SAFE      (T0C + 37)
+#define HYPOTHERMIA_TRESHOLD_LOW       (T0C + 35)
+#define HYPOTHERMIA_TRESHOLD_MODERATE  (T0C + 32)
+#define HYPOTHERMIA_TRESHOLD_HIGH      (T0C + 28)
+#define HYPOTHERMIA_TRESHOLD_LETHAL    (T0C + 24)
+
+
 /mob/living/carbon/human/proc/get_cold_protection_flags_improved(temperature)
 	var/thermal_protection_flags = 0
 
@@ -103,12 +116,24 @@
 	dupe_mode = COMPONENT_DUPE_UNIQUE
 	var/stored_bodytemperature = 310
 	var/cooling_rate = 0.1
-	var/max_temp = 310
+	var/heating_rate = 0.4
+	var/max_temp = 320
 	var/maximum_diff = -60
 	var/base_rate = 0.8
 	var/cooling_cooldown = 2 MINUTES
 	var/heat_cooldown = 10 SECONDS
 	var/lower_cooltreshhold = T0C + 15
+	var/coldlevel = HYPOTHERMIA_COLDLEVEL_SAFE
+
+	var/static/list/threshold_data = list(
+		list("temp" = HYPOTHERMIA_TRESHOLD_SAFE, "level" = HYPOTHERMIA_COLDLEVEL_SAFE, "stamina" = 1),
+		list("temp" = HYPOTHERMIA_TRESHOLD_LOW, "level" = HYPOTHERMIA_COLDLEVEL_LOW, "stamina" = 0.9),
+		list("temp" = HYPOTHERMIA_TRESHOLD_MODERATE, "level" = HYPOTHERMIA_COLDLEVEL_MODERATE, "stamina" = 0.7),
+		list("temp" = HYPOTHERMIA_TRESHOLD_HIGH, "level" = HYPOTHERMIA_COLDLEVEL_HIGH, "stamina" = 0.5),
+		list("temp" = HYPOTHERMIA_TRESHOLD_LETHAL, "level" = HYPOTHERMIA_COLDLEVEL_LETHAL, "stamina" = 0.4),
+	)
+
+	var/list/thresholds
 
 	COOLDOWN_DECLARE(temperature_incress_cooldown)
 	COOLDOWN_DECLARE(shiver_cooldown)
@@ -120,16 +145,30 @@
 	COOLDOWN_DECLARE(organ_damage_cooldown)
 	COOLDOWN_DECLARE(temperature_decress_cooldown)
 
-
-	var/list/disabled_limbs // assoc: bodypart = end_time (world.time)
+	var/list/disabled_limbs
 
 /datum/component/hypothermia/Initialize()
 	. = ..()
 	if(!isliving(parent))
 		return COMPONENT_INCOMPATIBLE
-	RegisterWithParent()
+
+	var/mob/living/L = parent
+	thresholds = deep_copy_list(threshold_data)
+
+	var/cold_mod = 1
+	if(ishuman(L))
+		var/mob/living/carbon/human/H = L
+		var/datum/species/S = H.dna?.species
+		if(S)
+			cold_mod = S.coldmod
+			var/temp_adjust = (cold_mod - 1) * 10
+			for(var/list/data in thresholds)
+				data["temp"] += temp_adjust
+	cooling_rate *= cold_mod
+
 	disabled_limbs = list()
 	COOLDOWN_START(src, temperature_decress_cooldown, cooling_cooldown)
+	RegisterWithParent()
 
 /datum/component/hypothermia/Destroy(force)
 	UnregisterFromParent()
@@ -144,16 +183,15 @@
 	else
 		stored_bodytemperature = living_parent.bodytemperature
 
-	RegisterSignal(living_parent, COMSIG_MOB_HEAR_SOURCE_ACT, PROC_REF(on_heat_source_act), TRUE)
+	RegisterSignal(living_parent, COMSIG_MOB_HEAT_SOURCE_ACT, PROC_REF(on_heat_source_act), TRUE)
 	living_parent.AddComponent(/datum/component/perma_death_timer)
 	START_PROCESSING(SSobj, src)
 
 /datum/component/hypothermia/UnregisterFromParent()
 	var/mob/living/living_parent = parent
 	living_parent.remove_traits(list(TRAIT_WEATHER_IMMUNE, TRAIT_RESISTCOLD), HYPOTHERMIA_PARALYSIS)
-	UnregisterSignal(living_parent, COMSIG_MOB_HEAR_SOURCE_ACT)
+	UnregisterSignal(living_parent, COMSIG_MOB_HEAT_SOURCE_ACT)
 	STOP_PROCESSING(SSobj, src)
-
 
 /datum/component/hypothermia/proc/on_heat_source_act(mob/target, datum/component/heat_source/source, amount, target_temperature)
 	SIGNAL_HANDLER
@@ -165,9 +203,11 @@
 	var/mob/living/L = parent
 	if(!L)
 		return FALSE
-	if(amount < 0 || target_temperature < stored_bodytemperature || stored_bodytemperature > target_temperature)
+	if(amount < 0 || target_temperature < lower_cooltreshhold || stored_bodytemperature >= target_temperature)
 		return FALSE
-	stored_bodytemperature += amount
+	if(target_temperature < lower_cooltreshhold)
+		amount *= 0.5
+	stored_bodytemperature = stored_bodytemperature + (amount * heating_rate)
 	return TRUE
 
 /datum/component/hypothermia/proc/adjust_scaled_temp(mob/living/living_mob, amount)
@@ -196,6 +236,190 @@
 	stored_bodytemperature += scaled_amount
 	stored_bodytemperature = clamp(stored_bodytemperature, T0C - 100, T0C + 500)
 
+/datum/component/hypothermia/proc/update_visual(mob/living/L, severity = 1)
+	L.overlay_fullscreen("comp_hypothermia", /atom/movable/screen/fullscreen/cold_effect, severity)
+
+/datum/component/hypothermia/proc/adjust_coldlevel()
+	var/mob/living/L = parent
+	if(!L)
+		return
+
+	var/new_level = HYPOTHERMIA_COLDLEVEL_SAFE
+	var/list/new_data
+	for(var/list/data in thresholds)  // sorted descending, find deepest level
+		if(stored_bodytemperature < data["temp"])
+			new_level = data["level"]
+			new_data = data
+		else
+			break
+	if(coldlevel == new_level)
+		return
+
+	coldlevel = new_level
+	apply_coldlevel_effects(L, new_level, new_data)
+
+/datum/component/hypothermia/proc/apply_coldlevel_effects(mob/living/L, new_level, list/level_data)
+	var/new_stamina_mult = level_data["stamina"] ? level_data["stamina"] : 1
+	switch(new_level)
+		if(HYPOTHERMIA_COLDLEVEL_SAFE)
+			cleanup_effects(L)
+		if(HYPOTHERMIA_COLDLEVEL_LOW)
+			L.add_movespeed_modifier(/datum/movespeed_modifier/hypothermia_mild, TRUE)
+		if(HYPOTHERMIA_COLDLEVEL_MODERATE)
+			L.add_movespeed_modifier(/datum/movespeed_modifier/hypothermia_moderate, TRUE)
+		if(HYPOTHERMIA_COLDLEVEL_HIGH, HYPOTHERMIA_COLDLEVEL_LETHAL)
+			L.add_movespeed_modifier(/datum/movespeed_modifier/hypothermia_severe, TRUE)
+			if(new_level == HYPOTHERMIA_COLDLEVEL_LETHAL)
+				L.SetAllImmobility(4 SECONDS)
+
+	var/initial_stamina = initial(L.max_stamina)
+	if(ishuman(L))
+		var/mob/living/carbon/human/H = L
+		H.max_stamina = initial_stamina * new_stamina_mult
+	update_visual(L, coldlevel)
+	SEND_SOUND(L, 'modular_zvents/sounds/effects/hypothermia_cooling.ogg')
+
+/datum/component/hypothermia/proc/cleanup_effects(mob/living/L)
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/hypothermia_mild)
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/hypothermia_moderate)
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/hypothermia_severe)
+	L.clear_fullscreen("comp_hypothermia")
+
+	for(var/obj/item/bodypart/limb in disabled_limbs)
+		REMOVE_TRAIT(limb, TRAIT_PARALYSIS, HYPOTHERMIA_PARALYSIS)
+		limb.update_disabled()
+	disabled_limbs.Cut()
+
+	L.set_confusion(0)
+	L.set_slurring(0)
+	L.set_jitter(0)
+
+/datum/component/hypothermia/proc/apply_effects(mob/living/L, seconds_per_tick)
+	var/body_temp_c = stored_bodytemperature - T0C
+	if(body_temp_c > 35)
+		cleanup_effects(L)
+		return
+
+	var/is_synth = issynthetic(L)
+	var/cold_mod = 1
+	if(ishuman(L))
+		var/mob/living/carbon/human/H = L
+		var/datum/species/S = H.dna?.species
+		if(S)
+			cold_mod = S.coldmod
+
+	switch(coldlevel)
+		if(HYPOTHERMIA_COLDLEVEL_LOW)
+			if(COOLDOWN_FINISHED(src, shiver_cooldown))
+				if(is_synth)
+					do_sparks(2, TRUE, L)
+					COOLDOWN_START(src, shiver_cooldown, rand(12 SECONDS, 40 SECONDS))
+				else
+					L.emote(pick("shiver", "cough", "sneeze"))
+					COOLDOWN_START(src, shiver_cooldown, rand(9 SECONDS, 20 SECONDS))
+
+			if(COOLDOWN_FINISHED(src, mild_message_cooldown))
+				var/list/messages = is_synth ? list(
+					"Alert: Cooling detected in chassis...",
+					"Warning: Circuitry temperature dropping.",
+					"Alert: Hydraulic fluid viscosity increasing.",
+					"System notice: Minor power fluctuations due to cold.",
+					"Warning: External temperature impacting efficiency."
+				) : list(
+					"You feel the cold creeping under your skin...",
+					"Your teeth begin to chatter uncontrollably.",
+					"Your fingertips are starting to go numb.",
+					"Goosebumps cover your arms.",
+					"A deep chill settles in your chest."
+				)
+				to_chat(L, span_warning(pick(messages)))
+				COOLDOWN_START(src, mild_message_cooldown, rand(60, 180) SECONDS)
+
+		if(HYPOTHERMIA_COLDLEVEL_MODERATE)
+			L.adjustStaminaLoss(0.1 * seconds_per_tick * cold_mod)
+			if(COOLDOWN_FINISHED(src, confusion_cooldown))
+				L.adjust_jitter(10 SECONDS)
+				var/list/messages = is_synth ? list(
+					"Error: Processing delay due to low temperature...",
+					"Warning: System glitches detected.",
+					"Alert: Sensor data corrupted by cold.",
+					"Error: Logic circuits slowing.",
+					"Warning: Memory access delayed."
+				) : list(
+					"Your thoughts are becoming sluggish and foggy...",
+					"The world feels distant and unreal.",
+					"You can't remember why you came here...",
+					"Everything is starting to blur together.",
+					"It's getting harder to focus your eyes."
+				)
+				to_chat(L, span_warning(pick(messages)))
+				COOLDOWN_START(src, confusion_cooldown, rand(30, 60) SECONDS)
+
+			if(COOLDOWN_FINISHED(src, unconscious_cooldown) && SPT_PROB(10, seconds_per_tick))
+				COOLDOWN_START(src, unconscious_cooldown, rand(120, 180) SECONDS)
+				L.Unconscious(rand(1 SECONDS, 2 SECONDS))
+				L.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.25 * cold_mod)
+				L.adjustOrganLoss(ORGAN_SLOT_HEART, 0.2 * cold_mod)
+				L.adjustOxyLoss(1.5 * cold_mod)
+
+			if(SPT_PROB(10, seconds_per_tick) && COOLDOWN_FINISHED(src, frostbite_cooldown))
+				COOLDOWN_START(src, frostbite_cooldown, rand(120, 300) SECONDS)
+				apply_frostbite(L, rand(5, 10) * cold_mod)
+
+		if(HYPOTHERMIA_COLDLEVEL_HIGH)
+			if(SPT_PROB(10, seconds_per_tick) && COOLDOWN_FINISHED(src, paradox_cooldown))
+				var/list/messages = is_synth ? list(
+					"ERROR: OVERHEAT DETECTED! EMERGENCY VENTING!",
+					"SYSTEM FAULT: THERMAL OVERLOAD!",
+					"CRITICAL ERROR: REMOVE EXTERNAL LAYERS!"
+				) : list(
+					"IT'S TOO HOT! GET THIS IS BURNING ME!",
+					"GET IT OFF! I'M ON FIRE!",
+					"CLOTHES ARE SUFFOCATING ME!"
+				)
+				to_chat(L, span_userdanger(pick(messages)))
+				paradox_undress(L)
+				COOLDOWN_START(src, paradox_cooldown, rand(120 SECONDS, 300 SECONDS))
+
+			if(SPT_PROB(10, seconds_per_tick)&& COOLDOWN_FINISHED(src, frostbite_cooldown))
+				apply_frostbite(L, rand(10, 18) * cold_mod)
+				COOLDOWN_START(src, frostbite_cooldown, rand(30, 90) SECONDS)
+
+			if(SPT_PROB(10, seconds_per_tick))
+				if(is_synth)
+					do_sparks(5, TRUE, L)
+				else
+					L.emote(pick("gasp", "shiver", "pale"))
+
+		if(HYPOTHERMIA_COLDLEVEL_LETHAL)
+			L.adjustStaminaLoss(0.3 * seconds_per_tick * cold_mod)
+
+			L.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.8 * seconds_per_tick * cold_mod)
+			L.adjustOrganLoss(ORGAN_SLOT_HEART, 0.4 * seconds_per_tick * cold_mod)
+			L.adjustOrganLoss(ORGAN_SLOT_LUNGS, 0.9 * seconds_per_tick * cold_mod)
+			L.adjustOxyLoss(1 * seconds_per_tick * cold_mod)
+
+			if(SPT_PROB(10, seconds_per_tick) && COOLDOWN_FINISHED(src, frostbite_cooldown))
+				apply_frostbite(L, rand(20, 30) * cold_mod)
+				COOLDOWN_START(src, frostbite_cooldown, rand(30, 60) SECONDS)
+
+			if(SPT_PROB(1, seconds_per_tick))
+				var/list/messages = is_synth ? list(
+					"Critical: All systems freezing...",
+					"Error: Power failure imminent.",
+					"Shutdown sequence initiated...",
+					"Alert: Core temperature critical."
+				) : list(
+					"You can't feel anything anymore...",
+					"The cold has swallowed everything.",
+					"It's so quiet... so peaceful...",
+					"Your heart barely beats..."
+				)
+				to_chat(L, span_userdanger(pick(messages)))
+
+			if(SPT_PROB(2, seconds_per_tick))
+				disable_limb(L)
+
 
 /datum/component/hypothermia/process(seconds_per_tick)
 	var/mob/living/L = parent
@@ -213,11 +437,9 @@
 	if(temp_diff < maximum_diff)
 		temp_diff = maximum_diff
 
-
 	if((temp_diff < 0) && should_cool && COOLDOWN_FINISHED(src, temperature_decress_cooldown))
 		adjust_scaled_temp(L, temp_diff * cooling_rate * seconds_per_tick)
 		COOLDOWN_START(src, temperature_decress_cooldown, cooling_cooldown)
-
 
 	else if(HA.area_temperature > lower_cooltreshhold)
 		var/scaled_heat = temp_diff * cooling_rate * 0.5 * seconds_per_tick
@@ -225,242 +447,23 @@
 		stored_bodytemperature = clamp(stored_bodytemperature, T0C - 100, T0C + 500)
 		L.bodytemperature = stored_bodytemperature
 
-
 	for(var/obj/item/bodypart/limb in disabled_limbs)
 		if(world.time >= disabled_limbs[limb])
 			REMOVE_TRAIT(limb, TRAIT_PARALYSIS, HYPOTHERMIA_PARALYSIS)
 			limb.update_disabled()
 			disabled_limbs -= limb
 
-	if(issynthetic(L))
-		process_synth(L, seconds_per_tick)
-		return
-
 	if(HAS_TRAIT(L, TRAIT_STASIS))
 		return
+
+	adjust_coldlevel()
+
 	if(L.stat == DEAD)
 		if(stored_bodytemperature <= TM70C && !(L.reagents.has_reagent(/datum/reagent/cryostylane, 2)))
 			L.reagents.add_reagent(/datum/reagent/cryostylane, 3)
 		return
 
-	var/body_temp_c = stored_bodytemperature - T0C
-	if(body_temp_c > 35)
-		cleanup_effects(L)
-		return
-
-	if(body_temp_c <= 35 && body_temp_c > 32) // Mild hypothermia
-		L.add_movespeed_modifier(/datum/movespeed_modifier/hypothermia_mild, TRUE)
-		if(COOLDOWN_FINISHED(src, shiver_cooldown))
-			L.emote(pick(list("shiver", "cough", "sneeze")))
-			COOLDOWN_START(src, shiver_cooldown, rand(9 SECONDS, 20 SECONDS))
-
-		if(COOLDOWN_FINISHED(src, mild_message_cooldown))
-			to_chat(L, span_warning(pick(list(
-				"You feel the cold creeping under your skin...",
-				"Your teeth begin to chatter uncontrollably.",
-				"Your fingertips are starting to go numb.",
-				"Goosebumps cover your arms.",
-				"A deep chill settles in your chest."
-			))))
-			COOLDOWN_START(src, mild_message_cooldown, rand(60, 180) SECONDS)
-
-
-	else if(body_temp_c <= 32 && body_temp_c > 28)
-		L.add_movespeed_modifier(/datum/movespeed_modifier/hypothermia_moderate, TRUE)
-		L.adjustStaminaLoss(0.06 * seconds_per_tick)
-
-		if(COOLDOWN_FINISHED(src, confusion_cooldown))
-			L.adjust_confusion(10)
-			L.adjust_slurring(20)
-			L.adjust_jitter(10 SECONDS)
-			to_chat(L, span_warning(pick(list(
-				"Your thoughts are becoming sluggish and foggy...",
-				"The world feels distant and unreal.",
-				"You can't remember why you came here...",
-				"Everything is starting to blur together.",
-				"It's getting harder to focus your eyes."
-			))))
-			COOLDOWN_START(src, confusion_cooldown, rand(30, 60) SECONDS)
-
-		if(SPT_PROB_RATE(0.03, seconds_per_tick) && COOLDOWN_FINISHED(src, frostbite_cooldown))
-			apply_frostbite(L, rand(5, 10))
-			COOLDOWN_START(src, frostbite_cooldown, rand(40, 90) SECONDS)
-
-		if(SPT_PROB_RATE(0.01, seconds_per_tick))
-			L.emote(pick(list("shiver", "groan", "moan")))
-
-
-	else if(body_temp_c <= 28 && body_temp_c > 24) // Severe
-		L.add_movespeed_modifier(/datum/movespeed_modifier/hypothermia_severe, TRUE)
-		L.adjustStaminaLoss(0.25 * seconds_per_tick)
-
-		if(COOLDOWN_FINISHED(src, unconscious_cooldown) && SPT_PROB_RATE(0.6, seconds_per_tick))
-			L.Unconscious(rand(2 SECONDS, 4 SECONDS))
-			COOLDOWN_START(src, unconscious_cooldown, 45 SECONDS)
-
-		if(SPT_PROB_RATE(0.06, seconds_per_tick))
-			L.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.25)
-			L.adjustOrganLoss(ORGAN_SLOT_HEART, 0.45)
-			L.adjustOxyLoss(1.5)
-
-		if(SPT_PROB_RATE(0.02, seconds_per_tick) && COOLDOWN_FINISHED(src, paradox_cooldown))
-			to_chat(L, span_userdanger(pick(list(
-				"IT'S TOO HOT! GET THIS IS BURNING ME!",
-				"GET IT OFF! I'M ON FIRE!",
-				"CLOTHES ARE SUFFOCATING ME!"
-			))))
-			paradox_undress(L)
-			COOLDOWN_START(src, paradox_cooldown, rand(85 SECONDS, 140 SECONDS))
-
-		if(SPT_PROB_RATE(0.08, seconds_per_tick))
-			disable_limb(L)
-		if(SPT_PROB_RATE(0.09, seconds_per_tick) && COOLDOWN_FINISHED(src, frostbite_cooldown))
-			apply_frostbite(L, rand(10, 18))
-			COOLDOWN_START(src, frostbite_cooldown, 18 SECONDS)
-
-		if(SPT_PROB_RATE(0.06, seconds_per_tick))
-			L.emote(pick(list("collapse", "gasp", "shiver", "pale")))
-
-
-	else if(body_temp_c <= 24) // Critical
-		L.SetAllImmobility(4 SECONDS)
-		L.adjustStaminaLoss(0.5 * seconds_per_tick)
-
-
-		L.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.8 * seconds_per_tick)
-		L.adjustOrganLoss(ORGAN_SLOT_HEART, 1.2 * seconds_per_tick)
-		L.adjustOrganLoss(ORGAN_SLOT_LUNGS, 0.9 * seconds_per_tick)
-		L.adjustOxyLoss(6 * seconds_per_tick)
-
-		if(prob(6))
-			apply_frostbite(L, rand(20, 40))
-
-		if(prob(6))
-			disable_limb(L)
-
-		if(prob(8))
-			to_chat(L, span_userdanger(pick(list(
-				"You can't feel anything anymore...",
-				"The cold has swallowed everything.",
-				"It's so quiet... so peaceful...",
-				"Your heart barely beats..."
-			))))
-
-		if(prob(4) && L.IsUnconscious())
-			L.death()
-
-
-
-/datum/component/hypothermia/proc/process_synth(mob/living/carbon/human/synth, seconds_per_tick)
-	var/body_temp_c = stored_bodytemperature - T0C
-	if(body_temp_c > 35)
-		cleanup_effects(synth)
-		return
-
-	if(body_temp_c <= 35 && body_temp_c > 32)
-		synth.add_movespeed_modifier(/datum/movespeed_modifier/hypothermia_mild, TRUE)
-		if(SPT_PROB_RATE(0.03, seconds_per_tick) && COOLDOWN_FINISHED(src, shiver_cooldown))
-			do_sparks(2, TRUE, synth)
-			COOLDOWN_START(src, shiver_cooldown, rand(12 SECONDS, 40 SECONDS))
-
-		if(COOLDOWN_FINISHED(src, mild_message_cooldown))
-			to_chat(synth, span_warning(pick(list(
-				"Alert: Cooling detected in chassis...",
-				"Warning: Circuitry temperature dropping.",
-				"Alert: Hydraulic fluid viscosity increasing.",
-				"System notice: Minor power fluctuations due to cold.",
-				"Warning: External temperature impacting efficiency."
-			))))
-			COOLDOWN_START(src, mild_message_cooldown, rand(60, 180) SECONDS)
-
-
-	else if(body_temp_c <= 32 && body_temp_c > 28) // Moderate: slowdown, glitches
-		synth.add_movespeed_modifier(/datum/movespeed_modifier/hypothermia_moderate, TRUE)
-
-		if(COOLDOWN_FINISHED(src, confusion_cooldown))
-			synth.adjust_confusion(10)
-			synth.adjust_slurring(20)
-			synth.adjust_jitter(10 SECONDS)
-			to_chat(synth, span_warning(pick(list(
-				"Error: Processing delay due to low temperature...",
-				"Warning: System glitches detected.",
-				"Alert: Sensor data corrupted by cold.",
-				"Error: Logic circuits slowing.",
-				"Warning: Memory access delayed."
-			))))
-			COOLDOWN_START(src, confusion_cooldown, rand(30, 60) SECONDS)
-
-		if(SPT_PROB_RATE(0.03, seconds_per_tick) && COOLDOWN_FINISHED(src, frostbite_cooldown))
-			apply_frostbite(synth, rand(5, 10))
-			COOLDOWN_START(src, frostbite_cooldown, rand(40, 90) SECONDS)
-
-		if(SPT_PROB_RATE(0.01, seconds_per_tick))
-			do_sparks(3, TRUE, synth)
-
-
-	else if(body_temp_c <= 28 && body_temp_c > 24)
-		synth.add_movespeed_modifier(/datum/movespeed_modifier/hypothermia_severe, TRUE)
-
-		if(COOLDOWN_FINISHED(src, unconscious_cooldown) && SPT_PROB_RATE(0.06, seconds_per_tick))
-			synth.Unconscious(rand(2 SECONDS, 4 SECONDS))
-			COOLDOWN_START(src, unconscious_cooldown, 45 SECONDS)
-
-		if(SPT_PROB_RATE(0.06, seconds_per_tick))
-			synth.adjustOrganLoss(ORGAN_SLOT_HEART, 0.45)
-
-		if(SPT_PROB_RATE(0.02, seconds_per_tick) && COOLDOWN_FINISHED(src, paradox_cooldown))
-			to_chat(synth, span_userdanger(pick(list(
-				"ERROR: OVERHEAT DETECTED! EMERGENCY VENTING!",
-				"SYSTEM FAULT: THERMAL OVERLOAD!",
-				"CRITICAL ERROR: REMOVE EXTERNAL LAYERS!"
-			))))
-			paradox_undress(synth)
-			COOLDOWN_START(src, paradox_cooldown, rand(85 SECONDS, 140 SECONDS))
-
-		if(SPT_PROB_RATE(0.08, seconds_per_tick))
-			disable_limb(synth)
-		if(SPT_PROB_RATE(0.09, seconds_per_tick) && COOLDOWN_FINISHED(src, frostbite_cooldown))
-			apply_frostbite(synth, rand(10, 18))
-			COOLDOWN_START(src, frostbite_cooldown, 18 SECONDS)
-
-		if(SPT_PROB_RATE(0.06, seconds_per_tick))
-			do_sparks(5, TRUE, synth)
-
-
-	else if(body_temp_c <= 24)
-		synth.adjustOrganLoss(ORGAN_SLOT_HEART, 0.3 * seconds_per_tick)
-		if(prob(6))
-			apply_frostbite(synth, rand(20, 40))
-
-		if(prob(6))
-			disable_limb(synth)
-
-		if(prob(8))
-			to_chat(synth, span_userdanger(pick(list(
-				"Critical: All systems freezing...",
-				"Error: Power failure imminent.",
-				"Shutdown sequence initiated...",
-				"Alert: Core temperature critical."
-			))))
-
-		if(prob(4) && synth.IsUnconscious())
-			synth.death()
-
-
-/datum/component/hypothermia/proc/cleanup_effects(mob/living/L)
-	L.remove_movespeed_modifier(/datum/movespeed_modifier/hypothermia_mild)
-	L.remove_movespeed_modifier(/datum/movespeed_modifier/hypothermia_moderate)
-	L.remove_movespeed_modifier(/datum/movespeed_modifier/hypothermia_severe)
-
-	for(var/obj/item/bodypart/limb in disabled_limbs)
-		REMOVE_TRAIT(limb, TRAIT_PARALYSIS, HYPOTHERMIA_PARALYSIS)
-		limb.update_disabled()
-	disabled_limbs.Cut()
-
-	L.set_confusion(0)
-	L.set_slurring(0)
-	L.set_jitter(0)
-
+	apply_effects(L, seconds_per_tick)
 
 /datum/component/hypothermia/proc/disable_limb(mob/living/carbon/C)
 	var/static/list/limb_weights = list(
@@ -480,7 +483,6 @@
 
 	to_chat(C, span_userdanger("Your [limb.name] goes completely numb — you can't feel or move it!"))
 
-
 /datum/component/hypothermia/proc/apply_frostbite(mob/living/L, damage)
 	if(!iscarbon(L))
 		return
@@ -491,7 +493,6 @@
 		return
 	affecting.receive_damage(burn = max(1, round(damage * 0.6)), wound_bonus = 8)
 	to_chat(L, span_danger("Your [affecting.name] burns with freezing pain and turns black!"))
-
 
 /datum/component/hypothermia/proc/paradox_undress(mob/living/carbon/C)
 	var/list/items = C.get_equipped_items()
@@ -534,6 +535,9 @@
 	var/heat_range = 1
 	var/target_temperature = T20C
 
+	VAR_PRIVATE/list/alerts = list()
+	VAR_PRIVATE/alert_category = ""
+
 /datum/component/heat_source/Initialize(_heat_output, _heat_power = 1 JOULES, _range = 1, _target_temperature = T20C)
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
@@ -541,6 +545,7 @@
 	heat_output = _heat_output * _heat_power
 	heat_range = _range
 	target_temperature = _target_temperature
+	alert_category = "heat_source_[REF(parent)]"
 
 	RegisterSignal(parent, COMSIG_QDELETING, PROC_REF(on_parent_delete))
 
@@ -550,6 +555,14 @@
 		HA.heat_sources += WEAKREF(src)
 
 	START_PROCESSING(SSobj, src)
+
+
+/datum/component/heat_source/Destroy(force)
+	. = ..()
+	STOP_PROCESSING(SSobj, src)
+	for(var/mob/living/alert_holder as anything in alerts)
+		alert_holder.clear_alert(alert_category)
+	alerts.Cut()
 
 /datum/component/heat_source/proc/on_parent_delete(datum/source)
 	SIGNAL_HANDLER
@@ -565,31 +578,44 @@
 		qdel(src)
 		return
 
+	for (var/mob/living/remove_alert_from as anything in alerts)
+		remove_alert_from.clear_alert(alert_category)
+		alerts -= remove_alert_from
+
 	var/area/A = get_area(AM)
 	if(istype(A, /area/hypothermia) && !A.outdoors)
 		var/area/hypothermia/HA = A
 		var/heat_energy = heat_output * seconds_per_tick
 		var/volume = HA.get_volume()
 		if(volume > 0)
-			var/temp_delta = heat_energy / (2000 * volume)
+			var/temp_delta = heat_energy / (200 * volume)
 			HA.adjust_temperature_scaled(temp_delta, target_temperature)
-
 
 	if(heat_range > 0)
 		for(var/mob/living/L in SSspatial_grid.orthogonal_range_search(get_turf(AM), RECURSIVE_CONTENTS_CLIENT_MOBS, heat_range))
+			var/atom/movable/screen/alert/heating/alert = L.throw_alert(alert_category, /atom/movable/screen/alert/heating, new_master = parent)
+			alert.desc = "You are heating by [parent]."
+			alerts[L] = TRUE
+
 			var/dist = get_dist(AM, L)
 			if(dist == 0)
 				dist = 1
-			var/heat_energy = (heat_output * seconds_per_tick) / 200
+			var/heat_energy = (heat_output * seconds_per_tick) / 2000
 			var/effective_heat = heat_energy / (1 + dist * 2)
-			SEND_SIGNAL(L, COMSIG_MOB_HEAR_SOURCE_ACT, src, effective_heat * seconds_per_tick, target_temperature)
+			SEND_SIGNAL(L, COMSIG_MOB_HEAT_SOURCE_ACT, src, effective_heat * seconds_per_tick, target_temperature)
+
+
+/atom/movable/screen/alert/heating
+	name = "Heating"
+	icon_state = "template"
+	use_user_hud_icon = TRUE
 
 
 
 /datum/component/perma_death_timer
 	dupe_mode = COMPONENT_DUPE_UNIQUE
-	var/time_left = 5 MINUTES
-	var/last_decress_time = 0
+	var/time_left = 10 MINUTES
+	var/last_decrease_time = 0
 	var/active = FALSE
 
 /datum/component/perma_death_timer/Initialize()
@@ -608,8 +634,9 @@
 	SIGNAL_HANDLER
 	if(active)
 		return
-	to_chat(parent, span_warning("You feel your life force fading... Revival window closing in 5 minutes!"))
-	last_decress_time = world.time
+	var/mob/living/carbon/C = parent
+	to_chat(C, span_warning("You feel your life force fading... Revival window closing in 10 minutes!"))
+	last_decrease_time = world.time
 	active = TRUE
 	START_PROCESSING(SSobj, src)
 
@@ -620,18 +647,23 @@
 	STOP_PROCESSING(SSobj, src)
 
 /datum/component/perma_death_timer/process(seconds_per_tick)
-	var/delta = world.time - last_decress_time
-	var/mob/living/carbon/carbon_parent = parent
-	if(HAS_TRAIT(carbon_parent, TRAIT_STASIS))
-		return
-	if(carbon_parent.bodytemperature <= T0C)
-		return
-	if(carbon_parent.reagents.has_reagent(/datum/reagent/toxin/formaldehyde, 0.01))
-		carbon_parent.reagents.remove_reagent(/datum/reagent/toxin/formaldehyde, 0.01)
-		return
-	carbon_parent.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.1 * seconds_per_tick)
-	time_left -= delta
-	last_decress_time = world.time
+	var/mob/living/carbon/C = parent
+	var/delta = world.time - last_decrease_time
+	var/paused = FALSE
+
+	if(HAS_TRAIT(C, TRAIT_STASIS))
+		paused = TRUE
+	else if(C.bodytemperature <= T0C)
+		paused = TRUE
+	else if(C.reagents.has_reagent(/datum/reagent/toxin/formaldehyde, 0.01))
+		C.reagents.remove_reagent(/datum/reagent/toxin/formaldehyde, 0.01)
+		paused = TRUE
+
+	if(!paused)
+		C.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.1 * seconds_per_tick)
+		time_left -= delta
+
+	last_decrease_time = world.time
 
 	if(time_left <= 0)
 		make_perma_dead()
@@ -639,8 +671,12 @@
 		active = FALSE
 
 /datum/component/perma_death_timer/proc/make_perma_dead()
-	var/mob/living/carbon/human/H = parent
-	if(!H || H.stat != DEAD)
+	var/mob/living/carbon/C = parent
+	if(!C || C.stat != DEAD)
 		return
-	ADD_TRAIT(H, TRAIT_DNR, "perma_death_timer")
-	to_chat(H, span_userdanger("Your essence has dissipated... Revival is now impossible."))
+	ADD_TRAIT(C, TRAIT_DNR, "perma_death_timer")
+	to_chat(C, span_userdanger("Your essence has dissipated... Revival is now impossible."))
+
+/atom/movable/screen/fullscreen/cold_effect
+	icon = 'modular_zvents/icons/fullscreen/fullscreen_effects.dmi'
+	icon_state = "hypothermiaoverlay"

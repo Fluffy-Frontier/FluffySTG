@@ -26,4 +26,4 @@ GLOBAL_LIST_INIT(hear_sources, list())
 
 
 
-#define COMSIG_MOB_HEAR_SOURCE_ACT "mob_heat_source"
+#define COMSIG_MOB_HEAT_SOURCE_ACT "mob_heat_source"

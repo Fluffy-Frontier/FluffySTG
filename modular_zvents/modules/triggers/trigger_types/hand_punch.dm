@@ -85,7 +85,8 @@
 	var/EDITOR_right_click = FALSE
 
 /obj/effect/mapping_helpers/trigger_helper/hand_punch/Initialize(mapload)
-	extra_params = list()
+	if(!length(extra_params))
+		extra_params = list()
 	if(EDITOR_use_time > 0)
 		extra_params["use_time"] = EDITOR_use_time
 	if(EDITOR_balloon)
@@ -114,6 +115,5 @@
 	extra_params = list(
 		"r_code" = EDITOR_r_code,
 		"message"  = EDITOR_wrong_message,
-		"use_time" = EDITOR_use_time
 	)
 	return ..()
