@@ -1,3 +1,11 @@
+#define TRAIT_COFFIN_ENLARGED "coffin_enlarged"
+
+#define TRAIT_TORPOR "torpor"
+
+#define TRAIT_SHADED "shaded"
+
+#define TRAIT_GARLIC_REAGENT "garlic_reagent"
+
 /datum/action
 	/// Extended description of the action, usually shown in an antag UI.
 	var/power_explanation = ""
