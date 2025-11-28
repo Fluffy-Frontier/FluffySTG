@@ -1,3 +1,12 @@
+// FLUFFY FRONTIER ADDITION START - add comsigs to ventcrawl
+
+#define COMSIG_CAN_VENTCRAWL "can_ventcrawl"
+#define COMSIG_VENTCRAWL_PRE_ENTER "ventcrawling_pre_enter"
+#define COMSIG_VENTCRAWL_PRE_EXIT "ventcrawling_pre_exit"
+#define COMSIG_VENTCRAWL_ENTER "ventcrawling_enter"
+#define COMSIG_VENTCRAWL_EXIT "ventcrawling_exit"
+#define COMSIG_VENTCRAWL_PRE_CANCEL "ventcrawling_pre_cancel"
+// FLUFFY FRONTIER ADDITION END
 // VENTCRAWLING
 
 /mob/living/proc/notify_ventcrawler_on_login()
@@ -23,8 +32,11 @@
 
 	if(!Adjacent(ventcrawl_target))
 		return
-	if(!HAS_TRAIT(src, TRAIT_VENTCRAWLER_NUDE) && !HAS_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS))
+	// FLUFFY FRONTIER ADDITION START - VENTCRAWLING SIGNAL
+	var/signal_result = SEND_SIGNAL(src, COMSIG_CAN_VENTCRAWL, ventcrawl_target, provide_feedback)
+	if(!HAS_TRAIT(src, TRAIT_VENTCRAWLER_NUDE) && !HAS_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS) && !signal_result)
 		return
+	// FLUFFY FRONTIER ADDITION END - VENTCRAWLING SIGNAL
 	if(stat)
 		if(provide_feedback)
 			to_chat(src, span_warning("You must be conscious to do this!"))
@@ -45,7 +57,7 @@
 		if(provide_feedback)
 			to_chat(src, span_warning("You can't vent crawl while buckled!"))
 		return
-	if(iscarbon(src) && required_nudity)
+	if(iscarbon(src) && required_nudity && !signal_result) // FLUFFY FRONTIER CHANGE - VENTCRAWLING SIGNAL
 		if(length(get_equipped_items(INCLUDE_POCKETS|INCLUDE_HELD)))
 			if(provide_feedback)
 				to_chat(src, span_warning("You can't crawl around in the ventilation ducts with items!"))
@@ -74,10 +86,16 @@
 
 	//Handle the exit here
 	if(HAS_TRAIT(src, TRAIT_MOVE_VENTCRAWLING) && istype(loc, /obj/machinery/atmospherics) && movement_type & VENTCRAWLING)
+		// FLUFFY FRONTIER ADDITION START - VENTCRAWLING SIGNAL
+		var/exit_time = SEND_SIGNAL(src, COMSIG_VENTCRAWL_PRE_EXIT, ventcrawl_target)
+		if(!exit_time)
+			exit_time = 1 SECONDS
+		// FLUFFY FRONTIER ADDITION END - VENTCRAWLING SIGNAL
 		to_chat(src, span_notice("You begin climbing out from the ventilation system..."))
 		if(has_client && isnull(client))
 			return
-		if(!do_after(src, 1 SECONDS, target = ventcrawl_target))
+		if(!do_after(src, exit_time, target = ventcrawl_target)) // FLUFFY FRONTIER CHANGE - VENTCRAWLING SIGNAL
+			SEND_SIGNAL(src, COMSIG_VENTCRAWL_PRE_CANCEL, ventcrawl_target) // FLUFFY FRONTIER ADDITION - VENTCRAWLING SIGNAL
 			return
 		if(ventcrawl_target.welded) // in case it got welded during our sleep
 			to_chat(src, span_warning("You can't crawl around a welded vent!"))
@@ -86,14 +104,21 @@
 		forceMove(ventcrawl_target.loc)
 		REMOVE_TRAIT(src, TRAIT_MOVE_VENTCRAWLING, VENTCRAWLING_TRAIT)
 		update_pipe_vision()
+		SEND_SIGNAL(src, COMSIG_VENTCRAWL_EXIT, ventcrawl_target) // FLUFFY FRONTIER ADDITION - VENTCRAWLING SIGNAL
 
 	//Entrance here
 	else
 		var/datum/pipeline/vent_parent = ventcrawl_target.parents[1]
 		if(vent_parent && (vent_parent.members.len || vent_parent.other_atmos_machines))
+			// FLUFFY FRONTIER ADDITION START - VENTCRAWLING SIGNAL
+			var/enter_time = SEND_SIGNAL(src, COMSIG_VENTCRAWL_PRE_ENTER, ventcrawl_target)
+			if(!enter_time)
+				enter_time = 2.5 SECONDS // Default time if the signal doesn't return anything
+			// FLUFFY FRONTIER ADDITION END - VENTCRAWLING SIGNAL
 			ventcrawl_target.flick_overlay_static(image('icons/effects/vent_indicator.dmi', "arrow", ABOVE_MOB_LAYER, dir = get_dir(src.loc, ventcrawl_target.loc)), 2 SECONDS)
 			visible_message(span_notice("[src] begins climbing into the ventilation system...") ,span_notice("You begin climbing into the ventilation system..."))
-			if(!do_after(src, 2.5 SECONDS, target = ventcrawl_target, extra_checks = CALLBACK(src, PROC_REF(can_enter_vent), ventcrawl_target)))
+			if(!do_after(src, enter_time, target = ventcrawl_target, extra_checks = CALLBACK(src, PROC_REF(can_enter_vent), ventcrawl_target))) // FLUFFY FRONTIER CHANGE - VENTCRAWLING SIGNAL
+				SEND_SIGNAL(src, COMSIG_VENTCRAWL_PRE_CANCEL, ventcrawl_target) // FLUFFY FRONTIER ADDITION - VENTCRAWLING SIGNAL
 				return
 			if(has_client && isnull(client))
 				return
@@ -103,6 +128,7 @@
 			ventcrawl_target.flick_overlay_static(image('icons/effects/vent_indicator.dmi', "insert", ABOVE_MOB_LAYER), 1 SECONDS)
 			visible_message(span_notice("[src] scrambles into the ventilation ducts!"), span_notice("You climb into the ventilation ducts."))
 			move_into_vent(ventcrawl_target)
+			SEND_SIGNAL(src, COMSIG_VENTCRAWL_ENTER, ventcrawl_target) // FLUFFY FRONTIER ADDITION - VENTCRAWLING SIGNAL
 		else
 			to_chat(src, span_warning("This ventilation duct is not connected to anything!"))
 

@@ -244,6 +244,7 @@
 
 	item_flags &= ~ABSTRACT
 	REMOVE_TRAIT(src, TRAIT_NODROP, ORGAN_INSIDE_BODY_TRAIT)
+	SEND_SIGNAL(src, COMSIG_ORGAN_BODYPART_REMOVED, limb, movement_flags) // FLUFFY FRONTIER ADDITION, added COMSIG_ORGAN_BODYPART_REMOVED to on_bodypart_remove
 
 	limb.owner?.synchronize_bodytypes()
 	limb.owner?.synchronize_bodyshapes()
