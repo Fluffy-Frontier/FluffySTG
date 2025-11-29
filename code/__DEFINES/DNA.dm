@@ -181,6 +181,23 @@
 #define G_PLURAL 3
 #define G_NEUTER 4
 
+//FF ADDITION START
+// Слоты костей внутри карбонов
+#define ORGAN_BONE_SLOT_SKULL "skull"
+#define ORGAN_BONE_SLOT_RIBS "ribs"
+#define ORGAN_BONE_SLOT_SPINE "spine"
+#define ORGAN_BONE_SLOT_HIP "hip_bone" // тазовая кость
+#define ORGAN_BONE_SLOT_L_HAND "left_hand"
+#define ORGAN_BONE_SLOT_R_HAND "right_hand"
+#define ORGAN_BONE_SLOT_L_ARM "left_arm"
+#define ORGAN_BONE_SLOT_R_ARM "right_arm"
+#define ORGAN_BONE_SLOT_L_FUT "left_fut"
+#define ORGAN_BONE_SLOT_R_FUT "right_fut"
+#define ORGAN_BONE_SLOT_L_LEG "left_leg"
+#define ORGAN_BONE_SLOT_R_LEG "right_leg"
+#define BONE_LIMB_FUNC 100 // ХП всех костей, пока число "условное"
+// FF ADDITION END
+
 /// Defines how a mob's organs_slot is ordered
 /// Exists so Life()'s organ process order is consistent
 GLOBAL_LIST_INIT(organ_process_order, list(
@@ -215,6 +232,20 @@ GLOBAL_LIST_INIT(organ_process_order, list(
 	ORGAN_SLOT_XENO_ACIDGLAND,
 	ORGAN_SLOT_XENO_NEUROTOXINGLAND,
 	ORGAN_SLOT_XENO_EGGSAC,
+	//FF ADDITION START
+	ORGAN_BONE_SLOT_SKULL,
+	ORGAN_BONE_SLOT_RIBS,
+	ORGAN_BONE_SLOT_SPINE,
+	ORGAN_BONE_SLOT_HIP,
+	ORGAN_BONE_SLOT_L_HAND,
+	ORGAN_BONE_SLOT_R_HAND,
+	ORGAN_BONE_SLOT_L_ARM,
+	ORGAN_BONE_SLOT_R_ARM,
+	ORGAN_BONE_SLOT_L_FUT,
+	ORGAN_BONE_SLOT_R_FUT,
+	ORGAN_BONE_SLOT_L_LEG,
+	ORGAN_BONE_SLOT_R_LEG,
+	// FF ADDITION END
 ))
 
 // Defines for used in creating "perks" for the species preference pages.
