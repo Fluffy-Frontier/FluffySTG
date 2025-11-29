@@ -312,6 +312,7 @@
 	desc = "An emergency climbing hook that automatically deploys when falling into a chasm, pulling the user to safety but causing injury."
 	icon_state = "climbingrope_s"
 	slot_flags = ITEM_SLOT_BELT
+	var/attempting = FALSE	// To prevent infinite loops
 
 /obj/item/climbing_hook/emergency/safeguard/equipped(mob/user, slot)
 	. = ..()
@@ -324,21 +325,38 @@
 
 /obj/item/climbing_hook/emergency/safeguard/proc/on_chasm_drop(mob/living/user, turf/chasm_turf)
 	SIGNAL_HANDLER
-	if(user.stat == DEAD)
+	if(user.stat == DEAD || attempting)
 		return
+	attempting = TRUE
+	addtimer(CALLBACK(src, PROC_REF(try_rescue), user, chasm_turf), 0)
+	return COMPONENT_NO_CHASM_DROP
+
+/obj/item/climbing_hook/emergency/safeguard/proc/try_rescue(mob/living/user, turf/chasm_turf)
 	var/list/possible_turfs = list()
 	for(var/turf/T in orange(2, chasm_turf))
 		if(!T.density && !T.GetComponent(/datum/component/chasm) && isopenturf(T))
 			possible_turfs += T
 	if(!length(possible_turfs))
+		drop_back(user, chasm_turf)
 		return
-	var/turf/safe_turf = get_closest_atom(/turf, possible_turfs, chasm_turf)
+	var/turf/safe_turf = pick(possible_turfs)
 	if(!safe_turf)
+		drop_back(user, chasm_turf)
 		return
+	rescue_user(user, chasm_turf, safe_turf)
+	attempting = FALSE
+
+/obj/item/climbing_hook/emergency/safeguard/proc/rescue_user(mob/living/user, turf/chasm_turf, turf/safe_turf)
 	chasm_turf.Beam(safe_turf, icon_state = "zipline_hook", time = 1 SECONDS)
 	playsound(user, 'sound/items/weapons/zipline_fire.ogg', 50)
 	chasm_turf.visible_message(span_warning("A climbing rope shoots out from [user] and latches onto [safe_turf]! [user] is pulled to safety!"))
 	user.take_bodypart_damage(20)
 	user.forceMove(safe_turf)
 	user.Paralyze(5 SECONDS)
-	return COMPONENT_NO_CHASM_DROP
+	var/datum/component/chasm/chasm_comp = chasm_turf.GetComponent(/datum/component/chasm)
+	chasm_comp?.falling_atoms -= WEAKREF(user)
+
+/obj/item/climbing_hook/emergency/safeguard/proc/drop_back(mob/living/user, turf/chasm_turf)
+	attempting = FALSE
+	var/datum/component/chasm/chasm_comp = chasm_turf.GetComponent(/datum/component/chasm)
+	chasm_comp?.drop(user)
