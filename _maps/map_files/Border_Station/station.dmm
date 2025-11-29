@@ -10847,9 +10847,11 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/bot,
-/obj/machinery/chem_master/condimaster,
 /obj/structure/cable,
 /obj/machinery/firealarm/directional/east,
+/obj/machinery/computer/order_console/cook{
+	dir = 8
+	},
 /turf/open/floor/iron/white/smooth_edge{
 	dir = 4
 	},
@@ -44649,8 +44651,8 @@
 /obj/effect/turf_decal/tile/dark/opposingcorners{
 	dir = 1
 	},
-/obj/structure/table,
-/obj/item/wrench,
+/obj/machinery/chem_master/condimaster,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/iron/white,
 /area/station/service/kitchen)
 "nhE" = (
