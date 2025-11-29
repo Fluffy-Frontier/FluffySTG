@@ -20,21 +20,12 @@
 
     // Используем список травм для костей
     //var/list/datum/wounds/bone =list()
-    // Для расчета вероятности травмы (хз нужно ли)
-	var/damage_delta = 0
     // Размер кости
 	var/bone_size = 1
-    // Для дополнения трейтов (от подтипов тоже)
-	var/variant_traits_added
-    // Для для удаления трейтов (от подтипов тоже)
-	var/variant_traits_removed
 /obj/item/organ/bone/Initialize(mapload)
 	. = ..()
 
-//Кости мобов с условиями для иконок
-
-
-
+//на потом
 //#define TRAIT_PARALYSIS_L_ARM "para-l-arm"
 //#define TRAIT_PARALYSIS_R_ARM "para-r-arm"
 //#define TRAIT_PARALYSIS_L_LEG "para-l-leg"
