@@ -13,6 +13,7 @@
 /obj/item/storage/toolbox/mechanical{
 	pixel_y = 8
 	},
+/obj/effect/spawner/random/turretassembly,
 /turf/open/floor/pod/dark,
 /area/shuttle/escape)
 "bZ" = (
@@ -37,7 +38,8 @@
 	id = "bay"
 	},
 /obj/effect/turf_decal/stripes/full,
-/obj/docking_port/mobile,
+/obj/machinery/nova/fan/self_powered,
+/obj/docking_port/mobile/buran,
 /turf/open/floor/pod/dark,
 /area/shuttle/escape)
 "cn" = (
@@ -62,9 +64,9 @@
 /turf/open/floor/catwalk_floor,
 /area/shuttle/escape)
 "dO" = (
-/obj/structure/frame/computer{
-	dir = 1
-	},
+/obj/structure/table/reinforced,
+/obj/effect/spawner/random/turretassembly,
+/obj/item/storage/medkit/fire,
 /turf/open/floor/pod,
 /area/shuttle/escape)
 "ec" = (
@@ -77,6 +79,7 @@
 	},
 /obj/structure/fans/tiny,
 /obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/machinery/nova/fan/self_powered,
 /turf/open/floor/plating,
 /area/shuttle/escape)
 "eV" = (
@@ -89,6 +92,7 @@
 	req_access = list("syndicate")
 	},
 /obj/structure/cable,
+/obj/machinery/nova/fan/self_powered,
 /turf/open/floor/pod/light,
 /area/shuttle/escape)
 "fi" = (
@@ -98,6 +102,7 @@
 	id_tag = "nripoliceship2";
 	req_access = list("syndicate")
 	},
+/obj/machinery/nova/fan/self_powered,
 /turf/open/floor/plating,
 /area/shuttle/escape)
 "fu" = (
@@ -106,7 +111,7 @@
 /area/shuttle/escape)
 "ge" = (
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "gl" = (
 /turf/open/floor/pod/dark,
 /area/shuttle/escape)
@@ -159,10 +164,6 @@
 /obj/item/clothing/accessory/armband/medblue,
 /obj/item/clothing/accessory/armband/medblue,
 /turf/open/floor/iron/white/small,
-/area/shuttle/escape)
-"iV" = (
-/obj/machinery/power/shuttle_engine/huge,
-/turf/open/floor/plating/airless,
 /area/shuttle/escape)
 "jt" = (
 /obj/effect/decal/cleanable/dirt,
@@ -220,6 +221,7 @@
 	req_access = list("syndicate")
 	},
 /obj/structure/cable,
+/obj/machinery/nova/fan/self_powered,
 /turf/open/floor/pod/light,
 /area/shuttle/escape)
 "lk" = (
@@ -301,6 +303,7 @@
 /obj/item/food/meat/slab/meatproduct,
 /obj/item/food/meat/slab/meatproduct,
 /obj/item/food/meat/slab/meatproduct,
+/obj/effect/spawner/random/turretassembly,
 /turf/open/floor/pod/dark,
 /area/shuttle/escape)
 "oa" = (
@@ -421,7 +424,7 @@
 /turf/open/floor/pod/dark,
 /area/shuttle/escape)
 "uf" = (
-/obj/structure/frame/computer,
+/obj/machinery/computer/crew,
 /turf/open/floor/pod,
 /area/shuttle/escape)
 "uR" = (
@@ -519,6 +522,7 @@
 	id_tag = "nripoliceship2";
 	req_access = list("syndicate")
 	},
+/obj/machinery/nova/fan/self_powered,
 /turf/open/floor/pod/light,
 /area/shuttle/escape)
 "yO" = (
@@ -625,6 +629,10 @@
 /obj/structure/cable,
 /turf/open/floor/pod/light,
 /area/shuttle/escape)
+"Dn" = (
+/obj/machinery/computer/atmos_alert,
+/turf/open/floor/pod,
+/area/shuttle/escape)
 "Dq" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
@@ -635,6 +643,7 @@
 	id_tag = "nripoliceship2";
 	req_access = list("syndicate")
 	},
+/obj/machinery/nova/fan/self_powered,
 /turf/open/floor/pod/light,
 /area/shuttle/escape)
 "Ea" = (
@@ -689,6 +698,7 @@
 	id = "bay"
 	},
 /obj/effect/turf_decal/stripes/full,
+/obj/machinery/nova/fan/self_powered,
 /turf/open/floor/pod/dark,
 /area/shuttle/escape)
 "Hb" = (
@@ -823,7 +833,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/shuttle/escape)
+/area/shuttle/escape/no_light)
 "Pc" = (
 /obj/effect/turf_decal/tile/blue/opposingcorners,
 /obj/machinery/computer/operating{
@@ -847,11 +857,10 @@
 /turf/open/floor/iron/white/small,
 /area/shuttle/escape)
 "Rz" = (
-/obj/machinery/turretid{
-	req_access = list("syndicate");
-	pixel_x = -32
+/obj/machinery/computer/emergency_shuttle{
+	dir = 1
 	},
-/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
+/turf/open/floor/pod,
 /area/shuttle/escape)
 "RW" = (
 /obj/machinery/suit_storage_unit/standard_unit,
@@ -888,8 +897,9 @@
 /turf/open/floor/iron/white/small,
 /area/shuttle/escape)
 "SR" = (
+/obj/machinery/power/shuttle_engine/propulsion,
 /turf/open/floor/plating/airless,
-/area/shuttle/escape)
+/area/shuttle/escape/no_light)
 "TC" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/door/airlock/survival_pod{
@@ -1156,8 +1166,8 @@ hE
 ye
 Za
 SR
-SR
-iV
+ge
+ge
 ge
 "}
 (5,1,1) = {"
@@ -1169,7 +1179,7 @@ uf
 UQ
 ec
 Cw
-dO
+Rz
 hE
 Hb
 gl
@@ -1188,8 +1198,8 @@ hE
 jt
 Za
 SR
-SR
-SR
+ge
+ge
 ge
 "}
 (6,1,1) = {"
@@ -1220,8 +1230,8 @@ jt
 jt
 Za
 SR
-SR
-SR
+ge
+ge
 ge
 "}
 (7,1,1) = {"
@@ -1229,11 +1239,11 @@ ge
 ge
 ge
 Vi
-uf
+Dn
 hx
 rE
 yO
-dO
+ec
 hE
 uR
 Nh
@@ -1284,8 +1294,8 @@ oZ
 Oa
 Za
 SR
-SR
-iV
+ge
+ge
 ge
 "}
 (9,1,1) = {"
@@ -1316,8 +1326,8 @@ oZ
 Cx
 Za
 SR
-SR
-SR
+ge
+ge
 ge
 "}
 (10,1,1) = {"
@@ -1348,8 +1358,8 @@ oZ
 gl
 Za
 SR
-SR
-SR
+ge
+ge
 ge
 "}
 (11,1,1) = {"
@@ -1457,7 +1467,7 @@ ce
 Mc
 fu
 OX
-Rz
+hE
 JD
 pR
 pR
@@ -1476,8 +1486,8 @@ ab
 qN
 Za
 SR
-SR
-iV
+ge
+ge
 ge
 "}
 (15,1,1) = {"
@@ -1508,8 +1518,8 @@ ab
 Sf
 Za
 SR
-SR
-SR
+ge
+ge
 ge
 "}
 (16,1,1) = {"
@@ -1540,8 +1550,8 @@ ab
 XZ
 Za
 SR
-SR
-SR
+ge
+ge
 ge
 "}
 (17,1,1) = {"
@@ -1604,8 +1614,8 @@ jt
 gl
 Za
 SR
-SR
-iV
+ge
+ge
 ge
 "}
 (19,1,1) = {"
@@ -1636,8 +1646,8 @@ hE
 gl
 Za
 SR
-SR
-SR
+ge
+ge
 ge
 "}
 (20,1,1) = {"
@@ -1668,8 +1678,8 @@ hE
 Wv
 Za
 SR
-SR
-SR
+ge
+ge
 ge
 "}
 (21,1,1) = {"

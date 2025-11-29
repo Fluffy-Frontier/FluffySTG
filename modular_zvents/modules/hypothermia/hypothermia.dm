@@ -1,5 +1,33 @@
 #define HYPOTHERMIA_TITLE_SCREEN 'modular_zvents/icons/lobby/hypothermia.png'
 
+/datum/award/achievement/safe_landing
+	name = "Мягкая посадка"
+	desc = "Вы пережили кораблекрушение. Может все таки стоило полететь шатлом интерлинка?"
+	database_id = "evt_hypothermia_safelanding"
+
+/datum/award/achievement/very_safe_landing
+	name = "Действительно мягкая посадка"
+	desc = "Вы пережили кораблекрушение, не получив и царапины, вот же чудо!"
+	database_id = "evt_hypothermia_safelanding_sup"
+
+/datum/award/achievement/petrov_kill
+	name = "Последнее одолжение"
+	desc = "Вы победили главного инженера и получили ключ к спасению, отличная работа!"
+	database_id = "evt_hypothermia_petrov_kill"
+
+/datum/award/achievement/laststand
+	name = "Город должен выжить"
+	desc = "Большая буря здесь - город должен выжить!"
+	database_id = "evt_hypothermia_c150fp"
+
+/datum/award/achievement/safe_laucnh
+	name = "Поехали"
+	desc = "Вы спаслись использовав шатл Буран, кажется он наконец-то полетел!"
+	database_id = "evt_hypothermia_escape"
+
+
+
+
 /datum/full_round_event/hypothermia
 	name = "Hypothermia"
 	short_desc = "You and your crew have crashed on this frozen planet. \
@@ -10,7 +38,6 @@
 	disable_dynamic = TRUE
 	lock_respawn = TRUE
 	only_related_observe = FALSE
-	force_dnr = TRUE
 	delay_round_start = TRUE
 	supressed_subsystems = list()
 	disable_ai = TRUE
@@ -22,7 +49,7 @@
 
 
 /datum/full_round_event/hypothermia/lobby_loaded()
-	addtimer(CALLBACK(src, PROC_REF(update_lobby_screen)), 1 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(update_lobby_screen)), 10 SECONDS)
 
 
 /datum/full_round_event/hypothermia/proc/update_lobby_screen()
@@ -31,6 +58,7 @@
 
 /datum/full_round_event/hypothermia/roundstart(init_time)
 	create_crashland_effects()
+	SSweather.eligible_zlevels = list()
 
 
 /datum/full_round_event/hypothermia/proc/create_crashland_effects()
@@ -106,30 +134,31 @@
 		crew.clear_fullscreen("crash_blackout", animated = 20 SECONDS)
 		var/injured = FALSE
 
-		if(prob(60))
+		if(prob(40))
 			injured = TRUE
 			var/obj/item/bodypart/limb = crew.get_bodypart(pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
 			if(limb)
-				limb.receive_damage(brute = rand(12, 20), wound_bonus = 20)
+				limb.receive_damage(brute = rand(15, 25), wound_bonus = 20)
 				to_chat(crew, span_userdanger("Your [limb.name] SHATTERS against twisted steel!"))
 
 		if(prob(40))
 			injured = TRUE
 			var/obj/item/bodypart/chest = crew.get_bodypart(BODY_ZONE_CHEST)
 			if(chest)
-				chest.receive_damage(brute = rand(11, 20), burn = rand(15, 25))
+				chest.receive_damage(brute = rand(15, 25), burn = rand(15, 25))
 				to_chat(crew, span_userdanger("Your ribs CRUSH inward — breathing becomes agony!"))
 
 		if(prob(40))
 			injured = TRUE
 			var/obj/item/bodypart/head = crew.get_bodypart(BODY_ZONE_HEAD)
 			if(head)
-				head.receive_damage(brute = rand(13, 20))
-				crew.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(13, 20))
+				head.receive_damage(brute = rand(15, 25))
+				crew.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(5, 25))
 				to_chat(crew, span_userdanger("Your skull SLAMS into metal — blood pours into your eyes!"))
 
 		if(!injured)
 			to_chat(crew, span_notice("Against all odds... you crawl from the wreckage completely unharmed. A miracle."))
+			crew.client.give_award(/datum/award/achievement/very_safe_landing, crew)
 		var/area/hypothermia/HA = get_area(crew)
 		if(istype(HA, /area/hypothermia))
 			HA.update_mob_visual(crew)
@@ -141,6 +170,26 @@
 
 	for(var/mob/living/carbon/human/crew in GLOB.alive_player_list)
 		to_chat(crew, span_boldwarning("The freezing darkness closes in... the cold is absolute..."))
+		crew.client.give_award(/datum/award/achievement/safe_landing, crew)
+		var/datum/antagonist/custom/crashland_antag = new()
+		var/datum/objective/custom/survive_objective = new()
+		crashland_antag.name = "Выживший"
+		crashland_antag.roundend_category = "Выжившие в кораблекрушении"
+		survive_objective.explanation_text = "Найдите способ выжить и покинуть планету."
+		crashland_antag.show_in_antagpanel = FALSE
+		crashland_antag.objectives += survive_objective
+		crew.mind.add_antag_datum(crashland_antag)
+
+
+
+/datum/full_round_event/hypothermia/proc/on_buran_startup()
+
+
+
+/datum/full_round_event/hypothermia/proc/on_buran_launch()
+
+
+
 
 
 /datum/full_round_event/hypothermia/event_process(ticks_per_second)

@@ -69,9 +69,9 @@
 		if(HA.outdoors)
 			HA.set_temperature(weather_temperature)
 		else
-			HA.decrease_temperature_scaled(weather_temperature_indoor * 0.2 * seconds_per_tick, HA.area_min_temperature)
-			HA.area_min_temperature = weather_temperature_indoor
-
+			if(HA.area_min_temperature > weather_temperature_indoor)
+				HA.area_min_temperature = weather_temperature_indoor
+			HA.decrease_temperature_scaled(weather_temperature_indoor * 0.6 * seconds_per_tick, HA.area_min_temperature)
 
 /datum/weather/snow_storm/snow_blizzard/heavy
 	weather_temperature_indoor = TM15C
@@ -86,6 +86,7 @@
 /datum/weather/snow_storm/snow_blizzard/extreme
 	weather_temperature_indoor = TM70C
 	weather_temperature = TM90C
+	weather_overlay = "snow_storm"
 
 /datum/weather/snow_storm/snow_blizzard/endgame
 	weather_temperature_indoor = TM150C

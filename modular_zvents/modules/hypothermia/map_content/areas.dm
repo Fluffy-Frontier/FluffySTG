@@ -20,6 +20,7 @@
 	var/area_temperature = T0C
 	var/area_min_temperature = TM15C
 	var/list/heat_sources = list()
+	var/datum/weather/affected_weather = null
 
 /area/hypothermia/Initialize(mapload)
 	. = ..()
@@ -29,6 +30,13 @@
 /area/hypothermia/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
+
+/area/hypothermia/proc/get_affected_weather()
+	if(!length(SSweather.processing))
+		return null
+	for(var/datum/weather/active_weather in SSweather.processing)
+		if(src in active_weather.impacted_areas)
+			return active_weather
 
 /area/hypothermia/proc/get_volume()
 	// Volume in m^3, assuming 3 m^3 per turf
@@ -76,11 +84,11 @@
 
 /area/hypothermia/Entered(atom/movable/arrived, area/old_area)
 	. = ..()
-	if(isliving(arrived))
+	if(iscarbon(arrived))
 		update_mob_visual(arrived)
-		var/mob/living/L = arrived
-		if(!L.GetComponent(/datum/component/hypothermia))
-			L.AddComponent(/datum/component/hypothermia)
+		var/mob/living/carbon/C = arrived
+		if(!C.GetComponent(/datum/component/hypothermia))
+			C.AddComponent(/datum/component/hypothermia)
 
 
 
@@ -133,6 +141,7 @@
 	map_generator = /datum/map_generator/cave_generator/hypothermia/surface/deisolated
 
 /area/hypothermia/indoor
+	outdoors = FALSE
 	default_gravity = STANDARD_GRAVITY
 	ambience_index = AMBIENCE_ICEMOON
 	sound_environment = SOUND_ENVIRONMENT_ROOM
@@ -142,7 +151,7 @@
 
 /area/hypothermia/indoor/caven
 	name = "Arctic caves"
-	outdoors = TRUE
+	outdoors = FALSE
 	default_gravity = STANDARD_GRAVITY
 	ambience_index = AMBIENCE_ICEMOON
 	sound_environment = SOUND_ENVIRONMENT_CAVE
@@ -246,6 +255,9 @@
 /area/hypothermia/indoor/outpost/zvezda/security
 	name = "Zvezda security"
 
+
+/area/hypothermia/indoor/outpost/tcoms
+	name = "Telecomunications"
 
 
 /area/hypothermia/indoor/outpost/arctic_quarters

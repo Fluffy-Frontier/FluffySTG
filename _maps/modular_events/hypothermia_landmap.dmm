@@ -20,6 +20,12 @@
 /obj/structure/cable,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/hypothermia/indoor/outpost/zvezda)
+"aj" = (
+/obj/machinery/light/small/directional/north,
+/obj/item/chair/stool,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/iron/smooth,
+/area/hypothermia/indoor/caven)
 "ak" = (
 /obj/machinery/door/poddoor/story,
 /obj/effect/mapping_helpers/listener_helper/open_door{
@@ -85,6 +91,12 @@
 /obj/item/crowbar,
 /turf/open/floor/iron/smooth,
 /area/hypothermia/outdoor/outpost)
+"aw" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
 "ax" = (
 /obj/effect/spawner/structure/window/reinforced/shuttle,
 /obj/effect/mapping_helpers/damaged_window,
@@ -149,12 +161,8 @@
 /turf/open/floor/engine,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
 "aN" = (
-/obj/structure/prop/general/solidgrate4,
 /obj/structure/cable/layer1,
-/obj/structure/railing{
-	dir = 4
-	},
-/turf/open/misc/dirt/icy_planet,
+/turf/open/floor/catwalk_floor,
 /area/hypothermia/indoor/caven)
 "aO" = (
 /obj/effect/spawner/structure/window/reinforced/shuttle,
@@ -196,6 +204,7 @@
 	pixel_x = -6;
 	name = "Radio"
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/iron/smooth,
 /area/hypothermia/indoor/caven)
 "aX" = (
@@ -216,20 +225,39 @@
 /obj/structure/sign/warning/directional/north,
 /turf/open/misc/icy_planet/snow,
 /area/hypothermia/outdoor/outpost)
+"bc" = (
+/obj/structure/chair/office{
+	dir = 8
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
 "be" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/railing,
 /turf/open/misc/icy_planet/snow,
 /area/hypothermia/outdoor/outpost)
+"bf" = (
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/pod/light,
+/area/hypothermia/indoor/caven)
 "bg" = (
 /turf/open/genturf/blue,
 /area/hypothermia/outdoor/plato)
+"bh" = (
+/obj/item/storage/medkit/fire,
+/turf/open/floor/plating,
+/area/hypothermia/indoor/caven)
 "bi" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/effect/mapping_helpers/apc/no_charge,
 /turf/open/floor/catwalk_floor/colony_fabricator,
 /area/hypothermia/indoor/outpost/zvezda/engineering)
+"bj" = (
+/obj/machinery/door/manual_airlock,
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "bk" = (
 /obj/effect/spawner/random/medical/medkit,
 /obj/effect/turf_decal/trimline/blue/warning{
@@ -249,6 +277,10 @@
 /obj/effect/turf_decal/trimline/dark_red/filled/line,
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/zvezda)
+"bn" = (
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
+/area/hypothermia/indoor/outpost/tcoms)
 "bo" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -270,6 +302,7 @@
 /obj/structure/rack,
 /obj/item/clothing/suit/hooded/wintercoat,
 /obj/item/clothing/gloves/color/grey/protects_cold,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/caven)
 "br" = (
@@ -290,6 +323,10 @@
 	},
 /turf/open/floor/iron/smooth,
 /area/hypothermia/indoor/outpost/zvezda)
+"bv" = (
+/obj/item/shard,
+/turf/open/misc/dirt/icy_planet,
+/area/hypothermia/indoor/caven)
 "bw" = (
 /obj/item/stack/sheet/iron,
 /turf/open/misc/sandy_dirt,
@@ -341,6 +378,10 @@
 /obj/effect/mob_spawn/corpse/human/h1132/bezdelnik,
 /turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/outpost/progres/research)
+"bG" = (
+/obj/structure/table_frame,
+/turf/open/floor/plating,
+/area/hypothermia/outdoor/outpost)
 "bH" = (
 /obj/structure/chair/office/light{
 	dir = 4
@@ -424,6 +465,7 @@
 "bW" = (
 /obj/structure/closet/emcloset,
 /obj/effect/turf_decal/bot_white,
+/obj/item/pickaxe/emergency,
 /turf/open/floor/iron/dark/textured_large,
 /area/hypothermia/outdoor/crashland)
 "bX" = (
@@ -476,9 +518,9 @@
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/progres/research)
 "cj" = (
-/obj/effect/mapping_helpers/broken_floor,
 /obj/structure/sign/warning/biohazard/directional/south,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/trimline/purple/filled/line,
+/turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
 "ck" = (
 /obj/structure/closet/crate/large,
@@ -515,11 +557,15 @@
 /turf/open/misc/icy_planet/snow,
 /area/hypothermia/outdoor/outpost)
 "cp" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/table/reinforced,
-/obj/item/storage/toolbox/electrical,
-/turf/open/misc/dirt/icy_planet,
-/area/hypothermia/indoor/caven)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/mapping_helpers/broken_floor,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 4
+	},
+/obj/machinery/light/small/red/dim/directional/east,
+/turf/open/floor/iron/white,
+/area/hypothermia/indoor/caven/vosxod)
 "cq" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/railing{
@@ -621,6 +667,24 @@
 	},
 /turf/open/floor/plating/snowed/standard_air,
 /area/hypothermia/outdoor/outpost)
+"cJ" = (
+/obj/machinery/modular_computer/preset/log_computer{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/add_modular_log{
+	log_author = "System";
+	log_message = "СКАНИРОВАНИЕ ЗАВЕРШЕНО. Живых людей: 0. Тепловые сигнатуры: 0. Дыхание: не обнаружено. Сердцебиение: не обнаружено. Последний зарегистрированный крик: 05:58:12. Протокол 0-Дельта. Полное отсутствие персонала подтверждено. Все двери закрыты навсегда. Свет выключен. Тишина.";
+	log_timestamp = "2363-05-19 06:12:47";
+	name = "Last complex breath log"
+	},
+/obj/effect/mapping_helpers/add_modular_log{
+	log_author = "System";
+	log_message = "22.11.2563 08:04:52. Зарегистрировано падение крупного объекта на поверхность в 4.7 км от комплекса. Ударная волна 7.2 балла. Сейсмические датчики фиксируют множественные вторичные толчки в секторе Федоров: перемещение масс 60-120 кг по туннелям в сторону Прогресса. Двери остаются заблокированными.";
+	log_timestamp = "2563-11-22 17:04:52";
+	name = "Crashland"
+	},
+/turf/open/floor/catwalk_floor,
+/area/hypothermia/indoor/caven)
 "cK" = (
 /obj/structure/sign/warning/directional/north,
 /turf/open/misc/dirt/icy_planet,
@@ -679,8 +743,8 @@
 /obj/effect/turf_decal/box,
 /obj/effect/mapping_helpers/trigger_helper/hand_punch/password{
 	EDITOR_r_code = "128765129";
-	EDITOR_balloon = "Opened";
-	trigger_key = "pr_checkpoint"
+	trigger_key = "pr_checkpoint";
+	EDITOR_TARGET = /obj/machinery/computer
 	},
 /turf/open/floor/plating/snowed,
 /area/hypothermia/outdoor/outpost)
@@ -744,6 +808,11 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/iron/smooth,
 /area/hypothermia/indoor/outpost/arctic_quarters1)
+"de" = (
+/obj/effect/mob_spawn/corpse/human/h1132/bezdelnik,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/misc/dirt/icy_planet,
+/area/hypothermia/indoor/caven)
 "dg" = (
 /obj/structure/sign/warning/directional/north,
 /obj/structure/lattice/catwalk,
@@ -766,6 +835,17 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/caven/vosxod)
+"dk" = (
+/obj/structure/closet/crate/engineering,
+/obj/item/flatpacked_machine/wind_turbine,
+/obj/item/flatpacked_machine/wind_turbine,
+/obj/item/flatpacked_machine/wind_turbine,
+/obj/item/flatpacked_machine/wind_turbine,
+/obj/item/stack/cable_coil/thirty,
+/obj/item/stock_parts/power_store/cell/high,
+/obj/item/stock_parts/power_store/cell/high,
+/turf/open/floor/pod/light,
+/area/hypothermia/indoor)
 "dl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stock_parts/matter_bin,
@@ -805,6 +885,10 @@
 /obj/structure/prop/ship_wreck,
 /turf/open/misc/sandy_dirt,
 /area/hypothermia/outdoor/crashland)
+"ds" = (
+/obj/item/stack/rods,
+/turf/open/misc/sandy_dirt,
+/area/hypothermia/outdoor/outpost)
 "dt" = (
 /obj/item/stack/cable_coil/five,
 /turf/open/misc/dirt/icy_planet,
@@ -818,9 +902,11 @@
 /turf/open/floor/glass/reinforced,
 /area/hypothermia/indoor/outpost/progres/bossfight)
 "dx" = (
-/obj/effect/spawner/random/arctic_mutant,
-/turf/open/floor/plating,
-/area/hypothermia/indoor/outpost/progres/experement)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/broken_floor,
+/obj/machinery/light/small/red/dim/directional/north,
+/turf/open/floor/iron/white,
+/area/hypothermia/indoor/caven/vosxod)
 "dy" = (
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 1
@@ -1002,6 +1088,15 @@
 /obj/item/stack/sheet/glass/fifty,
 /turf/open/misc/icy_planet/snow,
 /area/hypothermia/outdoor/outpost)
+"eh" = (
+/obj/structure/table/wood,
+/obj/item/folder/blue{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/folder/documents,
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
 "ei" = (
 /obj/machinery/oven/range,
 /turf/open/floor/pod/dark,
@@ -1012,8 +1107,12 @@
 	},
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/caven)
+"el" = (
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/pod/light,
+/area/hypothermia/indoor)
 "em" = (
-/obj/item/stack/rods/shuttle/five,
+/obj/item/stack/rods/ten,
 /turf/open/misc/icy_planet/snow,
 /area/hypothermia/outdoor/crashland)
 "eo" = (
@@ -1025,10 +1124,6 @@
 "ep" = (
 /obj/machinery/stasissleeper{
 	dir = 4
-	},
-/obj/effect/turf_decal/weather/snow,
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 9
 	},
 /obj/effect/turf_decal/tile/blue/anticorner/contrasted{
 	dir = 1
@@ -1089,9 +1184,7 @@
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/progres/research)
 "ex" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/item/stack/sheet/iron,
-/turf/open/floor/plating/snowed/standard_air,
+/turf/open/floor/plating,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "ey" = (
 /obj/structure/rack/shelf,
@@ -1225,6 +1318,10 @@
 /obj/structure/deployable_barricade/wooden,
 /turf/open/floor/plating/snowed/standard_air,
 /area/hypothermia/outdoor/outpost)
+"eY" = (
+/obj/structure/lattice,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/crashland)
 "eZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/prop/ship_wreck,
@@ -1270,6 +1367,16 @@
 /obj/effect/landmark/start/psychologist,
 /turf/open/floor/iron/dark/textured_large,
 /area/hypothermia/outdoor/crashland)
+"fk" = (
+/obj/machinery/computer/telecomms/monitor{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/broken_machine,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
 "fm" = (
 /obj/effect/mapping_helpers/trigger_helper/tool_act/wrench{
 	trigger_key = "zv_weathers_server";
@@ -1283,6 +1390,13 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/iron/kitchen,
 /area/hypothermia/indoor/outpost/zvezda/kitchen)
+"fp" = (
+/obj/machinery/power/shuttle_engine/propulsion{
+	dir = 4
+	},
+/obj/structure/lattice,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/outpost)
 "fq" = (
 /obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating/snowed/standard_air,
@@ -1307,6 +1421,10 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/caven/vosxod)
+"fv" = (
+/obj/machinery/light/small/dim/directional/north,
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "fw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
@@ -1381,7 +1499,6 @@
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/outpost/progres/experement)
 "fJ" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/decal/cleanable/blood/trail{
 	dir = 8
 	},
@@ -1609,7 +1726,6 @@
 	},
 /obj/effect/mapping_helpers/trigger_helper/hand_punch/password{
 	EDITOR_r_code = "2092705125";
-	EDITOR_balloon = "Opened";
 	trigger_key = "pr_office_door"
 	},
 /turf/open/floor/pod/light,
@@ -1627,6 +1743,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/cup/bucket,
 /obj/item/mop,
+/obj/machinery/light/small/red/dim/directional/north,
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/caven/vosxod)
 "gO" = (
@@ -1692,6 +1809,14 @@
 /obj/structure/cable,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/hypothermia/indoor/outpost/zvezda/engineering)
+"gZ" = (
+/obj/structure/frame/machine/secured,
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "ha" = (
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/arctic_quarters)
@@ -1737,6 +1862,10 @@
 /obj/item/story_item/hypothermia_thermal_regulator,
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/caven)
+"hk" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/catwalk_floor,
+/area/hypothermia/indoor/caven)
 "hl" = (
 /obj/structure/grille{
 	icon_state = "grille50_3"
@@ -1767,6 +1896,11 @@
 /obj/effect/gibspawner/human,
 /turf/open/floor/plating,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
+"hp" = (
+/obj/machinery/ntnet_relay,
+/obj/effect/turf_decal/stripes/box,
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "hq" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "splatter6"
@@ -1776,6 +1910,11 @@
 	},
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
+"hr" = (
+/obj/effect/decal/cleanable/blood/old,
+/obj/structure/lattice/catwalk,
+/turf/open/misc/dirt/icy_planet,
+/area/hypothermia/indoor/caven)
 "hs" = (
 /obj/structure/railing{
 	dir = 6
@@ -1787,6 +1926,7 @@
 /area/hypothermia/outdoor/crashland)
 "hu" = (
 /obj/effect/turf_decal/trimline/dark_blue/filled/line,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/zvezda/security)
 "hw" = (
@@ -1817,6 +1957,10 @@
 /obj/machinery/griddle,
 /turf/open/floor/iron/kitchen,
 /area/hypothermia/indoor/outpost/progres/research)
+"hE" = (
+/obj/machinery/light/small/dim/directional/east,
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
 "hF" = (
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/arctic_quarters1)
@@ -1835,8 +1979,8 @@
 /area/hypothermia/indoor/outpost/zvezda/rnd)
 "hI" = (
 /obj/structure/table/reinforced,
-/obj/item/gun/energy/disabler,
 /obj/effect/turf_decal/trimline/dark_red/filled/line,
+/obj/item/gun/energy/e_gun/old,
 /turf/open/floor/iron/dark/textured,
 /area/hypothermia/indoor/outpost/zvezda/heavy_armory)
 "hJ" = (
@@ -1892,11 +2036,9 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/hypothermia/outdoor/crashland)
 "hY" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/item/stack/sheet/mineral/titanium,
-/obj/effect/mob_spawn/corpse/human/h1132/bezdelnik,
-/turf/open/floor/plating/snowed/standard_air,
-/area/hypothermia/indoor/outpost/zvezda/medical_lobby)
+/obj/structure/broken_flooring/side/directional/east,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/crashland)
 "hZ" = (
 /turf/closed/mineral/random/icy_planet/snow,
 /area/hypothermia/indoor/caven)
@@ -1941,9 +2083,13 @@
 /turf/open/floor/iron,
 /area/hypothermia/indoor/outpost/progres/research)
 "ig" = (
-/obj/effect/spawner/random/arctic_mutant,
-/turf/open/floor/iron,
-/area/hypothermia/indoor/outpost/progres/research)
+/obj/structure/lattice,
+/turf/open/misc/dirt/icy_planet,
+/area/hypothermia/indoor/caven)
+"ii" = (
+/obj/machinery/light/small/dim/directional/south,
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "ij" = (
 /obj/machinery/door/manual_airlock,
 /turf/open/misc/dirt/icy_planet,
@@ -2078,9 +2224,11 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/hypothermia/indoor/outpost/zvezda/dorm3)
 "iK" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/gibspawner/human,
-/turf/open/floor/plating/snowed/standard_air,
+/obj/effect/turf_decal/trimline/dark_red/filled/line{
+	dir = 1
+	},
+/turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/zvezda)
 "iL" = (
 /obj/structure/fence/cut,
@@ -2146,6 +2294,15 @@
 	},
 /turf/open/floor/iron/smooth,
 /area/hypothermia/indoor/outpost/arctic_quarters2)
+"iS" = (
+/obj/structure/table/wood,
+/obj/item/phone{
+	desc = "Supposedly a direct line to Nanotrasen Central Command. It's not even plugged in.";
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
 "iT" = (
 /turf/open/floor/plating,
 /area/hypothermia/indoor/caven)
@@ -2176,6 +2333,15 @@
 /obj/structure/chair/stool/directional/south,
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/zvezda)
+"iZ" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/outpost)
+"ja" = (
+/obj/machinery/power/shuttle_engine/propulsion,
+/turf/open/floor/plating/airless,
+/area/hypothermia/outdoor/outpost)
 "jc" = (
 /obj/structure/prop/city/buildingventbig7,
 /obj/effect/decal/cleanable/dirt,
@@ -2201,6 +2367,11 @@
 	},
 /turf/open/floor/plating/snowed/standard_air,
 /area/hypothermia/outdoor/outpost)
+"ji" = (
+/obj/structure/lattice,
+/obj/item/stack/sheet/mineral/titanium,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/outpost)
 "jj" = (
 /obj/effect/turf_decal/tile/blue/opposingcorners,
 /obj/machinery/vending/medical{
@@ -2216,7 +2387,6 @@
 /turf/closed/indestructible/reinforced,
 /area/hypothermia/indoor/outpost/progres/bossfight)
 "jn" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/turf_decal/trimline/dark_red/filled/line,
 /turf/open/floor/pod/dark,
@@ -2225,6 +2395,7 @@
 /obj/structure/closet/emcloset,
 /obj/effect/turf_decal/bot_white,
 /obj/machinery/light/directional/east,
+/obj/item/pickaxe/emergency,
 /turf/open/floor/iron/dark/textured_large,
 /area/hypothermia/outdoor/crashland)
 "jr" = (
@@ -2240,6 +2411,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/blood/old,
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/caven/vosxod)
 "jt" = (
@@ -2343,6 +2515,11 @@
 	},
 /turf/open/floor/iron/colony,
 /area/hypothermia/indoor/outpost/zvezda/engineering)
+"jR" = (
+/obj/machinery/door/manual_airlock,
+/obj/effect/turf_decal/tile/blue/fourcorners,
+/turf/open/floor/iron/white/textured,
+/area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "jS" = (
 /obj/item/ammo_box/speedloader/strilka310,
 /obj/effect/spawner/random/medical/surgery_tool,
@@ -2422,7 +2599,7 @@
 /turf/open/floor/iron/grimy,
 /area/hypothermia/indoor/outpost/zvezda/dorm5)
 "kg" = (
-/obj/structure/broken_flooring/side/directional/north,
+/obj/structure/broken_flooring/side/directional/west,
 /turf/open/misc/sandy_dirt,
 /area/hypothermia/outdoor/crashland)
 "kh" = (
@@ -2518,6 +2695,14 @@
 /obj/item/stock_parts/power_store/cell/high,
 /turf/open/floor/iron/colony,
 /area/hypothermia/indoor/outpost/zvezda/engineering)
+"kw" = (
+/obj/machinery/telecomms/processor/preset_three,
+/obj/effect/turf_decal/tile/blue/anticorner/contrasted{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "kx" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light/small/directional/south,
@@ -2532,19 +2717,29 @@
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/caven/vosxod)
 "kA" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/item/ammo_box/magazine/m9mm,
 /turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "kB" = (
 /turf/open/floor/iron/smooth,
 /area/hypothermia/indoor/outpost/zvezda/garag)
+"kC" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/effect/mapping_helpers/damaged_window,
+/turf/open/floor/plating,
+/area/hypothermia/indoor/outpost/tcoms)
 "kD" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
 	},
 /turf/open/floor/plating/snowed/standard_air,
 /area/hypothermia/outdoor/outpost)
+"kE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/red/dim/directional/east,
+/turf/open/floor/iron/white,
+/area/hypothermia/indoor/caven/vosxod)
 "kF" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
@@ -2656,8 +2851,6 @@
 /turf/open/floor/iron/dark/textured,
 /area/hypothermia/indoor/caven)
 "kX" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/item/stack/sheet/iron,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
 	},
@@ -2670,6 +2863,14 @@
 /obj/item/bodypart/leg/left,
 /turf/open/misc/dirt/icy_planet,
 /area/hypothermia/indoor/caven)
+"la" = (
+/obj/machinery/telecomms/bus/preset_two,
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "lb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/dim/directional/south,
@@ -2727,6 +2928,9 @@
 	pixel_y = -2;
 	pixel_x = 0
 	},
+/obj/effect/spawner/random/turretkit,
+/obj/effect/spawner/random/turretkit,
+/obj/effect/spawner/random/turretkit,
 /turf/open/floor/iron/dark/textured,
 /area/hypothermia/indoor/outpost/zvezda/heavy_armory)
 "lm" = (
@@ -2751,6 +2955,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical/old,
+/obj/machinery/light/small/red/dim/directional/south,
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/caven/vosxod)
 "lp" = (
@@ -2776,7 +2981,6 @@
 /turf/open/floor/pod/dark,
 /area/hypothermia/outdoor/crashland)
 "lz" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 4
 	},
@@ -2866,10 +3070,6 @@
 /obj/machinery/stasissleeper{
 	dir = 4
 	},
-/obj/effect/turf_decal/weather/snow,
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 10
-	},
 /obj/effect/turf_decal/tile/blue/anticorner/contrasted{
 	dir = 8
 	},
@@ -2892,10 +3092,18 @@
 /obj/structure/ladder,
 /turf/open/floor/pod/dark,
 /area/hypothermia/outdoor/outpost)
+"lT" = (
+/obj/structure/prop/general/barrel_purewhite,
+/obj/structure/lattice/catwalk,
+/obj/effect/mapping_helpers/item_dispenser/limited/five{
+	target_dispenser_type = /obj/structure/prop/general/barrel_purewhite
+	},
+/obj/item/climbing_hook/emergency/safeguard,
+/turf/open/misc/dirt/icy_planet,
+/area/hypothermia/indoor/caven/deep)
 "lW" = (
 /obj/structure/frame/machine/secured,
-/obj/effect/turf_decal/weather/snow,
-/turf/open/floor/plating/snowed/standard_air,
+/turf/open/floor/plating,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "lX" = (
 /obj/machinery/suit_storage_unit/open,
@@ -2926,7 +3134,6 @@
 /turf/open/misc/icy_planet/snow,
 /area/hypothermia/indoor/caven)
 "me" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
@@ -2968,6 +3175,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/hypothermia/outdoor/crashland)
+"mm" = (
+/obj/item/kirbyplants/random/fullysynthetic,
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
+"mo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/broken/directional/east,
+/turf/open/floor/iron/white/small,
+/area/hypothermia/indoor/caven/vosxod)
 "mp" = (
 /obj/structure/rack/shelf,
 /obj/item/storage/toolbox/ammobox/strilka310{
@@ -3038,6 +3254,15 @@
 /obj/item/pen,
 /turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/caven/vosxod)
+"mx" = (
+/obj/structure/tank_holder/extinguisher,
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
+"my" = (
+/obj/effect/spawner/random/medical/surgery_tool,
+/obj/effect/turf_decal/tile/blue/half/contrasted,
+/turf/open/floor/iron/white/small,
+/area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "mz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/trail{
@@ -3085,6 +3310,8 @@
 /area/hypothermia/outdoor/crashland)
 "mR" = (
 /obj/structure/cable/layer1,
+/obj/machinery/door/manual_airlock,
+/turf/open/floor/catwalk_floor,
 /area/hypothermia/indoor/caven)
 "mS" = (
 /obj/structure/table/reinforced,
@@ -3224,10 +3451,18 @@
 	},
 /turf/open/floor/engine,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
+"ns" = (
+/obj/item/lighter{
+	pixel_x = 5;
+	pixel_y = -2
+	},
+/turf/open/floor/plating,
+/area/hypothermia/indoor/caven)
 "nt" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/closet/crate/large,
 /obj/item/grenade/frag,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/caven)
 "nu" = (
@@ -3244,7 +3479,7 @@
 /area/hypothermia/indoor/outpost/arctic_quarters)
 "ny" = (
 /obj/effect/mapping_helpers/crafter_recipe{
-	ingredients = list(/obj/item/stack/cable_coil/five=10, /obj/item/stack/sheet/iron=5, /obj/item/stack/sheet/glass=5, /obj/item/electronics/apc=1);
+	ingredients = list(/obj/item/stack/cable_coil=10, /obj/item/stack/sheet/iron=5, /obj/item/stack/sheet/glass=5, /obj/item/electronics/apc=1);
 	name = "Crafter over prop(windturbine)";
 	target_crafter_type = /obj/structure/prop/smelter
 	},
@@ -3342,6 +3577,13 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
 /area/hypothermia/indoor/outpost/progres/research)
+"nO" = (
+/obj/effect/turf_decal/tile/purple/anticorner/contrasted{
+	dir = 4
+	},
+/obj/structure/frame/machine,
+/turf/open/floor/iron/white/telecomms,
+/area/hypothermia/indoor/outpost/tcoms)
 "nP" = (
 /obj/structure/steps/directional/east{
 	dir = 2
@@ -3425,7 +3667,6 @@
 /turf/open/chasm/icy_planet,
 /area/hypothermia/indoor/caven/nest)
 "oe" = (
-/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "og" = (
@@ -3440,9 +3681,6 @@
 	},
 /turf/open/misc/dirt/icy_planet,
 /area/hypothermia/indoor/caven/deep)
-"oi" = (
-/turf/open/space/basic,
-/area/hypothermia/indoor/caven/deep/autogen)
 "oj" = (
 /obj/structure/chair/stool/directional/south,
 /turf/open/floor/pod/light,
@@ -3501,6 +3739,10 @@
 	},
 /turf/open/floor/iron/smooth,
 /area/hypothermia/indoor/caven)
+"os" = (
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/pod/dark,
+/area/hypothermia/indoor/outpost/zvezda/engineering)
 "ou" = (
 /obj/structure/chair{
 	dir = 8
@@ -3531,6 +3773,10 @@
 /obj/item/stack/medical/ointment,
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor)
+"ox" = (
+/obj/structure/marker_beacon/olive,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/hypothermia/outdoor/outpost)
 "oy" = (
 /obj/machinery/cell_charger{
 	pixel_y = 5
@@ -3612,12 +3858,8 @@
 /turf/open/openspace/icy_planet,
 /area/hypothermia/indoor/caven)
 "oN" = (
-/obj/structure/prop/general/solidgrate4,
 /obj/structure/cable/multilayer/multiz,
-/obj/structure/railing{
-	dir = 4
-	},
-/turf/open/misc/dirt/icy_planet,
+/turf/open/floor/catwalk_floor,
 /area/hypothermia/indoor/caven)
 "oO" = (
 /obj/structure/broken_flooring/plating/always_floorplane/directional/east,
@@ -3635,7 +3877,6 @@
 /turf/open/floor/iron/white/herringbone,
 /area/hypothermia/indoor/outpost/zvezda/dorm3)
 "oR" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/tile/blue/half/contrasted,
 /obj/structure/extinguisher_cabinet/directional/south,
 /obj/machinery/light/small/dim/directional/south,
@@ -3649,11 +3890,20 @@
 /area/hypothermia/indoor/outpost/zvezda/security)
 "oU" = (
 /obj/structure/table,
+/obj/item/gun/ballistic/automatic/mini_uzi,
+/obj/item/ammo_box/magazine/uzim9mm,
+/obj/item/ammo_box/magazine/uzim9mm,
+/obj/item/ammo_box/magazine/uzim9mm,
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/progres/research)
 "oV" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/effect/turf_decal/bot,
+/obj/item/shield/riot/tele,
+/obj/item/shield/riot/tele,
+/obj/item/shield/riot/tele,
+/obj/item/shield/riot/tele,
+/obj/item/shield/riot/tele,
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/progres/research)
 "oW" = (
@@ -3673,6 +3923,10 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/progres/research)
+"oZ" = (
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/hypothermia/indoor/outpost/zvezda/engineering)
 "pa" = (
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 8
@@ -3682,15 +3936,14 @@
 /area/hypothermia/indoor/outpost/zvezda)
 "pb" = (
 /obj/structure/rack/shelf,
-/obj/item/gun/energy/disabler,
-/obj/item/gun/energy/disabler{
-	pixel_x = 0;
-	pixel_y = -4
-	},
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 1
 	},
 /obj/structure/sign/departments/security/directional/north,
+/obj/item/shield/riot,
+/obj/item/shield/riot,
+/obj/item/melee/baton,
+/obj/item/melee/baton,
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/zvezda/security)
 "pc" = (
@@ -3769,8 +4022,6 @@
 /turf/open/floor/iron/dark/textured,
 /area/hypothermia/indoor/outpost/zvezda/heavy_armory)
 "pp" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/item/stack/sheet/mineral/titanium,
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 1
 	},
@@ -3820,6 +4071,10 @@
 	},
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/outpost/progres/research)
+"px" = (
+/obj/structure/marker_beacon/burgundy,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/hypothermia/outdoor/outpost)
 "py" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/hypothermia/indoor/outpost/zvezda/dorm2)
@@ -3829,7 +4084,6 @@
 /area/hypothermia/indoor/outpost/arctic_quarters1)
 "pA" = (
 /obj/structure/table_frame,
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
 	},
@@ -3864,6 +4118,7 @@
 /area/hypothermia/indoor/outpost/zvezda/security)
 "pF" = (
 /obj/machinery/cell_charger_multi/wall_mounted/directional/east,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
 "pG" = (
@@ -3887,22 +4142,21 @@
 /obj/effect/spawner/random/arctic_mutant,
 /turf/open/misc/dirt/icy_planet,
 /area/hypothermia/indoor/caven/deep)
+"pL" = (
+/obj/structure/table,
+/obj/item/ammo_box/magazine/m9mm{
+	pixel_x = -6;
+	pixel_y = 2
+	},
+/obj/item/ammo_box/magazine/m9mm{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/turf/open/floor/iron/smooth,
+/area/hypothermia/indoor/caven)
 "pN" = (
-/obj/structure/lattice/catwalk,
-/obj/machinery/modular_computer/preset/log_computer,
-/obj/effect/mapping_helpers/add_modular_log{
-	log_author = "System";
-	log_message = "СКАНИРОВАНИЕ ЗАВЕРШЕНО. Живых людей: 0. Тепловые сигнатуры: 0. Дыхание: не обнаружено. Сердцебиение: не обнаружено. Последний зарегистрированный крик: 05:58:12. Протокол 0-Дельта. Полное отсутствие персонала подтверждено. Все двери закрыты навсегда. Свет выключен. Тишина.";
-	log_timestamp = "2363-05-19 06:12:47";
-	name = "Last complex breath log"
-	},
-/obj/effect/mapping_helpers/add_modular_log{
-	log_author = "System";
-	log_message = "22.11.2563 08:04:52. Зарегистрировано падение крупного объекта на поверхность в 4.7 км от комплекса. Ударная волна 7.2 балла. Сейсмические датчики фиксируют множественные вторичные толчки в секторе Федоров: перемещение масс 60-120 кг по туннелям в сторону Прогресса. Двери остаются заблокированными.";
-	log_timestamp = "2563-11-22 17:04:52";
-	name = "Crashland"
-	},
-/turf/open/misc/dirt/icy_planet,
+/obj/item/kirbyplants/random/fullysynthetic,
+/turf/open/floor/iron/smooth,
 /area/hypothermia/indoor/caven)
 "pO" = (
 /obj/structure/railing{
@@ -3933,7 +4187,6 @@
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/caven/vosxod)
 "pT" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/gibspawner/human,
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 1
@@ -4001,8 +4254,13 @@
 "qg" = (
 /obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/stripes/corner,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor)
+"qh" = (
+/obj/structure/chair/office/light,
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
 "qi" = (
 /obj/machinery/door/manual_airlock,
 /turf/open/floor/iron/showroomfloor,
@@ -4011,11 +4269,13 @@
 /obj/structure/table/reinforced,
 /obj/machinery/coffeemaker,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/red/dim/directional/north,
 /turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/caven/vosxod)
 "qm" = (
 /obj/machinery/door/manual_airlock,
 /obj/effect/decal/cleanable/blood,
+/obj/effect/turf_decal/tile/blue/fourcorners,
 /turf/open/floor/iron/white/textured,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "qo" = (
@@ -4092,6 +4352,12 @@
 /obj/item/stack/cable_coil/five,
 /turf/open/misc/icy_planet/snow,
 /area/hypothermia/outdoor/crashland)
+"qE" = (
+/obj/structure/fence/corner{
+	dir = 4
+	},
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/outpost)
 "qF" = (
 /obj/machinery/door/manual_airlock,
 /obj/structure/cable,
@@ -4180,9 +4446,8 @@
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/zvezda)
 "qS" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/mob_spawn/corpse/human/h1132/bezdelnik,
-/turf/open/floor/plating/snowed/standard_air,
+/turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "qT" = (
 /obj/structure/table/optable,
@@ -4244,16 +4509,23 @@
 /turf/open/floor/plating,
 /area/hypothermia/indoor/outpost/progres/experement)
 "rg" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/item/stack/sheet/mineral/titanium,
 /obj/effect/spawner/random/medical/surgery_tool,
-/turf/open/floor/plating/snowed/standard_air,
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "rh" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/effect/landmark/start/chief_engineer,
 /turf/open/floor/iron/smooth_large,
 /area/hypothermia/outdoor/crashland)
+"ri" = (
+/obj/item/stack/rods,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
+/area/hypothermia/outdoor/outpost)
 "rj" = (
 /obj/structure/table_frame,
 /obj/effect/turf_decal/delivery/blue,
@@ -4264,7 +4536,6 @@
 /area/hypothermia/indoor/outpost/progres/research)
 "rm" = (
 /obj/structure/table_frame,
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 9
 	},
@@ -4307,6 +4578,7 @@
 "ru" = (
 /obj/structure/table,
 /obj/effect/spawner/random/food_or_drink/booze,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/iron/smooth,
 /area/hypothermia/indoor/caven)
 "rx" = (
@@ -4349,10 +4621,10 @@
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
 "rC" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/item/stack/sheet/mineral/titanium,
 /obj/effect/gibspawner/human,
-/turf/open/floor/plating/snowed/standard_air,
+/obj/effect/turf_decal/tile/blue/half/contrasted,
+/turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "rD" = (
 /turf/open/floor/pod/dark,
@@ -4365,6 +4637,11 @@
 /obj/structure/cable,
 /turf/open/floor/iron/grimy,
 /area/hypothermia/indoor/outpost/zvezda/dorm5)
+"rG" = (
+/obj/structure/reagent_dispensers/fueltank,
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/iron/smooth,
+/area/hypothermia/indoor/caven)
 "rI" = (
 /obj/structure/rack/shelf,
 /obj/item/flashlight/seclite{
@@ -4408,12 +4685,10 @@
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/zvezda/security)
 "rK" = (
-/obj/structure/barricade/wooden/snowed,
-/obj/structure/barricade/wooden/crude/snow,
-/obj/effect/turf_decal/weather/snow,
-/obj/effect/turf_decal/trimline/dark_red/filled/line,
-/turf/open/floor/pod/dark,
-/area/hypothermia/indoor/outpost/zvezda)
+/obj/structure/table/reinforced,
+/obj/item/flashlight/lantern,
+/turf/open/floor/catwalk_floor,
+/area/hypothermia/indoor/caven)
 "rO" = (
 /obj/machinery/power/floodlight,
 /obj/structure/cable,
@@ -4476,12 +4751,23 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/caven/vosxod)
+"sf" = (
+/obj/effect/mapping_helpers/broken_floor,
+/obj/structure/frame/machine,
+/turf/open/floor/plating,
+/area/hypothermia/outdoor/outpost)
 "sg" = (
 /obj/structure/fence{
 	dir = 4
 	},
 /turf/open/misc/icy_planet/snow,
 /area/hypothermia/outdoor/outpost)
+"sh" = (
+/obj/machinery/telecomms/hub/preset,
+/obj/effect/mapping_helpers/broken_machine,
+/obj/effect/turf_decal/stripes/box,
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "si" = (
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/iron/showroomfloor,
@@ -4548,6 +4834,10 @@
 /obj/item/storage/medkit/regular,
 /turf/open/floor/iron/dark/textured_large,
 /area/hypothermia/outdoor/crashland)
+"sx" = (
+/obj/item/melee/tomahawk,
+/turf/open/floor/pod/light,
+/area/hypothermia/indoor/outpost/progres/research)
 "sy" = (
 /turf/open/floor/iron/recharge_floor,
 /area/hypothermia/indoor/outpost/progres/research)
@@ -4625,6 +4915,18 @@
 	pixel_y = 12
 	},
 /obj/structure/table,
+/obj/item/ammo_box/speedloader/strilka310{
+	pixel_x = -4;
+	pixel_y = 4
+	},
+/obj/item/ammo_box/speedloader/strilka310{
+	pixel_x = -4;
+	pixel_y = 4
+	},
+/obj/item/ammo_box/speedloader/strilka310{
+	pixel_x = -4;
+	pixel_y = 4
+	},
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/progres/research)
 "sI" = (
@@ -4648,6 +4950,12 @@
 /obj/structure/cable,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/hypothermia/indoor/outpost/zvezda/engineering)
+"sN" = (
+/obj/structure/closet/crate/large,
+/obj/item/melee/sabre/cargo,
+/obj/item/melee/sabre/cargo,
+/turf/open/floor/pod/light,
+/area/hypothermia/indoor)
 "sP" = (
 /obj/structure/railing{
 	dir = 6
@@ -4673,10 +4981,6 @@
 /obj/item/story_item/hypothermia_applied_ai_core,
 /obj/structure/ai_core{
 	anchored = 1
-	},
-/obj/effect/mapping_helpers/item_dispenser/limited{
-	target_dispenser_type = /obj/structure/ai_core;
-	max_claims = 2
 	},
 /obj/structure/marker_beacon/burgundy,
 /turf/open/floor/engine,
@@ -4742,7 +5046,6 @@
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/hypothermia/indoor/outpost/zvezda/engineering)
 "th" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
 	},
@@ -4786,9 +5089,6 @@
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/progres/research)
 "tq" = (
-/obj/structure/barricade/wooden/snowed,
-/obj/structure/barricade/wooden/crude/snow,
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 1
 	},
@@ -4830,10 +5130,9 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/hypothermia/outdoor/crashland)
 "tx" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/item/stack/sheet/mineral/titanium,
-/turf/open/floor/plating/snowed/standard_air,
-/area/hypothermia/indoor/outpost/zvezda)
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/pod/light,
+/area/hypothermia/indoor/caven)
 "ty" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/pod/dark,
@@ -4852,12 +5151,11 @@
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/outpost/progres/experement)
 "tC" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/effect/turf_decal/trimline/dark_red/filled/line{
-	dir = 1
-	},
-/turf/open/floor/pod/dark,
-/area/hypothermia/indoor/outpost/zvezda)
+/obj/structure/closet/crate/large,
+/obj/item/pickaxe/drill,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/pod/light,
+/area/hypothermia/indoor)
 "tE" = (
 /obj/machinery/light/small/dim/directional/west,
 /turf/open/floor/pod/dark,
@@ -4869,9 +5167,11 @@
 /turf/open/floor/catwalk_floor,
 /area/hypothermia/outdoor/outpost)
 "tG" = (
-/obj/structure/steps/directional/east,
-/turf/open/misc/icy_planet/snow,
-/area/hypothermia/outdoor/outpost)
+/obj/structure/rack,
+/obj/item/clothing/head/utility/welding,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/iron/smooth,
+/area/hypothermia/indoor/caven)
 "tH" = (
 /obj/effect/mob_spawn/corpse/human/h1132/bezdelnik,
 /turf/open/floor/plating,
@@ -4933,6 +5233,10 @@
 	},
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
+"tT" = (
+/obj/item/storage/medkit/frontier/stocked,
+/turf/open/misc/dirt/icy_planet,
+/area/hypothermia/indoor/caven)
 "tU" = (
 /obj/structure/cable,
 /obj/item/wallframe/apc,
@@ -5124,6 +5428,7 @@
 	},
 /obj/structure/rack,
 /obj/item/clothing/suit/hooded/wintercoat,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/caven)
 "uF" = (
@@ -5180,6 +5485,15 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/caven)
+"uQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 4
+	},
+/obj/machinery/light/small/broken/directional/east,
+/turf/open/floor/iron/white,
+/area/hypothermia/indoor/caven/vosxod)
 "uR" = (
 /obj/item/gun/ballistic/automatic/pistol/aps,
 /obj/item/ammo_box/magazine/m9mm_aps,
@@ -5213,6 +5527,14 @@
 	},
 /turf/open/misc/sandy_dirt,
 /area/hypothermia/indoor/caven)
+"uY" = (
+/obj/machinery/telecomms/server/presets/command,
+/obj/effect/turf_decal/tile/blue/anticorner/contrasted{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "uZ" = (
 /obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/cable,
@@ -5307,6 +5629,11 @@
 /obj/item/storage/belt/mining,
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor)
+"vr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/broken/directional/east,
+/turf/open/floor/iron/white,
+/area/hypothermia/indoor/caven/vosxod)
 "vs" = (
 /obj/machinery/light/directional/east,
 /obj/machinery/computer/operating{
@@ -5443,8 +5770,22 @@
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating,
 /area/hypothermia/indoor/caven/deep)
+"vV" = (
+/obj/item/storage/medkit/emergency,
+/obj/structure/table/reinforced,
+/obj/item/storage/medkit/emergency{
+	pixel_x = 0;
+	pixel_y = 7
+	},
+/turf/open/floor/catwalk_floor,
+/area/hypothermia/indoor/caven)
+"vW" = (
+/obj/machinery/telecomms/broadcaster/preset_right,
+/obj/effect/mapping_helpers/broken_machine,
+/obj/effect/turf_decal/stripes/box,
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "vX" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 1
 	},
@@ -5459,12 +5800,11 @@
 /turf/open/floor/iron/smooth,
 /area/hypothermia/outdoor/crashland)
 "vZ" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/effect/spawner/random/medical/surgery_tool,
-/turf/open/floor/plating/snowed/standard_air,
-/area/hypothermia/indoor/outpost/zvezda/medical_lobby)
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/catwalk_floor,
+/area/hypothermia/indoor/caven)
 "wa" = (
-/obj/item/stack/rods/shuttle/five,
+/obj/item/stack/rods/ten,
 /turf/open/misc/dirt/icy_planet,
 /area/hypothermia/outdoor/crashland)
 "wd" = (
@@ -5473,6 +5813,14 @@
 /obj/item/pen,
 /turf/open/floor/iron/dark/textured_large,
 /area/hypothermia/outdoor/crashland)
+"wf" = (
+/obj/structure/table/wood,
+/obj/item/storage/medkit/regular,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
 "wg" = (
 /obj/effect/turf_decal/tile/blue/opposingcorners,
 /obj/machinery/light/small/directional/west,
@@ -5536,7 +5884,6 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/hypothermia/outdoor/crashland)
 "wq" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 1
 	},
@@ -5707,6 +6054,8 @@
 /area/hypothermia/indoor/outpost/zvezda/rnd)
 "wZ" = (
 /obj/effect/turf_decal/weather/snow,
+/obj/structure/barricade/wooden/snowed,
+/obj/structure/barricade/wooden/crude/snow,
 /turf/open/floor/plating/snowed/standard_air,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
 "xa" = (
@@ -5774,7 +6123,6 @@
 /obj/effect/decal/cleanable/blood/trail{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/broken_floor,
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 4
 	},
@@ -5837,6 +6185,12 @@
 	},
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/arctic_quarters2)
+"xA" = (
+/obj/structure/table/reinforced,
+/obj/machinery/cell_charger,
+/obj/item/stock_parts/power_store/cell/high,
+/turf/open/floor/pod/dark,
+/area/hypothermia/indoor/outpost/zvezda/engineering)
 "xE" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
 /obj/item/bodypart/arm/left,
@@ -5905,6 +6259,11 @@
 "xS" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/hypothermia/indoor/outpost/zvezda/security)
+"xT" = (
+/obj/item/stack/sheet/iron,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
+/area/hypothermia/outdoor/outpost)
 "xU" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating,
@@ -5959,10 +6318,19 @@
 /obj/item/pickaxe,
 /turf/open/floor/plating,
 /area/hypothermia/outdoor/outpost)
+"ye" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/closet/crate/large,
+/obj/item/storage/medkit/fire,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/outpost)
 "yf" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/decal/cleanable/blood/gibs/core,
-/turf/open/floor/plating/snowed/standard_air,
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/blue/filled/line,
+/turf/open/floor/iron/white/textured,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "yg" = (
 /obj/effect/mapping_helpers/broken_floor,
@@ -6084,7 +6452,6 @@
 /turf/open/floor/iron/showroomfloor,
 /area/hypothermia/indoor/outpost/progres/experement)
 "yA" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "splatter6"
 	},
@@ -6094,6 +6461,13 @@
 /obj/structure/sign/departments/medbay/alt/directional/north,
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/zvezda)
+"yB" = (
+/obj/machinery/power/shuttle_engine/heater{
+	dir = 4
+	},
+/obj/structure/lattice,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/outpost)
 "yC" = (
 /obj/item/stack/sheet/mineral/titanium,
 /turf/open/floor/asphalt,
@@ -6108,9 +6482,9 @@
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/progres/experement)
 "yH" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/decal/cleanable/blood/gibs/down,
-/turf/open/floor/plating/snowed/standard_air,
+/obj/effect/turf_decal/tile/blue/fourcorners,
+/turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "yI" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -6141,6 +6515,10 @@
 /obj/machinery/door/manual_airlock,
 /turf/open/floor/engine,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
+"yQ" = (
+/obj/machinery/light/small/broken/directional/east,
+/turf/open/floor/plating,
+/area/hypothermia/indoor/caven/vosxod)
 "yR" = (
 /obj/effect/gibspawner/human,
 /obj/effect/decal/cleanable/vomit/old,
@@ -6165,6 +6543,10 @@
 	},
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/zvezda/security)
+"yU" = (
+/obj/machinery/light/small/broken/directional/north,
+/turf/open/floor/plating,
+/area/hypothermia/outdoor/outpost)
 "yV" = (
 /obj/machinery/light/directional/north,
 /turf/open/misc/icy_planet/snow,
@@ -6222,6 +6604,12 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/zvezda/security)
+"zg" = (
+/obj/item/stack/rods,
+/obj/item/stack/sheet/iron,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
+/area/hypothermia/outdoor/outpost)
 "zh" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -6244,6 +6632,11 @@
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/engine,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
+"zn" = (
+/obj/machinery/power/shuttle_engine/heater,
+/obj/structure/lattice,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/outpost)
 "zo" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/railing,
@@ -6385,16 +6778,10 @@
 /turf/open/misc/sandy_dirt,
 /area/hypothermia/outdoor/crashland)
 "zK" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/table/reinforced,
-/obj/item/radio/weather_monitor,
-/obj/item/radio/weather_monitor{
-	pixel_x = -7
-	},
-/obj/item/radio/weather_monitor{
-	pixel_x = -7
-	},
-/turf/open/misc/dirt/icy_planet,
+/obj/structure/rack,
+/obj/effect/turf_decal/bot,
+/obj/item/storage/toolbox/electrical,
+/turf/open/floor/iron/smooth,
 /area/hypothermia/indoor/caven)
 "zL" = (
 /obj/structure/broken_flooring/plating/directional/north,
@@ -6404,6 +6791,11 @@
 /obj/structure/chair/stool/directional/east,
 /turf/open/floor/iron/colony/bolts,
 /area/hypothermia/indoor/outpost/zvezda/engineering)
+"zN" = (
+/obj/machinery/door/manual_airlock,
+/obj/structure/cable,
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
 "zO" = (
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 1
@@ -6419,13 +6811,18 @@
 /obj/structure/broken_flooring/side/directional/north,
 /turf/open/misc/icy_planet/snow,
 /area/hypothermia/outdoor/crashland)
+"zR" = (
+/obj/machinery/porta_turret/syndicate/toolbox/mag_fed/outpost/malf{
+	dir = 5
+	},
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/outpost)
 "zS" = (
 /obj/structure/bed,
 /obj/effect/spawner/random/bedsheet/any,
 /turf/open/floor/iron/dark/herringbone,
 /area/hypothermia/indoor/outpost/zvezda/dorm1)
 "zT" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "splatter3"
 	},
@@ -6446,7 +6843,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/hypothermia/outdoor/crashland)
 "zY" = (
-/obj/item/climbing_hook/emergency,
 /obj/item/pickaxe/emergency,
 /obj/item/crowbar/red,
 /obj/effect/mapping_helpers/item_dispenser/player_bound{
@@ -6461,6 +6857,7 @@
 	anchored = 1
 	},
 /obj/structure/marker_beacon/burgundy,
+/obj/item/climbing_hook/emergency/safeguard,
 /turf/open/misc/sandy_dirt,
 /area/hypothermia/outdoor/crashland)
 "zZ" = (
@@ -6505,6 +6902,11 @@
 /obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plating,
 /area/hypothermia/outdoor/outpost)
+"Ak" = (
+/obj/structure/closet/crate/large,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/pod/light,
+/area/hypothermia/indoor)
 "Al" = (
 /obj/effect/spawner/random/medical/surgery_tool,
 /turf/open/floor/engine,
@@ -6513,6 +6915,12 @@
 /obj/machinery/computer/operating,
 /turf/open/floor/engine,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
+"Ao" = (
+/obj/machinery/power/shuttle_engine/propulsion{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/hypothermia/outdoor/outpost)
 "Ap" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
@@ -6595,7 +7003,6 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/hypothermia/indoor)
 "AB" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/tile/blue/half/contrasted,
 /obj/effect/mob_spawn/corpse/human/h1132/doc,
 /turf/open/floor/iron/white/small,
@@ -6616,10 +7023,16 @@
 /turf/open/floor/iron/dark/herringbone,
 /area/hypothermia/indoor/outpost/zvezda/dorm1)
 "AG" = (
-/obj/structure/barricade/sandbags,
-/obj/effect/spawner/random/arctic_mutant,
-/turf/open/floor/pod/dark,
-/area/hypothermia/indoor/outpost/progres/experement)
+/obj/structure/table/reinforced,
+/obj/item/radio/weather_monitor,
+/obj/item/radio/weather_monitor{
+	pixel_x = -7
+	},
+/obj/item/radio/weather_monitor{
+	pixel_x = -7
+	},
+/turf/open/floor/catwalk_floor,
+/area/hypothermia/indoor/caven)
 "AH" = (
 /obj/structure/cable,
 /turf/open/floor/pod/dark,
@@ -6644,6 +7057,10 @@
 /obj/structure/closet/crate/large,
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/caven)
+"AP" = (
+/obj/structure/cable,
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
 "AQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6654,6 +7071,11 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/caven/vosxod)
+"AR" = (
+/obj/effect/light_emitter/daylight,
+/mob/living/basic/corrupted_mutant_boss/real,
+/turf/open/floor/glass/reinforced,
+/area/hypothermia/indoor/outpost/progres/bossfight)
 "AS" = (
 /obj/machinery/light/directional/east,
 /obj/machinery/sleeper{
@@ -6710,6 +7132,22 @@
 /obj/effect/gibspawner/larva/bodypartless,
 /turf/open/misc/dirt/icy_planet,
 /area/hypothermia/indoor/caven)
+"Bk" = (
+/obj/structure/table,
+/obj/item/storage/medkit/brute{
+	pixel_y = 6
+	},
+/obj/item/storage/medkit/brute{
+	pixel_y = 6
+	},
+/obj/item/storage/medkit/brute{
+	pixel_y = 6
+	},
+/obj/item/storage/medkit/brute{
+	pixel_y = 6
+	},
+/turf/open/floor/pod/light,
+/area/hypothermia/indoor/outpost/progres/research)
 "Bl" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/railing,
@@ -6734,9 +7172,23 @@
 /obj/structure/cable,
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/zvezda/security)
+"Bt" = (
+/obj/effect/mapping_helpers/trigger_helper/hand_punch/password{
+	EDITOR_r_code = "128765129";
+	EDITOR_balloon = "Opened";
+	trigger_key = "pr_checkpoint";
+	EDITOR_TARGET = /obj/machinery/computer
+	},
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/outpost)
 "Bv" = (
-/obj/structure/prop/general/solidgrate4,
-/turf/open/misc/dirt/icy_planet,
+/obj/structure/table/reinforced,
+/obj/structure/prop/random_radio{
+	pixel_y = 12;
+	pixel_x = -6;
+	name = "Radio"
+	},
+/turf/open/floor/catwalk_floor,
 /area/hypothermia/indoor/caven)
 "Bw" = (
 /obj/effect/turf_decal/stripes/line{
@@ -6762,7 +7214,6 @@
 /turf/open/floor/pod/dark,
 /area/hypothermia/outdoor/crashland)
 "BC" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/trimline/dark_red/filled/line,
 /obj/machinery/light/small/dim/directional/south,
 /turf/open/floor/pod/dark,
@@ -6815,12 +7266,8 @@
 /turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/caven/vosxod)
 "BL" = (
-/obj/effect/mapping_helpers/broken_floor,
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 8
-	},
-/turf/open/floor/pod/light,
-/area/hypothermia/indoor/outpost/zvezda/rnd)
+/turf/open/floor/plating,
+/area/hypothermia/indoor/outpost/zvezda/engineering)
 "BM" = (
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 4
@@ -6828,12 +7275,31 @@
 /obj/structure/sign/poster/contraband/random/directional/east,
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/zvezda)
+"BN" = (
+/obj/machinery/computer/telecomms/server{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/broken_machine,
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
 "BO" = (
 /obj/structure/closet/secure_closet/contraband/armory,
 /obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 4
 	},
+/obj/effect/spawner/random/turretassembly,
+/obj/effect/spawner/random/turretassembly,
+/obj/effect/spawner/random/turretassembly,
+/obj/effect/spawner/random/turretassembly,
+/obj/effect/spawner/random/turretassembly,
+/obj/effect/spawner/random/turretassembly,
+/obj/effect/spawner/random/turretassembly,
+/obj/effect/spawner/random/turretassembly,
+/obj/effect/spawner/random/turretassembly,
+/obj/effect/spawner/random/turretassembly,
+/obj/effect/spawner/random/turretassembly,
+/obj/effect/spawner/random/turretassembly,
 /turf/open/floor/iron/dark/textured,
 /area/hypothermia/indoor/outpost/zvezda/heavy_armory)
 "BP" = (
@@ -6901,6 +7367,11 @@
 	},
 /turf/open/floor/iron/dark/textured,
 /area/hypothermia/indoor/outpost/zvezda/heavy_armory)
+"Cd" = (
+/obj/structure/lattice,
+/obj/item/stack/rods,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/outpost)
 "Ce" = (
 /obj/structure/cable,
 /turf/open/misc/icy_planet/snow,
@@ -6919,7 +7390,6 @@
 /turf/open/openspace/icy_planet,
 /area/hypothermia/indoor/caven)
 "Ch" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
@@ -6956,6 +7426,12 @@
 /obj/item/stack/medical/wound_recovery/robofoam,
 /turf/open/misc/dirt/icy_planet,
 /area/hypothermia/indoor/caven)
+"Cl" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "Cm" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/misc/dirt/icy_planet,
@@ -6971,6 +7447,13 @@
 /obj/item/stack/sheet/mineral/titanium,
 /turf/open/misc/sandy_dirt,
 /area/hypothermia/outdoor/crashland)
+"Cp" = (
+/obj/item/forging/reagent_weapon/axe{
+	force = 35;
+	name = "russian battle axe"
+	},
+/turf/open/misc/dirt/icy_planet,
+/area/hypothermia/indoor/caven)
 "Cr" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/blood/old,
@@ -7022,6 +7505,21 @@
 "CC" = (
 /turf/open/genturf,
 /area/hypothermia/outdoor/deisolated)
+"CE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/trail{
+	dir = 1
+	},
+/obj/machinery/light/small/red/dim/directional/east,
+/turf/open/floor/iron/white,
+/area/hypothermia/indoor/caven/vosxod)
+"CF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/broken/directional/east,
+/turf/open/floor/iron/white,
+/area/hypothermia/indoor/caven/vosxod)
 "CG" = (
 /obj/effect/decal/cleanable/blood/trail{
 	dir = 8
@@ -7087,8 +7585,6 @@
 /turf/open/misc/icy_planet/snow,
 /area/hypothermia/indoor/caven)
 "CR" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/railing,
 /obj/structure/prop/general/barrel_purewhite,
 /obj/effect/mapping_helpers/item_dispenser/player_bound{
 	target_dispenser_type = /obj/structure/prop/general/barrel_purewhite;
@@ -7097,7 +7593,7 @@
 /obj/item/radio/weather_monitor{
 	pixel_x = -7
 	},
-/turf/open/misc/dirt/icy_planet,
+/turf/open/floor/catwalk_floor,
 /area/hypothermia/indoor/caven)
 "CS" = (
 /obj/effect/turf_decal/trimline/dark_red/filled/corner{
@@ -7159,7 +7655,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/turf/open/floor/catwalk_floor/iron_dark,
+/turf/open/floor/plating,
 /area/hypothermia/indoor/outpost/zvezda/engineering)
 "De" = (
 /turf/closed/indestructible/rock,
@@ -7178,6 +7674,12 @@
 	pixel_y = -2
 	},
 /turf/open/floor/pod/light,
+/area/hypothermia/indoor/caven)
+"Di" = (
+/obj/structure/closet/crate/large,
+/obj/effect/turf_decal/delivery,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/pod/dark,
 /area/hypothermia/indoor/caven)
 "Dj" = (
 /obj/structure/closet/crate/large,
@@ -7292,6 +7794,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/bot,
+/obj/machinery/light/small/red/dim/directional/north,
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/caven/vosxod)
 "DD" = (
@@ -7364,6 +7867,10 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/arctic_quarters)
+"DU" = (
+/obj/effect/spawner/random/medical/surgery_tool,
+/turf/open/floor/plating,
+/area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "DW" = (
 /obj/structure/flora/rock/icy,
 /turf/open/misc/icy_planet/snow,
@@ -7420,6 +7927,12 @@
 /obj/effect/landmark/start/bitrunner,
 /turf/open/floor/iron/dark/textured_large,
 /area/hypothermia/outdoor/crashland)
+"Ee" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/broken_floor,
+/obj/machinery/light/small/broken/directional/west,
+/turf/open/floor/iron/white,
+/area/hypothermia/indoor/caven/vosxod)
 "Ef" = (
 /obj/machinery/power/smes/battery_pack/large,
 /obj/structure/cable,
@@ -7439,12 +7952,9 @@
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/zvezda/engineering)
 "Ei" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/effect/turf_decal/tile/blue/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron/white/small,
-/area/hypothermia/indoor/outpost/zvezda/medical_lobby)
+/obj/machinery/door/manual_airlock,
+/turf/open/floor/catwalk_floor,
+/area/hypothermia/indoor/caven)
 "Ej" = (
 /obj/machinery/rnd/production/colony_lathe,
 /turf/open/floor/pod/light,
@@ -7458,6 +7968,13 @@
 /obj/structure/cable,
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/zvezda/security)
+"En" = (
+/obj/structure/frame/machine/secured,
+/obj/effect/turf_decal/tile/green/anticorner/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron/telecomms,
+/area/hypothermia/indoor/outpost/tcoms)
 "Eo" = (
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/iron/showroomfloor,
@@ -7492,6 +8009,7 @@
 /obj/structure/rack,
 /obj/item/clothing/suit/hooded/wintercoat/engineering,
 /obj/item/clothing/gloves/color/grey/protects_cold,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/caven)
 "Ev" = (
@@ -7576,10 +8094,15 @@
 /turf/open/floor/iron/vaporwave,
 /area/hypothermia/indoor/outpost/zvezda/dorm4)
 "EJ" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/effect/turf_decal/tile/blue/half/contrasted,
-/turf/open/floor/iron/white/small,
-/area/hypothermia/indoor/outpost/zvezda/medical_lobby)
+/obj/machinery/light/small/directional/south,
+/obj/structure/table/reinforced,
+/obj/item/storage/belt/utility,
+/obj/item/clothing/head/utility/welding{
+	pixel_x = 8;
+	pixel_y = 7
+	},
+/turf/open/floor/catwalk_floor,
+/area/hypothermia/indoor/caven)
 "EK" = (
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 9
@@ -7672,6 +8195,7 @@
 	dir = 1
 	},
 /obj/structure/frame/machine/secured,
+/obj/machinery/light/cold/dim/directional/north,
 /turf/open/floor/iron/dark,
 /area/hypothermia/indoor/caven/vosxod)
 "EU" = (
@@ -7700,16 +8224,15 @@
 /turf/open/floor/plating,
 /area/hypothermia/indoor/outpost/progres/experement)
 "Fc" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/item/stack/sheet/mineral/titanium,
-/turf/open/floor/plating/snowed/standard_air,
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "Fd" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/hypothermia/indoor/outpost/zvezda/dorm5)
 "Fe" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/item/stack/sheet/iron,
 /obj/effect/turf_decal/tile/blue/half/contrasted,
 /turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
@@ -7775,12 +8298,16 @@
 /obj/structure/cable,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/hypothermia/indoor/outpost/zvezda/engineering)
-"Fu" = (
-/obj/structure/prop/general/solidgrate4,
-/obj/structure/railing{
-	dir = 4
+"Ft" = (
+/obj/machinery/power/shuttle_engine/heater,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
 	},
-/turf/open/misc/dirt/icy_planet,
+/obj/structure/window/reinforced/plasma/spawner/directional/north,
+/turf/open/floor/plating/airless,
+/area/hypothermia/outdoor/outpost)
+"Fu" = (
+/turf/open/floor/catwalk_floor,
 /area/hypothermia/indoor/caven)
 "Fv" = (
 /obj/structure/flora/rock/pile/style_random,
@@ -7871,6 +8398,11 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/pod/dark,
 /area/hypothermia/outdoor/crashland)
+"FS" = (
+/obj/item/stack/rods,
+/obj/item/stack/sheet/iron,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/outpost)
 "FT" = (
 /obj/structure/cable,
 /turf/open/misc/dirt/icy_planet,
@@ -7886,6 +8418,15 @@
 "FW" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/hypothermia/indoor/caven)
+"FX" = (
+/obj/structure/frame/machine/secured,
+/turf/open/floor/plating,
+/area/hypothermia/indoor/outpost/tcoms)
+"FY" = (
+/obj/machinery/power/shuttle_engine/propulsion,
+/obj/structure/lattice,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/outpost)
 "Ga" = (
 /obj/structure/closet/secure_closet/freezer/fridge/all_access,
 /turf/open/floor/pod/dark,
@@ -8004,6 +8545,7 @@
 	dir = 8
 	},
 /obj/structure/cable/layer1,
+/turf/open/floor/catwalk_floor,
 /area/hypothermia/indoor/caven)
 "Gz" = (
 /obj/structure/cable,
@@ -8058,12 +8600,26 @@
 /obj/effect/turf_decal/weather/snow,
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
+"GL" = (
+/obj/structure/table/wood,
+/obj/item/folder/red,
+/obj/item/folder/yellow{
+	pixel_x = 5;
+	pixel_y = 2
+	},
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
 "GN" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/oil/slippery,
 /turf/open/floor/iron/dark,
 /area/hypothermia/indoor/caven/vosxod)
+"GO" = (
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable,
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
 "GP" = (
 /obj/effect/spawner/structure/window/hollow/reinforced/middle,
 /turf/open/floor/plating,
@@ -8126,8 +8682,19 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
 /obj/item/megaphone,
+/obj/machinery/light/small/red/dim/directional/north,
 /turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/caven/vosxod)
+"Hd" = (
+/obj/machinery/telecomms/server/presets/common,
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/effect/turf_decal/tile/neutral/anticorner/contrasted,
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
+"He" = (
+/obj/structure/fluff/broken_canister_frame,
+/turf/open/floor/plating,
+/area/hypothermia/outdoor/outpost)
 "Hf" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating,
@@ -8137,6 +8704,7 @@
 /obj/effect/decal/cleanable/blood/trail_holder{
 	dir = 8
 	},
+/obj/effect/spawner/random/arctic_mutant,
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/progres/experement)
 "Hh" = (
@@ -8170,7 +8738,8 @@
 /area/hypothermia/outdoor/crashland)
 "Ho" = (
 /obj/structure/cable,
-/turf/open/floor/plating,
+/obj/effect/turf_decal/trimline/purple/filled/corner,
+/turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
 "Hp" = (
 /obj/effect/spawner/structure/window/reinforced/shuttle,
@@ -8185,6 +8754,12 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/progres/research)
+"Ht" = (
+/obj/machinery/telecomms/receiver/preset_left,
+/obj/effect/mapping_helpers/broken_machine,
+/obj/effect/turf_decal/stripes/box,
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "Hu" = (
 /obj/structure/broken_flooring/singular/always_floorplane/directional/north,
 /turf/open/misc/icy_planet/snow,
@@ -8213,6 +8788,11 @@
 /obj/item/stack/sheet/plasteel,
 /turf/open/misc/dirt/icy_planet,
 /area/hypothermia/outdoor/crashland)
+"HA" = (
+/obj/structure/frame/machine/secured,
+/obj/effect/turf_decal/tile/green/anticorner/contrasted,
+/turf/open/floor/iron/telecomms,
+/area/hypothermia/indoor/outpost/tcoms)
 "HC" = (
 /obj/machinery/door/poddoor/story,
 /obj/effect/mapping_helpers/listener_helper/open_door/delete_after{
@@ -8236,7 +8816,6 @@
 /turf/closed/indestructible/rock,
 /area/hypothermia/indoor/caven/deep/autogen)
 "HH" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 1
 	},
@@ -8270,10 +8849,14 @@
 /turf/open/misc/dirt/icy_planet,
 /area/hypothermia/indoor/caven)
 "HP" = (
-/obj/structure/barricade/wooden/snowed,
-/obj/structure/barricade/wooden/crude/snow,
-/turf/open/floor/iron/white/small,
-/area/hypothermia/indoor/outpost/zvezda/medical_lobby)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
+	},
+/obj/machinery/light/small/broken/directional/west,
+/turf/open/floor/iron/white,
+/area/hypothermia/indoor/caven/vosxod)
 "HR" = (
 /obj/structure/lattice/catwalk,
 /obj/item/ammo_box/magazine/c35sol_pistol,
@@ -8286,6 +8869,15 @@
 /obj/structure/table,
 /turf/open/floor/iron,
 /area/hypothermia/indoor/outpost/progres/research)
+"HT" = (
+/obj/structure/table,
+/obj/item/stack/rods/fifty,
+/obj/item/storage/medkit/frontier/stocked{
+	pixel_x = -10;
+	pixel_y = 5
+	},
+/turf/open/floor/iron/smooth,
+/area/hypothermia/indoor/caven)
 "HU" = (
 /obj/machinery/power/floodlight,
 /turf/open/misc/dirt/icy_planet,
@@ -8311,10 +8903,6 @@
 /turf/open/floor/plating,
 /area/hypothermia/indoor/caven/deep)
 "HY" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 5
-	},
 /obj/effect/turf_decal/tile/blue/anticorner/contrasted{
 	dir = 4
 	},
@@ -8422,6 +9010,10 @@
 /obj/machinery/rnd/production/protolathe/offstation,
 /turf/open/floor/plating,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
+"Iu" = (
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/iron/smooth_edge,
+/area/hypothermia/indoor/outpost/zvezda/garag)
 "Iv" = (
 /obj/effect/turf_decal/weather/snow,
 /obj/effect/decal/cleanable/cobweb,
@@ -8440,6 +9032,11 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/zvezda)
+"Iz" = (
+/obj/effect/turf_decal/delivery,
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/iron/smooth,
+/area/hypothermia/indoor/caven)
 "IA" = (
 /obj/structure/closet,
 /obj/item/storage/belt/utility,
@@ -8452,9 +9049,11 @@
 /turf/open/misc/dirt/icy_planet,
 /area/hypothermia/outdoor/crashland)
 "IE" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/gibspawner/human,
-/turf/open/floor/plating/snowed/standard_air,
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "IF" = (
 /obj/structure/table/reinforced,
@@ -8582,6 +9181,12 @@
 	},
 /turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/outpost/progres/research)
+"Jg" = (
+/obj/structure/lattice,
+/obj/item/stack/rods,
+/obj/item/stack/sheet/iron,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/outpost)
 "Jh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/trail{
@@ -8703,7 +9308,6 @@
 /area/hypothermia/indoor/outpost/progres/research)
 "Jz" = (
 /obj/effect/turf_decal/delivery/white,
-/obj/effect/mapping_helpers/airlock/access/all/security/brig,
 /turf/open/floor/iron/dark/textured_large,
 /area/hypothermia/outdoor/crashland)
 "JA" = (
@@ -8735,6 +9339,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/rnd/production/circuit_imprinter/offstation,
 /obj/effect/turf_decal/delivery,
+/obj/machinery/light/small/red/dim/directional/east,
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/caven/vosxod)
 "JD" = (
@@ -8776,14 +9381,11 @@
 /turf/open/misc/icy_planet/snow,
 /area/hypothermia/outdoor/outpost)
 "JJ" = (
-/obj/structure/lattice/catwalk,
 /obj/structure/table/reinforced,
-/obj/structure/prop/random_radio{
-	pixel_y = 12;
-	pixel_x = -6;
-	name = "Radio"
-	},
-/turf/open/misc/dirt/icy_planet,
+/obj/machinery/cell_charger,
+/obj/item/stock_parts/power_store/cell/high,
+/obj/item/stock_parts/power_store/cell/high,
+/turf/open/floor/catwalk_floor,
 /area/hypothermia/indoor/caven)
 "JK" = (
 /obj/machinery/door/poddoor/story,
@@ -8817,8 +9419,24 @@
 "JN" = (
 /obj/effect/turf_decal/weather/snow,
 /obj/item/stack/sheet/iron,
+/obj/structure/barricade/wooden/snowed,
+/obj/structure/barricade/wooden/crude/snow,
 /turf/open/floor/plating/snowed/standard_air,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
+"JO" = (
+/obj/effect/mapping_helpers/crafter_recipe{
+	ingredients = list(/obj/item/stack/cable_coil=10, /obj/item/stack/sheet/iron=5, /obj/item/stack/sheet/glass=5, /obj/item/electronics/apc=1);
+	name = "Crafter over prop(windturbine)";
+	target_crafter_type = /obj/structure/prop/smelter
+	},
+/obj/structure/prop/smelter{
+	name = "Crafter";
+	anchored = 1
+	},
+/obj/structure/marker_beacon/burgundy,
+/obj/item/flatpacked_machine/wind_turbine,
+/turf/open/misc/sandy_dirt,
+/area/hypothermia/indoor/outpost/tcoms)
 "JP" = (
 /obj/structure/prop/huge/tower/on,
 /turf/open/floor/catwalk_floor,
@@ -8838,7 +9456,6 @@
 	},
 /obj/effect/mapping_helpers/trigger_helper/hand_punch/password{
 	EDITOR_r_code = "125825719";
-	EDITOR_balloon = "Opened";
 	trigger_key = "pr_safe_door"
 	},
 /turf/open/floor/iron/white,
@@ -8891,7 +9508,6 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/hypothermia/indoor/outpost/progres/research)
 "JY" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
@@ -8918,8 +9534,7 @@
 "Kc" = (
 /obj/effect/mapping_helpers/broken_machine,
 /obj/machinery/computer/operating,
-/obj/effect/turf_decal/weather/snow,
-/turf/open/floor/plating/snowed/standard_air,
+/turf/open/floor/plating,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "Kd" = (
 /obj/machinery/light/small/broken/directional/south,
@@ -9023,6 +9638,10 @@
 /obj/structure/cable,
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor)
+"KB" = (
+/obj/item/stack/cable_coil/cut,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/outpost)
 "KD" = (
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 8
@@ -9039,10 +9658,6 @@
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/zvezda)
 "KI" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 6
-	},
 /obj/effect/turf_decal/tile/blue/anticorner/contrasted,
 /obj/structure/cable,
 /turf/open/floor/iron/white/small,
@@ -9124,9 +9739,10 @@
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/progres/research)
 "KU" = (
-/obj/effect/mapping_helpers/turf_cracks,
-/turf/open/misc/icy_planet/snow,
-/area/hypothermia/outdoor/outpost)
+/obj/effect/light_emitter/daylight,
+/obj/effect/gibspawner/human,
+/turf/open/floor/glass/reinforced,
+/area/hypothermia/indoor/outpost/progres/bossfight)
 "KV" = (
 /obj/effect/turf_decal/weather/snow,
 /turf/open/floor/pod/dark,
@@ -9241,6 +9857,7 @@
 "Lo" = (
 /obj/structure/prop/general/stalagmite3,
 /obj/structure/cable/layer1,
+/turf/open/floor/catwalk_floor,
 /area/hypothermia/indoor/caven)
 "Lp" = (
 /obj/effect/decal/cleanable/blood/trail{
@@ -9275,9 +9892,8 @@
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/progres/research)
 "Ly" = (
-/obj/structure/barricade/wooden/snowed,
-/obj/structure/barricade/wooden/crude/snow,
 /obj/structure/cable,
+/obj/effect/turf_decal/tile/blue/fourcorners,
 /turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "Lz" = (
@@ -9287,8 +9903,15 @@
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 4
 	},
+/obj/machinery/light/small/red/dim/directional/east,
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/caven/vosxod)
+"LA" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "LB" = (
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 8
@@ -9462,6 +10085,7 @@
 /area/hypothermia/indoor/outpost/zvezda/garag)
 "Mg" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/melee/chainofcommand,
 /turf/open/floor/carpet/red,
 /area/hypothermia/indoor/outpost/zvezda)
 "Mh" = (
@@ -9471,6 +10095,13 @@
 /obj/machinery/light_switch/directional/south,
 /turf/open/floor/iron/dark/textured,
 /area/hypothermia/indoor/outpost/zvezda/heavy_armory)
+"Mi" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/purple/half/contrasted,
+/obj/machinery/light/cold/dim/directional/south,
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/caven/vosxod)
 "Mj" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "xgib4"
@@ -9553,6 +10184,7 @@
 	dir = 4
 	},
 /obj/structure/rack,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/caven)
 "Mw" = (
@@ -9613,8 +10245,6 @@
 /area/hypothermia/indoor/outpost/zvezda/restroom)
 "MP" = (
 /obj/machinery/sleeper,
-/obj/effect/mapping_helpers/broken_machine,
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 1
 	},
@@ -9646,7 +10276,6 @@
 /turf/open/floor/engine,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
 "MX" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "xgib4"
 	},
@@ -9677,6 +10306,7 @@
 /area/hypothermia/indoor)
 "Nb" = (
 /obj/machinery/light/small/dim/directional/north,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
 "Ne" = (
@@ -9737,9 +10367,11 @@
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/arctic_quarters2)
 "Nk" = (
-/obj/item/stack/medical/bruise_pack,
-/turf/closed/indestructible/rock/snow/ice/ore,
-/area/hypothermia/indoor/caven)
+/obj/effect/turf_decal/weather/snow,
+/obj/structure/barricade/wooden/snowed,
+/obj/structure/barricade/wooden/crude/snow,
+/turf/open/floor/plating/snowed/standard_air,
+/area/hypothermia/indoor/outpost/zvezda)
 "Nl" = (
 /obj/structure/lattice/catwalk,
 /turf/open/misc/dirt/icy_planet,
@@ -9753,6 +10385,10 @@
 	},
 /turf/open/floor/iron/white/textured,
 /area/hypothermia/indoor/outpost/zvezda/medical_surgery)
+"Nn" = (
+/obj/structure/bonfire,
+/turf/open/floor/plating,
+/area/hypothermia/indoor/caven)
 "No" = (
 /obj/machinery/door/poddoor/story,
 /obj/effect/mapping_helpers/listener_helper/open_door{
@@ -9773,6 +10409,9 @@
 /obj/effect/landmark/start/atmospheric_technician,
 /turf/open/floor/iron/smooth_large,
 /area/hypothermia/outdoor/crashland)
+"Nr" = (
+/turf/open/floor/plating,
+/area/hypothermia/indoor/outpost/tcoms)
 "Ns" = (
 /obj/machinery/door/poddoor/story,
 /obj/effect/mapping_helpers/listener_helper/open_door/delete_after{
@@ -9896,6 +10535,10 @@
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/iron/dark/textured_large,
 /area/hypothermia/outdoor/crashland)
+"NL" = (
+/obj/structure/lattice,
+/turf/open/floor/plating/snowed/standard_air,
+/area/hypothermia/outdoor/outpost)
 "NM" = (
 /obj/machinery/door/poddoor/story,
 /obj/effect/mapping_helpers/listener_helper/open_door/delete_after{
@@ -9936,6 +10579,10 @@
 /obj/item/stack/sheet/plasteel,
 /turf/open/floor/engine,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
+"NU" = (
+/obj/structure/lattice,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/indoor/outpost/tcoms)
 "NV" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -9978,11 +10625,10 @@
 /turf/open/misc/dirt/icy_planet,
 /area/hypothermia/outdoor/crashland)
 "Oe" = (
-/obj/effect/turf_decal/weather/snow,
-/turf/open/floor/plating/snowed/standard_air,
+/obj/effect/turf_decal/tile/blue/fourcorners,
+/turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "Of" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
@@ -9993,8 +10639,18 @@
 /turf/open/floor/iron/white/textured,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "Og" = (
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/iron/colony,
+/obj/effect/mapping_helpers/crafter_recipe{
+	ingredients = list(/obj/item/stack/cable_coil=10, /obj/item/stack/sheet/iron=5, /obj/item/stack/sheet/glass=5, /obj/item/electronics/apc=1);
+	name = "Crafter over prop(windturbine)";
+	target_crafter_type = /obj/structure/prop/smelter
+	},
+/obj/structure/prop/smelter{
+	name = "Crafter";
+	anchored = 1
+	},
+/obj/structure/marker_beacon/burgundy,
+/obj/item/flatpacked_machine/wind_turbine,
+/turf/open/misc/sandy_dirt,
 /area/hypothermia/indoor/outpost/zvezda/engineering)
 "Oh" = (
 /obj/structure/lattice/catwalk,
@@ -10040,6 +10696,11 @@
 /obj/effect/spawner/random/structure/chair_flipped,
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor)
+"Oq" = (
+/obj/structure/cable,
+/obj/structure/lattice/catwalk,
+/turf/open/misc/dirt/icy_planet,
+/area/hypothermia/indoor/caven)
 "Os" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 9
@@ -10106,17 +10767,19 @@
 /obj/structure/cable,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/hypothermia/indoor/outpost/zvezda)
+"OB" = (
+/obj/structure/prop/ship_wreck,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/outpost)
+"OC" = (
+/obj/effect/mob_spawn/corpse/human/h1132/sci,
+/turf/open/floor/pod/light,
+/area/hypothermia/indoor/outpost/progres/research)
 "OD" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/item/stack/sheet/mineral/titanium,
-/obj/effect/turf_decal/trimline/blue/filled/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/effect/decal/cleanable/blood/gibs/body{
 	dir = 8
 	},
-/turf/open/floor/iron/white/textured,
+/turf/open/floor/plating,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
 "OF" = (
 /obj/machinery/modular_computer/preset/log_computer,
@@ -10137,6 +10800,12 @@
 /obj/item/stack/sheet/iron,
 /turf/open/floor/plating,
 /area/hypothermia/outdoor/outpost)
+"OH" = (
+/obj/machinery/telecomms/bus/preset_three,
+/obj/effect/turf_decal/tile/red/anticorner/contrasted,
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "OI" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/box/handcuffs,
@@ -10149,7 +10818,6 @@
 /obj/machinery/stasissleeper{
 	dir = 4
 	},
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 8
 	},
@@ -10176,6 +10844,16 @@
 	},
 /turf/open/floor/iron/smooth_large,
 /area/hypothermia/indoor/outpost/zvezda/garag)
+"OS" = (
+/obj/structure/closet/secure_closet/personal,
+/obj/effect/turf_decal/bot,
+/obj/item/machete,
+/obj/item/machete,
+/obj/item/melee/tomahawk,
+/obj/item/melee/tomahawk,
+/obj/item/melee/tomahawk,
+/turf/open/floor/pod/light,
+/area/hypothermia/indoor/outpost/progres/research)
 "OT" = (
 /obj/structure/railing{
 	dir = 5
@@ -10271,6 +10949,16 @@
 /obj/effect/spawner/structure/window/hollow/reinforced/middle,
 /turf/open/floor/plating,
 /area/hypothermia/indoor/outpost/arctic_quarters2)
+"Pq" = (
+/obj/machinery/telecomms/broadcaster/preset_left,
+/obj/effect/mapping_helpers/broken_machine,
+/obj/effect/turf_decal/stripes/box,
+/turf/open/floor/plating,
+/area/hypothermia/indoor/outpost/tcoms)
+"Ps" = (
+/obj/effect/gibspawner/human,
+/turf/open/floor/asphalt,
+/area/hypothermia/outdoor/outpost)
 "Pt" = (
 /obj/structure/frame/machine/secured,
 /obj/effect/turf_decal/tile/purple/anticorner/contrasted{
@@ -10350,13 +11038,11 @@
 /turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/outpost/progres/research)
 "PJ" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 6
-	},
-/obj/item/stack/sheet/mineral/titanium,
-/turf/open/floor/plating/snowed/standard_air,
-/area/hypothermia/indoor/outpost/zvezda)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/broken/directional/north,
+/turf/open/floor/iron/white,
+/area/hypothermia/indoor/caven/vosxod)
 "PK" = (
 /obj/machinery/computer/aifixer{
 	dir = 8
@@ -10503,6 +11189,10 @@
 "Qk" = (
 /turf/open/floor/engine,
 /area/hypothermia/indoor/caven/deep)
+"Ql" = (
+/obj/structure/broken_flooring/singular/always_floorplane/directional/west,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/crashland)
 "Qn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/trail{
@@ -10551,13 +11241,10 @@
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor)
 "Qu" = (
-/obj/effect/mapping_helpers/broken_floor,
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 4
-	},
-/obj/structure/cable,
-/turf/open/floor/pod/light,
-/area/hypothermia/indoor/outpost/zvezda/rnd)
+/obj/structure/grille/broken,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating,
+/area/hypothermia/indoor/caven)
 "Qw" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/sheet/iron,
@@ -10571,8 +11258,12 @@
 "Qz" = (
 /obj/machinery/door/manual_airlock,
 /obj/structure/cable,
+/obj/effect/turf_decal/tile/blue/fourcorners,
 /turf/open/floor/iron/white/textured,
 /area/hypothermia/indoor/outpost/zvezda/medical_surgery)
+"QB" = (
+/turf/closed/wall/mineral/titanium,
+/area/hypothermia/outdoor/outpost)
 "QC" = (
 /obj/structure/closet,
 /turf/open/floor/pod/dark,
@@ -10625,7 +11316,7 @@
 /turf/open/misc/dirt/icy_planet,
 /area/hypothermia/indoor/caven)
 "QQ" = (
-/obj/item/stack/rods/shuttle/five,
+/obj/item/stack/rods/ten,
 /turf/open/misc/sandy_dirt,
 /area/hypothermia/outdoor/crashland)
 "QR" = (
@@ -10738,6 +11429,10 @@
 	},
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/zvezda/security)
+"Rl" = (
+/obj/effect/turf_decal/stripes/corner,
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "Rm" = (
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 8
@@ -10754,6 +11449,14 @@
 	},
 /turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/caven/vosxod)
+"Rp" = (
+/obj/machinery/telecomms/server/presets/security,
+/obj/effect/turf_decal/tile/red/anticorner/contrasted{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "Rq" = (
 /obj/structure/fence/door,
 /obj/structure/cable,
@@ -10772,6 +11475,11 @@
 	},
 /turf/open/floor/iron/smooth,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
+"Rt" = (
+/obj/structure/frame/machine/secured,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
+/area/hypothermia/indoor/outpost/tcoms)
 "Ru" = (
 /obj/machinery/door/manual_airlock,
 /turf/open/floor/pod/dark,
@@ -10789,6 +11497,9 @@
 /turf/open/floor/iron/smooth,
 /area/hypothermia/indoor/outpost/progres/experement)
 "RB" = (
+/obj/machinery/light/small/directional/south,
+/obj/item/flashlight/seclite,
+/turf/open/floor/iron/smooth,
 /area/hypothermia/indoor/caven)
 "RC" = (
 /obj/item/stock_parts/matter_bin,
@@ -10796,10 +11507,9 @@
 /turf/open/floor/iron/smooth,
 /area/hypothermia/outdoor/outpost)
 "RD" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/item/stack/sheet/mineral/titanium,
-/turf/open/floor/iron/white/small,
-/area/hypothermia/indoor/outpost/zvezda/medical_lobby)
+/obj/structure/barricade/sandbags,
+/turf/open/misc/dirt/icy_planet,
+/area/hypothermia/indoor/caven/deep)
 "RE" = (
 /obj/machinery/computer/communications{
 	dir = 1
@@ -10837,6 +11547,12 @@
 /obj/structure/lattice/catwalk,
 /turf/open/misc/icy_planet/snow,
 /area/hypothermia/indoor/caven)
+"RM" = (
+/obj/machinery/power/shuttle_engine/heater{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/hypothermia/outdoor/outpost)
 "RN" = (
 /obj/effect/spawner/structure/window/reinforced/shuttle,
 /obj/effect/decal/cleanable/blood/splatter/over_window,
@@ -10876,6 +11592,13 @@
 	},
 /turf/open/floor/iron/smooth,
 /area/hypothermia/indoor/outpost/zvezda/engineering)
+"RU" = (
+/obj/structure/closet/crate/large,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/turf/open/floor/pod/light,
+/area/hypothermia/indoor)
 "RV" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
@@ -10914,10 +11637,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
 /obj/item/stack/medical/ointment,
+/obj/machinery/light/small/red/dim/directional/north,
 /turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/caven/vosxod)
 "Sb" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/decal/cleanable/blood/gibs/limb{
 	dir = 4
 	},
@@ -10993,6 +11716,9 @@
 /obj/effect/mob_spawn/corpse/human/clown,
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/arctic_quarters1)
+"Sq" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/hypothermia/indoor/outpost/tcoms)
 "Ss" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/stripes/line{
@@ -11017,10 +11743,14 @@
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/outpost/progres/research)
 "Sz" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/effect/turf_decal/trimline/dark_red/filled/line,
-/turf/open/floor/pod/dark,
-/area/hypothermia/indoor/outpost/zvezda)
+/obj/structure/closet/toolcloset,
+/obj/effect/turf_decal/box,
+/turf/open/floor/iron/smooth,
+/area/hypothermia/indoor/caven)
+"SA" = (
+/obj/item/stack/cable_coil/cut,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/crashland)
 "SB" = (
 /obj/effect/spawner/random/medical/medkit,
 /obj/effect/mapping_helpers/broken_floor,
@@ -11045,6 +11775,10 @@
 /obj/effect/spawner/random/arctic_mutant,
 /turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/outpost/progres/research)
+"SG" = (
+/obj/item/storage/medkit/regular,
+/turf/open/misc/dirt/icy_planet,
+/area/hypothermia/indoor/caven)
 "SH" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/marker_beacon/burgundy{
@@ -11054,8 +11788,6 @@
 /turf/open/chasm/icy_planet,
 /area/hypothermia/indoor/caven/nest)
 "SI" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/item/stack/sheet/mineral/titanium,
 /obj/effect/turf_decal/tile/blue/half/contrasted,
 /obj/machinery/light/small/dim/directional/south,
 /turf/open/floor/iron/white/small,
@@ -11086,6 +11818,7 @@
 "SN" = (
 /obj/structure/cable/layer1,
 /obj/structure/cable/multilayer/multiz,
+/turf/open/floor/catwalk_floor,
 /area/hypothermia/indoor/caven)
 "SO" = (
 /obj/machinery/rnd/production/circuit_imprinter/offstation,
@@ -11160,6 +11893,11 @@
 /obj/effect/turf_decal/trimline/purple/filled/line,
 /turf/open/floor/iron/smooth,
 /area/hypothermia/indoor/outpost/zvezda/rnd)
+"Td" = (
+/obj/structure/lattice/catwalk,
+/obj/item/stack/rods,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/outpost)
 "Te" = (
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 4
@@ -11226,6 +11964,14 @@
 /obj/effect/turf_decal/trimline/dark_red/filled/line,
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/zvezda)
+"Tl" = (
+/obj/machinery/telecomms/processor/preset_two,
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "Tm" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/effect/turf_decal/stripes/white/line{
@@ -11255,6 +12001,10 @@
 	},
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/progres/experement)
+"Tq" = (
+/obj/item/stack/cable_coil/cut,
+/turf/open/misc/dirt/icy_planet,
+/area/hypothermia/indoor/caven)
 "Tr" = (
 /obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/weather/snow,
@@ -11317,11 +12067,27 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/hypothermia/indoor/outpost/arctic_quarters)
+"TE" = (
+/obj/structure/frame/machine,
+/turf/open/floor/plating,
+/area/hypothermia/indoor/outpost/tcoms)
 "TF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/caven/vosxod)
+"TG" = (
+/obj/effect/turf_decal/tile/blue/anticorner/contrasted{
+	dir = 1
+	},
+/obj/structure/frame/machine/secured,
+/turf/open/floor/iron/white/telecomms,
+/area/hypothermia/indoor/outpost/tcoms)
+"TH" = (
+/obj/effect/light_emitter/daylight,
+/obj/effect/mob_spawn/corpse/human/h1132/sci,
+/turf/open/floor/glass/reinforced,
+/area/hypothermia/indoor/outpost/progres/bossfight)
 "TI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/purple/half/contrasted{
@@ -11330,10 +12096,11 @@
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/caven/vosxod)
 "TJ" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/item/stack/sheet/mineral/titanium,
 /obj/structure/sign/departments/medbay/alt/directional/north,
-/turf/open/floor/plating/snowed/standard_air,
+/obj/effect/turf_decal/trimline/dark_red/filled/line{
+	dir = 1
+	},
+/turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/zvezda)
 "TK" = (
 /obj/structure/lattice/catwalk,
@@ -11376,8 +12143,6 @@
 /turf/open/misc/dirt/icy_planet,
 /area/hypothermia/indoor/caven)
 "TV" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/railing,
 /obj/structure/prop/general/barrel_purewhite,
 /obj/effect/mapping_helpers/item_dispenser/player_bound{
 	target_dispenser_type = /obj/structure/prop/general/barrel_purewhite;
@@ -11385,7 +12150,7 @@
 	},
 /obj/item/camera_film,
 /obj/item/camera,
-/turf/open/misc/dirt/icy_planet,
+/turf/open/floor/catwalk_floor,
 /area/hypothermia/indoor/caven)
 "TW" = (
 /obj/machinery/porta_turret/syndicate/toolbox/mag_fed/outpost/malf{
@@ -11530,7 +12295,6 @@
 /turf/open/misc/dirt/icy_planet,
 /area/hypothermia/indoor/caven/nest)
 "UA" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/tile/blue/half/contrasted,
 /obj/effect/mob_spawn/corpse/human/h1132/bezdelnik,
 /turf/open/floor/iron/white/small,
@@ -11589,6 +12353,13 @@
 	},
 /turf/open/floor/plating/snowed/standard_air,
 /area/hypothermia/outdoor/outpost)
+"UJ" = (
+/obj/structure/table/wood,
+/obj/item/folder/red,
+/obj/item/pen,
+/obj/machinery/light/small/dim/directional/east,
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
 "UK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -11649,7 +12420,6 @@
 	},
 /obj/effect/mapping_helpers/trigger_helper/hand_punch/password{
 	EDITOR_r_code = "1209567";
-	EDITOR_balloon = "Opened";
 	trigger_key = "zv_ship_first_part_1"
 	},
 /turf/open/misc/dirt/icy_planet,
@@ -11671,6 +12441,9 @@
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/plating,
 /area/hypothermia/indoor/outpost/zvezda/security)
+"Vb" = (
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
 "Ve" = (
 /obj/structure/flora/rock/pile/icy/style_random,
 /turf/open/misc/icy_planet/snow,
@@ -11696,7 +12469,6 @@
 "Vn" = (
 /obj/machinery/sleeper,
 /obj/effect/mapping_helpers/broken_machine,
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 1
 	},
@@ -11765,6 +12537,10 @@
 /obj/item/stack/sheet/iron,
 /turf/open/floor/plating,
 /area/hypothermia/indoor/outpost/progres/research)
+"VA" = (
+/obj/machinery/light/small/broken/directional/south,
+/turf/open/floor/plating,
+/area/hypothermia/outdoor/outpost)
 "VB" = (
 /obj/structure/lattice,
 /turf/open/openspace/icy_planet,
@@ -11821,6 +12597,10 @@
 	pixel_x = -3;
 	pixel_y = -5
 	},
+/obj/item/storage/medkit/frontier/stocked{
+	pixel_x = -8;
+	pixel_y = 4
+	},
 /turf/open/floor/pod/light,
 /area/hypothermia/outdoor/outpost)
 "VN" = (
@@ -11855,7 +12635,7 @@
 /area/hypothermia/indoor/outpost/zvezda/janitor)
 "VT" = (
 /obj/structure/fence/corner{
-	dir = 10
+	dir = 9
 	},
 /turf/open/misc/icy_planet/snow,
 /area/hypothermia/outdoor/crashland)
@@ -11884,6 +12664,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/bot,
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/caven/vosxod)
 "VW" = (
@@ -11894,6 +12675,10 @@
 	},
 /turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
+"VX" = (
+/obj/structure/frame/machine/secured,
+/turf/open/floor/plating,
+/area/hypothermia/outdoor/outpost)
 "VZ" = (
 /obj/effect/turf_decal/tile/purple/anticorner{
 	dir = 4
@@ -11919,14 +12704,10 @@
 /area/hypothermia/indoor/outpost/zvezda)
 "Wg" = (
 /obj/structure/rack/shelf,
-/obj/item/gun/energy/disabler,
-/obj/item/gun/energy/disabler{
-	pixel_x = 0;
-	pixel_y = -4
-	},
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 1
 	},
+/obj/item/gun/energy/e_gun/old,
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/zvezda/security)
 "Wh" = (
@@ -11977,7 +12758,6 @@
 /turf/open/misc/dirt/icy_planet,
 /area/hypothermia/indoor/caven/deep)
 "Wo" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/decal/cleanable/blood/gibs/torso{
 	dir = 4
 	},
@@ -12104,6 +12884,7 @@
 "WO" = (
 /obj/structure/cable/layer1,
 /obj/structure/cable/layer1,
+/turf/open/floor/catwalk_floor,
 /area/hypothermia/indoor/caven)
 "WR" = (
 /obj/item/stack/rods,
@@ -12143,6 +12924,12 @@
 /obj/structure/cable,
 /turf/open/floor/catwalk_floor,
 /area/hypothermia/outdoor/outpost)
+"Xd" = (
+/obj/structure/frame/computer{
+	dir = 4
+	},
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
 "Xe" = (
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 1
@@ -12209,7 +12996,6 @@
 /turf/open/floor/iron/smooth,
 /area/hypothermia/indoor/outpost/arctic_quarters2)
 "Xu" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 1
 	},
@@ -12232,6 +13018,9 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
+"Xw" = (
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "Xx" = (
 /obj/effect/turf_decal/weather/snow,
 /obj/machinery/light/small/directional/north,
@@ -12255,7 +13044,7 @@
 /turf/open/floor/iron/white/textured,
 /area/hypothermia/indoor/outpost/zvezda/medical_surgery)
 "XC" = (
-/obj/docking_port/stationary/transit/zvezda_buran,
+/obj/docking_port/stationary/zvezda_buran,
 /turf/open/floor/asphalt,
 /area/hypothermia/indoor/caven/deep)
 "XD" = (
@@ -12433,6 +13222,10 @@
 	},
 /turf/open/misc/icy_planet/snow,
 /area/hypothermia/outdoor/outpost)
+"Yk" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/hypothermia/indoor/outpost/tcoms)
 "Yl" = (
 /turf/open/floor/iron/smooth_large,
 /area/hypothermia/outdoor/crashland)
@@ -12506,12 +13299,20 @@
 "Yz" = (
 /turf/open/floor/plating,
 /area/hypothermia/indoor/caven/vosxod)
+"YA" = (
+/obj/machinery/power/floodlight,
+/turf/open/misc/dirt/icy_planet,
+/area/hypothermia/indoor/caven/deep)
 "YB" = (
 /obj/machinery/light/small/red/directional/south,
 /obj/structure/rack,
 /obj/item/clothing/gloves/color/grey/protects_cold,
 /turf/open/floor/iron/smooth,
 /area/hypothermia/indoor)
+"YC" = (
+/obj/item/stack/sheet/mineral/titanium,
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/outpost)
 "YD" = (
 /obj/machinery/light/small/directional/north,
 /obj/machinery/modular_computer/preset/log_computer,
@@ -12567,6 +13368,12 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/caven/vosxod)
+"YO" = (
+/obj/structure/grille/broken,
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
+/turf/open/floor/plating,
+/area/hypothermia/indoor/caven)
 "YP" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/effect/turf_decal/stripes/white/line{
@@ -12617,6 +13424,10 @@
 /obj/structure/lattice,
 /turf/open/misc/icy_planet/snow,
 /area/hypothermia/outdoor/outpost)
+"Zb" = (
+/obj/structure/table_frame,
+/turf/open/floor/plating,
+/area/hypothermia/indoor/caven)
 "Zd" = (
 /obj/item/stack/cable_coil/five,
 /obj/structure/flora/rock/pile/style_random,
@@ -12640,6 +13451,10 @@
 	},
 /turf/open/misc/icy_planet/snow,
 /area/hypothermia/outdoor/outpost)
+"Zi" = (
+/obj/structure/extinguisher_cabinet/directional/east,
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
 "Zj" = (
 /obj/effect/turf_decal/trimline/blue/warning{
 	dir = 9
@@ -12757,13 +13572,16 @@
 	},
 /turf/open/floor/plating/snowed,
 /area/hypothermia/outdoor/outpost)
+"ZC" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/toolbox/electrical,
+/turf/open/floor/catwalk_floor,
+/area/hypothermia/indoor/caven)
 "ZD" = (
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/iron/dark/textured_large,
 /area/hypothermia/outdoor/crashland)
 "ZF" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/item/stack/sheet/iron,
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
@@ -12783,6 +13601,10 @@
 	},
 /turf/open/floor/iron/white/small,
 /area/hypothermia/indoor/outpost/zvezda/medical_lobby)
+"ZI" = (
+/obj/item/stack/rods,
+/turf/open/floor/plating/snowed/standard_air,
+/area/hypothermia/outdoor/outpost)
 "ZJ" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/engine,
@@ -12805,13 +13627,9 @@
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/caven/vosxod)
 "ZO" = (
-/obj/effect/turf_decal/weather/snow,
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 6
-	},
-/obj/item/stack/sheet/iron,
-/turf/open/floor/plating/snowed/standard_air,
-/area/hypothermia/indoor/outpost/zvezda)
+/obj/structure/marker_beacon/cerulean,
+/turf/open/misc/dirt/icy_planet,
+/area/hypothermia/indoor/caven/nest)
 "ZP" = (
 /obj/machinery/light/small/dim/directional/north,
 /obj/effect/turf_decal/trimline/purple/filled/line{
@@ -12830,6 +13648,11 @@
 /obj/structure/lattice/catwalk,
 /turf/open/openspace/icy_planet,
 /area/hypothermia/outdoor/outpost)
+"ZR" = (
+/obj/machinery/telecomms/receiver/preset_right,
+/obj/effect/turf_decal/stripes/box,
+/turf/open/floor/iron/dark,
+/area/hypothermia/indoor/outpost/tcoms)
 "ZS" = (
 /obj/machinery/suit_storage_unit/open,
 /obj/effect/turf_decal/trimline/yellow/filled/line{
@@ -12860,7 +13683,6 @@
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/progres/experement)
 "ZW" = (
-/obj/effect/turf_decal/weather/snow,
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
@@ -12875,6 +13697,16 @@
 	},
 /turf/open/floor/iron/white/herringbone,
 /area/hypothermia/indoor/outpost/zvezda/dorm3)
+"ZY" = (
+/obj/structure/table/wood,
+/obj/item/paper_bin{
+	pixel_y = 3
+	},
+/obj/item/pen/fountain{
+	pixel_y = 5
+	},
+/turf/open/floor/iron/grimy,
+/area/hypothermia/indoor/outpost/tcoms)
 "ZZ" = (
 /obj/structure/cable,
 /turf/open/floor/catwalk_floor/colony_fabricator,
@@ -13917,7 +14749,7 @@ Ik
 eM
 VP
 VP
-VP
+Ee
 dl
 Dr
 wS
@@ -14178,15 +15010,15 @@ VP
 wS
 fX
 wS
-wS
+kE
 Dr
-Dr
+vr
 zv
 mz
-zt
+CE
 zt
 mz
-wS
+CF
 wS
 wS
 hb
@@ -15987,7 +16819,7 @@ mw
 td
 td
 PZ
-VP
+dx
 uJ
 eM
 jU
@@ -16486,7 +17318,7 @@ eM
 eM
 eM
 Yz
-Yz
+yQ
 td
 ge
 Zg
@@ -16497,11 +17329,11 @@ Pm
 QZ
 Zg
 gR
-td
+mo
 td
 td
 PZ
-VP
+dx
 eM
 eM
 Ik
@@ -17011,7 +17843,7 @@ Hm
 ON
 ON
 EN
-ar
+HP
 Yz
 Ie
 Ie
@@ -17257,9 +18089,9 @@ iG
 le
 GN
 mE
-fz
+Mi
 PZ
-wS
+PJ
 wS
 PZ
 JB
@@ -17638,7 +18470,7 @@ sU
 sU
 sU
 sU
-sU
+pK
 sU
 Ri
 Ri
@@ -17771,7 +18603,7 @@ PZ
 iM
 LM
 mE
-fz
+Mi
 PZ
 zx
 wS
@@ -18069,7 +18901,7 @@ xb
 xb
 xb
 Uy
-Uy
+cs
 lp
 lp
 Uy
@@ -18547,7 +19379,7 @@ PZ
 eM
 ng
 ng
-ar
+HP
 ar
 js
 CZ
@@ -18803,11 +19635,11 @@ wS
 nm
 eM
 eM
+cp
 us
-us
 Qc
 Qc
-Qc
+uQ
 BQ
 Lv
 eM
@@ -20638,7 +21470,7 @@ MB
 TK
 xb
 xb
-Uy
+ZO
 Uy
 Uy
 Uy
@@ -20896,7 +21728,7 @@ MB
 VN
 VN
 VN
-Uy
+ZO
 Uy
 Uy
 Uy
@@ -21375,7 +22207,7 @@ Uy
 Uy
 Uy
 Uy
-Uy
+ZO
 xb
 xb
 xb
@@ -22287,7 +23119,7 @@ sU
 sU
 sU
 sU
-sU
+pK
 sU
 sU
 sU
@@ -22414,7 +23246,7 @@ xb
 xb
 xb
 xb
-Uy
+ZO
 Uy
 lp
 lp
@@ -22917,7 +23749,7 @@ Uy
 Uy
 lp
 Uy
-Uy
+ZO
 xb
 xb
 xb
@@ -24116,7 +24948,7 @@ sU
 sU
 sU
 sU
-sU
+pK
 sU
 sU
 sU
@@ -24213,7 +25045,7 @@ xb
 xb
 xb
 xb
-Uy
+ZO
 Uy
 Uy
 Uy
@@ -24237,7 +25069,7 @@ xb
 xb
 xb
 xb
-Uy
+ZO
 Uy
 Uy
 Uy
@@ -24679,7 +25511,7 @@ sU
 sU
 sU
 sU
-sU
+pK
 sU
 sU
 sU
@@ -24915,7 +25747,7 @@ sU
 sU
 sU
 sU
-sU
+pK
 sU
 sU
 sU
@@ -25522,7 +26354,7 @@ xb
 xb
 xb
 xb
-Uy
+ZO
 Uy
 Uy
 lp
@@ -26280,18 +27112,18 @@ xb
 xb
 xb
 xb
-MB
-MB
-VN
-VN
-VN
-MB
-Ty
-Ty
-Ty
-Ty
-Ty
-az
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
 xb
 xb
 xb
@@ -26536,19 +27368,19 @@ MB
 VN
 VN
 xb
-VN
-VN
-VN
-VN
-VN
-ZU
-ZU
-ZU
-MB
-MB
-MB
-MB
-MB
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
 xb
 xb
 xb
@@ -26789,29 +27621,29 @@ xb
 Zo
 MB
 xb
-VN
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
 MB
 MB
 xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+xb
+zi
+MB
+MB
+zi
 xb
 xb
 xb
@@ -27047,28 +27879,28 @@ Zo
 IL
 xb
 VN
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
+VN
+VN
+VN
 MB
 MB
-xb
+VN
+VN
+VN
+MB
+MB
+MB
+MB
+MB
+MB
+MB
+MB
+MB
+MB
+od
+MB
+MB
+MB
 xb
 xb
 xb
@@ -27304,28 +28136,28 @@ Zo
 IL
 xb
 VN
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-xb
-VN
-VN
 VN
 MB
 MB
+MB
+MB
+MB
 VN
+MB
+MB
+MB
+MB
+MB
+MB
+MB
+MB
+MB
+MB
+MB
+MB
+MB
+MB
+MB
 VN
 VN
 VN
@@ -27558,7 +28390,7 @@ xb
 xb
 xb
 DF
-Uy
+ZO
 xb
 VN
 xb
@@ -27579,10 +28411,10 @@ xb
 xb
 xb
 xb
-xb
+zi
 MB
 MB
-xb
+zi
 xb
 xb
 xb
@@ -27813,7 +28645,7 @@ xb
 xb
 xb
 Uy
-Uy
+ZO
 Uy
 Uy
 xb
@@ -28864,7 +29696,7 @@ xb
 xb
 xb
 xb
-Uy
+ZO
 Uy
 Uy
 Uy
@@ -29892,7 +30724,7 @@ xb
 xb
 xb
 xb
-Uy
+ZO
 Uy
 cs
 Uy
@@ -30423,7 +31255,7 @@ xb
 xb
 xb
 xb
-Uy
+ZO
 Uy
 Uy
 Uy
@@ -31423,15 +32255,15 @@ MB
 MB
 MB
 MB
+VN
 MB
 MB
-MB
-MB
-MB
-MB
-MB
-MB
-MB
+VN
+VN
+VN
+VN
+VN
+VN
 xb
 xb
 xb
@@ -31681,14 +32513,14 @@ MB
 MB
 MB
 MB
+VN
 MB
 MB
 MB
-MB
-MB
-MB
-MB
-MB
+VN
+xb
+xb
+xb
 xb
 xb
 xb
@@ -31969,7 +32801,7 @@ xb
 xb
 xb
 Uy
-cs
+Uy
 Uy
 MB
 MB
@@ -32185,7 +33017,7 @@ xb
 xb
 Uy
 Uy
-Uy
+ZO
 Uy
 xb
 VN
@@ -32439,7 +33271,7 @@ xb
 xb
 xb
 xb
-Uy
+ZO
 Uy
 Uy
 Uy
@@ -34292,9 +35124,9 @@ xb
 VN
 xb
 xb
+ZO
 Uy
-Uy
-Uy
+cs
 Uy
 Uy
 Uy
@@ -35320,7 +36152,7 @@ xb
 xb
 xb
 xb
-Uy
+ZO
 Uy
 Uy
 lp
@@ -35839,7 +36671,7 @@ xb
 xb
 xb
 Uy
-cs
+Uy
 Uy
 Uy
 Uy
@@ -40925,7 +41757,7 @@ xb
 Uy
 Uy
 Uy
-Uy
+cs
 lp
 lp
 lp
@@ -41228,14 +42060,14 @@ sU
 sU
 sU
 sU
+pK
 sU
 sU
 sU
 sU
 sU
 sU
-sU
-sU
+RD
 Ri
 Ri
 Ri
@@ -41492,8 +42324,8 @@ sU
 sU
 sU
 sU
-sU
-sU
+RD
+RD
 Ri
 Ri
 Ri
@@ -41750,8 +42582,8 @@ sU
 sU
 sU
 sU
-sU
-sU
+RD
+RD
 Ri
 Ri
 sU
@@ -42008,9 +42840,9 @@ sU
 sU
 sU
 sU
-sU
-sU
-sU
+RD
+RD
+RD
 sU
 sU
 sU
@@ -42044,7 +42876,7 @@ sU
 sU
 sU
 sU
-sU
+pK
 sU
 sU
 sU
@@ -42267,7 +43099,7 @@ sU
 sU
 sU
 sU
-sU
+RD
 sU
 sU
 sU
@@ -42524,13 +43356,13 @@ sU
 sU
 sU
 sU
+RD
 sU
 sU
 sU
 sU
 sU
-sU
-sU
+pK
 sU
 sU
 sU
@@ -42781,7 +43613,7 @@ sU
 sU
 sU
 sU
-sU
+RD
 sU
 sU
 sU
@@ -43038,7 +43870,7 @@ sU
 sU
 sU
 sU
-sU
+RD
 sU
 sU
 sU
@@ -43545,7 +44377,7 @@ nw
 yD
 CN
 lt
-sU
+lT
 sU
 sU
 sU
@@ -44580,8 +45412,8 @@ sU
 FT
 sU
 sU
-sU
-sU
+RD
+RD
 sU
 sU
 sU
@@ -44838,7 +45670,7 @@ FT
 sU
 sU
 sU
-sU
+RD
 sU
 sU
 sU
@@ -45095,7 +45927,7 @@ FT
 sU
 sU
 sU
-sU
+RD
 sU
 sU
 sU
@@ -47311,7 +48143,7 @@ De
 ke
 ke
 ke
-ke
+AI
 ke
 ke
 De
@@ -47568,9 +48400,9 @@ De
 De
 ke
 ke
-ke
-ke
-ke
+AI
+AI
+AI
 ke
 De
 De
@@ -47827,7 +48659,7 @@ De
 De
 ke
 ke
-ke
+AI
 ke
 ke
 De
@@ -49112,7 +49944,7 @@ ke
 De
 ke
 ke
-ke
+AI
 De
 De
 De
@@ -49369,7 +50201,7 @@ ke
 ER
 ke
 ke
-TU
+hr
 De
 De
 De
@@ -49626,7 +50458,7 @@ De
 De
 ke
 TU
-ke
+AI
 De
 De
 De
@@ -50394,8 +51226,8 @@ ke
 ke
 ke
 ke
-ke
-ke
+AI
+AI
 ke
 ke
 ke
@@ -50649,7 +51481,7 @@ De
 De
 ke
 ke
-ke
+AI
 ke
 ke
 ke
@@ -50906,7 +51738,7 @@ De
 De
 De
 ke
-ke
+AI
 De
 De
 De
@@ -51163,10 +51995,10 @@ De
 De
 De
 ke
-ke
-ke
-ke
-ke
+AI
+AI
+AI
+AI
 ke
 De
 De
@@ -53221,7 +54053,7 @@ De
 De
 De
 ke
-ke
+AI
 ke
 ke
 ke
@@ -53478,7 +54310,7 @@ ke
 De
 ke
 ke
-ke
+AI
 ke
 ke
 De
@@ -53734,8 +54566,8 @@ ke
 ke
 ke
 ke
-ke
-ke
+AI
+AI
 ke
 De
 De
@@ -53991,7 +54823,7 @@ ke
 ke
 ke
 ke
-ke
+AI
 ke
 ke
 De
@@ -54248,7 +55080,7 @@ ke
 ke
 ke
 ke
-ke
+AI
 ke
 De
 De
@@ -63542,7 +64374,7 @@ sU
 sU
 sU
 sU
-MU
+sU
 MU
 MU
 MU
@@ -63780,6 +64612,10 @@ sU
 sU
 sU
 sU
+sU
+sU
+sU
+sU
 MU
 MU
 MU
@@ -63790,15 +64626,11 @@ MU
 MU
 MU
 MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
+sU
+sU
+sU
+sU
+sU
 MU
 MU
 MU
@@ -64034,6 +64866,12 @@ MU
 MU
 MU
 MU
+sU
+sU
+sU
+sU
+sU
+sU
 MU
 MU
 MU
@@ -64046,16 +64884,10 @@ MU
 MU
 MU
 MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
+sU
+sU
+sU
+sU
 MU
 MU
 MU
@@ -64293,6 +65125,10 @@ MU
 MU
 MU
 MU
+op
+op
+op
+op
 MU
 MU
 MU
@@ -64305,14 +65141,10 @@ MU
 MU
 MU
 MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
+op
+op
+op
+op
 MU
 MU
 MU
@@ -64550,6 +65382,26 @@ MU
 MU
 MU
 MU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+MU
+MU
+MU
+MU
+MU
+MU
+MU
+MU
+MU
+sU
+sU
+sU
+sU
 MU
 MU
 MU
@@ -64564,35 +65416,15 @@ MU
 MU
 MU
 MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
 MU
 MU
 MU
@@ -64810,6 +65642,25 @@ sU
 sU
 sU
 sU
+sU
+sU
+sU
+sU
+MU
+MU
+MU
+MU
+MU
+MU
+MU
+MU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
 MU
 MU
 MU
@@ -64822,33 +65673,14 @@ MU
 MU
 MU
 MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
+op
+op
+op
+op
+op
+op
+op
+op
 MU
 MU
 MU
@@ -65098,14 +65930,14 @@ MU
 MU
 MU
 MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
-MU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
 MU
 MU
 MU
@@ -65359,10 +66191,10 @@ sU
 sU
 sU
 sU
-MU
-MU
-MU
-MU
+sU
+sU
+sU
+sU
 MU
 MU
 MU
@@ -65583,6 +66415,7 @@ sU
 sU
 sU
 sU
+YA
 sU
 sU
 sU
@@ -65619,8 +66452,7 @@ sU
 sU
 sU
 sU
-MU
-MU
+sU
 MU
 MU
 MU
@@ -65857,7 +66689,7 @@ sU
 sU
 sU
 sU
-sU
+YA
 sU
 sU
 sU
@@ -66641,7 +67473,7 @@ sU
 sU
 sU
 sU
-sU
+YA
 sU
 sU
 sU
@@ -69193,7 +70025,7 @@ dG
 dG
 dG
 dG
-dG
+XC
 dG
 dG
 dG
@@ -70344,7 +71176,7 @@ sU
 sU
 sU
 sU
-sU
+pK
 sU
 sU
 sU
@@ -73052,7 +73884,7 @@ dG
 dG
 dG
 dG
-XC
+dG
 dG
 dG
 dG
@@ -74766,7 +75598,7 @@ Zl
 Re
 eq
 sU
-sU
+pK
 sU
 sc
 sc
@@ -78227,7 +79059,7 @@ sU
 sU
 sU
 sc
-oi
+sc
 sc
 sc
 sc
@@ -80198,7 +81030,7 @@ dv
 dv
 dv
 dv
-dv
+KU
 dv
 dv
 dv
@@ -80448,7 +81280,7 @@ dv
 dv
 dv
 dv
-dv
+TH
 dv
 dv
 dv
@@ -80703,7 +81535,7 @@ dM
 gE
 dv
 dv
-dv
+KU
 dv
 dv
 dv
@@ -81480,7 +82312,7 @@ dv
 dv
 dv
 dv
-dv
+AR
 dv
 dv
 dv
@@ -81998,7 +82830,7 @@ dv
 dv
 dv
 dv
-dv
+TH
 dv
 dv
 dv
@@ -82258,7 +83090,7 @@ dv
 dv
 dv
 dv
-dv
+KU
 dv
 gE
 dM
@@ -82502,7 +83334,7 @@ hM
 gE
 dv
 dv
-dv
+KU
 dv
 dv
 dv
@@ -83533,7 +84365,7 @@ dv
 dv
 dv
 dv
-dv
+TH
 dv
 dv
 dv
@@ -84302,7 +85134,7 @@ gE
 dv
 dv
 dv
-dv
+KU
 dv
 dv
 dv
@@ -85853,7 +86685,7 @@ dv
 dv
 dv
 dv
-dv
+KU
 dv
 dv
 dv
@@ -86618,7 +87450,7 @@ dv
 dv
 dv
 dv
-dv
+KU
 dv
 dv
 dv
@@ -89441,7 +90273,7 @@ rk
 rk
 Js
 tv
-oU
+Bk
 oU
 rk
 Lx
@@ -89699,7 +90531,7 @@ YR
 Js
 tv
 vO
-rk
+sx
 rk
 rk
 rk
@@ -89957,7 +90789,7 @@ YR
 tv
 sH
 rk
-rk
+OC
 rk
 rk
 Js
@@ -90469,7 +91301,7 @@ YR
 BS
 BS
 tv
-oV
+OS
 rk
 dm
 Fh
@@ -91698,7 +92530,7 @@ Hl
 Hl
 Hl
 Hl
-Hl
+Bt
 Hl
 Hl
 Hl
@@ -91768,7 +92600,7 @@ vI
 ez
 rf
 Xo
-dx
+UL
 UL
 UL
 tH
@@ -91987,7 +92819,7 @@ Hl
 Hl
 Hl
 Hl
-Hl
+pP
 BS
 Cs
 tv
@@ -92244,8 +93076,8 @@ Hl
 Hl
 Hl
 Hl
-QI
-Hl
+pP
+zR
 hy
 tv
 Kw
@@ -92253,7 +93085,7 @@ zl
 zl
 zl
 zl
-zl
+vt
 zl
 zl
 zl
@@ -92501,8 +93333,8 @@ tv
 tv
 Hl
 Hl
-Hl
-Hl
+pP
+pP
 tv
 tv
 Kv
@@ -93025,7 +93857,7 @@ zl
 Hf
 rk
 rk
-dm
+rk
 tv
 rk
 tv
@@ -93560,7 +94392,7 @@ Gw
 rk
 rk
 Vt
-rk
+dm
 rk
 vI
 xy
@@ -94043,14 +94875,14 @@ qB
 Hq
 Hq
 Hq
-Hq
+oP
 hP
 uA
 xj
 Mq
 Mq
 JD
-rk
+dm
 rk
 rk
 rk
@@ -94299,8 +95131,8 @@ pv
 qB
 Hq
 Hq
-Hq
-Hq
+Ps
+oP
 Hq
 Hq
 vz
@@ -94336,7 +95168,7 @@ vI
 QR
 QR
 QR
-Me
+WY
 Me
 Me
 Me
@@ -94557,9 +95389,9 @@ qB
 Hq
 Hq
 Hq
+oP
 Hq
-Hq
-Hq
+Ps
 vz
 rk
 pH
@@ -94569,7 +95401,7 @@ pH
 rk
 rk
 Hf
-Js
+Fh
 rk
 tv
 rk
@@ -94593,7 +95425,7 @@ ti
 Me
 Me
 QR
-AG
+QR
 Me
 UL
 UL
@@ -95071,14 +95903,14 @@ qB
 Hq
 Hq
 Hq
-Hq
+Ps
 Hq
 Hq
 vz
 cE
 ci
 cE
-rk
+dm
 rk
 rk
 Js
@@ -95351,7 +96183,7 @@ Js
 Gw
 Gw
 rk
-rk
+dm
 rk
 RK
 Rz
@@ -95590,7 +96422,7 @@ hS
 hS
 tv
 uL
-ig
+uL
 uL
 sy
 tv
@@ -95853,7 +96685,7 @@ if
 tv
 tn
 rk
-Js
+Fh
 tv
 Js
 Js
@@ -102491,7 +103323,7 @@ rR
 rR
 Hl
 Hl
-KU
+Hl
 Hl
 Hl
 Hl
@@ -106908,8 +107740,8 @@ Hl
 Id
 Id
 Id
-YS
-YS
+Hl
+Hl
 Hl
 Hl
 Hl
@@ -107164,7 +107996,7 @@ Hl
 Hl
 Id
 Hl
-tG
+lA
 Yj
 qy
 cq
@@ -107693,8 +108525,8 @@ rr
 Hl
 Hl
 Hl
-Hl
-Hl
+sV
+sV
 Hl
 Hl
 Hl
@@ -107953,12 +108785,12 @@ Hl
 Hl
 Hl
 Hl
-Yy
-Yy
-Yy
-Yy
-Yy
-Yy
+iB
+iB
+iB
+iB
+iB
+iB
 Yy
 Yy
 Yy
@@ -108217,7 +109049,7 @@ Yy
 Yy
 Yy
 Yy
-Yy
+iB
 Yy
 VT
 MF
@@ -108332,10 +109164,10 @@ gg
 rR
 rR
 rR
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
 xM
 xM
 xM
@@ -108474,7 +109306,7 @@ Yy
 Yy
 Yy
 Yy
-Yy
+iB
 Yy
 ki
 YX
@@ -108589,10 +109421,10 @@ gg
 gg
 rR
 rR
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
 xM
 xM
 xM
@@ -108731,7 +109563,7 @@ Yy
 Yy
 Yy
 Yy
-Yy
+iB
 Yy
 ki
 YX
@@ -108846,10 +109678,10 @@ Hl
 gg
 gg
 rR
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
 xM
 xM
 xM
@@ -109103,11 +109935,11 @@ Hl
 Hl
 Hl
 rR
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Hl
 xM
 xM
 xM
@@ -109359,13 +110191,13 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 xM
 xM
 xM
@@ -109616,14 +110448,14 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 xM
 xM
 xM
@@ -109696,7 +110528,7 @@ Hl
 Hl
 sV
 Lf
-Zm
+ye
 kK
 Ge
 rR
@@ -109731,8 +110563,8 @@ ke
 ke
 ke
 ke
-ke
-ke
+xM
+xM
 ke
 ke
 ke
@@ -109873,14 +110705,14 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 xM
 xM
 xM
@@ -109986,13 +110818,13 @@ ke
 ke
 ke
 ke
+xM
+xM
+xM
+xM
+xM
 ke
 ke
-xM
-xM
-xM
-xM
-xM
 ke
 xM
 xM
@@ -110130,14 +110962,14 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 xM
 xM
 xM
@@ -110250,11 +111082,11 @@ ke
 ke
 ke
 ke
-xM
+ke
 ke
 xM
 xM
-ke
+xM
 xM
 xM
 xM
@@ -110387,14 +111219,14 @@ oH
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 xM
 xM
 xM
@@ -110510,8 +111342,8 @@ ke
 ke
 ke
 ke
-ke
-ke
+xM
+xM
 xM
 xM
 xM
@@ -110644,14 +111476,14 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 xM
 xM
 xM
@@ -110764,13 +111596,13 @@ ke
 ke
 ke
 ke
-ke
+AI
 ke
 ke
 xM
-ke
 xM
-ke
+xM
+xM
 ke
 xM
 xM
@@ -110901,14 +111733,14 @@ Hl
 Hl
 gg
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 xM
 xM
 xM
@@ -111157,16 +111989,16 @@ gg
 gg
 gg
 gg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 xM
 xM
 xM
@@ -111278,7 +112110,7 @@ xM
 xM
 ke
 ke
-ke
+AI
 ke
 ke
 xM
@@ -111389,9 +112221,9 @@ Qh
 SS
 SS
 SS
-is
+sN
 ck
-is
+Ak
 kr
 zj
 zj
@@ -111414,16 +112246,16 @@ gg
 gg
 gg
 gg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 xM
 xM
 xM
@@ -111535,7 +112367,7 @@ xM
 ke
 ke
 ke
-ke
+AI
 ke
 ke
 ke
@@ -111653,7 +112485,7 @@ kr
 kr
 kr
 kr
-kr
+dk
 SS
 Qh
 Hl
@@ -111671,17 +112503,17 @@ rR
 rR
 gg
 gg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 xM
 xM
 xM
@@ -111743,7 +112575,7 @@ ke
 ke
 ke
 ke
-ke
+cY
 ke
 ke
 ke
@@ -111791,7 +112623,7 @@ xM
 xM
 ke
 ke
-ke
+AI
 ke
 ke
 xM
@@ -111901,7 +112733,7 @@ Hl
 Hl
 Qh
 SS
-wh
+tC
 is
 ck
 is
@@ -111910,7 +112742,7 @@ kr
 kr
 kr
 kr
-kr
+el
 SS
 Qh
 Hl
@@ -111928,21 +112760,21 @@ rR
 rR
 gg
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-jK
-jK
-jK
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+xM
+xM
+xM
 fy
 fy
 fy
@@ -112161,7 +112993,7 @@ SS
 is
 vq
 is
-is
+RU
 kr
 kr
 kr
@@ -112185,21 +113017,21 @@ rR
 gg
 gg
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 Hq
 Hq
 Hq
@@ -112253,17 +113085,17 @@ xM
 xM
 ke
 ke
+FW
+FW
+FW
+FW
+ig
 ke
 ke
 ke
 ke
 ke
 ke
-ke
-ke
-ke
-ke
-ke
 xM
 xM
 xM
@@ -112279,8 +113111,8 @@ xM
 xM
 xM
 xM
-ke
-ke
+xM
+xM
 ke
 ke
 ke
@@ -112304,11 +113136,11 @@ xM
 ke
 ke
 cY
-ke
+AI
 ke
 ke
 xM
-ke
+xM
 ke
 ke
 ke
@@ -112442,21 +113274,21 @@ gg
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 Hq
 Hq
 Hq
@@ -112510,35 +113342,13 @@ xM
 xM
 ke
 ke
+FW
+Zb
+bh
+iT
+ig
 ke
 ke
-ke
-xM
-xM
-xM
-xM
-ke
-ke
-ke
-ke
-ke
-ke
-xM
-xM
-xM
-xM
-xM
-xM
-xM
-xM
-xM
-xM
-xM
-xM
-xM
-ke
-xM
-xM
 ke
 ke
 ke
@@ -112548,8 +113358,11 @@ ke
 xM
 xM
 xM
-ke
-ke
+xM
+xM
+xM
+xM
+xM
 xM
 xM
 xM
@@ -112562,6 +113375,25 @@ ke
 ke
 ke
 ke
+ke
+ke
+xM
+xM
+xM
+ke
+ke
+xM
+xM
+xM
+xM
+xM
+xM
+xM
+xM
+ke
+ke
+ke
+AI
 ke
 ke
 xM
@@ -112699,21 +113531,21 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 Hq
 Hq
 Hq
@@ -112767,38 +113599,18 @@ xM
 xM
 ke
 ke
-ke
-ke
-xM
-xM
-xM
-xM
-xM
-xM
-xM
+FW
+Zb
+ns
+Nn
 ke
 ke
 ke
 ke
+cY
 ke
 ke
 ke
-ke
-xM
-xM
-xM
-xM
-xM
-xM
-xM
-xM
-ke
-xM
-xM
-xM
-xM
-xM
-xM
 ke
 ke
 ke
@@ -112812,13 +113624,33 @@ xM
 xM
 xM
 xM
+ke
+xM
+xM
+xM
+xM
+xM
 xM
 ke
 ke
 ke
 ke
 ke
+xM
+xM
+xM
+xM
+xM
+xM
+xM
+xM
+xM
 ke
+ke
+ke
+ke
+ke
+AI
 ke
 xM
 xM
@@ -112956,21 +113788,21 @@ Hl
 Hl
 oH
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 Hq
 Hq
 Hq
@@ -113024,37 +113856,16 @@ xM
 xM
 ke
 ke
-ke
-ke
-xM
-xM
-ke
-ke
-ke
-ke
-ke
-xM
-xM
+FW
+iT
+ig
+iT
 ke
 ke
 ke
 ke
 ke
 ke
-ke
-xM
-xM
-xM
-xM
-xM
-ke
-ke
-ke
-ke
-ke
-xM
-xM
-xM
 ke
 ke
 ke
@@ -113068,6 +113879,13 @@ xM
 xM
 xM
 xM
+ke
+ke
+ke
+ke
+ke
+xM
+xM
 xM
 ke
 ke
@@ -113076,11 +113894,25 @@ ke
 ke
 ke
 ke
+ke
+xM
+xM
+xM
+xM
 xM
 xM
 ke
 ke
 ke
+ke
+ke
+ke
+ke
+ke
+xM
+ke
+ke
+xM
 xM
 ke
 xM
@@ -113213,21 +114045,21 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Ov
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 Hq
 Hq
 Hq
@@ -113280,20 +114112,20 @@ xM
 xM
 xM
 ke
+cY
+ig
+Qu
+YO
+ig
+ig
 ke
 ke
 ke
-xM
 ke
 ke
 ke
 ke
 ke
-ke
-xM
-xM
-xM
-xM
 ke
 ke
 ke
@@ -113468,23 +114300,23 @@ Hl
 Hl
 Hl
 Hl
+Mw
+Mw
+Mw
+Mw
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Ov
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 Hq
 Hq
 Hq
@@ -113538,10 +114370,8 @@ xM
 xM
 ke
 ke
-cY
 ke
-xM
-ke
+bv
 ke
 ke
 ke
@@ -113549,9 +114379,11 @@ ke
 ke
 ke
 ke
-xM
-xM
-xM
+ke
+ke
+ke
+ke
+ke
 ke
 ke
 ke
@@ -113588,13 +114420,13 @@ ke
 ke
 xM
 ke
-ke
+AI
 ke
 xM
 xM
 ke
-ke
-ke
+xM
+xM
 xM
 ke
 ke
@@ -113725,23 +114557,23 @@ Hl
 Hl
 Hl
 Ve
+Mw
+He
+He
+Mw
+Mw
+Ov
+Ov
+Ov
+Mw
+Mw
+Mw
+Mw
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
 Hq
 Hq
 Hq
@@ -113845,7 +114677,7 @@ ke
 ke
 xM
 ke
-ke
+AI
 cY
 xM
 ke
@@ -113862,7 +114694,7 @@ ke
 ke
 xM
 ke
-ke
+tT
 ke
 ER
 xM
@@ -113964,7 +114796,7 @@ Hl
 Hl
 Hl
 Hl
-Hl
+QI
 Hl
 Hl
 Hl
@@ -113982,23 +114814,23 @@ Hl
 Hl
 Hl
 Hl
+Mw
+yU
+Ud
+dY
+Hl
+Ov
+Cd
+Ov
+dY
+VX
+VX
+Mw
+Mw
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
 Hq
 Hq
 Hq
@@ -114051,10 +114883,10 @@ xM
 xM
 xM
 ke
+cY
 ke
 ke
-ke
-ke
+cY
 ke
 ke
 ke
@@ -114102,7 +114934,7 @@ ke
 xM
 xM
 ke
-ke
+AI
 ke
 ke
 ke
@@ -114222,9 +115054,9 @@ Hl
 Hl
 Hl
 Hl
-Hl
-Hl
-Hl
+yB
+Ov
+QI
 Hl
 Hl
 Hl
@@ -114239,23 +115071,23 @@ Hl
 Hl
 Hl
 Hl
+Mw
+sf
+sf
+xT
+WR
+Cd
+Hl
+Ov
+Cd
+Ud
+Ud
+bG
+Mw
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
 Hq
 Hq
 Hq
@@ -114359,13 +115191,13 @@ ke
 xM
 xM
 ke
+AI
 ke
 ke
 ke
 ke
-ke
-ke
-ke
+xM
+xM
 xM
 xM
 xM
@@ -114479,40 +115311,40 @@ Hl
 Hl
 Hl
 Hl
+fp
 Hl
-Hl
-Hl
+QI
 Hl
 Hl
 Hl
 sV
 Ge
-sV
-Hl
+Ov
+WR
 Hl
 oH
 Hl
 Hl
 Hl
-sV
-sV
-sV
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Mw
+Mw
+Hl
+zg
+dY
+WR
+Cd
+Ov
+Ov
+dY
+ri
+Ud
+VA
+Mw
+Hl
+Hl
+Hl
+Hl
 Hq
 Hq
 Hq
@@ -114600,9 +115432,9 @@ xM
 xM
 xM
 xM
-xM
-xM
-xM
+ke
+ke
+ke
 ke
 ke
 ke
@@ -114616,13 +115448,13 @@ xM
 xM
 ke
 ke
+AI
 ke
 ke
 ke
-ke
-ke
-ke
-ke
+xM
+xM
+xM
 xM
 xM
 xM
@@ -114739,37 +115571,37 @@ Hl
 Hl
 Hl
 Hl
+QI
+OB
+Hl
+Td
+Ov
+Ov
+Hl
+Hl
+WR
+Hl
+QI
+Hl
+Mw
+Mw
 Hl
 Hl
 Hl
-sV
-sV
-sV
 Hl
-gg
-gg
+WR
+Hl
+YC
+FS
+Ov
+dY
+dY
+Ud
+Mw
 Hl
 Hl
 Hl
-sV
-Ge
-sV
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
 Hq
 Hq
 Hq
@@ -114851,13 +115683,13 @@ ke
 ke
 ke
 ke
-xM
-xM
-xM
-xM
-xM
-xM
-xM
+ke
+ke
+ke
+ke
+ke
+ke
+ke
 ke
 ke
 ke
@@ -114877,13 +115709,13 @@ ke
 ke
 xM
 xM
-ke
-ke
-ke
-ke
-ke
-ke
-ke
+xM
+FW
+FW
+FW
+FW
+FW
+FW
 ke
 xM
 xM
@@ -114992,6 +115824,11 @@ Hl
 Hl
 Hl
 Hl
+Mw
+QI
+Ov
+Hl
+WR
 Hl
 Hl
 Hl
@@ -114999,34 +115836,29 @@ Hl
 Hl
 Hl
 Hl
+YC
 Hl
 Hl
 Hl
-gg
-gg
-gg
-gg
-gg
 Hl
-sV
-sV
-sV
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+eB
+eB
+Hl
+YC
+QI
+Hl
+Hl
+WR
+Hl
+Jg
+dY
+Ud
+Mw
+Mw
+Hl
+Hl
+Hl
 Hq
 Hq
 Hq
@@ -115108,9 +115940,6 @@ ke
 ke
 ke
 ke
-xM
-xM
-xM
 ke
 ke
 ke
@@ -115118,15 +115947,6 @@ ke
 ke
 ke
 ke
-ke
-xM
-xM
-xM
-xM
-xM
-xM
-xM
-xM
 ke
 ke
 ke
@@ -115135,12 +115955,24 @@ xM
 xM
 xM
 xM
+xM
+xM
+xM
+xM
 ke
 ke
 ke
 ke
-ke
-ke
+xM
+xM
+xM
+xM
+FW
+tG
+zK
+Iz
+rG
+FW
 ke
 ke
 xM
@@ -115248,40 +116080,40 @@ gg
 gg
 Hl
 Hl
+px
+Mw
+Hl
+Ov
+Ov
+Hl
+YC
+Hl
+WR
+YC
+vD
+eB
+eB
 Hl
 Hl
 Hl
+ds
+vD
+vD
+eB
+eB
+vD
+eB
+eB
+eB
+Hl
+YC
 Hl
 Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-gg
-gg
-gg
-rR
-rR
-gg
-gg
-Hl
-Hl
-Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-Hl
-Hl
-Hl
+Ov
+dY
+dY
+Mw
+Mw
 Hl
 Hl
 Hq
@@ -115346,7 +116178,7 @@ ke
 ke
 xM
 xM
-Nk
+xM
 xM
 xM
 xM
@@ -115365,14 +116197,14 @@ ke
 ke
 ke
 ke
-xM
 ke
-ke
-ke
-ke
-ke
-ke
-ke
+FW
+FW
+FW
+FW
+FW
+FW
+FW
 ke
 ke
 ke
@@ -115390,14 +116222,14 @@ ke
 ke
 xM
 ke
-ke
 xM
-ke
-ke
-ke
 xM
-ke
-ke
+FW
+XR
+XR
+XR
+XR
+FW
 ke
 ke
 ke
@@ -115505,37 +116337,37 @@ gg
 gg
 Hl
 Mw
-Mw
-Mw
 Qh
+Qh
+Ov
+Ft
+ja
 Hl
 Hl
 Hl
+eB
+eB
+eB
 Hl
 Hl
-Hl
-Hl
-Hl
-Hl
-gg
-rR
-rR
-rR
-rR
-gg
-Hl
-Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+eB
+eB
+mW
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+vD
+ji
+vD
+eB
+eB
 Hl
 Hl
 Hl
@@ -115623,13 +116455,13 @@ ke
 ke
 ke
 ke
-ke
-AI
+FW
+Fu
 CR
+AG
+ZC
 Bv
-Bv
-Bv
-ke
+FW
 ke
 ke
 ke
@@ -115647,14 +116479,14 @@ ke
 ke
 ke
 ke
-ke
-ke
-ke
-ke
-ke
 xM
 xM
-xM
+FW
+aj
+pL
+XR
+RB
+FW
 ke
 ke
 ke
@@ -115765,37 +116597,37 @@ Mw
 Gt
 Qh
 Qh
-Qh
+Mw
+Mw
+eB
 Hl
 Hl
+mW
 Hl
+eB
+eB
+eB
+eB
+eB
+eB
+eB
+mW
+eB
+eB
+mW
+Ov
+QI
 Hl
+YC
 Hl
-Hl
-Hl
-Hl
-gg
-gg
-rR
-rR
-rR
-rR
-gg
-Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-Hl
-Hl
-Hl
+Ov
+Ov
+Ov
+Ov
+eB
+vD
+eB
+eB
 Hl
 Hl
 Hl
@@ -115880,39 +116712,39 @@ ke
 ke
 ke
 ke
-ke
-AI
+FW
+Fu
 TV
 Fu
 oN
 aN
 mR
-mR
-mR
-mR
+aN
+aN
+aN
 Lo
-mR
-mR
-mR
+aN
+aN
+aN
 Gy
-mR
-mR
-mR
-mR
-mR
-ke
-ke
-ke
-ke
-ke
-ke
+aN
+aN
+aN
+aN
+aN
 ke
 ke
 ke
 ke
 ke
 xM
-xM
+FW
+Sz
+HT
+XR
+XR
+ij
+ke
 ke
 ke
 xM
@@ -116022,34 +116854,34 @@ Mw
 Xx
 Gt
 Qh
+NL
 Qh
-Qh
+Hl
+YC
+QI
+Hl
+Hl
+Hl
+YC
+OB
+Hl
+Hl
+YC
 Hl
 Hl
 Hl
 Hl
 Hl
 Hl
+Ov
+Ov
+Ov
+Hl
+Ov
 Hl
 Hl
-gg
-gg
-rR
-rR
-rR
-gg
-gg
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
 Hl
 Hl
 Hl
@@ -116135,15 +116967,15 @@ xM
 ke
 ke
 ke
-xM
 ke
 ke
-AI
-AI
-zK
-cp
+FW
+Fu
+Fu
+Fu
+Fu
 JJ
-ke
+FW
 ke
 ke
 ke
@@ -116156,31 +116988,31 @@ ke
 ke
 ke
 ke
-mR
+aN
 xM
 aa
 aa
 xM
 xM
 xM
+FW
+FW
+FW
+XR
+pN
+FW
+ke
+ke
+ke
+ke
+ke
+ke
+xM
 xM
 ke
 ke
 ke
 ke
-ke
-ke
-ke
-ke
-ke
-ke
-ke
-xM
-xM
-ke
-ke
-ke
-xM
 ke
 ke
 ke
@@ -116281,33 +117113,33 @@ Gt
 Qh
 eH
 Qh
+Ov
+Hl
+QI
+Ov
+Ao
+QB
+Hl
+Hl
+Ud
+Ov
+zn
+FY
 Hl
 Hl
 Hl
+NU
+NU
+NU
+NU
+NU
+bn
+bn
+bn
+NU
 Hl
 Hl
-Hl
-Hl
-Hl
-Hl
-gg
-gg
-rR
-rR
-rR
-gg
-Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-Hl
+YC
 Hl
 Hl
 Hl
@@ -116393,14 +117225,14 @@ ke
 ke
 ke
 ke
-xM
 ke
-AI
-AI
-AI
-AI
-AI
-ke
+FW
+vZ
+Fu
+Fu
+Fu
+EJ
+FW
 ke
 ke
 ke
@@ -116413,7 +117245,7 @@ xM
 xM
 pD
 ke
-mR
+aN
 xM
 ke
 ke
@@ -116422,6 +117254,10 @@ xM
 xM
 xM
 xM
+FW
+FW
+FW
+FW
 ke
 ke
 ke
@@ -116436,16 +117272,12 @@ ke
 ke
 ke
 ke
-xM
 ke
 ke
 ke
 ke
 ke
-ke
-ke
-ke
-ke
+cY
 ke
 ke
 ke
@@ -116538,32 +117370,32 @@ Gt
 Gt
 eH
 Qh
-Qh
+ZI
+WR
+Ov
+Ov
+RM
+ox
 Hl
+QI
+OG
+Ud
+Ov
 Hl
+WR
 Hl
+Sq
+TG
+Rt
+bn
+bn
+bn
+TE
+TE
+Nr
+Nr
+Sq
 Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-gg
-gg
-rR
-rR
-gg
-Hl
-Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
 Hl
 Hl
 Hl
@@ -116650,32 +117482,18 @@ ke
 ke
 ke
 ke
-xM
-xM
 ke
-ke
-pN
-AI
-AI
-ke
-ke
-ke
-ke
-ke
-xM
-xM
-xM
-xM
-xM
+FW
+Fu
+Fu
+Fu
+Fu
+rK
+FW
 ke
 ke
 ke
-mR
-xM
-xM
 ke
-ke
-xM
 xM
 xM
 xM
@@ -116684,6 +117502,20 @@ xM
 ke
 ke
 ke
+aN
+xM
+xM
+ke
+ke
+xM
+xM
+xM
+xM
+xM
+xM
+ke
+ke
+ke
 xM
 ke
 ke
@@ -116693,7 +117525,7 @@ ke
 ke
 ke
 ke
-xM
+ke
 ke
 ke
 xM
@@ -116794,33 +117626,33 @@ Mw
 Mw
 Mw
 Mw
+Ov
 Hl
 Hl
 Hl
 Hl
 Hl
 Hl
+Mw
+Ud
+Ud
+QI
 Hl
 Hl
 Hl
 Hl
+Sq
+nO
+FX
+Pq
+Ht
+Xw
+En
+HA
+Nr
+JO
+Sq
 Hl
-Hl
-gg
-gg
-rR
-gg
-Hl
-Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
 Hl
 Hl
 Hl
@@ -116908,17 +117740,17 @@ ke
 ke
 ke
 ke
-xM
-xM
-xM
-AI
-AI
-AI
+FW
+Fu
+hk
+vV
+Fu
+cJ
+FW
 ke
 ke
 ke
 ke
-ke
 xM
 xM
 xM
@@ -116927,7 +117759,7 @@ xM
 ke
 ke
 ke
-mR
+aN
 ke
 xM
 ke
@@ -117059,25 +117891,25 @@ Hl
 Hl
 Hl
 Hl
+Mw
+Ud
+Mw
+WR
+WR
 Hl
 Hl
+Sq
+fv
+Xw
+Xw
+Xw
+Xw
+sh
+hp
+Xw
+ii
+Sq
 Hl
-Hl
-Hl
-gg
-rR
-gg
-Hl
-Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
 Hl
 Hl
 Hl
@@ -117165,15 +117997,15 @@ ke
 ke
 ke
 ke
+FW
+Ei
+FW
+FW
+FW
+FW
+FW
 ke
 ke
-ke
-ke
-ke
-ke
-ke
-ke
-xM
 ke
 ke
 xM
@@ -117185,7 +118017,7 @@ ke
 ke
 ke
 WO
-mR
+aN
 xM
 xM
 ke
@@ -117208,7 +118040,7 @@ xM
 xM
 xM
 ke
-ke
+cY
 ke
 ke
 xM
@@ -117315,6 +118147,30 @@ Hl
 Hl
 Hl
 Hl
+WR
+Hl
+Mw
+Mw
+Hl
+Hl
+Hl
+Hl
+Sq
+Tl
+gZ
+vW
+ZR
+Xw
+uY
+kw
+Xw
+Xw
+Sq
+Hl
+Hl
+Hl
+Hl
+Hl
 Hl
 Hl
 Hl
@@ -117324,30 +118180,6 @@ Hl
 Hl
 gg
 gg
-Hl
-Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-gg
-gg
 gg
 gg
 gg
@@ -117429,8 +118261,8 @@ ke
 ke
 ke
 ke
-xM
-xM
+ke
+ke
 ke
 ke
 xM
@@ -117442,7 +118274,7 @@ ke
 ke
 pD
 xM
-mR
+aN
 ke
 xM
 ke
@@ -117579,19 +118411,19 @@ Hl
 Hl
 Hl
 Hl
-gg
 Hl
+Sq
+la
+Hd
+Xw
+Xw
+Xw
+Rp
+OH
+Xw
+Xw
+Sq
 Hl
-Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
 Hl
 Hl
 Hl
@@ -117682,16 +118514,9 @@ ke
 ke
 ke
 ke
-xM
-xM
-xM
-xM
-xM
 ke
 ke
-xM
-xM
-xM
+ke
 ke
 ke
 ke
@@ -117699,11 +118524,18 @@ ke
 xM
 xM
 xM
-mR
-mR
-mR
-mR
-mR
+ke
+ke
+ke
+ke
+xM
+xM
+xM
+aN
+aN
+aN
+aN
+aN
 ke
 xM
 xM
@@ -117837,18 +118669,18 @@ Hl
 Hl
 Hl
 Hl
+Sq
+Xw
+Xw
+Xw
+Xw
+Rl
+LA
+Cl
+Xw
+mx
+Sq
 Hl
-Hl
-Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
 Hl
 Hl
 Hl
@@ -117937,9 +118769,9 @@ ke
 ke
 ke
 ke
-xM
-xM
-xM
+ke
+ke
+ke
 ke
 ke
 ke
@@ -117960,7 +118792,7 @@ ae
 wj
 ke
 ke
-mR
+aN
 ke
 ke
 xM
@@ -117983,7 +118815,7 @@ ke
 ke
 ke
 ke
-ke
+cY
 ke
 ke
 ke
@@ -118094,18 +118926,18 @@ Hl
 Hl
 Hl
 Hl
+Mw
+Mw
+Sq
+Yk
+kC
+kC
+bj
+kC
+Yk
+Sq
+Sq
 Hl
-Hl
-Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
 Hl
 Hl
 Hl
@@ -118217,7 +119049,7 @@ xM
 xM
 xM
 ke
-mR
+aN
 ke
 ke
 ke
@@ -118353,16 +119185,16 @@ Hl
 Hl
 Hl
 Hl
+Sq
+Xd
+BN
+fk
+aw
+wf
+GL
+eh
+Sq
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
 Hl
 Hl
 Hl
@@ -118610,16 +119442,16 @@ Hl
 Hl
 Hl
 Hl
+Sq
+GO
+bc
+AP
+Vb
+Vb
+qh
+ZY
+Sq
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
 Hl
 Hl
 Hl
@@ -118748,8 +119580,8 @@ ke
 ke
 ke
 xM
-ke
-ke
+xM
+xM
 ke
 ke
 xM
@@ -118867,16 +119699,16 @@ Hl
 Hl
 Hl
 Hl
+Sq
+iS
+UJ
+AP
+Vb
+hE
+Zi
+mm
+Sq
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
 Hl
 Hl
 Hl
@@ -118992,6 +119824,13 @@ ke
 xM
 ke
 ke
+AI
+ke
+ke
+xM
+xM
+xM
+xM
 xM
 ke
 ke
@@ -118999,13 +119838,6 @@ xM
 xM
 xM
 xM
-ke
-ke
-ke
-xM
-xM
-xM
-ke
 ke
 ke
 xM
@@ -119124,16 +119956,16 @@ Hl
 Hl
 Hl
 Hl
+Sq
+Sq
+Sq
+zN
+Sq
+Sq
+Sq
+Sq
+Sq
 Hl
-Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
 Hl
 Hl
 Hl
@@ -119249,10 +120081,7 @@ ke
 xM
 xM
 ke
-xM
-xM
-ke
-ke
+AI
 ke
 ke
 ke
@@ -119261,7 +120090,10 @@ ke
 xM
 xM
 xM
-ke
+xM
+xM
+xM
+xM
 ke
 ke
 xM
@@ -119383,14 +120215,14 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+iZ
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 Hl
 Hl
 Hl
@@ -119508,16 +120340,16 @@ xM
 ke
 ke
 ke
-xM
-xM
 ke
 ke
 ke
-xM
-xM
-xM
 ke
 ke
+xM
+xM
+xM
+xM
+xM
 ke
 ke
 xM
@@ -119640,15 +120472,15 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-UT
+Hl
+iZ
+iZ
+Hl
+Hl
+Hl
+Hl
+qE
+EU
 iL
 ju
 EU
@@ -119766,13 +120598,13 @@ xM
 ke
 ke
 ke
-xM
-xM
+ke
+ke
 ke
 ke
 xM
-ke
-ke
+xM
+xM
 ke
 ke
 ke
@@ -119897,17 +120729,17 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+iZ
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 bg
 bg
 bg
@@ -120026,12 +120858,12 @@ ke
 ke
 ke
 ke
+ke
+ke
+ke
+ke
+ke
 xM
-xM
-ke
-ke
-ke
-ke
 xM
 xM
 xM
@@ -120154,17 +120986,17 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+iZ
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 bg
 bg
 bg
@@ -120282,12 +121114,12 @@ xM
 ke
 ke
 ke
-xM
 ke
 ke
 ke
 ke
-xM
+ke
+ke
 xM
 xM
 xM
@@ -120411,17 +121243,17 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+YS
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 bg
 bg
 bg
@@ -120544,8 +121376,8 @@ ke
 ke
 ke
 ke
-xM
-xM
+ke
+ke
 xM
 xM
 ke
@@ -120668,17 +121500,17 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+iZ
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 bg
 bg
 bg
@@ -120800,10 +121632,10 @@ ke
 ke
 ke
 ke
+AI
+AI
 ke
-xM
-xM
-xM
+ke
 ke
 ke
 ke
@@ -120925,18 +121757,18 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+iZ
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 bg
 bg
 bg
@@ -121058,9 +121890,9 @@ ke
 ke
 ke
 ke
-ke
-ke
-ke
+AI
+AI
+AI
 ke
 ke
 ke
@@ -121184,16 +122016,16 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+iZ
+iZ
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 bg
 bg
 bg
@@ -121313,14 +122145,14 @@ ke
 ke
 ke
 ke
-xM
-xM
 ke
 ke
 ke
 ke
-ke
-ke
+AI
+AI
+AI
+AI
 ke
 ke
 ke
@@ -121441,16 +122273,16 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+iZ
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 bg
 bg
 bg
@@ -121520,7 +122352,7 @@ xM
 xM
 xM
 ke
-ke
+AI
 ke
 xM
 xM
@@ -121572,8 +122404,8 @@ ke
 ke
 xM
 xM
-xM
-xM
+ke
+ke
 ke
 ke
 ke
@@ -121699,15 +122531,15 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+iZ
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 bg
 bg
 bg
@@ -121777,7 +122609,7 @@ xM
 ke
 xM
 xM
-ke
+AI
 ke
 ke
 xM
@@ -121956,15 +122788,15 @@ Hl
 Hl
 Hl
 Hl
+iZ
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 bg
 bg
 bg
@@ -122213,6 +123045,13 @@ gg
 gg
 Hl
 Hl
+YS
+Hl
+Hl
+Hl
+Hl
+Hl
+Hl
 Hl
 Hl
 bg
@@ -122265,13 +123104,6 @@ bg
 bg
 bg
 bg
-bg
-bg
-bg
-bg
-bg
-bg
-bg
 xM
 xM
 ke
@@ -122293,8 +123125,8 @@ ke
 ke
 ke
 ke
-ke
-ke
+AI
+vp
 xM
 xM
 xM
@@ -122470,15 +123302,15 @@ gg
 gg
 gg
 Hl
+iZ
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Hl
 bg
 bg
 bg
@@ -122550,9 +123382,9 @@ xM
 ke
 ke
 ke
-ke
-ke
-ke
+vp
+vp
+vp
 xM
 xM
 xM
@@ -122727,16 +123559,16 @@ rR
 gg
 gg
 Hl
+iZ
 Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
-bg
-bg
-bg
+Hl
+Hl
+Hl
+Hl
+Hl
 bg
 bg
 bg
@@ -122807,9 +123639,9 @@ xM
 ke
 ke
 ke
-ke
-ke
-ke
+vp
+vp
+AI
 ke
 ke
 ke
@@ -122984,6 +123816,7 @@ rR
 rR
 gg
 gg
+YS
 Hl
 Hl
 Hl
@@ -122991,9 +123824,8 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
-bg
+Hl
+Hl
 bg
 bg
 bg
@@ -123241,6 +124073,7 @@ rR
 rR
 rR
 gg
+iZ
 Hl
 Hl
 Hl
@@ -123249,8 +124082,7 @@ Hl
 Hl
 Hl
 Hl
-bg
-bg
+Hl
 bg
 bg
 bg
@@ -123498,7 +124330,7 @@ rR
 rR
 rR
 gg
-Hl
+iZ
 Hl
 Hl
 Hl
@@ -123755,7 +124587,7 @@ gg
 rR
 gg
 gg
-Hl
+iZ
 Hl
 Hl
 Hl
@@ -123983,7 +124815,7 @@ iT
 iT
 iT
 iT
-ke
+FW
 ke
 ke
 ke
@@ -124012,7 +124844,7 @@ Hl
 gg
 gg
 gg
-Hl
+YS
 Hl
 Hl
 Hl
@@ -124240,7 +125072,7 @@ ke
 iT
 iT
 FW
-ke
+FW
 ke
 ke
 ke
@@ -124269,7 +125101,7 @@ Hl
 Hl
 gg
 Hl
-Hl
+YS
 Hl
 Hl
 Hl
@@ -124440,7 +125272,7 @@ Hl
 Hl
 Hl
 Hl
-gl
+Qh
 Hl
 Hl
 Hl
@@ -124493,8 +125325,8 @@ ke
 ke
 ke
 ke
-ke
-ke
+iT
+iT
 iT
 FW
 ke
@@ -124526,7 +125358,7 @@ Hl
 Hl
 Hl
 Hl
-Hl
+YS
 Hl
 Hl
 Hl
@@ -124607,7 +125439,7 @@ xM
 ke
 ke
 ke
-ke
+AI
 ke
 jK
 jK
@@ -124711,7 +125543,7 @@ AC
 AC
 AC
 AC
-XT
+Nk
 JN
 wZ
 OX
@@ -124749,10 +125581,10 @@ er
 ke
 ke
 ke
-ke
-ke
 iT
 ke
+iT
+iT
 FW
 ke
 ke
@@ -124783,7 +125615,7 @@ Hl
 Hl
 Hl
 Hl
-Hl
+YS
 Hl
 Hl
 Hl
@@ -125010,7 +125842,7 @@ ke
 FW
 FW
 FW
-ke
+FW
 ke
 ke
 ke
@@ -125040,7 +125872,7 @@ Hl
 Hl
 Hl
 Hl
-Hl
+iZ
 Hl
 Hl
 Hl
@@ -125121,7 +125953,7 @@ ke
 ke
 ke
 ke
-ke
+AI
 ke
 jK
 jK
@@ -125217,7 +126049,7 @@ rx
 AC
 JF
 Ir
-ua
+jR
 th
 AC
 vX
@@ -125297,7 +126129,7 @@ Hl
 Hl
 Hl
 Hl
-Hl
+YS
 Hl
 Hl
 Hl
@@ -125378,8 +126210,8 @@ ke
 ke
 ke
 ke
+AI
 ke
-jK
 jK
 hZ
 xM
@@ -125477,12 +126309,12 @@ ia
 AC
 th
 ua
-Ei
-RD
+Fc
+oe
 Fe
 Oe
 iK
-tx
+uo
 OX
 oy
 KV
@@ -125554,7 +126386,7 @@ Hl
 Hl
 Hl
 Hl
-Hl
+YS
 Hl
 Hl
 Hl
@@ -125628,18 +126460,18 @@ ke
 ke
 ke
 ke
+vp
+vp
+vp
 ke
 ke
 ke
 ke
+AI
 ke
-ke
-ke
-ke
-jK
 jK
 hZ
-xM
+hZ
 hZ
 jK
 jK
@@ -125716,7 +126548,7 @@ Mf
 Lj
 Mf
 Lj
-uh
+Iu
 yI
 Hl
 wr
@@ -125736,10 +126568,10 @@ kX
 AC
 Vn
 Sb
+my
 Oe
-Fc
-XT
-ZO
+Ji
+uo
 OX
 xt
 Mo
@@ -125885,31 +126717,31 @@ ke
 ke
 ke
 ke
+vp
+vp
 ke
 ke
 ke
 ke
 ke
-ke
-ke
+AI
 ke
 jK
 jK
+jK
+jK
+jK
+jK
+jK
+jK
+hZ
+xM
+xM
+xM
+xM
 xM
 hZ
 jK
-jK
-jK
-jK
-jK
-hZ
-xM
-xM
-xM
-xM
-xM
-hZ
-hZ
 jK
 jK
 jK
@@ -125988,15 +126820,15 @@ rx
 AC
 rm
 ex
-AC
+ex
 OD
-vZ
+AC
 Fc
 qS
 rC
 yH
-PJ
-rK
+Ji
+uo
 OX
 BD
 rB
@@ -126070,7 +126902,7 @@ Hl
 Hl
 Hl
 Hl
-Hl
+Ov
 Hl
 Hl
 Hl
@@ -126142,7 +126974,8 @@ ke
 ke
 ke
 ke
-ke
+vp
+vp
 ke
 ke
 ke
@@ -126151,12 +126984,11 @@ ke
 ke
 ke
 jK
-jK
-xM
-hZ
-jK
+RL
+RL
 jK
 jK
+jK
 hZ
 hZ
 hZ
@@ -126165,11 +126997,11 @@ hZ
 xM
 xM
 xM
-xM
-xM
-hZ
 hZ
 jK
+jK
+hZ
+hZ
 jK
 jK
 jK
@@ -126244,16 +127076,16 @@ bO
 bO
 AC
 pA
-Fc
-Oe
-Oe
+DU
 ex
+th
+AC
 IE
-ex
-ex
+oe
+Fe
 AC
 tq
-rK
+uo
 OX
 OX
 OX
@@ -126325,8 +127157,8 @@ xM
 xM
 xM
 xM
-Hl
-Hl
+Ov
+KB
 Hl
 Hl
 Hl
@@ -126409,23 +127241,23 @@ ke
 ke
 ke
 jK
+jK
+jK
+jK
+jK
+jK
+jK
+jK
+jK
+jK
+jK
+hZ
+hZ
 hZ
 hZ
 jK
 jK
-jK
-jK
-jK
-jK
-jK
-jK
 hZ
-hZ
-hZ
-hZ
-hZ
-xM
-xM
 xM
 hZ
 jK
@@ -126502,14 +127334,14 @@ tI
 AC
 Kc
 lW
-rg
+AC
 yf
-hY
+AC
 rg
-ex
+oe
 UA
 AC
-tC
+Ji
 jn
 OX
 NR
@@ -126588,7 +127420,7 @@ Yy
 Hl
 Hl
 Hl
-Hl
+Ov
 Hl
 Hl
 Hl
@@ -126673,6 +127505,8 @@ jK
 jK
 jK
 jK
+RL
+RL
 jK
 jK
 jK
@@ -126680,8 +127514,6 @@ jK
 jK
 jK
 jK
-jK
-hZ
 hZ
 xM
 hZ
@@ -126839,10 +127671,10 @@ tA
 Yy
 Yy
 Yy
+eY
 Yy
 Yy
-Yy
-Yy
+SA
 Yy
 Yy
 Yy
@@ -126931,7 +127763,7 @@ jK
 jK
 jK
 jK
-jK
+RL
 jK
 jK
 jK
@@ -127024,7 +127856,7 @@ kA
 AB
 AC
 yA
-Sz
+uo
 OX
 sE
 jk
@@ -127096,7 +127928,7 @@ Yy
 Yy
 Yy
 Yy
-Yy
+eY
 Yy
 Yy
 Yy
@@ -127185,14 +128017,14 @@ jK
 jK
 jK
 jK
+hZ
 jK
-hZ
-hZ
-hZ
-hZ
-hZ
-hZ
-hZ
+jK
+RL
+jK
+jK
+jK
+jK
 jK
 jK
 jK
@@ -127278,10 +128110,10 @@ Ch
 AC
 Xu
 oe
-EJ
-HP
-tC
-Sz
+Fe
+Oe
+Ji
+uo
 OX
 nW
 qt
@@ -127354,9 +128186,9 @@ Yy
 Yy
 mb
 Yy
+SA
 Yy
-Yy
-Yy
+eY
 Yy
 Yy
 Hu
@@ -127443,14 +128275,14 @@ jK
 jK
 hZ
 hZ
-xM
-xM
-xM
-xM
-xM
-xM
-hZ
-hZ
+jK
+jK
+jK
+jK
+jK
+jK
+jK
+jK
 jK
 jK
 jK
@@ -127525,7 +128357,7 @@ Fs
 Fs
 ra
 ra
-Fs
+oZ
 ED
 AC
 cW
@@ -127613,7 +128445,7 @@ Yy
 Yy
 Yy
 Yy
-Yy
+SA
 Yy
 Yy
 Yy
@@ -127699,15 +128531,15 @@ jK
 hZ
 xM
 xM
-xM
 hZ
+jK
+jK
+jK
+RL
+jK
+jK
+jK
 hZ
-hZ
-hZ
-hZ
-xM
-xM
-xM
 hZ
 hZ
 jK
@@ -127778,11 +128610,11 @@ Hl
 wr
 Gr
 II
-II
+os
 Fs
 ra
 ra
-Fs
+BL
 gc
 AC
 AC
@@ -127957,14 +128789,14 @@ xM
 xM
 hZ
 hZ
+jK
+jK
+jK
+RL
+jK
+jK
+jK
 hZ
-jK
-jK
-jK
-jK
-hZ
-hZ
-xM
 xM
 xM
 hZ
@@ -128039,12 +128871,12 @@ II
 Fs
 ra
 ra
-Fs
+BL
 Zk
 AC
 dK
 DR
-ua
+jR
 JY
 pf
 Wa
@@ -128060,7 +128892,7 @@ mf
 hq
 GV
 tR
-BL
+LQ
 XI
 LQ
 Ui
@@ -128128,7 +128960,7 @@ Yy
 Yy
 Yy
 Yy
-qC
+Yy
 Yy
 Yy
 Yy
@@ -128217,11 +129049,11 @@ jK
 jK
 jK
 jK
+RL
 jK
 jK
 jK
 jK
-hZ
 hZ
 xM
 xM
@@ -128296,7 +129128,7 @@ ra
 Fs
 ra
 ra
-Fs
+BL
 nI
 AC
 RS
@@ -128317,7 +129149,7 @@ Km
 Km
 zc
 Ho
-Qu
+Km
 xm
 bP
 iH
@@ -128547,13 +129379,13 @@ rR
 rR
 rR
 wr
-lg
+xA
 lg
 RP
 pq
 vb
 PY
-Fs
+BL
 gc
 fS
 fS
@@ -128573,7 +129405,7 @@ OX
 UC
 UC
 hH
-Ca
+KN
 OX
 OX
 gn
@@ -128830,7 +129662,7 @@ QS
 Ca
 kI
 Ca
-Ca
+KN
 OX
 QV
 yJ
@@ -130227,7 +131059,7 @@ MY
 MY
 QT
 VQ
-vR
+ht
 sl
 kO
 FR
@@ -132502,7 +133334,7 @@ Yy
 Yy
 Yy
 Yy
-zQ
+hY
 Yy
 Yy
 Yy
@@ -132772,10 +133604,10 @@ Yy
 Yy
 Yy
 Yy
-tA
-tA
-Yy
-Yy
+eV
+eV
+eV
+eV
 Yy
 Yy
 Yy
@@ -133028,12 +133860,12 @@ Yy
 Yy
 Yy
 Yy
-tA
-tA
-tA
-tA
-tA
-tA
+eV
+eV
+eV
+eV
+eV
+eV
 Yy
 Yy
 Yy
@@ -133286,9 +134118,9 @@ Yy
 Yy
 Yy
 xM
-hZ
-hZ
-hZ
+vp
+vp
+vp
 xM
 xM
 xM
@@ -133544,7 +134376,7 @@ xM
 xM
 xM
 ke
-ke
+AI
 ke
 xM
 xM
@@ -133801,7 +134633,7 @@ xM
 xM
 xM
 ke
-ke
+Oq
 ke
 ke
 ke
@@ -134058,9 +134890,9 @@ xM
 xM
 xM
 ke
-ke
-ke
-ke
+Oq
+Oq
+Oq
 ke
 ke
 ke
@@ -134317,8 +135149,8 @@ xM
 xM
 ke
 ke
-ke
-ke
+Oq
+Oq
 ke
 ke
 ke
@@ -134575,9 +135407,9 @@ xM
 xM
 xM
 xM
-ke
-ke
-ke
+Oq
+Oq
+Oq
 ke
 ke
 ke
@@ -134824,7 +135656,7 @@ ke
 ke
 ke
 ke
-ke
+AI
 ke
 ke
 ke
@@ -134834,8 +135666,8 @@ xM
 xM
 xM
 ke
-ke
-ke
+Oq
+Oq
 ke
 ke
 xM
@@ -135081,7 +135913,7 @@ xM
 xM
 xM
 ke
-ke
+AI
 ke
 xM
 ae
@@ -135092,8 +135924,8 @@ ke
 xM
 xM
 ke
-ke
-ke
+Oq
+Oq
 ke
 xM
 xM
@@ -135338,19 +136170,19 @@ xM
 xM
 xM
 xM
-ke
+AI
 ke
 xM
-xM
-xM
-ke
-ke
-ke
-ke
 xM
 xM
 ke
 ke
+ke
+ke
+xM
+xM
+ke
+Tq
 ke
 ke
 xM
@@ -135595,13 +136427,7 @@ xM
 xM
 xM
 ke
-ke
-ke
-ke
-ke
-xM
-xM
-ke
+AI
 ke
 ke
 ke
@@ -135609,6 +136435,12 @@ xM
 xM
 ke
 ke
+ke
+ke
+xM
+xM
+ke
+Tq
 ke
 ke
 xM
@@ -135852,7 +136684,7 @@ xM
 xM
 ke
 ke
-ke
+AI
 ke
 ke
 ke
@@ -136123,7 +136955,7 @@ ke
 xM
 xM
 ke
-ke
+Tq
 ke
 xM
 xM
@@ -136347,9 +137179,9 @@ FW
 FW
 FW
 ek
+bf
 uw
-uw
-uw
+bf
 Mk
 FW
 FW
@@ -136382,7 +137214,7 @@ xM
 xM
 xM
 ke
-ke
+Tq
 xM
 xM
 xM
@@ -137135,7 +137967,7 @@ xM
 xM
 ke
 ke
-ke
+AI
 ke
 xM
 xM
@@ -137392,7 +138224,7 @@ xM
 xM
 ke
 ke
-ke
+AI
 ke
 xM
 xM
@@ -137628,7 +138460,7 @@ ke
 ke
 FW
 FW
-dI
+Di
 rA
 dI
 rX
@@ -137889,9 +138721,9 @@ FW
 FW
 FW
 LO
+tx
 uw
-uw
-uw
+tx
 Mk
 FW
 FW
@@ -137906,8 +138738,8 @@ xM
 ke
 ke
 ke
-ke
-ke
+AI
+AI
 ke
 xM
 xM
@@ -138165,7 +138997,7 @@ ke
 ke
 ke
 ke
-ke
+AI
 xM
 xM
 xM
@@ -138781,7 +139613,7 @@ Yy
 em
 Yy
 Yy
-Ay
+Ql
 Ay
 Yy
 rp
@@ -138918,7 +139750,7 @@ ke
 ke
 ke
 ke
-RB
+AI
 ke
 ke
 ke
@@ -139038,7 +139870,7 @@ Yy
 Yy
 Sc
 Yy
-Ay
+Yy
 rp
 rp
 rp
@@ -139175,7 +140007,7 @@ ke
 ke
 ke
 ke
-RB
+AI
 ke
 ke
 ke
@@ -139200,10 +140032,10 @@ ke
 ke
 ke
 ke
-ke
-ke
-ke
-ke
+AI
+AI
+AI
+AI
 ke
 xM
 ke
@@ -139291,7 +140123,7 @@ Hu
 Yy
 Yy
 Yy
-zQ
+hY
 Yy
 Yy
 Yy
@@ -139432,7 +140264,7 @@ ke
 ke
 ke
 ke
-RB
+AI
 ke
 ke
 jK
@@ -139689,7 +140521,7 @@ ke
 ke
 ke
 ke
-RB
+AI
 ke
 jK
 jK
@@ -140504,7 +141336,7 @@ xM
 xM
 ke
 ke
-ke
+AI
 ke
 xM
 ke
@@ -140746,23 +141578,23 @@ HO
 ke
 ke
 ke
-ke
+AI
 ke
 xM
-xM
-ke
-ke
-ke
-ke
-ke
-ke
-ke
-ke
 xM
 ke
 ke
 ke
 ke
+ke
+ke
+ke
+ke
+xM
+ke
+ke
+ke
+AI
 xM
 xM
 xM
@@ -140968,6 +141800,8 @@ Yy
 Yy
 Yy
 Yy
+iB
+iB
 Yy
 Yy
 Yy
@@ -140977,8 +141811,6 @@ Yy
 Yy
 Yy
 Yy
-Yy
-Yy
 xM
 xM
 ke
@@ -141003,7 +141835,7 @@ xM
 xM
 ke
 ke
-ke
+AI
 xM
 xM
 ke
@@ -141019,8 +141851,8 @@ xM
 xM
 ke
 ke
-ke
-ke
+AI
+AI
 xM
 xM
 xM
@@ -141221,7 +142053,7 @@ Yy
 Yy
 Yy
 Yy
-Yy
+iB
 Yy
 Yy
 Yy
@@ -141260,7 +142092,7 @@ ke
 xM
 ke
 ke
-ke
+AI
 ke
 pG
 ke
@@ -141277,7 +142109,7 @@ xM
 xM
 xM
 xM
-ke
+AI
 ke
 xM
 ke
@@ -141533,8 +142365,8 @@ xM
 xM
 xM
 ke
-ke
-ke
+AI
+AI
 xM
 xM
 ke
@@ -142045,7 +142877,7 @@ xM
 xM
 ke
 ke
-ke
+AI
 ke
 ke
 xM
@@ -142302,10 +143134,7 @@ ke
 ke
 ke
 ke
-ke
-ke
-ke
-xM
+AI
 ke
 ke
 xM
@@ -142314,9 +143143,12 @@ ke
 xM
 ke
 ke
+xM
 ke
 ke
 ke
+ke
+SG
 ke
 xM
 xM
@@ -142556,9 +143388,9 @@ ke
 ke
 ke
 ke
-ke
-ke
-ke
+AI
+AI
+AI
 ke
 ke
 ke
@@ -142572,9 +143404,9 @@ xM
 ke
 ke
 ke
-ke
-ke
-ke
+Zx
+de
+Cp
 xM
 xM
 nz
@@ -142828,7 +143660,7 @@ ke
 ke
 ke
 ke
-ke
+Zx
 ke
 ke
 ke

@@ -27,3 +27,23 @@ GLOBAL_LIST_INIT(hear_sources, list())
 
 
 #define COMSIG_MOB_HEAT_SOURCE_ACT "mob_heat_source"
+
+
+#define MAJOR_ANNOUNCEMENT_TEXT(string) ("<span class='major_announcement_text'>" + string + "</span>")
+#define CHAT_ALERT_COLORED_SPAN(color, string) ("<div class='chat_alert_" + color + "'>" + string + "</div>")
+
+/proc/speaker_announce(message, prefix = "...From the speakers comes", sound, color = "default", list/mob/players = GLOB.player_list, encode = TRUE)
+	if(!message)
+		return
+
+	if(encode)
+		message = html_encode(message)
+
+	var/announcement_text = MAJOR_ANNOUNCEMENT_TEXT(prefix + " " + message)
+	var/final_announcement = CHAT_ALERT_COLORED_SPAN(color, announcement_text)
+
+	var/sound_to_play = sound ? sound : SSstation.announcer.get_rand_alert_sound()
+	dispatch_announcement_to_players(final_announcement, players, sound_to_play)
+
+#undef MAJOR_ANNOUNCEMENT_TEXT
+#undef CHAT_ALERT_COLORED_SPAN

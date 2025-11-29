@@ -9,7 +9,11 @@
 		return COMPONENT_INCOMPATIBLE
 	setup_pool(get_turf(parent))
 	atom_parent = parent
+	atom_parent.add_filter("custom_interact_outline", 2, list("type" = "outline", "color" = "#fdad35", "size" = 1))
 
+/datum/component/item_dispenser/Destroy(force)
+	. = ..()
+	atom_parent.remove_filter("custom_interact_outline")
 
 /datum/component/item_dispenser/proc/setup_pool(turf/T)
 	if(!T)

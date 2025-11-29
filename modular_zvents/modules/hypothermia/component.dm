@@ -115,15 +115,19 @@
 /datum/component/hypothermia
 	dupe_mode = COMPONENT_DUPE_UNIQUE
 	var/stored_bodytemperature = 310
-	var/cooling_rate = 0.1
-	var/heating_rate = 0.4
+	var/cooling_rate = 0.25
+	var/heating_rate = 0.2
 	var/max_temp = 320
-	var/maximum_diff = -60
-	var/base_rate = 0.8
-	var/cooling_cooldown = 2 MINUTES
-	var/heat_cooldown = 10 SECONDS
-	var/lower_cooltreshhold = T0C + 15
+	var/maximum_diff = -120
+	var/base_rate = 1
+	var/cooling_cooldown = 90 SECONDS
+	var/heat_cooldown = 20 SECONDS
+	var/weather_effect_cooldown = 10 SECONDS
+	var/area_tempeture_cooldown = 2 SECONDS
+	var/lower_cooltreshhold = T0C + 10
 	var/coldlevel = HYPOTHERMIA_COLDLEVEL_SAFE
+	var/normal_body_temp =  310
+
 
 	var/static/list/threshold_data = list(
 		list("temp" = HYPOTHERMIA_TRESHOLD_SAFE, "level" = HYPOTHERMIA_COLDLEVEL_SAFE, "stamina" = 1),
@@ -135,6 +139,7 @@
 
 	var/list/thresholds
 
+	COOLDOWN_DECLARE(area_tempeture_incress)
 	COOLDOWN_DECLARE(temperature_incress_cooldown)
 	COOLDOWN_DECLARE(shiver_cooldown)
 	COOLDOWN_DECLARE(mild_message_cooldown)
@@ -144,6 +149,7 @@
 	COOLDOWN_DECLARE(unconscious_cooldown)
 	COOLDOWN_DECLARE(organ_damage_cooldown)
 	COOLDOWN_DECLARE(temperature_decress_cooldown)
+	COOLDOWN_DECLARE(weather_damage_cooldown)
 
 	var/list/disabled_limbs
 
@@ -421,6 +427,26 @@
 				disable_limb(L)
 
 
+/datum/component/hypothermia/proc/handle_weather(seconds_per_tick)
+	if(!COOLDOWN_FINISHED(src, weather_damage_cooldown))
+		return
+	var/mob/living/L = parent
+	if(!L)
+		return
+	var/area/hypothermia/HA = get_area(L)
+	if(!HA.outdoors)
+		return
+	var/datum/weather/affected_weather = HA.get_affected_weather()
+	if(!affected_weather)
+		return
+	var/target_temp = affected_weather.weather_temperature
+	if(stored_bodytemperature <= target_temp)
+		return
+	var/delta = (target_temp - stored_bodytemperature) * 0.01
+	adjust_scaled_temp(L, (delta * cooling_rate * seconds_per_tick))
+	COOLDOWN_START(src, weather_damage_cooldown, weather_effect_cooldown)
+
+
 /datum/component/hypothermia/process(seconds_per_tick)
 	var/mob/living/L = parent
 	if(!L)
@@ -437,21 +463,27 @@
 	if(temp_diff < maximum_diff)
 		temp_diff = maximum_diff
 
-	if((temp_diff < 0) && should_cool && COOLDOWN_FINISHED(src, temperature_decress_cooldown))
+	if(should_cool && COOLDOWN_FINISHED(src, temperature_decress_cooldown))
 		adjust_scaled_temp(L, temp_diff * cooling_rate * seconds_per_tick)
 		COOLDOWN_START(src, temperature_decress_cooldown, cooling_cooldown)
 
-	else if(HA.area_temperature > lower_cooltreshhold)
-		var/scaled_heat = temp_diff * cooling_rate * 0.5 * seconds_per_tick
-		stored_bodytemperature += scaled_heat
-		stored_bodytemperature = clamp(stored_bodytemperature, T0C - 100, T0C + 500)
-		L.bodytemperature = stored_bodytemperature
+	else if(HA.area_temperature > lower_cooltreshhold && COOLDOWN_FINISHED(src, area_tempeture_incress))
+		COOLDOWN_START(src, area_tempeture_incress, area_tempeture_cooldown)
+		var/scaled_heat = 0.3 * heating_rate * 0.2 * seconds_per_tick
+		if(HA.area_temperature < normal_body_temp)
+			scaled_heat *= 0.8
+			stored_bodytemperature = min(stored_bodytemperature + scaled_heat, normal_body_temp)
+		else
+			scaled_heat *= 0.7
+			stored_bodytemperature = stored_bodytemperature + scaled_heat
 
+	stored_bodytemperature = clamp(stored_bodytemperature, T0C - 100, T0C + 500)
 	for(var/obj/item/bodypart/limb in disabled_limbs)
 		if(world.time >= disabled_limbs[limb])
 			REMOVE_TRAIT(limb, TRAIT_PARALYSIS, HYPOTHERMIA_PARALYSIS)
 			limb.update_disabled()
 			disabled_limbs -= limb
+	handle_weather(seconds_per_tick)
 
 	if(HAS_TRAIT(L, TRAIT_STASIS))
 		return
@@ -585,14 +617,15 @@
 	var/area/A = get_area(AM)
 	if(istype(A, /area/hypothermia) && !A.outdoors)
 		var/area/hypothermia/HA = A
-		var/heat_energy = heat_output * seconds_per_tick
-		var/volume = HA.get_volume()
-		if(volume > 0)
-			var/temp_delta = heat_energy / (200 * volume)
-			HA.adjust_temperature_scaled(temp_delta, target_temperature)
+		if(!(HA.area_temperature >= target_temperature))
+			var/heat_energy = heat_output * seconds_per_tick
+			var/volume = HA.get_volume()
+			if(volume > 0)
+				var/temp_delta = heat_energy / (20 * volume)
+				HA.adjust_temperature_scaled(temp_delta, target_temperature)
 
 	if(heat_range > 0)
-		for(var/mob/living/L in SSspatial_grid.orthogonal_range_search(get_turf(AM), RECURSIVE_CONTENTS_CLIENT_MOBS, heat_range))
+		for(var/mob/living/L in range(heat_range, parent))
 			var/atom/movable/screen/alert/heating/alert = L.throw_alert(alert_category, /atom/movable/screen/alert/heating, new_master = parent)
 			alert.desc = "You are heating by [parent]."
 			alerts[L] = TRUE

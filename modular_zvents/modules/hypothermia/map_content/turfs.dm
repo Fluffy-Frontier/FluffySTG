@@ -24,6 +24,9 @@
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/chasm/icy_planet
 
+/datum/component/chasm
+
+
 /turf/open/misc/icy_planet/snow
 	gender = PLURAL
 	name = "snow"

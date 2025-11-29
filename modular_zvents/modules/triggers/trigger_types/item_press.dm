@@ -20,11 +20,13 @@
 	. = ..()
 	UnregisterSignal(parent, list(COMSIG_ATOM_ITEM_INTERACTION, COMSIG_ATOM_EXAMINE))
 
-/datum/trigger_type/use_item/proc/on_examine(mob/user, list/examine_text)
+/datum/trigger_type/use_item/proc/on_examine(datum/source, mob/user, list/examine_list)
+	SIGNAL_HANDLER
+
 	var/obj/item/I = required_item_type
 	if(!ispath(I))
 		return
-	examine_text += span_boldnotice("[initial(I.name)] can be used on this.")
+	examine_list += span_boldnotice("[initial(I.name)] can be used on this.")
 
 /datum/trigger_type/use_item/proc/on_item_interact(datum/source, mob/living/user, obj/item/tool, list/modifiers)
 	SIGNAL_HANDLER
@@ -85,8 +87,10 @@
 	. = ..()
 	UnregisterSignal(parent, list(COMSIG_ATOM_ITEM_INTERACTION, COMSIG_ATOM_EXAMINE))
 
-/datum/trigger_type/tool_act/proc/on_examine(mob/user, list/examine_text)
-	examine_text += span_boldnotice("[required_tool] can be used on this.")
+/datum/trigger_type/tool_act/proc/on_examine(datum/source, mob/user, list/examine_list)
+	SIGNAL_HANDLER
+
+	examine_list += span_boldnotice("[required_tool] can be used on this.")
 
 
 /datum/trigger_type/tool_act/proc/on_tool_interact(datum/source, mob/living/user, obj/item/tool, list/modifiers)

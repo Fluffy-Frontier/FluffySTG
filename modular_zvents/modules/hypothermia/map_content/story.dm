@@ -51,7 +51,7 @@
 
 /obj/item/story_item/hypothermia_fusion_core
 	name = "depleted fusion core"
-	desc = "Тяжёлый микротермоядерный сердечник РБМК-класса. Последний в колонии. Холодный, но кольца удержания целы. Заправьте плазмой или приварите урановые листы — может и заработает."
+	desc = "Тяжёлый микротермоядерный сердечник РБМК-класса. Последний в колонии. Холодный, но кольца удержания целы. Заправьте плазмой или урановыми листами — может и заработает."
 	icon = 'icons/obj/devices/assemblies.dmi'
 	icon_state = "syndicate-bomb-inactive-wires"
 	w_class = WEIGHT_CLASS_HUGE
@@ -73,7 +73,8 @@
 			desc = "Тяжёлый микротермоядерный сердечник РБМК-класса. Теперь работает — кто-то засунул туда плазму и помолился."
 			visible_message(span_notice("[user] запихивает плазменные листы в [src]. Сердечник начинает тихо гудеть."))
 			return
-
+		else
+			balloon_alert(user, "Недостаточно материала!")
 	if(istype(W, /obj/item/stack/sheet/mineral/uranium))
 		var/obj/item/stack/sheet/mineral/uranium/U = W
 		if(U.amount >= 50)
@@ -81,8 +82,10 @@
 			refueled = TRUE
 			icon_state = "syndicate-bomb-active-wires"
 			desc = "Тяжёлый микротермоядерный сердечник РБМК-класса. Кто-то приварил урановые пластины. Он опасно раск... но даст мощность!"
-			visible_message(span_danger("[user] приваривает урановые листы к [src]. Сердечник начинает тихо гудеть!"))
+			visible_message(span_danger("[user] вставляет урановые листы в [src]. Сердечник начинает тихо гудеть!"))
 			return
+		else
+			balloon_alert(user, "Недостаточно материала!")
 	return ..()
 
 
@@ -107,22 +110,25 @@
 
 // Шаблон шаттла
 /datum/map_template/shuttle/zvezda
-	port_id = "zvezda"
-	prefix = "_maps/shuttles/"
-	suffix = "NRIevac"
+	port_id = "event"
+	prefix = "_maps/modular_events/"
+	suffix = "buran"
 	name = "Buran-class Colonial Shuttle"
 	description = "Колониальный шаттл класса «Буран». Единственный шанс выбраться с планеты."
+	width = 23
+	height = 30
 
+/obj/docking_port/mobile/buran
+	name = "Buran-class Colonial Shuttle"
+	shuttle_id = "event"
+	width = 23
+	height = 30
+	movement_force = list("KNOCKDOWN" = 0,"THROW" = 0)
 
-/obj/docking_port/stationary/transit/zvezda_buran
+/obj/docking_port/stationary/zvezda_buran
 	name = "Buran docking port"
-	shuttle_id = "zvezda"
-	width = 21
-	height = 25
-	dwidth = 12
-	dheight = 1
-	roundstart_template = /datum/map_template/shuttle/zvezda
-	shuttle_template_id = "zvezda_NRIevac"
+	hidden = FALSE
+	dir = WEST
 
 
 /obj/machinery/shuttle_launch_terminal
@@ -181,10 +187,9 @@
 
 /obj/machinery/shuttle_launch_terminal/proc/check_modules()
 	ready_ai = !!ai_core
-	ready_core = (fusion_core && fusion_core.refueled)
+	ready_core = !!fusion_core
 	ready_nav = !!nav_tape
 	ready_therm = !!thermal_reg
-
 	return ready_ai && ready_core && ready_nav && ready_therm
 
 
@@ -198,6 +203,12 @@
 			to_chat(user, span_warning("Сначала вставьте все критические модули!"))
 			return
 
+		balloon_alert(user, "Начинаю процедуру запуска!")
+		visible_message(span_notice("[user] начинает процедуру запуска."))
+		if(!do_after(user, 15 SECONDS, src))
+			balloon_alert(user, "Процедура прервана!")
+			return
+		balloon_alert(user, "Запускаю шатл!")
 		if(!user.transferItemToLoc(W, src))
 			return
 
@@ -222,8 +233,13 @@
 		return
 
 	if(istype(W, /obj/item/story_item/hypothermia_fusion_core))
+		var/obj/item/story_item/hypothermia_fusion_core/core = W
 		if(fusion_core)
 			to_chat(user, span_warning("Fusion core уже вставлен!"))
+			return
+
+		if(!core.refueled)
+			to_chat(user, span_warning("Fusion core - не заправлен!"))
 			return
 
 		if(!user.transferItemToLoc(W, src))
@@ -285,4 +301,44 @@
 
 
 /obj/machinery/shuttle_launch_terminal/proc/launch_shuttle()
-	connected_port.initiate_docking(/obj/docking_port/stationary/transit, force = TRUE)
+	connected_port.destination = null
+	connected_port.mode = SHUTTLE_IGNITING
+	connected_port.setTimer(connected_port.ignitionTime)
+
+
+
+/obj/item/climbing_hook/emergency/safeguard
+	name = "safeguard climbing hook"
+	desc = "An emergency climbing hook that automatically deploys when falling into a chasm, pulling the user to safety but causing injury."
+	icon_state = "climbingrope_s"
+	slot_flags = ITEM_SLOT_BELT
+
+/obj/item/climbing_hook/emergency/safeguard/equipped(mob/user, slot)
+	. = ..()
+	if(slot == ITEM_SLOT_BELT && isliving(user))
+		RegisterSignal(user, COMSIG_MOVABLE_CHASM_DROPPED, PROC_REF(on_chasm_drop))
+
+/obj/item/climbing_hook/emergency/safeguard/dropped(mob/user)
+	. = ..()
+	UnregisterSignal(user, COMSIG_MOVABLE_CHASM_DROPPED)
+
+/obj/item/climbing_hook/emergency/safeguard/proc/on_chasm_drop(mob/living/user, turf/chasm_turf)
+	SIGNAL_HANDLER
+	if(user.stat == DEAD)
+		return
+	var/list/possible_turfs = list()
+	for(var/turf/T in orange(2, chasm_turf))
+		if(!T.density && !T.GetComponent(/datum/component/chasm) && isopenturf(T))
+			possible_turfs += T
+	if(!length(possible_turfs))
+		return
+	var/turf/safe_turf = get_closest_atom(/turf, possible_turfs, chasm_turf)
+	if(!safe_turf)
+		return
+	chasm_turf.Beam(safe_turf, icon_state = "zipline_hook", time = 1 SECONDS)
+	playsound(user, 'sound/items/weapons/zipline_fire.ogg', 50)
+	chasm_turf.visible_message(span_warning("A climbing rope shoots out from [user] and latches onto [safe_turf]! [user] is pulled to safety!"))
+	user.take_bodypart_damage(20)
+	user.forceMove(safe_turf)
+	user.Paralyze(5 SECONDS)
+	return COMPONENT_NO_CHASM_DROP

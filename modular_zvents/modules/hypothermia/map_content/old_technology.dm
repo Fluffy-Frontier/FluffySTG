@@ -309,7 +309,7 @@
 	return ..()
 
 /obj/machinery/hypothermia/heater/process(seconds_per_tick)
-	var/energy_used = heating_energy * seconds_per_tick
+	var/energy_used = (heating_energy/100) * seconds_per_tick
 	var/power_source_used = FALSE
 
 
@@ -386,7 +386,7 @@
 /obj/machinery/hypothermia/heater/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
 	if(panel_open)
-		if(RIGHT_CLICK in target_temperature)
+		if(RIGHT_CLICK in modifiers)
 			target_temperature = max(target_temperature - 5, T0C + 10)
 			balloon_alert(user, "target temp: [target_temperature - T0C]°C")
 			return TRUE
