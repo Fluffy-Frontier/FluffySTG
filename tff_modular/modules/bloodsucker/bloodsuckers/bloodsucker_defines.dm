@@ -225,6 +225,14 @@
 /// Your body is literal room temperature. Does not make you immune to the temp
 #define TRAIT_COLDBLOODED "coldblooded"
 
+#define TRAIT_COFFIN_ENLARGED "coffin_enlarged"
+
+#define TRAIT_TORPOR "torpor"
+
+#define TRAIT_SHADED "shaded"
+
+#define TRAIT_GARLIC_REAGENT "garlic_reagent"
+
 /**
  * Sources
  */
