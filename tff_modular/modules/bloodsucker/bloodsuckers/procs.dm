@@ -39,7 +39,7 @@
 /datum/antagonist/bloodsucker/proc/break_masquerade(mob/admin)
 	if(broke_masquerade)
 		return
-	owner.current.playsound_local(null, 'tff_modular/modules/bloodsucker/bloodsucker_sound//lunge_warn.ogg', 100, FALSE, pressure_affected = FALSE)
+	owner.current.playsound_local(null, 'tff_modular/modules/bloodsucker/bloodsucker_sound/lunge_warn.ogg', 100, FALSE, pressure_affected = FALSE)
 	to_chat(owner.current, span_cult_bold_italic("You have broken the Masquerade!"))
 	to_chat(owner.current, span_warning("Bloodsucker Tip: When you break the Masquerade, you become open for termination by fellow Bloodsuckers, and your Ghouls are no longer completely loyal to you, as other Bloodsuckers can steal them for themselves!"))
 	broke_masquerade = TRUE
@@ -148,7 +148,7 @@
 	// Viewer is Target's Ghoul?
 	if(!isobserver(viewer) && (viewer.mind.has_antag_datum(/datum/antagonist/ghoul) in ghouls))
 		var/returnString = "\[<span class='warning'><EM>This is your Master!</EM></span>\]"
-		var/returnIcon = "[icon2html('tff_modular/modules/bloodsucker/language.dmi', world, "bloodsucker")]"
+		var/returnIcon = "[icon2html('tff_modular/modules/bloodsucker/icons/language.dmi', world, "bloodsucker")]"
 		returnString += "\n"
 		return returnIcon + returnString
 	// Viewer not a Vamp AND not the target's ghoul?
@@ -157,7 +157,7 @@
 			return FALSE
 	// Default String
 	var/returnString = "\[<span class='warning'><EM>[return_full_name()]</EM></span>\]"
-	var/returnIcon = "[icon2html('tff_modular/modules/bloodsucker/language.dmi', world, "bloodsucker")]"
+	var/returnIcon = "[icon2html('tff_modular/modules/bloodsucker/icons/language.dmi', world, "bloodsucker")]"
 
 	// In Disguise (Veil)?
 	//if (name_override != null)

@@ -9,7 +9,7 @@
 	background_icon_state = "tremere_power_off"
 	active_background_icon_state = "tremere_power_on"
 	base_background_icon_state = "tremere_power_off"
-	background_icon = 'tff_modular/modules/bloodsucker/tremere_bloodsucker.dmi'
+	background_icon = 'tff_modular/modules/bloodsucker/icons/tremere_bloodsucker.dmi'
 	power_explanation = "You can fly and see in the dark, and you heal from doing melee attacks."
 	invocation = "Master, grant me your might, BAT FORM!!"
 	invocation_type = INVOCATION_SHOUT
@@ -36,8 +36,8 @@
 /mob/living/basic/bat/bloodsucker
 	name ="vampiric bat"
 	desc = "A bat with a thirst for blood."
-	maxHealth = 100
-	health = 100
+	maxHealth = 135
+	health = 135
 	speed = 0
 	melee_damage_lower = 10
 	melee_damage_upper = 15

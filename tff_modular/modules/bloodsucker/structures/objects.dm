@@ -110,11 +110,11 @@
 /obj/item/stake
 	name = "wooden stake"
 	desc = "A simple wooden stake carved to a sharp point."
-	icon = 'tff_modular/modules/bloodsucker/stakes.dmi'
+	icon = 'tff_modular/modules/bloodsucker/icons/stakes.dmi'
 	icon_state = "wood"
 	inhand_icon_state = "wood"
-	lefthand_file = 'tff_modular/modules/bloodsucker/bloodsucker_lefthand.dmi'
-	righthand_file = 'tff_modular/modules/bloodsucker/bloodsucker_righthand.dmi'
+	lefthand_file = 'tff_modular/modules/bloodsucker/icons/bloodsucker_lefthand.dmi'
+	righthand_file = 'tff_modular/modules/bloodsucker/icons/bloodsucker_righthand.dmi'
 	slot_flags = ITEM_SLOT_POCKETS
 	w_class = WEIGHT_CLASS_SMALL
 	hitsound = 'sound/items/weapons/bladeslice.ogg'
@@ -255,9 +255,9 @@
 	name = "\improper Book of Nod"
 	starting_title = "the Book of Nod"
 	desc = "Cryptic documents explaining hidden truths behind Undead beings. It is said only Curators can decipher what they really mean."
-	icon = 'tff_modular/modules/bloodsucker/vamp_obj.dmi'
-	lefthand_file = 'tff_modular/modules/bloodsucker/bloodsucker_lefthand.dmi'
-	righthand_file = 'tff_modular/modules/bloodsucker/bloodsucker_righthand.dmi'
+	icon = 'tff_modular/modules/bloodsucker/icons/vamp_obj.dmi'
+	lefthand_file = 'tff_modular/modules/bloodsucker/icons/bloodsucker_lefthand.dmi'
+	righthand_file = 'tff_modular/modules/bloodsucker/icons/bloodsucker_righthand.dmi'
 	icon_state = "kindred_book"
 	starting_author = "dozens of generations of Curators"
 	unique = TRUE

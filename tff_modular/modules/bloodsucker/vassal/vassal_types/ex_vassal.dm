@@ -11,7 +11,7 @@
 	show_in_antagpanel = FALSE
 	silent = TRUE
 	ui_name = FALSE
-	hud_icon = 'tff_modular/modules/bloodsucker/bloodsucker_hud.dmi'
+	hud_icon = 'tff_modular/modules/bloodsucker/icons/bloodsucker_hud.dmi'
 
 	///The revenge ghoul that brought us into the fold.
 	var/datum/antagonist/ghoul/revenge/revenge_ghoul

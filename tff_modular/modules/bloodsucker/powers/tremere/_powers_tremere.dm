@@ -11,8 +11,8 @@
 	power_explanation = ""
 	active_background_icon_state = "tremere_power_on"
 	base_background_icon_state = "tremere_power_off"
-	button_icon = 'tff_modular/modules/bloodsucker/tremere_bloodsucker.dmi'
-	background_icon = 'tff_modular/modules/bloodsucker/tremere_bloodsucker.dmi'
+	button_icon = 'tff_modular/modules/bloodsucker/icons/tremere_bloodsucker.dmi'
+	background_icon = 'tff_modular/modules/bloodsucker/icons/tremere_bloodsucker.dmi'
 
 	level_current = 0
 	// Re-defining these as we want total control over them

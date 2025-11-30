@@ -261,10 +261,10 @@
 	name = "blood shield"
 	desc = "A shield made out of blood, requiring blood to sustain hits."
 	item_flags = ABSTRACT | DROPDEL
-	icon = 'tff_modular/modules/bloodsucker/vamp_obj.dmi'
+	icon = 'tff_modular/modules/bloodsucker/icons/vamp_obj.dmi'
 	icon_state = "blood_shield"
-	lefthand_file = 'tff_modular/modules/bloodsucker/bloodsucker_lefthand.dmi'
-	righthand_file = 'tff_modular/modules/bloodsucker/bloodsucker_righthand.dmi'
+	lefthand_file = 'tff_modular/modules/bloodsucker/icons/bloodsucker_lefthand.dmi'
+	righthand_file = 'tff_modular/modules/bloodsucker/icons/bloodsucker_righthand.dmi'
 	block_chance = BLOOD_SHIELD_BLOCK_CHANCE
 
 /obj/item/shield/bloodsucker/Initialize(mapload)

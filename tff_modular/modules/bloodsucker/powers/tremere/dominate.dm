@@ -17,8 +17,8 @@
 	background_icon_state = "tremere_power_off"
 	active_background_icon_state = "tremere_power_on"
 	base_background_icon_state = "tremere_power_off"
-	button_icon = 'tff_modular/modules/bloodsucker/tremere_bloodsucker.dmi'
-	background_icon = 'tff_modular/modules/bloodsucker/tremere_bloodsucker.dmi'
+	button_icon = 'tff_modular/modules/bloodsucker/icons/tremere_bloodsucker.dmi'
+	background_icon = 'tff_modular/modules/bloodsucker/icons/tremere_bloodsucker.dmi'
 	level_current = 1
 	button_icon_state = "power_dominate"
 	purchase_flags = TREMERE_CAN_BUY

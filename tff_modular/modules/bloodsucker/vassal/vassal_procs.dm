@@ -22,19 +22,19 @@
 	// Am I Viewer's Ghoul?
 	if(master.owner == viewer.mind)
 		returnString += "This [carbon_current.dna.species.name] bears YOUR mark!"
-		returnIcon = "[icon2html('tff_modular/modules/bloodsucker/language.dmi', world, "ghoul")]"
+		returnIcon = "[icon2html('tff_modular/modules/bloodsucker/icons/language.dmi', world, "ghoul")]"
 	// Am I someone ELSE'S Ghoul?
 	else if(IS_BLOODSUCKER(viewer) || IS_MONSTERHUNTER(viewer) || isobserver(viewer))
 		returnString += "This [carbon_current.dna.species.name] bears the mark of <span class='boldwarning'>[master.return_full_name()][master.broke_masquerade ? " who has broken the Masquerade" : ""]</span>"
-		returnIcon = "[icon2html('tff_modular/modules/bloodsucker/language.dmi', world, "ghoul_grey")]"
+		returnIcon = "[icon2html('tff_modular/modules/bloodsucker/icons/language.dmi', world, "ghoul_grey")]"
 	// Are you serving the same master as I am?
 	else if(viewer.mind.has_antag_datum(/datum/antagonist/ghoul) in master.ghouls)
 		returnString += "[p_they(TRUE)] bears the mark of your Master"
-		returnIcon = "[icon2html('tff_modular/modules/bloodsucker/language.dmi', world, "ghoul")]"
+		returnIcon = "[icon2html('tff_modular/modules/bloodsucker/icons/language.dmi', world, "ghoul")]"
 	// You serve a different Master than I do.
 	else
 		returnString += "[p_they(TRUE)] bears the mark of another Bloodsucker"
-		returnIcon = "[icon2html('tff_modular/modules/bloodsucker/language.dmi', world, "ghoul_grey")]"
+		returnIcon = "[icon2html('tff_modular/modules/bloodsucker/icons/language.dmi', world, "ghoul_grey")]"
 
 	returnString += "</span>\]" // \n"  Don't need spacers. Using . += "" in examine.dm does this on its own.
 	return returnIcon + returnString

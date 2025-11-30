@@ -107,7 +107,7 @@
 /atom/movable/screen/alert/status_effect/frenzy
 	name = "Frenzy"
 	desc = "You are in a Frenzy! You are entirely Feral and, depending on your Clan, fighting for your life! Find and drink blood, or you will suffer a Final Death!"
-	icon = 'tff_modular/modules/bloodsucker/bloodsucker.dmi'
+	icon = 'tff_modular/modules/bloodsucker/icons/bloodsucker.dmi'
 	icon_state = "power_recover"
 	alerttooltipstyle = "cult"
 
@@ -195,7 +195,7 @@
 		)
 
 	icon_state = "bloodsucker"
-	icon = 'tff_modular/modules/bloodsucker/language.dmi'
+	icon = 'tff_modular/modules/bloodsucker/icons/language.dmi'
 	secret = TRUE
 
 /**
@@ -307,7 +307,7 @@
 /obj/effect/client_image_holder/phobetor
 	name = "phobetor tear"
 	desc = "A subdimensional rip in reality, which gives extra-spacial passage to those who have woken from the sleepless dream."
-	image_icon = 'tff_modular/modules/bloodsucker/phobetor_tear.dmi'
+	image_icon = 'tff_modular/modules/bloodsucker/icons/phobetor_tear.dmi'
 	image_state = "phobetor_tear"
 	// Place this above shadows so it always glows.
 	image_layer = ABOVE_MOB_LAYER

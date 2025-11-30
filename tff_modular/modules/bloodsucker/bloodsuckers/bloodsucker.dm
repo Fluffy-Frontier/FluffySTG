@@ -7,7 +7,7 @@
 	antag_hud_name = "bloodsucker"
 	show_name_in_check_antagonists = TRUE
 	hijack_speed = 0.5
-	hud_icon = 'tff_modular/modules/bloodsucker/bloodsucker.dmi'
+	hud_icon = 'tff_modular/modules/bloodsucker/icons/bloodsucker.dmi'
 	ui_name = "AntagInfoBloodsucker"
 	preview_outfit = /datum/outfit/bloodsucker_outfit
 
