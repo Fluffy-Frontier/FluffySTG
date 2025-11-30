@@ -1,12 +1,3 @@
-// FLUFFY FRONTIER ADDITION START - add comsigs to ventcrawl
-
-#define COMSIG_CAN_VENTCRAWL "can_ventcrawl"
-#define COMSIG_VENTCRAWL_PRE_ENTER "ventcrawling_pre_enter"
-#define COMSIG_VENTCRAWL_PRE_EXIT "ventcrawling_pre_exit"
-#define COMSIG_VENTCRAWL_ENTER "ventcrawling_enter"
-#define COMSIG_VENTCRAWL_EXIT "ventcrawling_exit"
-#define COMSIG_VENTCRAWL_PRE_CANCEL "ventcrawling_pre_cancel"
-// FLUFFY FRONTIER ADDITION END
 // VENTCRAWLING
 
 /mob/living/proc/notify_ventcrawler_on_login()
