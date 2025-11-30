@@ -116,8 +116,10 @@
 	if (light_amount < SHADOW_SPECIES_LIGHT_THRESHOLD) //heal in the dark
 		owner.apply_status_effect(applied_status)
 		owner.remove_movespeed_modifier(/datum/movespeed_modifier/light_averse)
+		owner.add_movespeed_modifier(/datum/movespeed_modifier/dark_affinity)
 	else
 		owner.add_movespeed_modifier(/datum/movespeed_modifier/light_averse)
+		owner.remove_movespeed_modifier(/datum/movespeed_modifier/dark_affinity)
 
 /datum/status_effect/shadekin_regeneration
 	id = "shadekin_regeneration"
@@ -148,6 +150,9 @@
 
 /datum/movespeed_modifier/light_averse
 	multiplicative_slowdown = 0.25
+
+/datum/movespeed_modifier/dark_affinity
+	multiplicative_slowdown = -0.2
 
 /mob/living/carbon/human/species/shadekin
 	race = /datum/species/shadekin

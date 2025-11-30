@@ -6,4 +6,4 @@
 	allow_for_donator = TRUE
 
 /datum/quirk/item_quirk/underworld_connections
-	veteran_only = TRUE
+	nova_stars_only = TRUE

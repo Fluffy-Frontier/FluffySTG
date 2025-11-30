@@ -39,7 +39,7 @@
 		/obj/item/clothing/head/collectable/captain = 4,
 	)
 
-	veteran_only = TRUE
+	nova_stars_only = TRUE
 	job_flags = STATION_JOB_FLAGS | JOB_CANNOT_OPEN_SLOTS | JOB_ANTAG_PROTECTED
 
 /datum/outfit/job/blueshield
@@ -114,6 +114,7 @@
 
 /obj/item/choice_beacon/blueshield/generate_display_names()
 	var/static/list/selectable_gun_types = list(
+		"Blueshield Energy Shield" = /obj/item/shield/energy/returning/blueshield,
 		"Fendér Revolver Set" = /obj/item/storage/toolbox/guncase/nova/pistol/trappiste_small_case/bluvolva,
 		"Custom Hellfire Laser Rifle" = /obj/item/gun/energy/laser/hellgun/blueshield,
 		"NT20 Submachinegun Gunset" = /obj/item/storage/toolbox/guncase/nova/ntspecial/nt20,
