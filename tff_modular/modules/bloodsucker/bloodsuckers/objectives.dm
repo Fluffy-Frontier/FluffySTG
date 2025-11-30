@@ -241,7 +241,7 @@
 		return FALSE
 
 	for(var/datum/mind/bloodsucker_minds as anything in get_antag_minds(/datum/antagonist/bloodsucker))
-		var/obj/item/book/kindred/the_book = locate() in bloodsucker_minds.current.get_all_contents()
+		var/obj/item/book/codex_gigas/the_book = locate() in bloodsucker_minds.current.get_all_contents()
 		if(the_book)
 			return TRUE
 	return FALSE

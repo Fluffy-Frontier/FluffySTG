@@ -251,7 +251,7 @@
  *
  *	Regular Bloodsuckers won't have any negative effects from the book, while everyone else will get burns/eye damage.
  */
-/obj/item/book/kindred
+/obj/item/book/codex_gigas
 	name = "\improper Book of Nod"
 	starting_title = "the Book of Nod"
 	desc = "Cryptic documents explaining hidden truths behind Undead beings. It is said only Curators can decipher what they really mean."
@@ -268,16 +268,16 @@
 	COOLDOWN_DECLARE(bloodsucker_check_cooldown)
 	var/cooldown_time = 1 MINUTES
 
-/obj/item/book/kindred/Initialize(mapload)
+/obj/item/book/codex_gigas/Initialize(mapload)
 	. = ..()
 	SSpoints_of_interest.make_point_of_interest(src)
 
-/obj/item/book/kindred/carving_act(mob/living/user, obj/item/tool)
+/obj/item/book/codex_gigas/carving_act(mob/living/user, obj/item/tool)
 	to_chat(user, span_notice("You feel the gentle whispers of a Librarian telling you not to cut [starting_title]."))
 	return ITEM_INTERACT_BLOCKING
 
 ///Attacking someone with the book.
-/obj/item/book/kindred/afterattack(mob/living/target, mob/living/user, flag, params)
+/obj/item/book/codex_gigas/afterattack(mob/living/target, mob/living/user, flag, params)
 	. = ..()
 	if(!user.can_read(src) || (target == user) || !ismob(target))
 		return
@@ -310,20 +310,20 @@
 	else
 		to_chat(user, span_notice("You fail to draw any conclusions to [target] being a Bloodsucker."))
 
-/obj/item/book/kindred/attack_self(mob/living/user)
+/obj/item/book/codex_gigas/attack_self(mob/living/user)
 	if(user.mind && !(HAS_TRAIT(user.mind, TRAIT_BLOODSUCKER_HUNTER) || IS_BLOODSUCKER(user)))
 		to_chat(user, span_warning("You feel your eyes unable to read the boring texts..."))
 		user.set_eye_blur_if_lower(10 SECONDS)
 		return
 	ui_interact(user)
 
-/obj/item/book/kindred/ui_interact(mob/living/user, datum/tgui/ui)
+/obj/item/book/codex_gigas/ui_interact(mob/living/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "KindredBook", name)
 		ui.open()
 
-/obj/item/book/kindred/ui_static_data(mob/user)
+/obj/item/book/codex_gigas/ui_static_data(mob/user)
 	var/data = list()
 
 	for(var/datum/bloodsucker_clan/clans as anything in subtypesof(/datum/bloodsucker_clan))
@@ -336,7 +336,7 @@
 
 /obj/structure/displaycase/curator
 	desc = "This book was found inside a coffin of a long dead Curator. It is said to be able to reveal the true nature of those who feed upon mankind."
-	start_showpiece_type = /obj/item/book/kindred
+	start_showpiece_type = /obj/item/book/codex_gigas
 	req_access = list(ACCESS_LIBRARY)
 
 
