@@ -21,20 +21,21 @@
 /datum/armament_entry/company_import/attachments/silencer
 	item_type = /obj/item/attachment/silencer
 	contraband = TRUE
-/*
 
 /datum/armament_entry/company_import/attachments/energy_bayonet
 	cost = 120
 	item_type = /obj/item/attachment/energy_bayonet
-
-/datum/armament_entry/company_import/attachments/stock
-	item_type = /obj/item/attachment/foldable_stock
 
 /datum/armament_entry/company_import/attachments/short_scope
 	item_type = /obj/item/attachment/scope
 
 /datum/armament_entry/company_import/attachments/long_scope
 	item_type = /obj/item/attachment/long_scope
+
+/*
+TODO: ПРИДУМАТЬ КРУТУЮ ПУШКУ ДЛЯ ЭТОГО ПАРНЯ
+/datum/armament_entry/company_import/attachments/stock
+	item_type = /obj/item/attachment/foldable_stock
 
 /datum/armament_entry/company_import/attachments/alof
 	item_type = /obj/item/attachment/alof

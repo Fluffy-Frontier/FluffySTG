@@ -72,18 +72,18 @@
 /obj/item/gun/ballistic/revolver/takbok
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = HEAVY_PISTOL_SLOWDOWN
-	spread_unwielded = 8
+	spread_unwielded = 3
 
 /obj/item/gun/ballistic/automatic/pistol/trappiste
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = HEAVY_PISTOL_SLOWDOWN
-	spread_unwielded = 8
+	spread_unwielded = 3
 
 /obj/item/gun/ballistic/automatic/pistol/zashch
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = HEAVY_PISTOL_SLOWDOWN
-	spread_unwielded = 8
-	recoil_unwielded = 0.5
+	spread_unwielded = 3
+	recoil_unwielded = 0.35
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
@@ -113,7 +113,7 @@
 /obj/item/gun/energy/laser/thermal/inferno
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = LIGHT_PISTOL_SLOWDOWN
-	spread_unwielded = 8
+	spread_unwielded = 3
 	dual_wield_spread = 1
 	valid_attachments = list(
 		/obj/item/attachment/ammo_counter,
@@ -122,7 +122,7 @@
 /obj/item/gun/energy/laser/thermal/cryo
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = LIGHT_PISTOL_SLOWDOWN
-	spread_unwielded = 8
+	spread_unwielded = 3
 	dual_wield_spread = 1
 	valid_attachments = list(
 		/obj/item/attachment/ammo_counter,
@@ -131,7 +131,7 @@
 /obj/item/gun/ballistic/automatic/c20r
 	aimed_wield_slowdown = AIM_SLOWDOWN
 	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
-	spread_unwielded = 9
+	spread_unwielded = 4
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 27,
@@ -150,8 +150,8 @@
 /obj/item/gun/ballistic/automatic/l6_saw
 	aimed_wield_slowdown = HEAVY_AIM_SLOWDOWN
 	wield_slowdown = HMG_SLOWDOWN
-	recoil_unwielded = 0.65
-	recoil = 2
+	recoil_unwielded = 0.45
+	recoil = 0
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
@@ -179,7 +179,7 @@
 	aimed_wield_slowdown = MEDIUM_AIM_SLOWDOWN
 	wield_slowdown = RIFLE_SLOWDOWN
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
-	recoil_unwielded = 0.5
+	recoil_unwielded = 0.35
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 31,
@@ -198,7 +198,7 @@
 /obj/item/gun/ballistic/automatic/miecz
 	aimed_wield_slowdown = AIM_SLOWDOWN
 	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
-	recoil_unwielded = 0.3
+	recoil_unwielded = 0.15
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
@@ -227,7 +227,7 @@
 /obj/item/gun/ballistic/automatic/napad
 	aimed_wield_slowdown = LIGHT_AIM_SLOWDOWN
 	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
-	recoil_unwielded = 0.5
+	recoil_unwielded = 0.25
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
@@ -286,7 +286,7 @@
 	aimed_wield_slowdown = AIM_SLOWDOWN
 	wield_slowdown = DMR_SLOWDOWN
 	recoil = 0.2
-	spread_unwielded = 17
+	spread_unwielded = 12
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
@@ -368,7 +368,7 @@
 /obj/item/gun/ballistic/automatic/xhihao_smg
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
-	recoil = 0.7
+	recoil = 0.5
 	//SEMI-BURST
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	valid_attachments = list(
@@ -407,28 +407,28 @@
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = LIGHT_RIFLE_SLOWDOWN
 	recoil_unwielded = 0.1
-	spread_unwielded = 8
+	spread_unwielded = 3
 
 //Риот и М64
 /obj/item/gun/ballistic/shotgun/riot
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = SHOTGUN_SLOWDOWN
-	recoil_unwielded = 0.5
+	recoil_unwielded = 0.3
 
 /obj/item/gun/ballistic/shotgun/bulldog
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = RIFLE_SLOWDOWN
-	recoil_unwielded = 0.7
+	recoil_unwielded = 0.5
 
 /obj/item/gun/ballistic/shotgun/automatic/combat
 	aimed_wield_slowdown = LIGHTEST_AIM_SLOWDOWN
 	wield_slowdown = RIFLE_SLOWDOWN
-	recoil_unwielded = 0.7
+	recoil_unwielded = 0.5
 
 /obj/item/gun/ballistic/shotgun/doublebarrel
 	aimed_wield_slowdown = AIM_SLOWDOWN
 	wield_slowdown = SHOTGUN_SLOWDOWN
-	recoil_unwielded = 0.5
+	recoil_unwielded = 0.3
 	valid_attachments = list(
 		/obj/item/attachment/laser_sight,
 		/obj/item/attachment/rail_light,
@@ -439,4 +439,4 @@
 /obj/item/gun/ballistic/shotgun/katyusha
 	aimed_wield_slowdown = LIGHT_AIM_SLOWDOWN
 	wield_slowdown = SHOTGUN_SLOWDOWN
-	recoil_unwielded = 0.7
+	recoil_unwielded = 0.5

@@ -32,15 +32,16 @@
 
 /obj/item/attachment/ammo_counter/remove_attachment(obj/item/gun/gun, mob/user)
 	. = ..()
-	if(istype(gun, /obj/item/gun/ballistic))
-		var/obj/item/gun/ballistic/ammo_gun = gun
-		if(ammo_gun.ammo_counter)
-			ammo_gun.ammo_counter = FALSE
+
+	var/datum/component/ammo_hud_shiptest/our_counter = gun.GetComponent(/datum/component/ammo_hud_shiptest)
+	if(gun.ammo_counter && !isnull(our_counter))
+		gun.ammo_counter = FALSE
+		if(istype(gun, /obj/item/gun/ballistic))
+			var/obj/item/gun/ballistic/ammo_gun = gun
 			ammo_gun.empty_alarm_sound = ammo_gun::empty_alarm_sound
-			var/datum/component/ammo_hud_shiptest/counter/our_counter = gun.GetComponent(/datum/component/ammo_hud_shiptest/counter)
-			our_counter.turn_off()
-			qdel(our_counter)
-			return TRUE
+		our_counter.turn_off()
+		qdel(our_counter)
+		return TRUE
 
 /obj/item/attachment/ammo_counter/toggle_attachment(obj/item/gun/gun, mob/user)
 	. = ..()

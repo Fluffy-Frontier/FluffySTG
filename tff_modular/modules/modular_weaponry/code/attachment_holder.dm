@@ -235,3 +235,6 @@
 	for(var/obj/item/attach as anything in attachments)
 		if(SEND_SIGNAL(attach, COMSIG_ATTACHMENT_UNIQUE_ACTION, parent, user, params))
 			return TRUE
+
+/datum/component/attachment_holder/proc/attachments_amount()
+	return LAZYLEN(attachments)

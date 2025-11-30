@@ -18,7 +18,7 @@
 
 
 	///How much the bullet scatters when fired while unwielded.
-	var/spread_unwielded = 5
+	var/spread_unwielded = 1
 
 
 	var/battery_damage_multiplier = 1
@@ -111,16 +111,16 @@
 
 /obj/item/gun/examine_more(mob/user)
 	. = ..()
-	. += span_info("Оружие можно взять в двуручный хват по нажатию CTRL + E. Изменить режим стрельбы, если такое доступно, можно нажав SHIFT + SPACE. Обе комбинации можно изменить в настройках.")
-	if(atom_integrity < max_integrity)
-		. += span_info("Используя сварку можно отремонтировать.")
-	if(GetComponent(/datum/component/gun_safety))
-		. += span_info("Используя кусачки можно спилить предохранитель с оружия.")
 	if(istype(src, /obj/item/gun/energy))
-		. += span_info("У этого оружия можно открыть слот для батареи с помощью отвертки.")
-	//. += "Если на оружии надет обвес - его можно снять нажав ALT + ЛКМ в боевом режиме."
-	if(gun_firemodes.len > 1)
-		. += "You can change the [src]'s firemode by pressing the <b>secondary action</b> key. By default, this is <b>Shift + Space</b>"
+		. += span_info("- У этого оружия можно открыть слот для батареи с помощью отвертки.")
+		. += span_info("- Множитель урона от текущей батареи: [get_battery_damage_multiplier() - 1]%")
+	if(atom_integrity < max_integrity)
+		. += span_info("- Используя сварку можно отремонтировать повреждения.")
+	if(GetComponent(/datum/component/gun_safety))
+		. += span_info("- Используя кусачки можно спилить предохранитель с оружия.")
+	if(GetComponent(/datum/component/attachment_holder).attachments_amount() > 0)
+		. += span_info("- Обвесы с оружия можно снять нажатием ALT + ЛКМ в боевом режиме.")
+	. += span_info("- Оружие можно взять в двуручный хват по нажатию КТРЛ + E. Изменить режим стрельбы, если такое доступно, можно нажав SHIFT + SPACE. Обе комбинации можно изменить в настройках.")
 
 /obj/item/gun/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(HAS_TRAIT(user, TRAIT_USER_SCOPED) && !is_wielded())
@@ -165,6 +165,11 @@
 /obj/item/gun/proc/is_wielded()
 	return wielded
 
+/obj/item/gun/proc/firemode_is(mode)
+	if(gun_firemodes[firemode_index] == mode)
+		return TRUE
+	return FALSE
+
 /obj/item/gun/proc/process_other(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	return //use this for 'underbarrels!!
 
@@ -195,14 +200,13 @@
 	if(firemode_index > gun_firemodes.len)
 		firemode_index = 1 //reset to the first index if it's over the limit. Byond arrays start at 1 instead of 0, hence why its set to 1.
 
-	var/current_firemode = gun_firemodes[firemode_index]
-	if(current_firemode == FIREMODE_FULLAUTO)
+	if(firemode_is(FIREMODE_FULLAUTO))
 		GetComponent(/datum/component/automatic_fire)?.wake_up(GetComponent(/datum/component/automatic_fire), user)
 	else
 		GetComponent(/datum/component/automatic_fire)?.autofire_off(GetComponent(/datum/component/automatic_fire))
 
 
-	to_chat(user, span_notice("Switched to [gun_firenames[current_firemode]]."))
+	to_chat(user, span_notice("Switched to [gun_firenames[firemode_index]]."))
 	playsound(user, SFX_FIRE_MODE_SWITCH, 100, TRUE)
 	update_appearance()
 	for(var/datum/action/current_action as anything in actions)
@@ -221,6 +225,9 @@
 		return TRUE
 	return FALSE //return true if the proc should end here
 
+///Возвращает множитель урона полученный от батаери. От 1 до 1+, например БС батарея вернёт значение 1.2.
+/obj/item/gun/proc/get_battery_damage_multiplier()
+	return
 
 /obj/item/gun/wirecutter_act(mob/living/user, obj/item/I)
 	if(!user.can_perform_action(src, FORBID_TELEKINESIS_REACH))

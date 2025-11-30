@@ -1,3 +1,4 @@
+/* FLUFFY FRONTIER REMOVAL START: MODULAR WEAPONRY
 // This is where we put all the overrides for energy recharge. At the moment of this change, TG default charge_delay is 8. With this they recharge 10% per what charge_delay says
 
 #define CHARGE_MESSAGE "Equipped with a trickle-charge microcell. Regains a shot every couple of minutes without external power. Dont expect it to keep up with heavy use."
@@ -49,3 +50,4 @@
 	. += span_notice(CHARGE_MESSAGE)
 
 #undef CHARGE_MESSAGE
+*/// FLUFFY FRONTIER REMOVAL END

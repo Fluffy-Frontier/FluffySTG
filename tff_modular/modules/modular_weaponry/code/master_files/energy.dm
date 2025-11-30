@@ -71,6 +71,9 @@
 	var/obj/item/ammo_casing/energy/shot = LAZYLEN(ammo_type) ? ammo_type[select] : null
 	return !QDELETED(cell) && shot ? (cell.charge >= shot.e_cost) : FALSE
 
+/obj/item/gun/energy/get_battery_damage_multiplier()
+	return cell.maxcharge == STANDARD_CELL_CHARGE ? 1 : max(1 + (cell.maxcharge / (STANDARD_CELL_CHARGE * 200)), 1)
+
 /obj/item/gun/energy/proc/try_insert_cell(mob/user, obj/item/stock_parts/power_store/cell/new_cell, display_message = TRUE)
 	if(!new_cell)
 		return FALSE
