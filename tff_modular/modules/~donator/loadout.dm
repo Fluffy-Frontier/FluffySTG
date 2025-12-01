@@ -175,5 +175,5 @@
 
 /datum/loadout_item/mask/catcrin
 	name = "Tactical Catcrin Gasmask"
-	item_path = /obj/item/clothing/mask/gas/syndicate/catcrin
+	item_path = /obj/item/clothing/mask/gas/catcrin
 	ckeywhitelist = list("oni3288", "sutulayapsina")
