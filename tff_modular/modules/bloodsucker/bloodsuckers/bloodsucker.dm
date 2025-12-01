@@ -101,7 +101,6 @@
 		TRAIT_NO_MIRROR_REFLECTION,
 		TRAIT_DRINKS_BLOOD,
 		TRAIT_TOXIMMUNE,
-		// Fun fact, toxins can still be applied to you if you loose your liver even with TOXIMMUNE
 		TRAIT_STABLELIVER
 	)
 	var/static/biotype = MOB_VAMPIRIC
