@@ -1,0 +1,436 @@
+#define TIME_TO_TURN (2 MINUTES)
+#define SHOOT_RESULT_LIVE "live"
+#define SHOOT_RESULT_BLANK "blank"
+
+/datum/buckshoot_roulette_party
+	// Уникальное айди этой партии
+	var/id
+	// Список всех текущих игроков партии
+	VAR_PRIVATE/list/players
+	// Все игровые места, что задействованны в партии (weakrefs)
+	VAR_PRIVATE/list/chairs
+	// weakref на дробовик
+	VAR_FINAL/datum/weakref/shootgun_weakref
+	// weakref на игровой стол
+	VAR_FINAL/datum/weakref/table_weakref
+	// На каком раунде происходит обрезание системы жизнеобеспечения
+	VAR_FINAL/death_round_teshoold = 3
+	// Стартовала ли игра
+	var/game_started = FALSE
+	// Может ли игрок свобдно выойти из игры
+	var/can_free_exit = FALSE
+	// Список игроков, ожидающих начала игры
+	var/awaiting_players = list()
+	// Должен ли стол озвучивать правила в начале игры
+	var/should_say_rules = TRUE
+	var/static/list/rules = list(
+		"Каждый ход дробовик заряжается боевыми и холостыми патронами в случайном порядке.",
+		"Участвующие по очереди стреляют либо в себя, либо в другого игрока.",
+		"Если при выстреле в себя патрон был холостым - игрок продолжает ход.",
+		"В случае смерти игрок будет воскрешён системой жизнеобеспечения, но только пока у игрока есть дополнительные заряды.",
+		"Побеждает последний оставшийся в живых игрок.",
+	)
+
+	// Список игрок с ключами по именам
+	var/list/player_by_names = list() // assoc list(mob/living/carbon/human => string)
+
+	/* Переменные относящиеся к процессу игры*/
+
+	// Текущий раунд игры
+	var/round = 1
+	// Время начала текущего хода
+	var/current_turn_start_time = 0
+	// Текущий игрок, который делает ход
+	var/current_turn_player = null
+	// Время за которое игрок должен сделать ход
+	var/turn_time = TIME_TO_TURN
+
+	// Обьявлены ли типы патронов
+	var/ammo_declared = FALSE
+
+/datum/buckshoot_roulette_party/New(obj/structure/table/game_table)
+	. = ..()
+	table_weakref = WEAKREF(game_table)
+	id = generate_uuid()
+	detect_game_objects()
+
+/datum/buckshoot_roulette_party/proc/detect_game_objects()
+	chairs = list()
+	var/obj/structure/table/table = table_weakref?.resolve()
+	if(!table)
+		return
+	for(var/obj/structure/chair/buckshoot/chair_instance in orange(2, table))
+		if(!chair_instance.party)
+			var/datum/weakref/chair_weakref = WEAKREF(chair_instance)
+			chairs += chair_weakref
+			chair_instance.party = src
+
+/datum/buckshoot_roulette_party/proc/generate_uuid()
+	var/uuid = ""
+	for(var/i = 0; i < 8; i++)
+		uuid += "[num2hex(prob(16), 16)]"
+
+
+/datum/buckshoot_roulette_party/proc/detect_candidates(mob/user)
+	if(game_started)
+		return
+	if(!length(chairs))
+		detect_game_objects()
+		return
+	if(user)
+		var/ask = tgui_alert(user, "Начать партию Buckshoot Roulette?", "Начать партию?", list("Да", "Нет"))
+		if(ask != "Да")
+			return
+	players = list()
+	for(var/datum/weakref/chair_weakref in chairs)
+		var/obj/structure/chair/buckshoot/chair_instance = chair_weakref?.resolve()
+		if(!chair_instance)
+			continue
+		var/mob/living/carbon/human/player = chair_instance.register_player(src)
+		if(!player)
+			continue
+		awaiting_players += player
+
+/datum/buckshoot_roulette_party/proc/check_ready()
+	if(game_started)
+		return
+	// Проверка, что все игроки зарегистрированы
+	for(var/datum/weakref/chair_weakref in chairs)
+		var/obj/structure/chair/buckshoot/chair_instance = chair_weakref?.resolve()
+		if(!chair_instance)
+			continue
+		var/mob/living/carbon/human/player = chair_instance.get_current_player()
+		if(!player)
+			continue
+		var/found = FALSE
+		for(var/datum/weakref/player_ref in players)
+			var/mob/living/carbon/human/existing_player = player_ref?.resolve()
+			var/datum/component/buckshoot_roulette_participant/participant = existing_player?.GetComponent(/datum/component/buckshoot_roulette_participant)
+			if(!participant)
+				continue
+			if(participant.player == player)
+				found = TRUE
+				break
+		if(!found)
+			return
+	// Все игроки зарегистрированы, стартуем игру
+	INVOKE_ASYNC(src, PROC_REF(start_game))
+
+/datum/buckshoot_roulette_party/proc/register_player(mob/living/carbon/human/player, name)
+	// Проверка на уникальность имени
+	for(var/datum/weakref/player_ref in players)
+		var/mob/living/carbon/human/existing_player = player_ref?.resolve()
+		var/datum/component/buckshoot_roulette_participant/participant = existing_player?.GetComponent(/datum/component/buckshoot_roulette_participant)
+		if(!participant)
+			continue
+		if(!participant.player)
+			continue
+		if(participant.player != player && participant.player_name == name)
+			to_chat(player, span_warning("Игрок с таким именем уже в этой партии! Выбери другое имя."))
+			return FALSE
+	players += WEAKREF(player)
+	player_by_names[player] = name
+	to_chat(player, span_notice("Ты успешно зарегистрирован в партии!"))
+	check_ready()
+	return TRUE
+
+
+/datum/buckshoot_roulette_party/proc/start_game()
+	if(game_started)
+		return
+	var/obj/structure/table/table = table_weakref?.resolve()
+	if(!table)
+		return
+	if(should_say_rules)
+		for(var/rule in rules)
+			table.say(span_notice(rule))
+			sleep(3 SECONDS)
+		sleep(10 SECONDS)
+	table.say("Игра началась!")
+	game_started = TRUE
+	SEND_SIGNAL(src, COMSIG_BUCKSHOOT_GAME_STARTED, rules)
+	START_PROCESSING(SSobj, src)
+
+
+/* ПРОЦЕСС ИГРЫ */
+
+/datum/buckshoot_roulette_party/proc/create_shootgun()
+	var/obj/structure/table/table = table_weakref?.resolve()
+	if(!table)
+		return null
+	var/obj/item/gun/ballistic/shotgun/buckshoot_game/shootgun = new(table)
+	shootgun_weakref = WEAKREF(shootgun)
+	return shootgun
+
+/datum/buckshoot_roulette_party/proc/get_shootgun()
+	if(!shootgun_weakref)
+		return create_shootgun()
+	return shootgun_weakref?.resolve()
+
+/datum/buckshoot_roulette_party/proc/load_ammo()
+	var/total_ammo = ((length(players) * 2) + round(round / 2))
+	var/live_shell = 0
+	var/blank_shell = 0
+
+	for(var/i = 0; i < total_ammo; i++)
+		if(prob(50))
+			live_shell++
+		else
+			blank_shell++
+	if(live_shell <= 0)
+		live_shell = 1
+	var/obj/item/gun/ballistic/shotgun/buckshoot_game/shootgun = get_shootgun()
+	shootgun.load_rounds(live_shell, blank_shell)
+	var/obj/structure/table/table = table_weakref?.resolve()
+	table.say("[live_shell] боевых и [blank_shell] холостых.")
+	ammo_declared = TRUE
+
+/datum/buckshoot_roulette_party/proc/all_blank()
+	var/obj/item/gun/ballistic/shotgun/buckshoot_game/shootgun = get_shootgun()
+	if(!shootgun)
+		return FALSE
+	for(var/obj/item/ammo_casing/casing in shootgun.chambers)
+		if(istype(casing, /obj/item/ammo_casing/shotgun/buckshoot/live))
+			return FALSE
+	return TRUE
+
+/datum/buckshoot_roulette_party/proc/return_shootgun_to_table()
+	var/obj/structure/table/table = table_weakref?.resolve()
+	if(!table)
+		return
+	var/obj/item/gun/ballistic/shotgun/buckshoot_game/shootgun = get_shootgun()
+	if(!shootgun)
+		return
+	if(istype(shootgun.loc, /mob/living/carbon/human))
+		var/mob/living/carbon/human/holder = shootgun.loc
+		holder.drop_all_held_items()
+	shootgun.forceMove(get_turf(table))
+
+/datum/buckshoot_roulette_party/proc/pick_next_player()
+	var/next_player = null
+	var/starting_index = 0
+	if(current_turn_player)
+		starting_index = players.Find(WEAKREF(current_turn_player)) + 1
+	var/index = starting_index % length(players)
+	for(var/i = 0; i < length(players); i++)
+		var/datum/weakref/player_ref = players[(index + i) % length(players)]
+		var/mob/living/carbon/human/player = player_ref?.resolve()
+		var/datum/component/buckshoot_roulette_participant/participant = player?.GetComponent(/datum/component/buckshoot_roulette_participant)
+		if(!participant)
+			continue
+		if(participant.has_died_in_party)
+			continue
+		next_player = player
+		break
+	return next_player
+
+/datum/buckshoot_roulette_party/proc/start_next_turn()
+	return_shootgun_to_table()
+	current_turn_player = pick_next_player()
+	if(!current_turn_player)
+		return
+	current_turn_start_time = world.time
+	var/obj/structure/table/table = table_weakref?.resolve()
+	if(table)
+		table.say("Ходит [player_by_names[current_turn_player]]. У него есть [turn_time / 60] минут на выбор действия.")
+
+
+/datum/buckshoot_roulette_party/proc/turn_timeout()
+	if(!current_turn_player)
+		return FALSE
+	var/elapsed_time = world.time - current_turn_start_time
+	if(elapsed_time >= turn_time)
+		var/obj/structure/table/table = table_weakref?.resolve()
+		if(table)
+			table.say("[player_by_names[current_turn_player]] не сделал выбор вовремя и пропускает ход!")
+		return TRUE
+	return FALSE
+
+/datum/buckshoot_roulette_party/proc/after_player_shoot(mob/living/carbon/human/player, target_player, shot_result)
+	var/datum/component/buckshoot_roulette_participant/participant = player.GetComponent(/datum/component/buckshoot_roulette_participant)
+	if(!participant)
+		return
+	if(shot_result == SHOOT_RESULT_BLANK)
+		handle_blank_shot(player, target_player)
+	else if(shot_result == SHOOT_RESULT_LIVE)
+		handle_live_shot(player, target_player)
+
+/datum/buckshoot_roulette_party/proc/handle_blank_shot(mob/living/carbon/human/player, mob/living/carbon/human/target_player)
+	if(target_player == player)
+		to_chat(player, span_notice("Холостой выстрел в себя! Ты остаёшься в игре и продолжаешь ход."))
+		return
+	else
+		start_next_turn()
+
+/datum/buckshoot_roulette_party/proc/handle_live_shot(mob/living/carbon/human/player, mob/living/carbon/human/target_player)
+	var/datum/component/buckshoot_roulette_participant/target_participant = target_player.GetComponent(/datum/component/buckshoot_roulette_participant)
+	if(!target_participant)
+		return
+	var/obj/structure/table/table = table_weakref?.resolve()
+	if(table)
+		table.say("[player_by_names[target_player]] был убит [player_by_names[player]]!")
+	if(check_round_end())
+		return
+	start_next_turn()
+
+
+/datum/buckshoot_roulette_party/proc/check_round_end()
+	var/players_alive = 0
+	for(var/datum/weakref/player_ref in players)
+		var/mob/living/carbon/human/player = player_ref?.resolve()
+		var/datum/component/buckshoot_roulette_participant/participant = player?.GetComponent(/datum/component/buckshoot_roulette_participant)
+		if(!participant)
+			continue
+		if(!participant.has_died_in_party)
+			players_alive += 1
+	if(players_alive <= 1)
+		return TRUE
+	return FALSE
+
+
+/datum/buckshoot_roulette_party/process(seconds_per_tick)
+	if(!shootgun_weakref)
+		create_shootgun()
+	if(!game_started)
+		return
+
+	var/all_blank = all_blank()
+	if(!ammo_declared || all_blank)
+		sleep(2 SECONDS)
+		load_ammo()
+
+	if(!current_turn_player || turn_timeout())
+		sleep(1 SECONDS)
+		start_next_turn()
+
+
+/datum/component/buckshoot_roulette_participant
+	// weakref на партию, в которой участвует этот игрок
+	VAR_PRIVATE/datum/weakref/party_weakref
+	// Ссылка на игровое кресло этого игрока
+	VAR_PRIVATE/datum/weakref/chair_werkref
+	// Был ли этот игрок уже убит в текущей партии
+	var/has_died_in_party = FALSE
+	// Ссылка на текущего игрока
+	var/mob/living/carbon/human/player
+	// Имя текущего игрока
+	var/player_name = ""
+	// Количество очков за победу игрокв раунде
+	var/srcore = 0
+	// Количество жизней игрока
+	var/lives = 3
+
+	var/static/list/forbiden_names = list(
+		"Ведущий",
+		"Администратор",
+		"Модератор",
+		"Система",
+		"Бот",
+		"Игрок",
+		"Гость",
+		"low3",
+		"god",
+		"бог",
+	)
+	var/static/list/dealer_names = list(
+		"Дилер",
+		"Крупье",
+		"Dealer",
+	)
+
+
+/datum/component/buckshoot_roulette_participant/Initialize(datum/buckshoot_roulette_party/party, obj/structure/chair/buckshoot/chair_instance)
+	if(!party || !chair_instance)
+		return COMPONENT_INCOMPATIBLE
+	if(!ishuman(parent))
+		return COMPONENT_INCOMPATIBLE
+	player = parent
+	party_weakref = WEAKREF(party)
+	INVOKE_ASYNC(src, PROC_REF(register_player))
+
+/datum/component/buckshoot_roulette_participant/RegisterWithParent()
+	. = ..()
+	var/datum/buckshoot_roulette_party/party_instance = party_weakref?.resolve()
+	RegisterSignal(player, COMSIG_LIVING_DEATH, PROC_REF(on_player_death), TRUE)
+	RegisterSignal(player, COMSIG_MOB_FIRED_GUN, PROC_REF(on_player_shoot), TRUE)
+	RegisterSignal(party_instance, COMSIG_BUCKSHOOT_GAME_STARTED, PROC_REF(on_game_start), TRUE)
+	RegisterSignal(party_instance, COMSIG_BUCKSHOOT_GAME_ENDED, PROC_REF(on_game_end), TRUE)
+
+/datum/component/buckshoot_roulette_participant/UnregisterFromParent()
+	. = ..()
+	var/datum/buckshoot_roulette_party/party_instance = party_weakref?.resolve()
+	UnregisterSignal(player, list(COMSIG_LIVING_DEATH, COMSIG_MOB_FIRED_GUN))
+	UnregisterSignal(party_instance, list(COMSIG_BUCKSHOOT_GAME_STARTED, COMSIG_BUCKSHOOT_GAME_ENDED))
+
+
+/datum/component/buckshoot_roulette_participant/proc/generate_random_name()
+	var/chars = GLOB.alphabet.Copy()
+	var/base = "Игрок_"
+	for(var/i = 0; i < 6; i++)
+		base += chars[prob(1.0 / length(chars)) * length(chars)]
+	return trimtext(base)
+
+/datum/component/buckshoot_roulette_participant/proc/register_player()
+	var/datum/buckshoot_roulette_party/party_instance = party_weakref?.resolve()
+	if(!party_instance)
+		return
+	var/player_name = tgui_input_text(player, "Введи имя игрока", "Регистрация", max_length = 32)
+	if(!player_name)
+		player_name = generate_random_name()
+	if(player_name in forbiden_names)
+		to_chat(player, span_warning("Это имя запрещено! Тебе будет сгенерировано случайное имя."))
+		player_name = generate_random_name()
+	if(player_name in dealer_names && !HAS_TRAIT(player, TRAIT_BUCKSHOOT_DEALER))
+		to_chat(player, span_warning("Это имя запрещено! Тебе будет сгенерировано случайное имя."))
+		player_name = generate_random_name()
+	if(!party_instance.register_player(player, player_name))
+		CHECK_TICK
+		sleep(1)
+		register_player()
+	else
+		RegisterWithParent()
+
+/datum/component/buckshoot_roulette_participant/proc/on_player_shoot(obj/item/gun/gun, target, params, zone_override, bonus_spread_values)
+	SIGNAL_HANDLER
+	var/datum/buckshoot_roulette_party/party = party_weakref?.resolve()
+	var/obj/item/gun/ballistic/shotgun/buckshoot_game/game_gun = gun
+	if(!party)
+		return
+	if(party.current_turn_player != player)
+		to_chat(player, span_warning("Сейчас не твой ход!"))
+		return
+	if(party.get_shootgun() != game_gun)
+		return
+	party.after_player_shoot(player, target, game_gun.last_shoot_result)
+
+
+/datum/component/buckshoot_roulette_participant/proc/on_player_death(mob/living/player, gibbed)
+	SIGNAL_HANDLER
+	var/datum/buckshoot_roulette_party/party = party_weakref?.resolve()
+	if(!party)
+		return
+	if(lives <= 0)
+		has_died_in_party = TRUE
+		return
+	lives -= 1
+	var/obj/structure/chair/buckshoot/chair_instance = chair_werkref.resolve()
+	if(!chair_instance)
+		return
+	chair_instance.say(span_notice("Осталось жизней: [lives]."))
+	playsound(chair_instance, 'tff_modular/modules/buckshoot/sounds/defub_reduce_health.ogg', 50, 1)
+	addtimer(CALLBACK(chair_instance, TYPE_PROC_REF(/obj/structure/chair/buckshoot, revive_player)), 1 SECONDS)
+
+
+/datum/component/buckshoot_roulette_participant/proc/on_game_start(/datum/buckshoot_roulette_party/party, rules)
+	SIGNAL_HANDLER
+	var/msg = span_notice("Игра началась! Твои жизни: [lives].")
+	msg += span_notice("\nПравила игры:")
+	for(var/rule in rules)
+		msg += span_notice("\n- [rule]")
+	to_chat(player, msg)
+	ADD_TRAIT(src, TRAIT_BUCKSHOOT_PLAYER, INNATE_TRAIT)
+	SEND_SOUND(player, 'tff_modular/modules/buckshoot/sounds/crt_display_health.ogg')
+
+/datum/component/buckshoot_roulette_participant/proc/on_game_end()
+	SIGNAL_HANDLER
+	Destroy()
