@@ -55,7 +55,7 @@
 	)
 
 	var/last_shoot_result = ""
-
+	var/shotingself = FALSE
 
 /obj/item/gun/ballistic/shotgun/buckshoot_game/Initialize(mapload, datum/buckshoot_roulette_party/party)
 	. = ..()
@@ -84,10 +84,14 @@
 	return ..()
 
 /obj/item/gun/ballistic/shotgun/buckshoot_game/pre_attack(atom/target, mob/living/user, list/modifiers, list/attack_modifiers)
+	if(shotingself)
+		return TRUE
 	INVOKE_ASYNC(src, PROC_REF(try_fire_gun), target, user, modifiers)
 	return TRUE
 
 /obj/item/gun/ballistic/shotgun/buckshoot_game/pre_attack_secondary(atom/target, mob/living/user, list/modifiers, list/attack_modifiers)
+	if(shotingself)
+		return TRUE
 	INVOKE_ASYNC(src, PROC_REF(try_fire_gun), target, user, modifiers)
 	return TRUE
 
@@ -100,6 +104,8 @@
 /obj/item/gun/ballistic/shotgun/buckshoot_game/try_fire_gun(atom/target, mob/living/user, params)
 	if(!party_ref)
 		return ..()
+	if(shotingself)
+		return
 	var/datum/buckshoot_roulette_party/party = party_ref.resolve()
 	if(!party)
 		return ..()
@@ -109,15 +115,25 @@
 	if(!party.is_participant(living_target))
 		user.balloon_alert(user, "Это не участник игры!")
 		return
-	if(target == user)
-		user.visible_message(span_danger("[user.name] нацеливается на себя с [src.name]!"))
-		user.balloon_alert(user, "Вы собираетесь выстрелить в себя...")
-		var/ask_shoot_self = tgui_alert(user, "Выстрелить в себя?", "Ты хочешь выстрелить в себя?", list("Попытать удачу", "Нет"))
-		if(ask_shoot_self != "Попытать удачу")
-			user.balloon_alert(user, "Вы решили не стрелять в себя.")
-			user.visible_message(span_notice("[user.name] решает не стрелять в себя с [src.name]."))
-			return
+	if(target == user && !shotingself)
+		INVOKE_ASYNC(src, PROC_REF(attempt_shotself), user)
+		return
 	return ..()
+
+
+/obj/item/gun/ballistic/shotgun/buckshoot_game/proc/attempt_shotself(mob/living/user)
+	if(shotingself)
+		return
+	shotingself = TRUE
+	user.visible_message(span_danger("[user.name] нацеливается на себя с [src.name]!"))
+	user.balloon_alert(user, "Вы собираетесь выстрелить в себя...")
+	var/ask_shoot_self = tgui_alert(user, "Выстрелить в себя?", "Ты хочешь выстрелить в себя?", list("Попытать удачу", "Нет"), timeout = 10 SECONDS)
+	if(ask_shoot_self != "Попытать удачу")
+		user.balloon_alert(user, "Вы решили не стрелять в себя.")
+		user.visible_message(span_notice("[user.name] решает не стрелять в себя с [src.name]."))
+		shotingself = FALSE
+		return
+	fire_gun(user, user)
 
 /obj/item/gun/ballistic/shotgun/buckshoot_game/fire_gun(atom/target, mob/living/user, flag, params)
 	if(!isliving(target))
@@ -146,10 +162,15 @@
 	else
 		last_shoot_result = "empty"
 
+	if(living_target == user && shotingself)
+		shotingself = FALSE
+
 	addtimer(CALLBACK(party, TYPE_PROC_REF(/datum/buckshoot_roulette_party, after_player_shoot), user, living_target, last_shoot_result), 1 SECONDS)
 	..()
 
 /obj/item/gun/ballistic/shotgun/buckshoot_game/attack_self(mob/living/user)
+	if(shotingself)
+		return TRUE
 	INVOKE_ASYNC(src, PROC_REF(try_fire_gun), user, user, list())
 	return TRUE
 

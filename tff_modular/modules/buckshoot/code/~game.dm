@@ -40,6 +40,8 @@
 	var/round = 0
 	// Является ли текущий раунд последним
 	var/is_last_round = FALSE
+	// Начался ли текущий раунд
+	var/round_started = FALSE
 	// Время начала текущего хода
 	var/current_turn_start_time = 0
 	// Текущий игрок, который делает ход
@@ -154,7 +156,7 @@
 		for(var/rule in rules)
 			table.say(rule)
 			sleep(3 SECONDS)
-		sleep(7 SECONDS)
+		sleep(3 SECONDS)
 	next_round()
 	game_started = TRUE
 	SEND_SIGNAL(src, COMSIG_BUCKSHOOT_GAME_STARTED, rules)
@@ -192,6 +194,7 @@
 	return shotgun_weakref?.resolve()
 
 /datum/buckshoot_roulette_party/proc/load_ammo()
+	ammo_declared = FALSE
 	var/total_ammo = ((length(players) * 2) + round(round / 2))
 	var/live_shell = 0
 	var/blank_shell = 0
@@ -212,6 +215,8 @@
 	ammo_declared = TRUE
 
 /datum/buckshoot_roulette_party/proc/all_blank()
+	if(!ammo_declared)
+		return TRUE
 	var/obj/item/gun/ballistic/shotgun/buckshoot_game/shotgun = get_shotgun()
 	if(!shotgun)
 		return FALSE
@@ -261,7 +266,9 @@
 	var/obj/structure/table/table = table_weakref?.resolve()
 	if(table)
 		table.say("Ходит [player_by_names[current_turn_player]]. У него есть [turn_time / 600] минут на выбор действия.")
-
+	var/obj/item/gun/ballistic/shotgun/buckshoot_game/shotgun = get_shotgun()
+	if(shotgun.shotingself)
+		shotgun.shotingself = FALSE
 
 /datum/buckshoot_roulette_party/proc/turn_timeout()
 	if(!current_turn_player)
@@ -296,9 +303,6 @@
 	var/datum/component/buckshoot_roulette_participant/target_participant = target_player.GetComponent(/datum/component/buckshoot_roulette_participant)
 	if(!target_participant)
 		return
-	var/obj/structure/table/table = table_weakref?.resolve()
-	if(table)
-		table.say("[player_by_names[target_player]] был убит [player_by_names[player]]!")
 	return_shotgun_to_table()
 	if(check_round_end())
 		return
@@ -321,44 +325,42 @@
 /datum/buckshoot_roulette_party/proc/next_round()
 	round += 1
 	ammo_declared = FALSE
+	current_turn_player = null
 	var/obj/structure/table/table = table_weakref?.resolve()
 	if(table)
 		table.say("Раунд [round] начинается!")
 	playsound(table, 'tff_modular/modules/buckshoot/sounds/new_round.ogg', 50, 1)
+	SEND_SIGNAL(src, COMSIG_BUCKSHOOT_NEXT_ROUND, (round >= death_round_teshoold))
+	sleep(3 SECONDS)
 	start_next_turn()
 
+/datum/buckshoot_roulette_party/proc/end_round()
+	var/obj/structure/table/table = table_weakref?.resolve()
+	if(is_last_round)
+		end_game()
+		return
+	if(table)
+		table.say("Раунд [round] окончен!")
+	if(round >= death_round_teshoold)
+		if(table)
+			playsound(table, 'tff_modular/modules/buckshoot/sounds/crt_turn_off.ogg', 50, 1)
+			table.say("Последний раунд - система реанимации отключена!")
+		is_last_round = TRUE
+	sleep(1 SECONDS)
+	next_round()
 
 /datum/buckshoot_roulette_party/process(seconds_per_tick)
-	if(!shotgun_weakref)
-		create_shotgun()
 	if(!game_started)
 		return
-
+	if(!get_shotgun())
+		create_shotgun()
 	if(check_round_end())
-		var/obj/structure/table/table = table_weakref?.resolve()
-		if(is_last_round)
-			end_game()
-			return
-		if(table)
-			table.say("Раунд [round] окончен!")
-		if(round >= death_round_teshoold)
-			for(var/datum/weakref/player_ref in players)
-				var/mob/living/carbon/human/player = player_ref?.resolve()
-				var/datum/component/buckshoot_roulette_participant/participant = player?.GetComponent(/datum/component/buckshoot_roulette_participant)
-				if(!participant)
-					continue
-				participant.lives = 0
-			if(table)
-				playsound(table, 'tff_modular/modules/buckshoot/sounds/crt_turn_off.ogg', 50, 1)
-				table.say("Последний раунд - система реанимации отключена!")
-			is_last_round = TRUE
-		sleep(5 SECONDS)
-		next_round()
+		end_round()
 		return
-	if(!ammo_declared || all_blank())
-		sleep(2 SECONDS)
+	if(all_blank())
 		load_ammo()
-	if(!current_turn_player || turn_timeout())
+		sleep(2 SECONDS)
+	if((!current_turn_player || turn_timeout()) && ammo_declared)
 		sleep(1 SECONDS)
 		start_next_turn()
 
@@ -419,6 +421,7 @@
 	RegisterSignal(player, COMSIG_LIVING_DEATH, PROC_REF(on_player_death), TRUE)
 	RegisterSignal(party_instance, COMSIG_BUCKSHOOT_GAME_STARTED, PROC_REF(on_game_start), TRUE)
 	RegisterSignal(party_instance, COMSIG_BUCKSHOOT_GAME_ENDED, PROC_REF(on_game_end), TRUE)
+	RegisterSignal(party_instance, COMSIG_BUCKSHOOT_NEXT_ROUND, PROC_REF(on_next_round), TRUE)
 
 /datum/component/buckshoot_roulette_participant/UnregisterFromParent()
 	. = ..()
@@ -438,7 +441,7 @@
 	var/datum/buckshoot_roulette_party/party_instance = party_weakref?.resolve()
 	if(!party_instance)
 		return
-	var/player_name = tgui_input_text(player, "Введи имя игрока", "Регистрация", max_length = 32)
+	var/player_name = tgui_input_text(player, "Введи имя игрока", "Регистрация", max_length = 5)
 	if(!player_name)
 		player_name = generate_random_name()
 	if(player_name in forbiden_names)
@@ -459,25 +462,35 @@
 	var/datum/buckshoot_roulette_party/party = party_weakref?.resolve()
 	if(!party)
 		return TRUE
-	return lives <= 0
+	return lives <= 0 || has_died_in_party
 
 
 /datum/component/buckshoot_roulette_participant/proc/on_player_death(mob/living/player, gibbed)
 	SIGNAL_HANDLER
 	var/datum/buckshoot_roulette_party/party = party_weakref?.resolve()
+	var/obj/structure/chair/buckshoot/chair_instance = chair_werkref.resolve()
+	if(!chair_instance)
+		return
 	if(!party)
 		return
 	if(lives <= 0)
 		has_died_in_party = TRUE
+		chair_instance.say("Игрок - выбыл из игры.")
+		to_chat(player, span_danger("Ты был убит и твои жизни - закончились. Ты выбыл из игры!"))
 		return
 	lives -= 1
-	var/obj/structure/chair/buckshoot/chair_instance = chair_werkref.resolve()
-	if(!chair_instance)
-		return
 	chair_instance.say(span_notice("Осталось жизней: [lives]."))
 	playsound(chair_instance, 'tff_modular/modules/buckshoot/sounds/defib_reduce_health.ogg', 50, 1)
-	addtimer(CALLBACK(chair_instance, TYPE_PROC_REF(/obj/structure/chair/buckshoot, revive_player)), 1 SECONDS)
+	addtimer(CALLBACK(chair_instance, TYPE_PROC_REF(/obj/structure/chair/buckshoot, revive_player)), 2 SECONDS)
 
+
+/datum/component/buckshoot_roulette_participant/proc/on_next_round(datum/buckshoot_roulette_party/party, death_round)
+	SIGNAL_HANDLER
+	lives = death_round ? 1 : 3
+	has_died_in_party = FALSE
+	var/obj/structure/chair/buckshoot/chair_instance = chair_werkref.resolve()
+	if(player.stat == DEAD && chair_instance)
+		addtimer(CALLBACK(chair_instance, TYPE_PROC_REF(/obj/structure/chair/buckshoot, revive_player)), 5)
 
 /datum/component/buckshoot_roulette_participant/proc/on_game_start(/datum/buckshoot_roulette_party/party, rules)
 	SIGNAL_HANDLER
