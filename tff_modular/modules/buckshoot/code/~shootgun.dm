@@ -2,9 +2,16 @@
 
 /obj/projectile/bullet/shotgun_slug/buckshoot
 	name = "buckshoot slug"
-	damage = 200
+	damage = 300
 	damage_type = OXY
 	armour_penetration = 100
+	icon_state = "slug"
+
+/obj/projectile/bullet/shotgun_slug/blankshoot
+	name = "buckshoot blank slug"
+	damage = 0
+	damage_type = OXY
+	armour_penetration = 0
 	icon_state = "slug"
 
 /obj/item/ammo_casing/shotgun/buckshoot
@@ -18,6 +25,7 @@
 	name = "buckshoot blank shell"
 	desc = "A harmless blank shotgun shell for Buckshoot Roulette."
 	icon_state = "bshell"
+	projectile_type = /obj/projectile/bullet/shotgun_slug/blankshoot
 
 /obj/item/ammo_casing/shotgun/buckshoot/blank/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, atom/fired_from)
 	// playsound(fired_from || get_turf(src), 'sound/weapons/gun/revolver/empty.ogg', 100, TRUE)
@@ -35,13 +43,10 @@
 	name = "\improper Buckshoot shotgun"
 	desc = "A modified shotgun designed for the Buckshoot Roulette game. It features a unique internal mechanism that loads and cycles a shuffled mix of live and blank rounds."
 	icon_state = "dshotgun_l"
-	inhand_icon_state = "shotgun"
-	worn_icon_state = "shotgun"
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
+	worn_icon_state = "shotgun_combat"
 	can_suppress = FALSE
 	burst_size = 1
-	fire_delay = 0
+	fire_delay = 2 SECONDS
 	var/list/chambers = list()
 	var/datum/weakref/party_ref = null
 	var/static/list/possible_ammo_types = list(
@@ -51,20 +56,6 @@
 
 	var/last_shoot_result = ""
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/pickup(mob/user)
-	if(!party_ref)
-		return ..()
-
-	var/datum/buckshoot_roulette_party/party = party_ref.resolve()
-	if(!party)
-		return ..()
-	if(!party.game_started)
-		return ..()
-	if((party.current_turn_player != user) && user.GetComponent(/datum/component/buckshoot_roulette_participant))
-		to_chat(user, span_warning("Сейчас не твой ход!"))
-		return FALSE
-
-	return ..()
 
 /obj/item/gun/ballistic/shotgun/buckshoot_game/Initialize(mapload, datum/buckshoot_roulette_party/party)
 	. = ..()
@@ -72,35 +63,112 @@
 		party_ref = WEAKREF(party)
 	chambers.Cut()
 	chambered = null
+	magazine = null
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/process_fire(atom/target, mob/living/user, suppression, miranda_check, shoot_delay, spread_override)
+/obj/item/gun/ballistic/shotgun/buckshoot_game/examine(mob/user)
+	if(length(chambers))
+		. += span_notice("It has [length(chambers)] rounds left.")
+
+
+/obj/item/gun/ballistic/shotgun/buckshoot_game/attempt_pickup(mob/living/user, skip_grav)
+	if(!party_ref)
+		return ..()
+	var/datum/buckshoot_roulette_party/party = party_ref.resolve()
+	if(!party)
+		return ..()
+	if(!party.game_started)
+		return ..()
+	if((party.current_turn_player != user) && user.GetComponent(/datum/component/buckshoot_roulette_participant))
+		to_chat(user, span_warning("Сейчас не твой ход!"))
+		return
+	return ..()
+
+/obj/item/gun/ballistic/shotgun/buckshoot_game/pre_attack(atom/target, mob/living/user, list/modifiers, list/attack_modifiers)
+	INVOKE_ASYNC(src, PROC_REF(try_fire_gun), target, user, modifiers)
+	return TRUE
+
+/obj/item/gun/ballistic/shotgun/buckshoot_game/pre_attack_secondary(atom/target, mob/living/user, list/modifiers, list/attack_modifiers)
+	INVOKE_ASYNC(src, PROC_REF(try_fire_gun), target, user, modifiers)
+	return TRUE
+
+/obj/item/gun/ballistic/shotgun/buckshoot_game/proc/check_gunpoint(mob/living/user, mob/living/target)
+	for(var/datum/gunpoint/gunpoint in target.gunpointed)
+		if(gunpoint.source == user && gunpoint.target == target)
+			return TRUE
+	return FALSE
+
+/obj/item/gun/ballistic/shotgun/buckshoot_game/try_fire_gun(atom/target, mob/living/user, params)
+	if(!party_ref)
+		return ..()
+	var/datum/buckshoot_roulette_party/party = party_ref.resolve()
+	if(!party)
+		return ..()
+	if(!ishuman(target))
+		return
+	var/mob/living/living_target = target
+	if(!party.is_participant(living_target))
+		user.balloon_alert(user, "Это не участник игры!")
+		return
+	if(target == user)
+		user.visible_message(span_danger("[user.name] нацеливается на себя с [src.name]!"))
+		user.balloon_alert(user, "Вы собираетесь выстрелить в себя...")
+		var/ask_shoot_self = tgui_alert(user, "Выстрелить в себя?", "Ты хочешь выстрелить в себя?", list("Попытать удачу", "Нет"))
+		if(ask_shoot_self != "Попытать удачу")
+			user.balloon_alert(user, "Вы решили не стрелять в себя.")
+			user.visible_message(span_notice("[user.name] решает не стрелять в себя с [src.name]."))
+			return
+	return ..()
+
+/obj/item/gun/ballistic/shotgun/buckshoot_game/fire_gun(atom/target, mob/living/user, flag, params)
+	if(!isliving(target))
+		return
+	var/mob/living/living_target = target
+	var/datum/buckshoot_roulette_party/party = party_ref.resolve()
+	if(!party)
+		return
+	var/datum/component/gun_safety/safety_comp = GetComponent(/datum/component/gun_safety)
+	if(safety_comp && safety_comp.safety_currently_on)
+		safety_comp.toggle_safeties(user)
+
+	if(!party.is_participant(living_target))
+		user.balloon_alert(user, "Это не участник игры!")
+		return
+	if(living_target != user)
+		if(!check_gunpoint(user, living_target))
+			user.DoGunpoint(living_target, src)
+			user.balloon_alert(user, "Готов выстрелить!")
+			return
+
 	if(istype(chambered, /obj/item/ammo_casing/shotgun/buckshoot/live))
 		last_shoot_result = "live"
 	else if(istype(chambered, /obj/item/ammo_casing/shotgun/buckshoot/blank))
 		last_shoot_result = "blank"
 	else
 		last_shoot_result = "empty"
-	. = ..()
-	if(.)
-		process_chamber()
+
+	addtimer(CALLBACK(party, TYPE_PROC_REF(/datum/buckshoot_roulette_party, after_player_shoot), user, living_target, last_shoot_result), 1 SECONDS)
+	..()
+
+/obj/item/gun/ballistic/shotgun/buckshoot_game/attack_self(mob/living/user)
+	INVOKE_ASYNC(src, PROC_REF(try_fire_gun), user, user, list())
+	return TRUE
 
 /obj/item/gun/ballistic/shotgun/buckshoot_game/rack(mob/user)
 	. = ..()
 	load_chamber()
 
+/obj/item/gun/ballistic/shotgun/chamber_round(spin_cylinder, replace_new_round)
+	return
+
 /obj/item/gun/ballistic/shotgun/buckshoot_game/load_gun(obj/item/ammo, mob/living/user)
-	if(!istype(ammo, possible_ammo_types))
-		to_chat(user, span_warning("This shotgun only accepts special Buckshoot Roulette ammunition!"))
-		return FALSE
-	return ..()
+	return
 
 /obj/item/gun/ballistic/shotgun/buckshoot_game/proc/load_chamber()
 	if(chambered)
 		return
 	if(!length(chambers))
 		return
-	chambered = chambers[1]
-	chambers.Cut(1, 2)
+	chambered = pick_n_take(chambers)
 
 /obj/item/gun/ballistic/shotgun/buckshoot_game/proc/load_rounds(live_count = 0, blank_count = 0)
 	var/total = live_count + blank_count
@@ -115,14 +183,10 @@
 		chambers += new /obj/item/ammo_casing/shotgun/buckshoot/blank(src)
 		playsound(get_turf(src), 'tff_modular/modules/buckshoot/sounds/load_shell.ogg', 100, TRUE)
 		sleep(0.2 SECONDS)
-	shuffle(chambers)
+	chambers = shuffle(chambers)
 	load_chamber()
 	return TRUE
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/examine(mob/user)
-	. = ..()
-	if(length(chambers))
-		. += span_notice("It has [length(chambers)] rounds left.")
 
 /obj/item/gun/ballistic/shotgun/buckshoot_game/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SAW || I.tool_behaviour == TOOL_WIRECUTTER)
