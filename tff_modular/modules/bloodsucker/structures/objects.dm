@@ -312,8 +312,7 @@
 
 /obj/item/book/codex_gigas/attack_self(mob/living/user)
 	if(user.mind && !(HAS_TRAIT(user.mind, TRAIT_BLOODSUCKER_HUNTER) || IS_BLOODSUCKER(user)))
-		to_chat(user, span_warning("You feel your eyes unable to read the boring texts..."))
-		user.set_eye_blur_if_lower(10 SECONDS)
+		to_chat(user, span_warning("You can't read the strange characters, it's written in some strange language.."))
 		return
 	ui_interact(user)
 

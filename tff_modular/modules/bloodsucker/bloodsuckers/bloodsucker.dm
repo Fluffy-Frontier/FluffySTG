@@ -333,13 +333,18 @@
 	new_owner.add_antag_datum(src)
 
 /datum/antagonist/bloodsucker/get_preview_icon()
+	var/icon/final_icon = render_preview_outfit(/datum/outfit/bloodsucker_outfit)
+	var/icon/split_icon = render_preview_outfit(/datum/outfit/job/engineer)
 
-	var/icon/outfit_icon = render_preview_outfit(preview_outfit)
-	var/icon/blood_icon = icon('icons/effects/blood.dmi', "uniformblood")
-	blood_icon.Blend(BLOOD_COLOR_RED, ICON_MULTIPLY)
-	outfit_icon.Blend(blood_icon, ICON_OVERLAY)
+	final_icon.Shift(WEST, ICON_SIZE_X / 2)
+	final_icon.Shift(EAST, ICON_SIZE_X / 2)
 
-	return finish_preview_icon(outfit_icon)
+	split_icon.Shift(EAST, ICON_SIZE_X / 2)
+	split_icon.Shift(WEST, ICON_SIZE_X / 2)
+
+	final_icon.Blend(split_icon, ICON_OVERLAY)
+
+	return finish_preview_icon(final_icon)
 
 /datum/antagonist/bloodsucker/ui_static_data(mob/user)
 	var/list/data = ability_ui_data(powers)

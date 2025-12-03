@@ -102,7 +102,7 @@
 /datum/antagonist/bloodsucker/proc/HandleHealing(mult = 1)
 	// Don't heal if I'm staked or on Masquerade.
 	var/actual_regen = bloodsucker_regen_rate + additional_regen
-	var/burn_regen = min(0.057 * GetRank())
+	var/burn_regen = min(bloodsucker_regen_rate * 0.25)
 	if(owner.current.am_staked() || (HAS_TRAIT(owner.current, TRAIT_MASQUERADE)))
 		return FALSE
 	// Garlic in you? No healing for you!
