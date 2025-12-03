@@ -198,7 +198,7 @@
 	return GetPunchDamage(user_active_arm.unarmed_damage_high)
 
 /datum/action/cooldown/bloodsucker/targeted/brawn/proc/GetPunchDamage(punch_damage)
-	return punch_damage * 1.25 + 2
+	return punch_damage * 1.5 + 5
 
 /datum/action/cooldown/bloodsucker/targeted/brawn/CheckValidTarget(atom/target_atom)
 	. = ..()

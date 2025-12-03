@@ -103,6 +103,7 @@
 	// Don't heal if I'm staked or on Masquerade.
 	var/actual_regen = bloodsucker_regen_rate + additional_regen
 	var/burn_regen = min(bloodsucker_regen_rate * 0.25)
+	var/stamina_regen = min(bloodsucker_regen_rate * 1.5)
 	if(owner.current.am_staked() || (HAS_TRAIT(owner.current, TRAIT_MASQUERADE)))
 		return FALSE
 	// Garlic in you? No healing for you!
@@ -118,6 +119,8 @@
 	var/bruteheal = min(bruteLoss, actual_regen) // BRUTE: Always Heal
 	var/fireloss = getFireLoss()
 	var/fireheal = min(fireloss, burn_regen) // BURN: Heal in Coffin while Fakedeath, or when damage above maxhealth (you can never fully heal fire)
+	var/staminaloss = GetStaminaLoss()
+	var/staminaheal = min(staminaloss, stamina_regen)
 	// Checks if you're in a coffin here, additionally checks for Torpor right below it.
 	var/amInCoffin = is_valid_coffin()
 	if (blood_over_cap > 0)
@@ -140,7 +143,7 @@
 	// Heal if Damaged
 	if((bruteheal + fireheal) && mult != 0) // Just a check? Don't heal/spend, and return.
 		// We have damage. Let's heal (one time), and don't cost any blood if we cannot
-		if(!user.adjustBruteLoss(-bruteheal * mult, updating_health = FALSE) && !user.adjustFireLoss(-fireheal * mult, updating_health = FALSE)) // Heal BRUTE / BURN in random portions throughout the body.
+		if(!user.adjustBruteLoss(-bruteheal * mult, updating_health = FALSE) && !user.adjustFireLoss(-fireheal * mult, updating_health = FALSE) && user.adjustStaminaLoss(-staminaheal * mult, updating_health = FALSE)) // Heal BRUTE / BURN in random portions throughout the body.
 			return FALSE
 		user.updatehealth()
 		AdjustBloodVolume(((bruteheal * -0.5) + (fireheal * -1)) * costMult * mult) // Costs blood to heal
