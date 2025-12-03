@@ -54,6 +54,8 @@
 	var/mob/living/carbon/human/user = owner
 	to_chat(owner, span_warning("You mystify the air around your person. Your identity is now altered."))
 
+	var/obj/item/card = user.get_item_by_slot(ITEM_SLOT_ID)
+	user.put_in_hands(card, FALSE)
 	// Store Prev Appearance
 	disguise_name = generate_random_name(user.gender, TRUE)
 	prev_gender = user.gender
