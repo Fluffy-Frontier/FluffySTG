@@ -143,7 +143,7 @@
 	// Heal if Damaged
 	if((bruteheal + fireheal) && mult != 0) // Just a check? Don't heal/spend, and return.
 		// We have damage. Let's heal (one time), and don't cost any blood if we cannot
-		if(!user.adjustBruteLoss(-bruteheal * mult, updating_health = FALSE) && !user.adjustFireLoss(-fireheal * mult, updating_health = FALSE) && user.adjustStaminaLoss(-staminaheal * mult, updating_health = FALSE)) // Heal BRUTE / BURN in random portions throughout the body.
+		if(!user.adjustBruteLoss(-bruteheal * mult, updating_health = FALSE) && !user.adjustFireLoss(-fireheal * mult, updating_health = FALSE)) // Heal BRUTE / BURN in random portions throughout the body.
 			return FALSE
 		user.updatehealth()
 		AdjustBloodVolume(((bruteheal * -0.5) + (fireheal * -1)) * costMult * mult) // Costs blood to heal
