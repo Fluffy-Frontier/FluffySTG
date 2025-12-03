@@ -203,7 +203,7 @@
 
 /datum/bloodsucker_clan/proc/finalize_spend_rank(datum/antagonist/bloodsucker/source, cost_rank = TRUE, blood_cost)
 	level_up_powers(source)
-	bloodsuckerdatum.bloodsucker_regen_rate += 0.05
+	bloodsuckerdatum.bloodsucker_regen_rate += 0.086
 	bloodsuckerdatum.max_blood_volume += 100
 
 	if(ishuman(bloodsuckerdatum.owner.current))

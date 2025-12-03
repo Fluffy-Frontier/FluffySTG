@@ -102,6 +102,7 @@
 /datum/antagonist/bloodsucker/proc/HandleHealing(mult = 1)
 	// Don't heal if I'm staked or on Masquerade.
 	var/actual_regen = bloodsucker_regen_rate + additional_regen
+	var/burn_regen = min(0.057 * GetRank())
 	if(owner.current.am_staked() || (HAS_TRAIT(owner.current, TRAIT_MASQUERADE)))
 		return FALSE
 	// Garlic in you? No healing for you!
@@ -115,7 +116,8 @@
 	// If you're a synth, you heal prosthetic damage.
 	var/bruteLoss = getBruteLoss()
 	var/bruteheal = min(bruteLoss, actual_regen) // BRUTE: Always Heal
-	var/fireheal = 0 // BURN: Heal in Coffin while Fakedeath, or when damage above maxhealth (you can never fully heal fire)
+	var/fireloss = getFireLoss()
+	var/fireheal = min(fireloss, burn_regen) // BURN: Heal in Coffin while Fakedeath, or when damage above maxhealth (you can never fully heal fire)
 	// Checks if you're in a coffin here, additionally checks for Torpor right below it.
 	var/amInCoffin = is_valid_coffin()
 	if (blood_over_cap > 0)
@@ -125,7 +127,6 @@
 			to_chat(user, span_alert("You do not heal while your Masquerade ability is active."))
 			COOLDOWN_START(src, bloodsucker_spam_healing, BLOODSUCKER_SPAM_MASQUERADE)
 			return FALSE
-		fireheal = min(getFireLoss(), actual_regen)
 		mult *= 5 // Increase multiplier if we're sleeping in a coffin.
 		costMult *= COFFIN_HEAL_COST_MULT // Decrease cost if we're sleeping in a coffin.
 		user.extinguish_mob()
@@ -136,11 +137,6 @@
 		user.remove_all_embedded_objects() // Remove Embedded!
 		if(check_limbs(costMult))
 			return TRUE
-	// In Torpor, but not in a Coffin? Heal faster anyways.
-	else if(is_in_torpor())
-		var/fireloss = getFireLoss()
-		fireheal = min(fireloss, actual_regen) / 1.2 // 20% slower than being in a coffin
-		mult *= 3
 	// Heal if Damaged
 	if((bruteheal + fireheal) && mult != 0) // Just a check? Don't heal/spend, and return.
 		// We have damage. Let's heal (one time), and don't cost any blood if we cannot
