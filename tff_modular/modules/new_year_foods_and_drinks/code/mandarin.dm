@@ -2,9 +2,10 @@
 /obj/item/seeds/orange
 	mutatelist = list(/obj/item/seeds/lime, /obj/item/seeds/orange_3d, /obj/item/seeds/tff_mandarin)
 
-/obj/item/seeds/tff_mandarin
+/obj/item/seeds/mandarin
     name = "mandarin seed pack"
     desc = "These seeds grow into sweet mandarins packed with fragrant oils."
+	icon = "tff_modular/modules/new_year_foods_and_drinks/icons/mandarin.dmi"
     icon_state = "mandarin-seed"
     species = "mandarin"
     plantname = "Mandarin Tree"
