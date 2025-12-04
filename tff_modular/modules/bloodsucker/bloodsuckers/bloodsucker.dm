@@ -332,20 +332,6 @@
 	log_admin("[key_name(usr)][msg]")
 	new_owner.add_antag_datum(src)
 
-/datum/antagonist/bloodsucker/get_preview_icon()
-	var/icon/final_icon = render_preview_outfit(/datum/outfit/bloodsucker_outfit)
-	var/icon/split_icon = render_preview_outfit(/datum/outfit/job/engineer)
-
-	final_icon.Shift(WEST, ICON_SIZE_X / 2)
-	final_icon.Shift(EAST, ICON_SIZE_X / 2)
-
-	split_icon.Shift(EAST, ICON_SIZE_X / 2)
-	split_icon.Shift(WEST, ICON_SIZE_X / 2)
-
-	final_icon.Blend(split_icon, ICON_OVERLAY)
-
-	return finish_preview_icon(final_icon)
-
 /datum/antagonist/bloodsucker/ui_static_data(mob/user)
 	var/list/data = ability_ui_data(powers)
 	//we don't need to update this that much.
