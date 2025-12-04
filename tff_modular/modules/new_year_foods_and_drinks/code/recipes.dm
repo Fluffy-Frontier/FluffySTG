@@ -30,7 +30,7 @@
 	name = "Kraboviy salad"
 	reqs = list(
 		/obj/item/reagent_containers/cup/bowl = 1,
-		/obj/item/food/fishfillet = 2,
+		/obj/item/food/fishmeat = 2,
 		/obj/item/food/grown/corn = 1,
 		/obj/item/food/boiledegg = 1,
 		/datum/reagent/consumable/mayonnaise = 5,
@@ -51,7 +51,7 @@
 	name = "Shuba"
 	reqs = list(
 		/obj/item/reagent_containers/cup/bowl = 1,
-		/obj/item/food/fishfillet = 2,
+		/obj/item/food/fishmeat = 2,
 		/obj/item/food/boiledegg = 1,
 		/obj/item/food/grown/potato = 1,
 		/obj/item/food/grown/carrot = 1,

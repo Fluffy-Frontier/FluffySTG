@@ -1,4 +1,4 @@
-#define FOOD_NG_ICON 'tff_modular/modules/foods/icons/food_NG.dmi'
+#define food_ng_ICON 'tff_modular/modules/new_year_foods_and_drinks/icons/food_ng.dmi'
 
 /datum/reagent/consumable/ethanol/mandarin_martini
 	name = "Mandarin Martini"
@@ -10,7 +10,7 @@
 
 /datum/glass_style/drinking_glass/mandarin_martini
 	required_drink_type = /datum/reagent/consumable/ethanol/mandarin_martini
-	icon = FOOD_NG_ICON
+	icon = food_ng_ICON
 	icon_state = "manda_martini"
 	name = "Mandarin Martini"
 	desc = "Shaken by holiday cheer, not stirred."
@@ -25,7 +25,7 @@
 
 /datum/glass_style/drinking_glass/bluespace_tango
 	required_drink_type = /datum/reagent/consumable/ethanol/bluespace_tango
-	icon = FOOD_NG_ICON
+	icon = food_ng_ICON
 	icon_state = "tango"
 	name = "Bluespace Tango"
 	desc = "For partners separated by lightyears, but connected by flavor."
@@ -40,7 +40,7 @@
 
 /datum/glass_style/drinking_glass/mandarin_telepad
 	required_drink_type = /datum/reagent/consumable/ethanol/mandarin_telepad
-	icon = FOOD_NG_ICON
+	icon = food_ng_ICON
 	icon_state = "manda_telepad"
 	name = "Mandarin Telepad"
 	desc = "Screwdrivers are for carbons; this one is for tired machines."
@@ -54,7 +54,7 @@
 
 /datum/glass_style/drinking_glass/mandarinade
 	required_drink_type = /datum/reagent/consumable/mandarinade
-	icon = FOOD_NG_ICON
+	icon = food_ng_ICON
 	icon_state = "mandarinade"
 	name = "Mandarinade"
 	desc = "Fizzing citrus memories of snow crunching underfoot."
@@ -69,7 +69,7 @@
 
 /datum/glass_style/drinking_glass/mandarin_spritz
 	required_drink_type = /datum/reagent/consumable/ethanol/mandarin_spritz
-	icon = FOOD_NG_ICON
+	icon = food_ng_ICON
 	icon_state = "manda_spritz"
 	name = "Mandarin Spritz"
 	desc = "A sunset gradient crowned with frosty breath."
@@ -83,7 +83,7 @@
 
 /datum/glass_style/drinking_glass/mandarin_garibaldi
 	required_drink_type = /datum/reagent/consumable/mandarin_garibaldi
-	icon = FOOD_NG_ICON
+	icon = food_ng_ICON
 	icon_state = "garibaldi"
 	name = "Mandarin Garibaldi"
 	desc = "Foamy citrus for the designated reveler."
@@ -91,10 +91,8 @@
 /datum/chemical_reaction/drink/mandarin_martini
 	results = list(/datum/reagent/consumable/ethanol/mandarin_martini = 10)
 	required_reagents = list(
-		/datum/reagent/consumable/ethanol/gin = 4,
-		/datum/reagent/consumable/mandarinjuice = 4,
-		/datum/reagent/consumable/ethanol/vermouth = 1,
-		/datum/reagent/consumable/ice = 1,
+		/datum/reagent/consumable/ethanol/martini = 5
+		/datum/reagent/consumable/mandarinjuice = 5,
 	)
 	mix_message = "The shaker fills the air with citrus perfume."
 
@@ -146,5 +144,5 @@
 	)
 	mix_message = "Foam rises as soy milk and ginger soda meet citrus."
 
-#undef FOOD_NG_ICON
+#undef food_ng_ICON
 
