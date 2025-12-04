@@ -92,7 +92,7 @@
 	results = list(/datum/reagent/consumable/ethanol/mandarin_martini = 10)
 	required_reagents = list(
 		/datum/reagent/consumable/ethanol/martini = 5
-		/datum/reagent/consumable/mandarinjuice = 5,
+		/datum/reagent/consumable/mandarin_juice = 5,
 	)
 	mix_message = "The shaker fills the air with citrus perfume."
 
@@ -100,7 +100,7 @@
 	results = list(/datum/reagent/consumable/ethanol/bluespace_tango = 5)
 	required_reagents = list(
 		/datum/reagent/consumable/ethanol/duplex = 3,
-		/datum/reagent/consumable/mandarinjuice = 1,
+		/datum/reagent/consumable/mandarin_juice = 1,
 		/datum/reagent/consumable/ethanol/synthanol = 1,
 	)
 	mix_message = "Two luminous halves orbit each other before merging."
@@ -108,7 +108,7 @@
 /datum/chemical_reaction/drink/mandarin_telepad
 	results = list(/datum/reagent/consumable/ethanol/mandarin_telepad = 3)
 	required_reagents = list(
-		/datum/reagent/consumable/mandarinjuice = 1,
+		/datum/reagent/consumable/mandarin_juice = 1,
 		/datum/reagent/consumable/ethanol/synthanol = 1,
 		/datum/reagent/iron = 1,
 	)
@@ -117,7 +117,7 @@
 /datum/chemical_reaction/drink/mandarinade
 	results = list(/datum/reagent/consumable/mandarinade = 3)
 	required_reagents = list(
-		/datum/reagent/consumable/mandarinjuice = 1,
+		/datum/reagent/consumable/mandarin_juice = 1,
 		/datum/reagent/consumable/lemon_lime = 1,
 		/datum/reagent/consumable/sugar = 1,
 	)
@@ -126,7 +126,7 @@
 /datum/chemical_reaction/drink/mandarin_spritz
 	results = list(/datum/reagent/consumable/ethanol/mandarin_spritz = 10)
 	required_reagents = list(
-		/datum/reagent/consumable/mandarinjuice = 4,
+		/datum/reagent/consumable/mandarin_juice = 4,
 		/datum/reagent/consumable/ethanol/tequila = 3,
 		/datum/reagent/consumable/limejuice = 1,
 		/datum/reagent/consumable/menthol = 1,
@@ -137,7 +137,7 @@
 /datum/chemical_reaction/drink/mandarin_garibaldi
 	results = list(/datum/reagent/consumable/mandarin_garibaldi = 10)
 	required_reagents = list(
-		/datum/reagent/consumable/mandarinjuice = 5,
+		/datum/reagent/consumable/mandarin_juice = 5,
 		/datum/reagent/consumable/lemonjuice = 2,
 		/datum/reagent/consumable/soymilk = 2,
 		/datum/reagent/consumable/sol_dry = 1,

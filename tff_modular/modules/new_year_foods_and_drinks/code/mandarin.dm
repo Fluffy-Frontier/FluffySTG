@@ -22,7 +22,7 @@
         /datum/reagent/consumable/nutriment = 0.05,
     )
 
-/datum/reagent/consumable/mandarinjuice
+/datum/reagent/consumable/mandarin_juice
     name = "Mandarin Juice"
     description = "Bright, sweet mandarin juice with lingering winter spices."
     color = "#ff9b3a"

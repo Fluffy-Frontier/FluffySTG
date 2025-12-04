@@ -293,8 +293,8 @@
     juice_typepath = /datum/reagent/consumable/mandarinjuice
     wine_power = 55
     tastes = list(
-        "sweet mandarin juice" = 2,
-        "clove oil" = 1,
+        "sweet mandarin juice" = 8,
+        "clove oil" = 2,
     )
 
 #undef food_ng_ICON
