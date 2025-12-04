@@ -284,7 +284,7 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/grown/citrus/mandarin
-    seed = /obj/item/seeds/tff_mandarin
+    seed = /obj/item/seeds/mandarin
     name = "mandarin"
     desc = "A small, vividly orange citrus that smells like winter holidays."
     icon = food_ng_ICON
