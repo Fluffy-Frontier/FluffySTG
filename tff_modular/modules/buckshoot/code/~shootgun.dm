@@ -39,7 +39,7 @@
 
 // Buckshoot Roulette Shotgun
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game
+/obj/item/gun/ballistic/shotgun/buckshot_game
 	name = "\improper Buckshoot shotgun"
 	desc = "A modified shotgun designed for the Buckshoot Roulette game. It features a unique internal mechanism that loads and cycles a shuffled mix of live and blank rounds."
 	icon_state = "dshotgun_l"
@@ -57,7 +57,7 @@
 	var/last_shoot_result = ""
 	var/shotingself = FALSE
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/Initialize(mapload, datum/buckshoot_roulette_party/party)
+/obj/item/gun/ballistic/shotgun/buckshot_game/Initialize(mapload, datum/buckshoot_roulette_party/party)
 	. = ..()
 	if(party)
 		party_ref = WEAKREF(party)
@@ -65,12 +65,12 @@
 	chambered = null
 	magazine = null
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/examine(mob/user)
+/obj/item/gun/ballistic/shotgun/buckshot_game/examine(mob/user)
 	if(length(chambers))
 		. += span_notice("It has [length(chambers)] rounds left.")
 
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/attempt_pickup(mob/living/user, skip_grav)
+/obj/item/gun/ballistic/shotgun/buckshot_game/attempt_pickup(mob/living/user, skip_grav)
 	if(!party_ref)
 		return ..()
 	var/datum/buckshoot_roulette_party/party = party_ref.resolve()
@@ -83,25 +83,25 @@
 		return
 	return ..()
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/pre_attack(atom/target, mob/living/user, list/modifiers, list/attack_modifiers)
+/obj/item/gun/ballistic/shotgun/buckshot_game/pre_attack(atom/target, mob/living/user, list/modifiers, list/attack_modifiers)
 	if(shotingself)
 		return TRUE
 	INVOKE_ASYNC(src, PROC_REF(try_fire_gun), target, user, modifiers)
 	return TRUE
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/pre_attack_secondary(atom/target, mob/living/user, list/modifiers, list/attack_modifiers)
+/obj/item/gun/ballistic/shotgun/buckshot_game/pre_attack_secondary(atom/target, mob/living/user, list/modifiers, list/attack_modifiers)
 	if(shotingself)
 		return TRUE
 	INVOKE_ASYNC(src, PROC_REF(try_fire_gun), target, user, modifiers)
 	return TRUE
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/proc/check_gunpoint(mob/living/user, mob/living/target)
+/obj/item/gun/ballistic/shotgun/buckshot_game/proc/check_gunpoint(mob/living/user, mob/living/target)
 	for(var/datum/gunpoint/gunpoint in target.gunpointed)
 		if(gunpoint.source == user && gunpoint.target == target)
 			return TRUE
 	return FALSE
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/try_fire_gun(atom/target, mob/living/user, params)
+/obj/item/gun/ballistic/shotgun/buckshot_game/try_fire_gun(atom/target, mob/living/user, params)
 	if(!party_ref)
 		return ..()
 	if(shotingself)
@@ -121,7 +121,7 @@
 	return ..()
 
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/proc/attempt_shotself(mob/living/user)
+/obj/item/gun/ballistic/shotgun/buckshot_game/proc/attempt_shotself(mob/living/user)
 	if(shotingself)
 		return
 	shotingself = TRUE
@@ -135,7 +135,7 @@
 		return
 	fire_gun(user, user)
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/fire_gun(atom/target, mob/living/user, flag, params)
+/obj/item/gun/ballistic/shotgun/buckshot_game/fire_gun(atom/target, mob/living/user, flag, params)
 	if(!isliving(target))
 		return
 	var/mob/living/living_target = target
@@ -168,30 +168,30 @@
 	addtimer(CALLBACK(party, TYPE_PROC_REF(/datum/buckshoot_roulette_party, after_player_shoot), user, living_target, last_shoot_result), 1 SECONDS)
 	..()
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/attack_self(mob/living/user)
+/obj/item/gun/ballistic/shotgun/buckshot_game/attack_self(mob/living/user)
 	if(shotingself)
 		return TRUE
 	INVOKE_ASYNC(src, PROC_REF(try_fire_gun), user, user, list())
 	return TRUE
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/rack(mob/user)
+/obj/item/gun/ballistic/shotgun/buckshot_game/rack(mob/user)
 	. = ..()
 	load_chamber()
 
 /obj/item/gun/ballistic/shotgun/chamber_round(spin_cylinder, replace_new_round)
 	return
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/load_gun(obj/item/ammo, mob/living/user)
+/obj/item/gun/ballistic/shotgun/buckshot_game/load_gun(obj/item/ammo, mob/living/user)
 	return
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/proc/load_chamber()
+/obj/item/gun/ballistic/shotgun/buckshot_game/proc/load_chamber()
 	if(chambered)
 		return
 	if(!length(chambers))
 		return
 	chambered = pick_n_take(chambers)
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/proc/load_rounds(live_count = 0, blank_count = 0)
+/obj/item/gun/ballistic/shotgun/buckshot_game/proc/load_rounds(live_count = 0, blank_count = 0)
 	var/total = live_count + blank_count
 	if(total > 8 || total < 1)
 		return FALSE
@@ -209,10 +209,10 @@
 	return TRUE
 
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/attackby(obj/item/I, mob/user, params)
+/obj/item/gun/ballistic/shotgun/buckshot_game/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SAW || I.tool_behaviour == TOOL_WIRECUTTER)
 		saw_off(user)
 		return
 	return ..()
 
-/obj/item/gun/ballistic/shotgun/buckshoot_game/proc/saw_off(mob/user)
+/obj/item/gun/ballistic/shotgun/buckshot_game/proc/saw_off(mob/user)
