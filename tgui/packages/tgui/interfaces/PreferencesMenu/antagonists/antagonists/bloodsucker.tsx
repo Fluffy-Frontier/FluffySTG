@@ -1,4 +1,4 @@
-// THIS IS A NOVA SECTOR UI FILE
+// THIS IS A TFF UI FILE
 
 import { type Antagonist, Category } from '../base';
 
