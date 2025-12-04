@@ -290,7 +290,7 @@
     icon = food_ng_ICON
     icon_state = "mandarin"
     foodtypes = FRUIT | ORANGES
-    juice_typepath = /datum/reagent/consumable/mandarinjuice
+    juice_typepath = /datum/reagent/consumable/mandarin_juice
     wine_power = 55
     tastes = list(
         "sweet mandarin juice" = 8,
