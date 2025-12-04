@@ -1,4 +1,5 @@
 #define food_ng_ICON 'tff_modular/modules/new_year_foods_and_drinks/icons/food_ng.dmi'
+#define mandarin_ICON 'tff_modular/modules/new_year_foods_and_drinks/icons/mandarin.dmi'
 
 /obj/item/food/salad/olivier
 	name = "Olivier salad"
@@ -287,7 +288,7 @@
     seed = /obj/item/seeds/mandarin
     name = "mandarin"
     desc = "A small, vividly orange citrus that smells like winter holidays."
-    icon = food_ng_ICON
+    icon = mandarin_ICON
     icon_state = "mandarin"
     foodtypes = FRUIT | ORANGES
     juice_typepath = /datum/reagent/consumable/mandarin_juice
@@ -298,4 +299,5 @@
     )
 
 #undef food_ng_ICON
+#undef mandarin_ICON
 
