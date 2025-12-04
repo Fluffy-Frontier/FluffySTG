@@ -91,7 +91,7 @@
 /datum/chemical_reaction/drink/mandarin_martini
 	results = list(/datum/reagent/consumable/ethanol/mandarin_martini = 10)
 	required_reagents = list(
-		/datum/reagent/consumable/ethanol/martini = 5
+		/datum/reagent/consumable/ethanol/martini = 5,
 		/datum/reagent/consumable/mandarin_juice = 5,
 	)
 	mix_message = "The shaker fills the air with citrus perfume."
