@@ -16,7 +16,7 @@
 	power_flags = NONE
 	purchase_flags = BLOODSUCKER_CAN_BUY|GHOUL_CAN_BUY
 	bloodcost = 30
-	cooldown_time = 30 SECONDS
+	cooldown_time = 20 SECONDS
 	target_range = 4
 	power_activates_immediately = FALSE
 	unset_after_click = FALSE

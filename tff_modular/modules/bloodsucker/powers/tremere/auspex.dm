@@ -20,7 +20,7 @@
 	purchase_flags = TREMERE_CAN_BUY
 	bloodcost = 10
 	constant_bloodcost = 1
-	cooldown_time = 12 SECONDS
+	cooldown_time = 6 SECONDS
 	target_range = 2
 	power_activates_immediately = FALSE
 	prefire_message = "Right click to teleport"

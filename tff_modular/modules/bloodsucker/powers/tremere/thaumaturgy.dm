@@ -28,7 +28,7 @@
 	bloodcost = 5
 	constant_bloodcost = 0
 	// 5 seconds per charge
-	cooldown_time = 10 SECONDS
+	cooldown_time = 8 SECONDS
 	prefire_message = "Right click where you wish to fire."
 	click_to_activate = TRUE // you pay to replenish charges
 	power_activates_immediately = FALSE

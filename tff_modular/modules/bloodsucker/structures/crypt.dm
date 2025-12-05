@@ -85,24 +85,6 @@
 			if("Yes")
 				unbolt(user)
 	return CLICK_ACTION_SUCCESS
-/*
-/obj/structure/bloodsucker/bloodaltar
-	name = "bloody altar"
-	desc = "It is made of marble, lined with basalt, and radiates an unnerving chill that puts your skin on edge."
-/obj/structure/bloodsucker/bloodstatue
-	name = "bloody countenance"
-	desc = "It looks upsettingly familiar..."
-/obj/structure/bloodsucker/bloodportrait
-	name = "oil portrait"
-	desc = "A disturbingly familiar face stares back at you. Those reds don't seem to be painted in oil..."
-/obj/structure/bloodsucker/bloodbrazier
-	name = "lit brazier"
-	desc = "It burns slowly, but doesn't radiate any heat."
-/obj/structure/bloodsucker/bloodmirror
-	name = "faded mirror"
-	desc = "You get the sense that the foggy reflection looking back at you has an alien intelligence to it."
-/obj/item/restraints/legcuffs/beartrap/bloodsucker
-*/
 
 /obj/structure/bloodsucker/ghoulrack
 	name = "persuasion rack"

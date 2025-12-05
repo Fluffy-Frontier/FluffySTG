@@ -8,7 +8,7 @@
 	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_INCAPACITATED|AB_CHECK_LYING|AB_CHECK_PHASED|AB_CHECK_LYING
 	purchase_flags = BLOODSUCKER_CAN_BUY|GHOUL_CAN_BUY
 	bloodcost = 10
-	cooldown_time = 10 SECONDS
+	cooldown_time = 8 SECONDS
 	power_activates_immediately = FALSE
 	unset_after_click = FALSE
 
