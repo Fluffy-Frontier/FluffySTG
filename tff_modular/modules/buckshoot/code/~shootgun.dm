@@ -193,10 +193,9 @@
 	chambers.Cut(1, 2)
 
 /obj/item/gun/ballistic/shotgun/buckshot_game/proc/load_rounds(live_count = 0, blank_count = 0)
-	var/total = live_count + blank_count
-	if(total > 8 || total < 1)
-		return FALSE
-	chambers.Cut()
+	QDEL_LIST(chambers)
+	chambers = list()
+	qdel(chambered)
 	for(var/i in 1 to live_count)
 		chambers += new /obj/item/ammo_casing/shotgun/buckshoot/live(src)
 		playsound(get_turf(src), 'tff_modular/modules/buckshoot/sounds/load_shell.ogg', 100, TRUE)
