@@ -7,3 +7,9 @@
 #define COMSIG_BUCKSHOOT_GAME_ENDED "comsig_buckshoot_game_ended"
 // из /datum/buckshoot_roulette_party/proc/next_round() /datum/buckshoot_roulette_party, death_round
 #define COMSIG_BUCKSHOOT_NEXT_ROUND "comsig_buckshoot_next_round"
+
+GLOBAL_LIST_INIT(buckshot_game_items, list(
+	/obj/item/buckshot_game/cigarettes,
+	/obj/item/buckshot_game/glass,
+	/obj/item/buckshot_game/beer,
+))

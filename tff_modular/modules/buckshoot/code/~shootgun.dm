@@ -1,14 +1,14 @@
 // Buckshoot Roulette Ammunition
 
 /obj/projectile/bullet/shotgun_slug/buckshoot
-	name = "buckshoot slug"
+	name = "buckshot slug"
 	damage = 300
 	damage_type = OXY
 	armour_penetration = 100
 	icon_state = "slug"
 
 /obj/projectile/bullet/shotgun_slug/blankshoot
-	name = "buckshoot blank slug"
+	name = "buckshot blank slug"
 	damage = 0
 	damage_type = OXY
 	armour_penetration = 0
@@ -22,7 +22,7 @@
 	variance = 0
 
 /obj/item/ammo_casing/shotgun/buckshoot/blank
-	name = "buckshoot blank shell"
+	name = "buckshot blank shell"
 	desc = "A harmless blank shotgun shell for Buckshoot Roulette."
 	icon_state = "bshell"
 	projectile_type = /obj/projectile/bullet/shotgun_slug/blankshoot
@@ -32,7 +32,7 @@
 	..()
 
 /obj/item/ammo_casing/shotgun/buckshoot/live
-	name = "buckshoot live shell"
+	name = "buckshot live shell"
 	desc = "A deadly live shotgun shell for Buckshoot Roulette."
 	icon_state = "gshell"
 	projectile_type = /obj/projectile/bullet/shotgun_slug/buckshoot
@@ -40,7 +40,7 @@
 // Buckshoot Roulette Shotgun
 
 /obj/item/gun/ballistic/shotgun/buckshot_game
-	name = "\improper Buckshoot shotgun"
+	name = "\improper Buckshot shotgun"
 	desc = "A modified shotgun designed for the Buckshoot Roulette game. It features a unique internal mechanism that loads and cycles a shuffled mix of live and blank rounds."
 	icon_state = "dshotgun_l"
 	worn_icon_state = "shotgun_combat"
@@ -125,7 +125,7 @@
 	if(shotingself)
 		return
 	shotingself = TRUE
-	user.visible_message(span_danger("[user.name] нацеливается на себя с [src.name]!"))
+	user.visible_message(span_warning("[user.name] нацеливается на себя с [src.name]!"))
 	user.balloon_alert(user, "Вы собираетесь выстрелить в себя...")
 	var/ask_shoot_self = tgui_alert(user, "Выстрелить в себя?", "Ты хочешь выстрелить в себя?", list("Попытать удачу", "Нет"), timeout = 10 SECONDS)
 	if(ask_shoot_self != "Попытать удачу")
@@ -189,7 +189,8 @@
 		return
 	if(!length(chambers))
 		return
-	chambered = pick_n_take(chambers)
+	chambered = chambers[1]
+	chambers.Cut(1, 2)
 
 /obj/item/gun/ballistic/shotgun/buckshot_game/proc/load_rounds(live_count = 0, blank_count = 0)
 	var/total = live_count + blank_count
@@ -204,7 +205,8 @@
 		chambers += new /obj/item/ammo_casing/shotgun/buckshoot/blank(src)
 		playsound(get_turf(src), 'tff_modular/modules/buckshoot/sounds/load_shell.ogg', 100, TRUE)
 		sleep(0.2 SECONDS)
-	chambers = shuffle(chambers)
+	for(var/i = 1 to 3)
+		chambers = shuffle(chambers)
 	load_chamber()
 	return TRUE
 

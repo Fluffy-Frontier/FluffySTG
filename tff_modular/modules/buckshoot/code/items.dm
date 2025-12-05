@@ -1,273 +1,160 @@
-/obj/structure/chair/buckshot
-	name = "buckshoot chair"
-	desc = "A sturdy chair with integrated system of blood transfer and defibrilators."
-	icon_state = "echair1"
-	obj_flags = INDESTRUCTIBLE|BOMB_PROOF|LAVA_PROOF|FIRE_PROOF
-
+/obj/item/buckshot_game
+	name = "buckshot game item"
+	// Описание предмета для игры
+	var/use_desc = "This item is used to manage a game of buckshot roulette."
+	// Владелец предмета
+	var/mob/living/carbon/human/owner_player = null
+	// Пати к которой привязан предмет
 	var/datum/buckshoot_roulette_party/party = null
+	// Можно ли применить предмет к мертому игроку
+	var/use_on_death = FALSE
 
-/obj/structure/chair/buckshot/buckle_mob(mob/living/M, force, check_loc)
+	obj_flags = INDESTRUCTIBLE|BOMB_PROOF|LAVA_PROOF|FIRE_PROOF
+
+/obj/item/buckshot_game/Initialize(mapload, mob/living/carbon/human/owner, datum/buckshoot_roulette_party/party_instance)
+	. = ..()
+	owner_player = owner
+	party = party_instance
+
+
+/obj/item/buckshot_game/examine(mob/user)
+	. = ..()
+	. += "\n" + span_notice(use_desc)
+
+
+/obj/item/buckshot_game/attempt_pickup(mob/living/user, skip_grav)
+	. = ..()
 	if(!party)
-		return ..()
-	if(party.game_started)
-		to_chat(M, span_warning("Ты не можешь сесть на кресло после начала игры!"))
-		return
-	return ..()
-
-
-/obj/structure/chair/buckshot/unbuckle_mob(mob/living/buckled_mob, force, can_fall)
-	if(!party)
-		return ..()
-	if(party.game_started && !party.can_free_exit)
-		to_chat(buckled_mob, span_warning("Ты не можешь покинуть игру после начала! Нужно было лучше читать отказ от ответственности."))
-		return
-	return ..()
-
-
-/obj/structure/chair/buckshot/proc/register_player(datum/buckshoot_roulette_party/party_instance)
-	var/mob/living/carbon/human/player = get_current_player()
-	if(!player)
 		return FALSE
-	if(!party_instance)
-		return FALSE
-	var/obj/structure/crt_mechanims/ctr = party_instance.get_ctr_for_player(player)
-	player.AddComponent(/datum/component/buckshoot_roulette_participant, party_instance, src, ctr)
-	return player
-
-
-/obj/structure/chair/buckshot/proc/get_current_player()
-	if(!has_buckled_mobs())
-		return null
-	for(var/mob/living/buckled in buckled_mobs)
-		if(!ishuman(buckled))
-			return null
-		return buckled
-	return null
-
-
-
-/obj/structure/crt_mechanims
-	name = "crt"
-	desc = "A device equipped with a defibrillator, a blood transfusion system, and medication. It has several charges."
-
-	icon = 'tff_modular/modules/buckshoot/icons/crt.dmi'
-	icon_state = "crt0"
-	base_icon_state = "crt"
-	obj_flags = INDESTRUCTIBLE|BOMB_PROOF|LAVA_PROOF|FIRE_PROOF
-
-	// Ссылка на компонент участника пати
-	var/datum/component/buckshoot_roulette_participant/participant_comp = null
-	// ССылка на стол
-	var/obj/structure/table/buckshot/main_table = null
-
-
-/obj/structure/crt_mechanims/examine(mob/user)
-	. = ..()
-	if(participant_comp)
-		var/charges = participant_comp.get_crt_charges()
-		. += span_notice("This CRT has [charges] charge(s) remaining.")
-
-/obj/structure/crt_mechanims/Initialize(mapload, obj/structure/table/main_table)
-	. = ..()
-	src.main_table = main_table
-
-/obj/structure/crt_mechanims/proc/set_participant(datum/component/buckshoot_roulette_participant/comp)
-	participant_comp = comp
-	update_icon_state()
-
-/obj/structure/crt_mechanims/update_icon_state()
-	. = ..()
-	if(!participant_comp)
-		icon_state = base_icon_state + "0"
-		return
-	var/charges = participant_comp.get_crt_charges()
-	icon_state = base_icon_state + "[charges]"
-
-/obj/structure/crt_mechanims/proc/revive_player()
-	if(!participant_comp)
-		return
-	var/mob/living/carbon/human/player = participant_comp.player
-	if(!player)
-		return
-	if(!player.stat == DEAD)
-		return
-	playsound(src, 'tff_modular/modules/buckshoot/sounds/defib_discharge.ogg', 50, 1)
-	sleep(1.5 SECONDS)
-	player.notify_revival("Your heart is being defibrillated!")
-	player.grab_ghost() // Возращаем призрака в тело
-
-	player.revive(HEAL_DAMAGE | HEAL_ORGANS | HEAL_BLOOD)
-	player.set_heartattack(FALSE)
-	player.setOxyLoss(0)
-	player.setToxLoss(0)
-	player.remove_status_effect(/datum/status_effect/neck_slice)
-
-	player.reagents.add_reagent(/datum/reagent/blood, 20, list(
-		"blood_DNA" = player.dna.unique_enzymes,
-		"blood_type" = player.dna.blood_type
-	))
-
-	player.emote("gasp")
-	player.set_jitter_if_lower(10 SECONDS)
-	player.flash_act()
-	log_game("[key_name(player)] was forcibly revived by Buckshoot crt device.")
-	to_chat(player, span_userdanger("Your heart explodes back to life! You're back in the game!"))
-	SEND_SOUND(player, 'tff_modular/modules/buckshoot/sounds/heartbeat_effect.ogg')
-
-
-
-/obj/structure/table/buckshot_table_part
-	// icon_state - устанавливается динамически
-	icon = null
-	icon_state = ""
-	base_icon_state = ""
-	smoothing_flags = NONE
-	smoothing_groups = null
-	canSmoothWith = null
-	icon = 'tff_modular/modules/buckshoot/icons/crt.dmi'
-	obj_flags = INDESTRUCTIBLE|BOMB_PROOF|LAVA_PROOF|FIRE_PROOF
-
-	var/obj/structure/table/buckshot/main_table = null
-
-
-/obj/structure/table/buckshot_table_part/Initialize(mapload, obj/structure/table_frame/frame_used, obj/item/stack/stack_used)
-	. = ..()
-	RemoveElement(/datum/element/connect_loc)
-	RemoveElement(/datum/element/contextual_screentip_bare_hands)
-
-/obj/structure/table/buckshot_table_part/flip_table(new_dir)
-	return
-
-/obj/structure/table/buckshot_table_part/unflip_table()
-	return
-
-/obj/structure/table/buckshot_table_part/attack_hand_secondary(mob/user, list/modifiers)
-	return main_table.attack_hand_secondary(user, modifiers)
-
-
-/obj/structure/table/buckshot
-	name = "buckshot table"
-	desc = "A sturdy table used in the game of buckshot roulette."
-	icon = 'tff_modular/modules/buckshoot/icons/buckshot_table.dmi'
-	icon_state = "multi-main"
-	base_icon_state = "multi"
-	smoothing_flags = NONE
-	smoothing_groups = null
-	canSmoothWith = null
-
-
-	obj_flags = INDESTRUCTIBLE|BOMB_PROOF|LAVA_PROOF|FIRE_PROOF
-	// Пати что привязана к столу
-	var/datum/buckshoot_roulette_party/party = null
-	// Части стола, для большого стола 3 на 3
-	var/list/parts
-
-	var/list/crts_by_dirs = list()
-
-
-/obj/structure/table/buckshot/Initialize(mapload, obj/structure/table_frame/frame_used, obj/item/stack/stack_used)
-	. = ..()
-	RemoveElement(/datum/element/connect_loc)
-	RemoveElement(/datum/element/contextual_screentip_bare_hands)
-	party = new(src)
-	build_table()
-	create_crts()
-
-/obj/structure/table/buckshot/flip_table(new_dir)
-	return
-
-/obj/structure/table/buckshot/unflip_table()
-	return
-
-/obj/structure/table/buckshot/Destroy(force)
-	. = ..()
-	if(party)
-		party.end_game(TRUE)
-	for(var/obj/structure/table/buckshot_table_part/part in parts)
-		if(!QDELETED(part))
-			qdel(part)
-	parts = null
-
-/obj/structure/table/buckshot/proc/build_table()
-	parts = list()
-	for(var/i = -1; i <= 1; i++)
-		for(var/j = -1; j <= 1; j++)
-			if(i == 0 && j == 0)
-				icon_state = base_icon_state + "-center"
-				continue // пропускаем цетральную часть
-			var/i_str = (i < 0 ? "n" + "[abs(i)]" : "[i]")
-			var/j_str = (j < 0 ? "n" + "[abs(j)]" : "[j]")
-			var/obj/structure/table/buckshot_table_part/part = new(src)
-			part.icon = icon
-			part.icon_state = base_icon_state + "-" + i_str + "_" + j_str
-			parts += part
-			part.main_table = src
-			part.name = name
-			part.desc = desc
-			part.forceMove(get_turf(locate(src.x + i, src.y + j, src.z)))
-
-/obj/structure/table/buckshot/proc/create_crts()
-	crts_by_dirs["[NORTH]"] = create_crt(NORTH)
-	crts_by_dirs["[EAST]"] = create_crt(EAST)
-	crts_by_dirs["[SOUTH]"] = create_crt(SOUTH)
-	crts_by_dirs["[WEST]"] = create_crt(WEST)
-
-
-
-/obj/structure/table/buckshot/proc/create_crt(direction)
-	var/turf/target_turf = get_turf_in_angle(dir2angle(direction), get_turf(src), 1)
-	if(!target_turf)
-		return null
-
-	// var/opposite_dir = turn(direction, 180)
-	var/obj/structure/crt_mechanims/crt = new(target_turf, src)
-	crt.dir = turn(get_dir(target_turf, get_turf(src)), 180)
-	return crt
-
-/obj/structure/table/buckshot/proc/get_parts()
-	return parts
-
-/obj/structure/table/buckshot/attack_hand_secondary(mob/user, list/modifiers)
-	INVOKE_ASYNC(src, PROC_REF(try_start_game), user)
-	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-
-/obj/structure/table/buckshot/proc/try_start_game(mob/user)
-	if(!party)
-		return
 	if(party.game_started)
-		to_chat(user, span_warning("Игра уже началась!"))
-		balloon_alert(user, "Игра уже началась!")
+		return FALSE
+	if(user != owner_player)
+		to_chat(user, span_warning("Это не твой предмет!"))
+		return FALSE
+
+
+/obj/item/buckshot_game/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(!ishuman(interacting_with) && !istype(interacting_with, /obj/item/gun/ballistic/shotgun/buckshot_game))
+		return ..()
+
+	if(!party.game_started)
+		to_chat(user, span_warning("Игра еще не началась!"))
+		return ITEM_INTERACT_SUCCESS
+	if(user != owner_player)
+		to_chat(user, span_warning("Это не твой предмет!"))
+		return ITEM_INTERACT_SUCCESS
+	if(party.current_turn_player != user)
+		to_chat(user, span_warning("Сейчас не твой ход!"))
+		return ITEM_INTERACT_SUCCESS
+	if(istype(interacting_with, /obj/item/gun/ballistic/shotgun/buckshot_game))
+		use_on_shotgun(interacting_with, user)
+	if(istype(interacting_with, /mob/living/carbon/human))
+		var/mob/living/carbon/human/player = interacting_with
+		if(!party.is_participant(player))
+			to_chat(user, span_warning("Этот игрок не участвует в игре!"))
+			return ITEM_INTERACT_SUCCESS
+		if(player.stat == DEAD && !use_on_death)
+			to_chat(user, span_warning("Нельзя использовать предмет на мертвого игрока!"))
+			return ITEM_INTERACT_SUCCESS
+		if(player == user)
+			use_on_self(player)
+		else
+			use_on_other(user, player)
+	return ITEM_INTERACT_SUCCESS
+
+/obj/item/buckshot_game/ranged_interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(!ishuman(interacting_with) && !istype(interacting_with, /obj/item/gun/ballistic/shotgun/buckshot_game))
+		return ..()
+	if(!party.game_started)
+		to_chat(user, span_warning("Игра еще не началась!"))
+		return ITEM_INTERACT_SUCCESS
+	if(ishuman(interacting_with))
+		var/mob/living/carbon/human/player = interacting_with
+		if(!party.is_participant(player))
+			to_chat(user, span_warning("Этот игрок не участвует в игре!"))
+			return ITEM_INTERACT_SUCCESS
+		if(player == user)
+			use_on_self(player)
+		else
+			use_on_other(user, player)
+
+/obj/item/buckshot_game/proc/use_on_other(mob/living/carbon/human/player, mob/living/carbon/human/other_player)
+	return
+
+
+/obj/item/buckshot_game/proc/use_on_self(mob/living/carbon/human/player)
+	return
+
+
+/obj/item/buckshot_game/proc/use_on_shotgun(obj/item/gun/ballistic/shotgun/buckshot_game/gun, mob/living/carbon/human/player)
+	return
+
+
+/obj/item/buckshot_game/cigarettes
+	name = "premium cigarettes"
+	desc = "A pack of cigarettes."
+	icon = 'icons/obj/cigarettes.dmi'
+	icon_state = "robust"
+	use_desc = "Восстанавливают один заряд CRT механизма."
+
+
+/obj/item/buckshot_game/cigarettes/use_on_self(mob/living/carbon/human/player)
+	player.balloon_alert_to_viewers("Выкуривает сигарету.")
+	var/datum/component/buckshoot_roulette_participant/participant = player.GetComponent(/datum/component/buckshoot_roulette_participant)
+	if(!participant)
+		to_chat(player, span_warning("Вы не участвуете в игре!"))
 		return
-	if(!istype(user))
+	if(participant.lives >= 3)
+		to_chat(player, span_warning("У вас уже максимальное количество жизней!"))
 		return
-	INVOKE_ASYNC(party, TYPE_PROC_REF(/datum/buckshoot_roulette_party, attempt_start_game), user)
-
-
-
-/obj/structure/table/buckshot/proc/get_crt_by_direction(direction)
-	return crts_by_dirs[num2text(direction)]
-
-/obj/structure/table/buckshot/proc/get_all_crts()
-	var/list/crts = list()
-	for(var/dir in crts_by_dirs)
-		var/crt = crts_by_dirs[dir]
-		if(crt)
-			crts += crt
-	return crts
-
-/obj/structure/table/buckshot/proc/get_ctr_for_player(mob/living/carbon/human/player)
-	return get_crt_by_direction(get_dir(src, player))
-
-/obj/structure/table/buckshot/proc/on_shotgun_begin_reload(obj/item/gun/ballistic/shotgun/buckshot_game/gun)
-
-
-/obj/structure/table/buckshot/proc/on_shotgun_reloaded(obj/item/gun/ballistic/shotgun/buckshot_game/gun)
-
-
-/obj/structure/table/buckshot/proc/on_shotgun_return_to_table(obj/item/gun/ballistic/shotgun/buckshot_game/gun)
-
-
-/obj/structure/table/buckshot/proc/move_shotgun_to_player(obj/item/gun/ballistic/shotgun/buckshot_game/gun, mob/living/player)
-	if(!gun)
+	playsound(src, 'tff_modular/modules/buckshoot/sounds/item_cigarettes.ogg', 50, 1)
+	if(!do_after(player, 5 SECONDS))
 		return
-	gun.throw_at(player, 1, 3, src, FALSE)
+	participant.add_lives(1)
+	qdel(src)
+
+
+/obj/item/buckshot_game/glass
+	name = "Magnifying glass"
+	desc = "A Magnifying glass."
+	use_desc = "Позволяет проверить какой патрон заряжен в пробовике."
+	icon = 'modular_nova/modules/primitive_production/icons/prim_fun.dmi'
+	icon_state = "magnifying_glass"
+
+/obj/item/buckshot_game/glass/use_on_shotgun(obj/item/gun/ballistic/shotgun/buckshot_game/gun, mob/living/carbon/human/player)
+	. = ..()
+	if(!gun.chambered)
+		to_chat(player, span_warning("В пробовике нет патрона!"))
+		return
+	player.balloon_alert_to_viewers("Использует лупу, чтобы проверить патрон в дробовике.")
+	playsound(src, 'tff_modular/modules/buckshoot/sounds/item_magnifier.ogg', 50, 1)
+	if(!do_after(player, 3 SECONDS))
+		return
+	var/obj/item/ammo_casing/shotgun/buckshoot/round = gun.chambered
+	var/msg = "В дробовике заряжен "
+	if(istype(round, /obj/item/ammo_casing/shotgun/buckshoot/live))
+		msg += "боевой патрон."
+	else if(istype(round, /obj/item/ammo_casing/shotgun/buckshoot/blank))
+		msg += "холостой патрон."
+	else
+		msg += "неизвестный патрон."
+	to_chat(player, span_notice(msg))
+	qdel(src)
+
+
+/obj/item/buckshot_game/beer
+	name = "space beer"
+	desc = "Canned beer. In space."
+	icon = 'icons/obj/drinks/soda.dmi'
+	icon_state = "space_beer"
+	use_desc = "Позволяет передергнуть затвор дробовика."
+
+/obj/item/buckshot_game/beer/use_on_shotgun(obj/item/gun/ballistic/shotgun/buckshot_game/gun, mob/living/carbon/human/player)
+	. = ..()
+	playsound(src, 'tff_modular/modules/buckshoot/sounds/item_beer.ogg', 50, 1)
+	player.balloon_alert_to_viewers("Пьет пиво.")
+	if(!do_after(player, 5 SECONDS))
+		return
+	gun.rack(player)
+	qdel(src)
+
