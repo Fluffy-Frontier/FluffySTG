@@ -1,0 +1,19 @@
+/datum/preference/choiced/entombed_skin/init_possible_values()
+	return list(
+		"Standard",
+		"Civilian",
+		//"Advanced",
+		"Atmospheric",
+		"Corpsman",
+		//"Cosmohonk",
+		"Engineering",
+		//"Infiltrator",
+		//"Interdyne",
+		//"Loader",
+		"Medical",
+		"Mining",
+		"Prototype",
+		//"Security",
+		"Colonist",
+		//"Tarkon",
+	)
