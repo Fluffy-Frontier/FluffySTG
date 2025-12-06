@@ -440,6 +440,8 @@
 	/// Clear Disabilities & Organs
 	heal_vampire_organs()
 
+	owner.current.add_actionspeed_modifier(/datum/actionspeed_modifier/bloodsucker)
+
 /**
  * ##clear_power_and_stats()
  *

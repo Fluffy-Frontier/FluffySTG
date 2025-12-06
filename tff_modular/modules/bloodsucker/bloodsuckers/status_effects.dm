@@ -73,3 +73,6 @@
 /datum/movespeed_modifier/mesmerize_slowdown
 	blacklisted_movetypes = (FLYING|FLOATING)
 	multiplicative_slowdown = 0.5
+
+/datum/actionspeed_modifier/bloodsucker
+	multiplicative_slowdown = -0.2
