@@ -1,7 +1,7 @@
 /// Used by Ghouls
 /datum/action/cooldown/bloodsucker/recuperate
 	name = "Sanguine Recuperation"
-	desc = "Quickly heals you overtime using your master's blood, in exchange for some of your own blood and effort."
+	desc = "Quickly heals you overtime using your blood."
 	button_icon_state = "power_recup"
 	power_explanation = "Recuperate:\n\
 		Activating this Power will begin to heal your wounds.\n\
@@ -14,7 +14,8 @@
 	bloodcost = 5
 	cooldown_time = 10 SECONDS
 	level_current = -1
-	var/healing = 2
+	constant_bloodcost = 2
+	var/healing = -2
 
 /datum/action/cooldown/bloodsucker/recuperate/can_use(mob/living/carbon/user, trigger_flags)
 	. = ..()
@@ -41,11 +42,10 @@
 	var/datum/antagonist/ghoul/ghouldatum = IS_GHOUL(user)
 	var/datum/antagonist/bloodsucker/suckdatum = IS_BLOODSUCKER(user)
 	var/healing_amount = ((suckdatum.GetRank() * 0.5) + healing)
-	if(!ghouldatum || QDELETED(ghouldatum.master))
+	if(ghouldatum && QDELETED(ghouldatum.master))
 		to_chat(owner, span_warning("No master to draw blood from!"))
 		DeactivatePower()
 		return
-	ghouldatum.master.AdjustBloodVolume(-1)
 	user.adjustBruteLoss(healing_amount, updating_health = FALSE)
 	user.adjustToxLoss(healing_amount, forced = TRUE, updating_health = FALSE)
 	user.adjustFireLoss(healing_amount, updating_health = FALSE)
