@@ -190,7 +190,7 @@
 			apply_damage(damage, BRUTE, affecting, run_armor_check(affecting, MELEE))
 		return TRUE
 
-// FLUFFY FRONTIER EDIT BEGIN: TGMC_XENOS - moved to: tff_modular\modules\tgmc_xenos\code\human_defense.dm
+// FLUFFY FRONTIER EDIT BEGIN: TGMC_XENOS - moved to: tff_modular\modules\tgmc_xenos\code\defense\human_defense.dm
 /*
 /mob/living/carbon/human/attack_alien(mob/living/carbon/alien/adult/user, list/modifiers)
 	. = ..()
