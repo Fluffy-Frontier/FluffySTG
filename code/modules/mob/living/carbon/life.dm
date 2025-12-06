@@ -185,7 +185,7 @@
  * Arguments:
  * * breath: A gas mixture to test, or null.
  */
-/mob/living/carbon/check_breath(datum/gas_mixture/breath)
+/mob/living/carbon/proc/check_breath(datum/gas_mixture/breath)
 	. = TRUE
 
 	if(HAS_TRAIT(src, TRAIT_GODMODE))

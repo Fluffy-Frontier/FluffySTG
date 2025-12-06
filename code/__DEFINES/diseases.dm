@@ -101,10 +101,10 @@ DEFINE_BITFIELD(spread_flags, list(
 #define DISEASE_SLEEPING_RECOVERY_MULTIPLIER 6
 /// Final Cure Chance Multiplier - multiplies the disease's cure chance to get the probability of moving from stage 1 to a final cure.
 //// Must be greater than zero for diseases to self cure.
-#define DISEASE_FINAL_CURE_CHANCE_MULTIPLIER 3
+#define DISEASE_FINAL_CURE_CHANCE_MULTIPLIER 6
 /// Symptom Offset Duration - number of cycles over which sleeping/having spaceacillin or a slowdown effect can prevent symptoms appearing
 //// Set to maximum # of cycles you want to be able to offset symptoms. Scales down linearly over time.
-#define DISEASE_SYMPTOM_OFFSET_DURATION 100
+#define DISEASE_SYMPTOM_OFFSET_DURATION 200
 
 /// Symptom Frequency Modifier
 //// Raise to make symptoms fire less frequently, lower to make them fire more frequently. Keep at 0 or above.
