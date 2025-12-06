@@ -1,7 +1,6 @@
-/obj/item/organ/lungs/proc/too_much_miasma(mob/living/carbon/breather, datum/gas_mixture/breath, miasma_pp, old_miasma_pp)
+/obj/item/organ/lungs/too_much_miasma(mob/living/carbon/breather, datum/gas_mixture/breath, miasma_pp, old_miasma_pp)
 	// Inhale Miasma. Exhale nothing.
 	breathe_gas_volume(breath, /datum/gas/miasma)
-	// FLUFFY FRONTIER ADDITION START
 	// Miasma sickness
 	if(prob(0.5 * miasma_pp))
 		var/datum/disease/advance/miasma_disease = new /datum/disease/advance/random(max_symptoms = min(round(max(miasma_pp / 2, 1), 1), 6), max_level = min(round(max(miasma_pp, 1), 1), 8))
@@ -10,7 +9,6 @@
 		if(breather.CanContractDisease(miasma_disease))
 			miasma_disease.name = "Unknown"
 			breather.contract_airborne_disease(miasma_disease)
-	// FLUFFY FRONTIER ADDITION END
 	// Miasma side effects
 	if (HAS_TRAIT(breather, TRAIT_ANOSMIA)) //Anosmia quirk holder cannot smell miasma, but can get diseases from it.
 		return
