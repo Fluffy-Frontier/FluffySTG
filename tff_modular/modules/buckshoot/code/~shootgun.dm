@@ -178,7 +178,7 @@
 	. = ..()
 	load_chamber()
 
-/obj/item/gun/ballistic/shotgun/chamber_round(spin_cylinder, replace_new_round)
+/obj/item/gun/ballistic/shotgun/buckshot_game/chamber_round(spin_cylinder, replace_new_round)
 	return
 
 /obj/item/gun/ballistic/shotgun/buckshot_game/load_gun(obj/item/ammo, mob/living/user)
