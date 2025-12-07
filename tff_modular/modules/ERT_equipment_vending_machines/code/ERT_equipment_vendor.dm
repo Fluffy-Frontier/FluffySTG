@@ -143,7 +143,7 @@
 				/obj/item/gun/ballistic/automatic/xhihao_smg = 2,
 				/obj/item/gun/ballistic/automatic/nt20 = 2,
 				/obj/item/gun/ballistic/automatic/laser = 2,
-				/obj/item/gun/energy/laser/carbine/cybersun/black_market_trader = 2,
+				/obj/item/gun/energy/laser/cybersun/black_market_trader = 2,
 				/obj/item/gun/ballistic/shotgun/automatic/combat/compact = 2,
 				/obj/item/gun/ballistic/shotgun/automatic/combat = 2,
 				/obj/item/gun/ballistic/automatic/sol_rifle/marksman = 2,
