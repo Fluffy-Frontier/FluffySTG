@@ -1,4 +1,5 @@
 #define IS_HYPNOTIZED(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/hypnotized))
+#define IS_OBSESSED(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/obsessed))
 
 /// Школа внушения. 7 спеллов
 /// Psyonic assay - скан, является ли человек псиоником
@@ -207,10 +208,12 @@
 	text_to_show += span_notice("You try to read their job: ") + boxed_message(span_italics(get_job_fluff(patient)))
 	if(patient.mind.enslaved_to || IS_HYPNOTIZED(patient))
 		text_to_show += span_boldnotice("[patient.p_Their()] will is not free.") + "<br>"
+	if(IS_OBSESSED(patient))
+		text_to_show += span_boldnotice("[patient.p_Their()] mind is assaulted by voices within. They should visit a brain surgeon.") + "<br>"
 	var/datum/mind/mind_to_read = patient.mind
 	if(prob(20 * cast_power) && mind_to_read.antag_datums)
 		if(IS_WIZARD(patient))
-			text_to_show += span_notice("You can feel strong potential pulsing in this individual.") + "<br>"
+			text_to_show += span_notice("You can feel a strong potential pulsating in this individual.") + "<br>"
 		else if(IS_HERETIC(patient))
 			text_to_show += span_notice("Reality bends around you and goes back to normal, as you try to read [patient.p_their()] mind.") + "<br>"
 			var/mob/living/carbon/human/human_owner = owner
@@ -244,7 +247,7 @@
 	else if(patient_job.departments_bitflags & DEPARTMENT_BITFLAG_SCIENCE)
 		text_to_return += "This person is an egghead." + "<br>"
 	else if(patient_job.departments_bitflags & DEPARTMENT_BITFLAG_MEDICAL)
-		text_to_return += "This person is accustomed with wounds, blood and etc." + "<br>"
+		text_to_return += "This person is accustomed with wounds, blood and their treatment." + "<br>"
 	else if(patient_job.departments_bitflags & DEPARTMENT_BITFLAG_SILICON)
 		text_to_return += "This is en etenral mankinds servant." + "<br>"
 	else if(patient_job.departments_bitflags & DEPARTMENT_BITFLAG_ASSISTANT)
@@ -482,3 +485,4 @@
 	cast_on.adjust_temp_blindness( (10 + cast_power * 2) SECONDS)
 
 #undef IS_HYPNOTIZED
+#undef IS_OBSESSED

@@ -133,8 +133,8 @@
 		if(JOB_UNAVAILABLE_SLOTFULL)
 			return "[jobtitle] is already filled to capacity."
 		//NOVA EDIT ADDITION
-		if(JOB_NOT_VETERAN)
-			return "You need to be veteran to join as [jobtitle]."
+		if(JOB_NOT_NOVA_STAR)
+			return "You need to be veteran to join as [jobtitle]." // FLUFFY FRONTIER EDIT - ORIGINAL: return "You need to be Nova star to join as [jobtitle]."
 		if(JOB_UNAVAILABLE_QUIRK)
 			return "[jobtitle] is restricted due to your selected quirks."
 		if(JOB_UNAVAILABLE_LANGUAGE)
@@ -178,8 +178,8 @@
 		return JOB_UNAVAILABLE_LANGUAGE
 	if(job.has_banned_quirk(client.prefs))
 		return JOB_UNAVAILABLE_QUIRK
-	if(job.veteran_only && !SSplayer_ranks.is_veteran(client))
-		return JOB_NOT_VETERAN
+	if(job.nova_stars_only && !SSplayer_ranks.is_nova_star(client))
+		return JOB_NOT_NOVA_STAR
 	if(job.has_banned_species(client.prefs))
 		return JOB_UNAVAILABLE_SPECIES
 	//NOVA EDIT END
@@ -275,8 +275,12 @@
 	if(CONFIG_GET(flag/allow_latejoin_antagonists) && !EMERGENCY_PAST_POINT_OF_NO_RETURN && humanc) //Borgs aren't allowed to be antags. Will need to be tweaked if we get true latejoin ais.
 		SSdynamic.on_latejoin(humanc)
 
-	if((job.job_flags & JOB_ASSIGN_QUIRKS) && humanc && CONFIG_GET(flag/roundstart_traits))
-		SSquirks.AssignQuirks(humanc, humanc.client)
+	if(humanc)
+		if(job.job_flags & JOB_ASSIGN_QUIRKS)
+			if(CONFIG_GET(flag/roundstart_traits))
+				SSquirks.AssignQuirks(humanc, humanc.client)
+		else // clear any personalities the prefs added since our job clearly does not want them
+			humanc.clear_personalities()
 
 	if(humanc) // Quirks may change manifest datapoints, so inject only after assigning quirks
 		GLOB.manifest.inject(humanc, person_client = humanc.client) // NOVA EDIT - RP Records - ORIGINAL: GLOB.manifest.inject(humanc)

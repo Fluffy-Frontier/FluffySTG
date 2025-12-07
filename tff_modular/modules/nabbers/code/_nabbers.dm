@@ -4,7 +4,7 @@
 	name = "Giant Armored Serpentid"
 	id = SPECIES_NABBER
 	can_augment = FALSE
-	veteran_only = TRUE
+	nova_stars_only = TRUE
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CHUNKYFINGERS_IGNORE_BATON,
@@ -281,7 +281,6 @@
 		/datum/quirk/item_quirk/photographer,
 		/datum/quirk/pineapple_hater,
 		/datum/quirk/pineapple_liker,
-		/datum/quirk/snob,
 		/datum/quirk/transhumanist,
 		/datum/quirk/vegetarian,
 		/datum/quirk/canine_aspect,
@@ -320,7 +319,6 @@
 		/datum/quirk/item_quirk/pet_owner,
 		/datum/quirk/skittish,
 		/datum/quirk/spacer_born,
-		/datum/quirk/item_quirk/spiritual,
 		/datum/quirk/hard_soles, // Встроен
 		/datum/quirk/linguist,
 		/datum/quirk/sharpclaws,
