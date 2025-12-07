@@ -3,7 +3,7 @@
 
 /obj/item/food/salad/olivier
 	name = "Olivier salad"
-	desc = "A heaping bowl of diced potatoes, eggs, sausage, pickles, and far too much mayonnaise."
+	desc = "Traditional pan-slavic cuisine usually served on important dates, often on New Year celebration. True slavs serve this fantastic mix of  boiled eggs, mayonaise, meat, marinated pickles, potatoes, peas and carrots - in a giant plastic bath tub called "tazik". But others decide to serve it in regular bowl"
 	icon = food_ng_ICON
 	icon_state = "olivie"
 	food_reagents = list(
@@ -21,7 +21,7 @@
 
 /obj/item/food/salad/vinegret
 	name = "vinegret salad"
-	desc = "Red beet-root tossed with peas, carrots, pickles, and olive oil."
+	desc = " Who would have thought red beet-root can be so tasty? Red-purplish salad mixed with nicely diced red onion and carrot, in addition to red beet and peas. Dressing is made of fantastic olive oil and vinegar."
 	icon = food_ng_ICON
 	icon_state = "vinegret"
 	food_reagents = list(
@@ -39,7 +39,7 @@
 
 /obj/item/food/salad/kraboviy
 	name = "kraboviy salad"
-	desc = "A crab-free crab salad; fish, eggs, corn, and mayo do the heavy lifting."
+	desc = "Pan-Slavic variation of Crab Louie salad, a popular festive dish. It smells exactly the same, but there is a nuance - there are no crabs in it."
 	icon = food_ng_ICON
 	icon_state = "kraboviy"
 	food_reagents = list(
@@ -58,7 +58,7 @@
 
 /obj/item/food/cake/shuba
 	name = "shuba"
-	desc = "Layered herring under a coat of vegetables and mayonnaise."
+	desc = "Also known as Сarp under a fur coat, a layered salad composed of diced carp covered with layers of grated boiled eggs, vegetables, chopped onions, and mayonnaise. A great option if you want to install a pancreatic implant soon."
 	icon = food_ng_ICON
 	icon_state = "shuba"
 	food_reagents = list(
@@ -91,7 +91,7 @@
 
 /obj/item/food/cake/kholodetz
 	name = "kholodetz"
-	desc = "Suspicious, shimmering meat jelly. A traditional dare."
+	desc = " It is... Meat jelly, probably. It looks disgusting, but in the far corners of space it is considered a festive dish. Usually served with mustard and a shot of vodka. Try it at your own risk. "
 	icon = food_ng_ICON
 	icon_state = "kholodetz"
 	food_reagents = list(
@@ -121,7 +121,7 @@
 
 /obj/item/food/christmas_ham
 	name = "Christmas ham"
-	desc = "A spiral-cut ham lacquered with berries and barbecue glaze."
+	desc = "Christmas turkey ham decorated with cranberries. When cut, you can see a spiral pattern on the meat. An excellent appetiser for the New Year's table!"
 	icon = food_ng_ICON
 	icon_state = "ham"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -184,7 +184,7 @@
 
 /obj/item/food/sweets/candy_cane
 	name = "candy cane"
-	desc = "Striped sugar twisted with peppermint."
+	desc = "Traditional Christmas candy made from sugar and peppermint."
 	icon = food_ng_ICON
 	icon_state = "candycane"
 	food_reagents = list(
@@ -202,7 +202,7 @@
 
 /obj/item/food/red_caviar
 	name = "red caviar"
-	desc = "Bioluminescent fish roe with a conceited aroma."
+	desc = "The origin is unknown. It smells of alien frogs and arrogance. Probably an imitation... or not"
 	icon = food_ng_ICON
 	icon_state = "caviar_isolated"
 	food_reagents = list(
@@ -220,7 +220,7 @@
 
 /obj/item/food/canned_red_caviar
 	name = "canned red caviar"
-	desc = "A green tin marked with Skrell text. It rattles with promise."
+	desc = ": The beautiful green can has an inscription on skrellian: only for export."
 	icon = food_ng_ICON
 	icon_state = "skrellcaviar"
 	w_class = WEIGHT_CLASS_SMALL
@@ -266,7 +266,7 @@
 
 /obj/item/food/sandwich/caviar_butterbrod
 	name = "caviar butterbrod"
-	desc = "A toasted slice layered with butter and shimmering red caviar."
+	desc = "The perfect combination of a slice of bread, delicate butter, and fish caviar. It is usually served at festive tables all over the world. The origin of the caviar is unknown, but it is definitely not salmon.."
 	icon = food_ng_ICON
 	icon_state = "butterbrod"
 	food_reagents = list(
