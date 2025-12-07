@@ -492,6 +492,7 @@
 		user_eyes.color_cutoffs = initial(user_eyes.color_cutoffs)
 		user_eyes.sight_flags = initial(user_eyes.sight_flags)
 	user.update_sight()
+	owner.current.remove_actionspeed_modifier(/datum/actionspeed_modifier/bloodsucker)
 
 /// Name shown on antag list
 /datum/antagonist/bloodsucker/antag_listing_name()
