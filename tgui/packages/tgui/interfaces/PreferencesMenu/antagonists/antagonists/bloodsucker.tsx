@@ -2,7 +2,7 @@
 
 import { type Antagonist, Category } from '../base';
 
-const RoundstartBloodsucker: Antagonist = {
+const Bloodsucker: Antagonist = {
   key: 'roundstartbloodsucker',
   name: 'Roundstart Bloodsucker',
   description: [
@@ -13,4 +13,4 @@ const RoundstartBloodsucker: Antagonist = {
   category: Category.Roundstart,
 };
 
-export default RoundstartBloodsucker;
+export default Bloodsucker;
