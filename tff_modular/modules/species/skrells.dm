@@ -1,0 +1,8 @@
+/datum/species/skrell
+	inherent_traits = list(
+		TRAIT_ADVANCEDTOOLUSER,
+		TRAIT_CAN_STRIP,
+		TRAIT_LITERATE,
+		TRAIT_MUTANT_COLORS,
+		TRAIT_WATER_BREATHING,
+	)
