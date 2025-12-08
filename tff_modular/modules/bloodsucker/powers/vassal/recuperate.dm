@@ -41,7 +41,7 @@
 	var/mob/living/carbon/user = owner
 	var/datum/antagonist/ghoul/ghouldatum = IS_GHOUL(user)
 	var/datum/antagonist/bloodsucker/suckdatum = IS_BLOODSUCKER(user)
-	var/healing_amount = ((suckdatum.GetRank() * 0.5) + healing)
+	var/healing_amount = (healing - (suckdatum.GetRank() * 0.25))
 	if(ghouldatum && QDELETED(ghouldatum.master))
 		to_chat(owner, span_warning("No master to draw blood from!"))
 		DeactivatePower()
@@ -58,6 +58,8 @@
 
 /datum/action/cooldown/bloodsucker/recuperate/ContinueActive(mob/living/user, mob/living/target)
 	if(user.stat >= DEAD)
+		return FALSE
+	if(user.health >= 135)
 		return FALSE
 	if(INCAPACITATED_IGNORING(user, INCAPABLE_GRAB|INCAPABLE_RESTRAINTS))
 		owner?.balloon_alert(owner, "too exhausted...")
