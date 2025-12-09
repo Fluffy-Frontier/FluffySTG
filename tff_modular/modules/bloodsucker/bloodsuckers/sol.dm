@@ -159,7 +159,7 @@
 	else
 		owner.current.add_traits(list(TRAIT_FAKEDEATH, TRAIT_DEATHCOMA), BLOODSUCKER_TRAIT)
 	// Without this, you'll just keep dying while you recover.
-	owner.current.add_traits(list(TRAIT_TORPOR, TRAIT_RESISTLOWPRESSURE, TRAIT_RESISTHIGHPRESSURE, TRAIT_DEATHCOMA), BLOODSUCKER_TRAIT)
+	owner.current.add_traits(list(TRAIT_TORPOR, TRAIT_RESISTLOWPRESSURE, TRAIT_RESISTHIGHPRESSURE, TRAIT_NODISMEMBER, TRAIT_DEATHCOMA), BLOODSUCKER_TRAIT)
 	owner.current.do_jitter_animation(2)
 	// Disable ALL Powers
 	DisableAllPowers()
