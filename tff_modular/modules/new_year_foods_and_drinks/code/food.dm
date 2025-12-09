@@ -16,7 +16,6 @@
 		"approaching pancreatitis" = 1,
 		"creamy sausage" = 1,
 	)
-	foodtypes = VEGETABLES | MEAT | DAIRY
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/salad/vinegret
@@ -34,7 +33,6 @@
 		"pickled vegetables" = 1,
 		"olive oil" = 1,
 	)
-	foodtypes = VEGETABLES
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/salad/kraboviy
@@ -52,7 +50,6 @@
 		"eggs" = 1,
 		"corn" = 1,
 	)
-	foodtypes = MEAT | SEAFOOD | VEGETABLES | DAIRY
 	crafting_complexity = FOOD_COMPLEXITY_3
 	custom_materials = list(/datum/material/meat = MEATDISH_MATERIAL_AMOUNT)
 
@@ -71,7 +68,6 @@
 		"mayonnaise" = 1,
 		"fish" = 1,
 	)
-	foodtypes = VEGETABLES | MEAT | SEAFOOD | DAIRY
 	slice_type = /obj/item/food/cakeslice/shuba
 	yield = 6
 	crafting_complexity = FOOD_COMPLEXITY_4
@@ -86,7 +82,6 @@
 		"mayonnaise" = 1,
 		"fish" = 1,
 	)
-	foodtypes = VEGETABLES | MEAT | SEAFOOD | DAIRY
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/cake/kholodetz
@@ -102,7 +97,6 @@
 		"suspicious meat jelly" = 1,
 		"inexplicable texture" = 1,
 	)
-	foodtypes = MEAT | GORE
 	slice_type = /obj/item/food/cakeslice/kholodetz
 	yield = 4
 	crafting_complexity = FOOD_COMPLEXITY_3
@@ -116,7 +110,6 @@
 		"suspicious meat jelly" = 1,
 		"inexplicable texture" = 1,
 	)
-	foodtypes = MEAT | GORE
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/christmas_ham
@@ -136,7 +129,6 @@
 		"glazed berries" = 1,
 		"bbq smoke" = 1,
 	)
-	foodtypes = MEAT | SUGAR
 	crafting_complexity = FOOD_COMPLEXITY_4
 	custom_materials = list(/datum/material/meat = MEATSLAB_MATERIAL_AMOUNT * 2)
 	var/obj/item/food/christmas_ham/slice/slice_type = /obj/item/food/christmas_ham/slice
@@ -160,7 +152,6 @@
 		"holiday sausage" = 2,
 		"glazed berries" = 1,
 	)
-	foodtypes = MEAT | SUGAR
 	food_flags = FOOD_FINGER_FOOD
 	crafting_complexity = FOOD_COMPLEXITY_4
 
@@ -169,7 +160,6 @@
 	desc = "Uncooked ham stuffed with berries and seasoning, ready for the oven."
 	icon = food_ng_ICON
 	icon_state = "ham"
-	foodtypes = MEAT | RAW
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 10,
 		/datum/reagent/consumable/nutriment/protein = 6,
@@ -195,7 +185,6 @@
 		"sugar" = 2,
 		"mint" = 1,
 	)
-	foodtypes = SUGAR
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_TINY
 	crafting_complexity = FOOD_COMPLEXITY_2
@@ -213,7 +202,6 @@
 		"salty caviar" = 2,
 		"alien arrogance" = 1,
 	)
-	foodtypes = SEAFOOD
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_TINY
 	crafting_complexity = FOOD_COMPLEXITY_2
@@ -279,7 +267,6 @@
 		"creamy butter" = 1,
 		"salty caviar" = 2,
 	)
-	foodtypes = GRAIN | DAIRY | SEAFOOD
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_TINY
 	crafting_complexity = FOOD_COMPLEXITY_3
@@ -290,7 +277,6 @@
     desc = "A small, vividly orange citrus that smells like winter holidays."
     icon = mandarin_ICON
     icon_state = "mandarin"
-    foodtypes = FRUIT | ORANGES
     juice_typepath = /datum/reagent/consumable/mandarin_juice
     wine_power = 55
     tastes = list(
