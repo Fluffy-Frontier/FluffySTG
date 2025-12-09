@@ -124,9 +124,6 @@
 		COMSIG_SOL_WARNING_GIVEN = PROC_REF(give_warning),
 	)
 
-	// Batform spell
-	var/datum/action/cooldown/spell/shapeshift/bat/form = new
-
 /**
  * Apply innate effects is everything given to the mob
  * When a body is tranferred, this is called on the new mob
@@ -139,7 +136,6 @@
 	talking_head(current_mob)
 	handle_clown_mutation(current_mob, mob_override ? null : "As a vampiric clown, you are no longer a danger to yourself. Your clownish nature has been subdued by your thirst for blood.")
 	add_team_hud(current_mob)
-	form.Grant(current_mob)
 	if(current_mob.hud_used)
 		on_hud_created()
 	else
@@ -168,7 +164,6 @@
 		hud_used.infodisplay -= vamprank_display
 		QDEL_NULL(blood_display)
 		QDEL_NULL(vamprank_display)
-	form.Remove(current_mob)
 	SSsunlight.remove_sun_sufferer(current_mob) //check if sunlight should end
 	if(iscarbon(current_mob))
 		current_mob?.dna.species.on_bloodsucker_loss(current_mob)
