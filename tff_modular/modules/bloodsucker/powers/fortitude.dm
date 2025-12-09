@@ -18,7 +18,7 @@
 	. = list()
 	. += "Fortitude will provide pierce, stun and dismember immunity."
 	. += "You will additionally gain resistance to both brute, burn and stamina damage, scaling with level."
-	. += "Fortitude will make you receive [GetFortitudeResist() * 10]% less brute, and stamina, and [GetFortitudeResist * 10]% less burn damage."
+	. += "Fortitude will make you receive [GetFortitudeResist() * 10]% less brute, and stamina, and [GetFortitudeResist() * 10]% less burn damage."
 	. += "While using Fortitude, attempting to run will crush you."
 	. += "At level [FORTITUDE_STUN_IMMUNITY_LEVEL], you gain complete stun immunity."
 	. += "Higher levels will increase Brute and Stamina resistance."
