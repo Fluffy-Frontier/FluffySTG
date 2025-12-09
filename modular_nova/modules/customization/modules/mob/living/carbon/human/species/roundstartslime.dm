@@ -416,6 +416,7 @@
 		slime.adjustOxyLoss(-1 * seconds_per_tick)
 		if(slime.health < slime.maxHealth)
 			new /obj/effect/temp_visual/heal(get_turf(slime), COLOR_EFFECT_HEAL_RED)
+
 /**
 * SLIME CLEANING ABILITY -
 * When toggled, slimes clean themselves and their equipment.
