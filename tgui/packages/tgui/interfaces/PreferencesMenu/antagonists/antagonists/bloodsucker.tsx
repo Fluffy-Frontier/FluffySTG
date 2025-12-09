@@ -2,8 +2,8 @@
 
 import { type Antagonist, Category } from '../base';
 
-const Bloodsucker: Antagonist = {
-  key: 'roundstartbloodsucker',
+const bloodsuckers: Antagonist = {
+  key: 'bloodsuckers',
   name: 'Roundstart Bloodsucker',
   description: [
     `An immortal being called vampires, or bloodsuckers.
@@ -13,4 +13,4 @@ const Bloodsucker: Antagonist = {
   category: Category.Roundstart,
 };
 
-export default Bloodsucker;
+export default bloodsuckers;

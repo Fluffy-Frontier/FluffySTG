@@ -89,7 +89,7 @@
 	suck_datum.AdjustUnspentRank(rand(2, 3))
 
 /datum/dynamic_ruleset/roundstart/bloodsucker
-	name = "Bloodsuckers"
+	name = "bloodsuckers"
 	config_tag = "Roundstart Bloodsucker"
 	pref_flag = ROLE_BLOODSUCKER
 	preview_antag_datum = /datum/antagonist/bloodsucker
