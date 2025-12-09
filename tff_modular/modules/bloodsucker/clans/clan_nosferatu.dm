@@ -21,7 +21,7 @@
 	if(!mob.has_quirk(/datum/quirk/badback))
 		mob.add_quirk(/datum/quirk/badback)
 
-	mob.add_traits(list(TRAIT_DISFIGURED, TRAIT_VENTCRAWLER_NUDE), BLOODSUCKER_TRAIT)
+	mob.add_traits(list(TRAIT_DISFIGURED, TRAIT_VENTCRAWLER_NUDE, TRAIT_KNOW_ENGI_WIRES, TRAIT_SILENT_FOOTSTEPS), BLOODSUCKER_TRAIT)
 
 	RegisterSignal(bloodsuckerdatum, COMSIG_BLOODSUCKER_EXAMINE, PROC_REF(on_mob_examine))
 	RegisterSignal(mob, COMSIG_CAN_VENTCRAWL, PROC_REF(can_ventcrawl))

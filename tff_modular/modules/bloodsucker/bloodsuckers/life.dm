@@ -102,13 +102,15 @@
 /datum/antagonist/bloodsucker/proc/HandleHealing(mult = 1)
 	// Don't heal if I'm staked or on Masquerade.
 	var/actual_regen = bloodsucker_regen_rate + additional_regen
-	var/burn_regen = min(bloodsucker_regen_rate * 0.5)
+	var/burn_regen = bloodsucker_regen_rate * 0.5
 	if(owner.current.am_staked() || (HAS_TRAIT(owner.current, TRAIT_MASQUERADE)))
 		return FALSE
 	// Garlic in you? No healing for you!
 	if(HAS_TRAIT(owner.current, TRAIT_GARLIC_REAGENT))
 		return FALSE
-	owner.current.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1 * actual_regen * mult) //adjustBrainLoss(-1 * (actual_regen * 4) * mult, 0)
+	owner.current.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1 * actual_regen * mult)
+	owner.current.adjustOrganLoss(ORGAN_SLOT_HEART, -1 * actual_regen * mult)
+	owner.current.adjustOrganLoss(ORGAN_SLOT_EYES, -1 * actual_regen * mult)
 	if(!iscarbon(owner.current)) // Damage Heal: Do I have damage to ANY bodypart?
 		return FALSE
 	var/mob/living/carbon/user = owner.current

@@ -11,13 +11,12 @@
 	base_background_icon_state = "tremere_power_off"
 	background_icon = 'tff_modular/modules/bloodsucker/icons/tremere_bloodsucker.dmi'
 	power_explanation = "You can fly and see in the dark, and you heal from doing melee attacks."
-	invocation = "Master, grant me your might, BAT FORM!!"
-	invocation_type = INVOCATION_SHOUT
+	invocation_type = NONE
 	spell_requirements = NONE
 	convert_damage = TRUE
 	cooldown_time = 1 MINUTES
 	possible_shapes = list(/mob/living/basic/bat/bloodsucker)
-	power_explanation = "This ability turns you into a small bat, which can fly and heals from doing meele damage. \n\
+	power_explanation = "This ability turns you into a small bat, which can fly and heals from doing melee damage. \n\
 		However, you don't do much meele damage, and are slightly weak to fire damage.\n\
 		Using the ability also spawns some normal bats around where you cast it, causing confusion.\n\
 		Keep in mind if you die in this form, your real body will also die, and any damage received is transfered as well."
@@ -39,7 +38,7 @@
 	maxHealth = 135
 	health = 135
 	speed = 0
-	melee_damage_lower = 10
+	melee_damage_lower = 15
 	melee_damage_upper = 15
 	wound_bonus = 10
 	obj_damage = 10
@@ -49,7 +48,7 @@
 	melee_attack_cooldown = CLICK_CD_MELEE
 	basic_mob_flags = FLAMMABLE_MOB
 	lighting_color_cutoffs = BLOODSUCKER_SIGHT_COLOR_CUTOFF
-	damage_coeff = list(BRUTE = 0.9, BURN = 1.25, TOX = 1, STAMINA = 1, OXY = 1)
+	damage_coeff = list(BRUTE = 0.9, BURN = 1, TOX = 1, STAMINA = 1, OXY = 1)
 	attack_verb_simple = "drain blood from"
 	attack_verb_continuous = "drains blood from"
 
