@@ -24,12 +24,12 @@
 	bolt_drop_sound = 'modular_nova/modules/modular_weapons/sounds/pulse_push.ogg'
 
 	burst_size = 3
-	fire_delay = 2
+	burst_delay = 0.3 SECONDS
+	fire_delay = 0.9 SECONDS
 
-	projectile_damage_multiplier = 0.8 //FLUFFY FRONTIER ADDITION. ZAIBAS NERF. ORIGINAL: 1
-	spread = 3 //FLUFFY FRONTIER EDIT. ZAIBAS NERF. ORIGINAL: 1
+	spread = 3
 	recoil = 0.5
-
+	projectile_damage_multiplier = 0.8 //FLUFFY FRONTIER ADDITION. ZAIBAS NERF. ORIGINAL: 1
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	lore_blurb = "The M/PR-15 represents the Coalition's solution to the eternal logistical problem: how much ammunition can one soldier carry? \
