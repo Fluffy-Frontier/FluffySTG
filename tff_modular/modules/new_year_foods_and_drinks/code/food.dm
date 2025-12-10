@@ -272,18 +272,17 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/grown/citrus/mandarin
-    seed = /obj/item/seeds/mandarin
-    name = "mandarin"
-    desc = "A small, vividly orange citrus that smells like winter holidays."
-    icon = mandarin_ICON
-    icon_state = "mandarin"
-    juice_typepath = /datum/reagent/consumable/mandarin_juice
-    wine_power = 55
-    tastes = list(
-        "sweet mandarin juice" = 8,
-        "clove oil" = 2,
-    )
+	seed = /obj/item/seeds/mandarin
+	name = "mandarin"
+	desc = "A small, vividly orange citrus that smells like winter holidays."
+	icon = mandarin_ICON
+	icon_state = "mandarin"
+	juice_typepath = /datum/reagent/consumable/mandarin_juice
+	wine_power = 55
+	tastes = list(
+		"sweet mandarin juice" = 8,
+		"clove oil" = 2,
+	)
 
 #undef food_ng_ICON
 #undef mandarin_ICON
-
