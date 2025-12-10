@@ -11,6 +11,7 @@
 		/datum/reagent/consumable/nutriment/protein = 4,
 		/datum/reagent/consumable/mayonnaise = 5,
 	)
+	foodtypes = VEGETABLES | MEAT | BREAKFAST
 	tastes = list(
 		"new year" = 2,
 		"approaching pancreatitis" = 1,
@@ -45,6 +46,7 @@
 		/datum/reagent/consumable/nutriment/protein = 5,
 		/datum/reagent/consumable/mayonnaise = 5,
 	)
+	foodtypes = VEGETABLES | MEAT | BREAKFAST | SEAFOOD
 	tastes = list(
 		"crab meat" = 2,
 		"eggs" = 1,
@@ -63,6 +65,7 @@
 		/datum/reagent/consumable/nutriment/protein = 4,
 		/datum/reagent/consumable/mayonnaise = 6,
 	)
+	foodtypes = MEAT | VEGETABLES | BREAKFAST | SEAFOOD
 	tastes = list(
 		"new year rush" = 1,
 		"mayonnaise" = 1,
@@ -93,6 +96,7 @@
 		/datum/reagent/consumable/nutriment = 8,
 		/datum/reagent/consumable/nutriment/protein = 8,
 	)
+	foodtypes = MEAT | VEGETABLES | GORE
 	tastes = list(
 		"suspicious meat jelly" = 1,
 		"inexplicable texture" = 1,
@@ -124,6 +128,7 @@
 		/datum/reagent/consumable/bbqsauce = 5,
 		/datum/reagent/consumable/blackpepper = 1,
 	)
+	foodtypes = MEAT | GRAIN | FRUIT
 	tastes = list(
 		"holiday sausage" = 2,
 		"glazed berries" = 1,
@@ -135,8 +140,8 @@
 	var/slice_yield = 6
 
 /obj/item/food/christmas_ham/make_processable()
-    if (slice_type)
-        AddElement(/datum/element/processable, TOOL_KNIFE, slice_type, slice_yield, 3 SECONDS, table_required = TRUE, screentip_verb = "Carve", sound_to_play = SFX_KNIFE_SLICE)
+	if (slice_type)
+		AddElement(/datum/element/processable, TOOL_KNIFE, slice_type, slice_yield, 3 SECONDS, table_required = TRUE, screentip_verb = "Carve", sound_to_play = SFX_KNIFE_SLICE)
 
 /obj/item/food/christmas_ham/slice
 	name = "slice of Christmas ham"
@@ -166,6 +171,7 @@
 		/datum/reagent/consumable/bbqsauce = 5,
 		/datum/reagent/consumable/blackpepper = 1,
 	)
+	foodtypes = MEAT | RAW | GRAIN | FRUIT
 	tastes = list("raw ham" = 1, "berries" = 1)
 	crafting_complexity = FOOD_COMPLEXITY_3
 
@@ -181,6 +187,7 @@
 		/datum/reagent/consumable/sugar = 10,
 		/datum/reagent/consumable/menthol = 2,
 	)
+	foodtypes = SUGAR | TOXIC
 	tastes = list(
 		"sugar" = 2,
 		"mint" = 1,
@@ -262,6 +269,7 @@
 		/datum/reagent/consumable/cream = 1,
 		/datum/reagent/consumable/salt = 1,
 	)
+	foodtypes = GRAIN | DAIRY
 	tastes = list(
 		"crispy bread" = 1,
 		"creamy butter" = 1,
