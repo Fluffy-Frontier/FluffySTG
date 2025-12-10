@@ -8,9 +8,9 @@
 
 
 /datum/supply_pack/organic/mandarin
-	name = "Mandarines"
-	desc = "A crate  of mandarines"
+	name = "Mandarins"
+	desc = "A crate of mandarins"
 	cost = 300
 	contains = list(/obj/item/food/grown/citrus/mandarin = 6)
 	crate_type = /obj/structure/closet/crate/hydroponics
-	crate_name = "mandarines crate"
+	crate_name = "mandarins crate"
