@@ -26,12 +26,12 @@
 	)
 
 /datum/reagent/consumable/mandarin_juice
-    name = "Mandarin Juice"
-    description = "Bright, sweet mandarin juice with lingering winter spices."
-    color = "#ff9b3a"
-    taste_description = "sweet mandarin oil and cloves"
-    quality = DRINK_GOOD
-    chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	name = "Mandarin Juice"
+	description = "Bright, sweet mandarin juice with lingering winter spices."
+	color = "#ff9b3a"
+	taste_description = "sweet mandarin oil and cloves"
+	quality = DRINK_GOOD
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 #undef food_ng_ICON
 #undef mandarin_ICON
