@@ -3,7 +3,7 @@
 import { type Antagonist, Category } from '../base';
 
 const bloodsuckers: Antagonist = {
-  key: 'bloodsuckers',
+  key: 'bloodsucker',
   name: 'Roundstart Bloodsucker',
   description: [
     `An immortal being called vampires, or bloodsuckers.
