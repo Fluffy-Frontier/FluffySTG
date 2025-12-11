@@ -6,7 +6,7 @@
 	description = "The Ventrue Clan is extremely snobby with their meals, and refuse to drink blood from people without a mind. \n\
 		You instanly levels up to %MAX_POWERS% powers, but anything further will be ranks to spend on their Favorite Ghoul through a Persuasion Rack. \n\
 		The Favorite Ghoul will slowly turn more Vampiric this way, until they finally lose their last bits of Humanity. \n\
-		Once you finish your embracing, the newly sired vampire will become just a ghoul, and you'll be able to sire another bloodsucker."
+		Once you finish your embracing, the newly sired vampire will become just a ghoul, and you'll be able to sire another bloodsuckers."
 	clan_objective = /datum/objective/bloodsucker/embrace
 	join_icon_state = "ventrue"
 	join_description = "Lose the ability to drink from mindless mobs, can't level up or gain new powers, \
