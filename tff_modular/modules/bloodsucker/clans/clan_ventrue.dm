@@ -1,10 +1,10 @@
 ///The maximum level a Ventrue Bloodsucker can be, before they have to level up their ghoul instead.
-#define VENTRUE_MAX_POWERS 3
+#define VENTRUE_MAX_POWERS 5
 
 /datum/bloodsucker_clan/ventrue
 	name = CLAN_VENTRUE
 	description = "The Ventrue Clan is extremely snobby with their meals, and refuse to drink blood from people without a mind. \n\
-		You may have up to %MAX_POWERS% powers, anything further will be ranks to spend on their Favorite Ghoul through a Persuasion Rack. \n\
+		You instanly levels up to [VENTRUE_MAX_POWERS] powers, but anything further will be ranks to spend on their Favorite Ghoul through a Persuasion Rack. \n\
 		The Favorite Ghoul will slowly turn more Vampiric this way, until they finally lose their last bits of Humanity. \n\
 		Once you finish your embracing, the newly sired vampire will become just a ghoul, and you'll be able to sire another bloodsucker."
 	clan_objective = /datum/objective/bloodsucker/embrace
@@ -17,6 +17,10 @@
 /datum/bloodsucker_clan/ventrue/New(datum/antagonist/bloodsucker/owner_datum)
 	. = ..()
 	description = replacetext(description, "%MAX_POWERS%", VENTRUE_MAX_POWERS)
+	to_chat(owner_datum.owner.current, span_notice("You leveled up to [VENTRUE_MAX_POWERS] powers, but you now should create new vampires and can't power up more."))
+	var/current_rank = owner_datum.GetRank()
+	var/levelup_amount = VENTRUE_MAX_POWERS - current_rank
+	owner_datum.AdjustUnspentRank(levelup_amount)
 
 /datum/bloodsucker_clan/ventrue/proc/has_enough_abilities()
 	var/power_count = 0
