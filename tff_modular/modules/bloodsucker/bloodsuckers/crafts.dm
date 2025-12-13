@@ -9,7 +9,7 @@
 		/obj/item/stack/sheet/iron = 1,
 	)
 	time = 15 SECONDS
-	category = CAT_FURNITURE
+	category = CAT_BLOODSUCKER
 
 /datum/crafting_recipe/securecoffin
 	name = "Secure Coffin"
@@ -21,7 +21,7 @@
 		/obj/item/stack/sheet/iron = 5,
 	)
 	time = 15 SECONDS
-	category = CAT_FURNITURE
+	category = CAT_BLOODSUCKER
 
 /datum/crafting_recipe/meatcoffin
 	name = "Meat Coffin"
@@ -32,7 +32,7 @@
 		/obj/item/restraints/handcuffs/cable = 1,
 	)
 	time = 15 SECONDS
-	category = CAT_FURNITURE
+	category = CAT_BLOODSUCKER
 	crafting_flags = parent_type::crafting_flags | CRAFT_MUST_BE_LEARNED
 
 /datum/crafting_recipe/metalcoffin
@@ -43,7 +43,7 @@
 		/obj/item/stack/rods = 2,
 	)
 	time = 10 SECONDS
-	category = CAT_FURNITURE
+	category = CAT_BLOODSUCKER
 
 /datum/crafting_recipe/ghoulrack
 	name = "Persuasion Rack"
@@ -55,7 +55,7 @@
 		/obj/item/restraints/handcuffs/cable = 2,
 	)
 	time = 15 SECONDS
-	category = CAT_FURNITURE
+	category = CAT_BLOODSUCKER
 	crafting_flags = parent_type::crafting_flags | CRAFT_MUST_BE_LEARNED
 
 /datum/crafting_recipe/candelabrum
@@ -68,7 +68,7 @@
 		/obj/item/flashlight/flare/candle = 1,
 	)
 	time = 10 SECONDS
-	category = CAT_FURNITURE
+	category = CAT_BLOODSUCKER
 	crafting_flags = parent_type::crafting_flags | CRAFT_MUST_BE_LEARNED
 
 /datum/crafting_recipe/bloodthrone
@@ -81,5 +81,5 @@
 		/obj/item/stack/sheet/mineral/wood = 1,
 	)
 	time = 5 SECONDS
-	category = CAT_FURNITURE
+	category = CAT_BLOODSUCKER
 	crafting_flags = parent_type::crafting_flags | CRAFT_MUST_BE_LEARNED

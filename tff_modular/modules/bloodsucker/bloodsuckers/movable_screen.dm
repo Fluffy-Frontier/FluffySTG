@@ -216,3 +216,7 @@
 	icon = 'tff_modular/modules/bloodsucker/icons/bloodsucker.dmi'
 	icon_state = "power_recover"
 	alerttooltipstyle = "cult"
+
+/atom/movable/screen/alert/status_effect/frenzy/brujah
+	name = "Brujah Frenzy"
+	desc = "You are in a Frenzy!"

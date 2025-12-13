@@ -309,3 +309,5 @@
 #define MOB_VAMPIRIC (1 << 16)
 #define COMSIG_MOB_HEMO_BLOOD_REGEN_TICK "blood_regen_apply"
 	#define COMSIG_CANCEL_MOB_HEMO_BLOOD_REGEN (1<<0)
+
+#define CAT_BLOODSUCKER "Bloodsucker"
