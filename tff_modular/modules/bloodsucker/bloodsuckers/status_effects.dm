@@ -93,6 +93,7 @@
 	bloodsuckerdatum = IS_BLOODSUCKER(user)
 
 	bloodsuckerdatum.DisableAllPowers(forced = TRUE)
+	owner.add_traits(trait_list, BLOODSUCKER_TRAIT)
 	to_chat(owner, span_userdanger("<FONT size = 3>Blood! You need Blood, now! You enter a total Frenzy!"))
 	to_chat(owner, span_announce("* Bloodsucker Tip: While in Frenzy, you instantly Aggresively grab, have stun resistance, cannot speak, hear"))
 	owner.balloon_alert(owner, "you enter a frenzy!")
@@ -106,6 +107,7 @@
 	return ..()
 
 /datum/status_effect/brujah/on_remove()
+	owner.remove_traits(trait_list, BLOODSUCKER_TRAIT)
 	owner.balloon_alert(owner, "you come back to your senses.")
 	owner.remove_movespeed_modifier(/datum/movespeed_modifier/frenzy_speedup)
 	owner.remove_client_colour(REF(src))

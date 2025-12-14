@@ -1,5 +1,3 @@
-// THIS IS A TFF UI FILE
-
 import { type Antagonist, Category } from '../base';
 
 export const VAMPIRE_MECHANICAL_DESCRIPTION = `
@@ -8,11 +6,11 @@ Use your Vampiric abilities as best you can.
 Scrape by Space Station 13, or take over it, ghoulizing your way.
 `;
 
-const bloodsuckers: Antagonist = {
-  key: 'bloodsucker',
-  name: 'Roundstart Bloodsucker',
+const VampiricAccident: Antagonist = {
+  key: 'bloodsuckermidround',
+  name: 'Bloodsucker (Midround)',
   description: [VAMPIRE_MECHANICAL_DESCRIPTION],
-  category: Category.Roundstart,
+  category: Category.Midround,
 };
 
-export default bloodsuckers;
+export default VampiricAccident;

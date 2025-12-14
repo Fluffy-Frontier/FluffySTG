@@ -681,7 +681,17 @@ repeatable = 0
 minimum_required_age = 0
 
 ["Roundstart Bloodsucker"]
-weight = 3
+weight = 8
+min_pop = 15
+blacklisted_roles = []
+min_antag_cap = 1
+max_antag_cap.denominator = 29
+repeatable_weight_decrease = 2
+repeatable = 1
+minimum_required_age = 0
+
+["Midround Bloodsucker"]
+weight = 8
 min_pop = 15
 blacklisted_roles = []
 min_antag_cap = 1
