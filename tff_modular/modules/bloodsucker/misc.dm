@@ -95,6 +95,7 @@
 	preview_antag_datum = /datum/antagonist/bloodsucker
 	pref_flag = ROLE_VAMPIRICACCIDENT
 	jobban_flag = ROLE_BLOODSUCKER
+	midround_type = LIGHT_MIDROUND
 	blacklisted_roles = BLOODSUCKER_BLACKLISTED_ROLES
 	weight = 8
 	repeatable = TRUE
