@@ -269,7 +269,7 @@
 		/datum/reagent/consumable/cream = 1,
 		/datum/reagent/consumable/salt = 1,
 	)
-	foodtypes = GRAIN | DAIRY
+	foodtypes = GRAIN | DAIRY | SEAFOOD
 	tastes = list(
 		"crispy bread" = 1,
 		"creamy butter" = 1,
