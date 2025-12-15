@@ -226,6 +226,18 @@
 		return SUCCESSFUL_BLOCK
 	return FAILED_BLOCK
 
+/obj/item/mod/module/advanced_energy_shield/nanotrasen
+	desc = "A personal, protective forcefield typically seen in military applications. \
+		This advanced deflector shield is essentially a scaled down version of those seen on starships, \
+		and the power cost can be an easy indicator of this. However, it is capable of blocking nearly any incoming attack, \
+		but only once every few seconds; a grim reminder of the users mortality. This version protect only from ranged attacks."
+	shield_color = COLOR_FRENCH_BLUE
+	max_health = 75
+	ranged_only = FALSE
+	recharge_start_delay = 30 SECONDS
+	recharge_evade_delay = 10 SECONDS
+
+
 /**
  * Модуль riot щита.
  */

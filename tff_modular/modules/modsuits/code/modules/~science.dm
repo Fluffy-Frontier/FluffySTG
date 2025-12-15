@@ -33,7 +33,7 @@
 	UnregisterSignal(mod, list(COMSIG_ATOM_EMAG_ACT, COMSIG_ATOM_EXAMINE))
 
 
-/obj/item/mod/module/core_rnd/proc/on_control_emaged(obj/item/mod/control/emaged, mob/user)
+/obj/item/mod/module/core_rnd/proc/on_control_emaged(obj/item/mod/control/our_control, mob/user)
 	if(emaged)
 		return
 	incompatible_modules = list(/obj/item/mod/module/core_rnd)

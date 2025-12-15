@@ -106,7 +106,7 @@
 		/datum/material/silver =SMALL_MATERIAL_AMOUNT*3,
 		/datum/material/gold =SMALL_MATERIAL_AMOUNT*3,
 	)
-	build_path = /obj/item/mod/module/robotic_arm/workarm
+	build_path = /obj/item/mod/module/mod_rpd
 	category = list(
 		RND_CATEGORY_MODSUIT_MODULES + RND_SUBCATEGORY_MODSUIT_MODULES_ENGINEERING
 	)
@@ -225,3 +225,19 @@
 	departmental_flags = DEPARTMENT_BITFLAG_SCIENCE
 	research_icon = 'tff_modular/modules/modsuits/icons/items/mod_items.dmi'
 	research_icon_state = "rnd-plating"
+
+/datum/design/module/mod_anomaly_neutrilizer
+	name = "Anomaly neutrilizer module"
+	id = "mod_energy_shield"
+	materials = list(
+		/datum/material/iron=SHEET_MATERIAL_AMOUNT*2,
+		/datum/material/silver=SHEET_MATERIAL_AMOUNT,
+		/datum/material/gold=SMALL_MATERIAL_AMOUNT*6,
+		/datum/material/diamond=SMALL_MATERIAL_AMOUNT*4,
+		/datum/material/bluespace=SHEET_MATERIAL_AMOUNT*2,
+	)
+	build_path = /obj/item/mod/module/advanced_energy_shield/nanotrasen
+	category = list(
+		RND_CATEGORY_MODSUIT_MODULES + RND_SUBCATEGORY_MODSUITS_MISC
+	)
+

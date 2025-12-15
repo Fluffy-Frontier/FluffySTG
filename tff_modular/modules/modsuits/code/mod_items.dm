@@ -214,6 +214,29 @@
 	. = ..()
 	INVOKE_ASYNC(src, PROC_REF(toggle_brace), user)
 
+
+/obj/item/shield/brace/attacked_by(obj/item/attacking_item, mob/living/user, list/modifiers, list/attack_modifiers)
+	if(istype(attacking_item, /obj/item/stack/sheet/plastic))
+		var/obj/item/stack/sheet/plastic/plasic = attacking_item
+		var/how_many = 1
+		var/healthpercent = round((atom_integrity/max_integrity) * 100, 1)
+		switch(healthpercent)
+			if(50 to 99)
+				how_many = 2
+			if(25 to 50)
+				how_many = 4
+			if(0 to 25)
+				how_many = 5
+		if(!plasic.use(how_many))
+			balloon_alert(user, "Not enough material!")
+			return COMPONENT_CANCEL_ATTACK_CHAIN
+		if(do_after(user, 5 SECONDS))
+			balloon_alert(user, "Fixed!")
+			update_integrity(max_integrity)
+			return COMPONENT_CANCEL_ATTACK_CHAIN
+	return ..()
+
+
 /obj/item/shield/brace/proc/toggle_brace(mob/living/user)
 	if(atom_integrity <= 0)
 		user.balloon_alert(user, "Shield broken!")
