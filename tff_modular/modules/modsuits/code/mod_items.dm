@@ -173,9 +173,8 @@
 	var/push_distance = 2
 	// Скорость с которой будет отлетать тот, кого оттолкнули
 	var/push_speed = 2
-
+	// Колдаун толчка с помощью щита
 	var/brace_push_cooldown = 3 SECONDS
-
 	var/brace_push_power_cost = POWER_CELL_USE_INSANE * 4
 
 	COOLDOWN_DECLARE(push_cooldown)
@@ -362,6 +361,10 @@
 			return TRUE
 	return FALSE
 
+/obj/item/shield/brace/atom_break(damage_flag)
+	SHOULD_CALL_PARENT(FALSE)
+	return
+
 /obj/item/shield/brace/atom_deconstruct(disassembled)
 	if(braced)
 		unbrace(mod.wearer)
@@ -388,9 +391,9 @@
 	name = "concentrated laser beam"
 	icon_state = "laser_musket"
 	light_color = COLOR_PURPLE
-	damage = 30
-	wound_bonus = 10
-	armour_penetration = 20
+	damage = 35
+	wound_bonus = 25
+	armour_penetration = 30
 
 /obj/item/ammo_casing/energy/lasergun/modgun
 	projectile_type = /obj/projectile/beam/laser/modlaser
@@ -418,6 +421,7 @@
 	// МОД костюм к которму привязан этот лазер
 	var/obj/item/mod/control/mod = null
 
+	can_select = TRUE
 	selfcharge = FALSE
 
 /obj/item/gun/energy/laser/mounted/modsuit/Initialize(mapload)
@@ -432,6 +436,18 @@
 		balloon_alert(user, "No power!")
 		return
 	return ..()
+
+/obj/item/gun/energy/laser/mounted/modsuit/ranged_interact_with_atom_secondary(atom/interacting_with, mob/living/user, list/modifiers)
+	if(ammo_type.len > 1 && can_select)
+		select_fire(user)
+
+/obj/item/gun/energy/laser/mounted/modsuit/interact_with_atom_secondary(atom/interacting_with, mob/living/user, list/modifiers)
+	if(ammo_type.len > 1 && can_select)
+		select_fire(user)
+
+/obj/item/gun/energy/laser/mounted/modsuit/attack_self(mob/living/user)
+	if(ammo_type.len > 1 && can_select)
+		select_fire(user)
 
 /obj/item/gun/energy/laser/mounted/modsuit/process(seconds_per_tick)
 	. = ..()

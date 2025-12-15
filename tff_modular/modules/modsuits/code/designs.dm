@@ -136,7 +136,7 @@
 		/datum/material/diamond=SHEET_MATERIAL_AMOUNT*2,
 		/datum/material/bluespace=SHEET_MATERIAL_AMOUNT,
 	)
-	build_path = /obj/item/mod/module/electrocute_absorber
+	build_path = /obj/item/mod/module/cascade_evacuation
 	category = list(
 		RND_CATEGORY_MODSUIT_MODULES + RND_SUBCATEGORY_MODSUIT_MODULES_ENGINEERING
 	)

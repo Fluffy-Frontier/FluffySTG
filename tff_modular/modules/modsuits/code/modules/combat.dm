@@ -1,3 +1,7 @@
+/**
+ * Модуль энерго-пушки, потребляет заря МОДда для стрельбы.
+ */
+
 /obj/item/mod/module/energy_gun
 	name = "MOD energy gun module"
 	desc = "MOD module installed in the user's hand, consisting of a small \
@@ -230,8 +234,8 @@
 	name = "MOD brace shield module"
 	desc = "This MOD module is installed in the user's arm and provides a massive, \
 			durable plastic shield that can become an impenetrable wall with the help of the suit's motors."
-	icon_state = "ballistic"
-	icon = 'icons/obj/weapons/shields.dmi'
+	icon_state = "mod_shield"
+	icon = 'tff_modular/modules/modsuits/icons/items/mod_items.dmi'
 	incompatible_modules = list(
 		/obj/item/mod/module/mod_shield,
 		/obj/item/mod/module/advanced_energy_shield,

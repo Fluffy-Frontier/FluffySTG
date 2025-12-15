@@ -56,6 +56,8 @@
 			capable of drawing energy from the suit's core to stabilize local reality. It blocks abnormal \
 			effects on the suit's user and also allows the reality anchor to be used on specific objects to stabilize them."
 	module_type = MODULE_ACTIVE
+	icon = 'tff_modular/modules/modsuits/icons/mod_icons/mod_modules.dmi'
+	icon_state = "neutralizer"
 	cooldown_time = 1 SECONDS
 	accepted_anomalies = list(/obj/item/assembly/signaler/anomaly/ectoplasm)
 	incompatible_modules = list(/obj/item/mod/module/anomaly_locked)
@@ -64,7 +66,7 @@
 	part_process = TRUE
 
 	// Колдаун после использования модуля на аномалии
-	var/neutralize_cooldown = 120 SECONDS
+	var/neutralize_cooldown = 60 SECONDS
 	// Колдаун на отражеие магических атак
 	var/anti_magic_cooldown = 5 SECONDS
 	// Трейты что пассивно будет получать носитель костюма
@@ -189,10 +191,48 @@
 	set_target(target)
 
 /obj/item/mod/module/anomaly_locked/anomaly_neutralizer/proc/finish_supression(atom/target)
+	if(!target)
+		return
+
+	balloon_alert(mod.wearer, "Anomaly suppressed!")
+	deactivate(display_message = FALSE)
+	start_cooldown(neutralize_cooldown)
+	var/datum/effect_system/spark_spread/spark_system = new
+	spark_system.set_up(10, 0, target)
+	spark_system.start()
+
 	if(istype(target, /obj/effect/anomaly))
 		var/obj/effect/anomaly/anomaly = target
 		anomaly.anomalyNeutralize()
 		return
+
+	if(ishuman(target))
+		var/mob/living/carbon/human/human_anomaly = target
+		human_anomaly.Knockdown(6 SECONDS, ignore_canstun = TRUE)
+		new /obj/effect/temp_visual/decoy/fading(get_turf(human_anomaly), human_anomaly, 255)
+
+		// Культист — снимаем антагониста, если не лидер
+		if(IS_CULTIST(human_anomaly))
+			var/datum/antagonist/cult/cult_antag = human_anomaly.mind?.has_antag_datum(/datum/antagonist/cult)
+			if(cult_antag && cult_antag != cult_antag.cult_team?.cult_leader_datum)
+				to_chat(human_anomaly, span_notice("You feel your mind clearing of outside influences. Now you are free!"))
+				cult_antag.on_removal()
+		// Еретик — просто сообщение о сопротивлении
+		if(IS_HERETIC(human_anomaly))
+			to_chat(human_anomaly, span_notice("You feel something trying to tear your soul from your body, but you prove to be stronger!"))
+	// Любые живые существа с магией/заклинаниями
+	if(isliving(target))
+		var/mob/living/living_anomaly = target
+
+		// Удваиваем кулдаун всех заклинаний
+		for(var/datum/action/cooldown/spell/magic_spell in living_anomaly.actions)
+			magic_spell.StartCooldown(magic_spell.cooldown_time * 2)
+		// Культовые конструкты — дополнительный урон и оглушение
+		if(isconstruct(living_anomaly))
+			var/mob/living/basic/construct/cult_construct = living_anomaly
+			cult_construct.apply_damage(60, BURN)
+			cult_construct.Paralyze(4 SECONDS)
+			to_chat(cult_construct, span_userdanger("Your link to the Geometer weakens!"))
 
 
 /obj/item/mod/module/anomaly_locked/anomaly_neutralizer/proc/try_capture(atom/target)
@@ -200,6 +240,14 @@
 		return TRUE
 	if(HAS_TRAIT(target, TRAIT_MAGICALLY_GIFTED))
 		return TRUE
+	if(isliving(target))
+		var/mob/living/living_target = target
+		if(IS_HERETIC_OR_MONSTER(living_target))
+			return TRUE
+		if(IS_CULTIST(living_target))
+			return TRUE
+		if(isconstruct(living_target))
+			return TRUE
 	return FALSE
 
 /obj/item/mod/module/anomaly_locked/anomaly_neutralizer/proc/on_catcher_click(atom/source, location, control, params, user)
@@ -276,11 +324,11 @@
 	supression_progress = min(supression_progress + progress_per_second * seconds_per_tick, 100)
 	var/target_alpha = lerp(255, 70, supression_progress / 100)
 	animate(captured_target, alpha = target_alpha, time = 2 SECONDS, flags = ANIMATION_PARALLEL)
-	if(prob(15))
+	if(SPT_PROB(15, seconds_per_tick))
 		var/msg = span_green("SUPRESSION NOTICE: [pick(suppression_positive_messages)]")
 		to_chat(mod.wearer, msg)
 
-	if(prob(15))
+	if(SPT_PROB(15, seconds_per_tick))
 		playsound(captured_target, 'sound/effects/empulse.ogg', 30, TRUE, -2, ignore_walls = FALSE)
 
 	if(SPT_PROB(20, seconds_per_tick))
