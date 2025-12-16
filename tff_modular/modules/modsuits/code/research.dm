@@ -1,4 +1,4 @@
-/datum/techweb_node/mod_security
+/datum/techweb_node/mod_basic_combat
 	id = "basic_combat_modules"
 	display_name = "Combat modular suits"
 	description = "Combat mod suit modules."

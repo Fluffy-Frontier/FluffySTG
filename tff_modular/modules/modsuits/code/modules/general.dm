@@ -1,7 +1,6 @@
 /**
  * Модуль спринтера: позволяет получить значительно повышенную скорость, ценой огромного энергопотребления.
  */
-
 /obj/item/mod/module/sprinter
 	name = "MOD sprinter module"
 	desc = "MOD module installed in wearer legs. Allow to adjust movemenet speed causing hight power use."
