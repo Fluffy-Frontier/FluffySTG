@@ -223,7 +223,7 @@
 		/datum/material/diamond =SHEET_MATERIAL_AMOUNT,
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_SCIENCE
-	research_icon = 'tff_modular/modules/modsuits/icons/items/mod_items.dmi'
+	research_icon = 'tff_modular/modules/modsuits/icons/items/mod_construction.dmi'
 	research_icon_state = "rnd-plating"
 
 /datum/design/module/mod_energy_shield
