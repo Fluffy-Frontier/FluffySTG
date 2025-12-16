@@ -97,7 +97,7 @@
 	jobban_flag = ROLE_BLOODSUCKER
 	midround_type = LIGHT_MIDROUND
 	blacklisted_roles = BLOODSUCKER_BLACKLISTED_ROLES
-	weight = 8
+	weight = 9
 	repeatable = TRUE
 	/// List of species that cannot be bloodsuckers
 	var/list/restricted_species = BLOODSUCKER_RESTRICTED_SPECIES
@@ -124,7 +124,7 @@
 	blacklisted_roles = BLOODSUCKER_BLACKLISTED_ROLES
 	ruleset_flags = RULESET_VARIATION
 	jobban_flag = ROLE_BLOODSUCKER
-	weight = 8
+	weight = 10
 	max_antag_cap = list("denominator" = 24)
 	var/list/restricted_species = BLOODSUCKER_RESTRICTED_SPECIES
 
@@ -136,4 +136,4 @@
 
 /datum/dynamic_ruleset/roundstart/bloodsucker/assign_role(datum/mind/candidate)
 	var/datum/antagonist/bloodsucker/suck_datum = candidate.add_antag_datum(/datum/antagonist/bloodsucker)
-	suck_datum.AdjustUnspentRank(rand(2, 3))
+	suck_datum.AdjustUnspentRank(rand(3, 4))

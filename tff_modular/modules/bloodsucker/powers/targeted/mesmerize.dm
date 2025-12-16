@@ -35,17 +35,13 @@
 	var/knockdown_on_secondary = FALSE
 	/// string id timer of the current cast, used for combat glare
 	var/timer
-	/// Can we hypnotize with this ability?
-	var/hypnotize_on_secondary = FALSE
 	// a cooldown to ensure you can't spam both the primary and secondary mesmerizes
 	COOLDOWN_DECLARE(mesmerize_cooldown)
 
 /datum/action/cooldown/bloodsucker/targeted/mesmerize/get_power_desc_extended()
 	. += "[src] a target, locking them in place for a short time[level_current >= MESMERIZE_MUTE_LEVEL ? " and muting them" : ""].<br>"
 	if(knockdown_on_secondary)
-		. += "Right clicking on your victim will apply a knockdown for [DisplayTimeText(combat_mesmerize_time())].<br>"
-	else if(hypnotize_on_secondary)
-		. += "Right clicking on your victim will apply a hypnotize for 15 seconds."
+		. += "Right clicking on your victim will apply a knockdown for [DisplayTimeText(combat_mesmerize_time())].<br>""
 	else
 		. += "Right clicking on your victim will confuse them for [DisplayTimeText(combat_mesmerize_time())]."
 
@@ -61,10 +57,7 @@
 		. += "[src] requires you to be facing your target."
 	. += "You cannot wear anything covering your face, and both parties must be facing eachother."
 	. += "Obviously, both parties need to not be blind."
-	if(hypnotize_on_secondary)
-		. += "Right clicking with the ability will apply a hypnotize for some time."
-	else
-		. += "Right clicking with the ability will apply a knockdown for [DisplayTimeText(combat_mesmerize_time())], but will also confuse your victim for [DisplayTimeText(get_power_time())]."
+	. += "Right clicking with the ability will apply a knockdown for [DisplayTimeText(combat_mesmerize_time())], but will also confuse your victim for [DisplayTimeText(get_power_time())]."
 	. += "If your target is already mesmerized or a bloodsucker, the Power will fail."
 	. += "Once mesmerized, the target will be unable to move for [DisplayTimeText(get_power_time())] and muted for [DisplayTimeText(get_mute_time())], scaling with level."
 	. += "At level [MESMERIZE_GLASSES_LEVEL], you will be able to use the power through items covering your face."
@@ -105,9 +98,6 @@
 	// Bloodsucker
 	if(IS_BLOODSUCKER(current_target))
 		owner.balloon_alert(owner, "bloodsuckers are immune to [src].")
-		return FALSE
-	if(current_target.mind?.has_antag_datum(/datum/antagonist/hypnotized))
-		owner.balloon_alert(owner, "[current_target] seems to be a dazed and not focused.")
 		return FALSE
 	// Dead/Unconscious
 	if(current_target.stat > CONSCIOUS)
@@ -178,22 +168,7 @@
 	var/mob/living/mesmerized_target = target
 	owner.balloon_alert(owner, "gazing [mesmerized_target]...")
 	perform_indicators(mesmerized_target, 3 SECONDS)
-	if(hypnotize_on_secondary)
-		timer = addtimer(CALLBACK(src, PROC_REF(hypnotize), owner, mesmerized_target), 2 SECONDS)
-	else
-		timer = addtimer(CALLBACK(src, PROC_REF(combat_mesmerize_effects), owner, mesmerized_target), 2 SECONDS)
-
-/datum/action/cooldown/bloodsucker/targeted/mesmerize/proc/hypnotize(mob/living/user, mob/living/mesmerized_target)
-	var/mob/living/carbon/human/victim = mesmerized_target
-	var/hypnophrase = tgui_input_text(user, "Choose a hypnophrase", "hypnotize")
-	if(!hypnophrase)
-		return FALSE
-	victim.gain_trauma(/datum/brain_trauma/hypnosis, TRAUMA_RESILIENCE_SURGERY, hypnophrase)
-	addtimer(CALLBACK(src, PROC_REF(end_trauma), user, victim), 15 SECONDS)
-
-/datum/action/cooldown/bloodsucker/targeted/mesmerize/proc/end_trauma(mob/living/user, mob/living/mesmerized_target)
-	var/mob/living/carbon/human/victim = mesmerized_target
-	victim.cure_trauma_type(/datum/brain_trauma/hypnosis, TRAUMA_RESILIENCE_SURGERY)
+	timer = addtimer(CALLBACK(src, PROC_REF(combat_mesmerize_effects), owner, mesmerized_target), 2 SECONDS)
 
 /datum/action/cooldown/bloodsucker/targeted/mesmerize/proc/mesmerize_effects(mob/living/user, mob/living/mesmerized_target)
 	var/power_time = get_power_time()

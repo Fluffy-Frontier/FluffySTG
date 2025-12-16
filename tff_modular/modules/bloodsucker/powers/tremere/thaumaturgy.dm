@@ -17,6 +17,7 @@
 #define THAUMATURGY_DOOR_BREAK_LEVEL 3
 #define THAUMATURGY_EXTRA_DAMAGE_LEVEL 4
 #define THAUMATURGY_BLOOD_STEAL_LEVEL 5
+#define THAUMATURGY_MECHA_DAMAGE_LEVEL 6
 /datum/action/cooldown/bloodsucker/targeted/tremere/thaumaturgy
 	name = "Thaumaturgy"
 	level_current = 1
@@ -241,6 +242,10 @@
 		var/obj/machinery/door/hit_airlock = target
 		hit_airlock.open(2)
 		qdel(src)
+		return ..()
+	if(istype(target, /obj/vehicle/sealed/mecha) && bloodsucker_power.level_current >= THAUMATURGY_MECHA_DAMAGE_LEVEL)
+		var/obj/vehicle/sealed/mecha/exosuit = target
+		exosuit.emp_act(EMP_HEAVY)
 		return ..()
 	if(ismob(target))
 		if(bloodsucker_power.level_current >= THAUMATURGY_BLOOD_STEAL_LEVEL)

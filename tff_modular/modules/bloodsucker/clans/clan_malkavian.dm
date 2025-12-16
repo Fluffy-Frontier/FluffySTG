@@ -4,11 +4,12 @@
 		The Favorite Ghoul will suffer the same fate as the Master, while gaining the ability to tap into the madness when fighting."
 	join_icon_state = "malkavian"
 	join_description = "Completely insane. You gain constant hallucinations, become a prophet with unintelligable rambling, \
-		and become the enforcer of the Masquerade code."
+		and become the enforcer of the Masquerade code, you also can hear throught walls and hear ghosts."
 	blood_drink_type = BLOODSUCKER_DRINK_INHUMANELY
 	/// The prob chance of a malkavian spouting a revelation.
 	var/max_madness_chance = 10
 	var/min_madness_chance = 5
+	var/static/list/clan_traits = list(TRAIT_XRAY_VISION, TRAIT_SIXTHSENSE, TRAIT_XRAY_HEARING)
 
 /datum/bloodsucker_clan/malkavian/on_enter_frenzy(datum/antagonist/bloodsucker/source)
 	ADD_TRAIT(bloodsuckerdatum.owner.current, TRAIT_STUNIMMUNE, FRENZY_TRAIT)
@@ -19,20 +20,19 @@
 /datum/bloodsucker_clan/malkavian/New(datum/antagonist/bloodsucker/owner_datum)
 	. = ..()
 	RegisterSignal(SSdcs, COMSIG_BLOODSUCKER_BROKE_MASQUERADE, PROC_REF(on_bloodsucker_broke_masquerade))
-	ADD_TRAIT(bloodsuckerdatum.owner.current, TRAIT_XRAY_VISION, BLOODSUCKER_TRAIT)
+	owner_datum.owner.current.add_traits(clan_traits, BLOODSUCKER_TRAIT)
 	var/mob/living/carbon/carbon_owner = bloodsuckerdatum.owner.current
 	if(istype(carbon_owner))
 		carbon_owner.gain_trauma(/datum/brain_trauma/mild/hallucinations, TRAUMA_RESILIENCE_ABSOLUTE)
 		carbon_owner.gain_trauma(/datum/brain_trauma/special/bluespace_prophet, TRAUMA_RESILIENCE_ABSOLUTE)
 	owner_datum.owner.current.update_sight()
-	owner_datum.BuyPower(/datum/action/cooldown/bloodsucker/targeted/mesmerize/malkavian)
 
 	bloodsuckerdatum.owner.current.playsound_local(get_turf(bloodsuckerdatum.owner.current), 'sound/music/antag/creepalert.ogg', 80, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 	to_chat(bloodsuckerdatum.owner.current, span_hypnophrase("Welcome to the Malkavian..."))
 
 /datum/bloodsucker_clan/malkavian/Destroy(force)
 	UnregisterSignal(SSdcs, COMSIG_BLOODSUCKER_BROKE_MASQUERADE)
-	REMOVE_TRAIT(bloodsuckerdatum.owner.current, TRAIT_XRAY_VISION, BLOODSUCKER_TRAIT)
+	bloodsuckerdatum.owner.current.add_traits(clan_traits, BLOODSUCKER_TRAIT)
 	var/mob/living/carbon/carbon_owner = bloodsuckerdatum.owner.current
 	if(istype(carbon_owner))
 		carbon_owner.cure_trauma_type(/datum/brain_trauma/mild/hallucinations, TRAUMA_RESILIENCE_ABSOLUTE)
