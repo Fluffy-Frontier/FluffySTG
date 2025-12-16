@@ -226,7 +226,7 @@
 	research_icon = 'tff_modular/modules/modsuits/icons/items/mod_items.dmi'
 	research_icon_state = "rnd-plating"
 
-/datum/design/module/mod_anomaly_neutrilizer
+/datum/design/module/mod_energy_shield
 	name = "Anomaly neutrilizer module"
 	id = "mod_energy_shield"
 	materials = list(

@@ -156,7 +156,7 @@
 	slot_flags = NONE
 	icon_state = "mod_shield"
 	worn_icon_state = "mod_shield"
-	max_integrity = 150
+	uses_integrity = FALSE
 
 	icon = 'tff_modular/modules/modsuits/icons/items/mod_items.dmi'
 	lefthand_file = 'tff_modular/modules/modsuits/icons/worn_icons/melee_lefthand.dmi'
@@ -182,6 +182,9 @@
 	// МОД костюм к которму относится этот щит
 	var/obj/item/mod/control/mod = null
 
+	var/max_shield_health = 150
+	// Здоровье этого щита
+	VAR_PRIVATE/shield_health = 150
 
 /datum/armor/item_shield_brace
 	melee = 80
@@ -195,16 +198,16 @@
 
 /obj/item/shield/brace/examine(mob/user)
 	. = ..()
-	if(atom_integrity <= 0)
+	if(shield_health <= 0)
 		. += span_warning("\n It broken!")
-	if(atom_integrity < max_integrity)
+	if(shield_health < max_shield_health)
 		. += span_notice("\n It can be repaired with plastic!")
 
 /obj/item/shield/brace/update_icon_state()
 	. = ..()
 	if(braced)
 		icon_state = "mod_shield_braced"
-	if(atom_integrity <= 0)
+	if(shield_health <= 0)
 		icon_state = "mod_shield_broken"
 	else
 		icon_state = "mod_shield"
@@ -219,7 +222,7 @@
 	if(istype(attacking_item, /obj/item/stack/sheet/plastic))
 		var/obj/item/stack/sheet/plastic/plasic = attacking_item
 		var/how_many = 1
-		var/healthpercent = round((atom_integrity/max_integrity) * 100, 1)
+		var/healthpercent = round((shield_health/max_shield_health) * 100, 1)
 		switch(healthpercent)
 			if(50 to 99)
 				how_many = 2
@@ -232,13 +235,13 @@
 			return COMPONENT_CANCEL_ATTACK_CHAIN
 		if(do_after(user, 5 SECONDS))
 			balloon_alert(user, "Fixed!")
-			update_integrity(max_integrity)
+			update_shield_health(max_shield_health)
 			return COMPONENT_CANCEL_ATTACK_CHAIN
 	return ..()
 
 
 /obj/item/shield/brace/proc/toggle_brace(mob/living/user)
-	if(atom_integrity <= 0)
+	if(shield_health <= 0)
 		user.balloon_alert(user, "Shield broken!")
 		return
 
@@ -329,7 +332,7 @@
 
 /obj/item/shield/brace/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text, final_block_chance, damage, attack_type, damage_type)
 	var/effective_block_chance = final_block_chance
-	if(transparent && (hitby.pass_flags & PASSGLASS))
+	if(shield_health <= 0)
 		return FALSE
 
 	if(mod && !mod.subtract_charge(brace_push_power_cost))
@@ -371,22 +374,27 @@
 	take_damage(damage, damage_type, armor_flag, armour_penetration = penetration)
 
 
-// Helper to check if attack is from front 3 tiles
 /obj/item/shield/brace/proc/is_front_attack(mob/living/owner, atom/movable/hitby)
 	var/turf/owner_turf = get_turf(owner)
-	var/turf/attacker_turf = get_turf(hitby) // Or hitby.firer if projectile
+	var/turf/attacker_turf = get_turf(hitby)
 	if(get_dist(owner_turf, attacker_turf) > 3)
 		return FALSE
-	var/static/list/front_angles = list(0, -45, 45) // Cone
+	var/static/list/front_angles = list(0, -45, 45)
 	for(var/angle in front_angles)
 		var/turf/check_turf = get_step(owner_turf, turn(owner.dir, angle))
 		if(attacker_turf == check_turf)
 			return TRUE
 	return FALSE
 
-/obj/item/shield/brace/atom_break(damage_flag)
-	SHOULD_CALL_PARENT(FALSE)
-	return
+
+/obj/item/shield/brace/proc/update_shield_health(new_health)
+	shield_health = min(new_health, max_shield_health)
+
+// Прок для нанесения урона по щиту!
+/obj/item/shield/brace/proc/damage_shield(damage_amount)
+	shield_health = min(shield_health - damage_amount, 0)
+	if(shield_health <= 0)
+		atom_deconstruct(FALSE)
 
 /obj/item/shield/brace/atom_deconstruct(disassembled)
 	if(braced)
@@ -394,7 +402,6 @@
 	if(isliving(loc))
 		loc.balloon_alert(loc, "shield broken!")
 	update_icon_state()
-	return
 
 /obj/item/shield/brace/dropped(mob/user)
 	. = ..()

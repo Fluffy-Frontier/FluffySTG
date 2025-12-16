@@ -324,20 +324,34 @@
 
 /obj/item/mod/module/stasis/on_part_activation()
 	. = ..()
-	RegisterSignal(mod.wearer, COMSIG_ATOM_ATTACKBY_SECONDARY, PROC_REF(on_wearer_attacked), TRUE)
+
+	var/obj/item/clothing/gloves/mod/gloves = mod.get_part_from_slot(ITEM_SLOT_GLOVES)
+	if(!gloves)
+		return
+	RegisterSignal(gloves, COMSIG_ATOM_ITEM_INTERACTION_SECONDARY, PROC_REF(on_gloves_interacted), TRUE)
 
 /obj/item/mod/module/stasis/on_part_deactivation(deleting)
 	. = ..()
+	var/obj/item/clothing/gloves/mod/gloves = mod.get_part_from_slot(ITEM_SLOT_GLOVES)
+	if(!gloves)
+		return
+	UnregisterSignal(gloves, list(COMSIG_ATOM_ITEM_INTERACTION_SECONDARY))
 
-/obj/item/mod/module/stasis/proc/on_wearer_attacked(datum/source, obj/item/weapon, mob/user, list/modifiers)
+/obj/item/mod/module/stasis/item_interaction_secondary(mob/living/user, obj/item/tool, list/modifiers)
+	if(!is_reagent_container(tool) || !tool.reagents)
+		return ITEM_INTERACT_FAILURE
+	INVOKE_ASYNC(src, PROC_REF(try_refil), user, tool)
+	return ITEM_INTERACT_SUCCESS
+
+/obj/item/mod/module/stasis/proc/on_gloves_interacted(datum/source, mob/living/user, obj/item/interacted, list/modifiers)
 	SIGNAL_HANDLER
 
-	if(!is_reagent_container(weapon) || !weapon.reagents)
-		return
+	if(!is_reagent_container(interacted) || !interacted.reagents)
+		return ITEM_INTERACT_FAILURE
 	if(user != mod.wearer)
-		return
-	INVOKE_ASYNC(src, PROC_REF(try_refil), user, weapon)
-	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+		return ITEM_INTERACT_FAILURE
+	INVOKE_ASYNC(src, PROC_REF(try_refil), user, interacted)
+	return ITEM_INTERACT_SUCCESS
 
 /obj/item/mod/module/stasis/proc/try_refil(mob/user, obj/item/reagent_containers/store)
 	if(!reagent_storage)
@@ -345,7 +359,7 @@
 	if(!reagent_storage.total_volume >= max_fuel)
 		balloon_alert(user, "Full!")
 		return
-	if(store.reagents.has_reagent(requered_reagent, 5))
+	if(!store.reagents.has_reagent(requered_reagent, 5))
 		return
 
 	balloon_alert(user, "Refueling stasis module!")

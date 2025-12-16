@@ -62,7 +62,7 @@
 	announce_channels = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/mod_anomaly_neutrilizer
-	id = "mod_neutrilizer"
+	id = "mod_module_neutrilizer"
 	display_name = "Anomaly Neutrilizer Module"
 	description = "A high-tech module designed for active combat and suppression of anomalies."
 	prereq_ids = list("mod_research_modsuits", TECHWEB_NODE_MOD_ANOMALY)
@@ -73,11 +73,10 @@
 	announce_channels = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/mod_energy_shield
-	id = "mod_energy_shield"
+	id = "mod_module_energy_shield"
 	display_name = "An cutting-edge module that provides users with absolute protection from external influences."
 	prereq_ids = list("basic_combat_modules", TECHWEB_NODE_SYNDICATE_BASIC)
 	design_ids = list(
 		"mod_energy_shield",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_5_POINTS)
-
