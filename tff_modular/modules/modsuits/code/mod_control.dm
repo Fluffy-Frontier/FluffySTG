@@ -13,7 +13,7 @@
 /obj/item/mod/control/proc/install_rig()
 
 /obj/item/mod/construction/plating/rnd
-	icon = 'tff_modular/modules/modsuits/icons/items/mod_items.dmi'
+	icon = 'tff_modular/modules/modsuits/icons/items/mod_construction.dmi'
 	theme = /datum/mod_theme/rnd
 
 /obj/item/mod/control/rnd
