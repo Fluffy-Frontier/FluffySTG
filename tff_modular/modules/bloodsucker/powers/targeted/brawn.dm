@@ -1,6 +1,7 @@
 
 #define BRAWN_BREAKOUT_LEVEL 3
 #define BRAWN_AIRLOCK_LEVEL 4
+#define BRAWN_MECHA_LEVEL 5
 /datum/action/cooldown/bloodsucker/targeted/brawn
 	name = "Brawn"
 	desc = "Snap restraints, break lockers and doors at higher levels, or deal terrible damage with your bare hands."
@@ -18,6 +19,7 @@
 	. += "Punching a Cyborg will heavily EMP them in addition to deal damage."
 	. += "At level [BRAWN_BREAKOUT_LEVEL], you get the ability to break closets open, additionally can both break restraints AND knock a grabber down in the same use."
 	. += "At level [BRAWN_AIRLOCK_LEVEL], you get the ability to bash airlocks open, as long as they aren't bolted."
+	. += "At level [BRAWN_MECHA_LEVEL], you get the ability to bash mecha, dealing huge damage and causing EMP."
 	. += "Higher levels will increase the damage and knockdown when punching someone."
 
 /datum/action/cooldown/bloodsucker/targeted/brawn/ActivatePower(atom/target)
@@ -182,6 +184,16 @@
 			user.do_attack_animation(target_airlock, ATTACK_EFFECT_SMASH)
 			playsound(get_turf(target_airlock), 'sound/effects/bang.ogg', 30, 1, -1)
 			target_airlock.open(2) // open(2) is like a crowbar or jaws of life.
+	else if(istype(target, /obj/vehicle/sealed/mecha))
+		if(level_current <= BRAWN_MECHA_LEVEL)
+			target.balloon_alert(user, "ability level too low to bash mecha!")
+			return FALSE
+		var/obj/vehicle/sealed/mecha/exosuit = target
+		if(exosuit.Adjacent(user))
+			exosuit.emp_act(EMP_HEAVY)
+			exosuit.take_damage(GetDamage())
+			playsound(get_turf(user), 'sound/effects/grillehit.ogg', 80, TRUE, -1)
+			user.do_attack_animation(exosuit, ATTACK_EFFECT_SMASH)
 
 /datum/action/cooldown/bloodsucker/targeted/brawn/proc/GetPowerLevel()
 	return min(5, 1 + level_current)
