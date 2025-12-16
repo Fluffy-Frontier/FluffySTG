@@ -520,9 +520,9 @@
 	SIGNAL_HANDLER
 	COOLDOWN_START(src, move_cd, move_delay)
 
-/datum/component/stasis/proc/slow_throw(datum/atom_source, list/args)
+/datum/component/stasis/proc/slow_throw(datum/atom_source)
 	SIGNAL_HANDLER
-	args[3] = max(1, args[3] / 2) // Замедляем скорость броска, но не до 0
+	args[3] = max(1, args[3] / 2) // Замедляем скорость броска, но не до 0. Если что мы тут редактируем аргументы что нам по ссылке передали LOL
 
 /datum/component/stasis/proc/force_slow_glide(datum/atom_sourcess, new_glide_size)
 	SIGNAL_HANDLER

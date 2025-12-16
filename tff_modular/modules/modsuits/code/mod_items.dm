@@ -437,6 +437,7 @@
 	icon_state = "mod_laser"
 	inhand_icon_state = "armcannondisable0"
 	worn_icon_state = "gun"
+	shaded_charge = FALSE
 	ammo_type = list(
 		/obj/item/ammo_casing/energy/lasergun/modgun,
 		/obj/item/ammo_casing/energy/lasergun/modgun_alt,
@@ -475,7 +476,6 @@
 		select_fire(user)
 
 /obj/item/gun/energy/laser/mounted/modsuit/process(seconds_per_tick)
-	. = ..()
 	if(!mod)
 		return
 	if(cell && cell.percent() >= 100)
