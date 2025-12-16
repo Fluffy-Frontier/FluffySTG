@@ -412,6 +412,7 @@
 		AM.AddComponent(/datum/component/stasis, stasis_time)
 
 /obj/effect/temp_visual/statis_explosion
+	icon = 'icons/effects/64x64.dmi'
 	icon_state = "circle_wave"
 	duration = 3 SECONDS
 	pixel_x = -16
