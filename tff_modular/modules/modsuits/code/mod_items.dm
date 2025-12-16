@@ -438,6 +438,7 @@
 	inhand_icon_state = "armcannondisable0"
 	worn_icon_state = "gun"
 	shaded_charge = FALSE
+	automatic_charge_overlays =  FALSE
 	ammo_type = list(
 		/obj/item/ammo_casing/energy/lasergun/modgun,
 		/obj/item/ammo_casing/energy/lasergun/modgun_alt,

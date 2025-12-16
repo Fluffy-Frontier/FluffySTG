@@ -196,9 +196,9 @@
 		RND_CATEGORY_MODSUIT_MODULES + RND_SUBCATEGORY_MODSUIT_MODULES_GENERAL
 	)
 
-/datum/design/module/mod_anomaly_neutrilizer
+/datum/design/module/mod_neutrilizer
 	name = "Anomaly neutrilizer module"
-	id = "mod_anomaly_neutrilizer"
+	id = "mod_neutrilizer"
 	materials = list(
 		/datum/material/iron=SHEET_MATERIAL_AMOUNT*4,
 		/datum/material/silver=SHEET_MATERIAL_AMOUNT*2,

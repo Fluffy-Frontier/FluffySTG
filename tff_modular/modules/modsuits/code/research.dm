@@ -67,7 +67,7 @@
 	description = "A high-tech module designed for active combat and suppression of anomalies."
 	prereq_ids = list("mod_research_modsuits", TECHWEB_NODE_MOD_ANOMALY)
 	design_ids = list(
-		"mod_anomaly_neutrilizer",
+		"mod_neutrilizer",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_5_POINTS)
 	announce_channels = list(RADIO_CHANNEL_SCIENCE)
