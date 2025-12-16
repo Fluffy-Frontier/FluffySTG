@@ -308,7 +308,7 @@
 	remove_protection()
 
 
-/obj/item/mod/module/electrocute_absorber/proc/on_wearer_electrocute(datum/source, shock_damage, source, siemens_coeff, flags)
+/obj/item/mod/module/electrocute_absorber/proc/on_wearer_electrocute(datum/electrocuted, shock_damage, source, siemens_coeff, flags)
 	SIGNAL_HANDLER
 
 	if(!COOLDOWN_FINISHED(src, absorbation_cd))

@@ -2,7 +2,7 @@
 	id = "basic_combat_modules"
 	display_name = "Combat modular suits"
 	description = "Combat mod suit modules."
-	prereq_ids = list(TECHWEB_NODE_MOD_SECURITY, TECHWEB_NODE_AUS_SECURITY, TECHWEB_NODE_MOD_ENGI_ADV)
+	prereq_ids = list(TECHWEB_NODE_MOD_SECURITY, TECHWEB_NODE_RIOT_SUPRESSION, TECHWEB_NODE_MOD_ENGI_ADV)
 	design_ids = list(
 		"mod_energy_spear",
 		"mod_brace_shield",
@@ -62,7 +62,7 @@
 	announce_channels = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/mod_anomaly_neutrilizer
-	id = "mod_anomaly_neutrilizer"
+	id = "mod_neutrilizer"
 	display_name = "Anomaly Neutrilizer Module"
 	description = "A high-tech module designed for active combat and suppression of anomalies."
 	prereq_ids = list("mod_research_modsuits", TECHWEB_NODE_MOD_ANOMALY)

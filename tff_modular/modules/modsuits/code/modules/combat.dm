@@ -173,7 +173,7 @@
 /obj/item/mod/module/advanced_energy_shield/Destroy()
 	. = ..()
 	if(shield)
-		qdel(shield)
+		QDEL_NULL(shield)
 
 /obj/item/mod/module/advanced_energy_shield/on_part_activation()
 	mod.AddComponent( \
@@ -196,7 +196,7 @@
 
 /obj/item/mod/module/advanced_energy_shield/on_part_deactivation(deleting = FALSE)
 	if(shield)
-		qdel(shield)
+		QDEL_NULL(shield)
 	UnregisterSignal(mod.wearer, list(COMSIG_LIVING_CHECK_BLOCK, COMSIG_ATOM_EXAMINE))
 
 
@@ -511,20 +511,20 @@
 	if(world.time - start_time > stasis_time)
 		qdel(src)
 
-/datum/component/stasis/proc/check_move(datum/source)
+/datum/component/stasis/proc/check_move(datum/atom_source)
 	SIGNAL_HANDLER
 	if(!COOLDOWN_FINISHED(src, move_cd))
 		return COMPONENT_MOVABLE_BLOCK_PRE_MOVE
 
-/datum/component/stasis/proc/on_moved(datum/source)
+/datum/component/stasis/proc/on_moved(datum/atom_source)
 	SIGNAL_HANDLER
 	COOLDOWN_START(src, move_cd, move_delay)
 
-/datum/component/stasis/proc/slow_throw(datum/source, list/args)
+/datum/component/stasis/proc/slow_throw(datum/atom_source, list/args)
 	SIGNAL_HANDLER
 	args[3] = max(1, args[3] / 2) // Замедляем скорость броска, но не до 0
 
-/datum/component/stasis/proc/force_slow_glide(datum/source, new_glide_size)
+/datum/component/stasis/proc/force_slow_glide(datum/atom_sourcess, new_glide_size)
 	SIGNAL_HANDLER
 	atom_parent.glide_size = slow_glide_size
 

@@ -269,7 +269,7 @@
 	RegisterSignal(user, COMSIG_ATOM_PRE_DIR_CHANGE, PROC_REF(prevent_turn))
 	RegisterSignal(user, COMSIG_MOVABLE_BUMP, PROC_REF(brace_push), TRUE)
 
-	user.balloon_alert("Bracing!")
+	balloon_alert(user, "Bracing!")
 	user.visible_message(span_warning("[user] braces with [src]!"), span_notice("You brace with [src], facing [dir2text(braced_dir)]. Your movement is slowed, but you can push forward and resist knockback from the front."))
 	update_icon_state()
 
@@ -288,7 +288,7 @@
 	user.update_move_intent_slowdown()
 	user.move_resist = initial(user.move_resist)
 
-	user.balloon_alert("Relaxing!")
+	balloon_alert(user, "Relaxing!")
 	user.visible_message(span_notice("[user] relaxes [src]."), span_notice("You relax [src], regaining normal movement."))
 	update_icon_state()
 
@@ -435,6 +435,8 @@
 	desc = "A small but powerful laser mounted on the user's arm. The lens can be defocused for an alternate firing mode."
 	icon = 'tff_modular/modules/modsuits/icons/mod_icons/mod_modules.dmi'
 	icon_state = "mod_laser"
+	inhand_icon_state = "armcannondisable0"
+	worn_icon_state = "gun"
 	ammo_type = list(
 		/obj/item/ammo_casing/energy/lasergun/modgun,
 		/obj/item/ammo_casing/energy/lasergun/modgun_alt,
