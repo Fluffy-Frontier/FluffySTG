@@ -184,18 +184,6 @@
 			user.do_attack_animation(target_airlock, ATTACK_EFFECT_SMASH)
 			playsound(get_turf(target_airlock), 'sound/effects/bang.ogg', 30, 1, -1)
 			target_airlock.open(2) // open(2) is like a crowbar or jaws of life.
-	// Target Type: Mecha
-	if(istype(target, /obj/vehicle/sealed/mecha))
-		if(level_current <= BRAWN_MECHA_LEVEL)
-			target.balloon_alert(user, "ability level too low to bash mecha!")
-			return FALSE
-		playsound(get_turf(user), 'sound/effects/grillehit.ogg', 80, TRUE, -1)
-		var/obj/vehicle/sealed/mecha/exosuit = target
-		if(exosuit.Adjacent(user))
-			exosuit.visible_message(span_danger("[exosuit] gets bashed by [user]!"))
-			exosuit.emp_act(EMP_HEAVY)
-			exosuit.take_damage(GetDamage())
-			user.do_attack_animation(exosuit, ATTACK_EFFECT_SMASH)
 
 /datum/action/cooldown/bloodsucker/targeted/brawn/proc/GetPowerLevel()
 	return min(5, 1 + level_current)
