@@ -96,7 +96,8 @@
 	if(isnull(feed_target) && blood_taken)
 		log_combat(user, user, "fed on blood (target not found)", addition="(and took [blood_taken] blood)")
 	if(!aggressive_feed)
-		to_chat(feed_target, span_hypnophrase("Your mind becomes clouded and your eyes darken... What just happened to you? It looks like you've forgotten what happened to you in the past 10 seconds?"))
+		to_chat(feed_target, span_hypnophrase("Your mind becomes clouded and your eyes darken... What just happened to you?"))
+		to_chat(feed_target, span_notice("OOC NOTE: You've lost the memory of what happened recently. For ease of understanding, you forgot your past 20 seconds."))
 	else
 		log_combat(user, feed_target, "fed on blood", addition="(and took [blood_taken] blood)")
 		to_chat(user, span_notice("You slowly release [feed_target]."))
