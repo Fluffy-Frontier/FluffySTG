@@ -88,7 +88,6 @@
 	var/datum/antagonist/bloodsucker/suck_datum = candidate.add_antag_datum(/datum/antagonist/bloodsucker)
 	suck_datum.AdjustUnspentRank(rand(2, 3))
 
-
 /datum/dynamic_ruleset/midround/from_living/bloodsucker
 	name = "Vampiric Accident"
 	config_tag = "Midround Bloodsucker"
@@ -97,7 +96,7 @@
 	jobban_flag = ROLE_BLOODSUCKER
 	midround_type = LIGHT_MIDROUND
 	blacklisted_roles = BLOODSUCKER_BLACKLISTED_ROLES
-	weight = 9
+	weight = 10
 	repeatable = TRUE
 	/// List of species that cannot be bloodsuckers
 	var/list/restricted_species = BLOODSUCKER_RESTRICTED_SPECIES
