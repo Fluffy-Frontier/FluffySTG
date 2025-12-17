@@ -252,7 +252,7 @@
 			continue
 
 		if (preference.is_randomizable())
-			preference.apply_to_human(src, preference.create_random_value(preferences))
+			preference.apply_to_human(src, preference.create_random_value(preferences), preferences) // FF EDIT - ORIGINAL: preference.apply_to_human(src, preference.create_random_value(preferences))
 
 	fully_replace_character_name(real_name, generate_random_mob_name())
 
@@ -279,6 +279,7 @@
 	mob_height = dna?.species?.update_species_heights(src) || base_mob_height
 	if(old_height != mob_height)
 		regenerate_icons()
+	SEND_SIGNAL(src, COMSIG_HUMAN_HEIGHT_UPDATED, old_height)
 
 /**
  * Makes a full copy of src and returns it.
@@ -304,6 +305,9 @@
 
 	for(var/datum/quirk/original_quircks as anything in quirks)
 		clone.add_quirk(original_quircks.type, override_client = client, announce = FALSE)
+
+	for(var/personality_type in personalities)
+		clone.add_personality(personality_type)
 
 	clone.updateappearance(mutcolor_update = TRUE, mutations_overlay_update = TRUE)
 

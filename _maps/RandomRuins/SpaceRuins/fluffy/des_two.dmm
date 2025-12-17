@@ -3945,7 +3945,7 @@
 /turf/open/floor/iron/dark/textured_half,
 /area/ruin/space/has_grav/nova/des_two/bridge)
 "mE" = (
-/obj/machinery/computer/piratepad_control/syndiepad/syndicate{
+/obj/machinery/computer/piratepad_control/ghostpad/syndicate{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wideplating_new/dark{
@@ -5690,7 +5690,7 @@
 	pixel_x = 1;
 	pixel_y = -4
 	},
-/obj/item/trash/nachos{
+/obj/item/trash/chigirtma{
 	pixel_x = 1;
 	pixel_y = -34
 	},
@@ -6692,7 +6692,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/security/prison)
 "vS" = (
-/obj/machinery/computer/cargo/express/interdyne/syndicate{
+/obj/machinery/computer/cargo/express/ghost/syndicate{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wideplating_new/dark{
@@ -8241,7 +8241,6 @@
 	ailock = 1;
 	control_area = "/area/ruin/space/has_grav/nova/des_two/bridge/vault";
 	dir = 1;
-	icon_state = "control_kill";
 	lethal = 1;
 	name = "DS2 turret controls";
 	pixel_x = -30;
@@ -8465,7 +8464,7 @@
 /obj/machinery/suit_storage_unit{
 	mask_type = /obj/item/clothing/mask/gas/syndicate;
 	mod_type = /obj/item/mod/control/pre_equipped/traitor_elite;
-	storage_type = /obj/item/tank/jetpack/oxygen/harness
+	storage_type = /obj/item/tank/jetpack/harness
 	},
 /obj/effect/turf_decal/tile/dark/full,
 /turf/open/floor/mineral/plastitanium,
@@ -11812,7 +11811,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 8
 	},
-/obj/machinery/piratepad/syndiepad/syndicate{
+/obj/machinery/piratepad/ghostpad/syndicate{
 	pixel_x = 0;
 	pixel_y = 8
 	},

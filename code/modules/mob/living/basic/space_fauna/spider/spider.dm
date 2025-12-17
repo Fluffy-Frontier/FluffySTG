@@ -14,14 +14,14 @@
 	response_disarm_simple = "gently push aside"
 	initial_language_holder = /datum/language_holder/spider
 	melee_attack_cooldown = CLICK_CD_MELEE
-	damage_coeff = list(BRUTE = 1, BURN = 1.25, TOX = 1, STAMINA = 1, OXY = 1)
+	damage_coeff = list(BRUTE = 1, BURN = 1.25, TOX = 3, STAMINA = 1, OXY = 1)
 	basic_mob_flags = FLAMMABLE_MOB
 	status_flags = NONE
 	unsuitable_cold_damage = 4
 	unsuitable_heat_damage = 4
 	combat_mode = TRUE
 	faction = list(FACTION_SPIDER)
-	pass_flags = PASSTABLE | PASSMOB // FLUFFY FRONTIER ADDITION - SPIDEBUFF. ORIGINAL: pass_flags = PASSTABLE
+	pass_flags = PASSTABLE
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/items/weapons/bite.ogg'

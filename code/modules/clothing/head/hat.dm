@@ -60,10 +60,11 @@
 	desc = "These were once used by plague doctors. This hat will only slightly protect you from exposure to the Pestilence."
 	icon_state = "plaguedoctor"
 	armor_type = /datum/armor/bio_hood_plague
-	flags_inv = NONE
+	flags_inv = HIDEHAIR|HIDEEARS
 	clothing_flags = SNUG_FIT
 	flags_cover = NONE
 	dirt_state = null
+	alternate_worn_layer = HAIR_LAYER
 
 /datum/armor/bio_hood_plague
 	bio = 100
@@ -368,7 +369,7 @@
 	icon_state = "/obj/item/clothing/head/costume/ushanka/sec"
 	desc = "A warm and comfortable ushanka, dyed with 'all natural flavors' according to the tag."
 	greyscale_colors = "#C7B08B#A52F29"
-	armor_type = /datum/armor/head_helmet
+	armor_type = /datum/armor/cosmetic_sec
 	flags_1 = null
 
 /obj/item/clothing/head/costume/nightcap

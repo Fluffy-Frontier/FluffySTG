@@ -46,7 +46,7 @@
 	pixel_y = 25
 	},
 /obj/effect/baseturf_helper/reinforced_plating,
-/obj/machinery/porta_turret/syndicate/nri_raider{
+/obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	faction = list("Syndicate","neutral");
@@ -655,7 +655,7 @@
 	color = "#adadcd";
 	pixel_y = 25
 	},
-/obj/machinery/porta_turret/syndicate/nri_raider{
+/obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	faction = list("Syndicate","neutral");
@@ -1258,7 +1258,6 @@
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
 "eQ" = (
-/obj/machinery/computer/cargo/express/interdyne,
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 1
 	},
@@ -1269,6 +1268,7 @@
 	dir = 1
 	},
 /obj/machinery/digital_clock/directional/north,
+/obj/machinery/computer/cargo/express/ghost/interdyne,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/interdyne_planetary_base/cargo)
 "eS" = (
@@ -2571,7 +2571,6 @@
 /obj/machinery/turretid{
 	name = "Base turret controls";
 	desc = "Used to control the base's automated defenses.";
-	icon_state = "control_kill";
 	dir = 1;
 	pixel_y = 30;
 	req_access = list("syndicate");
@@ -4865,7 +4864,7 @@
 	color = "#adadcd";
 	pixel_y = 25
 	},
-/obj/machinery/porta_turret/syndicate/nri_raider{
+/obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	faction = list("Syndicate","neutral");
@@ -6627,7 +6626,7 @@
 	color = "#adadcd";
 	pixel_y = 25
 	},
-/obj/machinery/porta_turret/syndicate/nri_raider{
+/obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	faction = list("Syndicate","neutral");
@@ -7554,7 +7553,7 @@
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv)
 "KC" = (
-/obj/machinery/computer/piratepad_control/syndiepad,
+/obj/machinery/computer/piratepad_control/ghostpad/interdyne,
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 5
 	},
@@ -8068,7 +8067,7 @@
 	color = "#adadcd";
 	pixel_y = 25
 	},
-/obj/machinery/porta_turret/syndicate/nri_raider{
+/obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	faction = list("Syndicate","neutral");
@@ -8152,7 +8151,7 @@
 	color = "#adadcd";
 	pixel_y = 25
 	},
-/obj/machinery/porta_turret/syndicate/nri_raider{
+/obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	faction = list("Syndicate","neutral");
@@ -8342,7 +8341,7 @@
 	color = "#adadcd";
 	pixel_y = 25
 	},
-/obj/machinery/porta_turret/syndicate/nri_raider{
+/obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	faction = list("Syndicate","neutral");
@@ -8519,7 +8518,7 @@
 /area/ruin/interdyne_planetary_base/med)
 "OS" = (
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/piratepad/syndiepad{
+/obj/machinery/piratepad/ghostpad/interdyne{
 	pixel_x = 0;
 	pixel_y = 8
 	},
@@ -8600,7 +8599,7 @@
 	color = "#adadcd";
 	pixel_y = 25
 	},
-/obj/machinery/porta_turret/syndicate/nri_raider{
+/obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	faction = list("Syndicate","neutral");
@@ -10150,7 +10149,7 @@
 	color = "#adadcd";
 	pixel_y = 25
 	},
-/obj/machinery/porta_turret/syndicate/nri_raider{
+/obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	faction = list("Syndicate","neutral");

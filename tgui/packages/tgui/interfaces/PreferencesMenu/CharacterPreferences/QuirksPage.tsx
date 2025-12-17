@@ -21,6 +21,7 @@ import {
 import { useRandomToggleState } from '../useRandomToggleState';
 import { useServerPrefs } from '../useServerPrefs';
 import { getRandomization, PreferenceList } from './MainPage';
+import { PersonalityPage } from './PersonalityPage';
 
 function getColorValueClass(quirk: Quirk) {
   if (quirk.value > 0) {
@@ -293,7 +294,7 @@ function StatDisplay(props) {
   );
 }
 
-export function QuirksPage(props) {
+function QuirkPage() {
   const { act, data } = useBackend<PreferencesMenuData>();
 
   // this is mainly just here to copy from MainPage.tsx
@@ -327,7 +328,7 @@ export function QuirksPage(props) {
     }
   });
 
-  let balance = 0;
+  let balance = -data.default_quirk_balance;
   let positiveQuirks = 0;
 
   for (const selectedQuirkName of selectedQuirks) {
@@ -353,9 +354,9 @@ export function QuirksPage(props) {
         return 'You need a negative quirk to balance this out!';
       }
     }
-    // NOVA EDIT START - Veteran quirks
-    if (quirk.veteran_only && !data.is_veteran) {
-      return 'You need to be a veteran to select this quirk, apply today!';
+    // NOVA EDIT START - Nova star quirks
+    if (quirk.nova_stars_only && !data.is_nova_star) {
+      return 'You need to be a veteran to select this quirk, apply today!'; // FLUFFY FRONTIER EDIT - ORIGINAL: return 'You need to be a Nova star to select this quirk, apply today!';
     }
     // NOVA EDIT END
     const selectedQuirkNames = selectedQuirks.map((quirkKey) => {
@@ -522,6 +523,46 @@ export function QuirksPage(props) {
             />
           </Stack.Item>
         </Stack>
+      </Stack.Item>
+    </Stack>
+  );
+}
+
+export function QuirkPersonalityPage() {
+  const [contentPage, setContentPage] = useState<'quirks' | 'personality'>(
+    'quirks',
+  );
+
+  return (
+    <Stack fill vertical>
+      <Stack.Item>
+        <Stack>
+          <Stack.Item grow>
+            <Button
+              selected={contentPage === 'quirks'}
+              onClick={() => setContentPage('quirks')}
+              fluid
+              align="center"
+              fontSize="14px"
+            >
+              Quirks
+            </Button>
+          </Stack.Item>
+          <Stack.Item grow>
+            <Button
+              selected={contentPage === 'personality'}
+              onClick={() => setContentPage('personality')}
+              fluid
+              align="center"
+              fontSize="14px"
+            >
+              Personality
+            </Button>
+          </Stack.Item>
+        </Stack>
+      </Stack.Item>
+      <Stack.Item grow>
+        {contentPage === 'personality' ? <PersonalityPage /> : <QuirkPage />}
       </Stack.Item>
     </Stack>
   );

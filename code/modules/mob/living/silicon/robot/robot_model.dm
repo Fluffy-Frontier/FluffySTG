@@ -59,6 +59,10 @@
 	. = ..()
 	robot = loc
 	if(!istype(robot))
+		// NOVA EDIT ADDITION START - Disguise picker needs to be able to temporarily spawn models, to copy their appearance. No modules needed
+		if(isnull(robot))
+			return
+		// NOVA EDIT ADDITION END
 		stack_trace("Robot model ([src]) initialized outside of a robot at [AREACOORD(robot)]! \
 			This should never happen, make sure this item is not map-placed.")
 		return INITIALIZE_HINT_QDEL
@@ -298,7 +302,7 @@
 		if(!isnull(details[SKIN_PIXEL_X]))
 			cyborg.base_pixel_x = details[SKIN_PIXEL_X]
 		if(!isnull(details[SKIN_PIXEL_Y]))
-			cyborg.base_pixel_y = details[SKIN_PIXEL_Y]
+			cyborg.base_pixel_z = details[SKIN_PIXEL_Y]
 		if(!isnull(details[SKIN_LIGHT_KEY]))
 			special_light_key = details[SKIN_LIGHT_KEY]
 		if(!isnull(details[SKIN_HAT_OFFSET]))
@@ -450,16 +454,12 @@
 	button_icon_state = "meson"
 
 /datum/action/cooldown/borg_meson/Activate()
-	if(usr.sight & SEE_TURFS)
-		usr.clear_sight(SEE_TURFS)
-		owner.lighting_cutoff_red += 5
-		owner.lighting_cutoff_green += 15
-		owner.lighting_cutoff_blue += 5
+	var/mob/living/silicon/robot/borg = owner
+	if(borg.sight & SEE_TURFS)
+		borg.sight_mode = BORGDEFAULT
 	else
-		usr.add_sight(SEE_TURFS)
-		owner.lighting_cutoff_red -= 5
-		owner.lighting_cutoff_green -= 15
-		owner.lighting_cutoff_blue -= 5
+		borg.sight_mode = BORGMESON
+	borg.update_sight()
 
 /obj/item/robot_model/engineering/be_transformed_to(obj/item/robot_model/old_model, forced = FALSE)
 	var/datum/action/cooldown/borg_meson/night_vision = new(loc)
@@ -1027,16 +1027,15 @@
 /datum/action/cooldown/borg_thermal
 	name = "Toggle Thermal Night Vision"
 	button_icon = 'icons/mob/actions/actions_mecha.dmi'
-	button_icon_state = "meson"
+	button_icon_state = "thermal"
 
 /datum/action/cooldown/borg_thermal/Activate()
-	if(usr.sight & SEE_TURFS)
-		usr.clear_sight(SEE_TURFS|SEE_MOBS)
-		usr.lighting_cutoff = LIGHTING_CUTOFF_VISIBLE
+	var/mob/living/silicon/robot/borg = owner
+	if(borg.sight & SEE_MOBS)
+		borg.sight_mode = BORGDEFAULT
 	else
-		usr.add_sight(SEE_TURFS|SEE_MOBS)
-		usr.lighting_cutoff = LIGHTING_CUTOFF_HIGH
-	usr.sync_lighting_plane_cutoff()
+		borg.sight_mode = BORGTHERM
+	borg.update_sight()
 
 /obj/item/robot_model/saboteur/be_transformed_to(obj/item/robot_model/old_model, forced = FALSE)
 	var/datum/action/cooldown/borg_thermal/thermal_vision = new(loc)

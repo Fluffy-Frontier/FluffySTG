@@ -3,238 +3,375 @@
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 			<style type='text/css'>
-				@font-face {
-					font-family: "Fixedsys";
-					src: url("FixedsysExcelsior3.01Regular.ttf");
-				}
-				body,
-				html {
-					margin: 0;
-					overflow: hidden;
-					text-align: center;
-					background-color: black;
-					padding-top: 5vmin;
-					-ms-user-select: none;
-					cursor: default;
-				}
+			@font-face {
+				font-family: "PixelPlay";
+				src:
+				url("http://cdn.fluffy-frontier.ru/font/pixelplay.woff2")
+					format("woff2"),
+				url("http://cdn.fluffy-frontier.ru/font/pixelplay.woff")
+					format("woff"),
+				url("http://cdn.fluffy-frontier.ru/font/pixelplay.ttf")
+					format("truetype");
+				font-weight: normal;
+				font-style: normal;
+				font-display: swap;
+			}
 
-				img {
-					border-style:none;
-				}
+			body,
+			html {
+				font-family: "PixelPlay", monospace, sans-serif;
+				margin: 0;
+				overflow: hidden;
+				text-align: center;
+				background-color: black;
+				padding-top: 5vmin;
+				user-select: none;
+				cursor: url('http://cdn.fluffy-frontier.ru/icons/cursor.png'), default;
+			}
 
-				.bg {
-					position: absolute;
-					width: auto;
-					height: 100vmin;
-					min-width: 100vmin;
-					min-height: 100vmin;
-					top: 50%;
-					left:50%;
-					transform: translate(-50%, -50%);
-					z-index: 0;
-				}
+			img {
+				border-style: none;
+			}
 
-				.container_terminal {
-					position: absolute;
-					width: 100%;
-					height: calc(100% - 7vmin);
-					overflow: clip;
-					box-sizing: border-box;
-					padding: 3vmin 2vmin;
-					top: 0%;
-					left:0%;
-					z-index: 1;
+			@keyframes bg_drift {
+				0%,
+				100% {
+				transform: translate(-50%, calc(-50% + 0px));
 				}
+				12.5% {
+				transform: translate(-50%, calc(-50% + 7px));
+				}
+				25% {
+				transform: translate(-50%, calc(-50% + 14px));
+				}
+				37.5%,
+				50% {
+				transform: translate(-50%, calc(-50% + 21px));
+				}
+				62.5% {
+				transform: translate(-50%, calc(-50% + 14px));
+				}
+				75% {
+				transform: translate(-50%, calc(-50% + 7px));
+				}
+				87.5% {
+				transform: translate(-50%, calc(-50% + 0px));
+				}
+			}
 
-				.terminal_text {
-					display: inline-block;
-					font-weight: lighter;
-					text-decoration: none;
-					width: 100%;
-					text-align: right;
-					color:green;
-					text-shadow: 1px 1px black;
-					margin-right: 0%;
-					margin-top: 0px;
-					font-size: 2vmin;
-					line-height: 1vmin;
-					letter-spacing: 1px;
+			@keyframes screen_flicker {
+				0%,
+				100% {
+				opacity: 1;
 				}
+				50% {
+				opacity: 0.98;
+				}
+			}
 
-				.container_progress {
-					position: absolute;
-					box-sizing: border-box;
-					bottom: 3vmin;
-					left: 2vmin;
-					height: 4vmin;
-					width: calc(100% - 4vmin);
-					border-left: 2px solid green;
-					border-right: 2px solid green;
-					padding: 4px;
-					background-color: black;
-				}
+			.bg {
+				position: absolute;
+				width: auto;
+				height: 100vmin;
+				min-width: 100vmin;
+				min-height: 100vmin;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 0;
+				animation: bg_drift 6s steps(8) infinite;
+				filter: contrast(1.1) brightness(0.95);
+				image-rendering: pixelated;
+				image-rendering: crisp-edges;
+			}
 
-				.progress_bar {
-					width: 0%;
-					height: 100%;
-					background-color: green;
-				}
+			.bg::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: repeating-linear-gradient(
+				0deg,
+				rgba(0, 0, 0, 0.03) 0px,
+				transparent 1px,
+				transparent 2px,
+				rgba(0, 0, 0, 0.03) 3px
+				);
+				pointer-events: none;
+				animation: screen_flicker 0.15s infinite;
+			}
 
-				@keyframes looping_sub_pattern {
-					from {
-						background-position: 0px 0px;
-					}
-					to {
-						background-position: 11.3137px 0px;
-					}
-				}
+			.left_side_container {
+				position: absolute;
+				bottom: 1vmin;
+				left: 1vmin;
+				display: flex;
+				gap: 10px;
+			}
 
-				.sub_progress_bar {
-					width: 0%;
-					height: 100%;
-					float: right;
-					background-color: lime;
-					background-image: repeating-linear-gradient(
-						-45deg,
-						green,
-						green 7px,
-						black 7px,
-						black 8px
-					);
-					background-attachment: fixed;
-					animation: looping_sub_pattern 1s linear infinite;
-				}
+			.circle_button {
+				color: #4a6953;
+				background-color: transparent;
+				border: 4px dotted #4a6953;
+				border-radius: 100%;
+				width: 46px;
+				height: 46px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: url('http://cdn.fluffy-frontier.ru/icons/cursor_link.png'), pointer;
+				text-decoration: none;
+				transition: all 0.1s ease;
+			}
 
-				.container_nav {
-					position: absolute;
-					box-sizing: border-box;
-					width: 90vmin;
-					min-height: 10vmin;
-					top: calc(50% + 22.5vmin);
-					left:50%;
-					transform: translate(-50%, -50%);
-					z-index: 1;
-					border: 2px solid white;
-					border-radius: 4px;
-					box-shadow: 2px 2px #333, inset 1px 1px #333;
-					background: linear-gradient(to bottom, rgba(110, 45, 136, 0.6), rgba(120, 68, 204, 0.6), rgba(68, 68, 204, 0.6), rgba(68, 68, 204, 0.6), rgba(0, 0, 102, 0.6));
-					opacity: 95%;
-					padding: 1em;
-				}
+			.circle_button:hover {
+				background-color: rgba(74, 105, 83, 0.1);
+				border-color: #61886c;
+			}
 
-				.container_nav hr {
-					height: 2px;
-					background-color: #cde;
-					border: none;
-					box-shadow: 2px 2px black;
-				}
+			.circle_button:active {
+				cursor: url('http://cdn.fluffy-frontier.ru/icons/cursor_link_press.png'), pointer;
+			}
 
-				.menu_button {
-					display: block;
-					box-sizing: border-box;
-					font-family: "Fixedsys";
-					font-weight: lighter;
-					text-decoration: none;
-					font-size: 4vmin;
-					text-shadow: 2px 2px black;
-					line-height: 4vmin;
-					width: 100%;
-					text-align: left;
-					color: #cde;
-					height: 4vmin;
-					padding-left: 5vmin;
-					letter-spacing: 1px;
-					cursor: pointer;
-					white-space: nowrap;
-					overflow: hidden;
-				}
+			.circle_button img {
+				width: 32px;
+				height: 32px;
+			}
 
-				.menu_button:hover {
-					padding-left: 0px;
-					color: yellow;
-				}
+			.container_nav {
+				position: absolute;
+				box-sizing: border-box;
+				min-height: 10vmin;
+				top: calc(50% + 22.5vmin);
+				left: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 1;
+				opacity: 75%;
+				padding: 1em;
+			}
 
-				.menu_button:active {
-					padding-left: 0px;
-					transform: translate(2px, 2px);
-				}
+			.container_nav hr {
+				height: 4px;
+				border: none;
+			}
 
-				.menu_button:hover::before {
-					content: "☞";
-					text-align: center;
-					width: 5vmin;
-					display: inline-block;
-				}
+			.menu_button {
+				display: block;
+				position: relative;
+				box-sizing: border-box;
+				font-family: "PixelPlay";
+				font-weight: lighter;
+				text-decoration: none;
+				font-size: 3vmin;
+				line-height: 3.5vmin;
+				width: 100%;
+				text-align: center;
+				color: #475347;
+				height: 3.6vmin;
+				letter-spacing: 1px;
+				cursor: url('http://cdn.fluffy-frontier.ru/icons/cursor_link.png'), pointer;
+				margin: 15px 0 6px 0;
+				padding: 0 1rem;
+				overflow: visible;
+			}
 
-				@keyframes pulse_button {
-					0% {transform: translateX(0px);}
-					100% {transform: translateX(2px);}
-				}
+			.menu_button::after {
+				content: "";
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				width: 100%;
+				border-bottom: 3px dotted #4a6953;
+			}
 
-				.menu_button:active::before {
-					content: "☛";
-					text-align: center;
-					width: 5vmin;
-					animation: pulse_button 0.25s infinite alternate;
-				}
+			.menu_button:hover {
+				background-color: #4a6953;
+				color: black;
+			}
 
-				@keyframes pollsbox {
-					0% {color: #cde;}
-					50% {color: #f80;}
-				}
+			.menu_button:active {
+				transform: translate(2px, 2px);
+				cursor: url('http://cdn.fluffy-frontier.ru/icons/cursor_link_press.png'), pointer;
+			}
 
-				.menu_newpoll {
-					animation: pollsbox 2s step-start infinite;
-					padding-left: 0px;
+			@keyframes pollsbox {
+				0% {
+				color: #cde;
 				}
+				50% {
+				color: #f80;
+				}
+			}
 
-				.menu_newpoll::before {
-					content: "→";
-					text-align: center;
-					width: 5vmin;
-					display: inline-block;
-				}
+			.menu_newpoll {
+				animation: pollsbox 2s step-start infinite;
+			}
 
-				.menu_newpoll::after {
-					content: "←";
-					text-align: center;
-					width: 5vmin;
-					display: inline-block;
-				}
+			.menu_newpoll::before {
+				content: "→";
+				text-align: center;
+				width: 5vmin;
+				display: inline-block;
+			}
 
-				.container_notice {
-					position: absolute;
-					box-sizing: border-box;
-					width: auto;
-					padding-top: 1vmin;
-					top: calc(50% - 10vmin);
-					left:50%;
-					transform: translate(-50%, -50%);
-					z-index: 1;
-				}
+			.menu_newpoll::after {
+				content: "←";
+				text-align: center;
+				width: 5vmin;
+				display: inline-block;
+			}
 
-				.menu_notice {
-					display: inline-block;
-					font-family: "Fixedsys";
-					font-weight: lighter;
-					text-decoration: none;
-					width: 100%;
-					text-align: left;
-					color: red;
-					text-shadow: 1px 0px black, -1px 0px black, 0px 1px black, 0px -1px black, 2px 0px black, -2px 0px black, 0px 2px black, 0px -2px black;
-					margin-right: 0%;
-					margin-top: 0px;
-					font-size: 3vmin;
-					line-height: 2vmin;
-				}
+			.unchecked,
+			.checked {
+				color: #475347;
+			}
 
-				.unchecked {
-					color: #F44;
-				}
+			.char_text {
+				position: absolute;
+				box-sizing: border-box;
+				width: auto;
+				color: #4a6953;
+				font-size: 1.6rem;
+				bottom: 0.7vmin;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 1;
+			}
 
-				.checked {
-					color: #4F4;
+			.container_notice {
+				position: absolute;
+				box-sizing: border-box;
+				width: auto;
+				bottom: 0.2rem;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 1;
+			}
+
+			.menu_notice {
+				display: inline-block;
+				font-weight: lighter;
+				text-decoration: none;
+				width: 100%;
+				text-align: center;
+				color: rgba(129, 0, 0, 1);
+				font-size: 3vmin;
+				line-height: 2vmin;
+			}
+
+			.container_terminal {
+				position: absolute;
+				width: 100%;
+				height: calc(100% - 15vmin);
+				overflow: clip;
+				box-sizing: border-box;
+				padding: 12vmin 3vmin 3vmin 3vmin;
+				top: 0%;
+				left: 0%;
+				z-index: 1;
+				background: linear-gradient(180deg, #10232aff 0%, #0a101aff 100%);
+			}
+
+			.papers_header {
+				position: absolute;
+				top: 3vmin;
+				left: 0;
+				width: 100%;
+				text-align: center;
+				font-family: 'Courier New', monospace;
+				font-size: 4vmin;
+				font-weight: bold;
+				color: #007b8bff;
+				text-shadow: 2px 2px 0px #000000ff;
+				letter-spacing: 0.3vmin;
+				border-bottom: 0.5vmin solid #20424aff;
+				padding-bottom: 2vmin;
+				background-color: rgba(16, 41, 42, 0.9);
+				z-index: 2;
+			}
+
+			.terminal_text {
+				display: block;
+				font-family: 'Courier New', monospace;
+				font-weight: normal;
+				text-decoration: none;
+				width: 100%;
+				text-align: left;
+				color: #74d4acff;
+				text-shadow: 1px 1px 2px black;
+				font-size: 2vmin;
+				line-height: 2.5vmin;
+				letter-spacing: 0.5px;
+				margin-bottom: 0.3vmin;
+			}
+
+			.container_progress {
+				position: absolute;
+				box-sizing: border-box;
+				bottom: 6vmin;
+				left: 50%;
+				transform: translateX(-50%);
+				height: 5vmin;
+				width: 60%;
+				border: 0.4vmin solid #008b7fff;
+				padding: 0.5vmin;
+				background-color: #0a1a19ff;
+				box-shadow:
+					inset 0 0 1vmin rgba(0, 0, 0, 0.8),
+					0 0 2vmin rgba(0, 118, 139, 0.5);
+			}
+
+			.progress_label {
+				position: absolute;
+				bottom: 2vmin;
+				left: 0;
+				width: 100%;
+				text-align: center;
+				font-family: 'Courier New', monospace;
+				font-size: 2.5vmin;
+				color: #00768bff;
+				text-shadow: 1px 1px 3px black;
+				letter-spacing: 0.2vmin;
+				font-weight: bold;
+			}
+
+			.progress_bar {
+				width: 0%;
+				height: 100%;
+				background: linear-gradient(90deg, #203e4aff 0%, rgba(37, 85, 107, 1) 50%, #20454aff 100%);
+				box-shadow: inset 0 0.3vmin 0.5vmin rgba(0, 123, 139, 0.6);
+				transition: width 0.1s linear;
+			}
+
+			@keyframes looping_sub_pattern {
+				from {
+					background-position: 0px 0px;
 				}
+				to {
+					background-position: 20px 0px;
+				}
+			}
+
+			.sub_progress_bar {
+				width: 0%;
+				height: 100%;
+				float: right;
+				background-color: #007b8bff;
+				background-image: repeating-linear-gradient(
+					45deg,
+					#00768bff,
+					#00768bff 8px,
+					#20444aff 8px,
+					#20404aff 10px
+				);
+				background-attachment: fixed;
+				animation: looping_sub_pattern 0.8s linear infinite;
+				box-shadow:
+					0 0 1vmin rgba(0, 130, 139, 0.8),
+					inset 0 0 0.5vmin rgba(0, 195, 255, 0.3);
+			}
 			</style>
 		</head>
 		<body>
