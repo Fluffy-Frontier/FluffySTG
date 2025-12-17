@@ -15,10 +15,10 @@
 	var/mob/living/carbon/human/carbon_owner = bloodsuckerdatum.owner.current
 	var/obj/item/bodypart/left_arm = carbon_owner.get_bodypart(BODY_ZONE_L_ARM)
 	var/obj/item/bodypart/right_arm = carbon_owner.get_bodypart(BODY_ZONE_R_ARM)
-	left_arm.unarmed_damage_low += 15
-	left_arm.unarmed_damage_high += 15
-	right_arm.unarmed_damage_low += 15
-	right_arm.unarmed_damage_high += 15
+	left_arm.unarmed_damage_low += 10
+	left_arm.unarmed_damage_high += 10
+	right_arm.unarmed_damage_low += 10
+	right_arm.unarmed_damage_high += 10
 	ability.Grant(carbon_owner)
 
 /datum/bloodsucker_clan/brujah/Destroy(force)
@@ -26,10 +26,10 @@
 	var/mob/living/carbon/human/carbon_owner = bloodsuckerdatum.owner.current
 	var/obj/item/bodypart/left_arm = carbon_owner.get_bodypart(BODY_ZONE_L_ARM)
 	var/obj/item/bodypart/right_arm = carbon_owner.get_bodypart(BODY_ZONE_R_ARM)
-	left_arm.unarmed_damage_low -= 15
-	left_arm.unarmed_damage_high -= 15
-	right_arm.unarmed_damage_low -= 15
-	right_arm.unarmed_damage_high -= 15
+	left_arm.unarmed_damage_low -= 10
+	left_arm.unarmed_damage_high -= 10
+	right_arm.unarmed_damage_low -= 10
+	right_arm.unarmed_damage_high -= 10
 	ability.Remove(carbon_owner)
 
 /datum/bloodsucker_clan/brujah/favorite_ghoul_gain(datum/antagonist/bloodsucker/source, datum/antagonist/ghoul/ghouldatum)

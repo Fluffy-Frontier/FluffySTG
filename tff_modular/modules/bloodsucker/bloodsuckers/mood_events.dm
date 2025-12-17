@@ -6,12 +6,12 @@
 
 /datum/mood_event/drankblood_bad
 	description = "<span class='boldwarning'>I drank the blood of a lesser creature. Disgusting.</span>\n"
-	mood_change = -4
+	mood_change = -2
 	timeout = 3 MINUTES
 
 /datum/mood_event/drankblood_dead
 	description = "<span class='boldwarning'>I drank dead blood. I am better than this.</span>\n"
-	mood_change = -7
+	mood_change = -4
 	timeout = 8 MINUTES
 
 /datum/mood_event/drankblood_synth
@@ -33,9 +33,6 @@
 	description = "<span class='nicegreen'>I slept in a coffin during the day. I feel whole again.</span>\n"
 	mood_change = 10
 	timeout = 6 MINUTES
-
-/datum/mood_event/coffinsleep/quirk
-	mood_change = 4
 
 /datum/mood_event/daylight_bad_sleep
 	description = "<span class='boldwarning'>I slept poorly in a makeshift coffin during the day.</span>\n"

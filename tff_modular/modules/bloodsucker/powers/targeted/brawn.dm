@@ -8,7 +8,7 @@
 	button_icon_state = "power_strength"
 	purchase_flags = BLOODSUCKER_CAN_BUY|GHOUL_CAN_BUY
 	bloodcost = 10
-	cooldown_time = 12 SECONDS
+	cooldown_time = 15 SECONDS
 	target_range = 1
 	prefire_message = "Select a target."
 
@@ -155,7 +155,7 @@
 		if(issilicon(target_atom))
 			target_atom.emp_act(EMP_HEAVY)
 	// Target Type: Locker
-	else if(istype(target, /obj/structure/closet))
+	if(istype(target, /obj/structure/closet))
 		if(level_current <= BRAWN_BREAKOUT_LEVEL)
 			target.balloon_alert(user, "ability level too low to break open!")
 			return FALSE
@@ -168,7 +168,7 @@
 		addtimer(CALLBACK(src, PROC_REF(break_closet), user, target_closet), 1)
 		playsound(get_turf(user), 'sound/effects/grillehit.ogg', 80, TRUE, -1)
 	// Target Type: Door
-	else if(istype(target, /obj/machinery/door))
+	if(istype(target, /obj/machinery/door))
 		if(level_current <= BRAWN_AIRLOCK_LEVEL)
 			target.balloon_alert(user, "ability level too low to break open!")
 			return FALSE
@@ -184,15 +184,17 @@
 			user.do_attack_animation(target_airlock, ATTACK_EFFECT_SMASH)
 			playsound(get_turf(target_airlock), 'sound/effects/bang.ogg', 30, 1, -1)
 			target_airlock.open(2) // open(2) is like a crowbar or jaws of life.
-	else if(istype(target, /obj/vehicle/sealed/mecha))
+	// Target Type: Mecha
+	if(istype(target, /obj/vehicle/sealed/mecha))
 		if(level_current <= BRAWN_MECHA_LEVEL)
 			target.balloon_alert(user, "ability level too low to bash mecha!")
 			return FALSE
+		playsound(get_turf(user), 'sound/effects/grillehit.ogg', 80, TRUE, -1)
 		var/obj/vehicle/sealed/mecha/exosuit = target
 		if(exosuit.Adjacent(user))
+			exosuit.visible_message(span_danger("[exosuit] gets bashed by [user]!"))
 			exosuit.emp_act(EMP_HEAVY)
 			exosuit.take_damage(GetDamage())
-			playsound(get_turf(user), 'sound/effects/grillehit.ogg', 80, TRUE, -1)
 			user.do_attack_animation(exosuit, ATTACK_EFFECT_SMASH)
 
 /datum/action/cooldown/bloodsucker/targeted/brawn/proc/GetPowerLevel()

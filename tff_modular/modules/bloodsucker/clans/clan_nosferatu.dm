@@ -21,7 +21,7 @@
 	if(!mob.has_quirk(/datum/quirk/badback))
 		mob.add_quirk(/datum/quirk/badback)
 
-	mob.add_traits(list(TRAIT_DISFIGURED, TRAIT_VENTCRAWLER_NUDE, TRAIT_KNOW_ENGI_WIRES, TRAIT_SILENT_FOOTSTEPS), BLOODSUCKER_TRAIT)
+	mob.add_traits(list(TRAIT_DISFIGURED, TRAIT_VENTCRAWLER_NUDE, TRAIT_KNOW_ENGI_WIRES, TRAIT_SILENT_FOOTSTEPS, TRAIT_MESON_VISION), BLOODSUCKER_TRAIT)
 
 	RegisterSignal(bloodsuckerdatum, COMSIG_BLOODSUCKER_EXAMINE, PROC_REF(on_mob_examine))
 	RegisterSignal(mob, COMSIG_CAN_VENTCRAWL, PROC_REF(can_ventcrawl))
@@ -73,7 +73,7 @@
 	SIGNAL_HANDLER
 	var/mob/living/carbon/human/ogled = owner_datum.owner.current
 	var/mob/living/ogler = examiner
-	if(isliving(examiner) && examiner != ogled && !ogler.mob_mood.has_mood_of_category("nosferatu_examine"))
+	if(isliving(examiner) && examiner != ogled && !ogler.mob_mood.has_mood_of_category("nosferatu_examine") && !IS_BLOODSUCKER(examiner))
 		ogler.add_mood_event("nosferatu_examine", /datum/mood_event/nosferatu_examined, ogled, owner_datum.GetRank())
 		ogler.adjust_disgust(owner_datum.GetRank() * 10)
 	// show that they are dangerous nosferatu, as if you're gazing upon them with fear, without mentioning the clan name/antagonist name, describe their appearance
