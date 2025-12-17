@@ -9,9 +9,3 @@
 
 /datum/quirk/item_quirk/breather/water_breather/add_adaptation()
 	return
-
-/datum/quirk/item_quirk/breather/water_breather/remove()
-	return
-
-/datum/quirk/item_quirk/breather/water_breather/add_unique(client/client_source)
-	return
