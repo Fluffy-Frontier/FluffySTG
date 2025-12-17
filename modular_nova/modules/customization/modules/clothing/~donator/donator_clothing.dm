@@ -399,8 +399,7 @@
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/head.dmi'
 	icon_state = "caligram_cap_tan"
 
-/obj/item/clothing/head/caligram_cap/Initialize(mapload)
-	. = ..()
+/obj/item/clothing/head/caligram_cap/setup_reskins()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/caligram_cap)
 
 // Donation reward for Raxraus
@@ -424,8 +423,7 @@
 	icon_state = "caligram_fatigues_tan"
 	worn_icon_state = "caligram_fatigues_tan"
 
-/obj/item/clothing/under/jumpsuit/caligram_fatigues/Initialize(mapload)
-	. = ..()
+/obj/item/clothing/under/jumpsuit/caligram_fatigues/setup_reskins()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/caligram_fatigues)
 
 // Donation reward for Raxraus
@@ -450,8 +448,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|LEGS|ARMS|HANDS
 
-/obj/item/clothing/suit/jacket/caligram_parka/Initialize(mapload)
-	. = ..()
+/obj/item/clothing/suit/jacket/caligram_parka/setup_reskins()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/caligram_parka)
 
 // Donation reward for Raxraus
@@ -477,10 +474,8 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|LEGS|ARMS|HANDS
 
-/obj/item/clothing/suit/armor/vest/caligram_parka_vest/Initialize(mapload)
-	. = ..()
+/obj/item/clothing/suit/armor/vest/caligram_parka_vest/setup_reskins()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/caligram_parka_vest)
-
 
 // Donation reward for ChillyLobster
 /obj/item/clothing/suit/jacket/brasspriest
@@ -985,8 +980,7 @@
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/uniform.dmi'
 	icon_state = "bodysuitkoruu"
 
-/obj/item/clothing/under/bodysuit_koruu/Initialize(mapload)
-	. = ..()
+/obj/item/clothing/under/bodysuit_koruu/setup_reskins()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/bodysuit_koruu)
 
 // Donation reward for CandleJax
@@ -1833,8 +1827,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/korpstech, 32)
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	supports_variations_flags = NONE
 
-/obj/item/clothing/suit/armor/hos/elofy/Initialize(mapload)
-	. = ..()
+/obj/item/clothing/suit/armor/hos/elofy/setup_reskins()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/coat_elofy)
 
 /obj/item/clothing/suit/armor/hos/elofy/examine_more(mob/user)
@@ -1854,8 +1847,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/korpstech, 32)
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/head.dmi'
 	icon_state = "hat_black"
 
-/obj/item/clothing/head/hats/hos/elofy/Initialize(mapload)
-	. = ..()
+/obj/item/clothing/head/hats/hos/elofy/setup_reskins()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/hat_elofy)
 
 /datum/atom_skin/gloves_elofy
@@ -1871,10 +1863,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/korpstech, 32)
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/hands.dmi'
 	icon_state = "gloves_black"
 
-/obj/item/clothing/gloves/elofy/Initialize(mapload)
-	. = ..()
+/obj/item/clothing/gloves/elofy/setup_reskins()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/gloves_elofy)
-
 
 /datum/atom_skin/boots_elofy
 	abstract_type = /datum/atom_skin/boots_elofy
@@ -1893,8 +1883,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/korpstech, 32)
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/feet.dmi'
 	icon_state = "boots_blackblue"
 
-/obj/item/clothing/shoes/jackboots/elofy/Initialize(mapload)
-	. = ..()
+/obj/item/clothing/shoes/jackboots/elofy/setup_reskins()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/boots_elofy)
 
 // Donation reward for grasshand
@@ -2015,8 +2004,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/korpstech, 32)
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/neck.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 
-/obj/item/clothing/neck/trenchcoat/Initialize(mapload)
-	. = ..()
+/obj/item/clothing/neck/trenchcoat/setup_reskins()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/secure_trenchcoat)
 
 //Donation reward for Jasohavents
