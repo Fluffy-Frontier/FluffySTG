@@ -371,7 +371,7 @@
 	else if(isbasicmob(hitby))
 		var/mob/living/basic/critter = hitby
 		penetration = critter.armour_penetration
-	take_damage(damage, damage_type, armor_flag, armour_penetration = penetration)
+	take_shield_damage(damage, damage_type, armor_flag, armour_penetration = penetration)
 
 
 /obj/item/shield/brace/proc/is_front_attack(mob/living/owner, atom/movable/hitby)
@@ -386,6 +386,14 @@
 			return TRUE
 	return FALSE
 
+/obj/item/shield/brace/proc/take_shield_damage(damage_amount, damage_type = BRUTE, damage_flag = "", sound_effect = TRUE, attack_dir, armour_penetration = 0)
+	damage_amount = run_atom_armor(damage_amount, damage_type, damage_flag, attack_dir, armour_penetration)
+	if(damage_amount < DAMAGE_PRECISION)
+		return
+	if(SEND_SIGNAL(src, COMSIG_ATOM_TAKE_DAMAGE, damage_amount, damage_type, damage_flag, sound_effect, attack_dir, armour_penetration) & COMPONENT_NO_TAKE_DAMAGE)
+		return
+	. = damage_amount
+	damage_shield(damage_amount)
 
 /obj/item/shield/brace/proc/update_shield_health(new_health)
 	shield_health = min(new_health, max_shield_health)
