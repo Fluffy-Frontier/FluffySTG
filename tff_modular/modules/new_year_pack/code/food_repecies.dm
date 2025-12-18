@@ -69,6 +69,7 @@
 	category = CAT_MISCFOOD
 	time = 10 SECONDS
 
+
 /datum/crafting_recipe/food/christmas_ham
 	name = "Raw Christmas ham"
 	reqs = list(
@@ -81,6 +82,7 @@
 	result = /obj/item/food/christmas_ham/raw
 	category = CAT_MISCFOOD
 	time = 5 SECONDS
+
 
 /datum/crafting_recipe/food/caviar_butterbrod
 	name = "Caviar butterbrod"

@@ -50,7 +50,6 @@
 		"corn" = 1,
 	)
 	crafting_complexity = FOOD_COMPLEXITY_3
-	custom_materials = list(/datum/material/meat = MEATDISH_MATERIAL_AMOUNT)
 
 /obj/item/food/cake/shuba
 	name = "shuba"
@@ -132,7 +131,6 @@
 		"bbq smoke" = 1,
 	)
 	crafting_complexity = FOOD_COMPLEXITY_4
-	custom_materials = list(/datum/material/meat = MEATSLAB_MATERIAL_AMOUNT * 2)
 	var/obj/item/food/christmas_ham/slice/slice_type = /obj/item/food/christmas_ham/slice
 	var/slice_yield = 6
 
@@ -173,7 +171,7 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/christmas_ham/raw/make_bakeable()
-	AddComponent(/datum/component/bakeable, /obj/item/food/christmas_ham, rand(70 SECONDS, 80 SECONDS), TRUE, TRUE)
+	AddComponent(/datum/component/bakeable, /obj/item/food/christmas_ham, 70 SECONDS, TRUE, TRUE)
 
 /obj/item/food/sweets/candy_cane
 	name = "candy cane"
