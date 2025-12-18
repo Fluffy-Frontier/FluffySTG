@@ -91,6 +91,7 @@
 	)
 	result = /obj/item/food/sandwich/caviar_butterbrod
 	category = CAT_MISCFOOD
+	added_foodtypes = SEAFOOD
 	time = 5 SECONDS
 
 /datum/crafting_recipe/food/caviar_butterbrod/moonfish
