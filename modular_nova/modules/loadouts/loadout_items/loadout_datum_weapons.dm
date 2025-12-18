@@ -20,9 +20,9 @@
 	mechanical_item = TRUE
 	blacklisted_roles = list(JOB_PRISONER)
 
-/*
+/* FLUFFY FRONTIER EDIT: COMMENT OUT WEAPONS FROM LOADOUT
 *	GHETTO GUNS
-*/
+
 
 /datum/loadout_item/weapons/ghettoguns
 	abstract_type = /datum/loadout_item/weapons/ghettoguns
@@ -43,10 +43,11 @@
 /datum/loadout_item/weapons/ghettoguns/smoothbore
 	name = /obj/item/gun/energy/disabler/smoothbore::name
 	item_path = /obj/item/gun/energy/disabler/smoothbore
+*/
 
 /*
 *	FORGE WEAPONRY
-*/
+
 
 /datum/loadout_item/weapons/forgeweapons
 	abstract_type = /datum/loadout_item/weapons/forgeweapons
@@ -83,3 +84,4 @@
 /datum/loadout_item/weapons/forgeweapons/staff
 	name = /obj/item/forging/reagent_weapon/staff::name
 	item_path = /obj/item/forging/reagent_weapon/staff
+*/
