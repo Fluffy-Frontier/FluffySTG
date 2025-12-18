@@ -94,8 +94,8 @@
 	added_foodtypes = SEAFOOD
 	time = 5 SECONDS
 
-/datum/crafting_recipe/food/caviar_butterbrod/moonfish
-	name = "Caviar butterbrod"
+/datum/crafting_recipe/food/caviar_butterbrod_moonfish
+	name = "Caviar butterbrod(moonfish)"
 	reqs = list(
 		/obj/item/food/breadslice/plain = 1,
 		/obj/item/food/butter = 1,
@@ -103,6 +103,7 @@
 	)
 	result = /obj/item/food/sandwich/caviar_butterbrod
 	category = CAT_MISCFOOD
+	added_foodtypes = SEAFOOD
 	time = 5 SECONDS
 
 /datum/crafting_recipe/food/candy_cane
@@ -116,8 +117,8 @@
 	category = CAT_MISCFOOD
 	time = 5 SECONDS
 
-/datum/crafting_recipe/food/candy_cane/mint
-	name = "Candy cane"
+/datum/crafting_recipe/food/candy_cane_mint
+	name = "Candy cane(mint)"
 	reqs = list(
 		/datum/reagent/consumable/sugar = 8,
 		/obj/item/food/mint = 1,
