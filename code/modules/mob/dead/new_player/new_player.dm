@@ -133,8 +133,8 @@
 		if(JOB_UNAVAILABLE_SLOTFULL)
 			return "[jobtitle] is already filled to capacity."
 		//NOVA EDIT ADDITION
-		if(JOB_NOT_VETERAN)
-			return "You need to be veteran to join as [jobtitle]."
+		if(JOB_NOT_NOVA_STAR)
+			return "You need to be veteran to join as [jobtitle]." // FLUFFY FRONTIER EDIT - ORIGINAL: return "You need to be Nova star to join as [jobtitle]."
 		if(JOB_UNAVAILABLE_QUIRK)
 			return "[jobtitle] is restricted due to your selected quirks."
 		if(JOB_UNAVAILABLE_LANGUAGE)
@@ -178,8 +178,8 @@
 		return JOB_UNAVAILABLE_LANGUAGE
 	if(job.has_banned_quirk(client.prefs))
 		return JOB_UNAVAILABLE_QUIRK
-	if(job.veteran_only && !SSplayer_ranks.is_veteran(client))
-		return JOB_NOT_VETERAN
+	if(job.nova_stars_only && !SSplayer_ranks.is_nova_star(client))
+		return JOB_NOT_NOVA_STAR
 	if(job.has_banned_species(client.prefs))
 		return JOB_UNAVAILABLE_SPECIES
 	//NOVA EDIT END
@@ -216,7 +216,9 @@
 		tgui_alert(usr, "There was an unexpected error putting you into your requested job. If you cannot join with any job, you should contact an admin.")
 		return FALSE
 
-	hide_title_screen()// NOVA EDIT ADDITION
+	var/latejoin_period = CEILING(STATION_TIME_PASSED() / (5 MINUTES), 5)
+	SSblackbox.record_feedback("tally", "latejoin_time", 1, latejoin_period)
+	hide_title_screen() // NOVA EDIT ADDITION
 	mind.late_joiner = TRUE
 	var/atom/destination = mind.assigned_role.get_latejoin_spawn_point()
 	if(!destination)

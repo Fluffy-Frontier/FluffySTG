@@ -1258,7 +1258,6 @@
 /turf/open/floor/iron/dark/textured,
 /area/ruin/interdyne_planetary_base/serv/rstrm)
 "eQ" = (
-/obj/machinery/computer/cargo/express/interdyne,
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 1
 	},
@@ -1269,6 +1268,7 @@
 	dir = 1
 	},
 /obj/machinery/digital_clock/directional/north,
+/obj/machinery/computer/cargo/express/ghost/interdyne,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/interdyne_planetary_base/cargo)
 "eS" = (
@@ -2571,7 +2571,6 @@
 /obj/machinery/turretid{
 	name = "Base turret controls";
 	desc = "Used to control the base's automated defenses.";
-	icon_state = "control_kill";
 	dir = 1;
 	pixel_y = 30;
 	req_access = list("syndicate");

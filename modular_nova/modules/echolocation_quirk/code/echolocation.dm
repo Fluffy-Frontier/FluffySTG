@@ -3,7 +3,7 @@
 	desc = "Though your eyes no longer function, you accommodate for it by some means of extrasensory echolocation and sensitive hearing. Beware: if you're ever deafened, you'll also lose your echolocation until you recover!"
 	gain_text = span_notice("The slightest sounds map your surroundings.")
 	lose_text = span_notice("The world resolves into colour and clarity.")
-	value = 0
+	value = -8 // FLUFFY FRONTIER CHANGE: was 0
 	icon = FA_ICON_EAR_LISTEN
 	mob_trait = TRAIT_GOOD_HEARING
 	medical_record_text = "Patient's eyes are biologically nonfunctional. Hearing tests indicate almost supernatural acuity."
@@ -15,6 +15,11 @@
 	var/datum/client_colour/echolocation_custom/esp_color
 	/// The action we add with this quirk in add(), used for easy deletion later
 	var/datum/action/cooldown/spell/added_action
+
+/datum/quirk/echolocation/is_species_appropriate(datum/species/mob_species)
+	if(ispath(mob_species, /datum/species/dullahan))
+		return FALSE
+	return ..()
 
 /datum/quirk/echolocation/add(client/client_source)
 	// echolocation component handles blinding us already so we don't need to worry about that

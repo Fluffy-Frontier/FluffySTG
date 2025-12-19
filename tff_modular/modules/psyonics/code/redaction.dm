@@ -269,9 +269,10 @@
 		var/mob/living/carbon/human/human_victim = victim
 		var/synth_check = (secondary_school == "Psychokinesis" || !issynthetic(human_victim))
 		if(human_victim.stat == DEAD && synth_check)
-			owner.visible_message(span_notice("[owner] kneels before the body of [victim], lowers their hands onto cadavers chest and begins... meditating?"),
-								span_notice("You kneel before the cadaver, lower your hands onto their chest and start to concentrate energy. You better not \
-								get disturbed, or else..."))
+			owner.visible_message(span_notice("[owner] kneels before the body of [victim], lowers their hands onto cadavers chest and begins meditating."),
+								  span_notice("You kneel before the cadaver, lower your hands onto their chest and start to concentrate energy. You better not \
+								  get disturbed, or else..."),
+								  blind_message = span_hear("You hear a low hum."))
 			var/obj/effect/abstract/particle_holder/particle_effect = new(human_victim, /particles/droplets/psyonic)
 			if(!do_after(mendicant, 25 SECONDS, human_victim, IGNORE_SLOWDOWNS, TRUE))
 				accident_harm(owner) // Ауч. Больно бьёт по псионику
@@ -295,8 +296,8 @@
 	unlucky_guy.take_bodypart_damage(25, wound_bonus = 100)
 	unlucky_guy.take_bodypart_damage(25, wound_bonus = 100, sharpness = SHARP_EDGED)
 	unlucky_guy.visible_message(span_warning("Something inside of [unlucky_guy]s body cracks!"),
-						  span_bolddanger("Your revival energy backfired at you, causing severe injuries!"),
-						  blind_message = span_hear("You hear bones breaking."))
+								span_bolddanger("Your revival energy backfired at you, causing severe injuries!"),
+								blind_message = span_hear("You hear bones breaking."))
 
 /datum/action/cooldown/spell/touch/psyonic/psyonic_revival/proc/can_defib_human(mob/living/carbon/human/patient)
 	var/defib_result = patient.can_defib()
@@ -306,7 +307,7 @@
 		if (DEFIB_FAIL_SUICIDE)
 			fail_reason = "Patient has left this world on his terms. You can not restore him."
 		if (DEFIB_FAIL_NO_HEART)
-			fail_reason = "Patient's heart is missing and you are not Alpha tier to create it out of air."
+			fail_reason = "Patients heart is missing and you are not Alpha tier to create it out of air."
 		if (DEFIB_FAIL_FAILING_HEART)
 			var/obj/item/organ/heart/target_heart = patient.get_organ_slot(ORGAN_SLOT_HEART)
 			if(target_heart)
@@ -314,16 +315,16 @@
 				if((target_heart.organ_flags & ORGAN_ORGANIC) || synth_check) // Only fix organic heart
 					patient.setOrganLoss(ORGAN_SLOT_HEART, 60)
 				else
-					fail_reason = "Patient's heart is made out of metals and plastics. You can not work with that."
+					fail_reason = "Patients heart is made out of metals and plastics. You can not work with that."
 		if (DEFIB_FAIL_TISSUE_DAMAGE)
-			patient.adjustBruteLoss(patient.getBruteLoss()/2)
-			patient.adjustFireLoss(patient.getFireLoss()/2)
+			patient.adjustBruteLoss(-patient.getBruteLoss()/2)
+			patient.adjustFireLoss(-patient.getFireLoss()/2)
 			if ((patient.getBruteLoss() >= MAX_REVIVE_BRUTE_DAMAGE) || (patient.getFireLoss() >= MAX_REVIVE_FIRE_DAMAGE))
-				fail_reason = "Patient's body is too flimsy to support life, but your energy partially healed that. Maybe try again?"
+				fail_reason = "Patients body is too flimsy to support life, but your energy partially healed that. Maybe try again?"
 		if (DEFIB_FAIL_HUSK)
 			patient.cure_husk()
 			if(HAS_TRAIT(patient, TRAIT_HUSK))
-				fail_reason = "Patient's body is a mere husk, and you can not cure them."
+				fail_reason = "Patients body is a mere husk, and you can not cure them."
 		if (DEFIB_FAIL_FAILING_BRAIN)
 			var/obj/item/organ/brain/target_brain = patient.get_organ_slot(ORGAN_SLOT_BRAIN)
 			if(target_brain)
@@ -364,7 +365,9 @@
 				need_mob_update += patient.adjustBruteLoss((mobhealth - HALFWAYCRITDEATH) * (total_brute / overall_damage), updating_health = FALSE)
 			if(need_mob_update)
 				patient.updatehealth()
-			owner.visible_message(span_green("Revival successful."))
+			owner.visible_message(span_warning("[owner] suddenly hits [patient]s chest!"),
+								  span_green("Another saved life on your count."),
+								  span_hear("You hear a slap."))
 			playsound(src, 'sound/effects/ghost.ogg', 40, FALSE)
 			patient.set_heartattack(FALSE)
 			if(defib_result == DEFIB_POSSIBLE)

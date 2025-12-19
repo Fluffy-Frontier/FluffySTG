@@ -3,24 +3,6 @@
 
 /datum/config_entry/flag/russian_text_formation
 
-// Overflow server HARD pop cap
-/datum/config_entry/number/player_hard_cap
-
-// Overflow server SOFT pop cap - Notifiaction to join the overflow
-/datum/config_entry/number/player_soft_cap
-
-// Overflow server IP
-/datum/config_entry/string/overflow_server_ip
-
-// Do we broadcast our OOC to all dem servers in cross servers?
-/datum/config_entry/flag/enable_cross_server_ooc
-
-// Do we broadcast our asay to all dem servers in cross servers?
-/datum/config_entry/flag/enable_cross_server_asay
-
-// Name of our server, ooc.
-/datum/config_entry/string/cross_server_name
-
 // DISCORD GAME ALERT CONFIGS
 // Role id to ping
 /datum/config_entry/string/game_alert_role_id
@@ -71,8 +53,8 @@
 /datum/config_entry/flag/mentor_legacy_system
 	protection = CONFIG_ENTRY_LOCKED
 
-/// Defines whether the server uses the legacy veteran system with veteran_players.txt or the SQL system.
-/datum/config_entry/flag/veteran_legacy_system
+/// Defines whether the server uses the legacy star system with nova_star_players.txt or the SQL system.
+/datum/config_entry/flag/nova_star_legacy_system
 	protection = CONFIG_ENTRY_LOCKED
 
 /// RUIN BUDGETS ///
