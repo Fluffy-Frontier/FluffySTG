@@ -59,6 +59,11 @@
 		if(newbrain.suicided)
 			to_chat(user, span_warning("[newbrain] is completely useless."))
 			return
+		// TFF ADDITION
+		if(IS_BLOODSUCKER(newbrain.brainmob))
+			to_chat(user, span_warning("[newbrain] is completely useless."))
+			return
+		// TFF ADDITION END
 		if(!newbrain.brainmob)
 			var/install = tgui_alert(user, "[newbrain] is inactive, slot it in anyway?", "Installing Brain", list("Yes", "No"))
 			if(install != "Yes")
