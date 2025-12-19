@@ -27,7 +27,7 @@
 #define FRENZY_THRESHOLD_EXIT 250
 
 /// a bloodsucker can't loose more humanity than this, and looses the masquerade ability when reaching it
-#define HUMANITY_LOST_MAXIMUM 50
+#define HUMANITY_LOST_MAXIMUM 30
 
 /// Level up blood cost define, max_blood * this = blood cost
 #define BLOODSUCKER_LEVELUP_PERCENTAGE 0.4

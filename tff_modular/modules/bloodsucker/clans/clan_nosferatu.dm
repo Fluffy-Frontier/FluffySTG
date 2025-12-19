@@ -15,7 +15,7 @@
 /datum/bloodsucker_clan/nosferatu/New(datum/antagonist/bloodsucker/owner_datum)
 	. = ..()
 	for(var/datum/action/cooldown/bloodsucker/power as anything in bloodsuckerdatum.powers)
-		if(istype(power, /datum/action/cooldown/bloodsucker/masquerade) || istype(power, /datum/action/cooldown/bloodsucker/veil))
+		if(istype(power, /datum/action/cooldown/bloodsucker/masquerade))
 			bloodsuckerdatum.RemovePower(power)
 	var/mob/living/mob = bloodsuckerdatum.owner.current
 	if(!mob.has_quirk(/datum/quirk/badback))

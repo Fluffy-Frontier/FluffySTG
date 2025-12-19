@@ -1,3 +1,4 @@
+/*
 /datum/action/cooldown/bloodsucker/veil
 	name = "Veil of Many Faces"
 	desc = "Disguise yourself in the illusion of another identity."
@@ -160,3 +161,4 @@
 
 /obj/effect/particle_effect/fluid/smoke/vampsmoke/fade_out(frames = 0.8 SECONDS)
 	..(frames)
+*/
