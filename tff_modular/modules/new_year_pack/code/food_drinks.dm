@@ -11,7 +11,8 @@
 	icon = TFF_FOOD_NY_ICON
 	icon_state = "manda_martini"
 	name = "Mandarin Martini"
-	desc = "Shaken by holiday cheer, not stirred."
+	desc = "What could be better than a gin-tonic? Of course, only a martini, an aperitif \
+			cocktail based on gin and vermouth. What could be better than a martini? Mandarin Martini!"
 
 /datum/reagent/consumable/ethanol/bluespace_tango
 	name = "Bluespace Tango"
@@ -26,7 +27,7 @@
 	icon = TFF_FOOD_NY_ICON
 	icon_state = "tango"
 	name = "Bluespace Tango"
-	desc = "For partners separated by lightyears, but connected by flavor."
+	desc = "For those who want to be together but can't. For those whose life is a continuous tango. And for synthetics."
 
 /datum/reagent/consumable/ethanol/mandarin_telepad
 	name = "Mandarin Telepad"
@@ -41,21 +42,21 @@
 	icon = TFF_FOOD_NY_ICON
 	icon_state = "manda_telepad"
 	name = "Mandarin Telepad"
-	desc = "Screwdrivers are for carbons; this one is for tired machines."
+	desc = "The analogue of the Screwdriver, but for synthetics. Just what a tired unit needs."
 
 /datum/reagent/consumable/mandarinade
 	name = "Mandarinade"
 	description = "Sparkling mandarin soda best shared during long winter nights."
 	color = "#ffb45e"
 	quality = DRINK_GOOD
-	taste_description = "sweet mandarin bubbles and childhood sugar"
+	taste_description = "sweet mandarin juice, sugar and a long-forgotten childhood"
 
 /datum/glass_style/drinking_glass/mandarinade
 	required_drink_type = /datum/reagent/consumable/mandarinade
 	icon = TFF_FOOD_NY_ICON
 	icon_state = "mandarinade"
 	name = "Mandarinade"
-	desc = "Fizzing citrus memories of snow crunching underfoot."
+	desc = "Sparkling tangerine drink, perfect for a winter evening on Christmas Eve."
 
 /datum/reagent/consumable/ethanol/mandarin_spritz
 	name = "Mandarin Spritz"
@@ -63,21 +64,21 @@
 	color = "#ff9c45"
 	boozepwr = 40
 	quality = DRINK_VERYGOOD
-	taste_description = "romantic winter sourness with menthol breath"
+	taste_description = "of a romantic winter evening, pleasant sourness on the tongue and menthol breath"
 
 /datum/glass_style/drinking_glass/mandarin_spritz
 	required_drink_type = /datum/reagent/consumable/ethanol/mandarin_spritz
 	icon = TFF_FOOD_NY_ICON
 	icon_state = "manda_spritz"
 	name = "Mandarin Spritz"
-	desc = "A sunset gradient crowned with frosty breath."
+	desc = "Freshly squeezed mandarin juice, white tequila, dash of lime juice, a drop of menthol and soda. Stir, not shake. Divine."
 
 /datum/reagent/consumable/mandarin_garibaldi
 	name = "Mandarin Garibaldi"
-	description = "A creamy, non-alcoholic sour layered with soy milk and ginger soda."
+	description = "An exquisite non-alcoholic sour."
 	color = "#ffb16f"
 	quality = DRINK_GOOD
-	taste_description = "sweet-and-sour mandarin with creamy soda"
+	taste_description = "the sweet and sour soda,  and the creamy aftertaste. Perfectly combined with the pleasant New Year's scent of mandarin"
 
 /datum/glass_style/drinking_glass/mandarin_garibaldi
 	required_drink_type = /datum/reagent/consumable/mandarin_garibaldi
