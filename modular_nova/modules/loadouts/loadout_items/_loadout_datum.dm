@@ -41,10 +41,12 @@
 	var/list/restricted_species
 	/// Whether the item is restricted to supporters
 	var/donator_only
-	/// Whether the item is restricted to veterans.
-	var/veteran_only
+	/// Whether the item is restricted to Nova stars.
+	var/nova_stars_only
 	/// Whether the item requires a specific season in order to be available
 	var/required_season = null
+	/// Is the loadout item a mechanical item? If so, it will be blocked by 'allow_mechanical_loadout_items' under some circumstances
+	var/mechanical_item = FALSE
 	/// If the item won't appear when the ERP config is disabled
 	var/erp_item = FALSE
 	/// If the item goes into the special erp box
@@ -92,15 +94,20 @@
  *
  * Returns `TRUE` if `target` is allowed to receive this item, `FALSE` if not.
  */
-/datum/loadout_item/proc/can_be_applied_to(mob/living/target, datum/preferences/preference_source, datum/job/equipping_job, silent = FALSE)
+/datum/loadout_item/proc/can_be_applied_to(mob/living/target, datum/preferences/preference_source, datum/job/equipping_job, allow_mechanical_loadout_items = TRUE)
 	var/client/client = preference_source.parent
+	if(!allow_mechanical_loadout_items && !equipping_job  && mechanical_item)
+		if(client)
+			to_chat(target, span_warning("You were unable to get a loadout item ([initial(item_path.name)]) due to being a non-whitelisted ghostrole!"))
+		return FALSE
+
 	if(restricted_roles && equipping_job && !(equipping_job.title in restricted_roles))
-		if(client && !silent)
+		if(client)
 			to_chat(target, span_warning("You were unable to get a loadout item ([initial(item_path.name)]) due to job restrictions!"))
 		return FALSE
 
 	if(blacklisted_roles && equipping_job && (equipping_job.title in blacklisted_roles))
-		if(client && !silent)
+		if(client)
 			to_chat(target, span_warning("You were unable to get a loadout item ([initial(item_path.name)]) due to job blacklists!"))
 		return FALSE
 
@@ -108,22 +115,22 @@
 		var/mob/living/carbon/carbon_target = target
 		var/datum/dna/dna = carbon_target.dna
 		if(!istype(dna) || (restricted_species && !(dna.species.id in restricted_species)))
-			if(client && !silent)
+			if(client)
 				to_chat(target, span_warning("You were unable to get a loadout item ([initial(item_path.name)]) due to species restrictions!"))
 			return FALSE
 
 	if(donator_only && !SSplayer_ranks.is_donator(client))
-		if(client && !silent)
+		if(client)
 			to_chat(target, span_warning("You were unable to get a loadout item ([initial(item_path.name)]) due to not being a donator!"))
 		return FALSE
 
-	if(veteran_only && !SSplayer_ranks.is_veteran(client))
-		if(client && !silent)
-			to_chat(target, span_warning("You were unable to get a loadout item ([initial(item_path.name)]) due to not being a veteran!"))
+	if(nova_stars_only && !SSplayer_ranks.is_nova_star(client))
+		if(client)
+			to_chat(target, span_warning("You were unable to get a loadout item ([initial(item_path.name)]) due to not being a veteran!")) // FLUFFY FRONTIER EDIT - ORIGINAL: to_chat(target, span_warning("You were unable to get a loadout item ([initial(item_path.name)]) due to not being a Nova star!"))
 		return FALSE
 
 	if(LAZYLEN(ckeywhitelist) && !(client?.ckey in ckeywhitelist))
-		if(client && !silent)
+		if(client)
 			to_chat(target, span_warning("You were unable to get a loadout item ([initial(item_path.name)]) due to not being apart of its CKEY whitelist!"))
 		return FALSE
 
@@ -150,7 +157,7 @@
 	formatted_item["blacklisted_roles"] = blacklisted_roles
 	formatted_item["restricted_species"] = restricted_species
 	formatted_item["donator_only"] = donator_only
-	formatted_item["veteran_only"] = veteran_only
+	formatted_item["nova_stars_only"] = nova_stars_only
 
 	return formatted_item
 
