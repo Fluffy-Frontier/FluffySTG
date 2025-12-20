@@ -88,14 +88,14 @@
 	. = ..()
 	if(!.)
 		return
-	var/mob/living/user = owner
+	var/mob/living/carbon/human/user = owner
 	var/mob/living/feed_target = target_ref?.resolve()
 
 	if(!blood_taken)
 		return
 	if(isnull(feed_target) && blood_taken)
 		log_combat(user, user, "fed on blood (target not found)", addition="(and took [blood_taken] blood)")
-	if(!aggressive_feed)
+	if(!aggressive_feed || !user.handcuffed)
 		to_chat(feed_target, span_hypnophrase("Your mind becomes clouded and your eyes darken... What just happened to you?"))
 		to_chat(feed_target, span_notice("OOC NOTE: You've lost the memory of what happened recently. For ease of understanding, you forgot your past 20 seconds."))
 	else
