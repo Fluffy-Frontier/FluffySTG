@@ -61,6 +61,11 @@
 
 /datum/status_effect/frenzy/tick()
 	var/mob/living/carbon/human/user = owner
+	var/obj/cuffs = user.get_item_by_slot(ITEM_SLOT_HANDCUFFED)
+	var/obj/legcuffs = user.get_item_by_slot(ITEM_SLOT_LEGCUFFED)
+	if(user.handcuffed && cuffs || user.legcuffed && legcuffs)
+		user.clear_cuffs(cuffs, TRUE)
+		user.clear_cuffs(legcuffs, TRUE)
 	// If duration is not -1, that means we're about to loose frenzy, let's give them some safe time.
 	if(!bloodsuckerdatum.frenzied || duration > 0 || user.stat != CONSCIOUS )
 		return
@@ -112,3 +117,11 @@
 	owner.remove_movespeed_modifier(/datum/movespeed_modifier/frenzy_speedup)
 	owner.remove_client_colour(REF(src))
 	return ..()
+
+/datum/status_effect/brujah/tick()
+	var/mob/living/carbon/human/user = owner
+	var/obj/cuffs = user.get_item_by_slot(ITEM_SLOT_HANDCUFFED)
+	var/obj/legcuffs = user.get_item_by_slot(ITEM_SLOT_LEGCUFFED)
+	if(user.handcuffed && cuffs || user.legcuffed && legcuffs)
+		user.clear_cuffs(cuffs, TRUE)
+		user.clear_cuffs(legcuffs, TRUE)

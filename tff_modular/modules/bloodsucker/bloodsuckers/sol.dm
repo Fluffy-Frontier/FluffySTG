@@ -168,7 +168,7 @@
 	if(!owner.current)
 		return
 	owner.current.grab_ghost()
-	owner.current.remove_traits(list(TRAIT_TORPOR, TRAIT_RESISTLOWPRESSURE, TRAIT_RESISTHIGHPRESSURE, TRAIT_FAKEDEATH, TRAIT_DEATHCOMA), BLOODSUCKER_TRAIT)
+	owner.current.remove_traits(list(TRAIT_TORPOR, TRAIT_RESISTLOWPRESSURE, TRAIT_RESISTHIGHPRESSURE, TRAIT_NODISMEMBER, TRAIT_FAKEDEATH, TRAIT_DEATHCOMA), BLOODSUCKER_TRAIT)
 	heal_vampire_organs()
 	if(message)
 		to_chat(owner.current, span_warning("You have recovered from Torpor."))
