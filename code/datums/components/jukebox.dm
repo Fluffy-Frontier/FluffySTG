@@ -95,11 +95,9 @@
 	var/static/list/config_songs
 	if(isnull(config_songs))
 		config_songs = list()
-		var/list/tracks = flist("tff_modular/master_files/content/jukebox_music/") // FLUFFY FRONTIER EDIT (#5490), old: var/list/tracks = flist("[global.config.directory]/jukebox_music/sounds/")
 		var/list/tracks = flist(CONFIG_JUKEBOX_SOUNDS)
 		for(var/track_file in tracks)
 			var/datum/track/new_track = new()
-			new_track.song_path = file("tff_modular/master_files/content/jukebox_music/[track_file]") // FLUFFY FRONTIER EDIT (#5490), old: new_track.song_path = file("[global.config.directory]/jukebox_music/sounds/[track_file]")
 			new_track.song_path = file("[CONFIG_JUKEBOX_SOUNDS][track_file]")
 			var/list/track_data = splittext(track_file, "+")
 			if(!length(track_data) || !IS_SOUND_FILE_SAFE(new_track.song_path))
