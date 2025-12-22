@@ -313,7 +313,7 @@
 			if(target_heart)
 				target_heart.operated = TRUE
 				if((target_heart.organ_flags & ORGAN_ORGANIC) || synth_check) // Only fix organic heart
-					patient.setOrganLoss(ORGAN_SLOT_HEART, 60)
+					patient.set_organ_loss(ORGAN_SLOT_HEART, 60)
 				else
 					fail_reason = "Patients heart is made out of metals and plastics. You can not work with that."
 		if (DEFIB_FAIL_TISSUE_DAMAGE)
@@ -329,7 +329,7 @@
 			var/obj/item/organ/brain/target_brain = patient.get_organ_slot(ORGAN_SLOT_BRAIN)
 			if(target_brain)
 				if((target_brain.organ_flags & ORGAN_ORGANIC) || synth_check) // Only fix organic heart
-					patient.setOrganLoss(ORGAN_SLOT_BRAIN, 60)
+					patient.set_organ_loss(ORGAN_SLOT_BRAIN, 60)
 				else
 					fail_reason = "Patient's brain is made out of metals and plastics. You can not work with that."
 		if (DEFIB_FAIL_NO_INTELLIGENCE)
