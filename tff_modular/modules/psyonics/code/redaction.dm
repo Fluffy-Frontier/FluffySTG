@@ -124,8 +124,8 @@
 		wound2fix.remove_wound()
 		playsound(patient, 'sound/effects/wounds/crack2.ogg', 40, TRUE)
 
-	if(patient.getOxyLoss() >= OXYLOSS_PASSOUT_THRESHOLD-10)
-		patient.adjustOxyLoss(-cast_power*5, forced = TRUE)
+	if(patient.get_oxy_loss() >= OXYLOSS_PASSOUT_THRESHOLD-10)
+		patient.adjust_oxy_loss(-cast_power*5, forced = TRUE)
 
 	if(patient.implants && secondary_school == "Psychokinesis" && cast_power >= 2) // Невольно удаляет импланты, если есть
 		var/obj/item/implant/imp_2_del = pick(patient.implants)
@@ -239,8 +239,8 @@
 	patient.apply_damage(25, TOX, BODY_ZONE_CHEST)
 
 /datum/action/cooldown/spell/touch/psyonic/psyonic_cleansing/proc/try_heal_all(mob/living/carbon/human/patient)
-	if(patient.getToxLoss() > 0)
-		patient.adjustToxLoss(clamp(-(patient.getToxLoss()/3)*cast_power, -35, 0), forced = TRUE)
+	if(patient.get_tox_loss() > 0)
+		patient.adjust_tox_loss(clamp(-(patient.get_tox_loss()/3)*cast_power, -35, 0), forced = TRUE)
 
 /**
  * Пытается оживить труп
@@ -317,9 +317,9 @@
 				else
 					fail_reason = "Patients heart is made out of metals and plastics. You can not work with that."
 		if (DEFIB_FAIL_TISSUE_DAMAGE)
-			patient.adjustBruteLoss(-patient.getBruteLoss()/2)
-			patient.adjustFireLoss(-patient.getFireLoss()/2)
-			if ((patient.getBruteLoss() >= MAX_REVIVE_BRUTE_DAMAGE) || (patient.getFireLoss() >= MAX_REVIVE_FIRE_DAMAGE))
+			patient.adjust_brute_loss(-patient.get_brute_loss()/2)
+			patient.adjust_fire_loss(-patient.get_fire_loss()/2)
+			if ((patient.get_brute_loss() >= MAX_REVIVE_BRUTE_DAMAGE) || (patient.get_fire_loss() >= MAX_REVIVE_FIRE_DAMAGE))
 				fail_reason = "Patients body is too flimsy to support life, but your energy partially healed that. Maybe try again?"
 		if (DEFIB_FAIL_HUSK)
 			patient.cure_husk()
@@ -350,19 +350,19 @@
 	else
 		var/defib_result = patient.can_defib()
 		if (defib_result == DEFIB_POSSIBLE)
-			var/total_brute = patient.getBruteLoss()
-			var/total_burn = patient.getFireLoss()
+			var/total_brute = patient.get_brute_loss()
+			var/total_burn = patient.get_fire_loss()
 
 			var/need_mob_update = FALSE
 			if (patient.health > HALFWAYCRITDEATH)
-				need_mob_update += patient.adjustOxyLoss(patient.health - HALFWAYCRITDEATH, updating_health = FALSE)
+				need_mob_update += patient.adjust_oxy_loss(patient.health - HALFWAYCRITDEATH, updating_health = FALSE)
 			else
-				var/overall_damage = total_brute + total_burn + patient.getToxLoss() + patient.getOxyLoss()
+				var/overall_damage = total_brute + total_burn + patient.get_tox_loss() + patient.get_oxy_loss()
 				var/mobhealth = patient.health
-				need_mob_update += patient.adjustOxyLoss((mobhealth - HALFWAYCRITDEATH) * (patient.getOxyLoss() / overall_damage), updating_health = FALSE)
-				need_mob_update += patient.adjustToxLoss((mobhealth - HALFWAYCRITDEATH) * (patient.getToxLoss() / overall_damage), updating_health = FALSE, forced = TRUE) // force tox heal for toxin lovers too
-				need_mob_update += patient.adjustFireLoss((mobhealth - HALFWAYCRITDEATH) * (total_burn / overall_damage), updating_health = FALSE)
-				need_mob_update += patient.adjustBruteLoss((mobhealth - HALFWAYCRITDEATH) * (total_brute / overall_damage), updating_health = FALSE)
+				need_mob_update += patient.adjust_oxy_loss((mobhealth - HALFWAYCRITDEATH) * (patient.get_oxy_loss() / overall_damage), updating_health = FALSE)
+				need_mob_update += patient.adjust_tox_loss((mobhealth - HALFWAYCRITDEATH) * (patient.get_tox_loss() / overall_damage), updating_health = FALSE, forced = TRUE) // force tox heal for toxin lovers too
+				need_mob_update += patient.adjust_fire_loss((mobhealth - HALFWAYCRITDEATH) * (total_burn / overall_damage), updating_health = FALSE)
+				need_mob_update += patient.adjust_brute_loss((mobhealth - HALFWAYCRITDEATH) * (total_brute / overall_damage), updating_health = FALSE)
 			if(need_mob_update)
 				patient.updatehealth()
 			owner.visible_message(span_warning("[owner] suddenly hits [patient]s chest!"),
