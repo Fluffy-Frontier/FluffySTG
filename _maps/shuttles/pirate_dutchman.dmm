@@ -231,6 +231,13 @@
 /obj/item/paper/crumpled/muddy/fluff/cannon_instructions,
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
+"dX" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/item/stack/cannonball/the_big_one/five,
+/turf/open/floor/wood/airless,
+/area/shuttle/pirate/flying_dutchman)
 "dZ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -302,6 +309,7 @@
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/chair/comfy/shuttle,
 /obj/effect/mob_spawn/ghost_role/human/pirate/skeleton/captain,
+/obj/item/autosurgeon/syndicate/esword_arm,
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
 "gS" = (
@@ -363,6 +371,23 @@
 /obj/structure/mounted_gun/canister_gatling,
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
+"nh" = (
+/obj/item/stack/cannonball/emp,
+/obj/item/stack/cannonball/emp,
+/obj/item/stack/cannonball/emp,
+/obj/item/stack/cannonball/emp,
+/turf/open/floor/wood/airless,
+/area/shuttle/pirate/flying_dutchman)
+"ni" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/obj/item/stack/cannonball/fourteen,
+/obj/item/stack/cannonball/fourteen,
+/obj/item/stack/cannonball/fourteen,
+/obj/item/stack/cannonball/fourteen,
+/turf/open/floor/wood/airless,
+/area/shuttle/pirate/flying_dutchman)
 "pG" = (
 /obj/structure/window/reinforced/shuttle/survival_pod,
 /turf/open/floor/wood/airless,
@@ -391,6 +416,9 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
+/obj/item/stack/cannonball/fourteen,
+/obj/item/stack/cannonball/fourteen,
+/obj/item/stack/cannonball/fourteen,
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
 "rI" = (
@@ -577,6 +605,11 @@
 	pixel_x = 5
 	},
 /obj/structure/rack/skeletal,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
+/obj/item/reagent_containers/condiment/milk,
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
 "zE" = (
@@ -726,10 +759,18 @@
 	},
 /turf/open/floor/carpet/royalblack/airless,
 /area/shuttle/pirate/flying_dutchman)
+"IF" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/item/stack/cannonball/the_big_one/five,
+/turf/open/floor/wood/airless,
+/area/shuttle/pirate/flying_dutchman)
 "IT" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/obj/item/stack/cannonball/shellball/fourteen,
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
 "Jp" = (
@@ -763,12 +804,18 @@
 /obj/item/gun/energy/laser{
 	pixel_y = 3
 	},
+/obj/item/gun/energy/disabler/smoothbore/prime,
+/obj/item/gun/energy/disabler/smoothbore/prime,
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
 "Le" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
+/turf/open/floor/wood/airless,
+/area/shuttle/pirate/flying_dutchman)
+"Ls" = (
+/obj/item/stack/cannonball/the_big_one/five,
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
 "Lt" = (
@@ -783,6 +830,8 @@
 /obj/item/gun/energy/laser{
 	pixel_y = 3
 	},
+/obj/item/gun/energy/disabler/smoothbore/prime,
+/obj/item/gun/energy/disabler/smoothbore/prime,
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
 "Ms" = (
@@ -801,6 +850,7 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
+/obj/item/stack/cannonball/the_big_one/five,
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
 "PS" = (
@@ -813,6 +863,9 @@
 	pixel_y = 4
 	},
 /obj/item/claymore/cutlass,
+/obj/item/melee/energy/sword/pirate,
+/obj/item/melee/energy/sword/pirate,
+/obj/item/melee/energy/sword/pirate,
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
 "Qa" = (
@@ -866,6 +919,8 @@
 	},
 /obj/structure/table/wood,
 /obj/item/stack/cannonball/shellball/seven,
+/obj/item/stack/cannonball/shellball/fourteen,
+/obj/item/stack/cannonball/shellball/fourteen,
 /turf/open/floor/wood/airless,
 /area/shuttle/pirate/flying_dutchman)
 "St" = (
@@ -1183,8 +1238,8 @@ WR
 WR
 YT
 OL
-be
-fY
+dX
+ni
 Gr
 WR
 VF
@@ -1209,8 +1264,8 @@ zB
 pG
 bf
 fY
-WB
-WB
+Ls
+nh
 WB
 Gr
 WR
@@ -1318,7 +1373,7 @@ pG
 Ew
 yy
 WB
-WB
+Ls
 WB
 Gr
 WR
@@ -1346,7 +1401,7 @@ WR
 FG
 rd
 IT
-yy
+IF
 Gr
 WR
 EU

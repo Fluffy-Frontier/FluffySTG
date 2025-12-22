@@ -279,6 +279,11 @@
 /obj/item/reagent_containers/cup/glass/coffee,
 /turf/open/floor/plating,
 /area/shuttle/pirate)
+"lw" = (
+/obj/structure/chair/stool/directional/north,
+/obj/item/storage/medkit,
+/turf/open/floor/wood,
+/area/shuttle/pirate)
 "lB" = (
 /obj/structure/table,
 /obj/item/stack/sheet/mineral/uranium/five,
@@ -530,6 +535,7 @@
 	},
 /obj/item/clothing/suit/utility/fire/firefighter,
 /obj/item/clothing/head/helmet/space/eva,
+/obj/item/gun/energy/laser/scatter,
 /turf/open/floor/iron,
 /area/shuttle/pirate)
 "tJ" = (
@@ -604,6 +610,10 @@
 	},
 /obj/item/clothing/suit/utility/fire/firefighter,
 /obj/item/clothing/head/helmet/space/eva,
+/turf/open/floor/plating,
+/area/shuttle/pirate)
+"vW" = (
+/obj/item/storage/medkit,
 /turf/open/floor/plating,
 /area/shuttle/pirate)
 "wb" = (
@@ -920,6 +930,11 @@
 /obj/effect/mapping_helpers/burnt_floor,
 /turf/open/floor/plating,
 /area/shuttle/pirate)
+"CU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/gun/energy/laser/scatter,
+/turf/open/floor/plating,
+/area/shuttle/pirate)
 "CY" = (
 /obj/structure/cable,
 /obj/item/flashlight,
@@ -997,6 +1012,7 @@
 "FP" = (
 /obj/structure/broken_flooring,
 /obj/item/melee/baseball_bat,
+/obj/item/gun/energy/laser/scatter,
 /turf/open/floor/plating,
 /area/shuttle/pirate)
 "FT" = (
@@ -1254,6 +1270,11 @@
 /obj/effect/spawner/random/structure/crate,
 /turf/open/floor/iron,
 /area/shuttle/pirate)
+"Qy" = (
+/obj/structure/chair/stool/directional/north,
+/obj/item/gun/energy/laser/scatter,
+/turf/open/floor/wood,
+/area/shuttle/pirate)
 "QI" = (
 /obj/structure/chair/stool/bar/directional/south,
 /obj/effect/decal/cleanable/dirt,
@@ -1285,6 +1306,7 @@
 /area/shuttle/pirate)
 "RU" = (
 /obj/effect/mapping_helpers/burnt_floor,
+/obj/item/storage/medkit,
 /turf/open/floor/plating,
 /area/shuttle/pirate)
 "RX" = (
@@ -1319,6 +1341,7 @@
 "SB" = (
 /obj/effect/mapping_helpers/burnt_floor,
 /obj/item/melee/baton/security/cattleprod/teleprod,
+/obj/item/storage/medkit,
 /turf/open/floor/plating,
 /area/shuttle/pirate)
 "Ti" = (
@@ -1354,6 +1377,16 @@
 "Uf" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/showroomfloor,
+/area/shuttle/pirate)
+"Um" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/neutral/opposingcorners,
+/obj/item/storage/medkit,
+/turf/open/floor/iron,
 /area/shuttle/pirate)
 "Ut" = (
 /obj/structure/girder,
@@ -1560,7 +1593,7 @@ fm
 de
 tS
 xs
-Wy
+vW
 Qm
 GI
 aJ
@@ -1638,13 +1671,13 @@ iL
 Yj
 cH
 eU
-OG
+Um
 hk
 PM
 Sh
 BL
 Yj
-NI
+CU
 jS
 zB
 "}
@@ -1681,7 +1714,7 @@ DX
 it
 Yj
 rV
-Tq
+Qy
 uE
 Pn
 HD
@@ -1700,7 +1733,7 @@ gg
 NI
 wX
 Oa
-Tq
+lw
 Lo
 Pn
 ei

@@ -87,6 +87,7 @@
 	dir = 1
 	},
 /obj/machinery/light/floor,
+/obj/item/gun/energy/laser/retro,
 /turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 "ap" = (
@@ -356,6 +357,7 @@
 "bu" = (
 /obj/structure/window/reinforced,
 /obj/item/storage/box/handcuffs,
+/obj/item/gun/ballistic/automatic/pistol/m1911,
 /turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 "bv" = (
@@ -729,6 +731,14 @@
 /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
 /turf/open/floor/plating/airless,
 /area/shuttle/pirate)
+"FG" = (
+/obj/effect/turf_decal/tile/dark_blue/half/contrasted{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/item/gun/ballistic/automatic/pistol/m1911,
+/turf/open/floor/iron/dark,
+/area/shuttle/pirate)
 "GS" = (
 /obj/effect/turf_decal/tile/dark_blue/half/contrasted,
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
@@ -979,7 +989,7 @@ aj
 aj
 aj
 aj
-fY
+FG
 bX
 iD
 aj
