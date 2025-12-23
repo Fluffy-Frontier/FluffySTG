@@ -19,6 +19,7 @@
 	abstract_type = /datum/loadout_item/weapons
 	mechanical_item = TRUE
 	blacklisted_roles = list(JOB_PRISONER)
+
 /*
 /* FLUFFY FRONTIER EDIT: COMMENT OUT WEAPONS FROM LOADOUT
 *	GHETTO GUNS
