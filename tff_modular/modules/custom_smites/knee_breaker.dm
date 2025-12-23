@@ -50,12 +50,12 @@
 // Force cry out in pain
 	var/pain_messages = list()
 	if(leg_choice == "both")
-		pain_messages += "AGH! MY [uppertext(leg_choice)] KNEES!"
+		pain_messages += "AGH! MY KNEES!"
 		pain_messages += "AAAAH! MY LEGS!"
 		pain_messages += "FUCK! THAT HURTS!"
 		pain_messages += "OH GOD, MY KNEES!"
 	else
-		pain_messages += "AGH! MY [uppertext(leg_choice)] KNEE!"
+		pain_messages += "AGH! MY [uppertext(leg_choice)] KNEE!!"
 		pain_messages += "AAAAH! MY LEG!"
 		pain_messages += "FUCK! THAT HURTS!"
 		pain_messages += "OH GOD, MY KNEE!"
