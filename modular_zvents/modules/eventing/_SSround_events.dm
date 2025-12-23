@@ -21,8 +21,6 @@ SUBSYSTEM_DEF(round_events)
 
 
 /datum/controller/subsystem/round_events/Initialize()
-	active_event = new /datum/full_round_event/hypothermia()
-
 	if(!active_event)
 		return SS_INIT_NO_NEED
 
