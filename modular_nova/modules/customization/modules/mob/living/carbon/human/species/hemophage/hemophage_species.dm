@@ -26,6 +26,7 @@
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	nova_stars_only = TRUE
 
+
 /datum/species/hemophage/allows_food_preferences()
 	return FALSE
 

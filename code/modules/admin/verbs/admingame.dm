@@ -127,8 +127,7 @@ ADMIN_VERB_ONLY_CONTEXT_MENU(show_player_panel, R_ADMIN, "Show Player Panel", mo
 	body += "<A href='byond://?_src_=holder;[HrefToken()];narrateto=[REF(player)]'>Narrate to</A> | "
 	body += "<A href='byond://?_src_=holder;[HrefToken()];subtlemessage=[REF(player)]'>Subtle message</A> | "
 	body += "<A href='byond://?_src_=holder;[HrefToken()];playsoundto=[REF(player)]'>Play sound to</A> | "
-	body += "<A href='byond://?_src_=holder;[HrefToken()];languagemenu=[REF(player)]'>Language Menu</A> | "
-	body += "<A href='byond://?_src_=holder;[HrefToken()];rpreminder=[REF(player)]'>Roleplay Reminder</A>"
+	body += "<A href='byond://?_src_=holder;[HrefToken()];languagemenu=[REF(player)]'>Language Menu</A>"
 
 	if(player.client)
 		if(!isnewplayer(player))
@@ -452,3 +451,4 @@ ADMIN_VERB(spawn_panel, R_SPAWN, "Spawn Panel", "Spawn Panel (TGUI).", ADMIN_CAT
 	if(panel)
 		panel.ui_interact(user.mob)
 	BLACKBOX_LOG_ADMIN_VERB("Spawn Panel")
+

@@ -33,4 +33,3 @@ Adds multuple admin features, loud asay. As well as bold/itallics/underline.
 
 Gandalf2k15 - Porting and Refactoring
 Akrilla - OG code
-Floofies - Preferences loadverb and admin stasis

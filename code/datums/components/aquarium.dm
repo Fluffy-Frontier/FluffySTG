@@ -697,8 +697,6 @@
 		check_fluid_and_temperature(fish)
 
 /datum/component/aquarium/proc/admire(atom/movable/source, mob/living/user)
-	if(!isliving(user))
-		return
 	source.balloon_alert(user, "admiring aquarium...")
 	if(!do_after(user, 5 SECONDS, target = source))
 		return

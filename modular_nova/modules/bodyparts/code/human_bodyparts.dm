@@ -25,11 +25,10 @@
 /obj/item/bodypart/leg/right/digitigrade/human
 	icon_greyscale = BODYPART_ICON_HUMAN_CRITTER
 
-// subtype legs that are capable of being digi, because apparently attempting to assign this to the base legs breaks everything.
-/obj/item/bodypart/leg/left/human_digi_capable
+/obj/item/bodypart/leg/left/human_digi
 	icon_greyscale = BODYPART_ICON_HUMAN_CRITTER
 	digitigrade_type = /obj/item/bodypart/leg/left/digitigrade/human
 
-/obj/item/bodypart/leg/right/human_digi_capable
+/obj/item/bodypart/leg/right/human_digi
 	icon_greyscale = BODYPART_ICON_HUMAN_CRITTER
 	digitigrade_type = /obj/item/bodypart/leg/right/digitigrade/human

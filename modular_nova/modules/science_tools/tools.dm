@@ -10,6 +10,7 @@
 
 /obj/item/screwdriver/power/science
 	icon_state = "drill_sci"
+	icon = 'modular_nova/modules/aesthetics/tools/icons/tools.dmi'
 
 /obj/item/screwdriver/power/science/Initialize(mapload)
 	. = ..()
