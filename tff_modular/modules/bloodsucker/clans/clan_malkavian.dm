@@ -4,12 +4,12 @@
 		The Favorite Ghoul will suffer the same fate as the Master, while gaining the ability to tap into the madness when fighting."
 	join_icon_state = "malkavian"
 	join_description = "Completely insane. You gain constant hallucinations, become a prophet with unintelligable rambling, \
-		and become the enforcer of the Masquerade code, you also can hear throught walls and hear ghosts."
+		and become the enforcer of the Masquerade code, you also can hear and see throught walls"
 	blood_drink_type = BLOODSUCKER_DRINK_INHUMANELY
 	/// The prob chance of a malkavian spouting a revelation.
 	var/max_madness_chance = 10
 	var/min_madness_chance = 5
-	var/static/list/clan_traits = list(TRAIT_XRAY_VISION, TRAIT_SIXTHSENSE, TRAIT_XRAY_HEARING)
+	var/static/list/clan_traits = list(TRAIT_XRAY_VISION, TRAIT_XRAY_HEARING)
 
 /datum/bloodsucker_clan/malkavian/on_enter_frenzy(datum/antagonist/bloodsucker/source)
 	ADD_TRAIT(bloodsuckerdatum.owner.current, TRAIT_STUNIMMUNE, FRENZY_TRAIT)
@@ -59,7 +59,8 @@
 	for(var/mob/living/carbon/anything in view(3, source.owner.current))
 		if(IS_BLOODSUCKER(anything) || anything.stat != CONSCIOUS || prob(15))
 			continue
-		INVOKE_ASYNC(anything, TYPE_PROC_REF(/atom/movable, say), message, forced = CLAN_MALKAVIAN)
+		var/another_message = pick(strings("malkavian_revelations.json", "revelations", "tff_modular/modules/bloodsucker"))
+		INVOKE_ASYNC(anything, TYPE_PROC_REF(/atom/movable, say), another_message, forced = CLAN_MALKAVIAN)
 
 /datum/bloodsucker_clan/malkavian/favorite_ghoul_gain(datum/antagonist/bloodsucker/source, datum/antagonist/ghoul/ghouldatum)
 	var/mob/living/carbon/carbonowner = ghouldatum.owner.current

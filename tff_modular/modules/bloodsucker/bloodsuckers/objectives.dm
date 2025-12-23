@@ -269,6 +269,7 @@
 
 //////////////////////////////////////////////////////////////////////////////////////
 
+/*
 /// Convert a crewmate - Ventrue Clan objective
 /datum/objective/bloodsucker/embrace
 	name = "embrace"
@@ -287,7 +288,7 @@
 		if(sired_vamp.ventrue_sired == bloodsuckerdatum)
 			return TRUE
 	return FALSE
-
+*/
 
 
 //////////////////////////////

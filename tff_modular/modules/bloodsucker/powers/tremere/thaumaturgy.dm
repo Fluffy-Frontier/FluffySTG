@@ -137,8 +137,8 @@
 
 /datum/action/cooldown/bloodsucker/targeted/tremere/thaumaturgy/proc/get_blood_bolt_damage()
 	if(level_current >= THAUMATURGY_EXTRA_DAMAGE_LEVEL)
-		return 40
-	return 20
+		return 60
+	return 40
 
 /datum/action/cooldown/bloodsucker/targeted/tremere/thaumaturgy/proc/get_max_charges()
 	return level_current * 2
@@ -209,6 +209,7 @@
 	INVOKE_ASYNC(magic_9ball, TYPE_PROC_REF(/obj/projectile, fire))
 	// ditch the pointer to reduce harddels
 	magic_9ball = null
+
 /**
  * 	# Blood Bolt
  *
@@ -218,13 +219,14 @@
 	name = "blood bolt"
 	icon_state = "mini_leaper"
 	damage = 1
-	wound_bonus = 20
-	armour_penetration = 30
+	wound_bonus = 25
+	armour_penetration = 80
 	speed = 0.6
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
 	range = 30
 	armor_flag = LASER
 	var/datum/weakref/power_ref
+	antimagic_flags = NONE
 
 /obj/projectile/magic/arcane_barrage/bloodsucker/on_hit(target, blocked = 0, pierce_hit)
 	var/datum/action/cooldown/bloodsucker/targeted/tremere/thaumaturgy/bloodsucker_power = power_ref?.resolve()
