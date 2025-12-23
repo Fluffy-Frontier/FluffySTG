@@ -85,4 +85,3 @@
 	name = /obj/item/forging/reagent_weapon/staff::name
 	item_path = /obj/item/forging/reagent_weapon/staff
 */
-*/
