@@ -145,7 +145,7 @@
 			iter_wound.on_xadone(4 * REM * seconds_per_tick)
 			organ_owner.reagents.remove_reagent(chem.type, min(chem.volume * 0.22, 10))
 		if(organ_owner.blood_volume > BLOOD_VOLUME_SLIME_SPLIT)
-			organ_owner.adjustOrganLoss(
+			organ_owner.adjust_organ_loss(
 			pick(organs_we_mend),
 			- 2 * seconds_per_tick,
 		)
@@ -412,8 +412,11 @@
 	if(slime.blood_volume >= BLOOD_VOLUME_NORMAL && healing)
 		if(slime.stat != CONSCIOUS)
 			return
-		slime.heal_overall_damage(brute = SPECIES_SLIME_PASSIVE_REGEN_BRUTE * seconds_per_tick, burn = SPECIES_SLIME_PASSIVE_REGEN_BURN * seconds_per_tick, required_bodytype = BODYTYPE_ORGANIC)
-		slime.adjustOxyLoss(-1 * seconds_per_tick)
+		var/need_mob_update
+		need_mob_update += slime.heal_overall_damage(brute = SPECIES_SLIME_PASSIVE_REGEN_BRUTE * seconds_per_tick, burn = SPECIES_SLIME_PASSIVE_REGEN_BURN * seconds_per_tick, updating_health = FALSE, required_bodytype = BODYTYPE_ORGANIC)
+		need_mob_update += slime.adjust_oxy_loss(-1 * seconds_per_tick, updating_health = FALSE)
+		if(need_mob_update)
+			slime.updatehealth()
 		if(slime.health < slime.maxHealth)
 			new /obj/effect/temp_visual/heal(get_turf(slime), COLOR_EFFECT_HEAL_RED)
 
