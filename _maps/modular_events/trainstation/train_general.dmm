@@ -1,4 +1,15 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/obj/structure/window/reinforced/shuttle/survival_pod,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_3)
+"ag" = (
+/obj/structure/table/train_table,
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 1
+	},
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_3)
 "ao" = (
 /obj/structure/chair/sofa/bench/left{
 	dir = 4;
@@ -8,18 +19,21 @@
 /turf/open/indestructible/dark/smooth_large,
 /area/trainstation/indoors/train/bathroom)
 "aq" = (
-/obj/structure/table/train_table,
-/obj/effect/turf_decal/siding/dark_red{
-	dir = 1
-	},
-/turf/open/indestructible/dark/smooth_large,
-/area/trainstation/indoors/train/vagon_1)
-"aM" = (
-/obj/effect/turf_decal/siding/dark_red{
-	dir = 8
-	},
-/turf/open/floor/plating,
+/turf/closed/wall/mineral/titanium/survival/nodiagonal,
 /area/trainstation/indoors/train/tech_1)
+"aw" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
+"aI" = (
+/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/area/trainstation/indoors/train/vagon_2)
+"aP" = (
+/turf/open/floor/wood/wood_1,
+/area/trainstation/indoors/train/vagon_3)
 "aV" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -27,39 +41,335 @@
 /obj/effect/spawner/random/trash/box,
 /turf/open/indestructible/hotelwood,
 /area/trainstation/indoors/train/vagon_1)
+"aZ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
+"bd" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 1
+	},
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_2)
+"bE" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/vending/games,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
 "bM" = (
 /obj/effect/turf_decal/siding/dark_red/corner{
 	dir = 4
 	},
-/turf/open/indestructible/dark/textured,
+/turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/tech_1)
-"cr" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood{
+"bP" = (
+/obj/effect/turf_decal/siding/dark_red{
 	dir = 4
 	},
-/turf/open/floor/carpet/red,
-/area/trainstation/indoors/train/vagon_1)
+/obj/machinery/light/small/dim/directional/east,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"bV" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/obj/machinery/light/small/dim/directional/east,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"ce" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"cn" = (
+/obj/structure/sign/warning/yes_smoking,
+/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/area/trainstation/indoors/train/vagon_3)
+"cA" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/obj/structure/broken_flooring/plating/always_floorplane/directional/north,
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/vagon_2)
 "cF" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
 /turf/open/indestructible/hotelwood,
 /area/trainstation/indoors/train/vagon_1)
+"cM" = (
+/obj/effect/spawner/random/trash/graffiti,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_3)
+"cX" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_1)
 "dj" = (
 /obj/effect/turf_decal/siding/dark_red/inner_corner,
-/turf/open/indestructible/dark/textured,
+/turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/tech_1)
+"dn" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 1
+	},
+/obj/structure/table/train_shelf{
+	dir = 4
+	},
+/obj/machinery/button/auto_detect/directional/north,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/conductor_1)
+"do" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/machinery/light/small/dim/directional/west{
+	pixel_y = 17
+	},
+/obj/structure/table/reinforced,
+/obj/structure/bedsheetbin,
+/obj/item/bedsheet{
+	pixel_x = 12;
+	pixel_y = 16
+	},
+/obj/item/bedsheet{
+	pixel_x = 12;
+	pixel_y = 16
+	},
+/obj/item/bedsheet{
+	pixel_x = 12;
+	pixel_y = 16
+	},
+/obj/item/bedsheet{
+	pixel_x = 12;
+	pixel_y = 16
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"dp" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"dy" = (
+/obj/effect/turf_decal/siding/dark_red,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"dA" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_1)
+"dH" = (
+/obj/structure/table/train_table,
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 1
+	},
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/conductor_1)
+"dN" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/structure/bedsheetbin,
+/obj/machinery/button/auto_detect/directional/south,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
+"dO" = (
+/obj/effect/turf_decal/siding/dark_red,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_3)
+"dP" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
 "dS" = (
 /turf/template_noop,
 /area/space)
 "dZ" = (
-/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
 /turf/open/floor/carpet/red,
 /area/trainstation/indoors/train/vagon_1)
-"er" = (
+"ei" = (
+/obj/effect/turf_decal/siding/dark_red/corner{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"ev" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/tech_1)
+"eO" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_3)
+"eY" = (
+/obj/effect/turf_decal/siding/dark_red,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
+"fo" = (
+/obj/structure/window/reinforced/shuttle/survival_pod,
+/obj/structure/curtain/bounty,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_3)
+"fz" = (
+/obj/structure/sign/warning/yes_smoking/circle/directional/north,
+/obj/structure/prop/general/trashblue{
+	pixel_y = 11
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_2)
+"fA" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_1)
+"fC" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_3)
+"fG" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/structure/sign/warning/no_smoking/circle/directional/west,
+/obj/machinery/light/directional/west,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"fM" = (
+/obj/structure/toilet{
+	dir = 1
+	},
+/turf/open/floor/iron/showroomfloor,
+/area/trainstation/indoors/train/bathroom)
+"fT" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_1)
+"gj" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 4
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/tech_1)
+"go" = (
+/obj/structure/chair/sofa/bench/left{
+	dir = 4;
+	pixel_x = -7;
+	pixel_y = -1
+	},
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_3)
+"gq" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"gs" = (
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train)
+"gy" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_1)
+"gA" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner,
+/obj/machinery/computer/crew{
+	dir = 8
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"gK" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/vending/imported/yangyu,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_1)
+"gM" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/chair/sofa/middle/brown{
+	dir = 1
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"gN" = (
+/obj/effect/spawner/random/trash/graffiti,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_2)
+"gT" = (
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"gZ" = (
+/obj/structure/table/train_shelf{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 8
+	},
+/obj/machinery/light/small/dim/directional/west{
+	pixel_y = 17
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
+"hk" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 1
+	},
+/obj/structure/table/train_shelf{
+	dir = 4
+	},
+/obj/machinery/button/auto_detect/directional/north,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
+"hr" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/machinery/light/small/dim/directional/west,
+/obj/effect/spawner/random/trash/cigbutt,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_1)
+"hs" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/item/radio/intercom/directional/north,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
+"hC" = (
 /obj/effect/turf_decal/siding/dark_red/inner_corner{
 	dir = 1
 	},
@@ -68,53 +378,80 @@
 	},
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/vagon_1)
-"fe" = (
-/obj/item/radio/intercom/directional/south,
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
+"hF" = (
 /turf/open/indestructible/hotelwood,
-/area/trainstation/indoors/train/vagon_1)
-"fM" = (
-/obj/structure/toilet{
+/area/trainstation/indoors/train/vagon_3)
+"hH" = (
+/obj/structure/chair/comfy/brown,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_3)
+"hV" = (
+/obj/structure/table/train_table,
+/obj/effect/turf_decal/siding/dark_red{
 	dir = 1
 	},
-/turf/open/floor/iron/showroomfloor,
-/area/trainstation/indoors/train/bathroom)
-"fU" = (
+/obj/effect/spawner/random/trash/soap,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_2)
+"iw" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 4
+	dir = 1
 	},
-/turf/open/floor/carpet/red,
-/area/trainstation/indoors/train/vagon_1)
-"gj" = (
-/obj/effect/turf_decal/siding/dark_red/inner_corner{
-	dir = 4
-	},
-/turf/open/indestructible/dark/textured,
-/area/trainstation/indoors/train/tech_1)
-"gK" = (
-/obj/effect/turf_decal/siding/dark_red{
+/obj/machinery/vending/imported/yangyu,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"iR" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"iU" = (
+/obj/structure/table/train_shelf{
 	dir = 8
 	},
-/obj/effect/spawner/random/trash/mess,
+/obj/effect/turf_decal/siding/dark_red/inner_corner,
+/obj/machinery/button/auto_detect/directional/south,
 /turf/open/indestructible/dark/textured,
-/area/trainstation/indoors/train/tech_1)
-"hl" = (
-/obj/effect/turf_decal/siding/wood{
+/area/trainstation/indoors/train/vagon_3)
+"jc" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
 	dir = 1
 	},
-/obj/structure/chair/sofa/middle/brown,
+/obj/structure/table/train_shelf{
+	dir = 4
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
+"jd" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/hotelwood,
-/area/trainstation/indoors/train/vagon_1)
+/area/trainstation/indoors/train/vagon_2)
 "jz" = (
 /obj/structure/window/reinforced/shuttle/survival_pod,
 /obj/structure/curtain/bounty,
 /turf/open/indestructible/dark/smooth_large,
 /area/trainstation/indoors/train/bathroom)
+"jI" = (
+/obj/structure/sign/poster/official/no_erp/directional/south,
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/chair/sofa/right/brown{
+	dir = 1
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
+"jQ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
 "kb" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
-/area/trainstation/indoors/train/tech_1)
+/obj/effect/turf_decal/siding/wood,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_1)
 "ki" = (
 /obj/effect/turf_decal/siding/dark_red/inner_corner{
 	dir = 8
@@ -124,30 +461,144 @@
 	},
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/vagon_1)
+"kj" = (
+/obj/effect/spawner/random/trash/mess,
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_2)
+"ko" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 1
+	},
+/obj/structure/table/train_shelf{
+	dir = 4
+	},
+/obj/effect/spawner/random/trash/mess,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
+"ku" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"kE" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/obj/machinery/computer/apc_control{
+	dir = 8
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
+"kH" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/obj/machinery/computer/records/security{
+	dir = 8
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
+"kM" = (
+/obj/structure/table/train_shelf{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/dark_red/inner_corner,
+/obj/machinery/button/auto_detect/directional/south{
+	name = "Coupe 1"
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_1)
 "kN" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /obj/structure/sign/warning/no_smoking/circle/directional/north,
-/obj/structure/hedge/opaque,
 /turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_1)
+"kP" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"kS" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"kT" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/wood_1,
 /area/trainstation/indoors/train/vagon_1)
 "lc" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/chair/sofa/left/brown,
+/obj/machinery/vending/imported/tiziran,
 /turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_1)
+"lh" = (
+/obj/machinery/door/train/train_door,
+/turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/vagon_1)
 "lk" = (
-/obj/effect/turf_decal/siding/wood,
+/obj/structure/window/reinforced/shuttle/survival_pod,
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/tech_1)
+"lq" = (
+/obj/structure/window/reinforced/shuttle/survival_pod,
+/obj/structure/curtain/bounty,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
+"lM" = (
+/obj/item/radio/intercom/directional/south,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
 /turf/open/indestructible/hotelwood,
-/area/trainstation/indoors/train/vagon_1)
+/area/trainstation/indoors/train/vagon_2)
+"lX" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/vagon_2)
+"mi" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/structure/broken_flooring/plating/always_floorplane/directional/north,
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/vagon_2)
+"mj" = (
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_3)
+"mp" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_3)
+"mv" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_1)
+"mA" = (
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_3)
 "mH" = (
 /obj/structure/table/train_shelf{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/dark_red/inner_corner,
+/obj/machinery/button/auto_detect/directional/south,
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/vagon_1)
 "mM" = (
@@ -155,13 +606,69 @@
 	dir = 8
 	},
 /obj/effect/spawner/random/trash/graffiti,
-/turf/open/indestructible/dark/textured,
+/turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/tech_1)
+"mU" = (
+/obj/structure/table/train_shelf{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/dark_red/inner_corner,
+/obj/machinery/button/auto_detect/directional/south{
+	name = "Coupe 1"
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
+"mV" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/sign/warning/no_smoking/circle/directional/north,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
 "mZ" = (
 /obj/effect/turf_decal/siding/dark_red/inner_corner,
 /obj/structure/bed/pod,
+/obj/machinery/button/auto_detect/directional/south,
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/vagon_1)
+"nm" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/vending/games,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
+"no" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_1)
+"nq" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/machinery/recharge_station,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"nw" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 1
+	},
+/obj/structure/table/train_shelf{
+	dir = 4
+	},
+/obj/machinery/button/auto_detect/directional/north,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"ny" = (
+/obj/structure/window/reinforced/survival_pod/indestructible/spawner/directional/east,
+/obj/structure/chair/sofa/bench/left{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/vagon_3)
 "nC" = (
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 4
@@ -171,13 +678,27 @@
 	},
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/conductor_1)
-"nK" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/structure/chair/sofa/left/brown{
+"nR" = (
+/obj/structure/table/train_shelf{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 8
+	},
+/obj/machinery/light/small/dim/directional/west{
+	pixel_y = 17
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"oi" = (
+/obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/turf/open/indestructible/hotelwood,
-/area/trainstation/indoors/train/vagon_1)
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_2)
 "om" = (
 /obj/structure/sign/warning/yes_smoking/circle/directional/north,
 /obj/structure/prop/general/trashblue{
@@ -186,6 +707,17 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/indestructible/dark/smooth_large,
 /area/trainstation/indoors/train/bathroom)
+"on" = (
+/obj/structure/window/reinforced/survival_pod/indestructible/spawner/directional/east,
+/obj/machinery/recharge_station,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_2)
+"ou" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
 "ox" = (
 /obj/effect/turf_decal/siding/dark_red/inner_corner,
 /obj/machinery/computer/crew{
@@ -193,6 +725,25 @@
 	},
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/conductor_1)
+"oB" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/effect/spawner/random/trash/mess,
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/vagon_2)
+"oE" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner,
+/obj/structure/bed/pod,
+/obj/machinery/button/auto_detect/directional/south,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"oG" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_1)
 "oH" = (
 /obj/structure/sign/warning/yes_smoking,
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,
@@ -207,25 +758,67 @@
 "oT" = (
 /obj/effect/turf_decal/siding/dark_red/corner,
 /obj/effect/spawner/random/trash/mess,
-/turf/open/indestructible/dark/textured,
+/turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/tech_1)
-"pP" = (
-/obj/effect/turf_decal/siding/dark_red,
-/obj/structure/table/train_table{
+"pf" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/obj/machinery/computer/records/security{
+	dir = 8
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"pk" = (
+/obj/effect/turf_decal/siding/dark_red/corner{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"pn" = (
+/obj/structure/table/train_shelf{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/dark_red/inner_corner,
+/obj/machinery/button/auto_detect/directional/south,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"ps" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_1)
+"pF" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
+"pU" = (
+/obj/machinery/door/window/survival_pod/left/directional/east,
+/obj/effect/spawner/random/trash/cigbutt,
 /turf/open/indestructible/dark/smooth_large,
-/area/trainstation/indoors/train/vagon_1)
+/area/trainstation/indoors/train/vagon_3)
 "qd" = (
 /obj/effect/turf_decal/siding/dark_red,
 /turf/open/indestructible/dark/smooth_large,
 /area/trainstation/indoors/train/vagon_1)
+"qv" = (
+/obj/effect/turf_decal/siding/dark_red/corner,
+/obj/effect/spawner/random/trash/mess,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
 "rb" = (
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 8
 	},
 /obj/machinery/light/small/dim/directional/west,
-/turf/open/indestructible/dark/textured,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/tech_1)
 "rf" = (
 /obj/structure/window/reinforced/shuttle/survival_pod,
@@ -233,7 +826,7 @@
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/vagon_1)
 "rm" = (
-/obj/machinery/door/coupe_door,
+/obj/machinery/door/train/coupe_door,
 /turf/open/indestructible/dark/smooth_large,
 /area/trainstation/indoors/train/vagon_1)
 "ro" = (
@@ -244,12 +837,62 @@
 /obj/structure/sign/departments/restroom/directional/west,
 /turf/open/indestructible/dark/smooth_large,
 /area/trainstation/indoors/train/bathroom)
+"ry" = (
+/obj/structure/window/reinforced/shuttle/survival_pod,
+/obj/structure/curtain/bounty,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_2)
+"rI" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 4
+	},
+/obj/structure/table/train_shelf{
+	dir = 8
+	},
+/obj/machinery/light/small/dim/directional/east{
+	pixel_y = -15
+	},
+/obj/machinery/button/auto_detect/directional/north,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"rW" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/structure/broken_flooring/plating/always_floorplane/directional/north,
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/tech_1)
+"sb" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/machinery/light/small/dim/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"sr" = (
+/obj/structure/sink/directional/south,
+/obj/structure/mirror/directional/north,
+/turf/open/floor/iron/showroomfloor,
+/area/trainstation/indoors/train/vagon_3)
 "sw" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
 /obj/structure/sign/poster/official/no_erp/directional/north,
 /turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_1)
+"sH" = (
+/obj/machinery/button/auto_detect/directional/east,
+/turf/open/floor/iron/showroomfloor,
+/area/trainstation/indoors/train/vagon_3)
+"sN" = (
+/obj/structure/table/train_table,
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 1
+	},
+/obj/effect/spawner/random/trash/soap,
+/turf/open/indestructible/dark/smooth_large,
 /area/trainstation/indoors/train/vagon_1)
 "sR" = (
 /obj/effect/turf_decal/siding/dark_red{
@@ -260,67 +903,290 @@
 	},
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/conductor_1)
-"tq" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
+"sX" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"sZ" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 1
 	},
-/turf/open/floor/carpet/red,
-/area/trainstation/indoors/train/vagon_1)
-"tP" = (
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"tc" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/obj/structure/broken_flooring/plating/always_floorplane/directional/north,
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/tech_1)
+"te" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"tf" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"tg" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 1
+	},
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_3)
+"tq" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
 /turf/open/indestructible/hotelwood,
 /area/trainstation/indoors/train/vagon_1)
+"tr" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/obj/structure/broken_flooring/plating/always_floorplane/directional/north,
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/vagon_3)
+"tu" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"tx" = (
+/obj/effect/turf_decal/siding/dark_red,
+/obj/structure/table/train_table{
+	dir = 1
+	},
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_2)
+"tA" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/structure/sign/poster/official/no_erp/directional/north,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"tH" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/vending/imported/tiziran,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
+"tP" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/chair/sofa/left/brown{
+	dir = 1
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_1)
+"ux" = (
+/obj/structure/sign/poster/official/no_erp/directional/north,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"uC" = (
+/obj/effect/turf_decal/siding/dark_red/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
 "uJ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_1)
+"uV" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/red,
 /area/trainstation/indoors/train/vagon_1)
 "vh" = (
 /obj/effect/turf_decal/siding/dark_red,
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/conductor_1)
+"vl" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"vz" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"vF" = (
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_2)
+"vI" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_3)
+"vR" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"wc" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 4
+	},
+/obj/structure/bed/pod,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"wn" = (
+/obj/structure/chair/comfy/brown,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_2)
 "wu" = (
 /obj/structure/window/reinforced/shuttle/survival_pod,
 /turf/open/indestructible/dark/smooth_large,
 /area/trainstation/indoors/train/bathroom)
-"wM" = (
-/obj/structure/table/train_table,
-/obj/effect/turf_decal/siding/dark_red{
-	dir = 1
-	},
+"wJ" = (
+/obj/machinery/door/train/coupe_door,
 /turf/open/indestructible/dark/smooth_large,
-/area/trainstation/indoors/train/conductor_1)
+/area/trainstation/indoors/train/vagon_3)
 "xp" = (
 /obj/structure/chair/comfy/brown,
 /turf/open/indestructible/dark/smooth_large,
 /area/trainstation/indoors/train/conductor_1)
-"xH" = (
-/obj/effect/turf_decal/siding/dark_red{
-	dir = 8
+"xs" = (
+/obj/effect/turf_decal/siding/dark_red,
+/obj/structure/table/train_table{
+	dir = 1
 	},
+/obj/effect/spawner/random/trash/grime,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_1)
+"xt" = (
+/obj/effect/turf_decal/siding/dark_red,
+/obj/structure/table/train_table{
+	dir = 1
+	},
+/obj/effect/spawner/random/trash/grime,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_2)
+"xz" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_1)
+"xG" = (
 /obj/effect/spawner/random/trash/mess,
-/turf/open/floor/plating,
-/area/trainstation/indoors/train/tech_1)
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_3)
+"xH" = (
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_1)
+"xW" = (
+/obj/effect/turf_decal/siding/dark_red,
+/obj/structure/table/train_table{
+	dir = 1
+	},
+/obj/effect/spawner/random/trash/grime,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_3)
 "xY" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /turf/open/indestructible/hotelwood,
 /area/trainstation/indoors/train/vagon_1)
-"yL" = (
-/obj/machinery/door/coupe_door,
+"yc" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/effect/spawner/random/trash/mess,
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/vagon_3)
+"yq" = (
+/obj/structure/table/train_table,
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 1
+	},
 /turf/open/indestructible/dark/smooth_large,
-/area/trainstation/indoors/train/bathroom)
+/area/trainstation/indoors/train/vagon_2)
+"yF" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_1)
 "yW" = (
 /obj/effect/turf_decal/siding/dark_red/inner_corner{
 	dir = 8
 	},
-/turf/open/indestructible/dark/textured,
+/turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/tech_1)
+"yX" = (
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"yZ" = (
+/obj/structure/table/train_shelf{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/dark_red/inner_corner,
+/obj/machinery/button/auto_detect/directional/south{
+	name = "Coupe 2"
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
+"zw" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 8
+	},
+/obj/structure/bed/pod{
+	dir = 4
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
+"zH" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 1
+	},
+/obj/structure/bed/pod{
+	dir = 4
+	},
+/obj/machinery/button/auto_detect/directional/north,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"Aj" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"Al" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/vending/imported/tiziran,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
 "Ao" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -336,6 +1202,14 @@
 /obj/structure/broken_flooring/plating/always_floorplane/directional/west,
 /turf/open/floor/plating,
 /area/trainstation/indoors/train/bathroom)
+"AL" = (
+/obj/structure/sign/poster/official/no_erp/directional/south,
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/chair/sofa/right/brown{
+	dir = 1
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
 "Bb" = (
 /obj/effect/turf_decal/siding/dark_red/inner_corner{
 	dir = 1
@@ -346,6 +1220,16 @@
 /obj/effect/spawner/random/trash/mess,
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/vagon_1)
+"Bv" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
+"By" = (
+/obj/structure/window/reinforced/shuttle/survival_pod,
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/vagon_3)
 "BL" = (
 /obj/structure/sign/poster/official/no_erp/directional/north,
 /obj/effect/turf_decal/siding/wood{
@@ -365,92 +1249,272 @@
 	},
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/vagon_1)
+"Ca" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/structure/sign/poster/official/no_erp/directional/north,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
 "Cf" = (
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet/red,
 /area/trainstation/indoors/train/vagon_1)
-"CK" = (
-/turf/open/indestructible/dark/textured,
-/area/trainstation/indoors/train/tech_1)
-"Dw" = (
+"Ci" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"Ck" = (
 /obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/sign/warning/no_smoking/circle/directional/north,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"Cm" = (
+/obj/structure/window/reinforced/shuttle/survival_pod,
+/obj/structure/curtain/bounty,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/conductor_1)
+"CK" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_1)
+"Db" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"Dc" = (
+/obj/effect/turf_decal/siding/dark_red{
 	dir = 8
 	},
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/vagon_2)
+"Dh" = (
+/obj/structure/window/reinforced/survival_pod/indestructible/spawner/directional/east,
+/obj/structure/chair/sofa/bench/right{
+	dir = 8
+	},
+/obj/structure/broken_flooring/plating/always_floorplane/directional/west,
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/vagon_2)
+"Dk" = (
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_2)
+"Do" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"Dp" = (
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"Dy" = (
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/indestructible/hotelwood,
 /area/trainstation/indoors/train/vagon_1)
 "DL" = (
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,
 /area/trainstation/indoors/train/bathroom)
+"DS" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/obj/structure/broken_flooring/plating/always_floorplane/directional/west,
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/vagon_2)
+"DX" = (
+/obj/effect/spawner/random/trash/mess,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_2)
 "Ed" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
 /turf/open/indestructible/hotelwood,
 /area/trainstation/indoors/train/vagon_1)
+"Er" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"EA" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_1)
 "EG" = (
 /obj/effect/turf_decal/siding/dark_red/inner_corner{
 	dir = 1
 	},
-/turf/open/indestructible/dark/textured,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_1)
+"EU" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/effect/spawner/random/trash/mess,
+/turf/open/floor/plating,
 /area/trainstation/indoors/train/tech_1)
 "EZ" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/structure/hedge/opaque,
-/turf/open/indestructible/hotelwood,
-/area/trainstation/indoors/train/vagon_1)
-"Fe" = (
-/obj/machinery/light/directional/south,
-/obj/effect/turf_decal/siding/wood,
-/turf/open/indestructible/hotelwood,
-/area/trainstation/indoors/train/vagon_1)
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/obj/machinery/computer/apc_control{
+	dir = 8
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
 "Fm" = (
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,
-/area/trainstation/indoors/train/vagon_1)
+/area/trainstation/indoors/train/conductor_1)
+"Fz" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_1)
+"FA" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/obj/machinery/light/small/dim/directional/east,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_1)
+"FE" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"FJ" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/vagon_3)
 "FP" = (
 /obj/machinery/door/window/survival_pod/left/directional/east,
 /obj/effect/spawner/random/trash/cigbutt,
 /turf/open/indestructible/dark/smooth_large,
 /area/trainstation/indoors/train/bathroom)
+"Ge" = (
+/obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
 "Gk" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
 /turf/open/indestructible/hotelwood,
 /area/trainstation/indoors/train/vagon_1)
-"GF" = (
-/obj/effect/spawner/random/trash/mess,
+"Gt" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood{
-	dir = 4
+	dir = 8
+	},
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_2)
+"GF" = (
+/obj/effect/spawner/random/trash/mess,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
 /turf/open/floor/carpet/red,
 /area/trainstation/indoors/train/vagon_1)
-"Hm" = (
-/obj/effect/turf_decal/siding/dark_red/inner_corner{
-	dir = 4
+"GG" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
 	},
-/obj/structure/bed/pod,
-/turf/open/indestructible/dark/textured,
-/area/trainstation/indoors/train/conductor_1)
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
+"GP" = (
+/obj/structure/sign/poster/official/no_erp/directional/north,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
+"GQ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"GX" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/chair/sofa/middle/brown{
+	dir = 1
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
+"He" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/chair/sofa/left/brown{
+	dir = 1
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
 "HA" = (
 /obj/structure/sink/directional/south,
 /obj/structure/mirror/directional/north,
 /turf/open/floor/iron/showroomfloor,
 /area/trainstation/indoors/train/bathroom)
-"Iy" = (
-/obj/effect/turf_decal/siding/dark_red{
-	dir = 4
+"HG" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
 	},
-/obj/structure/broken_flooring/plating/always_floorplane/directional/north,
-/turf/open/floor/plating,
-/area/trainstation/indoors/train/tech_1)
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"Id" = (
+/obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"Ik" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_3)
+"Io" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/structure/sign/warning/no_smoking/circle/directional/west,
+/obj/machinery/light/directional/west,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
 "IM" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/chair/sofa/right/brown,
+/obj/machinery/vending/games,
 /turf/open/indestructible/hotelwood,
 /area/trainstation/indoors/train/vagon_1)
 "IT" = (
+/obj/machinery/button/auto_detect/directional/east,
 /turf/open/floor/iron/showroomfloor,
 /area/trainstation/indoors/train/bathroom)
 "IV" = (
@@ -460,6 +1524,23 @@
 /obj/structure/bed/pod,
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/vagon_1)
+"IZ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_2)
+"Jd" = (
+/obj/effect/turf_decal/siding/dark_red/corner{
+	dir = 8
+	},
+/obj/effect/spawner/random/trash/graffiti,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"Ji" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
 "Jj" = (
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 8
@@ -487,6 +1568,33 @@
 	},
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/conductor_1)
+"Jk" = (
+/obj/effect/turf_decal/siding/dark_red/corner{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"Jz" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_1)
+"JB" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_1)
+"JI" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_3)
 "JJ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -495,16 +1603,67 @@
 /obj/machinery/light/directional/west,
 /turf/open/indestructible/hotelwood,
 /area/trainstation/indoors/train/vagon_1)
+"JX" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner,
+/obj/structure/bed/pod,
+/obj/machinery/button/auto_detect/directional/south,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
 "KY" = (
 /turf/open/indestructible/dark/smooth_large,
 /area/trainstation/indoors/train/conductor_1)
-"Mf" = (
-/obj/effect/turf_decal/siding/wood,
-/obj/structure/chair/sofa/middle/brown{
-	dir = 1
+"Lb" = (
+/obj/structure/gangway,
+/turf/template_noop,
+/area/trainstation/indoors/train)
+"Lj" = (
+/turf/open/floor/plating,
+/area/trainstation/indoors/train)
+"LP" = (
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_1)
+"LT" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 4
 	},
-/turf/open/indestructible/hotelwood,
-/area/trainstation/indoors/train/vagon_1)
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
+"LV" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 4
+	},
+/obj/structure/bed/pod,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
+"Mq" = (
+/turf/open/floor/wood/wood_1,
+/area/trainstation/indoors/train/vagon_2)
+"Mv" = (
+/obj/effect/turf_decal/siding/dark_red/corner,
+/obj/effect/spawner/random/trash/mess,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"Mz" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"MQ" = (
+/obj/structure/table/train_shelf{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/dark_red/inner_corner,
+/obj/machinery/button/auto_detect/directional/south{
+	name = "Coupe 2"
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"MW" = (
+/obj/machinery/door/window/survival_pod/left/directional/east,
+/obj/effect/spawner/random/trash/cigbutt,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_2)
 "Nb" = (
 /obj/effect/turf_decal/siding/dark_red/inner_corner{
 	dir = 4
@@ -515,8 +1674,12 @@
 /obj/machinery/light/small/dim/directional/east{
 	pixel_y = -15
 	},
+/obj/machinery/button/auto_detect/directional/north,
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/vagon_1)
+"Nc" = (
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
 "Ni" = (
 /obj/structure/window/reinforced/survival_pod/indestructible/spawner/directional/east,
 /obj/structure/chair/sofa/bench/left{
@@ -531,107 +1694,426 @@
 /obj/structure/bed/pod{
 	dir = 4
 	},
+/obj/machinery/button/auto_detect/directional/north,
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/vagon_1)
+"NG" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/chair/sofa/left/brown{
+	dir = 1
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"NL" = (
+/obj/structure/chair/sofa/bench/right{
+	dir = 4;
+	pixel_x = -7
+	},
+/obj/structure/sign/departments/restroom/directional/west,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_3)
 "NM" = (
-/obj/machinery/door/train_door,
+/obj/machinery/door/train/train_door,
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/tech_1)
-"OF" = (
-/obj/machinery/door/train_door,
+"NN" = (
+/obj/structure/sink/directional/south,
+/obj/structure/mirror/directional/north,
+/turf/open/floor/iron/showroomfloor,
+/area/trainstation/indoors/train/vagon_2)
+"NR" = (
+/obj/machinery/button/auto_detect/directional/east,
+/turf/open/floor/iron/showroomfloor,
+/area/trainstation/indoors/train/vagon_2)
+"NU" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 4
+	},
 /turf/open/indestructible/dark/textured,
-/area/trainstation/indoors/train/vagon_1)
+/area/trainstation/indoors/train/vagon_2)
+"Oc" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/wood_1,
+/area/trainstation/indoors/train/vagon_2)
+"OD" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"OE" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/vagon_3)
 "OR" = (
+/obj/structure/table/train_table,
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 1
+	},
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_1)
+"OV" = (
 /obj/structure/table/train_table,
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 1
 	},
 /obj/effect/spawner/random/trash/soap,
 /turf/open/indestructible/dark/smooth_large,
-/area/trainstation/indoors/train/vagon_1)
+/area/trainstation/indoors/train/vagon_3)
+"OY" = (
+/obj/machinery/door/train/train_door,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
 "Pa" = (
 /obj/effect/turf_decal/siding/dark_red/inner_corner{
 	dir = 8
 	},
 /obj/structure/table/reinforced,
 /obj/structure/bedsheetbin,
+/obj/machinery/button/auto_detect/directional/south,
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/conductor_1)
-"Pd" = (
+"Pe" = (
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 8
 	},
-/obj/structure/broken_flooring/plating/always_floorplane/directional/north,
-/turf/open/floor/plating,
-/area/trainstation/indoors/train/tech_1)
-"Pq" = (
-/obj/effect/spawner/random/trash/mess,
-/obj/effect/turf_decal/siding/wood{
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"Pi" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood{
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"Po" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
 	dir = 8
 	},
-/turf/open/floor/carpet/red,
-/area/trainstation/indoors/train/vagon_1)
+/obj/structure/bed/pod{
+	dir = 4
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"Pv" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/effect/spawner/random/trash/mess,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"PW" = (
+/obj/effect/turf_decal/siding/wood,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
 "PZ" = (
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 1
 	},
 /turf/open/indestructible/dark/smooth_large,
 /area/trainstation/indoors/train/vagon_1)
+"Qc" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/machinery/recharge_station,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
+"Qd" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 4
+	},
+/obj/structure/table/train_shelf{
+	dir = 8
+	},
+/obj/machinery/light/small/dim/directional/east{
+	pixel_y = -15
+	},
+/obj/machinery/button/auto_detect/directional/north,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
 "Qk" = (
 /obj/machinery/light/directional/south,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/hotelwood,
 /area/trainstation/indoors/train/vagon_1)
+"Qv" = (
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
+"Qw" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_2)
+"Qx" = (
+/obj/effect/spawner/random/trash/mess,
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_1)
+"QD" = (
+/obj/machinery/door/train/coupe_door,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/bathroom)
 "QF" = (
-/obj/structure/window/reinforced/shuttle/survival_pod,
-/turf/open/floor/plating,
-/area/trainstation/indoors/train/tech_1)
+/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/area/trainstation/indoors/train/vagon_1)
 "QI" = (
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 8
 	},
-/turf/open/indestructible/dark/textured,
+/obj/effect/spawner/random/trash/mess,
+/turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/tech_1)
-"QT" = (
-/obj/effect/turf_decal/siding/dark_red{
+"Rc" = (
+/obj/structure/chair/sofa/bench/left{
+	dir = 4;
+	pixel_x = -7;
+	pixel_y = -1
+	},
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_2)
+"Rl" = (
+/obj/structure/table/train_shelf{
 	dir = 8
 	},
-/obj/machinery/light/small/dim/directional/west,
-/obj/effect/spawner/random/trash/cigbutt,
+/obj/effect/turf_decal/siding/dark_red/inner_corner,
+/obj/machinery/button/auto_detect/directional/south{
+	name = "Coupe 2"
+	},
 /turf/open/indestructible/dark/textured,
-/area/trainstation/indoors/train/tech_1)
+/area/trainstation/indoors/train/vagon_1)
+"Rt" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/obj/machinery/light/small/dim/directional/east,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"Ru" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"RP" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
 "RZ" = (
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 4
 	},
-/turf/open/indestructible/dark/textured,
+/turf/open/floor/plating,
 /area/trainstation/indoors/train/tech_1)
+"So" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
 "Sp" = (
 /obj/structure/window/reinforced/survival_pod/indestructible/spawner/directional/east,
 /obj/machinery/recharge_station,
 /turf/open/indestructible/dark/smooth_large,
 /area/trainstation/indoors/train/bathroom)
+"Sv" = (
+/obj/structure/window/reinforced/survival_pod/indestructible/spawner/directional/east,
+/obj/machinery/recharge_station,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_3)
+"Sw" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 1
+	},
+/obj/structure/table/train_shelf{
+	dir = 4
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"Sz" = (
+/obj/structure/toilet{
+	dir = 1
+	},
+/turf/open/floor/iron/showroomfloor,
+/area/trainstation/indoors/train/vagon_2)
+"SE" = (
+/obj/structure/table/train_shelf{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/dark_red/inner_corner,
+/obj/machinery/button/auto_detect/directional/south{
+	name = "Coupe 1"
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"SJ" = (
+/obj/effect/turf_decal/siding/dark_red,
+/obj/structure/table/train_table{
+	dir = 1
+	},
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_3)
+"SX" = (
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_3)
+"Te" = (
+/obj/structure/chair/sofa/bench/right{
+	dir = 4;
+	pixel_x = -7
+	},
+/obj/structure/sign/departments/restroom/directional/west,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_2)
+"Tg" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/item/radio/intercom/directional/north,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"Ti" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_1)
 "Tk" = (
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 4
 	},
 /obj/machinery/light/small/dim/directional/east,
-/turf/open/indestructible/dark/textured,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_1)
+"To" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/effect/spawner/random/trash/box,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
+"TE" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_1)
+"TF" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/obj/machinery/light/small/dim/directional/east,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"TP" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
+	},
+/obj/structure/broken_flooring/plating/always_floorplane/directional/west,
+/turf/open/floor/plating,
 /area/trainstation/indoors/train/tech_1)
 "TT" = (
 /obj/effect/turf_decal/siding/dark_red/corner{
 	dir = 1
 	},
-/turf/open/indestructible/dark/textured,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/tech_1)
-"Vk" = (
+"TU" = (
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_2)
+"TY" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"Uf" = (
+/obj/item/radio/intercom/directional/south,
 /obj/effect/turf_decal/siding/wood{
-	dir = 1
+	dir = 6
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
+"Un" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 4
+	},
+/obj/structure/bed/pod,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/conductor_1)
+"Uv" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
 /turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_2)
+"UG" = (
+/obj/effect/turf_decal/siding/wood,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
+"UN" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/chair/sofa/middle/brown{
+	dir = 1
+	},
+/turf/open/indestructible/hotelwood,
 /area/trainstation/indoors/train/vagon_1)
+"UV" = (
+/obj/structure/toilet{
+	dir = 1
+	},
+/turf/open/floor/iron/showroomfloor,
+/area/trainstation/indoors/train/vagon_3)
+"UZ" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/structure/broken_flooring/plating/always_floorplane/directional/north,
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/vagon_3)
+"Va" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/machinery/light/small/dim/directional/west,
+/obj/effect/spawner/random/trash/cigbutt,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"Ve" = (
+/obj/structure/window/reinforced/shuttle/survival_pod,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_2)
+"Vf" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/machinery/light/small/dim/directional/west,
+/obj/effect/spawner/random/trash/cigbutt,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"Vo" = (
+/obj/structure/window/reinforced/survival_pod/indestructible/spawner/directional/east,
+/obj/structure/chair/sofa/bench/right{
+	dir = 8
+	},
+/obj/structure/broken_flooring/plating/always_floorplane/directional/west,
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/vagon_3)
 "Vp" = (
 /obj/structure/sign/poster/official/no_erp/directional/south,
 /obj/effect/turf_decal/siding/wood,
@@ -640,316 +2122,519 @@
 	},
 /turf/open/indestructible/hotelwood,
 /area/trainstation/indoors/train/vagon_1)
+"VG" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
+"VR" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 1
+	},
+/obj/structure/bed/pod{
+	dir = 4
+	},
+/obj/machinery/button/auto_detect/directional/north,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
 "VW" = (
 /turf/open/floor/wood/wood_1,
 /area/trainstation/indoors/train/vagon_1)
-"Wu" = (
+"VY" = (
+/obj/machinery/door/train/train_door,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"Wb" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/effect/spawner/random/trash/mess,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"Wc" = (
+/obj/structure/sign/warning/yes_smoking,
 /turf/closed/wall/mineral/titanium/survival/nodiagonal,
-/area/trainstation/indoors/train/conductor_1)
-"WY" = (
+/area/trainstation/indoors/train/vagon_2)
+"Wi" = (
+/obj/structure/broken_flooring/plating/always_floorplane/directional/west,
+/obj/machinery/door/train/coupe_door{
+	name = "Conductor"
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
+"Wl" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/machinery/light/small/dim/directional/west{
+	pixel_y = 17
+	},
+/obj/structure/table/reinforced,
+/obj/structure/bedsheetbin,
+/obj/item/bedsheet{
+	pixel_x = 12;
+	pixel_y = 16
+	},
+/obj/item/bedsheet{
+	pixel_x = 12;
+	pixel_y = 16
+	},
+/obj/item/bedsheet{
+	pixel_x = 12;
+	pixel_y = 16
+	},
+/obj/item/bedsheet{
+	pixel_x = 12;
+	pixel_y = 16
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
+"Wm" = (
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 4
 	},
-/turf/open/floor/plating,
-/area/trainstation/indoors/train/tech_1)
-"Xe" = (
-/obj/machinery/door/coupe_door,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"Wn" = (
 /obj/structure/broken_flooring/plating/always_floorplane/directional/west,
+/obj/machinery/door/train/coupe_door{
+	name = "Conductor"
+	},
 /turf/open/indestructible/hotelwood,
-/area/trainstation/indoors/train/conductor_1)
-"Xt" = (
-/obj/structure/window/reinforced/shuttle/survival_pod,
-/obj/structure/curtain/bounty,
-/turf/open/indestructible/dark/textured,
-/area/trainstation/indoors/train/conductor_1)
-"Yr" = (
-/obj/effect/spawner/random/trash/graffiti,
-/turf/open/indestructible/dark/smooth_large,
-/area/trainstation/indoors/train/bathroom)
-"YG" = (
-/obj/effect/turf_decal/siding/dark_red,
-/obj/structure/table/train_table{
+/area/trainstation/indoors/train/vagon_2)
+"Wu" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_1)
+"Wv" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_3)
+"Wy" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/wood_1,
+/area/trainstation/indoors/train/vagon_3)
+"WD" = (
+/obj/effect/spawner/random/trash/mess,
+/obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/effect/spawner/random/trash/grime,
-/turf/open/indestructible/dark/smooth_large,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_3)
+"WT" = (
+/obj/item/radio/intercom/directional/south,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/indestructible/hotelwood,
 /area/trainstation/indoors/train/vagon_1)
-"YJ" = (
+"WY" = (
 /obj/effect/turf_decal/siding/dark_red/inner_corner{
 	dir = 1
 	},
 /obj/structure/table/train_shelf{
 	dir = 4
 	},
+/obj/effect/spawner/random/trash/mess,
 /turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"Xd" = (
+/obj/structure/window/reinforced/survival_pod/indestructible/spawner/directional/east,
+/obj/structure/chair/sofa/bench/left{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/vagon_2)
+"Xe" = (
+/obj/structure/broken_flooring/plating/always_floorplane/directional/west,
+/obj/machinery/door/train/coupe_door{
+	name = "Conductor"
+	},
+/turf/open/indestructible/hotelwood,
 /area/trainstation/indoors/train/conductor_1)
-"ZC" = (
+"Xv" = (
+/obj/effect/turf_decal/siding/dark_red,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_2)
+"XD" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner,
+/obj/machinery/computer/crew{
+	dir = 8
+	},
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_3)
+"XH" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/obj/machinery/light/small/dim/directional/west,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"Ya" = (
+/obj/effect/turf_decal/siding/dark_red/inner_corner{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/structure/bedsheetbin,
+/obj/machinery/button/auto_detect/directional/south,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"Yp" = (
+/obj/structure/window/reinforced/shuttle/survival_pod,
+/obj/structure/curtain/bounty,
+/turf/open/indestructible/dark/textured,
+/area/trainstation/indoors/train/vagon_2)
+"Yr" = (
+/obj/effect/spawner/random/trash/graffiti,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/bathroom)
+"YD" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/obj/effect/spawner/random/trash/box,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"YG" = (
+/obj/effect/turf_decal/siding/dark_red,
+/obj/structure/table/train_table{
+	dir = 1
+	},
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_1)
+"YL" = (
+/obj/effect/turf_decal/siding/dark_red/corner{
+	dir = 8
+	},
+/obj/effect/spawner/random/trash/graffiti,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_2)
+"Za" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"Zi" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/hedge/opaque,
+/turf/open/floor/carpet/red,
+/area/trainstation/indoors/train/vagon_2)
+"Zo" = (
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/vagon_3)
+"Zr" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/vending/imported/yangyu,
 /turf/open/indestructible/hotelwood,
-/area/trainstation/indoors/train/vagon_1)
-"ZI" = (
+/area/trainstation/indoors/train/vagon_3)
+"Zy" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"ZC" = (
+/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/area/trainstation/indoors/train/vagon_3)
+"ZF" = (
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 4
 	},
 /obj/structure/broken_flooring/plating/always_floorplane/directional/west,
 /turf/open/floor/plating,
-/area/trainstation/indoors/train/tech_1)
+/area/trainstation/indoors/train/vagon_3)
+"ZI" = (
+/obj/machinery/door/train/coupe_door,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_2)
 "ZQ" = (
 /turf/open/indestructible/hotelwood,
 /area/trainstation/indoors/train/vagon_1)
+"ZR" = (
+/obj/structure/sign/warning/yes_smoking/circle/directional/north,
+/obj/structure/prop/general/trashblue{
+	pixel_y = 11
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/indestructible/dark/smooth_large,
+/area/trainstation/indoors/train/vagon_3)
+"ZS" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/indestructible/hotelwood,
+/area/trainstation/indoors/train/vagon_2)
+"ZU" = (
+/obj/structure/window/reinforced/shuttle/survival_pod,
+/turf/open/floor/plating,
+/area/trainstation/indoors/train/vagon_2)
 
 (1,1,1) = {"
 dS
 dS
 dS
 dS
-kb
-kb
+aq
+aq
 NM
-kb
-kb
+aq
+aq
 dS
 dS
 dS
 dS
 "}
 (2,1,1) = {"
-kb
-QF
-QF
-kb
-kb
+aq
+lk
+lk
+aq
+aq
 EG
-QI
-yW
-kb
-kb
-QF
-QF
-kb
+mv
+Ti
+aq
+aq
+lk
+lk
+aq
 "}
 (3,1,1) = {"
 NM
 EG
-gK
 QI
-QT
+Wu
+hr
 TT
 CK
 mM
 rb
-QI
-xH
+mv
+EU
 yW
 NM
 "}
 (4,1,1) = {"
-kb
-gj
-RZ
-ZI
-WY
-WY
-Iy
+aq
+oG
+gy
+TP
 RZ
 RZ
+tc
+gy
+ps
+ps
 RZ
-WY
 dj
-kb
+aq
 "}
 (5,1,1) = {"
-Wu
-Wu
-Wu
-Wu
-Wu
-Wu
-OF
 Fm
 Fm
 Fm
 Fm
 Fm
 Fm
+lh
+QF
+QF
+QF
+QF
+QF
+QF
 "}
 (6,1,1) = {"
-Wu
-YJ
+Fm
+dn
 oR
 Jj
 Pa
-Wu
+Fm
 Gk
 cF
 Ed
-Fm
+QF
 Bb
 ki
-Fm
+QF
 "}
 (7,1,1) = {"
-Xt
-wM
+Cm
+dH
 KY
 xp
 vh
 Xe
-xY
-VW
-lk
-rm
-PZ
-pP
-rf
-"}
-(8,1,1) = {"
-Wu
-Hm
-nC
-sR
-ox
-Wu
-Ao
-VW
-EZ
-Fm
-Nb
-mZ
-Fm
-"}
-(9,1,1) = {"
-Wu
-Wu
-Wu
-Wu
-Wu
-Wu
-xY
-ZQ
-EZ
-Fm
-Fm
-Fm
-Fm
-"}
-(10,1,1) = {"
-Fm
-Nn
-BO
-Fm
-sw
-JJ
-ZQ
-ZQ
-Qk
-Fm
-er
-ki
-Fm
-"}
-(11,1,1) = {"
-rf
-aq
-qd
-rm
-xY
-Pq
-Dw
-tq
-lk
-rm
-PZ
-pP
-rf
-"}
-(12,1,1) = {"
-Fm
-IV
-mH
-Fm
-IM
-Vk
-Cf
-dZ
-nK
-Fm
-Nb
-mZ
-Fm
-"}
-(13,1,1) = {"
-Fm
-Fm
-Fm
-Fm
-hl
-Vk
-Cf
-dZ
-Mf
-Fm
-Fm
-Fm
-Fm
-"}
-(14,1,1) = {"
-Fm
-Nn
-BO
-Fm
-lc
-Vk
-Cf
-dZ
-Vp
-Fm
-er
-ki
-Fm
-"}
-(15,1,1) = {"
-rf
-OR
-qd
-rm
-xY
-cr
-fU
-GF
-lk
+EA
+kT
+kb
 rm
 PZ
 YG
 rf
 "}
-(16,1,1) = {"
+(8,1,1) = {"
 Fm
+Un
+nC
+sR
+ox
+Fm
+Ao
+VW
+kb
+QF
+Nb
+mZ
+QF
+"}
+(9,1,1) = {"
+Fm
+Fm
+Fm
+Fm
+Fm
+Fm
+EA
+xz
+kb
+QF
+QF
+QF
+QF
+"}
+(10,1,1) = {"
+QF
+Nn
+BO
+QF
+sw
+JJ
+ZQ
+ZQ
+Qk
+QF
+hC
+ki
+QF
+"}
+(11,1,1) = {"
+rf
+OR
+qd
+rm
+xY
+GF
+TE
+no
+kb
+rm
+PZ
+YG
+rf
+"}
+(12,1,1) = {"
+QF
 IV
-mH
-Fm
+kM
+QF
+IM
+dZ
+uV
+Cf
+tP
+QF
+Nb
+mZ
+QF
+"}
+(13,1,1) = {"
+QF
+QF
+QF
+QF
+gK
+dZ
+xH
+Cf
+UN
+QF
+QF
+QF
+QF
+"}
+(14,1,1) = {"
+QF
+Nn
+BO
+QF
+lc
+dZ
+uV
+Cf
+Vp
+QF
+hC
+ki
+QF
+"}
+(15,1,1) = {"
+rf
+sN
+qd
+rm
+xY
+Jz
+yF
+Qx
+kb
+rm
+PZ
+xs
+rf
+"}
+(16,1,1) = {"
+QF
+IV
+Rl
+QF
 BL
 ZQ
 ZQ
 ZQ
-tP
-Fm
+tq
+QF
 Nb
 mZ
-Fm
+QF
 "}
 (17,1,1) = {"
-Fm
-Fm
-Fm
-Fm
+QF
+QF
+QF
+QF
 kN
-ZQ
-ZQ
-Fe
+xz
+xz
+Dy
 DL
 DL
 DL
@@ -957,14 +2642,14 @@ DL
 DL
 "}
 (18,1,1) = {"
-Fm
+QF
 Nn
 BO
-Fm
-ZC
-VW
-ZQ
-fe
+QF
+xY
+kT
+xz
+WT
 DL
 HA
 IT
@@ -973,27 +2658,27 @@ jz
 "}
 (19,1,1) = {"
 rf
-aq
+OR
 qd
 rm
 xY
 VW
-lk
+cX
 DL
 DL
-yL
+QD
 DL
 DL
 DL
 "}
 (20,1,1) = {"
-Fm
+QF
 IV
 mH
-Fm
+QF
 aV
 uJ
-tP
+fA
 DL
 om
 Yr
@@ -1002,13 +2687,13 @@ ro
 wu
 "}
 (21,1,1) = {"
-Fm
-Fm
-Fm
-Fm
-Fm
-Fm
-OF
+QF
+QF
+QF
+QF
+QF
+QF
+lh
 oH
 Sp
 FP
@@ -1017,60 +2702,60 @@ Ni
 DL
 "}
 (22,1,1) = {"
-kb
+aq
 EG
-gK
 QI
-QI
-aM
-Pd
-QI
-QI
-QI
-QI
+fT
+fT
+ev
+rW
+Wu
+Wu
+fT
+Wu
 yW
-kb
+aq
 "}
 (23,1,1) = {"
 NM
-gj
-RZ
-RZ
-Tk
+dA
+gy
+Fz
+FA
 bM
-CK
+LP
 oT
 Tk
-RZ
-ZI
-dj
+gy
+TP
+JB
 NM
 "}
 (24,1,1) = {"
-kb
-QF
-QF
-kb
-kb
+aq
+lk
+lk
+aq
+aq
 gj
-RZ
-dj
-kb
-kb
-QF
-QF
-kb
+Fz
+JB
+aq
+aq
+lk
+lk
+aq
 "}
 (25,1,1) = {"
 dS
 dS
 dS
 dS
-kb
-kb
+aq
+aq
 NM
-kb
-kb
+aq
+aq
 dS
 dS
 dS
@@ -1081,11 +2766,11 @@ dS
 dS
 dS
 dS
-dS
-dS
-dS
-dS
-dS
+Lb
+Lj
+gs
+Lj
+Lb
 dS
 dS
 dS
@@ -1096,371 +2781,371 @@ dS
 dS
 dS
 dS
-dS
-dS
-dS
-dS
-dS
+aI
+aI
+VY
+aI
+aI
 dS
 dS
 dS
 dS
 "}
 (28,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+aI
+ZU
+ZU
+aI
+aI
+Pi
+Pe
+vz
+aI
+aI
+ZU
+ZU
+aI
 "}
 (29,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+VY
+Pi
+Wb
+Aj
+Va
+pk
+ku
+YL
+XH
+Pe
+oB
+Mz
+VY
 "}
 (30,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+aI
+Do
+Db
+DS
+lX
+lX
+cA
+Db
+Wm
+Wm
+lX
+kP
+aI
 "}
 (31,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+aI
+aI
+aI
+aI
+aI
+aI
+VY
+aI
+aI
+aI
+aI
+aI
+aI
 "}
 (32,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+aI
+nw
+nq
+do
+Ya
+aI
+HG
+ZS
+Za
+aI
+WY
+Po
+aI
 "}
 (33,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+Yp
+yq
+vF
+wn
+dy
+Wn
+Zy
+Oc
+PW
+ZI
+bd
+tx
+Yp
 "}
 (34,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+aI
+wc
+pf
+EZ
+gA
+aI
+Tg
+Mq
+PW
+aI
+rI
+oE
+aI
 "}
 (35,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+aI
+aI
+aI
+aI
+aI
+aI
+Zy
+GQ
+PW
+aI
+aI
+aI
+aI
 "}
 (36,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+aI
+zH
+nR
+aI
+tA
+fG
+Dp
+Dp
+Id
+aI
+Sw
+Po
+aI
 "}
 (37,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+Yp
+yq
+Xv
+ZI
+dp
+DX
+Qw
+Gt
+PW
+ZI
+bd
+tx
+Yp
 "}
 (38,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+aI
+wc
+SE
+aI
+bE
+Zi
+IZ
+Dk
+NG
+aI
+rI
+oE
+aI
 "}
 (39,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+aI
+aI
+aI
+aI
+iw
+Zi
+TU
+Dk
+gM
+aI
+aI
+aI
+aI
 "}
 (40,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+aI
+zH
+nR
+aI
+Al
+Zi
+IZ
+Dk
+AL
+aI
+Sw
+Po
+aI
 "}
 (41,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+Yp
+hV
+Xv
+ZI
+dp
+oi
+Uv
+kj
+PW
+ZI
+bd
+xt
+Yp
 "}
 (42,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+aI
+wc
+MQ
+aI
+ux
+Dp
+Dp
+Dp
+FE
+aI
+rI
+oE
+aI
 "}
 (43,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+aI
+aI
+aI
+aI
+Ck
+GQ
+GQ
+yX
+aI
+aI
+aI
+aI
+aI
 "}
 (44,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+aI
+zH
+nR
+aI
+dp
+Oc
+GQ
+lM
+aI
+NN
+NR
+Sz
+ry
 "}
 (45,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+Yp
+yq
+Xv
+ZI
+dp
+Mq
+tu
+aI
+aI
+ZI
+aI
+aI
+aI
 "}
 (46,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+aI
+wc
+pn
+aI
+YD
+jd
+RP
+aI
+fz
+gN
+Rc
+Te
+Ve
 "}
 (47,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+aI
+aI
+aI
+aI
+aI
+aI
+VY
+Wc
+on
+MW
+Dh
+Xd
+aI
 "}
 (48,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+aI
+Pi
+Wb
+vR
+vR
+Dc
+mi
+Aj
+Aj
+vR
+Aj
+Mz
+aI
 "}
 (49,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+VY
+tf
+Db
+ce
+bV
+Jk
+gT
+qv
+TF
+Db
+DS
+iR
+VY
 "}
 (50,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+aI
+ZU
+ZU
+aI
+aI
+NU
+ce
+iR
+aI
+aI
+ZU
+ZU
+aI
 "}
 (51,1,1) = {"
 dS
 dS
 dS
 dS
-dS
-dS
-dS
-dS
-dS
+aI
+aI
+VY
+aI
+aI
 dS
 dS
 dS
@@ -1471,11 +3156,11 @@ dS
 dS
 dS
 dS
-dS
-dS
-dS
-dS
-dS
+Lb
+Lj
+gs
+Lj
+Lb
 dS
 dS
 dS
@@ -1486,371 +3171,371 @@ dS
 dS
 dS
 dS
-dS
-dS
-dS
-dS
-dS
+ZC
+ZC
+OY
+ZC
+ZC
 dS
 dS
 dS
 dS
 "}
 (54,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+ZC
+By
+By
+ZC
+ZC
+sZ
+vl
+Er
+ZC
+ZC
+By
+By
+ZC
 "}
 (55,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+OY
+sZ
+Pv
+Zo
+Vf
+uC
+So
+Jd
+sb
+vl
+yc
+TY
+OY
 "}
 (56,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+ZC
+dP
+OD
+ZF
+FJ
+FJ
+tr
+OD
+gq
+gq
+FJ
+te
+ZC
 "}
 (57,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+ZC
+ZC
+ZC
+ZC
+ZC
+ZC
+OY
+ZC
+ZC
+ZC
+ZC
+ZC
+ZC
 "}
 (58,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+ZC
+hk
+Qc
+Wl
+dN
+ZC
+Bv
+jQ
+Ji
+ZC
+ko
+zw
+ZC
 "}
 (59,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+lq
+ag
+mA
+hH
+eY
+Wi
+GG
+Wy
+UG
+wJ
+tg
+SJ
+lq
 "}
 (60,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+ZC
+LV
+kH
+kE
+XD
+ZC
+hs
+aP
+UG
+ZC
+Qd
+JX
+ZC
 "}
 (61,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+ZC
+ZC
+ZC
+ZC
+ZC
+ZC
+GG
+aZ
+UG
+ZC
+ZC
+ZC
+ZC
 "}
 (62,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+ZC
+VR
+gZ
+ZC
+Ca
+Io
+hF
+hF
+Ge
+ZC
+jc
+zw
+ZC
 "}
 (63,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+lq
+ag
+dO
+wJ
+ou
+WD
+JI
+mp
+UG
+wJ
+tg
+SJ
+lq
 "}
 (64,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+ZC
+LV
+mU
+ZC
+nm
+fC
+Ik
+SX
+He
+ZC
+Qd
+JX
+ZC
 "}
 (65,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+ZC
+ZC
+ZC
+ZC
+Zr
+fC
+mj
+SX
+GX
+ZC
+ZC
+ZC
+ZC
 "}
 (66,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+ZC
+VR
+gZ
+ZC
+tH
+fC
+Ik
+SX
+jI
+ZC
+jc
+zw
+ZC
 "}
 (67,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+lq
+OV
+dO
+wJ
+ou
+vI
+eO
+xG
+UG
+wJ
+tg
+xW
+lq
 "}
 (68,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+ZC
+LV
+yZ
+ZC
+GP
+hF
+hF
+hF
+Wv
+ZC
+Qd
+JX
+ZC
 "}
 (69,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+ZC
+ZC
+ZC
+ZC
+mV
+aZ
+aZ
+Qv
+ZC
+ZC
+ZC
+ZC
+ZC
 "}
 (70,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+ZC
+VR
+gZ
+ZC
+ou
+Wy
+aZ
+Uf
+ZC
+sr
+sH
+UV
+fo
 "}
 (71,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+lq
+ag
+dO
+wJ
+ou
+aP
+VG
+ZC
+ZC
+wJ
+ZC
+ZC
+ZC
 "}
 (72,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+ZC
+LV
+iU
+ZC
+To
+pF
+aw
+ZC
+ZR
+cM
+go
+NL
+aa
 "}
 (73,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+ZC
+ZC
+ZC
+ZC
+ZC
+ZC
+OY
+cn
+Sv
+pU
+Vo
+ny
+ZC
 "}
 (74,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+ZC
+sZ
+Pv
+kS
+kS
+OE
+UZ
+Zo
+Zo
+kS
+Zo
+TY
+ZC
 "}
 (75,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+OY
+Ru
+OD
+Ci
+Rt
+ei
+Nc
+Mv
+bP
+OD
+ZF
+sX
+OY
 "}
 (76,1,1) = {"
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
-dS
+ZC
+By
+By
+ZC
+ZC
+LT
+Ci
+sX
+ZC
+ZC
+By
+By
+ZC
 "}
 (77,1,1) = {"
 dS
 dS
 dS
 dS
-dS
-dS
-dS
-dS
-dS
+ZC
+ZC
+OY
+ZC
+ZC
 dS
 dS
 dS

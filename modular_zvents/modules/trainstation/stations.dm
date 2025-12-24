@@ -1,6 +1,10 @@
 /obj/effect/landmark/trainstation
 	icon_state = "tdome_admin"
 
+/obj/effect/landmark/trainstation/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NO_STATION_UNLOAD, INNATE_TRAIT)
+
 // Используетя для создания окрестности станции над рельсами путей
 /obj/effect/landmark/trainstation/nearstation_spawnpoint
 	name = "Near station placer"
@@ -10,11 +14,57 @@
 	name = "Station Placer"
 
 
+/obj/effect/landmark/trainstation/object_spawner
+	name = "Object spawner"
+
+	var/accuracy = 1
+	var/list/possible_objects = list()
+	var/min_delay = 1 SECONDS
+	var/max_delay = 3 SECONDS
+
+	COOLDOWN_DECLARE(spawn_cd)
+
+
+/obj/effect/landmark/trainstation/object_spawner/Initialize(mapload)
+	. = ..()
+	RegisterSignal(SStrain_controller, COMSIG_TRAIN_BEGIN_MOVING, PROC_REF(on_train_begin_moving))
+	RegisterSignal(SStrain_controller, COMSIG_TRAIN_STOP_MOVING, PROC_REF(on_train_stop_moving))
+
+/obj/effect/landmark/trainstation/object_spawner/Destroy()
+	. = ..()
+
+/obj/effect/landmark/trainstation/object_spawner/proc/on_train_begin_moving()
+	SIGNAL_HANDLER
+	START_PROCESSING(SSobj, src)
+
+/obj/effect/landmark/trainstation/object_spawner/proc/on_train_stop_moving()
+	SIGNAL_HANDLER
+	STOP_PROCESSING(SSobj, src)
+
+/obj/effect/landmark/trainstation/object_spawner/process(seconds_per_tick)
+	. = ..()
+	if(!COOLDOWN_FINISHED(src, spawn_cd))
+		return
+	COOLDOWN_START(src, spawn_cd, rand(min_delay, max_delay))
+	attempt_spawn()
+
+/obj/effect/landmark/trainstation/object_spawner/proc/attempt_spawn()
+	if(!length(possible_objects))
+		return
+	var/turf/target_turf = get_turf(src)
+	if(accuracy > 0)
+		for(var/turf/T as anything in shuffle(RANGE_TURFS(accuracy, src)))
+			if(isopenturf(T))
+				target_turf = T
+				break
+	var/selected = pick(possible_objects)
+	var/atom/movable/new_obj = new selected(src)
+	if(new_obj)
+		new_obj.forceMove(target_turf)
+
 /datum/map_template/train_station
 	name = "Train Station Template"
 	returns_created_atoms = TRUE
-
-
 
 /turf/closed/indestructible/train_border
 	name = "Iced rock"
@@ -27,6 +77,7 @@
 	var/datum/map_template/template = null
 	var/ambience_sound = null
 	var/map_path
+	var/visible = TRUE
 
 	var/z_level = 0
 
@@ -92,11 +143,10 @@
 
 /datum/train_station/proc/unload_station(datum/callback/unload_callback)
 	priority_announce("Поезд отходит от станции: [name].", "Поездной эвент")
-	for(var/obj/effect/landmark/trainstation/important in docking_turfs)
-		docking_turfs -= important
-
 	for(var/turf/T in docking_turfs)
 		for(var/atom/movable/AM in T.contents)
+			if(HAS_TRAIT(AM, TRAIT_NO_STATION_UNLOAD))
+				continue
 			qdel(AM)
 		T.ChangeTurf(/turf/open/space)
 	docking_turfs.Cut()
@@ -108,3 +158,7 @@
 	name = "Start-point"
 	map_path = "_maps/modular_events/trainstation/startpoint.dmm"
 
+/datum/train_station/train_backstage
+	name = "Iced forest"
+	map_path = "_maps/modular_events/trainstation/backstage.dmm"
+	visible = FALSE

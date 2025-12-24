@@ -2,12 +2,9 @@
 	// Является ли эта карта - поездом
 	var/trainstation = FALSE
 
-GLOBAL_LIST_EMPTY(moving_tufs)
-
-
 SUBSYSTEM_DEF(train_controller)
 	name = "Train Controller"
-	wait = 0.2 SECONDS
+	wait = 0.2 SECONDS // Эта подсистема вызывает РЕАЛЬНО часто, но за счет оптимизации - это не дает сильного оверхеда
 
 	dependencies = list(
 		/datum/controller/subsystem/mapping,
@@ -15,18 +12,19 @@ SUBSYSTEM_DEF(train_controller)
 	)
 
 	VAR_PRIVATE/moving = FALSE
-
+	// Список всех зарегестрированных турфов
 	VAR_PRIVATE/list/all_simulated_turfs = list()
-
+	// Список текущих processing турфов
 	VAR_PRIVATE/list/to_process
-
+	// Список обьектов для регистрации на процессинг
+	VAR_PRIVATE/list/queue_list = list()
 	// Загружается или выгружается в данный момент станция
 	var/loading = FALSE
 	// Станция запланированная для загрузки
 	var/datum/train_station/planned_to_load = null
 	// Текущая загруженная станция
 	var/datum/train_station/loaded_station = null
-
+	// Известные, загруженные станции
 	var/static/list/known_stations = list()
 
 /datum/controller/subsystem/train_controller/Initialize()
@@ -70,8 +68,7 @@ SUBSYSTEM_DEF(train_controller)
 
 
 /datum/controller/subsystem/train_controller/proc/load_startpoint()
-	load_station(/datum/train_station/start_point, stop_moving = FALSE, hide_for_players = FALSE)
-
+	load_station(/datum/train_station/start_point, stop_moving = FALSE, hide_for_players = FALSE, announce = FALSE)
 
 /datum/controller/subsystem/train_controller/proc/on_station_unloaded()
 	loading = FALSE
@@ -86,7 +83,7 @@ SUBSYSTEM_DEF(train_controller)
 /datum/controller/subsystem/train_controller/proc/on_station_loaded()
 	loading = FALSE
 
-/datum/controller/subsystem/train_controller/proc/load_station(path_or_instance, stop_moving = FALSE, hide_for_players = TRUE)
+/datum/controller/subsystem/train_controller/proc/load_station(path_or_instance, stop_moving = FALSE, hide_for_players = TRUE, announce = TRUE)
 	var/datum/train_station/to_load = null
 	if(ispath(path_or_instance, /datum/train_station))
 		to_load = locate(path_or_instance) in known_stations
@@ -112,10 +109,19 @@ SUBSYSTEM_DEF(train_controller)
 		stop_moving()
 	for(var/mob/living/L in GLOB.alive_player_list)
 		L.clear_fullscreen("station_loading", animated = 5 SECONDS)
-	show_station_logo(to_load)
+	if(announce)
+		show_station_logo(to_load)
 
 /datum/controller/subsystem/train_controller/proc/show_station_logo(datum/train_station/station)
+	for(var/mob/player in GLOB.player_list)
+		SEND_SOUND(player, 'modular_zvents/sounds/effects/station_logo.ogg')
+		new /atom/movable/screen/station_logo(null, null, station.name, player.client)
 
+
+/datum/controller/subsystem/train_controller/proc/check_start()
+	if(SEND_SIGNAL(src, COMSIG_TRAIN_TRY_MOVE) & COMPONENT_BLOCK_TRAIN_MOVEMENT)
+		return FALSE
+	return TRUE
 
 /datum/controller/subsystem/train_controller/proc/register(turf/open/moving/T)
 	if(T in all_simulated_turfs)
@@ -125,14 +131,27 @@ SUBSYSTEM_DEF(train_controller)
 /datum/controller/subsystem/train_controller/proc/unregister(turf/open/moving/T)
 	all_simulated_turfs -= T
 
+/datum/controller/subsystem/train_controller/proc/queue_process(turf/open/moving/T)
+	LAZYADD(queue_list, T)
 
-/datum/controller/subsystem/train_controller/proc/start_moving()
+/datum/controller/subsystem/train_controller/proc/unqueue_process(turf/open/moving/T)
+	if(T in to_process)
+		to_process -= T
+
+/datum/controller/subsystem/train_controller/proc/start_moving(force = FALSE, unload_station = TRUE)
 	if(moving)
 		return
+	if(check_start() && !force)
+		return
 	moving = TRUE
+	if(unload_station)
+		load_station(/datum/train_station/train_backstage, FALSE, TRUE, FALSE)
+
 	for(var/turf/open/moving/T as anything in all_simulated_turfs)
 		T.moving = TRUE
 		T.update_appearance()
+		T.check_process(register = TRUE)
+	SEND_SIGNAL(src, COMSIG_TRAIN_BEGIN_MOVING)
 
 /datum/controller/subsystem/train_controller/proc/stop_moving()
 	if(!moving)
@@ -141,17 +160,22 @@ SUBSYSTEM_DEF(train_controller)
 	for(var/turf/open/moving/T as anything in all_simulated_turfs)
 		T.moving = FALSE
 		T.update_appearance()
+	to_process = null
+	SEND_SIGNAL(src, COMSIG_TRAIN_STOP_MOVING)
 
 /datum/controller/subsystem/train_controller/fire(resumed)
 	if(!moving)
 		return
+	if(LAZYLEN(queue_list))
+		to_process += queue_list
+		LAZYNULL(queue_list)
+	if(!LAZYLEN(to_process))
+		return
 	INVOKE_ASYNC(src, PROC_REF(process_turfs), world.tick_usage)
 
 /datum/controller/subsystem/train_controller/proc/process_turfs(seconds_per_tick)
-	for(var/turf/open/moving/T as anything in all_simulated_turfs)
+	for(var/turf/open/moving/T as anything in to_process)
 		T.process_contents(seconds_per_tick)
-
-/obj/structure/fluff/bus
 
 /datum/controller/subsystem/train_controller/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -165,9 +189,11 @@ SUBSYSTEM_DEF(train_controller)
 /datum/controller/subsystem/train_controller/ui_data(mob/user)
 	var/list/data = list()
 	data["moving"] = moving
-	data["num_turfs"] = length(all_simulated_turfs)
+	data["num_turfs"] = length(to_process)
 	data["stations"] = list()
 	for(var/datum/train_station/station in known_stations)
+		if(!station.visible)
+			continue
 		data["stations"] += list(
 			list(
 				"name" = station.name,
@@ -200,12 +226,10 @@ SUBSYSTEM_DEF(train_controller)
 			var/new_cd = params["cooldown"]
 			if(isnum(new_cd) && new_cd > 0)
 				return TRUE
-
 		if("load_station")
 			var/station_type = text2path(params["station_type"])
-			if(ispath(station_type, /datum/map_template/train_station))
-				INVOKE_ASYNC(src, PROC_REF(load_station), station_type)
-				return TRUE
+			INVOKE_ASYNC(src, PROC_REF(load_station), station_type)
+			return TRUE
 		if("unload_station")
 			if(loaded_station)
 				INVOKE_ASYNC(src, PROC_REF(unload_station), loaded_station)
@@ -218,3 +242,41 @@ ADMIN_VERB(open_train_controller, R_ADMIN, "Open train controller", "Open active
 /obj/effect/mapping_helpers/ztrait_injector/trainstation
 	traits_to_add = list(ZTRAIT_NOPARALLAX = TRUE, ZTRAIT_NOXRAY = TRUE, ZTRAIT_NOPHASE = TRUE, ZTRAT_TRAINSTATION = TRUE, ZTRAIT_BASETURF = /turf/open/space)
 
+/* Оверскрин для отображения названия станции */
+/atom/movable/screen/station_logo
+	icon_state = "blank"
+	screen_loc = "CENTER-7,CENTER-7"
+	plane = HUD_PLANE
+	layer = ABOVE_ALL_MOB_LAYER
+
+	var/fade_delay = 7 SECONDS
+	var/client/parent = null
+
+/atom/movable/screen/station_logo/Initialize(mapload, datum/hud/hud_owner, station_name, client/to_show)
+	. = ..()
+	parent = to_show
+	parent.screen += src
+	var/icon_size = world.icon_size
+	maptext = {"<div style="font:'Small Fonts'">[station_name]</div>"}
+	maptext_height = icon_size * 6
+	maptext_width = icon_size * 24
+	var/list/client_view = splittext(parent.view, "x")
+	var/view_y = 15
+	var/view_x = 21
+	if(LAZYLEN(client_view) == 2)
+		view_x = client_view[1]
+		view_y = client_view[2]
+	maptext_x = icon_size * view_x + round(icon_size * 0.5)
+	maptext_y = icon_size * view_y + round(icon_size * 0.5)
+	transform.Translate(10, 10)
+	ASYNC
+		rollem()
+
+/atom/movable/screen/station_logo/proc/rollem()
+	sleep(2 SECONDS)
+	animate(src, alpha = 0, time = fade_delay, flags = ANIMATION_PARALLEL)
+	addtimer(CALLBACK(src, PROC_REF(fadeout)), fade_delay + 0.1 SECONDS)
+
+/atom/movable/screen/station_logo/proc/fadeout()
+	parent.screen -= src
+	qdel(src)

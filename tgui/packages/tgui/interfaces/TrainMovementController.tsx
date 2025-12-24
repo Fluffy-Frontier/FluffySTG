@@ -29,7 +29,7 @@ export const TrainMovementController = (props) => {
                 <b>{moving ? 'MOVING' : 'STOPPED'}</b>
               </Box>
             </LabeledList.Item>
-            <LabeledList.Item label="Background Turfs">
+            <LabeledList.Item label="Processing Turfs">
               <Box color="label">{num_turfs}</Box>
             </LabeledList.Item>
             <LabeledList.Item label="Current Station">

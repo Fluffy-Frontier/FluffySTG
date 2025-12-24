@@ -18,6 +18,7 @@
 
 	// Скорость движения фона (px/сек) — регулируй для реализма (100-300); override глобальной если нужно
 	var/speed = 200
+	VAR_PRIVATE/processing_content = FALSE
 
 /turf/open/moving/Initialize(mapload)
 	. = ..()
@@ -40,20 +41,42 @@
 /turf/open/moving/ex_act(severity, target)
 	return
 
-/turf/open/moving/proc/process_contents(seconds_per_tick)
-	if(!moving || !length(contents))
+/turf/open/moving/Enter(atom/movable/mover)
+	. = ..()
+	if(!moving)
 		return
+	if(QDELETED(mover) || isobserver(mover) || mover.flags_1 & NO_TURF_MOVEMENT)
+		return
+	SStrain_controller.queue_process(src)
+
+/turf/open/moving/proc/check_process(register = TRUE)
+	if(!length(contents))
+		return FALSE
+	for(var/atom/movable/AM in contents)
+		if(QDELETED(AM) || isobserver(AM) || AM.flags_1 & NO_TURF_MOVEMENT)
+			continue
+		if(register)
+			SStrain_controller.queue_process(src)
+		return TRUE
+	return FALSE
+
+/turf/open/moving/proc/process_contents(seconds_per_tick)
+	if(!moving || !length(contents) || processing_content)
+		return
+	processing_content = TRUE
 	for(var/atom/movable/AM as anything in contents)
-		if(QDELETED(AM) || iseffect(AM) || isobserver(AM))
+		if(QDELETED(AM) || isobserver(AM) || AM.flags_1 & NO_TURF_MOVEMENT)
 			continue
 		move_object(AM)
-
+	processing_content = FALSE
+	if(!check_process(register = FALSE))
+		SStrain_controller.unqueue_process(src)
 
 /turf/open/moving/proc/move_object(atom/movable/object)
 	var/turf/current = object.loc
 	var/turf/target = get_step(current, movement_direction)
 	if(!target || isclosedturf(target))
-		if(isliving(object))
+		if(isliving(object) && !HAS_TRAIT(object, TRAIT_GODMODE))
 			var/mob/living/L = object
 			L.adjustBruteLoss(50)
 			L.throw_at(get_step(current, movement_direction), 1, 2)

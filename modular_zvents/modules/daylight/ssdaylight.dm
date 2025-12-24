@@ -224,6 +224,8 @@ ADMIN_VERB(toggle_daylight_cycle_lock, R_ADMIN, "Toggle Daylight Cycle Lock", "L
 	log_admin("[key_name(usr)] [SSdaylight.cycle_locked ? "lock" : "unlock"] daylight cycle")
 	message_admins(span_adminnotice("[key_name_admin(usr)] [SSdaylight.cycle_locked ? "lock" : "unlock"] daylight cycle"))
 
+/obj/effect/light_emitter
+	flags_1 = NO_TURF_MOVEMENT
 
 /obj/effect/light_emitter/daylight
 	set_luminosity = 2
