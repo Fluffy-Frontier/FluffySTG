@@ -24,7 +24,7 @@
 	var/mob/living/carbon/carbon_owner = bloodsuckerdatum.owner.current
 	if(istype(carbon_owner))
 		carbon_owner.gain_trauma(/datum/brain_trauma/mild/hallucinations, TRAUMA_RESILIENCE_ABSOLUTE)
-		carbon_owner.gain_trauma(/datum/brain_trauma/special/bluespace_prophet, TRAUMA_RESILIENCE_ABSOLUTE)
+		carbon_owner.gain_trauma(/datum/brain_trauma/special/bluespace_prophet/phobetor, TRAUMA_RESILIENCE_ABSOLUTE)
 	owner_datum.owner.current.update_sight()
 
 	bloodsuckerdatum.owner.current.playsound_local(get_turf(bloodsuckerdatum.owner.current), 'sound/music/antag/creepalert.ogg', 80, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
@@ -36,7 +36,7 @@
 	var/mob/living/carbon/carbon_owner = bloodsuckerdatum.owner.current
 	if(istype(carbon_owner))
 		carbon_owner.cure_trauma_type(/datum/brain_trauma/mild/hallucinations, TRAUMA_RESILIENCE_ABSOLUTE)
-		carbon_owner.cure_trauma_type(/datum/brain_trauma/special/bluespace_prophet, TRAUMA_RESILIENCE_ABSOLUTE)
+		carbon_owner.cure_trauma_type(/datum/brain_trauma/special/bluespace_prophet/phobetor, TRAUMA_RESILIENCE_ABSOLUTE)
 	bloodsuckerdatum.owner.current.update_sight()
 	return ..()
 
@@ -56,8 +56,8 @@
 		return
 	var/message = pick(strings("malkavian_revelations.json", "revelations", "tff_modular/modules/bloodsucker"))
 	INVOKE_ASYNC(source.owner.current, TYPE_PROC_REF(/atom/movable, say), message, forced = CLAN_MALKAVIAN)
-	for(var/mob/living/carbon/anything in view(3, source.owner.current))
-		if(IS_BLOODSUCKER(anything) || anything.stat != CONSCIOUS || prob(15))
+	for(var/mob/living/carbon/anything in view(2, source.owner.current))
+		if(IS_BLOODSUCKER(anything) || anything.stat != CONSCIOUS || prob(5))
 			continue
 		var/another_message = pick(strings("malkavian_revelations.json", "revelations", "tff_modular/modules/bloodsucker"))
 		INVOKE_ASYNC(anything, TYPE_PROC_REF(/atom/movable, say), another_message, forced = CLAN_MALKAVIAN)
@@ -65,7 +65,7 @@
 /datum/bloodsucker_clan/malkavian/favorite_ghoul_gain(datum/antagonist/bloodsucker/source, datum/antagonist/ghoul/ghouldatum)
 	var/mob/living/carbon/carbonowner = ghouldatum.owner.current
 	if(istype(carbonowner))
-		carbonowner.gain_trauma(/datum/brain_trauma/mild/hallucinations, TRAUMA_RESILIENCE_ABSOLUTE)
+		carbonowner.gain_trauma(/datum/brain_trauma/mild/hallucinations/malkavian, TRAUMA_RESILIENCE_ABSOLUTE)
 		carbonowner.gain_trauma(/datum/brain_trauma/special/bluespace_prophet/phobetor, TRAUMA_RESILIENCE_ABSOLUTE)
 	var/datum/martial_art/psychotic_brawling/psychotic_brawling = new(null)
 	psychotic_brawling.teach(ghouldatum.owner.current, TRUE)
@@ -74,7 +74,7 @@
 /datum/bloodsucker_clan/malkavian/favorite_ghoul_loss(datum/antagonist/bloodsucker/source, datum/antagonist/ghoul/ghouldatum)
 	var/mob/living/carbon/carbonowner = ghouldatum.owner.current
 	if(istype(carbonowner))
-		carbonowner.cure_trauma_type(/datum/brain_trauma/mild/hallucinations, TRAUMA_RESILIENCE_ABSOLUTE)
+		carbonowner.cure_trauma_type(/datum/brain_trauma/mild/hallucinations/malkavian, TRAUMA_RESILIENCE_ABSOLUTE)
 		carbonowner.cure_trauma_type(/datum/brain_trauma/special/bluespace_prophet/phobetor, TRAUMA_RESILIENCE_ABSOLUTE)
 	var/datum/martial_art/psychotic_brawling/psychotic_brawling = locate() in ghouldatum.owner.current.martial_arts
 	if(isnull(psychotic_brawling))

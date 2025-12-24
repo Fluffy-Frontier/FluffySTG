@@ -5,4 +5,4 @@
 	join_icon_state = "ventrue"
 	join_description = "Lose the ability to drink from mindless mobs, but you need less blood to raise the powers"
 	blood_drink_type = BLOODSUCKER_DRINK_SNOBBY
-	level_cost = BLOODSUCKER_LEVELUP_PERCENTAGE_VENTRUE
+	level_cost = BLOODSUCKER_LEVELUP_PERCENTAGE_VERY_LOW

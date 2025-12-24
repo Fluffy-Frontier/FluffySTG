@@ -11,6 +11,7 @@
 		lose your Masquerade ability, but gain the ability to Ventcrawl even while clothed."
 	blood_drink_type = BLOODSUCKER_DRINK_INHUMANELY
 	var/ventcrawl_time = 10 SECONDS
+	var/static/list/traits_to_add = list(TRAIT_DISFIGURED, TRAIT_VENTCRAWLER_NUDE, TRAIT_KNOW_ENGI_WIRES, TRAIT_SILENT_FOOTSTEPS, TRAIT_MESON_VISION, TRAIT_SHOCKIMMUNE)
 
 /datum/bloodsucker_clan/nosferatu/New(datum/antagonist/bloodsucker/owner_datum)
 	. = ..()
@@ -21,7 +22,7 @@
 	if(!mob.has_quirk(/datum/quirk/badback))
 		mob.add_quirk(/datum/quirk/badback)
 
-	mob.add_traits(list(TRAIT_DISFIGURED, TRAIT_VENTCRAWLER_NUDE, TRAIT_KNOW_ENGI_WIRES, TRAIT_SILENT_FOOTSTEPS, TRAIT_MESON_VISION), BLOODSUCKER_TRAIT)
+	mob.add_traits(traits_to_add, BLOODSUCKER_TRAIT)
 
 	RegisterSignal(bloodsuckerdatum, COMSIG_BLOODSUCKER_EXAMINE, PROC_REF(on_mob_examine))
 	RegisterSignal(mob, COMSIG_CAN_VENTCRAWL, PROC_REF(can_ventcrawl))
@@ -86,12 +87,11 @@
 		bloodsuckerdatum.RemovePower(suck)
 	bloodsuckerdatum.give_starting_powers()
 	bloodsuckerdatum.owner.current.remove_quirk(/datum/quirk/badback)
-	bloodsuckerdatum.owner.current.remove_traits(list(TRAIT_VENTCRAWLER_NUDE, TRAIT_DISFIGURED), BLOODSUCKER_TRAIT)
+	bloodsuckerdatum.owner.current.remove_traits(traits_to_add, BLOODSUCKER_TRAIT)
 	UnregisterSignal(bloodsuckerdatum, list(COMSIG_BLOODSUCKER_EXAMINE, COMSIG_CAN_VENTCRAWL, COMSIG_VENTCRAWL_PRE_ENTER, COMSIG_VENTCRAWL_PRE_EXIT, COMSIG_VENTCRAWL_EXIT))
 	return ..()
 
 /datum/bloodsucker_clan/nosferatu/favorite_ghoul_gain(datum/antagonist/bloodsucker/source, datum/antagonist/ghoul/ghouldatum)
-	var/list/traits_to_add = list(TRAIT_VENTCRAWLER_NUDE, TRAIT_DISFIGURED, TRAIT_TRUE_NIGHT_VISION, TRAIT_KNOW_ENGI_WIRES, TRAIT_SILENT_FOOTSTEPS)
 	ghouldatum.owner.current.add_traits(traits_to_add, GHOUL_TRAIT)
 	ghouldatum.traits += traits_to_add
 	ghouldatum.owner.current.update_sight()

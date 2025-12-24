@@ -114,6 +114,7 @@
 		COMSIG_MOB_STAKED = PROC_REF(on_staked),
 		COMSIG_CARBON_LOSE_ORGAN = PROC_REF(on_organ_removal),
 		COMSIG_HUMAN_ON_HANDLE_BLOOD = PROC_REF(HandleBlood),
+		COMSIG_LIVING_CREMATED = PROC_REF(on_cremated),
 	)
 	var/list/sol_signals = list(
 		COMSIG_SOL_RANKUP_BLOODSUCKERS = PROC_REF(sol_rank_up),

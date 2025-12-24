@@ -155,15 +155,9 @@
 	if(user.loc != src.loc)
 		to_chat(user, "Step into the Tear before using it.")
 		return
-	for(var/obj/item/implant/tracking/imp in user.implants)
-		to_chat(user, span_warning("[imp] gives you the sense that you're being watched."))
-		return
 	// Is this, or linked, stream being watched?
 	if(check_location_seen(user, get_turf(user)))
 		to_chat(user, span_warning("Not while you're being watched."))
-		return
-	if(check_location_seen(user, get_turf(linked_to)))
-		to_chat(user, span_warning("Your destination is being watched."))
 		return
 	to_chat(user, span_notice("You slip unseen through [src]."))
 	user.playsound_local(null, 'sound/effects/magic/wand_teleport.ogg', 30, FALSE, pressure_affected = FALSE)

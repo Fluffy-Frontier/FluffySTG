@@ -406,4 +406,9 @@
 	addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living, gib), DROP_ITEMS), 2 SECONDS, TIMER_UNIQUE|TIMER_STOPPABLE)
 	user.investigate_log("Died as a bloodsucker from Final Death.", INVESTIGATE_DEATHS)
 
+/datum/antagonist/bloodsucker/proc/on_cremated(mob/user)
+	SIGNAL_HANDLER
+	var/datum/antagonist/bloodsucker/bloodsuckerdatum = user.mind?.has_antag_datum(/datum/antagonist/bloodsucker)
+	bloodsuckerdatum.FinalDeath()
+
 #undef BLOODSUCKER_PASSIVE_BLOOD_DRAIN

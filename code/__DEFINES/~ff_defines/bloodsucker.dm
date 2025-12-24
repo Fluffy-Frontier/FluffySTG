@@ -31,7 +31,7 @@
 
 /// Level up blood cost define, max_blood * this = blood cost
 #define BLOODSUCKER_LEVELUP_PERCENTAGE 0.4
-#define BLOODSUCKER_LEVELUP_PERCENTAGE_VENTRUE BLOODSUCKER_LEVELUP_PERCENTAGE - 0.2
+#define BLOODSUCKER_LEVELUP_PERCENTAGE_VERY_LOW BLOODSUCKER_LEVELUP_PERCENTAGE - 0.2
 
 ///The level when at a bloodsucker becomes snobby about who they drink from and gain their non-fledling reputation
 #define BLOODSUCKER_HIGH_LEVEL 4
@@ -183,6 +183,8 @@
 #define COMSIG_BODYPART_STAKED "staked"
 // called when a targeted ability is cast
 #define COMSIG_FIRE_TARGETED_POWER "comsig_fire_targeted_power"
+
+#define COMSIG_LIVING_CREMATED "comsig_living_cremated"
 
 /**
  * Sol signals & Defines
