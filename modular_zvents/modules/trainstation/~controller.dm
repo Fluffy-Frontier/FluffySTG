@@ -5,10 +5,12 @@
 SUBSYSTEM_DEF(train_controller)
 	name = "Train Controller"
 	wait = 0.2 SECONDS // Эта подсистема вызывает РЕАЛЬНО часто, но за счет оптимизации - это не дает сильного оверхеда
+
 	dependencies = list(
 		/datum/controller/subsystem/mapping,
 		/datum/controller/subsystem/statpanels,
 	)
+
 	VAR_PRIVATE/moving = FALSE
 	// Список всех зарегестрированных турфов
 	VAR_PRIVATE/list/all_simulated_turfs = list()
@@ -17,7 +19,7 @@ SUBSYSTEM_DEF(train_controller)
 	// Список обьектов для регистрации на процессинг
 	VAR_PRIVATE/list/queue_list = list()
 	// Загружается или выгружается в данный момент станция
-	VAR_PRIVATE/loading = FALSE
+	var/loading = FALSE
 	// Станция запланированная для загрузки
 	var/datum/train_station/planned_to_load = null
 	// Текущая загруженная станция
