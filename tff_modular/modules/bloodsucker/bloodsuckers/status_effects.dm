@@ -125,3 +125,6 @@
 	if(user.handcuffed && cuffs || user.legcuffed && legcuffs)
 		user.clear_cuffs(cuffs, TRUE)
 		user.clear_cuffs(legcuffs, TRUE)
+
+/datum/movespeed_modifier/nosferatu
+	multiplicative_slowdown = -0.1

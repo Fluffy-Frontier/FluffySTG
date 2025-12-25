@@ -30,6 +30,7 @@
 	RegisterSignal(mob, COMSIG_VENTCRAWL_PRE_EXIT, PROC_REF(on_ventcrawl_pre_exit))
 	RegisterSignal(mob, COMSIG_VENTCRAWL_EXIT, PROC_REF(on_ventcrawl_exit))
 	RegisterSignal(mob, COMSIG_VENTCRAWL_PRE_CANCEL, PROC_REF(on_ventcrawl_cancel))
+	owner_datum.owner.current.add_movespeed_modifier(/datum/movespeed_modifier/nosferatu)
 
 /datum/bloodsucker_clan/nosferatu/proc/get_ventcrawl_time()
 	return max(ventcrawl_time - bloodsuckerdatum.GetRank() SECONDS, 2 SECONDS)
@@ -89,6 +90,7 @@
 	bloodsuckerdatum.owner.current.remove_quirk(/datum/quirk/badback)
 	bloodsuckerdatum.owner.current.remove_traits(traits_to_add, BLOODSUCKER_TRAIT)
 	UnregisterSignal(bloodsuckerdatum, list(COMSIG_BLOODSUCKER_EXAMINE, COMSIG_CAN_VENTCRAWL, COMSIG_VENTCRAWL_PRE_ENTER, COMSIG_VENTCRAWL_PRE_EXIT, COMSIG_VENTCRAWL_EXIT))
+	bloodsuckerdatum.owner.current.remove_movespeed_modifier(/datum/movespeed_modifier/nosferatu)
 	return ..()
 
 /datum/bloodsucker_clan/nosferatu/favorite_ghoul_gain(datum/antagonist/bloodsucker/source, datum/antagonist/ghoul/ghouldatum)
