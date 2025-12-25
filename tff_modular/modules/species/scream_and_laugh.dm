@@ -4,6 +4,6 @@
 	female_screamsounds = null
 
 /datum/laugh_type/teshari
-	name = "Insect Laugh (Moth)"
+	name = "Teshari Laugh"
 	male_laughsounds = list('tff_modular/modules/species/sounds/tesharilaugh.ogg')
 	female_laughsounds = null
