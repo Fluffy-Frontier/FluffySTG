@@ -25,7 +25,7 @@
 	bloodcost = 15
 	constant_bloodcost = 0.1
 	target_range = 6
-	mesmerize_delay = 3.5 SECONDS
+	mesmerize_delay = 3 SECONDS
 	blind_at_level = 3
 	requires_facing_target = FALSE
 	blocked_by_glasses = FALSE

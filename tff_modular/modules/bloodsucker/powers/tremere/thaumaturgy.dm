@@ -9,15 +9,16 @@
  */
 
 #define BLOOD_SHIELD_BLOCK_CHANCE 75
-#define BLOOD_SHIELD_BLOOD_COST 15
+#define BLOOD_SHIELD_BLOOD_COST 5
 #define THAUMATURGY_BLOOD_COST_PER_CHARGE 5
-#define THAUMATURGY_COOLDOWN_PER_CHARGE 5 SECONDS
+#define THAUMATURGY_COOLDOWN_PER_CHARGE 2.5 SECONDS
 
 #define THAUMATURGY_SHIELD_LEVEL 2
 #define THAUMATURGY_DOOR_BREAK_LEVEL 3
 #define THAUMATURGY_EXTRA_DAMAGE_LEVEL 4
 #define THAUMATURGY_BLOOD_STEAL_LEVEL 5
 #define THAUMATURGY_MECHA_DAMAGE_LEVEL 6
+
 /datum/action/cooldown/bloodsucker/targeted/tremere/thaumaturgy
 	name = "Thaumaturgy"
 	level_current = 1
@@ -29,7 +30,7 @@
 	bloodcost = 5
 	constant_bloodcost = 0
 	// 5 seconds per charge
-	cooldown_time = 8 SECONDS
+	cooldown_time = 5 SECONDS
 	prefire_message = "Right click where you wish to fire."
 	click_to_activate = TRUE // you pay to replenish charges
 	power_activates_immediately = FALSE
@@ -221,7 +222,7 @@
 	damage = 1
 	wound_bonus = 25
 	armour_penetration = 80
-	speed = 0.6
+	speed = 1
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
 	range = 30
 	armor_flag = LASER

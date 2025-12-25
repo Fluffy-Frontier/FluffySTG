@@ -1,8 +1,8 @@
 /datum/bloodsucker_clan/ventrue
 	name = CLAN_VENTRUE
 	description = "The Ventrue Clan is extremely snobby with their meals, and refuse to drink blood from people without a mind. \n\
-		You need 50% less blood to power up your powers."
+		Ventrue powers up much faster than other clans and are able to create more ghouls."
 	join_icon_state = "ventrue"
-	join_description = "Lose the ability to drink from mindless mobs, but you need less blood to raise the powers"
+	join_description = "Lose the ability to drink from mindless mobs, but you need less blood to raise the powers, and can have two times more ghouls per time."
 	blood_drink_type = BLOODSUCKER_DRINK_SNOBBY
 	level_cost = BLOODSUCKER_LEVELUP_PERCENTAGE_VERY_LOW

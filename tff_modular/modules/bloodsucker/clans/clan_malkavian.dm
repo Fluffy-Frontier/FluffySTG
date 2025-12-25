@@ -65,7 +65,7 @@
 /datum/bloodsucker_clan/malkavian/favorite_ghoul_gain(datum/antagonist/bloodsucker/source, datum/antagonist/ghoul/ghouldatum)
 	var/mob/living/carbon/carbonowner = ghouldatum.owner.current
 	if(istype(carbonowner))
-		carbonowner.gain_trauma(/datum/brain_trauma/mild/hallucinations/malkavian, TRAUMA_RESILIENCE_ABSOLUTE)
+		carbonowner.gain_trauma(/datum/brain_trauma/mild/hallucinations, TRAUMA_RESILIENCE_ABSOLUTE)
 		carbonowner.gain_trauma(/datum/brain_trauma/special/bluespace_prophet/phobetor, TRAUMA_RESILIENCE_ABSOLUTE)
 	var/datum/martial_art/psychotic_brawling/psychotic_brawling = new(null)
 	psychotic_brawling.teach(ghouldatum.owner.current, TRUE)
@@ -74,7 +74,7 @@
 /datum/bloodsucker_clan/malkavian/favorite_ghoul_loss(datum/antagonist/bloodsucker/source, datum/antagonist/ghoul/ghouldatum)
 	var/mob/living/carbon/carbonowner = ghouldatum.owner.current
 	if(istype(carbonowner))
-		carbonowner.cure_trauma_type(/datum/brain_trauma/mild/hallucinations/malkavian, TRAUMA_RESILIENCE_ABSOLUTE)
+		carbonowner.cure_trauma_type(/datum/brain_trauma/mild/hallucinations, TRAUMA_RESILIENCE_ABSOLUTE)
 		carbonowner.cure_trauma_type(/datum/brain_trauma/special/bluespace_prophet/phobetor, TRAUMA_RESILIENCE_ABSOLUTE)
 	var/datum/martial_art/psychotic_brawling/psychotic_brawling = locate() in ghouldatum.owner.current.martial_arts
 	if(isnull(psychotic_brawling))

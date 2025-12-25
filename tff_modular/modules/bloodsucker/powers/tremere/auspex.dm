@@ -100,7 +100,7 @@
 	new /obj/effect/particle_effect/fluid/smoke/vampsmoke(user.drop_location())
 	new /obj/effect/particle_effect/fluid/smoke/vampsmoke(targeted_turf)
 
-	for(var/mob/living/carbon/living_mob in range(1, targeted_turf)-user)
+	for(var/mob/living/carbon/human/living_mob in range(1, targeted_turf)-user)
 		if(IS_BLOODSUCKER(living_mob) || IS_GHOUL(living_mob))
 			continue
 		if(level_current >= AUSPEX_BLEED_LEVEL)
@@ -109,6 +109,7 @@
 			living_mob.adjustBruteLoss(15)
 		if(level_current >= AUSPEX_KNOCKDOWN_LEVEL)
 			living_mob.Knockdown(10 SECONDS, ignore_canstun = TRUE)
+			living_mob.Sleeping(4 SECONDS)
 
 	do_teleport(owner, targeted_turf, no_effects = TRUE, channel = TELEPORT_CHANNEL_QUANTUM)
 	user.adjustStaminaLoss(-user.staminaloss)
