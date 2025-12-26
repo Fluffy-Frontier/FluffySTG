@@ -156,7 +156,7 @@
 		if(issilicon(target_atom))
 			target_atom.emp_act(EMP_HEAVY)
 	// Target Type: Locker
-	if(istype(target, /obj/structure/closet))
+	else if(istype(target, /obj/structure/closet))
 		if(level_current <= BRAWN_BREAKOUT_LEVEL)
 			target.balloon_alert(user, "ability level too low to break open!")
 			return FALSE
@@ -169,7 +169,7 @@
 		addtimer(CALLBACK(src, PROC_REF(break_closet), user, target_closet), 1)
 		playsound(get_turf(user), 'sound/effects/grillehit.ogg', 80, TRUE, -1)
 	// Target Type: Door
-	if(istype(target, /obj/machinery/door))
+	else if(istype(target, /obj/machinery/door))
 		if(level_current <= BRAWN_AIRLOCK_LEVEL)
 			target.balloon_alert(user, "ability level too low to break open!")
 			return FALSE
@@ -186,17 +186,17 @@
 			playsound(get_turf(target_airlock), 'sound/effects/bang.ogg', 30, 1, -1)
 			target_airlock.open(2) // open(2) is like a crowbar or jaws of life.
 	// Target Type: Mecha
-	if(istype(target, /obj/vehicle/sealed/mecha))
+	else if(istype(target, /obj/vehicle))
 		if(level_current <= BRAWN_MECHA_LEVEL)
 			target.balloon_alert(user, "ability level too low to bash mecha!")
 			return FALSE
 		playsound(get_turf(user), 'sound/effects/grillehit.ogg', 80, TRUE, -1)
-		var/obj/vehicle/sealed/mecha/exosuit = target
-		if(exosuit.Adjacent(user))
-			exosuit.visible_message(span_danger("[exosuit] gets bashed by [user]!"))
-			exosuit.emp_act(EMP_HEAVY)
-			exosuit.take_damage(GetDamage())
-			user.do_attack_animation(exosuit, ATTACK_EFFECT_SMASH)
+		var/obj/vehicle/vehicle = target
+		if(vehicle.Adjacent(user))
+			vehicle.visible_message(span_danger("[vehicle] gets bashed by [user]!"))
+			vehicle.emp_act(EMP_HEAVY)
+			vehicle.take_damage(GetDamage())
+			user.do_attack_animation(vehicle, ATTACK_EFFECT_SMASH)
 
 /datum/action/cooldown/bloodsucker/targeted/brawn/proc/GetPowerLevel()
 	return min(5, 1 + level_current)
@@ -219,7 +219,7 @@
 	. = ..()
 	if(!.)
 		return FALSE
-	return isliving(target_atom) || istype(target_atom, /obj/machinery/door) || istype(target_atom, /obj/structure/closet)
+	return isliving(target_atom) || istype(target_atom, /obj/machinery/door) || istype(target_atom, /obj/structure/closet) || ismecha(target_atom)
 
 /datum/action/cooldown/bloodsucker/targeted/brawn/CheckCanTarget(atom/target_atom)
 	// DEFAULT CHECKS (Distance)
@@ -237,6 +237,9 @@
 		return TRUE
 	// Target Type: Locker
 	else if(istype(target_atom, /obj/structure/closet))
+		return TRUE
+	// Target Type: Mecha
+	else if(istype(target_atom), /obj/vehiche/sealed/mecha)
 		return TRUE
 	return FALSE
 
