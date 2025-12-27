@@ -42,7 +42,7 @@ SUBSYSTEM_DEF(train_controller)
 	load_stations()
 
 /datum/controller/subsystem/train_controller/Destroy()
-	all_simulated_turfs.Cut()s
+	all_simulated_turfs.Cut()
 	to_process.Cut()
 	return ..()
 
