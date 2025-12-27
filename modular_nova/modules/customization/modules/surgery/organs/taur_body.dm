@@ -7,7 +7,7 @@
 	external_bodyshapes = BODYSHAPE_TAUR
 	use_mob_sprite_as_obj_sprite = TRUE
 
-	organ_flags = ORGAN_EXTERNAL // TFF EDIT - ORIGINAL: parent_type::organ_flags | ORGAN_EXTERNAL
+	organ_flags = parent_type::organ_flags | ORGAN_EXTERNAL
 	mutantpart_key = FEATURE_TAUR
 	mutantpart_info = list(MUTANT_INDEX_NAME = "None", MUTANT_INDEX_COLOR_LIST = list("#FFFFFF", "#FFFFFF", "#FFFFFF"))
 	bodypart_overlay = /datum/bodypart_overlay/mutant/taur_body
