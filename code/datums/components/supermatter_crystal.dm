@@ -291,7 +291,10 @@
 		return
 
 	var/atom/atom_source = source
-	SEND_SIGNAL(consumed_object, COMSIG_SUPERMATTER_CONSUMED, atom_source)
+	// TFF EDIT STRAT, ORIGINAL: SEND_SIGNAL(consumed_object, COMSIG_SUPERMATTER_CONSUMED, atom_source)
+	if(SEND_SIGNAL(consumed_object, COMSIG_SUPERMATTER_CONSUMED, atom_source) & COMPONENT_PREVENT_SUPERMATTER_CONSUM)
+		return
+	// TFF EDIT END
 
 	var/object_size = 0
 	var/matter_increase = 0
