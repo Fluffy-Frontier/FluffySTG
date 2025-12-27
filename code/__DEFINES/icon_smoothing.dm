@@ -259,6 +259,8 @@ DEFINE_BITFIELD(smoothing_junction, list(
 
 #define SMOOTH_GROUP_BOULDER_PLATFORM S_OBJ(87) ///obj/structure/lattice/catwalk/boulder
 
+#define SMOOTH_GROUP_NECROMORPHS S_OBJ(88) // TFF ADDITION DS13
+
 /// Performs the work to set smoothing_groups and canSmoothWith.
 /// An inlined function used in both turf/Initialize and atom/Initialize.
 #define SETUP_SMOOTHING(...) \

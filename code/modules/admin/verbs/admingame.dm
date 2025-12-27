@@ -116,7 +116,9 @@ ADMIN_VERB_ONLY_CONTEXT_MENU(show_player_panel, R_ADMIN, "Show Player Panel", mo
 			body += "<A href='byond://?_src_=holder;[HrefToken()];mute=[player.ckey];mute_type=[MUTE_INTERNET_REQUEST]'><font color='[(muted & MUTE_INTERNET_REQUEST)?"red":"blue"]'>WEBREQ</font></a> | "
 			body += "<A href='byond://?_src_=holder;[HrefToken()];mute=[player.ckey];mute_type=[MUTE_DEADCHAT]'><font color='[(muted & MUTE_DEADCHAT)?"red":"blue"]'>DEADCHAT</font></a>\]"
 			body += "(<A href='byond://?_src_=holder;[HrefToken()];mute=[player.ckey];mute_type=[MUTE_ALL]'><font color='[(muted & MUTE_ALL)?"red":"blue"]'>toggle all</font></a>)"
-
+			//FLUFFY FRONTIER ADDITION START - DS13
+			body += "<A href='byond://?_src_=holder;[HrefToken()];mute=[player.ckey];mute_type=[MUTE_SIGNAL_WHISPER]'><font color='[(muted & MUTE_SIGNAL_WHISPER)?"red":"blue"]'>SIGNALWHISPER</font></a>\]"
+			//FLUFFY FRONTIER ADDITION END
 	body += "<br><br>"
 	body += "<A href='byond://?_src_=holder;[HrefToken()];jumpto=[REF(player)]'><b>Jump to</b></A> | "
 	body += "<A href='byond://?_src_=holder;[HrefToken()];getmob=[REF(player)]'>Get</A> | "

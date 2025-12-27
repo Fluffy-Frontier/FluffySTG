@@ -11,6 +11,9 @@
 #define MUTE_LOOC (1<<6)
 // NOVA EDIT End
 #define MUTE_ALL ALL
+// TFF ADDITION START - DS13
+#define MUTE_SIGNAL_WHISPER (1<<7)
+// TFF ADDITION END
 
 //Some constants for DB_Ban
 #define BANTYPE_PERMA 1

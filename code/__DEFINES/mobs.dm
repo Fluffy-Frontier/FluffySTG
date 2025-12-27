@@ -160,6 +160,8 @@
 ///The limb causes glasses and hats to be drawn on layers 5 and 4 respectively. Currently used for snouts with the (Top) suffix, which are drawn on layer 6 and would normally cover facewear
 #define BODYSHAPE_ALT_FACEWEAR_LAYER (1<<12)
 // NOVA EDIT ADDITION END
+// TFF ADD
+#define BODYTYPE_NECROMORPH (1<<13) // FLUFFY FRONTIER ADDITION DS13
 
 // Bodyshape defines for how things can be worn, i.e., what "shape" the mob sprite is
 ///The limb fits the human mold. This is not meant to be literal, if the sprite "fits" on a human, it is "humanoid", regardless of origin.
