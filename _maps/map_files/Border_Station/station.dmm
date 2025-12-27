@@ -5486,8 +5486,10 @@
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 4
 	},
-/obj/structure/closet/secure_closet/contraband/armory,
 /obj/effect/turf_decal/bot,
+/obj/structure/closet{
+	name = "evidence closet"
+	},
 /turf/open/floor/iron/dark/smooth_edge{
 	dir = 4
 	},
@@ -11226,6 +11228,15 @@
 	dir = 4
 	},
 /area/station/commons/fitness/recreation)
+"ddr" = (
+/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/delivery/white,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "arv_down";
+	name = "Arraival Shuters"
+	},
+/turf/open/floor/iron,
+/area/station/hallway/secondary/entry)
 "ddt" = (
 /obj/effect/turf_decal/trimline/blue/filled/warning,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -12441,10 +12452,12 @@
 	},
 /area/station/medical/storage)
 "dwB" = (
-/obj/structure/closet/secure_closet/contraband/armory,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 6
+	},
+/obj/structure/closet{
+	name = "evidence closet"
 	},
 /turf/open/floor/iron/dark/smooth_corner{
 	dir = 1
@@ -30341,11 +30354,13 @@
 /turf/open/space/basic,
 /area/space/nearstation)
 "iSF" = (
-/obj/structure/closet/secure_closet/contraband/armory,
 /obj/effect/turf_decal/bot,
 /obj/machinery/light_switch/directional/east,
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 4
+	},
+/obj/structure/closet{
+	name = "evidence closet"
 	},
 /turf/open/floor/iron/dark/smooth_edge{
 	dir = 4
@@ -30732,14 +30747,14 @@
 /area/station/command/eva)
 "iXv" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "arv_down";
-	name = "Araival Shuters"
-	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/delivery/white,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "arv_down";
+	name = "Arraival Shuters"
+	},
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
 "iXx" = (
@@ -55623,7 +55638,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "arv_down";
-	name = "Araival Shuters"
+	name = "Arraival Shuters"
 	},
 /obj/effect/turf_decal/delivery/white,
 /turf/open/floor/iron,
@@ -113775,9 +113790,9 @@ vGu
 vGu
 vGu
 pRb
-pRb
+ddr
 iXv
-pRb
+ddr
 vGu
 tTP
 kmq
