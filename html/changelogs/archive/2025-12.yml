@@ -801,3 +801,37 @@
       defensive benefit from the sleeping carp martial art style
   vinylspiders, Wallemations:
   - image: space heaters got a model replacement, from stick heaters to box heaters
+2025-12-27:
+  Bannhammger:
+  - balance: centcom no longer provides crew with forged weaponry before shifts
+  - admin: 'brand new smite: break knees'
+  OrbisAnima:
+  - bugfix: Due to incompatibilities with  intergalactic trade [we had bugs], Cargo
+      imports will no longer be able to be ordered directly from the cargo budget,
+      unless the express consoles are used, as it was previously stipulated with other
+      Goody types imports. [Lots of bugs, and avoiding future bugs, we tried.]
+  - rscadd: Adds Cargo imports content to regular cargo. Had to adjust some prices
+      due to automatic checks noticing potential infinite money schemes. Coupons now
+      work with them though!
+  - balance: Unified single packs inside the new cargo imports. Made the detective
+      revolver, its upgrade, and the bartender shotgun unique to NT, both for flavor
+      and as an example of implementation. Removed the forge items in imports as the
+      forging kit is already available.
+  - rscdel: Removes Cargo Imports. Also removes the forging equipment from cargo imports,
+      as the regular cargo system includes a crate with the same stuff.
+  - code_imp: ' Adds support to the cargo base system for departamental goodies, blacklisting
+      items to factions, blocking items from being express ordered (and express consoles
+      that allow you to bypass that!), autonaming of cargo packs based on the first
+      item if enabled, improved maintability of cargo imports content.  Also normalizes
+      all prices to cargo crate value.'
+  - rscdel: Removed the Hellgun and the Xray gun from cargo, you can still make them
+      using the tech and following the recipe from security.
+  Saukykouko:
+  - rscadd: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043A\u0440\u0438\
+      \u043A \u0438 \u0441\u043C\u0435\u0445 \u0434\u043B\u044F \u0442\u0435\u0448\
+      \u0430\u0440\u0438."
+  SyncIt21, JohnFulpWillard:
+  - bugfix: budget ordering console correctly differentiates between private & department
+      orders.
+  - bugfix: budget ordering console checkout cart displays correct Private/Department
+      order text amounts.
