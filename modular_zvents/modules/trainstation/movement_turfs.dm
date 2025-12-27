@@ -86,7 +86,7 @@
 			qdel(object)
 	else
 		ASYNC
-			object.Move(target, update_dir = FALSE)
+			object.Move(target)
 
 /turf/open/moving/update_appearance(updates)
 	. = ..()
