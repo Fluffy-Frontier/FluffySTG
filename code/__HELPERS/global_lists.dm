@@ -16,6 +16,7 @@
 	init_crafting_recipes()
 	init_crafting_recipes_atoms()
 	init_blooper_prefs() // FLUFFY FRONTIER ADDITION - Blooper
+	init_additional_huds() // FLUFFY FRONTIED ADDITION - modular huds
 
 /// Inits crafting recipe lists
 /proc/init_crafting_recipes(list/crafting_recipes)
