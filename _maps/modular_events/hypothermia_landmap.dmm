@@ -11,6 +11,17 @@
 /obj/structure/marker_beacon/burgundy,
 /turf/open/misc/dirt/icy_planet,
 /area/hypothermia/indoor/caven)
+"af" = (
+/obj/structure/rack/shelf,
+/obj/item/clothing/suit/armor/riot,
+/obj/item/clothing/suit/armor/riot,
+/obj/item/clothing/suit/armor/riot,
+/obj/item/clothing/head/helmet/toggleable/riot,
+/obj/item/clothing/head/helmet/toggleable/riot,
+/obj/item/clothing/head/helmet/toggleable/riot,
+/obj/item/gun/grenadelauncher,
+/turf/open/floor/iron/dark/textured,
+/area/hypothermia/indoor/outpost/zvezda/heavy_armory)
 "ag" = (
 /obj/machinery/hydroponics/constructable,
 /turf/open/floor/iron/dark,
@@ -424,8 +435,8 @@
 	dir = 8
 	},
 /obj/effect/mapping_helpers/add_modular_log{
-	log_author = "Охрана Борис";
-	log_message = "Прорыв в лабораториях! Мутанты вырвались, турели стреляют, но их слишком много. Силизнев кричит о полном карантине, баррикады падают.";
+	log_author = "Security Boris";
+	log_message = "Breach in the laboratories! Mutants have broken out, turrets are firing, but there are too many of them. Siliznev is shouting about full quarantine; barricades are falling.";
 	log_timestamp = "18.05.2363"
 	},
 /turf/open/floor/pod/light,
@@ -450,14 +461,14 @@
 	},
 /obj/effect/mapping_helpers/listener_helper/combined_broadcast{
 	EDITOR_broadcast_keys = list("zv_weathers_bcs_doors","zv_weathers_bcs_announce","zv_weathers_ssmain");
-	EDITOR_fail_message = "Сервер или погодные сенсоры еще не активирован!";
+	EDITOR_fail_message = "Server or weather sensors not yet activated!";
 	EDITOR_main_signal = "zv_weathers_main_comp";
 	EDITOR_signals = list("zv_weathers_server","zv_weathers_ss1","zv_weathers_ss2","zv_weathers_ss3")
 	},
 /obj/effect/mapping_helpers/listener_helper/announce{
-	EDITOR_announcer = "System";
-	EDITOR_message = "етеодатчики метеостанции зафиксировали формирование сверхкритической арктической бури. Скорость ветра превысит 300 км/ч, температура упадёт до -148°C. Ориентировочное время прибытия бури к комплексу: 1 час 58 минут. Рекомендуется эвакуация. Внешние выходы будут смертельны.";
-	EDITOR_title = "Прогноз погоды";
+	EDITOR_announcer = "Weather report";
+	EDITOR_message = "Meteorological station sensors have detected the formation of a supercritical arctic storm. Wind speeds will exceed 300 km/h, temperature will drop to -148°C. Estimated time of storm arrival at the complex: 1 hour 58 minutes. Evacuation is recommended. External exits will be lethal.";
+	EDITOR_title = "Weather report";
 	listener_key = "zv_weathers_bcs_announce"
 	},
 /turf/open/floor/plating/snowed/standard_air,
@@ -495,6 +506,12 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/zvezda)
+"cd" = (
+/obj/structure/marker_beacon/burgundy{
+	name = "landing marker"
+	},
+/turf/open/floor/pod/light,
+/area/hypothermia/indoor/outpost/progres/research)
 "ce" = (
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	dir = 1
@@ -673,13 +690,13 @@
 	},
 /obj/effect/mapping_helpers/add_modular_log{
 	log_author = "System";
-	log_message = "СКАНИРОВАНИЕ ЗАВЕРШЕНО. Живых людей: 0. Тепловые сигнатуры: 0. Дыхание: не обнаружено. Сердцебиение: не обнаружено. Последний зарегистрированный крик: 05:58:12. Протокол 0-Дельта. Полное отсутствие персонала подтверждено. Все двери закрыты навсегда. Свет выключен. Тишина.";
+	log_message = "SCANNING COMPLETE. Living humans: 0. Thermal signatures: 0. Breathing: not detected. Heartbeat: not detected. Last registered scream: 05:58:12. Protocol 0-Delta. Complete absence of personnel confirmed. All doors locked permanently. Lights off. Silence.";
 	log_timestamp = "2363-05-19 06:12:47";
 	name = "Last complex breath log"
 	},
 /obj/effect/mapping_helpers/add_modular_log{
 	log_author = "System";
-	log_message = "22.11.2563 08:04:52. Зарегистрировано падение крупного объекта на поверхность в 4.7 км от комплекса. Ударная волна 7.2 балла. Сейсмические датчики фиксируют множественные вторичные толчки в секторе Федоров: перемещение масс 60-120 кг по туннелям в сторону Прогресса. Двери остаются заблокированными.";
+	log_message = "22.11.2563 08:04:52. Large object impact detected on the surface 4.7 km from the complex. Shockwave magnitude 7.2. Seismic sensors register multiple secondary tremors in the Fedorov sector: movement of masses 60-120 kg through tunnels toward Progress. Doors remain locked.";
 	log_timestamp = "2563-11-22 17:04:52";
 	name = "Crashland"
 	},
@@ -710,6 +727,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/purple,
+/obj/effect/mob_spawn/corpse/human/skeleton,
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/outpost/progres/research)
 "cQ" = (
@@ -1143,15 +1161,15 @@
 /obj/effect/turf_decal/tile/blue/opposingcorners,
 /obj/machinery/modular_computer/preset/log_computer,
 /obj/effect/mapping_helpers/add_modular_log{
-	log_author = "Помощник Силизнева - Анна Михайловна";
-	log_message = "Доктор дал мне  пленку с звездными карта Бурана... не знаю что он задумал.. но все выходит из под конротля. Прогресс уже не отвечает, метеостанция - тоже... если все пойдет не по плану, то я сбегу в пещеры.. спрячусь в одном из убежишь...";
+	log_author = "Siliznev's Assistant - Anna Mikhailovna";
+	log_message = "The Doctor gave me the tape with the Buran's star charts... I don't know what he's planning... but everything is spiraling out of control. Progress is no longer responding, neither is the weather station... If things don't go according to plan, I'll escape to the caves... hide in one of the shelters...";
 	log_timestamp = "15.05.2363"
 	},
 /obj/effect/mapping_helpers/add_modular_log{
 	pixel_x = 10;
 	pixel_y = 0;
-	log_author = "Помощник Силизнева - Анна";
-	log_message = "Бегу в пещеры... Мутанты в коридорах, охрана держит оборону огнем... Силизнев сказал - никто не покинет планету живым.";
+	log_author = "Siliznev's Assistant - Anna";
+	log_message = "Running to the caves... Mutants in the corridors, security is holding the line with fire... Siliznev said — no one will leave this planet alive.";
 	log_timestamp = "18.05.2363"
 	},
 /turf/open/floor/iron/white/textured,
@@ -1523,6 +1541,10 @@
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/misc/dirt/icy_planet,
 /area/hypothermia/indoor/caven)
+"fM" = (
+/obj/structure/sign/warning/biohazard/directional/west,
+/turf/open/floor/plating,
+/area/hypothermia/outdoor/outpost)
 "fO" = (
 /obj/structure/broken_flooring/side/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1722,7 +1744,8 @@
 /area/hypothermia/indoor/outpost/zvezda/security)
 "gK" = (
 /obj/machinery/computer{
-	dir = 4
+	dir = 4;
+	name = "Progress isolation control"
 	},
 /obj/effect/mapping_helpers/trigger_helper/hand_punch/password{
 	EDITOR_r_code = "2092705125";
@@ -1883,8 +1906,8 @@
 	dir = 8
 	},
 /obj/effect/mapping_helpers/add_modular_log{
-	log_author = "Доктор Виктор Силизнев";
-	log_message = "Все части 'Бурана' раскиданы. Ключ-карта при мне. Мутанты прорвали баррикады в Восходе, турели перегреты. Активирую ИИ-карантин.";
+	log_author = "Doctor Viktor Siliznev";
+	log_message = "All parts of the 'Buran' are scattered. The keycard is with me. Mutants have breached the barricades in Voskhod; turrets are overheated. Activating AI quarantine.";
 	log_timestamp = "19.05.2363"
 	},
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
@@ -2020,6 +2043,15 @@
 "hS" = (
 /turf/closed/indestructible/reinforced,
 /area/hypothermia/outdoor/outpost)
+"hU" = (
+/obj/structure/marker_beacon/burgundy{
+	name = "landing marker"
+	},
+/obj/structure/sign/warning/directional/east{
+	sign_change_name = "Research director office"
+	},
+/turf/open/floor/plating,
+/area/hypothermia/indoor/outpost/progres/research)
 "hV" = (
 /obj/structure/chair/stool/directional/south,
 /turf/open/floor/iron/smooth,
@@ -2198,14 +2230,14 @@
 	},
 /obj/machinery/modular_computer/preset/log_computer,
 /obj/effect/mapping_helpers/add_modular_log{
-	log_timestamp = "ОШИБКА ЗАПИСИ";
-	log_message = "Силизнев приходил лично. Сказал, что если мутанты прорвутся — надо навсегда запереть Прогресс.Он заставил нас перепрограммировать главный шлюз на новый код карантина.Код:  128765129Сказал, что это единственный способ снять блокировку ИИ, когда всё кончится.Я не верю, что это когда-нибудь понадобится.";
-	log_author = "Майор Лебедев"
+	log_timestamp = "RECORDING ERROR";
+	log_message = "Siliznev came in person. He said that if the mutants break through, we must permanently seal off Progress. He made us reprogram the main airlock to a new quarantine code. Code: 128765129. He said it's the only way to lift the AI lockdown when it's all over. I don't believe it'll ever be needed.";
+	log_author = "Major Lebedev"
 	},
 /obj/effect/mapping_helpers/add_modular_log{
 	log_timestamp = "19.05.2363";
-	log_message = "Если ты читаешь это — значит, мы все мертвы, а ты всё ещё пытаешься выбраться.Силизнев сошёл с ума. Он забрал ключ-карту «Бурана» и приказал нам активировать протокол «Вечная Зима».Пароль для снятия полного карантина с Прогресса:  2092705125Вводи его в центральный терминал внутри Прогресса.";
-	log_author = "Майор Лебедев"
+	log_message = "If you're reading this — it means we're all dead, and you're still trying to get out. Siliznev has gone mad. He took the 'Buran' keycard and ordered us to activate the 'Eternal Winter' protocol. Password to lift the full quarantine from Progress: 2092705125 Enter it into the central terminal inside Progress.";
+	log_author = "Major Lebedev"
 	},
 /turf/open/floor/iron/dark,
 /area/hypothermia/indoor/caven/vosxod)
@@ -2463,6 +2495,13 @@
 	},
 /turf/open/floor/pod/light,
 /area/hypothermia/indoor/outpost/zvezda/security)
+"jE" = (
+/obj/effect/mapping_helpers/broken_floor,
+/obj/structure/marker_beacon/burgundy{
+	name = "landing marker"
+	},
+/turf/open/floor/plating,
+/area/hypothermia/indoor/outpost/progres/research)
 "jF" = (
 /obj/item/ammo_box/speedloader/strilka310,
 /turf/open/floor/plating,
@@ -2997,7 +3036,7 @@
 /obj/machinery/computer,
 /obj/effect/mapping_helpers/trigger_helper/hand_punch{
 	EDITOR_TARGET = /obj/machinery/computer;
-	EDITOR_balloon = "Переключен";
+	EDITOR_balloon = "Enabled!";
 	trigger_key = "zv_zvezda_entr_2_2";
 	EDITOR_use_time = 100
 	},
@@ -3179,6 +3218,12 @@
 /obj/item/kirbyplants/random/fullysynthetic,
 /turf/open/floor/iron/grimy,
 /area/hypothermia/indoor/outpost/tcoms)
+"mn" = (
+/obj/structure/marker_beacon/burgundy{
+	name = "landing marker"
+	},
+/turf/open/floor/plating,
+/area/hypothermia/indoor/outpost/progres/research)
 "mo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/broken/directional/east,
@@ -3350,6 +3395,13 @@
 /obj/machinery/light/floor/broken,
 /turf/open/floor/engine,
 /area/hypothermia/indoor/caven/vosxod/core)
+"mZ" = (
+/obj/structure/sign/warning{
+	sign_change_name = "Progress reinforced storage";
+	is_editable = 0
+	},
+/turf/closed/indestructible/rock/snow/ice/ore,
+/area/hypothermia/indoor/caven)
 "na" = (
 /obj/structure/table,
 /obj/item/reagent_containers/cup/glass/bottle/vodka{
@@ -3518,7 +3570,7 @@
 /obj/machinery/computer,
 /obj/effect/mapping_helpers/trigger_helper/hand_punch{
 	EDITOR_TARGET = /obj/machinery/computer;
-	EDITOR_balloon = "Переключен";
+	EDITOR_balloon = "Enabled!";
 	trigger_key = "zv_zvezda_entr_2_1";
 	EDITOR_use_time = 100
 	},
@@ -4397,7 +4449,7 @@
 	dir = 8
 	},
 /obj/effect/mapping_helpers/trigger_helper/programm_trigger{
-	EDITOR_trigger_name = "Активировать погодный сенсор";
+	EDITOR_trigger_name = "Activate weather sensor";
 	trigger_key = "zv_weathers_main_comp"
 	},
 /turf/open/floor/pod/dark,
@@ -4614,8 +4666,8 @@
 	},
 /obj/machinery/light/small/broken/directional/east,
 /obj/effect/mapping_helpers/add_modular_log{
-	log_author = "Доктор Виктор Силизнев";
-	log_message = "Похитил ключ-карту доступа к шаттлу. Петров согласился выбросить ядро в бездну под Федоровым. Мутанты агрессивны, турели наготове.";
+	log_author = "Doctor Viktor Siliznev";
+	log_message = "Stole the shuttle access keycard. Petrov agreed to throw the core into the abyss beneath Progress. The mutants are aggressive; turrets are on standby.";
 	log_timestamp = "16.05.2363"
 	},
 /turf/open/floor/pod/dark,
@@ -6011,6 +6063,10 @@
 "wO" = (
 /turf/open/floor/iron/dark/textured_large,
 /area/hypothermia/outdoor/crashland)
+"wQ" = (
+/obj/structure/sign/warning/biohazard/directional/west,
+/turf/open/floor/pod/light,
+/area/hypothermia/indoor/outpost/progres/research)
 "wR" = (
 /obj/structure/flora/rock/icy/style_random,
 /turf/closed/mineral/random/icy_planet/snow,
@@ -6252,8 +6308,16 @@
 /area/hypothermia/indoor/outpost/zvezda/hydroponics)
 "xR" = (
 /obj/structure/table/reinforced,
-/obj/item/keycard/important/hypothermia/amory_key,
+/obj/item/keycard/important/hypothermia/amory_key{
+	pixel_y = -6
+	},
 /obj/machinery/light/small/red/dim/directional/east,
+/obj/item/clothing/suit/hooded/hostile_environment{
+	pixel_y = 11
+	},
+/obj/structure/marker_beacon/burgundy{
+	name = "landing marker"
+	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/hypothermia/indoor/outpost/progres/research)
 "xS" = (
@@ -6383,7 +6447,7 @@
 	},
 /obj/effect/mapping_helpers/trigger_helper/use_item{
 	EDITOR_TARGET = /obj/machinery/computer;
-	EDITOR_balloon_text = "Ключ вставлен в терминал";
+	EDITOR_balloon_text = "Armory opened";
 	EDITOR_consume = 1;
 	EDITOR_use_time = 30;
 	EDITOR_item_type = /obj/item/keycard/important/hypothermia/amory_key;
@@ -6537,8 +6601,8 @@
 	dir = 1
 	},
 /obj/effect/mapping_helpers/add_modular_log{
-	log_author = "Охрана Борис";
-	log_message = "Усилили оборону: турели на подходах к Прогрессу. Мутанты в лабораториях рычат, но клетки держат. Силизнев нервный, говорит о карантине.";
+	log_author = "Security Boris";
+	log_message = "We've reinforced the defenses: turrets on the approaches to Progress. The mutants in the labs are growling, but the cells are holding. Siliznev is nervous; he's talking about quarantine.";
 	log_timestamp = "14.05.2363"
 	},
 /turf/open/floor/pod/light,
@@ -7717,13 +7781,13 @@
 	dir = 8
 	},
 /obj/effect/mapping_helpers/add_modular_log{
-	log_author = "Инженер Петров";
-	log_message = "Силизнев упросил спрятать ядро ИИ от шаттла, я отправил своего человека в пещеры.. кажется он забрел в гнездо. Силизнев говорит, что все - это для безопасности... но чуя я - это не к добру. Установили дополнительные баррикады у входов в пещеры.";
+	log_author = "Engineer Petrov";
+	log_message = "Siliznev begged me to hide the shuttle's AI core. I sent one of my men into the caves... seems he wandered into a nest. Siliznev says it's all for safety... but I have a bad feeling about this. We've set up additional barricades at the cave entrances.";
 	log_timestamp = "13.05.2363"
 	},
 /obj/effect/mapping_helpers/add_modular_log{
-	log_author = "Инженер Петров";
-	log_message = "Вот же.. нам нужно поменять пароль от усиленого склада. Выставил временный: 1209567";
+	log_author = "Engineer Petrov";
+	log_message = "Damn it... we need to change the password for the reinforced storage. Set a temporary one: 1209567";
 	log_timestamp = "13.05.2363"
 	},
 /turf/open/floor/iron/colony/bolts,
@@ -7763,6 +7827,16 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/progres/experement)
+"Dw" = (
+/obj/effect/turf_decal/trimline/dark_red/filled/line{
+	dir = 1
+	},
+/obj/structure/rack/gunrack,
+/obj/item/gun/ballistic/rifle/enchanted,
+/obj/item/gun/ballistic/rifle/enchanted,
+/obj/item/gun/ballistic/rifle/enchanted,
+/turf/open/floor/iron/dark/textured,
+/area/hypothermia/indoor/outpost/zvezda/heavy_armory)
 "Dx" = (
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/iron/dark,
@@ -8988,6 +9062,11 @@
 "Ip" = (
 /obj/item/gun/ballistic/automatic/mini_uzi,
 /obj/structure/rack/gunrack,
+/obj/item/ammo_box/magazine/uzim9mm,
+/obj/item/ammo_box/magazine/uzim9mm,
+/obj/item/ammo_box/magazine/uzim9mm,
+/obj/item/ammo_box/magazine/uzim9mm,
+/obj/item/ammo_box/magazine/uzim9mm,
 /turf/open/floor/iron/dark/smooth_large,
 /area/hypothermia/indoor/outpost/progres/research)
 "Iq" = (
@@ -9235,28 +9314,28 @@
 	},
 /obj/effect/mapping_helpers/add_modular_log{
 	log_timestamp = "19.05.2363 06:17";
-	log_message = "Я закрыл последний шлюз. Камеры показывают: коридоры пусты, только кровь и следы когтей.Петров не пришёл. Он остался в центральной камере содержания — сказал, что «попробует договориться с ними».Дурак. Они уже не люди.";
-	log_author = "Силизнев"
+	log_message = "I sealed the last airlock. The cameras show: corridors are empty, only blood and claw marks. Petrov didn't come. He stayed in the central containment chamber — said he would 'try to negotiate with them.' Fool. They're no longer human.";
+	log_author = "Siliznev"
 	},
 /obj/effect/mapping_helpers/add_modular_log{
 	log_timestamp = "19.05.2363 06:41";
-	log_message = "Петров на камере 4К. Он снял шлем. Кожа посинела, глаза белые.Он улыбается в объектив и показывает мне ключ-карту «Бурана».Потом просто положил её на пол камеры и отошёл в темноту.Теперь ключ там. С ним.";
-	log_author = "Силизнев"
+	log_message = "Petrov on camera 4K. He removed his helmet. Skin turned blue, eyes white. He's smiling at the lens and showing me the 'Buran' keycard. Then he simply placed it on the chamber floor and walked into the darkness. Now the key is there. With him.";
+	log_author = "Siliznev"
 	},
 /obj/effect/mapping_helpers/add_modular_log{
 	log_timestamp = "19.05.2363 07:12";
-	log_message = "Свет мигает. Генераторы умерли.По датчикам движения — около сотни особей движутся к Звезде.Я отключил все внешние терминалы. Пусть думают, что комплекс мёртв.Он и есть мёртв.";
-	log_author = "Силизнев"
+	log_message = "Lights are flickering. Generators are dead. Motion sensors show about a hundred entities moving toward Zvezda. I've disabled all external terminals. Let them think the complex is dead. It is dead.";
+	log_author = "Siliznev"
 	},
 /obj/effect/mapping_helpers/add_modular_log{
 	log_timestamp = "19.05.2363 07:55";
-	log_message = "Воздух кончается. Температура в отсеке -73°C.Скоро я присоединюсь к остальным.Петров всё ещё жив. Стоит в центре камеры содержания, окружённый ими.Они его не трогают.Он стал их королём.";
-	log_author = "Силизнев"
+	log_message = "Air is running out. Temperature in the compartment: -73°C. Soon I'll join the others. Petrov is still alive. Standing in the center of the containment chamber, surrounded by them. They don't touch him. He's become their king.";
+	log_author = "Siliznev"
 	},
 /obj/effect/mapping_helpers/add_modular_log{
 	log_timestamp = "19.05.2363 08:03";
-	log_message = "Ключ-карта осталась в центральной камере содержания, Звезда погиба. Восход тоже не выходит на связь. Судя по показателям, я единственный выживший в этом комплексе.. это конец. Анна прости, что заставил пережить это. Мы совершили ошибку с самого начала, когда попытались пойти против воли божей.. и теперь получили свое наказание. Ключ карту от оружейной Звезды здесь. Пароль от сейфа с ней: 125825719, заберите если вам понадобится - я так устал... Силизнев. Конец связи.";
-	log_author = "Силизнев"
+	log_message = "The keycard remained in the central containment chamber; Zvezda is lost. Voskhod is not responding either. According to the readings, I am the only survivor in this complex... this is the end. Anna, forgive me for making you go through this. We made a mistake from the very beginning when we tried to go against God's will... and now we have received our punishment. The keycard to Zvezda's armory is here. The safe password with it: 125825719 — take it if you need it. I am so tired... Siliznev. End of transmission.";
+	log_author = "Siliznev"
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/hypothermia/indoor/outpost/progres/research)
@@ -10785,14 +10864,14 @@
 /obj/machinery/modular_computer/preset/log_computer,
 /obj/effect/mapping_helpers/add_modular_log{
 	log_author = "System";
-	log_message = "СКАНИРОВАНИЕ ЗАВЕРШЕНО. Живых людей: 0. Тепловые сигнатуры: 0. Дыхание: не обнаружено. Сердцебиение: не обнаружено. Последний зарегистрированный крик: 05:58:12. Протокол 0-Дельта. Полное отсутствие персонала подтверждено. Все двери закрыты навсегда. Свет выключен. Тишина.";
+	log_message = "SCANNING COMPLETE. Living humans: 0. Thermal signatures: 0. Breathing: not detected. Heartbeat: not detected. Last registered scream: 05:58:12. Protocol 0-Delta. Complete absence of personnel confirmed. All doors locked permanently. Lights off. Silence.";
 	log_timestamp = "2363-05-19 06:12:47";
 	name = "Last complex breath log"
 	},
 /obj/effect/mapping_helpers/add_modular_log{
-	log_author = "Инженер Дмитрий";
+	log_author = "Engineer Dmitry";
 	log_timestamp = "2363-05-19 06:12:47";
-	log_message = "Петров приказал поменять пароль от шахты доступа к Звезде.. при этом даже не разослав его всем. Что он задумал? Так, или иначе. Вот пароль, вам он будет нужнее. 2362308"
+	log_message = "Petrov ordered the access shaft password to Zvezda to be changed... without even sending it to everyone. What is he planning? Anyway. Here's the password — you'll need it more than I will. 2362308"
 	},
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor)
@@ -11095,10 +11174,15 @@
 /obj/effect/turf_decal/trimline/purple/line{
 	dir = 4
 	},
-/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag,
 /obj/effect/turf_decal/siding/purple{
 	dir = 8
 	},
+/obj/structure/prop/last_shelter{
+	pixel_x = 12;
+	desc = "A strange little bell!";
+	density = 0
+	},
+/obj/item/gun/ballistic/revolver/nagant,
 /turf/open/floor/iron/white,
 /area/hypothermia/indoor/outpost/progres/research)
 "PT" = (
@@ -11329,8 +11413,8 @@
 	dir = 4
 	},
 /obj/effect/mapping_helpers/add_modular_log{
-	log_author = "Доктор Виктор Силизнев";
-	log_message = "День 1: Эксперименты стабильны. Мутанты в клетках. Обсудил с инженером Петровым план на случай прорыва - раскидать части 'Бурана', чтобы никто не улетел с инфекцией.";
+	log_author = "Doctor Viktor Siliznev";
+	log_message = "Day 1: Experiments are stable. Mutants contained in cells. Discussed with Engineer Petrov the contingency plan in case of a breach — scatter the 'Buran' parts so that no one can fly away with the infection.";
 	log_timestamp = "12.05.2363"
 	},
 /turf/open/floor/plating,
@@ -11909,14 +11993,14 @@
 	EDITOR_TARGET = /obj/machinery/computer;
 	trigger_key = "zv_start_everything";
 	EDITOR_use_time = 100;
-	EDITOR_balloon = "Карантин снят";
+	EDITOR_balloon = "Quarantine lifted";
 	pixel_x = 0;
 	pixel_y = 0
 	},
 /obj/effect/mapping_helpers/listener_helper/announce{
 	listener_key = "zv_weathers_bcs_announce";
 	EDITOR_announcer = "System";
-	EDITOR_message = "Старший научный сотрудник Силизнев на связи. Скорее всего к моменту, как вы это прослушиваете, я и это место уже мертвы. Мне не известно, кто вы и зачем сюда прибыли. Но это место было помещено под искусственный карантин, а системы защиты настроены на атаку любого постороннего. Комплекс H-58317G погиб вместе со всем персоналом. И я не дам кому-либо покинуть его. Я похитил ключ-карту доступа к шаттлу 'Буран' и убедил старшего инженера раскидать его ключевые части по комплексу и пещерам. Без них вы не взлетите. Мутанты вырвались из лабораторий, они адаптированы к холоду и ждут в темноте. Мы пытались обороняться турелями и баррикадами, но они прорвались через 'прогресс'. Это ловушка. Не уходите - или умрите, пытаясь.";
+	EDITOR_message = "Senior Researcher Siliznev speaking. By the time you are listening to this, both I and this place are most likely already dead. I don't know who you are or why you've come here. But this facility was placed under artificial quarantine, and its defense systems are configured to attack any outsiders. Complex H-58317G perished along with all its personnel. And I will not allow anyone to leave it. I stole the keycard for access to the 'Buran' shuttle and convinced the chief engineer to scatter its critical components throughout the complex and the caves. Without them, you won't take off. The mutants have escaped from the laboratories; they are adapted to the cold and waiting in the darkness. We tried to defend ourselves with turrets and barricades, but they broke through 'Progress'. This is a trap. Do not leave — or die trying.";
 	EDITOR_title = "Message";
 	pixel_x = 10;
 	pixel_y = 1
@@ -11934,6 +12018,14 @@
 	},
 /turf/open/floor/iron/herringbone,
 /area/hypothermia/indoor/outpost/zvezda/dorm2)
+"Th" = (
+/obj/structure/frame/computer{
+	dir = 4
+	},
+/obj/effect/turf_decal/bot,
+/obj/structure/sign/warning/biohazard/directional/west,
+/turf/open/floor/pod/light,
+/area/hypothermia/indoor/outpost/progres/research)
 "Ti" = (
 /obj/structure/table,
 /obj/item/toy/cards/deck,
@@ -12031,6 +12123,12 @@
 /obj/effect/mapping_helpers/broken_machine,
 /turf/open/floor/iron/dark/textured_large,
 /area/hypothermia/outdoor/crashland)
+"Tx" = (
+/obj/structure/marker_beacon/burgundy{
+	name = "landing marker"
+	},
+/turf/open/misc/icy_planet/snow,
+/area/hypothermia/outdoor/outpost)
 "Ty" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/railing{
@@ -12683,7 +12781,6 @@
 /obj/effect/turf_decal/tile/purple/anticorner{
 	dir = 4
 	},
-/obj/effect/spawner/random/arctic_mutant,
 /turf/open/floor/iron/dark/smooth_large,
 /area/hypothermia/indoor/outpost/progres/research)
 "Wa" = (
@@ -12905,6 +13002,8 @@
 /turf/open/floor/pod/dark,
 /area/hypothermia/indoor/outpost/progres/experement)
 "WZ" = (
+/obj/item/gun/ballistic/automatic/mini_uzi,
+/obj/structure/rack/gunrack,
 /obj/item/ammo_box/magazine/uzim9mm,
 /obj/item/ammo_box/magazine/uzim9mm,
 /obj/item/ammo_box/magazine/uzim9mm,
@@ -13317,13 +13416,13 @@
 /obj/machinery/light/small/directional/north,
 /obj/machinery/modular_computer/preset/log_computer,
 /obj/effect/mapping_helpers/add_modular_log{
-	log_author = "Инженер Петров";
-	log_message = "Спрятал регулятор в защищенном хранилище Прогресса по просьбе Силизнева. Установили мины и баррикады против мутантов из пещер. Я.. потеряд ключи от хранилища.. записал его и просто потерял. Это уже не имеет смысла.";
+	log_author = "Engineer Petrov";
+	log_message = "At Siliznev's request, I hid the regulator in Progress's secure storage. We set up mines and barricades against the mutants from the caves. I... lost the keys to the storage... wrote down the code and just lost it. This doesn't make sense anymore.";
 	log_timestamp = "17.05.2363"
 	},
 /obj/effect/mapping_helpers/add_modular_log{
-	log_author = "Инженер Петров";
-	log_message = "Последняя оборона: я попробую прорваться на восход... Прогресс - утерян, баррикады не держат. Силизнев был прав - это конец.";
+	log_author = "Engineer Petrov";
+	log_message = "Last stand: I'm going to try to break through to Voskhod... Progress is lost, the barricades aren't holding. Siliznev was right — this is the end.";
 	log_timestamp = "19.05.2363";
 	pixel_x = 10;
 	pixel_y = 0
@@ -13505,6 +13604,7 @@
 /area/hypothermia/indoor/caven/nest)
 "Zp" = (
 /obj/effect/spawner/random/arctic_mutant,
+/obj/structure/sign/warning/biohazard/directional/west,
 /turf/open/floor/plating,
 /area/hypothermia/outdoor/outpost)
 "Zq" = (
@@ -90277,11 +90377,11 @@ Bk
 oU
 rk
 Lx
-Lx
+Th
 Gw
 Gw
 Gw
-rk
+wQ
 rk
 Hs
 tv
@@ -91817,7 +91917,7 @@ BS
 dY
 Hl
 Hl
-Ud
+fM
 Ud
 Zp
 Hl
@@ -92332,7 +92432,7 @@ dY
 Hl
 Hl
 Hl
-Hl
+Tx
 QI
 Hl
 bS
@@ -93618,7 +93718,7 @@ BS
 tm
 bS
 BS
-BS
+jE
 BS
 YR
 rk
@@ -94639,13 +94739,13 @@ rk
 rk
 rk
 rk
+cd
 rk
 rk
+cd
 rk
 rk
-rk
-rk
-rk
+cd
 rk
 rk
 rk
@@ -94893,7 +94993,7 @@ tv
 rk
 rk
 Gw
-rk
+KT
 rk
 dm
 rk
@@ -95151,7 +95251,7 @@ rk
 rk
 Gw
 rk
-rk
+cd
 rk
 rk
 rk
@@ -95915,14 +96015,14 @@ rk
 rk
 Js
 Hf
-Js
+mn
 Js
 rk
 Vt
 rk
 Js
 Js
-Js
+mn
 Gw
 KT
 rk
@@ -96434,7 +96534,7 @@ Js
 Fh
 Js
 Js
-Js
+mn
 Js
 rk
 xv
@@ -96689,7 +96789,7 @@ Fh
 tv
 Js
 Js
-Js
+hU
 Js
 Js
 Js
@@ -98486,9 +98586,9 @@ gg
 gg
 gg
 tv
-WZ
 Dt
-WZ
+Dt
+Dt
 tv
 Hl
 Hl
@@ -99002,7 +99102,7 @@ gg
 tv
 Ip
 xR
-Ip
+WZ
 tv
 gg
 gg
@@ -114441,7 +114541,7 @@ xM
 ER
 ER
 ER
-xM
+mZ
 ke
 AI
 KX
@@ -132211,7 +132311,7 @@ Rf
 wN
 gv
 NE
-rs
+af
 Rf
 tt
 dD
@@ -132720,7 +132820,7 @@ dM
 dM
 dM
 dD
-EG
+Dw
 Rf
 tf
 Pd

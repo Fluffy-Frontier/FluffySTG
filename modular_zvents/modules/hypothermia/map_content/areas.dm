@@ -104,6 +104,7 @@
 	default_gravity = STANDARD_GRAVITY
 	ambience_index = AMBIENCE_ICEMOON
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
+	area_flags_mapping = CAVES_ALLOWED
 	area_flags = UNIQUE_AREA | HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED
 	always_unpowered = TRUE
 	power_environ = FALSE
@@ -155,6 +156,7 @@
 	default_gravity = STANDARD_GRAVITY
 	ambience_index = AMBIENCE_ICEMOON
 	sound_environment = SOUND_ENVIRONMENT_CAVE
+	area_flags_mapping = CAVES_ALLOWED
 	area_flags = UNIQUE_AREA | HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED
 	always_unpowered = TRUE
 	power_environ = FALSE
@@ -174,7 +176,7 @@
 
 
 /area/hypothermia/indoor/caven/deep
-	name = "Depp caves"
+	name = "Deep caves"
 	ambientsounds = list(
 		'modular_zvents/sounds/ambience/he_caves_moans1.ogg',
 		'modular_zvents/sounds/ambience/he_caves_moans2.ogg',

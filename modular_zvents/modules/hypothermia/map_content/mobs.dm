@@ -491,8 +491,6 @@
 	if(drop)
 		AddElement(/datum/element/death_drops, drop)
 
-
-
 /mob/living/basic/corrupted_mutant_boss/Life()
 	. = ..()
 
@@ -540,9 +538,17 @@
 
 
 /mob/living/basic/corrupted_mutant_boss/real
-	drop = /obj/item/keycard/important/hypothermia/ship_control_key
+	drop = list(/obj/item/keycard/important/hypothermia/ship_control_key, /obj/item/storage/belt/utility/chief/full)
 	maxHealth = 1800
 	health = 1800
+
+
+/mob/living/basic/corrupted_mutant_boss/real/death()
+	. = ..()
+	for(var/mob/living/player in orange(20, src))
+		if(!player.client)
+			continue
+		player.client.give_award(/datum/award/achievement/petrov_kill, player)
 
 /datum/action/cooldown/mob_cooldown/boss_charge
 	name = "Charge"
@@ -685,7 +691,7 @@
 	cooldown_time = MUTANT_BOSS_BONE_COOLDOWN
 	melee_cooldown_time = 0
 	shared_cooldown = NONE
-	var/max_range = 5
+	var/max_range = 15
 	var/shard_delay = 4
 	var/shard_sound = 'sound/effects/splat.ogg'
 

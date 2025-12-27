@@ -1,5 +1,6 @@
 /obj/effect/landmark/trainstation
 	icon_state = "tdome_admin"
+	flags_1 = NO_TURF_MOVEMENT
 
 /obj/effect/landmark/trainstation/Initialize(mapload)
 	. = ..()
@@ -22,6 +23,7 @@
 	var/min_delay = 1 SECONDS
 	var/max_delay = 3 SECONDS
 
+	VAR_PRIVATE/spawning = FALSE
 	COOLDOWN_DECLARE(spawn_cd)
 
 
@@ -42,25 +44,51 @@
 	STOP_PROCESSING(SSobj, src)
 
 /obj/effect/landmark/trainstation/object_spawner/process(seconds_per_tick)
-	. = ..()
+	if(spawning)
+		return
 	if(!COOLDOWN_FINISHED(src, spawn_cd))
 		return
 	COOLDOWN_START(src, spawn_cd, rand(min_delay, max_delay))
-	attempt_spawn()
+	INVOKE_ASYNC(src, PROC_REF(attempt_spawn))
+
 
 /obj/effect/landmark/trainstation/object_spawner/proc/attempt_spawn()
 	if(!length(possible_objects))
 		return
+	spawning = TRUE
 	var/turf/target_turf = get_turf(src)
 	if(accuracy > 0)
 		for(var/turf/T as anything in shuffle(RANGE_TURFS(accuracy, src)))
+			if(!can_see(src, T, accuracy))
+				continue
 			if(isopenturf(T))
 				target_turf = T
 				break
 	var/selected = pick(possible_objects)
 	var/atom/movable/new_obj = new selected(src)
 	if(new_obj)
-		new_obj.forceMove(target_turf)
+		ASYNC
+			new_obj.Move(target_turf, update_dir = FALSE)
+	spawning = FALSE
+
+/obj/effect/landmark/trainstation/object_spawner/trees
+	possible_objects = list(
+		/obj/structure/flora/tree/pine/style_random
+	)
+
+/obj/effect/landmark/trainstation/object_spawner/bushes
+	accuracy = 3
+	possible_objects = list(
+		/obj/structure/flora/bush/snow/style_random
+	)
+
+/obj/effect/landmark/trainstation/object_spawner/grass
+	accuracy = 3
+	possible_objects = list(
+		/obj/structure/flora/grass/both/style_random
+	)
+	max_delay = 4 SECONDS
+
 
 /datum/map_template/train_station
 	name = "Train Station Template"
@@ -83,6 +111,10 @@
 
 	var/list/docking_turfs = list()
 
+	// Блокирует ли эта станция движение поезда
+	var/blocking_moving = FALSE
+
+
 /datum/train_station/New()
 	. = ..()
 	template = new /datum/map_template(map_path, "Train station - [name]", TRUE)
@@ -95,14 +127,16 @@
 	var/start_time = world.realtime
 	var/obj/effect/landmark/trainstation/station_spawnpoint/spawnpoint = locate() in GLOB.landmarks_list
 	if(!spawnpoint || !istype(spawnpoint))
-		CRASH("Failed to load train station [name], no available spawnpoints!")
+		stack_trace("Failed to load train station [name], no available spawnpoints!")
+		return FALSE
 	var/offset_x = spawnpoint.x
 	var/offset_y = spawnpoint.y - template.height + 1
 	var/offset_z = spawnpoint.z
 
 	var/turf/actual_spawnpoint = locate(offset_x, offset_y, offset_z)
 	if(!actual_spawnpoint)
-		CRASH("Failed to load train station [name], template out of bounds")
+		stack_trace("Failed to load train station [name], template out of bounds")
+		return FALSE
 	var/bounds = template.load(actual_spawnpoint, centered = FALSE)
 
 	docking_turfs = block(
@@ -126,7 +160,6 @@
 	var/end_y = bottom_left.y + template.height - 1
 	var/z = bottom_left.z
 
-	// Левая линия
 	for(var/y = start_y to end_y)
 		var/turf/left_turf = locate(left_x, y, z)
 		if(left_turf)
@@ -142,7 +175,6 @@
 
 
 /datum/train_station/proc/unload_station(datum/callback/unload_callback)
-	priority_announce("Поезд отходит от станции: [name].", "Поездной эвент")
 	for(var/turf/T in docking_turfs)
 		for(var/atom/movable/AM in T.contents)
 			if(HAS_TRAIT(AM, TRAIT_NO_STATION_UNLOAD))

@@ -18,6 +18,8 @@ SUBSYSTEM_DEF(train_controller)
 	VAR_PRIVATE/list/to_process
 	// Список обьектов для регистрации на процессинг
 	VAR_PRIVATE/list/queue_list = list()
+
+	VAR_PRIVATE/datum/looping_sound/train_sound_loop/soundloop
 	// Загружается или выгружается в данный момент станция
 	var/loading = FALSE
 	// Станция запланированная для загрузки
@@ -28,11 +30,19 @@ SUBSYSTEM_DEF(train_controller)
 	var/static/list/known_stations = list()
 
 /datum/controller/subsystem/train_controller/Initialize()
+	var/list/map_traits = SSmapping.current_map.traits[1]
+	if(!map_traits || !islist(map_traits))
+		return
+	var/is_trainstation = map_traits[ZTRAIT_TRAINSTATION] || FALSE
+	if(!is_trainstation)
+		return SS_INIT_NO_NEED
+
+	soundloop = new(start_immediately = FALSE)
 	RegisterSignal(SSticker, COMSIG_TICKER_ENTER_PREGAME, PROC_REF(on_enter_pregame))
 	load_stations()
 
 /datum/controller/subsystem/train_controller/Destroy()
-	all_simulated_turfs.Cut()
+	all_simulated_turfs.Cut()s
 	to_process.Cut()
 	return ..()
 
@@ -71,17 +81,14 @@ SUBSYSTEM_DEF(train_controller)
 	load_station(/datum/train_station/start_point, stop_moving = FALSE, hide_for_players = FALSE, announce = FALSE)
 
 /datum/controller/subsystem/train_controller/proc/on_station_unloaded()
-	loading = FALSE
 
 /datum/controller/subsystem/train_controller/proc/unload_station(datum/train_station/to_unload, hide_for_players = TRUE)
 	if(!to_unload)
 		return
-	loading = TRUE
 	to_unload.unload_station(CALLBACK(src, PROC_REF(on_station_unloaded)))
 
 
 /datum/controller/subsystem/train_controller/proc/on_station_loaded()
-	loading = FALSE
 
 /datum/controller/subsystem/train_controller/proc/load_station(path_or_instance, stop_moving = FALSE, hide_for_players = TRUE, announce = TRUE)
 	var/datum/train_station/to_load = null
@@ -97,13 +104,12 @@ SUBSYSTEM_DEF(train_controller)
 			L.overlay_fullscreen("station_loading", /atom/movable/screen/fullscreen/flash/black)
 
 	if(loaded_station)
-		unload_station(loaded_station, hide_for_players ? FALSE : TRUE)
-		UNTIL(!loading)
+		unload_station(loaded_station, hide_for_players)
 	loading = TRUE
-	to_load.load_station(CALLBACK(src, PROC_REF(on_station_loaded)))
+	var/result = to_load.load_station(CALLBACK(src, PROC_REF(on_station_loaded)))
+	if(!result)
+		return
 	message_admins("TRAINSTATION: start to load station: [to_load.name]!")
-	UNTIL(!loading)
-
 	loaded_station = to_load
 	if(stop_moving)
 		stop_moving()
@@ -132,7 +138,13 @@ SUBSYSTEM_DEF(train_controller)
 	all_simulated_turfs -= T
 
 /datum/controller/subsystem/train_controller/proc/queue_process(turf/open/moving/T)
-	LAZYADD(queue_list, T)
+	if(!queue_list)
+		queue_list = list()
+	if(to_process && (T in to_process))
+		return
+	if(T in queue_list)
+		return
+	queue_list += T
 
 /datum/controller/subsystem/train_controller/proc/unqueue_process(turf/open/moving/T)
 	if(T in to_process)
@@ -141,16 +153,20 @@ SUBSYSTEM_DEF(train_controller)
 /datum/controller/subsystem/train_controller/proc/start_moving(force = FALSE, unload_station = TRUE)
 	if(moving)
 		return
-	if(check_start() && !force)
+	if(loaded_station && loaded_station.blocking_moving)
+		return
+	if(!check_start() && !force)
 		return
 	moving = TRUE
-	if(unload_station)
+	if(unload_station && !istype(loaded_station, /datum/train_station/train_backstage))
 		load_station(/datum/train_station/train_backstage, FALSE, TRUE, FALSE)
 
 	for(var/turf/open/moving/T as anything in all_simulated_turfs)
 		T.moving = TRUE
 		T.update_appearance()
 		T.check_process(register = TRUE)
+	soundloop.start()
+	sound_to_playing_players('modular_zvents/sounds/steam_short.ogg', volume = 60)
 	SEND_SIGNAL(src, COMSIG_TRAIN_BEGIN_MOVING)
 
 /datum/controller/subsystem/train_controller/proc/stop_moving()
@@ -161,6 +177,8 @@ SUBSYSTEM_DEF(train_controller)
 		T.moving = FALSE
 		T.update_appearance()
 	to_process = null
+	soundloop.stop(FALSE)
+	sound_to_playing_players('modular_zvents/sounds/steam_long.ogg', volume = 60)
 	SEND_SIGNAL(src, COMSIG_TRAIN_STOP_MOVING)
 
 /datum/controller/subsystem/train_controller/fire(resumed)
@@ -174,8 +192,10 @@ SUBSYSTEM_DEF(train_controller)
 	INVOKE_ASYNC(src, PROC_REF(process_turfs), world.tick_usage)
 
 /datum/controller/subsystem/train_controller/proc/process_turfs(seconds_per_tick)
+	set background = TRUE
 	for(var/turf/open/moving/T as anything in to_process)
 		T.process_contents(seconds_per_tick)
+	CHECK_TICK
 
 /datum/controller/subsystem/train_controller/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -280,3 +300,66 @@ ADMIN_VERB(open_train_controller, R_ADMIN, "Open train controller", "Open active
 /atom/movable/screen/station_logo/proc/fadeout()
 	parent.screen -= src
 	qdel(src)
+
+/datum/looping_sound/train_sound_loop
+	parent_type = /datum/looping_sound
+
+	var/new_player = TRUE
+	var/static/list/train_sounds = list(
+		'modular_zvents/sounds/loop_trainride.ogg' = 63 SECONDS,
+	)
+
+	direct = TRUE
+	volume = 45
+	vary = FALSE
+	extra_range = -1
+	ignore_walls = TRUE
+	pressure_affected = FALSE
+	use_reverb = FALSE
+	chance = 100
+	in_order = TRUE
+	each_once = FALSE
+
+/datum/looping_sound/train_sound_loop/New(start_immediately = FALSE)
+	mid_sounds = list()
+	for(var/sound_path in train_sounds)
+		var/pause_length = train_sounds[sound_path]
+		if(isfile(sound_path) && pause_length > 0)
+			mid_sounds[sound_path] = pause_length
+
+	if(!length(mid_sounds))
+		stack_trace("train_sound_loop создан без указанных звуков поезда! Список train_sounds пуст или некорректен.")
+		qdel(src)
+		return
+
+	..(null, start_immediately)
+
+/datum/looping_sound/train_sound_loop/get_sound(_mid_sounds)
+	var/soundfile = ..()
+
+	if(soundfile && (soundfile in train_sounds))
+		set_mid_length(train_sounds[soundfile])
+
+	return soundfile
+
+/datum/looping_sound/train_sound_loop/play(soundfile, volume_override)
+	if(!soundfile)
+		return
+
+	var/sound/S = sound(soundfile)
+	S.volume = volume_override || volume
+	S.channel = sound_channel || SSsounds.random_available_channel()
+	for(var/mob/M as anything in GLOB.player_list)
+		if(!M.client)
+			continue
+		if(!new_player && isnewplayer(M))
+			continue
+
+		SEND_SOUND(M, S)
+
+/datum/looping_sound/train_sound_loop/stop(null_parent = FALSE)
+	if(sound_channel)
+		for(var/mob/M as anything in GLOB.player_list)
+			if(M.client)
+				M.stop_sound_channel(sound_channel)
+	return ..()

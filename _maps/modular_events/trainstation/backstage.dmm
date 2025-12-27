@@ -2,6 +2,18 @@
 "a" = (
 /turf/open/moving/snow,
 /area/trainstation/outdoor/rails)
+"s" = (
+/obj/effect/landmark/trainstation/object_spawner/trees,
+/turf/open/moving/snow,
+/area/trainstation/outdoor/rails)
+"B" = (
+/obj/effect/landmark/trainstation/object_spawner/grass,
+/turf/open/moving/snow,
+/area/trainstation/outdoor/rails)
+"J" = (
+/obj/effect/landmark/trainstation/object_spawner/bushes,
+/turf/open/moving/snow,
+/area/trainstation/outdoor/rails)
 "Q" = (
 /turf/closed/indestructible/train_border,
 /area/trainstation/outdoor/rails)
@@ -4025,7 +4037,7 @@ Q
 (252,1,1) = {"
 a
 a
-a
+s
 a
 a
 a
@@ -4043,12 +4055,12 @@ a
 a
 a
 a
+B
 a
 a
 a
 a
-a
-a
+B
 a
 a
 a
@@ -4058,11 +4070,11 @@ Q
 a
 a
 a
+J
 a
 a
 a
-a
-a
+J
 a
 a
 a

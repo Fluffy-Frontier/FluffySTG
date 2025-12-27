@@ -29,6 +29,10 @@
 /mob/living/carbon/human/proc/get_cold_protection_flags_improved(temperature)
 	var/thermal_protection_flags = 0
 
+	if(!LAZYLEN(get_equipped_items()))
+		thermal_protection_flags |= CHEST | GROIN | ARMS | LEGS
+		return thermal_protection_flags
+
 	for(var/obj/item/I in get_equipped_items())
 		if(!I.min_cold_protection_temperature || !I.max_heat_protection_temperature)
 			continue
@@ -40,44 +44,44 @@
 		var/min_temp = I.min_cold_protection_temperature
 		var/max_temp = I.max_heat_protection_temperature
 
+
 		if(temperature >= max_temp)
 			thermal_protection_flags |= protection_zone
 			continue
 
-		if(temperature < min_temp)
-			var/delta = min_temp - temperature
-			var/falloff_range = 200
-			if(delta > falloff_range)
-				delta = falloff_range
+		if(temperature >= min_temp)
+			var/factor = (temperature - min_temp) / (max_temp - min_temp)
+			factor = clamp(factor, 0, 1)
 
-			var/factor = 1 - (delta / falloff_range)
-			factor = max(factor * factor, 0.05)
 
-			if(protection_zone & HEAD)
-				if(factor >= 0.65) thermal_protection_flags |= HEAD
-			if(protection_zone & CHEST)
-				if(factor >= 0.60) thermal_protection_flags |= CHEST
-			if(protection_zone & GROIN)
-				if(factor >= 0.60) thermal_protection_flags |= GROIN
-			if(protection_zone & LEGS)
-				if(factor >= 0.45) thermal_protection_flags |= LEGS
-			if(protection_zone & FEET)
-				if(factor >= 0.35) thermal_protection_flags |= FEET
-			if(protection_zone & ARMS)
-				if(factor >= 0.45) thermal_protection_flags |= ARMS
-			if(protection_zone & HANDS)
-				if(factor >= 0.30) thermal_protection_flags |= HANDS
+			if(factor >= 0.85)
+				thermal_protection_flags |= protection_zone
 			continue
 
-		var/factor = (temperature - min_temp) / (max_temp - min_temp)
-		factor = clamp(factor, 0, 1)
 
-		if(factor >= 0.85)
-			thermal_protection_flags |= protection_zone
+		var/delta = min_temp - temperature
+		var/falloff_range = 200
+		if(delta > falloff_range)
+			delta = falloff_range
 
 
-	if(!get_equipped_items())
-		thermal_protection_flags |= CHEST|GROIN|ARMS|LEGS
+		var/factor = 1 - (delta / falloff_range)
+		factor = max(factor * factor, 0.05)
+
+		if(protection_zone & HEAD && factor >= 0.65)
+			thermal_protection_flags |= HEAD
+		if(protection_zone & CHEST && factor >= 0.60)
+			thermal_protection_flags |= CHEST
+		if(protection_zone & GROIN && factor >= 0.60)
+			thermal_protection_flags |= GROIN
+		if(protection_zone & LEGS && factor >= 0.45)
+			thermal_protection_flags |= LEGS
+		if(protection_zone & FEET && factor >= 0.35)
+			thermal_protection_flags |= FEET
+		if(protection_zone & ARMS && factor >= 0.45)
+			thermal_protection_flags |= ARMS
+		if(protection_zone & HANDS && factor >= 0.30)
+			thermal_protection_flags |= HANDS
 
 	return thermal_protection_flags
 
@@ -121,8 +125,8 @@
 	var/maximum_diff = -120
 	var/base_rate = 1
 	var/cooling_cooldown = 90 SECONDS
-	var/heat_cooldown = 20 SECONDS
-	var/weather_effect_cooldown = 10 SECONDS
+	var/heat_cooldown = 10 SECONDS
+	var/weather_effect_cooldown = 7 SECONDS
 	var/area_tempeture_cooldown = 2 SECONDS
 	var/lower_cooltreshhold = T0C + 10
 	var/coldlevel = HYPOTHERMIA_COLDLEVEL_SAFE
@@ -182,7 +186,7 @@
 
 /datum/component/hypothermia/RegisterWithParent()
 	var/mob/living/living_parent = parent
-	living_parent.add_traits(list(TRAIT_WEATHER_IMMUNE, TRAIT_RESISTCOLD), HYPOTHERMIA_PARALYSIS)
+	living_parent.add_traits(list(TRAIT_WEATHER_IMMUNE, TRAIT_RESISTCOLD), REF(src))
 	if(living_parent.bodytemperature < stored_bodytemperature)
 		living_parent.bodytemperature = stored_bodytemperature
 		stored_bodytemperature = max_temp
@@ -190,14 +194,20 @@
 		stored_bodytemperature = living_parent.bodytemperature
 
 	RegisterSignal(living_parent, COMSIG_MOB_HEAT_SOURCE_ACT, PROC_REF(on_heat_source_act), TRUE)
-	living_parent.AddComponent(/datum/component/perma_death_timer)
+	RegisterSignal(living_parent, COMSIG_LIVING_REVIVE, PROC_REF(on_revive), TRUE)
 	START_PROCESSING(SSobj, src)
 
 /datum/component/hypothermia/UnregisterFromParent()
 	var/mob/living/living_parent = parent
-	living_parent.remove_traits(list(TRAIT_WEATHER_IMMUNE, TRAIT_RESISTCOLD), HYPOTHERMIA_PARALYSIS)
-	UnregisterSignal(living_parent, COMSIG_MOB_HEAT_SOURCE_ACT)
+	living_parent.remove_traits(list(TRAIT_WEATHER_IMMUNE, TRAIT_RESISTCOLD), REF(src))
+	UnregisterSignal(living_parent, list(COMSIG_MOB_HEAT_SOURCE_ACT, COMSIG_LIVING_REVIVE))
+	cleanup_effects()
 	STOP_PROCESSING(SSobj, src)
+
+
+/datum/component/hypothermia/proc/on_revive()
+	stored_bodytemperature = normal_body_temp
+	cleanup_effects()
 
 /datum/component/hypothermia/proc/on_heat_source_act(mob/target, datum/component/heat_source/source, amount, target_temperature)
 	SIGNAL_HANDLER
@@ -469,7 +479,7 @@
 
 	else if(HA.area_temperature > lower_cooltreshhold && COOLDOWN_FINISHED(src, area_tempeture_incress))
 		COOLDOWN_START(src, area_tempeture_incress, area_tempeture_cooldown)
-		var/scaled_heat = 0.3 * heating_rate * 0.2 * seconds_per_tick
+		var/scaled_heat = 1 * heating_rate * 0.9 * seconds_per_tick
 		if(HA.area_temperature < normal_body_temp)
 			scaled_heat *= 0.8
 			stored_bodytemperature = min(stored_bodytemperature + scaled_heat, normal_body_temp)
@@ -530,10 +540,9 @@
 	var/list/items = C.get_equipped_items()
 	items += C.held_items
 	for(var/obj/item/I in shuffle(items))
-		if(prob(45))
-			C.dropItemToGround(I, force = TRUE)
-			to_chat(C, span_notice("Too hot... must... cool down..."))
-			break
+		to_chat(C, span_userdanger("[I.name] burns you, you want to take it off!"))
+		to_chat(C, span_notice("Too hot... must... cool down..."))
+		break
 
 /datum/movespeed_modifier/hypothermia_mild
 	multiplicative_slowdown = 0.2

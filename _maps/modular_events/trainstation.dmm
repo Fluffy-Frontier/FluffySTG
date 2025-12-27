@@ -9,6 +9,10 @@
 /obj/effect/mapping_helpers/ztrait_injector/trainstation,
 /turf/open/space/basic,
 /area/space)
+"i" = (
+/obj/effect/landmark/trainstation/object_spawner/bushes,
+/turf/open/moving/snow,
+/area/trainstation/outdoor/rails)
 "j" = (
 /turf/open/moving/rails/l1,
 /area/trainstation/outdoor/rails)
@@ -18,6 +22,10 @@
 "m" = (
 /turf/open/moving/rails/r1,
 /area/trainstation/outdoor/rails)
+"n" = (
+/obj/effect/landmark/trainstation/object_spawner/grass,
+/turf/open/moving/snow,
+/area/trainstation/outdoor/rails)
 "o" = (
 /turf/open/moving/rails/r3,
 /area/trainstation/outdoor/rails)
@@ -26,6 +34,10 @@
 /area/trainstation/outdoor/rails)
 "z" = (
 /turf/open/moving/rails/r2,
+/area/trainstation/outdoor/rails)
+"B" = (
+/obj/effect/landmark/trainstation/object_spawner/trees,
+/turf/open/moving/snow,
 /area/trainstation/outdoor/rails)
 "D" = (
 /turf/closed/indestructible/train_border,
@@ -64908,12 +64920,12 @@ a
 D
 O
 O
+n
 O
 O
 O
 O
-O
-O
+n
 O
 O
 O
@@ -65164,14 +65176,14 @@ a
 a
 D
 O
+i
 O
 O
 O
+i
 O
 O
-O
-O
-O
+B
 O
 O
 m

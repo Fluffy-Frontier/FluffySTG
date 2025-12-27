@@ -297,9 +297,10 @@
 	icon_state = "platform"
 
 /obj/structure/prop/general/zenithplatform3
-	name = "Zenith Platform 3"
+	name = "Zenith Platform"
 	desc = "A third Zenith platform design."
 	icon_state = "zenithplatform3"
+	density = FALSE
 
 /obj/structure/prop/general/highvoltagegrille
 	name = "High Voltage Grille"

@@ -1,31 +1,29 @@
 #define HYPOTHERMIA_TITLE_SCREEN 'modular_zvents/icons/lobby/hypothermia.png'
 
 /datum/award/achievement/safe_landing
-	name = "Мягкая посадка"
-	desc = "Вы пережили кораблекрушение. Может все таки стоило полететь шатлом интерлинка?"
+	name = "Soft Landing"
+	desc = "You survived the shipwreck. Maybe you should've taken the Interlink shuttle after all?"
 	database_id = "evt_hypothermia_safelanding"
 
 /datum/award/achievement/very_safe_landing
-	name = "Действительно мягкая посадка"
-	desc = "Вы пережили кораблекрушение, не получив и царапины, вот же чудо!"
+	name = "Truly Soft Landing"
+	desc = "You survived the shipwreck without a single scratch — what a miracle!"
 	database_id = "evt_hypothermia_safelanding_sup"
 
 /datum/award/achievement/petrov_kill
-	name = "Последнее одолжение"
-	desc = "Вы победили главного инженера и получили ключ к спасению, отличная работа!"
+	name = "Final Favor"
+	desc = "You defeated the chief engineer and obtained the key to salvation. Great job!"
 	database_id = "evt_hypothermia_petrov_kill"
 
 /datum/award/achievement/laststand
-	name = "Город должен выжить"
-	desc = "Большая буря здесь - город должен выжить!"
+	name = "The City Must Survive"
+	desc = "A big storm is coming — the city must survive!"
 	database_id = "evt_hypothermia_c150fp"
 
 /datum/award/achievement/safe_laucnh
-	name = "Поехали"
-	desc = "Вы спаслись использовав шатл Буран, кажется он наконец-то полетел!"
+	name = "Let's Go!"
+	desc = "You escaped using the Buran shuttle — it finally took off!"
 	database_id = "evt_hypothermia_escape"
-
-
 
 
 /datum/full_round_event/hypothermia
@@ -47,6 +45,7 @@
 
 	var/datum/weather/planet_weather
 
+	var/endgame = FALSE
 
 /datum/full_round_event/hypothermia/lobby_loaded()
 	addtimer(CALLBACK(src, PROC_REF(update_lobby_screen)), 10 SECONDS)
@@ -70,7 +69,7 @@
 		L.move_to_error_room()
 		L.overlay_fullscreen("crash_blackout", /atom/movable/screen/fullscreen/flash/black)
 		L.AddComponent(/datum/component/hypothermia)
-		L.set_incapacitated(40 SECONDS, TRUE)
+		L.anchored = TRUE
 
 	priority_announce("WARNING! CRITICAL HULL BREACH DETECTED! EMERGENCY CRASH LANDING IN 45 SECONDS! BRACE FOR IMPACT!",
 		"Automated AI Voice", ANNOUNCER_METEORS)
@@ -125,11 +124,10 @@
 		crew.forceMove(get_turf(spawnpoint))
 
 	for(var/mob/living/carbon/human/crew in GLOB.alive_player_list)
-		crew.set_incapacitated(0, TRUE)
 		crew.Knockdown(25 SECONDS)
 		crew.Stun(20 SECONDS)
 		crew.throw_at(get_step(crew, pick(GLOB.alldirs)), rand(1, 3), 2)
-
+		shake_camera(crew, 50, 5)
 		to_chat(crew, span_userdanger("IMPACT! THE SHIP SMASHES INTO THE ICE! YOU'RE THROWN VIOLENTLY ACROSS THE WRECKAGE!"))
 		crew.clear_fullscreen("crash_blackout", animated = 20 SECONDS)
 		var/injured = FALSE
@@ -162,7 +160,8 @@
 		var/area/hypothermia/HA = get_area(crew)
 		if(istype(HA, /area/hypothermia))
 			HA.update_mob_visual(crew)
-
+		if(crew.anchored)
+			crew.anchored = FALSE
 	sleep(6 SECONDS)
 	priority_announce("Impact confirmed. All primary systems offline. External temperature: -15°C and falling fast.",
 		"Automated AI Voice", 'sound/effects/alert.ogg')
@@ -173,28 +172,56 @@
 		crew.client.give_award(/datum/award/achievement/safe_landing, crew)
 		var/datum/antagonist/custom/crashland_antag = new()
 		var/datum/objective/custom/survive_objective = new()
-		crashland_antag.name = "Выживший"
-		crashland_antag.roundend_category = "Выжившие в кораблекрушении"
-		survive_objective.explanation_text = "Найдите способ выжить и покинуть планету."
+		crashland_antag.name = "Survivor"
+		crashland_antag.roundend_category = "Shipwreck Survivors"
+		survive_objective.explanation_text = "Find a way to survive and escape the planet."
 		crashland_antag.show_in_antagpanel = FALSE
 		crashland_antag.objectives += survive_objective
 		crew.mind.add_antag_datum(crashland_antag)
 
 
-
 /datum/full_round_event/hypothermia/proc/on_buran_startup()
+	priority_announce("Attention! Weather sensors have detected a shift in the storm front. \
+						Temperature drop to -150 recorded... Sensors damaged, shutdown!", "Weather report", 'sound/effects/alert.ogg')
+	for(var/mob/living/carbon/human/crew in GLOB.alive_player_list)
+		crew.client.give_award(/datum/award/achievement/laststand, crew)
+		if(length(crew.mind.antag_datums))
+			var/datum/antagonist/custom/survivor = locate() in crew.mind.antag_datums
+			if(!survivor)
+				survivor = new()
+				survivor.name = "Survivor"
+				survivor.roundend_category = "Shipwreck Survivors"
+				crew.mind.add_antag_datum(survivor)
+			survivor.objectives = null
+			var/datum/objective/custom/survive_objective = new()
+			survive_objective.explanation_text = "Survive the storm!"
+			survivor.objectives += survive_objective
+			to_chat(crew, span_boldwarning(survive_objective.explanation_text))
 
+	if(planet_weather)
+		planet_weather.end()
+	SSweather.run_weather(/datum/weather/snow_storm/snow_blizzard/endgame)
+	planet_weather = SSweather.get_weather_by_type(/datum/weather/snow_storm/snow_blizzard/endgame)
+	endgame = TRUE
 
 
 /datum/full_round_event/hypothermia/proc/on_buran_launch()
-
-
-
-
+	for(var/mob/living/carbon/human/crew in GLOB.alive_player_list)
+		var/area/escape_area = get_area(crew)
+		if(!istype(escape_area, /area/shuttle/escape))
+			continue
+		crew.client.give_award(/datum/award/achievement/safe_laucnh, crew)
+		if(length(crew.mind.antag_datums))
+			var/datum/antagonist/custom/survivor = locate() in crew.mind.antag_datums
+			if(!survivor)
+				continue
+			for(var/datum/objective/custom/obj in survivor.objectives)
+				obj.completed = TRUE
 
 /datum/full_round_event/hypothermia/event_process(ticks_per_second)
 	var/time_elapsed = world.time - SSticker.round_start_time
-
+	if(endgame)
+		return
 
 	if(time_elapsed > 3 HOURS)
 		if(!planet_weather || planet_weather.type != /datum/weather/snow_storm/snow_blizzard/endgame)
