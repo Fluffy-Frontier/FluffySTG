@@ -33,7 +33,7 @@
 
 /datum/quirk/item_quirk/breather/water_breather/remove()
 	. = ..()
-	quirk_holder.clear_alert(ALERT_NOT_ENOUGH_WATER)
+	// TFF REMOVAL: quirk_holder.clear_alert(ALERT_NOT_ENOUGH_WATER)
 	UnregisterSignal(quirk_holder, COMSIG_MOB_GRANTED_ACTION)
 
 /datum/quirk/item_quirk/breather/water_breather/add_unique(client/client_source)
