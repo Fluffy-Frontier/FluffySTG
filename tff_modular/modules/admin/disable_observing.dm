@@ -6,13 +6,11 @@ ADMIN_VERB(toggle_observing, R_ADMIN, "Toggle Observing", "Toggle the Observing 
 	message_admins("[key_name_admin(user)] toggled Observing.")
 
 /proc/toggle_observing(toggle = null)
-	if(toggle != null)
-		if(toggle != GLOB.observing_allowed)
-			GLOB.observing_allowed = toggle
-		else
-			return
-	else
+	if(isnull(toggle))
 		GLOB.observing_allowed = !GLOB.observing_allowed
+	else
+		GLOB.observing_allowed = toggle
+
 	to_chat(world, "<span class='oocplain'><B>The Observing has been globally [GLOB.observing_allowed ? "enabled" : "disabled"].</B></span>")
 
 // Трейт котоырй можно выдать заранее на следующий раунд, чтобы шустрые госты не успели нажать Observe до того, как админы выключат его
@@ -25,5 +23,5 @@ ADMIN_VERB(toggle_observing, R_ADMIN, "Toggle Observing", "Toggle the Observing 
 	toggle_observing(FALSE)
 
 /datum/station_trait/disabled_observing/Destroy()
-	. = ..()
 	toggle_observing(TRUE)
+	. = ..()
