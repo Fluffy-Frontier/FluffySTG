@@ -32,12 +32,13 @@ export const TrainControlTerminal = (props: any, context: any) => {
     current_station = 'Неизвестно',
     planned_station = 'None',
     blocking = false,
+    read_only = false,
     possible_next = [],
     progress = 0,
     time_remaining = 0,
   } = data;
 
-  const readOnly = data.read_only || true;
+  const readOnly = read_only || false;
   const safePossibleNext = Array.isArray(possible_next) ? possible_next : [];
 
   const formatTime = (seconds: number): string => {

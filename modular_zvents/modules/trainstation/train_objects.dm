@@ -30,7 +30,7 @@
 	desc = "A solid metal door, often used in train carriages."
 	icon = 'modular_zvents/icons/doors/train_door.dmi'
 	has_access_panel = FALSE
-
+	opacity = FALSE
 
 /obj/machinery/door/train/train_door/Initialize(mapload)
 	. = ..()
@@ -60,6 +60,17 @@
 			return 0.2 SECONDS
 		if(DOOR_CLOSING_FINISHED)
 			return 1.5 SECONDS
+
+/obj/machinery/door/airlock/train_locomotive
+	name = "Train locomotive"
+	desc = "A solid metal door, often used in train carriages."
+	icon = 'modular_zvents/icons/doors/locomotive_door.dmi'
+	aiControlDisabled = AI_WIRE_DISABLED
+	air_tight = TRUE
+
+/obj/machinery/door/airlock/train_locomotive/glass
+	icon = 'modular_zvents/icons/doors/locomotive_door_glass.dmi'
+
 
 /obj/machinery/door/train/coupe_door
 	name = "Coupe door"
