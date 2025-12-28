@@ -15,9 +15,9 @@ GLOBAL_LIST_INIT(additional_combo_huds, list())
 	GLOB.trait_to_hud += list("[trait_define]" = data_hud_define)
 
 	if(for_observer)
-		GLOB.additional_observer_huds += trait
+		GLOB.additional_observer_huds += trait_define
 	if(for_combohud)
-		GLOB.additional_combo_huds += trait
+		GLOB.additional_combo_huds += trait_define
 
 	stack_trace(length(GLOB.huds))
 
