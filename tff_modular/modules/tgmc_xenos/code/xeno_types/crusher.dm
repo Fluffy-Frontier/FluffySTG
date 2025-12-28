@@ -5,8 +5,8 @@
 	desc = "A huge alien with an enormous armored crest."
 	icon_state = "aliencrusher"
 	caste = "crusher"
-	maxHealth = 275
-	health = 275
+	maxHealth = 300
+	health = 300
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 30
 	melee_damage_upper = 35

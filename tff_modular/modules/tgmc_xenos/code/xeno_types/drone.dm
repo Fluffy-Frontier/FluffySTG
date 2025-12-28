@@ -5,8 +5,8 @@
 	desc = "As plain looking as you could call an alien with armored black chitin and large claws."
 	icon_state = "aliendrone"
 	caste = "drone"
-	maxHealth = 125
-	health = 125
+	maxHealth = 150
+	health = 150
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 	next_evolution = /mob/living/carbon/alien/adult/tgmc/praetorian

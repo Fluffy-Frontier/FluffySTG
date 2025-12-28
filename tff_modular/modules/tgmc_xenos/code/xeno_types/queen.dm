@@ -25,6 +25,8 @@
 	mecha_armor_penetration = 45
 	resist_heavy_hits = TRUE
 
+	can_hold_facehugger = TRUE
+
 /mob/living/carbon/alien/adult/tgmc/queen/Initialize(mapload)
 	. = ..()
 	var/static/list/innate_actions = list(

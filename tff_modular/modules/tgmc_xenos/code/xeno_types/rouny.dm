@@ -5,8 +5,8 @@
 	desc = "A short alien with sleek red chitin, clearly abiding by the 'red ones go faster' theorem and almost always running on all fours."
 	icon_state = "alienrunner"
 	caste = "runner"
-	maxHealth = 100
-	health = 100
+	maxHealth = 125
+	health = 125
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 	alien_speed = -0.5

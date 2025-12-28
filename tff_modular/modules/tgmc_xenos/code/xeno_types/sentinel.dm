@@ -5,8 +5,8 @@
 	desc = "An alien that'd be unremarkable if not for the bright coloring and visible acid glands that cover it."
 	icon_state = "aliensentinel"
 	caste = "sentinel"
-	maxHealth = 125
-	health = 125
+	maxHealth = 150
+	health = 150
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	alien_speed = 0.5
