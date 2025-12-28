@@ -132,7 +132,7 @@
 /turf/open/floor/iron/white,
 /area/trainstation/indoors/train/medical)
 "aV" = (
-/obj/structure/window/reinforced/spawner/directional/south,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
 /turf/open/floor/iron/dark/diagonal,
 /area/trainstation/indoors/train/vagon_7)
 "aZ" = (
@@ -487,7 +487,7 @@
 /turf/open/floor/iron/dark,
 /area/trainstation/indoors/train/security)
 "dH" = (
-/obj/structure/window/reinforced/spawner/directional/north,
+/obj/machinery/portable_atmospherics/canister/water_vapor,
 /turf/open/floor/iron/dark/diagonal,
 /area/trainstation/indoors/train/vagon_7)
 "dS" = (
@@ -915,6 +915,10 @@
 /obj/structure/sign/poster/official/report_crimes/directional/east,
 /turf/open/floor/plating,
 /area/trainstation/indoors/train/tech_6)
+"gS" = (
+/obj/machinery/atmospherics/components/unary/thermomachine/heater,
+/turf/open/floor/iron/dark/diagonal,
+/area/trainstation/indoors/train/vagon_7)
 "gT" = (
 /obj/machinery/door/airlock/medical{
 	name = "Medbay"
@@ -1326,6 +1330,12 @@
 	},
 /turf/open/floor/carpet/green,
 /area/trainstation/indoors/train/vagon_6)
+"kA" = (
+/obj/machinery/computer/train_turbine_computer{
+	mapping_id = "main_train_turbine"
+	},
+/turf/open/floor/iron/dark/diagonal,
+/area/trainstation/indoors/train/vagon_7)
 "kC" = (
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 4
@@ -2075,7 +2085,7 @@
 /turf/open/floor/wood/large,
 /area/trainstation/indoors/train/vagon_3)
 "pm" = (
-/obj/machinery/power/turbine/inlet_compressor{
+/obj/machinery/power/train_turbine/turbine_outlet{
 	dir = 4
 	},
 /turf/open/floor/iron/dark/diagonal,
@@ -3108,7 +3118,7 @@
 /turf/open/floor/plating,
 /area/trainstation/indoors/train/tech_1)
 "xL" = (
-/obj/machinery/power/turbine/inlet_compressor{
+/obj/machinery/power/train_turbine/inlet_compressor{
 	dir = 8
 	},
 /turf/open/floor/iron/dark/diagonal,
@@ -3921,6 +3931,10 @@
 	},
 /turf/open/floor/wood/large,
 /area/trainstation/indoors/train/vagon_1)
+"Ee" = (
+/obj/machinery/atmospherics/components/unary/portables_connector,
+/turf/open/floor/iron/dark/diagonal,
+/area/trainstation/indoors/train/vagon_7)
 "Ef" = (
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 8
@@ -5733,8 +5747,9 @@
 /turf/open/floor/iron/dark/diagonal,
 /area/trainstation/indoors/train/vagon_7)
 "RO" = (
-/obj/machinery/power/turbine/core_rotor{
-	dir = 8
+/obj/machinery/power/train_turbine/core_rotor{
+	dir = 8;
+	id_tag = "main_train_turbine"
 	},
 /turf/open/floor/iron/dark/diagonal,
 /area/trainstation/indoors/train/vagon_7)
@@ -9362,12 +9377,12 @@ Ya
 Ks
 QV
 td
-aV
+td
 td
 td
 td
 dH
-td
+dH
 QV
 RK
 ES
@@ -9378,10 +9393,10 @@ Ks
 QV
 td
 aV
-td
+gS
 pm
 td
-dH
+td
 td
 QV
 RK
@@ -9391,12 +9406,12 @@ ES
 Ya
 Ks
 QV
-td
+Ee
 aV
-td
+gS
 RO
+kA
 td
-dH
 td
 QV
 RK
@@ -9408,10 +9423,10 @@ Ks
 QV
 td
 aV
-td
+gS
 xL
 td
-dH
+td
 td
 QV
 RK
@@ -9423,10 +9438,10 @@ Ks
 QV
 td
 aV
+aV
+aV
 td
 td
-td
-dH
 td
 QV
 RK
