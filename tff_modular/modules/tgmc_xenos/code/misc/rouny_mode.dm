@@ -1,5 +1,6 @@
 /// TGMC_XENOS (old nova sector xenos)
 
+GLOBAL_VAR_INIT(xeno_rounymode, FALSE)
 #define ROUNY_ICON_FILE 'tff_modular/modules/tgmc_xenos/icons/rouny.dmi'
 
 /mob/living/carbon/alien/adult/tgmc/update_icon(updates)
