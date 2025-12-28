@@ -3,7 +3,7 @@ GLOBAL_LIST_INIT(additional_combo_huds, list())
 
 /// Эта штука добавляет указанный худ в глобальные списки из `code\datums\hud.dm`. Так же дает возмоно добавить указанный трейт худа в список худов гостов/админов
 /proc/register_new_hud(atom_hud_path, data_hud, trait, for_observer = FALSE, for_combohud = FALSE)
-	GLOB.huds.Insert(data_hud, new atom_hud_path())
+	GLOB.huds += new atom_hud_path()
 	GLOB.trait_to_hud += list("[trait]" = data_hud)
 
 	if(for_observer)
@@ -12,7 +12,7 @@ GLOBAL_LIST_INIT(additional_combo_huds, list())
 		GLOB.additional_combo_huds += trait
 
 /proc/init_additional_huds()
-	register_new_hud(/datum/atom_hud/data/xeno, DATA_HUD_XENO, TRAIT_XENO_HUD, TRUE, TRUE)
+	register_new_hud(/datum/atom_hud/data/xeno, DATA_HUD_XENO, TRAIT_XENO_HUD, TRUE, TRUE) // TRAIT_XENO_HUD - 12
 
 
 /client/enable_combo_hud()

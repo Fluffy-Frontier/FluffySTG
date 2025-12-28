@@ -78,7 +78,7 @@
 #define DATA_HUD_FAN 9
 #define DATA_HUD_MALF_APC 10
 #define DATA_HUD_PERMIT 11 //NOVA EDIT ADDITION
-#define DATA_HUD_XENO 12 // FLUFFY FRONTIER ADDITION
+#define DATA_HUD_XENO (DATA_HUD_PERMIT + 1) // FLUFFY FRONTIER ADDITION
 
 /// cooldown for being shown the images for any particular data hud
 #define ADD_HUD_TO_COOLDOWN 20

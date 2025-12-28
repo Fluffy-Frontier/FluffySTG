@@ -29,9 +29,8 @@
 	set_hud_image_state(XENO_HUD, "xenohealth[amount]", 32, -32)
 
 /mob/living/carbon/alien/adult/tgmc/proc/xeno_hud_set_plasma()
-	var/amount
-	if(stat == DEAD || get_max_plasma() == 0)
-		amount = 0
-	else
+	var/amount = 0
+	if(stat != DEAD || get_max_plasma() > 0)
 		amount = round(getPlasma() * 100 / get_max_plasma(), 10)
+
 	set_hud_image_state(XENOPLASMA_HUD, "plasma[amount]", 32, -32)
