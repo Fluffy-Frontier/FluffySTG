@@ -343,3 +343,5 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/button/auto_detect, 24)
 
 /obj/machinery/computer/train_control_terminal/read_only
 	read_only = TRUE
+
+/obj/machinery/power/turbine

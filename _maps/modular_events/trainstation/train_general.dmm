@@ -1743,6 +1743,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/tech_4)
+"nq" = (
+/obj/machinery/door/airlock/train_locomotive/glass,
+/turf/open/floor/iron/dark/diagonal,
+/area/trainstation/indoors/train/vagon_7)
 "nt" = (
 /obj/machinery/prisongate,
 /turf/open/floor/iron/dark,
@@ -3092,6 +3096,10 @@
 /obj/structure/sign/warning/no_smoking/circle/directional/north,
 /turf/open/floor/wood/large,
 /area/trainstation/indoors/train/vagon_1)
+"xB" = (
+/obj/machinery/door/airlock/train_locomotive/glass,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_7)
 "xH" = (
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 8
@@ -4416,10 +4424,6 @@
 	},
 /turf/open/floor/iron/dark/pattern_5,
 /area/trainstation/indoors/train/vagon_6)
-"Ia" = (
-/obj/machinery/door/airlock/train_locomotive,
-/turf/open/floor/iron/dark/diagonal,
-/area/trainstation/indoors/train/vagon_7)
 "If" = (
 /obj/effect/turf_decal/siding/dark_red/corner{
 	dir = 4
@@ -5437,6 +5441,10 @@
 /obj/item/storage/bag/trash,
 /turf/open/floor/wood/wood_11,
 /area/trainstation/indoors/train/conductor_2)
+"Ps" = (
+/obj/machinery/door/airlock/train_locomotive,
+/turf/open/floor/iron/dark/diagonal,
+/area/trainstation/indoors/train/vagon_7)
 "Pv" = (
 /obj/machinery/vending/medical{
 	pixel_y = 21;
@@ -6268,10 +6276,6 @@
 	},
 /turf/open/indestructible/hotelwood,
 /area/trainstation/indoors/train/conductor_4)
-"VT" = (
-/obj/machinery/door/airlock/train_locomotive,
-/turf/open/floor/iron/dark/pattern_6,
-/area/trainstation/indoors/train/vagon_7)
 "VU" = (
 /obj/structure/bed/pod,
 /obj/effect/turf_decal/siding/dark{
@@ -6565,10 +6569,6 @@
 	},
 /turf/open/floor/iron/dark/small,
 /area/trainstation/indoors/train/security)
-"YD" = (
-/obj/machinery/door/airlock/train_locomotive/glass,
-/turf/open/floor/iron/dark/pattern_6,
-/area/trainstation/indoors/train/tech_7)
 "YE" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -6766,8 +6766,8 @@
 /turf/open/floor/plating,
 /area/trainstation/indoors/train/tech_1)
 "ZN" = (
-/obj/machinery/door/airlock/train_locomotive/glass,
-/turf/open/floor/iron/dark/diagonal,
+/obj/machinery/door/airlock/train_locomotive,
+/turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/vagon_7)
 "ZO" = (
 /obj/effect/turf_decal/siding/wood{
@@ -9244,7 +9244,7 @@ lw
 lw
 lw
 lw
-YD
+xB
 dx
 lw
 lw
@@ -9317,11 +9317,11 @@ QV
 td
 rn
 td
-VT
+ZN
 td
 td
 td
-Ia
+Ps
 td
 rn
 td
@@ -9344,17 +9344,17 @@ QV
 "}
 (168,1,1) = {"
 QV
-ZN
+nq
 QV
 QV
 QV
 QV
-Ia
+Ps
 QV
 QV
 QV
 QV
-ZN
+nq
 QV
 "}
 (169,1,1) = {"
@@ -9434,7 +9434,7 @@ ES
 "}
 (174,1,1) = {"
 QV
-ZN
+nq
 QV
 QV
 QV
@@ -9444,7 +9444,7 @@ QV
 QV
 QV
 QV
-ZN
+nq
 QV
 "}
 (175,1,1) = {"
@@ -9469,7 +9469,7 @@ rn
 rn
 rn
 td
-Ia
+Ps
 td
 td
 td
@@ -9529,7 +9529,7 @@ td
 td
 td
 td
-ZN
+nq
 BX
 BX
 BX
