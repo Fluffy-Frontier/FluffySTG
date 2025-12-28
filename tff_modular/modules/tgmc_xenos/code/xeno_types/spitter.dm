@@ -22,7 +22,7 @@
 
 	resist_heavy_hits = TRUE
 
-	can_hold_facehugger = TRUE
+	can_hold_facehuggers = TRUE
 
 /mob/living/carbon/alien/adult/tgmc/spitter/Initialize(mapload)
 	. = ..()

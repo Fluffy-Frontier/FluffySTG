@@ -14,7 +14,7 @@
 /obj/item/clothing/mask/facehugger/tgmc/attempt_pickup(mob/living/user, skip_grav)
 	if(istgmcalien(user))
 		var/mob/living/carbon/alien/adult/tgmc/xeno = user
-		if(!xeno.can_hold_facehugger)
+		if(!xeno.can_hold_facehuggers)
 			to_chat(user, span_alien("Your claws lack the dexterity to hold [src]"))
 			return TRUE
 	return ..()
@@ -23,7 +23,7 @@
 	. = ..()
 	if(. && istgmcalien(user))
 		var/mob/living/carbon/alien/adult/tgmc/xeno = user
-		if(!xeno.can_hold_facehugger)
+		if(!xeno.can_hold_facehuggers)
 			to_chat(user, span_alien("Your claws lack the dexterity to hold [src]"))
 			return FALSE
 

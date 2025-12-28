@@ -58,7 +58,7 @@
 	var/fortify = FALSE
 
 	// Может ли переносить хагов
-	var/can_hold_facehugger = FALSE
+	var/can_hold_facehuggers = FALSE
 
 /mob/living/carbon/alien/adult/tgmc/Initialize(mapload)
 	. = ..()
