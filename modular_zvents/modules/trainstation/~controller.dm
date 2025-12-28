@@ -4,7 +4,7 @@
 
 SUBSYSTEM_DEF(train_controller)
 	name = "Train Controller"
-	wait = 0.2 SECONDS // Эта подсистема вызывает РЕАЛЬНО часто, но за счет оптимизации - это не дает сильного оверхеда
+	wait = 0.1 SECONDS // Эта подсистема вызывает РЕАЛЬНО часто, но за счет оптимизации - это не дает сильного оверхеда
 
 	dependencies = list(
 		/datum/controller/subsystem/mapping,
@@ -20,6 +20,9 @@ SUBSYSTEM_DEF(train_controller)
 	VAR_PRIVATE/list/queue_list = list()
 
 	VAR_PRIVATE/datum/looping_sound/train_sound_loop/soundloop
+
+	var/list/station_terminals
+
 	// Загружается или выгружается в данный момент станция
 	var/loading = FALSE
 	// Станция запланированная для загрузки
@@ -28,6 +31,10 @@ SUBSYSTEM_DEF(train_controller)
 	var/datum/train_station/loaded_station = null
 	// Известные, загруженные станции
 	var/static/list/known_stations = list()
+
+	var/default_travel_time = 20 MINUTES
+	var/time_to_next_station
+	var/total_travel_time
 
 /datum/controller/subsystem/train_controller/Initialize()
 	var/list/map_traits = SSmapping.current_map.traits[1]
@@ -56,6 +63,8 @@ SUBSYSTEM_DEF(train_controller)
 /datum/controller/subsystem/train_controller/proc/load_stations()
 	for(var/path in subtypesof(/datum/train_station))
 		known_stations += new path
+	for(var/datum/train_station/station in known_stations)
+		station.connect_stations()
 
 /datum/controller/subsystem/train_controller/proc/announce_game()
 	to_chat(world, span_boldnotice( \
@@ -115,8 +124,38 @@ SUBSYSTEM_DEF(train_controller)
 		stop_moving()
 	for(var/mob/living/L in GLOB.alive_player_list)
 		L.clear_fullscreen("station_loading", animated = 5 SECONDS)
-	if(announce)
+	if(announce && !(loaded_station.station_flags & TRAINSTATION_ABSCTRACT))
 		show_station_logo(to_load)
+	connect_terminals()
+	loaded_station.after_load()
+	if(loaded_station.station_flags & TRAINSTATION_NO_FORKS)
+		return
+	pick_possible_stations()
+
+/datum/controller/subsystem/train_controller/proc/connect_terminals()
+	if(!station_terminals || !length(station_terminals))
+		return
+	for(var/obj/machinery/computer/trainstation_control/control in station_terminals)
+		control.set_station(loaded_station)
+
+/datum/controller/subsystem/train_controller/proc/pick_possible_stations()
+	var/station_count = rand(1, 2)
+	var/list/possible = shuffle(known_stations.Copy())
+	var/selected = null
+	var/selected_count = 0
+	for(var/datum/train_station/station in possible)
+		if(selected_count >= station_count)
+			break
+		if(station.station_flags & TRAINSTATION_ABSCTRACT)
+			continue
+		if(station.station_flags & TRAINSTATION_NO_SELECTION)
+			continue
+		LAZYADD(selected, station)
+		selected_count += 1
+	loaded_station.possible_next = selected
+
+/datum/controller/subsystem/train_controller/proc/is_moving()
+	return moving
 
 /datum/controller/subsystem/train_controller/proc/show_station_logo(datum/train_station/station)
 	for(var/mob/player in GLOB.player_list)
@@ -157,6 +196,11 @@ SUBSYSTEM_DEF(train_controller)
 		return
 	if(!check_start() && !force)
 		return
+	if(!planned_to_load)
+		return
+	if(!(loaded_station.station_flags & TRAINSTATION_ABSCTRACT))
+		time_to_next_station = default_travel_time
+		total_travel_time = default_travel_time
 	moving = TRUE
 	if(unload_station && !istype(loaded_station, /datum/train_station/train_backstage))
 		load_station(/datum/train_station/train_backstage, FALSE, TRUE, FALSE)
@@ -189,6 +233,13 @@ SUBSYSTEM_DEF(train_controller)
 		LAZYNULL(queue_list)
 	if(!LAZYLEN(to_process))
 		return
+	if(moving && planned_to_load && time_to_next_station > 0)
+		time_to_next_station -= wait
+		if(time_to_next_station <= 0)
+			time_to_next_station = 0
+			stop_moving()
+			load_station(planned_to_load, stop_moving = TRUE, hide_for_players = TRUE, announce = TRUE)
+			planned_to_load = null
 	INVOKE_ASYNC(src, PROC_REF(process_turfs), world.tick_usage)
 
 /datum/controller/subsystem/train_controller/proc/process_turfs(seconds_per_tick)
@@ -211,6 +262,10 @@ SUBSYSTEM_DEF(train_controller)
 	data["moving"] = moving
 	data["num_turfs"] = length(to_process)
 	data["stations"] = list()
+	data["planned_station"] = planned_to_load?.name || "None"
+	data["time_to_next_station"] = time_to_next_station
+	data["total_travel_time"] = total_travel_time
+	data["possible_next"] = list()
 	for(var/datum/train_station/station in known_stations)
 		if(!station.visible)
 			continue
@@ -221,6 +276,7 @@ SUBSYSTEM_DEF(train_controller)
 				)
 			)
 	data["current_station"] = loaded_station?.name || "None"
+	data["blocking"] = loaded_station?.blocking_moving || FALSE
 	return data
 
 /datum/controller/subsystem/train_controller/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
@@ -232,6 +288,12 @@ SUBSYSTEM_DEF(train_controller)
 			if(!check_rights(R_ADMIN))
 				return
 			usr.client.debug_variables(src)
+		if("choose_next")
+			var/station_type = text2path(params["station_type"])
+			var/datum/train_station/next = locate(station_type) in known_stations
+			if(next && loaded_station && (next in loaded_station.possible_next))
+				planned_to_load = next
+			return TRUE
 		if("start_moving")
 			start_moving()
 			return TRUE
@@ -362,4 +424,5 @@ ADMIN_VERB(open_train_controller, R_ADMIN, "Open train controller", "Open active
 		for(var/mob/M as anything in GLOB.player_list)
 			if(M.client)
 				M.stop_sound_channel(sound_channel)
+
 	return ..()

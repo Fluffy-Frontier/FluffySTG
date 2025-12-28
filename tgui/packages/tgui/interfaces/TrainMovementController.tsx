@@ -8,7 +8,7 @@ import {
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
-export const TrainMovementController = (props) => {
+export const TrainMovementController = () => {
   const { act, data } = useBackend<{
     moving: boolean;
     num_turfs: number;

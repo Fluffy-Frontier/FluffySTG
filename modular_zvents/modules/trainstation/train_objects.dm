@@ -201,3 +201,134 @@
 			C.toggle()
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/button/auto_detect, 24)
+
+
+
+/obj/machinery/computer/trainstation_control
+	name = "Station control"
+	desc = "This computer is used to control the station's locking system. Use it to continue on your way."
+	icon_screen = "command"
+	icon_keyboard = "id_key"
+
+	interaction_flags_machine = INTERACT_MACHINE_REQUIRES_LITERACY
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+
+	var/unlocked = FALSE
+	var/datum/train_station/station = null
+
+/obj/machinery/computer/trainstation_control/Initialize(mapload, obj/item/circuitboard/C)
+	. = ..()
+	LAZYADD(SStrain_controller.station_terminals, src)
+
+/obj/machinery/computer/trainstation_control/Destroy(force)
+	. = ..()
+	LAZYREMOVE(SStrain_controller.station_terminals, src)
+
+/obj/machinery/computer/trainstation_control/proc/set_station(datum/train_station/new_station)
+	station = new_station
+	name = "[station.name] - control terminal"
+	SSpoints_of_interest.make_point_of_interest(src)
+	add_filter("story_outline", 2, list("type" = "outline", "color" = "#fa3b3b", "size" = 1))
+
+/obj/machinery/computer/trainstation_control/default_deconstruction_crowbar(obj/item/crowbar, ignore_panel, custom_deconstruct)
+	return
+
+/obj/machinery/computer/trainstation_control/default_deconstruction_screwdriver(mob/user, icon_state_open, icon_state_closed, obj/item/screwdriver)
+	return
+
+/obj/machinery/computer/trainstation_control/screwdriver_act(mob/living/user, obj/item/I)
+	return
+
+/obj/machinery/computer/trainstation_control/interact(mob/user, special_state)
+	. = ..()
+	if(unlocked)
+		return
+	if(world.time > next_clicksound && isliving(user))
+		next_clicksound = world.time + rand(50, 150)
+		playsound(src, SFX_KEYBOARD, 40)
+	if(!do_after(user, 3 SECONDS, src))
+		return
+
+	unlock_station()
+	remove_filter("story_outline")
+
+/obj/machinery/computer/trainstation_control/proc/unlock_station()
+	station.blocking_moving = FALSE
+	balloon_alert_to_viewers("Station unlocked!")
+	SEND_SIGNAL(SStrain_controller, COMSIG_TRAINSTATION_UNLOCKED)
+	unlocked = TRUE
+
+
+
+/obj/machinery/computer/train_control_terminal
+	name = "Train control terminal"
+	desc = "This computer is used to control the train and its movement from station to station."
+	icon_screen = "command"
+	icon_keyboard = "id_key"
+
+	var/read_only = FALSE
+
+/obj/machinery/computer/train_control_terminal/ui_interact(mob/user, datum/tgui/ui)
+	. = ..()
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "TrainControlTerminal")
+		ui.open()
+
+/obj/machinery/computer/train_control_terminal/ui_state(mob/user)
+	return GLOB.conscious_state
+
+/obj/machinery/computer/train_control_terminal/ui_data(mob/user)
+	var/datum/controller/subsystem/train_controller/TC = SStrain_controller
+	var/list/data = list()
+
+	data["read_only"] = read_only
+	data["is_moving"] = TC.is_moving()
+	data["current_station"] = TC.loaded_station?.name || "Unknown"
+	data["planned_station"] = TC.planned_to_load?.name || "None"
+	data["blocking"] = TC.loaded_station?.blocking_moving || FALSE
+	data["possible_next"] = list()
+	if(!TC.is_moving() && TC.loaded_station)
+		for(var/datum/train_station/next in TC.loaded_station.possible_next)
+			data["possible_next"] += list(
+				list(
+					"name" = next.name,
+					"type" = "[next.type]"
+				)
+			)
+	if(TC.is_moving() && TC.total_travel_time > 0)
+		data["progress"] = 1 - (TC.time_to_next_station / TC.total_travel_time)
+	else
+		data["progress"] = 0
+	data["time_remaining"] = TC.time_to_next_station || 0
+
+	return data
+
+/obj/machinery/computer/train_control_terminal/ui_act(action, list/params)
+	. = ..()
+	if(.)
+		return
+	if(read_only)
+		return
+	var/datum/controller/subsystem/train_controller/TC = SStrain_controller
+	switch(action)
+		if("start_moving")
+			if(!TC.is_moving() && TC.planned_to_load && !TC.loaded_station?.blocking_moving)
+				TC.start_moving()
+			return TRUE
+		if("stop_moving")
+			if(TC.is_moving())
+				TC.stop_moving()
+			return TRUE
+		if("choose_next")
+			var/station_type = text2path(params["station_type"])
+			if(!station_type)
+				return
+			var/datum/train_station/next = locate(station_type) in TC.known_stations
+			if(!next || !TC.loaded_station || !(next in TC.loaded_station.possible_next))
+				return
+			TC.planned_to_load = next
+			return TRUE
+
+/obj/machinery/computer/train_control_terminal/read_only
+	read_only = TRUE

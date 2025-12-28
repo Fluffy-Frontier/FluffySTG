@@ -101,6 +101,7 @@
 /datum/train_station
 	var/name = "Train station"
 	var/desc = "A generic train station"
+	var/station_flags = NONE
 
 	var/datum/map_template/template = null
 	var/ambience_sound = null
@@ -111,6 +112,7 @@
 
 	var/list/docking_turfs = list()
 
+	var/list/possible_next = list()
 	// Блокирует ли эта станция движение поезда
 	var/blocking_moving = FALSE
 
@@ -120,6 +122,15 @@
 	template = new /datum/map_template(map_path, "Train station - [name]", TRUE)
 	template.returns_created_atoms = TRUE
 	SSmapping.map_templates[template.name] = template
+
+/datum/train_station/proc/connect_stations()
+	for(var/i in 1 to length(possible_next))
+		var/path = possible_next[i]
+		var/datum/train_station/st = locate(path) in SStrain_controller.known_stations
+		if(st)
+			possible_next[i] = st
+		else
+			stack_trace("Invalid possible_next path [path] for station [type]")
 
 /datum/train_station/proc/load_station(datum/callback/load_callback)
 	if(!template)
@@ -173,6 +184,9 @@
 			right_turf.ChangeTurf(/turf/closed/indestructible/train_border)
 			docking_turfs += right_turf
 
+/datum/train_station/proc/after_load()
+	if(station_flags & TRAINSTATION_BLOCKING)
+		blocking_moving = TRUE
 
 /datum/train_station/proc/unload_station(datum/callback/unload_callback)
 	for(var/turf/T in docking_turfs)
@@ -186,11 +200,46 @@
 	if(unload_callback)
 		unload_callback.Invoke()
 
-/datum/train_station/start_point
-	name = "Start-point"
-	map_path = "_maps/modular_events/trainstation/startpoint.dmm"
-
 /datum/train_station/train_backstage
 	name = "Iced forest"
 	map_path = "_maps/modular_events/trainstation/backstage.dmm"
+	station_flags = TRAINSTATION_ABSCTRACT | TRAINSTATION_NO_FORKS | TRAINSTATION_NO_SELECTION
 	visible = FALSE
+
+
+
+/datum/train_station/start_point
+	name = "Start-point"
+	map_path = "_maps/modular_events/trainstation/startpoint.dmm"
+	possible_next = list(/datum/train_station/military_house)
+	station_flags = TRAINSTATION_NO_FORKS | TRAINSTATION_NO_SELECTION | TRAINSTATION_BLOCKING
+
+/datum/train_station/military_house
+	name = "Military Side"
+	map_path = "_maps/modular_events/trainstation/startpoint.dmm"
+	station_flags = TRAINSTATION_NO_SELECTION | TRAINSTATION_BLOCKING
+
+
+
+/datum/train_station/warehouses
+	name = "Abandoned warehouses"
+	map_path = "_maps/modular_events/trainstation/startpoint.dmm"
+	station_flags = TRAINSTATION_BLOCKING
+
+/datum/train_station/frozen_lake
+	name = "Frozen lake"
+	map_path = "_maps/modular_events/trainstation/startpoint.dmm"
+	station_flags = TRAINSTATION_BLOCKING
+
+/datum/train_station/mines
+	name = "Abandoned mines"
+	map_path = "_maps/modular_events/trainstation/startpoint.dmm"
+	station_flags = TRAINSTATION_BLOCKING
+
+/datum/train_station/deep_forest
+	name = "Deep forest"
+	map_path = "_maps/modular_events/trainstation/startpoint.dmm"
+
+/datum/train_station/plains
+	name = "Plains"
+	map_path = "_maps/modular_events/trainstation/startpoint.dmm"
