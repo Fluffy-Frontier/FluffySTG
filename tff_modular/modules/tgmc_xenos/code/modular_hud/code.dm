@@ -19,8 +19,6 @@ GLOBAL_LIST_INIT(additional_combo_huds, list())
 	if(for_combohud)
 		GLOB.additional_combo_huds += trait_define
 
-	stack_trace(length(GLOB.huds))
-
 /proc/init_additional_huds()
 	register_new_data_hud(/datum/atom_hud/data/xeno, DATA_HUD_XENO, TRAIT_XENO_HUD, for_observer = TRUE, for_combohud = TRUE) // TRAIT_XENO_HUD - 12
 
