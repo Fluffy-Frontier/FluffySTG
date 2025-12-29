@@ -31,7 +31,7 @@ interface TurbineData {
   regulator: number;
   steam_consumption: number;
 
-  target_rpm_percentage: number; // Теперь это абсолютное значение RPM (не процент)
+  target_rpm: number; // Теперь это абсолютное значение RPM (не процент)
 }
 
 export const TrainTurbineComputer = () => {
@@ -52,7 +52,7 @@ export const TrainTurbineComputer = () => {
     outlet_pressure,
     regulator,
     steam_consumption,
-    target_rpm_percentage,
+    target_rpm,
   } = data;
 
   if (!connected) {
@@ -135,7 +135,9 @@ export const TrainTurbineComputer = () => {
                     step={0.01}
                     stepPixelSize={8}
                     value={regulator}
-                    onDrag={(value) => act('regulate', { regulate: value })}
+                    onChange={(_, value) =>
+                      act('regulate', { regulate: value })
+                    }
                     format={(v) => `${(v * 100).toFixed(0)}%`}
                   />
                 </LabeledList.Item>
@@ -319,7 +321,7 @@ export const TrainTurbineComputer = () => {
                 maxValue={max_rpm}
                 step={50}
                 stepPixelSize={2}
-                value={target_rpm_percentage}
+                value={target_rpm}
                 onChange={(_, value) =>
                   act('set_target_rpm', { target: value })
                 }
@@ -328,8 +330,7 @@ export const TrainTurbineComputer = () => {
                 fontSize="1.1rem"
               />
               <Box textAlign="center" mt={1} opacity={0.8}>
-                {((target_rpm_percentage / max_rpm) * 100).toFixed(1)}% от
-                максимума
+                {((target_rpm / max_rpm) * 100).toFixed(1)}% от максимума
               </Box>
             </Section>
           </Flex.Item>

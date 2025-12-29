@@ -129,7 +129,7 @@
 // ====================================================================
 
 /datum/looping_sound/turbine_loop
-	mid_sounds = 'modular_zvents/sounds/turbine_loop.ogg'
+	mid_sounds = list('modular_zvents/sounds/turbine_loop.ogg'=1)
 	mid_length = 24 SECONDS
 	volume = 60
 	falloff_exponent = 3
@@ -156,7 +156,7 @@
 	var/water_production_rate = 0.1
 
 	/// Целевые обороты в % от максимума (0-1). Управляется из UI.
-	var/target_rpm_percentage = 0.01
+	var/target_rpm = 0
 
 	var/datum/looping_sound/turbine_loop/soundloop
 	/// Ссылки на части
@@ -185,45 +185,46 @@
 	if(!active || !all_parts_connected || !powered(ignore_use_power = TRUE))
 		deactivate_parts()
 		return PROCESS_KILL
-
+	var/target_flow_multiplier = target_rpm / max_rpm
 	var/inlet_temperature = compressor.compress_gases()
 	if(!inlet_temperature || inlet_temperature < MIN_STEAM_TEMPERATURE)
 		rpm = max(rpm - 400 * seconds_per_tick, 0)
 		produced_energy = 0
 		return
-	var/datum/gas_mixture/ejected = null
-	if(!transfer_gases(compressor.machine_gasmix, machine_gasmix, 0, out_mixture = ejected))
-		rpm = max(rpm - 300 * seconds_per_tick, 0)
-		produced_energy = 0
-		return
-	var/available_steam = machine_gasmix.gases[/datum/gas/water_vapor][MOLES]
-	var/target_flow = steam_consumption_rate * compressor.intake_regulator * target_rpm_percentage
-	var/steam_consumed = min(available_steam, target_flow * seconds_per_tick * 10)
 
-	if(steam_consumed < 0.05)
+	var/datum/gas_mixture/compressor_gas = compressor.machine_gasmix
+	var/available_steam = compressor_gas.gases[/datum/gas/water_vapor]?[MOLES] || 0
+
+	if(available_steam < 0.05)
 		rpm = max(rpm - 500 * seconds_per_tick, 0)
 		produced_energy = 0
-	else
-		machine_gasmix.gases[/datum/gas/water_vapor][MOLES] -= steam_consumed
-		machine_gasmix.garbage_collect()
+		return
 
-	transfer_gases(machine_gasmix, turbine.machine_gasmix, 0)
-	var/base_power = steam_consumed * 30000
-	var/temp_bonus = max(inlet_temperature - MIN_STEAM_TEMPERATURE, 0) * 50
-	base_power += temp_bonus * steam_consumed
+	var/max_flow = steam_consumption_rate * compressor.intake_regulator * 10
+	var/steam_consumed = min(available_steam, (max_flow * seconds_per_tick * target_flow_multiplier) * steam_consumption_rate)
+
+	compressor_gas.gases[/datum/gas/water_vapor][MOLES] -= steam_consumed
+	compressor_gas.garbage_collect()
+
+	var/base_power = steam_consumed * 20000
+
+	var/temp_bonus = max(inlet_temperature - MIN_STEAM_TEMPERATURE, 0)
+	base_power += steam_consumed * temp_bonus * 60
 
 	var/total_efficiency = (compressor.efficiency + efficiency + turbine.efficiency) / 3
 	base_power *= total_efficiency
-	base_power *= (1 + rpm / max_rpm * 0.3)
 
-	var/target_rpm = base_power / 8000
-	rpm = lerp(rpm, target_rpm, 300 * seconds_per_tick)
-	rpm = min(rpm, max_rpm)
+	base_power *= (1 + (rpm / max_rpm) * 0.4)
 
-	produced_energy = rpm * 15 * seconds_per_tick
-	turbine.produce_water(steam_consumed * water_production_rate)
-	var/current_temp = machine_gasmix.temperature
-	var/overheat = max(current_temp - max_temperature, 0)
+	// var/target_rpm = base_power / 7000
+	rpm = lerp(rpm, target_rpm, 0.15)
+	rpm = clamp(rpm, 0, max_rpm)
+
+	produced_energy = rpm * 20
+	turbine.produce_water(steam_consumed * water_production_rate * 0.9)
+	machine_gasmix.temperature = lerp(machine_gasmix.temperature, inlet_temperature * 0.8 + T20C * 0.2, 0.05)
+
+	var/overheat = max(machine_gasmix.temperature - max_temperature, 0)
 	if(overheat > 0)
 		damage += overheat * 0.02 * seconds_per_tick
 		if(damage > damage_archived + 1 && COOLDOWN_FINISHED(src, turbine_damage_alert))
@@ -250,7 +251,7 @@
 	if(QDELETED(compressor) || QDELETED(turbine))
 		balloon_alert(user, "missing parts!")
 		return FALSE
-
+	target_rpm = min(target_rpm, max_rpm)
 	all_parts_connected = TRUE
 	if(!check_only)
 		compressor.rotor = src
@@ -319,6 +320,8 @@
 	. = ..()
 	internal_reagents = new(1000)
 	internal_reagents.my_atom = src
+
+	reagents = internal_reagents
 
 /obj/machinery/power/train_turbine/turbine_outlet/post_machine_initialize()
 	. = ..()
@@ -426,7 +429,7 @@
 	.["outlet_pressure"] = main_control.turbine?.machine_gasmix?.return_pressure() || MINIMUM_TURBINE_PRESSURE
 
 	.["regulator"] = main_control.compressor?.intake_regulator || 0.5
-	.["target_rpm_percentage"] = main_control.target_rpm_percentage * main_control.max_rpm
+	.["target_rpm"] = main_control.target_rpm
 	.["steam_consumption"] = main_control.steam_consumption_rate
 	.["water_production"] = main_control.water_production_rate
 
@@ -460,14 +463,14 @@
 			var/val = text2num(params["target"])
 			if(isnull(val))
 				return FALSE
-			main_control.target_rpm_percentage = clamp(val / main_control.max_rpm, 0, 1)
+			main_control.target_rpm = clamp(val, 0, main_control.max_rpm)
 			return TRUE
 
 		if("adjust_steam_rate")
 			var/adjust = text2num(params["adjust"])
 			if(isnull(adjust))
 				return FALSE
-			main_control.steam_consumption_rate = clamp(main_control.steam_consumption_rate + adjust, 0.05, 0.5)
+			main_control.steam_consumption_rate = clamp(main_control.steam_consumption_rate + adjust, 0.01, 1)
 			return TRUE
 
 		if("emergency_vent")
@@ -542,6 +545,7 @@
 	internal_reagents = new(HEATER_WATER_VOLUME)
 	internal_reagents.my_atom = src
 
+	reagents = internal_reagents
 	// Plumbing для воды (вход)
 	heater_plumbing = AddComponent(/datum/component/plumbing/heater_plumbing, custom_receiver = internal_reagents)
 	heater_plumbing.enable()

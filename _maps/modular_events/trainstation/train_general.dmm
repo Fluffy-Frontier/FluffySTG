@@ -440,8 +440,7 @@
 /turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/security)
 "dx" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
-/obj/item/construction/plumbing,
+/obj/machinery/duct/waste,
 /turf/open/floor/iron/dark/diagonal,
 /area/trainstation/indoors/train/vagon_7)
 "dz" = (
@@ -781,6 +780,11 @@
 	},
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/security)
+"fC" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
+/obj/machinery/duct/waste,
+/turf/open/floor/iron/dark/diagonal,
+/area/trainstation/indoors/train/vagon_7)
 "fE" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 6
@@ -4252,6 +4256,12 @@
 	},
 /turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/security)
+"GN" = (
+/obj/machinery/door/airlock/train_locomotive,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
+/obj/machinery/duct/waste,
+/turf/open/floor/iron/dark/diagonal,
+/area/trainstation/indoors/train/vagon_7)
 "GO" = (
 /obj/effect/turf_decal/siding/dark_red/corner{
 	dir = 1
@@ -4433,8 +4443,8 @@
 /turf/open/floor/iron/dark/diagonal,
 /area/trainstation/indoors/train/vagon_6)
 "HV" = (
-/obj/machinery/door/airlock/train_locomotive,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
+/obj/item/construction/plumbing,
 /turf/open/floor/iron/dark/diagonal,
 /area/trainstation/indoors/train/vagon_7)
 "HY" = (
@@ -9308,7 +9318,7 @@ td
 rn
 td
 QV
-td
+dx
 dH
 aV
 QV
@@ -9323,7 +9333,7 @@ td
 rn
 td
 QV
-td
+dx
 td
 aV
 QV
@@ -9338,7 +9348,7 @@ td
 rn
 td
 ZN
-td
+dx
 dH
 aV
 Ps
@@ -9353,8 +9363,8 @@ td
 td
 td
 QV
-td
-aV
+dx
+fC
 aV
 QV
 td
@@ -9369,7 +9379,7 @@ QV
 QV
 QV
 QV
-HV
+GN
 QV
 QV
 QV
@@ -9384,7 +9394,7 @@ QV
 td
 aV
 aV
-aV
+fC
 td
 td
 td
@@ -9412,7 +9422,7 @@ Ya
 Ks
 QV
 Ee
-dx
+HV
 gS
 RO
 kA
