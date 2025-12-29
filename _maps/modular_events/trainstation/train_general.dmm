@@ -300,7 +300,7 @@
 /turf/open/floor/plating,
 /area/trainstation/indoors/train/tech_3)
 "cF" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/tech_2)
 "cH" = (
 /obj/effect/turf_decal/tile/dark/diagonal_centre,
@@ -440,8 +440,10 @@
 /turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/security)
 "dx" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
-/area/trainstation/indoors/train/tech_7)
+/obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
+/obj/item/construction/plumbing,
+/turf/open/floor/iron/dark/diagonal,
+/area/trainstation/indoors/train/vagon_7)
 "dz" = (
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 8
@@ -630,7 +632,7 @@
 	color = "#683d21";
 	pixel_y = 4
 	},
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/tech_4)
 "eH" = (
 /obj/structure/table/reinforced,
@@ -846,7 +848,7 @@
 /turf/open/floor/carpet/green,
 /area/trainstation/indoors/train/vagon_1)
 "ga" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/reustoran)
 "gc" = (
 /obj/structure/sign/warning/no_smoking/directional/south,
@@ -870,7 +872,7 @@
 /turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/tech_3)
 "gv" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/conductor_4)
 "gy" = (
 /obj/effect/turf_decal/siding/dark{
@@ -892,7 +894,7 @@
 /turf/open/floor/carpet/green/airless,
 /area/trainstation/indoors/train/vagon_2)
 "gF" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/tech_4)
 "gH" = (
 /obj/effect/turf_decal/siding/dark_red{
@@ -1108,7 +1110,7 @@
 /turf/open/floor/plating,
 /area/trainstation/indoors/train/tech_6)
 "im" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/vagon_2)
 "ip" = (
 /obj/structure/chair/sofa/left/brown{
@@ -1291,7 +1293,7 @@
 /turf/open/floor/carpet/royalblue,
 /area/trainstation/indoors/train/vagon_3)
 "kb" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/tech_1)
 "kg" = (
 /obj/machinery/light/small/dim/directional/east,
@@ -1437,7 +1439,7 @@
 /turf/open/floor/iron/dark/small,
 /area/trainstation/indoors/train/tech_3)
 "kX" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/tech_5)
 "la" = (
 /obj/structure/window/reinforced/survival_pod/indestructible/spawner/directional/east,
@@ -1506,7 +1508,7 @@
 /turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/tech_7)
 "lA" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/conductor_2)
 "lH" = (
 /obj/effect/turf_decal/siding/dark_red/corner{
@@ -1589,7 +1591,7 @@
 /turf/open/floor/iron/white,
 /area/trainstation/indoors/train/medical)
 "mm" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/medical)
 "my" = (
 /obj/structure/bed/pod,
@@ -2036,7 +2038,7 @@
 /area/trainstation/indoors/train/conductor_2)
 "oH" = (
 /obj/structure/sign/warning/yes_smoking,
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/bathroom)
 "oR" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2125,7 +2127,7 @@
 /turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/tech_5)
 "pR" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/tech_6)
 "pU" = (
 /obj/effect/turf_decal/siding/wood/corner,
@@ -2215,7 +2217,7 @@
 /turf/open/floor/carpet/green/airless,
 /area/trainstation/indoors/train/vagon_3)
 "qz" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/tech_3)
 "qF" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -2396,7 +2398,7 @@
 /turf/open/floor/carpet/red,
 /area/trainstation/indoors/train/reustoran)
 "rU" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/vagon_6)
 "rW" = (
 /obj/structure/table/wood/fancy/green,
@@ -2664,7 +2666,7 @@
 /turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/tech_4)
 "tH" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/vagon_5)
 "tJ" = (
 /obj/effect/turf_decal/siding/dark_red{
@@ -2673,7 +2675,7 @@
 /turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/tech_7)
 "tO" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/security)
 "tP" = (
 /obj/effect/turf_decal/siding/wood{
@@ -3168,11 +3170,6 @@
 	},
 /turf/open/floor/carpet/green,
 /area/trainstation/indoors/train/vagon_3)
-"yB" = (
-/obj/machinery/door/airlock/train_locomotive,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
-/turf/open/floor/iron/dark/diagonal,
-/area/trainstation/indoors/train/vagon_7)
 "yE" = (
 /obj/structure/sign/clock/directional/north,
 /obj/effect/turf_decal/trimline/blue/filled/line,
@@ -3912,7 +3909,7 @@
 /turf/open/floor/carpet/purple,
 /area/trainstation/indoors/train/conductor_3)
 "DL" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/bathroom)
 "DR" = (
 /obj/effect/turf_decal/siding/dark_red/inner_corner,
@@ -4072,7 +4069,7 @@
 /turf/open/floor/iron/white,
 /area/trainstation/indoors/train/medical)
 "Fm" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/vagon_1)
 "Fo" = (
 /obj/effect/turf_decal/siding/wood{
@@ -4242,7 +4239,7 @@
 /turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/tech_6)
 "GF" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/kitchen)
 "GI" = (
 /obj/effect/turf_decal/siding/dark_red/inner_corner,
@@ -4436,7 +4433,9 @@
 /turf/open/floor/iron/dark/diagonal,
 /area/trainstation/indoors/train/vagon_6)
 "HV" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/obj/machinery/door/airlock/train_locomotive,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
+/turf/open/floor/iron/dark/diagonal,
 /area/trainstation/indoors/train/vagon_7)
 "HY" = (
 /obj/structure/chair/sofa/bench/right{
@@ -4470,11 +4469,6 @@
 /obj/structure/broken_flooring/plating/always_floorplane/directional/north,
 /turf/open/floor/plating,
 /area/trainstation/indoors/train/tech_1)
-"Iz" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
-/obj/item/construction/plumbing,
-/turf/open/floor/iron/dark/diagonal,
-/area/trainstation/indoors/train/vagon_7)
 "IB" = (
 /obj/structure/musician/piano,
 /obj/item/clothing/head/helmet/space/santahat/beardless,
@@ -5282,7 +5276,7 @@
 /turf/open/floor/iron/dark/pattern_11,
 /area/trainstation/indoors/train/reustoran)
 "OF" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/conductor_3)
 "OG" = (
 /obj/effect/turf_decal/siding/dark/end{
@@ -6235,7 +6229,7 @@
 /area/trainstation/indoors/train/tech_6)
 "VG" = (
 /obj/machinery/door/train/train_door,
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/vagon_6)
 "VI" = (
 /obj/effect/turf_decal/siding/dark_red/inner_corner,
@@ -6349,7 +6343,7 @@
 /turf/open/floor/carpet/royalblue,
 /area/trainstation/indoors/train/vagon_1)
 "Wu" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/conductor_1)
 "Ww" = (
 /obj/effect/turf_decal/trimline/blue/filled/corner{
@@ -6495,7 +6489,7 @@
 /turf/open/floor/carpet/blue,
 /area/trainstation/indoors/train/vagon_5)
 "Xs" = (
-/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/vagon_3)
 "Xt" = (
 /obj/structure/window/reinforced/shuttle/survival_pod,
@@ -9249,7 +9243,7 @@ Wd
 ia
 "}
 (160,1,1) = {"
-dx
+lw
 lZ
 hT
 Tf
@@ -9271,7 +9265,7 @@ lw
 lw
 lw
 xB
-dx
+lw
 lw
 lw
 lw
@@ -9283,7 +9277,7 @@ QV
 td
 td
 td
-HV
+QV
 td
 td
 td
@@ -9298,7 +9292,7 @@ QV
 td
 rn
 td
-HV
+QV
 td
 td
 td
@@ -9313,7 +9307,7 @@ QV
 td
 rn
 td
-HV
+QV
 td
 dH
 aV
@@ -9328,7 +9322,7 @@ QV
 td
 rn
 td
-HV
+QV
 td
 td
 aV
@@ -9375,7 +9369,7 @@ QV
 QV
 QV
 QV
-yB
+HV
 QV
 QV
 QV
@@ -9418,7 +9412,7 @@ Ya
 Ks
 QV
 Ee
-Iz
+dx
 gS
 RO
 kA
