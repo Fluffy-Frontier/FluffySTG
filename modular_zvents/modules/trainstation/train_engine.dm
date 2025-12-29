@@ -256,7 +256,6 @@
 	if(!check_only)
 		compressor.rotor = src
 		turbine.rotor = src
-		max_rpm = (compressor.installed_part.get_tier_value(TURBINE_MAX_RPM) + turbine.installed_part.get_tier_value(TURBINE_MAX_RPM) + installed_part.get_tier_value(TURBINE_MAX_RPM)) / 3
 		max_temperature = (compressor.installed_part.get_tier_value(TURBINE_MAX_TEMP) + turbine.installed_part.get_tier_value(TURBINE_MAX_TEMP) + installed_part.get_tier_value(TURBINE_MAX_TEMP)) / 3
 		efficiency = (compressor.efficiency + turbine.efficiency + efficiency) / 3
 
