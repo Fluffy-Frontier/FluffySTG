@@ -39,6 +39,7 @@ export const MESSAGE_TYPE_ADMINLOG = 'adminlog';
 export const MESSAGE_TYPE_ATTACKLOG = 'attacklog';
 export const MESSAGE_TYPE_DEBUG = 'debug';
 export const MESSAGE_TYPE_MENTOR = 'mentor'; // NOVA EDIT ADDITION
+export const MESSAGE_TYPE_SUBTLE = 'subtle'; // NOVA EDIT ADDITION
 export const MESSAGE_TYPE_EVENTMAKER = 'eventmaker'; // TFF EDIT - Eventmaker
 
 // Metadata for each message type
@@ -109,6 +110,12 @@ export const MESSAGE_TYPES = [
     description: 'Urist McTraitor has stabbed you with a knife!',
     selector: '.danger',
   },
+  { // NOVA EDIT ADDITION START
+    type: MESSAGE_TYPE_SUBTLE,
+    name: 'Subtle',
+    description: 'Subtle and Subtler actions.',
+    selector: '.subtle, .subtler',
+  }, // NOVA EDIT ADDITION END
   {
     type: MESSAGE_TYPE_UNKNOWN,
     name: 'Unsorted',
@@ -154,12 +161,12 @@ export const MESSAGE_TYPES = [
     description: 'DEBUG: SSPlanets subsystem Recover().',
     admin: true,
   },
-  {
-    type: MESSAGE_TYPE_MENTOR, // NOVA EDIT
+  { // NOVA EDIT ADDITION START
+    type: MESSAGE_TYPE_MENTOR,
     name: 'Mentor Log',
     description: 'Mentor PMs and other mentor things.',
     selector: '.mentor, .mentornotice',
-  },
+  },// NOVA EDIT ADDITION END
   // TFF ADDITION START - Eventmaker
   {
     type: MESSAGE_TYPE_EVENTMAKER,

@@ -6,7 +6,7 @@
 /// Elecrocute - добавляет мутацию shock touch
 /// Freeze - заковывает моба в лёд на небольшой промежуток.
 
-// Добавить школу внушения
+// Добавить школу энергетики
 /mob/living/carbon/human/proc/try_add_energistics_school(tier = 0, additional_school = 0)
 	if(tier >= 0)
 		var/datum/action/new_action = new /datum/action/cooldown/spell/touch/psyonic/psyonic_discharge(src.mind || src, tier, additional_school)

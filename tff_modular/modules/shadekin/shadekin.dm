@@ -37,7 +37,15 @@
 		SPECIES_PERK_ICON = "lightbulb",
 		SPECIES_PERK_NAME = "Dark Regeneration",
 		SPECIES_PERK_DESC = "Shadekins regenerate their physical wounds while in the darkness."
-	))
+	),
+	list(
+			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
+			SPECIES_PERK_ICON = "moon",
+			SPECIES_PERK_NAME = "Darkness Assist",
+			SPECIES_PERK_DESC = "Thanks to their kinship with darkness, Shadekins gain additional  \
+								speed of movement and actions when in the dark.",
+		)
+	)
 
 	to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
@@ -99,6 +107,16 @@
 	regenerate_organs(shadekin, src, visual_only = TRUE)
 	shadekin.update_body(TRUE)
 
+/datum/species/shadekin/get_species_description()
+    return list(
+        "Shadekins appeared somewhere in distant space."
+    )
+
+/datum/species/shadekin/get_species_lore()
+    return list(
+        "It is unclear when exactly Shadekin first spawned, though it is assumedly a relatively recent development."
+    )
+
 /obj/item/organ/brain/shadekin
 	name = "shadekin brain"
 	desc = "A mysterious brain."
@@ -113,13 +131,15 @@
 		return
 	var/light_amount = owner_turf.get_lumcount()
 
-	if (light_amount < SHADOW_SPECIES_LIGHT_THRESHOLD) //heal in the dark
+	if (light_amount < SHADOW_SPECIES_LIGHT_THRESHOLD) //heal in the dark and additional speed
 		owner.apply_status_effect(applied_status)
 		owner.remove_movespeed_modifier(/datum/movespeed_modifier/light_averse)
 		owner.add_movespeed_modifier(/datum/movespeed_modifier/dark_affinity)
+		owner.add_actionspeed_modifier(/datum/actionspeed_modifier/hands_of_darkness)
 	else
 		owner.add_movespeed_modifier(/datum/movespeed_modifier/light_averse)
 		owner.remove_movespeed_modifier(/datum/movespeed_modifier/dark_affinity)
+		owner.remove_actionspeed_modifier(/datum/actionspeed_modifier/hands_of_darkness)
 
 /datum/status_effect/shadekin_regeneration
 	id = "shadekin_regeneration"
@@ -153,6 +173,9 @@
 
 /datum/movespeed_modifier/dark_affinity
 	multiplicative_slowdown = -0.2
+
+/datum/actionspeed_modifier/hands_of_darkness
+	multiplicative_slowdown = -0.25
 
 /mob/living/carbon/human/species/shadekin
 	race = /datum/species/shadekin
