@@ -8,5 +8,5 @@ NC="\033[0m" # No Color
 
 echo -e "${BLUE}Re-running grep checks, but looking in tff_modular...${NC}"
 
-# Run the linters again, but modular skyrat and fluffy code.
-sed "s|code/\*\*/\*\.dm|modular_skyrat/\*\*/\*\.dm|tff_modular/\*\*/\*\.dm|g" <tools/ci/check_grep.sh | bash
+# Run the linters again, but modular nova and fluffy code.
+sed "s|code/\*\*/\*\.dm|modular_nova/\*\*/\*\.dm|tff_modular/\*\*/\*\.dm|g" <tools/ci/check_grep.sh | bash

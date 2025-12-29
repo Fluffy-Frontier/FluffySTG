@@ -1,9 +1,9 @@
 /obj/item/storage/backpack/waistbag
 	name = "Waistbag"
 	desc = "It's a waistbag with hipbelt."
-	icon = 'tff_modular/modules/clothing/backpack/backpack_icon.dmi'
+	icon = 'tff_modular/modules/clothing/icons/obj/backpack.dmi'
 	icon_state = "weistbag_black"
-	worn_icon = 'tff_modular/modules/clothing/backpack/backpack.dmi'
+	worn_icon = 'tff_modular/modules/clothing/icons/mob/backpack.dmi'
 
 /obj/item/storage/backpack/waistbag/camo
 	name = "Camo waistbag"
