@@ -239,7 +239,7 @@
 	else if(istype(target_atom, /obj/structure/closet))
 		return TRUE
 	// Target Type: Mecha
-	else if(istype(target_atom), /obj/vehiche/sealed/mecha)
+	else if(istype(target_atom, /obj/vehicle/sealed/mecha))
 		return TRUE
 	return FALSE
 
