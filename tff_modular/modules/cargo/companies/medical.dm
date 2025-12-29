@@ -139,3 +139,46 @@
 
 /datum/supply_pack/companies/medical/medpens_stim/demoneye
 	cost = PAYCHECK_COMMAND * 6
+
+/datum/supply_pack/companies/medical/medpens/pentibinin
+	contraband = TRUE
+
+/datum/supply_pack/companies/medical/medpens_stim/aranepaine
+	contraband = TRUE
+
+/datum/supply_pack/companies/medical/medpens_stim/synalvipitol
+	contraband = TRUE
+
+/datum/supply_pack/companies/medical/medpens_stim/twitch
+	contraband = TRUE
+
+/datum/supply_pack/companies/medical/medpens_stim/demoneye
+	contraband = TRUE
+
+//Cyberpunk implants can be bought only from restricted consoles
+/datum/supply_pack/medical/arm_implants
+	access_view = ACCESS_MEDICAL
+	access = ACCESS_MEDICAL
+
+/datum/design/cyberimp_hackerman
+	category = list(
+		RND_CATEGORY_SYNDICATE
+	)
+
+// Изменение цен для заказов карго вот этих вот -> 'modular_nova\modules\deforest_medical_items\code\cargo_packs.dm'
+
+/datum/supply_pack/medical/civil_defense
+
+/datum/supply_pack/medical/civil_defense/comfort
+
+/datum/supply_pack/medical/frontier_first_aid
+
+/datum/supply_pack/medical/kit_technician
+	cost = CARGO_CRATE_VALUE * 8
+
+/datum/supply_pack/medical/kit_surgical
+
+/datum/supply_pack/medical/kit_medical
+	cost = CARGO_CRATE_VALUE * 5.5
+
+/datum/supply_pack/medical/deforest_vendor_refill
