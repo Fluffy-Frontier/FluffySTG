@@ -3,6 +3,8 @@ import {
   Feature,
   FeatureChoiced,
   FeatureColorInput,
+  FeatureSliderInput,
+  type FeatureValueProps
   FeatureNumberInput,
 } from '../../base';
 import { FeatureDropdownInput } from '../../dropdowns';
