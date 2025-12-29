@@ -53,7 +53,7 @@
 /obj/machinery/power/train_turbine/proc/is_active()
 	return rotor?.active || FALSE
 
-/obj/machinery/power/train_turbine/proc/transfer_gases(datum/gas_mixture/input_mix, datum/gas_mixture/output_mix, work_amount_to_remove = 0, intake_size = 1)
+/obj/machinery/power/train_turbine/proc/transfer_gases(datum/gas_mixture/input_mix, datum/gas_mixture/output_mix, work_amount_to_remove = 0, intake_size = 1, datum/gas_mixture/out_mixture)
 	var/output_pressure = PRESSURE_MAX(output_mix.return_pressure())
 	var/datum/gas_mixture/transferred_gases = input_mix.pump_gas_to(output_mix, input_mix.return_pressure() * intake_size)
 	if(!transferred_gases)
@@ -68,6 +68,7 @@
 		return 0
 	work_done = min(work_done, (output_mix_heat_capacity * output_mix.temperature - output_mix_heat_capacity * TCMB) / TURBINE_HEAT_CONVERSION_MULTIPLIER)
 	output_mix.temperature = max((output_mix.temperature * output_mix_heat_capacity + work_done * TURBINE_HEAT_CONVERSION_MULTIPLIER) / output_mix_heat_capacity, TCMB)
+	out_mixture = transferred_gases
 	return work_done
 
 // ====================================================================
@@ -91,9 +92,12 @@
 	/// Atmos connector для труб
 	var/datum/gas_machine_connector/connector
 
-/obj/machinery/power/train_turbine/inlet_compressor/Initialize(mapload)
+/obj/machinery/power/train_turbine/inlet_compressor/post_machine_initialize()
 	. = ..()
-	connector = new(loc, src, REVERSE_DIR(dir), CELL_VOLUME * 0.5)
+	var/connector_dir = REVERSE_DIR(dir)
+	connector = new(loc, src, connector_dir, CELL_VOLUME * 0.5)
+	connector.gas_connector.dir = connector_dir
+	connector.gas_connector.initialize_directions = connector_dir
 
 /obj/machinery/power/train_turbine/inlet_compressor/Destroy()
 	QDEL_NULL(connector)
@@ -149,7 +153,6 @@
 	var/all_parts_connected = FALSE
 
 	var/steam_consumption_rate = 0.1
-	var/co2_production_rate = 0.15
 	var/water_production_rate = 0.1
 
 	/// Целевые обороты в % от максимума (0-1). Управляется из UI.
@@ -183,57 +186,50 @@
 		deactivate_parts()
 		return PROCESS_KILL
 
-	var/temperature = compressor.compress_gases()
-	if(!temperature)
-		rpm = 0
+	var/inlet_temperature = compressor.compress_gases()
+	if(!inlet_temperature || inlet_temperature < MIN_STEAM_TEMPERATURE)
+		rpm = max(rpm - 400 * seconds_per_tick, 0)
 		produced_energy = 0
 		return
+	var/datum/gas_mixture/ejected = null
+	if(!transfer_gases(compressor.machine_gasmix, machine_gasmix, 0, out_mixture = ejected))
+		rpm = max(rpm - 300 * seconds_per_tick, 0)
+		produced_energy = 0
+		return
+	var/available_steam = machine_gasmix.gases[/datum/gas/water_vapor][MOLES]
+	var/target_flow = steam_consumption_rate * compressor.intake_regulator * target_rpm_percentage
+	var/steam_consumed = min(available_steam, target_flow * seconds_per_tick * 10)
 
-	// Автоматическая регулировка впуска для достижения target RPM (простой П-регулятор)
-	var/target_rpm = max_rpm * target_rpm_percentage
-	var/rpm_error = target_rpm - rpm
-	compressor.intake_regulator = clamp(compressor.intake_regulator + rpm_error * 0.00005, 0.01, 1)
+	if(steam_consumed < 0.05)
+		rpm = max(rpm - 500 * seconds_per_tick, 0)
+		produced_energy = 0
+	else
+		machine_gasmix.gases[/datum/gas/water_vapor][MOLES] -= steam_consumed
+		machine_gasmix.garbage_collect()
 
-	// Реакция: потребляем пар → CO2 + вода
-	ASSERT_GAS(/datum/gas/water_vapor, compressor.machine_gasmix)
-	var/steam_consumed = min(compressor.machine_gasmix.gases[/datum/gas/water_vapor][MOLES], steam_consumption_rate * compressor.intake_regulator)
-	compressor.machine_gasmix.gases[/datum/gas/water_vapor][MOLES] -= steam_consumed
-	compressor.machine_gasmix.garbage_collect()
+	transfer_gases(machine_gasmix, turbine.machine_gasmix, 0)
+	var/base_power = steam_consumed * 30000
+	var/temp_bonus = max(inlet_temperature - MIN_STEAM_TEMPERATURE, 0) * 50
+	base_power += temp_bonus * steam_consumed
 
-	ASSERT_GAS(/datum/gas/carbon_dioxide, machine_gasmix)
-	machine_gasmix.gases[/datum/gas/carbon_dioxide][MOLES] += co2_production_rate * compressor.intake_regulator
+	var/total_efficiency = (compressor.efficiency + efficiency + turbine.efficiency) / 3
+	base_power *= total_efficiency
+	base_power *= (1 + rpm / max_rpm * 0.3)
 
-	var/work_done = steam_consumed * efficiency * 10000
-	temperature += work_done / machine_gasmix.heat_capacity() * 0.1
+	var/target_rpm = base_power / 8000
+	rpm = lerp(rpm, target_rpm, 300 * seconds_per_tick)
+	rpm = min(rpm, max_rpm)
 
-	// Урон от перегрева
-	damage_archived = damage
-	var/temp_diff = temperature - max_temperature
-	if(temp_diff > 0)
-		damage += temp_diff * 0.01 * seconds_per_tick
+	produced_energy = rpm * 15 * seconds_per_tick
+	turbine.produce_water(steam_consumed * water_production_rate)
+	var/current_temp = machine_gasmix.temperature
+	var/overheat = max(current_temp - max_temperature, 0)
+	if(overheat > 0)
+		damage += overheat * 0.02 * seconds_per_tick
 		if(damage > damage_archived + 1 && COOLDOWN_FINISHED(src, turbine_damage_alert))
 			COOLDOWN_START(src, turbine_damage_alert, 10 SECONDS)
 			playsound(src, 'sound/machines/engine_alert/engine_alert1.ogg', 100, FALSE)
 			balloon_alert_to_viewers("overheating! integrity [get_integrity()]%")
-
-	// Охлаждение за счёт конденсации
-	temperature = max(temperature - steam_consumed * 50, T20C)
-
-	turbine.produce_water(steam_consumed * water_production_rate)
-
-	var/rotor_work = transfer_gases(compressor.machine_gasmix, machine_gasmix, compressor.compressor_work)
-	var/turbine_work = transfer_gases(machine_gasmix, turbine.machine_gasmix, abs(rotor_work))
-
-	var/datum/gas_mixture/ejected = turbine.expel_gases()
-	if(!ejected)
-		rpm = 0
-		produced_energy = 0
-		return
-
-	work_done = QUANTIZE(ejected.total_moles()) * R_IDEAL_GAS_EQUATION * ejected.temperature * log(compressor.compressor_pressure / PRESSURE_MAX(ejected.return_pressure()))
-	work_done = max(work_done - compressor.compressor_work - turbine_work, 0)
-	rpm = min(((work_done * compressor.efficiency) ** turbine.efficiency) * efficiency / TURBINE_RPM_CONVERSION, max_rpm)
-	produced_energy = rpm * TURBINE_ENERGY_RECTIFICATION_MULTIPLIER * seconds_per_tick
 
 	if(get_integrity() <= 0)
 		explosion(src, devastation_range = 1, heavy_impact_range = 2, light_impact_range = 4)
@@ -294,10 +290,11 @@
 /obj/machinery/power/train_turbine/core_rotor/proc/emergency_vent()
 	if(!active || !turbine)
 		return
-	var/datum/gas_mixture/full_dump = turbine.expel_gases()  // Полный сброс
+/*
 	if(full_dump)
 		rpm *= 0.5  // Резкое падение оборотов
 		balloon_alert_to_viewers("emergency vent activated!")
+*/
 
 /obj/machinery/power/train_turbine/core_rotor/proc/apply_thrust_to_train()
 
@@ -322,25 +319,16 @@
 	. = ..()
 	internal_reagents = new(1000)
 	internal_reagents.my_atom = src
-	plumbing = AddComponent(/datum/component/plumbing/steam_turbine)
+
+/obj/machinery/power/train_turbine/turbine_outlet/post_machine_initialize()
+	. = ..()
+	plumbing = AddComponent(/datum/component/plumbing/steam_turbine, custom_receiver = internal_reagents)
 	plumbing.enable()
 
 /obj/machinery/power/train_turbine/turbine_outlet/Destroy()
 	QDEL_NULL(plumbing)
 	QDEL_NULL(internal_reagents)
 	return ..()
-
-/obj/machinery/power/train_turbine/turbine_outlet/proc/expel_gases()
-	if(QDELETED(output_turf))
-		output_turf = get_step(loc, REVERSE_DIR(dir))
-	if(isclosedturf(output_turf))
-		return null
-
-	var/datum/gas_mixture/ejected = machine_gasmix.pump_gas_to(output_turf.air, machine_gasmix.return_pressure())
-	if(ejected)
-		output_turf.air_update_turf(TRUE)
-		output_turf.update_visuals()
-	return ejected
 
 /obj/machinery/power/train_turbine/turbine_outlet/proc/produce_water(amount)
 	internal_reagents.add_reagent(/datum/reagent/water, amount)
@@ -438,9 +426,8 @@
 	.["outlet_pressure"] = main_control.turbine?.machine_gasmix?.return_pressure() || MINIMUM_TURBINE_PRESSURE
 
 	.["regulator"] = main_control.compressor?.intake_regulator || 0.5
-	.["target_rpm_percentage"] = main_control.target_rpm_percentage * 100
+	.["target_rpm_percentage"] = main_control.target_rpm_percentage * main_control.max_rpm
 	.["steam_consumption"] = main_control.steam_consumption_rate
-	.["co2_production"] = main_control.co2_production_rate
 	.["water_production"] = main_control.water_production_rate
 
 /obj/machinery/computer/train_turbine_computer/ui_act(action, list/params)
@@ -470,10 +457,10 @@
 			return TRUE
 
 		if("set_target_rpm")
-			var/val = params["target"]
+			var/val = text2num(params["target"])
 			if(isnull(val))
 				return FALSE
-			main_control.target_rpm_percentage = clamp(text2num(val) / 100, 0, 1)
+			main_control.target_rpm_percentage = clamp(val / main_control.max_rpm, 0, 1)
 			return TRUE
 
 		if("adjust_steam_rate")
@@ -503,3 +490,234 @@
 #undef PRESSURE_MAX
 #undef MINIMUM_TURBINE_PRESSURE
 #undef MIN_STEAM_TEMPERATURE
+
+
+
+
+/// Минимальная температура для сгорания плазмы
+#define MIN_PLASMA_COMBUSTION_TEMP 373 // K (100C)
+/// Коэффициент энергии от сгорания плазмы (джоули на лист)
+#define PLASMA_SHEET_BURN_ENERGY 100000 // Больше, так как лист - это "блок" ресурса
+/// Объем внутренней камеры для воды (реагенты)
+#define HEATER_WATER_VOLUME 1000
+/// Минимальная температура для кипения воды в пар
+#define WATER_BOIL_TEMP 373 // K
+/// Скорость потребления плазмы (листы/тик, дробная)
+#define PLASMA_SHEET_CONSUMPTION_RATE 0.01 // Медленно "сжигает" лист
+
+// Нагреватель для поезда: сжигает плазмовые листы для кипячения воды в пар
+/obj/machinery/power/train_heater
+	name = "train plasma heater"
+	desc = "A heater that burns plasma sheets to boil water into steam for the train turbine. Insert plasma sheets, connect plumbing for water input and gas pipes for steam output."
+	icon = 'modular_nova/modules/colony_fabricator/icons/thermomachine.dmi'
+	icon_state = "thermo_base"
+	base_icon_state = "thermo_base"
+	density = TRUE
+	resistance_flags = FIRE_PROOF
+	can_atmos_pass = ATMOS_PASS_DENSITY
+	processing_flags = START_PROCESSING_MANUALLY
+
+	/// Активен ли нагреватель
+	var/active = FALSE
+	/// Текущая температура камеры
+	var/temperature = T20C
+	/// Целевая температура
+	var/target_temperature = 500 // K
+	/// Внутренняя газовая смесь для выхода пара
+	var/datum/gas_mixture/internal_gasmix
+	/// Внутренние реагенты для воды
+	var/datum/reagents/internal_reagents
+	/// Atmos connector для выхода пара
+	var/datum/gas_machine_connector/steam_output
+	/// Plumbing для входа воды
+	var/datum/component/plumbing/heater_plumbing
+	/// Стек плазмовых листов внутри
+	var/obj/item/stack/sheet/mineral/plasma/plasma_stack
+
+/obj/machinery/power/train_heater/Initialize(mapload)
+	. = ..()
+	internal_gasmix = new
+	internal_gasmix.volume = 500 // Для пара
+
+	internal_reagents = new(HEATER_WATER_VOLUME)
+	internal_reagents.my_atom = src
+
+	// Plumbing для воды (вход)
+	heater_plumbing = AddComponent(/datum/component/plumbing/heater_plumbing, custom_receiver = internal_reagents)
+	heater_plumbing.enable()
+
+	// Atmos connector только для выхода пара
+	steam_output = new(loc, src, dir, CELL_VOLUME * 0.5) // Выход пара вперед
+
+	air_update_turf(TRUE)
+	update_appearance(UPDATE_OVERLAYS)
+	register_context()
+
+/obj/machinery/power/train_heater/Destroy()
+	QDEL_NULL(internal_gasmix)
+	QDEL_NULL(internal_reagents)
+	QDEL_NULL(steam_output)
+	QDEL_NULL(heater_plumbing)
+	if(plasma_stack)
+		plasma_stack.forceMove(loc)
+		plasma_stack = null
+	return ..()
+
+/obj/machinery/power/train_heater/examine(mob/user)
+	. = ..()
+	if(plasma_stack)
+		. += span_notice("It has [plasma_stack.amount] plasma sheets inserted.")
+	else
+		. += span_notice("It has no plasma sheets. Insert some to fuel it.")
+
+/obj/machinery/power/train_heater/attackby(obj/item/item, mob/user, params)
+	if(istype(item, /obj/item/stack/sheet/mineral/plasma))
+		if(plasma_stack)
+			balloon_alert(user, "already has plasma!")
+			return TRUE
+		if(!user.transferItemToLoc(item, src))
+			return TRUE
+		plasma_stack = item
+		balloon_alert(user, "inserted plasma sheets")
+		update_appearance(UPDATE_OVERLAYS)
+		return TRUE
+	return ..()
+
+
+/obj/machinery/power/train_heater/attack_hand(mob/living/user, list/modifiers)
+	toggle_active(user)
+	return TRUE
+
+/obj/machinery/power/train_heater/proc/toggle_active(mob/user)
+	if(!plasma_stack || plasma_stack.amount <= 0)
+		balloon_alert(user, "no plasma fuel!")
+		return
+	active = !active
+	if(active)
+		begin_processing()
+	else
+		end_processing()
+		temperature = max(temperature - 50, T20C)
+	balloon_alert(user, active ? "activated" : "deactivated")
+	update_appearance(UPDATE_OVERLAYS)
+
+/obj/machinery/power/train_heater/process(seconds_per_tick)
+	if(!active || !powered(ignore_use_power = TRUE) || !plasma_stack || plasma_stack.amount <= 0)
+		active = FALSE
+		end_processing()
+		return PROCESS_KILL
+
+
+	var/plasma_consumed = min(PLASMA_SHEET_CONSUMPTION_RATE * seconds_per_tick, plasma_stack.amount)
+	plasma_stack.use(plasma_consumed)
+
+	var/energy_generated = plasma_consumed * PLASMA_SHEET_BURN_ENERGY
+
+	var/temp_error = target_temperature - temperature
+	var/consumption_adjust = temp_error * 0.0001
+
+	if(internal_reagents.has_reagent(/datum/reagent/water, 10) && temperature >= WATER_BOIL_TEMP)
+		var/water_boiled = min(internal_reagents.get_reagent_amount(/datum/reagent/water), 10 * seconds_per_tick)
+		internal_reagents.remove_reagent(/datum/reagent/water, water_boiled)
+		ADD_GAS(/datum/gas/water_vapor, internal_gasmix.gases)
+		internal_gasmix.gases[/datum/gas/water_vapor][MOLES] += water_boiled
+		temperature += energy_generated / (internal_reagents.heat_capacity() + internal_gasmix.heat_capacity()) * seconds_per_tick
+
+		internal_gasmix.temperature = temperature
+		var/datum/gas_mixture/steam_mix = steam_output.gas_connector.airs[1]
+		if(steam_mix)
+			internal_gasmix.pump_gas_to(steam_mix, internal_gasmix.return_pressure())
+	else
+		temperature = max(temperature - 10 * seconds_per_tick, T20C)
+
+/datum/component/plumbing/heater_plumbing
+	/// Буфер для входящей воды (чтобы отделить от возможных примесей)
+	var/datum/reagents/water_buffer
+
+/datum/component/plumbing/heater_plumbing/Initialize(start = TRUE, ducting_layer, turn_connects = TRUE, datum/reagents/custom_receiver, extend_pipe_to_edge)
+	. = ..()
+	if(!istype(parent, /obj/machinery/power/train_heater))
+		return COMPONENT_INCOMPATIBLE
+
+	var/obj/machinery/power/train_heater/heater = parent
+
+	water_buffer = new(500)
+	water_buffer.my_atom = parent
+
+	demand_connects = REVERSE_DIR(heater.dir)
+
+	if(heater.internal_reagents)
+		reagents = heater.internal_reagents
+	else
+		stack_trace("train_heater has no internal_reagents during plumbing init!")
+		reagents = new(HEATER_WATER_VOLUME)
+		reagents.my_atom = parent
+		heater.internal_reagents = reagents
+
+/datum/component/plumbing/heater_plumbing/Destroy()
+	QDEL_NULL(water_buffer)
+	return ..()
+
+/datum/component/plumbing/heater_plumbing/send_request(dir)
+	var/obj/machinery/power/train_heater/heater = parent
+	if(!heater.internal_reagents)
+		return
+
+	var/initial_volume = heater.internal_reagents.total_volume
+	set_recipient_reagents_holder(heater.internal_reagents)
+	reagents = heater.internal_reagents
+	process_request(dir = dir, round_robin = FALSE)
+	var/water_leaked = heater.internal_reagents.get_reagent_amount(/datum/reagent/water)
+	if(water_leaked > 0)
+		var/transferred = heater.internal_reagents.trans_to(water_buffer, water_leaked, target_id = /datum/reagent/water)
+
+	var/remaining_transfer = max(MACHINE_REAGENT_TRANSFER - (heater.internal_reagents.total_volume - initial_volume), 0)
+	var/space_in_heater = heater.internal_reagents.maximum_volume - heater.internal_reagents.total_volume
+	var/water_needed = min(space_in_heater, remaining_transfer, MACHINE_REAGENT_TRANSFER)
+
+	if(water_needed > 0)
+		set_recipient_reagents_holder(heater.internal_reagents)
+		reagents = heater.internal_reagents
+		process_request(
+			amount = water_needed,
+			reagent = /datum/reagent/water,
+			dir = dir
+		)
+
+	if(water_buffer.has_reagent(/datum/reagent/water))
+		var/buffer_water = water_buffer.get_reagent_amount(/datum/reagent/water)
+		if(buffer_water > 0 && heater.internal_reagents.total_volume < heater.internal_reagents.maximum_volume)
+			var/to_transfer = min(buffer_water, heater.internal_reagents.maximum_volume - heater.internal_reagents.total_volume)
+			water_buffer.trans_to(heater.internal_reagents, to_transfer, target_id = /datum/reagent/water)
+
+	if(heater.internal_reagents.total_volume > heater.internal_reagents.maximum_volume)
+		var/excess = heater.internal_reagents.total_volume - heater.internal_reagents.maximum_volume
+		var/excess_water = min(excess, heater.internal_reagents.get_reagent_amount(/datum/reagent/water))
+		if(excess_water > 0)
+			heater.internal_reagents.remove_reagent(/datum/reagent/water, excess_water)
+	reagents = (heater.internal_reagents.total_volume < heater.internal_reagents.maximum_volume) ? heater.internal_reagents : water_buffer
+
+
+/obj/machinery/computer/train_heater_computer
+	name = "train heater control computer"
+	desc = "Controls the plasma heater for steam production."
+	icon_screen = "heater_comp"
+	icon_keyboard = "tech_key"
+	var/datum/weakref/heater_ref
+	var/mapping_id
+
+// Бумажка
+/obj/item/paper/guides/jobs/atmos/train_heater
+	name = "paper- 'Quick guide on the train heater!'"
+	default_raw_text = "<B>How to operate the train heater</B><BR>\
+	- Insert plasma sheets as fuel.<BR>\
+	- Connect plumbing pipes for water input.<BR>\
+	- Connect gas pipes for steam output.<BR>\
+	- Activate to start burning plasma and boiling water.<BR>\
+	- Monitor temperature via computer."
+
+#undef MIN_PLASMA_COMBUSTION_TEMP
+#undef PLASMA_SHEET_BURN_ENERGY
+#undef HEATER_WATER_VOLUME
+#undef WATER_BOIL_TEMP
+#undef PLASMA_SHEET_CONSUMPTION_RATE

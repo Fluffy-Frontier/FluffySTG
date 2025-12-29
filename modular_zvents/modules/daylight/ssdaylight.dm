@@ -1,6 +1,14 @@
 /area
 	var/daylight = FALSE
 
+/area/Initialize(mapload)
+	. = ..()
+	initialize_daylight()
+
+/area/proc/initialize_daylight()
+	if(daylight)
+		SSdaylight.queue_area_for_setup(src)
+
 
 SUBSYSTEM_DEF(daylight)
 	name = "Daylight Controller"
@@ -39,11 +47,16 @@ SUBSYSTEM_DEF(daylight)
 	var/static/night_color = "#4a6ab9"
 
 /datum/controller/subsystem/daylight/Initialize()
-	for(var/area/A in GLOB.areas)
-		if(A.daylight)
-			setup_queue += A
-	if(length(setup_queue))
-		start_setup()
+	// Initial setup for existing areas is now handled via their own Initialize calls.
+	// We no longer need to loop through all areas here, as new areas will queue themselves dynamically.
+
+/datum/controller/subsystem/daylight/proc/queue_area_for_setup(area/A)
+	if(!istype(A) || !(A in GLOB.areas) || !A.daylight)
+		return
+	if(A in setup_queue)
+		return
+	setup_queue += A
+	start_setup()
 
 /datum/controller/subsystem/daylight/proc/start_setup()
 	if(setup_running)
@@ -56,10 +69,15 @@ SUBSYSTEM_DEF(daylight)
 		var/area/A = setup_queue[1]
 		setup_queue.Cut(1, 2)
 
+		// Check if area still exists and is valid
+		if(!istype(A) || !(A in GLOB.areas) || !A.daylight)
+			continue
+
 		for(var/turf/T in A.contents)
 			if(locate(/obj/effect/light_emitter/daylight) in T)
 				continue
-			new /obj/effect/light_emitter/daylight(T)
+			var/obj/effect/light_emitter/daylight/new_emitter = new (T)
+			register_emitter(new_emitter)  // Register immediately for consistency
 			CHECK_TICK
 		stoplag()
 	setup_running = FALSE

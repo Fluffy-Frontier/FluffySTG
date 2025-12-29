@@ -487,7 +487,7 @@
 /turf/open/floor/iron/dark,
 /area/trainstation/indoors/train/security)
 "dH" = (
-/obj/machinery/portable_atmospherics/canister/water_vapor,
+/obj/machinery/power/train_heater,
 /turf/open/floor/iron/dark/diagonal,
 /area/trainstation/indoors/train/vagon_7)
 "dS" = (
@@ -3168,6 +3168,11 @@
 	},
 /turf/open/floor/carpet/green,
 /area/trainstation/indoors/train/vagon_3)
+"yB" = (
+/obj/machinery/door/airlock/train_locomotive,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
+/turf/open/floor/iron/dark/diagonal,
+/area/trainstation/indoors/train/vagon_7)
 "yE" = (
 /obj/structure/sign/clock/directional/north,
 /obj/effect/turf_decal/trimline/blue/filled/line,
@@ -3933,6 +3938,7 @@
 /area/trainstation/indoors/train/vagon_1)
 "Ee" = (
 /obj/machinery/atmospherics/components/unary/portables_connector,
+/obj/machinery/portable_atmospherics/canister/water_vapor,
 /turf/open/floor/iron/dark/diagonal,
 /area/trainstation/indoors/train/vagon_7)
 "Ef" = (
@@ -4464,6 +4470,11 @@
 /obj/structure/broken_flooring/plating/always_floorplane/directional/north,
 /turf/open/floor/plating,
 /area/trainstation/indoors/train/tech_1)
+"Iz" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
+/obj/item/construction/plumbing,
+/turf/open/floor/iron/dark/diagonal,
+/area/trainstation/indoors/train/vagon_7)
 "IB" = (
 /obj/structure/musician/piano,
 /obj/item/clothing/head/helmet/space/santahat/beardless,
@@ -9304,8 +9315,8 @@ rn
 td
 HV
 td
-td
-td
+dH
+aV
 QV
 td
 rn
@@ -9320,7 +9331,7 @@ td
 HV
 td
 td
-td
+aV
 QV
 td
 rn
@@ -9334,8 +9345,8 @@ rn
 td
 ZN
 td
-td
-td
+dH
+aV
 Ps
 td
 rn
@@ -9349,8 +9360,8 @@ td
 td
 QV
 td
-td
-td
+aV
+aV
 QV
 td
 td
@@ -9364,7 +9375,7 @@ QV
 QV
 QV
 QV
-Ps
+yB
 QV
 QV
 QV
@@ -9377,12 +9388,12 @@ Ya
 Ks
 QV
 td
+aV
+aV
+aV
 td
 td
 td
-td
-dH
-dH
 QV
 RK
 ES
@@ -9407,7 +9418,7 @@ Ya
 Ks
 QV
 Ee
-aV
+Iz
 gS
 RO
 kA

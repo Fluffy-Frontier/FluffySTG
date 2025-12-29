@@ -7,7 +7,7 @@ import {
   ProgressBar,
   Section,
   Slider,
-} from 'tgui-core/components'; // Добавляем Flex из tgui-core
+} from 'tgui-core/components';
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
@@ -30,8 +30,8 @@ interface TurbineData {
 
   regulator: number;
   steam_consumption: number;
-  co2_production: number;
-  water_production: number;
+
+  target_rpm_percentage: number; // Теперь это абсолютное значение RPM (не процент)
 }
 
 export const TrainTurbineComputer = () => {
@@ -52,6 +52,7 @@ export const TrainTurbineComputer = () => {
     outlet_pressure,
     regulator,
     steam_consumption,
+    target_rpm_percentage,
   } = data;
 
   if (!connected) {
@@ -72,7 +73,6 @@ export const TrainTurbineComputer = () => {
   const pressureWarning = rotor_pressure > 500;
   const integrityWarning = integrity < 30;
 
-  // Цвет турбины в зависимости от целостности
   const turbineColor =
     integrity < 30 ? 'bad' : integrity < 70 ? 'average' : 'good';
 
@@ -162,7 +162,7 @@ export const TrainTurbineComputer = () => {
                     </Button>
                   </Flex>
                   <Box fontSize="0.8rem" opacity={0.7}>
-                    моль/тик
+                    моль/тик → конденсация в воду
                   </Box>
                 </LabeledList.Item>
 
@@ -180,7 +180,7 @@ export const TrainTurbineComputer = () => {
             </Section>
           </Flex.Item>
 
-          {/* Центральный столбец: Визуализация турбины */}
+          {/* Центральный столбец: Визуализация */}
           <Flex.Item grow={1.2} basis={0}>
             <Flex
               direction="column"
@@ -316,24 +316,26 @@ export const TrainTurbineComputer = () => {
             <Section title="Желаемые обороты">
               <Slider
                 minValue={0}
-                maxValue={100}
-                step={1}
-                stepPixelSize={4}
-                value={(rpm / max_rpm) * 100}
+                maxValue={max_rpm}
+                step={50}
+                stepPixelSize={2}
+                value={target_rpm_percentage}
                 onChange={(_, value) =>
-                  act('set_target_rpm', {
-                    target: (value / 100) * Number(max_rpm),
-                  })
+                  act('set_target_rpm', { target: value })
                 }
-                unit="% от макс."
+                unit="RPM"
                 height="24px"
                 fontSize="1.1rem"
               />
+              <Box textAlign="center" mt={1} opacity={0.8}>
+                {((target_rpm_percentage / max_rpm) * 100).toFixed(1)}% от
+                максимума
+              </Box>
             </Section>
           </Flex.Item>
         </Flex>
 
-        {/* Предупреждения внизу */}
+        {/* Предупреждения */}
         {(tempWarning || pressureWarning || integrityWarning) && (
           <Section
             title="ВНИМАНИЕ!"

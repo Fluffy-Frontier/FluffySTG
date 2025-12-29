@@ -146,6 +146,8 @@ SUBSYSTEM_DEF(train_controller)
 	for(var/datum/train_station/station in possible)
 		if(selected_count >= station_count)
 			break
+		if(station == loaded_station)
+			continue
 		if(station.station_flags & TRAINSTATION_ABSCTRACT)
 			continue
 		if(station.station_flags & TRAINSTATION_NO_SELECTION)
