@@ -17,14 +17,14 @@
 	purchase_flags = BLOODSUCKER_CAN_BUY|GHOUL_CAN_BUY
 	bloodcost = 30
 	cooldown_time = 15 SECONDS
-	target_range = 4
+	target_range = 5
 	power_activates_immediately = FALSE
 	unset_after_click = FALSE
 	prefire_message = "Whom will you subvert to your will?"
 	///Our mesmerized target - Prevents several mesmerizes.
 	var/datum/weakref/target_ref
 	/// How long it takes us to mesmerize our target.
-	var/mesmerize_delay = 4.5 SECONDS
+	var/mesmerize_delay = 4 SECONDS
 	/// At what level this ability will blind the target at. Level 0 = never.
 	var/blind_at_level = 0
 	/// if the ability requires you to be physically facing the target

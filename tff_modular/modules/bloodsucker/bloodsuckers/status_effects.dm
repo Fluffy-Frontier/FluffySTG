@@ -21,6 +21,7 @@
 	return span_notice("They seem... inhumane, and feral!")
 
 /datum/status_effect/frenzy/on_apply()
+	. = ..()
 	var/mob/living/carbon/human/user = owner
 	bloodsuckerdatum = IS_BLOODSUCKER(user)
 
@@ -44,9 +45,9 @@
 		user.clear_cuffs(cuffs, TRUE)
 		user.clear_cuffs(legcuffs, TRUE)
 	bloodsuckerdatum.frenzied = TRUE
-	return ..()
 
 /datum/status_effect/frenzy/on_remove()
+	. = ..()
 	owner.balloon_alert(owner, "you come back to your senses.")
 	owner.remove_traits(trait_list, FRENZY_TRAIT)
 	if(was_tooluser)
@@ -57,7 +58,6 @@
 
 	SEND_SIGNAL(bloodsuckerdatum, COMSIG_BLOODSUCKER_EXITS_FRENZY)
 	bloodsuckerdatum.frenzied = FALSE
-	return ..()
 
 /datum/status_effect/frenzy/tick()
 	var/mob/living/carbon/human/user = owner
@@ -94,6 +94,7 @@
 	return span_notice("They seem... inhumane, and feral!")
 
 /datum/status_effect/brujah/on_apply()
+	. = ..()
 	var/mob/living/carbon/human/user = owner
 	bloodsuckerdatum = IS_BLOODSUCKER(user)
 
@@ -109,14 +110,13 @@
 	if((user.handcuffed && cuffs) || (user.legcuffed && legcuffs))
 		user.clear_cuffs(cuffs, TRUE)
 		user.clear_cuffs(legcuffs, TRUE)
-	return ..()
 
 /datum/status_effect/brujah/on_remove()
+	. = ..()
 	owner.remove_traits(trait_list, BLOODSUCKER_TRAIT)
 	owner.balloon_alert(owner, "you come back to your senses.")
 	owner.remove_movespeed_modifier(/datum/movespeed_modifier/frenzy_speedup)
 	owner.remove_client_colour(REF(src))
-	return ..()
 
 /datum/status_effect/brujah/tick()
 	var/mob/living/carbon/human/user = owner

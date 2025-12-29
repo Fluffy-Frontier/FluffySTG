@@ -9,7 +9,7 @@
 	purchase_flags = BLOODSUCKER_CAN_BUY|GHOUL_CAN_BUY
 	bloodsucker_check_flags = BP_CANT_USE_IN_TORPOR
 	bloodcost = 10
-	cooldown_time = 12 SECONDS
+	cooldown_time = 8 SECONDS
 	target_range = 1
 	prefire_message = "Select a target."
 
@@ -213,7 +213,7 @@
 	return GetPunchDamage(user_active_arm.unarmed_damage_high)
 
 /datum/action/cooldown/bloodsucker/targeted/brawn/proc/GetPunchDamage(punch_damage)
-	return punch_damage * 1.5 + 5
+	return punch_damage + 5 * 1.75
 
 /datum/action/cooldown/bloodsucker/targeted/brawn/CheckValidTarget(atom/target_atom)
 	. = ..()

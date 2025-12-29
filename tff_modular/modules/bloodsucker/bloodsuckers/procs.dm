@@ -198,10 +198,8 @@
 	return max_blood_volume * percentage_needed
 
 /datum/antagonist/bloodsucker/proc/max_ghouls()
-	if(my_clan == /datum/bloodsucker_clan/ventrue)
-		return bloodsucker_level
 	if(my_clan == /datum/bloodsucker_clan/tremere)
-		return round(bloodsucker_level * 1.5)
+		return round(bloodsucker_level * 1)
 	return round(bloodsucker_level * 0.5)
 
 /datum/antagonist/bloodsucker/proc/free_ghoul_slots()
