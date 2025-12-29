@@ -186,7 +186,7 @@
 			playsound(get_turf(target_airlock), 'sound/effects/bang.ogg', 30, 1, -1)
 			target_airlock.open(2) // open(2) is like a crowbar or jaws of life.
 	// Target Type: Mecha
-	else if(istype(target, /obj/vehicle))
+	else if(istype(target, /obj/vehicle/sealed/mecha))
 		if(level_current <= BRAWN_MECHA_LEVEL)
 			target.balloon_alert(user, "ability level too low to bash mecha!")
 			return FALSE
