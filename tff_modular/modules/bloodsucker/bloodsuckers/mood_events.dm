@@ -12,7 +12,7 @@
 /datum/mood_event/drankblood_dead
 	description = "<span class='boldwarning'>I drank dead blood. I am better than this.</span>\n"
 	mood_change = -4
-	timeout = 8 MINUTES
+	timeout = 5 MINUTES
 
 /datum/mood_event/drankblood_synth
 	description = "<span class='boldwarning'>I drank synthetic blood. What is wrong with me?</span>\n"
@@ -22,7 +22,7 @@
 /datum/mood_event/drankkilled
 	description = "<span class='boldwarning'>I fed off of a dead person. I feel... less human.</span>\n"
 	mood_change = -15
-	timeout = 10 MINUTES
+	timeout = 8 MINUTES
 
 /datum/mood_event/madevamp
 	description = "<span class='boldwarning'>A mortal has reached an apotheosis- undeath- by my own hand.</span>\n"

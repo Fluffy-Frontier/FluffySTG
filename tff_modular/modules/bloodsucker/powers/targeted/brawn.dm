@@ -1,7 +1,7 @@
 
 #define BRAWN_BREAKOUT_LEVEL 3
 #define BRAWN_AIRLOCK_LEVEL 4
-#define BRAWN_MECHA_LEVEL 5
+#define BRAWN_MECHA_LEVEL 7
 /datum/action/cooldown/bloodsucker/targeted/brawn
 	name = "Brawn"
 	desc = "Snap restraints, break lockers and doors at higher levels, or deal terrible damage with your bare hands."
@@ -245,3 +245,4 @@
 
 #undef BRAWN_BREAKOUT_LEVEL
 #undef BRAWN_AIRLOCK_LEVEL
+#undef BRAWN_MECHA_LEVEL

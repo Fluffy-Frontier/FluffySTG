@@ -46,7 +46,6 @@ PROCESSING_SUBSYSTEM_DEF(sunlight)
 				vampire_warning_message = span_danger("Solar Flares will bombard the station with dangerous UV radiation in [TIME_BLOODSUCKER_DAY_WARN / 60] minutes. <b>Prepare to seek cover in a coffin or closet.</b>"),
 			)
 		if(TIME_BLOODSUCKER_DAY_FINAL_WARN)
-			message_admins("BLOODSUCKER NOTICE: Daylight beginning in [TIME_BLOODSUCKER_DAY_FINAL_WARN] seconds.)")
 			warn_daylight(
 				danger_level = DANGER_LEVEL_SECOND_WARNING,
 				vampire_warning_message = span_userdanger("Solar Flares are about to bombard the station! You have [TIME_BLOODSUCKER_DAY_FINAL_WARN] seconds to find cover!"),
@@ -61,7 +60,6 @@ PROCESSING_SUBSYSTEM_DEF(sunlight)
 			sunlight_active = TRUE
 			//set the timer to countdown daytime now.
 			time_til_cycle = TIME_BLOODSUCKER_DAY
-			message_admins("BLOODSUCKER NOTICE: Daylight Beginning (Lasts for [TIME_BLOODSUCKER_DAY / 60] minutes.)")
 			warn_daylight(
 				danger_level = DANGER_LEVEL_SOL_ROSE,
 				vampire_warning_message = span_userdanger("Solar flares bombard the station with deadly UV light! Stay in cover for the next [TIME_BLOODSUCKER_DAY / 60] minutes or risk Final Death!"),
