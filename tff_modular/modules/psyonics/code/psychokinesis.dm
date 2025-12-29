@@ -253,7 +253,7 @@
 	tool_list = list(
 			"Crowbar" = image(icon = 'icons/obj/tools.dmi', icon_state = "crowbar"),
 			"Multitool" = image(icon = 'icons/obj/devices/tool.dmi', icon_state = "multitool"),
-			"Screwdriver" = image(icon = 'icons/obj/tools.dmi', icon_state = "screwdriver_map"),
+			"Screwdriver" = image(icon = 'icons/obj/tools.dmi', icon_state = "screwdriver_brass"),
 			"Wirecutters" = image(icon = 'icons/obj/tools.dmi', icon_state = "cutters_map"),
 			"Wrench" = image(icon = 'icons/obj/tools.dmi', icon_state = "wrench"),
 		)
