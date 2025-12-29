@@ -9,7 +9,7 @@
 // NT Weapons
 
 /datum/supply_pack/companies/ballistics/nt
-	console_flag = CARGO_CONSOLE_NT | CARGO_CONSOLE_PDA // This is mostly for flavor, as NT ghost companies had been given a lot of absurdly powerful unique stuff and can still access to the station to get these. 
+	console_flag = CARGO_CONSOLE_NT | CARGO_CONSOLE_PDA // This is mostly for flavor, as NT ghost companies had been given a lot of absurdly powerful unique stuff and can still access to the station to get these.
 
 /datum/supply_pack/companies/ballistics/nt/mars_single
 	name = "Colt Detective Special Single-Pack"
@@ -34,7 +34,7 @@
 	contains = list(/obj/item/gun/ballistic/shotgun/doublebarrel)
 
 /datum/supply_pack/companies/ballistics/nt/shotgun_automatic
-	cost = CARGO_CRATE_VALUE * 5 
+	cost = CARGO_CRATE_VALUE * 5
 	contains = list(/obj/item/gun/ballistic/shotgun/automatic/combat)
 
 /datum/supply_pack/companies/ballistics/nt/c38_super_kit
