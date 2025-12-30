@@ -1747,7 +1747,6 @@
 			return // it may seem counterintuitive to check for blockers on trait removal, the blocker now has total reign over whether the hud should come back
 
 	var/datum/atom_hud/datahud = GLOB.huds[GLOB.trait_to_hud[lost_trait]]
-	stack_trace("[length(GLOB.huds)] [lost_trait]")
 	datahud.hide_from(src)
 
 /mob/proc/hud_trait_blocker_gained(datum/source, new_trait)

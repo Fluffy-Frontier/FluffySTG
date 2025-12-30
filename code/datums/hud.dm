@@ -19,6 +19,7 @@ GLOBAL_ALIST_INIT(huds, alist(
 	DATA_HUD_FAN = new /datum/atom_hud/data/human/fan_hud(),
 	DATA_HUD_MALF_APC = new /datum/atom_hud/data/malf_apc(),
 	DATA_HUD_PERMIT = new/datum/atom_hud/data/human/permit(), // NOVA EDIT ADDITION
+	DATA_HUD_XENO = new /datum/atom_hud/data/xeno(), // FLUFFY FRONTIER ADDITION
 ))
 
 /// Assoc list of traits to the huds they give.
@@ -33,6 +34,7 @@ GLOBAL_LIST_INIT(trait_to_hud, list(
 	TRAIT_SECURITY_HUD = DATA_HUD_SECURITY_ADVANCED,
 	TRAIT_SECURITY_HUD_ID_ONLY = DATA_HUD_SECURITY_BASIC,
 	TRAIT_PERMIT_HUD = DATA_HUD_PERMIT, // NOVA EDIT ADDITION
+	TRAIT_XENO_HUD = DATA_HUD_XENO,
 ))
 
 /// Assoc list of traits that block other traits' huds to list of hud (traits) that they block
