@@ -5,27 +5,27 @@
 	desc = "An additional 15-round 9mm magazine, compatible with the Stechkin APS machine pistol."
 	item = /obj/item/ammo_box/magazine/m9mm_aps
 	purchasable_from = ~UPLINK_ALL_SYNDIE_OPS
-	cost = 2
+	cost = 1
 
 /datum/uplink_item/ammo/smg_traitor
 	name = ".45 SMG Magazine"
 	desc = "An additional 24-round .45 magazine suitable for use with the C-20r submachine gun."
 	item = /obj/item/ammo_box/magazine/smgm45
-	cost = 2
+	cost = 1
 
 /datum/uplink_item/ammo/smgap_traitor
 	name = ".45 Armor Piercing SMG Magazine"
 	desc = "An additional 24-round .45 magazine suitable for use with the C-20r submachine gun.\
 			These rounds are less effective at injuring the target but penetrate protective gear."
 	item = /obj/item/ammo_box/magazine/smgm45/ap
-	cost = 3
+	cost = 1
 
 /datum/uplink_item/ammo/smgfire_traitor
 	name = ".45 Incendiary SMG Magazine"
 	desc = "An additional 24-round .45 magazine suitable for use with the C-20r submachine gun.\
 			Loaded with incendiary rounds which inflict little damage, but ignite the target."
 	item = /obj/item/ammo_box/magazine/smgm45/incen
-	cost = 3
+	cost = 1
 
 /datum/uplink_item/ammo/smgempty_traitor
 	name = "Empty .45 SMG Magazine"
@@ -45,7 +45,7 @@
 	desc = "An alternative 8-round dragon's breath magazine for use in the Bulldog shotgun. \
 			'I'm a fire starter, twisted fire starter!'"
 	item = /obj/item/ammo_box/magazine/m12g/dragon
-	cost = 3
+	cost = 1
 
 
 /datum/uplink_item/ammo/shotgun/meteor_traitor
@@ -53,7 +53,7 @@
 	desc = "An alternative 8-round meteorslug magazine for use in the Bulldog shotgun. \
 		Great for blasting airlocks off their frames and knocking down enemies."
 	limited_stock = 1
-	cost = 4
+	cost = 1
 	item = /obj/item/ammo_box/magazine/m12g/meteor
 	purchasable_from = ~UPLINK_ALL_SYNDIE_OPS
 
@@ -61,7 +61,7 @@
 	name = "12g Slug Drum"
 	desc = "An additional 8-round slug magazine for use with the Bulldog shotgun. \
 			Now 8 times less likely to shoot your pals."
-	cost = 3
+	cost = 1
 	item = /obj/item/ammo_box/magazine/m12g/slug
 
 
@@ -79,7 +79,7 @@
 			These rounds are less effective at injuring the target but penetrate protective gear."
 	item = /obj/item/ammo_box/magazine/m9mm/ap
 	purchasable_from = ~UPLINK_ALL_SYNDIE_OPS
-	cost = 2
+	cost = 1
 
 /datum/uplink_item/ammo/pistolhp
 	name = "9mm Hollow Point Magazine"
@@ -87,7 +87,7 @@
 			These rounds are more damaging but ineffective against armour."
 	item = /obj/item/ammo_box/magazine/m9mm/hp
 	purchasable_from = ~UPLINK_ALL_SYNDIE_OPS
-	cost = 2
+	cost = 1
 
 /datum/uplink_item/ammo/pistolfire
 	name = "9mm Incendiary Magazine"
@@ -95,7 +95,7 @@
 			Loaded with incendiary rounds which inflict little damage, but ignite the target."
 	item = /obj/item/ammo_box/magazine/m9mm/fire
 	purchasable_from = ~UPLINK_ALL_SYNDIE_OPS
-	cost = 2
+	cost = 1
 
 /datum/uplink_item/ammo/revolver
 	name = ".357 Speed Loader"
@@ -104,4 +104,4 @@
 	item = /obj/item/ammo_box/speedloader/c357
 	purchasable_from = ~(UPLINK_ALL_SYNDIE_OPS | UPLINK_SPY) //nukies get their own version
 	uplink_item_flags = SYNDIE_TRIPS_CONTRABAND
-	cost = 2
+	cost = 1
