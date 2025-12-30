@@ -989,7 +989,7 @@
 
 /obj/vehicle/sealed/mecha/proc/melee_attack_effect(mob/living/victim, heavy)
 	if(heavy)
-		// FLUFFY FRONTIER ADDITION START - TGMC_XENOS
+		// FLUFFY FRONTIER ADDITION START - TGMC_XENOS - Я не знаю как сделать это красивее...
 		if(istgmcalien(victim))
 			var/mob/living/carbon/alien/adult/tgmc/tgmc_alien = victim
 			if(tgmc_alien.resist_heavy_hits)

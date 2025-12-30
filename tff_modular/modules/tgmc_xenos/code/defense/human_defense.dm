@@ -63,7 +63,6 @@
 
 /mob/living/carbon/human/can_be_pulled(user, force)
 	. = ..()
-	if(.)
-		if(stat == DEAD && istgmcalien(user))
-			to_chat(user, span_warning("[src] is dead, why would we want to touch it?"))
-			return FALSE
+	if(. && stat == DEAD && istgmcalien(user))
+		to_chat(user, span_warning("[src] is dead, why would we want to touch it?"))
+		return FALSE
