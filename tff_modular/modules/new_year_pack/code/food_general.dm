@@ -17,6 +17,7 @@
 		"creamy sausage" = 1,
 	)
 	crafting_complexity = FOOD_COMPLEXITY_3
+	custom_materials = list(/datum/material/meat = SHEET_MATERIAL_AMOUNT * 4)
 
 /obj/item/food/salad/vinegret
 	name = "vinegret salad"
@@ -108,6 +109,7 @@
 	slice_type = /obj/item/food/cakeslice/kholodetz
 	yield = 4
 	crafting_complexity = FOOD_COMPLEXITY_3
+	custom_materials = list(/datum/material/meat = SHEET_MATERIAL_AMOUNT * 4)
 
 /obj/item/food/cakeslice/kholodetz
 	name = "kholodetz slice"
@@ -119,6 +121,7 @@
 		"inexplicable texture" = 1,
 	)
 	crafting_complexity = FOOD_COMPLEXITY_3
+	custom_materials =  list(/datum/material/meat = SHEET_MATERIAL_AMOUNT)
 
 /obj/item/food/christmas_ham
 	name = "Christmas ham"
@@ -140,11 +143,12 @@
 		"bbq smoke" = 1,
 	)
 	crafting_complexity = FOOD_COMPLEXITY_4
+	custom_materials = list(/datum/material/meat = SHEET_MATERIAL_AMOUNT * 4)
 	var/obj/item/food/christmas_ham/slice/slice_type = /obj/item/food/christmas_ham/slice
 	var/slice_yield = 6
 
 /obj/item/food/christmas_ham/make_processable()
-	if (slice_type)
+	if(slice_type)
 		AddElement(/datum/element/processable, TOOL_KNIFE, slice_type, slice_yield, 3 SECONDS, table_required = TRUE, screentip_verb = "Carve", sound_to_play = SFX_KNIFE_SLICE)
 
 /obj/item/food/christmas_ham/slice
@@ -163,6 +167,8 @@
 	)
 	food_flags = FOOD_FINGER_FOOD
 	crafting_complexity = FOOD_COMPLEXITY_4
+	custom_materials = list(/datum/material/meat = SHEET_MATERIAL_AMOUNT * 0.66)
+	slice_type = null
 
 /obj/item/food/christmas_ham/raw
 	name = "raw Christmas ham"
@@ -178,6 +184,7 @@
 	foodtypes = MEAT | RAW | GRAIN | FRUIT
 	tastes = list("raw ham" = 1, "berries" = 1)
 	crafting_complexity = FOOD_COMPLEXITY_3
+	slice_type = null
 
 /obj/item/food/christmas_ham/raw/make_bakeable()
 	AddComponent(/datum/component/bakeable, /obj/item/food/christmas_ham, 70 SECONDS, TRUE, TRUE)
@@ -284,6 +291,7 @@
 	food_flags = FOOD_FINGER_FOOD
 	w_class = WEIGHT_CLASS_TINY
 	crafting_complexity = FOOD_COMPLEXITY_3
+	custom_materials = null
 
 /*
 	Мандарин и его производные
