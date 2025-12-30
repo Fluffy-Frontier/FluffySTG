@@ -23,3 +23,4 @@
 /datum/status_effect/crucible_soul/on_remove()
 	. = ..()
 	owner.apply_status_effect(/datum/status_effect/crucible_soul_cooldown)
+
