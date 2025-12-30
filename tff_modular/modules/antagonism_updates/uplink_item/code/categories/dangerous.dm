@@ -45,3 +45,4 @@
 	desc = "Creates a borer egg that can give you various powers!"
 	item = /obj/effect/mob_spawn/ghost_role/borer_egg/traitor
 	cost = /datum/uplink_item/high_cost::cost
+
