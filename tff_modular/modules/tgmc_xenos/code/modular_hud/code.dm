@@ -11,7 +11,7 @@ GLOBAL_LIST_INIT(additional_combo_huds, list())
  * - for_combohud: будет ли виден этот худ тем, кто включил комбохуд
  */
 /proc/register_new_data_hud(atom_hud_path, data_hud_define, trait_define, for_observer = FALSE, for_combohud = FALSE)
-	GLOB.huds += new atom_hud_path()
+	GLOB.huds.Add(new atom_hud_path())
 	GLOB.trait_to_hud += list("[trait_define]" = data_hud_define)
 
 	if(for_observer)
