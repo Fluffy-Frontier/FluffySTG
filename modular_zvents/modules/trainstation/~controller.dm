@@ -23,6 +23,7 @@ SUBSYSTEM_DEF(train_controller)
 
 	var/list/station_terminals
 
+	var/obj/machinery/power/train_turbine/core_rotor/train_engine = null
 	// Загружается или выгружается в данный момент станция
 	var/loading = FALSE
 	// Станция запланированная для загрузки
@@ -84,10 +85,22 @@ SUBSYSTEM_DEF(train_controller)
 	announce_game()
 	ASYNC
 		load_startpoint()
-
+		load_train()
 
 /datum/controller/subsystem/train_controller/proc/load_startpoint()
 	load_station(/datum/train_station/start_point, stop_moving = FALSE, hide_for_players = FALSE, announce = FALSE)
+
+/datum/controller/subsystem/train_controller/proc/load_train()
+	var/datum/map_template/train/train_template = new()
+	var/obj/effect/landmark/trainstation/train_spawnpoint/spawnpoint = locate() in GLOB.landmarks_list
+	if(!spawnpoint || !istype(spawnpoint))
+		stack_trace("Failed to load train, no available spawnpoints!")
+		return
+	var/turf/actual_spawnpoint = get_turf(spawnpoint)
+	if(!actual_spawnpoint)
+		stack_trace("Failed to load train, spawnpoint out of bounds!")
+		return
+	train_template.load(actual_spawnpoint, centered = FALSE)
 
 /datum/controller/subsystem/train_controller/proc/on_station_unloaded()
 
@@ -168,6 +181,10 @@ SUBSYSTEM_DEF(train_controller)
 /datum/controller/subsystem/train_controller/proc/check_start()
 	if(SEND_SIGNAL(src, COMSIG_TRAIN_TRY_MOVE) & COMPONENT_BLOCK_TRAIN_MOVEMENT)
 		return FALSE
+	if(!train_engine)
+		return FALSE
+	if(!train_engine.is_active())
+		return FALSE
 	return TRUE
 
 /datum/controller/subsystem/train_controller/proc/register(turf/open/moving/T)
@@ -234,6 +251,9 @@ SUBSYSTEM_DEF(train_controller)
 		to_process += queue_list
 		LAZYNULL(queue_list)
 	if(!LAZYLEN(to_process))
+		return
+	if(!train_engine || !train_engine.is_active())
+		stop_moving()
 		return
 	if(moving && planned_to_load && time_to_next_station > 0)
 		time_to_next_station -= wait

@@ -33,7 +33,7 @@
 "bo" = (
 /obj/structure/flora/bush/snow/style_4,
 /obj/structure/flora/bush/snow/style_random,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "bt" = (
 /obj/structure/chair/sofa/bench/left{
@@ -44,7 +44,7 @@
 "by" = (
 /obj/structure/flora/tree/dead/style_random,
 /obj/structure/flora/bush/snow/style_4,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "bE" = (
 /obj/effect/turf_decal/weather/snow,
@@ -111,7 +111,7 @@
 /obj/structure/fence/interlink{
 	dir = 8
 	},
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "cT" = (
 /obj/effect/landmark/start/warden,
@@ -126,7 +126,7 @@
 /area/trainstation/indoors)
 "dt" = (
 /obj/structure/fence/interlink,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "dG" = (
 /obj/structure/chair/sofa/bench/right{
@@ -349,7 +349,7 @@
 /obj/structure/fence/interlink{
 	dir = 8
 	},
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "kB" = (
 /obj/effect/turf_decal/weather/snow,
@@ -362,6 +362,11 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 10
 	},
+/turf/open/floor/iron/dark/pattern_4,
+/area/trainstation/indoors)
+"kH" = (
+/obj/effect/decal/cleanable/glitter,
+/obj/effect/decal/cleanable/glitter,
 /turf/open/floor/iron/dark/pattern_4,
 /area/trainstation/indoors)
 "kI" = (
@@ -381,6 +386,7 @@
 "lb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/dark,
+/obj/effect/decal/cleanable/glitter,
 /turf/open/floor/iron/dark/pattern_4,
 /area/trainstation/indoors)
 "lf" = (
@@ -413,7 +419,7 @@
 /obj/structure/flora/tree/dead/style_random,
 /obj/structure/flora/bush/snow/style_4,
 /obj/structure/flora/bush/snow/style_random,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "lU" = (
 /obj/machinery/light/cold/directional/south,
@@ -455,11 +461,12 @@
 /area/trainstation/indoors)
 "nu" = (
 /obj/structure/flora/rock/style_random,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "nI" = (
-/obj/machinery/door/poddoor/story,
-/turf/open/indestructible/dark/smooth_large,
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/decal/cleanable/glitter,
+/turf/open/floor/iron/dark/pattern_4,
 /area/trainstation/indoors)
 "nL" = (
 /obj/structure/fluff/bus/passable/seat,
@@ -474,8 +481,16 @@
 "nQ" = (
 /obj/structure/flora/tree/dead/style_random,
 /obj/structure/flora/rock/style_random,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
+"oj" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/glitter,
+/obj/effect/decal/cleanable/glitter,
+/turf/open/floor/iron/dark/pattern_4,
+/area/trainstation/indoors)
 "ol" = (
 /obj/structure/prop/vehicle/long_truck/donk{
 	pixel_x = -17
@@ -542,7 +557,7 @@
 /area/trainstation/indoors)
 "qi" = (
 /obj/structure/flora/bush/snow/style_random,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "qz" = (
 /turf/open/misc/asteroid/snow/indestructible,
@@ -579,7 +594,7 @@
 /area/trainstation/outdoor)
 "sd" = (
 /obj/structure/flora/tree/dead/style_random,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "se" = (
 /obj/structure/prop/vehicle/suv/van_1{
@@ -601,7 +616,7 @@
 "sr" = (
 /obj/structure/flora/rock/style_random,
 /obj/structure/flora/bush/snow/style_random,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "sx" = (
 /obj/effect/landmark/start/blueshield,
@@ -628,7 +643,7 @@
 "te" = (
 /obj/structure/flora/tree/dead/style_random,
 /obj/structure/flora/bush/snow/style_random,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "tj" = (
 /obj/structure/fence/interlink{
@@ -679,12 +694,19 @@
 	},
 /turf/open/floor/plating/snowed/smoothed,
 /area/trainstation/outdoor)
+"vo" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/glitter,
+/turf/open/floor/iron/dark/pattern_4,
+/area/trainstation/indoors)
 "vp" = (
 /obj/structure/flora/tree/dead/style_random,
 /obj/structure/fence/interlink{
 	dir = 8
 	},
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "vr" = (
 /obj/effect/turf_decal/stripes/line{
@@ -786,6 +808,13 @@
 "xG" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/dark/pattern_1,
+/area/trainstation/indoors)
+"xL" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/glitter,
+/turf/open/floor/iron/dark/pattern_4,
 /area/trainstation/indoors)
 "yk" = (
 /turf/open/floor/iron/dark/pattern_1,
@@ -922,7 +951,7 @@
 "AB" = (
 /obj/structure/flora/tree/pine/style_random,
 /obj/structure/flora/tree/dead/style_random,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "AL" = (
 /obj/structure/marker_beacon/burgundy,
@@ -991,7 +1020,7 @@
 "Cu" = (
 /obj/structure/flora/tree/dead/style_random,
 /obj/structure/flora/tree/dead/style_random,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "CH" = (
 /obj/structure/railing/unbreakable{
@@ -1044,7 +1073,7 @@
 /obj/structure/flora/bush/snow/style_4,
 /obj/structure/flora/bush/snow/style_4,
 /obj/structure/flora/bush/snow/style_random,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "ER" = (
 /obj/effect/turf_decal/weather/snow,
@@ -1108,13 +1137,13 @@
 /area/trainstation/outdoor)
 "FZ" = (
 /obj/structure/prop/huge/tower,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "Gc" = (
 /obj/structure/flora/tree/dead/style_random,
 /obj/structure/flora/bush/snow/style_4,
 /obj/structure/flora/bush/snow/style_4,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "Gm" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1138,7 +1167,7 @@
 /obj/structure/fence/interlink{
 	dir = 8
 	},
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "GO" = (
 /turf/open/indestructible/dark/smooth_large,
@@ -1187,7 +1216,7 @@
 /turf/open/floor/iron/dark/pattern_1,
 /area/trainstation/indoors)
 "IU" = (
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "IW" = (
 /obj/structure/fluff/bus/dense{
@@ -1290,6 +1319,13 @@
 /obj/structure/prop/general/zenithplatform3,
 /turf/open/floor/asphalt,
 /area/trainstation/outdoor)
+"LJ" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 9
+	},
+/obj/effect/spawner/random/structure/shipping_container,
+/turf/open/floor/iron/dark/pattern_4,
+/area/trainstation/indoors)
 "LR" = (
 /obj/structure/railing/unbreakable,
 /obj/structure/fake_stairs/directional/east,
@@ -1301,7 +1337,7 @@
 /area/trainstation/indoors)
 "Me" = (
 /obj/structure/flora/bush/snow/style_4,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "Mi" = (
 /obj/structure/prop/vehicle/truck/truck_snow{
@@ -1474,7 +1510,7 @@
 /area/trainstation/indoors)
 "QC" = (
 /obj/structure/flora/tree/pine/style_random,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "QF" = (
 /obj/effect/landmark/start/assistant,
@@ -1562,7 +1598,7 @@
 "SH" = (
 /obj/structure/flora/bush/snow/style_4,
 /obj/structure/flora/bush/snow/style_4,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "SP" = (
 /obj/structure/window/reinforced/survival_pod/indestructible/spawner/directional/east,
@@ -1581,6 +1617,12 @@
 	},
 /turf/open/floor/plating/snowed/smoothed,
 /area/trainstation/outdoor)
+"To" = (
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/decal/cleanable/glitter,
+/obj/effect/decal/cleanable/glitter,
+/turf/open/floor/iron/dark/pattern_4,
+/area/trainstation/indoors)
 "Tv" = (
 /obj/effect/turf_decal/weather/snow/corner,
 /turf/open/floor/asphalt,
@@ -1603,6 +1645,13 @@
 /obj/structure/flora/bush/snow/style_random,
 /turf/open/misc/asteroid/snow/indestructible,
 /area/trainstation/outdoor)
+"TO" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/glitter,
+/turf/open/floor/iron/dark/pattern_4,
+/area/trainstation/indoors)
 "TP" = (
 /obj/effect/turf_decal/siding/wideplating/terracotta/corner{
 	dir = 4
@@ -1636,7 +1685,7 @@
 /area/trainstation/outdoor)
 "Uo" = (
 /obj/effect/landmark/start/clown,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "Uv" = (
 /obj/structure/railing/unbreakable{
@@ -1684,7 +1733,7 @@
 "Wq" = (
 /obj/structure/flora/rock/style_random,
 /obj/structure/flora/bush/snow/style_4,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "Wr" = (
 /obj/effect/turf_decal/siding/dark/corner{
@@ -1723,11 +1772,18 @@
 /obj/structure/flora/tree/dead/style_random,
 /obj/structure/flora/rock/style_random,
 /obj/structure/flora/bush/snow/style_4,
-/turf/open/misc/asteroid/snow/atmosphere,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "Xr" = (
 /obj/machinery/door/airlock/survival_pod/glass,
 /turf/open/indestructible/dark,
+/area/trainstation/indoors)
+"Xy" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/effect/spawner/random/structure/shipping_container,
+/turf/open/floor/iron/dark/pattern_4,
 /area/trainstation/indoors)
 "Xz" = (
 /obj/effect/turf_decal/weather/snow/corner{
@@ -3050,9 +3106,9 @@ pZ
 pZ
 pZ
 pZ
-nI
-xm
-nI
+pZ
+zL
+pZ
 pZ
 pZ
 pZ
@@ -3497,7 +3553,7 @@ yk
 RI
 yk
 yk
-yk
+ZI
 pZ
 qz
 qz
@@ -3529,10 +3585,10 @@ Sc
 yk
 zL
 yk
-zs
-rf
+LJ
+xL
 Ze
-rf
+Xy
 kG
 yk
 pZ
@@ -3567,10 +3623,10 @@ yk
 pZ
 yk
 vX
+kH
 Sc
 Sc
-Sc
-cw
+nI
 yk
 pZ
 qz
@@ -3604,10 +3660,10 @@ yk
 pZ
 yk
 vX
+LV
 Sc
 Sc
-Sc
-cw
+nI
 yk
 pZ
 qz
@@ -3640,11 +3696,11 @@ Sc
 yk
 pZ
 yk
-vX
+TO
 Sc
-Sc
-Sc
-cw
+VG
+LV
+To
 yk
 pZ
 Bj
@@ -3676,11 +3732,11 @@ yk
 Sc
 yk
 pZ
-yk
-vX
+ZI
+oj
 Sc
 Sc
-Sc
+LV
 lb
 yk
 pZ
@@ -3713,12 +3769,12 @@ yk
 Sc
 yk
 zL
-yk
+ZI
 QK
 QV
 QV
 QV
-ea
+vo
 yk
 pZ
 qz

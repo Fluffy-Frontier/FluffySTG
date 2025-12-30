@@ -168,6 +168,7 @@
 /obj/machinery/power/train_turbine/core_rotor/Initialize(mapload)
 	. = ..()
 	new /obj/item/paper/guides/jobs/atmos/train_turbine(loc)
+	SStrain_controller.train_engine = src
 
 /obj/machinery/power/train_turbine/core_rotor/post_machine_initialize()
 	. = ..()
@@ -353,7 +354,6 @@
 	var/obj/machinery/power/train_turbine/turbine_outlet/turbine = parent
 	demand_connects = REVERSE_DIR(turbine.dir)
 
-
 // ====================================================================
 // Компьютер управления
 // ====================================================================
@@ -469,7 +469,7 @@
 			var/adjust = text2num(params["adjust"])
 			if(isnull(adjust))
 				return FALSE
-			main_control.steam_consumption_rate = clamp(main_control.steam_consumption_rate + adjust, 0.01, 1)
+			main_control.steam_consumption_rate = clamp(main_control.steam_consumption_rate + adjust, 0.01, 2)
 			return TRUE
 
 		if("emergency_vent")
@@ -613,7 +613,7 @@
 
 	var/plasma_consumed = min(PLASMA_SHEET_CONSUMPTION_RATE * seconds_per_tick, plasma_stack.amount)
 	plasma_stack.use(plasma_consumed)
-
+	heater_plumbing.send_request(REVERSE_DIR(dir))
 	var/energy_generated = plasma_consumed * PLASMA_SHEET_BURN_ENERGY
 
 	var/temp_error = target_temperature - temperature
@@ -666,40 +666,13 @@
 	if(!heater.internal_reagents)
 		return
 
-	var/initial_volume = heater.internal_reagents.total_volume
-	set_recipient_reagents_holder(heater.internal_reagents)
-	reagents = heater.internal_reagents
-	process_request(dir = dir, round_robin = FALSE)
-	var/water_leaked = heater.internal_reagents.get_reagent_amount(/datum/reagent/water)
-	if(water_leaked > 0)
-		var/transferred = heater.internal_reagents.trans_to(water_buffer, water_leaked, target_id = /datum/reagent/water)
-
-	var/remaining_transfer = max(MACHINE_REAGENT_TRANSFER - (heater.internal_reagents.total_volume - initial_volume), 0)
-	var/space_in_heater = heater.internal_reagents.maximum_volume - heater.internal_reagents.total_volume
-	var/water_needed = min(space_in_heater, remaining_transfer, MACHINE_REAGENT_TRANSFER)
-
-	if(water_needed > 0)
-		set_recipient_reagents_holder(heater.internal_reagents)
-		reagents = heater.internal_reagents
+	var/space = heater.internal_reagents.maximum_volume - heater.internal_reagents.total_volume
+	if(space > 0)
 		process_request(
-			amount = water_needed,
+			amount = min(space, MACHINE_REAGENT_TRANSFER),
 			reagent = /datum/reagent/water,
 			dir = dir
 		)
-
-	if(water_buffer.has_reagent(/datum/reagent/water))
-		var/buffer_water = water_buffer.get_reagent_amount(/datum/reagent/water)
-		if(buffer_water > 0 && heater.internal_reagents.total_volume < heater.internal_reagents.maximum_volume)
-			var/to_transfer = min(buffer_water, heater.internal_reagents.maximum_volume - heater.internal_reagents.total_volume)
-			water_buffer.trans_to(heater.internal_reagents, to_transfer, target_id = /datum/reagent/water)
-
-	if(heater.internal_reagents.total_volume > heater.internal_reagents.maximum_volume)
-		var/excess = heater.internal_reagents.total_volume - heater.internal_reagents.maximum_volume
-		var/excess_water = min(excess, heater.internal_reagents.get_reagent_amount(/datum/reagent/water))
-		if(excess_water > 0)
-			heater.internal_reagents.remove_reagent(/datum/reagent/water, excess_water)
-	reagents = (heater.internal_reagents.total_volume < heater.internal_reagents.maximum_volume) ? heater.internal_reagents : water_buffer
-
 
 /obj/machinery/computer/train_heater_computer
 	name = "train heater control computer"

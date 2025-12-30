@@ -150,12 +150,8 @@
 /turf/open/floor/iron/white,
 /area/trainstation/indoors/train/medical)
 "aV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
-/obj/effect/turf_decal/siding/dark,
-/obj/effect/turf_decal/siding/dark{
-	dir = 1
-	},
-/turf/open/floor/iron/dark/diagonal,
+/obj/machinery/atmospherics/components/binary/pump/off,
+/turf/open/floor/plating,
 /area/trainstation/indoors/train/vagon_7)
 "aZ" = (
 /obj/machinery/door/train/train_door,
@@ -294,15 +290,10 @@
 /turf/open/floor/plating,
 /area/trainstation/indoors/train/vagon_5)
 "cq" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
-/obj/effect/turf_decal/siding/dark{
-	dir = 6
-	},
-/obj/effect/turf_decal/siding/dark/corner{
-	dir = 1
-	},
-/turf/open/floor/iron/dark/diagonal,
-/area/trainstation/indoors/train/vagon_7)
+/obj/machinery/door/airlock/security/blue,
+/obj/effect/mapping_helpers/airlock/access/all/security/armory,
+/turf/open/floor/iron/dark,
+/area/trainstation/indoors/train/security)
 "cr" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -483,16 +474,6 @@
 	},
 /turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/security)
-"dx" = (
-/obj/machinery/duct/waste,
-/obj/effect/turf_decal/siding/dark{
-	dir = 5
-	},
-/obj/effect/turf_decal/siding/dark/corner{
-	dir = 8
-	},
-/turf/open/floor/iron/dark/diagonal,
-/area/trainstation/indoors/train/vagon_7)
 "dz" = (
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 8
@@ -542,20 +523,18 @@
 /turf/open/floor/iron/dark,
 /area/trainstation/indoors/train/security)
 "dF" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
-/obj/machinery/duct/waste,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/machinery/duct,
 /turf/open/floor/iron/dark/snowdin,
 /area/trainstation/indoors/train/vagon_7)
 "dH" = (
-/obj/machinery/power/train_heater,
-/obj/effect/turf_decal/tile/yellow/opposingcorners,
-/turf/open/floor/iron/dark/small,
+/obj/machinery/duct,
+/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
 /area/trainstation/indoors/train/vagon_7)
 "dM" = (
 /obj/effect/turf_decal/siding/dark{
@@ -845,7 +824,6 @@
 /turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/security)
 "fa" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
@@ -858,6 +836,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/machinery/duct,
 /turf/open/floor/iron/stairs/medium,
 /area/trainstation/indoors/train/vagon_7)
 "fc" = (
@@ -921,17 +900,6 @@
 	},
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/security)
-"fC" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
-/obj/machinery/duct/waste,
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/dark{
-	dir = 4
-	},
-/turf/open/floor/iron/dark/diagonal,
-/area/trainstation/indoors/train/vagon_7)
 "fE" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 6
@@ -965,7 +933,6 @@
 /turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/tech_2)
 "fO" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/siding/dark,
 /obj/effect/turf_decal/siding/dark{
@@ -1055,7 +1022,6 @@
 /turf/open/floor/carpet/green,
 /area/trainstation/indoors/train/vagon_2)
 "gz" = (
-/obj/machinery/duct/waste,
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/siding/dark,
 /obj/effect/turf_decal/siding/dark{
@@ -1181,6 +1147,7 @@
 /area/trainstation/indoors/train/medical)
 "hb" = (
 /obj/machinery/door/airlock/security/blue,
+/obj/effect/mapping_helpers/airlock/access/all/security/brig,
 /turf/open/floor/iron/dark,
 /area/trainstation/indoors/train/security)
 "hf" = (
@@ -1288,7 +1255,8 @@
 /turf/open/floor/carpet/stellar,
 /area/trainstation/indoors/train/vagon_3)
 "ia" = (
-/obj/machinery/door/airlock/train_locomotive/glass,
+/obj/machinery/door/airlock/engineering/glass,
+/obj/effect/mapping_helpers/airlock/access/any/engineering,
 /turf/open/indestructible/dark/textured,
 /area/trainstation/indoors/train/tech_7)
 "ie" = (
@@ -2073,7 +2041,8 @@
 /turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/tech_4)
 "nq" = (
-/obj/machinery/door/airlock/train_locomotive/glass,
+/obj/machinery/door/airlock/engineering/glass,
+/obj/effect/mapping_helpers/airlock/access/any/engineering,
 /turf/open/floor/iron/dark,
 /area/trainstation/indoors/train/vagon_7)
 "nt" = (
@@ -3643,7 +3612,8 @@
 /turf/open/floor/wood/large,
 /area/trainstation/indoors/train/vagon_1)
 "xB" = (
-/obj/machinery/door/airlock/train_locomotive/glass,
+/obj/machinery/door/airlock/engineering,
+/obj/effect/mapping_helpers/airlock/access/any/engineering,
 /turf/open/floor/iron/dark,
 /area/trainstation/indoors/train/tech_7)
 "xH" = (
@@ -4986,8 +4956,8 @@
 /turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/security)
 "GD" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
 /obj/structure/railing/corner,
+/obj/machinery/duct,
 /turf/open/floor/iron/dark/small,
 /area/trainstation/indoors/train/vagon_7)
 "GE" = (
@@ -5010,10 +4980,9 @@
 /turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/security)
 "GN" = (
-/obj/machinery/door/airlock/train_locomotive,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
-/obj/machinery/duct/waste,
 /obj/effect/turf_decal/trimline/yellow,
+/obj/machinery/door/airlock/engineering,
+/obj/effect/mapping_helpers/airlock/access/any/engineering,
 /turf/open/floor/iron/dark,
 /area/trainstation/indoors/train/vagon_7)
 "GO" = (
@@ -5248,12 +5217,8 @@
 /turf/open/floor/wood/large,
 /area/trainstation/indoors/train/vagon_3)
 "Iq" = (
-/obj/machinery/duct/waste,
-/obj/effect/turf_decal/siding/dark,
-/obj/effect/turf_decal/siding/dark{
-	dir = 1
-	},
-/turf/open/floor/iron/dark/diagonal,
+/obj/machinery/power/train_heater,
+/turf/open/floor/iron/dark/small,
 /area/trainstation/indoors/train/vagon_7)
 "Ir" = (
 /obj/effect/turf_decal/siding/dark{
@@ -5353,6 +5318,7 @@
 /area/trainstation/indoors/train/bathroom)
 "IR" = (
 /obj/structure/extinguisher_cabinet/directional/west,
+/obj/machinery/duct,
 /turf/open/floor/iron/dark/small,
 /area/trainstation/indoors/train/vagon_7)
 "IS" = (
@@ -5865,8 +5831,9 @@
 /turf/open/floor/iron/dark,
 /area/trainstation/indoors/train/security)
 "Mu" = (
-/obj/machinery/door/airlock/train_locomotive,
 /obj/effect/turf_decal/trimline/yellow,
+/obj/machinery/door/airlock/engineering,
+/obj/effect/mapping_helpers/airlock/access/any/engineering,
 /turf/open/floor/iron/dark/diagonal,
 /area/trainstation/indoors/train/vagon_7)
 "Mv" = (
@@ -6038,6 +6005,7 @@
 "Nr" = (
 /obj/machinery/door/airlock/security/blue,
 /obj/machinery/scanner_gate/preset_guns,
+/obj/effect/mapping_helpers/airlock/access/all/security,
 /turf/open/floor/iron/dark,
 /area/trainstation/indoors/train/security)
 "Nu" = (
@@ -6402,7 +6370,8 @@
 /turf/open/floor/wood/wood_11,
 /area/trainstation/indoors/train/conductor_2)
 "Ps" = (
-/obj/machinery/door/airlock/train_locomotive,
+/obj/machinery/door/airlock/engineering,
+/obj/effect/mapping_helpers/airlock/access/any/engineering,
 /turf/open/floor/iron/dark,
 /area/trainstation/indoors/train/vagon_7)
 "Pv" = (
@@ -7420,7 +7389,6 @@
 /turf/open/floor/plating,
 /area/trainstation/indoors/train/vagon_7)
 "Wm" = (
-/obj/machinery/computer/station_alert,
 /obj/structure/table/train_shelf{
 	pixel_y = 20
 	},
@@ -7433,6 +7401,7 @@
 	dir = 4
 	},
 /obj/machinery/light/small/dim/directional/east,
+/obj/machinery/computer/train_control_terminal/read_only,
 /turf/open/floor/iron/dark/diagonal,
 /area/trainstation/indoors/train/vagon_7)
 "Wp" = (
@@ -7679,6 +7648,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/security/blue,
+/obj/effect/mapping_helpers/airlock/access/all/security,
 /turf/open/floor/iron/dark,
 /area/trainstation/indoors/train/security)
 "XX" = (
@@ -7960,8 +7930,9 @@
 /turf/open/floor/plating,
 /area/trainstation/indoors/train/tech_1)
 "ZN" = (
-/obj/machinery/door/airlock/train_locomotive,
 /obj/effect/turf_decal/trimline/yellow,
+/obj/machinery/door/airlock/engineering,
+/obj/effect/mapping_helpers/airlock/access/any/engineering,
 /turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/vagon_7)
 "ZO" = (
@@ -10257,7 +10228,7 @@ tO
 nO
 Rw
 CJ
-hb
+cq
 Hz
 Ux
 YW
@@ -10450,7 +10421,7 @@ lw
 (162,1,1) = {"
 QV
 QV
-nq
+Ps
 QV
 QV
 jw
@@ -10484,7 +10455,7 @@ Hi
 Yw
 QV
 gz
-dH
+Hi
 fO
 QV
 Co
@@ -10498,9 +10469,9 @@ aP
 Hi
 za
 QV
-Iq
+lZ
 Hi
-aV
+lZ
 QV
 Jn
 Hi
@@ -10513,9 +10484,9 @@ Ej
 Hi
 so
 ZN
-Iq
-dH
-aV
+lZ
+Hi
+lZ
 Mu
 VT
 Hi
@@ -10528,9 +10499,9 @@ wg
 Hg
 LV
 QV
-dx
-fC
-cq
+wg
+dM
+qA
 QV
 Sv
 Ks
@@ -10555,7 +10526,7 @@ QV
 (169,1,1) = {"
 IU
 Yw
-QV
+dH
 IR
 GD
 fa
@@ -10570,8 +10541,8 @@ ES
 (170,1,1) = {"
 Ya
 Yw
-QV
-GI
+dH
+Iq
 hF
 gS
 pm
@@ -10585,7 +10556,7 @@ Fu
 (171,1,1) = {"
 rT
 DO
-QV
+dH
 Ee
 HV
 gS
@@ -10600,8 +10571,8 @@ ES
 (172,1,1) = {"
 Ya
 Yw
-QV
-GI
+dH
+Iq
 hF
 gS
 xL
@@ -10618,7 +10589,7 @@ Yw
 QV
 GI
 hF
-bF
+aV
 bF
 Wb
 SJ
@@ -10664,7 +10635,7 @@ qG
 qG
 Cd
 wg
-Ps
+nq
 td
 Qg
 Qg

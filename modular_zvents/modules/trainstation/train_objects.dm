@@ -324,6 +324,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/button/auto_detect, 24)
 	var/datum/controller/subsystem/train_controller/TC = SStrain_controller
 	switch(action)
 		if("start_moving")
+			if(!TC.train_engine.is_active())
+				balloon_alert_to_viewers("Train engine is not active!")
+				return TRUE
 			if(!TC.is_moving() && TC.planned_to_load && !TC.loaded_station?.blocking_moving)
 				TC.start_moving()
 			return TRUE
