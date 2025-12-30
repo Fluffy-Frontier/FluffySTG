@@ -265,7 +265,7 @@
 	name = "Abandoned mines"
 	map_path = "_maps/modular_events/trainstation/abandoned_mines.dmm"
 	station_flags = TRAINSTATION_BLOCKING
-ыы
+
 /datum/train_station/deep_forest
 	name = "Deep forest"
 	map_path = "_maps/modular_events/trainstation/deep_forest.dmm"
