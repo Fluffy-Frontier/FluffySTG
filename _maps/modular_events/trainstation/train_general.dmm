@@ -821,6 +821,18 @@
 /obj/machinery/recharger{
 	pixel_x = -9
 	},
+/obj/item/key/master_key{
+	pixel_y = 9;
+	pixel_x = 1
+	},
+/obj/item/key/master_key{
+	pixel_x = 6;
+	pixel_y = 9
+	},
+/obj/item/key/master_key{
+	pixel_x = 11;
+	pixel_y = 9
+	},
 /turf/open/floor/iron/dark/pattern_6,
 /area/trainstation/indoors/train/security)
 "fa" = (
@@ -1754,6 +1766,11 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/large,
 /area/trainstation/indoors/train/vagon_1)
+"lm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/trainstation/crew_spawnpoint,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_3)
 "ln" = (
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 8
@@ -5308,6 +5325,10 @@
 	},
 /turf/open/floor/carpet/red,
 /area/trainstation/indoors/train/vagon_1)
+"IN" = (
+/obj/effect/landmark/trainstation/crew_spawnpoint,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_4)
 "IQ" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 4
@@ -6422,6 +6443,11 @@
 /obj/structure/sign/poster/official/ff_contest/pet_slimes/directional/west,
 /turf/open/floor/carpet/purple,
 /area/trainstation/indoors/train/vagon_2)
+"PM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/trainstation/crew_spawnpoint,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_2)
 "PO" = (
 /obj/structure/table/train_table,
 /obj/effect/turf_decal/siding/dark{
@@ -7408,6 +7434,11 @@
 	},
 /turf/open/floor/plating,
 /area/trainstation/indoors/train/vagon_7)
+"Wk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/trainstation/crew_spawnpoint,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/tech_1)
 "Wm" = (
 /obj/structure/table/train_shelf{
 	pixel_y = 20
@@ -8060,7 +8091,7 @@ gK
 QI
 QT
 TT
-CK
+Wk
 mM
 rb
 QI
@@ -8450,7 +8481,7 @@ rm
 QM
 VO
 Ul
-Wg
+PM
 GP
 ln
 QM
@@ -8840,7 +8871,7 @@ TW
 sH
 UH
 nY
-go
+lm
 tq
 Lg
 sH
@@ -9230,7 +9261,7 @@ vl
 El
 ed
 GO
-tE
+IN
 To
 Rn
 El

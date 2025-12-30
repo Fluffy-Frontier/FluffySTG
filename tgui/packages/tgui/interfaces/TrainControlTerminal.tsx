@@ -12,6 +12,7 @@ import { Window } from '../layouts';
 
 interface TrainControlData {
   is_moving: boolean;
+  train_engine_active: boolean;
   current_station: string;
   planned_station: string;
   blocking: boolean;
@@ -34,6 +35,7 @@ export const TrainControlTerminal = (props: any, context: any) => {
     blocking = false,
     read_only = false,
     possible_next = [],
+    train_engine_active = false,
     progress = 0,
     time_remaining = 0,
   } = data;
@@ -296,15 +298,22 @@ export const TrainControlTerminal = (props: any, context: any) => {
                   </Box>
                 </Stack.Item>
               </Stack>
-              {(blocking && (
+              {blocking && (
                 <>
                   <Divider />
                   <Box bold color="bad" textAlign="center" fontSize="1.8rem">
                     ⚠ ДВИЖЕНИЕ ЗАБЛОКИРОВАНО!
                   </Box>
                 </>
-              )) ||
-                ' '}
+              )}
+              {!train_engine_active && (
+                <>
+                  <Divider />
+                  <Box bold color="bad" textAlign="center" fontSize="1.8rem">
+                    ⚠ ДВИГАТЕЛЬ НЕ АКТИВЕН!
+                  </Box>
+                </>
+              )}
               {readOnly ? (
                 ' '
               ) : (
@@ -316,7 +325,9 @@ export const TrainControlTerminal = (props: any, context: any) => {
                     act(is_moving ? 'stop_moving' : 'start_moving')
                   }
                   disabled={
-                    blocking || (!is_moving && planned_station === 'None')
+                    blocking ||
+                    (!is_moving && planned_station === 'None') ||
+                    !train_engine_active
                   }
                   fluid
                   mt={3}

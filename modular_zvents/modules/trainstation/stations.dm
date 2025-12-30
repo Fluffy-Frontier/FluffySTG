@@ -17,6 +17,9 @@
 /obj/effect/landmark/trainstation/train_spawnpoint
 	name = "Train Placer"
 
+/obj/effect/landmark/trainstation/crew_spawnpoint
+	name = "Crew Placer"
+
 
 /obj/effect/landmark/trainstation/object_spawner
 	name = "Object spawner"
@@ -209,9 +212,18 @@
 		blocking_moving = TRUE
 
 /datum/train_station/proc/unload_station(datum/callback/unload_callback)
+	var/obj/effect/landmark/trainstation/crew_spawnpoint/crew_mover = locate() in GLOB.landmarks_list
 	for(var/turf/T in docking_turfs)
 		for(var/atom/movable/AM in T.contents)
 			if(HAS_TRAIT(AM, TRAIT_NO_STATION_UNLOAD))
+				continue
+			if(isliving(AM))
+				var/mob/living/living = AM
+				if(crew_mover && living.client)
+					living.forceMove(get_turf(crew_mover))
+					to_chat(living, span_warning("You barely made it to the train before it departed!"))
+					continue
+			if(isobserver(AM))
 				continue
 			qdel(AM)
 		T.ChangeTurf(/turf/open/space)
@@ -236,9 +248,8 @@
 
 /datum/train_station/military_house
 	name = "Military Side"
-	map_path = "_maps/modular_events/trainstation/startpoint.dmm"
+	map_path = "_maps/modular_events/trainstation/military_side.dmm"
 	station_flags = TRAINSTATION_NO_SELECTION | TRAINSTATION_BLOCKING
-
 
 
 /datum/train_station/warehouses
@@ -252,13 +263,9 @@
 
 /datum/train_station/mines
 	name = "Abandoned mines"
-	map_path = "_maps/modular_events/trainstation/startpoint.dmm"
+	map_path = "_maps/modular_events/trainstation/abandoned_mines.dmm"
 	station_flags = TRAINSTATION_BLOCKING
-
+ыы
 /datum/train_station/deep_forest
 	name = "Deep forest"
-	map_path = "_maps/modular_events/trainstation/startpoint.dmm"
-
-/datum/train_station/plains
-	name = "Plains"
-	map_path = "_maps/modular_events/trainstation/startpoint.dmm"
+	map_path = "_maps/modular_events/trainstation/deep_forest.dmm"

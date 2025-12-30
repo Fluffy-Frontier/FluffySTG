@@ -295,6 +295,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/button/auto_detect, 24)
 
 	data["read_only"] = read_only
 	data["is_moving"] = TC.is_moving()
+	data["train_engine_active"] = TC.train_engine.is_active()
 	data["current_station"] = TC.loaded_station?.name || "Unknown"
 	data["planned_station"] = TC.planned_to_load?.name || "None"
 	data["blocking"] = TC.loaded_station?.blocking_moving || FALSE
