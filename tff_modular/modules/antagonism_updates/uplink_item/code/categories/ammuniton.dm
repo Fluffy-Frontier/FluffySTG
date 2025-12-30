@@ -105,3 +105,4 @@
 	purchasable_from = ~(UPLINK_ALL_SYNDIE_OPS | UPLINK_SPY) //nukies get their own version
 	uplink_item_flags = SYNDIE_TRIPS_CONTRABAND
 	cost = 1
+
