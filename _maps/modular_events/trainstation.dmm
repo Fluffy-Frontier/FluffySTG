@@ -32,10 +32,6 @@
 "p" = (
 /turf/open/moving/rails/l13,
 /area/trainstation/outdoor/rails)
-"s" = (
-/obj/effect/landmark/trainstation/train_spawnpoint,
-/turf/open/moving/rails/l12,
-/area/trainstation/outdoor/rails)
 "z" = (
 /turf/open/moving/rails/r2,
 /area/trainstation/outdoor/rails)
@@ -48,6 +44,10 @@
 /area/trainstation/outdoor/rails)
 "I" = (
 /turf/open/moving/rails/l2,
+/area/trainstation/outdoor/rails)
+"N" = (
+/obj/effect/landmark/trainstation/train_spawnpoint,
+/turf/open/moving/rails/l12,
 /area/trainstation/outdoor/rails)
 "O" = (
 /turf/open/moving/snow,
@@ -1724,7 +1724,7 @@ b
 R
 b
 b
-s
+N
 p
 a
 a

@@ -193,6 +193,16 @@
 		if(right_turf)
 			right_turf.ChangeTurf(/turf/closed/indestructible/train_border)
 			docking_turfs += right_turf
+	if(right_x <= world.maxx)
+		var/turf/corner = locate(right_x, end_y, z)
+		if(!corner)
+			return
+		for(var/x = right_x to world.maxx)
+			var/turf/top_turf = locate(x, end_y, z)
+			if(top_turf)
+				top_turf.ChangeTurf(/turf/closed/indestructible/train_border)
+				docking_turfs += top_turf
+
 
 /datum/train_station/proc/after_load()
 	if(station_flags & TRAINSTATION_BLOCKING)
@@ -233,13 +243,12 @@
 
 /datum/train_station/warehouses
 	name = "Abandoned warehouses"
-	map_path = "_maps/modular_events/trainstation/startpoint.dmm"
+	map_path = "_maps/modular_events/trainstation/warehouse.dmm"
 	station_flags = TRAINSTATION_BLOCKING
 
 /datum/train_station/frozen_lake
 	name = "Frozen lake"
-	map_path = "_maps/modular_events/trainstation/startpoint.dmm"
-	station_flags = TRAINSTATION_BLOCKING
+	map_path = "_maps/modular_events/trainstation/iced_lake.dmm"
 
 /datum/train_station/mines
 	name = "Abandoned mines"

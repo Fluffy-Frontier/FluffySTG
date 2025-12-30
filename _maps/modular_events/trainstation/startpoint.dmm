@@ -568,7 +568,8 @@
 /obj/effect/mapping_helpers/trigger_helper/hand_punch{
 	trigger_key = "ss_station_2";
 	EDITOR_balloon = "Unlocked";
-	EDITOR_use_time = 30
+	EDITOR_use_time = 30;
+	EDITOR_TARGET = /obj/machinery/computer
 	},
 /turf/open/floor/iron/dark/pattern_1,
 /area/trainstation/indoors)

@@ -99,9 +99,10 @@ export const TrainTurbineComputer = () => {
                     disabled={active && rpm > 1000}
                     fluid
                   />
-                  {active && rpm > 1000 && (
+                  {active && rpm > 0 && (
                     <Box inline color="bad" ml={1} fontSize="0.9rem">
-                      <Icon name="lock" rotation={45} /> RPM слишком высок
+                      <Icon name="lock" rotation={45} />
+                      Остановите вращение для отключения
                     </Box>
                   )}
                 </LabeledList.Item>
