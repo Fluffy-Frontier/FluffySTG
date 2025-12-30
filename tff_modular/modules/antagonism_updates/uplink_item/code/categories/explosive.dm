@@ -11,3 +11,4 @@
 // TFF override for EMP cost
 /datum/uplink_item/explosives/emp
 	cost = /datum/uplink_item/low_cost/explosive::cost
+
