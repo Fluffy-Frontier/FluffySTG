@@ -628,7 +628,7 @@
 	return core?.add_charge(amount) || FALSE
 
 /obj/item/mod/control/proc/subtract_charge(amount)
-	return core?.subtract_charge(amount) || FALSE
+	return core?.subtract_charge(amount * energy_effective) || FALSE // TFF EDIT, ORIGINAL: return core?.subtract_charge(amount) || FALSE
 
 /obj/item/mod/control/proc/check_charge(amount)
 	return core?.check_charge(amount) || FALSE
