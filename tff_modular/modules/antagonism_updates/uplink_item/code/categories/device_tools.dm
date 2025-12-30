@@ -21,3 +21,4 @@
 	desc = "Thief's gloves allow you to steal other people's things silently, but it takes some time..."
 	item = /obj/item/clothing/gloves/color/black/thief
 	cost = /datum/uplink_item/low_cost::cost
+
