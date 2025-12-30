@@ -169,6 +169,12 @@
 	. = ..()
 	new /obj/item/paper/guides/jobs/atmos/train_turbine(loc)
 	SStrain_controller.train_engine = src
+	soundloop = new(src)
+
+/obj/machinery/power/train_turbine/core_rotor/Destroy()
+	. = ..()
+	SStrain_controller.train_engine = null
+	QDEL_NULL(soundloop)
 
 /obj/machinery/power/train_turbine/core_rotor/post_machine_initialize()
 	. = ..()
@@ -176,11 +182,14 @@
 
 /obj/machinery/power/train_turbine/core_rotor/begin_processing()
 	. = ..()
-	soundloop = new(src, TRUE)
+	soundloop.start()
 
 /obj/machinery/power/train_turbine/core_rotor/end_processing()
 	. = ..()
-	QDEL_NULL(soundloop)
+	soundloop.stop()
+
+/obj/machinery/power/train_turbine/core_rotor/is_active()
+	return active
 
 /obj/machinery/power/train_turbine/core_rotor/process(seconds_per_tick)
 	if(!active || !all_parts_connected || !powered(ignore_use_power = TRUE))
@@ -446,7 +455,7 @@
 			if(!main_control.active)
 				if(!main_control.activate_parts(usr, check_only = TRUE))
 					return FALSE
-			else if(main_control.rpm > 1000)
+			else if(main_control.rpm > 0)
 				return FALSE
 			main_control.toggle_power()
 			return TRUE
@@ -617,7 +626,6 @@
 	var/energy_generated = plasma_consumed * PLASMA_SHEET_BURN_ENERGY
 
 	var/temp_error = target_temperature - temperature
-	var/consumption_adjust = temp_error * 0.0001
 
 	if(internal_reagents.has_reagent(/datum/reagent/water, 10) && temperature >= WATER_BOIL_TEMP)
 		var/water_boiled = min(internal_reagents.get_reagent_amount(/datum/reagent/water), 10 * seconds_per_tick)

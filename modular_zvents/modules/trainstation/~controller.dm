@@ -33,7 +33,7 @@ SUBSYSTEM_DEF(train_controller)
 	// Известные, загруженные станции
 	var/static/list/known_stations = list()
 
-	var/default_travel_time = 20 MINUTES
+	var/default_travel_time = 35 MINUTES
 	var/time_to_next_station
 	var/total_travel_time
 

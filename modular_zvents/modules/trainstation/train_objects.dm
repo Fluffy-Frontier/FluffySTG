@@ -347,4 +347,24 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/button/auto_detect, 24)
 /obj/machinery/computer/train_control_terminal/read_only
 	read_only = TRUE
 
-/obj/machinery/power/turbine
+
+/obj/item/key/master_key
+	name = "train master key"
+	desc = "A large key used to unlock train doors."
+
+/obj/item/key/master_key/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	. = ..()
+	if(istype(interacting_with, /obj/machinery/door/train))
+		var/obj/machinery/door/train/D = interacting_with
+		D.balloon_alert_to_viewers("Begin opening!")
+		D.visible_message(span_notice("[user] uses \the [src] on \the [D]."))
+		if(!do_after(user, 5 SECONDS, D))
+			D.balloon_alert_to_viewers("Opening cancelled!")
+			return TRUE
+		if(D.locked)
+			D.unlock()
+			balloon_alert(user, "You unlock the train door with the master key.")
+		else
+			D.lock()
+			balloon_alert(user, "You lock the train door with the master key.")
+		return TRUE

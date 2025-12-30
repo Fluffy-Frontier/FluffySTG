@@ -946,7 +946,6 @@
 	color = "#683d21"
 	},
 /obj/effect/turf_decal/siding/wood,
-/obj/effect/landmark/start/new_player,
 /turf/open/floor/wood/large,
 /area/trainstation/indoors/train/reustoran)
 "fR" = (
@@ -1419,6 +1418,14 @@
 /obj/effect/turf_decal/siding/dark/end{
 	dir = 8
 	},
+/obj/item/melee/baton/security,
+/obj/item/melee/baton/security,
+/obj/item/melee/baton/security,
+/obj/item/melee/baton/security,
+/obj/effect/spawner/random/armory/laser_gun,
+/obj/effect/spawner/random/armory/laser_gun,
+/obj/effect/spawner/random/armory/e_gun,
+/obj/effect/spawner/random/armory/e_gun,
 /turf/open/floor/iron/dark,
 /area/trainstation/indoors/train/security)
 "jj" = (
@@ -6295,6 +6302,11 @@
 /obj/effect/turf_decal/tile/yellow/opposingcorners,
 /turf/open/floor/iron/dark/small,
 /area/trainstation/indoors/train/tech_7)
+"Pc" = (
+/obj/effect/landmark/start/new_player,
+/obj/effect/landmark/observer_start,
+/turf/open/floor/iron/dark/pattern_6,
+/area/trainstation/indoors/train/security)
 "Pd" = (
 /obj/effect/turf_decal/siding/dark_red{
 	dir = 8
@@ -6991,6 +7003,14 @@
 /obj/effect/turf_decal/siding/dark/end{
 	dir = 4
 	},
+/obj/effect/spawner/random/armory/riot_shield,
+/obj/effect/spawner/random/armory/riot_shield,
+/obj/effect/spawner/random/armory/riot_helmet,
+/obj/effect/spawner/random/armory/riot_helmet,
+/obj/effect/spawner/random/armory/riot_armor,
+/obj/effect/spawner/random/armory/riot_armor,
+/obj/effect/spawner/random/armory/riot_helmet,
+/obj/effect/spawner/random/armory/riot_helmet,
 /turf/open/floor/iron/dark,
 /area/trainstation/indoors/train/security)
 "TI" = (
@@ -7248,7 +7268,7 @@
 /area/trainstation/indoors/train/tech_6)
 "VG" = (
 /obj/machinery/door/train/train_door,
-/turf/closed/wall/mineral/titanium/spaceship/nodiagonal,
+/turf/open/floor/iron/dark/diagonal,
 /area/trainstation/indoors/train/vagon_6)
 "VI" = (
 /obj/effect/turf_decal/siding/dark_red/inner_corner,
@@ -10139,7 +10159,7 @@ Bf
 Lr
 YC
 GJ
-fK
+Pc
 eX
 GB
 SY
