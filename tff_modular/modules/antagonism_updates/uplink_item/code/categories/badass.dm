@@ -15,3 +15,4 @@
 	new /obj/item/clothing/head/costume/maidheadband/syndicate/armored(src)
 	new /obj/item/clothing/gloves/combat/maid/armored(src)
 	new /obj/item/clothing/shoes/jackboots/heel/tactical(src)
+
