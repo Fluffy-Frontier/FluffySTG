@@ -11,5 +11,5 @@ GLOBAL_LIST_INIT(eventmakers_blacklist_verbs, list(
 		"Reestablish DB Connection" = TRUE, "Reset Player OOC Color" = TRUE, "Set Player OOC Color" = TRUE,
 		"Toggle Antag OOC" = TRUE, "Toggle CDN" = TRUE, "Toggle OOC" = TRUE, "Toggle Security OOC" = TRUE,
 		//Debug
-		"Debug Stat Panel" = TRUE, "Migrate Player Ranks" = TRUE, "Open LUA Editor" = TRUE, "Re-establish Connection To TTS" = TRUE, "Reload Configuration" = TRUE, "Run Empty Query" = TRUE, "View Runtime" = TRUE
+		"Debug Stat Panel" = TRUE, "Migrate Player Ranks" = TRUE, "Open Lua Editor" = TRUE, "Re-establish Connection To TTS" = TRUE, "Reload Configuration" = TRUE, "Run Empty Query" = TRUE, "View Runtime" = TRUE
 ))
