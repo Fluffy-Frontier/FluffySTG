@@ -278,9 +278,7 @@
 	// BLOOD_VOLUME_GOOD: [336] - Pale
 //	handled in bloodsucker_integration.dm
 	// BLOOD_VOLUME_EXIT: [250] - Exit Frenzy (If in one) This is high because we want enough to kill the poor soul they feed off of.
-	var/datum/status_effect/frenzy/status_effect = owner.current.has_status_effect(/datum/status_effect/frenzy)
-	if(bloodsucker_blood_volume >= frenzy_exit_threshold())
-		if(status_effect || frenzied)
+	if(bloodsucker_blood_volume >= frenzy_exit_threshold() && frenzied)
 		owner.current.remove_status_effect(/datum/status_effect/frenzy)
 
 	// BLOOD_VOLUME_BAD: [224] - Jitter
