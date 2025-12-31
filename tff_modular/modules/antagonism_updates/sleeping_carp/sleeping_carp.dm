@@ -79,7 +79,7 @@
 		However, you are also unable to use any ranged weaponry. You can learn more about your newfound art by using the Recall Teachings verb in the Sleeping Carp tab.</span>"
 
 /datum/uplink_item/stealthy_weapons/martialarts
-	cost = 17
+	cost = /datum/uplink_item/medium_cost/martial_arts::cost
 
 /datum/martial_art/the_sleeping_carp
 	help_verb = /mob/living/proc/sleeping_carp_help_tff
