@@ -31,9 +31,6 @@
 		/mob/living/simple_animal/hostile/asteroid/elite/pandora,
 		/mob/living/simple_animal/hostile/asteroid/polarbear,
 		/mob/living/simple_animal/hostile/asteroid/polarbear/lesser,
-		/mob/living/simple_animal/hostile/illusion,
-		/mob/living/simple_animal/hostile/illusion/escape,
-		/mob/living/simple_animal/hostile/illusion/mirage,
 		/mob/living/simple_animal/hostile/megafauna,
 		/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner,
 		/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/doom,
@@ -58,7 +55,6 @@
 		/mob/living/simple_animal/hostile/ooze,
 		/mob/living/simple_animal/hostile/ooze/gelatinous,
 		/mob/living/simple_animal/hostile/ooze/grapes,
-		/mob/living/simple_animal/soulscythe,
 
 		// MODULAR NOVA ENTRIES
 		// PLEASE REFACTOR THESE AS YOU CAN
@@ -73,17 +69,7 @@
 		/mob/living/simple_animal/hostile/syndimouse,
 		/mob/living/simple_animal/hostile/trog,
 		/mob/living/simple_animal/hostile/true_changeling,
-		/mob/living/simple_animal/hostile/fleshmind/slicer,
-		/mob/living/simple_animal/hostile/fleshmind/floater,
-		/mob/living/simple_animal/hostile/fleshmind/globber,
-		/mob/living/simple_animal/hostile/fleshmind/stunner,
-		/mob/living/simple_animal/hostile/fleshmind/hiborg,
-		/mob/living/simple_animal/hostile/fleshmind/himan,
-		/mob/living/simple_animal/hostile/fleshmind/treader,
-		/mob/living/simple_animal/hostile/fleshmind/phaser,
-		/mob/living/simple_animal/hostile/fleshmind/mechiver,
-		/mob/living/simple_animal/hostile/fleshmind/mauler_monkey,
-		/mob/living/simple_animal/hostile/fleshmind,
+
 		/mob/living/simple_animal/hostile/ooze/grapes/xenobio, // update when grapes are updated, must be here to stop errors
 
 		// DO NOT ADD NEW ENTRIES TO THIS LIST

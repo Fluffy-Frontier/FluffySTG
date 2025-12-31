@@ -15,12 +15,6 @@
 	clawfootstep = FOOTSTEP_WATER
 	heavyfootstep = FOOTSTEP_WATER
 	underfloor_accessibility = UNDERFLOOR_INTERACTABLE
-	/**
-	 * Used as the color arg/var for the immerse element. It should be kept more or less in line with
-	 * the hue of the turf, as semi-transparent vis overlays can opacify the semi-transparent bits of an icon,
-	 * and we're kinda trying to offset that issue.
-	 */
-	var/immerse_overlay_color = "#5AAA88"
 	///The transparency of the immerse element's overlay
 	var/immerse_overlay_alpha = 180
 	///Icon state to use for the immersion mask
@@ -31,6 +25,20 @@
 
 	/// Whether the immerse element has been added yet or not
 	var/immerse_added = FALSE
+
+	/**
+	 * Variables used for the swimming tile element. If TRUE, we pass these values to the element.
+	 * - is_swimming_tile: Whether or not we add the element to this tile.
+	 * - stamina_entry_cost: how much stamina it costs to enter the swimming tile, and for each move into a tile
+	 * - ticking_stamina_cost: How much stamina is lost for staying in the water.
+	 * - ticking_oxy_damage: How much oxygen is lost per tick when drowning in water. Also determines how many breathes are lost.
+	 * - exhaust_swimmer_prob: The likelihood that someone suffers stamina damage when entering a swimming tile.
+	 */
+	var/is_swimming_tile = FALSE
+	var/stamina_entry_cost = 7
+	var/ticking_stamina_cost = 5
+	var/ticking_oxy_damage = 2
+	var/exhaust_swimmer_prob = 30
 
 /turf/open/water/Initialize(mapload)
 	. = ..()
@@ -59,8 +67,10 @@
 /turf/open/water/proc/make_immersed(atom/movable/triggering_atom)
 	if(immerse_added || is_type_in_typecache(triggering_atom, GLOB.immerse_ignored_movable))
 		return FALSE
-	AddElement(/datum/element/immerse, icon, icon_state, immerse_overlay, immerse_overlay_color, alpha = immerse_overlay_alpha)
+	AddElement(/datum/element/immerse, immerse_overlay, immerse_overlay_alpha)
 	immerse_added = TRUE
+	if(is_swimming_tile)
+		AddElement(/datum/element/swimming_tile, stamina_entry_cost, ticking_stamina_cost, ticking_oxy_damage, exhaust_swimmer_prob)
 	return TRUE
 
 /turf/open/water/Destroy()
@@ -80,12 +90,15 @@
 	icon_state = "deep_riverwater_motion"
 	immerse_overlay = "immerse_deep"
 	baseturfs = /turf/open/water/no_planet_atmos/deep
+	is_swimming_tile = TRUE
 
-/turf/open/water/no_planet_atmos/deep/make_immersed()
-	. = ..()
-	if (!.)
-		return
-	AddElement(/datum/element/swimming_tile)
+/turf/open/water/no_planet_atmos/deep/lethal
+	name = "treacherous water"
+	desc = "Less shallow, very dangerous water. You feel like it would be a very bad idea to enter this water."
+	stamina_entry_cost = 25
+	ticking_stamina_cost = 15
+	ticking_oxy_damage = 2
+	exhaust_swimmer_prob = 100
 
 /turf/open/water/beach
 	gender = PLURAL
@@ -94,7 +107,6 @@
 	icon_state = "water"
 	base_icon_state = "water"
 	baseturfs = /turf/open/water/beach
-	immerse_overlay_color = "#7799AA"
 	fishing_datum = /datum/fish_source/ocean/beach
 
 /turf/open/water/beach/Initialize(mapload)
@@ -110,14 +122,12 @@
 	icon_state = "deepwater"
 	base_icon_state = "deepwater"
 	baseturfs = /turf/open/water/deep_beach
-	immerse_overlay_color = "#57707c"
 	fishing_datum = /datum/fish_source/ocean
+	is_swimming_tile = TRUE
 
-/turf/open/water/deep_beach/make_immersed()
-	. = ..()
-	if (!.)
-		return
-	AddElement(/datum/element/swimming_tile)
+/turf/open/water/deep_beach/lethal
+	name = "treacherous water"
+	desc = "You think entering this water would probably go extremely badly."
 
 /turf/open/water/lavaland_atmos
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
@@ -141,7 +151,6 @@
 		the odd fish darting through the water."
 	baseturfs = /turf/open/water/hot_spring
 	planetary_atmos = FALSE
-	immerse_overlay_color = "#A0E2DE"
 	immerse_overlay_alpha = 190
 	fishing_datum = /datum/fish_source/hot_spring
 
@@ -152,7 +161,7 @@
 	// the immerse trait to be repeatedly removed and readded as someone moves within the pool,
 	// replacing the status effect over and over, which can be seen through the status effect alert icon.
 	if(!immerse_added)
-		AddElement(/datum/element/immerse, icon, icon_state, "immerse", immerse_overlay_color, alpha = immerse_overlay_alpha)
+		AddElement(/datum/element/immerse, immerse_overlay, immerse_overlay_alpha)
 		immerse_added = TRUE
 	icon_state = "pool_[rand(1, 4)]"
 	var/obj/effect/abstract/shared_particle_holder/holder = add_shared_particles(/particles/hotspring_steam, "hot_springs_[GET_TURF_PLANE_OFFSET(src)]", pool_size = 4)
@@ -162,8 +171,8 @@
 	holder.plane = MUTATE_PLANE(MASSIVE_OBJ_PLANE, src)
 	add_filter("hot_spring_waves", 1, wave_filter(y = 1, size = 1, offset = 0, flags = WAVE_BOUNDED))
 	var/filter = get_filter("hot_spring_waves")
-	animate(filter, offset = 1, time = 3 SECONDS, loop = -1, easing = SINE_EASING|EASE_IN|EASE_OUT)
-	animate(offset = 0, time = 3 SECONDS, easing = SINE_EASING|EASE_IN|EASE_OUT)
+	animate(filter, offset = 1, time = 3 SECONDS, loop = -1, easing = QUAD_EASING)
+	animate(offset = 0, time = 3 SECONDS, easing = QUAD_EASING)
 
 /turf/open/water/hot_spring/Destroy()
 	remove_shared_particles("hot_springs_[GET_TURF_PLANE_OFFSET(src)]")
@@ -183,6 +192,8 @@
 
 ///Registers the signals from the immerse element and calls dip_in if the movable has the required trait.
 /turf/open/water/hot_spring/proc/enter_hot_spring(atom/movable/movable)
+	if(is_type_in_typecache(movable, GLOB.immerse_ignored_movable)) // So we don't immerse weird things like turf decals/effects, projectiles, etc
+		return FALSE
 	RegisterSignal(movable, SIGNAL_ADDTRAIT(TRAIT_IMMERSED), PROC_REF(dip_in))
 	if(isliving(movable)) //so far, exiting a hot spring only has effects on living mobs.
 		RegisterSignal(movable, SIGNAL_REMOVETRAIT(TRAIT_IMMERSED), PROC_REF(dip_out))

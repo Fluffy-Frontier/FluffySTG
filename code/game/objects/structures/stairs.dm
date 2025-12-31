@@ -199,7 +199,7 @@
 
 /obj/structure/stairs_frame/wood
 	name = "wooden stairs frame"
-	desc = "Everything you need to build a staircase, minus the actual stairs, this one is made of wood."
+	desc = "Everything you need to build a staircase, minus the actual stairs. This one is made of wood."
 	frame_stack = /obj/item/stack/sheet/mineral/wood
 
 /obj/structure/stairs_frame/Initialize(mapload)
@@ -238,7 +238,7 @@
 /obj/structure/stairs_frame/atom_deconstruct(disassembled = TRUE)
 	new frame_stack(get_turf(src), frame_stack_amount)
 
-/obj/structure/stairs_frame/attackby(obj/item/attacked_by, mob/user, list/modifiers)
+/obj/structure/stairs_frame/attackby(obj/item/attacked_by, mob/user, list/modifiers, list/attack_modifiers)
 	if(!isstack(attacked_by))
 		return ..()
 	if(!anchored)

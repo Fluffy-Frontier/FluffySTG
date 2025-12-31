@@ -51,8 +51,7 @@ GLOBAL_LIST_INIT(trash_loot, list(//junk: useless, very easy to get, or ghetto c
 		/obj/item/reagent_containers/cup/glass/drinkingglass = 1,
 
 		/obj/item/airlock_painter = 1,
-		/obj/item/airlock_painter/decal = 1,
-		/obj/item/airlock_painter/decal/tile = 1,
+		/obj/item/airlock_painter/decal = 2,
 		/obj/item/clothing/mask/breath = 1,
 		/obj/item/rack_parts = 1,
 		/obj/item/shard = 1,
@@ -107,8 +106,8 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 		/obj/item/storage/belt/fannypack = 1,
 		/obj/item/storage/wallet/random = 1,
 		/obj/item/clothing/mask/gas/atmos/frontier_colonist = 1, // NOVA EDIT ADDITION
-		/obj/item/radio/headset/headset_frontier_colonist = 1, // NOVA EDIT ADDITION 
-		/obj/item/clothing/suit/frontier_colonist_flak = 1, // NOVA EDIT ADDITION 
+		/obj/item/radio/headset/headset_frontier_colonist = 1, // NOVA EDIT ADDITION
+		/obj/item/clothing/suit/frontier_colonist_flak = 1, // NOVA EDIT ADDITION
 		/obj/item/clothing/head/frontier_colonist_helmet = 1, // NOVA EDIT ADDITION
 		/obj/item/storage/pouch/cin_general = 1, // NOVA EDIT ADDITION
 		) = 1,
@@ -120,7 +119,7 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 		/obj/item/stack/sheet/iron/twenty = 1,
 		/obj/item/stack/sheet/mineral/plasma = 1,
 		/obj/item/stock_parts/power_store/cell = 1,
-
+		/obj/effect/spawner/random/engineering/vending_restock = 1,
 		//assemblies
 		/obj/item/assembly/health = 1,
 		/obj/item/assembly/igniter = 1,
@@ -143,14 +142,15 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 		/obj/item/reagent_containers/syringe = 1,
 		/obj/item/stock_parts/power_store/cell/lead = 1,
 		/obj/item/storage/box/matches = 1,
-		/obj/item/storage/fancy/cigarettes/dromedaryco = 1, 
+		/obj/item/storage/fancy/cigarettes/dromedaryco = 1,
+		/obj/item/disk/neuroware/pumpup = 1, // NOVA EDIT ADDITION
 		/obj/item/storage/medkit/civil_defense/stocked = 1, // NOVA EDIT ADDITION
 		/obj/item/storage/medkit/frontier/stocked = 1, // NOVA EDIT ADDITION
 		/obj/item/storage/medkit/combat_surgeon/stocked = 1, // NOVA EDIT ADDITION
 		/obj/item/stack/medical/suture = 1, // NOVA EDIT ADDITION
 		/obj/item/stack/medical/ointment/red_sun = 1, // NOVA EDIT ADDITION
 		/obj/item/reagent_containers/hypospray/medipen/deforest/morpital = 1, // NOVA EDIT ADDITION
-		/obj/item/reagent_containers/hypospray/medipen/deforest/aranepaine =1, // NOVA EDIT ADDITION
+		/obj/item/reagent_containers/hypospray/medipen/deforest/aranepaine = 1, // NOVA EDIT ADDITION
 		) = 1,
 
 	list(//food
@@ -431,6 +431,9 @@ GLOBAL_LIST_INIT(maintenance_loot, list(
 	GLOB.rarity_loot = maint_rarity_weight,
 	GLOB.oddity_loot = maint_oddity_weight,
 	))
+
+//Loot pool that is copied from maint loot but doesn't get changed due to holidays
+GLOBAL_LIST_INIT(dumpster_loot, GLOB.maintenance_loot.Copy())
 
 GLOBAL_LIST_INIT(ratking_trash, list(//Garbage: used by the regal rat mob when spawning garbage.
 			/obj/item/cigbutt,

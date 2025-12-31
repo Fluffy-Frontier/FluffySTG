@@ -27,6 +27,7 @@
  * Intento
  */
 /obj/item/toy
+	abstract_type = /obj/item/toy
 	throwforce = 0
 	throw_speed = 3
 	throw_range = 7
@@ -75,7 +76,7 @@
 		return ITEM_INTERACT_SUCCESS
 	return ITEM_INTERACT_BLOCKING
 
-/obj/item/toy/waterballoon/attackby(obj/item/I, mob/user, list/modifiers)
+/obj/item/toy/waterballoon/attackby(obj/item/I, mob/user, list/modifiers, list/attack_modifiers)
 	if(istype(I, /obj/item/reagent_containers/cup))
 		if(I.reagents)
 			if(I.reagents.total_volume <= 0)
@@ -164,7 +165,7 @@
 	)
 
 
-/obj/item/toy/balloon/long/attackby(obj/item/attacking_item, mob/living/user, list/modifiers)
+/obj/item/toy/balloon/long/attackby(obj/item/attacking_item, mob/living/user, list/modifiers, list/attack_modifiers)
 	if(!istype(attacking_item, /obj/item/toy/balloon/long) || !HAS_TRAIT(user, TRAIT_BALLOON_SUTRA))
 		return ..()
 
@@ -187,7 +188,7 @@
 	qdel(src)
 	return TRUE
 
-/obj/item/toy/balloon/attackby(obj/item/I, mob/user, list/modifiers)
+/obj/item/toy/balloon/attackby(obj/item/I, mob/user, list/modifiers, list/attack_modifiers)
 	if(istype(I, /obj/item/ammo_casing/foam_dart) && ismonkey(user))
 		pop_balloon(monkey_pop = TRUE)
 	else
@@ -296,6 +297,7 @@
 	inhand_icon_state = "balloon"
 	lefthand_file = 'icons/mob/inhands/items/balloons_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items/balloons_righthand.dmi'
+	abstract_type = /obj/item/toy/balloon_animal
 	throwforce = 0
 	throw_speed = 2
 	throw_range = 5
@@ -511,7 +513,7 @@
 	. = ..()
 	. += "There [bullets == 1 ? "is" : "are"] [bullets] cap\s left."
 
-/obj/item/toy/gun/attackby(obj/item/toy/ammo/gun/A, mob/user, list/modifiers)
+/obj/item/toy/gun/attackby(obj/item/toy/ammo/gun/A, mob/user, list/modifiers, list/attack_modifiers)
 
 	if(istype(A, /obj/item/toy/ammo/gun))
 		if (src.bullets >= 7)
@@ -548,6 +550,9 @@
 		span_danger("You fire [src] at [interacting_with]!"), \
 		span_hear("You hear a gunshot!"))
 	return ITEM_INTERACT_SUCCESS
+
+/obj/item/toy/ammo
+	abstract_type = /obj/item/toy/ammo
 
 /obj/item/toy/ammo/gun
 	name = "capgun ammo"
@@ -662,7 +667,7 @@
 
 
 // Copied from /obj/item/melee/energy/sword/attackby
-/obj/item/toy/sword/attackby(obj/item/weapon, mob/living/user, list/modifiers)
+/obj/item/toy/sword/attackby(obj/item/weapon, mob/living/user, list/modifiers, list/attack_modifiers)
 	if(istype(weapon, /obj/item/toy/sword))
 		var/obj/item/toy/sword/attatched_sword = weapon
 		if(HAS_TRAIT(weapon, TRAIT_NODROP))
@@ -1448,7 +1453,7 @@
 	. = ..()
 	AddElement(/datum/element/toy_talk)
 
-/obj/item/toy/dummy/GetVoice()
+/obj/item/toy/dummy/get_voice(add_id_name)
 	return doll_name
 
 /obj/item/toy/seashell

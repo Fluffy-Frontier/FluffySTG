@@ -940,3 +940,76 @@
   - qol: Add CI map linter for window and electrified grille spawners
   - map: Fix many duplicate windows, walls, and grilles spawning together or inside
       each other on a bunch of maps.
+2025-05-29:
+  A.C.M.O.:
+  - rscadd: Added a new science techweb node, Auto-Injecting Medipen Syringes.
+  - rscadd: Added a universal medipen and a low-pressure universal medipen to medical
+      protolathes.
+  - rscadd: Added empty medipens to medical lathe for Epinephrine, Atropine, Oxandrolone,
+      Salicylic Acid, Salbutamol, and Pentetic Acid.
+  - bugfix: Fixed a bug that caused the Medipen Refiller to only refill up to 10u.
+  Alexi-6410:
+  - bugfix: A single erroneous pixel has been removed from half-bob.
+  Iajret:
+  - qol: gas miner beacon now show canisters of different gases as choice options
+  OrbisAnima:
+  - balance: Colossus death bolts (the ones that destroy structures) range were reduced
+      from 50 to 40 tiles.
+  OrionTheFox:
+  - code_imp: Did a lot of sorting on the modular Medals. Please report any issues!
+  - rscadd: All balaclavas now show mutant ears! (They can still be hidden using IC
+      > Show/Hide Mutant Parts as usual)
+  - bugfix: Snouted-variant gasmask icons now get the expected overlay when dirtied
+      after blocking pepperspray
+  - rscdel: Removed a few barely-used or unused items
+  - qol: made the Adjustable Balaclava slightly more user-friendly when adjusting
+  - image: Resprited almost every single snouted-variant of masks!
+  - image: Removed a lot of HOPEFULLY redundant icons. Please report any issues!
+  TimErmolt:
+  - bugfix: Raptoral cybernetic heads now have the correct eyes sprite, and also retain
+      the eye color selected in character setup.
+  Yobrocharlie:
+  - rscdel: a few shocktraps from the maintsroom, and the telecomms
+  carpotoxin:
+  - image: Added a fluff sprite accessory called insectoid
+  - image: Added 'six nips' chest sprite accessory
+  - image: Added 'claw tips' sprite accessory for the legs
+  - image: Added 'upper limb' and 'lower limb' sprite accessory for limbs
+  step1123:
+  - rscadd: New torso augment to augments+ in character editor
+  - bugfix: fixed said torso sprite so that it can be used with regular hands(It used
+      to have a gap of air)
+  vinylspiders:
+  - refactor: preview icons for greyscale items are now automatically generated, meaning
+      you can see GAGS as they actually appear ingame while mapping or viewing the
+      loadout menu.
+2025-05-31:
+  Saukykouko:
+  - balance: "\u0423\u043C\u0435\u043D\u044C\u0448\u0435\u043D\u043E \u041A\u0414\
+      \ \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0430 \u0440\
+      \u0435\u0441\u0443\u0440\u0441\u043E\u0432 \u0443 \u0431\u043B\u043E\u0431\u0430\
+      \ \u0441 4 \u0434\u043E 3.75, \u0443\u0432\u0435\u043B\u0438\u0447\u0435\u043D\
+      \u0438\u0435 \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\
+      \u0433\u043E \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u0430 \u043F\
+      \u043E\u0438\u043D\u0442\u043E\u0432 \u0440\u0435\u0441\u0443\u0440\u0441\u043E\
+      \u0432 \u0441 100 \u0434\u043E 150, \u0443\u0432\u0435\u043B\u0438\u0447\u0435\
+      \u043D\u0438\u0435 \u0442\u0440\u0435\u0431\u0443\u0435\u043C\u043E\u0433\u043E\
+      \ \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u0430 \u0442\u0430\u0439\
+      \u043B\u043E\u0432 \u0434\u043B\u044F \u043F\u043E\u0431\u0435\u0434\u044B \u0441\
+      \ 400 \u0434\u043E 550, \u0443\u0432\u0435\u043B\u0438\u0447\u0435\u043D\u0438\
+      \u0435 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0430\
+      \ \u0440\u0435\u0441\u0443\u0440\u0441\u043E\u0432 \u0440\u0435\u0441\u0443\u0440\
+      \u0441\u043A\u0430\u043C\u0438 \u0441 1 \u0434\u043E 1.5"
+  cheems4793:
+  - qol: "\u0413\u0430\u0439\u0434\u0431\u0443\u043A\u0438 \u0442\u0435\u043F\u0435\
+      \u0440\u044C \u043F\u0435\u0440\u0435\u043D\u0430\u043F\u0440\u0430\u0432\u043B\
+      \u044F\u044E\u0442\u0441\u044F \u043D\u0430 \u043D\u0430\u0448\u0443 \u0432\u0438\
+      \u043A\u0438, \u0430 \u043D\u0435 \u043D\u0430 \u043D\u043E\u0432\u043E\u0432\
+      \u0441\u043A\u0443\u044E/\u0422\u0413\u0448\u043D\u0443\u044E \u0434\u043B\u044F\
+      \ \u0443\u0434\u043E\u0431\u0441\u0442\u0432\u0430 \u0438\u0433\u0440\u043E\u043A\
+      \u043E\u0432"
+  - config: "\u0417\u0430\u043C\u0435\u043D\u0438\u043B \u0441\u0442\u0430\u0440\u044B\
+      \u0435 \u0441\u0441\u044B\u043B\u043A\u0438 \u0422\u0413 \u0438 \u043D\u043E\
+      \u0432\u044B \u043D\u0430 \u043D\u0430\u0448\u0438, \u0430\u043A\u0442\u0443\
+      \u0430\u043B\u044C\u043D\u044B\u0435 \u0434\u043B\u044F \u0441\u0435\u0440\u0432\
+      \u0435\u0440\u0430."

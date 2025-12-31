@@ -3,7 +3,7 @@
 #define KNIFE_ATTACK_VERB_CONTINUOUS list("slashes", "tears", "slices", "tears", "lacerates", "rips", "dices", "cuts", "rends")
 #define KNIFE_ATTACK_VERB_SIMPLE list("slash", "tear", "slice", "tear", "lacerate", "rip", "dice", "cut", "rend")
 #define KNIFE_SHARPNESS SHARP_EDGED
-#define KNIFE_BARE_WOUND_BONUS 15
+#define KNIFE_EXPOSED_WOUND_BONUS 15
 #define CUTTER_HITSOUND 'sound/items/tools/wirecutter.ogg'
 #define CUTTER_USESOUND 'sound/items/tools/wirecutter.ogg'
 #define CUTTER_ATTACK_VERB_CONTINUOUS list("bashes", "batters", "bludgeons", "thrashes", "whacks")
@@ -24,20 +24,48 @@
 	w_class = WEIGHT_CLASS_BULKY
 	obj_flags = CONDUCTS_ELECTRICITY
 	sharpness = SHARP_EDGED
-	force = 25
-	armour_penetration = 20
+	force = 17 // Previously 25, dropped to 17 as two can attack at the same time, equaling about 34 force total.
+	armour_penetration = 15
 	item_flags = NEEDS_PERMIT //Beepers gets angry if you get caught with this.
 	hitsound = 'modular_nova/master_files/sound/weapons/bloodyslice.ogg'
+
+/obj/item/melee/implantarmblade/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(user.get_active_held_item() != src)
+		return
+
+	var/obj/item/some_item = user.get_inactive_held_item()
+
+	if(!istype(some_item,type))
+		return
+
+	user.do_attack_animation(M,null,some_item)
+	some_item.attack(M,user)
+
+/obj/item/organ/cyberimp/arm/toolkit/armblade
+	zone = BODY_ZONE_R_ARM
+	slot = ORGAN_SLOT_RIGHT_ARM_AUG
+
+/obj/item/organ/cyberimp/arm/toolkit/armblade/l
+	zone = BODY_ZONE_L_ARM
+	slot = ORGAN_SLOT_LEFT_ARM_AUG
+
+/obj/item/melee/implantarmblade/early
+	name = "early armblade implant"
+	desc = "A long, sharp, mantis-like blade implanted into someones arm. This is an early, outdated model with a ceramic blade, it isn't as effective as steel versions, but easier to smuggle past metal detectors."
+	force = 12 // More then the claws(but doesn't double as wire cutters), less then the razorwire and 10 less then real armblades, about equal to a survival knife, 24 with two
+	armour_penetration = 5
+	icon_state = "mantis_blade_early"
 
 /obj/item/melee/implantarmblade/energy
 	name = "energy arm blade"
 	desc = "A long mantis-like blade made entirely of blazing-hot energy. Stylish and EXTRA deadly!"
 	icon_state = "energy_mantis_blade"
-	force = 30
-	armour_penetration = 10 //Energy isn't as good at going through armor as it is through flesh alone.
+	force = 20 // Two can attack at the same time, so read this as 40 force total.
+	armour_penetration = 25 //Energy isn't as good at going through armor as it is through flesh alone.
 	hitsound = 'sound/items/weapons/blade1.ogg'
 
-/obj/item/organ/cyberimp/arm/armblade
+/obj/item/organ/cyberimp/arm/toolkit/armblade
 	name = "arm blade implant"
 	desc = "An integrated blade implant designed to be installed into a persons arm. Stylish and deadly; Although, being caught with this without proper permits is sure to draw unwanted attention."
 	items_to_create = list(/obj/item/melee/implantarmblade)
@@ -45,17 +73,29 @@
 	icon_state = "mantis_blade"
 	aug_icon = "toolkit"
 
-/obj/item/organ/cyberimp/arm/armblade/emag_act()
+/obj/item/organ/cyberimp/arm/toolkit/armblade/early
+	name = "outdated arm blade implant"
+	items_to_create = list(/obj/item/melee/implantarmblade/early)
+
+/obj/item/organ/cyberimp/arm/toolkit/armblade/early
+	zone = BODY_ZONE_R_ARM
+	slot = ORGAN_SLOT_RIGHT_ARM_AUG
+
+/obj/item/organ/cyberimp/arm/toolkit/armblade/early/l
+	zone = BODY_ZONE_L_ARM
+	slot = ORGAN_SLOT_LEFT_ARM_AUG
+
+/obj/item/organ/cyberimp/arm/toolkit/armblade/emag_act()
 	if(obj_flags & EMAGGED)
 		return FALSE
-	for(var/datum/weakref/created_item in items_list)
 	to_chat(usr, span_notice("You unlock [src]'s integrated energy arm blade! You madman!"))
 	items_list += WEAKREF(new /obj/item/melee/implantarmblade/energy(src))
+	obj_flags |= EMAGGED
 	return TRUE
 
 /obj/item/autosurgeon/syndicate/armblade
 	name = "armblade autosurgeon"
-	starting_organ = /obj/item/organ/cyberimp/arm/armblade
+	starting_organ = /obj/item/organ/cyberimp/arm/toolkit/armblade
 
 /obj/item/knife/razor_claws
 	name = "implanted razor claws"
@@ -70,7 +110,8 @@
 	var/knife_wound_bonus = 5
 	var/cutter_force = CUTTER_FORCE
 	var/cutter_wound_bonus = CUTTER_WOUND_BONUS
-	var/cutter_bare_wound_bonus = CUTTER_WOUND_BONUS
+	var/cutter_exposed_wound_bonus = CUTTER_WOUND_BONUS
+	var/toggle_sound = 'sound/items/tools/change_drill.ogg'
 	tool_behaviour = TOOL_KNIFE
 	toolspeed = 1
 
@@ -83,7 +124,7 @@
 		inhand_icon_state = "precision_wolverine"
 		force = cutter_force
 		wound_bonus = cutter_wound_bonus
-		bare_wound_bonus = cutter_bare_wound_bonus
+		exposed_wound_bonus = cutter_exposed_wound_bonus
 		sharpness = NONE
 		hitsound = CUTTER_HITSOUND
 		usesound = CUTTER_USESOUND
@@ -97,14 +138,14 @@
 		force = knife_force
 		sharpness = KNIFE_SHARPNESS
 		wound_bonus = knife_wound_bonus
-		bare_wound_bonus = KNIFE_BARE_WOUND_BONUS
+		exposed_wound_bonus = KNIFE_EXPOSED_WOUND_BONUS
 		hitsound = KNIFE_HITSOUND
 		usesound = KNIFE_USESOUND
 		attack_verb_continuous = KNIFE_ATTACK_VERB_CONTINUOUS
 		attack_verb_simple = KNIFE_ATTACK_VERB_SIMPLE
 
-/obj/item/knife/razor_claws/attackby(obj/item/stone, mob/user, param)
-	if(!istype(stone, /obj/item/scratching_stone))
+/obj/item/knife/razor_claws/attackby(obj/item/attacking_item, mob/user, list/modifiers, list/attack_modifiers)
+	if(!istype(attacking_item, /obj/item/scratching_stone))
 		return ..()
 
 	knife_force = ENHANCED_KNIFE_FORCE
@@ -118,12 +159,12 @@
 
 	name = "enhanced razor claws"
 	desc += span_warning("\n\nThese have undergone a special honing process; they'll kill people even faster than they used to.")
-	user.visible_message(span_warning("[user] sharpens [src], [stone] disintegrating!"), span_warning("You sharpen [src], making it much more deadly than before, but [stone] disintegrates under the stress."))
+	user.visible_message(span_warning("[user] sharpens [src], [attacking_item] disintegrating!"), span_warning("You sharpen [src], making it much more deadly than before, but [attacking_item] disintegrates under the stress."))
 	playsound(src, 'sound/items/unsheath.ogg', 25, TRUE)
-	qdel(stone)
+	qdel(attacking_item)
 	return ..()
 
-/obj/item/organ/cyberimp/arm/razor_claws
+/obj/item/organ/cyberimp/arm/toolkit/razor_claws
 	name = "razor claws implant"
 	desc = "A set of hidden, retractable blades built into the fingertips; cyborg mercenary approved."
 	items_to_create = list(/obj/item/knife/razor_claws)
@@ -133,12 +174,34 @@
 	extend_sound = 'sound/items/unsheath.ogg'
 	retract_sound = 'sound/items/sheath.ogg'
 
+/obj/item/organ/cyberimp/arm/toolkit/razor_claws/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF || !IS_ROBOTIC_ORGAN(src))
+		return
+	var/effect_chance = 0
+	switch(severity)
+		if(EMP_LIGHT)
+			effect_chance = 17.5
+		if(EMP_HEAVY)
+			effect_chance = 35
+	if(prob(effect_chance) && owner)
+		owner.visible_message(
+			span_danger("[owner]'s razor claws extend and retract rapidly!"),
+			span_warning("Your razor claws malfunction, extending and retracting uncontrollably!")
+		)
+		if(active_item)
+			Retract()
+		do_sparks(2, TRUE, owner)
+		playsound(owner, 'sound/items/unsheath.ogg', 50, TRUE)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, playsound), owner, 'sound/items/sheath.ogg', 50, TRUE), 0.3 SECONDS)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, playsound), owner, 'sound/items/unsheath.ogg', 50, TRUE), 0.6 SECONDS)
+
 /// bespoke subtypes for augs menu since it's a bit wonky
-/obj/item/organ/cyberimp/arm/razor_claws/right_arm
+/obj/item/organ/cyberimp/arm/toolkit/razor_claws/right_arm
 	zone = BODY_ZONE_R_ARM
 	slot = ORGAN_SLOT_RIGHT_ARM_AUG
 
-/obj/item/organ/cyberimp/arm/razor_claws/left_arm
+/obj/item/organ/cyberimp/arm/toolkit/razor_claws/left_arm
 	zone = BODY_ZONE_L_ARM
 	slot = ORGAN_SLOT_LEFT_ARM_AUG
 
@@ -149,7 +212,7 @@
 	button_icon = 'modular_nova/master_files/icons/hud/actions.dmi'
 	button_icon_state = "wolverine"
 
-/obj/item/organ/cyberimp/arm/mining_drill
+/obj/item/organ/cyberimp/arm/toolkit/mining_drill
 	name = "\improper Dalba Masterworks 'Burrower' Integrated Drill"
 	desc = "Extending from a stabilization bracer built into the upper forearm, this implant allows for a steel mining drill to extend over the user's hand. Little by little, we advance a bit further with each turn. That's how a drill works!"
 	icon = 'modular_nova/modules/implants/icons/drillimplant.dmi'
@@ -159,11 +222,32 @@
 	aug_overlay = "steel"
 	hand_state = FALSE
 
-/obj/item/organ/cyberimp/arm/mining_drill/right_arm //You know the drill.
+/obj/item/organ/cyberimp/arm/toolkit/mining_drill/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF || !IS_ROBOTIC_ORGAN(src))
+		return
+	var/effect_chance = 0
+	switch(severity)
+		if(EMP_LIGHT)
+			effect_chance = 20
+		if(EMP_HEAVY)
+			effect_chance = 40
+	if(prob(effect_chance) && owner)
+		owner.visible_message(
+			span_danger("[owner]'s drill implant whirs and spins erratically!"),
+			span_warning("Your drill implant malfunctions, spinning wildly and making your whole arm shake!")
+		)
+		if(active_item)
+			Retract()
+		owner.set_jitter_if_lower(severity == EMP_LIGHT ? 10 SECONDS : 20 SECONDS)
+		do_sparks(3, TRUE, owner)
+		playsound(owner, 'sound/items/weapons/drill.ogg', 50, TRUE)
+
+/obj/item/organ/cyberimp/arm/toolkit/mining_drill/right_arm //You know the drill.
 	zone = BODY_ZONE_R_ARM
 	slot = ORGAN_SLOT_RIGHT_ARM_AUG
 
-/obj/item/organ/cyberimp/arm/mining_drill/left_arm
+/obj/item/organ/cyberimp/arm/toolkit/mining_drill/left_arm
 	zone = BODY_ZONE_L_ARM
 	slot = ORGAN_SLOT_LEFT_ARM_AUG
 
@@ -205,7 +289,7 @@
 	playsound(user, 'modular_nova/master_files/sound/effects/robot_smoke.ogg', 50, FALSE)
 	user.visible_message(span_warning("[user] spins [src]'s bit, accelerating for a moment to <span class='bolddanger'>thousands of RPM.</span>"), span_notice("You spin [src]'s bit, accelerating for a moment to <span class='bolddanger'>thousands of RPM.</span>"))
 
-/obj/item/organ/cyberimp/arm/mining_drill/diamond
+/obj/item/organ/cyberimp/arm/toolkit/mining_drill/diamond
 	name = "\improper Dalba Masterworks 'Tunneler' Diamond Integrated Drill"
 	desc = "Extending from a stabilization bracer built into the upper forearm, this implant allows for a masterwork diamond mining drill to extend over the user's hand. This drill will open a hole in the universe, and that hole will be a path for those behind us!"
 	icon_state = "diamond"
@@ -223,7 +307,7 @@
 	usesound = 'sound/items/weapons/drill.ogg'
 	hitsound = 'sound/items/weapons/drill.ogg'
 
-/obj/item/organ/cyberimp/arm/hacker
+/obj/item/organ/cyberimp/arm/toolkit/hacker
 	name = "hacking arm implant"
 	desc = "An small arm implant containing an advanced screwdriver, wirecutters, and multitool designed for engineers and on-the-field machine modification. Actually legal, despite what the name may make you think."
 	icon = 'icons/obj/items_cyborg.dmi'
@@ -231,7 +315,7 @@
 	items_to_create = list(/obj/item/screwdriver/cyborg, /obj/item/wirecutters/cyborg, /obj/item/multitool/abductor/implant)
 	aug_overlay = "toolkit"
 
-/obj/item/organ/cyberimp/arm/botany
+/obj/item/organ/cyberimp/arm/toolkit/botany
 	name = "botany arm implant"
 	desc = "A rather simple arm implant containing tools used in gardening and botanical research."
 	items_to_create = list(/obj/item/cultivator, /obj/item/shovel/spade, /obj/item/hatchet, /obj/item/gun/energy/floragun, /obj/item/plant_analyzer, /obj/item/geneshears, /obj/item/secateurs, /obj/item/storage/bag/plants, /obj/item/storage/bag/plants/portaseeder)
@@ -256,10 +340,9 @@
 	tool_behaviour = TOOL_SAW
 	toolspeed = 1
 
-/obj/item/organ/cyberimp/arm/botany/emag_act()
+/obj/item/organ/cyberimp/arm/toolkit/botany/emag_act()
 	if(obj_flags & EMAGGED)
 		return FALSE
-	for(var/datum/weakref/created_item in items_list)
 	to_chat(usr, span_notice("You unlock [src]'s deluxe landscaping equipment!"))
 	items_list += WEAKREF(new /obj/item/implant_mounted_chainsaw(src)) //time to landscape the station
 	obj_flags |= EMAGGED
@@ -271,32 +354,30 @@
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "toolkit_engiborg_multitool"
 
-/obj/item/organ/cyberimp/arm/janitor
+/obj/item/organ/cyberimp/arm/toolkit/janitor
 	name = "janitorial tools implant"
 	desc = "A set of janitorial tools on the user's arm."
 	items_to_create = list(/obj/item/lightreplacer, /obj/item/holosign_creator, /obj/item/soap/nanotrasen, /obj/item/reagent_containers/spray/cyborg_drying, /obj/item/mop/advanced, /obj/item/paint/paint_remover, /obj/item/reagent_containers/cup/beaker/large, /obj/item/reagent_containers/spray/cleaner) //Beaker if for refilling sprays
 	aug_overlay = "toolkit"
 
-/obj/item/organ/cyberimp/arm/janitor/emag_act()
+/obj/item/organ/cyberimp/arm/toolkit/janitor/emag_act()
 	if(obj_flags & EMAGGED)
 		return FALSE
-	for(var/datum/weakref/created_item in items_list)
 	to_chat(usr, span_notice("You unlock [src]'s integrated deluxe cleaning supplies!"))
 	items_list += WEAKREF(new /obj/item/soap/syndie(src)) //We add not replace.
 	items_list += WEAKREF(new /obj/item/reagent_containers/spray/cyborg_lube(src))
 	obj_flags |= EMAGGED
 	return TRUE
 
-/obj/item/organ/cyberimp/arm/lighter
+/obj/item/organ/cyberimp/arm/toolkit/lighter
 	name = "lighter implant"
 	desc = "A... implanted lighter. Incredibly useless."
 	items_to_create = list(/obj/item/lighter/greyscale) //Hilariously useless.
 	aug_overlay = "toolkit"
 
-/obj/item/organ/cyberimp/arm/lighter/emag_act()
+/obj/item/organ/cyberimp/arm/toolkit/lighter/emag_act()
 	if(obj_flags & EMAGGED)
 		return FALSE
-	for(var/datum/weakref/created_item in items_list)
 	to_chat(usr, span_notice("You unlock [src]'s integrated Zippo lighter! Finally, classy smoking!"))
 	items_list += WEAKREF(new /obj/item/lighter(src)) //Now you can choose between bad and worse!
 	obj_flags |= EMAGGED
@@ -311,15 +392,15 @@
 		even from a few steps away. However, results against anything more durable will heavily vary."
 	icon = 'modular_nova/modules/implants/icons/implants.dmi'
 	icon_state = "razorwire_weapon"
-	righthand_file = 'modular_nova/modules/implants/icons/inhands/lefthand.dmi'
-	lefthand_file = 'modular_nova/modules/implants/icons/inhands/righthand.dmi'
+	righthand_file = 'modular_nova/modules/implants/icons/inhands/righthand.dmi'
+	lefthand_file = 'modular_nova/modules/implants/icons/inhands/lefthand.dmi'
 	inhand_icon_state = "razorwire"
 	w_class = WEIGHT_CLASS_BULKY
 	sharpness = SHARP_EDGED
 	force = 20
 	demolition_mod = 0.25 // This thing sucks at destroying stuff
 	wound_bonus = 10
-	bare_wound_bonus = 20
+	exposed_wound_bonus = 20
 	weak_against_armour = TRUE
 	reach = 2
 	hitsound = 'sound/items/weapons/whip.ogg'
@@ -350,7 +431,7 @@
 		),
 	)
 
-/obj/item/organ/cyberimp/arm/razorwire
+/obj/item/organ/cyberimp/arm/toolkit/razorwire
 	name = "razorwire spool implant"
 	desc = "An integrated spool of razorwire, capable of being used as a weapon when whipped at your foes. \
 		Built into the back of your hand, try your best to not get it tangled."
@@ -358,9 +439,39 @@
 	icon = 'modular_nova/modules/implants/icons/implants.dmi'
 	icon_state = "razorwire"
 
+/obj/item/organ/cyberimp/arm/toolkit/razorwire
+	zone = BODY_ZONE_R_ARM
+	slot = ORGAN_SLOT_RIGHT_ARM_AUG
+
+/obj/item/organ/cyberimp/arm/toolkit/razorwire/l
+	zone = BODY_ZONE_L_ARM
+	slot = ORGAN_SLOT_LEFT_ARM_AUG
+
 /obj/item/autosurgeon/syndicate/razorwire
 	name = "razorwire autosurgeon"
-	starting_organ = /obj/item/organ/cyberimp/arm/razorwire
+	starting_organ = /obj/item/organ/cyberimp/arm/toolkit/razorwire
+// Surgical toolsets (normal + cruel) additions
+
+/obj/item/organ/cyberimp/arm/toolkit/surgery/Initialize(mapload)
+	if (src.type == /obj/item/organ/cyberimp/arm/toolkit/surgery)
+		items_to_create += list(
+			/obj/item/bonesetter/augment,
+			/obj/item/blood_filter/augment,
+		)
+	return ..()
+
+// Block swapping while a blood filter is active
+/obj/item/organ/cyberimp/arm/toolkit/surgery/swap_tools(active_item)
+	if (istype(src.active_item, /obj/item/blood_filter))
+		return
+	return ..()
+
+/obj/item/organ/cyberimp/arm/toolkit/surgery/cruel/Initialize(mapload)
+	items_to_create += list(
+		/obj/item/bonesetter/cruel/augment,
+		/obj/item/blood_filter/cruel/augment,
+	)
+	return ..()
 
 // Shell launch system, an arm mounted single-shot shotgun/.980 grenade launcher that comes out of your arm
 
@@ -371,8 +482,8 @@
 		shells famously seen in the 'Kiboko' launcher."
 	icon = 'modular_nova/modules/implants/icons/implants.dmi'
 	icon_state = "shell_cannon_weapon"
-	righthand_file = 'modular_nova/modules/implants/icons/inhands/lefthand.dmi'
-	lefthand_file = 'modular_nova/modules/implants/icons/inhands/righthand.dmi'
+	righthand_file = 'modular_nova/modules/implants/icons/inhands/righthand.dmi'
+	lefthand_file = 'modular_nova/modules/implants/icons/inhands/lefthand.dmi'
 	inhand_icon_state = "shell_cannon"
 	worn_icon = 'icons/mob/clothing/belt.dmi'
 	worn_icon_state = "gun"
@@ -401,9 +512,9 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	caliber = CALIBER_SHOTGUN
 	max_ammo = 1
-	multiload = FALSE
+	ammo_box_multiload = AMMO_BOX_MULTILOAD_NONE
 
-/obj/item/organ/cyberimp/arm/shell_launcher
+/obj/item/organ/cyberimp/arm/toolkit/shell_launcher
 	name = "shell launch system implant"
 	desc = "A mounted, single-shot housing for a shell launch cannon; capable of firing either twelve gauge shotgun shells, or .980 Tydhouer grenades."
 	items_to_create = list(/obj/item/gun/ballistic/shotgun/shell_launcher)
@@ -413,14 +524,14 @@
 
 /obj/item/autosurgeon/syndicate/shell_launcher
 	name = "shell launcher autosurgeon"
-	starting_organ = /obj/item/organ/cyberimp/arm/shell_launcher
+	starting_organ = /obj/item/organ/cyberimp/arm/toolkit/shell_launcher
 
 #undef KNIFE_HITSOUND
 #undef KNIFE_USESOUND
 #undef KNIFE_ATTACK_VERB_CONTINUOUS
 #undef KNIFE_ATTACK_VERB_SIMPLE
 #undef KNIFE_SHARPNESS
-#undef KNIFE_BARE_WOUND_BONUS
+#undef KNIFE_EXPOSED_WOUND_BONUS
 #undef CUTTER_HITSOUND
 #undef CUTTER_USESOUND
 #undef CUTTER_ATTACK_VERB_CONTINUOUS

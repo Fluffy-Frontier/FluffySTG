@@ -203,7 +203,7 @@
 		return
 	new_name = apply_text_macros(new_name)
 	var/obj/item/hitting_implement = (locate(/obj/item/reagent_containers/cup/glass/bottle) in user.held_items) || user.get_item_for_held_index(hand)
-	if(!user.CanReach(attacked, hitting_implement))
+	if(!attacked.IsReachableBy(user, hitting_implement.reach))
 		user.balloon_alert(user, "out of range!")
 		return
 	var/obj/item/reagent_containers/cup/glass/bottle/bottle = hitting_implement
@@ -372,7 +372,7 @@
 		data["idle"] = linked_shuttle.mode == SHUTTLE_IDLE
 		if(on_shuttle_frame)
 			data["size"] = length(frame.turfs) - length(frame.shuttle_covered_turfs) + linked_shuttle.turf_count
-			data["problems"] = shuttle_expand_check(current_turf)
+			data["problems"] = shuttle_expand_check(current_turf, linked_shuttle)
 	return data
 
 /obj/item/shuttle_blueprints/proc/link_to_shuttle(obj/docking_port/mobile/custom/shuttle, is_master = FALSE)

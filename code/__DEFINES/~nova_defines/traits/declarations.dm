@@ -33,6 +33,10 @@
 #define TRAIT_HYDRA_HEADS "hydrahead"
 /// Trait to spawn with a pet in a pet carrier (veteran only)
 #define TRAIT_PET_OWNER "pet_owner"
+/// Trait to spawn with a lunch box!
+#define TRAIT_LUNCHBOX_OWNER "lunchbox_owner"
+/// Trait used to block telepathy types (Genetics, Xenomorph, Revenant, Slime. Ideally should be all.)
+#define TRAIT_PSIONIC_DAMPENER "psionic_dampener"
 
 //AdditionalEmotes *turf traits
 #define TRAIT_WATER_ASPECT "water_aspect"
@@ -79,6 +83,9 @@
 
 /// The trait that determines if someone has the oversized quirk.
 #define TRAIT_OVERSIZED "trait_oversized"
+
+/// The trait that allows taurs to lay down (loaf)
+#define TRAIT_TAUR_LOAF "taur-laydown"
 
 /// The trait accompanying the "Heavyset" quirk.
 #define TRAIT_HEAVYSET "trait_heavyset"
@@ -167,5 +174,14 @@
 
 /// If a slimeperson is currently protecting themselves from water
 #define TRAIT_SLIME_HYDROPHOBIA "slime_hydrophobia"
+
+//For the hemophage quirk that allows hemophages to eat/drink normal food/drink.
+#define TRAIT_MASQUERADE_FOOD "masquerade_food"
+
+/// Trait given while using /datum/action/cooldown/mob_cooldown/abdoment_pound
+#define TRAIT_ABDOMEN_POUND "abdoment_pound"
+
+///Insanity trait for Reality Dissociation Syndrome (to make it easier to work with)
+#define TRAIT_INSANITY "insanity"
 
 // END TRAIT DEFINES

@@ -1,5 +1,10 @@
 // MODULAR ID TRIM ACCESS OVERRIDES GO HERE!!
 
+/datum/id_trim/job/medical_doctor/New()
+	. = ..()
+
+	extra_access  |= ACCESS_MORGUE_SECURE
+
 /datum/id_trim/job/chief_engineer/New()
 	. = ..()
 
@@ -37,12 +42,12 @@
 	sechud_icon_state = SECHUD_BLUESHIELD
 	extra_access = list(
 		ACCESS_BRIG,
-		ACCESS_CARGO,
 		ACCESS_COURT,
 		ACCESS_GATEWAY,
-		ACCESS_SECURITY,
 	)
 	minimal_access = list(
+		ACCESS_CARGO,
+		ACCESS_SECURITY,
 		ACCESS_ALL_PERSONAL_LOCKERS,
 		ACCESS_BRIG_ENTRANCE,
 		ACCESS_CENT_GENERAL,
@@ -133,6 +138,7 @@
 		ACCESS_MAINT_TUNNELS,
 		ACCESS_SECURITY,
 		ACCESS_WEAPONS,
+		ACCESS_MINERAL_STOREROOM,
 	)
 	template_access = list(
 		ACCESS_CAPTAIN,
@@ -154,6 +160,7 @@
 		ACCESS_MAINT_TUNNELS,
 		ACCESS_SERVICE,
 		ACCESS_THEATRE,
+		ACCESS_MINERAL_STOREROOM,
 	)
 	template_access = list(
 		ACCESS_CAPTAIN,

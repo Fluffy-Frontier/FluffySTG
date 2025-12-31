@@ -145,7 +145,7 @@
 	var/mob/living/carbon/human/to_mutate = cast_on
 	if(!to_mutate.can_mutate())
 		return FALSE
-	to_mutate.dna.add_mutation(/datum/mutation/human/telekinesis, MUT_OTHER)
+	to_mutate.dna.add_mutation(/datum/mutation/telekinesis, MUTATION_SOURCE_ACTIVATED)
 	drain_mana()
 
 // Восстанавливает Integrity атома. Позволяет чинить многие нечинимые иными способами вещи
@@ -253,7 +253,7 @@
 	tool_list = list(
 			"Crowbar" = image(icon = 'icons/obj/tools.dmi', icon_state = "crowbar"),
 			"Multitool" = image(icon = 'icons/obj/devices/tool.dmi', icon_state = "multitool"),
-			"Screwdriver" = image(icon = 'icons/obj/tools.dmi', icon_state = "screwdriver_map"),
+			"Screwdriver" = image(icon = 'icons/obj/tools.dmi', icon_state = "screwdriver_brass"),
 			"Wirecutters" = image(icon = 'icons/obj/tools.dmi', icon_state = "cutters_map"),
 			"Wrench" = image(icon = 'icons/obj/tools.dmi', icon_state = "wrench"),
 		)

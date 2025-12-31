@@ -46,3 +46,15 @@
 		return FALSE
 	return ..()
 
+/datum/quirk/item_quirk/immunodeficiency/is_species_appropriate(datum/species/mob_species)
+	var/datum/species_traits = GLOB.species_prototypes[mob_species].inherent_traits
+	if(TRAIT_SYNTHETIC in species_traits) // Нет синтам с иммунодефицитом
+		return FALSE
+	if(TRAIT_VIRUSIMMUNE in species_traits) // Нет кровосисям с иммунодефицитом
+		return FALSE
+	return ..()
+  
+/datum/quirk/system_shock/is_species_appropriate(datum/species/mob_species)
+	var/datum/species_traits = GLOB.species_prototypes[mob_species].inherent_traits
+	return (TRAIT_SYNTHETIC in species_traits) // только синт
+

@@ -14,14 +14,14 @@
 	response_disarm_simple = "gently push aside"
 	initial_language_holder = /datum/language_holder/spider
 	melee_attack_cooldown = CLICK_CD_MELEE
-	damage_coeff = list(BRUTE = 1, BURN = 1.25, TOX = 1, STAMINA = 1, OXY = 1)
+	damage_coeff = list(BRUTE = 1, BURN = 1.25, TOX = 3, STAMINA = 1, OXY = 1)
 	basic_mob_flags = FLAMMABLE_MOB
 	status_flags = NONE
 	unsuitable_cold_damage = 4
 	unsuitable_heat_damage = 4
 	combat_mode = TRUE
 	faction = list(FACTION_SPIDER)
-	pass_flags = PASSTABLE | PASSMOB // FLUFFY FRONTIER ADDITION - SPIDEBUFF. ORIGINAL: pass_flags = PASSTABLE
+	pass_flags = PASSTABLE
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/items/weapons/bite.ogg'
@@ -148,7 +148,7 @@
 		if(prob(3))
 			grow_as = pick(/mob/living/basic/spider/giant/tarantula, /mob/living/basic/spider/giant/viper, /mob/living/basic/spider/giant/midwife)
 		else
-			grow_as = pick(/mob/living/basic/spider/giant/guard, /mob/living/basic/spider/giant/ambush, /mob/living/basic/spider/giant/hunter, /mob/living/basic/spider/giant/scout, /mob/living/basic/spider/giant/nurse, /mob/living/basic/spider/giant/tangle)
+			grow_as = pick(/mob/living/basic/spider/giant/guard, /mob/living/basic/spider/giant/ambush, /mob/living/basic/spider/giant/hunter, /mob/living/basic/spider/giant/scout, /mob/living/basic/spider/giant/nurse, /mob/living/basic/spider/giant/tangle, /mob/living/basic/spider/giant/webslinger, /mob/living/basic/spider/giant/voltaic, /mob/living/basic/spider/giant/pit, /mob/living/basic/spider/giant/ogre) // NOVA EDIT ORIGINAL: grow_as = pick(/mob/living/basic/spider/giant/guard, /mob/living/basic/spider/giant/ambush, /mob/living/basic/spider/giant/hunter, /mob/living/basic/spider/giant/scout, /mob/living/basic/spider/giant/nurse, /mob/living/basic/spider/giant/tangle)
 
 	var/mob/living/basic/spider/giant/grown = change_mob_type(grow_as, get_turf(src), initial(grow_as.name))
 	ADD_TRAIT(grown, TRAIT_WAS_EVOLVED, REF(src))

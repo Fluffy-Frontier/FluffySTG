@@ -2,10 +2,11 @@
 //SUITS
 /obj/item/clothing/suit/hooded/wintercoat/colourable
 	name = "custom winter coat"
-	icon_state = "winter_coat"
-	icon = null
 	worn_icon_state = null
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/colourable
+	icon = 'icons/map_icons/clothing/suit/_suit.dmi'
+	icon_state = "/obj/item/clothing/suit/hooded/wintercoat/colourable"
+	post_init_icon_state = "winter_coat"
 	greyscale_config = /datum/greyscale_config/winter_coat
 	greyscale_config_worn = /datum/greyscale_config/winter_coat_worn
 	greyscale_colors = "#666666#CCBBAA#0000FF"
@@ -41,7 +42,6 @@
 	hood.set_greyscale(new_coat_colors) //Adopt the suit's grayscale coloring for visual clarity.
 
 /obj/item/clothing/head/hooded/winterhood/colourable
-	icon_state = "hood_winter"
 	greyscale_config = /datum/greyscale_config/winter_hood
 	greyscale_config_worn = /datum/greyscale_config/winter_hood/worn
 
@@ -49,7 +49,9 @@
 
 /obj/item/clothing/neck/cloak/colourable
 	name = "colourable cloak"
-	icon_state = "gags_cloak"
+	icon = 'icons/map_icons/clothing/neck.dmi'
+	icon_state = "/obj/item/clothing/neck/cloak/colourable"
+	post_init_icon_state = "gags_cloak"
 	greyscale_config = /datum/greyscale_config/cloak
 	greyscale_config_worn = /datum/greyscale_config/cloak/worn
 	greyscale_colors = "#917A57#4e412e#4e412e"
@@ -57,19 +59,25 @@
 
 /obj/item/clothing/neck/cloak/colourable/veil
 	name = "colourable veil"
-	icon_state = "gags_veil"
+	icon = 'icons/map_icons/clothing/neck.dmi'
+	icon_state = "/obj/item/clothing/neck/cloak/colourable/veil"
+	post_init_icon_state = "gags_veil"
 	greyscale_config = /datum/greyscale_config/cloak/veil
 	greyscale_config_worn = /datum/greyscale_config/cloak/veil/worn
 
 /obj/item/clothing/neck/cloak/colourable/boat
 	name = "colourable boatcloak"
-	icon_state = "gags_boat"
+	icon = 'icons/map_icons/clothing/neck.dmi'
+	icon_state = "/obj/item/clothing/neck/cloak/colourable/boat"
+	post_init_icon_state = "gags_boat"
 	greyscale_config = /datum/greyscale_config/cloak/boat
 	greyscale_config_worn = /datum/greyscale_config/cloak/boat/worn
 
 /obj/item/clothing/neck/cloak/colourable/shroud
 	name = "colourable shroud"
-	icon_state = "gags_shroud"
+	icon = 'icons/map_icons/clothing/neck.dmi'
+	icon_state = "/obj/item/clothing/neck/cloak/colourable/shroud"
+	post_init_icon_state = "gags_shroud"
 	greyscale_config = /datum/greyscale_config/cloak/shroud
 	greyscale_config_worn = /datum/greyscale_config/cloak/shroud/worn
 
@@ -92,8 +100,6 @@
 	icon = 'modular_nova/master_files/icons/donator/obj/custom.dmi'
 	icon_state = "infcloak"
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/custom_w.dmi'
-	w_class = WEIGHT_CLASS_SMALL
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	supports_variations_flags = NONE
 
 // Donation reward
@@ -278,8 +284,6 @@
 	name = "feathered serenity hood"
 	icon_state = "paddedhoodalt"
 
-/datum/armor/clothing_under/none
-
 /obj/item/clothing/shoes/jackboots/heel
 	name = "high-heeled jackboots"
 	desc = "Almost like regular jackboots... why are they on a high heel?"
@@ -357,8 +361,6 @@
 /obj/item/clothing/mask/gas/nightlight/examine(mob/user)
 	. = ..()
 	. += span_notice("Alt-click [src] to adjust it.")
-
-/obj/item/clothing/mask/gas/nightlight/alldono //different itempath so regular donators can have it, too
 
 // Donation reward for Farsighted Nightlight
 /obj/item/clothing/mask/gas/nightlight/fir22
@@ -644,8 +646,6 @@
 	icon = 'modular_nova/master_files/icons/donator/obj/custom.dmi'
 	icon_state = "infcloak"
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/custom_w.dmi'
-	w_class = WEIGHT_CLASS_SMALL
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 
 // Donation reward for inferno707
 /obj/item/clothing/neck/inferno_collar
@@ -693,7 +693,7 @@
 	return mutable_appearance('modular_nova/master_files/icons/donator/obj/custom.dmi', "darksheath-darksabre")
 
 // Donation reward for inferno707
-/obj/item/storage/belt/sabre/darksabre
+/obj/item/storage/belt/sheath/sabre/darksabre
 	name = "ornate sheathe"
 	desc = "An ornate and rather sinister looking sabre sheathe."
 	icon = 'modular_nova/master_files/icons/donator/obj/custom.dmi'
@@ -701,11 +701,11 @@
 	icon_state = "darksheath"
 	worn_icon_state = "darksheath"
 
-/obj/item/storage/belt/sabre/darksabre/Initialize(mapload)
+/obj/item/storage/belt/sheath/sabre/darksabre/Initialize(mapload)
 	. = ..()
 	atom_storage.set_holdable(/obj/item/toy/darksabre)
 
-/obj/item/storage/belt/sabre/darksabre/PopulateContents()
+/obj/item/storage/belt/sheath/sabre/darksabre/PopulateContents()
 	new /obj/item/toy/darksabre(src)
 	update_icon()
 
@@ -874,6 +874,7 @@
 // Donation Reward for Grand Vegeta
 /obj/item/clothing/shoes/sneakers/mikuleggings
 	name = "starlight singer leggings"
+	post_init_icon_state = null
 	greyscale_config = null
 	greyscale_config_worn = null
 	greyscale_colors = null
@@ -890,18 +891,11 @@
 	icon = 'modular_nova/master_files/icons/donator/obj/clothing/masks.dmi'
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/mask.dmi'
 	icon_state = "yoni"
-	w_class = WEIGHT_CLASS_SMALL
-	tint = 0
-	flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES | PEPPERPROOF
 	visor_flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES | PEPPERPROOF
-	clothing_flags = VOICEBOX_DISABLED | MASKINTERNALS | BLOCK_GAS_SMOKE_EFFECT | GAS_FILTERING
-	use_radio_beeps_tts = TRUE
+	clothing_flags = parent_type::clothing_flags | VOICEBOX_DISABLED
 	flags_inv = NONE
-
-/obj/item/clothing/mask/gas/CMCP_mask/Initialize(mapload)
-	. = ..()
-	var/obj/item/clothing/mask/gas/sechailer/sechailer_type = /obj/item/clothing/mask/gas/sechailer
-	voice_filter = initial(sechailer_type.voice_filter)
+	use_radio_beeps_tts = TRUE
+	voice_filter = /obj/item/clothing/mask/gas/sechailer::voice_filter
 
 // Donation reward for Koruu
 /obj/item/clothing/mask/gas/signalis_gaiter
@@ -910,20 +904,13 @@
 	icon = 'modular_nova/master_files/icons/donator/obj/clothing/masks.dmi'
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/mask.dmi'
 	icon_state = "siggaiter"
-	w_class = WEIGHT_CLASS_SMALL
-	tint = 0
 	actions_types = list(/datum/action/item_action/adjust)
-	flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES | PEPPERPROOF
 	visor_flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES | PEPPERPROOF
-	clothing_flags = VOICEBOX_DISABLED | MASKINTERNALS | BLOCK_GAS_SMOKE_EFFECT | GAS_FILTERING
-	use_radio_beeps_tts = TRUE
+	clothing_flags = parent_type::clothing_flags | VOICEBOX_DISABLED
 	flags_inv = NONE
 	interaction_flags_click = NEED_DEXTERITY
-
-/obj/item/clothing/mask/gas/signalis_gaiter/Initialize(mapload)
-	. = ..()
-	var/obj/item/clothing/mask/gas/sechailer/sechailer_type = /obj/item/clothing/mask/gas/sechailer
-	voice_filter = initial(sechailer_type.voice_filter)
+	use_radio_beeps_tts = TRUE
+	voice_filter = /obj/item/clothing/mask/gas/sechailer::voice_filter
 
 /obj/item/clothing/mask/gas/signalis_gaiter/attack_self(mob/user)
 	adjust_visor(user)
@@ -998,12 +985,8 @@
 	icon = 'modular_nova/master_files/icons/donator/obj/clothing/masks.dmi'
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/mask.dmi'
 	icon_state = "psychomalice"
-	w_class = WEIGHT_CLASS_SMALL
-	tint = 0
-	flags_inv = HIDEEARS|HIDEEYES|HIDESNOUT|HIDEFACIALHAIR
-	flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES | PEPPERPROOF
 	visor_flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES | PEPPERPROOF
-	clothing_flags = VOICEBOX_DISABLED | MASKINTERNALS | BLOCK_GAS_SMOKE_EFFECT | GAS_FILTERING
+	clothing_flags = parent_type::clothing_flags | VOICEBOX_DISABLED
 	interaction_flags_click = NEED_DEXTERITY
 	/// Whether or not the mask is currently being layered over (or under!) hair. FALSE/null means the mask is layered over the hair (this is how it starts off).
 	var/wear_hair_over
@@ -1149,7 +1132,7 @@
 	. = ..()
 	handle_sight_updating(user)
 
-/obj/item/clothing/glasses/welding/steampunk_goggles/attackby(obj/item/attacking_item, mob/living/user, params)
+/obj/item/clothing/glasses/welding/steampunk_goggles/attackby(obj/item/attacking_item, mob/user, list/modifiers, list/attack_modifiers)
 	if(!istype(attacking_item, /obj/item/clothing/glasses/welding))
 		return ..()
 
@@ -1275,6 +1258,10 @@
 	upsprite = "fushankaup"
 	downsprite = "fushankadown"
 
+	post_init_icon_state = null
+	greyscale_config = null
+	greyscale_config_worn = null
+
 // Donation reward for M97screwsyourparents
 /obj/item/clothing/neck/cross
 	name = "silver cross"
@@ -1367,11 +1354,11 @@
 		user.visible_message(span_notice("[user] shows you: [icon2html(src, viewers(user))] [src.name]."), span_notice("You show \the [src.name]."))
 	add_fingerprint(user)
 
-/obj/item/card/fuzzy_license/attackby(obj/item/used, mob/living/user, params)
+/obj/item/card/fuzzy_license/attackby(obj/item/attacking_item, mob/user, list/modifiers, list/attack_modifiers)
 	if(user.ckey != "fuzlet")
 		return
 
-	if(istype(used, /obj/item/pen) || istype(used, /obj/item/toy/crayon))
+	if(istype(attacking_item, /obj/item/pen) || istype(attacking_item, /obj/item/toy/crayon))
 		var/choice = input(user, "Select the license type", "License Type Selection") as null|anything in possible_types
 		if(!isnull(choice))
 			name = "license to [choice]"
@@ -1388,13 +1375,13 @@
 /obj/item/poster/korpstech
 	name = "\improper Empire Enhancements poster"
 	poster_type = /obj/structure/sign/poster/contraband/korpstech
-	icon = 'modular_nova/modules/aesthetics/posters/contraband.dmi'
+	icon = 'modular_nova/modules/aesthetics/posters/icons/contraband.dmi'
 	icon_state = "rolled_poster"
 
 /obj/structure/sign/poster/contraband/korpstech
 	name = "Empire Enhancements"
 	desc = "This poster bears a huge, pink helix on it, with smaller text underneath it that mentions some alleged genetic advancements from a long time ago."
-	icon = 'modular_nova/modules/aesthetics/posters/contraband.dmi'
+	icon = 'modular_nova/modules/aesthetics/posters/icons/contraband.dmi'
 	icon_state = "korpsposter"
 	never_random = TRUE
 
@@ -1565,7 +1552,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/korpstech, 32)
 
 // Donation reward for BoisterousBeebz
 
-/obj/item/clothing/under/bubbly_clown/skirt
+/obj/item/clothing/under/bubbly_clown_skirt
 	name = "bubbly clown dress"
 	desc = "A bright and cheerful clown dress, honk!"
 	icon = 'modular_nova/master_files/icons/donator/obj/clothing/uniform.dmi'
@@ -1597,10 +1584,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/korpstech, 32)
 // Donation reward for thedragmeme and snailom
 /obj/item/clothing/shoes/fancy_heels/drag
 	desc = "A fancy pair of high heels. Clack clack clack... definitely turning a lot of heads."
+	flags_1 = parent_type::flags_1 | NO_NEW_GAGS_PREVIEW_1
 
 /obj/item/clothing/shoes/fancy_heels/drag/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/squeak, list('modular_nova/modules/modular_items/lewd_items/sounds/highheel1.ogg' = 1, 'modular_nova/modules/modular_items/lewd_items/sounds/highheel2.ogg' = 1), 70)
+	AddComponent(/datum/component/squeak, list('modular_nova/master_files/sound/effects/footstep/highheel1.ogg' = 1, 'modular_nova/master_files/sound/effects/footstep/highheel2.ogg' = 1), 70)
 
 // Donation reward for Razurath
 
@@ -1935,7 +1923,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/korpstech, 32)
 		message = span_warning("[src]'s delicate fabric is shredded by [washer]! How terrible!")
 		sound_effect_path = 'sound/effects/cloth_rip.ogg'
 		sound_effect_volume = 30
-		for (var/zone as anything in cover_flags2body_zones(body_parts_covered))
+		for (var/zone in cover_flags2body_zones(body_parts_covered))
 			take_damage_zone(zone, limb_integrity * 1.1, BRUTE) // fucking shreds it
 
 	var/turf/our_turf = get_turf(src)
@@ -2061,7 +2049,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/korpstech, 32)
 
 /obj/item/clothing/shoes/rem_shoes/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/squeak, list('modular_nova/modules/modular_items/lewd_items/sounds/highheel1.ogg' = 1, 'modular_nova/modules/modular_items/lewd_items/sounds/highheel2.ogg' = 1), 70)
+	AddComponent(/datum/component/squeak, list('modular_nova/master_files/sound/effects/footstep/highheel1.ogg' = 1, 'modular_nova/master_files/sound/effects/footstep/highheel2.ogg' = 1), 70)
 
 /obj/item/clothing/under/bwake
 	name = "\improper Compression bodysuit"
@@ -2099,7 +2087,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/korpstech, 32)
 /obj/item/clothing/suit/replica_parade_jacket
 	name = "replica parade jacket"
 	desc = "Ever see command staff in a fancy parade jacket and think to yourself, \"I want that\" without having to steal it? Here's your chance. Made from the finest synthleather and synthwool, it cost far more than most people care to admit they paid."
-	icon_state = "r_parade_jacket"
+	icon = 'icons/map_icons/clothing/suit/_suit.dmi'
+	icon_state = "/obj/item/clothing/suit/replica_parade_jacket"
+	post_init_icon_state = "r_parade_jacket"
 	greyscale_config = /datum/greyscale_config/replica_parade_jacket
 	greyscale_config_worn = /datum/greyscale_config/replica_parade_jacket/worn
 	greyscale_colors = "#b0c5ff#434343"
@@ -2132,11 +2122,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/korpstech, 32)
 /obj/item/clothing/suit/chokha
 	name = "\improper Iseurian chokha"
 	desc = "A ceremonial woolen coat sporting a high neck and decorative gunpowder cases on the breast. The label on this one bears the Iseurian Revolutionary flag."
-	icon_state = "chokha"
+	icon = 'icons/map_icons/clothing/suit/_suit.dmi'
+	icon_state = "/obj/item/clothing/suit/chokha"
+	post_init_icon_state = "chokha"
 	greyscale_config = /datum/greyscale_config/chokha
 	greyscale_config_worn = /datum/greyscale_config/chokha/worn
 	greyscale_colors = "#1c1c1c#491618#1c1c1c#491618"
 	flags_1 = IS_PLAYER_COLORABLE_1
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 //donator reward for Desminus
 
@@ -2162,7 +2155,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/korpstech, 32)
 /obj/item/clothing/under/pants/half_leotard_cosmiclaer
 	name = "one-sleeved leotard"
 	desc = "A fancy, top-of-the-line leotard that some barbarian lopped one of the arms off of."
-	icon_state = "half_leotard"
+	icon = 'icons/map_icons/clothing/under/_under.dmi'
+	icon_state = "/obj/item/clothing/under/pants/half_leotard_cosmiclaer"
+	post_init_icon_state = "half_leotard"
 	greyscale_config = /datum/greyscale_config/half_leotard
 	greyscale_config_worn = /datum/greyscale_config/half_leotard/worn
 	greyscale_colors = "#80C7D0"

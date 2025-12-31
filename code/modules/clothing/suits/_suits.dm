@@ -3,11 +3,12 @@
 	icon = 'icons/obj/clothing/suits/default.dmi'
 	lefthand_file = 'icons/mob/inhands/clothing/suits_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing/suits_righthand.dmi'
+	abstract_type = /obj/item/clothing/suit
 	var/fire_resist = T0C+100
 	allowed = list(
 		/obj/item/tank/internals/emergency_oxygen,
 		/obj/item/tank/internals/plasmaman,
-		/obj/item/tank/jetpack/oxygen/captain,
+		/obj/item/tank/jetpack/captain,
 		/obj/item/storage/belt/holster,
 		/obj/item/cane, // NOVA EDIT ADDITION
 		)
@@ -50,17 +51,15 @@
 		return
 
 	var/obj/item/clothing/accessory/displayed = undershirt.attached_accessories[1]
-	if(displayed.above_suit)
+	if(displayed.above_suit && undershirt.accessory_overlay)
 		. += undershirt.modify_accessory_overlay() // NOVA EDIT CHANGE - ORIGINAL: . += undershirt.accessory_overlay
 
 /obj/item/clothing/suit/separate_worn_overlays(mutable_appearance/standing, mutable_appearance/draw_target, isinhands = FALSE, icon_file, mutant_styles) // NOVA EDIT CHANGE - ORIGINAL: separate_worn_overlays(mutable_appearance/standing, mutable_appearance/draw_target, isinhands = FALSE, icon_file)
 	. = ..()
-	if(isinhands)
+	if (isinhands)
 		return
-	if(GET_ATOM_BLOOD_DNA_LENGTH(src))
-		var/bloodfile2use = (mutant_styles & STYLE_TAUR_ALL) ? 'modular_nova/master_files/icons/mob/64x32_blood.dmi' : 'icons/effects/blood.dmi' // NOVA EDIT ADDITION
-		var/mutable_appearance/blood_overlay = mutable_appearance(bloodfile2use, "[blood_overlay_type]blood") // NOVA EDIT CHANGE - ORIGINAL: var/mutable_appearance/blood_overlay = mutable_appearance('icons/effects/blood.dmi', "[blood_overlay_type]blood")
-		blood_overlay.color = get_blood_dna_color(GET_ATOM_BLOOD_DNA(src))
+	var/blood_overlay = get_blood_overlay(blood_overlay_type, mutant_styles) // NOVA EDIT CHANGE - ORIGINAL: var/blood_overlay = get_blood_overlay(blood_overlay_type)
+	if (blood_overlay)
 		. += blood_overlay
 
 /obj/item/clothing/suit/update_clothes_damaged_state(damaged_state = CLOTHING_DAMAGED)

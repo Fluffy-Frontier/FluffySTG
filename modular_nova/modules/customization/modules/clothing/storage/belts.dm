@@ -33,7 +33,7 @@
 		),
 		cant_hold_list = list(
 			/obj/item/nullrod/armblade,
-			/obj/item/nullrod/carp,
+			/obj/item/toy/plush/carpplushie/nullrod,
 			/obj/item/nullrod/chainsaw,
 			/obj/item/nullrod/bostaff,
 			/obj/item/nullrod/hammer,
@@ -129,11 +129,11 @@
 /obj/item/storage/belt/holster/thigh
 	name = "thigh holster"
 	desc = "A fine leather holster, fastened to the hip and attached to a belt. Can hold a handgun and some ammo."
-	icon_state = "cowboy_belt"
+	icon = 'icons/map_icons/items/_item.dmi'
+	icon_state = "/obj/item/storage/belt/holster/thigh"
+	post_init_icon_state = "cowboy_belt"
 	worn_icon_state = "cowboy_belt"
-	icon_state_preview = "cowboy_belt_preview"
 	inhand_icon_state = "utility"
-	icon = 'modular_nova/master_files/icons/obj/clothing/belts.dmi'
 	worn_icon = 'modular_nova/master_files/icons/mob/clothing/belt.dmi'
 	greyscale_config = /datum/greyscale_config/thigh_holster
 	greyscale_config_worn = /datum/greyscale_config/thigh_holster/worn

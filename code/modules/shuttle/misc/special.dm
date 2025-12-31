@@ -7,8 +7,6 @@
 	name = "Energy Cannon"
 	desc = "A heavy duty industrial laser."
 	icon = 'icons/obj/machines/engine/singularity.dmi'
-	icon_state = "emitter_+a"
-	base_icon_state = "emitter_+a"
 	anchored = TRUE
 	density = TRUE
 	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | ACID_PROOF
@@ -62,7 +60,7 @@
 		active = FALSE
 	update_appearance()
 
-/obj/machinery/power/emitter/energycannon/magical/attackby(obj/item/W, mob/user, list/modifiers)
+/obj/machinery/power/emitter/energycannon/magical/attackby(obj/item/W, mob/user, list/modifiers, list/attack_modifiers)
 	return
 
 /obj/machinery/power/emitter/energycannon/magical/ex_act(severity)
@@ -259,7 +257,7 @@
 /obj/machinery/scanner_gate/luxury_shuttle/auto_scan(atom/movable/AM)
 	return
 
-/obj/machinery/scanner_gate/luxury_shuttle/attackby(obj/item/W, mob/user, list/modifiers)
+/obj/machinery/scanner_gate/luxury_shuttle/attackby(obj/item/W, mob/user, list/modifiers, list/attack_modifiers)
 	return
 
 /obj/machinery/scanner_gate/luxury_shuttle/emag_act(mob/user, obj/item/card/emag/emag_card)

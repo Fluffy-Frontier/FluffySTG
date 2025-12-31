@@ -169,8 +169,6 @@
 	web_speed = 0.25
 	web_type = /datum/action/cooldown/mob_cooldown/lay_web/sealer
 	menu_description = "Avarage speed spider able to heal other spiders and itself together with a fast web laying capability, has low damage and health."
-	///The health HUD applied to the mob.
-	var/health_hud = DATA_HUD_MEDICAL_ADVANCED
 
 ///Used in the caves away mission.
 /mob/living/basic/spider/giant/nurse/away_caves
@@ -179,12 +177,11 @@
 
 /mob/living/basic/spider/giant/nurse/Initialize(mapload)
 	. = ..()
-	var/datum/atom_hud/datahud = GLOB.huds[health_hud]
-	datahud.show_to(src)
+	ADD_TRAIT(src, TRAIT_MEDICAL_HUD, INNATE_TRAIT)
 
 	AddComponent(/datum/component/healing_touch,\
-		heal_brute = 17.5, /* FLUFFY FRONTIER EDIT - SPIDERBUFF. ORIGINAL - heal_brute = 10 */ \
-		heal_burn = 17.5, /* FLUFFY FRONTIER EDIT - SPIDERBUFF. ORIGINAL - heal_burn = 10 */ \
+		heal_brute = 10,\
+		heal_burn = 10,\
 		heal_time = 2.5 SECONDS,\
 		interaction_key = DOAFTER_SOURCE_SPIDER,\
 		valid_targets_typecache = typecacheof(list(/mob/living/basic/spider/giant)),\
@@ -235,9 +232,9 @@
 	AddElement(/datum/element/web_walker, /datum/movespeed_modifier/average_web)
 
 	AddComponent(/datum/component/healing_touch,\
-		heal_brute = 50, /* FLUFFY FRONTIER EDIT - SPIDERBUFF. ORIGINAL: heal_brute = 15 */ \
-		heal_burn = 50, /* FLUFFY FRONTIER EDIT - SPIDERBUFF. ORIGINAL: heal_burn = 15 */ \
-		heal_time = 6 SECONDS, /* FLUFFY FRONTIER EDIT - SPIDERBUFF. ORIGINAL: heal_time = 3 SECONDS */ \
+		heal_brute = 15,\
+		heal_burn = 15,\
+		heal_time = 3 SECONDS,\
 		self_targeting = HEALING_TOUCH_SELF_ONLY,\
 		interaction_key = DOAFTER_SOURCE_SPIDER,\
 		valid_targets_typecache = typecacheof(list(/mob/living/basic/spider/growing/young/tangle, /mob/living/basic/spider/giant/tangle)),\
@@ -323,7 +320,7 @@
 	maximum_survivable_temperature = 700
 	unsuitable_cold_damage = 0
 	wound_bonus = 25
-	bare_wound_bonus = 50
+	exposed_wound_bonus = 50
 	sharpness = SHARP_EDGED
 	obj_damage = 60
 	web_speed = 0.25

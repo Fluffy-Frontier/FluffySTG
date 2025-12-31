@@ -56,16 +56,26 @@
 				/obj/item/clothing/suit/armor/vest/secjacket = 4,
 				/obj/item/clothing/suit/hooded/wintercoat/security = 4,
 				/obj/item/clothing/suit/armor/vest = 4,
-				/obj/item/clothing/suit/toggle/jacket/nova/sec = 4,
+				/obj/item/clothing/suit/toggle/jacket/nova/colorable_bomber/sec = 4,
 				/obj/item/clothing/gloves/color/black/security = 4,
 				/obj/item/clothing/shoes/jackboots/sec = 4,
 				/obj/item/storage/backpack/security = 4,
 				/obj/item/storage/backpack/satchel/sec = 4,
 				/obj/item/storage/backpack/duffelbag/sec = 4,
 				/obj/item/storage/backpack/messenger/sec = 4,
-				/obj/item/storage/backpack/waistbag/redsec = 4, // FLUFFY FRONTIER ADDITION
-				/obj/item/clothing/suit/armor/vest/alt/caftan = 6, // FLUFFY FRONTIER ADDITION
-				/obj/item/clothing/head/berendeyka = 6, // FLUFFY FRONTIER ADDITION
+				// FLUFFY FRONTIER ADDITION - ADD MORE CLOTHING TO SECDROBE
+				/obj/item/storage/backpack/waistbag/redsec = 4,
+				/obj/item/clothing/suit/armor/vest/alt/caftan = 6,
+				/obj/item/clothing/head/berendeyka = 6,
+				/obj/item/clothing/under/rank/security/armadyne = 6,
+				/obj/item/clothing/under/rank/security/armadyne/tactical = 6,
+				/obj/item/clothing/head/beret/sec/armadyne = 6,
+				/obj/item/clothing/suit/armor/vest/armadyne = 6,
+				/obj/item/clothing/suit/armor/vest/armadyne/armor = 6,
+				/obj/item/clothing/gloves/color/black/security/armadyne = 6,
+				/obj/item/clothing/shoes/jackboots/armadyne = 6,
+				// FLUFFY FRONTIER ADDITION END
+				/obj/item/clothing/head/costume/ushanka/sec = 4
 			),
 		),
 
@@ -78,7 +88,7 @@
 				/obj/item/clothing/head/security_cap = 4,
 				/obj/item/clothing/head/helmet/sec/white = 3,
 				/obj/item/clothing/suit/hooded/wintercoat/security/blue = 4,
-				/obj/item/clothing/suit/toggle/jacket/nova/sec/blue = 4,
+				/obj/item/clothing/suit/toggle/jacket/nova/colorable_bomber/sec/blue = 4,
 				/obj/item/clothing/suit/armor/vest/alt/sec/white = 3,
 				/obj/item/clothing/suit/armor/vest/brit = 3,
 				/obj/item/clothing/suit/armor/vest/jacket = 3,
@@ -101,7 +111,7 @@
 				/obj/item/clothing/gloves/color/black/security/blu = 4,
 				/obj/item/clothing/head/security_garrison = 4,
 				/obj/item/clothing/head/hats/warden/police/patrol = 4,
-				/obj/item/clothing/head/costume/ushanka/sec = 4,
+				/obj/item/clothing/head/costume/ushanka/sec/blue = 4,
 				/obj/item/storage/backpack/security/blue = 4,
 				/obj/item/storage/backpack/satchel/sec/blue = 4,
 				/obj/item/storage/backpack/duffelbag/sec/blue = 4,

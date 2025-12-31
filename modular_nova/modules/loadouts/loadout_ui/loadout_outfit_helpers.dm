@@ -27,6 +27,7 @@
 	datum/preferences/preference_source = GLOB.preference_entries_by_key[ckey],
 	visuals_only = FALSE,
 	datum/job/equipping_job,
+	allow_mechanical_loadout_items = TRUE,
 )
 	if (!preference_source)
 		equipOutfit(outfit, visuals_only) // no prefs for loadout items, but we should still equip the outfit.
@@ -52,12 +53,12 @@
 	if(override_preference == LOADOUT_OVERRIDE_CASE && !visuals_only)
 		briefcase = new(loc)
 		for(var/datum/loadout_item/item as anything in loadout_datums)
-			if (erp_enabled && item.erp_box == TRUE)
+			if (erp_enabled && item.erp_box)
 				if (isnull(erpbox))
 					erpbox = new(loc)
 				new item.item_path(erpbox)
 			else
-				if (!item.can_be_applied_to(src, preference_source, equipping_job))
+				if (!item.can_be_applied_to(src, preference_source, equipping_job, allow_mechanical_loadout_items))
 					continue
 				new item.item_path(briefcase)
 
@@ -66,12 +67,12 @@
 		put_in_hands(briefcase)
 	else
 		for(var/datum/loadout_item/item as anything in loadout_datums)
-			if (erp_enabled && item.erp_box == TRUE)
+			if (erp_enabled && item.erp_box)
 				if (isnull(erpbox))
 					erpbox = new(loc)
 				new item.item_path(erpbox)
 			else
-				if (!item.can_be_applied_to(src, preference_source, equipping_job))
+				if (!item.can_be_applied_to(src, preference_source, equipping_job, allow_mechanical_loadout_items))
 					continue
 
 				// Make sure the item is not overriding an important for life outfit item
@@ -86,22 +87,20 @@
 		if(item.restricted_roles && equipping_job && !(equipping_job.title in item.restricted_roles))
 			continue
 
-		var/obj/item/equipped = locate(item.item_path) in new_contents
-		if (!isnull(erpbox) && item.erp_box)
+		var/obj/item/equipped
+		if(erpbox && item.erp_box)
 			equipped = locate(item.item_path) in erpbox
-		for(var/atom/equipped_item in new_contents)
-			if(equipped_item.type == item.item_path)
-				equipped = equipped_item
-				break
+		else
+			equipped = locate(item.item_path) in new_contents
 
 		if(isnull(equipped))
 			continue
 
 		item.on_equip_item(
 			equipped_item = equipped,
-			preference_source = preference_source,
-			preference_list = loadout_list,
+			item_details = loadout_list?[item.item_path] || list(),
 			equipper = src,
+			outfit = equipped_outfit,
 			visuals_only = visuals_only,
 		)
 

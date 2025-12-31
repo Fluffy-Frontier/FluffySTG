@@ -4,3 +4,4 @@
 	clothing_traits = list(TRAIT_STICKY_FINGERS)
 	siemens_coefficient = 0
 	cut_type = null
+	strip_delay = 1.5 SECONDS // FLUFFY FRONTIER ADDITION

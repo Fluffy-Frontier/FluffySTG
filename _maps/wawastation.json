@@ -10,6 +10,7 @@
 		"whiteship": "whiteship_meta",
 		"emergency": "emergency_wawa"
 	},
+	"exclude_from_ci": true,
 	"traits": [
 		{
 			"Baseturf": "/turf/open/misc/asteroid/airless",
@@ -22,7 +23,10 @@
 	],
 	"job_changes": {
 		"Cook": {
-			"additional_cqc_areas": ["/area/station/service/bar", "/area/station/commons/lounge"]
+			"additional_cqc_areas": [
+				"/area/station/service/bar",
+				"/area/station/commons/lounge"
+			]
 		},
 		"Captain": {
 			"special_charter": "asteroid"
