@@ -91,5 +91,5 @@
 /mob/living/carbon/human/necromorph/can_adjust_stamina_loss(amount, forced, required_biotype)
 	return 0
 
-/mob/living/carbon/human/necromorph/soundbang_act(intensity, stun_pwr, damage_pwr, deafen_pwr)
+/mob/living/carbon/human/necromorph/soundbang_act(intensity, stun_pwr, damage_pwr, deafen_pwr, ignore_deafness,	send_sound)
 	return 0
