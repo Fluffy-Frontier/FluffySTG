@@ -406,7 +406,7 @@ Diagnostic HUDs!
 	set_hud_image_state(DIAG_MECH_HUD, "huddiag[RoundDiagBar(atom_integrity/max_integrity)]")
 
 /obj/vehicle/sealed/mecha/proc/diag_hud_set_mechcell()
-	if(cell)
+	if(cell && cell.maxcharge > 0)
 		var/chargelvl = cell.charge/cell.maxcharge
 		set_hud_image_state(DIAG_BATT_HUD, "hudbatt[RoundDiagBar(chargelvl)]")
 	else
