@@ -1,15 +1,17 @@
 GLOBAL_LIST_INIT(eventmakers_blacklist_verbs, list(
-		//Admin
-		"Add PB Bypass" = TRUE, "ASay" = TRUE, "Cross-server Help Request" = TRUE,
-		"Get Current Logs" = TRUE, "Get Server Logs" = TRUE, "Known Alts Panel" = TRUE,
-		"loudAsay" = TRUE, "Paintings manager" = TRUE, "Player Playtime" = TRUE, "Player Ticket History" = TRUE,
-		"Reload Admins" = TRUE, "Revoke PB Bypass" = TRUE, "Trophy Manager" = TRUE, "View Round Logs" = TRUE,
-		"Load Away Mission" = TRUE, "Mass Zombie Cure" = TRUE, "Mass Zombie Infection" = TRUE,
-		"Polymorph All" = TRUE, "Title Screen: Change" = TRUE, "Title Screen: Set HTML" = TRUE, "Title Screen: Set Notice" = TRUE,
-		"Show Lag Switches" = TRUE,
-		//Server
-		"Reestablish DB Connection" = TRUE, "Reset Player OOC Color" = TRUE, "Set Player OOC Color" = TRUE,
-		"Toggle Antag OOC" = TRUE, "Toggle CDN" = TRUE, "Toggle OOC" = TRUE, "Toggle Security OOC" = TRUE,
-		//Debug
-		"Debug Stat Panel" = TRUE, "Migrate Player Ranks" = TRUE, "Open Lua Editor" = TRUE, "Re-establish Connection To TTS" = TRUE, "Reload Configuration" = TRUE, "Run Empty Query" = TRUE, "View Runtime" = TRUE
+	//Admin
+	"Add PB Bypass", "ASay", "Cross-server Help Request",
+	"Get Current Logs", "Get Server Logs", "Known Alts Panel",
+	"loudAsay", "Paintings manager", "Player Playtime", "Player Ticket History",
+	"Reload Admins", "Revoke PB Bypass", "Trophy Manager", "View Round Logs",
+	"Load Away Mission", "Mass Zombie Cure", "Mass Zombie Infection",
+	"Polymorph All", "Title Screen: Change", "Title Screen: Set HTML",
+	"Title Screen: Set Notice", "Show Lag Switches",
+	//Server
+	"Reestablish DB Connection", "Reset Player OOC Color", "Set Player OOC Color",
+	"Toggle Antag OOC", "Toggle CDN", "Toggle OOC", "Toggle Security OOC",
+	//Debug
+	"Debug Stat Panel", "Migrate Player Ranks", "Open Lua Editor",
+	"Re-establish Connection To TTS", "Reload Configuration", "Run Empty Query",
+	"View Runtimes",
 ))
