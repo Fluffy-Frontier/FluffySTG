@@ -451,6 +451,7 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/light/no_nightlight/directional/west,
 /turf/open/floor/iron/white/small,
 /area/ruin/space/has_grav/nova/des_two/security/prison)
 "bA" = (
@@ -1047,29 +1048,6 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/security/prison)
-"dh" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/structure/fans/tiny/forcefield{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/dark_red/half{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/dark_red/half{
-	dir = 8
-	},
-/obj/machinery/door/poddoor/preopen{
-	id = "void-be-gone"
-	},
-/turf/open/floor/iron/dark/textured_half{
-	dir = 1
-	},
-/area/template_noop)
 "di" = (
 /obj/effect/turf_decal/stripes/red/corner{
 	dir = 4
@@ -2578,7 +2556,6 @@
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/nova/des_two/cargo/hangar)
 "hS" = (
-/obj/machinery/light/no_nightlight/directional/east,
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
@@ -2601,7 +2578,7 @@
 	dir = 4
 	},
 /turf/open/floor/engine/hull,
-/area/template_noop)
+/area/space/nearstation)
 "ia" = (
 /obj/effect/turf_decal/siding/wideplating_new/dark{
 	dir = 10
@@ -2630,7 +2607,6 @@
 	pixel_x = -8;
 	pixel_y = 16
 	},
-/obj/machinery/light/red/directional/south,
 /obj/effect/turf_decal/siding/wideplating_new/dark{
 	dir = 9
 	},
@@ -2649,6 +2625,7 @@
 	pixel_x = -6;
 	pixel_y = 27
 	},
+/obj/machinery/light/no_nightlight/directional/north,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/cargo/hangar)
 "ic" = (
@@ -3810,7 +3787,7 @@
 	dir = 1
 	},
 /turf/open/floor/engine/hull,
-/area/template_noop)
+/area/space/nearstation)
 "mq" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
 /obj/effect/turf_decal/trimline/dark_red/line,
@@ -5014,7 +4991,7 @@
 	pixel_y = 1
 	},
 /turf/template_noop,
-/area/template_noop)
+/area/space/nearstation)
 "qK" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 9
@@ -7790,7 +7767,7 @@
 /obj/structure/lattice/catwalk,
 /obj/structure/marker_beacon/indigo,
 /turf/template_noop,
-/area/template_noop)
+/area/space/nearstation)
 "zm" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/effect/turf_decal/nova_decals/syndicate/middle/left,
@@ -9973,7 +9950,7 @@
 	network = list("ds2")
 	},
 /turf/template_noop,
-/area/template_noop)
+/area/space/nearstation)
 "Gr" = (
 /obj/effect/turf_decal/siding/wideplating_new/dark{
 	dir = 5
@@ -10301,7 +10278,7 @@
 /obj/structure/lattice/catwalk,
 /obj/structure/marker_beacon/burgundy,
 /turf/template_noop,
-/area/template_noop)
+/area/space/nearstation)
 "Hn" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 9
@@ -10908,7 +10885,7 @@
 	c_tag = "DS-2 Rotor Left"
 	},
 /turf/template_noop,
-/area/template_noop)
+/area/space/nearstation)
 "Je" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
@@ -11477,7 +11454,7 @@
 	c_tag = "DS-2 Bridge Out Left"
 	},
 /turf/template_noop,
-/area/template_noop)
+/area/space/nearstation)
 "KR" = (
 /obj/machinery/light/cold/directional/west,
 /obj/machinery/atmospherics/miner/oxygen,
@@ -11888,7 +11865,7 @@
 	},
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/engine/hull,
-/area/template_noop)
+/area/space/nearstation)
 "Mh" = (
 /turf/open/floor/iron/white/small,
 /area/ruin/space/has_grav/nova/des_two/security/prison)
@@ -12352,7 +12329,7 @@
 	pixel_x = 4;
 	pixel_y = 3
 	},
-/obj/item/stamp{
+/obj/item/stamp/granted{
 	pixel_x = -7;
 	pixel_y = 6
 	},
@@ -13130,7 +13107,7 @@
 	},
 /obj/structure/lattice,
 /turf/template_noop,
-/area/template_noop)
+/area/space/nearstation)
 "PX" = (
 /obj/item/toy/cards/deck/cas/black,
 /obj/structure/table/wood,
@@ -14036,7 +14013,7 @@
 "SD" = (
 /obj/structure/lattice,
 /turf/template_noop,
-/area/template_noop)
+/area/space/nearstation)
 "SE" = (
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 8
@@ -16021,7 +15998,7 @@
 	c_tag = "DS-2 Right Engine"
 	},
 /turf/template_noop,
-/area/template_noop)
+/area/space/nearstation)
 "Zu" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/bed{
@@ -19224,7 +19201,7 @@ it
 it
 it
 Hm
-dh
+lH
 lH
 lH
 lH
