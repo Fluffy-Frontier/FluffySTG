@@ -3,7 +3,7 @@
 	limb_id = SPECIES_NECROMORPH_LURKER
 	icon = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
-	icon_state = "chest"
+	icon_state = "lurker_chest"
 	max_damage = 200
 	px_x = 0
 	px_y = 0
@@ -14,7 +14,7 @@
 	limb_id = SPECIES_NECROMORPH_LURKER
 	icon = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
-	icon_state = "l_arm"
+	icon_state = "lurker_l_head"
 	max_damage = 200
 	px_x = 0
 	px_y = -8
@@ -25,7 +25,7 @@
 	limb_id = SPECIES_NECROMORPH_LURKER
 	icon = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
-	icon_state = "l_arm"
+	icon_state = "lurker_l_arm"
 	attack_verb_continuous = list("slashes", "stabs")
 	attack_verb_simple = list("slash", "stab")
 	max_damage = 50
@@ -38,7 +38,7 @@
 	limb_id = SPECIES_NECROMORPH_LURKER
 	icon = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
-	icon_state = "l_arm"
+	icon_state = "lurker_r_arm"
 	attack_verb_continuous = list("slashes", "stabs")
 	attack_verb_simple = list("slash", "stab")
 	max_damage = 50
@@ -51,7 +51,7 @@
 	limb_id = SPECIES_NECROMORPH_LURKER
 	icon = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
-	icon_state = "l_arm"
+	icon_state = "lurker_l_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 50
@@ -64,7 +64,7 @@
 	limb_id = SPECIES_NECROMORPH_LURKER
 	icon = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
-	icon_state = "l_arm"
+	icon_state = "lurker_r_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")
 	max_damage = 50
