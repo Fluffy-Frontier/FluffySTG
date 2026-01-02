@@ -14,7 +14,7 @@
 	limb_id = SPECIES_NECROMORPH_LURKER
 	icon = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
-	icon_state = "lurker_l_head"
+	icon_state = "lurker_head"
 	max_damage = 200
 	px_x = 0
 	px_y = -8
