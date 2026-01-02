@@ -20,7 +20,7 @@
 	name = "Bloody plasma cutter"
 	desc = "Short range mining weapon that can easily cut limb off humans and others living creatures. Reload with plasma."
 	item = /obj/item/gun/energy/plasmacutter/adv/bloodred
-	cost = 11
+	cost = /datum/uplink_item/medium_cost/weaponry
 	restricted_roles = list(JOB_STATION_ENGINEER, JOB_SHAFT_MINER)
 
 // /datum/uplink_item/medium_cost/weaponry
