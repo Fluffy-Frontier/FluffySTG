@@ -46,9 +46,9 @@
 		to_chat(owner, span_warning("No master to draw blood from!"))
 		DeactivatePower()
 		return
-	user.adjustBruteLoss(healing_amount, updating_health = FALSE)
-	user.adjustToxLoss(healing_amount, forced = TRUE, updating_health = FALSE)
-	user.adjustFireLoss(healing_amount, updating_health = FALSE)
+	user.adjust_brute_loss(healing_amount, updating_health = FALSE)
+	user.adjust_tox_loss(healing_amount, forced = TRUE, updating_health = FALSE)
+	user.adjust_fire_loss(healing_amount, updating_health = FALSE)
 	user.updatehealth()
 	// Stop Bleeding
 	if(istype(user) && user.is_bleeding())
