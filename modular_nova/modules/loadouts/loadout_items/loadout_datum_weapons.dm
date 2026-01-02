@@ -20,6 +20,7 @@
 	mechanical_item = TRUE
 	blacklisted_roles = list(JOB_PRISONER)
 
+/* FLUFFY FRONTIER EDIT: COMMENT OUT WEAPONS FROM LOADOUT
 /*
 *	GHETTO GUNS
 */
@@ -83,3 +84,4 @@
 /datum/loadout_item/weapons/forgeweapons/staff
 	name = /obj/item/forging/reagent_weapon/staff::name
 	item_path = /obj/item/forging/reagent_weapon/staff
+*/

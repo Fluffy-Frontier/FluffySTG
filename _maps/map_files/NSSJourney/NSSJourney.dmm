@@ -5643,12 +5643,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/iron,
 /area/station/hallway/primary/port)
-"aLL" = (
-/obj/machinery/camera/directional/north{
-	c_tag = "Port Hallway 2"
-	},
-/turf/open/floor/iron,
-/area/station/hallway/primary/port)
 "aLO" = (
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/iron/white,
@@ -6566,16 +6560,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/command/bridge)
-"aPU" = (
-/obj/machinery/status_display/evac,
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor/preopen{
-	id = "bridge blast";
-	name = "Bridge Blast Door"
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/station/command/bridge)
 "aQg" = (
 /obj/effect/spawner/structure/window,
 /obj/machinery/door/poddoor/preopen{
@@ -6802,6 +6786,7 @@
 	pixel_y = 6
 	},
 /obj/item/storage/box/ids,
+/obj/machinery/status_display/evac/directional/west,
 /turf/open/floor/iron,
 /area/station/command/bridge)
 "aRm" = (
@@ -6848,9 +6833,7 @@
 /obj/item/assembly/timer,
 /obj/item/assembly/signaler,
 /obj/item/assembly/signaler,
-/obj/structure/plaque/static_plaque/golden/commission/nssjourney{
-	pixel_x = 32
-	},
+/obj/machinery/status_display/evac/directional/east,
 /turf/open/floor/iron,
 /area/station/command/bridge)
 "aRt" = (
@@ -12091,7 +12074,7 @@
 	pixel_x = 4;
 	pixel_y = -2
 	},
-/obj/item/stamp{
+/obj/item/stamp/granted{
 	pixel_x = -3;
 	pixel_y = 3
 	},
@@ -16941,7 +16924,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/bot,
-/obj/machinery/airalarm/directional/north,
+/obj/machinery/computer/security/telescreen/ordnance/directional/north,
 /turf/open/floor/iron,
 /area/station/science/ordnance/bomb)
 "bGe" = (
@@ -17793,6 +17776,7 @@
 	pixel_x = 2;
 	pixel_y = -6
 	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/iron,
 /area/station/science/ordnance/bomb)
 "bIX" = (
@@ -29130,6 +29114,9 @@
 /area/station/science/explab)
 "dwC" = (
 /obj/item/kirbyplants/random,
+/obj/machinery/camera/directional/north{
+	c_tag = "Port Hallway 2"
+	},
 /turf/open/floor/iron,
 /area/station/commons/vacant_room)
 "dxb" = (
@@ -34292,7 +34279,7 @@
 /area/station/security/brig)
 "gIV" = (
 /obj/structure/table/wood,
-/obj/item/stamp{
+/obj/item/stamp/granted{
 	pixel_x = 7;
 	pixel_y = 9
 	},
@@ -46627,10 +46614,7 @@
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
 	},
-/obj/machinery/light_switch/directional/west{
-	pixel_x = 0;
-	pixel_y = -39
-	},
+/obj/machinery/light_switch/directional/west,
 /turf/open/floor/iron,
 /area/station/science/ordnance/storage)
 "ogD" = (
@@ -46978,12 +46962,10 @@
 /turf/open/floor/iron/herringbone,
 /area/station/commons/fitness)
 "orS" = (
-/obj/structure/sign/barber{
-	pixel_x = -13
-	},
 /obj/structure/chair/sofa/bench/left{
 	dir = 4
 	},
+/obj/structure/sign/barber/directional/west,
 /turf/open/floor/iron/dark,
 /area/station/hallway/primary/central)
 "osv" = (
@@ -57704,6 +57686,9 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
+/obj/structure/plaque/static_plaque/golden/commission/nssjourney{
+	pixel_y = 32
+	},
 /turf/open/floor/iron,
 /area/station/command/bridge)
 "uUl" = (
@@ -59637,7 +59622,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
-/obj/machinery/computer/security/telescreen/ordnance/directional/east,
 /turf/open/floor/iron,
 /area/station/science/ordnance/bomb)
 "wed" = (
@@ -83295,7 +83279,7 @@ rjd
 nvK
 sbe
 xcG
-aLL
+aLE
 bDe
 aOl
 aPF
@@ -91265,7 +91249,7 @@ aKE
 aMa
 qEJ
 aOE
-aPU
+aPS
 wrT
 vJL
 aTX
@@ -92807,7 +92791,7 @@ aKF
 aMf
 vEF
 aOE
-aPU
+aPS
 fXx
 hah
 ceh
