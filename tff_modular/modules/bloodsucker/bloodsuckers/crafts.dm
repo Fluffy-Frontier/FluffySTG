@@ -10,6 +10,7 @@
 	)
 	time = 15 SECONDS
 	category = CAT_BLOODSUCKER
+	crafting_flags = parent_type::crafting_flags | CRAFT_MUST_BE_LEARNED | CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/securecoffin
 	name = "Secure Coffin"
@@ -22,6 +23,7 @@
 	)
 	time = 15 SECONDS
 	category = CAT_BLOODSUCKER
+	crafting_flags = parent_type::crafting_flags | CRAFT_MUST_BE_LEARNED | CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/meatcoffin
 	name = "Meat Coffin"
@@ -33,7 +35,7 @@
 	)
 	time = 15 SECONDS
 	category = CAT_BLOODSUCKER
-	crafting_flags = parent_type::crafting_flags | CRAFT_MUST_BE_LEARNED
+	crafting_flags = parent_type::crafting_flags | CRAFT_MUST_BE_LEARNED | CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/metalcoffin
 	name = "Metal Coffin"
@@ -44,6 +46,7 @@
 	)
 	time = 10 SECONDS
 	category = CAT_BLOODSUCKER
+	crafting_flags = parent_type::crafting_flags | CRAFT_MUST_BE_LEARNED | CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/ghoulrack
 	name = "Persuasion Rack"
@@ -56,7 +59,7 @@
 	)
 	time = 15 SECONDS
 	category = CAT_BLOODSUCKER
-	crafting_flags = parent_type::crafting_flags | CRAFT_MUST_BE_LEARNED
+	crafting_flags = parent_type::crafting_flags | CRAFT_MUST_BE_LEARNED | CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/candelabrum
 	name = "Candelabrum"
@@ -69,7 +72,7 @@
 	)
 	time = 10 SECONDS
 	category = CAT_BLOODSUCKER
-	crafting_flags = parent_type::crafting_flags | CRAFT_MUST_BE_LEARNED
+	crafting_flags = parent_type::crafting_flags | CRAFT_MUST_BE_LEARNED | CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/bloodthrone
 	name = "Blood Throne"
@@ -82,4 +85,4 @@
 	)
 	time = 5 SECONDS
 	category = CAT_BLOODSUCKER
-	crafting_flags = parent_type::crafting_flags | CRAFT_MUST_BE_LEARNED
+	crafting_flags = parent_type::crafting_flags | CRAFT_MUST_BE_LEARNED | CRAFT_SKIP_MATERIALS_PARITY
