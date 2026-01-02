@@ -60,7 +60,7 @@
 	if(HAS_TRAIT(src, TRAIT_GODMODE))
 		return
 
-	set_health(maxHealth - getFireLoss() - getBruteLoss() - getToxLoss())
+	set_health(maxHealth - get_fire_loss() - get_brute_loss() - get_tox_loss())
 	update_stat()
 	SEND_SIGNAL(src, COMSIG_CARBON_UPDATING_HEALTH_HUD)
 	if(hud_used)

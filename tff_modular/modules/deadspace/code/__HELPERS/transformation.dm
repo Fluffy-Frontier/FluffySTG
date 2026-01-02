@@ -123,7 +123,7 @@
 		options += list(/mob/living/carbon/human/necromorph/exploder/enhanced = 0.5 * compatibility)
 
 	//Heavily poisoned people can become a puker
-	if (getToxLoss() > 100)
+	if (get_tox_loss() > 100)
 		options += list(/mob/living/carbon/human/necromorph/puker = 2 * compatibility)
 
 

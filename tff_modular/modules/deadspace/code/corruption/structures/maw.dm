@@ -122,7 +122,7 @@
 /// Doesn't do any ANY safety checks. Use with caution
 /obj/structure/necromorph/maw/proc/bite_living(mob/living/target, delta_time)
 	if(target.stat != DEAD || target.health > target.maxHealth * 0.1)
-		target.adjustBruteLoss(MAW_DAMAGE_PER_SECOND * delta_time, TRUE)
+		target.adjust_brute_loss(MAW_DAMAGE_PER_SECOND * delta_time, TRUE)
 		processing_biomass += target.mob_size * 0.5
 		return
 	//Might need some balance

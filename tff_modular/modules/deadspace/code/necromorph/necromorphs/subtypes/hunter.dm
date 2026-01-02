@@ -20,8 +20,8 @@
 	playsound(src, pick(GLOB.hunter_sounds[audio_type]), volume, vary, extra_range)
 
 /mob/living/carbon/human/necromorph/hunter/handle_death_check()
-	var/total_burn = getFireLoss()
-	var/total_brute = getBruteLoss()
+	var/total_burn = get_fire_loss()
+	var/total_brute = get_brute_loss()
 
 	var/damage = total_burn + total_brute
 	if(damage >= maxHealth)
