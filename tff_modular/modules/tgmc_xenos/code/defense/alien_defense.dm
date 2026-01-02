@@ -29,4 +29,4 @@
 
 /mob/living/carbon/alien/adult/tgmc/on_fire_stack(seconds_per_tick, datum/status_effect/fire_handler/fire_stacks/fire_handler)
 	. = ..()
-	adjustFireLoss(seconds_per_tick * TGMC_XENO_FIRESTACK_DAMAGE)
+	adjust_fire_loss(seconds_per_tick * TGMC_XENO_FIRESTACK_DAMAGE)
