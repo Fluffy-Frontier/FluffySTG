@@ -18,7 +18,7 @@
 		return ..()
 	bloodsuckerdatum.AdjustBloodVolume(round(reac_volume, 0.1))
 
-/mob/living/carbon/transfer_blood_to(atom/movable/receiver, amount, forced, ignore_incompatibility)
+/mob/living/carbon/transfer_blood_to(atom/movable/receiver, atom/movable/receiver, amount, ignore_low_blood, ignore_incompatibility, transfer_viruses)
 	. = ..()
 	if(!mind)
 		return
