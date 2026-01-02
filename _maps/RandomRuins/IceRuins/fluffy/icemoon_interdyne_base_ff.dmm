@@ -38,13 +38,6 @@
 /area/ruin/interdyne_planetary_base/main/vault)
 "ak" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/effect/baseturf_helper/reinforced_plating,
 /obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
@@ -431,13 +424,6 @@
 	color = "#adadcd";
 	onstation = 0
 	},
-/obj/machinery/camera/xray{
-	pixel_x = 22;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base)
 "bM" = (
@@ -648,13 +634,6 @@
 /area/ruin/interdyne_planetary_base/serv)
 "cw" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
@@ -827,6 +806,11 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/weather/snow,
+/obj/machinery/camera/xray/directional/south{
+	name = "Inderdyne security camera";
+	color = "#adadcd";
+	network = list("Interdyne")
+	},
 /turf/open/floor/plating/snowed/icemoon,
 /area/ruin/interdyne_planetary_base)
 "db" = (
@@ -3599,6 +3583,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
+"qy" = (
+/obj/machinery/camera/xray/directional/east,
+/turf/open/lava/plasma/ice_moon,
+/area/icemoon/underground/explored)
 "qz" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 8
@@ -4857,13 +4845,6 @@
 /area/ruin/interdyne_planetary_base/main/vault)
 "wr" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
@@ -6619,13 +6600,6 @@
 /area/ruin/interdyne_planetary_base/cargo)
 "FH" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
@@ -7160,6 +7134,11 @@
 "Id" = (
 /obj/structure/fluff/metalpole/end{
 	dir = 4
+	},
+/obj/machinery/camera/xray/directional/west{
+	name = "Inderdyne security camera";
+	color = "#adadcd";
+	network = list("Interdyne")
 	},
 /turf/open/lava/plasma/ice_moon,
 /area/icemoon/underground/explored)
@@ -8060,13 +8039,6 @@
 /area/ruin/interdyne_planetary_base/science)
 "Mv" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
@@ -8144,13 +8116,6 @@
 /area/icemoon/underground/explored)
 "MT" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
@@ -8158,6 +8123,11 @@
 	lethal_projectile = /obj/projectile/bullet;
 	desc = "An automatic defense turret designed, it's probably not that wise to try approaching it.";
 	name = "Heavy auto-turret"
+	},
+/obj/machinery/camera/xray/directional/north{
+	name = "Inderdyne security camera";
+	color = "#adadcd";
+	network = list("Interdyne")
 	},
 /turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base)
@@ -8334,13 +8304,6 @@
 /area/icemoon/underground/explored)
 "Oe" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
@@ -8412,6 +8375,7 @@
 /obj/structure/fluff/metalpole/end{
 	dir = 8
 	},
+/obj/machinery/camera/xray/directional/east,
 /turf/open/lava/plasma/ice_moon,
 /area/icemoon/underground/explored)
 "Oz" = (
@@ -8592,13 +8556,6 @@
 /area/ruin/interdyne_planetary_base/serv)
 "Pn" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
@@ -10028,12 +9985,6 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "Wo" = (
-/obj/machinery/camera/xray{
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base)
 "Wt" = (
@@ -10142,13 +10093,6 @@
 /area/ruin/interdyne_planetary_base/serv)
 "WQ" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
@@ -10249,6 +10193,14 @@
 /obj/effect/mapping_helpers/airalarm/syndicate_access,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
+"Xp" = (
+/obj/machinery/camera/xray/directional/south{
+	name = "Inderdyne security camera";
+	color = "#adadcd";
+	network = list("Interdyne")
+	},
+/turf/open/lava/plasma/ice_moon,
+/area/icemoon/underground/explored)
 "Xq" = (
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 1
@@ -11178,7 +11130,7 @@ ab
 ab
 ab
 ab
-ab
+qy
 Oe
 ab
 ab
@@ -12153,7 +12105,7 @@ ab
 ab
 ab
 ak
-ab
+Xp
 BF
 GC
 mA
@@ -12625,7 +12577,7 @@ ab
 ab
 ab
 Pn
-ab
+Xp
 BF
 tL
 Hy

@@ -493,13 +493,6 @@
 /area/ruin/interdyne_planetary_base/main)
 "co" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
@@ -507,6 +500,11 @@
 	lethal_projectile = /obj/projectile/bullet;
 	desc = "An automatic defense turret designed, it's probably not that wise to try approaching it.";
 	name = "Heavy auto-turret"
+	},
+/obj/machinery/camera/xray/directional/north{
+	name = "Inderdyne security camera";
+	color = "#adadcd";
+	network = list("Interdyne")
 	},
 /turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base)
@@ -894,13 +892,6 @@
 /area/ruin/interdyne_planetary_base/main)
 "el" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/effect/baseturf_helper/reinforced_plating,
 /obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
@@ -910,6 +901,11 @@
 	desc = "An automatic defense turret designed, it's probably not that wise to try approaching it.";
 	name = "Heavy auto-turret";
 	dir = 1
+	},
+/obj/machinery/camera/xray/directional/south{
+	name = "Inderdyne security camera";
+	color = "#adadcd";
+	network = list("Interdyne")
 	},
 /turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base)
@@ -942,13 +938,6 @@
 /area/ruin/interdyne_planetary_base/med)
 "es" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
@@ -1009,12 +998,6 @@
 	pixel_x = -4
 	},
 /obj/structure/marker_beacon/bronze,
-/obj/machinery/camera/xray/directional/north{
-	color = "#adadcd";
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	pixel_x = 10
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
 /area/ruin/interdyne_planetary_base/serv)
@@ -1677,13 +1660,6 @@
 /area/ruin/interdyne_planetary_base/science)
 "is" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
@@ -2155,13 +2131,6 @@
 /area/ruin/interdyne_planetary_base/main/vault)
 "ko" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
@@ -2592,13 +2561,6 @@
 /area/ruin/interdyne_planetary_base/serv)
 "me" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
@@ -2607,6 +2569,11 @@
 	desc = "An automatic defense turret designed, it's probably not that wise to try approaching it.";
 	name = "Heavy auto-turret";
 	dir = 1
+	},
+/obj/machinery/camera/xray/directional/south{
+	name = "Inderdyne security camera";
+	color = "#adadcd";
+	network = list("Interdyne")
 	},
 /turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/ruin/interdyne_planetary_base)
@@ -2778,11 +2745,6 @@
 	light_color = "#adadcd"
 	},
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/camera/xray/directional/north{
-	color = "#adadcd";
-	name = "Inderdyne security camera";
-	network = list("Interdyne")
-	},
 /turf/open/floor/iron/dark,
 /area/ruin/interdyne_planetary_base/science)
 "nh" = (
@@ -2985,6 +2947,11 @@
 	},
 /obj/structure/lattice,
 /obj/structure/flora/ash/cap_shroom,
+/obj/machinery/camera/xray/directional/south{
+	name = "Inderdyne security camera";
+	color = "#adadcd";
+	network = list("Interdyne")
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/interdyne_planetary_base)
 "on" = (
@@ -3556,12 +3523,6 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "rm" = (
-/obj/machinery/camera/xray/directional/north{
-	color = "#adadcd";
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	pixel_x = 10
-	},
 /obj/effect/turf_decal/tile/dark/full,
 /obj/machinery/smartfridge/drying,
 /turf/open/floor/iron/dark/textured_large,
@@ -4658,6 +4619,11 @@
 /obj/structure/fluff/metalpole/end{
 	dir = 8
 	},
+/obj/machinery/camera/xray/directional/east{
+	color = "#adadcd";
+	name = "Inderdyne security camera";
+	network = list("Interdyne")
+	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/ruin/interdyne_planetary_base/science)
 "xr" = (
@@ -5044,6 +5010,11 @@
 "zn" = (
 /obj/structure/fluff/metalpole/end{
 	dir = 4
+	},
+/obj/machinery/camera/xray/directional/west{
+	name = "Inderdyne security camera";
+	color = "#adadcd";
+	network = list("Interdyne")
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -5493,11 +5464,6 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/interdyne_planetary_base/main)
 "Br" = (
-/obj/machinery/camera/xray/directional/north{
-	color = "#adadcd";
-	name = "Inderdyne security camera";
-	network = list("Interdyne")
-	},
 /obj/structure/table/wood/fancy,
 /obj/item/stack/sheet/mineral/wood/fifty{
 	pixel_x = 8;
@@ -5808,12 +5774,6 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 4
 	},
-/obj/machinery/camera/xray/directional/north{
-	color = "#adadcd";
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	pixel_x = 10
-	},
 /obj/structure/sign/poster/contraband/ff_contest/interdine_medication/directional/north{
 	name = "Interdyne medication for everyone!"
 	},
@@ -6117,12 +6077,6 @@
 	pixel_y = 42
 	},
 /obj/effect/mapping_helpers/apc/syndicate_access,
-/obj/machinery/camera/xray/directional/north{
-	color = "#adadcd";
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	pixel_x = 10
-	},
 /obj/structure/cable,
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 1
@@ -6167,6 +6121,14 @@
 	},
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
+"Ew" = (
+/obj/machinery/camera/xray/directional/east{
+	color = "#adadcd";
+	name = "Inderdyne security camera";
+	network = list("Interdyne")
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "EA" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -6640,12 +6602,6 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 1
 	},
-/obj/machinery/camera/xray/directional/north{
-	color = "#adadcd";
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	pixel_x = 10
-	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/effect/mapping_helpers/apc/syndicate_access,
 /obj/machinery/airalarm/directional/north{
@@ -6785,11 +6741,6 @@
 /area/ruin/interdyne_planetary_base/cargo)
 "HH" = (
 /obj/effect/turf_decal/tile/dark/full,
-/obj/machinery/camera/xray/directional/north{
-	color = "#adadcd";
-	name = "Inderdyne security camera";
-	network = list("Interdyne")
-	},
 /obj/machinery/airalarm/directional/north{
 	req_access = list("syndicate");
 	pixel_y = 42
@@ -7067,11 +7018,6 @@
 /obj/structure/cable,
 /obj/structure/chair/sofa/corp/left{
 	pixel_y = -3
-	},
-/obj/machinery/camera/xray/directional/north{
-	color = "#adadcd";
-	name = "Inderdyne security camera";
-	network = list("Interdyne")
 	},
 /obj/machinery/airalarm/directional/north{
 	req_access = list("syndicate");
@@ -7496,13 +7442,6 @@
 /turf/open/floor/plating/reinforced,
 /area/ruin/interdyne_planetary_base/science)
 "LI" = (
-/obj/machinery/camera/xray{
-	pixel_x = 22;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/machinery/vending/wallmed{
 	products = list(/obj/item/reagent_containers/applicator/patch/libital = 5, /obj/item/reagent_containers/applicator/patch/aiuri = 5, /obj/item/reagent_containers/applicator/pill/multiver = 2, /obj/item/storage/box/bandages = 4);
 	displayed_currency_name = " soviet ruble";
@@ -7866,11 +7805,6 @@
 	onstation = 0
 	},
 /obj/structure/marker_beacon/bronze,
-/obj/machinery/camera/xray/directional/north{
-	color = "#adadcd";
-	name = "Inderdyne security camera";
-	network = list("Interdyne")
-	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "Ns" = (
@@ -7970,12 +7904,6 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "NW" = (
-/obj/machinery/camera/xray{
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/interdyne_planetary_base)
 "NY" = (
@@ -8590,13 +8518,6 @@
 /area/ruin/interdyne_planetary_base/science)
 "Qj" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
@@ -9191,13 +9112,6 @@
 /area/ruin/interdyne_planetary_base/cargo)
 "SS" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
@@ -9498,12 +9412,6 @@
 	name = "Interdyne ammunitions workbench";
 	color = "#adadcd"
 	},
-/obj/machinery/camera/xray/directional/north{
-	color = "#adadcd";
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	pixel_x = 10
-	},
 /obj/structure/sign/poster/contraband/c20r/directional/north,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
@@ -9543,11 +9451,6 @@
 /turf/open/floor/circuit/telecomms,
 /area/ruin/interdyne_planetary_base/science)
 "UN" = (
-/obj/machinery/camera/xray/directional/north{
-	color = "#adadcd";
-	name = "Inderdyne security camera";
-	network = list("Interdyne")
-	},
 /obj/effect/turf_decal/stripes/red/box,
 /obj/structure/marker_beacon/burgundy,
 /obj/machinery/syndicatebomb/self_destruct{
@@ -10548,11 +10451,6 @@
 /obj/effect/turf_decal/box/white/corners{
 	dir = 4
 	},
-/obj/machinery/camera/xray/directional/north{
-	color = "#adadcd";
-	name = "Inderdyne security camera";
-	network = list("Interdyne")
-	},
 /obj/structure/sign/warning/gas_mask/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
@@ -10678,13 +10576,6 @@
 /area/ruin/interdyne_planetary_base/med)
 "ZQ" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/machinery/camera/xray{
-	pixel_x = 10;
-	name = "Inderdyne security camera";
-	network = list("Interdyne");
-	color = "#adadcd";
-	pixel_y = 25
-	},
 /obj/machinery/porta_turret/syndicate/hc_police{
 	lethal_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
 	stun_projectile_sound = 'sound/items/weapons/gun/hmg/hmg.ogg';
@@ -11057,7 +10948,7 @@ eO
 eO
 eO
 eO
-eO
+Ew
 es
 eO
 eO
