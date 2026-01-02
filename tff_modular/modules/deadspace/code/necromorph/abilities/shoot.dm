@@ -111,3 +111,17 @@
 /obj/effect/temp_visual/biombomb_impact/Initialize(mapload)
 	icon_state = "impact_acid_[rand(1, 4)]"
 	return ..()
+
+/datum/action/cooldown/necro/shoot/lurker
+	name = "Spine Shot"
+	desc = "Fires a sharp spine at a target."
+	projectiletype = /obj/projectile/bullet/lurker_spine
+	cooldown_time = 3 SECONDS
+
+/obj/projectile/bullet/lurker_spine
+	name = "lurker spine"
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
+	icon_state = "spine_projectile"
+	armour_penetration = 20
+	damage = 15
+	speed = 1.6
