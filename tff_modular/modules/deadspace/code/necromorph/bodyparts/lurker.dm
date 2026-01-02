@@ -1,6 +1,7 @@
 /obj/item/bodypart/chest/necromorph/lurker
 	name = BODY_ZONE_CHEST
 	limb_id = SPECIES_NECROMORPH_LURKER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_state = "chest"
 	max_damage = 200
@@ -11,6 +12,7 @@
 /obj/item/bodypart/head/necromorph/lurker
 	name = BODY_ZONE_HEAD
 	limb_id = SPECIES_NECROMORPH_LURKER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_state = "l_arm"
 	max_damage = 200
@@ -21,6 +23,7 @@
 /obj/item/bodypart/arm/left/necromorph/lurker
 	name = "left blade"
 	limb_id = SPECIES_NECROMORPH_LURKER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_state = "l_arm"
 	attack_verb_continuous = list("slashes", "stabs")
@@ -33,6 +36,7 @@
 /obj/item/bodypart/arm/right/necromorph/lurker
 	name = "right blade"
 	limb_id = SPECIES_NECROMORPH_LURKER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_state = "l_arm"
 	attack_verb_continuous = list("slashes", "stabs")
@@ -45,6 +49,7 @@
 /obj/item/bodypart/leg/left/necromorph/lurker
 	name = "left leg"
 	limb_id = SPECIES_NECROMORPH_LURKER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_state = "l_arm"
 	attack_verb_continuous = list("kicks", "stomps")
@@ -57,6 +62,7 @@
 /obj/item/bodypart/leg/right/necromorph/lurker
 	name = "right leg"
 	limb_id = SPECIES_NECROMORPH_LURKER
+	icon = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_static = 'tff_modular/modules/deadspace/icons/necromorphs/lurker/lurker.dmi'
 	icon_state = "l_arm"
 	attack_verb_continuous = list("kicks", "stomps")
