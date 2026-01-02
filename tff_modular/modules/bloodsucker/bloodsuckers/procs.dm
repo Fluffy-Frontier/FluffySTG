@@ -237,7 +237,7 @@
 
 /datum/antagonist/bloodsucker/proc/getFireLoss()
 	var/mob/living/carbon/human/humie = owner.current
-	return issynthetic(humie) ? humie.getFireLoss() : humie.getFireLoss_nonProsthetic()
+	return issynthetic(humie) ? humie.get_fire_loss() : humie.getFireLoss_nonProsthetic()
 
 /datum/antagonist/bloodsucker/proc/admin_set_blood(mob/admin)
 	var/blood = tgui_input_number(admin, "What blood level to set [owner.current]'s to?", "Blood is life.", floor(bloodsucker_blood_volume), max_blood_volume, 0)
