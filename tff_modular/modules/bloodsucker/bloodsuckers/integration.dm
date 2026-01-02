@@ -88,7 +88,7 @@
 */
 /// Brute
 /mob/living/proc/getBruteLoss_nonProsthetic()
-	return getBruteLoss()
+	return get_brute_loss()
 
 /mob/living/carbon/getBruteLoss_nonProsthetic()
 	var/amount = 0
@@ -100,7 +100,7 @@
 
 /// Burn
 /mob/living/proc/getFireLoss_nonProsthetic()
-	return getFireLoss()
+	return get_fire_loss()
 
 /mob/living/carbon/getFireLoss_nonProsthetic()
 	var/amount = 0

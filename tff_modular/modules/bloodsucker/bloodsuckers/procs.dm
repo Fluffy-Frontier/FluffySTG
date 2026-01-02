@@ -233,7 +233,7 @@
 // helper procs for damage checking, just in case a synth becomes one, let's them heal thesmelves
 /datum/antagonist/bloodsucker/proc/getBruteLoss()
 	var/mob/living/carbon/human/humie = owner.current
-	return issynthetic(humie) ? humie.getBruteLoss() : humie.getBruteLoss_nonProsthetic()
+	return issynthetic(humie) ? humie.get_brute_loss() : humie.getBruteLoss_nonProsthetic()
 
 /datum/antagonist/bloodsucker/proc/getFireLoss()
 	var/mob/living/carbon/human/humie = owner.current

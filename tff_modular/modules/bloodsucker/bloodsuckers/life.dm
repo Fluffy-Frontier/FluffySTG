@@ -108,9 +108,9 @@
 	// Garlic in you? No healing for you!
 	if(HAS_TRAIT(owner.current, TRAIT_GARLIC_REAGENT))
 		return FALSE
-	owner.current.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1 * actual_regen * mult)
-	owner.current.adjustOrganLoss(ORGAN_SLOT_HEART, -1 * actual_regen * mult)
-	owner.current.adjustOrganLoss(ORGAN_SLOT_EYES, -1 * actual_regen * mult)
+	owner.current.adjust_organ_loss(ORGAN_SLOT_BRAIN, -1 * actual_regen * mult)
+	owner.current.adjust_organ_loss(ORGAN_SLOT_HEART, -1 * actual_regen * mult)
+	owner.current.adjust_organ_loss(ORGAN_SLOT_EYES, -1 * actual_regen * mult)
 	if(!iscarbon(owner.current)) // Damage Heal: Do I have damage to ANY bodypart?
 		return FALSE
 	var/mob/living/carbon/user = owner.current
@@ -142,7 +142,7 @@
 	// Heal if Damaged
 	if((bruteheal + fireheal) && mult != 0) // Just a check? Don't heal/spend, and return.
 		// We have damage. Let's heal (one time), and don't cost any blood if we cannot
-		if(!user.adjustBruteLoss(-bruteheal * mult, updating_health = FALSE) && !user.adjustFireLoss(-fireheal * mult, updating_health = FALSE)) // Heal BRUTE / BURN in random portions throughout the body.
+		if(!user.adjust_brute_loss(-bruteheal * mult, updating_health = FALSE) && !user.adjustFireLoss(-fireheal * mult, updating_health = FALSE)) // Heal BRUTE / BURN in random portions throughout the body.
 			return FALSE
 		user.updatehealth()
 		AdjustBloodVolume(((bruteheal * -0.5) + (fireheal * -1)) * costMult * mult) // Costs blood to heal
@@ -155,7 +155,7 @@
 		var/overfireheal = user.getFireLoss_nonProsthetic()
 		var/heal_amount = drunk / 3
 		if(overbruteheal > 0 && heal_amount > 0)
-			user.adjustBruteLoss(-heal_amount, updating_health = FALSE, forced = TRUE) // Heal BRUTE / BURN in random portions throughout the body; prioritising BRUTE.
+			user.adjust_brute_loss(-heal_amount, updating_health = FALSE, forced = TRUE) // Heal BRUTE / BURN in random portions throughout the body; prioritising BRUTE.
 			heal_amount = (heal_amount - overbruteheal) // Removes the amount of BRUTE we've healed from the heal amount
 		else if(overfireheal > 0 && heal_amount > 0)
 			heal_amount /= 1.5 // Burn should be more difficult to heal
@@ -191,8 +191,8 @@
 /datum/antagonist/bloodsucker/proc/heal_vampire_organs()
 	var/mob/living/carbon/bloodsuckeruser = owner.current
 	// please don't poison or asphyxiate the immune
-	bloodsuckeruser.setToxLoss(0, forced = TRUE)
-	bloodsuckeruser.setOxyLoss(0, forced = TRUE)
+	bloodsuckeruser.set_tox_loss(0, forced = TRUE)
+	bloodsuckeruser.set_oxy_loss(0, forced = TRUE)
 
 	if(QDELETED(bloodsuckeruser))
 		return

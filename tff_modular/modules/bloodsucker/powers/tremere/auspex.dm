@@ -112,7 +112,7 @@
 			living_mob.Sleeping(4 SECONDS)
 
 	do_teleport(owner, targeted_turf, no_effects = TRUE, channel = TELEPORT_CHANNEL_QUANTUM)
-	user.adjustStaminaLoss(-user.staminaloss)
+	user.adjust_stamina_loss(-user.staminaloss)
 	PowerActivatedSuccesfully(cost_override = blood_cost)
 
 #undef AUSPEX_BLOOD_COST_PER_TILE
