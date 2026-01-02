@@ -1,7 +1,3 @@
-
-/datum/supply_pack/companies/ballistics/sol_fed/sidearm
-	access = ACCESS_WEAPONS
-
 /datum/supply_pack/companies/ballistics/sol_fed/longarm
 	access = ACCESS_WEAPONS
 
