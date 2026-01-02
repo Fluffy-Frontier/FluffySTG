@@ -1,3 +1,6 @@
+// Соответствующий файл Nova: modular_nova/master_files/code/modules/cargo/packs/companies/armor.dm
+
+// Переопределение для пакета HC surplus Voskhod-P space suit: добавляет проверку по лицензии оружия и помечает как контрабанду.
 /datum/supply_pack/companies/armor/hc_surplus/space_suit
 	access = ACCESS_WEAPONS
 	contraband = TRUE
