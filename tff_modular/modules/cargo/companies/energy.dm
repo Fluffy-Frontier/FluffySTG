@@ -7,7 +7,7 @@
 	access = ACCESS_WEAPONS
 
 /datum/supply_pack/companies/energy/microstar/basic_energy_long_weapons
-	 access = ACCESS_WEAPONS
+	access = ACCESS_WEAPONS
 
 /datum/supply_pack/companies/energy/microstar/experimental_energy
 	access = ACCESS_WEAPONS
