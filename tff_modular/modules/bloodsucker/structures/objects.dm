@@ -211,7 +211,6 @@
 	armour_penetration = 10
 	embed_data = /datum/embedding/stake/hardened
 	staketime = 12 SECONDS
-	crafting_flags = parent_type::crafting_flags | CRAFT_SKIP_MATERIALS_PARITY
 
 /obj/item/stake/hardened/examine_more(mob/user)
 	. = ..()
@@ -232,7 +231,6 @@
 	custom_materials = list(/datum/material/silver = SHEET_MATERIAL_AMOUNT)
 	embed_data = /datum/embedding/stake/silver
 	staketime = 15 SECONDS
-	crafting_flags = parent_type::crafting_flags | CRAFT_SKIP_MATERIALS_PARITY
 
 /obj/item/stake/hardened/silver/examine_more(mob/user)
 	. = ..()
@@ -371,6 +369,7 @@
 	reqs = list(/obj/item/stack/rods = 1)
 	time = 6 SECONDS
 	category = CAT_BLOODSUCKER
+	crafting_flags = parent_type::crafting_flags | CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/silver_stake
 	name = "Silver Stake"
@@ -384,3 +383,4 @@
 	)
 	time = 8 SECONDS
 	category = CAT_BLOODSUCKER
+	crafting_flags = parent_type::crafting_flags | CRAFT_SKIP_MATERIALS_PARITY
