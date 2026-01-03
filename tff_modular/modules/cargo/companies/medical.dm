@@ -9,13 +9,13 @@
 	cost = PAYCHECK_COMMAND * 4
 
 /datum/supply_pack/companies/medical/first_aid_kit/frontier
-	 cost = PAYCHECK_COMMAND * 4
+	cost = PAYCHECK_COMMAND * 4
 
 /datum/supply_pack/companies/medical/first_aid_kit/combat_surgeon
 	cost = PAYCHECK_COMMAND * 4
 
 /datum/supply_pack/companies/medical/first_aid_kit/robo_repair
-	 cost = PAYCHECK_COMMAND * 4
+	cost = PAYCHECK_COMMAND * 4
 
 /datum/supply_pack/companies/medical/first_aid_kit/robo_repair_super
 
