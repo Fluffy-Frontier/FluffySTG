@@ -722,12 +722,6 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
-"cm" = (
-/obj/machinery/power/shuttle_engine/heater,
-/obj/structure/window/reinforced/tinted/spawner/directional/west,
-/obj/structure/window/reinforced/tinted/spawner/directional/north,
-/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
-/area/ruin/space/has_grav/nova/des_two)
 "cn" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 6
@@ -1741,14 +1735,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/des_two/service/lounge)
-"fp" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	dir = 6;
-	faction = list("Syndicate DS-2 Crew","Interdyne Lavaland Personnel","Syndicate")
-	},
-/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
-/area/space,
-/area/ruin/space/has_grav/nova/des_two/bridge/vault)
 "fr" = (
 /obj/effect/turf_decal/siding/dark,
 /obj/effect/turf_decal/trimline/dark/filled/line,
@@ -3516,9 +3502,7 @@
 /obj/machinery/digital_clock/directional/west,
 /obj/effect/turf_decal/bot_blue,
 /obj/machinery/vending/hydronutrients,
-/turf/open/floor/iron/kitchen{
-	dir = 4
-	},
+/turf/template_noop,
 /area/ruin/space/has_grav/nova/des_two/service/diner)
 "lj" = (
 /obj/effect/turf_decal/stripes/line{
@@ -5288,8 +5272,6 @@
 /area/ruin/space/has_grav/nova/des_two/security/prison)
 "rI" = (
 /obj/machinery/power/shuttle_engine/heater,
-/obj/structure/window/reinforced/tinted/spawner/directional/north,
-/obj/structure/window/reinforced/tinted/spawner/directional/east,
 /turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two)
 "rJ" = (
@@ -12725,11 +12707,6 @@
 /obj/structure/marker_beacon/burgundy,
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/nova/des_two/security/prison)
-"OL" = (
-/obj/machinery/power/shuttle_engine/heater,
-/obj/structure/window/reinforced/tinted/spawner/directional/north,
-/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
-/area/ruin/space/has_grav/nova/des_two)
 "OM" = (
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 1
@@ -14441,6 +14418,10 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/preopen{
 	id = "void-be-gone-inside"
+	},
+/obj/machinery/door/window/survival_pod/left/directional/north{
+	req_access = list("syndicate_leader");
+	dir = 2
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/des_two/cargo/hangar)
@@ -18339,7 +18320,7 @@ jN
 Sy
 ha
 nr
-cm
+rI
 eq
 eq
 AE
@@ -18396,7 +18377,7 @@ jN
 tv
 ha
 nr
-OL
+rI
 eq
 eq
 jy
@@ -19407,7 +19388,7 @@ it
 it
 it
 pM
-fp
+dP
 lH
 lH
 lH
