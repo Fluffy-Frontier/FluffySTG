@@ -25,7 +25,7 @@
 
 /mob/living/carbon/human/necromorph/lurker/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
-	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_faster)
+	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_lurker)
 	tentacle = icon(icon = tentacle_path, icon_state = tentacle_state)
 	add_overlay(tentacle)
 

@@ -28,6 +28,10 @@
 	multiplicative_slowdown = 2.3
 	flags = IGNORE_NOSLOW
 
+/datum/movespeed_modifier/dsnecro_brute_slowdown
+	multiplicative_slowdown = 2
+	flags = IGNORE_NOSLOW
+
 /datum/movespeed_modifier/dsnecro_divider
 	multiplicative_slowdown = -0.1
 
@@ -36,4 +40,8 @@
 
 /datum/movespeed_modifier/dsnecro_infector
 	multiplicative_slowdown = 0.6
+	flags = IGNORE_NOSLOW
+
+/datum/movespeed_modifier/dsnecro_lurker
+	multiplicative_slowdown = -0.4
 	flags = IGNORE_NOSLOW

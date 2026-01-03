@@ -9,4 +9,5 @@
 	worn_icon = 'tff_modular/modules/deadspace/icons/event/obj/belt_overlays.dmi'
 	desc = "A clean, pristine blade used for spiritual and religious purposes"
 	slot_flags = ITEM_SLOT_POCKETS | ITEM_SLOT_BELT
-	block_chance = 22 //Surprisingly good at blocking
+	block_chance = 25 //Surprisingly good at blocking
+	force = 25
