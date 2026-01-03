@@ -7877,10 +7877,13 @@
 /turf/template_noop,
 /area/space/nearstation)
 "zl" = (
-/obj/structure/marker_beacon/burgundy,
-/obj/structure/lattice/catwalk,
+/obj/machinery/camera/xray/directional/west{
+	c_tag = "DS-2 Bridge Out Right";
+	network = list("ds2");
+	dir = 6;
+	pixel_y = 15
+	},
 /turf/template_noop,
-/area/space,
 /area/space/nearstation)
 "zm" = (
 /obj/effect/turf_decal/tile/dark/full,
@@ -11009,10 +11012,9 @@
 "Jc" = (
 /obj/machinery/camera/xray/directional/north{
 	network = list("ds2");
-	c_tag = "DS-2 Rotor Left"
+	c_tag = "DS-2 Rotor Left";
+	pixel_x = -1
 	},
-/obj/structure/lattice,
-/obj/structure/lattice,
 /turf/template_noop,
 /area/space/nearstation)
 "Je" = (
@@ -12495,11 +12497,9 @@
 "Oe" = (
 /obj/machinery/camera/xray/directional/north{
 	network = list("ds2");
-	c_tag = "DS-2 Rotor Right";
-	pixel_x = 21;
-	pixel_y = 1
+	c_tag = "DS-2 Rotor Left";
+	pixel_x = 20
 	},
-/obj/structure/lattice,
 /turf/template_noop,
 /area/space/nearstation)
 "Og" = (
@@ -16192,8 +16192,9 @@
 /area/ruin/space/has_grav/nova/des_two/security)
 "Zt" = (
 /obj/machinery/camera/xray/directional/west{
+	c_tag = "DS-2 Bridge Out Right";
 	network = list("ds2");
-	c_tag = "DS-2 Right Engine"
+	pixel_y = -6
 	},
 /turf/template_noop,
 /area/space/nearstation)
@@ -16517,7 +16518,7 @@ UW
 OK
 tI
 ri
-it
+zl
 it
 it
 it
@@ -17655,7 +17656,7 @@ eY
 rQ
 aH
 ri
-SD
+it
 it
 it
 it
@@ -17769,7 +17770,7 @@ Db
 aH
 aH
 ri
-SD
+it
 it
 it
 it
@@ -18111,7 +18112,7 @@ aH
 aH
 aH
 ri
-SD
+it
 it
 it
 it
@@ -18225,7 +18226,7 @@ mF
 GT
 gn
 ri
-SD
+it
 it
 it
 it
@@ -19314,7 +19315,7 @@ gk
 gk
 gk
 gk
-Hm
+pM
 "}
 (53,1,1) = {"
 it
@@ -19463,7 +19464,7 @@ it
 it
 it
 it
-zl
+pM
 it
 SD
 it
