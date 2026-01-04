@@ -112,11 +112,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/caution/red{
-	dir = 1;
-	pixel_x = 1;
-	pixel_y = 59
-	},
-/obj/effect/turf_decal/caution/red{
 	pixel_x = 1;
 	pixel_y = 1
 	},
@@ -3502,7 +3497,9 @@
 /obj/machinery/digital_clock/directional/west,
 /obj/effect/turf_decal/bot_blue,
 /obj/machinery/vending/hydronutrients,
-/turf/template_noop,
+/turf/open/floor/iron/kitchen{
+	dir = 4
+	},
 /area/ruin/space/has_grav/nova/des_two/service/diner)
 "lj" = (
 /obj/effect/turf_decal/stripes/line{
