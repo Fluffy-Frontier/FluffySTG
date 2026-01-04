@@ -9,7 +9,7 @@
 
 /obj/item/flatpack/smartfridge/disks_tff/Initialize(mapload)
     . = ..()
-// Изменяем дженерик имя
+	// Изменяем дженерик имя
     name = "flatpack (Disk Compartmentalizer)"
     // Пытаемся изменить тип платы. Ингейм действие отвертки по плате просто меняет ее build_path в VV
     var/obj/item/circuitboard/machine/smartfridge/newboard = board
