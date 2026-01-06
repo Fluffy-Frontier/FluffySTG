@@ -331,6 +331,8 @@
 	design_ids += list(
 		"advanced_materials",
 		"borg_upgrade_welding",
+		"rld_cyborg",
+		"borg_upgrade_brped",
 	)
 	return ..()
 
