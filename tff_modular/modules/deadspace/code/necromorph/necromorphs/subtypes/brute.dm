@@ -31,6 +31,7 @@
 /mob/living/carbon/human/necromorph/brute/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
 	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_brute)
+	AddElement(/datum/element/wall_tearer, allow_reinforced = TRUE, tear_time = 3 SECONDS)
 
 /mob/living/carbon/human/necromorph/brute/play_necro_sound(audio_type, volume, vary, extra_range)
 	playsound(src, pick(GLOB.brute_sounds[audio_type]), volume, vary, extra_range)

@@ -116,7 +116,7 @@
 
 /obj/structure/marker/proc/announce_activation()
 	priority_announce("Station command. Our long-range scanning equipment has detected a strange biological signature on your station. We suspect that this could be a biological threat of an unknown level. Your station has been quarantined. We demand immediate detection of the threat and notification of the Central Command.", "Central Command Report", 'tff_modular/modules/deadspace/sound/effects/biohazard_alarm.ogg', has_important_message = TRUE, color_override = "green")
-	SSsecurity_level.set_level(SEC_LEVEL_AMBER)
+	SSsecurity_level.set_level(SEC_LEVEL_AMBER, FALSE)
 
 /mob/dead/observer/verb/join_horde()
 	set name = "Join the Horde"
