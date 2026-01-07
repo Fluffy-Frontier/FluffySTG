@@ -85,6 +85,11 @@
 
 	var/previous_owner = null
 
+/obj/item/gun/can_be_pulled(user, force)
+	if(isnecromorph(user))
+		return FALSE
+	. = ..()
+
 /datum/reagent/blood/necromorph
 	name = "X"
 	color = rgb(94, 44, 4)

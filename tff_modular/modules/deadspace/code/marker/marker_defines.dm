@@ -49,8 +49,8 @@ GLOBAL_LIST_EMPTY(necromorph_markers)
 
 /datum/armor/dsnecro_marker
 	melee = 50
-	bullet = 80
-	laser = 60
+	bullet = 60
+	laser = 70
 	energy = 100
 	bomb = 50
 	bio = 100
