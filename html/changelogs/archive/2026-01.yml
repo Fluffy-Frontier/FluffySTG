@@ -1,0 +1,318 @@
+2026-01-01:
+  Bannhammger:
+  - rscdel: Syndicate logistics contractor has finally sold surplus ammunition and
+      equipment (removed duplicates from uplink)
+  - qol: standartized uplink costs are finally here
+  - balance: syndie bomb timer is on 90 seconds again
+  - balance: emp explosives kit costs only 5 TC
+  - bugfix: removed duplicate definitions of uplink entries
+  - balance: contractos no longer get taser as part of their basic equipment
+  Iajret:
+  - rscadd: Added democratic map vote back
+2026-01-03:
+  Absolucy:
+  - bugfix: Voltaic combat cyberhearts no longer kill toxlovers (i.e jellypeople),
+      albeit they won't heal toxins for them either.
+  Aliceee2ch:
+  - map: Removes one (1) bush in NebulaStation warehouse.
+  - bugfix: Added missing "require all" type of access for Bitrunning Den.
+  - spellcheck: Plant produce spawner now correctly spawns plum instead of plum seeds.
+  - bugfix: Fixed missing access to ORM room for miners on CatwalkStation.
+  - map: Added shutters in some of service areas on WawaStation.
+  - spellcheck: Removed cellular damage mention from Radioactive Resonance virus description.
+  - bugfix: Fixes for MetaStation fire alarms.
+  - map: Removed one pair of firelocks in Brig cycling room - now it has fire sanity
+      marker instead. That should prevent trapping anyone without crowbar inside.
+  - image: Added more inhands sprite for welders, aswell as upgrading some of them.
+  ArchBTW:
+  - bugfix: Fix crowbar combat mode right clicking an unpowered airlock
+  - bugfix: Click dragging something onto a tile with a decal (pool of oil/blood,
+      etc)
+  - code_imp: Add force_move_pulled element; replace respective code with the element
+  ArchBTW, WinterDarkraven:
+  - qol: Guns have a directional muzzle flash effect now
+  Bisar:
+  - code_imp: All (Brute|Burn|Fire|Tox|Oxy|Organ|Stamina)(Loss) procs now use snake_case,
+      in-line with the STYLE guide. Underscores rule!
+  Cat:
+  - qol: The plumbing IV drip can be rotate with alt click now
+  - rscadd: The plumbing IV drip can now output chemicals into plumbing factories
+  Cirrial:
+  - bugfix: Stoats have a chance to try and grab items like they always should have.
+  - bugfix: Health analysers will no longer erroneously show a blood level for things
+      that don't have blood.
+  Co0kie-GG:
+  - rscadd: New emotions on the AI status display
+  Cyberboss:
+  - rscadd: Hygiene bots now extinguish when cleaning.
+  DriftingSkies:
+  - balance: Removes Medical Doctor's Chemistry access during highpop.
+  EEASAS:
+  - bugfix: Fixes Icebox's comms agent ruin having generic documents, not the secret
+      ones
+  - bugfix: Fixes a few disposal pipes on CatwalkStation. Read the PR!
+  Ezel:
+  - bugfix: Removes rogue decal from catwalk station
+  FalloutFalcon:
+  - bugfix: eyeless overlays with now display properly again
+  - bugfix: Less abstract mobs will spawn in random spawners (mostly relating to the
+      summoning prefix)
+  - bugfix: '"Boss" basic mobs are now exluded from the summoning prefix to parody
+      behavior of them being megafauna'
+  - rscadd: water and saltwater can be scooped from water turfs
+  - rscadd: mineral water (water with minor tox heal), scoop-able from hot-springs
+  - refactor: behavior for scooping reagents from plasma turfs has been made generic
+      and reusable
+  - rscadd: Added the medium sized cardboard boxes to random spawners
+  - qol: You can now craft the medium sized cardboard boxes
+  - bugfix: Cardboard crates are now made of cardboard
+  - code_imp: standardized defines for currency symbols
+  - balance: Lattice now ignore the slowdowns of turfs
+  - bugfix: Lattice now stop you from dipping into water
+  Fghj240:
+  - bugfix: Exosuit fabricator UI now shows the Savannah-Ivanov's supported equipment
+  - qol: weapon rechargers don't wait an extra tick before announcing they've finished
+      recharging
+  - spellcheck: weapon rechargers no longer claim a battle rifle has "finished recharging"
+      when it's finished recalibrating.
+  - qol: Revolutionaires gain a positive moodlet instead of a negative one when they
+      see a dead head of staff
+  - bugfix: Nooartrium patients and super hulks can no longer pass out from oxygen
+      damage
+  - qol: Quick carry and fast medicine properties are now visible on gloves
+  - bugfix: Getting shoved into a wall while stun immune no longer sends a message
+      saying you were knocked down
+  - bugfix: Durability header no longer appears twice when inspecting armor
+  - qol: you can swap beakers in a pandemic
+  - qol: pandemics now display overall virus severity
+  - admin: virus logs now include severity along with other stats
+  - balance: Regenerative Coma activation thresholds scales with your max hp
+  - balance: Regenerative Coma can be canceled by gaining nosoftcrit before it activates
+  - balance: Toxolysis food scales with the amount of reagents purged
+  Ghommie:
+  - refactor: Follow-up to the crafting/material refactor from months ago. All objects
+      crafted with stacks now inherit their mat composition (not necessarily the effects
+      and color) by default, while previously only a few things like chair, sinks
+      and toilets did. Report any object looking or behaving weirdly as a result.
+  - bugfix: The material composition of ammo boxes is no longer a 1/10 of what it's
+      supposed to be. It was a shitty hack to make it harder to recycle empty ammo
+      boxes. Instead, they lose materials as they're emptied now.
+  Hatterhat:
+  - rscadd: Energy shoulder holsters can now fit a power cell inside of them to act
+      as a wearable recharger specifically for energy weapons. Examine them for more
+      details, and remember to actually wear them to recharge your guns.
+  - rscadd: You can now convert shoulder holsters into energy shoulder holsters, and
+      you can now craft a one-slot, high-output energy shoulder holster.
+  - bugfix: Security webbing's basic sprite now uses the TG basic sprite.
+  - qol: Holsters now hold energy guns and laser guns just fine instead of specifically
+      the mini e-gun, cap's laser, HoS laser, etc.
+  - balance: Most holsters now only fit one gun, much like secbelts. Energy shoulder
+      holsters, as befitting their plural nature, still hold two.
+  - balance: Small guns and small batons no longer count against secbelts' limited
+      slots for normal-size guns/batons. Not that you should have a secbelt full of
+      snub-nose Renards instead of just carrying one and some speedloaders, but if
+      you're going to drop a set of handcuffs for a backup pocket pistol, at least
+      you can still stash your disabler.
+  - balance: The Syndicate has realized that way too much funding was allocated to
+      the Deep Space 2 program's armor-outfitting budget, and has subsequently field-executed
+      those responsible for the record-breaking levels of embezzlement. Armor for
+      DS2 has subsequently been realigned with regular Gorlex-Cybersun MODsuits. Affected
+      parties are invited to file a complaint.
+  - rscadd: All the laser guns from the recent upstream merge are now reflavored to
+      be variants of the SC-1. The laser pistol was buffed, the burst carbine's capacity
+      was buffed, the assault rifle and pistol are now in the goodies system.
+  - bugfix: The disabler SMG and hybrid taser no longer have redundant indicators
+      for self-charging.
+  - bugfix: Non-virtual megafauna should no longer be dropping encrypted caches when
+      mulched with a crusher if their matching virtual domain was deployed.
+  - bugfix: Virtual megafauna no longer count as valid kills for achievement tracking.
+  Iajret:
+  - bugfix: fixed multi cell chargers not accepting cells
+  - rscadd: Surgical rooms will now start with their scrubbers set to contaminated
+      mode (sucking nitrous by default) (related only to Nova maps)
+  - rscadd: Added shuttle creation kits to tech storage rooms (same as above, related
+      only to Nova maps)
+  Jacquerel:
+  - balance: The Captain's MODSuit pathfinder module now flies it directly to their
+      location rather than physically traversing the halls of the station.
+  LT3:
+  - qol: Silent jaws of recovery is now less obvious that it's modified
+  Melbert:
+  - qol: If you are within a disposal bin or chute, and drop an item, the item will
+      go into the bin, rather than onto the floor outside of the bin.
+  - balance: Tech storage access is no longer a "command level" access, meaning the
+      HoP can give it to crewmembers that have a normal ID card. Note, secure tech
+      storage still requires bridge access, which requires a silver ID card.
+  - bugfix: Wall mounts no longer stick to tables instead of the wall behind it
+  - rscadd: Compact defib can be worn and used on the suit storage slot of labcoats,
+      surgical aprons, and medical MODsuits
+  - rscadd: Drones and Dex Holoparasites can (hypothetically) wear and use compact
+      defibs
+  - bugfix: Fix Flypeople's vomit interaction before anyone realizes it's broken but
+      me
+  - refactor: Refactored how zombie powder and inverse cryogeldia apply their effects
+      to maybe have them get stuck less
+  - qol: Stairs now have an indicator that stepping beyond them will take you upwards.
+      You can disable it in accessibility settings if desired.
+  - image: Stairs blend in and together better.
+  - bugfix: 'Deathmatch: Ethereal Species gives you shock touch as intended'
+  - qol: Search bars in "settings" and "keybindings"
+  - bugfix: Fix mech construction
+  - bugfix: Tie names are verified
+  - refactor: Refactored how mech icons update mid-construction, report any disappearing
+      mechs please
+  - bugfix: One of the Phazon's mid construction icons was not visible in the past,
+      now it is again. Yippee.
+  MiiyaBox:
+  - rscadd: Added a alternative shaded version of "Mantis (Top)" for mantis enjoyers.
+  - image: '"Mantis Alt (Top)" is now a option to be picked at "Wings".'
+  OrbisAnima:
+  - rscadd: Added 3x3 beds.
+  - rscadd: Added the missing facing side to double beds.
+  - balance: Reduced by 25% the cost of synthetic pelt and oversized beds.
+  - bugfix: Fixed exploit with synthetic pelt beds.
+  Pickle-Coding:
+  - bugfix: Fixes overclocked volume pumps being able to work on walls.
+  Rilomatic:
+  - image: added icons and images
+  SmArtKar:
+  - qol: Bot assemblies will only be picked up if you held the medkit/toolbox/helmet/etc
+      in your hands when creating one.
+  - qol: Assembling med/repair/secbots will now put their assemblies in your main
+      hand instead of your offhand
+  - bugfix: Fixed partially deployed MODsuits trying to deploy parts onto blocked
+      slots when the deploy action is right clicked, instead of retracting already
+      deployed parts.
+  - admin: Added jump and search functions to the planecube debugger
+  - bugfix: Fixed raptor younglings going invisible when killed
+  - bugfix: Hulk and infusions no longer texture robotic limbs
+  - admin: Converted the Spawn verb into a TGUI input, featuring for dynamic search
+      and RegEx support
+  SyncIt21:
+  - bugfix: all mounted objects on tables, fences, windows & walls should fall of
+      correctly when the atom it is placed on is destroyed
+  - bugfix: security telescreen now falls off when their mounted wall is destroyed
+  - bugfix: defib wall mount falls off when their mounted wall is destroyed
+  - bugfix: floor lights are mounted to the ground/catwalk/tram floor they are sitting
+      on meaning destroying it will destroy the light
+  - bugfix: wall mounted plaques now fall off when their mounted wall is destroyed
+  - bugfix: fixes all incorrectly maploded wall mounts that aren't actually hanging
+      on any support structure
+  - bugfix: objects mounted on tables, windows & fences also fall off now when destoryed
+  - qol: lights can be mounted on windows
+  - qol: cameras can be mounted on windows
+  - qol: buttons can be mounted on tables
+  - refactor: improved how wall mounts interact with objects as a whole report bugs
+      on github
+  - bugfix: items such as dna injectors and others that have strange characters in
+      their names can now be dispensed from custom vending machines
+  - qol: adds mapping directional helper for nanotrasen sign & replaces all var edited
+      instances
+  - qol: added mapping directional helper for warning, radiation & secure area sign
+      allowing them to interact with fire/acid on their mounted turf
+  - qol: adds mapping helper to create diagonally shifted objects
+  TealSeer:
+  - bugfix: fixed MULEbots unloading deliveries onto the wrong tile
+  - code_imp: makes /obj/item/stamp abstract, creates /obj/item/stamp/granted
+  - code_imp: ruin loading now logs placement coordinates
+  - bugfix: fixed molotov cocktails not lighting
+  - bugfix: fixed cargo manifests missing things in certain crates
+  TheRealSlimRedwoods:
+  - rscadd: 'Fox whines and yips!
+
+      :cl:'
+  - bugfix: fixed fox whines if you have the emote tabs on.
+  - spellcheck: fixed a few typos in the code.
+  Wallem:
+  - qol: Replaces abandoned crate multitool interaction with a TGUI window that shows
+      ALL your previous attempts
+  WebcomicArtist:
+  - qol: Ethereal Drinks (Voltaic wine,telepole,pod tesla) now can feed etherials
+      decently without needing them to risk blacking out.
+  Xrmanser:
+  - bugfix: 'graft stat adjustments now apply even when the trait is rejected
+
+      :cl:'
+  Y0SH1M4S73R:
+  - rscadd: Trapdoors built inside of a shuttle will move along with the shuttle.
+  - bugfix: Open trapdoors will not cause shuttles containing them to bring open space
+      into transit.
+  Yobrocharlie:
+  - map: added the "heretic" gateway map (it has nothing related to heretics)
+  alien3301:
+  - balance: The lethal injection locker is now accessible by the warden.
+  combustor:
+  - bugfix: Fixes the AI sat's teleporter on catwalk
+  ezel:
+  - rscadd: Compact Defibrillator is now a Spy objective
+  - balance: Compact Defib is CMO exclusive again
+  - balance: you can no longer print Defibrillators in techlathe (purchase them via
+      cargo if needed)
+  - map: catwalk defibs trimmed to 4 instead of 6
+  - map: metastation defib added from 3 to 4
+  - map: wawastation defib added from 3 to 4
+  - map: tramstation defib added from 3 to 4
+  - map: nebulastation defibs trimmed from 6 to 4
+  - bugfix: fixes catwalk atmos pipeline at the courtroom
+  - bugfix: removes random powerline going trough the walls
+  - balance: You can no longer print soup pots
+  - bugfix: Removes a duplicate fire alarm in metastation botany
+  lelandkemble:
+  - spellcheck: abilities that check for consciousness will say you're dead rather
+      than unconscious if you're dead
+  - bugfix: Video game winning experiment no longer completes over and over
+  - bugfix: Emagging the cap's spare safe will no longer turn it into a smiling table
+  - rscadd: Added a modular SUIT, a deployable, one-piece three-piece suit. Purchasable
+      from the LawDrobe.
+  - balance: The MODsuit equipment techweb node has been split in two, with an offshoot
+      for civilian MODules.
+  - bugfix: Turret control wallframes visibly attach to the wall
+  muratendmo:
+  - qol: Added the Machine Design (Multi-Cell Charger Board) to the Science departmental
+      imprinter.
+  necromanceranne:
+  - bugfix: The Hellfire Laser now has its unique sprite back.
+  - balance: High frequency blades (both null rod and admin versions) are able to
+      block melee attacks from mechs.
+  - balance: High frequency blade null rods are now two-handed weapons.
+  - balance: Mech melee attacks can be blocked or avoided by a few rare sources.
+  - bugfix: Sleeping carp now actually lets you dodge melee attacks without filling
+      your hands with stuff.
+  sqnztb:
+  - bugfix: robotic lizard voicebox now can communicate properly again.
+  tontyGH:
+  - refactor: Handling relating to AI cores has been overhauled. Please make an issue
+      report on the Github if unexpected behaviour occurs.
+  uaioy:
+  - bugfix: lavaland crash site ruin should properly be affected by ash storm now
+  vinylspiders:
+  - bugfix: the 'use subtler' emote toggle in the interactions pane is now functional
+  - bugfix: taur uniform icons will now get cropped and show correctly in the prefs
+      menu
+  - bugfix: aprons and other various suits will no longer float away from certain
+      types of taur.
+  - bugfix: dying in a ghost cafe area should no longer will send a death message
+      to deadchat
+  - bugfix: crates will no longer have a chance to be destroyed when falling from
+      a dismantled cargo shelf
+  - bugfix: crates should no longer get stuck in shelves, and you can now unload 1
+      crate onto where you are standing.
+2026-01-04:
+  Bannhammger:
+  - balance: opticamo implant is now 16 points instead of 9
+  RG-TRK:
+  - rscadd: Added golden 357 rev for Syndicate Liaison as well as spare budget card
+      and syndicate freq. chip.
+  - rscadd: 'Added more equipment for security operatives in the armory, also added
+      one modsuit in MAA office. Guns: Added 4 C20-R.'
+  - rscdel: Removed 4 C20-A.
+  - bugfix: 'fixed blast doors connection in the hangar.
+
+      map:modified Med bay/Armory/MAA office/Liaison office/RND compartment/Mech hangar/Shuttle
+      Hangar/Cargo Bay area.'
+2026-01-05:
+  Bannhammger:
+  - balance: sidearms and armor is now avilable to crew for purchase
+2026-01-07:
+  Dcq-The-Protogen:
+  - rscadd: Added Blood red plasma cutter for Engie and Shaft miner traitor

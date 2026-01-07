@@ -40,7 +40,7 @@
 /datum/action/cooldown/spell/proc/drain_mana(forced = FALSE)
 	var/mob/living/carbon/human/caster = owner
 	var/datum/quirk/psyonic/quirk_holder = caster.get_quirk(/datum/quirk/psyonic)
-	caster.adjustStaminaLoss(stamina_cost, forced = TRUE)
+	caster.adjust_stamina_loss(stamina_cost, forced = TRUE)
 	if(quirk_holder && (quirk_holder.mana_level - mana_cost) >= 0)
 		quirk_holder.mana_level -= mana_cost
 		return TRUE
