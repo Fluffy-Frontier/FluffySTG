@@ -13,5 +13,4 @@
     name = "flatpack (Disk Compartmentalizer)"
     // Пытаемся изменить тип платы. Ингейм действие отвертки по плате просто меняет ее build_path в VV
     var/obj/item/circuitboard/machine/smartfridge/newboard = board
-    var/position = newboard.fridges_name_paths.Find(/obj/machinery/smartfridge/disks)
-    newboard.build_path = newboard.fridges_name_paths[position]
+    newboard.build_path = /obj/machinery/smartfridge/disks
