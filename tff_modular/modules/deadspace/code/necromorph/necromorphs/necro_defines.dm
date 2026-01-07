@@ -87,8 +87,9 @@
 
 /obj/item/gun/can_be_pulled(user, force)
 	if(isnecromorph(user))
-		return FALSE
-	. = ..()
+		to_chat(user, span_cult_italic("I should focus on food. This is not food"))
+		return TRUE
+	return . = ..()
 
 /datum/reagent/blood/necromorph
 	name = "X"
