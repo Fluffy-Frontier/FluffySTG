@@ -28,8 +28,8 @@
 	nest_allowed = FALSE
 	biomass_cost = 140
 	biomass_spent_required = 680
-	melee_damage_lower = 22
-	melee_damage_upper = 26
+	melee_damage_lower = 24
+	melee_damage_upper = 28
 	armour_penetration = 28
 	necro_armor = /datum/armor/dsnecro_leaper
 	actions = list(

@@ -100,7 +100,8 @@
 			options = list(/mob/living/carbon/human/necromorph/exploder = 1)
 		if (MOB_SIZE_LARGE)
 			options = list(/mob/living/carbon/human/necromorph/brute = 1)
-
+		if (MOB_SIZE_SMALL || MOB_SIZE_TINY)
+			options = list(/mob/living/carbon/human/necromorph/lurker = 1)
 	return options
 
 /mob/living/carbon/human/get_necromorph_conversion_possibilities(var/compatibility = 1)

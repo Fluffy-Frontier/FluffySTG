@@ -34,8 +34,8 @@
 	nest_allowed = FALSE
 	biomass_cost = 38
 	biomass_spent_required = 0
-	melee_damage_lower = 10
-	melee_damage_upper = 14
+	melee_damage_lower = 15
+	melee_damage_upper = 18
 	//Hoppers have really low health, but for balance purposes can tank bullets quite well.
 	necro_armor = /datum/armor/dsnecro_hopper
 	actions = list(

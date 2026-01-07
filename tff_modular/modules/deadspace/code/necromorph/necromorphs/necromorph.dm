@@ -3,7 +3,7 @@
 
 	var/mob/living/carbon/human/necromorph/necro_owner = src
 	necro_owner.physiology.armor = necro_owner.physiology.armor.add_other_armor(src.necro_armor)
-	necro_owner.physiology.burn_mod = 1.2
+	necro_owner.physiology.burn_mod = 1.1
 
 	if(!marker_master)
 		return INITIALIZE_HINT_QDEL

@@ -21,7 +21,7 @@
 	display_name = "Infector"
 	desc = "A high value, fragile support, the Infector works as a builder and healer"
 	necromorph_type_path = /mob/living/carbon/human/necromorph/infector
-	biomass_cost = 350
+	biomass_cost = 280
 	biomass_spent_required = 680
 	melee_damage_lower = 10
 	melee_damage_upper = 16

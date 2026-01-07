@@ -1,6 +1,6 @@
 /mob/living/carbon/human/necromorph/spitter
-	health = 90
-	maxHealth = 90
+	health = 110
+	maxHealth = 110
 	class = /datum/necro_class/spitter
 	necro_species = /datum/species/necromorph/spitter
 	necro_armor = /datum/armor/dsnecro_spitter
@@ -82,7 +82,7 @@
 	icon = 'tff_modular/modules/deadspace/icons/obj/projectiles.dmi'
 	icon_state = "acid_large"
 
-	damage = 7
+	damage = 14
 	speed = 1.4
 
 /obj/projectile/bullet/biobomb/spitter_longshot/on_hit(atom/target, blocked, pierce_hit)

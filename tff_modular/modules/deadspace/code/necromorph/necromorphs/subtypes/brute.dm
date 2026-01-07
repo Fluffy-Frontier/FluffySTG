@@ -70,6 +70,8 @@
 		throw_y = clamp(throw_y, 1, world.maxy)
 
 		our_target.safe_throw_at(locate(throw_x, throw_y, our_target.z), throw_dist, 1, user, TRUE)
+		if(iscyborg(our_target))
+			our_target.emp_act(EMP_LIGHT)
 	target.attack_necromorph(user) //We let attack_necro do the rest of the lifting
 
 	return

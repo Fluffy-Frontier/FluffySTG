@@ -11,7 +11,6 @@
 	. = ..()
 	send_to_playing_players(span_colossus("A deep chill slithers into your mind.. You feel like you are running out of time.")) //If you aren't dead, you'll know you will be soon
 	sound_to_playing_players(pick(GLOB.ubermorph_spawn), 40)
-	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_much_faster)
 
 /mob/living/carbon/human/necromorph/ubermorph/play_necro_sound(audio_type, volume, vary, extra_range)
 	playsound(src, pick(GLOB.ubermorph_sounds[audio_type]), volume, vary, extra_range)
@@ -24,7 +23,7 @@
 	tier = 4
 	biomass_cost = 800
 	biomass_spent_required = 2000
-	melee_damage_lower = 14
+	melee_damage_lower = 20
 	melee_damage_upper = 29
 	armour_penetration = 60
 	implemented = TRUE

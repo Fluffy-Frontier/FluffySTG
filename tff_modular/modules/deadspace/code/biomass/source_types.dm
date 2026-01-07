@@ -1,6 +1,6 @@
 /datum/biomass_source/baseline
 	remaining_mass = INFINITY //Never runs out
-	mass_per_tick = 0.5
+	mass_per_tick = 0.6
 
 /// It's not supposed to ever deplet
 /datum/biomass_source/baseline/absorb_biomass(delta_time)

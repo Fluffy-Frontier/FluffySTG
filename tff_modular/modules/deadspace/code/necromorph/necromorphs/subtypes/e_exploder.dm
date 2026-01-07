@@ -16,7 +16,7 @@
 
 /mob/living/carbon/human/necromorph/exploder/enhanced/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
-	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_bit_slower) //Ever so slightly faster then his normal cousin
+	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_slower) //Ever so slightly faster then his normal cousin
 
 /mob/living/carbon/human/necromorph/exploder/enhanced/play_necro_sound(audio_type, volume, vary, extra_range)
 	playsound(src, pick(GLOB.exploder_sounds[audio_type]), volume, vary, extra_range)

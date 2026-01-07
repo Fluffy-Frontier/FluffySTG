@@ -1,6 +1,6 @@
 /mob/living/carbon/human/necromorph/tripod
-	health = 475
-	maxHealth = 475
+	health = 300
+	maxHealth = 300
 	class = /datum/necro_class/tripod
 	necro_species = /datum/species/necromorph/tripod
 	necro_armor = /datum/armor/dsnecro_tripod

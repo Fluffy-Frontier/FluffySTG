@@ -1,6 +1,6 @@
 /mob/living/carbon/human/necromorph/slasher
-	health = 100
-	maxHealth = 100
+	health = 125
+	maxHealth = 125
 	class = /datum/necro_class/slasher
 	necro_species = /datum/species/necromorph/slasher
 	necro_armor = /datum/armor/dsnecro_slasher
@@ -10,7 +10,7 @@
 
 /mob/living/carbon/human/necromorph/slasher/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
-	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_bit_slower)
+	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_slower)
 
 /mob/living/carbon/human/necromorph/slasher/play_necro_sound(audio_type, volume, vary, extra_range)
 	playsound(src, pick(GLOB.slasher_sounds[audio_type]), volume, vary, extra_range)
@@ -23,7 +23,7 @@
 	tier = 1
 	biomass_cost = 50
 	biomass_spent_required = 0
-	melee_damage_lower = 14
+	melee_damage_lower = 18
 	melee_damage_upper = 20
 	armour_penetration = 25
 	necro_armor = /datum/armor/dsnecro_slasher

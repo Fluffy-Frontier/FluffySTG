@@ -60,7 +60,7 @@
 	duration = 4 SECONDS //The different necro acid projectiles increase this duration
 	tick_interval = 2 SECONDS
 	alert_type = /atom/movable/screen/alert/status_effect/bioacid
-	var/armour_pen = 0
+	var/armour_pen = 10
 
 /datum/status_effect/bioacid/enhanced
 	armour_pen = 25

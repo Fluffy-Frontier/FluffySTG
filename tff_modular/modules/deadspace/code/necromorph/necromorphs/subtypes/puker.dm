@@ -1,6 +1,6 @@
 /mob/living/carbon/human/necromorph/puker
-	health = 125
-	maxHealth = 125
+	health = 140
+	maxHealth = 140
 	class = /datum/necro_class/puker
 	necro_species = /datum/species/necromorph/puker
 	necro_armor = /datum/armor/dsnecro_puker
@@ -8,7 +8,7 @@
 
 /mob/living/carbon/human/necromorph/puker/Initialize(mapload, obj/structure/marker/marker_master)
 	. = ..()
-	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_bit_slower)
+	add_movespeed_modifier(/datum/movespeed_modifier/dsnecro_slower)
 	death_sound = pick(
 		'tff_modular/modules/deadspace/sound/effects/creatures/necromorph/puker/puker_death_1.ogg',
 		'tff_modular/modules/deadspace/sound/effects/creatures/necromorph/puker/puker_death_2.ogg',

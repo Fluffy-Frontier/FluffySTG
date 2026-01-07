@@ -31,11 +31,17 @@
 	marker_signals = null
 	necromorphs = null
 	QDEL_NULL(soundloop)
+	send_to_playing_players(span_colossus("You feel an unexpected silence. The voices stopped. Your head is no longer hurts."))
 	return ..()
 
 /obj/structure/marker/emp_act(severity)
 	. = ..()
 	activate()
+
+/obj/structure/marker/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir, armour_penetration)
+	. = ..()
+	if(!active)
+		return FALSE
 
 /obj/structure/marker/update_icon_state()
 	icon_state = (active ? "marker_giant_active_anim" : "marker_giant_dormant")
@@ -47,8 +53,14 @@
 		income += source.absorb_biomass(delta_time)
 	change_marker_biomass(income*(1-signal_biomass_percent))
 	change_signal_biomass(income*signal_biomass_percent)
+	regenerate_damage(1)
 	//Income per second
 	last_biomass_income = income / delta_time
+
+/obj/structure/marker/proc/regenerate_damage(amount)
+	if(atom_integrity >= max_integrity)
+		return
+	atom_integrity += amount
 
 /obj/structure/marker/proc/change_marker_biomass(amount)
 	marker_biomass = max(0, marker_biomass+amount)
@@ -118,8 +130,6 @@
 	if(!length(GLOB.necromorph_markers))
 		to_chat(src, span_notice("There are no markers to join!"))
 	else
-		if(!check_respawn_delay())
-			return
 
 		var/obj/structure/marker/marker = tgui_input_list(src, "Pick a marker to join", "Join Horde", GLOB.necromorph_markers)
 		if(QDELETED(marker))

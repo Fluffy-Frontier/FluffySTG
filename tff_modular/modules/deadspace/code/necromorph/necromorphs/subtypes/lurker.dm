@@ -1,5 +1,5 @@
 /mob/living/carbon/human/necromorph/lurker
-	maxHealth = 65
+	maxHealth = 100
 	class = /datum/necro_class/lurker
 	necro_species = /datum/species/necromorph/lurker
 	necro_armor = /datum/armor/dsnecro_lurker
@@ -35,7 +35,7 @@
 
 /datum/necro_class/lurker
 	display_name = "Lurker"
-	desc = "Long range fire-support that fires sharp spines in waves of three."
+	desc = "Long range fire-support that fires sharp spines."
 	necromorph_type_path = /mob/living/carbon/human/necromorph/lurker
 	tier = 1
 	biomass_cost = 70
@@ -48,11 +48,12 @@
 		/datum/action/cooldown/necro/shout,
 	)
 	implemented = TRUE
+	nest_allowed = TRUE
 
 /datum/armor/dsnecro_lurker
 	melee = 30
-	bullet = 15
-	laser = 10
+	bullet = 30
+	laser = 20
 	energy = 10
 	bomb = 0
 	bio = 50

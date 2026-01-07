@@ -7,7 +7,7 @@ GLOBAL_LIST_EMPTY(necromorph_markers)
 	layer = WALL_OBJ_LAYER
 	plane = GAME_PLANE
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	bound_width = 96
 	bound_x = -32
 	pixel_x = -33
@@ -17,6 +17,8 @@ GLOBAL_LIST_EMPTY(necromorph_markers)
 	flags_1 = ON_BORDER_1
 	plane = ABOVE_GAME_PLANE
 	anchored = TRUE
+	max_integrity = 1000
+	armor_type = /datum/armor/dsnecro_marker
 	///The loopingsound for when marker activates
 	var/datum/looping_sound/marker/soundloop
 	var/active = FALSE
@@ -45,6 +47,15 @@ GLOBAL_LIST_EMPTY(necromorph_markers)
 	/// A list of atoms that let us spawn necromorphs 6 tiles away from them
 	var/list/necro_spawn_atoms = list()
 
+/datum/armor/dsnecro_marker
+	melee = 50
+	bullet = 80
+	laser = 60
+	energy = 100
+	bomb = 50
+	bio = 100
+	fire = 100
+	acid = 100
 
 /datum/looping_sound/marker
 	mid_sounds = 'tff_modular/modules/deadspace/sound/effects/markerthrob.ogg'

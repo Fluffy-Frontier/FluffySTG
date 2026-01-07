@@ -3,12 +3,8 @@
 	variable = TRUE
 	priority = 100
 
-/datum/movespeed_modifier/dsnecro_bit_slower
-	multiplicative_slowdown = 0.1
-	flags = IGNORE_NOSLOW
-
 /datum/movespeed_modifier/dsnecro_slower
-	multiplicative_slowdown = 0.2
+	multiplicative_slowdown = 0.25
 	flags = IGNORE_NOSLOW
 
 /datum/movespeed_modifier/dsnecro_much_slower
@@ -22,10 +18,10 @@
 	multiplicative_slowdown = -0.2
 
 /datum/movespeed_modifier/dsnecro_much_faster
-	multiplicative_slowdown = -0.3
+	multiplicative_slowdown = -0.25
 
 /datum/movespeed_modifier/dsnecro_brute
-	multiplicative_slowdown = 2.3
+	multiplicative_slowdown = 2
 	flags = IGNORE_NOSLOW
 
 /datum/movespeed_modifier/dsnecro_brute_slowdown
