@@ -13,8 +13,12 @@
 	var/datum/team/unitology/uni_team
 
 /datum/antagonist/necromorph/apply_innate_effects(mob/living/mob_override)
-	var/mob/unitologist = owner.current || mob_override
-	add_team_hud(unitologist, /datum/antagonist/unitology)
+	var/mob/living/unitologist = owner.current || mob_override
+	add_team_hud(unitologist, /datum/antagonist/necromorph)
+
+/datum/antagonist/necromorph/greet()
+	. = ..()
+	to_chat(owner, span_userdanger("Help the obelisk. Become whole!"))
 
 /datum/antagonist/necromorph/create_team(datum/team/team)
 	. = ..()
@@ -23,3 +27,7 @@
 
 /datum/antagonist/necromorph/get_team()
 	return uni_team
+
+/datum/team/unitology
+	name = "Unitology"
+	member_name = "Unitologist"
