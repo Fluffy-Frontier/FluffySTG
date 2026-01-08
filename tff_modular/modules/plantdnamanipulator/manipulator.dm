@@ -620,3 +620,8 @@
 		if(potency != -1)
 			genes += new /datum/plant_gene/core/potency(potency)
 			genes += new /datum/plant_gene/core/instability(instability)
+
+// Упакованная машинерия
+/obj/item/flatpack/plantgenes
+	name = "flatpacked plant DNA manipulator"
+	board = /obj/item/circuitboard/machine/plantgenes

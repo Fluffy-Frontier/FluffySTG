@@ -26094,6 +26094,10 @@
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 4
 	},
+/obj/machinery/camera/directional/west{
+	c_tag = "Hydroponcis Fore";
+	name = "hydroponics camera"
+	},
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "ipA" = (
@@ -43195,7 +43199,7 @@
 /obj/item/computer_disk/quartermaster,
 /obj/item/computer_disk/quartermaster,
 /obj/item/pen/fountain,
-/obj/item/stamp{
+/obj/item/stamp/granted{
 	pixel_x = 8;
 	pixel_y = 2
 	},
@@ -45217,10 +45221,6 @@
 	pixel_y = 6
 	},
 /obj/item/hand_labeler,
-/obj/machinery/camera/directional/west{
-	c_tag = "Hydroponcis Fore";
-	name = "hydroponics camera"
-	},
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
 	dir = 4
@@ -47135,7 +47135,7 @@
 	pixel_y = 4
 	},
 /obj/item/pen,
-/obj/item/stamp{
+/obj/item/stamp/granted{
 	pixel_x = 8;
 	pixel_y = 2
 	},
@@ -53680,7 +53680,7 @@
 	pixel_x = 8;
 	pixel_y = 6
 	},
-/obj/item/stamp{
+/obj/item/stamp/granted{
 	pixel_x = 8;
 	pixel_y = 2
 	},
@@ -61877,7 +61877,7 @@
 /area/station/maintenance/aft)
 "tUr" = (
 /obj/structure/table/wood,
-/obj/item/stamp{
+/obj/item/stamp/granted{
 	pixel_y = 8;
 	pixel_x = -6
 	},
