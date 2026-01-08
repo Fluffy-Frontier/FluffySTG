@@ -661,16 +661,58 @@
 				return TRUE
 
 			var/current_length = get_total_length()
+			/* // FLUFFY FRONTIER EDIT START - этот же кусок кода теперь чуть ниже
 			var/new_length = current_length + this_input_length
 
 			// tgui should prevent this outcome.
 			if(new_length > MAX_PAPER_LENGTH)
 				log_paper("[key_name(user)] tried to write to [name] when it would exceed the length limit by [new_length - MAX_PAPER_LENGTH] characters: \"[paper_input]\"")
 				return TRUE
+			*/ // FLUFFY FRONTIER EDIT END
 
 			// Safe to assume there are writing implement details as user.can_write(...) fails with an invalid writing implement.
 			var/writing_implement_data = holding.get_writing_implement_details()
 
+			// FLUFFY FRONTIER ADDITION START
+			if(findtext_char(paper_input, regex(@"\%.+\%")))
+				paper_input = replacetext_char(paper_input, "%sign%", "[user.real_name]")
+				paper_input = replacetext_char(paper_input, "%time%", "[time2text(world.timeofday, "hh:mm", NO_TIMEZONE)]")
+				paper_input = replacetext_char(paper_input, "%date%", "[time2text(world.timeofday, "DD/MM", NO_TIMEZONE)]/[CURRENT_STATION_YEAR]")
+
+				// В этой регулярке и имеется чать "|(\[_+\])", так как нам необходимо так же искать и обычные поля (`[___]`),
+				// ведь иначе мы не сможем высчитать правильный id для автозаполнения полей.
+				// Сама регулярка ищет данные вида "%|текст{длина_поля}|%". Часть "{длина_поля}" является необязательной.
+				// Текст находится в первой группе, длина поля во второй группе.
+				var/regex/reg = regex(@"\%\|(.+?)(?:\{(\d+)\})?\|\%|(\[_+\])", "g")
+				var/current_field_id = input_field_count
+				var/list/new_field_to_add = list() // list(list(`%|текст|%`, `длина этого поля`)) <- посмотирте код дальше, может поймете лучше, что я хотел сказать.
+				while(reg.Find_char(paper_input))
+					if(!isnull(reg.group[1])) // Если первая группа пустая - значит это обычное поле и мы не добавляем никаких данных, а только увеличиваем счетчик полей.
+						add_field_input(
+							"[current_field_id]",
+							reg.group[1],
+							writing_implement_data["font"],
+							writing_implement_data["color"],
+							writing_implement_data["use_bold"],
+							user.real_name
+						)
+						// Длина нового поля это макимальное из указанной длины_поля и (длины текста + 1)
+						new_field_to_add += list(list(reg.match, max(length(reg.group[1]) + 1, text2num(reg.group[2]))))
+					current_field_id += 1
+
+				// Замена %|текст|% на классическое поле [____]
+				for(var/field in new_field_to_add)
+					var/field_text = "\[[jointext(new/list(field[2]), "_")]\]" // Creates a string like `[___]`, where `_` is repeats field[2] times
+					paper_input = replacetext_char(paper_input, field[1], field_text)
+
+			this_input_length = length_char(paper_input)
+			var/new_length = current_length + this_input_length
+
+			// tgui should prevent this outcome.
+			if(new_length > MAX_PAPER_LENGTH)
+				log_paper("[key_name(user)] tried to write to [name] when it would exceed the length limit by [new_length - MAX_PAPER_LENGTH] characters: \"[paper_input]\"")
+				return TRUE
+			// FLUFFY FRONTIER ADDITION END
 			playsound(src, SFX_WRITING_PEN, 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE, SOUND_FALLOFF_EXPONENT + 3, ignore_walls = FALSE)
 
 			add_raw_text(paper_input, writing_implement_data["font"], writing_implement_data["color"], writing_implement_data["use_bold"], check_rights_for(user?.client, R_FUN))
