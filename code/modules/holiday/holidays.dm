@@ -881,7 +881,7 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 	)
 
 /datum/holiday/xmas/greet()
-	return "Have a Happy New Year!"
+	return "Have a Happy New Year!!"
 
 /datum/holiday/boxing
 	name = "Boxing Day"
