@@ -56,11 +56,6 @@
 		return
 	var/message = pick(strings("malkavian_revelations.json", "revelations", "tff_modular/modules/bloodsucker"))
 	INVOKE_ASYNC(source.owner.current, TYPE_PROC_REF(/atom/movable, say), message, forced = CLAN_MALKAVIAN)
-	for(var/mob/living/carbon/anything in view(2, source.owner.current))
-		if(IS_BLOODSUCKER(anything) || anything.stat != CONSCIOUS || prob(5))
-			continue
-		var/another_message = pick(strings("malkavian_revelations.json", "revelations", "tff_modular/modules/bloodsucker"))
-		INVOKE_ASYNC(anything, TYPE_PROC_REF(/atom/movable, say), another_message, forced = CLAN_MALKAVIAN)
 
 /datum/bloodsucker_clan/malkavian/favorite_ghoul_gain(datum/antagonist/bloodsucker/source, datum/antagonist/ghoul/ghouldatum)
 	var/mob/living/carbon/carbonowner = ghouldatum.owner.current
