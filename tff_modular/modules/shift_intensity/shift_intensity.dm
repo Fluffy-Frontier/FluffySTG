@@ -36,8 +36,9 @@ SUBSYSTEM_DEF(shift_intensity)
 		can_fire = FALSE
 		return
 
-	if(istype(SSvote.current_vote, /datum/vote/shift_intensity))
-		can_fire = FALSE
+	if(!isnull(SSvote.current_vote))
+		if(istype(SSvote.current_vote, /datum/vote/shift_intensity))
+			can_fire = FALSE
 		return
 
 	if(SSticker.GetTimeLeft() <= start_time)
