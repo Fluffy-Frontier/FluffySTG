@@ -339,10 +339,12 @@
 	icon_state = "skinapplier"
 	skin = "akari"
 
-/obj/item/mod/skin_applier/akari/pre_attack(atom/attacked_atom, mob/living/user, params)
-	if(!istype(attacked_atom, /obj/item/mod/control/pre_equipped/entombed))
+/obj/item/mod/skin_applier/akari/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(!istype(interacting_with, /obj/item/mod/control/pre_equipped/entombed))
 		return ..()
-	var/obj/item/mod/control/mod = attacked_atom
+	var/obj/item/mod/control/mod = interacting_with
+	if(skin in mod.theme.variants)
+		return ..()
 	mod.theme.variants += list("akari" = list(
 		MOD_ICON_OVERRIDE = 'modular_nova/master_files/icons/donator/obj/clothing/modsuit.dmi',
 		MOD_WORN_ICON_OVERRIDE = 'modular_nova/master_files/icons/donator/mob/clothing/modsuit.dmi',
@@ -391,10 +393,12 @@
 	icon_state = "jumper-box"
 	skin = "jumper"
 
-/obj/item/mod/skin_applier/jumper/pre_attack(atom/attacked_atom, mob/living/user, params)
-	if(!istype(attacked_atom, /obj/item/mod/control/pre_equipped/security))
+/obj/item/mod/skin_applier/jumper/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(!istype(interacting_with, /obj/item/mod/control/pre_equipped/security))
 		return ..()
-	var/obj/item/mod/control/mod = attacked_atom
+	var/obj/item/mod/control/mod = interacting_with
+	if(skin in mod.theme.variants)
+		return ..()
 	mod.theme.variants += list("jumper" = list(
 		MOD_ICON_OVERRIDE = 'modular_nova/master_files/icons/donator/obj/clothing/modsuit.dmi',
 		MOD_WORN_ICON_OVERRIDE = 'modular_nova/master_files/icons/donator/mob/clothing/modsuit.dmi',
