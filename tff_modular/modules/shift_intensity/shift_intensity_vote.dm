@@ -28,10 +28,18 @@
 	if(SSticker.GetTimeLeft() < 90 SECONDS)
 		SSticker.SetTimeLeft(90 SECONDS)
 
+/datum/vote/shift_intensity/create_vote(mob/vote_creator)
+	if(SSshift_intensity.enable_hell_shift)
+		default_choices += ROUND_TOTALLY_HELL_SHIFT_STRING
+	return ..()
+
 /datum/vote/shift_intensity/tiebreaker(list/winners)
 	// Если никто не проголосовал - смена будет *обычная*
 	if(choices_by_ckey.len == 0)
 		return ROUND_LIGHT_SHIFT_STRING
+	// Если ничья между грином и редом - будет блю
+	if(ROUND_LIGHT_SHIFT_STRING in winners && ROUND_HEAVY_SHIFT_STRING in winners)
+		return ROUND_MID_SHIFT_STRING
 	return ..()
 
 /datum/vote/shift_intensity/finalize_vote(winning_option)
@@ -40,22 +48,11 @@
 		log_admin("Shift type vote ended after the round started. No changes to the round type.")
 		return
 
+	message_admins("Shift type vote ended.")
+	log_admin("Shift type vote ended.")
+
 	switch(winning_option)
-		if(ROUND_LIGHT_SHIFT_STRING)
-			SSdynamic.set_tier(/datum/dynamic_tier/greenshift)
-		if(ROUND_MID_SHIFT_STRING)
-			if(prob(50))
-				SSdynamic.set_tier(/datum/dynamic_tier/low)
-			else
-				SSdynamic.set_tier(/datum/dynamic_tier/lowmedium)
-		if(ROUND_HEAVY_SHIFT_STRING)
-			SSdynamic.set_tier(/datum/dynamic_tier/mediumhigh)
-		if(ROUND_TOTALLY_HELL_SHIFT_STRING)
-			SSdynamic.set_tier(/datum/dynamic_tier/high)
+		if(ROUND_LIGHT_SHIFT_STRING, ROUND_MID_SHIFT_STRING, ROUND_HEAVY_SHIFT_STRING, ROUND_TOTALLY_HELL_SHIFT_STRING)
+			SSshift_intensity.set_intensity(winning_option)
 		else
 			CRASH("[type] wasn't passed a valid winning choice. (Got: [winning_option || "null"])")
-
-	GLOB.shift_intensity_level = winning_option
-
-	message_admins("Shift type vote ended. The type of round will be: [winning_option].")
-	log_admin("Shift type vote ended. The type of round will be: [winning_option].")

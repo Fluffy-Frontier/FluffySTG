@@ -12,6 +12,8 @@ SUBSYSTEM_DEF(shift_intensity)
 	var/start_time
 	/// Количество игроков, необходимое для старта голосования
 	var/minimum_players
+	/// Будет ли в воуте самый сложный тип смены
+	var/enable_hell_shift = FALSE
 
 /datum/controller/subsystem/shift_intensity/Initialize()
 	start_time = CONFIG_GET(number/shift_intensity_vote_starttime)
@@ -50,5 +52,26 @@ SUBSYSTEM_DEF(shift_intensity)
 
 		can_fire = FALSE
 		SSvote.initiate_vote(/datum/vote/shift_intensity, "server", forced = TRUE)
+
+/datum/controller/subsystem/shift_intensity/proc/set_intensity(intensity_level)
+
+	switch(intensity_level)
+		if(ROUND_LIGHT_SHIFT_STRING)
+			SSdynamic.set_tier(/datum/dynamic_tier/greenshift)
+		if(ROUND_MID_SHIFT_STRING)
+			if(prob(50))
+				SSdynamic.set_tier(/datum/dynamic_tier/low)
+			else
+				SSdynamic.set_tier(/datum/dynamic_tier/lowmedium)
+		if(ROUND_HEAVY_SHIFT_STRING)
+			SSdynamic.set_tier(/datum/dynamic_tier/mediumhigh)
+		if(ROUND_TOTALLY_HELL_SHIFT_STRING)
+			SSdynamic.set_tier(/datum/dynamic_tier/high)
+
+	GLOB.shift_intensity_level = intensity_level
+
+	message_admins("The type of round will be: [winning_option].")
+	log_admin("The type of round will be: [winning_option].")
+
 
 #undef LAST_ATTEMPT_DEADLINE
