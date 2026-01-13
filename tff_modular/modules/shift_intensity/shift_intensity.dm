@@ -70,8 +70,8 @@ SUBSYSTEM_DEF(shift_intensity)
 
 	GLOB.shift_intensity_level = intensity_level
 
-	message_admins("The type of round will be: [winning_option].")
-	log_admin("The type of round will be: [winning_option].")
+	message_admins("The type of round will be: [intensity_level].")
+	log_admin("The type of round will be: [intensity_level].")
 
 
 #undef LAST_ATTEMPT_DEADLINE
