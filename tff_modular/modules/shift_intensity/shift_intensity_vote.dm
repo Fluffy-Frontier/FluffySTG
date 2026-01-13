@@ -38,7 +38,7 @@
 	if(choices_by_ckey.len == 0)
 		return ROUND_LIGHT_SHIFT_STRING
 	// Если ничья между грином и редом - будет блю
-	if(ROUND_LIGHT_SHIFT_STRING in winners && ROUND_HEAVY_SHIFT_STRING in winners)
+	if((ROUND_LIGHT_SHIFT_STRING in winners) && (ROUND_HEAVY_SHIFT_STRING in winners))
 		return ROUND_MID_SHIFT_STRING
 	return ..()
 
