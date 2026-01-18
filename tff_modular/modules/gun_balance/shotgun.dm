@@ -23,10 +23,10 @@
 
 /obj/item/ammo_casing/shotgun/express
 	pellets = 15 // 4 * 15 for 60 damage, with less spread then buckshot.
+	variance = 22
 
 /obj/projectile/bullet/pellet/shotgun_buckshot/express
 	damage = 4
-	variance = 22
 
 /obj/item/ammo_casing/shotgun/rubbershot
 	variance = 16
