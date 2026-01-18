@@ -261,6 +261,11 @@
 	name = "Friendly Janiborg Plush"
 	item_path = /obj/item/toy/plush/nova/donator/plush_janiborg
 
+/datum/loadout_item/toys/plush/fushi
+	name = "Fluffy Dragon"
+	item_path = /obj/item/toy/plush/nova/fushi
+
+
 /* // FLUFFY FRONTIER REMOVAL START
 /*
 *	STAFF
