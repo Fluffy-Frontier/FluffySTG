@@ -16,6 +16,7 @@
 
 /obj/item/ammo_casing/shotgun/magnum
 	pellets = 6 // Half as many pellets for twice the damage each pellet, same overall damage as buckshot
+	variance = 15
 
 
 /obj/projectile/bullet/pellet/shotgun_buckshot/magnum
@@ -27,7 +28,7 @@
 
 /obj/projectile/bullet/pellet/shotgun_buckshot/express
 	damage = 4
-
+//TFF баф дроби, выпилить бы
 /obj/item/ammo_casing/shotgun/rubbershot
 	variance = 16
 
@@ -36,9 +37,6 @@
 
 /obj/item/ammo_casing/shotgun/incapacitate
 	variance = 18
-
-/obj/item/ammo_casing/shotgun/magnum
-	variance = 15
 
 /obj/item/ammo_casing/shotgun/flechette
 	variance = 18
