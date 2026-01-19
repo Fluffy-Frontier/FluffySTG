@@ -702,21 +702,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/des_two/service/diner)
-"cl" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/dark/filled/line{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
-	dir = 8
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/space/has_grav/nova/des_two/research)
 "cn" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 6
@@ -2697,11 +2682,12 @@
 /area/ruin/space/has_grav/nova/des_two/bridge)
 "im" = (
 /obj/effect/turf_decal/tile/purple/full,
+/obj/effect/turf_decal/bot,
+/obj/machinery/mecha_part_fabricator/ds2,
 /obj/item/storage/box/monkeycubes{
 	pixel_x = 9;
 	pixel_y = 17
 	},
-/obj/machinery/autolathe/hacked/ds2,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "in" = (
@@ -4887,11 +4873,11 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/dark/full,
+/obj/structure/marker_beacon/burgundy,
 /obj/machinery/vending/security{
 	desc = "An Armadyne peacekeeper equipment vendor. Makes you wonder why there's no Gorlex Equipment Vendor yet.";
 	name = "Stolen Armadyne Equipment Vendor"
 	},
-/obj/structure/marker_beacon/burgundy,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/security)
 "qo" = (
@@ -5045,7 +5031,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/machinery/vending/security,
+/obj/machinery/vending/wardrobe/syndie_wardrobe,
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/nova/des_two/service/dorms)
 "qC" = (
@@ -5906,8 +5892,8 @@
 /area/ruin/space/has_grav/nova/des_two/cargo/hangar)
 "tw" = (
 /obj/effect/turf_decal/trimline/dark/filled/line,
-/obj/machinery/vending/security,
 /obj/structure/marker_beacon/burgundy,
+/obj/machinery/vending/wardrobe/syndie_wardrobe,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/security)
 "tx" = (
@@ -6011,6 +5997,7 @@
 /area/ruin/space/has_grav/nova/des_two/engineering)
 "tO" = (
 /obj/effect/turf_decal/trimline/dark/filled/line,
+/obj/machinery/vending/wardrobe/sec_wardrobe,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/security)
 "tP" = (
@@ -6917,6 +6904,9 @@
 	pixel_x = 0;
 	pixel_y = 9
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "wj" = (
@@ -7796,7 +7786,7 @@
 "yU" = (
 /obj/machinery/light/warm/directional/south,
 /obj/structure/marker_beacon/fuchsia,
-/obj/machinery/mecha_part_fabricator/ds2,
+/obj/machinery/recharge_station,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "yV" = (
@@ -7957,6 +7947,7 @@
 /obj/effect/turf_decal/stripes/red/corner{
 	dir = 8
 	},
+/obj/structure/closet/body_bag/environmental/prisoner/syndicate,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/security)
 "zz" = (
@@ -8213,6 +8204,8 @@
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/ruin/space/has_grav/nova/des_two/service/diner)
 "Ag" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/space/has_grav/nova/des_two/cargo/hangar)
 "Ah" = (
@@ -9386,6 +9379,8 @@
 /obj/effect/turf_decal/trimline/dark/filled/corner{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/textured_corner,
 /area/ruin/space/has_grav/nova/des_two/cargo/hangar)
 "Eu" = (
@@ -10860,6 +10855,9 @@
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 1
 	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "IB" = (
@@ -12094,8 +12092,7 @@
 /area/ruin/space/has_grav/nova/des_two/medbay)
 "MJ" = (
 /obj/effect/turf_decal/tile/purple/full,
-/obj/effect/turf_decal/bot,
-/obj/machinery/mecha_part_fabricator/ds2,
+/obj/machinery/autolathe/hacked/ds2,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "MK" = (
@@ -12253,7 +12250,6 @@
 /area/ruin/space/has_grav/nova/des_two/bridge)
 "Nr" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
@@ -12528,7 +12524,6 @@
 	pixel_y = 35
 	},
 /obj/effect/mapping_helpers/airalarm/syndicate_access,
-/obj/structure/closet/body_bag/environmental/prisoner/syndicate,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/security)
 "Op" = (
@@ -14071,7 +14066,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/line{
 	dir = 4
 	},
-/obj/machinery/vending/wardrobe/syndie_wardrobe,
+/obj/structure/closet/body_bag/environmental/prisoner/syndicate,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/security)
 "Ss" = (
@@ -14311,8 +14306,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/security)
 "Tl" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/turf_decal/trimline/dark/filled/line,
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner,
 /turf/open/floor/iron/dark/textured_large,
@@ -14530,14 +14523,6 @@
 	dir = 4
 	},
 /area/ruin/space/has_grav/nova/des_two/service/diner)
-"TK" = (
-/obj/effect/turf_decal/trimline/dark/filled/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/red/line,
-/obj/structure/closet/body_bag/environmental/prisoner/syndicate,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/nova/des_two/security)
 "TL" = (
 /turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/ruin/space/has_grav/nova/des_two/service/diner)
@@ -14725,9 +14710,9 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/des_two/engineering)
 "UA" = (
-/obj/machinery/recharge_station,
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/space/has_grav/nova/des_two/research)
+/obj/structure/cable,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/space/has_grav/nova/des_two/halls)
 "UB" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 8
@@ -16985,7 +16970,7 @@ Jg
 La
 st
 RU
-TK
+qp
 La
 Lh
 fc
@@ -17712,11 +17697,11 @@ WQ
 Jm
 MO
 SE
-cl
+JU
 JU
 JU
 TM
-UA
+jo
 ue
 ue
 Qf
@@ -18522,9 +18507,9 @@ ja
 MQ
 LH
 Kg
-Kg
-SH
-Kg
+DV
+UA
+DV
 BO
 qh
 pC
