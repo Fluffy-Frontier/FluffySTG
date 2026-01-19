@@ -61,7 +61,7 @@
 	if(iscyborg(src))
 		initial_language_holder = /datum/language_holder/synthetic/cyborg
 	// THE FLUFFY FRONTIER EDIT END
-	faction += FACTION_SILICON
+	add_faction(FACTION_SILICON)
 	if(ispath(radio))
 		radio = new radio(src)
 	var/datum/atom_hud/data/diagnostic/diag_hud = GLOB.huds[DATA_HUD_DIAGNOSTIC]
