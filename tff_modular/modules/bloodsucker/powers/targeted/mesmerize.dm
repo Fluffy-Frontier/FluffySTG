@@ -103,7 +103,7 @@
 
 	var/eye_protection = current_target.get_eye_protection()
 
-	if(eye_protection > max_eye_protection)
+	if(eye_protection > max_eye_protection && !level_current >= 3)
 		owner.balloon_alert(owner, "[current_target] has too much eye protection to mesmerize.")
 		return FALSE
 
