@@ -28,6 +28,7 @@
 	blood_timer = null
 	return ..()
 
+/*
 /datum/antagonist/ex_vassal/proc/on_examine(datum/source, mob/examiner, examine_text)
 	SIGNAL_HANDLER
 
@@ -35,7 +36,6 @@
 	if(vassaldatum && !revenge_vassal)
 		examine_text += span_notice("[owner.current] is an ex-vassal!")
 
-/*
 /datum/antagonist/ex_vassal/add_team_hud(mob/target)
 	QDEL_NULL(team_hud_ref)
 
