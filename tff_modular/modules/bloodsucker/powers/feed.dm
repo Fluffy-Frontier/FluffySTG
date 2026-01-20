@@ -82,7 +82,7 @@
 			feed_target.apply_status_effect(/datum/status_effect/feed_regen)
 		log_combat(user, feed_target, "fed on blood", addition="(and took [blood_taken] blood)")
 		to_chat(user, span_notice("You slowly release [feed_target]."))
-		if(feed_target.stat == DEAD && !started_alive)
+		if(feed_target.stat == DEAD && !started_alive && bloodsuckerdatum_power.my_clan.blood_drink_type != BLOODSUCKER_DRINK_INHUMANELY)
 			user.add_mood_event("drankkilled", /datum/mood_event/drankkilled)
 			bloodsuckerdatum_power.AddHumanityLost(10)
 
@@ -234,7 +234,7 @@
 	// Drank mindless as Ventrue? - BAD
 	if(bloodsuckerdatum_power.my_clan?.blood_drink_type == BLOODSUCKER_DRINK_SNOBBY && QDELETED(feed_target.mind))
 		user.add_mood_event("drankblood", /datum/mood_event/drankblood_bad)
-	if(feed_target.stat >= DEAD && !started_alive)
+	if(feed_target.stat >= DEAD && !started_alive && bloodsuckerdatum_power.my_clan.blood_drink_type != BLOODSUCKER_DRINK_INHUMANELY)
 		user.add_mood_event("drankblood", /datum/mood_event/drankblood_dead)
 
 	if(!IS_BLOODSUCKER(feed_target))

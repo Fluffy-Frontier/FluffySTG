@@ -6,7 +6,7 @@
 		Click any player to start spinning wildly and, after a short delay, dash at them.\n\
 		This has a max range of 4 tiles.\n\
 		When lunging at someone, you will grab them, immediately starting off at aggressive.\n\
-		Riot gear and Monster Hunters are protected and will only be passively grabbed.\n\
+		Riot gear are protected and will only be passively grabbed.\n\
 		You cannot use the Power if you are already grabbing someone, or are being grabbed.\n\
 		If you grab from behind, or from darkness (Cloak of Darkness works), you will knock the target down.\n\
 		If used on a dead body, will tear their heart out.\n\

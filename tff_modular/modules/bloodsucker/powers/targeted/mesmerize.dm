@@ -118,7 +118,7 @@
 
 	var/modified_delay = mesmerize_delay
 	var/eye_protection = mesmerized_target.get_eye_protection()
-	if(eye_protection > 0)
+	if(eye_protection > 0 && !current_level >= 3)
 		modified_delay += (eye_protection * 0.25) * mesmerize_delay
 		to_chat(mesmerized_target, span_warning("It feels like your eye-protection is helping you resist the victim's gaze!"))
 		to_chat(mesmerized_target, span_warning("But, you can still feel it making your eyes grow heavy."))

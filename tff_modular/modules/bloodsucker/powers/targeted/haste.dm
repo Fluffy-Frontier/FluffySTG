@@ -79,6 +79,8 @@
 		if(success) //don't sleep if we failed to move.
 			sleep(world.tick_lag)
 
+	user.adjust_stamina_loss(20 * -level_current)
+
 /datum/action/cooldown/bloodsucker/targeted/haste/power_activated_sucessfully()
 	. = ..()
 	UnregisterSignal(owner, COMSIG_MOVABLE_MOVED)
