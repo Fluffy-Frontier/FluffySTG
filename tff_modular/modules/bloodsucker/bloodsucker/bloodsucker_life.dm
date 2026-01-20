@@ -3,7 +3,7 @@
 
 /// Runs from COMSIG_LIVING_LIFE, handles Bloodsucker constant proccesses.
 
-/datum/antagonist/bloodsucker/proc/life_tick(mob/living/source, seconds_per_tick, times_fired)
+/datum/antagonist/bloodsucker/proc/life_tick(seconds_per_tick, times_fired)
 	SIGNAL_HANDLER
 	if(isbrain(owner?.current))
 		return
@@ -187,7 +187,7 @@
 		return
 
 	bloodsuckeruser.cure_husk()
-	bloodsuckeruser.regenerate_organs(regenerate_existing = FALSE)
+	bloodsuckeruser.regenerate_organs(TRUE)
 	ensure_brain_nonvital()
 
 	for(var/obj/item/organ/organ as anything in bloodsuckeruser.organs)
