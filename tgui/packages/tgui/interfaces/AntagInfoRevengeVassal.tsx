@@ -7,7 +7,7 @@ import {
   Image,
   Section,
   Stack,
-} from '../components';
+} from 'tgui-core/components';
 import { Window } from '../layouts';
 import { Objective, ObjectivePrintout } from './common/Objectives';
 

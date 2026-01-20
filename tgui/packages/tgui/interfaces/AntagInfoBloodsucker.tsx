@@ -8,30 +8,26 @@ import { Window } from '../layouts';
 import type { Objective } from './common/Objectives';
 import { PowerDetails } from './PowerInfo';
 
-export type ClanProps = {
+type ClanProps = {
   clan: ClanInfo[];
   in_clan: BooleanLike;
 };
 
-export type ClanInfo = {
+type ClanInfo = {
   clan_name: string;
   clan_description: string;
   clan_icon: string;
 };
 
-export type PowerInfo = {
+type PowerInfo = {
   power_name: string;
   power_explanation: string[];
   power_icon: string;
 };
 
-export type BloodsuckerProps = {
+type BloodsuckerProps = {
   powers: PowerInfo[];
   objectives: Objective[];
-};
-export type GhoulProps = BloodsuckerProps & {
-  title: string;
-  description: string;
 };
 
 const ObjectivePrintout = (props: any) => {
