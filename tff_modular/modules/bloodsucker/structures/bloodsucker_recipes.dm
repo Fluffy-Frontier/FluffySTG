@@ -11,6 +11,7 @@
 	)
 	time = 15 SECONDS
 	category = CAT_STRUCTURE
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/securecoffin
 	name = "Secure Coffin"
@@ -23,6 +24,7 @@
 	)
 	time = 15 SECONDS
 	category = CAT_STRUCTURE
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/meatcoffin
 	name = "Meat Coffin"
@@ -34,6 +36,7 @@
 	)
 	time = 15 SECONDS
 	category = CAT_STRUCTURE
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/metalcoffin
 	name = "Metal Coffin"
@@ -44,6 +47,7 @@
 	)
 	time = 10 SECONDS
 	category = CAT_STRUCTURE
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/vassalrack
 	name = "Persuasion Rack"
@@ -56,7 +60,7 @@
 	)
 	time = 15 SECONDS
 	category = CAT_STRUCTURE
-	crafting_flags = CRAFT_MUST_BE_LEARNED
+	crafting_flags = CRAFT_MUST_BE_LEARNED | CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/candelabrum
 	name = "Candelabrum"
@@ -69,7 +73,7 @@
 	)
 	time = 10 SECONDS
 	category = CAT_STRUCTURE
-	crafting_flags = CRAFT_MUST_BE_LEARNED
+	crafting_flags = CRAFT_MUST_BE_LEARNED | CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/bloodthrone
 	name = "Blood Throne"
@@ -82,7 +86,7 @@
 	)
 	time = 5 SECONDS
 	category = CAT_STRUCTURE
-	crafting_flags = CRAFT_MUST_BE_LEARNED
+	crafting_flags = CRAFT_MUST_BE_LEARNED | CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/stake
 	name = "Stake"
@@ -98,7 +102,7 @@
 	reqs = list(/obj/item/stack/rods = 1)
 	time = 6 SECONDS
 	category = CAT_WEAPON_MELEE
-	crafting_flags = CRAFT_MUST_BE_LEARNED
+	crafting_flags = CRAFT_MUST_BE_LEARNED | CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/silver_stake
 	name = "Silver Stake"
@@ -110,4 +114,4 @@
 	)
 	time = 8 SECONDS
 	category = CAT_WEAPON_MELEE
-	crafting_flags = CRAFT_MUST_BE_LEARNED
+	crafting_flags = CRAFT_MUST_BE_LEARNED | CRAFT_SKIP_MATERIALS_PARITY
