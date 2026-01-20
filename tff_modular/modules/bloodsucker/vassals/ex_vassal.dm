@@ -13,10 +13,9 @@
 	ui_name = FALSE
 	hud_icon = 'tff_modular/modules/bloodsucker/icons/bloodsucker_icons.dmi'
 
-	/*
+
 	///The revenge vassal that brought us into the fold.
 	var/datum/antagonist/vassal/revenge/revenge_vassal
-	*/
 	///Timer we have to live
 	COOLDOWN_DECLARE(blood_timer)
 
