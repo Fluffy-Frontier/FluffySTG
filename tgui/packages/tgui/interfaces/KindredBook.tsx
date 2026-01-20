@@ -1,6 +1,5 @@
-import { Collapsible, Section, Table } from 'tgui-core/components';
-
 import { useBackend } from '../backend';
+import { Collapsible, Table, Section } from '../components';
 import { Window } from '../layouts';
 
 type Data = {
@@ -8,8 +7,8 @@ type Data = {
 };
 
 type ClanInfo = {
-  clan_name: string;
-  clan_desc: string;
+  name: string;
+  desc: string;
 };
 
 export const KindredBook = (props) => {
@@ -30,8 +29,8 @@ export const KindredBook = (props) => {
           <Table>
             <Table.Row>
               {clans.map((clan) => (
-                <Collapsible key={clan.clan_name} title={clan.clan_name}>
-                  <Table.Cell color="label">{clan.clan_desc}</Table.Cell>
+                <Collapsible key={clan.name} title={clan.name}>
+                  <Table.Cell color="label">{clan.desc}</Table.Cell>
                 </Collapsible>
               ))}
             </Table.Row>

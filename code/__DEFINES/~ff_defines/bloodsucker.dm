@@ -185,8 +185,6 @@
 #define BLOODSUCKER_REGEN_INCREASE_ON_RANKUP 0.1
 #define BLOODSUCKER_UNARMED_DMG_INCREASE_ON_RANKUP 1.4
 
-#define BLOODSUCKER_TRAIT "bloodsucker"
-
 #define TRAIT_MASQUERADE "masquerade"
 #define TRAIT_UNKNOWN "unknown"
 #define TRAIT_BLOODSUCKER_HUNTER "bloodsucker_hunter"
