@@ -1,104 +1,106 @@
-import { BooleanLike } from 'common/react';
-import { useBackend, useLocalState } from '../backend';
-import { Box, Button, DmIcon, Flex, Section, Stack, Tabs } from '../components';
+import { useState } from 'react';
+import { Box, Button, Image, Section, Stack, Tabs } from 'tgui-core/components';
+import type { BooleanLike } from 'tgui-core/react';
+
+import { resolveAsset } from '../assets';
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
-import {
-  Objective,
-  ObjectivePrintout,
-  ReplaceObjectivesButton,
-} from './common/Objectives';
+import type { Objective } from './common/Objectives';
+import { PowerDetails } from './PowerInfo';
 
-type BloodsuckerInformation = {
-  clan?: ClanInfo;
+export type ClanProps = {
+  clan: ClanInfo[];
+  in_clan: BooleanLike;
+};
+
+export type ClanInfo = {
+  clan_name: string;
+  clan_description: string;
+  clan_icon: string;
+};
+
+export type PowerInfo = {
+  power_name: string;
+  power_explanation: string[];
+  power_icon: string;
+};
+
+export type BloodsuckerProps = {
   powers: PowerInfo[];
-};
-
-type ClanInfo = {
-  name: string;
-  desc: string;
-  icon: string;
-  icon_state: string;
-};
-
-type PowerInfo = {
-  name: string;
-  explanation: string;
-  icon: string;
-  icon_state: string;
-};
-
-type Info = {
   objectives: Objective[];
-  can_change_objective: BooleanLike;
+};
+export type GhoulProps = BloodsuckerProps & {
+  title: string;
+  description: string;
+};
+
+const ObjectivePrintout = (props: any) => {
+  const { data } = useBackend<BloodsuckerProps>();
+  const { objectives } = data;
+  return (
+    <Stack vertical>
+      <Stack.Item bold>Your current objectives:</Stack.Item>
+      <Stack.Item>
+        {(!objectives && 'None!') ||
+          objectives.map((objective) => (
+            <Stack.Item key={objective.count}>
+              #{objective.count}: {objective.explanation}
+            </Stack.Item>
+          ))}
+      </Stack.Item>
+    </Stack>
+  );
 };
 
 export const AntagInfoBloodsucker = (props: any) => {
-  const [tab, setTab] = useLocalState('tab', 1);
+  const [tab, setTab] = useState(1);
   return (
     <Window width={620} height={700} theme="spookyconsole">
-      <Window.Content scrollable>
-        <Stack vertical>
-          <Stack.Item>
-            <Tabs>
-              <Tabs.Tab
-                icon="list"
-                lineHeight="23px"
-                selected={tab === 1}
-                onClick={() => setTab(1)}
-              >
-                Introduction
-              </Tabs.Tab>
-              <Tabs.Tab
-                icon="list"
-                lineHeight="23px"
-                selected={tab === 2}
-                onClick={() => setTab(2)}
-              >
-                Clan & Powers
-              </Tabs.Tab>
-            </Tabs>
-          </Stack.Item>
-          <Stack.Item grow>
-            {tab === 1 && <BloodsuckerIntro />}
-            {tab === 2 && <BloodsuckerClan />}
-          </Stack.Item>
-        </Stack>
+      <Window.Content>
+        <Tabs>
+          <Tabs.Tab
+            icon="list"
+            lineHeight="23px"
+            selected={tab === 1}
+            onClick={() => setTab(1)}
+          >
+            Introduction
+          </Tabs.Tab>
+          <Tabs.Tab
+            icon="list"
+            lineHeight="23px"
+            selected={tab === 2}
+            onClick={() => setTab(2)}
+          >
+            Clan & Powers
+          </Tabs.Tab>
+        </Tabs>
+        {tab === 1 && <BloodsuckerIntro />}
+        {tab === 2 && <BloodsuckerClan />}
       </Window.Content>
     </Window>
   );
 };
 
 const BloodsuckerIntro = () => {
-  const {
-    data: { objectives, can_change_objective },
-  } = useBackend<Info>();
   return (
     <Stack vertical fill>
-      <Stack.Item>
-        <Section fill>
+      <Stack.Item minHeight="16rem">
+        <Section scrollable fill>
           <Stack vertical>
-            <Stack.Item textColor="red" fontSize="20px" textAlign="center">
-              You are a <b>Bloodsucker</b>, an undead blood-seeking monster
-              living aboard Space Station 13
+            <Stack.Item textColor="red" fontSize="20px">
+              You are a Bloodsucker, an undead blood-seeking monster living
+              aboard Space Station 13
             </Stack.Item>
             <Stack.Item>
-              <ObjectivePrintout
-                objectives={objectives}
-                objectiveFollowup={
-                  <ReplaceObjectivesButton
-                    can_change_objective={can_change_objective}
-                    button_title={'Acquire New Tastes'}
-                    button_colour={'red'}
-                  />
-                }
-              />
+              <ObjectivePrintout />
             </Stack.Item>
           </Stack>
         </Section>
       </Stack.Item>
       <Stack.Item>
         <Section fill title="Strengths and Weaknesses">
-          <Stack vertical>
+          <Stack vertical height="7rem">
             <Stack.Item>
               <span>
                 You regenerate your health slowly, you&#39;re weak to fire, and
@@ -116,6 +118,11 @@ const BloodsuckerIntro = () => {
                 Avoid using your Feed ability while near others, or else you
                 will risk <i>breaking the Masquerade</i>!
               </span>
+              <span>
+                Loosing your heart will render your powers useless, but going
+                into a coffin with a heart inside will allow you to regenerate
+                it.
+              </span>
             </Stack.Item>
           </Stack>
         </Section>
@@ -124,13 +131,27 @@ const BloodsuckerIntro = () => {
         <Section fill title="Items">
           <Stack vertical>
             <Stack.Item>
-              Rest in a <b>Coffin</b> to claim it, and that area, as your lair.
+              Rest in a <b>Coffin</b> to claim it, and that area, as your haven.
               <br />
               Examine your new structures to see how they function!
               <br />
-              Medical and Genetic Analyzers can sell you out, your Masquerade
-              ability will hide your identity to prevent this.
+              Medical analyzers and the book of kindred can sell you out, your
+              Masquerade ability will hide your identity to prevent this.
               <br />
+              You will learn how to make persuasion racks once you have enough
+              levels to support a ghoul, which you will learn during torpor
+              during daytime. Examine the ghoul rack to see how many ghouls you
+              can have!
+              <br />
+              You cannot level up until you select a clan. To select a clan,
+              click the clan tab on the top right of this window.
+              <br />
+              Ensure to read the descriptions of each ability in the Clan &
+              Powers tab, you may learn something new!
+              <br />
+              After a certain level, Sol will no longer grant you levels,
+              instead, you will need to feed on the blood of others to gain
+              levels.
             </Stack.Item>
             <Stack.Item>
               <Section textAlign="center" textColor="red" fontSize="20px">
@@ -147,10 +168,10 @@ const BloodsuckerIntro = () => {
 };
 
 const BloodsuckerClan = (props: any) => {
-  const { act, data } = useBackend<BloodsuckerInformation>();
-  const { clan } = data;
+  const { act, data } = useBackend<BloodsuckerProps & ClanProps>();
+  const { clan, in_clan, powers } = data;
 
-  if (!clan) {
+  if (!in_clan) {
     return (
       <Section minHeight="220px">
         <Box mt={5} bold textAlign="center" fontSize="40px">
@@ -160,92 +181,49 @@ const BloodsuckerClan = (props: any) => {
           <Button
             fluid
             icon="users"
-            content="Join Clan"
             textAlign="center"
             fontSize="30px"
             lineHeight={2}
             onClick={() => act('join_clan')}
-          />
+          >
+            Join Clan
+          </Button>
         </Box>
       </Section>
     );
   }
 
   return (
-    <Stack vertical>
-      <Stack.Item>
-        <Section>
+    <Stack vertical fill>
+      <Stack.Item minHeight="20rem">
+        <Section scrollable fill>
           <Stack vertical>
-            <Stack.Item textAlign="center">
-              <DmIcon
-                icon={clan.icon}
-                icon_state={clan.icon_state}
-                width="64px"
-                height="64px"
-                verticalAlign="middle"
-              />
-              <Box inline fontSize="20px" textAlign="center">
-                You are part of the <b>{clan.name}</b>
-              </Box>
-              <DmIcon
-                icon={clan.icon}
-                icon_state={clan.icon_state}
-                width="64px"
-                height="64px"
-                verticalAlign="middle"
-              />
+            <Stack.Item>
+              {clan.map((ClanInfo) => (
+                <>
+                  <Image
+                    height="20rem"
+                    opacity={0.25}
+                    src={resolveAsset(`bloodsucker.${ClanInfo.clan_icon}.png`)}
+                    className="img absolute"
+                    style={{ position: 'absolute' }}
+                  />
+                  <Stack.Item fontSize="20px" textAlign="center">
+                    You are part of the {ClanInfo.clan_name}
+                  </Stack.Item>
+                  <Stack.Item
+                    fontSize="16px"
+                    style={{ flexBasis: '60% !important' }}
+                  >
+                    {ClanInfo.clan_description}
+                  </Stack.Item>
+                </>
+              ))}
             </Stack.Item>
-            <Stack.Item fontSize="16px">{clan.desc}</Stack.Item>
           </Stack>
         </Section>
       </Stack.Item>
-      <Stack.Item>
-        <PowerSection />
-      </Stack.Item>
+      <PowerDetails powers={powers} />
     </Stack>
-  );
-};
-
-const PowerSection = (props: any) => {
-  const { data } = useBackend<BloodsuckerInformation>();
-  const { powers } = data;
-
-  const [powerTab, setPowerTab] = useLocalState('power', powers[0].name);
-
-  const selectedPower =
-    powers.find((power) => power.name === powerTab) || powers[0];
-
-  return (
-    <Section title="Powers">
-      <Flex>
-        <Flex.Item>
-          <Tabs vertical overflowY="auto">
-            {powers.map((power) => (
-              <Tabs.Tab
-                key={power.name}
-                leftSlot={
-                  <DmIcon
-                    icon={power.icon}
-                    icon_state={power.icon_state}
-                    verticalAlign="middle"
-                  />
-                }
-                selected={powerTab === power.name}
-                onClick={() => setPowerTab(power.name)}
-              >
-                {power.name}
-              </Tabs.Tab>
-            ))}
-          </Tabs>
-        </Flex.Item>
-        <Flex.Item ml="1rem" grow={1} basis={0} fontSize="14px">
-          <Box
-            dangerouslySetInnerHTML={{
-              __html: selectedPower.explanation,
-            }}
-          />
-        </Flex.Item>
-      </Flex>
-    </Section>
   );
 };
