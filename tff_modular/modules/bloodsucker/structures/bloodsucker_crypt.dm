@@ -139,11 +139,6 @@
 	. = ..()
 	AddElement(/datum/element/elevation, pixel_shift = 14)
 
-/obj/structure/bloodsucker/vassalrack/deconstruct(disassembled = TRUE)
-	new /obj/item/stack/sheet/iron(drop_location(), 4)
-	new /obj/item/stack/rods(drop_location(), 4)
-	return ..()
-
 /obj/structure/bloodsucker/vassalrack/examine(mob/user)
 	. = ..()
 	var/datum/antagonist/bloodsucker/bloodsuckerdatum = IS_BLOODSUCKER(user)
