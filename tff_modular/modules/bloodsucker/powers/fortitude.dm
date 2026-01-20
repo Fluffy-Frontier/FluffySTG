@@ -1,66 +1,57 @@
-#define FORTITUDE_STUN_IMMUNITY_LEVEL 4
 /datum/action/cooldown/bloodsucker/fortitude
 	name = "Fortitude"
-	desc = "Withstand egregious physical wounds and walk away from attacks that would stun, pierce, and dismember lesser beings, but will render you unable to heal."
+	desc = "Withstand egregious physical wounds and walk away from attacks that would stun, pierce, and dismember lesser beings."
 	button_icon_state = "power_fortitude"
-	power_flags = BP_CONTINUOUS_EFFECT|BP_AM_COSTLESS_UNCONSCIOUS
-	check_flags = BP_CANT_USE_IN_TORPOR|BP_CANT_USE_IN_FRENZY
-	purchase_flags = BLOODSUCKER_CAN_BUY|GHOUL_CAN_BUY
-	cooldown_time = 20 SECONDS
-	bloodcost = 30
-	constant_bloodcost = 0.2
-	var/was_running
-	var/fortitude_resist // So we can raise and lower your brute resist based on what your level_current WAS.
-	var/list/trigger_listening = list()
-	var/traits_to_add = list(TRAIT_PIERCEIMMUNE, TRAIT_NODISMEMBER, TRAIT_PUSHIMMUNE, TRAIT_HARDLY_WOUNDED)
+	power_explanation = "Fortitude:\n\
+		Activating Fortitude will provide pierce, shove, and dismember immunity.\n\
+		However, everyone around you will know that you have activated it, and you will be unable to sprint.\n\
+		You will additionally gain resistance to Brute and Stamina damage, starting at 20%, increasing 5% per level, and maxing at 50%. \n\
+		At level 4, you gain additional resistance to stun batons, and will ignore their staggering effects."
+	power_flags = BP_AM_TOGGLE
+	check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_IN_FRENZY
+	purchase_flags = BLOODSUCKER_CAN_BUY | VASSAL_CAN_BUY
+	bloodcost = 10
+	cooldown_time = 10 SECONDS
+	constant_bloodcost = 3
 
-/datum/action/cooldown/bloodsucker/fortitude/get_power_explanation_extended()
-	. = list()
-	. += "Fortitude will provide pierce, stun and dismember immunity."
-	. += "You will additionally gain resistance to both brute, burn and stamina damage, scaling with level."
-	. += "Fortitude will make you receive [GetFortitudeResist() * 10]% less brute, and stamina, and [GetFortitudeResist() * 10]% less burn damage."
-	. += "While using Fortitude, attempting to run will crush you."
-	. += "At level [FORTITUDE_STUN_IMMUNITY_LEVEL], you gain complete stun immunity."
-	. += "Higher levels will increase Brute and Stamina resistance."
+	/// Base traits granted by fortitude.
+	var/static/list/base_traits = list(
+		TRAIT_PIERCEIMMUNE,
+		TRAIT_NODISMEMBER,
+		TRAIT_PUSHIMMUNE,
+		TRAIT_ANALGESIA
+	)
+	/// Upgraded traits granted by fortitude.
+	var/static/list/upgraded_traits = list(TRAIT_BATON_RESISTANCE)
 
-/datum/action/cooldown/bloodsucker/fortitude/ActivatePower(atom/target)
-	owner.balloon_alert(owner, "fortitude turned on.")
-	to_chat(owner, span_notice("Your flesh, skin, and muscles become as steel."))
+	///How much resistance is provided by the current use of fortitude, so it can be adjusted correctly when fortitude ends.
+	///Needs to be tracked separately from level_current to avoid exploits.
+	var/fortitude_resist
+	///Reference to the visual icon of the fortitude power.
+	var/atom/movable/flick_visual/icon_ref
+
+/datum/action/cooldown/bloodsucker/fortitude/ActivatePower(trigger_flags)
+	. = ..()
+
 	// Traits & Effects
-	owner.add_traits(traits_to_add, BLOODSUCKER_TRAIT)
-	if(level_current >= FORTITUDE_STUN_IMMUNITY_LEVEL)
-		ADD_TRAIT(owner, TRAIT_STUNIMMUNE, BLOODSUCKER_TRAIT)
+	owner.add_traits(base_traits, FORTITUDE_TRAIT)
+
+	//Everyone around us can tell we are using fortitude.
+	icon_ref = owner.do_power_icon_animation("power_fortitude")
+
+	if(level_current >= 4)
+		owner.add_traits(upgraded_traits, FORTITUDE_TRAIT)
+		owner.visible_message(span_warning("[owner]'s skin turns extremely hard! Batons will be extremely ineffective!"))
+	else
+		owner.visible_message(span_warning("[owner]'s skin hardens!"))
+
 	var/mob/living/carbon/human/bloodsucker_user = owner
-	if(IS_BLOODSUCKER(owner) || IS_GHOUL(owner))
-		fortitude_resist = GetFortitudeResist()
-		bloodsucker_user.physiology.brute_mod *= fortitude_resist
-		bloodsucker_user.physiology.burn_mod *= fortitude_resist
-		bloodsucker_user.physiology.stamina_mod *= fortitude_resist
 
-	was_running = (bloodsucker_user.move_intent == MOVE_INTENT_RUN)
-	if(was_running)
-		bloodsucker_user.toggle_move_intent()
-	for(var/power in bloodsuckerdatum_power.powers)
-		if(!istype(power, /datum/action/cooldown/bloodsucker/targeted/haste))
-			continue
-		RegisterSignal(power, COMSIG_FIRE_TARGETED_POWER, PROC_REF(on_action_trigger))
-		trigger_listening += power
-	RegisterSignal(owner, COMSIG_LIVING_ADJUST_BRUTE_DAMAGE, PROC_REF(on_heal))
-	RegisterSignal(owner, COMSIG_LIVING_ADJUST_BURN_DAMAGE, PROC_REF(on_heal))
-	return TRUE
+	fortitude_resist = max(0.5, 0.85 - level_current * 0.05)
 
-/datum/action/cooldown/bloodsucker/fortitude/proc/on_heal(mob/current_mob, type, amount, forced)
-	if(!forced && active && amount < 0)
-		return COMPONENT_IGNORE_CHANGE
-	return NONE
+	bloodsucker_user.physiology.brute_mod *= fortitude_resist
+	bloodsucker_user.physiology.stamina_mod *= fortitude_resist
 
-/datum/action/cooldown/bloodsucker/fortitude/proc/on_action_trigger(datum/action, mob/target)
-	SIGNAL_HANDLER
-	addtimer(CALLBACK(src, PROC_REF(DeactivatePower)), 1 SECONDS)
-	return TRUE
-
-/datum/action/cooldown/bloodsucker/fortitude/proc/GetFortitudeResist()
-	return max(0.3, 0.7 - level_current * 0.05)
 
 /datum/action/cooldown/bloodsucker/fortitude/process(seconds_per_tick)
 	// Checks that we can keep using this.
@@ -70,36 +61,21 @@
 	if(!active)
 		return
 	var/mob/living/carbon/user = owner
-	/// Prevents running while on Fortitude
-	if(user.move_intent != MOVE_INTENT_WALK)
-		user.toggle_move_intent()
-		user.balloon_alert(user, "you attempt to run, crushing yourself.")
-		user.adjust_brute_loss(rand(5,15))
+
 	/// We don't want people using fortitude being able to use vehicles
-	if(user.buckled && istype(user.buckled, /obj/vehicle))
+	if(istype(user.buckled, /obj/vehicle))
 		user.buckled.unbuckle_mob(src, force=TRUE)
 
-/datum/action/cooldown/bloodsucker/fortitude/DeactivatePower(deactivate_flags)
-	if(length(trigger_listening))
-		for(var/power in trigger_listening)
-			UnregisterSignal(power, COMSIG_FIRE_TARGETED_POWER)
-			trigger_listening -= power
-	. = ..()
-	if(!. || !ishuman(owner))
-		return
+/datum/action/cooldown/bloodsucker/fortitude/DeactivatePower()
 	var/mob/living/carbon/human/bloodsucker_user = owner
-	if(IS_BLOODSUCKER(owner) || IS_GHOUL(owner) && fortitude_resist)
-		bloodsucker_user.physiology.brute_mod /= fortitude_resist
-		bloodsucker_user.physiology.burn_mod /= fortitude_resist
-		bloodsucker_user.physiology.stamina_mod /= fortitude_resist
+	bloodsucker_user.physiology.brute_mod /= fortitude_resist
+	bloodsucker_user.physiology.stamina_mod /= fortitude_resist
+
 	// Remove Traits & Effects
-	owner.remove_traits(traits_to_add, BLOODSUCKER_TRAIT)
+	owner.remove_traits(base_traits + upgraded_traits, FORTITUDE_TRAIT)
 
-	if(was_running && bloodsucker_user.move_intent == MOVE_INTENT_WALK)
-		bloodsucker_user.toggle_move_intent()
-	owner.balloon_alert(owner, "fortitude turned off.")
-	fortitude_resist = 1
-	UnregisterSignal(owner, list(COMSIG_LIVING_ADJUST_BRUTE_DAMAGE, COMSIG_LIVING_ADJUST_BURN_DAMAGE))
+	owner.visible_message(span_warning("[owner]'s skin softens & returns to normal."))
+	owner.remove_power_icon_animation(icon_ref)
+	icon_ref = null
+
 	return ..()
-
-#undef FORTITUDE_STUN_IMMUNITY_LEVEL

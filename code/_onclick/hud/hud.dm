@@ -372,6 +372,10 @@ GLOBAL_LIST_INIT(available_erp_ui_styles, list(
 				screenmob.client.screen += infodisplay
 			if(always_visible_inventory.len)
 				screenmob.client.screen += always_visible_inventory
+			// FLUFFY FRONTIER ADDITION
+			if(team_finder_arrows.len)
+				screenmob.client.screen += team_finder_arrows
+			// FLUFFY FRONTIER ADDITION END
 			if(open_containers.len && screenmob == mymob) // Don't show open inventories to ghosts
 				list_clear_nulls(open_containers)
 				screenmob.client.screen += open_containers
@@ -384,12 +388,20 @@ GLOBAL_LIST_INIT(available_erp_ui_styles, list(
 			hud_shown = FALSE //Governs behavior of other procs
 			if(static_inventory.len)
 				screenmob.client.screen -= static_inventory
+			// FLUFFY FRONTIER ADDITION
+			if(team_finder_arrows.len)
+				screenmob.client.screen += team_finder_arrows
+			// FLUFFY FRONTIER ADDITION END
 			if(toggleable_inventory.len)
 				screenmob.client.screen -= toggleable_inventory
 			if(hotkeybuttons.len)
 				screenmob.client.screen -= hotkeybuttons
 			if(infodisplay.len)
 				screenmob.client.screen += infodisplay
+			// FLUFFY FRONTIER ADDITION
+			if(team_finder_arrows.len)
+				screenmob.client.screen += team_finder_arrows
+			// FLUFFY FRONTIER ADDITION END
 			if(always_visible_inventory.len)
 				screenmob.client.screen += always_visible_inventory
 

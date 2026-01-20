@@ -484,7 +484,6 @@ GLOBAL_LIST_EMPTY(crematoriums)
 			if(!QDELETED(M)) //some animals get automatically deleted on death.
 				M.ghostize()
 				qdel(M)
-			SEND_SIGNAL(M, COMSIG_LIVING_CREMATED) // TFF ADDITION - now cremator sends signal on burning mobs
 
 		for(var/obj/O in conts) //conts defined above, ignores crematorium and tray
 			if(istype(O, /obj/effect/dummy/phased_mob)) //they're not physical, don't burn em.

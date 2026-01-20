@@ -1,21 +1,24 @@
 /datum/action/cooldown/bloodsucker/targeted/trespass
 	name = "Trespass"
-	desc = "Become mist and advance two tiles in one direction. Useful for skipping past doors and barricades."
+	desc = "Become mist and advance past obstacles in one direction. Useful for skipping past doors and barricades."
 	button_icon_state = "power_tres"
-	bloodsucker_check_flags = BP_CANT_USE_IN_TORPOR
-	purchase_flags = BLOODSUCKER_CAN_BUY|GHOUL_CAN_BUY
+	power_explanation = "Trespass:\n\
+		Click anywhere within 2 tiles from you to teleport.\n\
+		This power goes through all obstacles except Walls.\n\
+		Higher levels increase the range, decrease the sound played from using the Power, and increase the speed of the transition."
+	power_flags = BP_AM_TOGGLE
+	check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_WHILE_INCAPACITATED | BP_CANT_USE_WHILE_UNCONSCIOUS
+	purchase_flags = BLOODSUCKER_CAN_BUY | VASSAL_CAN_BUY
 	bloodcost = 10
-	cooldown_time = 10 SECONDS
+	cooldown_time = 8 SECONDS
 	prefire_message = "Select a destination."
 	target_range = 2
 	var/turf/target_turf // We need to decide where we're going based on where we clicked. It's not actually the tile we clicked.
 
-/datum/action/cooldown/bloodsucker/targeted/trespass/get_power_explanation_extended()
-	. = list()
-	. += "Click anywhere [target_range] tiles away from you to teleport."
-	. += "This power goes through all obstacles except Walls."
-	. += "Higher levels decrease the sound played from using the Power, and increase the speed of the transition."
-	. += "It takes [DisplayTimeText(GetTeleportDelay())] to teleport."
+/datum/action/cooldown/bloodsucker/targeted/trespass/upgrade_power()
+	. = ..()
+
+	target_range++
 
 /datum/action/cooldown/bloodsucker/targeted/trespass/can_use(mob/living/carbon/user, trigger_flags)
 	. = ..()
@@ -34,6 +37,7 @@
 		return FALSE
 	return TRUE // All we care about is destination. Anything you click is fine.
 
+
 /datum/action/cooldown/bloodsucker/targeted/trespass/CheckCanTarget(atom/target_atom)
 	// NOTE: Do NOT use ..()! We don't want to check distance or anything.
 
@@ -43,14 +47,14 @@
 	// Are either tiles WALLS?
 	var/turf/from_turf = get_turf(owner)
 	var/this_dir // = get_dir(from_turf, target_turf)
-	for(var/i = 1 to 2)
+	for(var/i = 1 to target_range)
 		// Keep Prev Direction if we've reached final turf
 		if(from_turf != final_turf)
 			this_dir = get_dir(from_turf, final_turf) // Recalculate dir so we don't overshoot on a diagonal.
 		from_turf = get_step(from_turf, this_dir)
 		// ERROR! Wall!
 		if(iswallturf(from_turf))
-			var/wallwarning = (i == 1) ? "in the way" : "at your destination"
+			var/wallwarning = (i < target_range) ? "in the way" : "at your destination"
 			owner.balloon_alert(owner, "there is a wall [wallwarning].")
 			return FALSE
 	// Done
@@ -58,7 +62,7 @@
 
 	return TRUE
 
-/datum/action/cooldown/bloodsucker/targeted/trespass/FireTargetedPower(atom/target, params)
+/datum/action/cooldown/bloodsucker/targeted/trespass/FireTargetedPower(atom/target_atom)
 	. = ..()
 
 	// Find target turf, at or below Atom
@@ -71,12 +75,12 @@
 	)
 	// Effect Origin
 	var/sound_strength = max(60, 70 - level_current * 10)
-	playsound(get_turf(owner), 'sound/effects/magic/summon_karp.ogg', sound_strength, 1)
+	playsound(get_turf(owner), 'sound/effects/magic/summon_karp.ogg', vol = sound_strength, vary = TRUE)
 	var/datum/effect_system/steam_spread/bloodsucker/puff = new /datum/effect_system/steam_spread()
 	puff.set_up(3, 0, my_turf)
 	puff.start()
 
-	var/mist_delay = GetTeleportDelay() // Level up and do this faster.
+	var/mist_delay = max(5, 20 - level_current * 2.5) // Level up and do this faster.
 
 	// Freeze Me
 	user.Stun(mist_delay, ignore_canstun = TRUE)
@@ -99,11 +103,8 @@
 	user.density = 1
 	user.invisibility = invis_was
 	// Effect Destination
-	playsound(get_turf(owner), 'sound/effects/magic/summon_karp.ogg', 60, 1)
+	playsound(get_turf(owner), 'sound/effects/magic/summon_karp.ogg', vol = 60, vary = TRUE)
 	puff = new /datum/effect_system/steam_spread/()
 	puff.effect_type = /obj/effect/particle_effect/fluid/smoke/vampsmoke
 	puff.set_up(3, 0, target_turf)
 	puff.start()
-
-/datum/action/cooldown/bloodsucker/targeted/trespass/proc/GetTeleportDelay()
-	return max(5, 20 - level_current * 2.5)
