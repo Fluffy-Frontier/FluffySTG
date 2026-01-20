@@ -24,7 +24,6 @@
 
 /datum/antagonist/ex_vassal/on_removal()
 	if(revenge_vassal)
-		revenge_vassal.ex_vassals -= src
 		revenge_vassal = null
 	blood_timer = null
 	return ..()
@@ -36,6 +35,7 @@
 	if(vassaldatum && !revenge_vassal)
 		examine_text += span_notice("[owner.current] is an ex-vassal!")
 
+/*
 /datum/antagonist/ex_vassal/add_team_hud(mob/target)
 	QDEL_NULL(team_hud_ref)
 
@@ -82,12 +82,10 @@
 	to_chat(revenge_vassal.owner.current, span_cult_bold("[owner.current] has ran out of blood and is no longer in the fold!"))
 	owner.remove_antag_datum(/datum/antagonist/ex_vassal)
 
-/*
-/**
+
  * Bloodsucker Blood
  *
  * Artificially made, this must be fed to ex-vassals to keep them on their high.
- */
 /datum/reagent/blood/bloodsucker
 	name = "Blood two"
 
