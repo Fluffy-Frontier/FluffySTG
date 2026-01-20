@@ -5,30 +5,26 @@
 	return holder?.ranks && holder.ranks[1].name == "Eventmaker"
 
 
-/datum/controller/subsystem/admin_verbs/get_valid_verbs_for_admin(client/admin)
-	if(isnull(admin.holder))
-		CRASH("Why are we checking a non-admin for their valid... ahem... admin verbs?")
+/datum/controller/subsystem/admin_verbs
+	var/list/eventmakers_blacklist_verbs = list(
+		//Admin
+		"Add PB Bypass", "ASay", "Cross-server Help Request",
+		"Get Current Logs", "Get Server Logs", "Known Alts Panel",
+		"loudAsay", "Paintings manager", "Player Playtime", "Player Ticket History",
+		"Reload Admins", "Revoke PB Bypass", "Trophy Manager", "View Round Logs",
+		"Load Away Mission", "Mass Zombie Cure", "Mass Zombie Infection",
+		"Polymorph All", "Title Screen: Change", "Title Screen: Set HTML",
+		"Title Screen: Set Notice", "Show Lag Switches",
+		//Server
+		"Reestablish DB Connection", "Reset Player OOC Color", "Set Player OOC Color",
+		"Toggle Antag OOC", "Toggle CDN", "Toggle OOC", "Toggle Security OOC",
+		//Debug
+		"Debug Stat Panel", "Migrate Player Ranks", "Open Lua Editor",
+		"Re-establish Connection To TTS", "Reload Configuration", "Run Empty Query",
+		"View Runtimes",
+	)
 
-	var/list/has_permission = list()
-	for(var/permission_flag in GLOB.bitflags)
-		if(admin.holder.check_for_rights(permission_flag))
-			has_permission["[permission_flag]"] = TRUE
-
-	var/list/valid_verbs = list()
-	for(var/datum/admin_verb/verb_type as anything in admin_verbs_by_type)
-		var/datum/admin_verb/verb_singleton = admin_verbs_by_type[verb_type]
-		if(!verify_visibility(admin, verb_singleton))
-			continue
-
-		if(admin.is_eventmaker() && GLOB.eventmakers_blacklist_verbs["[verb_singleton.name]"])
-			continue
-
-		var/verb_permissions = verb_singleton.permissions
-		if(verb_permissions == R_NONE)
-			valid_verbs |= list(verb_singleton)
-		else for(var/permission_flag in bitfield_to_list(verb_permissions))
-			if(!has_permission["[permission_flag]"])
-				continue
-			valid_verbs |= list(verb_singleton)
-
-	return valid_verbs
+/datum/controller/subsystem/admin_verbs/verify_visibility(client/admin, datum/admin_verb/verb_singleton)
+	. = ..()
+	if(. && admin.is_eventmaker() && (verb_singleton.name in eventmakers_blacklist_verbs))
+		return FALSE
