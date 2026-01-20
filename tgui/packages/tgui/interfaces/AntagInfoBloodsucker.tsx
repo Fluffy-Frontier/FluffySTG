@@ -19,7 +19,7 @@ type ClanInfo = {
   clan_icon: string;
 };
 
-type PowerInfo = {
+export type PowerInfo = {
   power_name: string;
   power_explanation: string[];
   power_icon: string;

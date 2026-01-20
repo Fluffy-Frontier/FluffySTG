@@ -1,5 +1,3 @@
-import { resolveAsset } from '../assets';
-import { useBackend, useLocalState } from '../backend';
 import {
   Button,
   Divider,
@@ -8,14 +6,16 @@ import {
   Section,
   Stack,
 } from 'tgui-core/components';
+import { resolveAsset } from '../assets';
+import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
-import { Objective, ObjectivePrintout } from './common/Objectives';
+import { type Objective, ObjectivePrintout } from './common/Objectives';
 
 type BloodsuckerInformation = {
   power: PowerInfo[];
 };
 
-export type PowerInfo = {
+type PowerInfo = {
   power_name: string;
   power_explanation: string;
   power_icon: string;
