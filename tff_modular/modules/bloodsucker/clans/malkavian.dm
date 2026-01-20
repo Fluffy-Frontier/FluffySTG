@@ -36,7 +36,7 @@
 
 /datum/bloodsucker_clan/malkavian/handle_clan_life(datum/antagonist/bloodsucker/source)
 	. = ..()
-	if(!COOLDOWN_FINISHED(src, revelation_cooldown) || prob(85) || bloodsuckerdatum.owner.current.stat != CONSCIOUS || HAS_TRAIT(bloodsuckerdatum.owner.current, TRAIT_MASQUERADE))
+	if(!COOLDOWN_FINISHED(src, revelation_cooldown) || prob(25) || bloodsuckerdatum.owner.current.stat != CONSCIOUS || HAS_TRAIT(bloodsuckerdatum.owner.current, TRAIT_MASQUERADE))
 		return
 	var/message = pick(strings("malkavian_revelations.json", "revelations", "tff_modular/modules/bloodsucker"))
 	COOLDOWN_START(src, revelation_cooldown, rand(REVELATION_MIN_COOLDOWN, REVELATION_MAX_COOLDOWN))

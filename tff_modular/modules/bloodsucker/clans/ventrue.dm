@@ -72,15 +72,12 @@
 			target.add_traits(list(TRAIT_NOCRITDAMAGE, TRAIT_NOSOFTCRIT), BLOODSUCKER_TRAIT)
 			to_chat(target, span_notice("You feel your Master's blood reinforce you, strengthening you up."))
 		if(4)
-			target.add_traits(list(TRAIT_SLEEPIMMUNE, TRAIT_VIRUSIMMUNE), BLOODSUCKER_TRAIT)
-			to_chat(target, span_notice("You feel your Master's blood begin to protect you from bacteria."))
+			target.add_traits(list(TRAIT_SLEEPIMMUNE, TRAIT_VIRUSIMMUNE, TRAIT_HARDLY_WOUNDED), BLOODSUCKER_TRAIT)
+			to_chat(target, span_notice("You feel your Master's blood begin to protect you from bacteria and wounds."))
 			if(ishuman(target))
 				var/mob/living/carbon/human/human_target = target
 				human_target.skin_tone = "albino"
-		if(5)
-			target.add_traits(list(TRAIT_HARDLY_WOUNDED), BLOODSUCKER_TRAIT)
-			to_chat(target, span_notice("You feel yourself able to take cuts and stabbings like it's nothing."))
-		if(6 to INFINITY)
+		if(5 to INFINITY)
 			if(!vassal_bloodsucker_datum)
 				QDEL_NULL(vassal_datum.info_button_ref)
 				vassal_bloodsucker_datum = target.mind.add_antag_datum(/datum/antagonist/bloodsucker)
