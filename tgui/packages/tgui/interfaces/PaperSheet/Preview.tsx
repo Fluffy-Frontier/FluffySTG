@@ -497,7 +497,7 @@ export class PreviewView extends Component<PreviewViewProps> {
     input.defaultValue = fieldData.raw_text;
     input.disabled = true;
 
-    return `[${input.outerHTML}]`;
+    return `${input.outerHTML}`; // FLUFFY FRONTIER EDIT - ORIGINAL: return `[${input.outerHTML}]`;
   };
 
   render() {
