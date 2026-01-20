@@ -3,26 +3,32 @@
 /mob/living/carbon/alien/adult/tgmc/queen
 	name = "alien queen"
 	desc = "A hulking beast of an alien, for some reason this one seems more important than the others, you should probably quit staring at it and do something."
-	caste = "queen"
-	maxHealth = 500
-	health = 500
 	icon_state = "alienqueen"
+	caste = "queen"
+	maxHealth = 300
+	health = 300
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 30
 	melee_damage_upper = 35
+	alien_speed = 3
+
+	armor_type = /datum/armor/tgmc_xeno/queen
 
 	additional_organ_types_by_slot = list(
-		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/large/queen,
-		ORGAN_SLOT_XENO_RESINSPINNER = /obj/item/organ/alien/resinspinner,
-		ORGAN_SLOT_XENO_ACIDGLAND = /obj/item/organ/alien/acid,
-		ORGAN_SLOT_XENO_NEUROTOXINGLAND = /obj/item/organ/alien/neurotoxin/queen,
+		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc/large/queen,
+		ORGAN_SLOT_XENO_RESINSPINNER = /obj/item/organ/alien/resinspinner/tgmc,
+		ORGAN_SLOT_XENO_ACIDGLAND = /obj/item/organ/alien/acid/tgmc/large,
+		ORGAN_SLOT_XENO_NEUROTOXINGLAND = /obj/item/organ/alien/neurotoxin/tgmc/queen,
 		ORGAN_SLOT_XENO_EGGSAC = /obj/item/organ/alien/eggsac/tgmc,
 	)
 
+	mecha_armor_penetration = 45
+	resist_heavy_hits = TRUE
+
+	can_hold_facehuggers = TRUE
+
 /mob/living/carbon/alien/adult/tgmc/queen/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/seethrough_mob)	// Люркеров у нас нету (слава богу), но выдать такую штуку кому-то хочется... Будет у королевы, как на обычном ТГ
-
 	var/static/list/innate_actions = list(
 		/datum/action/cooldown/spell/aoe/repulse/xeno/tgmc_tailsweep/hard_throwing,
 		/datum/action/cooldown/alien/tgmc/queen_screech,
@@ -31,21 +37,16 @@
 
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 
-	add_movespeed_modifier(/datum/movespeed_modifier/alien_big)
+/datum/armor/tgmc_xeno/queen
+	bomb = 30
+	bullet = 40
+	energy = 65
+	laser = 65
+	fire = 60
+	melee = 60
 
-/mob/living/carbon/alien/adult/tgmc/queen/alien_talk(message, shown_name = name)
-	..(message, shown_name, TRUE)
-
-/obj/item/organ/alien/neurotoxin/queen
-	name = "neurotoxin gland"
-	icon_state = "neurotox"
-	zone = BODY_ZONE_PRECISE_MOUTH
-	slot = ORGAN_SLOT_XENO_NEUROTOXINGLAND
-	actions_types = list(
-		/datum/action/cooldown/alien/acid/tgmc,
-		/datum/action/cooldown/alien/acid/tgmc/lethal,
-		/datum/action/cooldown/alien/acid/corrosion,
-	)
+/mob/living/carbon/alien/adult/tgmc/queen/alien_talk(message, list/spans = list(), list/message_mods = list(), shown_name = name, big_voice = TRUE)
+	..(message, spans, message_mods, shown_name, TRUE)
 
 /mob/living/carbon/alien/adult/tgmc/queen/death(gibbed)
 	if(stat == DEAD)
@@ -66,7 +67,7 @@
 	name = "Deafening Screech"
 	desc = "Let out a screech so deafeningly loud that anything with the ability to hear around you will likely be incapacitated for a short time."
 	button_icon_state = "screech"
-	cooldown_time = 5 MINUTES
+	cooldown_time = 3 MINUTES
 
 /datum/action/cooldown/alien/tgmc/queen_screech/Activate()
 	. = ..()
@@ -75,10 +76,23 @@
 	queenie.create_shriekwave()
 	shake_camera(owner, 2, 2)
 
-	for(var/mob/living/carbon/human/screech_target in get_hearers_in_view(7, get_turf(queenie)))
-		screech_target.soundbang_act(intensity = 5, stun_pwr = 50, damage_pwr = 10, deafen_pwr = 30) //Only being deaf will save you from the screech
-		shake_camera(screech_target, 4, 3)
-		to_chat(screech_target, span_doyourjobidiot("[queenie] lets out a deafening screech!"))
+	owner.visible_message(span_doyourjobidiot("[queenie] lets out a deafening screech!"), self_message = span_revenbignotice("You emits an ear-splitting guttural roar!"))
+
+	for(var/mob/living/carbon/screech_target in get_hearers_in_range(9, get_turf(queenie)))
+
+		if(isalien(screech_target))
+			shake_camera(screech_target, 10, 1)
+			continue
+		else
+			shake_camera(screech_target, 30, 1)
+
+		var/distance_to_target = get_dist(queenie, screech_target)
+		if(distance_to_target <= 4)
+			to_chat(src, span_danger("An ear-splitting guttural roar shakes the ground beneath your feet!"))
+			screech_target.AdjustParalyzed(80)
+		else if(distance_to_target >= 5 && distance_to_target < 7)
+			to_chat(src, span_danger("The roar shakes your body to the core, freezing you in place!"))
+			screech_target.AdjustStun(40)
 
 	return TRUE
 

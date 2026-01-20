@@ -123,7 +123,7 @@
 	owner.add_overlay(overlay)
 
 	var/atom/xeno_loc = get_turf(owner)
-	var/mob/living/carbon/alien/larva/new_xeno = new larva_path(xeno_loc) // FLUFFY FRONTIER EDIT - TGMC XENOS. ORIGINAL: var/mob/living/carbon/alien/larva/new_xeno = new(xeno_loc)
+	var/mob/living/carbon/alien/larva/new_xeno = new larva_path(xeno_loc) // FLUFFY FRONTIER EDIT - TGMC_XENOS. ORIGINAL: var/mob/living/carbon/alien/larva/new_xeno = new(xeno_loc)
 	new_xeno.PossessByPlayer(ghost.key)
 	SEND_SOUND(new_xeno, sound('sound/mobs/non-humanoids/hiss/hiss5.ogg',0,0,0,100)) //To get the player's attention
 	new_xeno.add_traits(list(TRAIT_HANDS_BLOCKED, TRAIT_IMMOBILIZED, TRAIT_NO_TRANSFORM), type) //so we don't move during the bursting animation

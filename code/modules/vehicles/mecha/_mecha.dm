@@ -1024,6 +1024,15 @@
 
 /obj/vehicle/sealed/mecha/proc/melee_attack_effect(mob/living/victim, heavy)
 	if(heavy)
+		// FLUFFY FRONTIER ADDITION START - TGMC_XENOS - Я не знаю как сделать это красивее...
+		if(istgmcalien(victim))
+			var/mob/living/carbon/alien/adult/tgmc/tgmc_alien = victim
+			if(tgmc_alien.resist_heavy_hits)
+				if(health_percentage(tgmc_alien) >= 35)
+					return
+				if(!prob(50))	// 50% что при ударе по ослабленному ксеносу - он упадет в бессознательное состояние
+					return
+		// FLUFFY FRONTIER ADDITION END
 		victim.Unconscious(2 SECONDS)
 	else
 		victim.Knockdown(4 SECONDS)
