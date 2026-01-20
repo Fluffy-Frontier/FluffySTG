@@ -1,4 +1,4 @@
-/datum/action/cooldown/bloodsucker/vassal_blood
+/*/datum/action/cooldown/bloodsucker/vassal_blood
 	name = "Help Vassal"
 	desc = "Bring an ex-Vassal back into the fold, or create blood using a bag. RMB: Check Vassal status."
 	button_icon_state = "power_torpor"
@@ -89,3 +89,4 @@
 		var/obj/item/reagent_containers/blood/o_minus/bloodsucker/new_bag = new(owner.drop_location())
 		owner.put_in_hands(new_bag)
 		DeactivatePower()
+*/

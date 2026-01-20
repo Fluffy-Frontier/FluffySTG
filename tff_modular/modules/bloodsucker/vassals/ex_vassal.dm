@@ -82,7 +82,7 @@
 	to_chat(revenge_vassal.owner.current, span_cult_bold("[owner.current] has ran out of blood and is no longer in the fold!"))
 	owner.remove_antag_datum(/datum/antagonist/ex_vassal)
 
-
+/*
 /**
  * Bloodsucker Blood
  *
@@ -98,6 +98,7 @@
 		COOLDOWN_RESET(former_vassal, blood_timer)
 		COOLDOWN_START(former_vassal, blood_timer, BLOOD_TIMER_REQUIREMENT)
 	return ..()
+*/
 
 #undef BLOOD_TIMER_REQUIREMENT
 #undef BLOOD_TIMER_HALWAY

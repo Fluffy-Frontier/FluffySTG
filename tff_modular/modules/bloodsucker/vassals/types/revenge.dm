@@ -14,9 +14,10 @@
 		instead they will gain all your Powers, become immune to mindshields, and gain the objective to take revenge for your demise. \
 		They additionally maintain your Vassals after your departure, rather than become aimless."
 
+	/*
 	///all ex-vassals brought back into the fold.
 	var/list/datum/antagonist/ex_vassal/ex_vassals = list()
-
+	*/
 	///Has this revenge vassal been 'activated' by their master's final death?
 	var/revenge_mode = FALSE
 
@@ -25,15 +26,6 @@
 	report += printplayer(owner)
 	if(length(objectives))
 		report += printobjectives(objectives)
-
-	// Now list their vassals
-	if(length(ex_vassals))
-		report += span_header("The Vassals brought back into the fold were...")
-		for(var/datum/antagonist/ex_vassal/all_vassals as anything in ex_vassals)
-			if(!all_vassals.owner)
-				continue
-			report += "<b>[all_vassals.owner.name]</b> the [all_vassals.owner.assigned_role.title]"
-
 	return report.Join("<br>")
 
 /datum/antagonist/vassal/revenge/on_gain()
@@ -70,7 +62,6 @@
 	revenge_mode = TRUE
 	for(var/datum/objective/all_objectives as anything in objectives)
 		objectives -= all_objectives
-	BuyPower(new /datum/action/cooldown/bloodsucker/vassal_blood)
 	for(var/datum/action/cooldown/bloodsucker/master_powers as anything in bloodsuckerdatum.powers)
 		if(master_powers.purchase_flags & BLOODSUCKER_DEFAULT_POWER)
 			continue
@@ -83,7 +74,7 @@
 
 	var/datum/objective/survive/new_objective = new
 	new_objective.name = "Avenge Bloodsucker"
-	new_objective.explanation_text = "Avenge your Bloodsucker's death by recruiting their ex-vassals and continuing their operations."
+	new_objective.explanation_text = "Avenge your Bloodsucker's death by continuing their operations."
 	new_objective.owner = owner
 	objectives += new_objective
 
