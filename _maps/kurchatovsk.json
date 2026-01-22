@@ -1,0 +1,20 @@
+{
+	"version": 1,
+	"map_name": "Kurchatovsk",
+	"map_path": "map_files/Kurchatovsk",
+	"map_file": "Kurchatovsk.dmm",
+	"shuttles": {
+		"cargo": "cargo_nova",
+		"ferry": "ferry_fancy",
+		"whiteship": "whiteship_meta",
+		"emergency": "emergency_meta"
+	},
+	"job_changes": {
+		"Cook": {
+			"additional_cqc_areas": [
+				"/area/station/service/bar",
+				"/area/station/commons/lounge"
+			]
+		}
+	}
+}
