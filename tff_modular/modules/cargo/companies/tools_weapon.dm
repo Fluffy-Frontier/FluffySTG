@@ -3,7 +3,7 @@
 
 // Переопределение для Blacksteel ranged knife pack: помечает как контрабанду.
 /datum/supply_pack/companies/tools_weapons/blacksteel/ranged/knife
-	contraband = TRUE
+	order_flags = parent_type::order_flags | ORDER_CONTRABAND
 
 // Переопределение для Kahraman Fock pack: добавляет инженерный доступ.
 /datum/supply_pack/companies/tools_weapons/kahraman/fock

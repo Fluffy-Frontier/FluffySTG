@@ -142,19 +142,19 @@
 	cost = PAYCHECK_COMMAND * 6
 
 /datum/supply_pack/companies/medical/medpens/pentibinin
-	contraband = TRUE
+	order_flags = parent_type::order_flags | ORDER_CONTRABAND
 
 /datum/supply_pack/companies/medical/medpens_stim/aranepaine
-	contraband = TRUE
+	order_flags = parent_type::order_flags | ORDER_CONTRABAND
 
 /datum/supply_pack/companies/medical/medpens_stim/synalvipitol
-	contraband = TRUE
+	order_flags = parent_type::order_flags | ORDER_CONTRABAND
 
 /datum/supply_pack/companies/medical/medpens_stim/twitch
-	contraband = TRUE
+	order_flags = parent_type::order_flags | ORDER_CONTRABAND
 
 /datum/supply_pack/companies/medical/medpens_stim/demoneye
-	contraband = TRUE
+	order_flags = parent_type::order_flags | ORDER_CONTRABAND
 
 //Cyberpunk implants can be bought only from restricted consoles
 /datum/supply_pack/medical/arm_implants
