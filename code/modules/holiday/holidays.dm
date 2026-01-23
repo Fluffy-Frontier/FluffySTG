@@ -851,7 +851,8 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 	name = CHRISTMAS
 	begin_day = 18
 	begin_month = DECEMBER
-	end_day = 27
+	end_day = 8
+	end_month = JANUARY
 	holiday_hat = /obj/item/clothing/head/costume/santa
 	no_mail_holiday = TRUE
 	holiday_colors = list(
@@ -880,7 +881,7 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 	)
 
 /datum/holiday/xmas/greet()
-	return "Have a merry Christmas!"
+	return "Have a Happy New Year!!"
 
 /datum/holiday/boxing
 	name = "Boxing Day"
