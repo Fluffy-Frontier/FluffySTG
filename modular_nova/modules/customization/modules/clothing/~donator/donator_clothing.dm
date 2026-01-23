@@ -199,6 +199,16 @@
 	button_icon = 'modular_nova/master_files/icons/donator/obj/custom.dmi'
 	button_icon_state = "drawingtablet"
 
+//Donation reward for Thedragmeme
+/obj/item/bouquet/stellar
+	name = "stellar bouquet"
+	desc = "An elaborate mix of flowers that shimmer delicately in the light. Topped with a silver moon."
+	icon_state = "starbouquet"
+	inhand_icon_state = "starbouquet"
+	icon = 'modular_nova/master_files/icons/donator/obj/custom.dmi'
+	lefthand_file = 'modular_nova/master_files/icons/donator/mob/inhands/donator_left.dmi'
+	righthand_file = 'modular_nova/master_files/icons/donator/mob/inhands/donator_right.dmi'
+
 // Donation reward for Thedragmeme
 /obj/item/clothing/neck/padded
 	name = "feathered serenity cloak"
@@ -209,12 +219,14 @@
 	righthand_file = 'modular_nova/master_files/icons/donator/mob/inhands/donator_right.dmi'
 	icon_state = "paddedscarf"
 	inhand_icon_state = "paddedscarf"
+	/// The typepath of the hood that gets created
+	var/hood_type = /obj/item/clothing/head/hooded/padded
 
 /obj/item/clothing/neck/padded/Initialize(mapload)
 	. = ..()
 	AddComponent(\
 		/datum/component/toggle_attached_clothing,\
-		deployable_type = /obj/item/clothing/head/hooded/padded,\
+		deployable_type = hood_type,\
 		equipped_slot = ITEM_SLOT_HEAD,\
 		action_name = "Toggle Hood",\
 		on_deployed = CALLBACK(src, PROC_REF(on_deployed)),\
@@ -232,6 +244,18 @@
 	icon = 'modular_nova/master_files/icons/donator/obj/clothing/cloaks.dmi'
 	clothing_flags = SNUG_FIT
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+
+//Donation reward for Thedragmeme, gift for ActualVanguard
+/obj/item/clothing/neck/padded/security
+	name = "vanguard cloak"
+	desc = "A meticulously handcrafted cloak that is lined with subtle pockets filled with feathers and down. Oddly enough, you always feel comfortable regardless of the weather. Even odder, there is an ever so faint scent of wet rock on the interior of the cloak."
+	icon_state = "paddedsec"
+	inhand_icon_state = "paddedsec"
+	hood_type = /obj/item/clothing/head/hooded/padded/security
+
+/obj/item/clothing/head/hooded/padded/security
+	name = "vanguard cloak hood"
+	icon_state = "paddedsechood"
 
 // Donation reward for Thedragmeme
 /obj/item/clothing/under/padded
@@ -279,6 +303,7 @@
 	desc = "A meticulously handcrafted cloak that is lined with subtle pockets filled with feathers and down. Its design matches common styles from the followers of Univitarium."
 	icon_state = "paddedscarfalt"
 	inhand_icon_state = "paddedscarfalt"
+	hood_type = /obj/item/clothing/head/hooded/padded/alt
 
 /obj/item/clothing/head/hooded/padded/alt
 	name = "feathered serenity hood"
@@ -2030,6 +2055,32 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/korpstech, 32)
 	desc = "A glass case containing a toaster implant. Sweet."
 	imp_type = /obj/item/implant/toaster
 
+#undef TOASTER_IMPLANT_COOLDOWN
+
+// donator item for Sciamach
+/obj/item/organ/cyberimp/arm/shard/donator/theurgic_crystal
+	name = "theurgic stone"
+	desc = "An eerie crystalline shard that pulses with theurgic energies. Tendrils of crimson energy seem to dance along its surface."
+	icon = 'modular_nova/master_files/icons/donator/obj/custom.dmi'
+	icon_state = "crystal"
+	items_to_create = list(/obj/item/knife/razor_claws/donator/theurgic_knife)
+	extend_sound = 'sound/items/haunted/ghostitemattack.ogg'
+	retract_sound = 'sound/items/haunted/ghostitemattack.ogg'
+
+/obj/item/knife/razor_claws/donator/theurgic_knife
+	name = "cursed ritual knife"
+	desc = "A large carving or flensing dagger made of a heavy, dusty material. It seems to emit a soft, eerie crimson glow."
+	icon = 'modular_nova/master_files/icons/donator/obj/custom.dmi'
+	righthand_file = 'modular_nova/modules/modular_ert/icons/pizza/righthand.dmi'
+	lefthand_file = 'modular_nova/modules/modular_ert/icons/pizza/lefthand.dmi'
+	icon_state = "dagger"
+	inhand_icon_state = "hotknife"
+	toggle_sound = 'sound/items/haunted/ghostitemattack.ogg'
+
+/obj/item/knife/razor_claws/donator/theurgic_knife/attack_self(mob/user)
+	. = ..()
+	inhand_icon_state = src::inhand_icon_state // Don't have a precision variant for this, just always use base
+
 // donator reward for ignari
 /obj/item/clothing/under/rem
 	name = "\improper M.I.A. limiter"
@@ -2190,3 +2241,204 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/contraband/korpstech, 32)
 	attachment_slot = NONE
 	icon = 'modular_nova/master_files/icons/donator/obj/custom.dmi'
 	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/custom_w.dmi'
+
+// Donation reward for jaklz
+/obj/item/clothing/neck/tattered
+	name = "worn corporate cloak"
+	desc = "A worn, battle-torn cloak. Complete with light red trimmings, tears, burns, and even some holes through out it's design, it clearly has seen better days. You can practically smell the despair, a hint of welding fuel, and a bit of a pine smell."
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/neck.dmi'
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	lefthand_file = 'modular_nova/master_files/icons/donator/mob/inhands/donator_left.dmi'
+	righthand_file = 'modular_nova/master_files/icons/donator/mob/inhands/donator_right.dmi'
+	icon_state = "tattered_cloak"
+	inhand_icon_state = "tattered_cloak"
+
+// Donation reward for Sharkoink, shork
+
+/obj/item/clothing/neck/noble_mantle
+	name = "noble mantle"
+	desc = "A noble mantle for a loyal and hearty Dragonshark."
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/neck.dmi'
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/cloaks.dmi'
+	lefthand_file = 'modular_nova/master_files/icons/donator/mob/inhands/donator_left.dmi'
+	righthand_file = 'modular_nova/master_files/icons/donator/mob/inhands/donator_right.dmi'
+	icon_state = "noble_mantle"
+	inhand_icon_state = "noble_mantle"
+
+/obj/item/clothing/suit/armor/hos/trenchcoat/melon
+	name = "\improper Command Armor Vest"
+	desc = "An armor vest with improved armor plates. Designed for use by command units."
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/suit.dmi'
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/suits.dmi'
+	icon_state = "vest_com_melon"
+
+/obj/item/clothing/suit/hooded/explorer/melon
+	name = "anomalous materials protection suit"
+	desc = "A suit originally designed for the SolFed Army to be used in CBRN environments. This suit still has it's protective plates installed. It's clear that this suit has been patched up over many years."
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/suits.dmi'
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/suit.dmi'
+	worn_icon_digi = 'modular_nova/master_files/icons/donator/mob/clothing/suit_digi.dmi'
+	icon_state = "explorer_melon"
+	hoodtype = /obj/item/clothing/head/hooded/explorer/melon
+	hood_up_affix = ""
+
+/obj/item/clothing/head/hooded/explorer/melon
+	name = "\improper AMPS hood"
+	desc = "Designed to give soldiers protection in anomalous and dangerous areas, the AMPS hood features materials that make it resistant to attack."
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/hats.dmi'
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/head.dmi'
+	icon_state = "explorer_melon"
+
+/obj/item/clothing/under/dress/heirloomdagmar
+	name = "heirloom dress"
+	desc = "An early 21st century dress in a vintage style, part of the Ms. Ann Thorpe Overbearing Granny Summer collection. A travel look for an overbearing matchmaker."
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/uniform.dmi'
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/uniform.dmi'
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	body_parts_covered = CHEST|GROIN|LEGS|FEET
+	alternate_worn_layer = ABOVE_SHOES_LAYER
+	icon_state = "dagmardress_a"
+
+/obj/item/clothing/under/dress/neoflapperdagmar
+	name = "neo-flapper dress"
+	desc = "Part of a shameful and best left forgotten nostalgic fashion movement among the Martian elite, nearly all traces of which were scrubbed from the holonet. Even recognizing this puts you at risk."
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/uniform.dmi'
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/uniform.dmi'
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	body_parts_covered = CHEST|GROIN|LEGS|FEET
+	alternate_worn_layer = ABOVE_SHOES_LAYER
+	icon_state = "dagmardress_b"
+
+/obj/item/clothing/under/dress/ambassadordagmar
+	name = "ambassador's dress"
+	desc = "Eveningwear for a cardshark or someone who refuses to take ‘No Dogs Allowed’ for an answer. A Martian fusion style evening gown, from cheating at blackjack to welcoming a diplomat delegation, you'll find every card trick already up its ample furisode sleeves."
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/uniform.dmi'
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/uniform.dmi'
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	body_parts_covered = CHEST|GROIN|LEGS|FEET
+	alternate_worn_layer = ABOVE_SHOES_LAYER
+	icon_state = "dagmardress_c"
+
+/obj/item/clothing/under/ecologist
+	name = "ecologist's garb"
+	desc = "A mix of clothing pieces given to Nanotrasen Ecology Specialists. Worn over plain clothes is a white gambeson with a breast \
+		guard on the left side. Moving down is a collection of several belts, most prominently an orange one holding several \
+		small pouches and a cage for some endemic life, empty for now it seems. Just below that, a pair of blue chaps."
+	icon_state = "ecologist_under"
+	worn_icon_state = "ecologist_under"
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/uniform.dmi'
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/uniform.dmi'
+	worn_icon_digi = 'modular_nova/master_files/icons/donator/mob/clothing/uniform_digi.dmi'
+
+/obj/item/clothing/shoes/ecologist
+	name = "ecologist's boots"
+	desc = "A pair of heavy duty, knee-high boots designed for multiple environments, \
+		complete with steel-toe plating, and several points of connection, such as for cleats, for adaptability sake."
+	icon_state = "ecologist_boots"
+	worn_icon_state = "ecologist_boots"
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/shoes.dmi'
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/feet.dmi'
+	worn_icon_digi = 'modular_nova/master_files/icons/donator/mob/clothing/feet_digi.dmi'
+
+/obj/item/clothing/suit/hooded/ecologist
+	name = "ecologist's coat"
+	desc = "A fine leather coat for Nanotrasen Ecology Specialists. \
+		The leather has been dyed green and has patches of orange fabric sewn into the coat. \
+		It seems like there was at one point additional armor padding the coat, though it has since been removed; \
+		it most certainly won't stop a Drake's bite now."
+	icon_state = "ecologist_coat"
+	worn_icon_state = "ecologist_coat"
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/suits.dmi'
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/suit.dmi'
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	hoodtype = /obj/item/clothing/head/hooded/ecologist
+	hood_up_affix = ""
+
+/obj/item/clothing/head/hooded/ecologist
+	name = "ecologist's coat hood"
+	desc = "A leather hood attached to the main coat, for some reason the wearer's wearing an explorer gas mask \
+		on top of their head and under the hood instead of on their face.. weirdo."
+	icon_state = "ecologist_hood"
+	worn_icon_state = "ecologist_hood"
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/hats.dmi'
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/head.dmi'
+	supports_variations_flags = CLOTHING_SNOUTED_VARIATION_NO_NEW_ICON
+
+/obj/item/clothing/gloves/ecologist
+	name = "ecologist's gloves"
+	desc = "A pair of leather gloves for Nanotrasen Ecology Specialists, with an experimental \"Slingshot\" \
+		firmly attached to the left glove; for safety reasons, the rope has been removed."
+	icon_state = "ecologist_claw"
+	worn_icon_state = "ecologist_claw"
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/gloves.dmi'
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/hands.dmi'
+// Kaynite Donor Items
+
+/obj/item/clothing/suit/hooded/merctac_hoodie
+	name = "\improper MercTac hoodie"
+	desc = "A custom tailored hoodie with rash guard, and a sleeveless option for the opposite arm. \
+		A vest with a traditional steel inserts for the front and back woven with cordura and a breathable mesh padding sits comfortably on the chest, \
+		coupled with traditional molle rigging systems for pouches. Together the pieces create a comfortable, tactical fit."
+	icon_state = "merctac_hoodie"
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/suits.dmi'
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/suit.dmi'
+	inhand_icon_state = null
+	body_parts_covered = CHEST|ARM_LEFT
+	hoodtype = /obj/item/clothing/head/hooded/merctac_hood
+	hood_up_affix = ""
+
+/obj/item/clothing/suit/hooded/merctac_hoodie/armored
+	name = "\improper MercTac armored hoodie"
+	desc = "A custom tailored hoodie with rash guard, and a sleeveless option for the opposite arm. \
+		A vest with a traditional steel inserts for the front and back woven with cordura and a breathable mesh padding sits comfortably on the chest, \
+		coupled with traditional molle rigging systems for pouches. Together the pieces create a comfortable, tactical fit."
+	icon_state = "merctac_hoodie_alt"
+	worn_icon_state = "merctac_hoodie_alt"
+	cold_protection = CHEST|ARM_LEFT
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+	heat_protection = CHEST|ARM_LEFT
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	armor_type = /obj/item/clothing/suit/armor/vest/alt/sec::armor_type
+
+/obj/item/clothing/head/hooded/merctac_hood
+	name = "\improper MercTac hood"
+	desc = "Lined with synthetic fleece for maximum comfort."
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/hats.dmi'
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/head.dmi'
+	icon_state = "merctac_hood"
+	body_parts_covered = HEAD
+	flags_inv = HIDEHAIR|HIDEEARS
+
+/obj/item/clothing/gloves/merctac_glove
+	name = "\improper MercTac glove"
+	desc = "A singular fingerless glove in coyote tan, padded over the palms and knuckles for support."
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/gloves.dmi'
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/hands.dmi'
+	icon_state = "merctac_gloves"
+
+/obj/item/clothing/under/pants/merctac_pants
+	name = "\improper MercTac pants"
+	desc = "Surplus military battle dress, coupled with insertable kneepads and woven with highly durable cordura fabric."
+	icon_state = "merctac_pants"
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/uniform.dmi'
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/uniform.dmi'
+
+/obj/item/clothing/mask/merctac_mask
+	name = "Gambit's mask"
+	desc = "A custom mask for the frontier mercenary known as Gambit. Off-putting in the light, menacing in the dark."
+	icon_state = "gambits_mask"
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/masks.dmi'
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/mask.dmi'
+	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDESNOUT
+	flags_cover = MASKCOVERSMOUTH
+
+/datum/crafting_recipe/merctac_armored_hoodie
+	name = "MercTac armored hoodie"
+	result = /obj/item/clothing/suit/hooded/merctac_hoodie/armored
+	time = 1 SECONDS
+	reqs = list(
+		/obj/item/clothing/suit/armor/vest/alt/sec = 1,
+		/obj/item/clothing/suit/hooded/merctac_hoodie = 1,
+	)
+	category = CAT_CLOTHING
+

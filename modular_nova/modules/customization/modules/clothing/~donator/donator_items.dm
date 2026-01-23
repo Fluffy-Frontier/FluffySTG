@@ -69,6 +69,18 @@
 #define EXTEND_ANTENNA	3
 #define SLAP_SIDE		4
 
+//Donation reward for Thedragmeme, avalible to craft publicly
+/datum/crafting_recipe/stellar_bouquet
+	name = "stellar bouquet"
+	result = /obj/item/bouquet/stellar
+	reqs = list(
+		/obj/item/food/grown/poppy/lily = 2,
+		/obj/item/food/grown/rose = 2,
+		/obj/item/food/grown/poppy/geranium = 2,
+		/obj/item/stack/sheet/mineral/silver = 1,
+	)
+	category = CAT_ENTERTAINMENT
+
 /obj/item/donator/transponder
 	name = "broken Helian transponder"
 	desc = "Used by Helians to communicate with their mothership, the screen is cracked and its edges scuffed. This one has seen better days."
@@ -496,3 +508,13 @@
 /obj/item/clothing/head/cone_of_shame/update_icon_state()
 	worn_icon_state = "[base_icon_state]_[toggle_state]"
 	return ..()
+
+// Kaynite Donor Item
+/obj/item/storage/backpack/merctac_backpack
+	name = "\improper Xplore Go! bag"
+	desc = "A versatile, single strap backpack from the survival outfitter Xplore. A 20 litre pack coupled with a detachable thermal water bottle and O2 cannister, for trekking amongst the stars."
+	icon_state = "xplore_go_bag"
+	icon = 'modular_nova/master_files/icons/donator/obj/clothing/back.dmi'
+	worn_icon = 'modular_nova/master_files/icons/donator/mob/clothing/back.dmi'
+	inhand_icon_state = "backpack"
+
