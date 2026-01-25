@@ -577,6 +577,8 @@ SUBSYSTEM_DEF(ticker)
 					continue
 				item.post_equip_item(new_player_mob.client?.prefs, new_player_living)
 			// NOVA EDIT ADDITION END
+
+			SEND_GLOBAL_SIGNAL(COMSIG_GLOBAL_PLAYER_SETUP_FINISHED, new_player_living)
 		CHECK_TICK
 
 	if(captainless)
