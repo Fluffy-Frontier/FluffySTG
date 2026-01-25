@@ -18,7 +18,7 @@
 "cZ" = (
 /obj/structure/flora/tree/pine/style_random,
 /obj/effect/light_emitter/daylight,
-/turf/open/misc/asteroid/snow/standard_air,
+/turf/open/misc/asteroid/snow/indestructible,
 /area/trainstation/outdoor)
 "dq" = (
 /obj/structure/spacevine,
@@ -67,7 +67,7 @@
 /area/trainstation/indoors)
 "gZ" = (
 /obj/structure/flora/bush/snow/style_random,
-/turf/open/misc/asteroid/snow/standard_air,
+/turf/open/misc/asteroid/snow/indestructible,
 /area/trainstation/indoors)
 "iv" = (
 /obj/effect/mine/gas/n2o,
@@ -188,7 +188,7 @@
 /area/trainstation/indoors)
 "rh" = (
 /obj/structure/barricade/wooden/crude/snow,
-/turf/open/misc/asteroid/snow/standard_air,
+/turf/open/misc/asteroid/snow/indestructible,
 /area/trainstation/indoors)
 "rG" = (
 /obj/structure/sign/warning/explosives/alt/directional/east,
@@ -211,20 +211,13 @@
 "wi" = (
 /obj/structure/flora/tree/dead/style_random,
 /obj/effect/light_emitter/daylight,
-/turf/open/misc/asteroid/snow/standard_air,
+/turf/open/misc/asteroid/snow/indestructible,
 /area/trainstation/outdoor)
 "wr" = (
 /obj/structure/flora/bush/leavy,
 /obj/structure/spacevine,
 /obj/effect/light_emitter/daylight,
 /turf/open/floor/grass,
-/area/trainstation/indoors)
-"wy" = (
-/obj/structure/medieval/bed_1x2,
-/obj/item/clothing/under/dress/nova/pinktutu{
-	pixel_y = 22
-	},
-/turf/open/misc/dirt/station,
 /area/trainstation/indoors)
 "xn" = (
 /turf/closed/indestructible/rock/snow/ice/ore,
@@ -301,7 +294,7 @@
 /area/trainstation/indoors)
 "Ch" = (
 /obj/structure/barricade/wooden/snowed,
-/turf/open/misc/asteroid/snow/standard_air,
+/turf/open/misc/asteroid/snow/indestructible,
 /area/trainstation/indoors)
 "Cm" = (
 /obj/effect/mine/gas/n2o,
@@ -327,7 +320,7 @@
 	},
 /obj/item/bedsheet,
 /obj/effect/light_emitter/daylight,
-/turf/open/misc/asteroid/snow/standard_air,
+/turf/open/misc/asteroid/snow/indestructible,
 /area/trainstation/outdoor)
 "Fq" = (
 /obj/structure/spacevine,
@@ -337,11 +330,11 @@
 /turf/open/floor/grass,
 /area/trainstation/indoors)
 "FP" = (
-/mob/living/simple_animal/hostile/asteroid/polarbear,
+/mob/living/basic/bear/snow,
 /turf/open/misc/dirt/station,
 /area/trainstation/indoors)
 "FV" = (
-/turf/open/misc/asteroid/snow/standard_air,
+/turf/open/misc/asteroid/snow/indestructible,
 /area/trainstation/indoors)
 "Gl" = (
 /obj/structure/spacevine,
@@ -483,7 +476,7 @@
 /area/trainstation/indoors)
 "SO" = (
 /obj/effect/light_emitter/daylight,
-/turf/open/misc/asteroid/snow/standard_air,
+/turf/open/misc/asteroid/snow/indestructible,
 /area/trainstation/outdoor)
 "Ti" = (
 /obj/structure/spacevine,
@@ -909,7 +902,7 @@ PE
 PE
 PE
 aZ
-wy
+ex
 oD
 iC
 Eb
@@ -2123,7 +2116,7 @@ ME
 ME
 ME
 ME
-ME
+FP
 Xf
 ME
 ME
@@ -5488,7 +5481,7 @@ ME
 ME
 ME
 ME
-ME
+FP
 ME
 PE
 PE

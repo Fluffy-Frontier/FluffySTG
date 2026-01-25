@@ -278,6 +278,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/button/auto_detect, 24)
 	icon_keyboard = "id_key"
 
 	var/read_only = FALSE
+	COOLDOWN_DECLARE(toggle_moving_cd)
 
 /obj/machinery/computer/train_control_terminal/ui_interact(mob/user, datum/tgui/ui)
 	. = ..()
@@ -328,11 +329,19 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/button/auto_detect, 24)
 			if(!TC.train_engine.is_active())
 				balloon_alert_to_viewers("Train engine is not active!")
 				return TRUE
+			if(!COOLDOWN_FINISHED(src, toggle_moving_cd))
+				balloon_alert_to_viewers("Please wait before toggling movement again.")
+				return TRUE
 			if(!TC.is_moving() && TC.planned_to_load && !TC.loaded_station?.blocking_moving)
-				TC.start_moving()
+				TC.attempt_start()
+				COOLDOWN_START(src, toggle_moving_cd, 60 SECONDS)
 			return TRUE
 		if("stop_moving")
+			if(!COOLDOWN_FINISHED(src, toggle_moving_cd))
+				balloon_alert_to_viewers("Please wait before toggling movement again.")
+				return TRUE
 			if(TC.is_moving())
+				COOLDOWN_START(src, toggle_moving_cd, 60 SECONDS)
 				TC.stop_moving()
 			return TRUE
 		if("choose_next")
@@ -346,8 +355,73 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/button/auto_detect, 24)
 			return TRUE
 
 /obj/machinery/computer/train_control_terminal/read_only
+	name = "Train terminal"
 	read_only = TRUE
 
+/obj/machinery/recharge_station/train
+	name = "train recharging station"
+	desc = "A specialized recharging station for synthetics only. It slowly recharges and repairs silicon-based lifeforms."
+	active_power_usage = BASE_MACHINE_ACTIVE_CONSUMPTION * 0.05
+	density = FALSE
+	req_access = null
+	state_open = TRUE
+	processing_flags = NONE
+	var/always_repair = TRUE
+	var/always_charge = TRUE
+	var/slow_recharge_speed = 500
+	var/slow_repairs = 1
+
+/obj/machinery/recharge_station/train/Initialize(mapload)
+	. = ..()
+
+	if(materials)
+		QDEL_NULL(materials)
+	sendmats = FALSE
+
+	recharge_speed = slow_recharge_speed
+	repairs = slow_repairs
+	update_appearance()
+
+/obj/machinery/recharge_station/train/RefreshParts()
+	. = ..()
+	recharge_speed = slow_recharge_speed
+	repairs = slow_repairs
+
+/obj/machinery/recharge_station/train/examine(mob/user)
+	. = ..()
+	. += span_notice("This station slowly recharges and repairs synthetics only.")
+
+/obj/machinery/recharge_station/train/process(seconds_per_tick)
+	if(QDELETED(occupant) || !is_operational)
+		return
+
+	update_use_power(ACTIVE_POWER_USE)
+	SEND_SIGNAL(occupant, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, charge_cell, seconds_per_tick, repairs, FALSE)
+	if(always_charge)
+		if(iscyborg(occupant))
+			var/mob/living/silicon/robot/robot = occupant
+			if(robot.cell)
+				robot.cell.give(slow_recharge_speed * seconds_per_tick * 0.5)
+		if(ishuman(occupant) && issynthetic(occupant))
+			var/mob/living/carbon/human/synth = occupant
+			var/obj/item/organ/stomach/synth/synth_cell = synth.get_organ_slot(ORGAN_SLOT_STOMACH)
+			if(synth_cell && !QDELETED(synth_cell))
+				var/energy_delivered = slow_recharge_speed * seconds_per_tick * 0.5
+				var/nutrition_gained = (energy_delivered / 200) / SSmachines.wait
+				synth.nutrition = min(NUTRITION_LEVEL_FULL, synth.nutrition + nutrition_gained)
+
+
+	if(always_repair)
+		if(issilicon(occupant))
+			var/mob/living/silicon/silicon = occupant
+			silicon.adjust_brute_loss(-0.5 * seconds_per_tick)
+			silicon.adjust_fire_loss(-0.5 * seconds_per_tick)
+		if(ishuman(occupant) && issynthetic(occupant))
+			var/mob/living/carbon/human/synth = occupant
+			synth.adjust_brute_loss(-0.5 * seconds_per_tick)
+			synth.adjust_fire_loss(-0.5 * seconds_per_tick)
+	// No restocking or extra features
+	sendmats = FALSE
 
 /obj/item/key/master_key
 	name = "train master key"

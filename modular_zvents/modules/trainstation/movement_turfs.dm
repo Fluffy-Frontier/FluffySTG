@@ -78,7 +78,7 @@
 	if(!target || isclosedturf(target))
 		if(isliving(object) && !HAS_TRAIT(object, TRAIT_GODMODE))
 			var/mob/living/L = object
-			L.adjustBruteLoss(50)
+			L.adjust_brute_loss(50)
 			L.throw_at(get_step(current, movement_direction), 1, 2)
 			if(L.stat == DEAD)
 				L.gib()

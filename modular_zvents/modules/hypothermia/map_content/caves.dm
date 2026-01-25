@@ -1,3 +1,6 @@
+GLOBAL_LIST_EMPTY(sneak_pod_list)
+#define TRAIT_CREVICE_CRAWLER "crevice_crawler"
+
 /obj/structure/sneak_pod
 	name = "narrow crevice"
 	desc = "A tight squeeze in the frozen rock, barely wide enough to crawl or sidestep through. Moving through it requires careful maneuvering."
@@ -11,23 +14,28 @@
 	armor_type = /datum/armor/none
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
-	var/list/crawlers = list()  // List of mobs currently crawling
-	var/max_crawlers = 3  // Max small mobs allowed (adjust for balance)
-	var/list/crawler_pixel_offsets = list()  // Associative list: mob -> list(x, y, transform)
+	// List of mobs currently crawling
+	var/list/crawlers = list()
+	// Max small mobs allowed
+	var/max_crawlers = 3
+	// Associative list: mob -> list(x, y, transform)
+	var/list/crawler_pixel_offsets = list()
+	var/datum/component/seethrough/filtered/seethrough
 
 /obj/structure/sneak_pod/Initialize(mapload)
 	. = ..()
 	var/list/map = list(
 		list(-1, 1, 0), list(0, 1, 0), list(1, 1, 0),
-		list(-1, 0, 0), list(0, 0, 0), list(0, 1, 0),
-		list(-1, -1, 0), list(0, -1, 0), list(-1, 1, 0)
+		list(-1, 0, 0), list(0, 0, 0), list(1, 0, 0),
+		list(-1, -1, 0), list(0, -1, 0), list(1, -1, 0)
 	)
-	AddComponent(/datum/component/seethrough)
-	var/datum/component/seethrough/comp = GetComponent(/datum/component/seethrough)
-	comp.relative_turf_coords = map
-	comp.setup_perimeter(src)
+	seethrough = AddComponent(__IMPLIED_TYPE__)
+	seethrough.see_through_map = map
+	seethrough.dismantle_perimeter()
+	GLOB.sneak_pod_list += src
 
 /obj/structure/sneak_pod/Destroy()
+	GLOB.sneak_pod_list -= src
 	for(var/mob/living/C in crawlers)
 		end_crawl(C, forced = TRUE)
 	return ..()
@@ -42,13 +50,15 @@
 		return
 	begin_crawl(M)
 
-
 /obj/structure/sneak_pod/proc/register_to_crawler(mob/living/crawler)
 	RegisterSignal(crawler, COMSIG_MOVABLE_ATTEMPTED_MOVE, PROC_REF(on_crawler_pre_move))
 	RegisterSignal(crawler, COMSIG_MOVABLE_MOVED, PROC_REF(on_crawler_moved))
 	RegisterSignal(crawler, COMSIG_QDELETING, PROC_REF(on_crawler_qdel))
 	RegisterSignal(crawler, COMSIG_LIVING_DEATH, PROC_REF(on_crawler_death))
 	RegisterSignal(crawler, COMSIG_LIVING_RESTING, PROC_REF(on_crawler_rest_change))
+
+	for(var/obj/structure/sneak_pod/sneaky as anything in GLOB.sneak_pod_list)
+		sneaky.seethrough.add_valid_target(crawler)
 
 /obj/structure/sneak_pod/proc/unregister_from_crawler(mob/living/crawler)
 	UnregisterSignal(crawler, list(
@@ -58,6 +68,8 @@
 		COMSIG_LIVING_DEATH,
 		COMSIG_LIVING_RESTING
 	))
+	for(var/obj/structure/sneak_pod/sneaky as anything in GLOB.sneak_pod_list)
+		sneaky.seethrough.remove_valid_target(crawler)
 
 /obj/structure/sneak_pod/proc/begin_crawl(mob/living/crawler, silent = FALSE)
 	if(crawler in crawlers)
@@ -65,7 +77,7 @@
 	crawlers += crawler
 	crawler.forceMove(loc)
 	crawler.pass_flags |= PASSMOB | PASSTABLE
-	ADD_TRAIT(crawler, TRAIT_FLOORED, src)
+	crawler.add_traits(list(TRAIT_FLOORED, TRAIT_CREVICE_CRAWLER), REF(src))
 	register_to_crawler(crawler)
 	if(!silent)
 		balloon_alert(crawler, "You squeeze into the crevice, crawling forward...")
@@ -77,11 +89,24 @@
 	crawlers -= crawler
 	unregister_from_crawler(crawler)
 	crawler.pass_flags &= ~(PASSMOB | PASSTABLE)
-	REMOVE_TRAIT(crawler, TRAIT_FLOORED, src)
-
+	crawler.remove_traits(list(TRAIT_FLOORED, TRAIT_CREVICE_CRAWLER), REF(src))
 	if(!forced)
 		balloon_alert(crawler, "You emerge from the crevice.")
 
+
+/obj/structure/sneak_pod/Bumped(atom/movable/bumped_atom)
+	. = ..()
+	if(!isliving(bumped_atom))
+		return
+	var/mob/living/M = bumped_atom
+	if(HAS_TRAIT(M, TRAIT_CREVICE_CRAWLER))
+		return
+	if(!can_crawl_into(M, src))
+		return
+	if(!do_after(M, 5 SECONDS, src))
+		M.balloon_alert(M, "Failed to crawl!")
+		return
+	begin_crawl(M)
 
 
 /obj/structure/sneak_pod/proc/on_crawler_pre_move(datum/source, atom/newloc, direction)
@@ -138,10 +163,13 @@
 	if(!can_crawl_into(C, newloc))
 		balloon_alert(C, "Movement blocked!")
 		return
-	if(!do_after(C, 1 SECONDS, src, IGNORE_USER_LOC_CHANGE | IGNORE_HELD_ITEM))
+	if(!do_after(C, 1 SECONDS, src, IGNORE_USER_LOC_CHANGE | IGNORE_HELD_ITEM, max_interact_count = 1))
 		balloon_alert(C, "Movement interrupted!")
 		return
 	var/obj/structure/sneak_pod/next_pod = locate() in newloc
+	if(isclosedturf(newloc))
+		balloon_alert(C, "The way is blocked!")
+		return
 	if(next_pod)
 		C.forceMove(newloc)
 		end_crawl(C, TRUE)
@@ -158,7 +186,7 @@
 	var/obj/structure/sneak_pod/next_pod = locate() in C.loc
 	if(next_pod && next_pod != src)
 		end_crawl(C, TRUE)
-		next_pod.begin_crawl(C)
+		next_pod.begin_crawl(C, TRUE)
 
 /obj/structure/sneak_pod/proc/on_crawler_qdel(datum/source)
 	SIGNAL_HANDLER
@@ -177,3 +205,28 @@
 
 /obj/structure/sneak_pod/proc/is_still_crawling(mob/living/C)
 	return (C in crawlers && C.resting)
+
+#undef TRAIT_CREVICE_CRAWLER
+
+/obj/structure/sneak_pod/iced
+	name = "ice-covered crevice"
+	icon = 'modular_zvents/icons/structures/crevice.dmi'
+	icon_state = "iced"
+
+/obj/structure/sneak_pod/iced/enterence
+	name = "ice-covered crevice"
+	icon = 'modular_zvents/icons/structures/crevice.dmi'
+	icon_state = "iced_enterence"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sneak_pod/iced/enterence, 27)
+
+/obj/structure/sneak_pod/rock
+	name = "rock crevice"
+	icon = 'modular_zvents/icons/structures/crevice.dmi'
+	icon_state = "rock"
+
+/obj/structure/sneak_pod/rock/enterence
+	icon = 'modular_zvents/icons/structures/crevice.dmi'
+	icon_state = "rock_enterence"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sneak_pod/rock/enterence, 27)

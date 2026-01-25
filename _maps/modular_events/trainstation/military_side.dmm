@@ -181,12 +181,9 @@
 /turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "gz" = (
-/obj/structure/prop/vehicle/large_truck/truck_enclosed,
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 8
-	},
 /obj/effect/light_emitter/daylight,
-/turf/open/floor/asphalt,
+/mob/living/basic/bear/snow,
+/turf/open/misc/asteroid/snow/indestructible,
 /area/trainstation/outdoor)
 "gN" = (
 /obj/effect/turf_decal/tile/yellow/opposingcorners,
@@ -405,8 +402,9 @@
 /turf/open/indestructible/vault,
 /area/trainstation/outdoor)
 "nc" = (
-/obj/machinery/door/airlock/security/blue,
-/turf/open/indestructible/vault,
+/obj/effect/light_emitter/daylight,
+/obj/structure/prop/vehicle/zengarbagetruck,
+/turf/open/floor/asphalt,
 /area/trainstation/outdoor)
 "nm" = (
 /obj/effect/spawner/random/structure/billboard/nanotrasen,
@@ -438,8 +436,8 @@
 /turf/open/misc/dirt/station,
 /area/trainstation/outdoor)
 "ou" = (
-/obj/structure/prop/vehicle/armoredtruck,
 /obj/effect/light_emitter/daylight,
+/obj/structure/prop/vehicle/meridiancar_5,
 /turf/open/floor/asphalt,
 /area/trainstation/outdoor)
 "oC" = (
@@ -609,9 +607,10 @@
 /turf/open/indestructible/cobble,
 /area/trainstation/outdoor)
 "uA" = (
-/obj/structure/prop/vehicle/crane/crane_snow,
+/obj/structure/flora/tree/pine/style_random,
 /obj/effect/light_emitter/daylight,
-/turf/open/misc/asteroid/snow/standard_air,
+/mob/living/basic/bear/snow,
+/turf/open/misc/asteroid/snow/indestructible,
 /area/trainstation/outdoor)
 "uF" = (
 /obj/structure/prop/general/zenithplatform3,
@@ -1371,12 +1370,9 @@
 /turf/open/indestructible/vault,
 /area/trainstation/outdoor)
 "Pd" = (
-/obj/structure/prop/vehicle/long_truck/nt_black,
-/obj/effect/turf_decal/trimline/yellow/line{
-	dir = 8
-	},
 /obj/effect/light_emitter/daylight,
-/turf/open/floor/asphalt,
+/mob/living/basic/bear/snow,
+/turf/open/misc/asteroid/snow/standard_air,
 /area/trainstation/outdoor)
 "Pe" = (
 /obj/effect/turf_decal/tile/yellow/anticorner{
@@ -2020,7 +2016,7 @@ kx
 Ct
 yF
 kx
-kx
+gz
 Aw
 Aw
 Aw
@@ -2063,7 +2059,7 @@ yF
 kx
 kx
 Aw
-Aw
+Pd
 Aw
 Aw
 Aw
@@ -2436,7 +2432,7 @@ yF
 kx
 kx
 yF
-kx
+gz
 yF
 kx
 kx
@@ -2449,7 +2445,7 @@ kx
 kx
 kx
 kx
-kx
+gz
 kx
 Ct
 yF
@@ -2981,7 +2977,7 @@ yF
 kx
 yF
 kx
-kx
+gz
 kx
 kx
 yF
@@ -3308,7 +3304,7 @@ kx
 kx
 Aw
 kx
-kx
+gz
 yF
 kx
 ri
@@ -3363,7 +3359,7 @@ kx
 kx
 kx
 yF
-kx
+gz
 kx
 Aw
 Aw
@@ -3854,7 +3850,7 @@ gm
 Aw
 Aw
 Aw
-Aw
+Pd
 kx
 kx
 kx
@@ -4519,7 +4515,7 @@ Ng
 Ng
 Ng
 Ng
-nc
+YO
 Ng
 Ng
 Aw
@@ -4773,7 +4769,7 @@ Ng
 bp
 sS
 sS
-nc
+YO
 sS
 fu
 iP
@@ -4867,7 +4863,7 @@ nX
 dK
 Ng
 Ng
-nc
+YO
 Ng
 Ng
 Ng
@@ -4943,7 +4939,7 @@ Sn
 dH
 dH
 dH
-gz
+dH
 dH
 dH
 dH
@@ -5289,7 +5285,7 @@ kx
 kx
 yF
 kx
-uA
+Aw
 kx
 Sn
 Wl
@@ -5330,7 +5326,7 @@ XL
 XL
 XL
 XL
-Pd
+XL
 XL
 Ng
 Oj
@@ -5359,9 +5355,9 @@ Sn
 Wl
 ou
 Wl
+nc
 Wl
-Wl
-Wl
+nc
 Wl
 Wl
 SF
@@ -6929,7 +6925,7 @@ kx
 DS
 Aw
 kx
-yF
+uA
 kx
 Aw
 Aw
@@ -7601,7 +7597,7 @@ yF
 kx
 kx
 kx
-kx
+gz
 yF
 kx
 cw
@@ -7988,7 +7984,7 @@ Aw
 Aw
 Aw
 Aw
-Aw
+Pd
 cw
 cw
 cw
@@ -8074,7 +8070,7 @@ kx
 kx
 Aw
 kx
-kx
+gz
 kx
 Ct
 kx
