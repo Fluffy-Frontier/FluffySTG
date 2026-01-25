@@ -662,7 +662,7 @@
 
 /obj/machinery/power/train_heater/process(seconds_per_tick)
 	if(!active && temperature > T20C)
-		temperature = max(temperature - 5 * seconds_per_tick, T20C)
+		temperature = max(temperature - 2 * seconds_per_tick, T20C)
 		if(temperature <= T20C)
 			temperature = T20C
 			end_processing()
@@ -678,7 +678,7 @@
 	plasma_stack.use(plasma_consumed)
 	var/energy_generated = plasma_consumed * PLASMA_SHEET_BURN_ENERGY
 	if(temperature < target_temperature)
-		temperature += energy_generated / reagents.heat_capacity() * seconds_per_tick
+		temperature = min(target_temperature, temperature + (((energy_generated / reagents.heat_capacity()) * 10) * seconds_per_tick))
 
 	if(temperature < MIN_PLASMA_COMBUSTION_TEMP)
 		return
