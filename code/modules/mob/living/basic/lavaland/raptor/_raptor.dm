@@ -86,6 +86,7 @@ GLOBAL_LIST_EMPTY(raptor_population)
 	inherited_stats = passed_stats || new(src)
 	// First thing as to go before tameable in change_growth_stage()
 	AddElement(/datum/element/basic_eating, food_types = food_types)
+	log_mapping("[src] => [raptor_color] => [color_type || raptor_color || pick(GLOB.raptor_colors)] => [GLOB.raptor_colors[color_type]] | [GLOB.raptor_colors[raptor_color]] | [GLOB.raptor_colors[pick(GLOB.raptor_colors)]]")
 	raptor_color = GLOB.raptor_colors[color_type || raptor_color || pick(GLOB.raptor_colors)]
 	log_mapping("[src] -> [raptor_color] -> [color_type] | [raptor_color] | [length(GLOB.raptor_colors)]")
 	raptor_color.setup_raptor(src)
