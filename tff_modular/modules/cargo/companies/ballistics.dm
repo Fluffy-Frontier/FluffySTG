@@ -7,11 +7,11 @@
 
 // Переопределение для пакета Sol Fed Bogseo SMG: помечает как контрабанду.
 /datum/supply_pack/companies/ballistics/sol_fed/longarm/bogseo
-	contraband = TRUE
+	order_flags = parent_type::order_flags | ORDER_CONTRABAND
 
 // Переопределение для пакета Sol Fed Kiboko grenade launcher: помечает как контрабанду.
 /datum/supply_pack/companies/ballistics/sol_fed/longarm/kiboko
-	contraband = TRUE
+	order_flags = parent_type::order_flags | ORDER_CONTRABAND
 
 // Переопределение для пакета HC surplus Zashch pistol: добавляет проверку по лицензии оружия.
 /datum/supply_pack/companies/ballistics/hc_surplus/zashch
@@ -27,19 +27,19 @@
 
 // Переопределение для пакета HC surplus Lanca rifle: помечает как контрабанду.
 /datum/supply_pack/companies/ballistics/hc_surplus/lanca
-	contraband = TRUE
+	order_flags = parent_type::order_flags | ORDER_CONTRABAND
 
 // Переопределение для пакета HC surplus anti-materiel rifle: помечает как контрабанду.
 /datum/supply_pack/companies/ballistics/hc_surplus/anti_materiel_rifle
-	contraband = TRUE
+	order_flags = parent_type::order_flags | ORDER_CONTRABAND
 
 // Переопределение для пакета Sol Fed Takbok revolver: помечает как контрабанду.
 /datum/supply_pack/companies/ballistics/sol_fed/sidearm/takbok
-	contraband = TRUE
+	order_flags = parent_type::order_flags | ORDER_CONTRABAND
 
 // Переопределение для пакета Sol Fed Skild pistol: помечает как контрабанду.
 /datum/supply_pack/companies/ballistics/sol_fed/sidearm/skild
-	contraband = TRUE
+	order_flags = parent_type::order_flags | ORDER_CONTRABAND
 
 /datum/supply_pack/companies/ballistics/nt/c38_super_kit
 	access = ACCESS_WEAPONS
