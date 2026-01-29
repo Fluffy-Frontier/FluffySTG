@@ -68,6 +68,6 @@
 	has_skintone_shading = TRUE
 
 /datum/sprite_accessory/genital/testicles/alt/sheath
-	name = "Sheathed Pair (Alt)"
+	name = "Sheathed Pair"
 	icon_state = "sheath"
 	has_skintone_shading = TRUE
