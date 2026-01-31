@@ -124,17 +124,18 @@
  *
  * Arguments:
  * * source - The mob swapping hands.
+ * * swapped_to - The current active hand item that we swapped to.
+ * * swapped_from - The previous, now inactive hand item that we swapped from.
  */
-/datum/element/ammo_hud/proc/on_hands_swap(mob/living/source)
+/datum/element/ammo_hud/proc/on_hands_swap(mob/living/source, obj/item/swapped_to, obj/item/swapped_from)
 	SIGNAL_HANDLER
 
-	var/obj/item/active_held_item = source.get_active_held_item()
-	if(isnull(active_held_item) || !HAS_TRAIT(active_held_item, TRAIT_DISPLAYING_AMMO_HUD))
+	if(isnull(swapped_to) || !HAS_TRAIT(swapped_to, TRAIT_DISPLAYING_AMMO_HUD))
 		return
 
 	var/atom/movable/screen/ammo_counter/hud = get_hud(source)
 	if(hud && hud.on)
-		update_hud(active_held_item, hud)
+		update_hud(swapped_to, hud)
 
 /**
  * Determines whether the given item should currently update the ammo HUD.
