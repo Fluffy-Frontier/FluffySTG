@@ -103,6 +103,11 @@
 	AddElement(/datum/element/toy_talk)
 	RegisterSignals(src, list(SIGNAL_ADDTRAIT(TRAIT_DISFIGURED), SIGNAL_REMOVETRAIT(TRAIT_DISFIGURED)), PROC_REF(update_owner_name))
 
+/obj/item/bodypart/head/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/toy_talk)
+	RegisterSignals(src, list(SIGNAL_ADDTRAIT(TRAIT_DISFIGURED), SIGNAL_REMOVETRAIT(TRAIT_DISFIGURED)), PROC_REF(update_owner_name))
+
 /obj/item/bodypart/head/Destroy()
 	QDEL_NULL(worn_ears_offset)
 	QDEL_NULL(worn_glasses_offset)
