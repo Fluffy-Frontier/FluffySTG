@@ -1,5 +1,5 @@
 /obj/effect/mob_spawn/ghost_role/human/hc_officer
-	name = "HC Patrol Officer Sleeper"
+	name = "HC Patrol Officer"
 	desc = "A comfortable-looking sleeper unit adorned with the insignia of the Heliostatic Coalition Internal Affairs Department."
 	prompt_name = "an HC Expeditionary Patrol Officer"
 	icon = 'modular_nova/modules/cryosleep/icons/cryogenics.dmi'
@@ -10,7 +10,8 @@
 	flavour_text = "Your patrol vessel is conducting a Standard Compliance and Inspection operation on this remote facility. Your mandate, derived from Coalition Accords, grants you the authority to inspect, seize contraband, and use necessary force to protect Coalition interests. Vigilance is paramount; these stations are self-governing and not inherently trustworthy. Adhere to the Standard Operating Procedures at all times."
 	important_text = "Follow the chain of command. Your patrol leader's callsign is appended with 'Actual'. Maintain professional discipline and be prepared to escalate appropriately as the situation demands."
 	outfit = /datum/outfit/hc_officer
-	random_appearance = FALSE
+	allow_custom_character = GHOSTROLE_TAKE_PREFS_APPEARANCE
+	quirks_enabled = TRUE
 	show_flavor = TRUE
 	/// To know whether or not we have an officer already, keep a ref to them
 	var/static/first_officer
@@ -21,9 +22,9 @@
 	var/full_name = "[callsign] [number]"
 	if(first_officer == REF(spawned_human))
 		full_name += " Actual"
-	spawned_human.fully_replace_character_name(null, full_name)
+	spawned_mob.fully_replace_character_name(spawned_mob.real_name, full_name)
 
-/obj/effect/mob_spawn/ghost_role/human/hc_officer/special(mob/living/carbon/human/spawned_human)
+/obj/effect/mob_spawn/ghost_role/human/hc_officer/post_transfer_prefs(mob/living/spawned_mob)
 	. = ..()
 	spawned_human.mind.add_antag_datum(/datum/antagonist/cop)
 	spawned_human.grant_language(/datum/language/panslavic, source = LANGUAGE_SPAWNER)
@@ -51,11 +52,7 @@
 		communicating with the admins and other players is encouraged.")]")
 	apply_codename(spawned_human)
 
-/obj/effect/mob_spawn/ghost_role/human/hc_officer/post_transfer_prefs(mob/living/carbon/human/spawned_human)
-	. = ..()
-	apply_codename(spawned_human)
-
-/obj/effect/mob_spawn/ghost_role/human/hc_officer/equip(mob/living/carbon/human/spawned_human)
+/obj/effect/mob_spawn/ghost_role/human/hc_officer/equip(mob/living/spawned_mob)
 	. = ..()
 	var/obj/item/card/id/advanced/card = spawned_human.get_idcard()
 	if(first_officer == REF(spawned_human))
