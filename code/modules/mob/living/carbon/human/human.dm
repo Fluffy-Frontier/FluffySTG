@@ -848,10 +848,8 @@
 		if(!check_rights(R_SPAWN))
 			return
 		var/list/options = list("Clear"="Clear")
-		for(var/type in subtypesof(/datum/quirk))
+		for(var/type in valid_subtypesof(/datum/quirk))
 			var/datum/quirk/quirk_type = type
-			if(initial(quirk_type.abstract_parent_type) == type)
-				continue
 			// NOVA EDIT ADDITION START
 			if(initial(quirk_type.erp_quirk) && CONFIG_GET(flag/disable_erp_preferences))
 				continue
