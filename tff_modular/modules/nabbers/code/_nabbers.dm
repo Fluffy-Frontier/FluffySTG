@@ -91,11 +91,8 @@
 	. = ..()
 	// Очистим посторооние предметы, которые могли остаться от экипировки ГБСов, чтобы не было висяков в виде импланта и наручников после смены расы
 	for(var/atom/A in C.contents)
-		if(istype(A, /obj/item/restraints/legcuffs/gas_placeholder) || istype(A, /obj/item/implant/gas_sol_speaker))
-			if(istype(A, /obj/item/restraints/legcuffs))
-				C.uncuff()
-			if(!QDELETED(A))
-				qdel(A, force = TRUE)
+		if(istype(A, /obj/item/restraints/legcuffs/gas_placeholder) && !QDELETED(A))
+			qdel(A, force = TRUE)
 	QDEL_NULL(arms)
 	QDEL_NULL(camouflage)
 	QDEL_NULL(threat_mod)
