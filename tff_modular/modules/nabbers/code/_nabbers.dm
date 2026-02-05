@@ -89,9 +89,16 @@
 
 /datum/species/nabber/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()
-	arms.Destroy()
-	camouflage.Destroy()
-	threat_mod.Destroy()
+	// Очистим посторооние предметы, которые могли остаться от экипировки ГБСов, чтобы не было висяков в виде импланта и наручников после смены расы
+	for(var/atom/A in C.contents)
+		if(istype(A, /obj/item/restraints/legcuffs/gas_placeholder) || istype(A, /obj/item/implant/gas_sol_speaker))
+			if(istype(A, /obj/item/restraints/legcuffs))
+				C.uncuff()
+			if(!QDELETED(A))
+				qdel(A, force = TRUE)
+	QDEL_NULL(arms)
+	QDEL_NULL(camouflage)
+	QDEL_NULL(threat_mod)
 
 /datum/species/nabber/spec_life(mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	// Вызываем это перед проверкой на смерть, чтобы даже у мёртвых ГБСов была заглушка
