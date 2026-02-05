@@ -86,7 +86,7 @@ GLOBAL_LIST_EMPTY(raptor_population)
 	inherited_stats = passed_stats || new(src)
 	// First thing as to go before tameable in change_growth_stage()
 	AddElement(/datum/element/basic_eating, food_types = food_types)
-	raptor_color = GLOB.raptor_colors[color_type || raptor_color]
+	raptor_color = GLOB.raptor_colors[color_type || raptor_color || pick(GLOB.raptor_colors)]
 	if(!raptor_color) raptor_color = pick(GLOB.raptor_colors) // FLUFFY EDIT: This should never happen, but just in case someone messes with the color_type or raptor_color
 	raptor_color.setup_raptor(src)
 
