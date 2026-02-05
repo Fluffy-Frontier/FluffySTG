@@ -58,14 +58,22 @@
 		LOADOUT_ITEM_MISC = NABBER_BACK_ICON,
 		LOADOUT_ITEM_EARS = NABBER_EARS_ICON,
 	)
-	var/datum/action/cooldown/toggle_arms/arms
-	var/datum/action/cooldown/optical_camouflage/camouflage
-	var/datum/action/cooldown/nabber_threat/threat_mod
 	placeholder_description = "Giant armoured serpentids (GAS), also known as Nabbers, or snake-bugs, are a massive predatory species who are trained by a company to work with humans. Physically, although they look intimidating, they're unlikely to harm a human except in times of great stress. If you see them getting their large attack arms ready, it's telling you to back off."
 	placeholder_lore = "https://fluffy-frontier.ru/osobye-rasy"
 
 	species_language_holder = /datum/language_holder/nabber
 	language_prefs_whitelist = list(/datum/language/nabber)
+
+	/// Наши продвинутные боевые руки
+	var/datum/action/cooldown/toggle_arms/arms
+	/// Наш камуфляж
+	var/datum/action/cooldown/optical_camouflage/camouflage
+	/// Наш камуфляж для отобажерния угрозы
+	var/datum/action/cooldown/nabber_threat/threat_mod
+	/// Специальная заглушка на ноги, чтобы на нас нельзя было повесить ничего
+	var/obj/item/restraints/legcuffs/gas_placeholder/anti_cuffs
+	/// Наш особый имплант
+	var/obj/item/implant/gas_sol_speaker/imp_in
 
 /datum/species/nabber/on_species_gain(mob/living/carbon/human/C, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
@@ -76,29 +84,31 @@
 	threat_mod = new(C)
 	threat_mod.Grant(C)
 
-	var/is_dummy = istype(C, /mob/living/carbon/human/dummy)
+	if(istype(C, /mob/living/carbon/human/dummy))
+		return
 
-	if(!is_dummy)
-		C.uncuff()
-		if(!C.legcuffed)
-			var/obj/item/restraints/legcuffs/gas_placeholder/anti_cuffs = new()
-			C.equip_to_slot(anti_cuffs, ITEM_SLOT_LEGCUFFED, initial = TRUE)
+	C.uncuff()
+	if(C.legcuffed)
+		qdel(C.legcuffed, force = TRUE)
+	anti_cuffs = new /obj/item/restraints/legcuffs/gas_placeholder(nabber = C)
+	C.equip_to_slot(anti_cuffs, ITEM_SLOT_LEGCUFFED, initial = TRUE)
 
-		var/obj/item/implant/gas_sol_speaker/imp_in = new()
-		imp_in.implant(C)
+	imp_in = new()
+	imp_in.implant(C)
 
 /datum/species/nabber/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()
-	// Очистим посторооние предметы, которые могли остаться от экипировки ГБСов, чтобы не было висяков в виде импланта и наручников после смены расы
-	for(var/atom/A in C.contents)
-		if(istype(A, /obj/item/restraints/legcuffs/gas_placeholder) || istype(A, /obj/item/implant/gas_sol_speaker))
-			if(istype(A, /obj/item/restraints/legcuffs))
-				C.uncuff()
-			if(!QDELETED(A))
-				qdel(A, force = TRUE)
 	QDEL_NULL(arms)
 	QDEL_NULL(camouflage)
 	QDEL_NULL(threat_mod)
+
+	if(istype(C, /mob/living/carbon/human/dummy))
+		return
+	if(anti_cuffs)
+		C.uncuff()
+	QDEL_NULL(anti_cuffs)
+	QDEL_NULL(imp_in)
+
 
 /datum/species/nabber/spec_life(mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	// Вызываем это перед проверкой на смерть, чтобы даже у мёртвых ГБСов была заглушка
@@ -236,7 +246,7 @@
 
 // ЧС квирков
 /mob/living/carbon/human/add_quirk(datum/quirk/quirktype, client/override_client, add_unique = TRUE, announce = TRUE)
-	var/bad_nabber_quirks = list(
+	var/static/bad_nabber_quirks = list(
 		// негативные
 		/datum/quirk/oversized,
 		/datum/quirk/prosthetic_limb,
