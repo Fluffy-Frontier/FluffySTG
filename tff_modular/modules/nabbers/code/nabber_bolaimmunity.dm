@@ -14,14 +14,17 @@
 
 	var/mob/living/carbon/human/nabber = null
 
-/obj/item/restraints/legcuffs/gas_placeholder/Initialize(mapload, mob/living/carbon/human/nabber)
+/obj/item/restraints/legcuffs/gas_placeholder/Initialize(mapload)
 	ADD_TRAIT(src, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
-	if(!nabber && !isnabber(nabber))
-		return INITIALIZE_HINT_QDEL
+	return ..()
+
+/obj/item/restraints/legcuffs/gas_placeholder/proc/register_owner(mob/living/carbon/human/nabber)
+	if(!nabber || !isnabber(nabber))
+		return FALSE
 	RegisterSignal(nabber, COMSIG_MOB_REMOVING_CUFFS, PROC_REF(handle_nabber_removing_cuffs), TRUE)
 	RegisterSignal(src, COMSIG_ITEM_PRE_UNEQUIP, PROC_REF(handle_nabber_unequip_cuffs), TRUE)
 	src.nabber = nabber
-	return ..()
+	return TRUE
 
 /obj/item/restraints/legcuffs/gas_placeholder/Destroy(force)
 	. = ..()

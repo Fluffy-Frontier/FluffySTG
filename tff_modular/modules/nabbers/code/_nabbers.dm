@@ -90,7 +90,8 @@
 	C.uncuff()
 	if(C.legcuffed)
 		qdel(C.legcuffed, force = TRUE)
-	anti_cuffs = new /obj/item/restraints/legcuffs/gas_placeholder(nabber = C)
+	anti_cuffs = new()
+	anti_cuffs.register_owner(C)
 	C.equip_to_slot(anti_cuffs, ITEM_SLOT_LEGCUFFED, initial = TRUE)
 
 	imp_in = new()
