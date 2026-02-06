@@ -316,7 +316,7 @@
 /// Send a message to everyone on the Z level with directions to the lectern
 /obj/structure/destructible/clockwork/gear_base/technologists_lectern/proc/send_message(initial_message = "You hear the echoing of cogs ", volume = 70)
 	for(var/mob/living/living_mob as anything in GLOB.mob_living_list)
-		if((living_mob.z != z) || IS_CLOCK(living_mob) || !living_mob.can_hear())
+		if((living_mob.z != z) || IS_CLOCK(living_mob) || HAS_TRAIT(living_mob, TRAIT_DEAF))
 			continue
 
 
