@@ -79,7 +79,7 @@
 	. = ..()
 
 #ifdef UNIT_TESTS
-	return
+	return //TODO: исправить это недоразумение, т.к возникают сильные проблемы с create_and_destroy юнит тестом
 #endif
 
 	arms = new(C)
