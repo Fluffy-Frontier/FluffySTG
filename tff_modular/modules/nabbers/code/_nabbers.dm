@@ -77,15 +77,17 @@
 
 /datum/species/nabber/on_species_gain(mob/living/carbon/human/C, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
+
+#ifdef UNIT_TESTS
+	return
+#endif
+
 	arms = new(C)
 	arms.Grant(C)
 	camouflage = new(C)
 	camouflage.Grant(C)
 	threat_mod = new(C)
 	threat_mod.Grant(C)
-
-	if(istype(C, /mob/living/carbon/human/dummy))
-		return
 
 	C.uncuff()
 	if(C.legcuffed)
@@ -99,12 +101,15 @@
 
 /datum/species/nabber/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()
+
+#ifdef UNIT_TESTS
+	return
+#endif
+
 	QDEL_NULL(arms)
 	QDEL_NULL(camouflage)
 	QDEL_NULL(threat_mod)
 
-	if(istype(C, /mob/living/carbon/human/dummy))
-		return
 	if(anti_cuffs)
 		C.uncuff()
 	QDEL_NULL(anti_cuffs)
@@ -112,10 +117,6 @@
 
 
 /datum/species/nabber/spec_life(mob/living/carbon/human/H, seconds_per_tick, times_fired)
-	// Вызываем это перед проверкой на смерть, чтобы даже у мёртвых ГБСов была заглушка
-	if(H.num_legs >= 2 && !H.legcuffed && !QDELETED(H))
-		var/obj/item/restraints/legcuffs/gas_placeholder/anti_cuffs = new()
-		H.equip_to_slot(anti_cuffs, ITEM_SLOT_LEGCUFFED, initial = TRUE)
 	. = ..()
 	if(isdead(H))
 		return
@@ -347,3 +348,5 @@
 	if(isnabber(src) && (quirktype in bad_nabber_quirks))
 		return FALSE
 	return ..()
+
+#undef NABBER_DAMAGE_ONBURNING

@@ -35,9 +35,10 @@
 	SIGNAL_HANDLER
 	return COMSIG_MOB_BLOCK_CUFF_REMOVAL
 
-/obj/item/restraints/legcuffs/gas_placeholder/proc/handle_nabber_unequip_cuffs()
+/obj/item/restraints/legcuffs/gas_placeholder/proc/handle_nabber_unequip_cuffs(datum/soure, force, atom/newloc, no_move, invdrop, silent)
 	SIGNAL_HANDLER
-	return COMPONENT_ITEM_BLOCK_UNEQUIP
+	if(!force)
+		return COMPONENT_ITEM_BLOCK_UNEQUIP
 
 /datum/species/nabber/can_equip(obj/item/I, slot, disable_warning, mob/living/carbon/human/H, bypass_equip_delay_self, ignore_equipped, indirect_action)
 	if(slot == ITEM_SLOT_LEGCUFFED)
