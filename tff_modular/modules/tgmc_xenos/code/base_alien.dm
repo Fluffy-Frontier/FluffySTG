@@ -75,6 +75,7 @@
 
 	add_traits(list(TRAIT_XENO_HEAL_AURA, TRAIT_PIERCEIMMUNE, TRAIT_XENO_HUD), TRAIT_XENO_INNATE)
 	AddElement(/datum/element/resin_walker, /datum/movespeed_modifier/resin_speedup)
+	AddElement(/datum/element/prevent_attacking_of_types, GLOB.typecache_general_bad_hostile_attack_targets, "this tastes awful!")
 	AddComponent(/datum/component/seethrough_mob)
 
 /mob/living/carbon/alien/adult/tgmc/create_internal_organs()
@@ -85,15 +86,21 @@
 
 /mob/living/carbon/alien/adult/tgmc/UnarmedAttack(atom/attack_target, proximity_flag, list/modifiers)
 	if(body_position == LYING_DOWN) // Лежим - значит отдыхаем. Никакой войны во время отдыха
+		to_chat(src, span_warning("You can't do that in this position!"))
 		return FALSE
 	if(fortify)
+		to_chat(src, span_warning("You can't do that in this position!"))
 		return FALSE
 	if(ishuman(attack_target))
 		var/mob/living/carbon/human/target = attack_target
 		if(target.stat == DEAD)
-			to_chat(src, span_warning("[target] is dead, why would we want to touch it?"))
+			to_chat(src, span_warning("[target] is dead, why would you want to touch it?"))
 			return FALSE
 	return ..()
+
+/mob/living/carbon/alien/adult/tgmc/death(gibbed)
+	. = ..()
+	xeno_hud_set_plasma()
 
 /mob/living/carbon/alien/adult/tgmc/set_resting(new_resting, silent = TRUE, instant = FALSE)
 	if(fortify)
@@ -103,15 +110,14 @@
 
 /mob/living/carbon/alien/adult/tgmc/on_lying_down(new_lying_angle)
 	. = ..()
-	ADD_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
+	add_movespeed_modifier(/datum/movespeed_modifier/tgmc_alien_sleeping)
 
 /mob/living/carbon/alien/adult/tgmc/on_standing_up()
 	. = ..()
-	REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, LYING_DOWN_TRAIT)
+	remove_movespeed_modifier(/datum/movespeed_modifier/tgmc_alien_sleeping)
 
-/mob/living/carbon/alien/adult/tgmc/death(gibbed)
-	. = ..()
-	xeno_hud_set_plasma()
+/datum/movespeed_modifier/tgmc_alien_sleeping
+	multiplicative_slowdown = 8
 
 /mob/living/carbon/alien/adult/tgmc/getarmor(def_zone, type)
 	return get_armor_rating(type)

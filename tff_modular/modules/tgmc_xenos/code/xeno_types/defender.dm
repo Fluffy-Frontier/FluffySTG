@@ -5,8 +5,8 @@
 	desc = "A heavy looking alien with a wrecking ball-like tail that'd probably hurt to get hit by."
 	icon_state = "aliendefender"
 	caste = "defender"
-	maxHealth = 200
-	health = 200
+	maxHealth = 225
+	health = 225
 	mob_size = MOB_SIZE_LARGE
 	melee_damage_lower = 25
 	melee_damage_upper = 30
