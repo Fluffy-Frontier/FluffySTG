@@ -75,7 +75,7 @@
 
 	add_traits(list(TRAIT_XENO_HEAL_AURA, TRAIT_PIERCEIMMUNE, TRAIT_XENO_HUD), TRAIT_XENO_INNATE)
 	AddElement(/datum/element/resin_walker, /datum/movespeed_modifier/resin_speedup)
-	AddElement(/datum/element/prevent_attacking_of_types, GLOB.typecache_general_bad_hostile_attack_targets, "this tastes awful!")
+	AddElement(/datum/element/prevent_xeno_attacking_of_types, GLOB.typecache_general_bad_hostile_attack_targets, "this tastes awful!")
 	AddComponent(/datum/component/seethrough_mob)
 
 /mob/living/carbon/alien/adult/tgmc/create_internal_organs()
