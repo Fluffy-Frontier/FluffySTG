@@ -1,4 +1,5 @@
-// Изменение цен для импортов вот этих вот -> 'modular_nova\modules\company_imports\code\armament_datums\medical_medical.dm'
+// Этот файл содержит переопределения для медицинских пакетов из Nova modular.
+// Соответствующий файл Nova: modular_nova/master_files/code/modules/cargo/packs/companies/medical.dm
 
 /datum/supply_pack/companies/medical/first_aid_kit
 

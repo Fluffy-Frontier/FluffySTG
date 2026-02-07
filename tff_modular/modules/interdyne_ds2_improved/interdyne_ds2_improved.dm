@@ -282,3 +282,7 @@
 /obj/machinery/module_duplicator/ds2
 	name = "Cybersun Module Duplicator"
 	circuit = /obj/item/circuitboard/machine/module_duplicator/ds2
+
+////// suit storage unit //////
+/obj/machinery/suit_storage_unit/syndicate/elite_admiral
+    mod_type = /obj/item/mod/control/pre_equipped/traitor_elite
