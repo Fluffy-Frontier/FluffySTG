@@ -145,7 +145,7 @@
 			CARGO_NEED_POWER = list(/obj/item/stock_parts/power_store/cell/super),
 			CARGO_NEED_SECURITY = list(/obj/item/melee/baton, /obj/item/gun/energy/disabler),
 			CARGO_NEED_RESOURCES = list(/obj/item/stack/sheet/mineral/diamond),
-			CARGO_NEED_MORALE = list(/obj/item/toy/plush/tiredtesh),
+			CARGO_NEED_MORALE = list(/obj/item/toy/plush/tff/low),
 			CARGO_NEED_RESEARCH = list(/obj/item/stock_parts/scanning_module/adv)
 		),
 		list( // VERY_HIGH
