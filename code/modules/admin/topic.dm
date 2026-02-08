@@ -76,7 +76,9 @@
 		edit_rights_topic(href_list)
 
 	else if(href_list["gamemode_panel"])
-		dynamic_panel(usr)
+		// dynamic_panel(usr) Fluffy edit
+		var/datum/storyteller_admin_ui/stl_ui = new // Fluffy edit - STORYTELLER
+		stl_ui.ui_interact(usr) // Fluffy edit - STORYTELLER
 
 	else if(href_list["call_shuttle"])
 		if(!check_rights(R_ADMIN))

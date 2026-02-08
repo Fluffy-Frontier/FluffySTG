@@ -65,6 +65,7 @@ SUBSYSTEM_DEF(statpanels)
 			"Connected Players: [GLOB.clients.len]",
 			" ",
 			"OOC: [GLOB.ooc_allowed ? "Enabled" : "Disabled"]",
+			"Storyteller: [SSstorytellers.active ? SSstorytellers.active.name : "N/A"]", // Fluffy edit - активные рассказчик
 			" ",
 			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
 			"Station Time: [station_time_timestamp()]",
