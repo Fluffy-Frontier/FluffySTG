@@ -1,6 +1,5 @@
 // TGMC_XENOS
-// Почти ПОЛНАЯ КОПИЯ code\datums\elements\prevent_attacking_of_types.dm
-// Нужно обновить этот элемент на апстриме, после чего удалить этот тип
+// Почти ПОЛНАЯ КОПИЯ code\datums\elements\prevent_attacking_of_types.dm, измененная под работу со всеми мобами, а не только базовыми
 
 /// This hostile will not be able to attack a given typecache, and will receive
 /// a balloon alert when it tries to.
@@ -23,10 +22,10 @@
 	src.alert_message = alert_message
 	src.typecache = typecache
 
-	RegisterSignal(target, COMSIG_HOSTILE_PRE_ATTACKINGTARGET, PROC_REF(on_pre_attacking_target))
+	RegisterSignal(target, COMSIG_LIVING_EARLY_UNARMED_ATTACK, PROC_REF(on_pre_attacking_target))
 
 /datum/element/prevent_xeno_attacking_of_types/Detach(datum/source, ...)
-	UnregisterSignal(source, COMSIG_HOSTILE_PRE_ATTACKINGTARGET)
+	UnregisterSignal(source, COMSIG_LIVING_EARLY_UNARMED_ATTACK)
 	return ..()
 
 /datum/element/prevent_xeno_attacking_of_types/proc/on_pre_attacking_target(mob/source, atom/target)
@@ -37,6 +36,4 @@
 
 	target.balloon_alert(source, alert_message)
 
-	return COMPONENT_HOSTILE_NO_ATTACK
-
-
+	return COMPONENT_CANCEL_ATTACK_CHAIN
