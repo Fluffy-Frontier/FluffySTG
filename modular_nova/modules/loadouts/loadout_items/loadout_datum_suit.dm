@@ -834,16 +834,10 @@
 	restricted_roles = list(JOB_HEAD_OF_SECURITY, JOB_SECURITY_OFFICER, JOB_WARDEN, JOB_DETECTIVE, JOB_CORRECTIONS_OFFICER)
 	group = "Job-Locked"
 
-/datum/loadout_item/suit/highvis_jacket
-	name = "Security High-Vis Jacket"
-	item_path = /obj/item/clothing/suit/armor/vest/jacket
-	restricted_roles = list(JOB_WARDEN, JOB_DETECTIVE, JOB_SECURITY_OFFICER, JOB_HEAD_OF_SECURITY, JOB_CORRECTIONS_OFFICER)
-	group = "Job-Locked"
-
-/datum/loadout_item/suit/highvis_jacket/badge
-	name = "Security High-Vis Jacket - Badged"
-	item_path = /obj/item/clothing/suit/armor/vest/jacket/badge
-	restricted_roles = list(JOB_WARDEN, JOB_DETECTIVE, JOB_SECURITY_OFFICER, JOB_HEAD_OF_SECURITY, JOB_CORRECTIONS_OFFICER)
+/datum/loadout_item/suit/vested_jacket
+	name = "Vested Security Jacket"
+	item_path = /obj/item/clothing/suit/armor/vest/vested_jacket
+	restricted_roles = list(ALL_JOBS_SEC)
 	group = "Job-Locked"
 
 /datum/loadout_item/suit/security_wintercoat
