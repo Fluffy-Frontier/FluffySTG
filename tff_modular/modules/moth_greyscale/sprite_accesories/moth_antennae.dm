@@ -1,6 +1,5 @@
 /datum/sprite_accessory/moth_antennae/greyscale
 	icon = 'tff_modular/modules/moth_greyscale/sprites/moth_antennae.dmi'
-
 	color_src = USE_MATRIXED_COLORS
 
 /datum/sprite_accessory/moth_antennae/greyscale/browngrey
