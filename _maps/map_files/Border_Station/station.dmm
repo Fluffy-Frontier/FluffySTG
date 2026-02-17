@@ -7479,7 +7479,12 @@
 /area/station/hallway/secondary/exit/departure_lounge)
 "cdR" = (
 /obj/structure/table/reinforced,
-/obj/item/restraints/handcuffs,
+/obj/item/inspector{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/inspector,
+/obj/item/inspector,
 /turf/open/floor/iron/dark,
 /area/station/security/office)
 "cdT" = (
@@ -9413,10 +9418,8 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/processor{
-	pixel_y = 6
-	},
-/obj/structure/table,
+/obj/machinery/deepfryer,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/iron/white/smooth_edge{
 	dir = 1
 	},
@@ -11377,6 +11380,9 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/machinery/processor{
+	pixel_y = 6
+	},
 /turf/open/floor/iron/white/smooth_edge{
 	dir = 4
 	},
@@ -48671,6 +48677,18 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
+/obj/item/reagent_containers/cup/beaker{
+	pixel_x = -8;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/cup/beaker{
+	pixel_x = -8;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/cup/beaker{
+	pixel_x = -8;
+	pixel_y = 4
+	},
 /turf/open/floor/iron/white,
 /area/station/service/kitchen)
 "oby" = (
@@ -66596,10 +66614,6 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/processor{
-	pixel_y = 6
-	},
-/obj/structure/table,
 /turf/open/floor/iron/white/smooth_corner,
 /area/station/service/kitchen)
 "sSc" = (
@@ -72061,11 +72075,8 @@
 /obj/effect/turf_decal/tile/dark/opposingcorners{
 	dir = 1
 	},
-/obj/structure/table,
-/obj/machinery/reagentgrinder{
-	pixel_y = 12
-	},
 /obj/effect/turf_decal/bot,
+/obj/machinery/smartfridge/drying,
 /turf/open/floor/iron/white,
 /area/station/service/kitchen)
 "uwy" = (
@@ -82734,6 +82745,7 @@
 /obj/effect/turf_decal/bot,
 /obj/machinery/digital_clock/directional/south,
 /obj/machinery/light/cold/directional/south,
+/obj/item/inspector,
 /turf/open/floor/iron/dark/smooth_corner{
 	dir = 4
 	},
@@ -83499,21 +83511,17 @@
 /turf/open/floor/wood,
 /area/station/service/library)
 "xTb" = (
+/obj/effect/turf_decal/tile/dark/opposingcorners{
+	dir = 1
+	},
 /obj/structure/table,
-/obj/item/reagent_containers/cup/beaker{
-	pixel_x = -8;
+/obj/machinery/reagentgrinder{
 	pixel_y = 12
 	},
-/obj/item/reagent_containers/cup/beaker{
-	pixel_x = -8;
-	pixel_y = 4
-	},
+/obj/effect/turf_decal/bot,
 /obj/item/reagent_containers/condiment/enzyme{
 	pixel_x = 2;
 	pixel_y = 5
-	},
-/obj/effect/turf_decal/tile/dark/opposingcorners{
-	dir = 1
 	},
 /turf/open/floor/iron/white,
 /area/station/service/kitchen)
