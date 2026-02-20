@@ -107,7 +107,12 @@
 	. = ..()
 	set_light(light_range, light_power, LIGHT_COLOR_FLARE)
 
+
+/obj/effect/mob_spawn/ghost_role/flesh_spider/allow_spawn(mob/user, silent)
+	. = ..()
+
 /obj/effect/mob_spawn/ghost_role/flesh_spider/create_from_ghost(mob/dead/observer/user, use_loadout)
+	. = ..()
 	icon_state = "flesh_pod_open"
 	for(var/turf/blood_turf in view(src, 2))
 		new /obj/effect/decal/cleanable/blood(blood_turf)
@@ -115,7 +120,6 @@
 			mob_in_turf.visible_message(span_danger("[mob_in_turf] is splattered with blood!"), span_userdanger("You're splattered with blood!"))
 			mob_in_turf.add_blood_DNA(list("Non-human DNA" = random_human_blood_type()))
 			playsound(mob_in_turf, 'sound/effects/splat.ogg', 50, TRUE, extrarange = SILENCED_SOUND_EXTRARANGE)
-	return ..()
 
 /mob/living/basic/corrupted_arachnid
 	name = "Corrupted arachnid"
@@ -184,3 +188,6 @@
 			mob_in_turf.add_blood_DNA(list("Non-human DNA" = random_human_blood_type()))
 			playsound(mob_in_turf, 'sound/effects/splat.ogg', 50, TRUE, extrarange = SILENCED_SOUND_EXTRARANGE)
 	return ..()
+
+
+

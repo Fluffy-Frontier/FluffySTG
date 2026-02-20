@@ -47,7 +47,6 @@ SUBSYSTEM_DEF(round_events)
 	if(active_event.disable_dynamic)
 		SSdynamic.can_fire = FALSE
 		SSdynamic.wait = 0
-
 	if(active_event.lock_respawn)
 		CONFIG_SET(flag/allow_respawn, RESPAWN_FLAG_DISABLED)
 		message_admins(span_adminnotice("the current active event has disabled respawning for this round."))
