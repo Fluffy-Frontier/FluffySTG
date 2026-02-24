@@ -20540,11 +20540,6 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 4
 	},
-/obj/machinery/button/door/directional/east{
-	id = "atmoshfr";
-	name = "Radiation Shutters Control";
-	req_access = list("engineering")
-	},
 /obj/machinery/light/directional/east,
 /turf/open/floor/iron/smooth_edge{
 	dir = 8
@@ -39902,6 +39897,11 @@
 	},
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
+"jbF" = (
+/obj/effect/turf_decal/bot,
+/obj/structure/closet/emcloset,
+/turf/open/floor/iron/dark/textured,
+/area/station/engineering/atmos/project)
 "jbJ" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Cargo Bay Maintenance"
@@ -43429,8 +43429,8 @@
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/atmos/hfr_room)
 "kSE" = (
-/obj/structure/closet/secure_closet/atmospherics,
 /obj/effect/turf_decal/bot,
+/obj/structure/closet/firecloset,
 /turf/open/floor/iron/dark/textured,
 /area/station/engineering/atmos/project)
 "kSH" = (
@@ -104917,7 +104917,7 @@ wAM
 bsV
 wqi
 fAV
-kSE
+jbF
 kSE
 bLK
 chg
