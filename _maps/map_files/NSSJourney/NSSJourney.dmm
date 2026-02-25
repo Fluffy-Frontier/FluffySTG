@@ -53641,6 +53641,11 @@
 /obj/effect/landmark/start/lawyer,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
+"qIB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/iron/dark/pattern_6,
+/area/station/science/explab)
 "qJj" = (
 /obj/effect/turf_decal/tile/dark/opposingcorners{
 	dir = 1
@@ -64994,7 +64999,7 @@
 	pixel_x = 8;
 	pixel_y = 10
 	},
-/turf/open/space/basic,
+/turf/open/floor/iron/dark/smooth_large,
 /area/station/science/cytology)
 "wSS" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -116110,7 +116115,7 @@ aft
 ncD
 mwK
 hps
-fyH
+qIB
 mMO
 pwb
 hhK
