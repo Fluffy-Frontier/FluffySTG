@@ -129,6 +129,18 @@
 	name = "White Cat Plushie"
 	item_path = /obj/item/toy/plush/nova/cat/white
 
+/datum/loadout_item/toys/plush/fkinbnuuy
+	name = "Heckin Bnuuy"
+	item_path = /obj/item/toy/plush/nova/fkinbnuuy
+
+/datum/loadout_item/toys/plush/funniyellowrock
+	name = "Squishy Yellow Rock"
+	item_path = /obj/item/toy/plush/nova/funniyellowrock
+
+/datum/loadout_item/toys/plush/expie
+	name = "Experiment Plushie"
+	item_path = /obj/item/toy/plush/nova/expie
+
 /*
 *	DONATOR
 */
