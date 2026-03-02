@@ -60,6 +60,8 @@
 
 @include meta.load-css('~highlight.js/scss/a11y-dark.scss');
 
+@include meta.load-css('./interfaces/NecromorphMarker.scss');
+
 // NT Theme
 .Layout__content {
   background-image: url('tgui-core/assets/bg-nanotrasen.svg');
