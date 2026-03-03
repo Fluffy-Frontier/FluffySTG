@@ -175,19 +175,19 @@
 	icon = 'tff_modular/modules/deadspace/asdg/structures.dmi'
 
 /obj/structure/window/fulltile
-	icon = 'tff_modular/modules/deadspace/asdg/smooth_structures/window.dmi'
+	icon = 'tff_modular/modules/deadspace/asdg/window.dmi'
 
 /obj/structure/window/reinforced/fulltile
-	icon = 'tff_modular/modules/deadspace/asdg/smooth_structures/reinforced_window.dmi'
+	icon = 'tff_modular/modules/deadspace/asdg/reinforced_window.dmi'
 
 /obj/structure/window/plasma/fulltile
-	icon = 'tff_modular/modules/deadspace/asdg/smooth_structures/plasma_window.dmi'
+	icon = 'tff_modular/modules/deadspace/asdg/plasma_window.dmi'
 
 /obj/structure/window/plasma/reinforced/fulltile
-	icon = 'tff_modular/modules/deadspace/asdg/smooth_structures/rplasma_window.dmi'
+	icon = 'tff_modular/modules/deadspace/asdg/rplasma_window.dmi'
 
 /obj/structure/window/reinforced/tinted/fulltile
-	icon = 'tff_modular/modules/deadspace/asdg/smooth_structures/tinted_window.dmi'
+	icon = 'tff_modular/modules/deadspace/asdg/tinted_window.dmi'
 
 
 //statue
