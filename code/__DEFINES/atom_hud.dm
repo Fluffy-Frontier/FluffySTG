@@ -57,6 +57,8 @@
 #define DNR_HUD "27"
 // NOVA EDIT ADDITION END
 
+#define DATA_HUD_MARKER 28
+
 //by default everything in the hud_list of an atom is an image
 //a value in hud_list with one of these will change that behavior
 #define HUD_LIST_LIST 1

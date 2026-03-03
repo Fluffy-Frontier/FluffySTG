@@ -161,6 +161,8 @@
 #define BODYSHAPE_ALT_FACEWEAR_LAYER (1<<12)
 // NOVA EDIT ADDITION END
 
+#define BODYTYPE_NECROMORPH (1<<13)
+
 // Bodyshape defines for how things can be worn, i.e., what "shape" the mob sprite is
 ///The limb fits the human mold. This is not meant to be literal, if the sprite "fits" on a human, it is "humanoid", regardless of origin.
 #define BODYSHAPE_HUMANOID (1<<0)

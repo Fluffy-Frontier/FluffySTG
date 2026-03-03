@@ -12,6 +12,8 @@
 // NOVA EDIT End
 #define MUTE_ALL ALL
 
+#define MUTE_SIGNAL_WHISPER (1<<7)
+
 //Some constants for DB_Ban
 #define BANTYPE_PERMA 1
 #define BANTYPE_TEMP 2

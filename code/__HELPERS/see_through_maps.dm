@@ -15,6 +15,8 @@
 ///Seethrough component for the ratvar wreck, in shape of the ratvar wreck
 #define SEE_THROUGH_MAP_RATVAR_WRECK "ratvar"
 
+#define SEE_THROUGH_MAP_MARKER "marker"
+
 //NOVA EDIT ADDITION START - cars_props
 
 ///Two rows of four wide, but offset one tile to the left, like shipping containers
@@ -102,9 +104,17 @@ GLOBAL_LIST_INIT(see_through_maps, list(
 	SEE_THROUGH_MAP_LONG_TRUCK_HALF = list(
 		list(0, 1, 0), list(1, 1, 0),
 		list(0, 0, 0), list(1, 0, 0)
-	)
+	),
 
 	//NOVA EDIT ADDITION END
+
+	SEE_THROUGH_MAP_MARKER = list(
+		list(-1, 4, 0), list(0, 4, 0), list(1, 4, 0),
+		list(-1, 3, 0), list(0, 3, 0), list(1, 3, 0),
+		list(-1, 2, 0), list(0, 2, 0), list(1, 2, 0),
+		list(-1, 1, 0), list(0, 1, 0), list(1, 1, 0)
+	),
+
 ))
 
 

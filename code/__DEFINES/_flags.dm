@@ -319,6 +319,8 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 /// Used to prevent important slowdowns from being abused by drugs like kronkaine
 #define IGNORE_SLOWDOWNS (1<<4)
 
+#define DO_PUBLIC (1<<5)
+
 // Spacevine-related flags
 /// Is the spacevine / flower bud heat resistant
 #define SPACEVINE_HEAT_RESISTANT (1 << 0)

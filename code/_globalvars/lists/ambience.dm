@@ -211,4 +211,5 @@ GLOBAL_LIST_INIT(ambience_assoc,list(
 	AMBIENCE_SPOOKY = GLOB.spooky_ambience,
 	AMBIENCE_MUSHROOM = GLOB.mushroom_ambience, // NOVA EDIT - Mushroom caves!
 	AMBIENCE_FOREST = GLOB.forest_ambience, // NOVA EDIT - Forest ambience
+	AMBIENCE_HORROR = GLOB.horror_ambience,
 ))
