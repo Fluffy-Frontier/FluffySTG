@@ -9,9 +9,11 @@
 		if(initial(class.implemented))
 			necro_classes[class] = new class()
 
+	addtimer(CALLBACK(src, PROC_REF(spooky_text)), rand(2, 4) MINUTES)
+
 	necro_spawn_atoms += src
 
-	RegisterSignal(src, COMSIG_CLICK_ALT, PROC_REF(on_alt_click))
+	RegisterSignal(src, COMSIG_CLICK_ALT_SECONDARY, PROC_REF(on_alt_click))
 
 	AddComponent(/datum/component/seethrough, SEE_THROUGH_MAP_MARKER)
 	soundloop = new(src, FALSE)
@@ -33,8 +35,10 @@
 	marker_signals = null
 	necromorphs = null
 	QDEL_NULL(soundloop)
+	QDEL_LIST(spooky_texts)
+	QDEL_LIST(really_scary_texts)
 	send_to_playing_players(span_colossus("You feel an unexpected silence. The voices stopped. Your head is no longer hurts."))
-	UnregisterSignal(src, COMSIG_CLICK_ALT)
+	UnregisterSignal(src, COMSIG_CLICK_ALT_SECONDARY)
 	return ..()
 
 /obj/structure/marker/emp_act(severity)
@@ -100,6 +104,7 @@
 /obj/structure/marker/proc/activate()
 	if(active)
 		return
+	UnregisterSignal(src, COMSIG_CLICK_ALT_SECONDARY)
 	active = TRUE
 	change_marker_biomass(250) //Marker given a biomass injection, enough for a small team and some growing
 	change_signal_biomass(50) //Signals given biomass injection for general spreading
@@ -246,15 +251,24 @@
 /obj/structure/marker/proc/on_alt_click(datum/source, mob/user)
 	SIGNAL_HANDLER
 
-	if(!isobserver(user))
-		return
 	if(!check_rights(R_ADMIN) || !check_rights(R_DEBUG))
 		return
 	if(active)
+		UnregisterSignal(src, COMSIG_CLICK_ALT_SECONDARY)
 		to_chat(user, "Маркер уже запущен!")
-		return
-	if(tgui_input_list(user, "Ты готова запустить маркер и позволить некроморфам спавниться?", "Важный выбор, дантех", list("Да", "Нет")) != "Да")
 		return
 	activate()
 
-	UnregisterSignal(src, COMSIG_CLICK_ALT)
+/obj/structure/marker/proc/spooky_text()
+	if(QDELETED(src))
+		return
+
+	var/area/myarea = get_area(src)
+
+	for(var/mob/living/carbon/player as anything in myarea)
+		if(!active)
+			to_chat(player, span_red(pick(spooky_texts)))
+		else
+			to_chat(player, span_cult_bold(pick(really_scary_texts)))
+
+	addtimer(CALLBACK(src, PROC_REF(spooky_text)), rand(2, 4) MINUTES)
