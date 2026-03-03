@@ -18,6 +18,14 @@
 	icon = 'tff_modular/modules/deadspace/asdg/ausflora.dmi'
 	icon_state = "rdflowers_1"
 
+//Healing Roses
+/obj/effect/decal/eve_moss
+	name = "moss"
+	desc = ""
+	icon = 'tff_modular/modules/deadspace/asdg/tiles/lava_moss.dmi'
+	icon_state = "moss"
+
+
 
 /area/station/crazy
 	name = "horror"
@@ -26,21 +34,61 @@
 	icon = 'icons/area/areas_station.dmi'
 	icon_state = "graveyard"
 
+
+//floors
+
 /turf/open/floor/crimson
 	name = "crimson floor"
 	icon = 'tff_modular/modules/deadspace/asdg/tiles/floors/crimsongrass.dmi'
 	icon_state = "crimson-31"
 
+/turf/open/indestructible/flesh
+	name = "flesh"
+	icon = 'tff_modular/modules/deadspace/asdg/tiles/floors.dmi'
+	icon_state = "flesh0"
 
+/turf/open/indestructible/flesh/a
+	icon_state = "flesh1"
 
+/turf/open/indestructible/flesh/b
+	icon_state = "flesh2"
 
+/turf/open/indestructible/flesh/c
+	icon_state = "flesh3"
 
+/turf/open/indestructible/basalt
+	name = "basalt"
+	icon = 'tff_modular/modules/deadspace/asdg/tiles/floors/basalt.dmi'
+	icon_state = "basalt-255"
+	pixel_x = -19
+	pixel_y = -19
 
+/turf/open/indestructible/lavagrass
+	name = "flesh"
+	icon = 'tff_modular/modules/deadspace/asdg/tiles/floors/lava_grass_red.dmi'
+	icon_state = "grass-159"
+	pixel_x = -9
+	pixel_y = -9
 
+/turf/open/indestructible/dirt
+	name = "dirt"
+	icon = 'tff_modular/modules/deadspace/asdg/tiles/floors/dirt.dmi'
+	icon_state = "dirt"
+	pixel_x = -2
+	pixel_y = -2
 
+/turf/open/indestructible/darkdirt
+	name = "dark dirt"
+	icon = 'tff_modular/modules/deadspace/asdg/tiles/floors/darkdirt.dmi'
+	icon_state = "darkdirt"
+	pixel_x = -2
+	pixel_y = -2
 
 //doors
 
+
+/obj/machinery/door/airlock
+	icon = 'tff_modular/modules/deadspace/asdg/doors/airlocks/station/public.dmi'
 
 /obj/machinery/door/airlock/command
 	icon = 'tff_modular/modules/deadspace/asdg/doors/airlocks/station/command.dmi'
@@ -127,19 +175,19 @@
 	icon = 'tff_modular/modules/deadspace/asdg/structures.dmi'
 
 /obj/structure/window/fulltile
-	icon = 'icons/obj/smooth_structures/window.dmi'
+	icon = 'tff_modular/modules/deadspace/asdg/smooth_structures/window.dmi'
 
 /obj/structure/window/reinforced/fulltile
-	icon = 'icons/obj/smooth_structures/reinforced_window.dmi'
+	icon = 'tff_modular/modules/deadspace/asdg/smooth_structures/reinforced_window.dmi'
 
 /obj/structure/window/plasma/fulltile
-	icon = 'icons/obj/smooth_structures/plasma_window.dmi'
+	icon = 'tff_modular/modules/deadspace/asdg/smooth_structures/plasma_window.dmi'
 
 /obj/structure/window/plasma/reinforced/fulltile
-	icon = 'icons/obj/smooth_structures/rplasma_window.dmi'
+	icon = 'tff_modular/modules/deadspace/asdg/smooth_structures/rplasma_window.dmi'
 
 /obj/structure/window/reinforced/tinted/fulltile
-	icon = 'icons/obj/smooth_structures/tinted_window.dmi'
+	icon = 'tff_modular/modules/deadspace/asdg/smooth_structures/tinted_window.dmi'
 
 
 //statue
@@ -150,3 +198,35 @@
 	icon_state = "syndproto"
 	density = FALSE
 	anchored = TRUE
+
+/obj/structure/chair/sofa/brown
+	icon = 'tff_modular/modules/deadspace/asdg/sofa.dmi'
+
+/obj/structure/chair/sofa/brown/middle
+	icon_state = "brown_oldsofa_middle"
+
+/obj/structure/chair/sofa/brown/left
+	icon_state = "brown_oldsofa_end_left"
+
+/obj/structure/chair/sofa/brown/right
+	icon_state = "brown_oldsofa_end_right"
+
+/obj/structure/chair/sofa/brown/corner
+	icon_state = "brown_oldsofa_corner"
+
+
+/obj/structure/chair/sofa/reddy
+	icon = 'tff_modular/modules/deadspace/asdg/sofa.dmi'
+
+/obj/structure/chair/sofa/reddy/middle
+	icon_state = "red_oldsofa_middle"
+
+/obj/structure/chair/sofa/reddy/left
+	icon_state = "red_oldsofa_end_left"
+
+/obj/structure/chair/sofa/reddy/right
+	icon_state = "red_oldsofa_end_right"
+
+/obj/structure/chair/sofa/reddy/corner
+	icon_state = "red_oldsofa_corner"
+
