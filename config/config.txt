@@ -41,7 +41,7 @@ STATIONNAME Space Station 13
 #MAX_HUB_POP 100
 
 ## Lobby time: This is the amount of time between rounds that players have to setup their characters and be ready.
-LOBBY_COUNTDOWN 120
+LOBBY_COUNTDOWN 420
 
 ## Round End Time: This is the amount of time after the round ends that players have to murder death kill each other.
 ROUND_END_COUNTDOWN 90
@@ -148,7 +148,7 @@ VOTE_PERIOD 600
 ## 0 = Cannot respawn (default)
 ## 1 = Can respawn
 ## 2 = Can respawn if choosing a different character
-ALLOW_RESPAWN 0
+ALLOW_RESPAWN 2
 
 ## Respawn delay (deciseconds), which doesn't allow to return to lobby
 RESPAWN_DELAY 0
@@ -206,13 +206,13 @@ IPINTEL_REJECT_BAD
 # FORUMURL http://tgstation13.org/phpBB/index.php
 
 ## Wiki address
-# WIKIURL https://wiki.fluffy-frontier.ru/Main_Page
+ WIKIURL https://wiki.fluffy-frontier.ru/Main_Page
 
 ## Rules address
-# RULESURL https://fluffy-frontier.ru/rules
+ RULESURL https://fluffy-frontier.ru/rules
 
 ## Github address
-# GITHUBURL https://github.com/Fluffy-Frontier/FluffySTG
+ GITHUBURL https://github.com/Fluffy-Frontier/FluffySTG
 
 ## Discord bot command prefix, if the discord bot is used
 # DISCORDBOTCOMMANDPREFIX ?
