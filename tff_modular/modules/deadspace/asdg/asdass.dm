@@ -46,20 +46,25 @@
 	icon_state = "grass-31"
 	pixel_x = -19
 	pixel_y = -19
+	baseturfs = /turf/open/indestructible/meat/crimson
 
 /turf/open/indestructible/meat/flesh
 	name = "flesh"
 	icon = 'tff_modular/modules/deadspace/asdg/tiles/floors.dmi'
 	icon_state = "flesh0"
+	baseturfs = /turf/open/indestructible/meat/flesh
 
 /turf/open/indestructible/meat/flesh/a
 	icon_state = "flesh1"
+	baseturfs = /turf/open/indestructible/meat/flesh/a
 
 /turf/open/indestructible/meat/flesh/b
 	icon_state = "flesh2"
+	baseturfs = /turf/open/indestructible/meat/flesh/b
 
 /turf/open/indestructible/meat/flesh/c
 	icon_state = "flesh3"
+	baseturfs = /turf/open/indestructible/meat/flesh/c
 
 /turf/open/indestructible/meat/basalt
 	name = "basalt"
@@ -67,6 +72,7 @@
 	icon_state = "basalt-255"
 	pixel_x = -19
 	pixel_y = -19
+	baseturfs = /turf/open/indestructible/meat/basalt
 
 /turf/open/indestructible/meat/lavagrass
 	name = "flesh"
@@ -74,6 +80,7 @@
 	icon_state = "grass-159"
 	pixel_x = -9
 	pixel_y = -9
+	baseturfs = /turf/open/indestructible/meat/lavagrass
 
 /turf/open/indestructible/meat/dirt
 	name = "dirt"
@@ -81,6 +88,7 @@
 	icon_state = "dirt"
 	pixel_x = -2
 	pixel_y = -2
+	baseturfs = /turf/open/indestructible/meat/dirt
 
 /turf/open/indestructible/meat/darkdirt
 	name = "dark dirt"
@@ -88,6 +96,7 @@
 	icon_state = "darkdirt"
 	pixel_x = -2
 	pixel_y = -2
+	baseturfs = /turf/open/indestructible/meat/darkdirt
 
 //doors
 

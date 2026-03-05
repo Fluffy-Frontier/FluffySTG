@@ -122,26 +122,6 @@
 
 	to_chat(world, span_red("Что-то раздирает всё твоё тело изнутри и пытается проникнуть в каждый уголок твоего разума. Боль. Жгучая, невыносимая. Точно такая же, какую ощущает что-то там, вдалике. Оно хотело тишины. Оно спало. Теперь уже поздно. Даже молитвы вам не помогут."), confidential = TRUE)
 
-	var/sound/announce = new
-
-	announce.file = sound('tff_modular/modules/deadspace/asdg/announce.mp3')
-	announce.priority = 250
-	announce.channel = CHANNEL_ADMIN
-	announce.frequency = 1
-	announce.wait = 1
-	announce.repeat = FALSE
-	announce.status = SOUND_STREAM
-	announce.volume = 50
-
-
-	for(var/mob/M in GLOB.player_list)
-		var/volume_modifier = M.client.prefs.read_preference(/datum/preference/numeric/volume/sound_midi)
-		if(volume_modifier > 0)
-			announce.volume = 50 * M.client.admin_music_volume * (volume_modifier/100)
-			SEND_SOUND(M, announce)
-			announce.volume = 50
-
-
 
 /obj/structure/marker/proc/announce_activation()
 	priority_announce("Station command. Our long-range scanning equipment has detected a strange biological signature on your station. We suspect that this could be a biological threat of an unknown level. Your station has been quarantined. We demand immediate detection of the threat and notification of the Central Command.", "Central Command Report", 'tff_modular/modules/deadspace/sound/effects/biohazard_alarm.ogg', has_important_message = TRUE, color_override = "green")
