@@ -9,7 +9,7 @@
 		if(initial(class.implemented))
 			necro_classes[class] = new class()
 
-	addtimer(CALLBACK(src, PROC_REF(spooky_text)), rand(2, 4) MINUTES)
+	addtimer(CALLBACK(src, PROC_REF(spooky_text)), 1 MINUTES)
 
 	necro_spawn_atoms += src
 
@@ -34,9 +34,7 @@
 		necro.dust()
 	marker_signals = null
 	necromorphs = null
-	qdel(soundloop)
-	qdel(spooky_texts)
-	QDEL_LIST(really_scary_texts)
+	QDEL_NULL(soundloop)
 	send_to_playing_players(span_colossus("You feel an unexpected silence. The voices stopped. Your head is no longer hurts."))
 	UnregisterSignal(src, COMSIG_CLICK_ALT_SECONDARY)
 	return ..()
@@ -271,4 +269,4 @@
 		else
 			to_chat(player, span_cult_bold(pick(really_scary_texts)))
 
-	addtimer(CALLBACK(src, PROC_REF(spooky_text)), rand(2, 4) MINUTES)
+	addtimer(CALLBACK(src, PROC_REF(spooky_text)), 1 MINUTES)

@@ -37,49 +37,52 @@
 
 //floors
 
-/turf/open/floor/crimson
+/turf/open/indestructible/necropolis/normal
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+
+/turf/open/indestructible/meat/crimson
 	name = "crimson floor"
 	icon = 'tff_modular/modules/deadspace/asdg/tiles/floors/crimsongrass.dmi'
 	icon_state = "grass-31"
 	pixel_x = -19
 	pixel_y = -19
 
-/turf/open/indestructible/flesh
+/turf/open/indestructible/meat/flesh
 	name = "flesh"
 	icon = 'tff_modular/modules/deadspace/asdg/tiles/floors.dmi'
 	icon_state = "flesh0"
 
-/turf/open/indestructible/flesh/a
+/turf/open/indestructible/meat/flesh/a
 	icon_state = "flesh1"
 
-/turf/open/indestructible/flesh/b
+/turf/open/indestructible/meat/flesh/b
 	icon_state = "flesh2"
 
-/turf/open/indestructible/flesh/c
+/turf/open/indestructible/meat/flesh/c
 	icon_state = "flesh3"
 
-/turf/open/indestructible/basalt
+/turf/open/indestructible/meat/basalt
 	name = "basalt"
 	icon = 'tff_modular/modules/deadspace/asdg/tiles/floors/basalt.dmi'
 	icon_state = "basalt-255"
 	pixel_x = -19
 	pixel_y = -19
 
-/turf/open/indestructible/lavagrass
+/turf/open/indestructible/meat/lavagrass
 	name = "flesh"
 	icon = 'tff_modular/modules/deadspace/asdg/tiles/floors/lava_grass_red.dmi'
 	icon_state = "grass-159"
 	pixel_x = -9
 	pixel_y = -9
 
-/turf/open/indestructible/dirt
+/turf/open/indestructible/meat/dirt
 	name = "dirt"
 	icon = 'tff_modular/modules/deadspace/asdg/tiles/floors/dirt.dmi'
 	icon_state = "dirt"
 	pixel_x = -2
 	pixel_y = -2
 
-/turf/open/indestructible/darkdirt
+/turf/open/indestructible/meat/darkdirt
 	name = "dark dirt"
 	icon = 'tff_modular/modules/deadspace/asdg/tiles/floors/darkdirt.dmi'
 	icon_state = "darkdirt"
