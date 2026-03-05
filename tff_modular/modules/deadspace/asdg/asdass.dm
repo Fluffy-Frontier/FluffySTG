@@ -41,6 +41,8 @@
 	name = "crimson floor"
 	icon = 'tff_modular/modules/deadspace/asdg/tiles/floors/crimsongrass.dmi'
 	icon_state = "grass-31"
+	pixel_x = -19
+	pixel_y = -19
 
 /turf/open/indestructible/flesh
 	name = "flesh"
