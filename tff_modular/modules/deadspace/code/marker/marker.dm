@@ -34,8 +34,8 @@
 		necro.dust()
 	marker_signals = null
 	necromorphs = null
-	QDEL_NULL(soundloop)
-	QDEL_LIST(spooky_texts)
+	qdel(soundloop)
+	qdel(spooky_texts)
 	QDEL_LIST(really_scary_texts)
 	send_to_playing_players(span_colossus("You feel an unexpected silence. The voices stopped. Your head is no longer hurts."))
 	UnregisterSignal(src, COMSIG_CLICK_ALT_SECONDARY)

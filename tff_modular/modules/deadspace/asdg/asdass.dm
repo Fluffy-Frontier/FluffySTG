@@ -40,7 +40,7 @@
 /turf/open/floor/crimson
 	name = "crimson floor"
 	icon = 'tff_modular/modules/deadspace/asdg/tiles/floors/crimsongrass.dmi'
-	icon_state = "crimson-31"
+	icon_state = "grass-31"
 
 /turf/open/indestructible/flesh
 	name = "flesh"
