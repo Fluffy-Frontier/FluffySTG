@@ -201,6 +201,8 @@
 	icon = 'tff_modular/modules/deadspace/asdg/rplasma_window.dmi'
 
 /obj/structure/window/reinforced/tinted/fulltile
+	icon_state = "tinted_window-0"
+	base_icon_state = "tinted_window"
 	icon = 'tff_modular/modules/deadspace/asdg/tinted_window.dmi'
 
 
