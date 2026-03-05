@@ -195,10 +195,14 @@
 	icon = 'tff_modular/modules/deadspace/asdg/reinforced_window.dmi'
 
 /obj/structure/window/plasma/fulltile
+	icon_state = "plasma_window-0"
+	base_icon_state = "plasma_window"
 	icon = 'tff_modular/modules/deadspace/asdg/plasma_window.dmi'
 
 /obj/structure/window/plasma/reinforced/fulltile
 	icon = 'tff_modular/modules/deadspace/asdg/rplasma_window.dmi'
+	icon_state = "rplasma_window-0"
+	base_icon_state = "rplasma_window"
 
 /obj/structure/window/reinforced/tinted/fulltile
 	icon_state = "tinted_window-0"
