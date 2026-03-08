@@ -292,17 +292,17 @@
 	if(bloodsucker_blood_volume < frenzy_enter_threshold() && !frenzied)
 		owner.current.apply_status_effect(/datum/status_effect/frenzy)
 	else if(bloodsucker_blood_volume < BLOOD_VOLUME_BAD)
-		additional_regen = 0.1
-	else if(bloodsucker_blood_volume < BLOOD_VOLUME_OKAY)
 		additional_regen = 0.2
-	else if(bloodsucker_blood_volume < BLOOD_VOLUME_NORMAL)
+	else if(bloodsucker_blood_volume < BLOOD_VOLUME_OKAY)
 		additional_regen = 0.3
-	else if(bloodsucker_blood_volume < BS_BLOOD_VOLUME_MAX_REGEN)
+	else if(bloodsucker_blood_volume < BLOOD_VOLUME_NORMAL)
 		additional_regen = 0.4
-	else if(bloodsucker_blood_volume < max_blood_volume)
+	else if(bloodsucker_blood_volume < BS_BLOOD_VOLUME_MAX_REGEN)
 		additional_regen = 0.5
+	else if(bloodsucker_blood_volume < max_blood_volume)
+		additional_regen = 0.6
 	else if(bloodsucker_blood_volume > max_blood_volume)
-		additional_regen = 1 + round((blood_over_cap / 1000) * 2, 0.1)
+		additional_regen = 1.35 + round((blood_over_cap / 1000) * 2, 0.1)
 		AdjustBloodVolume(-1 - blood_over_cap / 100)
 
 /// Makes your blood_volume look like your bloodsucker blood, unless you're Masquerading.

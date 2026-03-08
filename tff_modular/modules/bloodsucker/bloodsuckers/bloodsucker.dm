@@ -59,7 +59,7 @@
 	VAR_PRIVATE/bloodsucker_level_unspent = 1
 	var/additional_regen
 	var/blood_over_cap = 0
-	var/bloodsucker_regen_rate = 0.3
+	var/bloodsucker_regen_rate = 0.4
 
 	// Used for Bloodsucker Objectives
 	var/area/bloodsucker_haven_area

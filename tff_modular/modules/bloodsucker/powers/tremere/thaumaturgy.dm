@@ -136,8 +136,8 @@
 
 /datum/action/cooldown/bloodsucker/targeted/tremere/thaumaturgy/proc/get_blood_bolt_damage()
 	if(level_current >= THAUMATURGY_EXTRA_DAMAGE_LEVEL)
-		return 40
-	return 20
+		return 54
+	return 27
 
 /datum/action/cooldown/bloodsucker/targeted/tremere/thaumaturgy/proc/get_max_charges()
 	return level_current * 2

@@ -23,7 +23,7 @@
 	var/mob/living/carbon/carbon_owner = bloodsuckerdatum.owner.current
 	if(istype(carbon_owner))
 		carbon_owner.gain_trauma(/datum/brain_trauma/mild/hallucinations, TRAUMA_RESILIENCE_ABSOLUTE)
-		carbon_owner.gain_trauma(/datum/brain_trauma/special/bluespace_prophet/phobetor, TRAUMA_RESILIENCE_ABSOLUTE)
+		carbon_owner.gain_trauma(/datum/brain_trauma/special/bluespace_prophet/phobetor	, TRAUMA_RESILIENCE_ABSOLUTE)
 	owner_datum.owner.current.update_sight()
 
 	bloodsuckerdatum.owner.current.playsound_local(get_turf(bloodsuckerdatum.owner.current), 'sound/music/antag/creepalert.ogg', 80, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
