@@ -113,7 +113,7 @@
 	var/bruteLoss = get_brute_loss()
 	var/bruteheal = min(bruteLoss, actual_regen) // BRUTE: Always Heal
 	var/fireLoss = get_fire_loss()
-	var/fireheal = min(brute_loss, actual_regen * 0.75)
+	var/fireheal = min(fireLoss, actual_regen * 0.75)
 	var/amInCoffin = is_valid_coffin()
 	if (blood_over_cap > 0)
 		costMult += round(blood_over_cap / 1000, 0.1) // effectively 1 (normal) + 0.1 for every 100 blood you are over cap
