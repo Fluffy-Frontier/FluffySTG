@@ -4,3 +4,9 @@
 #define TRAIT_XENO_ABILITY_GIVEN "xeno_ability_given"
 /// Determines if something can receive healing from a xeno
 #define TRAIT_XENO_HEAL_AURA "trait_xeno_heal_aura"
+
+#define GHOUL_SCAN_MIN_DISTANCE 5
+#define GHOUL_SCAN_MAX_DISTANCE 500
+/// 2s update time.
+#define GHOUL_SCAN_PING_TIME 20
+#define TRAIT_TORPOR "torpor"
