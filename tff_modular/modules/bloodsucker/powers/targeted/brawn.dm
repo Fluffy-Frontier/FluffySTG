@@ -7,7 +7,7 @@
 	button_icon_state = "power_strength"
 	purchase_flags = BLOODSUCKER_CAN_BUY|GHOUL_CAN_BUY
 	bloodcost = 10
-	cooldown_time = 12 SECONDS
+	cooldown_time = 8 SECONDS
 	target_range = 1
 	prefire_message = "Select a target."
 
@@ -198,7 +198,7 @@
 	return GetPunchDamage(user_active_arm.unarmed_damage_high)
 
 /datum/action/cooldown/bloodsucker/targeted/brawn/proc/GetPunchDamage(punch_damage)
-	return punch_damage * 1.25 + 2
+	return punch_damage * 2 + 5
 
 /datum/action/cooldown/bloodsucker/targeted/brawn/CheckValidTarget(atom/target_atom)
 	. = ..()

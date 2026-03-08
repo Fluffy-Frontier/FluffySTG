@@ -110,10 +110,9 @@ SUBSYSTEM_DEF(sol)
 	else
 		if(total_brute <= 10)
 			torpor_end()
-	//monkestation edit
 	if(COOLDOWN_FINISHED(src, bloodsucker_torpor_max_time))
 		torpor_end() // YOUR TAKING TOO LONG
-	//monkestation end
+
 /datum/antagonist/bloodsucker/proc/is_in_torpor()
 	if(QDELETED(owner.current))
 		return FALSE

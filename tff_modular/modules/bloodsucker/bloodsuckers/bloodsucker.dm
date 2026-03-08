@@ -235,6 +235,7 @@
 	// Assign Powers
 	give_starting_powers()
 	assign_starting_stats()
+	RegisterSignal(SSsol, COMSIG_SOL_RANKUP_BLOODSUCKERS, PROC_REF(sol_rank_up))
 
 /// Called by the remove_antag_datum() and remove_all_antag_datums() mind procs for the antag datum to handle its own removal and deletion.
 /datum/antagonist/bloodsucker/on_removal()
@@ -426,10 +427,10 @@
 		var/obj/item/bodypart/user_left_arm = user.get_bodypart(BODY_ZONE_L_ARM)
 		var/obj/item/bodypart/user_right_arm = user.get_bodypart(BODY_ZONE_R_ARM)
 		user.dna?.remove_all_mutations()
-		user_left_arm.unarmed_damage_low += 1 //lowest possible punch damage - 6 now
-		user_left_arm.unarmed_damage_high += 1 //highest possible punch damage - 11
-		user_right_arm.unarmed_damage_low += 1 //lowest possible punch damage - 6
-		user_right_arm.unarmed_damage_high += 1 //highest possible punch damage - 11
+		user_left_arm.unarmed_damage_low += 2 //lowest possible punch damage - 6 now
+		user_left_arm.unarmed_damage_high += 2 //highest possible punch damage - 11
+		user_right_arm.unarmed_damage_low += 2 //lowest possible punch damage - 6
+		user_right_arm.unarmed_damage_high += 2 //highest possible punch damage - 11
 		user.mob_biotypes |= biotype
 	//Give Bloodsucker Traits
 	owner.current.add_traits(bloodsucker_traits, BLOODSUCKER_TRAIT)

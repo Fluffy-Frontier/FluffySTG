@@ -112,8 +112,8 @@
 	// If you're a synth, you heal prosthetic damage.
 	var/bruteLoss = get_brute_loss()
 	var/bruteheal = min(bruteLoss, actual_regen) // BRUTE: Always Heal
-	var/fireheal = 0 // BURN: Heal in Coffin while Fakedeath, or when damage above maxhealth (you can never fully heal fire)
-	// Checks if you're in a coffin here, additionally checks for Torpor right below it.
+	var/fireLoss = get_fire_loss()
+	var/fireheal = min(brute_loss, actual_regen * 0.75)
 	var/amInCoffin = is_valid_coffin()
 	if (blood_over_cap > 0)
 		costMult += round(blood_over_cap / 1000, 0.1) // effectively 1 (normal) + 0.1 for every 100 blood you are over cap
@@ -122,7 +122,6 @@
 			to_chat(user, span_alert("You do not heal while your Masquerade ability is active."))
 			COOLDOWN_START(src, bloodsucker_spam_healing, BLOODSUCKER_SPAM_MASQUERADE)
 			return FALSE
-		fireheal = min(get_fire_loss(), actual_regen)
 		mult *= 5 // Increase multiplier if we're sleeping in a coffin.
 		costMult *= COFFIN_HEAL_COST_MULT // Decrease cost if we're sleeping in a coffin.
 		user.extinguish_mob()
@@ -135,8 +134,6 @@
 			return TRUE
 	// In Torpor, but not in a Coffin? Heal faster anyways.
 	else if(is_in_torpor())
-		var/fireloss = get_fire_loss()
-		fireheal = min(fireloss, actual_regen) / 1.2 // 20% slower than being in a coffin
 		mult *= 3
 	// Heal if Damaged
 	if((bruteheal + fireheal) && mult != 0) // Just a check? Don't heal/spend, and return.
