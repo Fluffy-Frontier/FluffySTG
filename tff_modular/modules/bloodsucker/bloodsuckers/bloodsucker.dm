@@ -140,7 +140,7 @@
 	var/mob/living/carbon/current_mob = mob_override || owner.current
 	register_body_signals(current_mob)
 	talking_head(current_mob)
-	handle_clown_mutation(current_mob, mob_override ? null : "As a vampiric clown, you are no longer a danger to yourself. Your clownish nature has been subdued by your thirst for blood.")
+	handle_clown_mutation(current_mob, mob_override ? null : "As a bloodsucker clown, you are no longer a danger to yourself. Your clownish nature has been subdued by your thirst for blood.")
 	add_team_hud(current_mob)
 	RegisterSignal(SSsol, COMSIG_SOL_RANKUP_BLOODSUCKERS, PROC_REF(sol_rank_up))
 	if(current_mob.hud_used)
@@ -240,6 +240,7 @@
 	give_starting_powers()
 	assign_starting_stats()
 	check_start_society()
+	check_start_sunlight()
 	GLOB.all_vampires += src
 
 /// Called by the remove_antag_datum() and remove_all_antag_datums() mind procs for the antag datum to handle its own removal and deletion.
@@ -638,11 +639,3 @@
 	description = "<span class='boldwarning'>Something is making your mind feel... loose.</span>\n"
 	mood_change = -15
 	timeout = 5 MINUTES
-
-/datum/mood_event/nosferatu_examined
-	mood_change = -10
-	timeout = 5 MINUTES
-
-/datum/mood_event/nosferatu_examined/add_effects(target, level = 0)
-	description = span_danger("You feel a deep sense of revulsion at the sight of [target].")
-	mood_change = level * -5
