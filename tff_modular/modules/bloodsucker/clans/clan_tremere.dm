@@ -9,6 +9,7 @@
 	join_description = "You will burn if you enter the Chapel, lose all default powers, \
 		but gain Blood Magic instead, stronger powers you level up overtime."
 	buy_power_flags = TREMERE_CAN_BUY|CAN_BUY_OWNED
+	princely_score_bonus = 8
 
 /datum/bloodsucker_clan/tremere/New(mob/living/carbon/user)
 	. = ..()

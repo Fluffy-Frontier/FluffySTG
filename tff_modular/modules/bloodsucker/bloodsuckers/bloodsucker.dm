@@ -127,6 +127,9 @@
 		COMSIG_HUMAN_ON_HANDLE_BLOOD = PROC_REF(HandleBlood),
 	)
 
+	var/prince = FALSE
+	var/scourge = FALSE
+
 /**
  * Apply innate effects is everything given to the mob
  * When a body is tranferred, this is called on the new mob
@@ -139,7 +142,7 @@
 	talking_head(current_mob)
 	handle_clown_mutation(current_mob, mob_override ? null : "As a vampiric clown, you are no longer a danger to yourself. Your clownish nature has been subdued by your thirst for blood.")
 	add_team_hud(current_mob)
-
+	RegisterSignal(SSsol, COMSIG_SOL_RANKUP_BLOODSUCKERS, PROC_REF(sol_rank_up))
 	if(current_mob.hud_used)
 		on_hud_created()
 	else
@@ -160,6 +163,7 @@
 /datum/antagonist/bloodsucker/remove_innate_effects(mob/living/mob_override)
 	. = ..()
 	var/mob/living/carbon/current_mob = mob_override || owner.current
+	UnregisterSignal(SSsol, COMSIG_SOL_RANKUP_BLOODSUCKERS)
 	unregister_body_signals(current_mob)
 	handle_clown_mutation(current_mob, removing = FALSE)
 	if(current_mob.hud_used)
@@ -235,7 +239,6 @@
 	// Assign Powers
 	give_starting_powers()
 	assign_starting_stats()
-	RegisterSignal(SSsol, COMSIG_SOL_RANKUP_BLOODSUCKERS, PROC_REF(sol_rank_up))
 
 /// Called by the remove_antag_datum() and remove_all_antag_datums() mind procs for the antag datum to handle its own removal and deletion.
 /datum/antagonist/bloodsucker/on_removal()

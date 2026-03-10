@@ -14,12 +14,12 @@
 	button_icon_state = "power_gohome"
 	active_background_icon_state = "vamp_power_off_oneshot"
 	base_background_icon_state = "vamp_power_off_oneshot"
-	power_flags = BP_CONTINUOUS_EFFECT | BP_AM_SINGLEUSE | BP_AM_STATIC_COOLDOWN
+	power_flags = BP_AM_STATIC_COOLDOWN
 	bloodsucker_check_flags = BP_CANT_USE_IN_FRENZY
-	check_flags = NONE
+	check_flags = BP_CANT_USE_IN_FRENZY | BP_CANT_USE_IN_TORPOR
 	purchase_flags = NONE
 	bloodcost = 100
-	cooldown_time = 10 SECONDS
+	cooldown_time = 5 MINUTES
 	power_activates_immediately = FALSE
 	level_current = -1
 
@@ -46,6 +46,12 @@
 	/// Have No Haven (NOTE: You only got this power if you had a haven, so this means it's destroyed)
 	if(!istype(bloodsuckerdatum_power) || !bloodsuckerdatum_power.coffin)
 		owner.balloon_alert(owner, "coffin was destroyed!")
+		return FALSE
+	if(owner.loc == bloodsuckerdatum_power.coffin)
+		owner.balloon_alert(owner, "you're arleady in your coffin!")
+		return FALSE
+	if(!check_teleport_valid(owner, bloodsuckerdatum_power.coffin, TELEPORT_CHANNEL_MAGIC))
+		owner.balloon_alert(owner, "something holds you back!")
 		return FALSE
 	return TRUE
 

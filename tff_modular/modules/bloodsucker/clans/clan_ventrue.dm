@@ -1,5 +1,5 @@
 ///The maximum level a Ventrue Bloodsucker can be, before they have to level up their ghoul instead.
-#define VENTRUE_MAX_POWERS 3
+#define VENTRUE_MAX_POWERS 7
 
 /datum/bloodsucker_clan/ventrue
 	name = CLAN_VENTRUE
@@ -13,6 +13,7 @@
 		instead you raise a ghoul into a Bloodsucker."
 	blood_drink_type = BLOODSUCKER_DRINK_SNOBBY
 	level_cost = BLOODSUCKER_LEVELUP_PERCENTAGE_VENTRUE
+	princely_score_bonus = 15
 
 /datum/bloodsucker_clan/ventrue/New(datum/antagonist/bloodsucker/owner_datum)
 	. = ..()

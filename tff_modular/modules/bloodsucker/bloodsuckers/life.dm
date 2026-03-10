@@ -122,7 +122,7 @@
 			to_chat(user, span_alert("You do not heal while your Masquerade ability is active."))
 			COOLDOWN_START(src, bloodsucker_spam_healing, BLOODSUCKER_SPAM_MASQUERADE)
 			return FALSE
-		mult *= 5 // Increase multiplier if we're sleeping in a coffin.
+		mult *= 6 // Increase multiplier if we're sleeping in a coffin.
 		costMult *= COFFIN_HEAL_COST_MULT // Decrease cost if we're sleeping in a coffin.
 		user.extinguish_mob()
 		user.bodytemperature = user.get_body_temp_normal()
@@ -134,12 +134,11 @@
 			return TRUE
 	// In Torpor, but not in a Coffin? Heal faster anyways.
 	else if(is_in_torpor())
-		mult *= 3
+		mult *= 4
 	// Heal if Damaged
 	if((bruteheal + fireheal) && mult != 0) // Just a check? Don't heal/spend, and return.
 		// We have damage. Let's heal (one time), and don't cost any blood if we cannot
-		if(!user.adjust_brute_loss(-bruteheal * mult, updating_health = FALSE) && !user.adjust_fire_loss(-fireheal * mult, updating_health = FALSE)) // Heal BRUTE / BURN in random portions throughout the body.
-			return FALSE
+		user.heal_overall_damage(brute = bruteheal * mult, burn = fireheal * mult)
 		user.updatehealth()
 		AdjustBloodVolume(((bruteheal * -0.5) + (fireheal * -1)) * costMult * mult) // Costs blood to heal
 		return TRUE

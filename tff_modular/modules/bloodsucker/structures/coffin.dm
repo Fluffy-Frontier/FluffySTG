@@ -17,6 +17,8 @@
 	// This is my Haven
 	coffin = claimed
 	bloodsucker_haven_area = current_area
+	if(!locate(/datum/action/cooldown/bloodsucker/gohome) in powers)
+		BuyPower(new /datum/action/cooldown/bloodsucker/gohome)
 	to_chat(owner, span_userdanger("You have claimed the [claimed] as your place of immortal rest! Your haven is now [bloodsucker_haven_area]."))
 	to_chat(owner, span_announce("Bloodsucker Tip: Find new haven recipes in the Structures tab of the <i>Crafting Menu</i>, including the <i>Persuasion Rack</i> for converting crew into Ghouls."))
 	return TRUE
@@ -191,6 +193,8 @@
 	if(bloodsuckerdatum && bloodsuckerdatum.coffin == src)
 		bloodsuckerdatum.coffin = null
 		bloodsuckerdatum.bloodsucker_haven_area = null
+		for(var/datum/action/cooldown/bloodsucker/gohome/power in bloodsuckerdatum.powers)
+			bloodsuckerdatum.RemovePower(power)
 	for(var/obj/structure/bloodsucker/bloodsucker_structure in get_area(src))
 		if(bloodsucker_structure.owner == resident)
 			bloodsucker_structure.unbolt()

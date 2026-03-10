@@ -9,6 +9,7 @@
 	/// The prob chance of a malkavian spouting a revelation.
 	var/max_madness_chance = 10
 	var/min_madness_chance = 5
+	princely_score_bonus = 6
 
 /datum/bloodsucker_clan/malkavian/on_enter_frenzy(datum/antagonist/bloodsucker/source)
 	ADD_TRAIT(bloodsuckerdatum.owner.current, TRAIT_STUNIMMUNE, FRENZY_TRAIT)

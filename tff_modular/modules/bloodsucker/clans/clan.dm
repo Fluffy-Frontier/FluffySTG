@@ -32,6 +32,8 @@
 	var/buy_power_flags = BLOODSUCKER_CAN_BUY
 	// what percentage of blood you need to spend to level up, divided by 100
 	var/level_cost = BLOODSUCKER_LEVELUP_PERCENTAGE
+	// what bonus do we get for prince vote
+	var/princely_score_bonus = -10
 
 // TODO add handling for body transfers
 /datum/bloodsucker_clan/New(datum/antagonist/bloodsucker/owner_datum)
