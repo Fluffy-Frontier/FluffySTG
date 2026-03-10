@@ -266,9 +266,31 @@
 	else if(prince)
 		antag_hud_name = "prince"
 	else
-		antag_hud_name = initial(antag_hud_name)
+		antag_hud_name = "bloodsucker"
 
 	QDEL_NULL(team_hud_ref)
+
+	var/datum/atom_hud/alternate_appearance/basic/has_antagonist/hud = target.add_alt_appearance(
+		/datum/atom_hud/alternate_appearance/basic/has_antagonist,
+		"antag_team_hud_[REF(src)]",
+		hud_image_on(target),
+	)
+	team_hud_ref = WEAKREF(hud)
+
+	var/list/mob/living/mob_list = list()
+	for(var/datum/antagonist/antag as anything in GLOB.antagonists)
+		if(!istype(antag, /datum/antagonist/bloodsucker) && !istype(antag, /datum/antagonist/ghoul))
+			continue
+		var/mob/living/current = antag.owner?.current
+		if(!QDELETED(current))
+			mob_list |= current
+
+	for (var/datum/atom_hud/alternate_appearance/basic/has_antagonist/antag_hud as anything in GLOB.has_antagonist_huds)
+		if(!(antag_hud.target in mob_list))
+			continue
+		antag_hud.show_to(target)
+		hud.show_to(antag_hud.target)
+
 
 /datum/antagonist/bloodsucker/on_body_transfer(mob/living/old_body, mob/living/new_body)
 	. = ..()
