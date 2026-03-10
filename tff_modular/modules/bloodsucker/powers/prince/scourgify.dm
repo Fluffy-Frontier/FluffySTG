@@ -7,7 +7,6 @@
 						When used on your ghoul, you will become their sire, embracing them as a full-blooded vampire.\n\
 						They will be part of your own clan, and of course receive some bonus levels as well.\n\n\
 						The Scourge is your enforcer, your tool to wield in the name of the Camarilla. Use them to enforce the masquerade, and to keep control over your fellow kindred."
-	power_flags = BP_AM_SINGLEUSE
 	bloodsucker_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_IN_FRENZY
 	bloodcost = 0
 	cooldown_time = 35 SECONDS
@@ -103,6 +102,7 @@
 	target_datum.scourgify()
 	target_ref = null
 	PowerActivatedSuccesfully()
+	bloodsuckerdatum_power.RemovePower(src)
 
 /datum/action/cooldown/bloodsucker/targeted/scourgify/proc/refused()
 	owner.balloon_alert(owner, "offer refused")
