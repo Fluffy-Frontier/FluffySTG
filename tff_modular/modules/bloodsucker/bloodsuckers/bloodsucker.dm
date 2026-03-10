@@ -239,6 +239,8 @@
 	// Assign Powers
 	give_starting_powers()
 	assign_starting_stats()
+	check_start_society()
+	GLOB.all_vampires += src
 
 /// Called by the remove_antag_datum() and remove_all_antag_datums() mind procs for the antag datum to handle its own removal and deletion.
 /datum/antagonist/bloodsucker/on_removal()
@@ -253,7 +255,20 @@
 	clear_powers_and_stats()
 	ventrue_sired = null
 	coffin?.unclaim_coffin(FALSE, TRUE)
+	GLOB.all_vampires -= src
 	return ..()
+
+/datum/antagonist/bloodsucker/add_team_hud(mob/target, antag_to_check)
+	if(broke_masquerade)
+		antag_hud_name = "masquerade_broken"
+	else if(scourge)
+		antag_hud_name = "scourge"
+	else if(prince)
+		antag_hud_name = "prince"
+	else
+		antag_hud_name = initial(antag_hud_name)
+
+	QDEL_NULL(team_hud_ref)
 
 /datum/antagonist/bloodsucker/on_body_transfer(mob/living/old_body, mob/living/new_body)
 	. = ..()
