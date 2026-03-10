@@ -5,7 +5,7 @@
 	pref_flag = ROLE_VASSAL
 	antag_hud_name = "ghoul"
 	show_in_roundend = FALSE
-	hud_icon = 'tff_modular/modules/bloodsucker/icons/hud.dmi'
+	hud_icon = 'tff_modular/modules/bloodsucker/icons/antag_hud.dmi'
 	ui_name = "AntagInfoGhoul"
 	antag_panel_description = "You are a Ghoul, a mortal servant of a Bloodsucker."
 
