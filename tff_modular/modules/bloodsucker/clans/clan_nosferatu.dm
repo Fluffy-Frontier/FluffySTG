@@ -1,4 +1,3 @@
-/*
 /datum/bloodsucker_clan/nosferatu
 	name = CLAN_NOSFERATU
 	description = "The Nosferatu Clan is unable to blend in with the crew, with no abilities such as Masquerade and Veil. \n\
@@ -12,6 +11,7 @@
 		lose your Masquerade ability, but gain the ability to Ventcrawl even while clothed."
 	blood_drink_type = BLOODSUCKER_DRINK_INHUMANELY
 	var/ventcrawl_time = 10 SECONDS
+	princely_score_bonus = 3
 
 /datum/bloodsucker_clan/nosferatu/New(datum/antagonist/bloodsucker/owner_datum)
 	. = ..()
@@ -26,7 +26,7 @@
 
 	RegisterSignal(bloodsuckerdatum, COMSIG_BLOODSUCKER_EXAMINE, PROC_REF(on_mob_examine))
 	RegisterSignal(mob, COMSIG_CAN_VENTCRAWL, PROC_REF(can_ventcrawl))
-	RegisterSignal(mob, COMISG_VENTCRAWL_PRE_ENTER, PROC_REF(on_ventcrawl_enter))
+	RegisterSignal(mob, COMSIG_VENTCRAWL_PRE_ENTER, PROC_REF(on_ventcrawl_enter))
 	RegisterSignal(mob, COMSIG_VENTCRAWL_PRE_EXIT, PROC_REF(on_ventcrawl_pre_exit))
 	RegisterSignal(mob, COMSIG_VENTCRAWL_EXIT, PROC_REF(on_ventcrawl_exit))
 	RegisterSignal(mob, COMSIG_VENTCRAWL_PRE_CANCEL, PROC_REF(on_ventcrawl_cancel))
@@ -88,7 +88,7 @@
 	bloodsuckerdatum.give_starting_powers()
 	bloodsuckerdatum.owner.current.remove_quirk(/datum/quirk/badback)
 	bloodsuckerdatum.owner.current.remove_traits(list(TRAIT_VENTCRAWLER_NUDE, TRAIT_DISFIGURED), BLOODSUCKER_TRAIT)
-	UnregisterSignal(bloodsuckerdatum, list(COMSIG_BLOODSUCKER_EXAMINE, COMSIG_CAN_VENTCRAWL, COMISG_VENTCRAWL_PRE_ENTER, COMSIG_VENTCRAWL_PRE_EXIT, COMSIG_VENTCRAWL_EXIT))
+	UnregisterSignal(bloodsuckerdatum, list(COMSIG_BLOODSUCKER_EXAMINE, COMSIG_CAN_VENTCRAWL, COMSIG_VENTCRAWL_PRE_ENTER, COMSIG_VENTCRAWL_PRE_EXIT, COMSIG_VENTCRAWL_EXIT))
 	return ..()
 
 /datum/bloodsucker_clan/nosferatu/favorite_ghoul_gain(datum/antagonist/bloodsucker/source, datum/antagonist/ghoul/ghouldatum)
@@ -100,4 +100,3 @@
 
 /datum/bloodsucker_clan/nosferatu/favorite_ghoul_loss(datum/antagonist/bloodsucker/source, datum/antagonist/ghoul/ghouldatum)
 	ghouldatum.owner.current.update_sight()
-*/
