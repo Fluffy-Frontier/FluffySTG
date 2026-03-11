@@ -6,7 +6,7 @@ import { resolveAsset } from '../assets';
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
 import type { Objective } from './common/Objectives';
-import { PowerDetails } from './PowerInfo';
+import { PowerDetails } from './common/PowerInfo';
 
 export type ClanProps = {
   clan: ClanInfo[];

@@ -4,7 +4,7 @@ import { useBackend } from '../backend';
 import { Window } from '../layouts';
 import type { GhoulProps } from './AntagInfoBloodsucker';
 import { ObjectivePrintout } from './common/Objectives';
-import { PowerDetails } from './PowerInfo';
+import { PowerDetails } from './common/PowerInfo';
 
 export const AntagInfoGhoul = (props: any, context: any) => {
   const { data } = useBackend<GhoulProps>();
