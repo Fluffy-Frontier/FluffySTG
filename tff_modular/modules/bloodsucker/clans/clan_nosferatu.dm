@@ -12,6 +12,7 @@
 	blood_drink_type = BLOODSUCKER_DRINK_INHUMANELY
 	var/ventcrawl_time = 10 SECONDS
 	princely_score_bonus = 3
+	var/static/list/traits_to_add = list(TRAIT_DISFIGURED, TRAIT_VENTCRAWLER_NUDE, TRAIT_UNKNOWN_VOICE, TRAIT_TRUE_NIGHT_VISION, TRAIT_KNOW_ENGI_WIRES, TRAIT_SILENT_FOOTSTEPS)
 
 /datum/bloodsucker_clan/nosferatu/New(datum/antagonist/bloodsucker/owner_datum)
 	. = ..()
@@ -22,7 +23,7 @@
 	if(!mob.has_quirk(/datum/quirk/badback))
 		mob.add_quirk(/datum/quirk/badback)
 
-	mob.add_traits(list(TRAIT_DISFIGURED, TRAIT_VENTCRAWLER_NUDE), BLOODSUCKER_TRAIT)
+	mob.add_traits(traits_to_add, BLOODSUCKER_TRAIT)
 
 	RegisterSignal(bloodsuckerdatum, COMSIG_BLOODSUCKER_EXAMINE, PROC_REF(on_mob_examine))
 	RegisterSignal(mob, COMSIG_CAN_VENTCRAWL, PROC_REF(can_ventcrawl))
@@ -77,9 +78,6 @@
 	if(isliving(examiner) && examiner != ogled && !ogler.mob_mood.has_mood_of_category("nosferatu_examine"))
 		ogler.add_mood_event("nosferatu_examine", /datum/mood_event/nosferatu_examined, ogled, owner_datum.GetRank())
 		ogler.adjust_disgust(owner_datum.GetRank() * 10)
-	// show that they are dangerous nosferatu, as if you're gazing upon them with fear, without mentioning the clan name/antagonist name, describe their appearance
-	examine_text += span_danger("[ogled.p_They()] look[ogled.p_s()] like a pale, grotesque hunchback, with a mouth full of jagged yellowy teeth, and breath that reeks of fresh blood. You feel both afraid and disgusted as you gaze upon [ogled.p_them()].")
-	examine_text += span_userdanger("[ogled.p_They()] [ogled.p_are()] clearly a BLOODSUCKER!")
 
 /datum/bloodsucker_clan/nosferatu/Destroy(force)
 	var/datum/action/cooldown/bloodsucker/feed/suck = locate() in bloodsuckerdatum.powers
@@ -87,12 +85,11 @@
 		bloodsuckerdatum.RemovePower(suck)
 	bloodsuckerdatum.give_starting_powers()
 	bloodsuckerdatum.owner.current.remove_quirk(/datum/quirk/badback)
-	bloodsuckerdatum.owner.current.remove_traits(list(TRAIT_VENTCRAWLER_NUDE, TRAIT_DISFIGURED), BLOODSUCKER_TRAIT)
+	bloodsuckerdatum.owner.current.remove_traits(traits_to_add, BLOODSUCKER_TRAIT)
 	UnregisterSignal(bloodsuckerdatum, list(COMSIG_BLOODSUCKER_EXAMINE, COMSIG_CAN_VENTCRAWL, COMSIG_VENTCRAWL_PRE_ENTER, COMSIG_VENTCRAWL_PRE_EXIT, COMSIG_VENTCRAWL_EXIT))
 	return ..()
 
 /datum/bloodsucker_clan/nosferatu/favorite_ghoul_gain(datum/antagonist/bloodsucker/source, datum/antagonist/ghoul/ghouldatum)
-	var/list/traits_to_add = list(TRAIT_VENTCRAWLER_NUDE, TRAIT_DISFIGURED, TRAIT_TRUE_NIGHT_VISION, TRAIT_KNOW_ENGI_WIRES, TRAIT_SILENT_FOOTSTEPS)
 	ghouldatum.owner.current.add_traits(traits_to_add, GHOUL_TRAIT)
 	ghouldatum.traits += traits_to_add
 	ghouldatum.owner.current.update_sight()

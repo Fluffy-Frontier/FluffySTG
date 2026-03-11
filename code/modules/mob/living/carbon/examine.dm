@@ -8,6 +8,8 @@
 /mob/living/carbon/examine(mob/user)
 	if(HAS_TRAIT(src, TRAIT_UNKNOWN_APPEARANCE))
 		return list(span_warning("You're struggling to make out any details..."))
+	if(HAS_TRAIT(src, TRAIT_DISFIGURED) && IS_BLOODSUCKER(src))
+		return list(span_warning("[src.p_They()] look[src.p_s()] like a pale, grotesque hunchback, with a mouth full of jagged yellowy teeth, and breath that reeks of fresh blood. You feel both afraid and disgusted as you gaze upon [src.p_them()]. [src.p_They()] [src.p_are()] clearly a MUTANT!"))
 
 	var/t_He = p_They()
 	var/t_His = p_Their()
