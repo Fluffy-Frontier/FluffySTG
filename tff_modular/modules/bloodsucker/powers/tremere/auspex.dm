@@ -19,7 +19,7 @@
 	bloodsucker_check_flags = BP_CANT_USE_IN_TORPOR
 	purchase_flags = TREMERE_CAN_BUY
 	bloodcost = 10
-	constant_bloodcost = 1
+	constant_bloodcost = 1.1
 	cooldown_time = 12 SECONDS
 	target_range = 2
 	power_activates_immediately = FALSE
@@ -72,8 +72,10 @@
 
 /datum/action/cooldown/bloodsucker/targeted/tremere/auspex/ActivatePower(trigger_flags)
 	. = ..()
+	if(bloodsuckerdatum_power.frenzied)
+		return TRUE
 	owner.AddElement(/datum/element/digitalcamo)
-	animate(owner, alpha = 15, time = 2 SECONDS)
+	animate(owner, alpha = 70, time = 2 SECONDS)
 	return TRUE
 
 /datum/action/cooldown/bloodsucker/targeted/tremere/auspex/DeactivatePower(deactivate_flags)
