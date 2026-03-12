@@ -105,7 +105,7 @@
 
 /datum/status_effect/nosferatu_effect
 	id = "nosferatu"
-	duration = 1.5 SECONDS
+	duration = 2 SECONDS
 	status_type = STATUS_EFFECT_REFRESH
 	alert_type = null
 
