@@ -99,8 +99,8 @@
 	ghouldatum.owner.current.update_sight()
 
 /datum/bloodsucker_clan/nosferatu/handle_clan_life(datum/antagonist/bloodsucker/source, seconds_per_tick, times_fired)
-	var/area/nosferatu_loc = get_area(source.owner.current)
-	if(nosferatu_loc == /area/station/maintenance)
+	var/area/nosf_area = get_area(source.owner.current)
+	if(nosf_area && istype(nosf_area, /area/station/maintenance))
 		source.owner.current.apply_status_effect(/datum/status_effect/nosferatu_effect)
 
 /datum/status_effect/nosferatu_effect
