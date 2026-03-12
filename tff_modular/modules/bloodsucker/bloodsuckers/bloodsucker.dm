@@ -69,7 +69,7 @@
 	/// Used for Bloodsuckers gaining levels from drinking blood
 	var/blood_level_gain = 0
 	/// How many levels you can get from Sol
-	var/sol_levels_remaining = 6
+	var/sol_levels_remaining = 4
 
 	///Blood display HUD
 	var/atom/movable/screen/bloodsucker/blood_counter/blood_display
@@ -81,10 +81,8 @@
 	/// Antagonists that cannot be Ghouled no matter what
 	var/static/list/ghoul_banned_antags = list(
 		/datum/antagonist/bloodsucker,
-		// /datum/antagonist/monsterhunter,
 		/datum/antagonist/changeling,
 		/datum/antagonist/cult,
-		// /datum/antagonist/ert/safety_moth,
 	)
 	///Default Bloodsucker traits
 	var/static/list/bloodsucker_traits = list(

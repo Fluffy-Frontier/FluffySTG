@@ -9,7 +9,8 @@
  */
 
 #define BLOOD_SHIELD_BLOCK_CHANCE 50
-#define BLOOD_SHIELD_BLOOD_COST 15
+#define BLOOD_SHIELD_BLOCK_CHANCE_UPGRADED 60
+#define BLOOD_SHIELD_BLOOD_COST 5
 #define THAUMATURGY_BLOOD_COST_PER_CHARGE 5
 #define THAUMATURGY_COOLDOWN_PER_CHARGE 5 SECONDS
 
@@ -17,6 +18,8 @@
 #define THAUMATURGY_DOOR_BREAK_LEVEL 3
 #define THAUMATURGY_EXTRA_DAMAGE_LEVEL 4
 #define THAUMATURGY_BLOOD_STEAL_LEVEL 5
+#define THAUMATURGY_SHIELD_UPGRADE_LEVEL 6
+
 /datum/action/cooldown/bloodsucker/targeted/tremere/thaumaturgy
 	name = "Thaumaturgy"
 	level_current = 1
@@ -28,7 +31,7 @@
 	bloodcost = 5
 	constant_bloodcost = 0
 	// 5 seconds per charge
-	cooldown_time = 10 SECONDS
+	cooldown_time = 5 SECONDS
 	prefire_message = "Right click where you wish to fire."
 	click_to_activate = TRUE // you pay to replenish charges
 	power_activates_immediately = FALSE
@@ -116,6 +119,8 @@
 			span_warning("We form our [src]!"),
 			span_hear("You hear liquids forming together."),
 		)
+		if(level_current >= THAUMATURGY_SHIELD_UPGRADE_LEVEL)
+			new_shield.block_chance = BLOOD_SHIELD_BLOCK_CHANCE_UPGRADED
 
 /datum/action/cooldown/bloodsucker/targeted/tremere/thaumaturgy/DeactivatePower(deactivate_flags)
 	. = ..()

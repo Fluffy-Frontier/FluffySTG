@@ -62,7 +62,8 @@
 		. += "Blood Drank: [bloodsuckerdatum.total_blood_drank]"
 		. += "Maximum blood: [bloodsuckerdatum.max_blood_volume]"
 		. += "Blood Thickening: [bloodsuckerdatum.blood_level_gain] / [bloodsuckerdatum.get_level_cost()]"
-		. += "Time until rank up: [SSsol.time_til_cycle] seconds"
+		if(bloodsuckerdatum.sol_levels_remaining > 0)
+			. += "Time until rank up: [SSsol.time_til_cycle] seconds"
 		if(bloodsuckerdatum.frenzied)
 			. += "Frenzy exit blood threshold: [bloodsuckerdatum.frenzy_exit_threshold()]"
 		else

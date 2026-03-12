@@ -97,3 +97,29 @@
 
 /datum/bloodsucker_clan/nosferatu/favorite_ghoul_loss(datum/antagonist/bloodsucker/source, datum/antagonist/ghoul/ghouldatum)
 	ghouldatum.owner.current.update_sight()
+
+/datum/bloodsucker_clan/nosferatu/handle_clan_life(datum/antagonist/bloodsucker/source, seconds_per_tick, times_fired)
+	var/area/nosferatu_loc = get_area(source.owner.current)
+	if(nosferatu_loc == /area/station/maintenance)
+		source.owner.current.apply_status_effect(/datum/status_effect/nosferatu_effect)
+
+/datum/status_effect/nosferatu_effect
+	id = "nosferatu"
+	duration = 1.5 SECONDS
+	status_type = STATUS_EFFECT_REFRESH
+	alert_type = null
+
+/datum/status_effect/nosferatu_effect/on_apply()
+	. = ..()
+	if(!.)
+		return FALSE
+	var/mob/living/carbon/human/nosferatu = owner
+	nosferatu.add_movespeed_modifier(/datum/movespeed_modifier/nosferatu)
+
+/datum/status_effect/nosferatu_effect/on_remove()
+	. = ..()
+	var/mob/living/carbon/human/nosferatu = owner
+	nosferatu.remove_movespeed_modifier(/datum/movespeed_modifier/nosferatu)
+
+/datum/movespeed_modifier/nosferatu
+	multiplicative_slowdown = -0.1
