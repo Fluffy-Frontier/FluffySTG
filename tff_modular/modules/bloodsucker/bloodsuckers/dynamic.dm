@@ -22,6 +22,7 @@
 //          MIDROUND BLOODSUCKER            //
 //                                          //
 //////////////////////////////////////////////
+
 /datum/dynamic_ruleset/midround/from_living/bloodsucker
 	name = "Vampiric Accident"
 	config_tag = "Midround Bloodsucker"
