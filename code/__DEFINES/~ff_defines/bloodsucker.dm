@@ -1,98 +1,119 @@
-///Uncomment this to enable testing of Bloodsucker features (such as ghoulizing people with a mind instead of a client).
-// #define BLOODSUCKER_TESTING // if this isn't commented out, someone is a dumbfuck
+/// From base of /mob/living/simple_animal/attack_hand() and /mob/living/basic/attack_hand() when petting (non-combat): (mob/living/pet)
+#define COMSIG_LIVING_PET_ANIMAL "living_pet_animal"
+/// From base of carbon_defense.dm when hugging: (mob/living/carbon/hugged)
+#define COMSIG_LIVING_HUG_CARBON "living_hug_carbon"
+/// From base of /datum/element/art when appraising art: (atom/art_piece)
+#define COMSIG_LIVING_APPRAISE_ART "living_appraise_art"
+/// Source trait while Feeding
+#define FEED_TRAIT "feed_trait"
+/// Hides TRAIT_GENELESS if it's only from the same sources as TRAIT_FAKEGENES.
+#define TRAIT_FAKEGENES "fakegenes"
+/// You have special interactions with vampires and the occult.
+#define TRAIT_OCCULTIST "occultist"
+/// The user is "vampire aligned" - i.e a vampire or vassal.
+/// Basically just check for `HAS_MIND_TRAIT(user, TRAIT_VAMPIRE_ALIGNED)` instead of `IS_VAMPIRE(user) || IS_VASSAL(user)`
+#define TRAIT_VAMPIRE_ALIGNED "vampire_aligned"
+#define DOAFTER_SOURCE_PERSUASION_RACK "doafter_persuasion_rack"
+/// Checks if the given mob is a vampire
+#define IS_VAMPIRE(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/vampire))
+/// Checks if the given mob is a vassal
+#define IS_VASSAL(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/vassal))
+#define CAT_VAMPIRE "Vampire"
+#define DOAFTER_SOURCE_ARCHIVE_OF_THE_KINDRED "doafter_archive_of_the_kindred"
+#define DOAFTER_SOURCE_PERSUASION_RACK "doafter_persuasion_rack"
+/// This area can always be claimed as a vampire lair regardless of Z-level and such
+#define ALWAYS_VALID_VAMPIRE_LAIR (1<<21)
+#define LOG_CATEGORY_UPLINK_VAMPIRE "uplink-vampire"
+#define FACTION_VAMPIRE "Vampire"
+#define ROLE_VAMPIRE "Vampire"
+#define ROLE_VAMPIRIC_ACCIDENT "Vampiric Accident"
+#define span_awe(str) ("<span class='awe'>" + str + "</span>")
+/// Uncomment this to enable testing of Vampire features (such as vassalizing people with a mind instead of a client).
+//#define VAMPIRE_TESTING
+#if defined(VAMPIRE_TESTING) && defined(CIBUILDING)
+	#error VAMPIRE_TESTING is enabled, disable this!
+#endif
+#ifdef TESTING
+	#define VAMPIRE_TESTING
+#endif
 
-//Torpor softlock prevention - define it high as it is a failsafe
-#define BLOODSUCKER_TORPOR_MAX_TIME (120 SECONDS)
-/// You have special interactions with Bloodsuckers
-#define TRAIT_BLOODSUCKER_HUNTER "bloodsucker_hunter"
-
-#define ROLE_BLOODSUCKER "Bloodsucker"
-#define ROLE_VAMPIRICACCIDENT "Bloodsucker (Midround)"
-#define ROLE_BLOODSUCKERBREAKOUT "Bloodsucker (Latejoin)"
-#define ROLE_VASSAL "Vassal"
-
-///The mob is some kind of vampire, species or antag
-#define MOB_VAMPIRIC (1 << 16)
-
-// how much to multiply the coffin size by mob_size
-#define COFFIN_ENLARGE_MULT 0.5
-
-/// At what health to burn damage ratio you Final Death
-#define FINAL_DEATH_HEALTH_TO_BURN 2.5
-/**
- * Blood-level defines
- */
-/// Determines Bloodsucker regeneration rate
+// Blood-level defines
+/// Determines Vampire regeneration rate
 #define BS_BLOOD_VOLUME_MAX_REGEN 700
 /// Cost to torture someone halfway, in blood. Called twice for full cost
-#define TORTURE_BLOOD_HALF_COST 4
+#define TORTURE_BLOOD_HALF_COST 8
 /// Cost to convert someone after successful torture, in blood
-#define TORTURE_CONVERSION_COST 10
-/// How much blood it costs you to make a ghoul into a special ghoul
-#define SPECIAL_GHOUL_COST 150
-/// Minimum and maximum frenzy blood thresholds
-/// Once blood is this low, will enter Frenzy
+#define TORTURE_CONVERSION_COST 50
+/// Once blood is this low, will enter a Frenzy
 #define FRENZY_THRESHOLD_ENTER 25
-/// Once blood is this high, will exit Frenzy
-#define FRENZY_THRESHOLD_EXIT 250
+/// Once blood is this high, will exit the Frenzy. Intentionally high, we want to kill the person we feed off of
+#define FRENZY_THRESHOLD_EXIT 500
+/// How much blood drained from the vampire each lifetick
+#define VAMPIRE_PASSIVE_BLOOD_DRAIN 0.1
+/// The number that incoming levels are divided by when comitting the Amaranth. Example: 2 would divide the victims level by 2, and give that to the diablerist
+#define DIABLERIE_DIVISOR 1.5
+/// Amount of vitae drunk from another player required to level up.
+#define VITAE_GOAL_STANDARD 250
 
-/// a bloodsucker can't loose more humanity than this, and looses the masquerade ability when reaching it
-#define HUMANITY_LOST_MAXIMUM 50
+/// Default amount of damage the vampire's punch/kick damage increases with each level.
+#define VAMPIRE_UNARMED_DMG_INCREASE_ON_RANKUP 0.5
 
-/// Level up blood cost define, max_blood * this = blood cost
-#define BLOODSUCKER_LEVELUP_PERCENTAGE 0.40
-#define BLOODSUCKER_LEVELUP_PERCENTAGE_VENTRUE BLOODSUCKER_LEVELUP_PERCENTAGE - 0.1
+/// How many starting levels do we want each one to have?
+#define VAMPIRE_STARTING_LEVELS 3
+/// How many free levels the vampire gets gradually.
+#define VAMPIRE_FREE_LEVELS 3
+/// Vampire's default stamina resist.
+#define VAMPIRE_INHERENT_STAMINA_RESIST 0.75
 
-///The level when at a bloodsucker becomes snobby about who they drink from and gain their non-fledling reputation
-#define BLOODSUCKER_HIGH_LEVEL 4
+/// When do we warn them about their low blood?
+#define VAMPIRE_LOW_BLOOD_WARNING 300
 
-/**
- * Sol defines
- */
-///How long Sol will last until it's night again.
-#define TIME_BLOODSUCKER_DAY 60
-///Base time nighttime should be in for, until Sol rises.
-// Can't put defines in defines, so we have to use deciseconds.
-#define TIME_BLOODSUCKER_NIGHT_MAX 1320 // 22 minutes
-#define TIME_BLOODSUCKER_NIGHT_MIN 1020 // 17 minutes
+/// Minimum blood required for vampires oozelings to auto-revive.
+#define OOZELING_MIN_REVIVE_BLOOD_THRESHOLD (FRENZY_THRESHOLD_ENTER * 5)
+/// How long it takes for an vampire oozeling to auto-revive, when left alone.
+#define OOZELING_VAMPIRE_REVIVE_TIME (1.5 MINUTES)
+/// How many times faster an oozeling vampire will revive if their core is being held by a non-vampire/non-ally.
+#define OOZELING_VAMPIRE_REVIVE_HELD_MULTIPLIER 0.5
+/// How many times faster an oozeling vampire will revive if their core is being held by an ally.
+#define OOZELING_VAMPIRE_REVIVE_ALLY_MULTIPLIER 1.2
+/// How many times faster an oozeling vampire will revive if their core is in a coffin.
+#define OOZELING_VAMPIRE_REVIVE_COFFIN_MULTIPLIER 2.5
 
-///Time left to send an alert to Bloodsuckers about an incoming Sol.
-#define TIME_BLOODSUCKER_DAY_WARN 90
-///Time left to send an urgent alert to Bloodsuckers about an incoming Sol.
-#define TIME_BLOODSUCKER_DAY_FINAL_WARN 30
-///Time left to alert that Sol is rising.
-#define TIME_BLOODSUCKER_BURN_INTERVAL 5
+// vassal defines
+/// If someone passes all checks and can be vassalized
+#define VASSALIZATION_ALLOWED 0
+/// If someone has to accept vassalization
+#define VASSALIZATION_DISLOYAL 1
+/// If someone is not allowed under any circimstances to become a vassal
+#define VASSALIZATION_BANNED 2
 
-///How much time Sol can be 'off' by, keeping the time inconsistent.
-#define TIME_BLOODSUCKER_SOL_DELAY 90
+// Humanity gains (The actual tracking lists and such are in the datum duh)
+// These are supposed to be somewhat nontrivial, to the point of sometimes not being viable.
+/// Hugging of separate people
+#define HUMANITY_HUGGING_TYPE "hug"
 
-/**
- * Ghoul defines
- */
-///If someone passes all checks and can be ghouled
-#define GHOULING_ALLOWED 0
-///If someone has to accept ghouling
-#define GHOULING_DISLOYAL 1
-///If someone is not allowed under any circimstances to become a Ghoul
-#define GHOULING_BANNED 2
+/// Petting of separate animals
+#define HUMANITY_PETTING_TYPE "pet"
 
-/**
- * Cooldown defines
- * Used in Cooldowns Bloodsuckers use to prevent spamming
- */
-///Spam prevention for healing messages.
-#define BLOODSUCKER_SPAM_HEALING (15 SECONDS)
-///Span prevention for Sol Masquerade messages.
-#define BLOODSUCKER_SPAM_MASQUERADE (60 SECONDS)
+/// Watching of art
+#define HUMANITY_ART_TYPE "art"
 
-///Span prevention for Sol messages.
-#define BLOODSUCKER_SPAM_SOL (30 SECONDS)
+#define HUMANITY_GAIN_TYPES list(HUMANITY_HUGGING_TYPE, HUMANITY_PETTING_TYPE, HUMANITY_ART_TYPE)
 
+/// Default Humanity
+#define VAMPIRE_DEFAULT_HUMANITY 7
 
-/**
- * Clan defines
- */
-#define CLAN_NONE "Caitiff"
+// Cooldown defines
+// Used to prevent spamming vampires
+/// Spam prevention for healing messages.
+#define VAMPIRE_SPAM_HEALING 15 SECONDS
+/// Spam prevention for Sol Masquerade messages.
+#define VAMPIRE_SPAM_MASQUERADE 60 SECONDS
+
+/// Spam prevention for Sol messages.
+#define VAMPIRE_SPAM_SOL 30 SECONDS
+
+// Clan defines
 #define CLAN_BRUJAH "Brujah Clan"
 #define CLAN_TOREADOR "Toreador Clan"
 #define CLAN_NOSFERATU "Nosferatu Clan"
@@ -101,130 +122,52 @@
 #define CLAN_VENTRUE "Ventrue Clan"
 #define CLAN_MALKAVIAN "Malkavian Clan"
 #define CLAN_TZIMISCE "Tzimisce Clan"
+#define CLAN_HECATA "Hecata Clan"
+#define CLAN_LASOMBRA "Lasombra Clan"
 
-#define TREMERE_GHOUL "tremere_ghoul"
-#define FAVORITE_GHOUL "favorite_ghoul"
-#define REVENGE_GHOUL "revenge_ghoul"
-
-/**
- * Power defines
- */
+// Power defines
 /// This Power can't be used in Torpor
 #define BP_CANT_USE_IN_TORPOR (1<<0)
 /// This Power can't be used in Frenzy.
 #define BP_CANT_USE_IN_FRENZY (1<<1)
-/// This Power can be used while transformed, for example by the shapeshift spell
-#define BP_CAN_USE_TRANSFORMED (1<<2)
-/// This Power can be used with a stake in you
-#define BP_CAN_USE_WHILE_STAKED (1<<4)
-/// This Power can be used while heartless
-#define BP_CAN_USE_HEARTLESS (1<<5)
+/// This Power can't be used with a stake in you
+#define BP_CANT_USE_WHILE_STAKED (1<<2)
+/// This Power can't be used while incapacitated
+#define BP_CANT_USE_WHILE_INCAPACITATED (1<<3)
+/// This Power can't be used while unconscious
+#define BP_CANT_USE_WHILE_UNCONSCIOUS (1<<4)
 
-/// This Power can be purchased by Bloodsuckers
-#define BLOODSUCKER_CAN_BUY (1<<0)
-/// This is a Default Power that all Bloodsuckers get.
-#define BLOODSUCKER_DEFAULT_POWER (1<<1)
-/// This Power can be purchased by Tremere Bloodsuckers
-#define TREMERE_CAN_BUY (1<<2)
+/// This is a Default Power that all Vampires get.
+#define VAMPIRE_DEFAULT_POWER (1<<1)
 
-/// This Power can be purchased by Ghouls
-#define GHOUL_CAN_BUY (1<<3)
-
-/// If this Power can be bought if you already own it
-#define CAN_BUY_OWNED (1<<4)
-
-
-/// This Power is a Continuous Effect, processing every tick
-#define BP_CONTINUOUS_EFFECT (1<<0)
+/// This Power is a Toggled Power
+#define BP_AM_TOGGLE (1<<0)
 /// This Power is a Single-Use Power
 #define BP_AM_SINGLEUSE (1<<1)
 /// This Power has a Static cooldown
 #define BP_AM_STATIC_COOLDOWN (1<<2)
 /// This Power doesn't cost bloot to run while unconscious
 #define BP_AM_COSTLESS_UNCONSCIOUS (1<<3)
+/// This Power has a cooldown that is more dynamic than a typical power
+#define BP_AM_VERY_DYNAMIC_COOLDOWN (1<<4)
 
-#define DEACTIVATE_POWER_DO_NOT_REMOVE (1<<0)
-#define DEACTIVATE_POWER_NO_COOLDOWN (1<<1)
-
-// ability levels that are used cross-file
-#define DOMINATE_GHOULIZE_LEVEL 2
-#define TREMERE_OBJECTIVE_POWER_LEVEL 4
-
-#define COFFIN_HEAL_COST_MULT 0.5
-
-
-/**
- * Torpor check bitflags
- */
-#define TORPOR_SKIP_CHECK_ALL (1<<0)
-#define TORPOR_SKIP_CHECK_FRENZY (1<<1)
-#define TORPOR_SKIP_CHECK_DAMAGE (1<<2)
-
-/**
- * Bloodsucker Signals
- */
-///Called when a Bloodsucker ranks up: (datum/bloodsucker_datum, mob/owner, mob/target)
-#define COMSIG_BLOODSUCKER_RANK_UP "bloodsucker_rank_up"
-///Called when a Bloodsucker interacts with a Ghoul on their persuasion rack.
-#define COMSIG_BLOODSUCKER_INTERACT_WITH_GHOUL "bloodsucker_interact_with_ghoul"
-///Called when a Bloodsucker makes a Ghoul into their Favorite Ghoul: (datum/ghoul_datum, mob/master)
-#define COMSIG_BLOODSUCKER_MAKE_FAVORITE "bloodsucker_make_favorite"
-// called when a bloodsucker looses their favorite ghoul, cleaning up whatever they gained
-#define COMSIG_BLOODSUCKER_LOOSE_FAVORITE "bloodsucker_loose_favorite"
-///Called when a new Ghoul is successfully made: (datum/bloodsucker_datum)
-#define COMSIG_BLOODSUCKER_MADE_GHOUL "bloodsucker_made_ghoul"
-///Called when a Bloodsucker exits Torpor.
-#define COMSIG_BLOODSUCKER_EXIT_TORPOR "bloodsucker_exit_torpor"
-///Called when a Bloodsucker reaches Final Death.
-#define COMSIG_BLOODSUCKER_FINAL_DEATH "bloodsucker_final_death"
-	///Whether the Bloodsucker should not be dusted when arriving Final Death
+///Called when a Vampire reaches Final Death.
+#define COMSIG_VAMPIRE_FINAL_DEATH "vampire_final_death"
+	///Whether the vampire should not be dusted when arriving Final Death
 	#define DONT_DUST (1<<0)
-///Called when a Bloodsucker breaks the Masquerade
-#define COMSIG_BLOODSUCKER_BROKE_MASQUERADE "comsig_bloodsucker_broke_masquerade"
-///Called when a Bloodsucker enters Frenzy
-#define COMSIG_BLOODSUCKER_ENTERS_FRENZY "bloodsucker_enters_frenzy"
-///Called when a Bloodsucker exits Frenzy
-#define COMSIG_BLOODSUCKER_EXITS_FRENZY "bloodsucker_exits_frenzy"
-/// COMSIG_ATOM_EXAMINE that correctly updates when the bloodsucker datum is moved
-#define COMSIG_BLOODSUCKER_EXAMINE "bloodsucker_examine"
-/// from /obj/item/organ/proc/on_bodypart_remove(obj/item/bodypart/limb, movement_flags)
-#define COMSIG_ORGAN_BODYPART_REMOVED "organ_bodypart_removed"
-// Called when anyone enters the coffin
-#define COMSIG_ENTER_COFFIN "enter_coffin"
-#define COMSIG_MOB_STAKED "staked"
-#define COMSIG_BODYPART_STAKED "staked"
-// called when a targeted ability is cast
-#define COMSIG_FIRE_TARGETED_POWER "comsig_fire_targeted_power"
 
-#define COMSIG_CAN_VENTCRAWL "can_ventcrawl"
-#define COMSIG_VENTCRAWL_PRE_ENTER "ventcrawling_pre_enter"
-#define COMSIG_VENTCRAWL_PRE_EXIT "ventcrawling_pre_exit"
-#define COMSIG_VENTCRAWL_ENTER "ventcrawling_enter"
-#define COMSIG_VENTCRAWL_EXIT "ventcrawling_exit"
-#define COMSIG_VENTCRAWL_PRE_CANCEL "ventcrawling_pre_cancel"
+// Vampire Signals
+/// Called when a Vampire breaks the Masquerade
+#define COMSIG_VAMPIRE_BROKE_MASQUERADE "comsig_vampire_broke_masquerade"
 
-/// drink blood via the feed action
-#define COMSIG_MOB_FEED_DRINK "mob_feed_drink"
-#define FEED_CANCEL_BLOOD_TRANSFER (1 << 0)
+// Signals & Defines
+/// Sent whenever vampires get a "natural" rank up.
+#define COMSIG_SOL_RANKUP_VAMPIRES "sol_rankup_vampires"
+/// Sent when tracking humanity gain progress: (type, subject)
+#define COMSIG_VAMPIRE_TRACK_HUMANITY_GAIN "comsig_vampire_track_humanity_gain"
 
-/// returns the bitflag if it indeed reached max blood, otherwise NONE
-#define COMSIG_MOB_REACHED_MAX_BLOOD "mob_reached_max_blood"
-#define REACHED_MAX_BLOOD (1 << 0)
-
-/**
- * Sol signals & Defines
- */
-#define COMSIG_SOL_RANKUP_BLOODSUCKERS "comsig_sol_rankup_bloodsuckers"
-#define COMSIG_SOL_RISE_TICK "comsig_sol_rise_tick"
-#define COMSIG_SOL_NEAR_START "comsig_sol_near_start"
-#define COMSIG_SOL_END "comsig_sol_end"
-///Sent when a warning for Sol is meant to go out: (danger_level, vampire_warning_message, ghoul_warning_message)
-#define COMSIG_SOL_WARNING_GIVEN "comsig_sol_warning_given"
-///Called on a Bloodsucker's Lifetick.
-#define COMSIG_BLOODSUCKER_ON_LIFETICK "comsig_bloodsucker_on_lifetick"
-/// Called when a Bloodsucker's blood is updated
-#define BLOODSUCKER_UPDATE_BLOOD "bloodsucker_update_blood"
-	#define BLOODSUCKER_UPDATE_BLOOD_DISABLED (1<<0)
+/// Called on the mind when a Vampire chooses a clan: (datum/antagonist/vampire, datum/vampire_clan)
+#define COMSIG_VAMPIRE_CLAN_CHOSEN "vampire_clan_chosen"
 
 #define DANGER_LEVEL_FIRST_WARNING 1
 #define DANGER_LEVEL_SECOND_WARNING 2
@@ -232,87 +175,90 @@
 #define DANGER_LEVEL_SOL_ROSE 4
 #define DANGER_LEVEL_SOL_ENDED 5
 
-/**
- * Clan defines
- *
- * This is stuff that is used solely by Clans for clan-related activity.
- */
-///Drinks blood the normal Bloodsucker way.
-#define BLOODSUCKER_DRINK_NORMAL "bloodsucker_drink_normal"
-///Drinks blood but is snobby, refusing to drink from mindless
-#define BLOODSUCKER_DRINK_SNOBBY "bloodsucker_drink_snobby"
-///Drinks blood from disgusting creatures without Humanity consequences.
-#define BLOODSUCKER_DRINK_INHUMANELY "bloodsucker_drink_inhumanely"
+// Clan defines
+/// Drinks blood the normal Vampire way.
+#define VAMPIRE_DRINK_NORMAL "vampire_drink_normal"
+/// Drinks blood but is snobby, refusing to drink from mindless
+#define VAMPIRE_DRINK_SNOBBY "vampire_drink_snobby"
+// Masquerade ability given at this point or above
+#define VAMPIRE_HUMANITY_MASQUERADE_POWER 7
 
-/**
- * Traits
- */
+// Traits
 /// Falsifies Health analyzer blood levels
 #define TRAIT_MASQUERADE "masquerade"
-/// Your body is literal room temperature. Does not make you immune to the temp
-#define TRAIT_COLDBLOODED "coldblooded"
+/// For people in the middle of being staked
+#define TRAIT_BEINGSTAKED "beingstaked"
+/// This vampire is currently in a frenzy,
+#define TRAIT_FRENZY "frenzy"
+/// This vampire is currently in torpor.
+#define TRAIT_TORPOR "torpor"
+/// This vampire can tell if another vampire has committed diablere on examine.
+#define TRAIT_SEE_DIABLERIE "see_diablerie"
 
-#define TRAIT_COFFIN_ENLARGED "coffin_enlarged"
+// Trait sources
+/// Source trait for all vampire traits
+#define TRAIT_VAMPIRE "trait_vampire"
 
-/**
- * Sources
- */
-/// Source trait for Bloodsuckers-related traits
-#define BLOODSUCKER_TRAIT "bloodsucker_trait"
+// Macros
+#define IS_CURATOR(mob) istype(mob?.mind?.assigned_role, /datum/job/curator)
+/// Logging for vampire powers unlocked.
+/proc/log_vampire_power(text, list/data)
+	logger.Log(LOG_CATEGORY_UPLINK_VAMPIRE, text, data)
 
-#define GHOUL_TRAIT "ghoul_trait"
+/// Trait that says you're shaded by something (ie partially in the dark)
+#define TRAIT_SHADED "shaded"
 
-#define TORPOR_TRAIT "torpor"
+#define IS_VAMPIRE_HUNTER(mob) (IS_CURATOR(mob))
 
-/// Source trait for dominate related traits
-#define MESMERIZE_TRAIT "meserize_trait"
-#define DOMINATE_TRAIT "dominate_trait"
+/// Basically just check for `HAS_MIND_TRAIT(user, TRAIT_VAMPIRE_ALIGNED)` instead of `IS_VAMPIRE(user) || IS_VASSAL(user)`
+#define TRAIT_VAMPIRE_ALIGNED "vampire_aligned"
 
-/// Source trait for Monster Hunter-related traits
-#define HUNTER_TRAIT "monsterhunter_trait"
-/// Source trait while Feeding
-#define FEED_TRAIT "feed_trait"
-/// Source trait during a Frenzy
-#define FRENZY_TRAIT "frenzy_trait"
+#define LANGUAGE_VAMPIRE "vampire"
+#define LANGUAGE_VASSAL "vassal"
 
-///Whether a mob is a Bloodsucker
-#define IS_BLOODSUCKER(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/bloodsucker))
-///Whether a mob is a Ghoul
-#define IS_GHOUL(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/ghoul))
-///Whether a mob is a Favorite Ghoul
-#define IS_FAVORITE_GHOUL(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/ghoul/favorite))
-///Whether a mob is a Revenge Ghoul
-#define IS_REVENGE_GHOUL(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/ghoul/revenge))
-#define IS_EX_GHOUL(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/ex_ghoul))
+/// /turf/proc/is_softly_lit() but inlined
+#define IS_SOFTLY_LIT(turf) (turf.lighting_object && !(turf.luminosity || turf.dynamic_lumcount))
+/// Similar to turf.get_lumcount(), but it checks for soft lighting first, and just assumes the lumcount is 0 if it is.
+#define GET_SIMPLE_LUMCOUNT(turf) (IS_SOFTLY_LIT(turf) ? 0 : turf.get_lumcount())
 
-///Whether a mob is a Monster Hunter-NOT NEEDED RIGHT NOW
-// #define IS_MONSTERHUNTER(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/monsterhunter))
-///For future use
-#define IS_MONSTERHUNTER(mob) (FALSE)
+//Incapacitated status effect flags
+/// If the incapacitated status effect will ignore a mob in restraints (handcuffs)
+#define IGNORE_RESTRAINTS (1<<0)
+/// If the incapacitated status effect will ignore a mob in stasis (stasis beds)
+#define IGNORE_STASIS (1<<1)
+/// If the incapacitated status effect will ignore a mob being agressively grabbed
+#define IGNORE_GRAB (1<<2)
+/// If the incapacited status effect will ignore a mob in softcrit
+#define IGNORE_SOFTCRIT (1<<3)
 
-#define BLOODSUCKER_SIGHT_COLOR_CUTOFF list(25, 8, 5)
-#define POLL_IGNORE_GHOUL "ghoul"
+#define IS_FINITE__UNSAFE(a) (!isinf(a) && !isnan(a))
+#define IS_FINITE(a) (isnum(a) && IS_FINITE__UNSAFE(a))
 
-// Why waste memory on a dynamic global list if we can just bake it in on compile time?
-#define BLOODSUCKER_BLACKLISTED_ROLES list( \
-	JOB_CAPTAIN, \
-	JOB_HEAD_OF_PERSONNEL, \
-	JOB_HEAD_OF_SECURITY, \
-	JOB_WARDEN, \
-	JOB_SECURITY_OFFICER, \
-	JOB_DETECTIVE, \
-)
+#define IS_SAFE_NUM(a) IS_FINITE(a)
 
-#define BLOODSUCKER_RESTRICTED_SPECIES list( \
-	/datum/species/synthetic, \
-	/datum/species/plasmaman, \
-	/datum/species/shadow/nightmare, \
-	/datum/species/abductor, \
-	/datum/species/android, \
-	/datum/species/golem, \
-	/datum/species/shadow, \
-	/datum/species/skeleton, \
-	/datum/species/zombie, \
-	/datum/species/mutant, \
-	/datum/species/dullahan \
-)
+#define BODY_ZONES_LIMBS list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+///from base of atom/expose_reagents(): (/list, /datum/reagents, methods, volume_modifier, show_message)
+#define COMSIG_ATOM_EXPOSE_REAGENTS "atom_expose_reagents"
+	/// Prevents the atom from being exposed to reagents if returned on [COMSIG_ATOM_EXPOSE_REAGENTS]
+	#define COMPONENT_NO_EXPOSE_REAGENTS (1<<0)
+///from base of atom/expose_reagents(): (/list, /datum/reagents, methods, volume_modifier, show_message)
+#define COMSIG_ATOM_AFTER_EXPOSE_REAGENTS "atom_after_expose_reagents"
+///from base of [/datum/reagent/proc/expose_atom]: (/datum/reagent, reac_volume)
+#define COMSIG_ATOM_EXPOSE_REAGENT "atom_expose_reagent"
+#define MOVABLE_PHYSICS_PRECISION 0.01
+#define MOVABLE_PHYSICS_MINIMAL_VELOCITY 1
+
+// movable physics component flags
+/// Remove the component as soon as there's zero velocity, useful for movables that will no longer move after being initially moved (blood splatters)
+#define MPHYSICS_QDEL_WHEN_NO_MOVEMENT (1<<0)
+/// Movement has started, don't call start_movement() again
+#define MPHYSICS_MOVING (1<<1)
+/// The component has been "paused" and will not process
+#define MPHYSICS_PAUSED (1<<2)
+///from base of atom/movable/newtonian_move(): (inertia_direction, start_delay)
+#define COMSIG_MOVABLE_NEWTONIAN_MOVE "movable_newtonian_move"
+	#define COMPONENT_MOVABLE_NEWTONIAN_BLOCK (1<<0)
+///from base of [/atom/proc/expose_reagents]: (/atom, /list, methods, volume_modifier, show_message)
+#define COMSIG_REAGENTS_EXPOSE_ATOM "reagents_expose_atom"
+#define COMSIG_LIVING_TRACKER_REMOVED "tracker_removed"
+#define ui_team_finder "CENTER,CENTER"

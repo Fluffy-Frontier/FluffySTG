@@ -459,6 +459,7 @@
 
 	SEND_SIGNAL(src, COMSIG_CARBON_HELP_ACT, helper)
 	SEND_SIGNAL(helper, COMSIG_CARBON_HELPED, src)
+	SEND_SIGNAL(helper, COMSIG_LIVING_HUG_CARBON, src)
 
 	adjust_status_effects_on_shake_up()
 	set_resting(FALSE)

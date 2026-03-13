@@ -1421,4 +1421,18 @@ $border-width-px: $border-width * 1px;
   color: #006616;
 }
 
+.awe {
+  color: hsl(240, 100%, 30%);
+  animation: awe_glow 2s ease-in-out infinite;
+}
+
+@keyframes awe_glow {
+  0%,
+  100% {
+    text-shadow: 0 0 8px rgb(255, 131, 197);
+  }
+  50% {
+    text-shadow: 0 0 16px rgb(255, 0, 136);
+  }
+}
 // TFF EDIT ADDITION END

@@ -294,6 +294,12 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 		if (sensor_mode >= SENSOR_VITALS)
 			entry["life_status"] = tracked_living_mob.stat
 		else if (sensor_mode == SENSOR_LIVING)
+			// TFF ADDITION
+			if(tracked_living_mob.stat == UNCONSCIOUS && tracked_living_mob.health > tracked_living_mob.crit_threshold)
+				entry["life_status"] = CONSCIOUS
+			else
+				entry["life_status"] = tracked_living_mob.stat
+			// TFF ADDITION END
 			// binary sensors should only report alive or dead
 			entry["life_status"] = (tracked_living_mob.stat == DEAD) ? DEAD : CONSCIOUS
 

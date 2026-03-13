@@ -205,6 +205,12 @@
 	fade_in = 2 SECONDS
 	fade_out = 2 SECONDS
 
+// TFF ADDITION START
+/datum/client_colour/glass_colour/pink
+	color = "#ffcfe9"
+
+// TFF ADDITION END
+
 /datum/client_colour/monochrome/New(mob/owner)
 	. = ..()
 	if (owner)

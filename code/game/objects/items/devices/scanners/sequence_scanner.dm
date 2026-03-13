@@ -48,9 +48,17 @@
 	add_fingerprint(user)
 
 	//no scanning if its a husk or DNA-less Species
-	if (!HAS_TRAIT(interacting_with, TRAIT_GENELESS) && !HAS_TRAIT(interacting_with, TRAIT_BADDNA))
+	if ((!HAS_TRAIT(interacting_with, TRAIT_GENELESS) || HAS_TRAIT(interacting_with, TRAIT_FAKEGENES)) && !HAS_TRAIT(interacting_with, TRAIT_BADDNA)) // TFF EDIT, ORIGINAL: if (!HAS_TRAIT(interacting_with, TRAIT_GENELESS) && !HAS_TRAIT(interacting_with, TRAIT_BADDNA))
 		user.visible_message(span_notice("[user] analyzes [interacting_with]'s genetic sequence."))
+		// TFF EDIT START - ORIGINAL:
+		/*
 		balloon_alert(user, "sequence analyzed")
+		*/
+		if(!do_after(user, 3 SECONDS, interacting_with))
+			balloon_alert(user, "scan_failed!")
+			user.visible_message(span_warning("[user] fails to scan [interacting_with]'s genetic makeup."))
+			return ITEM_INTERACT_BLOCKING
+		// TFF EDIT END
 		playsound(user, 'sound/items/healthanalyzer.ogg', 50) // close enough
 		gene_scan(interacting_with, user)
 		return ITEM_INTERACT_SUCCESS

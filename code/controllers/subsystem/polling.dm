@@ -84,10 +84,10 @@ SUBSYSTEM_DEF(polling)
 		if(!candidate_mob.client)
 			continue
 		// Universal opt-out for all players.
-		if(!candidate_mob.client.prefs.read_preference(/datum/preference/toggle/ghost_roles))
+		if(!candidate_mob.client?.prefs?.read_preference(/datum/preference/toggle/ghost_roles) || HAS_TRAIT(candidate_mob, TRAIT_NO_OBSERVE)) // TFF EDIT - ORIGINAL: if(!candidate_mob.client.prefs.read_preference(/datum/preference/toggle/ghost_roles))
 			continue
 		// Opt-out for admins whom are currently adminned.
-		if((!candidate_mob.client.prefs.read_preference(/datum/preference/toggle/ghost_roles_as_admin)) && candidate_mob.client.holder)
+		if((!candidate_mob.client?.prefs?.read_preference(/datum/preference/toggle/ghost_roles_as_admin)) && candidate_mob.client?.holder) // TFF EDIT - ORIGINAL: if((!candidate_mob.client.prefs.read_preference(/datum/preference/toggle/ghost_roles_as_admin)) && candidate_mob.client.holder)
 			continue
 		if(!is_eligible(candidate_mob, role, check_jobban, ignore_category))
 			continue
