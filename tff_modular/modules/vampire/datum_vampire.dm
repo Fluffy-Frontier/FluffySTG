@@ -571,7 +571,7 @@
 
 	// Heart
 	var/obj/item/organ/heart/newheart = user.get_organ_slot(ORGAN_SLOT_HEART)
-	newheart?.beating = initial(newheart.beating)
+	newheart?.Restart()
 
 /datum/antagonist/vampire/proc/claim_coffin(obj/structure/closet/crate/claimed)
 	var/static/list/banned_areas_typecache

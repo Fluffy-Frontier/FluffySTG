@@ -20,13 +20,12 @@
 #define IS_VASSAL(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/vassal))
 #define CAT_VAMPIRE "Vampire"
 #define DOAFTER_SOURCE_ARCHIVE_OF_THE_KINDRED "doafter_archive_of_the_kindred"
-#define DOAFTER_SOURCE_PERSUASION_RACK "doafter_persuasion_rack"
 /// This area can always be claimed as a vampire lair regardless of Z-level and such
 #define ALWAYS_VALID_VAMPIRE_LAIR (1<<21)
 #define LOG_CATEGORY_UPLINK_VAMPIRE "uplink-vampire"
 #define FACTION_VAMPIRE "Vampire"
 #define ROLE_VAMPIRE "Vampire"
-#define ROLE_VAMPIRIC_ACCIDENT "Vampiric Accident"
+#define ROLE_VAMPIRIC_ACCIDENT "VampiricAccident"
 #define span_awe(str) ("<span class='awe'>" + str + "</span>")
 /// Uncomment this to enable testing of Vampire features (such as vassalizing people with a mind instead of a client).
 //#define VAMPIRE_TESTING
@@ -210,9 +209,6 @@
 
 #define IS_VAMPIRE_HUNTER(mob) (IS_CURATOR(mob))
 
-/// Basically just check for `HAS_MIND_TRAIT(user, TRAIT_VAMPIRE_ALIGNED)` instead of `IS_VAMPIRE(user) || IS_VASSAL(user)`
-#define TRAIT_VAMPIRE_ALIGNED "vampire_aligned"
-
 #define LANGUAGE_VAMPIRE "vampire"
 #define LANGUAGE_VASSAL "vassal"
 
@@ -230,21 +226,11 @@
 #define IGNORE_GRAB (1<<2)
 /// If the incapacited status effect will ignore a mob in softcrit
 #define IGNORE_SOFTCRIT (1<<3)
-
-#define IS_FINITE__UNSAFE(a) (!isinf(a) && !isnan(a))
-#define IS_FINITE(a) (isnum(a) && IS_FINITE__UNSAFE(a))
-
 #define IS_SAFE_NUM(a) IS_FINITE(a)
 
 #define BODY_ZONES_LIMBS list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 ///from base of atom/expose_reagents(): (/list, /datum/reagents, methods, volume_modifier, show_message)
-#define COMSIG_ATOM_EXPOSE_REAGENTS "atom_expose_reagents"
-	/// Prevents the atom from being exposed to reagents if returned on [COMSIG_ATOM_EXPOSE_REAGENTS]
-	#define COMPONENT_NO_EXPOSE_REAGENTS (1<<0)
-///from base of atom/expose_reagents(): (/list, /datum/reagents, methods, volume_modifier, show_message)
 #define COMSIG_ATOM_AFTER_EXPOSE_REAGENTS "atom_after_expose_reagents"
-///from base of [/datum/reagent/proc/expose_atom]: (/datum/reagent, reac_volume)
-#define COMSIG_ATOM_EXPOSE_REAGENT "atom_expose_reagent"
 #define MOVABLE_PHYSICS_PRECISION 0.01
 #define MOVABLE_PHYSICS_MINIMAL_VELOCITY 1
 

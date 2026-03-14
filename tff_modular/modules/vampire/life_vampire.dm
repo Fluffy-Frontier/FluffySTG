@@ -78,7 +78,7 @@
 	var/healing_multiplier = 1
 
 	if(carbon_owner.on_fire)
-		healing_multiplier = 0
+		healing_multiplier = 0.2
 	else if(HAS_TRAIT(carbon_owner, TRAIT_SLIME_HYDROPHOBIA))
 		healing_multiplier = 0.75
 
@@ -187,10 +187,6 @@
 	// Heal wounds
 	for(var/datum/wound/iter_wound as anything in carbon_user.all_wounds)
 		iter_wound.remove_wound()
-	for(var/obj/item/organ/organ as anything in carbon_user.organs)
-
-		organ.Remove(carbon_user)
-		organ.forceMove(carbon_user.drop_location())
 
 	// Don't Revive if staked or being staked
 	if(carbon_user.stat == DEAD && COOLDOWN_FINISHED(src, revive_cooldown) && !check_if_staked() && !HAS_TRAIT(carbon_user, TRAIT_BEINGSTAKED))

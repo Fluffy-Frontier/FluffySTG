@@ -76,7 +76,7 @@ Regenerative extracts:
 	C.name = "slimy closet"
 	C.desc = "Looking closer, it seems to be made of a sort of solid, opaque, metal-like goo."
 	if(target.mob_size > C.max_mob_size) //Prevents capturing megafauna or other large mobs in the closets
-		C.bust_open()
+		C.bust_open(FALSE) // TFF CHANGE - ORIGINAL: bust_open()
 		C.visible_message(span_warning("[target] is too big, and immediately breaks \the [C.name] open!"))
 	else //This can't be allowed to actually happen to the too-big mobs or it breaks some actions
 		target.forceMove(C)

@@ -10,7 +10,7 @@ const VampiricAccident: Antagonist = {
   key: 'vampiricaccident',
   name: 'Vampiric Accident',
   description: [VAMPIRE_MECHANICAL_DESCRIPTION],
-  category: Category.Roundstart,
+  category: Category.Midround,
 };
 
 export default VampiricAccident;

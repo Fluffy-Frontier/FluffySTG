@@ -152,7 +152,7 @@
 		if (!closet.opened)
 			if (!closet.open())
 				playsound(closet, 'sound/effects/bang.ogg', vol = 50, vary = TRUE)
-				closet.bust_open()
+				closet.bust_open(FALSE) // TFF CHANGE - ORIGINAL: bust_open()
 
 
 	mod.add_overlay(jet_icon)

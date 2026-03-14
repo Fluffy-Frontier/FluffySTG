@@ -66,7 +66,7 @@
 	// Clear mutations and diseases
 	carbon_owner.dna.remove_all_mutations()
 	for(var/datum/disease/diseases in carbon_owner.diseases)
-		diseases.cure(target = carbon_owner, safe = TRUE)
+		diseases.cure()
 
 	// Handle Traits
 	carbon_owner.add_traits(vampiredatum.vampire_traits, TRAIT_VAMPIRE)

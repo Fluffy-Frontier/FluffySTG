@@ -10,7 +10,7 @@
 			span_notice("[attacker] forces [victim] to drink from \the [src]."),
 			span_notice("You put \the [src] up to [victim]'s mouth.")
 		)
-		reagents.trans_to(victim, to_feed, transfered_by = attacker, methods = INGEST)
+		reagents.trans_to(victim, to_feed, transferred_by = attacker, methods = INGEST)
 		playsound(victim, 'sound/items/drink.ogg', vol = 30, vary = TRUE)
 		return TRUE
 
@@ -26,7 +26,7 @@
 		span_notice("[victim] sucks the contents out of \the [src]!"),
 		span_notice("You feed from \the [src].")
 	)
-	reagents.trans_to(victim, to_feed, transfered_by = attacker, methods = INGEST)
+	reagents.trans_to(victim, to_feed, transferred_by = attacker, methods = INGEST)
 	playsound(victim, 'sound/items/drink.ogg', vol = 30, vary = TRUE)
 	return TRUE
 

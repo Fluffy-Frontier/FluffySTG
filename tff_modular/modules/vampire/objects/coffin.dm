@@ -85,7 +85,7 @@
 	)
 	if(!tool.use_tool(src, user, pry_lid_timer))
 		return FALSE
-	bust_open()
+	bust_open(FALSE) // TFF CHANGE - ORIGINAL: bust_open()
 	user.visible_message(
 		span_notice("[user] snaps the door of [src] wide open."),
 		span_notice("The door of [src] snaps open."),
