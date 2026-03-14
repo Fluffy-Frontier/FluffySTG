@@ -37,7 +37,7 @@
 		else
 			. += span_warning("You cannot create any more vassals at the moment!")
 
-/obj/structure/vampire/vassalrack/deconstruct(disassembled = TRUE)
+/obj/structure/vampire/vassalrack/atom_deconstruct(disassembled = TRUE)
 	. = ..()
 	new /obj/item/stack/sheet/iron(src.loc, 4)
 	new /obj/item/stack/rods(loc, 4)

@@ -226,7 +226,7 @@
 		var/mob/living/carbon/human/current_human = current_mob
 		current_human.physiology?.stamina_mod *= VAMPIRE_INHERENT_STAMINA_RESIST
 
-	current_mob.has_dna()?.remove_all_mutations()
+	current_mob.dna?.remove_all_mutations()
 	current_mob.add_traits(vampire_traits + always_traits, TRAIT_VAMPIRE)
 
 	current_mob.grant_language(/datum/language/vampiric, source = LANGUAGE_VAMPIRE)
