@@ -791,7 +791,7 @@
 		new_limb.burn_modifier /= initial(new_limb.burn_modifier)
 
 	if(new_limb.body_zone in BODY_ZONES_LIMBS)
-		var/extra_damage = 1 + (vampire_level * extra_damage_per_rank)
+		var/extra_damage = 2 + (vampire_level * extra_damage_per_rank)
 		new_limb.unarmed_damage_low += extra_damage
 		new_limb.unarmed_damage_high += extra_damage
 
