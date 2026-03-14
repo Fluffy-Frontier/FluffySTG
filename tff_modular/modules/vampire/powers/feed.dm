@@ -175,7 +175,7 @@
 	currently_feeding = FALSE
 	masquerade_breached = FALSE
 
-	if(feed_target.grabbedby(living_owner) && !living_owner.grab_state == GRAB_AGGRESSIVE)
+	if(!feed_target.grabbedby(living_owner))
 
 		// Don't allow normal feed on vamps. It's too easy and feels unfair.
 		if(IS_VAMPIRE(feed_target))
@@ -219,7 +219,7 @@
 		// Just to make sure
 		living_owner.stop_pulling()
 		feed_target.stop_pulling()
-
+		/*
 		// omega switch
 		switch(get_dir(owner.loc, feed_target.loc))
 			if(NORTH)
@@ -267,14 +267,14 @@
 				feed_target.dir = EAST
 				animate(owner, 0.2 SECONDS, pixel_x = 8,)
 				animate(feed_target, 0.2 SECONDS, pixel_x = -8)
-
+			*/
 		owner.visible_message(
 			span_notice("[owner] grabs [feed_target] tightly, biting into [feed_target.p_their()] neck!"),
 			span_notice("You slip your fangs into [feed_target]'s neck."),
 			vision_distance = FEED_SILENT_NOTICE_RANGE, ignored_mobs = feed_target
 		)
 
-	else if(owner.pulling == feed_target && owner.grab_state == GRAB_AGGRESSIVE) // COMBAT FEED BELOW HERE!!!!!!!!!!
+	else if(feed_target.grabbedby(owner)) // COMBAT FEED BELOW HERE!!!!!!!!!!
 
 		playsound(living_owner, 'tff_modular/modules/vampire/sound/drinkblood1.ogg', 50)
 

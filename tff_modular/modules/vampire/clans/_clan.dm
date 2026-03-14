@@ -199,7 +199,7 @@
 
 /datum/vampire_clan/proc/finalize_spend_rank()
 	// Level up the vampire
-	vampiredatum.vampire_regen_rate += 0.05
+	vampiredatum.vampire_regen_rate += 0.15
 	vampiredatum.max_vitae += 100
 
 	/* if(ishuman(vampiredatum.owner.current))

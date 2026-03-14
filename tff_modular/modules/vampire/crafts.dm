@@ -5,6 +5,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 3)
 	time = 8 SECONDS
 	category = CAT_WEAPON_MELEE
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/hardened_stake
 	name = "Hardened Stake"
@@ -13,6 +14,7 @@
 	reqs = list(/obj/item/stack/rods = 1)
 	time = 6 SECONDS
 	category = CAT_WEAPON_MELEE
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/silver_stake
 	name = "Silver Stake"
@@ -24,7 +26,7 @@
 	)
 	time = 8 SECONDS
 	category = CAT_WEAPON_MELEE
-	crafting_flags = CRAFT_MUST_BE_LEARNED
+	crafting_flags = CRAFT_MUST_BE_LEARNED | CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/vassalrack
 	name = "Vassalization Rack"
@@ -37,7 +39,7 @@
 	)
 
 	category = CAT_VAMPIRE
-	crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND | CRAFT_MUST_BE_LEARNED
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY | CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND | CRAFT_MUST_BE_LEARNED
 
 /datum/crafting_recipe/candelabrum
 	name = "Candelabrum"
@@ -51,7 +53,7 @@
 	)
 
 	category = CAT_VAMPIRE
-	crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND | CRAFT_MUST_BE_LEARNED
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY | CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND | CRAFT_MUST_BE_LEARNED
 
 /datum/crafting_recipe/bloodthrone
 	name = "Blood Throne"
@@ -64,7 +66,7 @@
 	)
 
 	category = CAT_VAMPIRE
-	crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND | CRAFT_MUST_BE_LEARNED
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY | RAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND | CRAFT_MUST_BE_LEARNED
 
 /datum/crafting_recipe/meatcoffin
 	name = "Meat Coffin"
@@ -76,7 +78,7 @@
 	)
 	time = 15 SECONDS
 	category = CAT_STRUCTURE
-	crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND | CRAFT_MUST_BE_LEARNED
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY | CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND | CRAFT_MUST_BE_LEARNED
 
 /datum/crafting_recipe/vassalrack
 	name = "Vassalization Rack"
@@ -89,7 +91,7 @@
 	)
 
 	category = CAT_VAMPIRE
-	crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND | CRAFT_MUST_BE_LEARNED
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY | CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND | CRAFT_MUST_BE_LEARNED
 
 /datum/crafting_recipe/candelabrum
 	name = "Candelabrum"
@@ -103,7 +105,7 @@
 	)
 
 	category = CAT_VAMPIRE
-	crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND | CRAFT_MUST_BE_LEARNED
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY | CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND | CRAFT_MUST_BE_LEARNED
 
 /datum/crafting_recipe/bloodthrone
 	name = "Blood Throne"
@@ -116,7 +118,7 @@
 	)
 
 	category = CAT_VAMPIRE
-	crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND | CRAFT_MUST_BE_LEARNED
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY | CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND | CRAFT_MUST_BE_LEARNED
 
 /datum/crafting_recipe/blackcoffin
 	name = "Black Coffin"
@@ -129,6 +131,7 @@
 	)
 	time = 15 SECONDS
 	category = CAT_STRUCTURE
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/securecoffin
 	name = "Secure Coffin"
@@ -141,6 +144,7 @@
 	)
 	time = 15 SECONDS
 	category = CAT_STRUCTURE
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY
 
 /datum/crafting_recipe/metalcoffin
 	name = "Metal Coffin"
@@ -151,3 +155,4 @@
 	)
 	time = 10 SECONDS
 	category = CAT_STRUCTURE
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY

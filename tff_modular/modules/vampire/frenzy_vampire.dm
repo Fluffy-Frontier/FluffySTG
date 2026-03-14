@@ -1,3 +1,5 @@
+#define CLIENT_COLOR_SOURCE_VAMPIRE "vampire_source"
+
 /**
  * # Status effect
  *
@@ -47,7 +49,7 @@
 
 	// Basic stuff
 	carbon_owner.add_movespeed_modifier(/datum/movespeed_modifier/frenzy_speed)
-	carbon_owner.add_client_colour(/datum/client_colour/bloodlust)
+	carbon_owner.add_client_colour(/datum/client_colour/bloodlust, CLIENT_COLOR_SOURCE_VAMPIRE)
 	carbon_owner.uncuff()
 	carbon_owner.pulledby?.stop_pulling()
 	carbon_owner.adjust_stamina_loss(-200)
@@ -81,7 +83,7 @@
 
 	// Basic stuff
 	carbon_owner.remove_movespeed_modifier(/datum/movespeed_modifier/frenzy_speed)
-	carbon_owner.remove_client_colour(/datum/client_colour/bloodlust)
+	carbon_owner.remove_client_colour(CLIENT_COLOR_SOURCE_VAMPIRE)
 
 	// Alert them
 	carbon_owner.balloon_alert(carbon_owner, "you come back to your senses.")
@@ -113,3 +115,5 @@
 /atom/movable/screen/alert/status_effect/masquerade/MouseEntered(location,control,params)
 	desc = initial(desc)
 	return ..()
+
+#undef CLIENT_COLOR_SOURCE_VAMPIRE

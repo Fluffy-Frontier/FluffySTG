@@ -92,7 +92,7 @@
 	/// Additional regeneration when the vampire has a lot of blood
 	var/additional_regen
 	/// How much damage the vampire heals each life tick. Increases per rank up
-	var/vampire_regen_rate = 0.3
+	var/vampire_regen_rate = 0.45
 
 	/// Minimum cooldown when reviving.
 	COOLDOWN_DECLARE(revive_cooldown)
@@ -806,7 +806,7 @@
 		lost_limb.burn_modifier *= initial(lost_limb.burn_modifier)
 
 	if(lost_limb.body_zone in BODY_ZONES_LIMBS)
-		var/extra_damage = 1 + (vampire_level / extra_damage_per_rank)
+		var/extra_damage = 2 + (vampire_level / extra_damage_per_rank)
 		// safety measure in case we ever accidentally fuck up the math or something
 		lost_limb.unarmed_damage_low = max(lost_limb.unarmed_damage_low - extra_damage, initial(lost_limb.unarmed_damage_low))
 		lost_limb.unarmed_damage_high = max(lost_limb.unarmed_damage_high - extra_damage, initial(lost_limb.unarmed_damage_high))

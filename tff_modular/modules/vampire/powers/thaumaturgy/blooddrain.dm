@@ -29,6 +29,7 @@
 	var/obj/projectile/magic/blood_drain/drain = new(living_owner.loc)
 	drain.firer = living_owner
 	drain.fired_from = src
+	drain.aim_projectile(target_atom, living_owner)
 	if(isliving(target_atom))
 		drain.original = target_atom
 	drain.def_zone = ran_zone(living_owner.zone_selected)

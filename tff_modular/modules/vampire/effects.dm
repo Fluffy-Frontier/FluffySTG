@@ -166,6 +166,7 @@
 /obj/effect/decal/cleanable/blood/line
 	name = "blood line"
 	desc = "Raining blood, from a lacerated sky, bleeding its horror!"
+	icon = 'tff_modular/modules/vampire/icons/blood.dmi'
 	icon_state = "line"
 	random_icon_states = null
 	base_name = "dried blood line"

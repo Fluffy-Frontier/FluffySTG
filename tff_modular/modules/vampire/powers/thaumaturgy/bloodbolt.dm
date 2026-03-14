@@ -7,8 +7,8 @@
 	power_explanation = "Shoots a blood bolt spell that deals burn damage"
 	vampire_power_flags = NONE
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_INCAPACITATED | BP_CANT_USE_WHILE_UNCONSCIOUS
-	vitaecost = 75
-	cooldown_time = 60 SECONDS
+	vitaecost = 60
+	cooldown_time = 40 SECONDS
 	target_range = 80 // Sniper :)
 	power_activates_immediately = FALSE
 	prefire_message = "Select your target."
@@ -29,6 +29,7 @@
 	bolt.fired_from = src
 	bolt.original = target_atom
 	bolt.def_zone = ran_zone(living_owner.zone_selected)
+	bolt.aim_projectile(target_atom, living_owner)
 	INVOKE_ASYNC(bolt, TYPE_PROC_REF(/obj/projectile, fire))
 
 	playsound(living_owner, 'tff_modular/modules/vampire/sound/bloodbolt_fire.ogg', 60, TRUE)

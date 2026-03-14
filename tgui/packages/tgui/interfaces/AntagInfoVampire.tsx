@@ -1,4 +1,3 @@
-import type { BooleanLike } from 'common/react';
 import { type SetStateAction, useState } from 'react';
 import { sanitizeText } from 'tgui/sanitize';
 import {
@@ -10,6 +9,7 @@ import {
   Stack,
   Tabs,
 } from 'tgui-core/components';
+import type { BooleanLike } from 'tgui-core/react';
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
 import { type Objective, ObjectivePrintout } from './common/Objectives';
