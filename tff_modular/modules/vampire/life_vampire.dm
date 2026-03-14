@@ -1,11 +1,7 @@
 /// Runs from COMSIG_LIVING_LIFE, handles Vampire constant processes.
 /datum/antagonist/vampire/proc/life_tick(datum/source, seconds_per_tick, times_fired)
 	SIGNAL_HANDLER
-	// Weirdness shield
-	if(isbrain(owner?.current))
-		update_hud()
-		return
-	handle_async()
+	handle_life()
 	// Deduct Blood
 	if(owner.current.stat == CONSCIOUS && !HAS_TRAIT(owner.current, TRAIT_IMMOBILIZED) && !HAS_TRAIT(owner.current, TRAIT_NODEATH))
 		adjust_blood_volume(-VAMPIRE_PASSIVE_BLOOD_DRAIN)
@@ -19,7 +15,7 @@
 	var/area/current_area = get_area(owner.current)
 	if(istype(current_area, /area/station/service/chapel) && !is_chaplain_job(owner.assigned_role) && humanity <= 2)
 		to_chat(owner, span_warning("Your inhuman nature is rejected by a holy presence!"))
-		owner.current.adjustFireLoss(10)
+		owner.current.adjust_fire_loss(10)
 		owner.current.adjust_fire_stacks(4)
 		owner.current.ignite_mob()
 
@@ -34,7 +30,11 @@
 	// Set our body's blood_volume to mimick our vampire one (if we aren't using the Masquerade power)
 	update_hud()
 
-/datum/antagonist/vampire/proc/handle_async()
+/datum/antagonist/vampire/proc/handle_life()
+	// Weirdness shield
+	if(isbrain(owner?.current))
+		update_hud()
+		return
 	if(QDELETED(owner))
 		INVOKE_ASYNC(src, PROC_REF(handle_death))
 		return
