@@ -19,9 +19,9 @@
 		At level 4, you will be able to mesmerize regardless of your target's direction."
 	vampire_power_flags = NONE
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_WHILE_INCAPACITATED | BP_CANT_USE_WHILE_UNCONSCIOUS
-	vitaecost = 75
-	cooldown_time = 20 SECONDS
-	target_range = 4
+	vitaecost = 40
+	cooldown_time = 10 SECONDS
+	target_range = 5
 	power_activates_immediately = FALSE
 	prefire_message = "Whom will you submit to your will?"
 	level_current = 1

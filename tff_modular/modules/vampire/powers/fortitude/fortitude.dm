@@ -30,7 +30,7 @@
 						At level 4: Gain complete stun immunity."
 	vampire_power_flags = BP_AM_TOGGLE | BP_AM_COSTLESS_UNCONSCIOUS
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_STAKED
-	vitaecost = 50
+	vitaecost = 10
 	cooldown_time = 5 SECONDS
 	constant_vitaecost = 1
 
@@ -45,15 +45,15 @@
 	var/calculated_burn_resist // do not touch
 
 /datum/action/cooldown/vampire/fortitude/two
-	vitaecost = 40
-	constant_vitaecost = 2
+	vitaecost = 20
+	constant_vitaecost = 1.5
 	resistance = 0.6
 	pierce = TRUE
 	push = TRUE
 
 /datum/action/cooldown/vampire/fortitude/three
 	vitaecost = 30
-	constant_vitaecost = 3
+	constant_vitaecost = 2
 	resistance = 0.4
 	pierce = TRUE
 	push = TRUE
@@ -61,7 +61,7 @@
 
 /datum/action/cooldown/vampire/fortitude/four
 	vitaecost = 20
-	constant_vitaecost = 4
+	constant_vitaecost = 2.5
 	resistance = 0.3
 	pierce = TRUE
 	push = TRUE
@@ -74,7 +74,7 @@
 	to_chat(owner, span_notice("Your flesh has become as hard as steel!"))
 	owner.playsound_local(null, 'tff_modular/modules/vampire/sound/fortitude_on.ogg', 100, FALSE, pressure_affected = FALSE)
 
-	calculated_burn_resist = min(1, resistance * 3)
+	calculated_burn_resist = min(1, resistance * 1.2)
 
 	// Traits & Effects
 	if(pierce)

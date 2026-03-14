@@ -9,22 +9,22 @@
 	vitaecost = 50
 	constant_vitaecost = 1
 	cooldown_time = 5 SECONDS
-	var/cloaklevel = 20
+	var/cloaklevel = 70
 
 /datum/action/cooldown/vampire/cloak/two
 	vitaecost = 40
 	constant_vitaecost = 2
-	cloaklevel = 15
+	cloaklevel = 50
 
 /datum/action/cooldown/vampire/cloak/three
 	vitaecost = 30
-	constant_vitaecost = 3
-	cloaklevel = 10
+	constant_vitaecost = 2
+	cloaklevel = 30
 
 /datum/action/cooldown/vampire/cloak/four
 	vitaecost = 20
-	constant_vitaecost = 4
-	cloaklevel = 5
+	constant_vitaecost = 3
+	cloaklevel = 20
 
 /// Must have nobody around to see the cloak
 /datum/action/cooldown/vampire/cloak/can_use()

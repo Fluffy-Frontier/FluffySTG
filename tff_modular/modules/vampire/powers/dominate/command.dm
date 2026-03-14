@@ -17,9 +17,9 @@
 		In addition, attacking your target will immediately snap them out of their compulsion."
 	vampire_power_flags = NONE
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_WHILE_INCAPACITATED | BP_CANT_USE_WHILE_UNCONSCIOUS
-	vitaecost = 120
-	cooldown_time = 80 SECONDS
-	target_range = 3
+	vitaecost = 80
+	cooldown_time = 40 SECONDS
+	target_range = 4
 	power_activates_immediately = FALSE
 	prefire_message = "Whom will you subvert to your will?"
 	ranged_mousepointer = 'tff_modular/modules/vampire/icons/vampire_command.dmi'
@@ -27,7 +27,7 @@
 	/// How long the command is in effect.
 	var/power_time = 60 SECONDS
 	/// How long you have to channel in order to command someone.
-	var/channel_time = 8 SECONDS
+	var/channel_time = 7 SECONDS
 
 	/// Reference to the target
 	var/datum/weakref/target_ref
@@ -35,10 +35,10 @@
 /datum/action/cooldown/vampire/targeted/command/two
 	name = "Command"
 	power_time = 180 SECONDS
-	vitaecost = 240
-	cooldown_time = 200 SECONDS
+	vitaecost = 120
+	cooldown_time = 60 SECONDS
 	target_range = 6
-	channel_time = 5 SECONDS
+	channel_time = 4 SECONDS
 
 /datum/action/cooldown/vampire/targeted/command/can_use()
 	. = ..()

@@ -13,6 +13,8 @@
 				/obj/item/clothing/head/playbunnyears/mime = 3,
 				/obj/item/clothing/shoes/clown_shoes/heeled = 3,
 				/obj/item/clothing/shoes/fancy_heels/white = 3,
+				/obj/item/umbrella = 3,
+				/obj/item/umbrella/parasol = 3,
 			),
 		),
 	)

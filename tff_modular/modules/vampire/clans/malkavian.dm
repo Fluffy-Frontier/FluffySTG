@@ -19,7 +19,8 @@
 	vampiredatum.owned_disciplines += new /datum/discipline/auspex/malkavian(vampiredatum)
 	vampiredatum.owned_disciplines += new /datum/discipline/obfuscate(vampiredatum)
 	vampiredatum.owned_disciplines += new /datum/discipline/dominate(vampiredatum)
-
+	vampiredatum.owned_disciplines += new /datum/discipline/fortitude(vampiredatum)
+	vampiredatum.owned_disciplines += new /datum/discipline/celerity(vampiredatum)
 	vampiredatum.owner.current.playsound_local(get_turf(vampiredatum.owner.current), 'sound/music/antag/creepalert.ogg', 80, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 	to_chat(vampiredatum.owner.current, span_hypnophrase("Welcome, childe of Malkav..."))
 
