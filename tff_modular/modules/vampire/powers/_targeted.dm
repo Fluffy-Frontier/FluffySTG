@@ -72,7 +72,7 @@
 
 	return TRUE
 
-/datum/action/cooldown/vampire/targeted/InterceptClickOn(mob/living/clucker, params, atom/target)
+/datum/action/cooldown/vampire/targeted/InterceptClickOn(mob/living/clicker, params, atom/target)
 	INVOKE_ASYNC(src, PROC_REF(click_with_power), target)
 	return TRUE
 
