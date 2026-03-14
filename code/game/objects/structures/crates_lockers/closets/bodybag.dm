@@ -312,7 +312,7 @@
 			to_chat(user, span_warning("You fail to break out of [src]!"))
 
 
-/obj/structure/closet/body_bag/environmental/prisoner/bust_open(FALSE) // TFF CHANGE - ORIGINAL: bust_open()
+/obj/structure/closet/body_bag/environmental/prisoner/bust_open(destructive = FALSE) // TFF CHANGE - ORIGINAL: bust_open()
 	sinched = FALSE
 	// We don't break the bag, because the buckles were backed out as opposed to fully broken.
 	open()
