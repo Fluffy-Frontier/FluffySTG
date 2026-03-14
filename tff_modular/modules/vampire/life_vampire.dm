@@ -113,7 +113,7 @@
 
 			// Extinguish and remove embedded objects
 			carbon_owner.extinguish_mob()
-			INVOKE_ASYNC(carbon_owner, TYPE_PROC_REF(mob/living/carbon/human, remove_all_embedded_objects))
+			INVOKE_ASYNC(carbon_owner, PROC_REF(remove_all_embedded_objects))
 
 			if(try_regenerate_limbs(vitaecost_multiplier))
 				return TRUE
@@ -293,7 +293,7 @@
 			var/mob/living/carbon/carbon_body = body
 			carbon_body.drop_all_held_items()
 			carbon_body.unequip_everything()
-			INVOKE_ASYNC(carbon_body, TYPE_PROC_REF(mob/living/carbon/human, remove_all_embedded_objects))
+			INVOKE_ASYNC(carbon_body, PROC_REF(remove_all_embedded_objects))
 			playsound(owner.current, 'tff_modular/modules/vampire/sound/burning_death.ogg', 100, TRUE)
 		else
 			body.dust(drop_items = TRUE)
