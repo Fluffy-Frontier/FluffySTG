@@ -2,33 +2,34 @@
 /datum/antagonist/vampire/proc/life_tick(datum/source, seconds_per_tick, times_fired)
 	SIGNAL_HANDLER
 
-	var/mob/living/vampire = source
-	var/mob/living/vampiredatum = vampire.mind?.has_antag_datum(/datum/antagonist/vampire)
-	if(!isliving(vampire))
+	if(!isliving(owner.current))
 	// Weirdness shield
-	if(isbrain(vampire))
+	if(isbrain(owner.current))
 		update_hud()
 		return
-	if(QDELETED(vampire) || QDELETED(vampiredatum))
+	if(QDELETED(owner.current))
 		INVOKE_ASYNC(src, PROC_REF(handle_death))
 		return
 
+	handle_life()
+
+/datum/antagonist/vampire/proc/handle_life()
 	// Deduct Blood
-	if(vampire.stat == CONSCIOUS && !HAS_TRAIT(vampire, TRAIT_IMMOBILIZED) && !HAS_TRAIT(vampire, TRAIT_NODEATH))
+	if(owner.current.stat == CONSCIOUS && !HAS_TRAIT(owner.current, TRAIT_IMMOBILIZED) && !HAS_TRAIT(owner.current, TRAIT_NODEATH))
 		adjust_blood_volume(-VAMPIRE_PASSIVE_BLOOD_DRAIN)
 
 	// Healing
-	if(handle_healing(seconds_per_tick) && !isanimal_or_basicmob(vampire))
+	if(handle_healing(seconds_per_tick) && !isanimal_or_basicmob(owner.current))
 		if((COOLDOWN_FINISHED(src, vampire_spam_healing)) && current_vitae > 0)
-			to_chat(vampire, span_notice("The power of your blood knits your wounds..."))
+			to_chat(owner.current, span_notice("The power of your blood knits your wounds..."))
 			COOLDOWN_START(src, vampire_spam_healing, VAMPIRE_SPAM_HEALING)
 
-	var/area/current_area = get_area(vampire)
-	if(istype(current_area, /area/station/service/chapel) && !is_chaplain_job(vampire.assigned_role) && humanity <= 2)
-		to_chat(vampire, span_warning("Your inhuman nature is rejected by a holy presence!"))
-		vampire.adjust_fire_loss(10)
-		vampire.adjust_fire_stacks(4)
-		vampire.ignite_mob()
+	var/area/current_area = get_area(owner.current)
+	if(istype(current_area, /area/station/service/chapel) && !is_chaplain_job(owner.current.assigned_role) && humanity <= 2)
+		to_chat(owner.current, span_warning("Your inhuman nature is rejected by a holy presence!"))
+		owner.current.adjust_fire_loss(10)
+		owner.current.adjust_fire_stacks(4)
+		owner.current.ignite_mob()
 
 	// Standard Updates
 
