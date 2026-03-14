@@ -1,9 +1,6 @@
 /// Runs from COMSIG_LIVING_LIFE, handles Vampire constant processes.
 /datum/antagonist/vampire/proc/life_tick(datum/source, seconds_per_tick, times_fired)
 	SIGNAL_HANDLER
-	if(QDELETED(owner) || QDELETED(owner.current))
-		INVOKE_ASYNC(src, PROC_REF(handle_death))
-		return
 	handle_life()
 	if(isbrain(owner.current))
 		update_hud()
@@ -13,7 +10,9 @@
 	// Deduct Blood
 	if(owner.current.stat == CONSCIOUS && !HAS_TRAIT(owner.current, TRAIT_IMMOBILIZED) && !HAS_TRAIT(owner.current, TRAIT_NODEATH))
 		adjust_blood_volume(-VAMPIRE_PASSIVE_BLOOD_DRAIN)
-
+	if(QDELETED(owner) || QDELETED(owner.current))
+		INVOKE_ASYNC(src, PROC_REF(handle_death))
+		return
 	// Healing
 	if(handle_healing() && !isanimal_or_basicmob(owner.current))
 		if((COOLDOWN_FINISHED(src, vampire_spam_healing)) && current_vitae > 0)
@@ -26,8 +25,6 @@
 		owner.current.adjust_fire_loss(10)
 		owner.current.adjust_fire_stacks(4)
 		owner.current.ignite_mob()
-
-	// Standard Updates
 
 	// Clan specific stuff
 	if(my_clan)
