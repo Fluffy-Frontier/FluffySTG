@@ -6,11 +6,11 @@ Use your Vampiric abilities as best you can.
 Scrape by Space Station 13, or take over it, ghoulizing your way.
 `;
 
-const Vampire: Antagonist = {
+const VampiricAccident: Antagonist = {
   key: 'vampiricaccident',
   name: 'Vampiric Accident',
   description: [VAMPIRE_MECHANICAL_DESCRIPTION],
   category: Category.Roundstart,
 };
 
-export default Vampire;
+export default VampiricAccident;
