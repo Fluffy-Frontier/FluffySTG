@@ -1,15 +1,19 @@
 /// Runs from COMSIG_LIVING_LIFE, handles Vampire constant processes.
 /datum/antagonist/vampire/proc/life_tick(datum/source, seconds_per_tick, times_fired)
 	SIGNAL_HANDLER
+	if(!isliving(owner.current))
+		return FALSE
+
 	handle_life()
-	if(isbrain(owner.current))
-		update_hud()
-		return
+	var/area/current_area = get_area(owner.current)
+	if(istype(current_area, /area/station/service/chapel) && !is_chaplain_job(owner.current.mind?.assigned_role) && humanity <= 2)
+		to_chat(owner.current, span_warning("Your inhuman nature is rejected by a holy presence!"))
+		owner.current.adjust_fire_loss(10)
+		owner.current.adjust_fire_stacks(4)
+		owner.current.ignite_mob()
 
 /datum/antagonist/vampire/proc/handle_life()
 	// Deduct Blood
-	if(owner.current.stat == CONSCIOUS && !HAS_TRAIT(owner.current, TRAIT_IMMOBILIZED) && !HAS_TRAIT(owner.current, TRAIT_NODEATH))
-		adjust_blood_volume(-VAMPIRE_PASSIVE_BLOOD_DRAIN)
 	if(QDELETED(owner) || QDELETED(owner.current))
 		INVOKE_ASYNC(src, PROC_REF(handle_death))
 		return
@@ -18,13 +22,6 @@
 		if((COOLDOWN_FINISHED(src, vampire_spam_healing)) && current_vitae > 0)
 			to_chat(owner.current, span_notice("The power of your blood knits your wounds..."))
 			COOLDOWN_START(src, vampire_spam_healing, VAMPIRE_SPAM_HEALING)
-
-	var/area/current_area = get_area(owner.current)
-	if(istype(current_area, /area/station/service/chapel) && !is_chaplain_job(owner.current.mind?.assigned_role) && humanity <= 2)
-		to_chat(owner.current, span_warning("Your inhuman nature is rejected by a holy presence!"))
-		owner.current.adjust_fire_loss(10)
-		owner.current.adjust_fire_stacks(4)
-		owner.current.ignite_mob()
 
 	// Clan specific stuff
 	if(my_clan)
