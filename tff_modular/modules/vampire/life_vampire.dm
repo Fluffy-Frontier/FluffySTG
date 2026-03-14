@@ -6,7 +6,7 @@
 	var/mob/living/vampiredatum = vampire.mind?.has_antag_datum(/datum/antagonist/vampire)
 	if(!isliving(vampire))
 	// Weirdness shield
-	if(isbrain(vampire?.current))
+	if(isbrain(vampire))
 		update_hud()
 		return
 	if(QDELETED(vampire) || QDELETED(vampiredatum))
@@ -14,7 +14,7 @@
 		return
 
 	// Deduct Blood
-	if(vampire.current.stat == CONSCIOUS && !HAS_TRAIT(vampire, TRAIT_IMMOBILIZED) && !HAS_TRAIT(vampire, TRAIT_NODEATH))
+	if(vampire.stat == CONSCIOUS && !HAS_TRAIT(vampire, TRAIT_IMMOBILIZED) && !HAS_TRAIT(vampire, TRAIT_NODEATH))
 		adjust_blood_volume(-VAMPIRE_PASSIVE_BLOOD_DRAIN)
 
 	// Healing
