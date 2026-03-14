@@ -11,9 +11,9 @@
 		INVOKE_ASYNC(src, PROC_REF(handle_death))
 		return
 
-	handle_life()
+	handle_life(seconds_per_tick, times_fired)
 
-/datum/antagonist/vampire/proc/handle_life()
+/datum/antagonist/vampire/proc/handle_life(seconds_per_tick, times_fired)
 	// Deduct Blood
 	if(owner.current.stat == CONSCIOUS && !HAS_TRAIT(owner.current, TRAIT_IMMOBILIZED) && !HAS_TRAIT(owner.current, TRAIT_NODEATH))
 		adjust_blood_volume(-VAMPIRE_PASSIVE_BLOOD_DRAIN)
@@ -25,7 +25,7 @@
 			COOLDOWN_START(src, vampire_spam_healing, VAMPIRE_SPAM_HEALING)
 
 	var/area/current_area = get_area(owner.current)
-	if(istype(current_area, /area/station/service/chapel) && !is_chaplain_job(owner.current.assigned_role) && humanity <= 2)
+	if(istype(current_area, /area/station/service/chapel) && !is_chaplain_job(owner.current.mind?.assigned_role) && humanity <= 2)
 		to_chat(owner.current, span_warning("Your inhuman nature is rejected by a holy presence!"))
 		owner.current.adjust_fire_loss(10)
 		owner.current.adjust_fire_stacks(4)
