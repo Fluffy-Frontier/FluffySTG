@@ -7,8 +7,8 @@ Scrape by Space Station 13, or take over it, ghoulizing your way.
 `;
 
 const Vampire: Antagonist = {
-  key = "Vampire",
-  name = 'Vampire',
+  key: "Vampire",
+  name: 'Vampire',
   description: [VAMPIRE_MECHANICAL_DESCRIPTION],
   category: Category.Roundstart,
 };
