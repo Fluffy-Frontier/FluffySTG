@@ -8,7 +8,7 @@
 		You must maintain line of sight to the victim for the effect to continue."
 	vampire_power_flags = BP_AM_TOGGLE
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_INCAPACITATED | BP_CANT_USE_WHILE_UNCONSCIOUS
-	vitaecost = 75
+	vitaecost = 50
 	cooldown_time = 10 SECONDS	// Very unlikely to ever last past 10 seconds even if the actual duration is longer. Combat is a fuck.
 	target_range = 7
 	power_activates_immediately = FALSE
@@ -16,56 +16,31 @@
 	ranged_mousepointer = 'tff_modular/modules/vampire/icons/vampire_blooddrain.dmi'
 
 	var/datum/status_effect/blood_drain/active_effect
+	var/datum/beam/drain_beam
+
+/datum/action/cooldown/vampire/targeted/blooddrain/check_valid_target(atom/target_atom)
+	if(!isliving(target_atom))
+		return FALSE
+	..()
 
 /datum/action/cooldown/vampire/targeted/blooddrain/fire_targeted_power(atom/target_atom)
 	. = ..()
 	var/mob/living/living_owner = owner
-	/* var/mob/living/living_target = target_atom
-	check_witnesses(living_target) */
 	living_owner.face_atom(target_atom)
 	living_owner.changeNext_move(CLICK_CD_RANGE)
 	living_owner.newtonian_move(get_dir(target_atom, living_owner))
-
-	var/obj/projectile/magic/blood_drain/drain = new(living_owner.loc)
-	drain.firer = living_owner
-	drain.fired_from = src
-	drain.aim_projectile(target_atom, living_owner)
-	if(isliving(target_atom))
-		drain.original = target_atom
-	drain.def_zone = ran_zone(living_owner.zone_selected)
-	INVOKE_ASYNC(drain, TYPE_PROC_REF(/obj/projectile, fire))
-
-	playsound(living_owner, 'sound/effects/magic/wandodeath.ogg', 60, TRUE)
+	playsound(living_owner, 'tff_modular/modules/vampire/sound/bloodbolt.ogg', 60, TRUE)
+	blood_drain(target_atom, living_owner, src)
 
 /datum/action/cooldown/vampire/targeted/blooddrain/deactivate_power()
 	. = ..()
 	if(!isnull(active_effect))
 		active_effect.end_drain()
 
-/obj/projectile/magic/blood_drain
-	name = "vitality draining stream"
-	icon_state = "nothing"
-	range = 7
-	antimagic_flags = MAGIC_RESISTANCE_HOLY
-	hitsound = 'tff_modular/modules/vampire/sound/bloodbolt.ogg'
-	var/datum/beam/drain_beam
-
-/obj/projectile/magic/blood_drain/fire(angle, atom/direct_target)
+/datum/action/cooldown/vampire/targeted/blooddrain/proc/blood_drain(mob/living/victim, mob/living/carbon/firer, fired_from)
 	if(!firer)
 		CRASH("Projectile [src] fired with no firer") //We don't even want any of the rest of this to play out if we don't have a firer
-	drain_beam = firer.Beam(src, icon = 'icons/effects/beam.dmi', icon_state = "lifedrain", time = 10 SECONDS, maxdistance = 7, beam_color = COLOR_RED)
-	return ..()
-
-/obj/projectile/magic/blood_drain/on_hit(mob/living/target, blocked, pierce_hit)
-	. = ..()
-	if(isliving(target))
-		target.apply_status_effect(/datum/status_effect/blood_drain, firer, fired_from)
-
-/obj/projectile/magic/blood_drain/Destroy()
-	if(!QDELETED(drain_beam))
-		qdel(drain_beam)
-	drain_beam = null
-	return ..()
+	victim.apply_status_effect(/datum/status_effect, firer, fired_from)
 
 ///
 /// Status Effect. Literally copied from life drain spell of wizards, but modified to work with vampires.

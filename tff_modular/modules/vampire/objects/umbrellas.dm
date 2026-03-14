@@ -165,3 +165,4 @@
 	tool_behaviors = list(TOOL_CROWBAR)
 	time = 5 SECONDS
 	category = CAT_EQUIPMENT
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY
