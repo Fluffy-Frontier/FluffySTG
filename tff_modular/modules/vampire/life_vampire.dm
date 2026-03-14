@@ -1,25 +1,21 @@
 /// Runs from COMSIG_LIVING_LIFE, handles Vampire constant processes.
 /datum/antagonist/vampire/proc/life_tick(datum/source, seconds_per_tick, times_fired)
 	SIGNAL_HANDLER
-
-	if(!isliving(owner.current))
-	// Weirdness shield
+	if(QDELETED(owner) || QDELETED(owner.current))
+		INVOKE_ASYNC(src, PROC_REF(handle_death))
+		return
+	handle_life()
 	if(isbrain(owner.current))
 		update_hud()
 		return
-	if(QDELETED(owner.current))
-		INVOKE_ASYNC(src, PROC_REF(handle_death))
-		return
 
-	handle_life(seconds_per_tick, times_fired)
-
-/datum/antagonist/vampire/proc/handle_life(seconds_per_tick, times_fired)
+/datum/antagonist/vampire/proc/handle_life()
 	// Deduct Blood
 	if(owner.current.stat == CONSCIOUS && !HAS_TRAIT(owner.current, TRAIT_IMMOBILIZED) && !HAS_TRAIT(owner.current, TRAIT_NODEATH))
 		adjust_blood_volume(-VAMPIRE_PASSIVE_BLOOD_DRAIN)
 
 	// Healing
-	if(handle_healing(seconds_per_tick) && !isanimal_or_basicmob(owner.current))
+	if(handle_healing() && !isanimal_or_basicmob(owner.current))
 		if((COOLDOWN_FINISHED(src, vampire_spam_healing)) && current_vitae > 0)
 			to_chat(owner.current, span_notice("The power of your blood knits your wounds..."))
 			COOLDOWN_START(src, vampire_spam_healing, VAMPIRE_SPAM_HEALING)
@@ -55,7 +51,7 @@
  * By default, burn damage is healed 50% as effectively as brute
  * When undergoing torpor it's 80%, if you're in a coffin 100%
 **/
-/datum/antagonist/vampire/proc/handle_healing(seconds_per_tick)
+/datum/antagonist/vampire/proc/handle_healing()
 	var/mob/living/current = owner.current
 
 	// Weirdness shield
@@ -72,7 +68,7 @@
 
 	var/actual_regen = vampire_regen_rate + additional_regen
 
-	current.adjust_organ_loss(ORGAN_SLOT_BRAIN, -1 * (actual_regen * 4) * seconds_per_tick)
+	current.adjust_organ_loss(ORGAN_SLOT_BRAIN, -1 * (actual_regen * 4))
 
 	if(!iscarbon(current))
 		return FALSE
@@ -95,7 +91,7 @@
 			if(wound.blood_flow && (!bloodiest_wound || wound.blood_flow > bloodiest_wound?.blood_flow))
 				bloodiest_wound = wound
 
-		bloodiest_wound?.adjust_blood_flow(-0.25 * seconds_per_tick)
+		bloodiest_wound?.adjust_blood_flow(-0.25)
 
 	for(var/obj/item/bodypart/bodypart as anything in carbon_owner.bodyparts)
 		if(bodypart.generic_bleedstacks)
@@ -130,7 +126,7 @@
 
 	if(brute_heal > 0 || burn_heal > 0) // Just a check? Don't heal/spend, and return.
 		var/vitaecost = (brute_heal * 0.5 + burn_heal) * vitaecost_multiplier * healing_multiplier
-		carbon_owner.heal_overall_damage(brute_heal * seconds_per_tick, burn_heal * seconds_per_tick)
+		carbon_owner.heal_overall_damage(brute_heal, burn_heal)
 		adjust_blood_volume(-vitaecost)
 		return TRUE
 
