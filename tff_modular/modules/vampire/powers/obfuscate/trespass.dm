@@ -58,7 +58,7 @@
 
 	target_turf = starting_turf
 
-/datum/action/cooldown/vampire/targeted/trespass/fire_targeted_power(atom/target_atom)
+/datum/action/cooldown/vampire/targeted/trespass/fire_targeted_power(atom/target_atom, list/modifiers)
 	. = ..()
 
 	// Find target turf, at or below Atom

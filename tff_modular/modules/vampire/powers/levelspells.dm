@@ -101,7 +101,7 @@
 
 	return TRUE
 
-/datum/action/cooldown/vampire/targeted/scourgify/fire_targeted_power(atom/target_atom)
+/datum/action/cooldown/vampire/targeted/scourgify/fire_targeted_power(atom/target_atom, list/modifiers)
 	. = ..()
 	var/mob/living/living_target = target_atom
 

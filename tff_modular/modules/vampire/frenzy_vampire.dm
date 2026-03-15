@@ -1,5 +1,3 @@
-#define CLIENT_COLOR_SOURCE_VAMPIRE "vampire_source"
-
 /**
  * # Status effect
  *
@@ -115,5 +113,3 @@
 /atom/movable/screen/alert/status_effect/masquerade/MouseEntered(location,control,params)
 	desc = initial(desc)
 	return ..()
-
-#undef CLIENT_COLOR_SOURCE_VAMPIRE

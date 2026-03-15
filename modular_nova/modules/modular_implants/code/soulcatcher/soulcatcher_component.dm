@@ -428,6 +428,10 @@ GLOBAL_LIST_EMPTY(soulcatchers)
 /mob/dead/observer/verb/join_soulcatcher()
 	set name = "Enter Soulcatcher"
 
+	// TFF ADDIITON START
+	if(HAS_TRAIT(src, TRAIT_NO_OBSERVE))
+		return FALSE
+	// TFF ADDITION END
 	var/list/joinable_soulcatchers = list()
 	for(var/datum/component/soulcatcher/soulcatcher in GLOB.soulcatchers)
 		if(!soulcatcher.ghost_joinable || !isobj(soulcatcher.parent) || !soulcatcher.check_for_vacancy())

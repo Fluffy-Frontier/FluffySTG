@@ -98,12 +98,6 @@
 
 	return ..()
 
-/datum/antagonist/vassal/on_body_transfer(mob/living/old_body, mob/living/new_body)
-	. = ..()
-	for(var/datum/action/cooldown/vampire/power in powers)
-		power.Remove(old_body)
-		power.Grant(new_body)
-
 /datum/antagonist/vassal/greet()
 	var/mob/living/living_vassal = owner.current
 	var/mob/living/living_master = master.owner.current

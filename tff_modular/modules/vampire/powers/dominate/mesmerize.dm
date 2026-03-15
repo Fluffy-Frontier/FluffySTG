@@ -37,15 +37,15 @@
 	return ..()
 
 /datum/action/cooldown/vampire/targeted/mesmerize/two
-	vitaecost = 45
+	vitaecost = 30
 	level_current = 2
 
 /datum/action/cooldown/vampire/targeted/mesmerize/three
-	vitaecost = 60
+	vitaecost = 40
 	level_current = 3
 
 /datum/action/cooldown/vampire/targeted/mesmerize/four
-	vitaecost = 85
+	vitaecost = 60
 	level_current = 4
 	target_range = 6
 
@@ -85,7 +85,7 @@
 		return FALSE
 
 	// Vampire/Curator check
-	if(IS_VAMPIRE(living_target) || IS_CURATOR(living_target) || HAS_MIND_TRAIT(living_target, TRAIT_UNCONVERTABLE))
+	if(IS_VAMPIRE(living_target) || IS_CURATOR(living_target))
 		owner.balloon_alert(owner, "too powerful.")
 		return FALSE
 
@@ -104,7 +104,7 @@
 		owner.balloon_alert(owner, "[living_target] is already in a hypnotic gaze.")
 		return FALSE
 
-/datum/action/cooldown/vampire/targeted/mesmerize/fire_targeted_power(atom/target_atom)
+/datum/action/cooldown/vampire/targeted/mesmerize/fire_targeted_power(atom/target_atom, list/modifiers)
 	. = ..()
 	var/mob/living/living_target = target_atom
 	target_ref = WEAKREF(living_target)
@@ -200,14 +200,14 @@
 	return ..()
 
 /datum/status_effect/mesmerized/on_apply()
-	owner.add_client_colour(/datum/client_colour/glass_colour/pink)
+	owner.add_client_colour(/datum/client_colour/glass_colour/pink, CLIENT_COLOR_SOURCE_VAMPIRE)
 	owner.add_traits(mesmerized_traits, TRAIT_STATUS_EFFECT(id))
 	to_chat(owner, span_awe("[caster]'s eyes glitter so beautifully... You're mesmerized!"), type = MESSAGE_TYPE_COMBAT)
 	owner.playsound_local(null, 'tff_modular/modules/vampire/sound/mesmerize.ogg', 100, FALSE, pressure_affected = FALSE)
 	return TRUE
 
 /datum/status_effect/mesmerized/on_remove()
-	owner.remove_client_colour(/datum/client_colour/glass_colour/pink)
+	owner.remove_client_colour(CLIENT_COLOR_SOURCE_VAMPIRE)
 	owner.remove_traits(mesmerized_traits, TRAIT_STATUS_EFFECT(id))
 	to_chat(owner, span_awe(span_big("With the spell waning, so does your memory of being mesmerized.")), type = MESSAGE_TYPE_COMBAT)
 	if(CAN_THEY_SEE(owner, caster))

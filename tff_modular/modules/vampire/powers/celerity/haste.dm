@@ -42,7 +42,7 @@
 		owner.balloon_alert(owner, "you cannot dash while floating!")
 		return FALSE
 	var/mob/living/carbon/user = owner
-	if(user?.body_position == LYING_DOWN)
+	if(user?.body_position == LYING_DOWN && level_current < 3)
 		owner.balloon_alert(owner, "you must be standing to tackle!")
 		return FALSE
 	return TRUE
@@ -58,13 +58,14 @@
 		return FALSE
 
 /// This is a non-async proc to make sure the power is "locked" until this finishes.
-/datum/action/cooldown/vampire/targeted/haste/fire_targeted_power(atom/target_atom)
+/datum/action/cooldown/vampire/targeted/haste/fire_targeted_power(atom/target_atom, list/modifiers)
 	. = ..()
 	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
 	var/mob/living/user = owner
 	var/turf/targeted_turf = get_turf(target_atom)
 	// Pulled? Not anymore.
 	user.pulledby?.stop_pulling()
+	user.adjust_stamina_loss(-10 - level_current * 8)
 	// Go to target turf
 	// DO NOT USE WALK TO.
 	// check_witnesses()
@@ -82,7 +83,7 @@
 				break //just stop
 		else
 			consequetive_failures = 0 //reset so we can keep moving
-		if(user.resting || user.incapacitated(IGNORE_RESTRAINTS | IGNORE_GRAB)) //actually down? stop.
+		if(user.resting || user.incapacitated(IGNORE_RESTRAINTS | IGNORE_GRAB) && level_current < 3) //actually down? stop.
 			break
 		if(success) //don't sleep if we failed to move.
 			sleep(world.tick_lag)
@@ -98,5 +99,6 @@
 			continue
 		hit += hit_living
 		playsound(hit_living, SFX_PUNCH, 15, TRUE, -1)
+		hit_living.adjust_stamina_loss(20 + level_current * 8)
 		hit_living.Knockdown(10 + level_current * 8)
 		hit_living.spin(1 SECONDS, 1)

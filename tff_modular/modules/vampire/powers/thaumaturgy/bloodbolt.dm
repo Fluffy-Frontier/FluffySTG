@@ -14,7 +14,7 @@
 	prefire_message = "Select your target."
 	ranged_mousepointer = 'tff_modular/modules/vampire/icons/vampire_bloodbolt.dmi'
 
-/datum/action/cooldown/vampire/targeted/bloodbolt/fire_targeted_power(atom/target_atom)
+/datum/action/cooldown/vampire/targeted/bloodbolt/fire_targeted_power(atom/target_atom, list/modifiers)
 	. = ..()
 	var/mob/living/living_owner = owner
 	// check_witnesses(target_atom)
@@ -43,7 +43,7 @@
 /obj/projectile/magic/arcane_barrage/vampire
 	name = "blood bolt"
 	icon_state = "mini_leaper"
-	damage = 40
+	damage = 50
 	hitsound = 'tff_modular/modules/vampire/sound/bloodbolt.ogg'
 	antimagic_flags = MAGIC_RESISTANCE_HOLY
 	// var/datum/action/cooldown/vampire/targeted/bloodbolt/vampire_power

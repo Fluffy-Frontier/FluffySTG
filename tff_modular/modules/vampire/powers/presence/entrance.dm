@@ -33,7 +33,7 @@
 		owner.balloon_alert(owner, "[carbon_target] is mindless.")
 		return FALSE
 
-	if(HAS_MIND_TRAIT(carbon_target, TRAIT_VAMPIRE_ALIGNED) || HAS_MIND_TRAIT(carbon_target, TRAIT_UNCONVERTABLE) || IS_CURATOR(carbon_target))
+	if(HAS_MIND_TRAIT(carbon_target, TRAIT_VAMPIRE_ALIGNED) || IS_CURATOR(carbon_target))
 		owner.balloon_alert(owner, "immune to your presence.")
 		return FALSE
 
@@ -51,7 +51,7 @@
 
 	return TRUE
 
-/datum/action/cooldown/vampire/targeted/entrance/fire_targeted_power(atom/target_atom)
+/datum/action/cooldown/vampire/targeted/entrance/fire_targeted_power(atom/target_atom, list/modifiers)
 	. = ..()
 	var/mob/living/carbon/carbon_target = target_atom
 
@@ -83,7 +83,7 @@
 	owner.add_traits(list(TRAIT_MUTE, TRAIT_HANDS_BLOCKED, TRAIT_GRABWEAKNESS), TRAIT_STATUS_EFFECT(id))
 	owner.add_movespeed_modifier(/datum/movespeed_modifier/status_effect/entranced)
 	owner.set_jitter_if_lower(duration)
-	owner.add_client_colour(/datum/client_colour/glass_colour/pink)
+	owner.add_client_colour(/datum/client_colour/glass_colour/pink, CLIENT_COLOR_SOURCE_VAMPIRE)
 	owner.AddElement(/datum/element/relay_attackers)
 	RegisterSignal(owner, COMSIG_ATOM_WAS_ATTACKED, PROC_REF(on_attacked))
 	return TRUE
@@ -92,7 +92,7 @@
 	UnregisterSignal(owner, COMSIG_ATOM_WAS_ATTACKED)
 	owner.remove_traits(list(TRAIT_MUTE, TRAIT_HANDS_BLOCKED, TRAIT_GRABWEAKNESS), TRAIT_STATUS_EFFECT(id))
 	owner.remove_movespeed_modifier(/datum/movespeed_modifier/status_effect/entranced)
-	owner.remove_client_colour(/datum/client_colour/glass_colour/pink)
+	owner.remove_client_colour(CLIENT_COLOR_SOURCE_VAMPIRE)
 	to_chat(owner, span_awe("Your mind clears and you regain your focus."))
 
 /datum/status_effect/entranced/get_examine_text()

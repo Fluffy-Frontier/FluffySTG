@@ -154,7 +154,7 @@
 
 	silent_feed = TRUE
 
-/datum/action/cooldown/vampire/targeted/feed/fire_targeted_power(atom/target_atom)
+/datum/action/cooldown/vampire/targeted/feed/fire_targeted_power(atom/target_atom, list/modifiers)
 	. = ..()
 	var/mob/living/carbon/feed_target = target_atom
 	var/mob/living/carbon/living_owner = owner
@@ -175,7 +175,7 @@
 	currently_feeding = FALSE
 	masquerade_breached = FALSE
 
-	if(!feed_target.grabbedby(living_owner))
+	if(LAZYACCESS(modifiers, LEFT_CLICK))
 
 		// Don't allow normal feed on vamps. It's too easy and feels unfair.
 		if(IS_VAMPIRE(feed_target))
@@ -219,7 +219,6 @@
 		// Just to make sure
 		living_owner.stop_pulling()
 		feed_target.stop_pulling()
-		/*
 		// omega switch
 		switch(get_dir(owner.loc, feed_target.loc))
 			if(NORTH)
@@ -267,14 +266,13 @@
 				feed_target.dir = EAST
 				animate(owner, 0.2 SECONDS, pixel_x = 8,)
 				animate(feed_target, 0.2 SECONDS, pixel_x = -8)
-			*/
 		owner.visible_message(
 			span_notice("[owner] grabs [feed_target] tightly, biting into [feed_target.p_their()] neck!"),
 			span_notice("You slip your fangs into [feed_target]'s neck."),
 			vision_distance = FEED_SILENT_NOTICE_RANGE, ignored_mobs = feed_target
 		)
 
-	else if(feed_target.grabbedby(owner)) // COMBAT FEED BELOW HERE!!!!!!!!!!
+	else if(LAZYACCESS(modifiers, RIGHT_CLICK)) // COMBAT FEED BELOW HERE!!!!!!!!!!
 
 		playsound(living_owner, 'tff_modular/modules/vampire/sound/drinkblood1.ogg', 50)
 

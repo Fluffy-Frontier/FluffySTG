@@ -20,7 +20,7 @@
 	vampire_power_flags = BP_AM_VERY_DYNAMIC_COOLDOWN
 	vitaecost = 0 // Set on use
 	cooldown_time = 1 SECONDS // Same as above
-	damage_coefficient = 1.625
+	damage_coefficient = 1.75
 	brujah = TRUE
 	level_current = 1
 
@@ -49,7 +49,7 @@
 	playsound(target_atom, sound, 75, TRUE)
 	target_obj.deconstruct(FALSE)
 
-/datum/action/cooldown/vampire/targeted/brawn/brash/fire_targeted_power(atom/target_atom)
+/datum/action/cooldown/vampire/targeted/brawn/brash/fire_targeted_power(atom/target_atom, list/modifiers)
 	. = ..()
 	// People
 	if(isliving(target_atom))

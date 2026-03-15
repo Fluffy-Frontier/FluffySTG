@@ -8,7 +8,7 @@
 		Higher ranks will increase the damage when punching someone."
 	vampire_power_flags = BP_AM_TOGGLE
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_INCAPACITATED | BP_CANT_USE_WHILE_UNCONSCIOUS
-	vitaecost = 50
+	vitaecost = 45
 	cooldown_time = 9 SECONDS
 	target_range = 1
 	power_activates_immediately = TRUE
@@ -17,7 +17,7 @@
 	ranged_mousepointer = 'tff_modular/modules/vampire/icons/vampire_strength.dmi'
 
 	/// Only changed by the '/brawn/brash' subtype; acts as a general purpose damage multipler.
-	var/damage_coefficient = 1.25
+	var/damage_coefficient = 1.5
 	/// Boolean indicating whether or not this version of '/brawn' is in the '/brash' subtype and should
 	/// bypass typical ability level restrictions. (There is probably a better way to do this.)
 	var/brujah = FALSE
@@ -119,7 +119,7 @@
 	// check_witnesses()
 	return TRUE
 
-/datum/action/cooldown/vampire/targeted/brawn/fire_targeted_power(atom/target_atom)
+/datum/action/cooldown/vampire/targeted/brawn/fire_targeted_power(atom/target_atom, list/modifiers)
 	. = ..()
 	var/mob/living/carbon/carbon_owner = owner
 
@@ -189,7 +189,7 @@
 			// Adjust cost and cooldown if Brujah
 			if(brujah)
 				if(target_airlock.locked)
-					vitaecost = 100
+					vitaecost = 80
 					cooldown_time = 10 SECONDS
 				else
 					vitaecost = 75

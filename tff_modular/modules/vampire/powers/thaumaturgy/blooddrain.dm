@@ -23,24 +23,20 @@
 		return FALSE
 	..()
 
-/datum/action/cooldown/vampire/targeted/blooddrain/fire_targeted_power(atom/target_atom)
+/datum/action/cooldown/vampire/targeted/blooddrain/fire_targeted_power(atom/target_atom, list/modifiers)
 	. = ..()
 	var/mob/living/living_owner = owner
+	var/mob/living/living_victim = target_atom
 	living_owner.face_atom(target_atom)
 	living_owner.changeNext_move(CLICK_CD_RANGE)
 	living_owner.newtonian_move(get_dir(target_atom, living_owner))
 	playsound(living_owner, 'tff_modular/modules/vampire/sound/bloodbolt.ogg', 60, TRUE)
-	blood_drain(target_atom, living_owner, src)
+	living_victim.apply_status_effect(/datum/status_effect/blood_drain, living_owner, src)
 
 /datum/action/cooldown/vampire/targeted/blooddrain/deactivate_power()
 	. = ..()
 	if(!isnull(active_effect))
 		active_effect.end_drain()
-
-/datum/action/cooldown/vampire/targeted/blooddrain/proc/blood_drain(mob/living/victim, mob/living/carbon/firer, fired_from)
-	if(!firer)
-		CRASH("Projectile [src] fired with no firer") //We don't even want any of the rest of this to play out if we don't have a firer
-	victim.apply_status_effect(/datum/status_effect, firer, fired_from)
 
 ///
 /// Status Effect. Literally copied from life drain spell of wizards, but modified to work with vampires.

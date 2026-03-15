@@ -57,7 +57,7 @@
 		owner.balloon_alert(owner, "[target.p_their()] blood is already boiling!")
 		return FALSE
 
-/datum/action/cooldown/vampire/targeted/bloodboil/fire_targeted_power(mob/living/carbon/target)
+/datum/action/cooldown/vampire/targeted/bloodboil/fire_targeted_power(mob/living/carbon/target, list/modifiers)
 	. = ..()
 	// Just to make absolutely sure
 	if(!iscarbon(target))

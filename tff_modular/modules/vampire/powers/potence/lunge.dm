@@ -21,12 +21,12 @@
 
 /datum/action/cooldown/vampire/targeted/lunge/two
 	vitaecost = 60
-	cooldown_time = 10 SECONDS
+	cooldown_time = 8 SECONDS
 	knockdown_bonus = 2
 
 /datum/action/cooldown/vampire/targeted/lunge/three
 	vitaecost = 75
-	cooldown_time = 8 SECONDS
+	cooldown_time = 7 SECONDS
 	knockdown_bonus = 3
 
 /datum/action/cooldown/vampire/targeted/lunge/four
@@ -72,7 +72,7 @@
 		owner.balloon_alert(owner, "too far away!")
 		return FALSE
 
-/datum/action/cooldown/vampire/targeted/lunge/fire_targeted_power(atom/target_atom)
+/datum/action/cooldown/vampire/targeted/lunge/fire_targeted_power(atom/target_atom, list/modifiers)
 	. = ..()
 	owner.face_atom(target_atom)
 	if(instant)

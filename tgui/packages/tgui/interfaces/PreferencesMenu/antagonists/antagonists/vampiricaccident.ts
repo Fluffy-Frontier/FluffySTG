@@ -8,7 +8,7 @@ Scrape by Space Station 13, or take over it, ghoulizing your way.
 
 const VampiricAccident: Antagonist = {
   key: 'vampiricaccident',
-  name: 'Vampiric Accident',
+  name: 'Vampire (Midround)',
   description: [VAMPIRE_MECHANICAL_DESCRIPTION],
   category: Category.Midround,
 };

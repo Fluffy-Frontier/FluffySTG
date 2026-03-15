@@ -40,7 +40,7 @@
 		return FALSE
 	if(victim.is_blind() || victim.is_nearsighted_currently())
 		return FALSE
-	if(HAS_MIND_TRAIT(victim, TRAIT_VAMPIRE_ALIGNED) || HAS_MIND_TRAIT(victim, TRAIT_UNCONVERTABLE) || IS_CURATOR(victim))
+	if(HAS_MIND_TRAIT(victim, TRAIT_VAMPIRE_ALIGNED) || IS_CURATOR(victim))
 		return FALSE
 	return TRUE
 

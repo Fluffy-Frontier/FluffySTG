@@ -77,7 +77,7 @@
 	return TRUE
 
 /// Click Target
-/datum/action/cooldown/vampire/targeted/proc/click_with_power(atom/target_atom)
+/datum/action/cooldown/vampire/targeted/proc/click_with_power(atom/target_atom, list/modifiers)
 	// Already using?
 	if(power_in_use)
 		return
@@ -100,7 +100,7 @@
 		power_activated_sucessfully() // Mesmerize pays only after success.
 	power_in_use = FALSE
 
-/datum/action/cooldown/vampire/targeted/proc/fire_targeted_power(atom/target_atom)
+/datum/action/cooldown/vampire/targeted/proc/fire_targeted_power(atom/target_atom, list/modifiers)
 	unset_click_ability(owner)
 	log_combat(owner, target_atom, "used [name] on")
 

@@ -25,7 +25,7 @@
 #define LOG_CATEGORY_UPLINK_VAMPIRE "uplink-vampire"
 #define FACTION_VAMPIRE "Vampire"
 #define ROLE_VAMPIRE "Vampire"
-#define ROLE_VAMPIRIC_ACCIDENT "VampiricAccident"
+#define ROLE_VAMPIRIC_ACCIDENT "Vampiric Accident"
 #define span_awe(str) ("<span class='awe'>" + str + "</span>")
 /// Uncomment this to enable testing of Vampire features (such as vassalizing people with a mind instead of a client).
 //#define VAMPIRE_TESTING
@@ -194,6 +194,7 @@
 /// This vampire can tell if another vampire has committed diablere on examine.
 #define TRAIT_SEE_DIABLERIE "see_diablerie"
 
+#define CLIENT_COLOR_SOURCE_VAMPIRE "client_color_source_vampire"
 // Trait sources
 /// Source trait for all vampire traits
 #define TRAIT_VAMPIRE "trait_vampire"

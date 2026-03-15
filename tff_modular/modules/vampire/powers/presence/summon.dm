@@ -13,8 +13,8 @@
 		They must be able to see you to be affected."
 	vampire_power_flags = NONE
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_WHILE_INCAPACITATED | BP_CANT_USE_WHILE_UNCONSCIOUS
-	vitaecost = 100
-	cooldown_time = 60 SECONDS
+	vitaecost = 60
+	cooldown_time = 30 SECONDS
 	target_range = 10
 	prefire_message = "Who will you summon to your presence?"
 	ranged_mousepointer = 'tff_modular/modules/vampire/icons/vampire_summon.dmi'
@@ -35,7 +35,7 @@
 		owner.balloon_alert(owner, "[carbon_target] is mindless.")
 		return FALSE
 
-	if(HAS_MIND_TRAIT(carbon_target, TRAIT_VAMPIRE_ALIGNED) || IS_CURATOR(carbon_target) || HAS_MIND_TRAIT(carbon_target, TRAIT_UNCONVERTABLE))
+	if(HAS_MIND_TRAIT(carbon_target, TRAIT_VAMPIRE_ALIGNED) || IS_CURATOR(carbon_target))
 		owner.balloon_alert(owner, "immune to your presence.")
 		return FALSE
 
@@ -57,7 +57,7 @@
 
 	return TRUE
 
-/datum/action/cooldown/vampire/targeted/summon/fire_targeted_power(atom/target_atom)
+/datum/action/cooldown/vampire/targeted/summon/fire_targeted_power(atom/target_atom, list/modifiers)
 	. = ..()
 	var/mob/living/carbon/carbon_target = target_atom
 
@@ -100,7 +100,7 @@
 		return FALSE
 	ADD_TRAIT(owner, TRAIT_MUTE, TRAIT_STATUS_EFFECT(id))
 	RegisterSignal(owner, COMSIG_MOB_CLIENT_PRE_MOVE, PROC_REF(block_player_move))
-	owner.add_client_colour(/datum/client_colour/glass_colour/pink)
+	owner.add_client_colour(/datum/client_colour/glass_colour/pink, CLIENT_COLOR_SOURCE_VAMPIRE)
 	start_movement()
 	return TRUE
 
@@ -108,7 +108,7 @@
 	REMOVE_TRAIT(owner, TRAIT_MUTE, TRAIT_STATUS_EFFECT(id))
 	UnregisterSignal(owner, COMSIG_MOB_CLIENT_PRE_MOVE)
 
-	owner.remove_client_colour(/datum/client_colour/glass_colour/pink)
+	owner.remove_client_colour(CLIENT_COLOR_SOURCE_VAMPIRE)
 
 	if(move_loop)
 		UnregisterSignal(move_loop, COMSIG_QDELETING)
