@@ -48,7 +48,6 @@
 	. = ..()
 	if(!.)
 		return FALSE
-
 	// Already feeding
 	if(target_ref)
 		return FALSE
@@ -175,7 +174,7 @@
 	currently_feeding = FALSE
 	masquerade_breached = FALSE
 
-	if(LAZYACCESS(modifiers, LEFT_CLICK))
+	if(living_owner.pulling == feed_target && !living_owner.grab_state >= GRAB_AGGRESSIVE)
 
 		// Don't allow normal feed on vamps. It's too easy and feels unfair.
 		if(IS_VAMPIRE(feed_target))
@@ -197,7 +196,7 @@
 
 		if(!IS_VASSAL(feed_target))
 			feed_time /= 4
-
+		feed_target.grabbedby(owner, FALSE)
 		feed_target.playsound_local(null, 'tff_modular/modules/vampire/sound/mesmerize.ogg', 100, FALSE, pressure_affected = FALSE)
 		feed_target.Stun(feed_time, TRUE)
 		feed_target.become_blind(REF(src))
@@ -272,7 +271,7 @@
 			vision_distance = FEED_SILENT_NOTICE_RANGE, ignored_mobs = feed_target
 		)
 
-	else if(LAZYACCESS(modifiers, RIGHT_CLICK)) // COMBAT FEED BELOW HERE!!!!!!!!!!
+	else if(living_owner.pulling == feed_target && living_owner.grab_state >= GRAB_AGGRESSIVE) // COMBAT FEED BELOW HERE!!!!!!!!!!
 
 		playsound(living_owner, 'tff_modular/modules/vampire/sound/drinkblood1.ogg', 50)
 
@@ -316,10 +315,6 @@
 
 		// Normally removed traits are done. Now we give the victim a lil something to remember us by.
 		feed_target.apply_status_effect(/datum/status_effect/feed_marked)
-	else
-		owner.balloon_alert(owner, "combat feed requires aggressive grab!")
-		deactivate_power()
-		return FALSE
 
 /datum/action/cooldown/vampire/targeted/feed/use_power()
 	var/mob/living/user = owner

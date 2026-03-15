@@ -16,7 +16,6 @@
 	ranged_mousepointer = 'tff_modular/modules/vampire/icons/vampire_blooddrain.dmi'
 
 	var/datum/status_effect/blood_drain/active_effect
-	var/datum/beam/drain_beam
 
 /datum/action/cooldown/vampire/targeted/blooddrain/check_valid_target(atom/target_atom)
 	if(!isliving(target_atom))
@@ -31,7 +30,10 @@
 	living_owner.changeNext_move(CLICK_CD_RANGE)
 	living_owner.newtonian_move(get_dir(target_atom, living_owner))
 	playsound(living_owner, 'tff_modular/modules/vampire/sound/bloodbolt.ogg', 60, TRUE)
-	living_victim.apply_status_effect(/datum/status_effect/blood_drain, living_owner, src)
+	living_victim.apply_status_effect(/datum/status_effect/blood_drain)
+	active_effect = living_victim.has_status_effect(/datum/status_effect/blood_drain)
+	active_effect.vampire = living_owner
+	active_effect.spell = src
 
 /datum/action/cooldown/vampire/targeted/blooddrain/deactivate_power()
 	. = ..()
@@ -57,13 +59,10 @@
 	. = ..()
 	vampire = null
 
-/datum/status_effect/blood_drain/on_creation(mob/living/new_owner, mob/living/firer, fired_from, duration_override)
-	if(isnull(firer) || isnull(fired_from) || !iscarbon(firer) || !iscarbon(new_owner))
+/datum/status_effect/blood_drain/on_creation(mob/living/new_owner, duration_override)
+	if(isnull(vampire) || isnull(spell) || !iscarbon(vampire) || !iscarbon(new_owner))
 		qdel(src)
 		return
-	vampire = firer
-	spell = fired_from
-	spell.active_effect = src
 	drain_beam = vampire.Beam(new_owner, icon = 'icons/effects/beam.dmi', icon_state = "blood_drain", time = 22 SECONDS, maxdistance = 7, beam_color = COLOR_RED)
 	RegisterSignal(drain_beam, COMSIG_QDELETING, PROC_REF(end_drain))
 	new_owner.visible_message(span_boldwarning("[vampire] begins draining the life force from [new_owner]!"), span_boldwarning("[vampire] is draining your life force! You need to get away from [vampire.p_them()] to stop it!"))
