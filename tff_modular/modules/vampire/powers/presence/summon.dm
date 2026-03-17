@@ -22,6 +22,10 @@
 	/// Maximum duration of the summon effect
 	var/summon_duration = 30 SECONDS
 
+/datum/action/cooldown/vampire/targeted/summon/two
+	vitaecost = 30
+	cooldown_time = 20 SECONDS
+
 /datum/action/cooldown/vampire/targeted/summon/check_valid_target(atom/target_atom)
 	. = ..()
 	if(!.)

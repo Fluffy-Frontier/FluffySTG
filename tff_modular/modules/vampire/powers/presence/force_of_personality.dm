@@ -15,6 +15,9 @@
 	var/aura_range = 7
 	var/deactivate_timer
 
+/datum/action/cooldown/vampire/force_of_personality/two
+	constant_vitaecost = 1
+
 /datum/action/cooldown/vampire/force_of_personality/activate_power()
 	. = ..()
 	to_chat(owner, span_notice("You project an overwhelming sense of authority."), type = MESSAGE_TYPE_INFO)

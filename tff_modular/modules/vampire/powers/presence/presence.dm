@@ -6,4 +6,4 @@
 	level_2 = list(/datum/action/cooldown/vampire/targeted/entrance, /datum/action/cooldown/vampire/targeted/summon)
 	level_3 = list(/datum/action/cooldown/vampire/awe, /datum/action/cooldown/vampire/targeted/entrance, /datum/action/cooldown/vampire/targeted/summon)
 	level_4 = list(/datum/action/cooldown/vampire/awe, /datum/action/cooldown/vampire/targeted/entrance, /datum/action/cooldown/vampire/targeted/summon, /datum/action/cooldown/vampire/force_of_personality)
-	level_5 = null
+	level_5 = list(/datum/action/cooldown/vampire/awe/two, /datum/action/cooldown/vampire/targeted/entrance, /datum/action/cooldown/vampire/targeted/summon/two, /datum/action/cooldown/vampire/force_of_personality/two)

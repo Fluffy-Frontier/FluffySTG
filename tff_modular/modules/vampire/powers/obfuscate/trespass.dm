@@ -7,7 +7,7 @@
 		Higher levels decrease the sound played from using the Power, and increase the speed of the transition."
 	vampire_power_flags = BP_AM_TOGGLE
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_WHILE_INCAPACITATED | BP_CANT_USE_WHILE_UNCONSCIOUS
-	vitaecost = 30
+	vitaecost = 40
 	cooldown_time = 8 SECONDS
 	prefire_message = "Select a destination."
 	ranged_mousepointer = 'tff_modular/modules/vampire/icons/vampire_trespass.dmi'

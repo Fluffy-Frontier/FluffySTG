@@ -16,6 +16,10 @@
 	/// The range of the aura in tiles
 	var/aura = 5
 
+/datum/action/cooldown/vampire/awe/two
+	constant_vitaecost = 1
+	aura = 6
+
 /datum/action/cooldown/vampire/awe/activate_power()
 	. = ..()
 	to_chat(owner, span_notice("You extend your supernatural presence."), type = MESSAGE_TYPE_INFO)

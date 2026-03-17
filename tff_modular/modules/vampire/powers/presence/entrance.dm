@@ -19,6 +19,9 @@
 	target_range = 7
 	prefire_message = "Who will you entrance?"
 	ranged_mousepointer = 'tff_modular/modules/vampire/icons/vampire_entrance.dmi'
+	var/ignore_shielding = FALSE
+
+/datum/action/cooldown/vampire/targeted/entrance/two
 
 /datum/action/cooldown/vampire/targeted/entrance/check_valid_target(atom/target_atom)
 	. = ..()
@@ -45,7 +48,7 @@
 		owner.balloon_alert(owner, "[carbon_target] is already entranced.")
 		return FALSE
 
-	if(carbon_target.get_eye_protection() >= FLASH_PROTECTION_WELDER)
+	if(carbon_target.get_eye_protection() >= FLASH_PROTECTION_WELDER && !ignore_shielding)
 		owner.balloon_alert(owner, "[carbon_target] has too much eye protection.")
 		return FALSE
 

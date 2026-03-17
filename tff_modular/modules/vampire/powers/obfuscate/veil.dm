@@ -7,7 +7,7 @@
 	vampire_power_flags = BP_AM_TOGGLE
 	vampire_check_flags = BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_STAKED
 	vitaecost = 100
-	constant_vitaecost = 4
+	constant_vitaecost = 0.5
 	cooldown_time = 10 SECONDS
 
 	var/datum/dna/original_dna
