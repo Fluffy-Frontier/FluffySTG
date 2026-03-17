@@ -4,7 +4,6 @@
  * Umbrellas you can hold, and open and close.
  * Currently not coding for protecting against rain as ???I dont think??? rain exists.
  * The rest don't and it just for looks.
- */
 /obj/item/umbrella
 	name = "umbrella"
 	desc = "A plain umbrella."
@@ -163,3 +162,4 @@
 	time = 10 SECONDS
 	category = CAT_EQUIPMENT
 	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY | CRAFT_MUST_BE_LEARNED
+*/
