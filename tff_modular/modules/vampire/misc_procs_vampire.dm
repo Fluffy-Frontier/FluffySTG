@@ -350,8 +350,6 @@
 			return malkavian
 		if(CLAN_TREMERE)
 			return tremere
-		if(CLAN_GANGREL)
-			return gangrel
 
 	log_runtime("Unknown clan name passed to get_clan_description: [clan_name]")
 	return "No description available."
