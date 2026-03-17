@@ -1,3 +1,5 @@
+// FLUFFY FRONTIER REMOVAL BEGIN: No more pixel tilting
+/*
 // ITEM VISUALS - Random rotation & pixel shift for items, robot interactions
 
 /obj/item
@@ -86,4 +88,6 @@
 	if(. && to_drop)
 		if(!(to_drop.item_flags & NO_PIXEL_RANDOM_DROP))
 			to_drop.do_messy(duration = 0.2 SECONDS)
+*/
 
+// FLUFFY FRONTIER REMOVAL END

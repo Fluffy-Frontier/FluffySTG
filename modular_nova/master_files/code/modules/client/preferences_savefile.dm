@@ -310,10 +310,6 @@
 	if(current_version < VERSION_TOOLKIT_IMPLANTS)
 		migrate_toolset_implants(save_data)
 
-	if(current_version < VERSION_VOCAL_BARKS)
-		var/current_tts_voice = save_data["tts_voice"]
-		if(current_tts_voice != TTS_VOICE_NONE && current_tts_voice != "invalid") // make sure we don't turn off TTS for people who have it on
-			write_preference(GLOB.preference_entries[/datum/preference/choiced/vocals/voice_type], "Text-to-speech")
 
 	if(current_version < VERSION_FEATHERY_WINGS_FIX)
 		var/current_wings = save_data["feature_wings"]

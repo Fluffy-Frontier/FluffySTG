@@ -1,10 +1,8 @@
 // THIS IS A NOVA SECTOR UI FILE
 import {
-  Feature,
-  FeatureChoiced,
+  type Feature,
+  type FeatureChoiced,
   FeatureColorInput,
-  FeatureSliderInput,
-  type FeatureValueProps
   FeatureNumberInput,
 } from '../../base';
 import { FeatureDropdownInput } from '../../dropdowns';

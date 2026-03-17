@@ -5,7 +5,6 @@
 	mutantears = /obj/item/organ/ears/shadekin
 	mutantbrain = /obj/item/organ/brain/shadekin
 	mutanteyes = /obj/item/organ/eyes/shadekin
-	mutant_bodyparts = list()
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	digitigrade_customization = DIGITIGRADE_OPTIONAL
 	bodypart_overrides = list(
@@ -27,6 +26,11 @@
 		TRAIT_NOBREATH,
 	)
 	species_language_holder = /datum/language_holder/shadekin
+
+/datum/species/shadekin/get_default_mutant_bodyparts()
+	return list(FEATURE_TAIL = MUTPART_BLUEPRINT("Shadekin", is_randomizable=TRUE),
+		FEATURE_EARS = MUTPART_BLUEPRINT("Shadekin", is_randomizable=TRUE),
+		FEATURE_LEGS = MUTPART_BLUEPRINT("Normal Legs", is_randomizable=FALSE, is_feature=TRUE),)
 
 
 /datum/species/shadekin/create_pref_unique_perks()
@@ -55,14 +59,6 @@
 	))
 
 	return to_add
-
-/datum/species/shadekin/get_default_mutant_bodyparts()
-	return list(
-		"tail" = list("Shadekin", TRUE),
-		"snout" = list("None", FALSE),
-		"ears" = list("Shadekin", TRUE),
-		"legs" = list("Normal Legs", TRUE),
-	)
 
 /datum/species/shadekin/randomize_features()
 	var/list/features = ..()
@@ -99,11 +95,12 @@
 	shadekin.dna.features["mcolor"] = main_color
 	shadekin.dna.features["mcolor2"] = secondary_color
 	shadekin.dna.features["mcolor3"] = tertiary_color
-	shadekin.dna.mutant_bodyparts["ears"] = list(MUTANT_INDEX_NAME = "Shadekin", MUTANT_INDEX_COLOR_LIST = list(main_color, secondary_color, tertiary_color))
-	shadekin.dna.mutant_bodyparts["snout"] = list(MUTANT_INDEX_NAME = "None", MUTANT_INDEX_COLOR_LIST = list(main_color, secondary_color, tertiary_color))
-	shadekin.dna.mutant_bodyparts["tail"] = list(MUTANT_INDEX_NAME = "Shadekin", MUTANT_INDEX_COLOR_LIST = list(main_color, secondary_color, tertiary_color))
+	shadekin.dna.mutant_bodyparts["ears"] = build_mutant_part("Shadekin", list(main_color, secondary_color, tertiary_color))
+	shadekin.dna.mutant_bodyparts["tail"] = build_mutant_part("Shadekin", list(main_color, secondary_color, tertiary_color))
 	shadekin.eye_color_left = "#c4c400"
 	shadekin.eye_color_right = "#c4c400"
+	shadekin.hairstyle = "Bald"
+	shadekin.facial_hairstyle = "Shaved"
 	regenerate_organs(shadekin, src, visual_only = TRUE)
 	shadekin.update_body(TRUE)
 

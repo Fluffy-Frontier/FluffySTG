@@ -15,7 +15,7 @@
 	new /obj/item/sensor_device/blueshield(src)
 	*/
 	var/static/items_inside = list(
-		/obj/item/stack/medical/gauze = 1,
+		/obj/item/stack/medical/wrap/gauze = 1,
 		/obj/item/stack/medical/suture/medicated = 1,
 		/obj/item/stack/medical/mesh/advanced = 1,
 		/obj/item/reagent_containers/medigel/libital = 1,

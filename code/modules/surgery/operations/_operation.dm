@@ -762,6 +762,11 @@ GLOBAL_DATUM_INIT(operations, /datum/operation_holder, new)
 	if(HAS_TRAIT(patient, TRAIT_ANALGESIA))
 		basemod *= 0.8
 		to_chat(surgeon, span_notice("You are able to work faster due to the patient's calm attitude!")) // NOVA EDIT ADDITION - Better feedback for the use of analgesia
+	// FLUFFY FRONTIER EDIT START. ADDITION - Stasis surgery nerf
+	if(HAS_TRAIT (patient, TRAIT_STASIS))
+		to_chat(surgeon, span_warning("[patient] seems to be in stasis, it is impossible to work with [patient] tissue!"))
+		basemod *= 5
+	// FLUFFY FRONTIER EDIT END.
 	return basemod
 
 /// Returns a time modifier based on the surgeon's status
