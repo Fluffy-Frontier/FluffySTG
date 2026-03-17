@@ -332,13 +332,11 @@
 	var/tremere = "With a powerful ancestry of wizards and magicians, the Tremere wield the secret art of blood magic, which they guard with utmost care.\n\
 		<b>[disciplines]:</b> [dominate], [presence], [thaumaturgy], [obfuscate], [potence]"
 	var/toreador = "Artists, Pleasure-workers, Celebrities. These are the people of the Toreador clan. They are by far the closest to humanity of all kindred, each a deeply sensitive individual.\n\
-		<b>[disciplines]:</b> [presence], [auspex], [celerity]"
+		<b>[disciplines]:</b> [celerity], [potence], [presence], [dominate], [obfuscate]"
 	var/malkavian = "Completely insane. You gain constant hallucinations, become a prophet with unintelligable rambling, and gain insights better left unknown. You can also travel through Phobetor tears, rifts through spacetime only you can travel through.\n\
-		<b>[disciplines]:</b> [dominate], [auspex], [obfuscate]"
-	var/gangrel = "Often mistaken as werewolves, Gangrel carry the smell of wet dog wherever they go. Their unique bond with the beast within allows them to transform parts of their body into powerful claws, even becoming entirely different beings.\n\
-		<b>[disciplines]:</b> [animalism], [protean], [fortitude]"
+		<b>[disciplines]:</b> [auspex], [obfuscate], [dominate], [fortitude], [presence]"
 	var/brujah = "A clan now, of mostly rebels. Though some still show fragments of their lost lineage of warrior-poets. They are long split from the Camarilla, and often form their own groups.\n\
-		<b>[disciplines]:</b> [potence], [celerity], [presence]"
+		<b>[disciplines]:</b> [celerity], [potence], [presence], [dominate], [fortitude]"
 
 	// Now the logic
 	switch(clan_name)
