@@ -314,7 +314,7 @@
 /datum/antagonist/vampire/proc/get_clan_description(clan_name)
 	/// This makes descriptions about a billion times cleaner: Spans for discipline names and their individual descriptions:
 	var/disciplines = "[span_tooltip("Disciplines are the aspects of the original curse bestowed upon caine, of which every kindred suffers/benefits. In terms of gameplay, they are groups of abilities that you level up.", "Disciplines")]"
-	var/animalism = "[span_tooltip("Animalism is a Discipline that brings the vampire closer to their animalistic nature. This typically allows them to communicate with and gain dominance over creatures of nature.", "Animalism")]"
+	// var/animalism = "[span_tooltip("Animalism is a Discipline that brings the vampire closer to their animalistic nature. This typically allows them to communicate with and gain dominance over creatures of nature.", "Animalism")]"
 	var/auspex = "[span_tooltip("Auspex is a Discipline that grants vampires supernatural senses, letting them peer far further and deeper than any mortal. The malkavians especially have a strong bond with it.", "Auspex")]"
 	var/celerity = "[span_tooltip("Celerity is a Discipline that grants vampires supernatural quickness and reflexes.", "Celerity")]"
 	var/dominate = "[span_tooltip("Dominate is a Discipline that overwhelms another person's mind with the vampire's will.", "Dominate")]"
@@ -322,7 +322,7 @@
 	var/obfuscate = "[span_tooltip("Obfuscate is a Discipline that allows vampires to conceal themselves, deceive the mind of others, or make them ignore what the user does not want to be seen.", "Obfuscate")]"
 	var/potence = "[span_tooltip("Potence is the Discipline that endows vampires with physical vigor and preternatural strength.", "Potence")]"
 	var/presence = "[span_tooltip("Presence is the Discipline of supernatural allure and emotional manipulation which allows Kindred to attract, sway, and control crowds.", "Presence")]"
-	var/protean = "[span_tooltip("Protean is a Discipline that gives vampires the ability to change form, from growing feral claws to turning into something entirely different.", "Protean")]"
+	// var/protean = "[span_tooltip("Protean is a Discipline that gives vampires the ability to change form, from growing feral claws to turning into something entirely different.", "Protean")]"
 	var/thaumaturgy = "[span_tooltip("Thaumaturgy is the secret blood-art of the clan tremere. Allowing them all manners of blood-sorcery and pacts.", "Thaumaturgy")]"
 
 	/// All the descriptions:
