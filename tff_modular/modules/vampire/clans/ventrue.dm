@@ -16,4 +16,4 @@
 	vampiredatum.owned_disciplines += new /datum/discipline/dominate/ventrue(vampiredatum)
 	vampiredatum.owned_disciplines += new /datum/discipline/fortitude(vampiredatum)
 	vampiredatum.owned_disciplines += new /datum/discipline/potence(vampiredatum)
-	vampiredatum.owned_disciplines += new /datum/discipline/obfuscate(vampiredatum)
+	vampiredatum.owned_disciplines += new /datum/discipline/celerity(vampiredatum)

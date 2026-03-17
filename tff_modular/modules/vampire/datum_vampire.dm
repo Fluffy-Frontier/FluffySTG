@@ -92,7 +92,7 @@
 	/// Additional regeneration when the vampire has a lot of blood
 	var/additional_regen
 	/// How much damage the vampire heals each life tick. Increases per rank up
-	var/vampire_regen_rate = 0.45
+	var/vampire_regen_rate = 0.6
 
 	/// Minimum cooldown when reviving.
 	COOLDOWN_DECLARE(revive_cooldown)
@@ -112,7 +112,7 @@
 	var/atom/movable/screen/vampire/humanity_counter/humanity_display
 
 	/// Tracker so that vassals know where their master is
-	var/obj/effect/abstract/vampire_tracker_holder/tracker
+	// var/obj/effect/abstract/vampire_tracker_holder/tracker
 
 	/// List of limbs we've applied modifications to.
 	var/list/affected_limbs = list(
@@ -196,7 +196,7 @@
 	RegisterSignal(current_mob, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
 	RegisterSignal(current_mob, COMSIG_ATOM_AFTER_EXPOSE_REAGENTS, PROC_REF(after_expose_reagents))
 	RegisterSignal(current_mob, COMSIG_LIVING_DEATH, PROC_REF(on_death))
-	RegisterSignal(current_mob, COMSIG_MOVABLE_MOVED, PROC_REF(on_moved))
+	// RegisterSignal(current_mob, COMSIG_MOVABLE_MOVED, PROC_REF(on_moved))
 	RegisterSignal(current_mob, COMSIG_HUMAN_ON_HANDLE_BLOOD, PROC_REF(handle_blood))
 	RegisterSignal(current_mob, COMSIG_MOB_UPDATE_SIGHT, PROC_REF(on_update_sight))
 
@@ -220,7 +220,7 @@
 
 	ensure_brain_nonvital(current_mob)
 	setup_limbs(current_mob)
-	setup_tracker(current_mob)
+	//	setup_tracker(current_mob)
 
 	if(ishuman(current_mob))
 		var/mob/living/carbon/human/current_human = current_mob
@@ -261,7 +261,7 @@
 	handle_clown_mutation(current_mob, removing = FALSE)
 
 	cleanup_limbs(current_mob)
-	cleanup_tracker()
+	//	cleanup_tracker()
 
 	remove_hud_elements(current_mob)
 	QDEL_NULL(blood_display)
@@ -752,6 +752,7 @@
 	if(diablerie_count > 0 && HAS_TRAIT(examiner, TRAIT_SEE_DIABLERIE))
 		examine_text += span_cult_large("<br><EM>You can see the corrupted marks of a diablerist in [owner.current.p_their()] aura!</EM>")
 
+/*
 /datum/antagonist/vampire/proc/on_moved(datum/source)
 	SIGNAL_HANDLER
 
@@ -760,6 +761,7 @@
 		return
 
 	tracker?.tracking_beacon?.update_position()
+*/
 
 /datum/antagonist/vampire/proc/setup_limbs(mob/living/carbon/target)
 	if(!iscarbon(target))

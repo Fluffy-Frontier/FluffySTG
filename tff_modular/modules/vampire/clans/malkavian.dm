@@ -16,7 +16,7 @@
 /datum/vampire_clan/malkavian/New(datum/antagonist/vampire/owner_datum)
 	. = ..()
 
-	vampiredatum.owned_disciplines += new /datum/discipline/auspex/malkavian(vampiredatum)
+	vampiredatum.owned_disciplines += new /datum/discipline/auspex(vampiredatum)
 	vampiredatum.owned_disciplines += new /datum/discipline/obfuscate(vampiredatum)
 	vampiredatum.owned_disciplines += new /datum/discipline/dominate(vampiredatum)
 	vampiredatum.owned_disciplines += new /datum/discipline/fortitude(vampiredatum)
@@ -49,7 +49,7 @@
 		return
 
 	if(prob(15))
-		var/message = pick(strings("antagonist_flavor/malkavian_revelations.json", "revelations", "strings"))
+		var/message = pick(strings("fluffy/malkavian_revelations.json", "revelations", "strings"))
 		INVOKE_ASYNC(living_vampire, TYPE_PROC_REF(/atom/movable, say), message, , , , , , "Malkavian Revelation")
 		COOLDOWN_START(src, revelation_cooldown, rand(REVELATION_MIN_COOLDOWN, REVELATION_MAX_COOLDOWN))
 

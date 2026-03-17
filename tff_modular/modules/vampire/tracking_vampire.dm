@@ -1,3 +1,4 @@
+/*
 /datum/antagonist/vampire/proc/setup_tracker(mob/living/body)
 	cleanup_tracker()
 	tracker = new(body, REF(src))
@@ -32,3 +33,4 @@
 	tracking_beacon.toggle_visibility(FALSE)
 	QDEL_NULL(tracking_beacon)
 	. = ..()
+*/

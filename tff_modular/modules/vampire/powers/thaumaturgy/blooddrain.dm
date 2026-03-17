@@ -8,7 +8,7 @@
 		You must maintain line of sight to the victim for the effect to continue."
 	vampire_power_flags = BP_AM_TOGGLE
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_INCAPACITATED | BP_CANT_USE_WHILE_UNCONSCIOUS
-	vitaecost = 50
+	vitaecost = 75
 	cooldown_time = 10 SECONDS	// Very unlikely to ever last past 10 seconds even if the actual duration is longer. Combat is a fuck.
 	target_range = 7
 	power_activates_immediately = FALSE
@@ -17,28 +17,56 @@
 
 	var/datum/status_effect/blood_drain/active_effect
 
-/datum/action/cooldown/vampire/targeted/blooddrain/check_valid_target(atom/target_atom)
-	if(!isliving(target_atom))
-		return FALSE
-	..()
-
-/datum/action/cooldown/vampire/targeted/blooddrain/fire_targeted_power(atom/target_atom, list/modifiers)
+/datum/action/cooldown/vampire/targeted/blooddrain/fire_targeted_power(atom/target_atom)
 	. = ..()
 	var/mob/living/living_owner = owner
-	var/mob/living/living_victim = target_atom
+	/* var/mob/living/living_target = target_atom
+	check_witnesses(living_target) */
 	living_owner.face_atom(target_atom)
 	living_owner.changeNext_move(CLICK_CD_RANGE)
 	living_owner.newtonian_move(get_dir(target_atom, living_owner))
-	playsound(living_owner, 'tff_modular/modules/vampire/sound/bloodbolt.ogg', 60, TRUE)
-	living_victim.apply_status_effect(/datum/status_effect/blood_drain)
-	active_effect = living_victim.has_status_effect(/datum/status_effect/blood_drain)
-	active_effect.vampire = living_owner
-	active_effect.spell = src
+
+	var/obj/projectile/magic/blood_drain/drain = new(living_owner.loc)
+	drain.firer = living_owner
+	drain.fired_from = src
+	drain.aim_projectile(target_atom, living_owner)
+	if(isliving(target_atom))
+		drain.original = target_atom
+		drain.set_homing_target(target_atom)
+	drain.def_zone = ran_zone(living_owner.zone_selected)
+	INVOKE_ASYNC(drain, TYPE_PROC_REF(/obj/projectile, fire))
+
+	playsound(living_owner, 'sound/effects/magic/wandodeath.ogg', 60, TRUE)
 
 /datum/action/cooldown/vampire/targeted/blooddrain/deactivate_power()
 	. = ..()
 	if(!isnull(active_effect))
 		active_effect.end_drain()
+
+/obj/projectile/magic/blood_drain
+	name = "vitality draining stream"
+	icon_state = "nothing"
+	range = 7
+	antimagic_flags = MAGIC_RESISTANCE_HOLY
+	hitsound = 'tff_modular/modules/vampire/sound/bloodbolt.ogg'
+	var/datum/beam/drain_beam
+
+/obj/projectile/magic/blood_drain/fire(angle, atom/direct_target)
+	if(!firer)
+		CRASH("Projectile [src] fired with no firer") //We don't even want any of the rest of this to play out if we don't have a firer
+	drain_beam = Beam(firer, icon = 'icons/effects/beam.dmi', icon_state = "drain_life", time = 10 SECONDS, maxdistance = 7, beam_type = /obj/effect/ebeam/blood, beam_color = COLOR_RED)
+	return ..()
+
+/obj/projectile/magic/blood_drain/on_hit(mob/living/carbon/target, blocked, pierce_hit)
+	. = ..()
+	if(isliving(target))
+		target.apply_status_effect(/datum/status_effect/blood_drain, firer, fired_from)
+
+/obj/projectile/magic/blood_drain/Destroy()
+	if(!QDELETED(drain_beam))
+		qdel(drain_beam)
+	drain_beam = null
+	return ..()
 
 ///
 /// Status Effect. Literally copied from life drain spell of wizards, but modified to work with vampires.
@@ -59,11 +87,14 @@
 	. = ..()
 	vampire = null
 
-/datum/status_effect/blood_drain/on_creation(mob/living/new_owner, duration_override)
-	if(isnull(vampire) || isnull(spell) || !iscarbon(vampire) || !iscarbon(new_owner))
+/datum/status_effect/blood_drain/on_creation(mob/living/new_owner, mob/living/firer, fired_from, duration_override)
+	if(isnull(firer) || isnull(fired_from) || !iscarbon(firer) || !iscarbon(new_owner))
 		qdel(src)
 		return
-	drain_beam = vampire.Beam(new_owner, icon = 'icons/effects/beam.dmi', icon_state = "blood_drain", time = 22 SECONDS, maxdistance = 7, beam_color = COLOR_RED)
+	vampire = firer
+	spell = fired_from
+	spell.active_effect = src
+	drain_beam = vampire.Beam(new_owner, icon = 'icons/effects/beam.dmi', icon_state = "drain_life", time = 22 SECONDS, maxdistance = 7, beam_type = /obj/effect/ebeam/blood, beam_color = COLOR_RED,)
 	RegisterSignal(drain_beam, COMSIG_QDELETING, PROC_REF(end_drain))
 	new_owner.visible_message(span_boldwarning("[vampire] begins draining the life force from [new_owner]!"), span_boldwarning("[vampire] is draining your life force! You need to get away from [vampire.p_them()] to stop it!"))
 	. = ..()

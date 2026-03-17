@@ -100,7 +100,7 @@
 	if(vampiredatum.current_vitae >= FRENZY_THRESHOLD_EXIT)
 		qdel(src)
 		return
-	carbon_owner.adjust_fire_loss(0.75)
+	carbon_owner.adjust_fire_loss(0.75 + (vampiredatum.vampire_level * 0.05))
 	carbon_owner.set_jitter_if_lower(10 SECONDS)
 
 /datum/status_effect/frenzy/get_examine_text()

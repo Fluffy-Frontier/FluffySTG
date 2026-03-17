@@ -12,7 +12,7 @@
 /datum/vampire_clan/toreador/New(datum/antagonist/vampire/owner_datum)
 	. = ..()
 	vampiredatum.owned_disciplines += new /datum/discipline/celerity(vampiredatum)
-	vampiredatum.owned_disciplines += new /datum/discipline/auspex(vampiredatum)
+	vampiredatum.owned_disciplines += new /datum/discipline/potence(vampiredatum)
 	vampiredatum.owned_disciplines += new /datum/discipline/presence(vampiredatum)
 	vampiredatum.owned_disciplines += new /datum/discipline/dominate(vampiredatum)
 	vampiredatum.owned_disciplines += new /datum/discipline/obfuscate(vampiredatum)

@@ -70,7 +70,8 @@
 	var/actual_regen = vampire_regen_rate + additional_regen
 
 	current.adjust_organ_loss(ORGAN_SLOT_BRAIN, -1 * (actual_regen * 4))
-
+	current.adjust_organ_loss(ORGAN_SLOT_EYES, -1 * (actual_regen * 4))
+	current.adjust_organ_loss(ORGAN_SLOT_EARS, -1 * (actual_regen * 4))
 	if(!iscarbon(current))
 		return FALSE
 	var/mob/living/carbon/carbon_owner = current
@@ -79,7 +80,7 @@
 	var/healing_multiplier = 1
 
 	if(carbon_owner.on_fire)
-		healing_multiplier = 0.2
+		healing_multiplier = 0
 	else if(HAS_TRAIT(carbon_owner, TRAIT_SLIME_HYDROPHOBIA))
 		healing_multiplier = 0.75
 
@@ -204,7 +205,7 @@
 	if(source.stat != DEAD) // weirdness shield
 		return
 
-	COOLDOWN_START(src, revive_cooldown, 25 SECONDS) // ensure we take at minimum 25 seconds to revive.
+	COOLDOWN_START(src, revive_cooldown, 30 SECONDS) // ensure we take at minimum 25 seconds to revive.
 	INVOKE_ASYNC(src, PROC_REF(handle_death))
 
 /datum/antagonist/vampire/proc/handle_death()
@@ -256,13 +257,13 @@
 
 	// The more blood, the better the regeneration
 	if(current_vitae < BLOOD_VOLUME_BAD)
-		additional_regen = 0.1
+		additional_regen = 0.05
 	else if(current_vitae < BLOOD_VOLUME_OKAY)
-		additional_regen = 0.2
+		additional_regen = 0.1
 	else if(current_vitae < BLOOD_VOLUME_NORMAL)
-		additional_regen = 0.3
+		additional_regen = 0.15
 	else if(current_vitae < BS_BLOOD_VOLUME_MAX_REGEN)
-		additional_regen = 0.4
+		additional_regen = 0.2
 	else
 		additional_regen = 0.5
 

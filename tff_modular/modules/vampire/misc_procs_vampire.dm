@@ -328,9 +328,9 @@
 	/// All the descriptions:
 	var/ventrue = "The Ventrue are the de-facto leaders of the Camarilla. They style themselves as kings and emperors, often inhabiting positions of power.\n\
 		<b>IMPORTANT:</b> Members of the Ventrue Clan are the most eligible for princedom. Please remember that princes are expected to behave in a manner befitting their office.\n\
-		<b>[disciplines]:</b> [dominate], [fortitude], [presence]"
+		<b>[disciplines]:</b> [presence], [dominate], [fortitude], [potence], [celerity]"
 	var/tremere = "With a powerful ancestry of wizards and magicians, the Tremere wield the secret art of blood magic, which they guard with utmost care.\n\
-		<b>[disciplines]:</b> [thaumaturgy], [auspex], [dominate]"
+		<b>[disciplines]:</b> [dominate], [presence], [thaumaturgy], [obfuscate], [potence]"
 	var/toreador = "Artists, Pleasure-workers, Celebrities. These are the people of the Toreador clan. They are by far the closest to humanity of all kindred, each a deeply sensitive individual.\n\
 		<b>[disciplines]:</b> [presence], [auspex], [celerity]"
 	var/malkavian = "Completely insane. You gain constant hallucinations, become a prophet with unintelligable rambling, and gain insights better left unknown. You can also travel through Phobetor tears, rifts through spacetime only you can travel through.\n\

@@ -52,7 +52,7 @@
 /// The number that incoming levels are divided by when comitting the Amaranth. Example: 2 would divide the victims level by 2, and give that to the diablerist
 #define DIABLERIE_DIVISOR 1.5
 /// Amount of vitae drunk from another player required to level up.
-#define VITAE_GOAL_STANDARD 250
+#define VITAE_GOAL_STANDARD 150
 
 /// Default amount of damage the vampire's punch/kick damage increases with each level.
 #define VAMPIRE_UNARMED_DMG_INCREASE_ON_RANKUP 1.25

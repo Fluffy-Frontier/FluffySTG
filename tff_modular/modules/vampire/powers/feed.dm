@@ -173,7 +173,8 @@
 
 	currently_feeding = FALSE
 	masquerade_breached = FALSE
-
+	if(!living_owner.pulling)
+		return
 	if(living_owner.pulling == feed_target && !living_owner.grab_state >= GRAB_AGGRESSIVE)
 
 		// Don't allow normal feed on vamps. It's too easy and feels unfair.

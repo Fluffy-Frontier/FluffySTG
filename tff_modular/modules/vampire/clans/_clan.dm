@@ -199,7 +199,7 @@
 
 /datum/vampire_clan/proc/finalize_spend_rank()
 	// Level up the vampire
-	vampiredatum.vampire_regen_rate += 0.15
+	vampiredatum.vampire_regen_rate += 0.05
 	vampiredatum.max_vitae += 100
 
 	/* if(ishuman(vampiredatum.owner.current))
@@ -212,7 +212,7 @@
 
 	// Flavor
 	to_chat(vampiredatum.owner.current, span_notice("You are now a rank [vampiredatum.vampire_level] Vampire. \
-		Your strength, health, feed rate, regen rate, and maximum blood capacity have all increased! \n\
+		Your strength, feed rate, regen rate, and maximum blood capacity have all increased! \n\
 		* Your existing powers have all ranked up as well!"))
 	vampiredatum.update_hud()
 

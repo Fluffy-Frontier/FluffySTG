@@ -16,7 +16,7 @@
 	/// List of Powers, like Vampires.
 	var/list/datum/action/powers = list()
 	/// A link to our team monitor, used to track our master.
-	var/datum/component/team_monitor/monitor
+	// var/datum/component/team_monitor/monitor
 
 /datum/antagonist/vassal/antag_panel_data()
 	return "Master : [master.owner.name]"
@@ -27,7 +27,6 @@
 
 	RegisterSignal(current_mob, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
 	RegisterSignals(current_mob, list(COMSIG_MOB_LOGIN, COMSIG_MOVABLE_Z_CHANGED), PROC_REF(on_login))
-	RegisterSignal(current_mob, COMSIG_MOB_UPDATE_SIGHT, PROC_REF(on_update_sight))
 
 	current_mob.update_sight()
 
@@ -35,7 +34,7 @@
 	add_team_hud(current_mob)
 
 	// Tracking
-	setup_monitor(current_mob)
+	// setup_monitor(current_mob)
 	current_mob.grant_language(/datum/language/vampiric, source = LANGUAGE_VASSAL)
 
 	current_mob.faction += FACTION_VAMPIRE
@@ -46,11 +45,11 @@
 	. = ..()
 	var/mob/living/current_mob = mob_override || owner.current
 
-	UnregisterSignal(current_mob, list(COMSIG_ATOM_EXAMINE, COMSIG_MOB_LOGIN, COMSIG_MOVABLE_Z_CHANGED, COMSIG_MOB_UPDATE_SIGHT))
+	UnregisterSignal(current_mob, list(COMSIG_ATOM_EXAMINE, COMSIG_MOB_LOGIN, COMSIG_MOVABLE_Z_CHANGED))
 	current_mob.update_sight()
 
 	// Tracking
-	QDEL_NULL(monitor)
+	// QDEL_NULL(monitor)
 	current_mob.remove_language(/datum/language/vampiric, source = LANGUAGE_VASSAL)
 
 	// Remove traits
@@ -64,6 +63,7 @@
 		CRASH("[owner.current] was vassilized without a master!")
 
 	ADD_TRAIT(owner, TRAIT_VAMPIRE_ALIGNED, REF(src))
+	ADD_TRAIT(owner, TRAIT_NIGHT_VISION, REF(src))
 
 	vampire_team = master.vampire_team
 	vampire_team.add_member(owner)
@@ -82,7 +82,7 @@
 
 /datum/antagonist/vassal/on_removal()
 	REMOVE_TRAIT(owner, TRAIT_VAMPIRE_ALIGNED, REF(src))
-
+	REMOVE_TRAIT(owner, TRAIT_NIGHT_VISION, REF(src))
 	// Free them from their Master
 	if(master)
 		master.vassals -= src
@@ -198,6 +198,7 @@
 		antag_hud.show_to(target)
 		hud.show_to(antag_hud.target)
 
+/*
 /datum/antagonist/vassal/proc/setup_monitor(mob/target)
 	QDEL_NULL(monitor)
 	if(QDELETED(master?.owner?.current) || QDELETED(master.tracker))
@@ -206,6 +207,7 @@
 	monitor = target.AddComponent(/datum/component/team_monitor, REF(master))
 	monitor.add_to_tracking_network(master.tracker.tracking_beacon)
 	monitor.show_hud(target)
+*/
 
 /datum/antagonist/vassal/proc/on_examine(datum/source, mob/examiner, list/examine_text)
 	SIGNAL_HANDLER
@@ -219,13 +221,6 @@
 	else if(vampiredatum || (master?.broke_masquerade && IS_VAMPIRE_HUNTER(examiner)) || IS_VASSAL(examiner))
 		text += span_cult("<EM>This is [master.return_full_name()]'s vassal</EM>")
 		examine_text += text
-
-// Vassals get night vision, so they can at least somewhat be useful to their masters in dark areas without revealing themselves with a flashlight or something.
-// The night vision is weaker than true night vision like a vampire has, but it's still better than mesons.
-/datum/antagonist/vassal/proc/on_update_sight(mob/user)
-	SIGNAL_HANDLER
-	user.lighting_cutoff = max(user.lighting_cutoff, round((LIGHTING_CUTOFF_HIGH + LIGHTING_CUTOFF_MEDIUM) / 2, 1))
-	user.lighting_color_cutoffs = user.lighting_color_cutoffs ? blend_cutoff_colors(user.lighting_color_cutoffs, list(25, 8, 5)) : list(25, 8, 5)
 
 /// Used when your Master teaches you a new Power.
 /datum/antagonist/vassal/proc/grant_power(datum/action/cooldown/vampire/power)

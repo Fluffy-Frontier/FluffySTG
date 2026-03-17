@@ -47,8 +47,7 @@ SUBSYSTEM_DEF(vsociety)
 
 	// Build a poll_config datum to match the new polling API
 	currently_polling = TRUE
-	var/icon/prince_icon = icon('tff_modular/modules/vampire/icons/vampiric.dmi', "prince")
-	prince_icon.Scale(24, 24)
+	var/icon/prince_icon = icon('tff_modular/modules/vampire/icons/actions_vampire.dmi', "power_awe")
 	var/list/pollers = SSpolling.poll_candidates(
 		"You are eligible for princedom.",
 		poll_time = 3 MINUTES,
@@ -66,13 +65,13 @@ SUBSYSTEM_DEF(vsociety)
 	currently_polling = FALSE
 
 	var/datum/antagonist/vampire/chosen_datum
-	var/mob/living/chosen_candidate
+	var/mob/living/carbon/chosen_candidate
 
 	// We have to do this shit because the polling proc doesn't always return a list. Sometimes it just returns a mob.
 	var/list/candidates = list()
 	candidates += pollers
 
-	for(var/mob/living/current_candidate in candidates) // Pick the ideal one from the list.
+	for(var/mob/living/carbon/current_candidate in candidates) // Pick the ideal one from the list.
 		var/datum/antagonist/vampire/current_datum = IS_VAMPIRE(current_candidate)
 
 		if(!chosen_candidate)	// If we are the first in line, just be the prince by default

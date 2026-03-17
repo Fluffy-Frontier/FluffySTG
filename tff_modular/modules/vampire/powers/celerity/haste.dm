@@ -25,8 +25,8 @@
 	level_current = 2
 
 /datum/action/cooldown/vampire/targeted/haste/three
-	vitaecost = 45
-	cooldown_time = 2 SECONDS
+	vitaecost = 30
+	cooldown_time = 4 SECONDS
 	level_current = 3
 
 /datum/action/cooldown/vampire/targeted/haste/can_use()
