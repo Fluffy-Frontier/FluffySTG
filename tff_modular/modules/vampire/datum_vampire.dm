@@ -332,8 +332,6 @@
 		/datum/crafting_recipe/candelabrum,
 		/datum/crafting_recipe/bloodthrone,
 		/datum/crafting_recipe/meatcoffin,
-		/datum/crafting_recipe/umbrella_parasol,
-		/datum/crafting_recipe/umbrella,
 	))
 
 	// Set name and reputation
