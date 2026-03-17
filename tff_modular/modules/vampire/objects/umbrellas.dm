@@ -4,6 +4,7 @@
  * Umbrellas you can hold, and open and close.
  * Currently not coding for protecting against rain as ???I dont think??? rain exists.
  * The rest don't and it just for looks.
+ */
 /obj/item/umbrella
 	name = "umbrella"
 	desc = "A plain umbrella."
@@ -139,21 +140,6 @@
 	greyscale_config_inhand_left = null
 	greyscale_config_inhand_right = null
 
-/datum/greyscale_config/umbrella
-	name = "Umbrella"
-	icon_file = 'tff_modular/modules/vampire/icons/umbrellas.dmi'
-	json_config = 'code/datums/greyscale/json_configs/_umbrella.json'
-
-/datum/greyscale_config/umbrella_inhand_left
-	name = "Held Umbrella, Left, Closed"
-	icon_file = 'tff_modular/modules/vampire/icons/umbrellas_inhand_lh.dmi'
-	json_config = 'code/datums/greyscale/json_configs/_umbrella_inhand.json'
-
-/datum/greyscale_config/umbrella_inhand_right
-	name = "Held Umbrella, Right, Closed"
-	icon_file = 'tff_modular/modules/vampire/icons/umbrellas_inhand_rh.dmi'
-	json_config = 'code/datums/greyscale/json_configs/_umbrella_inhand.json'
-
 /datum/crafting_recipe/umbrella
 	name = "Umbrella"
 	result = /obj/item/umbrella
@@ -164,5 +150,16 @@
 	tool_behaviors = list(TOOL_CROWBAR)
 	time = 5 SECONDS
 	category = CAT_EQUIPMENT
-	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY
-*/
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY | CRAFT_MUST_BE_LEARNED
+
+/datum/crafting_recipe/umbrella_parasol
+	name = "Umbrella Parasol"
+	result = /obj/item/umbrella/parasol
+	reqs = list(
+		/obj/item/stack/sheet/cloth = 3,
+		/obj/item/stack/rods = 1,
+	)
+	tool_behaviors = list(TOOL_CROWBAR, TOOL_WRENCH)
+	time = 10 SECONDS
+	category = CAT_EQUIPMENT
+	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY | CRAFT_MUST_BE_LEARNED

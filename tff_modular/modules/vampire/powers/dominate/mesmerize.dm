@@ -129,8 +129,6 @@
 	else
 		owner.balloon_alert(owner, "attempting to hypnotize [living_target]...")
 
-	perform_indicators(living_target, modified_delay)
-
 	if(!do_after(owner, modified_delay, living_target, IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE, extra_checks = CALLBACK(src, PROC_REF(continue_active)), hidden = TRUE))
 		deactivate_power()
 		return
@@ -158,22 +156,6 @@
 /datum/action/cooldown/vampire/targeted/mesmerize/deactivate_power()
 	. = ..()
 	target_ref = null
-
-/datum/action/cooldown/vampire/targeted/mesmerize/proc/perform_indicators(mob/target, duration)
-	// Display an animated overlay over our head to indicate what's going on
-	eldritch_eye(target, "eye_open", 1 SECONDS)
-	var/main_duration = max(duration - 2 SECONDS, 1 SECONDS)
-	addtimer(CALLBACK(src, PROC_REF(eldritch_eye), target, "eye_flash", main_duration), 1 SECONDS)
-	addtimer(CALLBACK(src, PROC_REF(eldritch_eye), target,  "eye_close", 1 SECONDS), main_duration + 1 SECONDS)
-
-/// Display an animated overlay over our head to indicate what's going on
-/datum/action/cooldown/vampire/targeted/mesmerize/proc/eldritch_eye(mob/target, icon_state = "eye_open", duration = 1 SECONDS)
-	var/image/image = image('icons/effects/eldritch.dmi', owner, icon_state, ABOVE_ALL_MOB_LAYER)
-	image.pixel_w = -(owner.pixel_x + owner.pixel_w)
-	image.pixel_z = 28
-	image.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
-	SET_PLANE_EXPLICIT(image, ABOVE_HUD_PLANE, owner)
-	flick_overlay_global(image, list(owner?.client, target?.client), duration)
 
 /datum/status_effect/mesmerized
 	id = "mesmerized"

@@ -360,3 +360,22 @@
 	name = "MOD Soul Core"
 	icon_file = 'icons/obj/clothing/modsuit/mod_construction.dmi'
 	json_config = 'code/datums/greyscale/json_configs/mod_core_soul.json'
+
+// TFF ADDITION START
+
+/datum/greyscale_config/umbrella
+	name = "Umbrella"
+	icon_file = 'tff_modular/modules/vampire/icons/umbrellas.dmi'
+	json_config = 'code/datums/greyscale/json_configs/_umbrella.json'
+
+/datum/greyscale_config/umbrella_inhand_left
+	name = "Held Umbrella, Left, Closed"
+	icon_file = 'tff_modular/modules/vampire/icons/umbrellas_inhand_lh.dmi'
+	json_config = 'code/datums/greyscale/json_configs/_umbrella_inhand.json'
+
+/datum/greyscale_config/umbrella_inhand_right
+	name = "Held Umbrella, Right, Closed"
+	icon_file = 'tff_modular/modules/vampire/icons/umbrellas_inhand_rh.dmi'
+	json_config = 'code/datums/greyscale/json_configs/_umbrella_inhand.json'
+	
+// TFF ADDITION END
