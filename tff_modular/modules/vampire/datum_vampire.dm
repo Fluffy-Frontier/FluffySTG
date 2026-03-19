@@ -37,7 +37,8 @@
 
 	/// Flavor only
 	var/vampire_name
-
+	/// Can we become prince?
+	var/can_become_prince = FALSE
 	/// Are we the prince?
 	var/prince = FALSE
 	/// Are we the scourge? Literally only used for the examine. Okay.
@@ -374,7 +375,6 @@
 	clear_powers_and_stats()
 	GLOB.all_vampires -= src
 	SSvampire_leveling.check_enable()
-	check_cancel_society()
 
 	if(iscarbon(owner.current))
 		var/mob/living/carbon/carbon_owner = owner.current

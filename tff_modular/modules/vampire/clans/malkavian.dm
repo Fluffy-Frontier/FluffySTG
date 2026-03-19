@@ -9,7 +9,6 @@
 	join_icon_state = "malkavian"
 	joinable_clan = TRUE
 	default_humanity = 8
-	princely_score_bonus = 6
 
 	COOLDOWN_DECLARE(revelation_cooldown)
 

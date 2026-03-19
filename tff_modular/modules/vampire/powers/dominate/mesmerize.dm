@@ -21,7 +21,7 @@
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_WHILE_INCAPACITATED | BP_CANT_USE_WHILE_UNCONSCIOUS
 	vitaecost = 40
 	cooldown_time = 10 SECONDS
-	target_range = 5
+	target_range = 4
 	power_activates_immediately = FALSE
 	prefire_message = "Whom will you submit to your will?"
 	level_current = 1
@@ -47,7 +47,6 @@
 /datum/action/cooldown/vampire/targeted/mesmerize/four
 	vitaecost = 60
 	level_current = 4
-	target_range = 6
 
 /datum/action/cooldown/vampire/targeted/mesmerize/can_use()
 	. = ..()

@@ -4,7 +4,6 @@
 	name = "Debug Clan"
 	description = "wtf you shouldn't be seeing this outside of testing"
 	default_humanity = 10
-	princely_score_bonus = 99
 	joinable_clan = TRUE
 
 /datum/vampire_clan/debug/New(datum/antagonist/vampire/owner_datum)

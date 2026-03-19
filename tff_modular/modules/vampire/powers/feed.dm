@@ -276,7 +276,7 @@
 
 		playsound(living_owner, 'tff_modular/modules/vampire/sound/drinkblood1.ogg', 50)
 
-		feed_target.Stun((5 + level_current) SECONDS)
+		feed_target.Stun((10 + level_current) SECONDS)
 		feed_target.set_jitter_if_lower((5 + level_current) SECONDS)
 
 		owner.visible_message(
@@ -361,7 +361,7 @@
 	if(HAS_TRAIT(user, TRAIT_FRENZY))
 		feed_strength_mult = 2
 	else if(!silent_feed)
-		feed_strength_mult = 1
+		feed_strength_mult = 1.2
 
 	handle_feeding(feed_target, feed_strength_mult)
 

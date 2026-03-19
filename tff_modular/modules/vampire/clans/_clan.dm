@@ -27,7 +27,6 @@
 
 	// Societee
 	var/is_sabbat = FALSE // In case we want a bad guy clan that doesn't care about the masquerade.
-	var/princely_score_bonus = -10 // Will be added to playtime in get_princely_score()
 
 	/// Unique antag HUD icon of this clan, if any.
 	var/antag_hud_icon
@@ -192,10 +191,19 @@
 		to_chat(living_vampire, span_notice("You have learned how to use [discipline_response]!"))
 
 	finalize_spend_rank()
+	prince_check()
 
 	// QoL
 	if(vampiredatum.vampire_level_unspent > 0)
 		spend_rank(carbon_vampire)
+
+/datum/vampire_clan/proc/prince_check()
+	if(!vampiredatum.can_become_prince && !vampiredatum.vampire_level >= 10)
+		return FALSE
+
+	var/tgui_answer = tgui_alert(vampiredatum.owner.current, "You grown enough to become a prince, do you want it?", "Princify", list("Yes", "No"))
+	if(tgui_answer == "Yes")
+		vampiredatum.princify()
 
 /datum/vampire_clan/proc/finalize_spend_rank()
 	// Level up the vampire

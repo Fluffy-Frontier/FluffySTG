@@ -5,7 +5,6 @@
 		The Tremere stand as a pillar of the Camarilla and are one of its main defenders, despite the fact that they exist almost as a subsect."
 	join_icon_state = "tremere"
 	default_humanity = 7
-	princely_score_bonus = 8
 	joinable_clan = TRUE
 
 /datum/vampire_clan/tremere/New(datum/antagonist/vampire/owner_datum)

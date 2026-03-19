@@ -5,7 +5,6 @@
 		At the same time, many Brujah are pragmatic. They respect competence, reward power, and will accept arrangements that let them keep their autonomy while serving a purpose. For the right price, leverage, or chance to settle scores, princes were known recruit Brujah as scourges or enforcers, so long as those Brujah retain visible independence."
 	join_icon_state = "brujah"
 	default_humanity = 8
-	princely_score_bonus = 2
 	joinable_clan = TRUE
 	antag_hud_icon = "brujah"
 

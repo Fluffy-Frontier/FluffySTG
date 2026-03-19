@@ -164,9 +164,7 @@
 	/* if(CHAT_FILTER_CHECK(command))
 		to_chat(owner, span_warning("The command '[span_bold("[command]")]' is forbidden!"))
 		return FALSE */
-	if(findtext_char(command, " "))
-		to_chat(owner, span_warning("Please only input a single word."))
-		return FALSE
+
 	if(length_char(command)  > 8)
 		to_chat(owner, span_warning("Command too long!"))
 		return FALSE
