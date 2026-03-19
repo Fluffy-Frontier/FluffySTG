@@ -8,11 +8,15 @@
 		can_become_prince = TRUE
 		message_admins("Vampire Society has started, as there are [length(GLOB.all_vampires)] vampires active.")
 		log_game("Vampire Society has started, as there are [length(GLOB.all_vampires)] vampires active.")
+	else
+		can_become_prince = FALSE
 
 /**
  * Turns the player into a prince.
 **/
 /datum/antagonist/vampire/proc/princify()
+	if(!can_become_prince)
+		return FALS
 	rank_up(5, TRUE) // Rank up a lot.
 	to_chat(owner.current, span_cult_bold("As a true prince, you find some of your old power returning to you!"))
 	owner.current.playsound_local(null, 'tff_modular/modules/vampire/sound/prince.ogg', 100, FALSE, pressure_affected = FALSE)
