@@ -16,7 +16,7 @@
 **/
 /datum/antagonist/vampire/proc/princify()
 	if(!can_become_prince)
-		return FALS
+		return FALSE
 	rank_up(5, TRUE) // Rank up a lot.
 	to_chat(owner.current, span_cult_bold("As a true prince, you find some of your old power returning to you!"))
 	owner.current.playsound_local(null, 'tff_modular/modules/vampire/sound/prince.ogg', 100, FALSE, pressure_affected = FALSE)
