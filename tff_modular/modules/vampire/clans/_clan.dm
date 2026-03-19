@@ -200,9 +200,11 @@
 	if(!vampiredatum.can_become_prince && !vampiredatum.vampire_level >= 10 && !vampiredatum.prince)
 		return FALSE
 
-	var/tgui_answer = tgui_alert(vampiredatum.owner.current, "You grown enough to become a prince, do you want it?", "Princify", list("Yes", "No"))
+	var/tgui_answer = tgui_alert(vampiredatum.owner.current, "You grown enough to become a prince, do you want it? If you refuse, you won't be able to become a prince later!", "Princify", list("Yes", "No"))
 	if(tgui_answer == "Yes")
 		vampiredatum.princify()
+	else if(tgui_answer == "No")
+		vampiredatum.can_become_prince = FALSE
 
 /datum/vampire_clan/proc/finalize_spend_rank()
 	// Level up the vampire
