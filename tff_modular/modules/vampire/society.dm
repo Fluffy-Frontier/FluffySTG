@@ -24,7 +24,7 @@
 	add_team_hud(owner.current)
 
 	var/full_name = return_full_name()
-	for(var/datum/antagonist/vampire as anything in GLOB.all_vampires)
+	for(var/datum/antagonist/vampire/vampire as anything in GLOB.all_vampires)
 		to_chat(vampire.owner.current, span_narsiesmall("[full_name], also known as [owner.name || owner.current.real_name || owner.current.name], has claimed the role of Prince!"))
 		vampire.can_become_prince = FALSE
 	if(CONFIG_GET(flag/allow_vampire_scourge))
