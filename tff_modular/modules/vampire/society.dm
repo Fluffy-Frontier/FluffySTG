@@ -1,6 +1,6 @@
 /**
  * Resumes society, called when someone is assigned Vampire
-**/
+
 /datum/antagonist/vampire/proc/check_start_society()
 	if(!CONFIG_GET(flag/allow_vampire_prince))
 		return
@@ -10,7 +10,7 @@
 		log_game("Vampire Society has started, as there are [length(GLOB.all_vampires)] vampires active.")
 	else
 		can_become_prince = FALSE
-
+**/
 /**
  * Turns the player into a prince.
 **/

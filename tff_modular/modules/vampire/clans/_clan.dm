@@ -196,6 +196,7 @@
 	if(vampiredatum.vampire_level_unspent > 0)
 		spend_rank(carbon_vampire)
 
+/*
 /datum/vampire_clan/proc/prince_check()
 	if(!vampiredatum.can_become_prince && !vampiredatum.vampire_level >= 10 && !vampiredatum.prince)
 		return FALSE
@@ -205,6 +206,7 @@
 		vampiredatum.princify()
 	else if(tgui_answer == "No")
 		vampiredatum.can_become_prince = FALSE
+*/
 
 /datum/vampire_clan/proc/finalize_spend_rank()
 	// Level up the vampire
@@ -224,7 +226,6 @@
 		Your strength, feed rate, regen rate, and maximum blood capacity have all increased! \n\
 		* Your existing powers have all ranked up as well!"))
 	vampiredatum.update_hud()
-	prince_check()
 
 /datum/vampire_clan/proc/on_vampire_broke_masquerade(datum/source, datum/antagonist/vampire/masquerade_breaker)
 	SIGNAL_HANDLER

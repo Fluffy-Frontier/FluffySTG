@@ -37,12 +37,14 @@
 
 	/// Flavor only
 	var/vampire_name
+	/*
 	/// Can we become prince?
 	var/can_become_prince = FALSE
 	/// Are we the prince?
 	var/prince = FALSE
 	/// Are we the scourge? Literally only used for the examine. Okay.
 	var/scourge = FALSE
+	*/
 	/// Have we been broken the Masquerade?
 	var/broke_masquerade = FALSE
 	/// How many Masquerade Infractions do we have?
@@ -350,7 +352,7 @@
 	SSvampire_leveling.check_enable()
 
 	// Start society if we're the first vampire
-	check_start_society()
+	// check_start_society()
 
 	if(!QDELETED(owner.current))
 		for(var/quirk_type in typesof(/datum/quirk/item_quirk/addict/junkie) + /datum/quirk/skittish)
