@@ -191,14 +191,13 @@
 		to_chat(living_vampire, span_notice("You have learned how to use [discipline_response]!"))
 
 	finalize_spend_rank()
-	prince_check()
 
 	// QoL
 	if(vampiredatum.vampire_level_unspent > 0)
 		spend_rank(carbon_vampire)
 
 /datum/vampire_clan/proc/prince_check()
-	if(!vampiredatum.can_become_prince && !vampiredatum.vampire_level >= 10)
+	if(!vampiredatum.can_become_prince && !vampiredatum.vampire_level >= 10 && !vampiredatum.prince)
 		return FALSE
 
 	var/tgui_answer = tgui_alert(vampiredatum.owner.current, "You grown enough to become a prince, do you want it?", "Princify", list("Yes", "No"))
@@ -223,6 +222,7 @@
 		Your strength, feed rate, regen rate, and maximum blood capacity have all increased! \n\
 		* Your existing powers have all ranked up as well!"))
 	vampiredatum.update_hud()
+	prince_check()
 
 /datum/vampire_clan/proc/on_vampire_broke_masquerade(datum/source, datum/antagonist/vampire/masquerade_breaker)
 	SIGNAL_HANDLER
