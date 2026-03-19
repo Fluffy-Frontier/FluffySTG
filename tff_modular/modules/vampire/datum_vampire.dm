@@ -37,14 +37,10 @@
 
 	/// Flavor only
 	var/vampire_name
-	/*
-	/// Can we become prince?
-	var/can_become_prince = FALSE
 	/// Are we the prince?
 	var/prince = FALSE
 	/// Are we the scourge? Literally only used for the examine. Okay.
 	var/scourge = FALSE
-	*/
 	/// Have we been broken the Masquerade?
 	var/broke_masquerade = FALSE
 	/// How many Masquerade Infractions do we have?
