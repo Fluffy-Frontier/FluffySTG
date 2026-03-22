@@ -33,12 +33,17 @@
 	var/datum/weakref/target_ref
 
 /datum/action/cooldown/vampire/targeted/command/two
-	name = "Command"
-	power_time = 180 SECONDS
+	power_time = 120 SECONDS
 	vitaecost = 120
-	cooldown_time = 60 SECONDS
-	target_range = 6
+	cooldown_time = 45 SECONDS
+	target_range = 5
 	channel_time = 4 SECONDS
+
+/datum/action/cooldown/vampire/targeted/command/three
+	power_time = 180 SECONDS
+	cooldown_time = 50 SECONDS
+	target_range = 6
+	level_current = 3
 
 /datum/action/cooldown/vampire/targeted/command/can_use()
 	. = ..()
@@ -165,7 +170,8 @@
 		to_chat(owner, span_warning("The command '[span_bold("[command]")]' is forbidden!"))
 		return FALSE */
 
-	if(length_char(command)  > 8)
+	var/max_lenght = 8 * level_current
+	if(length_char(command)  > max_lenght)
 		to_chat(owner, span_warning("Command too long!"))
 		return FALSE
 

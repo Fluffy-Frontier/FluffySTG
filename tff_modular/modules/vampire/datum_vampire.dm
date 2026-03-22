@@ -20,6 +20,7 @@
 	/// How much blood we can have at once, increases per level.
 	var/max_vitae = 600
 
+	var/current_damage_bonus = 0
 	/// The vampire team, used for vassals
 	var/datum/team/vampire/vampire_team
 	/// The vampire's clan
@@ -791,9 +792,13 @@
 		new_limb.burn_modifier /= initial(new_limb.burn_modifier)
 
 	if(new_limb.body_zone in BODY_ZONES_LIMBS)
-		var/extra_damage = 2 + (vampire_level * extra_damage_per_rank)
-		new_limb.unarmed_damage_low += extra_damage
-		new_limb.unarmed_damage_high += extra_damage
+		var/obj/item/bodypart/user_left_hand = owner.get_bodypart(BODY_ZONE_L_ARM)
+		var/obj/item/bodypart/user_right_hand = owner.get_bodypart(BODY_ZONE_R_ARM)
+		user_left_hand.unarmed_damage_low = 5 + current_damage_bonus
+		user_right_hand.unarmed_damage_low = 5 + current_damage_bonus
+		// This affects the hitting power of Brawn.
+		user_left_hand.unarmed_damage_high = 10 + current_damage_bonus
+		user_right_hand.unarmed_damage_high = 10 + current_damage_bonus
 
 /datum/antagonist/vampire/proc/unregister_limb(mob/living/carbon/owner, obj/item/bodypart/lost_limb, special)
 	SIGNAL_HANDLER
@@ -806,10 +811,9 @@
 		lost_limb.burn_modifier *= initial(lost_limb.burn_modifier)
 
 	if(lost_limb.body_zone in BODY_ZONES_LIMBS)
-		var/extra_damage = 2 + (vampire_level / extra_damage_per_rank)
 		// safety measure in case we ever accidentally fuck up the math or something
-		lost_limb.unarmed_damage_low = max(lost_limb.unarmed_damage_low - extra_damage, initial(lost_limb.unarmed_damage_low))
-		lost_limb.unarmed_damage_high = max(lost_limb.unarmed_damage_high - extra_damage, initial(lost_limb.unarmed_damage_high))
+		lost_limb.unarmed_damage_low = max(lost_limb.unarmed_damage_low - current_damage_bonus, initial(lost_limb.unarmed_damage_low))
+		lost_limb.unarmed_damage_high = max(lost_limb.unarmed_damage_high - current_damage_bonus, initial(lost_limb.unarmed_damage_high))
 
 /datum/antagonist/vampire/proc/limb_gone(obj/item/bodypart/deleted_limb)
 	SIGNAL_HANDLER

@@ -71,4 +71,10 @@
 		visible_message(span_danger("[living_target]'s wounds spray boiling hot blood!"), span_userdanger("Oh god it burns!"))
 		qdel(src)
 		return BULLET_ACT_HIT
+	if(istype(target, /obj/vehicle))
+		var/obj/vehicle/mecha = target
+		mecha.emp_act(EMP_HEAVY)
+		mecha.take_damage(damage)
+		qdel(src)
+		return BULLET_ACT_HIT
 	. = ..()

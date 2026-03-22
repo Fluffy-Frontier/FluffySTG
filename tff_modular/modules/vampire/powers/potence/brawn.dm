@@ -4,7 +4,7 @@
 	button_icon_state = "power_strength"
 	power_explanation = "Use this power to deal a horrific blow. Punching a Cyborg will EMP it and deal high damage.\n\
 		At level 3, you can break closets open and break restraints.\n\
-		At level 4, you can bash airlocks open, and you get the ability to break even silver handcuffs. Use wisely - security is unlikely to try and capture you alive again after the first time!\n\
+		At level 4, you can bash airlocks open, and you get the ability to brawn even mecha. Use wisely - security is unlikely to try and capture you alive again after the first time!\n\
 		Higher ranks will increase the damage when punching someone."
 	vampire_power_flags = BP_AM_TOGGLE
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_INCAPACITATED | BP_CANT_USE_WHILE_UNCONSCIOUS
@@ -122,15 +122,13 @@
 /datum/action/cooldown/vampire/targeted/brawn/fire_targeted_power(atom/target_atom, list/modifiers)
 	. = ..()
 	var/mob/living/carbon/carbon_owner = owner
-
+	var/obj/item/bodypart/user_active_arm = carbon_owner.get_active_hand()
+	var/hit_strength = user_active_arm.unarmed_damage_high * damage_coefficient + 2
 	// Living Targets
 	if(isliving(target_atom))
 		var/mob/living/living_target = target_atom
 
 		// Strength of the attack
-		var/obj/item/bodypart/user_active_arm = carbon_owner.get_active_hand()
-		var/hit_strength = user_active_arm.unarmed_damage_high * damage_coefficient + 2
-
 		var/powerlevel = min(5, 1 + level_current)
 
 		if(rand(5 + powerlevel) >= 5)
@@ -203,6 +201,13 @@
 			if(brujah && level_current >= 3 && target_airlock.locked)
 				target_airlock.unbolt()
 			target_airlock.open(BYPASS_DOOR_CHECKS)
+	else if(istype(target_atom, /obj/vehicle))
+		var/obj/vehicle/target_vehicle = target_atom
+		playsound(get_turf(carbon_owner), 'sound/effects/grillehit.ogg', 80, TRUE, -1)
+		if(target_vehicle.Adjacent(carbon_owner))
+			target_vehicle.visible_message(span_danger("[target_vehicle] breaks apart as [carbon_owner] bashes it!"))
+			target_vehicle.emp_act(EMP_HEAVY)
+			target_vehicle.take_damage(hit_strength)
 
 /datum/action/cooldown/vampire/targeted/brawn/check_valid_target(atom/target_atom)
 	. = ..()
@@ -231,5 +236,11 @@
 		var/obj/structure/closet/target_closet = target_atom
 		if(target_closet.welded || target_closet.locked)
 			return TRUE
+
+	if(istype(target_atom, /obj/vehicle))
+		if(level_current < 4)
+			owner.balloon_alert(owner, "level 4 required!")
+			return FALSE
+		return TRUE
 
 	return FALSE

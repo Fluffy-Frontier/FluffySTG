@@ -20,6 +20,4 @@
 
 /datum/discipline/potence/apply_discipline_quirks(datum/antagonist/vampire/clan_owner)
 	. = ..()
-	clan_owner.cleanup_limbs(clan_owner.owner.current)
-	clan_owner.extra_damage_per_rank = VAMPIRE_UNARMED_DMG_INCREASE_ON_RANKUP * 2
-	clan_owner.setup_limbs(clan_owner.owner.current)
+	clan_owner.extra_damage_per_rank = VAMPIRE_UNARMED_DMG_INCREASE_ON_RANKUP * 1.5

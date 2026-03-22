@@ -21,7 +21,8 @@
 	ranged_mousepointer = 'tff_modular/modules/vampire/icons/vampire_entrance.dmi'
 	var/ignore_shielding = FALSE
 
-/datum/action/cooldown/vampire/targeted/entrance/two
+/datum/action/cooldown/vampire/targeted/entrance
+	ignore_shielding = TRUE
 
 /datum/action/cooldown/vampire/targeted/entrance/check_valid_target(atom/target_atom)
 	. = ..()

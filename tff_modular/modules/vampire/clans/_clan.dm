@@ -210,6 +210,16 @@
 
 /datum/vampire_clan/proc/finalize_spend_rank()
 	// Level up the vampire
+	if(ishuman(vampiredatum.owner.current))
+		var/mob/living/carbon/human/human_user = vampiredatum.owner.current
+		var/obj/item/bodypart/user_left_hand = human_user.get_bodypart(BODY_ZONE_L_ARM)
+		var/obj/item/bodypart/user_right_hand = human_user.get_bodypart(BODY_ZONE_R_ARM)
+		user_left_hand.unarmed_damage_low += vampiredatum.extra_damage_per_rank
+		user_right_hand.unarmed_damage_low += vampiredatum.extra_damage_per_rank
+		// This affects the hitting power of Brawn.
+		user_left_hand.unarmed_damage_high += vampiredatum.extra_damage_per_rank
+		user_right_hand.unarmed_damage_high += vampiredatum.extra_damage_per_rank
+		vampiredatum.current_damage_bonus += vampiredatum.extra_damage_per_rank
 	vampiredatum.vampire_regen_rate += 0.05
 	vampiredatum.max_vitae += 100
 

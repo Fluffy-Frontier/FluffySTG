@@ -52,7 +52,7 @@
 	icon_state = "blood_shield"
 	lefthand_file = 'tff_modular/modules/vampire/icons/bs_leftinhand.dmi'
 	righthand_file = 'tff_modular/modules/vampire/icons/bs_rightinhand.dmi'
-	block_chance = 100
+	block_chance = 75
 
 /obj/item/shield/vampire/Initialize(mapload)
 	. = ..()
@@ -66,4 +66,4 @@
 	. = ..()
 	if(. && damage > 0)
 		var/datum/antagonist/vampire/vampire = IS_VAMPIRE(owner)
-		vampire?.adjust_blood_volume(-15)
+		vampire?.adjust_blood_volume(-7.5)

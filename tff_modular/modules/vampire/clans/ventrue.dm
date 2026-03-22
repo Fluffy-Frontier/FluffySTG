@@ -10,7 +10,6 @@
 
 /datum/vampire_clan/ventrue/New(datum/antagonist/vampire/owner_datum)
 	. = ..()
-
 	vampiredatum.owned_disciplines += new /datum/discipline/presence(vampiredatum)
 	vampiredatum.owned_disciplines += new /datum/discipline/dominate/ventrue(vampiredatum)
 	vampiredatum.owned_disciplines += new /datum/discipline/fortitude(vampiredatum)

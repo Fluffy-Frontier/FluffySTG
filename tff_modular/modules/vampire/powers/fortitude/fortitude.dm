@@ -30,9 +30,8 @@
 						At level 4: Gain complete stun immunity."
 	vampire_power_flags = BP_AM_TOGGLE | BP_AM_COSTLESS_UNCONSCIOUS
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_STAKED
-	vitaecost = 10
+	vitaecost = 50
 	cooldown_time = 5 SECONDS
-	constant_vitaecost = 1
 
 	var/resistance = 0.8
 
@@ -76,7 +75,6 @@
 	owner.balloon_alert(owner, "fortitude turned on.")
 	to_chat(owner, span_notice("Your flesh has become as hard as steel!"))
 	owner.playsound_local(null, 'tff_modular/modules/vampire/sound/fortitude_on.ogg', 100, FALSE, pressure_affected = FALSE)
-
 	// Traits & Effects
 	if(pierce)
 		ADD_TRAIT(owner, TRAIT_PIERCEIMMUNE, REF(src))
@@ -86,11 +84,16 @@
 		ADD_TRAIT(owner, TRAIT_PUSHIMMUNE, REF(src))
 	if(stun)
 		ADD_TRAIT(owner, TRAIT_STUNIMMUNE, REF(src)) // They'll get stun resistance + this, who cares.
-
 	var/mob/living/carbon/human/user = owner
+	RegisterSignal(user, COMSIG_MOB_APPLY_DAMAGE, PROC_REF(on_take_damage))
 	user.physiology.brute_mod *= resistance
 	user.physiology.stamina_mod *= resistance * 2 // Stamina resistance is half as effective because they have it inherently.
 	user.physiology.burn_mod *= burn_resistance // they get burn resistance, but way less
+
+/datum/action/cooldown/vampire/fortitude/proc/on_take_damage(datum/source, damage_amount, damage_type, ...)
+	SIGNAL_HANDLER
+	var/blood_to_consume = damage_amount / resistance
+	vampiredatum_power.adjust_blood_volume(-blood_to_consume)
 
 /datum/action/cooldown/vampire/fortitude/use_power()
 	. = ..()
@@ -106,6 +109,7 @@
 		return
 
 	var/mob/living/carbon/human/vampire_user = owner
+	UnregisterSignal(vampire_user, COMSIG_MOB_APPLY_DAMAGE)
 	vampire_user.physiology.brute_mod /= resistance
 	vampire_user.physiology.burn_mod /= burn_resistance
 	vampire_user.physiology.stamina_mod /= resistance * 2
