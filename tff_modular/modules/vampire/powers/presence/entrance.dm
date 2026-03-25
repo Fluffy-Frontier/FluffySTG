@@ -37,9 +37,15 @@
 		owner.balloon_alert(owner, "[carbon_target] is mindless.")
 		return FALSE
 
-	if(HAS_MIND_TRAIT(carbon_target, TRAIT_VAMPIRE_ALIGNED) || IS_CURATOR(carbon_target))
+	if(IS_CURATOR(carbon_target))
 		owner.balloon_alert(owner, "immune to your presence.")
 		return FALSE
+
+	if(IS_VAMPIRE(carbon_target))
+		var/datum/antagonist/vampire/vampire_target = carbon_target
+		if(vampire_target.vampire_level >= vampiredatum_power.vampire_level)
+			to_chat(owner, span_danger("You can't influence a vampire above your level!"))
+			return FALSE
 
 	if(carbon_target.stat != CONSCIOUS)
 		owner.balloon_alert(owner, "[carbon_target] is not [(carbon_target.stat == DEAD || HAS_TRAIT(carbon_target, TRAIT_FAKEDEATH)) ? "alive" : "conscious"].")

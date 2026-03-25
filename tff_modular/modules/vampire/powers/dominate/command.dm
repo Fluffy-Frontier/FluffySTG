@@ -25,7 +25,7 @@
 	ranged_mousepointer = 'tff_modular/modules/vampire/icons/vampire_command.dmi'
 
 	/// How long the command is in effect.
-	var/power_time = 60 SECONDS
+	var/power_time = 120 SECONDS
 	/// How long you have to channel in order to command someone.
 	var/channel_time = 7 SECONDS
 
@@ -33,17 +33,31 @@
 	var/datum/weakref/target_ref
 
 /datum/action/cooldown/vampire/targeted/command/two
-	power_time = 120 SECONDS
-	vitaecost = 120
-	cooldown_time = 45 SECONDS
-	target_range = 5
+	power_time = 240 SECONDS
+	vitaecost = 100
 	channel_time = 4 SECONDS
+	level_current = 2
 
 /datum/action/cooldown/vampire/targeted/command/three
-	power_time = 180 SECONDS
-	cooldown_time = 50 SECONDS
-	target_range = 6
+	power_time = 360 SECONDS
 	level_current = 3
+	target_range = 5
+	channel_time = 4 SECONDS
+	vitaecost = 110
+
+/datum/action/cooldown/vampire/targeted/command/four
+	power_time = 480 SECONDS
+	level_current = 4
+	target_range = 5
+	channel_time = 4 SECONDS
+	vitaecost = 120
+
+/datum/action/cooldown/vampire/targeted/command/five
+	power_time = 600 SECONDS
+	level_current = 5
+	target_range = 5
+	channel_time = 4 SECONDS
+	vitaecost = 130
 
 /datum/action/cooldown/vampire/targeted/command/can_use()
 	. = ..()

@@ -19,9 +19,9 @@
 		At level 4, you will be able to mesmerize regardless of your target's direction."
 	vampire_power_flags = NONE
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_WHILE_INCAPACITATED | BP_CANT_USE_WHILE_UNCONSCIOUS
-	vitaecost = 40
-	cooldown_time = 10 SECONDS
-	target_range = 4
+	vitaecost = 50
+	cooldown_time = 16 SECONDS
+	target_range = 3
 	power_activates_immediately = FALSE
 	prefire_message = "Whom will you submit to your will?"
 	level_current = 1
@@ -30,23 +30,23 @@
 	/// Reference to the target
 	var/datum/weakref/target_ref
 	/// How long it takes us to mesmerize our target.
-	var/mesmerize_delay = 5 SECONDS
+	var/mesmerize_delay = 6 SECONDS
 
 /datum/action/cooldown/vampire/targeted/mesmerize/Destroy()
 	target_ref = null
 	return ..()
 
 /datum/action/cooldown/vampire/targeted/mesmerize/two
-	vitaecost = 30
 	level_current = 2
 
 /datum/action/cooldown/vampire/targeted/mesmerize/three
-	vitaecost = 40
 	level_current = 3
+	target_range = 4
 
 /datum/action/cooldown/vampire/targeted/mesmerize/four
 	vitaecost = 60
 	level_current = 4
+	target_range = 4
 
 /datum/action/cooldown/vampire/targeted/mesmerize/can_use()
 	. = ..()
