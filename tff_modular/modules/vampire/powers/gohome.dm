@@ -75,11 +75,11 @@
 	user.uncuff()
 
 	playsound(current_turf, 'sound/effects/magic/summon_karp.ogg', 60, 1)
-
+	/*
 	var/datum/effect_system/steam_spread/vampire/puff = new /datum/effect_system/steam_spread/vampire()
 	puff.set_up(3, 0, current_turf)
 	puff.start()
-
+	*/
 	/// STEP FIVE: Create animal at prev location
 	var/mob/living/simple_animal/new_mob = pick_weight(spawning_mobs)
 	new new_mob(current_turf)

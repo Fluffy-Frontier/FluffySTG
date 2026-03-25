@@ -72,10 +72,11 @@
 	// Effect Origin
 	var/sound_strength = max(40, 100 - level_current * 20)
 	playsound(get_turf(owner), 'sound/effects/magic/summon_karp.ogg', vol = sound_strength, vary = TRUE)
+	/*
 	var/datum/effect_system/steam_spread/vampire/puff = new /datum/effect_system/steam_spread()
 	puff.set_up(3, FALSE, my_turf)
 	puff.start()
-
+	*/
 	var/mist_delay = max(5, 20 - level_current * 2.5) // Level up and do this faster.
 
 	// Freeze Me
@@ -102,6 +103,8 @@
 	check_witnesses()
 	// Effect Destination
 	playsound(get_turf(owner), 'sound/effects/magic/summon_karp.ogg', vol = 60, vary = TRUE)
+	/*
 	puff = new /datum/effect_system/steam_spread()
 	puff.set_up(3, FALSE, target_turf)
 	puff.start()
+	*/

@@ -16,7 +16,7 @@
 
 // Add rotating and armrest
 /obj/structure/vampire/bloodthrone/Initialize(mapload)
-	AddComponent(/datum/component/simple_rotation)
+	// AddComponent(/datum/component/simple_rotation)
 	return ..()
 
 // Rotating

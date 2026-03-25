@@ -61,10 +61,12 @@
 /datum/action/cooldown/vampire/veil/proc/cast_effect()
 	// Effect
 	playsound(get_turf(owner), 'sound/effects/smoke.ogg', 20, 1)
+	/*
 	var/datum/effect_system/steam_spread/vampire/puff = new /datum/effect_system/steam_spread/()
 	puff.set_up(3, 0, get_turf(owner))
 	puff.attach(owner) //OPTIONAL
 	puff.start()
+	*/
 	owner.spin(0.8 SECONDS, 1) //Spin around like a loon.
 	check_witnesses()
 

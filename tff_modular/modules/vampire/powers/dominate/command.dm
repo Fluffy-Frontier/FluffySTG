@@ -104,10 +104,12 @@
 		owner.balloon_alert(owner, "[living_target] is not [(living_target.stat == DEAD || HAS_TRAIT(living_target, TRAIT_FAKEDEATH)) ? "alive" : "conscious"].")
 		return FALSE
 
+	/*
 	// Is our target deaf?
 	if(!living_target.can_hear())
 		owner.balloon_alert(owner, "[living_target] cannot hear you!")
 		return FALSE
+	*/
 
 	// Is our target a silicon?
 	if(issilicon(living_target))
