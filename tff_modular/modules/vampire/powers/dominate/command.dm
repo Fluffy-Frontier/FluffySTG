@@ -154,7 +154,7 @@
 		living_target.add_client_colour(/datum/client_colour/glass_colour/pink, CLIENT_COLOR_SOURCE_VAMPIRE)
 	if(!do_after(owner, modified_delay, living_target, IGNORE_TARGET_LOC_CHANGE | IGNORE_HELD_ITEM, extra_checks = CALLBACK(src, PROC_REF(continue_active)), hidden = TRUE))
 		living_target.balloon_alert(living_target, "your thoughts come back into focus.")
-		living_target.remove_client_colour(/datum/client_colour/glass_colour/pink)
+		living_target.remove_client_colour(CLIENT_COLOR_SOURCE_VAMPIRE)
 		deactivate_power()
 		return
 	living_target.remove_client_colour(CLIENT_COLOR_SOURCE_VAMPIRE)
@@ -162,6 +162,7 @@
 	// they're out of range once more
 	if(!(living_target in hearers(target_range, owner)))
 		living_target.balloon_alert(living_target, "your thoughts come back into focus.")
+		living_target.remove_client_colour(CLIENT_COLOR_SOURCE_VAMPIRE)
 		deactivate_power()
 		return
 
