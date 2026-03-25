@@ -367,7 +367,7 @@
 	owner.forget_crafting_recipe(list(
 		/datum/crafting_recipe/vassalrack,
 		/datum/crafting_recipe/candelabrum,
-		/datum/crafting_recipe/bloodthrone,
+		// /datum/crafting_recipe/bloodthrone,
 		/datum/crafting_recipe/meatcoffin,
 	))
 
