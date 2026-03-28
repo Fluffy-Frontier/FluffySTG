@@ -17,14 +17,14 @@
 	vampire_power_flags = NONE
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_WHILE_INCAPACITATED | BP_CANT_USE_WHILE_UNCONSCIOUS
 	vitaecost = 80
-	cooldown_time = 40 SECONDS
-	target_range = 4
+	cooldown_time = 90 SECONDS
+	target_range = 3
 	power_activates_immediately = FALSE
 	prefire_message = "Whom will you subvert to your will?"
 	ranged_mousepointer = 'tff_modular/modules/vampire/icons/vampire_command.dmi'
 
 	/// How long the command is in effect.
-	var/power_time = 120 SECONDS
+	var/power_time = 60 SECONDS
 	/// How long you have to channel in order to command someone.
 	var/channel_time = 7 SECONDS
 
@@ -32,31 +32,30 @@
 	var/datum/weakref/target_ref
 
 /datum/action/cooldown/vampire/targeted/command/two
-	power_time = 240 SECONDS
+	power_time = 80 SECONDS
 	vitaecost = 100
 	channel_time = 4 SECONDS
 	level_current = 2
 
 /datum/action/cooldown/vampire/targeted/command/three
-	power_time = 360 SECONDS
+	power_time = 100 SECONDS
 	level_current = 3
 	target_range = 5
 	channel_time = 4 SECONDS
-	vitaecost = 110
 
 /datum/action/cooldown/vampire/targeted/command/four
-	power_time = 480 SECONDS
+	power_time = 120 SECONDS
 	level_current = 4
 	target_range = 5
 	channel_time = 4 SECONDS
 	vitaecost = 120
 
 /datum/action/cooldown/vampire/targeted/command/five
-	power_time = 600 SECONDS
+	power_time = 120 SECONDS
 	level_current = 5
 	target_range = 5
 	channel_time = 4 SECONDS
-	vitaecost = 130
+	vitaecost = 120
 
 /datum/action/cooldown/vampire/targeted/command/can_use()
 	. = ..()
