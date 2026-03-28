@@ -338,7 +338,7 @@
 
 /datum/sprite_accessory/wings/moth/featherful // Is actually 'feathery' on upstream
 	name = "Moth (Featherful)"
-	icon_state = "feathery"
+	icon_state = "featherful"
 
 /datum/sprite_accessory/wings/moth/firewatch
 	name = "Moth (Firewatch)"
