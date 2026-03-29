@@ -9,7 +9,7 @@
 /datum/vampire_clan/debug/New(datum/antagonist/vampire/owner_datum)
 	. = ..()
 	vampiredatum.vampire_level_unspent = 35
-	vampiredatum.owned_disciplines += new /datum/discipline/auspex/malkavian(vampiredatum)
+	vampiredatum.owned_disciplines += new /datum/discipline/auspex(vampiredatum)
 	vampiredatum.owned_disciplines += new /datum/discipline/celerity(vampiredatum)
 	vampiredatum.owned_disciplines += new /datum/discipline/dominate/ventrue(vampiredatum)
 	vampiredatum.owned_disciplines += new /datum/discipline/fortitude(vampiredatum)
