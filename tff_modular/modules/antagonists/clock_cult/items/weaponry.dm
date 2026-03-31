@@ -72,7 +72,7 @@
 	icon_state = "ratvarian_spear0"
 	embed_type = /datum/embedding/brass_spear
 	throwforce = 40
-	force = 7
+	force = 20
 	armour_penetration = 40
 	block_chance = 15
 	clockwork_desc = "Can be summoned back to its last holder every 10 seconds if they are standing on bronze."
@@ -188,9 +188,9 @@
 	desc = "A brass hammer glowing with energy."
 	base_icon_state = "ratvarian_hammer"
 	icon_state = "ratvarian_hammer0"
-	force = 15
+	force = 25
 	throwforce = 25
-	armour_penetration = 6
+	armour_penetration = 30
 	attack_verb_simple = list("bash", "hammer", "attack", "smash")
 	attack_verb_continuous = list("bashes", "hammers", "attacks", "smashes")
 	attack_speed = 16
@@ -198,6 +198,7 @@
 	sharpness = FALSE
 	hitsound = 'sound/items/weapons/smash.ogg'
 	block_chance = 10
+	demolition_mod = 2
 
 /obj/item/clockwork/weapon/brass_battlehammer/Initialize(mapload)
 	. = ..()
@@ -222,9 +223,9 @@
 	name = "brass longsword"
 	desc = "A large sword made of brass."
 	icon_state = "ratvarian_sword"
-	force = 20
+	force = 30
 	throwforce = 20
-	armour_penetration = 15
+	armour_penetration = 25
 	attack_verb_simple = list("attack", "slash", "cut", "tear", "gore")
 	attack_verb_continuous = list("attacks", "slashes", "cuts", "tears", "gores")
 	clockwork_desc = "Enemies and mechs will be struck with a powerful electromagnetic pulse while you are on bronze tiles, with a cooldown. It seems to only be able to parry melee attacks."
@@ -343,7 +344,7 @@
 	name = "energy bolt"
 	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/projectiles.dmi'
 	icon_state = "arrow_energy"
-	damage = 25
+	damage = 35
 	damage_type = BURN
 
 //double damage to non clockwork structures and machines(if we rework reebe itself this will no longer be needed)

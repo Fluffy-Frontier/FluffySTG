@@ -3,7 +3,7 @@
 	name = "Clockwork Operating Computer"
 	desc = "A device containing (most) of the surgery secrets of the universe."
 	icon_keyboard = "ratvar_key1"
-	icon_state = "ratvarcomputer"
+	icon_state = "ratvarcomputer1"
 	clockwork = TRUE
 	///list of surgeries we get on Init()
 	var/static/list/added_surgeries = list(/datum/surgery/advanced/lobotomy,

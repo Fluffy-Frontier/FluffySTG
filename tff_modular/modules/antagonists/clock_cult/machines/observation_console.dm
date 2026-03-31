@@ -3,7 +3,7 @@
 	desc = "Used by the servants of Ratvar to conduct operations on Nanotrasen property."
 	icon_screen = "ratvar1"
 	icon_keyboard = "ratvar_key1"
-	icon_state = "ratvarcomputer"
+	icon_state = "ratvarcomputer1"
 	resistance_flags = INDESTRUCTIBLE
 	clockwork = TRUE
 	lock_override = TRUE

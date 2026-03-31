@@ -309,7 +309,7 @@
 	cost = BRASS_POWER_COST * 5 // Breaking it only gets 2 but this is the exception to the rule of equivalent exchange, due to all the small parts inside
 	to_create_path = /obj/machinery/door/airlock/bronze/clock/player_made
 	creation_delay = 10 SECONDS
-	replace_types_of = list(/obj/machinery/door)
+	replace_types_of = list(/obj/machinery/door/airlock)
 	replacement_mult = 1
 
 /datum/replica_fabricator_output/pinion_airlock/extra_checks(atom/target, turf/created_at, mob/user)
