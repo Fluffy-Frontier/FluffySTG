@@ -1,3 +1,5 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
+
 /obj/structure/door_assembly/door_assembly_bronze/clock
 	airlock_type = /obj/machinery/door/airlock/bronze/clock
 
@@ -48,3 +50,4 @@
 	assemblytype = /obj/structure/door_assembly/door_assembly_bronze/seethru/clock
 	glass = TRUE
 	opacity = FALSE
+*/

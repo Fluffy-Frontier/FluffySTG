@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 GLOBAL_LIST_EMPTY(clock_scriptures)
 GLOBAL_LIST_EMPTY(clock_scriptures_by_type)
 
@@ -370,3 +371,4 @@ GLOBAL_LIST_EMPTY(clock_scriptures_by_type)
 		var/datum/scripture/clock_script = new categorypath
 		GLOB.clock_scriptures += clock_script
 		GLOB.clock_scriptures_by_type[clock_script.type] = clock_script
+*/

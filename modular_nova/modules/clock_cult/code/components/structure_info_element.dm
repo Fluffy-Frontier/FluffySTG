@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /datum/element/clockwork_structure_info
 	element_flags = ELEMENT_DETACH_ON_HOST_DESTROY
 
@@ -61,3 +62,4 @@
 		return
 
 	examine_text += span_brass("You can gain more information by using a <b>Clockwork Slab</b>.")
+*/

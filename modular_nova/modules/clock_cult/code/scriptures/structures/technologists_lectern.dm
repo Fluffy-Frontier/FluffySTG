@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /datum/scripture/create_structure/technologists_lectern
 	name = "Technologist's Lectern"
 	desc = "Creates a technologist's lectern, usable in certain areas to research new, powerful scriptures and equipment. Research takes a while and unenlightened minds may take notice."
@@ -10,3 +11,4 @@
 	cogs_required = 2
 	category = SPELLTYPE_STRUCTURES
 
+*/

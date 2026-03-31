@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /obj/structure/destructible/clockwork/sigil/vitality
 	name = "vitality matrix"
 	desc = "A twisting, confusing artifact that drains the unenlightended on contact."
@@ -66,3 +67,4 @@
 	else
 		send_clock_message(null, "[affected_mob] has had their vitality drained by [src], rejoice!", "<span class='clockred'>")
 
+*/

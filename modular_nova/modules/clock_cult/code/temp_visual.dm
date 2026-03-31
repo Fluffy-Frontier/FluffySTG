@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 #define MENDING_MANTRA_SCALE 2
 
 //temporary visual effects(/obj/effect/temp_visual) used by clock stuff
@@ -219,3 +220,4 @@
 
 
 #undef MENDING_MANTRA_SCALE
+*/

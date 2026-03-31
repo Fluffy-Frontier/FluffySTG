@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /// The base clockwork structure. Can have an alternate desc and will show up in the list of clockwork objects.
 /obj/structure/destructible/clockwork
 	name = "meme structure"
@@ -48,3 +49,4 @@
 		balloon_alert(user, "rotated [dir2text(dir)]")
 
 	return TRUE
+*/

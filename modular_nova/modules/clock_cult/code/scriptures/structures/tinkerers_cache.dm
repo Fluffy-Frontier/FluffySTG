@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /datum/scripture/create_structure/tinkerers_cache
 	name = "Tinkerer's Cache"
 	desc = "Creates a tinkerer's cache, a powerful forge capable of crafting elite equipment."
@@ -9,3 +10,4 @@
 	summoned_structure = /obj/structure/destructible/clockwork/gear_base/powered/tinkerers_cache
 	cogs_required = 4
 	category = SPELLTYPE_STRUCTURES
+*/

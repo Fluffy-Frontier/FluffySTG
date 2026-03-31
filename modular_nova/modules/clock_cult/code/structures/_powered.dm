@@ -1,3 +1,5 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
+
 /obj/structure/destructible/clockwork/gear_base/powered
 	/// If the structure has its "on" switch flipped. Does not mean it's on, necessarily (needs power and anchoring, too)
 	var/enabled = FALSE
@@ -204,3 +206,4 @@
 	LAZYREMOVE(sigil.linked_structures, src)
 
 	check_power()
+*/

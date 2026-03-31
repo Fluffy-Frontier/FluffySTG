@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 #define MAXIMUM_MARAUDERS 2
 
 /datum/scripture/marauder
@@ -67,3 +68,4 @@
 	return TRUE
 
 #undef MAXIMUM_MARAUDERS
+*/

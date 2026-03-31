@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /datum/scripture/create_structure/sigil_vitality
 	name = "Vitality Matrix"
 	desc = "Summons a vitality matrix, which drains the life force of non servants. Much less vitality is gained from simpler entities."
@@ -10,3 +11,4 @@
 	cogs_required = 2
 	invokers_required = 2
 	category = SPELLTYPE_SERVITUDE
+*/

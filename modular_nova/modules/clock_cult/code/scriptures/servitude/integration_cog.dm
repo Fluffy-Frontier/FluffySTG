@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /datum/scripture/integration_cog
 	name = "Integration Cog"
 	desc = "Fabricates an integration cog, which can be inserted into APCs to draw power and unlock scriptures."
@@ -17,3 +18,4 @@
 		to_chat(invoker, span_brass("You summon an integration cog on the floor."))
 		playsound(src, 'sound/machines/click.ogg', 50)
 		return FALSE
+*/

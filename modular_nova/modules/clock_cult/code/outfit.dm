@@ -1,3 +1,5 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
+
 /datum/outfit/clock
 	name = "Default Clock Cultist"
 
@@ -67,3 +69,4 @@
 	shoes = /obj/item/clothing/shoes/clockwork
 	gloves = /obj/item/clothing/gloves/clockwork
 	head = /obj/item/clothing/head/helmet/clockwork
+*/

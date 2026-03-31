@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 #define MAX_POWER_PER_COG 250
 #define HALLUCINATION_COG_CHANCE 20
 #define SET_UP_TIME (5 MINUTES)
@@ -109,3 +110,4 @@
 #undef MAX_POWER_PER_COG
 #undef HALLUCINATION_COG_CHANCE
 #undef SET_UP_TIME
+*/

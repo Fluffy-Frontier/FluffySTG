@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /*
 *	Whirring Convergence
 *   Communicate a message to all other clock cultists
@@ -56,3 +57,4 @@
 				to_chat(player_mob, "[FOLLOW_LINK(player_mob, user)] [final_message]")
 			else
 				to_chat(player_mob, final_message)
+*/

@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 #define OCULAR_WARDEN_PLACE_RANGE 3
 
 /datum/scripture/create_structure/ocular_warden
@@ -24,3 +25,4 @@
 	return TRUE
 
 #undef OCULAR_WARDEN_PLACE_RANGE
+*/

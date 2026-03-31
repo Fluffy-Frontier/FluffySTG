@@ -1,3 +1,5 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
+
 /datum/lazy_template/reebe
 	key = LAZY_TEMPLATE_KEY_OUTPOST_OF_COGS
 	map_dir = "_maps/nova/lazy_templates"
@@ -132,3 +134,5 @@
 
 /obj/effect/landmark/late_cog_portals
 	name = "late cog portal spawn"
+
+*/

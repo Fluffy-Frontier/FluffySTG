@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 #define BOOK_OPEN_RANGE 2
 
 /obj/structure/destructible/clockwork/gear_base/technologists_lectern
@@ -479,3 +480,4 @@
 	flick("lectern_closing", src)
 
 #undef BOOK_OPEN_RANGE
+*/

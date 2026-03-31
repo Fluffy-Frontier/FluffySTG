@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /area/ruin/powered/reebe
 	name = "Outpost of Cogs"
 	ambience_index = AMBIENCE_REEBE
@@ -9,3 +10,4 @@
 	name = "Outpost of Cogs Space"
 	base_lighting_alpha = 255
 
+*/

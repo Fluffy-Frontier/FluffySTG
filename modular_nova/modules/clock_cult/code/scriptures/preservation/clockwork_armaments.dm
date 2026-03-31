@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /datum/scripture/clockwork_armaments
 	name = "Clockwork Armaments"
 	desc = "Summon clockwork armor and weapons, to be ready for battle."
@@ -38,3 +39,4 @@
 	base_outfit.equip(invoker)
 
 	invoker.put_in_hands(new weapon_path, FALSE)
+*/

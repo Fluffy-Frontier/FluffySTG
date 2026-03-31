@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /datum/action/innate/clockcult
 	button_icon = 'modular_nova/modules/clock_cult/icons/actions_clock.dmi'
 	background_icon = 'modular_nova/modules/clock_cult/icons/background_clock.dmi'
@@ -58,3 +59,4 @@
 /datum/action/item_action/toggle/clock
 	button_icon = 'modular_nova/modules/clock_cult/icons/background_clock.dmi'
 	background_icon_state = "bg_clock"
+*/

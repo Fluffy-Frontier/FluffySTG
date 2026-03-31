@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /datum/scripture/create_structure/interdiction
 	name = "Interdiction Lens"
 	desc = "Creates a device that will slow non servants in the area and damage mechanised exosuits. Requires power from a sigil of transmission."
@@ -9,3 +10,4 @@
 	summoned_structure = /obj/structure/destructible/clockwork/gear_base/powered/interdiction_lens
 	cogs_required = 4
 	category = SPELLTYPE_STRUCTURES
+*/

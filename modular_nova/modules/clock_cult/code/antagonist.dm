@@ -1,3 +1,5 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
+
 // This'll take a bit of explaining.
 // Clock cult, the (shitty) gamemode is not coming back, this antagonist datum is for the soon-to-come OPFOR bundle
 // However, the bundle gives `/datum/antagonist/clock_cultist/solo`, which is the same as `/datum/antagonist/clock_cultist`, but lacks conversion.
@@ -72,3 +74,4 @@
 	name = "Clock Cultist (Solo)"
 	show_to_ghosts = FALSE
 	can_convert = FALSE
+*/

@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /datum/status_effect/interdiction
 	id = "interdicted"
 	duration = 2.6 SECONDS
@@ -30,3 +31,4 @@
 
 /datum/movespeed_modifier/clock_interdiction
 	multiplicative_slowdown = 1.5
+*/

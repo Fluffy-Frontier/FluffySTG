@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /datum/action/innate/clockcult/recall_slab
 	name = "Recall Slab"
 	desc = "Recall your latest used Clockwork Slab from anywhere in the universe."
@@ -103,3 +104,4 @@
 		item_to_retrieve.loc.visible_message(span_warning("[item_to_retrieve] suddenly appears!"))
 
 	playsound(get_turf(item_to_retrieve), 'sound/effects/magic/summonitems_generic.ogg', 50, TRUE)
+*/

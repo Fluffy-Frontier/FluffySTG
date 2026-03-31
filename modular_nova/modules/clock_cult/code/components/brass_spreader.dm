@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /// A component that spreads brass to a tile in [range] every [cooldown] seconds, converting everything on it into brass as well.
 /datum/component/brass_spreader
 	/// The range of which to spread brass
@@ -98,3 +99,4 @@
 		return
 
 	COOLDOWN_START(src, turf_conversion_cooldown, cooldown)
+*/

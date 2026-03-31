@@ -1,3 +1,5 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
+
 #define INTERDICTION_LENS_RANGE 4
 #define POWER_PER_PERSON 5
 
@@ -78,3 +80,4 @@
 
 #undef INTERDICTION_LENS_RANGE
 #undef POWER_PER_PERSON
+*/

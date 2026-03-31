@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 // Now, you might be asking "why is this hooked into the research designs spritesheet?"
 // Well, for some *absurd* reason, any time i tried to add sprites to a new spritesheet, they would always have a *gray* background covering the full 32x32, apart from what my sprite did. After multiple hours of debugging,
 // I settled on this, since it's not-really-harmful to have other things in an unrelated spritesheet.
@@ -46,3 +47,4 @@
 			insert_icon(id, uni_icon(icon_file, icon_state))
 
 		qdel(new_research)
+*/

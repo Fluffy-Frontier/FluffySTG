@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /obj/structure/destructible/clockwork/gear_base
 	name = "gear base"
 	desc = "A large cog lying on the floor at feet level."
@@ -43,3 +44,4 @@
 
 	if(!anchored)
 		icon_state += unwrenched_suffix
+*/
