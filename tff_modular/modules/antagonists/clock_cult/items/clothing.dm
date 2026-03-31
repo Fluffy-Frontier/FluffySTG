@@ -35,7 +35,7 @@
 /obj/item/clothing/suit/clockwork
 	name = "bronze armor"
 	desc = "A strong, bronze suit worn by the soldiers of the Ratvarian armies."
-	icon = 'tff_modular/modules/antagonists/clock_cult/icons/mob/clockwork_garb.dmi'
+	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/clockwork_garb.dmi'
 	worn_icon = 'tff_modular/modules/antagonists/clock_cult/icons/mob/clockwork_garb_worn.dmi'
 	icon_state = "clockwork_cuirass"
 	armor_type = /datum/armor/suit_clockwork

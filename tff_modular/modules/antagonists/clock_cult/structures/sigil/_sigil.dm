@@ -10,7 +10,7 @@
 	break_sound = null
 	debris = null
 	break_message = "The sigil is dispelled."
-	icon = 'tff_modular/modules/antagonists/clock_cult/obj/clockwork_effects.dmi'
+	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/clockwork_effects.dmi'
 	icon_state = "sigilvitality"
 	density = FALSE
 	alpha = 90

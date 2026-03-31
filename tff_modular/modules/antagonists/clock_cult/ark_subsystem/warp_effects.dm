@@ -156,7 +156,10 @@
 	cooldown_time = 0
 	scramble_radius = 2
 	duration = 1 MINUTES
-	spawned_effect_type = /obj/effect/cross_action/spacetime_dist/clock_ark
+
+/datum/action/cooldown/spell/spacetime_dist/clock_ark/cast(atom/cast_on)
+	. = ..()
+	new /obj/effect/cross_action/spacetime_dist/clock_ark(owner.loc)
 
 /obj/effect/cross_action/spacetime_dist/clock_ark
 
