@@ -20,7 +20,7 @@
 	for(var/mob/living/marked_mob in range(1, src))
 		if(IS_CLOCK(marked_mob))
 			continue
-		marked_mob.apply_status_effect(STATUS_EFFECT/datum/status_effect/interdiction_INTERDICTION)
+		marked_mob.apply_status_effect(/datum/status_effect/interdiction)
 
 /obj/effect/judicial_mark/proc/do_mark() //need to do antimagic stuff
 	playsound(src, 'sound/effects/magic/clockwork/ratvar_attack.ogg', 50, use_reverb = TRUE)

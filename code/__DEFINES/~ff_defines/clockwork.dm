@@ -8,8 +8,6 @@
 #define iseminence(checked) (istype(checked, /mob/living/eminence))
 
 #define is_safe_level(z) SSmapping.level_trait(z, ZTRAIT_FORCED_SAFETY)
-/// Same as DELTA_WORLD_TIME but we ignore time spent hibernating
-#define DELTA_WORLD_TIME_WITHOUT_HIBERNATION(ss) ss.hibernation_state ? ss.wait : DELTA_WORLD_TIME(ss)
 ///Set weakref_var to null if it fails to give a resolve() value, resolver should be set to the var looking to resolve the weakref
 #define WEAKREF_NULL_IF_UNRESOLVED(weakref_var, resolver) weakref_var?.resolve();\
 	if(!##resolver) { \
