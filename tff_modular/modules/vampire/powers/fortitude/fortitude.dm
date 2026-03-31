@@ -41,7 +41,7 @@
 	var/dismember = FALSE
 	var/stun = FALSE
 
-	var/burn_resistance = 0.8
+	var/burn_resistance = 0.9
 
 /datum/action/cooldown/vampire/fortitude/two
 	vitaecost = 20
@@ -63,7 +63,7 @@
 /datum/action/cooldown/vampire/fortitude/four
 	vitaecost = 20
 	constant_vitaecost = 2
-	resistance = 0.4
+	resistance = 0.3
 	burn_resistance = 0.6
 	pierce = TRUE
 	push = TRUE
@@ -92,7 +92,7 @@
 
 /datum/action/cooldown/vampire/fortitude/proc/on_take_damage(datum/source, damage_amount, damage_type, ...)
 	SIGNAL_HANDLER
-	var/blood_to_consume = damage_amount / resistance
+	var/blood_to_consume = damage_amount / (resistance + 0.1)
 	vampiredatum_power.adjust_blood_volume(-blood_to_consume)
 
 /datum/action/cooldown/vampire/fortitude/use_power()
