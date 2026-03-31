@@ -6,15 +6,15 @@
 	name = "clockwork weapon"
 	desc = "Something"
 	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/clockwork_weapons.dmi'
-	lefthand_file = 'tff_modular/modules/antagonists/clock_cult/icons/obj/clockwork_lefthand.dmi'
-	righthand_file = 'tff_modular/modules/antagonists/clock_cult/icons/obj/clockwork_righthand.dmi'
+	lefthand_file = 'tff_modular/modules/antagonists/clock_cult/icons/mob/clockwork_lefthand.dmi'
+	righthand_file = 'tff_modular/modules/antagonists/clock_cult/icons/mob/clockwork_righthand.dmi'
 	worn_icon = 'tff_modular/modules/antagonists/clock_cult/icons/mob/clockwork_garb_worn.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	throwforce = 20
 	throw_speed = 4
 	armour_penetration = 10
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	hitsound = 'sound/items/weapons/bladeslice.ogg'
 	attack_verb_continuous = list("attacks", "pokes", "jabs", "tears", "gores")
 	attack_verb_simple = list("attack", "poke", "jab", "tear", "gore")
 	sharpness = SHARP_EDGED
@@ -70,7 +70,7 @@
 	desc = "A razor-sharp spear made of brass. It thrums with barely-contained energy."
 	base_icon_state = "ratvarian_spear"
 	icon_state = "ratvarian_spear0"
-	embedding = list("max_damage_mult" = 15, "armour_block" = 80)
+	embed_type = /datum/embedding/brass_spear
 	throwforce = 40
 	force = 7
 	armour_penetration = 40
@@ -80,6 +80,13 @@
 	var/datum/action/cooldown/spell/summon_spear/our_summon = new
 	///weakref to our current holder
 	var/datum/weakref/current_holder
+
+/datum/embedding/brass_spear
+	pain_mult = 1.5
+	embed_chance = 80
+	fall_chance = 5
+	ignore_throwspeed_threshold = TRUE
+	impact_pain_mult = 1.5
 
 /obj/item/clockwork/weapon/brass_spear/Initialize(mapload)
 	. = ..()
@@ -268,11 +275,11 @@
 	/// Time between bolt recharges
 	var/recharge_time = 1.5 SECONDS
 	drawn = TRUE
-	nodrop = TRUE
 
 /obj/item/gun/ballistic/bow/clockwork/Initialize(mapload)
 	. = ..()
 	update_icon_state()
+	ADD_TRAIT(src, TRAIT_NODROP, INNATE_TRAIT)
 	AddElement(/datum/element/clockwork_description, "Firing from brass tiles will halve the time that it takes to recharge a bolt.")
 	AddElement(/datum/element/clockwork_pickup)
 	AddComponent(/datum/component/turf_checker, GLOB.clock_turf_types, COMSIG_CHECK_TURF_CLOCKWORK)
@@ -304,7 +311,7 @@
 
 	to_chat(user, span_notice("You draw back the bowstring."))
 	drawn = TRUE
-	playsound(src, 'sound/weapons/draw_bow.ogg', 75, 0) //gets way too high pitched if the freq varies
+	playsound(src, 'sound/items/weapons/draw_bow.ogg', 75, 0) //gets way too high pitched if the freq varies
 	update_icon()
 
 /// Recharges a bolt, done after the delay in shoot_live_shot

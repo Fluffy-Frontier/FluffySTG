@@ -8,7 +8,7 @@ GLOBAL_DATUM(cult_ratvar, /obj/ratvar)
 /obj/ratvar
 	name = "ratvar, the Clockwork Justicar"
 	desc = "Oh, that's ratvar!"
-	icon = 'tff_modular/modules/antagonists/clock_cult/obj/clock_cult/512x512.dmi'
+	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/512x512.dmi'
 	icon_state = "ratvar"
 	anchored = TRUE
 	density = FALSE
@@ -16,7 +16,7 @@ GLOBAL_DATUM(cult_ratvar, /obj/ratvar)
 	plane = MASSIVE_OBJ_PLANE
 	light_color = COLOR_ORANGE
 	light_power = 1 //slightly brighter then narsie
-	light_outer_range = 20
+	light_range = 20
 	move_resist = INFINITY
 	obj_flags = CAN_BE_HIT | DANGEROUS_POSSESSION
 	pixel_x = -236
@@ -140,12 +140,12 @@ GLOBAL_DATUM(cult_ratvar, /obj/ratvar)
 	priority_announce("Huge gravitational-energy spike detected emminating from a neutron star [text2ratvar("THEY LIE")] near your sector. Event has been determined to be \
 						survivable by 0% of life. ESTIMATED TIME UNTIL ENERGY PULSE REACHES [GLOB.station_name]: 56 SECONDS. Godspeed crew, glory to Nanotrasen. \
 						-Admiral W[text2ratvar("orthless")].", \
-						"Central Command Anomolous Materials Division", 'sound/misc/airraid.ogg')
+						"Central Command Anomolous Materials Division", 'sound/announcer/alarm/airraid.ogg')
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(clockcult_pre_ending)), 50 SECONDS)
 
 /proc/clockcult_pre_ending()
 	priority_announce("Station [GLOB.station_name] is in the wa#e %o[text2ratvar("YOU WILL SEE THE LIGHT")] action imminent. Glory[text2ratvar(" TO ENGINE")].", \
-					  "Central Command Anomolous Materials Division", 'sound/machines/alarm.ogg')
+					  "Central Command Anomolous Materials Division", 'sound/announcer/alarm/nuke_alarm.ogg')
 	for(var/mob/player_mob in GLOB.player_list)
 		if(player_mob.client)
 			player_mob.client.color = COLOR_WHITE

@@ -8,7 +8,6 @@ GLOBAL_DATUM(current_eminence, /mob/living/eminence) //set to the current eminen
 	icon_state = "eminence"
 	mob_biotypes = MOB_SPIRIT
 	mouse_opacity = MOUSE_OPACITY_ICON
-	move_on_shuttle = TRUE
 	invisibility = INVISIBILITY_OBSERVER
 	layer = FLY_LAYER
 	plane = ABOVE_GAME_PLANE
@@ -43,6 +42,7 @@ GLOBAL_DATUM(current_eminence, /mob/living/eminence) //set to the current eminen
 	AddElement(/datum/element/simple_flying)
 	internal_radio = new /obj/item/radio/borg/eminence(src)
 	ADD_TRAIT(src, TRAIT_GODMODE, INNATE_TRAIT)
+	ADD_TRAIT(src, TRAIT_RADIMMUNE, INNATE_TRAIT)
 	grant_all_languages() //this is appearently an issue, im too lazy to figure it out so im just gonna do this
 
 /mob/living/eminence/Destroy()
@@ -107,9 +107,6 @@ GLOBAL_DATUM(current_eminence, /mob/living/eminence) //set to the current eminen
 /mob/living/eminence/can_z_move(direction, turf/start, turf/destination, z_move_flags, mob/living/rider)
 	z_move_flags |= ZMOVE_IGNORE_OBSTACLES
 	return ..()
-
-/mob/living/eminence/rad_act(intensity) //theradiationdemonisnotrealtheradiationdemoncannothurtyou
-	return
 
 /mob/living/eminence/UnarmedAttack(atom/attack_target, proximity_flag, list/modifiers)
 	return FALSE
@@ -185,8 +182,6 @@ GLOBAL_DATUM(current_eminence, /mob/living/eminence) //set to the current eminen
 //Internal Radio
 /obj/item/radio/borg/eminence
 	name = "eminence internal listener"
-	translate_binary = TRUE
-	syndie = TRUE
 
 /obj/item/radio/borg/eminence/Initialize(mapload)
 	. = ..()

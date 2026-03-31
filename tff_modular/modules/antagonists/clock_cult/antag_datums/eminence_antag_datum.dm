@@ -1,11 +1,9 @@
 /datum/antagonist/clock_cultist/eminence
 	name = "Eminence"
-	antag_flags = parent_type::antag_flags | FLAG_ANTAG_CAP_IGNORE
 	give_slab = FALSE
 	antag_moodlet = null
 	communicate = null
 	recall = null
-	antag_flags = parent_type::antag_flags | FLAG_ANTAG_CAP_IGNORE_HUMANITY
 	///The list of our actions
 	var/list/action_list = list(
 		/datum/action/innate/clockcult/space_fold,

@@ -1,3 +1,4 @@
+/*
 /datum/dynamic_ruleset/roundstart/clock_cult
 	name = "Clock Cult"
 	config_tag = "Roundstart Clockwork Cult"
@@ -25,3 +26,4 @@
 
 /datum/dynamic_ruleset/roundstart/clock_cult/prepare_for_role(datum/mind/candidate)
 	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(spawn_reebe))
+*/

@@ -28,14 +28,14 @@
 		to_chat(invoker, span_warning("This scripture can only be used by humanoid servants."))
 		return FALSE
 
-	if(is_species(invoker, /datum/species/golem/clockwork))
+	if(is_species(invoker, /datum/species/clockwork_golem))
 		to_chat(invoker, span_notice("You are already a clockwork golem!"))
 		return FALSE
 	return TRUE
 
 /datum/scripture/transform_to_golem/invoke_success()
 	var/mob/living/carbon/human/human_servant = invoker
-	human_servant.set_species(/datum/species/golem/clockwork)
+	human_servant.set_species(/datum/species/clockwork_golem)
 	human_servant.update_body(TRUE)
 	human_servant.update_mutations_overlay()
 

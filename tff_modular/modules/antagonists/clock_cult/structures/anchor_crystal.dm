@@ -100,11 +100,10 @@
 /obj/structure/destructible/clockwork/anchoring_crystal/process(seconds_per_tick)
 	for(var/mob/living/affected_mob in crystal_area)
 		if(IS_CLOCK(affected_mob))
-			affected_mob.adjustToxLoss(-2.5 * seconds_per_tick, TRUE, TRUE) //slightly better tox healing as well as better stam healing around it for servants
-			affected_mob.stamina.adjust(3.75 * seconds_per_tick, TRUE)
+			affected_mob.adjust_tox_loss(-2.5 * seconds_per_tick, TRUE, TRUE) //slightly better tox healing as well as better stam healing around it for servants
+			affected_mob.adjust_stamina_loss(-3.75 * seconds_per_tick, TRUE)
 			continue
 		affected_mob.adjust_silence_up_to(5 SECONDS * seconds_per_tick, 30 SECONDS)
-		affected_mob.adjust_emote_mute_up_to(5 SECONDS * seconds_per_tick, 30 SECONDS)
 
 	if(charge_state == FULLY_CHARGED) //if fully charged then add the power and return
 		SSthe_ark.adjust_clock_power(5 * seconds_per_tick, TRUE)
@@ -113,7 +112,7 @@
 	charging_for = min(charging_for + (seconds_per_tick * (DELTA_WORLD_TIME_WITHOUT_HIBERNATION(SSthe_ark) SECONDS)), ANCHORING_CRYSTAL_CHARGE_DURATION)
 
 	if(shields < initial(shields) && COOLDOWN_FINISHED(src, recently_hit_cd))
-		playsound(src, 'sound/magic/charge.ogg', 50, TRUE)
+		playsound(src, 'sound/effects/magic/charge.ogg', 50, TRUE)
 		shields++
 		overlay_state = SHIELD_ACTIVE
 		update_icon()

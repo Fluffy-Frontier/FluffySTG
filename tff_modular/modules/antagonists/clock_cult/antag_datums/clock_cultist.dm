@@ -8,7 +8,7 @@
 	ui_name = "AntagInfoClock"
 	show_to_ghosts = TRUE
 	antag_hud_name = "clockwork"
-	stinger_sound = 'sound/effects/magic/clockwork/scripture_tier_up.ogg'
+	stinger_sound = 'modular_nova/modules/clock_cult/sound/magic/scripture_tier_up.ogg'
 	antag_count_points = 4
 	/// Ref to the cultist's communication ability
 	var/datum/action/innate/clockcult/comm/communicate = new
@@ -45,7 +45,7 @@
 
 /datum/antagonist/clock_cultist/greet()
 	. = ..()
-	to_chat(owner.current, span_ratvar("HEY"))
+	to_chat(owner.current, span_clockyellow("HEY"))
 	to_chat(owner.current, span_boldwarning("Dont forget, your structures are by default off and must be clicked on to be turned on. Structures that are turned on have passive power use."))
 	to_chat(owner.current, span_boldwarning("YOUR CLOCKWORK SLAB UI HAS A MORE IN DEPTH GUIDE IN ITS BOTTOM RIGHT HAND SIDE. \
 											YOU CAN HOVER YOUR MOUSE POINTER OVER SCRIPTURE BUTTONS FOR EXTRA INFO."))
@@ -153,18 +153,16 @@
 
 //give a mob a slab directly into their inventory
 /datum/antagonist/clock_cultist/proc/give_clockwork_slab(mob/living/carbon/human/give_to)
-	var/list/slots = list(
-		"backpack" = ITEM_SLOT_BACKPACK,
-		"left pocket" = ITEM_SLOT_LPOCKET,
-		"right pocket" = ITEM_SLOT_RPOCKET)
-
 	var/obj/item/clockwork/clockwork_slab/created_slab = new
-	if(!give_to.equip_in_one_of_slots(created_slab, slots))
-		to_chat(give_to, span_userdanger("Unfortunately, you weren't able to be given a [created_slab]. This is very bad and you should adminhelp immediately (press F1)."))
-		return FALSE
-	else
-		to_chat(give_to, span_danger("You have been given a [created_slab]."))
-		return TRUE
+	give_item_to_holder(created_slab, list(LOCATION_BACKPACK = ITEM_SLOT_BACK, LOCATION_RPOCKET = ITEM_SLOT_RPOCKET, LOCATION_LPOCKET = ITEM_SLOT_LPOCKET))
+
+/datum/antagonist/clock_cultist/proc/give_item_to_holder(obj/item/clockwork/clockwork_slab/created_slab, list/valid_slots)
+	if(ispath(created_slab))
+		created_slab = new created_slab(get_turf(owner.current))
+
+	var/mob/living/carbon/human/human_holder = owner.current
+
+	var/where = human_holder.equip_in_one_of_slots(created_slab, valid_slots, qdel_on_fail = FALSE, indirect_action = TRUE) || default_location
 
 /// Change the slab in the recall ability, if it's different from the last one.
 /datum/antagonist/clock_cultist/proc/switch_recall_slab(datum/source, obj/item/clockwork/clockwork_slab/slab)

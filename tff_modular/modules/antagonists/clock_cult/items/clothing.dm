@@ -15,6 +15,10 @@
 		update_worn_glasses()
 	update_worn_head()
 
+///Updates the handcuff overlay & HUD element.
+/mob/proc/update_inv_ears()
+	return
+
 /mob/living/carbon/human/head_update(obj/item/I, forced)
 	if((I.flags_inv & (HIDEHAIR|HIDEFACIALHAIR)) || forced)
 		update_body_parts()

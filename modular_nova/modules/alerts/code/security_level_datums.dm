@@ -145,7 +145,6 @@
 	sound = 'tff_modular/modules/antagonists/clock_cult/sound/lambda.ogg' // Ported over the current (as of this codes time) ss14 gamma alert, renamed because it fits better. Old gamma was better :(
 	elevating_to_configuration_key = /datum/config_entry/string/alert_lambda
 	shuttle_call_time_mod = 0.25 //This is as bad as the nuke going off. Everyone is fucked.
-	can_crew_change_alert = FALSE
 	disables_mail = TRUE
 // TFF ADDITION END
 #undef ALERT_COEFF_NOVA

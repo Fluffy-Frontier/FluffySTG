@@ -77,7 +77,7 @@ GLOBAL_LIST_EMPTY(abscond_markers)
 		spawned_list -= spawned_object
 
 	priority_announce(sent_message, has_important_message = TRUE)
-	podspawn(list("target" = bridge_turf, "style" = STYLE_CENTCOM, "spawn" = spawned_crate, "bluespace" = FALSE, "stay_after_drop" = TRUE))
+	podspawn(list("target" = bridge_turf, "style" = /datum/pod_style/centcom, "spawn" = spawned_crate, "bluespace" = FALSE, "stay_after_drop" = TRUE))
 
 /obj/item/storage/box/recharger_parts
 	name = "Recharger Parts"

@@ -16,16 +16,16 @@
 	melee_damage_upper = 24
 	attack_verb_continuous = "slices"
 	attack_verb_simple = "slice"
-	attack_sound = 'sound/weapons/bladeslice.ogg'
-	istate = ISTATE_HARM
+	attack_sound = 'sound/items/weapons/bladeslice.ogg'
 	pass_flags = PASSTABLE
 	mob_size = MOB_SIZE_LARGE
 	move_resist = MOVE_FORCE_OVERPOWERING
+	unsuitable_cold_damage = 0
+	unsuitable_heat_damage = 0
 	unsuitable_atmos_damage = 0
-	bodytemp_cold_damage_limit = -1
 	obj_damage = 80
 	faction = list(FACTION_CLOCK)
-	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
+	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 0, STAMINA = 0, OXY = 0)
 	ai_controller = /datum/ai_controller/basic_controller/clockwork_marauder
 	initial_language_holder = /datum/language_holder/clockmob
 
@@ -58,16 +58,16 @@
 
 /mob/living/basic/clockwork_marauder/UnarmedAttack(atom/attack_target, proximity_flag)
 	var/obj/structure/destructible/clockwork/gear_base/powered/structure = attack_target
-	if(istype(structure) && istate != ISTATE_HARM)
+	if(istype(structure))
 		structure.try_toggle_power(src)
-		return ATTACK_DO_NOTHING
+		return FALSE
 	return ..()
 
 
 /mob/living/basic/clockwork_marauder/attacked_by(obj/item/attacking_item, mob/living/user)
 	if(shield_health && attacking_item.force > 0)
 		damage_shield()
-		playsound(src, 'sound/hallucinations/veryfar_noise.ogg', 40, 1)
+		playsound(src, 'sound/effects/hallucinations/veryfar_noise.ogg', 40, 1)
 		return
 
 	if(attacking_item == TOOL_WELDER)

@@ -199,7 +199,7 @@
 
 	for(var/entry in healing_types)
 		if(entry == STAMINA)
-			healed_mob.stamina.adjust(healing_types[entry] * seconds_per_tick * 0.5)
+			healed_mob.adjust_stamina_loss(-healing_types[entry] * seconds_per_tick * 0.5)
 			continue
 		healed_mob.heal_damage_type((healing_types[entry] * seconds_per_tick * 0.5), entry)
 

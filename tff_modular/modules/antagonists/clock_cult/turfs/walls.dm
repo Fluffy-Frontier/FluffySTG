@@ -13,7 +13,6 @@
 	girder_type = /obj/structure/girder/bronze
 	turf_flags = NOJAUNT
 	hardness = 3 //very hard for hulks to break
-	wall_trim = null
 	//for deconstruction
 	var/d_state = INTACT
 	///Should we spawn with a stabilization lattice

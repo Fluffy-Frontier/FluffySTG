@@ -31,7 +31,7 @@
 
 	for(var/mob/living/living_mob in viewers(INTERDICTION_LENS_RANGE, src))
 		if(!IS_CLOCK(living_mob) && use_energy(POWER_PER_PERSON))
-			living_mob.apply_status_effect(STATUS_EFFECT_INTERDICTION)
+			living_mob.apply_status_effect(/datum/status_effect/interdiction)
 
 	for(var/obj/vehicle/sealed/mecha/mech in range(INTERDICTION_LENS_RANGE, src))
 		var/clock_pilot = FALSE

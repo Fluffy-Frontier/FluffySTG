@@ -115,4 +115,27 @@
 	glass = TRUE
 	opacity = FALSE
 
+/obj/machinery/door/airlock/proc/is_probably_external_airlock()
+	. = FALSE
+	if(leads_to_space() || closeOther?.leads_to_space() || cyclelinkedairlock?.leads_to_space())
+		return TRUE
+	for(var/obj/machinery/door/airlock/other_door in close_others)
+		if(other_door.leads_to_space())
+			return TRUE
+
+/// Checks to see if the door is adjacent to any tiles that have likely unsafe atmospheric conditions.
+/obj/machinery/door/airlock/proc/leads_to_space()
+	var/turf/our_turf = get_turf(src)
+	if(QDELETED(our_turf))
+		return TRUE
+	for(var/turf/open/turf as anything in RANGE_TURFS(1, our_turf))
+		if(!istype(turf) || QDELING(turf) || turf.is_blocked_turf(exclude_mobs = TRUE, source_atom = src))
+			continue
+		if(isgroundlessturf(turf))
+			return TRUE
+		var/pressure = turf.return_air()?.return_pressure()
+		if(!IS_SAFE_NUM(pressure) || !ISINRANGE_EX(pressure, HAZARD_LOW_PRESSURE, HAZARD_HIGH_PRESSURE))
+			return TRUE
+	return FALSE
+
 #undef COST_PER_AIRLOCK

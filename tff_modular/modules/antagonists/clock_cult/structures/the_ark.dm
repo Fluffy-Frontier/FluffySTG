@@ -60,11 +60,11 @@ GLOBAL_VAR_INIT(ratvar_risen, FALSE)
 		if(!on_reebe(current_mob))
 			continue
 		if(IS_CLOCK(current_mob))
-			to_chat(current_mob, span_reallybig(span_ratvar("Your mind is distorted by the distant sound of a thousand screams. [span_reallybig("<i>YOU HAVE FAILED TO PROTECT MY ARK. \
+			to_chat(current_mob, span_reallybig(span_clockyellow("Your mind is distorted by the distant sound of a thousand screams. [span_reallybig("<i>YOU HAVE FAILED TO PROTECT MY ARK. \
 																  YOU WILL BE TRAPPED HERE WITH ME TO SUFFER FOREVER...</i>")]")))
 			continue
 		current_mob.SetSleeping(5 SECONDS)
-		to_chat(current_mob, span_ratvar("Your mind is distorted by the distant sound of a thousand screams before suddenly everything falls silent."))
+		to_chat(current_mob, span_clockyellow("Your mind is distorted by the distant sound of a thousand screams before suddenly everything falls silent."))
 		to_chat(current_mob, span_hypnophrase("The only thing you remember is suddenly feeling hard ground beneath you and the safety of home."))
 		current_mob.forceMove(find_safe_turf())
 
@@ -81,7 +81,7 @@ GLOBAL_VAR_INIT(ratvar_risen, FALSE)
 	if(current_state >= ARK_STATE_FINAL)
 		return
 	ASYNC
-		if(!(flags_1 & NODECONSTRUCT_1))
+		if(!(flags_1 & HOLOGRAM_1))
 			if(!disassembled)
 				current_state = ARK_STATE_FINAL
 				resistance_flags |= INDESTRUCTIBLE
@@ -91,7 +91,7 @@ GLOBAL_VAR_INIT(ratvar_risen, FALSE)
 				sound_to_playing_players('sound/machines/clockcult/ark_deathrattle.ogg', 50)
 				sleep(2.7 SECONDS)
 				explosion(src, 1, 3, 8, 8)
-				sound_to_playing_players('sound/effects/explosion_distant.ogg', 50)
+				sound_to_playing_players('sound/effects/explosion/explosion_distant.ogg', 50)
 				for(var/obj/effect/portal/clockcult/portal in GLOB.portals)
 					qdel(portal)
 				SSshuttle.clearHostileEnvironment(src)
@@ -139,7 +139,7 @@ GLOBAL_VAR_INIT(ratvar_risen, FALSE)
 	SSshuttle.registerHostileEnvironment(src)
 	icon_state = "clockwork_gateway_charging"
 	send_clock_message(null, span_bigbrass("The Ark's many cogs suddenly whir to life, steam gushing out of its many crevices; it will open in 5 minutes!"), \
-					   sent_sound = 'sound/magic/clockwork/scripture_tier_up.ogg')
+					   sent_sound = 'modular_nova/modules/clock_cult/sound/magic/scripture_tier_up.ogg')
 	addtimer(CALLBACK(src, PROC_REF(open_gateway)), ARK_READY_PERIOD) //MOVE THIS TO A LOOP ON THE ARK SS
 
 /obj/structure/destructible/clockwork/the_ark/proc/open_gateway()
@@ -149,11 +149,11 @@ GLOBAL_VAR_INIT(ratvar_risen, FALSE)
 	SSshuttle.registerHostileEnvironment(src)
 	icon_state = "clockwork_gateway_active"
 	send_clock_message(null, span_bigbrass("The Ark has been activated, you will be transported soon! Dont forget to gather weapons with your \"Clockwork Armaments\" scripture."), \
-					   sent_sound = 'sound/magic/clockwork/ark_activation_sequence.ogg')
+					   sent_sound = 'sound/effects/magic/clockwork/ark_activation_sequence.ogg')
 	addtimer(CALLBACK(src, PROC_REF(announce_gateway)), 27 SECONDS)
 
 /obj/structure/destructible/clockwork/the_ark/proc/announce_gateway()
-	send_clock_message(null, span_ratvar("DESTROY THE HERETICS."), sent_sound = 'tff_modular/modules/antagonists/clock_cult/sound/ark_recall.ogg')
+	send_clock_message(null, span_clockyellow("DESTROY THE HERETICS."), sent_sound = 'tff_modular/modules/antagonists/clock_cult/sound/ark_recall.ogg')
 	sleep(3 SECONDS)
 	current_state = ARK_STATE_ACTIVE
 
@@ -168,7 +168,7 @@ GLOBAL_VAR_INIT(ratvar_risen, FALSE)
 		var/datum/antagonist/clock_cultist/servant_antag = servant_mind.has_antag_datum(/datum/antagonist/clock_cultist)
 		servant_antag?.add_forbearance(servant_mob)
 
-	sound_to_playing_players('sound/magic/clockwork/invoke_general.ogg', 50)
+	sound_to_playing_players('sound/effects/magic/clockwork/invoke_general.ogg', 50)
 	SSsecurity_level.set_level(SEC_LEVEL_DELTA)
 	addtimer(CALLBACK(src, PROC_REF(begin_assault)), ARK_GRACE_PERIOD)
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(send_station_support_package), /obj/item/turf_demolisher/reebe), 10 SECONDS)
@@ -176,7 +176,7 @@ GLOBAL_VAR_INIT(ratvar_risen, FALSE)
 	priority_announce("Massive [Gibberish("bluespace", 100)] anomaly detected on all frequencies. All crew are directed to \
 	@!$, [text2ratvar("PURGE ALL UNTRUTHS")] <&. the anomalies and destroy their source to prevent further damage to corporate property. This is \
 	not a drill. Estimated time of appearance: [ARK_GRACE_PERIOD/10] seconds. Use this time to prepare for an attack on [station_name()]." \
-	,"Central Command Higher Dimensional Affairs", 'sound/magic/clockwork/ark_activation.ogg')
+	,"Central Command Higher Dimensional Affairs", 'sound/effects/magic/clockwork/ark_activation.ogg')
 
 	sound_to_playing_players('tff_modular/modules/antagonists/clock_cult/sound/clockcult_gateway_charging.ogg', 10, TRUE)
 	log_game("The clock cult has begun opening the Ark of the Clockwork Justiciar.")

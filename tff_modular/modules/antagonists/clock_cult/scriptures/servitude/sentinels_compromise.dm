@@ -12,7 +12,7 @@
 	category = SPELLTYPE_SERVITUDE //you have a healing spell please please PLEASE use it
 	slab_overlay = "compromise"
 	use_time = 15 SECONDS
-	recital_sound = 'sound/magic/magic_missile.ogg'
+	recital_sound = 'sound/effects/magic/magic_missile.ogg'
 	fast_invoke_mult = 0.8
 
 /datum/scripture/slab/sentinels_compromise/check_special_requirements(mob/user)
@@ -40,7 +40,6 @@
 	healed_mob.blood_volume = BLOOD_VOLUME_NORMAL
 	healed_mob.set_nutrition(NUTRITION_LEVEL_FULL)
 	healed_mob.bodytemperature = BODYTEMP_NORMAL
-	healed_mob.pain_controller?.remove_all_pain()
 	if(apply_heal(healed_mob))
 		while(do_after(invoker, invocation_time, healed_mob))
 			if(!apply_heal(healed_mob)) //im sure theres a better way to do this but im too tired
@@ -51,10 +50,10 @@
 	return TRUE
 
 /datum/scripture/slab/sentinels_compromise/proc/apply_heal(mob/living/healed_mob)
-	var/healed_amount = -healed_mob.heal_ordered_damage(HEALED_PER_LOOP, list(BRUTE, BURN, OXY, CLONE, BRAIN))
-	healed_mob.stamina.adjust(HEALED_PER_LOOP)
+	var/healed_amount = -healed_mob.heal_ordered_damage(HEALED_PER_LOOP, list(BRUTE, BURN, OXY, BRAIN))
+	healed_mob.adjust_stamina_loss(-HEALED_PER_LOOP)
 	healed_mob.reagents.remove_reagent(/datum/reagent/water/holywater, HEALED_PER_LOOP)
-	if(!invoker.adjustToxLoss(healed_amount * 0.8, TRUE, TRUE) || invoker.getToxLoss() > 80 || healed_amount < HEALED_PER_LOOP)
+	if(!invoker.adjust_tox_loss(healed_amount * 0.8, TRUE, TRUE) || invoker.get_tox_loss() > 80 || healed_amount < HEALED_PER_LOOP)
 		return FALSE
 	return TRUE
 
