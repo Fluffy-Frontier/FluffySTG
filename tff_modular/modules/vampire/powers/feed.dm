@@ -214,8 +214,6 @@
 
 		// It begins...
 		currently_feeding = TRUE
-		var/sound_of_feeding = pick('tff_modular/modules/vampire/sound/aaughmp3.ogg', 'tff_modular/modules/vampire/sound/nom-nom-nom_gPJiWn4.ogg', 'tff_modular/modules/vampire/sound/so-good-and-tasty.ogg', 'tff_modular/modules/vampire/sound/peter-hehehe.ogg')
-		playsound(living_owner, sound_of_feeding, 100, FALSE, pressure_affected = FALSE)
 		// Just to make sure
 		living_owner.stop_pulling()
 		feed_target.stop_pulling()
@@ -274,8 +272,6 @@
 
 	else if(living_owner.pulling == feed_target && living_owner.grab_state >= GRAB_AGGRESSIVE) // COMBAT FEED BELOW HERE!!!!!!!!!!
 
-		var/sound_of_feeding = pick('tff_modular/modules/vampire/sound/aaughmp3.ogg', 'tff_modular/modules/vampire/sound/nom-nom-nom_gPJiWn4.ogg', 'tff_modular/modules/vampire/sound/so-good-and-tasty.ogg', 'tff_modular/modules/vampire/sound/peter-hehehe.ogg')
-		playsound(living_owner, sound_of_feeding, 100)
 		feed_target.Stun((10 + level_current) SECONDS)
 		feed_target.set_jitter_if_lower((5 + level_current) SECONDS)
 
@@ -408,9 +404,9 @@
 			power_activated_sucessfully()
 			return
 
+	var/sound_of_feeding = pick('tff_modular/modules/vampire/sound/aaughmp3.ogg', 'tff_modular/modules/vampire/sound/nom-nom-nom_gPJiWn4.ogg', 'tff_modular/modules/vampire/sound/so-good-and-tasty.ogg', 'tff_modular/modules/vampire/sound/peter-hehehe.ogg')
 	// Play heartbeat sound effect to vampire and target
-	owner.playsound_local(null, 'sound/effects/singlebeat.ogg', 40, TRUE)
-	feed_target.playsound_local(null, 'sound/effects/singlebeat.ogg', 40, TRUE)
+	playsound(owner, sound_of_feeding, 40, TRUE)
 
 /// We assume the target is a vampire.
 /datum/action/cooldown/vampire/targeted/feed/proc/diablerie(mob/living/poor_sap)
