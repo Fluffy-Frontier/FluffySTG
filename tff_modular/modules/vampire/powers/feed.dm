@@ -214,8 +214,8 @@
 
 		// It begins...
 		currently_feeding = TRUE
-		living_owner.playsound_local(null, 'tff_modular/modules/vampire/sound/drinkblood1.ogg', 100, FALSE, pressure_affected = FALSE)
-
+		var/sound_of_feeding = pick('tff_modular/modules/vampire/sound/aaughmp3.ogg', 'tff_modular/modules/vampire/sound/nom-nom-nom_gPJiWn4.ogg', 'tff_modular/modules/vampire/sound/so-good-and-tasty.ogg', 'tff_modular/modules/vampire/sound/peter-hehehe.ogg')
+		playsound(living_owner, sound_of_feeding, 100, FALSE, pressure_affected = FALSE)
 		// Just to make sure
 		living_owner.stop_pulling()
 		feed_target.stop_pulling()
