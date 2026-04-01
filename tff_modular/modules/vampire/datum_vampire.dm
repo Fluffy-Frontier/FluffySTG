@@ -210,6 +210,7 @@
 	current_mob.clear_mood_event("vampcandle")
 
 	add_team_hud(current_mob)
+
 	current_mob.faction += FACTION_VAMPIRE
 
 	if(current_mob.hud_used)
@@ -231,7 +232,6 @@
 	current_mob.grant_language(/datum/language/vampiric, source = LANGUAGE_VAMPIRE)
 
 	my_clan?.apply_effects(current_mob)
-	current_mob.fully_replace_character_name(current_mob.name, ("Not Vampire:" + vampire_name))
 
 /**
  * Remove innate effects is everything given to the mob

@@ -74,7 +74,7 @@
 	. = ..()
 	owner.balloon_alert(owner, "fortitude turned on.")
 	to_chat(owner, span_notice("Your flesh has become as hard as steel!"))
-	playsound(owner, 'tff_modular/modules/vampire/sound/nanomachines-son.ogg', 100, FALSE, pressure_affected = FALSE)
+	owner.playsound_local(null, 'tff_modular/modules/vampire/sound/fortitude_on.ogg', 100, FALSE, pressure_affected = FALSE)
 	// Traits & Effects
 	if(pierce)
 		ADD_TRAIT(owner, TRAIT_PIERCEIMMUNE, REF(src))
