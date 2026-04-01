@@ -274,8 +274,8 @@
 
 	else if(living_owner.pulling == feed_target && living_owner.grab_state >= GRAB_AGGRESSIVE) // COMBAT FEED BELOW HERE!!!!!!!!!!
 
-		playsound(living_owner, 'tff_modular/modules/vampire/sound/drinkblood1.ogg', 50)
-
+		var/sound_of_feeding = pick('tff_modular/modules/vampire/sound/aaughmp3.ogg', 'tff_modular/modules/vampire/sound/nom-nom-nom_gPJiWn4.ogg', 'tff_modular/modules/vampire/sound/so-good-and-tasty.ogg', 'tff_modular/modules/vampire/sound/peter-hehehe.ogg')
+		playsound(living_owner, sound_of_feeding, 100)
 		feed_target.Stun((10 + level_current) SECONDS)
 		feed_target.set_jitter_if_lower((5 + level_current) SECONDS)
 

@@ -140,7 +140,7 @@
 
 		// Attack!
 		owner.balloon_alert(owner, "you punch [living_target]!")
-		playsound(get_turf(living_target), 'sound/items/weapons/punch4.ogg', 60, TRUE, -1)
+		playsound(get_turf(living_target), 'sound/items/weapons/homerun.ogg', 60, TRUE, -1)
 		// check_witnesses(living_target)
 		carbon_owner.do_attack_animation(living_target, ATTACK_EFFECT_SMASH)
 
