@@ -231,6 +231,7 @@
 	current_mob.grant_language(/datum/language/vampiric, source = LANGUAGE_VAMPIRE)
 
 	my_clan?.apply_effects(current_mob)
+	current_mob.fully_replace_character_name(current_mob.name, ("Not Vampire:" + return_full_name()))
 
 /**
  * Remove innate effects is everything given to the mob
