@@ -80,6 +80,8 @@
 	if(!QDELETED(vampiredatum.owner?.current))
 		apply_effects(vampiredatum.owner.current)
 
+	vampiredatum.owner?.current.fully_replace_character_name(vampiredatum.owner?.current.name, ("Not Vampire: " + return_full_name()))
+
 /datum/vampire_clan/proc/apply_effects(mob/living/body)
 	return
 
