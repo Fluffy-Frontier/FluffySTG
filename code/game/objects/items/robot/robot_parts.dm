@@ -389,7 +389,7 @@
 	else if(IS_WRITING_UTENSIL(W))
 		to_chat(user, span_warning("You need to use a multitool to name [src]!"))
 	// TFF ADDITION START
-	else if(istype(tool, /obj/item/clockwork/clockwork_slab) && IS_CLOCK(user))
+	else if(istype(W, /obj/item/clockwork/clockwork_slab) && IS_CLOCK(user))
 		to_chat(user, span_brass("You adjust the internals of \the [src] to that of clockwork."))
 		be_clockwork = TRUE
 		lawsync = FALSE
