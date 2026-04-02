@@ -17,11 +17,5 @@ GLOBAL_LIST_INIT(additional_combo_huds, list(
 	mob.remove_traits(GLOB.additional_combo_huds, ADMIN_TRAIT)
 	return ..()
 
-/mob/dead/observer/show_data_huds()
-	. = ..()
-	add_traits(GLOB.additional_observer_huds, REF(src))
 
-/mob/dead/observer/remove_data_huds()
-	. = ..()
-	remove_traits(GLOB.additional_observer_huds, REF(src))
-
+// For additional code check `code\modules\mob\dead\observer\observer.dm` proc/show_data_huds() and proc/remove_data_huds() !!
