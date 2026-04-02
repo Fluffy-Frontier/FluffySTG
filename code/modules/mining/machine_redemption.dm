@@ -41,7 +41,7 @@
 	/// References the alloys the smelter can create
 	var/datum/techweb/stored_research
 	/// Linkage to the ORM silo
-	var/datum/component/remote_materials/materials
+	var/datum/remote_materials/materials
 
 /obj/machinery/mineral/ore_redemption/offstation
 	circuit = /obj/item/circuitboard/machine/ore_redemption/offstation
@@ -59,8 +59,8 @@
 		local_signals = list(
 			COMSIG_MATCONTAINER_ITEM_CONSUMED = TYPE_PROC_REF(/obj/machinery/mineral/ore_redemption, local_redeem_points)
 		)
-	materials = AddComponent( \
-		/datum/component/remote_materials, \
+	materials = new ( \
+		src, \
 		mapload, \
 		mat_container_signals = local_signals \
 	)
@@ -70,7 +70,7 @@
 
 /obj/machinery/mineral/ore_redemption/Destroy()
 	stored_research = null
-	materials = null
+	QDEL_NULL(materials)
 	return ..()
 
 /obj/machinery/mineral/ore_redemption/examine(mob/user)
@@ -91,15 +91,14 @@
 		points += gathered_ore.points * point_upgrade * gathered_ore.amount
 
 /// Returns the amount of a specific alloy design, based on the accessible materials
-/obj/machinery/mineral/ore_redemption/proc/can_smelt_alloy(datum/design/D)
-	var/datum/component/material_container/mat_container = materials.mat_container
-	if(!mat_container || D.make_reagent)
+/obj/machinery/mineral/ore_redemption/proc/can_smelt_alloy(datum/design/design)
+	var/datum/material_container/mat_container = materials.mat_container
+	if(!mat_container || design.make_reagent)
 		return FALSE
 
 	var/build_amount = 0
 
-	for(var/mat in D.materials)
-		var/amount = D.materials[mat]
+	for(var/mat, amount in design.materials)
 		var/datum/material/redemption_mat_amount = mat_container.materials[mat]
 
 		if(!amount || !redemption_mat_amount)
@@ -119,7 +118,7 @@
 
 /// Sends a message to the request consoles that signed up for ore updates
 /obj/machinery/mineral/ore_redemption/proc/send_console_message()
-	var/datum/component/material_container/mat_container = materials.mat_container
+	var/datum/material_container/mat_container = materials.mat_container
 	if(!mat_container || !is_station_level(z))
 		return
 
@@ -250,7 +249,7 @@
 	var/list/data = list()
 	data["unclaimedPoints"] = points
 	data["materials"] = list()
-	var/datum/component/material_container/mat_container = materials.mat_container
+	var/datum/material_container/mat_container = materials.mat_container
 	if (mat_container)
 		for(var/datum/material/material as anything in mat_container.materials)
 			var/amount = mat_container.materials[material]
@@ -310,7 +309,7 @@
 	. = ..()
 	if(.)
 		return
-	var/datum/component/material_container/mat_container = materials.mat_container
+	var/datum/material_container/mat_container = materials.mat_container
 	switch(action)
 		if("Claim")
 			//requires silo but silo not in range
@@ -371,11 +370,11 @@
 				if(amount < 1) //no negative mats
 					return
 				materials.use_materials(alloy.materials, multiplier = amount, action = "withdrawn", name = "sheets", user_data = ID_DATA(usr))
-				var/output
+				var/atom/movable/output
 				if(ispath(alloy.build_path, /obj/item/stack/sheet))
-					output = new alloy.build_path(src, amount)
+					output = alloy.create_result(src, amount = amount)
 				else
-					output = new alloy.build_path(src)
+					output = alloy.create_result(src)
 				unload_mineral(output)
 			else
 				to_chat(usr, span_warning("Required access not found."))

@@ -317,7 +317,7 @@ function SpeciesPageInner(props: SpeciesPageInnerProps) {
                   </Button>
                 );
                 if (species.nova_stars_only && !data.is_nova_star) {
-                  let tooltipContent =
+                  const tooltipContent =
                     species.name +
                     ' - You need to be a veteran to select this race, apply today!'; // FLUFFY FRONTIER EDIT - ORIGINAL: ' - You need to be a Nova star to select this race, apply today!';
                   speciesPage = (

@@ -189,9 +189,9 @@
 	},
 /obj/structure/table,
 /obj/item/coin/silver,
-/obj/item/computer_disk/quartermaster,
-/obj/item/computer_disk/quartermaster,
-/obj/item/computer_disk/quartermaster,
+/obj/item/disk/computer/quartermaster,
+/obj/item/disk/computer/quartermaster,
+/obj/item/disk/computer/quartermaster,
 /obj/item/clipboard,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
@@ -6743,9 +6743,9 @@
 /obj/structure/table,
 /obj/item/folder/white,
 /obj/item/pen,
-/obj/item/computer_disk/ordnance,
-/obj/item/computer_disk/ordnance,
-/obj/item/computer_disk/ordnance,
+/obj/item/disk/computer/ordnance,
+/obj/item/disk/computer/ordnance,
+/obj/item/disk/computer/ordnance,
 /obj/item/stamp/head/rd{
 	pixel_x = 3;
 	pixel_y = -2
@@ -30625,15 +30625,15 @@
 /area/station/security/brig)
 "dZQ" = (
 /obj/structure/table,
-/obj/item/computer_disk{
+/obj/item/disk/computer{
 	pixel_x = 2;
 	pixel_y = 5
 	},
-/obj/item/computer_disk{
+/obj/item/disk/computer{
 	pixel_x = -5;
 	pixel_y = 11
 	},
-/obj/item/computer_disk{
+/obj/item/disk/computer{
 	pixel_x = -9;
 	pixel_y = 0
 	},
@@ -46246,7 +46246,7 @@
 /turf/open/floor/iron/white/small,
 /area/station/medical/pharmacy)
 "mCo" = (
-/obj/item/stack/medical/gauze{
+/obj/item/stack/medical/wrap/gauze{
 	pixel_x = 8
 	},
 /obj/item/clothing/neck/stethoscope,
@@ -46953,7 +46953,7 @@
 /obj/effect/turf_decal/tile/blue/full,
 /obj/item/stack/medical/mesh,
 /obj/item/stack/medical/suture,
-/obj/item/stack/medical/gauze,
+/obj/item/stack/medical/wrap/gauze,
 /obj/machinery/door/window/right/directional/east{
 	name = "Paramedic Dispatch";
 	req_access = list("medical")
@@ -49347,7 +49347,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
 	dir = 9
 	},
-/obj/effect/spawner/random/structure/barricade,
+/obj/structure/barricade/wooden/crude,
 /turf/open/floor/iron,
 /area/station/maintenance/fore)
 "onx" = (
@@ -50685,7 +50685,7 @@
 	dir = 1;
 	pixel_x = -4
 	},
-/obj/item/infuser_book{
+/obj/item/tgui_book/manual/infuser{
 	pixel_y = -1;
 	pixel_x = 9
 	},
@@ -53853,11 +53853,11 @@
 /obj/structure/table,
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/north,
-/obj/item/computer_disk{
+/obj/item/disk/computer{
 	pixel_x = -5;
 	pixel_y = 8
 	},
-/obj/item/computer_disk/ordnance{
+/obj/item/disk/computer/ordnance{
 	pixel_x = 7;
 	pixel_y = 8
 	},
@@ -59606,9 +59606,9 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
 	},
-/obj/item/computer_disk/engineering,
-/obj/item/computer_disk/engineering,
-/obj/item/computer_disk/engineering,
+/obj/item/disk/computer/engineering,
+/obj/item/disk/computer/engineering,
+/obj/item/disk/computer/engineering,
 /turf/open/floor/iron/smooth_large,
 /area/station/command/heads_quarters/ce)
 "tYR" = (
