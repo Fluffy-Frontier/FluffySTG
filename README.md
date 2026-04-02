@@ -1,4 +1,4 @@
-## Fluffy STG (Skyrat & /tg/station Downstream)
+## Fluffy STG (NovaSector & /tg/station Downstream)
 
 [![CI Suite](https://github.com/Fluffy-Frontier/FluffySTG/workflows/CI%20Suite/badge.svg)](https://github.com/Fluffy-Frontier/FluffySTG/actions?query=workflow%3A%22CI+Suite%22)
 [![Percentage of issues still open](https://isitmaintained.com/badge/open/Fluffy-Frontier/FluffySTG.svg)](https://isitmaintained.com/project/Fluffy-Frontier/FluffySTG "Percentage of issues still open")
@@ -11,15 +11,15 @@
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | Git / GitHub cheatsheet | [https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833](https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833) |
 | Guide to Modularization | [./modular_nova/readme.md](./modular_nova/readme.md)                                                                                   |
-| Website                 | [https://www.tgstation13.org](https://www.tgstation13.org)                                                                             |
+| Website                 | [https://fluffy-frontier.ru](https://fluffy-frontier.ru)                                                                               |
 | Guide to Mirroring      | [./modular_nova/mirroring_guide.md](./modular_nova/mirroring_guide.md)                                                                 |
 | Code                    | [https://github.com/NovaSector/NovaSector](https://github.com/NovaSector/NovaSector)                                                   |
-| Wiki                    | [https://wiki.novasector13.com](https://wiki.novasector13.com)                                                                         |
-| Codedocs                | [https://GalacticStation.github.io/GalaxiaStation/](https://GalacticStation.github.io/GalaxiaStation/)                                 |
+| Wiki                    | [https://wiki.fluffy-frontier.ru](https://wiki.fluffy-frontier.ru/Main_Page)                                                           |
+| Codedocs                | [https://NovaSector.github.io/NovaSector/](https://NovaSector.github.io/NovaSector/)                                                   |
 | Fluffy Frontier Discord | [https://discord.com/invite/5GvhwtY](https://discord.com/invite/5GvhwtY)                                                               |
 | Coderbus Discord        | [https://discord.gg/Vh8TJp9](https://discord.gg/Vh8TJp9)                                                                               |
 
-This is Fluffy Frontier's downstream fork of /tg/station & Skyrat created in byond.
+This is Fluffy Frontier's downstream fork of /tg/station & NovaSector created in byond.
 
 **Please note that this repository contains sexually explicit content and is not suitable for those under the age of 18.**
 
@@ -65,9 +65,9 @@ For lore, [see Common Core](https://github.com/tgstation/common_core).
 
 ## LICENSE
 
-All code after [commit 333c566b88108de218d882840e61928a9b759d8f on 2014/31/12 at 4:38 PM PST](https://github.com/tgstation/tgstation/commit/333c566b88108de218d882840e61928a9b759d8f) is licensed under [GNU AGPL v3](https://www.gnu.org/licenses/agpl-3.0.html).
+All code after [commit 333c566b88108de218d882840e61928a9b759d8f on 2014/12/31 at 4:38 PM PST](https://github.com/tgstation/tgstation/commit/333c566b88108de218d882840e61928a9b759d8f) is licensed under [GNU AGPL v3](https://www.gnu.org/licenses/agpl-3.0.html).
 
-All code before [commit 333c566b88108de218d882840e61928a9b759d8f on 2014/31/12 at 4:38 PM PST](https://github.com/tgstation/tgstation/commit/333c566b88108de218d882840e61928a9b759d8f) is licensed under [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.html).
+All code before [commit 333c566b88108de218d882840e61928a9b759d8f on 2014/12/31 at 4:38 PM PST](https://github.com/tgstation/tgstation/commit/333c566b88108de218d882840e61928a9b759d8f) is licensed under [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.html).
 (Including tools unless their readme specifies otherwise.)
 
 See LICENSE and GPLv3.txt for more details.

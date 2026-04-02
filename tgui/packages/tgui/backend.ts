@@ -172,7 +172,6 @@ export const backendReducer = (state = initialState, action) => {
 };
 
 export const backendMiddleware = (store) => {
-  let fancyState;
   let suspendInterval;
 
   return (next) => (action) => {
@@ -209,27 +208,13 @@ export const backendMiddleware = (store) => {
       suspendRenderer();
       clearInterval(suspendInterval);
       suspendInterval = undefined;
+      // Tiny window to not show previous content when resumed
       Byond.winset(Byond.windowId, {
+        size: '1x1',
+        pos: '1,1',
         'is-visible': false,
       });
       setTimeout(() => focusMap());
-    }
-
-    if (type === 'backend/update') {
-      const fancy = payload.config?.window?.fancy;
-      // Initialize fancy state
-      if (fancyState === undefined) {
-        fancyState = fancy;
-      }
-      // React to changes in fancy
-      else if (fancyState !== fancy) {
-        logger.log('changing fancy mode to', fancy);
-        fancyState = fancy;
-        Byond.winset(Byond.windowId, {
-          titlebar: !fancy,
-          'can-resize': !fancy,
-        });
-      }
     }
 
     // Resume on incoming update
@@ -350,9 +335,8 @@ const chunkSplitter = {
 export const sendAct = (action: string, payload: object = {}) => {
   // Validate that payload is an object
   // prettier-ignore
-  const isObject = typeof payload === 'object'
-    && payload !== null
-    && !Array.isArray(payload);
+  const isObject =
+    typeof payload === 'object' && payload !== null && !Array.isArray(payload);
   if (!isObject) {
     logger.error(`Payload for act() must be an object, got this:`, payload);
     return;
@@ -397,7 +381,6 @@ type BackendState<TData> = {
     window: {
       key: string;
       size: [number, number];
-      fancy: BooleanLike;
       locked: BooleanLike;
       scale: BooleanLike;
     };

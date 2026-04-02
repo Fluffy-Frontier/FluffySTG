@@ -18,7 +18,7 @@
 // Увеличивает реген маны в 2 раза
 /obj/item/organ/internal/cyberimp/brain/pro_psyonic
 	name = "Psyonic Amplifier Model A"
-	desc = "This implant will boost psyonics energy regeneration."
+	desc = "This implant will boost psyonics energy regeneration by two times."
 	icon_state = "brain_implant_rebooter"
 	slot = ORGAN_SLOT_BRAIN_PSYONIC
 

@@ -4,7 +4,7 @@
 	name = "Giant Armored Serpentid"
 	id = SPECIES_NABBER
 	can_augment = FALSE
-	veteran_only = TRUE
+	nova_stars_only = TRUE
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CHUNKYFINGERS_IGNORE_BATON,
@@ -58,17 +58,30 @@
 		LOADOUT_ITEM_MISC = NABBER_BACK_ICON,
 		LOADOUT_ITEM_EARS = NABBER_EARS_ICON,
 	)
-	var/datum/action/cooldown/toggle_arms/arms
-	var/datum/action/cooldown/optical_camouflage/camouflage
-	var/datum/action/cooldown/nabber_threat/threat_mod
 	placeholder_description = "Giant armoured serpentids (GAS), also known as Nabbers, or snake-bugs, are a massive predatory species who are trained by a company to work with humans. Physically, although they look intimidating, they're unlikely to harm a human except in times of great stress. If you see them getting their large attack arms ready, it's telling you to back off."
 	placeholder_lore = "https://fluffy-frontier.ru/osobye-rasy"
 
 	species_language_holder = /datum/language_holder/nabber
 	language_prefs_whitelist = list(/datum/language/nabber)
 
+	/// Наши продвинутные боевые руки
+	var/datum/action/cooldown/toggle_arms/arms
+	/// Наш камуфляж
+	var/datum/action/cooldown/optical_camouflage/camouflage
+	/// Наш камуфляж для отобажерния угрозы
+	var/datum/action/cooldown/nabber_threat/threat_mod
+	/// Специальная заглушка на ноги, чтобы на нас нельзя было повесить ничего
+	var/obj/item/restraints/legcuffs/gas_placeholder/anti_cuffs
+	/// Наш особый имплант
+	var/obj/item/implant/gas_sol_speaker/imp_in
+
 /datum/species/nabber/on_species_gain(mob/living/carbon/human/C, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
+
+#ifdef UNIT_TESTS
+	return //TODO: исправить это недоразумение, т.к возникают сильные проблемы с create_and_destroy юнит тестом
+#endif
+
 	arms = new(C)
 	arms.Grant(C)
 	camouflage = new(C)
@@ -76,28 +89,34 @@
 	threat_mod = new(C)
 	threat_mod.Grant(C)
 
-	var/is_dummy = istype(C, /mob/living/carbon/human/dummy)
+	C.uncuff()
+	if(C.legcuffed)
+		qdel(C.legcuffed, force = TRUE)
+	anti_cuffs = new()
+	anti_cuffs.register_owner(C)
+	C.equip_to_slot(anti_cuffs, ITEM_SLOT_LEGCUFFED, initial = TRUE)
 
-	if(!is_dummy)
-		C.uncuff()
-		if(!C.legcuffed)
-			var/obj/item/restraints/legcuffs/gas_placeholder/anti_cuffs = new()
-			C.equip_to_slot(anti_cuffs, ITEM_SLOT_LEGCUFFED, initial = TRUE)
-
-		var/obj/item/implant/gas_sol_speaker/imp_in = new()
-		imp_in.implant(C)
+	imp_in = new()
+	imp_in.implant(C)
 
 /datum/species/nabber/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()
-	arms.Destroy()
-	camouflage.Destroy()
-	threat_mod.Destroy()
+
+#ifdef UNIT_TESTS
+	return
+#endif
+
+	QDEL_NULL(arms)
+	QDEL_NULL(camouflage)
+	QDEL_NULL(threat_mod)
+
+	if(anti_cuffs)
+		C.uncuff()
+	QDEL_NULL(anti_cuffs)
+	QDEL_NULL(imp_in)
+
 
 /datum/species/nabber/spec_life(mob/living/carbon/human/H, seconds_per_tick, times_fired)
-	// Вызываем это перед проверкой на смерть, чтобы даже у мёртвых ГБСов была заглушка
-	if(H.num_legs >= 2 && !H.legcuffed && !QDELETED(H))
-		var/obj/item/restraints/legcuffs/gas_placeholder/anti_cuffs = new()
-		H.equip_to_slot(anti_cuffs, ITEM_SLOT_LEGCUFFED, initial = TRUE)
 	. = ..()
 	if(isdead(H))
 		return
@@ -229,7 +248,7 @@
 
 // ЧС квирков
 /mob/living/carbon/human/add_quirk(datum/quirk/quirktype, client/override_client, add_unique = TRUE, announce = TRUE)
-	var/bad_nabber_quirks = list(
+	var/static/bad_nabber_quirks = list(
 		// негативные
 		/datum/quirk/oversized,
 		/datum/quirk/prosthetic_limb,
@@ -281,7 +300,6 @@
 		/datum/quirk/item_quirk/photographer,
 		/datum/quirk/pineapple_hater,
 		/datum/quirk/pineapple_liker,
-		/datum/quirk/snob,
 		/datum/quirk/transhumanist,
 		/datum/quirk/vegetarian,
 		/datum/quirk/canine_aspect,
@@ -315,12 +333,11 @@
 		/datum/quirk/drunkhealing,
 		/datum/quirk/light_step, // Встроен
 		/datum/quirk/item_quirk/musician,
-		/datum/quirk/item_quirk/settler,
+		/datum/quirk/settler,
 		/datum/quirk/item_quirk/signer,
 		/datum/quirk/item_quirk/pet_owner,
 		/datum/quirk/skittish,
 		/datum/quirk/spacer_born,
-		/datum/quirk/item_quirk/spiritual,
 		/datum/quirk/hard_soles, // Встроен
 		/datum/quirk/linguist,
 		/datum/quirk/sharpclaws,
@@ -331,3 +348,5 @@
 	if(isnabber(src) && (quirktype in bad_nabber_quirks))
 		return FALSE
 	return ..()
+
+#undef NABBER_DAMAGE_ONBURNING

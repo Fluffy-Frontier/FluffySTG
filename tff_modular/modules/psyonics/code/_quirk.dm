@@ -29,13 +29,13 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 			Energistics - school of elecricity, fire and light; \
 			You can select the school, but it's power will be randomised every round."
 	value = 12 // Отдадите за псионику жопу, чтобы потом вам Рэнди Рандом всегда слал наименьший уровень силы
-	medical_record_text = "Patient possesses connection to an another plain of reality."
+	medical_record_text = "Patient possesses connection to another plain of reality."
 	quirk_flags = QUIRK_HIDE_FROM_SCAN|QUIRK_HUMAN_ONLY|QUIRK_PROCESSES // Сканеры не видят псиоников. Только псионик школы принуждения может точно определить, является ли живое существо псиоником
 	gain_text = span_cyan("You mind feels uneasy, but... so powerful.")
-	lose_text = span_warning("You lost something, that kept your connection with other realms.")
+	lose_text = span_warning("You lost something that kept your connection with other realms.")
 	icon = "fa-star"
 	mob_trait = TRAIT_PSYONIC_USER
-	veteran_only = TRUE
+	nova_stars_only = TRUE
 	allow_for_donator = TRUE
 	// Текущий уровень маны
 	var/mana_level = 0
@@ -81,10 +81,10 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 			psyonic_level_string = "Theta"
 		if(GREATEST_PSYONIC) // Дозволен только особо везучим психологам, у которых все предыдущие пять рандомов вышли на 1
 			psyonic_level_string = "Epsilon"
-	max_mana = (psyonic_level + 1) * 20 // Минимальный - 20, максимальный - 100
-	RegisterSignal(quirk_holder, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(get_status_tab_item))
 	if(school == secondary_school)
 		psyonic_level += 1 // Если вторичка совпадает с первой - добавляем один уровень, но не меняем описание
+	max_mana = (psyonic_level + 1) * 20 // Минимальный - 20, максимальный - 100
+	RegisterSignal(quirk_holder, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(get_status_tab_item))
 	switch(school)
 		if("Redaction")
 			whom_to_give.try_add_redaction_school(psyonic_level, secondary_school)
@@ -139,9 +139,6 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 /datum/quirk/psyonic/proc/get_status_tab_item(mob/living/source, list/items)
 	SIGNAL_HANDLER
 
-	items += "Psyonic School: [school]"
-	items += "Secondary School: [secondary_school]"
-	items += "Psyonic Tier: [psyonic_level_string]"
 	items += "Current psyonic energy: [mana_level]/[max_mana]"
 
 /datum/quirk/psyonic/process(seconds_per_tick)
@@ -157,6 +154,10 @@ GLOBAL_LIST_INIT(psyonic_schools, list(
 
 	if(HAS_TRAIT(quirk_holder, TRAIT_PRO_PSYONICS)) // Если есть имплант для увеличения регена маны
 		additional_mana *= 2
+
+	var/mob/living/carbon/human/human_holder = quirk_holder
+	if(human_holder.is_blind())
+		additional_mana *= 1.5
 
 	if(mana_level <= max_mana)
 		mana_level += seconds_per_tick * 0.5 * additional_mana

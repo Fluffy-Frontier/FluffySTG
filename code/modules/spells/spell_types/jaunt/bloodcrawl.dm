@@ -178,7 +178,11 @@
 	if(!.)
 		return
 
+	// FLUFFY FRONTIER REMOVAL - NO MORE JAUNT DAMAGE
+	/*
 	jaunt_damage_timer = addtimer(CALLBACK(src, PROC_REF(damage_for_lazy_demon), jaunter), 20 SECONDS, TIMER_STOPPABLE)
+	*/
+	// FLUFFY FRONTIER REMOVAL END
 
 	var/turf/jaunt_turf = get_turf(jaunter)
 	// if we're not pulling anyone, or we can't what we're pulling
@@ -219,6 +223,8 @@
  * Apply damage to demon when he using bloodcrawl.
  * Every 20 SECONDS check if demon still crawling and update timer.
  */
+// FLUFFY FRONTIER REMOVAL
+/*
 /datum/action/cooldown/spell/jaunt/bloodcrawl/slaughter_demon/proc/damage_for_lazy_demon(mob/living/lazy_demon)
 	if(QDELETED(lazy_demon))
 		return
@@ -231,6 +237,9 @@
 	lazy_demon.apply_damage(lazy_demon.maxHealth * 0.05, BRUTE)
 	jaunt_damage_timer = addtimer(CALLBACK(src, PROC_REF(damage_for_lazy_demon), lazy_demon), 20 SECONDS, TIMER_STOPPABLE)
 	to_chat(lazy_demon, span_warning("You feel your flesh dissolving into the sea of blood. You shouldn't stay in Blood Crawl for too long!"))
+
+// FLUFFY FRONTIER REMOVAL END
+*/
 
 /**
  * Consumes the [victim] from the [jaunter], fully healing them
@@ -267,18 +276,26 @@
  * Called when a victim starts to be consumed.
  */
 /datum/action/cooldown/spell/jaunt/bloodcrawl/slaughter_demon/proc/on_victim_start_consume(mob/living/victim, mob/living/jaunter)
+	// FLUFFY FRONTIER REMOVAL
+	/*
 	if(!iscarbon(jaunter))
 		resist_jaunt_damage = TRUE
 		deltimer(jaunt_damage_timer)
+	*/
+	// FLUFFY FRONTIER REMOVAL END
 	to_chat(jaunter, span_danger("You begin to feast on [victim]... You can not move while you are doing this."))
 
 /**
  * Called when a victim is successfully consumed.
  */
 /datum/action/cooldown/spell/jaunt/bloodcrawl/slaughter_demon/proc/on_victim_consumed(mob/living/victim, mob/living/jaunter)
+	// FLUFFY FRONTIER REMOVAL
+	/*
 	if(!iscarbon(jaunter))
 		resist_jaunt_damage = FALSE
 		jaunt_damage_timer = addtimer(CALLBACK(src, PROC_REF(damage_for_lazy_demon), jaunter), 20 SECONDS, TIMER_STOPPABLE)
+	*/
+	// FLUFFY FRONTIER REMOVAL END
 	to_chat(jaunter, span_danger("You devour [victim]. Your health is fully restored."))
 	qdel(victim)
 

@@ -1,4 +1,5 @@
 #define IS_HYPNOTIZED(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/hypnotized))
+#define IS_OBSESSED(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/obsessed))
 
 /// Школа внушения. 7 спеллов
 /// Psyonic assay - скан, является ли человек псиоником
@@ -128,7 +129,7 @@
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_focus/proc/fix_brainz(mob/living/carbon/human/cast_on)
 	var/b_damage = cast_on.get_organ_loss(ORGAN_SLOT_BRAIN)
 	if(b_damage > 0)
-		cast_on.adjustOrganLoss(ORGAN_SLOT_BRAIN, -10 * cast_power)
+		cast_on.adjust_organ_loss(ORGAN_SLOT_BRAIN, -10 * cast_power)
 
 	var/traumas = cast_on.get_traumas()
 	if(traumas)
@@ -138,7 +139,7 @@
 	cast_on.apply_status_effect(/datum/status_effect/drugginess, 20 SECONDS)
 
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_focus/proc/accident_harm(mob/living/carbon/human/cast_on)
-	cast_on.adjustOrganLoss(ORGAN_SLOT_BRAIN, 15 * cast_power, 101)
+	cast_on.adjust_organ_loss(ORGAN_SLOT_BRAIN, 15 * cast_power, 101)
 	to_chat(cast_on, span_bolddanger("You head hurts!"))
 
 // Читаем разум. Выдаёт: последние сейлоги, интент, настоящее имя, воспоминания, намёк на работу, намёк на то, что в антаг_датум что то есть.
@@ -207,10 +208,12 @@
 	text_to_show += span_notice("You try to read their job: ") + boxed_message(span_italics(get_job_fluff(patient)))
 	if(patient.mind.enslaved_to || IS_HYPNOTIZED(patient))
 		text_to_show += span_boldnotice("[patient.p_Their()] will is not free.") + "<br>"
+	if(IS_OBSESSED(patient))
+		text_to_show += span_boldnotice("[patient.p_Their()] mind is assaulted by voices within. They should visit a brain surgeon.") + "<br>"
 	var/datum/mind/mind_to_read = patient.mind
 	if(prob(20 * cast_power) && mind_to_read.antag_datums)
 		if(IS_WIZARD(patient))
-			text_to_show += span_notice("You can feel strong potential pulsing in this individual.") + "<br>"
+			text_to_show += span_notice("You can feel a strong potential pulsating in this individual.") + "<br>"
 		else if(IS_HERETIC(patient))
 			text_to_show += span_notice("Reality bends around you and goes back to normal, as you try to read [patient.p_their()] mind.") + "<br>"
 			var/mob/living/carbon/human/human_owner = owner
@@ -244,7 +247,7 @@
 	else if(patient_job.departments_bitflags & DEPARTMENT_BITFLAG_SCIENCE)
 		text_to_return += "This person is an egghead." + "<br>"
 	else if(patient_job.departments_bitflags & DEPARTMENT_BITFLAG_MEDICAL)
-		text_to_return += "This person is accustomed with wounds, blood and etc." + "<br>"
+		text_to_return += "This person is accustomed with wounds, blood and their treatment." + "<br>"
 	else if(patient_job.departments_bitflags & DEPARTMENT_BITFLAG_SILICON)
 		text_to_return += "This is en etenral mankinds servant." + "<br>"
 	else if(patient_job.departments_bitflags & DEPARTMENT_BITFLAG_ASSISTANT)
@@ -482,3 +485,4 @@
 	cast_on.adjust_temp_blindness( (10 + cast_power * 2) SECONDS)
 
 #undef IS_HYPNOTIZED
+#undef IS_OBSESSED

@@ -1,6 +1,7 @@
 /obj/item/clothing/suit/costume
 	icon = 'icons/obj/clothing/suits/costume.dmi'
 	worn_icon = 'icons/mob/clothing/suits/costume.dmi'
+	abstract_type = /obj/item/clothing/suit/costume
 
 /obj/item/clothing/suit/hooded/flashsuit
 	name = "flashy costume"
@@ -42,8 +43,13 @@
 
 /obj/item/clothing/suit/costume/pirate/armored
 	armor_type = /datum/armor/pirate_armored
-	strip_delay = 40
-	equip_delay_other = 20
+	strip_delay = 4 SECONDS
+	equip_delay_other = 2 SECONDS
+	species_exception = null
+
+/obj/item/clothing/suit/costume/pirate/armored/Initialize(mapload)
+	. = ..()
+	allowed += GLOB.security_vest_allowed
 
 /obj/item/clothing/suit/costume/pirate/captain
 	name = "pirate captain coat"
@@ -53,8 +59,9 @@
 
 /obj/item/clothing/suit/costume/pirate/captain/armored
 	armor_type = /datum/armor/pirate_armored
-	strip_delay = 40
-	equip_delay_other = 20
+	strip_delay = 4 SECONDS
+	equip_delay_other = 2 SECONDS
+	species_exception = null
 
 /obj/item/clothing/suit/costume/cyborg_suit
 	name = "cyborg suit"
@@ -64,7 +71,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|FEET
 	obj_flags = CONDUCTS_ELECTRICITY
 	fire_resist = T0C+5200
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL // NOVA EDIT CHANGE - ORIGINAL: flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 
 /obj/item/clothing/suit/costume/justice
 	name = "justice suit"
@@ -74,6 +81,10 @@
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	armor_type = /datum/armor/costume_justice
+
+/obj/item/clothing/suit/costume/justice/Initialize(mapload)
+	. = ..()
+	allowed = GLOB.security_vest_allowed
 
 /datum/armor/costume_justice
 	melee = 35
@@ -102,7 +113,7 @@
 	desc = "A plastic replica of the Syndicate space suit. You'll look just like a real murderous Syndicate agent in this! This is a toy, it is not made for use in space!"
 	w_class = WEIGHT_CLASS_NORMAL
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy)
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL // SYKRAT EDIT ADDITION - HIDETAIL
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	resistance_flags = NONE
 
 /obj/item/clothing/suit/costume/hastur
@@ -120,7 +131,10 @@
 	inhand_icon_state = "imperium_monk"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	flags_inv = HIDESHOES|HIDEJUMPSUIT|HIDEBELT
-	allowed = list(/obj/item/book/bible, /obj/item/nullrod, /obj/item/reagent_containers/cup/glass/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/flashlight/flare/candle, /obj/item/tank/internals/emergency_oxygen)
+
+/obj/item/clothing/suit/costume/imperium_monk/Initialize(mapload)
+	. = ..()
+	allowed = GLOB.chaplain_suit_allowed
 
 /obj/item/clothing/suit/costume/chickensuit
 	name = "chicken suit"
@@ -166,6 +180,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS
 	flags_inv = HIDEJUMPSUIT
 	dog_fashion = /datum/dog_fashion/back
+	custom_materials = list(/datum/material/cardboard = SHEET_MATERIAL_AMOUNT * 3)
 	var/in_use = FALSE
 
 /obj/item/clothing/suit/costume/cardborg/equipped(mob/living/user, slot)
@@ -259,6 +274,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|FEET
 	cold_protection = CHEST|GROIN|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT //Space carp like space, so you should too
+	clothing_flags = CARP_STYLE_FACTOR
 	allowed = list(/obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/gun/ballistic/rifle/boltaction/harpoon)
 	hoodtype = /obj/item/clothing/head/hooded/carp_hood
 
@@ -276,6 +292,7 @@
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	flags_inv = HIDEHAIR|HIDEEARS
+	clothing_flags = CARP_STYLE_FACTOR
 
 /obj/item/clothing/head/hooded/carp_hood/Initialize(mapload)
 	. = ..()
@@ -298,12 +315,12 @@
 	inhand_icon_state = "space_suit_syndicate"
 	armor_type = /datum/armor/carp_costume_spaceproof
 	allowed = list(/obj/item/tank/internals, /obj/item/gun/ballistic/rifle/boltaction/harpoon) //I'm giving you a hint here
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL // NOVA EDIT ADDITION - HIDETAIL
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL // NOVA EDIT CHANGE - ORIGINAL: flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = SPACE_SUIT_MAX_TEMP_PROTECT
-	clothing_flags = STOPSPRESSUREDAMAGE|THICKMATERIAL
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | CARP_STYLE_FACTOR
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	hoodtype = /obj/item/clothing/head/hooded/carp_hood/spaceproof
 	resistance_flags = NONE
@@ -323,7 +340,7 @@
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	heat_protection = HEAD
 	max_heat_protection_temperature = SPACE_HELM_MAX_TEMP_PROTECT
-	clothing_flags = STOPSPRESSUREDAMAGE|THICKMATERIAL|SNUG_FIT|STACKABLE_HELMET_EXEMPT
+	clothing_flags = STOPSPRESSUREDAMAGE|THICKMATERIAL|SNUG_FIT|STACKABLE_HELMET_EXEMPT|CARP_STYLE_FACTOR
 	body_parts_covered = HEAD
 	resistance_flags = NONE
 	flash_protect = FLASH_PROTECTION_WELDER
@@ -352,8 +369,6 @@
 	worn_icon = 'icons/mob/clothing/suits/costume.dmi'
 	inhand_icon_state = "labcoat"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|FEET
-	//cold_protection = CHEST|GROIN|ARMS
-	//min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	allowed = list()
 	hoodtype = /obj/item/clothing/head/hooded/ian_hood
 	dog_fashion = /datum/dog_fashion/back
@@ -365,8 +380,6 @@
 	worn_icon = 'icons/mob/clothing/head/costume.dmi'
 	icon_state = "ian"
 	body_parts_covered = HEAD
-	//cold_protection = HEAD
-	//min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	flags_inv = HIDEHAIR|HIDEEARS
 
 /obj/item/clothing/suit/hooded/bee_costume // It's Hip!
@@ -554,12 +567,13 @@
 	allowed = list(
 		/obj/item/tank/internals/emergency_oxygen,
 		/obj/item/tank/internals/plasmaman,
-		/obj/item/tank/jetpack/oxygen/captain,
+		/obj/item/tank/jetpack/captain,
 		/obj/item/storage/belt/holster,
 		//new
 		/obj/item/toy/clockwork_watch,
 		)
 	armor_type = /datum/armor/costume_bronze
+	custom_materials = list(/datum/material/bronze = SHEET_MATERIAL_AMOUNT)
 
 /obj/item/clothing/suit/hooded/mysticrobe
 	name = "mystic's robe"
@@ -617,6 +631,7 @@
 /obj/item/clothing/suit/costume/hawaiian/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/adjust_fishing_difficulty, -5)
+	allowed += GLOB.personal_carry_allowed
 
 /obj/item/clothing/suit/costume/football_armor
 	name = "football protective gear"
@@ -634,6 +649,10 @@
 	name = "comedian coat"
 	desc = "I mean, don’t you have to be funny to be a comedian?"
 	icon_state = "joker_coat"
+
+/obj/item/clothing/suit/costume/joker/Initialize(mapload)
+	. = ..()
+	allowed += GLOB.personal_carry_allowed
 
 /obj/item/clothing/suit/costume/deckers
 	name = "decker hoodie"

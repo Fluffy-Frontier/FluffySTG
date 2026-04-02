@@ -1,11 +1,11 @@
 // Overmind defines
 
-#define OVERMIND_MAX_POINTS_DEFAULT 150 // Max point storage. // FLUFFY FRONTIER EDIT - ORIGINAL: #define OVERMIND_MAX_POINTS_DEFAULT 100
+#define OVERMIND_MAX_POINTS_DEFAULT 100 // Max point storage
 #define OVERMIND_STARTING_POINTS 60 // Points granted upon start
 #define OVERMIND_STARTING_REROLLS 1 // Free strain rerolls at the start
 #define OVERMIND_STARTING_MIN_PLACE_TIME (1 MINUTES) // Minimum time before the core can be placed
 #define OVERMIND_STARTING_AUTO_PLACE_TIME (6 MINUTES) // After this time, randomly place the core somewhere viable
-#define OVERMIND_WIN_CONDITION_AMOUNT 550 // Blob structures required to win, // FLUFFY FRONTIER EDIT - ORIGINAL: #define OVERMIND_WIN_CONDITION_AMOUNT 400
+#define OVERMIND_WIN_CONDITION_AMOUNT 400 // Blob structures required to win
 #define OVERMIND_ANNOUNCEMENT_MIN_SIZE 75 // Once the blob has this many structures, announce their presence
 #define OVERMIND_ANNOUNCEMENT_MAX_TIME (10 MINUTES) // If the blob hasn't reached the minimum size before this time, announce their presence
 #define OVERMIND_MAX_CAMERA_STRAY "3x3" // How far the overmind camera is allowed to stray from blob tiles. 3x3 is 1 tile away, 5x5 2 tiles etc
@@ -50,7 +50,7 @@
 #define BLOB_RESOURCE_MAX_HP 60
 #define BLOB_RESOURCE_HP_REGEN 15
 #define BLOB_RESOURCE_MIN_DISTANCE 4 // Minimum distance between resource blobs
-#define BLOB_RESOURCE_GATHER_DELAY (3.75 SECONDS) // Gather points when pulsed outside this interval, // FLUFFY FRONTIER EDIT - ORIGINAL: #define BLOB_RESOURCE_GATHER_DELAY (4 SECONDS)
+#define BLOB_RESOURCE_GATHER_DELAY (4 SECONDS) // Gather points when pulsed outside this interval
 #define BLOB_RESOURCE_GATHER_ADDED_DELAY (0.25 SECONDS) // Every additional resource blob adds this amount to the gather delay
 #define BLOB_RESOURCE_GATHER_AMOUNT 1.5 // The amount of points added to the overmind // FLUFFY FRONTIER EDIT - ORIGINAL: #define BLOB_RESOURCE_GATHER_AMOUNT 1
 
@@ -95,7 +95,7 @@
 #define BLOBMOB_SPORE_DMG_LOWER 4
 #define BLOBMOB_SPORE_DMG_UPPER 8
 #define BLOBMOB_BLOBBERNAUT_RESOURCE_COST 40 // Purchase price for making a blobbernaut
-#define BLOBMOB_BLOBBERNAUT_HEALTH 200 // Base blobbernaut health
+#define BLOBMOB_BLOBBERNAUT_HEALTH 350 // Base blobbernaut health // FLUFFY FRONTIER EDIT - ORIGINAL: #define BLOBMOB_BLOBBERNAUT_HEALTH 200
 #define BLOBMOB_BLOBBERNAUT_DMG_SOLO_LOWER 20 // Damage without active overmind (core dead or xenobio mob)
 #define BLOBMOB_BLOBBERNAUT_DMG_SOLO_UPPER 20
 #define BLOBMOB_BLOBBERNAUT_DMG_LOWER 4 // Damage dealt with active overmind (most damage comes from strain chems)

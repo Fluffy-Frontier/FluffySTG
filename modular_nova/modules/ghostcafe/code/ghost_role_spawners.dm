@@ -78,12 +78,19 @@
 		return COMPONENT_CANNOT_USE_RADIO
 
 /datum/outfit/ghostcafe
-	name = "ID, jumpsuit and shoes"
+	name = "Cafe Visitor"
 	uniform = /obj/item/clothing/under/color/random
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	id = /obj/item/card/id/advanced/chameleon/ghost_cafe
 	back = /obj/item/storage/backpack/chameleon
 	backpack_contents = list(/obj/item/storage/box/syndie_kit/chameleon/ghostcafe = 1)
+
+/datum/outfit/ghostcafe/pre_equip(mob/living/carbon/human/visitor, visuals_only = FALSE)
+	..()
+	if (isplasmaman(visitor))
+		backpack_contents += list(/obj/item/tank/internals/plasmaman/belt/full = 2)
+	if(isvox(visitor) || isvoxprimalis(visitor))
+		backpack_contents += list(/obj/item/tank/internals/nitrogen/belt/full = 2)
 
 /datum/action/toggle_dead_chat_mob
 	button_icon = 'icons/mob/simple/mob.dmi'
@@ -127,10 +134,16 @@
 
 /obj/item/card/id/advanced/chameleon/ghost_cafe
 	name = "\improper Cafe ID"
-	desc = "An ID straight from God."
-	icon_state = "card_centcom"
-	assigned_icon_state = "assigned_centcom"
+	desc = "A card used to provide ID and determine access across the Cafe."
+	icon_state = "card_grey"
+	assigned_icon_state = null
 	registered_age = null
-	trim = /datum/id_trim/admin
+	trim = /datum/id_trim/admin/ghost_cafe
 	wildcard_slots = WILDCARD_LIMIT_ADMIN
 
+/datum/id_trim/admin/ghost_cafe
+	assignment = "Cafe Visitor"
+	trim_icon = 'modular_nova/master_files/icons/obj/card.dmi'
+	trim_state = "trim_cafe"
+	department_color = COLOR_PALE_GREEN
+	subdepartment_color = COLOR_PALE_GREEN

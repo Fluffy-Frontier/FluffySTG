@@ -26,7 +26,7 @@
 	unsuitable_cold_damage = 0
 	unsuitable_heat_damage = 0
 	unsuitable_atmos_damage = 0
-	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, STAMINA = 0.5, OXY = 1)
+	damage_coeff = list(BRUTE = 0.7, BURN = 0.6, TOX = 1, STAMINA = 0.5, OXY = 1) // FLUFFY FRONTIER CHANGES - ORIGINAL: damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, STAMINA = 0.5, OXY = 1)
 	combat_mode = TRUE
 	speed = 0
 	attack_verb_continuous = "chomps"
@@ -140,7 +140,7 @@
 
 /// Select scale colour with the colour picker
 /mob/living/basic/space_dragon/proc/select_colour()
-	chosen_colour = input(src, "What colour would you like to be?" ,"Colour Selection", COLOR_WHITE) as color|null
+	chosen_colour = tgui_color_picker(src, "What colour would you like to be?" ,"Colour Selection", COLOR_WHITE)
 	if(!chosen_colour) // Redo proc until we get a color
 		to_chat(src, span_warning("Not a valid colour, please try again."))
 		select_colour()
@@ -303,7 +303,7 @@
 	if (severity != EXPLODE_DEVASTATE)
 		return
 	var/damage_coefficient = rand(devastation_damage_min_percentage, devastation_damage_max_percentage)
-	adjustBruteLoss(initial(maxHealth)*damage_coefficient)
+	adjust_brute_loss(initial(maxHealth)*damage_coefficient)
 	return COMPONENT_CANCEL_EX_ACT // we handled it
 
 /// Subtype used by the midround/event

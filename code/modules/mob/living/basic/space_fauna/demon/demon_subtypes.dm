@@ -14,8 +14,8 @@
 	// their wound bonuses grow and grow higher. this is how they're able to efficiently kill and slaughter their victims.
 	// consider this before you balance them.
 	obj_damage = 50
-	melee_damage_lower = 15
-	melee_damage_upper = 15
+	melee_damage_lower = 20 // FLUFFY FRONTIER CHANGES - ORIGINAL: 15
+	melee_damage_upper = 20 // FLUFFY FRONTIER CHANGES - ORIGINAL: 15
 	wound_bonus = -10
 	exposed_wound_bonus = 0
 	sharpness = SHARP_EDGED
@@ -158,9 +158,9 @@
 			investigate_log("has died from a devastating explosion.", INVESTIGATE_DEATHS)
 			death()
 		if(EXPLODE_HEAVY)
-			adjustBruteLoss(60)
+			adjust_brute_loss(60)
 		if(EXPLODE_LIGHT)
-			adjustBruteLoss(30)
+			adjust_brute_loss(30)
 
 	return TRUE
 

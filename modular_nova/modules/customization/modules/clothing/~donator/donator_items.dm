@@ -445,6 +445,7 @@
 	slot_flags = parent_type::slot_flags | ITEM_SLOT_NECK
 	dog_fashion = /datum/dog_fashion/head/cone
 	var/toggle_state = "close"
+	custom_materials = list(/datum/material/plastic = SHEET_MATERIAL_AMOUNT)
 
 /obj/item/clothing/head/cone_of_shame/click_alt(mob/user)
 	if(toggle_state == "open")

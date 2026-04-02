@@ -14,6 +14,7 @@
 	light_color = LIGHT_COLOR_LAVA
 	break_message = span_warning("The forge breaks apart into shards with a howling scream!")
 	mansus_conversion_path = /obj/structure/destructible/eldritch_crucible
+	custom_materials = list(/datum/material/runedmetal = SHEET_MATERIAL_AMOUNT * 3)
 
 /obj/structure/destructible/cult/item_dispenser/forge/setup_options()
 	var/static/list/forge_items = list(
@@ -21,11 +22,6 @@
 			PREVIEW_IMAGE = image(icon = 'icons/obj/clothing/suits/armor.dmi', icon_state = "cult_armor"),
 			OUTPUT_ITEMS = list(/obj/item/clothing/suit/hooded/cultrobes/hardened),
 			RADIAL_DESC = "Smiths a set of [/obj/item/clothing/suit/hooded/cultrobes/hardened::name], a robust suit of armor that can withstand space.",
-			),
-		FLAGELLANT_ARMOR = list(
-			PREVIEW_IMAGE = image(icon = 'icons/obj/clothing/suits/armor.dmi', icon_state = "cultrobes"),
-			OUTPUT_ITEMS = list(/obj/item/clothing/suit/hooded/cultrobes/berserker),
-			RADIAL_DESC = "Smiths a set of [/obj/item/clothing/suit/hooded/cultrobes/berserker::name], a robe which makes you far more vulnerable to damage, but drastically increases your speed.",
 			),
 		ELDRITCH_SWORD = list(
 			PREVIEW_IMAGE = image(icon = 'icons/obj/weapons/sword.dmi', icon_state = "cultblade"),

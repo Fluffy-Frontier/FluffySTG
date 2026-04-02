@@ -357,8 +357,8 @@ GLOBAL_LIST_EMPTY(nt_reporter_list)
 	new /obj/item/ammo_box/magazine/m223(src)
 	new /obj/item/ammo_box/magazine/m223(src)
 	new /obj/item/gun/ballistic/revolver/mateba(src)
-	new /obj/item/ammo_box/a357(src)
-	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/speedloader/c357(src)
+	new /obj/item/ammo_box/speedloader/c357(src)
 	new /obj/item/storage/pouch/ammo(src)
 
 /*

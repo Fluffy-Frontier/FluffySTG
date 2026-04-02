@@ -10,6 +10,7 @@
 	payment_department = ACCOUNT_SRV
 	refill_canister = /obj/item/vending_refill/wardrobe/bunny
 	light_color = COLOR_SERVICE_LIME
+	allow_custom = TRUE
 
 /obj/item/vending_refill/wardrobe/bunny
 	machine_name = "Bunny Outfitting Station"

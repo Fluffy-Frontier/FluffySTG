@@ -95,19 +95,6 @@
 /// When a soulcatcher room's joinability is updated by opening the room, closing the room, allowing ghosts, etc: from base of datum/component/soulcatcher/proc/update_joinability()
 #define COMSIG_SOULCATCHER_UPDATE_JOINABILITY "soulcatcher_update_joinability"
 
-// CORRUPTION SIGNALS
-
-/// From /obj/structure/fleshmind/structure/proc/activate_ability() (src)
-#define COMSIG_CORRUPTION_STRUCTURE_ABILITY_TRIGGERED "corruption_structure_ability_triggered"
-
-/// From /mob/living/simple_animal/hostile/fleshmind/phaser/proc/phase_move_to(atom/target, nearby = FALSE)
-#define COMSIG_PHASER_PHASE_MOVE "phaser_phase_move"
-/// from /mob/living/simple_animal/hostile/fleshmind/phaser/proc/enter_nearby_closet()
-#define COMSIG_PHASER_ENTER_CLOSET "phaser_enter_closet"
-
-/// from /obj/structure/fleshmind/structure/core/proc/rally_troops()
-#define COMSIG_FLESHMIND_CORE_RALLY "fleshmind_core_rally"
-
 /// Whenever a baton successfully executes its nonlethal attack. WARNING HORRIBLE FUCKING CODE THIS IS ASS AAAAAAAAAAAAH
 #define COMSIG_PRE_BATON_FINALIZE_ATTACK "pre_baton_finalize_attack"
 
@@ -122,3 +109,9 @@
 
 ///from base of /datum/preference_middleware/jobs/proc/set_job_title() and /datum/preference_middleware/jobs/proc/set_job_preference: ()
 #define COMSIG_JOB_PREF_UPDATED "job_pref_updated"
+
+/// When a gun's safety is toggled.
+#define COMSIG_GUN_SAFETY_TOGGLED "gun_safety_toggled"
+
+/// Signal sent whenever a gun with a barrel booster toggles its barrel booster.
+#define COMSIG_GUN_BOOSTER_TOGGLED "gun_booster_toggled"

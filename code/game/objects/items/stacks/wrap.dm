@@ -53,8 +53,8 @@
 		set_greyscale(colors = list(generated_base_color, generated_ribbon_color))
 
 /obj/item/stack/wrapping_paper/click_alt(mob/user)
-	var/new_base = input(user, "", "Select a base color", color) as color
-	var/new_ribbon = input(user, "", "Select a ribbon color", color) as color
+	var/new_base = tgui_color_picker(user, "", "Select a base color", color)
+	var/new_ribbon = tgui_color_picker(user, "", "Select a ribbon color", color)
 	if(!new_base || !new_ribbon)
 		return CLICK_ACTION_BLOCKING
 
@@ -170,6 +170,8 @@
 			return ITEM_INTERACT_BLOCKING
 		if(use(3))
 			var/obj/item/delivery/big/parcel = new(get_turf(closet.loc))
+			var/mob/being_pulled_by = closet.pulledby
+			being_pulled_by?.start_pulling(parcel)
 			parcel.base_icon_state = closet.delivery_icon
 			parcel.update_icon()
 			parcel.drag_slowdown = closet.drag_slowdown

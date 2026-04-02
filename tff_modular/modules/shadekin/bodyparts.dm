@@ -6,7 +6,7 @@
 	limb_id = SPECIES_SHADEKIN
 	bodyshape = parent_type::bodyshape | BODYSHAPE_CUSTOM
 	is_dimorphic = TRUE
-	head_flags = HEAD_EYESPRITES|HEAD_EYECOLOR|HEAD_EYEHOLES|HEAD_DEBRAIN
+	head_flags = HEAD_HAIR|HEAD_FACIAL_HAIR|HEAD_LIPS|HEAD_EYESPRITES|HEAD_EYECOLOR|HEAD_EYEHOLES|HEAD_DEBRAIN
 	brute_modifier = 1.2
 	burn_modifier = 1.2
 	eyes_icon = 'tff_modular/modules/shadekin/icons/shadekin_eyes.dmi'

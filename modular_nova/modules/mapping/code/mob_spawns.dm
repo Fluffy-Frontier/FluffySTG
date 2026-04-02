@@ -10,6 +10,9 @@
 	. = ..()
 	spawned_human.grant_language(/datum/language/common, source = LANGUAGE_SPAWNER)
 
+#define BM_TRADER_MIN_CASH 500
+#define BM_TRADER_MAX_CASH 2000
+
 /obj/effect/mob_spawn/ghost_role/human/blackmarket
 	name = "Black Market Trader"
 	prompt_name = "a blackmarket dealer"
@@ -38,6 +41,11 @@
 
 /datum/outfit/black_market/post_equip(mob/living/carbon/human/shady, visualsOnly)
 	handlebank(shady)
+	if(shady.wear_id)
+		var/obj/item/card/id/id_card = shady.wear_id
+		if(id_card.registered_account)
+			var/datum/bank_account/bank_account = id_card.registered_account
+			bank_account.adjust_money((rand(BM_TRADER_MIN_CASH, BM_TRADER_MAX_CASH)))
 
 	. = ..()
 
@@ -52,7 +60,7 @@
 	console.remote_ref = WEAKREF(remote)
 	remote.computer_ref = WEAKREF(console)
 
-/obj/item/gun/energy/laser/carbine/cybersun/black_market_trader
+/obj/item/gun/energy/laser/cybersun/black_market_trader
 	desc = "A laser gun primarily used by syndicate security guards. It fires a rapid spray of low-power plasma beams. This one seems to have had its firing pin replaced."
 	pin = /obj/item/firing_pin
 
@@ -60,7 +68,7 @@
 	name = "black market trader weapon spawner"
 	icon_state = "pistol"
 	loot = list(
-		/obj/item/gun/energy/laser/carbine/cybersun/black_market_trader = 80,
+		/obj/item/gun/energy/laser/cybersun/black_market_trader = 80,
 		/obj/item/gun/energy/e_gun/old = 50,
 		/obj/item/gun/ballistic/shotgun/automatic/combat = 50,
 		/obj/item/gun/ballistic/automatic/pistol/contraband = 30,
@@ -68,6 +76,9 @@
 		/obj/item/gun/ballistic/automatic/sol_smg/evil = 20,
 		/obj/item/gun/ballistic/shotgun/bulldog/unrestricted,
 	)
+
+#undef BM_TRADER_MIN_CASH
+#undef BM_TRADER_MAX_CASH
 
 /obj/effect/mob_spawn/ghost_role/human/ds2
 	name = "DS2 personnel"
@@ -91,6 +102,7 @@
 	computer_area = /area/ruin/space/has_grav/nova/des_two/security/prison
 	outfit = /datum/outfit/ds2/prisoner
 	spawner_job_path = /datum/job/ds2/prisoner
+	allow_mechanical_loadout_items = FALSE
 
 /obj/effect/mob_spawn/ghost_role/human/ds2/syndicate
 	name = "Syndicate Operative"
@@ -104,6 +116,7 @@
 	computer_area = /area/ruin/space/has_grav/nova/des_two/halls
 	spawner_job_path = /datum/job/ds2
 	loadout_enabled = TRUE
+	allow_mechanical_loadout_items = TRUE
 
 /obj/effect/mob_spawn/ghost_role/human/ds2/syndicate_command
 	name = "Syndicate Command Operative"
@@ -117,6 +130,7 @@
 	computer_area = /area/ruin/space/has_grav/nova/des_two/halls
 	spawner_job_path = /datum/job/ds2/command
 	loadout_enabled = TRUE
+	allow_mechanical_loadout_items = TRUE
 
 /obj/effect/mob_spawn/ghost_role/human/ds2/syndicate/special(mob/living/new_spawn)
 	. = ..()
@@ -174,8 +188,16 @@
 	spawner_job_path = /datum/job/ds2
 	mob_type = /mob/living/silicon/robot/model/ds2
 
+/obj/effect/mob_spawn/ghost_role/robot/ds2/special(mob/living/silicon/robot/new_spawn)
+	. = ..()
+	if(new_spawn.client)
+		new_spawn.custom_name = null
+		new_spawn.updatename(new_spawn.client)
+		new_spawn.transfer_silicon_prefs(new_spawn.client)
+		new_spawn.set_gender(new_spawn.client)
+
 /mob/living/silicon/robot/model/ds2
-	faction = list(ROLE_DS2)
+	faction = list("Syndicate", ROLE_DS2)
 	bubble_icon = "syndibot"
 	req_access = list(ACCESS_SYNDICATE)
 	lawupdate = FALSE
@@ -188,7 +210,7 @@
 
 /mob/living/silicon/robot/model/ds2/Initialize(mapload)
 	. = ..()
-	cell = new /obj/item/stock_parts/power_store/cell/hyper(src, 30000)
+	cell = new /obj/item/stock_parts/power_store/cell/hyper(src)
 	//This part is because the camera stays in the list, so we'll just do a check
 	if(!QDELETED(builtInCamera))
 		QDEL_NULL(builtInCamera)
@@ -215,8 +237,16 @@
 	spawner_job_path = /datum/job/ds2
 	mob_type = /mob/living/silicon/robot/model/interdyne
 
+/obj/effect/mob_spawn/ghost_role/robot/interdyne/special(mob/living/silicon/robot/new_spawn)
+	. = ..()
+	if(new_spawn.client)
+		new_spawn.custom_name = null
+		new_spawn.updatename(new_spawn.client)
+		new_spawn.transfer_silicon_prefs(new_spawn.client)
+		new_spawn.set_gender(new_spawn.client)
+
 /mob/living/silicon/robot/model/interdyne
-	faction = list(ROLE_INTERDYNE_PLANETARY_BASE)
+	faction = list("Syndicate", ROLE_INTERDYNE_PLANETARY_BASE)
 	req_access = list(ACCESS_SYNDICATE)
 	lawupdate = FALSE
 	scrambledcodes = TRUE
@@ -228,7 +258,7 @@
 
 /mob/living/silicon/robot/model/interdyne/Initialize(mapload)
 	. = ..()
-	cell = new /obj/item/stock_parts/power_store/cell/hyper(src, 30000)
+	cell = new /obj/item/stock_parts/power_store/cell/hyper(src)
 	//This part is because the camera stays in the list, so we'll just do a check
 	if(!QDELETED(builtInCamera))
 		QDEL_NULL(builtInCamera)
@@ -421,7 +451,7 @@
 	r_pocket = /obj/item/flashlight/seclite
 	implants = list(
 		/obj/item/implant/weapons_auth,
-		/obj/item/implant/krav_maga
+		/obj/item/implant/kaza_ruk
 		)
 
 /datum/outfit/ds2/syndicate_command/corporateliaison
@@ -665,10 +695,17 @@
 	assignment = "Hotel Security"
 	access = list(ACCESS_TWIN_NEXUS_STAFF, ACCESS_TWIN_NEXUS_MANAGER)
 
-//CRYO CONSOLES
-/obj/machinery/computer/cryopod/interdyne
-	radio = /obj/item/radio/headset/interdyne
-	announcement_channel = RADIO_CHANNEL_INTERDYNE
-	req_one_access = list("syndicate_leader")
+//film studio space ruins, actors and such.
+/obj/effect/mob_spawn/ghost_role/human/actor /// Overrides the /TG/ actor pod
+	name = "Actor's cryogenics pod"
+	mob_species = null
+	quirks_enabled = TRUE
+	random_appearance = FALSE
+	loadout_enabled = TRUE
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/interdyne, 32)
+/obj/effect/mob_spawn/ghost_role/human/director
+	name = "Director's cryogenics pod"
+	mob_species = null
+	quirks_enabled = TRUE
+	random_appearance = FALSE
+	loadout_enabled = TRUE

@@ -13,8 +13,9 @@
  * * pressure_affected - Whether or not difference in pressure affects the sound (E.g. if you can hear in space).
  * * ignore_walls - Whether or not the sound can pass through walls.
  * * falloff_distance - Distance at which falloff begins. Sound is at peak volume (in regards to falloff) aslong as it is in this range.
+ * * volume_preference - Optional: Will be checked to modify the volume of the sound for each listener.
  */
-/proc/playsound(atom/source, soundin, vol as num, vary, extrarange as num, falloff_exponent = SOUND_FALLOFF_EXPONENT, frequency = null, channel = 0, pressure_affected = TRUE, ignore_walls = TRUE, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, use_reverb = TRUE)
+/proc/playsound(atom/source, soundin, vol as num, vary, extrarange as num, falloff_exponent = SOUND_FALLOFF_EXPONENT, frequency = null, channel = 0, pressure_affected = TRUE, ignore_walls = TRUE, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, use_reverb = TRUE, datum/preference/numeric/volume/volume_preference = null)
 	if(isarea(source))
 		CRASH("playsound(): source is an area")
 
@@ -37,6 +38,9 @@
 	var/sound/S = isdatum(soundin) ? soundin : sound(get_sfx(soundin))
 	var/maxdistance = SOUND_RANGE + extrarange
 	var/source_z = turf_source.z
+
+	if (falloff_distance >= maxdistance)
+		CRASH("playsound(): falloff_distance is equal to or higher than maxdistance! Bump up extrarange or reduce the falloff_distance.")
 
 	if(vary && !frequency)
 		frequency = get_rand_frequency() // skips us having to do it per-sound later. should just make this a macro tbh
@@ -69,7 +73,7 @@
 				listeners += listening_ghost
 
 	for(var/mob/listening_mob in listeners)//had nulls sneak in here, hence the typecheck
-		listening_mob.playsound_local(turf_source, soundin, vol, vary, frequency, falloff_exponent, channel, pressure_affected, S, maxdistance, falloff_distance, 1, use_reverb)
+		listening_mob.playsound_local(turf_source, soundin, vol, vary, frequency, falloff_exponent, channel, pressure_affected, S, maxdistance, falloff_distance, 1, use_reverb, volume_preference)
 
 	return listeners
 
@@ -91,8 +95,9 @@
  * * falloff_distance - Distance at which falloff begins. Sound is at peak volume (in regards to falloff) aslong as it is in this range.
  * * distance_multiplier - Default 1, multiplies the maximum distance of our sound
  * * use_reverb - bool default TRUE, determines if our sound has reverb
+ * * volume_preference - Optional: Will be checked to modify the volume of the sound.
  */
-/mob/proc/playsound_local(turf/turf_source, soundin, vol as num, vary, frequency, falloff_exponent = SOUND_FALLOFF_EXPONENT, channel = 0, pressure_affected = TRUE, sound/sound_to_use, max_distance, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, distance_multiplier = 1, use_reverb = TRUE)
+/mob/proc/playsound_local(turf/turf_source, soundin, vol as num, vary, frequency, falloff_exponent = SOUND_FALLOFF_EXPONENT, channel = 0, pressure_affected = TRUE, sound/sound_to_use, max_distance, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, distance_multiplier = 1, use_reverb = TRUE, datum/preference/numeric/volume/volume_preference = null)
 	if(!client || !can_hear())
 		return
 
@@ -163,20 +168,27 @@
 		if(!use_reverb || sound_to_use.environment == SOUND_ENVIRONMENT_NONE)
 			sound_to_use.echo ||= new /list(18)
 			sound_to_use.echo[3] = -1300 //Room setting, 0 means normal reverb // NOVA EDIT CHANGE - ORIGINAL: sound_to_use.echo[3] = -10000
-			sound_to_use.echo[4] = -1300 //RoomHF setting, 0 means normal reverb. //N OVA EDIT CHANGE - ORIGINAL: sound_to_use.echo[4] = -10000
+			sound_to_use.echo[4] = -1300 //RoomHF setting, 0 means normal reverb. // NOVA EDIT CHANGE - ORIGINAL: sound_to_use.echo[4] = -10000
+
+	// Apply user-specific volume modifier, if necessary
+	if(ispath(volume_preference) && client.prefs)
+		var/client_volume_modifier = client.prefs.read_preference(volume_preference)
+		sound_to_use.volume *= (client_volume_modifier / 100)
+		if(sound_to_use.volume < SOUND_AUDIBLE_VOLUME_MIN)
+			return
 
 	if(HAS_TRAIT(src, TRAIT_SOUND_DEBUGGED))
 		to_chat(src, span_admin("Max Range-[max_distance] Distance-[distance] Vol-[round(sound_to_use.volume, 0.01)] Sound-[sound_to_use.file]"))
 
 	SEND_SOUND(src, sound_to_use)
 
-/proc/sound_to_playing_players(soundin, volume = 100, vary = FALSE, frequency = 0, channel = 0, pressure_affected = FALSE, sound/S)
+/proc/sound_to_playing_players(soundin, volume = 100, vary = FALSE, frequency = 0, channel = 0, pressure_affected = FALSE, sound/S, datum/preference/numeric/volume/volume_preference = null)
 	if(!S)
 		S = sound(get_sfx(soundin))
 	for(var/m in GLOB.player_list)
 		if(ismob(m) && !isnewplayer(m))
 			var/mob/M = m
-			M.playsound_local(M, null, volume, vary, frequency, null, channel, pressure_affected, S)
+			M.playsound_local(M, null, volume, vary, frequency, null, channel, pressure_affected, S, volume_preference = volume_preference)
 
 /mob/proc/stop_sound_channel(chan)
 	SEND_SOUND(src, sound(null, repeat = 0, wait = 0, channel = chan))
