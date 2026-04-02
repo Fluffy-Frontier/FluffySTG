@@ -16,7 +16,7 @@
 
 		switch(tgui_alert(usr, "Give or Remove addictions?", "Addictions", list("Give", "Remove", "Cancel")))
 			if("Give")
-				var/chosen_addiction = input(usr, "Choose an addiction to add.", "Choose an addiction.") as null|anything in sort_list(SSaddiction.all_addictions, GLOBAL_PROC_REF(cmp_typepaths_asc))
+				var/chosen_addiction = input(usr, "Choose an addiction to add.", "Choose an addiction.") as null|anything in sort_list(GLOB.addictions, GLOBAL_PROC_REF(cmp_typepaths_asc))
 				var/addiction_points = input(usr, "Choose the amount to add.\nAt least 600 are required to obtain an addiction.", "Choose the amount.", MAX_ADDICTION_POINTS) as num|null
 				if(chosen_addiction && addiction_points)
 					mind.add_addiction_points(chosen_addiction, addiction_points)

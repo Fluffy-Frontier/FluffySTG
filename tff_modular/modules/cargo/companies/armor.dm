@@ -3,14 +3,14 @@
 // Переопределение для пакета HC surplus Voskhod-P space suit: добавляет проверку по лицензии оружия и помечает как контрабанду.
 /datum/supply_pack/companies/armor/hc_surplus/space_suit
 	access = ACCESS_WEAPONS
-	contraband = TRUE
+	order_flags = parent_type::order_flags | ORDER_CONTRABAND
 
 /datum/supply_pack/companies/modsuits/core/voskhod_autodoc_refill
-	contraband = TRUE
+	order_flags = parent_type::order_flags | ORDER_CONTRABAND
 	access = ACCESS_WEAPONS
 
 /datum/supply_pack/companies/modsuits/mods/voskhod_refit_kit
-	contraband = TRUE
+	order_flags = ORDER_GOODY | ORDER_CONTRABAND
 	access = ACCESS_WEAPONS
 
 /datum/supply_pack/companies/armor/sol_fed/hardened_vest

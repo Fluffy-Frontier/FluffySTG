@@ -10,6 +10,7 @@
 		"cargo": "cargo_ouroboros",
 		"whiteship": "whiteship_ouroboros"
 	},
+	"exclude_from_ci": true,
 	"traits": [
 		{
 			"Baseturf": "/turf/open/misc/asteroid/moon/airless",
@@ -24,5 +25,6 @@
 		"Captain": {
 			"special_charter": "asteroid field"
 		}
-	}
+	},
+	"bonus_weakpoints": 2
 }
