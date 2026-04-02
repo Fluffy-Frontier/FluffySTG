@@ -1,3 +1,5 @@
+// FLUFFY FRONTIER REMOVAL START - Nerf revert
+/*
 /datum/action/cooldown/spell/jaunt/space_crawl
 	/// Have we successfully casted a jaunt? Used for triggering a cooldown when we exit Space Phase.
 	var/successful_jaunt = FALSE
@@ -30,3 +32,5 @@
 		last_warning = world.time
 		to_chat(parent, span_warning("You can only traverse space or low-pressure outdoors areas while space crawling!"))
 	return COMPONENT_BLOCK_PHASED_MOVE
+*/
+// FLUFFY FRONTIER REMOVAL END
