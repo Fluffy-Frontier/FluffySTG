@@ -221,6 +221,7 @@ export const DmTarget = new Juke.Target({
     'sound/**',
     'tgui/public/tgui.html',
     "modular_nova/**", ///NOVA EDIT ADDITION - Making the CBT work
+    'tff_modular/**', // FLUFFY FRONTIER ADDITION
     `${DME_NAME}.dme`,
     NamedVersionFile,
   ],
