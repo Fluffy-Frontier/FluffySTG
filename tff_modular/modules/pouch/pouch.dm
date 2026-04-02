@@ -14,7 +14,7 @@
 		/obj/item/stack/medical,
 		/obj/item/flashlight/pen,
 		/obj/item/reagent_containers/blood,
-		/obj/item/stack/sticky_tape,
+		/obj/item/stack/medical/wrap/sticky_tape,
 	)
 	var/static/list/pouch_unholdables = list(
 		/obj/item/reagent_containers/cup,
@@ -65,7 +65,7 @@
 		/obj/item/cautery,
 		/obj/item/hemostat,
 		/obj/item/reagent_containers/blood,
-		/obj/item/stack/sticky_tape,
+		/obj/item/stack/medical/wrap/sticky_tape,
 		/obj/item/reagent_containers/cup,
 		/obj/item/storage/wallet,
 	)
@@ -92,7 +92,7 @@
 		/obj/item/stack/medical,
 		/obj/item/flashlight/pen,
 		/obj/item/reagent_containers/blood,
-		/obj/item/stack/sticky_tape,
+		/obj/item/stack/medical/wrap/sticky_tape,
 	)
 	var/static/list/pouch_unholdables = list(
 		/obj/item/reagent_containers/spray/pepper,
@@ -131,7 +131,7 @@
 		/obj/item/circular_saw,
 		/obj/item/surgical_drapes,
 		/obj/item/reagent_containers/blood,
-		/obj/item/stack/sticky_tape,
+		/obj/item/stack/medical/wrap/sticky_tape,
 	)
 	var/static/list/pouch_unholdables = list(
 		/obj/item/reagent_containers/spray/pepper,

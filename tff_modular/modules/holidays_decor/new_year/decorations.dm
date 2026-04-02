@@ -75,29 +75,15 @@
 	name = "tinsel"
 	desc = "Soft tinsel, pleasant to the touch. Ahhh..."
 	icon_state = "tinsel_green"
-	unique_reskin = list(
-		"Green" = "tinsel_green",
-		"Red" = "tinsel_red",
-		"Yellow" = "tinsel_yellow",
-		"White" = "tinsel_white",
-	)
 
 /obj/item/decoration/new_year/tinsel/green
 	icon_state = "tinsel_green"
-	unique_reskin = list()
-
 /obj/item/decoration/new_year/tinsel/red
 	icon_state = "tinsel_red"
-	unique_reskin = list()
-
 /obj/item/decoration/new_year/tinsel/yellow
 	icon_state = "tinsel_yellow"
-	unique_reskin = list()
-
 /obj/item/decoration/new_year/tinsel/white
 	icon_state = "tinsel_white"
-	unique_reskin = list()
-
 // Snowflakes
 /obj/item/decoration/new_year/snowflake
 	name = "snowflake"
