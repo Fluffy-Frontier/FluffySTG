@@ -658,14 +658,12 @@
 				return TRUE
 
 			var/current_length = get_total_length()
-			/* // FLUFFY FRONTIER EDIT START - этот же кусок кода теперь чуть ниже
 			var/new_length = current_length + this_input_length
 
 			// tgui should prevent this outcome.
 			if(new_length > MAX_PAPER_LENGTH)
 				log_paper("[key_name(user)] tried to write to [name] when it would exceed the length limit by [new_length - MAX_PAPER_LENGTH] characters: \"[paper_input]\"")
 				return TRUE
-			*/ // FLUFFY FRONTIER EDIT END
 
 			// Safe to assume there are writing implement details as user.can_write(...) fails with an invalid writing implement.
 			var/writing_implement_data = holding.get_writing_implement_details()
@@ -702,11 +700,7 @@
 					var/field_text = "\[[jointext(new/list(field[2]), "_")]\]" // Creates a string like `[___]`, where `_` is repeats field[2] times
 					paper_input = replacetext_char(paper_input, field[1], field_text)
 
-			this_input_length = length_char(paper_input)
-			var/new_length = current_length + this_input_length
-
-			// tgui should prevent this outcome.
-			if(new_length > MAX_PAPER_LENGTH)
+			if(get_total_length() + length_char(paper_input) > MAX_PAPER_LENGTH)
 				log_paper("[key_name(user)] tried to write to [name] when it would exceed the length limit by [new_length - MAX_PAPER_LENGTH] characters: \"[paper_input]\"")
 				return TRUE
 			// FLUFFY FRONTIER ADDITION END
