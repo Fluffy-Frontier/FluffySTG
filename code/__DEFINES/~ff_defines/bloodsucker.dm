@@ -26,6 +26,7 @@
 #define FACTION_VAMPIRE "Vampire"
 #define ROLE_VAMPIRE "Vampire"
 #define ROLE_VAMPIRIC_ACCIDENT "Vampiric Accident"
+#define ROLE_VAMPIRE_LATEJOIN "Vampire LateJoin"
 #define span_awe(str) ("<span class='awe'>" + str + "</span>")
 /// Uncomment this to enable testing of Vampire features (such as vassalizing people with a mind instead of a client).
 //#define VAMPIRE_TESTING

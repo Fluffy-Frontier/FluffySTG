@@ -30,3 +30,14 @@
 /datum/dynamic_ruleset/midround/from_living/vampire/assign_role(datum/mind/candidate)
 	var/datum/antagonist/vampire/suck_datum = candidate.add_antag_datum(/datum/antagonist/vampire)
 	suck_datum.rank_up(rand(3, 4))
+
+/datum/dynamic_ruleset/latejoin/vampire
+	name = "Vampiric Accident"
+	config_tag = "Vampiric LateJoin"
+	preview_antag_datum = /datum/antagonist/vampire
+	pref_flag = ROLE_VAMPIRE_LATEJOIN
+	midround_type = LIGHT_MIDROUND
+	weight = 10
+	repeatable = TRUE
+	max_antag_cap = 4
+	min_pop = 15
