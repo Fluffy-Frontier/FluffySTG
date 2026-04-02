@@ -849,12 +849,12 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	return
 
 /mob/dead/observer/proc/show_data_huds()
-	PRIVATE_PROC(TRUE)
+	// PRIVATE_PROC(TRUE) // FLUFFY FRONTIER EDIT REMOVAL - Для модульного добавления худов (tff_modular\modules\custom_huds\code\huds_for_ghosts.dm)
 	ghost_hud_flags |= GHOST_DATA_HUDS // only for safety, it should be set already.
 	add_traits(observer_hud_traits, REF(src))
 
 /mob/dead/observer/proc/remove_data_huds()
-	PRIVATE_PROC(TRUE)
+	// PRIVATE_PROC(TRUE) // FLUFFY FRONTIER EDIT REMOVAL - Для модульного добавления худов (tff_modular\modules\custom_huds\code\huds_for_ghosts.dm)
 	ghost_hud_flags &= ~GHOST_DATA_HUDS // only for safety, it should be unset already.
 	remove_traits(observer_hud_traits, REF(src))
 

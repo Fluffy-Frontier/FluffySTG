@@ -26,28 +26,22 @@
 	var/resting_mult = 8
 
 /obj/item/organ/alien/plasmavessel/tgmc/on_life(seconds_per_tick, times_fired)
+	. = ..()
+
 	var/delta_time = DELTA_WORLD_TIME(SSmobs)
-	//Instantly healing to max health in a single tick would be silly. If it takes 8 seconds to fire, then something's fucked.
 	var/delta_time_capped = min(delta_time, 8)
-	//If there are alien weeds on the ground then heal if needed or give some plasma
 	if(locate(/obj/structure/alien/weeds) in owner.loc)
-		if(owner.health >= owner.maxHealth)
-			owner.adjustPlasma(plasma_rate * delta_time)
-		else
+		if(!(owner.health >= owner.maxHealth))
 			var/heal_amt = heal_rate
 			if(!isalien(owner))
 				heal_amt *= 0.2
 			if(owner.resting)
-				heal_amt *= resting_mult
-			heal_amt *= delta_time_capped
+				heal_amt *= resting_mult - 1
 
-			owner.adjustPlasma(0.5 * plasma_rate * delta_time_capped)
-			owner.adjust_brute_loss(-heal_amt)
-			owner.adjust_fire_loss(-heal_amt)
-			owner.adjust_oxy_loss(-heal_amt)
+			owner.adjust_brute_loss(-heal_amt * delta_time_capped)
+			owner.adjust_fire_loss(-heal_amt * delta_time_capped)
+			owner.adjust_oxy_loss(-heal_amt * delta_time_capped)
 			heal_owner_organs(heal_amt / 20)
-	else
-		owner.adjustPlasma(0.1 * plasma_rate * delta_time)
 
 /obj/item/organ/alien/plasmavessel/tgmc/proc/heal_owner_organs(heal_amount)
 	var/list/slots_to_heal = list(ORGAN_SLOT_BRAIN, ORGAN_SLOT_EYES, ORGAN_SLOT_LIVER, ORGAN_SLOT_EARS, ORGAN_SLOT_STOMACH)
