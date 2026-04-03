@@ -32,6 +32,7 @@
 	desc = "A large clump of gears that somehow help protect a mech against all forms of attack."
 	color = rgb(190, 135, 0)
 	icon_state = "mecha_abooster_proj"
+	iconstate_name = "range"
 	armor_mod = /datum/armor/mecha_equipment_mixed_boost
 
 /datum/armor/mecha_equipment_mixed_boost
@@ -57,7 +58,7 @@
 		return
 
 	new /obj/effect/temp_visual/steam(current_turf)
-	var/turf/throw_at_turf = get_turf_in_angle(get_angle(src, newloc), current_turf, 7)
+	var/turf/throw_at_turf = get_turf_in_angle(Angle, current_turf, 7)
 	//basic tracker vars, anti lag to make sure we dont try and throw 100 things at the same time
 	var/thrown_items = 0
 	var/thrown_mobs = 0

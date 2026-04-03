@@ -6,6 +6,7 @@
 	baseturfs = /turf/open/indestructible/reebe_void
 	planetary_atmos = TRUE
 	bullet_bounce_sound = null //forever falling
+	tiled_dirt = FALSE
 	init_air = FALSE
 	///is this turf walkable
 	var/walkable = FALSE

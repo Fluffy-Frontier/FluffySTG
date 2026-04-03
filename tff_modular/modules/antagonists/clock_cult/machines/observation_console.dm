@@ -45,7 +45,7 @@
 	///are we warping down
 	var/warping = FALSE
 	///what area types are we blocked from warping to
-	var/static/list/blocked_areas = typecacheof(list(/area/station/service/chapel, /area/station/ai))
+	var/static/list/blocked_areas = typecacheof(list(/area/station/service/chapel, /area/station/ai_monitored))
 
 /datum/action/innate/clockcult/warp/IsAvailable(feedback)
 	if(!IS_CLOCK(owner) || HAS_TRAIT(owner, TRAIT_INCAPACITATED))
@@ -84,8 +84,7 @@
 	build_all_button_icons(UPDATE_BUTTON_ICON)
 	if(do_after(cam_user, 5 SECONDS, target = target_loc, extra_checks = CALLBACK(src, PROC_REF(warping_check))))
 		try_servant_warp(cam_user, target_loc)
-		var/obj/machinery/creator = cam.origin_ref
-		creator.remove_eye_control()
+		astype(owner.remote_control, /mob/eye/camera/remote)?.origin_ref.remove_eye_control(owner)
 
 	button_icon_state = "warp_down"
 	build_all_button_icons(UPDATE_BUTTON_ICON)

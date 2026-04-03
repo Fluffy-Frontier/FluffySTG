@@ -666,8 +666,8 @@
 			if(cell.percent() > APC_CHANNEL_ALARM_TRESHOLD)
 				alarm_manager.clear_alarm(ALARM_POWER)
 
-		// TFF REMOVAL START:
-		/*
+		// TFF EDIT START:
+		/* ORIGINAL:
 		// NOVA EDIT ADDITION START - CLOCK CULT
 		if(integration_cog)
 			var/power_delta = clamp(cell.charge - 50, 0, 50)
@@ -679,7 +679,10 @@
 				cell.charge = 0
 		// NOVA EDIT ADDITION END
 		*/
-		// TFF REMOVAL END
+		if(integration_cog && SSthe_ark.clock_power < SSthe_ark.max_clock_power)
+			var/power_delta = clamp(cell.charge - 70, 350, 700)
+			SSthe_ark.adjust_clock_power(power_delta / 70, TRUE)
+		// TFF EDIT END
 	else // no cell, switch everything off
 		charging = APC_NOT_CHARGING
 		equipment = autoset(equipment, AUTOSET_FORCE_OFF)

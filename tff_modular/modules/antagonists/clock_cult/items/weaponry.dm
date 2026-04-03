@@ -266,8 +266,8 @@
 	desc = "A bow made from brass and other components that you can't quite understand. It glows with a deep energy and frabricates arrows by itself. \
 			It's bolts destabilize hit structures, making them lose additional integrity."
 	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/clockwork_weapons.dmi'
-	lefthand_file = 'tff_modular/modules/antagonists/clock_cult/icons/mob/clockwork_lefthand.dmi'
-	righthand_file = 'tff_modular/modules/antagonists/clock_cult/icons/mob/clockwork_righthand.dmi'
+	lefthand_file = 'tff_modular/modules/antagonists/clock_cult/icons/obj/clockwork_lefthand.dmi'
+	righthand_file = 'tff_modular/modules/antagonists/clock_cult/icons/obj/clockwork_righthand.dmi'
 	icon_state = "bow_clockwork_unchambered_undrawn"
 	inhand_icon_state = "clockwork_bow"
 	base_icon_state = "bow_clockwork"

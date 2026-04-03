@@ -46,6 +46,10 @@
 		QDEL_NULL(light_effect)
 
 /obj/structure/destructible/clockwork/gear_base/stargazer/attackby(obj/item/attacking_item, mob/living/user, params)
+	if(user.istate)
+		. = ..()
+		return
+
 	if(!anchored)
 		to_chat(user, span_brass("You need to anchor \the [src] to the floor first."))
 		return

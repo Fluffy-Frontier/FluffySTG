@@ -51,7 +51,7 @@
 	if(!use_energy(SHOOT_POWER_USE))
 		return
 
-	playsound(src, 'tff_modular/modules/antagonists/clock_cult/sound/ocularwarden_target.ogg', 60, TRUE)
+	playsound(src, 'sound/machines/clockcult/ocularwarden_target.ogg', 60, TRUE)
 
 	var/mob/living/target = pick(valid_targets)
 	if(!target)
@@ -66,7 +66,7 @@
 	new /obj/effect/temp_visual/ratvar/ocular_warden(get_turf(target))
 	new /obj/effect/temp_visual/ratvar/ocular_warden(get_turf(src))
 
-	playsound(target, 'tff_modular/modules/antagonists/clock_cult/sound/ocularwarden_dot1.ogg', 60, TRUE)
+	playsound(target, 'sound/machines/clockcult/ocularwarden_dot1.ogg', 60, TRUE)
 
 	COOLDOWN_START(src, fire_cooldown, FIRE_DELAY)
 

@@ -26,7 +26,7 @@
 	COOLDOWN_DECLARE(recharge)
 
 /obj/item/turf_demolisher/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
-	if(!isturf(interacting_with))
+	if(!isturf(interacting_with) || (user.istate & ISTATE_HARM))
 		return NONE
 
 	if(!check_breakble(interacting_with, user))
@@ -52,7 +52,7 @@
 	if(!do_after(user, break_time, attacked_turf))
 		return FALSE
 
-	playsound(src, 'sound/items/weapons/sonic_jackhammer.ogg', 80, channel = CHANNEL_SOUND_EFFECTS, mixer_channel = CHANNEL_SOUND_EFFECTS)
+	playsound(src, 'sound/weapons/sonic_jackhammer.ogg', 80, channel = CHANNEL_SOUND_EFFECTS, mixer_channel = CHANNEL_SOUND_EFFECTS)
 	if(iswallturf(attacked_turf))
 		var/turf/closed/wall/wall_turf = attacked_turf
 		wall_turf.dismantle_wall(devastate)

@@ -146,8 +146,5 @@
 	elevating_to_configuration_key = /datum/config_entry/string/alert_lambda
 	shuttle_call_time_mod = 0.25 //This is as bad as the nuke going off. Everyone is fucked.
 	disables_mail = TRUE
-
-/datum/config_entry/string/alert_lambda
-	default = "Central Command has detected a large spike of dimensional energy, consistent with the summoning of \[REDACTED\] entities. You are advised to make what little time you have left worthwhile; as no additional assets will be dispatched to %STATION_NAME% at this time."
 // TFF ADDITION END
 #undef ALERT_COEFF_NOVA
