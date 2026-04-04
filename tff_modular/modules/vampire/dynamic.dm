@@ -36,7 +36,6 @@
 	config_tag = "Vampiric LateJoin"
 	preview_antag_datum = /datum/antagonist/vampire
 	pref_flag = ROLE_VAMPIRE_LATEJOIN
-	midround_type = LIGHT_MIDROUND
 	weight = 10
 	repeatable = TRUE
 	max_antag_cap = 4
