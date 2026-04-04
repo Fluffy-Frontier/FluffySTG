@@ -1,9 +1,5 @@
-GLOBAL_LIST_INIT(additional_observer_huds, list(
-	TRAIT_XENO_HUD,
-))
-GLOBAL_LIST_INIT(additional_combo_huds, list(
-	TRAIT_XENO_HUD,
-))
+// Включает и выключает дополнительые худы у гостов и комбохуда
+// Сами дополнительные худы указываются в 'code\__DEFINES\~ff_defines\_globalvars\lists\huds.dm'
 
 /client/enable_combo_hud()
 	if(combo_hud_enabled)

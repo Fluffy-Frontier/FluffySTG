@@ -20,10 +20,12 @@ Additions:
 - code\modules\mob\living\carbon\alien\special\alien_embryo.dm: `/obj/item/organ/body_egg/alien_embryo` && `/obj/item/organ/body_egg/alien_embryo/proc/on_poll_concluded()`
 - code\modules\mob\living\carbon\alien\special\facehugger.dm: `/obj/item/clothing/mask/facehugger` && `/obj/item/clothing/mask/facehugger/proc/Impregnate()`
 - code/modules/vehicles/mecha/\_mecha.dm: `/obj/vehicle/sealed/mecha/proc/melee_attack_effect()`
+- code/datums/hud.dm: `GLOBAL_LIST_INIT(trait_to_hud)` && `GLOBAL_ALIST_INIT(huds)`
+- code/\_\_DEFINES/atom_hud.dm: `XENO_HUD` && `XENOPLASMA_HUD` && `DATA_HUD_XENO`
 
 ## Defines
 
-IN: code/\_\_DEFINES/~ff_defines/\_globalvars/traits/declarations.dm
+IN: code/\_\_DEFINES/~ff_defines/traits/declarations.dm
 
 Traits:
 
@@ -31,10 +33,17 @@ Traits:
 - `TRAIT_XENO_ABILITY_GIVEN`
 - `TRAIT_XENO_HEAL_AURA`
 - `TRAIT_XENO_FORTIFY`
+- `TRAIT_XENO_HUD`
 
 Global Vars:
 
 - `xeno_rounymode`
+
+IN: code/\_\_DEFINES/~ff_defines/signals.dm
+
+Signals:
+
+- `COMSIG_XENO_PLASMA_ADJUSTED`
 
 ## Helpers
 
