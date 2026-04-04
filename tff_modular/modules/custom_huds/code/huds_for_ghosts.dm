@@ -1,5 +1,14 @@
-// Включает и выключает дополнительые худы у гостов и комбохуда
-// Сами дополнительные худы указываются в 'code\__DEFINES\~ff_defines\_globalvars\lists\huds.dm'
+// Этот код включает и выключает дополнительые худы у гостов и у комбохуда
+
+/// Дополнительные худы, которые должны видеть обзерверы
+GLOBAL_LIST_INIT(additional_observer_huds, list(
+	TRAIT_XENO_HUD,
+))
+
+/// Дополнительные худы, которые должен показывать комбохуд
+GLOBAL_LIST_INIT(additional_combo_huds, list(
+	TRAIT_XENO_HUD,
+))
 
 /client/enable_combo_hud()
 	if(combo_hud_enabled)
