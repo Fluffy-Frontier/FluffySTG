@@ -2,7 +2,7 @@
 // Названия типов раунда
 /// Обычная зеленая смена, экста
 #define ROUND_LIGHT_SHIFT_STRING "Green Shift"
-/// Обычная смена, 50% между Yellow Star и Red Star
+/// Обычная смена (Red Star)
 #define ROUND_MID_SHIFT_STRING "Blue Shift"
 /// Black Star
 #define ROUND_HEAVY_SHIFT_STRING "Red Shift"
