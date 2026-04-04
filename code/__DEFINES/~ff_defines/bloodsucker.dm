@@ -27,6 +27,20 @@
 #define ROLE_VAMPIRE "Vampire"
 #define ROLE_VAMPIRIC_ACCIDENT "Vampiric Accident"
 #define ROLE_VAMPIRE_LATEJOIN "Vampire LateJoin"
+#define BLOODSUCKER_RESTRICTED_SPECIES list( \
+	/datum/species/synthetic, \
+	/datum/species/plasmaman, \
+	/datum/species/shadow/nightmare, \
+	/datum/species/abductor, \
+	/datum/species/android, \
+	/datum/species/golem, \
+	/datum/species/shadow, \
+	/datum/species/skeleton, \
+	/datum/species/zombie, \
+	/datum/species/mutant, \
+	/datum/species/dullahan, \
+	/datum/species/hemophage \
+)
 #define span_awe(str) ("<span class='awe'>" + str + "</span>")
 /// Uncomment this to enable testing of Vampire features (such as vassalizing people with a mind instead of a client).
 //#define VAMPIRE_TESTING

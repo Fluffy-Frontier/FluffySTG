@@ -12,7 +12,7 @@
 
 	hijack_speed = 0
 
-	show_to_ghosts = TRUE
+	show_to_ghosts = FALSE
 
 	/// How much blood we have, starting off at default blood levels.
 	/// We don't use our actual body's temperature because some species don't have blood and we don't want to exclude them

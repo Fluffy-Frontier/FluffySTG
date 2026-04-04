@@ -7,6 +7,11 @@
 	max_antag_cap = 4
 	min_pop = 15
 
+/datum/dynamic_ruleset/roundstart/vampire/is_valid_candidate(mob/candidate, client/candidate_client)
+	if(is_species(candidate, BLOODSUCKER_RESTRICTED_SPECIES))
+		return FALSE
+	return ..()
+
 /datum/dynamic_ruleset/roundstart/vampire/assign_role(datum/mind/candidate)
 	var/datum/antagonist/vampire/suck_datum = candidate.add_antag_datum(/datum/antagonist/vampire)
 	suck_datum.rank_up(rand(3, 4))
@@ -23,7 +28,7 @@
 	min_pop = 15
 
 /datum/dynamic_ruleset/midround/from_living/vampire/is_valid_candidate(mob/candidate, client/candidate_client)
-	if(!is_station_level(candidate.z))
+	if(is_species(candidate, BLOODSUCKER_RESTRICTED_SPECIES))
 		return FALSE
 	return ..()
 
@@ -40,3 +45,8 @@
 	repeatable = TRUE
 	max_antag_cap = 4
 	min_pop = 15
+
+/datum/dynamic_ruleset/latejoin/vampire/is_valid_candidate(mob/candidate, client/candidate_client)
+	if(is_species(candidate, BLOODSUCKER_RESTRICTED_SPECIES))
+		return FALSE
+	return ..()
