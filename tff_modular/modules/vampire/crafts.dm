@@ -55,7 +55,6 @@
 	category = CAT_VAMPIRE
 	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY | CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND | CRAFT_MUST_BE_LEARNED
 
-/*
 /datum/crafting_recipe/bloodthrone
 	name = "Blood Throne"
 	result = /obj/structure/vampire/bloodthrone
@@ -68,7 +67,6 @@
 
 	category = CAT_VAMPIRE
 	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY | CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND | CRAFT_MUST_BE_LEARNED
-*/
 
 /datum/crafting_recipe/meatcoffin
 	name = "Meat Coffin"
