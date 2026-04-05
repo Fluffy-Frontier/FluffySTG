@@ -190,7 +190,7 @@
 			apply_damage(damage, BRUTE, affecting, run_armor_check(affecting, MELEE))
 		return TRUE
 
-// FLUFFY FRONTIER EDIT BEGIN: TGMC_XENOS - moved to: tff_modular\modules\tgmc_xenos\code\human_defense.dm
+// FLUFFY FRONTIER EDIT BEGIN: TGMC_XENOS - moved to: tff_modular\modules\tgmc_xenos\code\defense\human_defense.dm
 /*
 /mob/living/carbon/human/attack_alien(mob/living/carbon/alien/adult/user, list/modifiers)
 	. = ..()
@@ -512,7 +512,7 @@
 			emote("scream")
 			set_facial_hairstyle("Shaved", update = FALSE)
 			set_hairstyle("Bald") //This calls update_body_parts()
-			ADD_TRAIT(src, TRAIT_DISFIGURED, TRAIT_GENERIC)
+			ADD_TRAIT(affecting, TRAIT_DISFIGURED, TRAIT_GENERIC)
 
 		apply_damage(acidity * damage_mod, BRUTE, affecting)
 		apply_damage(acidity * damage_mod * 2, BURN, affecting)
@@ -572,11 +572,6 @@
 		if(bodypart_report)
 			combined_msg += "[span_notice("&rdsh;")] [bodypart_report]"
 
-		//NOVA EDIT ADDITION BEGIN - MEDICAL
-		if(body_part.current_gauze)
-			combined_msg += "\t [span_notice("Your [body_part.name] is [body_part.current_gauze.get_gauze_usage_prefix()] with <a href='byond://?src=[REF(body_part.current_gauze)];remove=1'>[body_part.current_gauze.get_gauze_description()]</a>.")]"
-		//NOVA EDIT END
-
 	for(var/t in missing)
 		combined_msg += span_boldannounce("&rdsh; Your [parse_zone(t)] is missing!")
 
@@ -589,7 +584,7 @@
 		if(40 to INFINITY)
 			combined_msg += span_danger("You feel very unwell!")
 
-	var/cached_blood_volume = get_blood_volume(apply_modifiers = TRUE)
+	var/cached_blood_volume = HAS_TRAIT(src, TRAIT_NOBLOOD) ? BLOOD_VOLUME_NORMAL : get_blood_volume(apply_modifiers = TRUE)
 	var/oxy = get_oxy_loss() + (losebreath * 4) + (cached_blood_volume < BLOOD_VOLUME_NORMAL ? ((BLOOD_VOLUME_NORMAL - cached_blood_volume) * 0.1) : 0) + (HAS_TRAIT(src, TRAIT_SELF_AWARE) ? 0 : (rand(-3, 0) * 5))
 	switch(oxy)
 		if(10 to 20)

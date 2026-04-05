@@ -3,8 +3,8 @@
 	result = /obj/item/decoration/halloween/pumpkin
 	time = 6 SECONDS
 	tool_behaviors = list(TOOL_WIRECUTTER)
-	reqs = list(/obj/item/paper = 4, /obj/item/stack/sticky_tape = 2)
-	requirements_mats_blacklist = list(/obj/item/stack/sticky_tape)
+	reqs = list(/obj/item/paper = 4, /obj/item/stack/medical/wrap/sticky_tape = 2)
+	requirements_mats_blacklist = list(/obj/item/stack/medical/wrap/sticky_tape)
 	category = CAT_ENTERTAINMENT
 
 /datum/crafting_recipe/papier_cauldron
@@ -12,8 +12,8 @@
 	result = /obj/item/decoration/halloween/cauldron
 	time = 6 SECONDS
 	tool_behaviors = list(TOOL_WIRECUTTER)
-	reqs = list(/obj/item/paper = 4, /obj/item/stack/sticky_tape = 4)
-	requirements_mats_blacklist = list(/obj/item/stack/sticky_tape)
+	reqs = list(/obj/item/paper = 4, /obj/item/stack/medical/wrap/sticky_tape = 4)
+	requirements_mats_blacklist = list(/obj/item/stack/medical/wrap/sticky_tape)
 	category = CAT_ENTERTAINMENT
 
 /datum/crafting_recipe/papier_skeleton
@@ -21,8 +21,8 @@
 	result = /obj/item/decoration/halloween/skeleton
 	time = 6 SECONDS
 	tool_behaviors = list(TOOL_WIRECUTTER)
-	reqs = list(/obj/item/paper = 4, /obj/item/stack/sticky_tape = 2)
-	requirements_mats_blacklist = list(/obj/item/stack/sticky_tape)
+	reqs = list(/obj/item/paper = 4, /obj/item/stack/medical/wrap/sticky_tape = 2)
+	requirements_mats_blacklist = list(/obj/item/stack/medical/wrap/sticky_tape)
 	category = CAT_ENTERTAINMENT
 
 /datum/crafting_recipe/papier_skull
@@ -30,8 +30,8 @@
 	result = /obj/item/decoration/halloween/skull
 	time = 6 SECONDS
 	tool_behaviors = list(TOOL_WIRECUTTER)
-	reqs = list(/obj/item/paper = 4, /obj/item/stack/sticky_tape = 3)
-	requirements_mats_blacklist = list(/obj/item/stack/sticky_tape)
+	reqs = list(/obj/item/paper = 4, /obj/item/stack/medical/wrap/sticky_tape = 3)
+	requirements_mats_blacklist = list(/obj/item/stack/medical/wrap/sticky_tape)
 	category = CAT_ENTERTAINMENT
 
 /datum/crafting_recipe/papier_ghost
@@ -39,8 +39,8 @@
 	result = /obj/item/decoration/halloween/ghost
 	time = 6 SECONDS
 	tool_behaviors = list(TOOL_WIRECUTTER)
-	reqs = list(/obj/item/paper = 4, /obj/item/stack/sticky_tape = 1)
-	requirements_mats_blacklist = list(/obj/item/stack/sticky_tape)
+	reqs = list(/obj/item/paper = 4, /obj/item/stack/medical/wrap/sticky_tape = 1)
+	requirements_mats_blacklist = list(/obj/item/stack/medical/wrap/sticky_tape)
 	category = CAT_ENTERTAINMENT
 
 /datum/crafting_recipe/papier_spider
@@ -48,8 +48,8 @@
 	result = /obj/item/decoration/halloween/spider
 	time = 6 SECONDS
 	tool_behaviors = list(TOOL_WIRECUTTER)
-	reqs = list(/obj/item/paper = 4, /obj/item/stack/sticky_tape = 5)
-	requirements_mats_blacklist = list(/obj/item/stack/sticky_tape)
+	reqs = list(/obj/item/paper = 4, /obj/item/stack/medical/wrap/sticky_tape = 5)
+	requirements_mats_blacklist = list(/obj/item/stack/medical/wrap/sticky_tape)
 	category = CAT_ENTERTAINMENT
 
 /datum/crafting_recipe/tinsel_halloween

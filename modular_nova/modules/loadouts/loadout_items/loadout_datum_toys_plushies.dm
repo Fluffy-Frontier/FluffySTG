@@ -129,6 +129,18 @@
 	name = "White Cat Plushie"
 	item_path = /obj/item/toy/plush/nova/cat/white
 
+/datum/loadout_item/toys/plush/fkinbnuuy
+	name = "Heckin Bnuuy"
+	item_path = /obj/item/toy/plush/nova/fkinbnuuy
+
+/datum/loadout_item/toys/plush/funniyellowrock
+	name = "Squishy Yellow Rock"
+	item_path = /obj/item/toy/plush/nova/funniyellowrock
+
+/datum/loadout_item/toys/plush/expie
+	name = "Experiment Plushie"
+	item_path = /obj/item/toy/plush/nova/expie
+
 /*
 *	DONATOR
 */
@@ -260,6 +272,11 @@
 /datum/loadout_item/toys/plush/plush_janiborg
 	name = "Friendly Janiborg Plush"
 	item_path = /obj/item/toy/plush/nova/donator/plush_janiborg
+
+/datum/loadout_item/toys/plush/fushi
+	name = "Fluffy Dragon"
+	item_path = /obj/item/toy/plush/nova/fushi
+
 
 /* // FLUFFY FRONTIER REMOVAL START
 /*
