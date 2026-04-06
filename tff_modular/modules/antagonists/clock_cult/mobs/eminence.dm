@@ -64,7 +64,19 @@ GLOBAL_DATUM(current_eminence, /mob/living/eminence) //set to the current eminen
 	. = ..()
 	clicked_on.eminence_act(src)
 
-/mob/living/eminence/say(message, bubble_type, list/spans, sanitize, datum/language/language, ignore_spam, forced, filterproof, message_range, datum/saymode/saymode)
+/mob/living/eminence/say(
+	message,
+	bubble_type,
+	list/spans = list(),
+	sanitize = TRUE,
+	datum/language/language,
+	ignore_spam = FALSE,
+	forced,
+	filterproof = FALSE,
+	message_range = 7,
+	datum/saymode/saymode,
+	list/message_mods = list(),
+)
 	if(!message)
 		return
 
@@ -108,7 +120,7 @@ GLOBAL_DATUM(current_eminence, /mob/living/eminence) //set to the current eminen
 	z_move_flags |= ZMOVE_IGNORE_OBSTACLES
 	return ..()
 
-/mob/living/eminence/UnarmedAttack(atom/attack_target, proximity_flag, list/modifiers)
+/mob/living/eminence/UnarmedAttack(atom/attack_target, proximity_flag)
 	return FALSE
 
 /mob/living/eminence/dust(just_ash, drop_items, force)

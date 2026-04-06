@@ -41,7 +41,7 @@
 	if(on_reebe(src))
 		resistance_flags |= INDESTRUCTIBLE
 
-/obj/structure/lattice/catwalk/clockwork/deconstruct()
+/obj/structure/lattice/catwalk/clockwork/Destroy(force)
 	if(resistance_flags & INDESTRUCTIBLE)
 		return
 	return ..()

@@ -29,11 +29,8 @@
 	. = ..()
 	teleport(bumper)
 
-/obj/effect/portal/clockcult/teleport(atom/movable/teleported_atom, pull_loop = FALSE)
+/obj/effect/portal/clockcult/teleport(atom/movable/M, force = FALSE)
 	if(isliving(teleported_atom))
-		if(pull_loop)
-			return
-
 		to_chat(teleported_atom, span_notice("You begin climbing into the rift."))
 		if(!do_after(teleported_atom, 5 SECONDS, src))
 			return

@@ -45,7 +45,7 @@
 	SSthe_ark.cogscarabs -= src
 	return ..()
 
-/mob/living/basic/drone/cogscarab/transferItemToLoc(obj/item/item, newloc, force, silent) //ideally I would handle this on attacking instead
+/mob/living/basic/drone/cogscarab/transferItemToLoc(obj/item/item, newloc, force, silent, animated) //ideally I would handle this on attacking instead
 	return (force || (item.force <= CLOCK_DRONE_MAX_ITEM_FORCE)) && ..()
 
 /mob/living/basic/drone/cogscarab/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change)
