@@ -69,7 +69,7 @@
 
 /datum/antagonist/clock_cultist/apply_innate_effects(mob/living/mob_override)
 	. = ..()
-	var/mob/living/current = owner.current
+	var/mob/living/current = owner.current || mob_override
 	current.faction |= FACTION_CLOCK
 	current.grant_language(/datum/language/ratvar, source = LANGUAGE_CULTIST)
 	current.throw_alert("clockinfo", /atom/movable/screen/alert/clockwork/clocksense)
