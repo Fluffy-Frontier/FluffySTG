@@ -96,6 +96,7 @@ GLOBAL_VAR_INIT(ratvar_risen, FALSE)
 			SSshuttle.clearHostileEnvironment(src)
 			SSsecurity_level.set_level(SEC_LEVEL_RED)
 		qdel(src)
+	return ..()
 
 /obj/structure/destructible/clockwork/the_ark/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir, armour_penetration)
 	if(current_state == ARK_STATE_FINAL)
