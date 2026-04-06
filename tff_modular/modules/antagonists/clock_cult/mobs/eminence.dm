@@ -120,7 +120,7 @@ GLOBAL_DATUM(current_eminence, /mob/living/eminence) //set to the current eminen
 	z_move_flags |= ZMOVE_IGNORE_OBSTACLES
 	return ..()
 
-/mob/living/eminence/UnarmedAttack(atom/attack_target, proximity_flag)
+/mob/living/eminence/UnarmedAttack(atom/attack_target, proximity_flag, list/modifiers)
 	return FALSE
 
 /mob/living/eminence/dust(just_ash, drop_items, force)
