@@ -1,7 +1,7 @@
 /obj/effect/portal/clockcult
 	name = "dimensional anomaly"
 	desc = "A dimensional anomaly. It feels warm to the touch, and has a gentle puff of steam emanating from it."
-	icon = 'icons/obj/objects.dmi'
+	icon = 'icons/obj/anomaly.dmi'
 	icon_state = "bhole3"
 	mech_sized = TRUE
 	density = TRUE

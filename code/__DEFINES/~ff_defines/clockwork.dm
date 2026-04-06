@@ -1,7 +1,5 @@
 ///check if a z level is reebe
 #define is_reebe_level(z) SSmapping.level_trait(z, ZTRAIT_REEBE)
-// Clock cultist
-#define IS_CLOCK(mob) ((FACTION_CLOCK in mob.faction) || mob?.mind?.has_antag_datum(/datum/antagonist/clock_cultist))
 /// is something a cogscarab
 #define iscogscarab(checked) (istype(checked, /mob/living/basic/drone/cogscarab))
 /// is something an eminence
@@ -13,9 +11,6 @@
 	if(!##resolver) { \
 		##weakref_var = null;\
 	}
-
-#define IS_FINITE__UNSAFE(a) (!isinf(a) && !isnan(a))
-#define IS_FINITE(a) (isnum(a) && IS_FINITE__UNSAFE(a))
 #define IS_SAFE_NUM(a) IS_FINITE(a)
 // traits
 // boolean - marks a level as having that property if present
@@ -37,12 +32,6 @@
 #define GEARS_UNWOUND 5
 /// maximum amount of cogscarabs the clock cult can have
 #define MAXIMUM_COGSCARABS 6
-#define SPELLTYPE_ABSTRACT "Abstract"
-#define SPELLTYPE_SERVITUDE "Servitude"
-#define SPELLTYPE_PRESERVATION "Preservation"
-#define SPELLTYPE_STRUCTURES "Structures"
-
-#define SIGIL_TRANSMISSION_RANGE 4
 
 #define CLOCK_PASSIVE_POWER_PER_COG 3
 
@@ -67,6 +56,7 @@
 ///max damage taken per hit by "important" clock structures
 #define MAX_IMPORTANT_CLOCK_DAMAGE 30
 
+#define CHANNEL_SOUND_EFFECTS 1010
 ///how many anchoring crystals need to be active before the ark can open
 #define ANCHORING_CRYSTALS_TO_SUMMON 2
 
@@ -92,15 +82,10 @@
 /// from base of atom/ratvar_act()
 #define COMSIG_ATOM_RATVAR_ACT "atom_ratvar_act"
 
-/// /datum/component/clockwork_trap signals: ()
-#define COMSIG_CLOCKWORK_SIGNAL_RECEIVED "clock_received"
-
 /// from base of atom/eminence_act() : (mob/living/eminence/user)
 #define COMSIG_ATOM_EMINENCE_ACT "atom_eminence_act"
 /// Used to externally force /datum/element/light_eater to handle eating a light without physical contact. Used by nightmares. (food, eater, silent)
 #define COMSIG_LIGHT_EATER_EAT "light_eater_eat"
-/// Called when a clock cultist uses a clockwork slab: (obj/item/clockwork/clockwork_slab/slab)
-#define COMSIG_CLOCKWORK_SLAB_USED "clockwork_slab_used"
 
 /// the comsig for clockwork items checking turf
 #define COMSIG_CHECK_TURF_CLOCKWORK "check_turf_clockwork"

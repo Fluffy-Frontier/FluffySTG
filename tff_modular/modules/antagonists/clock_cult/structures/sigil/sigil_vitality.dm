@@ -89,7 +89,7 @@
 		visible_message(span_clockred("[src] fails to siphon [affected_mob]'s spirit!"))
 		return
 
-	playsound(loc, 'sound/effects.magic/clockwork/ratvar_attack.ogg', 40)
+	playsound(loc, 'sound/effects/magic/clockwork/ratvar_attack.ogg', 40)
 	if((affected_mob.stat == DEAD) || affected_mob.getMaxHealth() <= 0)
 		playsound(loc, 'sound/effects/magic/exit_blood.ogg', 60)
 		to_chat(affected_mob, span_clockred("The last of your life is drained away..."))

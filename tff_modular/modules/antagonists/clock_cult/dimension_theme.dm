@@ -1,7 +1,7 @@
 /datum/dimension_theme/clockwork
 	icon = 'icons/obj/stack_objects.dmi'
 	icon_state = "sheet-brass"
-	sound = 'sound/magic/clockwork/fellowship_armory.ogg'
+	sound = 'sound/effects/magic/clockwork/fellowship_armory.ogg'
 	replace_floors = list(/turf/open/floor/bronze = 1)
 	replace_walls = /turf/closed/wall/mineral/bronze
 	replace_objs = list(/obj/machinery/door/airlock = list(/obj/machinery/door/airlock/bronze = 1, /obj/machinery/door/airlock/bronze/seethru = 1), \

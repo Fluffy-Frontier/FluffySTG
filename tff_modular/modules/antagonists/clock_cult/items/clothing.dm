@@ -35,7 +35,7 @@
 /obj/item/clothing/suit/clockwork
 	name = "bronze armor"
 	desc = "A strong, bronze suit worn by the soldiers of the Ratvarian armies."
-	icon = 'tff_modular/modules/antagonists/clock_cult/icons/mob/clockwork_garb.dmi'
+	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/clockwork_garb.dmi'
 	worn_icon = 'tff_modular/modules/antagonists/clock_cult/icons/mob/clockwork_garb_worn.dmi'
 	icon_state = "clockwork_cuirass"
 	armor_type = /datum/armor/suit_clockwork
@@ -189,7 +189,7 @@
 		ASYNC
 			animate(owner.get_filter("clock_cloak"), 0.3 SECONDS, x = prob(50) ? rand(4, 5) : rand(-4, -5), y = prob(50) ? rand(4, 5) : rand(-4, -5), flags = ANIMATION_PARALLEL)
 			animate(time = 0.3 SECONDS, x = 0, y = 0)
-		playsound(src, 'sound/items/weapons/etherealmiss.ogg', BLOCK_SOUND_VOLUME, vary = TRUE, mixer_channel = CHANNEL_SOUND_EFFECTS)
+		playsound(src, 'sound/items/weapons/etherealmiss.ogg', BLOCK_SOUND_VOLUME, vary = TRUE)
 		return TRUE
 
 /obj/item/clothing/suit/clockwork/cloak/proc/remove_phase_filter(mob/living/remove_from)

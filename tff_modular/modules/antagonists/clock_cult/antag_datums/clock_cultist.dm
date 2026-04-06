@@ -2,14 +2,13 @@
 	name = "\improper Servant of Ratvar"
 	antagpanel_category = "Clock Cultist"
 	preview_outfit = /datum/outfit/clock/preview
-	job_rank = ROLE_CLOCK_CULTIST
+	pref_flag = ROLE_CLOCK_CULTIST
 	antag_moodlet = /datum/mood_event/cult
 	suicide_cry = ",r For Ratvar!!!"
-	ui_name = "AntagInfoClock"
+	ui_name = "AntagInfoClockAlt"
 	show_to_ghosts = TRUE
 	antag_hud_name = "clockwork"
 	stinger_sound = 'modular_nova/modules/clock_cult/sound/magic/scripture_tier_up.ogg'
-	antag_count_points = 4
 	/// Ref to the cultist's communication ability
 	var/datum/action/innate/clockcult/comm/communicate = new
 	/// Ref to the cultist's slab recall ability
@@ -107,7 +106,7 @@
 /datum/antagonist/clock_cultist/can_be_owned(datum/mind/new_owner)
 	. = ..()
 	if(.)
-		. = is_convertable_to_cult(new_owner.current, for_clock_cult = TRUE)
+		. = is_convertable_to_cult(new_owner.current, clock_team)
 
 /datum/antagonist/clock_cultist/on_removal()
 	if(!silent)
@@ -162,7 +161,7 @@
 
 	var/mob/living/carbon/human/human_holder = owner.current
 
-	var/where = human_holder.equip_in_one_of_slots(created_slab, valid_slots, qdel_on_fail = FALSE, indirect_action = TRUE) || default_location
+	human_holder.equip_in_one_of_slots(created_slab, valid_slots, qdel_on_fail = FALSE, indirect_action = TRUE)
 
 /// Change the slab in the recall ability, if it's different from the last one.
 /datum/antagonist/clock_cultist/proc/switch_recall_slab(datum/source, obj/item/clockwork/clockwork_slab/slab)
