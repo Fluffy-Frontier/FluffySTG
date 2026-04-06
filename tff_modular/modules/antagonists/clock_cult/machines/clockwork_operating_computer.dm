@@ -15,11 +15,3 @@
 		/datum/surgery/robot_healing/experimental,
 		/datum/surgery/revival
 		)
-/obj/machinery/computer/operating/clockwork/Initialize(mapload)
-	. = ..()
-	for(var/datum/surgery/added_surgery as anything in subtypesof(/datum/surgery))
-		if(added_surgery in added_surgeries)
-			advanced_surgeries |= added_surgery
-
-	for(var/datum/surgery/added_bioware as anything in subtypesof(/datum/surgery/advanced/bioware)) //cant do a check in loop one due to not making instances
-		advanced_surgeries |= added_bioware
