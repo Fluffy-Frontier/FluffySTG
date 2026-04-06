@@ -249,3 +249,4 @@ GLOBAL_DATUM(cult_ratvar, /obj/ratvar)
 		icon_keyboard = "ratvar_key[rand(1, 2)]"
 		icon_state = "ratvarcomputer1"
 		update_appearance()
+		connectable = FALSE

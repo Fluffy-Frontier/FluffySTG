@@ -5,17 +5,10 @@ PROCESSING_SUBSYSTEM_DEF(the_ark)
 	wait = 1 SECONDS
 	flags = SS_KEEP_TIMING | SS_NO_INIT
 	runlevels = RUNLEVEL_GAME
-
 	///The list of anchoring crystals, value is 0 is uncharged and 1 if charged
-#ifdef UNIT_TESTS
 	var/list/anchoring_crystals = list()
-	var/datum/dimension_theme/clockwork/clock_dimension_theme = new(is_cult = TRUE)
-#else
-	///The list of anchoring crystals, value is 0 is uncharged and 1 if charged
-	var/list/anchoring_crystals
 	///Dimension theme used for transforming turfs
-	var/datum/dimension_theme/clockwork/clock_dimension_theme
-#endif
+	var/datum/dimension_theme/clockwork/clock_dimension_theme = new /datum/dimension_theme/clockwork()
 	///How many charged anchoring crystals are there
 	var/charged_anchoring_crystals = 0
 	///Assoc list of the original names of areas that are valid to summon anchoring crystals keyed to its area
@@ -41,8 +34,6 @@ PROCESSING_SUBSYSTEM_DEF(the_ark)
 
 /datum/controller/subsystem/processing/the_ark/Initialize()
 	initialized = TRUE
-	anchoring_crystals = list()
-	clock_dimension_theme = new(is_cult = TRUE)
 	hallucination_pool = list(
 		/datum/hallucination/fake_item/clockwork_slab = 2,
 		/datum/hallucination/nearby_fake_item/clockwork_slab = 2,
@@ -96,7 +87,7 @@ PROCESSING_SUBSYSTEM_DEF(the_ark)
 		transformed_length = length(turfs_to_transform)
 
 	shuffle_inplace(turfs_to_transform)
-	for(var/turf/turf_to_transform in turfs_to_transform)
+	for(var/turf/turf_to_transform as anything in turfs_to_transform)
 		if(!clock_dimension_theme.can_convert(turf_to_transform))
 			continue
 		addtimer(CALLBACK(src, PROC_REF(do_turf_conversion), turf_to_transform), 3 * timer_counter)

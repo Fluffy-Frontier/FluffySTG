@@ -7,6 +7,7 @@
 	resistance_flags = INDESTRUCTIBLE
 	clockwork = TRUE
 	lock_override = TRUE
+	connectable = FALSE
 	circuit = /obj/item/circuitboard/machine/camera_console_ratvar
 
 /obj/machinery/computer/camera_advanced/ratvar/Initialize(mapload)
