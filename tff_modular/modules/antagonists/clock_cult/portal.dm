@@ -30,12 +30,12 @@
 	teleport(bumper)
 
 /obj/effect/portal/clockcult/teleport(atom/movable/M, force = FALSE)
-	if(isliving(teleported_atom))
-		to_chat(teleported_atom, span_notice("You begin climbing into the rift."))
-		if(!do_after(teleported_atom, 5 SECONDS, src))
+	if(isliving(M))
+		to_chat(M, span_notice("You begin climbing into the rift."))
+		if(!do_after(M, 5 SECONDS, src))
 			return
 
-		var/mob/living/teleported_living = teleported_atom
+		var/mob/living/teleported_living = M
 		if(teleported_living.pulling)
 			teleport(teleported_living.pulling, TRUE)
 
@@ -43,7 +43,7 @@
 			var/client_color = teleported_living.client.color
 			teleported_living.client.color = "#BE8700"
 			animate(teleported_living.client, color = client_color, time = 2.5 SECONDS)
-		var/prev_alpha = teleported_atom.alpha
-		teleported_atom.alpha = 0
-		animate(teleported_atom, alpha = prev_alpha, time = 1 SECONDS)
+		var/prev_alpha = M.alpha
+		M.alpha = 0
+		animate(M, alpha = prev_alpha, time = 1 SECONDS)
 	. = ..()
