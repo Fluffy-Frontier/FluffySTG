@@ -14,7 +14,7 @@
 	if(!.)
 		return FALSE
 
-	var/datum/antagonist/clock_cultist/cultist = IS_CLOCK(checked_mob)
+	var/datum/antagonist/clock_cultist/cultist = checked_mob.mind?.has_antag_datum(/datum/antagonist/clock_cultist)
 	if(cultist(checked_mob))
 		return FALSE
 
