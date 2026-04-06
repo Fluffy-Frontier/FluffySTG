@@ -14,11 +14,10 @@
 	if(!.)
 		return FALSE
 
-	var/datum/antagonist/clock_cultist/cultist = checked_mob.mind?.has_antag_datum(/datum/antagonist/clock_cultist)
-	if(cultist(checked_mob))
+	if(IS_CLOCK(checked_mob))
 		return FALSE
 
-	return is_convertable_to_cult(checked_mob, cultist.cult_team)
+	return is_convertable_to_cult(checked_mob)
 
 /obj/structure/destructible/clockwork/sigil/submission/apply_effects(mob/living/converted_mob)
 	. = ..()
