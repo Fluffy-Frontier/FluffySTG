@@ -82,20 +82,19 @@ GLOBAL_VAR_INIT(ratvar_risen, FALSE)
 		return
 	ASYNC
 		if(!(flags_1 & HOLOGRAM_1))
-			if(!disassembled)
-				current_state = ARK_STATE_FINAL
-				resistance_flags |= INDESTRUCTIBLE
-				visible_message(span_userdanger("[src] begins to pulse uncontrollably... you might want to run!"))
-				sound_to_playing_players('sound/effects/clockcult_gateway_disrupted.ogg', 50)
-				sleep(2.5 SECONDS)
-				sound_to_playing_players('sound/machines/clockcult/ark_deathrattle.ogg', 50)
-				sleep(2.7 SECONDS)
-				explosion(src, 1, 3, 8, 8)
-				sound_to_playing_players('sound/effects/explosion/explosion_distant.ogg', 50)
-				for(var/obj/effect/portal/clockcult/portal in GLOB.portals)
-					qdel(portal)
-				SSshuttle.clearHostileEnvironment(src)
-				SSsecurity_level.set_level(SEC_LEVEL_RED)
+			current_state = ARK_STATE_FINAL
+			resistance_flags |= INDESTRUCTIBLE
+			visible_message(span_userdanger("[src] begins to pulse uncontrollably... you might want to run!"))
+			sound_to_playing_players('sound/effects/clockcult_gateway_disrupted.ogg', 50)
+			sleep(2.5 SECONDS)
+			sound_to_playing_players('sound/machines/clockcult/ark_deathrattle.ogg', 50)
+			sleep(2.7 SECONDS)
+			explosion(src, 1, 3, 8, 8)
+			sound_to_playing_players('sound/effects/explosion/explosion_distant.ogg', 50)
+			for(var/obj/effect/portal/clockcult/portal in GLOB.portals)
+				qdel(portal)
+			SSshuttle.clearHostileEnvironment(src)
+			SSsecurity_level.set_level(SEC_LEVEL_RED)
 		qdel(src)
 
 /obj/structure/destructible/clockwork/the_ark/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir, armour_penetration)
