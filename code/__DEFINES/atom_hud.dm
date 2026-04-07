@@ -46,6 +46,10 @@
 #define DIAG_CAMERA_HUD "21"
 /// Steady Hacked APC effect, visible only to Malf AIs
 #define MALF_APC_HUD "22"
+/// Blood volume bar, visible to blood worms
+#define BLOOD_HUD "23"
+/// Big Manipulator interaction point HUDs
+#define BIG_MANIP_HUD "24"
 
 // NOVA EDIT ADDITION BEGIN - gun permits and DNR
 /// ammo of guns
@@ -56,6 +60,10 @@
 /// If they have the DNR trait
 #define DNR_HUD "27"
 // NOVA EDIT ADDITION END
+// FLUFFY FRONTIER ADDITION START
+#define XENO_HUD "30"
+#define XENOPLASMA_HUD "31"
+// FLUFFY FRONTIER ADDITION END
 
 //by default everything in the hud_list of an atom is an image
 //a value in hud_list with one of these will change that behavior
@@ -73,7 +81,9 @@
 #define DATA_HUD_AI_DETECT 8
 #define DATA_HUD_FAN 9
 #define DATA_HUD_MALF_APC 10
-#define DATA_HUD_PERMIT 11 //NOVA EDIT ADDITION
+#define DATA_HUD_BLOOD 11
+#define DATA_HUD_PERMIT 12 //NOVA EDIT ADDITION
+#define DATA_HUD_XENO (DATA_HUD_PERMIT + 1) // FLUFFY FRONTIER ADDITION
 
 /// cooldown for being shown the images for any particular data hud
 #define ADD_HUD_TO_COOLDOWN 20

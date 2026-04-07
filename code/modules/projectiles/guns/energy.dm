@@ -184,6 +184,7 @@
 		if(!chambered) //if empty chamber we try to charge a new shot
 			recharge_newshot(TRUE)
 		update_appearance()
+		SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD) // NOVA EDIT ADDITION
 
 /obj/item/gun/energy/attack_self(mob/living/user as mob)
 	. = ..()
@@ -238,6 +239,8 @@
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
 	fire_sound = shot.fire_sound
 	fire_delay = shot.delay
+	if (shot.muzzle_flash_color)
+		set_light_color(shot.muzzle_flash_color)
 	if (shot.select_name && user)
 		balloon_alert(user, "set to [shot.select_name]")
 	chambered = null

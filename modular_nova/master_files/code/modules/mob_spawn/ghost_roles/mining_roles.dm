@@ -9,7 +9,7 @@
 /obj/effect/mob_spawn/ghost_role/human/maintsroom
 	name = "chamenos"
 	prompt_name = "A being stuck in between two spaces"
-	you_are_text = "You wake up. Your hideout is intact with stuff you gathered yesterday, you are safe but you get a gut feeling that once you leave your hideout you cannot come back. Maybe you should go explore, be wary of the red lights."
+	you_are_text = "You wake up. Your hideout is intact with stuff you gathered yesterday, you are safe in your hideout. Maybe you should go explore, be wary of the red lights."
 	flavour_text = "You've been stuck in the Maintsrooms for longer than you can remember, and this place has changed you. Is it madness, insanity, or an infection? Or are you an eldritch being, a monster who was born/created/manifested here? Survival will be challenging, and the Maintsrooms are a very hostile environment, so anything surviving here should have a believable reason to."
 	important_text = "YOU ARE NOT HOSTILE YOU SHOULD NOT BE KILLING PEOPLE/CREW IN GENERAL, unless you have admin permission or good IC justification to do so."
 	loadout_enabled = TRUE
@@ -175,7 +175,7 @@
 	var/jobtype = /datum/job/interdyne_planetary_base
 
 /datum/outfit/interdyne_planetary_base/post_equip(mob/living/carbon/human/syndicate, visualsOnly = FALSE)
-	syndicate.faction |= ROLE_INTERDYNE_PLANETARY_BASE
+	syndicate.add_faction(ROLE_INTERDYNE_PLANETARY_BASE)
 
 	var/obj/item/card/id/id_card = syndicate.wear_id
 	if(istype(id_card))
@@ -205,6 +205,7 @@
 	r_pocket = /obj/item/storage/bag/ore
 	id_trim = /datum/id_trim/syndicom/nova/interdyne/shaftminer
 	back = /obj/item/storage/backpack/explorer
+	skillchips = list(/obj/item/skillchip/job/miner)
 	backpack_contents = list(
 		/obj/item/storage/box/survival/interdyne=1,
 		/obj/item/storage/box/nif_ghost_box/ghost_role=1,
@@ -223,6 +224,7 @@
 	head = /obj/item/clothing/head/hats/syndicate/interdyne_deckofficer_black
 	suit = /obj/item/clothing/suit/armor/hos/deckofficer
 	ears = /obj/item/radio/headset/interdyne/command
+	skillchips = list(/obj/item/skillchip/job/miner)
 	id = /obj/item/card/id/advanced/chameleon/elite/black/silver
 	id_trim = /datum/id_trim/syndicom/nova/interdyne/deckofficer
 

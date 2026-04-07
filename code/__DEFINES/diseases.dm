@@ -68,8 +68,8 @@ DEFINE_BITFIELD(spread_flags, list(
 #define DISEASE_CYCLES_DANGEROUS 90
 /// Roughly 2 minutes for a harmful virus
 #define DISEASE_CYCLES_HARMFUL 60
-/// Roughly 1 minute for a biohazard kill-death-evil-bad virus
-#define DISEASE_CYCLES_BIOHAZARD 30
+/// Roughly 1 minute and 20 seconds for a biohazard kill-death-evil-bad virus
+#define DISEASE_CYCLES_BIOHAZARD 40
 
 //Natural Immunity/Recovery Balance Levers
 /// Recovery Constant - starting point, 'base' recovery when you get initially infected.
@@ -109,7 +109,3 @@ DEFINE_BITFIELD(spread_flags, list(
 /// Symptom Frequency Modifier
 //// Raise to make symptoms fire less frequently, lower to make them fire more frequently. Keep at 0 or above.
 #define DISEASE_SYMPTOM_FREQUENCY_MODIFIER 1
-
-/// Minimum Chemical Cure Chance
-//// Minimum per-cycle chance we want of being able to cure an advanced disease with the chemicals present.
-#define DISEASE_MINIMUM_CHEMICAL_CURE_CHANCE 5

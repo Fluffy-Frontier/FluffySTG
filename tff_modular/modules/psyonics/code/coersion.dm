@@ -129,7 +129,7 @@
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_focus/proc/fix_brainz(mob/living/carbon/human/cast_on)
 	var/b_damage = cast_on.get_organ_loss(ORGAN_SLOT_BRAIN)
 	if(b_damage > 0)
-		cast_on.adjustOrganLoss(ORGAN_SLOT_BRAIN, -10 * cast_power)
+		cast_on.adjust_organ_loss(ORGAN_SLOT_BRAIN, -10 * cast_power)
 
 	var/traumas = cast_on.get_traumas()
 	if(traumas)
@@ -139,7 +139,7 @@
 	cast_on.apply_status_effect(/datum/status_effect/drugginess, 20 SECONDS)
 
 /datum/action/cooldown/spell/pointed/psyonic/psyonic_focus/proc/accident_harm(mob/living/carbon/human/cast_on)
-	cast_on.adjustOrganLoss(ORGAN_SLOT_BRAIN, 15 * cast_power, 101)
+	cast_on.adjust_organ_loss(ORGAN_SLOT_BRAIN, 15 * cast_power, 101)
 	to_chat(cast_on, span_bolddanger("You head hurts!"))
 
 // Читаем разум. Выдаёт: последние сейлоги, интент, настоящее имя, воспоминания, намёк на работу, намёк на то, что в антаг_датум что то есть.

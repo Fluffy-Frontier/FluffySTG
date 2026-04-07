@@ -357,14 +357,14 @@
 	name = "human right leg"
 	path = /obj/item/bodypart/leg/right
 
-/datum/augment_item/limb/l_leg/species/human_digi
+/datum/augment_item/limb/l_leg/species/human_digi_capable
 	name = "skintone mutant left leg"
-	path = /obj/item/bodypart/leg/left/human_digi
+	path = /obj/item/bodypart/leg/left/human_digi_capable
 	supports_digitigrade = TRUE
 
-/datum/augment_item/limb/r_leg/species/human_digi
+/datum/augment_item/limb/r_leg/species/human_digi_capable
 	name = "skintone mutant right leg"
-	path = /obj/item/bodypart/leg/right/human_digi
+	path = /obj/item/bodypart/leg/right/human_digi_capable
 	supports_digitigrade = TRUE
 
 //Ethereals
@@ -495,6 +495,33 @@
 /datum/augment_item/limb/r_leg/species/mutant/ramatae
 	name = "ramatae right leg"
 	path = /obj/item/bodypart/leg/right/mutant/ramatae
+
+// Shadekin
+/datum/augment_item/limb/head/species/shadekin
+	name = "shadekin head"
+	path = /obj/item/bodypart/head/mutant/shadekin
+
+/datum/augment_item/limb/chest/species/shadekin
+	name = "shadekin chest"
+	path = /obj/item/bodypart/chest/mutant/shadekin
+
+/datum/augment_item/limb/l_arm/species/shadekin
+	name = "shadekin left arm"
+	path = /obj/item/bodypart/arm/left/mutant/shadekin
+
+/datum/augment_item/limb/r_arm/species/shadekin
+	name = "shadekin right arm"
+	path = /obj/item/bodypart/arm/right/mutant/shadekin
+
+/datum/augment_item/limb/l_leg/species/shadekin
+	name = "shadekin left leg"
+	path = /obj/item/bodypart/leg/left/mutant/shadekin
+	supports_digitigrade = TRUE
+
+/datum/augment_item/limb/r_leg/species/shadekin
+	name = "shadekin right leg"
+	path = /obj/item/bodypart/leg/right/mutant/shadekin
+	supports_digitigrade = TRUE
 
 //==SPECIAL NON-SPECIES LIMBS==
 /datum/augment_item/limb/l_leg/species/mutant/harpy

@@ -424,15 +424,14 @@
 /obj/item/disk/plantgene
 	name = "plant data disk"
 	desc = "A disk for storing plant genetic data."
-	icon_state = "datadisk_hydro"
+	icon_state = "datadisk11"
 	custom_materials = list(/datum/material/iron=30, /datum/material/glass=10)
 	var/datum/plant_gene/gene
-	var/read_only = 0 //Well, it's still a floppy disk
+	read_only = 0 //Well, it's still a floppy disk
 	obj_flags = UNIQUE_RENAME
 
 /obj/item/disk/plantgene/Initialize(mapload)
 	. = ..()
-	add_overlay("datadisk_gene")
 
 /obj/item/disk/plantgene/proc/update_disk_name()
 	if(gene)
@@ -620,3 +619,8 @@
 		if(potency != -1)
 			genes += new /datum/plant_gene/core/potency(potency)
 			genes += new /datum/plant_gene/core/instability(instability)
+
+// Упакованная машинерия
+/obj/item/flatpack/plantgenes
+	name = "flatpacked plant DNA manipulator"
+	board = /obj/item/circuitboard/machine/plantgenes

@@ -79,15 +79,15 @@
 	icon_state = "transponder"
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
-	var/datum/effect_system/spark_spread/sparks
+	var/datum/effect_system/basic/spark_spread/sparks
 	var/current_state = TURN_DIAL
 	var/next_activate = 0
 
 /obj/item/donator/transponder/Initialize(mapload)
 	. = ..()
-	sparks = new
-	sparks.set_up(2, 0, src)
+	sparks = new(src, 2, FALSE)
 	sparks.attach(src)
+	sparks.start()
 
 /obj/item/donator/transponder/Destroy()
 	if(sparks)
@@ -339,10 +339,12 @@
 	icon_state = "skinapplier"
 	skin = "akari"
 
-/obj/item/mod/skin_applier/akari/pre_attack(atom/attacked_atom, mob/living/user, params)
-	if(!istype(attacked_atom, /obj/item/mod/control/pre_equipped/entombed))
+/obj/item/mod/skin_applier/akari/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(!istype(interacting_with, /obj/item/mod/control/pre_equipped/entombed))
 		return ..()
-	var/obj/item/mod/control/mod = attacked_atom
+	var/obj/item/mod/control/mod = interacting_with
+	if(skin in mod.theme.variants)
+		return ..()
 	mod.theme.variants += list("akari" = list(
 		MOD_ICON_OVERRIDE = 'modular_nova/master_files/icons/donator/obj/clothing/modsuit.dmi',
 		MOD_WORN_ICON_OVERRIDE = 'modular_nova/master_files/icons/donator/mob/clothing/modsuit.dmi',
@@ -391,10 +393,12 @@
 	icon_state = "jumper-box"
 	skin = "jumper"
 
-/obj/item/mod/skin_applier/jumper/pre_attack(atom/attacked_atom, mob/living/user, params)
-	if(!istype(attacked_atom, /obj/item/mod/control/pre_equipped/security))
+/obj/item/mod/skin_applier/jumper/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(!istype(interacting_with, /obj/item/mod/control/pre_equipped/security))
 		return ..()
-	var/obj/item/mod/control/mod = attacked_atom
+	var/obj/item/mod/control/mod = interacting_with
+	if(skin in mod.theme.variants)
+		return ..()
 	mod.theme.variants += list("jumper" = list(
 		MOD_ICON_OVERRIDE = 'modular_nova/master_files/icons/donator/obj/clothing/modsuit.dmi',
 		MOD_WORN_ICON_OVERRIDE = 'modular_nova/master_files/icons/donator/mob/clothing/modsuit.dmi',
@@ -445,6 +449,7 @@
 	slot_flags = parent_type::slot_flags | ITEM_SLOT_NECK
 	dog_fashion = /datum/dog_fashion/head/cone
 	var/toggle_state = "close"
+	custom_materials = list(/datum/material/plastic = SHEET_MATERIAL_AMOUNT)
 
 /obj/item/clothing/head/cone_of_shame/click_alt(mob/user)
 	if(toggle_state == "open")
