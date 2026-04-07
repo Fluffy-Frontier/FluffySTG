@@ -11,4 +11,4 @@
 	cogs_required = 2
 	category = SPELLTYPE_STRUCTURES
 
-/*
+*/
