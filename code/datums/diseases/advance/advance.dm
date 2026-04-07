@@ -286,8 +286,8 @@
 			set_spread(DISEASE_SPREAD_BLOOD)
 
 		spreading_modifier = max(CEILING(0.4 * properties["transmittable"], 1), 1)
-		cure_chance = clamp(7.5 - (0.5 * properties["resistance"]), 1, 10) // can be between 1 and 10
-		stage_prob = max(0.5 * properties["stage_rate"], 1) // TFF EDIT - ORIGINAL: stage_prob = max(0.3 * properties["stage_rate"], 1)
+		cure_chance = clamp(7.5 - (0.5 * properties["resistance"]), 1, 10) // Capped at between -3 and 17 resistance
+		stage_prob = max(0.5 * properties["stage_rate"], 1) // TFF EDIT - ORIGINAL: stage_prob = max(0.2 * properties["stage_rate"], 0) + 1.5
 		set_severity(round(properties["severity"]), 1)
 		generate_cure(properties)
 	else
