@@ -143,3 +143,16 @@
 	if(GLOB.clock_ark && get_dist(our_turf, get_turf(GLOB.clock_ark)) <= ARK_TURF_DESTRUCTION_BLOCK_RANGE)
 		balloon_alert(user, "a near by energy source is interfering \the [src]!")
 		return FALSE
+
+/obj/item/paper/crumpled/ruins/reebe1
+	name = "scribbled note"
+	default_raw_text = {"The Justicar was wrong.<br>
+	This isn't Reebe. I held out hope, hope that some part of Ratvar was still alive on the holy city.<br>
+	But there's nothing here, just some... forward outpost. And damn those Nar'sian dogs! I can feel them trying to enter the portal!"}
+
+
+/obj/item/paper/crumpled/bloody/reebe2
+	name = "scribbled note"
+	default_raw_text = {"The heretics made it into this holy ground.<br>
+	Many of our brothers and sisters fell in this fight, I am the only one left. It is with pleasure that I can die knowing of the deaths of another group of Nar'sians.<br>
+	If only that damnable portal could've opened in time..."}

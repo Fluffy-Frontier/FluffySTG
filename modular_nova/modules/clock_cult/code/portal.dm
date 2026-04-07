@@ -24,7 +24,7 @@
 
 	return ..()
 
-
+*/
 /obj/effect/portal/permanent/one_way/reebe/leaving
 	desc = "For those who wish or require to leave the holy outpost."
 	id = "reebe_exit"
@@ -41,4 +41,3 @@
 		return FALSE
 
 	return ..()
-*/

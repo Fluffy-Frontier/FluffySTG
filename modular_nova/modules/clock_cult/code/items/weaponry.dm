@@ -222,7 +222,7 @@
 	icon_state = "arrow_energy"
 	damage = 35
 	damage_type = BURN
-
+*/
 /obj/item/gun/ballistic/rifle/lionhunter/clockwork
 	name = "brass rifle"
 	desc = "An antique, brass rifle made with the finest of care. It has an ornate scope in the shape of a cog built into the top."
@@ -285,6 +285,7 @@
 
 	generate_items_inside(items_inside, src)
 
+/*
 #undef HAMMER_FLING_DISTANCE
 #undef HAMMER_THROW_FLING_DISTANCE
 #undef BRASS_RIFLE_REDUCED_DELAY
