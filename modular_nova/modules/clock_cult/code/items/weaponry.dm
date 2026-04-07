@@ -256,7 +256,7 @@
 	var/obj/item/gun/ballistic/fired_gun = fired_from
 
 	if(istype(get_turf(user), /turf/open/floor/bronze) && istype(fired_gun, /obj/item/gun/ballistic/rifle/lionhunter/clockwork))
-		seconds_per_distance = BRASS_RIFLE_REDUCED_DELAY
+		seconds_per_distance = 0.25 SECONDS
 
 	return ..()
 
