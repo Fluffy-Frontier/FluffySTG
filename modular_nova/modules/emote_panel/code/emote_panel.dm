@@ -7,7 +7,8 @@
 	// code\modules\mob\emote.dm
 	var/static/list/mob_emotes = list(
 		/mob/proc/emote_flip,
-		/mob/proc/emote_spin
+		/mob/proc/emote_spin,
+		/mob/proc/emote_rolld20,
 	)
 	all_emotes += mob_emotes
 
@@ -166,7 +167,8 @@
 		/mob/living/proc/emote_meowdeep,
 		/mob/living/proc/emote_teshchirp,
 		/mob/living/proc/emote_teshsqueak,
-		/mob/living/proc/emote_teshtrill
+		/mob/living/proc/emote_teshtrill,
+		/mob/living/proc/emote_gecker,
 	)
 	all_emotes += nova_living_emotes
 
@@ -282,6 +284,10 @@
 	set category = "Emotes"
 	usr.emote("spin", intentional = TRUE)
 
+/mob/proc/emote_rolld20()
+	set name = "| Roll 20 |"
+	set category = "Emotes"
+	usr.emote("rolld20", intentional = TRUE)
 // code\modules\mob\living\emote.dm
 
 /mob/living/proc/emote_blush()
@@ -685,6 +691,11 @@
 	set name = "> Yip"
 	set category = "Emotes+"
 	usr.emote("yip", intentional = TRUE)
+
+/mob/living/proc/emote_gecker()
+	set name = "> Gecker"
+	set category = "Emotes+"
+	usr.emote("gecker", intentional = TRUE)
 
 /mob/living/proc/emote_fwhine()
 	set name = "> Fox Whine"

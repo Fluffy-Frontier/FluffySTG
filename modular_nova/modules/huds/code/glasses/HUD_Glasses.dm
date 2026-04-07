@@ -7,7 +7,7 @@
 	species_exception = list() // FF ADDITION
 
 /obj/item/clothing/glasses/hud/health/prescription/Initialize(mapload)
-	clothing_traits += list(TRAIT_NEARSIGHTED_CORRECTED)
+	LAZYADD(clothing_traits, TRAIT_NEARSIGHTED_CORRECTED)
 	return ..()
 
 /obj/item/clothing/glasses/hud/diagnostic/prescription
@@ -19,7 +19,7 @@
 	species_exception = list() // FF ADDITION
 
 /obj/item/clothing/glasses/hud/diagnostic/prescription/Initialize(mapload)
-	clothing_traits += list(TRAIT_NEARSIGHTED_CORRECTED)
+	LAZYADD(clothing_traits, TRAIT_NEARSIGHTED_CORRECTED)
 	return ..()
 
 /obj/item/clothing/glasses/hud/security/prescription
@@ -31,7 +31,7 @@
 	species_exception = list() // FF ADDITION
 
 /obj/item/clothing/glasses/hud/security/prescription/Initialize(mapload)
-	clothing_traits += list(TRAIT_NEARSIGHTED_CORRECTED)
+	LAZYADD(clothing_traits, TRAIT_NEARSIGHTED_CORRECTED)
 	return ..()
 
 /obj/item/clothing/glasses/science/prescription
@@ -44,7 +44,7 @@
 	armor_type = /datum/armor/prescription_science
 
 /obj/item/clothing/glasses/science/prescription/Initialize(mapload)
-	clothing_traits += list(TRAIT_NEARSIGHTED_CORRECTED)
+	LAZYADD(clothing_traits, TRAIT_NEARSIGHTED_CORRECTED)
 	return ..()
 
 /datum/armor/prescription_science
@@ -57,7 +57,7 @@
 	species_exception = list() // FF ADDITION
 
 /obj/item/clothing/glasses/meson/prescription/Initialize(mapload)
-	clothing_traits += list(TRAIT_NEARSIGHTED_CORRECTED)
+	LAZYADD(clothing_traits, TRAIT_NEARSIGHTED_CORRECTED)
 	return ..()
 
 /obj/item/clothing/glasses/meson/engine/prescription
@@ -65,7 +65,7 @@
 	desc = "Goggles used by engineers. The Meson Scanner mode lets you see basic structural and terrain layouts through walls, the T-ray Scanner mode lets you see underfloor objects such as cables and pipes, and the Radiation Scanner mode let's you see objects contaminated by radiation. Each lens has been replaced with a corrective lens."
 
 /obj/item/clothing/glasses/meson/engine/prescription/Initialize(mapload)
-	clothing_traits += list(TRAIT_NEARSIGHTED_CORRECTED)
+	LAZYADD(clothing_traits, TRAIT_NEARSIGHTED_CORRECTED)
 	return ..()
 
 /obj/item/clothing/glasses/meson/engine/tray/prescription
@@ -73,5 +73,5 @@
 	desc = "Goggles used by engineers. The Meson Scanner mode lets you see basic structural and terrain layouts through walls, the T-ray Scanner mode lets you see underfloor objects such as cables and pipes, and the Radiation Scanner mode let's you see objects contaminated by radiation. This one has a lens that help correct eye sight."
 
 /obj/item/clothing/glasses/meson/engine/tray/prescription/Initialize(mapload)
-	clothing_traits += list(TRAIT_NEARSIGHTED_CORRECTED)
+	LAZYADD(clothing_traits, TRAIT_NEARSIGHTED_CORRECTED)
 	return ..()

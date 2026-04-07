@@ -38,4 +38,9 @@
 	#ifdef ALL_TEMPLATES
 		#include "templates.dm"
 	#endif
+	// NOVA EDIT ADDITION START
+	#ifdef NOVA_TEMPLATES
+		#include "templates_nova.dm"
+	#endif
+	// NOVA EDIT ADDITION END
 #endif
