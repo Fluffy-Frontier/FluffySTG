@@ -45,6 +45,7 @@
 /obj/machinery/computer/rdconsole/interdyne
 	name = "Interdyne R&D Console"
 	circuit = /obj/item/circuitboard/computer/rdconsole/interdyne
+	req_access = list(ACCESS_SYNDICATE)
 
 /obj/machinery/computer/rdconsole/proc/override_default_techweb(datum/techweb/new_techweb)
 	if(stored_research)
@@ -187,6 +188,7 @@
 /obj/machinery/computer/rdconsole/ds2
 	name = "Cybersun R&D Console"
 	circuit = /obj/item/circuitboard/computer/rdconsole/ds2
+	req_access = list(ACCESS_SYNDICATE)
 
 
 /obj/machinery/computer/rdconsole/ds2/post_machine_initialize()
@@ -282,3 +284,7 @@
 /obj/machinery/module_duplicator/ds2
 	name = "Cybersun Module Duplicator"
 	circuit = /obj/item/circuitboard/machine/module_duplicator/ds2
+
+////// suit storage unit //////
+/obj/machinery/suit_storage_unit/syndicate/elite_admiral
+    mod_type = /obj/item/mod/control/pre_equipped/traitor_elite

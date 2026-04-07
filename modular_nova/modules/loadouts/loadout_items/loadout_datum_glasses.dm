@@ -84,7 +84,7 @@
 /datum/loadout_item/glasses/better
 	name = "Modern Glasses"
 	item_path = /obj/item/clothing/glasses/regular/modern
-	loadout_flags = parent_type::loadout_flags | LOADOUT_FLAG_ALLOW_RESKIN
+	reskin_datum = /datum/atom_skin/modern_glasses
 	group = "Prescription"
 
 /datum/loadout_item/glasses/thin
@@ -200,7 +200,8 @@
 /datum/loadout_item/glasses/meson_prescription
 	name = "Meson HUD - Prescription"
 	item_path = /obj/item/clothing/glasses/meson/prescription
-	restricted_roles = list(JOB_QUARTERMASTER, JOB_CARGO_TECHNICIAN, JOB_SHAFT_MINER, JOB_CUSTOMS_AGENT, JOB_CHIEF_ENGINEER, JOB_STATION_ENGINEER, JOB_TELECOMMS_SPECIALIST, JOB_ATMOSPHERIC_TECHNICIAN, JOB_ENGINEERING_GUARD)
+	restricted_roles = list(ALL_JOBS_CARGO, ALL_JOBS_ENGI)
+	reskin_datum = /datum/atom_skin/meson
 	group = "Job-Locked"
 
 /datum/loadout_item/glasses/prescription_aviator_meson

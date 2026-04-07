@@ -41,6 +41,7 @@
 				/obj/item/clothing/mask/bandana/striped/security = 4,
 				/obj/item/clothing/under/rank/security/officer = 4,
 				/obj/item/clothing/under/rank/security/nova/officer/black = 4,
+				/obj/item/clothing/under/rank/security/nova/modskin = 4,
 				/obj/item/clothing/under/rank/security/officer/skirt = 4,
 				/obj/item/clothing/under/rank/security/nova/dress = 4,
 				/obj/item/clothing/under/rank/security/officer/skirt = 4,
@@ -54,6 +55,7 @@
 				/obj/item/clothing/under/rank/security/officer/grey = 4,
 				/obj/item/clothing/under/pants/slacks = 4,
 				/obj/item/clothing/suit/armor/vest/secjacket = 4,
+				/obj/item/clothing/suit/armor/vest/vested_jacket = 4,
 				/obj/item/clothing/suit/hooded/wintercoat/security = 4,
 				/obj/item/clothing/suit/armor/vest = 4,
 				/obj/item/clothing/suit/toggle/jacket/nova/colorable_bomber/sec = 4,
@@ -91,8 +93,6 @@
 				/obj/item/clothing/suit/toggle/jacket/nova/colorable_bomber/sec/blue = 4,
 				/obj/item/clothing/suit/armor/vest/alt/sec/white = 3,
 				/obj/item/clothing/suit/armor/vest/brit = 3,
-				/obj/item/clothing/suit/armor/vest/jacket = 3,
-				/obj/item/clothing/suit/armor/vest/jacket/badge = 3,
 				/obj/item/clothing/neck/security_cape = 4,
 				/obj/item/clothing/neck/security_cape/armplate = 4,
 				/obj/item/clothing/under/rank/security/nova/officer = 4,
@@ -104,8 +104,6 @@
 				/obj/item/clothing/under/rank/security/nova/turtleneck/blue = 4,
 				/obj/item/clothing/under/rank/security/nova/formal/blue = 4,
 				/obj/item/clothing/under/rank/security/nova/utility/blue = 4,
-				/obj/item/clothing/under/rank/security/nova/trousers/blue = 4,
-				/obj/item/clothing/under/rank/security/nova/trousers/shorts/blue = 4,
 				/obj/item/clothing/shoes/jackboots/sec/blue = 4,
 				/obj/item/clothing/gloves/color/black/security/white = 4,
 				/obj/item/clothing/gloves/color/black/security/blu = 4,
@@ -131,5 +129,15 @@
 		/obj/item/clothing/glasses/hud/security/sunglasses/armadyne = 3, // FLUFFY FRONTIER ADDITION
 		/obj/item/berdish_kit = 6, // FLUFFY FRONTIER ADDITION
 		/obj/item/clothing/accessory/cqd_holster = 6, // FLUFFY FRONTIER ADDITION
+		/obj/item/clothing/head/helmet/hc_police = 3,
+		/obj/item/clothing/head/soft/hc_police = 3,
+		/obj/item/clothing/mask/gas/hc_police = 3,
+		/obj/item/clothing/head/hats/colonial/hc_police = 3,
+		/obj/item/clothing/neck/cloak/colonial/hc_police = 3,
+		/obj/item/clothing/under/colonial/hc_police = 3,
+		/obj/item/clothing/under/colonial/hc_police/skirt = 3,
+		/obj/item/clothing/suit/armor/vest/hc_police_jacket/suit = 3,
+		/obj/item/clothing/suit/armor/vest/hc_police = 3,
+		/obj/item/clothing/suit/armor/vest/hc_police_jacket = 3,
 		)
 	payment_department = ACCOUNT_SEC

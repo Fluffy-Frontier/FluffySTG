@@ -270,12 +270,15 @@
 	. = ..()
 	icon_state = "[base_icon_state][contents.len ? null : "_empty"]"
 
+/obj/item/storage/fancy/cigarettes/proc/open_icon_state()
+	return "[icon_state]_open"
+
 /obj/item/storage/fancy/cigarettes/update_overlays()
 	. = ..()
 	if(!open_status || !contents.len)
 		return
 
-	. += "[icon_state]_open"
+	. += open_icon_state()
 
 	if(!display_cigs)
 		return
@@ -546,9 +549,13 @@
 /obj/item/storage/fancy/cigarettes/cigars/havana
 	name = "\improper premium Havanian cigar case"
 	desc = "A case of classy Havanian cigars."
-	icon_state = "cohibacase"
-	base_icon_state = "cohibacase"
+	icon_state = "havanacase"
+	base_icon_state = "havanacase"
 	spawn_type = /obj/item/cigarette/cigar/havana
+
+
+/obj/item/storage/fancy/cigarettes/cigars/havana/open_icon_state()
+	return "cohibacase_open"
 
 /obj/item/storage/fancy/cigarettes/cigars/havana/empty
 	spawn_count = 0
@@ -609,7 +616,7 @@
 	spawn_count = 10
 	contents_tag = "pickle"
 	foldable_result = /obj/item/reagent_containers/cup/beaker/large
-	custom_materials = list(/datum/material/glass = SHEET_MATERIAL_AMOUNT)
+	custom_materials = list(/datum/material/glass = SHEET_MATERIAL_AMOUNT * 1.25)
 	open_status = FANCY_CONTAINER_ALWAYS_OPEN
 	has_open_closed_states = FALSE
 	storage_type = /datum/storage/pickles_jar

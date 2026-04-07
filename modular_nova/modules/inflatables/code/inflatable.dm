@@ -50,6 +50,8 @@
 /// Do damage ticks to structure's integrity if the air is warmer than the minimum of fire, we only care about heat
 /obj/structure/inflatable/proc/check_melt(turf/source, datum/gas_mixture/air, temperature)
 	SIGNAL_HANDLER
+	if(QDELETED(src))
+		return
 	if(temperature < FIRE_MINIMUM_TEMPERATURE_TO_EXIST)
 		return
 	if(!COOLDOWN_FINISHED(src, burn_damage_cd))
@@ -193,12 +195,12 @@
 		qdel(src)
 
 /obj/item/inflatable/attackby(obj/item/attacking_item, mob/user, list/modifiers, list/attack_modifiers)
-	if(!istype(attacking_item, /obj/item/stack/sticky_tape))
+	if(!istype(attacking_item, /obj/item/stack/medical/wrap/sticky_tape))
 		return ..()
 	if(!torn)
 		to_chat(user, span_notice("[src] does not need repairing!"))
 		return
-	var/obj/item/stack/sticky_tape/attacking_tape = attacking_item
+	var/obj/item/stack/medical/wrap/sticky_tape/attacking_tape = attacking_item
 	if(attacking_tape.use(TAPE_REQUIRED_TO_FIX, check = TRUE))
 		to_chat(user, span_danger("There is not enough of [attacking_tape]! You need at least [TAPE_REQUIRED_TO_FIX] pieces!"))
 		return

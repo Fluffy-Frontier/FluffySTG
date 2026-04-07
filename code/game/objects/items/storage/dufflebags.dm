@@ -288,7 +288,7 @@
 	new /obj/item/bonesetter(src)
 	new /obj/item/blood_filter(src)
 	new /obj/item/stack/medical/bone_gel(src)
-	new /obj/item/stack/sticky_tape/surgical(src)
+	new /obj/item/stack/medical/wrap/sticky_tape/surgical(src)
 	new /obj/item/emergency_bed(src)
 	new /obj/item/clothing/suit/jacket/straight_jacket(src)
 	new /obj/item/clothing/mask/muzzle(src)
@@ -402,10 +402,16 @@
 	new /obj/item/clothing/glasses/meson(src)
 	new /obj/item/t_scanner/adv_mining_scanner/lesser(src)
 	new /obj/item/storage/bag/ore(src)
+	/* // NOVA EDIT REMOVAL - START
 	new /obj/item/clothing/suit/hooded/explorer(src)
 	new /obj/item/encryptionkey/headset_mining(src)
 	new /obj/item/clothing/mask/gas/explorer(src)
 	new /obj/item/card/id/advanced/mining(src)
+	*/ // NOVA EDIT REMOVAL - END
+	// NOVA EDIT ADDITION - START
+	new /obj/item/clothing/suit/hooded/seva(src)
+	new /obj/item/clothing/mask/gas/seva(src)
+	// NOVA EDIT ADDITION - END
 	new /obj/item/gun/energy/recharge/kinetic_accelerator(src)
 	new /obj/item/knife/combat/survival(src)
 	new /obj/item/flashlight/seclite(src)

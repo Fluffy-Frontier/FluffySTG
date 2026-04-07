@@ -4,7 +4,7 @@
 	icon = 'icons/obj/wallmounts.dmi'
 	icon_state = "fish_mount_item"
 	result_path = /obj/structure/fish_mount
-	custom_materials = list(/datum/material/wood = SHEET_MATERIAL_AMOUNT)
+	custom_materials = list(/datum/material/wood = SHEET_MATERIAL_AMOUNT * 2)
 	pixel_shift = 31
 	///Reference to the persistent_id of the mount this was spawned from.
 	var/persistence_id
@@ -39,7 +39,7 @@
 	//Mounted fish shouldn't flop. It should also show size and weight to everyone.
 	add_traits(list(TRAIT_STOP_FISH_FLOPPING, TRAIT_EXAMINE_FISH), INNATE_TRAIT)
 	if(mapload)
-		find_and_hang_on_wall()
+		find_and_mount_on_atom()
 	if(!persistence_id)
 		return
 	if(SSfishing.initialized)
@@ -140,7 +140,7 @@
 	var/beauty = 100 + mounted_fish.beauty * 1.2
 	var/datum/material/main_material = mounted_fish.get_master_material()
 	if(main_material)
-		beauty += main_material.beauty_modifier * mounted_fish.weight
+		beauty += main_material.get_property(MATERIAL_BEAUTY) * mounted_fish.weight
 	return round(beauty)
 
 /obj/structure/fish_mount/proc/on_fish_attack_hand(datum/source, mob/living/user)

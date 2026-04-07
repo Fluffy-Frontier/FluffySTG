@@ -14,12 +14,34 @@
 	throw_speed = 3
 	throw_range = 5
 	merge_type = /obj/item/stack/sheet/mineral/clay
+	material_type = /datum/material/clay
+	mats_per_unit = list(/datum/material/clay = SHEET_MATERIAL_AMOUNT)
 	drop_sound = SFX_BRICK_DROP
 	pickup_sound = SFX_BRICK_PICKUP
 
+//And now for our lavaland dwelling friends, sand, but in stone form! Truly revolutionary.
+/datum/material/clay
+	name = "clay"
+	desc = "It's clay."
+	color = "#757575"
+	mat_flags = MATERIAL_CLASS_RIGID | MATERIAL_BASIC_RECIPES
+	mat_properties = list(
+		MATERIAL_DENSITY = 4,
+		MATERIAL_HARDNESS = 1,
+		MATERIAL_FLEXIBILITY = 9,
+		MATERIAL_REFLECTIVITY = 2,
+		MATERIAL_ELECTRICAL = 1,
+		MATERIAL_THERMAL = 8,
+		MATERIAL_CHEMICAL = 3,
+	)
+	sheet_type = /obj/item/stack/sheet/mineral/clay
+	value_per_unit = 5 / SHEET_MATERIAL_AMOUNT
+	turf_sound_override = FOOTSTEP_PLATING
+	texture_layer_icon_state = "brick"
+
 GLOBAL_LIST_INIT(clay_recipes, list ( \
-	new/datum/stack_recipe("clay range", /obj/machinery/primitive_stove, 10, time = 5 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND, category = CAT_MISC), \
-	new/datum/stack_recipe("clay oven", /obj/machinery/oven/stone, 10, time = 5 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND, category = CAT_MISC) \
+	new/datum/stack_recipe("clay range", /obj/machinery/primitive_stove/clay, 10, time = 5 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND, category = CAT_MISC), \
+	new/datum/stack_recipe("clay oven", /obj/machinery/oven/primitive/clay, 10, time = 5 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND, category = CAT_MISC) \
 	))
 
 /obj/item/stack/sheet/mineral/clay/get_main_recipes()
@@ -232,6 +254,7 @@ GLOBAL_LIST_INIT(clay_recipes, list ( \
 	icon_state = "throw_wheel_empty"
 	density = TRUE
 	anchored = TRUE
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 10)
 
 	///if the structure has clay
 	var/has_clay = FALSE
