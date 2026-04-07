@@ -7348,6 +7348,29 @@
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/main)
 "JY" = (
+/obj/effect/turf_decal/bot_red,
+/obj/structure/closet/crate/secure/gear{
+	desc = "A secute crate with huge mark 'to Surface' on it.";
+	icon_state = "syndicrate";
+	base_icon_state = "syndicrate";
+	req_access = list("syndicate")
+	},
+/obj/item/stack/sheet/plasteel/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/iron/fifty,
+/obj/item/stack/sheet/mineral/titanium,
+/obj/item/stack/sheet/mineral/silver,
+/obj/item/stack/sheet/bluespace_crystal,
+/obj/item/stack/sheet/mineral/diamond,
+/obj/item/stack/sheet/mineral/uranium{
+	amount = 10
+	},
+/obj/item/stack/sheet/mineral/gold{
+	amount = 10
+	},
+/obj/item/stack/sheet/mineral/plasma{
+	amount = 5
+	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/interdyne_planetary_base/main/vault)
 "Kb" = (
