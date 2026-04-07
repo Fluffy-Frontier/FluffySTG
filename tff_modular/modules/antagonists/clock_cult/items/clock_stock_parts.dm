@@ -60,11 +60,11 @@
 	tier = 4
 	physical_object_type = /obj/item/stock_parts/matter_bin/bluespace/clock
 
-/obj/item/stock_parts/manipulator/femto/clock
+/obj/item/stock_parts/servo/femto/clock
 	name = "Powered Manipulator"
 	desc = "Changes the energy flow around an object to manipulate it."
 	color = rgb(190, 135, 0)
 
-/datum/stock_part/manipulator/clock
+/datum/stock_part/servo/clock
 	tier = 4
-	physical_object_type = /obj/item/stock_parts/manipulator/femto/clock
+	physical_object_type = /obj/item/stock_parts/servo/femto/clock

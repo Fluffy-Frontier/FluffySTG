@@ -10,6 +10,6 @@
 	build_path = /obj/machinery/sleeper/clockwork
 	req_components = list(
 		/datum/stock_part/matter_bin/clock = 1,
-		/datum/stock_part/manipulator/clock = 1,
+		/datum/stock_part/servo/clock = 1,
 		/obj/item/stack/cable_coil = 1,
 		/obj/item/stack/sheet/glass = 2)
