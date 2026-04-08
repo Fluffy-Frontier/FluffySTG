@@ -8,3 +8,8 @@
 	icon = FA_ICON_SNOWFLAKE
 	mob_trait = TRAIT_COLDBLOODED
 
+/datum/quirk/coldblooded/is_species_appropriate(datum/species/mob_species)
+    if(ispath(mob_species, /datum/species/lizard))
+        return FALSE
+    return ..()
+
