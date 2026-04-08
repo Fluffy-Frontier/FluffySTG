@@ -1,25 +1,40 @@
 //родной - modular_nova/modules/shotgunrebalance/code/shotgun.dm
 
+/obj/projectile/bullet/pellet/shotgun_buckshot/milspec
+	damage = 7
+	damage_falloff_tile = -0.1
+	wound_falloff_tile = -0.25
+	speed = 1.5
+	armour_penetration = 5
+
+/obj/projectile/bullet/pellet/shotgun_buckshot
+	damage = 5
+	wound_bonus = 5
+	exposed_wound_bonus = 5
+
 /obj/projectile/bullet/shotgun_slug
-	damage = 50
+	damage = 40
 	wound_bonus = 5
 	exposed_wound_bonus = 10
 
+/obj/item/gun/ballistic/shotgun/automatic/combat
+	projectile_damage_multiplier = 1.25
+
 /obj/projectile/bullet/shotgun_slug/milspec
-	damage = 60
+	damage = 50
 	wound_bonus = 10
 	exposed_wound_bonus = 10
 
 /obj/item/ammo_casing/shotgun/buckshot
-	pellets = 12 // 5 * 12 for 60 damage if every pellet hits
+	pellets = 12
 	variance = 18
 
 /obj/item/ammo_casing/shotgun/magnum
 	pellets = 6 // Half as many pellets for twice the damage each pellet, same overall damage as buckshot
 	variance = 15
 
-
 /obj/projectile/bullet/pellet/shotgun_buckshot/magnum
+	damage = 4.5
 	exposed_wound_bonus = 10
 
 /obj/item/ammo_casing/shotgun/express
@@ -28,6 +43,7 @@
 
 /obj/projectile/bullet/pellet/shotgun_buckshot/express
 	damage = 4
+
 //TFF баф дроби, выпилить бы
 /obj/item/ammo_casing/shotgun/rubbershot
 	variance = 16

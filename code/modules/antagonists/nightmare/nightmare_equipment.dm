@@ -7,7 +7,7 @@
 	icon_state = "light_eater"
 	inhand_icon_state = "light_eater"
 	icon_angle = 180
-	force = 30 // FLUFFY FRONTIER EDIT: ANTAG BUFF #5159; original: 25
+	force = 25
 	armour_penetration = 35
 	lefthand_file = 'icons/mob/inhands/antag/nightmare_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/nightmare_righthand.dmi'

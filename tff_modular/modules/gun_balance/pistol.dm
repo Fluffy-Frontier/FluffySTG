@@ -1,3 +1,4 @@
+
 //родной файл - modular_nova/modules/modular_weapons/code/company_and_or_faction_based/carwo_defense_systems/ammo/pistol.dm
 
 /obj/projectile/bullet/c35sol

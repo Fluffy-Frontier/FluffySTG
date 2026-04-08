@@ -1,4 +1,4 @@
-
+/*
 /obj/item/guardian_creator/miner //add more types to dusty shard!!!!
     possible_guardians = list(
         /mob/living/basic/guardian/charger,
@@ -9,3 +9,4 @@
         /mob/living/basic/guardian/explosive,
         /mob/living/basic/guardian/assassin,
     )
+*/
