@@ -54,6 +54,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_ESCAPE_MENU_OPEN "escape_menu_open"
 
 // Mob traits
+/// Mob is cold blooded like lizards. FF addition
+#define TRAIT_COLDBLOODED "coldblooded"
 /// Forces the user to stay unconscious.
 #define TRAIT_KNOCKEDOUT "knockedout"
 /// Prevents voluntary movement.
