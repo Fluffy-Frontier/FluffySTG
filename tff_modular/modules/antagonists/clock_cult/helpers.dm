@@ -32,7 +32,7 @@
 	if(ishuman(servant)) //looks weird on non-humanoids
 		new /obj/effect/temp_visual/ratvar/warp(target_turf)
 
-	if(istype(pulled))
+	if(istype(pulled, /mob/living))
 		do_teleport(pulled, target_turf, 0, no_effects = TRUE, channel = TELEPORT_CHANNEL_CULT, forced = TRUE)
 		if(!IS_CLOCK(pulled))
 			pulled.Paralyze(3 SECONDS)

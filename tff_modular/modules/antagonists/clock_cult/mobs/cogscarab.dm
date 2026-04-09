@@ -62,10 +62,10 @@
 			add_movespeed_modifier(/datum/movespeed_modifier/cogscarab_off_reebe, TRUE)
 
 /datum/actionspeed_modifier/cogscarab
-	multiplicative_slowdown = 0.6
+	multiplicative_slowdown = 0.4
 
 /datum/movespeed_modifier/cogscarab_off_reebe
-	multiplicative_slowdown = 0.7
+	multiplicative_slowdown = 0.3
 
 //====Shell====
 

@@ -13,7 +13,7 @@
 
 ///Returns whether the given mob is convertable to the blood cult
 /proc/is_convertable_to_cult(mob/living/target, datum/team/cult/specific_cult)
-	if(!istype(target))
+	if(!isliving(target))
 		return FALSE
 	if(isnull(target.mind))
 		return FALSE

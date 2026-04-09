@@ -13,8 +13,7 @@
 
 
 /datum/scripture/slab/hateful_manacles/apply_effects(mob/living/carbon/target_carbon)
-	. = ..()
-	if(!istype(target_carbon) || IS_CLOCK(target_carbon))
+	if(!iscarbon(target_carbon) || IS_CLOCK(target_carbon))
 		return FALSE
 
 	if(target_carbon.handcuffed)

@@ -23,7 +23,7 @@
 	return ..()
 
 /datum/scripture/slab/sentinels_compromise/apply_effects(mob/living/healed_mob)
-	if(!istype(healed_mob) || !IS_CLOCK(invoker) || !IS_CLOCK(healed_mob))
+	if(!isliving(healed_mob) || !IS_CLOCK(invoker) || !IS_CLOCK(healed_mob))
 		return FALSE
 
 	if(iscogscarab(invoker))

@@ -7,6 +7,7 @@
 	suicide_cry = ",r For Ratvar!!!"
 	ui_name = "AntagInfoClockAlt"
 	show_to_ghosts = TRUE
+	hud_icon = 'tff_modular/modules/antagonists/clock_cult/icons/mob/hud.dmi'
 	antag_hud_name = "clockwork"
 	stinger_sound = 'modular_nova/modules/clock_cult/sound/magic/scripture_tier_up.ogg'
 	/// Ref to the cultist's communication ability

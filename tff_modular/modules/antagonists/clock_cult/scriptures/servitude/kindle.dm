@@ -16,9 +16,8 @@
 	cogs_required = 1
 	category = SPELLTYPE_SERVITUDE
 
-
 /datum/scripture/slab/kindle/apply_effects(mob/living/hit_mob)
-	if(!istype(hit_mob))
+	if(!isliving(hit_mob))
 		return FALSE
 
 	if(!IS_CLOCK(invoker))

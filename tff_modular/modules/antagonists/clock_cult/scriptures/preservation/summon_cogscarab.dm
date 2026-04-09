@@ -21,8 +21,8 @@
 	if(!.)
 		return FALSE
 
-	if(!on_reebe(invoker))
-		to_chat(invoker, span_warning("You must do this on Reebe!"))
+	if(!on_reebe(invoker) || !SSthe_ark.marked_areas[get_area(invoker.loc)])
+		to_chat(invoker, span_warning("You must do this on Reebe or Marked Area!"))
 		return FALSE
 
 	if(length(SSthe_ark.cogscarabs) > MAXIMUM_COGSCARABS)

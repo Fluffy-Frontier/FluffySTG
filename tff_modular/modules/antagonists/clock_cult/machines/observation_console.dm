@@ -10,6 +10,12 @@
 	connectable = FALSE
 	circuit = /obj/item/circuitboard/machine/camera_console_ratvar
 
+/obj/machinery/computer/camera_advanced/ratvar/screwdriver_act(mob/living/user, obj/item/I)
+	return FALSE
+
+/obj/machinery/computer/camera_advanced/ratvar/screwdriver_act_secondary(mob/living/user, obj/item/tool)
+	return FALSE
+
 /obj/machinery/computer/camera_advanced/ratvar/Initialize(mapload)
 	. = ..()
 	START_PROCESSING(SSobj, src)
