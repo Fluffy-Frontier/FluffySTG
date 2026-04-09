@@ -176,7 +176,7 @@
 	if(!IS_CLOCK(owner))
 		return FALSE
 
-	if(!recalled_spear.check_turf(owner))
+	if(!recalled_spear.empowered)
 		if(feedback)
 			to_chat(owner, span_brass("You need to be standing on bronze to do this."))
 		return FALSE
