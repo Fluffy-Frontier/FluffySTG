@@ -144,7 +144,7 @@
 	number_level = SEC_LEVEL_LAMBDA
 	sound = 'tff_modular/modules/antagonists/clock_cult/sound/lambda.ogg' // Ported over the current (as of this codes time) ss14 gamma alert, renamed because it fits better. Old gamma was better :(
 	elevating_to_configuration_key = /datum/config_entry/string/alert_lambda
-	shuttle_call_time_mod = 0.25 //This is as bad as the nuke going off. Everyone is fucked.
+	shuttle_call_time_mod = ALERT_COEFF_NOVA //This is as bad as the nuke going off. Everyone is fucked.
 	disables_mail = TRUE
 
 /datum/config_entry/string/alert_lambda
