@@ -1,3 +1,6 @@
+// Not xeno traits (change if you want)
+/// Mob is cold blooded like lizards.
+#define TRAIT_COLDBLOODED "coldblooded"
 // xeno traits
 /// Trait source for xeno innate abilities
 #define TRAIT_XENO_INNATE "xeno_innate"
