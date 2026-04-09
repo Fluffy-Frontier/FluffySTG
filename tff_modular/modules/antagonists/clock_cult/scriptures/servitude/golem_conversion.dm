@@ -10,14 +10,6 @@
 	cogs_required = 3
 	category = SPELLTYPE_SERVITUDE
 
-/datum/scripture/transform_to_golem/New()
-	. = ..()
-	RegisterSignal(SSthe_ark, COMSIG_ANCHORING_CRYSTAL_CHARGED, PROC_REF(on_crystal_charged))
-
-/datum/scripture/transform_to_golem/Destroy(force)
-	UnregisterSignal(SSthe_ark, COMSIG_ANCHORING_CRYSTAL_CHARGED)
-	return ..()
-
 /datum/scripture/transform_to_golem/check_special_requirements(mob/user)
 	. = ..()
 	if(!.)
