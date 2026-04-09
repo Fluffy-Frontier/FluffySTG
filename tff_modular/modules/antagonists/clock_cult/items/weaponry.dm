@@ -20,28 +20,13 @@
 	sharpness = SHARP_EDGED
 	wound_bonus = -15 //wounds are really strong for clock cult, so im making their weapons slightly worse then normal at wounding
 	var/empowered = FALSE
+	var/static/list/effect_turf_typecache = typecacheof(list(/turf/open/floor/bronze, /turf/open/floor/engine/clockwork, /turf/open/indestructible/reebe_void, /turf/open/indestructible/reebe_flooring))
 
-/obj/item/clockwork/weapon/equipped(mob/user, slot, initial)
+/obj/item/clockwork/weapon/attack(mob/living/target_mob, mob/living/user, list/modifiers, list/attack_modifiers)
 	. = ..()
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
+	var/turf/gotten_turf = get_turf(user)
 
-/obj/item/clockwork/weapon/proc/on_move(mob/source, atom/old_loc, dir, forced, list/old_locs)
-	SIGNAL_HANDLER
-	if(source.is_touching_bronze())
-		empowered = TRUE
-	else
-		empowered = FALSE
-
-/obj/item/clockwork/weapon/dropped(mob/user, silent)
-	. = ..()
-	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
-
-/obj/item/clockwork/weapon/afterattack(mob/living/target, mob/user, proximity_flag, click_parameters)
-	. = ..()
-	if(!proximity_flag)
-		return
-
-	if(!empowered)
+	if(!is_type_in_typecache(gotten_turf, effect_turf_typecache))
 		return
 
 	if(QDELETED(target))

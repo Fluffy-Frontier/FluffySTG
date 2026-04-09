@@ -57,6 +57,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/window/reinforced/clockwork/unanchore
 /obj/structure/window/reinforced/clockwork/fulltile
 	icon_state = "clockwork_window-0"
 	base_icon_state = "clockwork_window"
+	icon = 'icons/obj/smooth_structures/clockwork_window.dmi'
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_WINDOW_FULLTILE_BRONZE + SMOOTH_GROUP_WINDOW_FULLTILE
 	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE_BRONZE
