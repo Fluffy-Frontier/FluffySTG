@@ -288,7 +288,23 @@
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/bow/clockwork
 	/// Time between bolt recharges
 	var/recharge_time = 1.5 SECONDS
+	var/empowered = FALSE
 	drawn = TRUE
+
+/obj/item/gun/ballistic/bow/clockwork/equipped(mob/user, slot, initial)
+	. = ..()
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
+
+/obj/item/gun/ballistic/bow/clockwork/proc/on_move(mob/source, atom/old_loc, dir, forced, list/old_locs)
+	SIGNAL_HANDLER
+	if(source.is_touching_bronze())
+		empowered = TRUE
+	else
+		empowered = FALSE
+
+/obj/item/gun/ballistic/bow/clockwork/dropped(mob/user, silent)
+	. = ..()
+	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 
 /obj/item/gun/ballistic/bow/clockwork/Initialize(mapload)
 	. = ..()
