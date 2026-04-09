@@ -296,7 +296,6 @@
 	ADD_TRAIT(src, TRAIT_NODROP, INNATE_TRAIT)
 	AddElement(/datum/element/clockwork_description, "Firing from brass tiles will halve the time that it takes to recharge a bolt.")
 	AddElement(/datum/element/clockwork_pickup)
-	AddComponent(/datum/component/turf_checker, GLOB.clock_turf_types, COMSIG_CHECK_TURF_CLOCKWORK)
 
 /obj/item/gun/ballistic/bow/clockwork/afterattack(atom/target, mob/living/user, flag, params, passthrough)
 	if(!drawn || !chambered)
