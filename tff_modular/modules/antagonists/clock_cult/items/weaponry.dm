@@ -309,7 +309,6 @@
 /obj/item/gun/ballistic/bow/clockwork/Initialize(mapload)
 	. = ..()
 	update_icon_state()
-	ADD_TRAIT(src, TRAIT_NODROP, INNATE_TRAIT)
 	AddElement(/datum/element/clockwork_description, "Firing from brass tiles will halve the time that it takes to recharge a bolt.")
 	AddElement(/datum/element/clockwork_pickup)
 
@@ -345,6 +344,8 @@
 
 /// Recharges a bolt, done after the delay in shoot_live_shot
 /obj/item/gun/ballistic/bow/clockwork/proc/recharge_bolt()
+	if(magazine.stored_ammo)
+		return
 	var/obj/item/ammo_casing/caseless/arrow/clockbolt/bolt = new
 	magazine.give_round(bolt)
 	chambered = bolt
