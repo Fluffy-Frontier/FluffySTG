@@ -1,6 +1,7 @@
 /obj/machinery/sleeper/clockwork
 	name = "Clockwork Sleeper"
 	desc = "An enclosed machine used to stabilize and heal servants."
+	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/sleeper.dmi'
 	icon_state = "sleeper_clockwork"
 	base_icon_state = "sleeper_clockwork"
 	circuit = /obj/item/circuitboard/machine/sleeper/clockwork

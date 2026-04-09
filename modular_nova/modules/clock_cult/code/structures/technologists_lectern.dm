@@ -5,6 +5,7 @@
 	name = "technologist's lectern"
 	desc = "A small pedestal with a glowing book floating over it.."
 	clockwork_desc = "A small pedestal, glowing with a divine energy. Used to research new abilities and objects."
+	icon = 'modular_nova/modules/clock_cult/icons/clockwork_objects.dmi' // TFF ADDITION
 	base_icon_state = "lectern"
 	icon_state = "lectern"
 	anchored = TRUE

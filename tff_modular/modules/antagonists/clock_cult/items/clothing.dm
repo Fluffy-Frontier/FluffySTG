@@ -547,7 +547,7 @@
 	icon_state = "clockwork_gauntlets"
 	siemens_coefficient = 0
 	strip_delay = 8 SECONDS
-
+	body_parts_covered = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT

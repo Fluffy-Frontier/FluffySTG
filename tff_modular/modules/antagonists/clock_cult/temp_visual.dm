@@ -84,7 +84,7 @@
 
 /obj/effect/temp_visual/ratvar/belligerent
 	layer = ABOVE_MOB_LAYER
-	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/clockwork_effects.dmi'
+	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/clockwork_objects.dmi'
 	icon_state = "belligerent_eye"
 	pixel_y = 20
 	duration = 2 SECONDS
@@ -127,7 +127,7 @@
 	animate(src, alpha = 0, time = duration, easing = EASE_OUT)
 
 /obj/effect/temp_visual/ratvar/component
-	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/clockwork_effects.dmi'
+	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/clockwork_objects.dmi'
 	icon_state = "belligerent_eye"
 	layer = ABOVE_MOB_LAYER
 	duration = 1 SECONDS
