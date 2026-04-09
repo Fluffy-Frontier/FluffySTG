@@ -222,4 +222,3 @@
 /atom/movable/proc/get_highest_non_turf_loc()
 	var/list/locs_list = get_locs_recursive()
 	return locs_list[length(locs_list)]
-*/

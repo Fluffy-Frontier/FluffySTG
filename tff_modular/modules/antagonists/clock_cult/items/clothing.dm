@@ -62,6 +62,7 @@
 	var/empowered_slowdown = 0
 	///what armor type do we use while empowered
 	var/datum/armor/empowered_armor = /datum/armor/suit_clockwork_empowered
+	var/empowered = FALSE
 
 /obj/item/clothing/suit/clockwork/equipped(mob/living/user, slot)
 	. = ..()
@@ -73,10 +74,11 @@
 	if(source.is_touching_bronze())
 		set_armor(empowered_armor)
 		slowdown = empowered_slowdown
+		empowered = TRUE
 	else
 		set_armor(initial(armor_type))
 		slowdown = initial(slowdown)
-
+		empowered = FALSE
 	empowered_effect(source)
 
 /obj/item/clothing/suit/clockwork/proc/empowered_effect(mob/source)
@@ -180,7 +182,7 @@
 	. = ..()
 	if(shroud_active)
 		disable()
-	else if(is_empowered)
+	else if(empowered)
 		enable()
 	else
 		balloon_alert(user, "must be standing on brass!")
@@ -191,7 +193,7 @@
 		return
 
 	wearer = user
-	if(shroud_active && is_empowered)
+	if(shroud_active && empowered)
 		enable()
 
 /obj/item/clothing/suit/clockwork/cloak/dropped(mob/user)
@@ -201,7 +203,7 @@
 	wearer = null
 
 /obj/item/clothing/suit/clockwork/cloak/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text, final_block_chance, damage, attack_type)
-	if(is_empowered && shroud_active && prob(CLOAK_DODGE_CHANCE)) //we handle this just a biiiiit too different from parent to make simply using the vars be viable
+	if(empowered && shroud_active && prob(CLOAK_DODGE_CHANCE)) //we handle this just a biiiiit too different from parent to make simply using the vars be viable
 		owner.visible_message(span_danger("[owner]'s [src] makes them phase out of the way of [attack_text]!"))
 		owner.add_filter("clock_cloak", 3, motion_blur_filter(0, 0))
 		addtimer(CALLBACK(src, PROC_REF(remove_phase_filter), owner), (0.6 SECONDS) + 1)
