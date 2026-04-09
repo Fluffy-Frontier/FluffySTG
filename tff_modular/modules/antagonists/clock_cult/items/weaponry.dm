@@ -29,15 +29,15 @@
 	if(!is_type_in_typecache(gotten_turf, effect_turf_typecache))
 		return
 
-	if(QDELETED(target))
+	if(QDELETED(target_mob))
 		return
 
-	if(ismob(target))
-		if(target.stat != DEAD && !IS_CLOCK(target) && !target.can_block_magic(MAGIC_RESISTANCE_HOLY))
-			mob_hit_effect(target, user)
+	if(ismob(target_mob))
+		if(target_mob.stat != DEAD && !IS_CLOCK(target_mob) && !target_mob.can_block_magic(MAGIC_RESISTANCE_HOLY))
+			mob_hit_effect(target_mob, user)
 		return
 
-	atom_hit_effect(target, user)
+	atom_hit_effect(target_mob, user)
 
 /obj/item/clockwork/weapon/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
