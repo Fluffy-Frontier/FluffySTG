@@ -309,7 +309,7 @@
 
 /obj/item/gun/ballistic/bow/clockwork/shoot_live_shot(mob/living/user, pointblank, atom/pbtarget, message)
 	. = ..()
-	if((SEND_SIGNAL(src, COMSIG_CHECK_TURF_CLOCKWORK) & COMPONENT_CHECKER_VALID_TURF))
+	if(empowered)
 		recharge_time = 0.75 SECONDS
 
 	addtimer(CALLBACK(src, PROC_REF(recharge_bolt)), recharge_time)
