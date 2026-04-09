@@ -55,5 +55,5 @@
 
 /obj/item/robot_model/cargo
 	clock_modules = list(/obj/item/clock_module/abscond,
-		/obj/item/gun/ballistic/bow/clockwork,
+		/obj/item/clockwork/weapon/brass_sword,
 		/obj/item/clock_module/stargazer)

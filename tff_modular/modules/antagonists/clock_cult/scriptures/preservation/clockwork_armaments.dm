@@ -11,7 +11,7 @@
 
 
 /datum/scripture/clockwork_armaments/invoke_success()
-	var/choice = tgui_input_list(invoker, "What weapon do you want to call upon?", "Clockwork Armaments", list("Brass Spear", "Brass Battlehammer", "Brass Sword", "Brass Bow"))
+	var/choice = tgui_input_list(invoker, "What weapon do you want to call upon?", "Clockwork Armaments", list("Brass Spear", "Brass Battlehammer", "Brass Sword"))
 
 	if(!choice)
 		return FALSE
@@ -33,9 +33,6 @@
 		if("Brass Sword")
 			weapon_path = /obj/item/clockwork/weapon/brass_sword
 			say_the_line = "Let us cut them to pieces!"
-		if("Brass Bow")
-			weapon_path = /obj/item/gun/ballistic/bow/clockwork
-			say_the_line = "May my arrows strike them dead!"
 
 	base_outfit.equip(invoker)
 

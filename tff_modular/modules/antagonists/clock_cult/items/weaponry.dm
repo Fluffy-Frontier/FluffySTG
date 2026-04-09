@@ -19,25 +19,25 @@
 	attack_verb_simple = list("attack", "poke", "jab", "tear", "gore")
 	sharpness = SHARP_EDGED
 	wound_bonus = -15 //wounds are really strong for clock cult, so im making their weapons slightly worse then normal at wounding
-	var/empowered = FALSE
-	var/static/list/effect_turf_typecache = typecacheof(list(/turf/open/floor/bronze, /turf/open/floor/engine/clockwork, /turf/open/indestructible/reebe_void, /turf/open/indestructible/reebe_flooring))
+	var/static/list/effect_turf_typecache_bronze = typecacheof(/turf/open/floor/bronze)
+	var/static/list/effect_turf_typecache_void = typecacheof(/turf/open/indestructible/reebe_void)
+	var/static/list/effect_turf_typecache_engine = typecacheof(/turf/open/floor/engine/clockwork)
+	var/static/list/effect_turf_typecache_reebe = typecacheof(/turf/open/indestructible/reebe_flooring)
 
 /obj/item/clockwork/weapon/attack(mob/living/target_mob, mob/living/user, list/modifiers, list/attack_modifiers)
 	. = ..()
-	var/turf/gotten_turf = get_turf(user)
+	var/turf/gotten_turf = get_turf(user.loc)
+	if(is_type_in_typecache(gotten_turf, effect_turf_typecache_bronze) || is_type_in_typecache(gotten_turf, effect_turf_typecache_void) || is_type_in_typecache(gotten_turf, effect_turf_typecache_engine) || is_type_in_typecache(gotten_turf, effect_turf_typecache_reebe))
 
-	if(!is_type_in_typecache(gotten_turf, effect_turf_typecache))
-		return
+		if(QDELETED(target_mob))
+			return
 
-	if(QDELETED(target_mob))
-		return
+		if(ismob(target_mob))
+			if(target_mob.stat != DEAD && !IS_CLOCK(target_mob) && !target_mob.can_block_magic(MAGIC_RESISTANCE_HOLY))
+				mob_hit_effect(target_mob, user)
+			return
 
-	if(ismob(target_mob))
-		if(target_mob.stat != DEAD && !IS_CLOCK(target_mob) && !target_mob.can_block_magic(MAGIC_RESISTANCE_HOLY))
-			mob_hit_effect(target_mob, user)
-		return
-
-	atom_hit_effect(target_mob, user)
+		atom_hit_effect(target_mob, user)
 
 /obj/item/clockwork/weapon/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
@@ -180,9 +180,8 @@
 	)
 
 /obj/item/clockwork/weapon/brass_battlehammer/mob_hit_effect(mob/living/target, mob/living/user, thrown = FALSE)
-	if((!thrown && !HAS_TRAIT(src, TRAIT_WIELDED)) || !istype(target))
-		return
-
+	if(!HAS_TRAIT(src, TRAIT_WIELDED) || !thrown)
+		return FALSE
 	var/atom/throw_target = get_edge_target_turf(target, get_dir(src, get_step_away(target, src)))
 	target.throw_at(throw_target, thrown ? HAMMER_THROW_FLING_DISTANCE : HAMMER_FLING_DISTANCE, 4)
 
@@ -216,10 +215,11 @@
 	to_chat(user, span_brass("You strike [target] with an electromagnetic pulse!"))
 	playsound(user, 'sound/effects/magic/lightningshock.ogg', 40)
 
-/obj/item/clockwork/weapon/brass_sword/atom_hit_effect(obj/vehicle/sealed/mecha/target, mob/living/user, thrown)
-	if(!istype(target) || !COOLDOWN_FINISHED(src, emp_cooldown))
+/obj/item/clockwork/weapon/brass_sword/atom_hit_effect(atom/attacked, mob/living/user, thrown)
+	if(!istype(attacked, /obj/vehicle) || !COOLDOWN_FINISHED(src, emp_cooldown))
 		return
 
+	var/obj/vehicle/sealed/mecha/target = attacked
 	COOLDOWN_START(src, emp_cooldown, 20 SECONDS)
 	target.emp_act(EMP_HEAVY)
 	new /obj/effect/temp_visual/emp/pulse(get_turf(target))
@@ -245,33 +245,19 @@
 	inhand_icon_state = "clockwork_bow"
 	base_icon_state = "bow_clockwork"
 	force = 10
-	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/bow/clockwork
+	accepted_magazine_type = null
 	/// Time between bolt recharges
 	var/recharge_time = 1.5 SECONDS
 	var/empowered = FALSE
 	drawn = TRUE
-
-/obj/item/gun/ballistic/bow/clockwork/equipped(mob/user, slot, initial)
-	. = ..()
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
-
-/obj/item/gun/ballistic/bow/clockwork/proc/on_move(mob/source, atom/old_loc, dir, forced, list/old_locs)
-	SIGNAL_HANDLER
-	if(source.is_touching_bronze())
-		empowered = TRUE
-	else
-		empowered = FALSE
-
-/obj/item/gun/ballistic/bow/clockwork/dropped(mob/user, silent)
-	. = ..()
-	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 
 /obj/item/gun/ballistic/bow/clockwork/Initialize(mapload)
 	. = ..()
 	update_icon_state()
 	AddElement(/datum/element/clockwork_description, "Firing from brass tiles will halve the time that it takes to recharge a bolt.")
 	AddElement(/datum/element/clockwork_pickup)
-
+	qdel(src)
+/*
 /obj/item/gun/ballistic/bow/clockwork/afterattack(atom/target, mob/living/user, flag, params, passthrough)
 	if(!drawn || !chambered)
 		to_chat(user, span_notice("[src] must be drawn to fire a shot!"))
@@ -284,9 +270,6 @@
 
 /obj/item/gun/ballistic/bow/clockwork/shoot_live_shot(mob/living/user, pointblank, atom/pbtarget, message)
 	. = ..()
-	if(empowered)
-		recharge_time = 0.75 SECONDS
-
 	addtimer(CALLBACK(src, PROC_REF(recharge_bolt)), recharge_time)
 	recharge_time = initial(recharge_time)
 
@@ -329,7 +312,7 @@
 	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/ammo.dmi'
 	icon_state = "arrow_redlight"
 	projectile_type = /obj/projectile/energy/clockbolt
-
+*/
 /obj/projectile/energy/clockbolt
 	name = "energy bolt"
 	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/projectiles.dmi'

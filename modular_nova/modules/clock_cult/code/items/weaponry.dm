@@ -242,6 +242,7 @@
 	. = ..()
 	AddElement(/datum/element/clockwork_description, "The speed of which you aim at far targets while standing on brass will be massively increased.")
 	AddElement(/datum/element/clockwork_pickup)
+	qdel(src)
 
 /obj/item/ammo_box/magazine/internal/boltaction/lionhunter/clockwork
 	name = "brass rifle internal magazine"
@@ -285,8 +286,7 @@
 
 	generate_items_inside(items_inside, src)
 
-/*
 #undef HAMMER_FLING_DISTANCE
 #undef HAMMER_THROW_FLING_DISTANCE
 #undef BRASS_RIFLE_REDUCED_DELAY
-*/
+
