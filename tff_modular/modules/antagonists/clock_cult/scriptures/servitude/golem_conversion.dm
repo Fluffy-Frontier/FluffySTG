@@ -9,7 +9,6 @@
 	invocation_text = list("My form is weak...", "It must ascend...", "To that of clockwork.")
 	cogs_required = 3
 	category = SPELLTYPE_SERVITUDE
-	unique_locked = TRUE //unlocked after 2 extra anchoring crystals have been placed
 
 /datum/scripture/transform_to_golem/New()
 	. = ..()
@@ -38,7 +37,3 @@
 	human_servant.set_species(/datum/species/clockwork_golem)
 	human_servant.update_body(TRUE)
 	human_servant.update_mutations_overlay()
-
-/datum/scripture/transform_to_golem/proc/on_crystal_charged()
-	if(SSthe_ark.charged_anchoring_crystals >= ANCHORING_CRYSTALS_TO_SUMMON + 2)
-		unique_unlock(TRUE)

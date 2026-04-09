@@ -252,31 +252,33 @@
 	inhand_icon_state = "clockwork_bow"
 	base_icon_state = "bow_clockwork"
 	force = 10
-	accepted_magazine_type = null
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/bow/clockwork
 	/// Time between bolt recharges
 	var/recharge_time = 1.5 SECONDS
 	var/empowered = FALSE
-	drawn = TRUE
+	var/static/list/effect_turf_typecache_bronze = typecacheof(/turf/open/floor/bronze)
+	var/static/list/effect_turf_typecache_void = typecacheof(/turf/open/indestructible/reebe_void)
+	var/static/list/effect_turf_typecache_engine = typecacheof(/turf/open/floor/engine/clockwork)
+	var/static/list/effect_turf_typecache_reebe = typecacheof(/turf/open/indestructible/reebe_flooring)
 
 /obj/item/gun/ballistic/bow/clockwork/Initialize(mapload)
 	. = ..()
 	update_icon_state()
 	AddElement(/datum/element/clockwork_description, "Firing from brass tiles will halve the time that it takes to recharge a bolt.")
 	AddElement(/datum/element/clockwork_pickup)
-	qdel(src)
-/*
-/obj/item/gun/ballistic/bow/clockwork/afterattack(atom/target, mob/living/user, flag, params, passthrough)
+
+/obj/item/gun/ballistic/bow/clockwork/try_fire_gun(atom/target, mob/living/user, params)
 	if(!drawn || !chambered)
 		to_chat(user, span_notice("[src] must be drawn to fire a shot!"))
-		return
-
+		return FALSE
 	return ..()
-
-/obj/item/gun/ballistic/bow/clockwork/can_trigger_gun(mob/living/user, akimbo_usage)
-	return IS_CLOCK(user) //clock cultists should always be able to use their weapons
 
 /obj/item/gun/ballistic/bow/clockwork/shoot_live_shot(mob/living/user, pointblank, atom/pbtarget, message)
 	. = ..()
+	var/turf/gotten_turf = get_turf(user.loc)
+	if(is_type_in_typecache(gotten_turf, effect_turf_typecache_bronze) || is_type_in_typecache(gotten_turf, effect_turf_typecache_void) || is_type_in_typecache(gotten_turf, effect_turf_typecache_engine) || is_type_in_typecache(gotten_turf, effect_turf_typecache_reebe))
+		recharge_time = 0.75 SECONDS
+
 	addtimer(CALLBACK(src, PROC_REF(recharge_bolt)), recharge_time)
 	recharge_time = initial(recharge_time)
 
@@ -294,13 +296,10 @@
 
 /// Recharges a bolt, done after the delay in shoot_live_shot
 /obj/item/gun/ballistic/bow/clockwork/proc/recharge_bolt()
-	if(!length(magazine.stored_ammo))
-		var/obj/item/ammo_casing/caseless/arrow/clockbolt/bolt = new
-		magazine.give_round(bolt)
-		chambered = bolt
-		update_icon()
-	else
-		return FALSE
+	var/obj/item/ammo_casing/arrow/clockbolt/bolt = new
+	magazine.give_round(bolt)
+	chambered = bolt
+	update_icon()
 
 /obj/item/gun/ballistic/bow/clockwork/attackby(obj/item/attacking_item, mob/user, list/modifiers, list/attack_modifiers)
 	return
@@ -319,7 +318,7 @@
 	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/ammo.dmi'
 	icon_state = "arrow_redlight"
 	projectile_type = /obj/projectile/energy/clockbolt
-*/
+
 /obj/projectile/energy/clockbolt
 	name = "energy bolt"
 	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/projectiles.dmi'
