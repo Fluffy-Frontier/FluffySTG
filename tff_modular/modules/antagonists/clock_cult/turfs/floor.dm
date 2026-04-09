@@ -13,6 +13,7 @@
 /turf/open/indestructible/reebe_void/Initialize(mapload)
 	. = ..()
 	icon_state = "reebegame"
+	ADD_TRAIT(src, TRAIT_BRONZE_TURF, TURF_TRAIT)
 
 /turf/open/indestructible/reebe_void/Enter(atom/movable/movable)
 	if(walkable)
@@ -70,6 +71,10 @@
 	baseturfs = /turf/open/indestructible/reebe_flooring
 	turf_flags = NOJAUNT
 
+/turf/open/indestructible/reebe_flooring/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_BRONZE_TURF, TURF_TRAIT)
+
 /turf/open/indestructible/reebe_flooring/ratvar_act()
 	return FALSE
 
@@ -83,3 +88,7 @@
 	name = "clockwork floor"
 	desc = "You feel a faint warmth from below it."
 	icon_state = "clockwork_floor"
+
+/turf/open/floor/engine/clockwork/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_BRONZE_TURF, TURF_TRAIT)

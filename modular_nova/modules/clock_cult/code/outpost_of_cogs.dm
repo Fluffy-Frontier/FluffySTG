@@ -118,7 +118,7 @@
 	var/obj/item/clothing/suit/hooded/hooded = equipped.wear_suit
 	var/datum/component/toggle_attached_clothing/hood = hooded.GetComponent(/datum/component/toggle_attached_clothing)
 	hood.toggle_deployable() // start unhooded
-
+*/
 
 /obj/effect/mob_spawn/corpse/human/clock_cultist
 	name = "Clock Cultist"
@@ -135,4 +135,3 @@
 /obj/effect/landmark/late_cog_portals
 	name = "late cog portal spawn"
 
-*/

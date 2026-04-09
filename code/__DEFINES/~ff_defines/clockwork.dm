@@ -95,6 +95,7 @@
 ///sent by the ark SS whenever an anchoring crystal is created (/obj/structure/destructible/clockwork/anchoring_crystal/charged_crystal)
 #define COMSIG_ANCHORING_CRYSTAL_CREATED "anchoring_crystal_created"
 // Traits related directly to Clockwork Cult
+#define TRAIT_BRONZE_TURF			"bronze_turf"
 /// Given to Clockwork Golems, gives them a reduction on invoke time for certain scriptures.
 #define TRAIT_FASTER_SLAB_INVOKE	"faster_slab_invoke"
 /// Prevents the invocation of clockwork scriptures.

@@ -19,17 +19,29 @@
 	attack_verb_simple = list("attack", "poke", "jab", "tear", "gore")
 	sharpness = SHARP_EDGED
 	wound_bonus = -15 //wounds are really strong for clock cult, so im making their weapons slightly worse then normal at wounding
+	var/empowered = FALSE
 
-/obj/item/clockwork/weapon/Initialize(mapload)
+/obj/item/clockwork/weapon/equipped(mob/user, slot, initial)
 	. = ..()
-	AddComponent(/datum/component/turf_checker, GLOB.clock_turf_types, COMSIG_CHECK_TURF_CLOCKWORK)
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
+
+/obj/item/clockwork/weapon/proc/on_move(mob/source, atom/old_loc, dir, forced, list/old_locs)
+	SIGNAL_HANDLER
+	if(source.is_touching_bronze())
+		empowered = TRUE
+	else
+		empowered = FALSE
+
+/obj/item/clockwork/weapon/dropped(mob/user, silent)
+	. = ..()
+	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 
 /obj/item/clockwork/weapon/afterattack(mob/living/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
 	if(!proximity_flag)
 		return
 
-	if(!check_turf())
+	if(!empowered())
 		return
 
 	if(QDELETED(target))
@@ -62,9 +74,7 @@
 /obj/item/clockwork/weapon/proc/atom_hit_effect(mob/living/target, mob/living/user, thrown = FALSE)
 	return
 
-/obj/item/clockwork/weapon/proc/check_turf(check_override)
-	return (SEND_SIGNAL(src, COMSIG_CHECK_TURF_CLOCKWORK, check_override) & COMPONENT_CHECKER_VALID_TURF)
-
+// Копье, которое можно кидать во врагов и призывать в ручки
 /obj/item/clockwork/weapon/brass_spear
 	name = "brass spear"
 	desc = "A razor-sharp spear made of brass. It thrums with barely-contained energy."
@@ -183,14 +193,15 @@
 		recalled_spear.loc.visible_message(span_warning("[recalled_spear] suddenly appears!"))
 	playsound(get_turf(recalled_spear), 'sound/effects/magic/summonitems_generic.ogg', 50, TRUE)
 
+// Молот, атакующий в 2 раза медленнее чем другое оружие, но с большим АП и уроном, еще и отбрасывает на тайлах бронзы/при броске.
 /obj/item/clockwork/weapon/brass_battlehammer
 	name = "brass battle-hammer"
 	desc = "A brass hammer glowing with energy."
 	base_icon_state = "ratvarian_hammer"
 	icon_state = "ratvarian_hammer0"
-	force = 25
-	throwforce = 25
-	armour_penetration = 30
+	force = 15
+	throwforce = 35
+	armour_penetration = 35
 	attack_verb_simple = list("bash", "hammer", "attack", "smash")
 	attack_verb_continuous = list("bashes", "hammers", "attacks", "smashes")
 	attack_speed = 16
@@ -205,7 +216,7 @@
 	AddComponent(/datum/component/two_handed, \
 		force_unwielded = 15, \
 		icon_wielded = "[base_icon_state]1", \
-		force_wielded = 30, \
+		force_wielded = 35, \
 	)
 
 /obj/item/clockwork/weapon/brass_battlehammer/mob_hit_effect(mob/living/target, mob/living/user, thrown = FALSE)
@@ -219,13 +230,14 @@
 	icon_state = "[base_icon_state]0"
 	return ..()
 
+// Меч атакующий концентрированным ЭМИ. Имеет хороший урон, АП и небольшой шанс блока.
 /obj/item/clockwork/weapon/brass_sword
 	name = "brass longsword"
 	desc = "A large sword made of brass."
 	icon_state = "ratvarian_sword"
 	force = 30
-	throwforce = 20
-	armour_penetration = 25
+	throwforce = 15
+	armour_penetration = 30
 	attack_verb_simple = list("attack", "slash", "cut", "tear", "gore")
 	attack_verb_continuous = list("attacks", "slashes", "cuts", "tears", "gores")
 	clockwork_desc = "Enemies and mechs will be struck with a powerful electromagnetic pulse while you are on bronze tiles, with a cooldown. It seems to only be able to parry melee attacks."
@@ -261,6 +273,7 @@
 /obj/item/clockwork/weapon/brass_sword/proc/send_message(mob/living/target)
 	to_chat(target, span_brass("[src] glows, indicating the next attack will disrupt electronics of the target."))
 
+// фу...
 /obj/item/gun/ballistic/bow/clockwork
 	name = "brass bow"
 	desc = "A bow made from brass and other components that you can't quite understand. It glows with a deep energy and frabricates arrows by itself. \

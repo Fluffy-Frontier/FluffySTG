@@ -1,5 +1,14 @@
 #define CLOAK_DODGE_CHANCE 20
 
+/// Returns true if the mob is on a rusty tile, really low level just because we call it in a bunch of unrelated places
+/mob/proc/is_touching_bronze(check_flying = FALSE)
+	if (check_flying && (movement_type & MOVETYPES_NOT_TOUCHING_GROUND))
+		return FALSE
+	if (HAS_TRAIT(src, TRAIT_MAGICALLY_PHASED) || (movement_type & VENTCRAWLING))
+		return FALSE
+	var/turf/our_turf = get_turf(src)
+	return HAS_TRAIT(our_turf, TRAIT_BRONZE_TURF)
+
 /// Handle stuff to update when a mob equips/unequips a headgear.
 /mob/living/carbon/proc/head_update(obj/item/I, forced)
 	if(isclothing(I))
@@ -38,20 +47,39 @@
 	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/clockwork_garb.dmi'
 	worn_icon = 'tff_modular/modules/antagonists/clock_cult/icons/mob/clockwork_garb_worn.dmi'
 	icon_state = "clockwork_cuirass"
-	armor_type = /datum/armor/suit_clockwork
 	slowdown = 0.2
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	w_class = WEIGHT_CLASS_BULKY
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	armor_type = /datum/armor/suit_clockwork
 	allowed = list(
 		/obj/item/clockwork,
 		/obj/item/stack/tile/bronze,
 		/obj/item/gun/ballistic/bow/clockwork,
 	)
+
 	///what is the value of our slowdown while empowered
 	var/empowered_slowdown = 0
 	///what armor type do we use while empowered
 	var/datum/armor/empowered_armor = /datum/armor/suit_clockwork_empowered
+
+/obj/item/clothing/suit/clockwork/equipped(mob/living/user, slot)
+	. = ..()
+	RegisterSignal(outfit_wearer, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
+
+/obj/item/clothing/suit/clockwork/proc/on_move(mob/source, atom/old_loc, dir, forced, list/old_locs)
+	SIGNAL_HANDLER
+
+	if(source.is_touching_bronze())
+		set_armor(empowered_armor)
+		slowdown = empowered_slowdown
+	else
+		set_armor(initial(armor_type))
+		slowdown = initial(slowdown)
+
+/obj/item/clothing/suit/clockwork/dropped(mob/living/user)
+	. = ..()
+	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 
 /datum/armor/suit_clockwork
 	melee = 25
@@ -76,16 +104,6 @@
 /obj/item/clothing/suit/clockwork/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/clockwork_pickup, ~(ITEM_SLOT_HANDS))
-	AddComponent(/datum/component/turf_checker, GLOB.clock_turf_types, null, TRUE, PROC_REF(set_empowered_state))
-
-/obj/item/clothing/suit/clockwork/proc/set_empowered_state(datum/component/turf_checker/checker, empowered)
-	if(empowered)
-		set_armor(empowered_armor)
-		slowdown = empowered_slowdown
-		return
-
-	set_armor(initial(armor_type))
-	slowdown = initial(slowdown)
 
 /obj/item/clothing/suit/clockwork/speed
 	name = "robes of divinity"
@@ -486,6 +504,28 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	w_class = WEIGHT_CLASS_BULKY
 	flash_protect = FLASH_PROTECTION_FLASH
+	///what is the value of our slowdown while empowered
+	var/empowered_slowdown = 0
+	///what armor type do we use while empowered
+	var/datum/armor/empowered_armor = /datum/armor/suit_clockwork_empowered
+
+/obj/item/clothing/head/helmet/clockwork/equipped(mob/living/user, slot)
+	. = ..()
+	RegisterSignal(outfit_wearer, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
+
+/obj/item/clothing/head/helmet/clockwork/proc/on_move(mob/source, atom/old_loc, dir, forced, list/old_locs)
+	SIGNAL_HANDLER
+
+	if(source.is_touching_bronze())
+		set_armor(empowered_armor)
+		slowdown = empowered_slowdown
+	else
+		set_armor(initial(armor_type))
+		slowdown = initial(slowdown)
+
+/obj/item/clothing/head/helmet/clockwork/dropped(mob/living/user)
+	. = ..()
+	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 
 /datum/armor/helmet_clockwork
 	melee = 25
@@ -511,10 +551,6 @@
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_HEAD))
 	AddElement(/datum/element/clockwork_pickup, ~(ITEM_SLOT_HANDS))
-	AddComponent(/datum/component/turf_checker, GLOB.clock_turf_types, null, TRUE, PROC_REF(set_empowered_state))
-
-/obj/item/clothing/head/helmet/clockwork/proc/set_empowered_state(datum/component/turf_checker/checker, empowered)
-	empowered ? set_armor(/datum/armor/helmet_clockwork_empowered) : initial(armor_type)
 
 /obj/item/clothing/shoes/clockwork
 	name = "brass treads"
@@ -547,7 +583,6 @@
 	icon_state = "clockwork_gauntlets"
 	siemens_coefficient = 0
 	strip_delay = 8 SECONDS
-	body_parts_covered = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
@@ -555,11 +590,11 @@
 	armor_type = /datum/armor/gloves_clockwork
 
 /datum/armor/gloves_clockwork
-	melee = 10
+	melee = 0
 	bullet = 0
 	laser = 0
 	energy = 0
-	bomb = 10
+	bomb = 0
 	bio = 80
 	fire = 80
 	acid = 100

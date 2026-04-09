@@ -191,6 +191,13 @@
 	icon_state = "clockwork_floor"
 	floor_tile = /obj/item/stack/tile/bronze
 
+// TFF ADDITION START
+/turf/open/floor/bronze/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_BRONZE_TURF, TURF_TRAIT)
+
+// TFF ADDITION END
+
 /turf/open/floor/bronze/flat
 	icon_state = "reebe"
 	floor_tile = /obj/item/stack/tile/bronze/flat

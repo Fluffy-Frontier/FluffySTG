@@ -1,3 +1,4 @@
+/*
 //a simple element that listens for passed signals and then returns based on if get_turf's type is within valid_turfs, if you need more then use the /complex subtype
 /datum/component/turf_checker
 	dupe_mode = COMPONENT_DUPE_ALLOWED
@@ -220,3 +221,4 @@
 /atom/movable/proc/get_highest_non_turf_loc()
 	var/list/locs_list = get_locs_recursive()
 	return locs_list[length(locs_list)]
+*/
