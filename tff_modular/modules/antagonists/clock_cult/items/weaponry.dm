@@ -180,8 +180,6 @@
 	)
 
 /obj/item/clockwork/weapon/brass_battlehammer/mob_hit_effect(mob/living/target, mob/living/user, thrown = FALSE)
-	if(!HAS_TRAIT(src, TRAIT_WIELDED) || !thrown)
-		return FALSE
 	var/atom/throw_target = get_edge_target_turf(target, get_dir(src, get_step_away(target, src)))
 	target.throw_at(throw_target, thrown ? HAMMER_THROW_FLING_DISTANCE : HAMMER_FLING_DISTANCE, 4)
 
