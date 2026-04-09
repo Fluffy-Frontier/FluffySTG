@@ -65,7 +65,7 @@
 
 /obj/item/clothing/suit/clockwork/equipped(mob/living/user, slot)
 	. = ..()
-	RegisterSignal(outfit_wearer, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
 
 /obj/item/clothing/suit/clockwork/proc/on_move(mob/source, atom/old_loc, dir, forced, list/old_locs)
 	SIGNAL_HANDLER
@@ -76,6 +76,11 @@
 	else
 		set_armor(initial(armor_type))
 		slowdown = initial(slowdown)
+
+	empowered_effect(source)
+
+/obj/item/clothing/suit/clockwork/proc/empowered_effect(mob/source)
+	return
 
 /obj/item/clothing/suit/clockwork/dropped(mob/living/user)
 	. = ..()
@@ -150,8 +155,6 @@
 	var/previous_alpha = 255
 	/// Ref to who is wearing this
 	var/mob/living/wearer
-	/// Are we currently empowered
-	var/is_empowered = FALSE
 
 /datum/armor/clockwork_cloak
 	melee = 15
@@ -163,9 +166,7 @@
 	fire = 100
 	acid = 100
 
-/obj/item/clothing/suit/clockwork/cloak/set_empowered_state(datum/component/turf_checker/checker, empowered)
-	. = ..()
-	is_empowered = empowered
+/obj/item/clothing/suit/clockwork/cloak/empowered_effect(mob/source)
 	if(shroud_active && !empowered)
 		disable()
 
@@ -511,7 +512,7 @@
 
 /obj/item/clothing/head/helmet/clockwork/equipped(mob/living/user, slot)
 	. = ..()
-	RegisterSignal(outfit_wearer, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
 
 /obj/item/clothing/head/helmet/clockwork/proc/on_move(mob/source, atom/old_loc, dir, forced, list/old_locs)
 	SIGNAL_HANDLER
