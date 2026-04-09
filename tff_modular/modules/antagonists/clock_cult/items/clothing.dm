@@ -87,10 +87,6 @@
 	set_armor(initial(armor_type))
 	slowdown = initial(slowdown)
 
-/obj/item/clothing/suit/clockwork/Destroy()
-	. = ..()
-	QDEL(LoadComponent(/datum/component/turf_checker))
-
 /obj/item/clothing/suit/clockwork/speed
 	name = "robes of divinity"
 	desc = "A shiny suit, glowing with a vibrant energy. The wearer will be able to move quickly across battlefields, but will be able to withstand less damage before falling."
@@ -519,10 +515,6 @@
 
 /obj/item/clothing/head/helmet/clockwork/proc/set_empowered_state(datum/component/turf_checker/checker, empowered)
 	empowered ? set_armor(/datum/armor/helmet_clockwork_empowered) : initial(armor_type)
-
-/obj/item/clothing/head/helmet/clockwork/Destroy()
-	. = ..()
-	QDEL(LoadComponent(/datum/component/turf_checker))
 
 /obj/item/clothing/shoes/clockwork
 	name = "brass treads"
