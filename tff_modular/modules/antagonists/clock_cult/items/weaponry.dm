@@ -49,14 +49,18 @@
 
 	var/mob/living/target = hit_atom
 	if(!target.can_block_magic(MAGIC_RESISTANCE_HOLY) && !IS_CLOCK(target))
-		mob_hit_effect(target, throwingdatum.thrower, TRUE)
+		mob_hit_effect_thrown(target, throwingdatum.thrower)
 
 /// What occurs to non-holy mobs when attacked from brass tiles
-/obj/item/clockwork/weapon/proc/mob_hit_effect(mob/living/target, mob/living/user, thrown = FALSE)
+/obj/item/clockwork/weapon/proc/mob_hit_effect_thrown(mob/living/target, mob/living/user)
+	return
+
+/// What occurs to non-holy mobs when attacked from brass tiles
+/obj/item/clockwork/weapon/proc/mob_hit_effect(mob/living/target, mob/living/user)
 	return
 
 /// What occurs to non-mob atoms when attacked from brass tiles
-/obj/item/clockwork/weapon/proc/atom_hit_effect(mob/living/target, mob/living/user, thrown = FALSE)
+/obj/item/clockwork/weapon/proc/atom_hit_effect(mob/living/target, mob/living/user)
 	return
 
 // Копье, которое можно кидать во врагов и призывать в ручки
@@ -179,9 +183,14 @@
 		force_wielded = 35, \
 	)
 
-/obj/item/clockwork/weapon/brass_battlehammer/mob_hit_effect(mob/living/target, mob/living/user, thrown = FALSE)
+/obj/item/clockwork/weapon/brass_battlehammer/mob_hit_effect(mob/living/target, mob/living/user)
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
+		var/atom/throw_target = get_edge_target_turf(target, get_dir(src, get_step_away(target, src)))
+		target.throw_at(throw_target, HAMMER_FLING_DISTANCE, 4)
+
+/obj/item/clockwork/weapon/brass_battlehammer/mob_hit_effect_thrown(mob/living/target, mob/living/user)
 	var/atom/throw_target = get_edge_target_turf(target, get_dir(src, get_step_away(target, src)))
-	target.throw_at(throw_target, thrown ? HAMMER_THROW_FLING_DISTANCE : HAMMER_FLING_DISTANCE, 4)
+	target.throw_at(throw_target, HAMMER_THROW_FLING_DISTANCE, 4)
 
 /obj/item/clockwork/weapon/brass_battlehammer/update_icon_state()
 	icon_state = "[base_icon_state]0"
@@ -217,7 +226,7 @@
 	if(!istype(attacked, /obj/vehicle) || !COOLDOWN_FINISHED(src, emp_cooldown))
 		return
 
-	var/obj/vehicle/sealed/mecha/target = attacked
+	var/obj/vehicle/target = attacked
 	COOLDOWN_START(src, emp_cooldown, 20 SECONDS)
 	target.emp_act(EMP_HEAVY)
 	new /obj/effect/temp_visual/emp/pulse(get_turf(target))
