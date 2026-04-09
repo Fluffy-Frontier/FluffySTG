@@ -55,10 +55,6 @@
 	for(var/atom/recursive_loc in trimmed_recursive_locs)
 		UnregisterSignal(recursive_loc, list(COMSIG_MOVABLE_MOVED, COMSIG_QDELETING))
 
-	parent = null
-	watched_holder = null
-	trimmed_recursive_locs = null
-
 /datum/component/turf_checker/proc/on_signal_recieved(atom/movable/checked_atom, atom/movable/check_override, do_check_turf = TRUE, register_to, unregister_from)
 	SIGNAL_HANDLER
 	if(register_to) //keeping these here in case your use case can handle this on the attached atom in a cheaper way than the /complex subtype
