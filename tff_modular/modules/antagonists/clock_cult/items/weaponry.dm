@@ -41,7 +41,7 @@
 	if(!proximity_flag)
 		return
 
-	if(!empowered())
+	if(!empowered)
 		return
 
 	if(QDELETED(target))
