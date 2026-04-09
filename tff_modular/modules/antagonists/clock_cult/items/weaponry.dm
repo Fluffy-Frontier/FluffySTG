@@ -71,10 +71,6 @@
 	armour_penetration = 40
 	block_chance = 15
 	clockwork_desc = "Can be summoned back to its last holder every 10 seconds if they are standing on bronze."
-	///ref to our recall spell
-	var/datum/action/cooldown/spell/summon_spear/our_summon = new
-	///weakref to our current holder
-	var/datum/weakref/current_holder
 
 /datum/embedding/brass_spear
 	pain_mult = 1.5
@@ -91,33 +87,10 @@
 		wield_callback = CALLBACK(src, PROC_REF(on_wield)), \
 		unwield_callback = CALLBACK(src, PROC_REF(on_unwield)), \
 	)
-	RegisterSignal(src, COMSIG_ITEM_PICKUP, PROC_REF(on_pickup))
-	our_summon.recalled_spear = src
-
-/obj/item/clockwork/weapon/brass_spear/Destroy(force)
-	UnregisterSignal(src, COMSIG_ITEM_PICKUP)
-	QDEL_NULL(our_summon)
-	return ..()
 
 /obj/item/clockwork/weapon/brass_spear/update_icon_state()
 	icon_state = "[base_icon_state]0"
 	return ..()
-
-/obj/item/clockwork/weapon/brass_spear/proc/on_pickup(picked_up, mob/taker)
-	SIGNAL_HANDLER
-
-	if(taker == current_holder?.resolve())
-		return
-
-	current_holder = WEAKREF(taker)
-	if(our_summon.owner)
-		our_summon.Remove(our_summon.owner)
-	if(!IS_CLOCK(taker))
-		return
-
-	var/datum/action/cooldown/spell/summon_spear/summon = locate(/datum/action/cooldown/spell/summon_spear) in taker.actions
-	summon?.Remove(taker) //dont let them have multiple summons
-	our_summon.Grant(taker)
 
 /obj/item/clockwork/weapon/brass_spear/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text, final_block_chance, damage, attack_type)
 	if(HAS_TRAIT(src, TRAIT_WIELDED))
@@ -130,6 +103,7 @@
 /obj/item/clockwork/weapon/brass_spear/proc/on_unwield()
 	attack_speed += 3 //yes technically this could break with the max() in on_wield() but you should not be getting attack speed that low anyway so its only there for sanity
 
+/*
 /datum/action/cooldown/spell/summon_spear
 	name = "Summon Brass Spear"
 	desc = "Summons the last brass spear you picked up if you are currently standing on bronze."
@@ -177,6 +151,7 @@
 		recalled_spear.forceMove(cast_on.drop_location())
 		recalled_spear.loc.visible_message(span_warning("[recalled_spear] suddenly appears!"))
 	playsound(get_turf(recalled_spear), 'sound/effects/magic/summonitems_generic.ogg', 50, TRUE)
+*/
 
 // Молот, атакующий в 2 раза медленнее чем другое оружие, но с большим АП и уроном, еще и отбрасывает на тайлах бронзы/при броске.
 /obj/item/clockwork/weapon/brass_battlehammer
