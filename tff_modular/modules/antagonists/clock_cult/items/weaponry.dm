@@ -344,12 +344,13 @@
 
 /// Recharges a bolt, done after the delay in shoot_live_shot
 /obj/item/gun/ballistic/bow/clockwork/proc/recharge_bolt()
-	if(magazine.stored_ammo)
-		return
-	var/obj/item/ammo_casing/caseless/arrow/clockbolt/bolt = new
-	magazine.give_round(bolt)
-	chambered = bolt
-	update_icon()
+	if(!length(magazine.stored_ammo))
+		var/obj/item/ammo_casing/caseless/arrow/clockbolt/bolt = new
+		magazine.give_round(bolt)
+		chambered = bolt
+		update_icon()
+	else
+		return FALSE
 
 /obj/item/gun/ballistic/bow/clockwork/attackby(obj/item/attacking_item, mob/user, list/modifiers, list/attack_modifiers)
 	return
