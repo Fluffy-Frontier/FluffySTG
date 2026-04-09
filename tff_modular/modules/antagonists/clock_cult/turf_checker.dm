@@ -162,6 +162,7 @@
 	else
 		trimmed_recursive_locs -= destroyed
 	get_new_locs()
+*/
 
 //A mob with this compoent will heal on its life() if standing on the given turfs
 /datum/component/turf_healing
