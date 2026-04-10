@@ -299,6 +299,7 @@
 	design_ids += list(
 		"mesons_prescription",
 		"bsc_nt",
+		"lrm_board",
 	)
 	return ..()
 
