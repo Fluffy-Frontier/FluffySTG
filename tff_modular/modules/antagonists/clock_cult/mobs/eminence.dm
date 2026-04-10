@@ -192,6 +192,10 @@ GLOBAL_DATUM(current_eminence, /mob/living/eminence) //set to the current eminen
 	. = ..()
 	break_light_tube()
 
+/obj/machinery/camera/eminence_act(mob/living/eminence/user)
+	. = ..()
+	emp_act(EMP_LIGHT)
+
 //Internal Radio
 /obj/item/radio/borg/eminence
 	name = "eminence internal listener"
