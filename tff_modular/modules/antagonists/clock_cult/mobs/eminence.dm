@@ -43,7 +43,8 @@ GLOBAL_DATUM(current_eminence, /mob/living/eminence) //set to the current eminen
 	internal_radio = new /obj/item/radio/borg/eminence(src)
 	ADD_TRAIT(src, TRAIT_GODMODE, INNATE_TRAIT)
 	ADD_TRAIT(src, TRAIT_RADIMMUNE, INNATE_TRAIT)
-	grant_all_languages() //this is appearently an issue, im too lazy to figure it out so im just gonna do this
+	ADD_TRAIT(src, TRAIT_NOFIRE, INNATE_TRAIT)
+	grant_all_languages(source = LANGUAGE_MIND) //this is appearently an issue, im too lazy to figure it out so im just gonna do this
 
 /mob/living/eminence/Destroy()
 	if(GLOB.current_eminence == src)

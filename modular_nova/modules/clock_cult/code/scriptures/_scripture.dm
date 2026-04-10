@@ -278,7 +278,7 @@ GLOBAL_LIST_EMPTY(clock_scriptures_by_type)
 
 
 /datum/scripture/slab/invoke()
-	progress = new(invoker, use_time)
+	progress = new(invoker, use_time, invoking_slab)
 	uses_left = uses
 	time_left = use_time
 	invoking_slab.charge_overlay = slab_overlay
