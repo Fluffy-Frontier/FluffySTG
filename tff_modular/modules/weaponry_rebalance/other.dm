@@ -11,3 +11,6 @@
 
 /obj/structure/carp_rift
 	max_integrity = 400
+
+/obj/item/gun/ballistic/automatic/c20r
+	projectile_damage_multiplier = 0.75
