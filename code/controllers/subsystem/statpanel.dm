@@ -73,6 +73,20 @@ SUBSYSTEM_DEF(statpanels)
 		)
 		// NOVA EDIT ADDITION END
 
+		// FLUFFY FRONTIER ADDITION START - shift intensity system
+		if(!isnull(GLOB.shift_intensity_level))
+			global_data += list(
+				" ",
+				"Shift Intensity: [GLOB.shift_intensity_level]",
+				" ",
+			)
+		else if(istype(SSvote.current_vote, /datum/vote/shift_intensity))
+			global_data += list(
+				" ",
+				"Shift Intensity: Voting in progress",
+				" ",
+			)
+		// FLUFFY FRONTIER ADDITION END
 		if(SSshuttle.emergency)
 			var/ETA = SSshuttle.emergency.getModeStr()
 			if(ETA)

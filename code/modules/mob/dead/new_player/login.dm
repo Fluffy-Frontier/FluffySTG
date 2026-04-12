@@ -55,6 +55,13 @@
 	if(SSticker.current_state < GAME_STATE_SETTING_UP)
 		var/tl = SSticker.GetTimeLeft()
 		to_chat(src, "Please set up your character and select \"Ready\". The game will start [tl > 0 ? "in about [DisplayTimeText(tl)]" : "soon"].")
+		// FLUFFY FRONTIER ADDITION START - shift intensity system
+		if(istype(SSvote.current_vote, /datum/vote/shift_intensity))
+			to_chat(src, custom_boxed_message("purple_box center", span_infoplain(
+				"<font color='purple'>[span_bold("Shift intensity vote is in progress right now")]<br>\
+				Type <b>vote</b> or click <a href='byond://winset?command=vote'>here</a> to place your votes.\n\
+				You have [DisplayTimeText(SSvote.current_vote.time_remaining SECONDS)] to vote.</font>")))
+		// FLUFFY FRONTIER ADDITION END
 
 	if(GLOB.unrecommended_builds[num2text(client.byond_build)])
 		INVOKE_ASYNC(src, PROC_REF(unrcommended_build_alert))
