@@ -23,7 +23,7 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 	var/restyle_flags = NONE
 
 	///If not null, overrides the appearance with this sprite accessory datum
-	var/sprite_accessory_override
+	var/datum/sprite_accessory/sprite_accessory_override
 
 /**accessory_type is optional if you haven't set sprite_datums for the object, and is used mostly to generate sprite_datums from a persons DNA
 * For _mob_sprite we make a distinction between "Round Snout" and "round". Round Snout is the name of the sprite datum, while "round" would be part of the sprite
@@ -32,7 +32,7 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 /obj/item/organ/proc/setup_bodypart_overlay(accessory_type)
 	bodypart_overlay = new bodypart_overlay(src)
 
-	accessory_type = accessory_type ? accessory_type : sprite_accessory_override
+	accessory_type ||= sprite_accessory_override
 	var/update_overlays = TRUE
 	if(accessory_type)
 		bodypart_overlay.set_appearance(accessory_type)
@@ -47,6 +47,7 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 
 	if(restyle_flags)
 		RegisterSignal(src, COMSIG_ATOM_RESTYLE, PROC_REF(on_attempt_feature_restyle))
+	color = bodypart_overlay.draw_color // NOVA EDIT ADDITION
 
 /// Some sanity checks, but mostly to check if the person has their preference/dna set to load
 /proc/should_visual_organ_apply_to(obj/item/organ/organpath, mob/living/carbon/target)
@@ -64,6 +65,13 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 
 	if(target.dna.features[feature_key] != SPRITE_ACCESSORY_NONE)
 		return TRUE
+	// NOVA EDIT ADDITION START
+	var/datum/mutant_bodypart/mutant_part = target.dna.mutant_bodyparts[feature_key]
+	if(isnull(mutant_part))
+		return FALSE
+	else if(mutant_part.name != SPRITE_ACCESSORY_NONE)
+		return TRUE
+	// NOVA EDIT ADDITION END
 	return FALSE
 
 ///Update our features after something changed our appearance
@@ -96,7 +104,7 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 	//Build the mob sprite and use it as our overlay
 	for(var/external_layer in bodypart_overlay.all_layers)
 		if(bodypart_overlay.layers & external_layer)
-			. += bodypart_overlay.get_overlay(external_layer, bodypart_owner)
+			. += bodypart_overlay.get_overlay(external_layer, bodypart_owner, bodypart_owner?.is_husked)
 
 ///The horns of a lizard!
 /obj/item/organ/horns
@@ -107,7 +115,7 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 	zone = BODY_ZONE_HEAD
 	slot = ORGAN_SLOT_EXTERNAL_HORNS
 
-	//dna_block = /datum/dna_block/feature/horn // NOVA EDIT REMOVAL - Customization - We have our own system to handle DNA.
+	//dna_block = /datum/dna_block/feature/accessory/horn // NOVA EDIT REMOVAL - Customization - We have our own system to handle DNA.
 	restyle_flags = EXTERNAL_RESTYLE_ENAMEL
 
 	bodypart_overlay = /datum/bodypart_overlay/mutant/horns
@@ -118,12 +126,10 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 	layers = EXTERNAL_ADJACENT
 	feature_key = FEATURE_HORNS
 	dyable = TRUE
+	draw_on_husks = HUSK_OVERLAY_NORMAL
 
-/datum/bodypart_overlay/mutant/horns/can_draw_on_bodypart(obj/item/bodypart/bodypart_owner)
-	return !(bodypart_owner.owner?.obscured_slots & HIDEHAIR)
-
-/datum/bodypart_overlay/mutant/horns/get_global_feature_list()
-	return SSaccessories.sprite_accessories[FEATURE_HORNS] // NOVA EDIT - Customization - ORIGINAL: return SSaccessories.horns_list
+/datum/bodypart_overlay/mutant/horns/can_draw_on_bodypart(obj/item/bodypart/bodypart_owner, mob/living/carbon/owner, is_husked = FALSE)
+	return ..() && !(bodypart_owner.owner?.obscured_slots & HIDEHAIR)
 
 ///The frills of a lizard (like weird fin ears)
 /obj/item/organ/frills
@@ -134,7 +140,7 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 	zone = BODY_ZONE_HEAD
 	slot = ORGAN_SLOT_EXTERNAL_FRILLS
 
-	//dna_block = /datum/dna_block/feature/frill // NOVA EDIT REMOVAL - Customization - We have our own system to handle DNA.
+	//dna_block = /datum/dna_block/feature/accessory/frill // NOVA EDIT REMOVAL - Customization - We have our own system to handle DNA.
 	restyle_flags = EXTERNAL_RESTYLE_FLESH
 
 	bodypart_overlay = /datum/bodypart_overlay/mutant/frills
@@ -145,11 +151,8 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 	layers = EXTERNAL_ADJACENT
 	feature_key = FEATURE_FRILLS
 
-/datum/bodypart_overlay/mutant/frills/can_draw_on_bodypart(obj/item/bodypart/bodypart_owner)
-	return !(bodypart_owner.owner?.obscured_slots & HIDEEARS)
-
-/datum/bodypart_overlay/mutant/frills/get_global_feature_list()
-	return SSaccessories.sprite_accessories[FEATURE_FRILLS] // NOVA EDIT - Customization - ORIGINAL: return SSaccessories.frills_list
+/datum/bodypart_overlay/mutant/frills/can_draw_on_bodypart(obj/item/bodypart/bodypart_owner, mob/living/carbon/owner, is_husked = FALSE)
+	return ..() && !(bodypart_owner.owner?.obscured_slots & HIDEEARS)
 
 ///Guess what part of the lizard this is?
 /obj/item/organ/snout
@@ -162,22 +165,40 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 
 	external_bodyshapes = BODYSHAPE_SNOUTED
 
-	//dna_block = /datum/dna_block/feature/snout // NOVA EDIT REMOVAL - Customization - We have our own system to handle DNA.
+	//dna_block = /datum/dna_block/feature/accessory/snout // NOVA EDIT REMOVAL - Customization - We have our own system to handle DNA.
 	restyle_flags = EXTERNAL_RESTYLE_FLESH
 
 	bodypart_overlay = /datum/bodypart_overlay/mutant/snout
 
 	organ_flags = parent_type::organ_flags | ORGAN_EXTERNAL
 
+	/// Offset to apply to equipment worn on the mouth we give to the head.
+	var/datum/worn_feature_offset/worn_mask_offset
+
+/* // NOVA EDIT REMOVAL START - TODO: This should not be using the global worn offsets, because it will make snouted variations look wrong. For now I'm just commenting this shit out.
+/obj/item/organ/snout/on_bodypart_insert(obj/item/bodypart/head/limb)
+	. = ..()
+	if(isnull(limb.worn_mask_offset))
+		worn_mask_offset = limb.worn_mask_offset = new(
+			attached_part = limb,
+			feature_key = OFFSET_FACEMASK,
+			offset_x = list("east" = 1, "west" = -1),
+		)
+
+/obj/item/organ/snout/on_bodypart_remove(obj/item/bodypart/head/limb, movement_flags)
+	if(worn_mask_offset)
+		QDEL_NULL(worn_mask_offset)
+		limb.worn_mask_offset = null
+	return ..()
+*/ // NOVA EDIT REMOVAL END
+
 /datum/bodypart_overlay/mutant/snout
 	layers = EXTERNAL_ADJACENT
 	feature_key = FEATURE_SNOUT
+	draw_on_husks = HUSK_OVERLAY_GRAYSCALE
 
-/datum/bodypart_overlay/mutant/snout/can_draw_on_bodypart(obj/item/bodypart/bodypart_owner)
-	return !(bodypart_owner.owner?.obscured_slots & HIDESNOUT)
-
-/datum/bodypart_overlay/mutant/snout/get_global_feature_list()
-	return SSaccessories.sprite_accessories[FEATURE_SNOUT] // NOVA EDIT - Customization - ORIGINAL : return SSaccessories.snouts_list
+/datum/bodypart_overlay/mutant/snout/can_draw_on_bodypart(obj/item/bodypart/bodypart_owner, mob/living/carbon/owner, is_husked = FALSE)
+	return ..() && !(bodypart_owner.owner?.obscured_slots & HIDESNOUT)
 
 ///A moth's antennae
 /obj/item/organ/antennae
@@ -188,7 +209,7 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 	zone = BODY_ZONE_HEAD
 	slot = ORGAN_SLOT_EXTERNAL_ANTENNAE
 
-	//dna_block = /datum/dna_block/feature/moth_antenna // NOVA EDIT REMOVAL - Customization - We have our own system to handle DNA.
+	//dna_block = /datum/dna_block/feature/accessory/moth_antenna // NOVA EDIT REMOVAL - Customization - We have our own system to handle DNA.
 	restyle_flags = EXTERNAL_RESTYLE_FLESH
 
 	bodypart_overlay = /datum/bodypart_overlay/mutant/antennae
@@ -254,14 +275,11 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 
 	burn_datum = fetch_sprite_datum(burn_datum) //turn the path into the singleton instance
 
-/datum/bodypart_overlay/mutant/antennae/get_global_feature_list()
-	return SSaccessories.sprite_accessories[FEATURE_MOTH_ANTENNAE] // NOVA EDIT - Customization - ORIGINAL: return SSaccessories.moth_antennae_list
-
 /datum/bodypart_overlay/mutant/antennae/get_base_icon_state()
 	return burnt ? burn_datum.icon_state : sprite_datum.icon_state
 
-/datum/bodypart_overlay/mutant/antennae/can_draw_on_bodypart(obj/item/bodypart/bodypart_owner)
-	return !(bodypart_owner.owner?.obscured_slots & HIDEANTENNAE)
+/datum/bodypart_overlay/mutant/antennae/can_draw_on_bodypart(obj/item/bodypart/bodypart_owner, mob/living/carbon/owner, is_husked = FALSE)
+	return ..() && !(bodypart_owner.owner?.obscured_slots & HIDEANTENNAE)
 
 ///The leafy hair of a podperson
 /obj/item/organ/pod_hair
@@ -273,7 +291,7 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 
 	use_mob_sprite_as_obj_sprite = TRUE
 
-	// dna_block = /datum/dna_block/feature/pod_hair //NOVA CHANGE REMOVAL - Customization
+	// dna_block = /datum/dna_block/feature/accessory/pod_hair //NOVA CHANGE REMOVAL - Customization
 	restyle_flags = EXTERNAL_RESTYLE_PLANT
 
 	bodypart_overlay = /datum/bodypart_overlay/mutant/pod_hair
@@ -291,9 +309,6 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 	///The individual rgb colors are subtracted from this to get the color shifted layer
 	var/color_inverse_base = 255
 
-/datum/bodypart_overlay/mutant/pod_hair/get_global_feature_list()
-	return SSaccessories.pod_hair_list
-
 /datum/bodypart_overlay/mutant/pod_hair/color_image(image/overlay, draw_layer, obj/item/bodypart/limb)
 	if(draw_layer != bitflag_to_layer(color_swapped_layer))
 		return ..()
@@ -305,5 +320,5 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 	else
 		overlay.color = null
 
-/datum/bodypart_overlay/mutant/pod_hair/can_draw_on_bodypart(obj/item/bodypart/bodypart_owner)
-	return !(bodypart_owner.owner?.obscured_slots & HIDEHAIR)
+/datum/bodypart_overlay/mutant/pod_hair/can_draw_on_bodypart(obj/item/bodypart/bodypart_owner, mob/living/carbon/owner, is_husked = FALSE)
+	return ..() && !(bodypart_owner.owner?.obscured_slots & HIDEHAIR)

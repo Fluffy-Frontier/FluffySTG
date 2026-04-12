@@ -7,3 +7,6 @@
 
 /datum/quirk/item_quirk/underworld_connections
 	nova_stars_only = TRUE
+
+/datum/quirk/visitor
+	nova_stars_only = TRUE

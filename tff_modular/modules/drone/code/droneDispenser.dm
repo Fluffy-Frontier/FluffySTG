@@ -1,7 +1,6 @@
 /*
-	FF BALANCE: Drone production disabled
-	Для защиты от набегов и нарушителей
+	FF BALANCE:extended drone timer
 */
 
 /obj/machinery/drone_dispenser
-	maximum_idle = -1
+	cooldownTime = 30 MINUTES

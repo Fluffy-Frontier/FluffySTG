@@ -60,7 +60,7 @@
 	console.remote_ref = WEAKREF(remote)
 	remote.computer_ref = WEAKREF(console)
 
-/obj/item/gun/energy/laser/carbine/cybersun/black_market_trader
+/obj/item/gun/energy/laser/cybersun/black_market_trader
 	desc = "A laser gun primarily used by syndicate security guards. It fires a rapid spray of low-power plasma beams. This one seems to have had its firing pin replaced."
 	pin = /obj/item/firing_pin
 
@@ -68,7 +68,7 @@
 	name = "black market trader weapon spawner"
 	icon_state = "pistol"
 	loot = list(
-		/obj/item/gun/energy/laser/carbine/cybersun/black_market_trader = 80,
+		/obj/item/gun/energy/laser/cybersun/black_market_trader = 80,
 		/obj/item/gun/energy/e_gun/old = 50,
 		/obj/item/gun/ballistic/shotgun/automatic/combat = 50,
 		/obj/item/gun/ballistic/automatic/pistol/contraband = 30,
@@ -197,7 +197,7 @@
 		new_spawn.set_gender(new_spawn.client)
 
 /mob/living/silicon/robot/model/ds2
-	faction = list("Syndicate", ROLE_DS2)
+	faction = list(ROLE_SYNDICATE, ROLE_DS2)
 	bubble_icon = "syndibot"
 	req_access = list(ACCESS_SYNDICATE)
 	lawupdate = FALSE
@@ -417,7 +417,7 @@
 	ears = /obj/item/radio/headset/interdyne
 
 /datum/outfit/ds2/syndicate/post_equip(mob/living/carbon/human/syndicate)
-	syndicate.faction |= ROLE_DS2
+	syndicate.add_faction(ROLE_DS2)
 	return ..()
 
 //DS-2 Command
@@ -451,7 +451,7 @@
 	r_pocket = /obj/item/flashlight/seclite
 	implants = list(
 		/obj/item/implant/weapons_auth,
-		/obj/item/implant/krav_maga
+		/obj/item/implant/kaza_ruk
 		)
 
 /datum/outfit/ds2/syndicate_command/corporateliaison
@@ -479,7 +479,7 @@
 	id_trim = /datum/id_trim/syndicom/nova/ds2/stationadmiral
 
 /datum/outfit/ds2/syndicate_command/post_equip(mob/living/carbon/human/syndicate)
-	syndicate.faction |= ROLE_DS2
+	syndicate.add_faction(ROLE_DS2)
 	return ..()
 
 /datum/outfit/hotelstaff

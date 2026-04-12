@@ -66,6 +66,10 @@ endmap
 map runtimestation
 endmap
 
+#Metastation, but with a json set to no space ruins.
+map meta_event
+endmap
+
 ##NOVA SECTOR MAPS##
 
 map voidraptor
@@ -96,4 +100,8 @@ endmap
 map nssjourney
 	maxplayers 100
 	votable
+endmap
+
+map oceanpubby
+    votable
 endmap

@@ -124,8 +124,8 @@
 		wound2fix.remove_wound()
 		playsound(patient, 'sound/effects/wounds/crack2.ogg', 40, TRUE)
 
-	if(patient.getOxyLoss() >= OXYLOSS_PASSOUT_THRESHOLD-10)
-		patient.adjustOxyLoss(-cast_power*5, forced = TRUE)
+	if(patient.get_oxy_loss() >= OXYLOSS_PASSOUT_THRESHOLD-10)
+		patient.adjust_oxy_loss(-cast_power*5, forced = TRUE)
 
 	if(patient.implants && secondary_school == "Psychokinesis" && cast_power >= 2) // Невольно удаляет импланты, если есть
 		var/obj/item/implant/imp_2_del = pick(patient.implants)
@@ -239,8 +239,8 @@
 	patient.apply_damage(25, TOX, BODY_ZONE_CHEST)
 
 /datum/action/cooldown/spell/touch/psyonic/psyonic_cleansing/proc/try_heal_all(mob/living/carbon/human/patient)
-	if(patient.getToxLoss() > 0)
-		patient.adjustToxLoss(clamp(-(patient.getToxLoss()/3)*cast_power, -35, 0), forced = TRUE)
+	if(patient.get_tox_loss() > 0)
+		patient.adjust_tox_loss(clamp(-(patient.get_tox_loss()/3)*cast_power, -35, 0), forced = TRUE)
 
 /**
  * Пытается оживить труп
@@ -269,9 +269,10 @@
 		var/mob/living/carbon/human/human_victim = victim
 		var/synth_check = (secondary_school == "Psychokinesis" || !issynthetic(human_victim))
 		if(human_victim.stat == DEAD && synth_check)
-			owner.visible_message(span_notice("[owner] kneels before the body of [victim], lowers their hands onto cadavers chest and begins... meditating?"),
-								span_notice("You kneel before the cadaver, lower your hands onto their chest and start to concentrate energy. You better not \
-								get disturbed, or else..."))
+			owner.visible_message(span_notice("[owner] kneels before the body of [victim], lowers their hands onto cadavers chest and begins meditating."),
+								  span_notice("You kneel before the cadaver, lower your hands onto their chest and start to concentrate energy. You better not \
+								  get disturbed, or else..."),
+								  blind_message = span_hear("You hear a low hum."))
 			var/obj/effect/abstract/particle_holder/particle_effect = new(human_victim, /particles/droplets/psyonic)
 			if(!do_after(mendicant, 25 SECONDS, human_victim, IGNORE_SLOWDOWNS, TRUE))
 				accident_harm(owner) // Ауч. Больно бьёт по псионику
@@ -295,8 +296,8 @@
 	unlucky_guy.take_bodypart_damage(25, wound_bonus = 100)
 	unlucky_guy.take_bodypart_damage(25, wound_bonus = 100, sharpness = SHARP_EDGED)
 	unlucky_guy.visible_message(span_warning("Something inside of [unlucky_guy]s body cracks!"),
-						  span_bolddanger("Your revival energy backfired at you, causing severe injuries!"),
-						  blind_message = span_hear("You hear bones breaking."))
+								span_bolddanger("Your revival energy backfired at you, causing severe injuries!"),
+								blind_message = span_hear("You hear bones breaking."))
 
 /datum/action/cooldown/spell/touch/psyonic/psyonic_revival/proc/can_defib_human(mob/living/carbon/human/patient)
 	var/defib_result = patient.can_defib()
@@ -306,29 +307,29 @@
 		if (DEFIB_FAIL_SUICIDE)
 			fail_reason = "Patient has left this world on his terms. You can not restore him."
 		if (DEFIB_FAIL_NO_HEART)
-			fail_reason = "Patient's heart is missing and you are not Alpha tier to create it out of air."
+			fail_reason = "Patients heart is missing and you are not Alpha tier to create it out of air."
 		if (DEFIB_FAIL_FAILING_HEART)
 			var/obj/item/organ/heart/target_heart = patient.get_organ_slot(ORGAN_SLOT_HEART)
 			if(target_heart)
 				target_heart.operated = TRUE
 				if((target_heart.organ_flags & ORGAN_ORGANIC) || synth_check) // Only fix organic heart
-					patient.setOrganLoss(ORGAN_SLOT_HEART, 60)
+					patient.set_organ_loss(ORGAN_SLOT_HEART, 60)
 				else
-					fail_reason = "Patient's heart is made out of metals and plastics. You can not work with that."
+					fail_reason = "Patients heart is made out of metals and plastics. You can not work with that."
 		if (DEFIB_FAIL_TISSUE_DAMAGE)
-			patient.adjustBruteLoss(patient.getBruteLoss()/2)
-			patient.adjustFireLoss(patient.getFireLoss()/2)
-			if ((patient.getBruteLoss() >= MAX_REVIVE_BRUTE_DAMAGE) || (patient.getFireLoss() >= MAX_REVIVE_FIRE_DAMAGE))
-				fail_reason = "Patient's body is too flimsy to support life, but your energy partially healed that. Maybe try again?"
+			patient.adjust_brute_loss(-patient.get_brute_loss()/2)
+			patient.adjust_fire_loss(-patient.get_fire_loss()/2)
+			if ((patient.get_brute_loss() >= MAX_REVIVE_BRUTE_DAMAGE) || (patient.get_fire_loss() >= MAX_REVIVE_FIRE_DAMAGE))
+				fail_reason = "Patients body is too flimsy to support life, but your energy partially healed that. Maybe try again?"
 		if (DEFIB_FAIL_HUSK)
 			patient.cure_husk()
 			if(HAS_TRAIT(patient, TRAIT_HUSK))
-				fail_reason = "Patient's body is a mere husk, and you can not cure them."
+				fail_reason = "Patients body is a mere husk, and you can not cure them."
 		if (DEFIB_FAIL_FAILING_BRAIN)
 			var/obj/item/organ/brain/target_brain = patient.get_organ_slot(ORGAN_SLOT_BRAIN)
 			if(target_brain)
 				if((target_brain.organ_flags & ORGAN_ORGANIC) || synth_check) // Only fix organic heart
-					patient.setOrganLoss(ORGAN_SLOT_BRAIN, 60)
+					patient.set_organ_loss(ORGAN_SLOT_BRAIN, 60)
 				else
 					fail_reason = "Patient's brain is made out of metals and plastics. You can not work with that."
 		if (DEFIB_FAIL_NO_INTELLIGENCE)
@@ -349,22 +350,24 @@
 	else
 		var/defib_result = patient.can_defib()
 		if (defib_result == DEFIB_POSSIBLE)
-			var/total_brute = patient.getBruteLoss()
-			var/total_burn = patient.getFireLoss()
+			var/total_brute = patient.get_brute_loss()
+			var/total_burn = patient.get_fire_loss()
 
 			var/need_mob_update = FALSE
 			if (patient.health > HALFWAYCRITDEATH)
-				need_mob_update += patient.adjustOxyLoss(patient.health - HALFWAYCRITDEATH, updating_health = FALSE)
+				need_mob_update += patient.adjust_oxy_loss(patient.health - HALFWAYCRITDEATH, updating_health = FALSE)
 			else
-				var/overall_damage = total_brute + total_burn + patient.getToxLoss() + patient.getOxyLoss()
+				var/overall_damage = total_brute + total_burn + patient.get_tox_loss() + patient.get_oxy_loss()
 				var/mobhealth = patient.health
-				need_mob_update += patient.adjustOxyLoss((mobhealth - HALFWAYCRITDEATH) * (patient.getOxyLoss() / overall_damage), updating_health = FALSE)
-				need_mob_update += patient.adjustToxLoss((mobhealth - HALFWAYCRITDEATH) * (patient.getToxLoss() / overall_damage), updating_health = FALSE, forced = TRUE) // force tox heal for toxin lovers too
-				need_mob_update += patient.adjustFireLoss((mobhealth - HALFWAYCRITDEATH) * (total_burn / overall_damage), updating_health = FALSE)
-				need_mob_update += patient.adjustBruteLoss((mobhealth - HALFWAYCRITDEATH) * (total_brute / overall_damage), updating_health = FALSE)
+				need_mob_update += patient.adjust_oxy_loss((mobhealth - HALFWAYCRITDEATH) * (patient.get_oxy_loss() / overall_damage), updating_health = FALSE)
+				need_mob_update += patient.adjust_tox_loss((mobhealth - HALFWAYCRITDEATH) * (patient.get_tox_loss() / overall_damage), updating_health = FALSE, forced = TRUE) // force tox heal for toxin lovers too
+				need_mob_update += patient.adjust_fire_loss((mobhealth - HALFWAYCRITDEATH) * (total_burn / overall_damage), updating_health = FALSE)
+				need_mob_update += patient.adjust_brute_loss((mobhealth - HALFWAYCRITDEATH) * (total_brute / overall_damage), updating_health = FALSE)
 			if(need_mob_update)
 				patient.updatehealth()
-			owner.visible_message(span_green("Revival successful."))
+			owner.visible_message(span_warning("[owner] suddenly hits [patient]s chest!"),
+								  span_green("Another saved life on your count."),
+								  span_hear("You hear a slap."))
 			playsound(src, 'sound/effects/ghost.ogg', 40, FALSE)
 			patient.set_heartattack(FALSE)
 			if(defib_result == DEFIB_POSSIBLE)

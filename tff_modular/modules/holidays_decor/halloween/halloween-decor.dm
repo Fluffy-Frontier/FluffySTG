@@ -8,6 +8,7 @@
 	throw_speed = 3
 	throw_range = 2
 	force = 0
+	custom_materials = list(/datum/material/paper = SHEET_MATERIAL_AMOUNT)
 
 /obj/item/decoration/halloween/pumpkin
 	name = "Paper Pumpkin"

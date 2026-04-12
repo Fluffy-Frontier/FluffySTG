@@ -51,11 +51,6 @@
 
 	mob.log_talk(msg,LOG_OOC, tag="LOOC")
 	var/list/heard
-	if(wall_pierce)
-		heard = get_hearers_in_looc_range(mob.get_top_level_mob())
-	else
-		heard = get_hearers_in_view(LOOC_RANGE, mob.get_top_level_mob())
-	heard = mob_only_listeners(heard)
 	//so the ai can post looc text
 	if(istype(mob, /mob/living/silicon/ai))
 		var/mob/living/silicon/ai/ai = mob
@@ -63,6 +58,13 @@
 			heard = get_hearers_in_looc_range(ai.eyeobj)
 		else
 			heard = get_hearers_in_view(LOOC_RANGE, ai.eyeobj)
+	else
+		if(wall_pierce)
+			heard = get_hearers_in_looc_range(mob.get_top_level_mob())
+		else
+			heard = get_hearers_in_view(LOOC_RANGE, mob.get_top_level_mob())
+
+	heard = mob_only_listeners(heard)
 
 	var/list/admin_seen = list()
 	for(var/mob/hearing as anything in heard)
@@ -87,10 +89,10 @@
 		if (is_holder)
 			continue //admins are handled afterwards
 
-		to_chat(hearing_client, span_looc(span_prefix("LOOC[wall_pierce ? " (WALL PIERCE)" : ""]:</span> <EM>[src.mob.name]:</EM> <span class='message'>[msg]")))
+		to_chat(hearing_client, span_looc(span_prefix("LOOC[wall_pierce ? " (WALL PIERCE)" : ""]:</span> <EM>[src.mob.name]:</EM> <span class='message'>[msg]")), avoid_highlighting = (hearing_client == src))
 
 	for(var/client/cli_client as anything in GLOB.admins)
 		if (admin_seen[cli_client])
-			to_chat(cli_client, span_looc("[ADMIN_FLW(usr)] <span class='prefix'>LOOC[wall_pierce ? " (WALL PIERCE)" : ""]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span>"))
+			to_chat(cli_client, span_looc("[ADMIN_FLW(usr)] <span class='prefix'>LOOC[wall_pierce ? " (WALL PIERCE)" : ""]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span>"), avoid_highlighting = (cli_client == src))
 		else if (cli_client.prefs.read_preference(/datum/preference/toggle/admin/see_looc))
-			to_chat(cli_client, span_rlooc("[ADMIN_FLW(usr)] <span class='prefix'>(R)LOOC[wall_pierce ? " (WALL PIERCE)" : ""]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span>"))
+			to_chat(cli_client, span_rlooc("[ADMIN_FLW(usr)] <span class='prefix'>(R)LOOC[wall_pierce ? " (WALL PIERCE)" : ""]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span>"), avoid_highlighting = (cli_client == src))

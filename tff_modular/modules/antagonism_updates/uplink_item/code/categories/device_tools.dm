@@ -1,0 +1,23 @@
+
+/datum/uplink_item/device_tools/briefcase_launchpad
+	name = "Briefcase Launchpad"
+	desc = "A briefcase containing a launchpad, a device able to teleport items and people to and from targets up to eight tiles away from the briefcase. \
+			Also includes a remote control, disguised as an ordinary folder. Touch the briefcase with the remote to link it."
+	surplus = 0
+	item = /obj/item/storage/briefcase/launchpad
+	cost = /datum/uplink_item/low_cost::cost
+
+/datum/uplink_item/device_tools/suspiciousphone
+	name = "Protocol CRAB-17 Phone"
+	desc = "The Protocol CRAB-17 Phone, a phone borrowed from an unknown third party, it can be used to crash the space market, funneling the losses of the crew to your bank account.\
+	The crew can move their funds to a new banking site though, unless they HODL, in which case they deserve it."
+	item = /obj/item/suspiciousphone
+	restricted = TRUE
+	cost = /datum/uplink_item/medium_cost::cost
+	limited_stock = 1
+
+/datum/uplink_item/device_tools/thief_gloves
+	name = "Thief Gloves"
+	desc = "Thief's gloves allow you to steal other people's things silently, but it takes some time..."
+	item = /obj/item/clothing/gloves/color/black/thief
+	cost = /datum/uplink_item/low_cost::cost

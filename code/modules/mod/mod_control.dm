@@ -19,7 +19,7 @@
 	actions_types = list(
 		/datum/action/item_action/mod/deploy,
 		/datum/action/item_action/mod/activate,
-		/datum/action/item_action/mod/sprite_accessories, // NOVA EDIT - Hide mutant parts action
+		/datum/action/item_action/mod/sprite_accessories, // NOVA EDIT ADDITION - Hide mutant parts action
 		/datum/action/item_action/mod/panel,
 		/datum/action/item_action/mod/module,
 		/datum/action/item_action/mod/deploy/ai,
@@ -573,6 +573,13 @@
 			balloon_alert(user, "can't install!")
 			playsound(src, 'sound/machines/scanner/scanbuzz.ogg', 25, TRUE, SILENCED_SOUND_EXTRARANGE)
 		return
+	if(SEND_SIGNAL(src, COMSIG_MOD_TRY_INSTALL_MODULE, new_module, user) & MOD_ABORT_INSTALL)
+		return
+	if(SEND_SIGNAL(new_module, COMSIG_MODULE_TRY_INSTALL, src, user) & MOD_ABORT_INSTALL)
+		return
+	finish_install(new_module, user)
+
+/obj/item/mod/control/proc/finish_install(obj/item/mod/module/new_module, mob/user)
 	new_module.forceMove(src)
 	modules += new_module
 	complexity += new_module.complexity

@@ -1,6 +1,5 @@
 /obj/item/organ/frills
-	mutantpart_key = "frills"
-	mutantpart_info = list(MUTANT_INDEX_NAME = "Divinity", MUTANT_INDEX_COLOR_LIST = list("#FFFFFF"))
+	mutantpart_key = FEATURE_FRILLS
 
 /datum/bodypart_overlay/mutant/frills
 	color_source = ORGAN_COLOR_OVERRIDE
@@ -9,6 +8,8 @@
 	return draw_color
 
 /datum/bodypart_overlay/mutant/frills/can_draw_on_bodypart(obj/item/bodypart/bodypart_owner)
+	if(!..())
+		return FALSE
 	var/mob/living/carbon/human/human = bodypart_owner.owner
 	if(!istype(human))
 		return TRUE

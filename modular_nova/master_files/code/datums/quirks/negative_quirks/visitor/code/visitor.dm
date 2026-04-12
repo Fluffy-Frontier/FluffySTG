@@ -2,7 +2,7 @@
 	name = "Visitor ID"
 	desc = "As assistant, you're given a visitor ID with limited background information. Your records will be sparse and require filling out during the shift."
 	icon = FA_ICON_PERSON_CIRCLE_QUESTION
-	value = -2
+	value = 0 // FLUFFY FRONTIER CHANGE: was -2
 	medical_record_text = "Patient is a guest aboard the station, and has been issued a visitor's ID."
 	gain_text = span_notice("As a guest aboard the station, you've been given a special visitor ID!")
 	lose_text = span_danger("Your visitation rights have been revoked...")
@@ -26,7 +26,6 @@
 		return
 	tweak_manifest()
 	var/mob/living/carbon/human/quirk_human = quirk_holder
-	quirk_human.mind.assigned_role.job_flags &= ~(JOB_CREW_MANIFEST|JOB_ANNOUNCE_ARRIVAL)
 	quirk_human.update_ID_card()
 
 /datum/quirk/visitor/remove(return_id = TRUE, erase_new = TRUE) //these flags are for VV

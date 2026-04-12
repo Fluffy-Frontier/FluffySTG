@@ -142,8 +142,11 @@
 	RegisterSignal(living_mob, COMSIG_LIVING_LIFE, PROC_REF(on_life))
 	RegisterSignal(living_mob, COMSIG_LIVING_POST_FULLY_HEAL, PROC_REF(on_fullhealed))
 	RegisterSignal(living_mob, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(get_status_tab_item))
+	RegisterSignal(living_mob, COMSIG_CARBON_GAIN_ORGAN, PROC_REF(new_brain))
 	RegisterSignals(living_mob, list(COMSIG_MOB_MIDDLECLICKON, COMSIG_MOB_ALTCLICKON), PROC_REF(on_click_sting))
 	ADD_TRAIT(living_mob, TRAIT_FAKE_SOULLESS, CHANGELING_TRAIT)
+	ADD_TRAIT(living_mob, TRAIT_BRAINLESS_CARBON, CHANGELING_TRAIT)
+	ADD_TRAIT(living_mob, TRAIT_CHANGELING_HIVEMIND, CHANGELING_TRAIT)
 
 	if(living_mob.hud_used)
 		var/datum/hud/hud_used = living_mob.hud_used
@@ -198,11 +201,32 @@
 
 	ling_hud.show_hud(ling_hud.hud_version)
 
+/datum/antagonist/changeling/proc/new_brain(mob/living/carbon/ling, obj/item/organ/new_brain)
+	SIGNAL_HANDLER
+
+	if(!istype(new_brain, /obj/item/organ/brain))
+		return
+	make_brain_decoy(ling)
+
 /datum/antagonist/changeling/remove_innate_effects(mob/living/mob_override)
 	var/mob/living/living_mob = mob_override || owner.current
 	handle_clown_mutation(living_mob, removing = FALSE)
-	UnregisterSignal(living_mob, list(COMSIG_MOB_LOGIN, COMSIG_LIVING_LIFE, COMSIG_LIVING_POST_FULLY_HEAL, COMSIG_MOB_GET_STATUS_TAB_ITEMS, COMSIG_MOB_MIDDLECLICKON, COMSIG_MOB_ALTCLICKON))
+	UnregisterSignal(living_mob, list(
+		COMSIG_MOB_LOGIN,
+		COMSIG_LIVING_LIFE,
+		COMSIG_LIVING_POST_FULLY_HEAL,
+		COMSIG_MOB_GET_STATUS_TAB_ITEMS,
+		COMSIG_MOB_MIDDLECLICKON,
+		COMSIG_MOB_ALTCLICKON,
+		COMSIG_MOB_HUD_CREATED,
+		COMSIG_CARBON_GAIN_ORGAN,
+	))
 	REMOVE_TRAIT(living_mob, TRAIT_FAKE_SOULLESS, CHANGELING_TRAIT)
+	REMOVE_TRAIT(living_mob, TRAIT_BRAINLESS_CARBON, CHANGELING_TRAIT)
+	REMOVE_TRAIT(living_mob, TRAIT_CHANGELING_HIVEMIND, CHANGELING_TRAIT)
+
+	for(var/mob/eye/imaginary_friend/hivemind/hivemind_member in living_mob.imaginary_group)
+		qdel(hivemind_member)
 
 	if(living_mob.hud_used)
 		var/datum/hud/hud_used = living_mob.hud_used
@@ -262,7 +286,7 @@
  * Signal proc for [COMSIG_LIVING_LIFE].
  * Handles regenerating chemicals on life ticks.
  */
-/datum/antagonist/changeling/proc/on_life(datum/source, seconds_per_tick, times_fired)
+/datum/antagonist/changeling/proc/on_life(datum/source, seconds_per_tick)
 	SIGNAL_HANDLER
 
 	var/delta_time = DELTA_WORLD_TIME(SSmobs)
@@ -805,7 +829,7 @@
 	user.socks_color = chosen_profile.socks_color
 	user.bra_color = chosen_profile.bra_color
 	user.emissive_eyes = chosen_profile.emissive_eyes
-	user.dna.mutant_bodyparts = chosen_dna.mutant_bodyparts.Copy()
+	user.dna.mutant_bodyparts = LAZYCOPY(chosen_dna.mutant_bodyparts)
 	user.dna.body_markings = chosen_dna.body_markings.Copy()
 
 	qdel(user.selected_scream)
@@ -828,6 +852,15 @@
 			if(target_quirk.name == mimicable_quirk)
 				user.add_quirk(target_quirk.type)
 				break
+
+	// Clean up organs from previous transformation so they don't persist
+	for(var/obj/item/organ/old_organ as anything in user.organs)
+		if(old_organ.bodypart_overlay)
+			old_organ.Remove(user, special = TRUE)
+			qdel(old_organ)
+			continue
+		// Allow regenerate_organs to replace even unremovable organs (e.g. hemophage tumor) during changeling transformation
+		old_organ.organ_flags &= ~ORGAN_UNREMOVABLE
 	// NOVA EDIT ADDITION END
 
 	chosen_dna.copy_dna(user.dna, COPY_DNA_SE|COPY_DNA_SPECIES)

@@ -111,6 +111,10 @@
 	name = "Beret - Virologist"
 	item_path = /obj/item/clothing/head/beret/medical/virologist
 
+/datum/loadout_item/head/beret_clown
+	name = "Beret - Clown"
+	item_path = /obj/item/clothing/head/beret/clown
+
 /*
 *	CAPS
 */
@@ -135,6 +139,7 @@
 /datum/loadout_item/head/colonialcap
 	name = "Cap - Colonial"
 	item_path = /obj/item/clothing/head/hats/colonial
+	species_blacklist = list(SPECIES_TESHARI)
 
 /datum/loadout_item/head/frontiercap
 	name = "Cap - Frontier"
@@ -489,17 +494,6 @@
 	. = ..()
 	.[FA_ICON_EAR_DEAF] = "Behind Ears"
 
-//Christmas
-/datum/loadout_item/head/christmas
-	name = "Christmas Hat - Red"
-	item_path = /obj/item/clothing/head/costume/nova/christmas
-	group = "Costumes"
-
-/datum/loadout_item/head/christmas/green
-	name = "Christmas Hat - Green"
-	item_path = /obj/item/clothing/head/costume/nova/christmas/green
-	group = "Costumes"
-
 //Chaplain
 /datum/loadout_item/head/chap_nunh
 	name = "Nun's Hood"
@@ -599,10 +593,6 @@
 *	TREK/STAR WARS
 */
 
-/datum/loadout_item/head/blasthelmet
-	name = "Officer's Blast Helmet"
-	item_path = /obj/item/clothing/head/hats/imperial/helmet
-
 /datum/loadout_item/head/trekcap
 	name = "Officer's Cap (White)"
 	item_path = /obj/item/clothing/head/hats/caphat/parade/fedcap
@@ -640,21 +630,8 @@
 	item_path = /obj/item/clothing/head/hats/caphat/naval/custom/gold
 
 /datum/loadout_item/head/imperial_generic
-	name = "Naval Officer Cap (Grey)"
+	name = "Naval Officer Cap"
 	item_path = /obj/item/clothing/head/hats/imperial
-
-/datum/loadout_item/head/imperial_grey
-	name = "Naval Officer Cap (Dark Grey)"
-	item_path = /obj/item/clothing/head/hats/imperial/grey
-
-/datum/loadout_item/head/imperial_red
-	name = "Naval Officer Cap (Red)"
-	item_path = /obj/item/clothing/head/hats/imperial/red
-
-/datum/loadout_item/head/imperial_white
-	name = "Naval Officer Cap (White)"
-	item_path = /obj/item/clothing/head/hats/imperial/white
-
 /*
 *	JOB-LOCKED
 */
