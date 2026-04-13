@@ -350,7 +350,7 @@
 
 /obj/item/clothing/glasses/clockwork/wraith_spectacles/process(seconds_per_tick)
 	if(enabled && wearer)
-		var/delt_damage = 0.5 * seconds_per_tick
+		var/delt_damage = 0.1 * seconds_per_tick
 		wearer.adjust_organ_loss(ORGAN_SLOT_EYES, delt_damage, 70)
 		if(damaged_mobs[wearer])
 			var/wearer_data = damaged_mobs[wearer]

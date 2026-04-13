@@ -1,3 +1,5 @@
+#define CLIENT_COLOR_SOURCE_RATVAR "client_color_source_ratvar"
+
 /datum/status_effect/interdiction
 	id = "interdicted"
 	duration = 2.6 SECONDS
@@ -45,13 +47,13 @@
 	owner.add_movespeed_modifier(/datum/movespeed_modifier/clock_warp_sickness)
 	owner.adjust_confusion(duration)
 	owner.adjust_dizzy(duration)
-	owner.add_client_colour(/datum/client_colour/clock_warp)
+	owner.add_client_colour(/datum/client_colour/clock_warp, CLIENT_COLOR_SOURCE_RATVAR)
 
 /datum/status_effect/clock_warp_sickness/on_remove()
 	. = ..()
 	owner.remove_actionspeed_modifier(/datum/actionspeed_modifier/clock_warp_sickness)
 	owner.remove_movespeed_modifier(/datum/movespeed_modifier/clock_warp_sickness)
-	owner.remove_client_colour(/datum/client_colour/clock_warp)
+	owner.remove_client_colour(CLIENT_COLOR_SOURCE_RATVAR)
 
 /atom/movable/screen/alert/status_effect/clock_warp_sickness
 	name = "Warp Sickness"
@@ -78,3 +80,5 @@
 	replacement_prob = 33
 	doubletext_prob = 0
 	text_modification_file = "slurring_clock_text.json"
+
+#undef CLIENT_COLOR_SOURCE_RATVAR
