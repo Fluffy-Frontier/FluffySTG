@@ -11,7 +11,7 @@
 	stamina = 30
 
 /obj/projectile/bullet/c40sol/pierce
-	damage = 20
+	damage = 25
 
 /obj/projectile/bullet/c40sol/incendiary
 	damage = 25
