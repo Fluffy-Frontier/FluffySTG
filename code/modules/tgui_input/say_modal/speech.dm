@@ -62,7 +62,7 @@
 		// NOVA EDIT ADDITION END
 		// TFF ADDITION START - Eventmaker
 		if(EVENT_CHANNEL)
-			SSadmin_verbs.dynamic_invoke_verb(client, /datum/admin_verb/cmd_eventmaker_say, entry)
+			INVOKE_ASYNC(SSadmin_verbs, TYPE_PROC_REF(/datum/controller/subsystem/admin_verbs, dynamic_invoke_verb), client, /datum/admin_verb/cmd_eventmaker_say, entry)
 			return TRUE
 		// TFF ADDITION END
 	return FALSE
