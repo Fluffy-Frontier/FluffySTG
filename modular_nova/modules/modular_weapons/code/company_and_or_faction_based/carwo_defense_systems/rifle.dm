@@ -35,12 +35,12 @@
 	suppressor_y_offset = 1
 
 	burst_size = 1
-	fire_delay = 0.25 SECONDS
+	fire_delay = 0.35 SECONDS
 	actions_types = list()
 
 	spread = 2
 	projectile_wound_bonus = 0
-	projectile_damage_multiplier = 0.75
+	projectile_damage_multiplier = 1
 
 	lore_blurb = "The MMR-2543 is the current standard service rifle for all branches of the Sol Federation Armed Forces.<br><br>\
 		Initially created for use by the Sagittarian Triumvirate's military, its adoption by SolFed came a few years later. \

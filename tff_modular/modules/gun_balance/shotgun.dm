@@ -13,7 +13,7 @@
 	exposed_wound_bonus = 5
 
 /obj/projectile/bullet/shotgun_slug
-	damage = 40
+	damage = 45
 	wound_bonus = 5
 	exposed_wound_bonus = 10
 
@@ -30,11 +30,11 @@
 	variance = 18
 
 /obj/item/ammo_casing/shotgun/magnum
-	pellets = 6 // Half as many pellets for twice the damage each pellet, same overall damage as buckshot
+	pellets = 6
 	variance = 15
 
 /obj/projectile/bullet/pellet/shotgun_buckshot/magnum
-	damage = 4.5
+	damage = 8
 	exposed_wound_bonus = 10
 
 /obj/item/ammo_casing/shotgun/express
