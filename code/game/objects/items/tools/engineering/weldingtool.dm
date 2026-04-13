@@ -48,8 +48,6 @@
 
 	var/activation_sound = 'sound/items/tools/welderactivate.ogg'
 	var/deactivation_sound = 'sound/items/tools/welderdeactivate.ogg'
-	/// Lighting middleman, lets us do a flicker effect
-	var/datum/light_middleman/middleman
 
 /datum/armor/item_weldingtool
 	fire = 100
@@ -57,10 +55,6 @@
 
 /obj/item/weldingtool/Initialize(mapload)
 	. = ..()
-	if(IS_OVERLAY_LIGHT_SYSTEM(light_system))
-		middleman = new(src, "flashlight")
-		RegisterSignal(middleman, COMSIG_LIGHT_MIDDLEMAN_UPDATED, PROC_REF(light_updated))
-		middleman.being_overriding_light()
 	AddElement(/datum/element/update_icon_updates_onmob)
 	AddElement(/datum/element/tool_flash, light_range)
 	AddElement(/datum/element/falling_hazard, damage = force, wound_bonus = wound_bonus, hardhat_safety = TRUE, crushes = FALSE, impact_sound = hitsound)
@@ -69,10 +63,6 @@
 	if(starting_fuel)
 		reagents.add_reagent(/datum/reagent/fuel, max_fuel)
 	update_appearance()
-
-/obj/item/weldingtool/Destroy(force)
-	QDEL_NULL(middleman)
-	return ..()
 
 /obj/item/weldingtool/update_icon_state()
 	if(welding)
@@ -154,10 +144,6 @@
 		return NONE
 
 	return try_heal_loop(interacting_with, user)
-
-/obj/item/weldingtool/proc/light_updated(datum/source)
-	SIGNAL_HANDLER
-	fire_flicker_middleman(middleman)
 
 /obj/item/weldingtool/proc/try_heal_loop(atom/interacting_with, mob/living/user, repeating = FALSE)
 	var/mob/living/carbon/human/attacked_humanoid = interacting_with

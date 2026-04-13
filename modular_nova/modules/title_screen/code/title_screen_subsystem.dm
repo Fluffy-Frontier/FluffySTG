@@ -1,6 +1,6 @@
 SUBSYSTEM_DEF(title)
 	name = "Title Screen"
-	ss_flags = SS_NO_FIRE
+	flags = SS_NO_FIRE
 	init_stage = INITSTAGE_FIRST
 
 	var/file_path

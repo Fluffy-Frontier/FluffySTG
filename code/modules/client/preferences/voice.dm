@@ -3,7 +3,6 @@
 	savefile_identifier = PREFERENCE_CHARACTER
 	savefile_key = "tts_voice"
 	category = PREFERENCE_CATEGORY_NON_CONTEXTUAL
-	should_update_preview = FALSE
 
 /datum/preference/choiced/voice/is_accessible(datum/preferences/preferences)
 	if(!SStts.tts_enabled)
@@ -32,7 +31,6 @@
 	category = PREFERENCE_CATEGORY_NON_CONTEXTUAL
 	minimum = -12
 	maximum = 12
-	should_update_preview = FALSE
 
 /datum/preference/numeric/tts_voice_pitch/is_accessible(datum/preferences/preferences)
 	if(!SStts.tts_enabled || !SStts.pitch_enabled)

@@ -88,14 +88,10 @@
 
 /datum/crafting_recipe/food/can_of_chap
 	name = "Can of CHAP"
-	time = 1 SECONDS
-	requirements_mats_blacklist = list(
-		/obj/item/stack/sheet/iron,
-		/obj/item/food/meat/slab,
-	)
+	time = 40
 	reqs = list(
 		/obj/item/stack/sheet/iron = 1,
-		/obj/item/food/meat/slab = 1,
+		/obj/item/food/meat/slab = 2,
 	)
 	result = /obj/item/food/canned/chap
 	category = CAT_MEAT
@@ -132,13 +128,3 @@
 	reqs = list(/obj/item/food/grown/herbs = 1)
 	result = /obj/item/food/dried_herbs
 	category = CAT_MARTIAN
-
-// intrinsic fixes
-/obj/item/food/canned/chap
-	intrinsic_food_materials = list(/datum/material/meat, /datum/material/iron)
-
-/obj/item/food/chapslice
-	intrinsic_food_materials = list(/datum/material/meat)
-
-/obj/item/food/grilled_chapslice
-	intrinsic_food_materials = list(/datum/material/meat)

@@ -102,7 +102,6 @@ export class Port extends Component {
                 width: '100%',
                 height: '100%',
                 position: 'absolute',
-                overflow: 'visible',
               }}
               viewBox="0, 0, 100, 100"
             >
@@ -118,7 +117,7 @@ export class Port extends Component {
                       -index * (100 * (Math.PI / composite_types.length))
                     }
                     className={`color-stroke-${compositeColor}`}
-                    strokeWidth="40px"
+                    strokeWidth="50px"
                     cx="50"
                     cy="50"
                     r="50"

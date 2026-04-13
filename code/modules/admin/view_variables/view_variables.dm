@@ -88,6 +88,7 @@ ADMIN_VERB_ONLY_CONTEXT_MENU(debug_variables, R_NONE, "View Variables", datum/th
 	var/list/dropdownoptions
 	if (islist)
 		dropdownoptions = list(
+			"---",
 			"Add Item" = VV_HREF_TARGETREF_INTERNAL(refid, VV_HK_LIST_ADD),
 			"Remove Nulls" = VV_HREF_TARGETREF_INTERNAL(refid, VV_HK_LIST_ERASE_NULLS),
 			"Remove Dupes" = VV_HREF_TARGETREF_INTERNAL(refid, VV_HK_LIST_ERASE_DUPES),
@@ -99,7 +100,7 @@ ADMIN_VERB_ONLY_CONTEXT_MENU(debug_variables, R_NONE, "View Variables", datum/th
 		for(var/i in 1 to length(dropdownoptions))
 			var/name = dropdownoptions[i]
 			var/link = dropdownoptions[name]
-			dropdownoptions[i] = "<a style='display:none;' [link? "href='[link]'":""]>[name]</a>"
+			dropdownoptions[i] = "<option value[link? "='[link]'":""]>[name]</option>"
 	else
 		dropdownoptions = thing.vv_get_dropdown()
 
@@ -230,37 +231,6 @@ ADMIN_VERB_ONLY_CONTEXT_MENU(debug_variables, R_NONE, "View Variables", datum/th
 				var idx = what.indexOf(':');
 				document.getElementById(what.substr(0, idx)).innerHTML = what.substr(idx + 1);
 			}
-
-			function hideDropdown() {
-				var div = document.getElementById("vvDropdownDiv");
-				var a = div.getElementsByTagName("a");
-				for (i = 0; i < a.length; i++) {
-					a\[i\].style.display = "none";
-				}
-				var input = document.getElementById("vvDropdownInput");
-				input.value = "";
-			}
-
-			function filterDropdown() {
-				var input = document.getElementById("vvDropdownInput");
-				var filter = input.value.toUpperCase();
-				var div = document.getElementById("vvDropdownDiv");
-				var a = div.getElementsByTagName("a");
-				for (i = 0; i < a.length; i++) {
-					txtValue = a\[i\].textContent || a\[i\].innerText;
-					if (txtValue.toUpperCase().indexOf(filter) > -1) {
-						a\[i\].style.display = "";
-					} else {
-						a\[i\].style.display = "none";
-					}
-				}
-			}
-
-			function delayHide() {
-				// Unfortunately required for links to work consistently when the input loses focus from a click
-				setTimeout(() => {hideDropdown();}, 150)
-			}
-
 		</script>
 		<div align='center'>
 			<table width='100%'>
@@ -289,12 +259,14 @@ ADMIN_VERB_ONLY_CONTEXT_MENU(debug_variables, R_NONE, "View Variables", datum/th
 						<div align='center'>
 							<a id='refresh_link' href='byond://?_src_=vars;
 datumrefresh=[refid];[HrefToken()]'>Refresh</a>
-							<div class="dropdown-content">
-								<input type="text" placeholder="Select Action" id="vvDropdownInput" onkeyup="filterDropdown()" onselect="filterDropdown()" onfocus="filterDropdown()" onblur="delayHide()">
-								<div id="vvDropdownDiv" class="dropdown-options">
+							<form>
+								<select name="file" size="1"
+									onchange="handle_dropdown(this)"
+									onmouseclick="this.focus()">
+									<option value selected>Select option</option>
 									[dropdownoptions.Join()]
-								</div>
-							</div>
+								</select>
+							</form>
 						</div>
 					</td>
 				</tr>

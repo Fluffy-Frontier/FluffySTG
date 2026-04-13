@@ -55,7 +55,8 @@
 			machine.remove_rod(user, do_throw = TRUE)
 		if(WIRE_VENT_POWER)
 			machine.toggle_vents(user)
-			machine.shock(user, 0.125)
+			if(isliving(user))
+				machine.shock(user, 0.125)
 		if(WIRE_VENT_DIRECTION)
 			machine.toggle_reverse_vents(user)
 		if(WIRE_SAFETY)
@@ -63,7 +64,8 @@
 		if(WIRE_LIMIT)
 			machine.cooling_limiter = (machine.cooling_limiter + 10) % (machine.cooling_limiter_max+10)
 		if(WIRE_POWER)
-			machine.shock(user, 0.5)
+			if(isliving(user))
+				machine.shock(user, 0.5)
 		if(WIRE_TAMPER)
 			machine.tampered = TRUE
 
@@ -80,7 +82,8 @@
 				machine.remove_rod(source, do_throw = TRUE)
 		if(WIRE_VENT_POWER)
 			machine.toggle_vents(source, mend)
-			machine.shock(source, 0.25)
+			if(isliving(source))
+				machine.shock(source, 0.25)
 		if(WIRE_VENT_DIRECTION)
 			if(mend)
 				machine.toggle_reverse_vents(source, FALSE)
@@ -112,7 +115,8 @@
 					message_admins("[src] had the power wire cut at [ADMIN_VERBOSEJMP(machine_turf)]")
 					log_game("[src] had the power wire cut at [AREACOORD(machine_turf)]")
 					machine.investigate_log("had the power wire cut at [AREACOORD(machine_turf)]", INVESTIGATE_ENGINE)
-			machine.shock(source, 100)
+			if(isliving(source))
+				machine.shock(source)
 		if(WIRE_TAMPER)
 			machine.tampered = TRUE
 

@@ -259,7 +259,7 @@
 
 	var/atom/atom_parent = parent
 	usb_cable.forceMove(atom_parent.drop_location())
-	usb_cable.balloon_alert_to_hearers("*snap*")
+	usb_cable.balloon_alert_to_viewers("snap")
 
 	physical_object = null
 	attached_circuit = null

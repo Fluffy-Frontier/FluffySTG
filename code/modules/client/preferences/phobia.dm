@@ -2,7 +2,6 @@
 	category = PREFERENCE_CATEGORY_MANUALLY_RENDERED
 	savefile_key = "phobia"
 	savefile_identifier = PREFERENCE_CHARACTER
-	should_update_preview = FALSE
 
 /datum/preference/choiced/phobia/init_possible_values()
 	return GLOB.phobia_types

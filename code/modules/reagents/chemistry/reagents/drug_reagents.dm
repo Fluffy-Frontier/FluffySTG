@@ -16,7 +16,6 @@
 	overdose_threshold = 30
 	ph = 9
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	randomized_spawns = REAGENT_SPAWN_ALL_RANDOM_SPAWNS
 	addiction_types = list(/datum/addiction/hallucinogens = 60)
 
 /datum/reagent/drug/space_drugs/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, metabolization_ratio)
@@ -45,10 +44,7 @@
 	overdose_threshold = INFINITY
 	ph = 6
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	randomized_spawns = REAGENT_SPAWN_ALL_RANDOM_SPAWNS
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
-	/// tracks if we cleared a monkey's aggressiveness value
-	var/cleared_aggressive = FALSE
 
 /datum/reagent/drug/cannabis/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, metabolization_ratio)
 	. = ..()
@@ -66,18 +62,6 @@
 		to_chat(affected_mob, span_warning("It's too comfy to move..."))
 		affected_mob.Paralyze(10 SECONDS)
 
-	var/list/enemies = affected_mob.ai_controller?.blackboard[BB_MONKEY_ENEMIES]
-	for(var/mob/living/enemy as anything in enemies)
-		affected_mob.ai_controller.add_blackboard_key_assoc(BB_MONKEY_ENEMIES, enemy, MONKEY_CALMED_HATRED_AMOUNT * metabolization_ratio * seconds_per_tick)
-		if(affected_mob.ai_controller.blackboard[BB_MONKEY_AGGRESSIVE] && SPT_PROB(10 - values_sum(enemies), seconds_per_tick))
-			affected_mob.ai_controller.set_blackboard_key(BB_MONKEY_AGGRESSIVE, FALSE)
-			cleared_aggressive = TRUE
-
-/datum/reagent/drug/cannabis/on_mob_delete(mob/living/affected_mob)
-	. = ..()
-	if(cleared_aggressive)
-		affected_mob.ai_controller?.set_blackboard_key(BB_MONKEY_AGGRESSIVE, TRUE)
-
 /datum/reagent/drug/nicotine
 	name = "Nicotine"
 	description = "Slightly reduces stun times. If overdosed it will deal toxin and oxygen damage."
@@ -88,7 +72,6 @@
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
 	ph = 8
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	randomized_spawns = REAGENT_SPAWN_ALL_RANDOM_SPAWNS
 	addiction_types = list(/datum/addiction/nicotine = 10)
 
 	//Nicotine is used as a pesticide IRL.
@@ -103,10 +86,7 @@
 		to_chat(affected_mob, span_notice("[smoke_message]"))
 	affected_mob.add_mood_event("smoked", /datum/mood_event/smoked)
 	affected_mob.remove_status_effect(/datum/status_effect/jitter)
-	affected_mob.AdjustAllImmobility(-20 SECONDS * metabolization_ratio * seconds_per_tick)
-
-	for(var/mob/living/enemy as anything in affected_mob.ai_controller?.blackboard[BB_MONKEY_ENEMIES])
-		affected_mob.ai_controller.add_blackboard_key_assoc(BB_MONKEY_ENEMIES, enemy, MONKEY_CALMED_HATRED_AMOUNT * 0.1 * metabolization_ratio * seconds_per_tick)
+	affected_mob.AdjustAllImmobility(-200 * metabolization_ratio * seconds_per_tick)
 
 	return UPDATE_MOB_HEALTH
 
@@ -125,7 +105,6 @@
 	overdose_threshold = 20
 	ph = 9
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	randomized_spawns = REAGENT_SPAWN_ALL_RANDOM_SPAWNS
 	inverse_chem_val = 0.3
 	inverse_chem = /datum/reagent/inverse/krokodil
 	addiction_types = list(/datum/addiction/opioids = 30)
@@ -168,7 +147,6 @@
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
 	ph = 5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	randomized_spawns = REAGENT_SPAWN_ALL_RANDOM_SPAWNS
 	addiction_types = list(/datum/addiction/stimulants = 75)
 	metabolized_traits = list(TRAIT_STIMULATED)
 
@@ -238,7 +216,6 @@
 	addiction_types = list(/datum/addiction/stimulants = 25)
 	ph = 8.2
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	randomized_spawns = REAGENT_SPAWN_ALL_RANDOM_SPAWNS
 	metabolized_traits = list(TRAIT_STUNIMMUNE, TRAIT_SLEEPIMMUNE, TRAIT_ANALGESIA, TRAIT_STIMULATED)
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
 
@@ -286,7 +263,6 @@
 	description = "Amps you up, gets you going, and rapidly restores stamina damage. Side effects include breathlessness and toxicity."
 	color = "#78FFF0"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	randomized_spawns = REAGENT_SPAWN_ALL_RANDOM_SPAWNS
 	inverse_chem_val = 0.5
 	inverse_chem = /datum/reagent/inverse/aranesp
 	addiction_types = list(/datum/addiction/stimulants = 75)
@@ -312,7 +288,6 @@
 	color = "#EE35FF"
 	overdose_threshold = 20
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	randomized_spawns = REAGENT_SPAWN_ALL_RANDOM_SPAWNS
 	taste_description = "paint thinner"
 	inverse_chem_val = 0.4
 	inverse_chem = /datum/reagent/inverse/happiness
@@ -359,7 +334,6 @@
 	metabolization_rate = 2 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	randomized_spawns = REAGENT_SPAWN_ALL_RANDOM_SPAWNS
 	addiction_types = list(/datum/addiction/stimulants = 400)
 	metabolized_traits = list(TRAIT_BATON_RESISTANCE, TRAIT_ANALGESIA, TRAIT_STIMULATED)
 
@@ -424,7 +398,6 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 15
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	randomized_spawns = REAGENT_SPAWN_ALL_RANDOM_SPAWNS
 	addiction_types = list(/datum/addiction/maintenance_drugs = 50)
 
 /datum/reagent/drug/maint/powder/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, metabolization_ratio)
@@ -452,7 +425,6 @@
 	metabolization_rate = 2 * REAGENTS_METABOLISM
 	overdose_threshold = 25
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	randomized_spawns = REAGENT_SPAWN_ALL_RANDOM_SPAWNS
 	addiction_types = list(/datum/addiction/maintenance_drugs = 300)
 	metabolized_traits = list(TRAIT_HARDLY_WOUNDED, TRAIT_ANALGESIA)
 
@@ -481,7 +453,6 @@
 	color = COLOR_BLACK
 	overdose_threshold = 30
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	randomized_spawns = REAGENT_SPAWN_ALL_RANDOM_SPAWNS
 	addiction_types = list(/datum/addiction/maintenance_drugs = 120)
 
 /datum/reagent/drug/maint/tar/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, metabolization_ratio)
@@ -507,7 +478,6 @@
 	ph = 11
 	overdose_threshold = 30
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	randomized_spawns = REAGENT_SPAWN_ALL_RANDOM_SPAWNS
 	addiction_types = list(/datum/addiction/hallucinogens = 20)
 
 /datum/reagent/drug/mushroomhallucinogen/on_mob_life(mob/living/carbon/psychonaut, seconds_per_tick, metabolization_ratio)
@@ -590,7 +560,6 @@
 	ph = 5
 	overdose_threshold = 30
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	randomized_spawns = REAGENT_SPAWN_ALL_RANDOM_SPAWNS
 	addiction_types = list(/datum/addiction/hallucinogens = 40)
 	metabolized_traits = list(TRAIT_STIMULATED)
 	///How many flips have we done so far?
@@ -716,7 +685,6 @@
 	overdose_threshold = 25
 	ph = 10
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	randomized_spawns = REAGENT_SPAWN_ALL_RANDOM_SPAWNS
 	addiction_types = list(/datum/addiction/maintenance_drugs = 30)
 
 /datum/reagent/drug/saturnx/on_mob_life(mob/living/carbon/invisible_man, seconds_per_tick, metabolization_ratio)
@@ -825,7 +793,6 @@ If you have at over 25u in your body you restore more than 20 stamina per cycle,
 	overdose_threshold = 20
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	randomized_spawns = REAGENT_SPAWN_ALL_RANDOM_SPAWNS
 	addiction_types = list(/datum/addiction/stimulants = 50)
 	metabolized_traits = list(TRAIT_STIMULATED)
 
@@ -921,17 +888,6 @@ If you have at over 25u in your body you restore more than 20 stamina per cycle,
 	ph = 4
 	chemical_flags = NONE
 
-/datum/reagent/drug/kronkaine/gore/on_mob_metabolize(mob/living/gored)
-	. = ..()
-	if(HAS_TRAIT(gored, TRAIT_ECHOLOCATOR))
-		to_chat(gored, span_nicegreen("OH YEAH! THAT'S THE STUFF! THAT'S GORE!"))
-
-/datum/reagent/drug/kronkaine/gore/on_mob_life(mob/living/gored, seconds_per_tick, metabolization_ratio)
-	. = ..()
-	if(HAS_TRAIT(gored, TRAIT_ECHOLOCATOR))
-		gored.adjust_brute_loss(-2 * metabolization_ratio * seconds_per_tick)
-		gored.adjust_fire_loss(-2 * metabolization_ratio * seconds_per_tick)
-
 /datum/reagent/drug/kronkaine/gore/overdose_start(mob/living/gored, metabolization_ratio)
 	. = ..()
 	gored.visible_message(
@@ -951,7 +907,6 @@ If you have at over 25u in your body you restore more than 20 stamina per cycle,
 	ph = 7
 	overdose_threshold = 10
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	randomized_spawns = REAGENT_SPAWN_ALL_RANDOM_SPAWNS
 	addiction_types = list(/datum/addiction/hallucinogens = 50)
 	/// Track the active hallucination we're giving out so we don't replace it by accident
 	VAR_PRIVATE/datum/weakref/active_hallucination_weakref

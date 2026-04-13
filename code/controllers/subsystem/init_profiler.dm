@@ -5,7 +5,7 @@
 SUBSYSTEM_DEF(init_profiler)
 	name = "Init Profiler"
 	init_stage = INITSTAGE_LAST
-	ss_flags = SS_NO_FIRE
+	flags = SS_NO_FIRE
 
 /datum/controller/subsystem/init_profiler/Initialize()
 	if(CONFIG_GET(flag/auto_profile))

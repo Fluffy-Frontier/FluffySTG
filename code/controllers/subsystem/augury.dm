@@ -1,6 +1,6 @@
 SUBSYSTEM_DEF(augury)
 	name = "Augury"
-	ss_flags = SS_NO_INIT
+	flags = SS_NO_INIT
 	runlevels = RUNLEVEL_GAME | RUNLEVEL_POSTGAME
 
 	var/list/watchers = list()

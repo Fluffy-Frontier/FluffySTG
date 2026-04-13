@@ -129,17 +129,6 @@ export const FUNDAMENTAL_DATA_TYPES = {
       </BasicInput>
     );
   },
-  boolean: (props) => {
-    const { name, value, setValue, color } = props;
-    return (
-      <Stack>
-        <Stack.Item>{name}</Stack.Item>
-        <Stack.Item>
-          <Button.Checkbox checked={value} onClick={() => setValue(!value)} />
-        </Stack.Item>
-      </Stack>
-    );
-  },
 };
 
 export const DATATYPE_DISPLAY_HANDLERS = {

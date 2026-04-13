@@ -219,9 +219,7 @@
 		if(!living_mov.mob_negates_gravity())
 			step_towards(living_mov, wizard)
 
-/obj/effect/wizard_magnetism/stop_orbit(datum/component/orbiter/orbiter, refreshing = FALSE)
-	if(refreshing)
-		return ..()
+/obj/effect/wizard_magnetism/stop_orbit()
 	STOP_PROCESSING(SSprocessing, src)
 	qdel(src)
 

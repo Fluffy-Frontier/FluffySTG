@@ -116,14 +116,21 @@
 	if(slot & ITEM_SLOT_OCLOTHING) // Check that the slot is valid
 		START_PROCESSING(SSobj, src)
 		update_hud_icon(user) // update the hud
+		RegisterSignal(user, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(get_status_tab_item))
 
 // On removal stop processing, save battery
 /obj/item/clothing/suit/space/dropped(mob/living/user)
 	. = ..()
 	STOP_PROCESSING(SSobj, src)
-	var/mob/living/carbon/human/human_user = user
-	if(istype(human_user) && human_user.hud_used)
-		human_user.hud_used.spacesuit_hud.update_spacesuit_hud_icon(SPACESUIT_NO_ICON)
+	UnregisterSignal(user, COMSIG_MOB_GET_STATUS_TAB_ITEMS)
+	var/mob/living/carbon/carbon_user = user
+	if(istype(carbon_user))
+		carbon_user.update_spacesuit_hud_icon("0")
+
+/obj/item/clothing/suit/space/proc/get_status_tab_item(mob/living/source, list/items)
+	SIGNAL_HANDLER
+	items += "Thermal Regulator: [thermal_on ? "On" : "Off"]"
+	items += "Cell Charge: [cell ? "[round(cell.percent(), 0.1)]%" : "No Cell!"]"
 
 // Space Suit temperature regulation and power usage
 /obj/item/clothing/suit/space/process(seconds_per_tick)
@@ -158,8 +165,8 @@
 	if(isatom(cell))
 		QDEL_NULL(cell)
 	var/mob/living/carbon/human/human = src.loc
-	if(istype(human) && human.hud_used)
-		human.hud_used.spacesuit_hud.update_spacesuit_hud_icon(SPACESUIT_NO_ICON)
+	if(istype(human))
+		human.update_spacesuit_hud_icon("0")
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
@@ -219,7 +226,6 @@
 	if(user.transferItemToLoc(I, src))
 		cell = I
 		to_chat(user, span_notice("You successfully install \the [cell] into [src]."))
-		update_hud_icon(user)
 		return
 
 /// Open the cell cover when ALT+Click on the suit
@@ -240,14 +246,12 @@
 
 /// Remove the cell from the suit if the cell cover is open
 /obj/item/clothing/suit/space/proc/remove_cell(mob/user)
-	if(!cell_cover_open || isnull(cell))
-		return
-	user.visible_message(span_notice("[user] removes \the [cell] from [src]!"), \
-		span_notice("You remove [cell]."))
-	cell.add_fingerprint(user)
-	user.put_in_hands(cell)
-	cell = null
-	update_hud_icon(user)
+	if(cell_cover_open && cell)
+		user.visible_message(span_notice("[user] removes \the [cell] from [src]!"), \
+			span_notice("You remove [cell]."))
+		cell.add_fingerprint(user)
+		user.put_in_hands(cell)
+		cell = null
 
 /// Toggle the space suit's cell cover
 /obj/item/clothing/suit/space/proc/toggle_spacesuit_cell(mob/user)
@@ -276,8 +280,6 @@
 	min_cold_protection_temperature = thermal_on ? SPACE_SUIT_MIN_TEMP_PROTECT : SPACE_SUIT_MIN_TEMP_PROTECT_OFF
 
 	update_item_action_buttons()
-	if(isnull(toggler) && ishuman(loc))
-		update_hud_icon(loc)
 
 	if(!toggler)
 		return
@@ -303,29 +305,31 @@
 // update the HUD icon
 /obj/item/clothing/suit/space/proc/update_hud_icon(mob/user)
 	var/mob/living/carbon/human/human = user
-	if(!show_hud || human.wear_suit != src || isnull(human.hud_used))
+
+	if(!show_hud)
 		return
 
 	if(!cell)
-		human.hud_used.spacesuit_hud.update_spacesuit_hud_icon(SPACESUIT_CELL_MISSING, 0, thermal_on)
+		human.update_spacesuit_hud_icon("missing")
 		return
 
 	var/cell_percent = cell.percent()
+
 	// Check if there's enough charge to trigger a thermal regulator tick and
 	// if there is, whethere the cell's capacity indicates high, medium or low
 	// charge based on it.
-	if(cell.charge < THERMAL_REGULATOR_COST)
-		human.hud_used.spacesuit_hud.update_spacesuit_hud_icon(SPACESUIT_CELL_EMPTY, cell_percent, thermal_on)
+	if(cell.charge >= THERMAL_REGULATOR_COST)
+		if(cell_percent > 60)
+			human.update_spacesuit_hud_icon("high")
+			return
+		if(cell_percent > 20)
+			human.update_spacesuit_hud_icon("mid")
+			return
+		human.update_spacesuit_hud_icon("low")
 		return
-	switch(cell_percent)
-		if(0 to 20)
-			human.hud_used.spacesuit_hud.update_spacesuit_hud_icon(SPACESUIT_CELL_VERY_LOW, cell_percent, thermal_on)
-		if(21 to 40)
-			human.hud_used.spacesuit_hud.update_spacesuit_hud_icon(SPACESUIT_CELL_LOW, cell_percent, thermal_on)
-		if(41 to 60)
-			human.hud_used.spacesuit_hud.update_spacesuit_hud_icon(SPACESUIT_CELL_MID, cell_percent, thermal_on)
-		if(61 to 100)
-			human.hud_used.spacesuit_hud.update_spacesuit_hud_icon(SPACESUIT_CELL_HIGH, cell_percent, thermal_on)
+
+	human.update_spacesuit_hud_icon("empty")
+	return
 
 // zap the cell if we get hit with an emp
 /obj/item/clothing/suit/space/emp_act(severity)

@@ -200,6 +200,3 @@ Des: Removes all infected images from the alien.
 
 /mob/living/carbon/alien/get_footprint_sprite()
 	return FOOTPRINT_SPRITE_CLAWS
-
-/mob/living/carbon/alien/get_fire_overlay(stacks, on_fire)
-	return make_generic_fire_overlay()

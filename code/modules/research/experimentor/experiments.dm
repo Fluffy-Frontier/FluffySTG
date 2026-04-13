@@ -101,7 +101,8 @@
 		machine.visible_message(span_warning("[machine] malfunctions, spewing toxic waste!"))
 		for(var/turf/T in oview(1, machine))
 			if(!T.density && prob(EFFECT_PROB_VERYHIGH) && !(locate(/obj/effect/decal/cleanable/greenglow) in T))
-				new /obj/effect/decal/cleanable/greenglow/filled(T)
+				var/obj/effect/decal/cleanable/reagentdecal = new/obj/effect/decal/cleanable/greenglow(T)
+				reagentdecal.reagents.add_reagent(/datum/reagent/uranium/radium, 7)
 		QDEL_NULL(machine.loaded_item)
 
 	else if(prob(EFFECT_PROB_MEDIUM * malf_chance))

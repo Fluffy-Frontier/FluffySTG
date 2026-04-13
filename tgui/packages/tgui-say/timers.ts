@@ -17,10 +17,11 @@ export const byondMessages = {
     1 * SECONDS,
     true,
   ),
-  saveText: throttle(
+  saveText: debounce(
     (entry: string, channel: Channel) =>
       Byond.sendMessage('save', { entry, channel }),
     1 * SECONDS,
+    true,
   ),
   // Throttle: Prevents spamming the server
   typingMsg: throttle(() => Byond.sendMessage('typing'), 4 * SECONDS),

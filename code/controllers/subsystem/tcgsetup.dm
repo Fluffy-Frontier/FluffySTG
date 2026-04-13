@@ -1,6 +1,6 @@
 SUBSYSTEM_DEF(trading_card_game)
 	name = "Trading Card Game"
-	ss_flags = SS_NO_FIRE
+	flags = SS_NO_FIRE
 	/// Base directory for all related string files
 	var/card_directory = "strings/tcg"
 	/// List of card files to load

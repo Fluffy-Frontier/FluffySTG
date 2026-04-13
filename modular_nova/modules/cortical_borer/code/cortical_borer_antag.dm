@@ -38,8 +38,7 @@
 	var/datum/team/cortical_borers/borers
 
 /datum/antagonist/cortical_borer/get_preview_icon()
-	var/datum/universal_icon/borer_icon = uni_icon(/mob/living/basic/cortical_borer::icon, /mob/living/basic/cortical_borer::icon_state)
-	return finish_preview_icon(borer_icon)
+	return finish_preview_icon(icon('modular_nova/modules/cortical_borer/icons/animal.dmi', "brainslug"))
 
 /datum/antagonist/cortical_borer/get_team()
 	return borers

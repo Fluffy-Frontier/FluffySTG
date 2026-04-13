@@ -33,7 +33,8 @@
 	var/obj/machinery/roulette/R = holder
 	switch(wire)
 		if(WIRE_SHOCK)
-			R.shock(usr, 50)
+			if(isliving(usr))
+				R.shock(usr, 50)
 		if(WIRE_BOLTS) // Pulse to toggle bolts (but only raise if power is on).
 			if(!R.on)
 				return
@@ -43,7 +44,8 @@
 			R.audible_message(span_warning("Owner reset!"))
 			R.locked = FALSE
 		if(WIRE_PRIZEVEND)
-			R.shock(usr, 70)
+			if(isliving(usr))
+				R.shock(usr, 70)
 			if(R.locked)
 				return
 			R.audible_message(span_warning("Unauthorized prize vend detected! Locking down machine!"))
@@ -53,7 +55,8 @@
 	var/obj/machinery/roulette/R = holder
 	switch(wire)
 		if(WIRE_SHOCK)
-			R.shock(usr, 60)
+			if(isliving(usr))
+				R.shock(usr, 60)
 			if(mend)
 				R.on = TRUE
 			else
@@ -63,10 +66,13 @@
 				return
 			R.set_anchored(TRUE)
 		if(WIRE_RESETOWNER)
-			R.shock(usr, 70)
+			if(isliving(usr))
+				R.shock(usr, 70)
 		if(WIRE_PRIZEVEND)
-			R.shock(usr, 75)
+			if(isliving(usr))
+				R.shock(usr, 75)
 			if(R.locked)
 				return
 			R.audible_message(span_warning("Unauthorized prize vend detected! Locking down machine!"))
 			R.prize_theft(0.10)
+

@@ -52,7 +52,7 @@
 
 /// Returns what icon state to display on the HUD for the charge level of this core
 /obj/item/mod/core/proc/get_charge_icon_state()
-	return SPACESUIT_NO_ICON
+	return "0"
 
 /// Gets what the UI should use for the charge bar color.
 /obj/item/mod/core/proc/get_chargebar_color()
@@ -90,7 +90,7 @@
 	return TRUE
 
 /obj/item/mod/core/infinite/get_charge_icon_state()
-	return SPACESUIT_CELL_HIGH
+	return "high"
 
 /obj/item/mod/core/infinite/get_chargebar_color()
 	return "teal"
@@ -171,19 +171,19 @@
 
 /obj/item/mod/core/standard/get_charge_icon_state()
 	if(isnull(charge_source()))
-		return SPACESUIT_CELL_MISSING
+		return "missing"
 
 	switch(round(charge_amount() / max_charge_amount(), 0.01))
 		if(0.75 to INFINITY)
-			return SPACESUIT_CELL_HIGH
+			return "high"
 		if(0.5 to 0.75)
-			return SPACESUIT_CELL_MID
+			return "mid"
 		if(0.25 to 0.5)
-			return SPACESUIT_CELL_LOW
+			return "low"
 		if(0.02 to 0.25)
-			return SPACESUIT_CELL_VERY_LOW
+			return "very_low"
 
-	return SPACESUIT_CELL_EMPTY
+	return "empty"
 
 /obj/item/mod/core/standard/get_chargebar_color()
 	if(isnull(charge_source()))
@@ -227,7 +227,7 @@
 /obj/item/mod/core/standard/proc/on_attack_hand(datum/source, mob/living/user)
 	SIGNAL_HANDLER
 
-	if(mod.seconds_electrified && charge_amount() && mod.shock(user, 100))
+	if(mod.seconds_electrified && charge_amount() && mod.shock(user))
 		return COMPONENT_CANCEL_ATTACK_CHAIN
 	if(mod.open && mod.loc == user)
 		INVOKE_ASYNC(src, PROC_REF(mod_uninstall_cell), user)
@@ -335,7 +335,7 @@
 	return charge_amount() >= amount * charge_modifier
 
 /obj/item/mod/core/ethereal/get_charge_icon_state()
-	return isnull(charge_source()) ? SPACESUIT_CELL_MISSING : SPACESUIT_NO_ICON
+	return isnull(charge_source()) ? "missing" : "0"
 
 /obj/item/mod/core/ethereal/get_chargebar_color()
 	if(isnull(charge_source()))
@@ -405,15 +405,15 @@
 /obj/item/mod/core/plasma/get_charge_icon_state()
 	switch(round(charge_amount() / max_charge_amount(), 0.01))
 		if(0.75 to INFINITY)
-			return SPACESUIT_CELL_HIGH
+			return "high"
 		if(0.5 to 0.75)
-			return SPACESUIT_CELL_MID
+			return "mid"
 		if(0.25 to 0.5)
-			return SPACESUIT_CELL_LOW
+			return "low"
 		if(0.02 to 0.25)
-			return SPACESUIT_CELL_VERY_LOW
+			return "very_low"
 
-	return SPACESUIT_CELL_EMPTY
+	return "empty"
 
 /obj/item/mod/core/plasma/get_chargebar_color()
 	switch(round(charge_amount() / max_charge_amount(), 0.01))
@@ -648,15 +648,15 @@
 /obj/item/mod/core/soul/get_charge_icon_state()
 	switch(round(charge_amount() / max_charge_amount(), 0.01))
 		if(0.75 to INFINITY)
-			return SPACESUIT_CELL_HIGH
+			return "high"
 		if(0.5 to 0.75)
-			return SPACESUIT_CELL_MID
+			return "mid"
 		if(0.25 to 0.5)
-			return SPACESUIT_CELL_LOW
+			return "low"
 		if(0.02 to 0.25)
-			return SPACESUIT_CELL_VERY_LOW
+			return "very_low"
 
-	return SPACESUIT_CELL_EMPTY
+	return "empty"
 
 /obj/item/mod/core/soul/vv_edit_var(vname, vval)
 	. = ..()

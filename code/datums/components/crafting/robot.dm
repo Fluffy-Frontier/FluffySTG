@@ -192,3 +192,4 @@
 		/obj/item/soulstone = 1,
 	)
 	category = CAT_ROBOT
+	crafting_flags = parent_type::crafting_flags | CRAFT_MUST_BE_LEARNED

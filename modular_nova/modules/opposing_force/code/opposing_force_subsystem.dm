@@ -1,6 +1,6 @@
 SUBSYSTEM_DEF(opposing_force)
 	name = "Opposing Force"
-	ss_flags = SS_NO_FIRE
+	flags = SS_NO_FIRE
 
 	/// A precompiled list of all equipment datums, processed on init
 	var/list/equipment_list = list()

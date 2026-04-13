@@ -2,7 +2,7 @@
 
 SUBSYSTEM_DEF(shift_intensity)
 	name = "Shift Intensity Vote"
-	ss_flags = SS_BACKGROUND
+	flags = SS_BACKGROUND
 	runlevels = RUNLEVEL_LOBBY | RUNLEVEL_SETUP
 	dependencies = list(
 		/datum/controller/subsystem/vote,

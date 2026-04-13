@@ -8,7 +8,7 @@
 	set category = "Debug"
 
 	var/list/infusions = list()
-	for(var/datum/infuser_entry/path as anything in sort_list(subtypesof(/datum/infuser_entry), GLOBAL_PROC_REF(cmp_typepaths_asc)))
+	for(var/datum/infuser_entry/path as anything in subtypesof(/datum/infuser_entry))
 		var/str = "[initial(path.name)] ([path])"
 		infusions[str] = path
 

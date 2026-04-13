@@ -73,7 +73,6 @@ const HistoryButton = (props: HistoryButtonProps) => {
   return (
     <Floating
       handleOpen={historyOpen}
-      disabled
       content={
         <Box backgroundColor="rgba(0, 0, 0, 33%)">
           <Stack vertical maxHeight="15rem" overflowY="scroll">
@@ -251,9 +250,6 @@ export namespace SpriteEditor {
 
   export const Toolbar = (props: ToolbarProps) => {
     const [currentTool, setCurrentTool] = useAtom(currentToolAtom);
-    const setPreviewLayer = useSetAtom(previewLayerAtom);
-    const setPreviewData = useSetAtom(previewDataAtom);
-    const cancelContext = { setPreviewLayer, setPreviewData };
     const {
       toolButtonProps,
       perButtonProps,
@@ -262,10 +258,7 @@ export namespace SpriteEditor {
     } = props;
     useEffect(() => {
       if (!(toolFlags & (1 << tools.indexOf(currentTool)))) {
-        setCurrentTool(
-          tools.find((_, i) => toolFlags & (1 << i))!,
-          cancelContext,
-        );
+        setCurrentTool(tools.find((_, i) => toolFlags & (1 << i))!);
       }
     }, [toolFlags]);
     return (
@@ -277,7 +270,7 @@ export namespace SpriteEditor {
                 <Button
                   icon={tool.icon}
                   selected={currentTool === tool}
-                  onClick={() => setCurrentTool(tool, cancelContext)}
+                  onClick={() => setCurrentTool(tool)}
                   {...toolButtonProps}
                   {...perButtonProps?.(tool, i)}
                 />
@@ -307,13 +300,9 @@ export namespace SpriteEditor {
     };
     useEffect(() => {
       if (disabled) {
-        currentTool.cancel?.(toolContext);
+        currentTool.cancel?.();
       }
-    }, [disabled]);
-    useEffect(() => {
-      setPreviewLayer(undefined);
-      setPreviewData(undefined);
-    }, [JSON.stringify(data)]);
+    }, [disabled, currentTool]);
     return (
       <AdvancedCanvas
         data={getFlattenedSpriteDir(
@@ -356,14 +345,7 @@ export namespace SpriteEditor {
   };
 
   export const LayerManager = (
-    props: Omit<
-      BaseLayerManagerProps,
-      | 'context'
-      | 'selectedDir'
-      | 'setSelectedDir'
-      | 'selectedLayer'
-      | 'setSelectedLayer'
-    >,
+    props: Omit<BaseLayerManagerProps, 'context'>,
   ) => {
     const [selectedDir, setSelectedDir] = useAtom(dirAtom);
     const [selectedLayer, setSelectedLayer] = useAtom(layerAtom);

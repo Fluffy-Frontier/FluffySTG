@@ -9,7 +9,7 @@
 
 SUBSYSTEM_DEF(player_ranks)
 	name = "Player Ranks"
-	ss_flags = SS_NO_FIRE
+	flags = SS_NO_FIRE
 	init_stage = INITSTAGE_EARLY
 	dependencies = list(
 		/datum/controller/subsystem/server_maint,

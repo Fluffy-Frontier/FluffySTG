@@ -35,23 +35,6 @@
 /mob/living/carbon/alien/adult/royal/can_inject(mob/user, target_zone, injection_flags)
 	return FALSE
 
-/mob/living/carbon/alien/adult/royal/get_fire_overlay(stacks, on_fire)
-	var/fire_key = "royal_fire"
-
-	if(!GLOB.fire_appearances[fire_key])
-		var/mutable_appearance/fire = mutable_appearance(
-			'icons/mob/effects/onfire.dmi',
-			"generic_fire",
-			ABOVE_ALL_MOB_LAYER,
-			appearance_flags = RESET_COLOR|KEEP_APART|PIXEL_SCALE,
-		)
-		fire.pixel_x = 16
-		fire.pixel_y = 8
-		fire.transform = fire.transform.Scale(2, 2)
-		GLOB.fire_appearances[fire_key] = fire
-
-	return GLOB.fire_appearances[fire_key]
-
 /mob/living/carbon/alien/adult/royal/queen
 	name = "alien queen"
 	caste = "q"
@@ -111,11 +94,12 @@
 	/// The promotion only takes plasma when completed, not on activation.
 	var/promotion_plasma_cost = 500
 
-/datum/action/cooldown/alien/promote/New(Target)
+/datum/action/cooldown/alien/promote/set_statpanel_format()
 	. = ..()
-	//not free
-	if(promotion_plasma_cost != 0)
-		name = "[initial(name)] ([promotion_plasma_cost]P)"
+	if(!islist(.))
+		return
+
+	.[PANEL_DISPLAY_STATUS] = "PLASMA - [promotion_plasma_cost]"
 
 /datum/action/cooldown/alien/promote/IsAvailable(feedback = FALSE)
 	. = ..()

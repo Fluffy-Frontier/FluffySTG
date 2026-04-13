@@ -3,7 +3,6 @@
 	savefile_key = "food_allergy"
 	savefile_identifier = PREFERENCE_CHARACTER
 	can_randomize = FALSE
-	should_update_preview = FALSE
 
 /datum/preference/choiced/food_allergy/init_possible_values()
 	return list("Random") + assoc_to_keys(GLOB.possible_food_allergies)

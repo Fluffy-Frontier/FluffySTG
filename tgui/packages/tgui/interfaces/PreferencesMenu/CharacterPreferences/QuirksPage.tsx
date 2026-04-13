@@ -495,12 +495,10 @@ function QuirkPage() {
           {/* Keep the CharacterPreview alive but "hidden", so that traits that affect appearance (e.g. Oversized) refresh rendering calculations immediately. */}
           <Stack.Item
             style={{
-              position: 'absolute',
-              left: '-10000px',
-              top: '-10000px',
-              width: '1px',
-              height: '1px',
-              pointerEvents: 'none',
+              padding: '-1px',
+              width: 1,
+              height: 1,
+              opacity: 0.0,
             }}
           >
             <CharacterPreview

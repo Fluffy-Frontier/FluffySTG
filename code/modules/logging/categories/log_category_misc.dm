@@ -72,8 +72,3 @@
 /datum/log_category/fishing
 	category = LOG_CATEGORY_FISHING
 	config_flag = /datum/config_entry/flag/fishing
-
-/datum/log_category/image
-	category = LOG_CATEGORY_IMAGE
-	config_flag = /datum/config_entry/flag/log_image
-	secret = TRUE

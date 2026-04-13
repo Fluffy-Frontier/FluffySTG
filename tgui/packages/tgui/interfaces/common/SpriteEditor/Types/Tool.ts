@@ -1,8 +1,4 @@
-import type {
-  SpriteData,
-  SpriteEditorToolCancelContext,
-  SpriteEditorToolContext,
-} from './types';
+import type { SpriteData, SpriteEditorToolContext } from './types';
 
 export abstract class Tool {
   abstract icon: string;
@@ -26,5 +22,5 @@ export abstract class Tool {
     x?: number,
     y?: number,
   ): void;
-  cancel?(context: SpriteEditorToolCancelContext);
+  cancel?();
 }

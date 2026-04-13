@@ -33,11 +33,11 @@
 	discountable = SUPPLY_PACK_RARE_DISCOUNTABLE
 	test_ignored = TRUE
 
-/datum/supply_pack/costumes_toys/randomised/fill(obj/container)
+/datum/supply_pack/costumes_toys/randomised/fill(obj/structure/closet/crate/C)
 	var/list/L = contains.Copy()
 	for(var/i in 1 to num_contained)
 		var/item = pick_n_take(L)
-		new item(container)
+		new item(C)
 
 /datum/supply_pack/costumes_toys/formalwear
 	name = "Formalwear Crate"
@@ -167,11 +167,11 @@
 	crate_name = "standard costume crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
-/datum/supply_pack/costumes_toys/costume/fill(obj/container)
+/datum/supply_pack/costumes_toys/costume/fill(obj/structure/closet/crate/C)
 	..()
 	var/funny_gas_internals
 	funny_gas_internals = pick(subtypesof(/obj/item/tank/internals/emergency_oxygen/engi/clown) - /obj/item/tank/internals/emergency_oxygen/engi/clown)
-	new funny_gas_internals(container)
+	new funny_gas_internals(C)
 
 /datum/supply_pack/costumes_toys/randomised/toys
 	name = "Toy Crate"
@@ -184,14 +184,14 @@
 	crate_name = "toy crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
-/datum/supply_pack/costumes_toys/randomised/toys/fill(obj/container)
+/datum/supply_pack/costumes_toys/randomised/toys/fill(obj/structure/closet/crate/C)
 	var/the_toy
 	for(var/i in 1 to num_contained)
 		if(prob(50))
 			the_toy = pick_weight(GLOB.arcade_prize_pool)
 		else
 			the_toy = /obj/effect/spawner/random/entertainment/plushie_delux
-		new the_toy(container)
+		new the_toy(C)
 
 /datum/supply_pack/costumes_toys/wizard
 	name = "Wizard Costume Crate"
@@ -237,11 +237,11 @@
 	crate_name = "booster pack pack"
 	discountable = SUPPLY_PACK_STD_DISCOUNTABLE
 
-/datum/supply_pack/costumes_toys/randomised/tcg/fill(obj/container)
+/datum/supply_pack/costumes_toys/randomised/tcg/fill(obj/structure/closet/crate/C)
 	var/cardpacktype
 	for(var/i in 1 to 10)
 		cardpacktype = pick(subtypesof(/obj/item/cardpack))
-		new cardpacktype(container)
+		new cardpacktype(C)
 
 /datum/supply_pack/costumes_toys/stickers
 	name = "Sticker Pack Crate"

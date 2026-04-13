@@ -18,7 +18,7 @@
 
 /obj/item/circuit_component/install_detector/populate_ports()
 	. = ..()
-	current_state = add_output_port("Current State", PORT_TYPE_BOOLEAN)
+	current_state = add_output_port("Current State", PORT_TYPE_NUMBER)
 	implanted = add_output_port("Implanted", PORT_TYPE_SIGNAL)
 	removed = add_output_port("Removed", PORT_TYPE_SIGNAL)
 

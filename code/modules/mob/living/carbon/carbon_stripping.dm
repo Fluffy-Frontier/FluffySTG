@@ -132,8 +132,8 @@
 
 /datum/strippable_item/hand/left
 	key = STRIPPABLE_ITEM_LHAND
-	hand_index = LEFT_HANDS
+	hand_index = 1
 
 /datum/strippable_item/hand/right
 	key = STRIPPABLE_ITEM_RHAND
-	hand_index = RIGHT_HANDS
+	hand_index = 2

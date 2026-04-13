@@ -4,7 +4,7 @@ SUBSYSTEM_DEF(traitor)
 		/datum/controller/subsystem/mapping,
 		/datum/controller/subsystem/atoms,
 	)
-	ss_flags = SS_KEEP_TIMING
+	flags = SS_KEEP_TIMING
 	wait = 10 SECONDS
 	runlevels = RUNLEVEL_GAME | RUNLEVEL_POSTGAME
 

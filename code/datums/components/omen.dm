@@ -105,11 +105,10 @@
 	// This way, we allow for people to be able to get into hilarious situations without making the game nigh unplayable most of the time.
 
 	var/has_watchers = FALSE
-	for(var/mob/viewer in viewers(our_guy, null))
+	for(var/mob/viewer in viewers(our_guy, world.view))
 		if(viewer.client && !viewer.client.is_afk())
 			has_watchers = TRUE
 			break
-
 	if(!has_watchers)
 		effective_luck *= 0.5
 

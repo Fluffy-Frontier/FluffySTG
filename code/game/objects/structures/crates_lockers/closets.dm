@@ -1057,7 +1057,7 @@ GLOBAL_LIST_EMPTY(roundstart_station_closets)
 		movable_parent.relay_container_resist_act(user, src)
 		return
 	if(!welded && !locked)
-		open(user)
+		open()
 		return
 
 	if(DOING_INTERACTION_WITH_TARGET(user, src))

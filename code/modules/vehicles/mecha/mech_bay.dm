@@ -76,21 +76,17 @@
 		recharge_console.update_appearance()
 
 
-/obj/machinery/mech_bay_recharge_port/screwdriver_act(mob/living/user, obj/item/tool)
-	if(default_deconstruction_screwdriver(user, "recharge_port-o", "recharge_port", tool))
-		return ITEM_INTERACT_SUCCESS
-	return NONE
+/obj/machinery/mech_bay_recharge_port/attackby(obj/item/I, mob/user, list/modifiers, list/attack_modifiers)
+	if(default_deconstruction_screwdriver(user, "recharge_port-o", "recharge_port", I))
+		return
 
-/obj/machinery/mech_bay_recharge_port/wrench_act(mob/living/user, obj/item/tool)
-	if(default_change_direction_wrench(user, tool))
+	if(default_change_direction_wrench(user, I))
 		recharging_turf = get_step(loc, dir)
-		return ITEM_INTERACT_SUCCESS
-	return NONE
+		return
 
-/obj/machinery/mech_bay_recharge_port/crowbar_act(mob/living/user, obj/item/tool)
-	if(default_deconstruction_crowbar(tool))
-		return ITEM_INTERACT_SUCCESS
-	return NONE
+	if(default_deconstruction_crowbar(I))
+		return
+	return ..()
 
 /obj/machinery/computer/mech_bay_power_console
 	name = "mech bay power control console"

@@ -65,7 +65,6 @@ export function Checkout(props) {
 
 function CheckoutModal(props) {
   const { act, data } = useBackend<LibraryConsoleData>();
-  const { checkout_title } = data;
 
   const inventory = data.inventory
     .map((book, i) => ({
@@ -78,6 +77,7 @@ function CheckoutModal(props) {
   const { checkoutBookState } = useLibraryContext();
   const [checkoutBook, setCheckoutBook] = checkoutBookState;
 
+  const [bookName, setBookName] = useState('Insert Book name...');
   const [checkoutee, setCheckoutee] = useState('Recipient');
   const [checkoutPeriod, setCheckoutPeriod] = useState(5);
 
@@ -91,15 +91,9 @@ function CheckoutModal(props) {
           <Dropdown
             over
             width="100%"
-            selected={checkout_title}
-            placeholder="Insert Book name..."
-            displayText={checkout_title}
+            selected={bookName}
             options={inventory.map((book) => book.title)}
-            onSelected={(e) => {
-              act('set_checkout', {
-                book_name: e,
-              });
-            }}
+            onSelected={(e) => setBookName(e)}
           />
         </Stack.Item>
         <Stack.Item>
@@ -116,7 +110,7 @@ function CheckoutModal(props) {
                 value={checkoutPeriod}
                 unit=" Minutes"
                 minValue={1}
-                maxValue={120}
+                maxValue={1440}
                 step={1}
                 stepPixelSize={10}
                 onChange={(value) => setCheckoutPeriod(value)}
@@ -134,6 +128,7 @@ function CheckoutModal(props) {
                 onClick={() => {
                   setCheckoutBook(false);
                   act('checkout', {
+                    book_name: bookName,
                     loaned_to: checkoutee,
                     checkout_time: checkoutPeriod,
                   });

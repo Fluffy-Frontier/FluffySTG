@@ -33,9 +33,9 @@
 	dummy.hairstyle = "Sideways ponytail"
 
 	dummy.update_body(TRUE)
-	var/datum/universal_icon/antag_icon = get_flat_uni_icon(dummy)
+	var/icon = getFlatIcon(dummy)
 	SSatoms.prepare_deletion(dummy)
-	return antag_icon
+	return icon
 
 /datum/antagonist/traitor/marauder/apply_innate_effects(mob/living/mob_override)
 	. = ..()

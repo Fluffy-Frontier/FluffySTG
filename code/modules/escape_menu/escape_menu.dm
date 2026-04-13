@@ -17,7 +17,6 @@ GLOBAL_LIST_EMPTY(escape_menus)
 
 #define PAGE_HOME "PAGE_HOME"
 #define PAGE_LEAVE_BODY "PAGE_LEAVE_BODY"
-#define PAGE_QUIT_GAME "PAGE_QUIT_GAME"
 
 /datum/escape_menu
 	/// The client that owns this escape menu
@@ -92,7 +91,7 @@ GLOBAL_LIST_EMPTY(escape_menus)
 	SIGNAL_HANDLER
 	PRIVATE_PROC(TRUE)
 
-	if (menu_page != PAGE_HOME)
+	if (menu_page == PAGE_LEAVE_BODY)
 		qdel(src)
 	else
 		// Otherwise our client just switched bodies, let's update our hud
@@ -116,10 +115,8 @@ GLOBAL_LIST_EMPTY(escape_menus)
 	switch (menu_page)
 		if (PAGE_HOME)
 			show_home_page()
-		//if (PAGE_LEAVE_BODY) // NOVA EDIT REMOVAL
-			//show_leave_body_page() // NOVA EDIT REMOVAL
-		if(PAGE_QUIT_GAME)
-			show_quit_game_page()
+		//if (PAGE_LEAVE_BODY) //NOVA EDIT REMOVAL
+			//show_leave_body_page() //NOVA EDIT REMOVAL
 		else
 			CRASH("Unknown escape menu page: [menu_page]")
 
@@ -141,12 +138,6 @@ GLOBAL_LIST_EMPTY(escape_menus)
 	menu_page = PAGE_LEAVE_BODY
 	show_page()
 
-/datum/escape_menu/proc/quit_game_prompt()
-	PRIVATE_PROC(TRUE)
-
-	menu_page = PAGE_QUIT_GAME
-	show_page()
-
 /atom/movable/screen/escape_menu
 	plane = ESCAPE_MENU_PLANE
 	clear_with_screen = FALSE
@@ -156,4 +147,3 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/escape_menu)
 
 #undef PAGE_HOME
 #undef PAGE_LEAVE_BODY
-#undef PAGE_QUIT_GAME

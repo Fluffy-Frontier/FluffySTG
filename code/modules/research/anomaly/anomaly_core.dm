@@ -9,7 +9,7 @@
 	resistance_flags = FIRE_PROOF
 	custom_materials = null
 	assembly_behavior = ASSEMBLY_FUNCTIONAL_OUTPUT
-	var/obj/effect/anomaly/anomaly_type = /obj/effect/anomaly
+	var/anomaly_type = /obj/effect/anomaly
 
 /obj/item/assembly/signaler/anomaly/receive_signal(datum/signal/signal)
 	if(!signal)
@@ -31,12 +31,10 @@
 /obj/item/assembly/signaler/anomaly/attack_self()
 	return
 
-/obj/item/assembly/signaler/anomaly/analyzer_act(mob/living/user, obj/item/analyzer/tool)
-	to_chat(user, span_notice("Analyzing... [src]'s stabilized field is fluctuating along frequency [format_frequency(frequency)], code [code]."))
-	return ITEM_INTERACT_SUCCESS
-
-/obj/item/assembly/signaler/anomaly/on_mail_unwrap(atom/source, mob/user, obj/item/mail/traitor/letter)
-	return NONE
+/obj/item/assembly/signaler/anomaly/attackby(obj/item/I, mob/user, list/modifiers, list/attack_modifiers)
+	if(I.tool_behaviour == TOOL_ANALYZER)
+		to_chat(user, span_notice("Analyzing... [src]'s stabilized field is fluctuating along frequency [format_frequency(frequency)], code [code]."))
+	return ..()
 
 //Anomaly cores
 /obj/item/assembly/signaler/anomaly/pyro
@@ -60,10 +58,10 @@
 	anomaly_type = /obj/effect/anomaly/grav
 
 /obj/item/assembly/signaler/anomaly/grav/signal()
-	for(var/obj/object in orange(2, get_turf(src)))
+	for(var/obj/object in orange(2, src))
 		if(!object.anchored)
 			step_towards(object,src)
-	for(var/mob/living/living in orange(2, get_turf(src)))
+	for(var/mob/living/living in orange(2, src))
 		if(!living.mob_negates_gravity())
 			step_towards(living,src)
 
@@ -74,7 +72,7 @@
 	anomaly_type = /obj/effect/anomaly/flux
 
 /obj/item/assembly/signaler/anomaly/flux/signal()
-	tesla_zap(get_turf(src), 0, 10 KILO JOULES, 5 KILO JOULES, ZAP_MOB_DAMAGE | ZAP_OBJ_DAMAGE | ZAP_GENERATES_POWER)
+	tesla_zap(src, 0, 10 KILO JOULES, 5 KILO JOULES, ZAP_MOB_DAMAGE | ZAP_OBJ_DAMAGE | ZAP_GENERATES_POWER)
 
 /obj/item/assembly/signaler/anomaly/bluespace
 	name = "\improper bluespace anomaly core"
@@ -142,7 +140,7 @@
 
 /obj/item/assembly/signaler/anomaly/bioscrambler/signal()
 	new /obj/effect/temp_visual/circle_wave/bioscrambler(get_turf(src))
-	for(var/mob/living/carbon/nearby in hearers(1, get_turf(src)))
+	for(var/mob/living/carbon/nearby in hearers(1, src))
 		nearby.bioscramble(name)
 
 /obj/item/assembly/signaler/anomaly/hallucination

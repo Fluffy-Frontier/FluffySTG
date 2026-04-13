@@ -1,5 +1,4 @@
 /datum/reagent/reaction_agent
-	abstract_type = /datum/reagent/reaction_agent
 	name = "Reaction Agent"
 	description = "Hello! I am a bugged reagent. Please report me for my crimes. Thank you!!"
 

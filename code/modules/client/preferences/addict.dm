@@ -14,7 +14,6 @@
 	category = PREFERENCE_CATEGORY_MANUALLY_RENDERED
 	savefile_key = "junkie"
 	savefile_identifier = PREFERENCE_CHARACTER
-	should_update_preview = FALSE
 
 /datum/preference/choiced/junkie/init_possible_values()
 	return list("Random") + assoc_to_keys(GLOB.possible_junkie_addictions)
@@ -34,7 +33,6 @@
 	category = PREFERENCE_CATEGORY_MANUALLY_RENDERED
 	savefile_key = "smoker"
 	savefile_identifier = PREFERENCE_CHARACTER
-	should_update_preview = FALSE
 
 /datum/preference/choiced/smoker/init_possible_values()
 	return list("Random") + assoc_to_keys(GLOB.possible_smoker_addictions)
@@ -54,7 +52,6 @@
 	category = PREFERENCE_CATEGORY_MANUALLY_RENDERED
 	savefile_key = "alcoholic"
 	savefile_identifier = PREFERENCE_CHARACTER
-	should_update_preview = FALSE
 
 /datum/preference/choiced/alcoholic/init_possible_values()
 	return list("Random") + assoc_to_keys(GLOB.possible_alcoholic_addictions)

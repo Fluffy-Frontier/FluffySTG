@@ -83,10 +83,7 @@
 		/datum/reagent/consumable/ethanol/blue_blazer,
 		/datum/reagent/consumable/ethanol/flip_cocktail,
 		/datum/reagent/consumable/ethanol/bitters_soda,
-		/datum/reagent/consumable/ethanol/star,
-		/datum/reagent/consumable/ethanol/brandy_crusta,
-		/datum/reagent/consumable/ethanol/casino,
-		/datum/reagent/consumable/ethanol/mary_pickford,
+		/datum/chemical_reaction/drink/star,
 	)
 
 	var/reagent_type = pick(possible_reagents)
@@ -124,10 +121,7 @@
 		/datum/reagent/consumable/ethanol/ramos_gin_fizz,
 		/datum/reagent/consumable/ethanol/sangria,
 		/datum/reagent/consumable/ethanol/tizirian_sour,
-		/datum/reagent/consumable/ethanol/suffering_bastard,
-		/datum/reagent/consumable/ethanol/pousse_cafe,
-		/datum/reagent/consumable/ethanol/improved_whiskey,
-		/datum/reagent/consumable/ethanol/vieux_carre,
+		/datum/chemical_reaction/drink/suffering_bastard,
 	)
 
 	var/reagent_type = pick(possible_reagents)

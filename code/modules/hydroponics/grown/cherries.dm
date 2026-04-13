@@ -29,7 +29,7 @@
 	bite_consumption_mod = 2
 	foodtypes = FRUIT
 	tastes = list("cherry" = 1)
-	distill_reagent = /datum/reagent/consumable/ethanol/maraschino
+	wine_power = 30
 
 /obj/item/food/grown/cherries/grind_results()
 	return list(/datum/reagent/consumable/cherryjelly = 0)

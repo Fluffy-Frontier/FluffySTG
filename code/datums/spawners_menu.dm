@@ -50,10 +50,9 @@
 		this["name"] = mob_type
 		this["amount_left"] = 0
 		for(var/mob/joinable_mob as anything in GLOB.joinable_mobs[mob_type])
-			SEND_SIGNAL(joinable_mob, COMSIG_LIVING_GHOSTROLE_INFO, this)
 			this["amount_left"] += 1
-			this["desc"] ||= initial(joinable_mob.desc)
-
+			if(!SEND_SIGNAL(joinable_mob, COMSIG_LIVING_GHOSTROLE_INFO, this))
+				this["desc"] = initial(joinable_mob.desc)
 		if(this["amount_left"] > 0)
 			data["spawners"] += list(this)
 	return data

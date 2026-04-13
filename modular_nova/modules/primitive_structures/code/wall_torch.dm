@@ -69,7 +69,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/wall_torch, 28)
 
 		return
 
-	if(!burning && attacking_item.get_temperature() >= FIRE_MINIMUM_TEMPERATURE_TO_EXIST)
+	if(!burning && attacking_item.get_temperature())
 		light_it_up()
 	else
 		return ..()

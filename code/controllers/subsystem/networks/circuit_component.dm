@@ -2,7 +2,7 @@ SUBSYSTEM_DEF(circuit_component)
 	name = "Circuit Components"
 	wait = 0.1 SECONDS
 	priority = FIRE_PRIORITY_DEFAULT
-	ss_flags = SS_NO_INIT
+	flags = SS_NO_INIT
 
 	var/list/callbacks_to_invoke = list()
 	var/list/currentrun = list()

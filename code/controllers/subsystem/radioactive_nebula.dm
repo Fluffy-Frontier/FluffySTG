@@ -7,7 +7,7 @@ SUBSYSTEM_DEF(radioactive_nebula)
 	dependencies = list(
 		/datum/controller/subsystem/processing/station,
 	)
-	ss_flags = SS_BACKGROUND
+	flags = SS_BACKGROUND
 	wait = 30 SECONDS
 
 	VAR_PRIVATE

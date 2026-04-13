@@ -5,7 +5,7 @@
 	// rnd_name = "Laparotomy / Craniotomy / Myotomy (Make Incision)" // Maybe we keep this one simple
 	desc = "Make an incision in the patient's skin to access internal organs. \
 		Causes \"cut skin\" surgical state."
-	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS - ORIGINAL: required_bodytype = ~BODYTYPE_ROBOTIC
+	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS  -Orginal: required_bodytype = ~BODYTYPE_ROBOTIC
 	replaced_by = /datum/surgery_operation/limb/incise_skin/abductor
 	implements = list(
 		TOOL_SCALPEL = 1,
@@ -21,7 +21,6 @@
 	success_sound = 'sound/items/handling/surgery/scalpel2.ogg'
 	operation_flags = OPERATION_AFFECTS_MOOD | OPERATION_NO_PATIENT_REQUIRED
 	any_surgery_states_blocked = ALL_SURGERY_SKIN_STATES
-	allow_stumps = TRUE
 	/// We can't cut mobs with this biostate
 	var/biostate_blacklist = BIO_CHITIN
 
@@ -29,7 +28,7 @@
 	return "Any sharp edged item"
 
 /datum/surgery_operation/limb/incise_skin/get_default_radial_image()
-	return image('icons/hud/surgery_radial.dmi', "make_incision")
+	return image(/obj/item/scalpel)
 
 /datum/surgery_operation/limb/incise_skin/tool_check(obj/item/tool)
 	// Require edged sharpness OR a tool behavior match
@@ -103,7 +102,7 @@
 	desc = "Retract the patient's skin to access their internal organs. \
 		Causes \"skin open\" surgical state."
 	operation_flags = OPERATION_NO_PATIENT_REQUIRED
-	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS - ORIGINAL: required_bodytype = ~BODYTYPE_ROBOTIC
+	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS  -Orginal: required_bodytype = ~BODYTYPE_ROBOTIC
 	replaced_by = /datum/surgery_operation/limb/retract_skin/abductor
 	implements = list(
 		TOOL_RETRACTOR = 1,
@@ -116,10 +115,9 @@
 	preop_sound = 'sound/items/handling/surgery/retractor1.ogg'
 	success_sound = 'sound/items/handling/surgery/retractor2.ogg'
 	all_surgery_states_required = SURGERY_SKIN_CUT
-	allow_stumps = TRUE
 
 /datum/surgery_operation/limb/retract_skin/get_default_radial_image()
-	return image('icons/hud/surgery_radial.dmi', "retract_skin")
+	return image(/obj/item/retractor)
 
 /datum/surgery_operation/limb/retract_skin/on_preop(obj/item/bodypart/limb, mob/living/surgeon, obj/item/tool, list/operation_args)
 	display_results(
@@ -147,7 +145,7 @@
 	name = "mend skin incision"
 	desc = "Mend the incision in the patient's skin, closing it up. \
 		Clears most surgical states."
-	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS - ORIGINAL: required_bodytype = ~BODYTYPE_ROBOTIC
+	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS  -Orginal: required_bodytype = ~BODYTYPE_ROBOTIC
 	operation_flags = OPERATION_PRIORITY_NEXT_STEP | OPERATION_NO_PATIENT_REQUIRED
 	replaced_by = /datum/surgery_operation/limb/close_skin/abductor
 	implements = list(
@@ -167,13 +165,12 @@
 		/obj/item = 'sound/items/handling/surgery/cautery2.ogg',
 	)
 	any_surgery_states_required = ALL_SURGERY_SKIN_STATES
-	allow_stumps = TRUE
 
 /datum/surgery_operation/limb/close_skin/get_any_tool()
 	return "Any heat source"
 
 /datum/surgery_operation/limb/close_skin/get_default_radial_image()
-	return image('icons/hud/surgery_radial.dmi', "mend_incision")
+	return image(/obj/item/cautery)
 
 /datum/surgery_operation/limb/close_skin/all_required_strings()
 	return ..() + list("the limb must have skin")
@@ -189,7 +186,7 @@
 		var/obj/item/gun/energy/laser/lasergun = tool
 		return lasergun.cell?.charge > 0
 
-	return tool.get_temperature() >= FIRE_MINIMUM_TEMPERATURE_TO_EXIST
+	return tool.get_temperature() > 0
 
 /datum/surgery_operation/limb/close_skin/on_preop(obj/item/bodypart/limb, mob/living/surgeon, obj/item/tool, list/operation_args)
 	display_results(
@@ -216,7 +213,7 @@
 	name = "clamp bleeders"
 	desc = "Clamp bleeding blood vessels in the patient's body to prevent blood loss. \
 		Causes \"vessels clamped\" surgical state."
-	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS - ORIGINAL: required_bodytype = ~BODYTYPE_ROBOTIC
+	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS  -Orginal: required_bodytype = ~BODYTYPE_ROBOTIC
 	operation_flags = OPERATION_PRIORITY_NEXT_STEP | OPERATION_NO_PATIENT_REQUIRED
 	replaced_by = /datum/surgery_operation/limb/clamp_bleeders/abductor
 	implements = list(
@@ -228,10 +225,9 @@
 	time = 2.4 SECONDS
 	preop_sound = 'sound/items/handling/surgery/hemostat1.ogg'
 	all_surgery_states_required = SURGERY_SKIN_OPEN|SURGERY_VESSELS_UNCLAMPED
-	allow_stumps = TRUE
 
 /datum/surgery_operation/limb/clamp_bleeders/get_default_radial_image()
-	return image('icons/hud/surgery_radial.dmi', "clamp_bleeders")
+	return image(/obj/item/hemostat)
 
 /datum/surgery_operation/limb/clamp_bleeders/on_preop(obj/item/bodypart/limb, mob/living/surgeon, obj/item/tool, list/operation_args)
 	display_results(
@@ -260,7 +256,7 @@
 	name = "unclamp bleeders"
 	desc = "Unclamp blood vessels in the patient's body to allow blood flow again. \
 		Clears \"vessels clamped\" surgical state."
-	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS - ORIGINAL: required_bodytype = ~BODYTYPE_ROBOTIC
+	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS  -Orginal: required_bodytype = ~BODYTYPE_ROBOTIC
 	operation_flags = OPERATION_NO_PATIENT_REQUIRED
 	replaced_by = /datum/surgery_operation/limb/unclamp_bleeders/abductor
 	implements = list(
@@ -272,10 +268,9 @@
 	time = 2.4 SECONDS
 	preop_sound = 'sound/items/handling/surgery/hemostat1.ogg'
 	all_surgery_states_required = SURGERY_SKIN_OPEN|SURGERY_VESSELS_CLAMPED
-	allow_stumps = TRUE
 
 /datum/surgery_operation/limb/unclamp_bleeders/get_default_radial_image()
-	return image('icons/hud/surgery_radial.dmi', "unclamp_bleeders")
+	return image(/obj/item/hemostat)
 
 /datum/surgery_operation/limb/unclamp_bleeders/all_required_strings()
 	return ..() + list("the limb must have blood vessels")
@@ -307,7 +302,7 @@
 	name = "saw limb bone"
 	desc = "Saw through the patient's bones to access their internal organs. \
 		Causes \"bone sawed\" surgical state."
-	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS - ORIGINAL: required_bodytype = ~BODYTYPE_ROBOTIC
+	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS  -Orginal: required_bodytype = ~BODYTYPE_ROBOTIC
 	implements = list(
 		TOOL_SAW = 1,
 		/obj/item/shovel/serrated = 1.33,
@@ -330,13 +325,12 @@
 	operation_flags = OPERATION_AFFECTS_MOOD | OPERATION_NO_PATIENT_REQUIRED
 	all_surgery_states_required = SURGERY_SKIN_OPEN
 	any_surgery_states_blocked = SURGERY_BONE_SAWED|SURGERY_BONE_DRILLED
-	allow_stumps = TRUE
 
 /datum/surgery_operation/limb/saw_bones/get_any_tool()
 	return "Any sharp edged item with decent force"
 
 /datum/surgery_operation/limb/saw_bones/get_default_radial_image()
-	return image('icons/hud/surgery_radial.dmi', "saw_bones")
+	return image(/obj/item/circular_saw)
 
 /datum/surgery_operation/limb/saw_bones/tool_check(obj/item/tool)
 	// Require edged sharpness and sufficient force OR a tool behavior match
@@ -370,7 +364,7 @@
 	name = "fix limb bone"
 	desc = "Repair a patient's cut or broken bones. \
 		Clears \"bone sawed\" and \"bone drilled\" surgical states."
-	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS - ORIGINAL: required_bodytype = ~BODYTYPE_ROBOTIC
+	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS  -Orginal: required_bodytype = ~BODYTYPE_ROBOTIC
 	operation_flags = OPERATION_NO_PATIENT_REQUIRED
 	implements = list(
 		/obj/item/stack/medical/bone_gel = 1,
@@ -387,10 +381,9 @@
 	time = 4 SECONDS
 	all_surgery_states_required = SURGERY_SKIN_OPEN
 	any_surgery_states_required = SURGERY_BONE_SAWED|SURGERY_BONE_DRILLED
-	allow_stumps = TRUE
 
 /datum/surgery_operation/limb/fix_bones/get_default_radial_image()
-	return image('icons/hud/surgery_radial.dmi', "fix_bones")
+	return image(/obj/item/stack/medical/bone_gel)
 
 /datum/surgery_operation/limb/fix_bones/all_required_strings()
 	return ..() + list("the limb must have bones")
@@ -417,7 +410,7 @@
 	name = "drill limb bone"
 	desc = "Drill through a patient's bones. \
 		Causes \"bone drilled\" surgical state."
-	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS - ORIGINAL: required_bodytype = ~BODYTYPE_ROBOTIC
+	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS  -Orginal: required_bodytype = ~BODYTYPE_ROBOTIC
 	operation_flags = OPERATION_NO_PATIENT_REQUIRED
 	implements = list(
 		TOOL_DRILL = 1,
@@ -432,13 +425,12 @@
 	success_sound = 'sound/items/handling/surgery/organ2.ogg'
 	all_surgery_states_required = SURGERY_SKIN_OPEN
 	any_surgery_states_blocked = SURGERY_BONE_SAWED|SURGERY_BONE_DRILLED
-	allow_stumps = TRUE
 
 /datum/surgery_operation/limb/drill_bones/get_any_tool()
 	return "Any sharp pointed item with decent force"
 
 /datum/surgery_operation/limb/drill_bones/get_default_radial_image()
-	return image('icons/hud/surgery_radial.dmi', "drill_bones")
+	return image(/obj/item/surgicaldrill)
 
 /datum/surgery_operation/limb/drill_bones/tool_check(obj/item/tool)
 	// Require pointy sharpness and sufficient force OR a tool behavior match
@@ -467,9 +459,9 @@
 
 /datum/surgery_operation/limb/incise_organs
 	name = "incise organs"
-	desc = "Make an incision in the patient's internal organ tissue to allow for manipulation or repair. \
+	desc = "Make an incision in patient's internal organ tissue to allow for manipulation or repair. \
 		Causes \"organs cut\" surgical state."
-	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS - ORIGINAL: required_bodytype = ~BODYTYPE_ROBOTIC
+	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS  -Orginal: required_bodytype = ~BODYTYPE_ROBOTIC
 	operation_flags = OPERATION_NO_PATIENT_REQUIRED
 	replaced_by = /datum/surgery_operation/limb/incise_organs/abductor
 	implements = list(
@@ -485,13 +477,12 @@
 	success_sound = 'sound/items/handling/surgery/organ1.ogg'
 	all_surgery_states_required = SURGERY_SKIN_OPEN
 	any_surgery_states_blocked = SURGERY_ORGANS_CUT
-	allow_stumps = TRUE
 
 /datum/surgery_operation/limb/incise_organs/get_any_tool()
 	return "Any sharp edged item"
 
 /datum/surgery_operation/limb/incise_organs/get_default_radial_image()
-	return image('icons/hud/surgery_radial.dmi', "incise_organs")
+	return image(/obj/item/scalpel)
 
 /datum/surgery_operation/limb/incise_organs/tool_check(obj/item/tool)
 	// Require edged sharpness OR a tool behavior match. Also saws are a no-go, you'll rip up the organs!

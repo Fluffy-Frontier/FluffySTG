@@ -441,10 +441,16 @@
 			set_machine_stat(machine_stat | MAINT)
 			icon_state = "open"
 
-/obj/machinery/roulette/shock(mob/living/shocking, chance, shock_source, siemens_coeff)
+/obj/machinery/roulette/proc/shock(mob/user, prb)
 	if(!on) // unpowered, no shock
 		return FALSE
-	return ..()
+	if(!prob(prb))
+		return FALSE //you lucked out, no shock for you
+	do_sparks(5, TRUE, src)
+	if(electrocute_mob(user, get_area(src), src, 1, TRUE))
+		return TRUE
+	else
+		return FALSE
 
 /obj/item/roulette_wheel_beacon
 	name = "roulette wheel beacon"

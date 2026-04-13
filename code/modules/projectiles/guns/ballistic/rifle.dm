@@ -98,7 +98,7 @@
 			return FALSE
 	return ..()
 
-/obj/item/gun/ballistic/rifle/boltaction/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
+/obj/item/gun/ballistic/rifle/boltaction/process_fire(mob/user)
 	if(can_jam)
 		if(chambered.loaded_projectile)
 			if(prob(jamming_chance))

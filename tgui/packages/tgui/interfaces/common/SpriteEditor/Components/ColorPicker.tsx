@@ -523,11 +523,10 @@ export const ColorPicker = (props: ColorPickerProps) => {
                       <PickerComponentRow
                         markerColor={`rgba(${r}, ${g}, ${b}, ${a})`}
                         whiteMarkerBorder={Math.max(v, 1 - a) < 0.5}
-                        backgroundImage={`linear-gradient(to right, rgba(${r}, ${g}, ${b}, 0), rgba(${r}, ${g}, ${b}, 1)), url('tgui/assets/transparency_checkerboard.svg')`}
+                        backgroundImage={`linear-gradient(to right, rgba(${r}, ${g}, ${b}, 0), rgba(${r}, ${g}, ${b}, 1)), url(${transparency_checkerboard})`}
                         value={a}
                         max={1}
                         numberInputMultiplier={255}
-                        numberInputFormat={(value) => `${Math.round(value)}`}
                         onDrag={(value) =>
                           setColor({
                             ...(color ?? initialColor),

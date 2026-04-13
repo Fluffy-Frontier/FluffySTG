@@ -34,7 +34,7 @@
 
 /obj/machinery/rnd/experimentor/Initialize(mapload)
 	. = ..()
-	set_wires(new /datum/wires/experimentor(src))
+	set_wires(new /datum/wires/rnd/experimentor(src))
 
 	load_handlers()
 
@@ -53,8 +53,7 @@
 	if(!banned_typecache)
 		banned_typecache = typecacheof(list(
 			/obj/item/stock_parts/power_store/cell/infinite,
-			/obj/item/stock_parts/power_store/cell/ethereal,
-			/obj/item/grenade/chem_grenade/tuberculosis,
+			/obj/item/grenade/chem_grenade/tuberculosis
 		))
 
 	if(!length(valid_items))
@@ -247,7 +246,7 @@
 
 /obj/machinery/rnd/experimentor/proc/match_reaction(obj/item/matching, target_reaction)
 	PRIVATE_PROC(TRUE)
-	if(isnull(matching) || isnull(target_reaction) || target_reaction == SCANTYPE_DISCOVER)
+	if(isnull(matching) || isnull(target_reaction))
 		return FAIL
 
 	if(item_reactions["[matching.type]"] == target_reaction)
@@ -255,12 +254,13 @@
 	return FAIL
 
 /obj/machinery/rnd/experimentor/proc/try_perform_experiment(reaction)
+	PRIVATE_PROC(TRUE)
 	if(!stored_research || !loaded_item || !COOLDOWN_FINISHED(src, run_experiment))
 		return FALSE
 
 	if(istype(loaded_item, /obj/item/relic))
 		reaction = SCANTYPE_DISCOVER
-	else
+	else if(reaction != SCANTYPE_DISCOVER)
 		reaction = match_reaction(loaded_item, reaction)
 
 	if(reaction != FAIL)

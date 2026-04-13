@@ -71,18 +71,25 @@ const ZoomListener = ({
   pixelsPerUnit,
   children,
 }: PropsWithChildren<ZoomProps>) => (
-  <Box
-    width="100%"
-    height="100%"
-    onMouseOver={(ev) => ev.currentTarget.focus()}
-    onWheel={(ev) => {
-      if (!ev.shiftKey) return;
-      ev.preventDefault();
-      setZoom(clamp(zoom + (Math.sign(-ev.deltaY) * 1) / pixelsPerUnit, 1, 3));
-    }}
-  >
-    {children}
-  </Box>
+  <>
+    {/* I'm too lazy to go through the process of adding onWheel to BoxProps. */}
+    <div
+      onMouseOver={(ev) => ev.currentTarget.focus()}
+      onWheel={(ev) => {
+        if (!ev.shiftKey) return;
+        ev.preventDefault();
+        setZoom(
+          clamp(zoom + (Math.sign(-ev.deltaY) * 1) / pixelsPerUnit, 1, 3),
+        );
+      }}
+      style={{
+        width: '100%',
+        height: '100%',
+      }}
+    >
+      {children}
+    </div>
+  </>
 );
 
 type EditableCanvasProps = Pick<
