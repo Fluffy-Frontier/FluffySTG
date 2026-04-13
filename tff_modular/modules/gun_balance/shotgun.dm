@@ -13,7 +13,7 @@
 	exposed_wound_bonus = 5
 
 /obj/projectile/bullet/shotgun_slug
-	damage = 45
+	damage = 42
 	wound_bonus = 5
 	exposed_wound_bonus = 10
 
