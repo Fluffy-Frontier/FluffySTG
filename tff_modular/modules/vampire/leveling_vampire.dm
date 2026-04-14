@@ -11,7 +11,7 @@
 SUBSYSTEM_DEF(vampire_leveling)
 	name = "Vampire Leveling"
 	wait = 15 MINUTES
-	flags = SS_NO_INIT | SS_KEEP_TIMING
+	ss_flags = SS_NO_INIT | SS_KEEP_TIMING
 	can_fire = FALSE
 
 /datum/controller/subsystem/vampire_leveling/fire(resumed = FALSE)
