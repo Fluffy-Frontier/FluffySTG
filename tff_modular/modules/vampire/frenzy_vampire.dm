@@ -100,7 +100,9 @@
 	if(vampiredatum.current_vitae >= FRENZY_THRESHOLD_EXIT)
 		qdel(src)
 		return
-	if(carbon_owner.stat != DEAD || !HAS_TRAIT(carbon_owner, TRAIT_TORPOR))
+	if(carbon_owner.stat == DEAD || HAS_TRAIT(carbon_owner, TRAIT_TORPOR))
+		return FALSE
+	else
 		carbon_owner.adjust_fire_loss(0.75 + (vampiredatum.vampire_level * 0.05))
 		carbon_owner.set_jitter_if_lower(10 SECONDS)
 

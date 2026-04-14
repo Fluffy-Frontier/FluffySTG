@@ -17,7 +17,7 @@
 	ranged_mousepointer = 'tff_modular/modules/vampire/icons/vampire_strength.dmi'
 
 	/// Only changed by the '/brawn/brash' subtype; acts as a general purpose damage multipler.
-	var/damage_coefficient = 1.5
+	var/damage_coefficient = 1.25
 	/// Boolean indicating whether or not this version of '/brawn' is in the '/brash' subtype and should
 	/// bypass typical ability level restrictions. (There is probably a better way to do this.)
 	var/brujah = FALSE

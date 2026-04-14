@@ -92,7 +92,7 @@
 	/// Additional regeneration when the vampire has a lot of blood
 	var/additional_regen
 	/// How much damage the vampire heals each life tick. Increases per rank up
-	var/vampire_regen_rate = 0.6
+	var/vampire_regen_rate = 0.3
 
 	/// Minimum cooldown when reviving.
 	COOLDOWN_DECLARE(revive_cooldown)

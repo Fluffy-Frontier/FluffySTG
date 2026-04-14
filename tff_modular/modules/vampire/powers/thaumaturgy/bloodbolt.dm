@@ -8,7 +8,7 @@
 	vampire_power_flags = NONE
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_INCAPACITATED | BP_CANT_USE_WHILE_UNCONSCIOUS
 	vitaecost = 60
-	cooldown_time = 40 SECONDS
+	cooldown_time = 60 SECONDS
 	target_range = 80 // Sniper :)
 	power_activates_immediately = FALSE
 	prefire_message = "Select your target."

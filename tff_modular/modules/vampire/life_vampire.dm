@@ -72,6 +72,7 @@
 	current.adjust_organ_loss(ORGAN_SLOT_BRAIN, -1 * (actual_regen * 4))
 	current.adjust_organ_loss(ORGAN_SLOT_EYES, -1 * (actual_regen * 4))
 	current.adjust_organ_loss(ORGAN_SLOT_EARS, -1 * (actual_regen * 4))
+	current.adjust_organ_loss(ORGAN_SLOT_EARS, -1 * (actual_regen * 4))
 	if(!iscarbon(current))
 		return FALSE
 	var/mob/living/carbon/carbon_owner = current

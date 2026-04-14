@@ -14,7 +14,7 @@
 
 /datum/dynamic_ruleset/roundstart/vampire/assign_role(datum/mind/candidate)
 	var/datum/antagonist/vampire/suck_datum = candidate.add_antag_datum(/datum/antagonist/vampire)
-	suck_datum.rank_up(rand(3, 4))
+	suck_datum.rank_up(VAMPIRE_STARTING_LEVELS)
 
 /datum/dynamic_ruleset/midround/from_living/vampire
 	name = "Vampiric Accident"
@@ -34,7 +34,7 @@
 
 /datum/dynamic_ruleset/midround/from_living/vampire/assign_role(datum/mind/candidate)
 	var/datum/antagonist/vampire/suck_datum = candidate.add_antag_datum(/datum/antagonist/vampire)
-	suck_datum.rank_up(rand(3, 4))
+	suck_datum.rank_up(VAMPIRE_STARTING_LEVELS)
 
 /datum/dynamic_ruleset/latejoin/vampire
 	name = "Vampiric Accident"

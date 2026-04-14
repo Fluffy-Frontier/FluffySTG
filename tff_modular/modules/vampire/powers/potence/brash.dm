@@ -20,7 +20,7 @@
 	vampire_power_flags = BP_AM_VERY_DYNAMIC_COOLDOWN
 	vitaecost = 0 // Set on use
 	cooldown_time = 1 SECONDS // Same as above
-	damage_coefficient = 1.75
+	damage_coefficient = 1.625
 	brujah = TRUE
 	level_current = 1
 

@@ -15,6 +15,9 @@
 **/
 /datum/antagonist/vampire/proc/check_begin_torpor()
 	var/mob/living/carbon/carbon_owner = owner.current
+	var/datum/antagonist/vampire/antag_datum = IS_VAMPIRE(carbon_owner)
+	antag_datum.try_regenerate_limbs()
+	antag_datum.heal_vampire_organs()
 	if(QDELETED(carbon_owner))
 		return
 	var/total_damage = carbon_owner.get_brute_loss() + carbon_owner.get_fire_loss()

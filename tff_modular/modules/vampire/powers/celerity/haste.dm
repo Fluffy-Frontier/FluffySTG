@@ -99,6 +99,6 @@
 			continue
 		hit += hit_living
 		playsound(hit_living, SFX_PUNCH, 15, TRUE, -1)
-		hit_living.adjust_stamina_loss(20 + level_current * 8)
+		hit_living.adjust_stamina_loss(10 + level_current * 8)
 		hit_living.Knockdown(10 + level_current * 8)
 		hit_living.spin(1 SECONDS, 1)
