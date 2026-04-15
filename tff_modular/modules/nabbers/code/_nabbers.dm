@@ -259,7 +259,6 @@
 		/datum/quirk/all_nighter,
 		/datum/quirk/item_quirk/allergic, // До введения системы дыхания
 		/datum/quirk/badback,
-		/datum/quirk/bighands,
 		/datum/quirk/item_quirk/blindness,
 		/datum/quirk/blooddeficiency,
 		/datum/quirk/body_purist,

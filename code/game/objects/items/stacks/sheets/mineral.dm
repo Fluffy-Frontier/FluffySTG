@@ -29,6 +29,9 @@ GLOBAL_LIST_INIT(sandstone_recipes, list ( \
 	new/datum/stack_recipe("Breakdown into sand", /obj/item/stack/ore/glass, 1, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ON_SOLID_GROUND | CRAFT_NO_MATERIALS, category = CAT_MISC), \
 ))
 
+/obj/item/stack/sheet/mineral
+	abstract_type = /obj/item/stack/sheet/mineral
+
 /obj/item/stack/sheet/mineral/sandstone
 	name = "sandstone brick"
 	desc = "This appears to be a combination of both sand and stone."
@@ -104,7 +107,6 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 	singular_name = "diamond"
 	construction_path_type = "diamond"
 	mats_per_unit = list(/datum/material/diamond=SHEET_MATERIAL_AMOUNT)
-	grind_results = list(/datum/reagent/carbon = 20)
 	gulag_valid = TRUE
 	merge_type = /obj/item/stack/sheet/mineral/diamond
 	material_type = /datum/material/diamond
@@ -135,7 +137,6 @@ GLOBAL_LIST_INIT(diamond_recipes, list ( \
 	singular_name = "uranium sheet"
 	construction_path_type = "uranium"
 	mats_per_unit = list(/datum/material/uranium=SHEET_MATERIAL_AMOUNT)
-	grind_results = list(/datum/reagent/uranium = 20)
 	gulag_valid = TRUE
 	merge_type = /obj/item/stack/sheet/mineral/uranium
 	material_type = /datum/material/uranium
@@ -172,7 +173,6 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 	resistance_flags = FLAMMABLE
 	max_integrity = 100
 	mats_per_unit = list(/datum/material/plasma=SHEET_MATERIAL_AMOUNT)
-	grind_results = list(/datum/reagent/toxin/plasma = 20)
 	gulag_valid = TRUE
 	merge_type = /obj/item/stack/sheet/mineral/plasma
 	material_type = /datum/material/plasma
@@ -210,7 +210,6 @@ GLOBAL_LIST_INIT(plasma_recipes, list ( \
 	singular_name = "gold bar"
 	construction_path_type = "gold"
 	mats_per_unit = list(/datum/material/gold=SHEET_MATERIAL_AMOUNT)
-	grind_results = list(/datum/reagent/gold = 20)
 	gulag_valid = TRUE
 	merge_type = /obj/item/stack/sheet/mineral/gold
 	material_type = /datum/material/gold
@@ -241,7 +240,6 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
 	singular_name = "silver bar"
 	construction_path_type = "silver"
 	mats_per_unit = list(/datum/material/silver=SHEET_MATERIAL_AMOUNT)
-	grind_results = list(/datum/reagent/silver = 20)
 	gulag_valid = TRUE
 	merge_type = /obj/item/stack/sheet/mineral/silver
 	material_type = /datum/material/silver
@@ -271,7 +269,6 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 	singular_name = "bananium sheet"
 	construction_path_type = "bananium"
 	mats_per_unit = list(/datum/material/bananium=SHEET_MATERIAL_AMOUNT)
-	grind_results = list(/datum/reagent/consumable/banana = 20)
 	gulag_valid = TRUE
 	merge_type = /obj/item/stack/sheet/mineral/bananium
 	material_type = /datum/material/bananium
@@ -385,7 +382,6 @@ GLOBAL_LIST_INIT(plastitanium_recipes, list ( \
 	singular_name = "snow block"
 	force = 1
 	throwforce = 2
-	grind_results = list(/datum/reagent/consumable/ice = 20)
 	merge_type = /obj/item/stack/sheet/mineral/snow
 	walltype = /turf/closed/wall/mineral/snow
 	material_type = /datum/material/snow
@@ -497,11 +493,13 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 	icon_state = "slag"
 	singular_name = "coal lump"
 	merge_type = /obj/item/stack/sheet/mineral/coal
-	grind_results = list(/datum/reagent/carbon = 20)
 	novariants = TRUE
 
+/obj/item/stack/sheet/mineral/coal/grind_results()
+	return list(/datum/reagent/carbon = 20)
+
 /obj/item/stack/sheet/mineral/coal/attackby(obj/item/W, mob/user, list/modifiers, list/attack_modifiers)
-	if(W.get_temperature() > 300)//If the temperature of the object is over 300, then ignite
+	if(W.get_temperature() >= FIRE_MINIMUM_TEMPERATURE_TO_EXIST) //If the temperature of the object is hot enough to start a fire, then ignite
 		var/turf/T = get_turf(src)
 		message_admins("Coal ignited by [ADMIN_LOOKUPFLW(user)] in [ADMIN_VERBOSEJMP(T)]")
 		user.log_message("ignited coal", LOG_GAME)

@@ -1,7 +1,7 @@
 // THIS IS A NOVA SECTOR UI FILE
 import {
-  Feature,
-  FeatureChoiced,
+  type Feature,
+  type FeatureChoiced,
   FeatureColorInput,
   FeatureNumberInput,
 } from '../../base';

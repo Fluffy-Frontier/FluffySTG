@@ -235,7 +235,7 @@
 		var/obj/item/clothing/under/U = user.w_uniform
 		if(U)
 			U.attach_accessory(SSwardrobe.provide_type(accessory, user))
-		else
+		else if(!visuals_only)
 			WARNING("Unable to equip accessory [accessory] in outfit [name]. No uniform present!")
 
 	if(l_hand)
@@ -557,7 +557,7 @@
 
 /datum/outfit/vv_get_dropdown()
 	. = ..()
-	VV_DROPDOWN_OPTION("", "---")
+	VV_DROPDOWN_OPTION("", "--- /outfit ---")
 	VV_DROPDOWN_OPTION(VV_HK_TO_OUTFIT_EDITOR, "Outfit Editor")
 
 /datum/outfit/vv_do_topic(list/href_list)
@@ -567,6 +567,4 @@
 		return
 
 	if(href_list[VV_HK_TO_OUTFIT_EDITOR])
-		if(!check_rights(NONE))
-			return
 		usr.client.open_outfit_editor(src)

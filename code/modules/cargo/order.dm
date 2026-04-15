@@ -158,7 +158,7 @@
 					container_contents -= missing_item
 
 	for(var/item in container_contents)
-		manifest_text += "<li> [container_contents[item]] [item][container_contents[item] == 1 ? "" : "s"]</li>"
+		manifest_text += "<li> [container_contents[item]] [item][container_contents[item] == 1 ? "" : plural_s(item)]</li>"
 	manifest_text += "</ul>"
 	manifest_text += "<h4>Stamp below to confirm receipt of goods:</h4>"
 
@@ -188,7 +188,7 @@
 		account_holder = paying_account.account_holder
 	else
 		account_holder = "Cargo"
-	var/obj/structure/closet/crate/crate = pack.generate(A, paying_account)
+	var/obj/structure/closet/crate/crate = pack.generate(A, paying_account, initial(pack.storage_override))
 	if(pack.order_flags & ORDER_CONTRABAND)
 		for(var/atom/movable/item_within as anything in crate.get_all_contents())
 			ADD_TRAIT(item_within, TRAIT_CONTRABAND, INNATE_TRAIT)

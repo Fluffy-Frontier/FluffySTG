@@ -1582,7 +1582,7 @@
 "ip" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/hatch,
-/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
 /turf/open/floor/mineral/plastitanium/red{
 	name = "soviet floor"
 	},
@@ -3318,7 +3318,7 @@
 /obj/effect/turf_decal/weather/snow,
 /obj/item/modular_computer/pda/syndicate{
 	desc = "A portable microcomputer by Thinktronic Systems, LTD.";
-	inserted_disk = /obj/item/computer_disk/virus/clown;
+	inserted_disk = /obj/item/disk/computer/virus/clown;
 	name = "soviet tablet"
 	},
 /obj/effect/decal/remains/human{
@@ -3361,11 +3361,8 @@
 	pixel_x = -1;
 	pixel_y = 16
 	},
-/obj/item/gun/magic/wand{
-	desc = "It's just a fancy staff so that holy clerics and priests look cool. What? You didn't think someone would leave a REAL magic artifact with a snowman out in the cold, did you?";
-	icon_state = "revivewand";
-	name = "holy staff";
-	pixel_y = -2
+/obj/item/gun/magic/wand/nothing/fake_resurrection{
+	    pixel_y = -2
 	},
 /obj/effect/light_emitter{
 	set_cap = 3;
@@ -5321,7 +5318,7 @@
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/pda/syndicate{
 	desc = "A portable microcomputer by Thinktronic Systems, LTD.";
-	inserted_disk = /obj/item/computer_disk/virus/mime;
+	inserted_disk = /obj/item/disk/computer/virus/mime;
 	name = "soviet tablet"
 	},
 /obj/effect/light_emitter{

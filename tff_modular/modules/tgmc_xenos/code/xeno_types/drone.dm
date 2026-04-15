@@ -3,60 +3,36 @@
 /mob/living/carbon/alien/adult/tgmc/drone
 	name = "alien drone"
 	desc = "As plain looking as you could call an alien with armored black chitin and large claws."
-	caste = "drone"
-	maxHealth = 200
-	health = 200
 	icon_state = "aliendrone"
+	caste = "drone"
+	maxHealth = 150
+	health = 150
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 	next_evolution = /mob/living/carbon/alien/adult/tgmc/praetorian
 
+	armor_type = /datum/armor/tgmc_xeno/ravager
+
 	additional_organ_types_by_slot = list(
-		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/large,
-		ORGAN_SLOT_XENO_RESINSPINNER = /obj/item/organ/alien/resinspinner,
+		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/tgmc/large,
+		ORGAN_SLOT_XENO_RESINSPINNER = /obj/item/organ/alien/resinspinner/tgmc,
 		ORGAN_SLOT_XENO_ACIDGLAND = /obj/item/organ/alien/acid,
 	)
 
+	maptext_height = 32
+	maptext_width = 32
+
 /mob/living/carbon/alien/adult/tgmc/drone/Initialize(mapload)
 	. = ..()
-	GRANT_ACTION(/datum/action/cooldown/alien/tgmc/heal_aura)
+	var/static/list/innate_actions = list(
+		/datum/action/cooldown/alien/tgmc/heal_aura,
+	)
+	grant_actions_by_list(innate_actions)
 
-/datum/action/cooldown/alien/tgmc/heal_aura
-	name = "Healing Aura"
-	desc = "Friendly xenomorphs in a short range around yourself will receive passive healing."
-	button_icon_state = "healaura"
-	plasma_cost = 100
-	cooldown_time = 90 SECONDS
-	/// Is the healing aura currently active or not
-	var/aura_active = FALSE
-	/// How long the healing aura should last
-	var/aura_duration = 30 SECONDS
-	/// How far away the healing aura should reach
-	var/aura_range = 5
-	/// How much brute/burn individually the healing aura should heal each time it fires
-	var/aura_healing_amount = 5
-	/// What color should the + particles caused by the healing aura be
-	var/aura_healing_color = COLOR_BLUE_LIGHT
-	/// The healing aura component itself that the ability uses
-	var/datum/component/aura_healing/aura_healing_component
-
-/datum/action/cooldown/alien/tgmc/heal_aura/Activate()
-	. = ..()
-	if(aura_active)
-		owner.balloon_alert(owner, "already healing")
-		return FALSE
-	owner.balloon_alert(owner, "healing aura started")
-	to_chat(owner, span_danger("We emit pheromones that encourage sisters near us to heal themselves for the next [aura_duration / 10] seconds."))
-	addtimer(CALLBACK(src, PROC_REF(aura_deactivate)), aura_duration)
-	aura_active = TRUE
-	aura_healing_component = owner.AddComponent(/datum/component/aura_healing, range = aura_range, requires_visibility = TRUE, brute_heal = aura_healing_amount, burn_heal = aura_healing_amount, limit_to_trait = TRAIT_XENO_HEAL_AURA, healing_color = aura_healing_color)
-	return TRUE
-
-/datum/action/cooldown/alien/tgmc/heal_aura/proc/aura_deactivate()
-	if(!aura_active)
-		return
-	aura_active = FALSE
-	QDEL_NULL(aura_healing_component)
-	owner.balloon_alert(owner, "healing aura ended")
-
-
+/datum/armor/tgmc_xeno/ravager
+	bomb = 10
+	bullet = 30
+	energy = 30
+	laser = 30
+	fire = 30
+	melee = 30

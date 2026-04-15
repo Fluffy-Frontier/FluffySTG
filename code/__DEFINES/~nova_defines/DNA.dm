@@ -61,14 +61,14 @@
 #define ORGAN_SLOT_EXTERNAL_EARS "ears_external"
 #define ORGAN_SLOT_EXTERNAL_FLUFF "fluff"
 #define ORGAN_SLOT_EXTERNAL_HEAD_ACCESSORY "head_accessory"
-#define ORGAN_SLOT_EXTERNAL_MOTH_MARKINGS "moth_markings"
+#define ORGAN_SLOT_EXTERNAL_MOTH_MARKINGS FEATURE_MOTH_MARKINGS
 #define ORGAN_SLOT_EXTERNAL_NECK_ACCESSORY "neck_accessory"
-#define ORGAN_SLOT_EXTERNAL_SKRELL_HAIR "skrell_hair"
+#define ORGAN_SLOT_EXTERNAL_SKRELL_HAIR FEATURE_SKRELL_HAIR
 #define ORGAN_SLOT_EXTERNAL_SYNTH_ANTENNA "synth_antenna"
 #define ORGAN_SLOT_EXTERNAL_SYNTH_SCREEN "synth_screen"
-#define ORGAN_SLOT_EXTERNAL_TAUR "taur"
-#define ORGAN_SLOT_EXTERNAL_XENODORSAL "xenodorsal"
-#define ORGAN_SLOT_EXTERNAL_XENOHEAD "xenohead"
+#define ORGAN_SLOT_EXTERNAL_TAUR FEATURE_TAUR
+#define ORGAN_SLOT_EXTERNAL_XENODORSAL FEATURE_XENODORSAL
+#define ORGAN_SLOT_EXTERNAL_XENOHEAD FEATURE_XENOHEAD
 
 //Defines for an accessory to be randomed
 #define ACC_RANDOM		"random"
@@ -87,19 +87,18 @@
 #define PENIS_DEFAULT_GIRTH 5 // a lil big but not by much
 #define PENIS_MIN_LENGTH 1
 #define PENIS_MAX_LENGTH 86
-/// for non oversized mobs with a 'normal' body size
-#define PENIS_MAX_LENGTH_NORMAL_SIZED 25
 #define PENIS_DEFAULT_LENGTH 6 //still a lil long but not insane
 
 #define TESTICLES_MIN_SIZE 0
-#define TESTICLES_MAX_SIZE 6
-/// for non oversized mobs with a 'normal' body size
-#define TESTICLES_MAX_NORMAL_SIZED 3
+#define TESTICLES_MAX_SIZE 8
 
-#define SHEATH_NONE	"None"
+#define SHEATH_NONE	SPRITE_ACCESSORY_NONE
 #define SHEATH_NORMAL "Sheath"
 #define SHEATH_SLIT	"Slit"
 #define SHEATH_MODES list(SHEATH_NONE, SHEATH_NORMAL, SHEATH_SLIT)
+
+/// Used for making species blueprint singletons for GLOB.default_mutant_bodyparts
+#define MUTPART_BLUEPRINT new /datum/mutant_bodypart/species_blueprint
 
 #define FEATURE_MUTANT_COLOR_TWO "mcolor2"
 #define FEATURE_MUTANT_COLOR_THREE "mcolor3"
@@ -115,6 +114,15 @@
 #define FEATURE_NECK_ACCESSORY "neck_acc"
 #define FEATURE_GHOUL_COLOR "ghoulcolor"
 #define FEATURE_WINGS_FUNCTIONAL "wings_functional"
+
+// Synth parts
+#define FEATURE_SYNTH_ANTENNA "ipc_antenna"
+#define FEATURE_SYNTH_SCREEN "ipc_screen"
+#define FEATURE_SYNTH_CHASSIS "synth_chassis"
+#define FEATURE_SYNTH_HEAD "synth_head"
+#define FEATURE_SYNTH_HAIR "synth_hair"
+
+// Genitals
 #define FEATURE_PENIS "penis"
 #define FEATURE_WOMB "womb"
 #define FEATURE_VAGINA "vagina"
@@ -122,12 +130,13 @@
 #define FEATURE_BREASTS "breasts"
 #define FEATURE_ANUS "anus"
 
+
 #define MANDATORY_FEATURE_LIST list(\
-	"mcolor" = "#FFFFBB",\
-	"mcolor2" = "#FFFFBB",\
-	"mcolor3" = "#FFFFBB",\
-	"ethcolor" = "#FFCCCC",\
-	"skin_color" = "#FFEEDD",\
+	FEATURE_MUTANT_COLOR = "#FFFFBB",\
+	FEATURE_MUTANT_COLOR_TWO = "#FFFFBB",\
+	FEATURE_MUTANT_COLOR_THREE = "#FFFFBB",\
+	FEATURE_ETHEREAL_COLOR = "#FFCCCC",\
+	FEATURE_SKIN_COLOR = "#FFEEDD",\
 	EXAMINE_DNA_FLAVOR_TEXT = "",\
 	"breasts_size" = 1,\
 	"breasts_lactation" = FALSE,\
@@ -177,7 +186,9 @@
 #define SPECIES_ABDUCTORWEAK "abductorweak"
 #define SPECIES_GOLEMWEAK "golemweak"
 #define SPECIES_KOBOLD "kobold"
+#define SPECIES_KOBOLD_PRIMITIVE "lizard_monkey"
 #define SPECIES_RAMATAE "ramatan"
+#define SPECIES_SHADEKIN "shadekin"
 #define SPECIES_INSECTOID "insectoid"
 
 #define SPECIES_MUTANT "mutant"
