@@ -39,7 +39,11 @@
 	/datum/species/zombie, \
 	/datum/species/mutant, \
 	/datum/species/dullahan, \
-	/datum/species/hemophage \
+	/datum/species/hemophage, \
+	/datum/species/jelly/slime, \
+	/datum/species/jelly, \
+	/datum/species/ethereal, \
+	/datum/species/abductor/abductorweak \
 )
 #define span_awe(str) ("<span class='awe'>" + str + "</span>")
 /// Uncomment this to enable testing of Vampire features (such as vassalizing people with a mind instead of a client).
