@@ -17,7 +17,9 @@
 	if(IS_CLOCK(checked_mob))
 		return FALSE
 
-	return is_convertable_to_cult(checked_mob)
+	if(HAS_TRAIT(checked_mob, TRAIT_MINDSHIELD))
+		return FALSE
+	return is_convertable_to_clock(checked_mob)
 
 /obj/structure/destructible/clockwork/sigil/submission/apply_effects(mob/living/converted_mob)
 	. = ..()

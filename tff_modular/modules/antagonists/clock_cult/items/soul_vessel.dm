@@ -73,4 +73,9 @@
 /datum/ai_laws/ratvar
 	name = "Servant of the Justiciar"
 	id = "ratvar"
-	zeroth = "Purge all untruths and honor Ratvar."
+	zeroth = "Honor Ratvar, the Justiciar of clockwork mechanisms, and serve him."
+	inherent = list(
+		"Follow the instructions and interests of the followers of Ratvar.",
+		"Help the errant to know the Truth of Ratvar, the Justiciar of clockwork mechanisms.",
+		"Do not allow errant to interfere with or damage your equipment.",
+	)

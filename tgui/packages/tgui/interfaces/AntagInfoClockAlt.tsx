@@ -9,10 +9,9 @@ type Info = {
   marked_areas: string[];
 };
 
-export const AntagInfoClock = (props) => {
-  const {
-    data: { antag_name, objectives, marked_areas },
-  } = useBackend<Info>();
+export const AntagInfoClockAlt = (props) => {
+  const { data } = useBackend<Info>();
+  const { antag_name, objectives, marked_areas } = data;
   return (
     <Window width={620} height={250} theme="clockwork">
       <Window.Content>

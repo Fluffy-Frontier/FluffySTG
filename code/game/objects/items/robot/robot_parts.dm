@@ -305,11 +305,6 @@
 					O.make_laws()
 					O.log_current_laws()
 
-			//TFF ADDITION START
-			var/datum/antagonist/clock_cultist/old_servant_datum = brainmob.mind?.has_antag_datum(/datum/antagonist/clock_cultist) //monkestation edit
-			if(be_clockwork && old_servant_datum)
-				old_servant_datum.silent = TRUE
-			//TFF ADDITION START
 			brainmob.mind?.remove_antags_for_borging()
 			O.job = JOB_CYBORG
 
@@ -341,14 +336,6 @@
 				to_chat(O, span_warning("Error: Servo motors unresponsive."))
 
 			O.equip_outfit_and_loadout(equipping_job = SSjob.get_job_type(/datum/job/cyborg)) // NOVA EDIT ADDITION - Cyborg loadout hats
-			// TFF ADDITION START
-			if(be_clockwork && O.mind)
-				var/datum/antagonist/clock_cultist/new_servant_datum = new
-				if(old_servant_datum)
-					new_servant_datum.silent = TRUE
-				O.mind.add_antag_datum(new_servant_datum)
-				new_servant_datum.silent = FALSE
-			// TFF ADDITION END
 		else
 			to_chat(user, span_warning("The MMI must go in after everything else!"))
 
@@ -388,13 +375,6 @@
 
 	else if(IS_WRITING_UTENSIL(W))
 		to_chat(user, span_warning("You need to use a multitool to name [src]!"))
-	// TFF ADDITION START
-	else if(istype(W, /obj/item/clockwork/clockwork_slab) && IS_CLOCK(user))
-		to_chat(user, span_brass("You adjust the internals of \the [src] to that of clockwork."))
-		be_clockwork = TRUE
-		lawsync = FALSE
-		aisync = FALSE
-	// TFF ADDITION END
 	else
 		return ..()
 

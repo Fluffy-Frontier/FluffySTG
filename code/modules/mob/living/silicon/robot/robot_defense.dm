@@ -212,6 +212,10 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 			create_modularInterface()
 		return modularInterface.computer_disk_act(user, tool)
 
+	// TFF ADDITION START
+	if(istype(tool, /obj/item/clockwork/clockwork_slab) || !IS_CLOCK(src))
+		clockwork_act(user)
+	// TFF ADDITION END
 	return NONE
 
 // This has to go at the very end of interaction so we don't block every interaction with ID-like items

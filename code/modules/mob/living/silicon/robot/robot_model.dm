@@ -76,7 +76,12 @@
 		var/obj/item/new_module = new path(robot)
 		emag_modules += new_module
 		emag_modules -= path
-
+	// TFF ADDITION
+	for(var/path in clock_modules)
+		var/obj/item/new_module = new path(src)
+		clock_modules += new_module
+		clock_modules -= path
+	// TFF ADDITION END
 	if(check_holidays(ICE_CREAM_DAY) && !(locate(/obj/item/borg/lollipop) in basic_modules))
 		basic_modules += new /obj/item/borg/lollipop/ice_cream(robot)
 
@@ -86,6 +91,7 @@
 	modules.Cut()
 	added_modules.Cut()
 	storages.Cut()
+	clock_modules.Cut() // TFF ADDITION START
 	return ..()
 
 /obj/item/robot_model/proc/get_usable_modules()
@@ -144,6 +150,11 @@
 	if(cyborg.emagged)
 		for(var/obj/item/module as anything in emag_modules)
 			add_module(module, FALSE, FALSE)
+	// TFF ADDITION START
+	if(cyborg.clockwork)
+		for(var/obj/item/module in clock_modules)
+			add_module(module, FALSE, FALSE)
+	// TFF ADDITION END
 	for(var/obj/item/module as anything in added_modules)
 		add_module(module, FALSE, FALSE)
 	for(var/obj/item/module as anything in held_modules & modules)

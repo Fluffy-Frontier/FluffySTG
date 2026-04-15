@@ -50,6 +50,12 @@
 	to_chat(owner.current, span_boldwarning("YOUR CLOCKWORK SLAB UI HAS A MORE IN DEPTH GUIDE IN ITS BOTTOM RIGHT HAND SIDE. \
 											YOU CAN HOVER YOUR MOUSE POINTER OVER SCRIPTURE BUTTONS FOR EXTRA INFO."))
 
+///Returns whether the given mob is convertable to the blood cult
+/proc/is_convertable_to_clock(mob/living/target)
+	if(!target.mind)
+		return FALSE
+	return TRUE
+
 //given_clock_team is provided by conversion methods, although we never use it due to wanting to just set their team to the main clock cult
 /datum/antagonist/clock_cultist/create_team(datum/team/clock_cult/given_clock_team)
 	spawn_reebe()
@@ -105,9 +111,9 @@
 	return data
 
 /datum/antagonist/clock_cultist/can_be_owned(datum/mind/new_owner)
-	. = ..()
-	if(.)
-		. = is_convertable_to_cult(new_owner.current, clock_team)
+	if(!is_convertable_to_clock(new_owner.current))
+		return FALSE
+	return ..()
 
 /datum/antagonist/clock_cultist/on_removal()
 	if(!silent)
