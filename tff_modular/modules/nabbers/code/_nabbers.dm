@@ -70,17 +70,14 @@
 	var/datum/action/cooldown/optical_camouflage/camouflage
 	/// Наш камуфляж для отобажерния угрозы
 	var/datum/action/cooldown/nabber_threat/threat_mod
-	/// Специальная заглушка на ноги, чтобы на нас нельзя было повесить ничего
-	var/obj/item/restraints/legcuffs/gas_placeholder/anti_cuffs
 	/// Наш особый имплант
 	var/obj/item/implant/gas_sol_speaker/imp_in
+
 
 /datum/species/nabber/on_species_gain(mob/living/carbon/human/C, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
 
-#ifdef UNIT_TESTS
-	return //TODO: исправить это недоразумение, т.к возникают сильные проблемы с create_and_destroy юнит тестом
-#endif
+	C.default_num_legs = 1
 
 	arms = new(C)
 	arms.Grant(C)
@@ -92,9 +89,6 @@
 	C.uncuff()
 	if(C.legcuffed)
 		qdel(C.legcuffed, force = TRUE)
-	anti_cuffs = new()
-	anti_cuffs.register_owner(C)
-	C.equip_to_slot(anti_cuffs, ITEM_SLOT_LEGCUFFED, initial = TRUE)
 
 	imp_in = new()
 	imp_in.implant(C)
@@ -102,17 +96,11 @@
 /datum/species/nabber/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()
 
-#ifdef UNIT_TESTS
-	return
-#endif
 
 	QDEL_NULL(arms)
 	QDEL_NULL(camouflage)
 	QDEL_NULL(threat_mod)
 
-	if(anti_cuffs)
-		C.uncuff()
-	QDEL_NULL(anti_cuffs)
 	QDEL_NULL(imp_in)
 
 
