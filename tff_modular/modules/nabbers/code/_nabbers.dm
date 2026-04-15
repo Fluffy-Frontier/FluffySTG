@@ -76,8 +76,8 @@
 
 /datum/species/nabber/on_species_gain(mob/living/carbon/human/C, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
-
 	C.default_num_legs = 1
+	C.num_legs = 1
 
 	arms = new(C)
 	arms.Grant(C)
@@ -96,6 +96,8 @@
 /datum/species/nabber/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()
 
+	C.default_num_legs = 2
+	C.num_legs = 2
 
 	QDEL_NULL(arms)
 	QDEL_NULL(camouflage)
