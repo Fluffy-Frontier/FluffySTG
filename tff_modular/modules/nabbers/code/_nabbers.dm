@@ -62,7 +62,7 @@
 	placeholder_lore = "https://fluffy-frontier.ru/osobye-rasy"
 
 	species_language_holder = /datum/language_holder/nabber
-	language_prefs_whitelist = list(/datum/language/nabber)
+	language_prefs_whitelist = list(/datum/language/nabber = TRUE)
 
 	/// Наши продвинутные боевые руки
 	var/datum/action/cooldown/toggle_arms/arms
