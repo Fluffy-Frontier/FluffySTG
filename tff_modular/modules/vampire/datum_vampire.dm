@@ -210,8 +210,7 @@
 	current_mob.clear_mood_event("vampcandle")
 
 	add_team_hud(current_mob)
-
-	current_mob.faction += FACTION_VAMPIRE
+	current_mob.add_faction(FACTION_VAMPIRE)
 
 	if(current_mob.hud_used)
 		on_hud_created()
@@ -268,7 +267,7 @@
 	QDEL_NULL(vamprank_display)
 	QDEL_NULL(humanity_display)
 
-	current_mob.faction -= FACTION_VAMPIRE
+	current_mob.remove_faction(FACTION_VAMPIRE)
 
 	if(ishuman(current_mob))
 		var/mob/living/carbon/human/current_human = current_mob

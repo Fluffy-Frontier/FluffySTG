@@ -37,7 +37,7 @@
 	// setup_monitor(current_mob)
 	current_mob.grant_language(/datum/language/vampiric, source = LANGUAGE_VASSAL)
 
-	current_mob.faction += FACTION_VAMPIRE
+	current_mob.add_faction(FACTION_VAMPIRE)
 
 	current_mob.clear_mood_event("vampcandle")
 
@@ -54,7 +54,7 @@
 
 	// Remove traits
 	REMOVE_TRAITS_IN(current_mob, TRAIT_VAMPIRE)
-	current_mob.faction -= FACTION_VAMPIRE
+	current_mob.remove_faction(FACTION_VAMPIRE)
 
 /datum/antagonist/vassal/on_gain()
 	. = ..()
