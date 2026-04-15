@@ -2,7 +2,7 @@
 PROCESSING_SUBSYSTEM_DEF(the_ark)
 	name = "The Clockwork Ark"
 	wait = 1 SECONDS
-	flags = SS_NO_INIT | SS_KEEP_TIMING
+	ss_flags = SS_NO_INIT | SS_KEEP_TIMING
 	runlevels = RUNLEVEL_GAME
 	///The list of anchoring crystals, value is 0 is uncharged and 1 if charged
 	var/list/anchoring_crystals = list()
