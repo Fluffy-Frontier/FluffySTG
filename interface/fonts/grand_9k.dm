@@ -4,7 +4,7 @@
 /// Base font
 /datum/font/grand9k
 	name = "Grand9K Pixel"
-	font_family = 'interface/fonts/Grand9K_Pixel.ttf'
+	//	font_family = 'interface/fonts/Grand9K_Pixel.ttf'	FLUFFY FRONTIER REMOVAL reffer to tff_upstream_fonts_override.dm for font overrides
 
 /// For icon overlays
 /// Grand9K 6pt metrics generated using Lummox's dmifontsplus (https://www.byond.com/developer/LummoxJR/DmiFontsPlus)
