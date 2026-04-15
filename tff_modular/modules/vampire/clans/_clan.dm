@@ -220,7 +220,7 @@
 		user_left_hand.unarmed_damage_high += vampiredatum.extra_damage_per_rank
 		user_right_hand.unarmed_damage_high += vampiredatum.extra_damage_per_rank
 		vampiredatum.current_damage_bonus += vampiredatum.extra_damage_per_rank
-	vampiredatum.vampire_regen_rate += 0.05
+	vampiredatum.vampire_regen_rate += 0.1
 	vampiredatum.max_vitae += 100
 
 	/* if(ishuman(vampiredatum.owner.current))
