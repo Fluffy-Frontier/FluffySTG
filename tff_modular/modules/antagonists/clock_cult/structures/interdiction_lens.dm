@@ -45,7 +45,7 @@
 		if(clock_pilot || !use_energy(POWER_PER_PERSON))
 			continue
 
-		mech.emp_act(EMP_HEAVY)
+		mech.emp_act(EMP_LIGHT)
 		do_sparks(mech, TRUE, mech)
 
 /obj/structure/destructible/clockwork/gear_base/powered/interdiction_lens/repowered()

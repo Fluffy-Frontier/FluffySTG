@@ -6,6 +6,7 @@
 		TRAIT_GENELESS,
 		TRAIT_LAVA_IMMUNE,
 		TRAIT_NEVER_WOUNDED,
+		TRAIT_SHOCKIMMUNE,
 		TRAIT_NOBLOOD,
 		TRAIT_NOBREATH,
 		TRAIT_NODISMEMBER,
@@ -75,8 +76,8 @@
 	dmg_overlay_type = null
 	head_flags = NONE
 	teeth_count = 0
-	burn_modifier = 0.4
-	brute_modifier = 0.4
+	burn_modifier = 0.5
+	brute_modifier = 0.5
 
 /obj/item/bodypart/chest/clockwork
 	biological_state = BIO_BONE
@@ -88,8 +89,8 @@
 	dmg_overlay_type = null
 	bodypart_traits = list(TRAIT_NO_JUMPSUIT)
 	wing_types = null
-	burn_modifier = 0.4
-	brute_modifier = 0.4
+	burn_modifier = 0.5
+	brute_modifier = 0.5
 
 /obj/item/bodypart/arm/left/clockwork
 	biological_state = (BIO_BONE|BIO_JOINTED)
@@ -101,8 +102,8 @@
 	unarmed_damage_low = 5
 	unarmed_damage_high = 14
 	unarmed_effectiveness = 20
-	burn_modifier = 0.4
-	brute_modifier = 0.4
+	burn_modifier = 0.5
+	brute_modifier = 0.5
 
 /obj/item/bodypart/arm/left/clockwork/clear_ownership(mob/living/carbon/old_owner)
 	. = ..()
@@ -124,8 +125,8 @@
 	unarmed_damage_low = 5
 	unarmed_damage_high = 14
 	unarmed_effectiveness = 20
-	burn_modifier = 0.4
-	brute_modifier = 0.4
+	burn_modifier = 0.5
+	brute_modifier = 0.5
 
 /obj/item/bodypart/arm/right/clockwork/clear_ownership(mob/living/carbon/old_owner)
 	. = ..()
@@ -146,8 +147,8 @@
 	unarmed_damage_low = 7
 	unarmed_damage_high = 21
 	unarmed_effectiveness = 25
-	burn_modifier = 0.4
-	brute_modifier = 0.4
+	burn_modifier = 0.5
+	brute_modifier = 0.5
 
 /obj/item/bodypart/leg/right/clockwork
 	biological_state = (BIO_BONE|BIO_JOINTED)
@@ -158,5 +159,5 @@
 	unarmed_damage_low = 7
 	unarmed_damage_high = 21
 	unarmed_effectiveness = 25
-	burn_modifier = 0.4
-	brute_modifier = 0.4
+	burn_modifier = 0.5
+	brute_modifier = 0.5

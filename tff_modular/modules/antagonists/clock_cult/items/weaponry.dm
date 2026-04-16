@@ -71,7 +71,7 @@
 	icon_state = "ratvarian_spear0"
 	embed_type = /datum/embedding/brass_spear
 	throwforce = 40
-	force = 20
+	force = 12.5
 	armour_penetration = 40
 	block_chance = 15
 	clockwork_desc = "Can be summoned back to its last holder every 10 seconds if they are standing on bronze."
@@ -107,56 +107,6 @@
 /obj/item/clockwork/weapon/brass_spear/proc/on_unwield()
 	attack_speed += 3 //yes technically this could break with the max() in on_wield() but you should not be getting attack speed that low anyway so its only there for sanity
 
-/*
-/datum/action/cooldown/spell/summon_spear
-	name = "Summon Brass Spear"
-	desc = "Summons the last brass spear you picked up if you are currently standing on bronze."
-	button_icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/clockwork_weapons.dmi'
-	button_icon_state = "ratvarian_spear0"
-	background_icon = 'tff_modular/modules/antagonists/clock_cult/icons/mob/background_clock.dmi'
-	background_icon_state = "bg_clock"
-	overlay_icon_state = ""
-	active_background_icon_state = "bg_clock_active"
-	invocation_type = INVOCATION_NONE
-	cooldown_time = 15 SECONDS
-	spell_requirements = SPELL_REQUIRES_NO_ANTIMAGIC
-	///ref to the spear we summon
-	var/obj/item/clockwork/weapon/brass_spear/recalled_spear
-
-/datum/action/cooldown/spell/summon_spear/Destroy()
-	recalled_spear = null
-	return ..()
-
-/datum/action/cooldown/spell/summon_spear/can_cast_spell(feedback)
-	. = ..()
-	if(QDELETED(recalled_spear))
-		qdel(src)
-		return FALSE
-
-	if(!recalled_spear)
-		return FALSE
-
-	if(!IS_CLOCK(owner))
-		return FALSE
-
-	if(!recalled_spear.empowered)
-		if(feedback)
-			to_chat(owner, span_brass("You need to be standing on bronze to do this."))
-		return FALSE
-
-/datum/action/cooldown/spell/summon_spear/cast(mob/living/cast_on)
-	. = ..()
-
-	recalled_spear.loc?.visible_message(span_warning("\The [recalled_spear] suddenly disappears!"))
-
-	if(cast_on.put_in_hands(recalled_spear))
-		recalled_spear.loc.visible_message(span_warning("[recalled_spear] suddenly appears in [cast_on]'s hand!"))
-	else
-		recalled_spear.forceMove(cast_on.drop_location())
-		recalled_spear.loc.visible_message(span_warning("[recalled_spear] suddenly appears!"))
-	playsound(get_turf(recalled_spear), 'sound/effects/magic/summonitems_generic.ogg', 50, TRUE)
-*/
-
 // Молот, атакующий в 2 раза медленнее чем другое оружие, но с большим АП и уроном, еще и отбрасывает на тайлах бронзы/при броске.
 /obj/item/clockwork/weapon/brass_battlehammer
 	name = "brass battle-hammer"
@@ -164,7 +114,7 @@
 	base_icon_state = "ratvarian_hammer"
 	icon_state = "ratvarian_hammer0"
 	force = 15
-	throwforce = 35
+	throwforce = 30
 	armour_penetration = 35
 	attack_verb_simple = list("bash", "hammer", "attack", "smash")
 	attack_verb_continuous = list("bashes", "hammers", "attacks", "smashes")
@@ -180,7 +130,7 @@
 	AddComponent(/datum/component/two_handed, \
 		force_unwielded = 15, \
 		icon_wielded = "[base_icon_state]1", \
-		force_wielded = 35, \
+		force_wielded = 30, \
 	)
 
 /obj/item/clockwork/weapon/brass_battlehammer/mob_hit_effect(mob/living/target, mob/living/user)
@@ -201,7 +151,7 @@
 	name = "brass longsword"
 	desc = "A large sword made of brass."
 	icon_state = "ratvarian_sword"
-	force = 30
+	force = 25
 	throwforce = 15
 	armour_penetration = 30
 	attack_verb_simple = list("attack", "slash", "cut", "tear", "gore")
