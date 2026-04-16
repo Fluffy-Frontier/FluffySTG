@@ -617,14 +617,6 @@
 	background_icon = 'tff_modular/modules/vampire/icons/actions_vampire.dmi'
 	background_icon_state = "vamp_power_off"
 
-/datum/antagonist/vampire/make_info_button()
-	if(!ui_name)
-		return
-	var/datum/action/antag_info/vampire/info_button = new(src)
-	info_button.Grant(owner.current)
-	info_button_ref = WEAKREF(info_button)
-	return info_button
-
 /datum/antagonist/vampire/add_team_hud(mob/target, antag_to_check, passed_hud_keys)
 	if(broke_masquerade)
 		antag_hud_name = "masquerade_broken"
