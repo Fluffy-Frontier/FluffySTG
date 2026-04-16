@@ -240,17 +240,6 @@ GLOBAL_LIST_EMPTY(antagonists)
 /datum/antagonist/proc/create_team(datum/team/team)
 	return
 
-// TFF ADDITION START
-/datum/antagonist/proc/make_info_button() as /datum/action/antag_info
-	if(!ui_name)
-		return
-	var/datum/action/antag_info/info_button = new(src)
-	info_button.Grant(owner.current)
-	info_button_ref = WEAKREF(info_button)
-	return info_button
-
-// TFF ADDITION END
-
 ///Called by the add_antag_datum() mind proc after the instanced datum is added to the mind's antag_datums list.
 /datum/antagonist/proc/on_gain()
 	SHOULD_CALL_PARENT(TRUE)
@@ -258,14 +247,11 @@ GLOBAL_LIST_EMPTY(antagonists)
 	if(!skip_custom_objectives_addition)
 		add_custom_objectives()
 // FLUFFY FRONTIER CHANGE END
-	// TFF REMOVAL: var/datum/action/antag_info/info_button
+	var/datum/action/antag_info/info_button
 	if(!owner)
 		CRASH("[src] ran on_gain() without a mind")
 	if(!owner.current)
 		CRASH("[src] ran on_gain() on a mind without a mob")
-
-	// TFF EDIT START - ORIGINAL:
-	/*
 	if(ui_name)//in the future, this should entirely replace greet.
 		info_button = new(src)
 		if(antag_flags & ANTAG_OBSERVER_VISIBLE_PANEL)
@@ -273,12 +259,9 @@ GLOBAL_LIST_EMPTY(antagonists)
 			info_button.allow_observer_click = TRUE
 		info_button.Grant(owner.current)
 		info_button_ref = WEAKREF(info_button)
-	*/
-	var/datum/action/antag_info/info_button = make_info_button()
-	// TFF EDIT END
 	if(!silent)
 		greet()
-		if(info_button) // TFF EDIT - ORIGINAL: if(ui_name)
+		if(ui_name)
 			to_chat(owner.current, span_boldnotice("For more info, read the panel. \
 				You can always come back to it using the button in the top left."))
 			info_button.Trigger()

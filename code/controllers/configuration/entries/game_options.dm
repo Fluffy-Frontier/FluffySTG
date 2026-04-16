@@ -519,11 +519,3 @@
 /datum/config_entry/number/max_shuttle_size
 	default = 250
 
-// TFF ADDITION START
-/datum/config_entry/flag/allow_vampire_prince
-	default = TRUE
-
-/datum/config_entry/flag/allow_vampire_scourge
-	default = TRUE
-
-// TFF ADDITION END

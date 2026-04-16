@@ -1,7 +1,5 @@
 /// From base of /mob/living/simple_animal/attack_hand() and /mob/living/basic/attack_hand() when petting (non-combat): (mob/living/pet)
 #define COMSIG_LIVING_PET_ANIMAL "living_pet_animal"
-/// From base of carbon_defense.dm when hugging: (mob/living/carbon/hugged)
-#define COMSIG_LIVING_HUG_CARBON "living_hug_carbon"
 /// From base of /datum/element/art when appraising art: (atom/art_piece)
 #define COMSIG_LIVING_APPRAISE_ART "living_appraise_art"
 /// Source trait while Feeding
@@ -264,7 +262,5 @@
 ///from base of atom/movable/newtonian_move(): (inertia_direction, start_delay)
 #define COMSIG_MOVABLE_NEWTONIAN_MOVE "movable_newtonian_move"
 	#define COMPONENT_MOVABLE_NEWTONIAN_BLOCK (1<<0)
-///from base of [/atom/proc/expose_reagents]: (/atom, /list, methods, volume_modifier, show_message)
-#define COMSIG_REAGENTS_EXPOSE_ATOM "reagents_expose_atom"
 #define COMSIG_LIVING_TRACKER_REMOVED "tracker_removed"
 #define ui_team_finder "CENTER,CENTER"

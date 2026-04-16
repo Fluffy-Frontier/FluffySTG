@@ -272,6 +272,7 @@
 
 	item_flags &= ~ABSTRACT
 	REMOVE_TRAIT(src, TRAIT_NODROP, ORGAN_INSIDE_BODY_TRAIT)
+
 	limb.owner?.synchronize_bodytypes()
 	limb.owner?.synchronize_bodyshapes()
 

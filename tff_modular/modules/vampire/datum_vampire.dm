@@ -201,7 +201,7 @@
 	RegisterSignal(current_mob, COMSIG_MOB_UPDATE_SIGHT, PROC_REF(on_update_sight))
 
 	RegisterSignal(current_mob, COMSIG_LIVING_PET_ANIMAL, PROC_REF(on_pet_animal))
-	RegisterSignal(current_mob, COMSIG_LIVING_HUG_CARBON, PROC_REF(on_hug_carbon))
+	RegisterSignal(current_mob, COMSIG_CARBON_HELPED, PROC_REF(on_hug_carbon))
 	RegisterSignal(current_mob, COMSIG_LIVING_APPRAISE_ART, PROC_REF(on_appraise_art))
 
 	handle_clown_mutation(current_mob, "Your clownish nature has been subdued by your thirst for blood.")
@@ -251,7 +251,7 @@
 		COMSIG_HUMAN_ON_HANDLE_BLOOD,
 		COMSIG_MOB_UPDATE_SIGHT,
 		COMSIG_LIVING_PET_ANIMAL,
-		COMSIG_LIVING_HUG_CARBON,
+		COMSIG_CARBON_HELPED,
 		COMSIG_LIVING_APPRAISE_ART,
 	))
 	current_mob.update_sight()

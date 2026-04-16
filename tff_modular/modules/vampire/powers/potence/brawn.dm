@@ -55,7 +55,7 @@
 	// Lockers
 	if(istype(human_owner.loc, /obj/structure/closet))
 		var/obj/structure/closet/closet = human_owner.loc
-		addtimer(CALLBACK(closet, TYPE_PROC_REF(/obj/structure/closet, bust_open), FALSE), 0.1 SECONDS)
+		addtimer(CALLBACK(closet, TYPE_PROC_REF(/obj/structure/closet, bust_open)), 0.1 SECONDS)
 		closet.visible_message(
 			span_warning("[closet] tears apart as [human_owner] bashes it open from within!"),
 			span_warning("[closet] tears apart as you bash it open from within!")
@@ -167,7 +167,7 @@
 			return FALSE
 		target_closet.visible_message(span_danger("[target_closet] breaks open as [carbon_owner] bashes it!"))
 
-		INVOKE_ASYNC(target_closet, TYPE_PROC_REF(/obj/structure/closet, bust_open), FALSE)
+		INVOKE_ASYNC(target_closet, TYPE_PROC_REF(/obj/structure/closet, bust_open))
 		playsound(get_turf(carbon_owner), 'sound/effects/grillehit.ogg', 80, TRUE, -1)
 		// check_witnesses()
 	// Airlocks

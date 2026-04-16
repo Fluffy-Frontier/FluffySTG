@@ -659,7 +659,7 @@ GLOBAL_LIST_EMPTY(roundstart_station_closets)
 /obj/structure/closet/atom_break(damage_flag)
 	. = ..()
 	if(!broken)
-		bust_open(FALSE) // TFF CHANGE - ORIGINAL: bust_open()
+		bust_open()
 
 /obj/structure/closet/on_craft_completion(list/components, datum/crafting_recipe/current_recipe, atom/crafter)
 	var/obj/item/electronics/airlock/access_control = locate() in components
@@ -1078,7 +1078,7 @@ GLOBAL_LIST_EMPTY(roundstart_station_closets)
 		//we check after a while whether there is a point of resisting anymore and whether the user is capable of resisting
 		user.visible_message(span_danger("[user] successfully broke out of [src]!"),
 							span_notice("You successfully break out of [src]!"))
-		bust_open(FALSE) // TFF CHANGE - ORIGINAL: bust_open()
+		bust_open()
 	else
 		if(user.loc == src) //so we don't get the message if we resisted multiple times and succeeded.
 			to_chat(user, span_warning("You fail to break out of [src]!"))
@@ -1104,7 +1104,7 @@ GLOBAL_LIST_EMPTY(roundstart_station_closets)
 	// If we reach here, nobody is resisting, so don't shake
 	return FALSE
 
-/obj/structure/closet/proc/bust_open(destructive = TRUE)// TFF CHANGE - ORIGINAL: proc/bust_open()
+/obj/structure/closet/proc/bust_open()
 	SIGNAL_HANDLER
 	welded = FALSE //applies to all lockers
 	unlock() //applies to critter crates and secure lockers only

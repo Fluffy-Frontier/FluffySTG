@@ -508,7 +508,7 @@
 		to_yeet += buckled_mobs
 		unbuckle_all_mobs()
 
-	bust_open(FALSE) // TFF CHANGE - ORIGINAL: bust_open()
+	bust_open()
 	if(!opened)
 		return
 

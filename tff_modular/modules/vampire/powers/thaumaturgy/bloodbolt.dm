@@ -51,7 +51,7 @@
 /obj/projectile/magic/arcane_barrage/vampire/on_hit(atom/target, blocked = 0, pierce_hit)
 	if(istype(target, /obj/structure/closet))
 		var/obj/structure/closet/hit_closet = target
-		hit_closet.bust_open(destructive = FALSE)
+		hit_closet.bust_open()
 		qdel(src)
 		return BULLET_ACT_HIT
 
