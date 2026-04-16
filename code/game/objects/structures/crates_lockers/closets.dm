@@ -21,7 +21,6 @@ GLOBAL_LIST_EMPTY(roundstart_station_closets)
 	contents_thermal_insulation = 0
 	pass_flags_self = PASSSTRUCTURE | LETPASSCLICKS
 	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 2)
-	var/ash_chance = 10 // TFF ADDITION
 	/// The overlay for the closet's door
 	var/obj/effect/overlay/closet_door/door_obj
 	/// Whether or not this door is being animated
@@ -1109,15 +1108,6 @@ GLOBAL_LIST_EMPTY(roundstart_station_closets)
 	welded = FALSE //applies to all lockers
 	unlock() //applies to critter crates and secure lockers only
 	broken = TRUE //applies to secure lockers only
-	if(destructive)
-		for(var/obj/item/broken in src.contents)
-			if(!prob(ash_chance))
-				continue
-			new /obj/effect/decal/cleanable/ash(loc)
-
-		if(istype(broken, /obj/item/ammo_box))
-			explosion(src, 0, 0, 2, 0, 2)
-		qdel(broken)
 	open(force = TRUE, special_effects = FALSE)
 
 /obj/structure/closet/attack_hand_secondary(mob/user, modifiers)
