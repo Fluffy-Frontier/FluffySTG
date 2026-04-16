@@ -99,7 +99,7 @@
 	acid = 100
 
 /datum/armor/suit_clockwork_empowered
-	melee = 50
+	melee = 40
 	bullet = 50
 	laser = 40
 	energy = 60
