@@ -194,7 +194,7 @@
 	RegisterSignals(current_mob, list(COMSIG_MOB_LOGIN, COMSIG_MOVABLE_Z_CHANGED), PROC_REF(on_login))
 	RegisterSignal(current_mob, COMSIG_LIVING_LIFE, PROC_REF(life_tick))
 	RegisterSignal(current_mob, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
-	RegisterSignal(current_mob, COMSIG_ATOM_AFTER_EXPOSE_REAGENTS, PROC_REF(after_expose_reagents))
+	RegisterSignal(current_mob, COMSIG_ATOM_EXPOSE_REAGENTS, PROC_REF(after_expose_reagents))
 	RegisterSignal(current_mob, COMSIG_LIVING_DEATH, PROC_REF(on_death))
 	// RegisterSignal(current_mob, COMSIG_MOVABLE_MOVED, PROC_REF(on_moved))
 	RegisterSignal(current_mob, COMSIG_HUMAN_ON_HANDLE_BLOOD, PROC_REF(handle_blood))
@@ -245,7 +245,7 @@
 		COMSIG_MOVABLE_Z_CHANGED,
 		COMSIG_LIVING_LIFE,
 		COMSIG_ATOM_EXAMINE,
-		COMSIG_ATOM_AFTER_EXPOSE_REAGENTS,
+		COMSIG_ATOM_EXPOSE_REAGENTS,
 		COMSIG_LIVING_DEATH,
 		COMSIG_MOVABLE_MOVED,
 		COMSIG_HUMAN_ON_HANDLE_BLOOD,
@@ -809,7 +809,7 @@
 		affected_limbs[deleted_limb.body_zone] = null
 		UnregisterSignal(deleted_limb, COMSIG_QDELETING)
 
-/datum/antagonist/vampire/proc/after_expose_reagents(mob/source_mob, list/reagents, datum/reagents/source, methods = TOUCH, volume_modifier = 1, show_message = TRUE)
+/datum/antagonist/vampire/proc/after_expose_reagents(atom/target, list/reagents, datum/reagents/source, methods)
 	SIGNAL_HANDLER
 	var/datum/reagent/blood/blood_reagent = locate() in reagents
 	if(!blood_reagent)
