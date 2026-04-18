@@ -56,12 +56,24 @@
 
 /obj/item/gun/ballistic/shotgun/riot/sol/super/Initialize(mapload)
 	. = ..()
+	/* // TFF EDIT START - ORIGINAL:
 	AddComponent(\
 		/datum/component/gun_booster, \
 		booster_action = /datum/action/item_action/booster/sol_super, \
 		base_damage_mult = 1, \
 		base_speed_mult = 1, \
 		base_fire_delay = 0.4 SECONDS, \
+		amped_damage_mult = 1.2, \
+		amped_speed_mult = 1.25, \
+		amped_fire_delay = 1 SECONDS, \
+	)
+	*/
+	AddComponent(\
+		/datum/component/gun_booster, \
+		booster_action = /datum/action/item_action/booster/sol_super, \
+		base_damage_mult = 1, \
+		base_speed_mult = 1, \
+		base_fire_delay = 0.75 SECONDS, \
 		amped_damage_mult = 1.2, \
 		amped_speed_mult = 1.25, \
 		amped_fire_delay = 1 SECONDS, \
@@ -238,16 +250,29 @@
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/super/Initialize(mapload)
 	. = ..()
+	/* // TFF EDIT START - ORIGINAL:.
 	AddComponent(\
 		/datum/component/gun_booster, \
 		booster_action = /datum/action/item_action/booster/doublebarrel_super, \
 		base_damage_mult = 1.1, \
 		base_speed_mult = 1.1, \
 		base_fire_delay = 0.4 SECONDS, \
-		amped_damage_mult = 1.2, \ // TFF EDIT - ORIGINAL: 1.35
-		amped_speed_mult = 1.25, \ // TFF EDIT - ORIGINAL: 1.5
+		amped_damage_mult = 1.35, \
+		amped_speed_mult = 1.5, \
 		amped_fire_delay = 0.6 SECONDS, \
 	)
+	*/
+	AddComponent(\
+		/datum/component/gun_booster, \
+		booster_action = /datum/action/item_action/booster/doublebarrel_super, \
+		base_damage_mult = 1.1, \
+		base_speed_mult = 1.1, \
+		base_fire_delay = 0.4 SECONDS, \
+		amped_damage_mult = 1.15, \
+		amped_speed_mult = 1.25, \
+		amped_fire_delay = 0.6 SECONDS, \
+	)
+	// TFF EDIT END
 	AddComponent(/datum/component/scope, range_modifier = 2)
 	RegisterSignal(src, COMSIG_GUN_BOOSTER_TOGGLED, PROC_REF(on_booster_toggle))
 
