@@ -18,10 +18,10 @@
 	exposed_wound_bonus = 10
 
 /obj/item/gun/ballistic/shotgun/automatic/combat
-	projectile_damage_multiplier = 1.25
+	projectile_damage_multiplier = 1.2
 
 /obj/projectile/bullet/shotgun_slug/milspec
-	damage = 50
+	damage = 42
 	wound_bonus = 10
 	exposed_wound_bonus = 10
 
@@ -62,6 +62,8 @@
 
 /obj/item/gun/ballistic/shotgun/katyusha
 	weapon_weight = WEAPON_HEAVY
+	fire_delay = 1 SECONDS
 
 /obj/item/gun/ballistic/shotgun/katyusha/shitzu
 	slot_flags = ITEM_SLOT_BACK
+

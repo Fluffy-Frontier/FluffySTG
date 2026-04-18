@@ -61,7 +61,7 @@
 		booster_action = /datum/action/item_action/booster/sol_super, \
 		base_damage_mult = 1, \
 		base_speed_mult = 1, \
-		base_fire_delay = 0.4 SECONDS, \
+		base_fire_delay = 0.75 SECONDS, \ // TFF CHANGES - ORIGINAL: 0.4 SECONDS
 		amped_damage_mult = 1.2, \
 		amped_speed_mult = 1.25, \
 		amped_fire_delay = 1 SECONDS, \
@@ -244,8 +244,8 @@
 		base_damage_mult = 1.1, \
 		base_speed_mult = 1.1, \
 		base_fire_delay = 0.4 SECONDS, \
-		amped_damage_mult = 1.35, \
-		amped_speed_mult = 1.5, \
+		amped_damage_mult = 1.2, \ // TFF EDIT - ORIGINAL: 1.35
+		amped_speed_mult = 1.25, \ // TFF EDIT - ORIGINAL: 1.5
 		amped_fire_delay = 0.6 SECONDS, \
 	)
 	AddComponent(/datum/component/scope, range_modifier = 2)
