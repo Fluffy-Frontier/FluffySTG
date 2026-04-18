@@ -61,7 +61,7 @@
 		booster_action = /datum/action/item_action/booster/sol_super, \
 		base_damage_mult = 1, \
 		base_speed_mult = 1, \
-		base_fire_delay = 0.75 SECONDS, \ 	// TFF EDIT - ORIGINAL: 0.4
+		base_fire_delay = 0.4 SECONDS, \
 		amped_damage_mult = 1.2, \
 		amped_speed_mult = 1.25, \
 		amped_fire_delay = 1 SECONDS, \
