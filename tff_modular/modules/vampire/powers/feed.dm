@@ -120,7 +120,7 @@
 		owner.balloon_alert(owner, "ew, no!")
 		return FALSE
 	// Cannot be a curator
-	if(IS_VAMPIRE_HUNTER(target))
+	if(IS_CURATOR(target))
 		owner.balloon_alert(owner, "[target] is too powerful!")
 		return FALSE
 	var/datum/antagonist/vampire/target_vampire = IS_VAMPIRE(target)

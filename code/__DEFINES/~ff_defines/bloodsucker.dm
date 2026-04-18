@@ -225,15 +225,11 @@
 /// Trait that says you're shaded by something (ie partially in the dark)
 #define TRAIT_SHADED "shaded"
 
-#define IS_VAMPIRE_HUNTER(mob) (IS_CURATOR(mob))
-
 #define LANGUAGE_VAMPIRE "vampire"
 #define LANGUAGE_VASSAL "vassal"
 
-/// /turf/proc/is_softly_lit() but inlined
-#define IS_SOFTLY_LIT(turf) (turf.lighting_object && !(turf.luminosity || turf.dynamic_lumcount))
 /// Similar to turf.get_lumcount(), but it checks for soft lighting first, and just assumes the lumcount is 0 if it is.
-#define GET_SIMPLE_LUMCOUNT(turf) (IS_SOFTLY_LIT(turf) ? 0 : turf.get_lumcount())
+#define GET_SIMPLE_LUMCOUNT(turf) (turf.is_softly_lit() ? 0 : turf.get_lumcount())
 
 //Incapacitated status effect flags
 /// If the incapacitated status effect will ignore a mob in restraints (handcuffs)
@@ -259,8 +255,5 @@
 #define MPHYSICS_MOVING (1<<1)
 /// The component has been "paused" and will not process
 #define MPHYSICS_PAUSED (1<<2)
-///from base of atom/movable/newtonian_move(): (inertia_direction, start_delay)
-#define COMSIG_MOVABLE_NEWTONIAN_MOVE "movable_newtonian_move"
-	#define COMPONENT_MOVABLE_NEWTONIAN_BLOCK (1<<0)
 #define COMSIG_LIVING_TRACKER_REMOVED "tracker_removed"
 #define ui_team_finder "CENTER,CENTER"

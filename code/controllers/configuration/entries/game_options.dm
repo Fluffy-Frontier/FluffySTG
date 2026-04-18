@@ -518,4 +518,3 @@
 
 /datum/config_entry/number/max_shuttle_size
 	default = 250
-

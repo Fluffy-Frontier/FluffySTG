@@ -151,7 +151,7 @@
 		user.spin(1 SECONDS)
 		return
 
-	if(IS_VAMPIRE_HUNTER(target))
+	if(IS_CURATOR(target))
 		owner.balloon_alert(owner, "pushed away!")
 		target.grabbedby(owner)
 		return

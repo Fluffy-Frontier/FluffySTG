@@ -127,8 +127,6 @@ GLOBAL_LIST_INIT(available_erp_ui_styles, list(
 	/// and avoid needing to make changes to all idk 300 consumers if we want to change the appearance
 	var/list/asset_refs_for_reuse = list()
 
-	var/list/team_finder_arrows = list() // TFF ADDITION
-
 /datum/hud/New(mob/owner)
 	mymob = owner
 
@@ -248,7 +246,6 @@ GLOBAL_LIST_INIT(available_erp_ui_styles, list(
 	QDEL_NULL(palette_actions)
 	QDEL_NULL(listed_actions)
 	QDEL_LIST(floating_actions)
-	QDEL_LIST(team_finder_arrows) // TFF ADDITION
 	QDEL_LIST(static_inventory)
 
 	// all already deleted by static inventory clear
@@ -372,10 +369,6 @@ GLOBAL_LIST_INIT(available_erp_ui_styles, list(
 				screenmob.client.screen += hotkeybuttons
 			if(infodisplay.len)
 				screenmob.client.screen += infodisplay
-			// TFF ADDITION START
-			if(team_finder_arrows.len)
-				screenmob.client.screen += team_finder_arrows
-			// TFF ADDITION END
 			if(always_visible_inventory.len)
 				screenmob.client.screen += always_visible_inventory
 			if(open_containers.len && screenmob == mymob) // Don't show open inventories to ghosts
@@ -387,20 +380,12 @@ GLOBAL_LIST_INIT(available_erp_ui_styles, list(
 			hud_shown = FALSE //Governs behavior of other procs
 			if(static_inventory.len)
 				screenmob.client.screen -= static_inventory
-			// TFF ADDITION START
-			if(team_finder_arrows.len)
-				screenmob.client.screen += team_finder_arrows
-			// TFF ADDITION END
 			if(toggleable_inventory.len)
 				screenmob.client.screen -= toggleable_inventory
 			if(hotkeybuttons.len)
 				screenmob.client.screen -= hotkeybuttons
 			if(infodisplay.len)
 				screenmob.client.screen += infodisplay
-			// TFF ADDITION START
-			if(team_finder_arrows.len)
-				screenmob.client.screen -= team_finder_arrows
-			// TFF ADDITION END
 			if(always_visible_inventory.len)
 				screenmob.client.screen += always_visible_inventory
 
