@@ -21,7 +21,7 @@
 		balloon_alert(user, "nothing to mill")
 		return
 
-	if(user.get_stamina_loss() > MILLSTONE_STAMINA_MINIMUM)
+	if(user.get_stamina_loss() > 50)
 		balloon_alert(user, "too tired")
 		return
 
