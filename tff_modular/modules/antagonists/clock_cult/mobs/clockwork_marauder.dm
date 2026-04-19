@@ -24,7 +24,6 @@
 	unsuitable_heat_damage = 0
 	unsuitable_atmos_damage = 0
 	obj_damage = 80
-	faction = list(FACTION_CLOCK)
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 0, STAMINA = 0, OXY = 0)
 	ai_controller = /datum/ai_controller/basic_controller/clockwork_marauder
 	initial_language_holder = /datum/language_holder/clockmob
@@ -43,6 +42,7 @@
 	if(length(loot))
 		AddElement(/datum/element/death_drops, loot)
 	SSthe_ark.clockwork_marauders += src
+	add_faction(list(FACTION_NEUTRAL, FACTION_SILICON, FACTION_TURRET, FACTION_CLOCK))
 
 /mob/living/basic/clockwork_marauder/Destroy()
 	SSthe_ark.clockwork_marauders -= src

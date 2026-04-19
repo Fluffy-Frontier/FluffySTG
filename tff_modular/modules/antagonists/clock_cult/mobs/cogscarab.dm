@@ -11,7 +11,6 @@
 	health = 35
 	maxHealth = 35
 	speed = 1
-	faction = list(FACTION_NEUTRAL, FACTION_SILICON, FACTION_TURRET, FACTION_CLOCK)
 	default_storage = /obj/item/storage/belt/utility/clock/drone
 	visualAppearance = CLOCKDRONE
 	bubble_icon = "clock"
@@ -36,6 +35,7 @@
 	SSthe_ark.cogscarabs += src
 	add_actionspeed_modifier(/datum/actionspeed_modifier/cogscarab, TRUE)
 	check_on_reebe()
+	add_faction()
 
 /mob/living/basic/drone/cogscarab/death(gibbed)
 	SSthe_ark.cogscarabs -= src
