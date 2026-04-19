@@ -106,3 +106,7 @@
 #define STARGAZER_TRAIT 			"stargazer_trait"
 /// Trait source for the vanguard scripture
 #define VANGUARD_TRAIT "vanguard"
+
+// Roles
+#define ROLE_ROUNDSTART_CLOCK_CULTIST "Roundstart Clockwork Cultist"
+#define ROLE_MIDROUND_CLOCK_CULTIST "Midround Clockwork Cultist"

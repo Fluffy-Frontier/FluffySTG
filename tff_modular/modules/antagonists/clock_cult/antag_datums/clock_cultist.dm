@@ -2,7 +2,7 @@
 	name = "\improper Servant of Ratvar"
 	antagpanel_category = "Clock Cultist"
 	preview_outfit = /datum/outfit/clock/preview
-	pref_flag = ROLE_CLOCK_CULTIST
+	pref_flag = ROLE_ROUNDSTART_CLOCK_CULTIST
 	antag_moodlet = /datum/mood_event/cult
 	suicide_cry = ",r For Ratvar!!!"
 	ui_name = "AntagInfoClockAlt"
@@ -125,8 +125,8 @@
 	return ..()
 
 /datum/antagonist/clock_cultist/get_preview_icon()
-	var/icon/icon = render_preview_outfit(preview_outfit)
-	return finish_preview_icon(icon)
+	var/datum/universal_icon/final_icon = render_preview_outfit(preview_outfit)
+	return finish_preview_icon(final_icon)
 
 /datum/antagonist/clock_cultist/on_mindshield(mob/implanter)
 	if(!silent)

@@ -9,3 +9,12 @@
 	summoned_structure = /obj/structure/destructible/clockwork/sigil/submission
 	cogs_required = 1
 	category = SPELLTYPE_SERVITUDE
+
+/datum/scripture/create_structure/sigil_submission/check_special_requirements(mob/user)
+	. = ..()
+	if(!.)
+		return FALSE
+
+	if(user.mind.has_antag_datum(/datum/antagonist/clock_cultist/solo))
+		to_chat(user, span_clockyellow("You don't have Justiciar permission to summon this structure..."))
+		return FALSE

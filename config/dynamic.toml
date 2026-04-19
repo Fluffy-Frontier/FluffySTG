@@ -699,3 +699,21 @@ min_antag_cap = 0
 repeatable_weight_decrease = 2
 repeatable = 0
 minimum_required_age = 0
+
+["Roundstart Clockwork Cultist"]
+weight = 6
+mim_pop = 20
+blacklisted_roles = []
+min_antag_cap = 1
+max_antag_cap.denominator = 18
+minimum_required_age = 0
+
+["Midround Clockwork Cultist"]
+weight = 6
+mim_pop = 20
+blacklisted_roles = []
+min_antag_cap = 1
+max_antag_cap.denominator = 18
+repeatable_weight_decrease = 2
+repeatable = 1
+minimum_required_age = 0

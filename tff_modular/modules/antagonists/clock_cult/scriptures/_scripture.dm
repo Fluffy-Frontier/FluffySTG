@@ -119,7 +119,6 @@ GLOBAL_LIST_EMPTY(clock_scriptures_by_type)
 				invokers_left = 0
 				clockwork_say(potential_invoker, text2ratvar(invocation_text[text_point]), TRUE)
 				break
-
 			if(IS_CLOCK(potential_invoker))
 				clockwork_say(potential_invoker, text2ratvar(invocation_text[text_point]), TRUE)
 				invokers_left--
