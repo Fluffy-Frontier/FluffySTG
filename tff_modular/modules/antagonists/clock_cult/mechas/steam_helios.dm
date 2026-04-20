@@ -195,7 +195,7 @@
 
 /obj/structure/mecha_wreckage/steam_helios
 	name = "\improper Steam Helios wreckage"
-	icon = 'icons/mecha/coop_mech.dmi'
+	icon = 'icons/mob/rideables/coop_mech.dmi'
 	icon_state = "savannah_ivanov-broken"
 	color = rgb(190, 135, 0)
 	welder_salvage = list(/obj/item/stack/sheet/bronze)
