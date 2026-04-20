@@ -7,17 +7,18 @@
 
 [![resentment](.github/images/badges/built-with-resentment.svg)](.github/images/comics/131-bug-free.png) [![technical debt](.github/images/badges/contains-technical-debt.svg)](.github/images/comics/106-tech-debt-modified.png) [![forinfinityandbyond](.github/images/badges/made-in-byond.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
-| Website                 | Link                                                                                                                                   |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Git / GitHub cheatsheet | [https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833](https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833) |
-| Guide to Modularization | [./modular_nova/readme.md](./modular_nova/readme.md)                                                                                   |
-| Website                 | [https://fluffy-frontier.ru](https://fluffy-frontier.ru)                                                                               |
-| Guide to Mirroring      | [./modular_nova/mirroring_guide.md](./modular_nova/mirroring_guide.md)                                                                 |
-| Code                    | [https://github.com/NovaSector/NovaSector](https://github.com/NovaSector/NovaSector)                                                   |
-| Wiki                    | [https://wiki.fluffy-frontier.ru](https://wiki.fluffy-frontier.ru/Main_Page)                                                           |
-| Codedocs                | [https://NovaSector.github.io/NovaSector/](https://NovaSector.github.io/NovaSector/)                                                   |
-| Fluffy Frontier Discord | [https://discord.com/invite/5GvhwtY](https://discord.com/invite/5GvhwtY)                                                               |
-| Coderbus Discord        | [https://discord.gg/Vh8TJp9](https://discord.gg/Vh8TJp9)                                                                               |
+| Website                   | Link                                                                                                                                   |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| How to Write a Design Doc | [https://hackmd.io/@tgstation/BkzmU9EyK](https://hackmd.io/@tgstation/BkzmU9EyK)                                                       |
+| Git / GitHub cheatsheet   | [https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833](https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833) |
+| Guide to Modularization   | [./modular_nova/readme.md](./modular_nova/readme.md)                                                                                   |
+| Website                   | [https://fluffy-frontier.ru](https://fluffy-frontier.ru)                                                                               |
+| Guide to Mirroring        | [./modular_nova/mirroring_guide.md](./modular_nova/mirroring_guide.md)                                                                 |
+| Code                      | [https://github.com/NovaSector/NovaSector](https://github.com/NovaSector/NovaSector)                                                   |
+| Wiki                      | [https://wiki.fluffy-frontier.ru](https://wiki.fluffy-frontier.ru/Main_Page)                                                           |
+| Codedocs                  | [https://NovaSector.github.io/NovaSector/](https://NovaSector.github.io/NovaSector/)                                                   |
+| Fluffy Frontier Discord   | [https://discord.com/invite/5GvhwtY](https://discord.com/invite/5GvhwtY)                                                               |
+| Coderbus Discord          | [https://discord.gg/Vh8TJp9](https://discord.gg/Vh8TJp9)                                                                               |
 
 This is Fluffy Frontier's downstream fork of /tg/station & NovaSector created in byond.
 
