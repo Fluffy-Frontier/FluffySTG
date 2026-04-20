@@ -81,7 +81,7 @@
 	if(!selected_output.extra_checks(interacting_with, creation_turf, user))
 		return ITEM_INTERACT_BLOCKING
 
-	var/creation_delay_mult = 1
+	var/creation_delay_mult = 1 - (SSthe_ark.charged_anchoring_crystals / 10)
 	if(on_reebe(user))
 		creation_delay_mult += selected_output.reebe_mult
 		if(GLOB.clock_ark?.current_state >= ARK_STATE_ACTIVE)
@@ -260,7 +260,7 @@
 	if(looping)
 		return
 
-	for(var/turf/open/floor/floor_turf in RANGE_TURFS(1, creation_turf)) //NOT WORKING?
+	for(var/turf/open/floor/floor_turf in RANGE_TURFS(1, creation_turf))
 		if(extra_checks(created_atom, floor_turf, creator))
 			if(!SSthe_ark.adjust_clock_power(-cost))
 				break

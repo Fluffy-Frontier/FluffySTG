@@ -222,7 +222,7 @@
 	damage = 35
 	damage_type = BURN
 */
-
+/*
 /obj/item/gun/ballistic/rifle/lionhunter/clockwork
 	name = "brass rifle"
 	desc = "An antique, brass rifle made with the finest of care. It has an ornate scope in the shape of a cog built into the top."
@@ -253,7 +253,6 @@
 	projectile_type = /obj/projectile/bullet/strilka310/lionhunter/clock
 	min_distance = 3
 
-/* TFF REMOVAL
 /obj/item/ammo_casing/strilka310/lionhunter/clock/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, atom/fired_from)
 	var/obj/item/gun/ballistic/fired_gun = fired_from
 
@@ -261,7 +260,6 @@
 		seconds_per_distance = 0.25 SECONDS
 
 	return ..()
-*/
 
 /obj/projectile/bullet/strilka310/lionhunter/clock
 	name = "brass .310 bullet"
@@ -288,7 +286,6 @@
 
 	generate_items_inside(items_inside, src)
 
-/* TFF REMOVAL
 #undef HAMMER_FLING_DISTANCE
 #undef HAMMER_THROW_FLING_DISTANCE
 

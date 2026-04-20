@@ -102,11 +102,14 @@
 #define TRAIT_NO_SLAB_INVOKE		"no_slab_invoke"
 /// Has an item been enchanted by a clock cult Stargazer?
 #define TRAIT_STARGAZED				"stargazed"
+/// Soul consumed by sigil of vitality
+#define TRAIT_NO_SOUL_BY_VITALITY	"no_soul_by_vitality"
 // Traits Sources
 #define STARGAZER_TRAIT 			"stargazer_trait"
 /// Trait source for the vanguard scripture
-#define VANGUARD_TRAIT "vanguard"
-
+#define VANGUARD_TRAIT 				"vanguard_trait"
+/// Trait source from the clockwork sigil
+#define SIGIL_TRAIT					"sigil_trait"
 // Roles
 #define ROLE_ROUNDSTART_CLOCK_CULTIST "Roundstart Clockwork Cultist"
 #define ROLE_MIDROUND_CLOCK_CULTIST "Midround Clockwork Cultist"

@@ -215,6 +215,7 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 	// TFF ADDITION START
 	if(istype(tool, /obj/item/clockwork/clockwork_slab) || !IS_CLOCK(src))
 		clockwork_act(user)
+		return ITEM_INTERACT_SUCCESS
 	// TFF ADDITION END
 	return NONE
 

@@ -290,6 +290,48 @@
 	if(!QDELETED(target) && (istype(target, /obj/structure) || istype(target, /obj/machinery)) && !istype(target, /obj/structure/destructible/clockwork))
 		target.update_integrity(target.get_integrity() - 25)
 
+/obj/item/gun/ballistic/rifle/lionhunter/clockwork
+	name = "brass rifle"
+	desc = "An antique, brass rifle made with the finest of care. It has an ornate scope in the shape of a cog built into the top."
+	icon = 'modular_nova/modules/clock_cult/icons/weapons/clockwork_weapons_40x32.dmi'
+	lefthand_file = 'modular_nova/modules/clock_cult/icons/weapons/clockwork_lefthand.dmi'
+	righthand_file = 'modular_nova/modules/clock_cult/icons/weapons/clockwork_righthand.dmi'
+	worn_icon = 'modular_nova/modules/clock_cult/icons/clockwork_garb_worn.dmi'
+	slot_flags = ITEM_SLOT_BACK
+	icon_state = "clockwork_rifle"
+	inhand_icon_state = "clockwork_rifle"
+	worn_icon_state = "clockwork_rifle"
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/boltaction/lionhunter/clockwork
+	fire_sound = 'sound/items/weapons/gun/sniper/shot.ogg'
+	show_bolt_icon = FALSE
+
+/obj/item/gun/ballistic/rifle/lionhunter/clockwork/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/clockwork_pickup)
+
+/obj/item/ammo_box/magazine/internal/boltaction/lionhunter/clockwork
+	name = "brass rifle internal magazine"
+	ammo_type = /obj/item/ammo_casing/strilka310/lionhunter/clock
+
+/obj/item/ammo_casing/strilka310/lionhunter/clock
+	name = "brass rifle round"
+	projectile_type = /obj/projectile/bullet/strilka310/lionhunter/clock
+	min_distance = 3
+
+/obj/projectile/bullet/strilka310/lionhunter/clock
+	name = "brass .310 bullet"
+	damage = 35
+	stamina = 35
+
+/obj/item/ammo_box/speedloader/strilka310/lionhunter/clock
+	name = "stripper clip (.310 brass)"
+	desc = "A stripper clip that's just as brass as the rounds it holds."
+	icon = 'modular_nova/modules/clock_cult/icons/weapons/ammo.dmi'
+	icon_state = "762_brass"
+	ammo_type = /obj/item/ammo_casing/strilka310/lionhunter/clock
+	max_ammo = 20
+	multiple_sprites = AMMO_BOX_PER_BULLET
+
 #undef HAMMER_FLING_DISTANCE
 #undef HAMMER_THROW_FLING_DISTANCE
 #undef COGSCARAB_BOW_DRAW_TIME_MULT

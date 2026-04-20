@@ -72,7 +72,26 @@
 /obj/item/storage/belt/utility/clock
 	name = "old toolbelt"
 	desc = "Holds tools. This one's seen better days, though. There's the outline of a cog roughly cut into the leather on one side."
+	storage_type = /datum/storage/belt/clockwork
 
+/datum/storage/belt/clockwork
+	max_slots = 8
+	max_specific_storage = WEIGHT_CLASS_NORMAL
+
+/datum/storage/belt/clockwork/New(atom/parent, max_slots, max_specific_storage, max_total_storage, rustle_sound, remove_rustle_sound)
+	. = ..()
+	set_holdable(
+		can_hold_list = list(
+			/obj/item/screwdriver,
+			/obj/item/crowbar,
+			/obj/item/weldingtool,
+			/obj/item/wirecutters,
+			/obj/item/wrench,
+			/obj/item/multitool,
+			/obj/item/clockwork/replica_fabricator,
+			/obj/item/clockwork/clockwork_slab,
+		)
+	)
 /obj/item/storage/belt/utility/clock/PopulateContents()
 	new /obj/item/screwdriver/brass(src)
 	new /obj/item/crowbar/brass(src)
@@ -87,6 +106,7 @@
 	new /obj/item/weldingtool/experimental/brass(src)
 	new /obj/item/wirecutters/brass(src)
 	new /obj/item/wrench/brass(src)
+	new /obj/item/multitool(src)
 	new /obj/item/clockwork/replica_fabricator(src)
 	new /obj/item/clockwork/clockwork_slab(src)
 
@@ -102,6 +122,7 @@
 /obj/item/storage/toolbox/brass/surgery
 	name = "surgery brass box"
 	desc = "A large brass box containing tools for surgery."
+	storage_type = /datum/storage/medkit
 
 /obj/item/storage/toolbox/brass/surgery/PopulateContents()
 	new /obj/item/scalpel(src)

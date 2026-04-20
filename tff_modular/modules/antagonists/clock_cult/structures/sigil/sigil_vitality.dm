@@ -1,7 +1,7 @@
 ///how much damage do we heal when reviving someone before costing vitality
 #define FREE_DAMAGE_HEALED 20
-///how much do we reduce drained mobs health health by each siphon
-#define HEALTH_DRAINED 20
+///how much do we reduce drained mobs health by each siphon
+#define HEALTH_DRAINED 15
 /obj/structure/destructible/clockwork/sigil/vitality
 	name = "vitality matrix"
 	desc = "A twisting, confusing artifact that drains the unenlightended on contact."
@@ -15,7 +15,7 @@
 	looping = TRUE
 
 /obj/structure/destructible/clockwork/sigil/vitality/can_affect(mob/living/affected_mob)
-	if((HAS_TRAIT(affected_mob, TRAIT_HUSK) && !IS_CLOCK(affected_mob)) || HAS_TRAIT(affected_mob, TRAIT_NODEATH) || HAS_TRAIT(affected_mob, TRAIT_NO_SOUL))
+	if((HAS_TRAIT(affected_mob, TRAIT_HUSK) && !IS_CLOCK(affected_mob)) || HAS_TRAIT(affected_mob, TRAIT_NODEATH) || HAS_TRAIT(affected_mob, TRAIT_NO_SOUL) || HAS_TRAIT(affected_mob, TRAIT_NO_SOUL_BY_VITALITY))
 		return FALSE
 
 	if(!ishuman(affected_mob))
@@ -81,25 +81,14 @@
 		return
 
 	affected_mob.Paralyze(1 SECONDS)
-	var/before_drain = affected_mob.getMaxHealth()
-	affected_mob.setMaxHealth(before_drain - HEALTH_DRAINED)
-	var/after_drain = affected_mob.getMaxHealth()
-
-	if(before_drain == after_drain)
-		visible_message(span_clockred("[src] fails to siphon [affected_mob]'s spirit!"))
-		return
-
+	affected_mob.adjust_tox_loss(15)
 	playsound(loc, 'sound/effects/magic/clockwork/ratvar_attack.ogg', 40)
-	if((affected_mob.stat == DEAD) || affected_mob.getMaxHealth() <= 0)
+	if((affected_mob.stat == DEAD))
 		playsound(loc, 'sound/effects/magic/exit_blood.ogg', 60)
 		to_chat(affected_mob, span_clockred("The last of your life is drained away..."))
-		check_special_role(affected_mob)
 		GLOB.clock_vitality = min(GLOB.clock_vitality + 40, MAX_CLOCK_VITALITY) // 100 (for clients) total in the ideal situation, since it'll take 6 pulses to go from full to crit
-		if(affected_mob.client)
-			var/obj/item/mmi/posibrain/soul_vessel/new_vessel = new(get_turf(src))
-			if(!is_banned_from(affected_mob.ckey, list(JOB_CYBORG, ROLE_CLOCK_CULTIST))) // monkestation edit: TRAIT_UNBORGABLE
-				new_vessel.transfer_personality(affected_mob)
-		affected_mob.dust(TRUE, TRUE)
+		check_special_role(affected_mob)
+		ADD_TRAIT(affected_mob, TRAIT_NO_SOUL_BY_VITALITY, SIGIL_TRAIT)
 		return
 
 	affected_mob.visible_message(span_clockred("[affected_mob] looks weak as the color fades from their body."), span_clockred("You feel your soul faltering..."))
@@ -108,12 +97,17 @@
 
 /// Checks the role of whoever was killed by the vitality sigil, and does any special code if needed.
 /obj/structure/destructible/clockwork/sigil/vitality/proc/check_special_role(mob/living/affected_mob)
-	if(IS_CULTIST(affected_mob)) //for now these just give extra vitality, but at some point I need to make them give something unique, maybe the gun?
+	if(IS_CULTIST(affected_mob))
 		send_clock_message(null, span_clockred("The dog of Nar'sie, [affected_mob] has had their vitality drained, rejoice!"))
 		GLOB.clock_vitality = min(GLOB.clock_vitality + 20, MAX_CLOCK_VITALITY)
+		affected_mob.mind?.remove_antag_datum(/datum/antagonist/cult)
 	else if(IS_HERETIC(affected_mob))
 		send_clock_message(null, span_clockred("The heretic, [affected_mob] has had their vitality drained, rejoice!"))
 		GLOB.clock_vitality = min(GLOB.clock_vitality + 30, MAX_CLOCK_VITALITY)
+		affected_mob.dust()
+		var/obj/item/mmi/posibrain/soul_vessel/soul_vessel = new(get_turf(src))
+		soul_vessel.transfer_personality(affected_mob)
+		var/obj/item/gun/ballistic/rifle/lionhunter/clockwork/rifle = new(get_turf(src))
 	else
 		send_clock_message(null, span_clockred("[affected_mob] has had their vitality drained by [src], rejoice!"))
 

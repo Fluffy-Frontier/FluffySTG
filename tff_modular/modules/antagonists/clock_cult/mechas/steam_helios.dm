@@ -1,4 +1,3 @@
-/*
 /obj/vehicle/sealed/mecha/steam_helios
 	name = "Steam Helios"
 	desc = "A huge creation of bronze gears and steam, you have no idea how it stays together."
@@ -199,4 +198,3 @@
 	color = rgb(190, 135, 0)
 	welder_salvage = list(/obj/item/stack/sheet/bronze)
 	parts = null
-*/

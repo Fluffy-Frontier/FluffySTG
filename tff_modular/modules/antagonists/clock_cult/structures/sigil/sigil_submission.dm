@@ -39,7 +39,7 @@
 		cogger.mind?.add_antag_datum(/datum/antagonist/clock_cultist)
 		cogger.visible_message("A light envelops \the [converted_mob]! As the light fades you see it has become a cogscarab!",
 								span_brass("Ratvar has granted you your freedom, you must protect the ark at all costs!"))
-		qdel(converted_mob)
+		converted_mob.death(TRUE)
 		return TRUE
 
 	else if(((GLOB.main_clock_cult?.human_servants.len < GLOB.main_clock_cult?.max_human_servants) && ishuman(converted_mob)) || !ishuman(converted_mob))

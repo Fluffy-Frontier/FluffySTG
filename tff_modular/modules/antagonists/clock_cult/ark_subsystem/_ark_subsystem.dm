@@ -115,6 +115,16 @@ PROCESSING_SUBSYSTEM_DEF(the_ark)
 	var/datum/scripture/create_structure/anchoring_crystal/crystal_script
 	addtimer(CALLBACK(src, PROC_REF(clear_shuttle_interference), charged_crystal), \
 			(ANCHORING_CRYSTAL_COOLDOWN - ANCHORING_CRYSTAL_CHARGE_DURATION) + initial(crystal_script.invocation_time))
+	GLOB.main_clock_cult.max_human_servants += SERVANT_CAPACITY_TO_GIVE
+	if(charged_anchoring_crystals == ANCHORING_CRYSTALS_TO_SUMMON + 1) //create a steam helios on reebe
+		if(length(GLOB.abscond_markers))
+			var/turf/created_at = get_turf(pick(GLOB.abscond_markers))
+			new /obj/vehicle/sealed/mecha/steam_helios(created_at)
+			new /obj/effect/temp_visual/steam(created_at)
+		else if(GLOB.clock_ark)
+			new /obj/vehicle/sealed/mecha/steam_helios(get_turf(GLOB.clock_ark))
+		else
+			message_admins("No valid location for Steam Helios creation.")
 
 ///fully disables the shuttle similar to the admin verb
 /datum/controller/subsystem/processing/the_ark/proc/block_shuttle(datum/blocker)

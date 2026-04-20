@@ -10,7 +10,7 @@
 	icon_dead = "drone_clock_dead"
 	health = 35
 	maxHealth = 35
-	speed = 1
+	speed = 0
 	default_storage = /obj/item/storage/belt/utility/clock/drone
 	visualAppearance = CLOCKDRONE
 	bubble_icon = "clock"
@@ -65,7 +65,7 @@
 	multiplicative_slowdown = 0.4
 
 /datum/movespeed_modifier/cogscarab_off_reebe
-	multiplicative_slowdown = 0.3
+	multiplicative_slowdown = 0.8
 
 //====Shell====
 
@@ -102,7 +102,7 @@
 		to_chat(user, span_notice("The Ark cannot support any more cogscarabs."))
 		return FALSE
 
-	if(!SSthe_ark.marked_areas[get_area(src)] && !on_reebe(src))
+	if(!SSthe_ark.marked_areas[get_area(src)] || !on_reebe(src))
 		to_chat(user, span_notice("Cogscarabs can only spawn in marked areas or on reebe."))
 		return FALSE
 	return TRUE
