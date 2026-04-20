@@ -363,7 +363,35 @@
 	name = "Perfume - Cologne"
 	item_path = /obj/item/perfume/cologne
 	group = "Cosmetics"
+/* // FLUFFY FRONTIER REMOVAL BEGIN: 1984. No gays
+/*
+*	FLAGS
+*/
 
+/datum/loadout_item/pocket_items/gay_pride_flag
+	name = "Pride Flag - Rainbow"
+	item_path = /obj/item/sign/flag/pride/gay
+
+/datum/loadout_item/pocket_items/ace_pride_flag
+	name = "Pride Flag - Asexual"
+	item_path = /obj/item/sign/flag/pride/ace
+
+/datum/loadout_item/pocket_items/bi_pride_flag
+	name = "Pride Flag - Bisexual"
+	item_path = /obj/item/sign/flag/pride/bi
+
+/datum/loadout_item/pocket_items/lesbian_pride_flag
+	name = "Pride Flag - Lesbian"
+	item_path = /obj/item/sign/flag/pride/lesbian
+
+/datum/loadout_item/pocket_items/pan_pride_flag
+	name = "Pride Flag - Pansexual"
+	item_path = /obj/item/sign/flag/pride/pan
+
+/datum/loadout_item/pocket_items/trans_pride_flag
+	name = "Pride Flag - Transgender"
+	item_path = /obj/item/sign/flag/pride/trans
+*/ // FLUFFY FRONTIER REMOVAL END
 /*
 *	JOB-LOCKED
 */

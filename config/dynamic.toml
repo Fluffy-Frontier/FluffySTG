@@ -56,7 +56,7 @@ ruleset_type_settings.latejoin.low = 0
 ruleset_type_settings.latejoin.high = 1
 ruleset_type_settings.latejoin.half_range_pop_threshold = 25
 ruleset_type_settings.latejoin.full_range_pop_threshold = 40
-ruleset_type_settings.latejoin.time_threshold = 5
+ruleset_type_settings.latejoin.time_threshold = 0.1
 ruleset_type_settings.latejoin.execution_cooldown_low = 10
 ruleset_type_settings.latejoin.execution_cooldown_high = 20
 
@@ -87,7 +87,7 @@ ruleset_type_settings.latejoin.low = 1
 ruleset_type_settings.latejoin.high = 2
 ruleset_type_settings.latejoin.half_range_pop_threshold = 25
 ruleset_type_settings.latejoin.full_range_pop_threshold = 40
-ruleset_type_settings.latejoin.time_threshold = 5
+ruleset_type_settings.latejoin.time_threshold = 0.1
 ruleset_type_settings.latejoin.execution_cooldown_low = 10
 ruleset_type_settings.latejoin.execution_cooldown_high = 20
 
@@ -118,7 +118,7 @@ ruleset_type_settings.latejoin.low = 1
 ruleset_type_settings.latejoin.high = 3
 ruleset_type_settings.latejoin.half_range_pop_threshold = 25
 ruleset_type_settings.latejoin.full_range_pop_threshold = 40
-ruleset_type_settings.latejoin.time_threshold = 5
+ruleset_type_settings.latejoin.time_threshold = 0.1
 ruleset_type_settings.latejoin.execution_cooldown_low = 10
 ruleset_type_settings.latejoin.execution_cooldown_high = 20
 
@@ -149,7 +149,7 @@ ruleset_type_settings.latejoin.low = 2
 ruleset_type_settings.latejoin.high = 3
 ruleset_type_settings.latejoin.half_range_pop_threshold = 25
 ruleset_type_settings.latejoin.full_range_pop_threshold = 40
-ruleset_type_settings.latejoin.time_threshold = 5
+ruleset_type_settings.latejoin.time_threshold = 0.1
 ruleset_type_settings.latejoin.execution_cooldown_low = 10
 ruleset_type_settings.latejoin.execution_cooldown_high = 20
 
@@ -285,6 +285,16 @@ blacklisted_roles = []
 min_antag_cap = 1
 max_antag_cap = 2
 repeatable_weight_decrease = 3
+repeatable = 1
+minimum_required_age = 0
+
+["Midround Blood Worm"]
+weight = 2
+min_pop = 20
+blacklisted_roles = []
+min_antag_cap = 1
+max_antag_cap = 2
+repeatable_weight_decrease = 2
 repeatable = 1
 minimum_required_age = 0
 
@@ -557,6 +567,16 @@ min_antag_cap = 1
 max_antag_cap.denominator = 29
 repeatable_weight_decrease = 2
 repeatable = 1
+minimum_required_age = 0
+
+["Roundstart Blood Worm"]
+weight = 1
+min_pop = 10
+blacklisted_roles = []
+min_antag_cap = 1
+max_antag_cap.denominator = 29
+repeatable_weight_decrease = 2
+repeatable = 0
 minimum_required_age = 0
 
 ["Roundstart Heretics"]

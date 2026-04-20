@@ -94,8 +94,7 @@
 	. = ..()
 	var/mob/living/carbon/human/caster = owner
 	caster.emote_snap()
-	var/datum/effect_system/spark_spread/sparks = new
-	sparks.set_up(5, 1, cast_on)
+	var/datum/effect_system/basic/spark_spread/sparks = new (src, 1, FALSE)
 	sparks.attach(cast_on)
 	sparks.start()
 	drain_mana()

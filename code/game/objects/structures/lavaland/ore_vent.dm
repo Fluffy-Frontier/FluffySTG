@@ -121,18 +121,19 @@
 		return
 	to_chat(user, span_notice("You start striking [src] with your golem's fist, attempting to dredge up a boulder..."))
 	for(var/i in 1 to 3)
-		/* NOVA EDIT CHANGE START - ORIGINAL:
+		/* // NOVA EDIT REMOVAL START - ORIGINAL:
 		if(do_after(user, boulder_size * 1 SECONDS, src))
 			user.apply_damage(20, STAMINA)
 			playsound(src, 'sound/items/weapons/genhit.ogg', 50, TRUE)
-		*/ 
+		*/ // NOVA EDIT REMOVAL END
+		// NOVA EDIT ADDITION START
 		if(!do_after(user, boulder_size * 1 SECONDS, src))
 			user.balloon_alert(user, "stay still!")
 			return
 		user.balloon_alert(user, i > 2 ? "got one!" : "digging around...")
 		user.apply_damage(20, STAMINA)
 		playsound(src, 'sound/items/weapons/genhit.ogg', 50, TRUE)
-		// NOVA EDIT CHANGE END
+		// NOVA EDIT ADDITION END
 	produce_boulder(TRUE)
 	visible_message(span_notice("You've successfully produced a boulder! Boy are your arms tired."))
 
@@ -238,6 +239,7 @@
 	Shake(duration = 3 SECONDS)
 	if(spawn_drone)
 		node = new /mob/living/basic/node_drone(loc)
+		SET_FACTION_AND_ALLIES_FROM(node, user) // NOVA EDIT ADDITION
 		node.arrive(src)
 		RegisterSignal(node, COMSIG_QDELETING, PROC_REF(handle_wave_conclusion))
 		RegisterSignal(node, COMSIG_MOVABLE_MOVED, PROC_REF(handle_wave_conclusion))
@@ -337,26 +339,28 @@
 /**
  * Handles winning the event, gives everyone a payout and start boulder production
  */
-/obj/structure/ore_vent/proc/initiate_wave_win()
+/obj/structure/ore_vent/proc/initiate_wave_win(forced = FALSE)
 	tapped = TRUE //The Node Drone has survived the wave defense, and the ore vent is tapped.
 	SSore_generation.processed_vents += src
-	log_game("Ore vent [key_name_and_tag(src)] was tapped")
-	SSblackbox.record_feedback("tally", "ore_vent_completed", 1, type)
-	balloon_alert_to_viewers("vent tapped!")
+	if(!forced)
+		log_game("Ore vent [key_name_and_tag(src)] was tapped")
+		SSblackbox.record_feedback("tally", "ore_vent_completed", 1, type)
+		balloon_alert_to_viewers("vent tapped!")
 	icon_state = icon_state_tapped
 	update_appearance(UPDATE_ICON_STATE)
 	qdel(GetComponent(/datum/component/gps))
 
-	for(var/mob/living/miner in range(7, src)) //Give the miners who are near the vent points and xp.
-		var/obj/item/card/id/user_id_card = miner.get_idcard(TRUE)
-		if(miner.stat <= SOFT_CRIT)
-			miner.mind?.adjust_experience(/datum/skill/mining, MINING_SKILL_BOULDER_SIZE_XP * boulder_size)
-		if(!user_id_card)
-			continue
-		var/point_reward_val = (MINER_POINT_MULTIPLIER * boulder_size) - MINER_POINT_MULTIPLIER // We remove the base value of discovering the vent
-		if(user_id_card.registered_account)
-			user_id_card.registered_account.mining_points += point_reward_val
-			user_id_card.registered_account.bank_card_talk("You have been awarded [point_reward_val] mining points for your efforts.")
+	if(!forced)
+		for(var/mob/living/miner in range(7, src)) //Give the miners who are near the vent points and xp.
+			var/obj/item/card/id/user_id_card = miner.get_idcard(TRUE)
+			if(miner.stat <= SOFT_CRIT)
+				miner.mind?.adjust_experience(/datum/skill/mining, MINING_SKILL_BOULDER_SIZE_XP * boulder_size)
+			if(!user_id_card)
+				continue
+			var/point_reward_val = (MINER_POINT_MULTIPLIER * boulder_size) - MINER_POINT_MULTIPLIER // We remove the base value of discovering the vent
+			if(user_id_card.registered_account)
+				user_id_card.registered_account.mining_points += point_reward_val
+				user_id_card.registered_account.bank_card_talk("You have been awarded [point_reward_val] mining points for your efforts.")
 	reset_drone(success = TRUE)
 	add_overlay(mutable_appearance('icons/obj/mining_zones/terrain.dmi', "well", ABOVE_MOB_LAYER))
 
