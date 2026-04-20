@@ -150,7 +150,7 @@
 	name = "Steam Discharge"
 	button_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "smoke"
-	background_icon = 'monkestation/icons/mob/clock_cult/background_clock.dmi'
+	background_icon = 'tff_modular/modules/antagonists/clock_cult/icons/mob/background_clock.dmi'
 	background_icon_state = "bg_clock"
 	///how often the action can be used
 	var/discharge_cooldown = 45 SECONDS
