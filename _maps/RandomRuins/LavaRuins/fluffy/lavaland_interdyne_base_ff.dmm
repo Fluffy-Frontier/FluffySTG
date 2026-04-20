@@ -234,6 +234,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/trimline/dark/filled/corner,
+/obj/machinery/light/directional/north,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "bk" = (
@@ -286,12 +287,12 @@
 "bv" = (
 /obj/effect/turf_decal/bot_red,
 /obj/structure/closet/crate/secure/syndicate/interdyne,
-/obj/item/stack/medical/mesh/bloody,
-/obj/item/stack/medical/mesh/bloody,
-/obj/item/storage/medkit/frontier,
-/obj/item/stack/medical/suture/bloody,
-/obj/item/stack/medical/suture/bloody,
 /obj/effect/turf_decal/tile/dark/full,
+/obj/item/storage/pouch/medical/firstaid/interdyne/brute,
+/obj/item/storage/pouch/medical/firstaid/interdyne/burn,
+/obj/item/storage/pouch/medical/firstaid/interdyne/oxygen,
+/obj/item/storage/pouch/medical/firstaid/interdyne/toxin,
+/obj/item/storage/medkit/tactical/premium/interdyne/trauma,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "bw" = (
@@ -604,12 +605,6 @@
 /area/ruin/interdyne_planetary_base/med)
 "cQ" = (
 /obj/effect/turf_decal/bot_red,
-/obj/structure/closet/crate/secure/gear{
-	desc = "A secute crate with huge mark 'to Surface' on it.";
-	icon_state = "syndicrate";
-	base_icon_state = "syndicrate";
-	req_access = list("syndicate")
-	},
 /obj/item/stack/sheet/plasteel/fifty,
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/sheet/iron/fifty,
@@ -626,6 +621,7 @@
 /obj/item/stack/sheet/mineral/plasma{
 	amount = 5
 	},
+/obj/structure/closet/crate/secure/syndicate/interdyne,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/interdyne_planetary_base/main/vault)
 "cR" = (
@@ -745,12 +741,14 @@
 /area/lavaland/surface/outdoors)
 "dA" = (
 /obj/effect/turf_decal/tile/dark/full,
-/obj/item/transfer_valve,
-/obj/item/transfer_valve{
-	pixel_x = 8;
-	pixel_y = 5
-	},
 /obj/structure/table/reinforced/plastitaniumglass,
+/obj/item/rcd_ammo,
+/obj/item/rcd_ammo,
+/obj/item/rcd_ammo,
+/obj/item/rcd_ammo,
+/obj/item/construction/rcd/loaded/interdyne{
+	name = "interdyne RCD"
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "dD" = (
@@ -829,6 +827,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf,
+/obj/item/circuitboard/machine/powerator/interdyne,
+/obj/item/flatpacked_machine,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/interdyne_planetary_base/main/vault)
 "dU" = (
@@ -1103,7 +1104,8 @@
 /area/ruin/interdyne_planetary_base/med)
 "fj" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2{
-	dir = 1
+	dir = 1;
+	volume_rate = 200
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/yellow/hidden,
 /turf/open/floor/engine,
@@ -1131,15 +1133,6 @@
 	color = "#0012FF"
 	},
 /turf/open/floor/iron/dark/textured_large,
-/area/ruin/interdyne_planetary_base/main)
-"fp" = (
-/obj/effect/turf_decal/trimline/dark/filled/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/dark/filled/corner{
-	dir = 8
-	},
-/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal/shielded,
 /area/ruin/interdyne_planetary_base/main)
 "ft" = (
 /obj/machinery/smartfridge/extract/preloaded{
@@ -1193,7 +1186,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/monitored{
 	dir = 8
 	},
-/turf/open/floor/engine/o2,
+/turf/open/floor/engine/n2,
 /area/ruin/interdyne_planetary_base/main)
 "fG" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -1345,7 +1338,7 @@
 	pixel_x = 4;
 	pixel_y = -4
 	},
-/obj/structure/closet/crate/secure/syndicate/gorlex/weapons,
+/obj/structure/closet/crate/secure/syndicate/interdyne,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "gB" = (
@@ -1935,12 +1928,6 @@
 	pixel_x = -5;
 	pixel_y = 5
 	},
-/obj/structure/closet/crate/secure/gear{
-	desc = "A secute crate with huge mark 'to Surface' on it.";
-	icon_state = "syndicrate";
-	base_icon_state = "syndicrate";
-	req_access = list("syndicate")
-	},
 /obj/item/storage/toolbox/syndicate,
 /obj/item/melee/baton/security/loaded{
 	pixel_x = -4;
@@ -1956,6 +1943,8 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 8
 	},
+/obj/machinery/light/directional/west,
+/obj/structure/closet/crate/secure/syndicate/interdyne,
 /turf/open/floor/iron/dark/textured_half{
 	dir = 1
 	},
@@ -2840,9 +2829,6 @@
 /area/ruin/interdyne_planetary_base/main)
 "ny" = (
 /obj/effect/turf_decal/tile/dark/full,
-/obj/structure/closet/crate/radiation,
-/obj/item/clothing/suit/utility/radiation,
-/obj/item/clothing/head/utility/radiation,
 /obj/machinery/atmospherics/pipe/layer_manifold/supply/hidden,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/interdyne_planetary_base/main)
@@ -3803,9 +3789,8 @@
 	pixel_x = -10;
 	pixel_y = 5
 	},
-/obj/item/storage/backpack/duffelbag/syndie/surgery{
-	pixel_x = 13;
-	pixel_y = 13
+/obj/item/storage/medkit/tactical/premium/interdyne/medium/surgical{
+	pixel_x = 13
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
@@ -3921,6 +3906,8 @@
 	dir = 1
 	},
 /obj/structure/marker_beacon/cerulean,
+/obj/machinery/light/directional/north,
+/obj/machinery/defibrillator_mount/directional/north,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "to" = (
@@ -5436,13 +5423,9 @@
 "Bm" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/effect/turf_decal/bot_red,
-/obj/structure/closet/crate/secure/gear{
-	desc = "A secute crate with huge mark 'to Surface' on it.";
-	icon_state = "syndicrate";
-	base_icon_state = "syndicrate";
-	req_access = list("syndicate")
-	},
-/obj/item/food/syndicake,
+/obj/structure/closet/crate/radiation,
+/obj/item/clothing/head/utility/radiation,
+/obj/item/clothing/suit/utility/radiation,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/interdyne_planetary_base/main)
 "Br" = (
@@ -5677,9 +5660,6 @@
 /obj/item/storage/bag/ore,
 /obj/item/t_scanner/adv_mining_scanner/lesser,
 /obj/effect/turf_decal/bot_red,
-/obj/item/flatpacked_machine/ore_thumper,
-/obj/item/flatpacked_machine/ore_thumper,
-/obj/item/flatpacked_machine/ore_thumper,
 /obj/structure/marker_beacon/burgundy,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
@@ -5727,6 +5707,10 @@
 	},
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/table/reinforced/plastitaniumglass,
+/obj/item/defibrillator/loaded{
+	pixel_x = 3;
+	pixel_y = 6
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "Cw" = (
@@ -5939,9 +5923,6 @@
 /obj/structure/table/reinforced,
 /obj/item/construction/rtd{
 	pixel_y = 8
-	},
-/obj/item/construction/rcd{
-	pixel_y = -3
 	},
 /obj/item/inducer/syndicate,
 /obj/effect/turf_decal/siding/dark{
@@ -6429,7 +6410,6 @@
 /obj/item/clothing/glasses/night,
 /obj/item/clothing/glasses/night,
 /obj/item/clothing/glasses/night,
-/obj/structure/closet/crate/secure/syndicate/cybersun/night,
 /obj/item/radio/headset/interdyne,
 /obj/item/radio/headset/interdyne,
 /obj/item/storage/belt/military/assault,
@@ -6441,6 +6421,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 8
 	},
+/obj/structure/closet/crate/secure/syndicate/interdyne,
 /turf/open/floor/iron/dark/textured_half{
 	dir = 1
 	},
@@ -6493,14 +6474,9 @@
 /obj/effect/turf_decal/bot_red,
 /obj/structure/cable,
 /obj/structure/rack,
-/obj/item/rcd_ammo,
-/obj/item/rcd_ammo,
-/obj/item/rcd_ammo,
-/obj/item/rcd_ammo,
-/obj/item/flatpacked_machine,
-/obj/item/construction/rcd/loaded/interdyne{
-	name = "interdyne RCD"
-	},
+/obj/item/flatpacked_machine/ore_thumper,
+/obj/item/flatpacked_machine/ore_thumper,
+/obj/item/flatpacked_machine/ore_thumper,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "GF" = (
@@ -7075,6 +7051,7 @@
 	name = "Outpost Balance Display";
 	default_logo = "synd"
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "JN" = (
@@ -7859,6 +7836,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "NS" = (
@@ -8125,6 +8103,9 @@
 /obj/item/healthanalyzer/advanced,
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/cerulean,
+/obj/item/storage/backpack/duffelbag/syndie/surgery{
+	pixel_y = 13
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "Pb" = (
@@ -9284,7 +9265,8 @@
 /area/ruin/interdyne_planetary_base/cargo)
 "Ug" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
-	dir = 1
+	dir = 1;
+	volume_rate = 200
 	},
 /turf/open/floor/engine,
 /area/ruin/interdyne_planetary_base/main)
@@ -9515,7 +9497,6 @@
 /area/ruin/interdyne_planetary_base/serv)
 "Vm" = (
 /obj/structure/table/reinforced/plastitaniumglass,
-/obj/item/storage/backpack/duffelbag/syndie/surgery,
 /obj/structure/marker_beacon/teal,
 /obj/effect/turf_decal/stripes/blue,
 /obj/effect/turf_decal/stripes/blue{
@@ -9523,6 +9504,7 @@
 	},
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/marker_beacon/cerulean,
+/obj/item/storage/medkit/tactical/premium/interdyne/medium/surgical,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/med)
 "Vn" = (
@@ -12052,7 +12034,7 @@ xy
 Gc
 jE
 cQ
-fp
+Np
 aB
 Jh
 Gs
@@ -12170,7 +12152,7 @@ Iw
 Az
 CM
 Jn
-fp
+Np
 Ur
 aI
 oC
@@ -12288,7 +12270,7 @@ Cr
 Wf
 QD
 BX
-fp
+Np
 lp
 SZ
 Em
