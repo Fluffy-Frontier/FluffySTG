@@ -1,4 +1,5 @@
 ///A subsystem to manage the global effects of clock cult
+#define SERVANT_CAPACITY_TO_GIVE 2
 PROCESSING_SUBSYSTEM_DEF(the_ark)
 	name = "The Clockwork Ark"
 	wait = 1 SECONDS
@@ -160,4 +161,4 @@ PROCESSING_SUBSYSTEM_DEF(the_ark)
 		charged_count += SSthe_ark.anchoring_crystals[crystal]
 	return charged_count
 
-//#undef SERVANT_CAPACITY_TO_GIVE
+#undef SERVANT_CAPACITY_TO_GIVE

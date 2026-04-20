@@ -107,7 +107,7 @@
 		affected_mob.dust()
 		var/obj/item/mmi/posibrain/soul_vessel/soul_vessel = new(get_turf(src))
 		soul_vessel.transfer_personality(affected_mob)
-		var/obj/item/gun/ballistic/rifle/lionhunter/clockwork/rifle = new(get_turf(src))
+		new /obj/item/gun/ballistic/rifle/lionhunter/clockwork(get_turf(src))
 	else
 		send_clock_message(null, span_clockred("[affected_mob] has had their vitality drained by [src], rejoice!"))
 

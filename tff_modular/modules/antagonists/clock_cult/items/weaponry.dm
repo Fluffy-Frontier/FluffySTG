@@ -332,6 +332,15 @@
 	max_ammo = 20
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
+/obj/item/storage/pouch/ammo/clock
+
+/obj/item/storage/pouch/ammo/clock/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/speedloader/strilka310/lionhunter/clock = 1
+	)
+
+	generate_items_inside(items_inside, src)
+
 #undef HAMMER_FLING_DISTANCE
 #undef HAMMER_THROW_FLING_DISTANCE
 #undef COGSCARAB_BOW_DRAW_TIME_MULT

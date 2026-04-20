@@ -8,9 +8,7 @@ the Rat'Var. Will you be able to do it, or will you fall like your god?
 const RoundstartClockworkCultist: Antagonist = {
   key: 'roundstartclockworkcultist',
   name: 'Clockwork Cultist',
-  description: [
-    CLOCKWORK_MECHANICAL_DESCRIPTION,
-  ],
+  description: [CLOCKWORK_MECHANICAL_DESCRIPTION],
   category: Category.Roundstart,
 };
 

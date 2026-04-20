@@ -1,11 +1,13 @@
+#define COOLDOWN_MECHA_JUDICIAL_MARK "mecha_judicial_mark"
+#define COOLDOWN_MECHA_STEAM_DISCHARGE "mecha_steam_discharge"
+
 /obj/vehicle/sealed/mecha/steam_helios
 	name = "Steam Helios"
 	desc = "A huge creation of bronze gears and steam, you have no idea how it stays together."
-	icon = 'icons/mecha/coop_mech.dmi'
+	icon = 'icons/mob/rideables/coop_mech.dmi'
 	base_icon_state = "savannah_ivanov"
 	icon_state = "savannah_ivanov_0_0"
 	color = rgb(190, 135, 0)
-	mecha_flags = CANSTRAFE | IS_ENCLOSED | NOT_ABLE_TO_REMOVE_STOCK_PARTS
 	mech_type = EXOSUIT_MODULE_SAVANNAH
 	movedelay = 3
 	max_integrity = 450
@@ -47,7 +49,7 @@
 	cell = new /obj/item/stock_parts/power_store/cell/clock(src)
 	scanmod = new /obj/item/stock_parts/scanning_module/triphasic/clock(src) //walking is free
 	capacitor = new /obj/item/stock_parts/capacitor/quadratic/clock(src)
-	manipulator = new /obj/item/stock_parts/manipulator/femto/clock(src)
+	servo = new /obj/item/stock_parts/servo/femto/clock(src)
 	update_part_values()
 
 //Only clock cultists can enter the mech
@@ -80,9 +82,9 @@
 
 /datum/action/vehicle/sealed/mecha/judicial_mark
 	name = "Judicial Mark"
-	button_icon = 'monkestation/icons/mob/clock_cult/actions_clock.dmi'
+	button_icon = 'tff_modular/modules/antagonists/clock_cult/icons/mob/actions_clock.dmi'
 	button_icon_state = "Judicial Marker"
-	background_icon = 'monkestation/icons/mob/clock_cult/background_clock.dmi'
+	background_icon = 'tff_modular/modules/antagonists/clock_cult/icons/mob/background_clock.dmi'
 	background_icon_state = "bg_clock"
 	///how often the action can be used
 	var/mark_cooldown = 30 SECONDS
@@ -198,3 +200,6 @@
 	color = rgb(190, 135, 0)
 	welder_salvage = list(/obj/item/stack/sheet/bronze)
 	parts = null
+
+#undef COOLDOWN_MECHA_JUDICIAL_MARK
+#undef COOLDOWN_MECHA_STEAM_DISCHARGE
