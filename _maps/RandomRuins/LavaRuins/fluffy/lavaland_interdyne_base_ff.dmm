@@ -310,8 +310,7 @@
 	pixel_x = 0;
 	pixel_y = 29;
 	credits_account = "IP";
-	name = "Outpost Balance Display";
-	default_logo = "synd"
+	name = "Outpost Balance Display"
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main/vault)
@@ -632,6 +631,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/vg_decals/radiation,
+/obj/structure/sign/poster/contraband/missing_gloves/directional/east,
 /turf/open/floor/iron/submarine_vents,
 /area/ruin/interdyne_planetary_base/main)
 "cS" = (
@@ -742,13 +742,6 @@
 "dA" = (
 /obj/effect/turf_decal/tile/dark/full,
 /obj/structure/table/reinforced/plastitaniumglass,
-/obj/item/rcd_ammo,
-/obj/item/rcd_ammo,
-/obj/item/rcd_ammo,
-/obj/item/rcd_ammo,
-/obj/item/construction/rcd/loaded/interdyne{
-	name = "interdyne RCD"
-	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
 "dD" = (
@@ -5661,6 +5654,9 @@
 /obj/item/t_scanner/adv_mining_scanner/lesser,
 /obj/effect/turf_decal/bot_red,
 /obj/structure/marker_beacon/burgundy,
+/obj/item/flatpacked_machine/ore_thumper,
+/obj/item/flatpacked_machine/ore_thumper,
+/obj/item/flatpacked_machine/ore_thumper,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "Co" = (
@@ -6474,9 +6470,13 @@
 /obj/effect/turf_decal/bot_red,
 /obj/structure/cable,
 /obj/structure/rack,
-/obj/item/flatpacked_machine/ore_thumper,
-/obj/item/flatpacked_machine/ore_thumper,
-/obj/item/flatpacked_machine/ore_thumper,
+/obj/item/construction/rcd/loaded/interdyne{
+	name = "interdyne RCD"
+	},
+/obj/item/rcd_ammo,
+/obj/item/rcd_ammo,
+/obj/item/rcd_ammo,
+/obj/item/rcd_ammo,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/cargo)
 "GF" = (
@@ -7048,8 +7048,7 @@
 	pixel_x = 0;
 	pixel_y = 29;
 	credits_account = "IP";
-	name = "Outpost Balance Display";
-	default_logo = "synd"
+	name = "Outpost Balance Display"
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/iron/dark/textured_large,
@@ -9202,7 +9201,7 @@
 	},
 /obj/structure/hedge,
 /obj/item/decoration/new_year/garland,
-/obj/structure/sign/poster/contraband/gorlex_recruitment/directional/north,
+/obj/structure/sign/poster/contraband/heart/directional/north,
 /turf/open/floor/wood/large,
 /area/ruin/interdyne_planetary_base/serv)
 "TS" = (
@@ -9349,7 +9348,7 @@
 	name = "Interdyne ammunitions workbench";
 	color = "#adadcd"
 	},
-/obj/structure/sign/poster/contraband/c20r/directional/north,
+/obj/structure/sign/poster/contraband/lamarr/directional/north,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/science)
 "UD" = (
