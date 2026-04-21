@@ -243,8 +243,6 @@
 #define IS_SAFE_NUM(a) IS_FINITE(a)
 
 #define BODY_ZONES_LIMBS list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-///from base of atom/expose_reagents(): (/list, /datum/reagents, methods, volume_modifier, show_message)
-#define COMSIG_ATOM_AFTER_EXPOSE_REAGENTS "atom_after_expose_reagents"
 #define MOVABLE_PHYSICS_PRECISION 0.01
 #define MOVABLE_PHYSICS_MINIMAL_VELOCITY 1
 

@@ -246,6 +246,7 @@ GLOBAL_LIST_INIT(available_erp_ui_styles, list(
 	QDEL_NULL(palette_actions)
 	QDEL_NULL(listed_actions)
 	QDEL_LIST(floating_actions)
+
 	QDEL_LIST(static_inventory)
 
 	// all already deleted by static inventory clear

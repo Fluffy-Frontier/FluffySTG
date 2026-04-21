@@ -639,6 +639,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/dead/observer/verb/restore_ghost_appearance()
 	set name = "Restore Ghost Character"
+
 	set_ghost_appearance()
 	if(client?.prefs)
 		var/real_name = client.prefs.read_preference(/datum/preference/name/real_name)

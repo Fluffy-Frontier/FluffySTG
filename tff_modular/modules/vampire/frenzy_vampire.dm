@@ -47,7 +47,7 @@
 
 	// Basic stuff
 	carbon_owner.add_movespeed_modifier(/datum/movespeed_modifier/frenzy_speed)
-	carbon_owner.add_client_colour(/datum/client_colour/bloodlust, CLIENT_COLOR_SOURCE_VAMPIRE)
+	carbon_owner.add_client_colour(/datum/client_colour/frenzy, CLIENT_COLOR_SOURCE_VAMPIRE)
 	carbon_owner.uncuff()
 	carbon_owner.pulledby?.stop_pulling()
 	carbon_owner.adjust_stamina_loss(-200)
