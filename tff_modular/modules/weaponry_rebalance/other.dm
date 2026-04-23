@@ -45,3 +45,15 @@
 
 	balloon_alert_to_viewers("finished grinding")
 	user.mind?.adjust_experience(/datum/skill/primitive, 5)
+
+/obj/projectile/bullet/incendiary/fire
+	damage = 5
+	range = 5
+	wound_bonus = 15
+	fire_stacks = 2
+
+/obj/projectile/bullet/incendiary/fire/backblast/short_range
+	range = 1
+
+/obj/projectile/bullet/incendiary/fire
+	armor_flag = FIRE

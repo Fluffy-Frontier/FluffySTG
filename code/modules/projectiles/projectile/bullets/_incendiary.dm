@@ -20,7 +20,7 @@
 	var/turf/location = get_turf(src)
 	if(location)
 		new /obj/effect/hotspot(location)
-		location.hotspot_expose(700, 50, 1)
+		location.hotspot_expose(350, 25, 1) // TFF EDIT - ORIGINAL: location.hotspot_expose(700, 50, 1)
 
 /// Incendiary bullet that more closely resembles a real flamethrower sorta deal, no visible bullet, just flames.
 /obj/projectile/bullet/incendiary/fire
