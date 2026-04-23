@@ -21,6 +21,8 @@
 		TRAIT_UNHUSKABLE,
 		TRAIT_RESISTLOWPRESSURE,
 		TRAIT_RESISTHIGHPRESSURE,
+		TRAIT_NODROWN,
+		TRAIT_SWIMMER,
 	)
 	mutantheart = null
 	mutantlungs = null
@@ -45,8 +47,7 @@
 	meat = /obj/item/stack/sheet/bronze
 	fixed_mut_color = rgb(190, 135, 0)
 	examine_limb_id = SPECIES_GOLEM
-	///ref to our turf_healing component, used for deletion on_species_loss()
-	var/datum/component/turf_healing/mob_turf_healing
+	var/datum/antagonist/clock_cultist/antag_datum
 	bodypart_overrides = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/clockwork,
 		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/clockwork,
@@ -59,11 +60,14 @@
 /datum/species/clockwork_golem/on_species_gain(mob/living/carbon/our_mob, datum/species/old_species, pref_load)
 	. = ..()
 	ADD_TRAIT(our_mob, TRAIT_FASTER_SLAB_INVOKE, SPECIES_TRAIT)
-	mob_turf_healing = our_mob.AddComponent(/datum/component/turf_healing, healing_types = list(TOX = 1, BRUTE = 1, BURN = 1), healing_turfs = list(/turf/open/floor/bronze, /turf/open/indestructible/reebe_flooring))
+	if(IS_CLOCK(our_mob))
+		antag_datum = our_mob.mind?.has_antag_datum(/datum/antagonist/clock_cultist)
+		antag_datum.owner_turf_healing.healing_types = list(TOX = 1, BRUTE = 1, BURN = 1)
 
 /datum/species/clockwork_golem/on_species_loss(mob/living/carbon/human/our_mob, datum/species/new_species, pref_load)
 	REMOVE_TRAIT(our_mob, TRAIT_FASTER_SLAB_INVOKE, SPECIES_TRAIT)
-	QDEL_NULL(mob_turf_healing)
+	if(IS_CLOCK(our_mob))
+		QDEL_NULL(antag_datum.owner_turf_healing)
 	. = ..()
 
 //GOLEM
@@ -76,8 +80,8 @@
 	dmg_overlay_type = null
 	head_flags = NONE
 	teeth_count = 0
-	burn_modifier = 0.5
-	brute_modifier = 0.5
+	burn_modifier = 0.6
+	brute_modifier = 0.6
 
 /obj/item/bodypart/chest/clockwork
 	biological_state = BIO_BONE
@@ -89,8 +93,8 @@
 	dmg_overlay_type = null
 	bodypart_traits = list(TRAIT_NO_JUMPSUIT)
 	wing_types = null
-	burn_modifier = 0.5
-	brute_modifier = 0.5
+	burn_modifier = 0.6
+	brute_modifier = 0.6
 
 /obj/item/bodypart/arm/left/clockwork
 	biological_state = (BIO_BONE|BIO_JOINTED)
@@ -98,12 +102,12 @@
 	limb_id = SPECIES_GOLEM_CLOCKWORK
 	should_draw_greyscale = FALSE
 	dmg_overlay_type = null
-	bodypart_traits = list(TRAIT_CHUNKYFINGERS, TRAIT_FIST_MINING, TRAIT_BOULDER_BREAKER)
+	bodypart_traits = list(TRAIT_CHUNKYFINGERS, TRAIT_FIST_MINING, TRAIT_BOULDER_BREAKER, TRAIT_TOSS_GUN_HARD)
 	unarmed_damage_low = 5
 	unarmed_damage_high = 14
 	unarmed_effectiveness = 20
-	burn_modifier = 0.5
-	brute_modifier = 0.5
+	burn_modifier = 0.6
+	brute_modifier = 0.6
 
 /obj/item/bodypart/arm/left/clockwork/clear_ownership(mob/living/carbon/old_owner)
 	. = ..()
@@ -121,12 +125,12 @@
 	limb_id = SPECIES_GOLEM_CLOCKWORK
 	should_draw_greyscale = FALSE
 	dmg_overlay_type = null
-	bodypart_traits = list(TRAIT_CHUNKYFINGERS, TRAIT_FIST_MINING, TRAIT_BOULDER_BREAKER)
+	bodypart_traits = list(TRAIT_CHUNKYFINGERS, TRAIT_FIST_MINING, TRAIT_BOULDER_BREAKER, TRAIT_TOSS_GUN_HARD)
 	unarmed_damage_low = 5
 	unarmed_damage_high = 14
 	unarmed_effectiveness = 20
-	burn_modifier = 0.5
-	brute_modifier = 0.5
+	burn_modifier = 0.6
+	brute_modifier = 0.6
 
 /obj/item/bodypart/arm/right/clockwork/clear_ownership(mob/living/carbon/old_owner)
 	. = ..()
@@ -147,8 +151,8 @@
 	unarmed_damage_low = 7
 	unarmed_damage_high = 21
 	unarmed_effectiveness = 25
-	burn_modifier = 0.5
-	brute_modifier = 0.5
+	burn_modifier = 0.6
+	brute_modifier = 0.6
 
 /obj/item/bodypart/leg/right/clockwork
 	biological_state = (BIO_BONE|BIO_JOINTED)
@@ -159,5 +163,5 @@
 	unarmed_damage_low = 7
 	unarmed_damage_high = 21
 	unarmed_effectiveness = 25
-	burn_modifier = 0.5
-	brute_modifier = 0.5
+	burn_modifier = 0.6
+	brute_modifier = 0.6
