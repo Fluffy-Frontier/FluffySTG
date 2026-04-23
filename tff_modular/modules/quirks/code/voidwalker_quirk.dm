@@ -8,11 +8,11 @@
 
 /datum/quirk/touched_by_cosmos/add(client/client_source)
 	var/mob/living/carbon/human/human_holder = quirk_holder
-	human_holder.gain_trauma(/datum/brain_trauma/voided, TRAUMA_RESILIENCE_ABSOLUTE)
+	human_holder.gain_trauma(/datum/brain_trauma/voided_quirk, TRAUMA_RESILIENCE_ABSOLUTE)
 
 /datum/quirk/touched_by_cosmos/remove()
 	var/mob/living/carbon/human/human_holder = quirk_holder
-	human_holder.cure_trauma_type(/datum/brain_trauma/voided, TRAUMA_RESILIENCE_ABSOLUTE)
+	human_holder.cure_trauma_type(/datum/brain_trauma/voided_quirk, TRAUMA_RESILIENCE_ABSOLUTE)
 
 /datum/brain_trauma/voided_quirk
 	name = "Voided"
