@@ -1,4 +1,3 @@
-// THIS IS A NOVA SECTOR UI FILE
 import type { Feature } from '../../base';
 import { FeatureColorInput } from '../../base';
 
