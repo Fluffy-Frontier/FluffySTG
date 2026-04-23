@@ -9,10 +9,36 @@
 /datum/quirk/touched_by_cosmos/add(client/client_source)
 	var/mob/living/carbon/human/human_holder = quirk_holder
 	human_holder.gain_trauma(/datum/brain_trauma/voided_quirk, TRAUMA_RESILIENCE_ABSOLUTE)
+	var/datum/brain_trauma/voided_quirk/cosmos_quirk = human_holder.has_trauma_type(/datum/brain_trauma/voided_quirk, TRAUMA_RESILIENCE_ABSOLUTE)
+	cosmos_quirk.space_color = client_source.prefs.read_preference(/datum/preference/color/space_color)
+	cosmos_quirk.apply_effects()
 
 /datum/quirk/touched_by_cosmos/remove()
 	var/mob/living/carbon/human/human_holder = quirk_holder
 	human_holder.cure_trauma_type(/datum/brain_trauma/voided_quirk, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk_constant_data/touched_by_cosmos
+	associated_typepath = /datum/quirk/touched_by_cosmos
+	customization_options = list(/datum/preference/color/space_color)
+
+/datum/preference/color/space_color
+	category = PREFERENCE_CATEGORY_MANUALLY_RENDERED
+	savefile_key = "voidwalker_space_color"
+	savefile_identifier = PREFERENCE_CHARACTER
+	can_randomize = FALSE
+	should_update_preview = FALSE
+
+/datum/preference/color/space_color/create_default_value()
+	return COLOR_WHITE
+
+/datum/preference/color/space_color/is_accessible(datum/preferences/preferences)
+	if (!..(preferences))
+		return FALSE
+
+	return /datum/quirk/touched_by_cosmos::name in preferences.all_quirks
+
+/datum/preference/color/space_color/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	return
 
 /datum/brain_trauma/voided_quirk
 	name = "Voided"
@@ -27,16 +53,14 @@
 	var/bodypart_overlay_type = /datum/bodypart_overlay/texture/spacey
 	/// Color in which we paint the space texture
 	var/space_color = COLOR_WHITE
-	/// Statis list of all possible space colors
-	var/static/list/space_colors = list("#00ccff","#b12bff","#ff7f3a","#ff1c55","#ff7597","#28ff94","#0fcfff","#ff8b4c","#ffc425","#2dff96","#1770ff","#ff3f31","#ffba3b")
 
 /datum/brain_trauma/voided_quirk/on_gain()
 	. = ..()
-
-	space_color = pick(space_colors)
 	owner.AddComponent(/datum/component/debris_bleeder, \
 		list(/obj/effect/spawner/random/glass_shards = 20, /obj/effect/spawner/random/glass_debris = 0), \
 		BRUTE, SFX_SHATTER, sound_threshold = 20)
+
+/datum/brain_trauma/voided_quirk/proc/apply_effects()
 
 	RegisterSignal(owner, COMSIG_CARBON_ATTACH_LIMB, PROC_REF(texture_limb)) //also catch new limbs being attached
 	RegisterSignal(owner, COMSIG_CARBON_REMOVE_LIMB, PROC_REF(untexture_limb)) //and remove it from limbs if they go away
