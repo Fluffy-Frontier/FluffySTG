@@ -11,7 +11,7 @@
 		/datum/reagent/consumable/mayonnaise = 5,
 	)
 	result = /obj/item/food/salad/olivier
-	category = CAT_SALAD
+	category = DISH_SALAD
 	time = 10 SECONDS
 
 /datum/crafting_recipe/food/vinegret_salad
@@ -26,7 +26,7 @@
 		/datum/reagent/consumable/vinegar = 1,
 	)
 	result = /obj/item/food/salad/vinegret
-	category = CAT_SALAD
+	category = DISH_SALAD
 	time = 10 SECONDS
 
 /datum/crafting_recipe/food/kraboviy_salad
@@ -39,7 +39,7 @@
 		/datum/reagent/consumable/mayonnaise = 5,
 	)
 	result = /obj/item/food/salad/kraboviy
-	category = CAT_SALAD
+	category = DISH_SALAD
 	time = 10 SECONDS
 
 /datum/crafting_recipe/food/shuba
@@ -55,7 +55,7 @@
 		/datum/reagent/consumable/mayonnaise = 10,
 	)
 	result = /obj/item/food/cake/shuba
-	category = CAT_SALAD
+	category = DISH_SALAD
 	time = 10 SECONDS
 
 /datum/crafting_recipe/food/kholodetz
@@ -68,7 +68,7 @@
 		/obj/item/food/grown/herbs = 1,
 	)
 	result = /obj/item/food/cake/kholodetz
-	category = CAT_MISCFOOD
+	category = DISH_UNCATEGORIZED
 	time = 10 SECONDS
 
 
@@ -83,7 +83,7 @@
 		/datum/reagent/consumable/blackpepper = 1,
 	)
 	result = /obj/item/food/christmas_ham/raw
-	category = CAT_MISCFOOD
+	category = DISH_UNCATEGORIZED
 	time = 5 SECONDS
 
 
@@ -96,7 +96,7 @@
 		/obj/item/food/red_caviar = 1,
 	)
 	result = /obj/item/food/sandwich/caviar_butterbrod
-	category = CAT_MISCFOOD
+	category = DISH_UNCATEGORIZED
 	added_foodtypes = SEAFOOD
 	time = 5 SECONDS
 
@@ -109,7 +109,7 @@
 		/obj/item/food/moonfish_caviar = 1,
 	)
 	result = /obj/item/food/sandwich/caviar_butterbrod
-	category = CAT_MISCFOOD
+	category = DISH_UNCATEGORIZED
 	added_foodtypes = SEAFOOD
 	time = 5 SECONDS
 
@@ -121,7 +121,7 @@
 		/datum/reagent/consumable/nutriment/fat/oil/corn = 5,
 	)
 	result = /obj/item/food/sweets/candy_cane
-	category = CAT_MISCFOOD
+	category = DISH_UNCATEGORIZED
 	time = 5 SECONDS
 
 /datum/crafting_recipe/food/candy_cane_mint
@@ -132,5 +132,5 @@
 		/datum/reagent/consumable/nutriment/fat/oil/corn = 5,
 	)
 	result = /obj/item/food/sweets/candy_cane
-	category = CAT_MISCFOOD
+	category = DISH_UNCATEGORIZED
 	time = 5 SECONDS

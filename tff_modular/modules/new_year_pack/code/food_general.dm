@@ -10,7 +10,7 @@
 		/datum/reagent/consumable/nutriment/protein = 4,
 		/datum/reagent/consumable/mayonnaise = 5,
 	)
-	foodtypes = VEGETABLES | MEAT | BREAKFAST
+	foodtypes = VEGETABLES | MEAT | BREAKFAST | EGG
 	tastes = list(
 		"new year" = 2,
 		"approaching pancreatitis" = 1,
@@ -49,7 +49,7 @@
 		/datum/reagent/consumable/nutriment/protein = 5,
 		/datum/reagent/consumable/mayonnaise = 5,
 	)
-	foodtypes = VEGETABLES | MEAT | BREAKFAST | SEAFOOD
+	foodtypes = VEGETABLES | MEAT | BREAKFAST | SEAFOOD | EGG
 	tastes = list(
 		"crab meat" = 2,
 		"eggs" = 1,
@@ -69,7 +69,7 @@
 		/datum/reagent/consumable/nutriment/protein = 4,
 		/datum/reagent/consumable/mayonnaise = 6,
 	)
-	foodtypes = MEAT | VEGETABLES | BREAKFAST | SEAFOOD
+	foodtypes = MEAT | VEGETABLES | BREAKFAST | SEAFOOD | EGG
 	tastes = list(
 		"new year rush" = 1,
 		"mayonnaise" = 1,
