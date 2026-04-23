@@ -4,7 +4,7 @@
 	gain_text = ""
 	lose_text = ""
 	medical_record_text = "They've seen the secrets of the cosmos."
-	icon = FA_ICON_RECEIPT
+	icon = FA_ICON_SHUTTLE_SPACE
 
 /datum/quirk/touched_by_cosmos/add(client/client_source)
 	var/mob/living/carbon/human/human_holder = quirk_holder
