@@ -57,3 +57,9 @@
 
 /obj/projectile/bullet/incendiary/fire
 	armor_flag = FIRE
+
+/obj/item/melee/nabber_blade
+	damage = 15
+
+/obj/projectile/plasma/adv/bloodred
+	damage = 24
