@@ -3,7 +3,7 @@
 	config_tag = "Vampire"
 	pref_flag = ROLE_VAMPIRE
 	preview_antag_datum = /datum/antagonist/vampire
-	weight = 10
+	weight = 6
 	max_antag_cap = 4
 	min_pop = 15
 
@@ -22,7 +22,7 @@
 	preview_antag_datum = /datum/antagonist/vampire
 	pref_flag = ROLE_VAMPIRIC_ACCIDENT
 	midround_type = LIGHT_MIDROUND
-	weight = 10
+	weight = 6
 	repeatable = TRUE
 	max_antag_cap = 4
 	min_pop = 15
