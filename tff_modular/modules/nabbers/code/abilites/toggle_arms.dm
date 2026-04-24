@@ -5,7 +5,7 @@
 	icon_state = "mantis_arm_r"
 	item_flags = ABSTRACT | DROPDEL
 	w_class = WEIGHT_CLASS_HUGE
-	force = 25
+	force = 15
 	throwforce = 0 //Просто предохранимся
 	throw_range = 0
 	throw_speed = 0
