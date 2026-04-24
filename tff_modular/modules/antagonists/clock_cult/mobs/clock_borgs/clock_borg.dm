@@ -18,7 +18,7 @@
 		qdel(internal_clock_slab)
 	mind.add_antag_datum(/datum/antagonist/clock_cultist)
 
-/mob/living/silicon/robot/proc/clockwork_act(mob/user)
+/mob/living/silicon/robot/slab_act(mob/user, obj/item/clockwork/clockwork_slab/slab)
 	if(user == src)
 		return FALSE
 	if(!opened)

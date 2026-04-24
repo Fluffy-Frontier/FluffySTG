@@ -257,4 +257,17 @@ GLOBAL_LIST_INIT(clockwork_slabs, list())
 			// Assign the quickbind
 			bind_spell(living_user, scripture, positions.Find(position))
 
+/obj/item/clockwork/clockwork_slab/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(invoking_scripture)
+		return FALSE
+	if(SHOULD_SKIP_INTERACTION(interacting_with, src, user))
+		return NONE // lets us put things in bags without trying to emag them
+	if(interacting_with.slab_act(user, src))
+		SSblackbox.record_feedback("tally", "atom_emagged", 1, interacting_with.type)
+		return ITEM_INTERACT_SUCCESS
+	return NONE // In a perfect world this would be blocking, but this is not a perfect world
+
+/atom/proc/slab_act(mob/user, obj/item/clockwork/clockwork_slab/slab)
+	return (SEND_SIGNAL(src, COMSIG_ATOM_SLAB_ACT, user, slab))
+
 #undef MAXIMUM_QUICKBIND_SLOTS
