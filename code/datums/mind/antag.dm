@@ -73,7 +73,7 @@
 /// Remove the antagonists that should not persist when being borged
 /datum/mind/proc/remove_antags_for_borging()
 	remove_antag_datum(/datum/antagonist/cult)
-
+	remove_antag_datum(/datum/antagonist/clock_cultist)
 	var/datum/antagonist/rev/revolutionary = has_antag_datum(/datum/antagonist/rev)
 	revolutionary?.remove_revolutionary()
 
