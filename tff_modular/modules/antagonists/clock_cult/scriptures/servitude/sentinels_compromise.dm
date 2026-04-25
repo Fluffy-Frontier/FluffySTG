@@ -50,9 +50,9 @@
 	healed_mob.adjust_stamina_loss(-HEALED_PER_LOOP)
 	healed_mob.reagents.remove_reagent(/datum/reagent/water/holywater, HEALED_PER_LOOP)
 	if(isclockgolem(invoker))
-		invoker.adjust_fire_loss(10)
+		invoker.adjust_fire_loss(healed_amount * 0.5)
 	else
-		invoker.adjust_tox_loss(10)
+		invoker.adjust_tox_loss(healed_amount * 0.5)
 	return TRUE
 
 #undef HEALED_PER_LOOP
