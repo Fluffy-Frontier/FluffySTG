@@ -1,8 +1,8 @@
 ///how much do we heal per do_after() loop
-#define HEALED_PER_LOOP 10
+#define HEALED_PER_LOOP 20
 /datum/scripture/slab/sentinels_compromise
 	name = "Sentinel's Compromise"
-	desc = "Continuously heals non-toxin damage on a target then converts 80% of it back as toxin damage to you."
+	desc = "Heals of non-toxin damage on a target then converts 50% of it back as toxin damage to you."
 	tip = "Works well with Properity Prisms. Cannot be used by cogscarabs."
 	power_cost = STANDARD_CELL_CHARGE * 0.15
 	cogs_required = 1
@@ -40,11 +40,7 @@
 	healed_mob.blood_volume = BLOOD_VOLUME_NORMAL
 	healed_mob.set_nutrition(NUTRITION_LEVEL_FULL)
 	healed_mob.bodytemperature = BODYTEMP_NORMAL
-	if(apply_heal(healed_mob))
-		while(do_after(invoker, invocation_time, healed_mob))
-			if(!apply_heal(healed_mob)) //im sure theres a better way to do this but im too tired
-				break
-
+	apply_heal(healed_mob)
 	clockwork_say(invoker, text2ratvar("Wounds will close."), TRUE)
 	new /obj/effect/temp_visual/heal(get_turf(healed_mob), "#1E8CE1")
 	return TRUE
@@ -53,8 +49,10 @@
 	var/healed_amount = -healed_mob.heal_ordered_damage(HEALED_PER_LOOP, list(BRUTE, BURN, OXY, BRAIN))
 	healed_mob.adjust_stamina_loss(-HEALED_PER_LOOP)
 	healed_mob.reagents.remove_reagent(/datum/reagent/water/holywater, HEALED_PER_LOOP)
-	if(!invoker.adjust_tox_loss(healed_amount * 0.8, TRUE, TRUE) || invoker.get_tox_loss() > 80 || healed_amount < HEALED_PER_LOOP)
-		return FALSE
+	if(isclockgolem(invoker))
+		invoker.adjust_fire_loss(10)
+	else
+		invoker.adjust_tox_loss(10)
 	return TRUE
 
 #undef HEALED_PER_LOOP

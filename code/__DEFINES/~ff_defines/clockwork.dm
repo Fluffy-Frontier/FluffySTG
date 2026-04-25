@@ -4,6 +4,8 @@
 #define iscogscarab(checked) (istype(checked, /mob/living/basic/drone/cogscarab))
 /// is something an eminence
 #define iseminence(checked) (istype(checked, /mob/living/eminence))
+/// is something a clockgolem
+#define isclockgolem(A) (is_species(A, /datum/species/clockwork_golem))
 
 #define is_safe_level(z) SSmapping.level_trait(z, ZTRAIT_FORCED_SAFETY)
 ///Set weakref_var to null if it fails to give a resolve() value, resolver should be set to the var looking to resolve the weakref

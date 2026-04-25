@@ -53,8 +53,8 @@
 	if(!eminence)
 		var/list/mob/dead/observer/candidates = SSpolling.poll_ghost_candidates(
 			"Do you want to play as the eminence",
-			check_jobban = ROLE_CLOCK_CULTIST,
-			role = ROLE_CLOCK_CULTIST,
+			check_jobban = ROLE_MIDROUND_CLOCK_CULTIST,
+			role = ROLE_SENTIENCE,
 			poll_time = 10 SECONDS,
 			alert_pic = /mob/living/eminence,
 			role_name_text = "eminence"

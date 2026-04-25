@@ -157,7 +157,7 @@
 	attack_verb_simple = list("attack", "slash", "cut", "tear", "gore")
 	attack_verb_continuous = list("attacks", "slashes", "cuts", "tears", "gores")
 	clockwork_desc = "Enemies and mechs will be struck with a powerful electromagnetic pulse while you are on bronze tiles, with a cooldown. It seems to only be able to parry melee attacks."
-	block_chance = 20
+	block_chance = 50
 	COOLDOWN_DECLARE(emp_cooldown)
 
 /obj/item/clockwork/weapon/brass_sword/mob_hit_effect(mob/living/target, mob/living/user, thrown)

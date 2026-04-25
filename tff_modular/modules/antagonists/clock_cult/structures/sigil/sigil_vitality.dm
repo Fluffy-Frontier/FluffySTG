@@ -81,7 +81,10 @@
 		return
 
 	affected_mob.Paralyze(1 SECONDS)
-	affected_mob.adjust_tox_loss(15)
+	if(affected_mob.can_adjust_tox_loss(15))
+		affected_mob.adjust_tox_loss(15)
+	else
+		affected_mob.adjust_fire_loss(15)
 	playsound(loc, 'sound/effects/magic/clockwork/ratvar_attack.ogg', 40)
 	if((affected_mob.stat == DEAD))
 		playsound(loc, 'sound/effects/magic/exit_blood.ogg', 60)

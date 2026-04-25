@@ -1,7 +1,7 @@
 #define FIRE_DELAY (2 SECONDS)
-#define FIRE_RANGE 4
-#define BASE_DAMAGE 8
-#define MINIMUM_DAMAGE 4
+#define FIRE_RANGE 6
+#define BASE_DAMAGE 10
+#define MINIMUM_DAMAGE 10
 #define DAMAGE_FALLOFF 1
 #define SHOOT_POWER_USE 5
 
