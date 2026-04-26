@@ -57,3 +57,10 @@
 
 /obj/projectile/bullet/incendiary/fire
 	armor_flag = FIRE
+
+/obj/item/melee/implantarmblade/early
+	force = 8
+
+/obj/item/melee/implantarmblade/energy
+	force = 15
+
