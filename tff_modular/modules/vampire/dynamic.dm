@@ -21,6 +21,7 @@
 	config_tag = "Vampiric Accident"
 	preview_antag_datum = /datum/antagonist/vampire
 	pref_flag = ROLE_VAMPIRIC_ACCIDENT
+	jobban_flag = ROLE_VAMPIRE
 	midround_type = LIGHT_MIDROUND
 	weight = 6
 	repeatable = TRUE
@@ -41,6 +42,7 @@
 	config_tag = "Vampiric LateJoin"
 	preview_antag_datum = /datum/antagonist/vampire
 	pref_flag = ROLE_VAMPIRE_LATEJOIN
+	jobban_flag = ROLE_VAMPIRE
 	weight = 10
 	repeatable = TRUE
 	max_antag_cap = 4

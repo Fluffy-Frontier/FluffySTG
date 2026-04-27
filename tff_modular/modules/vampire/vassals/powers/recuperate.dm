@@ -17,7 +17,7 @@
 	if(!.)
 		return FALSE
 
-	if(owner.stat >= DEAD || owner.incapacitated(IGNORE_RESTRAINTS))
+	if(owner.stat >= DEAD || INCAPACITATED_IGNORING(owner, INCAPABLE_RESTRAINTS))
 		owner.balloon_alert(owner, "you are incapacitated...")
 		return FALSE
 
@@ -68,7 +68,7 @@
 /datum/action/cooldown/vampire/recuperate/continue_active()
 	if(QDELETED(owner) || owner.stat == DEAD)
 		return FALSE
-	if(owner.incapacitated(IGNORE_RESTRAINTS))
+	if(INCAPACITATED_IGNORING(owner, INCAPABLE_RESTRAINTS))
 		owner.balloon_alert(owner, "too exhausted...")
 		return FALSE
 	return TRUE

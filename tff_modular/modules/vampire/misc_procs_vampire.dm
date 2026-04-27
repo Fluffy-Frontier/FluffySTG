@@ -398,7 +398,7 @@
 /proc/get_zoomed_view(view, zoom_amt)
 	var/view_x
 	var/view_y
-	if(IS_SAFE_NUM(view))
+	if(IS_FINITE(view))
 		return view + zoom_amt
 	else
 		var/list/viewrangelist = splittext(view, "x")
@@ -420,25 +420,6 @@
 		"jumpsuit_style" = jumpsuit_style,
 	)
 
-/mob/proc/incapacitated(flags)
-	return
-
-/mob/living/incapacitated(flags)
-	if(!(flags & IGNORE_RESTRAINTS) && HAS_TRAIT(src, TRAIT_RESTRAINED))
-		return TRUE
-	if(!(flags & IGNORE_GRAB) && pulledby?.grab_state >= GRAB_AGGRESSIVE)
-		return TRUE
-	if(!(flags & IGNORE_STASIS) && HAS_TRAIT(src, TRAIT_STASIS))
-		return TRUE
-
-	if(flags & IGNORE_SOFTCRIT)
-		if((stat <= SOFT_CRIT) && !(HAS_TRAIT_NOT_FROM(src, TRAIT_INCAPACITATED, STAT_TRAIT)))
-			return FALSE
-
-	if(HAS_TRAIT(src, TRAIT_INCAPACITATED))
-		return TRUE
-
-	return FALSE
 
 /mob/living/proc/blood_particles(amount = rand(1, 3), angle = rand(0,360), min_deviation = -30, max_deviation = 30, min_pixel_z = 0, max_pixel_z = 6)
 	if(QDELETED(src) || !isturf(loc) || !blood_volume || HAS_TRAIT(src, TRAIT_NOBLOOD))

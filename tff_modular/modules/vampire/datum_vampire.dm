@@ -779,7 +779,7 @@
 	if(initial(new_limb.burn_modifier) < 1)
 		new_limb.burn_modifier /= initial(new_limb.burn_modifier)
 
-	if(new_limb.body_zone in BODY_ZONES_LIMBS)
+	if(new_limb.body_zone in GLOB.limb_zones)
 		var/obj/item/bodypart/user_left_hand = owner.get_bodypart(BODY_ZONE_L_ARM)
 		var/obj/item/bodypart/user_right_hand = owner.get_bodypart(BODY_ZONE_R_ARM)
 		user_left_hand.unarmed_damage_low = 5 + current_damage_bonus
@@ -798,7 +798,7 @@
 	if(initial(lost_limb.burn_modifier) < 1)
 		lost_limb.burn_modifier *= initial(lost_limb.burn_modifier)
 
-	if(lost_limb.body_zone in BODY_ZONES_LIMBS)
+	if(lost_limb.body_zone in GLOB.limb_zones)
 		// safety measure in case we ever accidentally fuck up the math or something
 		lost_limb.unarmed_damage_low = max(lost_limb.unarmed_damage_low - current_damage_bonus, initial(lost_limb.unarmed_damage_low))
 		lost_limb.unarmed_damage_high = max(lost_limb.unarmed_damage_high - current_damage_bonus, initial(lost_limb.unarmed_damage_high))

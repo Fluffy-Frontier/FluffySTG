@@ -67,7 +67,7 @@
 /datum/action/cooldown/vampire/gohome/proc/teleport_to_coffin(mob/living/carbon/user)
 	var/turf/current_turf = get_turf(owner)
 	// If we aren't in the dark, anyone watching us will cause us to drop out stuff
-	if(GET_SIMPLE_LUMCOUNT(current_turf) >= 0.2)
+	if(current_turf.get_lumcount() >= 0.2)
 		for(var/mob/living/watcher in oviewers(world.view, get_turf(owner)) - owner)
 			if(vampiredatum_power.is_masq_watcher(watcher))
 				user.unequip_everything()

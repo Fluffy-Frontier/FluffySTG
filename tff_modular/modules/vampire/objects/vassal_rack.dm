@@ -52,7 +52,7 @@
 		to_chat(user, span_announce("* Vampire Tip: Examine the vassal rack to understand how it functions!"))
 		return
 	// Default checks
-	if(!isliving(living_target) || !living_target.Adjacent(src) || living_target == user || !isliving(user) || has_buckled_mobs() || user.incapacitated() || living_target.buckled)
+	if(!isliving(living_target) || !living_target.Adjacent(src) || living_target == user || !isliving(user) || has_buckled_mobs() || user.incapacitated || living_target.buckled)
 		return
 	// Don't buckle Silicon to it please.
 	if(issilicon(living_target))

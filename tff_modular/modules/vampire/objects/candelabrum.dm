@@ -121,7 +121,7 @@
 
 /obj/structure/vampire/candelabrum/proc/distance_toggle(datum/source, atom/location, control, params, mob/user)
 	SIGNAL_HANDLER
-	if(!anchored || user.incapacitated() || user.get_active_held_item() || !IS_VAMPIRE(user) || user.Adjacent(src))
+	if(!anchored || user.incapacitated || user.get_active_held_item() || !IS_VAMPIRE(user) || user.Adjacent(src))
 		return
 	var/list/modifiers = params2list(params)
 	user.balloon_alert_to_viewers("gestures dramatically")

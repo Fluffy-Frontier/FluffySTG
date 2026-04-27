@@ -95,7 +95,7 @@
 	var/step_delay = 1.5 SECONDS
 
 /datum/status_effect/summoned/on_creation(mob/living/new_owner, set_duration, mob/living/vampire)
-	if(IS_SAFE_NUM(set_duration))
+	if(IS_FINITE(set_duration))
 		duration = set_duration
 	source_vampire = vampire
 	return ..()

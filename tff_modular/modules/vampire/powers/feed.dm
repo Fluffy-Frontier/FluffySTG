@@ -72,7 +72,7 @@
 	if(currently_feeding)
 		var/turf/our_turf = get_turf(owner)
 		var/turf/target_turf = get_turf(target)
-		var/is_dark = min(GET_SIMPLE_LUMCOUNT(our_turf), GET_SIMPLE_LUMCOUNT(target_turf)) <= 0.2
+		var/is_dark = min(our_turf.get_lumcount(), target_turf.get_lumcount()) <= 0.2
 
 		var/notice_range = silent_feed ? FEED_SILENT_NOTICE_RANGE : FEED_LOUD_NOTICE_RANGE
 		var/list/potential_watchers = oviewers(notice_range, target) | oviewers(notice_range, owner)
@@ -82,7 +82,7 @@
 			if(is_dark && !watcher.Adjacent(owner) && !watcher.Adjacent(target))
 				continue
 
-			if(!watcher.incapacitated(IGNORE_RESTRAINTS))
+			if(!INCAPACITATED_IGNORING(watcher, INCAPABLE_RESTRAINTS))
 				watcher.face_atom(owner)
 			watcher.do_alert_animation(watcher)
 			to_chat(watcher, span_warning("[owner] is biting [target]'s neck!"), type = MESSAGE_TYPE_WARNING)

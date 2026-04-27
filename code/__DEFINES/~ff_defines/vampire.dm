@@ -228,21 +228,6 @@
 #define LANGUAGE_VAMPIRE "vampire"
 #define LANGUAGE_VASSAL "vassal"
 
-/// Similar to turf.get_lumcount(), but it checks for soft lighting first, and just assumes the lumcount is 0 if it is.
-#define GET_SIMPLE_LUMCOUNT(turf) (turf.is_softly_lit() ? 0 : turf.get_lumcount())
-
-//Incapacitated status effect flags
-/// If the incapacitated status effect will ignore a mob in restraints (handcuffs)
-#define IGNORE_RESTRAINTS (1<<0)
-/// If the incapacitated status effect will ignore a mob in stasis (stasis beds)
-#define IGNORE_STASIS (1<<1)
-/// If the incapacitated status effect will ignore a mob being agressively grabbed
-#define IGNORE_GRAB (1<<2)
-/// If the incapacited status effect will ignore a mob in softcrit
-#define IGNORE_SOFTCRIT (1<<3)
-#define IS_SAFE_NUM(a) IS_FINITE(a)
-
-#define BODY_ZONES_LIMBS list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 #define MOVABLE_PHYSICS_PRECISION 0.01
 #define MOVABLE_PHYSICS_MINIMAL_VELOCITY 1
 

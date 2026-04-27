@@ -203,7 +203,7 @@
 /obj/effect/client_image_holder/phobetor/proc/check_location_seen(atom/subject, turf/target_turf)
 	if(!isturf(target_turf))
 		return FALSE
-	if(GET_SIMPLE_LUMCOUNT(target_turf) <= 0.2)
+	if(target_turf.get_lumcount() <= 0.2)
 		return FALSE
 	for(var/mob/living/nearby_viewers in viewers(target_turf) - subject)
 		if(!nearby_viewers.mind || !nearby_viewers.client || nearby_viewers.client?.is_afk())
