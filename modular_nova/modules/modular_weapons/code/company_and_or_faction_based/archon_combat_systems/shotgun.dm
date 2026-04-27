@@ -267,10 +267,10 @@
 		booster_action = /datum/action/item_action/booster/doublebarrel_super, \
 		base_damage_mult = 1.1, \
 		base_speed_mult = 1.1, \
-		base_fire_delay = 0.4 SECONDS, \
+		base_fire_delay = 1 SECONDS, \
 		amped_damage_mult = 1.15, \
 		amped_speed_mult = 1.25, \
-		amped_fire_delay = 0.6 SECONDS, \
+		amped_fire_delay = 1.2 SECONDS, \
 	)
 	// TFF EDIT END
 	AddComponent(/datum/component/scope, range_modifier = 2)

@@ -13,7 +13,7 @@
 	exposed_wound_bonus = 5
 
 /obj/projectile/bullet/shotgun_slug
-	damage = 42
+	damage = 40
 	wound_bonus = 5
 	exposed_wound_bonus = 10
 
@@ -21,7 +21,7 @@
 	projectile_damage_multiplier = 1.2
 
 /obj/projectile/bullet/shotgun_slug/milspec
-	damage = 42
+	damage = 40
 	wound_bonus = 10
 	exposed_wound_bonus = 10
 
@@ -34,7 +34,7 @@
 	variance = 15
 
 /obj/projectile/bullet/pellet/shotgun_buckshot/magnum
-	damage = 8
+	damage = 7
 	exposed_wound_bonus = 10
 
 /obj/projectile/bullet/pellet/shotgun_buckshot/flechette_nova
@@ -50,7 +50,7 @@
 	damage = 7
 
 /obj/item/ammo_casing/shotgun/express
-	pellets = 15 // 4 * 15 for 60 damage, with less spread then buckshot.
+	pellets = 15
 	variance = 22
 
 /obj/projectile/bullet/pellet/shotgun_buckshot/express

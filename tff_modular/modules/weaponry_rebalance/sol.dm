@@ -4,11 +4,17 @@
 /obj/item/gun/ballistic/shotgun/riot/sol/super
 	fire_delay = 0.75 SECONDS
 
+/obj/item/gun/ballistic/shotgun/doublebarrel
+	fire_delay = 1 SECONDS
+
+/obj/item/gun/ballistic/shotgun/doublebarrel
+	pb_knockback = 2
+
 /obj/item/gun/ballistic/shotgun/doublebarrel/super/on_booster_toggle(datum/component/source, mob/user, amped)
 	if(amped)
 		fire_sound = amped_fire_sound
 		recoil = amped_recoil
-		pb_knockback = 4
+		pb_knockback = 3
 		balloon_alert(user, "barrels amped")
 	else
 		fire_sound = base_fire_sound
