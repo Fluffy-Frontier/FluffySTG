@@ -1,6 +1,6 @@
 GLOBAL_DATUM(current_eminence, /mob/living/eminence) //set to the current eminence, if more then one are somehow spawned then this will remain equal to the first created one
 
-/mob/living/eminence //yes this should be a camera mob, that will not work because cameras are deaf
+/mob/living/eminence
 	name = "Eminence"
 	real_name = "Eminence"
 	desc = "An entity forever bound to Ratvar, acting upon his will."
@@ -18,7 +18,7 @@ GLOBAL_DATUM(current_eminence, /mob/living/eminence) //set to the current eminen
 	sight = SEE_SELF
 	status_flags = NONE
 	incorporeal_move = INCORPOREAL_MOVE_BASIC
-	initial_language_holder = /datum/language_holder/universal //lesser god, they CAN understand you
+	initial_language_holder = /datum/language_holder/clockmob
 	hud_possible = list(ANTAG_HUD)
 
 	//slight orange
@@ -44,7 +44,6 @@ GLOBAL_DATUM(current_eminence, /mob/living/eminence) //set to the current eminen
 	ADD_TRAIT(src, TRAIT_GODMODE, INNATE_TRAIT)
 	ADD_TRAIT(src, TRAIT_RADIMMUNE, INNATE_TRAIT)
 	ADD_TRAIT(src, TRAIT_NOFIRE, INNATE_TRAIT)
-	grant_all_languages(source = LANGUAGE_MIND) //this is appearently an issue, im too lazy to figure it out so im just gonna do this
 
 /mob/living/eminence/Destroy()
 	if(GLOB.current_eminence == src)

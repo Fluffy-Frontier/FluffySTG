@@ -6,7 +6,7 @@
 	clock_modules = list(/obj/item/clock_module/abscond,
 		/obj/item/clock_module/sentinels_compromise,
 		/obj/item/clock_module/prosperity_prism,
-		/obj/item/clock_module/vanguard)
+		/obj/item/clockwork/weapon/brass_sword)
 
 /obj/item/robot_model/engineering
 	clock_modules = list(/obj/item/clock_module/abscond,
@@ -19,11 +19,11 @@
 	clock_modules = list(/obj/item/clock_module/abscond,
 		/obj/item/clockwork/weapon/brass_spear,
 		/obj/item/clock_module/ocular_warden,
-		/obj/item/clock_module/vanguard)
+		/obj/item/clockwork/weapon/brass_sword)
 
 /obj/item/robot_model/peacekeeper
 	clock_modules = list(/obj/item/clock_module/abscond,
-		/obj/item/clock_module/vanguard,
+		/obj/item/clockwork/weapon/brass_sword,
 		/obj/item/clock_module/kindle,
 		/obj/item/clock_module/sigil_submission)
 
@@ -31,17 +31,17 @@
 	clock_modules = list(/obj/item/clock_module/abscond,
 		/obj/item/clock_module/sigil_submission,
 		/obj/item/clock_module/kindle,
-		/obj/item/clock_module/vanguard,
+		/obj/item/clockwork/weapon/brass_sword,
 		/obj/item/clockwork/weapon/brass_spear)
 
 /obj/item/robot_model/clown
 	clock_modules = list(/obj/item/clock_module/abscond,
-		/obj/item/clock_module/vanguard,
+		/obj/item/clockwork/weapon/brass_sword,
 		/obj/item/clockwork/weapon/brass_battlehammer)
 
 /obj/item/robot_model/service
 	clock_modules = list(/obj/item/clock_module/abscond,
-		/obj/item/clock_module/vanguard,
+		/obj/item/clockwork/weapon/brass_sword,
 		/obj/item/clock_module/sigil_submission,
 		/obj/item/clock_module/kindle,
 		/obj/item/clock_module/sentinels_compromise,
@@ -49,7 +49,7 @@
 
 /obj/item/robot_model/miner
 	clock_modules = list(/obj/item/clock_module/abscond,
-		/obj/item/clock_module/vanguard,
+		/obj/item/clockwork/weapon/brass_sword,
 		/obj/item/clock_module/ocular_warden,
 		/obj/item/clock_module/sentinels_compromise)
 

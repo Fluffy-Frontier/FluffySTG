@@ -1,7 +1,8 @@
 /datum/language_holder/clockmob
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 								/datum/language/ratvar = list(LANGUAGE_ATOM))
-	spoken_languages = list(/datum/language/ratvar = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/ratvar = list(LANGUAGE_ATOM),
+							/datum/language/common = list(LANGUAGE_ATOM))
 
 // Thought this language code was cool as fuck, so I'm going with it
 // For any other language nerds: https://pastebin.com/ngFMZHNV

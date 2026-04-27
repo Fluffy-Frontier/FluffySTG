@@ -1,4 +1,4 @@
-#define MARAUDER_SHIELD_MAX 5
+#define MARAUDER_SHIELD_MAX 7
 #define WELDER_REPAIR_AMOUNT 25
 /mob/living/basic/clockwork_marauder
 	name = "clockwork marauder"
