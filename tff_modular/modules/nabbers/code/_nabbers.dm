@@ -62,7 +62,7 @@
 	placeholder_lore = "https://fluffy-frontier.ru/osobye-rasy"
 
 	species_language_holder = /datum/language_holder/nabber
-	language_prefs_whitelist = list(/datum/language/nabber)
+	language_prefs_whitelist = list(/datum/language/nabber = TRUE)
 
 	/// Наши продвинутные боевые руки
 	var/datum/action/cooldown/toggle_arms/arms
@@ -77,10 +77,6 @@
 
 /datum/species/nabber/on_species_gain(mob/living/carbon/human/C, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
-
-#ifdef UNIT_TESTS
-	return //TODO: исправить это недоразумение, т.к возникают сильные проблемы с create_and_destroy юнит тестом
-#endif
 
 	arms = new(C)
 	arms.Grant(C)
@@ -101,10 +97,6 @@
 
 /datum/species/nabber/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()
-
-#ifdef UNIT_TESTS
-	return
-#endif
 
 	QDEL_NULL(arms)
 	QDEL_NULL(camouflage)
