@@ -76,7 +76,7 @@
 	icon_state = "cogscarab_shell"
 	mob_name = "cogscarab"
 	mob_type = /mob/living/basic/drone/cogscarab
-	role_ban = ROLE_CLOCK_CULTIST
+	role_ban = ROLE_MIDROUND_CLOCK_CULTIST
 	prompt_name = "a cogscarab"
 	you_are_text = "You are a cogscarab!"
 	flavour_text = "You are a cogscarab, a tiny building construct of Ratvar. While you're weak and can't leave Reebe, \

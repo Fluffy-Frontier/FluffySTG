@@ -71,7 +71,7 @@
 	icon_state = "ratvarian_spear0"
 	embed_type = /datum/embedding/brass_spear
 	throwforce = 40
-	force = 12.5
+	force = 10
 	armour_penetration = 40
 	block_chance = 15
 	clockwork_desc = "Can be summoned back to its last holder every 10 seconds if they are standing on bronze."
@@ -190,14 +190,12 @@
 /obj/item/clockwork/weapon/brass_sword/proc/send_message(mob/living/target)
 	to_chat(target, span_brass("[src] glows, indicating the next attack will disrupt electronics of the target."))
 
-// фу...
 /obj/item/gun/ballistic/bow/clockwork
 	name = "brass bow"
-	desc = "A bow made from brass and other components that you can't quite understand. It glows with a deep energy and frabricates arrows by itself. \
-			It's bolts destabilize hit structures, making them lose additional integrity."
-	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/clockwork_weapons.dmi'
-	lefthand_file = 'tff_modular/modules/antagonists/clock_cult/icons/mob/clockwork_lefthand.dmi'
-	righthand_file = 'tff_modular/modules/antagonists/clock_cult/icons/mob/clockwork_righthand.dmi'
+	desc = "A bow made from brass and other components that you can't quite understand. It glows with a deep energy and frabricates arrows by itself."
+	icon = 'modular_nova/modules/clock_cult/icons/weapons/clockwork_weapons.dmi'
+	lefthand_file = 'modular_nova/modules/clock_cult/icons/weapons/clockwork_lefthand.dmi'
+	righthand_file = 'modular_nova/modules/clock_cult/icons/weapons/clockwork_righthand.dmi'
 	icon_state = "bow_clockwork_unchambered_undrawn"
 	inhand_icon_state = "clockwork_bow"
 	base_icon_state = "bow_clockwork"
@@ -205,7 +203,7 @@
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/bow/clockwork
 	/// Time between bolt recharges
 	var/recharge_time = 1.5 SECONDS
-	var/empowered = FALSE
+	/// Typecache of valid turfs to have the weapon's special effect on
 	var/static/list/effect_turf_typecache_bronze = typecacheof(/turf/open/floor/bronze)
 	var/static/list/effect_turf_typecache_void = typecacheof(/turf/open/indestructible/reebe_void)
 	var/static/list/effect_turf_typecache_engine = typecacheof(/turf/open/floor/engine/clockwork)
@@ -226,6 +224,7 @@
 /obj/item/gun/ballistic/bow/clockwork/shoot_live_shot(mob/living/user, pointblank, atom/pbtarget, message)
 	. = ..()
 	var/turf/gotten_turf = get_turf(user.loc)
+
 	if(is_type_in_typecache(gotten_turf, effect_turf_typecache_bronze) || is_type_in_typecache(gotten_turf, effect_turf_typecache_void) || is_type_in_typecache(gotten_turf, effect_turf_typecache_engine) || is_type_in_typecache(gotten_turf, effect_turf_typecache_reebe))
 		recharge_time = 0.75 SECONDS
 
@@ -236,17 +235,17 @@
 	if(drawn || !chambered)
 		return
 
-	if(!do_after(user, 0.5 SECONDS * (iscogscarab(user) ? COGSCARAB_BOW_DRAW_TIME_MULT : 1), src))
+	if(!do_after(user, 0.5 SECONDS, src))
 		return
 
 	to_chat(user, span_notice("You draw back the bowstring."))
 	drawn = TRUE
-	playsound(src, 'sound/items/weapons/draw_bow.ogg', 75, 0) //gets way too high pitched if the freq varies
+	playsound(src, 'modular_nova/modules/tribal_extended/sound/sound_weapons_bowdraw.ogg', 75, 0) //gets way too high pitched if the freq varies
 	update_icon()
 
 /// Recharges a bolt, done after the delay in shoot_live_shot
 /obj/item/gun/ballistic/bow/clockwork/proc/recharge_bolt()
-	var/obj/item/ammo_casing/caseless/arrow/clockbolt/bolt = new
+	var/obj/item/ammo_casing/arrow/clockbolt/bolt = new
 	magazine.give_round(bolt)
 	chambered = bolt
 	update_icon()
@@ -259,36 +258,22 @@
 	icon_state = "[base_icon_state]_[chambered ? "chambered" : "unchambered"]_[drawn ? "drawn" : "undrawn"]"
 
 /obj/item/ammo_box/magazine/internal/bow/clockwork
-	ammo_type = /obj/item/ammo_casing/caseless/arrow/clockbolt
+	ammo_type = /obj/item/ammo_casing/arrow/clockbolt
 	start_empty = FALSE
 
-/obj/item/ammo_casing/caseless/arrow/clockbolt
+/obj/item/ammo_casing/arrow/clockbolt
 	name = "energy bolt"
 	desc = "An arrow made from a strange energy."
-	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/ammo.dmi'
+	icon = 'modular_nova/modules/clock_cult/icons/weapons/ammo.dmi'
 	icon_state = "arrow_redlight"
 	projectile_type = /obj/projectile/energy/clockbolt
 
 /obj/projectile/energy/clockbolt
 	name = "energy bolt"
-	icon = 'tff_modular/modules/antagonists/clock_cult/icons/obj/projectiles.dmi'
+	icon = 'modular_nova/modules/clock_cult/icons/projectiles.dmi'
 	icon_state = "arrow_energy"
 	damage = 35
 	damage_type = BURN
-
-//double damage to non clockwork structures and machines(if we rework reebe itself this will no longer be needed)
-/obj/projectile/energy/clockbolt/on_hit(atom/target, blocked, pierce_hit)
-	if(ismob(target))
-		var/mob/mob_target = target
-		if(IS_CLOCK(mob_target)) //friendly fire is bad
-			return
-
-	. = ..()
-	if(!.)
-		return
-
-	if(!QDELETED(target) && (istype(target, /obj/structure) || istype(target, /obj/machinery)) && !istype(target, /obj/structure/destructible/clockwork))
-		target.update_integrity(target.get_integrity() - 25)
 
 /obj/item/gun/ballistic/rifle/lionhunter/clockwork
 	name = "brass rifle"

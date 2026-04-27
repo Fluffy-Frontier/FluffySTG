@@ -23,8 +23,8 @@
 /datum/scripture/marauder/invoke()
 	var/list/mob/dead/observer/candidates = SSpolling.poll_ghost_candidates(
 		"Do you want to play as a Clockwork Marauder?",
-		check_jobban = ROLE_CLOCK_CULTIST,
-		role = ROLE_CLOCK_CULTIST,
+		check_jobban = ROLE_MIDROUND_CLOCK_CULTIST,
+		role = ROLE_SENTIENCE,
 		poll_time = 10 SECONDS,
 		ignore_category = POLL_IGNORE_CONSTRUCT,
 		alert_pic = /mob/living/basic/clockwork_marauder,

@@ -31,7 +31,7 @@
 		brainmob?.mind?.add_antag_datum(/datum/antagonist/clock_cultist)
 
 /obj/item/mmi/posibrain/soul_vessel/activate(mob/user)
-	if(is_banned_from(user.ckey, list(JOB_CYBORG, ROLE_CLOCK_CULTIST)))
+	if(is_banned_from(user.ckey, list(JOB_CYBORG, ROLE_MIDROUND_CLOCK_CULTIST)))
 		return
 	return ..()
 
