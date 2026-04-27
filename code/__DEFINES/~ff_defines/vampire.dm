@@ -31,11 +31,10 @@
 #define DOAFTER_SOURCE_ARCHIVE_OF_THE_KINDRED "doafter_archive_of_the_kindred"
 
 /// Log Category
+#define LOG_CATEGORY_UPLINK_VAMPIRE "uplink-vampire"
 /// Logging for vampire powers unlocked.
 /proc/log_vampire_power(text, list/data)
 	logger.Log(LOG_CATEGORY_UPLINK_VAMPIRE, text, data)
-
-#define LOG_CATEGORY_UPLINK_VAMPIRE "uplink-vampire"
 
 /// Misc
 #define CAT_VAMPIRE "Vampire"
