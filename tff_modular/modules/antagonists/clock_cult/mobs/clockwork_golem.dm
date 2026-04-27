@@ -29,7 +29,7 @@
 	inherent_biotypes = MOB_HUMANOID|MOB_MINERAL
 	payday_modifier = 1.0
 	siemens_coeff = 0
-	no_equip_flags = ITEM_SLOT_MASK | ITEM_SLOT_OCLOTHING | ITEM_SLOT_GLOVES | ITEM_SLOT_FEET | ITEM_SLOT_ICLOTHING | ITEM_SLOT_SUITSTORE
+	no_equip_flags = ITEM_SLOT_HEAD | ITEM_SLOT_MASK | ITEM_SLOT_OCLOTHING | ITEM_SLOT_GLOVES | ITEM_SLOT_FEET | ITEM_SLOT_ICLOTHING | ITEM_SLOT_SUITSTORE
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC
 	sexes = FALSE
 	species_language_holder = /datum/language_holder/golem
