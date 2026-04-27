@@ -24,9 +24,10 @@
 	throw_range = 10
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
-/obj/item/book/kindred/Initialize(mapload)
+/obj/item/book/kindred/examine(mob/user)
 	. = ..()
-	AddComponent(/datum/component/stationloving)
+	if(IS_CURATOR(user))
+		. += span_awe("[src] can be used by curators to identify vampires. Use this on the suspect...")
 
 ///Attacking someone with the book.
 /obj/item/book/kindred/interact_with_atom(mob/target, mob/living/user, list/modifiers)

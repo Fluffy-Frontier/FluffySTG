@@ -210,7 +210,7 @@
 			continue
 		if(isanimal_or_basicmob(nearby_viewers))
 			continue
-		if(HAS_MIND_TRAIT(nearby_viewers, TRAIT_VAMPIRE_ALIGNED) || HAS_MIND_TRAIT(nearby_viewers, TRAIT_OCCULTIST))
+		if(HAS_MIND_TRAIT(nearby_viewers, TRAIT_VAMPIRE_ALIGNED))
 			continue
 		if(nearby_viewers.is_blind() || nearby_viewers.is_nearsighted_currently())
 			continue

@@ -176,6 +176,7 @@
 	// Clear husk and regenerate organs
 	carbon_user.cure_husk()
 	carbon_user.regenerate_organs()
+	carbon_user.cure_all_traumas(TRAUMA_RESILIENCE_LOBOTOMY)
 	ensure_brain_nonvital(carbon_user)
 
 	// Heal organs

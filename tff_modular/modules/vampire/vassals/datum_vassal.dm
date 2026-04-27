@@ -15,8 +15,13 @@
 	var/datum/team/vampire/vampire_team
 	/// List of Powers, like Vampires.
 	var/list/datum/action/powers = list()
-	/// A link to our team monitor, used to track our master.
-	// var/datum/component/team_monitor/monitor
+	/// Vassal Traits
+	var/list/traits_to_add = list(
+		TRAIT_VAMPIRE_ALIGNED,
+		TRAIT_NIGHT_VISION,
+		TRAIT_NOBREATH,
+		TRAIT_HARDLY_WOUNDED,
+	)
 
 /datum/antagonist/vassal/antag_panel_data()
 	return "Master : [master.owner.name]"
@@ -29,6 +34,7 @@
 	RegisterSignals(current_mob, list(COMSIG_MOB_LOGIN, COMSIG_MOVABLE_Z_CHANGED), PROC_REF(on_login))
 
 	current_mob.update_sight()
+	current_mob.add_traits(traits_to_add, TRAIT_VAMPIRE)
 
 	// HUD
 	add_team_hud(current_mob)
@@ -47,6 +53,7 @@
 
 	UnregisterSignal(current_mob, list(COMSIG_ATOM_EXAMINE, COMSIG_MOB_LOGIN, COMSIG_MOVABLE_Z_CHANGED))
 	current_mob.update_sight()
+	current_mob.remove_traits(traits_to_add, TRAIT_VAMPIRE)
 
 	// Tracking
 	// QDEL_NULL(monitor)
@@ -61,9 +68,6 @@
 	if(!master)
 		owner.remove_antag_datum(src)
 		CRASH("[owner.current] was vassilized without a master!")
-
-	ADD_TRAIT(owner, TRAIT_VAMPIRE_ALIGNED, REF(src))
-	ADD_TRAIT(owner, TRAIT_NIGHT_VISION, REF(src))
 
 	vampire_team = master.vampire_team
 	vampire_team.add_member(owner)

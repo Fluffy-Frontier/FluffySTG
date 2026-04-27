@@ -16,13 +16,17 @@
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_WHILE_INCAPACITATED | BP_CANT_USE_WHILE_UNCONSCIOUS
 	vitaecost = 80
 	cooldown_time = 60 SECONDS
-	target_range = 7
+	target_range = 5
 	prefire_message = "Who will you entrance?"
 	ranged_mousepointer = 'tff_modular/modules/vampire/icons/vampire_entrance.dmi'
 	var/ignore_shielding = FALSE
 
-/datum/action/cooldown/vampire/targeted/entrance
+/datum/action/cooldown/vampire/targeted/entrance/two
 	ignore_shielding = TRUE
+
+/datum/action/cooldown/vampire/targeted/entrance/three
+	ignore_shielding = TRUE
+	target_range = 7
 
 /datum/action/cooldown/vampire/targeted/entrance/check_valid_target(atom/target_atom)
 	. = ..()
