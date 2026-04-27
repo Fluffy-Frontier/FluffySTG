@@ -6,9 +6,10 @@
 
 /obj/item/gun/ballistic/shotgun/doublebarrel
 	fire_delay = 1 SECONDS
+	pb_knockback = 3
 
-/obj/item/gun/ballistic/shotgun/doublebarrel
-	pb_knockback = 2
+/obj/item/gun/ballistic/shotgun/doublebarrel/super
+	projectile_damage_multiplier = 1
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/super/on_booster_toggle(datum/component/source, mob/user, amped)
 	if(amped)
@@ -25,9 +26,6 @@
 /datum/supply_pack/companies/ballistics/sol_fed/longarm/outomaties
 	contains = list(/obj/item/gun/ballistic/automatic/sol_rifle)
 	cost = CARGO_CRATE_VALUE * 7
-
-/obj/item/gun/ballistic/shotgun/riot/sol/super/plus
-	projectile_damage_multiplier = 1.25
 
 /obj/item/gun/ballistic/automatic/sol_rifle
 	projectile_damage_multiplier = 0.8

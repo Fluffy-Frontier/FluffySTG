@@ -74,7 +74,7 @@
 		base_damage_mult = 1, \
 		base_speed_mult = 1, \
 		base_fire_delay = 0.75 SECONDS, \
-		amped_damage_mult = 1.2, \
+		amped_damage_mult = 1.05, \
 		amped_speed_mult = 1.25, \
 		amped_fire_delay = 1 SECONDS, \
 	)
@@ -265,10 +265,10 @@
 	AddComponent(\
 		/datum/component/gun_booster, \
 		booster_action = /datum/action/item_action/booster/doublebarrel_super, \
-		base_damage_mult = 1.1, \
+		base_damage_mult = 1, \
 		base_speed_mult = 1.1, \
 		base_fire_delay = 1 SECONDS, \
-		amped_damage_mult = 1.15, \
+		amped_damage_mult = 1.1, \
 		amped_speed_mult = 1.25, \
 		amped_fire_delay = 1.2 SECONDS, \
 	)
