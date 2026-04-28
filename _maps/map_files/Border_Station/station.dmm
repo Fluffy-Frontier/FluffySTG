@@ -555,13 +555,6 @@
 /obj/machinery/door/airlock/maintenance,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard)
-"ajR" = (
-/obj/docking_port/stationary/escape_pod{
-	dir = 2;
-	pixel_y = 0
-	},
-/turf/open/space/basic,
-/area/space)
 "akb" = (
 /obj/effect/turf_decal/trimline/dark_blue/filled/corner,
 /turf/open/floor/iron/dark,
@@ -7393,10 +7386,6 @@
 /obj/effect/spawner/random/trash/moisture_trap,
 /turf/open/floor/plating,
 /area/station/maintenance/port/aft)
-"cav" = (
-/obj/structure/marker_beacon/burgundy,
-/turf/closed/wall,
-/area/space)
 "cay" = (
 /obj/machinery/button/door/directional/north{
 	id = "teledoor";
@@ -16320,14 +16309,6 @@
 /obj/structure/cable,
 /turf/open/floor/circuit,
 /area/station/maintenance/starboard/fore)
-"eBH" = (
-/obj/machinery/door/airlock/external/glass,
-/obj/effect/mapping_helpers/airlock/access/all/security/brig,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/mapping_helpers/airlock/unres,
-/turf/open/floor/iron/dark,
-/area/space)
 "eBQ" = (
 /obj/structure/table,
 /turf/open/floor/plating,
@@ -18946,11 +18927,6 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard)
-"fpD" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/plating,
-/area/space)
 "fpG" = (
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 4
@@ -28178,13 +28154,6 @@
 	dir = 8
 	},
 /area/station/command/heads_quarters/bridge_officer)
-"icH" = (
-/obj/effect/landmark/generic_maintenance_landmark,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/space)
 "icJ" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/white,
@@ -34390,10 +34359,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard)
-"jPg" = (
-/obj/structure/lattice,
-/turf/closed/wall/r_wall,
-/area/space)
 "jPv" = (
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible/layer4{
@@ -37840,9 +37805,6 @@
 /obj/effect/landmark/start/hangover,
 /turf/open/floor/holofloor/wood,
 /area/station/command/heads_quarters/qm)
-"kPX" = (
-/turf/closed/wall/r_wall,
-/area/space)
 "kQa" = (
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -43724,15 +43686,6 @@
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/common/cryopods)
-"mzc" = (
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 32
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/space)
 "mzq" = (
 /obj/effect/turf_decal/trimline/white/filled/warning{
 	dir = 2
@@ -61381,11 +61334,6 @@
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/circuit,
 /area/station/ai/upload/chamber)
-"rjy" = (
-/obj/machinery/door/airlock/external/glass,
-/obj/effect/mapping_helpers/airlock/access/all/security/brig,
-/turf/open/floor/plating,
-/area/space)
 "rjz" = (
 /obj/structure/table,
 /obj/item/phone{
@@ -70294,9 +70242,6 @@
 /obj/effect/landmark/start/hangover,
 /turf/open/floor/iron/dark/smooth_edge,
 /area/station/security/checkpoint/engineering)
-"tEC" = (
-/turf/open/floor/plating/airless,
-/area/space)
 "tEX" = (
 /obj/structure/chair/pew/right,
 /turf/open/floor/iron/chapel{
@@ -134544,15 +134489,15 @@ xBY
 xBY
 xBY
 xBY
-kPX
-jPg
-jPg
-cEi
-cEi
-cav
-cEi
-cEi
-cav
+xBY
+xBY
+xBY
+xBY
+xBY
+xBY
+xBY
+xBY
+xBY
 xBY
 xBY
 xBY
@@ -134801,15 +134746,15 @@ xBY
 xBY
 xBY
 xBY
-kPX
-icH
-kPX
 xBY
 xBY
 xBY
 xBY
 xBY
-tEC
+xBY
+xBY
+xBY
+xBY
 xBY
 xBY
 xBY
@@ -135058,15 +135003,15 @@ xBY
 xBY
 xBY
 xBY
-eBH
-fpD
-rjy
-ajR
 xBY
 xBY
 xBY
 xBY
-tEC
+xBY
+xBY
+xBY
+xBY
+xBY
 xBY
 xBY
 xBY
@@ -135315,15 +135260,15 @@ xBY
 xBY
 xBY
 xBY
-kPX
-mzc
-kPX
 xBY
 xBY
 xBY
 xBY
 xBY
-tEC
+xBY
+xBY
+xBY
+xBY
 xBY
 xBY
 xBY
@@ -135572,15 +135517,15 @@ xBY
 xBY
 xBY
 xBY
-kPX
-jPg
-jPg
-cEi
-cEi
-cEi
-cEi
-cEi
-cav
+xBY
+xBY
+xBY
+xBY
+xBY
+xBY
+xBY
+xBY
+xBY
 xBY
 xBY
 xBY
