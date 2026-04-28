@@ -6,10 +6,10 @@
 
 /obj/item/gun/ballistic/shotgun/doublebarrel
 	fire_delay = 1 SECONDS
-	pb_knockback = 3
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/super
 	projectile_damage_multiplier = 1
+	pb_knockback = 2
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/super/on_booster_toggle(datum/component/source, mob/user, amped)
 	if(amped)

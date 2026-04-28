@@ -13,7 +13,7 @@
 	exposed_wound_bonus = 5
 
 /obj/projectile/bullet/shotgun_slug
-	damage = 40
+	damage = 35
 	wound_bonus = 5
 	exposed_wound_bonus = 10
 
@@ -21,7 +21,7 @@
 	projectile_damage_multiplier = 1.2
 
 /obj/projectile/bullet/shotgun_slug/milspec
-	damage = 40
+	damage = 38
 	wound_bonus = 10
 	exposed_wound_bonus = 10
 
@@ -34,14 +34,14 @@
 	variance = 15
 
 /obj/projectile/bullet/pellet/shotgun_buckshot/magnum
-	damage = 7
+	damage = 6
 	exposed_wound_bonus = 10
 
 /obj/projectile/bullet/pellet/shotgun_buckshot/flechette_nova
-	damage = 5
+	damage = 4
 
 /obj/projectile/bullet/shotgun_slug/hunter
-	damage = 15
+	damage = 20
 
 /obj/projectile/bullet/incendiary/shotgun/no_trail
 	damage = 25
@@ -68,7 +68,8 @@
 
 /obj/item/ammo_casing/shotgun/flechette
 	variance = 18
-
+	damage = 3.8
+	
 /obj/item/ammo_casing/shotgun/antitide
 	variance = 22
 
