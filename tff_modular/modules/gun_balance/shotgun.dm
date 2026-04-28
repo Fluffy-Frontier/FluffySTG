@@ -40,6 +40,9 @@
 /obj/projectile/bullet/pellet/shotgun_buckshot/flechette_nova
 	damage = 4
 
+/obj/projectile/bullet/pellet/flechette
+	damage = 4
+
 /obj/projectile/bullet/shotgun_slug/hunter
 	damage = 20
 
@@ -63,13 +66,12 @@
 /obj/item/ammo_casing/shotgun/ion
 	variance = 10
 
+/obj/item/ammo_casing/shotgun/flechette
+	variance = 18
+
 /obj/item/ammo_casing/shotgun/incapacitate
 	variance = 18
 
-/obj/item/ammo_casing/shotgun/flechette
-	variance = 18
-	damage = 3.8
-	
 /obj/item/ammo_casing/shotgun/antitide
 	variance = 22
 
