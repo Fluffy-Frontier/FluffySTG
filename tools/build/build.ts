@@ -164,6 +164,14 @@ export const DmMapsIncludeTarget = new Juke.Target({
       ...Juke.glob('_maps/shuttles/**/*.dmm'),
       ...Juke.glob('_maps/templates/**/*.dmm'),
     ];
+    // FLUFFY FRONTIER ADDITION START
+    const isFluffyTemplate = (file: string) =>
+      file.startsWith('_maps/fluffy/') ||
+      file.startsWith('_maps/RandomRuins/SpaceRuins/fluffy/') ||
+      file.startsWith('_maps/RandomRuins/IceRuins/fluffy/') ||
+      file.startsWith('_maps/RandomRuins/LavaRuins/fluffy/') ||
+      file.startsWith('_maps/shuttles/fluffy/');
+    // FLUFFY FRONTIER ADDITION END
     // NOVA EDIT ADDITION START
     const isNovaTemplate = (file: string) =>
       file.startsWith('_maps/nova/') ||
@@ -175,13 +183,14 @@ export const DmMapsIncludeTarget = new Juke.Target({
     const foldersNova = [];
     for (let i = folders.length - 1; i >= 0; i--) {
       const file = folders[i];
-      if (isNovaTemplate(file)) {
+      if (isNovaTemplate(file) || isFluffyTemplate(file)) { // FLUFFY FROINTIER EDIT - ORIGINAL: if (isNovaTemplate(file)) {
         foldersNova.push(file);
         folders.splice(i, 1); // remove from folders
       }
     }
 
     foldersNova.push(...Juke.glob('_maps/nova/**/*.dmm'));
+    foldersNova.push(...Juke.glob('_maps/fluffy/**/*.dmm')); // FLUFFY FRFONTIER ADDITION
     // NOVA EDIT ADDITION END
     const content = `${folders
       .map((file) => file.replace('_maps/', ''))
@@ -221,6 +230,7 @@ export const DmTarget = new Juke.Target({
     'sound/**',
     'tgui/public/tgui.html',
     "modular_nova/**", ///NOVA EDIT ADDITION - Making the CBT work
+    'tff_modular/**', // FLUFFY FRONTIER ADDITION
     `${DME_NAME}.dme`,
     NamedVersionFile,
   ],

@@ -947,11 +947,12 @@
 	req_one_access = one_access ? accesses : list()
 
 /// Electrocute user from power celll
-/obj/vehicle/sealed/mecha/proc/shock(mob/living/user)
-	if(!istype(user) || get_charge() < 1)
+/obj/vehicle/sealed/mecha/shock(mob/living/shocking, chance = 100, shock_source, siemens_coeff)
+	if(get_charge() < 1)
 		return FALSE
-	do_sparks(5, TRUE, src)
-	return electrocute_mob(user, cell, src, 0.7, TRUE)
+	if(isnull(siemens_coeff))
+		siemens_coeff = 0.7
+	return ..()
 
 /// Toggle mech overclock with a button or by hacking
 /obj/vehicle/sealed/mecha/proc/toggle_overclock(forced_state = null)
@@ -1018,6 +1019,15 @@
 
 /obj/vehicle/sealed/mecha/proc/melee_attack_effect(mob/living/victim, heavy)
 	if(heavy)
+		// FLUFFY FRONTIER ADDITION START - TGMC_XENOS - Это нужно реворкнуть на апстриме
+		if(istgmcalien(victim))
+			var/mob/living/carbon/alien/adult/tgmc/tgmc_alien = victim
+			if(tgmc_alien.resist_heavy_hits)
+				if(health_percentage(tgmc_alien) >= 35)
+					return
+				if(!prob(50))	// 50% что при ударе по ослабленному ксеносу - он упадет в бессознательное состояние
+					return
+		// FLUFFY FRONTIER ADDITION END
 		victim.Unconscious(2 SECONDS)
 	else
 		victim.Knockdown(4 SECONDS)
