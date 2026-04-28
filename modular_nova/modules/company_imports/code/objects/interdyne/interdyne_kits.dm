@@ -86,8 +86,8 @@
 		/obj/item/scalpel/advanced = 1,
 		/obj/item/retractor/advanced = 1,
 		/obj/item/cautery/advanced = 1,
-		/obj/item/defibrillator/compact/combat/loaded/interdyne = 1,
-		/obj/item/circular_saw/field_medic/lowforce = 1,
+		///obj/item/defibrillator/compact/combat/loaded/interdyne = 1, FLUFFY FRONTIER REMOVAL #5819
+		///obj/item/circular_saw/field_medic/lowforce = 1, FLUFFY FRONTIER REMOVAL #5819
 		/obj/item/bonesetter = 1,
 		/obj/item/stack/medical/wrap/sticky_tape/surgical = 1,
 		/obj/item/reagent_containers/medigel/sterilizine = 1,
