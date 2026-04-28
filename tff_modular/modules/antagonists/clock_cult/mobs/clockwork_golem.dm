@@ -23,9 +23,13 @@
 		TRAIT_RESISTHIGHPRESSURE,
 		TRAIT_NODROWN,
 		TRAIT_SWIMMER,
+		TRAIT_NOHUNGER,
+		TRAIT_STABLELIVER,
 	)
 	mutantheart = null
 	mutantlungs = null
+	mutantstomach = null
+	mutantliver = null
 	inherent_biotypes = MOB_HUMANOID|MOB_MINERAL
 	payday_modifier = 1.0
 	siemens_coeff = 0
@@ -37,12 +41,9 @@
 	bodytemp_heat_damage_limit = BODYTEMP_HEAT_LAVALAND_SAFE
 	bodytemp_cold_damage_limit = BODYTEMP_COLD_ICEBOX_SAFE
 
-	mutant_organs = list(/obj/item/organ/adamantine_resonator)
 	mutanteyes = /obj/item/organ/eyes/golem
 	mutantbrain = /obj/item/organ/brain/golem
 	mutanttongue = /obj/item/organ/tongue/golem
-	mutantstomach = /obj/item/organ/stomach/golem
-	mutantliver = /obj/item/organ/liver/golem
 	mutantappendix = /obj/item/organ/appendix/golem
 	meat = /obj/item/stack/sheet/bronze
 	fixed_mut_color = rgb(190, 135, 0)
@@ -59,14 +60,17 @@
 
 /datum/species/clockwork_golem/on_species_gain(mob/living/carbon/our_mob, datum/species/old_species, pref_load)
 	. = ..()
-	ADD_TRAIT(our_mob, TRAIT_FASTER_SLAB_INVOKE, SPECIES_TRAIT)
 	if(IS_CLOCK(our_mob))
+		ADD_TRAIT(our_mob, TRAIT_FASTER_SLAB_INVOKE, SPECIES_TRAIT)
 		antag_datum = our_mob.mind?.has_antag_datum(/datum/antagonist/clock_cultist)
 		antag_datum.owner_turf_healing.healing_types = list(TOX = 1, BRUTE = 1, BURN = 1)
+	our_mob.dna?.mutant_bodyparts.Cut()
+	for(var/datum/quirk/what_we_remove as anything in our_mob.quirks)
+		what_we_remove.remove()
 
 /datum/species/clockwork_golem/on_species_loss(mob/living/carbon/human/our_mob, datum/species/new_species, pref_load)
-	REMOVE_TRAIT(our_mob, TRAIT_FASTER_SLAB_INVOKE, SPECIES_TRAIT)
 	if(IS_CLOCK(our_mob))
+		REMOVE_TRAIT(our_mob, TRAIT_FASTER_SLAB_INVOKE, SPECIES_TRAIT)
 		QDEL_NULL(antag_datum.owner_turf_healing)
 	. = ..()
 
