@@ -64,3 +64,14 @@
 /obj/item/melee/implantarmblade/energy
 	force = 15
 
+// Это не оружие, но это буквально станционный синдимод, что не очень то вписывается
+/datum/armor/mod_theme_infantry
+	melee = 35
+	bullet = 30
+	laser = 30
+	energy = 40
+	bomb = 25
+	bio = 100
+	fire = 50
+	acid = 50
+	wound = 10
