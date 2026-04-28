@@ -1,6 +1,6 @@
 /datum/crafting_recipe/food/olivier_salad
 	name = "Olivier salad"
-	crafting_flags = CRAFT_TRANSFERS_REAGENTS | CRAFT_CLEARS_REAGENTS
+	crafting_flags = CRAFT_TRANSFERS_REAGENT_COMPONENTS | CRAFT_CLEARS_REAGENTS
 	reqs = list(
 		/obj/item/reagent_containers/cup/bowl = 1,
 		/obj/item/food/pickle = 1,
@@ -60,7 +60,7 @@
 
 /datum/crafting_recipe/food/kholodetz
 	name = "Kholodetz"
-	crafting_flags = CRAFT_TRANSFERS_REAGENTS | CRAFT_CLEARS_REAGENTS
+	crafting_flags = CRAFT_TRANSFERS_REAGENT_COMPONENTS | CRAFT_CLEARS_REAGENTS
 	reqs = list(
 		/obj/item/food/headcheese = 1,
 		/obj/item/food/grown/onion = 1,
@@ -74,7 +74,7 @@
 
 /datum/crafting_recipe/food/christmas_ham
 	name = "Raw Christmas ham"
-	crafting_flags = CRAFT_TRANSFERS_REAGENTS | CRAFT_CLEARS_REAGENTS
+	crafting_flags = CRAFT_TRANSFERS_REAGENT_COMPONENTS | CRAFT_CLEARS_REAGENTS
 	reqs = list(
 		/obj/item/food/meat/slab = 1,
 		/obj/item/food/breadslice/plain = 2,
@@ -89,7 +89,7 @@
 
 /datum/crafting_recipe/food/caviar_butterbrod
 	name = "Caviar butterbrod"
-	crafting_flags = CRAFT_TRANSFERS_REAGENTS | CRAFT_CLEARS_REAGENTS
+	crafting_flags = CRAFT_TRANSFERS_REAGENT_COMPONENTS | CRAFT_CLEARS_REAGENTS
 	reqs = list(
 		/obj/item/food/breadslice/plain = 1,
 		/obj/item/food/butter = 1,
@@ -102,7 +102,7 @@
 
 /datum/crafting_recipe/food/caviar_butterbrod_moonfish
 	name = "Caviar butterbrod(moonfish)"
-	crafting_flags = CRAFT_TRANSFERS_REAGENTS | CRAFT_CLEARS_REAGENTS
+	crafting_flags = CRAFT_TRANSFERS_REAGENT_COMPONENTS | CRAFT_CLEARS_REAGENTS
 	reqs = list(
 		/obj/item/food/breadslice/plain = 1,
 		/obj/item/food/butter = 1,
