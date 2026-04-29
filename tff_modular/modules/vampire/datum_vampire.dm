@@ -253,10 +253,6 @@
 	cleanup_limbs(current_mob)
 	//	cleanup_tracker()
 
-	QDEL_NULL(blood_display)
-	QDEL_NULL(vamprank_display)
-	QDEL_NULL(humanity_display)
-
 	current_mob.remove_faction(FACTION_VAMPIRE)
 
 	if(ishuman(current_mob))
@@ -277,14 +273,6 @@
 /datum/antagonist/vampire/proc/on_hud_created(datum/source)
 	SIGNAL_HANDLER
 	var/datum/hud/vampire_hud = owner.current.hud_used
-
-	/// Blood display HUD
-	var/atom/movable/screen/vampire/blood_counter/blood_display
-	/// Vampire level display HUD
-	var/atom/movable/screen/vampire/rank_counter/vamprank_display
-	/// Vampire humanity display HUD
-	var/atom/movable/screen/vampire/humanity_counter/humanity_display
-
 	vampire_hud.add_screen_object(/atom/movable/screen/vampire/blood_counter, HUD_VAMPIRE_BLOOD, HUD_GROUP_INFO)
 	vampire_hud.add_screen_object(/atom/movable/screen/vampire/rank_counter, HUD_VAMPIRE_RANK, HUD_GROUP_INFO)
 	vampire_hud.add_screen_object(/atom/movable/screen/vampire/humanity_counter, HUD_VAMPIRE_HUMANITY, HUD_GROUP_INFO)
