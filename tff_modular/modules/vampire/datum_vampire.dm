@@ -104,13 +104,6 @@
 	var/area/vampire_lair_area
 	var/obj/structure/closet/crate/coffin
 
-	/// Blood display HUD
-	var/atom/movable/screen/vampire/blood_counter/blood_display
-	/// Vampire level display HUD
-	var/atom/movable/screen/vampire/rank_counter/vamprank_display
-	/// Vampire humanity display HUD
-	var/atom/movable/screen/vampire/humanity_counter/humanity_display
-
 	/// Tracker so that vassals know where their master is
 	// var/obj/effect/abstract/vampire_tracker_holder/tracker
 
@@ -199,7 +192,7 @@
 	// RegisterSignal(current_mob, COMSIG_MOVABLE_MOVED, PROC_REF(on_moved))
 	RegisterSignal(current_mob, COMSIG_HUMAN_ON_HANDLE_BLOOD, PROC_REF(handle_blood))
 	RegisterSignal(current_mob, COMSIG_MOB_UPDATE_SIGHT, PROC_REF(on_update_sight))
-
+	RegisterSignal(current_mob, COMSIG_MOB_HUD_CREATED, PROC_REF(on_hud_created))
 	RegisterSignal(current_mob, COMSIG_LIVING_PET_ANIMAL, PROC_REF(on_pet_animal))
 	RegisterSignal(current_mob, COMSIG_CARBON_HELPED, PROC_REF(on_hug_carbon))
 	RegisterSignal(current_mob, COMSIG_LIVING_APPRAISE_ART, PROC_REF(on_appraise_art))
@@ -214,8 +207,6 @@
 
 	if(current_mob.hud_used)
 		on_hud_created()
-	else
-		RegisterSignal(current_mob, COMSIG_MOB_HUD_CREATED, PROC_REF(on_hud_created))
 
 	ensure_brain_nonvital(current_mob)
 	setup_limbs(current_mob)
@@ -262,7 +253,6 @@
 	cleanup_limbs(current_mob)
 	//	cleanup_tracker()
 
-	remove_hud_elements(current_mob)
 	QDEL_NULL(blood_display)
 	QDEL_NULL(vamprank_display)
 	QDEL_NULL(humanity_display)
@@ -276,30 +266,28 @@
 	if(!QDELETED(current_mob))
 		my_clan?.remove_effects(current_mob)
 
-/datum/antagonist/vampire/proc/remove_hud_elements(mob/living/current_mob)
-	var/datum/hud/hud_used = current_mob?.hud_used
-	if(hud_used)
-		hud_used.infodisplay -= blood_display
-		hud_used.infodisplay -= vamprank_display
-		hud_used.infodisplay -= humanity_display
-	var/client/current_client = current_mob?.client
-	if(current_client)
-		current_client?.screen -= blood_display
-		current_client?.screen -= vamprank_display
-		current_client?.screen -= humanity_display
+	if(!current_mob.hud_used)
+		return
+
+	var/datum/hud/vampire_hud = current_mob.hud_used
+	vampire_hud.remove_screen_object(HUD_VAMPIRE_BLOOD)
+	vampire_hud.remove_screen_object(HUD_VAMPIRE_RANK)
+	vampire_hud.remove_screen_object(HUD_VAMPIRE_HUMANITY)
 
 /datum/antagonist/vampire/proc/on_hud_created(datum/source)
 	SIGNAL_HANDLER
 	var/datum/hud/vampire_hud = owner.current.hud_used
 
-	blood_display = new /atom/movable/screen/vampire/blood_counter(null, vampire_hud)
-	vampire_hud.infodisplay += blood_display
+	/// Blood display HUD
+	var/atom/movable/screen/vampire/blood_counter/blood_display
+	/// Vampire level display HUD
+	var/atom/movable/screen/vampire/rank_counter/vamprank_display
+	/// Vampire humanity display HUD
+	var/atom/movable/screen/vampire/humanity_counter/humanity_display
 
-	vamprank_display = new /atom/movable/screen/vampire/rank_counter(null, vampire_hud)
-	vampire_hud.infodisplay += vamprank_display
-
-	humanity_display = new /atom/movable/screen/vampire/humanity_counter(null, vampire_hud)
-	vampire_hud.infodisplay += humanity_display
+	vampire_hud.add_screen_object(/atom/movable/screen/vampire/blood_counter, HUD_VAMPIRE_BLOOD, HUD_GROUP_INFO)
+	vampire_hud.add_screen_object(/atom/movable/screen/vampire/rank_counter, HUD_VAMPIRE_RANK, HUD_GROUP_INFO)
+	vampire_hud.add_screen_object(/atom/movable/screen/vampire/humanity_counter, HUD_VAMPIRE_HUMANITY, HUD_GROUP_INFO)
 
 	vampire_hud.show_hud(vampire_hud.hud_version)
 	UnregisterSignal(owner.current, COMSIG_MOB_HUD_CREATED)
