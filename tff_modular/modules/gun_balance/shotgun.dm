@@ -49,8 +49,11 @@
 /obj/projectile/bullet/incendiary/shotgun/no_trail
 	damage = 25
 
-/obj/projectile/beam/scatter
-	damage = 7
+/obj/item/ammo_casing/shotgun/scatterlaser
+	projectile_type = /obj/projectile/beam/scatter/tff
+
+/obj/projectile/beam/scatter/tff
+	damage = 6
 
 /obj/item/ammo_casing/shotgun/express
 	pellets = 15
