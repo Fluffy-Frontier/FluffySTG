@@ -115,10 +115,10 @@
 	icon_state = "ratvarian_hammer0"
 	force = 15
 	throwforce = 30
-	armour_penetration = 35
+	armour_penetration = 20
 	attack_verb_simple = list("bash", "hammer", "attack", "smash")
 	attack_verb_continuous = list("bashes", "hammers", "attacks", "smashes")
-	attack_speed = 16
+	attack_speed = 8
 	clockwork_desc = "Enemies hit by this will be flung back while you are on bronze tiles."
 	sharpness = FALSE
 	hitsound = 'sound/items/weapons/smash.ogg'
@@ -130,7 +130,7 @@
 	AddComponent(/datum/component/two_handed, \
 		force_unwielded = 15, \
 		icon_wielded = "[base_icon_state]1", \
-		force_wielded = 30, \
+		force_wielded = 25, \
 	)
 
 /obj/item/clockwork/weapon/brass_battlehammer/mob_hit_effect(mob/living/target, mob/living/user)
