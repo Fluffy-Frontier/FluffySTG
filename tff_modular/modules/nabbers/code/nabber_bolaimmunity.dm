@@ -30,6 +30,7 @@
 	. = ..()
 	if(nabber)
 		UnregisterSignal(nabber, list(COMSIG_MOB_REMOVING_CUFFS, COMSIG_ITEM_PRE_UNEQUIP))
+		nabber = null
 
 /obj/item/restraints/legcuffs/gas_placeholder/proc/handle_nabber_removing_cuffs()
 	SIGNAL_HANDLER
