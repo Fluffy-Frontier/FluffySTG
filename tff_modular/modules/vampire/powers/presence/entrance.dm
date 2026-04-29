@@ -44,7 +44,7 @@
 	if(IS_CURATOR(carbon_target))
 		owner.balloon_alert(owner, "immune to your presence.")
 		return FALSE
-	if(carbot_target.can_block_magic(MAGIC_RESISTANCE_MIND, charge_cost = 1))
+	if(carbon_target.can_block_magic(MAGIC_RESISTANCE_MIND, charge_cost = 1))
 		return FALSE
 	if(IS_VAMPIRE(carbon_target))
 		var/datum/antagonist/vampire/vampire_target = carbon_target
