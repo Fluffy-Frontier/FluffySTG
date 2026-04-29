@@ -311,7 +311,7 @@
 	uniform = /obj/item/clothing/under/rank/prisoner/syndicate
 	shoes = /obj/item/clothing/shoes/sneakers/crimson
 	id = /obj/item/card/id/advanced/prisoner/ds2
-	id_trim = /datum/id_trim/syndicom/nova/ds2/prisoner
+	id_trim = /datum/id_trim/job/prisoner //FLUFFY FRONTIER EDIT - ORIGINAL: id_trim = /datum/id_trim/syndicom/nova/ds2/prisoner
 
 //DS-2 Crew
 /datum/outfit/ds2/syndicate
