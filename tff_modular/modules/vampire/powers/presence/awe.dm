@@ -2,7 +2,7 @@
 	name = "Awe"
 	desc = "Project an aura of supernatural presence that subtly influences those around you."
 	button_icon_state = "power_awe"
-	power_explanation = "Project an aura around yourself that subtly affects everyone in your room.\n\
+	power_explanation = "Project an aura around yourself that subtly affects everyone nearby.\n\
 						Effects on those in your aura:\n\
 						- They can only whisper, unable to speak loudly.\n\
 						- They are slightly slowed.\n\
@@ -11,8 +11,14 @@
 	vampire_power_flags = BP_AM_TOGGLE | BP_AM_STATIC_COOLDOWN
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_IN_FRENZY
 	vitaecost = 30
-	constant_vitaecost = 1
+	constant_vitaecost = 2
 	cooldown_time = 10 SECONDS
+	/// The range of the aura in tiles
+	var/aura = 5
+
+/datum/action/cooldown/vampire/awe/two
+	constant_vitaecost = 1
+	aura = 6
 
 /datum/action/cooldown/vampire/awe/activate_power()
 	. = ..()
@@ -24,9 +30,7 @@
 
 /datum/action/cooldown/vampire/awe/use_power()
 	. = ..()
-	var/area/vampire_loc = get_area(owner)
-	var/list/turfs = get_area_turfs(vampire_loc)
-	for(var/mob/living/victim as anything in turfs)
+	for(var/mob/living/victim in oviewers(aura, owner))
 		if(can_affect(victim))
 			victim.apply_status_effect(/datum/status_effect/awed, owner)
 
