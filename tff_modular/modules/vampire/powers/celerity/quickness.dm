@@ -8,8 +8,7 @@
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_WHILE_INCAPACITATED | BP_CANT_USE_WHILE_UNCONSCIOUS
 	cooldown_time = 30 SECONDS
 	vitaecost = 25
-	constant_vitaecost = 1
-
+	constant_vitaecost = 0.2
 
 /datum/action/cooldown/vampire/exactitude/can_use()
 	. = ..()

@@ -122,7 +122,7 @@
 /// Alert for entranced status
 /atom/movable/screen/alert/status_effect/entranced
 	name = "Entranced"
-	desc = "Your mind has been captured by a supernatural presence. You cannot speak or use items."
+	desc = "Your mind has been captured by a supernatural presence. You cannot speak or use items. Click to try to resist!"
 	icon_state = "hypnosis"
 
 /// Movespeed modifier for the entranced status effect

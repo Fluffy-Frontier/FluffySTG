@@ -123,10 +123,6 @@
 	if(IS_CURATOR(target))
 		owner.balloon_alert(owner, "[target] is too powerful!")
 		return FALSE
-	var/datum/antagonist/vampire/target_vampire = IS_VAMPIRE(target)
-	if(target_vampire && (vampiredatum_power.scourge || vampiredatum_power.prince) && !target_vampire.broke_masquerade)
-		owner.balloon_alert(owner, "cannot diablerize non-masquerade breakers as royalty!")
-		return FALSE
 	// Human checks
 	if(ishuman(target))
 		// Cannot drink from inorganics
@@ -467,23 +463,6 @@
 					to_chat(owner, span_userdanger("No way will [feed_target.p_they()] survive that..."))
 					vampiredatum_power.adjust_humanity(-1)
 
-/*
-		if(iscarbon(feed_target))
-			var/mob/living/carbon/carbon_target = feed_target
-			// More/less humanity adds/deducts bleedy.
-			switch(vampiredatum_power.humanity)
-				if(0 to 2)
-					carbon_target.bleed(BLEED_CRITICAL)
-				if(3 to 4)
-					carbon_target.bleed(BLEED_DEEP_WOUND)
-				if(5 to 6)
-					carbon_target.bleed(BLEED_CUT)
-				if(7 to 8)
-					carbon_target.bleed(BLEED_SURFACE)
-				if(9 to 10)
-					carbon_target.bleed(BLEED_SCRATCH)
-*/
-
 	feed_fatal = FALSE
 	humanity_deducted = FALSE
 	completing_thirster = FALSE
@@ -501,18 +480,10 @@
 	if(feed_fatal)
 		feed_amount *= 1.5
 
-	// But, if we are in combat we want to get them some time to react.
-	if(!silent_feed)
-		feed_amount *= 0.3
-
 	var/blood_to_take = min(feed_amount * mult, target.blood_volume)
 
 	// Remove target's blood
 	target.blood_volume -= blood_to_take
-
-	// Shift body temperature (toward target's temp, by volume taken)
-	// ((vamp_blood_volume * vamp_temp) + (target_blood_volume * target_temp)) / (vamp_blood_volume + blood_to_take)
-	// owner.bodytemperature = ((vampiredatum_power.current_vitae * owner.bodytemperature) + (blood_to_take * target.bodytemperature)) / (vampiredatum_power.current_vitae + blood_to_take)
 
 	// Penalty for dead blood(at least it's still human, right?)
 	if(target.stat == DEAD)
@@ -524,7 +495,7 @@
 	if(HAS_TRAIT(living_owner, TRAIT_FRENZY))
 		blood_to_take /= 2
 
-	// Give vampire the blood^
+	// Give vampire the blood
 	var/vitae_absorbed = blood_to_take * 4
 
 	/// Tracking of the vitae goal
@@ -549,7 +520,7 @@
 	blood_taken += blood_to_take
 
 	// If we are on combat feed, we only want it to take a bit and then stop. Except if they are not conscious or if they're restrained.
-	if(!silent_feed && blood_taken >= 60 && target.stat <= SOFT_CRIT && !HAS_TRAIT(target, TRAIT_RESTRAINED))
+	if(!silent_feed && blood_taken >= 200 && target.stat <= SOFT_CRIT && !HAS_TRAIT(target, TRAIT_RESTRAINED))
 
 		playsound(target, 'sound/items/weapons/cqchit2.ogg', 80)
 

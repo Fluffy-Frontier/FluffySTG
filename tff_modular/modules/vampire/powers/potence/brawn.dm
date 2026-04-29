@@ -7,7 +7,7 @@
 		At level 4, you can bash airlocks open, and you get the ability to brawn even mecha. Use wisely - security is unlikely to try and capture you alive again after the first time!\n\
 		Higher ranks will increase the damage when punching someone."
 	vampire_power_flags = BP_AM_TOGGLE
-	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_INCAPACITATED | BP_CANT_USE_WHILE_UNCONSCIOUS
+	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_WHILE_INCAPACITATED | BP_CANT_USE_WHILE_UNCONSCIOUS
 	vitaecost = 45
 	cooldown_time = 9 SECONDS
 	target_range = 1
@@ -85,9 +85,7 @@
 
 	if(used)
 		playsound(get_turf(human_owner), 'sound/effects/grillehit.ogg', 80, TRUE, -1)
-
-	/* if(used)
-		check_witnesses() */
+		check_witnesses()
 	return used
 
 /datum/action/cooldown/vampire/targeted/brawn/proc/escape_puller()
@@ -116,7 +114,7 @@
 	)
 	owner.pulledby?.stop_pulling() // It's already done, but JUST IN CASE.
 
-	// check_witnesses()
+	check_witnesses()
 	return TRUE
 
 /datum/action/cooldown/vampire/targeted/brawn/fire_targeted_power(atom/target_atom, list/modifiers)
@@ -141,7 +139,7 @@
 		// Attack!
 		owner.balloon_alert(owner, "you punch [living_target]!")
 		playsound(get_turf(living_target), 'sound/items/weapons/punch4.ogg', 60, TRUE, -1)
-		// check_witnesses(living_target)
+		check_witnesses()
 		carbon_owner.do_attack_animation(living_target, ATTACK_EFFECT_SMASH)
 
 		var/obj/item/bodypart/affecting = living_target.get_bodypart(ran_zone(living_target.zone_selected))
@@ -169,13 +167,13 @@
 
 		INVOKE_ASYNC(target_closet, TYPE_PROC_REF(/obj/structure/closet, bust_open))
 		playsound(get_turf(carbon_owner), 'sound/effects/grillehit.ogg', 80, TRUE, -1)
-		// check_witnesses()
+		check_witnesses()
 	// Airlocks
 	else if(istype(target_atom, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/target_airlock = target_atom
 
 		playsound(get_turf(carbon_owner), 'sound/machines/airlock/airlock_alien_prying.ogg', 40, TRUE, -1)
-		// check_witnesses()
+		check_witnesses()
 		owner.balloon_alert(owner, "you prepare to tear open [target_airlock]...")
 		if(!do_after(carbon_owner, 2.5 SECONDS, target_airlock))
 			carbon_owner.balloon_alert(carbon_owner, "interrupted!")
@@ -208,6 +206,7 @@
 			target_vehicle.visible_message(span_danger("[target_vehicle] breaks apart as [carbon_owner] bashes it!"))
 			target_vehicle.emp_act(EMP_HEAVY)
 			target_vehicle.take_damage(hit_strength)
+			check_witnesses()
 
 /datum/action/cooldown/vampire/targeted/brawn/check_valid_target(atom/target_atom)
 	. = ..()

@@ -1,19 +1,17 @@
 /datum/action/cooldown/vampire/force_of_personality
 	name = "Force of Personality"
-	desc = "Project an overwhelming aura of authority that causes those around you to involuntarily step back."
+	desc = "Project an overwhelming aura of authority that causes those around you to fall down."
 	button_icon_state = "power_fop"
-	power_explanation = "Project an aura around yourself that subtly pushes people away.\n\
-						Effects on those in 3 tile range. No one will be able to voluntarily approach you.\n\
-						Targets must be able to see you to be affected.\n\
-						Lasts 1 minute."
-	vampire_power_flags = BP_AM_TOGGLE | BP_AM_STATIC_COOLDOWN
+	power_explanation = "Project an aura around yourself that subtly pushes people to fall down.\n\
+						Effects on those in 3 tile range.\n\
+						Targets must be able to see you to be affected."
+	vampire_power_flags = BP_AM_TOGGLE
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_WHILE_STAKED | BP_CANT_USE_IN_FRENZY
 	vitaecost = 30
 	constant_vitaecost = 2
 	cooldown_time = 30 SECONDS
 	/// The range of the aura in tiles, this is further than the actual effect just so we can hit them with the status effect before they even get close enough.
-	var/aura_range = 7
-	var/deactivate_timer
+	var/aura_range = 3
 
 /datum/action/cooldown/vampire/force_of_personality/two
 	constant_vitaecost = 1
@@ -21,20 +19,14 @@
 /datum/action/cooldown/vampire/force_of_personality/activate_power()
 	. = ..()
 	to_chat(owner, span_notice("You project an overwhelming sense of authority."), type = MESSAGE_TYPE_INFO)
-	deactivate_timer = addtimer(CALLBACK(src, PROC_REF(deactivate_power)), 1 MINUTES, TIMER_STOPPABLE)
+	for(var/mob/living/carbon/victims as anything in oviewers(aura_range, owner))
+		if(!can_affect(victims))
+			continue
+		victims.Knockdown(2 SECONDS)
+		victims.Stun(1)
+		to_chat(victims, span_awe("Bend Down!"))
 
-/datum/action/cooldown/vampire/force_of_personality/deactivate_power()
-	. = ..()
-	to_chat(owner, span_notice("You withdraw your authoritative presence."), type = MESSAGE_TYPE_INFO)
-	if(deactivate_timer)
-		deltimer(deactivate_timer)
-		deactivate_timer = null
-
-/datum/action/cooldown/vampire/force_of_personality/use_power()
-	. = ..()
-	for(var/mob/living/victim in oviewers(aura_range, owner))
-		if(can_affect(victim))
-			victim.apply_status_effect(/datum/status_effect/intimidated, owner)
+	deactivate_power()
 
 /// Checks if this victim can be affected by the force of personality aura
 /datum/action/cooldown/vampire/force_of_personality/proc/can_affect(mob/living/victim)
@@ -44,61 +36,10 @@
 		return FALSE
 	if(victim.stat != CONSCIOUS)
 		return FALSE
+	if(!iscarbon(victim))
+		return FALSE
 	if(victim.is_blind() || victim.is_nearsighted_currently())
 		return FALSE
-	if(HAS_MIND_TRAIT(victim, TRAIT_VAMPIRE_ALIGNED) || IS_CURATOR(victim) || HAS_MIND_TRAIT(victim, TRAIT_UNCONVERTABLE))
+	if(HAS_MIND_TRAIT(victim, TRAIT_VAMPIRE_ALIGNED) || IS_CURATOR(victim))
 		return FALSE
 	return TRUE
-
-/// Status effect for being affected by Force of Personality
-/datum/status_effect/intimidated
-	id = "intimidated"
-	status_type = STATUS_EFFECT_REFRESH
-	duration = 10 SECONDS
-	tick_interval = 0.2 SECONDS
-	processing_speed = STATUS_EFFECT_PRIORITY
-	alert_type = null
-	/// The vampire projecting the aura
-	var/mob/living/source_vampire
-	/// The range at which the effect triggers
-	var/trigger_range = 3
-	COOLDOWN_DECLARE(message_cooldown)
-
-/datum/status_effect/intimidated/on_creation(mob/living/new_owner, mob/living/vampire)
-	source_vampire = vampire
-	return ..()
-
-/datum/status_effect/intimidated/Destroy()
-	source_vampire = null
-	return ..()
-
-/datum/status_effect/intimidated/on_apply()
-	if(!iscarbon(owner))
-		return FALSE
-	return TRUE
-
-/datum/status_effect/intimidated/tick(seconds_between_ticks)
-	if(QDELETED(source_vampire) || source_vampire.stat == DEAD)
-		qdel(src)
-		return
-
-	if(INCAPACITATED_IGNORING(owner, INCAPABLE_RESTRAINTS))
-		return
-
-	// Only check if we're within range of the vampire
-	if(get_dist(owner, source_vampire) > trigger_range)
-		return
-
-	// Step away from the vampire
-	if(owner.body_position == STANDING_UP)
-		var/away_dir = get_dir(source_vampire.loc, owner.loc)
-		var/turf/retreat_turf = get_step(owner.loc, away_dir)
-		// Make sure we're not stepping into the vampire or into a wall
-		if(retreat_turf && !retreat_turf.is_blocked_turf())
-			if(COOLDOWN_FINISHED(src, message_cooldown))
-				COOLDOWN_START(src, message_cooldown, 3 SECONDS)
-				owner.visible_message(span_warning("[owner] takes a hurried step back."), span_awe("You don't dare approach [source_vampire.p_them()]..."))
-			owner.Move(retreat_turf, away_dir)
-
-/datum/status_effect/intimidated/get_examine_text()
-	return span_warning("[owner.p_They()] seem[owner.p_s()] intimidated.")

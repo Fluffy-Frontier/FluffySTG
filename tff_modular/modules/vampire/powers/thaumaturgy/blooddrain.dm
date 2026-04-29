@@ -20,8 +20,7 @@
 /datum/action/cooldown/vampire/targeted/blooddrain/fire_targeted_power(atom/target_atom)
 	. = ..()
 	var/mob/living/living_owner = owner
-	/* var/mob/living/living_target = target_atom
-	check_witnesses(living_target) */
+	check_witnesses()
 	living_owner.face_atom(target_atom)
 	living_owner.changeNext_move(CLICK_CD_RANGE)
 	living_owner.newtonian_move(get_dir(target_atom, living_owner))
@@ -54,7 +53,7 @@
 /obj/projectile/magic/blood_drain/fire(angle, atom/direct_target)
 	if(!firer)
 		CRASH("Projectile [src] fired with no firer") //We don't even want any of the rest of this to play out if we don't have a firer
-	drain_beam = Beam(firer, icon = 'icons/effects/beam.dmi', icon_state = "drain_life", time = 10 SECONDS, maxdistance = 7, beam_type = /obj/effect/ebeam/blood, beam_color = COLOR_RED)
+	drain_beam = Beam(firer, icon = 'icons/effects/beam.dmi', icon_state = "drain_life", time = 10 SECONDS, maxdistance = 7, beam_type = /obj/effect/ebeam/blood, beam_color = COLOR_DARK_RED)
 	return ..()
 
 /obj/projectile/magic/blood_drain/on_hit(mob/living/carbon/target, blocked, pierce_hit)

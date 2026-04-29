@@ -196,40 +196,22 @@
 	if(vampiredatum.vampire_level_unspent > 0)
 		spend_rank(carbon_vampire)
 
-/*
-/datum/vampire_clan/proc/prince_check()
-	if(!vampiredatum.can_become_prince && !vampiredatum.vampire_level >= 10 && !vampiredatum.prince)
-		return FALSE
-
-	var/tgui_answer = tgui_alert(vampiredatum.owner.current, "You grown enough to become a prince, do you want it? If you refuse, you won't be able to become a prince later!", "Princify", list("Yes", "No"))
-	if(tgui_answer == "Yes")
-		vampiredatum.princify()
-	else if(tgui_answer == "No")
-		vampiredatum.can_become_prince = FALSE
-*/
-
 /datum/vampire_clan/proc/finalize_spend_rank()
 	// Level up the vampire
+	vampiredatum.vampire_regen_rate += 0.1
+	vampiredatum.max_vitae += 100
+	// We're almost done - Spend your Rank now.
+	vampiredatum.vampire_level++
+	vampiredatum.vampire_level_unspent--
+	vampiredatum.current_damage_bonus = vampiredatum.extra_damage_per_rank * vampiredatum.vampire_level
 	if(ishuman(vampiredatum.owner.current))
 		var/mob/living/carbon/human/human_user = vampiredatum.owner.current
 		var/obj/item/bodypart/user_left_hand = human_user.get_bodypart(BODY_ZONE_L_ARM)
 		var/obj/item/bodypart/user_right_hand = human_user.get_bodypart(BODY_ZONE_R_ARM)
-		user_left_hand.unarmed_damage_low += vampiredatum.extra_damage_per_rank
-		user_right_hand.unarmed_damage_low += vampiredatum.extra_damage_per_rank
-		// This affects the hitting power of Brawn.
-		user_left_hand.unarmed_damage_high += vampiredatum.extra_damage_per_rank
-		user_right_hand.unarmed_damage_high += vampiredatum.extra_damage_per_rank
-		vampiredatum.current_damage_bonus += vampiredatum.extra_damage_per_rank
-	vampiredatum.vampire_regen_rate += 0.1
-	vampiredatum.max_vitae += 100
-
-	/* if(ishuman(vampiredatum.owner.current))
-		var/mob/living/carbon/human/vampire_human = vampiredatum.owner.current
-		vampire_human.dna.species.punchdamage += 0.5 */
-
-	// We're almost done - Spend your Rank now.
-	vampiredatum.vampire_level++
-	vampiredatum.vampire_level_unspent--
+		user_left_hand.unarmed_damage_low = 5 + vampiredatum.current_damage_bonus
+		user_right_hand.unarmed_damage_low = 5 + vampiredatum.current_damage_bonus
+		user_left_hand.unarmed_damage_high = 10 + vampiredatum.current_damage_bonus
+		user_right_hand.unarmed_damage_high = 10 + vampiredatum.current_damage_bonus
 
 	// Flavor
 	to_chat(vampiredatum.owner.current, span_notice("You are now a rank [vampiredatum.vampire_level] Vampire. \

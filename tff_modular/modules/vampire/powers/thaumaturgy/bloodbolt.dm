@@ -17,7 +17,7 @@
 /datum/action/cooldown/vampire/targeted/bloodbolt/fire_targeted_power(atom/target_atom, list/modifiers)
 	. = ..()
 	var/mob/living/living_owner = owner
-	// check_witnesses(target_atom)
+	check_witnesses()
 	living_owner.balloon_alert(living_owner, "you fire a blood bolt!")
 	living_owner.face_atom(target_atom)
 	living_owner.changeNext_move(CLICK_CD_RANGE)

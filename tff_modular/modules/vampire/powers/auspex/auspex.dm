@@ -6,8 +6,7 @@
 
 	// Lists of abilities granted per level
 	level_1 = list(/datum/action/cooldown/vampire/auspex)
-	level_2 = list(/datum/action/cooldown/vampire/auspex/two)
-	level_3 = list(/datum/action/cooldown/vampire/auspex/two, /datum/action/cooldown/vampire/astral_projection)
+	level_2 = list(/datum/action/cooldown/vampire/auspex/two, /datum/action/cooldown/vampire/astral_projection)
 
 /datum/discipline/auspex/apply_discipline_quirks(datum/antagonist/vampire/clan_owner)
 	. = ..()

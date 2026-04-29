@@ -14,7 +14,7 @@
 
 /datum/dynamic_ruleset/roundstart/vampire/assign_role(datum/mind/candidate)
 	var/datum/antagonist/vampire/suck_datum = candidate.add_antag_datum(/datum/antagonist/vampire)
-	suck_datum.rank_up(VAMPIRE_STARTING_LEVELS)
+	suck_datum.rank_up(VAMPIRE_STARTING_LEVELS, TRUE)
 
 /datum/dynamic_ruleset/midround/from_living/vampire
 	name = "Vampiric Accident"
@@ -35,7 +35,7 @@
 
 /datum/dynamic_ruleset/midround/from_living/vampire/assign_role(datum/mind/candidate)
 	var/datum/antagonist/vampire/suck_datum = candidate.add_antag_datum(/datum/antagonist/vampire)
-	suck_datum.rank_up(VAMPIRE_STARTING_LEVELS)
+	suck_datum.rank_up(VAMPIRE_STARTING_LEVELS, TRUE)
 
 /datum/dynamic_ruleset/latejoin/vampire
 	name = "Vampiric Accident"
@@ -52,3 +52,7 @@
 	if(is_species(candidate, BLOODSUCKER_RESTRICTED_SPECIES))
 		return FALSE
 	return ..()
+
+/datum/dynamic_ruleset/latejoin/vampire/assign_role(datum/mind/candidate)
+	var/datum/antagonist/vampire/suck_datum = candidate.add_antag_datum(/datum/antagonist/vampire)
+	suck_datum.rank_up(VAMPIRE_STARTING_LEVELS, TRUE)

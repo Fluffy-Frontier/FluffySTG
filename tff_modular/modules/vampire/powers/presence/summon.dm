@@ -20,7 +20,7 @@
 	ranged_mousepointer = 'tff_modular/modules/vampire/icons/vampire_summon.dmi'
 
 	/// Maximum duration of the summon effect
-	var/summon_duration = 30 SECONDS
+	var/summon_duration = 10 SECONDS
 
 /datum/action/cooldown/vampire/targeted/summon/two
 	vitaecost = 30

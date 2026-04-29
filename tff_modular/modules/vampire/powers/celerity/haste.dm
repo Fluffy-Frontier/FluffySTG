@@ -65,7 +65,7 @@
 	var/turf/targeted_turf = get_turf(target_atom)
 	// Pulled? Not anymore.
 	user.pulledby?.stop_pulling()
-	user.adjust_stamina_loss(-10 - level_current * 8)
+	user.adjust_stamina_loss(-10 - level_current * 7)
 	// Go to target turf
 	// DO NOT USE WALK TO.
 	// check_witnesses()
@@ -99,6 +99,6 @@
 			continue
 		hit += hit_living
 		playsound(hit_living, SFX_PUNCH, 15, TRUE, -1)
-		hit_living.adjust_stamina_loss(10 + level_current * 8)
+		hit_living.adjust_stamina_loss(10 + level_current * 7)
 		hit_living.Knockdown(10 + level_current * 8)
 		hit_living.spin(1 SECONDS, 1)

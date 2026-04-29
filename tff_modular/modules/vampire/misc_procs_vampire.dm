@@ -296,9 +296,9 @@
 			return "'Expert'"
 		if(10 to 11)
 			return "'Master'"
-		if(12 to 24)
+		if(12 to 19)
 			return "'Grand Master'"
-		if(25 to INFINITY)
+		if(20 to INFINITY)
 			return "[span_narsiesmall("'Methuselah'")]"
 
 /// This is where we store clan descriptions.
@@ -356,6 +356,10 @@
 		/datum/antagonist/heretic_monster,
 		/datum/antagonist/nightmare,
 		/datum/antagonist/wizard,
+		/datum/antagonist/cult,
+		/datum/antagonist/clock_cultist,
+		/datum/antagonist/voidwalker,
+		/datum/antagonist/nukeop/clownop, // THIS IS SO FUCKING SUPERNATURAL
 	)
 
 	if(!isliving(watcher) || QDELING(watcher))
@@ -393,22 +397,6 @@
 /datum/antagonist/vampire/proc/free_all_vassals()
 	for(var/datum/antagonist/vassal/all_vassals in vassals)
 		all_vassals.owner.remove_antag_datum(/datum/antagonist/vassal)
-
-//Returns an in proportion scaled out view, with zoom_amt extra tiles on the y axis.
-/proc/get_zoomed_view(view, zoom_amt)
-	var/view_x
-	var/view_y
-	if(IS_FINITE(view))
-		return view + zoom_amt
-	else
-		var/list/viewrangelist = splittext(view, "x")
-		view_x = text2num(viewrangelist[1])
-		view_y = text2num(viewrangelist[2])
-		var/proportion = view_x / view_x
-		view_x += zoom_amt * proportion
-		view_y += zoom_amt
-	//God, I hate that we have to round this.
-	return "[round(view_x, 1)]x[round(view_y, 1)]"
 
 /mob/living/carbon/human/proc/backup_clothing_prefs() as /alist
 	return alist(

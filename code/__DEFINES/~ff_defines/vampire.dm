@@ -97,7 +97,7 @@
 
 /// Stats Defines
 /// Default amount of damage the vampire's punch/kick damage increases with each level.
-#define VAMPIRE_UNARMED_DMG_INCREASE_ON_RANKUP 0.75
+#define VAMPIRE_UNARMED_DMG_INCREASE_ON_RANKUP 1
 /// How many starting levels do we want each one to have?
 #define VAMPIRE_STARTING_LEVELS 3
 /// How many free levels the vampire gets gradually.

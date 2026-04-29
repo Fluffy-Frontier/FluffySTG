@@ -64,19 +64,16 @@
 	// Find target turf, at or below Atom
 	var/mob/living/carbon/user = owner
 	var/turf/my_turf = get_turf(owner)
-
+	check_witnesses()
 	user.visible_message(
 		span_warning("[user]'s form dissipates into a cloud of mist!"),
 		span_notice("You disspiate into formless mist."),
 	)
 	// Effect Origin
-	var/sound_strength = max(40, 100 - level_current * 20)
+	var/sound_strength = max(40, 100 - level_current * 30)
 	playsound(get_turf(owner), 'sound/effects/magic/summon_karp.ogg', vol = sound_strength, vary = TRUE)
-	/*
-	var/datum/effect_system/steam_spread/vampire/puff = new /datum/effect_system/steam_spread()
-	puff.set_up(3, FALSE, my_turf)
+	var/datum/effect_system/basic/steam_spread/puff = new /datum/effect_system/basic/steam_spread(user.loc, 1)
 	puff.start()
-	*/
 	var/mist_delay = max(5, 20 - level_current * 2.5) // Level up and do this faster.
 
 	// Freeze Me
@@ -103,8 +100,5 @@
 	check_witnesses()
 	// Effect Destination
 	playsound(get_turf(owner), 'sound/effects/magic/summon_karp.ogg', vol = 60, vary = TRUE)
-	/*
-	puff = new /datum/effect_system/steam_spread()
-	puff.set_up(3, FALSE, target_turf)
+	puff = new /datum/effect_system/basic/steam_spread(user.loc, 1)
 	puff.start()
-	*/

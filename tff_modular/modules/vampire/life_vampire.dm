@@ -66,9 +66,7 @@
 	// oh god why
 	if(HAS_TRAIT_FROM(current, TRAIT_DEATHCOMA, CHANGELING_TRAIT))
 		return FALSE
-
 	var/actual_regen = vampire_regen_rate + additional_regen
-
 	current.adjust_organ_loss(ORGAN_SLOT_BRAIN, -1 * (actual_regen * 4))
 	current.adjust_organ_loss(ORGAN_SLOT_EYES, -1 * (actual_regen * 4))
 	current.adjust_organ_loss(ORGAN_SLOT_EARS, -1 * (actual_regen * 4))
@@ -139,6 +137,9 @@
 		heal_vampire_organs()
 		return TRUE
 
+	var/datum/status_effect/incapacitating/sleeping/sleeping_effect = current.has_status_effect(/datum/status_effect/incapacitating/sleeping)
+	if(sleeping_effect)
+		current.remove_status_effect(sleeping_effect)
 	return FALSE
 
 /datum/antagonist/vampire/proc/try_regenerate_limbs(cost_muliplier = 1)

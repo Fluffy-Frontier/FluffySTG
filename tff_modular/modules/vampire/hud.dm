@@ -68,7 +68,6 @@
 	if(!owner_vamp)
 		return
 
-	/* var/mob/living/carbon/human/vampire_human = owner_mob */
 	msg += span_cult_large("This is your Rank-Counter.")
 	msg += span_cult("Here you see your current progress in the mastery of your disciplines.")
 	msg += span_cult("This is a measure of your main progress as a vampire, and, should you feed on another vampire(that has broken the masquerade), you will absorb half of their levels.")
@@ -76,7 +75,7 @@
 	msg += span_cult("\n<b>Currently, your rank affords you the following benefits:</b>")
 	msg += span_cult("Max Regeneration rate: +[owner_vamp.vampire_regen_rate]")
 	msg += span_cult("Max Vitae pool: +[owner_vamp.max_vitae - 600] ")
-	msg += span_cult("Unarmed damage: +[1 + (owner_vamp.vampire_level * owner_vamp.extra_damage_per_rank)]")
+	msg += span_cult("Unarmed damage: +[owner_vamp.current_damage_bonus]")
 
 	var/list/disciplinestext
 	for(var/datum/discipline/discipline in owner_vamp.owned_disciplines)

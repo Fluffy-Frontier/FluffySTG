@@ -225,19 +225,25 @@
 	Remove(owner)
 
 // If there's a mortal in line of sight, we get a masq infraction
-/datum/action/cooldown/vampire/proc/check_witnesses(mob/living/target)
+/datum/action/cooldown/vampire/proc/check_witnesses()
 	var/turf/our_turf = get_turf(owner)
-	var/turf/target_turf = get_turf(target)
-	var/min_darkness = target_turf ? min(our_turf.get_lumcount(), target_turf.get_lumcount()) : our_turf.get_lumcount()
+	var/min_darkness = our_turf.get_lumcount()
 	var/is_dark = min_darkness <= 0.2
-	for(var/mob/living/watcher in oviewers(6, owner) - target)
+	var/datum/antagonist/vampire/antag_datum = IS_VAMPIRE(owner)
+	// Malkavians can't not show themselves as masquerade violators to others, because their task is to kill violators.
+	if(istype(antag_datum?.my_clan, /datum/vampire_clan/malkavian))
+		return
+	for(var/mob/living/watcher in oviewers(6, owner))
 		if(!vampiredatum_power.is_masq_watcher(watcher))
 			continue
 		if(is_dark && !watcher.Adjacent(owner) && (!target || !watcher.Adjacent(target)))
 			continue
 		if(!INCAPACITATED_IGNORING(watcher, INCAPABLE_RESTRAINTS))
 			watcher.face_atom(owner)
-
+		if(watcher == owner)
+			continue
+		if(length(watcher) < 2)
+			return FALSE
 		watcher.do_alert_animation(watcher)
 		playsound(watcher, 'sound/machines/chime.ogg', 50, FALSE, -5)
 		vampiredatum_power.give_masquerade_infraction()

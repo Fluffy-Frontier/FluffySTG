@@ -282,7 +282,7 @@
 
 /datum/antagonist/vampire/get_admin_commands()
 	. = ..()
-	.["Level Add"] = CALLBACK(src, PROC_REF(rank_up), 1)
+	.["Level Add"] = CALLBACK(src, PROC_REF(rank_up), 1, TRUE)
 
 	if(vampire_level_unspent > 0)
 		.["Level Deduct"] = CALLBACK(src, PROC_REF(rank_down))
@@ -323,8 +323,7 @@
 	GLOB.all_vampires += src
 	SSvampire_leveling.check_enable()
 
-	// Start society if we're the first vampire
-	// check_start_society()
+	check_start_society()
 
 	if(!QDELETED(owner.current))
 		for(var/quirk_type in typesof(/datum/quirk/item_quirk/addict/junkie) + /datum/quirk/skittish)
@@ -760,7 +759,6 @@
 		var/obj/item/bodypart/user_right_hand = owner.get_bodypart(BODY_ZONE_R_ARM)
 		user_left_hand.unarmed_damage_low = 5 + current_damage_bonus
 		user_right_hand.unarmed_damage_low = 5 + current_damage_bonus
-		// This affects the hitting power of Brawn.
 		user_left_hand.unarmed_damage_high = 10 + current_damage_bonus
 		user_right_hand.unarmed_damage_high = 10 + current_damage_bonus
 

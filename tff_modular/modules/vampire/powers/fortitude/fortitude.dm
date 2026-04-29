@@ -29,7 +29,7 @@
 						At level 3: Gain dismember resistance.\n\
 						At level 4: Gain complete stun immunity."
 	vampire_power_flags = BP_AM_TOGGLE | BP_AM_COSTLESS_UNCONSCIOUS
-	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_IN_FRENZY | BP_CANT_USE_WHILE_STAKED
+	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_WHILE_STAKED
 	vitaecost = 50
 	cooldown_time = 5 SECONDS
 
