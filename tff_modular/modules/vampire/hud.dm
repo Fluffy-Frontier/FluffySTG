@@ -160,6 +160,9 @@
 		if(701 to INFINITY)
 			valuecolor = "#ffffff"
 
+	var/atom/movable/screen/vampire/blood_counter/blood_display = owner.current?.hud_used?.screen_objects[HUD_VAMPIRE_BLOOD]
+	var/atom/movable/screen/vampire/rank_counter/vamprank_display = owner.current?.hud_used?.screen_objects[HUD_VAMPIRE_RANK]
+	var/atom/movable/screen/vampire/humanity_counter/humanity_display = owner.current?.hud_used?.screen_objects[HUD_VAMPIRE_HUMANITY]
 	blood_display?.maptext = FORMAT_VAMPIRE_HUD_TEXT(valuecolor, current_vitae)
 
 	if(vamprank_display)
