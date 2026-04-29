@@ -16,10 +16,6 @@
 		stack_trace("Empty message")
 		return
 
-// FLUFFY FRONTIER EDIT START. ADDITION - LOG FIX
-	if(!mind)
-		return
-// FLUFFY FRONTIER EDIT END
 	// Cannot use the list as a map if the key is a number, so we stringify it (thank you BYOND)
 	var/smessage_type = num2text(message_type, MAX_BITFLAG_DIGITS)
 
