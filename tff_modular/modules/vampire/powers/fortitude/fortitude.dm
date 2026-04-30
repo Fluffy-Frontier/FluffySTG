@@ -8,7 +8,7 @@
 	level_2 = list(/datum/action/cooldown/vampire/fortitude/two)
 	level_3 = list(/datum/action/cooldown/vampire/fortitude/three)
 	level_4 = list(/datum/action/cooldown/vampire/fortitude/four)
-	level_5 = null
+	level_5 = list(/datum/action/cooldown/vampire/fortitude/five)
 
 /**
  *	FORTITUDE
@@ -17,6 +17,7 @@
  * 	Level 2: Push immunity
  * 	Level 3: Dismember resistance
  * 	Level 4: Complete stun immunity
+ *	Level 5: Grab Resistance
  */
 
 /datum/action/cooldown/vampire/fortitude
@@ -40,20 +41,16 @@
 	var/push = FALSE
 	var/dismember = FALSE
 	var/stun = FALSE
-
+	var/grab = FALSE
 	var/burn_resistance = 0.9
 
 /datum/action/cooldown/vampire/fortitude/two
-	vitaecost = 20
-	constant_vitaecost = 1.5
 	resistance = 0.6
 	burn_resistance = 0.8
 	pierce = TRUE
 	push = TRUE
 
 /datum/action/cooldown/vampire/fortitude/three
-	vitaecost = 30
-	constant_vitaecost = 2
 	resistance = 0.4
 	burn_resistance = 0.7
 	pierce = TRUE
@@ -61,14 +58,21 @@
 	dismember = TRUE
 
 /datum/action/cooldown/vampire/fortitude/four
-	vitaecost = 20
-	constant_vitaecost = 2
 	resistance = 0.3
 	burn_resistance = 0.6
 	pierce = TRUE
 	push = TRUE
 	dismember = TRUE
 	stun = TRUE
+
+/datum/action/cooldown/vampire/fortitude/five
+	resistance = 0.3
+	burn_resistance = 0.5
+	pierce = TRUE
+	push = TRUE
+	dismember = TRUE
+	stun = TRUE
+	grab = TRUE
 
 /datum/action/cooldown/vampire/fortitude/activate_power()
 	. = ..()
@@ -84,6 +88,9 @@
 		ADD_TRAIT(owner, TRAIT_PUSHIMMUNE, REF(src))
 	if(stun)
 		ADD_TRAIT(owner, TRAIT_STUNIMMUNE, REF(src)) // They'll get stun resistance + this, who cares.
+	if(grab)
+		ADD_TRAIT(owner, TRAIT_GRABRESISTANCE, REF(src))
+
 	var/mob/living/carbon/human/user = owner
 	RegisterSignal(user, COMSIG_MOB_APPLY_DAMAGE, PROC_REF(on_take_damage))
 	user.physiology.brute_mod *= resistance
