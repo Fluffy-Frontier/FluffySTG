@@ -26,8 +26,18 @@
 
 /datum/action/cooldown/vampire/targeted/haste/three
 	vitaecost = 30
-	cooldown_time = 4 SECONDS
+	cooldown_time = 5 SECONDS
 	level_current = 3
+
+/datum/action/cooldown/vampire/targeted/haste/four
+	vitaecost = 30
+	cooldown_time = 5 SECONDS
+	level_current = 4
+
+/datum/action/cooldown/vampire/targeted/haste/five
+	vitaecost = 25
+	cooldown_time = 4.5 SECONDS
+	level_current = 5
 
 /datum/action/cooldown/vampire/targeted/haste/can_use()
 	. = ..()

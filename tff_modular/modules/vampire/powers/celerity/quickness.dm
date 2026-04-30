@@ -21,12 +21,10 @@
 /datum/action/cooldown/vampire/exactitude/activate_power()
 	. = ..()
 	RegisterSignal(owner, COMSIG_LIVING_EARLY_UNARMED_ATTACK, PROC_REF(on_unarmed_attack))
-	ADD_TRAIT(owner, TRAIT_PERFECT_ATTACKER, REF(src))
 
 /datum/action/cooldown/vampire/exactitude/deactivate_power()
 	. = ..()
 	UnregisterSignal(owner, COMSIG_LIVING_EARLY_UNARMED_ATTACK)
-	REMOVE_TRAIT(owner, TRAIT_PERFECT_ATTACKER, REF(src))
 
 /datum/action/cooldown/vampire/exactitude/continue_active()
 	. = ..()
@@ -42,7 +40,7 @@
 		if(living_target.stat != DEAD) // don't focus on dead targets
 			return NONE
 
-	for(var/mob/living/to_attack in oview(1, source))
+	for(var/mob/living/to_attack in oview(2, source))
 		if(to_attack.stat == DEAD || to_attack.invisibility > source.see_invisible)
 			continue
 		source.face_atom(to_attack)
