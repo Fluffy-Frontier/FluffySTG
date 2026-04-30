@@ -20,6 +20,10 @@
 	constant_vitaecost = 1
 	aura = 6
 
+/datum/action/cooldown/vampire/awe/three
+	constant_vitaecost = 0.8
+	aura = 7
+
 /datum/action/cooldown/vampire/awe/activate_power()
 	. = ..()
 	to_chat(owner, span_notice("You extend your supernatural presence."), type = MESSAGE_TYPE_INFO)

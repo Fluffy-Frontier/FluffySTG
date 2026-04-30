@@ -48,6 +48,12 @@
 	level_current = 4
 	target_range = 4
 
+/datum/action/cooldown/vampire/targeted/mesmerize/five
+	vitaecost = 60
+	level_current = 5
+	target_range = 5
+	mesmerize_delay = 5 SECONDS
+
 /datum/action/cooldown/vampire/targeted/mesmerize/can_use()
 	. = ..()
 	if(!.)
