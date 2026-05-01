@@ -10,7 +10,6 @@
 
 /obj/vehicle/ridden/atv/rsx8i/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/ridable, /datum/component/riding/vehicle/atv)
 	if(!ematvcover)
 		ematvcover = mutable_appearance(icon, "ematvcover", MOB_LAYER + 0.1)
 	if(!lightblue)
@@ -44,7 +43,6 @@
 
 /obj/vehicle/ridden/atv/rsx8p/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/ridable, /datum/component/riding/vehicle/atv)
 	if(!em2atvcover)
 		em2atvcover = mutable_appearance(icon, "em2atvcover", MOB_LAYER + 0.1)
 	if(!lightblue)
@@ -78,7 +76,6 @@
 
 /obj/vehicle/ridden/atv/rsx8e/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/ridable, /datum/component/riding/vehicle/atv)
 	if(!engatvcover)
 		engatvcover = mutable_appearance(icon, "engatvcover", MOB_LAYER + 0.1)
 	if(!lightorang)
@@ -112,7 +109,6 @@
 
 /obj/vehicle/ridden/atv/rsx8s/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/ridable, /datum/component/riding/vehicle/atv)
 	if(!sbatvcover)
 		sbatvcover = mutable_appearance(icon, "sbatvcover", MOB_LAYER + 0.1)
 	if(!lightred)
