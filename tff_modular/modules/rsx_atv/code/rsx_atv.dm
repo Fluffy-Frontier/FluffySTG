@@ -3,7 +3,7 @@
 	name = "RSX-8 Interdyne Medical Emergency ATV"
 	desc = "An all-terrain vehicle built for traversing rough terrain with ease. One of the few old-Earth technologies that are still relevant on most planet-bound outposts. Woop-Woop"
 	icon_state = "ematv"
-	icon = 'tff_modular/modules/rsx_atv/icons/vechicle.dmi'
+	icon = 'tff_modular/modules/rsx_atv/icons/vehicle.dmi'
 	var/static/mutable_appearance/ematvcover
 	var/static/mutable_appearance/lightblue
 	var/static/mutable_appearance/emis
@@ -36,7 +36,7 @@
 	name = "RSX-8 Medical Emergency ATV"
 	desc = "An all-terrain vehicle built for traversing rough terrain with ease. One of the few old-Earth technologies that are still relevant on most planet-bound outposts. Woop-Woop"
 	icon_state = "em2atv"
-	icon = 'tff_modular/modules/rsx_atv/icons/vechicle.dmi'
+	icon = 'tff_modular/modules/rsx_atv/icons/vehicle.dmi'
 	var/static/mutable_appearance/em2atvcover
 	var/static/mutable_appearance/lightblue
 	var/static/mutable_appearance/emis
@@ -69,7 +69,7 @@
 	name = "RSX-8 Technical ATV"
 	desc = "An all-terrain vehicle built for traversing rough terrain with ease. One of the few old-Earth technologies that are still relevant on most planet-bound outposts."
 	icon_state = "engatv"
-	icon = 'tff_modular/modules/rsx_atv/icons/vechicle.dmi'
+	icon = 'tff_modular/modules/rsx_atv/icons/vehicle.dmi'
 	var/static/mutable_appearance/engatvcover
 	var/static/mutable_appearance/lightorang
 	var/static/mutable_appearance/emiseng
@@ -102,7 +102,7 @@
 	name = "RSX-8 Security ATV"
 	desc = "An all-terrain vehicle built for traversing rough terrain with ease. One of the few old-Earth technologies that are still relevant on most planet-bound outposts. Woop-Woop"
 	icon_state = "sbatv"
-	icon = 'tff_modular/modules/rsx_atv/icons/vechicle.dmi'
+	icon = 'tff_modular/modules/rsx_atv/icons/vehicle.dmi'
 	var/static/mutable_appearance/sbatvcover
 	var/static/mutable_appearance/lightred
 	var/static/mutable_appearance/emis
