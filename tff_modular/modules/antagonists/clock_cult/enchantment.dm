@@ -166,7 +166,7 @@ GLOBAL_LIST_EMPTY(enchantment_datums_by_type)
 	if(!istype(target))
 		return
 	source.visible_message(span_danger("\The [source] emits a blinding light!"))
-	target.flash_act(2, affect_silicon = TRUE, length = 3 SECONDS) //might want to make this not effect borgs
+	target.flash_act(2, affect_silicon = FALSE, length = 2 SECONDS) //might want to make this not effect borgs // Сделал братуха
 
 //might have to change this due to us having TG instead of bee blocking
 /datum/enchantment/blocking
@@ -240,10 +240,10 @@ GLOBAL_LIST_EMPTY(enchantment_datums_by_type)
 
 /datum/enchantment/sharpness
 	examine_description = "It has been blessed with the gift of sharpness."
-	max_level = 5
+	max_level = 2
 
 /datum/enchantment/sharpness/apply_effect(obj/item/target, level)
-	target.force += 2 * level
+	target.force += 5 * level
 
 /datum/enchantment/soul_tap
 	examine_description = "It has been blessed with the power of ripping the energy from target's souls and will heal the wielder when a target is struck."
@@ -274,3 +274,11 @@ GLOBAL_LIST_EMPTY(enchantment_datums_by_type)
 
 /datum/enchantment/tiny/apply_effect(obj/item/target)
 	target.w_class = WEIGHT_CLASS_TINY
+
+/datum/enchantment/clothing/speed
+	examine_description = "It has been blessed and reduces the weight of the item."
+	max_level = 2
+
+/datum/enchantment/clothing/speed/apply_effect(obj/item/target, level)
+	var/slowdown_level = max_level * 0.1
+	target.slowdown -= slowdown_level
