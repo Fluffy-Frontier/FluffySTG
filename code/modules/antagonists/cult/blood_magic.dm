@@ -484,7 +484,10 @@
 		animate(target, color = old_color, time = 1 SECONDS, easing = EASE_IN)
 		return ..()
 	// NOVA EDIT ADDITION END
-
+	// TFF ADDITION START
+	else if(IS_VAMPIRE(target))
+		effect_vampire()
+	// TFF ADDITION END
 	if(target.can_block_magic())
 		to_chat(user, span_warning("The spell had no effect!"))
 		return ..()

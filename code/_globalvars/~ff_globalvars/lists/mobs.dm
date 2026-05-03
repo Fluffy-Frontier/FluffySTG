@@ -1,0 +1,2 @@
+GLOBAL_LIST_EMPTY(all_vampires)
+GLOBAL_LIST_EMPTY(masquerade_breakers)

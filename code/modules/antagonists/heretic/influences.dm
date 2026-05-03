@@ -158,7 +158,11 @@
 	. += span_hypnophrase(pick_list(HERETIC_INFLUENCE_FILE, "examine"))
 	if(IS_HERETIC(user) || !ishuman(user))
 		return
-
+	// TFF ADDITION START
+	var/datum/antagonist/vampire/vampire_datum = IS_VAMPIRE(user)
+	if(istype(vampire_datum?.my_clan, /datum/vampire_clan/malkavian))
+		return
+	// TFF ADDITION END
 	. += span_userdanger("Your mind burns as you stare at the tear!")
 	user.adjust_organ_loss(ORGAN_SLOT_BRAIN, 10, 190)
 	user.add_mood_event("gates_of_mansus", /datum/mood_event/gates_of_mansus)

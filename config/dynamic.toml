@@ -699,3 +699,31 @@ min_antag_cap = 0
 repeatable_weight_decrease = 2
 repeatable = 0
 minimum_required_age = 0
+
+["Vampire"]
+weight = 8
+min_pop = 15
+blacklisted_roles = []
+min_antag_cap = 1
+max_antag_cap.denominator = 24
+minimum_required_age = 0
+
+["Vampiric Accident"]
+weight = 8
+min_pop = 15
+blacklisted_roles = []
+min_antag_cap = 1
+max_antag_cap.denominator = 24
+repeatable_weight_decrease = 2
+repeatable = 1
+minimum_required_age = 0
+
+["Vampire LateJoin]
+weight = 10
+min_pop = 15
+blacklisted_roles = []
+repeatable_weight_decrease = 2
+repeatable = 1
+minimum_required_age = 0
+min_antag_cap = 1
+max_antag_cap.denominator = 24

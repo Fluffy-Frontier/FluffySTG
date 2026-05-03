@@ -717,6 +717,10 @@
 		linked_alert.icon_state = "slime_bluespace_on"
 
 	if(healthcheck && (healthcheck - owner.health) > 5)
+		// TFF ADDITION START
+		if(HAS_TRAIT(owner, TRAIT_FAKEDEATH) && owner.health > owner.crit_threshold)
+			return ..()
+		// TFF ADDITION END
 		owner.visible_message(span_warning("[linked_extract] notices the sudden change in [owner]'s physical health, and activates!"))
 		do_sparks(5,FALSE,owner)
 		var/turf/emergency_turf = find_safe_turf(owner.z, extended_safety_checks = TRUE)
