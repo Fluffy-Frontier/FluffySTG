@@ -3,6 +3,9 @@
     . = ..()
     insert_all_icons("", 'tff_modular/modules/ALMG-90/icons/ALMG-90.dmi')
 
+/obj/projectile/beam/laser/rapid/mecha
+	damage = 12.5
+
 // Добавляем лазерный аналог Ultra AC 2 для мехов
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/amlg90
 	name = "\improper AMLG-90"
@@ -10,7 +13,7 @@
 	icon = 'tff_modular/modules/ALMG-90/icons/ALMG-90.dmi'
 	icon_state = "mecha_amlg90"
 	equip_cooldown = 10
-	projectile = /obj/projectile/beam/laser/rapid
+	projectile = /obj/projectile/beam/laser/rapid/mecha
 	fire_sound = 'tff_modular/modules/ALMG-90/sound/gunshot_lascarbine.ogg'
 	energy_drain = 120
 	projectiles_per_shot = 3

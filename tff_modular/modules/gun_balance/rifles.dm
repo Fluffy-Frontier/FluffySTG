@@ -1,7 +1,10 @@
 // родной файл - modular_nova/modules/modular_weapons/code/company_and_or_faction_based/carwo_defense_systems/ammo/rifle.dm
 
 /obj/projectile/bullet/c40sol
+	name = ".40 Sol Long bullet"
 	damage = 35
+	wound_bonus = -30
+	exposed_wound_bonus = -35
 
 /obj/projectile/bullet/c40sol/fragmentation
 	damage = 15

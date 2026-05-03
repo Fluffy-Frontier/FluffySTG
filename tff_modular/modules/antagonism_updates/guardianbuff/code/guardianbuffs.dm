@@ -1,3 +1,4 @@
+/*
 /mob/living/basic/guardian/standard
 	melee_damage_lower = 30
 	melee_damage_upper = 30
@@ -68,3 +69,4 @@
 
 /datum/action/cooldown/mob_cooldown/guardian_bluespace_beacon
 	cooldown_time = 2.5 MINUTES
+*/

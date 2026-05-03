@@ -15,7 +15,7 @@
 	e_cost = LASER_SHOTS(20, STANDARD_CELL_CHARGE)
 
 /obj/projectile/plasma/adv/bloodred
-	damage = 37
+	damage = 24
 	range = 7
 	mine_range = 9
 

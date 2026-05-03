@@ -93,8 +93,6 @@
 	guns = list(
 		/obj/item/storage/toolbox/guncase/nova/carwo_large_case/sindano,
 		/obj/item/storage/toolbox/guncase/nova/carwo_large_case/sindano,
-		/* // FLUFFY FRONTIER REMOVAL START -
 		/obj/item/storage/toolbox/guncase/nova/carwo_large_case/sol_classic,
 		/obj/item/storage/toolbox/guncase/nova/carwo_large_case/sol_classic,
-		*/ // FLUFFY FRONTIER REMOVAL END
 	)

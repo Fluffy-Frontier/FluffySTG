@@ -11,7 +11,7 @@
 /// The amount in units of blood that gets consumed per point of damage healed (by hemokinetic regen and master of the house)
 #define HEMOKINETIC_REGEN_BLOOD_CONSUMPTION 0.25
 /// How much damage per second is healed by hemokinetic regen
-#define HEMOKINETIC_REGEN_HEALING 1.8
+#define HEMOKINETIC_REGEN_HEALING 1.2 // TFF EDIT - ORIGINAL: HEMOKINETIC_REGEN_HEALING 1.8
 
 /datum/status_effect/blood_thirst_satiated
 	id = "blood_thirst_satiated"
