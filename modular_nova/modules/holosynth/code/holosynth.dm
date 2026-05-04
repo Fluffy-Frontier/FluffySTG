@@ -45,6 +45,7 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/synth,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/synth,
 	)
+	changesource_flags = MIRROR_BADMIN | MIRROR_MAGIC // FLUFFY FRONTIER ADDITION
 
 /// Holosynth chest carries the hologram-effect state so the species datum can stay stateless.
 /obj/item/bodypart/chest/synth/holosynth
