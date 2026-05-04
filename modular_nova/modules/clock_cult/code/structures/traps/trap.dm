@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 //Thing that you stick on the floor
 /obj/item/clockwork/trap_placer
 	name = "trap"
@@ -168,3 +169,4 @@
 	for(var/datum/output as anything in outputs) //must be typecasted because of how SEND_SIGNAL works
 
 		SEND_SIGNAL(output, COMSIG_CLOCKWORK_SIGNAL_RECEIVED)
+*/

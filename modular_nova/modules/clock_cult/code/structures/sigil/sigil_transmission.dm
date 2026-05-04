@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 #define POWER_GIVE 40
 #define POWER_SIPHON 20
 
@@ -112,3 +113,4 @@
 
 #undef POWER_GIVE
 #undef POWER_SIPHON
+*/

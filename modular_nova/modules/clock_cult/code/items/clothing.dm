@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 #define VISOR_MOUNT_DAMAGE 20
 #define VISOR_MOUNT_SLEEP_TIME 5 SECONDS
 
@@ -451,3 +452,4 @@
 
 #undef VISOR_MOUNT_DAMAGE
 #undef VISOR_MOUNT_SLEEP_TIME
+*/

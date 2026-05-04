@@ -1,3 +1,5 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
+
 /obj/structure/destructible/clockwork/gear_base/powered/tinkerers_cache
 	name = "tinkerer's cache"
 	desc = "A bronze store filled with parts and components."
@@ -167,3 +169,4 @@
 /datum/tinker_cache_item/trap/pressure
 	name = "Pressure Sensor (Trigger)"
 	item_path = /obj/item/clockwork/trap_placer/pressure_sensor
+*/

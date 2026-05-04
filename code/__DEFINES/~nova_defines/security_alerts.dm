@@ -9,3 +9,7 @@
 #define SEC_LEVEL_EPSILON 7 // CENTCOM IS ANGY!!!
 #define SEC_LEVEL_GAMMA 8 // Oh shit bois
 #define SEC_LEVEL_FEDERAL 9 // THE FUCKING FEDS ARE HERE!!!
+// TFF ADDITION START
+/// Security level is lambda. (oh god eldtrich beings won the video game)
+#define SEC_LEVEL_LAMBDA	7
+// TFF ADDITION END

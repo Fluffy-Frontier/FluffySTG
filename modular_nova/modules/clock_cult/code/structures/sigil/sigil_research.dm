@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 #define DISAPPEAR_REAPPEAR_TIME (2 SECONDS)
 
 /obj/structure/destructible/clockwork/sigil/research
@@ -33,3 +34,4 @@
 
 
 #undef DISAPPEAR_REAPPEAR_TIME
+*/

@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 #define EFFECT_TIME (6.5 SECONDS)
 
 // Clock cult's version of the "bullshit stun hand"
@@ -91,3 +92,4 @@
 	return TRUE
 
 #undef EFFECT_TIME
+*/

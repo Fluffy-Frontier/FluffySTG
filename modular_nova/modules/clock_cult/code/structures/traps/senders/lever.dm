@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /obj/item/wallframe/clocktrap/lever
 	name = "switch"
 	desc = "A small switch attatched to the wall."
@@ -24,3 +25,4 @@
 	trigger_connected()
 	to_chat(user, span_notice("You activate the switch."))
 	playsound(user, 'sound/machines/click.ogg', 50)
+*/

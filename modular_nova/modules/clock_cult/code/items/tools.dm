@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 #define BRASS_TOOLSPEED_MOD 0.5
 
 /obj/item/wirecutters/brass
@@ -62,3 +63,4 @@
 	new /obj/item/multitool(src)
 
 #undef BRASS_TOOLSPEED_MOD
+*/

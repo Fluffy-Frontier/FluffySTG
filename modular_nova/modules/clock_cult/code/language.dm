@@ -1,3 +1,5 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
+
 /datum/language_holder/clockmob
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 								/datum/language/ratvar = list(LANGUAGE_ATOM))
@@ -139,3 +141,4 @@
 #undef REVERSE_RATVAR_HYPHEN_GUA_REPLACEMENT
 #undef REVERSE_RATVAR_HYPHEN_OF_MATCH
 #undef REVERSE_RATVAR_HYPHEN_OF_REPLACEMENT
+*/

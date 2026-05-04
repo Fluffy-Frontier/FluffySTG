@@ -1,15 +1,18 @@
+// TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 #define BOOK_OPEN_RANGE 2
 
 /obj/structure/destructible/clockwork/gear_base/technologists_lectern
 	name = "technologist's lectern"
 	desc = "A small pedestal with a glowing book floating over it.."
 	clockwork_desc = "A small pedestal, glowing with a divine energy. Used to research new abilities and objects."
+	icon = 'modular_nova/modules/clock_cult/icons/clockwork_objects.dmi' // TFF ADDITION
 	base_icon_state = "lectern"
 	icon_state = "lectern"
 	anchored = TRUE
 	break_message = "<span class='warning'>The lectern collapses.</span>"
 	can_unwrench = FALSE
 	max_integrity = 400
+/*
 	/// If the last process() found a clock cultist in range
 	var/mobs_in_range = FALSE
 	/// Ref to the effect of the lectern's book
@@ -477,3 +480,4 @@
 	flick("lectern_closing", src)
 
 #undef BOOK_OPEN_RANGE
+*/

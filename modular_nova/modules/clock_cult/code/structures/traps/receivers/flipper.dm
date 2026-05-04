@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 #define FLIP_DISTANCE 6
 #define FLIP_SPEED 3
 
@@ -58,3 +59,4 @@
 
 #undef FLIP_DISTANCE
 #undef FLIP_SPEED
+*/

@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 #define MAXIMUM_QUICKBIND_SLOTS 5
 
 GLOBAL_LIST_INIT(clockwork_slabs, list())
@@ -244,3 +245,4 @@ GLOBAL_LIST_INIT(clockwork_slabs, list())
 			bind_spell(living_user, scripture, positions.Find(position))
 
 #undef MAXIMUM_QUICKBIND_SLOTS
+*/

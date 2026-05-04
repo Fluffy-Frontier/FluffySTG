@@ -1,3 +1,5 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
+
 #define POWER_PER_USE 50
 
 /obj/structure/destructible/clockwork/gear_base/powered/prosperity_prism
@@ -41,3 +43,4 @@
 				possible_cultist.reagents.remove_reagent(toxin_chem.type, 2.5 * seconds_per_tick)
 
 #undef POWER_PER_USE
+*/

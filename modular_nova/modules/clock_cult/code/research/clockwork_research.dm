@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /datum/clockwork_research
 	/// Name of the research node
 	var/name = ""
@@ -112,3 +113,4 @@
 		/datum/tinker_cache_item/clockwork_rifle_ammo,
 	)
 
+*/

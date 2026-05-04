@@ -1,3 +1,5 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
+
 /datum/lazy_template/reebe
 	key = LAZY_TEMPLATE_KEY_OUTPOST_OF_COGS
 	map_dir = "_maps/nova/lazy_templates"
@@ -116,7 +118,7 @@
 	var/obj/item/clothing/suit/hooded/hooded = equipped.wear_suit
 	var/datum/component/toggle_attached_clothing/hood = hooded.GetComponent(/datum/component/toggle_attached_clothing)
 	hood.toggle_deployable() // start unhooded
-
+*/
 
 /obj/effect/mob_spawn/corpse/human/clock_cultist
 	name = "Clock Cultist"
@@ -132,3 +134,4 @@
 
 /obj/effect/landmark/late_cog_portals
 	name = "late cog portal spawn"
+

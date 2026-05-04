@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /obj/effect/portal/permanent/one_way/reebe
 	name = "whirring portal"
 	desc = "A tall, glowing portal. A low emination of moving cogs can be heard. You don't feel like coming back will be the easiest."
@@ -23,7 +24,7 @@
 
 	return ..()
 
-
+*/
 /obj/effect/portal/permanent/one_way/reebe/leaving
 	desc = "For those who wish or require to leave the holy outpost."
 	id = "reebe_exit"

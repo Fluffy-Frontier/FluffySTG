@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 #define SIGIL_INVOCATION_ALPHA 120
 #define SIGIL_INVOKED_ALPHA 200
 #define SIGIL_MATRIX_SCALE 1.2
@@ -144,3 +145,4 @@
 #undef SIGIL_INVOCATION_ALPHA
 #undef SIGIL_INVOKED_ALPHA
 #undef SIGIL_MATRIX_SCALE
+*/

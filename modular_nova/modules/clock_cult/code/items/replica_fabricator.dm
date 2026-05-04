@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 #define BRASS_POWER_COST 10
 #define REGULAR_POWER_COST (BRASS_POWER_COST / 2)
 
@@ -286,3 +287,4 @@
 
 #undef BRASS_POWER_COST
 #undef REGULAR_POWER_COST
+*/

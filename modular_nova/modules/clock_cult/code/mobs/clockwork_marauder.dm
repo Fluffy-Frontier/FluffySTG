@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 #define MARAUDER_SHIELD_MAX 5
 #define WELDER_REPAIR_AMOUNT 15
 
@@ -143,3 +144,4 @@ GLOBAL_LIST_EMPTY(clockwork_marauders)
 
 #undef MARAUDER_SHIELD_MAX
 #undef WELDER_REPAIR_AMOUNT
+*/

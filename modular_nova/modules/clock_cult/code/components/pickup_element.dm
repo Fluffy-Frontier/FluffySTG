@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 #define REGULAR_PICKUP_MOD 1
 #define CULTIST_PICKUP_MOD 2
 #define PICKUP_SHOCK_DAMAGE 25
@@ -55,3 +56,4 @@
 #undef REGULAR_PICKUP_MOD
 #undef CULTIST_PICKUP_MOD
 #undef PICKUP_SHOCK_DAMAGE
+*/

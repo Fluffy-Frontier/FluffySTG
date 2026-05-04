@@ -136,4 +136,18 @@
 	looping_sound_interval = 13 SECONDS
 	shuttle_call_time_mod = ALERT_COEFF_NOVA
 
+// TFF ADDITION START
+/datum/security_level/lambda
+	name = "lambda"
+	name_shortform = "λ"
+	announcement_color = "crimson" //Thanking Absolucy for having a bigger brain than me in figuring out colors.
+	number_level = SEC_LEVEL_LAMBDA
+	sound = 'tff_modular/modules/antagonists/clock_cult/sound/lambda.ogg' // Ported over the current (as of this codes time) ss14 gamma alert, renamed because it fits better. Old gamma was better :(
+	elevating_to_configuration_key = /datum/config_entry/string/alert_lambda
+	shuttle_call_time_mod = ALERT_COEFF_NOVA //This is as bad as the nuke going off. Everyone is fucked.
+	disables_mail = TRUE
+
+/datum/config_entry/string/alert_lambda
+	default = "Central Command has detected a large spike of dimensional energy, consistent with the summoning of \[REDACTED\] entities. You are advised to make what little time you have left worthwhile; as no additional assets will be dispatched to %STATION_NAME% at this time."
+// TFF ADDITION END
 #undef ALERT_COEFF_NOVA

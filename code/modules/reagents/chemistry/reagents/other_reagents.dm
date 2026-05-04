@@ -344,6 +344,8 @@
 
 /datum/reagent/water/holywater/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, metabolization_ratio)
 	. = ..()
+	// TFF EDIT START - ORIGINAL:
+	/*
 	// Microdosing holy water is less effective than just gulping it down
 	data["deciseconds_metabolized"] += seconds_per_tick * 1 SECONDS * metabolization_ratio
 
@@ -388,6 +390,34 @@
 		holder?.remove_reagent(type, volume) // maybe this is a little too perfect and a max() cap on the statuses would be better??
 	if(need_mob_update)
 		return UPDATE_MOB_HEALTH
+	*/
+	if(affected_mob.blood_volume)
+		affected_mob.blood_volume += 0.1 * REM * seconds_per_tick // water is good for you!
+
+	data["deciseconds_metabolized"] += (seconds_per_tick * 1 SECONDS * REM)
+	affected_mob.adjust_jitter_up_to(2 SECONDS * seconds_per_tick, 20 SECONDS)
+	if(IS_CULTIST(affected_mob) || affected_mob.mind?.has_antag_datum(/datum/antagonist/clock_cultist))
+		if(handle_cultists(affected_mob, seconds_per_tick)) //only returns TRUE on deconversion
+			return
+	holder.remove_reagent(type, 1 * REAGENTS_METABOLISM * seconds_per_tick) //fixed consumption to prevent balancing going out of whack
+
+	var/need_mob_update = FALSE
+
+	if (!HAS_TRAIT(affected_mob, TRAIT_EVIL) || IS_CULTIST(affected_mob) || affected_mob.mind?.holy_role == HOLY_ROLE_PRIEST)
+		return
+	if(data["deciseconds_metabolized"] >= (25 SECONDS)) // 10 units
+		affected_mob.adjust_stutter_up_to(4 SECONDS * REM * seconds_per_tick, 20 SECONDS)
+		affected_mob.set_dizzy_if_lower(10 SECONDS)
+		if(SPT_PROB(25, seconds_per_tick)) //Congratulations, your committment to evil has now made holy water a deadly poison to you!
+			affected_mob.emote("scream")
+			need_mob_update += affected_mob.adjust_fire_loss(3 * REM * seconds_per_tick, updating_health = FALSE)
+	if(data["deciseconds_metabolized"] >= (1 MINUTES)) // 24 units
+		need_mob_update += affected_mob.adjust_fire_loss(10 * REM * seconds_per_tick, updating_health = FALSE)
+		affected_mob.remove_status_effect(/datum/status_effect/jitter)
+		affected_mob.remove_status_effect(/datum/status_effect/speech/stutter)
+		holder?.remove_reagent(type, volume) // maybe this is a little too perfect and a max() cap on the statuses would be better??
+	return need_mob_update
+	// TFF EDIT END
 
 /datum/reagent/water/holywater/expose_turf(turf/exposed_turf, reac_volume)
 	. = ..()

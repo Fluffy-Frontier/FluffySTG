@@ -1,3 +1,4 @@
+/* TFF REMOVAL
 /datum/outfit/clock
 	name = "Default Clock Cultist"
 
@@ -16,7 +17,6 @@
 /datum/outfit/clock/pre_equip(mob/living/carbon/human/equip_human, visualsOnly)
 	equip_human.add_faction(FACTION_CLOCK)
 
-
 /datum/outfit/clock/armor
 	name = "Armored Clock Cultist"
 
@@ -32,6 +32,7 @@
 	head = /obj/item/clothing/head/helmet/clockwork
 	glasses = /obj/item/clothing/glasses/clockwork/judicial_visor/no_damage
 	l_hand = /obj/item/gun/ballistic/bow/clockwork
+*/
 
 /datum/outfit/clock/gun
 	name = "Seer Clock Cultist"
@@ -41,6 +42,8 @@
 	l_pocket = /obj/item/storage/pouch/ammo/clock
 	r_pocket = /obj/item/storage/pouch/ammo/clock
 	l_hand = /obj/item/gun/ballistic/rifle/lionhunter/clockwork
+
+/* TFF REMOVAL
 
 /datum/outfit/clock/support
 	name = "Support Clock Cultist"
@@ -59,7 +62,6 @@
 		/obj/item/clockwork/clockwork_slab = 1,
 	)
 
-
 /datum/outfit/clockwork_armaments
 	name = "Clockwork Cultist Base"
 
@@ -67,3 +69,4 @@
 	shoes = /obj/item/clothing/shoes/clockwork
 	gloves = /obj/item/clothing/gloves/clockwork
 	head = /obj/item/clothing/head/helmet/clockwork
+*/

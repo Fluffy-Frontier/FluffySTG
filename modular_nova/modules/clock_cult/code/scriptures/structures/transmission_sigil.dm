@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /datum/scripture/create_structure/sigil_transmission
 	name = "Sigil of Transmission"
 	desc = "Summons a sigil of transmission, required to power clockwork structures. Will also drain power from charged objects."
@@ -8,3 +9,4 @@
 	invocation_text = list("Oh great holy one...", "your energy...", "the power of the holy light!")
 	summoned_structure = /obj/structure/destructible/clockwork/sigil/transmission
 	category = SPELLTYPE_STRUCTURES
+*/

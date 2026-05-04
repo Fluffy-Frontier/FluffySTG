@@ -336,7 +336,6 @@
 				to_chat(O, span_warning("Error: Servo motors unresponsive."))
 
 			O.equip_outfit_and_loadout(equipping_job = SSjob.get_job_type(/datum/job/cyborg)) // NOVA EDIT ADDITION - Cyborg loadout hats
-
 		else
 			to_chat(user, span_warning("The MMI must go in after everything else!"))
 

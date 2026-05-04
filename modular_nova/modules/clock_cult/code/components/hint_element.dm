@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /datum/element/clockwork_description
 	element_flags = ELEMENT_BESPOKE | ELEMENT_DETACH_ON_HOST_DESTROY
 	argument_hash_start_idx = 2
@@ -37,3 +38,4 @@
 
 	if(IS_CLOCK(user))
 		examine_texts += span_brass(text_to_add)
+*/

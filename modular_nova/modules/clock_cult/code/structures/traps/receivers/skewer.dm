@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 #define SKEWER_DAMAGE 15
 #define SKEWER_BLEED 30
 
@@ -112,3 +113,4 @@
 
 #undef SKEWER_DAMAGE
 #undef SKEWER_BLEED
+*/

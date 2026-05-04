@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /obj/item/wallframe/clocktrap/delay
 	name = "clockwork timer"
 	desc = "A small, detached timer."
@@ -45,3 +46,4 @@
 /datum/component/clockwork_trap/delay/proc/finish()
 	active = FALSE
 	trigger_connected()
+*/

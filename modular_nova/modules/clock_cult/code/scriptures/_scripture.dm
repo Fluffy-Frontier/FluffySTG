@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 GLOBAL_LIST_EMPTY(clock_scriptures)
 GLOBAL_LIST_EMPTY(clock_scriptures_by_type)
 
@@ -277,7 +278,7 @@ GLOBAL_LIST_EMPTY(clock_scriptures_by_type)
 
 
 /datum/scripture/slab/invoke()
-	progress = new(invoker, use_time)
+	progress = new(invoker, use_time, invoking_slab)
 	uses_left = uses
 	time_left = use_time
 	invoking_slab.charge_overlay = slab_overlay
@@ -370,3 +371,4 @@ GLOBAL_LIST_EMPTY(clock_scriptures_by_type)
 		var/datum/scripture/clock_script = new categorypath
 		GLOB.clock_scriptures += clock_script
 		GLOB.clock_scriptures_by_type[clock_script.type] = clock_script
+*/

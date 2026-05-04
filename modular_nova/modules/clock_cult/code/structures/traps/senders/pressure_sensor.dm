@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /obj/item/clockwork/trap_placer/pressure_sensor
 	name = "pressure plate"
 	desc = "I wonder what happens if you step on it."
@@ -44,3 +45,4 @@
 
 	trigger_connected()
 	playsound(parent, 'sound/machines/click.ogg', 50)
+*/

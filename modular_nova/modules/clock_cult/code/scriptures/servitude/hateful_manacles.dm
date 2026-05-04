@@ -1,3 +1,4 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
 /datum/scripture/slab/hateful_manacles
 	name = "Hateful Manacles"
 	desc = "Forms replicant manacles around a target's wrists that function like handcuffs, restraining the target."
@@ -42,3 +43,4 @@
 	desc = "Heavy manacles made out of freezing-cold metal. It looks like brass, but feels much more solid."
 	icon_state = "brass_manacles"
 	item_flags = DROPDEL
+*/

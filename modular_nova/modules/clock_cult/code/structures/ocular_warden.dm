@@ -1,3 +1,5 @@
+/* // TFF REWORK - SEE /tff_modular/modules/antagonist/clock_cult/...
+
 #define FIRE_DELAY (2 SECONDS)
 #define FIRE_RANGE 4
 #define BASE_DAMAGE 15
@@ -76,3 +78,4 @@
 #undef MINIMUM_DAMAGE
 #undef DAMAGE_FALLOFF
 #undef SHOOT_POWER_USE
+*/
