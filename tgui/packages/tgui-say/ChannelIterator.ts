@@ -2,14 +2,13 @@ export type Channel =
   | 'Say'
   | 'Radio'
   | 'Me'
-  // NOVA EDIT ADDITION START
   | 'Whis'
   | 'LOOC'
   | 'Do'
-  // NOVA EDIT ADDITION END
   | 'OOC'
   | 'Admin'
-  | 'Event'; // TFF EDIT - Eventmaker
+  | 'Pray'
+  | 'Event'; // NOVA EDIT CHANGE - ORIGINAL: export type Channel = 'Say' | 'Radio' | 'Me' | 'OOC' | 'Admin' | 'Pray'; // TFF EDIT - Eventmaker
 
 /**
  * ### ChannelIterator
@@ -23,17 +22,16 @@ export class ChannelIterator {
     'Say',
     'Radio',
     'Me',
-    // NOVA EDIT ADDITION
     'Whis',
     'LOOC',
     'Do',
-    // NOVA EDIT ADDITION
     'OOC',
     'Admin',
+    'Pray',
     'Event', // TFF EDIT - Eventmaker
-  ];
+  ]; // NOVA EDIT CHANGE - ORIGINAL: private readonly channels: Channel[] = ['Say', 'Radio', 'Me', 'OOC', 'Admin', 'Pray'];
   private readonly blacklist: Channel[] = ['Admin', 'Event']; // TFF EDIT - Eventmaker
-  private readonly quiet: Channel[] = ['OOC', 'LOOC', 'Admin', 'Event']; // NOVA EDIT CHANGE (Add LOOC) // TFF EDIT - Eventmaker
+  private readonly quiet: Channel[] = ['OOC', 'LOOC', 'Admin', 'Pray', 'Event']; // NOVA EDIT CHANGE - ORIGINAL: private readonly quiet: Channel[] = ['OOC', 'Admin', 'Pray']; // TFF EDIT - Eventmaker
 
   public next(): Channel {
     if (this.blacklist.includes(this.channels[this.index])) {
