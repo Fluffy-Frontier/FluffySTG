@@ -4,7 +4,7 @@
 /// Base font
 /datum/font/spessfont
 	name = "Spess Font"
-	font_family = 'interface/fonts/SpessFont.ttf'
+	//	font_family = 'interface/fonts/SpessFont.ttf'	FLUFFY FRONTIER REMOVAL reffer to tff_upstream_fonts_override.dm for font overrides
 
 /// For icon overlays
 /// Spess Font 6pt metrics generated using Lummox's dmifontsplus (https://www.byond.com/developer/LummoxJR/DmiFontsPlus)
