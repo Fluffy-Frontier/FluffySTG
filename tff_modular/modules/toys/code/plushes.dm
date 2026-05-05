@@ -58,7 +58,7 @@
 	icon_state = "plush_kaori"
 	attack_verb_continuous = list("attacks", "bumps", "thumps", "whomps")
 	attack_verb_simple = list("attack", "bump", "thump", "whomp")
-	squeak_override = list('modular_nova/modules/emotes/sound/voice/bark1.ogg' = 1)
+	squeak_override = list('modular_nova/modules/emotes/sound/voice/fox_squeak.ogg' = 1)
 
 /obj/item/toy/plush/tff/kibo
 	name = "Kibo plushie"
