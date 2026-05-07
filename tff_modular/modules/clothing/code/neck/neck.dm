@@ -53,7 +53,7 @@
 	worn_icon = 'tff_modular/modules/clothing/icons/mob/neck.dmi'
 	icon_state = "cowboy_poncho_interdyne_black"
 	heat_protection = CHEST
-	worn_icon_teshari = 'tff_modular/modules/clothing/icons/mob/species/neck_teshar.dmi'
+	worn_icon_teshari = 'tff_modular/modules/clothing/icons/mob/species/teshari/neck.dmi'
 
 /obj/item/clothing/neck/cowboyinterdynew
 	name = "white interdyne cloak"
@@ -64,4 +64,4 @@
 	worn_icon = 'tff_modular/modules/clothing/icons/mob/neck.dmi'
 	icon_state = "cowboy_poncho_interdyne_white"
 	heat_protection = CHEST
-	worn_icon_teshari = 'tff_modular/modules/clothing/icons/mob/species/neck_teshar.dmi'
+	worn_icon_teshari = 'tff_modular/modules/clothing/icons/mob/species/teshari/neck.dmi'

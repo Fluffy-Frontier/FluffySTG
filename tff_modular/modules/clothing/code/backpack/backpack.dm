@@ -40,7 +40,7 @@
 /obj/item/storage/backpack/waistbag/intdn
 	name = "Interdyne waistbag"
 	icon_state = "weistbag_intdn"
-	worn_icon_teshari = 'tff_modular/modules/clothing/icons/mob/species/backpack_teshar.dmi'
+	worn_icon_teshari = 'tff_modular/modules/clothing/icons/mob/species/teshari/backpack.dmi'
 
 /obj/item/storage/backpack/satchel/intdn
 	name = "Interdyne dark satchel"
@@ -48,4 +48,4 @@
 	icon = 'tff_modular/modules/clothing/icons/obj/backpack.dmi'
 	icon_state = "satchel_intdn"
 	worn_icon = 'tff_modular/modules/clothing/icons/mob/backpack.dmi'
-	worn_icon_teshari = 'tff_modular/modules/clothing/icons/mob/species/backpack_teshar.dmi'
+	worn_icon_teshari = 'tff_modular/modules/clothing/icons/mob/species/teshari/backpack.dmi'
