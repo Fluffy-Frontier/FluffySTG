@@ -47,7 +47,7 @@
 	crate_type = /obj/structure/closet/crate/secure/science
 
 /datum/supply_pack/science/experimentrosamples/fill(obj/structure/closet/crate/relics)
-		for(var/i in 1 to 3)
+	for(var/i in 1 to 3)
 		var/item = pick_weight(contains)
 		new item(relics)
 
