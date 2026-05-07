@@ -39,6 +39,18 @@
 	SEND_GLOBAL_SIGNAL(COMSIG_VAMPIRE_BROKE_MASQUERADE, src)
 	GLOB.masquerade_breakers += src
 
+/datum/antagonist/vampire/proc/fix_masquerade(mob/admin)
+	if(!broke_masquerade)
+		return
+	broke_masquerade = FALSE
+
+	owner.current.playsound_local(null, 'tff_modular/modules/vampire/sound/masquerade_violation.ogg', 100, FALSE, pressure_affected = FALSE)
+	to_chat(owner.current, span_userdanger("Your Masquerade have been restored!"))
+
+	add_team_hud(owner.current)
+
+	GLOB.masquerade_breakers -= src
+
 /**
  * Increment the masquerade infraction counter and warn the vampire accordingly
 **/

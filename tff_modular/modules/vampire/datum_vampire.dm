@@ -291,10 +291,17 @@
 		.["Break Masq"] = CALLBACK(src, PROC_REF(break_masquerade))
 		.["Add Infraction"] = CALLBACK(src, PROC_REF(give_masquerade_infraction), TRUE)
 
+	else if(broke_masquerade)
+		.["Fix Masq"] = CALLBACK(src, PROC_REF(fix_masquerade))
+
 	if(humanity > 0)
 		.["Humanity Deduct"] = CALLBACK(src, PROC_REF(adjust_humanity), -1, FALSE)
+
 	else if(humanity < 10)
 		.["Humanity Add"] = CALLBACK(src, PROC_REF(adjust_humanity), 1, FALSE)
+
+	if(!prince)
+		.["Princify"] = CALLBACK(src, PROC_REF(princify))
 
 /datum/antagonist/vampire/on_gain()
 	. = ..()
