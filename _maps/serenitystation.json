@@ -3,6 +3,9 @@
 	"map_name": "SerenityStation",
 	"map_path": "map_files/SerenityStation",
 	"map_file": "SerenityStation.dmm",
+	"exclude_from_ci": true,
+	"space_ruin_levels": 0,
+	"space_empty_levels": 0,
 	"planetary": 1,
 	"height_autosetup": 0,
 	"allow_space_when_planetary": 1,
@@ -12,7 +15,6 @@
 		"whiteship": "whiteship_box",
 		"emergency": "emergency_box"
 	},
-	"exclude_from_ci": true,
 	"traits": [
 		{
 			"Linkage": null,

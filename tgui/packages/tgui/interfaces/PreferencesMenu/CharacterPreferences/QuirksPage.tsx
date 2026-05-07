@@ -382,7 +382,7 @@ function QuirkPage() {
       quirk.nova_stars_only &&
       !data.is_nova_star
     ) {
-      return 'You need to be a veteran to select this quirk, apply today!'; // FLUFFY FRONTIER EDIT - ORIGINAL: return 'You need to be a Nova star to select this quirk, apply today!';
+      return 'You need to be a Veteran to select this quirk, apply today!';
     }
     // NOVA EDIT END
     const selectedQuirkNames = selectedQuirks.map((quirkKey) => {
