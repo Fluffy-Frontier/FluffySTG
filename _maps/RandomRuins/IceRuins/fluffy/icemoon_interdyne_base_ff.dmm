@@ -1270,7 +1270,9 @@
 	dir = 1
 	},
 /obj/machinery/digital_clock/directional/north,
-/obj/machinery/computer/cargo/express/ghost/interdyne,
+/obj/machinery/computer/cargo/express/ghost/interdyne{
+	req_access = list("interdyne")
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/interdyne_planetary_base/cargo)
 "eS" = (
@@ -2556,12 +2558,12 @@
 /area/ruin/interdyne_planetary_base/serv)
 "lc" = (
 /obj/structure/marker_beacon/burgundy,
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
 /obj/machinery/door/airlock/engineering/glass{
-	name = "Engineering"
+	name = "Engineering";
+	req_one_access = list("interdyne")
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/interdyne_planetary_base/main)
@@ -3636,7 +3638,7 @@
 /obj/machinery/button/door/directional/west{
 	base_icon_state = "tram";
 	icon_state = "tram";
-	req_access = list("syndicate");
+	req_access = list("interdyne");
 	id = "interdynelabs";
 	name = "Interdyne Storm Shutters Labs"
 	},
@@ -4268,7 +4270,7 @@
 	light_color = "#22CCFF";
 	pixel_x = 0;
 	pixel_y = 32;
-	req_access = list("syndicate")
+	req_access = list("interdyne")
 	},
 /obj/structure/closet/crate/internals{
 	anchored = 1
@@ -4379,7 +4381,7 @@
 	icon_state = "tram";
 	id = "interdynegateout";
 	light_color = "#22CCFF";
-	req_access = list("syndicate");
+	req_access = list("interdyne");
 	pixel_x = 0;
 	pixel_y = -20
 	},
@@ -4729,7 +4731,7 @@
 /obj/machinery/button/door/directional/west{
 	base_icon_state = "tram";
 	icon_state = "tram";
-	req_access = list("syndicate");
+	req_access = list("interdyne");
 	id = "interdynexeno";
 	name = "Interdyne Storm Shutters Xeno"
 	},
@@ -4946,7 +4948,7 @@
 	icon_state = "tram";
 	id = "interdynegate";
 	light_color = "#22CCFF";
-	req_access = list("syndicate");
+	req_access = list("interdyne");
 	pixel_x = 0;
 	pixel_y = -20
 	},
@@ -5983,7 +5985,7 @@
 /obj/machinery/button/door/directional/west{
 	base_icon_state = "tram";
 	icon_state = "tram";
-	req_access = list("syndicate");
+	req_access = list("interdyne");
 	id = "interdynemed";
 	name = "Interdyne Storm Shutters Med";
 	pixel_y = 32
@@ -6082,7 +6084,7 @@
 	light_color = "#22CCFF";
 	pixel_x = 0;
 	pixel_y = 32;
-	req_access = list("syndicate")
+	req_access = list("interdyne")
 	},
 /obj/structure/plaque/static_plaque/golden/commission/interdyne_planetary_base/icemoon,
 /turf/open/floor/iron/dark/textured_large,
@@ -8011,7 +8013,7 @@
 /obj/machinery/button/door/directional/west{
 	base_icon_state = "tram";
 	icon_state = "tram";
-	req_access = list("syndicate");
+	req_access = list("interdyne");
 	id = "interdynebar";
 	name = "Interdyne Storm Shutters Bar"
 	},
@@ -8302,7 +8304,7 @@
 /obj/machinery/button/door/directional/west{
 	base_icon_state = "tram";
 	icon_state = "tram";
-	req_access = list("syndicate");
+	req_access = list("interdyne");
 	id = "interdynernd";
 	name = "Interdyne Storm Shutters RnD";
 	pixel_x = 24
@@ -9588,7 +9590,7 @@
 /obj/machinery/button/door/directional/west{
 	base_icon_state = "tram";
 	icon_state = "tram";
-	req_access = list("syndicate");
+	req_access = list("interdyne");
 	id = "interdynelibrary";
 	name = "Interdyne Storm Shutters Library"
 	},
@@ -10127,7 +10129,7 @@
 	icon_state = "tram";
 	id = 16;
 	light_color = "#22CCFF";
-	req_access = list("syndicate");
+	req_access = list("interdyne");
 	pixel_x = 0;
 	pixel_y = -20
 	},
@@ -10869,7 +10871,7 @@
 	light_color = "#22CCFF";
 	pixel_x = 0;
 	pixel_y = 32;
-	req_access = list("syndicate")
+	req_access = list("interdyne")
 	},
 /obj/effect/turf_decal/stripes/red/corner{
 	dir = 4

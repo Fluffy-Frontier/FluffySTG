@@ -247,7 +247,7 @@
 
 /mob/living/silicon/robot/model/interdyne
 	faction = list("Syndicate", ROLE_INTERDYNE_PLANETARY_BASE)
-	req_access = list(ACCESS_SYNDICATE)
+	req_access = list(ACCESS_SYNDICATE, ACCESS_INTERDYNE) // FLUFFY FRONTIER ADD - ACCESS_INTERDYNE
 	lawupdate = FALSE
 	scrambledcodes = TRUE
 	radio = /obj/item/radio/borg/syndicate/ghost_role
