@@ -79,6 +79,19 @@
 	assigned_icon_state = "assigned_interdyne"
 	trim = /datum/id_trim/interdyne/deckofficer
 
+// OUTFITS
+/datum/outfit/interdyne_planetary_base
+	id = /obj/item/card/id/advanced/interdyne/medical
+	id_trim = /datum/id_trim/interdyne
+
+/datum/outfit/interdyne_planetary_base/shaftminer
+	id = /obj/item/card/id/advanced/interdyne/shaftminer
+	id_trim = /datum/id_trim/interdyne/shaftminer
+
+/datum/outfit/interdyne_planetary_base/shaftminer/deckofficer
+	id = /obj/item/card/id/advanced/interdyne/deck
+	id_trim = /datum/id_trim/interdyne/deckofficer
+
 // Переписываем законы для пози-мозга ДС-2
 /datum/ai_laws/syndicate_override_ds2
 	name = "SyndOS 3.1.1"
