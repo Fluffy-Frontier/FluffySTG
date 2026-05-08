@@ -78,10 +78,6 @@
 /datum/species/nabber/on_species_gain(mob/living/carbon/human/C, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
 
-#ifdef UNIT_TESTS
-	return //TODO: исправить это недоразумение, т.к возникают сильные проблемы с create_and_destroy юнит тестом
-#endif
-
 	arms = new(C)
 	arms.Grant(C)
 	camouflage = new(C)
@@ -101,10 +97,6 @@
 
 /datum/species/nabber/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()
-
-#ifdef UNIT_TESTS
-	return
-#endif
 
 	QDEL_NULL(arms)
 	QDEL_NULL(camouflage)
