@@ -34,7 +34,6 @@
 	trim_icon = 'tff_modular/modules/interdyne_id/icons/card.dmi'
 	assignment = "Interdyne Scientist"
 	trim_state = "trim_interdyne"
-	sechud_icon_state = SECHUD_INTERDYNE_CREW
 	department_color = COLOR_GREEN
 	department_state = "department"
 	subdepartment_color = COLOR_PURPLE
