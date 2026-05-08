@@ -49,7 +49,6 @@
 /datum/id_trim/interdyne/deckofficer
 	assignment = "Interdyne Deck Officer"
 	trim_state = "trim_deckofficer"
-	sechud_icon_state = SECHUD_INTERDYNE_DECKOFFICER
 	department_color = COLOR_CARP_DARK_GREEN
 	subdepartment_color = COLOR_SYNDIE_RED
 	sechud_icon_state = SECHUD_SYNDICATE_INTERDYNE_HEAD
