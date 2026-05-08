@@ -203,7 +203,6 @@
 	uniform = /obj/item/clothing/under/syndicate/nova/interdyne/miner
 	suit = /obj/item/clothing/suit/syndicate/interdyne_jacket
 	r_pocket = /obj/item/storage/bag/ore
-	id = /obj/item/card/id/advanced/chameleon/elite
 	id_trim = /datum/id_trim/syndicom/nova/interdyne/shaftminer
 	back = /obj/item/storage/backpack/explorer
 	skillchips = list(/obj/item/skillchip/job/miner)
