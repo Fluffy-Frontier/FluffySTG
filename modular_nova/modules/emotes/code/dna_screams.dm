@@ -5,6 +5,10 @@
 	return 'modular_nova/modules/emotes/sound/voice/scream_silicon.ogg'
 
 /datum/species/lizard/get_scream_sound(mob/living/carbon/human/lizard)
+	if(lizard.health < 50)
+		if(lizard.gender == MALE)
+			return pick(male_agony)
+		return pick(female_agony)
 	return pick(
 		'modular_nova/modules/emotes/sound/voice/scream_lizard.ogg',
 		'sound/mobs/humanoids/lizard/lizard_scream_1.ogg',
@@ -19,9 +23,17 @@
 	return 'sound/mobs/humanoids/moth/scream_moth.ogg'
 
 /datum/species/moth/get_scream_sound(mob/living/carbon/human/moth)
+	if(moth.health < 50)
+		if(moth.gender == MALE)
+			return pick(male_agony)
+		return pick(female_agony)
 	return 'sound/mobs/humanoids/moth/scream_moth.ogg'
 
 /datum/species/insect/get_scream_sound(mob/living/carbon/human/insect)
+	if(insect.health < 50)
+		if(insect.gender == MALE)
+			return pick(male_agony)
+		return pick(female_agony)
 	return 'sound/mobs/humanoids/moth/scream_moth.ogg'
 
 /datum/species/jelly/get_scream_sound(mob/living/carbon/human/jelly)

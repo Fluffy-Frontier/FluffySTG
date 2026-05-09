@@ -49,6 +49,8 @@
 	var/activation_sound = 'sound/items/tools/welderactivate.ogg'
 	var/deactivation_sound = 'sound/items/tools/welderdeactivate.ogg'
 
+	var/alt = FALSE
+
 /datum/armor/item_weldingtool
 	fire = 100
 	acid = 30
@@ -65,10 +67,11 @@
 	update_appearance()
 
 /obj/item/weldingtool/update_icon_state()
-	if(welding)
-		inhand_icon_state = "[initial(inhand_icon_state)]1"
-	else
-		inhand_icon_state = "[initial(inhand_icon_state)]"
+	if(!alt)
+		if(welding)
+			inhand_icon_state = "[initial(inhand_icon_state)]1"
+		else
+			inhand_icon_state = "[initial(inhand_icon_state)]"
 	return ..()
 
 

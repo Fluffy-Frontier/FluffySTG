@@ -1,0 +1,186 @@
+GLOBAL_LIST_EMPTY(event_passwords)
+
+/client
+
+	var/death_count = 0
+
+/mob/living/carbon/human/death(gibbed)
+	if(!LAZYLEN(GLOB.after_death_teleporters))
+		return ..()
+	client.death_count++
+
+	var/target_level = clamp(client.death_count, 1, LAZYLEN(GLOB.after_death_teleporters))
+
+	var/turf/target_turf = get_turf(GLOB.after_death_teleporters[target_level])
+
+	forceMove(target_turf)
+
+
+/datum/job/special_researcher
+	title = "Учёный"
+	outfit = /datum/outfit/researcher
+
+/datum/outfit/researcher
+
+	id_trim = /datum/id_trim/job/scientist
+	uniform = /obj/item/clothing/under/rank/rnd/scientist
+	shoes = /obj/item/clothing/shoes/sneakers/random
+
+/datum/job/popadanec
+	title = "Гражданский"
+	outfit = /datum/outfit/popadanec
+
+/datum/outfit/popadanec
+	id_trim = /datum/id_trim/job/assistant
+	uniform = /obj/item/clothing/under/rank/civilian/curator
+	l_pocket = /obj/item/food/sustenance_bar/wonka
+	r_pocket = /obj/item/lighter
+	shoes = /obj/item/clothing/shoes/sneakers/random
+
+/obj/effect/landmark/latejoin_start
+
+/obj/effect/landmark/latejoin_start/Initialize(mapload)
+	. = ..()
+	SSjob.latejoin_start += loc
+	return INITIALIZE_HINT_QDEL
+
+
+
+
+/obj/effect/landmark/latejoin_post
+
+/obj/effect/landmark/latejoin_post/Initialize(mapload)
+	. = ..()
+	SSjob.latejoin_post += loc
+	return INITIALIZE_HINT_QDEL
+
+
+/obj/effect/landmark/latejoin_unlucky
+
+/obj/effect/landmark/latejoin_unlucky/Initialize(mapload)
+	. = ..()
+	SSjob.latejoin_unlucky += loc
+	return INITIALIZE_HINT_QDEL
+
+
+/obj/effect/landmark/latejoin_unlucky/archive
+
+
+
+
+/obj/effect/landmark/sublocation_teleporter
+
+
+/obj/effect/landmark/firsto_random
+
+/obj/effect/landmark/firsto_random/Initialize(mapload)
+	. = ..()
+
+	SSjob.firsto_randoms += loc
+	return INITIALIZE_HINT_QDEL
+
+
+/mob/living/carbon/human/proc/swap_skintaker()
+	var/mob/living/carbon/human/copycat = src
+
+	var/target_level = clamp(client.death_count, 1, LAZYLEN(GLOB.after_death_teleporters))
+
+	var/turf/target_turf = get_turf(GLOB.after_death_teleporters[target_level])
+
+	new copycat(target_turf)
+
+	copycat.PossessByPlayer(ckey)
+
+
+ADMIN_VERB_AND_CONTEXT_MENU(onetwo_announce, R_DEBUG, "12nd_announce", "", ADMIN_CATEGORY_DEBUG)
+
+	priority_announce("В случае обнаружения несоответствий в окружающей среде или поведении членов группы — немедленно зафиксируйте это и сохраняйте дистанцию.\n\
+		Не делайте поспешных выводов!", "Исследовательский центр", 'tff_modular/modules/asdasvasdqwe/sounds/soundy/announce2.wav')
+
+ADMIN_VERB_AND_CONTEXT_MENU(second_announce, R_DEBUG, "2nd_announce", "", ADMIN_CATEGORY_DEBUG)
+
+	priority_announce("Переход зафиксирован.\n\
+		Вы вошли в активную зону аномалии.\n\
+		Показатели стабильности в пределах допустимых значений.\n\
+		Продолжайте движение и фиксируйте любые отклонения.\n\n\
+		Напоминаем: сохраняйте визуальный контакт с группой.", "Исследовательский центр")
+
+ADMIN_VERB_AND_CONTEXT_MENU(third_announce, R_DEBUG, "3rd_announce", "", ADMIN_CATEGORY_DEBUG)
+	priority_announce("Данные получены.\n\n\
+		Обнаружены первые несоответствия в структуре пространства.\n\
+		Это… ожидаемо.\n\
+		Продолжайте движение.\n\
+		Система рекомендует не разделяться.\n\n\
+		…это повышает вероятность успешного продвижения.\n\n\
+		Если вы уже разделились — восстановите контакт.", "Исследоwaтельский ценtr", 'tff_modular/modules/asdasvasdqwe/sounds/soundy/announce3.wav')
+
+ADMIN_VERB_AND_CONTEXT_MENU(fourth_announce, R_DEBUG, "4th_announce", "", ADMIN_CATEGORY_DEBUG)
+	priority_announce("Внимание экипаж!\n\n\
+		Подтверждаю наличие… других форм активности.\n\
+		И ещё кое-что.\n\
+		В этой зоне будет… жарковато.\n\
+		Температура там нестабильна, местами — значительно выше нормы.\n\
+		Следите за окружением.\n\
+		Не заходите в помещения, если не уверены.\n\
+		Некоторые источники тепла…\n\n\
+		…не являются естественными.\n\
+		И если вам покажется, что за дверью слишком жарко — старайтесь не-", "Исследова..12ский цетr", 'tff_modular/modules/asdasvasdqwe/sounds/soundy/announce4.wav')
+
+ADMIN_VERB_AND_CONTEXT_MENU(fifth_announce, R_DEBUG, "5th_announce", "", ADMIN_CATEGORY_DEBUG)
+	priority_announce("Я… потерял часть ваших показателей.\n\
+		Попробую восстановить.\n\
+		Не задерживайтесь в этой зоне.\n\
+		Холод и… давление здесь влияют не только на тело.\n\
+		Если кто-то начинает вести себя иначе —\n\n\
+		не игнорируйте это.", "Исследовательский центр", 'tff_modular/modules/asdasvasdqwe/sounds/soundy/announce5.wav')
+
+ADMIN_VERB_AND_CONTEXT_MENU(sixth_announce, R_DEBUG, "6th_announce", "", ADMIN_CATEGORY_DEBUG)
+	priority_announce("Стабильность частично восстановлена.\n\
+		Обнаружены участки, имитирующие нормальную среду. Это не означает, что они безопасны.\n\
+		Продолжайте движение.\n\
+		Система…\n\n\
+		…испытывает трудности с идентификацией.", "И55л!д-в4тельский ц3Htр", 'tff_modular/modules/asdasvasdqwe/sounds/soundy/announce6.wav')
+
+ADMIN_VERB_AND_CONTEXT_MENU(seventh_announce, R_DEBUG, "7th_announce", "", ADMIN_CATEGORY_DEBUG)
+	priority_announce("Внимание!\n\
+		Зафиксированы… попытки взаимодействия с системой.\n\
+		Они не были инициированы вами.\n\
+		Ограничьте любые лишние действия.\n\
+		Вас…\n\n\
+		…слышат.", "Исследовательский центр", 'tff_modular/modules/asdasvasdqwe/sounds/soundy/announce7.wav')
+
+ADMIN_VERB_AND_CONTEXT_MENU(eighth_announce, R_DEBUG, "8th_announce", "", ADMIN_CATEGORY_DEBUG)
+	priority_announce("Финальный участок маршрута достигнут.\n\
+		Проверка близка к завершению.\n\
+		Система сопоставляет полученные данные.\n\
+		Продолжайте движение.\n\
+		Не останавливайтесь.", "Исследовательский центр", 'tff_modular/modules/asdasvasdqwe/sounds/soundy/announce8.wav')
+
+ADMIN_VERB_AND_CONTEXT_MENU(nineth_announce, R_DEBUG, "9th_announce", "", ADMIN_CATEGORY_DEBUG)
+	priority_announce("Переход завершён.\n\
+		Вы вернулись.\n\
+		Проверка завершена.\n\
+		Результаты… не определены.\n\n\
+		Может потребоваться повторная проверка.", "Исследовательский центр", 'tff_modular/modules/asdasvasdqwe/sounds/soundy/announce9.wav')
+
+
+//ADMIN_VERB_AND_CONTEXT_MENU(name, R_DEBUG, "name", "", ADMIN_CATEGORY_DEBUG)
+
+	//priority_announce("", "", '')
+
+ADMIN_VERB_AND_CONTEXT_MENU(set_passwords, R_DEBUG, "set_passwords", "", ADMIN_CATEGORY_DEBUG)
+	var/index = 1
+	var/area/old
+	for(var/atom/a in GLOB.event_passwords)
+		var/area/current = get_area(a)
+		if(istype(current, old))
+			index++
+		else
+			index = 1
+		old = current
+		var/target = "Nr. [index] - [current.name] - [name]"
+		var/input = tgui_input_text(user, target, "Ввод паролей", encode = FALSE)
+
+		if(input)
+			a.desc += input
+	//Инпуты для паролей в офисе и тп

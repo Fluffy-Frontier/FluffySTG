@@ -31,6 +31,12 @@ SUBSYSTEM_DEF(job)
 	var/list/prioritized_jobs = list()
 	var/list/latejoin_trackers = list()
 
+	var/list/latejoin_start = list()
+	var/list/latejoin_post = list()
+	var/list/latejoin_unlucky = list()
+
+	var/list/firsto_randoms = list()
+
 	var/datum/job/overflow_role = /datum/job/assistant
 
 	var/list/level_order = list(JP_HIGH, JP_MEDIUM, JP_LOW)
@@ -558,6 +564,17 @@ SUBSYSTEM_DEF(job)
 /datum/controller/subsystem/job/proc/handle_unassigned(mob/dead/new_player/player, allow_all = FALSE)
 	var/jobless_role = player.client.prefs.read_preference(/datum/preference/choiced/jobless_role)
 
+	if(LAZYLEN(latejoin_start))
+		// It's got a job, spawn in a human and shove it in the human.
+		var/mob/living/carbon/human/character = new(pick(latejoin_start))
+		character.name = player.mind.name
+		player.mind.transfer_to(character)
+		qdel(player)
+
+		// Then equip up the human with job gear.
+		SSjob.equip_rank(character)
+		return
+
 	if(!allow_all)
 		if(popcap_reached())
 			job_debug("HU: Popcap reached, trying to reject player: [player]")
@@ -600,6 +617,14 @@ SUBSYSTEM_DEF(job)
 
 //Gives the player the stuff he should have with his rank
 /datum/controller/subsystem/job/proc/equip_rank(mob/living/equipping, datum/job/job, client/player_client)
+
+	if(LAZYLEN(latejoin_start))
+		var/area/spawnzone = get_area(equipping)
+		if(istype(spawnzone, /area/event/start_zone))
+			job = /datum/job/special_researcher
+		else
+			job = /datum/job/popadanec
+			equipping.add_fov_trait(src, FOV_270_DEGREES)
 	// NOVA EDIT ADDITION BEGIN - ALTERNATIVE_JOB_TITLES
 	// The alt job title, if user picked one, or the default
 	var/alt_title = player_client?.prefs.alt_job_titles?[job.title] || job.title
@@ -761,6 +786,15 @@ SUBSYSTEM_DEF(job)
 
 /datum/controller/subsystem/job/proc/send_to_late_join(mob/M, buckle = TRUE)
 	var/atom/destination
+
+	if(LAZYLEN(latejoin_post))
+		if(prob(30))
+			destination = pick(latejoin_unlucky)
+		else
+			destination = pick(latejoin_post)
+		destination.JoinPlayerHere(M, FALSE)
+		return TRUE
+
 	if(M.mind && !is_unassigned_job(M.mind.assigned_role) && length(GLOB.jobspawn_overrides[M.mind.assigned_role.title])) //We're doing something special today.
 		destination = pick(GLOB.jobspawn_overrides[M.mind.assigned_role.title])
 		destination.JoinPlayerHere(M, FALSE)

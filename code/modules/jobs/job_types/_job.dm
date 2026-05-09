@@ -507,6 +507,17 @@
 
 /// Returns an atom where the mob should spawn in.
 /datum/job/proc/get_roundstart_spawn_point()
+	to_chat(world, "CCC")
+	if(LAZYLEN(SSjob.latejoin_start))
+		to_chat(world, "AAфффSD")
+		if(LAZYLEN(SSjob.latejoin_start) && prob(100))
+			to_chat(world, "AAA")
+			return pick(SSjob.latejoin_start)
+		else
+			if(prob(50))
+				return pick(SSjob.latejoin_unlucky)
+			else
+				return pick(SSjob.latejoin_post)
 	if(random_spawns_possible)
 		if(HAS_TRAIT(SSstation, STATION_TRAIT_LATE_ARRIVALS))
 			return get_latejoin_spawn_point()
@@ -548,6 +559,15 @@
 
 /// Finds a valid latejoin spawn point, checking for events and special conditions.
 /datum/job/proc/get_latejoin_spawn_point()
+	to_chat(world, "AASD")
+	if(LAZYLEN(SSjob.latejoin_start))
+		if(LAZYLEN(SSjob.latejoin_start) && prob(100))
+			return pick(SSjob.latejoin_start)
+		else
+			if(prob(50))
+				return pick(SSjob.latejoin_unlucky)
+			else
+				return pick(SSjob.latejoin_post)
 	/* if(length(GLOB.jobspawn_overrides[title]))
 		return pick(GLOB.jobspawn_overrides[title]) */ // ORIGINAL CODE
 	// NOVA EDIT START - Alt job titles
