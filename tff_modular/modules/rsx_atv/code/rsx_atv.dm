@@ -134,7 +134,7 @@
 /datum/supply_pack/medical/rsx
 	name = "RSX-8 Medical Emergency ATV"
 	desc = "Contains an RSX-8 EMT All Terrain Vehicle."
-	cost = CARGO_CRATE_VALUE * 10
+	cost = CARGO_CRATE_VALUE * 25
 	access = ACCESS_MEDICAL
 	contains = list(
 		/obj/vehicle/ridden/atv/rsx8p,
@@ -146,7 +146,7 @@
 /datum/supply_pack/engineering/rsx
 	name = "RSX-8 Technical ATV"
 	desc = "Contains an RSX-8 Technical All Terrain Vehicle."
-	cost = CARGO_CRATE_VALUE * 10
+	cost = CARGO_CRATE_VALUE * 25
 	access = ACCESS_ENGINEERING
 	contains = list(
 		/obj/vehicle/ridden/atv/rsx8e,
@@ -175,4 +175,4 @@
 	)
 	crate_name = "RSX-8 SEC kit"
 	crate_type = /obj/structure/closet/crate
-	cost = CARGO_CRATE_VALUE * 10
+	cost = CARGO_CRATE_VALUE * 25
