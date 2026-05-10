@@ -1,4 +1,4 @@
-SUBSYSTEM_DEF(vsociety)
+/*SUBSYSTEM_DEF(vsociety)
 	name = "Vampire Society"
 	wait = 5 MINUTES
 	ss_flags = SS_NO_INIT | SS_BACKGROUND
@@ -72,3 +72,4 @@ SUBSYSTEM_DEF(vsociety)
 		antag_datum.princify()
 	else
 		time_to_wait = 30 MINUTES
+*/

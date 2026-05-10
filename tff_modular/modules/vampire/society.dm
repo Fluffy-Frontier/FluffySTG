@@ -1,12 +1,5 @@
 /datum/antagonist/vampire/proc/check_start_society()
-	if(SSvsociety.can_fire || !CONFIG_GET(flag/allow_vampire_prince))
-		return
-
-	if(length(GLOB.all_vampires) >= 3)
-		SSvsociety.start_time = world.time
-		SSvsociety.can_fire = TRUE
-		message_admins("Vampire Society has started, as there are [length(GLOB.all_vampires)] vampires active.")
-		log_game("Vampire Society has started, as there are [length(GLOB.all_vampires)] vampires active.")
+	return FALSE
 
 /datum/antagonist/vampire/proc/princify()
 	rank_up(8, TRUE) // Rank up a lot.

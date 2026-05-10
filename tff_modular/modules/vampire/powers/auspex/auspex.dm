@@ -10,7 +10,8 @@
 
 /datum/discipline/auspex/apply_discipline_quirks(datum/antagonist/vampire/clan_owner)
 	. = ..()
-	owner.add_traits(clan_owner.vampire_traits, TRAIT_XRAY_HEARING, TRAIT_VAMPIRE)
+	ADD_TRAIT(owner, TRAIT_XRAY_HEARING, TRAIT_VAMPIRE)
+	clan_owner.vampire_traits += TRAIT_XRAY_HEARING
 
 /datum/action/cooldown/vampire/auspex
 	name = "Auspex"
