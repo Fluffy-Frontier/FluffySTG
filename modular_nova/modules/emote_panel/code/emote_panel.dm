@@ -169,6 +169,11 @@
 		/mob/living/proc/emote_teshsqueak,
 		/mob/living/proc/emote_teshtrill,
 		/mob/living/proc/emote_gecker,
+		// TFF ADDITION START
+		/mob/living/proc/emote_alli_growl,
+		/mob/living/proc/emote_alli_hiss,
+		/mob/living/proc/emote_alli_call,
+		// TFF ADDITION END
 	)
 	all_emotes += nova_living_emotes
 
