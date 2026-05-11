@@ -542,3 +542,316 @@
   - config: adds a server config for nova star restrictions
   - bugfix: fixes an issue where raptor chicks and other non-items appearing in item
       contents would prevent any personal crafting in the vicinity
+2026-05-11:
+  1393F:
+  - bugfix: The mushroom bowl no longer turns invisible when filled with a reagent.
+  Absolucy:
+  - qol: Changed how chat highlights are styled - any color should look good now,
+      regardless of light or dark mode.
+  Absolucy, LemonInTheDark:
+  - bugfix: You can no longer see lights through walls when using mesons or when ventcrawling.
+  Aliceee2ch:
+  - bugfix: LIttle map fixes for lavaland.
+  - bugfix: Fixed color matrix not applying in reskinnable item preview.
+  ArcaneMusic:
+  - qol: The GMM Ui can now tell you the minimum and maximum price ranges that a material
+      will sell for.
+  - qol: You can now sell materials on the edge of their buying and selling thresholds.
+      (This really only effects iron and glass, practically)
+  - qol: Added a sound effect when a geyser is properly scanned.
+  - bugfix: Mice now have a movement sprite going both east and west.
+  - rscadd: The boulder smelter and refinery may now take a plumbing input (Closely
+      examine to see the full list) to boost the mineral output of processed boulders.
+  - rscadd: Boulder refinery machines will produce a new chemical, industrial waste,
+      which must be managed, dispersed, or it will eventually overflow if too much
+      exists in the same container.
+  - balance: The smelter and refinery now produce less mining points per unit than
+      before, but the quantity of points are now better scaled to the quantity processed.
+      50% more ores means 50% more points.
+  - balance: The amount of points generated per ore within boulders is now a separate
+      variable, not a percentage of the base value. This means some ores are better/worse
+      for generating mining points as a result.
+  - balance: Completing wave defense will award 200 more points across all ore vent
+      tiers, 700/1200/1700 for small/medium/large vents.
+  Arturlang:
+  - rscadd: changes shutter and high security door sprites on the infiltrator battlecruiser
+      and the syndicate nuclear operative base
+  Ben10Omintrix:
+  - refactor: beepskies, and ed209s have been refactored. please report any bugs
+  - rscadd: ed209s can now wear hats! some hats give them new dialogue
+  - rscadd: emagged ed209s are now rideable!
+  - rscadd: added evil versions of the ed209s to the syndie uplink
+  Bobinater:
+  - balance: NT M-96 swapped to 9mm
+  Capsandi:
+  - sound: fire alarms are no longer stereo files condensed to mono at runtime
+  Dmeto:
+  - map: IceBox station boulder processing no longer exposed to outside.
+  DresserOnFire:
+  - bugfix: Fixes a bug where player-controlled basic mobs would get a cooldown when
+      their attacks miss
+  - refactor: basic mob attack chain can now decided whether an attack resulted in
+      a cooldown or not.
+  ElGitificador:
+  - balance: mutations coming from most random mutation sources can now be saved in
+      dna consoles
+  - bugfix: fixed heretic gate cam appearing in on station ss13 network
+  - bugfix: hierophant achievement can now be obtained from 1 tile away of it s final
+      blast
+  Ghommie:
+  - bugfix: Packs exclusive to the express console (crab rockets for example) can
+      now be ordered from express consoles.
+  Happyowl93:
+  - rscadd: Adds the holosynth
+  - bugfix: geneless species no longer can use the genetics freak quirk
+  - code_imp: makeHologram now allows a color override.
+  - bugfix: Fix latejoin queue indicator on title screen so it shows the actual number
+      of latejoin slots at the moment of the title screen refresh
+  Hatterhat:
+  - image: One more resprite for the hybrid power tools to use the Nova-specific icons
+      as a base instead of TG's icons.
+  - balance: Following an incident where several pieces of assimilative superalloy
+      were wasted on repeatedly upgrading one specific set of tools, their pre-seeded
+      intelligences were revised to only accept the most basic form of their power
+      tool component. Unfortunately, this had the knock-on effect of preventing Science's
+      equivalent tools from being usable for upgrading. Whoops.
+  - bugfix: Medical combitools can now be printed, as they were missing the flags
+      that allowed them to be printed off techfabs/lathes.
+  - qol: The style meter for miners now stores its permanent multiplier on the meter
+      in case you're switching eyewear. The style meter item is now small, allowing
+      for easier storage.
+  HecoWolff:
+  - rscadd: "\u0418\u043D\u0442\u0435\u0440\u0434\u0430\u0439\u043D\u0443 \u0431\u044B\
+      \u043B\u0438 \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043D\u043E\
+      \u0432\u044B\u0435 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u043E\u0434\
+      \u0435\u0436\u0434\u044B: \u043F\u043B\u0430\u0449\u0438, \u0431\u0440\u043E\
+      \u043D\u0435\u0436\u0438\u043B\u0435\u0442\u044B, \u0441\u0443\u043C\u043A\u0438\
+      . \u041A\u0443\u043F\u0438\u0442\u044C \u0438\u0445 \u043C\u043E\u0436\u043D\
+      \u043E \u0432 \u0432\u0435\u043D\u0434\u043E\u043C\u0430\u0442\u0435 \u0418\u043D\
+      \u0442\u0435\u0440\u0434\u0430\u0439\u043D\u0430."
+  - rscadd: "BIOSUIT \u0418\u043D\u0442\u0435\u0440\u0434\u0430\u0439\u043D\u0430\
+      \ \u043F\u043E\u043B\u0443\u0447\u0438\u043B \u0441\u043F\u0440\u0430\u0439\u0442\
+      \ \u0434\u043B\u044F \u0442\u0435\u0448\u0430\u0440\u0438, \u0442\u0435\u043F\
+      \u0435\u0440\u044C \u0431\u0438\u043E\u0441\u044C\u044E\u0442 \u0418\u043D\u0442\
+      \u0435\u0440\u0434\u0430\u0439\u043D\u0430 \u043E\u0442\u043E\u0431\u0440\u0430\
+      \u0436\u0430\u0435\u0442\u0441\u044F \u043A\u043E\u0440\u0440\u0435\u043A\u0442\
+      \u043D\u043E \u043D\u0430 \u0434\u0430\u043D\u043D\u043E\u0439 \u0440\u0430\u0441\
+      \u0435."
+  Iajret:
+  - bugfix: fixed double messaging during synth revival process
+  - rscadd: Added ability to create androids from scratch, including mechfab design
+      for compact posibrain.
+  Jacquerel:
+  - bugfix: The Hierophant Club will stop glowing when you can't use it to teleport
+  - image: Updated the Hierophant Club so that it looks like the Hierophant
+  JohnFulpWillard:
+  - rscadd: You can Ctrl Click a camera to set it to print monochrome photos. The
+      detective's camera is on this mode by default.
+  - qol: Photos without a scribble written on them won't have empty white space at
+      the bottom.
+  - qol: Pray verb is now a hotkey, Whisper is now a command bar button, and all say
+      verbs have been removed from the stat panel.
+  - qol: Admin button on the escape menu is now its own section for praying, as well
+      as seeing your latest ticket & admin notes.
+  - bugfix: Resizing the stat panel will no longer change the size of the command
+      bar.
+  - rscdel: Removed Station Time, now we use NST (Nanotrasen Standard Time), which
+      is IRL server time +540 years, and PT (Pay Time), the amount of time since the
+      round has started.
+  - rscdel: Station nightshift is now a Station event rather than being based on Server
+      time.
+  - balance: Time circuit's Unit of Measure now tells the amount of time in hour/minute/seconds
+      rather than giving the whole time translated to hours/minutes/seconds.
+  - qol: Added a 12-hour clock pref for people who prefer it.
+  - qol: Hovering over NST timestamps on official documents will now translate how
+      much it is in PT/Shift Time.
+  - admin: Admins can now use style/class/background in their papercode.
+  Kocma-san:
+  - bugfix: synth brain repair surgery now works
+  LT3:
+  - balance: Cargo manifest stamp payments/penalties are now consistently applied
+      as a percentage of the order value
+  - balance: Maximum payment for an approved cargo manifest raised to 120cr
+  - balance: Cargo orders that arrive empty and stamped denied receive a full refund
+      regardless of crate return
+  Macaroni:
+  - rscadd: Added the Roman Costume, Ventriloquist Dummy, Donksoft Weapons, Purity
+      Seals, Cyborg Mask, Drink Shaker, Pizza Voucher, Primitive Centrifuge, Spess
+      Knife, Jerry Can, Nightmare Goggles, Frontier Headset, and Welding Goggles to
+      the loadout menu
+  - qol: Organized the "Job-Locked" section of hats and suits into a general "Jobs"
+      category for any job specific clothing
+  - qol: Organized the diverse selection of bunny outfits into their own sections
+  - qol: Separated the "Other" tabs inner category between comfort and gear items
+  - image: The pride flags can now also be worn.
+  - qol: The Standard Firing Pin can now be printed from securities tech fab
+  - rscdel: Xeno Hybrids can no longer communicate via the hive
+  Melbert:
+  - balance: Codex Cicatrix is now a tier 1 heretic knowledge, and can not be drafted.
+  - balance: Warren King's Welcome is now a tier 1 heretic knowledge, but can be drafted.
+  - balance: Warren King's Welcome soft reworked. Now needs 10 cable, 1 paper, 1 multitool.
+      Now adds access to all IDs present, including worn IDs. Now adds "heretic" access
+      to the ID card. Now changes all nearby airlocks to require "heretic" access,
+      and cuts the AI wire.
+  - balance: Eldritch ID card starts with "heretic" access.
+  - admin: Adds toggle for meteor mode in secrets
+  - qol: Drinking soup from a bowl no longer yells at you in big text
+  - rscadd: Adds Penguin tier zero gene infusion (gives you penguin ears, which make
+      you waddle)
+  - rscadd: Adds Plant tier zero gene infusion (gives you plant hair / organs, which
+      do nothing)
+  - rscadd: Adds Stoat tier one gene infusion (makes you tall, snouted, gives you
+      finer instincts, allows you to dodge large foes)
+  - bugfix: Fix some erroneous dream portents from showing up
+  - rscadd: Some EVA helmets now have retractable visors, which you can pull up or
+      down at will, to reveal your face.
+  - rscadd: April 26th is Chernobyl Disaster Remembrance Day.
+  - balance: The amount of blood loss from an attack to an already bleeding wound
+      has been tweaked. As an example, a 20 force attack used to range 0.1% to 4%
+      blood loss, and now ranges 1% to 3%.
+  - bugfix: Plasma works in IEDs again
+  - rscadd: Adds the Sect of the Dream God, a new option for chaplains.
+  Neocloudy:
+  - refactor: Refactored the cryogenic oversight console UI.
+  - balance: '[NOVA] Encrypted curiosities can''t be interacted with by Bitrunning
+      threats.'
+  - balance: '[NOVA] In the Ancient Military Simulator domain, the fog control button
+      and keycards also can''t be interacted with by Bitrunning threats.'
+  - bugfix: '[NOVA] Also in the Ancient Military Simulator, CIN SNPCs gain the antag
+      datum they''re supposed to have (to make the above work).'
+  - refactor: Refactored the NIF UI.
+  OrbisAnima:
+  - balance: Staff of the Honk Mother no longer shoots through the wall. It still
+      shots through everything else and still has ridiculous range.
+  - rscdel: Makes it impossible to mind swap or give sentience to kitten and puppies.
+  - rscdel: Removes the kitten and puppy chasis from the personal AI options.
+  - rscdel: Removed Player References From Posters.
+  - balance: Changed the minimum age of drinking and smoking to 18 instead of 21.
+  - rscdel: Removed footprints on snow (non snowstorm z levels) and sand.
+  - balance: Removes russian revolvers and replaces it with Renard revolvers. Adds
+      2k to the Greed chappel.
+  Rhials:
+  - bugfix: The bear mask in the pizzeria virtual domain is now a regular, non-cursed
+      mask.
+  Ruslanllll:
+  - bugfix: "\u0420\u0435\u0446\u0435\u043F\u0442\u044B \u043D\u043E\u0432\u043E\u0433\
+      \u043E\u0434\u043D\u0435\u0439 \u0435\u0434\u044B \u043E\u0442\u043E\u0431\u0440\
+      \u0430\u0436\u0430\u044E\u0442\u0441\u044F \u0432 \u0432\u043A\u043B\u0430\u0434\
+      \u043A\u0435 \u0433\u043E\u0442\u043E\u0432\u043A\u0438 \u0430 \u043D\u0435\
+      \ \u043A\u0440\u0430\u0444\u0442\u0438\u043D\u0433\u0430"
+  - bugfix: Alien plasma display works again
+  SmArtKar:
+  - admin: Planemaster Debugger now has a text search input to locate and jump to
+      planes
+  - admin: Added a new debug tool which displays a detailed breakdown of in-game visuals
+  - bugfix: Fixed plasma cutter recharging
+  - bugfix: Fixed circuits bluescreening whenever you try to put text or numbers into
+      a STRING or ANY type field
+  Stan:
+  - image: "Fixed donator item Bovin\xE6 Overcoat"
+  TealSeer:
+  - bugfix: fixed CSS-related errors in BYOND 516.1681+
+  TheRyeGuyWhoWillNowDie:
+  - qol: hyposprays can now draw from other reagent containers
+  Time-Green:
+  - rscadd: Adds three new maintpill-only chems! Go eat more maintpills, and maybe
+      you'll find out what they are :)
+  - rscadd: Adds a new secret chem, which can rarely be found on a petrified piece
+      of paper somewhere in maintenance...
+  - bugfix: Fixes miscellaneous sources of petrification lasting 10x as long as intended
+  WhiteSnek, Gandalf2k15:
+  - rscadd: Naga once again able to use their turf command
+  Y0SH1M4S73R:
+  - rscadd: Ghosts and spirits have once again been split into two species. Becoming
+      a ghost is only possible through a lucky polymorph, or the "Forsake Body" spell,
+      available for two points in a wizard's spellbook.
+  - rscdel: Spirits no longer have the passthrough ability.
+  - balance: Ghost's passthrough ability has unlimited range and no longer leaves
+      behind a grave. It is affected by holy water, and makes you drop all your equipment,
+      along with any bodyparts and organs that are not ghostly in nature.
+  YakumoChen:
+  - qol: Lensdump added to image hosting providers for headshots.
+  Zenitheevee:
+  - bugfix: Mag-Turrets no longer dissappear instead of fixing
+  - qol: Mag-Turrets display current and max integration when examined
+  - bugfix: Ghost vents with default mineral breakdown now make boulders again
+  - bugfix: Ghost vents no longer turn invisible when tapped.
+  dresseronfire:
+  - bugfix: You can now sic pets onto targets again
+  - bugfix: Pointing at things no longer sometimes points at the wrong thing
+  forgman6:
+  - rscadd: Saviors paper hat.
+  - rscadd: Added worn and normal icon states for it in costume.dmi
+  - map: Modified bus.dmm to include the paper hat behind the main bus.
+  lelandkemble:
+  - bugfix: Cables without power no longer produce sparks when placed
+  - code_imp: Things that interrupted the opening of storages are no longer reliant
+      on a runtime, meaning they interrupt regardless of whether you had another open
+      storage open at the time
+  - balance: Blood from blood bags is fully synthetic
+  - bugfix: Looming works again
+  - bugfix: Ninja spider bomb can no longer be placed in certain situations it would
+      be unable to detonate
+  - bugfix: Mjolnir only successfully attacks if it successfully attacks
+  - bugfix: You can now get the paddles from a compact defib by clicking on it
+  - bugfix: Stamina bars no longer invert the value they show you
+  - bugfix: Nonbinary people can respawn
+  levels0:
+  - bugfix: molt'obeso sauce will no longer appear as an ingredient in random recipes
+  - bugfix: metalgen and secret sauce recipes are now loaded properly
+  - bugfix: metalgen and secret sauce should now generate properly
+  necromanceranne:
+  - rscadd: Gives the Cybersun reinforcement a new outfit.
+  - rscadd: No new items were added to the black market. None. Honest.
+  - bugfix: Void cloaks no longer obstruct surgery while invisible.
+  strandsofivy:
+  - bugfix: The PDA direct messenger will no longer overzealously break words, resulting
+      in cleaner chat message formatting overall.
+  theselfish:
+  - bugfix: Normal people no longer wear cloth foot wraps 'freaky style'. That's the
+      technical term.
+  - qol: Tailcoats, bunny suits and bunny ears are now grouped.
+  - bugfix: Smuggler's Cap now shows ears.
+  - rscadd: Forged weapons may now be used for jousting.
+  - bugfix: You can now get Telecomms Drip if it burns off.
+  - rscadd: Nightmares now know your darkest fears! Yay!
+  timothymtorres:
+  - bugfix: Fix large bulky toys from being stored in suit storage
+  - map: Add Shoe Factory to lava/ice ruins.
+  tmyqlfpir:
+  - rscadd: Added USB interface to emitters, temperature pumps and temperature control
+      unit machines
+  vinylspiders:
+  - bugfix: fixes a few instances of crowbar deconstruction not working for certain
+      items
+  - refactor: extends the tool_blocker element to support secondary tool_acts
+  - bugfix: '''load prefs onto mob'' will now fully reset and apply the client''s
+      current slot prefs to the mob, including quirks and size'
+  - bugfix: fixes blue and green cybernetic cat ears being switched
+  - qol: augments+ tab has been completely remodeled with new qol features, check
+      it out!
+  - bugfix: fixes issue where markings would carry over to the next slot in char prefs
+  - bugfix: fixes issue where hand markings would not update your prefs dummy unless
+      you selected a limb marking
+  - bugfix: it will no longer be possible to select invalid augments that lead to
+      invisible sprites
+  - bugfix: fixed an issue where selecting 'No limb" as an option in augments+ would
+      give you a pale white human limb on the dummy
+  - refactor: augments+ has undergone an overhaul on the backend and frontend, please
+      report any issues
+  - code_imp: switched map mode to SIDE_MAP
+  - code_imp: fixes mining mobs being able to spawn too close to one another under
+      certain circumstances
+  - bugfix: mobs and features should not be spawning in walls anymore in certain biomes
+  - bugfix: you should once again no longer be able to remove genitals during surgery
+  - code_imp: speeds ghost runechat up a bit, and makes it show as italic
+  - admin: adds a 'toggle dead runechat' admin verb in case you need to disable it
+      midround for an event or something
+  - admin: invisimin now makes the admin invisible to ghosts/observers, as well as
+      pierce-immune and able to phase through walls
+  - qol: aghosting while invisimin'd or stealthmin'd will carry over your invisibility
+      to the aghost so you no longer have to trigger it again
+  - admin: added a new admin verb, 'Toggle Admin ESP', which lets you see ghosts and
+      invisimins while active
+  - bugfix: fixes an issue where protean genitals were visible as 'cybernetic modifications'
+      on health scanners
