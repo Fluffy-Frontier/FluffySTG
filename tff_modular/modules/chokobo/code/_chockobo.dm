@@ -39,7 +39,7 @@
 	colors += pick(secondary_colors)
 	set_greyscale(colors)
 	AddElement(/datum/element/ridable, /datum/component/riding/creature/chokobo)
-    AddElement(/datum/element/ai_retaliate)
+	AddElement(/datum/element/ai_retaliate)
 
 /obj/item/slime_extract/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
 	if(!istype(interacting_with, /mob/living/basic/chokobo))
