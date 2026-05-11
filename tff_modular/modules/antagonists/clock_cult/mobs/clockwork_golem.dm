@@ -63,7 +63,7 @@
 	if(IS_CLOCK(our_mob))
 		ADD_TRAIT(our_mob, TRAIT_FASTER_SLAB_INVOKE, SPECIES_TRAIT)
 		antag_datum = our_mob.mind?.has_antag_datum(/datum/antagonist/clock_cultist)
-		antag_datum.owner_turf_healing.healing_types = list(TOX = 1, BRUTE = 1, BURN = 1)
+		antag_datum.owner_turf_healing.healing_types = list(TOX = 2, STAMINA = 7.5, BRUTE = 2, BURN = 2)
 	for(var/datum/quirk/what_we_remove as anything in our_mob.quirks)
 		what_we_remove.remove()
 

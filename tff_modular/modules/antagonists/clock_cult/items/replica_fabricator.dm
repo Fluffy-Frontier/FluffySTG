@@ -247,7 +247,7 @@
 /datum/replica_fabricator_output/turf_output/brass_floor
 	name = "floor"
 	cost = BRASS_POWER_COST * 0.25 // 1/4th the cost, since one sheet = 4 floor tiles
-	creation_delay = 3 SECONDS
+	creation_delay = 1.5 SECONDS
 	to_create_path = /turf/open/floor/engine/clockwork
 
 /datum/replica_fabricator_output/turf_output/brass_floor/extra_checks(atom/target, turf/creation_turf, mob/user)
@@ -270,7 +270,7 @@
 	name = "wall"
 	cost = BRASS_POWER_COST * 4
 	to_create_path = /turf/closed/wall/clockwork
-	creation_delay = 14 SECONDS
+	creation_delay = 8 SECONDS
 	replace_types_of = list(/turf/closed/wall, /turf/closed/wall/r_wall)
 	replacement_mult = -0.2
 
@@ -295,7 +295,7 @@
 	name = "window"
 	cost = BRASS_POWER_COST * 2
 	to_create_path = /obj/structure/window/reinforced/clockwork/fulltile
-	creation_delay = 10 SECONDS
+	creation_delay = 5 SECONDS
 	replace_types_of = list(/obj/structure/window)
 	reebe_mult = 0.2
 
@@ -308,7 +308,7 @@
 	name = "airlock"
 	cost = BRASS_POWER_COST * 5 // Breaking it only gets 2 but this is the exception to the rule of equivalent exchange, due to all the small parts inside
 	to_create_path = /obj/machinery/door/airlock/bronze/clock/player_made
-	creation_delay = 10 SECONDS
+	creation_delay = 6 SECONDS
 	replace_types_of = list(/obj/machinery/door)
 	replacement_mult = 1
 

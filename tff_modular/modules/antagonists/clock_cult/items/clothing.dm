@@ -89,9 +89,9 @@
 	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 
 /datum/armor/suit_clockwork
-	melee = 25
+	melee = 30
 	bullet = 30
-	laser = 15
+	laser = 20
 	energy = 30
 	bomb = 80
 	bio = 100
@@ -123,9 +123,9 @@
 
 /datum/armor/clockwork_speed
 	melee = 20
-	bullet = 0
-	laser = 0
-	energy = 0
+	bullet = 20
+	laser = 20
+	energy = 10
 	bomb = 60
 	bio = 100
 	fire = 100
@@ -134,8 +134,8 @@
 /datum/armor/clockwork_speed_empowered
 	melee = 30
 	bullet = 40
-	laser = -20
-	energy = -20
+	laser = 0
+	energy = 0
 	bomb = 60
 	bio = 100
 	fire = 100
@@ -271,9 +271,6 @@
 	var/mob/living/wearer
 	/// Are the glasses enabled (flipped down)
 	var/enabled = TRUE
-	/// List of mobs we have delt eye damage to as well as how much damage we have delt to them and a counter for how close to healing that damage we are
-	var/list/damaged_mobs = list()
-
 
 /obj/item/clothing/glasses/clockwork/wraith_spectacles/Initialize(mapload)
 	. = ..()
@@ -281,7 +278,6 @@
 
 
 /obj/item/clothing/glasses/clockwork/wraith_spectacles/Destroy()
-	STOP_PROCESSING(SSobj, src)
 	wearer = null
 	return ..()
 
@@ -333,42 +329,12 @@
 /// The start of application of the actual effects like eye damage
 /obj/item/clothing/glasses/clockwork/wraith_spectacles/proc/on_toggle_eyes()
 	wearer.update_sight()
-	to_chat(wearer, span_clockgray("You suddenly see so much more, but your eyes begin to falter."))
-	START_PROCESSING(SSobj, src)
-	if(!damaged_mobs[wearer])
-		damaged_mobs[wearer] = list("damage" = 0, "timer" = 0)
-	else
-		var/wearer_data = damaged_mobs[wearer]
-		wearer_data["timer"] = 0
-
+	to_chat(wearer, span_clockgray("You suddenly see so much more."))
 
 /// The stopping of effect application, will remove the wearer's eye damage a minute after, eye damage removal is handled by process() to avoid a large amount of timers
 /obj/item/clothing/glasses/clockwork/wraith_spectacles/proc/de_toggle_eyes()
 	wearer.update_sight()
 	to_chat(wearer, span_clockgray("You feel your eyes slowly readjusting."))
-
-
-/obj/item/clothing/glasses/clockwork/wraith_spectacles/process(seconds_per_tick)
-	if(enabled && wearer)
-		var/delt_damage = 0.1 * seconds_per_tick
-		wearer.adjust_organ_loss(ORGAN_SLOT_EYES, delt_damage, 70)
-		if(damaged_mobs[wearer])
-			var/wearer_data = damaged_mobs[wearer]
-			wearer_data["damage"] = min(wearer_data["damage"] + delt_damage, 70)
-
-	for(var/mob_entry in damaged_mobs)
-		if(enabled && mob_entry == wearer)
-			continue
-		var/mob_data = damaged_mobs[mob_entry]
-		mob_data["timer"] += seconds_per_tick
-		if(mob_data["timer"] >= SECONDS_FOR_EYE_HEAL)
-			var/mob/living/living_healed = mob_entry
-			living_healed.adjust_organ_loss(ORGAN_SLOT_EYES, -mob_data["damage"])
-			damaged_mobs -= mob_entry
-
-	if(!damaged_mobs.len)
-		STOP_PROCESSING(SSobj, src)
-
 
 /obj/item/clothing/glasses/clockwork/wraith_spectacles/equipped(mob/living/user, slot)
 	. = ..()

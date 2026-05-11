@@ -1,4 +1,4 @@
-#define BRASS_TOOLSPEED_MOD 0.5
+#define BRASS_TOOLSPEED_MOD 0.25
 
 /obj/item/wirecutters/brass
 	name = "brass wirecutters"
@@ -52,6 +52,7 @@
 	icon_state = "crowbar_brass"
 	worn_icon_state = "crowbar"
 	toolspeed = BRASS_TOOLSPEED_MOD
+	force_opens = TRUE
 
 /obj/item/crowbar/brass/Initialize(mapload)
 	. = ..()
@@ -75,7 +76,7 @@
 	storage_type = /datum/storage/belt/clockwork
 
 /datum/storage/belt/clockwork
-	max_slots = 8
+	max_slots = 10
 	max_specific_storage = WEIGHT_CLASS_NORMAL
 
 /datum/storage/belt/clockwork/New(atom/parent, max_slots, max_specific_storage, max_total_storage, rustle_sound, remove_rustle_sound)
@@ -122,7 +123,7 @@
 /obj/item/storage/toolbox/brass/surgery
 	name = "surgery brass box"
 	desc = "A large brass box containing tools for surgery."
-	storage_type = /datum/storage/medkit
+	storage_type = /datum/storage/medkit/surgery
 
 /obj/item/storage/toolbox/brass/surgery/PopulateContents()
 	new /obj/item/scalpel(src)
