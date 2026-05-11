@@ -31,7 +31,7 @@
 	. = ..()
 	var/datum/antagonist/vampire/vampiredatum = IS_VAMPIRE(user)
 	if(vampiredatum)
-		var/remaining_vassals = 4 - vampiredatum.count_vassals()
+		var/remaining_vassals = vampiredatum.vassal_limit - vampiredatum.count_vassals()
 		if(remaining_vassals > 0)
 			. += span_info("You are currently capable of creating <b>[remaining_vassals]</b> more vassal[remaining_vassals == 1 ? "" : "s"].")
 		else
@@ -116,14 +116,42 @@
 
 	var/datum/antagonist/vampire/vampiredatum = IS_VAMPIRE(user)
 	var/mob/living/carbon/buckled_person = pick(buckled_mobs)
-
+	var/datum/antagonist/vassal/vassaldatum = IS_VASSAL(buckled_person)
 	// oh no let me free this poor soul
 	if(!vampiredatum)
 		user_unbuckle_mob(buckled_person, user)
 		return TRUE
 
+	if(IS_VASSAL(buckled_person) && IS_VASSAL(buckled_person) in vampiredatum.vassals)
+		var/alert_response = tgui_alert(
+			user = user, \
+			message = "What are you willing to do?",
+			title = "Vassal Management",
+			buttons = list("Raise Vassal Rank", "Refuse"),
+			timeout = 15 SECONDS, \
+			autofocus = TRUE
+		)
+		if(alert_response == "Raise Vassal Rank")
+			check_vassal_leveling(buckled_person, vampiredatum)
+		return TRUE
 	var/obj/item/held_item = user.get_inactive_held_item()
 	try_to_torture(user, buckled_person, held_item)
+
+/obj/structure/vampire/vassalrack/proc/check_vassal_leveling(mob/living/target, datum/antagonist/vampire/master)
+	if(!IS_VASSAL(target))
+		return FALSE
+	if(master.vampire_level_unspent < 1)
+		to_chat(master.owner.current, span_bolddanger("You need at least one unspent rank to spent it on vassal."))
+		return FALSE
+	if(length(master.fledglings))
+		to_chat(master.owner.current, span_bolddanger("You cant create one more vampire."))
+		return FALSE
+	if(master.current_vitae < 300)
+		to_chat(master.owner.current, span_bolddanger("You need more vitae."))
+		return FALSE
+	var/datum/antagonist/vassal/fledgling = IS_VASSAL(target)
+	fledgling.add_vassal_leveling(master)
+	return TRUE
 
 /obj/structure/vampire/vassalrack/attack_hand_secondary(mob/user, list/modifiers)
 	. = ..()

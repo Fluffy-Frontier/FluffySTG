@@ -79,6 +79,10 @@
 
 	/// Vassals under my control. Periodically remove the dead ones.
 	var/list/datum/antagonist/vassal/vassals = list()
+	/// How much vassals we can have?
+	var/vassal_limit = 2
+	/// Vampires under my control. Periodically remove the dead ones.
+	var/list/datum/antagonist/vampire/fledgling/fledglings = list()
 
 	/// The rank this vampire is at, used to level abilities and strength up
 	var/vampire_level = 0
@@ -103,9 +107,6 @@
 	/// Lair
 	var/area/vampire_lair_area
 	var/obj/structure/closet/crate/coffin
-
-	/// Tracker so that vassals know where their master is
-	// var/obj/effect/abstract/vampire_tracker_holder/tracker
 
 	/// List of limbs we've applied modifications to.
 	var/list/affected_limbs = list(
@@ -477,6 +478,19 @@
 				vassal_report += " the [vassal.owner.assigned_role.title]"
 			report += vassal_report.Join()
 
+	if(length(fledglings))
+		report += span_header("<br>Their fledglings were...")
+		for(var/datum/antagonist/vampire/fledgling in fledglings)
+			if(!fledgling.owner)
+				continue
+
+			var/list/fledgling_report = list()
+			fledgling_report += "<b>[fledgling.owner.name]</b>"
+
+			if(fledgling.owner.assigned_role)
+				fledgling_report += " the [fledgling.owner.assigned_role.title]"
+			report += fledgling_report.Join()
+
 	if(objectives_complete)
 		report += span_greentext(span_big("<br>The [name] was successful!"))
 	else
@@ -686,6 +700,24 @@
 				continue
 		.++
 
+	for(var/datum/antagonist/vampire/fledgling/fledgling as anything in fledglings)
+		var/mob/living/fledgling_body = fledgling.owner.current
+		if(QDELETED(fledgling_body))
+			continue
+		if(only_living && !considered_alive(fledgling.owner))
+			continue
+		if(!HAS_TRAIT(fledgling_body, TRAIT_MIND_TEMPORARILY_GONE))
+			if(fledgling_body.stat == DEAD)
+				if(HAS_TRAIT(fledgling_body, TRAIT_DEFIB_BLACKLISTED))
+					continue
+				if(!fledgling_body.key)
+					var/mob/dead/observer/fledgling_ghost = fledgling_body.get_ghost(TRUE, TRUE)
+					if(isnull(fledgling_ghost) || (istype(fledgling_ghost) && !fledgling_ghost.can_reenter_corpse))
+						continue
+			else if(!fledgling_body.key)
+				continue
+		.++
+
 /datum/antagonist/vampire/proc/on_examine(datum/source, mob/examiner, list/examine_text)
 	SIGNAL_HANDLER
 	var/text
@@ -697,6 +729,11 @@
 		text = "<img class='icon' src='\ref['tff_modular/modules/vampire/icons/vampiric.dmi']?state=vampire'> "
 
 	if(IS_VASSAL(examiner) in vassals)
+		text += span_cult("<EM>This is, [return_full_name()] your Master!</EM>")
+		examine_text += text
+		return
+
+	if(IS_VAMPIRE(examiner) in fledglings)
 		text += span_cult("<EM>This is, [return_full_name()] your Master!</EM>")
 		examine_text += text
 		return
@@ -720,17 +757,6 @@
 
 	if(diablerie_count > 0 && HAS_TRAIT(examiner, TRAIT_SEE_DIABLERIE))
 		examine_text += span_cult_large("<br><EM>You can see the corrupted marks of a diablerist in [owner.current.p_their()] aura!</EM>")
-
-/*
-/datum/antagonist/vampire/proc/on_moved(datum/source)
-	SIGNAL_HANDLER
-
-	var/mob/living/current = owner?.current
-	if(QDELETED(current))
-		return
-
-	tracker?.tracking_beacon?.update_position()
-*/
 
 /datum/antagonist/vampire/proc/setup_limbs(mob/living/carbon/target)
 	if(!iscarbon(target))
@@ -823,3 +849,21 @@
 	enrico.eye_color_right = "#663300"
 
 	enrico.update_body(is_creating = TRUE)
+
+/datum/antagonist/vampire/fledgling
+	name = "Fledgling"
+	vassal_limit = 0 // Cant have vassals because it's a vassal.
+	vampire_level_unspent = 1 // Very bad start
+	free_levels_remaining = 0
+	humanity = 7 // always 7 because it's fledgling... Yk
+
+/datum/antagonist/vampire/fledgling/forge_objectives()
+	// Vassal Objective
+	var/datum/objective/vampire/serve_objective = new /datum/objective/vampire/vassal
+	serve_objective.owner = owner
+	objectives += serve_objective
+
+	// Survive Objective
+	var/datum/objective/survive/vampire/survive_objective = new
+	survive_objective.owner = owner
+	objectives += survive_objective

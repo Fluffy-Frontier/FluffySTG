@@ -4,7 +4,7 @@
 	pref_flag = ROLE_VAMPIRE
 	preview_antag_datum = /datum/antagonist/vampire
 	weight = 6
-	max_antag_cap = 4
+	max_antag_cap = list("denominator" = 10)
 	min_pop = 15
 
 /datum/dynamic_ruleset/roundstart/vampire/is_valid_candidate(mob/candidate, client/candidate_client)
@@ -25,7 +25,7 @@
 	midround_type = LIGHT_MIDROUND
 	weight = 6
 	repeatable = TRUE
-	max_antag_cap = 4
+	max_antag_cap = list("denominator" = 10)
 	min_pop = 15
 
 /datum/dynamic_ruleset/midround/from_living/vampire/is_valid_candidate(mob/candidate, client/candidate_client)
@@ -45,7 +45,6 @@
 	jobban_flag = ROLE_VAMPIRE
 	weight = 10
 	repeatable = TRUE
-	max_antag_cap = 4
 	min_pop = 15
 
 /datum/dynamic_ruleset/latejoin/vampire/is_valid_candidate(mob/candidate, client/candidate_client)

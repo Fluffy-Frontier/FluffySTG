@@ -16,12 +16,15 @@
 	/// List of Powers, like Vampires.
 	var/list/datum/action/powers = list()
 	/// Vassal Traits
-	var/list/traits_to_add = list(
+	var/list/vassal_traits = list(
 		TRAIT_VAMPIRE_ALIGNED,
 		TRAIT_NIGHT_VISION,
-		TRAIT_NOBREATH,
-		TRAIT_HARDLY_WOUNDED,
 	)
+	/// Vassal Type
+	var/datum/vassal_type/my_type
+	/// Fledgling rank
+	var/fledgling_rank = 0
+	var/fledgling_final_rank = 4
 
 /datum/antagonist/vassal/antag_panel_data()
 	return "Master : [master.owner.name]"
@@ -34,7 +37,7 @@
 	RegisterSignals(current_mob, list(COMSIG_MOB_LOGIN, COMSIG_MOVABLE_Z_CHANGED), PROC_REF(on_login))
 
 	current_mob.update_sight()
-	current_mob.add_traits(traits_to_add, TRAIT_VAMPIRE)
+	current_mob.add_traits(vassal_traits, TRAIT_VAMPIRE)
 
 	// HUD
 	add_team_hud(current_mob)
@@ -53,14 +56,8 @@
 
 	UnregisterSignal(current_mob, list(COMSIG_ATOM_EXAMINE, COMSIG_MOB_LOGIN, COMSIG_MOVABLE_Z_CHANGED))
 	current_mob.update_sight()
-	current_mob.remove_traits(traits_to_add, TRAIT_VAMPIRE)
-
-	// Tracking
-	// QDEL_NULL(monitor)
+	current_mob.remove_traits(vassal_traits, TRAIT_VAMPIRE)
 	current_mob.remove_language(/datum/language/vampiric, source = LANGUAGE_VASSAL)
-
-	// Remove traits
-	REMOVE_TRAITS_IN(current_mob, TRAIT_VAMPIRE)
 	current_mob.remove_faction(FACTION_VAMPIRE)
 
 /datum/antagonist/vassal/on_gain()
@@ -85,8 +82,6 @@
 	forge_objectives()
 
 /datum/antagonist/vassal/on_removal()
-	REMOVE_TRAIT(owner, TRAIT_VAMPIRE_ALIGNED, REF(src))
-	REMOVE_TRAIT(owner, TRAIT_NIGHT_VISION, REF(src))
 	// Free them from their Master
 	if(master)
 		master.vassals -= src
@@ -100,6 +95,8 @@
 		powers -= power
 		power.Remove(owner.current)
 
+	if(my_type)
+		my_type.on_remove()
 	return ..()
 
 /datum/antagonist/vassal/greet()
@@ -140,6 +137,36 @@
 	target.log_message("has been deconverted from Vassalization by [key_name(implanter)]!", LOG_ATTACK, color="#960000")
 	owner.remove_antag_datum(/datum/antagonist/vassal)
 	return COMPONENT_MINDSHIELD_DECONVERTED
+
+/datum/antagonist/vassal/proc/add_vassal_leveling(datum/antagonist/vampire/master)
+	var/mob/living/carbon/fledgling = owner.curren
+	fledgling_rank += 1
+	if(fledgling_rank < fledgling_final_rank)
+		if(fledgling_rank == 1)
+			fledgling.add_traits(list(TRAIT_NOBREATH, TRAIT_AGEUSIA), TRAIT_VAMPIRE)
+			vassal_traits += list(TRAIT_NOBREATH, TRAIT_AGEUSIA)
+		if(fledgling_rank == 2)
+			fledgling.add_traits(list(TRAIT_RADIMMUNE, TRAIT_VIRUSIMMUNE), TRAIT_VAMPIRE)
+			vassal_traits += list(TRAIT_RADIMMUNE, TRAIT_VIRUSIMMUNE)
+		if(fledgling_rank == 3)
+			fledgling.add_traits(list(TRAIT_HARDLY_WOUNDED, TRAIT_NOBLOOD), TRAIT_VAMPIRE)
+			vassal_traits += list(TRAIT_HARDLY_WOUNDED, TRAIT_NOBLOOD)
+		var/fledgling_rank_remain = 4 - fledgling_rank
+		to_chat(fledgling, span_awe("You feel you've become stronger, you need [fledgling_rank_remain] ranks to become vampire..."))
+		to_chat(master.owner.current, span_awe("You feel your vassal becomes stronger, you need [fledgling_rank_remain] ranks to make him vampire..."))
+
+	else if(fledgling_rank >= fledgling_final_rank)
+		silent = TRUE
+		fledgling.mind?.remove_antag_datum(/datum/antagonist/vassal)
+		var/datum/antagonist/vampire/fledgling/new_vampire = fledgling.mind?.add_antag_datum(/datum/antagonist/vampire/fledgling)
+		var/datum/vampire_clan/masterclan_type = master.my_clan?.type
+		new_vampire.my_clan = new masterclan_type(new_vampire)
+		new_vampire.my_clan.on_apply()
+		master.fledglings += new_vampire
+		to_chat(fledgling, span_cult_italic("You've become a Fledgling, a Vampire, but your blood is weak now. [master.owner.current.name] is your creator, and you can gain information from him!"))
+		to_chat(master.owner.current, span_cult_italic("Your vassal becomes a Fledgling, he is very weak right now and needs your help to become stronger."))
+	master.rank_down()
+	master.adjust_blood_volume(-150)
 
 /datum/antagonist/vassal/proc/on_login()
 	SIGNAL_HANDLER
@@ -201,17 +228,6 @@
 			continue
 		antag_hud.show_to(target)
 		hud.show_to(antag_hud.target)
-
-/*
-/datum/antagonist/vassal/proc/setup_monitor(mob/target)
-	QDEL_NULL(monitor)
-	if(QDELETED(master?.owner?.current) || QDELETED(master.tracker))
-		return
-
-	monitor = target.AddComponent(/datum/component/team_monitor, REF(master))
-	monitor.add_to_tracking_network(master.tracker.tracking_beacon)
-	monitor.show_hud(target)
-*/
 
 /datum/antagonist/vassal/proc/on_examine(datum/source, mob/examiner, list/examine_text)
 	SIGNAL_HANDLER

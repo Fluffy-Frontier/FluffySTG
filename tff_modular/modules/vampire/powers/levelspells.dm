@@ -99,6 +99,9 @@
 		owner.balloon_alert(owner, "already offering!")
 		return FALSE
 
+	if(IS_VASSAL(living_target) && (IS_VASSAL(living_target) in vampiredatum_power.vassals) && length(vampiredatum_power.fledglings))
+		owner.balloon_alert(owner, "cannot create one more vampire!")
+		return FALSE
 	return TRUE
 
 /datum/action/cooldown/vampire/targeted/scourgify/fire_targeted_power(atom/target_atom, list/modifiers)
@@ -122,7 +125,7 @@
 		living_target.mind.remove_antag_datum(/datum/antagonist/vassal)
 
 		// Make, then give the datum
-		var/datum/antagonist/vampire/scourgedatum = new(living_target.mind)
+		var/datum/antagonist/vampire/fledgling/scourgedatum = new(living_target.mind)
 		scourgedatum.should_forge_objectives = FALSE // their one objective is to enforce their prince's authority
 		scourgedatum.stinger_sound = null // to avoid several sounds stacking on top of each other
 		living_target.mind.add_antag_datum(scourgedatum)
