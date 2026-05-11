@@ -116,7 +116,6 @@
 
 	var/datum/antagonist/vampire/vampiredatum = IS_VAMPIRE(user)
 	var/mob/living/carbon/buckled_person = pick(buckled_mobs)
-	var/datum/antagonist/vassal/vassaldatum = IS_VASSAL(buckled_person)
 	// oh no let me free this poor soul
 	if(!vampiredatum)
 		user_unbuckle_mob(buckled_person, user)

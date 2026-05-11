@@ -20,8 +20,6 @@
 		TRAIT_VAMPIRE_ALIGNED,
 		TRAIT_NIGHT_VISION,
 	)
-	/// Vassal Type
-	var/datum/vassal_type/my_type
 	/// Fledgling rank
 	var/fledgling_rank = 0
 	var/fledgling_final_rank = 4
@@ -95,8 +93,6 @@
 		powers -= power
 		power.Remove(owner.current)
 
-	if(my_type)
-		my_type.on_remove()
 	return ..()
 
 /datum/antagonist/vassal/greet()
@@ -139,7 +135,7 @@
 	return COMPONENT_MINDSHIELD_DECONVERTED
 
 /datum/antagonist/vassal/proc/add_vassal_leveling(datum/antagonist/vampire/master)
-	var/mob/living/carbon/fledgling = owner.curren
+	var/mob/living/carbon/fledgling = owner.current
 	fledgling_rank += 1
 	if(fledgling_rank < fledgling_final_rank)
 		if(fledgling_rank == 1)

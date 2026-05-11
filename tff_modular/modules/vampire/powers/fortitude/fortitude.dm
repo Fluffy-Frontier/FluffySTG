@@ -99,8 +99,8 @@
 
 /datum/action/cooldown/vampire/fortitude/proc/on_take_damage(datum/source, damage_amount, damage_type, ...)
 	SIGNAL_HANDLER
-	var/blood_to_consume = damage_amount / (resistance + 0.1)
-	vampiredatum_power.adjust_blood_volume(-blood_to_consume)
+
+	vampiredatum_power.adjust_blood_volume(-damage_amount)
 
 /datum/action/cooldown/vampire/fortitude/use_power()
 	. = ..()
