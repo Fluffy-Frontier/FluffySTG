@@ -38,7 +38,7 @@
 	department_state = "department"
 	subdepartment_color = COLOR_PURPLE
 	sechud_icon_state = SECHUD_SYNDICATE_INTERDYNE
-	access = list(ACCESS_SYNDICATE, ACCESS_INTERDYNE)
+	access = list(ACCESS_SYNDICATE)
 	threat_modifier = 2
 
 /datum/id_trim/interdyne/shaftminer
@@ -52,7 +52,7 @@
 	department_color = COLOR_CARP_DARK_GREEN
 	subdepartment_color = COLOR_SYNDIE_RED
 	sechud_icon_state = SECHUD_SYNDICATE_INTERDYNE_HEAD
-	access = list(ACCESS_SYNDICATE, ACCESS_INTERDYNE, ACCESS_ROBOTICS, ACCESS_SYNDICATE_LEADER)
+	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS, ACCESS_SYNDICATE_LEADER)
 
 // ID Cards
 /obj/item/card/id/advanced/interdyne/medical
