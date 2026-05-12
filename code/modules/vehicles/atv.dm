@@ -3,21 +3,19 @@
 	name = "all-terrain vehicle"
 	desc = "An all-terrain vehicle built for traversing rough terrain with ease. One of the few old-Earth technologies that are still relevant on most planet-bound outposts."
 	icon_state = "atv"
-	max_integrity = 50 // FLUFFY FRONTIER EDIT from max_integrity = 150
+	max_integrity = 150
 	armor_type = /datum/armor/ridden_atv
 	key_type = /obj/item/key/atv
 	integrity_failure = 0.5
 	var/static/mutable_appearance/atvcover
 
-// FLUFFY FRONTIER EDIT START
 /datum/armor/ridden_atv
-	melee = 5 // 50
-	bullet = 5 // 25
-	laser = 5 // 20
+	melee = 50
+	bullet = 25
+	laser = 20
 	bomb = 50
-	fire = 80 // 60
-	acid = 70 // 60
-// FLUFFY FRONTIER EDIT END
+	fire = 60
+	acid = 60
 
 /obj/vehicle/ridden/atv/Initialize(mapload)
 	. = ..()
@@ -120,7 +118,7 @@
 	return ..()
 
 /obj/vehicle/ridden/atv/atom_destruction()
-	explosion(src, devastation_range = -1, light_impact_range = 2, flame_range = 2, flash_range = 4) // FLUFFY FRONTIER EDIT  flame_range = 3
+	explosion(src, devastation_range = -1, light_impact_range = 2, flame_range = 3, flash_range = 4)
 	return ..()
 
 /obj/vehicle/ridden/atv/Destroy()
