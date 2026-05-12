@@ -9,6 +9,7 @@
 	crate_name = "cytology samples"
 	crate_type = /obj/structure/closet/crate/secure/science
 
+// Adds extreme random petri dishes. They can contain any, ANY sample
 /obj/item/petri_dish/extremerandom
 	var/static/list/possible_samples = list(
 		list(CELL_LINE_TABLE_MOLD, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 5),
