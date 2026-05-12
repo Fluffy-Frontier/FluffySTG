@@ -29,7 +29,7 @@
 /datum/outfit/interdyne_planetary_base/shaftminer/deckofficer
 	l_pocket = /obj/item/melee/energy/sword/saber/green/dyne
 
-// Trim
+// Trim //
 /datum/id_trim/interdyne
 	trim_icon = 'tff_modular/modules/interdyne_id/icons/card.dmi'
 	assignment = "Interdyne Scientist"
