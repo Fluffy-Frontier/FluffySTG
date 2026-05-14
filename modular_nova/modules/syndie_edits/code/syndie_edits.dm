@@ -265,6 +265,7 @@
 	icon_state = "ip_biosuit_head"
 	icon = 'modular_nova/master_files/icons/obj/clothing/hats.dmi'
 	worn_icon = 'modular_nova/master_files/icons/mob/clothing/head.dmi'
+	worn_icon_teshari = 'tff_modular/modules/clothing/icons/mob/species/teshari/head.dmi' //FLUFFY FRONTIER ADD
 
 /obj/item/clothing/suit/bio_suit/interdyne
 	name = "interdyne biosuit"
@@ -274,6 +275,7 @@
 	worn_icon = 'modular_nova/master_files/icons/mob/clothing/suit.dmi'
 	slowdown = 0.3
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	worn_icon_teshari = 'tff_modular/modules/clothing/icons/mob/species/teshari/suit.dmi' //FLUFFY FRONTIER ADD
 
 /obj/item/clothing/suit/armor/hos/deckofficer
 	name = "deck officer's cloak"

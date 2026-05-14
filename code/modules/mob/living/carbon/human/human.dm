@@ -758,7 +758,7 @@
 	. = ..()
 	// Handles changing limb colors and stuff
 	if(!(living_flags & STOP_OVERLAY_UPDATE_BODY_PARTS))
-		hud_used.healthdoll?.update_appearance()
+		hud_used.screen_objects[HUD_MOB_HEALTHDOLL]?.update_appearance()
 
 /mob/living/carbon/human/fully_heal(heal_flags = HEAL_ALL)
 	if(heal_flags & HEAL_NEGATIVE_MUTATIONS)
@@ -1214,8 +1214,11 @@
 /mob/living/carbon/human/species/lizard/silverscale
 	race = /datum/species/lizard/silverscale
 
+/mob/living/carbon/human/species/spirit
+	race = /datum/species/spirit
+
 /mob/living/carbon/human/species/ghost
-	race = /datum/species/ghost
+	race = /datum/species/spirit/ghost
 
 /mob/living/carbon/human/species/ethereal
 	race = /datum/species/ethereal

@@ -363,6 +363,7 @@
 	name = "Perfume - Cologne"
 	item_path = /obj/item/perfume/cologne
 	group = "Cosmetics"
+/* // FLUFFY FRONTIER REMOVAL BEGIN: 1984. No gays
 /*
 *	FLAGS
 */
@@ -390,6 +391,7 @@
 /datum/loadout_item/pocket_items/trans_pride_flag
 	name = "Pride Flag - Transgender"
 	item_path = /obj/item/sign/flag/pride/trans
+*/ // FLUFFY FRONTIER REMOVAL END
 /*
 *	JOB-LOCKED
 */

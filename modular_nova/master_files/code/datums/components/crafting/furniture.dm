@@ -1,3 +1,4 @@
+/* // FLUFFY FRONTIER REMOVAL BEGIN: 1984. No gays
 /datum/crafting_recipe/gay_pride_flag
 	name = "LGBT Pride Flag"
 	reqs = list(
@@ -45,3 +46,4 @@
 	)
 	result = /obj/item/sign/flag/pride/trans
 	category = CAT_FURNITURE
+*/ // FLUFFY FRONTIER REMOVAL END
