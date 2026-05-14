@@ -225,6 +225,7 @@
 	current_mob.grant_language(/datum/language/vampiric, source = LANGUAGE_VAMPIRE)
 
 	my_clan?.apply_effects(current_mob)
+	frenzy_threshold = FRENZY_THRESHOLD_ENTER - (15 * humanity)
 
 /**
  * Remove innate effects is everything given to the mob

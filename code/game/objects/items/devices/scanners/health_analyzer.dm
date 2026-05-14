@@ -216,7 +216,7 @@
 				render_list += "<span class='info ml-1'>Subject Minor Disabilities: [carbontarget.get_quirk_string(FALSE, CAT_QUIRK_MINOR_DISABILITY, TRUE)].</span><br>"
 
 	// NOVA EDIT ADDITION START -- Show increased/decreased brute/burn mods, to "leave a paper trail" for the fragility quirk
-	if(ishuman(target))
+	if(ishuman(target) && !IS_VAMPIRE(target)) // TFF EDIT - ORIGINAL: if(ishuman(target))
 		var/mob/living/carbon/human/humantarget = target
 
 		var/datum/physiology/physiology = humantarget.physiology
