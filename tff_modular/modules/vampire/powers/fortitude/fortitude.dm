@@ -28,13 +28,14 @@
 						At level 1: Gain pierce resistance.\n\
 						At level 2: Gain push immunity.\n\
 						At level 3: Gain dismember resistance.\n\
-						At level 4: Gain complete stun immunity."
+						At level 4: Gain complete stun immunity.\n\
+						At level 5: Gain grab resistance."
 	vampire_power_flags = BP_AM_TOGGLE | BP_AM_COSTLESS_UNCONSCIOUS
 	vampire_check_flags = BP_CANT_USE_IN_TORPOR | BP_CANT_USE_WHILE_STAKED
 	vitaecost = 50
 	cooldown_time = 5 SECONDS
 
-	var/resistance = 0.8
+	var/resistance = 0.9
 
 	// Flags for what immunities to turn on at which level
 	var/pierce = TRUE
@@ -42,32 +43,27 @@
 	var/dismember = FALSE
 	var/stun = FALSE
 	var/grab = FALSE
-	var/burn_resistance = 0.9
 
 /datum/action/cooldown/vampire/fortitude/two
-	resistance = 0.6
-	burn_resistance = 0.8
+	resistance = 0.8
 	pierce = TRUE
 	push = TRUE
 
 /datum/action/cooldown/vampire/fortitude/three
-	resistance = 0.4
-	burn_resistance = 0.7
+	resistance = 0.7
 	pierce = TRUE
 	push = TRUE
 	dismember = TRUE
 
 /datum/action/cooldown/vampire/fortitude/four
-	resistance = 0.3
-	burn_resistance = 0.6
+	resistance = 0.6
 	pierce = TRUE
 	push = TRUE
 	dismember = TRUE
 	stun = TRUE
 
 /datum/action/cooldown/vampire/fortitude/five
-	resistance = 0.3
-	burn_resistance = 0.5
+	resistance = 0.6
 	pierce = TRUE
 	push = TRUE
 	dismember = TRUE
@@ -95,7 +91,7 @@
 	RegisterSignal(user, COMSIG_MOB_APPLY_DAMAGE, PROC_REF(on_take_damage))
 	user.physiology.brute_mod *= resistance
 	user.physiology.stamina_mod *= resistance * 2 // Stamina resistance is half as effective because they have it inherently.
-	user.physiology.burn_mod *= burn_resistance // they get burn resistance, but way less
+	user.physiology.burn_mod *= resistance // they get burn resistance, but way less
 
 /datum/action/cooldown/vampire/fortitude/proc/on_take_damage(datum/source, damage_amount, damage_type, ...)
 	SIGNAL_HANDLER
@@ -118,7 +114,7 @@
 	var/mob/living/carbon/human/vampire_user = owner
 	UnregisterSignal(vampire_user, COMSIG_MOB_APPLY_DAMAGE)
 	vampire_user.physiology.brute_mod /= resistance
-	vampire_user.physiology.burn_mod /= burn_resistance
+	vampire_user.physiology.burn_mod /= resistance
 	vampire_user.physiology.stamina_mod /= resistance * 2
 
 	// Remove Traits & Effects

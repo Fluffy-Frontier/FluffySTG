@@ -311,7 +311,8 @@
 		feed_target.add_traits(list(TRAIT_IMMOBILIZED, TRAIT_MUTE, TRAIT_HANDS_BLOCKED), REF(src))
 
 		// Normally removed traits are done. Now we give the victim a lil something to remember us by.
-		feed_target.apply_status_effect(/datum/status_effect/feed_marked)
+		if(!istype(vampiredatum_power.my_clan, /datum/vampire_clan/toreador))
+			feed_target.apply_status_effect(/datum/status_effect/feed_marked)
 
 /datum/action/cooldown/vampire/targeted/feed/use_power()
 	var/mob/living/user = owner
@@ -563,11 +564,16 @@
 /datum/status_effect/feed_marked/on_apply()
 	if(!iscarbon(owner))
 		return FALSE
+	owner.add_movespeed_modifier(/datum/movespeed_modifier/feed_marked)
+	owner.add_actionspeed_modifier(/datum/actionspeed_modifier/feed_marked)
+	owner.add_mood_event("feed_marked", /datum/mood_event/feed_marked)
 	RegisterSignal(owner, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
 	return TRUE
 
 /datum/status_effect/feed_marked/on_remove()
 	UnregisterSignal(owner, COMSIG_ATOM_EXAMINE)
+	owner.remove_movespeed_modifier(/datum/movespeed_modifier/feed_marked)
+	owner.remove_actionspeed_modifier(/datum/actionspeed_modifier/feed_marked)
 
 /datum/status_effect/feed_marked/on_creation(mob/living/new_owner, ...)
 	duration = rand(5 MINUTES, 10 MINUTES)
@@ -580,3 +586,48 @@
 	SIGNAL_HANDLER
 	if(isobserver(user) || (get_dist(user, owner) <= 3 && !user.is_nearsighted_currently()))
 		examine_list += span_warning("There are two strange punctures on [owner.p_their()] neck.")
+	if(IS_CURATOR(user))
+		examine_list += span_cult_italic("It doesn't look like it's a hemophage bite...")
+
+/datum/movespeed_modifier/feed_marked
+	multiplicative_slowdown = 0.1
+	blacklisted_movetypes = (FLYING|FLOATING)
+
+/datum/actionspeed_modifier/feed_marked
+	multiplicative_slowdown = 0.25
+
+/datum/mood_event/feed_marked
+	description = "What happened? I... I feel so good..."
+	mood_change = 15
+	timeout = 2 MINUTES
+
+/datum/status_effect/feed_marked/fake
+	id = "feed marked fake"
+	tick_interval = STATUS_EFFECT_NO_TICK
+	processing_speed = STATUS_EFFECT_NORMAL_PROCESS
+	status_type = STATUS_EFFECT_REFRESH
+	alert_type = null
+	remove_on_fullheal = TRUE
+	heal_flag_necessary = HEAL_WOUNDS
+
+/datum/status_effect/feed_marked/fake/on_apply()
+	if(!iscarbon(owner))
+		return FALSE
+	RegisterSignal(owner, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
+	return TRUE
+
+/datum/status_effect/feed_marked/fake/on_remove()
+	UnregisterSignal(owner, COMSIG_ATOM_EXAMINE)
+
+/datum/status_effect/feed_marked/fake/on_creation(mob/living/new_owner, ...)
+	duration = rand(5 MINUTES, 10 MINUTES)
+	return ..()
+
+/datum/status_effect/feed_marked/fake/refresh(effect, ...)
+	duration = max(duration, world.time + rand(5 MINUTES, 10 MINUTES))
+
+/datum/status_effect/feed_marked/fake/on_examine(atom/source, mob/user, list/examine_list)
+	if(isobserver(user) || (get_dist(user, owner) <= 3 && !user.is_nearsighted_currently()))
+		examine_list += span_warning("There are two strange punctures on [owner.p_their()] neck.")
+	if(IS_CURATOR(user))
+		examine_list += span_warning("It look like it's a hemophage bite...")

@@ -206,6 +206,7 @@
 		temp_humanity = 0
 
 	humanity = temp_humanity
+	frenzy_threshold = FRENZY_THRESHOLD_ENTER - (15 * humanity)
 	return TRUE
 
 /// Bacon wanted a signal

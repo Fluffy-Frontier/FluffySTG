@@ -1,6 +1,3 @@
-/datum/antagonist/vampire/proc/check_start_society()
-	return FALSE
-
 /datum/antagonist/vampire/proc/princify()
 	rank_up(8, TRUE) // Rank up a lot.
 	to_chat(owner.current, span_cult_bold("As a true prince, you find some of your old power returning to you!"))

@@ -78,7 +78,7 @@
 /// Cost to convert someone after successful torture, in blood
 #define TORTURE_CONVERSION_COST 50
 /// Once blood is this low, will enter a Frenzy
-#define FRENZY_THRESHOLD_ENTER 25
+#define FRENZY_THRESHOLD_ENTER 175
 /// Once blood is this high, will exit the Frenzy. Intentionally high, we want to kill the person we feed off of
 #define FRENZY_THRESHOLD_EXIT 500
 /// How much blood drained from the vampire each lifetick
@@ -104,7 +104,10 @@
 #define VAMPIRE_FREE_LEVELS 3
 /// Vampire's default stamina resist.
 #define VAMPIRE_INHERENT_STAMINA_RESIST 0.75
-
+/// Vampire's default brute resist.
+#define VAMPIRE_INHERENT_BRUTE_RESIST 0.75
+/// Vampire's default burn resist.
+#define VAMPIRE_INHERENT_BURN_RESIST 0.85
 /// Humanity defines
 /// Default Humanity
 #define VAMPIRE_DEFAULT_HUMANITY 7

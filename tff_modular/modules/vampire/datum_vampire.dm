@@ -216,6 +216,8 @@
 	if(ishuman(current_mob))
 		var/mob/living/carbon/human/current_human = current_mob
 		current_human.physiology?.stamina_mod *= VAMPIRE_INHERENT_STAMINA_RESIST
+		current_human.physiology?.brute_mod *= VAMPIRE_INHERENT_BRUTE_RESIST
+		current_human.physiology?.burn_mod *= VAMPIRE_INHERENT_BURN_RESIST
 
 	current_mob.dna?.remove_all_mutations()
 	current_mob.add_traits(vampire_traits + always_traits, TRAIT_VAMPIRE)
@@ -252,13 +254,14 @@
 	handle_clown_mutation(current_mob, removing = FALSE)
 
 	cleanup_limbs(current_mob)
-	//	cleanup_tracker()
 
 	current_mob.remove_faction(FACTION_VAMPIRE)
 
 	if(ishuman(current_mob))
 		var/mob/living/carbon/human/current_human = current_mob
 		current_human.physiology?.stamina_mod /= VAMPIRE_INHERENT_STAMINA_RESIST
+		current_human.physiology?.brute_mod /= VAMPIRE_INHERENT_BRUTE_RESIST
+		current_human.physiology?.burn_mod /= VAMPIRE_INHERENT_BURN_RESIST
 
 	if(!QDELETED(current_mob))
 		my_clan?.remove_effects(current_mob)
@@ -330,8 +333,6 @@
 	give_starting_powers()
 	GLOB.all_vampires += src
 	SSvampire_leveling.check_enable()
-
-	check_start_society()
 
 	if(!QDELETED(owner.current))
 		for(var/quirk_type in typesof(/datum/quirk/item_quirk/addict/junkie) + /datum/quirk/skittish)
@@ -545,11 +546,6 @@
 	// Powers
 	for(var/datum/action/cooldown/vampire/all_powers as anything in powers)
 		remove_power(all_powers)
-
-	/// Stats
-	if(ishuman(owner.current))
-		var/mob/living/carbon/human/human_user = user
-		human_user.physiology.stamina_mod /= VAMPIRE_INHERENT_STAMINA_RESIST
 
 	// Remove all vampire traits
 	user.remove_traits(vampire_traits + always_traits, TRAIT_VAMPIRE)

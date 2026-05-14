@@ -174,6 +174,8 @@
 	// Жертва будет уязвима к урону в течение 5 минут
 	if(!victim.has_status_effect(/datum/status_effect/vulnerable_to_damage))
 		victim.apply_status_effect(/datum/status_effect/vulnerable_to_damage)
+	if(!victim.has_status_effect(/datum/status_effect/feed_marked) && !victim.has_status_effect(/datum/status_effect/feed_marked/fake))
+		victim.apply_status_effect(/datum/status_effect/feed_marked/fake)
 	// FLUFFY FRONTIER EDIT ADDITION END
 
 #undef HEMOPHAGE_DRAIN_AMOUNT
