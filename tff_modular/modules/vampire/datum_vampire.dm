@@ -260,8 +260,8 @@
 	if(ishuman(current_mob))
 		var/mob/living/carbon/human/current_human = current_mob
 		current_human.physiology?.stamina_mod /= VAMPIRE_INHERENT_STAMINA_RESIST
-		current_human.physiology?.brute_mod /= VAMPIRE_INHERENT_BRUTE_RESIST
-		current_human.physiology?.burn_mod /= VAMPIRE_INHERENT_BURN_RESIST
+		current_human.physiology?.brute_mod /= VAMPIRE_INHERENT_DAMAGE_RESIST
+		current_human.physiology?.burn_mod /= VAMPIRE_INHERENT_DAMAGE_RESIST
 
 	if(!QDELETED(current_mob))
 		my_clan?.remove_effects(current_mob)
