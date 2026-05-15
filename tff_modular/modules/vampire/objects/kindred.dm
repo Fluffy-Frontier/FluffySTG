@@ -35,7 +35,7 @@
 		return NONE
 	if(DOING_INTERACTION(user, DOAFTER_SOURCE_ARCHIVE_OF_THE_KINDRED))
 		return ITEM_INTERACT_BLOCKING
-	if(!IS_CURATOR(user) && !IS_CHAPLAIN)
+	if(!IS_CURATOR(user) && !IS_CHAPLAIN(user))
 		if(!IS_VAMPIRE(user))
 			to_chat(user, span_warning("[src] burns your hands as you try to use it!"))
 			user.apply_damage(3, BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
