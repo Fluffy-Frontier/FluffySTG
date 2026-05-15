@@ -28,6 +28,8 @@
 		TRAIT_PUSHIMMUNE,
 		TRAIT_STRONG_GRABBER,
 		TRAIT_STUNIMMUNE,
+		TRAIT_BATON_RESISTANCE,
+		TRAIT_IGNORESLOWDOWN,
 	)
 
 /datum/status_effect/frenzy/Destroy()
@@ -106,12 +108,14 @@
 		carbon_owner.adjust_fire_loss(0.75 + (vampiredatum.vampire_level * 0.05))
 		carbon_owner.set_jitter_if_lower(10 SECONDS)
 
+		carbon_owner.uncuff()
+
 /datum/status_effect/frenzy/get_examine_text()
 	return span_danger("[owner.p_They()] seem[owner.p_s()]... inhumane, and feral!")
 
 /datum/movespeed_modifier/frenzy_speed
 	blacklisted_movetypes = FLYING | FLOATING
-	multiplicative_slowdown = -0.1 // Might seem very low but at this point we are already slow as balls from hunger
+	multiplicative_slowdown = -0.2 // Might seem very low but at this point we are already slow as balls from hunger
 
 /atom/movable/screen/alert/status_effect/masquerade/MouseEntered(location,control,params)
 	desc = initial(desc)

@@ -12,5 +12,6 @@
 
 /datum/discipline/celerity/apply_discipline_quirks(datum/antagonist/vampire/clan_owner)
 	. = ..()
-	owner.add_traits(clan_owner.vampire_traits, TRAIT_PERFECT_ATTACKER, TRAIT_VAMPIRE)
+	owner.add_traits(list(TRAIT_PERFECT_ATTACKER, TRAIT_TOSS_GUN_HARD), TRAIT_VAMPIRE)
+	clan_owner.vampire_traits += list(TRAIT_PERFECT_ATTACKER, TRAIT_TOSS_GUN_HARD)
 	owner.next_move_modifier *= 0.9

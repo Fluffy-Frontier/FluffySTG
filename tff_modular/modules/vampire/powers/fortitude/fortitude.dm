@@ -91,7 +91,7 @@
 	RegisterSignal(user, COMSIG_MOB_APPLY_DAMAGE, PROC_REF(on_take_damage))
 	user.physiology.brute_mod *= resistance
 	user.physiology.stamina_mod *= resistance * 2 // Stamina resistance is half as effective because they have it inherently.
-	user.physiology.burn_mod *= resistance // they get burn resistance, but way less
+	user.physiology.burn_mod *= resistance + 0.2 // they get burn resistance, but way less
 
 /datum/action/cooldown/vampire/fortitude/proc/on_take_damage(datum/source, damage_amount, damage_type, ...)
 	SIGNAL_HANDLER
@@ -114,7 +114,7 @@
 	var/mob/living/carbon/human/vampire_user = owner
 	UnregisterSignal(vampire_user, COMSIG_MOB_APPLY_DAMAGE)
 	vampire_user.physiology.brute_mod /= resistance
-	vampire_user.physiology.burn_mod /= resistance
+	vampire_user.physiology.burn_mod /= resistance + 0.2
 	vampire_user.physiology.stamina_mod /= resistance * 2
 
 	// Remove Traits & Effects

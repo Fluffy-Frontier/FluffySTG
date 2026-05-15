@@ -27,7 +27,7 @@
 /obj/item/book/kindred/examine(mob/user)
 	. = ..()
 	if(IS_CURATOR(user))
-		. += span_awe("[src] can be used by curators to identify vampires. Use this on the suspect...")
+		. += span_awe("[src] can be used by curators or chaplains to identify vampires. Use this on the suspect...")
 
 ///Attacking someone with the book.
 /obj/item/book/kindred/interact_with_atom(mob/target, mob/living/user, list/modifiers)
@@ -35,7 +35,7 @@
 		return NONE
 	if(DOING_INTERACTION(user, DOAFTER_SOURCE_ARCHIVE_OF_THE_KINDRED))
 		return ITEM_INTERACT_BLOCKING
-	if(!IS_CURATOR(user))
+	if(!IS_CURATOR(user) && !IS_CHAPLAIN)
 		if(!IS_VAMPIRE(user))
 			to_chat(user, span_warning("[src] burns your hands as you try to use it!"))
 			user.apply_damage(3, BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))

@@ -169,10 +169,16 @@
 		// Did we knock them down?
 		if(!is_source_facing_target(target, owner) || owner.alpha <= 40)
 			target.Knockdown((1 SECONDS) + knockdown_bonus * 5)
-			target.Paralyze(0.1)
+			target.Paralyze(1)
 
 			target.drop_all_held_items()
 			target.grabbedby(owner)
-			target.grippedby(owner, instant = TRUE)
+			owner.setGrabState(GRAB_NECK)
+		else
+			target.Knockdown((1 SECONDS))
+
+			target.drop_all_held_items()
+			target.grabbedby(owner)
+			owner.setGrabState(GRAB_AGGRESSIVE)
 
 #undef LUNGE_TIME
