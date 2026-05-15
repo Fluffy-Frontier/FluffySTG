@@ -27,3 +27,14 @@
 	desc = "A comfortable jacket in security blue. Probably against uniform regulations."
 	icon_state = "bluesec_winter_jacket"
 
+/obj/item/clothing/suit/armor/vest/interdyne/black
+	name = "black interdyne armor vest"
+	icon = 'tff_modular/modules/clothing/icons/obj/armor.dmi'
+	worn_icon = 'tff_modular/modules/clothing/icons/mob/armor.dmi'
+	icon_state = "vest_black_interdyne"
+
+/obj/item/clothing/suit/armor/vest/interdyne/white
+	name = "white interdyne armor vest"
+	icon = 'tff_modular/modules/clothing/icons/obj/armor.dmi'
+	worn_icon = 'tff_modular/modules/clothing/icons/mob/armor.dmi'
+	icon_state = "vest_white_interdyne"

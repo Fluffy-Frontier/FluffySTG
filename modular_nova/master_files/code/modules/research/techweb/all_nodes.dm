@@ -39,6 +39,7 @@
 		"synth_r_leg",
 		"synth_l_d_leg",
 		"synth_r_d_leg",
+		"synth_diy",
 	)
 
 /datum/techweb_node/android_organs
@@ -48,6 +49,7 @@
 	description = "Internal Mechanisms for Synthetics and IPC's."
 	prereq_ids = list(TECHWEB_NODE_ROBOTICS)
 	design_ids = list(
+		"synth_posi",
 		"synth_eyes",
 		"synth_tongue",
 		"synth_liver",
@@ -236,6 +238,7 @@
 /datum/techweb_node/riot_supression/New()
 	design_ids += list(
 		"ammobench_gimmick",
+		"pin_standard",
 	)
 	return ..()
 
