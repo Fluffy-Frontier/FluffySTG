@@ -947,9 +947,7 @@
 	user.regenerate_icons()
 	user.name = user.get_visible_name()
 	current_profile = chosen_profile
-	// NOVA EDIT START
-	user.updateappearance(mutcolor_update = TRUE)
-	user.regenerate_icons()
+	// NOVA EDIT ADDITION START
 	user.name = user.get_visible_name()
 	// NOVA EDIT END
 	//THE FLUFFY FRONTIER EDIT ADDITION BEGIN - Blooper
