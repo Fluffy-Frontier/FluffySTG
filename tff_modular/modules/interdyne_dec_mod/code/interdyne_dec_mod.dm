@@ -64,10 +64,10 @@
 
 /datum/armor/mod_theme_interdyne/nerfed
 	melee = 30
-	bullet = 5
+	bullet = 10
 	laser = 30
 	energy = 30
-	bomb = 10
+	bomb = 20
 	bio = 100
 	fire = 100
 	acid = 100
