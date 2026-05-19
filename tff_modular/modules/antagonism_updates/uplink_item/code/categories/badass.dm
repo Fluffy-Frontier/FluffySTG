@@ -2,7 +2,7 @@
 	name = "Syndicate Maid Outfit"
 	desc = "A very obvious joke. A standard syndicate maid suit with bulky armor added to it. The added armor prevents you from wearing any extra outerwear"
 	item = /obj/item/storage/box/syndimaid
-	cost = /datum/uplink_item/low_cost/modsuit::cost // Same as the redsuit mod. It's worse than it in almost every way but that's by design
+	cost = 8 // Same as the redsuit mod. It's worse than it in almost every way but that's by design
 	cant_discount = TRUE
 	uplink_item_flags = SYNDIE_TRIPS_CONTRABAND
 

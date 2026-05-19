@@ -1,3 +1,5 @@
+// TFF REMOVAL START - RETURN COSTS TO TG - START:
+/*
 /* Includes:
 /datum/uplink_category/implants
 /datum/uplink_item/implants
@@ -23,3 +25,4 @@
 /datum/uplink_item/implants/storage
 	cost = /datum/uplink_item/high_cost::cost
 //	cost = 8
+*/

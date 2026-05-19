@@ -1,3 +1,5 @@
+// TFF REMOVAL START - RETURN COSTS TO TG - START:
+/*
 /* Includes:
 /datum/uplink_category/stealthy_tools
 /datum/uplink_item/stealthy_tools
@@ -26,3 +28,4 @@
 
 
 // HIGH COST
+*/

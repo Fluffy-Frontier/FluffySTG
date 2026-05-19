@@ -88,3 +88,4 @@
 	item = /obj/item/antag_spawner/loadout/contractor
 	limited_stock = 1
 	cost = 2
+// TFF REMOVAL START - RETURN COSTS TO TG - START:

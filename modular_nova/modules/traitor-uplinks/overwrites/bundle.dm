@@ -5,7 +5,8 @@
 
 // LOW COST
 
-
+// TFF REMOVAL START - RETURN COSTS TO TG - START:
+/*
 // MEDIUM COST
 /datum/uplink_item/bundles_tc/bundle_a
 	cost = /datum/uplink_item/medium_cost/bundle::cost
@@ -35,3 +36,5 @@
 
 
 // HIGH COST
+*/
+// TFF REMOVAL START - RETURN COSTS TO TG - END

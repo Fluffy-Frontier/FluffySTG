@@ -1,3 +1,5 @@
+// TFF REMOVAL START - RETURN COSTS TO TG - START:
+/*
 /* Includes:
 /datum/uplink_category/dangerous
 /datum/uplink_item/dangerous
@@ -42,3 +44,4 @@
 /datum/uplink_item/dangerous/doublesword
 	cost = /datum/uplink_item/high_cost/weaponry::cost
 //	cost = 13
+*/

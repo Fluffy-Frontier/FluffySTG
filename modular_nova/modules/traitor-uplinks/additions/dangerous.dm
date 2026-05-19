@@ -1,3 +1,5 @@
+// TFF REMOVAL START - RETURN COSTS TO TG - START:
+/*
 // LOW COST
 /datum/uplink_item/dangerous/foamsmg
 	name = "Donksoft Riot SMG Case"
@@ -140,3 +142,4 @@
 	item = /obj/item/storage/toolbox/guncase/nova/opfor/hook_shotgun
 	cost = /datum/uplink_item/high_cost/weaponry::cost
 	purchasable_from = UPLINK_TRAITORS | UPLINK_SERIOUS_OPS
+*/

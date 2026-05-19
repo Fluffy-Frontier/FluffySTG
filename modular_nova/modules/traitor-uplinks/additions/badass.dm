@@ -1,3 +1,5 @@
+// TFF REMOVAL START - RETURN COSTS TO TG - START:
+/*
 // LOW COST
 /datum/uplink_item/badass/guerilla_gloves
 	name = "Guerilla Gloves"
@@ -57,3 +59,4 @@
 	), src)
 
 // HIGH COST
+*/

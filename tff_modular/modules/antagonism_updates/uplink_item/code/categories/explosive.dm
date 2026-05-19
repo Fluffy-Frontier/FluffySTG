@@ -4,10 +4,6 @@
 			detonate tablets of crewmembers who have their message feature enabled. \
 			The concussive effect from the explosion will knock the recipient out for a short period, and deafen them for longer."
 	item = /obj/item/disk/computer/virus/detomatix
-	cost = /datum/uplink_item/low_cost/explosive::cost
+	cost = 6
 	limited_stock = 1
 	restricted = TRUE
-
-// TFF override for EMP cost
-/datum/uplink_item/explosives/emp
-	cost = /datum/uplink_item/low_cost/explosive::cost

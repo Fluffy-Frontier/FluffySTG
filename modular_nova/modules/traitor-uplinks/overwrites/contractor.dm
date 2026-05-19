@@ -1,3 +1,5 @@
+// TFF REMOVAL START - RETURN COSTS TO TG - START:
+/*
 /// How much TC should an operative have left after buying the contractor kit, factoring in the default TC granted below.
 #define CONTRACTOR_KIT_REMAINING_TC (/datum/uplink_item/low_cost/modsuit::cost + /datum/uplink_item/low_cost::cost)
 /// Static define that will automatically update according to the traitor's default TC amount, factoring in the desired remaining TC defined above.
@@ -18,8 +20,9 @@
 
 // LOW COST
 
-
 // MEDIUM COST
 
 
 // HIGH COST
+// TFF REMOVAL START - RETURN COSTS TO TG - START:
+*/

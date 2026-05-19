@@ -1,3 +1,5 @@
+// TFF REMOVAL START - RETURN COSTS TO TG - START:
+/*
 /* Includes:
 /datum/uplink_category/stealthy
 /datum/uplink_item/stealthy_weapons
@@ -26,3 +28,4 @@
 // HIGH COST
 /datum/uplink_item/stealthy_weapons/romerol_kit
 	purchasable_from = NONE
+*/

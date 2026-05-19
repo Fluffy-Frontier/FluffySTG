@@ -5,6 +5,8 @@
 
 */
 
+// TFF REMOVAL - RETURN COSTS TO TG - START:
+/*
 /// TC cost for generic uplink gadgets
 /datum/uplink_item/low_cost
 	cost = 3
@@ -83,3 +85,5 @@
 
 /datum/uplink_item/high_cost/bundle
 	cost = 30
+*/
+// TFF REMOVAL - RETURN COSTS TO TG - END:

@@ -4,7 +4,7 @@
 	desc = "An ancient Soviet machine pistol, refurbished for the modern age. Uses 9mm auto rounds in 15-round magazines and is compatible \
 			with suppressors. The gun fires in three round bursts."
 	item = /obj/item/gun/ballistic/automatic/pistol/aps
-	cost = /datum/uplink_item/medium_cost::cost
+	cost = 8
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
 
@@ -14,7 +14,7 @@
 	desc = "A fully-loaded Scarborough Arms bullpup submachine gun. The C-20r fires .45 rounds with a \
 			24-round magazine and is compatible with suppressors."
 	item = /obj/item/gun/ballistic/automatic/c20r/unrestricted
-	cost = /datum/uplink_item/medium_cost/weaponry::cost
+	cost = 10
 	purchasable_from = ~UPLINK_ALL_SYNDIE_OPS
 	progression_minimum = 30 MINUTES
 
@@ -23,7 +23,7 @@
 	desc = "A fully-loaded semi-automatic drum-fed shotgun. Compatible with all 12g rounds. Designed for close \
 			quarter anti-personnel engagements."
 	item = /obj/item/gun/ballistic/shotgun/bulldog/unrestricted
-	cost = /datum/uplink_item/medium_cost/weaponry::cost
+	cost = 14
 	progression_minimum = 50 MINUTES
 	purchasable_from = ~UPLINK_ALL_SYNDIE_OPS
 
@@ -39,9 +39,3 @@
 	uplink_item_flags = SYNDIE_TRIPS_CONTRABAND
 	restricted_roles = list(JOB_CARGO_TECHNICIAN, JOB_QUARTERMASTER)
 	surplus = 5
-
-/datum/uplink_item/device_tools/borer_egg
-	name = "Borer Egg"
-	desc = "Creates a borer egg that can give you various powers!"
-	item = /obj/effect/mob_spawn/ghost_role/borer_egg/traitor
-	cost = /datum/uplink_item/high_cost::cost

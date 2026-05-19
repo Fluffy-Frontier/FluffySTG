@@ -1,3 +1,5 @@
+// TFF REMOVAL START - RETURN COSTS TO TG - START:
+/*
 /* Includes:
 /datum/uplink_category/explosives
 /datum/uplink_item/explosives
@@ -29,3 +31,4 @@
 /datum/uplink_item/explosives/syndicate_bomb/emp
 	cost = /datum/uplink_item/high_cost/explosive::cost
 //	cost = 22 (parent type * 2)
+*/

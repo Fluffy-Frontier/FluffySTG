@@ -1,3 +1,5 @@
+// TFF REMOVAL START - RETURN COSTS TO TG - START:
+/*
 // LOW COST
 /datum/uplink_item/ammo/enforcer
 	name = "Enforcer 10mm Magazine Case"
@@ -163,3 +165,5 @@
 	item = /obj/item/ammo_box/speedloader/c357/haywire
 	cost = /datum/uplink_item/high_cost/ammunition::cost
 	purchasable_from = UPLINK_TRAITORS | UPLINK_SERIOUS_OPS
+// TFF REMOVAL START - RETURN COSTS TO TG - START:
+*/

@@ -1,3 +1,5 @@
+// TFF REMOVAL START - RETURN COSTS TO TG - START:
+/*
 /* Includes:
 /datum/uplink_category/device_tools
 /datum/uplink_item/device_tools
@@ -68,3 +70,4 @@
 /datum/uplink_item/device_tools/powersink
 	cost = /datum/uplink_item/high_cost::cost
 //	cost = 11
+*/

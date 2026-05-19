@@ -5,7 +5,6 @@
 			Also includes a remote control, disguised as an ordinary folder. Touch the briefcase with the remote to link it."
 	surplus = 0
 	item = /obj/item/storage/briefcase/launchpad
-	cost = /datum/uplink_item/low_cost::cost
 
 /datum/uplink_item/device_tools/suspiciousphone
 	name = "Protocol CRAB-17 Phone"
@@ -13,11 +12,16 @@
 	The crew can move their funds to a new banking site though, unless they HODL, in which case they deserve it."
 	item = /obj/item/suspiciousphone
 	restricted = TRUE
-	cost = /datum/uplink_item/medium_cost::cost
 	limited_stock = 1
 
 /datum/uplink_item/device_tools/thief_gloves
 	name = "Thief Gloves"
 	desc = "Thief's gloves allow you to steal other people's things silently, but it takes some time..."
 	item = /obj/item/clothing/gloves/color/black/thief
-	cost = /datum/uplink_item/low_cost::cost
+	cost = 6
+
+/datum/uplink_item/device_tools/borer_egg
+	name = "Borer Egg"
+	desc = "Creates a borer egg that can give you various powers!"
+	item = /obj/effect/mob_spawn/ghost_role/borer_egg/traitor
+	cost = 16

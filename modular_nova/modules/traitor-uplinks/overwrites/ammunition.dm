@@ -1,3 +1,5 @@
+// TFF REMOVAL START - RETURN COSTS TO TG - START:
+/*
 /* Includes:
 /datum/uplink_category/ammo
 /datum/uplink_item/ammo
@@ -32,3 +34,5 @@
 
 
 // HIGH COST
+// TFF REMOVAL START - RETURN COSTS TO TG - START:
+*/

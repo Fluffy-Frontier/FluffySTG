@@ -1,3 +1,5 @@
+// TFF REMOVAL START - RETURN COSTS TO TG - START:
+/*
 /* Includes:
 /datum/uplink_category/suits
 /datum/uplink_item/suits
@@ -23,3 +25,4 @@
 
 
 // HIGH COST
+*/

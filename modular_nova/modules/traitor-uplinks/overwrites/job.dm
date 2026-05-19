@@ -1,3 +1,5 @@
+// TFF REMOVAL START - RETURN COSTS TO TG - START:
+/*
 /* Includes:
 /datum/uplink_category/role_restricted
 /datum/uplink_item/role_restricted
@@ -108,3 +110,4 @@
 
 /datum/uplink_item/role_restricted/blastcannon
 	purchasable_from = NONE
+*/
