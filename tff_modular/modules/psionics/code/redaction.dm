@@ -8,29 +8,11 @@
 /// Cleansing - лечит токс урон
 /// Revive - пытается оживить труп
 
-// Выдать школу лечения
-/mob/living/carbon/human/proc/try_add_redaction_school(tier = 0, additional_school = 0)
-	if(tier >= 0)
-		var/datum/action/new_action = new /datum/action/cooldown/spell/pointed/psyonic/psyonic_roentgen(src.mind || src, tier, additional_school)
-		new_action.Grant(src)
-	if(tier >= 1)
-		var/datum/action/new_action = new /datum/action/cooldown/spell/touch/psyonic/psyonic_mending(src.mind || src, tier, additional_school)
-		new_action.Grant(src)
-	if(tier >= 2)
-		var/datum/action/new_action2 = new /datum/action/cooldown/spell/pointed/psyonic/psyonic_drunkness(src.mind || src, tier, additional_school)
-		new_action2.Grant(src)
-	if(tier >= 3)
-		var/datum/action/new_action = new /datum/action/cooldown/spell/touch/psyonic/psyonic_cleansing(src.mind || src, tier, additional_school)
-		new_action.Grant(src)
-	if(tier >= 4)
-		var/datum/action/new_action = new /datum/action/cooldown/spell/touch/psyonic/psyonic_revival(src.mind || src, tier, additional_school)
-		new_action.Grant(src)
-
 // Мед сканер на расстоянии
-/datum/action/cooldown/spell/pointed/psyonic/psyonic_roentgen
+/datum/action/cooldown/spell/pointed/psionic/psionic_roentgen
 	name = "Roentgen"
 	desc = "Try to read target's vital energy and determine their state."
-	button_icon = 'tff_modular/modules/psyonics/icons/actions.dmi'
+	button_icon = 'tff_modular/modules/psionics/icons/actions.dmi'
 	button_icon_state = "roentgen"
 
 	cooldown_time = 1 SECONDS
@@ -40,21 +22,16 @@
 
 	active_msg = "You prepare to scan a target..."
 
-/datum/action/cooldown/spell/pointed/psyonic/psyonic_roentgen/New(Target)
-	. = ..()
-	if(secondary_school == "Redaction")
-		cast_power += 1
-
-/datum/action/cooldown/spell/pointed/psyonic/psyonic_roentgen/is_valid_target(atom/cast_on)
+/datum/action/cooldown/spell/pointed/psionic/psionic_roentgen/is_valid_target(atom/cast_on)
 	if(!ishuman(cast_on))
 		return FALSE
 
 	return TRUE
 
-/datum/action/cooldown/spell/pointed/psyonic/psyonic_roentgen/cast(mob/living/carbon/human/cast_on)
+/datum/action/cooldown/spell/pointed/psionic/psionic_roentgen/cast(mob/living/carbon/human/cast_on)
 	. = ..()
 	if(cast_on.can_block_magic(antimagic_flags))
-		to_chat(cast_on, span_notice("Your body is being read by a psyonic nearby."))
+		to_chat(cast_on, span_notice("Your body is being read by a psionic nearby."))
 	else
 		to_chat(cast_on, span_warning(target_msg))
 	if(cast_power > 2)
@@ -64,9 +41,9 @@
 	drain_mana()
 	return TRUE
 
-/obj/item/melee/touch_attack/psyonic_mending
-	name = "psyonic sparks"
-	desc = "Concentrated psyonic energy in a hand."
+/obj/item/melee/touch_attack/psionic_mending
+	name = "psionic sparks"
+	desc = "Concentrated psionic energy in a hand."
 	icon = 'icons/obj/weapons/hand.dmi'
 	icon_state = "greyscale"
 	color = COLOR_VERY_PALE_LIME_GREEN
@@ -78,25 +55,25 @@
 
 // Восстанавливает кровь, окси урон, открытые травмы. Не лечит другие типы урона. Если вторичка - психокинетика, то вынимает импланты.
 // Если уровень Эпсилон - удаляет лярвы ксеноморфов.
-/datum/action/cooldown/spell/touch/psyonic/psyonic_mending
-	name = "Psyonic Mending"
+/datum/action/cooldown/spell/touch/psionic/psionic_mending
+	name = "Psionic Mending"
 	desc = "You can try to restore patients bloodloss, bones, open wounds and partially oxygen level in blood. Does not heal brute, burn, \
 			and toxic damage. With Psychokinesis as secondary school also can remove small implants. At Epsilon level can remove xenomorph larvae."
-	button_icon = 'tff_modular/modules/psyonics/icons/actions.dmi'
+	button_icon = 'tff_modular/modules/psionics/icons/actions.dmi'
 	button_icon_state = "mending_touch"
 	cooldown_time = 3 SECONDS
 	mana_cost = 25
 	stamina_cost = 25
 	target_msg = "You body numbs a little."
-	hand_path = /obj/item/melee/touch_attack/psyonic_mending
+	hand_path = /obj/item/melee/touch_attack/psionic_mending
 	draw_message = span_notice("You ready your hand to mend a patient.")
 	drop_message = span_notice("You lower your hand.")
 	can_cast_on_self = TRUE
 
-/datum/action/cooldown/spell/touch/psyonic/psyonic_mending/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/mendicant)
+/datum/action/cooldown/spell/touch/psionic/psionic_mending/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/mendicant)
 	if(ishuman(victim))
 		var/mob/living/carbon/human/human_victim = victim
-		if(issynthetic(human_victim) && secondary_school != "Psychokinesis")
+		if(issynthetic(human_victim) && cast_power < 2)
 			to_chat(owner, span_notice("I dont know how to work with synths."))
 			return FALSE
 		if(human_victim.can_block_magic(antimagic_flags))
@@ -112,10 +89,10 @@
 	else
 		return FALSE
 
-/datum/action/cooldown/spell/touch/psyonic/psyonic_mending/proc/accident_harm(mob/living/carbon/human/patient)
+/datum/action/cooldown/spell/touch/psionic/psionic_mending/proc/accident_harm(mob/living/carbon/human/patient)
 	patient.take_bodypart_damage(5, wound_bonus = 100)
 
-/datum/action/cooldown/spell/touch/psyonic/psyonic_mending/proc/try_heal_all(mob/living/carbon/human/patient)
+/datum/action/cooldown/spell/touch/psionic/psionic_mending/proc/try_heal_all(mob/living/carbon/human/patient)
 	if(patient.blood_volume < BLOOD_VOLUME_NORMAL)
 		patient.blood_volume += ((BLOOD_VOLUME_NORMAL - patient.blood_volume) / 5) * cast_power // Эффективнее когда крови мало
 
@@ -127,7 +104,7 @@
 	if(patient.get_oxy_loss() >= OXYLOSS_PASSOUT_THRESHOLD-10)
 		patient.adjust_oxy_loss(-cast_power*5, forced = TRUE)
 
-	if(patient.implants && secondary_school == "Psychokinesis" && cast_power >= 2) // Невольно удаляет импланты, если есть
+	if(patient.implants && cast_power >= 2) // Невольно удаляет импланты, если есть
 		var/obj/item/implant/imp_2_del = pick(patient.implants)
 		var/atom/drop_loc = imp_2_del.drop_location()
 		imp_2_del.removed(patient)
@@ -138,7 +115,7 @@
 									span_danger("You feel implant inside you starts to move and rips itself out! The resulting wound quickly closes itself though."),
 								)
 
-	if(patient.get_organ_slot("parasite_egg") && cast_power >=4) // Удаляем ксеноморфов
+	if(patient.get_organ_slot("parasite_egg") && cast_power >= 2) // Удаляем ксеноморфов
 		var/obj/item/organ/body_egg/parasite = patient.get_organ_slot("parasite_egg")
 		parasite.owner.vomit(VOMIT_CATEGORY_BLOOD | MOB_VOMIT_KNOCKDOWN | MOB_VOMIT_HARM)
 		parasite.owner.visible_message(
@@ -151,7 +128,7 @@
 		if(drop_loc)
 			parasite.forceMove(drop_loc)
 
-/datum/action/cooldown/spell/pointed/psyonic/psyonic_drunkness
+/datum/action/cooldown/spell/pointed/psionic/psionic_drunkness
 	name = "Ethanol Body Synthesis"
 	desc = "Convert fat masses to ethanol in combat mode, vice versa otherwise. Works with time on distance, but not on synthetics."
 	button_icon = 'icons/obj/drinks/bottles.dmi'
@@ -161,7 +138,7 @@
 	stamina_cost = 30
 	active_msg = "You prepare to convert fat tissues..."
 
-/datum/action/cooldown/spell/pointed/psyonic/psyonic_drunkness/is_valid_target(atom/cast_on)
+/datum/action/cooldown/spell/pointed/psionic/psionic_drunkness/is_valid_target(atom/cast_on)
 	if(!ishuman(cast_on))
 		return FALSE
 	if(issynthetic(cast_on) )
@@ -169,25 +146,25 @@
 		return FALSE
 	return TRUE
 
-/datum/action/cooldown/spell/pointed/psyonic/psyonic_drunkness/cast(mob/living/carbon/human/cast_on)
+/datum/action/cooldown/spell/pointed/psionic/psionic_drunkness/cast(mob/living/carbon/human/cast_on)
 	. = ..()
-	cast_on.apply_status_effect(/datum/status_effect/psyonic_fat_conversion, 5 * cast_power SECONDS, !cast_on.combat_mode)
+	cast_on.apply_status_effect(/datum/status_effect/psionic_fat_conversion, 5 * cast_power SECONDS, !cast_on.combat_mode)
 	drain_mana()
 	return TRUE
 
 /// С каждым тиком конвертируем или жир в алкоголь, или алкоголь в жир
-/datum/status_effect/psyonic_fat_conversion
-	id = "psyonic_fat_conversion"
+/datum/status_effect/psionic_fat_conversion
+	id = "psionic_fat_conversion"
 	alert_type = null
 	remove_on_fullheal = TRUE
 	var/eth2fat = TRUE
 
-/datum/status_effect/psyonic_fat_conversion/on_creation(mob/living/new_owner, duration = 10 SECONDS, eth2fat = TRUE)
+/datum/status_effect/psionic_fat_conversion/on_creation(mob/living/new_owner, duration = 10 SECONDS, eth2fat = TRUE)
 	src.duration = duration
 	src.eth2fat = eth2fat
 	return ..()
 
-/datum/status_effect/psyonic_fat_conversion/tick(seconds_between_ticks)
+/datum/status_effect/psionic_fat_conversion/tick(seconds_between_ticks)
 	var/mob/living/carbon/human/human_owner = owner
 	var/fat = human_owner.nutrition
 	var/drunk = human_owner.get_drunk_amount()
@@ -201,25 +178,25 @@
 		human_owner.adjust_nutrition(-(fat/25))
 
 // Лечит токс урон.
-/datum/action/cooldown/spell/touch/psyonic/psyonic_cleansing
-	name = "Psyonic Cleansing"
+/datum/action/cooldown/spell/touch/psionic/psionic_cleansing
+	name = "Psionic Cleansing"
 	desc = "Filters patient blood out of toxins and removes accumulated radiation."
-	button_icon = 'tff_modular/modules/psyonics/icons/actions.dmi'
+	button_icon = 'tff_modular/modules/psionics/icons/actions.dmi'
 	button_icon_state = "cleansing"
 	cooldown_time = 3 SECONDS
 	mana_cost = 35
 	stamina_cost = 40
 	target_msg = "Your insides itch."
 
-	hand_path = /obj/item/melee/touch_attack/psyonic_mending
+	hand_path = /obj/item/melee/touch_attack/psionic_mending
 	draw_message = span_notice("You ready your hand to cleanse a patient.")
 	drop_message = span_notice("You lower your hand.")
 	can_cast_on_self = TRUE
 
-/datum/action/cooldown/spell/touch/psyonic/psyonic_cleansing/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/mendicant)
+/datum/action/cooldown/spell/touch/psionic/psionic_cleansing/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/mendicant)
 	if(ishuman(victim))
 		var/mob/living/carbon/human/human_victim = victim
-		if(issynthetic(human_victim) && secondary_school != "Psychokinesis")
+		if(issynthetic(human_victim) && cast_power < 2)
 			to_chat(owner, span_notice("I dont know how to work with synths. Why would I even try to? They dont have toxins."))
 			return FALSE
 		if(human_victim.can_block_magic(antimagic_flags))
@@ -235,10 +212,10 @@
 	else
 		return FALSE
 
-/datum/action/cooldown/spell/touch/psyonic/psyonic_cleansing/proc/accident_harm(mob/living/carbon/human/patient)
+/datum/action/cooldown/spell/touch/psionic/psionic_cleansing/proc/accident_harm(mob/living/carbon/human/patient)
 	patient.apply_damage(25, TOX, BODY_ZONE_CHEST)
 
-/datum/action/cooldown/spell/touch/psyonic/psyonic_cleansing/proc/try_heal_all(mob/living/carbon/human/patient)
+/datum/action/cooldown/spell/touch/psionic/psionic_cleansing/proc/try_heal_all(mob/living/carbon/human/patient)
 	if(patient.get_tox_loss() > 0)
 		patient.adjust_tox_loss(clamp(-(patient.get_tox_loss()/3)*cast_power, -35, 0), forced = TRUE)
 
@@ -250,30 +227,30 @@
  * 2. Если не удалось устранить - не оживляет
  * 3. Если удалось устранить причину - проверяет можно ли дефибнуть снова. Если появилась другая - не оживляет. Всё ок - оживляет.
  */
-/datum/action/cooldown/spell/touch/psyonic/psyonic_revival
-	name = "Psyonic Revival"
+/datum/action/cooldown/spell/touch/psionic/psionic_revival
+	name = "Psionic Revival"
 	desc = "Ability to trick death itself. Call for the bodys soul in the other realm in attempt to restore its vessel condition to an... acceptable levels."
-	button_icon = 'tff_modular/modules/psyonics/icons/actions.dmi'
+	button_icon = 'tff_modular/modules/psionics/icons/actions.dmi'
 	button_icon_state = "revive"
 	cooldown_time = 3 SECONDS
 	mana_cost = 80
 	stamina_cost = 160
 
-	hand_path = /obj/item/melee/touch_attack/psyonic_mending
+	hand_path = /obj/item/melee/touch_attack/psionic_mending
 	draw_message = span_notice("You ready your hand to revive a patient.")
 	drop_message = span_notice("You lower your hand.")
 	can_cast_on_self = FALSE
 
-/datum/action/cooldown/spell/touch/psyonic/psyonic_revival/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/mendicant)
+/datum/action/cooldown/spell/touch/psionic/psionic_revival/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/mendicant)
 	if(ishuman(victim))
 		var/mob/living/carbon/human/human_victim = victim
-		var/synth_check = (secondary_school == "Psychokinesis" || !issynthetic(human_victim))
+		var/synth_check = (cast_power < 2 || !issynthetic(human_victim))
 		if(human_victim.stat == DEAD && synth_check)
 			owner.visible_message(span_notice("[owner] kneels before the body of [victim], lowers their hands onto cadavers chest and begins meditating."),
 								  span_notice("You kneel before the cadaver, lower your hands onto their chest and start to concentrate energy. You better not \
 								  get disturbed, or else..."),
 								  blind_message = span_hear("You hear a low hum."))
-			var/obj/effect/abstract/particle_holder/particle_effect = new(human_victim, /particles/droplets/psyonic)
+			var/obj/effect/abstract/particle_holder/particle_effect = new(human_victim, /particles/droplets/psionic)
 			if(!do_after(mendicant, 25 SECONDS, human_victim, IGNORE_SLOWDOWNS, TRUE))
 				accident_harm(owner) // Ауч. Больно бьёт по псионику
 			else
@@ -283,7 +260,7 @@
 			drain_mana()
 			return TRUE
 		else if(issynthetic(human_victim) && human_victim.stat == DEAD)
-			to_chat(owner, span_warning("Your psyonic energy does not work very well with synths."))
+			to_chat(owner, span_warning("Your psionic energy does not work very well with synths."))
 			return FALSE
 		else
 			return FALSE
@@ -291,7 +268,7 @@
 		return FALSE
 
 // 25 токса + 50 брута + 1 травма + позор роду псионическому
-/datum/action/cooldown/spell/touch/psyonic/psyonic_revival/proc/accident_harm(mob/living/carbon/human/unlucky_guy)
+/datum/action/cooldown/spell/touch/psionic/psionic_revival/proc/accident_harm(mob/living/carbon/human/unlucky_guy)
 	unlucky_guy.apply_damage(25, TOX, BODY_ZONE_CHEST)
 	unlucky_guy.take_bodypart_damage(25, wound_bonus = 100)
 	unlucky_guy.take_bodypart_damage(25, wound_bonus = 100, sharpness = SHARP_EDGED)
@@ -299,10 +276,10 @@
 								span_bolddanger("Your revival energy backfired at you, causing severe injuries!"),
 								blind_message = span_hear("You hear bones breaking."))
 
-/datum/action/cooldown/spell/touch/psyonic/psyonic_revival/proc/can_defib_human(mob/living/carbon/human/patient)
+/datum/action/cooldown/spell/touch/psionic/psionic_revival/proc/can_defib_human(mob/living/carbon/human/patient)
 	var/defib_result = patient.can_defib()
 	var/fail_reason
-	var/synth_check = (secondary_school == "Psychokinesis")
+	var/synth_check = (cast_power < 2)
 	switch (defib_result)
 		if (DEFIB_FAIL_SUICIDE)
 			fail_reason = "Patient has left this world on his terms. You can not restore him."
@@ -342,7 +319,7 @@
 			fail_reason = "Patient cannot be restored due to star misalignment."
 	return fail_reason
 
-/datum/action/cooldown/spell/touch/psyonic/psyonic_revival/proc/try_heal_all(mob/living/carbon/human/patient)
+/datum/action/cooldown/spell/touch/psionic/psionic_revival/proc/try_heal_all(mob/living/carbon/human/patient)
 	var/fail_reason = can_defib_human(patient) // first to possibly cure something
 	fail_reason = can_defib_human(patient) // second to actually try revival
 	if(fail_reason)
@@ -377,6 +354,6 @@
 			patient.set_jitter_if_lower(200 SECONDS)
 			to_chat(patient, "<span class='userdanger'>[CONFIG_GET(string/blackoutpolicy)]</span>")
 			SEND_SIGNAL(patient, COMSIG_LIVING_MINOR_SHOCK)
-			log_combat(owner, patient, "psyonically revived")
+			log_combat(owner, patient, "psionically revived")
 
 #undef HALFWAYCRITDEATH

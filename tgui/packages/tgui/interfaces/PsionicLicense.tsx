@@ -6,28 +6,19 @@ import { Window } from '../layouts';
 
 type Data = {
   character_preview: string;
-  primary_school: string;
-  secondary_school: string;
-  psyonic_level: string;
+  psionic_level: string;
   owner_name: string;
   owner_age: number;
   owner_species: string;
   owner_preview: string;
 };
 
-export const PsyonicLicense = (props) => {
+export const PsionicLicense = (props) => {
   const { act, data } = useBackend<Data>();
-  const {
-    primary_school,
-    secondary_school,
-    psyonic_level,
-    owner_name,
-    owner_age,
-    owner_species,
-    owner_preview,
-  } = data;
+  const { owner_name, owner_age, owner_species, owner_preview, psionic_level } =
+    data;
   return (
-    <Window title="Psyonic License" width={625} height={450} theme="ntos">
+    <Window title="Psionic License" width={625} height={450} theme="ntos">
       <Window.Content>
         <Stack minWidth="625px">
           <Stack.Item width="50px">
@@ -76,14 +67,8 @@ export const PsyonicLicense = (props) => {
                 <LabeledList.Item label="Раса">
                   {data.owner_species}
                 </LabeledList.Item>
-                <LabeledList.Item label="Первичная школа">
-                  {data.primary_school}
-                </LabeledList.Item>
-                <LabeledList.Item label="Вторичная школа">
-                  {data.secondary_school}
-                </LabeledList.Item>
                 <LabeledList.Item label="Псионический потенциал">
-                  {data.psyonic_level}
+                  {data.psionic_level}
                 </LabeledList.Item>
               </LabeledList>
             </Section>

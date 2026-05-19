@@ -1,7 +1,7 @@
-/obj/item/card/psyonic_license
-	name = "psyonic license"
-	desc = "An official license given to psyonic users by the NanoTrasen Psyonics and Eugenics Division itself."
-	icon = 'tff_modular/modules/psyonics/icons/card.dmi'
+/obj/item/card/psionic_license
+	name = "psionic license"
+	desc = "An official license given to psionic users by the NanoTrasen Psionics and Eugenics Division itself."
+	icon = 'tff_modular/modules/psionics/icons/card.dmi'
 	icon_state = "card_psy"
 	inhand_icon_state = "card-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
@@ -11,29 +11,26 @@
 	drop_sound = 'sound/items/handling/id_card/id_card_drop1.ogg'
 	sound_vary = TRUE
 	resistance_flags = FIRE_PROOF
-	var/datum/psyonic_licence_datum/owner_info
+	var/datum/psionic_licence_datum/owner_info
 
-/obj/item/card/psyonic_license/New(mob/living/carbon/human/owner)
+/obj/item/card/psionic_license/New(mob/living/carbon/human/owner)
 	. = ..()
 	owner_info = new(owner)
 
-/obj/item/card/psyonic_license/ui_interact(mob/user, datum/tgui/ui)
+/obj/item/card/psionic_license/ui_interact(mob/user, datum/tgui/ui)
 	if(!owner_info)
 		balloon_alert(user, "The card isn't bound to anyone!")
 		return
 
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "PsyonicLicense")
+		ui = new(user, src, "PsionicLicense")
 		ui.set_autoupdate(FALSE)
 		ui.open()
 
-/obj/item/card/psyonic_license/ui_static_data(mob/user)
+/obj/item/card/psionic_license/ui_static_data(mob/user)
 	var/list/data = list()
-
-	data["primary_school"] = owner_info.primary_school
-	data["secondary_school"] = owner_info.secondary_school
-	data["psyonic_level"] = owner_info.psyonic_level
+	data["psionic_level"] = owner_info.psionic_level
 	data["owner_name"] = owner_info.owner_name
 	data["owner_age"] = owner_info.owner_age
 	data["owner_preview"] = owner_info.owner_preview
@@ -41,29 +38,25 @@
 
 	return data
 
-/datum/psyonic_licence_datum
+/datum/psionic_licence_datum
 	var/datum/weakref/original_owner
 	var/owner_name
 	var/owner_age
-	var/psyonic_level
-	var/primary_school
-	var/secondary_school
+	var/psionic_level
 	var/owner_species
 	var/icon/owner_preview
 
-/datum/psyonic_licence_datum/New(mob/living/carbon/human/human_owner)
+/datum/psionic_licence_datum/New(mob/living/carbon/human/human_owner)
 	. = ..()
 	original_owner = WEAKREF(human_owner)
 	if(original_owner && original_owner.resolve())
 		var/mob/living/carbon/human/owner = original_owner.resolve()
 		if(!istype(owner, /mob/living/carbon/human))
 			return
-		if(!owner.ispsyonic())
+		if(!owner.get_psionic())
 			return
-		var/datum/quirk/psyonic/quirk_holder = owner.get_quirk(/datum/quirk/psyonic)
-		psyonic_level = quirk_holder.psyonic_level_string
-		primary_school = quirk_holder.school
-		secondary_school = quirk_holder.secondary_school
+		var/datum/psionic/psi = owner.get_psionic()
+		psionic_level = psi.psionic_level_string
 		owner_name = owner.real_name
 		owner_age = owner.age
 
