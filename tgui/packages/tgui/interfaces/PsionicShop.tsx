@@ -48,15 +48,13 @@ export const PsionicShop = (props) => {
   const [compactMode, setCompactMode] = useState(false);
 
   const CATEGORY_ORDER = ['utility', 'combat', 'manipulation'];
-  const allCategories = Array.from(
-    new Set(many_spells?.map((a) => a.category)),
-  );
+  const allCategories = Array.from(new Set(many_spells.map((a) => a.category)));
   const sortedCategories = [
     ...CATEGORY_ORDER.filter((cat) => allCategories.includes(cat)),
     ...allCategories.filter((cat) => !CATEGORY_ORDER.includes(cat)),
   ];
   const [selectedCategory, setSelectedCategory] = useState(
-    sortedCategories[0] || 'utility',
+    sortedCategories[0] || 'combat',
   );
 
   const filteredItems = (
@@ -91,7 +89,7 @@ export const PsionicShop = (props) => {
           scrollable={false}
           title={
             <Stack fill>
-              <Stack.Item fontSize="16px" color="#DD66DD" ml={1}>
+              <Stack.Item fontSize="16px" color="#449bbd" ml={1}>
                 <Icon name="dna" /> {psi_points_count} Psi
               </Stack.Item>
               <Stack.Item grow />
@@ -122,7 +120,7 @@ export const PsionicShop = (props) => {
                 </Stack.Item>
                 <Stack.Item grow>
                   <Tabs vertical fill>
-                    {sortedCategories?.map((category) => (
+                    {sortedCategories.map((category) => (
                       <Tabs.Tab
                         key={category}
                         selected={category === selectedCategory}
@@ -186,7 +184,7 @@ const ItemList = (props: SpellListProps) => {
   return (
     <Section fill scrollable>
       <Stack vertical mt={compactMode ? 0.5 : 0}>
-        {items?.map((spell) => {
+        {items.map((spell) => {
           const owned = researched_spells.includes(spell.path);
           const canAfford = !owned && spell.point_required <= psi_points_count;
 
@@ -245,7 +243,7 @@ const ItemList = (props: SpellListProps) => {
                           }}
                         >
                           {owned ? (
-                            <Box color="#44bd46">
+                            <Box color="#449bbd">
                               <Icon mr="8px" name="check" />
                               {spell.name}
                             </Box>
@@ -277,7 +275,7 @@ const ItemList = (props: SpellListProps) => {
                           <Box>
                             {spell.name}
                             {owned && (
-                              <Box color="#44bd46" inline ml={1}>
+                              <Box color="#449bbd" inline ml={1}>
                                 (Owned)
                               </Box>
                             )}
@@ -301,7 +299,7 @@ const ItemList = (props: SpellListProps) => {
                       >
                         <Box opacity={0.8}>{spell.desc}</Box>
                         {spell.helptext && (
-                          <Box color="#44bd46" mt={0.5}>
+                          <Box color="#449bbd" mt={0.5}>
                             {spell.helptext}
                           </Box>
                         )}

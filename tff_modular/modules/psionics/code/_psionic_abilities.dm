@@ -44,6 +44,7 @@
 	spell_requirements = NONE
 	cooldown_reduction_per_rank = 0 SECONDS
 	psionic = TRUE
+	locked = FALSE
 
 /datum/action/cooldown/spell/conjure_item/psionic/New(Target, power)
 	. = ..()
@@ -64,7 +65,7 @@
 	var/datum/psionic/psi_holder = caster.get_psionic()
 	caster.adjust_stamina_loss(stamina_cost, forced = TRUE)
 	if(psi_holder)
-		psi_holder.adjust_psi_energy(mana_cost)
+		psi_holder.adjust_psi_energy(-mana_cost)
 		return TRUE
 	else
 		return FALSE
@@ -97,6 +98,7 @@
 	cooldown_reduction_per_rank = 0 SECONDS
 	psionic = TRUE
 	psionic_level = 1
+	locked = FALSE
 
 /datum/action/cooldown/spell/psionic/New(Target, power, additional_school)
 	. = ..()
@@ -125,6 +127,7 @@
 	spell_requirements = NONE
 	cooldown_reduction_per_rank = 0 SECONDS
 	psionic = TRUE
+	locked = FALSE
 
 /datum/action/cooldown/spell/pointed/projectile/psionic/New(Target, power, additional_school)
 	. = ..()
@@ -152,6 +155,7 @@
 	spell_requirements = NONE
 	cooldown_reduction_per_rank = 0 SECONDS
 	psionic = TRUE
+	locked = FALSE
 
 /datum/action/cooldown/spell/pointed/psionic/New(Target, power, additional_school)
 	. = ..()
@@ -178,6 +182,7 @@
 	invocation_type = INVOCATION_NONE
 	spell_requirements = NONE
 	psionic = TRUE
+	locked = FALSE
 
 /datum/action/cooldown/spell/touch/psionic/New(Target, power, additional_school)
 	. = ..()

@@ -11,19 +11,16 @@
 	possible_spells = get_possible_spells()
 
 /proc/get_possible_spells()
-	var/static/list/filtered_spells = list()
-
 	var/static/list/spell_options
 	if(!spell_options)
 		spell_options = subtypesof(/datum/action/cooldown/spell)
 		for(var/datum/action/cooldown/spell/spell as anything in spell_options)
 			if(!spell.psionic)
-				continue
+				spell_options -= spell
 			if(spell.locked)
-				continue
-			filtered_spells += spell
+				spell_options -= spell
 
-	return filtered_spells
+	return spell_options
 
 /datum/psionic_shop/Destroy()
 	psi_datum = null
@@ -98,7 +95,7 @@
 /datum/action/psionic_shop/New(Target)
 	. = ..()
 	if(!istype(Target, /datum/psionic_shop))
-		stack_trace("psionic_shop action created with non-emporium.")
+		stack_trace("psionic_shop action created with wrong type.")
 		qdel(src)
 
 /datum/action/psionic_shop/Trigger(mob/clicker, trigger_flags)

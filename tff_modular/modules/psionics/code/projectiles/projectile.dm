@@ -17,7 +17,7 @@
 	. = ..()
 	if(do_after(owner, 0.5 SECONDS, timed_action_flags = IGNORE_USER_LOC_CHANGE | IGNORE_SLOWDOWNS))
 		return FALSE
-	psionic_datum.adjust_psi_energy(10)
+	psionic_datum.adjust_psi_energy(-10)
 
 /obj/projectile/magic/air_bullet
 	damage = 20
