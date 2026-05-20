@@ -2,15 +2,33 @@
 	var/name = "Psi Mind"
 	var/datum/psionic/psi_datum
 	var/mob/living/psi_owner
+	var/list/possible_spells
 
 /datum/psionic_shop/New(psionic_mob, psionic_datum)
 	. = ..()
 	psi_datum = psionic_datum
 	psi_owner = psionic_mob
+	possible_spells = get_possible_spells()
+
+/proc/get_possible_spells()
+	var/static/list/filtered_spells = list()
+
+	var/static/list/spell_options
+	if(!spell_options)
+		spell_options = subtypesof(/datum/action/cooldown/spell)
+		for(var/datum/action/cooldown/spell/spell as anything in spell_options)
+			if(!spell.psionic)
+				continue
+			if(spell.locked)
+				continue
+			filtered_spells += spell
+
+	return filtered_spells
 
 /datum/psionic_shop/Destroy()
 	psi_datum = null
 	psi_owner = null
+	possible_spells = null
 	return ..()
 
 /datum/psionic_shop/ui_state(mob/user)
@@ -18,8 +36,6 @@
 
 /datum/psionic_shop/ui_status(mob/user, datum/ui_state/state)
 	if(!psi_datum)
-		return UI_CLOSE
-	if(!psi_owner)
 		return UI_CLOSE
 	return UI_INTERACTIVE
 
@@ -31,24 +47,24 @@
 
 /datum/psionic_shop/ui_static_data(mob/user)
 	var/list/data = list()
-
 	var/static/list/spells
 	if(isnull(spells))
-		spells = list(typecacheof(/datum/action/cooldown/spell))
-		for(var/datum/action/cooldown/spell/psi_spells as anything in spells)
-			if(!psi_spells.psionic)
+		spells = list()
+		for(var/datum/action/cooldown/spell/spell_path as anything in possible_spells)
+			if(!spell_path.psionic)
 				continue
-
-			var/list/ability_data = list(
-				"name" = initial(psi_spells.name),
-				"desc" = initial(psi_spells.desc),
-				"path" = psi_spells,
-				"point_required" = initial(psi_spells.point_cost),
-				"mana_required" = initial(psi_spells.mana_cost),
-				"cooldown" = initial(psi_spells.cooldown_time),
+			if(spell_path.locked)
+				continue
+			var/list/spell_data = list(
+				"name" = spell_path.name,
+				"desc" = spell_path.desc,
+				"helptext" = spell_path.helptext,
+				"path" = spell_path,
+				"point_required" = spell_path.point_cost,
+				"category" = spell_path.category,
 			)
 
-			spells += list(ability_data)
+			spells += list(spell_data)
 
 		sortTim(spells, /proc/cmp_assoc_list_name)
 
@@ -70,7 +86,6 @@
 
 	switch(action)
 		if("research")
-			// purchase_power sanity checks stuff like typepath, DNA, and absorbs for us.
 			psi_datum.research_spell(text2path(params["path"]))
 
 	return TRUE

@@ -19,6 +19,10 @@
 	var/category = "utility"
 	// Цена
 	var/point_cost = 1
+	// Текст помощи
+	var/helptext = ""
+	// Доступ
+	var/locked = TRUE
 
 /datum/action/cooldown/spell/Grant(mob/grant_to)
 	. = ..()
