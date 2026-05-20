@@ -47,14 +47,11 @@
 
 /datum/psionic_shop/ui_static_data(mob/user)
 	var/list/data = list()
+
 	var/static/list/spells
 	if(isnull(spells))
 		spells = list()
 		for(var/datum/action/cooldown/spell/spell_path as anything in possible_spells)
-			if(!spell_path.psionic)
-				continue
-			if(spell_path.locked)
-				continue
 			var/list/spell_data = list(
 				"name" = spell_path.name,
 				"desc" = spell_path.desc,
@@ -68,7 +65,7 @@
 
 		sortTim(spells, /proc/cmp_assoc_list_name)
 
-	data["spells"] = spells
+	data["many_spells"] = spells
 	return data
 
 /datum/psionic_shop/ui_data(mob/user)

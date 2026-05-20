@@ -36,6 +36,7 @@
 	projectile_type = /obj/projectile/temp/watcher/psionic_freeze
 	psionic_level = 2
 	point_cost = 1
+	category = "manipulation"
 
 /datum/action/cooldown/spell/pointed/projectile/psionic/freeze/is_valid_target(atom/cast_on)
 	if(!isliving(cast_on))

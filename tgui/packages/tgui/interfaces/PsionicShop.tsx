@@ -19,13 +19,13 @@ import { Window } from '../layouts';
 // ==========
 // Types
 // ==========
-type TypePath = string;
+type SpellTypePath = string;
 
 type Spell = {
   name: string;
   desc: string;
   helptext: string;
-  path: TypePath;
+  path: SpellTypePath;
   point_required: number;
   category: string;
 };
@@ -33,7 +33,7 @@ type Spell = {
 type PsionicShopContext = {
   many_spells: Spell[];
   psi_points_count: number;
-  researched_spells: TypePath[];
+  researched_spells: SpellTypePath[];
 };
 
 const nameToIconState = (name: string): string => {
@@ -47,7 +47,7 @@ export const PsionicShop = (props) => {
   const [searchText, setSearchText] = useState('');
   const [compactMode, setCompactMode] = useState(false);
 
-  const CATEGORY_ORDER = ['utility', 'stealth', 'combat', 'stings'];
+  const CATEGORY_ORDER = ['utility', 'combat', 'manipulation'];
   const allCategories = Array.from(
     new Set(many_spells?.map((a) => a.category)),
   );
@@ -92,7 +92,7 @@ export const PsionicShop = (props) => {
           title={
             <Stack fill>
               <Stack.Item fontSize="16px" color="#DD66DD" ml={1}>
-                <Icon name="dna" /> {psi_points_count} DNA
+                <Icon name="dna" /> {psi_points_count} Psi
               </Stack.Item>
               <Stack.Item grow />
             </Stack>
@@ -169,15 +169,15 @@ export const PsionicShop = (props) => {
 // ==========
 // ItemList Component
 // ==========
-type ItemListProps = {
+type SpellListProps = {
   compactMode: BooleanLike;
   items: Spell[];
-  researched_spells: TypePath[];
+  researched_spells: SpellTypePath[];
   psi_points_count: number;
   handleBuy: (item: Spell) => void;
 };
 
-const ItemList = (props: ItemListProps) => {
+const ItemList = (props: SpellListProps) => {
   const { compactMode, items, researched_spells, psi_points_count, handleBuy } =
     props;
 

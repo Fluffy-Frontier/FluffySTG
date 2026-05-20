@@ -10,6 +10,7 @@
 	stamina_cost = 0
 	psionic_level = 2
 	point_cost = 3
+	category = "Combat"
 
 /obj/item/melee/psionic_blade
 	name = "psionic blade"
