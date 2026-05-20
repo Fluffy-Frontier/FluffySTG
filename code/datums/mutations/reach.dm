@@ -10,9 +10,11 @@
 	///Typecache of atoms that TK shouldn't interact with
 	var/static/list/blacklisted_atoms = typecacheof(list(/atom/movable/screen))
 
+	var/no_effect = FALSE // TFF ADDITION
+
 /datum/mutation/telekinesis/New(datum/mutation/copymut)
 	..()
-	if(!(type in visual_indicators))
+	if(!(type in visual_indicators) && !no_effect) // TFF EDIT - ORIGINAL: if(!(type in visual_indicators))
 		visual_indicators[type] = list(mutable_appearance('modular_nova/master_files/icons/effects/tele_effects.dmi', "telekinesishead", -MUTATIONS_LAYER)) //NOVA EDIT CHANGE - ORIGINAL: visual_indicators[type] = list(mutable_appearance('icons/mob/effects/genetics.dmi', "telekinesishead", -MUTATIONS_LAYER))
 
 /datum/mutation/telekinesis/on_acquiring(mob/living/carbon/human/homan)

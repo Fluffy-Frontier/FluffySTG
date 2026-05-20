@@ -10,17 +10,33 @@
 	deactive_msg = "You relax."
 	projectile_type = /obj/projectile/magic/air_bullet
 	projectile_amount = INFINITY
-	psionic_level = 2
+	psionic_level = 1
 	point_cost = 2
+	var/casting = FALSE
 
 /datum/action/cooldown/spell/pointed/projectile/psionic/air_bullet/before_cast(atom/cast_on)
 	. = ..()
-	if(do_after(owner, 0.5 SECONDS, timed_action_flags = IGNORE_USER_LOC_CHANGE | IGNORE_SLOWDOWNS))
+	if(!casting)
+		casting = TRUE
+		if(do_after(owner, 0.5 SECONDS, timed_action_flags = IGNORE_USER_LOC_CHANGE | IGNORE_SLOWDOWNS))
+			return FALSE
+		psionic_datum.adjust_psi_energy(-10)
+	else
 		return FALSE
-	psionic_datum.adjust_psi_energy(-10)
+
+/datum/action/cooldown/spell/pointed/projectile/psionic/air_bullet/cast(atom/cast_on)
+	. = ..()
+	casting = FALSE
+
+/datum/action/cooldown/spell/pointed/projectile/psionic/air_bullet/ready_projectile(obj/projectile/to_fire, atom/target, mob/user, iteration)
+	. = ..()
+	to_fire.damage = 10 * cast_power
 
 /obj/projectile/magic/air_bullet
-	damage = 20
+	icon = 'tff_modular/modules/psionics/icons/projectiles.dmi'
+	icon_state = "air_bubble"
+	damage = 10
+	damage_type = BRUTE
 
 // Стреляет снарядом вотчера, замораживая жертву. Требует почти максимально возможный запас маны
 /datum/action/cooldown/spell/pointed/projectile/psionic/freeze
@@ -34,7 +50,7 @@
 	active_msg = "You prepare to fire ice shard..."
 	deactive_msg = "You relax."
 	projectile_type = /obj/projectile/temp/watcher/psionic_freeze
-	psionic_level = 2
+	psionic_level = 1
 	point_cost = 1
 	category = "manipulation"
 

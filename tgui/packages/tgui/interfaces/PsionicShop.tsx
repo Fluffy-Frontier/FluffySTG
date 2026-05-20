@@ -90,7 +90,7 @@ export const PsionicShop = (props) => {
           title={
             <Stack fill>
               <Stack.Item fontSize="16px" color="#449bbd" ml={1}>
-                <Icon name="dna" /> {psi_points_count} Psi
+                <Icon name="brain" /> {psi_points_count} Psi
               </Stack.Item>
               <Stack.Item grow />
             </Stack>

@@ -128,6 +128,7 @@
 	cooldown_reduction_per_rank = 0 SECONDS
 	psionic = TRUE
 	locked = FALSE
+	cast_range = 7
 
 /datum/action/cooldown/spell/pointed/projectile/psionic/New(Target, power, additional_school)
 	. = ..()
@@ -156,6 +157,7 @@
 	cooldown_reduction_per_rank = 0 SECONDS
 	psionic = TRUE
 	locked = FALSE
+	cast_range = 7
 
 /datum/action/cooldown/spell/pointed/psionic/New(Target, power, additional_school)
 	. = ..()

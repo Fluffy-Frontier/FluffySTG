@@ -10,7 +10,7 @@
 	psi_owner = psionic_mob
 	possible_spells = get_possible_spells()
 
-/proc/get_possible_spells()
+/datum/psionic_shop/proc/get_possible_spells()
 	var/static/list/spell_options
 	if(!spell_options)
 		spell_options = subtypesof(/datum/action/cooldown/spell)
@@ -18,6 +18,8 @@
 			if(!spell.psionic)
 				spell_options -= spell
 			if(spell.locked)
+				spell_options -= spell
+			if(spell.psionic_level > psi_datum.psionic_level)
 				spell_options -= spell
 
 	return spell_options

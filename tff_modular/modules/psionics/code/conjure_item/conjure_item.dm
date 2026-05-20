@@ -7,10 +7,15 @@
 	cooldown_time = 1.5 SECONDS
 	item_type = /obj/item/melee/psionic_blade
 	mana_cost = 40
-	stamina_cost = 0
 	psionic_level = 2
 	point_cost = 3
 	category = "combat"
+
+/datum/action/cooldown/spell/conjure_item/psionic/psiblade/make_item(atom/caster)
+	var/obj/item/summoning_obj = item_type
+	summoning_obj.force = 15 * cast_power
+	summoning_obj.block_chance = 25 * cast_power
+	return ..()
 
 /obj/item/melee/psionic_blade
 	name = "psionic blade"
@@ -21,63 +26,18 @@
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	w_class = WEIGHT_CLASS_HUGE
-	force = 30
+	force = 15
 	throwforce = 10
 	hitsound = 'sound/items/weapons/blade1.ogg'
 	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
 	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
 	sharpness = SHARP_EDGED
-	block_chance = 0
+	block_chance = 25
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	color = COLOR_BRIGHT_BLUE
 
 /obj/item/melee/psionic_blade/New(loc, power)
 	. = ..()
-	ADD_TRAIT(src, TRAIT_EXAMINE_SKIP, INNATE_TRAIT)
-
-// Спавнит зажигалку в руке. Очень полезно
-/datum/action/cooldown/spell/conjure_item/psionic/psilighter
-	name = "Psi lighter"
-	desc = "Concentrates psionic energy to create a small flame in your hand."
-	button_icon = 'icons/obj/cigarettes.dmi'
-	button_icon_state = "match_lit"
-	cooldown_time = 1.5 SECONDS
-	item_type = /obj/item/psionic_fire
-	mana_cost = 5
-	stamina_cost = 0
-	point_cost = 1
-
-/datum/action/cooldown/spell/conjure_item/psionic/psilighter/post_created(atom/cast_on, atom/created)
-	. = ..()
-	var/obj/item/psionic_fire/fire = created
-	fire.force *= cast_power
-
-/obj/item/psionic_fire
-	name = "small psionic fire"
-	desc = "Small bluish fire, that jumps on your fingers and surprisigly doesn't burn them."
-	icon = 'icons/obj/weapons/hand.dmi'
-	icon_state = "greyscale"
-	color = COLOR_BRIGHT_BLUE
-	inhand_icon_state = "greyscale"
-	light_range = 2
-	light_power = 2
-	light_color = LIGHT_COLOR_LIGHT_CYAN
-	light_on = TRUE
-	damtype = BURN
-	force = 5
-	attack_verb_continuous = list("burns", "singes")
-	attack_verb_simple = list("burn", "singe")
-	resistance_flags = FIRE_PROOF
-	w_class = WEIGHT_CLASS_HUGE
-	light_system = OVERLAY_LIGHT
-	toolspeed = 2
-	tool_behaviour = TOOL_WELDER
-	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
-	heat = HIGH_TEMPERATURE_REQUIRED - 100
-
-/obj/item/psionic_fire/Initialize(mapload)
-	. = ..()
-
 	ADD_TRAIT(src, TRAIT_EXAMINE_SKIP, INNATE_TRAIT)
 
 // Спавнит омни инструмент в руке псионика. Аналог абдукторского
@@ -89,8 +49,7 @@
 	cooldown_time = 60 SECONDS
 	item_type = /obj/item/psionic_omnitool
 	mana_cost = 20
-	stamina_cost = 30
-	point_cost = 1
+	category = "utility"
 
 /datum/action/cooldown/spell/conjure_item/psionic/psiblade/make_item(atom/caster)
 	var/obj/item/made_item = new item_type(caster.loc, cast_power)
@@ -98,3 +57,65 @@
 	var/mob/living/carbon/human/caster_pawn = owner
 	caster_pawn.emote_snap()
 	return made_item
+
+// Копирка с абдукторского
+/obj/item/psionic_omnitool
+	name = "psionic omnitool"
+	desc = "Space Swiss Army Knife, able to shapeshift itself to fulfill psionics needs."
+	icon = 'tff_modular/modules/psionics/icons/psi_items.dmi'
+	lefthand_file = 'icons/mob/inhands/antag/abductor_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/antag/abductor_righthand.dmi'
+	icon_state = "omnitool"
+	inhand_icon_state = "silencer"
+	toolspeed = 1
+	tool_behaviour = TOOL_SCREWDRIVER
+	color = COLOR_BRIGHT_BLUE
+	usesound = 'sound/items/pshoom/pshoom.ogg'
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	var/list/tool_list = list()
+
+/obj/item/psionic_omnitool/Initialize(mapload)
+	. = ..()
+	tool_list = list(
+			"Crowbar" = image(icon = 'tff_modular/modules/psionics/icons/psi_items.dmi', icon_state = "crowbar"),
+			"Screwdriver" = image(icon = 'tff_modular/modules/psionics/icons/psi_items.dmi', icon_state = "screwdriver"),
+			"Wirecutters" = image(icon = 'tff_modular/modules/psionics/icons/psi_items.dmi', icon_state = "cutters"),
+			"Wrench" = image(icon = 'tff_modular/modules/psionics/icons/psi_items.dmi', icon_state = "wrench"),
+		)
+	ADD_TRAIT(src, TRAIT_EXAMINE_SKIP, INNATE_TRAIT)
+
+/obj/item/psionic_omnitool/get_all_tool_behaviours()
+	return list(
+	TOOL_CROWBAR,
+	TOOL_SCREWDRIVER,
+	TOOL_WIRECUTTER,
+	TOOL_WRENCH,
+	)
+
+/obj/item/psionic_omnitool/examine()
+	. = ..()
+	. += " The mode is: [tool_behaviour]"
+
+/obj/item/psionic_omnitool/attack_self(mob/user)
+	if(!user)
+		return
+
+	var/tool_result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
+	if(!check_menu(user))
+		return
+	switch(tool_result)
+		if("Crowbar")
+			tool_behaviour = TOOL_CROWBAR
+		if("Screwdriver")
+			tool_behaviour = TOOL_SCREWDRIVER
+		if("Wirecutters")
+			tool_behaviour = TOOL_WIRECUTTER
+		if("Wrench")
+			tool_behaviour = TOOL_WRENCH
+
+/obj/item/psionic_omnitool/proc/check_menu(mob/user)
+	if(!istype(user))
+		return FALSE
+	if(user.incapacitated || !user.Adjacent(src))
+		return FALSE
+	return TRUE

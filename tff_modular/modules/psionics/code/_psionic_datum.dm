@@ -145,6 +145,7 @@
 		return FALSE
 	if(mana_level <= 0)
 		psi_owner.adjust_stamina_loss(200)
+		psi_owner.SetStun(5 SECONDS)
 
 	var/delta_time = DELTA_WORLD_TIME(SSmobs)
 	var/mob/living/carbon/human/human_holder = psi_owner
