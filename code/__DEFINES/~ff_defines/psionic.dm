@@ -2,5 +2,6 @@
 #define TRAIT_PSIONIC_IMPLANT "psionic_implant"
 #define TRAIT_PSI_SUPPRESSED "psi_suppressed"
 #define TRAIT_IMMUNE_TO_PSI_SUPPRESSION "immune_to_psi_suppression"
+#define PSIONIC_TRAIT "psionic_trait"
 #define HUD_PSI_DISPLAY "hud_psi_display"
 #define HUD_PSI_SIGNAL "hud_psi_signal"

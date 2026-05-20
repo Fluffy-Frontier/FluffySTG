@@ -1,6 +1,6 @@
 // Спавнит пси-клинок в руке. Сила зависит от уровня псионика
 /datum/action/cooldown/spell/conjure_item/psionic/psiblade
-	name = "Psi blade"
+	name = "Psionic blade"
 	desc = "Concentrates psionic energy to create a sharp blade in your hand."
 	button_icon = 'icons/obj/weapons/transforming_energy.dmi'
 	button_icon_state = "blade"
@@ -9,7 +9,8 @@
 	mana_cost = 40
 	psionic_level = 2
 	point_cost = 3
-	category = "combat"
+	category = "Tier 2"
+	locked = FALSE
 
 /datum/action/cooldown/spell/conjure_item/psionic/psiblade/make_item(atom/caster)
 	var/obj/item/summoning_obj = item_type
@@ -42,14 +43,15 @@
 
 // Спавнит омни инструмент в руке псионика. Аналог абдукторского
 /datum/action/cooldown/spell/conjure_item/psionic/psitool
-	name = "Psi tool"
+	name = "Psionic tool"
 	desc = "Concentrates psionic energy to create a universal tool."
 	button_icon = 'icons/obj/antags/abductor.dmi'
 	button_icon_state = "omnitool"
 	cooldown_time = 60 SECONDS
 	item_type = /obj/item/psionic_omnitool
 	mana_cost = 20
-	category = "utility"
+	category = "Tier 1"
+	locked = FALSE
 
 /datum/action/cooldown/spell/conjure_item/psionic/psiblade/make_item(atom/caster)
 	var/obj/item/made_item = new item_type(caster.loc, cast_power)

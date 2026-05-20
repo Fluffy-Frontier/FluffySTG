@@ -42,7 +42,7 @@
 /mob/living/proc/remove_psionic()
 	if(!psi_sensivity)
 		return FALSE
-	qdel(psi_sensivity)
+	QDEL_NULL(psi_sensivity)
 
 /mob/living/proc/get_psionic()
 	if(!psi_sensivity)
@@ -63,7 +63,7 @@
 	// Псионические очки, нужные для получения способностей
 	var/psi_point = 0
 	// Требуется ли выдать лицензию
-	var/license = TRUE
+	var/license = FALSE
 	/// Два вара скопированные из item_quirk для правильной выдачи лицензии
 	var/list/where_items_spawned
 	var/open_backpack = FALSE
@@ -93,7 +93,7 @@
 	add_shop()
 
 /datum/psionic/proc/add_shop()
-	psi_shop_datum = new(psi_owner, src)
+	psi_shop_datum = new(psi_owner, src, psionic_level)
 	psi_shop_action = new(psi_shop_datum)
 	psi_shop_action.Grant(psi_owner)
 
@@ -117,24 +117,23 @@
 		open_backpack = TRUE
 
 	if(notify_player)
-		LAZYADD(where_items_spawned, span_boldnotice("You have \a [license] [where]. [flavour_text]"))
+		LAZYADD(where_items_spawned, span_horizonblue("You have \a [license] [where]. [flavour_text]"))
 
 /datum/psionic/Destroy(force)
 	. = ..()
 	UnregisterSignal(psi_owner, COMSIG_MOB_HUD_CREATED)
 	RegisterSignal(psi_owner, COMSIG_LIVING_LIFE, PROC_REF(psionic_life))
-	if(!psi_owner.hud_used)
-		return
-
-	var/datum/hud/psi_hud = psi_owner.hud_used
-	psi_hud.remove_screen_object(HUD_PSI_DISPLAY)
-	psi_hud.remove_screen_object(HUD_PSI_SIGNAL)
+	QDEL_NULL(psi_shop_action)
+	QDEL_NULL(psi_shop_datum)
 	for(var/datum/action/cooldown/spell/spells_to_remove in psi_owner.actions)
 		if(!spells_to_remove.psionic)
 			continue
 		spells_to_remove.Remove()
-	QDEL_NULL(psi_shop_action)
-	QDEL_NULL(psi_shop_datum)
+
+	if(psi_owner.hud_used)
+		var/datum/hud/psi_hud = psi_owner.hud_used
+		psi_hud.remove_screen_object(HUD_PSI_DISPLAY)
+		psi_hud.remove_screen_object(HUD_PSI_SIGNAL)
 
 /datum/psionic/proc/psionic_life(seconds_per_tick)
 	SIGNAL_HANDLER
@@ -169,12 +168,15 @@
 	max_mana = 25
 	psionic_level = 1
 	psionic_level_string = SENSITIVE_PSIONIC
+	license = TRUE
+	psi_point = 5
 
 /datum/psionic/harmonious
 	max_mana = 100
 	psionic_level = 2
 	psionic_level_string = HARMONIOUS_PSIONIC
 	license = FALSE
+	psi_point = 10
 
 /datum/psionic/proc/is_suppressed()
 	if(HAS_TRAIT(psi_owner, TRAIT_PSI_SUPPRESSED))
@@ -204,12 +206,14 @@
 	if(!ispath(spell_path, /datum/action/cooldown/spell))
 		CRASH("Psionic research_spell attempted to purchase an invalid typepath! (got: [spell_path])")
 
-	if(learned_spells[spell_path])
-		to_chat(psi_owner, span_warning("We have already researched this spell!"))
+	if(spell_path.psionic_level > get_level())
+		to_chat(psi_owner, span_horizonblue("We have not enough psi power to get this spell!"))
 		return FALSE
-
+	if(learned_spells[spell_path])
+		to_chat(psi_owner, span_horizonblue("We have already researched this spell!"))
+		return FALSE
 	if(psi_point < initial(spell_path.point_cost))
-		to_chat(psi_owner, span_warning("We cant research this spell now!"))
+		to_chat(psi_owner, span_horizonblue("We cant research this spell now!"))
 		return FALSE
 
 	var/success = give_spell(spell_path)
@@ -228,6 +232,9 @@
 	new_action.Grant(psi_owner)
 
 	return TRUE
+
+/datum/psionic/proc/get_level()
+	return psionic_level
 
 #undef SENSITIVE_PSIONIC
 #undef HARMONIOUS_PSIONIC

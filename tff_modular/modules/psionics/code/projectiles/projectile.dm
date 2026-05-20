@@ -12,13 +12,14 @@
 	projectile_amount = INFINITY
 	psionic_level = 1
 	point_cost = 2
+	locked = FALSE
 	var/casting = FALSE
 
 /datum/action/cooldown/spell/pointed/projectile/psionic/air_bullet/before_cast(atom/cast_on)
 	. = ..()
 	if(!casting)
 		casting = TRUE
-		if(do_after(owner, 0.5 SECONDS, timed_action_flags = IGNORE_USER_LOC_CHANGE | IGNORE_SLOWDOWNS))
+		if(!do_after(owner, 0.5 SECONDS, timed_action_flags = IGNORE_USER_LOC_CHANGE | IGNORE_SLOWDOWNS))
 			return FALSE
 		psionic_datum.adjust_psi_energy(-10)
 	else
@@ -45,35 +46,37 @@
 	button_icon = 'icons/effects/freeze.dmi'
 	button_icon_state = "ice_cube"
 	cooldown_time = 1 SECONDS
-	mana_cost = 35
+	mana_cost = 20
 	cast_range = 9
 	active_msg = "You prepare to fire ice shard..."
 	deactive_msg = "You relax."
 	projectile_type = /obj/projectile/temp/watcher/psionic_freeze
 	psionic_level = 1
 	point_cost = 1
-	category = "manipulation"
-
-/datum/action/cooldown/spell/pointed/projectile/psionic/freeze/is_valid_target(atom/cast_on)
-	if(!isliving(cast_on))
-		return FALSE
-	return TRUE
+	category = "Tier 1"
+	locked = FALSE
 
 /datum/action/cooldown/spell/pointed/projectile/psionic/freeze/cast(mob/living/cast_on)
 	drain_mana()
 	. = ..()
 	return TRUE
 
+/datum/action/cooldown/spell/pointed/projectile/psionic/freeze/ready_projectile(obj/projectile/to_fire, atom/target, mob/user, iteration)
+	. = ..()
+	var/obj/projectile/temp/watcher/psionic_freeze/psi_freeze = to_fire
+	psi_freeze.power = cast_power
+
 // Вывел в отдельный тип, потому что в оригинальном ice_wing снаряде видимо баг(?) и он не замораживает, хотя должен.
 /obj/projectile/temp/watcher/psionic_freeze
 	name = "freezing blast"
 	damage = 0 // Нет дамага, вместо этого замораживает
+	var/power = 1
 
 /obj/projectile/temp/watcher/psionic_freeze/apply_status(mob/living/target)
 	if(HAS_TRAIT(target, TRAIT_RESISTCOLD)) // Вот тут у ice_wing лишний !
 		return
-	target.apply_status_effect(/datum/status_effect/freon/watcher/psionic_freeze)
+	target.set_timed_status_effect(power * 4, /datum/status_effect/freon/watcher/psionic_freeze)
 
 /datum/status_effect/freon/watcher/psionic_freeze
-	duration = 4 // 4 секунды вместо 8
+	duration = 4 SECONDS
 	can_melt = TRUE

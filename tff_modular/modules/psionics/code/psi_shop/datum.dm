@@ -1,5 +1,5 @@
 /datum/psionic_shop
-	var/name = "Psi Mind"
+	var/name = "Psionic Mind"
 	var/datum/psionic/psi_datum
 	var/mob/living/psi_owner
 	var/list/possible_spells
@@ -8,18 +8,15 @@
 	. = ..()
 	psi_datum = psionic_datum
 	psi_owner = psionic_mob
-	possible_spells = get_possible_spells()
 
 /datum/psionic_shop/proc/get_possible_spells()
-	var/static/list/spell_options
+	var/list/spell_options
 	if(!spell_options)
 		spell_options = subtypesof(/datum/action/cooldown/spell)
 		for(var/datum/action/cooldown/spell/spell as anything in spell_options)
 			if(!spell.psionic)
 				spell_options -= spell
 			if(spell.locked)
-				spell_options -= spell
-			if(spell.psionic_level > psi_datum.psionic_level)
 				spell_options -= spell
 
 	return spell_options
@@ -39,6 +36,7 @@
 	return UI_INTERACTIVE
 
 /datum/psionic_shop/ui_interact(mob/user, datum/tgui/ui)
+	possible_spells = get_possible_spells()
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "PsionicShop", name)

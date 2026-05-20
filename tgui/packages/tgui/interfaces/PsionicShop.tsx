@@ -47,14 +47,14 @@ export const PsionicShop = (props) => {
   const [searchText, setSearchText] = useState('');
   const [compactMode, setCompactMode] = useState(false);
 
-  const CATEGORY_ORDER = ['utility', 'combat', 'manipulation'];
+  const CATEGORY_ORDER = ['Tier 1', 'Tier 2'];
   const allCategories = Array.from(new Set(many_spells.map((a) => a.category)));
   const sortedCategories = [
     ...CATEGORY_ORDER.filter((cat) => allCategories.includes(cat)),
     ...allCategories.filter((cat) => !CATEGORY_ORDER.includes(cat)),
   ];
   const [selectedCategory, setSelectedCategory] = useState(
-    sortedCategories[0] || 'combat',
+    sortedCategories[0] || 'Tier 1',
   );
 
   const filteredItems = (

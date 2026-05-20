@@ -4,6 +4,7 @@
 	desc = "Force yourself to recieve telekinesis mutation."
 	cooldown_time = 20 SECONDS
 	mana_cost = 80
+	locked = FALSE
 
 /datum/action/cooldown/spell/psionic/psionic_telekinesis/is_valid_target(atom/cast_on)
 	return !issynthetic(cast_on)
@@ -29,6 +30,8 @@
 	cooldown_time = 15 SECONDS
 	mana_cost = 30
 	psionic_level = 2
+	locked = FALSE
+	category = "Tier 2"
 
 /datum/action/cooldown/spell/psionic/emp/cast(atom/cast_on)
 	. = ..()
@@ -43,6 +46,8 @@
 	mana_cost = 20
 	point_cost = 1
 	psionic_level = 2
+	locked = FALSE
+	category = "Tier 2"
 
 /datum/action/cooldown/spell/psionic/focus/cast(atom/cast_on)
 	. = ..()
@@ -55,14 +60,18 @@
 		human_living.SetSleeping(0)
 		human_living.SetAllImmobility(0)
 		drain_mana()
+	else
+		return FALSE
 
 /datum/action/cooldown/spell/psionic/charge
 	name = "Psionic Charge"
+	desc = "Use this spell on an item with a cell to charge it."
 	button_icon_state = "audible_deception"
 	cooldown_time = 60 SECONDS
 	mana_cost = 10
 	point_cost = 1
 	psionic_level = 1
+	locked = FALSE
 
 /datum/action/cooldown/spell/psionic/charge/is_valid_target(atom/cast_on)
 	return isliving(cast_on)
@@ -108,37 +117,3 @@
 		to_chat(cast_on, span_notice("[to_charge] doesn't seem to be react to [src]."))
 
 	drain_mana()
-
-/datum/action/cooldown/spell/pointed/psionic/bubble
-	name = "Psionic Bubble"
-	desc = "Create a protective bubble around you or target that removes your need to breathe or wear space protection!"
-	button_icon_state = "shield"
-	point_cost = 1
-	cooldown_time = 30 SECONDS
-	mana_cost = 10
-
-/datum/action/cooldown/spell/pointed/psionic/bubble/cast(atom/cast_on)
-	. = ..()
-	var/mob/living/living_living = cast_on
-	living_living.set_timed_status_effect(15 SECONDS * cast_power, /datum/status_effect/psi_bubble)
-
-/datum/status_effect/psi_bubble
-	id = "psi_bubble"
-	alert_type = /atom/movable/screen/alert/psi_bubble
-	var/icon/bubbleicon
-
-/datum/status_effect/psi_bubble/on_apply()
-	. = ..()
-	bubbleicon = icon(icon = 'icons/effects/effects.dmi', icon_state = "shield2")
-	owner.add_overlay(bubbleicon)
-	owner.add_traits(list(TRAIT_OXYIMMUNE, TRAIT_RESISTLOWPRESSURE, TRAIT_RESISTCOLD))
-
-/datum/status_effect/psi_bubble/on_remove()
-	. = ..()
-	owner.cut_overlay(bubbleicon)
-
-/atom/movable/screen/alert/psi_bubble
-	icon = 'icons/effects/effects.dmi'
-	icon_state = "shield2"
-	name = "Air Bubble"
-	desc = "There is a protective bubble around you that removes your need to breathe or wear space protection!"

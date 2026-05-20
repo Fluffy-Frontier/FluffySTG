@@ -3,8 +3,6 @@
 /datum/action/cooldown/spell
 	// Сколько маны стоит кастануть спелл
 	var/mana_cost = 10
-	// Некоторые спеллы могут отнимать стамину
-	var/stamina_cost = 0
 	// Что написать жертве
 	var/target_msg
 	// Сила способности
@@ -16,7 +14,7 @@
 	// Датум псионики что используется при касте
 	var/datum/psionic/psionic_datum
 	// Категория
-	var/category = "utility"
+	var/category = "Tier 1"
 	// Цена
 	var/point_cost = 1
 	// Текст помощи
@@ -31,6 +29,10 @@
 		psionic_datum = our_psionic.get_psionic()
 		cast_power = psionic_datum.psionic_level
 
+/datum/action/cooldown/spell/update_button_name(atom/movable/screen/movable/action_button/button, force)
+	. = ..()
+	button.desc += " Costs [mana_cost] Psi Energy."
+
 // Спеллы для призвания предмета
 /datum/action/cooldown/spell/conjure_item/psionic
 	button_icon = 'tff_modular/modules/psionics/icons/spells.dmi'
@@ -44,7 +46,6 @@
 	spell_requirements = NONE
 	cooldown_reduction_per_rank = 0 SECONDS
 	psionic = TRUE
-	locked = FALSE
 
 /datum/action/cooldown/spell/conjure_item/psionic/New(Target, power)
 	. = ..()
@@ -63,7 +64,6 @@
 /datum/action/cooldown/spell/proc/drain_mana()
 	var/mob/living/carbon/human/caster = owner
 	var/datum/psionic/psi_holder = caster.get_psionic()
-	caster.adjust_stamina_loss(stamina_cost, forced = TRUE)
 	if(psi_holder)
 		psi_holder.adjust_psi_energy(-mana_cost)
 		return TRUE
@@ -98,7 +98,6 @@
 	cooldown_reduction_per_rank = 0 SECONDS
 	psionic = TRUE
 	psionic_level = 1
-	locked = FALSE
 
 /datum/action/cooldown/spell/psionic/New(Target, power, additional_school)
 	. = ..()
@@ -127,7 +126,6 @@
 	spell_requirements = NONE
 	cooldown_reduction_per_rank = 0 SECONDS
 	psionic = TRUE
-	locked = FALSE
 	cast_range = 7
 
 /datum/action/cooldown/spell/pointed/projectile/psionic/New(Target, power, additional_school)
@@ -156,7 +154,6 @@
 	spell_requirements = NONE
 	cooldown_reduction_per_rank = 0 SECONDS
 	psionic = TRUE
-	locked = FALSE
 	cast_range = 7
 
 /datum/action/cooldown/spell/pointed/psionic/New(Target, power, additional_school)
@@ -184,7 +181,6 @@
 	invocation_type = INVOCATION_NONE
 	spell_requirements = NONE
 	psionic = TRUE
-	locked = FALSE
 
 /datum/action/cooldown/spell/touch/psionic/New(Target, power, additional_school)
 	. = ..()

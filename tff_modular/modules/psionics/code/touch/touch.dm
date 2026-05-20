@@ -16,7 +16,8 @@
 	draw_message = span_notice("You ready your hand to cleanse a patient.")
 	drop_message = span_notice("You lower your hand.")
 	can_cast_on_self = TRUE
-	category = "utility"
+	category = "Tier 1"
+	locked = FALSE
 
 /datum/action/cooldown/spell/touch/psionic/assay/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/mendicant)
 	if(ishuman(victim))
@@ -62,6 +63,7 @@
 	drop_message = span_notice("You lower your hand.")
 	can_cast_on_self = FALSE
 	psionic_level = 3
+	locked = FALSE
 
 /datum/action/cooldown/spell/touch/psionic/mind_read/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/mendicant)
 	if(ishuman(victim))
@@ -183,6 +185,7 @@
 	draw_message = span_notice("You ready your hand to mend a patient.")
 	drop_message = span_notice("You lower your hand.")
 	can_cast_on_self = TRUE
+	locked = FALSE
 
 /datum/action/cooldown/spell/touch/psionic/mending/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/mendicant)
 	if(ishuman(victim))
@@ -237,6 +240,8 @@
 	mana_cost = 10
 	psionic_level = 2
 	hand_path = /obj/item/melee/touch_attack/psionic/chain_lighting
+	locked = FALSE
+	category = "Tier 2"
 
 /datum/action/cooldown/spell/touch/psionic/electrocute/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)
 	. = ..()
