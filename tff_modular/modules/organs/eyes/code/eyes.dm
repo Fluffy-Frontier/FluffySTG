@@ -1,13 +1,13 @@
 /obj/item/organ/eyes/neweyespack // You can create new eyes here. Modify eyes.dmi in icon folder
 	name = "new eyes pack eyes"
 	desc = "If you see this item, report to maintainer"
-	eye_icon = 'tff_modular/modules/organs/eyes/icon/eyes.dmi'
+	eye_icon = 'tff_modular/modules/organs/eyes/icons/eyes.dmi'
 	blink_animation = FALSE
 
 /obj/item/organ/eyes/robotic/neweyespack // You can create new eyes here. This one is for robotic versions. Modify eyes.dmi in icon folder
 	name = "robotic new eyes pack eyes"
 	desc = "If you see this item, report to maintainer"
-	eye_icon = 'tff_modular/modules/organs/eyes/icon/eyes.dmi'
+	eye_icon = 'tff_modular/modules/organs/eyes/icons/eyes.dmi'
 	blink_animation = FALSE
 
 /obj/item/organ/eyes/neweyespack/insect
