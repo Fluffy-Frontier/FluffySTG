@@ -31,12 +31,3 @@
 	icon_state = "large-shark-finless-s"
 
 // you could definitely cook up more combinations and use the "stripes-underbelly" sprite but... yeah
-
-/datum/sprite_accessory/tails/mammal/bigandfluffy
-	name = "Shadekin Big and Fluffy"
-	icon = 'tff_modular/modules/bodyparts/bigsharktail/tails64x32.dmi'
-	icon_state = "bigandfluffy"
-	dimension_x = 64
-	dimension_y = 32
-	center = TRUE
-	color_src = USE_MATRIXED_COLORS
