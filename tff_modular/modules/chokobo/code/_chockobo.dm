@@ -10,6 +10,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	maxHealth = 200
 	health = 200
+    gold_core_spawnable = FRIENDLY_SPAWN
 	melee_damage_lower = 10
 	melee_damage_upper = 15
 	combat_mode = TRUE
