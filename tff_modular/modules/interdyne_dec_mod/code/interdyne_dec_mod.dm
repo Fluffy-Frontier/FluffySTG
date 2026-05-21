@@ -61,3 +61,14 @@
 	mask_type = /obj/item/clothing/mask/neck_gaiter
 	storage_type = /obj/item/tank/internals/oxygen
 	mod_type = /obj/item/mod/control/pre_equipped/interdyne/dec
+
+/datum/armor/mod_theme_interdyne/nerfed
+	melee = 30
+	bullet = 20
+	laser = 30
+	energy = 30
+	bomb = 20
+	bio = 100
+	fire = 100
+	acid = 100
+	wound = 5
