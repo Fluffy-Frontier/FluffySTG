@@ -1,5 +1,5 @@
 /datum/antagonist/traitor/loner
-	name = "\improper Loner"
+	name = "\improper Psionic Agent"
 	stinger_sound = 'tff_modular/modules/psionics/sounds/power_unlock.ogg'
 	give_uplink = FALSE
 	uplink_flag_given = NONE
