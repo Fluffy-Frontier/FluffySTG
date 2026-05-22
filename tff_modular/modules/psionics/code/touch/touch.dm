@@ -257,53 +257,5 @@
 	else
 		return FALSE
 
-/datum/action/cooldown/spell/touch/psionic/rend
-	name = "Psionic Rend"
-	desc = "Rend an adjacent target's biomolecular state apart. Very powerful, but with an extremely long cooldown and a huge psi-stamina cost. \
-			Activate it in your hand to switch to a structure mode, in which you cannot target living beings but you can tear apart \
-			walls and airlocks."
-	button_icon_state = "gen_dissolve"
-	category = "Tier 2"
-	cooldown_time = 120 SECONDS
-	point_cost = 4
-	mana_cost = 80
-	psionic_level = 2
-	hand_path = /obj/item/melee/touch_attack/psionic/rend
-	locked = FALSE
-	channel_time = 1 SECONDS
-	var/structure_mode = FALSE
-
-/datum/action/cooldown/spell/touch/psionic/rend/is_valid_target(atom/cast_on)
-	. = ..()
-	if(structure_mode)
-		if(!iswallturf(cast_on) && !istype(cast_on, /obj/machinery/door/airlock))
-			return FALSE
-	return TRUE
-
-/datum/action/cooldown/spell/touch/psionic/rend/cast(atom/cast_on)
-	. = ..()
-	if(structure_mode)
-		if(iswallturf(cast_on))
-			var/turf/closed/wall/wall = cast_on
-			var/base_time = 3 SECONDS
-			if(istype(wall, /turf/closed/wall/r_wall))
-				base_time += 7 SECONDS
-			owner.visible_message(span_warning("[owner] lays [owner.p_their()] palms on \the [wall] and begins discharging psionic energy on it..."),
-								span_warning("You lay your palms on \the [wall] and begin permeating psionic energy through its structure..."))
-			if(do_after(owner, base_time, wall))
-				owner.visible_message(span_warning("[owner] disintegrates \the [wall]!"), span_warning("You disintegrate \the [wall]!"))
-				wall.dismantle_wall(devastated = FALSE)
-		else if(istype(cast_on, /obj/machinery/door/airlock))
-			var/obj/machinery/door/airlock/A = cast_on
-			var/base_time = 5 SECONDS
-			owner.visible_message(span_warning("[owner] lays [owner.p_their()] palms on \the [A] and begins discharging psionic energy on it..."),
-							span_warning("You lay your palms on \the [A] and begin permeating psionic energy through its structure..."))
-			if(do_after(owner, base_time))
-				owner.visible_message(span_warning("[owner] disintegrates \the [A]!"), span_warning("You disintegrate \the [A]!"))
-				playsound(A, 'sound/effects/meteorimpact.ogg', 40)
-				qdel(A)
-
-	return TRUE
-
 #undef IS_HYPNOTIZED
 #undef IS_OBSESSED

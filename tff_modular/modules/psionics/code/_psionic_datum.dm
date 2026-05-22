@@ -174,14 +174,14 @@
 	psionic_level = 1
 	psionic_level_string = SENSITIVE_PSIONIC
 	license = TRUE
-	psi_point = 5
+	psi_point = 7
 
 /datum/psionic/harmonious
 	max_mana = 100
 	psionic_level = 2
 	psionic_level_string = HARMONIOUS_PSIONIC
 	license = FALSE
-	psi_point = 10
+	psi_point = 14
 
 /datum/psionic/proc/is_suppressed()
 	if(HAS_TRAIT(psi_owner, TRAIT_PSIONIC_EXHAUSTION))

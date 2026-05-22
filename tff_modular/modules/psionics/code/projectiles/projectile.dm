@@ -30,17 +30,18 @@
 	damage_type = BRUTE
 
 /datum/action/cooldown/spell/pointed/projectile/psionic/lighting
-	name = "Spell Cards"
+	name = "Psionic Lighting"
 	desc = "Hits living beings in a 4x3 area in front of you with thunders."
 	button_icon_state = "spellcard"
 	category = "Tier 2"
 	click_cd_override = 1
-	cooldown_time = 60 SECONDS
+	cooldown_time = 20 SECONDS
 	psionic_level = 2
 	mana_cost = 30
 	point_cost = 3
 	cast_range = 40
-	projectile_type = /obj/projectile/beam/psi_lightning
+	locked = FALSE
+	projectile_type = /obj/projectile/beam/emitter/hitscan/lighting
 	projectile_amount = 1
 	projectiles_per_fire = 5
 	/// The turn rate of the spell cards in flight. (They track onto locked on targets)
@@ -69,7 +70,7 @@
 	. = ..()
 	drain_mana()
 
-/obj/projectile/beam/psi_lightning
+/obj/projectile/beam/emitter/hitscan/lighting
 	name = "psionic lightning"
 	damage = 20
 	armour_penetration = 30
@@ -80,3 +81,6 @@
 	muzzle_type = /obj/effect/projectile/muzzle/solar
 	tracer_type = /obj/effect/projectile/muzzle/solar
 	impact_type = /obj/effect/projectile/muzzle/solar
+	hitscan_light_color_override = COLOR_LIGHT_YELLOW
+	muzzle_flash_color_override = COLOR_LIGHT_YELLOW
+	impact_light_color_override = COLOR_LIGHT_YELLOW
