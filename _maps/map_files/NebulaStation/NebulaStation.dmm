@@ -4611,19 +4611,6 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/maintenance/port/aft)
-"aKc" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 8;
-	id = "rdgene";
-	name = "Genetics Lab Shutters"
-	},
-/obj/machinery/door/airlock/research/glass{
-	name = "Genetics Lab"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/science/genetics,
-/turf/open/floor/iron/dark/textured_large,
-/area/station/science/genetics)
 "aKf" = (
 /obj/structure/closet/firecloset,
 /obj/effect/turf_decal/trimline/red/warning{
@@ -7177,13 +7164,6 @@
 /obj/machinery/light/floor,
 /turf/open/floor/glass/reinforced,
 /area/station/service/chapel/funeral)
-"bdo" = (
-/obj/structure/table/reinforced/rglass,
-/obj/machinery/computer/records/medical/laptop{
-	dir = 4
-	},
-/turf/open/floor/iron/dark/textured,
-/area/station/science/genetics)
 "bdp" = (
 /obj/effect/turf_decal/siding/thinplating_new/dark,
 /obj/effect/turf_decal/tile/red/half/contrasted,
@@ -10191,6 +10171,27 @@
 /obj/structure/railing,
 /turf/open/floor/iron/dark,
 /area/station/hallway/primary/port)
+"bBq" = (
+/obj/structure/flora/bush/snow{
+	pixel_y = -3;
+	pixel_x = -3
+	},
+/obj/structure/flora/bush/flowers_br/style_random,
+/obj/structure/window/reinforced/spawner/directional/north,
+/obj/structure/window/reinforced/spawner/directional/east,
+/obj/structure/window/reinforced/spawner/directional/west,
+/obj/structure/window/reinforced/spawner/directional/south,
+/obj/structure/flora/grass/both/style_2,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "rdgene";
+	name = "Genetics Lab Shutters"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/misc/asteroid/snow/standard_air,
+/area/station/science/genetics)
 "bBr" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/heater/on,
 /turf/open/floor/iron/dark/textured,
@@ -24972,6 +24973,29 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/hallway/primary/port)
+"dJT" = (
+/obj/structure/table/reinforced,
+/obj/item/folder{
+	pixel_x = -6
+	},
+/obj/structure/desk_bell{
+	pixel_x = 6
+	},
+/obj/item/pen{
+	pixel_x = -5
+	},
+/obj/machinery/door/window/left/directional/east{
+	name = "Genetics Desk";
+	req_access = list("genetics")
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "rdgene";
+	name = "Genetics Lab Shutters"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark,
+/area/station/science/genetics)
 "dJU" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -48455,6 +48479,13 @@
 	},
 /turf/open/floor/carpet/orange,
 /area/station/command/heads_quarters/ce)
+"hfN" = (
+/obj/structure/table/reinforced/rglass,
+/obj/machinery/computer/records/medical/laptop{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured,
+/area/station/science/genetics)
 "hfO" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 8
@@ -60697,16 +60728,6 @@
 	},
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
-"iVt" = (
-/obj/structure/chair/office/light{
-	dir = 8
-	},
-/obj/effect/landmark/start/geneticist,
-/obj/machinery/camera/autoname/directional/south{
-	network = list("ss13","rd")
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/station/science/genetics)
 "iVx" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 4
@@ -66917,14 +66938,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos/project)
-"jQO" = (
-/obj/effect/turf_decal/delivery,
-/obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/station/science/genetics)
 "jQQ" = (
 /obj/effect/turf_decal/siding/thinplating_new/dark{
 	dir = 8
@@ -115869,6 +115882,17 @@
 	dir = 1
 	},
 /area/station/security/range)
+"red" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/thinplating_new/dark{
+	dir = 9
+	},
+/obj/effect/turf_decal/siding/purple/corner,
+/obj/effect/turf_decal/trimline/purple/corner,
+/turf/open/floor/iron/dark/smooth_corner,
+/area/station/science/genetics)
 "ree" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
@@ -124764,29 +124788,6 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/station/maintenance/department/medical)
-"stW" = (
-/obj/structure/table/reinforced,
-/obj/item/folder{
-	pixel_x = -6
-	},
-/obj/structure/desk_bell{
-	pixel_x = 6
-	},
-/obj/item/pen{
-	pixel_x = -5
-	},
-/obj/machinery/door/window/left/directional/east{
-	name = "Genetics Desk";
-	req_access = list("genetics")
-	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 8;
-	id = "rdgene";
-	name = "Genetics Lab Shutters"
-	},
-/obj/machinery/door/firedoor,
-/turf/open/floor/iron/dark,
-/area/station/science/genetics)
 "stZ" = (
 /obj/effect/turf_decal/siding/thinplating_new/dark{
 	dir = 8
@@ -125504,27 +125505,6 @@
 /obj/effect/landmark/start/depsec/engineering,
 /turf/open/floor/iron/dark/textured,
 /area/station/security/checkpoint/engineering)
-"szZ" = (
-/obj/structure/flora/bush/snow{
-	pixel_y = -3;
-	pixel_x = -3
-	},
-/obj/structure/flora/bush/flowers_br/style_random,
-/obj/structure/window/reinforced/spawner/directional/north,
-/obj/structure/window/reinforced/spawner/directional/east,
-/obj/structure/window/reinforced/spawner/directional/west,
-/obj/structure/window/reinforced/spawner/directional/south,
-/obj/structure/flora/grass/both/style_2,
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 8;
-	id = "rdgene";
-	name = "Genetics Lab Shutters"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/misc/asteroid/snow/standard_air,
-/area/station/science/genetics)
 "sAc" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/structure/cable,
@@ -132349,6 +132329,14 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/construction/mining/aux_base)
+"tAb" = (
+/obj/effect/turf_decal/delivery,
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/station/science/genetics)
 "tAe" = (
 /obj/machinery/holopad,
 /obj/effect/turf_decal/bot_white,
@@ -132950,6 +132938,16 @@
 /obj/effect/landmark/start/hangover,
 /turf/open/floor/wood/large,
 /area/station/commons/dorms)
+"tDP" = (
+/obj/structure/chair/office/light{
+	dir = 8
+	},
+/obj/effect/landmark/start/geneticist,
+/obj/machinery/camera/autoname/directional/south{
+	network = list("ss13","rd")
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/station/science/genetics)
 "tDQ" = (
 /obj/effect/turf_decal/siding/thinplating_new/dark{
 	dir = 8
@@ -135040,6 +135038,13 @@
 	dir = 5
 	},
 /area/station/security/execution/education)
+"tSE" = (
+/obj/machinery/conveyor{
+	id = "mining"
+	},
+/obj/machinery/bouldertech/refinery/smelter,
+/turf/open/floor/iron/dark/textured_large,
+/area/station/cargo/miningfoundry)
 "tSF" = (
 /obj/effect/turf_decal/siding/thinplating_new/dark{
 	dir = 6
@@ -142207,15 +142212,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
 /area/station/science/robotics/lab)
-"uYW" = (
-/obj/machinery/conveyor{
-	id = "mining"
-	},
-/obj/machinery/bouldertech/refinery/smelter{
-	dir = 4
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/station/cargo/miningfoundry)
 "uYZ" = (
 /obj/effect/turf_decal/siding/thinplating_new/dark/corner,
 /obj/effect/turf_decal/siding/thinplating_new/dark/corner{
@@ -145891,6 +145887,13 @@
 	},
 /turf/open/floor/grass,
 /area/station/commons/fitness/recreation)
+"vxO" = (
+/obj/effect/turf_decal/trimline/purple/end{
+	dir = 4
+	},
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/iron/dark/textured_large,
+/area/station/science/genetics)
 "vxQ" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
@@ -151403,17 +151406,6 @@
 /obj/structure/cable/layer1,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
-"wqU" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/thinplating_new/dark{
-	dir = 9
-	},
-/obj/effect/turf_decal/siding/purple/corner,
-/obj/effect/turf_decal/trimline/purple/corner,
-/turf/open/floor/iron/dark/smooth_corner,
-/area/station/science/genetics)
 "wrb" = (
 /obj/effect/turf_decal/trimline/green/line{
 	dir = 1
@@ -156101,6 +156093,19 @@
 	dir = 2
 	},
 /area/station/maintenance/central)
+"xdw" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "rdgene";
+	name = "Genetics Lab Shutters"
+	},
+/obj/machinery/door/airlock/research/glass{
+	name = "Genetics Lab"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/science/genetics,
+/turf/open/floor/iron/dark/textured_large,
+/area/station/science/genetics)
 "xdx" = (
 /obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/window/reinforced/spawner/directional/west,
@@ -157168,13 +157173,6 @@
 	dir = 8
 	},
 /area/station/commons/dorms)
-"xmc" = (
-/obj/effect/turf_decal/trimline/purple/end{
-	dir = 4
-	},
-/obj/item/radio/intercom/directional/north,
-/turf/open/floor/iron/dark/textured_large,
-/area/station/science/genetics)
 "xmk" = (
 /obj/effect/turf_decal/siding/thinplating_new/dark{
 	dir = 5
@@ -195780,7 +195778,7 @@ rnW
 nbS
 pVC
 wLi
-uYW
+tSE
 uOS
 kFj
 tqY
@@ -263397,9 +263395,9 @@ ybp
 fTP
 xME
 clm
-aKc
-szZ
-stW
+xdw
+bBq
+dJT
 clm
 rZe
 uJU
@@ -263654,9 +263652,9 @@ ybp
 rCV
 bRt
 clm
-xmc
-jQO
-iVt
+vxO
+tAb
+tDP
 clm
 cIb
 pgm
@@ -263910,7 +263908,7 @@ uQV
 ybp
 dMv
 boB
-wqU
+red
 gnx
 poZ
 gnx
@@ -264683,7 +264681,7 @@ bxb
 gFc
 peL
 wLX
-bdo
+hfN
 vCA
 aEt
 efG
