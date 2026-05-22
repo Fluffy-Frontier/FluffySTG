@@ -81,3 +81,11 @@
 	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/head.dmi'
 	resistance_flags = FIRE_PROOF
 
+/obj/item/clothing/suit/jacket/leather/sailorlongcoat
+	name = "sailor's longcoat"
+	desc = "An old sailor's cloak. Although it's outdated, its previous owner carefully maintained the cloak's fabric."
+	icon = 'tff_modular/master_files/icons/donator/obj/clothing/suit.dmi'
+	icon_state = "sailor_coat"
+	worn_icon = 'tff_modular/master_files/icons/donator/mob/clothing/suit.dmi'
+	worn_icon_state = "sailor_coat"
+	resistance_flags = FIRE_PROOF
