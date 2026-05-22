@@ -1,32 +1,8 @@
-// Даёт мутацию телекинеза
-/datum/action/cooldown/spell/psionic/psionic_telekinesis
-	name = "Telekinesis"
-	desc = "Force yourself to recieve telekinesis mutation."
-	cooldown_time = 20 SECONDS
-	mana_cost = 80
-	locked = FALSE
-
-/datum/action/cooldown/spell/psionic/psionic_telekinesis/is_valid_target(atom/cast_on)
-	return !issynthetic(cast_on)
-
-/datum/action/cooldown/spell/psionic/psionic_telekinesis/cast(mob/living/cast_on)
-	. = ..()
-	if(!ishuman(cast_on))
-		return FALSE
-	var/mob/living/carbon/human/to_mutate = cast_on
-	if(!to_mutate.can_mutate())
-		return FALSE
-	to_mutate.dna.add_mutation(/datum/mutation/telekinesis/psionic, MUTATION_SOURCE_ACTIVATED)
-	drain_mana()
-
-/datum/mutation/telekinesis/psionic
-	no_effect = TRUE
-
 // Создаёт ЕМП в месте удара руки
 /datum/action/cooldown/spell/psionic/emp
-	name = "Psionic EMP"
+	name = "Ion Blast"
 	desc = "Cause a small, but powerful EMP."
-	button_icon_state = "overload"
+	button_icon_state = "tech_overload"
 	cooldown_time = 15 SECONDS
 	mana_cost = 30
 	psionic_level = 2
@@ -36,23 +12,24 @@
 /datum/action/cooldown/spell/psionic/emp/cast(atom/cast_on)
 	. = ..()
 	empulse(cast_on.loc, 3, 3)
+	playsound(cast_on, 'tff_modular/modules/psionics/sounds/power_fail.ogg', 50, TRUE)
 	drain_mana()
 
 /datum/action/cooldown/spell/psionic/focus
 	name = "Psionic Focus"
 	desc = "Creates a useful reagents inside of you, removing stun."
-	button_icon_state = "blink"
+	button_icon_state = "tech_haste"
+	category = "Tier 2"
 	cooldown_time = 50 SECONDS
 	mana_cost = 20
 	point_cost = 1
 	psionic_level = 2
 	locked = FALSE
-	category = "Tier 2"
 
 /datum/action/cooldown/spell/psionic/focus/cast(atom/cast_on)
 	. = ..()
 	var/mob/living/carbon/human/human_living = cast_on
-	if(do_after(human_living, 1 SECONDS))
+	if(do_after(human_living, 1 SECONDS, timed_action_flags = IGNORE_SLOWDOWNS | IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE | IGNORE_HELD_ITEM))
 		to_chat(human_living, span_warning("A calm rush envelops your mind.."))
 		human_living.reagents.add_reagent_list(list(/datum/reagent/medicine/ephedrine = 5, /datum/reagent/medicine/synaptizine = 5, /datum/reagent/medicine/epinephrine = 5))
 		human_living.SetStun(0)
@@ -60,13 +37,14 @@
 		human_living.SetSleeping(0)
 		human_living.SetAllImmobility(0)
 		drain_mana()
+		playsound(human_living, 'tff_modular/modules/psionics/sounds/power_used.ogg', 50, TRUE)
 	else
 		return FALSE
 
 /datum/action/cooldown/spell/psionic/charge
 	name = "Psionic Charge"
 	desc = "Use this spell on an item with a cell to charge it."
-	button_icon_state = "audible_deception"
+	button_icon_state = "wiz_charge"
 	cooldown_time = 60 SECONDS
 	mana_cost = 10
 	point_cost = 1
@@ -117,3 +95,361 @@
 		to_chat(cast_on, span_notice("[to_charge] doesn't seem to be react to [src]."))
 
 	drain_mana()
+	playsound(cast_on, 'tff_modular/modules/psionics/sounds/power_fabrication.ogg', 50, TRUE)
+
+/datum/action/cooldown/spell/psionic/suppression
+	name = "Psionic Suppression"
+	desc = "Suppress your psionic energy, making you invisible to other psionics, but you can't use psionic abilities."
+	button_icon_state = "tech_shield"
+	category = "Tier 2"
+	cooldown_time = 30 SECONDS
+	psionic_level = 2
+	mana_cost = 0
+	point_cost = 0
+	ignore_suppression = TRUE
+	locked = FALSE
+	var/suppressing = FALSE
+
+/datum/action/cooldown/spell/psionic/suppression/cast(atom/cast_on)
+	. = ..()
+	if(suppressing || HAS_TRAIT_FROM(cast_on, TRAIT_PSIONIC_SUPPRESSED, ACTION_TRAIT))
+		REMOVE_TRAIT(cast_on, TRAIT_PSIONIC_SUPPRESSED, ACTION_TRAIT)
+	else
+		ADD_TRAIT(cast_on, TRAIT_PSIONIC_SUPPRESSED, ACTION_TRAIT)
+
+/datum/action/cooldown/spell/psionic/sunder
+	name = "Psionic Sunder"
+	desc = "Destroy a Zona Bovinae of psionic creature you pulling. This will make them force-suppressed."
+	button_icon_state = "ling_berserk"
+	category = "Tier 2"
+	cooldown_time = 10 SECONDS
+	psionic_level = 2
+	mana_cost = 30
+	point_cost = 1
+	locked = FALSE
+
+/datum/action/cooldown/spell/psionic/sunder/before_cast(atom/cast_on)
+	. = ..()
+	var/mob/living/carbon/human/human_living = cast_on
+	var/mob/living/carbon/human/victim = human_living.pulling
+	var/datum/psionic/victim_psionic = victim.get_psionic()
+	if(!victim)
+		to_chat(human_living, span_horizonblue("You must grab victim to use this ability!"))
+		return FALSE
+	if(!victim_psionic)
+		to_chat(human_living, span_horizonblue("Not a Psionic!"))
+		return FALSE
+	if(victim_psionic.get_level() > 1)
+		to_chat(human_living, span_horizonblue("Their psi mind is too strong!"))
+		return FALSE
+
+/datum/action/cooldown/spell/psionic/sunder/cast(atom/cast_on)
+	. = ..()
+	var/mob/living/carbon/human/human_living = cast_on
+	var/mob/living/carbon/human/victim = human_living.pulling
+	to_chat(victim, span_big(span_horizonblue("You feel your psionic energy leaving your mind...")))
+	if(!do_after(human_living, 10 SECONDS, victim))
+		return FALSE
+	ADD_TRAIT(victim, TRAIT_PSIONIC_SUPPRESSED, SUNDER_TRAIT)
+	playsound(human_living, 'tff_modular/modules/psionics/sounds/power_fabrication.ogg', 50, TRUE)
+
+/datum/action/cooldown/spell/psionic/stamina
+	name = "Psionic Stamina Weave"
+	desc = "Activate this spell to regenerate your psi-mana a little bit."
+	button_icon_state = "tech_mend_template"
+	point_cost = 1
+	cooldown_time = 20 SECONDS
+	mana_cost = 0
+	locked = FALSE
+	var/charging = FALSE
+
+/datum/action/cooldown/spell/psionic/stamina/cast(atom/cast_on)
+	. = ..()
+	regenerate_stamina(cast_on)
+	return TRUE
+
+/datum/action/cooldown/spell/psionic/stamina/is_action_active(atom/movable/screen/movable/action_button/current_button)
+	return charging
+
+/datum/action/cooldown/spell/psionic/stamina/proc/regenerate_stamina(mob/living/carbon/human/human_living)
+	if(!do_after(human_living, 1 SECONDS))
+		charging = FALSE
+		return FALSE
+	charging = TRUE
+	psionic_datum.adjust_psi_energy(5)
+	playsound(human_living, 'tff_modular/modules/psionics/sounds/power_used.ogg', 50, TRUE)
+	regenerate_stamina(human_living)
+
+/datum/action/cooldown/spell/psionic/search
+	name = "Psionic Search"
+	desc = "Scan your Z-level for Nlom signatures."
+	button_icon_state = "wiz_shield"
+	mana_cost = 5
+	cooldown_time = 10 SECONDS
+	point_cost = 1
+	locked = FALSE
+
+/datum/action/cooldown/spell/psionic/search/cast(atom/cast_on)
+	. = ..()
+	var/list/alive_list = list()
+	var/mob/living/carbon/human/searcher = cast_on
+	for(var/mob/living/carbon/human/alive in world)
+		var/datum/psionic/psi_datum = alive.get_psionic()
+		if(!is_valid_z_level(alive.loc, searcher.loc))
+			continue
+		if(alive.stat == DEAD)
+			continue
+		if(!psi_datum)
+			continue
+		if(psi_datum.is_suppressed())
+			continue
+		alive_list += alive
+
+	var/mob/living/carbon/who_to_find = tgui_input_list(searcher, "Who you want to find?", "Psionic Search", alive_list)
+	if(!who_to_find || who_to_find.stat == DEAD || QDELETED(searcher))
+		return FALSE
+
+	var/area/place = get_area(who_to_find)
+	to_chat(searcher, span_horizonblue("The one who you looking for at... [place.name]"))
+	playsound(searcher, 'tff_modular/modules/psionics/sounds/power_used.ogg', 50, TRUE, SILENCED_SOUND_EXTRARANGE)
+
+/datum/action/cooldown/spell/psionic/nlom_eyes
+	name = "Nlom Eyes"
+	desc = "Roughly locate a mob on your z-level."
+	button_icon_state = "tech_control"
+	mana_cost = 5
+	cooldown_time = 30 SECONDS
+	point_cost = 1
+	locked = FALSE
+	psionic_level = 2
+	category = "Tier 2"
+	var/datum/status_effect/agent_pinpointer/scan/navigator
+
+/datum/action/cooldown/spell/psionic/nlom_eyes/cast(atom/cast_on)
+	. = ..()
+	var/list/signatures_list = list()
+	for(var/mob/living/carbon/human/mob_signatures as anything in world)
+		if(!iscarbon(mob_signatures))
+			continue
+		if(!is_valid_z_level(cast_on.loc, mob_signatures))
+			continue
+		if(mob_signatures.stat == DEAD)
+			continue
+		signatures_list += mob_signatures
+
+	var/mob/living/carbon/who_to_find = tgui_input_list(cast_on, "Choose who you want to find?", "Nlom Eyes", signatures_list)
+	if(!who_to_find || who_to_find.stat == DEAD || QDELETED(cast_on))
+		return FALSE
+
+	playsound(owner, 'tff_modular/modules/psionics/sounds/power_fabrication.ogg', 50, TRUE, SILENCED_SOUND_EXTRARANGE)
+	owner.balloon_alert(owner, get_balloon_message(who_to_find))
+	drain_mana()
+
+/// Gets the balloon message for who we're tracking.
+/datum/action/cooldown/spell/psionic/nlom_eyes/proc/get_balloon_message(atom/tracked_thing)
+	var/balloon_message = "error text!"
+	var/turf/their_turf = get_turf(tracked_thing)
+	var/turf/our_turf = get_turf(owner)
+	var/their_z = their_turf?.z
+	var/our_z = our_turf?.z
+
+	// One of us is in somewhere we shouldn't be
+	if(!our_z || !their_z)
+		// "Hell if I know"
+		balloon_message = "on another plane!"
+
+	// They're not on the same z-level as us
+	else if(our_z != their_z)
+		// They're on the station
+		if(is_station_level(their_z))
+			// We're on a multi-z station
+			if(is_station_level(our_z))
+				if(our_z > their_z)
+					balloon_message = "below you!"
+				else
+					balloon_message = "above you!"
+			// We're off station, they're not
+			else
+				balloon_message = "on station!"
+
+		// Mining
+		else if(is_mining_level(their_z))
+			balloon_message = "on lavaland!"
+
+		// In the gateway
+		else if(is_away_level(their_z) || is_secret_level(their_z))
+			balloon_message = "beyond the gateway!"
+
+		// They're somewhere we probably can't get too - sacrifice z-level, centcom, etc
+		else
+			balloon_message = "on another plane!"
+
+	// They're on the same z-level as us!
+	else
+		var/dist = get_dist(our_turf, their_turf)
+		var/dir = get_dir(our_turf, their_turf)
+
+		var/arrow_color
+
+		switch(dist)
+			if(0 to 15)
+				balloon_message = "very near, [dir2text(dir)]!"
+				arrow_color = COLOR_CARP_LIGHT_BLUE
+			if(16 to 31)
+				balloon_message = "near, [dir2text(dir)]!"
+				arrow_color = COLOR_BLUE
+			if(32 to 127)
+				balloon_message = "far, [dir2text(dir)]!"
+				arrow_color = COLOR_CARP_DARK_BLUE
+			else
+				balloon_message = "very far!"
+				arrow_color = COLOR_DARK
+
+		if(owner.hud_used)
+			var/atom/movable/screen/navigate_arrow/arrow = owner.hud_used.add_screen_object(/atom/movable/screen/navigate_arrow, HUD_PSIONIC_ARROW, HUD_GROUP_INFO, update_screen = TRUE)
+			arrow.start_effect(their_turf, arrow_color)
+
+	return balloon_message
+
+/datum/action/cooldown/spell/psionic/zona_bovinae
+	name = "Zona Bovinae Absorption"
+	desc = "Absorb a psionic energy from a being's Zona Bovinae, granting you an extra point to be used in the Point Shop."
+	button_icon_state = "tech_illusion"
+	mana_cost = 0
+	cooldown_time = 10 SECONDS
+	point_cost = 1
+	locked = FALSE
+	psionic_level = 2
+	category = "Tier 2"
+
+/datum/action/cooldown/spell/psionic/zona_bovinae/is_valid_target(atom/cast_on)
+	. = ..()
+	var/mob/living/carbon/human/absorber = cast_on
+	var/mob/living/carbon/human/victim = absorber.pulling
+	if(!victim)
+		to_chat(absorber, span_horizonblue("You need to grab someone to do it!"))
+		return FALSE
+	if(!iscarbon(victim))
+		to_chat(absorber, span_horizonblue("Victim need to be a humanoid!"))
+		return FALSE
+	if(absorber.grab_state < GRAB_AGGRESSIVE)
+		to_chat(absorber, span_horizonblue("Must have agressive grab!"))
+		return FALSE
+	if(!victim.mind)
+		to_chat(absorber, span_horizonblue("Victim need to have mind!"))
+		return FALSE
+	if(victim.stat == DEAD)
+		return FALSE
+	return TRUE
+
+/datum/action/cooldown/spell/psionic/zona_bovinae/cast(atom/cast_on)
+	. = ..()
+	var/mob/living/carbon/human/absorber = cast_on
+	var/mob/living/carbon/human/victim = absorber.pulling
+	to_chat(absorber, span_horizonblue("You're trying to get into the [victim]'s mind..."))
+	to_chat(victim, span_horizonblue("You feel like [absorber.p_their()] entering your mind..."))
+	if(!do_after(absorber, 10 SECONDS, victim, extra_checks=CALLBACK(src, PROC_REF(still_near))))
+		return FALSE
+	victim.adjust_organ_loss(ORGAN_SLOT_BRAIN, 10, 80)
+	victim.Paralyze(8 SECONDS)
+	to_chat(absorber, span_horizonblue("You're trying to get [victim]'s memories..."))
+	to_chat(victim, span_horizonblue("You feel like [absorber.p_their()] touching your memories..."))
+	victim.adjust_organ_loss(ORGAN_SLOT_BRAIN, 20, 80)
+	victim.Paralyze(8 SECONDS)
+	if(!do_after(absorber, 10 SECONDS, victim, extra_checks=CALLBACK(src, PROC_REF(still_near), absorber, victim)))
+		return FALSE
+	to_chat(absorber, span_horizonblue("You trying to absorb [victim]'s Zona Bovinae..."))
+	to_chat(victim, span_horizonblue("You feel like [absorber.p_their()] empties your mind..."))
+	if(!do_after(absorber, 10 SECONDS, victim, extra_checks=CALLBACK(src, PROC_REF(still_near), absorber, victim)))
+		return FALSE
+	victim.adjust_organ_loss(ORGAN_SLOT_BRAIN, 50, 80)
+	victim.Paralyze(8 SECONDS)
+	psionic_datum.psi_point += 1
+	to_chat(absorber, span_horizonblue("You absorbed [victim]'s Zona Bovinae!"))
+	to_chat(victim, span_horizonblue("You feel like your mind shattered."))
+
+/datum/action/cooldown/spell/psionic/zona_bovinae/proc/still_near(mob/living/carbon/human/absorber, mob/living/carbon/human/victim)
+	if(QDELETED(absorber))
+		return FALSE
+	if(QDELETED(victim))
+		return FALSE
+	if(!absorber.Adjacent(victim))
+		return FALSE
+	if(victim.stat == DEAD)
+		return FALSE
+	if(absorber.stat == DEAD)
+		return FALSE
+	if(absorber.grab_state < GRAB_AGGRESSIVE)
+		to_chat(absorber, span_horizonblue("Must have agressive grab!"))
+		return FALSE
+	if(!absorber.pulling == victim)
+		return FALSE
+	return TRUE
+
+/datum/action/cooldown/spell/psionic/shockwave
+	name = "Psionic Shockwave"
+	desc = "Create a wave of telekinetic energy to pummel the ground around you."
+	button_icon_state = "tech_corona"
+	category = "Tier 2"
+	mana_cost = 20
+	cooldown_time = 50 SECONDS
+	point_cost = 1
+	locked = FALSE
+	psionic_level = 2
+
+/datum/action/cooldown/spell/psionic/shockwave/before_cast(atom/cast_on)
+	. = ..()
+	if(isspaceturf(get_turf(cast_on)))
+		to_chat(cast_on, span_horizonblue("You charge your shockwave, slam your foot down... and then remember that you're in space."))
+		return SPELL_CANCEL_CAST
+
+/datum/action/cooldown/spell/psionic/shockwave/cast(atom/cast_on)
+	. = ..()
+	for(var/mob/living/victims as anything in get_hearers_in_view(7, cast_on))
+		if(!isliving(victims))
+			continue
+		if(victims == cast_on)
+			continue
+		shake_camera(victims, 2 SECONDS, 2)
+		victims.Paralyze(2 SECONDS)
+	cast_on.visible_message(span_horizonblue("[cast_on]'s foot starts to cover in blue energy, and then he stomps on the floor"), span_horizonblue("You channel psionic energy into your foot, and then stomp on the floor."))
+
+/datum/action/cooldown/spell/psionic/time_stop
+	name = "Time Stop"
+	desc = "Create a wave of telekinetic energy to pummel the ground around you."
+	button_icon_state = "tech_control"
+	category = "Tier 2"
+	mana_cost = 80
+	cooldown_time = 120 SECONDS
+	point_cost = 3
+	locked = FALSE
+	psionic_level = 2
+
+/datum/action/cooldown/spell/psionic/time_stop/cast(atom/cast_on)
+	. = ..()
+	var/list/default_immune_atoms = list()
+	default_immune_atoms += cast_on
+	new /obj/effect/timestop/magic(get_turf(cast_on), 1 * cast_power, 2 SECONDS * cast_power, default_immune_atoms)
+
+/datum/action/cooldown/spell/psionic/mirror_shade
+	name = "Mirror Shade"
+	desc = "Activate this spell to generate two psionic copies of yourself that will attack nearby mobs. These clones are not dense, will deal pain damage, and disappear \
+			after thirty seconds."
+	button_icon_state = "wiz_jaunt"
+	point_cost = 2
+	mana_cost = 30
+	cooldown_time = 100 SECONDS
+	locked = FALSE
+
+/datum/action/cooldown/spell/psionic/mirror_shade/cast(atom/cast_on)
+	. = ..()
+	for(var/i in 1 to 2)
+		var/mob/living/basic/illusion/bizarro = new(owner.loc)
+		bizarro.full_setup(owner, faction_override = list(FACTION_PSIONIC), life = 10 SECONDS, damage = 20, replicate = 5)
+		bizarro.melee_damage_type = STAMINA
+
+	owner.add_faction(FACTION_PSIONIC)
+	addtimer(CALLBACK(src, PROC_REF(stop_cast)), 10 SECONDS)
+
+/datum/action/cooldown/spell/psionic/mirror_shade/proc/stop_cast()
+	owner.remove_faction(FACTION_PSIONIC)

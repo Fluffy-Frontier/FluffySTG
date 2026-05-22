@@ -12,12 +12,6 @@
 	category = "Tier 2"
 	locked = FALSE
 
-/datum/action/cooldown/spell/conjure_item/psionic/psiblade/make_item(atom/caster)
-	var/obj/item/summoning_obj = item_type
-	summoning_obj.force = 15 * cast_power
-	summoning_obj.block_chance = 25 * cast_power
-	return ..()
-
 /obj/item/melee/psionic_blade
 	name = "psionic blade"
 	desc = "A concentrated collection of particles and energy that looks like a swords blade.."
@@ -27,13 +21,14 @@
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	w_class = WEIGHT_CLASS_HUGE
-	force = 15
+	force = 30
+	armour_penetration = 30
 	throwforce = 10
 	hitsound = 'sound/items/weapons/blade1.ogg'
 	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
 	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
 	sharpness = SHARP_EDGED
-	block_chance = 25
+	block_chance = 50
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	color = COLOR_BRIGHT_BLUE
 
@@ -45,7 +40,7 @@
 /datum/action/cooldown/spell/conjure_item/psionic/psitool
 	name = "Psionic tool"
 	desc = "Concentrates psionic energy to create a universal tool."
-	button_icon = 'icons/obj/antags/abductor.dmi'
+	button_icon = 'tff_modular/modules/psionics/icons/psi_items.dmi'
 	button_icon_state = "omnitool"
 	cooldown_time = 60 SECONDS
 	item_type = /obj/item/psionic_omnitool

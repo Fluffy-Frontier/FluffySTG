@@ -9,11 +9,11 @@
 
 /obj/item/organ/internal/cyberimp/brain/anti_psionic/on_mob_insert(mob/living/carbon/organ_owner, special, movement_flags)
 	. = ..()
-	ADD_TRAIT(organ_owner, TRAIT_PSI_SUPPRESSED, IMPLANT_TRAIT)
+	ADD_TRAIT(organ_owner, TRAIT_PSIONIC_SUPPRESSED, IMPLANT_TRAIT)
 
 /obj/item/organ/internal/cyberimp/brain/anti_psionic/on_mob_remove(mob/living/carbon/organ_owner, special)
 	. = ..()
-	REMOVE_TRAIT(organ_owner, TRAIT_PSI_SUPPRESSED, IMPLANT_TRAIT)
+	REMOVE_TRAIT(organ_owner, TRAIT_PSIONIC_SUPPRESSED, IMPLANT_TRAIT)
 
 // Увеличивает реген маны в 2 раза
 /obj/item/organ/internal/cyberimp/brain/pro_psionic

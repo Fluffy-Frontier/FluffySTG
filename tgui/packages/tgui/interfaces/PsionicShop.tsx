@@ -28,16 +28,13 @@ type Spell = {
   path: SpellTypePath;
   point_required: number;
   category: string;
+  icon: string;
 };
 
 type PsionicShopContext = {
   many_spells: Spell[];
   psi_points_count: number;
   researched_spells: SpellTypePath[];
-};
-
-const nameToIconState = (name: string): string => {
-  return name.toLowerCase().replace(/\s+/g, '_');
 };
 
 export const PsionicShop = (props) => {
@@ -192,7 +189,7 @@ const ItemList = (props: SpellListProps) => {
 
           const costDisplay = `Cost: ${spell.point_required} Psi`;
 
-          const iconState = nameToIconState(spell.name);
+          const iconState = spell.icon;
 
           return (
             <Stack.Item key={spell.path} mt={compactMode ? 0.5 : 1}>

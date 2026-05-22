@@ -47,7 +47,7 @@
 /mob/living/proc/get_psionic()
 	if(!psi_sensivity)
 		return FALSE
-	return psi_sensivity
+	return psi_sensivity || TRUE
 
 /datum/psionic
 	// Текущий владелец псионики
@@ -69,9 +69,12 @@
 	var/open_backpack = FALSE
 	// Магазин
 	var/datum/psionic_shop/psi_shop_datum
+	// Включалка магазина
 	var/datum/action/psionic_shop/psi_shop_action
 	// Список заклинаний
 	var/list/datum/action/cooldown/spell/learned_spells = list()
+	// Эта переменная, если равна FALSE, не позволяет как-либо усилить псионика.
+	var/zona_bovinae = TRUE
 
 /datum/psionic/proc/apply_to(mob/living/granted_to)
 	if(!granted_to)
@@ -128,7 +131,7 @@
 	for(var/datum/action/cooldown/spell/spells_to_remove in psi_owner.actions)
 		if(!spells_to_remove.psionic)
 			continue
-		spells_to_remove.Remove()
+		spells_to_remove.Remove(psi_owner)
 
 	if(psi_owner.hud_used)
 		var/datum/hud/psi_hud = psi_owner.hud_used
@@ -145,7 +148,9 @@
 	if(mana_level <= 0)
 		psi_owner.adjust_stamina_loss(200)
 		psi_owner.SetStun(5 SECONDS)
-
+		psi_owner.apply_status_effect(/datum/status_effect/psionic_exhaustion)
+		update_hud()
+		return FALSE
 	var/delta_time = DELTA_WORLD_TIME(SSmobs)
 	var/mob/living/carbon/human/human_holder = psi_owner
 	var/additional_mana = 1
@@ -153,7 +158,7 @@
 	if(psi_owner.has_status_effect(/datum/status_effect/drugginess)) // Наркота даёт бафф к генерации маны
 		additional_mana *= 1.5
 	if(HAS_TRAIT(psi_owner, TRAIT_PSIONIC_IMPLANT)) // Если есть имплант для увеличения регена маны
-		additional_mana *= 2
+		additional_mana *= 1.5
 	if(human_holder.is_blind())
 		additional_mana *= 1.5
 	adjust_psi_energy((1 * additional_mana) * delta_time)
@@ -179,7 +184,9 @@
 	psi_point = 10
 
 /datum/psionic/proc/is_suppressed()
-	if(HAS_TRAIT(psi_owner, TRAIT_PSI_SUPPRESSED))
+	if(HAS_TRAIT(psi_owner, TRAIT_PSIONIC_EXHAUSTION))
+		return TRUE
+	if(HAS_TRAIT(psi_owner, TRAIT_PSIONIC_SUPPRESSED))
 		return TRUE
 	return FALSE
 
@@ -205,9 +212,8 @@
 /datum/psionic/proc/research_spell(datum/action/cooldown/spell/spell_path)
 	if(!ispath(spell_path, /datum/action/cooldown/spell))
 		CRASH("Psionic research_spell attempted to purchase an invalid typepath! (got: [spell_path])")
-
 	if(spell_path.psionic_level > get_level())
-		to_chat(psi_owner, span_horizonblue("We have not enough psi power to get this spell!"))
+		to_chat(psi_owner, span_horizonblue("We have not enough psi rank to get this spell!"))
 		return FALSE
 	if(learned_spells[spell_path])
 		to_chat(psi_owner, span_horizonblue("We have already researched this spell!"))
@@ -215,6 +221,7 @@
 	if(psi_point < initial(spell_path.point_cost))
 		to_chat(psi_owner, span_horizonblue("We cant research this spell now!"))
 		return FALSE
+	psi_owner.playsound_local(psi_owner.loc, 'tff_modular/modules/psionics/sounds/power_evoke.ogg', 50, TRUE)
 
 	var/success = give_spell(spell_path)
 	if(success)
@@ -225,8 +232,8 @@
 	var/datum/action/cooldown/spell/new_action = new spell_path()
 
 	if(!new_action)
-		to_chat(psi_owner, "This is awkward. Psionic power purchase failed, please report this bug to a coder!")
-		CRASH("Psionic give_spell was unable to grant a new changeling action for path [spell_path]!")
+		to_chat(psi_owner, "This is awkward. Psionic spell research failed, please report this bug to a coder!")
+		CRASH("Psionic give_spell was unable to grant a new psionic action for path [spell_path]!")
 
 	learned_spells[spell_path] = new_action
 	new_action.Grant(psi_owner)
@@ -235,6 +242,23 @@
 
 /datum/psionic/proc/get_level()
 	return psionic_level
+
+/datum/status_effect/psionic_exhaustion
+	id = "psionic_exhaustion"
+	duration = 15 SECONDS
+	alert_type = null
+	var/icon/instabilityicon
+
+/datum/status_effect/psionic_exhaustion/on_apply()
+	. = ..()
+	instabilityicon = icon('tff_modular/modules/psionics/icons/spells.dmi', "instability")
+	owner.add_overlay(instabilityicon)
+	ADD_TRAIT(owner, TRAIT_PSIONIC_EXHAUSTION, PSIONIC_TRAIT)
+
+/datum/status_effect/psionic_exhaustion/on_remove()
+	. = ..()
+	REMOVE_TRAIT(owner, TRAIT_PSIONIC_EXHAUSTION, PSIONIC_TRAIT)
+	owner.cut_overlay(instabilityicon)
 
 #undef SENSITIVE_PSIONIC
 #undef HARMONIOUS_PSIONIC

@@ -56,6 +56,7 @@
 				"path" = spell_path,
 				"point_required" = spell_path.point_cost,
 				"category" = spell_path.category,
+				"icon" = spell_path.button_icon_state
 			)
 
 			spells += list(spell_data)
@@ -87,7 +88,7 @@
 /datum/action/psionic_shop
 	name = "Psionic Shop"
 	button_icon = 'tff_modular/modules/psionics/icons/spells.dmi'
-	button_icon_state = "controlled"
+	button_icon_state = "swarm_zeropoint"
 	background_icon_state = "bg_tech_blue"
 	overlay_icon_state = "bg_tech_blue_border"
 	check_flags = NONE
@@ -103,4 +104,4 @@
 	if(!.)
 		return
 	target.ui_interact(owner)
-
+	clicker.playsound_local(clicker.loc, 'tff_modular/modules/psionics/sounds/power_fabrication.ogg', 50, TRUE)

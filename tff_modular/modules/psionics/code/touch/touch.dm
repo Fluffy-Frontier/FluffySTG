@@ -7,8 +7,7 @@
 /datum/action/cooldown/spell/touch/psionic/assay
 	name = "Psionic Assay"
 	desc = "Check if the target is a psionic."
-	button_icon = 'icons/obj/medical/organs/organs.dmi'
-	button_icon_state = "brain"
+	button_icon_state = "tech_audibledeception"
 	cooldown_time = 60 SECONDS
 	mana_cost = 10
 	target_msg = "Your get a headache, but it quickly fades."
@@ -51,10 +50,10 @@
 
 // Читаем разум. Выдаёт: последние сейлоги, интент, настоящее имя, воспоминания, намёк на работу, намёк на то, что в антаг_датум что то есть.
 /datum/action/cooldown/spell/touch/psionic/mind_read
-	name = "Psionic Mind Read"
+	name = "Psionic Read Mind"
 	desc = "Rudely intrude into targets thoughts."
-	button_icon_state = "mindread"
-	cooldown_time = 3 SECONDS
+	button_icon_state = "tech_illusion"
+	cooldown_time = 5 SECONDS
 	mana_cost = 20
 	target_msg = "You feel someone else in your head."
 
@@ -62,8 +61,9 @@
 	draw_message = span_notice("You ready your hand to read someones mind.")
 	drop_message = span_notice("You lower your hand.")
 	can_cast_on_self = FALSE
-	psionic_level = 3
+	psionic_level = 1
 	locked = FALSE
+	channel_time = 2 SECONDS
 
 /datum/action/cooldown/spell/touch/psionic/mind_read/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/mendicant)
 	if(ishuman(victim))
@@ -175,9 +175,8 @@
 // Если уровень Эпсилон - удаляет лярвы ксеноморфов.
 /datum/action/cooldown/spell/touch/psionic/mending
 	name = "Psionic Mending"
-	desc = "Mend a creature's wounds. This handles internal wounds as well, such as ruptured organs and broken bones."
-	button_icon = 'tff_modular/modules/psionics/icons/actions.dmi'
-	button_icon_state = "mending_touch"
+	desc = "Mend a creature's wounds. This handles internal wounds as well."
+	button_icon_state = "tech_biomedaura"
 	cooldown_time = 50 SECONDS
 	mana_cost = 30
 	target_msg = "You body numbs a little."
@@ -186,6 +185,7 @@
 	drop_message = span_notice("You lower your hand.")
 	can_cast_on_self = TRUE
 	locked = FALSE
+	channel_time = 2 SECONDS
 
 /datum/action/cooldown/spell/touch/psionic/mending/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/mendicant)
 	if(ishuman(victim))
@@ -197,7 +197,7 @@
 			to_chat(human_victim, span_notice("Psionic nearby tries to mend you."))
 		else
 			to_chat(human_victim, span_warning(target_msg))
-		if(!do_after(mendicant, 5 SECONDS, human_victim, IGNORE_SLOWDOWNS, TRUE))
+		if(!do_after(mendicant, 5 SECONDS / cast_power, human_victim, IGNORE_SLOWDOWNS, TRUE))
 			return FALSE
 		else
 			try_heal_all(human_victim)
@@ -231,26 +231,79 @@
 		if(drop_loc)
 			parasite.forceMove(drop_loc)
 
+	var/damage_to_heal = 30 * cast_power
+	patient.heal_overall_damage(damage_to_heal, damage_to_heal, damage_to_heal)
+
 /datum/action/cooldown/spell/touch/psionic/electrocute
 	name = "Psionic Electrocute"
 	desc = "Administer a painful amount of psionic shock to the nervous system of a foe in melee range, causing burn and agony damage."
-	button_icon_state = "chain_lighting"
-	cooldown_time = 10 SECONDS
+	button_icon_state = "tech_shockaura"
+	cooldown_time = 20 SECONDS
 	point_cost = 2
 	mana_cost = 10
 	psionic_level = 2
 	hand_path = /obj/item/melee/touch_attack/psionic/chain_lighting
 	locked = FALSE
 	category = "Tier 2"
+	channel_time = 1 SECONDS
 
 /datum/action/cooldown/spell/touch/psionic/electrocute/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)
 	. = ..()
 	if(ishuman(victim))
 		var/mob/living/carbon/human/human_living = victim
 		human_living.adjust_fire_loss(20)
-		human_living.electrocute_act(10, jitter_time = 2 SECONDS, stutter_time = 2 SECONDS, stun_duration = 2 SECONDS)
+		human_living.electrocute_act(10, owner, jitter_time = 2 SECONDS, stutter_time = 2 SECONDS, stun_duration = 2 SECONDS)
+		return TRUE
 	else
 		return FALSE
+
+/datum/action/cooldown/spell/touch/psionic/rend
+	name = "Psionic Rend"
+	desc = "Rend an adjacent target's biomolecular state apart. Very powerful, but with an extremely long cooldown and a huge psi-stamina cost. \
+			Activate it in your hand to switch to a structure mode, in which you cannot target living beings but you can tear apart \
+			walls and airlocks."
+	button_icon_state = "gen_dissolve"
+	category = "Tier 2"
+	cooldown_time = 120 SECONDS
+	point_cost = 4
+	mana_cost = 80
+	psionic_level = 2
+	hand_path = /obj/item/melee/touch_attack/psionic/rend
+	locked = FALSE
+	channel_time = 1 SECONDS
+	var/structure_mode = FALSE
+
+/datum/action/cooldown/spell/touch/psionic/rend/is_valid_target(atom/cast_on)
+	. = ..()
+	if(structure_mode)
+		if(!iswallturf(cast_on) && !istype(cast_on, /obj/machinery/door/airlock))
+			return FALSE
+	return TRUE
+
+/datum/action/cooldown/spell/touch/psionic/rend/cast(atom/cast_on)
+	. = ..()
+	if(structure_mode)
+		if(iswallturf(cast_on))
+			var/turf/closed/wall/wall = cast_on
+			var/base_time = 3 SECONDS
+			if(istype(wall, /turf/closed/wall/r_wall))
+				base_time += 7 SECONDS
+			owner.visible_message(span_warning("[owner] lays [owner.p_their()] palms on \the [wall] and begins discharging psionic energy on it..."),
+								span_warning("You lay your palms on \the [wall] and begin permeating psionic energy through its structure..."))
+			if(do_after(owner, base_time, wall))
+				owner.visible_message(span_warning("[owner] disintegrates \the [wall]!"), span_warning("You disintegrate \the [wall]!"))
+				wall.dismantle_wall(devastated = FALSE)
+		else if(istype(cast_on, /obj/machinery/door/airlock))
+			var/obj/machinery/door/airlock/A = cast_on
+			var/base_time = 5 SECONDS
+			owner.visible_message(span_warning("[owner] lays [owner.p_their()] palms on \the [A] and begins discharging psionic energy on it..."),
+							span_warning("You lay your palms on \the [A] and begin permeating psionic energy through its structure..."))
+			if(do_after(owner, base_time))
+				owner.visible_message(span_warning("[owner] disintegrates \the [A]!"), span_warning("You disintegrate \the [A]!"))
+				playsound(A, 'sound/effects/meteorimpact.ogg', 40)
+				qdel(A)
+
+	return TRUE
 
 #undef IS_HYPNOTIZED
 #undef IS_OBSESSED

@@ -21,6 +21,8 @@
 	var/helptext = ""
 	// Доступ
 	var/locked = TRUE
+	// Игнорируем ли мы подавление/отсутствие маны?
+	var/ignore_suppression = FALSE
 
 /datum/action/cooldown/spell/Grant(mob/grant_to)
 	. = ..()
@@ -31,7 +33,8 @@
 
 /datum/action/cooldown/spell/update_button_name(atom/movable/screen/movable/action_button/button, force)
 	. = ..()
-	button.desc += " Costs [mana_cost] Psi Energy."
+	if(mana_cost)
+		button.desc += " Costs [mana_cost] Psi Energy."
 
 // Спеллы для призвания предмета
 /datum/action/cooldown/spell/conjure_item/psionic
@@ -55,10 +58,15 @@
 /datum/action/cooldown/spell/proc/check_for_mana()
 	var/mob/living/carbon/human/caster = owner
 	var/datum/psionic/psi_holder = caster.get_psionic()
-	if(psi_holder)
-		return TRUE
-	else
+	if(!psi_holder)
 		return FALSE
+	if(HAS_TRAIT(caster, TRAIT_PSIONIC_EXHAUSTION))
+		return FALSE
+	if(HAS_TRAIT(caster, TRAIT_PSIONIC_SUPPRESSED))
+		if(ignore_suppression)
+			return TRUE
+		return FALSE
+	return TRUE
 
 // Сосём ману у псионика
 /datum/action/cooldown/spell/proc/drain_mana()
@@ -70,15 +78,10 @@
 	else
 		return FALSE
 
-/datum/action/cooldown/spell/conjure_item/psionic/can_cast_spell(feedback)
+/datum/action/cooldown/spell/conjure_item/psionic/before_cast(atom/cast_on)
 	. = ..()
-	if(!.)
-		return FALSE
-
 	if(!check_for_mana())
-		return FALSE
-	else
-		return TRUE
+		return SPELL_CANCEL_CAST
 
 /datum/action/cooldown/spell/conjure_item/psionic/cast(atom/cast_on)
 	drain_mana()
@@ -99,19 +102,10 @@
 	psionic = TRUE
 	psionic_level = 1
 
-/datum/action/cooldown/spell/psionic/New(Target, power, additional_school)
+/datum/action/cooldown/spell/psionic/before_cast(atom/cast_on)
 	. = ..()
-	cast_power = power
-
-/datum/action/cooldown/spell/psionic/can_cast_spell(feedback)
-	. = ..()
-	if(!.)
-		return FALSE
-
 	if(!check_for_mana())
-		return FALSE
-	else
-		return TRUE
+		return SPELL_CANCEL_CAST
 
 // Спеллы для пострелушек
 /datum/action/cooldown/spell/pointed/projectile/psionic
@@ -128,19 +122,10 @@
 	psionic = TRUE
 	cast_range = 7
 
-/datum/action/cooldown/spell/pointed/projectile/psionic/New(Target, power, additional_school)
+/datum/action/cooldown/spell/pointed/projectile/psionic/before_cast(atom/cast_on)
 	. = ..()
-	cast_power = power
-
-/datum/action/cooldown/spell/pointed/projectile/psionic/can_cast_spell(feedback)
-	. = ..()
-	if(!.)
-		return FALSE
-
 	if(!check_for_mana())
-		return FALSE
-	else
-		return TRUE
+		return SPELL_CANCEL_CAST
 
 // Направленные спеллы a.k.a. псионик выбирают цель на дистанции
 /datum/action/cooldown/spell/pointed/psionic
@@ -156,21 +141,12 @@
 	psionic = TRUE
 	cast_range = 7
 
-/datum/action/cooldown/spell/pointed/psionic/New(Target, power, additional_school)
+/datum/action/cooldown/spell/pointed/psionic/before_cast(atom/cast_on)
 	. = ..()
-	cast_power = power
-
-/datum/action/cooldown/spell/pointed/psionic/can_cast_spell(feedback)
-	. = ..()
-	if(!.)
-		return FALSE
-
 	if(!check_for_mana())
-		return FALSE
-	else
-		return TRUE
+		return SPELL_CANCEL_CAST
 
-// Спеллы которыми надо каснуться чего либо
+// Спеллы которыми надо коснуться чего либо. Перед активацией имеется "этап активации" заклинания.
 /datum/action/cooldown/spell/touch/psionic
 	button_icon = 'tff_modular/modules/psionics/icons/spells.dmi'
 	background_icon_state = "bg_tech_blue"
@@ -181,30 +157,95 @@
 	invocation_type = INVOCATION_NONE
 	spell_requirements = NONE
 	psionic = TRUE
+	var/channel_message
+	var/currently_channeling = FALSE
+	var/channel_time = 1 SECONDS
+	var/channel_flags = IGNORE_USER_LOC_CHANGE|IGNORE_HELD_ITEM
+	var/charge_overlay_icon = 'icons/effects/effects.dmi'
+	var/charge_overlay_state = "lighting"
+	var/mutable_appearance/charge_overlay_instance
+	var/charge_sound = 'tff_modular/modules/psionics/sounds/power_evoke.ogg'
+	var/sound/charge_sound_instance
 
-/datum/action/cooldown/spell/touch/psionic/New(Target, power, additional_school)
+/datum/action/cooldown/spell/touch/psionic/New(Target, original)
 	. = ..()
-	cast_power = power
+	if(!channel_message)
+		channel_message = span_notice("You start charging [src]...")
 
-/datum/action/cooldown/spell/touch/psionic/can_cast_spell(feedback)
+	if(charge_sound)
+		charge_sound_instance = sound(charge_sound, channel = CHANNEL_CHARGED_SPELL)
+
+	if(charge_overlay_icon && charge_overlay_state)
+		charge_overlay_instance = mutable_appearance(charge_overlay_icon, charge_overlay_state, EFFECTS_LAYER)
+
+
+/datum/action/cooldown/spell/touch/psionic/Destroy()
+	if(owner)
+		stop_channel_effect(owner)
+
+	charge_overlay_instance = null
+	charge_sound_instance = null
+	return ..()
+
+/datum/action/cooldown/spell/touch/psionic/Remove(mob/living/remove_from)
+	stop_channel_effect(remove_from)
+	return ..()
+
+/datum/action/cooldown/spell/touch/psionic/is_action_active(atom/movable/screen/movable/action_button/current_button)
+	return currently_channeling
+
+/datum/action/cooldown/spell/touch/psionic/can_cast_spell(feedback = TRUE)
 	. = ..()
 	if(!.)
 		return FALSE
-
+	if(currently_channeling)
+		if(feedback)
+			to_chat(owner, span_warning("You're already channeling [src]!"))
+		return FALSE
 	if(!check_for_mana())
 		return FALSE
-	else
-		return TRUE
+	return TRUE
+
+
+/datum/action/cooldown/spell/touch/psionic/before_cast(atom/cast_on)
+	. = ..()
+	if(. & SPELL_CANCEL_CAST)
+		return
+	if(!check_for_mana())
+		return SPELL_CANCEL_CAST
+	to_chat(owner, channel_message)
+
+	if(charge_sound_instance)
+		playsound(owner, charge_sound_instance, 50, FALSE)
+
+	if(charge_overlay_instance)
+		owner.add_overlay(charge_overlay_instance)
+
+	currently_channeling = TRUE
+	build_all_button_icons(UPDATE_BUTTON_STATUS)
+	if(!do_after(owner, channel_time, timed_action_flags = channel_flags))
+		stop_channel_effect(owner)
+		return . | SPELL_CANCEL_CAST
+
+/datum/action/cooldown/spell/touch/psionic/cast(atom/cast_on)
+	. = ..()
+	stop_channel_effect(owner)
+
+/datum/action/cooldown/spell/touch/psionic/proc/stop_channel_effect(mob/for_who)
+	if(charge_overlay_instance)
+		for_who.cut_overlay(charge_overlay_instance)
+
+	if(charge_sound_instance)
+		for_who.stop_sound_channel(CHANNEL_CHARGED_SPELL)
+		playsound(for_who, sound(null, repeat = 0, channel = CHANNEL_CHARGED_SPELL), 50, FALSE)
+
+	currently_channeling = FALSE
+	build_all_button_icons(UPDATE_BUTTON_STATUS)
 
 /datum/action/cooldown/spell/touch/psionic/create_hand(mob/living/carbon/cast_on)
 	. = ..()
 	if(!.)
 		return .
-	var/obj/item/bodypart/transfer_limb = cast_on.get_active_hand()
-	if(IS_ROBOTIC_LIMB(transfer_limb))
-		to_chat(cast_on, span_notice("You fail to channel your psionic powers through your inorganic hand."))
-		return FALSE
-
 	return TRUE
 
 /particles/droplets/psionic

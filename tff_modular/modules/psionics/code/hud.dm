@@ -34,7 +34,7 @@
 
 	msg += span_horizonblue("Your current maximum is: [psi_datum.max_mana].")
 
-	msg += span_cult_large("\n<b>Right now, you are feeling <i>[psylevel].</i></b>")
+	msg += span_big(span_horizonblue("\n<b>Right now, you are feeling <i>[psylevel].</i></b>"))
 
 	to_chat(usr, boxed_message(msg.Join("\n")))
 
@@ -55,20 +55,19 @@
 	msg += span_horizonblue("This is your Psionic Signal.")
 	msg += span_horizonblue("This signal allows the psionics to sense each other. When there is a psionic nearby, this signal starts to glow blue.")
 	msg += span_horizonblue("If your psionic being suppressed, you can't sense the psionics nearby, but they can't sense you either.")
-	msg += span_horizonblue("\n<b>Some extremely powerful psionics are able to partially suppress their signal.</b>")
+	msg += span_horizonblue("\n<b>Some psionics are able to suppress their signal.</b>")
 
 	to_chat(usr, boxed_message(msg.Join("\n")))
 
 /datum/psionic/proc/update_hud()
 	var/psi_energy_color
 	var/psi_energy_icon_state
-	switch(mana_level)
-		if(-100 to 0)
-			psi_energy_color = "#480607"
-			psi_energy_icon_state = "psi_suppressed"
-		if(1 to INFINITY)
-			psi_energy_color = "#00BFFF"
-			psi_energy_icon_state = "psi_active"
+	if(HAS_TRAIT(psi_owner, TRAIT_PSIONIC_EXHAUSTION) || HAS_TRAIT(psi_owner, TRAIT_PSIONIC_SUPPRESSED))
+		psi_energy_color = "#480607"
+		psi_energy_icon_state = "psi_suppressed"
+	else
+		psi_energy_color = "#00BFFF"
+		psi_energy_icon_state = "psi_active"
 
 	var/atom/movable/screen/psionic/psionic_energy/psi_display = psi_owner?.hud_used?.screen_objects[HUD_PSI_DISPLAY]
 	psi_display?.maptext = FORMAT_PSI_HUD_TEXT(psi_energy_color, mana_level)
