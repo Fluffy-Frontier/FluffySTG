@@ -2,6 +2,7 @@
 #define TRAIT_PSIONIC_IMPLANT "psionic_implant"
 #define TRAIT_PSIONIC_SUPPRESSED "psionic_suppressed"
 #define TRAIT_PSIONIC_EXHAUSTION "psionic_exhaustion"
+#define TRAIT_ZONA_BOVINAE_ABSORBED "zona_bovinae_absorbed"
 #define SUNDER_TRAIT "sunder_trait"
 #define PSIONIC_TRAIT "psionic_trait"
 #define HUD_PSI_DISPLAY "hud_psi_display"

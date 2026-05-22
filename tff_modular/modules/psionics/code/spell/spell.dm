@@ -311,64 +311,6 @@
 
 	return balloon_message
 
-/datum/action/cooldown/spell/pointed/psionic/zona_bovinae
-	name = "Zona Bovinae Absorption"
-	desc = "Absorb a psionic energy from a being's Zona Bovinae, granting you an extra point to be used in the Point Shop."
-	button_icon_state = "tech_illusion"
-	mana_cost = 0
-	cooldown_time = 10 SECONDS
-	point_cost = 1
-	locked = FALSE
-	psionic_level = 2
-	category = "Tier 2"
-	cast_range = 2
-
-/datum/action/cooldown/spell/pointed/psionic/zona_bovinae/is_valid_target(atom/cast_on)
-	. = ..()
-	var/mob/living/carbon/human/victim = cast_on
-	if(!iscarbon(victim))
-		to_chat(owner, span_horizonblue("Victim need to be a humanoid!"))
-		return FALSE
-	if(!victim.mind)
-		to_chat(owner, span_horizonblue("Victim need to have mind!"))
-		return FALSE
-	if(victim.stat == DEAD)
-		to_chat(owner, span_horizonblue("There is nothing interesting..."))
-		return FALSE
-	return TRUE
-
-/datum/action/cooldown/spell/pointed/psionic/zona_bovinae/cast(atom/cast_on)
-	. = ..()
-	var/mob/living/carbon/human/absorber = owner
-	var/mob/living/carbon/human/victim = cast_on
-	to_chat(absorber, span_horizonblue("You're trying to get into the [victim]'s mind..."))
-	to_chat(victim, span_horizonblue("You feel like [absorber] entering your mind..."))
-	if(!do_after(absorber, 10 SECONDS, victim, extra_checks=CALLBACK(src, PROC_REF(still_near))))
-		return FALSE
-	victim.adjust_organ_loss(ORGAN_SLOT_BRAIN, 10, 80)
-	victim.Paralyze(8 SECONDS)
-	to_chat(absorber, span_horizonblue("You're trying to get [victim]'s memories..."))
-	to_chat(victim, span_horizonblue("You feel like [absorber] touching your memories..."))
-	victim.adjust_organ_loss(ORGAN_SLOT_BRAIN, 20, 80)
-	victim.Paralyze(8 SECONDS)
-	if(!do_after(absorber, 10 SECONDS, victim, extra_checks=CALLBACK(src, PROC_REF(still_near))))
-		return FALSE
-	to_chat(absorber, span_horizonblue("You trying to absorb [victim]'s Zona Bovinae..."))
-	to_chat(victim, span_horizonblue("You feel like [absorber] empties your mind..."))
-	if(!do_after(absorber, 10 SECONDS, victim, extra_checks=CALLBACK(src, PROC_REF(still_near))))
-		return FALSE
-	victim.adjust_organ_loss(ORGAN_SLOT_BRAIN, 50, 80)
-	victim.Paralyze(8 SECONDS)
-	psionic_datum.psi_point += 1
-	to_chat(absorber, span_horizonblue("You absorbed [victim]'s Zona Bovinae!"))
-	to_chat(victim, span_horizonblue("You feel like your mind shattered."))
-
-/datum/action/cooldown/spell/pointed/psionic/zona_bovinae/proc/still_near(mob/living/carbon/human/absorber, mob/living/carbon/human/victim)
-	var/distance = get_dist(absorber, victim)
-	if(distance > cast_range)
-		return FALSE
-	return TRUE
-
 /datum/action/cooldown/spell/psionic/shockwave
 	name = "Psionic Shockwave"
 	desc = "Create a wave of telekinetic energy to pummel the ground around you."
@@ -413,42 +355,3 @@
 	var/list/default_immune_atoms = list()
 	default_immune_atoms += cast_on
 	new /obj/effect/timestop/magic(get_turf(cast_on), 1 * cast_power, 2 SECONDS * cast_power, default_immune_atoms)
-
-/datum/action/cooldown/spell/psionic/mirror_shade
-	name = "Mirror Shade"
-	desc = "Activate this spell to generate two psionic copies of yourself that will attack nearby mobs. These clones are not dense, will deal pain damage, and disappear \
-			after 15 seconds."
-	button_icon_state = "wiz_jaunt"
-	point_cost = 2
-	mana_cost = 30
-	cooldown_time = 100 SECONDS
-	locked = FALSE
-	var/list/mob/mobs_to_attack = list()
-
-/datum/action/cooldown/spell/psionic/mirror_shade/cast(atom/cast_on)
-	. = ..()
-	for(var/mob/living/carbon/human as anything in view(7, cast_on))
-		if(!iscarbon(human))
-			continue
-		if(human.stat == DEAD)
-			continue
-		if(human == owner)
-			continue
-
-		mobs_to_attack += human
-
-	if(isnull(mobs_to_attack))
-		return FALSE
-
-	for(var/i in 1 to 2)
-		var/mob/living/basic/illusion/bizarro = new(owner.loc)
-		var/mob/who_to_attack = pick(mobs_to_attack)
-		bizarro.full_setup(owner, who_to_attack, faction_override = list(FACTION_PSIONIC), life = 15 SECONDS, damage = 20, replicate = 5)
-		bizarro.melee_damage_type = STAMINA
-
-	owner.add_faction(FACTION_PSIONIC)
-	addtimer(CALLBACK(src, PROC_REF(stop_cast)), 15 SECONDS)
-
-/datum/action/cooldown/spell/psionic/mirror_shade/proc/stop_cast()
-	owner.remove_faction(FACTION_PSIONIC)
-	mobs_to_attack = null
