@@ -322,6 +322,12 @@
 	locked = FALSE
 	psionic_level = 2
 
+/datum/action/cooldown/spell/psionic/shockwave/can_cast_spell(feedback)
+	. = ..()
+	if(HAS_TRAIT(owner, TRAIT_INCAPACITATED))
+		return FALSE
+	return TRUE
+
 /datum/action/cooldown/spell/psionic/shockwave/before_cast(atom/cast_on)
 	. = ..()
 	if(isspaceturf(get_turf(cast_on)))
@@ -354,4 +360,10 @@
 	. = ..()
 	var/list/default_immune_atoms = list()
 	default_immune_atoms += cast_on
-	new /obj/effect/timestop/magic(get_turf(cast_on), 1 * cast_power, 2 SECONDS * cast_power, default_immune_atoms)
+	new /obj/effect/timestop/magic(get_turf(cast_on), 1, 2 SECONDS * cast_power, default_immune_atoms)
+
+/datum/action/cooldown/spell/psionic/time_stop/can_cast_spell(feedback)
+	. = ..()
+	if(HAS_TRAIT(owner, TRAIT_INCAPACITATED))
+		return FALSE
+	return TRUE

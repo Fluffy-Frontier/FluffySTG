@@ -12,8 +12,6 @@
 	quirk_flags = QUIRK_HIDE_FROM_SCAN|QUIRK_HUMAN_ONLY|QUIRK_PROCESSES // Сканеры не видят псиоников. Только псионик школы может точно определить, является ли живое существо псиоником
 	gain_text = span_cyan("You mind feels uneasy, but... so powerful.")
 	lose_text = span_warning("You lost something that kept your connection with other realms.")
-	icon = "fa-star"
-	mob_trait = TRAIT_PSIONIC_USER
 	nova_stars_only = TRUE
 	allow_for_donator = TRUE
 
@@ -47,7 +45,7 @@
 /mob/living/proc/get_psionic()
 	if(!psi_sensivity)
 		return FALSE
-	return psi_sensivity || TRUE
+	return psi_sensivity
 
 /datum/psionic
 	// Текущий владелец псионики
@@ -81,16 +79,16 @@
 		CRASH("Tried to add psionic without owner")
 
 	psi_owner = granted_to
-	psi_owner.psi_sensivity = src
-
-	RegisterSignal(psi_owner, COMSIG_MOB_HUD_CREATED, PROC_REF(on_hud_created))
-	RegisterSignal(psi_owner, COMSIG_LIVING_LIFE, PROC_REF(psionic_life))
+	granted_to.psi_sensivity = src
+	ADD_TRAIT(granted_to, TRAIT_PSIONIC_USER, PSIONIC_TRAIT)
+	RegisterSignal(granted_to, COMSIG_MOB_HUD_CREATED, PROC_REF(on_hud_created))
+	RegisterSignal(granted_to, COMSIG_LIVING_LIFE, PROC_REF(psionic_life))
 
 	if(license)
-		var/obj/item/card/psionic_license/new_license = new(psi_owner)
+		var/obj/item/card/psionic_license/new_license = new(granted_to)
 		give_item_to_holder(new_license, list(LOCATION_BACKPACK = ITEM_SLOT_BACK, LOCATION_HANDS = ITEM_SLOT_HANDS), flavour_text = "Make sure not to lose it. You can not remake this on the station.")
 
-	if(psi_owner.hud_used)
+	if(granted_to.hud_used)
 		on_hud_created()
 
 	add_shop()
@@ -125,7 +123,7 @@
 /datum/psionic/Destroy(force)
 	. = ..()
 	UnregisterSignal(psi_owner, COMSIG_MOB_HUD_CREATED)
-	RegisterSignal(psi_owner, COMSIG_LIVING_LIFE, PROC_REF(psionic_life))
+	UnregisterSignal(psi_owner, COMSIG_LIVING_LIFE, PROC_REF(psionic_life))
 	QDEL_NULL(psi_shop_action)
 	QDEL_NULL(psi_shop_datum)
 	for(var/datum/action/cooldown/spell/spells_to_remove in psi_owner.actions)
@@ -137,6 +135,8 @@
 		var/datum/hud/psi_hud = psi_owner.hud_used
 		psi_hud.remove_screen_object(HUD_PSI_DISPLAY)
 		psi_hud.remove_screen_object(HUD_PSI_SIGNAL)
+
+	REMOVE_TRAIT(psi_owner, TRAIT_PSIONIC_USER, PSIONIC_TRAIT)
 
 /datum/psionic/proc/psionic_life(seconds_per_tick)
 	SIGNAL_HANDLER

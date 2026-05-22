@@ -37,7 +37,7 @@
 	click_cd_override = 1
 	cooldown_time = 20 SECONDS
 	psionic_level = 2
-	mana_cost = 30
+	mana_cost = 50
 	point_cost = 3
 	cast_range = 40
 	locked = FALSE
@@ -53,6 +53,10 @@
 	/// The location spread of the spell cards when fired.
 	var/projectile_location_spread_amount = 12
 
+/datum/action/cooldown/spell/pointed/projectile/psionic/lighting/can_cast_spell(feedback)
+	. = ..()
+	if(HAS_TRAIT(owner, TRAIT_INCAPACITATED))
+		return FALSE
 
 /datum/action/cooldown/spell/pointed/projectile/psionic/lighting/ready_projectile(obj/projectile/to_fire, atom/target, mob/user, iteration)
 	. = ..()
@@ -72,7 +76,7 @@
 
 /obj/projectile/beam/emitter/hitscan/lighting
 	name = "psionic lightning"
-	damage = 20
+	damage = 10
 	armour_penetration = 30
 	damage_type = BURN
 	pass_flags = PASSTABLE | PASSGRILLE | PASSGLASS
