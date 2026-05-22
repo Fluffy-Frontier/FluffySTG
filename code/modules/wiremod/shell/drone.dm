@@ -13,9 +13,11 @@
 	living_flags = NONE
 	light_system = OVERLAY_LIGHT_DIRECTIONAL
 	light_on = FALSE
+	resistance_flags = LAVA_PROOF | FIRE_PROOF // FLUFFY FRONTIER ADD
 
 /mob/living/circuit_drone/Initialize(mapload)
 	. = ..()
+	add_traits(list(TRAIT_LAVA_IMMUNE, TRAIT_ASHSTORM_IMMUNE, TRAIT_SNOWSTORM_IMMUNE), INNATE_TRAIT) // FLUFFY FRONTIER ADD
 	AddComponent(/datum/component/shell, list(
 		new /obj/item/circuit_component/bot_circuit(),
 		new /obj/item/circuit_component/remotecam/drone()

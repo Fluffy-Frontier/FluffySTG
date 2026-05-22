@@ -41,6 +41,7 @@
 	icon_state = "setup_medium_med-open"
 	shell_to_spawn = /mob/living/circuit_drone
 	w_class = WEIGHT_CLASS_SMALL
+	resistance_flags = LAVA_PROOF | FIRE_PROOF // FLUFFY FRONTIER ADD
 
 /obj/item/shell/server
 	name = "server assembly"
