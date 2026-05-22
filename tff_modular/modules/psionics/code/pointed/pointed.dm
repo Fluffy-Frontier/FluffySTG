@@ -684,7 +684,7 @@
 /datum/action/cooldown/spell/pointed/psionic/awakening/before_cast(atom/cast_on)
 	. = ..()
 	var/mob/living/victim = cast_on
-	if(HAS_TRAIT(cast_on, TRAIT_PSIONIC_USER))
+	if(HAS_TRAIT(victim, TRAIT_PSIONIC_USER))
 		is_psionic = TRUE
 
 /datum/action/cooldown/spell/pointed/psionic/awakening/cast(atom/cast_on)
