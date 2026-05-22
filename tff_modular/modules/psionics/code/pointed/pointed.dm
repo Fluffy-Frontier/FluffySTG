@@ -656,7 +656,7 @@
 	return TRUE
 
 /datum/action/cooldown/spell/pointed/psionic/awakening
-	name = "Psionic Awakening"
+	name = "Psionic Awaken"
 	desc = "Stimulate a living being's Zona Bovinae and bring them to Psionically Harmonious rank."
 	button_icon_state = "const_repairaura"
 	mana_cost = 0
