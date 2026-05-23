@@ -50,10 +50,6 @@
 	cooldown_reduction_per_rank = 0 SECONDS
 	psionic = TRUE
 
-/datum/action/cooldown/spell/conjure_item/psionic/New(Target, power)
-	. = ..()
-	cast_power = power
-
 // Проверяем достаточно ли маны
 /datum/action/cooldown/spell/proc/check_for_mana()
 	var/mob/living/carbon/human/caster = owner
