@@ -4,7 +4,7 @@
 	name = "Psionic Mending"
 	desc = "Mend a creature's wounds. This handles internal wounds as well."
 	button_icon_state = "tech_biomedaura"
-	cooldown_time = 50 SECONDS
+	cooldown_time = 60 SECONDS
 	mana_cost = 30
 	target_msg = "You body numbs a little."
 	hand_path = /obj/item/melee/touch_attack/psionic/mending
@@ -43,7 +43,7 @@
 		O.apply_organ_damage(-15 * cast_power)
 
 	if(patient.get_oxy_loss() >= OXYLOSS_PASSOUT_THRESHOLD-10)
-		patient.adjust_oxy_loss(-cast_power * 20, forced = TRUE)
+		patient.adjust_oxy_loss(-20 * cast_power, forced = TRUE)
 
 	if(patient.get_organ_slot("parasite_egg") && cast_power >= 2) // Удаляем ксеноморфов
 		var/obj/item/organ/body_egg/parasite = patient.get_organ_slot("parasite_egg")

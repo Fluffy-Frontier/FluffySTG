@@ -5,7 +5,7 @@
 	desc = "Concentrates psionic energy to create a universal tool."
 	button_icon = 'tff_modular/modules/psionics/icons/psi_items.dmi'
 	button_icon_state = "omnitool"
-	cooldown_time = 60 SECONDS
+	cooldown_time = 10 SECONDS
 	item_type = /obj/item/psionic_omnitool
 	mana_cost = 20
 	category = "Tier 1"

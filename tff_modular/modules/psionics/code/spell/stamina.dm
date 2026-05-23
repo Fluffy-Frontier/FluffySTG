@@ -22,7 +22,7 @@
 		charging = FALSE
 		return FALSE
 	charging = TRUE
+	drain_mana()
 	human_living.adjust_nutrition(5)
 	playsound(human_living, 'tff_modular/modules/psionics/sounds/power_used.ogg', 50, TRUE)
 	regenerate_nutrients(human_living)
-	drain_mana()
