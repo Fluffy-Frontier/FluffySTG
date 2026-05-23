@@ -1,5 +1,5 @@
-#define UI_PSI_DISPLAY "EAST:2,CENTER+3:-8"
-#define UI_PSI_SIGNAL "EAST:2, CENTER+2:-8"
+#define UI_PSI_DISPLAY "WEST:2,CENTER+3:-8"
+#define UI_PSI_SIGNAL "WEST:2, CENTER+2:-8"
 #define FORMAT_PSI_HUD_TEXT(valuecolor, value) MAPTEXT("<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font color='[valuecolor]'>[round(value,1)]</font></div>")
 
 /atom/movable/screen/psionic

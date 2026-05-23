@@ -2,10 +2,7 @@
 	name = "Psionic Pull"
 	desc = "Pulls the target straight towards the user. Even if the item is big, it's cant harm you on impact. Note that you can catch items you pull to yourself if you toggle throw mode before pulling an item."
 	button_icon_state = "tech_passwall"
-	category = "Tier 2"
-	cooldown_time = 20 SECONDS
-	psionic_level = 2
-	point_cost = 1
+	cooldown_time = 15 SECONDS
 	mana_cost = 30
 	locked = FALSE
 	cast_range = 5

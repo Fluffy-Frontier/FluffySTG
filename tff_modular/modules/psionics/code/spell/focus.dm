@@ -13,7 +13,7 @@
 	var/mob/living/carbon/human/human_living = cast_on
 	if(do_after(human_living, 1 SECONDS, timed_action_flags = IGNORE_SLOWDOWNS | IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE | IGNORE_HELD_ITEM))
 		to_chat(human_living, span_warning("A calm rush envelops your mind.."))
-		human_living.reagents.add_reagent(/datum/reagent/medicine/psimulant, 10)
+		human_living.reagents.add_reagent(/datum/reagent/medicine/psimulant, 5)
 		drain_mana()
 		playsound(human_living, 'tff_modular/modules/psionics/sounds/power_used.ogg', 50, TRUE)
 	else
@@ -31,16 +31,18 @@
 	var/mob/living/carbon/human/psimulator = affected_mob
 	psimulator.add_movespeed_modifier(/datum/movespeed_modifier/psimulant)
 	psimulator.add_actionspeed_modifier(/datum/actionspeed_modifier/psimulant)
+	psimulator.SetParalyzed(0)
+	psimulator.SetStun(0)
+	psimulator.SetAllImmobility(0)
+	psimulator.remove_status_effect(/datum/status_effect/speech/stutter)
+	psimulator.set_resting(FALSE)
+	psimulator.SetSleeping(0)
 
 /datum/reagent/medicine/psimulant/metabolize_reagent(mob/living/carbon/affected_mob, seconds_per_tick, metabolized_volume)
 	. = ..()
-	affected_mob.SetParalyzed(0)
-	affected_mob.SetStun(0)
-	affected_mob.SetAllImmobility(0)
-	affected_mob.adjust_stamina_loss(-5)
-	affected_mob.remove_status_effect(/datum/status_effect/speech/stutter)
-	affected_mob.set_resting(FALSE)
-	affected_mob.SetSleeping(0)
+	affected_mob.adjust_stamina_loss(-2)
+	affected_mob.adjust_brute_loss(-0.3)
+	affected_mob.adjust_fire_loss(-0.3)
 
 /datum/reagent/medicine/psimulant/on_mob_delete(mob/living/affected_mob)
 	. = ..()

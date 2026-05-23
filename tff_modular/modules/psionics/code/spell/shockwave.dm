@@ -31,3 +31,4 @@
 		shake_camera(victims, 2 SECONDS, 2)
 		victims.Paralyze(2 SECONDS)
 	cast_on.visible_message(span_horizonblue("[cast_on]'s foot starts to cover in blue energy, and then he stomps on the floor"), span_horizonblue("You channel psionic energy into your foot, and then stomp on the floor."))
+	playsound(cast_on, 'sound/effects/meteorimpact.ogg', 100, TRUE)

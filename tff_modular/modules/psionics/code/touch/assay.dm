@@ -13,6 +13,7 @@
 	can_cast_on_self = TRUE
 	category = "Tier 1"
 	locked = FALSE
+	point_cost = 0
 
 /datum/action/cooldown/spell/touch/psionic/assay/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/mendicant)
 	if(ishuman(victim))

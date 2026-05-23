@@ -47,7 +47,7 @@
 /turf/closed/wall/attack_hand(mob/user, list/modifiers)
 	. = ..()
 	if(warped)
-		to_chat(user, span_horizonblue("The wall begins to return to its condition... For some reason."))
+		to_chat(user, span_horizonblue("The wall begins to return to its condition..."))
 		unwarp()
 
 /turf/closed/wall/proc/on_examine(datum/source, mob/user, text)

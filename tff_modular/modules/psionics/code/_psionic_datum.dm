@@ -149,7 +149,7 @@
 	mana_level = clamp(mana_level + amount, 0, max_mana)
 
 /datum/psionic/sensitive
-	max_mana = 50
+	max_mana = 35
 	psionic_level = 1
 	psionic_level_string = SENSITIVE_PSIONIC
 	license = TRUE
@@ -163,7 +163,7 @@
 	psionic_level = 2
 	psionic_level_string = HARMONIOUS_PSIONIC
 	license = FALSE
-	psi_point = 14
+	psi_point = 10
 
 /datum/psionic/proc/is_suppressed()
 	if(HAS_TRAIT(psi_owner, TRAIT_PSIONIC_EXHAUSTION))
