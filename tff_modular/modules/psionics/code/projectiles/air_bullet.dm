@@ -4,7 +4,7 @@
 	desc = "Wrap air in a psionic bubble, compress it, then send it flying at your enemies."
 	button_icon_state = "tech_repelmissiles"
 	cooldown_time = 1 SECONDS
-	mana_cost = 10
+	mana_cost = 15
 	cast_range = 9
 	active_msg = "You prepare to charge air bullet..."
 	deactive_msg = "You relax."
@@ -28,3 +28,4 @@
 	icon_state = "air_bubble"
 	damage = 10
 	damage_type = BRUTE
+	armour_penetration = 50
