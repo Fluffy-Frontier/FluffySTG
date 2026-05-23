@@ -43,7 +43,9 @@
 		O.apply_organ_damage(-15 * cast_power)
 
 	if(patient.get_oxy_loss() >= OXYLOSS_PASSOUT_THRESHOLD-10)
-		patient.adjust_oxy_loss(-20 * cast_power, forced = TRUE)
+		patient.adjust_oxy_loss(-30 * cast_power, forced = TRUE)
+
+	patient.adjust_tox_loss(-20 * cast_power, forced = TRUE)
 
 	if(patient.get_organ_slot("parasite_egg") && cast_power >= 2) // Удаляем ксеноморфов
 		var/obj/item/organ/body_egg/parasite = patient.get_organ_slot("parasite_egg")
@@ -58,5 +60,5 @@
 		if(drop_loc)
 			parasite.forceMove(drop_loc)
 
-	var/damage_to_heal = 30 * cast_power
+	var/damage_to_heal = 25 * cast_power
 	patient.heal_overall_damage(damage_to_heal, damage_to_heal, damage_to_heal)
