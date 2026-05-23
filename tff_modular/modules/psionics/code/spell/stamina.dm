@@ -14,6 +14,7 @@
 	return TRUE
 
 /datum/action/cooldown/spell/psionic/stamina/before_cast(atom/cast_on)
+	. = ..()
 	if(charging)
 		return SPELL_CANCEL_CAST
 
