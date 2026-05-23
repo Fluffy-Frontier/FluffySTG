@@ -23,7 +23,7 @@
 	id = "Transparency"
 	status_type = STATUS_EFFECT_REFRESH
 	duration = 10 SECONDS
-
+	alert_type = null
 	var/static/list/transparency_traits = list(TRAIT_GODMODE, TRAIT_HANDS_BLOCKED, TRAIT_SECLUDED_LOCATION)
 
 /datum/status_effect/transparency/on_apply()
