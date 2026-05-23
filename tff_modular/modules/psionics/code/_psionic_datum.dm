@@ -7,7 +7,7 @@
 /mob/living/proc/add_psionic(psi_type, remove_old)
 	if(!psi_type)
 		psi_type = new /datum/psionic/sensitive()
-	if(!istype(psi_type, /datum/psionic))
+	if(istype(psi_type, /datum/psionic))
 		return FALSE
 	if(get_psionic())
 		remove_psionic()
