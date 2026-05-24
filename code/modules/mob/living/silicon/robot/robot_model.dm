@@ -852,7 +852,7 @@
 	name = "Security"
 	basic_modules = list(
 		/obj/item/assembly/flash/cyborg,
-		/obj/item/restraints/handcuffs/cable/zipties,
+		/obj/item/borg/apparatus/handcuff, // FLUFFY FRONTIER REPLACE /obj/item/restraints/handcuffs/cable/zipties,
 		/obj/item/melee/baton/security/loaded,
 		/obj/item/gun/energy/disabler/cyborg,
 		/obj/item/clothing/mask/gas/sechailer/cyborg,
@@ -1004,7 +1004,7 @@
 		/obj/item/assembly/flash/cyborg,
 		/obj/item/construction/rcd/borg/syndicate,
 		/obj/item/pipe_dispenser,
-		/obj/item/restraints/handcuffs/cable/zipties,
+		/obj/item/borg/apparatus/handcuff, // FLUFFY FRONTIER REPLACE /obj/item/restraints/handcuffs/cable/zipties,
 		/obj/item/extinguisher,
 		/obj/item/weldingtool/largetank/cyborg,
 		/obj/item/analyzer,
