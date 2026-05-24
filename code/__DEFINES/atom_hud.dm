@@ -59,6 +59,9 @@
 
 /// If they have the DNR trait
 #define DNR_HUD "27"
+
+/// Energy shield charge level
+#define SHIELD_HUD "28"
 // NOVA EDIT ADDITION END
 // FLUFFY FRONTIER ADDITION START
 #define XENO_HUD "30"
