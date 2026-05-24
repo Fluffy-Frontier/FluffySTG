@@ -10,7 +10,6 @@
 	var/image/stored_underlay
 
 /obj/item/borg/apparatus/handcuff/Initialize(mapload)
-	add_glass()
 	RegisterSignal(stored, COMSIG_ATOM_UPDATED_ICON, PROC_REF(on_stored_updated_icon))
 	update_appearance()
 	return ..()
