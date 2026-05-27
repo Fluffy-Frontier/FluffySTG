@@ -42,3 +42,26 @@
 	resistance_flags = FIRE_PROOF
 	greyscale_config = /datum/greyscale_config/wakamo_halo
 	greyscale_config_worn = /datum/greyscale_config/wakamo_halo/worn
+
+//interdyne clothing
+/obj/item/clothing/neck/cowboyinterdyneb
+	name = "black interdyne cloak"
+	desc = "A sand covered cloak, there seems to be a small deer head with antlers embroidered inside and Interdyne logo on back."
+	body_parts_covered = NECK
+	slot_flags = ITEM_SLOT_NECK
+	icon = 'tff_modular/modules/clothing/icons/obj/neck.dmi'
+	worn_icon = 'tff_modular/modules/clothing/icons/mob/neck.dmi'
+	icon_state = "cowboy_poncho_interdyne_black"
+	heat_protection = CHEST
+	worn_icon_teshari = 'tff_modular/modules/clothing/icons/mob/species/teshari/neck.dmi'
+
+/obj/item/clothing/neck/cowboyinterdynew
+	name = "white interdyne cloak"
+	desc = "A sand covered cloak, there seems to be a small deer head with antlers embroidered inside and Interdyne logo on back."
+	body_parts_covered = NECK
+	slot_flags = ITEM_SLOT_NECK
+	icon = 'tff_modular/modules/clothing/icons/obj/neck.dmi'
+	worn_icon = 'tff_modular/modules/clothing/icons/mob/neck.dmi'
+	icon_state = "cowboy_poncho_interdyne_white"
+	heat_protection = CHEST
+	worn_icon_teshari = 'tff_modular/modules/clothing/icons/mob/species/teshari/neck.dmi'

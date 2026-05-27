@@ -53,8 +53,7 @@
 
 /mob/living/silicon/Initialize(mapload)
 	. = ..()
-	if(SStts.tts_enabled)
-		voice = pick(SStts.available_speakers)
+	voice = SStts.random_tts_voice()
 	GLOB.silicon_mobs += src
 	// THE FLUFFY FRONTIER EDIT BEGIN
 	if(iscyborg(src))
@@ -492,7 +491,7 @@
 		create_modularInterface()
 	var/mob/living/silicon/robot/robo = modularInterface.silicon_owner
 	if(istype(robo))
-		modularInterface.borglog += "[station_time_timestamp()] - [string]"
+		modularInterface.borglog += "[round_timestamp()] - [string]"
 	var/datum/computer_file/program/robotact/program = modularInterface.get_robotact()
 	if(program)
 		var/datum/tgui/active_ui = SStgui.get_open_ui(src, program.computer)

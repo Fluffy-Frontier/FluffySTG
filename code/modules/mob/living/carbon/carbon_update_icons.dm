@@ -416,11 +416,11 @@
 
 //update whether handcuffs appears on our hud.
 /mob/living/carbon/proc/update_hud_handcuffed()
-	if(hud_used)
-		for(var/hand in hud_used.hand_slots)
-			var/atom/movable/screen/inventory/hand/H = hud_used.hand_slots[hand]
-			if(H)
-				H.update_appearance()
+	if(!hud_used)
+		return
+
+	for(var/atom/movable/screen/inventory/hand/hand in hud_used.hand_slots)
+		hand.update_appearance()
 
 //update whether our head item appears on our hud.
 /mob/living/carbon/proc/update_hud_head(obj/item/I)
@@ -528,6 +528,11 @@
 		. += limb_gender
 	. += limb_id
 	. += body_zone
+	// NOVA EDIT ADDITION START
+	var/is_digi = (bodyshape & BODYSHAPE_DIGITIGRADE)
+	if(is_digi)
+		. += ICON_KEY_DIGI
+	// NOVA EDIT ADDITION END
 	if(should_draw_greyscale && draw_color)
 		. += draw_color
 	if(is_invisible)

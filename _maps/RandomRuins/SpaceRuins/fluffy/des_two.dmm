@@ -2499,9 +2499,6 @@
 /turf/open/floor/iron/white/small,
 /area/ruin/space/has_grav/nova/des_two/security/prison)
 "hJ" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/structure/table,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/east{
 	pixel_x = 4
@@ -4115,6 +4112,7 @@
 /obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
 	dir = 4
 	},
+/obj/machinery/vending/wardrobe/science_wardrobe,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/research)
 "np" = (
@@ -7219,20 +7217,12 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/des_two/engineering)
 "xf" = (
-/obj/effect/turf_decal/trimline/dark/filled/line{
-	dir = 9
-	},
-/obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/dark/filled/mid_joiner{
-	dir = 8
-	},
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
 /obj/machinery/light/dim/directional/south,
+/obj/effect/turf_decal/tile/dark/full,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/medbay)
 "xi" = (
@@ -7321,6 +7311,7 @@
 /obj/effect/turf_decal/trimline/yellow/warning{
 	dir = 8
 	},
+/obj/machinery/announcement_system,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nova/des_two/engineering)
 "xx" = (
@@ -8412,11 +8403,11 @@
 "AQ" = (
 /obj/machinery/button/door/directional/south{
 	desc = "Keep out the Blazing heat.";
-	id = "DS2incineratorHatch";
+	id = 16;
 	name = "Incinerator Hatch Bolt";
 	normaldoorcontrol = 1;
 	pixel_x = 6;
-	req_access = list("syndicate_leader");
+	req_access = list("syndicate");
 	specialfunctions = 4
 	},
 /obj/effect/turf_decal/stripes/line{
@@ -9085,11 +9076,12 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/hatch{
-	id_tag = "DS2incineratorHatch";
+	id_tag = 16;
 	name = "Incinerator Hatch"
 	},
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/structure/holosign/barrier/atmos/sturdy,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/des_two/engineering)
 "Dc" = (
@@ -16241,10 +16233,9 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/nova/des_two/cargo/hangar)
 "ZG" = (
-/obj/effect/turf_decal/trimline/dark/filled/corner{
-	dir = 1
-	},
-/turf/closed/wall/r_wall/plastitanium/syndicate,
+/obj/effect/turf_decal/tile/dark/full,
+/obj/machinery/vending/wardrobe/medi_wardrobe,
+/turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/nova/des_two/medbay)
 "ZM" = (
 /obj/effect/turf_decal/tile/dark_red/half/contrasted{
@@ -16577,7 +16568,7 @@ FL
 aP
 Dg
 qN
-La
+yF
 VZ
 Li
 tI
@@ -16920,8 +16911,8 @@ nX
 nX
 lL
 tI
-tI
-tI
+XH
+XH
 tI
 tI
 tI
