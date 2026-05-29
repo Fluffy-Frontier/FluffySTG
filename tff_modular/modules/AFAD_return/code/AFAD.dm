@@ -11,7 +11,7 @@
 
 
 
-/obj/item/gun/medbeam/afad/on_beam_tick(mob/living/target)
+/obj/item/gun/medbeam/afad_return/on_beam_tick(mob/living/target)
 	if(target.health != target.maxHealth)
 		new /obj/effect/temp_visual/heal(get_turf(target), "#80F5FF")
 	var/need_mob_update
